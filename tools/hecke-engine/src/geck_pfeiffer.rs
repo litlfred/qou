@@ -184,6 +184,23 @@ pub fn hecke_conjugate_by_s(x: &HeckeElement, i: usize) -> HeckeElement {
     hecke_mul_ts_inv_right(&after_left, i)
 }
 
+/// **Hecke conjugation by `T_v`** for `v` given as a reduced word
+/// `[i_1, i_2, ..., i_k]` (0-indexed simple-reflection indices).
+///
+///   T_v · X · T_v⁻¹  =  T_{s_{i_1}} · (T_{s_{i_2}} · ... · (T_{s_{i_k}} · X · T_{s_{i_k}}⁻¹) ... ) · T_{s_{i_1}}⁻¹
+///
+/// implemented as `k` nested applications of `hecke_conjugate_by_s`
+/// from inside out.  Used by F3.2.η_full §3.2 cuspidal moves where
+/// single-letter conjugation cannot reduce length but a multi-letter
+/// product can.
+pub fn hecke_conjugate_by_word(x: &HeckeElement, word: &[usize]) -> HeckeElement {
+    let mut result = x.clone();
+    for &i in word.iter().rev() {
+        result = hecke_conjugate_by_s(&result, i);
+    }
+    result
+}
+
 /// Right-multiply by `T_{s_i}^{-1} = T_{s_i} − (q − q^{-1})`.
 pub fn hecke_mul_ts_inv_right(x: &HeckeElement, i: usize) -> HeckeElement {
     let h = LaurentPolyQ::hecke_h();
@@ -223,6 +240,134 @@ fn min_length_for_cycle_type(mu: &[usize]) -> usize {
     let n: usize = mu.iter().sum();
     let r = mu.len();
     n - r
+}
+
+/// **Find a length-reducing conjugator** for `target_w`: a reduced
+/// word `v = s_{i_1} · ... · s_{i_k}` of length ≤ `max_len` such
+/// that the permutation `v · target_w · v⁻¹` has strictly fewer
+/// inversions than `target_w`.  Returns the reduced word as a
+/// `Vec<usize>` (0-indexed simple-reflection indices), or `None`
+/// if none exists at the given budget.
+///
+/// Implements the Geck-Pfeiffer 2000 §3.2 "good cuspidal moves"
+/// search: for length-1 this is the simple-reflection
+/// conjugation `s_i w s_i`; for length-2+ it captures the moves
+/// that reach minimal-length representatives for non-trivial
+/// conjugacy classes (e.g. the documented n=6 counterexample
+/// `[1, 3, 4, 5, 0, 2]` has length 7, minimal length 5, no
+/// length-1 reducer, but length-2 conjugators do reduce it).
+///
+/// Search strategy: enumerate words by ascending length.  At each
+/// length, generate all reduced words by recursion (skip if last
+/// applied generator coincides with the previous one — that
+/// always cancels) and test the resulting permutation conjugation.
+/// First success wins (no canonicalization).
+fn find_length_reducing_conjugator(
+    target_w: &Perm,
+    target_len: usize,
+    max_len: usize,
+) -> Option<Vec<usize>> {
+    let n = target_w.n();
+    if n < 2 {
+        return None;
+    }
+    // Length-1: simple-reflection conjugation.
+    for i in 0..n - 1 {
+        let mut sws = target_w.clone();
+        sws.apply_s_left(i);
+        sws.apply_s_right(i);
+        if sws.length() < target_len {
+            return Some(vec![i]);
+        }
+    }
+    if max_len < 2 {
+        return None;
+    }
+    // Length 2..=max_len: enumerate reduced words and test.
+    // Key trick: build candidate `v` as a Perm by applying the word
+    // to identity from the left.  Words that don't yield a Perm of
+    // matching length are non-reduced and skipped.
+    let mut word_buf: Vec<usize> = Vec::with_capacity(max_len);
+    for k in 2..=max_len {
+        if let Some(found) = search_reduced(
+            target_w, target_len, k, n, &mut word_buf,
+        ) {
+            return Some(found);
+        }
+    }
+    None
+}
+
+/// Recursive helper for enumerating reduced words of length `remaining`
+/// extending `word_buf`.  Returns the first word whose conjugation
+/// strictly reduces the length of `target_w`.
+fn search_reduced(
+    target_w: &Perm,
+    target_len: usize,
+    remaining: usize,
+    n: usize,
+    word_buf: &mut Vec<usize>,
+) -> Option<Vec<usize>> {
+    if remaining == 0 {
+        // Build v = s_{i_1} · ... · s_{i_k} by applying right-to-
+        // left on identity (so apply each s_{i_l} on the left of
+        // the running v).
+        let mut v = Perm::identity(n);
+        for &i in word_buf.iter().rev() {
+            v.apply_s_left(i);
+        }
+        // Reduced iff length(v) == word_buf.len().
+        if v.length() != word_buf.len() {
+            return None;
+        }
+        // Compute v · target_w · v⁻¹ in S_n via a fresh perm.
+        // For permutations p, q the product p·q has perm[i] =
+        // p[q[i]].  We need (v · target_w · v⁻¹).
+        let v_w = compose_perm(&v, target_w);
+        let v_inv = inverse_perm(&v);
+        let result = compose_perm(&v_w, &v_inv);
+        if result.length() < target_len {
+            return Some(word_buf.clone());
+        }
+        return None;
+    }
+    // Try every simple reflection that doesn't immediately cancel
+    // the previous one (s_i s_i = e, never reduced).
+    for i in 0..n - 1 {
+        if let Some(&last) = word_buf.last() {
+            if last == i {
+                continue;
+            }
+        }
+        word_buf.push(i);
+        if let Some(found) = search_reduced(
+            target_w, target_len, remaining - 1, n, word_buf,
+        ) {
+            return Some(found);
+        }
+        word_buf.pop();
+    }
+    None
+}
+
+#[inline]
+fn compose_perm(p: &Perm, q: &Perm) -> Perm {
+    let n = p.n();
+    let mut out = vec![0usize; n];
+    for i in 0..n {
+        out[i] = p.0[q.0[i]];
+    }
+    Perm(out)
+}
+
+#[inline]
+fn inverse_perm(p: &Perm) -> Perm {
+    let n = p.n();
+    let mut out = vec![0usize; n];
+    for i in 0..n {
+        out[p.0[i]] = i;
+    }
+    Perm(out)
 }
 
 /// **Reduced word for a permutation** (lex-first reduced expression).
@@ -371,31 +516,34 @@ pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
         }
         let n = target_w.n();
 
-        // Find a simple reflection s such that ℓ(s · target_w · s) < ℓ(target_w).
-        let mut chosen_s: Option<usize> = None;
-        for i in 0..n.saturating_sub(1) {
-            let mut sws = target_w.clone();
-            sws.apply_s_left(i);
-            sws.apply_s_right(i);
-            if sws.length() < target_len {
-                chosen_s = Some(i);
-                break;
-            }
-        }
-        let Some(s_idx) = chosen_s else {
-            // No simple-reflection conjugation reduces length.  For
-            // n ≤ 6 this is rare; for larger n it requires the full
-            // Geck-Pfeiffer §3.2 cuspidal-moves algorithm (still on
-            // the roadmap).  Skip this element and continue.
+        // Find any conjugator word `v` (length 1, 2, ..., MAX_CONJ_LEN)
+        // such that the *permutation* `v · target_w · v⁻¹` has length
+        // strictly less than `target_w`.  Length 1 covers the simple-
+        // reflection case (F3.2.ζ); lengths 2+ cover the §3.2
+        // cuspidal moves needed for non-trivial classes (F3.2.η_full).
+        // For S_n with n ≤ 6 (D / T atomic braids), the documented
+        // counterexample `[1, 3, 4, 5, 0, 2]` in the 6-cycle class is
+        // length 7 with minimal length 5 and *no* length-1 reducer —
+        // a length-2 conjugator suffices (verified by unit test).
+        const MAX_CONJ_LEN: usize = 3;
+        let chosen_word = find_length_reducing_conjugator(
+            &target_w, target_len, MAX_CONJ_LEN,
+        );
+        let Some(conj_word) = chosen_word else {
+            // No conjugator up to MAX_CONJ_LEN reduces length.  For
+            // n ≤ 6 this should not happen in any S_n conjugacy class
+            // (verified empirically); for larger n it would require
+            // longer good-cuspidal-move searches.  Skip this element
+            // and continue rather than looping forever.
             continue;
         };
 
-        // Apply Hecke conjugation: replace c_w · T_w with
-        // c_w · (T_s · T_w · T_s⁻¹) in current.
+        // Apply Hecke conjugation by T_v: replace c_w · T_w with
+        // c_w · (T_v · T_w · T_v⁻¹) in current.
         let coeff = current.remove(&target_w).unwrap_or_else(LaurentPolyQ::zero);
         let mut singleton: HeckeElement = BTreeMap::new();
         singleton.insert(target_w.clone(), coeff);
-        let conjugated = hecke_conjugate_by_s(&singleton, s_idx);
+        let conjugated = hecke_conjugate_by_word(&singleton, &conj_word);
 
         // Merge new keys; enqueue any newly-introduced non-minimal
         // elements.  Existing keys whose coefficient changes do not
@@ -666,6 +814,67 @@ mod tests {
         assert_eq!(w_min.length(), 1,
                    "(2,1)-cycle minimal length should be 1; got {} from {:?}",
                    w_min.length(), w_min.0);
+    }
+
+    /// **F3.2.η_full**: the documented n=6 counterexample —
+    /// `w = [1, 3, 4, 5, 0, 2]` is a 6-cycle (cycle type (6))
+    /// of length 7 in S_6.  Minimal length within the (6)-class
+    /// is 5.  No simple-reflection conjugation `s_i w s_i`
+    /// strictly reduces length, so the legacy F3.2.ζ algorithm
+    /// returns it unchanged.  The new §3.2 cuspidal-moves search
+    /// should find a length-2 conjugator that does reduce it.
+    #[test]
+    fn cuspidal_moves_n6_documented_counterexample() {
+        let target = Perm(vec![1, 3, 4, 5, 0, 2]);
+        assert_eq!(target.length(), 7,
+                   "documented counterexample should have ℓ=7");
+        let cyc = perm_cycle_type(&target);
+        assert_eq!(cyc, vec![6], "should be a 6-cycle");
+        assert_eq!(min_length_for_cycle_type(&cyc), 5,
+                   "minimal length within (6)-class is 5");
+        // No length-1 reducer exists.
+        let no_simple = (0..5).all(|i| {
+            let mut sws = target.clone();
+            sws.apply_s_left(i);
+            sws.apply_s_right(i);
+            sws.length() >= target.length()
+        });
+        assert!(no_simple,
+                "no s_i conjugation should strictly reduce ℓ for this w");
+        // But §3.2 cuspidal-moves should find a length-≤3 conjugator.
+        let v = find_length_reducing_conjugator(&target, 7, 3);
+        assert!(v.is_some(),
+                "§3.2 cuspidal moves up to length 3 should reduce ℓ");
+        let conj = v.unwrap();
+        // Sanity: applying the found conjugator strictly reduces length.
+        let mut v_perm = Perm::identity(target.n());
+        for &i in conj.iter().rev() {
+            v_perm.apply_s_left(i);
+        }
+        let v_inv = inverse_perm(&v_perm);
+        let result = compose_perm(&compose_perm(&v_perm, &target), &v_inv);
+        assert!(result.length() < target.length(),
+                "v={:?} (perm {:?}) should reduce ℓ from 7; got ℓ={}",
+                conj, v_perm.0, result.length());
+    }
+
+    /// Verify the worklist driver fully reduces the documented
+    /// n=6 counterexample to a minimal-length representative.
+    #[test]
+    fn worklist_reduces_n6_counterexample_to_minimal() {
+        let target = Perm(vec![1, 3, 4, 5, 0, 2]);
+        let mut singleton: HeckeElement = BTreeMap::new();
+        singleton.insert(target.clone(), LaurentPolyQ::one());
+        let reduced = reduce_basis_to_minimal_length(&singleton);
+        // Every key in `reduced` must now be minimal-length within
+        // its cycle class (or be the identity).
+        for (w, _c) in &reduced {
+            let cyc = perm_cycle_type(w);
+            let ml = min_length_for_cycle_type(&cyc);
+            assert!(w.length() <= ml + 0,
+                    "after worklist+§3.2, key {:?} (cyc {:?}) still ℓ={} > min_len={}",
+                    w.0, cyc, w.length(), ml);
+        }
     }
 
     /// **F3.2.γ correctness boundary at q = 1 (CORRECT) vs q ≠ 1 (FAILS).**
