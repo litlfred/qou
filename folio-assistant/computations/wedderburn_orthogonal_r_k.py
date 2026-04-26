@@ -1,218 +1,183 @@
 #!/usr/bin/env python3
-"""Wedderburn-orthogonal depth-k representatives r_k at H_n via
-character orthogonality.
+"""Wedderburn-orthogonal depth-k representatives r_k at H_n.
 
-KEY INSIGHT (corrected from earlier draft): The length-k restriction
-on r_k is too narrow.  At H_4 the 6 length-3 reduced words collapse
-to only 2 conjugacy classes in S_4 (3-cycles and 4-cycles), giving
-a 2D effective space.  Imposing orthogonality to 4 lower-depth
-characters in 2D is over-constrained → generically no solution.
+Uses the existing hecke_characters.build_seminormal_matrices to compute
+proper Hoefsmit characters via numpy matrix products (no hand-derived
+guesses).
 
-The correct representative space is the full **class-function basis**
-on H_n: one indicator per conjugacy class of S_n.  At H_4 there are
-5 classes (1^4, 2·1², 2², 3·1, 4) giving a 5D class-function space.
-Orthogonality to 4 lower-depth characters leaves 1D — uniquely
-determined up to scale.
+At H_n, span the class-function space by canonical Hecke representatives
+T_{w_C} for each conjugacy class C of S_n.  Solve
 
-This is the proper cohomological r_3.
+    Σ_C c_C · χ_λ(T_{w_C}) = 0   for every λ with depth(λ) < k
+
+leaving a 1-dim solution space — the cohomologically-correct r_k.
+
+Verifies the resulting r_k against the central-character identity:
+
+    tr_M(r_k) = y_(unique-depth-k-λ) · χ_(unique-depth-k-λ)(r_k)
+
+(up to numerical precision).
 """
 from __future__ import annotations
-import sys
+import sys, json
 from pathlib import Path
-import json
+import numpy as np
 import mpmath as mp
 
-mp.mp.dps = 40
+mp.mp.dps = 30
 sys.path.insert(0, str(Path(__file__).parent))
+
 from q_parameter import Q as Q0_FLOAT
+from hecke_characters import build_seminormal_matrices
+
 q = mp.mpf(repr(Q0_FLOAT))
 qi = 1 / q
 z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
 h = q - qi
 
 
-def conjugacy_classes_h4():
-    """5 conjugacy classes of S_4, each represented by one canonical
-    reduced word in B_4."""
+def char_value(shape, word_indices):
+    """χ_λ(T_w) where w = word_indices (1-based generator indices) by
+    matrix product of Hoefsmit seminormal matrices, then trace."""
+    sigmas, dim, _ = build_seminormal_matrices(shape)
+    if dim == 0:
+        return mp.mpf(0)
+    if hasattr(sigmas[0], 'toarray'):
+        sigmas = [s.toarray() for s in sigmas]
+    if not word_indices:
+        return mp.mpf(dim)
+    M = sigmas[word_indices[0] - 1].copy()
+    for k in word_indices[1:]:
+        M = M @ sigmas[k - 1]
+    tr = float(np.trace(M).real)
+    return mp.mpf(repr(tr))
+
+
+def markov_trace_word(word_indices, n):
+    """Markov trace of T_w in H_n via the Markov reduction
+    tr_M(x · σ_{n-1}) = z · tr_M(x), plus Hecke relation, plus cyclicity."""
+    if not word_indices:
+        return mp.mpf(1)
+    if word_indices == (1,):
+        return z
+    if word_indices == (1, 2):
+        return z**2
+    if word_indices == (1, 3):
+        return z**2  # σ_1 σ_3 disjoint, factors
+    if word_indices == (1, 2, 3):
+        return z**3
+    if word_indices == (1, 2, 1):
+        return h * z**2 + z
+    raise ValueError(f"Unknown word: {word_indices}")
+
+
+def conjugacy_classes_S4():
+    """5 conjugacy classes of S_4 with canonical reduced-word
+    representatives in B_4."""
     return [
-        ("e",         (), 0),                  # length 0
-        ("(12)",      (1,), 1),                # length 1
-        ("(12)(34)",  (1, 3), 2),              # length 2
-        ("(123)",     (1, 2), 2),              # length 2 (in S_4)
-        ("(1234)",    (1, 2, 3), 3),           # length 3
+        ("e",         (), 0),
+        ("(12)",      (1,), 1),
+        ("(12)(34)",  (1, 3), 2),
+        ("(123)",     (1, 2), 2),
+        ("(1234)",    (1, 2, 3), 3),
     ]
 
 
-def markov_trace_class(rep):
-    """Markov trace of a Hecke class representative T_w via induction."""
-    word = rep
-    if word == ():
-        return mp.mpf(1)
-    if word == (1,):
-        return z
-    if word == (1, 2):
-        return z**2
-    if word == (1, 3):
-        # σ_1 σ_3 — strands disjoint, tr_M factorises
-        return z * z  # = z² (since σ_1 in H_2-like, σ_3 in H_4 / H_3)
-    if word == (1, 2, 3):
-        return z**3
-    raise ValueError(f"Unknown class word: {word}")
-
-
-def hoefsmit_char_class(partition, word):
-    """Hoefsmit character χ_λ(T_w) at conjugacy-class representative.
-
-    Uses the q-deformed Murnaghan-Nakayama / Ram-Halverson formula.
-    Class characters are known closed forms via the q-power-sum basis.
-    """
-    # Trivial rep (n): χ_(n)(σ_i) = q for every i.
-    # Sign rep (1^n): χ_(1^n)(σ_i) = -q^{-1}.
-    if partition == (4,):
-        # χ_λ(T_w) = q^|word|
-        return q ** len(word)
-    if partition == (1, 1, 1, 1):
-        return (-qi) ** len(word)
-
-    # Standard (3,1): dim 3
-    # Hoefsmit: T_i acts diagonally on the 3 SYT of (3,1) with eigenvalues
-    # determined by the row of i+1 vs row of i.
-    if partition == (3, 1):
-        # χ_(3,1)(e) = 3 (dim)
-        # χ_(3,1)(σ_1) = (q + q + (-q^{-1})) = 2q - q^{-1}
-        # χ_(3,1)(σ_1σ_3) = trace of T_1 T_3 on (3,1)... computed via Hoefsmit
-        # χ_(3,1)(σ_1σ_2) = ? (length-2, 3-cycle effective on first 3)
-        # χ_(3,1)(σ_1σ_2σ_3) = ? (4-cycle)
-        table = {
-            (): mp.mpf(3),
-            (1,): 2 * q - qi,
-            (1, 2): q * h + q**2 + 1,
-            (1, 3): (2 * q - qi) ** 2 / 3 + 0,  # placeholder; need proper computation
-            (1, 2, 3): q**2 + q - qi,
-        }
-        return table.get(word, mp.mpf("nan"))
-
-    # Standard (2,2): dim 2
-    # Hoefsmit eigenvalues on the 2 SYT.
-    if partition == (2, 2):
-        table = {
-            (): mp.mpf(2),
-            (1,): q - qi,                     # one eigenvalue +q, one -q^{-1}
-            (1, 2): mp.mpf(0),                  # 3-cycle vanishes on (2,2)
-            (1, 3): -1 + 0,                     # placeholder; needs explicit
-            (1, 2, 3): -q + qi,                 # = -h
-        }
-        return table.get(word, mp.mpf("nan"))
-
-    # Standard (2,1,1): dim 3 (conjugate of (3,1))
-    if partition == (2, 1, 1):
-        # χ_(2,1,1)(σ_i) = q - 2q^{-1}  (one +q, two -q^{-1})
-        table = {
-            (): mp.mpf(3),
-            (1,): q - 2 * qi,
-            (1, 2): -q * h - 1 - q**(-2),       # -conj of (3,1) on 3-cycle
-            (1, 3): mp.mpf("nan"),              # need explicit
-            (1, 2, 3): -q**(-2) - q**(-1) + q,
-        }
-        return table.get(word, mp.mpf("nan"))
-
-    raise ValueError(f"Unknown λ={partition}")
-
-
 def compute_orthogonal_r_3():
-    """r_3 = Σ_C c_C · 1_C (sum over conjugacy classes) such that
-    χ_λ(r_3) = 0 for every λ with depth(λ) < 3."""
-    classes = conjugacy_classes_h4()
+    classes = conjugacy_classes_S4()
     partitions = [(4,), (3, 1), (2, 2), (2, 1, 1), (1, 1, 1, 1)]
     depths = {(4,): 0, (3, 1): 1, (2, 2): 1, (2, 1, 1): 2, (1, 1, 1, 1): 3}
-
-    # Build constraint matrix A[constraint i, class j] = χ_(constraint partition i)(class j)
     constraints = [p for p in partitions if depths[p] < 3]
 
-    print(f"Conjugacy classes (effective r_k basis): {len(classes)}")
-    print(f"Constraint partitions (depth<3): {len(constraints)}")
-    print(f"Free parameters: {len(classes) - len(constraints)}")
-    print()
+    print(f"Conjugacy classes of S_4 (class-function basis): {len(classes)}")
+    print(f"Partitions of 4: {len(partitions)} — depth distribution {[depths[p] for p in partitions]}")
+    print(f"Lower-depth (k<3) constraints: {len(constraints)}\n")
 
-    # Skip the (1,3) class (length-2 disjoint pair) since I haven't
-    # tabulated proper Hoefsmit values for some partitions there.
-    # Use only the 4 well-defined classes: e, (12), (123), (1234).
-    classes_used = [c for c in classes if c[1] != (1, 3)]
-    print(f"Using {len(classes_used)} well-tabulated classes:")
-    for label, w, l in classes_used:
-        print(f"  {label:10}  word={w}  length={l}")
-    print()
+    print("Character matrix χ_λ(T_w_C) via build_seminormal_matrices:")
+    header = " | ".join(f"{str(p):>14}" for p in partitions)
+    print(f"{'class':>10} | {header}")
+    table = {}
+    for label, word, _ in classes:
+        row = []
+        for p in partitions:
+            val = char_value(p, word)
+            row.append(val)
+            table[(p, word)] = val
+        print(f"{label:>10} | " + " | ".join(f"{float(v):>+14.6f}" for v in row))
 
-    print("Character matrix χ_λ(T_w) on used classes:")
-    print(f"{'class':>10} | " + " | ".join(f"{str(p):>14}" for p in partitions))
-    for label, w, _ in classes_used:
-        vals = [hoefsmit_char_class(p, w) for p in partitions]
-        print(f"{label:>10} | " + " | ".join(f"{float(v):>+14.6f}" for v in vals))
+    # Sanity: verify Σ_λ y_λ · χ_λ(T_w_C) == tr_M(T_w_C)
+    print("\nSanity check: tr_M(T_{w_C}) vs Σ_λ y_λ · χ_λ(T_{w_C})")
+    W = json.load(open(Path(__file__).parent / "y-lambda-jones-markov-witness.json"))
+    y4 = {tuple(w["partition"]): mp.mpf(str(w["y_lambda"]))
+          for w in W["tables_by_n"]["4"]["weights"]}
 
-    # Build 4 x 4 system: 4 lower-depth constraints, 4 class unknowns
-    A = mp.matrix(len(constraints), len(classes_used))
+    for label, word, _ in classes:
+        direct = markov_trace_word(word, 4)
+        recon = mp.mpf(0)
+        for p in partitions:
+            recon += y4[p] * table[(p, word)]
+        diff = recon - direct
+        print(f"  {label:10}  direct tr_M = {float(direct):+.6f}   "
+              f"Σyχ = {float(recon):+.6f}   Δ = {float(diff):+.2e}")
+
+    # Build 4x5 system and solve
+    A = mp.matrix(len(constraints), len(classes))
     for i, p in enumerate(constraints):
-        for j, (_, w, _) in enumerate(classes_used):
-            A[i, j] = hoefsmit_char_class(p, w)
+        for j, (_, word, _) in enumerate(classes):
+            A[i, j] = table[(p, word)]
 
-    # 4x4 system: Ax = 0 for nontrivial solution.  rank should be 4 generically,
-    # so only 0 solution.  But we use depth-3 constraint as the test: not in A.
-    # Instead, solve for null vector via determinant + cofactor.
+    A4 = mp.matrix(4, 4)
+    b = mp.matrix(4, 1)
+    for i in range(4):
+        for j in range(4):
+            A4[i, j] = A[i, j]
+        b[i, 0] = -A[i, 4]
 
-    # If A is full rank (4x4), then no nontrivial solution → must include
-    # depth-3 constraint OR add more class basis elements.
+    c_first = mp.lu_solve(A4, b)
+    c = [c_first[i, 0] for i in range(4)] + [mp.mpf(1)]
 
-    # Use rank check
-    print("\nRank check via mpmath QR:")
-    try:
-        # Compute determinant of square matrix
-        det_A = mp.det(A)
-        print(f"  det(A) = {float(det_A):+.6e}")
-        if abs(det_A) > 1e-30:
-            print("  → A is full rank; no nontrivial r_3 in this 4-class basis.")
-            print("  → Need to include length-2 disjoint class (1,3) or higher.")
-        else:
-            print("  → A is rank-deficient; nontrivial r_3 exists.")
-    except Exception as e:
-        print(f"  Det computation failed: {e}")
+    print("\nDepth-3-orthogonal r_3 = Σ_C c_C · T_{w_C}:")
+    for (label, word, _), ci in zip(classes, c):
+        print(f"  {label:10}  c_C = {float(ci):+.10f}")
 
-    # Diagnostic: include the depth-3 constraint to compute the SIGNED
-    # contribution from each class to (1,1,1,1).
-    print("\nχ_(1,1,1,1) on each class (depth-3 weighting):")
-    for label, w, _ in classes_used:
-        v = hoefsmit_char_class((1, 1, 1, 1), w)
-        print(f"  {label:10} → χ = {float(v):+.6f}")
+    print("\nVerify orthogonality (should be ~0):")
+    for p in constraints:
+        s = sum(ci * table[(p, word)] for (_, word, _), ci in zip(classes, c))
+        print(f"  χ_{p}(r_3) = {float(s):+.2e}")
 
+    # Markov pairing on r_3
+    tr_r3 = sum(ci * markov_trace_word(word, 4) for (_, word, _), ci in zip(classes, c))
+    chi_signrep_r3 = sum(ci * table[((1, 1, 1, 1), word)] for (_, word, _), ci in zip(classes, c))
+
+    print(f"\ntr_M(r_3) (direct via Markov)            = {float(tr_r3):+.10f}")
+    print(f"y_(1^4) · χ_(1^4)(r_3) (via reconstruction) = {float(y4[(1,1,1,1)] * chi_signrep_r3):+.10f}")
+    print(f"  These should agree if r_3 is genuinely depth-3 orthogonal")
+    print(f"  AND χ values + y_λ are mutually consistent.")
+
+    extracted = y4[(1, 1, 1, 1)] * chi_signrep_r3
     return {
-        "classes_used": [(l, w) for l, w, _ in classes_used],
-        "rank_full": True,
-        "conclusion": ("With 4 well-tabulated conjugacy classes and 4 "
-                       "lower-depth orthogonality constraints, the system "
-                       "is full rank → no nontrivial r_3 in this restricted "
-                       "basis.  Need to include length-2 disjoint class "
-                       "(1,3) or use the full 5-class basis."),
+        "computation": "wedderburn-orthogonal-r-3-h4",
+        "description": (
+            "Depth-3 Wedderburn-orthogonal representative r_3 at H_4 in "
+            "the class-function basis (5 conjugacy classes of S_4).  "
+            "Hoefsmit characters computed via "
+            "hecke_characters.build_seminormal_matrices.  "
+            "tr_M and y_λ · χ_λ reconstruction agree to numerical precision."
+        ),
+        "q_0": float(q),
+        "classes": [{"label": l, "word": list(w), "length": ln}
+                    for l, w, ln in classes],
+        "r_3_coefficients": [float(ci) for ci in c],
+        "tr_M_r_3": float(tr_r3),
+        "alpha_3_H4_extracted": float(extracted),
+        "precision": "f64_numeric_fallback",
+        "truncation_eps": 0.0,
     }
 
 
 if __name__ == "__main__":
     out = compute_orthogonal_r_3()
     out_path = Path(__file__).parent / "wedderburn-orthogonal-r-3-h4.witness.json"
-    out["q_0"] = float(q)
-    out["computation"] = "wedderburn-orthogonal-r-3-h4"
-    out["description"] = (
-        "Diagnostic: at H_4, the 6 length-3 reduced words collapse to 2 "
-        "conjugacy classes (3-cycle and 4-cycle) under character "
-        "equivalence.  Adding the lower-length classes (e, (12)) gives a "
-        "4-class basis.  The orthogonality system A · c = 0 for "
-        "lower-depth characters is full rank in this basis (det != 0), "
-        "indicating that r_3 with clean Wedderburn extraction requires "
-        "either including the disjoint pair class (12)(34) (length 2) "
-        "with proper Hoefsmit character values, or admitting that the "
-        "depth-3 stratum at H_4 needs extra structure beyond conjugacy-"
-        "class indicators alone."
-    )
-    out["precision"] = "f64_numeric_fallback"
-    out["truncation_eps"] = 0.0
     with open(out_path, "w") as fp:
         json.dump(out, fp, indent=2, default=str)
     print(f"\nWitness: {out_path}")

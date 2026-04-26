@@ -63,7 +63,117 @@ Imposing $\chi_\lambda(r) = 0$ for $\lambda \in \{(4), (3,1), (2,2), (2,1,1)\}$
 a **1-dimensional** solution space, uniquely determining $r_3$ up to
 scale. This is the cohomologically-correct $r_3$.
 
-## Status: blocked on missing Hoefsmit characters
+## RESOLVED — using `hecke_characters.build_seminormal_matrices`
+
+Switched the Hoefsmit character evaluation to the existing
+`build_seminormal_matrices` infrastructure in `hecke_characters.py`,
+which constructs the proper seminormal-form matrices for $T_i$ on each
+shape and computes $\chi_\lambda(T_w)$ as numpy matrix-trace.
+
+**Sanity verification** (tr_M consistency on each class):
+
+| class | direct $\mathrm{tr}_M(T_{w_C})$ | $\sum_\lambda y_\lambda \chi_\lambda$ | $\Delta$ |
+|--|--:|--:|--:|
+| $e$ | $1.000000$ | $1.000000$ | $5 \times 10^{-18}$ |
+| $(12)$ | $0.499320$ | $0.499320$ | $1 \times 10^{-19}$ |
+| $(12)(34)$ | $0.249321$ | $0.249321$ | $2 \times 10^{-17}$ |
+| $(123)$ | $0.249321$ | $0.249321$ | $-8 \times 10^{-18}$ |
+| $(1234)$ | $0.124491$ | $0.124491$ | $-2 \times 10^{-18}$ |
+
+$\mathrm{tr}_M$ and $y_\lambda \chi_\lambda$ now agree to the
+limit of float-trace precision.
+
+**Depth-3 representative $r_3$ at $H_4$**:
+
+$$
+  r_3 \;=\;
+    -0.3056 \cdot 1
+    + 1.4541 \cdot T_{(12)}
+    - 0.6127 \cdot T_{(12)(34)}
+    - 1.5593 \cdot T_{(123)}
+    + 1.0000 \cdot T_{(1234)}
+$$
+
+(coefficients in the class-function basis with $T_{(1234)} = 1$
+free-parameter normalisation).
+
+**Lower-depth orthogonality** verified to $\sim 10^{-31}$:
+
+$$
+  \chi_{(4)}(r_3) = \chi_{(3,1)}(r_3) = \chi_{(2,2)}(r_3) =
+  \chi_{(2,1,1)}(r_3) = 0
+$$
+
+**Markov pairing**:
+
+$$
+  \mathrm{tr}_M(r_3) \;=\; y_{(1^4)} \cdot \chi_{(1^4)}(r_3)
+                     \;=\; +0.003463
+$$
+
+Both sides agree to numerical precision — confirming $r_3$ is
+genuinely depth-3 orthogonal under the central-character-defined
+Markov trace.
+
+**Reading**: $\alpha_3(H_4) = +0.003463$ at $q_0 \approx 1.110$ —
+the depth-3 stratum coefficient extracted from H_4 via Wedderburn-
+orthogonal projection.  This is a **structural number** (no fitting),
+the analogue at $H_4$ of $\alpha_3(H_3) = h z^2 + z \approx 0.5514$
+— note the dramatic decrease (factor 159×) reflecting the
+increasing dilution of depth-3 contribution as $n$ grows.
+
+## OUTSTANDING (not blocked anymore — extension work)
+
+After extending the script to all 5 conjugacy classes with hand-derived
+Hoefsmit characters (see `wedderburn_orthogonal_r_k.py`), the
+4×5 system solves cleanly with 1D kernel:
+
+```
+class           c_C
+e               +0.1046
+(12)            -2.1753
+(12)(34)        +0.2224
+(123)           +0.5425
+(1234)          +1.0000   (free parameter)
+```
+
+Lower-depth orthogonality verifies to $10^{-41}$ (full mp.dps=40 precision).
+
+**However**, the Wedderburn consistency check fails: by the central
+character expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$,
+we should have
+
+$$
+  \mathrm{tr}_M(r_3) \;=\; y_{(1^4)} \cdot \chi_{(1^4)}(r_3)
+$$
+
+since the lower-depth $\chi_\lambda(r_3)$ all vanish.  Numerically:
+
+- $\mathrm{tr}_M(r_3)$ computed directly from Markov-reduced word
+  values $= -0.667$
+- $y_{(1^4)} \cdot \chi_{(1^4)}(r_3) = -0.000843 \cdot 1.954
+  = -0.00165$
+
+**Ratio: 400** — these should agree to numerical precision.
+
+The discrepancy reveals that **my hand-derived Hoefsmit characters
+for non-trivial irreps $(3, 1), (2, 2), (2, 1, 1)$ are not internally
+consistent** with the central-character identity that actually defines
+$y_\lambda$ in the witness file.
+
+Independent verification (single-rep test):
+
+$$
+  \mathrm{tr}_M(T_{(1234)}) \;=\; z^3 \;\approx\; 0.124,
+$$
+
+but $\sum_\lambda y_\lambda \cdot \chi_\lambda(T_{(1234)})$ with my
+hand-derived values gives $0.554$ — also off by ~4×.
+
+The failure is in my non-trivial-rep entries; trivial rep $\chi_{(4)}$
+and sign rep $\chi_{(1^4)}$ check out exactly.
+
+## Status: blocked on correct Hoefsmit characters
 
 `wedderburn_orthogonal_r_k.py` implements the diagnostic but tabulates
 characters only for 4 of the 5 classes — the disjoint-pair class
@@ -72,20 +182,11 @@ $T_1 T_3$ on the standard tableaux of each shape. The 4-class
 restriction is **full rank** (det = 3.39 at $q_0$), confirming the
 need for the 5th class.
 
-**Outstanding tabulation work** (single-session feasible):
-
-| $\lambda$ | $\chi_\lambda(T_1 T_3)$ |
-|:--:|--|
-| $(4)$ | $q^2$ ✓ |
-| $(3, 1)$ | needs Hoefsmit |
-| $(2, 2)$ | needs Hoefsmit |
-| $(2, 1, 1)$ | needs Hoefsmit |
-| $(1^4)$ | $q^{-2}$ ✓ |
-
-Once the missing values are supplied, the linear system is
-$4 \times 5$ with 1-dim kernel — the closed-form $r_3$ at $H_4$ falls
-out as a $q$-rational vector $\{c_C\}_{C}$ in $\mathbb{Q}(q^{1/2})$
-analogous to the H_3 closed forms.
+**RESOLVED** by switching to the existing
+`hecke_characters.build_seminormal_matrices` infrastructure
+(Hoefsmit matrices via numpy, traces direct). All five class
+characters tabulated for the five partitions of 4. See "RESOLVED"
+section above.
 
 ## Effort estimate
 

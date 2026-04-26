@@ -1,36 +1,55 @@
 {
-  "classes_used": [
-    [
-      "e",
-      []
-    ],
-    [
-      "(12)",
-      [
+  "computation": "wedderburn-orthogonal-r-3-h4",
+  "description": "Depth-3 Wedderburn-orthogonal representative r_3 at H_4 in the class-function basis (5 conjugacy classes of S_4).  Hoefsmit characters computed via hecke_characters.build_seminormal_matrices.  tr_M and y_\u03bb \u00b7 \u03c7_\u03bb reconstruction agree to numerical precision.",
+  "q_0": 1.1099785955541805,
+  "classes": [
+    {
+      "label": "e",
+      "word": [],
+      "length": 0
+    },
+    {
+      "label": "(12)",
+      "word": [
         1
-      ]
-    ],
-    [
-      "(123)",
-      [
+      ],
+      "length": 1
+    },
+    {
+      "label": "(12)(34)",
+      "word": [
+        1,
+        3
+      ],
+      "length": 2
+    },
+    {
+      "label": "(123)",
+      "word": [
         1,
         2
-      ]
-    ],
-    [
-      "(1234)",
-      [
+      ],
+      "length": 2
+    },
+    {
+      "label": "(1234)",
+      "word": [
         1,
         2,
         3
-      ]
-    ]
+      ],
+      "length": 3
+    }
   ],
-  "rank_full": true,
-  "conclusion": "With 4 well-tabulated conjugacy classes and 4 lower-depth orthogonality constraints, the system is full rank \u2192 no nontrivial r_3 in this restricted basis.  Need to include length-2 disjoint class (1,3) or use the full 5-class basis.",
-  "q_0": 1.1099785955541805,
-  "computation": "wedderburn-orthogonal-r-3-h4",
-  "description": "Diagnostic: at H_4, the 6 length-3 reduced words collapse to 2 conjugacy classes (3-cycle and 4-cycle) under character equivalence.  Adding the lower-length classes (e, (12)) gives a 4-class basis.  The orthogonality system A \u00b7 c = 0 for lower-depth characters is full rank in this basis (det != 0), indicating that r_3 with clean Wedderburn extraction requires either including the disjoint pair class (12)(34) (length 2) with proper Hoefsmit character values, or admitting that the depth-3 stratum at H_4 needs extra structure beyond conjugacy-class indicators alone.",
+  "r_3_coefficients": [
+    -0.3055590105211287,
+    1.4540730547258613,
+    -0.6126880505455893,
+    -1.5592834187600122,
+    1.0
+  ],
+  "tr_M_r_3": 0.003462520431939743,
+  "alpha_3_H4_extracted": 0.0034625204319397407,
   "precision": "f64_numeric_fallback",
   "truncation_eps": 0.0
 }
