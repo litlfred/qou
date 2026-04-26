@@ -5,7 +5,7 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::gram;
+use hecke_engine::{gram, seminormal};
 use pyo3::prelude::*;
 
 /// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
@@ -138,6 +138,27 @@ fn atom_per_generator_volumes(
     Ok(list.into())
 }
 
+/// Hoefsmit seminormal character `χ_λ(β)` of a braid `β` for partition
+/// `shape` at parameter `q`.
+///
+/// `shape`: partition λ ⊢ n as a list of descending part sizes.
+/// `word`: braid as `[(sign, generator_index_1based), ...]`,
+///   `sign ∈ {+1, -1}`, `generator_index ∈ {1, ..., n-1}`.
+/// `q`: Hecke parameter (substrate value).
+///
+/// Returns `χ_λ(β) ∈ ℝ`.  Uses the sparse Hoefsmit kernel; gives a
+/// ~50–100× speedup over the pure-Python implementation for `n ≥ 9`.
+#[pyfunction]
+fn chi_lambda_braid(shape: Vec<usize>, word: Vec<(i32, u32)>, q: f64) -> f64 {
+    seminormal::chi_lambda_braid(&shape, &word, q)
+}
+
+/// Enumerate all partitions of `n` as a list of lists.
+#[pyfunction]
+fn partitions_of(n: usize) -> Vec<Vec<usize>> {
+    seminormal::partitions_of(n)
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -151,6 +172,8 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(nf_net, m)?)?;
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
