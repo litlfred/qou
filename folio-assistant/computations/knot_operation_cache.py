@@ -300,6 +300,130 @@ def discover_factorization(
     return ops
 
 
+# ─── SDP / shadow-price discovery for entangled braids ───────────────
+
+
+def discover_via_wedderburn_sdp(
+    braid_nf: list[tuple[int, int]],
+    n: int,
+    q: float | None = None,
+    discovered_by: str = "discover_via_wedderburn_sdp",
+    tolerance: float = 1e-10,
+    y_lambda_table: dict | None = None,
+) -> list[KnotOperation]:
+    """Shadow-price / Wedderburn-block decomposition for entangled braids.
+
+    Complements [`discover_factorization`]: that handles
+    tensor-decomposable braids (disjoint generator-index ranges); this
+    handles the *entangled* case via per-irrep character evaluation.
+
+    For a braid `β` on `n` strands, the Markov trace decomposes as
+
+      `tr_M(T_β) = Σ_{λ ⊢ n} y_λ · χ_λ(T_β)`,
+
+    where `y_λ` is the Plancherel / Jones-Markov weight (from the
+    witness file) and `χ_λ` is the irreducible Hecke character at q.
+    Each `λ` with `|χ_λ(T_β)| > tolerance` corresponds to an *active
+    Wedderburn block* — a sub-component of `β` that lives in the
+    `S^λ`-summand of `H_n(q)`.
+
+    **Shadow-price interpretation** (Schrijver §4):  the dual LP
+    `max  c·u  s.t.  Σ_λ u_λ · y_λ · χ_λ(T_β) ≥ tr_M(T_β),  u_λ ≥ 0`
+    has a non-zero dual price `u_λ` exactly when block `λ` is active.
+    Computing `χ_λ(T_β)` for every `λ` and filtering by the
+    tolerance gives the support of the dual optimum directly,
+    without invoking a full LP solver — adequate for fingerprinting
+    purposes.  Callers needing the explicit `u_λ` values can run the
+    LP downstream using `confinement-lp.py` as a template.
+
+    Returns one KnotOperation per active block.  Each op carries:
+      - `n` = strand count
+      - `braid_word_normal_form` = []  (per-block fingerprint, not the
+        original word — keeps `cache_key` stable across braids that
+        activate the same blocks at the same q)
+      - `plancherel_signature` = {`y_lambda`, `chi_value`, `partition_<i>`}
+        where `partition_<i>` encodes the partition coordinates as
+        floats (since `plancherel_signature` is a dict of floats).
+      - `fingerprint` = {`feeder`, `n`, `partition`} — same shape as
+        the y_λ feeder, so the two feeders' caches interoperate.
+
+    `y_lambda_table` (optional): pre-loaded `{tuple(partition): y_λ}`
+    dict.  If `None`, the function loads `y-lambda-jones-markov-
+    witness.json` lazily.  Provide explicitly if running in a tight
+    inner loop or against a non-default witness.
+
+    `tolerance`: characters with `|χ_λ| < tolerance` are treated as
+    inactive.  Default `1e-10` is conservative for f64 evaluation;
+    the mpfr variant should pass a tighter tolerance.
+    """
+    if not braid_nf:
+        # Empty braid: every block is "active" with χ_λ = dim S^λ.
+        # Emit nothing (caller can use the y_λ feeder for that case).
+        return []
+
+    if q is None:
+        from q_parameter import Q as Q0
+        q = float(Q0)
+
+    import pyhecke_native as p_native
+    parts = [list(lam) for lam in p_native.partitions_of(n)]
+    chars = p_native.chi_lambdas_braid(parts, list(braid_nf), q)
+
+    if y_lambda_table is None:
+        y_lambda_table = _load_y_lambda_table(n)
+
+    new_ops: list[KnotOperation] = []
+    for lam, chi in zip(parts, chars):
+        chi_val = float(chi)
+        if abs(chi_val) < tolerance:
+            continue
+        partition = tuple(lam)
+        partition_str = "(" + ",".join(str(p_) for p_ in partition) + ")"
+        plancherel_sig: dict[str, float] = {
+            "y_lambda": float(y_lambda_table.get(partition, 0.0)),
+            "chi_value": chi_val,
+            "partition_depth": float(len(partition) - 1),
+        }
+        # Encode partition coordinates as part_0, part_1, ... so the
+        # signature uniquely determines the partition (otherwise two
+        # partitions with the same depth would collide).
+        for i, p_i in enumerate(partition):
+            plancherel_sig[f"part_{i}"] = float(p_i)
+        fingerprint = {
+            "feeder": discovered_by,
+            "n": str(n),
+            "partition": partition_str,
+        }
+        op = KnotOperation(
+            n=n,
+            braid_word_normal_form=[],
+            plancherel_signature=plancherel_sig,
+            fingerprint=fingerprint,
+        )
+        new_ops.append(op)
+    return new_ops
+
+
+def _load_y_lambda_table(n: int) -> dict:
+    """Lazy-load the y_λ table for strand-count `n` from the
+    Jones-Markov witness.  Returns `{tuple(partition): y_λ}`; missing
+    entries default to 0.0 in callers."""
+    witness_path = (
+        Path(__file__).parent / "y-lambda-jones-markov-witness.json"
+    )
+    if not witness_path.exists():
+        return {}
+    with open(witness_path, encoding="utf-8") as f:
+        data = json.load(f)
+    table = data.get("tables_by_n", {}).get(str(n))
+    if table is None:
+        return {}
+    return {
+        tuple(entry["partition"]): float(entry["y_lambda"])
+        for entry in table["weights"]
+    }
+
+
 # ─── Composer interface ──────────────────────────────────────────────
 
 def chi_via_factorization(
