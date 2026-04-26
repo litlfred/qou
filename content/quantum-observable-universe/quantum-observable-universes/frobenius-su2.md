@@ -1,4 +1,4 @@
-Continuing [QOU on SU(2)](#ex:qou-su2), set
+Continuing [QOU on $\mathrm{SU}(2)$](#ex:qou-su2), set
 $A = \mathcal{O}(\mathrm{SU}(2))$ with multiplication
 $\mu(f \otimes g) = fg$ (pointwise product) and Frobenius form
 $\int_A = \int_G$ (Haar integral). The dual comultiplication is

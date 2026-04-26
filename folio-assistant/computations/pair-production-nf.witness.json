@@ -110,5 +110,7 @@
       "yb": 0,
       "total": 1
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

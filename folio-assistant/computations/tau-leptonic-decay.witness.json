@@ -110,5 +110,7 @@
     "BR_ratio_SM": 1.0282135628215614,
     "BR_ratio_PDG": 1.0247268545140886,
     "net_ratio": 0.8151571195134072
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

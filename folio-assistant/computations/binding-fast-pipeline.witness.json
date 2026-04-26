@@ -267,5 +267,7 @@
       "B_AME_MeV": 7.71804,
       "delta_m_over_m_pct": 0.03228752549227846
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

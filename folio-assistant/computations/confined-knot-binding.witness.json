@@ -20,7 +20,7 @@
       "passed": true,
       "tolerance": 1e-14,
       "unit": "dimensionless",
-      "source": "W_sym·χ_sym + W_alt·χ_alt = W_sym·(χ_sym+χ_alt) = 0"
+      "source": "W_sym\u00b7\u03c7_sym + W_alt\u00b7\u03c7_alt = W_sym\u00b7(\u03c7_sym+\u03c7_alt) = 0"
     },
     {
       "name": "V_pn = W_std*(z-h/2)",
@@ -38,7 +38,7 @@
   "scriptFile": "confined_knot_binding.py",
   "scriptHash": "6e1b26ab7529",
   "scriptCommitSha": "",
-  "description": "Validates prop:confined-knot-binding. Key result: for symmetric crossings (pn nuclear force), the sym and alt Wedderburn channels cancel exactly (W_sym = W_alt). Binding is carried entirely by the standard representation: V_pn = W_std × (z - H_A/2). The character ratio at each jet level gives the knot factor — no fitting required.",
+  "description": "Validates prop:confined-knot-binding. Key result: for symmetric crossings (pn nuclear force), the sym and alt Wedderburn channels cancel exactly (W_sym = W_alt). Binding is carried entirely by the standard representation: V_pn = W_std \u00d7 (z - H_A/2). The character ratio at each jet level gives the knot factor \u2014 no fitting required.",
   "contentBlock": "prop:confined-knot-binding",
   "parameters": {
     "q": 1.1099785955541805,
@@ -52,7 +52,7 @@
   "data": {
     "crossing_types": [
       {
-        "name": "pp (σ)",
+        "name": "pp (\u03c3)",
         "c": 1,
         "d": 0,
         "chi_sym": 1.1099785956,
@@ -62,7 +62,7 @@
         "sym_alt_cancel": false
       },
       {
-        "name": "nn (σ⁻¹)",
+        "name": "nn (\u03c3\u207b\u00b9)",
         "c": 1,
         "d": -0.20906032198987945,
         "chi_sym": 0.9009182736,
@@ -72,7 +72,7 @@
         "sym_alt_cancel": false
       },
       {
-        "name": "pn (½(σ+σ⁻¹))",
+        "name": "pn (\u00bd(\u03c3+\u03c3\u207b\u00b9))",
         "c": 1,
         "d": -0.10453016099493972,
         "chi_sym": 1.0054484346,
@@ -82,7 +82,7 @@
         "sym_alt_cancel": true
       },
       {
-        "name": "pe (σ₁⁻¹)",
+        "name": "pe (\u03c3\u2081\u207b\u00b9)",
         "c": 1,
         "d": -0.20906032198987945,
         "chi_sym": 0.9009182736,
@@ -92,7 +92,7 @@
         "sym_alt_cancel": false
       },
       {
-        "name": "gluon (σ₀)",
+        "name": "gluon (\u03c3\u2080)",
         "c": 1,
         "d": 0,
         "chi_sym": 1.1099785956,
@@ -104,13 +104,13 @@
     ],
     "character_ratios": [
       {
-        "name": "¹H",
+        "name": "\u00b9H",
         "Z": 1,
         "N": 0,
         "ratio": 1.0
       },
       {
-        "name": "²H",
+        "name": "\u00b2H",
         "Z": 1,
         "N": 1,
         "atom_product": 1.7544370607,
@@ -118,7 +118,7 @@
         "ratio": 2.6149211856
       },
       {
-        "name": "³H",
+        "name": "\u00b3H",
         "Z": 1,
         "N": 2,
         "atom_product": 2.9117910205,
@@ -126,7 +126,7 @@
         "ratio": 6.2122930826
       },
       {
-        "name": "³He",
+        "name": "\u00b3He",
         "Z": 2,
         "N": 1,
         "atom_product": 4.0787977163,
@@ -134,7 +134,7 @@
         "ratio": 6.3299876959
       },
       {
-        "name": "⁴He",
+        "name": "\u2074He",
         "Z": 2,
         "N": 2,
         "atom_product": 7.8684287119,
@@ -142,7 +142,7 @@
         "ratio": 17.4795253835
       },
       {
-        "name": "⁶Li",
+        "name": "\u2076Li",
         "Z": 3,
         "N": 3,
         "atom_product": 39.6879081843,
@@ -150,7 +150,7 @@
         "ratio": 131.4076479267
       },
       {
-        "name": "⁷Li",
+        "name": "\u2077Li",
         "Z": 3,
         "N": 4,
         "atom_product": 73.7298816836,
@@ -158,7 +158,7 @@
         "ratio": 349.4434407381
       },
       {
-        "name": "⁹Be",
+        "name": "\u2079Be",
         "Z": 4,
         "N": 5,
         "atom_product": 398.5800937967,
@@ -166,7 +166,7 @@
         "ratio": 2815.5923194067
       },
       {
-        "name": "¹²C",
+        "name": "\u00b9\u00b2C",
         "Z": 6,
         "N": 6,
         "atom_product": 6310.7542695317,
@@ -174,7 +174,7 @@
         "ratio": 69184.0743985225
       },
       {
-        "name": "¹⁶O",
+        "name": "\u00b9\u2076O",
         "Z": 8,
         "N": 8,
         "atom_product": 189711.771083792,
@@ -182,5 +182,7 @@
         "ratio": 4620199.889463102
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

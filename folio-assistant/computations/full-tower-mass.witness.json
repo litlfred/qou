@@ -220,5 +220,7 @@
     }
   ],
   "mean_err": 0.07130722254839086,
-  "max_err": 0.23827418967421912
+  "max_err": 0.23827418967421912,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

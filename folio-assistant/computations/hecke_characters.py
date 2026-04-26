@@ -222,6 +222,170 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
 # §3  NUCLEAR BRAID CHARACTER
 # ══════════════════════════════════════════════════════════════
 
+# Optional Rust acceleration: pyhecke_native.chi_lambda_braid is
+# 50–100× faster than the pure-Python seminormal multiplication for
+# n ≥ 9.  Falls back transparently to Python if the wheel isn't
+# installed (CI without the Rust toolchain, or fresh checkout
+# without `maturin build`).
+try:
+    import pyhecke_native as _pyn
+    _RUST_CHI_AVAILABLE = True
+except ImportError:
+    _pyn = None
+    _RUST_CHI_AVAILABLE = False
+
+
+# Precision-tag registry — every character / mass / binding result
+# downstream is required to carry one of these tags.  See the user
+# directive: "no fittings, short cuts, approx — symbolic in q or
+# high precision > 50 — keep track of which".
+PRECISION_F64_FALLBACK = "f64_numeric_fallback"
+PRECISION_MPFR_50DPS = "mpfr_50dps"
+PRECISION_SYMBOLIC_Q = "symbolic_q"
+PRECISION_TAGS = {PRECISION_F64_FALLBACK, PRECISION_MPFR_50DPS, PRECISION_SYMBOLIC_Q}
+
+
+def _parse_precision(precision):
+    """Normalize a `precision` arg to a canonical tag.
+
+    Accepts:
+      - "f64" / "fast" / "f64_numeric_fallback"  → f64 (16 dps, fast)
+      - "mpfr" / "exact" / int N (≥ 50)          → mpfr at N dps (default 50)
+      - "symbolic" / "symbolic_q"                → symbolic (deferred)
+
+    Returns `(canonical_tag, dps_or_None)`.
+    """
+    if precision is None or precision == "f64" or precision == "fast" \
+            or precision == PRECISION_F64_FALLBACK:
+        return (PRECISION_F64_FALLBACK, None)
+    if precision == "mpfr" or precision == "exact" or precision == PRECISION_MPFR_50DPS:
+        return (PRECISION_MPFR_50DPS, 50)
+    if isinstance(precision, int) and precision >= 50:
+        return (f"mpfr_{precision}dps", precision)
+    if isinstance(precision, str) and precision.startswith("mpfr_") and precision.endswith("dps"):
+        try:
+            dps = int(precision[5:-3])
+            return (precision, dps)
+        except ValueError:
+            pass
+    if precision == "symbolic" or precision == PRECISION_SYMBOLIC_Q:
+        return (PRECISION_SYMBOLIC_Q, None)
+    raise ValueError(
+        f"Unrecognized precision tag: {precision!r}. "
+        f"Use one of: 'f64', 'mpfr', 'mpfr_50dps', int >= 50, or 'symbolic'."
+    )
+
+
+def chi_lambda_braid(shape, word, q_value=None, precision=None,
+                     return_precision=False):
+    """Character `χ_λ(β)` of a Hecke braid word at parameter `q`.
+
+    Args:
+        shape: partition `λ ⊢ n` as tuple/list of descending parts.
+        word: braid word as `[(sign, generator_1based), ...]`,
+              `sign ∈ {+1, -1}` or `'+'/'-'`,
+              `generator ∈ {1, ..., n-1}`.
+        q_value: Hecke parameter (default: substrate `q₀ = Q`).
+        precision: one of:
+            None / "f64" / "fast"        → f64 (~16 dps), fast Rust kernel
+            "mpfr" / "mpfr_50dps" / 50  → mpfr at 50 dps, exact (no f64 round)
+            "mpfr_<N>dps" / int N≥50    → mpfr at N dps
+            "symbolic" / "symbolic_q"    → symbolic in q (NotImplementedError; F3)
+        return_precision: if True, return `(value, precision_tag)`;
+            if False (default), return value only.
+
+    Defaults to `f64` for backward compatibility — but downstream code
+    that records witnesses MUST pass `precision="mpfr_50dps"` (or
+    higher) to satisfy the "no approximations" directive, OR record
+    the returned `precision` tag in the witness JSON.
+
+    Returns the character.  For `f64`: returns `float`. For `mpfr_*`:
+    returns a string of the decimal expansion (caller may parse via
+    `mpmath.mpf`).  For `symbolic_q`: not yet implemented (raises).
+    """
+    if q_value is None:
+        q_value = float(q0)
+    tag, dps = _parse_precision(precision)
+
+    # Normalize word.
+    word_marshalled = [
+        (1 if (s == '+' or s == 1 or s is True) else -1, int(g))
+        for s, g in word
+    ]
+
+    if tag == PRECISION_SYMBOLIC_Q:
+        raise NotImplementedError(
+            "symbolic-in-q character evaluation is deferred to F3 "
+            "(Murnaghan–Nakayama / Ram–Wenzl recursion in Rust). "
+            "For now use precision='mpfr_50dps' for exact evaluation."
+        )
+
+    if tag.startswith("mpfr_"):
+        if not _RUST_CHI_AVAILABLE:
+            raise NotImplementedError(
+                f"precision={tag} requires the Rust kernel "
+                "(pyhecke_native). Install via `maturin build` in "
+                "tools/pyhecke-native/."
+            )
+        # Preserve full precision in q_value: if caller passes a string
+        # like "1.10998", route it directly to mpfr without going through
+        # f64 (which would lose precision to ~16 dps).
+        if isinstance(q_value, str):
+            q_str = q_value
+        else:
+            # f64 → string at f64-equivalent precision (caller chose
+            # to pass a float — implicit acceptance of f64 boundary loss).
+            q_str = format(float(q_value), f".{(dps or 50) + 5}g")
+        result = _pyn.chi_lambda_braid_mpfr(
+            list(shape), word_marshalled, q_str, dps or 50
+        )
+        return (result, tag) if return_precision else result
+
+    # Default: f64 fast path.
+    if _RUST_CHI_AVAILABLE:
+        value = _pyn.chi_lambda_braid(
+            list(shape), word_marshalled, float(q_value)
+        )
+        return (value, PRECISION_F64_FALLBACK) if return_precision else value
+
+    # Python fallback: build seminormal matrices and multiply.
+    # `build_seminormal_matrices` is calibrated against the global
+    # substrate parameter `q0`/`h`, so the fallback is *only* valid at
+    # `q_value == q0`.  Reject non-default q_value here rather than
+    # silently returning an inconsistent character (Copilot review
+    # #r3142936624).
+    if not math.isclose(float(q_value), float(q0), rel_tol=0.0, abs_tol=0.0):
+        raise ValueError(
+            "chi_lambda_braid() Python fallback only supports "
+            "q_value == q0; install the Rust kernel (pyhecke_native) "
+            "for non-default q_value."
+        )
+    sigmas, dim, _ = build_seminormal_matrices(tuple(shape))
+    if dim == 0:
+        return 0.0
+    from scipy import sparse as sp_sparse
+    is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
+    if is_sparse:
+        product = sp_sparse.eye(dim, format='csr')
+        I = sp_sparse.eye(dim, format='csr')
+    else:
+        product = np.eye(dim)
+        I = np.eye(dim)
+    h_local = q_value - 1.0 / q_value
+    for sign, gen in word_marshalled:
+        idx = gen - 1
+        if idx < 0 or idx >= len(sigmas):
+            continue
+        if sign > 0:
+            M = sigmas[idx]
+        else:
+            M = sigmas[idx] - h_local * I
+        product = product @ M
+    if is_sparse:
+        return float(product.diagonal().sum())
+    return float(np.trace(product))
+
+
 def crossing_coeffs(ti, tj):
     """Crossing (c, d) for nucleon types: 1=proton, 0=neutron."""
     if ti == 1 and tj == 1:

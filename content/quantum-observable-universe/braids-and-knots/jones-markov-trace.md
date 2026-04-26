@@ -9,7 +9,8 @@ type $A_{n-1}$.  Then:
    - **(Normalisation)**: $\mathrm{tr}_M(1) = 1$.
    - **(Trace property)**: $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$
      for all $a, b \in H_n(R, q)$.
-   - **(Markov property)**: $\mathrm{tr}_M(x T_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$ for all $x \in H_n(R, q)$, where
+   - **(Markov property)**: $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$ for all $x \in H_n(R, q)$, viewed in
+     $H_{n+1}(q)$ under the standard embedding $H_n(R, q) \hookrightarrow H_{n+1}(q)$, where
      $z = (q - 1)/(q^{1/2} + q^{-1/2})^2$ (determined by $q$).
 
 2. **(Non-degeneracy on irreducibles.)** For each partition

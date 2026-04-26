@@ -1,4 +1,4 @@
-Continuing [connection on SU(2)](#ex:connection-su2), take
+Continuing [connection on $\mathrm{SU}(2)$](#ex:connection-su2), take
 $A = \mathcal{O}(\mathrm{SU}(2))$ with Haar integral $\int_A = \int_G$,
 connection $\nabla f = df + \mathcal{A} \cdot f$, and a state
 $\psi \in A$ (a function on the group).

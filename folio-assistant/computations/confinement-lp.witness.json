@@ -139,5 +139,7 @@
       "sdp_moment_rank": 6,
       "gram_min_eigenvalue": -0.7408452101064132
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

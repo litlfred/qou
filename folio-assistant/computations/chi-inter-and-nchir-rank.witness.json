@@ -35,7 +35,7 @@
   "scriptFile": "chi_inter_and_nchir_rank.py",
   "scriptHash": "db297842b09f",
   "scriptCommitSha": "48ff4dcbfd468587804cf607a455992a2e0f0a31",
-  "description": "Two results: (1) χ_λ at the inter-nucleon pn-boundary factor for every λ ⊢ 3A — extension of chi-std-pernucleon-theorem to the inter-nucleon piece via explicit Hoefsmit trace; (2) Plancherel-weighted identification of the dominant block in tr_M(β_atom) and check of its rank against the phenomenological n_chir ∈ {1, 2}.",
+  "description": "Two results: (1) \u03c7_\u03bb at the inter-nucleon pn-boundary factor for every \u03bb \u22a2 3A \u2014 extension of chi-std-pernucleon-theorem to the inter-nucleon piece via explicit Hoefsmit trace; (2) Plancherel-weighted identification of the dominant block in tr_M(\u03b2_atom) and check of its rank against the phenomenological n_chir \u2208 {1, 2}.",
   "parameters": {
     "q_0": 1.1099785955541805,
     "H_A": 0.20906032198987945
@@ -1371,6 +1371,8 @@
     ]
   },
   "caveats": [
-    "Partitions with dim > 200 are skipped (time budget).  For D (n = 6) max dim is 16, for T/³He (n = 9) max dim is 168, so the cap includes all of those.  For ⁴He (n = 12, 77 partitions, max dim 1232) the largest blocks are still excluded."
-  ]
+    "Partitions with dim > 200 are skipped (time budget).  For D (n = 6) max dim is 16, for T/\u00b3He (n = 9) max dim is 168, so the cap includes all of those.  For \u2074He (n = 12, 77 partitions, max dim 1232) the largest blocks are still excluded."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

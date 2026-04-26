@@ -1,4 +1,4 @@
-Continuing the [Reeb derivation for SU(2)](#ex:reeb-su2) and the
+Continuing the [Reeb derivation for $\mathrm{SU}(2)$](#ex:reeb-su2) and the
 [Bring coordinate ring](#def:brings-coordinate-ring), we construct
 the [categorical Reeb derivation](#def:categorical-reeb)
 $(\xi, \theta_A)$ on Bring's surface explicitly.

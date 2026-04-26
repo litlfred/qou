@@ -777,5 +777,7 @@
       "B_AME": 7.7180375,
       "err_pct": -99.41054171528158
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

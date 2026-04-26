@@ -413,5 +413,7 @@
         "terms_before_reduce": 980
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

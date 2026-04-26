@@ -91,5 +91,7 @@
     "SageMath with QuantumKnotInvariants (colored Jones)",
     "SnapPy for link diagram of Hopf(trefoil, Borromean)",
     "Direct Reshetikhin-Turaev evaluation"
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

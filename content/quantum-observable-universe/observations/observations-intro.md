@@ -24,3 +24,15 @@ Every numerical prediction in this chapter uses $\approx$ (not $=$)
 to indicate that the values are derived approximations at $q_0$, not
 exact identities.  Error terms and percentage deviations from
 experimental data are tabulated explicitly.
+
+**Notation note.**  Throughout this chapter we use plain italic
+$m_e$, $m_p$, $m_n$ for the **CODATA-measured** electron, proton,
+and neutron masses, treated as experimental input — distinct from
+the categorical mass $\mathfrak{m}$ of CLAUDE.md §7aa, which denotes
+the QOU-derived mass via the topological mass formula
+$\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$.  The role of $m_e$
+in this chapter is as an **external scaling ruler**: it fixes the
+absolute energy scale, and all other masses are predicted as ratios
+$\mathfrak{m}(K)/\mathfrak{m}(4_1) \cdot m_e$.  When a comparison
+table juxtaposes "QOU prediction" against "CODATA value", both are
+in MeV; the ratio is dimensionless and substrate-derived.

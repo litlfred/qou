@@ -256,5 +256,7 @@
       "target_2me_err_pct": 48.25157713960577,
       "atom_label": "4He"
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

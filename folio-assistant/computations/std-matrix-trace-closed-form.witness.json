@@ -1061,5 +1061,7 @@
       "rho_F_observed_MeV": 1.053265203008642,
       "ratio_der_over_obs": 0.0028995739896596246
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

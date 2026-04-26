@@ -65,7 +65,7 @@
       "passed": true,
       "tolerance": 1.7730400484247527e-08,
       "unit": "dimensionless",
-      "source": "F_0 = |Σ J(T) · tr(T · Δ_mix)| over degree-0 knots"
+      "source": "F_0 = |\u03a3 J(T) \u00b7 tr(T \u00b7 \u0394_mix)| over degree-0 knots"
     },
     {
       "name": "F_1 (degree-1 factor)",
@@ -74,7 +74,7 @@
       "passed": true,
       "tolerance": 6.721933771269404e-07,
       "unit": "dimensionless",
-      "source": "F_1 = |Σ J(T) · tr(T · Δ_mix)| over degree-1 knots"
+      "source": "F_1 = |\u03a3 J(T) \u00b7 tr(T \u00b7 \u0394_mix)| over degree-1 knots"
     },
     {
       "name": "F_2 (degree-2 factor)",
@@ -83,7 +83,7 @@
       "passed": true,
       "tolerance": 5.749665693751788e-07,
       "unit": "dimensionless",
-      "source": "F_2 = |Σ J(T) · tr(T · Δ_mix)| over degree-2 knots"
+      "source": "F_2 = |\u03a3 J(T) \u00b7 tr(T \u00b7 \u0394_mix)| over degree-2 knots"
     }
   ],
   "allPassed": true,
@@ -92,13 +92,13 @@
   "scriptFile": "rosso-jones-qvalues.py",
   "scriptHash": "33ddf8c4e032",
   "scriptCommitSha": "dc129b1c6ad8ff703d3fd2e93e44eafd4f7216e3",
-  "description": "Rosso--Jones decomposition of embeddable torus knots on Σ₄ for beta decay Q-values. The 6 embeddable torus knots {T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}, T_{2,9}, T_{3,4}} form a complete, self-dual basis for the Hilbert space of H_n(q). Degree factors F_k are computed via Markov traces of J(T)·T·Δ_mix products.",
+  "description": "Rosso--Jones decomposition of embeddable torus knots on \u03a3\u2084 for beta decay Q-values. The 6 embeddable torus knots {T_{2,3}, T_{2,5}, T_{2,7}, T_{3,5}, T_{2,9}, T_{3,4}} form a complete, self-dual basis for the Hilbert space of H_n(q). Degree factors F_k are computed via Markov traces of J(T)\u00b7T\u00b7\u0394_mix products.",
   "contentBlock": "prop:spectral-decomposition-qvalue",
   "parameters": {
-    "q₀": 1.1099785955541805,
-    "q₀_err": 1.3578965598837824e-09,
-    "E_× (MeV)": 0.10453016099493972,
-    "μ₀ (MeV)": 1.6295103892701275
+    "q\u2080": 1.1099785955541805,
+    "q\u2080_err": 1.3578965598837824e-09,
+    "E_\u00d7 (MeV)": 0.10453016099493972,
+    "\u03bc\u2080 (MeV)": 1.6295103892701275
   },
   "data": {
     "rosso_jones_decomposition": [
@@ -169,7 +169,9 @@
     }
   },
   "caveats": [
-    "Degree factors F_k are universal (same for all nuclei). The product ∏ F_k collapses the full spectral decomposition.",
-    "The canonical Q-value prediction (with q/q⁻¹ direction weighting and shell correction) is in qvalue-representation-theory.py. This script provides the RJ decomposition data consumed by that method."
-  ]
+    "Degree factors F_k are universal (same for all nuclei). The product \u220f F_k collapses the full spectral decomposition.",
+    "The canonical Q-value prediction (with q/q\u207b\u00b9 direction weighting and shell correction) is in qvalue-representation-theory.py. This script provides the RJ decomposition data consumed by that method."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

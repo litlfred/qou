@@ -68,5 +68,7 @@
       "rho_F_derived": 0.5319609670232952,
       "rho_F_nominal": 1.0219979
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

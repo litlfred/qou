@@ -6647,5 +6647,7 @@
       "volume": 5.33348956689812,
       "err_pct": 22.514118327078247
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -5,7 +5,7 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::gram;
+use hecke_engine::{gram, seminormal, seminormal_mpfr};
 use pyo3::prelude::*;
 
 /// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
@@ -138,6 +138,82 @@ fn atom_per_generator_volumes(
     Ok(list.into())
 }
 
+/// Hoefsmit seminormal character `χ_λ(β)` of a braid `β` for partition
+/// `shape` at parameter `q`.
+///
+/// `shape`: partition λ ⊢ n as a list of descending part sizes.
+/// `word`: braid as `[(sign, generator_index_1based), ...]`,
+///   `sign ∈ {+1, -1}`, `generator_index ∈ {1, ..., n-1}`.
+/// `q`: Hecke parameter (substrate value).
+///
+/// Returns `χ_λ(β) ∈ ℝ`.  Uses the sparse Hoefsmit kernel; gives a
+/// ~50–100× speedup over the pure-Python implementation for `n ≥ 9`.
+#[pyfunction]
+fn chi_lambda_braid(shape: Vec<usize>, word: Vec<(i32, u32)>, q: f64) -> f64 {
+    seminormal::chi_lambda_braid(&shape, &word, q)
+}
+
+/// Enumerate all partitions of `n` as a list of lists.
+#[pyfunction]
+fn partitions_of(n: usize) -> Vec<Vec<usize>> {
+    seminormal::partitions_of(n)
+}
+
+/// **Batch character evaluation across many partitions** (rayon-parallel).
+///
+/// Evaluates `χ_λ(β)` for every partition in `shapes` in parallel using
+/// Rust rayon.  Returns a `List[float]` in the same order.
+///
+/// Faster than calling `chi_lambda_braid` from a Python
+/// `multiprocessing.Pool`: no per-partition pickling overhead, rayon
+/// work-stealing balances dim variation across partitions.
+#[pyfunction]
+fn chi_lambdas_braid(
+    shapes: Vec<Vec<usize>>,
+    word: Vec<(i32, u32)>,
+    q: f64,
+) -> Vec<f64> {
+    seminormal::chi_lambdas_braid(&shapes, &word, q)
+}
+
+/// **Batch MPFR character evaluation across many partitions** (rayon-parallel).
+///
+/// Like `chi_lambda_braid_mpfr` but in batch.  Returns a `List[str]`,
+/// each entry being a decimal string at requested `dps` precision.
+#[pyfunction]
+#[pyo3(signature = (shapes, word, q_str, dps=50))]
+fn chi_lambdas_braid_mpfr(
+    shapes: Vec<Vec<usize>>,
+    word: Vec<(i32, u32)>,
+    q_str: String,
+    dps: u32,
+) -> Vec<String> {
+    seminormal_mpfr::chi_lambdas_braid_mpfr(&shapes, &word, &q_str, dps)
+}
+
+/// **High-precision (MPFR) character `χ_λ(β)`.**
+///
+/// Computes the Hoefsmit seminormal character at `dps` decimal-precision
+/// using MPFR-backed arbitrary-precision arithmetic. Returns the result
+/// as a decimal string (callers should parse via `mpmath.mpf` or
+/// equivalent). Substantially slower than the `f64` path (~10–30×) but
+/// exact at the requested precision — no f64 rounding error.
+///
+/// `q_str`: substrate parameter as a decimal string (avoids f64 lossy
+///   conversion at the boundary).
+/// `dps`: requested decimal precision (default 50 if caller passes a
+///   smaller value, MPFR uses internal guard bits).
+#[pyfunction]
+#[pyo3(signature = (shape, word, q_str, dps=50))]
+fn chi_lambda_braid_mpfr(
+    shape: Vec<usize>,
+    word: Vec<(i32, u32)>,
+    q_str: String,
+    dps: u32,
+) -> String {
+    seminormal_mpfr::chi_lambda_braid_mpfr(&shape, &word, &q_str, dps)
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -151,6 +227,11 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(nf_net, m)?)?;
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)

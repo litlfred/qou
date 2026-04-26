@@ -63,5 +63,7 @@
       "source": "census",
       "vol_50digit": "4.4153324774538658249498396351470685976382799904376"
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe satisfying
 the
 ([categorical volume constraint](#eq:categorical-volume-constraint)), so that
 $G_q = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}_q(2)$
-([SU(2) emergence](#thm:su2-emergence)). Then the inner-automorphism
+([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)). Then the inner-automorphism
 $2$-group $\mathrm{INN}(G_q)$ is the unique strict $2$-group whose
 quantum flatness condition $F_A = B$ reproduces the
 instanton equation $F_A^{-} = 0$ under the simplicity constraint.

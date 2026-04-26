@@ -796,5 +796,7 @@
     "min_dm_m_pct": 0.12418944921701783,
     "max_dm_m_pct": 434.4656021293918,
     "mean_dm_m_pct": 19.475195429588037
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

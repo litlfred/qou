@@ -72,5 +72,7 @@
       "dev_pct": -5.541473866998806
     }
   ],
-  "notes": "Jones polynomial coefficients hardcoded from KnotInfo (6_2, 8_11) and LinkInfo (Borromean L6a4).  Four disjoint Borromeans evaluated multiplicatively; this is an approximation \u2014 the exact multi-component Jones convention for disjoint unions differs."
+  "notes": "Jones polynomial coefficients hardcoded from KnotInfo (6_2, 8_11) and LinkInfo (Borromean L6a4).  Four disjoint Borromeans evaluated multiplicatively; this is an approximation \u2014 the exact multi-component Jones convention for disjoint unions differs.",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

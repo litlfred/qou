@@ -55,3 +55,22 @@ $$
   \mathfrak{p} = [\mathfrak{K}_u, \mathfrak{K}_u, \mathfrak{K}_d]_p
   \bowtie \mathcal{L}_H
 $$
+
+**Hecke / Skein conventions for worked examples.**
+Per [CLAUDE.md §7a Hecke-Skein
+convention](https://github.com/litlfred/qou/blob/main/CLAUDE.md), the
+Hecke generator is **$\sigma_i$** (the same symbol serves both as
+braid generator in $B_n$ and its image in $H_n(R, q)$; context
+disambiguates), satisfying the Hecke relation
+$\sigma_i^{2} = (q - q^{-1})\sigma_i + 1$ and the Skein relation
+$\sigma_i - \sigma_i^{-1} = q - q^{-1}$.  The two eigenchannels on
+$V \otimes V$ are symmetric (eigenvalue $q$, projector $e_+$) and
+antisymmetric (eigenvalue $-q^{-1}$, projector $e_-$); see
+[Hecke–Markov interpretation](#rem:hecke-markov-interpretation)
+for the full eigenprojector decomposition.  The Jones polynomial
+is **$J_K(q)$** throughout (never $V_K(t)$ or the bracket variable
+$A$).  When a worked example evaluates a knot's mass, it uses the
+topological mass formula
+$\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_q^{2}$
+([prop:topological-mass-formula](#prop:topological-mass-formula))
+with $\hbar_q = 1 - q^{-1}$ the quantum Planck constant.

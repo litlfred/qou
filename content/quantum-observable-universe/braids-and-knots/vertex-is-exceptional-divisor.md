@@ -5,10 +5,10 @@ at a brane point $p$
 $\mathcal{R}_p$ denote the Reeb bundle over $\mathcal{S}_p$
 ([Reeb bundle](#def:reeb-bundle)).  Then:
 
-1. **Localisation.**  Every Hecke generator $T_i \in H_n(R, q)$
+1. **Localisation.**  Every Hecke generator $\sigma_i \in H_n(R, q)$
    acting on $V^{\otimes n}$ factors through the fibre functor
    restricted to $\mathcal{S}_p$.  That is, the vertex operator
-   $T_i \colon V^{\otimes n} \to V^{\otimes n}$ is supported on
+   $\sigma_i \colon V^{\otimes n} \to V^{\otimes n}$ is supported on
    $\mathcal{S}_p$ and acts trivially on the base algebra $A_0$.
 
 2. **Confinement.**  Every Skein resolution

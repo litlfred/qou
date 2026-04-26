@@ -49,7 +49,7 @@ is characterised uniquely by Markov's axioms (I) and (II)
 
 - *(I) Cyclicity*: $\mathrm{tr}_M(\alpha\beta) =
   \mathrm{tr}_M(\beta\alpha)$.
-- *(II) Markov move*: $\mathrm{tr}_M(\alpha \cdot T_{n-1}) =
+- *(II) Markov move*: $\mathrm{tr}_M(\alpha \cdot \sigma_{n-1}) =
   z \cdot \mathrm{tr}_M(\alpha)$ for $\alpha \in H_{n-1}(q)$,
   with $z = (q^{1/2} + q^{-1/2})^{-1} = u/(u^2+1)$.
 
@@ -70,7 +70,7 @@ hence $p(u) \in \mathbb{Q}[u, u^{-1}]$.
 
 **Integrality in $\mathbb{Z}$**: the Jones-Markov trace takes
 values in $\mathbb{Z}[q^{1/2}, q^{-1/2}]$ when applied to braid
-words in the standard generators $T_i$ (this is the integrality
+words in the standard generators $\sigma_i$ (this is the integrality
 of the Jones polynomial as a knot invariant;
 \cite{jones1987} Theorem 3).  The atomic braid is a word in the
 standard Hecke generators, so

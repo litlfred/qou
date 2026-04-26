@@ -1,7 +1,7 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)). Because
 $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$
-([SU(2) emergence](#thm:su2-emergence)), the simple objects of $\mathbf{C}$
+([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)), the simple objects of $\mathbf{C}$
 are indexed by a *spin* label $j \in \{0, \tfrac12, 1, \tfrac32, \ldots\}$, with $V_j$ denoting the simple object of
 categorical dimension $2j + 1$.
 The *fundamental object* is $V = V_{1/2}$, the unique simple object

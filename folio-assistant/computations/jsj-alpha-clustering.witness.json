@@ -91,5 +91,7 @@
       "err_pct": 3.9799018445754606
     }
   ],
-  "c_lsq_from_all_magic": 1.4134170909849748
+  "c_lsq_from_all_magic": 1.4134170909849748,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -9,10 +9,10 @@ $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the
 level-$(n{+}1)$ relations into **descended** (inherited from
 level $n$) and **transient** (genuinely new at level $n{+}1$).
 
-Write $T_i^{(n)}$ for the Hecke generators at brane level $n$,
+Write $\sigma_i^{(n)}$ for the Hecke generators at brane level $n$,
 $\mathrm{tr}_M^{(n)}$ for the level-$n$ Markov trace, and
 $\check{R}^{(n)}$ for the $R$-matrix at level $n$.  The
-jet embedding is $\ell_n\colon H^{(n)}(q) \hookrightarrow H^{(n+1)}(q)$ with $\ell_n(T_i^{(n)}) = T_i^{(n+1)}$, and
+jet embedding is $\ell_n\colon H^{(n)}(q) \hookrightarrow H^{(n+1)}(q)$ with $\ell_n(\sigma_i^{(n)}) = \sigma_i^{(n+1)}$, and
 the descent is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q)$ with $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.
 
 ---
@@ -24,11 +24,11 @@ the descent is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q)$ with $\mat
 The Hecke generators at every brane level satisfy the same
 quadratic, braid, and locality relations:
 
-**(J-1a)** $T_i^{(n)2} =  (q - q^{-1})T_i^{(n)} + 1$
+**(J-1a)** $\sigma_i^{(n)2} =  (q - q^{-1})\sigma_i^{(n)} + 1$
 
-**(J-1b)** $T_i^{(n)} T_{i+1}^{(n)} T_i^{(n)} =  T_{i+1}^{(n)} T_i^{(n)} T_{i+1}^{(n)}$
+**(J-1b)** $\sigma_i^{(n)} \sigma_{i+1}^{(n)} \sigma_i^{(n)} =  \sigma_{i+1}^{(n)} \sigma_i^{(n)} \sigma_{i+1}^{(n)}$
 
-**(J-1c)** $T_i^{(n)} T_j^{(n)} =  T_j^{(n)} T_i^{(n)} \qquad (|i - j| \geq 2)$
+**(J-1c)** $\sigma_i^{(n)} \sigma_j^{(n)} =  \sigma_j^{(n)} \sigma_i^{(n)} \qquad (|i - j| \geq 2)$
 
 The substrate parameter $q$ is the **same at every level** —
 this is the content of the Euler characteristic stability
@@ -61,7 +61,7 @@ $$
   \bigr).
 $$
 
-**(J-2b) Antipode at level $n$**: $S_n(T_i^{(n)}) = T_i^{(n)-1} = T_i^{(n)} - (q - q^{-1})$.
+**(J-2b) Antipode at level $n$**: $S_n(\sigma_i^{(n)}) = \sigma_i^{(n)-1} = \sigma_i^{(n)} - (q - q^{-1})$.
 
 **(J-2c) Level-$n$ Frobenius pairing**:
 
@@ -80,16 +80,16 @@ Non-degeneracy: $\det G^{(n)}_{ij} \neq 0$ at every brane level.
 **(J-3a) Conjugation invariance**:
 
 $$
-  \mathrm{tr}_M^{(n)}(T_i^{(n)} \cdot w)
+  \mathrm{tr}_M^{(n)}(\sigma_i^{(n)} \cdot w)
   = 
-  \mathrm{tr}_M^{(n)}(w \cdot T_i^{(n)})
+  \mathrm{tr}_M^{(n)}(w \cdot \sigma_i^{(n)})
   \qquad \forall w \in H^{(n)}(q).
 $$
 
 **(J-3b) Stabilisation**:
 
 $$
-  \mathrm{tr}_M^{(n)}(w \cdot T_m^{(n)\pm 1})
+  \mathrm{tr}_M^{(n)}(w \cdot \sigma_m^{(n)\pm 1})
   = 
   \frac{1}{\delta} \mathrm{tr}_M^{(n)}(w),
   \qquad
@@ -134,7 +134,7 @@ The unknot embeds identically at every level.
 ### J-5: Observability at level $n$
 
 $$
-  T_i^{(n)} w T_i^{(n)-1} = w
+  \sigma_i^{(n)} w \sigma_i^{(n)-1} = w
    \forall i
   \quad\Longrightarrow\quad
   w \in R \cdot 1  \text{in } H^{(n)}(q).
@@ -153,7 +153,7 @@ $$
   \epsilon_n \circ (\Lambda^2 g_V^{(n)}) = \epsilon_n.
 $$
 
-The $q$-antisymmetriser $\mathrm{Alt}_2^{(n)} = \frac{1}{[2]_q}(\mathrm{id} - q^{-1} T_1^{(n)})$ has the same
+The $q$-antisymmetriser $\mathrm{Alt}_2^{(n)} = \frac{1}{[2]_q}(\mathrm{id} - q^{-1} \sigma_1^{(n)})$ has the same
 form at every level (same $q$), so the volume constraint is
 **level-independent**.
 
@@ -167,13 +167,13 @@ splits every relation into descended and transient parts.
 ### D-1: Descended Hecke generators
 
 $$
-  \hat{\tau}_n(T_i^{(n+1)})
+  \hat{\tau}_n(\sigma_i^{(n+1)})
   = 
-  \ell_n\!\bigl(\mathfrak{d}_{n+1}(T_i^{(n+1)})\bigr)
+  \ell_n\!\bigl(\mathfrak{d}_{n+1}(\sigma_i^{(n+1)})\bigr)
   = 
-  \ell_n(T_i^{(n)})
+  \ell_n(\sigma_i^{(n)})
   = 
-  T_i^{(n+1)}.
+  \sigma_i^{(n+1)}.
 $$
 
 For $i \leq n-1$: the base Hecke generators are **entirely
@@ -183,13 +183,13 @@ Hecke relation QU-1a is purely descended.
 ### D-2: Transient generators
 
 At level $n{+}1$, the jet prolongation may produce new
-generators $T^{(n+1)}_{\mathrm{new}}$ in the transient
+generators $\sigma^{(n+1)}_{\mathrm{new}}$ in the transient
 complement $\mathcal{A}^{\mathrm{trans}}_{n+1} = \ker\hat{\tau}_n$.  These satisfy:
 
 $$
-  \hat{\tau}_n(T^{(n+1)}_{\mathrm{new}}) =  0,
+  \hat{\tau}_n(\sigma^{(n+1)}_{\mathrm{new}}) =  0,
   \qquad
-  \mathfrak{d}_{n+1}(T^{(n+1)}_{\mathrm{new}}) =  0.
+  \mathfrak{d}_{n+1}(\sigma^{(n+1)}_{\mathrm{new}}) =  0.
 $$
 
 Transient generators have no pre-image at level $n$.  They
@@ -198,7 +198,7 @@ but their Markov traces are **invisible at level $n$**:
 
 $$
   \mathrm{tr}_M^{(n)}\!\bigl(
-    \mathfrak{d}_{n+1}(T^{(n+1)}_{\mathrm{new}})
+    \mathfrak{d}_{n+1}(\sigma^{(n+1)}_{\mathrm{new}})
   \bigr)
   =  0.
 $$
@@ -270,7 +270,7 @@ $$
   q^{-1}(1 - q^{-1})\omega_V^{(n)} \wedge_q [\xi_n, \alpha],
 $$
 
-where $\omega_V^{(n)} = \sum_{i<j}(T_i^{(n)} T_j^{(n)} - T_j^{(n)} T_i^{(n)})dz^i \wedge dz^j$ is the level-$n$
+where $\omega_V^{(n)} = \sum_{i<j}(\sigma_i^{(n)} \sigma_j^{(n)} - \sigma_j^{(n)} \sigma_i^{(n)})dz^i \wedge dz^j$ is the level-$n$
 Hecke Casimir.  Since $q$ is level-independent, the
 obstruction to $d_q^2 = 0$ has the **same algebraic form**
 at every level — but acts on a larger algebra.
@@ -358,9 +358,9 @@ with differentials controlled by $\kappa_n$.
 ### JC-6: Instanton constraint at level $n$
 
 $$
-  S_n\!\bigl([T_i^{(n)}, T_j^{(n)}]\bigr)^*
+  S_n\!\bigl([\sigma_i^{(n)}, \sigma_j^{(n)}]\bigr)^*
   = 
-  [T_i^{(n)}, T_j^{(n)}].
+  [\sigma_i^{(n)}, \sigma_j^{(n)}].
 $$
 
 Self-duality of the curvature holds at every level by
@@ -457,24 +457,24 @@ element of the direct limit.
 
 | Label | Relation at level $n$ | Source |
 |-------|----------------------|--------|
-| J-1a | $T_i^{(n)2} = (q-q^{-1})T_i^{(n)} + 1$ | QU-1a |
-| J-1b | $T_i^{(n)}T_{i+1}^{(n)}T_i^{(n)} = T_{i+1}^{(n)}T_i^{(n)}T_{i+1}^{(n)}$ | QU-1b |
-| J-1c | $T_i^{(n)}T_j^{(n)} = T_j^{(n)}T_i^{(n)}$ | QU-1c |
+| J-1a | $\sigma_i^{(n)2} = (q-q^{-1})\sigma_i^{(n)} + 1$ | QU-1a |
+| J-1b | $\sigma_i^{(n)}\sigma_{i+1}^{(n)}\sigma_i^{(n)} = \sigma_{i+1}^{(n)}\sigma_i^{(n)}\sigma_{i+1}^{(n)}$ | QU-1b |
+| J-1c | $\sigma_i^{(n)}\sigma_j^{(n)} = \sigma_j^{(n)}\sigma_i^{(n)}$ | QU-1c |
 | J-2a | $\Delta_n \circ \mu_n = (\mu_n \otimes 1)(1 \otimes \Delta_n)$ | QU-2b |
-| J-2b | $S_n(T_i^{(n)}) = T_i^{(n)} - (q-q^{-1})$ | QU-2d |
-| J-3a | $\mathrm{tr}_M^{(n)}(T_i^{(n)}w) = \mathrm{tr}_M^{(n)}(wT_i^{(n)})$ | QU-3a |
-| J-3b | $\mathrm{tr}_M^{(n)}(wT_m^{(n)\pm 1}) = \delta^{-1}\mathrm{tr}_M^{(n)}(w)$ | QU-3b |
+| J-2b | $S_n(\sigma_i^{(n)}) = \sigma_i^{(n)} - (q-q^{-1})$ | QU-2d |
+| J-3a | $\mathrm{tr}_M^{(n)}(\sigma_i^{(n)}w) = \mathrm{tr}_M^{(n)}(w\sigma_i^{(n)})$ | QU-3a |
+| J-3b | $\mathrm{tr}_M^{(n)}(w\sigma_m^{(n)\pm 1}) = \delta^{-1}\mathrm{tr}_M^{(n)}(w)$ | QU-3b |
 | J-3c | $\mathrm{tr}_M^{(n+1)}(\ell_n(w)) = \mathrm{tr}_M^{(n)}(w)$ | New (inter-level) |
 | J-4a | $[L_{-1}, a_m^{(n)}] = -ma_{m-1}^{(n+1)}$ | QU-4a (inter-level) |
-| J-5 | $T_i^{(n)}wT_i^{(n)-1}=w\forall i \Rightarrow w \in R$ | QUO-2 |
+| J-5 | $\sigma_i^{(n)}w\sigma_i^{(n)-1}=w\forall i \Rightarrow w \in R$ | QUO-2 |
 | J-6 | $\epsilon_n \circ \mathrm{Alt}_2^{(n)} = \epsilon_n$ | QUO-4 |
 
 **Descent decomposition**:
 
 | Label | Relation | Content |
 |-------|----------|---------|
-| D-1 | $\hat{\tau}_n(T_i^{(n+1)}) = T_i^{(n+1)}$ for $i \leq n-1$ | Base generators descended |
-| D-2 | $\hat{\tau}_n(T^{(n+1)}_{\mathrm{new}}) = 0$ | Transient generators |
+| D-1 | $\hat{\tau}_n(\sigma_i^{(n+1)}) = \sigma_i^{(n+1)}$ for $i \leq n-1$ | Base generators descended |
+| D-2 | $\hat{\tau}_n(\sigma^{(n+1)}_{\mathrm{new}}) = 0$ | Transient generators |
 | D-3 | $\Delta_n\mu_n = \hat{\tau}_n(\Delta_{n+1}\mu_{n+1}) + (1-\hat{\tau}_n)(\cdots)$ | Frobenius descent |
 | D-4 | $\hat{\tau}_n(w) = w$ (bosonic) vs $\hat{\tau}_n(w) = 0$ (fermionic) | Statistics from descent |
 
@@ -487,7 +487,7 @@ element of the direct limit.
 | JC-3 | $\mathrm{tr}_M^{(n)}(\mathrm{id}) = -6$ for all $n$ | C-4 |
 | JC-4 | $\kappa_n = \mathrm{tr}_M^{(n+1)}((1-\hat{\tau}_n)\check{R}^{(n+1)}) \neq 0$ | C-5 |
 | JC-5 | $b_k(A_{n+1}) = b_k(A_n) + b_k^{\mathrm{trans}}$ | C-6 |
-| JC-6 | $S_n([T_i^{(n)},T_j^{(n)}])^* = [T_i^{(n)},T_j^{(n)}]$ | C-7 |
+| JC-6 | $S_n([\sigma_i^{(n)},\sigma_j^{(n)}])^* = [\sigma_i^{(n)},\sigma_j^{(n)}]$ | C-7 |
 | JC-7 | $\ker\Delta_{q,n+1} = \ell_n(\ker\Delta_{q,n}) \oplus (\ker\Delta_{q,n+1} \cap \mathcal{A}^{\mathrm{trans}})$ | C-8 |
 | JC-8 | $T_{g^{(n)}_{ijk}}T_{g^{(n)}_{jkl}} = T_{a^{(n)}_{ij}}T_{g^{(n)}_{ikl}}T_{a^{(n)}_{kl}}^{-1}$ | C-10 |
 | JC-9 | $\mathrm{tr}_M^{(\infty)}(w_\infty) = \mathrm{tr}_M^{(0)}(w^{(0)})$ | Global gluing |
@@ -496,6 +496,6 @@ The total presentation on $J^n(A)$ comprises **34 relations**:
 11 structural (level-$n$ QU/QUO), 4 descent, 9 cohomological,
 plus the 2 inter-level relations J-3c and J-4a that connect
 adjacent brane levels.  All are expressed in the level-$n$
-Hecke generators $T_i^{(n)}$, the level-$n$ Markov trace
+Hecke generators $\sigma_i^{(n)}$, the level-$n$ Markov trace
 $\mathrm{tr}_M^{(n)}$, and the descent involution
 $\hat{\tau}_n$.

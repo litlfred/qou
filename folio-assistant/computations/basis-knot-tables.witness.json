@@ -5,68 +5,68 @@
   "commitSha": "5d947df2882e4af0dccbf091e6eb9b353cd59f3e",
   "assertions": [
     {
-      "name": "γ e⁻ pair count",
+      "name": "\u03b3 e\u207b pair count",
       "computed": 19,
       "expected": 19,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "σ₀ e⁻ pair count",
+      "name": "\u03c3\u2080 e\u207b pair count",
       "computed": 24,
       "expected": 24,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "σ₁ e⁻ pair count",
+      "name": "\u03c3\u2081 e\u207b pair count",
       "computed": 24,
       "expected": 24,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "L₊ e⁻ pair count",
+      "name": "L\u208a e\u207b pair count",
       "computed": 32,
       "expected": 32,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "L₋ e⁻ pair count",
+      "name": "L\u208b e\u207b pair count",
       "computed": 32,
       "expected": 32,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "e⁻ e⁻ pair count",
+      "name": "e\u207b e\u207b pair count",
       "computed": 36,
       "expected": 36,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "e⁻ (trefoil) universally produces e⁻ channel",
+      "name": "e\u207b (trefoil) universally produces e\u207b channel",
       "computed": 36,
       "expected": 36,
       "passed": true,
       "tolerance": 0,
-      "source": "e⁻ · b_i · b_j always has e⁻ ≠ 0 for all i,j"
+      "source": "e\u207b \u00b7 b_i \u00b7 b_j always has e\u207b \u2260 0 for all i,j"
     },
     {
-      "name": "γ (identity) does NOT universally produce e⁻",
+      "name": "\u03b3 (identity) does NOT universally produce e\u207b",
       "computed": 19,
       "expected": 19,
       "passed": true,
       "tolerance": 0,
-      "source": "Only 19/36 basis products have e⁻ ≠ 0 under identity"
+      "source": "Only 19/36 basis products have e\u207b \u2260 0 under identity"
     }
   ],
   "allPassed": true,
@@ -75,24 +75,24 @@
   "scriptFile": "basis_knot_tables.py",
   "scriptHash": "5e5d2d39c00b",
   "scriptCommitSha": "b5d1b24a797d1b0b99b42951d8387126b292f8a4",
-  "description": "Complete multiplication tables for all 6 basis knots of H₃(q). Each table is a 6×6 matrix of 6-element NF vectors showing b_i · K · b_j for basis knot K. The e⁻ channel count progression 19 → 24 → 24 → 32 → 32 → 36 demonstrates that the trefoil is the unique minimum-crossing universal pair-production operator.",
+  "description": "Complete multiplication tables for all 6 basis knots of H\u2083(q). Each table is a 6\u00d76 matrix of 6-element NF vectors showing b_i \u00b7 K \u00b7 b_j for basis knot K. The e\u207b channel count progression 19 \u2192 24 \u2192 24 \u2192 32 \u2192 32 \u2192 36 demonstrates that the trefoil is the unique minimum-crossing universal pair-production operator.",
   "contentBlock": "rem:hecke-operations",
   "parameters": {
     "q": 1.1099785955541805,
     "h": 0.20906032198987945,
     "z": 0.4993203340335982,
     "basis": [
-      "γ",
-      "σ₀",
-      "σ₁",
-      "L₊",
-      "L₋",
-      "e⁻"
+      "\u03b3",
+      "\u03c3\u2080",
+      "\u03c3\u2081",
+      "L\u208a",
+      "L\u208b",
+      "e\u207b"
     ]
   },
   "data": {
     "tables": {
-      "γ": {
+      "\u03b3": {
         "phys": "vacuum / photon (unknot)",
         "word": [],
         "matrix": [
@@ -399,7 +399,7 @@
         ],
         "e_minus_pairs": 19
       },
-      "σ₀": {
+      "\u03c3\u2080": {
         "phys": "single crossing (up quark channel)",
         "word": [
           0
@@ -708,7 +708,7 @@
         ],
         "e_minus_pairs": 24
       },
-      "σ₁": {
+      "\u03c3\u2081": {
         "phys": "single crossing (color channel)",
         "word": [
           1
@@ -1017,7 +1017,7 @@
         ],
         "e_minus_pairs": 24
       },
-      "L₊": {
+      "L\u208a": {
         "phys": "Hopf link (gluon +)",
         "word": [
           0,
@@ -1327,8 +1327,8 @@
         ],
         "e_minus_pairs": 32
       },
-      "L₋": {
-        "phys": "Hopf link (gluon −)",
+      "L\u208b": {
+        "phys": "Hopf link (gluon \u2212)",
         "word": [
           1,
           0
@@ -1637,7 +1637,7 @@
         ],
         "e_minus_pairs": 32
       },
-      "e⁻": {
+      "e\u207b": {
         "phys": "trefoil (electron)",
         "word": [
           0,
@@ -1949,5 +1949,7 @@
         "e_minus_pairs": 36
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

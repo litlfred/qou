@@ -117,5 +117,7 @@
       "err_pct_S_2": 46.595033256116665,
       "err_pct_S_6": 200.86729337419814
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

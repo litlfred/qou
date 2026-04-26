@@ -402,5 +402,7 @@
       "n_partitions": 28
     }
   },
-  "last_updated": "2026-04-17T21:24:28.688955+00:00"
+  "last_updated": "2026-04-17T21:24:28.688955+00:00",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

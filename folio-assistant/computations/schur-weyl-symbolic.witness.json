@@ -41,5 +41,7 @@
       "h3_approx_at_q0": "23.4423835293688125985664771467",
       "relative_err_pct": -443244517.3050601
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

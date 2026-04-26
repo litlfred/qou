@@ -26,7 +26,7 @@ $\chi(A)$:*
 Under the categorical origin of the crossing energy
 ([crossing energy](#def:crossing-energy)), the $q \to 1$ limit is
 exactly the **Hecke spectral-gap closure**: the eigenvalues
-$(q, -q^{-1})$ of the Hecke generator $T$ on $V \otimes V$ collide at
+$(q, -q^{-1})$ of the Hecke generator $\sigma$ on $V \otimes V$ collide at
 $(1, -1)$, and the separation between the symmetric and antisymmetric
 transport channels vanishes.  In this reading:
 

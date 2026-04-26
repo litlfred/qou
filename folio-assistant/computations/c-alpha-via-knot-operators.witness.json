@@ -10,7 +10,7 @@
   "scriptFile": "c_alpha_via_knot_operators.py",
   "scriptHash": "f3ef4d84780a",
   "scriptCommitSha": "",
-  "description": "Derive c_αα via the knot-operator decomposition of the α-α bond: close the composite braid, extract hyperbolic Vol, compute m_e · Vol.  Compare to the 'picked' m_e · Vol(7²_1) value to check whether the topological identification is a genuine prediction or an after-the-fact match.",
+  "description": "Derive c_\u03b1\u03b1 via the knot-operator decomposition of the \u03b1-\u03b1 bond: close the composite braid, extract hyperbolic Vol, compute m_e \u00b7 Vol.  Compare to the 'picked' m_e \u00b7 Vol(7\u00b2_1) value to check whether the topological identification is a genuine prediction or an after-the-fact match.",
   "parameters": {
     "m_e_MeV": 0.51099895,
     "q_0": 1.1099785955541805,
@@ -21,7 +21,7 @@
   "data": {
     "braid_candidates": [
       {
-        "name": "trefoil ∪ trefoil + link crossing",
+        "name": "trefoil \u222a trefoil + link crossing",
         "word": [
           1,
           2,
@@ -48,7 +48,7 @@
         }
       },
       {
-        "name": "minimal α-α bond",
+        "name": "minimal \u03b1-\u03b1 bond",
         "word": [
           1,
           2,
@@ -78,7 +78,9 @@
     "verdict": {
       "c_alpha_assumed_MeV": 2.426989503762857,
       "vol_7sq1_reference": 4.749499981874439,
-      "status": "Derivation INCOMPLETE: the Markov-equivalence of the α-α bond braid to the 7²_1 link class is the missing step.  Without it, m_e · Vol(7²_1) is a topological identification asserted by the framework (two linked trefoils = Whitehead-like) but not derived from the confinement SDP or the knot-operator hierarchy."
+      "status": "Derivation INCOMPLETE: the Markov-equivalence of the \u03b1-\u03b1 bond braid to the 7\u00b2_1 link class is the missing step.  Without it, m_e \u00b7 Vol(7\u00b2_1) is a topological identification asserted by the framework (two linked trefoils = Whitehead-like) but not derived from the confinement SDP or the knot-operator hierarchy."
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

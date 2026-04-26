@@ -214,5 +214,7 @@
     "borromean_mass_ratio": 746.417851076767,
     "observed_m_n_MeV": 939.56542052,
     "observed_m_p_MeV": 938.27208816
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

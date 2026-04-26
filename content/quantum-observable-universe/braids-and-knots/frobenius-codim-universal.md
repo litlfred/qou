@@ -12,14 +12,14 @@
   i.e., a closed element of $A$ arising as the closure of a braid
   $\beta \in B_n$
   ([Hecke mass element](#def:hecke-mass-element)).  Each vortex has
-  a Hecke-algebra representative $T_w \in H_n(R, q)$ whose Markov
+  a Hecke-algebra representative $\sigma_w \in H_n(R, q)$ whose Markov
   trace is the categorical mass
   ([categorical mass, Markov](#prop:categorical-mass-markov)).
   In physics: particles (quarks, nucleons, nuclei) are vortices.
 
 - **$C_{\dim_q}$**: the "C" stands for **Casimir** (Lie-algebra /
   TQFT terminology); "co-" because it is the Frobenius-pairing
-  dual of the unit $1 = \sum_\lambda e_\lambda$, **not** the
+  dual of the unit $1 = \sum_\lambda p_\lambda$, **not** the
   standard quadratic Casimir $\Omega = \sum_i e_i \otimes e^i$.
   See §"Why $C_{\dim_q}$ and not something else?" below.
 
@@ -31,15 +31,15 @@ decomposition
 
 $$
   A \;=\; \bigoplus_{\lambda \in \widehat{A}}
-          \mathrm{Mat}_{d_\lambda}(R),
+          \mathrm{Mat}_{d_\lambda}(\mathbb{C}),
 $$
 
 where $d_\lambda$ is the classical dimension of block $B_\lambda$.
-Let $e_\lambda \in A$ be the central idempotent of block $\lambda$,
-and let $\dim_q(\lambda) \in R^\times$ denote any
+Let $p_\lambda \in A$ be the central idempotent of block $\lambda$,
+and let $\dim_q(\lambda) \in \mathbb{C}^\times$ denote any
 non-vanishing "quantum dimension" function on blocks (e.g., for
 $A = H_n(R, q)$ with Markov trace, $\dim_q$ is the $q$-hook-length
-dimension giving $\tau(e_\lambda) = \dim_q(\lambda) \, d_\lambda
+dimension giving $\tau(p_\lambda) = \dim_q(\lambda) \, d_\lambda
 / [n]_q!$).
 
 **Theorem (Frobenius quantum-co-dimension trace).**
@@ -49,8 +49,8 @@ $$
   C_{\dim_q}
   \;:=\;
   \sum_{\lambda \in \widehat{A}}
-    \frac{1}{\dim_q(\lambda) \cdot \tau(e_\lambda)}
-    \cdot e_\lambda
+    \frac{1}{\dim_q(\lambda) \cdot \tau(p_\lambda)}
+    \cdot p_\lambda
   \;\in\; Z(A)
 $$
 
@@ -65,15 +65,15 @@ $$
 $$
 
 **Proof.**
-*Since $e_\lambda$ is central and primitive in $Z(A)$, and each
-$e_\lambda$ is $\tau$-dual to itself up to the scalar
-$\tau(e_\lambda)$, linearity of $\tau$ gives*
+*Since $p_\lambda$ is central and primitive in $Z(A)$, and each
+$p_\lambda$ is $\tau$-dual to itself up to the scalar
+$\tau(p_\lambda)$, linearity of $\tau$ gives*
 
 $$
   \tau(C_{\dim_q})
   \;=\;
-  \sum_\lambda \frac{1}{\dim_q(\lambda) \cdot \tau(e_\lambda)}
-    \cdot \tau(e_\lambda)
+  \sum_\lambda \frac{1}{\dim_q(\lambda) \cdot \tau(p_\lambda)}
+    \cdot \tau(p_\lambda)
   \;=\;
   \sum_\lambda \frac{1}{\dim_q(\lambda)}.
 $$
@@ -88,9 +88,9 @@ on the centre.  By non-degeneracy of $\tau$ on $Z(A)$ (which
 holds iff the Frobenius form restricts non-degenerately to the
 centre — true for any semisimple Frobenius algebra), the element
 $z \in Z(A)$ with $\tau(z) = \sum_\lambda 1/\dim_q(\lambda)$ is
-**unique**.  Writing $z = \sum_\lambda c_\lambda e_\lambda$ and
-matching $\tau(z) = \sum c_\lambda \cdot \tau(e_\lambda)$ to
-$\sum 1/\dim_q$ forces $c_\lambda = 1/(\dim_q(\lambda)\,\tau(e_\lambda))$
+**unique**.  Writing $z = \sum_\lambda c_\lambda p_\lambda$ and
+matching $\tau(z) = \sum c_\lambda \cdot \tau(p_\lambda)$ to
+$\sum 1/\dim_q$ forces $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$
 — this **is** the definition of $C_{\dim_q}$.  The element is
 therefore **forced by the structure**, not ad-hoc.*
 
@@ -118,7 +118,7 @@ purely categorical — no arbitrary choices.*
 **TQFT / handle-element interpretation.**
 *For a 2-dimensional TQFT with state-space $A$, the
 **handle element** of the torus-with-one-puncture is
-$\mathrm{HE}_A := \sum_\lambda e_\lambda / \tau(e_\lambda)$
+$\mathrm{HE}_A := \sum_\lambda p_\lambda / \tau(p_\lambda)$
 and its trace $\tau(\mathrm{HE}_A) = \sum_\lambda d_\lambda$
 (classical-dimension sum, e.g., the number of involutions for
 $A = H_n(R, q)$).  The element $C_{\dim_q}$ is the **quantum
@@ -214,7 +214,7 @@ Frobenius co-dimension element — is universal.*
 *Critically, $\tau(C_{\dim_q}^{(A)})$ is **independent of the
 specific vortex $\varrho$** — it depends only on the algebra
 $A$ (equivalently on $n$ and $q$), not on the braid word
-$T_w$ representing $\varrho$.  This is both a **feature** and a
+$\sigma_w$ representing $\varrho$.  This is both a **feature** and a
 **limitation**:*
 
 - *Feature (universality):* *Every vortex on $H_3(R, q)$ —
@@ -237,7 +237,7 @@ $T_w$ representing $\varrho$.  This is both a **feature** and a
 ([unified knot mass](#thm:knot-mass-formula-unified)) therefore has
 three tiers:*
 
-1. *Vortex-specific: descended $|\mathrm{tr}_M(T_w)|$ and brane
+1. *Vortex-specific: descended $|\mathrm{tr}_M(\sigma_w)|$ and brane
    tower $\sum \Phi_q$.*
 2. *Algebra-specific (but vortex-independent): Frobenius
    co-Casimir $\tau(C_{\dim_q}^{(A)})$.*
@@ -248,8 +248,8 @@ three tiers:*
 **Consistency.**
 
 1. *At $q = 1$ (classical limit): $\dim_q \to d_\lambda$ and
-   $\tau(e_\lambda) \to d_\lambda/|G|$ (group-algebra trace), so
-   $C_{\dim_q}$ reduces to $\sum_\lambda |G|/d_\lambda^2 \cdot e_\lambda$
+   $\tau(p_\lambda) \to d_\lambda/|G|$ (group-algebra trace), so
+   $C_{\dim_q}$ reduces to $\sum_\lambda |G|/d_\lambda^2 \cdot p_\lambda$
    and its trace is $\sum_\lambda 1/d_\lambda$ — the classical
    reciprocal-dimension sum.*
 2. *In the "single-vortex" case $A = H_3(R, q)$, three blocks
@@ -259,6 +259,6 @@ three tiers:*
 3. *The self-duality $\lambda \leftrightarrow \lambda'$ is the
    **categorical shadow** of the Young-diagram transpose
    symmetry of the Hecke algebra, which in turn descends from
-   the Hecke relation $T_i^2 = (q - q^{-1}) T_i + 1$ admitting
+   the Hecke relation $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ admitting
    two eigenvalues $(q, -q^{-1})$ — the source of all
    $q$-deformation structure in the paper.*

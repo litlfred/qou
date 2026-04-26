@@ -347,5 +347,7 @@
       "err_naive": 82.42033265902087,
       "err_shell": NaN
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

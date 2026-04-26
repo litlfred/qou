@@ -10,7 +10,7 @@
   "scriptFile": "mass_table_no_fit.py",
   "scriptHash": "edd9140ac198",
   "scriptCommitSha": "",
-  "description": "STRICTLY derivation-only mass table: removes census-picked (D/T/³He) and α-cluster-fitted c_αα entries.  Only ⁴He carries a framework-derived Kashaev prediction.  Paper −αΦ₁ and Plancherel-weighted |tr_M(β)| columns are zero-parameter predictions from the Wedderburn / Hecke structure alone.",
+  "description": "STRICTLY derivation-only mass table: removes census-picked (D/T/\u00b3He) and \u03b1-cluster-fitted c_\u03b1\u03b1 entries.  Only \u2074He carries a framework-derived Kashaev prediction.  Paper \u2212\u03b1\u03a6\u2081 and Plancherel-weighted |tr_M(\u03b2)| columns are zero-parameter predictions from the Wedderburn / Hecke structure alone.",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -89,7 +89,7 @@
         },
         "magic_4he": {
           "B": 29.95567723908384,
-          "formula": "2·m_e · 4·8G  [framework: A·8G magic rule]"
+          "formula": "2\u00b7m_e \u00b7 4\u00b78G  [framework: A\u00b78G magic rule]"
         },
         "chi_sym_alt_closed": -1.1027484115976558
       },
@@ -316,6 +316,8 @@
     }
   },
   "caveats": [
-    "tr_M column covers only D, T, ³He (n=6, n=9 partitions feasible in seconds).  ⁴He tr_M needs n=12 (77 partitions) — skipped."
-  ]
+    "tr_M column covers only D, T, \u00b3He (n=6, n=9 partitions feasible in seconds).  \u2074He tr_M needs n=12 (77 partitions) \u2014 skipped."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

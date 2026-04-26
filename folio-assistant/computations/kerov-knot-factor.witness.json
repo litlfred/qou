@@ -57,5 +57,7 @@
     "D_KL": "0.09908960441189465832606655",
     "logK": "-0.09294327175660381882401983"
   },
-  "CODATA_delta_m_MeV": 1.2933323600000222
+  "CODATA_delta_m_MeV": 1.2933323600000222,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -164,5 +164,7 @@
     "paper_BW_chirality": "bw-chirality-isotopes.witness.json",
     "my_schur_weyl_deuteron": "deuteron-first-principles.witness.json",
     "frobenius_derivation": "frobenius-partition-sum.witness.json"
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

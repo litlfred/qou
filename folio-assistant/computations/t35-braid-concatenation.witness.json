@@ -61,5 +61,7 @@
       "delta_E_t35_cost_MeV": 3825.0268206068513,
       "delta_E_total_MeV": 7436.294550884424
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

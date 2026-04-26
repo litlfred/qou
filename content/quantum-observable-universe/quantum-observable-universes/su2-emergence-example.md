@@ -9,7 +9,7 @@ $A = \mathcal{O}(\mathrm{SU}(2))$, $\tau$ the forgetful functor.
    $g_V \in \mathrm{SL}(2, \mathbb{C})$.
 2. *Dagger structure* $\Rightarrow$ unitarity.
    The dagger on $\mathrm{Rep}(\mathrm{SU}(2))$
-   ([dagger on SU(2)](#ex:dagger-su2)) forces
+   ([dagger on $\mathrm{SU}(2)$](#ex:dagger-su2)) forces
    $g_V^{-1} = g_V^{\dagger}$, cutting from
    $\mathrm{SL}(2, \mathbb{C})$ to its compact real form
    $\mathrm{SU}(2)$.

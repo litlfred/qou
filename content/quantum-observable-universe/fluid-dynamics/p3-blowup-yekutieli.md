@@ -1,8 +1,13 @@
+> **Summary.** Finite-time NS blowup is identified with a finite obstruction level $n^*$ in the Yekutieli brane tower at which a velocity field ceases to lift.
+> A counter-example is encoded by the cohomological address $(v_0, T^*, \Sigma, n^*, \kappa_{n^*})$, with the singular set $\Sigma$ controlled by local cohomology at the unit defect $z=1$.
+
 The [regularity breakdown](#conj:regularity-breakdown) at $q = 1$
 is a **cohomological obstruction** in the
 [Yekutieli lifting](#prop:yekutieli-lifting) framework.
 
-**The Yekutieli tower and regularity.**
+## Yekutieli tower and regularity
+
+
 The [recursive brane tower](#def:recursive-brane-tower)
 $\{A_n\}_{n \geq 0}$ with jet prolongations
 $A_n \hookrightarrow A_{n+1}$ produces a sequence of central
@@ -29,6 +34,8 @@ $$
   \kappa_n(v) = 0  \forall n \geq 0.
 $$
 
+## Regularity as lifting
+
 **Regularity as lifting.**
 The [q-NS solution](#thm:q-ns-wellposedness) $v_q(t)$ is smooth
 for $q > 1$ because the exponential damping of high modes ensures
@@ -43,6 +50,8 @@ $$
 
 The decay rate $\nu_q [k]_q^2 \sim \varepsilonq^{2k}$ exceeds
 any polynomial, so $v_q$ lifts through the tower to all levels.
+
+## Blowup as cohomological obstruction
 
 **Blowup as obstruction.**
 At $q = 1$, the spectral decay becomes polynomial:
@@ -78,6 +87,8 @@ ceases to lift.  The blowup is localised at this level:
   ([descent condition](#prop:descent-condition)) fails.
 - **Above $n^*$**: the solution does not exist in those gerbes.
 
+## Cohomological address of a counter-example
+
 **Where a counter-example lives: the cohomological address.**
 A counter-example to NS regularity is a quintuple
 
@@ -105,6 +116,8 @@ $n^*$ are related by Sobolev embedding:
 | $0$ | Point | $\geq 3$ | $s^* < 3/2$ |
 | $1$ | Filament | $\geq 2$ | $s^* < 2$ |
 | $2$ | Sheet | $\geq 1$ | $s^* < 5/2$ |
+
+## Local cohomology and topological selection
 
 **The local cohomology connection.**
 The [local cohomology group](#def:local-cohomology-group)

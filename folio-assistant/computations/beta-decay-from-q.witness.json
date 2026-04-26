@@ -107,5 +107,7 @@
     "g_A from Borromean Skein algebra (target: 1.27)",
     "C_geom from Hopf(trefoil, Borromean) trace (target: 14.25)",
     "\u03bb_shell from alpha-particle sub-link binding"
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -358,5 +358,7 @@
       "lp_frobenius_valid": false,
       "time_sec": 0.017746925354003906
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

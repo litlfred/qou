@@ -20,7 +20,7 @@ $$
 
 *where the sum is over partitions $\lambda$ of $n$ with at most two
 parts, $w_\lambda$ are the Markov weights determined by the Markov
-property $\mathrm{tr}_M(x T_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
+property $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
 ([Jones--Markov trace](#thm:jones-markov-trace)),
 $\mathrm{tr}_{S_\lambda}$ is the trace on the irreducible
 $H_n(R, q)$-module $S_\lambda$, and the right-hand side is the

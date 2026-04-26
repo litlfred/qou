@@ -59,5 +59,7 @@
         "objective": 1.4681806658587118e-16
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

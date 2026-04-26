@@ -233,5 +233,7 @@
       "m_free_cross": 827030.4305663962,
       "ratio_off_AME": 1.0029254173649051
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

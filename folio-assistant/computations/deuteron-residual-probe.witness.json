@@ -68,5 +68,7 @@
   "best_match": {
     "name": "(5/2)\u00b7m_e",
     "rel_err_pct": 3.919533577263401
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

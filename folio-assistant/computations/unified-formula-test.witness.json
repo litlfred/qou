@@ -200,5 +200,7 @@
       "M_CODATA": 2809.414,
       "err_pct": -18.54565297271075
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

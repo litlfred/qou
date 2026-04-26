@@ -486,5 +486,7 @@
         "net": 0.4510942344351552
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

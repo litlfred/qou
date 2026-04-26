@@ -30,7 +30,7 @@ Four distinct uses motivate the lift:
 2. **A grading source aligned with braid combinatorics.** Gonshor's
    sign-sequence presentation of $\mathbf{No}$ [@gonshor1986] assigns
    every surreal a function $\alpha \to \{+,-\}$ for some ordinal
-   $\alpha$. The Hecke generator $T$ has two eigenvalues
+   $\alpha$. The Hecke generator $\sigma$ has two eigenvalues
    ($q$ and $-q^{-1}$), so a braid word decorated with eigenspace
    choices produces a sign sequence and therefore a surreal number.
    The Hoefsmit seminormal form ([Hoefsmit seminormal

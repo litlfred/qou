@@ -177,5 +177,7 @@
     "delta_nu": -0.10204617496433355,
     "delta_e": -0.0009759890266926585,
     "Q_observed_MeV": 0.78233
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

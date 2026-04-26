@@ -57,5 +57,7 @@
       "B_AME_MeV": 28.29566,
       "err_pct": -100.0
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

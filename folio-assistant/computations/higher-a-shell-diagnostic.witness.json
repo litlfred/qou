@@ -159,5 +159,7 @@
     "ordering_diff_CODATA_MeV": 0.018999999999778083,
     "signal_amplitude_ratio": -49686.40120776746,
     "interpretation": "Predicted ordering sensitivity vs actual CODATA (T\u2212\u00b3He); ratio near 1 \u2192 ordering captures the signal; large or opposite sign \u2192 ordering is wrong proxy for isospin."
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

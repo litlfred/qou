@@ -1310,5 +1310,7 @@
         "(1,1,1)": 2.3041822812506685
       }
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

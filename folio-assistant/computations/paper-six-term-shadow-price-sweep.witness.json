@@ -369,5 +369,7 @@
       ],
       "walltime_sec": 0.030724048614501953
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

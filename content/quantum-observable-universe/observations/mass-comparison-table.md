@@ -47,43 +47,28 @@ to six significant figures with $q = q_0$.
 | ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_9) - \Delta E$ | $2808.39$ | $2808.39$ | AME2020 |
 | ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $\mathcal{M}(L_{12}) - \Delta E$ | $3727.38$ | $3727.38$ | AME2020 |
 
-**Notes on precision and scope.**
+**Notes.**  The substrate parameter $q$ is fixed by the
+muon--electron mass ratio (one free input).  Hadronic masses follow
+from the pair Skein formula
+([terminal resolution](#prop:terminal-resolution)) — no QCD lattice
+input — and nuclear binding from the Hopf-junction Skein change
+$\Delta E = \Delta\mathcal{S}$.  The table truncates at
+${}^4\mathrm{He}$; the multi-body Skein polynomials beyond $A = 4$
+remain computable in principle ([embeddability
+closure](#thm:embeddability-closure)) but have not yet been
+evaluated.
 
-1. *One free parameter.* The substrate parameter $q$ is fixed by the
-   muon--electron mass ratio.  All other entries are predictions (or
-   consistency checks where the electron mass is used as input to
-   determine dressed quark masses $\mu_{\mathfrak{u}}$, $\mu_{\mathfrak{d}}$).
-
-2. *Hadronic masses.* The pair Skein formula
-   ([terminal resolution](#prop:terminal-resolution)) determines
-   proton and neutron masses from $q$ and the dressed quark masses,
-   with no QCD lattice input.
-
-3. *Nuclear binding.* Each Hopf junction between nucleons contributes
-   a binding energy $\Delta E = \Delta\mathcal{S}$ computed from the
-   Skein polynomial change at the inter-nucleon crossing.  For
-   $A \leq 4$ the computation is tractable; beyond ${}^4\mathrm{He}$
-   the combinatorial growth of crossing pairs ($\sim A^2$) requires
-   systematic Skein polynomial algorithms.
-
-4. *Table cutoff.* The table is truncated at ${}^4\mathrm{He}$.
-   Heavier nuclei remain computable in principle --- the
-   embeddability closure
-   ([embeddability closure](#thm:embeddability-closure)) guarantees
-   all constituents descend to the base manifold --- but the
-   multi-body Skein polynomials have not yet been evaluated beyond
-   $A = 4$.
-
-5. *Source classification.* Proton and neutron masses in this table
-   use CODATA 2022 values directly. Nuclear masses use AME2020
-   binding energies $B/A$ as input. These are NOT predictions from
-   $q$ --- the table recombines observed constants and the
-   agreement is trivially guaranteed. The genuine $q$-predictions
-   are mass *ratios* ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$),
-   $Q$-values (mass differences from $\Delta\mathrm{net} \times E_0$),
-   and half-life ratios via $\log_q(ft)$ spectroscopy. The one
-   external scaling parameter is $m_e = 0.51099895$ MeV (CODATA),
-   which converts dimensionless $q$-ratios to physical MeV.
+**Sources & scope.**  Proton and neutron entries use CODATA 2022
+values directly; nuclear entries use AME2020 binding energies as
+input.  These are recombinations of observed constants, **not**
+predictions from $q$.  The genuine $q$-predictions are mass *ratios*
+($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), $Q$-values
+($\Delta\mathrm{net} \times E_0$), and half-life ratios via
+$\log_q(ft)$ spectroscopy.  The one external scaling ruler is
+$m_e = 0.51099895$ MeV (CODATA 2022 experimental input, not a
+QOU-derived value), which converts dimensionless $q$-ratios to
+physical MeV.  All "Source" column
+entries (CODATA, PDG, AME2020) refer to these external standards.
 
 *Isotope-level data (hecke-engine certificates, $A \leq 14$).*
 

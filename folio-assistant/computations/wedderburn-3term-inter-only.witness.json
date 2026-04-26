@@ -96,5 +96,7 @@
       "err_pct": 0.9634891907440666,
       "B_ame_MeV": 28.29566
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }
