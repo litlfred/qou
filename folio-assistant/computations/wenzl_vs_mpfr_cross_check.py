@@ -38,14 +38,17 @@ def main() -> None:
         mt = mpfr["tables_by_n"][n_str]
         wmap = {tuple(w["partition"]): mp.mpf(w["y_lambda_numeric"]) for w in wt["weights"]}
         mmap = {tuple(w["partition"]): mp.mpf(w["y_lambda"]) for w in mt["weights"]}
-        diffs = []
-        for part, yw in wmap.items():
-            ym = mmap.get(part)
-            if ym is None:
-                continue
-            diffs.append((part, abs(yw - ym)))
-        if not diffs:
-            continue
+        wparts = set(wmap)
+        mparts = set(mmap)
+        if wparts != mparts:
+            missing_in_mpfr = sorted(wparts - mparts)
+            missing_in_wenzl = sorted(mparts - wparts)
+            raise ValueError(
+                "Partition mismatch for n = "
+                f"{n_str}: missing in MPFR witness = {missing_in_mpfr}, "
+                f"missing in Wenzl witness = {missing_in_wenzl}"
+            )
+        diffs = [(part, abs(yw - mmap[part])) for part, yw in wmap.items()]
         max_diff = max(d for _, d in diffs)
         worst = max(diffs, key=lambda x: x[1])
         rows.append(
