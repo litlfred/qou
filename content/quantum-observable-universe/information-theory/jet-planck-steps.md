@@ -292,7 +292,7 @@ so it requires a box diagram with virtual charged particles and a
 $Z^0$ mediator.  In the QOU framework the same obstruction
 appears naturally:
 
-1. Photons ($K = \varnothing$) have no knot, hence no crossings
+1. Photons ($K = \mathbf{1}_{B_4}$ knot-trivial under Markov closure; see [confined-particle](#def:confined-particle)) have no nontrivial knot, hence no crossings
    to Skein-resolve — they cannot couple directly to neutrinos.
 2. The process requires **virtual pairs** (trefoil + mirror
    trefoil at brane tower level $A_1$,
