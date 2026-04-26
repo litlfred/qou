@@ -25,9 +25,9 @@ The largest chapters (Ch 4 Braids 263 .md, Ch 9 Descartes 184 .md, Ch 2 QOU 205 
 |---|---|---|
 | **Blocker** (factual/notational error breaking a claim) | **1** → **0** | B-7 reviewed; false positive |
 | **Major** (voice/alignment/notation violation a referee would catch) | **17** → **0** | all 17 fixed |
-| **Minor** (stylistic, register ambiguity, hedge) | **40** | open |
-| **Simplification** (optional cleanup) | **55** | open |
-| **Total** | **113** → **95** | |
+| **Minor** (stylistic, register ambiguity, hedge) | **40** → **~5** | Ch 2 SU(2) (28), Ch 7 vortex (3), Ch 10 proton-count (1), Ch 11 register note (resolves 2-ish) — ~34 fixed |
+| **Simplification** (optional cleanup) | **55** → **53** | Ch 5 jones-polynomials stub expanded; Ch 10 minor; bulk remains (editorial work for the author) |
+| **Total** | **113** → **~58** | |
 
 Plus 2 back-matter directories flagged for §4b notation-introduction review (low severity).
 
@@ -46,8 +46,20 @@ Plus 2 back-matter directories flagged for §4b notation-introduction review (lo
 > [tm-interaction-completeness.md](../../../content/quantum-observable-universe/appendix-transfer-matrices/tm-interaction-completeness.md),
 > and the M-11 mass-formula bridge in
 > [topological-mass-formula.md](../../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula.md).
-> 40 minors and 55 simplifications remain — these are non-blocking and
-> tracked for follow-up.
+>
+> **Minor sweep (2026-04-26, `36d2934`):** Ch 2 bare `SU(2)` →
+> `$\mathrm{SU}(2)$` across 27 files; Ch 7 vortex `\gamma → \varrho`
+> in 4 files; Ch 10 "proton count" → "proton number"; Ch 11 explicit
+> notation note distinguishing CODATA `m_e` from categorical
+> `\mathfrak{m}` (resolves the register-mixing audit finding paper-
+> locally). About 5 minors remain (chapter-local stylistic items).
+>
+> **Simplification sweep (2026-04-26):** Ch 5 `jones-polynomials.md`
+> stub expanded to motivating paragraphs on the $\mathrm{SU}_q(2)$ /
+> Markov-trace bridge to Ch 4. The remaining ~53 simplification items
+> (top of the section "Top expository simplification opportunities"
+> above) require author-level editorial judgment and are tracked as
+> follow-up work, not auto-applied.
 
 ## Per-chapter scoreboard
 
