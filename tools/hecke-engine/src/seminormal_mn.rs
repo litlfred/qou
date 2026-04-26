@@ -450,9 +450,6 @@ impl BrokenStrip {
     fn total_size(&self) -> usize {
         self.components.iter().map(|c| c.cells.len()).sum()
     }
-    fn heights_sum(&self) -> usize {
-        self.components.iter().map(|c| c.height).sum()
-    }
 }
 
 /// Enumerate all broken border strips of total size `k` removable

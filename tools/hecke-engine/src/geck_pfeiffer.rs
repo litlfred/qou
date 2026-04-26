@@ -524,7 +524,6 @@ pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
             // conjugation transformed it).  Skip.
             continue;
         }
-        let n = target_w.n();
 
         // Find any conjugator word `v` (length 1, 2, ..., MAX_CONJ_LEN)
         // such that the *permutation* `v · target_w · v⁻¹` has length
