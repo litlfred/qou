@@ -188,19 +188,12 @@ Output follows the `ProofStateExport` schema in `folio-assistant/schemas/qou-typ
 
 ## Lean Output Structure
 
-```
-lean/
-├── lakefile.lean
-├── lean-toolchain
-├── QOU.lean              ← Root import
-└── QOU/
-    ├── Basic.lean        ← Shared foundations
-    ├── Glossary.lean     ← Ontologist output (central registry)
-    ├── KnotTheory.lean   ← Knot combinatorics
-    ├── MassDerivation.lean ← CODATA mass parameter derivation
-    ├── QuantumObservableUniverse.lean  ← Chapter 1
-    └── ...
-```
+The Lean source tree lives **per paper** under `content/<paper>/lean/`,
+with the repo's root `/lakefile.toml` aggregating every package into a
+single Lake workspace. See [Root Lake workspace
+(standardized)](#root-lake-workspace-standardized) below for the
+canonical layout, package registry, and build commands. Do **not**
+create a top-level `lean/` directory — that layout is deprecated.
 
 ## Proven Patterns
 

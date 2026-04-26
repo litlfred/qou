@@ -126,32 +126,18 @@ Google Gemini code review triggers on PRs.  To make it proof-aware:
 3. `.github/copilot-instructions.md` instructs Gemini to check linked Lean
    declarations when reviewing LaTeX changes
 
-## Current Codebase State (as of 2026-03-21)
+## Current Codebase State
 
-**0 active sorry** | **0 admit** | **0 axiom** | **~107 substantive proofs** | **6 trivial (rfl/simp)**
+Live state — derived, not maintained in this skill file:
 
-### Categorical Stubs (new 2026-03-21)
+- Sorry / admit / axiom counts: query `proof-objects.json` (built from
+  Lean diagnostics by CI) or run `lean_diagnostic_messages` per file via
+  the MCP server.
+- Per-file declaration inventory: `lean_file_outline`.
+- Axiom dependencies for any theorem: `lean_verify`.
 
-Eight new categorical structures added to `QuantumObservableUniverse.lean`:
-
-| Lean identifier | Type | LaTeX label |
-|----------------|------|-------------|
-| `CategoricalQExtDeriv` | structure | `def:categorical-q-ext-deriv` |
-| `CategoricalInstanton` | structure | `def:categorical-instanton` |
-| `categorical_irreducible` | theorem | `lem:categorical-irreducible` |
-| `categorical_self_duality` | theorem | `prop:categorical-self-duality` |
-| `categorical_dq_squared` | theorem | `prop:categorical-dq-squared` |
-| `CategoricalJet` | structure | `def:categorical-jet` |
-| `categorical_jet_prolongation` | theorem | `prop:categorical-jet-prolongation` |
-| `CategoricalTransport` | structure | `def:categorical-transport` |
-
-### Known Patterns
-
-- All sorry stubs have been eliminated; former sorry-bearing files
-  (`FormalGroups.lean`, `PAdicQuantumGroups.lean`, `HadronicMass.lean`)
-  now have complete proofs or structural placeholders (`rfl`, `True`)
-- `BringsSurface.lean` trivial proofs (`by rfl`): these are definitional
-  equalities for genus/euler-char/etc. — correct and appropriate
+Do not rely on dated snapshots in this file — they go stale and mislead
+fresh agents. Always pull live counts before reporting.
 
 ## Content Object Integration
 

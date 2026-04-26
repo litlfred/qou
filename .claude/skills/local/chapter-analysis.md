@@ -30,7 +30,7 @@ and Lean Generation skills applied in a structured, chunked workflow.
 - The chapter's `.tex` file exists in `chapters/`
 - The corresponding `lean/QOU/<Chapter>.lean` file exists (may be empty)
 - `lean/QOU/Glossary.lean` and `glossary.json` are current
-- The `lakefile.lean` has all needed dependencies (mathlib4, quantumInfo)
+- The per-paper `lakefile.toml` (and the root `/lakefile.toml`) have all needed dependencies (mathlib4, quantumInfo)
 
 ## Chunked Workflow
 
