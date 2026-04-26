@@ -159,8 +159,8 @@ def skewCorners (λ μ : Partition) : Finset Cell :=
     hypothesis, the obligation is left as `sorry` per CLAUDE.md §1. -/
 def Partition.removeCorner (λ : Partition) (row : ℕ) : Partition :=
   ⟨λ.parts.mapIdx fun i p => if i = row then p - 1 else p,
+   -- Ref: [sagan2001] corner removal preserves partition property
    by sorry⟩
-  -- Ref: [sagan2001] corner removal preserves partition property
 
 /-- The sum of parts after removing a corner at row `row` equals
     the original sum minus 1.
@@ -356,10 +356,11 @@ theorem branching_nonneg (λ μ : Partition) : 0 ≤ branchingMult λ μ :=
     per CLAUDE.md §1 until the signature is refactored. -/
 def Partition.addCell (λ : Partition) (row : ℕ) : Partition :=
   if h : row < λ.parts.length then
+    -- Ref: [sagan2001] §2.3 — interior addition (set-row branch)
     ⟨λ.parts.set row (λ.parts[row] + 1), by sorry⟩
   else
+    -- Ref: [sagan2001] §2.3 — append branch (last-part-positivity)
     ⟨λ.parts ++ [1], by sorry⟩
-  -- Ref: [sagan2001] §2.3
 
 /-- The covering relation in the Young lattice:
     μ ⋖ λ iff λ = μ + one cell. -/
