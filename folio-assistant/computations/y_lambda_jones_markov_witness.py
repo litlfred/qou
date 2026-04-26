@@ -84,20 +84,27 @@ def chi_lambda_with_cache(sigmas, d_lam: int, word: list[int]) -> float:
 
 
 def solve_jones_markov_weights(n: int) -> dict:
-    """Solve the linear system for y_λ at H_n(R, q)."""
+    """Solve the linear system for y_λ at H_n(R, q) at q_0.
+
+    Note on CRT extension: the existing `crt_markov.py` infrastructure
+    fits log|tr_M| as a polynomial in log(q) by evaluating at multiple
+    q probe points.  Extending that approach to y_λ would require a
+    q-parameterised seminormal-matrix builder (the current
+    `build_seminormal_matrices` reads q from q_parameter.py at module
+    load time).  Sibling branches' Rust seminormal kernel
+    (`phase-b-heavy-rust-character-kernel`) parameterises q and can
+    produce multi-q probe data; the present witness records the
+    q_0-only solution as the canonical reference."""
     parts = list(partitions_of(n))
     p_n = len(parts)
 
-    # Precompute seminormal matrices once per partition.  The builder
-    # auto-selects sparse for dim > 500 (n ≥ 12 hits this bound), keeping
-    # memory feasible.  Force sparse here for any d_λ ≥ 200 to be safe.
+    # Force sparse seminormal matrices to keep memory bounded at large n
+    # (e.g. d_λ = 462 for partition (4,4,4) at n=12).
     seminormal_cache: dict = {}
     for lam in parts:
         sigmas, d_lam, _ = build_seminormal_matrices(lam, sparse=True)
         seminormal_cache[lam] = (sigmas, d_lam)
 
-    # Build the χ-matrix: rows = test elements (cycle-type reps),
-    # columns = partitions (unknowns y_λ).
     A = np.zeros((p_n, p_n))
     b = np.zeros(p_n)
     for i, mu in enumerate(parts):
@@ -108,7 +115,6 @@ def solve_jones_markov_weights(n: int) -> dict:
             A[i, j] = chi_lambda_with_cache(sigmas, d_lam, word)
 
     y = np.linalg.solve(A, b)
-
     cond = float(np.linalg.cond(A))
     residual = float(np.max(np.abs(A @ y - b)))
 

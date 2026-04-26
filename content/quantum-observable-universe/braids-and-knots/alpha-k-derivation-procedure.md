@@ -126,13 +126,37 @@ $5.5 \times 10^{-17}$ residual).*
 
 The procedure is computationally bounded by the largest Hoefsmit
 matrix size $\max_\lambda d_\lambda$.  At $n = 12$ the maximum
-$d_\lambda \approx 132$ (rectangular $(4, 4, 4)$); the linear
-system is $77 \times 77$.  For higher $n$, sparse seminormal
-representations and per-partition caching keep the cost feasible.
-The witness pipeline
-([`y_lambda_jones_markov_witness.py`](#)) builds the cache once per
-partition and reuses across all test words, yielding $O(p(n)^2 \cdot
-\max d_\lambda^3)$ overall.
+$d_\lambda = 462$ (rectangular $(4, 4, 4)$); the linear system is
+$77 \times 77$.  For higher $n$, sparse seminormal representations
+and per-partition caching keep the cost feasible.  The witness
+pipeline
+([`y_lambda_jones_markov_witness.py`](#)) forces sparse Hoefsmit
+generators, builds the cache once per partition, and reuses across
+all test words, yielding $O(p(n)^2 \cdot \max d_\lambda^3)$ overall
+with bounded memory.
+
+**CRT-style $q$-rational reconstruction.**
+The numeric witness at $q_0$ represents only one ring-map specialisation
+$\iota \colon R \to \mathbb{R}$.  Each $y_\lambda$ is in fact a
+$q$-rational element of $R(\!(z)\!)$, and can be recovered exactly
+by Vandermonde / Lagrange interpolation from evaluations at multiple
+probe values $q_1, \ldots, q_m$:
+
+1. *Choose $m$ probe values $q_1, \ldots, q_m$ bracketing $q_0$
+   (e.g.\ $\{1.02, 1.05, 1.08, 1.11, 1.15\}$ —
+   [`crt_markov.py`](#) precedent).*
+2. *Solve the linear system at each $q_i$ with seminormal matrices
+   rebuilt at that $q_i$ (requires a $q$-parameterised builder; the
+   Rust kernel in
+   [`phase-b-heavy-rust-character-kernel`](#) supplies one).*
+3. *Interpolate $y_\lambda(q)$ as a Laurent polynomial in $q^{1/2}$
+   to recover exact integer coefficients.*
+
+This converts the float-at-$q_0$ witness into a fully symbolic
+$q$-rational expression, eliminating the floating-point residual.
+The present Python pipeline records only the canonical $q_0$
+specialisation; the Rust kernel performs the full multi-$q$
+reconstruction efficiently.
 
 **Status of $\alpha_k$ across $n$.**
 
