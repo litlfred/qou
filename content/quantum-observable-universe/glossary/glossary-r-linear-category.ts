@@ -5,4 +5,5 @@ export default remark({
   title: "$R$-linear category",
   tags: ["glossary", "category-theory", "enrichment"],
   uses: [],
+  defines: ["r-linear-category"],
 });

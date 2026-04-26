@@ -17,4 +17,5 @@ export default remark({
   uses: [
     "prop:descartes-elliptic-curve",
   ],
+  defines: ["weierstrass-projection"],
 });
