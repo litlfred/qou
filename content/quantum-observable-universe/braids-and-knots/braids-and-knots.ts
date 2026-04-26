@@ -441,6 +441,7 @@ export default chapter({
         "mass-tower-coefficient-stratification",
         "alpha-k-derivation-procedure",
         "y-lambda-closed-form-wenzl-bridge",
+        "wenzl-bridge-applicability-qou",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
         "wedderburn-bratteli-recursion",

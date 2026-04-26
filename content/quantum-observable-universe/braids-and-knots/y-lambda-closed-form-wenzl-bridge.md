@@ -38,23 +38,14 @@ levels).*
 
 ## Applicability in QOU
 
-The QOU axioms — rigid braided monoidal category $\mathbf{C}$ with
-self-dual fundamental object $A$, fibre functor $\tau \colon
-\mathbf{C} \to R\text{-mod}$, Tannaka--Krein Hopf algebra
-$H := \mathrm{Aut}^\otimes(\tau)$ — give exactly the Schur--Weyl
-setup
-$H_n(R, q) = \mathrm{End}_H(V^{\otimes n})$,
-$V := \tau(A)$, with multiplicity decomposition
-$V^{\otimes n} \cong \bigoplus_\lambda V_\lambda^H \otimes V_\lambda^{H_n}$.
-The fibre-functor trace restricted to the $H_n(R, q)$ factor is the
-Markov trace $\mathrm{tr}_M$ at parameter $z$ fixed by
-$z \cdot \dim_q V = 1$.  By Chlouveraki HDR Theorem 6.20 (= Juyumaya
-Theorem 12, $d = 1$) the type-A Markov-trace family is
-**one-dimensional**, parameterised by $z$; the normalisation
-$\mathrm{tr}_M(1) = 1$ pins the scale.  Together these select a
-unique trace, and the Wenzl-bridge formula below is its closed form
-— not assumed, but **forced** by Schur--Weyl + Tannaka--Krein +
-fibre-functor $q$-dimension.
+The QOU axioms force the Wenzl-bridge formula to apply: the
+Schur--Weyl + Tannaka--Krein + 1-dim Markov-trace family chain
+selects a unique Markov trace on $H_n(R, q)$, and the closed form
+below is its only realisation.  The full four-step derivation
+(Schur--Weyl setup, fibre-functor trace = Markov trace,
+1-parameter family, Wenzl-bridge supplies the closed form) is
+proven in
+([Wenzl-bridge applicability in QOU](#prop:wenzl-bridge-applicability-qou)).
 
 ## Convention bridge
 

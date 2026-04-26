@@ -239,3 +239,61 @@ parameter-free numerical prediction:
 
 With these, $(B/A)(q_0; Z, N)$ becomes a one-line evaluation of the
 boxed formula.
+
+## Numerical evaluator (Track 1, partial)
+
+A first numerical evaluator is implemented in
+[`folio-assistant/computations/b_over_a_evaluator.py`](
+../../../folio-assistant/computations/b_over_a_evaluator.py),
+producing the witness
+[`b-over-a-witness.json`](
+../../../folio-assistant/computations/b-over-a-witness.json).
+It mirrors the Lean specification's `lambdaProduct` and
+`bindingEnergyOverA` and supplies the three missing inputs as follows.
+
+**Inputs.**
+
+- *$\Lambda_\lambda^{\mathrm{free}}$ (derived):* identifying intra-nucleon
+  flavour crossings with the irrep's $(pp, nn, pn)$ channels, the proton
+  (uud) contributes $(n_{pp}, n_{nn}, n_{pn}) = (1, 0, 2)$ and the neutron
+  (udd) contributes $(0, 1, 2)$.  The free-braid total scales linearly:
+  $\Lambda_\lambda^{\mathrm{free}}(Z, N) =
+  (\Lambda_\lambda^{\mathfrak{p}})^Z \cdot (\Lambda_\lambda^{\mathfrak{n}})^N$.
+- *Coulomb (derived):* the textbook nuclear-physics form
+  $E_C/A = \tfrac{3}{5} \, \alpha_{\mathrm{EM}} \, \hbar c \,
+  Z(Z-1) / (r_0 A^{1/3} \cdot A)$ with
+  $r_0 = 1.2$ fm and $\alpha_{\mathrm{EM}} = 1/137.036$.  This collapses
+  the explicit brane-density factor of $A^{1/3}$ into the $1/R$
+  prefactor; deriving the same expression directly from the brane density
+  remains open.
+- *$c_S$ (fitted):* the non-abelian Stokes computation referenced in
+  [confined knot binding](#prop:confined-knot-binding) and
+  [Wigner np pairing](#prop:wigner-np-pairing) is not yet assembled
+  into a closed form.  We fit $c_S$ to ${}^4\mathrm{He}$ alone
+  (so the $A=4$ residual is zero by construction) and report the
+  out-of-sample residual on ${}^{12}\mathrm{C}$ and ${}^{40}\mathrm{Ca}$.
+
+**AME2020 comparison.**
+
+| Nucleus | $A$ | $(B/A)_{\mathrm{spec}}$ (MeV) | $(B/A)_{\mathrm{AME2020}}$ (MeV) | residual (MeV) | residual (%) |
+|:---|---:|---:|---:|---:|---:|
+| ${}^4\mathrm{He}$ | 4 | $7.074$ | $7.074$ | $0$ | $0\%$ (fitted) |
+| ${}^{12}\mathrm{C}$ | 12 | $4.263$ | $7.680$ | $-3.42$ | $-44.5\%$ |
+| ${}^{40}\mathrm{Ca}$ | 40 | $1.326$ | $8.551$ | $-7.23$ | $-84.5\%$ |
+
+**Interpretation.**  The structural form *evaluates*, but with $c_S$
+fitted to ${}^4\mathrm{He}$ it does not yet bind heavier nuclei.  The
+expected sources of the deficit are: (i) the alt-block magnitude is
+forced equal to the sym-block magnitude when $T = 0$ (Lean
+`t_zero_alt_sym_magnitude`), so the volume coefficient at this commit
+is too small by roughly the ratio
+$(w_{\mathrm{sym}} + 2 w_{\mathrm{std}}) / (w_{\mathrm{sym}} + w_{\mathrm{alt}})$;
+(ii) the brane-density prefactor for Coulomb has been absorbed into the
+$A^{1/3}$ scaling rather than derived; (iii) the free-braid
+identification of intra-nucleon flavour crossings with the isospin
+channels of $H_3(R, q)$ may need a flavour-redressing factor before
+the products combine.
+
+These three open questions are the next milestones for Approach 2;
+the witness JSON lays them out cleanly so each can be addressed in
+isolation against a fixed numerical baseline.
