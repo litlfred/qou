@@ -12,9 +12,10 @@ Tests:
    form a probability distribution; their sum must be exactly 1.
 
 3. Markov-trace defining identity: Σ_λ y_λ · χ_λ(σ_w_μ) = z^{n-len(μ)}
-   for the cycle-type representative σ_w_μ of every conjugacy
-   class μ ⊢ n.  Verifying this AT THE SYMBOLIC LEVEL confirms
-   sympy's Matrix.solve produced a correct algebraic inverse.
+   for the cycle-type representative σ_w_μ of the extreme conjugacy
+   classes μ = (n,) and μ = (1, 1, ..., 1).  Verifying this AT THE
+   SYMBOLIC LEVEL confirms sympy's Matrix.solve produced a correct
+   algebraic inverse for those cases.
 
 Pass criterion: each test must hold to ~1e-10 numerical precision
 or to symbolic identity 0.  A mismatch indicates the symbolic form

@@ -177,6 +177,7 @@ def main(ns: list[int], dps: int = 100, do_symbolic: bool = True) -> None:
             rows.append(entry)
         out["tables_by_n"][str(n)] = {
             "n": n,
+            "dps": dps,
             "num_partitions": len(parts),
             "weights": rows,
         }

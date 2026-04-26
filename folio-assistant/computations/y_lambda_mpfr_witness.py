@@ -167,7 +167,7 @@ def main(ns: list[int], dps: int = 50) -> None:
             flush=True,
         )
 
-    print(f"\nFinal write to {out_path}")
+    print(f"\nFinal state already saved incrementally to {out_path}")
 
 
 if __name__ == "__main__":
