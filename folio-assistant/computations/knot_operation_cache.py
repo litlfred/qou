@@ -39,6 +39,7 @@ Hecke algebra Wedderburn decomposition of atomic braids.
 @module folio-assistant/computations/knot_operation_cache
 """
 from __future__ import annotations
+import functools
 import hashlib
 import json
 from dataclasses import dataclass, asdict, field
@@ -72,11 +73,28 @@ class KnotOperation:
     """Script names that have observed this operation."""
 
     plancherel_signature: dict[str, float] = field(default_factory=dict)
-    """For each Wedderburn block λ, the Plancherel weight w_λ.
-    Used as a fingerprint: two operations are 'equivalent' iff they
-    have the same plancherel_signature (within tolerance).
+    """Fingerprint dict of float values; two operations are
+    'equivalent' iff they have the same signature (within tolerance).
 
-    Keys are partition strings like '(3,2,1)'.
+    Two key conventions are used by different feeders (Gemini
+    #r3143941610):
+
+    1. **Per-block mode** (legacy, `wedderburn_block_fingerprint_feeder`):
+       keys are partition strings like `"(3,2,1)"` and values are the
+       Plancherel weights `w_λ` for each Wedderburn block.
+
+    2. **Per-block-with-context mode** (`discover_via_wedderburn_sdp`,
+       `wedderburn_ylambda_feeder`): keys are
+       `{"y_lambda", "chi_value", "partition_depth", "part_0",
+       "part_1", ...}` carrying the Jones-Markov weight, the
+       irreducible character at the discovery q, the partition's
+       depth, and the partition coordinates as floats.  The `part_<i>`
+       coordinates uniquely determine the partition without
+       collisions across different shapes of the same depth.
+
+    Either is acceptable — the cache key is derived from `(n, NF)`
+    or `(n, fingerprint)`, not from `plancherel_signature`, so the
+    signature shape is purely informational metadata.
     """
 
     fingerprint: dict[str, str] = field(default_factory=dict)
@@ -300,6 +318,143 @@ def discover_factorization(
     return ops
 
 
+# ─── SDP / shadow-price discovery for entangled braids ───────────────
+
+
+def discover_via_wedderburn_sdp(
+    braid_nf: list[tuple[int, int]],
+    n: int,
+    q: float | None = None,
+    discovered_by: str = "discover_via_wedderburn_sdp",
+    tolerance: float = 1e-10,
+    y_lambda_table: dict | None = None,
+) -> list[KnotOperation]:
+    """Shadow-price / Wedderburn-block decomposition for entangled braids.
+
+    Complements [`discover_factorization`]: that handles
+    tensor-decomposable braids (disjoint generator-index ranges); this
+    handles the *entangled* case via per-irrep character evaluation.
+
+    For a braid `β` on `n` strands, the Markov trace decomposes as
+
+      `tr_M(T_β) = Σ_{λ ⊢ n} y_λ · χ_λ(T_β)`,
+
+    where `y_λ` is the Plancherel / Jones-Markov weight (from the
+    witness file) and `χ_λ` is the irreducible Hecke character at q.
+    Each `λ` with `|χ_λ(T_β)| > tolerance` corresponds to an *active
+    Wedderburn block* — a sub-component of `β` that lives in the
+    `S^λ`-summand of `H_n(q)`.
+
+    **Shadow-price interpretation** (Schrijver §4):  the dual LP
+    `max  c·u  s.t.  Σ_λ u_λ · y_λ · χ_λ(T_β) ≥ tr_M(T_β),  u_λ ≥ 0`
+    has a non-zero dual price `u_λ` exactly when block `λ` is active.
+    Computing `χ_λ(T_β)` for every `λ` and filtering by the
+    tolerance gives the support of the dual optimum directly,
+    without invoking a full LP solver — adequate for fingerprinting
+    purposes.  Callers needing the explicit `u_λ` values can run the
+    LP downstream using `confinement-lp.py` as a template.
+
+    Returns one KnotOperation per active block.  Each op carries:
+      - `n` = strand count
+      - `braid_word_normal_form` = []  (per-block fingerprint, not the
+        original word — keeps `cache_key` stable across braids that
+        activate the same blocks at the same q)
+      - `plancherel_signature` = {`y_lambda`, `chi_value`, `partition_<i>`}
+        where `partition_<i>` encodes the partition coordinates as
+        floats (since `plancherel_signature` is a dict of floats).
+      - `fingerprint` = {`feeder`, `n`, `partition`} — same shape as
+        the y_λ feeder, so the two feeders' caches interoperate.
+
+    `y_lambda_table` (optional): pre-loaded `{tuple(partition): y_λ}`
+    dict.  If `None`, the function loads `y-lambda-jones-markov-
+    witness.json` lazily.  Provide explicitly if running in a tight
+    inner loop or against a non-default witness.
+
+    `tolerance`: characters with `|χ_λ| < tolerance` are treated as
+    inactive.  Default `1e-10` is conservative for f64 evaluation;
+    the mpfr variant should pass a tighter tolerance.
+    """
+    if not braid_nf:
+        # Empty braid: every block is "active" with χ_λ = dim S^λ.
+        # Emit nothing (caller can use the y_λ feeder for that case).
+        return []
+
+    if q is None:
+        from q_parameter import Q as Q0
+        q = float(Q0)
+
+    import pyhecke_native as p_native
+    parts = [list(lam) for lam in p_native.partitions_of(n)]
+    chars = p_native.chi_lambdas_braid(parts, list(braid_nf), q)
+
+    if y_lambda_table is None:
+        y_lambda_table = _load_y_lambda_table(n)
+
+    new_ops: list[KnotOperation] = []
+    for lam, chi in zip(parts, chars):
+        chi_val = float(chi)
+        if abs(chi_val) < tolerance:
+            continue
+        partition = tuple(lam)
+        partition_str = "(" + ",".join(str(p_) for p_ in partition) + ")"
+        plancherel_sig: dict[str, float] = {
+            "y_lambda": float(y_lambda_table.get(partition, 0.0)),
+            "chi_value": chi_val,
+            "partition_depth": float(len(partition) - 1),
+        }
+        # Encode partition coordinates as part_0, part_1, ... so the
+        # signature uniquely determines the partition (otherwise two
+        # partitions with the same depth would collide).
+        for i, p_i in enumerate(partition):
+            plancherel_sig[f"part_{i}"] = float(p_i)
+        # Cache-key fingerprint must be stable across feeder names —
+        # use the constant module identifier here, not the per-call
+        # `discovered_by` parameter (Copilot #r3143946...).  Per-call
+        # attribution is still recorded on the operation via
+        # `discovered_in` (handled by `cache.add_operation`).
+        fingerprint = {
+            "feeder": "wedderburn_sdp",
+            "n": str(n),
+            "partition": partition_str,
+        }
+        op = KnotOperation(
+            n=n,
+            braid_word_normal_form=[],
+            plancherel_signature=plancherel_sig,
+            fingerprint=fingerprint,
+        )
+        new_ops.append(op)
+    return new_ops
+
+
+@functools.lru_cache(maxsize=32)
+def _load_y_lambda_table(n: int) -> dict:
+    """Lazy-load the y_λ table for strand-count `n` from the
+    Jones-Markov witness.  Returns `{tuple(partition): y_λ}`; missing
+    entries default to 0.0 in callers.
+
+    Cached per-`n` (Gemini #r3143941614): the witness JSON is read
+    and parsed at most once per Python process per strand-count.
+    The cache size of 32 covers all practical n (the witness only
+    goes up to n=12; allowing headroom for future extension).  Use
+    `_load_y_lambda_table.cache_clear()` to force a re-read after
+    regenerating the witness."""
+    witness_path = (
+        Path(__file__).parent / "y-lambda-jones-markov-witness.json"
+    )
+    if not witness_path.exists():
+        return {}
+    with open(witness_path, encoding="utf-8") as f:
+        data = json.load(f)
+    table = data.get("tables_by_n", {}).get(str(n))
+    if table is None:
+        return {}
+    return {
+        tuple(entry["partition"]): float(entry["y_lambda"])
+        for entry in table["weights"]
+    }
+
+
 # ─── Composer interface ──────────────────────────────────────────────
 
 def chi_via_factorization(
@@ -421,6 +576,154 @@ def factor_op_from_word(
         n=n,
         braid_word_normal_form=list(word),
         discovered_in=[discovered_by],
+    )
+
+
+def chi_via_factorization_mpfr(
+    lam: tuple | list,
+    factorization: list[KnotOperation],
+    q_str: str,
+    dps: int = 50,
+):
+    """High-precision (MPFR) composer: χ_λ(β = ⊗ factors) at `dps` decimal-precision.
+
+    Parallels [`chi_via_factorization`] but routes per-factor character
+    evaluation through `pyhecke_native.chi_lambdas_braid_mpfr` and
+    composes the LR fold with `mpmath.mpf` arithmetic throughout.
+
+    `q_str`: substrate parameter as a decimal string (avoids f64 lossy
+        conversion at the boundary).
+    `dps`: requested decimal precision (default 50).
+
+    Returns `mpmath.mpf` (caller should keep `mp.mp.dps` ≥ `dps` if
+    further arithmetic is intended).
+
+    Per-factor character vectors are NOT cached across calls — the
+    cache key would need to include `(cache_key, q_str, dps)` and dps
+    can vary per call.  Add module-level memoization later if profiling
+    shows it's a hotspot.
+    """
+    from chi_via_factorization import compose_chi_lambda_generic
+    import pyhecke_native as p_native  # type: ignore[import]
+    import mpmath as mp  # type: ignore[import]
+
+    if not factorization:
+        raise ValueError("factorization is empty")
+    lam_list = sorted((int(p_) for p_ in lam), reverse=True)
+    n_lam = sum(lam_list)
+    n_total = sum(op.n for op in factorization)
+    if n_lam != n_total:
+        raise ValueError(
+            f"|λ|={n_lam} but factorization spans {n_total} strands"
+        )
+    for i, op in enumerate(factorization):
+        if not op.braid_word_normal_form and op.fingerprint:
+            raise ValueError(
+                f"factor {i} has empty braid_word_normal_form but "
+                f"non-empty fingerprint metadata "
+                f"({sorted(op.fingerprint.keys())})."
+            )
+
+    # Use mp.workdps to scope the precision change locally instead
+    # of mutating the global `mp.mp.dps` (Gemini #r3143941599).
+    with mp.workdps(dps):
+        def chars_for(op: KnotOperation) -> dict[tuple, "mp.mpf"]:
+            taus = [list(tau) for tau in p_native.partitions_of(op.n)]
+            if not taus:
+                return {}
+            word = list(op.braid_word_normal_form)
+            values_str = p_native.chi_lambdas_braid_mpfr(
+                taus, word, q_str, dps,
+            )
+            return {
+                tuple(tau): mp.mpf(v_str)
+                for tau, v_str in zip(taus, values_str)
+            }
+
+        factors_p = [op.n for op in factorization]
+        factors_chi = [chars_for(op) for op in factorization]
+        return compose_chi_lambda_generic(
+            lam_list, factors_p, factors_chi,
+            zero=mp.mpf(0),
+            one=mp.mpf(1),
+            is_zero=lambda x: x == 0,
+        )
+
+
+def chi_via_factorization_symbolic(
+    lam: tuple | list,
+    factorization: list[KnotOperation],
+):
+    """Symbolic-q composer: χ_λ(β = ⊗ factors) as a sympy expression
+    in `q` (Laurent polynomial in `q^{1/2}`).
+
+    Per-factor characters use `pyhecke_native.chi_q_via_gp` (which
+    delegates to the F3.2.η Geck-Pfeiffer Hecke-basis expansion +
+    Halverson-Ram broken-strip q-MN); the LR fold runs over sympy
+    expressions for `q`-arithmetic at full precision.
+
+    Returns a `sympy.Expr` in the symbol `q`.  At `q = 1` it
+    specializes to the classical-MN value (matches
+    `chi_via_factorization(lam, factorization, 1.0)`).
+
+    **Cost**: substantially slower than f64 / MPFR because sympy
+    polynomial multiplication is symbolic.  Use for high-precision
+    cross-validation or for cases where the exact polynomial in q is
+    needed (e.g., series expansion in q, identification of zeros).
+    """
+    from chi_via_factorization import compose_chi_lambda_generic
+    import pyhecke_native as p_native  # type: ignore[import]
+    import sympy as sp  # type: ignore[import]
+
+    if not factorization:
+        raise ValueError("factorization is empty")
+    lam_list = sorted((int(p_) for p_ in lam), reverse=True)
+    n_lam = sum(lam_list)
+    n_total = sum(op.n for op in factorization)
+    if n_lam != n_total:
+        raise ValueError(
+            f"|λ|={n_lam} but factorization spans {n_total} strands"
+        )
+    for i, op in enumerate(factorization):
+        if not op.braid_word_normal_form and op.fingerprint:
+            raise ValueError(
+                f"factor {i} has empty braid_word_normal_form but "
+                f"non-empty fingerprint metadata "
+                f"({sorted(op.fingerprint.keys())})."
+            )
+
+    q_sym = sp.symbols("q", positive=True)
+
+    def poly_from_terms(terms: list[tuple[int, str]]) -> sp.Expr:
+        """Convert list[(half_exp, coeff_str)] → sympy expression
+        Σ int(c) · q^(he/2)."""
+        total = sp.S.Zero
+        for he, c_str in terms:
+            total = total + sp.Integer(int(c_str)) * q_sym ** sp.Rational(he, 2)
+        return sp.expand(total)
+
+    def chars_for(op: KnotOperation) -> dict[tuple, sp.Expr]:
+        taus = [list(tau) for tau in p_native.partitions_of(op.n)]
+        if not taus:
+            return {}
+        out: dict[tuple, sp.Expr] = {}
+        for tau in taus:
+            terms = p_native.chi_q_via_gp(
+                list(tau), op.n, list(op.braid_word_normal_form),
+            )
+            out[tuple(tau)] = poly_from_terms(terms)
+        return out
+
+    factors_p = [op.n for op in factorization]
+    factors_chi = [chars_for(op) for op in factorization]
+    return compose_chi_lambda_generic(
+        lam_list, factors_p, factors_chi,
+        zero=sp.S.Zero,
+        one=sp.S.One,
+        # Sympy `x == 0` returns an `Equality` object that's truthy
+        # in Python — using `x.equals(0)` returns a proper bool
+        # (Gemini #r3143941602).
+        is_zero=lambda x: x.equals(0) if hasattr(x, "equals") else x == 0,
     )
 
 
