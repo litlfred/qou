@@ -111,6 +111,7 @@ export default chapter({
         "cmb-torsion-data",
         "gravity-emergent",
         "gravity-spectral-prefactor",
+        "g-q-closed-form",
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",
