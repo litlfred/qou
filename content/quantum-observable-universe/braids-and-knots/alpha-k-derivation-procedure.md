@@ -135,28 +135,42 @@ generators, builds the cache once per partition, and reuses across
 all test words, yielding $O(p(n)^2 \cdot \max d_\lambda^3)$ overall
 with bounded memory.
 
-**CRT-style $q$-rational reconstruction.**
-The numeric witness at $q_0$ represents only one ring-map specialisation
-$\iota \colon R \to \mathbb{R}$.  Each $y_\lambda$ is in fact a
-$q$-rational element of $R(\!(z)\!)$, and can be recovered exactly
-by Vandermonde / Lagrange interpolation from evaluations at multiple
-probe values $q_1, \ldots, q_m$:
+**CRT-style $q$-probing and reconstruction.**
+The numeric witness at $q_0$ represents one ring-map specialisation
+$\iota \colon R \to \mathbb{R}$.  Each $y_\lambda$ is a $q$-rational
+element of $R(\!(z)\!)$ — generically of the form $P_\lambda(q^{1/2})/
+Q_\lambda(q^{1/2})$ with both $\deg P_\lambda, \deg Q_\lambda$ growing
+in $n$.  The $q$-parameterised seminormal builder
+([`build_seminormal_matrices(q=...)`](#)) evaluates $y_\lambda$ at
+any probe point.  Two reconstruction strategies:
 
-1. *Choose $m$ probe values $q_1, \ldots, q_m$ bracketing $q_0$
-   (e.g.\ $\{1.02, 1.05, 1.08, 1.11, 1.15\}$ —
-   [`crt_markov.py`](#) precedent).*
-2. *Solve the linear system at each $q_i$ with seminormal matrices
-   rebuilt at that $q_i$ (requires a $q$-parameterised builder; the
-   Rust kernel in
-   [`phase-b-heavy-rust-character-kernel`](#) supplies one).*
-3. *Interpolate $y_\lambda(q)$ as a Laurent polynomial in $q^{1/2}$
-   to recover exact integer coefficients.*
+*Multi-$q$ Padé / rational interpolation.*
+Choose $m$ distinct probe values $q_1, \ldots, q_m$ (e.g.\
+$\{1.02, 1.05, 1.08, 1.11, 1.15\}$ — [`crt_markov.py`](#)
+precedent).  Vandermonde-uniquely determines a polynomial of degree
+$\leq m - 1$; faithful rational reconstruction
+$y_\lambda = P/Q$ with $\deg P = a$, $\deg Q = b$ requires
+$m \geq a + b + 1$ probes.  An *a priori* bound from the determinant
+structure of $A(q)$ gives $\deg P_\lambda, \deg Q_\lambda = O(n^2)$,
+so faithful rational reconstruction needs on the order of $n^2$
+probe points — not $5$.  Five probes suffice for: (i) a degree-$4$
+polynomial fit usable for local sensitivity
+$\partial y_\lambda/\partial q$ near $q_0$, (ii) consistency
+checks against any analytically derived closed form.
 
-This converts the float-at-$q_0$ witness into a fully symbolic
-$q$-rational expression, eliminating the floating-point residual.
-The present Python pipeline records only the canonical $q_0$
-specialisation; the Rust kernel performs the full multi-$q$
-reconstruction efficiently.
+*Symbolic linear-system solve.*
+For exact rational forms, replace numeric `numpy.linalg.solve` with
+`sympy` over a symbolic $q$.  Cost grows rapidly with $p(n)$, but the
+output is the exact $q$-rational $y_\lambda$.  Tractable in pure
+Python for $n \leq 5$; the sibling Rust kernel
+([`phase-b-heavy-rust-character-kernel`](#)) handles larger $n$.
+
+*Witness data layout.*
+At $n \leq 10$ the witness records both the canonical $q_0$ floats
+and $5$ CRT probe points $\{(q_i, z_i, \mathbf{y}(q_i))\}$ for
+verification of any closed form.  At $n \in \{11, 12\}$ only $q_0$ is
+recorded (probe-rebuild cost prohibitive in pure Python; defer to
+the Rust kernel for higher-$n$ probes).
 
 **Status of $\alpha_k$ across $n$.**
 
