@@ -538,37 +538,83 @@ the paper introduces genuinely new axioms/structure, add a definition.
 - Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
 - Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
 
-### 7aa. Notation register (STRICT)
+### 7aa. Notation register (STRICT) — organized by introducing chapter
 
 Every mathematical symbol belongs to exactly one register.
-Agents **must** use the correct font for each concept.
+Agents **must** use the correct font for each concept.  The register
+is grouped by the chapter where the symbol is **first introduced**;
+chapters are listed in alphabetical-ish order.  Within each chapter,
+entries are sorted alphabetically by the concept name.
 
-| Register | Font | Symbols |
-|----------|------|---------|
-| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
-| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
-| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass), `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). **Never** plain `$m$` for categorical mass. |
-| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
-| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
-| Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
-| Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
-| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
-| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
-| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
-| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
-| Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
-| Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
-| Information | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
-| Measures | Greek | `$\mu_J$` (Julia-set measure) |
-| Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
-| Bundles/sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+#### algebraic-substrate
+
+| Concept | Font | Symbols |
+|---------|------|---------|
 | $q$-shuffle Hopf algebra | calligraphic | `$\mathcal{H}_q$` — convolution algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under $\ast_q$; carries the grouplikes $\exp_q, \log_q, \mathrm{Li}_2^q$. **Never** plain `$H_q$` (collides with Hecke and Hamiltonian). |
-| Iwahori–Hecke algebra | Latin cap | `$H_n(q)$` — always with subscript $n$; standard knot-theory convention (Kassel, Jones). |
-| $q$-Hamiltonian | hat | `$\hat{H}_q$` (operator hat, Dirac convention). **Never** plain `$H_q$`. Distinct from `$\mathcal{H}_q$` (shuffle algebra) and `$H_n(q)$` (Hecke). |
+| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
+
+#### braids-and-knots
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
 | Hook-length product | Latin cap + arg | `$H_q(\lambda) = \prod_{x \in \lambda} [h_x(\lambda)]_q$` — always with partition argument; unambiguous in knot/partition contexts. |
+| Iwahori–Hecke algebra | Latin cap | `$H_n(q)$` — always with subscript $n$; standard knot-theory convention (Kassel, Jones). |
+| Jones–Markov central coefficient | plain italic | `$y_\lambda$` — coefficient in $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ ([procedure](#prop:alpha-k-derivation-procedure)). Sign-indefinite at $n \geq 4$. **Never** confuse with $u_\lambda$ (LP shadow-price). |
+| LP shadow-price | plain italic | `$u_\lambda, u_0$` (Schrijver linear-programming convention) for operator-selection LP dual variables ([BW shadow price](#prop:bw-coefficient-shadow-price)). Non-negative by LP duality. **Never** write `$y_\lambda$` here (collides with Jones–Markov). |
+| Markov parameter | plain italic | `$z = 1/(q^{1/2} + q^{-1/2})$` |
+| Mass | fraktur | `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). |
+
+#### descartes-universe
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
+| Gravitational constant | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
+| Julia-set measure | Greek | `$\mu_J$` (measure on Julia set) |
+| Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
+
+#### information-theory
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Entropy (operational) | Greek | `$\eta_q = (2q-1)/q^3$` |
+| Information bandwidth | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
+| Lyapunov exponent | Greek | `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov). Distinct from $\chi_\zeta(c)$ (character). |
+
+#### observations
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
+| Mass number | Latin cap | `$A = Z + N$` |
+| Neutron number | Latin cap | `$N$` |
+| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
+| Proton number | Latin cap | `$Z$` (atomic number). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
+
+#### particle-interactions
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
+| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
+| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
+| Mass (categorical) | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass). **Never** plain `$m$` for categorical mass. |
+| $q$-Hamiltonian | hat | `$\hat{H}_q$` (operator hat, Dirac convention). **Never** plain `$H_q$`. Distinct from `$\mathcal{H}_q$` (shuffle algebra) and `$H_n(q)$` (Hecke). |
+
+#### quantum-observable-universes
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Bundles / sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
+
+#### quantum-universes
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
 | Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
-| Proton number | Latin cap | `$Z$` (atomic number, standard nuclear convention). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
-| Neutron number | Latin cap | `$N$` (neutron number), `$A = Z + N$` (mass number) |
 
 **Key collision avoidances:**
 - `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
