@@ -866,8 +866,9 @@ mod tests {
     /// seminormal evaluation `χ_λ(T_{w_min(μ)}; q)`, where
     /// `T_{w_min(μ)}` is a canonical (minimal-length) permutation
     /// braid of cycle type μ.  This test pins that equivalence on a
-    /// sample of (λ, μ) at q = q₀ ≈ 1.10998 covering every
-    /// non-trivial irrep up to n = 4.
+    /// representative sample of (λ, μ) at q = q₀ ≈ 1.10998,
+    /// including non-trivial irreps through n = 4 (and the n = 4
+    /// sign rep λ = (1,1,1,1)).
     ///
     /// The Halverson–Ram broken-strip implementation in
     /// `chi_q_rec_memo` already produces these values; this test
@@ -901,6 +902,11 @@ mod tests {
             (vec![2, 2], vec![4], vec![(1, 1), (1, 2), (1, 3)]),
             // n = 4: λ = (2,1,1), μ = (3,1) — non-trivial mid-rep.
             (vec![2, 1, 1], vec![3, 1], vec![(1, 1), (1, 2)]),
+            // n = 4 sign rep λ = (1,1,1,1) on (2,2) and (4)
+            // (per Copilot review #r3144...): cover the sign rep
+            // explicitly so the docstring claim is honest.
+            (vec![1, 1, 1, 1], vec![2, 2], vec![(1, 1), (1, 3)]),
+            (vec![1, 1, 1, 1], vec![4], vec![(1, 1), (1, 2), (1, 3)]),
         ];
         for (lambda, mu, word) in &cases {
             let chi_qmn = chi_lambda_mn_qdef(lambda, mu);

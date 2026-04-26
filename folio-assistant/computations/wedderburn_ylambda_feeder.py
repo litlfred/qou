@@ -59,9 +59,18 @@ def discover_for_n(
     cache: KnotOperationCache,
     witness: dict,
     feeder_name: str = "wedderburn_ylambda_feeder",
+    refresh: bool = False,
 ) -> dict:
     """For partition table at strand-count `n`, emit one KnotOperation
-    per `λ ⊢ n` with the witness y_λ as `plancherel_signature`."""
+    per `λ ⊢ n` with the witness y_λ as `plancherel_signature`.
+
+    If `refresh=True` (Copilot review #r3143884872), existing cache
+    entries with matching `cache_key` have their `plancherel_signature`
+    overwritten with the freshly-loaded witness values — useful when
+    the witness JSON has been regenerated and the cache should
+    treat it as the source of truth.  By default re-runs only merge
+    `discovered_in` and leave existing y_λ values untouched
+    (idempotent under unchanged inputs)."""
     table = witness["tables_by_n"].get(str(n))
     if table is None:
         return {"n": n, "n_partitions": 0, "cache_keys": []}
@@ -89,6 +98,10 @@ def discover_for_n(
             fingerprint=fingerprint,
         )
         cache_key = cache.add_operation(op, discovered_in=feeder_name)
+        # On --refresh, force-overwrite plancherel_signature on the
+        # existing entry so a regenerated witness propagates.
+        if refresh and cache_key in cache.operations:
+            cache.operations[cache_key].plancherel_signature = plancherel_sig
         new_ops.append(cache_key)
 
     cache.add_factorization(
@@ -121,6 +134,12 @@ def main() -> int:
         "--witness", type=Path, default=WITNESS_PATH,
         help="Jones-Markov witness JSON path.",
     )
+    parser.add_argument(
+        "--refresh", action="store_true",
+        help="Force-overwrite plancherel_signature on existing cache "
+             "entries from the freshly-loaded witness (Copilot review "
+             "#r3143884872).  Default: leave existing entries unchanged.",
+    )
     args = parser.parse_args()
 
     if not args.witness.exists():
@@ -128,7 +147,10 @@ def main() -> int:
         print("       Run y_lambda_jones_markov_witness.py first or merge PR #430.")
         return 1
 
-    with open(args.witness) as f:
+    # Explicit utf-8 (Gemini #r3145...): JSON files in this repo are
+    # ASCII-safe but the encoding default on Windows is cp1252; force
+    # utf-8 for cross-platform consistency.
+    with open(args.witness, encoding="utf-8") as f:
         witness = json.load(f)
 
     cache = KnotOperationCache(args.cache_path)
@@ -142,7 +164,7 @@ def main() -> int:
         if n not in available_ns:
             print(f"  skip n={n} (not in witness)")
             continue
-        summary = discover_for_n(n, cache, witness)
+        summary = discover_for_n(n, cache, witness, refresh=args.refresh)
         print(f"\nn={n}: {summary['n_partitions']} partitions, "
               f"q_0={summary['q_0']}, z_markov={summary['z_markov']}")
         if summary["cache_keys"]:

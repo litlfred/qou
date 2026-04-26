@@ -443,31 +443,41 @@ pub fn chi_lambda_via_gp_hoefsmit(
     total
 }
 
-/// **F3.2.ζ — partial Hecke-conjugation reduction (simple-reflection only).**
+/// **F3.2.η_full — Hecke-conjugation reduction with §3.2 cuspidal moves.**
 ///
-/// Given a Hecke element `x = Σ c_w · T_w`, repeatedly find a basis
-/// element `T_w` whose `w` is NOT minimal-length within its
-/// `S_n` conjugacy class, and apply Hecke conjugation by a SIMPLE
-/// reflection `s_i` such that `ℓ(s_i w s_i) < ℓ(w)`.  The conjugation
-/// produces a sum of basis elements via the Hecke relations.
+/// Given a Hecke element `x = Σ c_w · T_w`, drive every basis element
+/// to minimal length within its `S_n` conjugacy class by repeatedly
+/// finding a Hecke conjugator `T_v` (with `v` a reduced word of
+/// length 1..=`MAX_CONJ_LEN` = 3) such that `ℓ(v · w · v⁻¹) < ℓ(w)`
+/// and applying Hecke conjugation `T_v · T_w · T_v⁻¹` (which produces
+/// a sum of basis elements via the Hecke relations).
 ///
-/// **Algorithmic limitation (motivates F3.2.η)**: not every non-minimal
-/// element of `S_n` has a length-reducing simple-reflection
-/// conjugation.  For example, in the conjugacy class of 6-cycles in
-/// `S_6`, the element `[1, 3, 4, 5, 0, 2]` has length 7 and minimal
-/// length 5, but no `s_i w s_i` reduces length.  The full
-/// Geck-Pfeiffer 2000 §3.2 algorithm uses "good cuspidal moves"
-/// (specific products of consecutive simple reflections) to reach
-/// minimal-length representatives in such cases.
+/// History: the previous F3.2.ζ implementation only tried simple-
+/// reflection (length-1) conjugators `s_i w s_i`, which is incomplete
+/// — the documented n=6 counterexample `[1, 3, 4, 5, 0, 2]` (a 6-cycle
+/// of length 7, minimal length 5) has no length-1 reducer but is
+/// length-reducible by a length-2 conjugator from the §3.2 cuspidal
+/// moves.  This function now uses the multi-letter
+/// `find_length_reducing_conjugator` and reaches minimal length on
+/// every S_n class for n ≤ 6 (verified by
+/// `worklist_reduces_n6_counterexample_to_minimal`).
 ///
-/// **Empirical**: on the D atomic braid (n=6, word_len=23), this
-/// partial reduction takes the basis from ~700 elements down to 145,
-/// of which 17 are minimal-length and 128 still need the full
-/// cuspidal-move algorithm.
+/// Failure handling: if no length-reducing conjugator is found within
+/// the `MAX_CONJ_LEN` budget, the routine **panics** with a
+/// descriptive message naming `target_w` (Copilot / Gemini #r3144...).
+/// Silent skipping was the previous behaviour and was a correctness
+/// hazard — downstream `chi_lambda_via_geck_pfeiffer` assumes every
+/// basis element is minimal-length before applying q-MN on cycle type,
+/// so an unreduced element produces wrong polynomials at q ≠ 1.
+/// Failing loudly surfaces the (rare, n ≥ 7+) cases where length-3
+/// is insufficient and points callers at the Hoefsmit-per-basis path
+/// (`chi_lambda_via_gp_hoefsmit`) which is correct at any n.
 ///
-/// At q = 1, even partial reduction is sufficient because cycle type
-/// determines the character; the F3.2.γ wiring matches classical MN
-/// at q = 1 regardless of `reduce_basis_to_minimal_length` behaviour.
+/// **Empirical**: on the D atomic braid (n=6, word_len=23) all 145
+/// basis elements (after Hecke expansion) reduce to minimal length
+/// within MAX_CONJ_LEN = 3.  At q = 1 the original F3.2.ζ partial
+/// reduction was already sufficient (cycle type determines the
+/// character); at q ≠ 1 the §3.2 moves are required.
 pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
     let mut current = x.clone();
 
@@ -529,14 +539,32 @@ pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
         let chosen_word = find_length_reducing_conjugator(
             &target_w, target_len, MAX_CONJ_LEN,
         );
-        let Some(conj_word) = chosen_word else {
-            // No conjugator up to MAX_CONJ_LEN reduces length.  For
-            // n ≤ 6 this should not happen in any S_n conjugacy class
-            // (verified empirically); for larger n it would require
-            // longer good-cuspidal-move searches.  Skip this element
-            // and continue rather than looping forever.
-            continue;
-        };
+        let conj_word = chosen_word.unwrap_or_else(|| {
+            // No conjugator up to MAX_CONJ_LEN reduces length.  This
+            // means we cannot maintain the invariant that every basis
+            // element in `current` is reduced to minimal length before
+            // downstream character evaluation, so failing loudly is
+            // preferable to silently returning an incorrect polynomial
+            // (Copilot #r3143884885 / Gemini #r3145..., agreed).
+            //
+            // For n ≤ 6 this should not happen in any S_n conjugacy
+            // class — the search up to MAX_CONJ_LEN is sufficient
+            // (verified by `worklist_reduces_n6_counterexample_to_minimal`).
+            // If it does fire, the caller is operating beyond the
+            // current Geck-Pfeiffer §3.2 budget and should use the
+            // Hoefsmit-per-basis path (`chi_lambda_via_gp_hoefsmit`)
+            // instead.
+            panic!(
+                "reduce_basis_to_minimal_length: no length-reducing \
+                 conjugator found for w = {:?} (ℓ={}, min_ℓ={}) within \
+                 MAX_CONJ_LEN = {} — Geck-Pfeiffer §3.2 reduction \
+                 invariant violated, downstream q-MN on cycle type \
+                 would give wrong polynomials at q ≠ 1.  Use \
+                 chi_lambda_via_gp_hoefsmit (Hoefsmit per T_w) for \
+                 correct evaluation on this input.",
+                target_w.0, target_len, target_min_len, MAX_CONJ_LEN
+            );
+        });
 
         // Apply Hecke conjugation by T_v: replace c_w · T_w with
         // c_w · (T_v · T_w · T_v⁻¹) in current.
