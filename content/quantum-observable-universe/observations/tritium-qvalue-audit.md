@@ -1,8 +1,11 @@
 Independent audit of the tritium $\beta$-decay Q-value derivation
 ${}^3\mathrm{H} \to {}^3\mathrm{He} + e^- + \bar\nu_e$, verifying
-each step for fitted parameters and hidden assumptions.
+each step of [prop:tritium-qvalue-symbolic](#prop:tritium-qvalue-symbolic)
+for fitted parameters and hidden assumptions.  This block is
+purely audit; the canonical statement and proof of the closed-form
+Q-value formula live with the proposition.
 
-## Derivation chain (verified)
+## Derivation chain (verified against the proposition)
 
 **Step 0: Substrate parameter** (1 measurement consumed).
 

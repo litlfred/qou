@@ -71,12 +71,34 @@ Plus 2 back-matter directories flagged for §4b notation-introduction review (lo
 >   "syntax boundary / semantic truth" pre-figure.  Ch 8
 >   `golden-ratio-transport.md` got a tikzpicture schematic of
 >   $\Pi(q_0)$ vs $\Pi(q_{\mathrm{gold}})$ degeneration.
-> - **Themes 1 & 2 (boilerplate factoring + section consolidation):**
->   Sub-agents dispatched for these (Ch 4 knot-calc setup, Ch 9
->   coord setup, Ch 12 molecular assembly, Ch 8 regime tables,
->   Ch 6 Frobenius/Hochschild dedup, Ch 11 tritium-audit split)
->   all hit a rate limit before producing output.  These items
->   are deferred for follow-up after the rate-limit window resets.
+> - **Themes 1 & 2 (boilerplate factoring + section consolidation,
+>   second pass, done directly after sub-agents rate-limited):**
+>   * Ch 4: extended `knot-notation-convention.md` with a
+>     "Hecke / Skein conventions for worked examples" subsection
+>     anchoring $\sigma_i$, the Hecke relation, the Skein relation,
+>     $J_K(q)$, and the topological mass formula in one place that
+>     future computation blocks reference.
+>   * Ch 8: created `regime-table.md` + `.ts`, a master regime
+>     table covering $q \to 1$ / $q_0$ / $q_{\mathrm{gold}}$ /
+>     $q \to \infty$ across $\hbar_q, c_q, \eta_q, d_H(q), G(q)$.
+>     Per-section tables in `operational-entropy`,
+>     `information-speed-of-light`, `gravitational-constant`,
+>     `hausdorff-dimension-recurrence` are now projections of this
+>     master.  Registered as the second block in §1 of Ch 8.
+>   * Ch 11: `tritium-qvalue-audit.md` reframed at the top as
+>     "purely audit; canonical statement and proof live with
+>     `prop:tritium-qvalue-symbolic`" — the proposition already
+>     existed in Ch 10 (`particle-interactions/tritium-qvalue-symbolic.ts`),
+>     so the structural split was already in place; the remark
+>     just gained an explicit pointer.
+>   * Ch 9, Ch 12: existing canonical blocks
+>     (`color-tube-coordinates.md`, `molecular-braid.md`) already
+>     anchor the conventions the audit recommended factoring; no
+>     new block needed.  Per-block `uses[]` arrays already
+>     reference them.
+>   * Ch 6 Frobenius / Hochschild dedup: investigated, found only
+>     2 files per topic — insufficient duplication to justify
+>     refactoring.  Marked as audit false positive.
 >
 > **Editor skill update:** `.claude/skills/local/editor.md`
 > §Responsibilities #4 expanded to surface the post-QA notation
