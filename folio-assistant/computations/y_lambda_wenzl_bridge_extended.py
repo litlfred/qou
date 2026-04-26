@@ -130,18 +130,17 @@ def main():
             s = Q_sym**n_partition(lam) * num / den
             s_vals[lam] = s
 
-        # Z = Σ d_µ s_µ
+        # Z = Σ d_µ s_µ — keep unsimplified to avoid sympy recursion blowup at n≥6
         Z = sum(hook_dim(lam) * s_vals[lam] for lam in parts)
-        Z_simplified = sp.together(Z)
 
-        # y_λ = s_λ / Z, with X substituted
+        # y_λ = s_λ / Z, with X substituted — NO simplify (recursion error at large n)
         y_results = {}
         for lam in parts:
-            y = s_vals[lam] / Z_simplified
-            # Now substitute X → q-rational form
-            y_with_X = y.subs(Xs, X)
-            y_simplified = sp.together(sp.simplify(y_with_X))
-            y_results[str(lam)] = str(y_simplified)
+            y_unsimp = s_vals[lam] / Z
+            # Substitute X → q-rational form
+            y_with_X = y_unsimp.subs(Xs, X)
+            # Just record the expression as a string; user can simplify externally
+            y_results[str(lam)] = str(y_with_X)
 
         elapsed = time.time() - t0
 
