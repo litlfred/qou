@@ -32,24 +32,22 @@ any particular ontology.
 The central thesis is that these everyday observations, once
 stated carefully, determine a specific algebraic structure: a
 *rigid monoidal category* equipped with a fibre functor and a
-Frobenius trace $\int_A$.  We call this structure a **quantum
+Frobenius trace.  We call this structure a **quantum
 observable universe** (QOU).  Its axioms encode precisely the
 features listed above and nothing more.
 
 The consequences are broad in scope and specific in detail.  The
-symmetry group $\mathrm{SU}(2)$ is not assumed; it emerges via
-Tannaka–Krein reconstruction.  The uncertainty principle is not
-postulated; it appears as the geometric signature of degrees of
-freedom not yet resolved.  Genus four is not chosen either; it is
-forced, and a single algebraic curve realises it canonically:
-Bring's surface $\Sigma_4$, the universal genus-$4$ curve with
-maximal automorphism group $S_5$.  Particles are knots —
-topological objects classified by their crossing structure — and
-simultaneously vortex lines in the fibre of the state bundle, the
-two pictures exchanged by the Frobenius self-duality
-$A \cong A^{\vee}$.  Restricting to knots that embed in $\Sigma_4$
-makes the operator space *finite*: the embeddability bound yields
-exactly six force operators and the identity, no more.
+symmetry group $\mathrm{SU}(2)$ is not assumed; it emerges from
+the axioms.  The uncertainty principle is not postulated; it
+appears as the geometric signature of degrees of freedom not yet
+resolved.  Genus four is not chosen either; it is forced, and a
+single algebraic curve realises it canonically: Bring's surface
+$\Sigma_4$, the universal genus-$4$ curve with maximal
+automorphism group $S_5$.  Particles can be viewed as knots or as
+vortices; the algebra describes their interactions.  Restricting
+to knots that embed in $\Sigma_4$ makes the operator space
+*finite*: the embeddability bound yields exactly six force
+operators and the identity, no more.
 
 What remains, after the structure is fixed, is calibration.
 Representation theory of the Iwahori–Hecke algebra and the Bring

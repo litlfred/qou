@@ -310,6 +310,13 @@ Content change detected
      `$=$`, unless an explicit `$O(\cdot)$` error term is present.
    See `copilot-instructions.md` §11.3 for the full register list and
    `rendering-auditor.md` for the audit checklist.
+4a. **Markdown render check**: after editing any `.md` content block,
+   delegate to `markdown-render-check` for the GitHub-view sanity pass.
+   It catches the `+`/`-` at line start inside `$$...$$` (which GitHub
+   parses as a bullet list and which silently breaks display math),
+   missing blank lines before `$$`, `\operatorname{}` (KaTeX rejects),
+   and similar pitfalls. Always end the proof pass by listing the
+   GitHub blob URLs of changed `.md` files for the author's eyeball.
 5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
    propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
    exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each
