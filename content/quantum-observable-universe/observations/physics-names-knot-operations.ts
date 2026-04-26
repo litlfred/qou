@@ -3,6 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:physics-names-knot-operations",
   title: "Physics names $\\leftrightarrow$ categorical knot operations (table; depends on $q_0$)",
+  interprets: "prop:confinement-categorical",
   uses: [
     "def:borromean-baryon",
     "prop:borromean-baryon-interpretation",
