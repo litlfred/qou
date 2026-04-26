@@ -329,6 +329,8 @@ export default chapter({
         "derived-mass-formula-light-isotopes",
         "deuteron-binding-frobenius-codim",
         "hoefsmit-seminormal-form",
+        "f4-tensor-composer-lr",
+        "f4-wedderburn-sdp-shadow-price",
         "figure-eight-branching-rule",
         "figure-eight-bw-coefficients",
         "universal-braid-branching",
