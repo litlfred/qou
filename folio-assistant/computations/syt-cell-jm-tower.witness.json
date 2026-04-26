@@ -1,7 +1,7 @@
 {
   "computation": "syt-cell-jm-tower",
   "description": "SYT-cell JM mass tower.  V_hat_JM[k] = tr_M(L_k . rho(W)) = Sum_lambda w_lambda / d_lambda . Sum_T q^{2 c_T(k)} . <T|W^lambda|T>.  Tower mass = |prod V_JM| + Sum_k Phi_q(|V_JM[k]|) + z^2 Sum_{k1<k2} Phi_q(|V_JM[k1] . V_JM[k2]|).  All pairs (L_i L_j commute).  Compared to scalar generator-indexed tower on D, T, 3He (and optionally 4He).",
-  "timestamp": "2026-04-19T01:15:31.305446+00:00",
+  "computedAt": "2026-04-19T01:15:31.305446+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_scalar": 0.000795823206922311,

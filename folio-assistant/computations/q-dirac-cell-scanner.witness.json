@@ -1,7 +1,7 @@
 {
   "computation": "q-dirac-cell-scanner",
   "description": "q-Dirac character calculator + (k, \u03b5, D_q\u00b2) cell scanner.  Computes q-Dirac eigenvalue, S-eigenvalue, depth, Plancherel weight for each partition of n=3,4,5,6,9,12.  Identifies which cells of the (curvature-rank, chirality, q-Dirac\u00b2) grid are populated and which contribute to \u03b1_EM, np splitting, and Q_\u03b2 formulas.",
-  "timestamp": "2026-04-25T22:58:39.255307+00:00",
+  "computedAt": "2026-04-25T22:58:39.255307+00:00",
   "q_0": 1.1099785955541805,
   "precision": "f64_numeric_fallback",
   "truncation_eps": 0.0

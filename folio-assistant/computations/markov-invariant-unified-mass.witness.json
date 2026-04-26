@@ -1,7 +1,7 @@
 {
   "computation": "markov-invariant-unified-mass",
   "description": "30a: Markov-invariant unified mass formula assembly. Replaces non-Markov-invariant proxies in the 6-term with pyhecke canonical Markov trace, Frobenius co-Casimir \u03a3_n, and universal Term 7 (m_e\u00b78G\u00b7B_shadow).  Calibrates \u03b1_M, \u03b1_F from {D, T} binding to test universality on \u00b3He, \u2074He.  Built into the same script: 30b gap analysis between Markov-invariant predictions and AME.",
-  "timestamp_utc": "2026-04-25T23:33:47.514853+00:00",
+  "computedAt": "2026-04-25T23:33:47.514853+00:00",
   "structural_prefactors": {
     "alpha_M_MeV": -3.728573825966886,
     "alpha_F": -1.2917203783792384,

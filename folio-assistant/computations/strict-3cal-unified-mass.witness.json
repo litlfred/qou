@@ -1,7 +1,7 @@
 {
   "computation": "strict-3cal-unified-mass",
   "description": "STRICT 3-categorical-calibration unified mass prediction. NO per-isotope fitting.  Uses m_e, q_0, m_p (E_0 anchor) with structural \u03b1_k = (1, 1, z\u00b2, 1, m_e\u00b78G, ...) and per-partition Hoefsmit \u03a6_k.  Predicts n, D, T, \u00b3He, \u2074He with the same prefactors as the proton calibration.",
-  "timestamp_utc": "2026-04-25T23:55:01.081622+00:00",
+  "computedAt": "2026-04-25T23:55:01.081622+00:00",
   "calibrations": {
     "m_e_MeV": 0.51099895,
     "q_0": 1.1099785955541805,

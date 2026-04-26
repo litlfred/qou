@@ -1,7 +1,7 @@
 {
   "computation": "chirality-convergence-bound",
   "description": "Convergence-cutoff analysis for the chirality-residue sum \u03a3_chir = m_e \u00b7 \u03a3 Vol(K)\u00b7|(q;q)_r|.  Tabulates |(q;q)_r| for r=0..30 at q_0 = 1.10998, computes a max-Vol upper envelope max_Vol(r) = 0.5\u00b7r\u00b7v_3 (Adams/Thurston bound), identifies the convergence cutoff r* (largest r at which a single match contributes <0.01 MeV), and reports n_std_knots_needed for each isotope to bridge its binding gap.",
-  "timestamp": "2026-04-25T19:24:25.918690+00:00",
+  "computedAt": "2026-04-25T19:24:25.918690+00:00",
   "q_0": 1.1099785955541805,
   "m_e_MeV": 0.51099895,
   "v_3": 1.0149416064096535,

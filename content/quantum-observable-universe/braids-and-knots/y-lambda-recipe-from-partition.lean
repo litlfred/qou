@@ -126,13 +126,17 @@ theorem plancherel_via_recipe
 /-- **Cyclotomic factorisation**: the recipe output factors as
     P_λ(√q) / D_n(√q) where D_n is a pure product of cyclotomic
     polynomials Φ_d(√q). -/
+/-- The recipe output factorises as P_λ(√q) / D_n(√q) where D_n is a
+    pure product of cyclotomic polynomials. -/
+constant YLambdaRecipeCyclotomicFactor : Prop
+
 theorem y_lambda_cyclotomic_via_recipe
     (q : ℝ) (hq : q > 1)
     (lam : List ℕ) :
-    True := by
-  trivial  -- Ref: prop:y-lambda-cyclotomic-factorization;
-           -- denominators arise from ∏(1 - q^h) = ∏ Φ_d(√q) products
-           -- by the identity 1 - q^k = ∏_{d ∣ 2k} Φ_d(√q).
+    YLambdaRecipeCyclotomicFactor := by
+  sorry  -- Ref: prop:y-lambda-cyclotomic-factorization;
+         -- denominators arise from ∏(1 - q^h) = ∏ Φ_d(√q) products
+         -- by the identity 1 - q^k = ∏_{d ∣ 2k} Φ_d(√q).
 
 /-! ## Worked example: n = 2 -/
 

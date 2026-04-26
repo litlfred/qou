@@ -1,7 +1,7 @@
 {
   "computation": "derivation-checks",
   "description": "Two derivation-only checks:\n(1) \u03c7_sym\u00b7\u03c7_alt = -(1 + H_A\u00b2/4)^n_ud verified by counting ud factors in atom_braid_word_3A.\n(2) What correction factor brings \u03b1\u00b7|\u03a6_1| to B_AME, and is it a simple algebraic quantity?",
-  "timestamp": "2026-04-24T02:36:28.179277+00:00",
+  "computedAt": "2026-04-24T02:36:28.179277+00:00",
   "H_A_at_q0": 0.20906032198987945,
   "alpha_MeV": 3.74445965488548,
   "check_1_ud_counting": [

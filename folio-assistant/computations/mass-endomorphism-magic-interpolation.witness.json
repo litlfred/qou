@@ -1,7 +1,7 @@
 {
   "computation": "mass-endomorphism-magic-interpolation",
   "description": "Magic-anchor tower interpolation per sec:atom-isotope-confinement. Uses local-constancy of confinement level (def:local-shadow-ordering) to interpolate the deficit ratio r(A) = B/(E_0\u00b7m_free) between magic anchors {4He, 16O, 40Ca}. Anchors define r exactly via AME binding; non-anchor atoms get linearly-interpolated r. Single-phase (q = q_0); cross-phase computation needs full per-generator extraction (conj:mass-endomorphism for nuclei).",
-  "timestamp": "2026-04-17T19:41:10.359716+00:00",
+  "computedAt": "2026-04-17T19:41:10.359716+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "M_proton_tower": 1178995.525436587,

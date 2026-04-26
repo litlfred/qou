@@ -1,7 +1,7 @@
 {
   "computation": "chi-std-pernucleon-closed-form",
   "description": "Closed-form derivation of \u03c7_std(\u03b2_nuc) on 2-dim (2,1) irrep of H_3(q) via explicit 2\u00d72 Hoefsmit seminormal matrix trace.  Both proton and neutron characters take the form (H_A/4)\u00b7([m]+[m-2]+[m-4]+[m-8]) with m_p = 11, m_n = 9.  Proton factors as pure cyclotomic product; neutron has an irreducible residual degree-12 factor.",
-  "timestamp": "2026-04-24T04:59:46.177134+00:00",
+  "computedAt": "2026-04-24T04:59:46.177134+00:00",
   "q_0": 1.1099785955541805,
   "proton": {
     "chi_std_laurent": "(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1)/(4*q**11)",

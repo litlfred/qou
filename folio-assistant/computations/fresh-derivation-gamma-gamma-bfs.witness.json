@@ -1,7 +1,7 @@
 {
   "computation": "fresh-derivation-gamma-gamma-bfs",
   "description": "Fresh \u03b3\u03b3 \u2192 target Hecke-energy via BFS exact shortest-path over {\u03c3_0\u00b1, \u03c3_1\u00b1} operators on Wedderburn blocks, with greedy fallback when BFS exceeds depth/state budget.  Level-0 Plancherel + level-1 jet-tower cost per operator.  Calibrated via m = (E_target/E_electron)\u00b7m_e.",
-  "timestamp": "2026-04-24T17:07:12.450701+00:00",
+  "computedAt": "2026-04-24T17:07:12.450701+00:00",
   "q_0": 1.1099785955541805,
   "electron": {
     "name": "ELECTRON",

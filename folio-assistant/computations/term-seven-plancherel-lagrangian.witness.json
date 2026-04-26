@@ -1,7 +1,7 @@
 {
   "computation": "term-seven-plancherel-lagrangian",
   "description": "23b: Term 7 in Plancherel-Lagrangian form.  Combines prop:plancherel-term-7-formulation (\u03a6_k = w_\u03bb\u00b7log|\u03c7_\u03bb| binned by curvature-rank k) with def:categorical-lagrangian (L_q = L_vol \u2212 L_surf \u2212 L_Coul \u2212 L_Pauli + L_pair via skein-binding-lagrangian).  Each \u03a6_k projects onto a Lagrangian sector; Term 7 = \u03b1\u00b7\u03a3_{k\u22654} \u03a6_k captures the high-rank shell residue.  Per-isotope decomposition for A=2..7 using pyhecke canonical Markov traces.",
-  "timestamp_utc": "2026-04-25T20:39:35.220650+00:00",
+  "computedAt": "2026-04-25T20:39:35.220650+00:00",
   "precision_dps": 30,
   "alpha_prefactor_MeV": 3.74445965488548,
   "method_note": "This implementation uses pyhecke canonical Markov trace as proxy for \u03a3_\u03bb w_\u03bb \u03c7_\u03bb; full per-partition Hoefsmit decomposition would give exact per-depth \u03a6_k contributions.  The Lagrangian-sector projection here is by curvature-rank \u2192 sector mapping.",

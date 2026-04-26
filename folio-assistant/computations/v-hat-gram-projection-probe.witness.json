@@ -1,7 +1,7 @@
 {
   "computation": "v-hat-gram-projection-probe",
   "description": "V-hat-within-level Candidate #2: project atom NF onto the positive eigenspace of G (Frobenius-positive cone) and report how much the canonical Markov trace moves.  If the projection changes tr_M materially, Frobenius-positivity enforcement at the atom-NF level is a structural lever; otherwise the scalar-over-PSD mismatch is not rate-limiting for the unified_lift pipeline.",
-  "timestamp": "2026-04-19T01:53:55.992221+00:00",
+  "computedAt": "2026-04-19T01:53:55.992221+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "gram_eigenvalues": [

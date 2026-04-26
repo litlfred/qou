@@ -1,7 +1,7 @@
 {
   "computation": "binding-from-level-walk",
   "description": "Nuclear binding via level-3 ILP ground states from confinement-level-walk. For each atom, use the ILP-determined (m_pp, m_pn, m_nn) as effective inter-nucleon multiplicities, compute quark-level tower mass, report binding.",
-  "timestamp": "2026-04-17T20:25:56.577552+00:00",
+  "computedAt": "2026-04-17T20:25:56.577552+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "E_0_tower_MeV": 0.0007958232069223113

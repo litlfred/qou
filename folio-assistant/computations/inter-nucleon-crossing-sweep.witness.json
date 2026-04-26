@@ -1,7 +1,7 @@
 {
   "computation": "inter-nucleon-crossing-sweep",
   "description": "Sweep crossings_per_pair m in {1..12} for inter-nucleon coupling. Reports B_pred/B_AME for D-20Ne. Fit metric = geometric mean of exp(|log(ratio)|), minimum at categorically-correct m.",
-  "timestamp": "2026-04-17T19:49:41.942930+00:00",
+  "computedAt": "2026-04-17T19:49:41.942930+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "E_0_tower_MeV": 0.0007958232069223113

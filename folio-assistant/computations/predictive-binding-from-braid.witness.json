@@ -1,7 +1,7 @@
 {
   "name": "predictive-binding-from-braid",
   "description": "Binding-energy predictions derived from the existing braid-word Wedderburn mass pipeline (atom_mass_atomic_braid.py).  Truly predictive path: braid word \u2192 three-Wedderburn-channel Markov trace \u2192 total mass \u2192 subtract free nucleon masses \u2192 binding.  Zero free parameters beyond \u2074He + \u00b9\u00b2C calibration inherited from the mass pipeline.",
-  "timestamp": "2026-04-23T19:56:27.197318+00:00",
+  "computedAt": "2026-04-23T19:56:27.197318+00:00",
   "source_witness": "atom-mass-atomic-braid.witness.json",
   "parameters": {
     "q_0": 1.1099785955541805,
