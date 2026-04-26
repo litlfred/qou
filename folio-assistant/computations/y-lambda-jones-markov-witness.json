@@ -1,0 +1,1477 @@
+{
+  "description": "Jones\u2013Markov block-weights y_\u03bb at H_n(R, q) for nuclear mass-tower \u03b1_k derivations.  Solves tr_M(w_\u03bc) = z^{n-len(\u03bc)} for cycle-type representatives w_\u03bc \u22a2 n.  Provides the per-n Markov-pairing weights used by sibling branches for structural \u03b1_k computation (no fitting).",
+  "references": [
+    "prop:alpha-k-derivation-procedure",
+    "prop:spectral-sequence-h3-explicit",
+    "prop:mass-tower-coefficient-stratification"
+  ],
+  "generated_at_utc": "2026-04-26T03:40:58.879439+00:00",
+  "tables_by_n": {
+    "10": {
+      "n": 10,
+      "num_partitions": 42,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            10
+          ],
+          "depth": 0,
+          "y_lambda": 0.0030671231361688147
+        },
+        {
+          "partition": [
+            9,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.0034875162947710517
+        },
+        {
+          "partition": [
+            8,
+            2
+          ],
+          "depth": 1,
+          "y_lambda": 0.003097086186672273
+        },
+        {
+          "partition": [
+            8,
+            1,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0007216991591833923
+        },
+        {
+          "partition": [
+            7,
+            3
+          ],
+          "depth": 1,
+          "y_lambda": 0.002356840517688959
+        },
+        {
+          "partition": [
+            7,
+            2,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0008150183149300936
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -6.417158250544898e-05
+        },
+        {
+          "partition": [
+            6,
+            4
+          ],
+          "depth": 1,
+          "y_lambda": 0.001458233403406766
+        },
+        {
+          "partition": [
+            6,
+            3,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0006413682044240449
+        },
+        {
+          "partition": [
+            6,
+            2,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 0.00019986178785976255
+        },
+        {
+          "partition": [
+            6,
+            2,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -7.64572048876504e-05
+        },
+        {
+          "partition": [
+            6,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 1.4304303851438897e-05
+        },
+        {
+          "partition": [
+            5,
+            5
+          ],
+          "depth": 1,
+          "y_lambda": 0.0004922444900877437
+        },
+        {
+          "partition": [
+            5,
+            4,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0003451362701997597
+        },
+        {
+          "partition": [
+            5,
+            3,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 0.00018238309305971306
+        },
+        {
+          "partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -5.65088971711536e-05
+        },
+        {
+          "partition": [
+            5,
+            2,
+            2,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -2.2821332201196663e-05
+        },
+        {
+          "partition": [
+            5,
+            2,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 1.659710281314255e-05
+        },
+        {
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -4.120196754860406e-06
+        },
+        {
+          "partition": [
+            4,
+            4,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 6.985512282733607e-05
+        },
+        {
+          "partition": [
+            4,
+            4,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -2.0448423598185735e-05
+        },
+        {
+          "partition": [
+            4,
+            3,
+            3
+          ],
+          "depth": 2,
+          "y_lambda": 3.2287298822346856e-05
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -1.7698513479971022e-05
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 1.031005094453464e-05
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            2
+          ],
+          "depth": 3,
+          "y_lambda": -1.1196509444889089e-06
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 4.855444879045499e-06
+        },
+        {
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -4.338960069630745e-06
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 6,
+          "y_lambda": 1.2902197608176014e-06
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -2.1835350558588094e-06
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "depth": 3,
+          "y_lambda": -5.93134717145861e-07
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 2.430127386266203e-06
+        },
+        {
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -1.7588518946683547e-06
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            2,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 2.5180125024157036e-07
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -1.0734932232505615e-06
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 6,
+          "y_lambda": 1.1081964731112796e-06
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 7,
+          "y_lambda": -3.961665498639805e-07
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "depth": 4,
+          "y_lambda": -3.049321587048717e-09
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -3.847442874905141e-08
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 6,
+          "y_lambda": 1.754698112003163e-07
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 7,
+          "y_lambda": -2.1345263663799824e-07
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 8,
+          "y_lambda": 1.0606544106492923e-07
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 9,
+          "y_lambda": -1.9128840898165875e-08
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 767.4309600917651,
+        "linear_system_residual": 3.3306690738754696e-16
+      }
+    },
+    "2": {
+      "n": 2,
+      "num_partitions": 2,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            2
+          ],
+          "depth": 0,
+          "y_lambda": 0.6963254203144306
+        },
+        {
+          "partition": [
+            1,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.3036745796855695
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 1.1099785955541808,
+        "linear_system_residual": 5.551115123125783e-17
+      }
+    },
+    "3": {
+      "n": 3,
+      "num_partitions": 3,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            3
+          ],
+          "depth": 0,
+          "y_lambda": 0.4153957863345664
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.28092963397986415
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.02274494570570532
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 1.8121634367788375,
+        "linear_system_residual": 1.1102230246251565e-16
+      }
+    },
+    "4": {
+      "n": 4,
+      "num_partitions": 5,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            4
+          ],
+          "depth": 0,
+          "y_lambda": 0.22752693019306408
+        },
+        {
+          "partition": [
+            3,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.18786885614150228
+        },
+        {
+          "partition": [
+            2,
+            2
+          ],
+          "depth": 1,
+          "y_lambda": 0.06947330464150198
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.02358747319685989
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.0008425274911545449
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 3.1033442129966184,
+        "linear_system_residual": 5.551115123125783e-17
+      }
+    },
+    "5": {
+      "n": 5,
+      "num_partitions": 7,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            5
+          ],
+          "depth": 0,
+          "y_lambda": 0.11814839833360222
+        },
+        {
+          "partition": [
+            4,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.10937853185946182
+        },
+        {
+          "partition": [
+            3,
+            2
+          ],
+          "depth": 1,
+          "y_lambda": 0.061723715323196246
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.016766608958844218
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.007749589318305747
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.0009287250802900663
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 8.61975891355006e-05
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 6.0879455859564615,
+        "linear_system_residual": 5.551115123125783e-17
+      }
+    },
+    "6": {
+      "n": 6,
+      "num_partitions": 11,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            6
+          ],
+          "depth": 0,
+          "y_lambda": 0.05918771693214853
+        },
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.058960681401453656
+        },
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "depth": 1,
+          "y_lambda": 0.04028438696593521
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.010133463492072942
+        },
+        {
+          "partition": [
+            3,
+            3
+          ],
+          "depth": 1,
+          "y_lambda": 0.0141208740049753
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.00731845435228575
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.0006853088855144782
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 0.0007731867369053872
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.0003420517708854024
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 9.863557610980493e-05
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -1.243798697429127e-05
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 14.053460413870653,
+        "linear_system_residual": 1.3877787807814457e-16
+      }
+    },
+    "7": {
+      "n": 7,
+      "num_partitions": 15,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            7
+          ],
+          "depth": 0,
+          "y_lambda": 0.02890873362309252
+        },
+        {
+          "partition": [
+            6,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.030278983309056037
+        },
+        {
+          "partition": [
+            5,
+            2
+          ],
+          "depth": 1,
+          "y_lambda": 0.02308201619697379
+        },
+        {
+          "partition": [
+            5,
+            1,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.005599681895423862
+        },
+        {
+          "partition": [
+            4,
+            3
+          ],
+          "depth": 1,
+          "y_lambda": 0.012243994950715507
+        },
+        {
+          "partition": [
+            4,
+            2,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0049583758182459034
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.00042459422159681943
+        },
+        {
+          "partition": [
+            3,
+            3,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0018768790542597748
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 0.0008185259955978956
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.0003353265158178366
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 7.461185190017632e-05
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -4.533925869249754e-05
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 3.8614003624945735e-05
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -1.4590279415286984e-05
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 6,
+          "y_lambda": 2.152292441024923e-06
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 34.181796023818734,
+        "linear_system_residual": 5.551115123125783e-17
+      }
+    },
+    "8": {
+      "n": 8,
+      "num_partitions": 22,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            8
+          ],
+          "depth": 0,
+          "y_lambda": 0.013860941071566458
+        },
+        {
+          "partition": [
+            7,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.015047792551526046
+        },
+        {
+          "partition": [
+            6,
+            2
+          ],
+          "depth": 1,
+          "y_lambda": 0.012305178247137357
+        },
+        {
+          "partition": [
+            6,
+            1,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.002926012510392619
+        },
+        {
+          "partition": [
+            5,
+            3
+          ],
+          "depth": 1,
+          "y_lambda": 0.0078644349597264
+        },
+        {
+          "partition": [
+            5,
+            2,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0029124029901100358
+        },
+        {
+          "partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.0002387336050787944
+        },
+        {
+          "partition": [
+            4,
+            4
+          ],
+          "depth": 1,
+          "y_lambda": 0.0026901571331231834
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0016894028578659263
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 0.0005894664982010956
+        },
+        {
+          "partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.0002328965279311511
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 4.703591141313324e-05
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 0.00027888570912920467
+        },
+        {
+          "partition": [
+            3,
+            3,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -9.140951273535403e-05
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -4.982621173241684e-05
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 3.8805736581089374e-05
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -1.1229796094046395e-05
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "depth": 3,
+          "y_lambda": -1.2507069114941316e-06
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 5.737659951411102e-06
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -5.929392907558708e-06
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 6,
+          "y_lambda": 2.5689095863048848e-06
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 7,
+          "y_lambda": -4.166171452866313e-07
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 90.55315882506626,
+        "linear_system_residual": 2.220446049250313e-16
+      }
+    },
+    "9": {
+      "n": 9,
+      "num_partitions": 30,
+      "q_0": 1.1099785955541805,
+      "z_markov": 0.49932033403359827,
+      "weights": [
+        {
+          "partition": [
+            9
+          ],
+          "depth": 0,
+          "y_lambda": 0.006554639430939853
+        },
+        {
+          "partition": [
+            8,
+            1
+          ],
+          "depth": 1,
+          "y_lambda": 0.007306301640626754
+        },
+        {
+          "partition": [
+            7,
+            2
+          ],
+          "depth": 1,
+          "y_lambda": 0.00626894501929131
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0014725458916080313
+        },
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "depth": 1,
+          "y_lambda": 0.004456442125519776
+        },
+        {
+          "partition": [
+            6,
+            2,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0015797911023262413
+        },
+        {
+          "partition": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.00012632448354165984
+        },
+        {
+          "partition": [
+            5,
+            4
+          ],
+          "depth": 1,
+          "y_lambda": 0.002295614163694275
+        },
+        {
+          "partition": [
+            5,
+            3,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0011123786705123625
+        },
+        {
+          "partition": [
+            5,
+            2,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 0.00035942354871828223
+        },
+        {
+          "partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -0.00013919033144685206
+        },
+        {
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 2.678120990971993e-05
+        },
+        {
+          "partition": [
+            4,
+            4,
+            1
+          ],
+          "depth": 2,
+          "y_lambda": 0.0003945429694289123
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2
+          ],
+          "depth": 2,
+          "y_lambda": 0.00026682700122942685
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -8.434578330477528e-05
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -3.678405174661366e-05
+        },
+        {
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 2.7423638567086925e-05
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -7.168937063676973e-06
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "depth": 2,
+          "y_lambda": 3.0103763766488642e-05
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            1
+          ],
+          "depth": 3,
+          "y_lambda": -1.8045055866709592e-05
+        },
+        {
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 1.0981326436135595e-05
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "depth": 3,
+          "y_lambda": -1.460984411401162e-06
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 6.4638802923054165e-06
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -6.06310871443667e-06
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 6,
+          "y_lambda": 2.002249684067491e-06
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "depth": 4,
+          "y_lambda": 2.102774999035353e-07
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "depth": 5,
+          "y_lambda": -9.364978408014802e-07
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 6,
+          "y_lambda": 1.0702136476808444e-06
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 7,
+          "y_lambda": -5.035537454407199e-07
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "depth": 8,
+          "y_lambda": 8.693660014470683e-08
+        }
+      ],
+      "diagnostics": {
+        "condition_number": 254.29839493721846,
+        "linear_system_residual": 3.5388358909926865e-16
+      }
+    }
+  }
+}

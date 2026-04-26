@@ -435,6 +435,7 @@ export default chapter({
         "pauli-factor-wedderburn",
         "mass-formula-wedderburn-enumeration",
         "mass-tower-coefficient-stratification",
+        "alpha-k-derivation-procedure",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
         "shell-correction-term-seven",
