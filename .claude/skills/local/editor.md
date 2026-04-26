@@ -291,8 +291,13 @@ Content change detected
 3. **Resolve concerns**: when an agent's output raises mathematical or
    structural questions, bring them to the author as multiple-choice questions
    (author cannot type easily).
-4. **Maintain consistency**: notation per CLAUDE.md §7aa (STRICT) and
-   §7a Hecke-Skein convention. The hot spots:
+4. **Maintain consistency**: notation per the front-matter Notation
+   register —
+   [`content/quantum-observable-universe/notation/notation-register.md`](../../../content/quantum-observable-universe/notation/notation-register.md)
+   (per-chapter symbol tables) and
+   [`notation-collisions.md`](../../../content/quantum-observable-universe/notation/notation-collisions.md)
+   (collision avoidances + Hecke-Skein convention). CLAUDE.md §7aa
+   mirrors a summary; the content block is the authority. The hot spots:
    - Categories: bold `$\mathbf{C}$`, never calligraphic `$\mathcal{C}$`.
    - Fibre functor: `$\tau$`, never `$\omega$` or `$U$`.
    - Hecke generator: `$\sigma_i$` (post-2026-04-26 convention flip),

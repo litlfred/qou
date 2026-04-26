@@ -172,12 +172,32 @@
 \renewcommand{\HyPsd@Warning}[1]{}
 \makeatother
 
-% ── Compact chapter/section formatting (normal-size fonts, hang style) ─────
-% Page breaks between chapters are handled by \clearpage in rendered .tex files.
-\titleclass{\chapter}{straight}
-\titleformat{\chapter}[hang]{\normalsize\bfseries}{%
-  \thechapter.}{0.5em}{}
-\titlespacing*{\chapter}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{0.8ex plus 0.2ex}
+% ── Book-style chapter / section formatting ────────────────────────────────
+% Chapter page breaks are handled by the renderer (it prepends \clearpage
+% to every \input chapter — see content/pipeline/render-latex.ts
+% renderChapter). The chapter numeral here is rendered very large,
+% left-aligned, with whitespace to the right — book convention. The
+% chapter title sits below the numeral. Sections and subsections stay
+% compact with normal-size fonts.
+\titleclass{\chapter}{straight}       % renderer-driven page breaks
+\titleformat{\chapter}[display]%
+  {\normalfont\bfseries\raggedright}%
+  {%
+    \fontsize{96pt}{96pt}\selectfont\bfseries\thechapter%
+    \hfill%
+  }%
+  {2em}%
+  {\Huge\bfseries\raggedright}%
+\titlespacing*{\chapter}{0pt}{0pt}{2em}
+
+% Unnumbered chapters (introduction, glossary, appendices) — same display
+% block but no large numeral, since \chapter* has no number.
+\titleformat{name=\chapter,numberless}[block]%
+  {\normalfont\Huge\bfseries\raggedright}%
+  {}%
+  {0pt}%
+  {\Huge\bfseries\raggedright}%
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{2em}
 
 \titleformat{\section}[hang]{\normalsize\bfseries}{%
   \thesection}{0.5em}{}
@@ -186,6 +206,9 @@
 \titleformat{\subsection}[hang]{\normalsize\bfseries}{%
   \thesubsection}{0.5em}{}
 \titlespacing*{\subsection}{0pt}{0.8ex plus 0.3ex minus 0.1ex}{0.4ex plus 0.1ex}
+
+% Show only chapters and sections in the table of contents — no subsections.
+\setcounter{tocdepth}{1}
 
 % ── Theorem environments ───────────────────────────────────────────────────────
 \newtheorem{theorem}{Theorem}[section]
