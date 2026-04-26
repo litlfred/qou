@@ -5,7 +5,7 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::{gram, seminormal, seminormal_mpfr};
+use hecke_engine::{gram, seminormal, seminormal_mn, seminormal_mpfr};
 use pyo3::prelude::*;
 
 /// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
@@ -159,6 +159,22 @@ fn partitions_of(n: usize) -> Vec<Vec<usize>> {
     seminormal::partitions_of(n)
 }
 
+/// **Classical Murnaghan-Nakayama character** `χ^λ(μ)`.
+///
+/// Computes the irreducible character of the symmetric group `S_n`
+/// at the conjugacy class of cycle type `μ`, on the irrep indexed by
+/// partition `λ`.  Returns an integer (classical MN values are in ℤ).
+///
+/// **Cost**: O(n² · #(border-strip-tableaux)) per character.  For
+/// cross-validation with the Hoefsmit seminormal kernel at q = 1.
+///
+/// `lambda`: partition of n.
+/// `mu`: cycle type (list of cycle lengths in any order).
+#[pyfunction]
+fn mn_chi(lambda: Vec<usize>, mu: Vec<usize>) -> i64 {
+    seminormal_mn::mn_chi(&lambda, &mu)
+}
+
 /// **Batch character evaluation across many partitions** (rayon-parallel).
 ///
 /// Evaluates `χ_λ(β)` for every partition in `shapes` in parallel using
@@ -232,6 +248,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
+    m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)
