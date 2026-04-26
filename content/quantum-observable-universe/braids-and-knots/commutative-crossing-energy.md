@@ -1,5 +1,5 @@
 **Remark (categorical coordinate of the commutative limit).**
-The Hecke generator $T = P \circ R$ on $V \otimes V$ has eigenvalues
+The Hecke generator $\sigma = P \circ R$ on $V \otimes V$ has eigenvalues
 $(\lambda_+, \lambda_-) = (q, -q^{-1})$ on the symmetric/antisymmetric
 decomposition $S^2 V \oplus \Lambda^2 V$
 ([def:crossing-energy](#def:crossing-energy)).  At $q = 1$
@@ -32,7 +32,7 @@ is the minimal extension realising $\lambda_-$ as a categorical square.
 |--------|-------------------------------|-----------------------|
 | Hopf algebra | $\mathcal{O}_q(\mathrm{SU}(2))$ | $\mathcal{O}(\mathrm{SU}(2))$ |
 | Braiding | $c \circ c \neq \mathrm{id}$ | $c \circ c = \mathrm{id}$ |
-| Hecke relation | $(T-q)(T+q^{-1}) = 0$ | $(P-1)(P+1) = 0$ ($\mathbb{Z}_2$) |
+| Hecke relation | $(\sigma-q)(\sigma+q^{-1}) = 0$ | $(P-1)(P+1) = 0$ ($\mathbb{Z}_2$) |
 | Antisym eigenvalue | $\lambda_- = -q^{-1}$ | $\lambda_- = -1$ |
 | Categorical coord | $q \in \mathrm{End}_R(\mathbf{1})$ | $i \in \mathrm{End}_{R[i]}(\mathbf{1})$ |
 | Projective object | $\mathbb{P}_q(V) = \mathrm{Proj}(\mathrm{Sym}_q V^\vee)$ | $\mathbb{P}(V) = \mathrm{Proj}(\mathrm{Sym}\, V^\vee)$ over $R[i]$ |

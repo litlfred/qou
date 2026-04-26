@@ -34,7 +34,7 @@ $(B, <)$ where:
 
 The Gröbner--Shirshov basis $G$ for $I$ with respect to $(B, <)$ consists of:
 
-1. **Hecke relation**: $T_i^2 - (q - q^{-1})T_i - 1$
+1. **Hecke relation**: $\sigma_i^2 - (q - q^{-1})\sigma_i - 1$
    (eliminates all squares).
 
 2. **Yang--Baxter relation**: $\sigma_i\sigma_{i+1}\sigma_i - \sigma_{i+1}\sigma_i\sigma_{i+1}$ (braid relation,

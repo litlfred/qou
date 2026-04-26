@@ -1,7 +1,7 @@
 The two-chain decomposition
 ([knot operations and $\lambda$](#rem:markov-lambda-knot-operations))
 --- an outer chain on partitions (stabilization / Markov II) and
-an inner chain on SYTs (generators $T_i$ inside $V_\lambda$) ---
+an inner chain on SYTs (generators $\sigma_i$ inside $V_\lambda$) ---
 has quantitative error bounds already established elsewhere in
 the paper.  This remark matches each chain layer to its
 controlling bound and flags a standard CLT framework that
@@ -30,12 +30,12 @@ $q$-deformed Plancherel measure.
 
 The inner chain on $\mathrm{SYT}(\lambda)$ is the natural venue
 for a $q$-Gaussian CLT in the sense of Bożejko--Speicher, since
-the generators satisfy the $q$-commutation $T_i T_{i+1} T_i =
-T_{i+1} T_i T_{i+1}$ with Hecke quadratic $(T_i - q)(T_i + q^{-1})
+the generators satisfy the $q$-commutation $\sigma_i \sigma_{i+1} \sigma_i =
+\sigma_{i+1} \sigma_i \sigma_{i+1}$ with Hecke quadratic $(\sigma_i - q)(\sigma_i + q^{-1})
 = 0$.  However, the Bożejko--Speicher noncommutative $q$-Gaussian
 **does not apply** at the substrate value $q_0 \approx 1.11 > 1$:
 the Touchard pair-partition moments
-$T_n(q_0) = \sum_\pi q_0^{\mathrm{cr}(\pi)}$ grow super-exponentially
+$\sigma_n(q_0) = \sum_\pi q_0^{\mathrm{cr}(\pi)}$ grow super-exponentially
 in $n$, so no well-defined $q$-Gaussian distribution exists.
 This failure is documented in the computation layer
 (`folio-assistant/computations/hecke_core.py`), which selects the

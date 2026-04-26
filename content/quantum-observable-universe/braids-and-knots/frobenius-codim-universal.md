@@ -12,7 +12,7 @@
   i.e., a closed element of $A$ arising as the closure of a braid
   $\beta \in B_n$
   ([Hecke mass element](#def:hecke-mass-element)).  Each vortex has
-  a Hecke-algebra representative $T_w \in H_n(q)$ whose Markov
+  a Hecke-algebra representative $\sigma_w \in H_n(q)$ whose Markov
   trace is the categorical mass
   ([categorical mass, Markov](#prop:categorical-mass-markov)).
   In physics: particles (quarks, nucleons, nuclei) are vortices.
@@ -214,7 +214,7 @@ Frobenius co-dimension element — is universal.*
 *Critically, $\tau(C_{\dim_q}^{(A)})$ is **independent of the
 specific vortex $\varrho$** — it depends only on the algebra
 $A$ (equivalently on $n$ and $q$), not on the braid word
-$T_w$ representing $\varrho$.  This is both a **feature** and a
+$\sigma_w$ representing $\varrho$.  This is both a **feature** and a
 **limitation**:*
 
 - *Feature (universality):* *Every vortex on $H_3(q)$ —
@@ -237,7 +237,7 @@ $T_w$ representing $\varrho$.  This is both a **feature** and a
 ([unified knot mass](#thm:knot-mass-formula-unified)) therefore has
 three tiers:*
 
-1. *Vortex-specific: descended $|\mathrm{tr}_M(T_w)|$ and brane
+1. *Vortex-specific: descended $|\mathrm{tr}_M(\sigma_w)|$ and brane
    tower $\sum \Phi_q$.*
 2. *Algebra-specific (but vortex-independent): Frobenius
    co-Casimir $\tau(C_{\dim_q}^{(A)})$.*
@@ -259,6 +259,6 @@ three tiers:*
 3. *The self-duality $\lambda \leftrightarrow \lambda'$ is the
    **categorical shadow** of the Young-diagram transpose
    symmetry of the Hecke algebra, which in turn descends from
-   the Hecke relation $T_i^2 = (q - q^{-1}) T_i + 1$ admitting
+   the Hecke relation $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ admitting
    two eigenvalues $(q, -q^{-1})$ — the source of all
    $q$-deformation structure in the paper.*

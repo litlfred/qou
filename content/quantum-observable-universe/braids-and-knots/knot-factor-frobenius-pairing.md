@@ -51,8 +51,8 @@ By [categorical-mass-markov](#prop:categorical-mass-markov) Steps 1–3:
   $H_n(q)$;
 - the Nakayama automorphism $\Psi = (\int_A \otimes \mathrm{id}) \circ \Delta$
   equals $S^2$ for a Frobenius–Hopf algebra, and $S^2 = \mathrm{id}$
-  on $H_n(q)$ generators (antipode $S(T_i) = T_i^{-1}$, so
-  $S^2(T_i) = T_i$);
+  on $H_n(q)$ generators (antipode $S(\sigma_i) = \sigma_i^{-1}$, so
+  $S^2(\sigma_i) = \sigma_i$);
 - therefore $\mathfrak{m}(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$.
 
 **Step 2: Binding = mass defect of Markov traces.**

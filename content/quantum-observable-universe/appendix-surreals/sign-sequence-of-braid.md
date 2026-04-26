@@ -24,7 +24,7 @@ Let $V$ be the fundamental representation of $\mathrm{SU}_q(2)$ and
 let $\beta = \sigma_{i_1}^{\epsilon_1} \cdots \sigma_{i_k}^{\epsilon_k}$
 be a braid word in $B_n$ (with $\epsilon_j \in \{+1, -1\}$). The
 Hecke representation $\rho_n : B_n \to H_n(q)$ sends each
-$\sigma_i^{\pm 1}$ to $T_i^{\pm 1}$.
+$\sigma_i^{\pm 1}$ to $\sigma_i^{\pm 1}$.
 
 Choose a **standard tableau** $t$ of shape $\lambda \vdash n$ with
 $\ell(\lambda) \leq 2$ (the partitions appearing in the

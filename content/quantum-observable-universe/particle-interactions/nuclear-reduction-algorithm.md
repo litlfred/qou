@@ -8,7 +8,7 @@ $R = \mathbb{Z}[q, q^{-1}]$;
 the admissible system $(B, <)$ where $B$ = positive braid monomials
 and $<$ = length-lexicographic ordering
 ([admissible system](#unital-groebner-bases:def:admissible-system));
-the Groebner--Shirshov basis $G = \{T_i^2 - (q-q^{-1})T_i - 1,\;
+the Groebner--Shirshov basis $G = \{\sigma_i^2 - (q-q^{-1})\sigma_i - 1,\;
 \sigma_i\sigma_{i+1}\sigma_i - \sigma_{i+1}\sigma_i\sigma_{i+1},\;
 \sigma_i\sigma_j - \sigma_j\sigma_i\}$ for $|i-j| \geq 2$.
 

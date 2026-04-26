@@ -19,12 +19,12 @@ photon completing one full rotation in the polarisation sphere.
 
 The two Hecke generators act on $\mathcal{S}_p$ as follows:
 
-| Generator | Coordinate patch | Polarisation mode | Eigenvalues of $T_i$ |
+| Generator | Coordinate patch | Polarisation mode | Eigenvalues of $\sigma_i$ |
 |-----------|-----------------|-------------------|----------------------|
-| $\sigma_0 = T_0$ | $v_2 \neq 0$ (affine chart $z = v_1/v_2$) | horizontal ($\leftrightarrow$) | $+q$ (left), $-q^{-1}$ (right) |
-| $\sigma_1 = T_1$ | $v_1 \neq 0$ (affine chart $w = v_2/v_1$) | vertical ($\updownarrow$) | $+q$ (left), $-q^{-1}$ (right) |
+| $\sigma_0 = \sigma_0$ | $v_2 \neq 0$ (affine chart $z = v_1/v_2$) | horizontal ($\leftrightarrow$) | $+q$ (left), $-q^{-1}$ (right) |
+| $\sigma_1 = \sigma_1$ | $v_1 \neq 0$ (affine chart $w = v_2/v_1$) | vertical ($\updownarrow$) | $+q$ (left), $-q^{-1}$ (right) |
 
-The Hecke relation $(T_i - q)(T_i + q^{-1}) = 0$ is therefore the
+The Hecke relation $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ is therefore the
 **photon helicity equation**: its two roots $+q$ and $-q^{-1}$ are
 the left- and right-circular polarisation eigenvalues.  A linearly
 polarised photon is a superposition of these two eigenstates, with

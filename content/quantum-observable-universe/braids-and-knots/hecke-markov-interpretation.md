@@ -26,8 +26,10 @@ length-$n$ paths from the empty diagram $\varnothing$ to
 $\lambda$ on the Young graph, and it is this path space that
 plays the role of the **discrete state space** of the chain.
 
-The generator $\sigma_i \in B_n$ acts at step $i$ by the
-Hecke-algebra image $T_i = \rho_\lambda(\sigma_i)$, whose
+The generator $\sigma_i \in B_n$ acts at step $i$ via the
+Hecke-algebra image $\rho_\lambda(\sigma_i)$ (the same symbol
+$\sigma_i$ is used for both the braid generator in $B_n$ and
+its image in $H_n(q)$; context disambiguates), whose
 matrix entries in the tableau basis are
 
 $$
@@ -73,8 +75,8 @@ Two compatible pictures coexist on the same algebra:
 
 2. **Probability picture.** Summing the amplitudes through
    the spectral idempotents
-   $e_\pm^{(i)} = (T_i + q^{-1})/(q + q^{-1})$,
-   $(q - T_i)/(q + q^{-1})$
+   $e_\pm^{(i)} = (\sigma_i + q^{-1})/(q + q^{-1})$,
+   $(q - \sigma_i)/(q + q^{-1})$
    ([Hecke transition operator](#prop:hecke-markov-transition))
    yields the classical stochastic operator
    $K_i = p_+ \cdot \mathrm{id} + p_- \cdot s_i$ with
@@ -83,7 +85,7 @@ Two compatible pictures coexist on the same algebra:
    measure \cite{diaconis-ram2000}.
 
 The two pictures are related by the quadratic Hecke relation
-$(T_i - q)(T_i + q^{-1}) = 0$: the amplitudes living on SYT
+$(\sigma_i - q)(\sigma_i + q^{-1}) = 0$: the amplitudes living on SYT
 edges square, via the idempotents, to the symmetric /
 antisymmetric Boltzmann weights of the classical chain.  SYT
 paths on the Young graph are therefore the **quantum sample
@@ -92,7 +94,7 @@ space**, and the Markov chain of §2 is its classical shadow.
 ### Jucys--Murphy / SYT cell reindexing
 
 In the same SYT basis, the Jucys--Murphy elements
-$L_k = T_{k-1}\cdots T_1 T_1 \cdots T_{k-1}$ act diagonally
+$L_k = \sigma_{k-1}\cdots \sigma_1 \sigma_1 \cdots \sigma_{k-1}$ act diagonally
 with eigenvalue $q^{2 c_T(k)}$, where $c_T(k)$ is the content
 of the cell added at step $k$ of the tableau.  Because
 $[L_i, L_j] = 0$, pairs of SYT cells are on equal footing with
@@ -109,10 +111,10 @@ the chain to the **cell indexing** of the Young graph paths.
 
 | Algebraic object | Markov chain reading |
 |:-----------------|:---------------------|
-| Hecke generator $T_i$ | One-step transition operator at crossing $i$ |
+| Hecke generator $\sigma_i$ | One-step transition operator at crossing $i$ |
 | Eigenvalues $q$, $-q^{-1}$ | Boltzmann weights of symmetric / antisymmetric channels |
 | Idempotents $e_+^{(i)}$, $e_-^{(i)}$ | Projectors onto the two outcomes |
-| Markov property $\mathrm{tr}(xT_n) = z\mathrm{tr}(x)$ | Memorylessness: step $n$ independent of history $x$ |
+| Markov property $\mathrm{tr}(x\sigma_n) = z\mathrm{tr}(x)$ | Memorylessness: step $n$ independent of history $x$ |
 | Vertex volume $\hat{V}_i = z a_i + b_i$ | One-step conditional expectation |
 | Product $\prod_i \hat{V}_i$ | Product of independent random variables |
 | Jones polynomial $J_L(q)$ | Partition function of the chain |
@@ -125,7 +127,7 @@ the chain to the **cell indexing** of the Young graph paths.
 The memorylessness condition (iii) coexists with non-trivial
 correlations.  In the Markov chain, each step depends only on
 the current state, not the history.  Yet the braid relations
-$T_i T_{i+1} T_i = T_{i+1} T_i T_{i+1}$ impose
+$\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ impose
 **correlations between non-adjacent generators**: the outcome
 at crossing $i$ constrains the outcomes at crossings $i \pm 1$
 through the Yang--Baxter equation.

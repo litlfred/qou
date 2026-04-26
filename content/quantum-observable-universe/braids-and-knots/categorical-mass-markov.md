@@ -40,7 +40,7 @@ satisfying Markov properties I and II
 The mass involves $\Psi = (\int_A \otimes \mathrm{id}) \circ \Delta$,
 the **Nakayama automorphism** of the Frobenius algebra $A$.  For
 Frobenius--Hopf algebras, $\Psi = S^2$.  In $H_n(R, q)$ the antipode
-$S(T_i) = T_i^{-1}$ gives $S^2(T_i) = T_i$, so $\Psi = \mathrm{id}_A$.
+$S(\sigma_i) = \sigma_i^{-1}$ gives $S^2(\sigma_i) = \sigma_i$, so $\Psi = \mathrm{id}_A$.
 
 **Step 3 (Mass = trace of cycle).**
 Substituting $\Psi = \mathrm{id}$:
