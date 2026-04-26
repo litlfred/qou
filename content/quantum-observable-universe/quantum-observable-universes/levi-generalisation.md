@@ -14,14 +14,14 @@ conditions hold.
    estimates guarantee this automatically; for indefinite
    Levi signature, one imposes it as a hypothesis.
 2. *Non-degeneracy of the substrate.*
-   The Levi form $L_\theta$ is non-degenerate (but not necessarily
+   The Levi form $L_\varTheta$ is non-degenerate (but not necessarily
    positive definite), so the substrate parameter
-   $q(p) = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert$
+   $q(p) = 1 + \lvert\langle L_\varTheta, F_A^+\rangle\rvert$
    ([$\mathbb{C}$-substrate via Levi form](#rem:c-substrate-via-levi)) is well-defined and
    the regime $q > 1$ is attainable. When the Levi form has
    indefinite signature $(r,s)$ with $r,s \geq 1$, the Webster
-   metric $g_\theta$ is pseudo-Riemannian; the contraction
-   $\langle L_\theta, F_A^+\rangle$ remains well-defined (using
+   metric $g_\varTheta$ is pseudo-Riemannian; the contraction
+   $\langle L_\varTheta, F_A^+\rangle$ remains well-defined (using
    the pseudo-Riemannian inner product on $\Lambda^+ H^*$), and
    one takes the absolute value to ensure $q \geq 1$.
 3. *QOU vanishing ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)).*

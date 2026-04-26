@@ -15,10 +15,10 @@ In the $\mathrm{SU}(2)$ embedding ([SU(2) generators](#def:su2-generators)) thes
 become
 
 $$
-  H_1=\exp(T\theta e_1),\qquad H_2=\exp(T\theta e_2),
+  H_1=\exp(T\varTheta e_1),\qquad H_2=\exp(T\varTheta e_2),
 $$
 
-with $T$ the geometric torsion scalar and $\theta$ a branch angle, so
+with $T$ the geometric torsion scalar and $\varTheta$ a branch angle, so
 the holonomy group is a representation of $B_3$ inside
 $\mathrm{SU}(2)$.
 

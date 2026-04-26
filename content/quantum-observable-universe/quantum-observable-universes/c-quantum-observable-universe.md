@@ -1,5 +1,5 @@
 An *archimedean quantum observable universe* is an archimedean quantum
-universe $(\mathbf{C}, \theta, G, \mathcal{S})$
+universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$
 ([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)) that satisfies
 the vanishing conditions
 

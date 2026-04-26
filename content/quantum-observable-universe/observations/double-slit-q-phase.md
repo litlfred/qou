@@ -18,7 +18,7 @@ where:
 - $\Phi_{\mathrm{geom}}^{(i)} = (2\pi/\lambda)\ell_i(y)$ is the
   geometric (de Broglie) phase, with $\ell_i(y)$ the Euclidean path
   length through slit $i$ to screen point $y$;
-- $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\theta$
+- $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\varTheta$
   is the *Reeb phase* --- the rotation accumulated by the internal
   color fibre along $\gamma_i$
   ([Reeb derivation](#def:categorical-reeb));

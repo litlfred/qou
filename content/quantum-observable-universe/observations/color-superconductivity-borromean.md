@@ -1,5 +1,5 @@
 **Conjecture.**
-*Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be the Descartes
+*Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be the Descartes
 universe at substrate parameter $q = q_0$.  At baryon densities
 $\rho > \rho_c$, where $\rho_c$ is determined by the
 [energy crossover](#prop:borromean-hopf-energy-crossover), the

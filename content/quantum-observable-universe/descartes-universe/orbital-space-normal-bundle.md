@@ -62,12 +62,12 @@ Fourier mode $\ell$ along the trefoil and direction $\hat{n}$
 in the normal plane gives a vibration pattern:
 
 $$
-  \sigma(\theta)
+  \sigma(\varTheta)
   = 
-  A_\ell  e^{i\ell\theta}  \hat{n}(\theta)
+  A_\ell  e^{i\ell\varTheta}  \hat{n}(\varTheta)
 $$
 
-The direction $\hat{n}(\theta)$ rotates as we go around the
+The direction $\hat{n}(\varTheta)$ rotates as we go around the
 trefoil (the normal bundle may be twisted).  The combined
 mode — Fourier mode $\ell$ on $S^1$ times direction in the
 normal plane — parametrises the same space as a **spherical

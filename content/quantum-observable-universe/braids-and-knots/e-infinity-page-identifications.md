@@ -14,12 +14,12 @@ $$
   \sum_{p = 0}^{\infty}
   \underbrace{\bigl\langle \mathrm{tr}_M,\ E_\infty^{p, *}(T_w) \bigr\rangle}_{\text{page pairing}}
   \;+\;
-  \underbrace{\bigl\langle \mathrm{tr}_M \circ (\mathrm{id} \otimes \theta),\ E_\infty^{0, *}(T_w) \bigr\rangle}_{\text{ribbon closure}}
+  \underbrace{\bigl\langle \mathrm{tr}_M \circ (\mathrm{id} \otimes \varTheta),\ E_\infty^{0, *}(T_w) \bigr\rangle}_{\text{ribbon closure}}
   \;+\;
   \underbrace{m_e \cdot \tau\bigl(C_{\dim_q}\bigr)}_{\text{Frobenius co-Casimir}}.
 $$
 
-*where $T_w$ is the braid word, $\theta$ is the ribbon-twist
+*where $T_w$ is the braid word, $\varTheta$ is the ribbon-twist
 element, $C_{\dim_q}$ is the Frobenius co-Casimir
 ([Frobenius universal](#thm:frobenius-codim-universal)), and the
 sum $\sum_{p \geq 0}$ ranges over filtration levels.*
@@ -191,24 +191,24 @@ are NOT from a filtration page, but from a **separate Hochschild
 cocycle** modified by the ribbon twist:*
 
 $$
-  \phi_\theta(\beta)
+  \phi_\varTheta(\beta)
   \;:=\;
-  \frac{\mathrm{tr}_M(\beta \cdot \theta) \cdot \mathrm{tr}_M(\beta \cdot \theta^{-1})}
+  \frac{\mathrm{tr}_M(\beta \cdot \varTheta) \cdot \mathrm{tr}_M(\beta \cdot \varTheta^{-1})}
        {\mathrm{tr}_M(1)^2},
 $$
 
-*where $\theta \in H_n(R, q)$ is the ribbon element (grouplike-twist).
+*where $\varTheta \in H_n(R, q)$ is the ribbon element (grouplike-twist).
 This is a $0$-cocycle on the Hochschild complex (it factors
 through $\mathrm{tr}_M$, which is cyclic, times a scalar).*
 
 **Partial derivation.**
-*For an amphichiral braid $\beta$ with $\beta \theta \beta^{-1}
-\theta^{-1} = 1 + \text{corrections}$, the pairing gives
-$\phi_\theta(\beta) = 1 - c_K h^2$ where $c_K$ is a
+*For an amphichiral braid $\beta$ with $\beta \varTheta \beta^{-1}
+\varTheta^{-1} = 1 + \text{corrections}$, the pairing gives
+$\phi_\varTheta(\beta) = 1 - c_K h^2$ where $c_K$ is a
 topology-dependent constant.  For $\beta = 4_1$:
 $c_{4_1} = 1$, giving $1 - h^2$ — matches paper.*
 
-*For a chiral braid $\beta$ with $\beta \theta \beta^{-1}$ not
+*For a chiral braid $\beta$ with $\beta \varTheta \beta^{-1}$ not
 reducing to a scalar at Hecke level, the first-order correction
 is $1 + w(\beta) \cdot h + O(h^2)$ where $w$ is writhe.  For
 $\beta_D$ (satellite with one positive pn crossing):

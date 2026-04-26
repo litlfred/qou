@@ -1,10 +1,10 @@
 The unit particle defect is a Legendrian knot restricted to the
-$q$-torsion leaf $L_q$ where the horizontal contact form $\theta$
+$q$-torsion leaf $L_q$ where the horizontal contact form $\varTheta$
 vanishes. Precisely, the support of $\mathrm{Li}_q(z)$ in the
-contact manifold $(A, \theta)$ satisfies:
+contact manifold $(A, \varTheta)$ satisfies:
 
 $$
-\theta\big|_{\mathrm{supp}(\mathrm{Li}_q)} = 0
+\varTheta\big|_{\mathrm{supp}(\mathrm{Li}_q)} = 0
 $$
 
 This means the defect is maximally tangent to the contact

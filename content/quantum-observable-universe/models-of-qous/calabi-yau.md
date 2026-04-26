@@ -5,11 +5,11 @@ manifold inheriting its CR structure from the ambient Kähler geometry.
 The frame bundle of $X$ restricted to $M$ yields a natural principal
 $\mathrm{SU}(2)$-bundle $P \to M$.  The associated state bundle
 $\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C})$ yields an archimedean quantum
-observable universe $(\mathbf{C}, \theta, G, \mathcal{S})$
+observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$
 ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)).
 
 The K3 surface carries a hyper-Kähler structure, so $M$ inherits a
-natural contact form $\theta$ from the Kähler potential.  The Reeb
+natural contact form $\varTheta$ from the Kähler potential.  The Reeb
 vector field $\xi$ ([Reeb decomposition](#ex:reeb-decomposition))
 is the restriction of the Hamiltonian vector field of the Kähler
 potential to $M$, and the weight decomposition

@@ -100,7 +100,7 @@ $\kappa_H / (2\pi c_s)$.
 | Configuration | Flow structure | Physical analogue |
 |---|---|---|
 | **Spherical inflow** | Radial $v = -v_r(r)\hat{r}$ with $v_r(r_H) = c_s$ | Schwarzschild black hole |
-| **Vortex drain** | Circular $v = v_\theta(r)\hat\theta + v_r(r)\hat{r}$ | Kerr (rotating) black hole |
+| **Vortex drain** | Circular $v = v_\varTheta(r)\hat\varTheta + v_r(r)\hat{r}$ | Kerr (rotating) black hole |
 | **Expanding shell** | Outward $v = v_r(r)\hat{r}$ with $v_r(r_C) = c_s$ | Cosmological horizon (de Sitter) |
 | **Vortex core** | Concentrated circulation $\lvert v\rvert \to \infty$ at $r \to 0$ | Naked singularity (if $\lvert v\rvert > c_s$ for all $r < r_0$) |
 

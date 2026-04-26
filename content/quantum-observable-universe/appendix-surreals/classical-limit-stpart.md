@@ -5,7 +5,7 @@ $q \to 1$ classical limit:
 |---|---|---|
 | [classical limit functor](#def:classical-limit-functor) | Topological definition $\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$ | Definition (with obstruction) |
 | **This block** | Single-functor surreal replacement: $\mathcal{L} \cong \mathrm{St} \circ \mathrm{ev}_{1+\varepsilon}$ | Conjecture (open) |
-| [archimedean QOU is standard-part of surreal](#conj:archimedean-stpart) | Whole-tuple surreal replacement on $(\mathbf{C}, \theta, G, \mathcal{S})$ | Conjecture (open); strategy in [archimedean-stpart strategy](#rem:archimedean-stpart-strategy) |
+| [archimedean QOU is standard-part of surreal](#conj:archimedean-stpart) | Whole-tuple surreal replacement on $(\mathbf{C}, \varTheta, G, \mathcal{S})$ | Conjecture (open); strategy in [archimedean-stpart strategy](#rem:archimedean-stpart-strategy) |
 
 The current block is the *single-functor* version; the
 whole-tuple version is the appendix companion. Both are likely

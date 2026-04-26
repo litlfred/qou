@@ -8,10 +8,10 @@ this proposition closes the chiral case
 
 **Setup (Kauffman framing formula).**
 *The Hecke algebra $H_n(R, q)$ is a **ribbon category** with twist
-element $\theta$ acting on each irreducible $V_\lambda$ by*
+element $\varTheta$ acting on each irreducible $V_\lambda$ by*
 
 $$
-  \theta \cdot v_\lambda \;=\; q^{2 c(\lambda)} \cdot v_\lambda,
+  \varTheta \cdot v_\lambda \;=\; q^{2 c(\lambda)} \cdot v_\lambda,
   \qquad
   c(\lambda) \;=\; \sum_{x \in \lambda} c(x),
 $$
@@ -20,7 +20,7 @@ $$
 content of the cell $x$ in the Young diagram of $\lambda$.*
 
 *For a framed link invariant, changing the framing by $+1$
-multiplies the invariant by $\theta_\lambda$ in each channel.
+multiplies the invariant by $\varTheta_\lambda$ in each channel.
 For a braid $\beta \in B_n$ with writhe $w(\beta)$, the closure
 $\hat\beta$ has framed Jones polynomial*
 
@@ -39,7 +39,7 @@ ribbon-twisted Markov trace to the untwisted trace:*
 $$
   a_K(\beta)
   \;=\;
-  \frac{\sum_\lambda w_\lambda\, \theta_\lambda^{w(\beta)/2}\,\chi^\lambda(\beta)}
+  \frac{\sum_\lambda w_\lambda\, \varTheta_\lambda^{w(\beta)/2}\,\chi^\lambda(\beta)}
        {\sum_\lambda w_\lambda\,\chi^\lambda(\beta)},
 $$
 
@@ -59,7 +59,7 @@ $$
 chirality factor is linear in writhe.*
 
 **Derivation.**
-*Expand $\theta_\lambda^{w/2} = q^{w \cdot c(\lambda)}$ in powers
+*Expand $\varTheta_\lambda^{w/2} = q^{w \cdot c(\lambda)}$ in powers
 of $h = q - q^{-1}$:*
 
 $$
@@ -153,7 +153,7 @@ $\langle c\rangle_\beta$.  Possible refinements:*
    with positive sign from the positive crossing" — which
    **does not** uniquely determine the coefficient.*
 4. *The derivation should use the true **Hecke-algebra ribbon
-   element** $\theta_{H_n(R, q)}$, which at $H_6(R, q)$ has a more
+   element** $\varTheta_{H_n(R, q)}$, which at $H_6(R, q)$ has a more
    complex structure than the naive $q^{2c(\lambda)}$ — it
    involves a product of primitive idempotents weighted by
    Hoefsmit content, which may differ from the classical content
@@ -277,7 +277,7 @@ this block.*
 ([$E_\infty$ page identifications](#prop:e-infinity-page-identifications))
 §5, the chirality factor is the **ribbon 0-cocycle** paired with
 $\tau$.  The derivation above makes this concrete: the ribbon
-cocycle is $f_\theta(\beta) = \sum_\lambda w_\lambda \chi^\lambda(\beta)
-\theta_\lambda^{w(\beta)/2}$, and its $\tau$-normalisation gives
-$a_K$.  Cohomologically, $f_\theta \in HH^0$ (degree $0$ Hochschild
+cocycle is $f_\varTheta(\beta) = \sum_\lambda w_\lambda \chi^\lambda(\beta)
+\varTheta_\lambda^{w(\beta)/2}$, and its $\tau$-normalisation gives
+$a_K$.  Cohomologically, $f_\varTheta \in HH^0$ (degree $0$ Hochschild
 cocycle) because it factors through the cyclic trace.*

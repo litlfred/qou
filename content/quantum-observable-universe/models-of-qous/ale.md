@@ -5,7 +5,7 @@ CR manifold.  The Reeb vector field $\xi$ generates the Hopf-type
 fibration $S^3/\Gamma \to S^2$.  Equipped with the induced principal
 $\mathrm{SU}(2)$-bundle $P \to M$ and state bundle
 $\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C})$, the tuple
-$(\mathbf{C}, \theta, G, \mathcal{S})$ provides an archimedean quantum observable universe
+$(\mathbf{C}, \varTheta, G, \mathcal{S})$ provides an archimedean quantum observable universe
 ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)).
 
 The McKay correspondence classifies finite subgroups $\Gamma$ by ADE

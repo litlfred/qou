@@ -4,7 +4,7 @@ the $q$-deformed Lie bracket ([$q$-Lie bracket](#ex:q-lie-bracket))
 violates the Jacobi identity when $q \neq 1$.
 
 Let $U, V, W \in \Gamma(H)$ be horizontal vector fields (i.e.
-$\theta(U) = \theta(V) = \theta(W) = 0$). The *Jacobiator*
+$\varTheta(U) = \varTheta(V) = \varTheta(W) = 0$). The *Jacobiator*
 
 $$
   \mathrm{Jac}_q(U,V,W)
@@ -16,13 +16,13 @@ is given by
 $$
   \mathrm{Jac}_q(U,V,W)
   =  -q^{-1}(1-q^{-1})\!\sum_{\mathrm{cyc}}
-        d\theta(V,W)\mathcal{L}_\xi U,
+        d\varTheta(V,W)\mathcal{L}_\xi U,
 $$
 
 where the sum is over cyclic permutations of $(U,V,W)$. In particular,
 $\mathrm{Jac}_q = 0$ if and only if $q = 1$ (classical Jacobi identity)
-or $d\theta|_{H \times H} = 0$ (integrable horizontal distribution).
-Since $d\theta|_{H \times H}$ is the Levi form $L_\theta$, which is
+or $d\varTheta|_{H \times H} = 0$ (integrable horizontal distribution).
+Since $d\varTheta|_{H \times H}$ is the Levi form $L_\varTheta$, which is
 non-degenerate by hypothesis, $[\cdot,\cdot]_q$ violates the Jacobi
 identity for all $q \neq 1$. Thus $(\mathfrak{X}(M), [\cdot,\cdot]_q)$
 is a *Leibniz algebra* (or a pre-Lie algebra), not a Lie algebra.
@@ -32,7 +32,7 @@ is a *Leibniz algebra* (or a pre-Lie algebra), not a Lie algebra.
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
   {[\cdot,\cdot]_q} \ar[r, "\mathrm{Jac}_q"]
     \ar[d, "q{=}1"']
-  & q^{-1}(1{-}q^{-1})d\theta \wedge \mathcal{L}_\xi \\
+  & q^{-1}(1{-}q^{-1})d\varTheta \wedge \mathcal{L}_\xi \\
   {[\cdot,\cdot]} \ar[r, "\mathrm{Jac}"']
   & 0
 \end{tikzcd}

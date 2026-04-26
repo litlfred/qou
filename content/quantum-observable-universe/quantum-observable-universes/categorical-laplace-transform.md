@@ -1,4 +1,4 @@
-Fix a quantum observable universe $(\mathbf{C}, \theta, G, \mathcal{S})$
+Fix a quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$
 with Markov trace
 $\mathrm{tr}_M \colon \mathrm{End}_{\mathbf{C}}(A) \to \mathbf{1}_{\mathbf{C}}$
 ([adjoint trace](#rem:adjoint-trace)).  Let $\mathcal{H}_q$ be the convolution

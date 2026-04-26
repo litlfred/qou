@@ -28,10 +28,10 @@ defining representation carried by the state bundle fibre
 $\mathcal{S}_p \cong \mathbb{C}^2$ ([Bring's QOU 4-tuple](#rem:brings-qou-4tuple), item 3).
 The non-degenerate epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$
 is instantiated by the Levi form
-$L_\theta = -id\theta|_{H \times H}$
-([archimedean realisations](#rem:archimedean-realisations)): because $L_\theta$ is
+$L_\varTheta = -id\varTheta|_{H \times H}$
+([archimedean realisations](#rem:archimedean-realisations)): because $L_\varTheta$ is
 alternating and non-degenerate on the rank-$4$ real distribution
-$H = \ker\theta$, it furnishes the symplectic pairing that makes $V$
+$H = \ker\varTheta$, it furnishes the symplectic pairing that makes $V$
 self-dual and forces $\det(g_V) = 1$, selecting $\mathrm{SU}(2)$ over
 $\mathrm{GL}(2)$.  In the spectral coordinates
 ([Lagrange resolvents](#rem:lagrange-resolvents)), this constraint appears as the

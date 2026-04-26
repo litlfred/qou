@@ -24,7 +24,7 @@ in the following section
 ([derivation of $q$ from $\varepsilon$](#def:q-from-epsilon)).
 
 **Positivity and archimedean independence.** The contact-form
-normalization $\xi \circ \theta = \theta$ of the Reeb derivation
+normalization $\xi \circ \varTheta = \varTheta$ of the Reeb derivation
 ([categorical Reeb derivation](#def:categorical-reeb-derivation))
 forces $\varepsilon$ to be a *strictly positive* element of
 $\mathrm{Der}(A)$ with respect to the natural ordering induced by
