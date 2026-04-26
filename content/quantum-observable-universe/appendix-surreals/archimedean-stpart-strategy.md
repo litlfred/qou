@@ -10,14 +10,14 @@ to that conjecture via:
 1. **Functorial reduction.** Show
    $\mathrm{St}_{\mathrm{QOU}} = (\mathrm{St}, \mathrm{St}, \mathrm{St},
    \mathrm{St})$ — the standard-part applied to each component of the
-   QOU tuple $(\mathbf{C}, \theta, G, \mathcal{S})$.
+   QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 2. **Reduce each component**:
    - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
      $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
      $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
      [classical-limit-stpart](#conj:classical-limit-stpart).
-   - $\theta : \mathbf{1} \to A$: just an element of a hom-space;
+   - $\varTheta : \mathbf{1} \to A$: just an element of a hom-space;
      $\mathrm{St}$ acts entry-wise.
    - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
      of an algebraic group object. This is the categorical

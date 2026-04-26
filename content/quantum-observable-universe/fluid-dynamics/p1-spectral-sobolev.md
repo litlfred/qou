@@ -4,7 +4,7 @@ Let $(\mathbf{C}, A, \tau)$ be a
 $\Delta_q = d_q\delta_q + \delta_q d_q$ be the
 [$q$-Laplacian](#rem:q-laplacian-interpretation) acting on
 $\Omega^1(A)$, and let
-$\langle \cdot, \cdot \rangle_\theta$ be the
+$\langle \cdot, \cdot \rangle_\varTheta$ be the
 [Webster inner product](#rem:hodge-laplacian-relation).
 
 Then the following hold:
@@ -14,7 +14,7 @@ The operator $\Delta_q$ on $\Omega^1(A)$ has compact resolvent:
 for any $\lambda \notin \mathrm{spec}(\Delta_q)$, the resolvent
 $(\lambda\mathrm{id} - \Delta_q)^{-1}$ is a compact operator
 on the Hilbert completion
-$\overline{\Omega^1(A)}^{\langle\cdot,\cdot\rangle_\theta}$.
+$\overline{\Omega^1(A)}^{\langle\cdot,\cdot\rangle_\varTheta}$.
 Consequently, the spectrum is discrete:
 $\mathrm{spec}(\Delta_q) = \{\mu_k^{(q)}\}_{k \geq 0}$
 with $0 \leq \mu_0^{(q)} \leq \mu_1^{(q)} \leq \cdots$ and
@@ -72,16 +72,16 @@ compactness theorem to the $q$-deformed setting.
 
 *Step 1: Self-adjointness.*
 $\Delta_q$ is formally self-adjoint with respect to
-$\langle\cdot,\cdot\rangle_\theta$ by the
+$\langle\cdot,\cdot\rangle_\varTheta$ by the
 [Hodge--Laplacian relation](#rem:hodge-laplacian-relation):
-$\langle \Delta_q\alpha, \beta\rangle_\theta
-= \langle d_q\alpha, d_q\beta\rangle_\theta
-+ \langle \delta_q\alpha, \delta_q\beta\rangle_\theta
-= \langle \alpha, \Delta_q\beta\rangle_\theta$.
+$\langle \Delta_q\alpha, \beta\rangle_\varTheta
+= \langle d_q\alpha, d_q\beta\rangle_\varTheta
++ \langle \delta_q\alpha, \delta_q\beta\rangle_\varTheta
+= \langle \alpha, \Delta_q\beta\rangle_\varTheta$.
 This follows from the [Hodge--Laplacian relation](#rem:hodge-laplacian-relation).
 
 *Step 2: Non-negativity.*
-$\langle \Delta_q\alpha, \alpha\rangle_\theta
+$\langle \Delta_q\alpha, \alpha\rangle_\varTheta
 = \lVert d_q\alpha\rVert^2 + \lVert\delta_q\alpha\rVert^2
 \geq 0$.
 This is immediate from Step 1.

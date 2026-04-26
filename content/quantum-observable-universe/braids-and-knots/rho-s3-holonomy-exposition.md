@@ -20,7 +20,7 @@ through two elementary operations:
 1. **The $\alpha$ operator (twist).**
    The generator $\sigma_1$ ([braid twist](#def:braid-twist-flip))
    swaps the two conjugate pairs: $(w_1, w_2, w_3, w_4) \mapsto (w_2, w_1, w_4, w_3)$. In the $\mathrm{SU}(2)$ embedding this is
-   a rotation by $T\theta$ around the $e_1$ axis
+   a rotation by $T\varTheta$ around the $e_1$ axis
    ([SU(2) generators](#def:su2-generators)). Physically, $\alpha$
    rotates the *time-like* pairs --- the modes that carry the
    dynamical phase of the Reeb flow --- while leaving the overall

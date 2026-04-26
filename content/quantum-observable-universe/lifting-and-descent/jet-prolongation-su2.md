@@ -28,16 +28,16 @@ frame bundle $F(\mathrm{SU}(2))$.
 is defined by
 
 $$
-  \Delta'(f \otimes \theta)(x, y)
-  =  f(xy) \otimes \theta_y,
+  \Delta'(f \otimes \varTheta)(x, y)
+  =  f(xy) \otimes \varTheta_y,
 $$
 
-where $\theta_y$ denotes the left-translate of $\theta$ to $T_y G$.
+where $\varTheta_y$ denotes the left-translate of $\varTheta$ to $T_y G$.
 The counit and antipode extend similarly:
-$\varepsilon'(f \otimes \theta) = f(e)\theta_e$ and
-$S'(f \otimes \theta)(x) = f(x^{-1}) \otimes (L_{x^{-1}})^*\theta$.
+$\varepsilon'(f \otimes \varTheta) = f(e)\varTheta_e$ and
+$S'(f \otimes \varTheta)(x) = f(x^{-1}) \otimes (L_{x^{-1}})^*\varTheta$.
 The Frobenius form is
-$\int_{J^1 A}(f \otimes \theta) = \int_G f\theta$, integrating the
+$\int_{J^1 A}(f \otimes \varTheta) = \int_G f\varTheta$, integrating the
 $1$-form component over $G$ using the Haar measure.
 
 **QOU structure.** The induced fibre functor is

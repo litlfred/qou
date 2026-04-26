@@ -21,10 +21,10 @@ Uhlenbeck, Atiyah--Bott) that predates QOU by decades.
 
 **2. Contact non-integrability.**
 Observability is equivalent to non-degeneracy of the Levi form
-$\mathcal{L}_\theta$ ([core-Levi equivalence](#prop:core-levi-form)),
+$\mathcal{L}_\varTheta$ ([core-Levi equivalence](#prop:core-levi-form)),
 which is the defining property of a **contact manifold**.
 Contact manifolds are maximally non-integrable: the horizontal
-distribution $\ker(\theta)$ has no integral submanifolds of
+distribution $\ker(\varTheta)$ has no integral submanifolds of
 dimension greater than half the contact dimension.
 
 Every odd-dimensional manifold admits a contact structure

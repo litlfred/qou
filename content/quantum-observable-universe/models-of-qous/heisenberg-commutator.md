@@ -29,10 +29,10 @@ the base of the Reeb fibre, where $d_q = d$); as $q \to \infty$,
 $[\hat{X}, \hat{P}]_q \to J$ (maximal uncertainty: one sits at the tip
 of the fibre, where $d_q \to \pi_V \circ d$).
 
-Geometrically, $[\hat{X}, \hat{P}]_q$ equals $\theta(\xi_q)$, the
+Geometrically, $[\hat{X}, \hat{P}]_q$ equals $\varTheta(\xi_q)$, the
 $q$-deformed Reeb field
 ([$q$-Reeb vector field](#ex:q-reeb-vector-field)) evaluated on the
-contact form: $\xi_q$ is the unique direction along which $d\theta$
+contact form: $\xi_q$ is the unique direction along which $d\varTheta$
 degenerates, so it encodes the obstruction to commutativity.
 Uncertainty is displacement along the Reeb fibre --- the further from
 classicality ($q = 1$), the larger the non-commutativity.  Heisenberg's

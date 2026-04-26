@@ -50,7 +50,7 @@ $s^2 + s - 1 = 0$ controlling the degeneration on the right.
 
 **Transport equations.**
 The $q$-connection
-$\nabla_q = q^{-1}\nabla + (1 - q^{-1})(\iota_\xi\nabla) \theta_A$
+$\nabla_q = q^{-1}\nabla + (1 - q^{-1})(\iota_\xi\nabla) \varTheta_A$
 has coefficients that depend continuously on $q$.  As $q$ decreases
 from $q_0$ to $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$,
 the connection weight shifts:

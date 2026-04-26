@@ -34,7 +34,7 @@ $q = 1 + \varepsilon$, then takes standard-part:
   $\mathcal{L} \cong \mathrm{St} \circ \mathrm{ev}_{1+\varepsilon}$
   ([classical limit as standard-part](#conj:classical-limit-stpart)).
 - At the **whole-tuple** level — the entire QOU
-  $(\mathbf{C}, \theta, G, \mathcal{S})$ is the standard-part of
+  $(\mathbf{C}, \varTheta, G, \mathcal{S})$ is the standard-part of
   an $\varepsilon$-relaxed surreal QOU
   ([archimedean QOU is standard-part of surreal](#conj:archimedean-stpart),
   with [proof strategy](#rem:archimedean-stpart-strategy)).

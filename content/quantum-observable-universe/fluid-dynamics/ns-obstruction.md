@@ -1,9 +1,9 @@
 **Definition.**
-*Let $(A, \theta)$ be a quantum universe.  The **NS obstruction
+*Let $(A, \varTheta)$ be a quantum universe.  The **NS obstruction
 class** is the element*
 
 $$
-  \mathrm{NS}(A) \;\in\; H^3_{\mathrm{loc}}(A, \theta)
+  \mathrm{NS}(A) \;\in\; H^3_{\mathrm{loc}}(A, \varTheta)
 $$
 
 *obtained by evaluating the Yekutieli obstruction tower of the

@@ -1,7 +1,7 @@
 Continuing the [Reeb derivation for $\mathrm{SU}(2)$](#ex:reeb-su2) and the
 [Bring coordinate ring](#def:brings-coordinate-ring), we construct
 the [categorical Reeb derivation](#def:categorical-reeb)
-$(\xi, \theta_A)$ on Bring's surface explicitly.
+$(\xi, \varTheta_A)$ on Bring's surface explicitly.
 
 **Step 1: identify the generator $\xi$.** The maximal torus of
 $\mathrm{SU}_q(2)$ is $T = \mathrm{U}(1)$, embedded as diagonal
@@ -27,13 +27,13 @@ $$
 
 This is a *derivation*: $\xi \cdot (fg) = (\xi \cdot f)g + f(\xi \cdot g)$.
 
-**Step 2: construct the dual $1$-form $\theta_A$.** The Woronowicz
+**Step 2: construct the dual $1$-form $\varTheta_A$.** The Woronowicz
 $3$-dimensional calculus on $\mathcal{O}_q(\mathrm{SU}(2))$ has basis
 $\{\omega_+, \omega_-, \omega_3\}$ of left-invariant $1$-forms. The
 form dual to $\xi = e_3$ is
 
 $$
-  \theta_A = \omega_3
+  \varTheta_A = \omega_3
 $$
 
 where $\omega_3$ is defined by $\omega_3(e_3) = 1$ and
@@ -44,10 +44,10 @@ calculus \cite{woronowicz1989}.
 **Step 3: verify the axioms.** The two defining properties of the
 categorical Reeb derivation are now checkable by direct computation:
 
-1. *Normalisation*: $\theta_A(\xi) = \omega_3(e_3) = 1 = \mathrm{id}_{\mathbf{1}}$. $\checkmark$
+1. *Normalisation*: $\varTheta_A(\xi) = \omega_3(e_3) = 1 = \mathrm{id}_{\mathbf{1}}$. $\checkmark$
 
 2. *Reeb/contact identity*: the directly verified condition is
-   $\iota_\xi\,d\theta_A = 0$ for $\theta_A = \omega_3$.
+   $\iota_\xi\,d\varTheta_A = 0$ for $\varTheta_A = \omega_3$.
    The exterior derivative $d\omega_3$ is computed from the
    Woronowicz structure equations
    $d\omega_3 = -q^{-1}\omega_+ \wedge \omega_-$, and
@@ -57,8 +57,8 @@ categorical Reeb derivation are now checkable by direct computation:
    $\pi_V$ is the independent projection onto non-zero-weight
    components under the $\xi$-action, as constructed in
    [weight decomposition](#ex:weight-decomposition-su2). Combined
-   with $\iota_\xi\,d\theta_A = 0$, the vertical generator axiom
-   $\pi_V \circ d = \iota_\xi\,d\theta_A$ restricts to horizontal
+   with $\iota_\xi\,d\varTheta_A = 0$, the vertical generator axiom
+   $\pi_V \circ d = \iota_\xi\,d\varTheta_A$ restricts to horizontal
    forms (annihilated by $\iota_\xi$) and recovers the Reeb
    decomposition $\pi_H + \pi_V = \mathrm{id}$. $\checkmark$
 
@@ -76,6 +76,6 @@ $\dim H^{1,0} = g = 4$):
 
 The Reeb spectrum is $\mathrm{Spec}(\xi) = \{-1, +1\}$ with
 multiplicity $4$ each, matching the $8$ fundamental modes of
-Bring's curve. The contact form $\theta_A$ restricts to the
+Bring's curve. The contact form $\varTheta_A$ restricts to the
 canonical $1$-form on $\Sigma_4$ whose kernel defines the horizontal
 distribution.

@@ -1,5 +1,5 @@
 **Conjecture ($q$-BSD).**
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU with substrate
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with substrate
 parameter $q$ and Descartes elliptic curve
 $\mathcal{E}_q$ ([Descartes elliptic curve](#prop:descartes-elliptic-curve)).
 Define the **categorical Mordell--Weil group** as the abelian group of

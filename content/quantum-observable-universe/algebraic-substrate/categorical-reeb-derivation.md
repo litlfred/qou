@@ -4,10 +4,10 @@ $\xi_q \colon A \to A$ uniquely determined by the following two
 conditions.
 
 **Normalization.** The derivation is compatible with the contact form
-$\theta$:
+$\varTheta$:
 
 $$
-\xi_q \circ \theta =  \theta,
+\xi_q \circ \varTheta =  \varTheta,
 $$
 
 so that $\xi_q$ preserves the contact structure on the state bundle

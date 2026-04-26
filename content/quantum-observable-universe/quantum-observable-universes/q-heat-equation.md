@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a quantum observable
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum observable
 universe with $q$-Laplacian $\Delta_q = d_q\delta_q + \delta_qd_q$
 ([particle ($q$-harmonic form)](#def:q-harmonic-form)).  The
 *$q$-heat equation* is the evolution equation

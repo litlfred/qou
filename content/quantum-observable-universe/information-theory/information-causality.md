@@ -12,7 +12,7 @@ $|Z| = c_q$ in the contact affine coordinate
 horizontal spatial diffusion exactly matches vertical Reeb advance.
 This is not a geometric postulate (as in special relativity) but
 a *consequence* of the $q$-connection decomposition
-$A_q = q^{-1}A + \hbar_q\iota_\xi A\theta$ --- the spatial
+$A_q = q^{-1}A + \hbar_q\iota_\xi A\varTheta$ --- the spatial
 and temporal coupling weights determine the causal boundary.
 Outside the cone, the Lieb--Robinson bound
 ([speed of light](#def:information-speed-of-light)) gives

@@ -28,14 +28,14 @@ sinc${}^2$ of massive particles but the **Julia-set measure**
 $\mu_J$: the natural invariant measure on $J(f_q)$.
 The Hausdorff dimension $d_H = d_H(q)$ of $J(f_q) \cap S^1$
 governs the power-law tails of the photon envelope, replacing the
-$|\theta|^{-2}$ falloff of classical Airy diffraction with
-$|\theta|^{-d_H}$.
+$|\varTheta|^{-2}$ falloff of classical Airy diffraction with
+$|\varTheta|^{-d_H}$.
 
 **Julia set at the golden ratio.**
 At the golden threshold $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$, the effective angle on the main cardioid is
 
 $$
-  \theta_{\mathrm{gold}}
+  \varTheta_{\mathrm{gold}}
   =  2\pi/\varphi^2
    \approx  137.5°
 $$

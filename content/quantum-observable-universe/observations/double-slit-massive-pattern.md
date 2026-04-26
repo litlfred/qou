@@ -41,7 +41,7 @@ The $q$-Laplacian separates into three scales:
   $\beta_\xi$ to the envelope;
 - **Cross-coupling** ($\propto q^{-1}(1 - q^{-1})$):
   the terms
-  $d(\mathcal{L}_\xi^*\iota_\xi) + (\theta \wedge \mathcal{L}_\xi)\delta + \delta(\theta \wedge \mathcal{L}_\xi) + (\mathcal{L}_\xi^*\iota_\xi)d$
+  $d(\mathcal{L}_\xi^*\iota_\xi) + (\varTheta \wedge \mathcal{L}_\xi)\delta + \delta(\varTheta \wedge \mathcal{L}_\xi) + (\mathcal{L}_\xi^*\iota_\xi)d$
   that mix spatial and Reeb modes, producing the
   interference fringes.
 

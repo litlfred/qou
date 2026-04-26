@@ -1,5 +1,5 @@
 A QOU is an archimedean tuple
-$(\mathbf{C}, \theta, G, \mathcal{S})$
+$(\mathbf{C}, \varTheta, G, \mathcal{S})$
 ([quantum observable universe](#def:quantum-observable-universe))
 in the main paper: the categorical algebra $\mathbf{C}$ is
 $K$-linear with $K = \mathbb{R}$ implicit, the gauge group $G$ is
@@ -68,7 +68,7 @@ This conjecture is the **categorical** counterpart of
   functor on $\mathbf{C}_q$ is $\mathrm{St} \circ \mathrm{ev}_{1
   + \varepsilon}$ (single-category statement).
 - Archimedean-stpart says: the entire QOU framework
-  $(\mathbf{C}, \theta, G, \mathcal{S})$ is the
+  $(\mathbf{C}, \varTheta, G, \mathcal{S})$ is the
   standard-part of an $\varepsilon$-relaxed surreal QOU
   (whole-tuple statement).
 
@@ -115,14 +115,14 @@ to that conjecture via:
 1. **Functorial reduction**. Show
    $\mathrm{St}_{\mathrm{QOU}} = (\mathrm{St}, \mathrm{St}, \mathrm{St},
    \mathrm{St})$ — the standard-part applied to each component of the
-   QOU tuple $(\mathbf{C}, \theta, G, \mathcal{S})$.
+   QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 2. **Reduce each component**:
    - $\mathbf{C} = \mathrm{Rep}_{\mathbf{No}}(\mathrm{SU}_q(2))$ at
      $q = 1 + \varepsilon$: $\mathrm{St}$ recovers
      $\mathrm{Rep}_{\mathbb{R}}(\mathrm{SU}(2))$ by
      [classical-limit-stpart](#conj:classical-limit-stpart).
-   - $\theta : \mathbf{1} \to A$: just an element of a hom-space;
+   - $\varTheta : \mathbf{1} \to A$: just an element of a hom-space;
      $\mathrm{St}$ acts entry-wise.
    - $G = \mathrm{Aut}(A)$: a functorial gauge group; standard-part
      of an algebraic group object.

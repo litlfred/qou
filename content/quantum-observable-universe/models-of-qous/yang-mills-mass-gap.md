@@ -64,7 +64,7 @@ In the QOU framework, the translation is:
 |---------------------|-------------------|
 | $\mathbb{R}^4$ spacetime | Brane tower $\{A_n\}$ over the Frobenius--Hopf object $A$ |
 | Gauge group $G$ | Quantum gauge group $G_q = \mathrm{Aut}_{\mathrm{Hopf}}(A)$ |
-| Yang--Mills action $\int \lVert F_A \rVert^2$ | $q$-weighted functional $S_q[\nabla, \theta]$ ([def](#def:q-yang-mills-levi)) |
+| Yang--Mills action $\int \lVert F_A \rVert^2$ | $q$-weighted functional $S_q[\nabla, \varTheta]$ ([def](#def:q-yang-mills-levi)) |
 | Vacuum state $\Omega$ | Frobenius trace $\Omega_0$ ([vacuum state](#prop:vacuum-state)) |
 | Wightman axioms | QOU axioms (QOU1)--(QOU5) |
 | Hamiltonian $H$ | Categorical transfer matrix $\mathcal{T}_q$ |

@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be an archimedean quantum observable universe
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe
 with instanton connection $A$ ([instanton](#ex:instanton)) and substrate
 parameter $q$ ([substrate parameter](#def:substrate-parameter)).  Let
 $\mathbf{E}$ denote the Euler--Lagrange operator of the
@@ -12,8 +12,8 @@ parallel transport along $A$.  The following diagram commutes:
   J^1\mathcal{S}
     \ar[r, "{\mathbf{E}[S_q]}"]
     \ar[d, "\text{jet evaluation}"']
-  & \bigl\{ L_\theta : \mathrm{Ric}_{g_\theta} = T^{(q)} \bigr\}
-    \ar[d, "{q = 1 + \lvert\langle L_\theta, F_A^+\rangle\rvert}"]
+  & \bigl\{ L_\varTheta : \mathrm{Ric}_{g_\varTheta} = T^{(q)} \bigr\}
+    \ar[d, "{q = 1 + \lvert\langle L_\varTheta, F_A^+\rangle\rvert}"]
   \\
   \Gamma(\mathcal{S}_{\mathrm{lin}})
     \ar[r, "\nabla^A"']

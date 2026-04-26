@@ -10,10 +10,10 @@ direct sums. The maximal torus is
 $$
   T = \mathrm{U}(1)
   = \left\{
-    \begin{pmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{pmatrix}
-    : \theta \in \mathbb{R}
+    \begin{pmatrix} e^{i\varTheta} & 0 \\ 0 & e^{-i\varTheta} \end{pmatrix}
+    : \varTheta \in \mathbb{R}
   \right\},
 $$
 
 the diagonal matrices in $\mathrm{SU}(2)$. Each element of $T$ acts on
-$e_{\pm}$ by $e^{\pm i\theta}$: one-dimensional eigenspaces, as required.
+$e_{\pm}$ by $e^{\pm i\varTheta}$: one-dimensional eigenspaces, as required.

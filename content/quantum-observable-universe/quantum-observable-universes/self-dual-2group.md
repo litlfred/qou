@@ -31,7 +31,7 @@ $2$-form $B$, subject to the *quantum flatness* condition
 $$F_A =  B.$$
 
 In the QOU setting, $G = \mathrm{SU}(2)$ and the Levi distribution
-$H = \ker\theta$ has $\dim_{\mathbb{R}} H = 4$, so the Hodge
+$H = \ker\varTheta$ has $\dim_{\mathbb{R}} H = 4$, so the Hodge
 decomposition $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$
 is available. Imposing the *simplicity constraint*
 

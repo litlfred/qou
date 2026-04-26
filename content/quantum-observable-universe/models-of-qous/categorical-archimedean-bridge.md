@@ -11,13 +11,13 @@ formulations of $d_q$ coincide:
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
   \Omega^k(A) \ar[r, "\pi_V \circ d"] \ar[d, "\tau"']
   & \Omega^{k+1}(A) \ar[d, "\tau"] \\
-  \Omega^k(M) \ar[r, "\theta \wedge \mathcal{L}_\xi"']
+  \Omega^k(M) \ar[r, "\varTheta \wedge \mathcal{L}_\xi"']
   & \Omega^{k+1}(M)
 \end{tikzcd}
 \qquad\text{(categorical--geometric bridge)}
 \end{equation}
 ```
 
-That is, $\tau(\pi_V \circ d) = \theta \wedge \mathcal{L}_\xi$,
-where $\theta$ is the contact form and $\mathcal{L}_\xi$ is the
+That is, $\tau(\pi_V \circ d) = \varTheta \wedge \mathcal{L}_\xi$,
+where $\varTheta$ is the contact form and $\mathcal{L}_\xi$ is the
 Lie derivative along the Reeb vector field.

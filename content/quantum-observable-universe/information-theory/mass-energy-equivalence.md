@@ -1,5 +1,5 @@
 **Theorem (mass--energy equivalence).**
-*Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be an archimedean quantum
+*Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum
 observable universe with substrate parameter $q$ and speed of light
 $c_q = 1/(q-1)$
 ([speed of light](#def:information-speed-of-light)).  Let
@@ -77,7 +77,7 @@ a *vertical* (Reeb) quantity, since $\Delta$ encodes the
 $q$-connection whose temporal component has weight $\hbar_q$.
 
 *Step 3: The speed-of-light conversion.*
-The $q$-connection $A_q = q^{-1}A + \hbar_q\iota_\xi A\theta$
+The $q$-connection $A_q = q^{-1}A + \hbar_q\iota_\xi A\varTheta$
 assigns weight $q^{-1}$ to each spatial crossing and weight $\hbar_q$
 to each temporal tick.  The ribbon trace sums spatial crossing
 weights ($q^{\pm 1}$), while the categorical mass sums temporal

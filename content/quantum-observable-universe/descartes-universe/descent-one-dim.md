@@ -1,5 +1,5 @@
 By the descent theorem ([jet prolongation](#prop:jet-prolongation)), a
-two-complex-dimensional Descartes universe $(\mathbf{C}, \theta, G, \mathcal{S})$ with $M = \mathbb{C}^2$
+two-complex-dimensional Descartes universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$ with $M = \mathbb{C}^2$
 descends to a one-complex-dimensional variety $M_0$.  The stability of the
 Euler characteristic under descent and lifting
 ([Euler characteristic stability](#prop:euler-char-stability)) ensures that the descended
