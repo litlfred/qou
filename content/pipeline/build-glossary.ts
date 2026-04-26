@@ -165,8 +165,18 @@ export async function buildGlossary(paperDir: string): Promise<GlossaryIndex> {
 
 // ── LaTeX rendering ──────────────────────────────────────────────
 
-/** Escape a slug or label for use as a LaTeX identifier. */
-function texEscape(s: string): string {
+/**
+ * Escape body text for LaTeX. Covers the full set of fragile characters
+ * (`\\ _ & % # $ { } ~ ^`) so the output is safe in any text-mode context
+ * (chapter/section titles, item bodies, `\texttt{}` arguments, etc.).
+ *
+ * Inline math segments delimited by `$…$` are passed through verbatim
+ * so that section titles like `Reeb derivation for $\mathrm{SU}(2)$`
+ * render correctly.
+ */
+function texEscapeText(s: string): string {
+  // Split on inline math; even-indexed pieces are text, odd-indexed are math.
+  const parts = s.split(/(\$[^$]*\$)/g);
   // Single-pass replacement so each character is matched at most once
   // (silences the CodeQL `js/incomplete-sanitization` false positive
   // that flags chained `replace` calls even when backslash is handled
@@ -177,8 +187,26 @@ function texEscape(s: string): string {
     "&": "\\&",
     "%": "\\%",
     "#": "\\#",
+    "$": "\\$",
+    "{": "\\{",
+    "}": "\\}",
+    "~": "\\textasciitilde{}",
+    "^": "\\textasciicircum{}",
   };
-  return s.replace(/[\\_&%#]/g, c => map[c]);
+  return parts
+    .map((p, i) => (i % 2 === 1 ? p : p.replace(/[\\_&%#${}~^]/g, c => map[c])))
+    .join("");
+}
+
+/**
+ * Return a label string suitable as the first argument of `\label{}`,
+ * `\hyperref[…]`, or `\ref{…}`. LaTeX label arguments are literal
+ * identifiers — escaping `_` (or any other character) here would break
+ * cross-references to `\label{def:foo_bar}` written elsewhere in the
+ * document. The label is therefore returned verbatim.
+ */
+function texEscapeLabel(s: string): string {
+  return s;
 }
 
 /**
@@ -207,22 +235,22 @@ export function renderGlossaryTex(index: GlossaryIndex): string {
   }
 
   for (const [chap, { title, entries }] of byChapter) {
-    lines.push(`\\section*{${texEscape(title)}}`);
-    lines.push(`\\label{glossary:${texEscape(chap)}}`);
+    lines.push(`\\section*{${texEscapeText(title)}}`);
+    lines.push(`\\label{glossary:${texEscapeLabel(chap)}}`);
     lines.push("\\begin{description}");
     // Alphabetical within chapter.
     const sorted = [...entries].sort((a, b) => a.slug.localeCompare(b.slug));
     for (const e of sorted) {
       const isDup = (index.duplicates[e.slug] ?? []).length > 1;
-      const term = `\\refterm{${texEscape(e.slug)}}`;
-      const labelLink = `\\hyperref[${texEscape(e.block)}]{${texEscape(e.block)}}`;
+      const term = `\\refterm{${texEscapeLabel(e.slug)}}`;
+      const labelLink = `\\hyperref[${texEscapeLabel(e.block)}]{${texEscapeText(e.block)}}`;
       let body = `defined at ${labelLink}`;
-      if (e.section) body += ` (\\S{}${texEscape(e.section)})`;
-      if (e.lean) body += `; Lean: \\texttt{${texEscape(e.lean)}}`;
+      if (e.section) body += ` (\\S{}${texEscapeText(e.section)})`;
+      if (e.lean) body += `; Lean: \\texttt{${texEscapeText(e.lean)}}`;
       if (isDup) {
         const others = (index.duplicates[e.slug] ?? []).filter(b => b !== e.block);
         const otherLinks = others
-          .map(b => `\\hyperref[${texEscape(b)}]{${texEscape(b)}}`)
+          .map(b => `\\hyperref[${texEscapeLabel(b)}]{${texEscapeText(b)}}`)
           .join(", ");
         body = `\\textcolor{red}{${body}; also defined at ${otherLinks}}`;
       }

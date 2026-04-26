@@ -62,35 +62,42 @@ export function insertDefines(source: string, slug: string): string | null {
   if (existsRe.test(source)) return null;
 
   // Case 1: existing `defines: [ ... ]` array — append slug.
-  const existingArrayRe = /defines\s*:\s*\[([^\]]*)\]/;
+  // Anchor to start-of-line so we don't match `defines:` inside a
+  // string literal or block comment.
+  const existingArrayRe = /^([ \t]+)defines\s*:\s*\[([^\]]*)\]/m;
   const arrMatch = source.match(existingArrayRe);
   if (arrMatch) {
-    const inside = arrMatch[1].trim();
+    const indent = arrMatch[1];
+    const inside = arrMatch[2].trim();
     const sep = inside.length === 0 ? "" : ", ";
-    const replacement = `defines: [${inside}${sep}"${slug}"]`;
+    const replacement = `${indent}defines: [${inside}${sep}"${slug}"]`;
     return source.replace(existingArrayRe, replacement);
   }
 
-  // Case 2: insert before the closing `})`. Locate the LAST `})` —
-  // matches the builder call closer for `default <builder>({ ... })`.
-  // We insert the new line before the `}`, indented to match the
-  // surrounding fields.
-  const closeRe = /(\n\s*)\}\)\s*;?\s*\n?\s*$/;
-  const closeMatch = source.match(closeRe);
-  if (!closeMatch) return null;
+  // Case 2: insert before the closing `})`. Match the builder call
+  // closer for `default <builder>({ ... })`, allowing trailing
+  // whitespace, comments, or other code to follow the closer (so we
+  // don't depend on `})` being the last thing in the file).
+  const closeRe = /(\n[ \t]*)\}\)\s*;?/g;
+  let closeMatch: RegExpExecArray | null = null;
+  let lastMatch: RegExpExecArray | null = null;
+  while ((closeMatch = closeRe.exec(source)) !== null) {
+    lastMatch = closeMatch;
+  }
+  if (!lastMatch) return null;
 
   // Find a sibling field's indentation by looking at the line above
-  // the closing brace. Default to two spaces.
-  const before = source.slice(0, source.length - closeMatch[0].length);
-  const lastFieldMatch = before.match(/\n([ \t]+)\S[^\n]*,\s*$/);
+  // the closing brace. Default to two spaces. Also detect whether
+  // that field ends with a trailing comma; if not, inject one so our
+  // insertion is syntactically valid.
+  const before = source.slice(0, lastMatch.index);
+  const after = source.slice(lastMatch.index);
+  const lastFieldMatch = before.match(/\n([ \t]+)\S[^\n]*?(,?)\s*$/);
   const indent = lastFieldMatch ? lastFieldMatch[1] : "  ";
+  const needsComma = !!(lastFieldMatch && !lastFieldMatch[2]);
 
-  // Ensure the previous field ends with a comma so our insertion is
-  // syntactically valid. The Section captured already ends with `,`,
-  // but the builder may end with a field that omits the trailing
-  // comma. Handle both by injecting before the closing `})`.
-  const insertion = `\n${indent}defines: ["${slug}"],`;
-  return before + insertion + closeMatch[0];
+  const insertion = `${needsComma ? "," : ""}\n${indent}defines: ["${slug}"],`;
+  return before + insertion + after;
 }
 
 // ── Apply ───────────────────────────────────────────────────────

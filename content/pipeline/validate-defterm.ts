@@ -135,11 +135,14 @@ export function validateDefterms(
   // ── Rule: defterm-unique ──
   for (const [slug, owners] of glossaryIndex) {
     if (owners.length > 1) {
-      issues.push({
-        level: "warning",
-        block: owners[0],
-        message: `defterm-unique: term "${slug}" declared by multiple blocks (${owners.join(", ")})`,
-      });
+      // Report on every owner so all participating authors are notified.
+      for (const owner of owners) {
+        issues.push({
+          level: "warning",
+          block: owner,
+          message: `defterm-unique: term "${slug}" declared by multiple blocks (${owners.join(", ")})`,
+        });
+      }
     }
   }
 
@@ -204,10 +207,17 @@ export function validateDefterms(
       }
     }
 
-    // Sort phrases longest-first so multi-word phrases match before substrings.
-    const sortedPhrases = [...phrases.entries()].sort(
-      (a, b) => b[0].length - a[0].length,
-    );
+    // Sort phrases longest-first so multi-word phrases match before substrings,
+    // and pre-compile the word-boundary regex for each phrase once. Building
+    // the RegExp inside the per-block loop is wasteful since the phrase set
+    // is constant for the entire validation pass.
+    const compiledPhrases = [...phrases.entries()]
+      .sort((a, b) => b[0].length - a[0].length)
+      .map(([phrase, slug]) => ({
+        phrase,
+        slug,
+        re: new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`),
+      }));
 
     for (const [name] of blocks) {
       const usage = usageByBlock.get(name)!;
@@ -216,11 +226,9 @@ export function validateDefterms(
       const definedHere = new Set<string>(usage.defs.keys());
       const haystack = usage.plainText.toLowerCase();
 
-      for (const [phrase, slug] of sortedPhrases) {
+      for (const { phrase, slug, re } of compiledPhrases) {
         if (definedHere.has(slug)) continue; // defterm site, skip
         if (wrappedSlugs.has(slug)) continue; // at least one refterm present
-        // Word-boundary search to avoid false positives on substrings.
-        const re = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`);
         if (re.test(haystack)) {
           issues.push({
             level: "warning",
