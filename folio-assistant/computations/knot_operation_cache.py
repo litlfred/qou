@@ -204,35 +204,100 @@ class KnotOperationCache:
         return "\n".join(lines)
 
 
-# ─── Discovery interface (STUB) ───────────────────────────────────────
+# ─── Discovery interface ──────────────────────────────────────────────
 
 def discover_factorization(
     braid_nf: list[tuple[int, int]],
     n: int,
     discovered_by: str = "unknown",
 ) -> list[KnotOperation]:
-    """Decompose a braid NF into its constituent knot operations.
+    """Decompose a braid word into its constituent knot operations.
 
-    **STATUS: STUB.**
+    **Phase 3 (post-#428)**: detects **trivial tensor-product
+    structure** — disjoint blocks of strands acted on by disjoint
+    generator-index ranges.  E.g. word `[σ_1, σ_3, σ_1, σ_5]` on
+    n = 6 splits into three factors:
 
-    The intended implementation:
-      1. Run the SDP / shadow-price / Wedderburn-block decomposition
-         on `braid_nf`.
-      2. Identify recurring sub-blocks by matching against the cache.
-      3. For each sub-block found, return its KnotOperation.
+      - β_1 = σ_1·σ_1 on strands {1, 2}  (n_1 = 2)
+      - β_2 = σ_1       on strands {3, 4}  (n_2 = 2)
+      - β_3 = σ_1       on strands {5, 6}  (n_3 = 2)
 
-    Currently returns a single KnotOperation wrapping the whole braid.
+    so `chi_λ(β) = Σ c^λ_{μ_1 μ_2 μ_3} χ_{μ_1}(β_1) χ_{μ_2}(β_2) χ_{μ_3}(β_3)`.
+
+    Algorithm: build a union-find on strands {0, ..., n-1} where
+    `σ_i` (1-based generator) connects strands `i-1` and `i`.  After
+    processing the word, each connected component is one factor; the
+    sub-word for that factor is the subsequence of letters touching
+    that component, with generator indices re-based to the component's
+    minimum strand.  Output factors are returned in left-to-right
+    component order (smallest minimum strand first).
+
+    For words with **non-trivial entanglement** (generators bridging
+    components), this returns a single full-braid `KnotOperation` —
+    the caller can then run the SDP / shadow-price decomposition on
+    that operation downstream.  See the F4 roadmap for the SDP path.
     """
-    # Per Copilot review #r3144...: do NOT sort braid_nf — sorting
-    # changes generator order, which generally changes the underlying
-    # braid/Hecke element. Preserve input order until a real
-    # order-preserving normal-form algorithm is implemented.
-    op = KnotOperation(
-        n=n,
-        braid_word_normal_form=list(braid_nf),
-        discovered_in=[discovered_by],
-    )
-    return [op]
+    if not braid_nf:
+        return [KnotOperation(
+            n=n, braid_word_normal_form=[], discovered_in=[discovered_by],
+        )]
+
+    # Union-find on n strands (0-indexed internally).
+    parent = list(range(n))
+
+    def find(x: int) -> int:
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a: int, b: int) -> None:
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[max(ra, rb)] = min(ra, rb)
+
+    for _sign, gen in braid_nf:
+        i = gen - 1  # 0-indexed strand
+        if 0 <= i < n - 1:
+            union(i, i + 1)
+
+    # Group strands by component root.
+    components: dict[int, list[int]] = {}
+    for s in range(n):
+        components.setdefault(find(s), []).append(s)
+
+    # If only one component, we have no tensor-product structure to
+    # exploit — return the whole braid as a single op (preserves
+    # generator order, per Copilot review #r3143789507).
+    if len(components) == 1:
+        return [KnotOperation(
+            n=n,
+            braid_word_normal_form=list(braid_nf),
+            discovered_in=[discovered_by],
+        )]
+
+    # Sort components by their minimum strand (= leftmost in the
+    # one-line braid layout).  Each component becomes one factor.
+    ordered = sorted(components.values(), key=min)
+    ops: list[KnotOperation] = []
+    for comp in ordered:
+        comp_set = set(comp)
+        comp_n = len(comp)
+        comp_min = min(comp)
+        # Subsequence of letters that belong to this component.
+        comp_word: list[tuple[int, int]] = []
+        for sign, gen in braid_nf:
+            i = gen - 1
+            if i in comp_set:
+                # Re-base generator index so the factor lives on
+                # strands {0, ..., comp_n - 1}.
+                comp_word.append((sign, gen - comp_min))
+        ops.append(KnotOperation(
+            n=comp_n,
+            braid_word_normal_form=comp_word,
+            discovered_in=[discovered_by],
+        ))
+    return ops
 
 
 # ─── Composer interface ──────────────────────────────────────────────
