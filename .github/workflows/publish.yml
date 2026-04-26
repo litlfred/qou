@@ -113,11 +113,14 @@ jobs:
       # boost, agent toolcache).
       - name: Free disk space
         run: |
-          # Remove only the *contents* of $AGENT_TOOLSDIRECTORY, not the
+          # Remove only the *contents* of the toolcache directory, not the
           # directory itself — `oven-sh/setup-bun` (and other setup-* actions)
           # rely on the toolcache directory being present and writable.
+          # Guard against unset AGENT_TOOLSDIRECTORY: an empty value would
+          # expand `"$VAR"/*` to `/*` and `rm -rf` the filesystem root.
+          TOOLCACHE_DIR="${AGENT_TOOLSDIRECTORY:-${RUNNER_TOOL_CACHE:-/opt/hostedtoolcache}}"
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
-                      /usr/local/share/boost "$AGENT_TOOLSDIRECTORY"/*
+                      /usr/local/share/boost "$TOOLCACHE_DIR"/*
           sudo apt-get clean
           df -h /
 
