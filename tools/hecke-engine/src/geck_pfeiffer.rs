@@ -43,7 +43,7 @@
 //! coefficients but typical (sparse) braid words give smaller spans.
 
 use crate::laurent_poly_q::LaurentPolyQ;
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, HashMap, VecDeque};
 
 /// Permutation of `n` elements as a one-line representation (i.e.
 /// `perm[i] = w(i)`, 0-indexed).
@@ -325,22 +325,53 @@ pub fn chi_lambda_via_gp_hoefsmit(
 /// at q = 1 regardless of `reduce_basis_to_minimal_length` behaviour.
 pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
     let mut current = x.clone();
-    // Iterate until fixed point.
-    loop {
-        // Find a non-minimal w in current.
-        let target = current.iter()
-            .find_map(|(w, _c)| {
-                let mu = perm_cycle_type(w);
-                let min_len = min_length_for_cycle_type(&mu);
-                if w.length() > min_len { Some(w.clone()) } else { None }
-            });
-        let Some(target_w) = target else {
-            return current;  // all basis elements are minimal-length
-        };
+
+    // Cache: Perm → (length, min_length_in_conjugacy_class).
+    // Both `length()` (O(n²) inversion count) and `cycle_type` /
+    // `min_length_for_cycle_type` are pure functions of the perm, so
+    // we memoize them once per encountered Perm and reuse across the
+    // worklist (Gemini #r3143786236).
+    let mut info: HashMap<Perm, (usize, usize)> = HashMap::new();
+
+    fn cached(
+        w: &Perm,
+        cache: &mut HashMap<Perm, (usize, usize)>,
+    ) -> (usize, usize) {
+        if let Some(&v) = cache.get(w) {
+            return v;
+        }
+        let len = w.length();
+        let cyc = perm_cycle_type(w);
+        let min_len = min_length_for_cycle_type(&cyc);
+        cache.insert(w.clone(), (len, min_len));
+        (len, min_len)
+    }
+
+    // Worklist: non-minimal elements pending conjugation.  We may
+    // enqueue duplicates after a conjugation introduces an existing
+    // key — duplicates are filtered on pop via `current.contains_key`.
+    let mut queue: VecDeque<Perm> = VecDeque::new();
+    for w in current.keys() {
+        let (len, min_len) = cached(w, &mut info);
+        if len > min_len {
+            queue.push_back(w.clone());
+        }
+    }
+
+    while let Some(target_w) = queue.pop_front() {
+        // Skip if conjugation already removed this key.
+        if !current.contains_key(&target_w) {
+            continue;
+        }
+        let (target_len, target_min_len) = cached(&target_w, &mut info);
+        if target_len <= target_min_len {
+            // Already minimal (could happen if a previous
+            // conjugation transformed it).  Skip.
+            continue;
+        }
         let n = target_w.n();
 
         // Find a simple reflection s such that ℓ(s · target_w · s) < ℓ(target_w).
-        let target_len = target_w.length();
         let mut chosen_s: Option<usize> = None;
         for i in 0..n.saturating_sub(1) {
             let mut sws = target_w.clone();
@@ -352,26 +383,39 @@ pub fn reduce_basis_to_minimal_length(x: &HeckeElement) -> HeckeElement {
             }
         }
         let Some(s_idx) = chosen_s else {
-            // No length-reducing conjugation found.  This shouldn't
-            // happen for n ≤ 6 in S_n (every non-minimal element has
-            // a length-reducing s) but bail safely if it does.
-            return current;
+            // No simple-reflection conjugation reduces length.  For
+            // n ≤ 6 this is rare; for larger n it requires the full
+            // Geck-Pfeiffer §3.2 cuspidal-moves algorithm (still on
+            // the roadmap).  Skip this element and continue.
+            continue;
         };
 
         // Apply Hecke conjugation: replace c_w · T_w with
         // c_w · (T_s · T_w · T_s⁻¹) in current.
         let coeff = current.remove(&target_w).unwrap_or_else(LaurentPolyQ::zero);
-        // Build singleton {target_w → coeff}.
         let mut singleton: HeckeElement = BTreeMap::new();
         singleton.insert(target_w.clone(), coeff);
         let conjugated = hecke_conjugate_by_s(&singleton, s_idx);
-        // Merge into current.
+
+        // Merge new keys; enqueue any newly-introduced non-minimal
+        // elements.  Existing keys whose coefficient changes do not
+        // need to be re-enqueued — their non-minimality is already
+        // tracked by an earlier `push_back`.
         for (v, c_v) in conjugated {
-            let entry = current.entry(v).or_insert_with(LaurentPolyQ::zero);
+            let was_present = current.contains_key(&v);
+            let entry = current.entry(v.clone()).or_insert_with(LaurentPolyQ::zero);
             *entry += &c_v;
+            if !was_present {
+                let (len_v, min_v) = cached(&v, &mut info);
+                if len_v > min_v {
+                    queue.push_back(v);
+                }
+            }
         }
         current.retain(|_, v| !v.is_zero());
     }
+
+    current
 }
 
 /// **F3.2.ε — Geck-Pfeiffer cuspidal reduction by simple-reflection conjugation.**
