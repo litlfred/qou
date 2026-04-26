@@ -107,8 +107,11 @@ jobs:
       # boost, agent toolcache).
       - name: Free disk space
         run: |
+          # Remove only the *contents* of $AGENT_TOOLSDIRECTORY, not the
+          # directory itself — `oven-sh/setup-bun` (and other setup-* actions)
+          # rely on the toolcache directory being present and writable.
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
-                      /usr/local/share/boost "$AGENT_TOOLSDIRECTORY"
+                      /usr/local/share/boost "$AGENT_TOOLSDIRECTORY"/*
           sudo apt-get clean
           df -h /
 
@@ -156,17 +159,22 @@ jobs:
       # Replaces the pre-baked tools that used to come from the
       # `paper-assistant` Docker image. apt's `texlive-full` covers the long
       # tail of style files our chapters use; ~3 min cold install.
-      - name: Install TeX Live, pandoc, latexdiff, latexmk
+      - name: Install TeX Live, pandoc, latexdiff, latexmk, latexpand
         run: |
           sudo apt-get update -qq
+          # texlive-extra-utils provides latexpand explicitly — texlive-full
+          # bundles it on most distros but --no-install-recommends can drop
+          # it, so install the providing package directly to be safe.
           sudo apt-get install -y --no-install-recommends \
-              texlive-full pandoc latexdiff latexmk \
+              texlive-full texlive-extra-utils pandoc latexdiff latexmk \
               graphviz ripgrep jq python3-pip
-          # Surface versions for the build log
+          # Surface versions for the build log; fail-fast if any tool we
+          # need later is missing.
           pdflatex --version | head -1
           pandoc --version | head -1
           latexmk --version | head -1
           latexdiff --version 2>&1 | head -1 || true
+          latexpand --version 2>&1 | head -1
 
       # ── 0b2. Install bun (content pipeline) ─────────────────────────────
       - name: Install bun
