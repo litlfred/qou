@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "bun run pipeline/build.ts",
+    "build": "bun run check-witnesses && bun run pipeline/build.ts",
+    "check-witnesses": "cd .. && python3 folio-assistant/computations/witness_staleness_tracker.py check || (echo '[build] NOTE: stale witnesses detected — see folio-assistant/computations/witness-shas.json'; true)",
+    "render-atlas": "cd .. && python3 folio-assistant/computations/recursive_atom_knot_atlas_render.py",
     "validate": "bun run pipeline/validate.ts",
     "render": "bun run pipeline/render-latex.ts",
     "export-json": "bun run pipeline/export-json.ts",
