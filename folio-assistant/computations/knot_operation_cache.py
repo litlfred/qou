@@ -39,6 +39,7 @@ Hecke algebra Wedderburn decomposition of atomic braids.
 @module folio-assistant/computations/knot_operation_cache
 """
 from __future__ import annotations
+import functools
 import hashlib
 import json
 from dataclasses import dataclass, asdict, field
@@ -72,11 +73,28 @@ class KnotOperation:
     """Script names that have observed this operation."""
 
     plancherel_signature: dict[str, float] = field(default_factory=dict)
-    """For each Wedderburn block λ, the Plancherel weight w_λ.
-    Used as a fingerprint: two operations are 'equivalent' iff they
-    have the same plancherel_signature (within tolerance).
+    """Fingerprint dict of float values; two operations are
+    'equivalent' iff they have the same signature (within tolerance).
 
-    Keys are partition strings like '(3,2,1)'.
+    Two key conventions are used by different feeders (Gemini
+    #r3143941610):
+
+    1. **Per-block mode** (legacy, `wedderburn_block_fingerprint_feeder`):
+       keys are partition strings like `"(3,2,1)"` and values are the
+       Plancherel weights `w_λ` for each Wedderburn block.
+
+    2. **Per-block-with-context mode** (`discover_via_wedderburn_sdp`,
+       `wedderburn_ylambda_feeder`): keys are
+       `{"y_lambda", "chi_value", "partition_depth", "part_0",
+       "part_1", ...}` carrying the Jones-Markov weight, the
+       irreducible character at the discovery q, the partition's
+       depth, and the partition coordinates as floats.  The `part_<i>`
+       coordinates uniquely determine the partition without
+       collisions across different shapes of the same depth.
+
+    Either is acceptable — the cache key is derived from `(n, NF)`
+    or `(n, fingerprint)`, not from `plancherel_signature`, so the
+    signature shape is purely informational metadata.
     """
 
     fingerprint: dict[str, str] = field(default_factory=dict)
@@ -404,10 +422,18 @@ def discover_via_wedderburn_sdp(
     return new_ops
 
 
+@functools.lru_cache(maxsize=32)
 def _load_y_lambda_table(n: int) -> dict:
     """Lazy-load the y_λ table for strand-count `n` from the
     Jones-Markov witness.  Returns `{tuple(partition): y_λ}`; missing
-    entries default to 0.0 in callers."""
+    entries default to 0.0 in callers.
+
+    Cached per-`n` (Gemini #r3143941614): the witness JSON is read
+    and parsed at most once per Python process per strand-count.
+    The cache size of 32 covers all practical n (the witness only
+    goes up to n=12; allowing headroom for future extension).  Use
+    `_load_y_lambda_table.cache_clear()` to force a re-read after
+    regenerating the witness."""
     witness_path = (
         Path(__file__).parent / "y-lambda-jones-markov-witness.json"
     )
@@ -593,26 +619,30 @@ def chi_via_factorization_mpfr(
                 f"({sorted(op.fingerprint.keys())})."
             )
 
-    mp.mp.dps = max(mp.mp.dps, dps)
+    # Use mp.workdps to scope the precision change locally instead
+    # of mutating the global `mp.mp.dps` (Gemini #r3143941599).
+    with mp.workdps(dps):
+        def chars_for(op: KnotOperation) -> dict[tuple, "mp.mpf"]:
+            taus = [list(tau) for tau in p_native.partitions_of(op.n)]
+            if not taus:
+                return {}
+            word = list(op.braid_word_normal_form)
+            values_str = p_native.chi_lambdas_braid_mpfr(
+                taus, word, q_str, dps,
+            )
+            return {
+                tuple(tau): mp.mpf(v_str)
+                for tau, v_str in zip(taus, values_str)
+            }
 
-    def chars_for(op: KnotOperation) -> dict[tuple, "mp.mpf"]:
-        taus = [list(tau) for tau in p_native.partitions_of(op.n)]
-        if not taus:
-            return {}
-        word = list(op.braid_word_normal_form)
-        values_str = p_native.chi_lambdas_braid_mpfr(taus, word, q_str, dps)
-        return {
-            tuple(tau): mp.mpf(v_str)
-            for tau, v_str in zip(taus, values_str)
-        }
-
-    factors_p = [op.n for op in factorization]
-    factors_chi = [chars_for(op) for op in factorization]
-    return compose_chi_lambda_generic(
-        lam_list, factors_p, factors_chi,
-        zero=mp.mpf(0),
-        is_zero=lambda x: x == 0,
-    )
+        factors_p = [op.n for op in factorization]
+        factors_chi = [chars_for(op) for op in factorization]
+        return compose_chi_lambda_generic(
+            lam_list, factors_p, factors_chi,
+            zero=mp.mpf(0),
+            one=mp.mpf(1),
+            is_zero=lambda x: x == 0,
+        )
 
 
 def chi_via_factorization_symbolic(
@@ -684,7 +714,11 @@ def chi_via_factorization_symbolic(
     return compose_chi_lambda_generic(
         lam_list, factors_p, factors_chi,
         zero=sp.S.Zero,
-        is_zero=lambda x: x == 0 or x.equals(0) if hasattr(x, 'equals') else x == 0,
+        one=sp.S.One,
+        # Sympy `x == 0` returns an `Equality` object that's truthy
+        # in Python — using `x.equals(0)` returns a proper bool
+        # (Gemini #r3143941602).
+        is_zero=lambda x: x.equals(0) if hasattr(x, "equals") else x == 0,
     )
 
 

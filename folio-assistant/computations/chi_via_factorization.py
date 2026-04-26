@@ -107,6 +107,7 @@ def compose_chi_lambda_generic(
     factors_chi: list[dict],
     *,
     zero,
+    one=None,
     is_zero=lambda x: x == 0,
 ):
     """Generic LR fold parameterized by the coefficient ring.
@@ -118,13 +119,29 @@ def compose_chi_lambda_generic(
 
     `zero`: the additive identity in the coefficient ring (e.g.
         `mpmath.mpf(0)`, `sympy.S.Zero`).
-    `is_zero`: predicate; the default `x == 0` works for most rings.
+    `one`: the multiplicative identity (e.g. `mpmath.mpf(1)`,
+        `sympy.S.One`).  Required only when `factors_p` is empty
+        and `|λ| = 0` — the empty-product character `χ_∅(()) = 1`.
+        If `None` (default), assumed to be the integer `1`, which
+        composes correctly with mpmath / sympy via Python coercion.
+    `is_zero`: predicate; the default `x == 0` works for numeric
+        rings.  For sympy callers pass an `equals(0)`-based lambda
+        (Gemini #r3143941602): `x == 0` on sympy expressions returns
+        an `Equality` object, not a Python bool.
     """
     n = sum(lam)
     if sum(factors_p) != n:
         raise ValueError(f"sum(factors_p)={sum(factors_p)} ≠ |λ|={n}")
     if not factors_p:
-        return zero  # χ_∅(empty product) = 0 (no irrep of size 0)
+        # Empty product: χ_∅((), ..., ()) = 1 if |λ| = 0 else 0.
+        # Matches `compose_chi_lambda` line 55 convention (Gemini
+        # #r3143941609).  In practice the chi_via_factorization*
+        # wrappers reject empty factorization upfront, so this
+        # branch is dead code; included for mathematical correctness
+        # if a caller invokes the generic helper directly.
+        if n == 0:
+            return one if one is not None else 1
+        return zero
     if len(factors_p) == 1:
         return factors_chi[0].get(tuple(lam), zero)
 
