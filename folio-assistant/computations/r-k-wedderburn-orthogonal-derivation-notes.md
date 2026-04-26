@@ -207,3 +207,41 @@ required.
 
 [`wedderburn_orthogonal_r_k.py`](#) — extraction script (currently
 blocked at $(12)(34)$ Hoefsmit values).
+
+## H_5 and H_6 status (added 2026-04-26)
+
+**Numerical extraction** (`r_k_h5_h6_numeric.py`): runs in <30 seconds via
+`build_seminormal_matrices`. Sanity check `tr_M = Σ y_λ χ_λ` verifies to
+~10⁻¹⁶ at every conjugacy class for both n.
+
+**Hook shapes** (single-row, single-column-leg, $(n-2, 1, 1)$, …) extract
+cleanly under the c[last]=1 numerical gauge:
+
+| n | hook shape α_λ at q_0 |
+|---|---|
+| 5 | (5)=+0.617, (4,1)=−0.571, (3,1,1)=+0.088, (2,1,1,1)=+0.005, (1⁵)=+0.0005 |
+| 6 | (6)=+0.378, (5,1)=−0.377, (4,1,1)=+0.065, (3,1,1,1)=+0.004, (2,1⁴)=+0.0006, (1⁶)=+0.00008 |
+
+**Non-hook shapes** ((3,2), (2,2,1) at H_5; (4,2), (3,3), (3,2,1), (2,2,2),
+(2,2,1,1) at H_6) hit gauge degeneracies analogous to the (2,2) case at
+H_4. Symbolic null-space resolution is in principle the same as the H_4
+case, but **sympy full-matrix construction at n=5 times out at 300s**
+on the agent runner — partition (3,2) has dim 5 and the full character
+matrix involves products of dim-5 sympy matrices.
+
+## Next-step recommendations for closing H_5+ symbolic
+
+- **Halverson–Ram explicit q-character formulas** (1995): bypass building
+  the seminormal matrix entirely, evaluate $\chi_\lambda(T_w)$ via
+  closed expressions on standard tableaux. Should be ~10× faster than
+  full matrix products.
+- **Lagrange/CRT interpolation**: evaluate the character matrix at
+  $\sim 10$ rational $q$ values numerically, fit each character entry
+  to a $q$-polynomial, then null-space symbolically. Only needs cheap
+  numeric character evaluation.
+- **Iterative LLL-style rationalisation**: use mpmath PSLQ on each
+  numerical α_λ to recover the q-rational form. Has worked at α_EM and
+  for the y_λ symbolic witness (cherry-picked from claude/spectral-
+  derivation-followups).
+
+Estimated effort for any of the three: 1–2 sessions.
