@@ -119,7 +119,7 @@ Per-partition agreement at H_3, H_4, H_5 (representative entries):
 | 5 | $(5)$ | $+0.11814840$ | $+0.11814840$ | $\sim 10^{-16}$ |
 | ... | ... | ... | ... | ... |
 
-All differences are at numerical precision (10⁻¹⁶), confirming the
+All differences are at numerical precision ($10^{-16}$), confirming the
 identity exactly.
 
 ## Significance
@@ -152,7 +152,7 @@ required factor of $q$ in the Markov-parameter shift.
 
 - The depth-stratum decomposition Σ_{depth(λ)=k} $y_\lambda$ is
   gauge-invariant under this convention shift (verified to
-  10⁻¹⁶ in [GB filtration gauge invariance witness](#)), as
+  $10^{-16}$ in [GB filtration gauge invariance witness](#)), as
   expected since the GB filtration is partition-combinatorial.
 
 ## Witness
@@ -203,7 +203,7 @@ at $n \in \{3, 4, 5, 6, 9, 12\}$ sample points).
 
 [`y-lambda-closed-form-wenzl-bridge.lean`](#) defines:
 
-- `jonesMarkovZ q := 1 / (√q + 1/√q)`
+- `jonesMarkovZ q := 1 / (sqrt q + 1 / sqrt q)`
 - `wenzlQ q := q²`,  `wenzlZ q := q · jonesMarkovZ q`
 - `wenzlX q := wenzlZ q / (1 - wenzlQ q + wenzlZ q)` — the
   explicit `Q^r` substitution, avoiding fractional exponents
@@ -218,9 +218,9 @@ defined directly from the trace.  The proof composes:
 
 1. [Wenzl 1988] — `s_{µ, r}(Q)` is the Markov-trace weight at
    parameter `z_GL = Q^r(1-Q)/(1-Q^r)` in the `g`-Hecke convention.
-2. The convention isomorphism `G = q σ` sends σ-Hecke (eigenvalues
-   `q, -q⁻¹`, parameter `z`) to `g`-Hecke (eigenvalues `Q = q²`,
-   `-1`, parameter `z_GL = q · z`).
+2. The convention isomorphism $G = q\sigma$ sends $\sigma$-Hecke
+   (eigenvalues $q, -q^{-1}$, parameter $z$) to $g$-Hecke
+   (eigenvalues $Q = q^{2}$, $-1$, parameter $z_{\mathrm{GL}} = q \cdot z$).
 3. [Chlouveraki HDR Theorem 6.20] — the type-A Markov-trace family
    is 1-parameter, so the trace is uniquely determined by its
    `z`-value.

@@ -1,12 +1,8 @@
-**Note (2026-04-24).**  This proposition is tightly coupled to the
-Φ_q-tower binding pipeline, which is currently **deprecated** in
-favour of the JSJ + hyperbolic-volume framework
-(see `docs/phi-q-tower-deprecation.md`).  The result remains
-mathematically correct and is retained in case the Φ_q tower
-returns for pentagon-defect work (Phase 2 of the
-`path-to-1ppb.md` plan).
-
-─────────────────────────────────────────────────────────────────
+*Remark.* This proposition is tightly coupled to the
+$\Phi_q$-tower binding pipeline. The active framework instead
+uses JSJ decomposition with hyperbolic volumes; the result here
+is retained as the analogous tail bound on the $\Phi_q$ side and
+remains mathematically correct.
 
 The jet-tower tail bound
 ([jet-tower convergence](#prop:jet-tower-convergence))

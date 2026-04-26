@@ -8,8 +8,8 @@ integers with $m \leq n$ and $\gcd(m, n) = 1$:*
 
 | Solution | $(m, n)$ | crossing number $c = m(n-1)$ | $\gcd(m, n)$ |
 |---|---|---|---|
-| $(m{-}1,\, n{-}1) = (1,\, 8)$ | $(2,\, 9)$ | $9$ | $1$ ✓ |
-| $(m{-}1,\, n{-}1) = (2,\, 4)$ | $(3,\, 5)$ | $10$ | $1$ ✓ |
+| $(m{-}1,\, n{-}1) = (1,\, 8)$ | $(2,\, 9)$ | $9$ | $1$ (yes) |
+| $(m{-}1,\, n{-}1) = (2,\, 4)$ | $(3,\, 5)$ | $10$ | $1$ (yes) |
 
 *Proof.* The Diophantine equation $(m{-}1)(n{-}1) = 8$ with
 $1 \leq m{-}1 \leq n{-}1$ admits only the factorisations

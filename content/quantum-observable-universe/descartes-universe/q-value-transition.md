@@ -57,7 +57,7 @@ action).
 
 ## Classical limit and the $q$-anomaly
 
-**⚠ WARNING: Classical energy conservation is NOT assumed.**
+**Warning.** Classical energy conservation is **not** assumed.
 
 In classical physics, the Q-value is defined via conservation
 of energy:

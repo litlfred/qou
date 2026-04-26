@@ -199,29 +199,20 @@ one; the numbers differ from
 by a $\mathrm{tr}/\dim$ normalisation convention.  Both
 are internally consistent.*
 
-**Symbolic-in-$q$ status (TODO).**
-*The symbolic-sympy pipeline
-(`hecke_character_symbolic.py`) works at $A = 1$ and provides
-exact rational expressions in $q$, but blows up at $A \geq 2$
-because the Hoefsmit 2×2 block relation
-$b^2 = a a' + 1$ can turn negative at specific axial distances
-$\rho$ for $q_0$ off the unitary locus, producing
-`sympy.sqrt(negative)` = complex artifact.  The numerical
-pipeline works around this with `sqrt(abs(b^2))`, which is the
-known orthogonal-form convention but loses the exact symbolic
-dependence.*
-
-*Next steps for a fully symbolic deuteron computation:*
-
-1. *Track $b^2$ as a formal polynomial without taking $\sqrt{}$
-   until the final trace (exploit that the trace only sees
-   $b \cdot b = b^2$ at the diagonal of matrix products).*
-2. *Alternatively, switch to the Ocneanu–Wenzl seminormal basis
-   which is manifestly real-algebraic on the unitary locus for
-   all partitions.*
-3. *Both are isolated refactors of
-   `hecke_character_symbolic.py` — no content-block changes
-   required.*
+*Caveat (symbolic vs. numeric).* The symbolic-sympy pipeline
+(`hecke_character_symbolic.py`) provides exact rational
+expressions in $q$ at $A = 1$ but breaks down at $A \geq 2$:
+the Hoefsmit $2 \times 2$ block relation $b^2 = a a' + 1$ can
+turn negative at specific axial distances $\rho$ for $q_0$ off
+the unitary locus, producing complex artifacts via
+`sympy.sqrt(negative)`. The numerical pipeline works around
+this with `sqrt(abs(b^2))` — the standard orthogonal-form
+convention — at the cost of the exact symbolic $q$-dependence.
+Two refactors restore symbolic exactness: tracking $b^2$ as a
+formal polynomial without taking $\sqrt{\,\cdot\,}$ until the
+final trace, or switching to the Ocneanu–Wenzl seminormal basis
+which is manifestly real-algebraic on the unitary locus for all
+partitions.
 
 **Reference.**
 

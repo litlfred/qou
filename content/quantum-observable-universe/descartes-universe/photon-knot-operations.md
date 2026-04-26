@@ -295,7 +295,7 @@ strange.
 
 ---
 
-### $T_{3,5}$ — weak force vertex (TBD)
+### $T_{3,5}$ — weak force vertex (open)
 
 **Braid word:** $\beta = (\sigma_0\sigma_1)^5$.
 
@@ -310,11 +310,11 @@ $T_{2,5}^\sigma$ and $T_{2,5}$ respectively.
 
 The full NF of $\gamma_1 \cdot (\sigma_0\sigma_1)^5 \cdot \gamma_2$ in
 $H_3(q)$ involves all basis elements; the physical identification of the
-specific production channel is an open question (TBD in the current
-paper).
+specific production channel is an open question in the current
+paper.
 
-**Produced channels:** all six basis elements (TBD physical
-interpretation beyond weak-force candidate).
+**Produced channels:** all six basis elements; physical
+interpretation beyond the weak-force candidate is open.
 
 ---
 
@@ -331,7 +331,7 @@ physical channel, aligned with the knot–particle dictionary
 | $T_{2,2}$ | $\sigma_0^2 = h\sigma_0 + \mathbf{1}$ | as $h \cdot T_{2,1} + T_{1,0}$ | conditional | Hopf link; no independent trefoil channel |
 | $T_{2,3}$ | $\sigma_0\sigma_1\sigma_0$ | all six | **always** (coeff $\geq 1$) | Electron $e^-$ / up quark $\mathfrak{u}$ (gen. 1) |
 | $T_{2,5}$ | $(\sigma_0\sigma_1)^2\sigma_0$ | all six | yes | Bottom quark $\mathfrak{b}$ / muon $\mu^-$ (gen. 2) |
-| $T_{3,5}$ | $(\sigma_0\sigma_1)^5$ | all six | yes | Weak force vertex (TBD; $\beta$-decay mediator) |
+| $T_{3,5}$ | $(\sigma_0\sigma_1)^5$ | all six | yes | Weak-force vertex; $\beta$-decay mediator (channel open) |
 
 ---
 
@@ -368,7 +368,8 @@ gives the following quark assignment (Table 4):
 3. **$T_{3,5}$ is not a quark or lepton.**
    Per Table 1 of the dictionary, $T_{3,5}$ ($10_{124}$) is the weak
    force / $\beta$-decay vertex, not assigned to any fermion generation.
-   It is included in the photon operator table above as a TBD entry.
+   It is included in the photon operator table above as an
+   open-channel entry.
 
 4. **$T_{2,2}$ (Hopf link) is a link, not a knot (boson sector).**
    Per Table 2 of the dictionary, $T(2,2)$ is a 2-component link whose

@@ -317,6 +317,15 @@ Content change detected
    `rendering-auditor.md` for the audit checklist.
 4a. **Markdown render check**: after editing any `.md` content block,
    delegate to `markdown-render-check` for the GitHub-view sanity pass.
+4b. **One-voice audit**: also delegate to `one-voice-audit` to scan
+   for status leaks (`✅ Done`, `(TODO)`, `(TBD)`), warning emoji
+   (`⚠`), comparison markers in body prose (`✓`/`✗`/`★`), Unicode
+   crash characters, first-person work tone, and date-stamped
+   notes. The skill applies mechanical fixes (delete status leaks,
+   convert `⚠` to `**Caveat.**`, replace markers with words) and
+   files `TodoItem`s for substantive items needing author judgment
+   (genuine open questions, dense comparison tables, expository
+   proof status).
    It catches the `+`/`-` at line start inside `$$...$$` (which GitHub
    parses as a bullet list and which silently breaks display math),
    missing blank lines before `$$`, `\operatorname{}` (KaTeX rejects),

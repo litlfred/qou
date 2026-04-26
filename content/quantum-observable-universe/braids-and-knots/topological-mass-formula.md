@@ -28,7 +28,7 @@ The derivation proceeds from the categorical decomposition
 ([topological mass](#thm:topological-mass)) via three identifications,
 each following from the archimedean bridge.
 
-**Step 1 — baseline holonomy ↦ hyperbolic volume.**
+**Step 1 — baseline holonomy $\mapsto$ hyperbolic volume.**
 The descended trace of the universal vortex $\varrho_0$ is the
 holonomy norm
 $\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert$.
@@ -44,7 +44,7 @@ $$
   \;=\; \mathrm{Vol}(K).
 $$
 
-**Step 2 — transient dilogarithm sum ↦ $(1/\hbar_q^{2} - 1)$ correction.**
+**Step 2 — transient dilogarithm sum $\mapsto$ $(1/\hbar_q^{2} - 1)$ correction.**
 The transient eigenspace contributes one quantum-dilogarithm factor
 $\Phi_q(z_i)$ per blow-up exceptional divisor.  In the Briggs–Klein
 spectral coordinates of the brane tower

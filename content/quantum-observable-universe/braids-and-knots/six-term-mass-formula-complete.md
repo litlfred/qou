@@ -150,12 +150,12 @@ conjecture (earlier framing) is now **superseded**.*
 
 | term | derivation source(s) | computation script | status |
 |---|---|---|---|
-| 1 | categorical-mass-markov, Jones-Markov | crt_markov.py, light_isotope_sweep.py | DERIVED ✓ |
-| 2 | mass-endomorphism-tower, three-parameters-wedderburn, Habiro | tower formulas + Wedderburn | DERIVED ✓ |
-| 3 | mass-endomorphism-tower, Markov factorisation | same as Term 2 | DERIVED ✓ |
-| 4 | Frobenius co-Casimir (Lean-proved) | frobenius_partition_sum.py | DERIVED ✓ |
-| 5 | dual-space symmetric-channel per-crossing | ribbon_content_average.py, chirality_variants_probe.py | DERIVED ✓ |
-| 6 | GB residue spectral sum, Habiro | gb_residue_tower.py, habiro_residue_symbolic.py | DERIVED ✓ |
+| 1 | categorical-mass-markov, Jones-Markov | crt_markov.py, light_isotope_sweep.py | DERIVED |
+| 2 | mass-endomorphism-tower, three-parameters-wedderburn, Habiro | tower formulas + Wedderburn | DERIVED |
+| 3 | mass-endomorphism-tower, Markov factorisation | same as Term 2 | DERIVED |
+| 4 | Frobenius co-Casimir (Lean-proved) | frobenius_partition_sum.py | DERIVED |
+| 5 | dual-space symmetric-channel per-crossing | ribbon_content_average.py, chirality_variants_probe.py | DERIVED |
+| 6 | GB residue spectral sum, Habiro | gb_residue_tower.py, habiro_residue_symbolic.py | DERIVED |
 
 **Master conclusion.**
 *All six terms are algebraically derived using paper's existing
