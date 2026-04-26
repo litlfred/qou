@@ -8,9 +8,14 @@
 #
 # Triggers
 # ─────────
-#   push (main only)      – direct commits to the main branch
-#   pull_request_target   – every PR (runs without approval, even for Copilot)
-#   workflow_dispatch     – manual run; optionally override the publish target branch
+#   workflow_dispatch ONLY — manual run; optionally override the publish target branch.
+#
+#   Auto-triggers (push / pull_request_target) are intentionally disabled
+#   for billing reasons.  Do NOT add them back without the owner's
+#   explicit approval — every PR push would otherwise spin up a full
+#   TeX Live + bun + pandoc build on a hosted runner.  To build a
+#   branch, dispatch this workflow manually from the Actions tab and
+#   set `source_branch` to the branch you want to build.
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
@@ -27,10 +32,11 @@
 #
 # Preview builds
 # ──────────────
-#   Pushes to the main branch deploy to the root of gh-pages.
-#   PRs deploy to  drafts/<branch-name>/  so that every feature branch
-#   gets its own preview URL.  Output filenames on feature branches include
-#   a sanitised branch slug so downloads are distinguishable.
+#   Manual dispatches against the main branch deploy to the root of
+#   gh-pages.  Dispatches against feature branches deploy to
+#   drafts/<branch-name>/ so that every feature branch gets its own
+#   preview URL.  Output filenames on feature branches include a
+#   sanitised branch slug so downloads are distinguishable.
 
 name: Build & Publish
 
