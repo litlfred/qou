@@ -6,4 +6,5 @@ export default remark({
   tags: ["glossary", "algebra", "ground-ring"],
   uses: [],
   cites: ["leitnerpawloski2004"],
+  defines: ["no-quasi-zeros"],
 });
