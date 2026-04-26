@@ -492,6 +492,31 @@ conventions.
 lightweight wrapper around) a Mathlib type, add a glossary block. If
 the paper introduces genuinely new axioms/structure, add a definition.
 
+### 4c. Glossary terms — `\defterm` / `\refterm` (every occurrence wrapped)
+
+Every term registered in any block's `defines: [...]` field **must** be
+wrapped at every occurrence — `\defterm` once at the canonical site,
+`\refterm` everywhere else. Plain text and `\emph{}` are no longer
+permitted for defined terms. See
+`.github/copilot-instructions.md §11.0` for the full contract.
+
+- **Markdown** (`.md`): use the `remark-directive` syntax
+  `:defterm[Visible]{#slug}` / `:refterm[Visible]{#slug}` — short
+  forms `:defterm[term]` / `:refterm[term]` use the bracket text as
+  both label and slug.
+- **LaTeX**: use `\defterm{slug}[{Visible}]` / `\refterm{slug}[{Visible}]`.
+- **Validation**: `bun run validate <paper>` enforces five rules
+  (`defterm-declared`, `defterm-marked`, `refterm-resolves`,
+  `defterm-unique`, plus opt-in `term-mention-coverage` via `--strict`).
+  Run with `--strict` once the chapter has been backfilled.
+- **Codemod**: `bun run pipeline/codemod-refterm.ts <chapter-dir>`
+  (dry-run by default) wraps bare-text mentions of known glossary
+  slugs in `:refterm[…]{#slug}`. Mdast-based, idempotent. Pass
+  `--write` to apply.
+- **Glossary build**: `bun run pipeline/build-glossary.ts <paper>`
+  emits `glossary.json` (committed) + `chapters/glossary.tex`
+  (gitignored). `--check` mode is the CI gate.
+
 ### 5. Tactic strategy (try in order)
 
 | Goal pattern | Try first | Then try |

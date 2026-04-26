@@ -27,6 +27,7 @@ import {
 } from "../schema/constraints";
 import type { Block, Paper, Chapter, Section, ValidationIssue, ValidationResult } from "../schema/types";
 import { renderBlock, validateLatexAst, markdownToLatex } from "./render-latex";
+import { validateDefterms } from "./validate-defterm";
 
 // ── File discovery ───────────────────────────────────────────────
 
@@ -133,7 +134,10 @@ async function loadBlocksFromDir(
  * @param objectsDir - Paper directory or flat directory with .ts + .md + .lean files
  * @returns Validation result with issues
  */
-export async function validateObjects(objectsDir: string): Promise<ValidationResult> {
+export async function validateObjects(
+  objectsDir: string,
+  opts: { strict?: boolean } = {},
+): Promise<ValidationResult> {
   const issues: ValidationIssue[] = [];
 
   // Detect manifest type by importing and validating against schemas
@@ -302,6 +306,13 @@ export async function validateObjects(objectsDir: string): Promise<ValidationRes
     }
   }
 
+  // Phase 4: Glossary-term validation (defterm/refterm rules)
+  const defBlocks = new Map<string, { block: Block; md: string | undefined }>();
+  for (const [name, { block }] of allBlocks) {
+    defBlocks.set(name, { block, md: mdCache.get(name) });
+  }
+  issues.push(...validateDefterms(defBlocks, { strict: opts.strict }));
+
   const hasErrors = issues.some(i => i.level === "error");
   return { valid: !hasErrors, issues };
 }
@@ -309,10 +320,13 @@ export async function validateObjects(objectsDir: string): Promise<ValidationRes
 // ── CLI entry point ──────────────────────────────────────────────
 
 if (import.meta.main) {
-  const dir = resolve(process.argv[2] || join(import.meta.dir, "../objects"));
-  console.log(`Validating content objects in: ${dir}\n`);
+  const args = process.argv.slice(2);
+  const strict = args.includes("--strict");
+  const positional = args.filter(a => !a.startsWith("--"));
+  const dir = resolve(positional[0] || join(import.meta.dir, "../objects"));
+  console.log(`Validating content objects in: ${dir}${strict ? " [strict]" : ""}\n`);
 
-  const result = await validateObjects(dir);
+  const result = await validateObjects(dir, { strict });
 
   for (const issue of result.issues) {
     const icon = issue.level === "error" ? "✗" : issue.level === "warning" ? "⚠" : "ℹ";

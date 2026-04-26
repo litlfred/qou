@@ -279,6 +279,26 @@
 \newcommand{\uses}[1]{}            % \uses{label1, label2, ...}
 \newcommand{\proves}[1]{}          % \proves{thm:label} (in proof environments)
 %
+% ── Glossary terms: \defterm{} / \refterm{} ─────────────────────────────────
+% PDF rendering is intentionally clean — the HTML viewer carries the
+% interactive affordance (dotted underline on hover, click-to-jump).
+%
+%   \defterm{slug}{Visible}  defining occurrence: bold-italic + invisible
+%                            \phantomsection\label{term:slug} target
+%   \refterm{slug}{Visible}  referencing occurrence: invisible
+%                            \hyperref[term:slug]{Visible} (no decoration)
+%
+% Single-arg forms \defterm{slug} / \refterm{slug} use the slug as the
+% visible label (the common case where slug == display text).
+\makeatletter
+\newcommand{\defterm}[1]{\@ifnextchar\bgroup{\defterm@two{#1}}{\defterm@one{#1}}}
+\newcommand{\defterm@one}[1]{\phantomsection\label{term:#1}\textbf{\emph{#1}}}
+\newcommand{\defterm@two}[2]{\phantomsection\label{term:#1}\textbf{\emph{#2}}}
+\newcommand{\refterm}[1]{\@ifnextchar\bgroup{\refterm@two{#1}}{\refterm@one{#1}}}
+\newcommand{\refterm@one}[1]{\hyperref[term:#1]{#1}}
+\newcommand{\refterm@two}[2]{\hyperref[term:#1]{#2}}
+\makeatother
+%
 % ── Proof-status legend (printed once in the document) ───────────────────────
 \newcommand{\proofstatuslegend}{%
   \bigskip\noindent\textbf{Proof-status key}\par\smallskip\noindent

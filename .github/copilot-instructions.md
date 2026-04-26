@@ -285,6 +285,39 @@ their own line, indented to match the surrounding content.
 
 ## 11  Notation Conventions
 
+### 11.0  Glossary terms — `\defterm{}` / `\refterm{}` (Phase A)
+
+Every term that appears in the paper's glossary is wrapped at every
+occurrence — defining and referencing alike. **Never use plain text or
+`\emph{}` for a defined term once the term is registered in a block's
+`defines: [...]` list.**
+
+- **Defining occurrence** (exactly one per term, in the block whose
+  `defines[]` contains the slug):
+  - LaTeX: `\defterm{slug}` or `\defterm{slug}{Visible}` when the
+    visible label differs from the slug.
+  - Markdown (`.md` files): `:defterm[Visible]` (slug = sluggified
+    label) or `:defterm[Visible]{#slug}` (explicit slug).
+- **Referencing occurrence** (every other mention, anywhere in the
+  paper):
+  - LaTeX: `\refterm{slug}` / `\refterm{slug}{Visible}`.
+  - Markdown: `:refterm[Visible]` / `:refterm[Visible]{#slug}`.
+- **PDF rendering** is intentionally clean — `\defterm` is bold-italic,
+  `\refterm` is plain text with an invisible hyperlink target
+  (`\phantomsection\label{term:slug}` → `\hyperref[term:slug]{...}`).
+  No marginal anchors, no underlines.
+- **HTML viewer** carries the affordance: `\defterm` becomes
+  `<dfn id="term-slug">`, `\refterm` becomes `<a class="termref"
+  href="#term-slug">` with a dotted underline on hover/focus and a
+  click-to-jump to the canonical entry.
+- The schema field `defines?: string[]` on `BlockBase` registers the
+  slugs introduced by a block. Phase B validators will enforce
+  declaration/coverage; for now the field is informational only.
+
+Discovery and audit go through proper AST processing
+(`remark-directive` for `.md`, `unified-latex` for `.tex`) — never
+grep over raw source.
+
 ### 11.1  Prime Numbers vs. Manifold Points
 
 - **Prime numbers** are typeset in Fraktur:  use the macro `\pp` (defined as

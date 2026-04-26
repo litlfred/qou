@@ -479,6 +479,17 @@ content/<paper>/<chapter>/
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules
 
+### Glossary terms in narrative `.md`
+
+If you author or update the `.md` sibling alongside a Lean file, defined
+terms (any slug in any block's `defines: [...]`) **must** be wrapped in
+`:defterm[…]{#slug}` (canonical site) or `:refterm[…]{#slug}` (every
+other mention). Do **not** add `\emph{}` or plain-text mentions of
+defined terms. The Lean side is unaffected by this contract — Lean
+declarations are linked via `lean.ref`, not glossary slugs — but the
+validator will flag stray plain-text mentions in the narrative
+companion. See `local/glossary-build`.
+
 ### The `uses[]` dependency graph
 
 The `uses` field in `.ts` manifests forms a narrative dependency DAG.

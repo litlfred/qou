@@ -1,4 +1,4 @@
-A *$q$-torsion leaf* is a maximal sub-object
+A :defterm[$q$-torsion leaf]{#categorical-q-torsion-leaf} is a maximal sub-object
 $L \hookrightarrow A$ such that:
 
 1. **Horizontality:** $L \subset \ker(\pi_V)$

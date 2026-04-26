@@ -194,6 +194,25 @@ Use `[text](#label)` for cross-references. These become clickable
 Use backticks for inline code: `` `code` ``. Rendered with
 monospace font and subtle background.
 
+### 13. Glossary terms (`:defterm` / `:refterm`)
+
+Defined terms are wrapped via `remark-directive` syntax — never plain
+text or `**bold**` once the slug is registered in any block's
+`defines: [...]`:
+
+| Form | Use when | Example |
+|------|----------|---------|
+| `:defterm[Visible]{#slug}` | Canonical defining occurrence (exactly one block per slug) | `:defterm[rigid monoidal category]{#rigid-monoidal-category}` |
+| `:defterm[term]` | Same, when slug = sluggified label | `:defterm[quantum connection]` |
+| `:refterm[Visible]{#slug}` | Every other mention, anywhere in the paper | `:refterm[rigid monoidal category]{#rigid-monoidal-category}` |
+| `:refterm[term]` | Short form when slug = sluggified label | `:refterm[quantum connection]` |
+
+Rendering: viewer → dotted underline; PDF → plain text with invisible
+hyperlink target. The validator (`bun run validate <paper>`) enforces
+declaration, resolution, and uniqueness; the codemod
+(`bun run pipeline/codemod-refterm.ts`) backfills `:refterm[…]` from
+bare-text mentions of known slugs. See `local/glossary-build`.
+
 ## QC checklist
 
 When reviewing `.md` content, check:
@@ -206,3 +225,5 @@ When reviewing `.md` content, check:
 - [ ] Bold/italic delimiters are properly closed
 - [ ] Tables have separator row (`|---|---|`)
 - [ ] No Unicode math symbols that should be in `$...$`
+- [ ] Defined terms (slugs in any block's `defines[]`) wrapped in
+      `:defterm` / `:refterm` directives, not plain text or `\emph{}`

@@ -660,6 +660,15 @@
     .katex-display{overflow-x:auto;overflow-y:visible;padding:.4rem 0}
     .katex{color:var(--fg)}
 
+    /* Glossary terms — \defterm / \refterm affordance.
+       PDF stays clean; the HTML viewer carries the hover affordance.
+       Defining occurrence is bold-italic; references are subtle until
+       hover/focus, then a dotted underline + pointer cursor. */
+    dfn.defterm{font-style:italic;font-weight:600;text-decoration:none}
+    .termref{color:inherit;text-decoration:none;border-bottom:1px dotted transparent;cursor:help;transition:border-color .12s ease}
+    .termref:hover,.termref:focus-visible{border-bottom-color:var(--ac-d,currentColor);outline:none}
+    @media print{.termref{border-bottom:none!important;color:inherit!important}}
+
     /* TeX blocks */
     .txb{background:transparent;border:none;border-radius:4px;padding:.8rem;margin:.8rem 0;text-align:center;overflow-x:auto}
     .txb img,.txb svg{max-width:100%;height:auto;filter:var(--svg-f);transform:scale(1.25);transform-origin:center}
@@ -2147,6 +2156,21 @@
     function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
     function inl(t) {
+      // Glossary directives — :defterm[Visible]{#slug} / :refterm[Visible]{#slug}
+      // Long form (with explicit slug) and short form (slug == visible label).
+      // The slug is sluggified for the HTML id; the visible label is shown.
+      // PDF rendering is clean (\defterm/\refterm); HTML carries the affordance:
+      // hover dotted underline + click jumps to glossary entry.
+      const slugify = s => s.toLowerCase().trim()
+        .replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '');
+      t = t.replace(/:(defterm|refterm)\[([^\]]+)\](?:\{#([^}]+)\})?/g, (_, kind, label, slug) => {
+        const id = slug ? slug.trim() : slugify(label);
+        if (!id) return label;
+        if (kind === 'defterm') {
+          return `<dfn id="term-${id}" class="defterm">${label}</dfn>`;
+        }
+        return `<a href="#term-${id}" class="termref">${label}</a>`;
+      });
       // LaTeX accent commands → Unicode
       t = t.replace(/\\"\{([^}])\}/g, (_, c) => ({a:'ä',e:'ë',i:'ï',o:'ö',u:'ü',A:'Ä',E:'Ë',O:'Ö',U:'Ü'}[c]||c));
       t = t.replace(/\\"([aeiouAEIOU])/g, (_, c) => ({a:'ä',e:'ë',i:'ï',o:'ö',u:'ü',A:'Ä',E:'Ë',O:'Ö',U:'Ü'}[c]||c));

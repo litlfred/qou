@@ -5,4 +5,5 @@ export default remark({
   title: "Monoidal functor",
   tags: ["glossary", "category-theory", "monoidal"],
   uses: ["rem:glossary-monoidal-category"],
+  defines: ["monoidal-functor"],
 });

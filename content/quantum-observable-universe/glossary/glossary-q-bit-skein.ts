@@ -19,4 +19,5 @@ export default remark({
     "prop:skein-polynomial-transfer-matrix",
     "def:categorical-transfer-matrix",
   ],
+  defines: ["q-bit-skein"],
 });

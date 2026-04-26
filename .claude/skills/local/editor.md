@@ -571,6 +571,19 @@ When a new mathematical term is encountered during editing:
 
 See `ontologist` skill §Glossary Block Policy for the full decision tree.
 
+### Wrap-every-occurrence contract (`:defterm` / `:refterm`)
+
+Once a term is registered in any block's `defines: [...]`, **every**
+occurrence of that term in the paper must be wrapped — `:defterm[…]`
+at the canonical site, `:refterm[…]` everywhere else (LaTeX:
+`\defterm{slug}` / `\refterm{slug}`). Plain text and `\emph{}` for
+defined terms are no longer permitted. Validator (`bun run validate`)
+enforces five rules; codemod (`bun run pipeline/codemod-refterm.ts`)
+backfills `:refterm` from bare-text mentions; builder
+(`bun run pipeline/build-glossary.ts`) emits `glossary.json` +
+`chapters/glossary.tex`. See `local/glossary-build` skill,
+`.github/copilot-instructions.md §11.0`, and `CLAUDE.md §4c`.
+
 ## Delegation patterns
 
 | Task | Agent | Notes |

@@ -98,6 +98,17 @@ cd content && bun run pipeline/validate-tex.ts --compile
 
 # JSON output (for programmatic use by skills)
 cd content && bun run pipeline/validate-tex.ts --json
+
+# Strict mode: also fire `term-mention-coverage` on bare-text
+# mentions of known glossary slugs. Run once a chapter has been
+# backfilled with `:refterm[…]`.
+cd content && bun run validate quantum-observable-universe --strict
+
+# Build the glossary index (committed) + LaTeX chapter (gitignored)
+cd content && bun run pipeline/build-glossary.ts quantum-observable-universe
+
+# CI gate: non-zero exit on duplicates or out-of-date glossary.json
+cd content && bun run pipeline/build-glossary.ts quantum-observable-universe --check
 ```
 
 ## Post-rebase / merge: run the lean-ref migration first

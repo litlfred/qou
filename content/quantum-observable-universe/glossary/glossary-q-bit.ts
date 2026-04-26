@@ -9,4 +9,5 @@ export default remark({
     "prop:skein-generation",
     "def:reeb-bundle",
   ],
+  defines: ["q-bit"],
 });

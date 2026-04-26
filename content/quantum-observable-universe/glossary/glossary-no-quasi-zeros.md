@@ -6,7 +6,7 @@ $$
   bac = 0 \qquad \text{for all } b, c \in A \text{ not both } 1.
 $$
 
-The algebra $A$ is **without quasi-zeros** if no such element
+The algebra $A$ is **:defterm[without quasi-zeros]{#no-quasi-zeros}** if no such element
 exists.  Throughout this paper, whenever $\mathbf{C}$ is
 $R$-linear we assume that $R$ has no quasi-zeros.  This condition
 is central to the theory of unital Gröbner–Shirshov bases

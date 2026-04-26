@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable
 universe over $R$ with maximal torus $T$
 ([maximal torus](#def:maximal-torus)) and Reeb derivation
 $\xi$ ([categorical Reeb](#def:categorical-reeb)).  The
-**Reeb gauge group** is the $R$-group scheme
+**:defterm[Reeb gauge group]{#reeb-gauge-group}** is the $R$-group scheme
 
 $$
   U_1(R)  :=  T

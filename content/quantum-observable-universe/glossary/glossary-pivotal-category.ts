@@ -5,4 +5,5 @@ export default remark({
   title: "Pivotal category",
   tags: ["glossary", "category-theory", "monoidal", "duality"],
   uses: ["rem:glossary-rigid-category"],
+  defines: ["pivotal-category"],
 });

@@ -125,6 +125,14 @@ const BlockBaseSchema = z.object({
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.string(), z.unknown()).optional(),
   simulator: SimulatorRefSchema.optional(),
+  /**
+   * Glossary term slugs introduced by this block. See `BlockBase.defines`
+   * in folio-assistant/schemas/types.ts for the authoring contract. Slugs
+   * must be lowercase, hyphen-separated identifiers (no spaces, no `:`).
+   */
+  defines: z
+    .array(z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "term slug must be lowercase, hyphen-separated"))
+    .optional(),
 });
 
 export const DefinitionSchema = BlockBaseSchema.extend({
