@@ -15,7 +15,7 @@ export default remark({
   uses: [
     "prop:e-infinity-page-identifications",
     "thm:frobenius-codim-universal",
-    "prop:knot-factor-frobenius-pairing",
+    "conj:knot-factor-frobenius-pairing",
     "prop:frobenius-gram-matrix",
     "thm:jones-markov-trace",
   ],

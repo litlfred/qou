@@ -12,7 +12,7 @@ export default proposition({
     "prop:confinement-categorical",
     "rem:confinement-curvature-rank",
     "prop:curvature-rank-gb-stratification",
-    "prop:knot-factor-frobenius-pairing",
+    "conj:knot-factor-frobenius-pairing",
     "prop:mass-tower-coefficient-stratification",
     "prop:plancherel-weight-boundedness",
   ],

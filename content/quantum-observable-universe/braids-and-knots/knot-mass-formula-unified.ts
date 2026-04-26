@@ -17,7 +17,7 @@ export default theorem({
     "thm:jones-markov-trace",
     "cor:quantum-dilogarithm",
     "prop:figure-eight-bw-coefficients",
-    "prop:knot-factor-frobenius-pairing",
+    "conj:knot-factor-frobenius-pairing",
   ],
   cites: ["kassel1995"],
   tags: [

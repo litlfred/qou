@@ -20,7 +20,7 @@ export default proposition({
     "thm:wedderburn-mass-formula",
     "cor:quantum-dilogarithm",
     "def:briggs-klein-chart",
-    "def:quantum-bloch-group",
+    "rem:quantum-bloch-group",
     "rem:mass-endomorphism-jet-tower",
     "thm:markov-trace-factorization",
   ],

@@ -9,7 +9,7 @@ export default proposition({
   },
   uses: [
     "prop:three-parameters-wedderburn",
-    "prop:borromean-baryon-interpretation",
+    "rem:borromean-baryon-interpretation",
     "prop:spectral-sequence-collapse",
   ],
 });

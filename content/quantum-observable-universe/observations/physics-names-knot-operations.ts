@@ -6,7 +6,7 @@ export default remark({
   interprets: "prop:confinement-categorical",
   uses: [
     "def:borromean-baryon",
-    "prop:borromean-baryon-interpretation",
+    "rem:borromean-baryon-interpretation",
     "prop:chirality-residue-mass-term",
     "cor:gauge-coupling-uniqueness",
     "prop:force-carrier-bring-uniqueness",

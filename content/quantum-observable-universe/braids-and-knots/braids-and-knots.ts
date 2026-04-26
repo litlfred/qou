@@ -426,6 +426,8 @@ export default chapter({
         "plancherel-weight-boundedness",
         "unified-curvature-rank-mass-formula",
         "b-over-a-spectral-decomposition",
+        "eigenvalue-product-expansion",
+        "nuclear-knot-classification",
         "chirality-residue-mass-term",
         "e-infinity-page-identifications",
         "spectral-sequence-h3-explicit",

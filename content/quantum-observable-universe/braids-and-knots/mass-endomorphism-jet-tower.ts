@@ -10,7 +10,7 @@ export default remark({
     "def:descent-involution",
     "prop:descent-eigenspaces",
     "thm:topological-mass",
-    "def:quantum-bloch-group",
+    "rem:quantum-bloch-group",
     "thm:jones-markov-trace",
     "thm:markov-trace-factorization",
   ],
