@@ -5,7 +5,9 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::{gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr};
+use hecke_engine::{
+    geck_pfeiffer, gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr,
+};
 use pyo3::prelude::*;
 
 /// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
@@ -175,6 +177,32 @@ fn mn_chi(lambda: Vec<usize>, mu: Vec<usize>) -> i64 {
     seminormal_mn::mn_chi(&lambda, &mu)
 }
 
+/// **F3.2.γ — q-character via Geck-Pfeiffer Hecke-basis expansion.**
+///
+/// Computes `χ_λ(T_β; q)` for an arbitrary braid word `β` by:
+///   1. Expanding `T_β = Σ c_w(q) · T_w` in the canonical Hecke basis.
+///   2. Computing `χ_λ(T_w; q)` via q-MN on cycle type of w (a class
+///      function on canonical T_w).
+///   3. Summing `Σ c_w(q) · χ_λ(T_w; q)`.
+///
+/// Returns the q-Laurent polynomial as `[(half_exp, coeff_str), ...]`.
+///
+/// **Cost**: worst-case O(n!) basis elements but typical sparse braid
+/// words give smaller spans.  At n = 6 (D atomic braid), basis can
+/// have up to 720 elements but most words touch far fewer.
+#[pyfunction]
+fn chi_q_via_gp(
+    lambda: Vec<usize>,
+    n: usize,
+    word: Vec<(i32, u32)>,
+) -> Vec<(i32, String)> {
+    let poly = geck_pfeiffer::chi_lambda_via_geck_pfeiffer(&lambda, n, &word);
+    poly.terms
+        .into_iter()
+        .map(|(he, c)| (he, c.to_string()))
+        .collect()
+}
+
 /// **Littlewood-Richardson coefficient `c^λ_{μν}`.**
 ///
 /// Computes the multiplicity of the Specht module `S^λ` in the
@@ -321,6 +349,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;
     m.add_function(wrap_pyfunction!(lr_coefficient, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_via_gp, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)

@@ -167,6 +167,60 @@ pub fn braid_to_hecke(n: usize, word: &[(i32, u32)]) -> HeckeElement {
     x
 }
 
+/// Cycle type of a permutation (sorted descending).
+fn perm_cycle_type(perm: &Perm) -> Vec<usize> {
+    let n = perm.n();
+    let mut visited = vec![false; n];
+    let mut cycles = Vec::new();
+    for start in 0..n {
+        if visited[start] {
+            continue;
+        }
+        let mut len = 0;
+        let mut j = start;
+        while !visited[j] {
+            visited[j] = true;
+            j = perm.0[j];
+            len += 1;
+        }
+        cycles.push(len);
+    }
+    cycles.sort_by(|a, b| b.cmp(a));
+    cycles
+}
+
+/// **F3.2.γ wiring**: compute `χ_λ(T_β; q)` for an arbitrary braid
+/// word by expanding `T_β = Σ c_w · T_w` in the Hecke basis and
+/// applying q-MN on each `T_w` (a class function of cycle type w).
+///
+///   χ_λ(T_β; q) = Σ_w c_w(q) · χ_λ(T_w; q)
+///                = Σ_w c_w(q) · χ_λ^MN(cycle_type(w); q)
+///
+/// **Note on correctness**: the q-MN strip-weight currently used in
+/// `chi_lambda_mn_qdef` is the simplified `(−q⁻¹)^h · q^{k−1−h}`
+/// form, which is correct for size-1 strips but incomplete for
+/// general strips at q ≠ 1.  Cross-validation against Hoefsmit at
+/// q₀ will reveal where the simplified weight fails.  At q = 1 it
+/// must match exactly (collapses to classical MN).
+pub fn chi_lambda_via_geck_pfeiffer(
+    lambda: &[usize],
+    n: usize,
+    word: &[(i32, u32)],
+) -> LaurentPolyQ {
+    let n_lambda: usize = lambda.iter().sum();
+    if n_lambda != n {
+        return LaurentPolyQ::zero();
+    }
+    let basis_expansion = braid_to_hecke(n, word);
+    let mut total = LaurentPolyQ::zero();
+    for (w, c_w) in &basis_expansion {
+        let mu = perm_cycle_type(w);
+        let chi_w = crate::seminormal_mn::chi_lambda_mn_qdef(lambda, &mu);
+        total += &(c_w.clone() * chi_w);
+    }
+    total
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -236,6 +290,34 @@ mod tests {
         let expected = Perm(vec![1, 2, 0]);
         assert_eq!(result.len(), 1);
         assert_eq!(result.get(&expected), Some(&LaurentPolyQ::one()));
+    }
+
+    /// chi_lambda_via_geck_pfeiffer matches direct chi_lambda_mn_qdef on
+    /// canonical T_w (where the latter is correct).
+    #[test]
+    fn gp_matches_qmn_on_canonical_T_w() {
+        // λ = (3), word = σ_1 σ_2 (canonical T_{(0 1 2)} 3-cycle).
+        let chi_gp = chi_lambda_via_geck_pfeiffer(&[3], 3, &[(1, 1), (1, 2)]);
+        let chi_direct = crate::seminormal_mn::chi_lambda_mn_qdef(&[3], &[3]);
+        assert_eq!(chi_gp, chi_direct,
+                   "GP via basis expansion should match q-MN on cycle type (3)\n\
+                    GP={}, direct={}", chi_gp.pretty(), chi_direct.pretty());
+    }
+
+    /// At q = 1, GP-based char must equal classical MN on the
+    /// underlying permutation cycle type.
+    #[test]
+    fn gp_at_q_eq_one_matches_classical() {
+        use num_bigint::BigInt;
+        // σ_1 σ_2 σ_1 on 3 strands: permutation [2, 1, 0] = (0 2)
+        // cycle type (2, 1).  λ = (2, 1) (standard rep) → χ = 0.
+        let chi_gp = chi_lambda_via_geck_pfeiffer(
+            &[2, 1], 3, &[(1, 1), (1, 2), (1, 1)],
+        );
+        let classical = crate::seminormal_mn::mn_chi(&[2, 1], &[2, 1]);
+        assert_eq!(chi_gp.evaluate_at_one(), BigInt::from(classical),
+                   "GP at q=1 should match classical MN: got {}, expected {}",
+                   chi_gp.evaluate_at_one(), classical);
     }
 
     #[test]
