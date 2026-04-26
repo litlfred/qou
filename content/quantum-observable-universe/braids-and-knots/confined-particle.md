@@ -50,6 +50,20 @@ $\mathrm{GS}(P_1) = \mathrm{GS}(P_2)$.*
 **Examples.**
 
 - *`quark`: $\ell = 0$, $n_0 = 1$, $[K]_M = [\sigma_0]$ in $H_1(q)$.*
+- *`neutrino`: $\ell = 0$, $n_0 = 1$,
+  $[K]_M = [\mathbf{1}]$ (unknot $0_1$, no crossings).
+  Confined and stable at $q_0$ (vacuum-drag particle); the
+  Frobenius-PSD cone is satisfied trivially since
+  $\Phi^* = \mathbf{1} \succeq 0$.*
+- *`photon`: $\ell = 0$, $n_0 = 4$,
+  $[K]_M = [\mathbf{1}_{B_4}]$ — four-strand identity in $B_4$
+  (no crossings; four polarisation × chirality components on the
+  exceptional divisor $\mathcal{S}_p$).  Confined at $q_0$ via
+  the Reeb-bundle holonomy
+  ([breit-wheeler-vertex](#prop:breit-wheeler-vertex));
+  see notation discussion in
+  [knot-particle-dictionary](#def:knot-particle-dictionary)
+  Table 3.*
 - *`proton`: $\ell = 1$, $n_0 = 3$,
   $[K]_M = [B_3(\mathrm{uud})]$ with crossing types $(pp, pn, pn)$.*
 - *`neutron`: $\ell = 1$, $n_0 = 3$, $[K]_M = [B_3(\mathrm{udd})]$.*
