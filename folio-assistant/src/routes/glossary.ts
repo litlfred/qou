@@ -31,9 +31,10 @@ interface GlossaryRoutesConfig {
 }
 
 function paperDir(repoRoot: string, paper: string): string {
-  // Sanitize: only allow simple slug-like names.
+  // Sanitize: only allow simple slug-like names. Do not echo the
+  // raw input back in the error to avoid log-injection.
   if (!/^[a-z0-9][a-z0-9-]*$/.test(paper)) {
-    throw new Error(`invalid paper name: ${paper}`);
+    throw new Error("invalid paper name format");
   }
   return join(repoRoot, "content", paper);
 }

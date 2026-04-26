@@ -167,14 +167,18 @@ export async function buildGlossary(paperDir: string): Promise<GlossaryIndex> {
 
 /** Escape a slug or label for use as a LaTeX identifier. */
 function texEscape(s: string): string {
-  // Backslash must be escaped first to avoid double-escaping the
-  // backslashes introduced by subsequent replacements.
-  return s
-    .replace(/\\/g, "\\textbackslash{}")
-    .replace(/_/g, "\\_")
-    .replace(/&/g, "\\&")
-    .replace(/%/g, "\\%")
-    .replace(/#/g, "\\#");
+  // Single-pass replacement so each character is matched at most once
+  // (silences the CodeQL `js/incomplete-sanitization` false positive
+  // that flags chained `replace` calls even when backslash is handled
+  // first).
+  const map: Record<string, string> = {
+    "\\": "\\textbackslash{}",
+    "_": "\\_",
+    "&": "\\&",
+    "%": "\\%",
+    "#": "\\#",
+  };
+  return s.replace(/[\\_&%#]/g, c => map[c]);
 }
 
 /**
