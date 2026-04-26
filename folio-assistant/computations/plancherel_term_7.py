@@ -134,8 +134,14 @@ def _chi_lambda_fast(lam_t, word, q0_float):
 def _process_partition(args):
     """Worker for multiprocessing.Pool.
 
-    Returns (lam_t, depth, w_lam, chi, log_abs_chi) or None on error/zero.
-    Top-level (picklable) function so it works with Pool.map.
+    Returns (lam_t, depth, w_lam, chi, log_abs_chi, sign_chi) on success,
+    or None on error / vanishing character.  Top-level (picklable).
+
+    `sign_chi`: +1 if χ > 0, −1 if χ < 0.  Used for Phase D phase
+    tracking — the full complex log is `log|χ| + (sign−1)/(−2)·iπ`,
+    so the Plancherel-weighted complex Φ_k decomposes into a real
+    part (current Term-7 formulation) plus an imaginary part counting
+    π-fluxes at depth k.
     """
     lam_t, word, nfac, q0_float = args
     depth = len(lam_t) - 1
@@ -148,7 +154,8 @@ def _process_partition(args):
     dq = float(dim_q(lam_t))
     w_lam = dq * dq / nfac
     log_abs_chi = float(np.log(abs(chi)))
-    return (lam_t, depth, w_lam, chi, log_abs_chi)
+    sign_chi = 1 if chi > 0 else -1
+    return (lam_t, depth, w_lam, chi, log_abs_chi, sign_chi)
 
 
 def main():
@@ -199,42 +206,60 @@ def main():
         for r in results:
             if r is None:
                 continue
-            lam_t, depth, w_lam, chi, log_abs_chi = r
-            per_depth.setdefault(depth, []).append((lam_t, w_lam, chi, log_abs_chi))
+            lam_t, depth, w_lam, chi, log_abs_chi, sign_chi = r
+            per_depth.setdefault(depth, []).append(
+                (lam_t, w_lam, chi, log_abs_chi, sign_chi)
+            )
 
-        # Compute Φ_k = Σ_{λ at depth k} w_λ · log|χ_λ|
+        # Compute Φ_k (real) = Σ_{λ at depth k} w_λ · log|χ_λ|
+        # Compute Π_k (Phase D) = Σ_{λ at depth k} w_λ · [χ_λ < 0]
+        #   The full complex Φ_k^complex = Φ_k + iπ · Π_k.
         Phi_k = {}
+        Pi_k = {}
         for d, items in per_depth.items():
-            phi = sum(w * lc for _, w, _, lc in items)
+            phi = sum(w * lc for _, w, _, lc, _ in items)
+            pi = sum(w for _, w, _, _, sgn in items if sgn < 0)
             Phi_k[d] = phi
+            Pi_k[d] = pi
 
         print(f"\n  === {name} (Z={Z}, N={N}, 3A={n}) ===")
-        print(f"    {'depth':>5} {'#λ':>4} {'Σ w_λ':>10} {'Φ_k':>14} {'α·Φ_k (MeV)':>14}")
+        print(f"    {'depth':>5} {'#λ':>4} {'Σ w_λ':>10} {'Φ_k':>14} {'α·Φ_k (MeV)':>14} {'Π_k':>9}")
         for d in sorted(Phi_k):
             items = per_depth[d]
-            sum_w = sum(w for _, w, _, _ in items)
+            sum_w = sum(w for _, w, _, _, _ in items)
             phi = Phi_k[d]
+            pi = Pi_k[d]
             print(f"    {d:>5} {len(items):>4} {sum_w:>10.6f} {phi:>14.6f} "
-                  f"{float(alpha_bind) * phi:>+14.6f}")
+                  f"{float(alpha_bind) * phi:>+14.6f} {pi:>9.6f}")
 
         # Sum Φ_k for k >= 4 (NEW Term 7)
         Phi_term_7 = sum(Phi_k.get(d, 0) for d in range(4, n))
         Term_7_MeV = float(alpha_bind) * Phi_term_7
+        # Phase D: total π-flux from negative characters across all depths
+        Pi_total = sum(Pi_k.get(d, 0) for d in range(0, n))
+        Pi_term_7 = sum(Pi_k.get(d, 0) for d in range(4, n))
         print(f"\n    Term 7 (depths 4..{n-1}) = α · Σ Φ_k = {Term_7_MeV:+.6f} MeV")
+        print(f"    π-flux total across all k:     Π = {Pi_total:.6f}")
+        print(f"    π-flux at depths 4..{n-1}:        Π_(≥4) = {Pi_term_7:.6f}")
         print(f"    Coulomb-corrected B_nucl  = {B_nucl:+.4f} MeV")
-        print(f"    Existing baseline (m_e·Σ_3A) ≈ {float(me) * float(qint(n)/nfac * 0):.4f} MeV (placeholder)")
         rows.append({
             'iso': name, 'Z': Z, 'N': N, 'A': A,
             'B_nucl': B_nucl, 'Phi_per_depth': Phi_k,
+            'Pi_per_depth': Pi_k,
             'Term_7_MeV': Term_7_MeV,
+            'Pi_total': Pi_total,
+            'Pi_term_7': Pi_term_7,
         })
 
     # Save witness
     witness = {
-        'computation': 'plancherel-term-7',
+        'computation': 'plancherel-term-7-phase-d',
         'description': (
             'Term 7 via Plancherel-weighted log-functional Φ_k at '
-            'curvature-rank strata k=4..n.  Bounded weights w_λ = '
+            'curvature-rank strata k=4..n.  Phase D: also tracks Π_k = '
+            'Σ_{λ:depth=k} w_λ·[χ_λ < 0], the Plancherel-weighted '
+            'count of negative-character blocks (π-flux contribution '
+            'to the full complex log).  Bounded weights w_λ = '
             'dim_q²(λ)/[n]_q!.  Log of trace gives O(10) magnitudes '
             'consistent with MeV scale.  Tested on D, T, 3He, 4He.'
         ),
@@ -244,7 +269,10 @@ def main():
             'iso': r['iso'], 'Z': r['Z'], 'N': r['N'], 'A': r['A'],
             'B_nucl': r['B_nucl'],
             'Phi_per_depth': {str(k): float(v) for k, v in r['Phi_per_depth'].items()},
+            'Pi_per_depth': {str(k): float(v) for k, v in r['Pi_per_depth'].items()},
             'Term_7_MeV': r['Term_7_MeV'],
+            'Pi_total': r['Pi_total'],
+            'Pi_term_7': r['Pi_term_7'],
         } for r in rows],
     }
     out = Path(__file__).parent / "plancherel-term-7.witness.json"
