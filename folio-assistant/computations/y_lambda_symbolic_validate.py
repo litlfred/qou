@@ -107,8 +107,10 @@ def chi_lambda_symbolic(partition, word, q):
                 processed.add(i)
             else:
                 a_prime = h / (1 - q ** (2 * rho))
-                b_sq = a * a_prime + 1
-                bb = sp.sqrt(sp.simplify(b_sq))
+                # b² = a·a' + 1 is a rational function in q; cancel is enough
+                # (and ~10× faster than full simplify in the SYT loop).
+                b_sq = sp.cancel(a * a_prime + 1)
+                bb = sp.sqrt(b_sq)
                 M[i, i] = a
                 M[j, j] = a_prime
                 M[i, j] = bb

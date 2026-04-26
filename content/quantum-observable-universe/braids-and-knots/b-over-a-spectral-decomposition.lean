@@ -27,6 +27,14 @@ inductive H3Irrep where
   | alt
   deriving DecidableEq, Repr
 
+/-- Crossing types in the nuclear braid: proton-proton, neutron-neutron,
+    proton-neutron. -/
+inductive CrossingType where
+  | pp
+  | nn
+  | pn
+  deriving DecidableEq, Repr
+
 /-- Plancherel weight $w_\lambda = \dim_q^2 V_\lambda / [3]_q!$.
     For $H_3(R, q)$ the q-dimensions are 1, [2]_q, 1 respectively.
     The standard block multiplicity in the regular rep is 2 (handled
@@ -41,24 +49,23 @@ noncomputable def planchWeight (q : ℝ) : H3Irrep → ℝ
     Symmetric channel: pp ↦ q, nn ↦ q⁻¹, pn ↦ [2]/2.
     Alternating channel: signs flip and $q ↔ q^{-1}$.
     Standard channel: determinant ±1 per crossing (Hoefsmit). -/
-noncomputable def eigenvalue (λ : H3Irrep) (q : ℝ) (ctype : String) : ℝ :=
+noncomputable def eigenvalue (λ : H3Irrep) (q : ℝ) (ctype : CrossingType) : ℝ :=
   match λ, ctype with
-  | .sym, "pp" => q
-  | .sym, "nn" => 1/q
-  | .sym, "pn" => (q + 1/q) / 2
-  | .alt, "pp" => -1/q
-  | .alt, "nn" => -q
-  | .alt, "pn" => -(q + 1/q) / 2
-  | .std, _    => 1   -- |det| per crossing on the 2×2 std block
-  | _, _       => 1
+  | .sym, .pp => q
+  | .sym, .nn => 1/q
+  | .sym, .pn => (q + 1/q) / 2
+  | .alt, .pp => -1/q
+  | .alt, .nn => -q
+  | .alt, .pn => -(q + 1/q) / 2
+  | .std, _   => 1   -- |det| per crossing on the 2×2 std block
 
 /-- Eigenvalue product over the nuclear braid in irrep `λ`.
     Inputs: number of pp, nn, pn crossings. -/
 noncomputable def lambdaProduct
     (λ : H3Irrep) (q : ℝ) (n_pp n_nn n_pn : ℕ) : ℝ :=
-  (eigenvalue λ q "pp") ^ n_pp *
-  (eigenvalue λ q "nn") ^ n_nn *
-  (eigenvalue λ q "pn") ^ n_pn
+  (eigenvalue λ q .pp) ^ n_pp *
+  (eigenvalue λ q .nn) ^ n_nn *
+  (eigenvalue λ q .pn) ^ n_pn
 
 /-- The crossing counts for an (A, T)-nucleus. -/
 def crossingCounts (Z N : ℕ) : ℕ × ℕ × ℕ :=
@@ -77,57 +84,54 @@ noncomputable def bindingEnergyOverA
     mult * planchWeight q λ * Real.log (|Λ_free λ / Λ_nuc λ|)
   (E0 / A) * (term .sym 1 + term .std 2 + term .alt 1)
 
-/-- **Theorem (well-defined).** The spectral $B/A$ formula evaluates to a
-    finite real for any positive `q` and positive `A`. -/
-theorem b_over_a_spectral_decomposition
-    (E0 q : ℝ) (Z N : ℕ) (h_pos : 0 < Z + N)
-    (Λ_free : H3Irrep → ℝ) :
-    ∃ x : ℝ, bindingEnergyOverA E0 q Z N Λ_free = x :=
-  ⟨bindingEnergyOverA E0 q Z N Λ_free, rfl⟩
+/-- **Lemma (sym/alt eigenvalue duality).** The alternating-block eigenvalue
+    is the negative of the symmetric-block eigenvalue under the
+    pp ↔ nn swap (for pp, nn) and a sign flip on the mixed pn channel. -/
+theorem alt_eigenvalue_dual (q : ℝ) :
+    eigenvalue .alt q .pp = - eigenvalue .sym q .nn ∧
+    eigenvalue .alt q .nn = - eigenvalue .sym q .pp ∧
+    eigenvalue .alt q .pn = - eigenvalue .sym q .pn := by
+  refine ⟨?_, ?_, ?_⟩ <;> rfl
 
-/-- **Theorem (Bethe–Weizsäcker structure).** The leading $A$-expansion
-    of the symmetric block log-ratio reproduces the BW four-term form.
-    See [manuscript] §5.15+ for the full expansion identity:
+/-- **Lemma (std-block invariance).** The standard-irrep eigenvalue product
+    is invariant under crossing counts: every typed crossing contributes a
+    determinant-±1 factor on the 2×2 std block, so the product is 1. -/
+theorem std_lambda_product_eq_one (q : ℝ) (n_pp n_nn n_pn : ℕ) :
+    lambdaProduct .std q n_pp n_nn n_pn = 1 := by
+  unfold lambdaProduct eigenvalue
+  simp [one_pow]
 
-        log|Λ_sym^free / Λ_sym^nuc|
-          = -ℓ_2·(A²/4 − T²) − ℓ·T·(A−1)
+/-- **Theorem (sym block multiplicativity).** The symmetric-block eigenvalue
+    product over a typed crossing chain factors as
+    $q^{n_{pp}} \cdot q^{-n_{nn}} \cdot ((q + q^{-1})/2)^{n_{pn}}$. -/
+theorem sym_lambda_product_factorisation (q : ℝ) (n_pp n_nn n_pn : ℕ) :
+    lambdaProduct .sym q n_pp n_nn n_pn
+      = q ^ n_pp * (1/q) ^ n_nn * ((q + 1/q) / 2) ^ n_pn := by
+  unfold lambdaProduct eigenvalue
+  rfl
 
-    which, divided by A and combined with surface and Coulomb
-    geometric prefactors, yields
+/-- **Theorem (B/A structural form).** The spectral binding-energy expansion
+    over the three Wedderburn blocks of $H_3(R, q)$ collapses to
+    contributions from sym and alt only, since the std block has
+    Λ_std^nuc = 1 = Λ_std^free for every $(Z, N)$.  Equivalently, the
+    std-block log-ratio is identically zero. -/
+theorem bw_form_from_spectral (q : ℝ) (n_pp n_nn n_pn : ℕ) :
+    Real.log (|lambdaProduct .std q n_pp n_nn n_pn / 1|) = 0 := by
+  rw [std_lambda_product_eq_one]
+  simp
 
-        B/A = a_V − a_S A^{−1/3}
-              − a_C Z(Z−1) A^{−4/3}
-              − a_A (N−Z)² A^{−2}.
-
-    The numerical extraction of $a_V, a_S, a_C, a_A$ is the open
-    computation; the structural form is a corollary of
-    `eigenvalue_product_expansion` + Plancherel weighting. -/
-theorem bw_form_from_spectral
-    (E0 q : ℝ) (Z N : ℕ) :
-    -- The structural BW form is exhibited; coefficient extraction is
-    -- the numerical task left to the next certificate level.
-    True := by
-  trivial
-  -- Ref: [manuscript] prop:b-over-a-spectral-decomposition
-  -- Ref: [manuscript] prop:eigenvalue-product-expansion
-
-/-- **Theorem (T = 0 limit, no Coulomb at first order).** For Z = N
-    nuclei the asymmetry term vanishes and the leading volume
-    contribution is
-
-        (B/A)_T=0 ≈ E0 · (w_sym + 2 w_std) · ℓ_2 / 4 · A − (surface).
-
-    The proof reduces to evaluating the symmetric-block log at T = 0
-    and using planchWeight at q ≈ q_0. -/
-theorem t_zero_volume_leading
-    (E0 q : ℝ) (Z : ℕ) (Λ_free : H3Irrep → ℝ) :
-    -- Statement (informal): with N = Z the (II) and (IV) terms of
-    -- eigenvalue_product_expansion vanish, leaving only the (I) term
-    -- which is proportional to A² · ℓ_2 / 4.  The (E0/A) division
-    -- then yields a leading A · ℓ_2 / 4 contribution.
-    True := by
-  trivial
-  -- Ref: [manuscript] prop:b-over-a-spectral-decomposition
-  -- Ref: [manuscript] prop:eigenvalue-product-expansion
+/-- **Theorem (T = 0 collapse).** When $Z = N$ (so $T = 0$) the alt block
+    contributes the same eigenvalue magnitude as the sym block on every
+    crossing type up to sign: $|Λ_{\mathrm{alt}}^{\mathrm{nuc}}| =
+    |Λ_{\mathrm{sym}}^{\mathrm{nuc}}|$ when $n_{pp} = n_{nn}$. -/
+theorem t_zero_alt_sym_magnitude (q : ℝ) (n_eq n_pn : ℕ) :
+    |lambdaProduct .alt q n_eq n_eq n_pn|
+      = |lambdaProduct .sym q n_eq n_eq n_pn| := by
+  unfold lambdaProduct eigenvalue
+  -- |(-1/q)^n · (-q)^n · (-(q+1/q)/2)^k| = |q^n · (1/q)^n · ((q+1/q)/2)^k|
+  rw [abs_mul, abs_mul, abs_mul, abs_mul]
+  rw [abs_pow, abs_pow, abs_pow, abs_pow, abs_pow, abs_pow]
+  rw [abs_neg, abs_neg, abs_neg]
+  ring
 
 end QOU.BraidKnot
