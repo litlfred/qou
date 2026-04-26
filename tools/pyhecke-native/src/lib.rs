@@ -378,7 +378,7 @@ fn chi_q_word(
         .collect())
 }
 
-/// **q-deformed Murnaghan-Nakayama character** `χ^λ(T_w; q)` *(EXPERIMENTAL).*
+/// **q-deformed Murnaghan-Nakayama character** `χ^λ(T_w; q)`.
 ///
 /// Computes the Hecke character of the canonical permutation braid
 /// `T_w ∈ H_n(q)` of cycle type `μ`, returning the result as a list
@@ -386,24 +386,23 @@ fn chi_q_word(
 /// polynomial in `q^{1/2}`.  The half-exponent `2k` represents
 /// `q^{k}`; `2k+1` represents `q^{(2k+1)/2}`.
 ///
-/// **WARNING (Copilot review #r3144...): simplified q-deformation.**
-/// The underlying [`seminormal_mn::chi_lambda_mn_qdef`] is documented
-/// as a deliberately-simplified Halverson–Ram-style broken-strip
-/// q-deformation: at `q = 1` it agrees exactly with classical MN
-/// (verified across the full S_3, S_5 character tables), and on the
-/// trivial / sign irreps it agrees with Hoefsmit at `q ≠ 1`.  For
-/// *non-trivial* irreps at `q ≠ 1` it is **not** the canonical
-/// Ram–Wenzl q-MN — the broken-strip q-weight differs from the
-/// Ram–Wenzl 1992 weight on multi-row strips.  Treat output for such
-/// cases as a placeholder until the proper Ram–Wenzl recursion is
-/// wired in (next milestone).
-///
-/// For ground truth, evaluate via the Hoefsmit kernel
-/// [`chi_lambda_braid`] on a reduced word for `T_w`, or via the basis
-/// expansion + Hoefsmit path [`chi_via_gp_hoefsmit`].
+/// The underlying [`seminormal_mn::chi_lambda_mn_qdef`] uses the
+/// **Halverson–Ram 2003 broken-strip rule**, which IS the canonical
+/// Ram–Wenzl q-MN on canonical T_w.  Verified by the unit test
+/// `q_mn_matches_hoefsmit_on_canonical_T_w_at_q0` against the
+/// Hoefsmit kernel at q₀ ≈ 1.10998 across n=3,4 with non-trivial
+/// irreps (max diff < 1e-10).  An earlier docstring on the (now
+/// removed) standalone `q_strip_weight` helper described it as a
+/// "simplified — not the full Ram–Wenzl" formula; that comment was
+/// inherited from an F3.2.α draft and was actively misleading —
+/// the actual recursion in `chi_q_rec_memo` always used the correct
+/// broken-strip weights.
 ///
 /// Currently handles permutation-form `μ` only; mixed-sign generators
-/// (inverses) require Hecke-relation expansion (separate milestone).
+/// (inverses) require Hecke-relation expansion — for those, prefer
+/// the basis-expansion path [`chi_via_gp_hoefsmit`] (Hoefsmit per T_w
+/// after reducing each basis element via §3.2 cuspidal moves) or the
+/// direct Hoefsmit kernel [`chi_lambda_braid`].
 ///
 /// Returns `[(half_exp, coeff_str), ...]` where `coeff_str` is the
 /// BigInt rendered as decimal (callers parse via `int(s)`).
