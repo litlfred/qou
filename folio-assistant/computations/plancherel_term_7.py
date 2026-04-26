@@ -216,22 +216,61 @@ def main():
                                 isotope=name, n=n)
         _profile_ctx.__enter__()
 
-        # Parallel character evaluation across partitions (independent work)
-        per_depth = {}  # depth -> [(λ, w_λ, χ, log|χ|)]
-        if n_workers > 1 and len(jobs) > 4:
-            with Pool(n_workers) as pool:
-                results = pool.map(_process_partition, jobs)
-        else:
-            results = [_process_partition(j) for j in jobs]
+        # F2: batch character evaluation in Rust (rayon-parallel inside).
+        # Replaces previous Python multiprocessing.Pool path — no
+        # pickling overhead, work-stealing balances dim variation.
+        per_depth = {}  # depth -> [(λ, w_λ, χ, log|χ|, sign)]
+        try:
+            import pyhecke_native as _pyn
+            shapes_list = [list(lam) for lam, *_ in jobs]
+            word_marshalled = [(1 if s == '+' else -1, g) for s, g in word]
+            if PRECISION.startswith("mpfr_"):
+                # mpfr batch — preserve precision via decimal string for q.
+                q_str = format(float(Q0_FLOAT), ".50g")
+                dps = int(PRECISION.split("_")[1].rstrip("dps")) \
+                    if PRECISION.split("_")[1].endswith("dps") \
+                    else int(PRECISION.split("_")[1])
+                chi_strs = _pyn.chi_lambdas_braid_mpfr(
+                    shapes_list, word_marshalled, q_str, dps
+                )
+                chis = [float(s) for s in chi_strs]
+            else:
+                chis = _pyn.chi_lambdas_braid(
+                    shapes_list, word_marshalled, float(Q0_FLOAT)
+                )
+        except (ImportError, AttributeError):
+            # Fallback to multiprocessing.Pool path if Rust batch
+            # unavailable (e.g., older pyhecke_native build).
+            if n_workers > 1 and len(jobs) > 4:
+                with Pool(n_workers) as pool:
+                    results = pool.map(_process_partition, jobs)
+            else:
+                results = [_process_partition(j) for j in jobs]
+            for r in results:
+                if r is None:
+                    continue
+                lam_t, depth, w_lam, chi, log_abs_chi, sign_chi = r
+                per_depth.setdefault(depth, []).append(
+                    (lam_t, w_lam, chi, log_abs_chi, sign_chi)
+                )
+            _profile_ctx.__exit__(None, None, None)
+            chis = None  # signal: results already aggregated above
 
-        for r in results:
-            if r is None:
-                continue
-            lam_t, depth, w_lam, chi, log_abs_chi, sign_chi = r
-            per_depth.setdefault(depth, []).append(
-                (lam_t, w_lam, chi, log_abs_chi, sign_chi)
-            )
-        _profile_ctx.__exit__(None, None, None)
+        if chis is not None:
+            # Aggregate batch results into per-depth structure.
+            for (lam_t_arg, _, _, _), chi in zip(jobs, chis):
+                lam_t = lam_t_arg
+                if chi == 0:
+                    continue
+                depth = len(lam_t) - 1
+                dq = float(dim_q(lam_t))
+                w_lam = dq * dq / nfac
+                log_abs_chi = float(np.log(abs(chi)))
+                sign_chi = 1 if chi > 0 else -1
+                per_depth.setdefault(depth, []).append(
+                    (lam_t, w_lam, chi, log_abs_chi, sign_chi)
+                )
+            _profile_ctx.__exit__(None, None, None)
 
         # Compute Φ_k (real) = Σ_{λ at depth k} w_λ · log|χ_λ|
         # Compute Π_k (Phase D) = Σ_{λ at depth k} w_λ · [χ_λ < 0]

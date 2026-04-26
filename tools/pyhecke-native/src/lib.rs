@@ -159,6 +159,38 @@ fn partitions_of(n: usize) -> Vec<Vec<usize>> {
     seminormal::partitions_of(n)
 }
 
+/// **Batch character evaluation across many partitions** (rayon-parallel).
+///
+/// Evaluates `χ_λ(β)` for every partition in `shapes` in parallel using
+/// Rust rayon.  Returns a `List[float]` in the same order.
+///
+/// Faster than calling `chi_lambda_braid` from a Python
+/// `multiprocessing.Pool`: no per-partition pickling overhead, rayon
+/// work-stealing balances dim variation across partitions.
+#[pyfunction]
+fn chi_lambdas_braid(
+    shapes: Vec<Vec<usize>>,
+    word: Vec<(i32, u32)>,
+    q: f64,
+) -> Vec<f64> {
+    seminormal::chi_lambdas_braid(&shapes, &word, q)
+}
+
+/// **Batch MPFR character evaluation across many partitions** (rayon-parallel).
+///
+/// Like `chi_lambda_braid_mpfr` but in batch.  Returns a `List[str]`,
+/// each entry being a decimal string at requested `dps` precision.
+#[pyfunction]
+#[pyo3(signature = (shapes, word, q_str, dps=50))]
+fn chi_lambdas_braid_mpfr(
+    shapes: Vec<Vec<usize>>,
+    word: Vec<(i32, u32)>,
+    q_str: String,
+    dps: u32,
+) -> Vec<String> {
+    seminormal_mpfr::chi_lambdas_braid_mpfr(&shapes, &word, &q_str, dps)
+}
+
 /// **High-precision (MPFR) character `χ_λ(β)`.**
 ///
 /// Computes the Hoefsmit seminormal character at `dps` decimal-precision
@@ -196,7 +228,9 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review

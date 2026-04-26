@@ -306,6 +306,28 @@ pub fn seminormal_matrices(shape: &[usize], q: f64) -> Vec<SparseMatrix> {
 /// unavoidable since the trace depends on the *entire* product.  At
 /// `dim ~ 700` and `word_length ~ 50`, this still beats the Python
 /// implementation by a factor of ~50–100×.
+/// **Batch character evaluation across many partitions.**
+///
+/// Evaluates `χ_λ(β)` for every partition `λ` in `shapes` in parallel
+/// using rayon internal threads.  Significantly faster than calling
+/// `chi_lambda_braid` from Python in a multiprocessing.Pool because:
+///   - no Python pickling overhead per partition
+///   - rayon work-stealing balances large vs small partitions
+///   - Block generators computed once per partition, no IPC roundtrip
+///
+/// Returns `Vec<f64>` in the same order as input `shapes`.
+pub fn chi_lambdas_braid(
+    shapes: &[Vec<usize>],
+    word: &[(i32, u32)],
+    q: f64,
+) -> Vec<f64> {
+    use rayon::prelude::*;
+    shapes
+        .par_iter()
+        .map(|shape| chi_lambda_braid(shape, word, q))
+        .collect()
+}
+
 pub fn chi_lambda_braid(shape: &[usize], word: &[(i32, u32)], q: f64) -> f64 {
     let n: usize = shape.iter().sum();
     if n == 0 {

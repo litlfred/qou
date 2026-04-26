@@ -152,6 +152,24 @@ fn apply_sigma_inv_mpfr(v: &mut [Float], blocks: &[BlockMpfr], h: &Float, prec: 
 ///
 /// Example: `chi_lambda_braid_mpfr(&[3], &[(1, 1)], "1.10998", 50)` returns
 /// `"1.10998..."` (because χ_(3)(σ₁) = q on the trivial representation).
+/// **Batch MPFR character evaluation across many partitions.**
+///
+/// Like [`chi_lambda_braid_mpfr`] but evaluates a list of partitions
+/// in rayon-parallel.  Returns one decimal-string result per input
+/// shape.
+pub fn chi_lambdas_braid_mpfr(
+    shapes: &[Vec<usize>],
+    word: &[(i32, u32)],
+    q_str: &str,
+    dps: u32,
+) -> Vec<String> {
+    use rayon::prelude::*;
+    shapes
+        .par_iter()
+        .map(|shape| chi_lambda_braid_mpfr(shape, word, q_str, dps))
+        .collect()
+}
+
 pub fn chi_lambda_braid_mpfr(
     shape: &[usize],
     word: &[(i32, u32)],
