@@ -1,7 +1,7 @@
 {
   "computation": "jet-lifted-hecke",
   "description": "Multi-level jet-tower binding with V\u0302 propagation at each jet level via one of two stub lifts: (a) Markov-stabilization V\u0302^(n) = z^n V\u0302^(0); (b) q-Plancherel-descent geometric decay.  Both converge to the single-level all-pairs result at N=1 (level 0 only), and extrapolate to the geometric sum at higher N.  True jet-lifted K\u00e4hler-differential propagation is not implemented \u2014 requires the explicit \u03a9^1(H_n(q)) action which is open in the repo.",
-  "timestamp": "2026-04-18T10:20:01.341572+00:00",
+  "computedAt": "2026-04-18T10:20:01.341572+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "z_markov": 0.4993203340335982,

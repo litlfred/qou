@@ -1,7 +1,7 @@
 {
   "computation": "mass-table-markov-identity",
   "description": "Categorical binding energy via mass-identity Markov trace (SINGLE-LEVEL). B_bulk = E_0 * (|tr_M(W_free)| - |tr_M(W_atom)|) + B_unif + B_sdp. E_0 = 0.782 MeV (free-neutron beta-decay Q-value) is the SINGLE archimedean calibration constant (fibre functor R -> R).",
-  "timestamp": "2026-04-17T00:00:00+00:00",
+  "computedAt": "2026-04-17T00:00:00+00:00",
   "parameters": {
     "q": 1.1097,
     "k_cap": 4,

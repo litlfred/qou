@@ -1,7 +1,7 @@
 {
   "computation": "positron-lifted-sdp",
   "description": "SDP with explicit e\u207b / e\u207a sector variables.  Each generator variable is split into (V\u0302^+, V\u0302^-) corresponding to the +q (sym/electron) and \u2212q\u207b\u00b9 (alt/positron) eigenvalues of \u03c3_i.  2\u00d72 PSD per generator on (V^+, V^-), 4\u00d74 PSD per adjacent pair.  Compares unlifted (scalar V\u0302), lifted_free, lifted_cpt_sym (V^+=V^-), lifted_cpt_antisym (V^+=-V^-).  Probe: does explicit positron inclusion change the SDP objective in a way that could resolve the 1.8% m_p/m_e error in the electron_chiral_probe witness?",
-  "timestamp": "2026-04-20T15:34:16.271854+00:00",
+  "computedAt": "2026-04-20T15:34:16.271854+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "HA": 0.20906032198987945,

@@ -43,6 +43,17 @@ representatives form a class-function basis on $H_n(R, q)$ at
 generic $q$, so the $\chi$-matrix is invertible — the system has a
 unique solution.  $\square$
 
+**Closed-form available via Wenzl-bridge.**
+*By [prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge),
+$y_\lambda(q)$ has the explicit q-rational expression
+$y_\lambda = s_{\lambda, r}(Q) / \sum_\mu d_\mu s_{\mu, r}(Q)$ with
+$Q = q^2$ and $X = Q^r = q^{3/2} / (1 + q - q^2 - q^3 + q^{3/2})$, in
+$O(p(n) \cdot \max\text{hooks})$ time.  The recipe is detailed in
+[prop:y-lambda-recipe-from-partition](#prop:y-lambda-recipe-from-partition).
+The 4-step linear-system algorithm below remains valid as an
+alternative derivation, and was historically the first method used in
+this paper.*
+
 **Algorithm (per-$n$ $y_\lambda$ extraction).**
 
 1. *Enumerate partitions of $n$:* $\{\lambda^{(1)}, \ldots,

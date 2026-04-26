@@ -107,18 +107,32 @@ def border_strips(lam, k):
 
 
 def chi_classical(lam, rho, cache=None):
-    """Compute χ_ρ^λ classically (q=1) via recursive memoised MN.
+    """Compute χ_ρ^λ classically (q=1) via recursive memoised MN."""
+    return chi_q(lam, rho, q_val=1, cache=cache)
+
+
+def chi_q(lam, rho, q_val, cache=None):
+    """Compute χ_ρ^λ(q) via the recursive Halverson-Ram broken-strip rule.
+
+    Weight per border strip ξ of size k with height ht:
+      W_q(ξ) = (-1)^ht · q^{k - 1 - 2·ht}
+
+    At q=1 this reduces to (-1)^ht (classical Murnaghan-Nakayama).
+
+    Empirically verified:
+      - At H_2: gives Hecke eigenvalues q (trivial) and -q^{-1} (sign).
+      - At H_3 on 3-cycle: gives q² (trivial), -1 (standard), q^{-2} (sign).
 
     Args:
-      lam: irrep partition of n (descending tuple).
-      rho: cycle-type of permutation (any tuple summing to n).
+      lam: irrep partition (descending tuple).
+      rho: cycle-type partition (any tuple summing to |lam|).
+      q_val: numeric value or 1 for classical; can be mp.mpf for high precision.
       cache: dict for memoisation; created if None.
     """
     if cache is None:
         cache = {}
     lam = tuple(p for p in lam if p > 0)
     rho = tuple(p for p in rho if p > 0)
-    # Sort rho descending for canonical key (cycle types are unordered)
     rho = tuple(sorted(rho, reverse=True))
 
     key = (lam, rho)
@@ -133,15 +147,22 @@ def chi_classical(lam, rho, cache=None):
         cache[key] = 0
         return 0
 
-    # Take FIRST element of rho (largest); recurse on rest
     rho1 = rho[0]
     rho_rest = rho[1:]
 
+    # Sum over border strips of size rho1 in lam, weighted by Halverson-Ram.
     result = 0
     for new_lam, height in border_strips(lam, rho1):
-        sign = (-1) ** height
-        chi_sub = chi_classical(new_lam, rho_rest, cache)
-        result += sign * chi_sub
+        # Broken-strip weight: (-1)^ht · q^{k - 1 - 2·ht}
+        # At q=1 this is just (-1)^ht (classical MN).
+        weight_sign = (-1) ** height
+        weight_qpow = rho1 - 1 - 2 * height
+        if q_val == 1 or q_val == 1.0:
+            weight = weight_sign  # q^0 = 1
+        else:
+            weight = weight_sign * (q_val ** weight_qpow)
+        chi_sub = chi_q(new_lam, rho_rest, q_val, cache)
+        result += weight * chi_sub
 
     cache[key] = result
     return result

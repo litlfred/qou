@@ -1,7 +1,7 @@
 {
   "computation": "alpha-em-pslq-uniqueness",
   "description": "PSLQ uniqueness test for the hecke-engine-knot-tracker \u03b1_EM formula at 1000+ digit precision.  Tests whether 1/\u03b1 = 45\u00b7[3]_q\u00b7(1 + \u210f_q^4\u00b7[5]_q + 8q\u00b7(\u210f_q^4\u00b7[5]_q)\u00b2) is the UNIQUE integer relation in the q-arithmetic + transcendental basis at extreme precision, or whether spurious relations exist with comparable coefficient norms.",
-  "timestamp_utc": "2026-04-26T05:33:05.578184+00:00",
+  "computedAt": "2026-04-26T05:33:05.578184+00:00",
   "precision_dps": 1500,
   "q_0_extended_50dp": "1.109978595554180575281594079609518150067234842238",
   "one_over_alpha_value_50dp": "137.03599999817522076201684190212167401513339380723",

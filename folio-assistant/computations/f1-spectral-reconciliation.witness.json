@@ -1,7 +1,7 @@
 {
   "computation": "f1-spectral-reconciliation",
   "description": "Numerical-symbolic theorem connecting F.1 leading-order Q_\u03b2 formula to the spectral-sequence decomposition. F.1 (rational in q) and explicit chirality residue (transcendental via Vol(6_1)) cannot match exactly; F.1 captures the LEADING q-rational approximation. The 0.4% gap is the order at which Vol(6_1) deviates from its q-rational approximation.",
-  "timestamp_utc": "2026-04-26T04:45:02.246929+00:00",
+  "computedAt": "2026-04-26T04:45:02.246929+00:00",
   "precision_dps": 60,
   "F1_minus_Sigma3_expr_factored": "-(2*q**4 - q**2*Abs(q**2 - 2*q - 2 + 2/q + q**(-2)) - 2*q - Abs(q**2 - 2*q - 2 + 2/q + q**(-2)))/(2*q*(q - 1)*(q**2 + 1))",
   "F1_minus_Sigma3_numerator": "-2*q**2*(q - 1) - 2*q*(q - 1)*(q**2 + 1) + (q**2 + 1)*Abs((q - 1/q)*(-q + 2 + 1/q))",

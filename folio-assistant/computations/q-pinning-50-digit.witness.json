@@ -1,7 +1,7 @@
 {
   "computation": "q-pinning-50-digit",
   "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath, derived from Vol(4_1) and m_\u03bc/m_e (CODATA 2022).  Internal arithmetic is exact to 50 digits; physical anchoring is bounded by the propagated CODATA relative uncertainty \u2248 1.22e-9 (see physical_anchoring_bound).  Recorded 50-digit outputs: q, q^{-1}, \u210f_q\u00b2, \u210f_q, H_A, [2]_q, z_markov, \u03c1_q, s_skein; plus quantum integers/factorials and n=3 Plancherel weights.  \u03be(q\u2080) via Descartes-curve \u03bb is NOT yet recorded \u2014 the current placeholder has been disabled; port lambda_descartes_q0.py to 50 digits and re-emit.",
-  "timestamp": "2026-04-23T21:07:02.677380+00:00",
+  "computedAt": "2026-04-23T21:07:02.677380+00:00",
   "precision_decimal_digits": 50,
   "calibration_inputs": {
     "Vol_4_1_str": "2.0298832128193072500424051085490405710014",

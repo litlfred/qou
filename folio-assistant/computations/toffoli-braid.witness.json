@@ -1,7 +1,7 @@
 {
   "computation": "toffoli-braid",
   "description": "P_{7,6}(q) as q-AND amplitude in the massive Toffoli transfer matrix M(q). Built from Iwahori--Hecke algebra H_3(q) with paper crossing conventions: pp=(1,0), nn=(1,\u2212HA), mix=(1,\u2212HA/2) where HA=q\u2212q\u207b\u00b9.",
-  "timestamp": "2026-04-07T14:54:37.272918+00:00",
+  "computedAt": "2026-04-07T14:54:37.272918+00:00",
   "framework": {
     "algebra": "H_3(q)",
     "hecke_relation": "\u03c3\u00b2 = (q \u2212 q\u207b\u00b9)\u03c3 + 1",

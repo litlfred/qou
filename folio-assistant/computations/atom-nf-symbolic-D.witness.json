@@ -1,7 +1,7 @@
 {
   "computation": "atom-NF-symbolic-D",
   "description": "Symbolic Hecke NF of D's atom braid via Gr\u00f6bner-Shirshov (SymbolicHeckeDivision).  Extracts the NF coefficients in Z[q^{1/2},q^{-1/2}], computes the Markov trace symbolically (= Jones polynomial up to framing), and compares to J(6_2) from Kawauchi/KnotInfo.  If polynomials match (possibly up to writhe), D's atom link class IS 6_2 at the Hecke algebra level, confirming the census-search assignment; if not, 6_2 was an approximation.",
-  "timestamp": "2026-04-24T00:32:55.473943+00:00",
+  "computedAt": "2026-04-24T00:32:55.473943+00:00",
   "parameters": {
     "Z": 1,
     "N": 1,

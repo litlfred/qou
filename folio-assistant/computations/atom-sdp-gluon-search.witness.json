@@ -1,7 +1,7 @@
 {
   "computation": "atom-sdp-gluon-search",
   "description": "Full-atom SDP gluon selection (P2.1b): enumerate per-nucleon gluon decorations (\u2205 / \u03c3\u2080 / \u03c3\u2080\u03c3\u2080 / L+L\u2212) and rank by binding error vs AME.  Frobenius positivity is automatic for real Hecke products (Candidate #2 finding); the search is therefore a combinatorial integer program with SDP feasibility implicit.  Uses the Plancherel-weighted partition-sum trace for performance (canonical symbolic trace is infeasible for n \u2265 9 in a full sweep).",
-  "timestamp": "2026-04-19T02:08:13.515782+00:00",
+  "computedAt": "2026-04-19T02:08:13.515782+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782,

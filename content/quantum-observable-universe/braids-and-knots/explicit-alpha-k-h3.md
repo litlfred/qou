@@ -96,6 +96,18 @@ $\square$
 | $\alpha_2$ | $z^2$ | $0.249321$ | matches $z^2$ to $5.5 \times 10^{-17}$ |
 | $\alpha_3$ | $h z^2 + z$ | $0.551443$ | matches symbolic to $6 \times 10^{-16}$ |
 
+## Alternative derivation via Wenzl-bridge
+
+By [Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge),
+$y_\lambda(q)$ at $H_3$ admits the closed form
+$y_\lambda = s_{\lambda, r}(Q) / \sum_\mu d_\mu s_{\mu, r}(Q)$ with
+$Q = q^2$ and $X = Q^r = q^{3/2}/(1 + q - q^2 - q^3 + q^{3/2})$. The
+Markov pairings $\alpha_k = \langle \mathrm{tr}_M, r_k \rangle$ on the
+four $E_\infty$ classes inherit this $q$-rational structure
+automatically; the per-class derivations below can be replaced by a
+uniform application of the bridge formula (see also
+[recipe](#prop:y-lambda-recipe-from-partition)).
+
 ## Significance
 
 This proposition closes the H_3 stratum-prefactor derivation that the

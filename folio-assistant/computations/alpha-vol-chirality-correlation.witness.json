@@ -1,7 +1,7 @@
 {
   "computation": "alpha-vol-chirality-correlation",
   "description": "27c: Test whether \u03b1 (per-transition ladder coefficient) correlates with the chirality knot Vol at the optimal rank.  Sweep all (K, r) pairs for tritium, looking for (i) \u03b1_T = \u03b1_np = 0.827 at some choice, (ii) \u03b1\u00b7Vol(K) universal across n\u2192p and T.",
-  "timestamp_utc": "2026-04-25T23:11:15.475660+00:00",
+  "computedAt": "2026-04-25T23:11:15.475660+00:00",
   "alpha_np": 0.8272227623,
   "Vol_K_np": 3.16396322888314,
   "alpha_np_times_Vol": 2.617302402012338,

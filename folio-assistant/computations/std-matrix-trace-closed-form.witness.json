@@ -1,7 +1,7 @@
 {
   "computation": "std-matrix-trace-closed-form",
   "description": "Matrix-trace closed form for all Hecke irreps of H_{3A}(q) via Hoefsmit seminormal matrices.  Computes Plancherel-weighted tr_M(\u03b2_atom) iteratively over partitions for D, T, \u00b3He (n=6, 9, 9 respectively).  Derives \u03c1_F_derived = m_e \u00b7 8G \u00b7 |tr_M| / V_hyp and compares to \u03c1_F_observed = B_AME / V_hyp at zero fitting.",
-  "timestamp": "2026-04-24T04:26:37.778574+00:00",
+  "computedAt": "2026-04-24T04:26:37.778574+00:00",
   "q_0": 1.1099785955541805,
   "alpha_MeV": 3.74445965488548,
   "atoms": [

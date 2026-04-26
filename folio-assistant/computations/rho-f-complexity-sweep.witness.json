@@ -1,7 +1,7 @@
 {
   "computation": "rho-f-complexity-sweep",
   "description": "Empirical \u03c1_F^eff reconstruction vs nominal {m_e, 2m_e} dichotomy, tested against candidate complexity parameters: (1) J(K, q\u2080\u00b2), (2) n_JSJ, (5) |det K|.  Uses hardcoded Jones polynomials from KnotInfo since Sage not available for SnapPy.jones_polynomial() in this env.  q\u2080 at 50 decimal digits.",
-  "timestamp": "2026-04-24T02:10:31.443941+00:00",
+  "computedAt": "2026-04-24T02:10:31.443941+00:00",
   "q_0_str": "1.1099785955541805752815940796095093779667618976181",
   "precision_digits": 50,
   "empirical_targets": {

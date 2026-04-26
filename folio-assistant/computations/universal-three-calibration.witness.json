@@ -1,7 +1,7 @@
 {
   "computation": "universal-three-calibration",
   "description": "Universal rep-theory three-calibration.  Fit E_0's from three PARTICLE masses {m_e, m_p, m_n} only \u2014 NO isotope tuning \u2014 then apply unchanged to predict all isotope bindings.  Residuals are genuine framework errors, not fit artefacts.  Binding convention: B = Z\u00b7m_p + N\u00b7m_n \u2212 m_atom_pred where m_atom_pred comes from the atom braid's (desc, single, cross) channels under the universal calibration.",
-  "timestamp": "2026-04-20T15:34:11.856527+00:00",
+  "computedAt": "2026-04-20T15:34:11.856527+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "HA": 0.20906032198987945,

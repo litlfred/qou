@@ -1,7 +1,7 @@
 {
   "computation": "bigraded-e-infinity-h3",
   "description": "23a: Bigraded E_\u221e^{p,q} table at H_3 with p=chain-prefix length, q=partition channel \u2208 {sym, std, alt}. Provides the algebraic substrate for: 23b Plancherel-Lagrangian Term 7 sector decomposition, F.1\u2194spectral reconciliation, and higher-A factorisation. Each (p, q) cell is a finite Laurent polynomial in q^\u00b11; the Plancherel-weighted sum gives the canonical Markov trace.",
-  "timestamp_utc": "2026-04-25T20:38:18.831642+00:00",
+  "computedAt": "2026-04-25T20:38:18.831642+00:00",
   "precision_dps": 50,
   "Plancherel_weights": {
     "W_sym (lambda=(3))": 0.1633832273397582,
