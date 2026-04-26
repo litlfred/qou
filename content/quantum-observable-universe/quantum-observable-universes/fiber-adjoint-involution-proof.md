@@ -43,8 +43,8 @@ is $T$, so $\mathbb{P}(V) \cong G/T$ as $G$-spaces.
 Suppose there exists a non-zero morphism
 $f \colon \mathbf{1} \to \mathrm{Ad}(A)$.  Such a morphism would
 represent a $G$-invariant element in the adjoint representation.
-By the SU(2) emergence theorem
-([SU(2) emergence](#thm:su2-emergence)), the reconstructed gauge
+By the $\mathrm{SU}(2)$ emergence theorem
+([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)), the reconstructed gauge
 group is $G \cong \mathrm{SU}(2)$, and $\mathrm{Ad}(A)$ carries
 the irreducible adjoint representation $\mathfrak{su}(2)$
 (dimension $3$).  By Schur's lemma, the only intertwining morphism

@@ -1,4 +1,4 @@
-Continuing [QOU on SU(2)](#ex:qou-su2), the simple objects of
+Continuing [QOU on $\mathrm{SU}(2)$](#ex:qou-su2), the simple objects of
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}(2))$ are the irreducible
 representations $V_j \cong \mathbb{C}^{2j+1}$:
 

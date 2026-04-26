@@ -1,4 +1,4 @@
-Continuing [maximal torus of SU(2)](#ex:maximal-torus-su2), the maximal torus is
+Continuing [maximal torus of $\mathrm{SU}(2)$](#ex:maximal-torus-su2), the maximal torus is
 $T = \mathrm{U}(1)$ with generator
 $\xi = e_3 = \frac{1}{2}\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix} \in \mathfrak{su}(2)$.
 On $A = \mathcal{O}(\mathrm{SU}(2))$, $\xi$ acts by

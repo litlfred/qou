@@ -66,7 +66,7 @@ alternations to $(\sigma_1 \cdots \sigma_{13})^2$ with perfect
 alternation — the maximal shortcut.
 
 In the Iwahori--Hecke algebra, this transition:
-- Eliminates 4 Hecke reduction steps ($T_i^2$ resolutions)
+- Eliminates 4 Hecke reduction steps ($\sigma_i^2$ resolutions)
 - Reduces the total energy by $\Delta E = -3.361$ Skein weight
   units
 - Releases the Pauli asymmetry cost and Coulomb deficit as the

@@ -615,26 +615,31 @@ numerical evaluations at `$q_0$`. Exact algebraic identities
 
 ### 7a. Hecke-Skein convention (STRICT)
 
-The Hecke algebra generator is **$T$** (never $\sigma$ for the Hecke
-relation, never $t$ or $A$ for the Jones polynomial variable).
+The Hecke algebra generator is **$\sigma_i$** (never $T$, never $t$ or
+$A$ for the Jones polynomial variable). The Iwahori–Hecke algebra
+$H_n(q)$ is presented as a quotient of the braid group algebra of
+$B_n$, so the same symbol $\sigma_i$ is used for the braid group
+generator and its image in $H_n(q)$ — context disambiguates.
 
-- **Hecke relation**: $(T - q)(T + q^{-1}) = 0$, equivalently
-  $T^2 = (q - q^{-1})T + 1$.
-- **Skein relation**: Multiply the Hecke relation by $T^{-1}$ to get
-  $T - T^{-1} = q - q^{-1}$, which is the Skein relation
-  $L_+ - L_- = (q - q^{-1})\,L_0$.
+- **Hecke relation**: $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$, equivalently
+  $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$.
+- **Skein relation**: Multiply the Hecke relation by $\sigma_i^{-1}$ to
+  get $\sigma_i - \sigma_i^{-1} = q - q^{-1}$, which is the Skein
+  relation $L_+ - L_- = (q - q^{-1})\,L_0$.
 - **Translation dictionary**:
-  - $T$ = positive crossing $L_+$
-  - $T^{-1}$ = negative crossing $L_-$
+  - $\sigma_i$ = positive crossing $L_+$
+  - $\sigma_i^{-1}$ = negative crossing $L_-$
   - $1$ = smoothed crossing $L_0$
-  - $q$ and $-q^{-1}$ are the eigenvalues of $T$ (symmetric and
+  - $q$ and $-q^{-1}$ are the eigenvalues of $\sigma_i$ (symmetric and
     antisymmetric channels respectively)
 - **Jones polynomial**: Always $J_K(q)$, never $V_K(t)$ or bracket
   with variable $A$.  The Jones polynomial is the Markov trace
   $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$ in $H_n(q)$.
-- **Braid generators**: $\sigma_i$ denotes the braid group generator
-  in $B_n$. The Hecke algebra image is $T_i = \rho(\sigma_i)$.
-  When writing the Hecke relation, always use $T$, not $\sigma$.
+- **Braid vs Hecke**: $\sigma_i$ denotes both the braid-group generator
+  in $B_n$ and its image in $H_n(q)$; the latter satisfies the Hecke
+  relation above while the former satisfies only the braid relations.
+  This shared notation follows the standard knot-theory convention
+  (Kassel, Jones).
 
 ### 8. File hygiene
 

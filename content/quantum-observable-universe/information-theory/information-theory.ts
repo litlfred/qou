@@ -17,6 +17,7 @@ export default chapter({
       label: "sec:info-emergent-gravity",
       blocks: [
         "information-theory-intro",
+        "regime-table",
         "emergent-gravity-info",
         "planck-info-unit",
       ],

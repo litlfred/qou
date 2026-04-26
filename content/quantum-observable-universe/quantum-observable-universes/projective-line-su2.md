@@ -1,4 +1,4 @@
-Continuing [maximal torus of SU(2)](#ex:maximal-torus-su2),
+Continuing [maximal torus of $\mathrm{SU}(2)$](#ex:maximal-torus-su2),
 $G = \mathrm{SU}(2)$ and $T = \mathrm{U}(1)$.
 The quotient is
 $\mathbb{P}(V) = \mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{P}^1(\mathbb{C})$.

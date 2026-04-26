@@ -291,9 +291,25 @@ Content change detected
 3. **Resolve concerns**: when an agent's output raises mathematical or
    structural questions, bring them to the author as multiple-choice questions
    (author cannot type easily).
-4. **Maintain consistency**: notation ($R$ not $k$, $\mathbf{C}$ for categories
-   not $\mathcal{C}$, $\tau$ for fibre functor — see `copilot-instructions.md`
-   §11.3), labeling conventions, cross-references, glossary terms.
+4. **Maintain consistency**: notation per CLAUDE.md §7aa (STRICT) and
+   §7a Hecke-Skein convention. The hot spots:
+   - Categories: bold `$\mathbf{C}$`, never calligraphic `$\mathcal{C}$`.
+   - Fibre functor: `$\tau$`, never `$\omega$` or `$U$`.
+   - Hecke generator: `$\sigma_i$` (post-2026-04-26 convention flip),
+     same symbol as the braid generator in $B_n$. Never `$T_i$` for
+     the Hecke relation. Torus knots `$T_{p,q}$` (two indices) and
+     basis elements `$T_w$` are unaffected.
+   - Mass: `$\mathfrak{m}$` (fraktur) for categorical mass; plain
+     `$m_e, m_p, m_n$` for CODATA-measured experimental masses.
+   - Energy registers: bold `$\mathbf{E}$` for q-energy /
+     binding-energy register; plain italic `$E_{\mathfrak{H}}$` only
+     with hadron subscript.
+   - Vortex morphism: `$\varrho$`, never `$\gamma$` (reserved).
+   - Numerical `$q$` only in Ch 0 / Ch 6 (Observations) / Ch 9.
+   - §7ab: derived/observed numerical values use `$\approx$`, not
+     `$=$`, unless an explicit `$O(\cdot)$` error term is present.
+   See `copilot-instructions.md` §11.3 for the full register list and
+   `rendering-auditor.md` for the audit checklist.
 5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
    propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
    exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each

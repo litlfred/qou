@@ -1,5 +1,5 @@
 Let $G = \mathrm{SU}(2)$ be the emergent gauge group
-([SU(2) emergence](#thm:su2-emergence)) and let
+([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)) and let
 $V_{1/2} \cong \mathbb{C}^2$ be the
 [spin-$\tfrac{1}{2}$ representation](#rem:spin-half-representation).
 For each simple object $V_j$ and tensor power

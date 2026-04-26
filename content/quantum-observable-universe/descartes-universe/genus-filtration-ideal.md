@@ -26,7 +26,7 @@ Jones polynomials can be evaluated on $\Sigma_g$.  Completeness
 ([cohomological embedding](#prop:cohomological-embedding))
 requires that these evaluations **span all $5$ irrep
 characters**: the evaluation matrix
-$M_{ij} = \chi_{\lambda_j}(T_i)$ must have rank $5$.*
+$M_{ij} = \chi_{\lambda_j}(\sigma_i)$ must have rank $5$.*
 
 *The strand counts $m \geq 4$ contribute no new knots: at genus
 $g$, the constraint $(m-1)(s-1) \leq 2g$ with $m \geq 4$ and

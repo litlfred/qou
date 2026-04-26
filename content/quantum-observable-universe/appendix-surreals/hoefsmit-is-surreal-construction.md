@@ -2,7 +2,7 @@ The Hoefsmit seminormal form
 ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form))
 diagonalises the Iwahori--Hecke algebra $H_n(q)$ acting on
 $V^{\otimes n}$ along a tower of Young--Jucys--Murphy elements
-indexed by standard tableaux. At each step, a Hecke generator $T_i$
+indexed by standard tableaux. At each step, a Hecke generator $\sigma_i$
 splits a tableau-vector into two eigencomponents:
 
 - the **symmetric** ($q$-eigen) component, corresponding to the
@@ -64,7 +64,7 @@ The Hoefsmit seminormal basis is built by inductively decomposing
 $V^{\otimes n}$ via the chain
 $H_1(q) \subset H_2(q) \subset \cdots \subset H_n(q)$. At each step
 $k$, every existing eigenvector $|t\rangle$ for $H_k(q)$ splits
-under $T_k$ into:
+under $\sigma_k$ into:
 
 - $a^+_t \cdot |t \cup \square_{k+1}^{\to}\rangle$ (extend tableau
   rightward; $q$-eigenvalue);
@@ -78,7 +78,7 @@ new surreals: $x^+$ (insert $+$ at position $k+1$) and $x^-$
 these two-fold splittings step-by-step.
 
 Compatibility with sums is forced by the eigenvalue convention:
-$T_i$'s $q$-eigenspace + $-q^{-1}$-eigenspace decomposition
+$\sigma_i$'s $q$-eigenspace + $-q^{-1}$-eigenspace decomposition
 matches Conway's $\{L \mid R\}$ pairing $L < x < R$.
 
 For tableaux of shape $\lambda$ with $\ell(\lambda) \leq 2$, the
@@ -114,7 +114,7 @@ This identification has several immediate consequences:
    reduced braids.
 
 3. **Hoefsmit factorisation = Conway construction**: the closed
-   formula for $\rho_\lambda(T_i)$ as a $2 \times 2$ matrix
+   formula for $\rho_\lambda(\sigma_i)$ as a $2 \times 2$ matrix
    in YJM coordinates is *exactly* the recursive surreal recipe
    $x = \{x^- \mid x^+\}$ with the eigenvalue ratio
    $q : -q^{-1}$ determining the position of $x$ between $x^-$

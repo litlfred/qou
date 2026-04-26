@@ -10,20 +10,17 @@ than stipulation.  Multiple observers share the same world — not
 each illuminating a private universe, but all navigating a common
 landscape.
 
-Some observations run deeper.  We can measure, record, and compare,
+Some observations run deeper.  We measure, record, and compare,
 and those comparisons are consistent — there is a pairing between
 what we observe and the instruments we use.  Smooth change is the
-rule: linear approximation describes our universe across scales,
-from planetary orbits to particle scattering.  We can accumulate
-quantities — add them up, integrate — and we can probe rates of
-change — take derivatives, differentiate.  The universe has
+rule across scales, so linear approximation describes our universe
+from planetary orbits to particle scattering, with integration and
+differentiation as its native operations.  The universe has
 *volume*: things occupy space, and that space can be measured.
-We have the perception of free will and intent — we choose to
-measure, to act, to organise — and that choice has consequences:
-observation creates outcomes not determined by the initial
-conditions.  Even the capacity for computation — the ability to
-reason, count, and calculate — seems woven into the fabric rather
-than bolted on.
+We have the perception of free will — choices to measure, act, and
+organise that have consequences not determined by the initial
+conditions.  Even the capacity for computation — to reason, count,
+and calculate — seems woven into the fabric rather than bolted on.
 
 Heisenberg reminded us that what we observe is not nature itself
 but nature exposed to our method of questioning.  This paper takes
@@ -227,7 +224,7 @@ smoothness is located in a single cohomology class — offering an
 obstruction-based perspective on Navier–Stokes regularity.
 
 [Chapter 8](#chap:info-theory) addresses Wigner's mystery directly:
-the mechanics of a QOU turn out to be Turing complete — the
+the mechanics of a QOU are Turing complete — the
 combinatorics supporting logic and computation is a property of
 the algebraic substrate, not the medium.  The Gröbner–Shirshov
 basis makes this computation *confluent* — every reduction
@@ -273,7 +270,8 @@ given configuration, the one minimising the categorical action
 wins, and strong duality identifies it uniquely.  The
 embeddability bound on $\Sigma_4$ yields exactly $7$ transfer
 matrices — six non-trivial force operators and the identity
-(**interaction completeness**).  The hyperbolic volumes of the
+(**interaction completeness**; the seven are enumerated in
+[tm-interaction-completeness](#tm-interaction-completeness)).  The hyperbolic volumes of the
 knots that appear — $\mathrm{Vol}(4_1)$, $\mathrm{Vol}(B_3)$, and
 others — encode the physical constants; the topological mass
 formula
@@ -352,7 +350,7 @@ parameter $q$ and are attached as witnesses to the proofs they
 support wherever appropriate.  The implementations in Rust and
 Python, together with the Lean sources, are available at
 [https://github.com/litlfred/qou](https://github.com/litlfred/qou).
-The author used large language models throughout the drafting and
+We used large language models throughout the drafting and
 formalisation process, both because a physical disability prevents
 sustained typing and to assist with Lean proof engineering.  Human
 adjudication of every line is not complete.

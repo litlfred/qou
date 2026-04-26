@@ -1,4 +1,4 @@
-Continuing [QOU on SU(2)](#ex:qou-su2), take $V = V_{1/2} \cong \mathbb{C}^2$.
+Continuing [QOU on $\mathrm{SU}(2)$](#ex:qou-su2), take $V = V_{1/2} \cong \mathbb{C}^2$.
 The symplectic form is
 $\phi = \begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}$,
 identifying $V \cong V^{\vee}$ with $\phi^{\vee} = -\phi$ (alternating).

@@ -2,13 +2,13 @@ The following algorithm computes the Groebner--Shirshov normal form
 of a nuclear braid word, following the division algorithm of
 \cite{leitnerpawloski2004} specialised to the Iwahori--Hecke algebra.
 
-**Input:** Mass number $A = Z + N$, proton count $Z$, neutron
-count $N$; the Iwahori--Hecke algebra $H_A(q) = R[B_A] / I$ with
+**Input:** Mass number $A = Z + N$, proton number $Z$, neutron
+number $N$; the Iwahori--Hecke algebra $H_A(q) = R[B_A] / I$ with
 $R = \mathbb{Z}[q, q^{-1}]$;
 the admissible system $(B, <)$ where $B$ = positive braid monomials
 and $<$ = length-lexicographic ordering
 ([admissible system](#unital-groebner-bases:def:admissible-system));
-the Groebner--Shirshov basis $G = \{T_i^2 - (q-q^{-1})T_i - 1,\;
+the Groebner--Shirshov basis $G = \{\sigma_i^2 - (q-q^{-1})\sigma_i - 1,\;
 \sigma_i\sigma_{i+1}\sigma_i - \sigma_{i+1}\sigma_i\sigma_{i+1},\;
 \sigma_i\sigma_j - \sigma_j\sigma_i\}$ for $|i-j| \geq 2$.
 
