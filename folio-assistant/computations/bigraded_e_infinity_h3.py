@@ -107,8 +107,8 @@ for label, levels, chain in [("PROTON  (uud)", p_levels, p_chain),
     print("  " + "-"*108)
     for i, (p, sym, std, alt) in enumerate(levels):
         cd = "" if i == 0 else f"({chain[i-1][0]},{chain[i-1][1]:+.3f})"
-        trM = float(W_sym)*sym + float(W_std)*std + float(W_alt)*alt
-        print(f"  {p:>3} {cd:>14} {sym:>+13.6f} {std:>+14.6f} {alt:>+15.6f}    {trM:>+15.10f}")
+        trM = W_sym*sym + W_std*std + W_alt*alt
+        print(f"  {p:>3} {cd:>14} {sym:>+13.6f} {std:>+14.6f} {alt:>+15.6f}    {float(trM):>+15.10f}")
 
 # Differential analysis: which length step contributes which channel
 print()

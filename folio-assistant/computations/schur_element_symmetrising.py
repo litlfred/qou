@@ -50,9 +50,13 @@ not the Markov-trace y_λ.
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import sympy as sp
+
+sys.path.insert(0, str(Path(__file__).parent))
+from y_lambda_jones_markov_witness import partitions_of
 
 
 def hook_lengths(partition: list[int]) -> dict:
@@ -103,7 +107,6 @@ def main() -> None:
         "tables_by_n": {},
     }
     for n in range(2, 13):
-        from y_lambda_jones_markov_witness import partitions_of  # noqa
         parts = list(partitions_of(n))
         out["tables_by_n"][str(n)] = [
             {

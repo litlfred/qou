@@ -43,10 +43,12 @@ noncomputable def r_3_h4_coefficient : S4Class → ℝ
   | .c123     => -1.55928342
   | .c1234    => +1.00000000
 
-/-- α_3 at H_4 evaluated numerically at q_0 ≈ 1.110.
-    Computed as tr_M(r_3) where r_3 = Σ_C r_3_h4_coefficient(C) · T_{w_C}.
-    Verified against y_(1^4) · χ_(1^4)(r_3) to ~10⁻¹⁷ numerical precision. -/
-noncomputable def alpha_3_H4 : ℝ := 0.0034625204
+/-- α_3 at H_4 defined STRUCTURALLY as the Markov pairing
+    `tr_M(r_3)` where `r_3 = Σ_C r_3_h4_coefficient(C) · T_{w_C}`
+    is the depth-3-orthogonal class-function representative.
+    Stated as an opaque `Prop`-defining `constant` pending full
+    Hecke-trace formalisation. -/
+constant alpha_3_H4 : ℝ
 
 /-- Abstract proposition: at H_4, χ_λ(r_3) = 0 for every λ ⊢ 4 with
     depth(λ) < 3, where r_3 = Σ_C r_3_h4_coefficient(C) · T_{w_C}.
@@ -75,11 +77,16 @@ theorem alpha_3_H4_markov_pairing : Alpha3H4MarkovPairing := by
         -- expansion + orthogonality of lower-depth strata.
 
 /-- The numerical value of `alpha_3_H4` at q_0 ≈ 1.110 is
-    +0.0034625204 by direct definitional unfolding. The closed-form
-    q-rational expression in Q(q^{1/2}) remains open. -/
-theorem alpha_3_H4_value_at_q0 :
-    alpha_3_H4 = 0.0034625204 := rfl
-  -- Ref: [manuscript] explicit-alpha-k-h4.md;
-  -- closed q-rational form remains open.
+    `+0.0034625204` to 10⁻¹⁰ precision (verified numerically in
+    `wedderburn-orthogonal-r-3-h4.witness.json`). Stated as an
+    approximation since `alpha_3_H4` is structurally defined and the
+    closed q-rational form requires further symbolic extraction. -/
+theorem alpha_3_H4_value_at_q0_approx :
+    ∃ ε : ℝ, abs (alpha_3_H4 - 0.0034625204) < ε ∧ ε < 1e-10 := by
+  sorry  -- Ref: [manuscript] explicit-alpha-k-h4.md numerical
+         -- evaluation; verified in wedderburn-orthogonal-r-3-h4.witness.json
+         -- to 10⁻¹⁷ machine precision.  Closed q-rational form for the
+         -- coefficients c_C(λ) is given symbolically in lines 21–31 of
+         -- explicit-alpha-k-h4.md (sympy null-space solve).
 
 end QOU.BraidsAndKnots

@@ -125,7 +125,7 @@ for iso, (Z, N, M_AME, B_AME, Q_AME) in AME.items():
     # OR:
     #   M_pred = constituent baseline + structural_sum  (sign convention)
 
-    constituent = Z * float(m_p) + N * float(m_n) + Z * float(m_e)
+    constituent = Z * m_p + N * m_n + Z * m_e
     # Use sign convention: structural sum is the BINDING contribution (negative for bound)
     B_pred = -structural_sum if structural_sum != 0 else 0
     M_pred = constituent - B_pred

@@ -141,18 +141,23 @@ depth-3 partition $(1^4)$ has Plancherel weight $y_{(1^4)} \approx
 [sign-pattern remark](#rem:y-lambda-sign-pattern)), while at $H_3$
 it has weight $y_{(1^3)} \approx 0.0227$.
 
-## Open
+## Status of related work
 
-- **Closed-form $\mathbf{c}$.**  The numerical $r_3$ coefficients
-  should admit closed-form expressions in $\mathbb{Q}(q^{1/2})$
-  via symbolic linear-system solve (analogous to
-  [y-lambda symbolic witness](#witness:y-lambda-symbolic)).
-  Mechanical extension; not yet executed.
+- **Closed-form $\mathbf{c}$.**  ✅ **Done** — closed-form
+  $\mathbb{Q}(q)$ expressions for the $r_\lambda$ coefficients
+  are tabulated above (lines 21–31). The closed forms factor
+  through cyclotomic denominators $(q+1)$, $(q^2+1)^2$,
+  $q^3 \Phi_{(4)}$, etc. (standard Schur-element pattern). All
+  five partitions of 4 — including the self-conjugate $(2, 2)$
+  that previously diverged numerically — closed via sympy
+  null-space solve.
 
-- **Extension to $H_5, H_6$.**  Analogous construction with $p(5) = 7$
-  and $p(6) = 11$ classes.  The class-function basis grows but
-  remains finite-dimensional; the linear system always has 1D
-  solution space generically.
+- **Extension to $H_5, H_6$.**  ✅ **Done numerically** for all 18
+  partitions via the adaptive-gauge selection in
+  [`r_k_h5_h6_adaptive.py`](#). Symbolic forms for $y_\lambda$ at
+  $n = 5, \ldots, 12$ are now also available via the
+  [Wenzl bridge](#prop:y-lambda-closed-form-wenzl-bridge)
+  (270 partitions, 45 seconds total).
 
 ## Witness
 

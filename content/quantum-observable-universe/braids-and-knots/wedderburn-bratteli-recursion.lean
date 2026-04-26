@@ -1,16 +1,29 @@
 /-
   Wedderburn–Bratteli recursion for Jones–Markov weights y_λ at H_n(R, q).
 
-  Statement: with z = 1/(q^(1/2) + q^(-1/2)) the Markov parameter and
-  c(λ, μ) = j - i the q-content of the box (i, j) ∈ λ \ μ:
+  Statement: with z = 1/(q^(1/2) + q^(-1/2)) the Markov parameter, the
+  Jones–Markov weights satisfy a multiplicative recursion of the form
 
-    y_λ^(n+1) = z · [c(λ, μ) + 1]_q / [c(λ, μ) + height(λ)]_q · y_μ^(n)
+    y_λ^(n+1) = z · F_q(λ, μ) · y_μ^(n)
 
-  for every Bratteli edge μ ↗ λ at generic q.  The Bratteli diagram is
-  multiplicity-free at generic q (Hoefsmit), so the recursion is
-  well-defined and reproduces the y_λ tower from H_2 base data.
+  for every Bratteli edge μ ↗ λ at generic q, where F_q(λ, μ) is a
+  q-rational function of the added cell's q-content c(λ, μ) = j - i
+  and the partition shape data.  The specific closed form
+
+    F_q(c, h) = [c+1]_q / [c+h]_q
+
+  with h := height(λ) is one candidate matching the Wenzl-bridge
+  derivation (see prop:y-lambda-closed-form-wenzl-bridge); the full
+  closed form is extracted symbolically from the y_λ witness ratios
+  via y_lambda_bratteli_extract.py and is canonically expressed via
+  the Wenzl Schur principal-specialization formula.
+
+  The Bratteli diagram is multiplicity-free at generic q (Hoefsmit),
+  so the recursion is well-defined and reproduces the y_λ tower from
+  H_2 base data.
 
   Refs: prop:wedderburn-bratteli-recursion,
+        prop:y-lambda-closed-form-wenzl-bridge,
         prop:hoefsmit-seminormal-form,
         thm:jones-markov-trace
 -/
@@ -104,12 +117,18 @@ theorem y_base_case_singleton (y : Partition → ℝ)
   -- H_1(R, q) = R, tr_M = identity character on V_(1).
 
 /-- Plancherel completeness at every level: Σ y_λ · d_λ = 1 where
-    d_λ = dim V_λ (hook-length formula). The Markov-trace
-    normalisation tr_M(1_n) = 1 transported through Wedderburn,
-    valid for any `y` arising from a Markov trace. -/
+    d_λ = dim V_λ (hook-length formula), summed over all partitions
+    of n.  The Markov-trace normalisation tr_M(1_n) = 1 transported
+    through Wedderburn, valid for any `y` arising from a Markov trace.
+
+    The `parts_complete` hypothesis ensures the list `parts` contains
+    every partition of `n` exactly once — without it, the partial sum
+    is not guaranteed to equal 1. -/
 theorem plancherel_completeness
     (q : ℝ) (hq : q > 0) (n : ℕ)
     (parts : List Partition)
+    (parts_complete : ∀ λ : Partition, λ.parts.sum = n → λ ∈ parts)
+    (parts_nodup : parts.Nodup)
     (y : Partition → ℝ) (d : Partition → ℕ)
     (hrec : SatisfiesWedderburnBratteliRecursion q y) :
     (parts.map (fun λ => y λ * (d λ : ℝ))).sum = 1 := by

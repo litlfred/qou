@@ -36,7 +36,11 @@ def char_value(shape, word):
     M = sigmas[word[0] - 1].copy()
     for k in word[1:]:
         M = M @ sigmas[k - 1]
-    return mp.mpf(repr(float(np.trace(M).real)))
+    # Accumulate trace as mpf to preserve precision (avoid double float cast).
+    trace_real = mp.mpf(0)
+    for i in range(M.shape[0]):
+        trace_real += mp.mpf(repr(M[i, i].real))
+    return trace_real
 
 
 def markov_trace_word(word):
