@@ -36,6 +36,15 @@ Frobenius trace.  We call this structure a **quantum
 observable universe** (QOU).  Its axioms encode precisely the
 features listed above and nothing more.
 
+The categorical language identifies, as internal objects of the
+category, the physical concepts that describe the mechanics of a
+quantum universe.  The Lagrangian is a trace; the Dirac operator
+is a connection twisted by the Reeb derivation; the action is an
+integral; curvature, gauge field, and matter current are specific
+morphisms in $\mathbf{C}$.  Each is forced — not borrowed from
+the classical dictionary, but recovered as the unique construction
+the axioms allow.
+
 The consequences are broad in scope and specific in detail.  The
 symmetry group $\mathrm{SU}(2)$ is not assumed; it emerges from
 the axioms.  The uncertainty principle is not postulated; it

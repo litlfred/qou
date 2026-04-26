@@ -164,13 +164,15 @@ torus-knot words define the full particle spectrum.
 
 [Chapter 10](#chap:particle-interactions) develops the Gröbner–Shirshov
 reduction engine that computes normal forms for knot words in the
-Iwahori–Hecke algebra, together with an **integer linear program**
-whose **dual** — taken over the Frobenius Gram matrix — selects
-the unique transfer operator that fires at each vertex.  The ILP
-dual is the mechanism by which the framework decides *which*
-particle interaction happens: of the admissible operators at a
-given configuration, the one minimising the categorical action
-wins, and strong duality identifies it uniquely.  The
+Iwahori–Hecke algebra, together with a **semidefinite program**
+over matrix-valued operators — its diagonal projection is the
+**integer linear program** of the rank-1 case — whose **dual**
+over the Frobenius Gram matrix selects the unique transfer
+operator that fires at each vertex.  The SDP/LP dual is the
+mechanism by which the framework decides *which* particle
+interaction happens: of the admissible operators at a given
+configuration, the one minimising the categorical action wins,
+and strong duality identifies it uniquely.  The
 embeddability bound on $\Sigma_4$ yields exactly $7$ transfer
 matrices — six non-trivial force operators and the identity
 (**interaction completeness**; the seven are enumerated in
