@@ -143,7 +143,7 @@ def AlgElement.leftMulWord (w : List G) (f : AlgElement G k) :
     AlgElement G k :=
   w.foldr (fun g acc => AlgElement.leftMulGen g acc) f
 
-/-- The singleton of a word `w` with coefficient 1:
+/- The singleton of a word `w` with coefficient 1:
     the algebra element with `coeff(w) = 1` and all others 0.
 
     This is a semantic property: `leftMulWord w (singleton [])` has
