@@ -117,6 +117,14 @@ DEPS = {
         # will consume.  See methodology-deprecation.witness.json
         # §principled_path.
     ],
+    "joint-tower-sdp-h3": [
+        "joint_tower_sdp_solver.py",
+        "gb_filtration_jet_tracker.py",
+        # Phase 3a verifier: runs known canonical T_w for
+        # {quark, electron, proton, neutron} through gb-filtration-jet-tracker;
+        # verifies cross-level consistency (nucleon ← 3⊗quark).
+        # Consumed by prop:atom-knot-mass-derivation as step-1 input.
+    ],
 }
 
 # Outputs produced by each artifact (for missing-output check)
@@ -131,6 +139,7 @@ OUTPUTS = {
     "y-lambda-wenzl-bridge-symbolic": ["y-lambda-wenzl-bridge-symbolic-witness.json"],
     "y-lambda-cyclotomic-factor": ["y-lambda-cyclotomic-factor.witness.json"],
     "gb-filtration-jet-order": ["gb-filtration-jet-order.witness.json"],
+    "joint-tower-sdp-h3": ["joint-tower-sdp-h3.witness.json"],
 }
 
 
