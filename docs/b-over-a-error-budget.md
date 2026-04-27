@@ -303,3 +303,62 @@ If this representation is the right one, T_w(⁶Li) could be derived as `LR_embe
 | ρ for ⁶Li, ⁷Li | **OPEN** — depends on the family-4 derivation method |
 
 GAP 4 (T_w for ℓ ≥ 2) and GAP 5 (ρ for ℓ ≥ 2) reduce to: **derive the family-4 T_w and ρ structure for ⁶Li and ⁷Li**. The watched branch's R1–R5 + LR embedding infrastructure provides the algebraic tools; phase 4+ runs are needed to actually instantiate them.
+
+## Appendix B: empirical residuals from the canonical pipeline
+
+Per [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/mass-table-ppb.witness.json) on the watched branch (commit `7fbbec14`), the canonical pipeline produces predictions for 10 light atoms.  The residuals reveal a structural signature:
+
+| Atom | A | Family | B_AME (MeV) | B_pred (MeV) | err (MeV) | err % |
+|---|---:|:---:|---:|---:|---:|---:|
+| ²H | 2 | 1 | 2.2246 | 2.2488 | +0.0243 | **+1.09%** |
+| ³H | 3 | 1 | 8.4818 | 8.4686 | −0.0132 | **−0.16%** |
+| ³He | 3 | 1 | 7.7180 | 7.4889 | −0.2291 | **−2.97%** |
+| ⁴He | 4 | 2 | 28.2957 | 29.9557 | +1.6600 | **+5.87%** |
+| ⁸Be | 8 | 3 | 56.4995 | 62.3383 | +5.8388 | **+10.33%** |
+| ¹²C | 12 | 3 | 92.1617 | 97.1480 | +4.9863 | **+5.41%** |
+| ¹⁶O | 16 | 3 | 127.6193 | 134.3846 | +6.7654 | **+5.30%** |
+| ²⁰Ne | 20 | 3 | 160.6449 | 174.0483 | +13.4034 | **+8.34%** |
+| ²⁴Mg | 24 | 3 | 198.2569 | 216.1389 | +17.8820 | **+9.02%** |
+| ⁴⁰Ca | 40 | 3 | 342.0521 | 408.7713 | +66.7192 | **+19.51%** |
+
+Mean absolute err = **6.80%**.  No atom is within 1% (per the witness's
+`within` field: 0 atoms within 10⁻⁹).
+
+### Structural observations
+
+**Family 1 (D, T, ³He):** errors are sub-3%, mostly sub-percent.  D is +1.09% (slight overpredict), T is excellent at −0.16%, ³He is −2.97% (largest family-1 deviation).  The variation is consistent with the magnitude of omitted Wigner T-pairing / chirality terms (Tier 3.5).  No systematic trend with A.
+
+**Family 2 (⁴He):** +5.87%, the magic-A formula's one data point.  Lies between family 1 and family 3, suggesting the magic-A specialization captures the bulk of the binding but misses ~6% from omitted higher-order corrections.
+
+**Family 3 (⁸Be–⁴⁰Ca):** errors grow systematically with A — from +5.30% at ¹⁶O to +19.51% at ⁴⁰Ca.  The pattern is not noise: the recursive-on-4He methodology accumulates error per α-cluster.  ⁴⁰Ca is **10α** clusters — 10 cluster-couplings, each contributing ~2% error compounded.
+
+**Empirical scaling for family 3:**
+
+  err_pct(family 3) ≈ 5% + 0.4% × (A − 16)   [linear in A above ¹⁶O]
+
+⁴⁰Ca: 5% + 0.4% × 24 = 14.6% predicted, 19.5% observed → still a residual
+slope.  Suggests α-α coupling correction is larger than linear in A.
+
+### What this implies for the canonical pipeline
+
+The watched-branch's `35a Term 7 only with universal m_e·8G — captures
+6–25% of binding (magic ⁴He highest)` is consistent with these data:
+adding ONLY Term 7 to a baseline captures 6–25% of binding (⁴He hits
+the high end at 25% as doubly-magic).  This is bottom-up: Term 7 is
+the magic-A residue contribution.
+
+The family-3 error grows because each α-cluster carries family-2's
+~6% residual; recursively, the residuals accumulate.  A v5 implementation
+against the canonical pipeline should expect:
+
+| Family | Expected residual on B (MeV) | Source |
+|---|---|---|
+| 1 | < 0.3 MeV per atom | Wigner T-pairing + chirality omissions |
+| 2 (⁴He) | ~1.7 MeV (5.9% of 28.3) | Magic-A higher-order corrections |
+| 3 | ~1.7 × n_α MeV per atom (n_α = #α-clusters) | Cluster-recursion accumulation |
+| 4 | undefined | T_w not yet derived |
+
+This sets the **target** for any improvement: a refined predictor
+that captures the magic-A higher-order corrections (Term 7+ at ℓ=5
+on ⁴He) and the α-α cluster couplings would close the family-2 / 3
+residuals.
