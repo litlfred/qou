@@ -1,0 +1,169 @@
+{
+  "computation": "six-term-mass-pred",
+  "description": "Per-particle six-term mass-formula enumeration for Family 1 (D, T, \u00b3He) consuming canonical GB-NF data from joint-tower-sdp-rust.witness.json. Reads each existing per-term script's helper (no SnapPy, no hp_volume, no fitted constants). T4 (Frobenius co-Casimir) is marked pending because frobenius_partition_sum.py lacks a per-atom helper; the AME-comparable binding-energy assembly is queued as Sprint A v4.",
+  "timestamp": "2026-04-27T19:44:18.963348+00:00",
+  "source_witness": "folio-assistant/computations/joint-tower-sdp-rust.witness.json",
+  "precision_dps": 50,
+  "per_particle": {
+    "deuteron-2H": {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "braid_word": [
+        1,
+        -2,
+        1,
+        1,
+        1,
+        -2
+      ],
+      "native_strand_count": 3,
+      "b_ame_mev": 2.2246,
+      "terms": {
+        "T1_T2_T3_brane_tower": {
+          "M_MeV_raw": "1374.850570439709943919545",
+          "M_MeV_corrected": "1348.234594512608677179121",
+          "n_strands": 6,
+          "source": "tower_isotope_absolute.compute_isotope_tower"
+        },
+        "T4_frobenius_co_casimir": {
+          "pending": true,
+          "reason": "frobenius_partition_sum.py lacks per-atom helper; Term 4 contribution is partition-indexed and requires summing the central-idempotent basis weighted by [n]_q!/(dim_q(\u03bb)\u00b2\u00b7dim(\u03bb)) \u2014 to be added in Sprint A v4."
+        },
+        "T5_chirality_content_average": {
+          "c_avg": -3.783724658473894,
+          "numerator": 1.8472723627651368,
+          "denominator": -0.4882153247139831,
+          "source": "ribbon_content_average.content_average"
+        },
+        "T6_habiro_residue": {
+          "per_A": {
+            "2": {
+              "A=2": {
+                "partition_count": 11,
+                "global_sum_at_q0": "0.0831585889687035716872811457205",
+                "h3_additive_at_q0": "4.19496243227178831824995441755",
+                "ratio_global_over_h3": "0.0198234406889953745551186321540"
+              }
+            }
+          },
+          "source": "habiro_residue_symbolic.eval_schur_weyl_exact_at_q0"
+        }
+      }
+    },
+    "tritium-3H": {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "braid_word": [
+        -1,
+        2,
+        -3,
+        2,
+        1,
+        -3,
+        -3,
+        4,
+        -3,
+        -2,
+        -3,
+        -4,
+        -3,
+        2
+      ],
+      "native_strand_count": 5,
+      "b_ame_mev": 8.4818,
+      "terms": {
+        "T1_T2_T3_brane_tower": {
+          "M_MeV_raw": "1794.200365011711426969544",
+          "M_MeV_corrected": "1759.466122069022007842702",
+          "n_strands": 9,
+          "source": "tower_isotope_absolute.compute_isotope_tower"
+        },
+        "T4_frobenius_co_casimir": {
+          "pending": true,
+          "reason": "frobenius_partition_sum.py lacks per-atom helper; Term 4 contribution is partition-indexed and requires summing the central-idempotent basis weighted by [n]_q!/(dim_q(\u03bb)\u00b2\u00b7dim(\u03bb)) \u2014 to be added in Sprint A v4."
+        },
+        "T5_chirality_content_average": {
+          "c_avg": 14.769938682379722,
+          "numerator": -4.652351922591309,
+          "denominator": -0.3149878968787787,
+          "source": "ribbon_content_average.content_average"
+        },
+        "T6_habiro_residue": {
+          "per_A": {
+            "3": {
+              "A=3": {
+                "partition_count": 30,
+                "global_sum_at_q0": "0.00113270787017229721218585604267",
+                "h3_additive_at_q0": "9.91664853812058338386569674510",
+                "ratio_global_over_h3": "0.000114222851179817000616968504378"
+              }
+            }
+          },
+          "source": "habiro_residue_symbolic.eval_schur_weyl_exact_at_q0"
+        }
+      }
+    },
+    "helium3-3He": {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "braid_word": [
+        -1,
+        2,
+        -1,
+        2,
+        -1,
+        2
+      ],
+      "native_strand_count": 3,
+      "b_ame_mev": 7.718,
+      "terms": {
+        "T1_T2_T3_brane_tower": {
+          "M_MeV_raw": "2330.389319228182948525052",
+          "M_MeV_corrected": "2285.274899265063634812124",
+          "n_strands": 9,
+          "source": "tower_isotope_absolute.compute_isotope_tower"
+        },
+        "T4_frobenius_co_casimir": {
+          "pending": true,
+          "reason": "frobenius_partition_sum.py lacks per-atom helper; Term 4 contribution is partition-indexed and requires summing the central-idempotent basis weighted by [n]_q!/(dim_q(\u03bb)\u00b2\u00b7dim(\u03bb)) \u2014 to be added in Sprint A v4."
+        },
+        "T5_chirality_content_average": {
+          "c_avg": 1.6913141346905476,
+          "numerator": -1.596216126811563,
+          "denominator": -0.9437727114505644,
+          "source": "ribbon_content_average.content_average"
+        },
+        "T6_habiro_residue": {
+          "per_A": {
+            "3": {
+              "A=3": {
+                "partition_count": 30,
+                "global_sum_at_q0": "0.00113270787017229721218585604267",
+                "h3_additive_at_q0": "9.91664853812058338386569674510",
+                "ratio_global_over_h3": "0.000114222851179817000616968504378"
+              }
+            }
+          },
+          "source": "habiro_residue_symbolic.eval_schur_weyl_exact_at_q0"
+        }
+      }
+    }
+  },
+  "attestation": {
+    "used_snappy": false,
+    "used_hp_volume": false,
+    "used_volume_match": false,
+    "used_fitted_constants": false,
+    "term_status": {
+      "T1_T2_T3": "wired (compute_isotope_tower)",
+      "T4": "pending \u2014 needs per-atom Frobenius co-Casimir helper",
+      "T5": "wired (ribbon_content_average.content_average)",
+      "T6": "wired (habiro_residue_symbolic.eval_schur_weyl_exact_at_q0)"
+    },
+    "ame_comparison_pending": true,
+    "ame_comparison_reason": "Four-of-six terms wired but the consumer does not yet calibrate to MeV via electron and convert tower mass to binding energy via B = Z\u00b7m_p + N\u00b7m_n \u2212 M_total. Sprint A v4 will land that conversion."
+  }
+}
