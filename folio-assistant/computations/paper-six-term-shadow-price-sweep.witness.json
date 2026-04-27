@@ -8,7 +8,7 @@
     "prop:content-scaling-correspondence",
     "conj:shell-correction-term-seven"
   ],
-  "computedAt": "2026-04-25T14:28:21.151541+00:00",
+  "timestamp": "2026-04-27T21:20:43.384482+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate \u03bb; approximate q^{c\u0304} \u2212 q^{\u2212c\u0304} for non-self-conjugate (coarse \u2014 exact via Hoefsmit available in pyhecke)."
@@ -39,9 +39,9 @@
           "height": 1,
           "content_sum": 3,
           "self_conjugate": false,
-          "C_lambda": 0.0513516281567462,
+          "C_lambda": 0.05135162815674618,
           "S_lambda": 0.75,
-          "contribution": 0.03851372111755965
+          "contribution": 0.038513721117559636
         },
         {
           "shape": [
@@ -52,12 +52,12 @@
           "height": 3,
           "content_sum": -3,
           "self_conjugate": false,
-          "C_lambda": -0.0513516281567462,
+          "C_lambda": -0.05135162815674618,
           "S_lambda": 0.75,
-          "contribution": -0.03851372111755965
+          "contribution": -0.038513721117559636
         }
       ],
-      "walltime_sec": 0.0005922317504882812
+      "walltime_sec": 0.00072479248046875
     },
     "n   (Z=0, N=1)": {
       "Z": 0,
@@ -84,9 +84,9 @@
           "height": 1,
           "content_sum": 3,
           "self_conjugate": false,
-          "C_lambda": 0.0513516281567462,
+          "C_lambda": 0.05135162815674618,
           "S_lambda": 0.75,
-          "contribution": 0.03851372111755965
+          "contribution": 0.038513721117559636
         },
         {
           "shape": [
@@ -97,17 +97,17 @@
           "height": 3,
           "content_sum": -3,
           "self_conjugate": false,
-          "C_lambda": -0.0513516281567462,
+          "C_lambda": -0.05135162815674618,
           "S_lambda": 0.75,
-          "contribution": -0.03851372111755965
+          "contribution": -0.038513721117559636
         }
       ],
-      "walltime_sec": 0.0004391670227050781
+      "walltime_sec": 0.0005447864532470703
     },
     "D   (Z=1, N=1)": {
       "Z": 1,
       "N": 1,
-      "B_shadow": 0.07497648289486408,
+      "B_shadow": 0.07497648289486407,
       "n_partitions_nonzero": 1,
       "top_5_contributions": [
         {
@@ -119,17 +119,17 @@
           "height": 3,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.03748824144743204,
+          "C_lambda": 0.037488241447432034,
           "S_lambda": 2.0,
-          "contribution": 0.07497648289486408
+          "contribution": 0.07497648289486407
         }
       ],
-      "walltime_sec": 0.003065347671508789
+      "walltime_sec": 0.002999544143676758
     },
     "T   (Z=1, N=2)": {
       "Z": 1,
       "N": 2,
-      "B_shadow": 0.0008740677314373761,
+      "B_shadow": 0.0008740677314373878,
       "n_partitions_nonzero": 29,
       "top_5_contributions": [
         {
@@ -142,9 +142,9 @@
           "height": 4,
           "content_sum": -1,
           "self_conjugate": false,
-          "C_lambda": -0.0038154968815414794,
-          "S_lambda": 1.3867225487012695,
-          "contribution": -0.0052910355601329465
+          "C_lambda": -0.0038154968815414655,
+          "S_lambda": 1.3867225487012693,
+          "contribution": -0.0052910355601329265
         },
         {
           "shape": [
@@ -157,9 +157,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0014417276851054716,
+          "C_lambda": 0.0014417276851054703,
           "S_lambda": 3.0,
-          "contribution": 0.0043251830553164144
+          "contribution": 0.004325183055316411
         },
         {
           "shape": [
@@ -170,9 +170,9 @@
           "height": 3,
           "content_sum": 8,
           "self_conjugate": false,
-          "C_lambda": 0.016772795517085437,
+          "C_lambda": 0.01677279551708543,
           "S_lambda": 0.25,
-          "contribution": 0.004193198879271359
+          "contribution": 0.0041931988792713575
         },
         {
           "shape": [
@@ -185,9 +185,9 @@
           "height": 5,
           "content_sum": -8,
           "self_conjugate": false,
-          "C_lambda": -0.016772795517085437,
+          "C_lambda": -0.01677279551708543,
           "S_lambda": 0.25,
-          "contribution": -0.004193198879271359
+          "contribution": -0.0041931988792713575
         },
         {
           "shape": [
@@ -199,17 +199,17 @@
           "height": 4,
           "content_sum": 4,
           "self_conjugate": false,
-          "C_lambda": 0.011093964000429866,
+          "C_lambda": 0.011093964000429852,
           "S_lambda": 0.25,
-          "contribution": 0.0027734910001074664
+          "contribution": 0.002773491000107463
         }
       ],
-      "walltime_sec": 0.011316776275634766
+      "walltime_sec": 0.011742830276489258
     },
     "\u00b3He (Z=2, N=1)": {
       "Z": 2,
       "N": 1,
-      "B_shadow": 0.01145613885170327,
+      "B_shadow": 0.01145613885170324,
       "n_partitions_nonzero": 29,
       "top_5_contributions": [
         {
@@ -222,9 +222,9 @@
           "height": 4,
           "content_sum": 1,
           "self_conjugate": false,
-          "C_lambda": 0.003815496881541479,
-          "S_lambda": 1.3867225487012695,
-          "contribution": 0.005291035560132946
+          "C_lambda": 0.0038154968815414655,
+          "S_lambda": 1.3867225487012693,
+          "contribution": 0.0052910355601329265
         },
         {
           "shape": [
@@ -237,9 +237,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0014417276851054716,
+          "C_lambda": 0.0014417276851054703,
           "S_lambda": 3.0,
-          "contribution": 0.0043251830553164144
+          "contribution": 0.004325183055316411
         },
         {
           "shape": [
@@ -250,9 +250,9 @@
           "height": 3,
           "content_sum": 8,
           "self_conjugate": false,
-          "C_lambda": 0.016772795517085437,
+          "C_lambda": 0.01677279551708543,
           "S_lambda": 0.25,
-          "contribution": 0.004193198879271359
+          "contribution": 0.0041931988792713575
         },
         {
           "shape": [
@@ -265,9 +265,9 @@
           "height": 5,
           "content_sum": -8,
           "self_conjugate": false,
-          "C_lambda": -0.016772795517085437,
+          "C_lambda": -0.01677279551708543,
           "S_lambda": 0.25,
-          "contribution": -0.004193198879271359
+          "contribution": -0.0041931988792713575
         },
         {
           "shape": [
@@ -279,17 +279,17 @@
           "height": 4,
           "content_sum": 4,
           "self_conjugate": false,
-          "C_lambda": 0.011093964000429866,
+          "C_lambda": 0.011093964000429852,
           "S_lambda": 0.25,
-          "contribution": 0.0027734910001074664
+          "contribution": 0.002773491000107463
         }
       ],
-      "walltime_sec": 0.009243488311767578
+      "walltime_sec": 0.011924982070922852
     },
     "\u2074He (Z=2, N=2)": {
       "Z": 2,
       "N": 2,
-      "B_shadow": 0.09461777288019597,
+      "B_shadow": 0.094617772880196,
       "n_partitions_nonzero": 7,
       "top_5_contributions": [
         {
@@ -303,9 +303,9 @@
           "height": 5,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.019865503904309773,
+          "C_lambda": 0.019865503904309783,
           "S_lambda": 4.0,
-          "contribution": 0.07946201561723909
+          "contribution": 0.07946201561723913
         },
         {
           "shape": [
@@ -317,9 +317,9 @@
           "height": 4,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0025354163130576037,
+          "C_lambda": 0.0025354163130576,
           "S_lambda": 4.0,
-          "contribution": 0.010141665252230415
+          "contribution": 0.0101416652522304
         },
         {
           "shape": [
@@ -333,9 +333,9 @@
           "height": 6,
           "content_sum": 0,
           "self_conjugate": true,
-          "C_lambda": 0.0012535230026816183,
+          "C_lambda": 0.001253523002681617,
           "S_lambda": 4.0,
-          "contribution": 0.005014092010726473
+          "contribution": 0.005014092010726468
         },
         {
           "shape": [
@@ -347,7 +347,7 @@
           "height": 4,
           "content_sum": 2,
           "self_conjugate": false,
-          "C_lambda": 0.0025151414104322466,
+          "C_lambda": 0.002515141410432247,
           "S_lambda": 1.5874010519681996,
           "contribution": 0.00399253812076893
         },
@@ -367,9 +367,7 @@
           "contribution": -0.00399253812076893
         }
       ],
-      "walltime_sec": 0.030724048614501953
+      "walltime_sec": 0.038066864013671875
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

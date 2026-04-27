@@ -1,7 +1,7 @@
 {
   "computation": "atom-wedderburn-blend",
   "description": "Atom-level Wedderburn approach: compute Markov trace tr_M(W_atom) at H_{3A}(q) summed over \u03bb \u22a2 3A with Plancherel weights.  Calibrated to proton mass; extracted predictions for n, D, T, \u00b3He.",
-  "computedAt": "2026-04-25T00:06:52.174649+00:00",
+  "timestamp": "2026-04-27T21:17:09.488110+00:00",
   "q_0": 1.1099785955541805,
   "alpha_G_over_3": 0.3053218647257397,
   "E0_MeV_per_cat": 9264.323140455777,
@@ -37,8 +37,8 @@
       "A": 2,
       "n_strands": 6,
       "n_partitions": 11,
-      "tr_M_abs": 0.005034906195421638,
-      "mass_MeV": 46.64499797626883,
+      "tr_M_abs": 0.005034906195421637,
+      "mass_MeV": 46.644997976268826,
       "CODATA": 1876.12393,
       "err_pct": -97.51375710152213
     },
@@ -49,8 +49,8 @@
       "A": 3,
       "n_strands": 9,
       "n_partitions": 30,
-      "tr_M_abs": 0.0005474490419264222,
-      "mass_MeV": 5.071744827339298,
+      "tr_M_abs": 0.0005474490419264217,
+      "mass_MeV": 5.071744827339294,
       "CODATA": 2809.43215,
       "err_pct": -99.81947437928554
     },
@@ -61,12 +61,10 @@
       "A": 3,
       "n_strands": 9,
       "n_partitions": 30,
-      "tr_M_abs": 0.0004773500160702832,
-      "mass_MeV": 4.422324799976862,
+      "tr_M_abs": 0.0004773500160702829,
+      "mass_MeV": 4.422324799976859,
       "CODATA": 2809.41347,
       "err_pct": -99.84258903692177
     }
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  ]
 }

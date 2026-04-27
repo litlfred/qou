@@ -1,7 +1,7 @@
 {
   "computation": "markov-invariant-unified-mass",
   "description": "30a: Markov-invariant unified mass formula assembly. Replaces non-Markov-invariant proxies in the 6-term with pyhecke canonical Markov trace, Frobenius co-Casimir \u03a3_n, and universal Term 7 (m_e\u00b78G\u00b7B_shadow).  Calibrates \u03b1_M, \u03b1_F from {D, T} binding to test universality on \u00b3He, \u2074He.  Built into the same script: 30b gap analysis between Markov-invariant predictions and AME.",
-  "computedAt": "2026-04-25T23:33:47.514853+00:00",
+  "timestamp_utc": "2026-04-27T21:20:42.019661+00:00",
   "structural_prefactors": {
     "alpha_M_MeV": -3.728573825966886,
     "alpha_F": -1.2917203783792384,
@@ -21,7 +21,7 @@
       "T7_term": 0.28074641526502986,
       "B_pred_MeV": 2.22456612,
       "M_pred_MeV": 1876.12394151,
-      "err_B_pct": 0.0,
+      "err_B_pct": 2.4029537140412762e-49,
       "err_M_pct": 6.134989174195971e-07,
       "is_calibration": true
     },
@@ -37,7 +37,7 @@
       "T7_term": 0.003272911356004532,
       "B_pred_MeV": 8.481798,
       "M_pred_MeV": 2809.43213015,
-      "err_B_pct": -1.8601266033947327e-29,
+      "err_B_pct": 0.0,
       "err_M_pct": -7.065484745734116e-07,
       "is_calibration": true
     },
@@ -65,7 +65,7 @@
       "M_AME_MeV": 3728.40133,
       "B_AME_MeV": 28.29566,
       "M_term": 11.851237131418335,
-      "F_term": -0.7549034368600479,
+      "F_term": -0.7549034368600478,
       "T7_term": 0.35429243318501136,
       "B_pred_MeV": 11.450626127743298,
       "M_pred_MeV": 3745.246389132257,
