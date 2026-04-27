@@ -44,6 +44,11 @@ OUT = HERE / "atomic-tr-m-wenzl-bridge.witness.json"
 M_E_MEV = mpf("0.51099895")
 
 J_PUBLISHED = {
+    # 3_1 (right-handed trefoil): in our σ²=(q-q⁻¹)σ+1 convention,
+    # closure of σ_1³ in B_2 has tr_M(σ_1³) = ((q-q⁻¹)²+1)·z + (q-q⁻¹)
+    # which equals q + q³ - q⁴ in the canonical Jones polynomial form
+    # (Murasugi §11.3, KnotInfo).
+    "3_1":   "q + q**3 - q**4",
     "6_2":   "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + 1/q**5",
     "8_11":  "-q**6 + 2*q**5 - 4*q**4 + 5*q**3 - 5*q**2 + 5*q - 4 + 3/q - 1/q**2",
     "L_6a4": "q**3 - 3*q**2 + 6*q - 7 + 6/q - 3/q**2 + 1/q**3",
@@ -51,8 +56,10 @@ J_PUBLISHED = {
 
 ATOMS = [
     # (binary-name,  rho, native-strands, historical-K)
+    ("electron",     1, 2, "3_1"),
     ("proton",       1, 3, None),
     ("neutron",      1, 3, None),
+    ("deuteron-2H",  1, 3, "6_2"),
     ("helium3-3He",  2, 3, "L_6a4"),
     ("tritium-3H",   2, 5, "8_11"),
 ]
@@ -86,6 +93,15 @@ def parse_block_matrix_dump(atom_name: str) -> dict[tuple, float]:
 
 def load_y_lambda(n: int) -> dict[tuple, mpf]:
     """Load y_λ(q_0) at 50 dps for partitions of n."""
+    if n == 2:
+        # Witness only has n ≥ 3; compute n=2 in mpmath directly.
+        # Linear system: y_(2) + y_(1,1) = 1; y_(2)·q + y_(1,1)·(-q^{-1}) = z.
+        q0 = mpf("1.1099785955541805752815940796095093779667618976181")
+        z = mpf(1) / (mp.sqrt(q0) + mp.sqrt(mpf(1) / q0))
+        q_inv = mpf(1) / q0
+        y_2 = (z + q_inv) / (q0 + q_inv)
+        y_11 = mpf(1) - y_2
+        return {(2,): y_2, (1, 1): y_11}
     d = json.load(open(Y_LAMBDA))
     table = d["tables_by_n"][str(n)]
     return {
