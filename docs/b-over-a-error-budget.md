@@ -60,13 +60,15 @@ worst case.
 
 For an A-nucleon braid built constructively (not partition-by-partition),
 intermediate term-count growth before NF collapse is bounded above by 2^L
-where L is the word length.  L scales as A² for atomic braids, so:
+where L is the word length.  Using the pair-count heuristic
+L = A(A−1)/2 (atomic-pair crossings for an A-nucleon braid, quadratic
+in A), so:
 
-| A | L ≈ A² | 2^L cap |
+| A | L = A(A−1)/2 | 2^L cap |
 |---:|---:|---|
 | 4 (⁴He) | 6 | 64 (tractable) |
 | 12 (¹²C) | 66 | 7×10¹⁹ (marginal) |
-| 40 (⁴⁰Ca) | 980 | 10²⁹⁵ (intractable) |
+| 40 (⁴⁰Ca) | 780 | 10²³⁵ (intractable) |
 
 **Implication for any v5 implementation:** the constructive `build_atom`
 path is intractable beyond ⁴He.  v5 must use partition-by-partition
