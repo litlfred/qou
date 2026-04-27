@@ -374,6 +374,109 @@ crossing in the proton's 11-crossing budget (currently 4-channel
 **Witness:** [`entanglement-orders.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/entanglement-orders.witness.json) — the per-order
 contributions for `{p, n, D, T, ³He}` as of commit `bc981e4`.
 
+## The 3-input calibration scheme (per `calibration-inputs.md`)
+
+**The paper EXPLICITLY documents three structural inputs**, not two:
+
+| Input | Sector | Used to fix | Precision |
+|---|---|---|---|
+| `m_μ/m_e = 206.768` | dimensionless | substrate parameter `q_0` via `q² = Vol(4_1) / (m_μ/m_e)` | 2.2×10⁻⁸ |
+| `m_e = 0.511 MeV` | leptonic scale | absolute mass-energy of leptons | 2.9×10⁻¹⁰ |
+| **`Q_β(n) = 0.78233 MeV`** | **hadronic scale `E_0`** | **fixes `E_0 = Q_β / |Δ(net)|`** | **7.8×10⁻⁷** |
+
+This is **not a fit** — it is a structural input matching the
+framework's three physical sectors: shape (`q`), leptonic size (`m_e`),
+hadronic interaction strength (`Q_β`). See
+[`calibration-inputs.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/calibration-inputs.md).
+
+### Why `Q_β` is needed (and what 1.84% means)
+
+The single-level algebraic expression `E_0 = m_e / (q(q−1))` is `0.17%` 
+(`1.3 keV` on `Q_β`) off from the brane-tower-corrected value. The
+free neutron decay `Q_β` calibrates `E_0` exactly. Without this
+calibration, the framework gives:
+
+| | without `Q_β`-calib | with `Q_β`-calib |
+|---|---:|---:|
+| `m_p_pred` | 937.0 MeV (−0.14%) | 938.272 MeV (calib-exact) |
+| `m_n_pred` | **411 MeV (−56%)** | 939.054 MeV (+0.05%) |
+| Q_β(n) | (input) | (input) |
+
+[`np-discrepancy-resolution.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/np-discrepancy-resolution.md) explains:
+
+> *"Without β-calibration the neutron tower fails by factor 2.3
+> because `V̂_0(n) = 0.854` sits far from the `q_0 = 1.11` pole of
+> `Φ_q` (distance 0.256 vs proton's `V̂_0(p) = 0.989` with pole
+> distance 0.121). The tower formula's `Φ_q(V̂)` is pole-centric, so
+> pole-distance matters structurally."*
+
+> *"Fixing the neutron tower absolutely (without β-calibration)
+> would require deriving `Q_β(n) = 0.782 MeV` from `q_0` and `m_e`
+> alone — an open problem."*
+
+So under strict no-fits + algebraic-only:
+- 2-input framework (`q`, `m_e` only) → neutron −56% off, structural
+  open problem
+- 3-input framework (`q`, `m_e`, `Q_β`) → both p and n <0.1% off,
+  used by paper as canonical
+
+**Recommendation.** Accept `Q_β(n)` as the third structural input
+(matching how `m_e` is the second). It is the unique experimental
+hadronic Q-value; once calibrated, every other Q-value derives
+algebraically from it. The "no fits" rule excludes Q-values
+extracted from heavier nuclei or fitted prefactors — `Q_β(n)` is
+the analog of `m_e`, not a fit.
+
+### Updated layer-1 atom predictions (4-tier formula)
+
+[`np-discrepancy-resolution.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/np-discrepancy-resolution.md) tabulates, with `Q_β`-calibration:
+
+| isotope | best formula | error |
+|---|---|---:|
+| D (A=2) | Schur-Weyl + universal Frobenius co-Casimir | **+2.1%** |
+| T (A=3) | BW + chirality `(1−h²)` | **+0.5%** |
+| ³He (A=3) | BW + chirality `(1−h²)` | **+0.9%** |
+| ⁴He (A=4) | BW + chirality `(1−h²)²` + shell | **−4.1%** |
+| A ≥ 5 | BW + shell (chirality → 1) | 5–20% (term 6 OPEN) |
+
+These are **categorical, no-fit predictions** under the 3-input
+scheme, much better than the 1839× scale gap or my probe's
+single-formula 7×–600× discrepancies. The bottleneck for further
+accuracy is **term 6 (jet-level prefix)** — the next jet-level
+ascension via the pentagon identity of `Φ_q` (per [`mass-endomorphism-jet-tower.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/mass-endomorphism-jet-tower.md)).
+
+### What this means for `mass-table-ppb`
+
+[`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-table-ppb.witness.json) currently uses `Vol_hyp(K)` for
+all families. Under the 3-input scheme it should use:
+
+- Family 1 (D, T, ³He): the 4-tier formula above (Schur-Weyl + Frob
+  for D; BW + chirality for T, ³He) — gives 0.5–2.1% errors instead
+  of 0.16–2.97%.
+- Family 2 (⁴He): BW + chirality² + shell (gives −4.1%) instead of
+  the magic-A `2A·8G` formula (which gives +5.87%).
+- Family 3 (⁸Be–⁴⁰Ca): BW + shell, term 6 OPEN — gives 5–20%
+  instead of α-cluster `c_αα = m_e · Vol(7²_1)` (which gives 5.3–19.5%).
+
+The errors are SIMILAR in magnitude, but the 4-tier formula is
+**categorical** (under 3-input calibration) while `Vol_hyp(K)` is
+**fitted** under option B. The replacement is unblock-not-improve.
+
+### Concrete next steps (refined under 3-input scheme)
+
+1. **Re-emit `mass-table-ppb` using the 4-tier formula.** Existing
+   computations: [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/light_isotope_sweep.py),
+   [`bw_chirality_isotopes.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/bw_chirality_isotopes.py),
+   [`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass_formula_6term.py).
+2. **Investigate the 1.84% `m_p/m_e` residual** in the
+   `mass-endomorphism-tower` (no-Q_β) convention. Truncation of
+   `Φ_q` at 2000 iterations or finite Wedderburn precision.
+3. **Term 6 (jet-level prefix)** — open per `mass-endomorphism-jet-tower.md`.
+   Closes the A≥5 5–20% errors.
+4. **Family 4 (⁶Li, ⁷Li, …) T_w** — open per PR #442.
+5. **`N_v` for layer 3 (β-decay rates)** — open per
+   `beta-decay-from-q.witness.json`.
+
 ## Critical finding (2026-04-27): two categorical invariants disagree at q_0
 
 [`categorical_bypass_volmatch_demo.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/categorical_bypass_volmatch_demo.py) computes `B(𝔥)` directly from the
