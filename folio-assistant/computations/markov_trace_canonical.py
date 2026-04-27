@@ -35,6 +35,7 @@ Strategy:
 from __future__ import annotations
 
 import sys
+from functools import lru_cache
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -46,6 +47,36 @@ from hecke_symbolic import q, HA as H_SYMB, z_markov as Z_SYMB
 
 def tr_M_word(word: tuple, n: int, z, h, *,
                depth: int = 0, max_depth: int = 200):
+    """See _tr_M_word_impl.  Memoized when (z, h) are hashable (typical
+    symbolic / numeric usage); falls back to direct call when they are
+    not (e.g. mutable mpf wrappers).
+
+    Many subwords repeat across the recursion tree at H_n with multiple
+    top-generator occurrences, so caching collapses the worst-case
+    2^(n-1) branching factor to polynomial in distinct (word, n) pairs.
+    """
+    if depth > max_depth:
+        raise RecursionError(
+            f"tr_M recursion too deep: word={word}, n={n}")
+    try:
+        return _tr_M_word_cached(tuple(word), n, z, h, max_depth)
+    except TypeError:
+        # z or h is unhashable — fall back to the uncached path.
+        return _tr_M_word_impl(tuple(word), n, z, h,
+                                depth=depth, max_depth=max_depth)
+
+
+@lru_cache(maxsize=None)
+def _tr_M_word_cached(word: tuple, n: int, z, h, max_depth: int):
+    # Depth is intentionally NOT part of the cache key — the result of
+    # tr_M depends only on (word, n, z, h).  Depth is a safeguard,
+    # checked once per outer call by tr_M_word.
+    return _tr_M_word_impl(word, n, z, h,
+                            depth=0, max_depth=max_depth)
+
+
+def _tr_M_word_impl(word: tuple, n: int, z, h, *,
+                     depth: int = 0, max_depth: int = 200):
     """Canonical Markov trace of a Hecke word in H_n(q).
 
     word: tuple of non-negative ints (generator indices σ_i).

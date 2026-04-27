@@ -59,9 +59,11 @@ def _build_seminormal_matrices_mpf(shape: tuple[int, ...],
     Mirrors `hecke_characters.build_seminormal_matrices` but in pure
     mpmath arithmetic so every entry inherits the active dps.
 
-    Returns (sigmas, dim) where each sigma is an `mp.matrix` of shape
-    (dim, dim).  sigmas is 0-indexed: sigmas[k-1] = σ_k acts on
-    positions (k, k+1).
+    Returns (sigmas, dim) where each `sigma` is the SPARSE COO list
+    `[(i, j, val), ...]` for σ_k acting on the seminormal basis
+    (sigmas[k-1] = σ_k).  Each Hoefsmit matrix has at most 2 nonzeros
+    per row (block-diagonal with 1×1 and 2×2 blocks), so a sparse
+    representation buys an O(d) factor over `mp.matrix` density.
     """
     n = sum(shape)
     syts, _, contents = standard_young_tableaux(shape)
@@ -72,9 +74,9 @@ def _build_seminormal_matrices_mpf(shape: tuple[int, ...],
     h = q - mp.mpf(1) / q
     one = mp.mpf(1)
 
-    sigmas = []
+    sigmas: list[list[tuple[int, int, mp.mpf]]] = []
     for k in range(1, n):
-        M = mp.matrix(dim, dim)
+        coo: list[tuple[int, int, mp.mpf]] = []
         processed = set()
         for i in range(dim):
             if i in processed:
@@ -96,7 +98,7 @@ def _build_seminormal_matrices_mpf(shape: tuple[int, ...],
                     break
 
             if j is None:
-                M[i, i] = a
+                coo.append((i, i, a))
                 processed.add(i)
             else:
                 a_prime = h / (one - q ** (2 * rho))
@@ -104,14 +106,49 @@ def _build_seminormal_matrices_mpf(shape: tuple[int, ...],
                 # b_sq is real-positive in YSN; mp.sqrt on a real mpf
                 # gives the principal real root.
                 b = mp.sqrt(abs(b_sq))
-                M[i, i] = a
-                M[j, j] = a_prime
-                M[i, j] = b
-                M[j, i] = b
+                coo.append((i, i, a))
+                coo.append((j, j, a_prime))
+                coo.append((i, j, b))
+                coo.append((j, i, b))
                 processed.add(i)
                 processed.add(j)
-        sigmas.append(M)
+        sigmas.append(coo)
     return sigmas, dim
+
+
+def _hecke_factor_coo(sigma_coo, c: mp.mpf, d: mp.mpf, dim: int):
+    """Build COO of (c · σ + d · I).
+
+    σ rows have 1 or 2 nonzeros.  The 1-nz rows (1×1 blocks) collapse
+    with the d·I diagonal; the 2-nz rows (2×2 blocks) get d added to
+    their diagonal entry only.  Output: list of (j, k, v) triples,
+    grouped here as columns-by-row for efficient left-multiplication.
+    """
+    # Group sigma entries by row
+    by_row: dict[int, list[tuple[int, mp.mpf]]] = {}
+    for (i, j, v) in sigma_coo:
+        by_row.setdefault(i, []).append((j, v))
+
+    out: list[tuple[int, int, mp.mpf]] = []
+    diag_seen = set()
+    for i in range(dim):
+        entries = by_row.get(i, [])
+        if not entries:
+            # σ has zero row i — Hecke factor reduces to d at (i, i).
+            if d != 0:
+                out.append((i, i, d))
+            diag_seen.add(i)
+            continue
+        for (j, v) in entries:
+            if i == j:
+                out.append((i, i, c * v + d))
+                diag_seen.add(i)
+            else:
+                out.append((i, j, c * v))
+        if i not in diag_seen and d != 0:
+            out.append((i, i, d))
+            diag_seen.add(i)
+    return out
 
 
 def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
@@ -120,25 +157,46 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
     """χ_λ(W) at mpf precision for a Hecke-factor word.
 
     word is a list of (c, d, g) triples — each contributes a factor
-    c · σ_g + d · I to the matrix product.  Returns trace(product).
+    c · σ_g + d · I to the matrix product.  Multiplications are
+    dense × sparse: P_new[r, k] += P[r, j] · M[j, k] for each (j, k, v)
+    in the sparse COO of M = c·σ_g + d·I.  Cost per matmul:
+    O(d × nnz(M)) ≈ O(d × 2d) = O(d²) instead of O(d³) for dense.
+
+    Returns trace(P) after all multiplications.
     """
     if dim == 0:
         return mp.mpf(0)
-    I = mp.eye(dim)
-    product = mp.eye(dim)
+    zero = mp.mpf(0)
+    one = mp.mpf(1)
+
+    # P starts as the identity, stored as a dict-of-dicts for sparsity.
+    # After the first multiplication it generally becomes dense, so
+    # switch to a flat row-major list of mpf for speed.
+    P = [[zero] * dim for _ in range(dim)]
+    for i in range(dim):
+        P[i][i] = one
+
     for (c, d, g) in word:
         if g >= len(sigmas):
             raise IndexError(
                 f"word uses generator σ_{g} but only {len(sigmas)} "
                 f"seminormal matrices were provided (partition λ has "
                 f"too few cells)")
-        c_mp = mp.mpf(str(c)) if not isinstance(c, mp.mpf) else c
-        d_mp = mp.mpf(str(d)) if not isinstance(d, mp.mpf) else d
-        M = c_mp * sigmas[g] + d_mp * I
-        product = product * M
-    tr = mp.mpf(0)
+        c_mp = c if isinstance(c, mp.mpf) else mp.mpf(str(c))
+        d_mp = d if isinstance(d, mp.mpf) else mp.mpf(str(d))
+        M_coo = _hecke_factor_coo(sigmas[g], c_mp, d_mp, dim)
+
+        # P_new = P @ M.  For each (j, k, v) in M_coo:
+        #   P_new[r, k] += P[r, j] * v   (for all r)
+        P_new = [[zero] * dim for _ in range(dim)]
+        for (j, k, v) in M_coo:
+            for r in range(dim):
+                P_new[r][k] += P[r][j] * v
+        P = P_new
+
+    tr = zero
     for i in range(dim):
-        tr += product[i, i]
+        tr += P[i][i]
     return tr
 
 
