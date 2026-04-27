@@ -587,6 +587,111 @@ This is mechanical — 112 scripts is a half-day's work. Doing this
 once eliminates a class of silent-drift bugs and brings the codebase
 into alignment with the paper's stated 3-input framework.
 
+## Probe finding: shell-self-duality FALSIFIED at atom level (2026-04-27)
+
+[`probe_atom_shell_self_duality.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_atom_shell_self_duality.py)
+tested whether `x_λ(β_atom) = x_{λ*}(β_atom)` for every Wedderburn
+partition pair `(λ, λ*)` of the atom braids (NO Vol_hyp, NO knot
+identification, NO census search — purely algebraic at q_0).
+
+| atom | (Z, N) | self-conjugate λ | dual pairs (χ_λ = χ_{λ*}) | NOT dual | all-dual? |
+|---|:---:|:---:|:---:|:---:|:---:|
+| D | (1, 1) | 1 | 0 | **5** | ✗ |
+| T | (1, 2) | 2 | 0 | **14** | ✗ |
+| ³He | (2, 1) | 2 | 0 | **14** | ✗ |
+
+**My earlier conjecture** — "Z=N atoms (D, ⁴He, ⁸Be, ...) are
+charge-conjugate-invariant under p↔n exchange ⇒ shell-self-dual ⇒
+intra-exact" — is **falsified by direct measurement** for D. The
+p↔n strand-permutation symmetry does NOT imply Wedderburn
+coefficient symmetry `x_λ = x_{λ*}`.
+
+(T and ³He are mirror images of each other; their identical counts
+of self-conjugate / dual / not-dual partitions confirm they are
+each other's transpose under the partition-conjugation involution.)
+
+**Implication.** Categorical "magic" (in the shell-Schur–Weyl sense
+of `shell-schur-weyl-self-duality.md`) is **NOT** the right
+condition for Kashaev intra-exactness at the atom level. The next
+conjecture must either:
+
+- Restrict the test to a **sub-tower** (per-nucleon level n=3 instead
+  of atom level 3A=6, 9, …)
+- Use a **different categorical duality** (e.g., Markov-mirror
+  symmetry rather than partition transpose)
+- Drop the magic-self-duality hypothesis entirely and seek an
+  unrelated structural property
+
+**For higher isotopes** (⁴He at H_12, ⁸Be at H_24, …) the probe
+times out at f64 Hoefsmit; would need MPFR or cached seminormal data.
+
+Negative result is concrete: this forecloses one entire family of
+conjectures and points to per-nucleon (or per-pair) sub-tower tests
+as the next move.
+
+## How the chi-sym-alt theorem improves compute (2026-04-27)
+
+The closed form
+
+$$\chi_{\text{sym}}(\beta) \cdot \chi_{\text{alt}}(\beta) = (-1)^{\#(\beta)} \cdot (1 + H_A^2/4)^{2A+1}$$
+
+(per [`docs/chi-sym-alt-theorem.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/docs/chi-sym-alt-theorem.md), proved via factor-by-factor
+algebra) is implemented as `closed_form_prediction(A, H_A)` in
+[`chi_sym_alt_closed_form.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/chi_sym_alt_closed_form.py)
+and verified to **0.004%** against direct Hoefsmit on D, T, ³He, ⁴He.
+
+**Concrete compute improvements:**
+
+1. **Skip 2 partitions in every Wedderburn sum.** For each H_n the
+   extreme 1-dim partitions `(n)` and `(1ⁿ)` have their **product**
+   in closed form via the theorem. Numerical Hoefsmit calls for
+   those two can be replaced with O(1) arithmetic. Modest speedup
+   (~6% at H_6, ~13% at H_9, less at large n where higher-dim
+   irreps dominate cost).
+
+2. **Magic-detection invariant** (cheap O(1) sanity check):
+
+   ```
+   magic_invariant(β) := (χ_sym(β) · χ_alt(β)) / (-(1+H_A²/4)^{2A+1})
+   ```
+
+   Equals **+1** iff β is in the standard `atom_braid_word_3A`
+   ordering with `m_pn = 1`. Validates atom-braid construction
+   without re-running the whole Wedderburn pipeline.
+
+3. **Cross-check at sub-ppm precision.** The 0.004% Hoefsmit
+   residual against the exact theorem is the precision floor of
+   the f64 numerical pipeline. Any larger discrepancy signals a
+   bug or new structural feature.
+
+4. **Algebraic Term 2/3 simplification.** Per the 6-term formula,
+   Terms 2 and 3 (single + pair Φ_q tower) sum over per-generator
+   `V̂_i = w_sym · sp + w_std · Vs + w_alt · ap`. The chi-sym-alt
+   theorem gives closed forms for the `sp` (sym) and `ap` (alt)
+   contributions per crossing chain — eliminates those two
+   evaluations from `additive_wedderburn_volumes()`.
+
+5. **Generalisation pressure** (open). The theorem covers `(λ, λ*)`
+   for the EXTREME 1-dim pair only. Whether analogous closed forms
+   exist for higher-dim duals like `((n−1, 1), (2, 1ⁿ⁻²))` is open.
+   The shell-self-duality probe (above) suggests these higher pairs
+   do **not** satisfy `χ_λ = χ_{λ*}` on atom braids; closed forms
+   for their products would extend the theorem categorically.
+
+**Status of theorem usage in the canonical predictor.**
+
+Currently `chi_sym_alt_closed_form.py` is a **verifier** (validates
+the theorem against Hoefsmit numerics) but is NOT consumed by the
+canonical predictor `categorical_q_decay_ba_low_isotopes.py`. The
+upstream chain (`bw_chirality_isotopes.py`, `mass_formula_6term.py`,
+`light_isotope_sweep.py`) recomputes χ_sym and χ_alt numerically.
+
+**Concrete TODO**: refactor those upstream scripts to import
+`closed_form_prediction()` and skip the (n)/(1ⁿ) Hoefsmit calls.
+Mechanical refactor; net wall-time saved per atom ≈ (2 / total
+partitions) × Hoefsmit cost. Modest speedup but eliminates
+redundant numerical evaluation (and cuts 2 sources of f64 error).
+
 ## Atomic mass derivation: arithmetic vs categorical-chain (2026-04-27)
 
 Per user question "1H atomic mass = 938.783 MeV (m_p + m_e) did
