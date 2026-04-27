@@ -35,7 +35,7 @@ import numpy as np
 import mpmath as mp
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 from hecke_characters import (
     partitions_of, dim_q,
@@ -47,8 +47,8 @@ from q_mpmath import set_q, qfac
 
 set_q(Q0_FLOAT)
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 H_A = Q0 - QI
 h_val = float(H_A)
 me = mp.mpf(str(M_E_MEV))

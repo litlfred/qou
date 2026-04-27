@@ -80,11 +80,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 
 # ── Constants ────────────────────────────────────────────────────
-Q0    = mp.mpf(str(Q0_FLOAT))
+Q0    = Q_MP  # was f64 roundtrip
 M_E   = mp.mpf(str(M_E_MEV))
 V3    = mp.mpf("1.0149416064096535")   # ideal regular tetrahedron volume
                                        #  (Lobachevsky 2·Λ(π/3))

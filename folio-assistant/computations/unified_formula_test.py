@@ -27,7 +27,7 @@ import mpmath as mp
 mp.mp.dps = 50
 import sympy as sp
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 from hecke_characters import partitions_of, young_hooks
 from hecke_core import (atom_per_generator_volumes, _ensure_ysn_attached,
@@ -35,7 +35,7 @@ from hecke_core import (atom_per_generator_volumes, _ensure_ysn_attached,
                            z as Z_MARKOV)
 from mass_endomorphism import w_sym, w_std, w_alt
 
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1) / Q0
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 me = mp.mpf(str(M_E_MEV))
 Z_MP = mp.mpf(str(float(Z_MARKOV)))
 Z_SQ = Z_MP * Z_MP

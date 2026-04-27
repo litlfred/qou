@@ -29,10 +29,10 @@ mp.mp.dps = 50
 
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                           h as H_A_F, atom_per_generator_volumes, z as Z_MARKOV)
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 h = Q0 - QI
 z_m = mp.mpf(str(float(Z_MARKOV)))
 me = mp.mpf(str(M_E_MEV))

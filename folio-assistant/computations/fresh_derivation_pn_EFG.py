@@ -57,12 +57,12 @@ from hecke_core import (
 )
 from hecke_characters import (build_seminormal_matrices, dim_q, qfac,
                                 partitions_of, young_hooks)
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 
 
 def q_int(k):

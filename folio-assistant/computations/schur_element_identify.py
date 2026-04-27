@@ -35,10 +35,10 @@ import mpmath as mp
 mp.mp.dps = 50
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 
 
-Q = mp.mpf(str(Q0_FLOAT))
+Q = Q_MP  # was f64 roundtrip
 QI = 1 / Q
 SQRTQ = mp.sqrt(Q)
 ISQRTQ = 1 / SQRTQ

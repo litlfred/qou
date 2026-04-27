@@ -35,9 +35,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = 1/Q0
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 m_e = mp.mpf("0.51099895")
 G = mp.catalan
 h = Q0 - QI

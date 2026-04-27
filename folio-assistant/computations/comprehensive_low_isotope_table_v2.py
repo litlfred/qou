@@ -13,9 +13,9 @@ from pathlib import Path
 import mpmath as mp
 mp.mp.dps = 25
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 sys.path.insert(0, "folio-assistant/computations")
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = 1/Q0
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 m_e = mp.mpf("0.51099895")
 m_p = mp.mpf("938.27208816")
 m_n = mp.mpf("939.56542052")

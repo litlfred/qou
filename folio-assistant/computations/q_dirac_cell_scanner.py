@@ -41,12 +41,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 from hecke_characters import partitions_of, dim_q, young_hooks
 from q_mpmath import set_q, qint, qfac
 
 set_q(Q0_FLOAT)
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0  # kept for direct power use
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 
 
 def transpose_partition(lam):

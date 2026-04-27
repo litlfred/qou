@@ -35,11 +35,11 @@ from scipy import sparse as sp_sparse
 import mpmath as mp
 mp.mp.dps = 25
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from hecke_characters import partitions_of, build_seminormal_matrices, dim_q
 
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 H_A = Q0 - QI
 h_val = float(H_A)
 

@@ -65,8 +65,8 @@ except Exception:  # pragma: no cover
 
 # ---------- High-precision basis evaluation ------------------------
 mp.mp.dps = 50
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 HA = Q0 - QI
 
 

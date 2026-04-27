@@ -25,7 +25,7 @@ import mpmath as mp
 mp.mp.dps = 30
 
 from hecke_core import _step_chain_generic
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 G_const = mp.catalan
@@ -130,7 +130,7 @@ def phi_inter_at_q(Z, N, q):
         return out
 
     # h_q0 = the H_A that was used at chain construction time
-    Q0 = mp.mpf(str(Q0_FLOAT))
+    Q0 = Q_MP  # was f64 roundtrip
     h_q0 = Q0 - 1/Q0
 
     chains_full = per_gen_chains(Z, N)
