@@ -1,0 +1,54 @@
+{
+  "computation": "atomic-tr-m-mpfr-50dps",
+  "description": "Plan F advance \u2014 symbolic tr_M(T_w, q) via the 3A-strand atom-braid convention for proton, neutron, deuteron, evaluated at q_0 to 50 dps and (where applicable) compared against the published Jones polynomial of the historical knot ID. Companion to proton-mass-mpfr-50dps.witness.json.",
+  "computedAt": "2026-04-27T19:48:31.838694+00:00",
+  "precision": "mpfr_50dps",
+  "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
+  "results": [
+    {
+      "atom": "proton",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "n_strands_3A": 3,
+      "rho_factor": 1,
+      "nf_terms": 4,
+      "tr_M_in_q_symbolic": "(q**(69/2)*(q + 1)*(q**10*(1 - q**6) + q**6 - 1) + q**(65/2)*(q + 1)*(q**12*(q**8 + 1) + q**8 + 1) + q**43*(q + 1)**2*(q**8 + 1) - q**41*(q + 1)**2 + q**34*(q**12*(1 - q**6) - q**6 + 1) - q**33*(q + 1)**2)/(4*q**42*(q + 1)**2)",
+      "tr_M_at_q0_50dps": "1.0653062285923892551532775699680661191590612203783",
+      "term1_b_pred_mev_50dps": "0.54437036423917088737460692731223332042085516659903",
+      "historical_K_comparison": null
+    },
+    {
+      "atom": "neutron",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "n_strands_3A": 3,
+      "rho_factor": 1,
+      "nf_terms": 4,
+      "tr_M_in_q_symbolic": "(q**(57/2)*(q + 1)*(q**8*(2 - q**8) - 1) + q**(53/2)*(q + 1)*(q**10*(q**10 + 2) + 1) + q**37*(q + 1)**2*(q**8 - 1) + q**35*(q + 1)**2 + q**28*(q**10*(1 - q**8) - q**8 + 1) - q**27*(q + 1)**2)/(4*q**36*(q + 1)**2)",
+      "tr_M_at_q0_50dps": "0.92323329716958364246376988091871375918756584608653",
+      "term1_b_pred_mev_50dps": "0.47177124545869521323616182219108776629539900040608",
+      "historical_K_comparison": null
+    },
+    {
+      "atom": "deuteron",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_strands_3A": 6,
+      "rho_factor": 1,
+      "nf_terms": 32,
+      "tr_M_in_q_symbolic": "(-2*q**(2713/2) - 4*q**(2711/2) + 2*q**(2709/2) + 8*q**(2707/2) + 10*q**(2705/2) + 8*q**(2703/2) + 2*q**(2701/2) - 5*q**(2699/2) - 6*q**(2697/2) + 2*q**(2693/2) + 3*q**(2691/2) + 6*q**(2689/2) - 6*q**(2685/2) - 3*q**(2683/2) - 4*q**(2677/2) - 3*q**(2675/2) + 8*q**(2673/2) + 28*q**(2671/2) + 40*q**(2669/2) + 28*q**(2667/2) + 8*q**(2665/2) - 3*q**(2663/2) - 4*q**(2661/2) - 3*q**(2655/2) - 6*q**(2653/2) + 6*q**(2649/2) + 3*q**(2647/2) + 2*q**(2645/2) - 6*q**(2641/2) - 5*q**(2639/2) + 2*q**(2637/2) + 8*q**(2635/2) + 10*q**(2633/2) + 8*q**(2631/2) + 2*q**(2629/2) - 4*q**(2627/2) - 2*q**(2625/2) - q",
+      "tr_M_at_q0_50dps": "0.38828647154771327851106592231656879977297570799091",
+      "term1_b_pred_mev_50dps": "0.19841397926008636022021224968454822428675082515886",
+      "historical_K_comparison": {
+        "historical_K": "6_2",
+        "J_K_published": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + q**(-5)",
+        "J_K_at_q0_50dps": "1.0269200125513209933037540710311544269026399329976",
+        "tr_M_over_J_K_at_q0_50dps": "0.37810780469945161420056385740581900501937025931471",
+        "note": "If the ratio is a power of q_0, then tr_M = q_0^k \u00b7 J_K, i.e. they agree up to writhe normalisation. q_0 = 1.1099785955541805752815940796..., so log(ratio)/log(q_0) should be close to an integer."
+      }
+    }
+  ]
+}

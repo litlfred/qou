@@ -75,40 +75,43 @@ def main() -> int:
         elem, stats = M.build_atom_nf_symbolic(Z, N, verbose=False)
         n_strands = 3 * (Z + N)
         tr_q = tr_M_element(elem, n_strands, Z_SYMB, H_SYMB)
-        tr_simplified = sp.simplify(tr_q)
+        # Skip sp.simplify (slow on deuteron's giant expression).
+        # Substitute q → q_0 directly; sp.N handles rational arithmetic.
 
-        # Substitute q → q_0 to 60 internal digits, then truncate to 50.
-        free = list(tr_simplified.free_symbols)
-        tr_at_q0 = sp.N(
-            tr_simplified.subs({s: sp.Float(q_str, 60) for s in free}),
-            50,
-        )
+        free = list(tr_q.free_symbols)
+        q60 = sp.Float(q_str, 60)
+        tr_at_q0 = sp.N(tr_q.subs({s: q60 for s in free}), 50)
         tr_at_q0_mpf = mpf(str(tr_at_q0))
         b_term1 = M_E_MEV * rho * abs(tr_at_q0_mpf)
         print(f"    n_strands = {n_strands},  NF terms = {stats['n_terms_nf']}")
         print(f"    tr_M(q_0) = {tr_at_q0_mpf}")
         print(f"    Term-1 contribution: m_e · ρ · |tr_M| = {b_term1} MeV")
 
-        # If a historical knot ID is available, compare to the published
-        # Jones polynomial up to writhe normalisation (q^k factor).
+        # If a historical knot ID is available, compare numerically at q_0.
         comparison = None
         if historical_K and historical_K in J_PUBLISHED:
             J_sym = sp.sympify(J_PUBLISHED[historical_K])
-            # Try q^k * tr_M = J_K for integer k in some range.
-            ratio = sp.simplify(J_sym / tr_simplified)
-            ratio_at_q0 = sp.N(ratio.subs({s: sp.Float(q_str, 60) for s in ratio.free_symbols}), 30)
-            # If the ratio is a pure power of q, the Jones polynomial
-            # matches our trace up to writhe. Otherwise they differ
-            # structurally.
+            J_at_q0 = sp.N(J_sym.subs({s: q60 for s in J_sym.free_symbols}), 50)
+            J_at_q0_mpf = mpf(str(J_at_q0))
+            ratio_q0 = tr_at_q0_mpf / J_at_q0_mpf if J_at_q0_mpf != 0 else None
             comparison = {
                 "historical_K": historical_K,
                 "J_K_published": str(J_sym),
-                "tr_M_over_J_K_simplified": str(ratio)[:300],
-                "ratio_at_q0_30dps": str(ratio_at_q0),
+                "J_K_at_q0_50dps": str(J_at_q0_mpf),
+                "tr_M_over_J_K_at_q0_50dps": str(ratio_q0),
+                "note":
+                    "If the ratio is a power of q_0, then tr_M = q_0^k · J_K, "
+                    "i.e. they agree up to writhe normalisation. "
+                    "q_0 = " + q_str[:30] + "..., so log(ratio)/log(q_0) "
+                    "should be close to an integer.",
             }
             print(f"    historical K = {historical_K}")
-            print(f"    J_K(q) = {sp.simplify(J_sym)}")
-            print(f"    tr_M(q) / J_K(q) at q_0 = {ratio_at_q0}")
+            print(f"    J_K(q_0)   = {J_at_q0_mpf}")
+            print(f"    tr_M / J_K = {ratio_q0}")
+            if ratio_q0 is not None and ratio_q0 != 0:
+                from mpmath import log as mp_log
+                k_estimate = mp_log(abs(ratio_q0)) / mp_log(mpf(q_str))
+                print(f"    log(|ratio|)/log(q_0) = {k_estimate}  (integer ⇒ writhe match)")
 
         results.append({
             "atom": label,
@@ -116,7 +119,7 @@ def main() -> int:
             "n_strands_3A": n_strands,
             "rho_factor": rho,
             "nf_terms": stats["n_terms_nf"],
-            "tr_M_in_q_symbolic": str(tr_simplified)[:600],  # truncate giant exprs
+            "tr_M_in_q_symbolic": str(tr_q)[:600],  # truncate giant exprs (no simplify)
             "tr_M_at_q0_50dps": str(tr_at_q0_mpf),
             "term1_b_pred_mev_50dps": str(b_term1),
             "historical_K_comparison": comparison,
