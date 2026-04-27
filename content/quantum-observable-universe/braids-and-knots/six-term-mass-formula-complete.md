@@ -127,11 +127,11 @@ $$
 
 ### Term 6: higher-stratum residues $\sum_{\ell \geq 2} \mathrm{Res}_{\zeta_\ell}$
 
-*Status: **DERIVED** (Mittag-Leffler structure); prefix-product
+*Status: **DERIVED** (cyclotomic structure); prefix-product
 conjecture (earlier framing) is now **superseded**.*
 
 - *Source: [GB residue spectral sum](#prop:gb-residue-spectral-sum)
-  gives Mittag-Leffler identity; reclassified in
+  gives cyclotomic identity; reclassified in
   [higher operations](#prop:terms-2-6-higher-operations) §Term 6.*
 - *Full pole structure: [full pole structure](#prop:full-pole-structure-mass-trace).*
 - *Connection to colored Jones: Habiro-cyclotomic form

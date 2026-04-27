@@ -293,7 +293,7 @@ the paper's exceptional-divisor blow-up resolves.*
 
 - *Terms 1, 3, 4: FINITE Wedderburn sums at level $k = n$.*
 - *Term 2, 6: INFINITE Wedderburn sums in the $k \to \infty$ limit,
-  expressed compactly as $\Phi_q$ and Mittag-Leffler residues.*
+  expressed compactly as $\Phi_q$ and cyclotomic residues.*
 - *Term 5: Wedderburn-weighted ribbon character
   (chirality coefficient).*
 
@@ -416,7 +416,7 @@ $$
          {q_0 - \zeta_\ell},
 $$
 
-*i.e., the Mittag-Leffler residue sum at roots of unity $\zeta_\ell$
+*i.e., the cyclotomic residue sum at roots of unity $\zeta_\ell$
 for $\ell \geq 2$ (the level-$\ell = 1$ residue is absorbed into
 Terms 2, 3 as the dominant $\zeta_1 = 1$ pole).*
 
@@ -426,7 +426,7 @@ Terms 2, 3 as the dominant $\zeta_1 = 1$ pole).*
 $a_k(\beta) = \sum_\lambda w_\lambda \chi^\lambda(\beta_k) / \sum_\lambda w_\lambda \dim \mathrm{Res}^{H_k}_{H_3} V_\lambda$
 has no algebraic match against the higher-strata $E_\infty^{\ell \geq 3}$
 pages of the spectral sequence — consistent with the four failed
-tests.  Meanwhile, the **Mittag-Leffler** formula DOES correspond
+tests.  Meanwhile, the **cyclotomic** formula DOES correspond
 to higher $E_\infty$ strata (via the residue-spectral-sum
 derivation in
 [GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
@@ -438,7 +438,7 @@ residues summed over all $\ell \geq 2$.*
 **Caveat.**
 *This is a structural proposal, not a proof.  It requires:*
 
-1. *Confirming that the Mittag-Leffler sum for $\ell \geq 2$ reproduces
+1. *Confirming that the cyclotomic sum for $\ell \geq 2$ reproduces
    the empirical Term 6 corrections needed to close the $A \geq 3$
    binding errors (typically $5\%$-$20\%$ from the BW+$\chi$
    + shell).*
@@ -454,8 +454,8 @@ residues summed over all $\ell \geq 2$.*
    (Terms 2 + 3, combined as Cauchy kernel tower on $HH^{\geq 1}$)*
 3. *Frobenius co-Casimir $m_e \cdot \tau(C_{\dim_q})$ (Term 4)*
 4. *Chirality / ribbon twist $a_K$ (Term 5)*
-5. *Higher-stratum residues (what was Term 6, now = ML sum at
-   $\zeta_\ell$ for $\ell \geq 2$)*
+5. *Higher-stratum residues (what was Term 6, now = cyclotomic
+   residue sum at $\zeta_\ell$ for $\ell \geq 2$)*
 
 *A much cleaner structural story.*
 
@@ -495,7 +495,7 @@ They are the natural next steps.*
 1. *Compute $[\sigma_0]^{\cup k}$ for $k = 1, 2, 3$ in $HH^*(H_3(R, q))$
    over $\mathbb{R}[q, q^{-1}]$; verify Markov-trace pairings
    match $\Phi_q$ Taylor coefficients.*
-2. *Compute Mittag-Leffler residue at $\zeta_2 = -1$ for D's
+2. *Compute cyclotomic residue at $\zeta_2 = -1$ for D's
    atomic braid; compare to residual $5$–$20\%$ binding errors
    at $A \geq 3$.*
 3. *If Term 2 + Term 6 unification holds, the 6-term formula

@@ -138,7 +138,7 @@ channel is sufficient.*
 | 3 | same + Markov factorisation |
 | 4 | Frobenius co-Casimir ([Frobenius universal](#thm:frobenius-codim-universal), Lean-proved) |
 | 5 | per-crossing $(1 \pm h)$ via symmetric-channel duality (this proposition) |
-| 6 | Mittag-Leffler residue sum ([GB residue spectral sum](#prop:gb-residue-spectral-sum)) |
+| 6 | cyclotomic residue sum ([GB residue spectral sum](#prop:gb-residue-spectral-sum)) |
 
 *Six of six. Computation infrastructure complete (scripts +
 witness files for all terms in `folio-assistant/computations/`).

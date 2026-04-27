@@ -117,7 +117,7 @@ neutron contribution, not the partition sum.  Paths forward:*
    variant (f): $g_0 + g_1$ re-ordering gives $+6.7\%$ vs
    $-55\%$ baseline for the neutron mass) shift the deuteron
    prediction closer to $B_{\mathrm{AME}}$.*
-2. *Add the Mittag-Leffler residue correction at $\zeta_1 = 1$
+2. *Add the level-1 cyclotomic residue correction at $\zeta_1 = 1$
    ([GB residue spectral sum](#prop:gb-residue-spectral-sum))
    — distance to pole is $0.11$, potentially large contribution.*
 3. *The $\frac{5}{2} \cdot m_e$ partition sum is exact for the
