@@ -111,6 +111,45 @@ def test_each_term_finite_or_pending():
                 f"{name}.{tkey}: neither pending nor has a value: {tval!r}"
 
 
+def test_t6_extracts_per_A_correctly():
+    """Regression test for the Copilot/Gemini review finding:
+    `eval_schur_weyl_exact_at_q0` returns keys formatted "A=<n>", not
+    bare integers. The witness must contain the actual per-A payload,
+    not the entire upstream dict re-nested under each particle."""
+    w = _ensure_witness()
+    for name in FAMILY_1:
+        A = w["per_particle"][name]["A"]
+        t6 = w["per_particle"][name]["terms"]["T6_habiro_residue"]
+        if t6.get("pending"):
+            continue
+        per_A = t6.get("per_A", {})
+        key = f"A={A}"
+        assert key in per_A, (
+            f"{name}: T6 per_A dict missing key {key!r}; got keys {list(per_A.keys())!r}"
+        )
+        # The payload should NOT be the whole upstream dict re-nested.
+        # Specifically, it should not itself contain another "A=<n>" key.
+        payload = per_A[key]
+        if isinstance(payload, dict):
+            nested_a_keys = [k for k in payload.keys() if k.startswith("A=")]
+            assert not nested_a_keys, (
+                f"{name}: T6 payload appears to be the whole upstream "
+                f"dict re-nested (contains {nested_a_keys!r}); extraction bug"
+            )
+
+
+def test_witness_uses_canonical_computedAt_field():
+    """Per repo convention (folio-assistant/schemas/types.ts +
+    migrate_witness_timestamp_to_computedAt.py), the canonical
+    timestamp field is `computedAt`, not `timestamp`."""
+    w = _ensure_witness()
+    assert "computedAt" in w, "witness must use canonical `computedAt` field"
+    assert "timestamp" not in w, (
+        "witness uses non-canonical `timestamp` field; should be `computedAt` "
+        "(per migrate_witness_timestamp_to_computedAt.py)"
+    )
+
+
 def test_attestation_no_volumes_no_fits():
     w = _ensure_witness()
     a = w["attestation"]
@@ -155,6 +194,8 @@ def _run_all():
         ("attestation_no_volumes_no_fits", test_attestation_no_volumes_no_fits),
         ("t4_marked_pending_with_explicit_reason", test_t4_marked_pending_with_explicit_reason),
         ("ame_comparison_is_marked_pending", test_ame_comparison_is_marked_pending),
+        ("t6_extracts_per_A_correctly", test_t6_extracts_per_A_correctly),
+        ("witness_uses_canonical_computedAt_field", test_witness_uses_canonical_computedAt_field),
     ]
     fails = []
     for name, fn in tests:
