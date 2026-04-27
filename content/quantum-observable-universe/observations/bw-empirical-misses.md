@@ -8,16 +8,18 @@ the GB residue spectral sum
 additional terms** that empirical BW does not contain.  Each is a
 potential falsifiable signal.*
 
-**1. Root-of-unity residue oscillations.**
-*The Mittag-Leffler residues at $\zeta_\ell = e^{2\pi i/n_\ell}$ for
-$n_\ell \geq 2$ contribute small, highly structured oscillations
-to binding energies.  Empirical BW has no analogue.  These residues
-are weighted by $(q_0 - \zeta_\ell)^{-1}$ and by the confinement
-level $\ell(K, q_0)$ of the specific atom-knot, so they produce
-nucleus-specific modulations distinct from the smooth BW curves.
-Predicted magnitude: $10^{-3}$ to $10^{-2}$ relative to BW for
-atoms with $\ell(K, q_0) \geq 2$ — within experimental reach for
-precision mass measurements (ISOLTRAP, TRIUMF, JYFLTRAP).*
+**1. Higher-cyclotomic Habiro contributions.**
+*The Habiro cyclotomic coefficients $a_m(K)$ at orders $m \geq 2$
+([Habiro completion](#prop:full-pole-structure-mass-trace))
+contribute small, highly structured corrections to binding
+energies that empirical BW has no analogue for. These coefficients
+encode the action of the higher root-of-unity strata
+$\zeta_n^{(j)}$ ($n \geq 2$) on the braid trace, scaled by the
+confinement level $\ell(K, q_0)$ of the specific atom-knot, and
+produce nucleus-specific modulations distinct from the smooth BW
+curves. Predicted magnitude: $10^{-3}$ to $10^{-2}$ relative to BW
+for atoms with $\ell(K, q_0) \geq 2$ — within experimental reach
+for precision mass measurements (ISOLTRAP, TRIUMF, JYFLTRAP).*
 
 **2. Three-channel (V_sym, V_std, V_alt) separation.**
 *Empirical BW averages over the three Wedderburn channels of

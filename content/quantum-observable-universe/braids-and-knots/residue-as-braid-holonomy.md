@@ -32,14 +32,18 @@ of a Wilson loop in $S^3$ around an obstruction divisor.*
 **Connection to Reshetikhin–Turaev.**
 *At $q = \zeta_\ell$ the category of representations of $H_n(\mathbb{C}, q)$
 truncates to a modular tensor category, and the Markov trace
-becomes the Reshetikhin–Turaev invariant evaluated on the
-closed braid.  The residue $\operatorname{Res}_{q=\zeta_\ell}$
-extracts precisely this RT invariant from the Laurent expansion
-of $\mathrm{tr}_M(T_w, q)$ at the pole.  The spectral sum
-$\mathfrak{m}(K) = |\mathrm{tr}_M| + \sum_\ell (\mathrm{RT}_{\zeta_\ell})/(q_0 - \zeta_\ell)$
-is therefore the **regular-value mass corrected by a
-Mittag-Leffler sum of RT invariants**, one per stratum of the
-confinement filtration.*
+becomes the Reshetikhin–Turaev invariant evaluated on the closed
+braid. The residue $\operatorname{Res}_{q=\zeta_\ell}$ extracts
+precisely this RT invariant from the Laurent expansion of
+$\mathrm{tr}_M(T_w, q)$ at the pole. In the Habiro framework
+([Habiro completion](#prop:full-pole-structure-mass-trace)) the
+RT invariants assemble as the cyclotomic coefficients $a_m$ of
+the Habiro expansion of $\mathrm{tr}_M(T_w)$: each $a_m$ encodes
+the contribution of the $m$-th cyclotomic stratum, with the
+total mass functional
+$\mathfrak{m}(K, q_0) = |\mathrm{tr}_M(T_w, q_0)|$ realised as
+the Habiro evaluation at $q_0$, not as a complex-analytic
+partial-fraction sum.*
 
 **Why the empirical regular-value tower misses this.**
 *The regular-value formula
