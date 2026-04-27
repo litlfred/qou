@@ -1,4 +1,25 @@
-# ²H markov_trace = 0 audit
+# ²H markov_trace = 0 audit — RESOLVED: stale witness
+
+**TL;DR (2026-04-27 update).** The `markov_trace = "0"` claim in
+[`atom-nf-symbolic-D.witness.json`](../../folio-assistant/computations/atom-nf-symbolic-D.witness.json)
+(timestamp 2026-04-24) is **stale**. A fresh re-run of
+`atom_nf_symbolic_D.build_atom_nf_symbolic(1, 1)` followed by
+`tr_M_element` on 2026-04-27 gives `tr_M(²H, q_0) ≈ 0.388286471547`,
+matching the `tr_M_atom = 0.388286471547` value in the older
+[`canonical-mass-table.witness.json`](../../folio-assistant/computations/canonical-mass-table.witness.json)
+(2026-04-18). So ²H's tr_M is NOT zero — the witness predates a
+fix in the code path. **The historical 6_2 ID is not refuted by
+this trace value (though it remains under suspicion via α\* = 0.546).**
+Re-emit `atom-nf-symbolic-D.witness.json` to correct.
+
+Fresh values via 3A-strand convention at q_0 = 1.1099786:
+- proton  (Z=1, N=0): tr_M ≈ 1.06530623
+- neutron (Z=0, N=1): tr_M ≈ 0.92323330
+- ²H      (Z=1, N=1): tr_M ≈ 0.38828647
+
+---
+
+# Original audit (preserved for posterity)
 
 **Source.** [`folio-assistant/computations/atom-nf-symbolic-D.witness.json`](../../folio-assistant/computations/atom-nf-symbolic-D.witness.json)
 (D = deuteron = ²H), witness from `atom_nf_symbolic_D.py`.

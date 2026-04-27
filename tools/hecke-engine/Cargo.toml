@@ -27,6 +27,11 @@ name = "r5-5-minimal-h5"
 path = "src/bin/r5_5_minimal_h5.rs"
 required-features = ["clarabel-sdp"]
 
+# Per-Wedderburn-block matrix dump for sign-convention audits
+[[bin]]
+name = "dump-block-matrices"
+path = "src/bin/dump_block_matrices.rs"
+
 # Default binary: v8 inductive symbolic chaining (exact in q)
 [[bin]]
 name = "hecke-engine"
