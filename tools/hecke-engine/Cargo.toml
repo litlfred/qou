@@ -9,20 +9,28 @@ description = "Gröbner reduction engine for H_n(q) — nuclear normal forms"
 name = "joint-tower-sdp"
 path = "src/bin/joint_tower_sdp.rs"
 
-# R5.5 scaling sanity check
+# R5.5 scaling sanity check (requires Clarabel SDP backend)
 [[bin]]
 name = "r5-5-scale-test"
 path = "src/bin/r5_5_scale_test.rs"
+required-features = ["clarabel-sdp"]
 
-# R5.5 H_5 anomaly diagnostic
+# R5.5 H_5 anomaly diagnostic (requires Clarabel SDP backend)
 [[bin]]
 name = "r5-5-diagnose-h5"
 path = "src/bin/r5_5_diagnose_h5.rs"
+required-features = ["clarabel-sdp"]
 
-# R5.5 minimal H_5 SDP isolation test
+# R5.5 minimal H_5 SDP isolation test (requires Clarabel SDP backend)
 [[bin]]
 name = "r5-5-minimal-h5"
 path = "src/bin/r5_5_minimal_h5.rs"
+required-features = ["clarabel-sdp"]
+
+# Per-Wedderburn-block matrix dump for sign-convention audits
+[[bin]]
+name = "dump-block-matrices"
+path = "src/bin/dump_block_matrices.rs"
 
 # Default binary: v8 inductive symbolic chaining (exact in q)
 [[bin]]
@@ -71,7 +79,19 @@ num-integer = "0.1"
 rayon = "1.10"
 clap = { version = "4", features = ["derive"] }
 chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
-clarabel = { version = "0.11", features = ["sdp-netlib"] }
+# Clarabel-rs is feature-gated behind `clarabel-sdp`. Default builds do not
+# pull in OpenBLAS / netlib / gfortran. The R5-full SDP-as-solver path
+# (sdp_solve_canonical_t_w, sdp_recover_canonical, sdp_solver_clarabel) is
+# compiled only when the feature is enabled. The bisection-based α* verifier
+# (sdp_verifier) and the Wedderburn-block PSD evaluator (wedderburn_psd) work
+# without it.
+clarabel = { version = "0.11", features = ["sdp-netlib"], optional = true }
+
+[features]
+default = []
+# Opt-in: enables the Clarabel-rs SDP-as-solver code path. Requires system
+# OpenBLAS + LAPACK + gfortran. Use `cargo build --features clarabel-sdp`.
+clarabel-sdp = ["dep:clarabel"]
 
 [build-dependencies]
 

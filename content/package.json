@@ -17,7 +17,9 @@
     "bib-qa:ci": "bun run pipeline/bib-qa.ts --ci",
     "generate-index": "bun run pipeline/generate-index.ts",
     "migrate-lean-refs": "bun run pipeline/migrate-lean-refs.ts --write",
-    "migrate-lean-refs:dry": "bun run pipeline/migrate-lean-refs.ts"
+    "migrate-lean-refs:dry": "bun run pipeline/migrate-lean-refs.ts",
+    "audit-wiring": "bun run pipeline/audit-wiring.ts",
+    "audit-wiring:strict": "bun run pipeline/audit-wiring.ts --strict"
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-arguments": "^1.8.0",
