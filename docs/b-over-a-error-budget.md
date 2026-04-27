@@ -216,9 +216,10 @@ explicit principled-derivation atoms with `(A, n_0, knot, ρ)`:
 Volume-match-only observations (deprecated methodology, not principled):
 ⁶Li ρ = 5, ⁷Li ρ = 5 (per `li-atom-knot-search.witness.json`).
 
-### Hypothesis A.1: ρ = A − 1 (primary)
+### Hypothesis A.1: ρ = A − 1 (primary) — FALSIFIED AT ⁴He
 
-Direct fit to the 3 explicit data points:
+Direct fit to the 3 explicit data points from
+`joint-tower-sdp-h6-h9.witness.json` (D, T, ³He):
 
 | atom | A | A − 1 | observed ρ | match |
 |---|---:|---:|---:|:---:|
@@ -226,31 +227,62 @@ Direct fit to the 3 explicit data points:
 | tritium | 3 | 2 | 2 | ✓ |
 | ³He | 3 | 2 | 2 | ✓ |
 
-**Predictions** (testable once watched branch lands principled
-derivations):
+**FALSIFIED** by the watched-branch's `binding_ladder_catalog.py:63`
+which records the magic-A formula
 
-| atom | A | predicted ρ | volume-match observed | hypothesis verdict |
-|---|---:|---:|---:|---|
-| ⁴He | 4 | **3** | (none yet) | open |
-| ⁶Li | 6 | **5** | 5 | **agrees** with deprecated obs |
-| ⁷Li | 7 | **6** | 5 | **disagrees** with deprecated obs |
+  B(⁴He) = 2 · m_e · 4 · Vol(L6a4)
 
-If hypothesis A.1 holds for ⁶Li, the agreement with the volume-match ρ
-is a quantitative consistency check.  The disagreement at ⁷Li would
-suggest either:
+implying **ρ_⁴He = 2, not 3**.  The hypothesis fails at A = 4.
 
-- (a) the volume-match observation for ⁷Li was incorrect (the
-  watched branch has commit `f970e86f deprecate volume-match atom-knot
-  search; quarantine ⁶Li/⁷Li`, supporting (a)); or
-- (b) ρ = A − 1 fails at ⁷Li due to a shell-closure correction (⁷Li has
-  one nucleon outside the K-shell magic 4); a corrected rule of the form
-  `ρ = A − 1 − δ_shell` with `δ_shell ∈ {0, 1}` could fit both ⁶Li and ⁷Li
-  if `δ_shell = 1` for nuclei with 1 valence nucleon outside a magic core.
+Two structural observations from the actual ⁴He formula:
 
-**Status:** A.1 is a 3-data-point hypothesis with one principled
-prediction (⁴He = 3) and one structural-consistency check (⁶Li = 5
-matches the deprecated volume-match).  Cannot be falsified or confirmed
-without watched-branch principled derivations for ⁴He, ⁶Li.
+1. **⁴He reuses ³He's knot (L6a4)** — not a distinct knot.  Suggests
+   the simple formula `B = ρ · m_e · Vol(T_w)` doesn't fit ⁴He
+   directly; instead the magic-A formula uses `ρ · m_e · A · Vol(³He's
+   knot)`.
+2. **ρ ≤ 2 cap?** Maybe ρ stays at 2 across the magic-A family while
+   the *A factor* grows.  This would explain ρ_⁴He = ρ_³He = 2 and
+   suggest ρ_⁶Li, ρ_⁷Li are also small (not 5/6 as the deprecated
+   volume-match observation, nor as A.1 predicts).
+
+A revised hypothesis that fits all 4 data points:
+
+  **A.1' (revised):** ρ = number of cluster-binding crossings, capped
+  at 2 for magic-A nuclei.  D: 1 binding link (Hopf) → ρ = 1.
+  T: 2 binding crossings → ρ = 2.  ³He: 2 binding crossings → ρ = 2.
+  ⁴He: doubly magic, ρ = 2 (same as ³He).
+
+This is post-hoc, not predictive.  Without more derived atoms it
+cannot be confirmed; it is recorded as a hypothesis for the watched
+branch's principled-derivation pipeline to test.
+
+### Hypothesis A.1 ⁻ (FALSIFIED): canonical formula B = ρ · m_e · tr_M(T_w) does not fit ⁴He
+
+The phase-0 derivation block (`prop:atom-knot-mass-derivation` from
+commit `7588970f`) gives the canonical form
+
+  B(𝔥) = m_e · ρ · tr_M(T_w) | q = q_0
+
+For ⁴He the watched-branch's actual formula is
+
+  B(⁴He) = 2 · m_e · 4 · Vol(L6a4) = 2 · m_e · A · Vol(³He's knot)
+
+If the post-Archimedean naming Vol_hyp(T_w) = tr_M(T_w)|_{q_0}
+(volume conjecture) is invoked, this becomes
+
+  B(⁴He) = m_e · ρ_⁴He · A · tr_M(T_⁴He) [canonical]
+       =? 2 · m_e · 4 · tr_M(T_³He)       [magic-A formula]
+
+The two agree only if tr_M(T_⁴He) = (A · tr_M(T_³He)) / ρ_⁴He, i.e.
+ρ_⁴He · tr_M(T_⁴He) = A · tr_M(T_³He).  This isn't an obvious
+identity — it would require an A-multiplicative cluster-recursion
+property of the Markov trace.
+
+**Implication:** the canonical `B = m_e · ρ · tr_M(T_w)` formula may
+need cluster-decomposition machinery for magic-A atoms (ρ_⁴He = 2,
+combined with an A-scaled cluster volume).  The watched branch is
+actively iterating on this; phase 4+ will likely formalise the
+magic-A recursion.
 
 ### Hypothesis A.2: T_w recursive cluster decomposition (GAP 4)
 
