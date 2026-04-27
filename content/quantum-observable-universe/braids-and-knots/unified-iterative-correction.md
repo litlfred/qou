@@ -122,13 +122,13 @@ for k in 2..K_PARTITION_MAX:
   for partition λ of k:
     H_q(λ)   = ∏_{x∈λ} [h_x]_q
     d_λ      = #SYT(λ)
-    w_λ      = d_q(\lambda)^2 / [k]_q!
+    w_λ      = d_q(λ)^2 / [k]_q!
     y_λ      = w_λ / d_λ − 1/[k]_q!
     σ_1..σ_{k−1} = YSN matrices in λ
 for step = 1..A:
   for each partition λ:
     M_λ      ← M_λ × ∏(c*σ_g + d*I) over new crossings at this step
-    ΔB_λ     = m_e \cdot H_q(λ) \cdot y_λ \cdot (ln|Tr M_λ| − previous)
+    ΔB_λ     = m_e * H_q(λ) * y_λ * (ln|Tr M_λ| − previous)
     cumulative_λ += ΔB_λ
     record witness row
 B_unified = Σ_λ cumulative_λ

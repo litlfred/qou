@@ -20,7 +20,7 @@ specialization Schur polynomial in $r$ variables, and $r$ is the
 unique solution of*
 
 $$
-  q * z \;=\; \frac{Q^r (1 - Q)}{1 - Q^r}
+  q \cdot z \;=\; \frac{Q^r (1 - Q)}{1 - Q^r}
   \;=\; \frac{q^{2r}(1 - q^2)}{1 - q^{2r}},
 $$
 
@@ -69,7 +69,7 @@ parameterizations:
 
 The map $g_i := q \, \sigma_i$ realises an algebra isomorphism with
 $Q = q^2$, and the Markov parameters are related by
-$z_{\mathrm{GL}} = q * z$.  This is the affine convention
+$z_{\mathrm{GL}} = q \cdot z$.  This is the affine convention
 shift; my $z$ does NOT correspond to the same Wenzl level $r$ as
 the substitution $q_W \mapsto q_{\mathrm{my}}$ would suggest
 ([explicit $\alpha_k$ at $H_3$](#prop:explicit-alpha-k-h3); 10
@@ -129,7 +129,7 @@ mismatch between this paper's symmetric Hecke convention and the
 standard Wenzl-Orellana literature formulas.  The bridge is:
 
 1. Substitute $Q = q^2$ (not $Q = q$).
-2. Substitute $z_{\mathrm{GL}} = q * z$ (not $z_{\mathrm{GL}} = z$).
+2. Substitute $z_{\mathrm{GL}} = q \cdot z$ (not $z_{\mathrm{GL}} = z$).
 3. Apply Wenzl's $s_{\lambda, r}(Q)$ formula at the resulting $r$.
 
 The earlier 10-candidate harness
@@ -209,7 +209,7 @@ at $n \in \{3, 4, 5, 6, 9, 12\}$ sample points).
   explicit `Q^r` substitution, avoiding fractional exponents
 - `wenzlSchurElement λ Q X` — the principal-specialization Schur
   element (axiomatic stub pending full Mathlib partition machinery)
-- `wenzlNormalization parts Q X := Σ_µ d_µ \cdot s_{µ,r}(Q)`
+- `wenzlNormalization parts Q X := Σ_µ d_µ * s_{µ,r}(Q)`
 - `yLambdaWenzlBridge parts λ q := s_λ / Z`
 
 The main theorem `y_lambda_closed_form_wenzl_bridge` asserts that
@@ -220,13 +220,13 @@ defined directly from the trace.  The proof composes:
    parameter `z_GL = Q^r(1-Q)/(1-Q^r)` in the `g`-Hecke convention.
 2. The convention isomorphism $G = q\sigma$ sends $\sigma$-Hecke
    (eigenvalues $q, -q^{-1}$, parameter $z$) to $g$-Hecke
-   (eigenvalues $Q = q^{2}$, $-1$, parameter $z_{\mathrm{GL}} = q * z$).
+   (eigenvalues $Q = q^{2}$, $-1$, parameter $z_{\mathrm{GL}} = q \cdot z$).
 3. [Chlouveraki HDR Theorem 6.20] — the type-A Markov-trace family
    is 1-parameter, so the trace is uniquely determined by its
    `z`-value.
 
 The companion theorem `wenzl_bridge_unique` states that the
-substitution `(Q, z_GL) = (q^2, q * z)` is the unique convention map
+substitution $(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is the unique convention map
 realising the Jones-Markov trace via the Wenzl formula — corollary
 of the 1-parameter family.
 
