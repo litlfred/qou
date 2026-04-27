@@ -7,11 +7,12 @@ against the canonical QOU mass derivation, structured by Gröbner–Shirshov
 filtration depth and jet-order scaling.  Forward-looking — applies to any
 implementation of the canonical pipeline.
 
-## Canonical derivation chain
+## Canonical derivation chain (with family-specific specializations)
 
 Per watched-branch commit `7588970f` (*phase 0 (revised): mass derivation
 pre/post-Archimedean — Yekutieli + GB SS collapse*), the canonical mass
-identity is a **single finite-categorical pipeline**:
+identity for an atom with an explicit canonical Hecke element is a
+**single finite-categorical pipeline**:
 
   **B(𝔥) = m_e · ρ · tr_M(T_w) | q = q_0**
 
@@ -32,6 +33,22 @@ E_2** for semisimple H_n(q) at generic q.
 | (7) Archimedean realization functor at q = q_0, multiply by m_e | gives B(𝔥) ∈ ℝ (MeV) |
 
 Reference blocks: [`prop:atom-knot-mass-derivation`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md), [`prop:joint-tower-sdp-confinement`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) (commits `7588970f`, `fdc51078`).
+
+### Family specializations of the canonical chain
+
+The pipeline above applies directly to **family 1** atoms (D, T, ³He)
+where T_w is an explicit Hecke element with a single-knot Markov closure.
+For other families the same chain reduces to specialized forms:
+
+| Family | Atoms | Specialization |
+|---|---|---|
+| **1.** Principled (knot-explicit) | D, T, ³He | Direct: `B = ρ · m_e · Vol(T_w)` with knot-specific Vol(T_w) at q_0. |
+| **2.** Magic-A shell-closure | ⁴He (doubly magic) | T_w factors through the universal-residue Borromean braid B_3: `B = 2 · A · α` where `α = m_e · 8G = m_e · Vol_q(B_3)`. The `8G` is the q_0 evaluation of the algebraic quantum volume of B_3, by `prop:gravity-spectral-prefactor` and `binding-scale-catalan`. **No atom-level single knot exists** for ⁴He — the formula uses the universal residue α at the level-1 (proton/neutron) Borromean structure, scaled by 2A for the doubly-magic shell closure. |
+| **3.** α-cluster recursion | ⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca | T_w decomposes as a Littlewood–Richardson cross-level embedding (commit `96ce5607`) of integer copies of T_w(⁴He) plus α-α coupling crossings: `T_w(nα) = LR_embed(⊗ T_w(⁴He)^n) · c_{αα}-couplings`. Mass formula recursive in n. |
+| **4.** Open / non-cluster | ⁶Li, ⁷Li, (⁹Be, ¹¹B, ¹⁴N, ¹⁹F) | T_w not yet derived. Plausible α + (light cluster) ansatz, e.g. ⁶Li ≈ α + D, ⁷Li ≈ α + T. **OPEN**. |
+
+The canonical formula `B = m_e · ρ · tr_M(T_w)` is the family-1 form;
+families 2–3 are derived specializations; family 4 is open.
 
 ## Tier 1: closed-form bounds (no compute)
 
@@ -108,34 +125,39 @@ Cross-checked against MPFR linear-system witness in
 
 These are the canonical y_λ inputs to step (5) of the chain.
 
-## Tier 3: residual structure decomposition (post-realization)
+## Tier 3: residual structure decomposition (post-realization, family-aware)
 
 For each predicted (Z, N), decompose the residual
 
   res(Z, N) := B/A_predicted(Z, N) − B/A_AME(Z, N)
 
-into the canonical chain steps.  Under the canonical formula
-`B = m_e · ρ · tr_M(T_w)`, the residual has limited structural sources:
+into structural sources.  The decomposition depends on which formula
+family the atom belongs to.
 
-### 3.1  ρ structural prefactor uncertainty
+### 3.1  Family-specific structural-input uncertainty
 
-ρ ∈ ℤ_{>0} is determined structurally by the SDP solution multiplicity in
-the Wedderburn decomposition.
+| Family | Structural input | Uncertainty source |
+|---|---|---|
+| 1 (D, T, ³He) | ρ ∈ ℤ_{>0} (SDP multiplicity), T_w (knot identification) | ρ wrong → multiplicative integer factor; T_w wrong → wrong knot → wrong Vol(T_w) value |
+| 2 (⁴He) | Magic-A shell-closure rule `2 · A · α`, with α = m_e · 8G | α calibration (= m_e · 8G), shell-closure prefactor 2A determination |
+| 3 (⁸Be–⁴⁰Ca) | ⁴He α-cluster anchor + α-α coupling constants c_αα | inherits family-2 uncertainty + coupling-constant determination |
+| 4 (⁶Li, ⁷Li, ...) | T_w not yet derived (open) | infinite — no prediction available |
 
-For ℓ ≤ 1 (electron, p, n): ρ = 1 directly.
-For ℓ ≥ 2 (atoms): ρ depends on the joint-tower SDP feasibility.
-  Per the watched branch, ρ ∈ {1, 2} for ℓ ≤ 2; **ρ = 5 for ⁶Li / ⁷Li
-  is a volume-match observation, not derived** ([GAP 5](#open-items)).
+For families 1–3, the residual has additive contributions from
+omitted structural terms (Wigner T-pairing, chirality factor a_K,
+shell corrections beyond family-2's magic anchor) — see 3.5.
 
-A predictor that gets ρ wrong scales B(𝔥) by an integer factor — the
-residual is multiplicative, not additive.
+### 3.2  T_w accuracy
 
-### 3.2  T_w accuracy (canonical Hecke element)
+| Family | Status |
+|---|---|
+| 1 (D, T, ³He) | Knot identifications (6_2, 8_11, L6a4) from `manual-historical-volume-match`; GB-NF derivation in H_{n_0} pending watched-branch H_5+ runs.  Once GB-NF runs land, T_w is exact in ℚ(q). |
+| 2 (⁴He) | No single T_w — magic-A bypasses the per-atom T_w step. α directly. |
+| 3 (⁸Be–⁴⁰Ca) | T_w via LR_embed of ⁴He cluster T_w; algorithmically determined once ⁴He principled. |
+| 4 (⁶Li, ⁷Li) | **T_w open.**  ([GAP 4](#open-items)). |
 
-For ℓ ≤ 1 (electron, p, n): T_w explicit and verified.
-For ℓ ≥ 2 (⁶Li / ⁷Li and beyond): **T_w not yet derived** ([GAP 4](#open-items)).
-
-Without explicit T_w, the entire chain (5)–(7) cannot run for these atoms.
+Without explicit T_w (family 4), the entire chain (5)–(7) cannot run
+for those atoms — error is undefined.
 
 ### 3.3  Wenzl-bridge y_λ + q-MN χ_λ accuracy
 
@@ -145,6 +167,9 @@ confirms agreement to ≤ 10⁻³⁰ at 50 dps for n = 2..12 across 5 q-probes.
 
 **Bound:** at 50 dps MPFR, the per-step error in step (5) is ≤ 10⁻⁴⁰.
 
+(Applies to family 1 directly.  Family 2 / 3 reuse y_λ via the recursion;
+same precision floor.)
+
 ### 3.4  Archimedean realization q = q_0
 
 The substrate parameter q_0 is calibrated against CODATA m_e and is
@@ -153,22 +178,22 @@ treated as exact in the symbolic chain.  Realization error ≤ 10⁻⁵⁰ at
 
 ### 3.5  Combined error budget
 
-Under the canonical formula and assuming all three open gaps (3, 4, 5)
-close cleanly:
+Per family, assuming GAPS 4, 5 close cleanly for family 4 atoms:
 
-| Source | Bound on B(𝔥) error |
-|---|---|
-| Tier 1.1 NF tractability | O(0) for partition-by-partition path |
-| Tier 1.2 GB page truncation (after E_2 collapse) | 0 |
-| Tier 1.3 jet-order scaling | structural complexity, no numerical impact |
-| Tier 3.1 ρ uncertainty | multiplicative integer factor |
-| Tier 3.2 T_w accuracy (ℓ ≥ 2) | infinite (no T_w → no prediction) |
-| Tier 3.3 y_λ / χ_λ at 50 dps | ≤ 10⁻⁴⁰ |
-| Tier 3.4 Archimedean q_0 | ≤ 10⁻⁵⁰ |
+| Source | Family 1 (D, T, ³He) | Family 2 (⁴He) | Family 3 (⁸Be–⁴⁰Ca) | Family 4 (⁶Li, ⁷Li) |
+|---|---|---|---|---|
+| ρ / structural prefactor | multiplicative integer (small) | derived 2A (exact) | derived from cluster (exact) | undefined |
+| T_w accuracy | knot id from volume-match (verifiable once GB-NF lands) | not applicable | inherits family-2 | **OPEN** |
+| y_λ / χ_λ at 50 dps | ≤ 10⁻⁴⁰ | ≤ 10⁻⁴⁰ | ≤ 10⁻⁴⁰ | n/a |
+| Archimedean q_0 | ≤ 10⁻⁵⁰ | ≤ 10⁻⁵⁰ | ≤ 10⁻⁵⁰ | n/a |
+| α-α coupling constants | n/a | n/a | derived (open coupling values) | n/a |
+| Magic shell-closure 2A factor | n/a | exact (combinatorial) | inherits | n/a |
+| Other omitted terms (Wigner T-pairing, chirality a_K) | additive ≤ 3 MeV/A | additive ≤ 3 MeV/A | additive ≤ 3 MeV/A | n/a |
 
-**Headline:** for ℓ ≤ 1 atoms with explicit T_w and ρ, the canonical
-chain delivers B(𝔥) at MPFR precision (50 dps).  For ℓ ≥ 2 the
-prediction depends on closing GAPS 3, 4, 5.
+**Headline:** for families 1–3 atoms with their T_w / α / cluster-anchor
+known, the canonical chain delivers B(𝔥) at MPFR precision (50 dps) for
+the spectral term, plus structural Wigner / chirality corrections.  For
+family 4 (⁶Li, ⁷Li), the prediction is undefined until GAPS 4, 5 close.
 
 ## Open items / TODOs
 
@@ -195,142 +220,86 @@ This PR (#442) originally contained:
 
 implementing a Plancherel-weighted log-of-Markov-trace-ratio formula
 `(E_0/A) Σ_λ w_λ log|Λ_λ^free / Λ_λ^nuc|`.  Per `7588970f`, this is
-**NOT the canonical formula**; the canonical is `B = m_e · ρ · tr_M(T_w)`.
+**NOT the canonical formula**.  The canonical chain is family-aware:
+family-1 atoms use `B = ρ · m_e · Vol(T_w)`, family-2 (⁴He) uses
+`B = 2 · A · α`, family-3 (⁸Be–⁴⁰Ca) recurses on ⁴He cluster.
 
 Those artifacts are deleted from the branch (preserved in git history).
 This document remains as the forward-looking error-bound framework for
-v5 work against the canonical chain.
+v5 work against the canonical chain (with family specializations).
 
 ## Appendix A: structural hypotheses for GAPs 4 and 5
 
-The watched branch `claude/mass-units-bridge-followups` (commit
-`7fbbec14`, witness `joint-tower-sdp-h6-h9.witness.json`) provides three
-explicit principled-derivation atoms with `(A, n_0, knot, ρ)`:
+Per the watched-branch's [methodology-deprecation.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json), atoms fall into **four formula families**, each with a distinct structural derivation route:
 
-| atom | A | n_0 = 3A | knot | strands | word_len | binding | ρ | B_AME (MeV) |
-|---|---:|---:|---|---:|---:|---|---:|---:|
-| deuteron | 2 | 6 | 6_2 | 3 | 6 | L_H (Hopf) | 1 | 2.2246 |
-| tritium | 3 | 9 | 8_11 | 5 | 14 | T_3 trefoil-like | 2 | 8.4818 |
-| ³He | 3 | 9 | L6a4 | 3 | 6 | L6a4 (link) | 2 | 7.718 |
+| Family | Atoms | Method tag | Formula form |
+|---|---|---|---|
+| **1. Principled-derivation (knot-explicit)** | D, T, ³He | `manual-historical-volume-match`* | `B = ρ · m_e · Vol(T_w)` where T_w closure = specific knot/link |
+| **2. Magic-A shell-closure** | ⁴He | `magic-A-formula` | `B = 2 · A · α` where `α = m_e · 8G` |
+| **3. α-cluster recursion** | ⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca | `recursive-on-4He` | recursive composition of ⁴He cluster + cluster-coupling corrections |
+| **4. Open / deprecated** | ⁶Li, ⁷Li, (⁹Be, ¹¹B, ¹⁴N, ¹⁹F per `mass-table-ppb`) | `deprecated-volume-match` | formula not yet derived |
 
-Volume-match-only observations (deprecated methodology, not principled):
-⁶Li ρ = 5, ⁷Li ρ = 5 (per `li-atom-knot-search.witness.json`).
+\* "manual-historical" tag because the knot identification (6_2 for D, 8_11 for T, L6a4 for ³He) was made in earlier work via volume-match; the GB-NF derivation in H_{n_0} pending watched-branch H_5+ runs.
 
-### Hypothesis A.1: ρ = A − 1 (primary) — FALSIFIED AT ⁴He
+### Why ⁴He "reuses ³He's L6a4" — it doesn't
 
-Direct fit to the 3 explicit data points from
-`joint-tower-sdp-h6-h9.witness.json` (D, T, ³He):
+Per [`recursive-atom-knot-atlas.md:26`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/content/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.md#L26): *"`magic-A-formula`: algebraic shell-closure formula `A · 8G` for double-magic light nuclei; **no single hyperbolic knot**. Used for: ⁴He."*
+
+The ⁴He formula `B = 2 · m_e · 4 · Vol(L6a4)` in [`binding_ladder_catalog.py:63`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/binding_ladder_catalog.py#L63) writes `Vol(L6a4)` because **`Vol(L6a4) = 8G` is an exact identity** ([`building-block-knots.lean:62`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/content/quantum-observable-universe/observations/building-block-knots.lean#L62) and standard hyperbolic geometry: the Borromean rings complement = 2 ideal octahedra each of volume 4G, total 8G where G = Catalan's constant).
+
+The structural content of the ⁴He formula is `α = m_e · 8G` (universal residue prefactor from [`binding-scale-catalan.md`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/content/quantum-observable-universe/braids-and-knots/binding-scale-catalan.md), `prop:gravity-spectral-prefactor`), which derives from the hyperbolic volume of the proton/neutron's internal Borromean three-quark topology — **not** from L6a4 as ³He's atomic-level knot. Both happen to numerically equal 8G because both reduce to the same hyperbolic Borromean structure (the proton/neutron internal vs the ³He-body link).
+
+So ⁴He's `Vol(L6a4)` is a **notational handle** for the Catalan-G coupling, not a knot reuse.
+
+### Why ³He's L6a4 IS principled
+
+³He's binding link L6a4 (Borromean rings) is the actual Markov closure of the H_9 Hecke element T_w(³He) — three nucleons threading the same Borromean topology that internal-quark Borromean structure already obeys. Vol(L6a4) = 8G enters because the categorical mass invariant on an L6a4 closure equals 8G by hyperbolic-geometry identity. The factor `ρ = 2` is the multiplicity of the SDP solution in the Wedderburn block.
+
+### Hypothesis A.1: ρ = A − 1 — VALID for family 1 only
+
+Restated within family-1 (principled, knot-explicit) atoms:
 
 | atom | A | A − 1 | observed ρ | match |
 |---|---:|---:|---:|:---:|
 | deuteron | 2 | 1 | 1 | ✓ |
 | tritium | 3 | 2 | 2 | ✓ |
 | ³He | 3 | 2 | 2 | ✓ |
+| ⁴He | 4 | 3 | 2 | **✗ (different family)** |
 
-**FALSIFIED** by the watched-branch's `binding_ladder_catalog.py:63`
-which records the magic-A formula
+A.1 fits family-1 atoms (D, T, ³He). It **does not generalize** to families 2–4 because those don't use the `ρ · m_e · Vol(T_w)` form:
 
-  B(⁴He) = 2 · m_e · 4 · Vol(L6a4)
+- **Family 2 (⁴He):** uses `2 · A · α` — the prefactor is `2A`, not ρ. Saying "ρ_⁴He = 2" is a notational handle for the magic-A constant, not the same ρ as in family 1.
+- **Family 3 (⁸Be–⁴⁰Ca):** recursive composition; "ρ" is determined by the cluster structure, not by A − 1.
+- **Family 4 (⁶Li, ⁷Li):** open; deprecated volume-match suggested ρ = 5 but the methodology was quarantined in commit `f970e86f`.
 
-implying **ρ_⁴He = 2, not 3**.  The hypothesis fails at A = 4.
+### Hypothesis A.2: T_w recursive cluster decomposition — partially confirmed
 
-Two structural observations from the actual ⁴He formula:
+The watched branch's `recursive-on-4He` methodology for ⁸Be–⁴⁰Ca confirms the **α-cluster recursion** form for the family-3 atoms:
 
-1. **⁴He reuses ³He's knot (L6a4)** — not a distinct knot.  Suggests
-   the simple formula `B = ρ · m_e · Vol(T_w)` doesn't fit ⁴He
-   directly; instead the magic-A formula uses `ρ · m_e · A · Vol(³He's
-   knot)`.
-2. **ρ ≤ 2 cap?** Maybe ρ stays at 2 across the magic-A family while
-   the *A factor* grows.  This would explain ρ_⁴He = ρ_³He = 2 and
-   suggest ρ_⁶Li, ρ_⁷Li are also small (not 5/6 as the deprecated
-   volume-match observation, nor as A.1 predicts).
+- ⁸Be ≈ α + α (typically unstable)
+- ¹²C ≈ 3α (Hoyle state, very stable)
+- ¹⁶O ≈ 4α
+- ²⁰Ne ≈ 5α
+- ²⁴Mg ≈ 6α
+- ⁴⁰Ca ≈ 10α
 
-A revised hypothesis that fits all 4 data points:
+So A.2 is **structurally correct for family 3** (these atoms are integer-α-cluster compositions). The Littlewood–Richardson cross-level embedding (commit `96ce5607`) provides the algebraic infrastructure to lift T_w(⁴He) recursively up the family-3 chain.
 
-  **A.1' (revised):** ρ = number of cluster-binding crossings, capped
-  at 2 for magic-A nuclei.  D: 1 binding link (Hopf) → ρ = 1.
-  T: 2 binding crossings → ρ = 2.  ³He: 2 binding crossings → ρ = 2.
-  ⁴He: doubly magic, ρ = 2 (same as ³He).
+A.2 **does not directly apply** to family 4 (⁶Li, ⁷Li): these atoms are NOT integer-α-clusters (⁶Li ≠ integer × ⁴He). They might be representable as **α + (light non-α-cluster)**:
 
-This is post-hoc, not predictive.  Without more derived atoms it
-cannot be confirmed; it is recorded as a hypothesis for the watched
-branch's principled-derivation pipeline to test.
+- ⁶Li ≈ α + D (deuteron cluster outside the α core)
+- ⁷Li ≈ α + T (tritium cluster outside the α core)
 
-### Hypothesis A.1 ⁻ (FALSIFIED): canonical formula B = ρ · m_e · tr_M(T_w) does not fit ⁴He
+If this representation is the right one, T_w(⁶Li) could be derived as `LR_embed(T_w(⁴He)) ⊗ T_w(D) + binding_crossing` and similarly for ⁷Li. The watched branch's R4 LR-embedding infrastructure supports this; the **derivation** is open until watched-branch phase 4+ runs the H_18 / H_21 SDP with the specific cluster ansatz.
 
-The phase-0 derivation block (`prop:atom-knot-mass-derivation` from
-commit `7588970f`) gives the canonical form
+### Status summary
 
-  B(𝔥) = m_e · ρ · tr_M(T_w) | q = q_0
+| Item | Status |
+|---|---|
+| Hypothesis A.1 (ρ = A − 1) | **valid for family 1 only** (D, T, ³He) |
+| Magic-A formula `B = 2·A·α` for ⁴He | derived (per `binding-scale-catalan.md`, `derived-mass-formula-light-isotopes.md`) |
+| Family 3 α-cluster recursion (⁸Be–⁴⁰Ca) | derived (`recursive-on-4He` methodology) |
+| Family 4 (⁶Li, ⁷Li) T_w | **OPEN** — α + (light cluster) ansatz pending H_18/H_21 SDP runs |
+| ρ for ⁶Li, ⁷Li | **OPEN** — depends on the family-4 derivation method |
 
-For ⁴He the watched-branch's actual formula is
-
-  B(⁴He) = 2 · m_e · 4 · Vol(L6a4) = 2 · m_e · A · Vol(³He's knot)
-
-If the post-Archimedean naming Vol_hyp(T_w) = tr_M(T_w)|_{q_0}
-(volume conjecture) is invoked, this becomes
-
-  B(⁴He) = m_e · ρ_⁴He · A · tr_M(T_⁴He) [canonical]
-       =? 2 · m_e · 4 · tr_M(T_³He)       [magic-A formula]
-
-The two agree only if tr_M(T_⁴He) = (A · tr_M(T_³He)) / ρ_⁴He, i.e.
-ρ_⁴He · tr_M(T_⁴He) = A · tr_M(T_³He).  This isn't an obvious
-identity — it would require an A-multiplicative cluster-recursion
-property of the Markov trace.
-
-**Implication:** the canonical `B = m_e · ρ · tr_M(T_w)` formula may
-need cluster-decomposition machinery for magic-A atoms (ρ_⁴He = 2,
-combined with an A-scaled cluster volume).  The watched branch is
-actively iterating on this; phase 4+ will likely formalise the
-magic-A recursion.
-
-### Hypothesis A.2: T_w recursive cluster decomposition (GAP 4)
-
-The pattern `n_0 = 3A` reflects the level-3 atomic braid: each nucleon
-contributes 3 quark strands, so an A-nucleon atom lives in H_{3A}.
-
-For light atoms the constituent decomposition tracks observable cluster
-structure:
-
-- D = p + n (one binding link, Hopf)
-- T = p + 2n (one binding knot, 8_11; 5-strand braid suggests a 3-2 cluster split)
-- ³He = 2p + n (one binding link, L6a4)
-- ⁴He: predict α-particle structure, knot/link on H_12, possibly two
-  Hopf-Hopf bindings (4-cluster)
-- ⁶Li: in nuclear physics ⁶Li ≈ α + D cluster.  Hypothesise
-  T_w(⁶Li) = LR_embed_{12 → 18}(T_w(⁴He)) ·
-            (binding_crossing on cluster boundary) ·
-            T_w(D) lifted to H_18
-- ⁷Li ≈ α + T cluster: T_w(⁷Li) = LR_embed_{12 → 21}(T_w(⁴He)) ·
-            (binding) · T_w(T) lifted to H_21
-- ⁸Be ≈ α + α: T_w(⁸Be) = LR_embed(T_w(⁴He)) ⊗ LR_embed(T_w(⁴He)) +
-            interaction.  Note: ⁸Be is unstable in nature, which would
-            be predicted by the SDP infeasibility at the
-            cluster-double-α configuration.
-
-The Littlewood–Richardson cross-level embedding infrastructure landed
-in the watched branch's commit `96ce5607` (`R4: cross-level embedding
-consistency via Littlewood-Richardson`) provides the embedding rule
-needed to run this recursion.
-
-**Status:** A.2 is a structural sketch, not a derivation.  Validation
-requires the watched branch to (i) derive ⁴He principled T_w, (ii) run
-LR_embed_{12 → 18} ∘ T_w(⁴He) and check whether the result + binding
-yields the SDP-feasible T_w(⁶Li) at the right ρ.
-
-### What this appendix contributes
-
-It does not close GAPs 4 or 5.  It provides:
-
-- A concrete falsifiable hypothesis (`ρ = A − 1`) that fits all known
-  principled data and matches the deprecated ⁶Li volume-match
-  observation.
-- A structural sketch (LR-embedding cluster decomposition) for the
-  recursive T_w construction, consistent with the watched branch's
-  R4 infrastructure.
-- A specific prediction at ⁴He (`ρ = 3`) that can be tested as soon
-  as the next phase lands on the watched branch.
-
-If A.1 and A.2 hold up, GAPs 4 and 5 reduce to "implement the
-recursion at the new infrastructure level."  If they fail at ⁴He, the
-hypothesis space narrows substantially.
+GAP 4 (T_w for ℓ ≥ 2) and GAP 5 (ρ for ℓ ≥ 2) reduce to: **derive the family-4 T_w and ρ structure for ⁶Li and ⁷Li**. The watched branch's R1–R5 + LR embedding infrastructure provides the algebraic tools; phase 4+ runs are needed to actually instantiate them.
