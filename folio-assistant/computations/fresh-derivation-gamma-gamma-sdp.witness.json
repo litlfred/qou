@@ -1,7 +1,7 @@
 {
   "computation": "fresh-derivation-gamma-gamma-sdp",
   "description": "Fresh p/n construction from \u03b3\u03b3 pair-production initial state using greedy LP proxy for SDP operator selection.  \u03b3\u03b3 = \ud835\udfd9 + \u03c3_0 + \u03c3_1 + \u03c3_0\u00b7\u03c3_1 in H_3(q); fit per-block Hecke-generator sequence to reach proton/neutron NF; sum Hecke energies as mass proxy.  Symmetric polarization, \u03c6 = 1.  Proper SDP deferred (requires cvxpy + matrix-valued dual variables).",
-  "computedAt": "2026-04-24T17:05:25.817214+00:00",
+  "timestamp": "2026-04-27T21:04:17.742507+00:00",
   "q_0": 1.1099785955541805,
   "electron": {
     "name": "electron",
@@ -32,7 +32,7 @@
           "-0"
         ],
         "residual": 0.09469126444119058,
-        "hecke_energy": "0.025205106098910852918"
+        "hecke_energy": "0.025205106098910901259"
       },
       "[2, 1]": {
         "dim": 2,
@@ -59,7 +59,7 @@
           "+1"
         ],
         "residual": 1.8175555802539458,
-        "hecke_energy": "3.5795050911270111217"
+        "hecke_energy": "3.5795050911270110294"
       },
       "[1, 1, 1]": {
         "dim": 1,
@@ -86,10 +86,10 @@
           "+0"
         ],
         "residual": 0.7410508707601575,
-        "hecke_energy": "0.41224761455268655596"
+        "hecke_energy": "0.41224761455268705117"
       }
     },
-    "total_hecke_energy": "4.016957811778608530597409"
+    "total_hecke_energy": "4.016957811778608981840924"
   },
   "proton": {
     "name": "PROTON",
@@ -120,7 +120,7 @@
           "-0"
         ],
         "residual": 0.10963389471507656,
-        "hecke_energy": "0.025205106098910852918"
+        "hecke_energy": "0.025205106098910901259"
       },
       "[2, 1]": {
         "dim": 2,
@@ -147,7 +147,7 @@
           "+0"
         ],
         "residual": 1.5503902538967937,
-        "hecke_energy": "3.5104467832664320985"
+        "hecke_energy": "3.510446783266432008"
       },
       "[1, 1, 1]": {
         "dim": 1,
@@ -174,10 +174,10 @@
           "+0"
         ],
         "residual": 0.7490407354836005,
-        "hecke_energy": "0.41224761455268655596"
+        "hecke_energy": "0.41224761455268705117"
       }
     },
-    "total_hecke_energy": "3.947899503918029507412187"
+    "total_hecke_energy": "3.947899503918029960436473"
   },
   "neutron": {
     "name": "NEUTRON",
@@ -208,7 +208,7 @@
           "-0"
         ],
         "residual": 0.08898476019848323,
-        "hecke_energy": "0.025430824473839011283"
+        "hecke_energy": "0.025430824473839060056"
       },
       "[2, 1]": {
         "dim": 2,
@@ -235,7 +235,7 @@
           "+0"
         ],
         "residual": 1.7272128577514851,
-        "hecke_energy": "3.5449759371967216101"
+        "hecke_energy": "3.5449759371967215187"
       },
       "[1, 1, 1]": {
         "dim": 1,
@@ -262,10 +262,10 @@
           "+0"
         ],
         "residual": 0.9205793947458432,
-        "hecke_energy": "0.41224761455268655596"
+        "hecke_energy": "0.41224761455268705117"
       }
     },
-    "total_hecke_energy": "3.982654376223247177369203"
+    "total_hecke_energy": "3.982654376223247629936007"
   },
   "calibrated_masses": {
     "m_p_fresh_MeV": 0.5022140126272304,
@@ -274,7 +274,5 @@
     "err_n_pct": -99.94607770954727,
     "ratio_pn_fresh": 0.9912734400171135,
     "ratio_pn_codata": 0.9986234781189752
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }
