@@ -31,21 +31,6 @@ fn svec_pack(m: &[Vec<f64>]) -> Vec<f64> {
     out
 }
 
-/// Alternative svec: row-major upper triangle (what some SDP solvers use).
-fn svec_pack_upper_rowmajor(m: &[Vec<f64>]) -> Vec<f64> {
-    let d = m.len();
-    let mut out = Vec::with_capacity(d * (d + 1) / 2);
-    let sqrt2 = 2f64.sqrt();
-    for row in 0..d {
-        for col in row..d {
-            let v = 0.5 * (m[row][col] + m[col][row]);
-            let scale = if row == col { 1.0 } else { sqrt2 };
-            out.push(v * scale);
-        }
-    }
-    out
-}
-
 fn main() {
     let q = 1.1097;
     println!("══════════════════════════════════════════════════════════════════════");

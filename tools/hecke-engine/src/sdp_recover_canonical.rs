@@ -32,7 +32,7 @@
 //!
 //! See [R5_FULL_PLAN.md](../../R5_FULL_PLAN.md) §"R5.4".
 
-use crate::gb_nf_reducer::{coxeter_length, perm_apply_s, HeckeElement, LaurentQ};
+use crate::gb_nf_reducer::{HeckeElement, LaurentQ};
 use crate::seminormal::{partitions_of, seminormal_matrices};
 use clarabel::algebra::CscMatrix;
 use clarabel::solver::*;
@@ -52,17 +52,6 @@ pub struct RecoveryReport {
     pub max_residual: f64,
     pub solver_status: String,
     pub iterations: u32,
-}
-
-fn invert_matrix_h(m: &[Vec<f64>], h: f64) -> Vec<Vec<f64>> {
-    let n = m.len();
-    let mut out = vec![vec![0.0f64; n]; n];
-    for (i, row) in m.iter().enumerate() {
-        for (j, &v) in row.iter().enumerate() {
-            out[i][j] = if i == j { v - h } else { v };
-        }
-    }
-    out
 }
 
 fn sparse_to_dense(sparse: &[Vec<(usize, f64)>], dim: usize) -> Vec<Vec<f64>> {

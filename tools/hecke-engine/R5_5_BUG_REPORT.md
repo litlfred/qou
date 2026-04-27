@@ -114,9 +114,12 @@ pick the sparsest $c$ achieving $\alpha^* = 1$.  Slow but correct.
 ### Option C — Use Python's cvxpy via pyo3
 
 cvxpy + Clarabel-py has a different code path and may not exhibit the
-bug.  Cross-validation test at d=5 in R5.3 confirmed Clarabel-rs and
-bisection agree on the standard (2,1) block (which is d=2 at H_3).
-At d=4 / d=6, R5.3 may also be wrong.
+bug.  The existing R5.3 cross-validation tests only covered braid
+representations at small matrix dimensions ($d \leq 3$ — H_3 has
+$d_{(2,1)} = 2$, no larger block exists at H_3), where Clarabel works
+correctly.  Those tests therefore did not expose this bug which only
+manifests at $d \geq 4$.  At $d = 4 / d = 6$ the R5.3 SDP path may
+also produce wrong results.
 
 ### Recommended
 
