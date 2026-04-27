@@ -1,4 +1,4 @@
-import Mathlib.LinearAlgebra.Span
+import Mathlib.LinearAlgebra.Span.Basic
 import Mathlib.SetTheory.Ordinal.Arithmetic
 import QOU.AppendixSurreals.Basic
 

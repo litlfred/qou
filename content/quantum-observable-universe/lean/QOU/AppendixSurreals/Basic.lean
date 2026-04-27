@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.SetTheory.Ordinal.Arithmetic
-import Mathlib.SetTheory.Ordinal.NaturalSum
+import Mathlib.SetTheory.Ordinal.NaturalOps
 import Mathlib.Data.Real.Basic
 
 /-!

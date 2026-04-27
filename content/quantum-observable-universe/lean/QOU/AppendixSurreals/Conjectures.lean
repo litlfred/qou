@@ -1,4 +1,4 @@
-import Mathlib.Algebra.Polynomial.Eval
+import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import QOU.AppendixSurreals.Basic
 import QOU.AppendixSurreals.StandardPart
