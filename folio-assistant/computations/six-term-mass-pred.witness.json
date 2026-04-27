@@ -1,7 +1,7 @@
 {
   "computation": "six-term-mass-pred",
   "description": "Per-particle six-term mass-formula enumeration for Family 1 (D, T, \u00b3He) consuming canonical GB-NF data from joint-tower-sdp-rust.witness.json. Reads each existing per-term script's helper (no SnapPy, no hp_volume, no fitted constants). T4 (Frobenius co-Casimir) is marked pending because frobenius_partition_sum.py lacks a per-atom helper; the AME-comparable binding-energy assembly is queued as Sprint A v4.",
-  "timestamp": "2026-04-27T19:44:18.963348+00:00",
+  "computedAt": "2026-04-27T19:54:12.492288+00:00",
   "source_witness": "folio-assistant/computations/joint-tower-sdp-rust.witness.json",
   "precision_dps": 50,
   "per_particle": {
@@ -38,13 +38,11 @@
         },
         "T6_habiro_residue": {
           "per_A": {
-            "2": {
-              "A=2": {
-                "partition_count": 11,
-                "global_sum_at_q0": "0.0831585889687035716872811457205",
-                "h3_additive_at_q0": "4.19496243227178831824995441755",
-                "ratio_global_over_h3": "0.0198234406889953745551186321540"
-              }
+            "A=2": {
+              "partition_count": 11,
+              "global_sum_at_q0": "0.0831585889687035716872811457205",
+              "h3_additive_at_q0": "4.19496243227178831824995441755",
+              "ratio_global_over_h3": "0.0198234406889953745551186321540"
             }
           },
           "source": "habiro_residue_symbolic.eval_schur_weyl_exact_at_q0"
@@ -92,13 +90,11 @@
         },
         "T6_habiro_residue": {
           "per_A": {
-            "3": {
-              "A=3": {
-                "partition_count": 30,
-                "global_sum_at_q0": "0.00113270787017229721218585604267",
-                "h3_additive_at_q0": "9.91664853812058338386569674510",
-                "ratio_global_over_h3": "0.000114222851179817000616968504378"
-              }
+            "A=3": {
+              "partition_count": 30,
+              "global_sum_at_q0": "0.00113270787017229721218585604267",
+              "h3_additive_at_q0": "9.91664853812058338386569674510",
+              "ratio_global_over_h3": "0.000114222851179817000616968504378"
             }
           },
           "source": "habiro_residue_symbolic.eval_schur_weyl_exact_at_q0"
@@ -138,13 +134,11 @@
         },
         "T6_habiro_residue": {
           "per_A": {
-            "3": {
-              "A=3": {
-                "partition_count": 30,
-                "global_sum_at_q0": "0.00113270787017229721218585604267",
-                "h3_additive_at_q0": "9.91664853812058338386569674510",
-                "ratio_global_over_h3": "0.000114222851179817000616968504378"
-              }
+            "A=3": {
+              "partition_count": 30,
+              "global_sum_at_q0": "0.00113270787017229721218585604267",
+              "h3_additive_at_q0": "9.91664853812058338386569674510",
+              "ratio_global_over_h3": "0.000114222851179817000616968504378"
             }
           },
           "source": "habiro_residue_symbolic.eval_schur_weyl_exact_at_q0"
@@ -158,7 +152,7 @@
     "used_volume_match": false,
     "used_fitted_constants": false,
     "term_status": {
-      "T1_T2_T3": "wired (compute_isotope_tower)",
+      "T1_T2_T3": "wired (tower_isotope_absolute.compute_isotope_tower)",
       "T4": "pending \u2014 needs per-atom Frobenius co-Casimir helper",
       "T5": "wired (ribbon_content_average.content_average)",
       "T6": "wired (habiro_residue_symbolic.eval_schur_weyl_exact_at_q0)"
