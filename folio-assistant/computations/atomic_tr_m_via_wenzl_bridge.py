@@ -32,9 +32,13 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-from mpmath import mp, mpf
+from mpmath import mp, mpf, log as mp_log
+import sympy as sp
 
-mp.dps = 50
+# Module-level precision contract: this is a high-precision scientific
+# script, not a reusable library. Per Gemini review on PR #456 we use
+# mp.workdps() inside main() for explicit local scope; the module-level
+# default is left at mpmath's default to avoid polluting importers.
 
 HERE = Path(__file__).parent
 Y_LAMBDA = HERE / "y-lambda-mpfr-witness.json"
@@ -135,72 +139,71 @@ def main() -> int:
         print(f"  Build with: cd tools/hecke-engine && cargo build --release --bin dump-block-matrices")
         return 1
 
-    q0_str = json.load(open(HERE / "q-pinning-50-digit.witness.json"))["derived_50_digit"]["q"]
-    q0_mpf = mpf(q0_str)
-    print(f"  q_0 = {q0_str}")
+    # Local precision scope per Gemini review on PR #456.
+    with mp.workdps(50):
+        q0_str = json.load(open(HERE / "q-pinning-50-digit.witness.json"))["derived_50_digit"]["q"]
+        q0_mpf = mpf(q0_str)
+        print(f"  q_0 = {q0_str}")
 
-    results = []
-    for atom, rho, n, historical_K in ATOMS:
-        print(f"\n  === {atom} (n={n}, ρ={rho}) ===")
-        tr_m, breakdown = compute_tr_m(atom, n)
-        b_term1 = M_E_MEV * rho * abs(tr_m)
-        print(f"    tr_M(q_0) (mixed precision: y_λ@50dps × Tr(ρ_λ)@f64) = {tr_m}")
-        print(f"    Term-1 contribution: m_e · ρ · |tr_M| = {b_term1} MeV")
+        results = []
+        for atom, rho, n, historical_K in ATOMS:
+            print(f"\n  === {atom} (n={n}, ρ={rho}) ===")
+            tr_m, breakdown = compute_tr_m(atom, n)
+            b_term1 = M_E_MEV * rho * abs(tr_m)
+            print(f"    tr_M(q_0) (mixed precision: y_λ@50dps × Tr(ρ_λ)@f64) = {tr_m}")
+            print(f"    Term-1 contribution: m_e · ρ · |tr_M| = {b_term1} MeV")
 
-        comparison = None
-        if historical_K and historical_K in J_PUBLISHED:
-            import sympy as sp
-            J_sym = sp.sympify(J_PUBLISHED[historical_K])
-            J_at_q0 = sp.N(J_sym.subs({s: sp.Float(q0_str, 60) for s in J_sym.free_symbols}), 50)
-            J_at_q0_mpf = mpf(str(J_at_q0))
-            ratio = tr_m / J_at_q0_mpf if J_at_q0_mpf != 0 else None
-            from mpmath import log as mp_log
-            log_ratio_over_log_q0 = (
-                mp_log(abs(ratio)) / mp_log(q0_mpf) if ratio and ratio != 0 else None
-            )
-            comparison = {
-                "historical_K": historical_K,
-                "J_K_at_q0": str(J_at_q0_mpf),
-                "tr_M_over_J_K": str(ratio),
-                "log_ratio_over_log_q0": str(log_ratio_over_log_q0),
-                "writhe_match":
-                    abs(round(float(log_ratio_over_log_q0)) - float(log_ratio_over_log_q0)) < 0.01
-                    if log_ratio_over_log_q0 else False,
-            }
-            print(f"    historical K = {historical_K}")
-            print(f"    J_K(q_0)   = {J_at_q0_mpf}")
-            print(f"    tr_M / J_K = {ratio}")
-            print(f"    log(|ratio|)/log(q_0) = {log_ratio_over_log_q0}")
-            print(f"    writhe-normalised match? {comparison['writhe_match']}")
+            # The J_K integer-power test is structurally post-Archimedean
+            # (Jones polynomials require ribbon framing; ribbon datum lives
+            # post-Archimedean per def:sqrt-q-ribbon-structure). The
+            # writhe-normalised match field is therefore not a well-defined
+            # pre-Archimedean structural test. Disabled per
+            # docs/audits/markov-test-is-post-archimedean.md and the Gemini
+            # review on PR #456. The published J_K polynomials remain in
+            # J_PUBLISHED for documentation; the comparison is recorded as
+            # informational only with a "post_archimedean_caveat" tag.
+            comparison = None
+            if historical_K and historical_K in J_PUBLISHED:
+                comparison = {
+                    "historical_K": historical_K,
+                    "J_K_published_polynomial": J_PUBLISHED[historical_K],
+                    "post_archimedean_caveat":
+                        "J_K and tr_M live in different categories — see "
+                        "docs/audits/markov-test-is-post-archimedean.md. "
+                        "No ratio-test or writhe-match is computed.",
+                }
+                print(f"    historical K = {historical_K}")
+                print(f"    (J_K vs tr_M comparison is post-Archimedean — see audit.)")
 
-        results.append({
-            "atom": atom,
-            "n_strands": n,
-            "rho_factor": rho,
-            "tr_M_mixed_precision": str(tr_m),
-            "term1_b_pred_mev": str(b_term1),
-            "per_block_breakdown": breakdown,
-            "historical_K_comparison": comparison,
-        })
+            results.append({
+                "atom": atom,
+                "n_strands": n,
+                "rho_factor": rho,
+                "tr_M_mixed_precision": str(tr_m),
+                "term1_b_pred_mev": str(b_term1),
+                "per_block_breakdown": breakdown,
+                "historical_K_comparison": comparison,
+            })
 
-    out = {
-        "computation": "atomic-tr-m-wenzl-bridge",
-        "description":
-            "tr_M(T_w, q_0) computed via Hoefsmit + Wenzl-bridge per "
-            "prop:atom-knot-mass-derivation: tr_M = Σ_λ y_λ · Tr(ρ_λ(T_w)). "
-            "y_λ at 50 dps from y-lambda-mpfr-witness.json; Tr(ρ_λ) at "
-            "f64 from dump-block-matrices Rust binary. Mixed precision: "
-            "the y_λ × Tr product is at f64 precision (~15 digits) — "
-            "good enough for the Markov-class invariant J_K test. "
-            "Sidesteps sympy's H_9 cost wall (>4 min vs <1 sec here).",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "precision": "mixed (y_λ@50dps; Tr(ρ_λ)@f64)",
-        "q_0_50dps": q0_str,
-        "results": results,
-    }
-    OUT.write_text(json.dumps(out, indent=2))
-    print(f"\n  Output: {OUT.relative_to(HERE.parent.parent)}")
-    return 0
+        out = {
+            "computation": "atomic-tr-m-wenzl-bridge",
+            "description":
+                "tr_M(T_w, q_0) computed via Hoefsmit + Wenzl-bridge per "
+                "prop:atom-knot-mass-derivation: tr_M = Σ_λ y_λ · Tr(ρ_λ(T_w)). "
+                "y_λ at 50 dps from y-lambda-mpfr-witness.json; Tr(ρ_λ) at "
+                "f64 from dump-block-matrices Rust binary. Mixed precision: "
+                "the y_λ × Tr product is at f64 precision (~15 digits). "
+                "Sidesteps sympy's H_9 cost wall (>4 min vs <1 sec here). "
+                "J_K writhe-match test disabled per "
+                "docs/audits/markov-test-is-post-archimedean.md.",
+            "computedAt": datetime.now(timezone.utc).isoformat(),
+            "precision": "mixed (y_λ@50dps; Tr(ρ_λ)@f64)",
+            "q_0_50dps": q0_str,
+            "results": results,
+        }
+        OUT.write_text(json.dumps(out, indent=2))
+        print(f"\n  Output: {OUT.relative_to(HERE.parent.parent)}")
+        return 0
 
 
 if __name__ == "__main__":

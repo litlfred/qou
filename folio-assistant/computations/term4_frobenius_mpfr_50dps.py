@@ -132,13 +132,15 @@ def main() -> int:
         print(f"    Σ 1/dim_q(λ) at q_0 (50 dps) = {at_q0_mpf}")
         print(f"    Term 4 = m_e · Σ = {term4} MeV")
 
-    # Extend to n=7..9 (T, ³He at n=9 needed by unified mass table)
+    # Extend to n=7..9 (T, ³He at n=9 needed by unified mass table).
+    # Use sp.cancel (much faster than sp.simplify on sums of rational
+    # functions of q; per Gemini review on PR #456).
     for n in (7, 8, 9):
         total = sp.Integer(0)
         for lam in partitions_of(n):
             d = q_dim_sym(lam, q_sym)
             total += sp.cancel(sp.Integer(1) / d)
-        sym = sp.simplify(total)
+        sym = sp.cancel(total)
         free = list(sym.free_symbols)
         at_q0 = sp.N(sym.subs({s: sp.Float(q_str, 60) for s in free}), 50)
         at_q0_mpf = mpf(str(at_q0))
