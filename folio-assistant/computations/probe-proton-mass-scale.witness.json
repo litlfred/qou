@@ -1,0 +1,359 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-27T16:20:03.562057+00:00",
+  "commitSha": "4944827003e92bd17dc837798e32dbc740cf8eda",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "probe-proton-mass-scale",
+  "scriptFile": "probe_proton_mass_scale.py",
+  "scriptHash": "26646572e77e",
+  "scriptCommitSha": "",
+  "description": "Investigates 4 candidate algebraic sources for the proton-to-electron mass ratio m_p/m_e ≈ 1836 within ℚ(q): sub-tower depth, Frobenius pairing, [n]_q!, and different SDP formulation. Finds NONE generates 1836× directly. The scale must come from a categorical axiom the current chain is missing.",
+  "contentBlock": "prop:atom-knot-mass-derivation",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_p_AME_MeV": 938.27208816,
+    "m_e_MeV": 0.51099895,
+    "target_ratio": 1836.1526734252586
+  },
+  "data": {
+    "candidate_1_subtower": {
+      "candidate": "1-subtower-depth",
+      "tr_M_predicted_at_H9_via_LR": 1.0,
+      "target": 1836.1526734252586,
+      "ratio_to_target": 0.0005446170214890387,
+      "verdict": "NEGATIVE",
+      "explanation": "Markov trace is multiplicative under H_a ⊗ H_b ↪ H_{a+b}; embedding T_w(p, H_3) into H_9 gives tr_M·tr_M(1) = 1. Sub-tower depth alone cannot supply a 1836× scale. (Would only help if the deeper T_w has non-trivial internal structure — that is candidate 4 in disguise.)"
+    },
+    "candidate_2_frobenius": {
+      "candidate": "2-frobenius-coform",
+      "frobenius_pairing": 0.9969164594673835,
+      "m_p_predicted_MeV": 0.5094232640255505,
+      "m_p_AME_MeV": 938.27208816,
+      "ratio_pred_to_AME": 0.0005429376728285244,
+      "block_contributions": [
+        {
+          "partition": [
+            3
+          ],
+          "y_lambda": 0.4153957863345666,
+          "eigvals_sym": [
+            1.0000000000000024
+          ],
+          "fro_sq_block": 1.0000000000000049,
+          "contribution": 0.41539578633456864
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "y_lambda": 0.2809296339798641,
+          "eigvals_sym": [
+            0.9809516303615184,
+            1.0132905291454406
+          ],
+          "fro_sq_block": 1.989023797564768,
+          "contribution": 0.5587757274271096
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "y_lambda": 0.022744945705705264,
+          "eigvals_sym": [
+            1.0000000000000013
+          ],
+          "fro_sq_block": 1.0000000000000027,
+          "contribution": 0.022744945705705323
+        }
+      ],
+      "verdict": "NEGATIVE",
+      "explanation": "‖T_w‖_F² ≈ Σ y_λ · Σ_i eig²_i over Wedderburn blocks. For T_w(p) ≈ identity, eigenvalues ≈ 1 so ‖·‖_F² ≈ 1. The Frobenius pairing reproduces the regular trace for near-identity elements; cannot generate a 1836× factor unless T_w has eigenvalues ~√1836 ≈ 42.85 in some block."
+    },
+    "candidate_3_q_factorial": {
+      "candidate": "3-quantum-factorial",
+      "target_1836": 1836.1526734252586,
+      "table": [
+        {
+          "n": 1,
+          "[n]_q": 1.0,
+          "[n]_q_factorial": 1.0,
+          "n_factorial": 1,
+          "ratio_q_fac_to_classical": 1.0,
+          "ratio_to_1836": 0.0005446170214890387,
+          "sqrt_to_1836": 0.0005446170214890387
+        },
+        {
+          "n": 2,
+          "[n]_q": 2.010896869118482,
+          "[n]_q_factorial": 2.010896869118482,
+          "n_factorial": 2,
+          "ratio_q_fac_to_classical": 1.005448434559241,
+          "ratio_to_1836": 0.001095168663380941,
+          "sqrt_to_1836": 0.0007723001330303263
+        },
+        {
+          "n": 3,
+          "[n]_q": 3.0437062182305117,
+          "[n]_q_factorial": 6.12057930475619,
+          "n_factorial": 6,
+          "ratio_q_fac_to_classical": 1.0200965507926985,
+          "ratio_to_1836": 0.0033333716707437677,
+          "sqrt_to_1836": 0.0013473718680588561
+        },
+        {
+          "n": 4,
+          "[n]_q": 4.109682435637708,
+          "[n]_q_factorial": 25.15363726468417,
+          "n_factorial": 24,
+          "ratio_q_fac_to_classical": 1.0480682193618405,
+          "ratio_to_1836": 0.013699099006707984,
+          "sqrt_to_1836": 0.0027314396383806014
+        },
+        {
+          "n": 5,
+          "[n]_q": 5.220441324664572,
+          "[n]_q_factorial": 131.31308744217998,
+          "n_factorial": 120,
+          "ratio_q_fac_to_classical": 1.0942757286848332,
+          "ratio_to_1836": 0.07151534256528976,
+          "sqrt_to_1836": 0.006240871161839218
+        },
+        {
+          "n": 6,
+          "[n]_q": 6.388086679547021,
+          "[n]_q_factorial": 838.8393847395831,
+          "n_factorial": 720,
+          "ratio_q_fac_to_classical": 1.1650547010271988,
+          "ratio_to_1836": 0.4568462072245696,
+          "sqrt_to_1836": 0.015773592509546113
+        },
+        {
+          "n": 7,
+          "[n]_q": 7.625342178894007,
+          "[n]_q_factorial": 6396.437341772241,
+          "n_factorial": 5040,
+          "ratio_q_fac_to_classical": 1.269134393208778,
+          "ratio_to_1836": 3.4836086532172623,
+          "sqrt_to_1836": 0.04355723325406042
+        },
+        {
+          "n": 8,
+          "[n]_q": 8.94569003394804,
+          "[n]_q_factorial": 57220.545781065026,
+          "n_factorial": 40320,
+          "ratio_q_fac_to_classical": 1.4191603616335573,
+          "ratio_to_1836": 31.163283211260815,
+          "sqrt_to_1836": 0.13027683785821728
+        },
+        {
+          "n": 9,
+          "[n]_q": 10.363517902476511,
+          "[n]_q_factorial": 593006.1505915442,
+          "n_factorial": 362880,
+          "ratio_q_fac_to_classical": 1.6341659793638235,
+          "ratio_to_1836": 322.9612434598472,
+          "sqrt_to_1836": 0.4193926447489253
+        },
+        {
+          "n": 10,
+          "[n]_q": 11.89427566919531,
+          "[n]_q_factorial": 7053378.628664174,
+          "n_factorial": 3628800,
+          "ratio_q_fac_to_classical": 1.9437220647773847,
+          "ratio_to_1836": 3841.390060177523,
+          "sqrt_to_1836": 1.4464046504873669
+        },
+        {
+          "n": 11,
+          "[n]_q": 13.554643801140474,
+          "[n]_q_factorial": 95606034.90611954,
+          "n_factorial": 39916800,
+          "ratio_q_fac_to_classical": 2.395132748770431,
+          "ratio_to_1836": 52068.67396694789,
+          "sqrt_to_1836": 5.325174751007052
+        },
+        {
+          "n": 12,
+          "[n]_q": 15.3627151125343,
+          "[n]_q_factorial": 1468768277.3017244,
+          "n_factorial": 479001600,
+          "ratio_q_fac_to_classical": 3.0663118396717763,
+          "ratio_to_1836": 799916.2044416517,
+          "sqrt_to_1836": 20.87218198233786
+        },
+        {
+          "n": 13,
+          "[n]_q": 17.338191919813937,
+          "[n]_q_factorial": 25465786277.591793,
+          "n_factorial": 6227020800,
+          "ratio_q_fac_to_classical": 4.08956178170977,
+          "ratio_to_1836": 13869100.672378477,
+          "sqrt_to_1836": 86.910001144416
+        },
+        {
+          "n": 14,
+          "[n]_q": 19.5026007351949,
+          "[n]_q_factorial": 496649062179.6779,
+          "n_factorial": 87178291200,
+          "ratio_q_fac_to_classical": 5.696935043614137,
+          "ratio_to_1836": 270483532.9696206,
+          "sqrt_to_1836": 383.8097654929418
+        },
+        {
+          "n": 15,
+          "[n]_q": 21.87952683825729,
+          "[n]_q_factorial": 10866446485155.578,
+          "n_factorial": 1307674368000,
+          "ratio_q_fac_to_classical": 8.309749545504266,
+          "ratio_to_1836": 5918051718.915465,
+          "sqrt_to_1836": 1795.2915362619594
+        },
+        {
+          "n": 16,
+          "[n]_q": 24.49487128165047,
+          "[n]_q_factorial": 266172207942829.1,
+          "n_factorial": 20922789888000,
+          "ratio_q_fac_to_classical": 12.721640343742532,
+          "ratio_to_1836": 144961915092.98465,
+          "sqrt_to_1836": 8885.309585337374
+        },
+        {
+          "n": 17,
+          "[n]_q": 27.377133131473858,
+          "[n]_q_factorial": 7287031972749176.0,
+          "n_factorial": 355687428096000,
+          "ratio_q_fac_to_classical": 20.48717890243342,
+          "ratio_to_1836": 3968641648494.0503,
+          "sqrt_to_1836": 46490.749552574205
+        },
+        {
+          "n": 18,
+          "[n]_q": 30.557720017870164,
+          "[n]_q_factorial": 2.226750827845374e+17,
+          "n_factorial": 6402373705728000,
+          "ratio_q_fac_to_classical": 34.78008204758761,
+          "ratio_to_1836": 121272640345939.89,
+          "sqrt_to_1836": 256996.3894168889
+        },
+        {
+          "n": 19,
+          "[n]_q": 34.07129037986041,
+          "[n]_q_factorial": 7.586827405911429e+18,
+          "n_factorial": 121645100408832000,
+          "ratio_q_fac_to_classical": 62.36854078309092,
+          "ratio_to_1836": 4131915344358893.0,
+          "sqrt_to_1836": 1500103.8057046572
+        },
+        {
+          "n": 20,
+          "[n]_q": 37.95613113381778,
+          "[n]_q_factorial": 2.8796661590841675e+20,
+          "n_factorial": 2432902008176640000,
+          "ratio_q_fac_to_classical": 118.36342562939306,
+          "ratio_to_1836": 1.5683152064431997e+17,
+          "sqrt_to_1836": 9241921.642651286
+        },
+        {
+          "n": 21,
+          "[n]_q": 42.25457488098428,
+          "[n]_q_factorial": 1.2167906935125834e+22,
+          "n_factorial": 51090942171709440000,
+          "ratio_q_fac_to_classical": 238.16172530604774,
+          "ratio_to_1836": 6.626849232764049e+18,
+          "sqrt_to_1836": 60075742.950086586
+        },
+        {
+          "n": 22,
+          "[n]_q": 47.01346120028596,
+          "[n]_q_factorial": 5.720554205832288e+23,
+          "n_factorial": 1124000727777607680000,
+          "ratio_q_fac_to_classical": 508.94577418495624,
+          "ratio_to_1836": 3.115511192846974e+20,
+          "sqrt_to_1836": 411917519.2030659
+        },
+        {
+          "n": 23,
+          "[n]_q": 52.28464705309397,
+          "[n]_q_factorial": 2.9909715760003344e+25,
+          "n_factorial": 25852016738884976640000,
+          "ratio_q_fac_to_classical": 1156.9587031488738,
+          "ratio_to_1836": 1.628934031079678e+22,
+          "sqrt_to_1836": 2978498279.6851635
+        },
+        {
+          "n": 24,
+          "[n]_q": 58.12557186174555,
+          "[n]_q_factorial": 1.738519332772458e+27,
+          "n_factorial": 620448401733239439360000,
+          "ratio_q_fac_to_classical": 2802.0369267063256,
+          "ratio_to_1836": 9.46827220815647e+23,
+          "sqrt_to_1836": 22708109143.329437
+        }
+      ],
+      "near_target_rows": [
+        {
+          "n": 10,
+          "[n]_q": 11.89427566919531,
+          "[n]_q_factorial": 7053378.628664174,
+          "n_factorial": 3628800,
+          "ratio_q_fac_to_classical": 1.9437220647773847,
+          "ratio_to_1836": 3841.390060177523,
+          "sqrt_to_1836": 1.4464046504873669
+        }
+      ],
+      "verdict": "POSSIBLE",
+      "explanation": "Searches [n]_q! at q_0 for natural value ≈ 1836. If a specific n gives exactly the target, that n is the categorical proton-mass scale degree."
+    },
+    "candidate_4_different_sdp": {
+      "candidate": "4-different-SDP-formulation",
+      "bounds": [
+        {
+          "n": 3,
+          "sqrt_n_factorial": 2.449489742783178,
+          "ratio_to_1836": 0.001334033807882526
+        },
+        {
+          "n": 6,
+          "sqrt_n_factorial": 26.832815729997478,
+          "ratio_to_1836": 0.014613608181035452
+        },
+        {
+          "n": 9,
+          "sqrt_n_factorial": 602.3952191045344,
+          "ratio_to_1836": 0.32807468998794836
+        },
+        {
+          "n": 12,
+          "sqrt_n_factorial": 21886.105181141756,
+          "ratio_to_1836": 11.919545415749242
+        },
+        {
+          "n": 18,
+          "sqrt_n_factorial": 80014834.28544985,
+          "ratio_to_1836": 43577.440723480715
+        }
+      ],
+      "verdict": "INCONCLUSIVE",
+      "explanation": "Without a categorical norm-fixing constraint, the max-tr_M SDP is unbounded. With ‖T_w‖_F = √(n!) (Frobenius norm of the regular representation), max tr_M = √(n!). For n=9 this is 602, not 1836. The right scale is something else."
+    },
+    "conclusion": {
+      "all_4_negative_or_inconclusive": true,
+      "verdicts": {
+        "1-subtower-depth": "NEGATIVE",
+        "2-frobenius-coform": "NEGATIVE",
+        "3-quantum-factorial": "POSSIBLE",
+        "4-different-SDP-formulation": "INCONCLUSIVE"
+      },
+      "next_step": "Examine brane-tower hierarchy. m_p/m_e = 1836.15 is approximately 4·3³·17 = 1836; search for a categorical 17 (Markov closure framing index, or an L-function zero count, or something in the Yekutieli finite-slice depth)."
+    }
+  },
+  "caveats": [
+    "All 4 candidates were investigated within ℚ(q) using existing witness data. None generates the 1836× scale. The chain is missing structural content."
+  ]
+}
