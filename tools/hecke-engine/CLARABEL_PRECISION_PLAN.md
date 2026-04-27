@@ -252,6 +252,163 @@ refactor — it would require gating those existing modules too.
 This plan keeps that out of scope; the `clarabel-hp` flag gates
 only the *new* HP solver siblings.
 
+### S7.  Consumer side: round-trip 50-dps output (~250 LOC + schema)
+
+Producing high-precision output from Clarabel is half the problem.
+The other half is **not collapsing it back to `f64` immediately**
+on the consumer side.  Every downstream sink in QOU today is `f64`:
+
+| Sink | Current type | After |
+|---|---|---|
+| `WedderburnBlockReport::matrix_at_q_0_sym_eigvals` | `Vec<f64>` | `EigenvalueList` (see below) |
+| `WedderburnBlockReport::{min,max}_eigenvalue` | `f64` | `PrecisionScalar` |
+| `JointTowerSdpCertificate::b_pred_mev` / `b_ame_mev` | `f64` | `PrecisionScalar` |
+| `joint-tower-sdp-{atom}.witness.json` (Python-side) | JSON `number` | JSON `string` (decimal) + sibling `_dps` int |
+| Atlas renderer (`recursive_atom_knot_atlas_render.py`) | `float()` | `mpmath.mpf(...)` or `decimal.Decimal(...)` |
+| `folio-assistant/schemas/proof-objects.ts` | `number` | tagged decimal-string type |
+
+#### S7.1 — `PrecisionScalar` envelope type (~80 LOC)
+
+New `src/precision_scalar.rs`.  A serde-capable wrapper that round-
+trips a number at requested decimal precision without ever going
+through `f64`:
+
+```rust
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct PrecisionScalar {
+    /// Canonical decimal representation (signed, with optional
+    /// fractional part and optional `e<int>` exponent).
+    pub value: String,
+    /// Significant decimal digits encoded in `value`.
+    pub dps: u32,
+}
+
+impl PrecisionScalar {
+    pub fn from_rug(f: &rug::Float, dps: u32) -> Self { ... }
+    pub fn to_rug(&self, dps: u32) -> rug::Float { ... }
+    /// Lossy projection — only call from a code site that explicitly
+    /// accepts the precision drop (logging, charts, sanity checks).
+    pub fn to_f64_lossy(&self) -> f64 { ... }
+}
+```
+
+Reuse points: `seminormal_mpfr.rs` already emits decimal strings via
+`Float::to_string_radix(10, Some(dps as usize))` — `from_rug` is
+that one-liner with the `dps` field added.
+
+Wire `PrecisionScalar` into `joint_tower_sdp_certificate.rs` behind
+the `clarabel-hp` feature.  Default builds keep `f64`; HP builds use
+the wrapper.
+
+#### S7.2 — High-precision certificate variants (~80 LOC)
+
+Add `WedderburnBlockReportHp` / `JointTowerSdpCertificateHp` (or
+make the existing structs generic over `Scalar = f64 |
+PrecisionScalar`).  Two emit paths:
+
+- f64 certificate: `joint-tower-sdp-{atom}.witness.json` (legacy
+  schema, unchanged).
+- HP certificate: `joint-tower-sdp-{atom}.hp.witness.json` (new
+  schema, side-by-side; atlas renderer falls back to legacy if HP
+  is missing).
+
+#### S7.3 — Folio-assistant schema (~40 LOC TypeScript)
+
+`folio-assistant/schemas/proof-objects.ts` already validates witness
+JSON via Zod.  Add a `precisionScalar` Zod schema:
+
+```ts
+export const precisionScalar = z.object({
+  value: z.string().regex(/^-?\d+(\.\d+)?(e-?\d+)?$/),
+  dps: z.number().int().positive(),
+});
+```
+
+Update `wedderburnBlockReport` to use `z.union([z.number(),
+precisionScalar])` so existing f64 witnesses keep validating while
+the HP variant gets first-class support.
+
+#### S7.4 — Python consumer (`recursive_atom_knot_atlas_render.py`)
+       + sister scripts (~50 LOC)
+
+Pattern: probe for `_dps` field, route accordingly.
+
+```python
+def _read_scalar(node):
+    if isinstance(node, dict) and "value" in node and "dps" in node:
+        # 50-dps decimal — keep it that way
+        import mpmath
+        mpmath.mp.dps = max(mpmath.mp.dps, node["dps"])
+        return mpmath.mpf(node["value"])
+    return float(node)
+```
+
+Affected scripts: `recursive_atom_knot_atlas_render.py`,
+`witness_staleness_tracker.py`, `joint_tower_sdp_solver.py`
+(Python prototype, kept as cross-check at H_3..H_5).
+
+Crucial: AME-anchor comparisons and ppb-error metrics must use
+`mpmath` arithmetic on the HP path, not silently fall back to `float`
+(which would lose the 50→16 dps distinction the work was meant to
+preserve).
+
+### S8.  Exact-in-q₀ optimization (stretch — bigrational backend)
+       (~150 LOC)
+
+The upstream Clarabel `claude/bigrational-backend-BeGUU` branch
+([Phase 1: decouple `FloatT` from `num_traits::Float`](https://github.com/litlfred/Clarabel.rs/pull/1))
+opens a third Scalar instantiation beyond `f64` and `rug::Float`:
+**`num_rational::BigRational`** — exact rational arithmetic, no
+rounding at any step.
+
+This is interesting *as research*, not just as numerics.  If the
+SDP is run in exact rational mode at $q_0 \in \mathbb{Q}$ (any
+rational truncation of the substrate constant — e.g.\
+$q_0 = 11097/10000$), every interior-point iterate is exact and
+the recovered coefficients $c_w(q_0)$ are honest rationals.  Three
+things become observable that 50-dps cannot tell you:
+
+- **Are the $c_w$ small-denominator rationals?**  If yes, the
+  SDP solution is *algebraically* simple — not just numerically
+  feasible.  This would reveal hidden Wedderburn-multiplicity
+  structure (a coefficient like $c_w = 13/8$ has different
+  structural meaning than $c_w = 0.625000003...$).
+- **Is the support exactly the GB-filtration support?**  In
+  floating-point we threshold at $10^{-9}$ to declare zero; in
+  exact mode there is no threshold — a coefficient is zero iff its
+  numerator is zero.  We learn whether the GB-filtration sparsity
+  prediction is sharp.
+- **Does $\ell_1$ minimisation pick a unique vertex of the
+  polytope?**  Exact arithmetic exposes degeneracies that f64/MPFR
+  smooths over.
+
+Implementation: instantiate `Scalar = BigRational` in `dense_la`
+(S2) and the generic `svec` (S3); pose the same SDP via Clarabel HP
+with `F = BigRational` once upstream surfaces it.  `q_str` becomes
+`q_num: BigRational` (e.g.\ parsed from `11097/10000` or any other
+rational approximation the user supplies).
+
+Caveats:
+
+- BigRational arithmetic is **slow** — denominator size grows along
+  the IPM path.  Expect H_3 in seconds, H_6 in minutes, H_18
+  potentially intractable.  S8 is a *diagnostic* mode for small
+  problems, not a production replacement for S4–S6.
+- The choice of rational $q_0$ matters: $11097/10000$ vs
+  $554851/500000$ may give *different exact answers* with the same
+  initial digits.  Document the rationalisation rule in each
+  witness (`q_str`, `q_num_form`).
+- If a sequence of rational truncations $q_0^{(k)}$ yields a
+  convergent sequence of $c_w^{(k)}$, the limit is the "true"
+  answer at irrational $q_0$ — recover it by Padé / continued-
+  fraction reconstruction.  Out of scope for S8 baseline; record
+  the per-truncation rationals so this analysis is possible later.
+
+Output: `joint-tower-sdp-{atom}.exact.witness.json` with
+coefficients as `{"num": "...", "den": "..."}` strings.  The
+`PrecisionScalar` schema from S7 extends naturally — add a
+discriminated variant `kind: "rational" | "decimal"`.
+
 ### Estimated effort
 
 | Step | LOC | Time |
@@ -262,7 +419,9 @@ only the *new* HP solver siblings.
 | S4 — `sdp_solver_clarabel_hp` | ~350 | 1 day |
 | S5 — `sdp_solve_canonical_t_w_hp` + `sdp_recover_canonical_hp` | ~800 | 2 days |
 | S6 — Cargo + feature flag | ~20 | 1 hr |
-| **Total** | **~1500 Rust** | **~4 working days** |
+| S7 — consumer-side 50-dps round-trip (Rust + TS + Python) | ~250 | 1 day |
+| S8 — exact-rational mode (stretch, BigRational scalar) | ~150 | 4-6 hr |
+| **Total** | **~1900 Rust + small TS/Python** | **~5-6 working days** |
 
 Blocker: needs the upstream Clarabel high-precision feature to be
 mergeable / vendorable.  S1, S2, S3 are independent of Clarabel and
@@ -350,6 +509,46 @@ R3 verifier.  This documents *why* MPFR was needed.  Witness:
 principled-derivation methodology tag, replacing the deprecated
 `li-atom-knot-search` entry per
 [`R5_FULL_PLAN.md` §R5.8](R5_FULL_PLAN.md).
+
+### Tier T4 — Round-trip 50-dps preservation (S7 gate)
+
+For each H_3 case in T1, drive the full pipeline:
+
+```
+solve_alpha_psd_clarabel_hp  →  PrecisionScalar  →
+  serde_json  →  witness.hp.json  →  Python mpmath  →  back to F
+```
+
+Pass criterion: the decimal string read back by the Python consumer
+parses (via `mpmath.mpf`) to a value that matches the original
+`F`-typed solver output bit-identically at the requested `dps`.  Any
+silent `float()` conversion in the Python path is a regression — the
+test scripts grep for accidental `float()` usage on HP witnesses and
+fail if any is present.
+
+Witness: `clarabel-hp-roundtrip.witness.json` listing each tested
+case + measured precision.
+
+### Tier T5 — Exact-rational diagnostic (S8 stretch)
+
+Exploratory, not a hard pass/fail.  Run `solve_canonical_t_w` at
+H_3 (proton Borromean) in BigRational mode with $q_0 = 11097/10000$:
+
+| Observable | Record in witness | Interesting if |
+|---|---|---|
+| Recovered $c_w$ as $\mathrm{num}/\mathrm{den}$ | yes | denominators all $< 10^9$ |
+| Support — exactly the GB-filtration support? | yes | $\Leftrightarrow$ proves filtration sparsity is sharp |
+| $\ell_1$ vertex uniqueness (re-solve with random objective tilt) | yes | unique $\Leftrightarrow$ no degeneracy |
+| Per-iteration denominator growth | yes (sample iterates) | log-linear $\Rightarrow$ tractable; super-polynomial $\Rightarrow$ S8 won't scale past H_3 |
+
+Repeat at $q_0 \in \{11097/10000, 110970/100000, 5548502/5000000\}$.
+Compare the three rational solutions.  If they converge digit-by-
+digit to the MPFR result, that's the expected behaviour; if they
+*don't*, the workplan flags an investigation: rational truncation
+may be picking a different SDP vertex than the irrational limit.
+
+Witness: `joint-tower-sdp-h3-exact.witness.json` with all three
+truncations + denominator histograms.  No CI gate (research mode).
 
 ### Test infrastructure
 
