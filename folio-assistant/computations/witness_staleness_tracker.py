@@ -110,6 +110,13 @@ DEPS = {
         "particle_knot_dictionary_audit.py",
         # Touches every .md / .tex — audit re-runs are cheap so always.
     ],
+    "gb-filtration-jet-order": [
+        "gb_filtration_jet_tracker.py",
+        # Symbolic-in-q proof-of-concept for the GB-filtration + jet-order
+        # certificate format that the joint-tower SDP confinement solver
+        # will consume.  See methodology-deprecation.witness.json
+        # §principled_path.
+    ],
 }
 
 # Outputs produced by each artifact (for missing-output check)
@@ -123,6 +130,7 @@ OUTPUTS = {
     "li-atom-knot-search": ["li-atom-knot-search.witness.json"],
     "y-lambda-wenzl-bridge-symbolic": ["y-lambda-wenzl-bridge-symbolic-witness.json"],
     "y-lambda-cyclotomic-factor": ["y-lambda-cyclotomic-factor.witness.json"],
+    "gb-filtration-jet-order": ["gb-filtration-jet-order.witness.json"],
 }
 
 
