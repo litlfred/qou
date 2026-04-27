@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tests for `six_term_consumer.py` — Sprint A v3.
+"""Tests for `six_term_consumer.py` — Sprint A v4 (T4 wired).
 
 Enforces the canonical-only contract:
   - No SnapPy import anywhere in the consumer source.
@@ -172,7 +172,10 @@ def test_t4_wired_with_partition_sum():
         A = w["per_particle"][name]["A"]
         assert "n_strands" in t4 and t4["n_strands"] == 3 * A
         assert "n_partitions" in t4 and t4["n_partitions"] >= 1
-        s = t4["sum_inv_dim_q"]
+        # sum_inv_dim_q is now a 50-dps mp.nstr string per Gemini review
+        # (precision-preserving witness format). Convert to float for
+        # the bounds check.
+        s = float(t4["sum_inv_dim_q"])
         assert 0 < s < 1e3, f"{name}: T4 sum_inv_dim_q={s} outside expected range"
 
 
