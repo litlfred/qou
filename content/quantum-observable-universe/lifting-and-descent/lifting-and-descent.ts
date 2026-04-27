@@ -169,6 +169,8 @@ export default chapter({
         "cosimplicial-crossed-groupoid-proof",
         "jet-as-descent",
         "descent-condition",
+        "descent-cocycle-deviation",
+        "descent-cocycle-deviation-proof",
         "descent-condition-proof",
         "weak-equiv-invariance",
         "weak-equiv-invariance-proof",

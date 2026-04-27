@@ -6,5 +6,7 @@ export default proof({
   uses: [
     "prop:brings-is-qou",
     "prop:euler-char-stability",
+    "lem:brings-euler-characteristic",
+    "lem:brings-riemann-hurwitz",
   ],
 });

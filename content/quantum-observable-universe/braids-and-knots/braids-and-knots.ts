@@ -131,6 +131,8 @@ export default chapter({
         "mobius-energy-frobenius-kernel-proof",
         "mobius-energy-proof",
         "non-self-intersection",
+        "nsi-q-deformed-kernel",
+        "nsi-q-deformed-kernel-proof",
         "non-self-intersection-proof",
       ],
     }),
@@ -219,6 +221,8 @@ export default chapter({
       blocks: [
         "categorical-transfer-matrix",
         "transfer-matrix-level-independence",
+        "tmli-constituent-composite-agreement",
+        "tmli-constituent-composite-agreement-proof",
         "transfer-matrix-level-independence-proof",
         "topological-mass-formula",
         "motivic-mass-measure",
@@ -268,6 +272,8 @@ export default chapter({
       label: "sec:skein-particle-generation",
       blocks: [
         "skein-generation",
+        "skein-mass-from-linking",
+        "skein-mass-from-linking-proof",
         "skein-generation-proof",
         "knot-particle-generation",
         "knot-particle-generation-interpretation",

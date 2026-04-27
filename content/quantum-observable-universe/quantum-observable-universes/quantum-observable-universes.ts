@@ -106,6 +106,8 @@ export default chapter({
         "substrate-radial-coordinate",
         "substrate-radial-coordinate-proof",
         "fiber-adjoint-involution",
+        "fai-projector-coadjoint-orbit",
+        "fai-projector-coadjoint-orbit-proof",
         "fiber-adjoint-involution-proof",
         "fiber-adjoint-su2",
         "connection-su2",
