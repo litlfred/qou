@@ -99,15 +99,36 @@ theorem markov_trace_product
     -- (n : ℕ) (hn : n ≥ 2) (q : R_q) (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (z : R_q) (hz : z ≠ 0)
     (chains : Fin (n - 1) → GeneratorChain)
-    (traceValue : R_q) :
+    (_traceValue : R_q) :
     ∃ (mtp : MarkovTraceProduct),
       mtp.n = n ∧ mtp.q = q ∧
       mtp.traceValue = Finset.univ.prod (fun i => vertexVolume mtp.z (mtp.chains i)) := by
-  -- The proof applies the Markov property recursively from i = n-2 down to i = 0.
-  -- At each step, σ_i is the rightmost active generator and the Markov property gives:
-  --   tr(... (a_i σ_i + b_i)) = (z · a_i + b_i) · tr(...)
+  -- Existence is constructive: instantiate the MarkovTraceProduct record
+  -- with the product-defined `traceValue`.  The structure's
+  -- `factorization` field becomes `rfl` by construction, and the three
+  -- conjuncts of the conclusion (`mtp.n = n`, `mtp.q = q`,
+  -- `mtp.traceValue = ...`) are each `rfl` since we set those fields
+  -- directly.
+  --
+  -- NOTE on theorem strength:  the input `_traceValue` is unused in
+  -- the conclusion (the output `mtp.traceValue` is constrained only
+  -- to equal the product, not to equal the input).  A stronger version
+  -- would assert `mtp.traceValue = _traceValue` AND the product
+  -- factorization, which would be the actual Markov-property recursion
+  -- (Jones 1987 + Kassel 1995, peeling generators from the right).
+  -- That stronger theorem requires an inductive proof; this weaker
+  -- version is provable by construction.
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+  exact ⟨{
+    n := n
+    q := q
+    z := z
+    z_ne_zero := hz
+    chains := chains
+    traceValue := Finset.univ.prod (fun i => vertexVolume z (chains i))
+    factorization := rfl
+  }, rfl, rfl, rfl⟩
 
 /-- The degree of the product polynomial is bounded by n² − 1.
     This follows from the conformal weight bound: each vertex volume
