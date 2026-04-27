@@ -49,17 +49,21 @@ M_E_MEV = mpf("0.51099895")  # CODATA 2022
 J_PUBLISHED = {
     # 6_2: from Kawauchi Theorem 2.2.4 / KnotInfo.
     "6_2": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + 1/q**5",
+    # 8_11: KnotInfo / Murasugi (Knot Theory and its Applications).
+    "8_11": "-q**6 + 2*q**5 - 4*q**4 + 5*q**3 - 5*q**2 + 5*q - 4 + 3/q - 1/q**2",
     # L_6a4 (Borromean): standard formula.
-    # The Borromean rings link's Jones polynomial in our convention.
     "L_6a4": "q**3 - 3*q**2 + 6*q - 7 + 6/q - 3/q**2 + 1/q**3",
 }
 
 ATOMS = [
-    ("proton",   1, 0, 1, "p (B_3 Borromean)",         None),
-    ("neutron",  0, 1, 1, "n (B_3 Borromean)",         None),
-    ("deuteron", 1, 1, 1, "²H (B_6 atom-3A)",          "6_2"),
-    # Tritium and helium-3 use 3A-strand → H_9 → very slow. Run for
-    # smaller A only; 3H/3He follow once we extend.
+    ("proton",   1, 0, 1, "p (B_3 Borromean)",   None),
+    ("neutron",  0, 1, 1, "n (B_3 Borromean)",   None),
+    ("deuteron", 1, 1, 1, "²H (B_6 atom-3A)",    "6_2"),
+    # Tritium (Z=1, N=2) and helium-3 (Z=2, N=1) at 3A=9 strands are
+    # too expensive for sympy's tr_M reduction (>4 min wall time at
+    # H_9 with 30 partitions). The native-strand braids from joint-
+    # tower-sdp-rust.witness.json are smaller (³H at H_5, ³He at H_3)
+    # but require direct call into SymbolicHeckeDivision — separate task.
 ]
 
 
