@@ -441,6 +441,7 @@ export default chapter({
         "alpha-k-derivation-procedure",
         "atom-knot-mass-derivation",
         "atom-knot-mass-derivation-proof",
+        "joint-tower-sdp-confinement",
         "y-lambda-closed-form-wenzl-bridge",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
