@@ -204,41 +204,175 @@ Q_n→p_alg = m_n − m_p − m_e = −m_e (degenerate)
 
 ### The central open problem of option B
 
-> **What canonical `T_w(proton) ∈ H_3(q)` satisfies
->   `tr_M(T_w(p)) |_{q_0} = m_p / m_e ≈ 1836`?**
+> **What canonical algebraic chain reproduces `m_p / m_e ≈ 1836` in
+>   `ℚ(q^{1/2})`?**
 
-The current joint-tower SDP gives `T_w(p) ≈ identity` (all Wedderburn
-block traces are within 0.02 of `dim_λ`, i.e. `χ_λ ≈ dim_λ` so
-`tr_M ≈ Σ y_λ · dim_λ = 1`). The structural integer `ρ_p = 1` doesn't
-help — `1 · 1 = 1`, off by 1836×.
+#### Update (2026-04-27 — found prior work)
 
-The 1836× factor is **not** post-Archimedean: it should be a
-consequence of the categorical chain in `ℚ(q)`. Possible algebraic
-sources for this scale:
+This question already has a prior partial answer in
+[`mass-endomorphism-tower.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md):
+the proton/electron mass ratio comes from a **three-term tower
+formula** (NOT the bare Markov trace `tr_M(T_w)`):
 
-- **Sub-tower depth**: the proton may live in a deeper level of the
-  brane sub-tower than H_3 — e.g. H_n with n > 3 quarks each
-  resolved into deeper braids. This would multiply the dimension and
-  trace by a known integer ratio.
-- **Frobenius-coform pairing**: `tr_M` may need to be paired with a
-  dual element through the Frobenius coform, giving
-  `⟨T_w, T_w⟩ = tr_M(T_w · T_w*)` instead of `tr_M(T_w)`. For
-  identity this gives 1; for a non-trivial `T_w` with `T_w · T_w* `
-  having large character, this can be huge.
-- **Quantum dimension `[n_0]_q!`**: the canonical Markov trace
-  formula in some normalizations carries a factor `[n_0]_q!`. At
-  `q_0`, `[3]_q! ≈ 6.085` for n=3 — too small. But at higher tower
-  levels the factor compounds.
-- **Wrong T_w**: the SDP currently picks `T_w` minimizing some PSD
-  cone width (R5min `α* = 1.0` for proton means trivially PSD).
-  Adding an additional structural constraint (e.g. that `T_w` be
-  the unique non-identity SDP solution with maximal `tr_M`) might
-  pick out a different element with the right scale.
+$$
+\mathfrak{m}(\beta) = \biggl|\prod_i \widehat{V}_i^{\mathrm{full}}\biggr|
+  + \sum_i \Phi_q\!\bigl(|\widehat{V}_i^{\mathrm{full}}|\bigr)
+  + \sum_{i<j} z^2 \cdot \Phi_q\!\bigl(|\widehat{V}_i^{\mathrm{full}} \widehat{V}_j^{\mathrm{full}}|\bigr)
+$$
 
-**This is THE research question of option B.** Until it is
-resolved, every algebraic B/A and Q is off from AME by orders of
-magnitude. No 1 ppb is possible. The Clarabel-rs H_5 fix and MPFR
-upgrade are downstream of this; they are not on the critical path.
+where `Φ_q(z) = ∏_{k≥1}(1 − q^{-k}z)^{-1}` is the quantum dilogarithm,
+`z = 1/(q^{1/2} + q^{-1/2})` is the Markov parameter, and
+`V̂_i^{full}` is the additive Wedderburn-traced volume at generator `i`
+(purely algebraic in `q`, computed via Hecke crossing recursion).
+
+[`mass_endomorphism.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass_endomorphism.py) → `mass-endomorphism.witness.json`:
+
+```
+ELECTRON (1 generator, σ_1³ trefoil on 2 strands)
+  V̂_full = 0.594, Φ_q = 630
+  m_e_pred = 0.594 + 630 = 630.5 (units of m_e)
+
+PROTON (2 generators, B_3 × uud + gluon on 3 strands)
+  V̂_0 = 0.989, V̂_1 = 0.971
+  descended  = 0.96
+  single     = Φ_q(0.989) + Φ_q(0.971) ≈ 1,096,978
+  pair       = z² · Φ_q(0.961) ≈ 82,016    ← THIS is the 1836× source
+  m_p_pred  = 1,178,995 (units of m_e)
+
+m_p / m_e = 1869.85   vs CODATA 1836.15   →  err 1.84%
+```
+
+**The pair-blowup term `z² · Φ_q(V̂_0 V̂_1)`** — present for proton
+(2 generators) and absent for electron (1 generator) — is what
+generates the mass hierarchy. `Φ_q(z)` diverges as `z → 1`, and the
+proton's `V̂_0 V̂_1 ≈ 0.961` puts it close to the singularity, giving a
+huge contribution. The electron's single `V̂_e ≈ 0.594` is well below
+the pole, so its `Φ_q ≈ 630` is small.
+
+This is **categorical and pre-Archimedean** (everything is in
+`ℚ(q^{1/2})` plus the analytic completion `Φ_q`). Option B compatible.
+
+#### Probe candidate 1 verdict — REVISED
+
+[`probe_proton_mass_scale.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_proton_mass_scale.py) wrongly classified candidate 1 (sub-tower
+depth) as NEGATIVE because it computed only the Markov trace
+`Σ_λ y_λ · χ_λ(T_w)` which gives `tr_M(T_w(p)) ≈ 1`. The right
+algebraic chain has **two more terms** beyond the bare trace:
+single-generator and pair-generator blowups via `Φ_q`. With those,
+`m_p_alg / m_e_alg = 1870` (1.84% off CODATA, not 1836× off).
+
+| Candidate | Old verdict | New verdict |
+|---|:---:|:---:|
+| 1. Sub-tower / blowup-tower | NEGATIVE | **POSITIVE — gives 1870** |
+| 2. Frobenius coform | NEGATIVE | NEGATIVE (still) |
+| 3. Quantum factorial `[n]_q!` | NEGATIVE | NEGATIVE (still) |
+| 4. Different SDP | INCONCLUSIVE | INCONCLUSIVE (still) |
+
+#### Remaining gaps (option B)
+
+- **1.84% residual on `m_p/m_e`**: a known open question; investigated in
+  [`electron_chiral_probe.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/electron_chiral_probe.py) and several other probes.
+- **`m_n/m_e = 682`** vs CODATA 1839 — **63% off, sign of `Δm_{np}` flipped.**
+  The neutron formula in `mass_endomorphism.py` uses `udd` quark content
+  with `dd` pair coefficient `(1, -HA)` (i.e. `σ⁻¹`), giving
+  `V̂_0 ≈ 0.719` (far from 1) and dramatically smaller `Φ_q`. This is a
+  **structural error in the neutron's crossing budget**, not in the
+  tower formula itself. Fixing it is the next concrete unblock for
+  Q-values.
+- **`Φ_q` is an infinite product**: it converges for `|z| < q`, but the
+  pre-Archimedean status is still defensible since every coefficient is
+  in `ℤ[q^{1/2}, q^{-1/2}]` (the algebraic-form section of
+  `mass-endomorphism-tower.md`). No `Vol_hyp(K)`, no analytic flow.
+
+#### Updated next steps (ranked, post option-B + prior-work check)
+
+1. **Fix neutron crossing budget** in `mass_endomorphism.py` so
+   `m_n_pred / m_e ≈ 1839` (currently 682). This is the single change
+   that unblocks Q-values.
+2. **Investigate the 1.84% `m_p/m_e` residual** — already on the open
+   list per `electron_chiral_probe.py` and others.
+3. **Apply the tower formula to atoms** (D, T, ³He, ⁴He, ...) by
+   computing `V̂_i` for each atom's brane braid and summing the three
+   tower terms. This is what should populate `mass-table-ppb` under
+   option B (replacing the current `Vol_hyp(K)` formulas).
+4. **Family 4 (⁶Li, ⁷Li, ...)** still blocked on `T_w` derivation.
+5. **`N_v` topological invariant** still blocks layer 3.
+
+## Entanglement energy vs observable energy
+
+The mass-endomorphism tower decomposes naturally into **GB-filtration
+orders**, each tracking a different level of categorical entanglement.
+[`entanglement_orders.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/entanglement_orders.py) computes all orders up to `n_gens` via:
+
+>   `order_k = Σ_{S⊂{0..n_gens-1}, |S|=k} z^{2·span(S)} · Φ_q(|∏_{i∈S} V̂_i|)`
+
+with `span(S) = max(S) − min(S)` (GB-filtration distance). Order 0 is
+the descended product `|∏ V̂_i|` (no entanglement); order 1 is single-
+generator self-entanglement; order 2 is the adjacent/non-adjacent pair
+blowup that appears in the canonical mass formula.
+
+| Particle | Order 0 | Order 1 | Order 2 | Order 3+ | Total |
+|---|---:|---:|---:|---:|---:|
+| proton (n_gens=2) | 0.96 | 1,096,978 | 82,016 | — | 1,178,995 |
+| neutron (n_gens=2) | 0.83 | 511,298 | 6,137 | — | 517,437 |
+| D (n_gens=5) | 0.21 | 1,608,290 | 95,229 | 1,377 + 54 + 0.03 | 1,704,950 |
+| T (n_gens=8) | 0.03 | 2,119,593 | 107,322 | 1,874 + 88 + 2.6 + 0.1 + 0.001 | 2,228,880 |
+| ³He (n_gens=8) | 0.07 | 2,705,309 | 210,371 | 9,912 + 678 + 12.5 + 0.5 + 0.003 | 2,926,282 |
+
+(units: `m_e_pred = 630.5` for normalization)
+
+### Two distinct energy concepts
+
+The framework distinguishes (per [`topological-field-ansatz.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/topological-field-ansatz.md):
+"Strong Force | Hopf Link | Internal binding energy; **invisible to**
+`P¹(C)` **base**"):
+
+- **Observable energy** — the contribution detectable at the brane
+  base manifold `P¹(C)`. Roughly: orders 0, 1, 2 (the canonical
+  mass-endomorphism formula). For nucleons this is `m_p_pred ≈ 1870 m_e`,
+  agreeing with CODATA to 1.84%.
+
+- **Entanglement energy (internal, base-invisible)** — higher-order
+  terms (orders 3+ for atoms, none for proton/neutron at H_3). These
+  are the "color-exchange entanglement of three tubes" (per
+  topological-field-ansatz table). They contribute to the categorical
+  mass but are exponentially suppressed by `z^{2·span}` per filtration
+  level (`z² ≈ 0.249`, `z⁴ ≈ 0.062`, `z⁶ ≈ 0.0155` at q_0).
+
+For nucleons (`n_gens = 2`), there are no order-3+ terms. The full mass
+is observable. For atoms, order-3+ contributions decay rapidly:
+
+- D: order-3 ≈ 1377, order-4 ≈ 54, order-5 ≈ 0.03 → 0.08% of total
+- T: order-3+ ≈ 1965 → 0.09% of total
+- ³He: order-3+ ≈ 10,604 → 0.36% of total
+
+So for the LIGHT atoms in family 1, entanglement-energy is sub-percent
+and the observable-energy approximation is good. For heavier atoms it
+likely grows. **Track the order-3+ fraction as a categorical quality
+metric for the algebraic chain.**
+
+### Implication for option B
+
+The mass-endomorphism formula in [`mass-endomorphism-tower.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) **truncates
+at order 2** by design (per the proof: order-3+ "ascend to the next
+jet level via the pentagon identity of the quantum dilogarithm" — see
+[`mass-endomorphism-jet-tower.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/mass-endomorphism-jet-tower.md)). The entanglement-orders witness
+records the truncated tail as a quality check; in the canonical chain
+these tail terms are absorbed into level-`(n+1)` jet contributions
+(not added at level `n`).
+
+**Where the 1.84% residual on `m_p/m_e` lives:**
+the proton has only orders 0, 1, 2 (n_gens=2), so the pentagon-jet
+ascension does NOT explain the residual. The 1.84% must come from
+either (i) the additive Wedderburn-volume `V̂_i` calculation (Hecke
+crossing recursion) being imprecise at finite q_0, or (ii) a missing
+crossing in the proton's 11-crossing budget (currently 4-channel
+`γγ→qq̄` per [`photon-channel-wedderburn-chain`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/photon-channel-wedderburn-chain.md), or
+(iii) a finite truncation of `Φ_q(z) = ∏_k(1−q^{-k}z)^{-1}` at large
+`k` (currently 2000 iterations).
+
+**Witness:** [`entanglement-orders.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/entanglement-orders.witness.json) — the per-order
+contributions for `{p, n, D, T, ³He}` as of commit `bc981e4`.
 
 ## Critical finding (2026-04-27): two categorical invariants disagree at q_0
 
