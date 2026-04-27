@@ -1,6 +1,6 @@
 {
   "computation": "joint-tower-sdp-rust",
-  "computed_at": "2026-04-27T01:33:45.210626763+00:00",
+  "computed_at": "2026-04-27T01:42:46.832092694+00:00",
   "description": "Rust port of joint-tower SDP certificate emitter. Runs GB-NF reduction on the confined-particle registry, emits design-spec certificate (filtration + jet-order log per atom). Phases R1+R2+R6 of RUST_INTEGRATION.md; R3 (Wedderburn PSD) and R5 (SDP solver) deferred.",
   "design_spec": "prop:joint-tower-sdp-confinement",
   "consumed_by": "prop:atom-knot-mass-derivation",
@@ -148,6 +148,33 @@
       ],
       "n_steps": 4,
       "n_hecke_relations_fired": 2,
+      "wedderburn_blocks": [
+        {
+          "partition": [
+            2
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.3665224096730013
+          ],
+          "min_eigenvalue": 1.3665224096730013,
+          "max_eigenvalue": 1.3665224096730013,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            1,
+            1
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            -0.7317845597858103
+          ],
+          "min_eigenvalue": -0.7317845597858103,
+          "max_eigenvalue": -0.7317845597858103,
+          "psd_symmetric_part": false
+        }
+      ],
       "rho_factor": 1,
       "b_ame_mev": 0.51099895,
       "methodology": "principled-derivation"
@@ -527,6 +554,48 @@
       ],
       "n_steps": 16,
       "n_hecke_relations_fired": 6,
+      "wedderburn_blocks": [
+        {
+          "partition": [
+            3
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.0000000000000024
+          ],
+          "min_eigenvalue": 1.0000000000000024,
+          "max_eigenvalue": 1.0000000000000024,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "d_lambda": 2,
+          "matrix_at_q_0_sym_eigvals": [
+            0.9809516303615184,
+            1.0132905291454406
+          ],
+          "min_eigenvalue": 0.9809516303615184,
+          "max_eigenvalue": 1.0132905291454406,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.0000000000000013
+          ],
+          "min_eigenvalue": 1.0000000000000013,
+          "max_eigenvalue": 1.0000000000000013,
+          "psd_symmetric_part": true
+        }
+      ],
       "rho_factor": 1,
       "b_ame_mev": 938.272,
       "methodology": "principled-derivation"
@@ -906,6 +975,48 @@
       ],
       "n_steps": 16,
       "n_hecke_relations_fired": 6,
+      "wedderburn_blocks": [
+        {
+          "partition": [
+            3
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.0000000000000024
+          ],
+          "min_eigenvalue": 1.0000000000000024,
+          "max_eigenvalue": 1.0000000000000024,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "d_lambda": 2,
+          "matrix_at_q_0_sym_eigvals": [
+            0.9809516303615184,
+            1.0132905291454406
+          ],
+          "min_eigenvalue": 0.9809516303615184,
+          "max_eigenvalue": 1.0132905291454406,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.0000000000000013
+          ],
+          "min_eigenvalue": 1.0000000000000013,
+          "max_eigenvalue": 1.0000000000000013,
+          "psd_symmetric_part": true
+        }
+      ],
       "rho_factor": 1,
       "b_ame_mev": 939.565,
       "methodology": "principled-derivation"
@@ -1267,6 +1378,48 @@
       ],
       "n_steps": 15,
       "n_hecke_relations_fired": 7,
+      "wedderburn_blocks": [
+        {
+          "partition": [
+            3
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.231434090000003
+          ],
+          "min_eigenvalue": 1.231434090000003,
+          "max_eigenvalue": 1.231434090000003,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "d_lambda": 2,
+          "matrix_at_q_0_sym_eigvals": [
+            -0.8326232816255558,
+            -0.029240778685945275
+          ],
+          "min_eigenvalue": -0.8326232816255558,
+          "max_eigenvalue": -0.029240778685945275,
+          "psd_symmetric_part": false
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            0.812061325994314
+          ],
+          "min_eigenvalue": 0.812061325994314,
+          "max_eigenvalue": 0.812061325994314,
+          "psd_symmetric_part": true
+        }
+      ],
       "rho_factor": 1,
       "b_ame_mev": 2.2246,
       "methodology": "manual-historical-volume-match"
@@ -8170,6 +8323,124 @@
       ],
       "n_steps": 258,
       "n_hecke_relations_fired": 122,
+      "wedderburn_blocks": [
+        {
+          "partition": [
+            5
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            0.659443597175646
+          ],
+          "min_eigenvalue": 0.659443597175646,
+          "max_eigenvalue": 0.659443597175646,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            4,
+            1
+          ],
+          "d_lambda": 4,
+          "matrix_at_q_0_sym_eigvals": [
+            -1.0315765047468766,
+            -0.4365659370263888,
+            0.08496026205749563,
+            0.4774671514016577
+          ],
+          "min_eigenvalue": -1.0315765047468766,
+          "max_eigenvalue": 0.4774671514016577,
+          "psd_symmetric_part": false
+        },
+        {
+          "partition": [
+            3,
+            2
+          ],
+          "d_lambda": 5,
+          "matrix_at_q_0_sym_eigvals": [
+            -0.832003363154795,
+            -0.5155929420944179,
+            0.0354299516178078,
+            0.4225930022646826,
+            1.2228871734833193
+          ],
+          "min_eigenvalue": -0.832003363154795,
+          "max_eigenvalue": 1.2228871734833193,
+          "psd_symmetric_part": false
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1
+          ],
+          "d_lambda": 6,
+          "matrix_at_q_0_sym_eigvals": [
+            -1.1840819503515347,
+            -0.882318362003517,
+            0.40214343497268645,
+            0.5091006853064524,
+            0.8865250175264774,
+            1.254722763015886
+          ],
+          "min_eigenvalue": -1.1840819503515347,
+          "max_eigenvalue": 1.254722763015886,
+          "psd_symmetric_part": false
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1
+          ],
+          "d_lambda": 5,
+          "matrix_at_q_0_sym_eigvals": [
+            -1.3577114995559838,
+            -0.9852864679342529,
+            0.027592095585662082,
+            0.33519007048644855,
+            1.4598564026261533
+          ],
+          "min_eigenvalue": -1.3577114995559838,
+          "max_eigenvalue": 1.4598564026261533,
+          "psd_symmetric_part": false
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "d_lambda": 4,
+          "matrix_at_q_0_sym_eigvals": [
+            -1.3227984011167495,
+            -0.5700476868110909,
+            0.15354321493277903,
+            0.8343812355530313
+          ],
+          "min_eigenvalue": -1.3227984011167495,
+          "max_eigenvalue": 0.8343812355530313,
+          "psd_symmetric_part": false
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.516429918014132
+          ],
+          "min_eigenvalue": 1.516429918014132,
+          "max_eigenvalue": 1.516429918014132,
+          "psd_symmetric_part": true
+        }
+      ],
       "rho_factor": 2,
       "b_ame_mev": 8.4818,
       "methodology": "manual-historical-volume-match"
@@ -8621,6 +8892,48 @@
       ],
       "n_steps": 20,
       "n_hecke_relations_fired": 8,
+      "wedderburn_blocks": [
+        {
+          "partition": [
+            3
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.0000000000000027
+          ],
+          "min_eigenvalue": 1.0000000000000027,
+          "max_eigenvalue": 1.0000000000000027,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "d_lambda": 2,
+          "matrix_at_q_0_sym_eigvals": [
+            0.9809516303615184,
+            1.0132905291454408
+          ],
+          "min_eigenvalue": 0.9809516303615184,
+          "max_eigenvalue": 1.0132905291454408,
+          "psd_symmetric_part": true
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "d_lambda": 1,
+          "matrix_at_q_0_sym_eigvals": [
+            1.000000000000001
+          ],
+          "min_eigenvalue": 1.000000000000001,
+          "max_eigenvalue": 1.000000000000001,
+          "psd_symmetric_part": true
+        }
+      ],
       "rho_factor": 2,
       "b_ame_mev": 7.718,
       "methodology": "manual-historical-volume-match"
