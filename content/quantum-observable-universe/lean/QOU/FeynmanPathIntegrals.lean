@@ -70,7 +70,7 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
         _ < q := hq_gt
     apply div_pos
     · have h2 : (q⁻¹) ^ n < q ^ n :=
-        pow_lt_pow_left₀ hqi_lt hqi.le (Nat.pos_iff_ne_zero.mp hn)
+        pow_lt_pow_left₀ hqi_lt hqi.le (hn.ne')
       linarith
     · linarith
   · -- 0 < q < 1: numerator < 0, denominator < 0
@@ -81,7 +81,7 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
         calc q < 1 := hq_lt
           _ < q⁻¹ := by rw [lt_inv_comm₀ (by linarith) hq]; exact hq_lt
       have h2 : q ^ n < (q⁻¹) ^ n :=
-        pow_lt_pow_left₀ h1 hq.le (Nat.pos_iff_ne_zero.mp hn)
+        pow_lt_pow_left₀ h1 hq.le (hn.ne')
       linarith
     · have : q < q⁻¹ := by
         calc q < 1 := hq_lt

@@ -1,4 +1,5 @@
 import QOU.Descartes.GroundRing
+import QOU.Interactions.TrefoilVanishing
 
 /-!
 # Verified Hecke NF Engine for H₃(q)

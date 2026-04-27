@@ -286,8 +286,7 @@ theorem obstruction_finite_divisors (χ : ℤ) (hχ : χ ≠ 0) :
   intro n ⟨hn, hdvd⟩
   simp only [Finset.mem_coe, Nat.mem_divisors]
   constructor
-  · exact Int.natAbs_dvd_natAbs.mpr (Int.natCast_dvd_natCast.mp
-      (Int.dvd_natAbs.mpr hdvd))
+  · exact Int.natCast_dvd_natCast.mp (Int.dvd_natAbs.mpr hdvd)
   · exact fun h => hχ (Int.natAbs_eq_zero.mp h)
 
 /-- **Perpetual obstruction — cofinite persistence**: for any nonzero
@@ -303,10 +302,9 @@ theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
   -- Strategy: {n ≥ 1} is infinite, {n ≥ 1 ∧ n ∣ χ} is finite,
   -- so {n ≥ 1 ∧ ¬ n ∣ χ} = {n ≥ 1} \ {n ≥ 1 ∧ n ∣ χ} is infinite
   apply Set.Infinite.mono _ (Set.Infinite.diff
-    (Set.infinite_of_injective_forall_mem
-      (f := fun n => n + 1)
-      (fun a b h => by omega)
-      (fun n => by omega))
+    ((Set.infinite_range_of_injective (fun (a b : ℕ) (h : a + 1 = b + 1) => by omega) :
+        (Set.range (fun n : ℕ => n + 1)).Infinite).mono
+      (fun n hn => let ⟨k, hk⟩ := hn; hk ▸ by simp; omega))
     (obstruction_finite_divisors χ hχ))
   intro n ⟨hn, hndvd⟩
   exact ⟨hn, fun ⟨_, hdvd⟩ => hndvd hdvd⟩
@@ -341,7 +339,7 @@ theorem kummer_no_universal_lift :
   intro n hn
   exact ⟨1, one_ne_zero, by
     intro ⟨k, hk⟩
-    have : (↑n : ℤ) ≥ 2 := Int.ofNat_le.mpr hn
+    have : (↑n : ℤ) ≥ 2 := by exact_mod_cast hn
     omega⟩
 
 /-! ## §7a  The q-Geometric Langlands Conjecture (Lean axiom)

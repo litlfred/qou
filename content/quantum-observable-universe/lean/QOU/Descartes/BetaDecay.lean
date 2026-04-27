@@ -281,19 +281,19 @@ theorem interaction_completeness :
     -- Bound s based on r
     simp [sigma4_knots, e_label, gen2_label, c_label, t_label, weak_label,
           strong_label, List.mem_cons, List.mem_singleton]
-    rcases hr23 with rfl | rfl
+    rcases hr23 with hr2 | hr3
     · -- r = 2: (s-1) ≤ 8, so s ≤ 9; s > 2; s odd (coprime to 2)
+      rw [hr2] at hcop
       have hs_le : τ.s ≤ 9 := by omega
       have hs_gt : τ.s > 2 := by omega
       -- s must be odd (coprime to 2 means s is odd)
       have hs_odd : τ.s % 2 = 1 := by
-        have := hcop
-        rw [Nat.Coprime] at this
-        have : Nat.gcd 2 τ.s = 1 := this
+        simp only [Nat.Coprime, Nat.gcd_comm] at hcop
         omega
       -- s ∈ {3, 5, 7, 9}
       interval_cases τ.s <;> simp_all [Nat.Coprime] <;> omega
     · -- r = 3: 2*(s-1) ≤ 8, so s ≤ 5; s > 3; coprime to 3
+      rw [hr3] at hcop
       have hs_le : τ.s ≤ 5 := by omega
       have hs_gt : τ.s > 3 := by omega
       -- s ∈ {4, 5}; both coprime to 3

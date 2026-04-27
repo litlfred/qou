@@ -150,11 +150,11 @@ theorem confinement_universality :
 
 /-- The demand profile of an NF vector: the set of indices
     where the coefficient is negative. -/
-def demandIndices (nf : Fin 6 → R_q) (neg : R_q → Prop) : Finset (Fin 6) :=
+def demandIndices (nf : Fin 6 → R_q) (neg : R_q → Prop) [DecidablePred neg] : Finset (Fin 6) :=
   Finset.filter (fun i => neg (nf i)) Finset.univ
 
 /-- An atom is shell-closed if no NF coefficient is negative. -/
-def isShellClosed (nf : Fin 6 → R_q) (neg : R_q → Prop) : Prop :=
+def isShellClosed (nf : Fin 6 → R_q) (neg : R_q → Prop) [DecidablePred neg] : Prop :=
   demandIndices nf neg = ∅
 
 end QOU.Interactions

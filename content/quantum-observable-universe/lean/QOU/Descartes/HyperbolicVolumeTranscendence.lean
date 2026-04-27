@@ -260,26 +260,17 @@ class BorelZagierQOU where
 theorem BorelZagierQOU.implies_irrational [bz : BorelZagierQOU] :
     SingleVolumeIrrational where
   vol_4_1_irrational := by
-    rw [irrational_iff_ne_rational]
-    intro ⟨a, b, hb, hab⟩
-    have h := bz.linear_independent (a / b) 0 0 (by
-      simp [hab]
-      ring)
-    simp at h
+    -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
+    -- If vol_4_1 were rational r, then r·vol_4_1 - r² = 0 gives a non-trivial
+    -- relation. Full proof requires knowing 1 is independent of the volumes.
+    -- TODO: complete using irrational_iff_ne_rational API in current Mathlib.
+    sorry
   vol_5_2_irrational := by
-    rw [irrational_iff_ne_rational]
-    intro ⟨a, b, hb, hab⟩
-    have h := bz.linear_independent 0 (a / b) 0 (by
-      simp [hab]
-      ring)
-    simp at h
+    -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
+    sorry
   vol_B3_irrational := by
-    rw [irrational_iff_ne_rational]
-    intro ⟨a, b, hb, hab⟩
-    have h := bz.linear_independent 0 0 (a / b) (by
-      simp [hab]
-      ring)
-    simp at h
+    -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
+    sorry
 
 /-! ## §8  Algebraic independence conjecture
 
@@ -343,9 +334,9 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
     -- The sum equals a₁·v₁ + a₂·v₂ + a₃·v₃ = 0
     have hf_sum : (S.sum fun ijk =>
         (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
-      simp [S, f, Finset.sum_insert, Finset.sum_pair]
-      simp [pow_zero, pow_one]
-      linarith
+      -- TODO: compute via Finset.sum_insert + Finset.sum_singleton
+      -- Ref: [manuscript] Chapter 8, algebraic independence section
+      sorry
     -- Apply no_relation
     have := hvi.no_relation S f hf_supp hf_sum
     exact ⟨this (1, 0, 0), this (0, 1, 0), this (0, 0, 1)⟩

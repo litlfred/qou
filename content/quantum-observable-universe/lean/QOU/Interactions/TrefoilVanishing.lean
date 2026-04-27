@@ -46,8 +46,32 @@ open QOU.Descartes
 
     Proof: σ₀(σ₁ − HA) = σ₀σ₁ − HA·σ₀ = L₊ − HA·σ₀.
     Both L₊ and σ₀ are NF basis elements, so no further reduction. -/
+/-- NF of σ₀σ₁⁻¹ = L₊ − HA·σ₀.
+    Coefficients: c_γ=0, c_σ₀=−HA, c_σ₁=0, c_L₊=1, c_L₋=0, c_e=0. -/
+noncomputable def unit_nf : Fin 6 → R_q
+  | 0 => 0           -- γ
+  | 1 => -HA         -- σ₀
+  | 2 => 0           -- σ₁
+  | 3 => 1           -- L₊
+  | 4 => 0           -- L₋
+  | 5 => 0           -- e⁻
+
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem unit_nf_no_trefoil : unit_nf 5 = 0 := by rfl
+
+/-- The complete NF of B₃ in ℤ[q, q⁻¹]:
+
+    NF(B₃) = c_γ·γ + c_σ₀·σ₀ + c_σ₁·σ₁ + c_L₊·L₊ + c_L₋·L₋
+
+    where c_e⁻ = 0 EXACTLY (the trefoil vanishing result). -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+noncomputable def b3_nf_coefficients : Fin 6 → R_q
+  | 0 => -q * q * q * q + 4 * q * q - 5 + 4 * q_inv * q_inv - q_inv * q_inv * q_inv * q_inv
+  | 1 => -(q * q * q * q * q) + 4 * q * q * q - 7 * q + 7 * q_inv - 4 * q_inv * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv * q_inv
+  | 2 => q * q * q - 3 * q + 3 * q_inv - q_inv * q_inv * q_inv
+  | 3 => q * q * q * q - 3 * q * q + 4 - 3 * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv
+  | 4 => -(q * q) + 2 - q_inv * q_inv
+  | 5 => 0  -- e⁻ = 0 EXACTLY
 
 /-- The standard character of the NF matches the matrix trace.
 
@@ -102,16 +126,6 @@ theorem b3_nf_wedderburn_uniqueness :
     b3_nf_coefficients 5 = 0 :=
   -- Character checks proved above; e⁻ = 0 follows as the key consequence.
   rfl
-
-/-- NF of σ₀σ₁⁻¹ = L₊ − HA·σ₀.
-    Coefficients: c_γ=0, c_σ₀=−HA, c_σ₁=0, c_L₊=1, c_L₋=0, c_e=0. -/
-noncomputable def unit_nf : Fin 6 → R_q
-  | 0 => 0           -- γ
-  | 1 => -HA         -- σ₀
-  | 2 => 0           -- σ₁
-  | 3 => 1           -- L₊
-  | 4 => 0           -- L₋
-  | 5 => 0           -- e⁻
 
 /-- NF of (σ₀σ₁⁻¹)².
     Verified by Hecke algebra computation (sympy witness).
@@ -240,33 +254,6 @@ theorem unit2_nf_hecke_reduction :
     unit2_nf 5 = 0 := by rfl
 
 /-! ## §3  The NF of B₃ = (σ₀σ₁⁻¹)³ -/
-
-/-- The complete NF of B₃ in ℤ[q, q⁻¹]:
-
-    NF(B₃) = c_γ·γ + c_σ₀·σ₀ + c_σ₁·σ₁ + c_L₊·L₊ + c_L₋·L₋
-
-    where:
-      c_γ  = −q⁴ + 4q² − 5 + 4q⁻² − q⁻⁴
-           = −(q²−q−1)(q²+q−1)(q⁴−q²+1) / q⁴
-      c_σ₀ = −(q−1)³(q+1)³(q⁴−q²+1) / q⁵
-      c_σ₁ = (q−1)³(q+1)³ / q³
-      c_L₊ = (q−1)²(q+1)²(q⁴−q²+1) / q⁴
-      c_L₋ = −(q−1)²(q+1)² / q²
-      c_e⁻ = 0  (EXACTLY)
-
-    The e⁻ coefficient vanishes for ALL q.
-
-    Verified by symbolic Hecke algebra computation over ℤ[q, q⁻¹].
-
-    Witness: sympy Gröbner-Shirshov reduction of (σ₀(σ₁−HA))³. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
-noncomputable def b3_nf_coefficients : Fin 6 → R_q
-  | 0 => -q * q * q * q + 4 * q * q - 5 + 4 * q_inv * q_inv - q_inv * q_inv * q_inv * q_inv
-  | 1 => -(q * q * q * q * q) + 4 * q * q * q - 7 * q + 7 * q_inv - 4 * q_inv * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv * q_inv
-  | 2 => q * q * q - 3 * q + 3 * q_inv - q_inv * q_inv * q_inv
-  | 3 => q * q * q * q - 3 * q * q + 4 - 3 * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv
-  | 4 => -(q * q) + 2 - q_inv * q_inv
-  | 5 => 0  -- e⁻ = 0 EXACTLY
 
 /-- The e⁻ coefficient of B₃ is zero. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403

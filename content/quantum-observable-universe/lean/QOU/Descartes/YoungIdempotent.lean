@@ -47,8 +47,12 @@ def coxeterLength {n : ℕ} (w : Equiv.Perm (Fin n)) : ℕ :=
 
 /-- The identity permutation has length 0. -/
 theorem coxeterLength_one {n : ℕ} : coxeterLength (1 : Equiv.Perm (Fin n)) = 0 := by
-  simp [coxeterLength, Finset.filter_eq_empty]
-  intro a b _ hab
+  simp only [coxeterLength, Equiv.Perm.one_apply]
+  rw [Finset.card_eq_zero]
+  ext ⟨a, b⟩
+  simp only [Finset.mem_filter, Finset.mem_product, Finset.mem_univ, true_and, Finset.not_mem_empty,
+             iff_false, not_and]
+  intro hab
   exact not_lt.mpr (le_of_lt hab)
 
 /-! ## §2  S₃ explicit enumeration -/
