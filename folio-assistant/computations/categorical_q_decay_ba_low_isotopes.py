@@ -65,6 +65,7 @@ SIX_TERM_WITNESS = HERE / "mass-formula-6term.witness.json"
 
 # Tier selection per isotope
 TIER_BY_SYM = {
+    "1H":  "trivial (A=1, B=0 by convention; m_atom = m_p + m_e)",
     "D":   "term-1-plus-4 (Schur-Weyl + universal Frobenius)",
     "T":   "term-5 (BW + chirality (1-h²))",
     "3He": "term-5 (BW + chirality (1-h²))",
@@ -78,6 +79,7 @@ TIER_BY_SYM = {
 }
 
 FAMILY_BY_SYM = {
+    "1H": 0,                                # bare hydrogen — single proton + electron
     "D": 1, "T": 1, "3He": 1,
     "4He": 2,
     "6Li": 3, "7Li": 3, "9Be": 3, "11B": 3, "12C": 3, "16O": 3,
@@ -105,6 +107,14 @@ def load_canonical_b(sym: str):
     tier = TIER_BY_SYM.get(sym)
     if tier is None:
         return None
+
+    # ¹H is trivial: B=0 by convention (single nucleon, no nuclear binding)
+    if "trivial" in tier:
+        return {
+            "B_pred_MeV": 0.0,
+            "err_pct": 0.0,
+            "tier": tier,
+        }
 
     # Term 1+4 lives in mass-formula-6term.witness.json
     if "term-1-plus-4" in tier:
@@ -152,13 +162,15 @@ def main():
     # ─────────────────────────────────────────────────────────────────
     # 2. Layer 1 — canonical B per isotope, picking the right tier
     # ─────────────────────────────────────────────────────────────────
-    SYMBOLS = ["D", "T", "3He", "4He", "6Li", "7Li", "9Be", "11B", "12C", "16O"]
+    SYMBOLS = ["1H", "D", "T", "3He", "4He", "6Li", "7Li", "9Be", "11B", "12C", "16O"]
     Z_N = {
+        "1H": (1, 0),
         "D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
         "6Li": (3, 3), "7Li": (3, 4), "9Be": (4, 5), "11B": (5, 6),
         "12C": (6, 6), "16O": (8, 8),
     }
     B_AME = {
+        "1H": 0.0,                          # convention: single nucleon ⇒ B = 0
         "D": 2.22456612, "T": 8.4817984, "3He": 7.7180375, "4He": 28.2956912,
         "6Li": 31.99405, "7Li": 39.24453, "9Be": 58.16498, "11B": 76.20548,
         "12C": 92.16175, "16O": 127.61929,
@@ -184,6 +196,7 @@ def main():
             continue
         b_pred = b["B_pred_MeV"]
         canonical_b[sym] = b_pred
+        # err undefined when AME = 0 (¹H convention); report absolute residual instead
         err = 100 * (b_pred - b_ame) / b_ame if b_ame else None
         layer1.append({
             "sym": sym, "Z": Z, "N": N, "A": A,
@@ -191,9 +204,10 @@ def main():
             "tier": TIER_BY_SYM[sym],
             "B_pred_MeV": b_pred,
             "B_AME_MeV": b_ame,
+            "B_residual_MeV": b_pred - b_ame,
             "err_pct": err,
-            "B_per_A_pred_MeV": b_pred / A,
-            "B_per_A_AME_MeV": b_ame / A,
+            "B_per_A_pred_MeV": b_pred / A if A > 0 else None,
+            "B_per_A_AME_MeV": b_ame / A if A > 0 else None,
             "status": "canonical-3-input-4-tier",
         })
 
