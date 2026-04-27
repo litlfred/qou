@@ -99,6 +99,8 @@ export default chapter({
         "generation-dependent-sw",
         "lepton-mass-integrals",
         "mi-sw-abelianisation",
+        "mi-sw-abelianisation-cartan",
+        "mi-sw-abelianisation-cartan-proof",
         "mi-sw-abelianisation-proof",
         // Categorical braid structure and colour sectors
         "coral-sector-coords",

@@ -127,6 +127,8 @@ export default chapter({
       label: "sec:mobius-energy",
       blocks: [
         "mobius-energy",
+        "mobius-energy-frobenius-kernel",
+        "mobius-energy-frobenius-kernel-proof",
         "mobius-energy-proof",
         "non-self-intersection",
         "non-self-intersection-proof",
