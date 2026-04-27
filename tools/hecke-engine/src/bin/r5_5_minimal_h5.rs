@@ -52,16 +52,17 @@ fn main() {
     println!("  Minimal H_5 SDP test — single free var c_e, no objective");
     println!("══════════════════════════════════════════════════════════════════════");
 
-    // Standalone PSD check: for d ∈ {4, 6}, pose `find c s.t. c·I_d ⪰ 0`
-    // with c FREE (no anchor).  This should always be feasible at c ≥ 0.
-    println!("\n──── standalone PSD check at various d (no anchor, free c) ────");
-    for d in [2usize, 3, 4, 5, 6] {
-        let id = build_identity_dense(d);
-        let svec = svec_pack(&id);  // col-major lower (Clarabel's documented convention)
+    // Now try with DENSE PSD matrix J_d = ones(d,d) instead of I_d.
+    // J_d has eigenvalue d (rank 1) > 0 so c·J_d ⪰ 0 ⇔ c ≥ 0.
+    println!("\n──── DENSE PSD check: c · J_d (all-ones) ⪰ 0 ────");
+    for d in [2usize, 3, 4, 5, 6, 7, 8] {
+        let mut j = vec![vec![1.0f64; d]; d];  // all-ones matrix
+        let _ = &mut j;
+        let svec_j = svec_pack(&j);
         let cone_dim = d * (d + 1) / 2;
         let n_vars = 1usize;
         let p = CscMatrix::zeros((n_vars, n_vars));
-        let q_vec = vec![-1.0f64]; // minimize -c → maximize c (bounded by PSD)
+        let q_vec = vec![-1.0f64];
         let mut a_rows: Vec<usize> = Vec::new();
         let mut a_cols: Vec<usize> = Vec::new();
         let mut a_vals: Vec<f64> = Vec::new();
@@ -70,11 +71,69 @@ fn main() {
         for k in 0..cone_dim {
             a_rows.push(k);
             a_cols.push(0);
-            a_vals.push(-svec[k]);
+            a_vals.push(-svec_j[k]);
             b.push(0.0);
         }
         cones.push(SupportedConeT::PSDTriangleConeT(d));
-        // c ≤ 1 to bound the unbounded direction
+        a_rows.push(cone_dim);
+        a_cols.push(0);
+        a_vals.push(1.0);
+        b.push(1.0);
+        cones.push(SupportedConeT::NonnegativeConeT(1));
+        let mut col_entries: Vec<Vec<(usize, f64)>> = vec![Vec::new(); n_vars];
+        for ((&r, &c), &v) in a_rows.iter().zip(a_cols.iter()).zip(a_vals.iter()) {
+            col_entries[c].push((r, v));
+        }
+        for col in &mut col_entries {
+            col.sort_by_key(|&(r, _)| r);
+        }
+        let mut indptr = vec![0];
+        let mut rows = Vec::new();
+        let mut vals = Vec::new();
+        for col in &col_entries {
+            for &(r, v) in col {
+                rows.push(r);
+                vals.push(v);
+            }
+            indptr.push(rows.len());
+        }
+        let m_rows = cone_dim + 1;
+        let a_csc = CscMatrix::new(m_rows, n_vars, indptr, rows, vals);
+        let settings = DefaultSettingsBuilder::default().verbose(false).build().unwrap();
+        let mut solver = DefaultSolver::new(&p, &q_vec, &a_csc, &b, &cones, settings).unwrap();
+        solver.solve();
+        println!(
+            "  d={}: c·J_d, status={:?}, c={:.6}",
+            d, solver.solution.status, solver.solution.x[0]
+        );
+    }
+    println!();
+
+    // Standalone PSD check: for d ∈ {4, 6}, pose `find c s.t. c·I_d ⪰ 0`
+    // with c FREE (no anchor).  This should always be feasible at c ≥ 0.
+    println!("\n──── standalone PSD check c · I_d ⪰ 0 (sparse) ────");
+    for d in [2usize, 3, 4, 5, 6, 7, 8] {
+        let id = build_identity_dense(d);
+        let svec = svec_pack(&id);  // col-major lower (Clarabel's documented convention)
+        let cone_dim = d * (d + 1) / 2;
+        let n_vars = 1usize;
+        let p = CscMatrix::zeros((n_vars, n_vars));
+        let q_vec = vec![-1.0f64]; // minimize -c → maximize c
+        let mut a_rows: Vec<usize> = Vec::new();
+        let mut a_cols: Vec<usize> = Vec::new();
+        let mut a_vals: Vec<f64> = Vec::new();
+        let mut b: Vec<f64> = Vec::new();
+        let mut cones: Vec<SupportedConeT<f64>> = Vec::new();
+        // Force diagonal entries explicitly via the PSD cone.
+        for k in 0..cone_dim {
+            let coef = svec[k];
+            a_rows.push(k);
+            a_cols.push(0);
+            a_vals.push(-coef);
+            b.push(0.0);
+        }
+        cones.push(SupportedConeT::PSDTriangleConeT(d));
+        // Also add: c ≤ 1 explicitly via NN
         a_rows.push(cone_dim);
         a_cols.push(0);
         a_vals.push(1.0);
