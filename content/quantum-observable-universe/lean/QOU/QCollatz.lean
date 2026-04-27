@@ -142,7 +142,8 @@ theorem skein_convex_coeff (q : ℝ) (hq : q > 1) :
   constructor
   · positivity
   · rw [inv_pow]
-    exact (div_lt_one (by positivity)).mpr (by nlinarith)
+    have hq2 : (1 : ℝ) < q ^ 2 := by nlinarith
+    exact inv_lt_one_of_one_lt₀ hq2
 
 -- ═══════════════════════════════════════════════════════════════
 -- §5. No periodic Collatz cycles (coprimality of [2] and [3])
@@ -240,7 +241,10 @@ theorem contact_threshold_lt_two (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
   have h2gt1 : qInt q 2 > 1 := by rw [qInt_two q hq1]; linarith
   have hlog2pos : Real.log (qInt q 2) > 0 := Real.log_pos h2gt1
   rw [div_lt_iff₀ hlog2pos]
-  rw [← Real.log_pow]
-  exact Real.log_lt_log (le_of_lt h3pos) (by rw [sq]; exact qInt3_lt_qInt2_sq q hq hq1)
+  have h2cast : (2 : ℝ) * Real.log (qInt q 2) = Real.log ((qInt q 2) ^ 2) := by
+    rw [Real.log_pow]; push_cast; ring
+  rw [h2cast]
+  have hsq : qInt q 3 < (qInt q 2) ^ 2 := qInt3_lt_qInt2_sq q hq hq1
+  exact Real.log_lt_log h3pos hsq
 
 end QOU.Substrate
