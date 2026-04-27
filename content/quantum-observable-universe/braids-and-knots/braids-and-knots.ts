@@ -312,6 +312,12 @@ export default chapter({
       label: "sec:categorical-mass-foundations",
       blocks: [
         "topological-mass",
+        "topological-mass-cat-eigenspace",
+        "topological-mass-cat-eigenspace-proof",
+        "topological-mass-cat-descended",
+        "topological-mass-cat-descended-proof",
+        "topological-mass-cat-transient",
+        "topological-mass-cat-transient-proof",
         "topological-mass-categorical-proof",
         "categorical-mass-markov",
         "markov-z-reconciliation",

@@ -3,5 +3,10 @@ import { proof } from "../../schema/builders";
 export default proof({
   label: "prf:topological-mass-categorical",
   title: "Categorical proof of the topological decomposition of mass",
-  uses: ["thm:topological-mass"],
+  uses: [
+    "thm:topological-mass",
+    "lem:topological-mass-cat-eigenspace",
+    "lem:topological-mass-cat-descended",
+    "lem:topological-mass-cat-transient",
+  ],
 });
