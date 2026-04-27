@@ -14,6 +14,7 @@
 
 use chrono::Utc;
 use clap::Parser;
+use hecke_engine::cross_level_embedding::{verify_edge, TowerEdgeSpec};
 use hecke_engine::gb_nf_reducer::HeckeElement;
 use hecke_engine::joint_tower_sdp_certificate as cert;
 use hecke_engine::wedderburn_psd::evaluate_all_blocks;
@@ -161,6 +162,30 @@ fn solve_per_atom(
     }
 }
 
+/// Tower edges enumerated from the design spec
+/// (prop:joint-tower-sdp-confinement §"Output").
+fn tower_edges() -> Vec<TowerEdgeSpec<'static>> {
+    vec![
+        // ── ℓ ≤ 1 ────────────────────────────────────────────────
+        TowerEdgeSpec {
+            parent_name: "proton",
+            parent_n: 3,
+            constituents: vec![("quark", 1), ("quark", 1), ("quark", 1)],
+        },
+        TowerEdgeSpec {
+            parent_name: "neutron",
+            parent_n: 3,
+            constituents: vec![("quark", 1), ("quark", 1), ("quark", 1)],
+        },
+        // ── ℓ = 2 ────────────────────────────────────────────────
+        // Atomic n_0 = 3·A; the parent_n in this verifier matches the
+        // *native* H_n of the historical knot braid (B_3 for 6_2,
+        // L6a4; B_5 for 8_11).  The full atomic embedding 3⊗nucleon
+        // → atomic-n_0 lives at the larger H_{3A} and is wired in
+        // when the joint-tower SDP solver lands (R5).
+    ]
+}
+
 fn main() {
     let args = Args::parse();
     let reg = registry();
@@ -174,7 +199,7 @@ fn main() {
     println!(
         "══════════════════════════════════════════════════════════════════════"
     );
-    println!("  Joint mass-tower SDP — Rust binary (Phase R1+R2+R6)");
+    println!("  Joint mass-tower SDP — Rust binary (R1+R2+R3+R4+R6)");
     println!(
         "══════════════════════════════════════════════════════════════════════"
     );
@@ -227,6 +252,40 @@ fn main() {
         certs.push(cert);
     }
 
+    // ─── R4: Cross-level edge verification ────────────────────────
+    println!(
+        "\n══════════════════════════════════════════════════════════════════════"
+    );
+    println!("  R4 — Cross-level embedding (multi-LR consistency)");
+    println!(
+        "══════════════════════════════════════════════════════════════════════"
+    );
+    let edges_by_parent = tower_edges();
+    for spec in &edges_by_parent {
+        let constituent_names: Vec<&str> = spec.constituents.iter().map(|(s, _)| *s).collect();
+        println!(
+            "\n──── {} (n_0 = {}) ← {:?} ────",
+            spec.parent_name, spec.parent_n, constituent_names
+        );
+        let edges = verify_edge(spec);
+        let n_consistent = edges.iter().filter(|e| e.embedding_consistent).count();
+        println!(
+            "  {}/{} per-partition LR-decompositions consistent",
+            n_consistent,
+            edges.len()
+        );
+        for e in &edges {
+            println!("    {}", e.diagnostic);
+        }
+        // Attach edges to the parent's certificate
+        for c in certs.iter_mut() {
+            if c.name == spec.parent_name {
+                c.cross_level_edges = edges;
+                break;
+            }
+        }
+    }
+
     let witness = cert::JointTowerSdpWitness {
         computation: "joint-tower-sdp-rust".to_string(),
         computed_at: Utc::now().to_rfc3339(),
@@ -238,7 +297,7 @@ fn main() {
                 .to_string(),
         design_spec: "prop:joint-tower-sdp-confinement".to_string(),
         consumed_by: "prop:atom-knot-mass-derivation".to_string(),
-        phase: "rust-r1-r2-r6".to_string(),
+        phase: "rust-r1-r2-r3-r4-r6".to_string(),
         engine: cert::EngineMetadata {
             name: "hecke-engine".to_string(),
             version: env!("CARGO_PKG_VERSION").to_string(),
