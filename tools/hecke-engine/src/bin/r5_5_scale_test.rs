@@ -25,6 +25,10 @@ fn main() {
         (4, Some(3), 60.0),
         (5, Some(2), 60.0),
         (5, Some(3), 120.0),
+        (6, Some(2), 60.0),
+        (8, Some(2), 60.0),
+        (10, Some(2), 120.0),
+        (12, Some(2), 300.0),
     ];
 
     for (n, cutoff, max_secs) in cases {

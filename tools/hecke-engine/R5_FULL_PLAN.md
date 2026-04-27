@@ -50,12 +50,12 @@ from variables.
 | R5.2 | `clarabel = "0.11"` with `sdp` feature in `Cargo.toml`; minimal SDP smoke test | 1-2 hr | **done** |
 | R5.3 | Port `sdp_verifier.rs` bisection to a true Clarabel SDP call (single block, identity), confirm same $\alpha^*$ output | 2-3 hr | **done** (works at $d \leq 3$; cross-validated) |
 | R5.4 | Pose the **proton known-$T_w$ recovery test**: variables $c_w$ for $w \in S_3$; constraint set the SDP that should recover $c$ matching the Borromean reduction | 4-6 hr | **done** ($\leq 10^{-5}$ residual at $H_3$) |
-| R5.5 | Pose the **⁶Li solver** at $H_{18}$ with filtration cutoff $L = 8$ | 1-2 days | **partial** (base infra done; H_3, H_4 work; **H_5+ blocked on Clarabel-rs PSD-cone bug at $d \geq 4$ — see [R5_5_BUG_REPORT.md](R5_5_BUG_REPORT.md)**) |
-| R5.6 | Same for ⁷Li at $H_{21}$ with AME anchor for $L_{11a62}$ | 1 day | **blocked on R5.5** |
-| R5.7 | If R5.5/5.6 succeed, scale to α-cluster $H_{24} \to H_{120}$ with SDP-decomposition tricks | 2-3 days | **blocked on R5.5** |
-| R5.8 | Update `methodology-deprecation.witness.json` to move ⁶Li/⁷Li from `deprecated-volume-match` to `principled-derivation`; update atlas renderer to consume the new witnesses; retire `li_atom_knot_search.py` | 2-3 hr | **blocked on R5.5** |
+| R5.5 | Pose the **⁶Li solver** at $H_{18}$ with filtration cutoff $L = 8$ | 1-2 days | **base infra done; H_3..H_8 work**.  H_18 needs Wedderburn-block decomposition (memory-bounded, not a correctness issue).  See [R5_5_BUG_REPORT.md](R5_5_BUG_REPORT.md) for the post-mortem on the original svec-encoding bug. |
+| R5.6 | Wedderburn-block decomposition: solve per-block PSD constraints in parallel, couple via linear constraints.  Required for H_18 (⁶Li) and beyond. | 2-3 days | next research item |
+| R5.7 | ⁶Li at $H_{18}$ + ⁷Li at $H_{21}$ with AME anchor | 1-2 days | depends on R5.6 |
+| R5.8 | Update `methodology-deprecation.witness.json` to move ⁶Li/⁷Li from `deprecated-volume-match` to `principled-derivation`; update atlas renderer to consume the new witnesses; retire `li_atom_knot_search.py` | 2-3 hr | depends on R5.7 |
 
-Total estimated remaining: 5-8 working days research-grade work, **gated on Clarabel-rs upstream fix or solver swap** (see R5_5_BUG_REPORT.md §"Path forward").
+Total estimated remaining: 4-6 working days. **No solver-side blocker any more** — Clarabel.rs works correctly when fed the right svec convention.
 
 ## Validation strategy
 

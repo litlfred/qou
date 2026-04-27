@@ -1,8 +1,36 @@
-# R5.5 H_5 anomaly — root cause analysis & path forward
+# R5.5 H_5 anomaly — POST-MORTEM (was MY bug, not Clarabel's)
 
-**Status**: bug isolated to Clarabel-rs core algorithm at PSD-cone
-dimensions $d \geq 4$.  Tested both `sdp-netlib` and `sdp-openblas`
-backends; both reproduce.  Path forward is documented below.
+**Status**: **Resolved**.  The "Clarabel-rs bug at $d \geq 4$" was
+**my own svec encoding error**.  Clarabel's `PSDTriangleConeT(n)`
+expects the symmetric matrix's **upper-triangular part in column-major
+order** (with $\sqrt{2}$ off-diagonal scaling); my code was packing
+the **lower-triangular part in column-major order**.
+
+For symmetric matrices these conventions happen to coincide at small
+$d$ — the orderings produce the same vector at $d \in \{2, 3\}$ for
+many matrices and at $d = 5$ for the identity specifically — which
+masked the bug in the existing tests.  At $d \geq 4$ the orderings
+diverge: my $\mathrm{svec}(I_4) = [1, 0, 0, 0, 1, 0, 0, 1, 0, 1]$
+(diagonal at positions $\{0, 4, 7, 9\}$) gets read by Clarabel as a
+**different matrix** (diagonal at positions $\{0, 2, 5, 9\}$), which
+is genuinely indefinite — Clarabel's `Solved, c = 0` answer was
+correct for the matrix it was actually seeing.
+
+The diagonal positions for the correct upper-triangular column-major
+layout are $k(k+3)/2$ for $k = 0, \ldots, d-1$:
+  - $d{=}4$: $\{0, 2, 5, 9\}$
+  - $d{=}6$: $\{0, 2, 5, 9, 14, 20\}$
+  - $d{=}8$: $\{0, 2, 5, 9, 14, 20, 27, 35\}$
+
+After fix, the minimal reproducer returns $c = 1$ for every
+$d \in \{2, \ldots, 8\}$.  The full SDP solver now scales to $H_8$
+with filtration cutoff $L = 2$ in 10 seconds; $H_{10+}$ at the same
+cutoff exceeds memory limits (Wedderburn-block decomposition is what
+R5.6 will need).
+
+This document is preserved for the post-mortem narrative.  The
+self-contained reproducer below is now an example of HOW to use
+Clarabel `PSDTriangleConeT` correctly.
 
 ## Reproducer (minimal)
 

@@ -151,8 +151,9 @@ fn main() {
         let cone_dim = d * (d + 1) / 2;
         let sqrt2 = 2f64.sqrt();
         let mut svec = Vec::with_capacity(cone_dim);
+        // Clarabel PSDTriangleConeT: upper-triangular column-major.
         for col in 0..d {
-            for r in col..d {
+            for r in 0..=col {
                 let v = 0.5 * (identity[r][col] + identity[col][r]);
                 let scale = if r == col { 1.0 } else { sqrt2 };
                 svec.push(v * scale);

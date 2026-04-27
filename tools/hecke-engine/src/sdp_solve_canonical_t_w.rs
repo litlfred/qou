@@ -30,7 +30,7 @@
 //!
 //! See [R5_FULL_PLAN.md](../../R5_FULL_PLAN.md) §"R5.5".
 
-use crate::gb_nf_reducer::{coxeter_length, perm_to_canonical_word};
+use crate::gb_nf_reducer::perm_to_canonical_word;
 use crate::seminormal::{partitions_of, seminormal_matrices};
 use clarabel::algebra::CscMatrix;
 use clarabel::solver::*;
@@ -65,12 +65,61 @@ pub struct SolverReport {
 // Helpers (matrix ops, perm enumeration).
 // ──────────────────────────────────────────────────────────────────
 
+/// Enumerate permutations of S_n with Coxeter length ≤ cutoff.
+///
+/// At n=18 there are 18! ≈ 6.4·10^15 permutations — generating all
+/// of S_n first would be intractable.  Instead we BFS by Coxeter
+/// length from the identity: at each step apply each adjacent
+/// transposition s_i; only keep the result if it's an ascent
+/// (length increases by 1).  Cardinality of the depth-L ball is the
+/// Mahonian sum Σ_{k=0}^L M(n, k); for n=18, L=8 this is ≈ 1.2·10^6
+/// vs the full n! = 6.4·10^15.
+///
+/// Without a cutoff, falls back to enumerating all of S_n.
 fn enumerate_perms_with_cutoff(n: usize, cutoff: Option<u32>) -> Vec<Vec<usize>> {
+    if let Some(l_max) = cutoff {
+        return enumerate_coxeter_ball(n, l_max);
+    }
     let mut all: Vec<Vec<usize>> = Vec::new();
     let mut p: Vec<usize> = (1..=n).collect();
     permute(&mut p, 0, &mut all);
-    if let Some(l_max) = cutoff {
-        all.retain(|w| coxeter_length(w) <= l_max);
+    all
+}
+
+/// BFS by Coxeter length: enumerate perms in S_n with ℓ(w) ≤ l_max.
+/// Each step applies an adjacent transposition s_i (1 ≤ i ≤ n-1)
+/// to a frontier perm; the result has length ℓ_old + 1 iff it's an
+/// ascent, in which case we add it to the next frontier.  Visited
+/// set deduplicates collisions when two reduced expressions reach
+/// the same perm.
+fn enumerate_coxeter_ball(n: usize, l_max: u32) -> Vec<Vec<usize>> {
+    use std::collections::HashSet;
+    let identity: Vec<usize> = (1..=n).collect();
+    let mut visited: HashSet<Vec<usize>> = HashSet::new();
+    let mut all: Vec<Vec<usize>> = Vec::new();
+    visited.insert(identity.clone());
+    all.push(identity.clone());
+    let mut frontier: Vec<Vec<usize>> = vec![identity];
+    for _ in 0..l_max {
+        let mut next_frontier: Vec<Vec<usize>> = Vec::new();
+        for w in &frontier {
+            for i in 1..n {
+                // s_i acts as a right multiplication: swap positions i-1, i
+                if w[i - 1] < w[i] {
+                    // applying s_i is an ascent ⇒ length increases by 1
+                    let mut ws = w.clone();
+                    ws.swap(i - 1, i);
+                    if visited.insert(ws.clone()) {
+                        next_frontier.push(ws.clone());
+                        all.push(ws);
+                    }
+                }
+            }
+        }
+        if next_frontier.is_empty() {
+            break;
+        }
+        frontier = next_frontier;
     }
     all
 }
@@ -145,12 +194,15 @@ fn build_rho_lambda_for_basis_element(
     prod
 }
 
+/// Clarabel `PSDTriangleConeT(d)` expects the upper-triangular part
+/// of a symmetric matrix in column-major order, with off-diagonal
+/// entries scaled by √2.  Diagonal M_{k,k} sits at position k(k+3)/2.
 fn svec_pack_symmetric(m: &[Vec<f64>]) -> Vec<f64> {
     let d = m.len();
     let mut out = Vec::with_capacity(d * (d + 1) / 2);
     let sqrt2 = 2f64.sqrt();
     for col in 0..d {
-        for row in col..d {
+        for row in 0..=col {
             let v = 0.5 * (m[row][col] + m[col][row]);
             let scale = if row == col { 1.0 } else { sqrt2 };
             out.push(v * scale);
@@ -207,38 +259,6 @@ pub fn solve_canonical_t_w(
     // (R5_5_BUG_REPORT.md).  If any block exceeds d=3 we abort early
     // with a status string indicating the unsupported regime, rather
     // than producing a "Solved" result that callers might trust.
-    let max_d = block_dims.iter().copied().max().unwrap_or(0);
-    if max_d >= 4 {
-        let anchor_summaries: Vec<String> = anchors
-            .iter()
-            .map(|a| match a {
-                LinearAnchor::TraceOfBlock { partition, target } => {
-                    format!("tr(ρ_{:?}(T(c))) = {:.6}", partition, target)
-                }
-                LinearAnchor::SingleCoefficient { perm, target } => {
-                    format!("c_{:?} = {:.6}", perm, target)
-                }
-            })
-            .collect();
-        return SolverReport {
-            n,
-            q0: q,
-            n_variables: n_vars,
-            n_psd_blocks: parts.len(),
-            block_dims,
-            filtration_cutoff,
-            anchors: anchor_summaries,
-            c_solved: BTreeMap::new(),
-            l1_norm: f64::NAN,
-            solver_status: format!(
-                "Unsupported (max d_λ = {} ≥ 4 hits Clarabel-rs bug; \
-                 see R5_5_BUG_REPORT.md)",
-                max_d
-            ),
-            iterations: 0,
-        };
-    }
-
     // Constraints
     //
     // (NN) Nonneg cones: c⁺_w ≥ 0 (n_vars rows) and c⁻_w ≥ 0 (n_vars rows).

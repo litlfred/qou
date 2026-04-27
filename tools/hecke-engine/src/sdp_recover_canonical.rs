@@ -236,11 +236,12 @@ pub fn solve_recovery_h_n(
         for perm in &perms {
             let canonical = perm_to_canonical(perm);
             let m = build_rho_lambda_for_basis_element(shape, &canonical, q);
-            // Symmetrize then svec
+            // Symmetrize then svec.  Clarabel's PSDTriangleConeT
+            // expects upper-triangular column-major with √2 off-diag scaling.
             let sqrt2 = 2f64.sqrt();
             let mut svec = Vec::with_capacity(d * (d + 1) / 2);
             for col in 0..d {
-                for row in col..d {
+                for row in 0..=col {
                     let v = 0.5 * (m[row][col] + m[col][row]);
                     let scale = if row == col { 1.0 } else { sqrt2 };
                     svec.push(v * scale);

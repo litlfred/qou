@@ -18,11 +18,13 @@ fn build_identity_dense(d: usize) -> Vec<Vec<f64>> {
 }
 
 fn svec_pack(m: &[Vec<f64>]) -> Vec<f64> {
+    // Clarabel PSDTriangleConeT: upper-triangular column-major with
+    // √2 off-diag scaling.  Diagonal M_{k,k} at index k(k+3)/2.
     let d = m.len();
     let mut out = Vec::with_capacity(d * (d + 1) / 2);
     let sqrt2 = 2f64.sqrt();
     for col in 0..d {
-        for row in col..d {
+        for row in 0..=col {
             let v = 0.5 * (m[row][col] + m[col][row]);
             let scale = if row == col { 1.0 } else { sqrt2 };
             out.push(v * scale);

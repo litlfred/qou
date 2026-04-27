@@ -127,12 +127,21 @@ fn build_rho_lambda(shape: &[usize], braid_word: &[i32], q: f64) -> Vec<Vec<f64>
 /// off-diagonal entries.  Standard svec layout:
 ///     vec(M) = [M_00,  sqrt(2) M_10, ..., sqrt(2) M_{d-1,0},
 ///               M_11,  sqrt(2) M_21, ..., M_{d-1,d-1}].
+/// Pack a symmetric matrix into Clarabel's lower-triangular column-
+/// stacked SDP-cone vectorization with `sqrt(2)` scaling on
+/// off-diagonal entries.  Standard svec layout:
+///     vec(M) = [M_00,  sqrt(2) M_10, ..., sqrt(2) M_{d-1,0},
+///               M_11,  sqrt(2) M_21, ..., M_{d-1,d-1}].
+/// Clarabel's `PSDTriangleConeT(d)` expects the **upper-triangular
+/// part stored in column-major order** — i.e. for column j, entries
+/// M_{0,j}, M_{1,j}, ..., M_{j,j} (rows 0..=j).  Diagonal element
+/// M_{k,k} sits at position k(k+3)/2.  Off-diagonals scaled by √2.
 fn svec_pack(m: &[Vec<f64>]) -> Vec<f64> {
     let d = m.len();
     let mut out = Vec::with_capacity(d * (d + 1) / 2);
     let sqrt2 = 2f64.sqrt();
     for col in 0..d {
-        for row in col..d {
+        for row in 0..=col {
             let v = m[row][col];
             let scale = if row == col { 1.0 } else { sqrt2 };
             out.push(v * scale);
@@ -247,26 +256,6 @@ pub fn solve_alpha_psd_clarabel(n: usize, braid_word: &[i32], q: f64) -> Clarabe
         .max_iter(200)
         .build()
         .unwrap();
-
-    // CLAUDE.md / repo guideline: don't silently use a buggy solver.
-    // Clarabel-rs has a documented PSD-cone correctness bug at d ≥ 4
-    // (R5_5_BUG_REPORT.md).  Abort early if any block exceeds d=3.
-    let max_d = block_dims.iter().copied().max().unwrap_or(0);
-    if max_d >= 4 {
-        return ClarabelSdpReport {
-            n,
-            q0: q,
-            alpha_star: f64::NAN,
-            solver_status: format!(
-                "Unsupported (max d_λ = {} ≥ 4 hits Clarabel-rs bug; \
-                 see R5_5_BUG_REPORT.md)",
-                max_d
-            ),
-            n_blocks: parts.len(),
-            block_dims,
-            iterations: 0,
-        };
-    }
 
     let mut solver = DefaultSolver::new(&p, &q_vec, &a_csc, &b, &cones, settings).unwrap();
     solver.solve();
