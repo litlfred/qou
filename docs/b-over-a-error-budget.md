@@ -6,21 +6,46 @@
 predictions on PR #442, structured by Gröbner–Shirshov filtration depth and
 jet-order scaling.
 
-## Context
+## Update 2026-04-27 — canonical formula clarified
 
-The published QOU mass formula is two parallel legs converging at a knot's
-hyperbolic volume:
+The watched branch `claude/mass-units-bridge-followups` commit `7588970f`
+(*phase 0 (revised): mass derivation pre/post-Archimedean — Yekutieli + GB SS
+collapse*) revises the canonical mass identity to a **single
+finite-categorical pipeline**:
 
-| Geometric leg (top-down) | Algebraic leg (bottom-up) |
+  **B(𝔥) = m_e · ρ · tr_M(T_w) | q = q_0**
+
+with everything pre-Archimedean living in **ℚ(q)**, exact and finite.  The
+volume conjecture is explicitly **not part of the derivation** — only a
+post-Archimedean naming convention.  The Reeb-density / Mostow / Gromov
+construction (geometric leg 3→4→5) is **not part of QOU derivation** —
+explicitly stated "we do not need to derive it internally".  The GB spectral
+sequence **collapses at E_2** for semisimple H_n(q) at generic q (no higher
+pages contribute).
+
+This **answers Q4** of the gap list: the .md formula
+`(E_0/A) Σ_λ w_λ log|Λ_λ^free / Λ_λ^nuc|` (used by v1/v3) is
+**NOT** the canonical formula; the canonical is just `m_e · ρ · tr_M(T_w)`.
+v3 was attacking the wrong target.
+
+## Context (revised chain)
+
+The simplified canonical pipeline (a SINGLE leg, no two-leg convergence):
+
+| Step | Where in the chain |
 |---|---|
-| (1) categorical action of **C** on 𝒮 | (A) SDP confinement at q₀ + GB-filtration + jet order |
-| (2) connection ∇ via Stokes | (B) canonical Hecke element T_w |
-| (3) Frobenius pairing on End(𝒮_p) | (C) Markov trace tr_M(β) = Σ_λ y_λ χ_λ(β) |
-| (4) Reeb-foliation density μ on S³\K | (D) Jones polynomial J_K(q) |
-| (5) Vol_hyp(K) | (E) Vol_hyp(K) (volume conjecture) |
+| (1) Categorical action of **C** on 𝒮 | input |
+| (2) Yekutieli at finite slice (= Hecke quadratic relation as curvature 2-form at adjacent slices) | structural correspondence, no analytic content |
+| (3) Joint-tower confinement SDP at q_0 with GB filtration + jet-order tracking | yields canonical T_w ∈ H_{n_0}(q_0) in GB-NF |
+| (4) Wedderburn decomposition H_n(q) ≅ ⊕_λ M_{d_λ}(ℚ(q)) | semisimple at generic q, GB SS collapses at E_2 |
+| (5) Markov trace tr_M(T_w) = Σ_λ y_λ(q) χ_λ(T_w) | Wenzl-bridge y_λ + q-Murnaghan–Nakayama χ_λ |
+| (6) Categorical mass invariant M(𝔥) = ρ · tr_M(T_w) ∈ ℚ(q) | ρ structural integer (multiplicity in SDP solution) |
+| (7) Archimedean realization functor at q = q_0, multiply by m_e | gives B(𝔥) ∈ ℝ (MeV) |
 
-The two legs converge at Vol_hyp via the (borrowed) volume conjecture, then
-B = ρ · m_e · Vol_hyp(T_w) where ρ is a structural integer prefactor.
+**Old framing (replaced):** two legs converging at Vol_hyp via volume
+conjecture, then `B = ρ · m_e · Vol_hyp(T_w)`.  The phase-0-revised commit
+removes Vol_hyp from the derivation; it remains only as post-Archimedean
+naming for hyperbolic K = T̂_w.
 
 The PR #442 v3 evaluator (`b_over_a_evaluator_v2.py` v3 logic) implements only
 a fragment of leg (E) — abelianised crossing counts (n_pp, n_nn, n_pn) reduced
@@ -212,18 +237,27 @@ remainder is the open structural gap the paper itself acknowledges (per
 
 ## Open items / TODOs
 
-| # | Gap | Tier | Status |
-|---|---|---|---|
-| 1 | Reeb-density → Vol_hyp categorical-derivation witness | (geometric leg 4→5) | open |
-| 2 | Volume conjecture (Kashaev/Murakami) — bridge between legs; not derived from QOU | (legs meet) | borrowed; structural |
-| 3 | Joint-tower SDP not built (only fundamental-particle SDP exists) | (algebraic leg A) | open |
-| 4 | Canonical Hecke T_w explicit only for ℓ ≤ 1 (electron, p, n); ⁶Li/⁷Li (n₀ = 18, 21) not derived | (algebraic leg B) | open |
-| 5 | Structural ρ prefactor — ρ ∈ {1, 2} for ℓ ≤ 2; breaks at ρ = 5 for ⁶Li/⁷Li (volume-match observation, not derived) | (final step) | open |
-| 6 | `rem:yekutieli-stokes-remark` referenced but no formal block; non-abelian Stokes step (geometric leg 2) not formalised | (geometric leg 2) | open |
-| 7 | Push-forward to universal cover + Reeb-vortex measure (geometric step 3 → 4) has no formal block | (geometric leg 3→4) | open |
-| 8 | Term 7 shell correction (GB ℓ=5) computed for ⁴He, open for A ≥ 5 | (algebraic leg) | open |
-| 9 | `prop:knot-factor-frobenius-pairing` demoted to `conj:` in Track 5 (CLAUDE.md §3b propagation); needs review whether genuinely conjectural | (geometric leg 3) | review |
-| Q | Is `(E₀/A) Σ w_λ log|Λ|` formula equivalent (as Vol_hyp asymptotic) to `B = ρ · m_e · Vol_hyp`? | formula consistency | awaiting answer |
+Status revised after `7588970f` chain simplification.  Several previously-open
+gaps are now **closed by the new derivation** (marked **closed-by-7588970f**)
+because the post-Archimedean / Reeb / Vol_hyp construction is no longer part
+of the canonical pipeline.
+
+| # | Gap | Status |
+|---|---|---|
+| Q | Is `(E₀/A) Σ w_λ log\|Λ\|` formula equivalent to canonical? | **closed-by-7588970f**: NOT equivalent.  Canonical is `B = m_e · ρ · tr_M(T_w)`.  v3's formula is from a separate (possibly stale) `prop:b-over-a-spectral-decomposition` derivation; **flag .md for author review** to confirm it's stale. |
+| 1 | Reeb-density → Vol_hyp categorical-derivation witness | **closed-by-7588970f**: not part of QOU derivation — post-Archimedean naming only. |
+| 2 | Volume conjecture (Kashaev/Murakami) — bridge | **closed-by-7588970f**: borrowed naming convention, not in derivation. |
+| 6 | `rem:yekutieli-stokes-remark` formal block missing | **partially closed**: Yekutieli at finite slice = the Hecke quadratic relation σ²=hσ+1 itself (curvature 2-form at adjacent slices).  The new derivation gives the categorical-correspondence table; a formal block is still useful for cross-references but no new mathematics is needed. |
+| 7 | Frobenius → Reeb-vortex measure step missing | **closed-by-7588970f**: the geometric leg 3→4 is not part of QOU derivation. |
+| 9 | `prop:knot-factor-frobenius-pairing` demoted to `conj:` | **review pending**: the new derivation doesn't reference Frobenius pairing on End(𝒮_p) directly; check whether the conj demotion is still appropriate. |
+| 3 | Joint-tower SDP not built | **OPEN** (still in canonical pipeline).  Fundamental-particle SDP exists; joint-tower (multi-particle, ℓ ≥ 2) is open. |
+| 4 | Canonical Hecke T_w explicit only for ℓ ≤ 1; ⁶Li/⁷Li open | **OPEN** (still in canonical pipeline).  Without explicit T_w, the rest of the chain cannot run for these atoms. |
+| 5 | Structural ρ prefactor — open for ℓ ≥ 2 | **OPEN** (still in canonical pipeline).  ρ = 1 for ℓ ≤ 1 (direct), ρ = 5 for ⁶Li/⁷Li (volume-match observation, not derived). |
+| 8 | Term 7 shell correction (GB ℓ=5) for A ≥ 5 | **closed-by-7588970f**: the GB spectral sequence collapses at E_2 — `d_r = 0` for `r ≥ 3`.  No higher pages contribute.  Term 7 (if it ever was a separate term) is subsumed into the E_∞ Wedderburn decomposition. |
+
+The remaining OPEN gaps are 3, 4, 5 — all on the algebraic / SDP side of the
+canonical pipeline.  These are the ones whose closure would unblock v5
+implementation against the canonical formula.
 
 ## How this doc supports PR #442
 
