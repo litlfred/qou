@@ -548,6 +548,109 @@ Numerically this gives `Q_alg = +0.042 MeV` vs AME `0.019 MeV` —
 `B(³H)` and `B(³He)` compounding over the `B/Q ≈ 460` ratio. Skein-
 pair does not change this; Q-value precision needs sub-ppm B-precision.
 
+## Audit of 524 canonical compute scripts (2026-04-27)
+
+[`canonical_script_input_audit.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/canonical_script_input_audit.py)
+classified every Python compute script under
+`folio-assistant/computations/` for alignment with the paper's
+3-input scheme (`calibration-inputs.md`):
+
+| Bucket | Count | % |
+|---|---:|---:|
+| **3-input canonical** (`Q_β-only-hadronic`) | 12 | **2.3%** |
+| **Over-counts hadronic** (uses both `m_p` AND `m_n` from CODATA) | 112 | **21.4%** |
+| **Vol_hyp-fitted** (uses hyperbolic volume) | 55 | 10.5% |
+| `m_p`-only (no `Q_β`) | 10 | 1.9% |
+| No-hadronic / substrate-only | 335 | 63.9% |
+| **Total audited** | **524** | 100.0% |
+
+**Headline:** only **2.3% of compute scripts** are aligned with the
+paper's canonical 3-input scheme. **21.4% over-count** by importing
+both `m_p` and `m_n` from CODATA when the framework prescribes
+`m_n = m_p + Q_β`. This is a major alignment gap — the codebase has
+drifted from the paper's stated calibration scheme.
+
+**Witness:** [`canonical-script-input-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/canonical-script-input-audit.witness.json) (full per-script
+classification table).
+
+### How to migrate over-counting scripts
+
+For each script in the 21.4% over-count bucket:
+
+1. Replace `from experimental_constants import M_P_MEV, M_N_MEV` with
+   `from experimental_constants import M_P_MEV, Q_NEUTRON_MEV`.
+2. Compute `M_N_MEV` derivedly: `M_N_MEV_derived = M_P_MEV + Q_NEUTRON_MEV`.
+3. Note in the script header that `m_n` is derived per
+   `calibration-inputs.md`, not used as an independent CODATA input.
+
+This is mechanical — 112 scripts is a half-day's work. Doing this
+once eliminates a class of silent-drift bugs and brings the codebase
+into alignment with the paper's stated 3-input framework.
+
+## Atomic mass derivation: arithmetic vs categorical-chain (2026-04-27)
+
+Per user question "1H atomic mass = 938.783 MeV (m_p + m_e) did
+you do this through knot operations / GB-NF / SDP?" — **no.** The
+script reports two values per atom now:
+
+| sym | M_atom (arith) | M_atom (tower) | Δ vs CODATA |
+|---|---:|---:|---:|
+| ¹H | 938.783 | 956.002 | tower +1.84% |
+| D | 1876.077 | 1910.005 | tower +1.81% |
+| T | 2809.389 | 2860.025 | tower +1.80% |
+| ³He | 2809.347 | 2860.494 | tower +1.81% |
+| ⁴He | 3729.553 | 3797.408 | tower +1.85% |
+| ⁶Li | 5601.037 | 5702.820 | tower +1.82% |
+| ¹⁶O | 14889.123 | 15160.543 | tower +1.82% |
+
+**Arith** is `Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B` — simple
+algebra, no chain. **Tower** is the same with `m_p_TOWER = 1869.85·m_e`
+(per [`mass-endomorphism.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass-endomorphism.witness.json)) and `m_n_TOWER = m_p_TOWER + Q_β`.
+
+The **~1.84% systematic offset** in the tower column is the
+mass-endomorphism tower's `m_p_pred / m_p_AME` residual. Every
+fully-categorical atomic mass inherits it. Closing this residual
+(open per `electron_chiral_probe.py` and several others) brings the
+fully-derived chain into agreement with CODATA.
+
+For the user's specific question: ¹H atomic mass via knot operations /
+GB-NF / SDP would give **956 MeV (+1.84%)**, not 938.783. The
+938.783 is plain arithmetic from CODATA inputs.
+
+## Two paper sections inconsistent on `m_n` derivation
+
+A subtle inconsistency surfaced during the audit:
+
+- [`calibration-inputs.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/calibration-inputs.md): "Neutron mass: `m_n = m_p + Q_β` (Hecke engine)"
+  → gives `m_n_pred = 939.054 MeV` (= 938.272 + 0.7823) → +0.05%
+  off CODATA's 939.565. This is the 3-input canonical scheme.
+
+- [`nucleon-mass-splitting-proof.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/observations/nucleon-mass-splitting-proof.md): "Substituting CODATA splitting
+  `m_n − m_p ≈ 1.29333 MeV` determines `μ_d − μ_u ≈ 1.288 MeV`"
+  → uses the **full** mass splitting (1.293 MeV, not just `Q_β`),
+  giving `μ_u = 311.10 MeV`, `μ_d = 312.39 MeV`.
+
+The two are off by `m_e` (0.511 MeV) in `Δm_np`. Equivalent
+parameter values in the two schemes:
+
+| Quantity | calibration-inputs.md (3-input) | nucleon-mass-splitting (4-input) |
+|---|---:|---:|
+| `Δm_np_pred` | `Q_β = 0.7823 MeV` | CODATA `m_n − m_p = 1.2933 MeV` |
+| `μ_d − μ_u` | 0.779 MeV | **1.288 MeV** |
+| `μ_u` | 311.25 MeV | **311.10 MeV** |
+| `μ_d` | 312.03 MeV | **312.39 MeV** |
+| `m_n_pred` | 939.054 MeV (+0.05%) | 939.565 MeV (calib-exact) |
+
+Resolved by treating `nucleon-mass-splitting-proof.md` as a
+4-input parameterization (using both `m_p` and `m_n` from CODATA
+to determine `μ_u` and `μ_d` independently) rather than a strict
+derivation from the 3-input canonical scheme. Both representations
+are in the paper; they differ by whether `m_e` is absorbed into the
+"hadronic" Q-value scale.
+
+The script (`categorical_q_decay_ba_low_isotopes.py`) now follows
+**`calibration-inputs.md` exclusively** (3-input, `m_n = m_p + Q_β`).
+
 ## Critical finding (2026-04-27): two categorical invariants disagree at q_0
 
 [`categorical_bypass_volmatch_demo.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/categorical_bypass_volmatch_demo.py) computes `B(𝔥)` directly from the

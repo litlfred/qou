@@ -81,6 +81,9 @@ SIX_TERM_WITNESS = HERE / "mass-formula-6term.witness.json"
 TIER_BY_SYM = {
     "1H":  "trivial (A=1, B=0 by convention; m_atom = m_p + m_e)",
     "D":   "term-1-plus-4 (Schur-Weyl + universal Frobenius)",
+    # NOTE: kashaev-with-inter-correction gives D to 23 ppb but is
+    # documented in d_inter_correction_test.py as 'numerical coincidence'
+    # — NO paper proposition derives it. Reverted to Term 1+4 (canonical).
     "T":   "term-5 (BW + chirality (1-h²))",
     "3He": "term-5 (BW + chirality (1-h²))",
     "4He": "term-5 (BW + chirality (1-h²)² + shell)",
@@ -144,6 +147,24 @@ def load_canonical_b(sym: str):
                 "err_pct": float(r["err_pct"]["term1_plus_term4"]),
                 "tier": tier,
             }
+        return None
+
+    # Kashaev + inter-correction lives in d-inter-correction-test.witness.json
+    # (D-specific: the 1/(1+H_A²/4) factor is exact for atoms with one
+    # ud-half pn factor; works perfectly for D, not for A≥3.)
+    if "kashaev-with-inter" in tier:
+        kic_path = HERE / "d-inter-correction-test.witness.json"
+        if not kic_path.exists():
+            return None
+        with open(kic_path) as f:
+            d = json.load(f)
+        for row in d.get("data", {}).get("atoms", []):
+            if row.get("atom") == sym:
+                return {
+                    "B_pred_MeV": float(row["B_corrected"]),
+                    "err_pct": float(row["err_corrected_pct"]),
+                    "tier": tier,
+                }
         return None
 
     # Term 5 lives in bw-chirality-isotopes.witness.json (rows is a list)
