@@ -1,6 +1,6 @@
 {
   "computation": "joint-tower-sdp-h6-h9",
-  "computedAt": "2026-04-27T01:19:40.952314+00:00",
+  "computedAt": "2026-04-27T02:24:57.604259+00:00",
   "description": "Phase 3b: extend joint-tower SDP solver from H_3 ground truth to H_6 (²H), H_9 (³H, ³He). Historical knot identifications (6_2, 8_11, L6a4) consumed; cvxpy SDP feasibility checked on H_3 Hoefsmit blocks for ²H and ³He (B_3 braids); ³H (B_5 braid) deferred to Rust.",
   "design_spec": "prop:joint-tower-sdp-confinement",
   "consumed_by": "prop:atom-knot-mass-derivation",
@@ -447,31 +447,31 @@
         "standard_(2,1)": {
           "matrix": [
             [
-              1.2079398989628596,
-              -2.4145668398060867
+              -0.04252390796375844,
+              -1.2565999766771982
             ],
             [
-              1.5922706424627477,
-              -0.46449135805908887
+              0.7680713613593262,
+              -0.8193401523477423
             ]
           ],
           "symmetric_part": [
             [
-              1.2079398989628596,
-              -0.41114809867166946
+              -0.04252390796375844,
+              -0.24426430765893603
             ],
             [
-              -0.41114809867166946,
-              -0.46449135805908887
+              -0.24426430765893603,
+              -0.8193401523477423
             ]
           ],
           "eigenvalues_symmetric": [
-            -0.5601015375226162,
-            1.303550078426387
+            -0.8897630680997943,
+            0.027899007788293573
           ],
           "psd_symmetric_part": false,
-          "min_eigenvalue": -0.5601015375226162,
-          "max_eigenvalue": 1.303550078426387
+          "min_eigenvalue": -0.8897630680997943,
+          "max_eigenvalue": 0.027899007788293573
         },
         "all_blocks_psd_or_close": false
       },
@@ -7577,31 +7577,31 @@
         "standard_(2,1)": {
           "matrix": [
             [
-              1.7833785524103727,
-              2.130136243304908
+              1.0111493162812566,
+              0.08009613697498782
             ],
             [
-              -2.1301362433049085,
-              0.7920601010371404
+              -0.07424008143105769,
+              0.9830928432257011
             ]
           ],
           "symmetric_part": [
             [
-              1.7833785524103727,
-              -2.220446049250313e-16
+              1.0111493162812566,
+              0.002928027771965068
             ],
             [
-              -2.220446049250313e-16,
-              0.7920601010371404
+              0.002928027771965068,
+              0.9830928432257011
             ]
           ],
           "eigenvalues_symmetric": [
-            0.7920601010371404,
-            1.7833785524103727
+            0.982790526145447,
+            1.0114516333615107
           ],
           "psd_symmetric_part": true,
-          "min_eigenvalue": 0.7920601010371404,
-          "max_eigenvalue": 1.7833785524103727
+          "min_eigenvalue": 0.982790526145447,
+          "max_eigenvalue": 1.0114516333615107
         },
         "all_blocks_psd_or_close": true
       },
