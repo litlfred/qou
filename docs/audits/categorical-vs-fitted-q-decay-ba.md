@@ -104,6 +104,66 @@ End-to-end categorical for decay rates: **none.** The bottleneck is
 the topological invariant `N_v` (effective crossing count of the
 weak scale) — open computation in `beta-decay-from-q.witness.json`.
 
+### What is `N_v`, and why is it the bottleneck?
+
+The weak interaction enters every β-decay rate through the Fermi
+constant `G_F = 1/(√2 v²)`, where `v ≈ 246.22 GeV` is the Higgs VEV.
+In QOU, every dimensional scale must factor as `(q-factors) × μ_0`,
+where `μ_0 = m_e/(3·E_×) ≈ 1.6295 MeV` is the unique dimensional
+unit calibrated by `m_e = 3·E_×·μ_0`.
+
+Demanding the same factorization for `v`:
+
+>   `v = N_v · E_× · μ_0`,  with `E_× = ½(q − q⁻¹)` (categorical)
+
+forces
+
+>   `N_v = v / (E_× · μ_0) ≈ 246220 / (0.1045 · 1.6295) ≈ 1.4455 × 10⁶`
+
+— see [`beta-decay-from-q.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/beta-decay-from-q.witness.json) `G_F_decomposition.N_v_crossing_count`.
+
+**Interpretation.** `N_v` is the **effective crossing count of the
+weak scale** — the topological complexity (number of typed
+crossings, weighted by the crossing energy `E_×`) of the brane-tower
+sub-structure that mediates the W-boson exchange. The QOU brane
+tower has explicit topological content at every level we have
+identified (level 1: 3-quark Borromean for nucleons; level 2:
+nucleon-pair crossings inside nuclei; level 3: nuclear braids), but
+the level corresponding to the **electroweak scale** has not yet
+been identified. Without that identification, `N_v` is read off
+backwards from CODATA `v` and CODATA `m_e` — that is the "fit"
+content of layer 3.
+
+**What it would take to derive `N_v` categorically.**
+
+1. Identify which sub-tower of the brane corresponds to the
+   electroweak scale. Candidate: the maximal sub-tower spanned by
+   the level-N braids whose Markov closure has Vol_hyp ≥ some
+   threshold (Mostow-rigidity argument), or equivalently, the
+   sub-tower whose `tr_M(T_w)` saturates the EW VEV scaling.
+2. Count typed crossings in that sub-tower, weighted by `E_×`. The
+   answer should be `N_v ≈ 1.45 × 10⁶` if the framework is
+   self-consistent.
+3. Once derived, `G_F = 1/(√2 v²) = 1/(√2 · (N_v · E_× · μ_0)²)`
+   becomes a pure function of `(q, m_e)`, and every β-decay
+   half-life follows from `Γ = G_F² · Q⁵ · f(Z, A) / (60π³)` where
+   `f(Z, A)` is the Fermi function in brane Coulomb-coupling
+   variables (already categorical).
+
+**Why this is THE bottleneck.** Every other input to layer 3 is
+already categorical:
+
+- `Q-value`: derives from layer-2 (Q = Q_n→p + B_d − B_p)
+- `E_×, μ_0`: categorical from `q, m_e`
+- `f(Z, A)` Fermi function: brane Coulomb couplings are categorical
+- `g_A` axial-vector coupling: open second-order conjecture, but is
+  NOT in the leading-order rate
+- Lifetime conversion factor `60π³ / G_F² · Q⁵`: factorizes through `N_v²`
+
+So `N_v` is the **single open scalar** that, once derived, unlocks
+all β-decay half-lives categorically. That is why this audit
+classifies layer 3 as `not-computed` rather than `partial`.
+
 ## Recomputation plan
 
 The canonical recomputation has three layers; each layer's input is
