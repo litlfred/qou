@@ -164,6 +164,65 @@ So `N_v` is the **single open scalar** that, once derived, unlocks
 all β-decay half-lives categorically. That is why this audit
 classifies layer 3 as `not-computed` rather than `partial`.
 
+## Critical finding (2026-04-27): two categorical invariants disagree at q_0
+
+[`categorical_bypass_volmatch_demo.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/categorical_bypass_volmatch_demo.py) computes `B(𝔥)` directly from the
+SDP-derived Wedderburn blocks via the canonical chain step (5)–(7):
+
+>   `B = m_e · ρ · Σ_λ y_λ(q_0) · χ_λ(T_w)`
+
+Result vs `mass-table-ppb` (which uses `B = m_e · ρ · Vol_hyp(K)`):
+
+| sym | n | ρ | `tr_M` direct | `B_direct` MeV | `B_volmatch` MeV | `B_AME` MeV | ratio |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| e | 2 | 1 | 0.7293 | 0.373 | — | 0.511 | 0.73 |
+| ²H | 3 | 1 | 0.2879 | 0.147 | 2.249 | 2.225 | **0.065** |
+| ³H | 5 | 2 | 0.0129 | 0.013 | 8.469 | 8.482 | **0.0016** |
+| ³He | 3 | 2 | 0.9984 | 1.020 | 7.489 | 7.718 | **0.136** |
+
+These are not within 1% of each other; they are within 1–3 orders of
+magnitude. **The two formulae are computing different categorical
+invariants:**
+
+1. **Wenzl Markov trace** `tr_M(T_w) = Σ_λ y_λ(q) · χ_λ(T_w)` — the
+   regular trace on the Hecke algebra `H_n(q)` with Wenzl weights. Lives
+   in `ℚ(q)`, evaluable at any `q`.
+2. **Hyperbolic volume `Vol_hyp(K)`** — limit of the colored Jones
+   polynomial at roots of unity (Volume Conjecture). Equivalent to a
+   **Reshetikhin–Turaev / quantum-trace** invariant at specific
+   roots of unity, not at the substrate parameter `q_0`.
+
+Both are categorical (no fit). They are NOT the same function of `T_w`
+at `q_0 ≈ 1.110`. The canonical chain in PR #442 step (5)–(7) writes
+the formula as `tr_M`, but `mass-table-ppb` empirically achieves better
+agreement with AME by computing `Vol_hyp(K)`.
+
+### Implication for 1 ppb accuracy
+
+The current "mass-table-ppb is canonical" claim has **two unresolved
+lifts to fix:**
+
+- **A.** Pick ONE canonical invariant. The bypass demo's results say
+  the Wenzl Markov trace at `q_0` is roughly an order of magnitude
+  **smaller** than `Vol_hyp(K)`, so they're not the same up to
+  normalization either — there is structural content in `Vol_hyp` that
+  the regular Markov trace at `q_0` does not capture (likely
+  framing/writhe and the analytic continuation from root-of-unity).
+
+- **B.** If `Vol_hyp(K)` is the canonical invariant, then the chain
+  step (5) should read `Vol_hyp(closure(T_w))`, not `tr_M(T_w)`. That's
+  a Reshetikhin–Turaev / colored-Jones evaluation at a root of unity,
+  not a Wenzl Markov trace at `q_0`. Volume Conjecture provides the
+  bridge but not exactly at `q_0`.
+
+- **C.** If `tr_M(T_w)` at `q_0` is the canonical invariant, then
+  `mass-table-ppb` is fitted (using `Vol_hyp` because it agrees with
+  AME by accident, not by derivation), and the entire B/A pipeline
+  needs to be reformulated.
+
+**No 1 ppb until A/B/C is resolved.** This audit upgrades that to a
+**hard blocker** above the Clarabel-rs H_5 fix.
+
 ## Recomputation plan
 
 The canonical recomputation has three layers; each layer's input is
