@@ -1,0 +1,35 @@
+{
+  "computation": "term6-habiro-residue-mpfr-50dps",
+  "description": "Plan F \u2014 Term 6 Habiro residue tail at the precision of the existing habiro-residue-symbolic.witness.json (~30 digits via sympy.evalf(30)). True 50 dps requires re-evaluating the Schur-Weyl symbolic sums in schur_weyl_symbolic.py with mp.dps=50 \u2014 separate task. Existing 30 dps is already 10^15\u00d7 better than f64; Term 6 is a small contribution to the total mass so 30 dps is sufficient for sub-ppb on magic-A isotopes.",
+  "computedAt": "2026-04-27T20:47:14.929878+00:00",
+  "precision": "mpfr_30dps_inherited_from_source",
+  "precision_floor_reason": "Source habiro-residue-symbolic.witness.json was emitted by sympy.evalf(30); recomputing at 50 dps requires the global Schur-Weyl symbolic sums from schur_weyl_symbolic.py.",
+  "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
+  "m_e_mev_50dps": "0.51099895",
+  "results_by_atom": [
+    {
+      "atom": "A=1",
+      "partition_count": 3,
+      "global_sum_at_q0_30dps": "1.33212695202435677847927393829",
+      "h3_additive_at_q0_30dps": "1.77456221630970294615286202583",
+      "ratio_global_over_h3_30dps": "0.750679204020575865443996472575",
+      "term6_b_pred_mev_30dps": "0.6807154737511466882282915792285547955"
+    },
+    {
+      "atom": "A=2",
+      "partition_count": 11,
+      "global_sum_at_q0_30dps": "0.0831585889687035716872811457205",
+      "h3_additive_at_q0_30dps": "4.19496243227178831824995441755",
+      "ratio_global_over_h3_30dps": "0.0198234406889953745551186321540",
+      "term6_b_pred_mev_30dps": "0.042493951646489107993450393817972493475"
+    },
+    {
+      "atom": "A=3",
+      "partition_count": 30,
+      "global_sum_at_q0_30dps": "0.00113270787017229721218585604267",
+      "h3_additive_at_q0_30dps": "9.91664853812058338386569674510",
+      "ratio_global_over_h3_30dps": "0.000114222851179817000616968504378",
+      "term6_b_pred_mev_30dps": "0.0005788125323147801945148996426555251965"
+    }
+  ]
+}
