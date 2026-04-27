@@ -7,6 +7,9 @@ export default lemma({
   },
   title: "Eigenspace decomposition of the categorical mass integrand",
   tags: ["descent-involution", "frobenius-norm", "categorical-trace", "mass"],
-  uses: ["def:mass-identity", "def:descent-involution", "prop:descent-eigenspaces", "def:frobenius-pairing"],
+  uses: [
+    "def:mass-identity",
+    "prop:descent-eigenspaces",
+  ],
   proofs: ["prf:topological-mass-cat-eigenspace"],
 });

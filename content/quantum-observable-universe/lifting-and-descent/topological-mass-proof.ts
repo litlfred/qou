@@ -5,9 +5,6 @@ export default proof({
   title: "Proof of Topological Decomposition of Mass",
   uses: [
     "thm:topological-mass",
-    "lem:topological-mass-eigenspace-decomp",
-    "lem:topological-mass-holonomy",
-    "lem:topological-mass-transient-localisation",
     "lem:topological-mass-dilogarithm",
   ],
   rendered: [

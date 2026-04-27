@@ -7,6 +7,9 @@ export default lemma({
   },
   title: "Frobenius dagger forces $G \\subseteq \\mathrm{U}(2)$",
   tags: ["frobenius", "dagger", "unitarity", "u2"],
-  uses: ["thm:su2-emergence", "prop:fiber-adjoint-involution", "prop:positive-definite-dagger"],
+  uses: [
+    "prop:fiber-adjoint-involution",
+    "prop:positive-definite-dagger",
+  ],
   proofs: ["prf:su2-emergence-dagger-unitarity"],
 });

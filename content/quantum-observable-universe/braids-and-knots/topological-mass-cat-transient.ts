@@ -7,6 +7,9 @@ export default lemma({
   },
   title: "Transient terms localise to blow-up centres (categorical)",
   tags: ["transient", "blow-up", "brane-boundary", "mass-defect"],
-  uses: ["def:brane-boundary", "lem:topological-mass-cat-eigenspace"],
+  uses: [
+    "def:brane-boundary",
+    "lem:topological-mass-cat-eigenspace",
+  ],
   proofs: ["prf:topological-mass-cat-transient"],
 });

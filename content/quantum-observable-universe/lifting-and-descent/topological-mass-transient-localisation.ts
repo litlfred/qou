@@ -7,6 +7,9 @@ export default lemma({
   },
   title: "Transient terms localise to exceptional divisors",
   tags: ["transient", "exceptional-divisor", "blow-up", "central-extension"],
-  uses: ["def:brane-boundary", "prop:descent-eigenspaces", "lem:topological-mass-eigenspace-decomp"],
+  uses: [
+    "def:brane-boundary",
+    "lem:topological-mass-eigenspace-decomp",
+  ],
   proofs: ["prf:topological-mass-transient-localisation"],
 });

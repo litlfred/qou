@@ -7,6 +7,6 @@ export default lemma({
   },
   title: "Mass functional on a Skein resolution: linking-energy plus constituent volume",
   tags: ["skein-resolution", "binding-energy", "torus-knot", "hopf-link"],
-  uses: [],
+  uses: ["def:hadron"],
   proofs: ["prf:skein-mass-from-linking"],
 });

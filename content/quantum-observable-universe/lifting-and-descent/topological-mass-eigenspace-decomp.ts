@@ -7,7 +7,10 @@ export default lemma({
   },
   title: "Eigenspace decomposition of the mass integrand (descent involution)",
   tags: ["descent-involution", "killing-form", "multiplicative-integral", "mass"],
-  uses: ["def:mass-identity", "def:descent-involution", "prop:descent-eigenspaces"],
+  uses: [
+    "def:mass-identity",
+    "prop:descent-eigenspaces",
+  ],
   proofs: ["prf:topological-mass-eigenspace-decomp"],
   cites: ["yekutieli2015"],
 });

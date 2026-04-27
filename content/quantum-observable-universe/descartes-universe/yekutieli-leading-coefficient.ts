@@ -8,7 +8,6 @@ export default lemma({
   title: "Yekutieli obstruction equals the leading Chebyshev coefficient",
   tags: ["yekutieli", "obstruction", "chebyshev", "categorical-dq-squared"],
   uses: [
-    "def:quantum-characteristic-classes",
     "prop:categorical-dq-squared",
     "lem:genus-ideal-characterisation",
   ],

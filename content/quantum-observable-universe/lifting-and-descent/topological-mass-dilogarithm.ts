@@ -8,7 +8,6 @@ export default lemma({
   title: "Quantum dilogarithm evaluation of exceptional-divisor contributions",
   tags: ["quantum-dilogarithm", "exceptional-divisor", "briggs-klein", "spectral-coordinates"],
   uses: [
-    "lem:topological-mass-eigenspace-decomp",
     "lem:topological-mass-holonomy",
     "lem:topological-mass-transient-localisation",
   ],

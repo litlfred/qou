@@ -7,6 +7,6 @@ export default lemma({
   },
   title: "Descended term equals the base-level mass",
   tags: ["descent", "categorical-trace", "ascent-embedding", "mass"],
-  uses: ["def:descent-involution", "lem:topological-mass-cat-eigenspace"],
+  uses: ["lem:topological-mass-cat-eigenspace"],
   proofs: ["prf:topological-mass-cat-descended"],
 });

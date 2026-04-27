@@ -6,9 +6,6 @@ export default proof({
   uses: [
     "prop:skein-generation",
     "prf:knot-volumes-verification",
-    "lem:nucleon-borromean-topology",
-    "lem:pair-skein-mass-formula",
-    "lem:nucleon-mass-splitting",
     "lem:deuteron-binding-energy",
   ],
   lean: { ref: "qou:QOU.HadronicMass.terminal_resolution_hadronic_mass",

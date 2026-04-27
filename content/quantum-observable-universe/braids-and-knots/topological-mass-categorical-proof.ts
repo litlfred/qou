@@ -5,7 +5,6 @@ export default proof({
   title: "Categorical proof of the topological decomposition of mass",
   uses: [
     "thm:topological-mass",
-    "lem:topological-mass-cat-eigenspace",
     "lem:topological-mass-cat-descended",
     "lem:topological-mass-cat-transient",
   ],

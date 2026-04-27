@@ -7,6 +7,6 @@ export default lemma({
   },
   title: "Markov-weighted eigenbasis sum equals the Markov trace",
   tags: ["markov-trace", "wedderburn", "feynman", "hecke", "identification"],
-  uses: ["lem:feynman-trace-collapse", "thm:jones-markov-trace"],
+  uses: ["lem:feynman-eigenbasis-decomposition", "thm:jones-markov-trace"],
   proofs: ["prf:feynman-markov-identification"],
 });
