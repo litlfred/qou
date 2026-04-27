@@ -257,11 +257,11 @@ class KashaevSurreal where
 class JonesBirthday where
   /-- Existence of a strict birthday refinement. -/
   strict_refinement_exists :
-    ∃ (K₁ K₂ : Knot) (J_K₁ J_K₂ : ℕ → K) (J̃_K₁ J̃_K₂ : Ordinal → K),
+    ∃ (K₁ K₂ : Knot) (J_K₁ J_K₂ : ℕ → K) (Jt_K₁ Jt_K₂ : Ordinal → K),
       -- Same Jones polynomial at every integer level:
       (∀ n, J_K₁ n = J_K₂ n)
       -- But distinct birthday refinements at some ordinal:
-      ∧ (∃ α : Ordinal, J̃_K₁ α ≠ J̃_K₂ α)
+      ∧ (∃ α : Ordinal, Jt_K₁ α ≠ Jt_K₂ α)
 
 /-- **Conjecture: Hahn-series substrate.**
 

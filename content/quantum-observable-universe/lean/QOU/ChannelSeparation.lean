@@ -149,7 +149,7 @@ theorem jet_preserves_channel_separation
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
-    (jfpg : JetFiltrationPreservesGrading)
+    (jfpg : @JetFiltrationPreservesGrading.{u, v} C _ _ _)
     (adjointObj : C)
     (adj_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)) :
     -- The adjoint vanishing is preserved through the jet filtration

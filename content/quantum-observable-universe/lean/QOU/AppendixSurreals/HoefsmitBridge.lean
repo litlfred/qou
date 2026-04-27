@@ -157,7 +157,10 @@ theorem hoefsmit_bridge_two :
     omega
   rcases h1 with h1 | h1 <;> rcases h2 with h2 | h2
   · -- Both row2 = 0: same tableau (2, 0).
-    cases t₁; cases t₂
+    obtain ⟨r1₁, r2₁, sz₁, ord₁⟩ := t₁
+    obtain ⟨r1₂, r2₂, sz₂, ord₂⟩ := t₂
+    simp at h1 h2
+    subst h1; subst h2
     congr <;> omega
   · -- t₁ = (2,0), t₂ = (1,1): hoefsmitDyadic gives 1 and -1.
     -- After simp, heq becomes `1 = -1` in ℚ; close via norm_num.
@@ -167,7 +170,10 @@ theorem hoefsmit_bridge_two :
     simp [hoefsmitDyadic, h1, h2] at heq
     exact absurd heq (by norm_num)
   · -- Both row2 = 1: same tableau (1, 1).
-    cases t₁; cases t₂
+    obtain ⟨r1₁, r2₁, sz₁, ord₁⟩ := t₁
+    obtain ⟨r1₂, r2₂, sz₂, ord₂⟩ := t₂
+    simp at h1 h2
+    subst h1; subst h2
     congr <;> omega
 
 /-- **Bridge proposition as a conjecture class** (per CLAUDE.md §3b).

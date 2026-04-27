@@ -23,55 +23,7 @@ namespace QOU.Descartes
 
 open Matrix
 
-/-! ## §1  Skein weights (vertex amplitudes) -/
-
-/-- A vertex type: the crossing between two nucleons. -/
-inductive VertexType where
-  | pp  -- proton ⁱ⋈_j proton
-  | nn  -- neutron _j⋈ⁱ neutron
-  | pn  -- proton ⁱ⋈_j neutron
-  deriving DecidableEq, Repr
-
-/-- Nucleon type. -/
-inductive NucleonType where
-  | proton
-  | neutron
-  deriving DecidableEq, Repr
-
-/-- Determine vertex type from two nucleon types. -/
-def vertexType : NucleonType → NucleonType → VertexType
-  | .proton, .proton => .pp
-  | .neutron, .neutron => .nn
-  | _, _ => .pn
-
-/-- The crossing amplitude `𝔴⁺(q)` at a vertex (coefficient on σ).
-    From the Hecke relation σ⁻¹ = σ - (q - q⁻¹):
-    - pp: 1  (positive crossing = σ)
-    - nn: 1  (negative crossing = σ⁻¹ = σ - HA)
-    - pn: 1  (mixed = ½(σ + σ⁻¹), DOUBLED below to avoid ½) -/
-noncomputable def w_plus_t (v : VertexType) : R_t :=
-  match v with
-  | .pp => 1
-  | .nn => 1                                -- σ⁻¹ has coeff 1 on σ
-  | .pn => 2                                -- DOUBLED: actual is ½ of this
-
-/-- The smoothing amplitude `𝔴⁰(q)` at a vertex (coefficient on 𝟏).
-    From the Hecke relation σ⁻¹ = σ - (q - q⁻¹):
-    - pp: 0
-    - nn: −(q − q⁻¹) = −HA
-    - pn: −(q − q⁻¹)  (DOUBLED: actual is −HA/2) -/
-noncomputable def w_zero_t (v : VertexType) : R_t :=
-  match v with
-  | .pp => 0
-  | .nn => -HA_t                             -- −(q − q⁻¹)
-  | .pn => -HA_t                             -- −(q − q⁻¹) (DOUBLED)
-
-/-- **Convention**: for `pn` vertices, `w_plus_t` and `w_zero_t`
-    return the DOUBLED values `2𝔴⁺` and `2𝔴⁰`.  The factor of 2
-    is tracked through the computation and cancels in the Q ratio
-    (same number of pn crossings in parent and daughter). -/
-
-/-! ### Remark: working over ℤ[q^{1/2}, q^{-1/2}]
+/-! ## §1  Ground ring `ℤ[t, t⁻¹]` (where `t² = q`)
 
 The skein weights for `nn` and `pn` vertices involve `q^{1/2}`.
 The transfer matrices therefore live in `M₂(ℤ[q^{1/2}, q^{-1/2}])`,
@@ -105,7 +57,55 @@ noncomputable def s_skein : R_t := t - t_inv
 /-- Hecke amplitude over `ℤ[t, t⁻¹]`: `HA = q − q⁻¹ = t² − t⁻²`. -/
 noncomputable def HA_t : R_t := q_from_t - q_inv_from_t
 
-/-! ## §2  Transfer matrix (over ℤ[t, t⁻¹]) -/
+/-! ## §2  Skein weights (vertex amplitudes) -/
+
+/-- A vertex type: the crossing between two nucleons. -/
+inductive VertexType where
+  | pp  -- proton ⁱ⋈_j proton
+  | nn  -- neutron _j⋈ⁱ neutron
+  | pn  -- proton ⁱ⋈_j neutron
+  deriving DecidableEq, Repr
+
+/-- Nucleon type. -/
+inductive NucleonType where
+  | proton
+  | neutron
+  deriving DecidableEq, Repr, Inhabited
+
+/-- Determine vertex type from two nucleon types. -/
+def vertexType : NucleonType → NucleonType → VertexType
+  | .proton, .proton => .pp
+  | .neutron, .neutron => .nn
+  | _, _ => .pn
+
+/-- The crossing amplitude `𝔴⁺(q)` at a vertex (coefficient on σ).
+    From the Hecke relation σ⁻¹ = σ - (q - q⁻¹):
+    - pp: 1  (positive crossing = σ)
+    - nn: 1  (negative crossing = σ⁻¹ = σ - HA)
+    - pn: 1  (mixed = ½(σ + σ⁻¹), DOUBLED below to avoid ½) -/
+noncomputable def w_plus_t (v : VertexType) : R_t :=
+  match v with
+  | .pp => 1
+  | .nn => 1                                -- σ⁻¹ has coeff 1 on σ
+  | .pn => 2                                -- DOUBLED: actual is ½ of this
+
+/-- The smoothing amplitude `𝔴⁰(q)` at a vertex (coefficient on 𝟏).
+    From the Hecke relation σ⁻¹ = σ - (q - q⁻¹):
+    - pp: 0
+    - nn: −(q − q⁻¹) = −HA
+    - pn: −(q − q⁻¹)  (DOUBLED: actual is −HA/2) -/
+noncomputable def w_zero_t (v : VertexType) : R_t :=
+  match v with
+  | .pp => 0
+  | .nn => -HA_t                             -- −(q − q⁻¹)
+  | .pn => -HA_t                             -- −(q − q⁻¹) (DOUBLED)
+
+/-! **Convention**: for `pn` vertices, `w_plus_t` and `w_zero_t`
+    return the DOUBLED values `2𝔴⁺` and `2𝔴⁰`.  The factor of 2
+    is tracked through the computation and cancels in the Q ratio
+    (same number of pn crossings in parent and daughter). -/
+
+/-! ## §3  Transfer matrix (over ℤ[t, t⁻¹]) -/
 
 /-- A 2×2 transfer matrix over `ℤ[t, t⁻¹]`. -/
 abbrev TMatrix := Matrix (Fin 2) (Fin 2) R_t
