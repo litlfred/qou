@@ -1,0 +1,55 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-04-27T20:43:59.916762+00:00",
+  "commitSha": "48ae2a7660766440a863fa0ec841553b62d4cc58",
+  "assertions": [
+    {
+      "name": "proton_calibration_exact",
+      "computed": 938.27208816,
+      "expected": 938.27208816,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "single-point proton calibration (E0 = m_p / |tr_M(p)|)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "neutron-gap-probes-round2",
+  "scriptFile": "probe_neutron_gap_round2.py",
+  "scriptHash": "365930bfcf26",
+  "scriptCommitSha": "",
+  "description": "Round-2 neutron-gap probe per prop:full-pole-structure-mass-trace. Evaluates the FULL symbolic Markov trace tr_M(T_w, q_0) directly from the Habiro-coefficients witness — no Wedderburn-channel truncation, no V_3term approximation. Tests whether the −56% neutron residual from round-1 (PR #452) was the cyclotomic-residue truncation phenomenon. Read-only investigation.",
+  "contentBlock": "prop:full-pole-structure-mass-trace",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_p_codata_MeV": 938.27208816,
+    "m_n_codata_MeV": 939.56542052,
+    "precision_dps": 50,
+    "threshold_ppb": 10000000.0
+  },
+  "data": {
+    "h4_full_tr_M": {
+      "tr_M_proton": "2.1225825094527295505663838358689389853458325219767",
+      "tr_M_neutron": "1.5893934459539044137415087693689928372969565522957",
+      "proton_pred_MeV": 938.27208816,
+      "neutron_pred_MeV": 702.5797587616461,
+      "neutron_err_pct": -25.22290162905259,
+      "neutron_err_ppb": -252229016.29052588
+    },
+    "baseline_round1": {
+      "neutron_err_pct": -56.17,
+      "neutron_err_ppb": -561730000.0,
+      "source": "PR #452 (probe_neutron_gap.py baseline = 3-term V_3term + brane tower)"
+    },
+    "verdict": "h4_full_tr_M does NOT close the gap",
+    "recommendation": "H4 (full tr_M) gives neutron err = -2.52e+08 ppb, still above 1e+07. The full pole structure alone does not account for the gap; the residual must live elsewhere — most likely in the assembly between tr_M and the brane-tower (T1 vs T1+T2+T3 mismatch), in Term 4/5/6 contributions not yet added, or in a normalisation/sign convention discrepancy. Next probe: compute T1+T4 (Frobenius co-Casimir) only (no brane tower) and see if that lands closer to CODATA, isolating the brane-tower contribution.",
+    "attestation": {
+      "used_fitting": false,
+      "used_root_find": false,
+      "used_volume": false,
+      "modifies_baseline_alpha_blend_tower_py": false,
+      "uses_habiro_witness_directly": true
+    }
+  }
+}
