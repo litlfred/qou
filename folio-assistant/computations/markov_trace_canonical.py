@@ -35,7 +35,6 @@ Strategy:
 from __future__ import annotations
 
 import sys
-from functools import lru_cache
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -43,6 +42,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 # Symbolic z, h — can be overridden numerically
 import sympy as sp
 from hecke_symbolic import q, HA as H_SYMB, z_markov as Z_SYMB
+
+
+# Manual cache so we can pass depth THROUGH to _tr_M_word_impl
+# (preserving the recursion-depth guard) while keeping depth OUT of
+# the cache key (the result depends only on (word, n, z, h, max_depth)).
+_TR_M_WORD_CACHE: dict = {}
 
 
 def tr_M_word(word: tuple, n: int, z, h, *,
@@ -54,25 +59,28 @@ def tr_M_word(word: tuple, n: int, z, h, *,
     Many subwords repeat across the recursion tree at H_n with multiple
     top-generator occurrences, so caching collapses the worst-case
     2^(n-1) branching factor to polynomial in distinct (word, n) pairs.
+
+    The recursion-depth guard is preserved: ``depth`` is propagated
+    through the cached path to ``_tr_M_word_impl``, while the cache
+    key intentionally excludes ``depth`` (the result of tr_M is
+    depth-independent).
     """
     if depth > max_depth:
         raise RecursionError(
             f"tr_M recursion too deep: word={word}, n={n}")
+    word_t = tuple(word)
     try:
-        return _tr_M_word_cached(tuple(word), n, z, h, max_depth)
+        key = (word_t, n, z, h, max_depth)
+        if key in _TR_M_WORD_CACHE:
+            return _TR_M_WORD_CACHE[key]
     except TypeError:
-        # z or h is unhashable — fall back to the uncached path.
-        return _tr_M_word_impl(tuple(word), n, z, h,
+        # z or h unhashable — bypass cache entirely.
+        return _tr_M_word_impl(word_t, n, z, h,
                                 depth=depth, max_depth=max_depth)
-
-
-@lru_cache(maxsize=None)
-def _tr_M_word_cached(word: tuple, n: int, z, h, max_depth: int):
-    # Depth is intentionally NOT part of the cache key — the result of
-    # tr_M depends only on (word, n, z, h).  Depth is a safeguard,
-    # checked once per outer call by tr_M_word.
-    return _tr_M_word_impl(word, n, z, h,
-                            depth=0, max_depth=max_depth)
+    result = _tr_M_word_impl(word_t, n, z, h,
+                              depth=depth, max_depth=max_depth)
+    _TR_M_WORD_CACHE[key] = result
+    return result
 
 
 def _tr_M_word_impl(word: tuple, n: int, z, h, *,

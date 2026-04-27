@@ -88,66 +88,24 @@ def borromean_tr_m_symbolic() -> sp.Expr:
 
 
 def main() -> int:
-    print("\n  Computing tr_M(³He Borromean) symbolically in q...")
-    tr_symbolic = borromean_tr_m_symbolic()
-    print(f"\n  tr_M (symbolic) = {tr_symbolic}")
-
-    # Load q_0 to 50 dps from the pinned-q witness.
-    q0 = json.load(open(Q0_WITNESS))
-    q_0_str = q0["derived_50_digit"]["q"]
-    q_0 = mpf(q_0_str)
-    print(f"\n  q_0 (50 dps) = {q_0_str}")
-
-    # Substitute q = q_0 in the symbolic trace.
-    q = sp.symbols("q", positive=True)
-    # Convert to mpmath for 50-dps eval.
-    tr_at_q0_str = sp.N(tr_symbolic.subs(q, sp.Float(q_0_str, 50)), 50)
-    tr_at_q0 = mpf(str(tr_at_q0_str))
-    print(f"\n  tr_M at q_0 = {tr_at_q0}")
-
-    # Compare to the SnapPy shortcut: 2 m_e × Vol_hyp(L_6a4).
-    snappy_b = 2 * M_E_MEV * SNAPPY_VOL_L_6A4
-    print(f"\n  SnapPy shortcut: 2 m_e × Vol(L_6a4) = {snappy_b} MeV")
-
-    # The Markov trace gives (in the mass identity)
-    # B(³He) = m_e · ρ · tr_M(T_w)|_{q=q_0} = m_e · 2 · tr_at_q0
-    # if rho_factor = 2 from the certificate.
-    b_pred_categorical = 2 * M_E_MEV * tr_at_q0
-    print(f"\n  Categorical: m_e × 2 × tr_M(q_0) = {b_pred_categorical} MeV")
-    print(f"  AME 2020 B(³He)         = 7.718 MeV")
-
-    out = {
-        "computation": "tr-m-canonical-3he-borromean",
-        "description":
-            "Plan G first concrete step. Symbolic Markov trace of "
-            "³He's canonical Borromean braid σ_1^{-1} σ_2 (×3) on "
-            "B_3, evaluated at q_0 to 50 dps. Replaces the SnapPy "
-            "Vol_hyp(L_6a4) shortcut for ³He with the categorical "
-            "pipeline's exact tr_M(T_w) value.",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "precision": "mpfr_50dps",
-        "atom": "³He",
-        "braid_word_rust_convention": [-1, 2, -1, 2, -1, 2],
-        "braid_word_python_0indexed_with_inverses": "(σ_0)^{-1} σ_1 (σ_0)^{-1} σ_1 (σ_0)^{-1} σ_1",
-        "n_strands": 3,
-        "rho_factor": 2,
-        "tr_m_symbolic": str(tr_symbolic),
-        "q_0_50dps": q_0_str,
-        "tr_m_at_q0_50dps": str(tr_at_q0),
-        "comparison": {
-            "snappy_shortcut_b_mev": str(snappy_b),
-            "snappy_vol_l_6a4": str(SNAPPY_VOL_L_6A4),
-            "categorical_b_pred_mev": str(b_pred_categorical),
-            "ame_2020_b_mev": "7.718",
-            "categorical_minus_ame_mev": str(b_pred_categorical - mpf("7.718")),
-            "categorical_minus_ame_ppm":
-                str((b_pred_categorical - mpf("7.718")) / mpf("7.718") * mpf("1000000")),
-        },
-    }
-
-    OUT.write_text(json.dumps(out, indent=2))
-    print(f"\n  Output: {OUT.relative_to(HERE.parent.parent)}")
-    return 0
+    print(
+        "\n  ³He Borromean tr_M via tr_M_word on the naive Hecke-quadratic\n"
+        "  expansion is BLOCKED — the interleaved positive sub-words\n"
+        "  (1, 0, 1, 0, 1) produced by the (σ_1 − h)^k expansion hit\n"
+        "  NotImplementedError(\"Complex braid case (multiple top-1 in\n"
+        "  segment)\") in markov_trace_canonical.tr_M_word.\n"
+        "\n"
+        "  The correct path requires GB-NF normalisation first (see the\n"
+        "  module docstring and docs/plans/G-status-and-narrowing.md):\n"
+        "    1. SymbolicHeckeElement (hecke_symbolic.py)\n"
+        "    2. SymbolicHeckeDivision (Gröbner–Shirshov reduction)\n"
+        "    3. tr_M_element on the NF\n"
+        "  Effort: 2-3h to adapt atom_nf_symbolic_D.py to ³He's 6-letter\n"
+        "  braid in B_3.\n"
+        "\n"
+        "  Exiting without running the broken path or writing a witness."
+    )
+    return 2  # non-zero so CI pipelines treat this as 'not yet done'
 
 
 if __name__ == "__main__":

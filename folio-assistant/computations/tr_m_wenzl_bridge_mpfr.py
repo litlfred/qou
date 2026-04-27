@@ -103,9 +103,21 @@ def _build_seminormal_matrices_mpf(shape: tuple[int, ...],
             else:
                 a_prime = h / (one - q ** (2 * rho))
                 b_sq = a * a_prime + one
-                # b_sq is real-positive in YSN; mp.sqrt on a real mpf
-                # gives the principal real root.
-                b = mp.sqrt(abs(b_sq))
+                # b_sq is real-positive in the Young seminormal basis
+                # for any real q > 1 (the regime of the substrate q_0
+                # ≈ 1.11) — Hoefsmit, “Representations of Hecke
+                # algebras of finite groups with BN-pairs of classical
+                # type” (1974), §3.  A negative b_sq here indicates
+                # either a non-real substrate parameter or a bug;
+                # raise instead of masking with abs() so the bridge
+                # never silently emits the wrong square root.
+                if b_sq < 0:
+                    raise ValueError(
+                        f"Hoefsmit b_sq = {mp.nstr(b_sq, 6)} < 0 for "
+                        f"shape={shape}, k={k}, ρ={rho}; YSN positivity "
+                        f"violated — check that q ({mp.nstr(q, 8)}) is "
+                        f"real with q > 1.")
+                b = mp.sqrt(b_sq)
                 coo.append((i, i, a))
                 coo.append((j, j, a_prime))
                 coo.append((i, j, b))
@@ -245,7 +257,16 @@ def tr_M_via_wenzl_bridge_mpfr(
 
         # n_gens needed in any partition's representation = max generator
         # index in the word + 1 (because g is 0-indexed for σ_{g+1}).
+        # Validate up front: every partition λ ⊢ n carries n-1 generators
+        # σ_1..σ_{n-1}, so a word using a generator with index ≥ n-1
+        # cannot be evaluated in H_n at any partition.  Skipping
+        # silently would yield a meaningless trace of 0 — raise instead.
         max_g = max((g for _, _, g in word), default=-1)
+        if max_g >= n - 1:
+            raise IndexError(
+                f"word uses generator σ_{max_g} (0-indexed) which is "
+                f"out of bounds for H_{n}: valid generator indices are "
+                f"0..{n - 2}.  Either pass a larger n or trim the word.")
 
         total = mp.mpf(0)
         breakdown = []
@@ -257,14 +278,6 @@ def tr_M_via_wenzl_bridge_mpfr(
                 continue
             sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
             if dim == 0:
-                continue
-            # Skip partitions whose seminormal rep doesn't carry the
-            # generator we need (cannot happen for n strands ≥ word's
-            # max_g + 2, which is the contract).
-            if max_g >= len(sigmas):
-                # The partition is "too small" to host generator σ_{max_g}.
-                # In a correct H_n call this never trips because n strands
-                # always supply n-1 generators.  Defensive: treat χ = 0.
                 continue
             chi = _chi_lambda_of_word_mpf(sigmas, dim, word)
             contrib = y_lam * chi
