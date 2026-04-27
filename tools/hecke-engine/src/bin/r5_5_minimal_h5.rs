@@ -41,8 +41,7 @@ fn main() {
     // J_d has eigenvalue d (rank 1) > 0 so c·J_d ⪰ 0 ⇔ c ≥ 0.
     println!("\n──── DENSE PSD check: c · J_d (all-ones) ⪰ 0 ────");
     for d in [2usize, 3, 4, 5, 6, 7, 8] {
-        let mut j = vec![vec![1.0f64; d]; d];  // all-ones matrix
-        let _ = &mut j;
+        let j = vec![vec![1.0f64; d]; d];  // all-ones matrix
         let svec_j = svec_pack(&j);
         let cone_dim = d * (d + 1) / 2;
         let n_vars = 1usize;

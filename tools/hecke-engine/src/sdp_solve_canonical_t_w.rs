@@ -30,6 +30,7 @@
 //!
 //! See [R5_FULL_PLAN.md](../../R5_FULL_PLAN.md) §"R5.5".
 
+use crate::gb_nf_reducer::{coxeter_length, perm_to_canonical_word};
 use crate::seminormal::{partitions_of, seminormal_matrices};
 use clarabel::algebra::CscMatrix;
 use clarabel::solver::*;
@@ -64,25 +65,12 @@ pub struct SolverReport {
 // Helpers (matrix ops, perm enumeration).
 // ──────────────────────────────────────────────────────────────────
 
-fn coxeter_length(perm: &[usize]) -> u32 {
-    let n = perm.len();
-    let mut c = 0u32;
-    for i in 0..n {
-        for j in (i + 1)..n {
-            if perm[i] > perm[j] {
-                c += 1;
-            }
-        }
-    }
-    c
-}
-
 fn enumerate_perms_with_cutoff(n: usize, cutoff: Option<u32>) -> Vec<Vec<usize>> {
     let mut all: Vec<Vec<usize>> = Vec::new();
     let mut p: Vec<usize> = (1..=n).collect();
     permute(&mut p, 0, &mut all);
-    if let Some(L) = cutoff {
-        all.retain(|w| coxeter_length(w) <= L);
+    if let Some(l_max) = cutoff {
+        all.retain(|w| coxeter_length(w) <= l_max);
     }
     all
 }
@@ -97,30 +85,6 @@ fn permute(p: &mut Vec<usize>, i: usize, out: &mut Vec<Vec<usize>>) {
         permute(p, i + 1, out);
         p.swap(i, k);
     }
-}
-
-fn perm_to_canonical(perm: &[usize]) -> Vec<u32> {
-    let mut p = perm.to_vec();
-    let mut word: Vec<u32> = Vec::new();
-    let n = p.len();
-    loop {
-        let mut found = None;
-        for k in 1..n {
-            if p[k - 1] > p[k] {
-                found = Some(k);
-                break;
-            }
-        }
-        match found {
-            None => break,
-            Some(i) => {
-                word.push(i as u32);
-                p.swap(i - 1, i);
-            }
-        }
-    }
-    word.reverse();
-    word
 }
 
 fn sparse_to_dense(sparse: &[Vec<(usize, f64)>], dim: usize) -> Vec<Vec<f64>> {
@@ -231,11 +195,48 @@ pub fn solve_canonical_t_w(
         block_dims.push(d);
         let mut per_var: Vec<Vec<f64>> = Vec::with_capacity(n_vars);
         for perm in &perms {
-            let canonical = perm_to_canonical(perm);
+            let canonical = perm_to_canonical_word(perm);
             let m = build_rho_lambda_for_basis_element(shape, &canonical, q);
             per_var.push(svec_pack_symmetric(&m));
         }
         svec_per_block_per_var.push(per_var);
+    }
+
+    // CLAUDE.md / repo guideline: don't silently use a buggy solver.
+    // Clarabel-rs has a documented PSD-cone correctness bug at d ≥ 4
+    // (R5_5_BUG_REPORT.md).  If any block exceeds d=3 we abort early
+    // with a status string indicating the unsupported regime, rather
+    // than producing a "Solved" result that callers might trust.
+    let max_d = block_dims.iter().copied().max().unwrap_or(0);
+    if max_d >= 4 {
+        let anchor_summaries: Vec<String> = anchors
+            .iter()
+            .map(|a| match a {
+                LinearAnchor::TraceOfBlock { partition, target } => {
+                    format!("tr(ρ_{:?}(T(c))) = {:.6}", partition, target)
+                }
+                LinearAnchor::SingleCoefficient { perm, target } => {
+                    format!("c_{:?} = {:.6}", perm, target)
+                }
+            })
+            .collect();
+        return SolverReport {
+            n,
+            q0: q,
+            n_variables: n_vars,
+            n_psd_blocks: parts.len(),
+            block_dims,
+            filtration_cutoff,
+            anchors: anchor_summaries,
+            c_solved: BTreeMap::new(),
+            l1_norm: f64::NAN,
+            solver_status: format!(
+                "Unsupported (max d_λ = {} ≥ 4 hits Clarabel-rs bug; \
+                 see R5_5_BUG_REPORT.md)",
+                max_d
+            ),
+            iterations: 0,
+        };
     }
 
     // Constraints
@@ -424,15 +425,25 @@ pub fn solve_canonical_t_w(
     let mut solver = DefaultSolver::new(&p, &q_vec, &a_csc, &b, &cones, settings).unwrap();
     solver.solve();
 
-    let x = solver.solution.x.clone();
+    let status = solver.solution.status;
+    let solver_status = format!("{:?}", status);
+    let iterations = solver.solution.iterations;
+    // CLAUDE.md rule: fail explicitly on non-success.  When the solver
+    // returns Infeasible / MaxIterations / NumericalError / etc, the x
+    // vector is not meaningful — return an empty c_solved with the
+    // status string so callers can detect failure rather than process
+    // garbage data.
     let mut c_solved: BTreeMap<Vec<usize>, f64> = BTreeMap::new();
     let mut l1 = 0.0f64;
-    for (i, perm) in perms.iter().enumerate() {
-        let cw = x[i] - x[n_vars + i];
-        if cw.abs() > 1e-9 {
-            c_solved.insert(perm.clone(), cw);
+    if matches!(status, SolverStatus::Solved | SolverStatus::AlmostSolved) {
+        let x = solver.solution.x.clone();
+        for (i, perm) in perms.iter().enumerate() {
+            let cw = x[i] - x[n_vars + i];
+            if cw.abs() > 1e-9 {
+                c_solved.insert(perm.clone(), cw);
+            }
+            l1 += x[i].abs() + x[n_vars + i].abs();
         }
-        l1 += x[i].abs() + x[n_vars + i].abs();
     }
 
     SolverReport {
@@ -445,8 +456,8 @@ pub fn solve_canonical_t_w(
         anchors: anchor_descrs,
         c_solved,
         l1_norm: l1,
-        solver_status: format!("{:?}", solver.solution.status),
-        iterations: solver.solution.iterations,
+        solver_status,
+        iterations,
     }
 }
 

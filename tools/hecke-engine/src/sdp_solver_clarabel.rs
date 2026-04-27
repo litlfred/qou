@@ -248,12 +248,38 @@ pub fn solve_alpha_psd_clarabel(n: usize, braid_word: &[i32], q: f64) -> Clarabe
         .build()
         .unwrap();
 
+    // CLAUDE.md / repo guideline: don't silently use a buggy solver.
+    // Clarabel-rs has a documented PSD-cone correctness bug at d ≥ 4
+    // (R5_5_BUG_REPORT.md).  Abort early if any block exceeds d=3.
+    let max_d = block_dims.iter().copied().max().unwrap_or(0);
+    if max_d >= 4 {
+        return ClarabelSdpReport {
+            n,
+            q0: q,
+            alpha_star: f64::NAN,
+            solver_status: format!(
+                "Unsupported (max d_λ = {} ≥ 4 hits Clarabel-rs bug; \
+                 see R5_5_BUG_REPORT.md)",
+                max_d
+            ),
+            n_blocks: parts.len(),
+            block_dims,
+            iterations: 0,
+        };
+    }
+
     let mut solver = DefaultSolver::new(&p, &q_vec, &a_csc, &b, &cones, settings).unwrap();
     solver.solve();
 
-    let alpha_star = -solver.solution.obj_val;
-    let status = format!("{:?}", solver.solution.status);
+    let solver_status = solver.solution.status;
     let iters = solver.solution.iterations;
+    // Only trust obj_val when the solver reached an actual solved state.
+    let alpha_star = if matches!(solver_status, SolverStatus::Solved | SolverStatus::AlmostSolved) {
+        -solver.solution.obj_val
+    } else {
+        f64::NAN
+    };
+    let status = format!("{:?}", solver_status);
 
     ClarabelSdpReport {
         n,

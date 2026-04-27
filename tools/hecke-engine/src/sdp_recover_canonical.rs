@@ -88,11 +88,9 @@ fn dense_dense_mul(a: &[Vec<f64>], b: &[Vec<f64>]) -> Vec<Vec<f64>> {
 /// matrices.
 fn build_rho_lambda_for_basis_element(
     shape: &[usize],
-    perm: &[usize],
     canonical_word: &[u32],
     q: f64,
 ) -> Vec<Vec<f64>> {
-    let _ = perm;
     let sparse_gens = seminormal_matrices(shape, q);
     let dim = if sparse_gens.is_empty() {
         1
@@ -118,13 +116,25 @@ fn build_rho_lambda_for_basis_element(
 }
 
 /// Evaluate a LaurentQ polynomial at numerical q.
+///
+/// Uses `num_traits::ToPrimitive` for the BigRational → f64 conversion
+/// so overflow / NaN is reported via `Option::None` rather than silently
+/// substituting 0.0/1.0 (which would corrupt target coefficients).
+/// At q_0 ≈ 1.1097 the LaurentQ coefficients we encounter are bounded
+/// rationals with small numerators/denominators, so overflow is not
+/// expected; if it happens we panic with a diagnostic.
 fn eval_laurent_at(p: &LaurentQ, q: f64) -> f64 {
+    use num_traits::ToPrimitive;
     let mut acc = 0.0f64;
     for (&e, c) in &p.terms {
-        // BigRational → f64
-        let n = c.numer().to_string().parse::<f64>().unwrap_or(0.0);
-        let d = c.denom().to_string().parse::<f64>().unwrap_or(1.0);
-        let coef = n / d;
+        let coef = c.to_f64().unwrap_or_else(|| {
+            panic!(
+                "LaurentQ coefficient overflow → f64 at q_e={}: {}/{}",
+                e,
+                c.numer(),
+                c.denom()
+            )
+        });
         acc += coef * q.powi(e);
     }
     acc
@@ -225,7 +235,7 @@ pub fn solve_recovery_h_n(
         let mut per_var: Vec<Vec<f64>> = Vec::with_capacity(n_vars);
         for perm in &perms {
             let canonical = perm_to_canonical(perm);
-            let m = build_rho_lambda_for_basis_element(shape, perm, &canonical, q);
+            let m = build_rho_lambda_for_basis_element(shape, &canonical, q);
             // Symmetrize then svec
             let sqrt2 = 2f64.sqrt();
             let mut svec = Vec::with_capacity(d * (d + 1) / 2);
@@ -322,15 +332,26 @@ pub fn solve_recovery_h_n(
     let mut solver = DefaultSolver::new(&p, &q_vec, &a_csc, &b, &cones, settings).unwrap();
     solver.solve();
 
-    let x = solver.solution.x.clone();
+    let status = solver.solution.status;
+    let solver_status = format!("{:?}", status);
+    let iterations = solver.solution.iterations;
+    // CLAUDE.md rule: fail explicitly on non-success.  When the solver
+    // returns Infeasible / MaxIterations / NumericalError / etc, the x
+    // vector is not meaningful — leave c_recovered empty + max_residual
+    // = ∞ so the caller's assertion-style test fails informatively.
     let mut c_recovered: BTreeMap<Vec<usize>, f64> = BTreeMap::new();
-    for (i, perm) in perms.iter().enumerate() {
-        c_recovered.insert(perm.clone(), x[i]);
-    }
-    let max_residual = c_recovered
-        .iter()
-        .map(|(p, &v)| (v - c_target.get(p).copied().unwrap_or(0.0)).abs())
-        .fold(0.0f64, f64::max);
+    let max_residual = if matches!(status, SolverStatus::Solved | SolverStatus::AlmostSolved) {
+        let x = solver.solution.x.clone();
+        for (i, perm) in perms.iter().enumerate() {
+            c_recovered.insert(perm.clone(), x[i]);
+        }
+        c_recovered
+            .iter()
+            .map(|(p, &v)| (v - c_target.get(p).copied().unwrap_or(0.0)).abs())
+            .fold(0.0f64, f64::max)
+    } else {
+        f64::INFINITY
+    };
 
     RecoveryReport {
         n,
@@ -341,8 +362,8 @@ pub fn solve_recovery_h_n(
         c_recovered,
         c_target,
         max_residual,
-        solver_status: format!("{:?}", solver.solution.status),
-        iterations: solver.solution.iterations,
+        solver_status,
+        iterations,
     }
 }
 
