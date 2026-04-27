@@ -1,0 +1,29 @@
+# Forbidden tokens for alpha_blend_tower.py (Sprint B canonicalization).
+#
+# This manifest is consumed by:
+#   - alpha_blend_tower.py  (sanity printout in main())
+#   - test_three_term_wedderburn.py  (CI-grade enforcement)
+#
+# Intent: after Sprint B the canonical 3-term Wedderburn formula is the
+# only mass-volume implementation in alpha_blend_tower.py. Tokens listed
+# below indicate either the dropped α-blend code path or its fitted
+# constants. None of them should appear in the source.
+
+brentq
+fsolve
+0.305807
+0.8272
+alpha_star
+alpha_optimal
+alpha_4
+alpha4
+V_blend
+sym_alt
+S_chain
+std_za_b
+std_det
+# err_n was too coarse — false-positive on benign per-particle
+# err_n_pct / err_n_ppb reporting variables. The old fitted code path
+# was the function `def err_n(alpha)` that brentq optimised; match
+# that signature instead.
+def err_n(
