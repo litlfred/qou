@@ -439,6 +439,8 @@ export default chapter({
         "mass-formula-wedderburn-enumeration",
         "mass-tower-coefficient-stratification",
         "alpha-k-derivation-procedure",
+        "atom-knot-mass-derivation",
+        "atom-knot-mass-derivation-proof",
         "y-lambda-closed-form-wenzl-bridge",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
