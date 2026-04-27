@@ -186,6 +186,134 @@ def term_T6(A):
     return result
 
 
+def assemble_ame_comparison(per_particle, m_e_MeV, m_p_AME, m_n_AME):
+    """Sprint A v5 — naïve six-term assembly into a binding-energy
+    prediction, reported with explicit caveats about the combination
+    convention (which is open theoretical work).
+
+    For each Family 1 atom (Z, N, A):
+      * T1+T2+T3 mass-tower (MeV) is taken as-is from compute_isotope_tower.
+      * T4 (Frobenius co-Casimir, MeV) is added.
+      * T5 (chirality, MeV) is added as `m_e · ⟨c(λ)⟩_β · h` with
+        h = q − q⁻¹.
+      * T6 (Habiro residue) is currently a symbolic / per-A object;
+        its MeV translation requires nailing down whether it is
+        ALREADY counted inside T1 (per the Mittag-Leffler decomposition
+        of the full Markov trace) or is a separate additive correction.
+        Round-2 probe established that the full tr_M (= T1+T6 in the
+        decomposition `tr_M = tr_M^entire + Σ residues`) gives the
+        −25 % neutron residual; so naïvely *adding* T6 to an already-
+        full-tower-mass result would double-count.  Hence the v5
+        assembly here treats T6 as ALREADY-INCLUDED in T1+T2+T3 and
+        does not re-add it; this is one of the open convention choices
+        (flagged in the witness `assembly_convention` field).
+
+    Binding-energy comparison:
+        M_atom_pred = (T1+T2+T3) + T4 + T5
+        B_pred      = Z·m_p_AME + N·m_n_AME + Z·m_e − M_atom_pred
+        B_AME       = b_ame_mev (from input witness)
+        ppb_residual = (B_pred − B_AME) / B_AME · 1e9
+
+    Returns a dict keyed by particle name with per-atom term-MeV
+    breakdown + the assembled binding-energy prediction + ppb residual."""
+    out = {}
+    for name, atom in per_particle.items():
+        Z, N, A = atom["Z"], atom["N"], atom["A"]
+        b_ame = atom["b_ame_mev"]
+        terms = atom["terms"]
+
+        t123 = terms.get("T1_T2_T3_brane_tower", {})
+        t4 = terms.get("T4_frobenius_co_casimir", {})
+        t5 = terms.get("T5_chirality_content_average", {})
+        t6 = terms.get("T6_habiro_residue", {})
+
+        # Extract numeric MeV contributions (None if pending).
+        M_t123 = None
+        if not t123.get("pending"):
+            M_t123 = float(t123.get("M_MeV_raw", "nan").split()[0]) \
+                if isinstance(t123.get("M_MeV_raw"), str) else None
+            # M_MeV_raw is a long-string mp.nstr; strip and float()
+            try:
+                M_t123 = float(t123["M_MeV_raw"])
+            except (TypeError, ValueError):
+                M_t123 = None
+
+        M_t4 = None
+        if not t4.get("pending"):
+            try:
+                M_t4 = float(t4.get("T4_MeV"))
+            except (TypeError, ValueError):
+                M_t4 = None
+
+        # T5 in MeV: m_e · ⟨c(λ)⟩_β · h, where h = q − q⁻¹.
+        # ⟨c(λ)⟩_β is dimensionless; the canonical Term-5 mass
+        # contribution scales it by m_e and h (per six-term-mass-formula
+        # §Term 5).  The c_avg from ribbon_content_average is float64
+        # (deferred from #453 review); h is computed from q_0.
+        M_t5 = None
+        if not t5.get("pending"):
+            try:
+                from q_parameter import Q as Q0_FLOAT
+                c_avg = float(t5["c_avg"])
+                h = Q0_FLOAT - 1.0 / Q0_FLOAT
+                M_t5 = m_e_MeV * c_avg * h
+            except (KeyError, TypeError, ValueError):
+                M_t5 = None
+
+        # T6: per the round-2 finding, treat as ALREADY-IN T1 (full
+        # Markov-trace decomposition); not a separate additive term.
+        # Recorded in the witness for traceability but not summed.
+        M_t6_separate_addition = 0.0  # by convention
+
+        # Assembly
+        if M_t123 is not None:
+            M_atom_pred = M_t123
+            if M_t4 is not None:
+                M_atom_pred += M_t4
+            if M_t5 is not None:
+                M_atom_pred += M_t5
+            # M_atom_AME includes Z electrons bound to the nucleus
+            # (atomic mass, not nuclear): atomic_mass = Z·m_p + N·m_n + Z·m_e − B.
+            constituent_sum = Z * m_p_AME + N * m_n_AME + Z * m_e_MeV
+            B_pred = constituent_sum - M_atom_pred
+            B_pct = (B_pred - b_ame) / b_ame * 100 if b_ame else None
+            B_ppb = B_pct * 1e7 if B_pct is not None else None
+        else:
+            M_atom_pred = None
+            B_pred = None
+            B_pct = None
+            B_ppb = None
+
+        out[name] = {
+            "Z": Z, "N": N, "A": A,
+            "term_MeV_contributions": {
+                "T1_T2_T3_brane_tower_MeV": M_t123,
+                "T4_frobenius_co_casimir_MeV": M_t4,
+                "T5_chirality_MeV": M_t5,
+                "T6_habiro_residue_MeV_separate": M_t6_separate_addition,
+            },
+            "M_atom_pred_MeV": M_atom_pred,
+            "constituent_sum_MeV": Z * m_p_AME + N * m_n_AME + Z * m_e_MeV,
+            "B_AME_MeV": b_ame,
+            "B_pred_MeV": B_pred,
+            "B_err_pct": B_pct,
+            "B_err_ppb": B_ppb,
+            "assembly_convention": (
+                "M_atom_pred = T1+T2+T3 + T4 + T5; T6 treated as "
+                "already-in T1 per round-2 finding (full Markov trace = "
+                "T1^entire + cyclotomic residues = T1 + T6 in the "
+                "decomposition). The right combination convention is "
+                "open theoretical work — round-2 probe established that "
+                "full tr_M alone gives −25 % neutron residual, so the "
+                "remaining gap is in T2/T3 brane-tower assembly, T4/T5 "
+                "additive contributions, or normalisation/sign convention. "
+                "Reported ppb_residual is a baseline for further probing, "
+                "not a canonical accuracy claim."
+            ),
+        }
+    return out
+
+
 def main() -> int:
     # Apply import-time side effects only when run as a script, not on
     # bare import (per Copilot review): `warnings.filterwarnings`,
@@ -277,6 +405,25 @@ def main() -> int:
             else:
                 print(f"  T6: PENDING — {e6}")
 
+    # Sprint A v5 — naïve six-term assembly into a binding-energy
+    # prediction (with explicit caveats; combination convention is
+    # open theoretical work, see assemble_ame_comparison docstring).
+    from experimental_constants import M_P_MEV, M_N_MEV
+    ame_assembly = assemble_ame_comparison(
+        out_per_atom, m_e_MeV=M_E_MEV, m_p_AME=M_P_MEV, m_n_AME=M_N_MEV,
+    )
+
+    print("\n  AME comparison (Sprint A v5 — naïve assembly):")
+    print(f"    {'particle':<14} {'B_AME':>9} {'B_pred':>11} {'err [%]':>9} {'err [ppb]':>14}")
+    print(f"    {'-' * 14} {'-' * 9} {'-' * 11} {'-' * 9} {'-' * 14}")
+    for name, a in ame_assembly.items():
+        b_a = f"{a['B_AME_MeV']:>9.4f}" if a['B_AME_MeV'] is not None else f"{'—':>9}"
+        b_p = f"{a['B_pred_MeV']:>11.4f}" if a['B_pred_MeV'] is not None else f"{'—':>11}"
+        e_pct = f"{a['B_err_pct']:>+9.2f}" if a['B_err_pct'] is not None else f"{'—':>9}"
+        e_ppb = f"{a['B_err_ppb']:>+14.4e}" if a['B_err_ppb'] is not None else f"{'—':>14}"
+        print(f"    {name:<14} {b_a} {b_p} {e_pct} {e_ppb}")
+    print()
+
     out = {
         "computation": "six-term-mass-pred",
         "description": (
@@ -284,14 +431,18 @@ def main() -> int:
             "(D, T, ³He) consuming canonical GB-NF data from "
             "joint-tower-sdp-rust.witness.json. Reads each existing per-term "
             "script's helper (no SnapPy, no hp_volume, no fitted constants). "
-            "T4 (Frobenius co-Casimir) is marked pending because "
-            "frobenius_partition_sum.py lacks a per-atom helper; the AME-"
-            "comparable binding-energy assembly is queued as Sprint A v5."
+            "All six terms wired (Sprint A v4); naïve AME-comparable "
+            "binding-energy assembly added (Sprint A v5) with explicit "
+            "caveats about the open combination convention — round-2 "
+            "neutron-gap probe established that full tr_M alone gives "
+            "−25 % residual, so the assembly here is a baseline for "
+            "further probing, not a canonical accuracy claim."
         ),
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "source_witness": str(WITNESS_IN.relative_to(HERE.parent.parent)),
         "precision_dps": _DPS,
         "per_particle": out_per_atom,
+        "ame_assembly_v5": ame_assembly,
         "attestation": {
             "used_snappy": False,
             "used_hp_volume": False,

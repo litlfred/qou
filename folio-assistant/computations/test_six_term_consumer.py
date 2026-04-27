@@ -179,6 +179,31 @@ def test_t4_wired_with_partition_sum():
         assert 0 < s < 1e3, f"{name}: T4 sum_inv_dim_q={s} outside expected range"
 
 
+def test_ame_assembly_v5_emitted():
+    """Sprint A v5 emits a per-particle naïve six-term assembly into
+    a binding-energy prediction. The witness must record the term-by-
+    term MeV breakdown + the assembled prediction + the ppb residual,
+    even though the residual is not yet expected to be small (the
+    combination convention is open theoretical work — see the witness
+    `assembly_convention` field for the rationale)."""
+    w = _ensure_witness()
+    a5 = w.get("ame_assembly_v5", {})
+    assert a5, "Sprint A v5 ame_assembly_v5 section missing"
+    for name in FAMILY_1:
+        e = a5.get(name)
+        assert e is not None, f"{name}: missing from ame_assembly_v5"
+        terms = e.get("term_MeV_contributions", {})
+        for tk in ("T1_T2_T3_brane_tower_MeV", "T4_frobenius_co_casimir_MeV",
+                   "T5_chirality_MeV", "T6_habiro_residue_MeV_separate"):
+            assert tk in terms, f"{name}: missing {tk} in term breakdown"
+        assert "B_pred_MeV" in e
+        assert "B_err_ppb" in e
+        assert "assembly_convention" in e
+        assert "open" in e["assembly_convention"].lower(), (
+            f"{name}: assembly_convention should flag open status"
+        )
+
+
 def test_ame_comparison_is_marked_pending():
     """Sprint A v3+v4 deliberately do NOT emit a calibrated
     AME-comparable binding-energy prediction — that requires the
@@ -203,6 +228,7 @@ def _run_all():
         ("each_term_finite_or_pending", test_each_term_finite_or_pending),
         ("attestation_no_volumes_no_fits", test_attestation_no_volumes_no_fits),
         ("t4_wired_with_partition_sum", test_t4_wired_with_partition_sum),
+        ("ame_assembly_v5_emitted", test_ame_assembly_v5_emitted),
         ("ame_comparison_is_marked_pending", test_ame_comparison_is_marked_pending),
         ("t6_extracts_per_A_correctly", test_t6_extracts_per_A_correctly),
         ("witness_uses_canonical_computedAt_field", test_witness_uses_canonical_computedAt_field),
