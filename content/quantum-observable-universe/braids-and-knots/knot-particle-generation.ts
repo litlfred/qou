@@ -20,8 +20,5 @@ export default definition({
     "prop:skein-generation",
     "rem:knot-particle-dictionary",
     "rem:color-tube-interpretation",
-    "prop:fermion-boson-knot-link",
-    "def:substrate-parameter",
-    "prop:topological-mass-formula",
   ],
 });

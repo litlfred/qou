@@ -13,8 +13,5 @@ export default remark({
     "top-quark",
     "self-intersection",
   ],
-  uses: [
-    "rem:unmapped-torus-knots",
-    "def:electron-knot",
-  ],
+  uses: ["rem:unmapped-torus-knots"],
 });

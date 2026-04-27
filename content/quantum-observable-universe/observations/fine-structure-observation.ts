@@ -17,6 +17,5 @@ export default remark({
     "sec:mass-predictions-data",
     "rem:half-life-as-q-probe",
     "rem:mass-comparison-table",
-    "ex:hadron-half-life-verification",
   ],
 });

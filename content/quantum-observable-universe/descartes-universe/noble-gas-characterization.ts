@@ -16,8 +16,5 @@ export default proposition({
     "neon",
     "argon",
   ],
-  uses: [
-    "rem:helium-hopf-diagram",
-    "def:electron-knot",
-  ],
+  uses: ["rem:helium-hopf-diagram"],
 });

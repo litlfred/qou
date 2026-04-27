@@ -5,10 +5,7 @@ export default remark({
   title:
     "Plancherel form of $\\kappa$ replaces the 2-jet hand calculation",
   interprets: "prop:gram-determinant-plancherel-ratio",
-  uses: [
-    "prop:gram-determinant-plancherel-ratio",
-    "prop:hoefsmit-scattering-pipeline",
-  ],
+  uses: ["prop:gram-determinant-plancherel-ratio"],
   tags: [
     "interpretation",
     "kappa",

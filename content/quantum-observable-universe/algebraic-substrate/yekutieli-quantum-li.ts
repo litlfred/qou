@@ -6,8 +6,6 @@ export default remark({
   title: "The multiplicative integral as the quantum $\\mathrm{Li}(x)$",
   tags: ["exposition", "yekutieli", "logarithmic-integral", "stokes", "holonomy"],
   uses: [
-    "def:q-von-mangoldt-function",
-    "def:q-chebyshev-function",
     "thm:explicit-formula",
     "rem:yekutieli-stokes",
     "prop:yekutieli-lifting",

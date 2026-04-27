@@ -16,10 +16,5 @@ export default definition({
     "normal-form",
     "general",
   ],
-  uses: [
-    "prop:four-term-pair-nucleon",
-    "prop:confinement-operator-selection",
-    "def:stable-nucleus",
-    "conj:electron-shells-hopf",
-  ],
+  uses: ["prop:four-term-pair-nucleon"],
 });

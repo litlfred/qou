@@ -5,8 +5,6 @@ export default theorem({
   title:
     "Quantum Peter--Weyl theorem: completeness of the $\\mathrm{SU}_q(2)$ eigenbasis",
   uses: [
-    "def:quantum-observable-universe",
-    "def:frobenius-pairing",
     "prop:pawlowski-leitner-inner-product",
     "prop:q-spectral-sobolev",
   ],

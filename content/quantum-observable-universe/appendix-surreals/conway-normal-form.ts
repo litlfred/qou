@@ -15,9 +15,6 @@ export default remark({
     "cross-reference",
   ],
   interprets: "def:birthday-grading",
-  uses: [
-    "def:birthday-grading",
-    "def:surreal-blowup-calculus",
-  ],
+  uses: ["def:surreal-blowup-calculus"],
   cites: ["conway1976", "gonshor1986", "ehrlich2012"],
 });

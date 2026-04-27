@@ -11,10 +11,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:jet-horizon",
     "def:aeon",
     "def:observation",
-    "def:big-bang-state",
   ],
   cites: ["penrose2010"],
 });

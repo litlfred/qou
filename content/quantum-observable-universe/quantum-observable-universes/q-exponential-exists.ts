@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QExponential.exists_in_shuffle_hopf",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-exponential",
-    "rem:base-field-independence",
-  ],
+  uses: ["def:q-exponential"],
   proofs: ["prf:q-exponential-exists"],
   tags: ["existence", "q-exponential", "grouplike", "hopf-algebra"],
 });

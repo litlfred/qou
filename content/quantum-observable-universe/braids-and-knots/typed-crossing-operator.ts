@@ -14,10 +14,4 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.TypedCrossingOperator",
     validation: "not_checked",
   },
-  uses: [
-    "def:up-quark",
-    "def:down-quark",
-    "def:borromean-baryon",
-    "rem:hecke-algebra-from-braiding",
-  ],
 });

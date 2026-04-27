@@ -6,12 +6,6 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.ElectronShell",
     validation: "not_checked",
   },
-  uses: [
-    "def:confined-particle",
-    "prop:confinement-sdp",
-    "prop:confinement-phase-stratification",
-    "def:hecke-normal-form",
-  ],
   tags: [
     "electron",
     "shell",

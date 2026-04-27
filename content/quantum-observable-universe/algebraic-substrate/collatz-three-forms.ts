@@ -4,12 +4,7 @@ export default remark({
   label: "rem:collatz-three-forms",
   title: "Three faces of the $q$-Collatz conjecture",
   interprets: "prop:collatz-contact-boundary",
-  uses: [
-    "conj:q-collatz",
-    "prop:collatz-contact-boundary",
-    "prop:skein-generation",
-    "def:reeb-bundle",
-  ],
+  uses: ["prop:collatz-contact-boundary"],
   tags: [
     "collatz",
     "hecke-algebra",

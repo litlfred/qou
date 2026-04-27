@@ -5,8 +5,5 @@ export default example({
   label: "ex:cosmological-limits",
   title: "Cosmological limits of $q$",
   tags: ["cosmology", "limits"],
-  uses: [
-    "def:frobenius-pairing",
-    "rem:hopf-non-cocommutativity",
-  ],
+  uses: ["rem:hopf-non-cocommutativity"],
 });

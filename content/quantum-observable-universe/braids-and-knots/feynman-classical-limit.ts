@@ -9,7 +9,6 @@ export default proposition({
   tags: ["path-integral", "feynman", "classical-limit", "hecke-degeneration"],
   uses: [
     "prop:feynman-categorical-trace",
-    "rem:hecke-algebra-from-braiding",
     "def:q-energy",
     "conj:classical-limit-stpart",
   ],

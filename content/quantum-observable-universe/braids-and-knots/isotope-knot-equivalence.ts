@@ -6,9 +6,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.IsotopeKnot.equivalence",
     validation: "not_checked",
   },
-  uses: [
-    "def:isotope-knot",
-    "def:atom-knot",
-  ],
+  uses: ["def:isotope-knot"],
   tags: ["equivalence-relation", "isotope", "atom-knot"],
 });

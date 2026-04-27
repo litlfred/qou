@@ -18,6 +18,5 @@ export default remark({
     "rem:golden-ratio-degeneration",
     "rem:q-chromaticity",
     "prop:strangelet-crossing-energy",
-    "def:crossing-energy",
   ],
 });

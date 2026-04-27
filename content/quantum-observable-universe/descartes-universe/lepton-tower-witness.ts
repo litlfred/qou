@@ -13,8 +13,5 @@ export default remark({
     "normal-form",
     "tau-lepton-nf",
   ],
-  uses: [
-    "prop:lepton-continuant-recurrence",
-    "def:substrate-parameter",
-  ],
+  uses: ["prop:lepton-continuant-recurrence"],
 });

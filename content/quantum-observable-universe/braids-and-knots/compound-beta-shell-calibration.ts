@@ -8,13 +8,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:confinement-level",
-    "def:stable-atom",
     "def:unstable-atom",
-    "prop:bw-coefficient-shadow-price",
     "prop:shell-schur-weyl-self-duality",
-    "def:hecke-normal-form",
-    "def:knot-operator-energy",
   ],
   cites: [],
   tags: [

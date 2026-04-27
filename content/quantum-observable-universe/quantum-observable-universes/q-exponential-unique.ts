@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QExponential.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-exponential",
-    "prop:q-exponential-exists",
-  ],
+  uses: ["prop:q-exponential-exists"],
   proofs: ["prf:q-exponential-unique"],
   tags: ["uniqueness", "q-exponential", "grouplike", "hopf-algebra"],
 });

@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalConnection.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-connection",
-    "def:quantum-universe",
-  ],
+  uses: ["def:categorical-connection"],
   proofs: ["prf:categorical-connection-exists"],
   tags: ["existence", "connection"],
 });

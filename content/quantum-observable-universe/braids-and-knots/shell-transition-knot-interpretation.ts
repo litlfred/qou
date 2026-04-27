@@ -11,5 +11,5 @@ export default remark({
     "crossing-number",
     "spin-orbit",
   ],
-  uses: ["prop:shell-transition-knot", "def:borromean-baryon"],
+  uses: ["prop:shell-transition-knot"],
 });

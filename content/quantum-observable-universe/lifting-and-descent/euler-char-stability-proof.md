@@ -1,20 +1,7 @@
-
-The categorical Euler characteristic $\chi(A_n) = \mathrm{tr}(\mathrm{id}_{A_n})$
+The categorical Euler characteristic
+$\chi(A_n) = \mathrm{tr}(\mathrm{id}_{A_n}) = \mathrm{ev}_n \circ \mathrm{coev}_n$
 is the rigidity trace of the identity, computed as the composition
-
-$$
-  \chi(A_n)
-  = 
-  \bigl(\mathbf{1}
-  \xrightarrow{ \mathrm{coev}_n}
-  A_n \otimes A_n^{\vee}
-  \xrightarrow{ \mathrm{id} \otimes \mathrm{id}}
-  A_n \otimes A_n^{\vee}
-  \xrightarrow{ \mathrm{ev}_n}
-  \mathbf{1}\bigr)
-  = 
-  \mathrm{ev}_n \circ \mathrm{coev}_n.
-$$
+$\mathbf{1} \xrightarrow{\mathrm{coev}_n} A_n \otimes A_n^{\vee} \xrightarrow{\mathrm{ev}_n} \mathbf{1}$.
 
 Jet prolongation is a functor on $\mathbf{C}$ that preserves the
 Frobenius--Hopf structure
@@ -47,4 +34,4 @@ prolongation functor cannot introduce non-trivial twisting of the trace:
 there are no non-scalar $G_q$-invariant endomorphisms that could modify
 the rigidity pairing at each level.  (For the archimedean verification
 via the Leray--Serre spectral sequence, see
-[archimedean proof](#prf:euler-char-stability-C).)
+[archimedean proof](#prf:euler-char-stability-C).)  $\square$

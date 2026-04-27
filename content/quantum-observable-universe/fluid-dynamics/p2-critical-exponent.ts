@@ -6,8 +6,6 @@ export default proposition({
   uses: [
     "prop:q-ns-nonlinear-uniqueness",
     "conj:regularity-breakdown",
-    "rem:planck-reynolds",
-    "prop:q-turbulence-spectrum",
   ],
   tags: ["critical-exponent", "enstrophy", "phase-transition", "scaling"],
 });

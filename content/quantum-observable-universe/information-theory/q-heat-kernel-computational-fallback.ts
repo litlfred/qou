@@ -5,10 +5,5 @@ export default remark({
   label: "rem:q-heat-kernel-computational-fallback",
   title: "Computational fallback at large $k$: $q$-heat kernel and Perron--Frobenius",
   tags: ["computational", "nf-transition", "perron-frobenius", "q-gaussian", "large-k", "hecke"],
-  uses: [
-    "prop:q-heat-kernel-peter-weyl",
-    "prop:q-gaussian-solves-q-heat",
-    "def:categorical-laplace",
-    "def:quantum-planck-constant",
-  ],
+  uses: ["prop:q-heat-kernel-peter-weyl"],
 });

@@ -12,15 +12,6 @@ export default conjecture({
     "QOU-axioms",
     "open-problem",
   ],
-  uses: [
-    "def:quantum-observable-universe",
-    "def:standard-part-functor",
-    "def:surreal-blowup-calculus",
-    "conj:classical-limit-stpart",
-    "conj:infinitesimal-frobenius",
-    "conj:infinitesimal-observability",
-    "conj:vacuum-epsilon",
-    "rem:fibre-functor-rigidity",
-  ],
+  uses: ["conj:classical-limit-stpart"],
   cites: ["robinson1966", "ehrlich2012"],
 });

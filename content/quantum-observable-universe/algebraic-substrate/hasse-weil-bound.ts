@@ -6,7 +6,7 @@ export default theorem({
   lean: { ref: "qou:QOU.AlgebraicSubstrate.hasse_weil_bound",
     validation: "not_checked",
   },
-  uses: ["def:local-q-zeta-function", "def:brings-coordinate-ring"],
+  uses: ["def:local-q-zeta-function"],
   tags: [
     "hasse-weil",
     "eigenvalue-bound",

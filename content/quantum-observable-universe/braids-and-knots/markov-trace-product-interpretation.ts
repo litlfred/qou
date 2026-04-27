@@ -10,5 +10,5 @@ export default remark({
     "correlation-function",
     "factorization",
   ],
-  uses: ["thm:markov-trace-product", "def:vertex-operator"],
+  uses: ["thm:markov-trace-product"],
 });

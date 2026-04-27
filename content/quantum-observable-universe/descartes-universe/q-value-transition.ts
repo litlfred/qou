@@ -18,7 +18,6 @@ export default definition({
   },
   uses: [
     "def:q-energy",
-    "prop:branching-qvalue-factorization",
     "thm:parity-regime-selection",
   ],
 });

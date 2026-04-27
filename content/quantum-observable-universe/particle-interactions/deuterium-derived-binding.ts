@@ -15,12 +15,6 @@ export default proposition({
   lean: { ref: "qou:QOU.ParticleInteractions.deuterium_derived_binding",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-proton",
-    "def:categorical-neutron",
-    "prop:confinement-operator-selection",
-    "prop:four-term-pair-nucleon",
-    "thm:topological-mass",
-  ],
+  uses: ["prop:four-term-pair-nucleon"],
   cites: ["ame2020"],
 });

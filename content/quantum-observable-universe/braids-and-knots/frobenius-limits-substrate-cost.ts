@@ -14,11 +14,5 @@ export default remark({
     "interpretation",
     "brane-tower",
   ],
-  uses: [
-    "thm:frobenius-codim-universal",
-    "thm:knot-mass-formula-unified",
-    "prop:mass-endomorphism-tower",
-    "prop:categorical-mass-markov",
-    "rem:deuteron-first-principles",
-  ],
+  uses: ["rem:deuteron-first-principles"],
 });

@@ -12,10 +12,5 @@ export default conjecture({
     "conjecture",
     "nuclear-physics",
   ],
-  uses: [
-    "def:derived-atom",
-    "prop:demand-stability",
-    "prop:beta-stability",
-    "def:stable-nucleus",
-  ],
+  uses: ["prop:demand-stability"],
 });

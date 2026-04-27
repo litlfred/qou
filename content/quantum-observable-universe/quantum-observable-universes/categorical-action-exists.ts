@@ -6,11 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalAction.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-action",
-    "def:quantum-observable-universe",
-    "def:rigid-monoidal-category",
-  ],
+  uses: ["def:categorical-action"],
   proofs: ["prf:categorical-action-exists"],
   tags: ["existence", "categorical-action"],
 });

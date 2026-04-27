@@ -16,9 +16,7 @@ export default remark({
   ],
   uses: [
     "conj:baryon-period-ratio",
-    "def:picard-lefschetz-thimble",
     "prop:mobius-golden-fixed-points",
     "rem:golden-ratio-degeneration",
-    "rem:color-tube-cubic",
   ],
 });

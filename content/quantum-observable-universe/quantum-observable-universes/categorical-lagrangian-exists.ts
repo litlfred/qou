@@ -8,7 +8,6 @@ export default proposition({
   },
   uses: [
     "def:categorical-lagrangian",
-    "def:categorical-dirac-operator",
     "prop:categorical-dirac-operator-exists",
   ],
   proofs: ["prf:categorical-lagrangian-exists"],

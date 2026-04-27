@@ -6,14 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.FluidDynamics.NSObstruction",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-universe",
-    "def:q-navier-stokes",
-    "def:ns-regular-qou",
-    "def:quantum-characteristic-classes",
-    "def:crossing-energy",
-    "rem:hecke-algebra-from-braiding",
-  ],
+  uses: ["def:ns-regular-qou"],
   tags: [
     "definition",
     "obstruction",

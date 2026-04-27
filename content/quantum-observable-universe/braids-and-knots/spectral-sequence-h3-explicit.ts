@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.spectral_sequence_h3_explicit",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-spectral-sequence",
-    "prop:e-infinity-page-identifications",
-    "def:hecke-normal-form",
-    "def:confinement-level",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:e-infinity-page-identifications"],
   tags: [
     "spectral-sequence",
     "explicit-differentials",

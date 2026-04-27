@@ -13,8 +13,5 @@ export default remark({
     "lepton-universality",
     "PDG",
   ],
-  uses: [
-    "prop:tau-leptonic-universality",
-    "def:substrate-parameter",
-  ],
+  uses: ["prop:tau-leptonic-universality"],
 });

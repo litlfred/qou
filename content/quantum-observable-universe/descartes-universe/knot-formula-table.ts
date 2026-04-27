@@ -18,8 +18,6 @@ export default remark({
   ],
   uses: [
     "thm:embeddability-closure",
-    "prop:fermion-boson-knot-link",
     "conj:higgs-t28",
-    "prop:terminal-resolution",
   ],
 });

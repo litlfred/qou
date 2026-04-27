@@ -17,6 +17,5 @@ export default remark({
   uses: [
     "rem:knot-basis-color-content",
     "rem:knot-operator-basis-table",
-    "def:breit-wheeler-pair-production",
   ],
 });

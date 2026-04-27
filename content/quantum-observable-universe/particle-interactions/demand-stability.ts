@@ -11,10 +11,5 @@ export default proposition({
     "shell-closure",
     "magic-numbers",
   ],
-  uses: [
-    "def:derived-atom",
-    "prop:confinement-operator-selection",
-    "def:stable-nucleus",
-    "prop:beta-stability",
-  ],
+  uses: ["def:derived-atom"],
 });

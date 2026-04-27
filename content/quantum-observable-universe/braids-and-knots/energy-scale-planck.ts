@@ -6,9 +6,7 @@ export default remark({
   interprets: "rem:beta-decay-energy-scale",
   uses: [
     "rem:beta-decay-energy-scale",
-    "def:quantum-planck-constant",
     "def:information-speed-of-light",
-    "def:planck-time",
     "rem:calibration-inputs",
   ],
   tags: [

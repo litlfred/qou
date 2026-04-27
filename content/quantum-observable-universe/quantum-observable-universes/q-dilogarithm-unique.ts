@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QDilogarithm.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-dilogarithm",
-    "prop:q-dilogarithm-exists",
-  ],
+  uses: ["prop:q-dilogarithm-exists"],
   proofs: ["prf:q-dilogarithm-unique"],
   tags: ["uniqueness", "q-dilogarithm"],
 });

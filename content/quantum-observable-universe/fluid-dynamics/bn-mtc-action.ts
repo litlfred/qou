@@ -5,9 +5,6 @@ export default proposition({
   lean: { ref: "qou:QOU.ObservableMTC.bnAction", validation: "not_checked" },
   title: "Braid group action on $\\mathbf{V}^{\\otimes n}$ does not factor through $S_n$",
   tags: ["braid-group", "mtc", "anyons", "fractional-statistics"],
-  uses: [
-    "def:observable-mtc",
-    "def:braid-group",
-  ],
+  uses: ["def:observable-mtc"],
   cites: ["kitaev2006"],
 });

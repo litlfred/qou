@@ -10,9 +10,6 @@ export default definition({
   uses: [
     "def:categorical-laplace",
     "prop:tannaka-krein-reconstruction",
-    "rem:adjoint-trace",
-    "rem:lagrange-resolvents",
-    "def:briggs-klein-chart",
     "rem:brings-smoothness",
   ],
 });

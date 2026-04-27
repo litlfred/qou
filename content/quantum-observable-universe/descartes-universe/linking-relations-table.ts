@@ -16,8 +16,5 @@ export default remark({
     "connected-sum",
     "satellite",
   ],
-  uses: [
-    "rem:building-block-knots",
-    "rem:knot-formula-table",
-  ],
+  uses: ["rem:knot-formula-table"],
 });

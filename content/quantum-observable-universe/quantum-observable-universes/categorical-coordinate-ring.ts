@@ -18,12 +18,5 @@ export default proposition({
     "ring-extension",
     "universal-property",
   ],
-  uses: [
-    "def:projective-line-object",
-    "def:contact-affine-chart",
-    "prop:braiding-eigenvalue-extraction",
-    "def:quantum-gauge-group",
-    "rem:affine-chart-origin-of-i-and-q",
-    "rem:braiding-unit-circle-convention",
-  ],
+  uses: ["rem:affine-chart-origin-of-i-and-q"],
 });

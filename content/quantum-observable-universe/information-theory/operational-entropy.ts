@@ -13,9 +13,5 @@ export default definition({
   lean: { ref: "qou:QOU.Information.operationalEntropy",
     validation: "not_checked",
   },
-  uses: [
-    "rem:julia-set-reeb",
-    "def:planck-time",
-    "prop:reeb-operations-per-planck",
-  ],
+  uses: ["prop:reeb-operations-per-planck"],
 });

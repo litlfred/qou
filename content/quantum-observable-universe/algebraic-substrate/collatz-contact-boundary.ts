@@ -6,10 +6,7 @@ export default proposition({
     "The $[2]_q$-contact boundary on the Reeb bundle",
   uses: [
     "conj:q-collatz",
-    "def:reeb-bundle",
-    "rem:substrate-gm-torsion",
     "prop:root-of-unity-truncation",
-    "prop:skein-generation",
   ],
   tags: [
     "collatz",

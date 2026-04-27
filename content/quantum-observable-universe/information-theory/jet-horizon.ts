@@ -10,10 +10,5 @@ export default definition({
   lean: { ref: "qou:QOU.JetHorizon",
     validation: "not_checked",
   },
-  uses: [
-    "prop:jet-prolongation",
-    "def:bundle-initial-conditions",
-    "def:exceptional-divisor",
-    "rem:jet-planck-steps",
-  ],
+  uses: ["rem:jet-planck-steps"],
 });

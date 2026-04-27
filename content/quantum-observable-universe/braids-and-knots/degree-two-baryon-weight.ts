@@ -6,9 +6,5 @@ export default proposition({
   lean: { ref: "qou:QOU.BaryonWeight.beta2_approx",
     validation: "not_checked",
   },
-  uses: [
-    "thm:wedderburn-mass-formula",
-    "prop:three-parameters-wedderburn",
-    "def:color-tube-coordinates",
-  ],
+  uses: ["thm:wedderburn-mass-formula"],
 });

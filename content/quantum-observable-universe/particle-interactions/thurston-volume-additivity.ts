@@ -15,10 +15,6 @@ export default proposition({
   lean: { ref: "qou:QOU.ParticleInteractions.thurstonVolumeAdditivity",
     validation: "not_checked",
   },
-  uses: [
-    "def:atomic-braid",
-    "prop:wedderburn-mass-formula",
-    "prop:local-substrate-q",
-  ],
+  uses: ["prop:wedderburn-mass-formula"],
   cites: ["thurston1978"],
 });

@@ -20,7 +20,6 @@ export default definition({
     "def:computational-horizon",
     "thm:qou-obstruction-reduction",
     "rem:kummer-filtration-obstruction",
-    "rem:skein-turing-machine",
     "prop:ns-obstruction-tower",
   ],
 });

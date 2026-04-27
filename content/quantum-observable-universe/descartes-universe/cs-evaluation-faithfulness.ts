@@ -13,7 +13,6 @@ export default proposition({
   ],
   uses: [
     "prop:volume-tower-decomposition",
-    "def:quantum-characteristic-classes",
     "prop:yekutieli-lifting",
   ],
   lean: { ref: "qou:QOU.Descartes.CSEvaluationFaithful",

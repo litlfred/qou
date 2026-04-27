@@ -15,9 +15,5 @@ export default definition({
   lean: { ref: "qou:QOU.ParticleInteractions.PerNucleonChannelDecomposition",
     validation: "not_checked",
   },
-  uses: [
-    "def:typed-crossing-operator",
-    "thm:jones-markov-trace",
-    "def:borromean-baryon",
-  ],
+  uses: ["def:typed-crossing-operator"],
 });

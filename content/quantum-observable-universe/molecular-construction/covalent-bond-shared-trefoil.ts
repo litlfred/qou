@@ -10,7 +10,7 @@ export default definition({
   lean: { ref: "qou:QOU.Molecular.CovalentBond",
     validation: "not_checked",
   },
-  uses: ["def:molecular-braid", "def:atomic-braid"],
+  uses: ["def:molecular-braid"],
   tags: [
     "covalent-bond",
     "trefoil",

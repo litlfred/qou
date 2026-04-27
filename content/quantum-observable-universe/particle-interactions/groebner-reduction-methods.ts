@@ -7,6 +7,6 @@ export default remark({
   label: "rem:groebner-reduction-methods",
   title: "Gröbner--Shirshov reduction: methods and reproducibility",
   interprets: "def:atomic-braid",
-  uses: ["prop:nuclear-groebner-reduction", "prop:inductive-gb-reduction"],
+  uses: ["prop:inductive-gb-reduction"],
   tags: ["computational"],
 });

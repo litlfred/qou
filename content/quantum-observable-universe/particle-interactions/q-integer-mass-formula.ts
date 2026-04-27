@@ -14,10 +14,8 @@ export default proposition({
   label: "prop:q-integer-mass-formula",
   title: "Atomic mass formula with $q$-integer Bethe--Weizs\\\"acker coefficients",
   uses: [
-    "def:atomic-braid",
     "prop:wedderburn-mass-formula",
     "prop:operator-selection-lp",
-    "conj:shell-closure-nf-term-count",
     "conj:palindromicity-orbital-type",
   ],
   tags: [

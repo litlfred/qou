@@ -13,9 +13,4 @@ export default definition({
   lean: { ref: "qou:QOU.Descartes.HopfDiquark",
     validation: "not_checked",
   },
-  uses: [
-    "conj:borromean-quark",
-    "def:crossing-energy",
-    "def:coulomb-charge",
-  ],
 });

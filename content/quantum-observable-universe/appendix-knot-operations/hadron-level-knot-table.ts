@@ -12,11 +12,7 @@ export default remark({
     "appendix",
     "witness",
   ],
-  uses: [
-    "rem:particle-nf-table",
-    "def:hecke-normal-form",
-    "rem:knot-particle-dictionary",
-  ],
+  uses: ["rem:particle-nf-table"],
   interprets: "rem:particle-nf-table",
   computation: {
     engine: "python",

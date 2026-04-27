@@ -11,9 +11,5 @@ export default proposition({
     "gram-matrix",
     "knot-operator",
   ],
-  uses: [
-    "prop:knot-operator-selection",
-    "prop:confinement-lp",
-    "prop:frobenius-gram-matrix",
-  ],
+  uses: ["prop:confinement-lp"],
 });

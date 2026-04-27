@@ -7,16 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.hoefsmit_scattering_pipeline",
     validation: "not_checked",
   },
-  uses: [
-    "prop:hoefsmit-seminormal-form",
-    "prop:wedderburn-trace-identity",
-    "prop:universal-braid-branching",
-    "prop:topological-mass-formula",
-    "prop:geom-yekutieli-alignment",
-    "prop:figure-eight-bw-coefficients",
-    "rem:conway-normal-form",
-    "rem:body-asymptotics-catalog",
-  ],
+  uses: ["prop:geom-yekutieli-alignment"],
   cites: ["hoefsmit1974", "wenzl1988"],
   tags: [
     "hoefsmit",

@@ -9,12 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:explicit-alpha-k-h3",
-    "prop:alpha-k-derivation-procedure",
     "prop:wedderburn-bratteli-recursion",
-    "prop:hoefsmit-seminormal-form",
-    "prop:spectral-sequence-collapse",
-    "thm:jones-markov-trace",
     "rem:y-lambda-sign-pattern",
   ],
   tags: [

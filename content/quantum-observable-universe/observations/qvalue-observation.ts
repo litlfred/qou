@@ -16,7 +16,6 @@ export default remark({
   ],
   uses: [
     "cor:spectral-decomposition-qvalue",
-    "prop:beta-decay-transfer-matrix",
     "rem:mass-comparison-table",
     "rem:half-life-as-q-probe",
   ],

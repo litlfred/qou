@@ -12,10 +12,5 @@ export default remark({
     "confinement",
     "computational-shortcut",
   ],
-  uses: [
-    "def:confinement-level",
-    "def:stable-atom",
-    "def:atom-knot",
-    "prop:stable-atom-decidable",
-  ],
+  uses: ["prop:stable-atom-decidable"],
 });

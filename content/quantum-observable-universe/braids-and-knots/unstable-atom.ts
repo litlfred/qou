@@ -6,11 +6,6 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.UnstableAtom",
     validation: "not_checked",
   },
-  uses: [
-    "def:stable-atom",
-    "def:atom-knot",
-    "def:knot-operator-energy",
-  ],
   cites: [],
   tags: [
     "instability",

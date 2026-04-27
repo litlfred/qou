@@ -14,8 +14,4 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.torus_hopf_stability",
     validation: "not_checked",
   },
-  uses: [
-    "rem:skein-crossing-asymmetry",
-    "def:categorical-neutron",
-  ],
 });

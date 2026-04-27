@@ -12,10 +12,6 @@ export default conjecture({
     "infinitesimal",
     "open-problem",
   ],
-  uses: [
-    "def:standard-part-functor",
-    "def:surreal-blowup-calculus",
-    "conj:archimedean-stpart",
-  ],
+  uses: ["conj:archimedean-stpart"],
   cites: ["robinson1966"],
 });

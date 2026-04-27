@@ -8,10 +8,7 @@ export default corollary({
     ref: "qou:QOU.BraidKnot.knot_factor_borromean",
     validation: "not_checked",
   },
-  uses: [
-    "prop:knot-factor-spectral-form",
-    "cor:knot-factor-amphicheiral",
-  ],
+  uses: ["cor:knot-factor-amphicheiral"],
   tags: [
     "knot-factor",
     "borromean",

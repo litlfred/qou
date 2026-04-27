@@ -10,10 +10,5 @@ export default remark({
     "matrix-element",
     "interpretation",
   ],
-  uses: [
-    "prop:trace-ratio-observable",
-    "thm:markov-trace-factorization",
-    "prop:skein-coulomb-enhancement",
-    "prop:hadron-half-life",
-  ],
+  uses: ["prop:trace-ratio-observable"],
 });

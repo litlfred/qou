@@ -8,25 +8,11 @@ is invariant under the full Möbius group
 $\mathrm{PSL}(2, \mathbb{C})$, matching the conformal invariance
 of the classical functional.
 
-*Step 2: Expansion of the Frobenius–Hopf kernel.*
-At $q = 1$ the $q$-Hodge star reduces to the classical Hodge star,
-and the comultiplication $\Delta$ becomes cocommutative.  The
-[Frobenius pairing](#def:frobenius-pairing) $\int_A \circ \mu$ on $A \otimes A$ reduces to
-the standard $\mathrm{SU}(2)$ Killing form, so the integrand
-simplifies to
-
-$$
-  \mathrm{tr}\bigl(
-    \Delta(\gamma(s)) \otimes \Delta(\gamma(t))
-  \bigr)
-  \xrightarrow{q \to 1}
-  \frac{1}{\lvert \gamma(s) - \gamma(t) \rvert^2}.
-$$
-
-The repulsive kernel $1/r^2$ is thus the classical shadow of the
-resistance of the Frobenius–Hopf object $A$ to local deformations
-of the connection $\nabla$: the Frobenius form $\int_A$ assigns a
-diverging cost when two strands of $\gamma$ approach.
+*Step 2: Expansion of the Frobenius--Hopf kernel.*
+By
+([classical limit of the Frobenius--Hopf kernel](#lem:mobius-energy-frobenius-kernel)),
+the integrand collapses to $1/\lvert \gamma(s) - \gamma(t) \rvert^2$
+at $q = 1$.
 
 *Step 3: Subtraction of the self-energy.*
 The diagonal regularization in the categorical integral (exclusion
@@ -40,7 +26,7 @@ that agrees with $E(\gamma)/4$ up to an Euler characteristic
 correction $\chi(\Sigma_\gamma) \cdot \mathrm{const}$, where
 $\Sigma_\gamma$ is any Seifert surface spanning $\gamma$.
 
-*Scope.* The classical identity
+*Scope.*  The classical identity
 $\lim_{q \to 1} E_{\mathrm{cat}}(\varrho) = E(\varrho)/4 +
 \text{const}$ is stated in the archimedean realisation $K =
 \mathbb{R}$; the right-hand side $E(\varrho)$ is a Lebesgue
@@ -50,4 +36,4 @@ $E_{\mathrm{cat}}$ lifts verbatim (categorical operations only)
 and $\lim_{q \to 1}$ becomes
 $\mathrm{st} \circ \text{eval}_{q = 1 + \varepsilon}$; the
 right-hand side remains in $\mathbb{R}$ as an external anchor.
-Lebesgue measure is not used inside QOU.
+Lebesgue measure is not used inside QOU.  $\square$

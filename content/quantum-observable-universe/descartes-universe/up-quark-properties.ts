@@ -5,5 +5,4 @@ export default remark({
   label: "rem:up-quark-properties",
   title: "Up quark: crossing orientation and isolation",
   tags: ["quark", "up", "crossing", "borromean", "confinement"],
-  uses: ["def:up-quark", "def:borromean-baryon"],
 });

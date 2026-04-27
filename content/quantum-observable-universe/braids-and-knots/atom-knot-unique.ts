@@ -6,11 +6,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.AtomKnot.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:atom-knot",
-    "prop:atom-knot-exists",
-    "thm:jones-markov-trace",
-    "def:hecke-normal-form",
-  ],
+  uses: ["prop:atom-knot-exists"],
   tags: ["uniqueness", "atom-knot", "markov-equivalence"],
 });

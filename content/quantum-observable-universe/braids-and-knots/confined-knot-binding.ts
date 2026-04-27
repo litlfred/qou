@@ -8,11 +8,9 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:hecke-mass-element",
     "prop:three-parameters-wedderburn",
     "prop:nuclear-knot-classification",
     "def:atomic-braid",
-    "prop:topological-mass-formula",
   ],
   tags: [
     "binding-mechanism",

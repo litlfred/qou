@@ -12,11 +12,5 @@ export default remark({
     "markov-pairing",
     "spectral-sequence",
   ],
-  uses: [
-    "prop:e-infinity-page-identifications",
-    "thm:frobenius-codim-universal",
-    "prop:knot-factor-frobenius-pairing",
-    "prop:frobenius-gram-matrix",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:e-infinity-page-identifications"],
 });

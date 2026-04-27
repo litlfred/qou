@@ -8,7 +8,6 @@ export default proposition({
   title: "Threading link $T(2,6)$ emerges as the LP-optimal $\\pi$ configuration",
   uses: [
     "def:benzene-molecular-braid",
-    "prop:h2-lp-dual-binding",
     "prop:co2-lp-dual-binding",
   ],
   tags: [

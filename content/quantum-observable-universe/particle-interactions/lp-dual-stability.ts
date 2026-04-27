@@ -14,10 +14,5 @@ export default proposition({
     "hadron",
     "quark",
   ],
-  uses: [
-    "prop:confinement-lp",
-    "prop:frobenius-gram-matrix",
-    "prop:confinement-topological",
-    "rem:confinement-nucleon-unit",
-  ],
+  uses: ["rem:confinement-nucleon-unit"],
 });

@@ -13,15 +13,5 @@ export default remark({
     "magic-numbers",
     "sdp",
   ],
-  uses: [
-    "prop:level-sufficiency",
-    "def:confined-particle",
-    "def:confinement-category",
-    "def:confinement-level",
-    "def:electron-shell",
-    "def:dressed-particle",
-    "prop:confinement-sdp",
-    "prop:confinement-topological",
-  ],
   interprets: "prop:level-sufficiency",
 });

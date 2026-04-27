@@ -7,10 +7,6 @@ export default definition({
     ref: "qou:QOU.FluidDynamics.QNavierStokes",
     validation: "not_checked",
   },
-  uses: [
-    "rem:madelung-fluid",
-    "rem:planck-reynolds",
-    "def:substrate-parameter",
-  ],
+  uses: ["rem:planck-reynolds"],
   tags: ["navier-stokes", "q-deformation", "dissipation", "fluid-dynamics"],
 });

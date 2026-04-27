@@ -13,9 +13,6 @@ export default remark({
     "derivation-chain",
     "brings-surface",
   ],
-  uses: [
-    "prop:genus-filtration-ideal",
-    "prop:categorical-dq-squared",
-  ],
+  uses: ["prop:genus-filtration-ideal"],
   cites: ["yekutieli2010"],
 });

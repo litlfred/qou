@@ -12,10 +12,5 @@ export default remark({
     "atom",
     "conservation",
   ],
-  uses: [
-    "def:breit-wheeler-pair-production",
-    "def:quark-antiquark-production",
-    "prop:confinement-operator-selection",
-    "prop:four-term-pair-nucleon",
-  ],
+  uses: ["prop:four-term-pair-nucleon"],
 });

@@ -15,9 +15,5 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.SkeinBindingLagrangian",
     validation: "not_checked",
   },
-  uses: [
-    "rem:skein-crossing-asymmetry",
-    "def:hadron",
-    "prop:qou-canonical-action",
-  ],
+  uses: ["prop:qou-canonical-action"],
 });

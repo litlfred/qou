@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalAction.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-action",
-    "prop:categorical-action-exists",
-  ],
+  uses: ["prop:categorical-action-exists"],
   proofs: ["prf:categorical-action-unique"],
   tags: ["uniqueness", "categorical-action"],
 });

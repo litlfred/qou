@@ -3,12 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:frobenius-gram-matrix",
   title: "Frobenius Gram matrix and dual construction in $H_3(q)$",
-  uses: [
-    "def:categorical-action",
-    "prop:fiber-adjoint-involution",
-    "prop:rj-canonical-inner-product",
-    "prop:knot-operator-selection",
-  ],
+  uses: ["prop:knot-operator-selection"],
   tags: [
     "gram-matrix",
     "frobenius-dual",

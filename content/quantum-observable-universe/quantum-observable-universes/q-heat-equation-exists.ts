@@ -6,11 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QHeatEquation.exists_solution",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-heat-equation",
-    "def:quantum-observable-universe",
-    "def:substrate-parameter",
-  ],
+  uses: ["def:q-heat-equation"],
   proofs: ["prf:q-heat-equation-exists"],
   tags: ["existence", "q-heat-equation", "well-posedness"],
 });

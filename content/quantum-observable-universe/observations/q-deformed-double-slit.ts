@@ -5,9 +5,7 @@ export default remark({
   label: "rem:q-deformed-double-slit",
   title: "Macroscopic scattering and the $q$-deformed double slit",
   uses: [
-    "prop:local-substrate-q",
     "ex:photon-wavefront",
-    "rem:knot-basis-color-content",
     "rem:breit-wheeler-vertex",
     "def:double-slit-q-phase",
   ],

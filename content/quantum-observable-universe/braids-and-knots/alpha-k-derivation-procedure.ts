@@ -9,12 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:jones-markov-trace",
-    "prop:wedderburn-trace-identity",
-    "prop:plancherel-weight-boundedness",
     "prop:mass-tower-coefficient-stratification",
     "prop:spectral-sequence-h3-explicit",
-    "prop:hoefsmit-seminormal-form",
   ],
   tags: [
     "alpha-k",

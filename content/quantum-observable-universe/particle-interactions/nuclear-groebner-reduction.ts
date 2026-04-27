@@ -23,6 +23,5 @@ export default proposition({
     "conj:shell-threading-energy",
     "unital-groebner-bases:def:groebner-basis",
     "unital-groebner-bases:def:division-algorithm",
-    "unital-groebner-bases:def:admissible-system",
   ],
 });

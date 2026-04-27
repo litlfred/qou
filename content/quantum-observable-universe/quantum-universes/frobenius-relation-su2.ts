@@ -5,5 +5,5 @@ export default example({
   label: "ex:frobenius-relation-su2",
   title: "The Frobenius relation in $\\mathrm{SU}(2)$",
   tags: ["su2", "frobenius"],
-  uses: ["ex:quantum-universe-su2", "def:frobenius-pairing"],
+  uses: ["ex:quantum-universe-su2"],
 });

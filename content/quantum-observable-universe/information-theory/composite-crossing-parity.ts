@@ -15,9 +15,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:knot-eigenbasis-complete",
     "prop:shell-structure-eigenvalues",
     "prop:noble-gas-characterization",
-    "def:stable-nucleus",
   ],
 });

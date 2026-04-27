@@ -13,7 +13,6 @@ export default proposition({
   ],
   uses: [
     "prop:cosimplicial-crossed-groupoid",
-    "def:quantum-characteristic-classes",
     "prop:topological-mass-formula",
   ],
   lean: { ref: "qou:QOU.Descartes.VolumeTowerDecomposition",

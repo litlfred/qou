@@ -8,7 +8,6 @@ export default theorem({
   },
   uses: [
     "def:classical-limit-functor",
-    "def:substrate-parameter-planck",
     "def:categorical-reeb-derivation",
   ],
   tags: [

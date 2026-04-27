@@ -9,7 +9,6 @@ export default theorem({
   uses: [
     "prop:three-parameters-wedderburn",
     "prop:binding-scale-catalan",
-    "thm:topological-mass",
     "def:atomic-braid",
   ],
 });

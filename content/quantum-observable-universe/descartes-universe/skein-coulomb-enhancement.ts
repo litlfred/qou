@@ -17,8 +17,4 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.skein_coulomb_enhancement",
     validation: "not_checked",
   },
-  uses: [
-    "prop:hadron-half-life",
-    "def:electron-knot",
-  ],
 });

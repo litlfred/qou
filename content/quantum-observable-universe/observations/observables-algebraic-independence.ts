@@ -12,10 +12,6 @@ export default remark({
     "proton-decay",
     "observations",
   ],
-  uses: [
-    "conj:hyperbolic-volume-transcendence",
-    "rem:implications-algebraic-independence",
-    "prop:topological-mass-formula",
-  ],
+  uses: ["rem:implications-algebraic-independence"],
   cites: ["yekutieli2010"],
 });

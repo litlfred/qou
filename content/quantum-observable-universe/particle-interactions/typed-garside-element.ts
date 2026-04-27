@@ -19,6 +19,5 @@ export default definition({
   uses: [
     "def:typed-crossing-operator",
     "prop:braiding-induced-ordering",
-    "prop:nuclear-groebner-reduction",
   ],
 });

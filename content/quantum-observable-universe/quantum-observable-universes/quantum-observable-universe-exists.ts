@@ -7,8 +7,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:quantum-observable-universe",
-    "def:quantum-universe",
     "ex:qou-su2",
     "ex:c-quantum-observable-universe",
   ],

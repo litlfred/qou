@@ -16,11 +16,8 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "rem:kashaev-volume-density",
     "rem:frobenius-packing-density",
     "prop:thurston-volume-additivity",
-    "prop:tower-binding-energy",
-    "def:atomic-braid",
   ],
   cites: ["thurston1978", "murakami2001"],
 });

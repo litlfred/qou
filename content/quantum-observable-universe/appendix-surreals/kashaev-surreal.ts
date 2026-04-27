@@ -13,11 +13,7 @@ export default conjecture({
     "open-problem",
     "reformulation",
   ],
-  uses: [
-    "rem:kashaev-volume-density",
-    "def:standard-part-functor",
-    "def:surreal-blowup-calculus",
-  ],
+  uses: ["rem:kashaev-volume-density"],
   cites: [
     "kashaev1997",
     "murakami-murakami2001",

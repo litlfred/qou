@@ -16,9 +16,7 @@ export default remark({
   ],
   uses: [
     "rem:atom-mass-full-hecke",
-    "rem:mass-comparison-table",
     "prop:wedderburn-mass-formula",
-    "def:hecke-mass-element",
     "def:algebraic-quantum-volume",
   ],
   cites: [

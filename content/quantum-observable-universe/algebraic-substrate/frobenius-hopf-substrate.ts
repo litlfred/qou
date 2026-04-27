@@ -6,6 +6,6 @@ export default definition({
   lean: { ref: "qou:QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate",
     validation: "not_checked",
   },
-  uses: ["def:quantum-universe", "def:frobenius-pairing"],
+  uses: ["def:frobenius-pairing"],
   tags: ["frobenius", "hopf-algebra", "substrate", "vacuum"],
 });

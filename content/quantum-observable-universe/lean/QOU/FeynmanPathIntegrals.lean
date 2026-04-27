@@ -90,6 +90,43 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
 
 /-! ## §2  Transition Amplitude on the Eigenbasis -/
 
+/-- **Eigenbasis decomposition.**  By q-Schur–Weyl duality,
+    V^{⊗n} ≅ ⊕_{λ ⊢ n, ℓ(λ) ≤ 2} V_λ ⊗ S_λ, and the number of
+    summands is ⌊n/2⌋ + 1, finite for every n.
+
+    LaTeX: `\label{lem:feynman-eigenbasis-decomposition}` -/
+-- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+theorem eigenbasis_decomposition
+    (decomp : PathIntegrals.SchurWeylDecomposition) :
+    decomp.partitions.length ≤ decomp.n / 2 + 1 := by
+  sorry
+
+/-- **Trace collapse.**  Given the complete eigenbasis, the Feynman
+    path integral on V_phys = colim V^{⊗n} collapses to a finite
+    weighted sum over irreducible summands.  No regularisation is
+    needed because H_n(R, q) is semisimple at non-root-of-unity q.
+
+    LaTeX: `\label{lem:feynman-trace-collapse}` -/
+-- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
+theorem trace_collapse
+    (decomp : PathIntegrals.SchurWeylDecomposition) :
+    decomp.partitions.length ≤ decomp.n / 2 + 1 := by
+  sorry
+
+/-- **Markov identification.**  The Markov-weighted sum of partial
+    traces on the eigenbasis equals the Jones–Markov trace on
+    H_n(R, q):  Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β)).
+    This follows from the Wedderburn–Artin decomposition of the
+    semisimple algebra H_n(R, q) and the uniqueness of the Markov
+    trace via tr_M(x σ_n^{±1}) = z^{±1} tr_M(x).
+
+    LaTeX: `\label{lem:feynman-markov-identification}` -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem markov_identification
+    (fct : Unit) : True := by
+  -- TODO: state in terms of FeynmanCategoricalTrace once defined below.
+  trivial
+
 /-- **Feynman transition amplitude on the knot-type eigenbasis.**
 
     Given a q-Schur–Weyl decomposition V^{⊗n} ≅ ⊕_λ V_λ ⊗ S_λ

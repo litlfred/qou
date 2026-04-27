@@ -15,7 +15,5 @@ export default remark({
   uses: [
     "rem:kummer-filtration-obstruction",
     "rem:groebner-nf-computation",
-    "prop:nuclear-groebner-reduction",
-    "thm:qu-to-qou",
   ],
 });

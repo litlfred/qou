@@ -15,10 +15,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:quantum-temperature",
     "def:quantum-pressure",
     "def:quantum-volume",
-    "def:categorical-action",
     "rem:noether-theorem-callout",
   ],
 });

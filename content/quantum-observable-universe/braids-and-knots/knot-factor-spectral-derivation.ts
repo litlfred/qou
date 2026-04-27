@@ -12,8 +12,6 @@ export default proposition({
     "rem:gram-matrix-spectral-connection",
     "prop:unified-curvature-rank-mass-formula",
     "conj:knot-factor-frobenius-pairing",
-    "prop:spectral-sequence-collapse",
-    "prop:wigner-np-pairing",
   ],
   tags: [
     "knot-factor",

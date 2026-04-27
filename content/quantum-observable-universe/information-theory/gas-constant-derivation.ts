@@ -11,8 +11,5 @@ export default remark({
     "carbon-12",
     "fundamental-constants",
   ],
-  uses: [
-    "prop:boltzmann-constant",
-    "prop:terminal-resolution",
-  ],
+  uses: ["prop:boltzmann-constant"],
 });

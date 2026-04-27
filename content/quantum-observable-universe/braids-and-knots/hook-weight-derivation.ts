@@ -8,9 +8,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:wedderburn-mass-formula",
     "prop:degree-two-baryon-weight",
-    "def:hecke-mass-element",
     "prop:shell-transition-knot",
   ],
 });

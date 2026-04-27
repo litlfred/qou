@@ -7,8 +7,6 @@ export default conjecture({
   uses: [
     "conj:q-geometric-langlands",
     "rem:fibre-functor-rigidity",
-    "def:q-hecke-eigensheaf",
-    "def:q-langlands-dual",
   ],
   cites: ["frenkel2007"],
   tags: ["geometric-langlands", "fiber-functor", "tannaka-krein"],

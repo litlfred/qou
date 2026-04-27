@@ -9,11 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:jones-markov-trace",
-    "prop:hoefsmit-seminormal-form",
     "prop:alpha-k-derivation-procedure",
     "prop:explicit-alpha-k-h3",
-    "prop:wedderburn-trace-identity",
   ],
   tags: [
     "wedderburn",

@@ -3,11 +3,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:kelvin-dispersion-derivation",
   title: "Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem",
-  uses: [
-    "prop:discrete-vortex-spectrum",
-    "rem:vortex-intensity-modes",
-    "def:q-navier-stokes",
-    "rem:geodesic-vortices",
-  ],
+  uses: ["def:q-navier-stokes"],
   tags: ["kelvin-wave", "dispersion", "q-laplacian", "eigenvalue", "derivation"],
 });

@@ -5,9 +5,7 @@ export default proposition({
   title: "Symbolic $Q$-value of free neutron decay",
   uses: [
     "def:typed-crossing-operator",
-    "rem:calibration-inputs",
     "rem:energy-scale-planck",
-    "prop:categorical-mass-markov",
   ],
   tags: [
     "beta-decay",

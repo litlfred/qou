@@ -7,11 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.CrossingEnergy",
     validation: "not_checked",
   },
-  uses: [
-    "rem:r-matrix-braiding",
-    "def:substrate-parameter",
-    "def:quantum-observable-universe",
-    "prop:braiding-eigenvalue-extraction",
-    "prop:nuclear-groebner-reduction",
-  ],
+  uses: ["prop:nuclear-groebner-reduction"],
 });

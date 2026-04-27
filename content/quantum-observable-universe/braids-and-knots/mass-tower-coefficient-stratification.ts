@@ -9,14 +9,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:unified-curvature-rank-mass-formula",
-    "prop:plancherel-term-7-formulation",
     "prop:plancherel-weight-boundedness",
     "rem:mass-formula-wedderburn-enumeration",
     "prop:gravity-spectral-prefactor",
     "prop:knot-factor-spectral-form",
-    "prop:pauli-factor-wedderburn",
-    "prop:confinement-categorical",
   ],
   tags: [
     "mass-tower",

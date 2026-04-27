@@ -6,6 +6,6 @@ export default proposition({
   title: "Categorical lifting condition holds in the brane tower",
   tags: ["yekutieli", "lifting", "brane-tower"],
   examples: ["ex:yekutieli-lifting-su2"],
-  uses: ["def:quantum-characteristic-classes", "def:yekutieli-lifting-condition"],
+  uses: ["def:quantum-characteristic-classes"],
   proofs: ["prf:yekutieli-lifting"],
 });

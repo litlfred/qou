@@ -13,12 +13,5 @@ export default remark({
     "beta-decay",
     "interpretation",
   ],
-  uses: [
-    "thm:knot-mass-formula-unified",
-    "prop:categorical-mass-markov",
-    "prop:partition-sum-proton-residual",
-    "thm:frobenius-codim-universal",
-    "prop:mass-endomorphism-tower",
-    "prop:figure-eight-bw-coefficients",
-  ],
+  uses: ["thm:knot-mass-formula-unified"],
 });

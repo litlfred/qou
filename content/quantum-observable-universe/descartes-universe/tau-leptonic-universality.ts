@@ -18,7 +18,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:beta-decay-skein",
     "prop:lepton-continuant-recurrence",
     "rem:force-knot-identification",
   ],

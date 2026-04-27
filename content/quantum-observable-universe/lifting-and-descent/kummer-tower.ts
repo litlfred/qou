@@ -11,8 +11,5 @@ export default remark({
     "euler-characteristic",
     "complementary-subgroup",
   ],
-  uses: [
-    "def:quantum-characteristic-classes",
-    "thm:qu-to-qou",
-  ],
+  uses: ["thm:qu-to-qou"],
 });

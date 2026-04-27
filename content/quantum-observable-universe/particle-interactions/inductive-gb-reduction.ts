@@ -13,8 +13,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Interactions.inductiveGBReduction",
     validation: "not_checked",
   },
-  uses: [
-    "prop:nuclear-groebner-reduction",
-    "def:derived-atom",
-  ],
+  uses: ["def:derived-atom"],
 });

@@ -6,11 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QuantumCharClasses.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-characteristic-classes",
-    "def:recursive-brane-tower",
-    "prop:jet-prolongation",
-  ],
+  uses: ["def:quantum-characteristic-classes"],
   proofs: ["prf:quantum-characteristic-classes-exists"],
   tags: ["existence", "characteristic-classes", "cohomology"],
 });

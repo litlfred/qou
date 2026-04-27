@@ -13,8 +13,5 @@ export default remark({
     "jet-bundle",
     "residue",
   ],
-  uses: [
-    "rem:generation-dependent-sw",
-    "rem:color-tube-cubic",
-  ],
+  uses: ["rem:generation-dependent-sw"],
 });

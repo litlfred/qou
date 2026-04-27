@@ -8,12 +8,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:unified-curvature-rank-mass-formula",
-    "prop:confinement-categorical",
     "rem:confinement-curvature-rank",
-    "prop:curvature-rank-gb-stratification",
-    "prop:knot-factor-frobenius-pairing",
     "prop:mass-tower-coefficient-stratification",
-    "prop:plancherel-weight-boundedness",
   ],
 });

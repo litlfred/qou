@@ -6,8 +6,6 @@ export default remark({
   title: "The $\\rho$ representation as $S_3$ holonomy",
   tags: ["exposition", "holonomy", "s3", "chiral-sheets", "lagrange-resolvents"],
   uses: [
-    "def:braid-twist-flip",
-    "def:su2-generators",
     "rem:holonomy-trefoil",
     "prop:lagrange-resolvent-transform",
   ],

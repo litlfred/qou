@@ -4,13 +4,8 @@ export default conjecture({
   label: "conj:mass-endomorphism",
   title: "Mass endomorphism conjecture",
   uses: [
-    "def:mass-identity",
-    "def:hecke-mass-element",
     "prop:hecke-mass-trace",
     "prop:categorical-mass-markov",
-    "thm:topological-mass",
-    "prop:knot-operator-selection",
-    "prop:frobenius-gram-matrix",
     "cor:topological-decomposition-mass",
   ],
   tags: [

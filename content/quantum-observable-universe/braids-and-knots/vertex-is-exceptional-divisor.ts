@@ -11,7 +11,6 @@ export default proposition({
     "blow-up", "braiding",
   ],
   uses: [
-    "def:exceptional-divisor",
     "def:reeb-bundle",
     "prop:braid-action-tensor",
   ],

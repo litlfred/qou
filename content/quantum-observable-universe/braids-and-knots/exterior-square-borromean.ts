@@ -8,7 +8,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:three-parameters-wedderburn",
     "prop:borromean-baryon-interpretation",
     "prop:spectral-sequence-collapse",
   ],

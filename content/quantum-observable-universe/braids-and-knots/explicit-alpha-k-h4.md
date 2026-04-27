@@ -28,19 +28,10 @@ $c_C(\lambda) \in \mathbb{Q}(q)$ given by:*
 
 *The depth-stratum coefficients $\alpha_\lambda(H_4) := \mathrm{tr}_M(r_\lambda)
 = y_\lambda \cdot \chi_\lambda(r_\lambda)$ evaluate at the substrate
-value $q_0 \approx 1.110$ to:*
-
-| $\lambda$ | depth | $\alpha_\lambda(H_4)$ |
-|:--:|:--:|--:|
-| $(4)$ | $0$ | $+0.93506343$ |
-| $(3,1)$ | $1$ | $-0.77208134$ |
-| $(2,2)$ | $1$ | $-0.21145633$ |
-| $(2,1,1)$ | $2$ | $+0.09693702$ |
-| $(1^4)$ | $3$ | $+0.00346252$ |
-
-*All five closed forms verified to numerical precision against the Hoefsmit
-character matrix and Jones-Markov $y_\lambda$ values (consistency residual
-$< 10^{-15}$).*
+value $q_0 \approx 1.110$ to numerical values in
+[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn-orthogonal-r-3-h4.witness.json),
+verified to numerical precision against the Hoefsmit character matrix
+and Jones-Markov $y_\lambda$ values (consistency residual $< 10^{-15}$).*
 
 ## Proof
 
@@ -78,15 +69,9 @@ uniquely determined.
 
 **Numerical evaluation at $q_0$.**  Hoefsmit characters computed via
 [seminormal matrices](#prop:hoefsmit-seminormal-form) (see
-`folio-assistant/computations/hecke_characters.py`):
-
-| class | $\chi_{(4)}$ | $\chi_{(3,1)}$ | $\chi_{(2,2)}$ | $\chi_{(2,1,1)}$ | $\chi_{(1^4)}$ |
-|:--:|--:|--:|--:|--:|--:|
-| $e$ | $1.000$ | $3.000$ | $2.000$ | $3.000$ | $1.000$ |
-| $(12)$ | $1.110$ | $1.319$ | $0.209$ | $-0.692$ | $-0.901$ |
-| $(12)(34)$ | $1.232$ | $-0.768$ | $2.044$ | $-1.188$ | $0.812$ |
-| $(123)$ | $1.232$ | $0.232$ | $-1.000$ | $-0.188$ | $0.812$ |
-| $(1234)$ | $1.368$ | $-1.110$ | $0.000$ | $+0.901$ | $-0.731$ |
+`folio-assistant/computations/hecke_characters.py`); the $5 \times 5$
+character matrix at $q_0$ is recorded in
+[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn-orthogonal-r-3-h4.witness.json).
 
 **Sanity verification** — central character identity at every class:
 

@@ -19,9 +19,7 @@ export default remark({
   uses: [
     "prop:hecke-markov-transition",
     "prop:hoefsmit-seminormal-form",
-    "thm:jones-markov-trace",
     "def:information-theoretic-time",
-    "thm:markov-trace-product",
     "rem:markov-trace-product-interpretation",
   ],
 });

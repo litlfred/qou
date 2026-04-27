@@ -13,10 +13,5 @@ export default remark({
     "jucys-murphy",
   ],
   interprets: "prop:gram-weighted-qvalue",
-  uses: [
-    "prop:gram-weighted-qvalue",
-    "def:typed-garside-element",
-    "prop:frobenius-gram-matrix",
-    "prop:rj-canonical-inner-product",
-  ],
+  uses: ["prop:gram-weighted-qvalue"],
 });

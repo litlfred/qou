@@ -8,11 +8,7 @@ export default proposition({
     ref: "qou:QOU.Descartes.force_carrier_bring_uniqueness",
     validation: "not_checked",
   },
-  uses: [
-    "def:brings-surface",
-    "prop:torus-knot-generators",
-    "prop:torus-knot-genus-four-unique",
-  ],
+  uses: ["prop:torus-knot-genus-four-unique"],
   tags: [
     "force-carrier",
     "torus-knot",

@@ -5,8 +5,5 @@ export default definition({
   lean: { ref: "qou:QOU.CommutativeQOU", validation: "not_checked" },
   title: "Commutative specialisation of a QOU",
   tags: ["commutative-limit", "classical-limit", "frobenius-hopf"],
-  uses: [
-    "def:quantum-observable-universe",
-    "rem:hopf-non-cocommutativity",
-  ],
+  uses: ["rem:hopf-non-cocommutativity"],
 });

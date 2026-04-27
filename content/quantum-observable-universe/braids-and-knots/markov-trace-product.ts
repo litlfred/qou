@@ -14,8 +14,5 @@ export default theorem({
   lean: { ref: "qou:QOU.markov_trace_product",
     validation: "not_checked",
   },
-  uses: [
-    "thm:jones-markov-trace",
-    "def:vertex-operator",
-  ],
+  uses: ["def:vertex-operator"],
 });

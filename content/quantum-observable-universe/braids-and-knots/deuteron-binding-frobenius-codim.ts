@@ -7,11 +7,5 @@ export default proposition({
     ref: "qou:QOU.WedderburnMass.deuteronBindingFrobeniusCodim",
     validation: "not_checked",
   },
-  uses: [
-    "thm:frobenius-codim-universal",
-    "prop:wigner-np-pairing",
-    "prop:binding-scale-catalan",
-    "prop:partition-sum-proton-residual",
-    "rem:deuteron-first-principles",
-  ],
+  uses: ["rem:deuteron-first-principles"],
 });

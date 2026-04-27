@@ -15,8 +15,5 @@ export default remark({
     "computational-witness",
     "status-remark",
   ],
-  uses: [
-    "rem:beta-decay-energy-scale",
-    "rem:nucleon-nf-observability",
-  ],
+  uses: ["rem:beta-decay-energy-scale"],
 });

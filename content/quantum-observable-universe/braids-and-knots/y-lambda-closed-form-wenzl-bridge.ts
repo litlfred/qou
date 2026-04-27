@@ -11,8 +11,6 @@ export default proposition({
   uses: [
     "prop:explicit-alpha-k-h3",
     "prop:alpha-k-derivation-procedure",
-    "thm:jones-markov-trace",
-    "prop:hoefsmit-seminormal-form",
   ],
   cites: ["wenzl1988", "orellana1998", "chlouveraki2016"],
   tags: [

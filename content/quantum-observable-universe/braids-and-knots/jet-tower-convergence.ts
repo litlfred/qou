@@ -7,15 +7,6 @@ export default proposition({
   lean: { ref: "qou:QOU.MassEndomorphism.jet_tower_tail_bound",
     validation: "not_checked",
   },
-  uses: [
-    "prop:mass-endomorphism-tower",
-    "rem:mass-endomorphism-jet-tower",
-    "def:recursive-brane-tower",
-    "prop:confinement-sdp",
-    "rem:conway-normal-form",
-    "rem:calculus-up-to-epsilon",
-    "def:surreal-blowup-calculus",
-    "rem:body-asymptotics-catalog",
-  ],
+  uses: ["prop:confinement-sdp"],
   cites: ["leitner2026"],
 });

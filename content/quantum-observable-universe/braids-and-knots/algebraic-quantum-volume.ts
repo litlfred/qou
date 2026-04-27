@@ -7,9 +7,5 @@ export default definition({
     ref: "qou:QOU.BraidKnot.AlgebraicQuantumVolume",
     validation: "not_checked",
   },
-  uses: [
-    "thm:markov-trace-product",
-    "def:vertex-operator",
-    "thm:wedderburn-mass-formula",
-  ],
+  uses: ["thm:wedderburn-mass-formula"],
 });

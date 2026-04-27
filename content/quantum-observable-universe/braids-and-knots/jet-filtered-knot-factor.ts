@@ -9,9 +9,6 @@ export default conjecture({
   },
   uses: [
     "prop:confined-knot-binding",
-    "prop:nuclear-knot-classification",
-    "prop:three-parameters-wedderburn",
-    "def:atomic-braid",
     "prop:hook-weight-derivation",
   ],
   tags: [

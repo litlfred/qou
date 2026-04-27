@@ -10,14 +10,8 @@ export default proposition({
   },
   uses: [
     "prop:gb-spectral-sequence",
-    "thm:knot-mass-formula-unified",
-    "thm:frobenius-codim-universal",
-    "prop:mass-endomorphism-tower",
-    "prop:gb-residue-spectral-sum",
     "prop:jet-prefix-gb-filtration",
     "prop:chirality-from-frobenius-self-pairing",
-    "def:confinement-level",
-    "thm:jones-markov-trace",
   ],
   tags: [
     "spectral-sequence",

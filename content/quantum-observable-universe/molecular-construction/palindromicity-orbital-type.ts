@@ -9,10 +9,7 @@ export default conjecture({
   lean: { ref: "qou:QOU.Molecular.PalindromicityOrbitalType",
     validation: "not_checked",
   },
-  uses: [
-    "conj:shell-closure-nf-term-count",
-    "conj:electron-shells-hopf",
-  ],
+  uses: ["conj:shell-closure-nf-term-count"],
   cites: ["iwahori1964", "jones1987"],
   tags: [
     "electron-shell",

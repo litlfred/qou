@@ -5,9 +5,10 @@ export default proof({
   title: "Proof of existence of quantum observable universes",
   uses: [
     "prop:quantum-observable-universe-exists",
-    "def:quantum-observable-universe",
-    "def:frobenius-pairing",
-    "ex:c-quantum-observable-universe",
+    "lem:qou-exists-axiom-1",
+    "lem:qou-exists-axiom-2",
+    "lem:qou-exists-axiom-3",
+    "lem:qou-exists-axiom-4",
   ],
   cites: [
     "woronowicz1987",

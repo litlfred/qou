@@ -5,14 +5,8 @@ export default conjecture({
   title:
     "The $q$-deformed Birch and Swinnerton-Dyer conjecture",
   uses: [
-    "prop:descartes-elliptic-curve",
-    "def:local-q-zeta-function",
     "thm:tannaka-krein-isomorphism",
     "thm:macroscopic-stability-equivalence",
-    "conj:classical-riemann-hypothesis",
-    "prop:coral-elliptic",
-    "rem:substrate-gm-torsion",
-    "prop:root-of-unity-truncation",
     "prop:ns-kummer-specialisation",
   ],
   tags: [

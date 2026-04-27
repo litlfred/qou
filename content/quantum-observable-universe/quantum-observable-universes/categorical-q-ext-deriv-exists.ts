@@ -6,12 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalQExtDeriv.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-q-ext-deriv",
-    "def:categorical-connection",
-    "def:substrate-parameter",
-    "def:weight-decomposition",
-  ],
+  uses: ["def:categorical-q-ext-deriv"],
   proofs: ["prf:categorical-q-ext-deriv-exists"],
   tags: ["existence", "q-ext-deriv", "q-deformed"],
 });

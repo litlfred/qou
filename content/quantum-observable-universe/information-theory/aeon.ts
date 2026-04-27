@@ -11,12 +11,8 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:jet-horizon",
-    "def:big-bang-state",
     "def:cmb-boundary-datum",
-    "def:bundle-initial-conditions",
     "def:information-theoretic-time",
     "rem:bundle-category",
-    "prop:jet-prolongation",
   ],
 });

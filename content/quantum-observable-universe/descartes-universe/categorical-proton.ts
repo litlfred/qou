@@ -7,6 +7,6 @@ export default definition({
   lean: { ref: "qou:QOU.Torsion.CategoricalProton",
     validation: "not_checked",
   },
-  uses: ["def:down-quark", "conj:borromean-quark", "def:color-tube-coordinates"],
+  uses: ["def:down-quark"],
   cites: ["manuscript"],
 });

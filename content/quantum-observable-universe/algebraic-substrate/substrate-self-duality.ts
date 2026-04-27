@@ -6,7 +6,7 @@ export default theorem({
   lean: { ref: "qou:QOU.AlgebraicSubstrate.substrate_self_duality",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate", "def:rigid-dualizing-complex"],
+  uses: ["def:rigid-dualizing-complex"],
   cites: ["yekutieli2015", "kock2004"],
   tags: ["self-duality", "frobenius", "dualizing-complex"],
 });

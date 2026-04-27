@@ -11,11 +11,6 @@ export default conjecture({
     "axiom-relaxation",
     "open-problem",
   ],
-  uses: [
-    "def:frobenius-pairing",
-    "def:quantum-observable-universe",
-    "def:standard-part-functor",
-    "conj:archimedean-stpart",
-  ],
+  uses: ["conj:archimedean-stpart"],
   cites: ["robinson1966"],
 });

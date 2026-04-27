@@ -5,8 +5,5 @@ export default remark({
   label: "rem:q-exp-finite-field-obstruction",
   title: "Finite-field obstruction for $\\exp_q$",
   tags: ["q-exponential", "finite-field", "characteristic-p", "obstruction"],
-  uses: [
-    "def:q-exponential",
-    "rem:base-field-independence",
-  ],
+  uses: ["def:q-exponential"],
 });

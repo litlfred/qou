@@ -6,8 +6,5 @@ export default definition({
   lean: { ref: "qou:QOU.HabiroRing.HabiroElement",
     validation: "not_checked",
   },
-  uses: [
-    "rem:hecke-algebra-from-braiding",
-    "def:algebraic-quantum-volume",
-  ],
+  uses: ["def:algebraic-quantum-volume"],
 });

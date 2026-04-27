@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QResolvent.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-resolvent",
-    "prop:q-resolvent-exists",
-  ],
+  uses: ["prop:q-resolvent-exists"],
   proofs: ["prf:q-resolvent-unique"],
   tags: ["uniqueness", "resolvent"],
 });

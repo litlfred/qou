@@ -6,5 +6,5 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:atomic-nf-witness",
   title: "Atomic braid normal form witness",
-  uses: ["def:atomic-braid", "prop:nuclear-groebner-reduction"],
+  uses: ["def:atomic-braid"],
 });

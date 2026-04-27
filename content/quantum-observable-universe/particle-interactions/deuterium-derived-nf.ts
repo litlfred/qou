@@ -5,9 +5,5 @@ export default example({
   title: "Deuterium: proton--neutron binding normal form",
   interprets: "prop:four-term-pair-nucleon",
   tags: ["deuterium", "nucleus", "normal-form", "derived", "binding"],
-  uses: [
-    "def:categorical-proton",
-    "def:categorical-neutron",
-    "prop:confinement-operator-selection",
-  ],
+  uses: ["prop:confinement-operator-selection"],
 });

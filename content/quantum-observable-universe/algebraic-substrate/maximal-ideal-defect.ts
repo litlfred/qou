@@ -6,6 +6,6 @@ export default definition({
   lean: { ref: "qou:QOU.AlgebraicSubstrate.MaximalIdealDefect",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate", "def:levi-form-defect"],
+  uses: ["def:levi-form-defect"],
   tags: ["maximal-ideal", "unit-coordinate", "defect", "singularity"],
 });

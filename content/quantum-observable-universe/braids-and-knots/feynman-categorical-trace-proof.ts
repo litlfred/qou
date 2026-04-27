@@ -8,8 +8,7 @@ export default proof({
   title: "Proof of Feynman transition amplitude as categorical trace",
   uses: [
     "prop:feynman-categorical-trace",
-    "prop:knot-eigenbasis-complete",
-    "thm:jones-markov-trace",
-    "prop:categorical-mass-markov",
+    "lem:feynman-trace-collapse",
+    "lem:feynman-markov-identification",
   ],
 });

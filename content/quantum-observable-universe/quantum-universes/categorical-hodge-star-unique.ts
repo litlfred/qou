@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalHodgeStar.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-hodge-star",
-    "prop:categorical-hodge-star-exists",
-  ],
+  uses: ["prop:categorical-hodge-star-exists"],
   proofs: ["prf:categorical-hodge-star-unique"],
   tags: ["uniqueness", "hodge-star"],
 });

@@ -7,7 +7,6 @@ export default proposition({
   uses: [
     "prop:wedderburn-trace-identity",
     "prop:q-integer-mass-formula",
-    "prop:three-parameters-wedderburn",
   ],
   tags: ["wigner", "isospin", "casimir", "quantum-factorial", "frobenius-reciprocity"],
 });

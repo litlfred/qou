@@ -4,11 +4,6 @@ export default proposition({
   label: "prop:q-gl-obstruction-calc",
   lean: { ref: "qou:QOU.q_gl_obstruction_calc", validation: "not_checked" },
   title: "Obstruction to $q$-flatness",
-  uses: [
-    "def:q-flat-connection",
-    "def:quantum-characteristic-classes",
-    "def:q-local-system",
-  ],
   proofs: ["prf:q-gl-obstruction-calc"],
   tags: ["geometric-langlands", "yekutieli", "obstruction"],
 });

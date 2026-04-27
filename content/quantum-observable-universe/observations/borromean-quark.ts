@@ -13,8 +13,5 @@ export default conjecture({
     "exceptional-divisor",
     "hyperbolic-volume",
   ],
-  uses: [
-    "def:borromean-baryon",
-    "def:neutrino-knot",
-  ],
+  uses: ["def:neutrino-knot"],
 });

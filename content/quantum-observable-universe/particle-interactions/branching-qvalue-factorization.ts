@@ -14,8 +14,5 @@ export default proposition({
   lean: { ref: "qou:QOU.ParticleInteractions.branching_qvalue_factorization",
     validation: "not_checked",
   },
-  uses: [
-    "def:per-nucleon-channel-decomposition",
-    "def:spectator-normalization",
-  ],
+  uses: ["def:spectator-normalization"],
 });
