@@ -74,7 +74,7 @@ where `ℏ_q = 1 - 1/q` is the quantum Planck constant. -/
     This is the central equation of the QOU mass derivation.
     Ref: Manuscript Conjecture 4.25. -/
 -- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
-theorem skein_mass_residue (q : ℝ) (hq : q > 1) :
+theorem skein_mass_residue (q : ℝ) (_hq : q > 1) :
     let h_q := quantum_planck q
     h_q ≠ 0 →
     experimental_mu_e_ratio = vol_figure_eight / h_q ^ 2 →

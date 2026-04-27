@@ -107,7 +107,7 @@ theorem zero_isInfinitesimal : IsInfinitesimal (0 : K) := by
 /-- The image of `ofReal` commutes with `abs`. -/
 theorem ofReal_abs (r : ℝ) :
     |(SurrealField.ofReal r : K)| = SurrealField.ofReal |r| := by
-  rcases le_or_lt 0 r with hr | hr
+  rcases le_or_gt 0 r with hr | hr
   · rw [abs_of_nonneg hr, abs_of_nonneg]
     have h := SurrealField.ofReal_strictMono.monotone hr
     rwa [map_zero] at h

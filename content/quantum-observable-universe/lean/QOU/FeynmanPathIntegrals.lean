@@ -70,7 +70,7 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
         _ < q := hq_gt
     apply div_pos
     · have h2 : (q⁻¹) ^ n < q ^ n :=
-        pow_lt_pow_left hqi_lt hqi.le (Nat.pos_iff_ne_zero.mp hn)
+        pow_lt_pow_left₀ hqi_lt hqi.le (Nat.pos_iff_ne_zero.mp hn)
       linarith
     · linarith
   · -- 0 < q < 1: numerator < 0, denominator < 0
@@ -81,7 +81,7 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
         calc q < 1 := hq_lt
           _ < q⁻¹ := by rw [lt_inv_comm₀ (by linarith) hq]; exact hq_lt
       have h2 : q ^ n < (q⁻¹) ^ n :=
-        pow_lt_pow_left h1 hq.le (Nat.pos_iff_ne_zero.mp hn)
+        pow_lt_pow_left₀ h1 hq.le (Nat.pos_iff_ne_zero.mp hn)
       linarith
     · have : q < q⁻¹ := by
         calc q < 1 := hq_lt
@@ -164,7 +164,7 @@ theorem speed_diverges_at_one (ε : ℝ) (hε : 0 < ε) :
     ∃ (δ : ℝ), 0 < δ ∧ ∀ (q : ℝ), 0 < q - 1 → q - 1 < δ →
     ε < 1 / (q - 1) := by
   refine ⟨1 / (ε + 1), by positivity, fun q hq_pos hq_lt => ?_⟩
-  rw [lt_div_iff hq_pos]
+  rw [lt_div_iff₀ hq_pos]
   have hε1 : 0 < ε + 1 := by linarith
   have : (q - 1) * (ε + 1) < 1 := by
     calc (q - 1) * (ε + 1) < (1 / (ε + 1)) * (ε + 1) := by

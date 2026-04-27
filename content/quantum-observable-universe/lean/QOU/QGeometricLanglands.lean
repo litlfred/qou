@@ -382,7 +382,7 @@ class QGeometricLanglandsConjecture (M : Type*) where
     langlandsFunctor es = es.eigenvalue
   /-- Injectivity on q-opers: distinct q-opers produce distinct
       eigensheaves. -/
-  oper_injective : ∀ (op op' : QOper M)
+  oper_injective : ∀ (_op _op' : QOper M)
     (es es' : QHeckeEigensheaf M),
     langlandsFunctor es = langlandsFunctor es' →
     es.eigenvalue = es'.eigenvalue
