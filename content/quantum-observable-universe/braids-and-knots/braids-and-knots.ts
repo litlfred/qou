@@ -445,7 +445,6 @@ export default chapter({
         "plancherel-term-7-formulation",
         "plancherel-weight-boundedness",
         "unified-curvature-rank-mass-formula",
-        "b-over-a-spectral-decomposition",
         "chirality-residue-mass-term",
         "e-infinity-page-identifications",
         "spectral-sequence-h3-explicit",
