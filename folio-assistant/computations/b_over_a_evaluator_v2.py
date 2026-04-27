@@ -291,7 +291,10 @@ def build_witness() -> dict:
 def main() -> int:
     witness = build_witness()
     out = HERE / "b-over-a-witness-v2.json"
-    out.write_text(json.dumps(witness, indent=2))
+    out.write_text(
+        json.dumps(witness, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
     print(f"q_0 = {Q0:.10f}, E_0 = {E_0_MEV:.6f} MeV")
     print(f"fitted c_S (v4 SDP) = {witness['fit']['fitted_c_S']:.6e}")
