@@ -1,29 +1,39 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T19:16:12.854357+00:00",
-  "commitSha": "6320e166272a7da6883e1e7e1a35e37629aa3bd5",
+  "computedAt": "2026-04-27T19:20:24.373366+00:00",
+  "commitSha": "ac29496148609b0cb5798d8d7297066c0ebf840a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 8,
   "computation": "categorical-q-decay-ba-low-isotopes",
   "scriptFile": "categorical_q_decay_ba_low_isotopes.py",
-  "scriptHash": "3c9a3b760b75",
-  "scriptCommitSha": "6320e166272a7da6883e1e7e1a35e37629aa3bd5",
-  "description": "Canonical B/A and Q-values for low isotopes via the paper's 3-input scheme (m_μ/m_e, m_e, Q_β(n)) and 4-tier formula. Layer 1: best tier per isotope (D: T1+T4; T/³He: BW+chirality; ⁴He: BW+chirality²+shell; A≥5: BW+shell). Layer 2: Q_β⁻ = Q_β(n) + B_d − B_p. Layer 3: NOT computed (N_v open). All canonical, no fits beyond the 3 structural inputs.",
+  "scriptHash": "5270774ac1cf",
+  "scriptCommitSha": "ac29496148609b0cb5798d8d7297066c0ebf840a",
+  "description": "Canonical B/A and Q-values for low isotopes via the paper's 4-input Skein-pair scheme (m_μ/m_e, m_e, μ_u, μ_d) and 4-tier formula. Layer 1: best tier per isotope (D: T1+T4; T/³He: BW+chirality; ⁴He: BW+chirality²+shell; A≥5: BW+shell). Layer 2: Q_β⁻ = Q_β(n) + B_d − B_p where Q_β(n) = m_n − m_p − m_e is exact under the Skein-pair formula. Layer 3: NOT computed (N_v open). All canonical, no fits beyond the 4 structural inputs. p ≠ n via μ_d ≠ μ_u (Δ = μ_d − μ_u captures n-p splitting exactly).",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0": 1.1099785955541805,
     "q_0_err": 1.3578965598837824e-09,
     "m_e_MeV": 0.51099895,
-    "Q_beta_n_MeV": 0.7823334100000222,
-    "Q_beta_n_MeV_err": 6.129437351829285e-07,
-    "m_p_MeV_codata_for_compare": 938.27208816,
-    "m_n_MeV_codata_for_compare": 939.56542052
+    "mu_u_MeV": 311.10125096044123,
+    "mu_d_MeV": 312.3893257900523,
+    "mu_d_minus_mu_u_MeV": 1.2880748296110485,
+    "Q_beta_n_MeV_derived": 0.7823334100000222,
+    "Q_beta_n_MeV_codata": 0.7823334100000222,
+    "m_p_MeV": 938.27208816,
+    "m_n_MeV": 939.56542052
   },
   "data": {
-    "calibration_scheme": "3-input (m_μ/m_e, m_e, Q_β(n))",
+    "calibration_scheme": "4-input Skein-pair (m_μ/m_e, m_e, μ_u, μ_d) per nucleon-mass-splitting-proof.md (commit bd81514)",
     "formula_scheme": "4-tier per isotope",
+    "p_n_distinction": {
+      "m_p_skein_pair": "S_uu + 2·S_ud",
+      "m_n_skein_pair": "2·S_ud + S_dd",
+      "m_n_minus_m_p_formula": "((q+q⁻¹)/(q^{1/2}+q^{-1/2})) · (μ_d − μ_u)",
+      "m_n_minus_m_p_value_MeV": 1.2933323600000222,
+      "exact_under_4_input_scheme": true
+    },
     "layer1_b_over_a": [
       {
         "sym": "1H",

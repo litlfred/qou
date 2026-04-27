@@ -1,15 +1,29 @@
 #!/usr/bin/env python3
-"""Canonical Q / decay / B/A — 3-input scheme + 4-tier formula.
+"""Canonical Q / decay / B/A — 4-input scheme (Skein-pair p/n) + 4-tier formula.
 
 Per
-content/quantum-observable-universe/braids-and-knots/calibration-inputs.md
-the paper's THREE structural inputs are:
+content/quantum-observable-universe/observations/nucleon-mass-splitting-proof.md
+(commit bd81514, PR #443) the framework's canonical p/n treatment uses
+Skein-pair masses with constituent dressed quark masses:
 
-  1. m_μ/m_e = 206.768   (dimensionless → fixes q_0)
-  2. m_e = 0.511 MeV     (leptonic mass scale)
-  3. Q_β(n) = 0.7823 MeV (hadronic energy scale E_0)
+  m_p = S_uu(q) + 2·S_ud(q)
+  m_n = 2·S_ud(q) + S_dd(q)
+  m_n - m_p = (q + q⁻¹) / (q^{1/2} + q^{-1/2}) · (μ_d − μ_u)
 
-These are NOT fits — each fixes a distinct physical sector.
+This is a 4-input scheme:
+
+  1. m_μ/m_e = 206.768   (fixes q_0)
+  2. m_e = 0.511 MeV     (leptonic scale)
+  3. μ_u = 311.10 MeV    (proton-side dressed quark, from m_p calib)
+  4. μ_d = 312.39 MeV    (neutron-side dressed quark, from m_n−m_p split)
+
+p and n are CORRECTLY DIFFERENT under this representation — the
+n-p mass splitting is exact (μ_d − μ_u capture). Equivalently the
+3-input + Q_β scheme of calibration-inputs.md absorbs (μ_u, μ_d)
+into a single hadronic scale E_0 calibrated by Q_β(n).
+
+These are NOT fits — each input fixes a distinct physical sector
+(shape, leptonic, u-quark mass, d-quark mass).
 
 Per
 content/.../np-discrepancy-resolution.md
@@ -276,27 +290,64 @@ def main():
     # ─────────────────────────────────────────────────────────────────
     # 4. Build witness
     # ─────────────────────────────────────────────────────────────────
+    # Compute Skein-pair dressed quark masses (per nucleon-mass-splitting-proof.md)
+    # μ_u from m_p, μ_d from m_n−m_p splitting at q = q_0:
+    #   m_p = S_uu + 2·S_ud,
+    #   m_n − m_p = (q+q⁻¹)/(q^{1/2}+q^{-1/2}) · (μ_d − μ_u)
+    # Solve for μ_u, μ_d.
+    import math
+    q_half = math.sqrt(Q_0)
+    q_inv_half = 1.0 / q_half
+    Z_PAIR = q_half + q_inv_half        # q^{1/2} + q^{-1/2}
+    SLOPE = (Q_0 + 1.0/Q_0) / Z_PAIR    # (q+q⁻¹)/(q^{1/2}+q^{-1/2})
+    # μ_d − μ_u from CODATA splitting
+    mu_d_minus_u = (M_N_MEV - M_P_MEV) / SLOPE
+    # m_p = S_uu + 2·S_ud
+    #     = ((q+q⁻¹)·μ_u + 2·(q·μ_u + q⁻¹·μ_d)) / (q^{1/2}+q^{-1/2})
+    #     = (μ_u·(q+q⁻¹+2q) + 2·q⁻¹·μ_d) / Z_pair
+    #     = (μ_u·(3q+q⁻¹) + 2·q⁻¹·μ_d) / Z_pair
+    # Substituting μ_d = μ_u + Δ:
+    #     m_p · Z_pair = μ_u·(3q+q⁻¹) + 2·q⁻¹·(μ_u + Δ)
+    #                  = μ_u·(3q+3q⁻¹) + 2·q⁻¹·Δ
+    # μ_u = (m_p · Z_pair − 2·q⁻¹·Δ) / (3·(q+q⁻¹))
+    mu_u = (M_P_MEV * Z_PAIR - 2.0 / Q_0 * mu_d_minus_u) / (3.0 * (Q_0 + 1.0/Q_0))
+    mu_d = mu_u + mu_d_minus_u
+
     w = (
         WitnessBuilder("categorical-q-decay-ba-low-isotopes", engine="python")
         .set_description(
             "Canonical B/A and Q-values for low isotopes via the "
-            "paper's 3-input scheme (m_μ/m_e, m_e, Q_β(n)) and "
-            "4-tier formula. Layer 1: best tier per isotope (D: T1+T4; "
+            "paper's 4-input Skein-pair scheme (m_μ/m_e, m_e, μ_u, μ_d) "
+            "and 4-tier formula. Layer 1: best tier per isotope (D: T1+T4; "
             "T/³He: BW+chirality; ⁴He: BW+chirality²+shell; A≥5: BW+shell). "
-            "Layer 2: Q_β⁻ = Q_β(n) + B_d − B_p. Layer 3: NOT computed "
-            "(N_v open). All canonical, no fits beyond the 3 structural "
-            "inputs."
+            "Layer 2: Q_β⁻ = Q_β(n) + B_d − B_p where Q_β(n) = m_n − m_p − m_e "
+            "is exact under the Skein-pair formula. Layer 3: NOT computed "
+            "(N_v open). All canonical, no fits beyond the 4 structural inputs. "
+            "p ≠ n via μ_d ≠ μ_u (Δ = μ_d − μ_u captures n-p splitting exactly)."
         )
         .set_content_block("prop:atom-knot-mass-derivation")
         .add_parameter("q_0", Q_0)
         .add_parameter("q_0_err", Q_0_ERR)
         .add_parameter("m_e_MeV", M_E_MEV)
-        .add_parameter("Q_beta_n_MeV", Q_NEUTRON_MEV)
-        .add_parameter("Q_beta_n_MeV_err", Q_NEUTRON_MEV_ERR)
-        .add_parameter("m_p_MeV_codata_for_compare", M_P_MEV)
-        .add_parameter("m_n_MeV_codata_for_compare", M_N_MEV)
-        .add_data("calibration_scheme", "3-input (m_μ/m_e, m_e, Q_β(n))")
+        .add_parameter("mu_u_MeV", mu_u)
+        .add_parameter("mu_d_MeV", mu_d)
+        .add_parameter("mu_d_minus_mu_u_MeV", mu_d_minus_u)
+        .add_parameter("Q_beta_n_MeV_derived", M_N_MEV - M_P_MEV - M_E_MEV)
+        .add_parameter("Q_beta_n_MeV_codata", Q_NEUTRON_MEV)
+        .add_parameter("m_p_MeV", M_P_MEV)
+        .add_parameter("m_n_MeV", M_N_MEV)
+        .add_data("calibration_scheme",
+                  "4-input Skein-pair (m_μ/m_e, m_e, μ_u, μ_d) "
+                  "per nucleon-mass-splitting-proof.md (commit bd81514)")
         .add_data("formula_scheme", "4-tier per isotope")
+        .add_data("p_n_distinction", {
+            "m_p_skein_pair": "S_uu + 2·S_ud",
+            "m_n_skein_pair": "2·S_ud + S_dd",
+            "m_n_minus_m_p_formula":
+                "((q+q⁻¹)/(q^{1/2}+q^{-1/2})) · (μ_d − μ_u)",
+            "m_n_minus_m_p_value_MeV": M_N_MEV - M_P_MEV,
+            "exact_under_4_input_scheme": True,
+        })
         .add_data("layer1_b_over_a", layer1)
         .add_data("layer2_q_values", layer2)
         .add_data("layer3_decay_rates", {

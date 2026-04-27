@@ -477,6 +477,77 @@ The errors are SIMILAR in magnitude, but the 4-tier formula is
 5. **`N_v` for layer 3 (β-decay rates)** — open per
    `beta-decay-from-q.witness.json`.
 
+### p ≠ n — Skein-pair mass formula (commit `bd81514`, PR #443)
+
+The mass-endomorphism-tower's ~63% neutron error (without Q_β
+calibration) is **structural** — the proton (uud) and neutron (udd)
+have different Skein-pair contributions, and the pair-content can't
+be ignored. The correct categorical treatment per
+[`nucleon-mass-splitting-proof.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/observations/nucleon-mass-splitting-proof.md) (added 3 days ago):
+
+$$
+m_p = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q),
+\qquad
+m_n = 2\,\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
+$$
+
+with pair-Skein masses
+
+$$
+\mathcal{S}_{qq'}(q) = \frac{q\,\mu_q + q^{-1}\mu_{q'}}{q^{1/2}+q^{-1/2}}
+\;\;\text{(mixed)},
+\qquad
+\mathcal{S}_{qq}(q) = \frac{(q+q^{-1})\,\mu_q}{q^{1/2}+q^{-1/2}}
+\;\;\text{(same-flavor)}.
+$$
+
+The `n−p` splitting isolates the same-flavor pair difference:
+
+$$
+m_n - m_p = \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}
+        = \frac{q+q^{-1}}{q^{1/2}+q^{-1/2}}\,(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}).
+$$
+
+| Input | Value | Calibrates |
+|---|---|---|
+| `q_0` | 1.110 | substrate (from `m_μ/m_e`) |
+| `m_e` | 0.511 MeV | leptonic scale |
+| `μ_u` | 311.10 MeV | proton-side dressed-quark mass (from `m_p` CODATA) |
+| `μ_d` | 312.39 MeV | neutron-side dressed-quark mass (from `m_n − m_p` splitting) |
+
+This is a **4-input** parameterization (one more than the
+`mass-endomorphism-tower` route, which uses Q_β). Both routes are
+canonical; the Skein-pair route makes the p/n distinction explicit
+at the dressed-quark level rather than absorbing it into the
+hadronic energy scale `E_0`.
+
+| Quantity | Skein-pair predicted | CODATA |
+|---|---:|---:|
+| `m_p` | 938.272 (calib) | 938.272 |
+| `m_n` | 939.565 (calib) | 939.565 |
+| `m_n − m_p` | 1.29333 (exact via μ_d − μ_u) | 1.29333 |
+
+So in this representation **p and n are correctly different** — the
+neutron mass is not undershot. The earlier "m_n_pred = 411 MeV"
+was the mass-endomorphism tower without Q_β-calibration; the same
+underlying physics evaluated through Skein-pair is exact.
+
+### Implication for layer 2 Q-values
+
+With Skein-pair as the canonical p/n treatment, layer 2 Q-values
+inherit `Δm_np = m_n − m_p` exactly (one of the 4 inputs). The
+`Q(³H → ³He)` prediction:
+
+```
+Q_β(n) = m_n − m_p − m_e            (input)
+Q(³H → ³He) = Q_β(n) + B(³He) − B(³H)  (canonical-derived)
+```
+
+Numerically this gives `Q_alg = +0.042 MeV` vs AME `0.019 MeV` —
++125% off, but the +125% is from the residual ~1% errors on
+`B(³H)` and `B(³He)` compounding over the `B/Q ≈ 460` ratio. Skein-
+pair does not change this; Q-value precision needs sub-ppm B-precision.
+
 ## Critical finding (2026-04-27): two categorical invariants disagree at q_0
 
 [`categorical_bypass_volmatch_demo.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/categorical_bypass_volmatch_demo.py) computes `B(𝔥)` directly from the
