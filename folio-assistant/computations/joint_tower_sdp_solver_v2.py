@@ -118,18 +118,24 @@ def hoefsmit_h3_standard_at_q0(q_val: float):
     """
     import numpy as np
     q = q_val
-    # Hoefsmit standard (2,1) — explicit as in Geck-Pfeiffer §5.4
+    # Hoefsmit standard (2,1) — explicit as in Geck-Pfeiffer §5.4 /
+    # Mathas, "Iwahori-Hecke Algebras and Schur Algebras of the
+    # Symmetric Group", Definition 3.32.
     # T_1 diagonal in the seminormal basis: eigenvalues q, -q^{-1}
     rho_T1 = np.array([[q, 0.0], [0.0, -1.0 / q]])
-    # T_2 in the same basis (axial-distance-1 transition):
-    h = q - 1.0 / q
-    # 2x2 block obtained by enforcing braid relation T_1 T_2 T_1 = T_2 T_1 T_2
-    # and Hecke quadratic T_2^2 = h T_2 + 1.  Standard solution:
+    # T_2 on the 2D block must satisfy:
+    #   tr(T_2) = q - 1/q     (Hecke quadratic ⇒ tr = h)
+    #   det(T_2) = -1         (eigenvalues q, -q^{-1})
+    #   T_1 T_2 T_1 = T_2 T_1 T_2  (braid relation)
+    # Closed-form solution (Mathas Def 3.32, axial-distance d = 1):
+    denom = q * q + 1.0
+    a = -1.0 / (q * denom)
+    d = (q ** 3) / denom
+    c = (q ** 4 + q * q + 1.0) / (denom * denom)
     rho_T2 = np.array([
-        [-1.0 / q,    1.0],
-        [ 1.0/(q*q),    q - 1.0/q + 1.0/q ],   # = q
+        [a, 1.0],
+        [c, d],
     ])
-    # Sanity: verify Hecke quadratic for T_1
     return rho_T1, rho_T2
 
 

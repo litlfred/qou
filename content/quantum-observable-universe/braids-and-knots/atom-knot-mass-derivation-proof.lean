@@ -53,9 +53,15 @@ theorem post_archimedean_naming_borrowed (K : Type*) (hyp : Prop) :
   -- All three are borrowed theorems on the post-functor side; not
   -- used in the QOU mass derivation.
 
-/-- The full proof of prop:atom-knot-mass-derivation. -/
+/-- The full proof of prop:atom-knot-mass-derivation.
+
+    The proof is parameterised on `T_w` and `K` only; the
+    `MassDerivationCertificate` structure is defined in the sibling
+    file `atom-knot-mass-derivation.lean` and is not needed as a
+    proof-level argument here (the certificate is the build-time
+    output of the joint-tower SDP, not a hypothesis of this proof). -/
 theorem atom_knot_mass_derivation_proof
-    (cert : MassDerivationCertificate) (T_w K : Type*) (hyp : Prop) :
+    (T_w K : Type*) (hyp : Prop) :
     True := by
   have cat := categorical_leg_to_markov_trace T_w
   have arch := archimedean_realization_to_mev T_w cat

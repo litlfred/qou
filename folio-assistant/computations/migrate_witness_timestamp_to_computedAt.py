@@ -18,12 +18,19 @@ from pathlib import Path
 
 
 def migrate_one(path: Path, apply: bool):
-    """Migrate a single witness file. Returns (changed, key_seen)."""
+    """Migrate a single witness file. Returns (changed, key_seen).
+
+    Returns (False, "skip:<reason>") on any I/O or parse failure so the
+    bulk migration is resilient (caller logs and continues).
+    """
     try:
         with open(path) as f:
             data = json.load(f)
     except json.JSONDecodeError:
-        return False, None
+        return False, "skip:invalid-json"
+    except OSError as e:
+        # Permission denied, broken symlink, missing file, etc.
+        return False, f"skip:io:{e.__class__.__name__}"
     if not isinstance(data, dict):
         return False, None
     key = None
