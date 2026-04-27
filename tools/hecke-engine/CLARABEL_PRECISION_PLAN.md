@@ -585,6 +585,61 @@ truncations + denominator histograms.  No CI gate (research mode).
 
 ---
 
+## Status retrospective (after PR #448 follow-ups)
+
+### Upstream Clarabel.rs#1 — `claude/bigrational-backend-BeGUU`
+
+| Phase | What | Status |
+|---|---|---|
+| Phase 1 | Decouple `FloatT` from `num_traits::Float` | **Done** (`3799405`) |
+| Phase 2 | Replace `Copy` with `Clone` bounds across cones, vecmath, info, variables, etc. | **Done** (`735a35f` — "all ~25 files compile under the Clone bound; 120/120 lib tests, 6/6 examples Solved") |
+| Phase 4 | `RationalReal` newtype: rational-arithmetic backend with thread-local arena, numeric traits, Display/LowerExp/Debug | **In progress** (`9b46bd5` and earlier) |
+
+Phase 4 is what unblocks §S8 (exact-in-q₀ optimization).  When it
+lands, QOU instantiates `Scalar = RationalReal` directly via the
+upstream-provided concrete type — no `From<rug::Float>` conversion
+trait needed (the §S4 "single upstream-Clarabel constraint" flagged
+in PR #448 review goes away).
+
+### QOU side — what's already landed on the feature branch
+
+§S1–S6 / §S7 / §S8 are still **not implemented** (waiting on
+upstream Phase 4 to settle).  But the audit + cleanup work
+*motivated* by this plan has already shipped:
+
+| Commit | Scope |
+|---|---|
+| `307b20b` | `q_parameter`: add mpmath HP parallel API (`Q_MP`, `q_at(dps)`, `q_str(dps)`, `vol_4_1_at(dps)`) |
+| `0a4124c` | `q_parameter`: compute Vol(4_1) on demand via mpmath.clsin (was reusing a hardcoded 38-dps string that diverged from the converged Clausen value at digit ~31) |
+| `f31f5bc` | `alpha_em_pslq_uniqueness`: drop bad hardcoded Vol — the file was running PSLQ at 1500-dps tolerance against a constant correct only to ~30 dps |
+| `7d33adb` | `q_pinning_50_digit`: ditto — claimed 50 dps in its name but constant was wrong past digit 37 |
+| `13121f0` | Migrate four 20-30 dps consumers to `vol_4_1_at()` for forward-compat |
+| `929238f`, `d8cd36f` | `d_wedderburn_mass`, `exact_binding_per_operation`, `residual_probe_pn`: stop the `mp.mpf(str(VOL_FIGURE_EIGHT))` f64-roundtrip antipattern |
+| `28d23db` | Mass sed-rewrite of 9 high-impact files (witness JSONs quoted >16-digit fields from corrupted Q0) |
+| `e129db5` | Mass sed-rewrite of remaining ~80 files (lower-impact: same antipattern, but their witnesses don't expose past-f64 corruption) |
+| `ebfdae0`, `cc3104f`, `650997c` | Regenerate 13 witnesses (q-pinning, alpha-em, d-wedderburn + 10 high-impact) with corrected HP substrate |
+
+Audit headline: the antipattern `Q0 = mp.mpf(str(Q0_FLOAT))`
+appeared in **100 files** under `folio-assistant/computations/`,
+each silently capping its "50-dps" computation at f64 precision.
+After this work, every file uses `Q0 = Q_MP` (or equivalent
+`Q_INV_MP`, `HBAR_Q_MP`, `vol_4_1_at(dps)`) directly from
+`q_parameter`, so the substrate values are genuinely 50 dps.
+
+### Workplan items still pending
+
+- **§S1–S6** — implementation of HP solver siblings.  Waiting on
+  Phase 4 stabilisation upstream so we can pin a concrete
+  `RationalReal` type (or its eventual public re-export).
+- **§S7** — consumer-side schema work (`PrecisionScalar` envelope,
+  Zod schema, Python mpmath consumer).  Independent of upstream;
+  could land first, but blocked behind §S4–S6 in scheduling.
+- **§S8** — exact-rational diagnostic.  Will use the
+  `RationalReal` scalar from upstream Phase 4 directly.
+- **§T1–T5** — test plan.  Implements once §S4–S6 land.
+
+---
+
 ## Cross-references
 
 - [`prop:joint-tower-sdp-confinement`](../../content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.md) — design spec
