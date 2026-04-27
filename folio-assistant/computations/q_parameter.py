@@ -95,13 +95,31 @@ Q_RAT_DEN = 10000000
 # (SnapPy's Vol limit); past that it is stable but bounded by
 # CODATA m_μ/m_e uncertainty.
 
-VOL_FIGURE_EIGHT_STR = "2.029883212819307250042405108549332301525"  # 38 dps; Cl_2(π/3) source
-MASS_RATIO_MU_E_STR  = "206.7682830"                                 # CODATA 2022, ~7 sig figs
+MASS_RATIO_MU_E_STR  = "206.7682830"   # CODATA 2022, ~7 sig figs (treated as exact for q_0 definition)
 
 _DPS_DEFAULT = 50
 
+# Note: previously this module reused a hardcoded 38-dps string for
+# Vol(4_1) from `alpha_em_pslq_uniqueness.py:57`.  That string is
+# inaccurate past digit ~30 — its trailing digits do not match the
+# Clausen-converged value.  The function `vol_4_1_at` below recomputes
+# from scratch at every requested precision, so q is correct at any
+# dps the caller asks for.
+
 try:
     import mpmath as _mp
+
+    def vol_4_1_at(dps: int = _DPS_DEFAULT):
+        """Hyperbolic volume of the figure-eight knot, computed at
+        requested precision.  Identity: Vol(4_1) = 2 Cl_2(π/3) where
+        Cl_2 is the Clausen function (mpmath.clsin)."""
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)  # +10 guard digits
+            vol = 2 * _mp.clsin(2, _mp.pi / 3)
+            return +vol  # round to current dps
+        finally:
+            _mp.mp.dps = prev
 
     def q_at(dps: int = _DPS_DEFAULT):
         """Return q at requested mpmath precision.  Caller should
@@ -109,12 +127,14 @@ try:
         the result if it does further mpmath arithmetic."""
         prev = _mp.mp.dps
         try:
-            _mp.mp.dps = max(prev, dps)
-            vol = _mp.mpf(VOL_FIGURE_EIGHT_STR)
-            r   = _mp.mpf(MASS_RATIO_MU_E_STR)
+            _mp.mp.dps = max(prev, dps + 10)
+            vol = vol_4_1_at(dps + 10)
+            r = _mp.mpf(MASS_RATIO_MU_E_STR)
             hbar_sq = vol / r
-            hbar    = _mp.sqrt(hbar_sq)
-            return _mp.mpf(1) / (_mp.mpf(1) - hbar)
+            hbar = _mp.sqrt(hbar_sq)
+            q = _mp.mpf(1) / (_mp.mpf(1) - hbar)
+            _mp.mp.dps = max(prev, dps)
+            return +q
         finally:
             _mp.mp.dps = prev
 
@@ -125,7 +145,8 @@ try:
 
     _mp.mp.dps = _DPS_DEFAULT
     Q_MP         = q_at(_DPS_DEFAULT)
-    HBAR_Q_SQ_MP = _mp.mpf(VOL_FIGURE_EIGHT_STR) / _mp.mpf(MASS_RATIO_MU_E_STR)
+    VOL_4_1_MP   = vol_4_1_at(_DPS_DEFAULT)
+    HBAR_Q_SQ_MP = VOL_4_1_MP / _mp.mpf(MASS_RATIO_MU_E_STR)
     HBAR_Q_MP    = _mp.sqrt(HBAR_Q_SQ_MP)
     Q_INV_MP     = _mp.mpf(1) / Q_MP
     HA_MP        = Q_MP - Q_INV_MP
@@ -138,6 +159,9 @@ try:
     HAS_MPMATH = True
 except ImportError:
     HAS_MPMATH = False
+
+    def vol_4_1_at(dps: int = _DPS_DEFAULT):
+        raise RuntimeError("vol_4_1_at requires mpmath; install it with `pip install mpmath`")
 
     def q_at(dps: int = _DPS_DEFAULT):
         raise RuntimeError("q_at requires mpmath; install it with `pip install mpmath`")
