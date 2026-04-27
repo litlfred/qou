@@ -13,6 +13,33 @@
   ([K_1, ..., K_n]_p notation) reference their constituents at lower
   confinement levels.
 
+  METHODOLOGY CLASSIFICATION (STRICT):
+
+    Each entry carries one of the following methodology tags.  Atlas
+    entries with tag = `deprecatedVolumeMatch` are PROVISIONAL and are
+    NOT principled — see `methodology-deprecation.witness.json`.  They
+    survive in the registry only for historical transparency and are
+    rendered in a quarantined section, never mixed with principled
+    entries.
+
+    The principled path for ANY new atom-knot identification is:
+
+      SDP on the FULL mass tower (joint over all confinement levels
+                                  and all atoms simultaneously)
+        ↓ with GB (Gröbner-Shirshov) filtration tracking
+        ↓ and jet-order tracking
+      Canonical T_w ∈ H_{n_0}(q_0) per atom
+        ↓ Markov closure
+      Knot/link complement in S^3
+        ↓ hp_volume_of_link_closure(braid_word, digits ≥ 50)
+      B_pred = ρ · m_e · Vol_hyp
+        ↓ compare a posteriori
+      AME residual
+
+    Per-atom volume-match search (the deprecated li_atom_knot_search.py
+    pipeline) is forbidden: the joint SDP + GB-filtration + jet-order
+    tracking is the only admissible derivation route.
+
   Refs: prop:recursive-atom-knot-atlas (this block),
         def:confined-particle (GB-NF source of truth),
         def:knot-particle-dictionary,
@@ -23,6 +50,19 @@ import Mathlib.Data.Real.Basic
 
 namespace QOU.BraidsAndKnots
 
+/-- Methodology tag: how the particle-knot identification was obtained.
+    Only `principledDerivation`, `principledGbNf`,
+    `manualHistoricalVolumeMatch`, `magicAFormula`, and `recursiveOn4He`
+    are admissible in the principled atlas.  `deprecatedVolumeMatch`
+    entries are quarantined and rendered separately. -/
+inductive Methodology where
+  | principledDerivation             -- explicit σ-word → closure → hp Vol
+  | principledGbNf                   -- trivial-NF (unknot, disjoint unknots)
+  | manualHistoricalVolumeMatch      -- vol-match in earlier work, established
+  | magicAFormula                    -- A · 8G shell-closure formula
+  | recursiveOn4He                   -- n · ⁴He + n_αα · c_αα recursion
+  | deprecatedVolumeMatch            -- ⚠ PROVISIONAL — reverse-engineered
+
 /-- A particle in the atlas at q_0: registry entry from the
     confined-particle definition. -/
 structure AtlasEntry where
@@ -32,37 +72,90 @@ structure AtlasEntry where
   braid_word : String  -- in σ_i generators, GB-NF
   closure_knot : String  -- Markov closure (e.g. "T_{2,3} = 3_1")
   rho_factor : ℕ    -- prefactor in B = ρ · m_e · Vol_hyp
-  binding_link : String  -- "L_H" or knot name K11a259 etc.
+  binding_link : String  -- "L_H" or knot name etc.
   vol_hyp : ℝ       -- hyperbolic volume of closure
   m_pred_MeV : ℝ    -- predicted mass in MeV
   m_AME_MeV : ℝ     -- experimental mass / binding (AME 2020)
   err_pct : ℝ       -- relative error %
   err_ppb : ℝ       -- relative error ppb
+  methodology : Methodology  -- how the identification was obtained
 
 /-- The recursive atom-knot atlas: list of all confined particles and
     atoms at q_0 with their Hecke-NF braid words, knot closures, and
-    mass predictions. -/
+    mass predictions.  Includes both principled entries and quarantined
+    provisional entries; consumers MUST filter by methodology tag. -/
 constant atomKnotAtlas : List AtlasEntry
 
-/-- **Source of truth**: the atlas is derived from the registry in
-    def:confined-particle and the witnesses in
-    folio-assistant/computations/{mass-table-ppb,li-atom-knot-search,
-    confined-particle-registry}.witness.json.
+/-- The principled sub-atlas: entries whose methodology is anything
+    other than `deprecatedVolumeMatch`.  This is the list cited by
+    statistical summaries and physics claims. -/
+def principledAtlas : List AtlasEntry → List AtlasEntry
+  | [] => []
+  | e :: rest =>
+      match e.methodology with
+      | Methodology.deprecatedVolumeMatch => principledAtlas rest
+      | _ => e :: principledAtlas rest
 
-    Updates to the registry or witnesses propagate via the build
-    pipeline (bun run build) into the rendered appendix. -/
+/-- **Source of truth** for the principled atlas:
+      1. confined-particle.md — GB-NF particle registry.
+      2. mass-table-ppb.witness.json — D..⁴⁰Ca.
+      3. methodology-deprecation.witness.json — per-particle audit.
+      4. hp_volume.py — ≥ 50-digit Markov-closure → Vol_hyp.
+      5. y_lambda_wenzl_bridge_extended.py — symbolic-q Wenzl bridge.
+
+    DEPRECATED INPUT (consumed only by the quarantined provisional
+    section, never by the principled atlas):
+      6. li-atom-knot-search.witness.json — ⚠ volume-match search.
+
+    Updates to any input propagate via witness_staleness_tracker.py
+    to the rendered appendix on the next `bun run build`. -/
 constant AtlasIsWitnessDerived : Prop
 
 theorem atlas_witness_derived : AtlasIsWitnessDerived := by
   sorry  -- Ref: prop:recursive-atom-knot-atlas §"Build-pipeline integration"
-         -- + the renderer in content/pipeline/render-atlas.ts (added in
-         -- this PR).
+         -- + the renderer recursive_atom_knot_atlas_render.py.
 
-/-- Best precision in the atlas: ⁷Li at K = L_{11a62}, ρ = 5,
-    error = 4001 ppb. -/
-theorem li7_best_precision : True := by
-  trivial  -- Ref: li-atom-knot-search.witness.json verifies
-           -- B_pred = 5 · m_e · Vol(L_{11a62}) = 39.2447 MeV
-           -- vs B_AME = 39.2445 MeV (4001 ppb residual).
+/-- ⚠ PROVISIONAL — DEPRECATED METHODOLOGY.
+
+    The 7Li / 6Li volume-match results from the SnapPy search
+    (li-atom-knot-search.witness.json) are NOT principled.  The
+    search reverse-engineers the answer by picking the knot whose
+    Vol_hyp matches the AME target; at ~2400 knots searched, residuals
+    below ~10 ppb cannot be distinguished from numerical coincidence
+    absent an independent GB-NF derivation.
+
+    The earlier theorem `li7_best_precision` claimed ⁷Li at L_{11a62}
+    as the best-precision atlas entry (4001 ppb residual).  That claim
+    is now demoted to *provisional* status and is no longer cited as
+    a principled result in the statistical summary.
+
+    The principled best-precision claim awaits SDP-on-full-mass-tower
+    with GB filtration and jet-order tracking (see
+    `principled_path_for_atom_knot` below). -/
+theorem li7_provisional_volume_match : True := by
+  trivial  -- Ref: methodology-deprecation.witness.json §particles[12]
+           -- ("7Li", method = "deprecated-volume-match").
+           -- The 4001 ppb residual is striking but unverified.
+
+/-- The principled path for any new atom-knot identification: a JOINT
+    SDP on the full mass tower (over all confinement levels ℓ and all
+    atoms simultaneously), with Gröbner-Shirshov filtration tracking
+    and jet-order tracking, yielding canonical T_w ∈ H_{n_0}(q_0)
+    PER ATOM as a structured certificate.
+
+    The Markov closure of T_w is then taken in S^3, and Vol_hyp is
+    computed at ≥ 50 decimal digits via
+    `hp_volume_of_link_closure(braid_word, digits=50)` for comparison
+    to AME via B_pred = ρ · m_e · Vol_hyp.
+
+    Per-atom volume-match search is FORBIDDEN as a derivation route:
+    the SDP must be joint over the tower so the GB filtration and the
+    jet ordering are consistent across confinement levels. -/
+constant PrincipledPathForAtomKnot : Prop
+
+theorem principled_path_for_atom_knot : PrincipledPathForAtomKnot := by
+  sorry  -- Ref: prop:confinement-sdp + def:confined-particle.
+         -- Implementation pending: extend the SDP solver to handle the
+         -- full tower jointly with GB-filtration + jet-order tracking.
 
 end QOU.BraidsAndKnots

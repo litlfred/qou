@@ -51,16 +51,42 @@ BASE = Path(__file__).parent
 SHAS_PATH = BASE / "witness-shas.json"
 
 
+# Artifacts that are formally DEPRECATED.  The build pipeline must NOT
+# consume their output as primary evidence; they survive only for
+# reproducibility of historical claims.  See
+# methodology-deprecation.witness.json for the per-particle audit and
+# the principled alternative (GB-NF → Markov-closure → hp_volume).
+DEPRECATED_ARTIFACTS = {
+    "li-atom-knot-search": (
+        "Volume-match SnapPy search reverse-engineers the answer "
+        "(picks knot whose Vol_hyp matches AME). PROVISIONAL only. "
+        "Use methodology-deprecation.witness.json + hp_volume.py for "
+        "the principled high-precision pipeline."
+    ),
+}
+
+
 # Dependency graph: artifact → list of upstream paths (relative to BASE)
 DEPS = {
     "recursive-atom-knot-atlas": [
         "../../content/quantum-observable-universe/braids-and-knots/confined-particle.md",
         "mass-table-ppb.witness.json",
+        "methodology-deprecation.witness.json",
+        # NOTE: li-atom-knot-search.witness.json is consumed only by the
+        # provisional/deprecated section of the atlas — see
+        # DEPRECATED_ARTIFACTS above.  It is NOT a principled input.
         "li-atom-knot-search.witness.json",
+        "hp_volume.py",
         "recursive_atom_knot_atlas_render.py",
+    ],
+    "methodology-deprecation": [
+        "li_atom_knot_search.py",
+        "li-atom-knot-search.witness.json",
+        "../../content/quantum-observable-universe/braids-and-knots/confined-particle.md",
     ],
     "li-atom-knot-search": [
         "li_atom_knot_search.py",
+        # DEPRECATED — see DEPRECATED_ARTIFACTS above.
         # Upstream: SnapPy is an external lib — version-pin via Python
         # snappy.__version__; logged in witness file under "snappy_version"
     ],
@@ -166,12 +192,22 @@ def check(artifact_filter=None):
 
     print(f"FRESH ({len(fresh)}):")
     for a in fresh:
-        print(f"  ✓ {a}")
+        marker = "  ⚠ DEPRECATED" if a in DEPRECATED_ARTIFACTS else "  ✓"
+        print(f"{marker} {a}")
+        if a in DEPRECATED_ARTIFACTS:
+            print(f"      {DEPRECATED_ARTIFACTS[a]}")
     print(f"\nSTALE ({len(stale)}):")
     for a, reasons in stale:
-        print(f"  ✗ {a}")
+        marker = "  ⚠ DEPRECATED ✗" if a in DEPRECATED_ARTIFACTS else "  ✗"
+        print(f"{marker} {a}")
+        if a in DEPRECATED_ARTIFACTS:
+            print(f"      {DEPRECATED_ARTIFACTS[a]}")
         for r in reasons:
             print(f"      {r}")
+    if DEPRECATED_ARTIFACTS:
+        print(f"\nDEPRECATED ARTIFACTS ({len(DEPRECATED_ARTIFACTS)}):")
+        for a, reason in DEPRECATED_ARTIFACTS.items():
+            print(f"  ⚠ {a}: {reason}")
     return len(stale)
 
 
