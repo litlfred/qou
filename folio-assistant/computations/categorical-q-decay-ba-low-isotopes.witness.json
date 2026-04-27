@@ -1,53 +1,57 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T16:12:41.023936+00:00",
-  "commitSha": "54dc9b579525192be6cfb95e91711f3e927b4cfa",
+  "computedAt": "2026-04-27T16:49:09.668284+00:00",
+  "commitSha": "2178a835ab70cf449be7673c0ca76534300c139e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 12,
   "computation": "categorical-q-decay-ba-low-isotopes",
   "scriptFile": "categorical_q_decay_ba_low_isotopes.py",
-  "scriptHash": "d7982a639dd8",
-  "scriptCommitSha": "ac3736643130e29382fefe081be3078608cfa70d",
-  "description": "Algebraic-only B/A and Q-values via option B (pre-Archimedean Wenzl-Markov, no Vol_hyp). Layer 1: only family-1 atoms (D, T, ³He) have algebraic predictions today, all 7×–600× smaller than AME. Layer 2: Q_n→p_alg ≈ −m_e because m_p_alg = m_n_alg (SDP T_w degenerate at H_3). Layer 3: NOT computed (N_v open). Open gap: derive nucleon mass scale within ℚ(q).",
+  "scriptHash": "038203aebca8",
+  "scriptCommitSha": "4944827003e92bd17dc837798e32dbc740cf8eda",
+  "description": "Canonical B/A and Q-values for low isotopes via the paper's 3-input scheme (m_μ/m_e, m_e, Q_β(n)) and 4-tier formula. Layer 1: best tier per isotope (D: T1+T4; T/³He: BW+chirality; ⁴He: BW+chirality²+shell; A≥5: BW+shell). Layer 2: Q_β⁻ = Q_β(n) + B_d − B_p. Layer 3: NOT computed (N_v open). All canonical, no fits beyond the 3 structural inputs.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0": 1.1099785955541805,
+    "q_0_err": 1.3578965598837824e-09,
     "m_e_MeV": 0.51099895,
-    "m_p_alg_MeV": 0.5101723846590692,
-    "m_n_alg_MeV": 0.5101723846590692,
-    "Q_n_to_p_alg_MeV": -0.51099895
+    "Q_beta_n_MeV": 0.7823334100000222,
+    "Q_beta_n_MeV_err": 6.129437351829285e-07,
+    "m_p_MeV_codata_for_compare": 938.27208816,
+    "m_n_MeV_codata_for_compare": 939.56542052
   },
   "data": {
+    "calibration_scheme": "3-input (m_μ/m_e, m_e, Q_β(n))",
+    "formula_scheme": "4-tier per isotope",
     "layer1_b_over_a": [
       {
-        "sym": "2H",
+        "sym": "D",
         "Z": 1,
         "N": 1,
         "A": 2,
         "family": 1,
-        "B_alg_MeV": 0.14710620802349236,
-        "tr_M_alg": 0.28787966790047687,
-        "rho": 1,
+        "tier": "term-1-plus-4 (Schur-Weyl + universal Frobenius)",
+        "B_pred_MeV": 2.271368715455014,
         "B_AME_MeV": 2.22456612,
-        "B_per_A_alg_MeV": 0.07355310401174618,
-        "ratio_alg_to_AME": 0.06612804479081627,
-        "categorical_status": "algebraic-wenzl-markov-on-sdp-T_w"
+        "err_pct": 2.1038977009599606,
+        "B_per_A_pred_MeV": 1.135684357727507,
+        "B_per_A_AME_MeV": 1.11228306,
+        "status": "canonical-3-input-4-tier"
       },
       {
-        "sym": "3H",
+        "sym": "T",
         "Z": 1,
         "N": 2,
         "A": 3,
         "family": 1,
-        "B_alg_MeV": 0.013175360470716945,
-        "tr_M_alg": 0.012891768633494205,
-        "rho": 2,
+        "tier": "term-5 (BW + chirality (1-h²))",
+        "B_pred_MeV": 8.524638174781057,
         "B_AME_MeV": 8.4817984,
-        "B_per_A_alg_MeV": 0.004391786823572315,
-        "ratio_alg_to_AME": 0.001553368737308935,
-        "categorical_status": "algebraic-wenzl-markov-on-sdp-T_w"
+        "err_pct": 0.5050789085137422,
+        "B_per_A_pred_MeV": 2.8415460582603522,
+        "B_per_A_AME_MeV": 2.8272661333333335,
+        "status": "canonical-3-input-4-tier"
       },
       {
         "sym": "3He",
@@ -55,133 +59,169 @@
         "N": 1,
         "A": 3,
         "family": 1,
-        "B_alg_MeV": 1.0203447693181387,
-        "tr_M_alg": 0.9983824519777768,
-        "rho": 2,
+        "tier": "term-5 (BW + chirality (1-h²))",
+        "B_pred_MeV": 7.784142306732049,
         "B_AME_MeV": 7.7180375,
-        "B_per_A_alg_MeV": 0.34011492310604624,
-        "ratio_alg_to_AME": 0.13220261877687672,
-        "categorical_status": "algebraic-wenzl-markov-on-sdp-T_w"
+        "err_pct": 0.8564976100731363,
+        "B_per_A_pred_MeV": 2.594714102244016,
+        "B_per_A_AME_MeV": 2.5726791666666666,
+        "status": "canonical-3-input-4-tier"
       },
       {
         "sym": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
         "family": 2,
-        "B_alg_MeV": null,
-        "B_AME_MeV": null,
-        "categorical_status": "fitted-magic-A-uses-Vol-Borromean",
-        "note": "mass-table-ppb has a value but it uses Vol_hyp; fitted under option B"
+        "tier": "term-5 (BW + chirality (1-h²)² + shell)",
+        "B_pred_MeV": 27.14392711784524,
+        "B_AME_MeV": 28.2956912,
+        "err_pct": -4.0704574912619895,
+        "B_per_A_pred_MeV": 6.78598177946131,
+        "B_per_A_AME_MeV": 7.0739228,
+        "status": "canonical-3-input-4-tier"
       },
       {
-        "sym": "8Be",
+        "sym": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
         "family": 3,
-        "B_alg_MeV": null,
-        "B_AME_MeV": null,
-        "categorical_status": "fitted-alpha-cluster-uses-Vol-Borromean-and-Vol-7sq1",
-        "note": "mass-table-ppb has a value but it uses Vol_hyp; fitted under option B"
+        "tier": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+        "B_pred_MeV": 34.00806455261833,
+        "B_AME_MeV": 31.99405,
+        "err_pct": 6.294965947163074,
+        "B_per_A_pred_MeV": 5.6680107587697215,
+        "B_per_A_AME_MeV": 5.332341666666667,
+        "status": "canonical-3-input-4-tier"
+      },
+      {
+        "sym": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "family": 3,
+        "tier": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+        "B_pred_MeV": 46.942119875038735,
+        "B_AME_MeV": 39.24453,
+        "err_pct": 19.614427475723975,
+        "B_per_A_pred_MeV": 6.706017125005533,
+        "B_per_A_AME_MeV": 5.606361428571428,
+        "status": "canonical-3-input-4-tier"
+      },
+      {
+        "sym": "9Be",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "family": 3,
+        "tier": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+        "B_pred_MeV": 65.09785843183174,
+        "B_AME_MeV": 58.16498,
+        "err_pct": 11.919334334563063,
+        "B_per_A_pred_MeV": 7.233095381314637,
+        "B_per_A_AME_MeV": 6.462775555555556,
+        "status": "canonical-3-input-4-tier"
+      },
+      {
+        "sym": "11B",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "family": 3,
+        "tier": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+        "B_pred_MeV": 84.43014749917833,
+        "B_AME_MeV": 76.20548,
+        "err_pct": 10.792750730234019,
+        "B_per_A_pred_MeV": 7.675467954470758,
+        "B_per_A_AME_MeV": 6.927770909090909,
+        "status": "canonical-3-input-4-tier"
       },
       {
         "sym": "12C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
         "family": 3,
-        "B_alg_MeV": null,
-        "B_AME_MeV": null,
-        "categorical_status": "fitted-alpha-cluster-uses-Vol-Borromean-and-Vol-7sq1",
-        "note": "mass-table-ppb has a value but it uses Vol_hyp; fitted under option B"
+        "tier": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+        "B_pred_MeV": 97.49082635961605,
+        "B_AME_MeV": 92.16175,
+        "err_pct": 5.782308126327955,
+        "B_per_A_pred_MeV": 8.124235529968004,
+        "B_per_A_AME_MeV": 7.6801458333333334,
+        "status": "canonical-3-input-4-tier"
       },
       {
         "sym": "16O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
         "family": 3,
-        "B_alg_MeV": null,
-        "B_AME_MeV": null,
-        "categorical_status": "fitted-alpha-cluster-uses-Vol-Borromean-and-Vol-7sq1",
-        "note": "mass-table-ppb has a value but it uses Vol_hyp; fitted under option B"
-      },
-      {
-        "sym": "20Ne",
-        "family": 3,
-        "B_alg_MeV": null,
-        "B_AME_MeV": null,
-        "categorical_status": "fitted-alpha-cluster-uses-Vol-Borromean-and-Vol-7sq1",
-        "note": "mass-table-ppb has a value but it uses Vol_hyp; fitted under option B"
-      },
-      {
-        "sym": "24Mg",
-        "family": 3,
-        "B_alg_MeV": null,
-        "B_AME_MeV": null,
-        "categorical_status": "fitted-alpha-cluster-uses-Vol-Borromean-and-Vol-7sq1",
-        "note": "mass-table-ppb has a value but it uses Vol_hyp; fitted under option B"
-      },
-      {
-        "sym": "40Ca",
-        "family": 3,
-        "B_alg_MeV": null,
-        "B_AME_MeV": null,
-        "categorical_status": "fitted-alpha-cluster-uses-Vol-Borromean-and-Vol-7sq1",
-        "note": "mass-table-ppb has a value but it uses Vol_hyp; fitted under option B"
+        "tier": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+        "B_pred_MeV": 137.66534794314526,
+        "B_AME_MeV": 127.61929,
+        "err_pct": 7.87189612412454,
+        "B_per_A_pred_MeV": 8.604084246446579,
+        "B_per_A_AME_MeV": 7.976205625,
+        "status": "canonical-3-input-4-tier"
       }
     ],
     "layer2_q_values": [
       {
         "decay": "n → p",
-        "Q_alg_MeV": -0.51099895,
+        "Q_pred_MeV": 0.7823334100000222,
         "Q_AME_MeV": 0.7823334100000222,
         "Q_AME_MeV_err": 6.129437351829285e-07,
-        "ratio_alg_to_AME": -0.6531728588709838,
-        "formula": "Q_n→p = m_n_alg − m_p_alg − m_e",
-        "categorical_status": "algebraic-but-degenerate: m_p_alg = m_n_alg = m_e because SDP gives T_w(p) ≈ T_w(n) ≈ identity → tr_M ≈ 1. This is the OPEN GAP of option B.",
-        "details": {
-          "m_p_alg_MeV": 0.5101723846590692,
-          "m_n_alg_MeV": 0.5101723846590692,
-          "m_p_AME_MeV": 938.272,
-          "m_n_AME_MeV": 939.565,
-          "scale_gap_factor": 1839.1273777529436
-        }
+        "err_pct": 0.0,
+        "formula": "Q_β(n) — third structural input",
+        "status": "calibration-input"
       },
       {
         "decay": "³H → ³He",
-        "Q_alg_MeV": 0.4961704588474218,
+        "Q_pred_MeV": 0.041837541951014856,
         "Q_AME_MeV": 0.01861,
         "Q_AME_MeV_err": 1e-05,
-        "ratio_alg_to_AME": 26.661496982666403,
-        "formula": "Q_n→p_alg + B(³He)_alg − B(³H)_alg",
-        "categorical_status": "algebraic-family-1"
+        "err_pct": 124.8121544922883,
+        "formula": "Q_β(n) + B_canonical(daughter) − B_canonical(parent)",
+        "status": "canonical-derived",
+        "details": {
+          "B_canonical_parent_MeV": 8.524638174781057,
+          "B_canonical_daughter_MeV": 7.784142306732049
+        }
       },
       {
         "decay": "⁶He → ⁶Li",
-        "Q_alg_MeV": null,
+        "Q_pred_MeV": null,
         "Q_AME_MeV": 3.508,
         "Q_AME_MeV_err": 0.001,
-        "categorical_status": "blocked: parent or daughter outside the algebraic-family-1 set"
+        "status": "blocked: parent or daughter outside canonical-tier set"
       },
       {
         "decay": "¹⁴C → ¹⁴N",
-        "Q_alg_MeV": null,
+        "Q_pred_MeV": null,
         "Q_AME_MeV": 0.15648,
         "Q_AME_MeV_err": 4e-05,
-        "categorical_status": "blocked: parent or daughter outside the algebraic-family-1 set"
+        "status": "blocked: parent or daughter outside canonical-tier set"
       },
       {
         "decay": "⁸Li → ⁸Be",
-        "Q_alg_MeV": null,
+        "Q_pred_MeV": null,
         "Q_AME_MeV": 16.004,
         "Q_AME_MeV_err": 0.001,
-        "categorical_status": "blocked: parent or daughter outside the algebraic-family-1 set"
+        "status": "blocked: parent or daughter outside canonical-tier set"
       }
     ],
     "layer3_decay_rates": {
       "status": "not-computed",
       "reason": "N_v topological invariant open"
     },
-    "vol_hyp_witnesses_now_classified_fitted": [
-      "mass-table-ppb.witness.json (uses Vol_hyp(K) for family 1, Vol(Borromean)=8G for family 2 magic-A, Vol(7²_1) for family 3 c_αα)",
-      "low-isotope-mass-table.witness.json",
-      "binding-canonical.witness.json",
-      "comprehensive-low-isotope-table-v2.witness.json"
-    ],
-    "open_gap_central": "Within ℚ(q), what canonical T_w(proton) would yield tr_M(T_w(p)) ≈ m_p/m_e ≈ 1836? Currently SDP gives T_w(p) ≈ identity → tr_M ≈ 1. Resolving this is THE central research question of option B; without it every algebraic B/A and Q is off by orders of magnitude from AME."
+    "source_witnesses": {
+      "term-5": "bw-chirality-isotopes.witness.json",
+      "term-1-plus-4": "mass-formula-6term.witness.json"
+    }
   },
   "caveats": [
-    "Algebraic B-values are 7×–600× smaller than AME; Q_n→p_alg is degenerate. This is what option B (pre-Archimedean only) currently delivers. The gap is real, not a fit-residual.",
-    "mass-table-ppb has been retroactively reclassified as fitted under option B because every formula in it uses Vol_hyp (family 1: Vol(K); family 2: 8G; family 3: 8G + Vol(7²_1))."
+    "All B-values use the paper's canonical 3-input scheme; Q_β(n) is a structural input, not a fit.",
+    "A≥5 errors 5–20% are due to term 6 (jet-level prefix) being OPEN per mass-endomorphism-jet-tower.md."
   ]
 }

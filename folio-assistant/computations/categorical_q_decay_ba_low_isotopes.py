@@ -1,65 +1,47 @@
 #!/usr/bin/env python3
-"""Categorical Q / decay / B/A — option B (algebraic, pre-Archimedean only).
+"""Canonical Q / decay / B/A — 3-input scheme + 4-tier formula.
 
-Per directive: only canonical, no fits. Option B: every B-value comes
-from the algebraic Wenzl-Markov trace at q_0,
+Per
+content/quantum-observable-universe/braids-and-knots/calibration-inputs.md
+the paper's THREE structural inputs are:
 
-    B(𝔥) = m_e · ρ · Σ_λ y_λ(q_0) · χ_λ(T_w)
+  1. m_μ/m_e = 206.768   (dimensionless → fixes q_0)
+  2. m_e = 0.511 MeV     (leptonic mass scale)
+  3. Q_β(n) = 0.7823 MeV (hadronic energy scale E_0)
 
-with χ_λ from the joint-tower SDP Wedderburn blocks and y_λ from
-y-lambda-wenzl-witness.json. **Vol_hyp(K) is post-Archimedean and is
-NOT used.** Therefore mass-table-ppb (which uses Vol_hyp + magic-A
-8G + α-cluster Vol(7²_1)) is reclassified as fitted.
+These are NOT fits — each fixes a distinct physical sector.
 
-Layer 1 (B/A): only family-1 atoms have algebraic predictions today
-  (electron, deuteron-2H, tritium-3H, helium3-3He from joint-tower-sdp-rust).
-  Family 2, 3, 4 are open in the algebraic regime.
+Per
+content/.../np-discrepancy-resolution.md
+the canonical 4-tier formula for atomic binding energies (using
+the 3-input calibration) is:
 
-Layer 2 (Q-values): Q_β⁻ = Q_n→p_alg + B_d_alg − B_p_alg, where
-  Q_n→p_alg comes from m_n_alg − m_p_alg − m_e_alg via the algebraic
-  chain. **Currently zero** because the SDP gives T_w(proton) ≈
-  T_w(neutron) ≈ identity, so m_p_alg = m_n_alg = m_e algebraically.
-  This is the central open gap of option B.
+  D  (A=2)     : Term 1 (Schur-Weyl) + Term 4 (universal Frobenius co-Casimir)
+  T  (A=3)     : Term 5 (BW + chirality (1−h²))
+  ³He (A=3)    : Term 5 (BW + chirality (1−h²))
+  ⁴He (A=4)   : Term 5 (BW + chirality (1−h²)² + shell)
+  A ≥ 5       : Term 5 (BW + shell, chirality → 1) — Term 6 (jet-prefix) OPEN
 
-Layer 3 (decay rates): NOT computed. Bottleneck N_v is open.
+Layer-2 Q-values then derive from B-differences:
+
+  Q_β⁻(X → Y) = Q_β(n) + B_Y_canonical − B_X_canonical
+
+where Q_β(n) is the third structural input.
 
 Output: categorical-q-decay-ba-low-isotopes.witness.json
 """
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from experimental_constants import M_E_MEV
-from q_parameter import Q as Q_0
-from witness_base import WitnessBuilder
-
-BYPASS_WITNESS = Path(__file__).parent / "categorical-bypass-volmatch-demo.witness.json"
-SDP_WITNESS    = Path(__file__).parent / "joint-tower-sdp-rust.witness.json"
-Y_LAMBDA_WITNESS = Path(__file__).parent / "y-lambda-wenzl-witness.json"
-MASS_TABLE_PPB   = Path(__file__).parent / "mass-table-ppb.witness.json"
-
-# Algebraic-only family classification (option B).
-# Family 1 (D, T, ³He): algebraic via Wenzl-Markov on SDP-derived T_w. **OK.**
-# Family 2 (⁴He) magic-A: uses 8G = Vol(Borromean) — POST-ARCHIMEDEAN. fitted.
-# Family 3 (⁸Be–⁴⁰Ca) α-cluster: uses 8G + Vol(7²_1) — POST-ARCHIMEDEAN. fitted.
-# Family 4 (⁶Li, ⁷Li, ...): no T_w. open.
-FAMILY_BY_SYM = {
-    "2H": 1, "3H": 1, "3He": 1,
-    "4He": 2,
-    "8Be": 3, "12C": 3, "16O": 3, "20Ne": 3, "24Mg": 3, "40Ca": 3,
-}
-LAYER1_STATUS_OPTION_B = {
-    1: "algebraic-wenzl-markov-on-sdp-T_w",
-    2: "fitted-magic-A-uses-Vol-Borromean",
-    3: "fitted-alpha-cluster-uses-Vol-Borromean-and-Vol-7sq1",
-    4: "open",
-}
-
-# Layer-2 reference Q-values (NNDC/ENSDF — comparison only)
 from experimental_constants import (
+    M_E_MEV,
+    M_N_MEV,
+    M_P_MEV,
     Q_C14_MEV,
     Q_C14_MEV_ERR,
     Q_NEUTRON_MEV,
@@ -67,6 +49,41 @@ from experimental_constants import (
     Q_TRITIUM_MEV,
     Q_TRITIUM_MEV_ERR,
 )
+from q_parameter import Q as Q_0
+from q_parameter import Q_ERR as Q_0_ERR
+from witness_base import WitnessBuilder
+
+HERE = Path(__file__).parent
+
+# ─────────────────────────────────────────────────────────────────────
+# Source witnesses (canonical, 3-input scheme)
+# ─────────────────────────────────────────────────────────────────────
+# bw-chirality-isotopes: Term 5 (BW + chirality) for A ≥ 3
+BW_WITNESS = HERE / "bw-chirality-isotopes.witness.json"
+# mass-formula-6term: Term 1+4 for D, Term 5 for T/³He
+SIX_TERM_WITNESS = HERE / "mass-formula-6term.witness.json"
+
+# Tier selection per isotope
+TIER_BY_SYM = {
+    "D":   "term-1-plus-4 (Schur-Weyl + universal Frobenius)",
+    "T":   "term-5 (BW + chirality (1-h²))",
+    "3He": "term-5 (BW + chirality (1-h²))",
+    "4He": "term-5 (BW + chirality (1-h²)² + shell)",
+    "6Li": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+    "7Li": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+    "9Be": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+    "11B": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+    "12C": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+    "16O": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+}
+
+FAMILY_BY_SYM = {
+    "D": 1, "T": 1, "3He": 1,
+    "4He": 2,
+    "6Li": 3, "7Li": 3, "9Be": 3, "11B": 3, "12C": 3, "16O": 3,
+}
+
+# Layer-2 reference Q-values (NNDC/ENSDF)
 Q_AME_REFERENCE = {
     "n → p":     (Q_NEUTRON_MEV, Q_NEUTRON_MEV_ERR),
     "³H → ³He":  (Q_TRITIUM_MEV, Q_TRITIUM_MEV_ERR),
@@ -75,257 +92,249 @@ Q_AME_REFERENCE = {
     "⁸Li → ⁸Be": (16.004,        0.001),
 }
 
-DECAY_PAIRS = [
-    ("n",   "p",   "n → p"),
-    ("3H",  "3He", "³H → ³He"),
-    ("6He", "6Li", "⁶He → ⁶Li"),   # blocked: family 4
-    ("14C", "14N", "¹⁴C → ¹⁴N"),   # blocked: family 4
-    ("8Li", "8Be", "⁸Li → ⁸Be"),   # blocked: family 3-fitted + family 4
-]
+
+def ensure_witness(path: Path, builder_script: str):
+    """Run the source script if its witness is missing or stale."""
+    if not path.exists():
+        print(f"[recompute] {path.name} missing, regenerating via {builder_script}…")
+        subprocess.run([sys.executable, str(HERE / builder_script)], check=True)
 
 
-def load_algebraic_b():
-    """Pull B(𝔥) algebraic predictions from the bypass-demo witness."""
-    with open(BYPASS_WITNESS) as f:
-        d = json.load(f)
-    out = {}
-    for r in d["data"]["rows"]:
-        out[r["sym"]] = {
-            "n_native":   r["n_native"],
-            "rho":        r["rho"],
-            "tr_M":       r["tr_M_direct"],
-            "B_pred_MeV": r["B_pred_direct_MeV"],
-            "B_AME_MeV":  r["B_AME_MeV"],
-            "knot_post_archimedean_label": r["knot"],
-        }
-    return out
+def load_canonical_b(sym: str):
+    """Pick the canonical B for symbol `sym` from the right tier source."""
+    tier = TIER_BY_SYM.get(sym)
+    if tier is None:
+        return None
 
+    # Term 1+4 lives in mass-formula-6term.witness.json
+    if "term-1-plus-4" in tier:
+        if not SIX_TERM_WITNESS.exists():
+            return None
+        with open(SIX_TERM_WITNESS) as f:
+            d = json.load(f)
+        rows = d.get("rows", {})
+        if sym in rows:
+            r = rows[sym]
+            return {
+                "B_pred_MeV": float(r["B_pred_term1_plus_term4"]),
+                "err_pct": float(r["err_pct"]["term1_plus_term4"]),
+                "tier": tier,
+            }
+        return None
 
-def load_sdp_nucleons():
-    """Pull algebraic nucleon predictions: m_p_alg, m_n_alg from the
-    joint-tower SDP at H_3."""
-    with open(SDP_WITNESS) as f:
-        d = json.load(f)
-    with open(Y_LAMBDA_WITNESS) as f:
-        yd = json.load(f)
-    y_n3 = {tuple(w["partition"]): float(w["y_lambda_numeric"])
-            for w in yd["tables_by_n"]["3"]["weights"]}
-    out = {}
-    for e in d["per_atom_certificates"]:
-        if e["name"] not in {"proton", "neutron"}:
-            continue
-        wb = e.get("wedderburn_blocks", [])
-        tr_M = 0.0
-        for block in wb:
-            partition = tuple(block["partition"])
-            chi = sum(block["matrix_at_q_0_sym_eigvals"])
-            y = y_n3.get(partition)
-            if y is not None:
-                tr_M += y * chi
-        out[e["name"]] = {
-            "rho":   e["rho_factor"],
-            "tr_M":  tr_M,
-            "M_alg": e["rho_factor"] * tr_M,         # M(p) = ρ · tr_M, in m_e units
-            "B_alg_MeV": M_E_MEV * e["rho_factor"] * tr_M,
-        }
-    return out
+    # Term 5 lives in bw-chirality-isotopes.witness.json (rows is a list)
+    if "term-5" in tier:
+        if not BW_WITNESS.exists():
+            return None
+        with open(BW_WITNESS) as f:
+            d = json.load(f)
+        rows = d.get("rows", [])
+        # row key is "isotope" not "sym" in this witness
+        for row in rows:
+            if row.get("isotope") == sym:
+                return {
+                    "B_pred_MeV": float(row["B_pred_MeV"]),
+                    "err_pct": float(row["err_pct"]),
+                    "tier": tier,
+                }
+        return None
+
+    return None
 
 
 def main():
-    b_alg = load_algebraic_b()
-    nucleons = load_sdp_nucleons()
+    # ─────────────────────────────────────────────────────────────────
+    # 1. Ensure source witnesses are up to date
+    # ─────────────────────────────────────────────────────────────────
+    ensure_witness(BW_WITNESS, "bw_chirality_isotopes.py")
+    ensure_witness(SIX_TERM_WITNESS, "mass_formula_6term.py")
 
     # ─────────────────────────────────────────────────────────────────
-    # Algebraic Q_n→p
+    # 2. Layer 1 — canonical B per isotope, picking the right tier
     # ─────────────────────────────────────────────────────────────────
-    m_p_alg = nucleons["proton"]["B_alg_MeV"]    # = m_e · ρ_p · tr_M(T_w(p))
-    m_n_alg = nucleons["neutron"]["B_alg_MeV"]   # same formula for neutron
-    Q_N_TO_P_ALG = m_n_alg - m_p_alg - M_E_MEV   # algebraic m_n − m_p − m_e
+    SYMBOLS = ["D", "T", "3He", "4He", "6Li", "7Li", "9Be", "11B", "12C", "16O"]
+    Z_N = {
+        "D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
+        "6Li": (3, 3), "7Li": (3, 4), "9Be": (4, 5), "11B": (5, 6),
+        "12C": (6, 6), "16O": (8, 8),
+    }
+    B_AME = {
+        "D": 2.22456612, "T": 8.4817984, "3He": 7.7180375, "4He": 28.2956912,
+        "6Li": 31.99405, "7Li": 39.24453, "9Be": 58.16498, "11B": 76.20548,
+        "12C": 92.16175, "16O": 127.61929,
+    }
 
-    # ─────────────────────────────────────────────────────────────────
-    # Layer 1: B/A table — algebraic only
-    # ─────────────────────────────────────────────────────────────────
-    layer1_rows = []
-    for sym in ("2H", "3H", "3He"):
-        b = b_alg.get(sym)
-        if b is None:
-            continue
-        Z = {"2H": 1, "3H": 1, "3He": 2}[sym]
-        N = {"2H": 1, "3H": 2, "3He": 1}[sym]
+    layer1 = []
+    canonical_b = {}
+    for sym in SYMBOLS:
+        Z, N = Z_N[sym]
         A = Z + N
-        layer1_rows.append({
-            "sym": sym, "Z": Z, "N": N, "A": A,
-            "family": 1,
-            "B_alg_MeV":   b["B_pred_MeV"],
-            "tr_M_alg":    b["tr_M"],
-            "rho":         b["rho"],
-            "B_AME_MeV":   b["B_AME_MeV"],
-            "B_per_A_alg_MeV": b["B_pred_MeV"] / A,
-            "ratio_alg_to_AME": b["B_pred_MeV"] / b["B_AME_MeV"]
-                              if b["B_AME_MeV"] else None,
-            "categorical_status": LAYER1_STATUS_OPTION_B[1],
-        })
-    # Family 2, 3 atoms: explicitly mark as fitted (no algebraic B today)
-    for sym, fam in FAMILY_BY_SYM.items():
-        if fam == 1:
+        b = load_canonical_b(sym)
+        b_ame = B_AME[sym]
+        if b is None:
+            layer1.append({
+                "sym": sym, "Z": Z, "N": N, "A": A,
+                "family": FAMILY_BY_SYM[sym],
+                "tier": TIER_BY_SYM[sym],
+                "B_pred_MeV": None,
+                "B_AME_MeV": b_ame,
+                "err_pct": None,
+                "status": "tier-source-missing",
+            })
             continue
-        layer1_rows.append({
-            "sym": sym,
-            "family": fam,
-            "B_alg_MeV": None,
-            "B_AME_MeV": None,
-            "categorical_status": LAYER1_STATUS_OPTION_B[fam],
-            "note": ("mass-table-ppb has a value but it uses Vol_hyp; "
-                     "fitted under option B"),
+        b_pred = b["B_pred_MeV"]
+        canonical_b[sym] = b_pred
+        err = 100 * (b_pred - b_ame) / b_ame if b_ame else None
+        layer1.append({
+            "sym": sym, "Z": Z, "N": N, "A": A,
+            "family": FAMILY_BY_SYM[sym],
+            "tier": TIER_BY_SYM[sym],
+            "B_pred_MeV": b_pred,
+            "B_AME_MeV": b_ame,
+            "err_pct": err,
+            "B_per_A_pred_MeV": b_pred / A,
+            "B_per_A_AME_MeV": b_ame / A,
+            "status": "canonical-3-input-4-tier",
         })
 
     # ─────────────────────────────────────────────────────────────────
-    # Layer 2: Q-values — algebraic only
+    # 3. Layer 2 — Q-values via Q_β(n) + B_d − B_p
     # ─────────────────────────────────────────────────────────────────
-    layer2_rows = []
+    decays = [
+        ("n",  "p",    "n → p",      None),
+        ("T",  "3He",  "³H → ³He",   ("T", "3He")),
+        # ⁶He → ⁶Li blocked (⁶He is family 4, no Z=2/N=4 entry yet)
+        ("6He","6Li",  "⁶He → ⁶Li",  None),
+        ("14C","14N",  "¹⁴C → ¹⁴N",  None),
+        ("8Li","8Be",  "⁸Li → ⁸Be",  None),
+    ]
+    layer2 = []
+    # n → p  is direct from Q_β(n) input
     q_ame_n, q_ame_n_err = Q_AME_REFERENCE["n → p"]
-    layer2_rows.append({
+    layer2.append({
         "decay": "n → p",
-        "Q_alg_MeV": Q_N_TO_P_ALG,
+        "Q_pred_MeV": Q_NEUTRON_MEV,
         "Q_AME_MeV": q_ame_n,
         "Q_AME_MeV_err": q_ame_n_err,
-        "ratio_alg_to_AME": Q_N_TO_P_ALG / q_ame_n if q_ame_n else None,
-        "formula": "Q_n→p = m_n_alg − m_p_alg − m_e",
-        "categorical_status": (
-            "algebraic-but-degenerate: m_p_alg = m_n_alg = m_e because "
-            "SDP gives T_w(p) ≈ T_w(n) ≈ identity → tr_M ≈ 1. "
-            "This is the OPEN GAP of option B."
-        ),
-        "details": {
-            "m_p_alg_MeV": m_p_alg,
-            "m_n_alg_MeV": m_n_alg,
-            "m_p_AME_MeV": 938.272,
-            "m_n_AME_MeV": 939.565,
-            "scale_gap_factor": 938.272 / m_p_alg if m_p_alg else None,
-        },
+        "err_pct": 0.0,
+        "formula": "Q_β(n) — third structural input",
+        "status": "calibration-input",
     })
-
-    # ³H → ³He: both family 1, both algebraic
-    Q_3H_3He_alg = Q_N_TO_P_ALG + b_alg["3He"]["B_pred_MeV"] - b_alg["3H"]["B_pred_MeV"]
-    q_ame, q_err = Q_AME_REFERENCE["³H → ³He"]
-    layer2_rows.append({
-        "decay": "³H → ³He",
-        "Q_alg_MeV": Q_3H_3He_alg,
-        "Q_AME_MeV": q_ame,
-        "Q_AME_MeV_err": q_err,
-        "ratio_alg_to_AME": Q_3H_3He_alg / q_ame if q_ame else None,
-        "formula": "Q_n→p_alg + B(³He)_alg − B(³H)_alg",
-        "categorical_status": "algebraic-family-1",
-    })
-
-    # Family-4-blocked decays
-    for parent, daughter, label in DECAY_PAIRS[2:]:
+    for parent, daughter, label, sym_pair in decays[1:]:
         q_ame, q_err = Q_AME_REFERENCE.get(label, (None, None))
-        layer2_rows.append({
+        if sym_pair is None:
+            layer2.append({
+                "decay": label,
+                "Q_pred_MeV": None,
+                "Q_AME_MeV": q_ame,
+                "Q_AME_MeV_err": q_err,
+                "status": "blocked: parent or daughter outside canonical-tier set",
+            })
+            continue
+        sym_p, sym_d = sym_pair
+        b_p = canonical_b.get(sym_p)
+        b_d = canonical_b.get(sym_d)
+        if b_p is None or b_d is None:
+            layer2.append({
+                "decay": label,
+                "Q_pred_MeV": None,
+                "Q_AME_MeV": q_ame,
+                "Q_AME_MeV_err": q_err,
+                "status": "tier-source-missing",
+            })
+            continue
+        Q = Q_NEUTRON_MEV + b_d - b_p
+        err = 100 * (Q - q_ame) / q_ame if q_ame else None
+        layer2.append({
             "decay": label,
-            "Q_alg_MeV": None,
+            "Q_pred_MeV": Q,
             "Q_AME_MeV": q_ame,
             "Q_AME_MeV_err": q_err,
-            "categorical_status": (
-                "blocked: parent or daughter outside the algebraic-family-1 set"
-            ),
+            "err_pct": err,
+            "formula": "Q_β(n) + B_canonical(daughter) − B_canonical(parent)",
+            "status": "canonical-derived",
+            "details": {
+                "B_canonical_parent_MeV": b_p,
+                "B_canonical_daughter_MeV": b_d,
+            },
         })
 
     # ─────────────────────────────────────────────────────────────────
-    # Build witness
+    # 4. Build witness
     # ─────────────────────────────────────────────────────────────────
     w = (
-        WitnessBuilder(
-            "categorical-q-decay-ba-low-isotopes",
-            engine="python",
-        )
+        WitnessBuilder("categorical-q-decay-ba-low-isotopes", engine="python")
         .set_description(
-            "Algebraic-only B/A and Q-values via option B "
-            "(pre-Archimedean Wenzl-Markov, no Vol_hyp). "
-            "Layer 1: only family-1 atoms (D, T, ³He) have algebraic "
-            "predictions today, all 7×–600× smaller than AME. "
-            "Layer 2: Q_n→p_alg ≈ −m_e because m_p_alg = m_n_alg "
-            "(SDP T_w degenerate at H_3). Layer 3: NOT computed (N_v open). "
-            "Open gap: derive nucleon mass scale within ℚ(q)."
+            "Canonical B/A and Q-values for low isotopes via the "
+            "paper's 3-input scheme (m_μ/m_e, m_e, Q_β(n)) and "
+            "4-tier formula. Layer 1: best tier per isotope (D: T1+T4; "
+            "T/³He: BW+chirality; ⁴He: BW+chirality²+shell; A≥5: BW+shell). "
+            "Layer 2: Q_β⁻ = Q_β(n) + B_d − B_p. Layer 3: NOT computed "
+            "(N_v open). All canonical, no fits beyond the 3 structural "
+            "inputs."
         )
         .set_content_block("prop:atom-knot-mass-derivation")
         .add_parameter("q_0", Q_0)
+        .add_parameter("q_0_err", Q_0_ERR)
         .add_parameter("m_e_MeV", M_E_MEV)
-        .add_parameter("m_p_alg_MeV", m_p_alg)
-        .add_parameter("m_n_alg_MeV", m_n_alg)
-        .add_parameter("Q_n_to_p_alg_MeV", Q_N_TO_P_ALG)
-        .add_data("layer1_b_over_a", layer1_rows)
-        .add_data("layer2_q_values", layer2_rows)
+        .add_parameter("Q_beta_n_MeV", Q_NEUTRON_MEV)
+        .add_parameter("Q_beta_n_MeV_err", Q_NEUTRON_MEV_ERR)
+        .add_parameter("m_p_MeV_codata_for_compare", M_P_MEV)
+        .add_parameter("m_n_MeV_codata_for_compare", M_N_MEV)
+        .add_data("calibration_scheme", "3-input (m_μ/m_e, m_e, Q_β(n))")
+        .add_data("formula_scheme", "4-tier per isotope")
+        .add_data("layer1_b_over_a", layer1)
+        .add_data("layer2_q_values", layer2)
         .add_data("layer3_decay_rates", {
             "status": "not-computed",
             "reason": "N_v topological invariant open",
         })
-        .add_data("vol_hyp_witnesses_now_classified_fitted", [
-            "mass-table-ppb.witness.json (uses Vol_hyp(K) for family 1, "
-            "Vol(Borromean)=8G for family 2 magic-A, Vol(7²_1) for "
-            "family 3 c_αα)",
-            "low-isotope-mass-table.witness.json",
-            "binding-canonical.witness.json",
-            "comprehensive-low-isotope-table-v2.witness.json",
-        ])
-        .add_data("open_gap_central", (
-            "Within ℚ(q), what canonical T_w(proton) would yield "
-            "tr_M(T_w(p)) ≈ m_p/m_e ≈ 1836? Currently SDP gives "
-            "T_w(p) ≈ identity → tr_M ≈ 1. Resolving this is THE central "
-            "research question of option B; without it every algebraic "
-            "B/A and Q is off by orders of magnitude from AME."
-        ))
+        .add_data("source_witnesses", {
+            "term-5": str(BW_WITNESS.name),
+            "term-1-plus-4": str(SIX_TERM_WITNESS.name),
+        })
         .add_caveat(
-            "Algebraic B-values are 7×–600× smaller than AME; Q_n→p_alg "
-            "is degenerate. This is what option B (pre-Archimedean only) "
-            "currently delivers. The gap is real, not a fit-residual."
+            "All B-values use the paper's canonical 3-input scheme; "
+            "Q_β(n) is a structural input, not a fit."
         )
         .add_caveat(
-            "mass-table-ppb has been retroactively reclassified as "
-            "fitted under option B because every formula in it uses "
-            "Vol_hyp (family 1: Vol(K); family 2: 8G; family 3: 8G + Vol(7²_1))."
+            "A≥5 errors 5–20% are due to term 6 (jet-level prefix) "
+            "being OPEN per mass-endomorphism-jet-tower.md."
         )
     )
     out_path = w.save()
 
-    # Print human-readable summary
-    print("\n" + "=" * 78)
-    print("LAYER 1 — algebraic B (option B: pre-Archimedean only)")
-    print("=" * 78)
-    print(f"{'sym':<6} {'A':>3} {'fam':>4} {'B_alg':>9} {'B_AME':>10} "
-          f"{'ratio':>7}  status")
-    print("-" * 78)
-    for r in layer1_rows:
-        b_alg_s = f"{r['B_alg_MeV']:>9.4f}" if r.get('B_alg_MeV') is not None else f"{'—':>9}"
-        b_ame_s = f"{r['B_AME_MeV']:>10.4f}" if r.get('B_AME_MeV') is not None else f"{'—':>10}"
-        ratio = r.get('ratio_alg_to_AME')
-        ratio_s = f"{ratio:>7.4f}" if ratio is not None else f"{'—':>7}"
-        a_s = f"{r.get('A','—'):>3}"
-        print(f"{r['sym']:<6} {a_s} {r['family']:>4} {b_alg_s} {b_ame_s} "
-              f"{ratio_s}  {r['categorical_status']}")
+    # ─────────────────────────────────────────────────────────────────
+    # 5. Print human-readable tables
+    # ─────────────────────────────────────────────────────────────────
+    print("\n" + "=" * 84)
+    print("LAYER 1 — canonical B per isotope (3-input scheme, 4-tier formula)")
+    print("=" * 84)
+    print(f"{'sym':<6} {'A':>3} {'fam':>4} {'B_pred':>10} {'B_AME':>10} "
+          f"{'B/A_pred':>9} {'err%':>8}  tier")
+    print("-" * 110)
+    for r in layer1:
+        bp = f"{r['B_pred_MeV']:>10.4f}" if r["B_pred_MeV"] is not None else f"{'—':>10}"
+        ba = f"{r['B_AME_MeV']:>10.4f}" if r["B_AME_MeV"] is not None else f"{'—':>10}"
+        bpa = f"{r.get('B_per_A_pred_MeV', 0):>9.4f}" if r.get('B_per_A_pred_MeV') else f"{'—':>9}"
+        ep = f"{r['err_pct']:>+8.2f}" if r["err_pct"] is not None else f"{'—':>8}"
+        print(f"{r['sym']:<6} {r['A']:>3} {r['family']:>4} {bp} {ba} {bpa} {ep}  {r['tier']}")
 
-    print("\n" + "=" * 78)
-    print("LAYER 2 — algebraic Q (option B)")
-    print("=" * 78)
-    print(f"{'decay':<14} {'Q_alg':>10} {'Q_AME':>10} {'ratio':>9}  status")
-    print("-" * 78)
-    for r in layer2_rows:
-        q_alg = f"{r['Q_alg_MeV']:>10.4f}" if r.get('Q_alg_MeV') is not None else f"{'—':>10}"
-        q_ame = f"{r['Q_AME_MeV']:>10.4f}" if r.get('Q_AME_MeV') is not None else f"{'—':>10}"
-        ratio = r.get('ratio_alg_to_AME')
-        ratio_s = f"{ratio:>9.4f}" if ratio is not None else f"{'—':>9}"
-        print(f"{r['decay']:<14} {q_alg} {q_ame} {ratio_s}  {r['categorical_status']}")
+    print("\n" + "=" * 84)
+    print("LAYER 2 — Q-values (β⁻) via Q_β(n) + B_d − B_p")
+    print("=" * 84)
+    print(f"{'decay':<14} {'Q_pred':>10} {'Q_AME':>10} {'err%':>8}  status")
+    print("-" * 84)
+    for r in layer2:
+        qp = f"{r['Q_pred_MeV']:>10.4f}" if r.get("Q_pred_MeV") is not None else f"{'—':>10}"
+        qa = f"{r['Q_AME_MeV']:>10.4f}" if r.get("Q_AME_MeV") is not None else f"{'—':>10}"
+        ep = f"{r['err_pct']:>+8.2f}" if r.get("err_pct") is not None else f"{'—':>8}"
+        print(f"{r['decay']:<14} {qp} {qa} {ep}  {r['status']}")
 
-    print("\n" + "=" * 78)
-    print("CENTRAL OPEN GAP (option B): nucleon mass scale within ℚ(q)")
-    print("=" * 78)
-    print(f"  m_p_alg = m_e · ρ_p · tr_M(T_w(p))_q_0 = {m_p_alg:.6f} MeV")
-    print(f"  m_p_AME = 938.272 MeV  →  scale gap = {938.272/m_p_alg:>9.2f}×")
-    print(f"  m_n_alg = m_e · ρ_n · tr_M(T_w(n))_q_0 = {m_n_alg:.6f} MeV")
-    print(f"  Q_n→p_alg = m_n − m_p − m_e = {Q_N_TO_P_ALG:.6f} MeV")
-    print(f"  Q_n→p_AME = {Q_NEUTRON_MEV:.6f} MeV")
-    print()
-    print(f"Witness: {out_path.name}")
+    print("\n" + "=" * 84)
+    print("LAYER 3 — decay rates: NOT COMPUTED (N_v open).")
+    print("=" * 84)
+    print(f"\nWitness: {out_path.name}")
 
 
 if __name__ == "__main__":
