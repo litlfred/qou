@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T19:34:10.601284+00:00",
-  "commitSha": "374777462e09ffd2967dcb61537976c4148de992",
+  "computedAt": "2026-04-27T19:38:41.220614+00:00",
+  "commitSha": "96273c340e0f25113500ae6c6e6af70cc8024083",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "categorical-q-decay-ba-low-isotopes",
   "scriptFile": "categorical_q_decay_ba_low_isotopes.py",
-  "scriptHash": "d8ad8a262b73",
-  "scriptCommitSha": "374777462e09ffd2967dcb61537976c4148de992",
+  "scriptHash": "86d0bdae526c",
+  "scriptCommitSha": "96273c340e0f25113500ae6c6e6af70cc8024083",
   "description": "Canonical B/A and Q-values for low isotopes via the paper's 4-input Skein-pair scheme (m_μ/m_e, m_e, μ_u, μ_d) and 4-tier formula. Layer 1: best tier per isotope (D: T1+T4; T/³He: BW+chirality; ⁴He: BW+chirality²+shell; A≥5: BW+shell). Layer 2: Q_β⁻ = Q_β(n) + B_d − B_p where Q_β(n) = m_n − m_p − m_e is exact under the Skein-pair formula. Layer 3: NOT computed (N_v open). All canonical, no fits beyond the 4 structural inputs. p ≠ n via μ_d ≠ μ_u (Δ = μ_d − μ_u captures n-p splitting exactly).",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
@@ -50,7 +50,10 @@
         "B_per_A_AME_MeV": 0.0,
         "M_atom_pred_MeV": 938.78308711,
         "M_atom_AME_MeV": 938.78308711,
+        "M_atom_tower_categorical_MeV": 956.0023856075,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -68,7 +71,10 @@
         "B_per_A_AME_MeV": 1.11228306,
         "M_atom_pred_MeV": 1876.0771389145448,
         "M_atom_AME_MeV": 1876.12394151,
+        "M_atom_tower_categorical_MeV": 1910.0047369595447,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -86,7 +92,10 @@
         "B_per_A_AME_MeV": 2.8272661333333335,
         "M_atom_pred_MeV": 2809.389289975219,
         "M_atom_AME_MeV": 2809.43212975,
+        "M_atom_tower_categorical_MeV": 2860.0251875677186,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -104,7 +113,10 @@
         "B_per_A_AME_MeV": 2.5726791666666666,
         "M_atom_pred_MeV": 2809.347452433268,
         "M_atom_AME_MeV": 2809.41355724,
+        "M_atom_tower_categorical_MeV": 2860.4943489757675,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -122,7 +134,10 @@
         "B_per_A_AME_MeV": 7.0739228,
         "M_atom_pred_MeV": 3729.5530881421546,
         "M_atom_AME_MeV": 3728.4013240599998,
+        "M_atom_tower_categorical_MeV": 3797.4082842321545,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -140,7 +155,10 @@
         "B_per_A_AME_MeV": 5.332341666666667,
         "M_atom_pred_MeV": 5601.037458337381,
         "M_atom_AME_MeV": 5603.05147289,
+        "M_atom_tower_categorical_MeV": 5702.82025247238,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -158,7 +176,10 @@
         "B_per_A_AME_MeV": 5.606361428571428,
         "M_atom_pred_MeV": 6527.668823534961,
         "M_atom_AME_MeV": 6535.36641341,
+        "M_atom_tower_categorical_MeV": 6646.15991721746,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -176,7 +197,10 @@
         "B_per_A_AME_MeV": 6.462775555555556,
         "M_atom_pred_MeV": 8387.86159260817,
         "M_atom_AME_MeV": 8394.79447104,
+        "M_atom_tower_categorical_MeV": 8540.28028433567,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -194,7 +218,10 @@
         "B_per_A_AME_MeV": 6.927770909090909,
         "M_atom_pred_MeV": 10246.877811170822,
         "M_atom_AME_MeV": 10255.10247867,
+        "M_atom_tower_categorical_MeV": 10433.22410094332,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -212,7 +239,10 @@
         "B_per_A_AME_MeV": 7.6801458333333334,
         "M_atom_pred_MeV": 11172.600219420385,
         "M_atom_AME_MeV": 11177.92929578,
+        "M_atom_tower_categorical_MeV": 11376.165807690382,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -230,7 +260,10 @@
         "B_per_A_AME_MeV": 7.976205625,
         "M_atom_pred_MeV": 14889.122713096853,
         "M_atom_AME_MeV": 14899.168771039998,
+        "M_atom_tower_categorical_MeV": 15160.543497456852,
         "atomic_includes_electron": true,
+        "M_atom_pred_method": "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+        "M_atom_tower_method": "categorical: m_p from mass-endomorphism tower (1869.85·m_e, 1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), B from 4-tier formula. Fully-derived chain prediction.",
         "status": "canonical-3-input-4-tier"
       }
     ],

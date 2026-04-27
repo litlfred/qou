@@ -213,9 +213,19 @@ def main():
         # err undefined when AME = 0 (¹H convention); report absolute residual instead
         err = 100 * (b_pred - b_ame) / b_ame if b_ame else None
         # Atomic mass: M_atom = Z·m_p + N·m_n + Z·m_e − B
-        # (¹H atomic mass = m_p + m_e is included for self-consistency check)
+        # WARNING: this uses CODATA m_p, m_n directly (arithmetic).
+        # NOT through knot operations / GB-NF / SDP categorical chain.
+        # The mass-endomorphism tower CATEGORICAL prediction for m_p is
+        # 1869.85·m_e ≈ 955.5 MeV (1.84% off CODATA m_p), so a fully-
+        # categorical m_atom would carry that residual.
         m_atom_pred = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_pred
         m_atom_ame  = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_ame
+        # For comparison: fully-categorical m_atom using mass-endomorphism
+        # tower prediction m_p_tower = 1869.85·m_e (per mass-endomorphism.witness.json)
+        # and m_n_tower = m_p_tower + Q_β (per calibration-inputs.md)
+        M_P_TOWER_MEV = 1869.85 * M_E_MEV       # categorical tower prediction
+        M_N_TOWER_MEV = M_P_TOWER_MEV + Q_NEUTRON_MEV
+        m_atom_tower = Z * M_P_TOWER_MEV + N * M_N_TOWER_MEV + Z * M_E_MEV - b_pred
         layer1.append({
             "sym": sym, "Z": Z, "N": N, "A": A,
             "family": FAMILY_BY_SYM[sym],
@@ -228,7 +238,15 @@ def main():
             "B_per_A_AME_MeV": b_ame / A if A > 0 else None,
             "M_atom_pred_MeV": m_atom_pred,
             "M_atom_AME_MeV":  m_atom_ame,
+            "M_atom_tower_categorical_MeV": m_atom_tower,
             "atomic_includes_electron": True,    # Z electrons bound to nucleus
+            "M_atom_pred_method":
+                "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT "
+                "through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
+            "M_atom_tower_method":
+                "categorical: m_p from mass-endomorphism tower (1869.85·m_e, "
+                "1.84% off), m_n = m_p + Q_β (per calibration-inputs.md), "
+                "B from 4-tier formula. Fully-derived chain prediction.",
             "status": "canonical-3-input-4-tier",
         })
 
@@ -392,16 +410,18 @@ def main():
     print("\n" + "=" * 84)
     print("LAYER 1 — canonical B per isotope (3-input scheme, 4-tier formula)")
     print("=" * 84)
-    print(f"{'sym':<6} {'A':>3} {'fam':>4} {'B_pred':>10} {'B_AME':>10} "
-          f"{'B/A_pred':>9} {'err%':>8}  {'M_atom (MeV)':>12}  tier")
-    print("-" * 132)
+    print(f"{'sym':<6} {'A':>3} {'fam':>4} {'B_pred':>10} {'err%':>8}  "
+          f"{'M_atom (arith)':>14}  {'M_atom (tower)':>14}  tier")
+    print("-" * 140)
     for r in layer1:
         bp = f"{r['B_pred_MeV']:>10.4f}" if r["B_pred_MeV"] is not None else f"{'—':>10}"
-        ba = f"{r['B_AME_MeV']:>10.4f}" if r["B_AME_MeV"] is not None else f"{'—':>10}"
-        bpa = f"{r.get('B_per_A_pred_MeV', 0):>9.4f}" if r.get('B_per_A_pred_MeV') else f"{'—':>9}"
         ep = f"{r['err_pct']:>+8.2f}" if r["err_pct"] is not None else f"{'—':>8}"
-        ma = f"{r.get('M_atom_pred_MeV', 0):>12.3f}" if r.get('M_atom_pred_MeV') is not None else f"{'—':>12}"
-        print(f"{r['sym']:<6} {r['A']:>3} {r['family']:>4} {bp} {ba} {bpa} {ep}  {ma}  {r['tier']}")
+        ma = f"{r.get('M_atom_pred_MeV', 0):>14.3f}" if r.get('M_atom_pred_MeV') is not None else f"{'—':>14}"
+        mt = f"{r.get('M_atom_tower_categorical_MeV', 0):>14.3f}" if r.get('M_atom_tower_categorical_MeV') is not None else f"{'—':>14}"
+        print(f"{r['sym']:<6} {r['A']:>3} {r['family']:>4} {bp} {ep}  {ma}  {mt}  {r['tier']}")
+    print()
+    print("M_atom (arith) = Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B   (NOT through chain)")
+    print("M_atom (tower) = Z·m_p_TOWER  + N·m_n_TOWER  + Z·m_e − B   (categorical, with 1.84% m_p residual)")
 
     print("\n" + "=" * 84)
     print("LAYER 2 — Q-values (β⁻) via Q_β(n) + B_d − B_p")
