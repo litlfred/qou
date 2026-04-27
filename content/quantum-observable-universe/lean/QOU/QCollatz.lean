@@ -220,12 +220,7 @@ theorem qInt_gap_3_8_fails (q : ℝ) (hq : q > 2) (hq1 : q ≠ 1) :
   have h5 : q ^ 5 > q ^ 3 + 2 * q ^ 2 + q := by
     nlinarith [hq, sq_nonneg (q - 2), sq_nonneg q, mul_pos hqp hqp,
                mul_pos (mul_pos hqp hqp) hqp]
-  nlinarith [h5, hq, hqp, mul_pos hqp hqp,
-             mul_pos (mul_pos hqp hqp) hqp,
-             mul_pos (mul_pos (mul_pos hqp hqp) hqp) hqp,
-             mul_pos (mul_pos (mul_pos (mul_pos hqp hqp) hqp) hqp) hqp,
-             mul_pos (mul_pos (mul_pos (mul_pos (mul_pos hqp hqp) hqp) hqp) hqp) hqp,
-             mul_pos (mul_pos (mul_pos (mul_pos (mul_pos (mul_pos hqp hqp) hqp) hqp) hqp) hqp) hqp]
+  nlinarith [h5, hq]
 
 -- ═══════════════════════════════════════════════════════════════
 -- §6. Contact threshold (supplementary — uses Real.log)
