@@ -80,6 +80,7 @@ export default chapter({
       label: "sec:classical-limit",
       blocks: [
         "classical-limit-intro",
+        "motivic-substrate",
         "adelic-substrate",
         "classical-limit-functor",
         "quantum-gap-collapse",
