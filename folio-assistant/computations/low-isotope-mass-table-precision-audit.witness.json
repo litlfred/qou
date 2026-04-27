@@ -1,7 +1,7 @@
 {
   "computation": "low-isotope-mass-table-precision-audit",
-  "description": "Plan F precision-budget audit. Reads the f64 witness low-isotope-mass-table.witness.json and recomputes the \u0394 and M assembly step in mpmath @ 50 dps. Quantifies how much of each observed residual is at the f64 floor (~0.22 ppb) vs upstream from the prediction path. Confirms the assembly arithmetic is precision-preserving \u2014 the mpmath lift on this step alone would not move any residual.",
-  "computedAt": "2026-04-27T16:20:11.994229+00:00",
+  "description": "Plan F precision-budget audit. Reads the f64 witness low-isotope-mass-table.witness.json and recomputes the \u0394 and M assembly step in mpmath @ 50 dps. Quantifies how much of each observed residual is at the f64 floor (2.22e-7 ppb = 2^-52 \u00d7 1e9) vs upstream from the prediction path. Confirms the assembly arithmetic is precision-preserving \u2014 the mpmath lift on this step alone would not move any residual.",
+  "computedAt": "2026-04-27T21:03:04.881374+00:00",
   "precision": "mpfr_50dps",
   "inputs": {
     "f64_witness": "low-isotope-mass-table.witness.json",
@@ -28,7 +28,7 @@
       "Delta_assembly_residual_ppm": 2.057900148404646e-10,
       "M_assembly_residual_MeV": 0.0,
       "M_assembly_residual_ppb": 0.0,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": 0.014263146006804308,
       "observed_M_err_ppb": 14.263146006804307,
       "f64_floor_dominates": false
@@ -42,7 +42,7 @@
       "Delta_assembly_residual_ppm": 1.906725915134269e-09,
       "M_assembly_residual_MeV": 1e-13,
       "M_assembly_residual_ppb": 5.3302071650660226e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -12.91989232377507,
       "observed_M_err_ppb": -12919.89232377507,
       "f64_floor_dominates": false
@@ -56,7 +56,7 @@
       "Delta_assembly_residual_ppm": 3.2079095605498754e-09,
       "M_assembly_residual_MeV": 0.0,
       "M_assembly_residual_ppb": 0.0,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": 4.703922625419378,
       "observed_M_err_ppb": 4703.922625419378,
       "f64_floor_dominates": false
@@ -70,7 +70,7 @@
       "Delta_assembly_residual_ppm": 1.7149983692052272e-09,
       "M_assembly_residual_MeV": 4e-14,
       "M_assembly_residual_ppb": 1.4236685806986102e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": 81.57014598192758,
       "observed_M_err_ppb": 81570.14598192758,
       "f64_floor_dominates": false
@@ -84,7 +84,7 @@
       "Delta_assembly_residual_ppm": 2.1031566327386814e-08,
       "M_assembly_residual_MeV": 2e-13,
       "M_assembly_residual_ppb": 5.364229375918278e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": 0.0017111891286663292,
       "observed_M_err_ppb": 1.7111891286663292,
       "f64_floor_dominates": false
@@ -98,7 +98,7 @@
       "Delta_assembly_residual_ppm": 3.052937759024655e-08,
       "M_assembly_residual_MeV": 4.96e-13,
       "M_assembly_residual_ppb": 8.870784036561317e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -2081.545232995459,
       "observed_M_err_ppb": -2081545.232995459,
       "f64_floor_dominates": false
@@ -112,7 +112,7 @@
       "Delta_assembly_residual_ppm": 3.5671831067883105e-08,
       "M_assembly_residual_MeV": -2.5e-13,
       "M_assembly_residual_ppb": -3.832431811215008e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -1850.4782649050464,
       "observed_M_err_ppb": -1850478.2649050464,
       "f64_floor_dominates": false
@@ -126,7 +126,7 @@
       "Delta_assembly_residual_ppm": 4.1810036173719403e-08,
       "M_assembly_residual_MeV": 0.0,
       "M_assembly_residual_ppb": 0.0,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -337.78227023412245,
       "observed_M_err_ppb": -337782.27023412246,
       "f64_floor_dominates": false
@@ -140,7 +140,7 @@
       "Delta_assembly_residual_ppm": 5.3562524373147436e-08,
       "M_assembly_residual_MeV": -5e-13,
       "M_assembly_residual_ppb": -5.962564373292371e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -1088.9643935783913,
       "observed_M_err_ppb": -1088964.3935783913,
       "f64_floor_dominates": false
@@ -154,7 +154,7 @@
       "Delta_assembly_residual_ppm": 7.505009616712985e-08,
       "M_assembly_residual_MeV": 0.0,
       "M_assembly_residual_ppb": 0.0,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -1138.1693906813193,
       "observed_M_err_ppb": -1138169.3906813194,
       "f64_floor_dominates": false
@@ -168,7 +168,7 @@
       "Delta_assembly_residual_ppm": 1.0576520295533753e-07,
       "M_assembly_residual_MeV": 0.0,
       "M_assembly_residual_ppb": 0.0,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -1162.4716073035568,
       "observed_M_err_ppb": -1162471.6073035568,
       "f64_floor_dominates": false
@@ -182,7 +182,7 @@
       "Delta_assembly_residual_ppm": 1.5006442982973834e-07,
       "M_assembly_residual_MeV": -1.51e-12,
       "M_assembly_residual_ppb": -1.4735405715024989e-07,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -748.4819437781919,
       "observed_M_err_ppb": -748481.9437781918,
       "f64_floor_dominates": false
@@ -196,7 +196,7 @@
       "Delta_assembly_residual_ppm": -2.4922613347564764e-05,
       "M_assembly_residual_MeV": 1e-12,
       "M_assembly_residual_ppb": 8.946205793849476e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -0.5537160720579011,
       "observed_M_err_ppb": -553.7160720579011,
       "f64_floor_dominates": false
@@ -210,7 +210,7 @@
       "Delta_assembly_residual_ppm": -2.049375019771758e-07,
       "M_assembly_residual_MeV": 2.4e-13,
       "M_assembly_residual_ppb": 1.982063266420529e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -326.4410692221646,
       "observed_M_err_ppb": -326441.0692221646,
       "f64_floor_dominates": false
@@ -224,7 +224,7 @@
       "Delta_assembly_residual_ppm": -6.971459596079342e-08,
       "M_assembly_residual_MeV": -1.5e-12,
       "M_assembly_residual_ppb": -1.1504405629130294e-07,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -406.1407147734578,
       "observed_M_err_ppb": -406140.7147734578,
       "f64_floor_dominates": false
@@ -238,7 +238,7 @@
       "Delta_assembly_residual_ppm": -5.999285894534229e-08,
       "M_assembly_residual_MeV": -2.5e-13,
       "M_assembly_residual_ppb": -1.7896573480763967e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -240.36437213481543,
       "observed_M_err_ppb": -240364.37213481544,
       "f64_floor_dominates": false
@@ -252,7 +252,7 @@
       "Delta_assembly_residual_ppm": -4.0927709349103125e-08,
       "M_assembly_residual_MeV": 0.0,
       "M_assembly_residual_ppb": 0.0,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -8.4052715297916,
       "observed_M_err_ppb": -8405.2715297916,
       "f64_floor_dominates": false
@@ -266,7 +266,7 @@
       "Delta_assembly_residual_ppm": -3.4886551637405434e-08,
       "M_assembly_residual_MeV": -1e-12,
       "M_assembly_residual_ppb": -6.317475398871922e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -346.23647434165133,
       "observed_M_err_ppb": -346236.4743416513,
       "f64_floor_dominates": false
@@ -280,7 +280,7 @@
       "Delta_assembly_residual_ppm": -3.108238989530956e-08,
       "M_assembly_residual_MeV": 0.0,
       "M_assembly_residual_ppb": 0.0,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -413.89763009507993,
       "observed_M_err_ppb": -413897.63009507995,
       "f64_floor_dominates": false
@@ -294,7 +294,7 @@
       "Delta_assembly_residual_ppm": -2.486575861013581e-08,
       "M_assembly_residual_MeV": -2e-14,
       "M_assembly_residual_ppb": -1.130681024205242e-09,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -477.25524441360056,
       "observed_M_err_ppb": -477255.24441360054,
       "f64_floor_dominates": false
@@ -308,7 +308,7 @@
       "Delta_assembly_residual_ppm": -2.0172473445431984e-08,
       "M_assembly_residual_MeV": -2e-14,
       "M_assembly_residual_ppb": -1.0742444263150695e-09,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -274.0362474616972,
       "observed_M_err_ppb": -274036.2474616972,
       "f64_floor_dominates": false
@@ -322,7 +322,7 @@
       "Delta_assembly_residual_ppm": -1.9038751996976228e-08,
       "M_assembly_residual_MeV": -1.26e-12,
       "M_assembly_residual_ppb": -6.445937779366999e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -432.09273172214057,
       "observed_M_err_ppb": -432092.73172214057,
       "f64_floor_dominates": false
@@ -336,7 +336,7 @@
       "Delta_assembly_residual_ppm": -1.8066412413781193e-08,
       "M_assembly_residual_MeV": 4.7e-13,
       "M_assembly_residual_ppb": 2.2952970640084707e-08,
-      "M_f64_quantization_floor_ppb": 0.222,
+      "M_f64_quantization_floor_ppb": 2.22e-07,
       "observed_M_err_ppm": -399.9678867035352,
       "observed_M_err_ppb": -399967.8867035352,
       "f64_floor_dominates": false

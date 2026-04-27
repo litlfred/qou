@@ -69,9 +69,12 @@ def assembly_at_50dps(row: dict, c: dict) -> dict:
     }
 
 
-def f64_floor_ppb(M_value: float) -> float:
-    """Quantization noise floor of an f64 representation, in ppb."""
-    return abs(M_value) * 2.22e-16 * 1.0e9 / abs(M_value)  # 0.222 ppb
+# Machine epsilon for IEEE 754 double precision, expressed as a
+# relative error in parts per billion: 2^-52 ≈ 2.22e-16, so multiplied
+# by 1e9 it is 2.22e-7 ppb (NOT 0.222 ppb — earlier draft was off by
+# 10^6).  Used as the floor below which an observed residual is
+# attributable to f64 quantization rather than any real upstream signal.
+F64_FLOOR_PPB = 2.22e-7  # 2^-52 × 1e9
 
 
 def main() -> int:
@@ -104,11 +107,17 @@ def main() -> int:
             "Delta_assembly_residual_ppm":   float(delta_residual / Delta_50 * mpf(1_000_000)) if Delta_50 != 0 else None,
             "M_assembly_residual_MeV":       float(M_residual),
             "M_assembly_residual_ppb":       float(M_residual / M_50 * mpf(1_000_000_000)),
-            "M_f64_quantization_floor_ppb":  0.222,  # 2^-52 in ppb
+            "M_f64_quantization_floor_ppb":  F64_FLOOR_PPB,
             "observed_M_err_ppm":            row["M_err_ppm"],
             "observed_M_err_ppb":            row["M_err_ppm"] * 1000.0,
+            # Residual is f64-floor-limited iff its magnitude is at or
+            # below the IEEE 754 quantization floor (2.22e-7 ppb).
+            # Earlier draft used a 1 ppb threshold, which is 4.5 million
+            # times the actual floor and falsely tagged genuinely
+            # signal-bearing residuals as floor-limited (PR #454,
+            # Gemini r3150164181).
             "f64_floor_dominates":
-                abs(row["M_err_ppm"] * 1000.0) < 1.0,  # < 1 ppb means f64-floor-limited
+                abs(row["M_err_ppm"] * 1000.0) < F64_FLOOR_PPB,
         })
 
     # Aggregate stats.
@@ -122,10 +131,11 @@ def main() -> int:
             "Plan F precision-budget audit. Reads the f64 witness "
             "low-isotope-mass-table.witness.json and recomputes the "
             "Δ and M assembly step in mpmath @ 50 dps. Quantifies how "
-            "much of each observed residual is at the f64 floor (~0.22 "
-            "ppb) vs upstream from the prediction path. Confirms the "
-            "assembly arithmetic is precision-preserving — the mpmath "
-            "lift on this step alone would not move any residual.",
+            "much of each observed residual is at the f64 floor "
+            "(2.22e-7 ppb = 2^-52 × 1e9) vs upstream from the "
+            "prediction path. Confirms the assembly arithmetic is "
+            "precision-preserving — the mpmath lift on this step alone "
+            "would not move any residual.",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "precision":  "mpfr_50dps",
         "inputs": {
@@ -142,7 +152,8 @@ def main() -> int:
     }
 
     OUT.write_text(json.dumps(out, indent=2))
-    print(f"\n  Audit complete. {n} isotopes; {n_at_floor} at f64 floor (<1 ppb).")
+    print(f"\n  Audit complete. {n} isotopes; {n_at_floor} at f64 floor "
+          f"(< {F64_FLOOR_PPB:.2e} ppb).")
     print(f"  Max assembly-step residual: {max_assembly_residual:.3e} ppb")
     print(f"  Output: {OUT.relative_to(HERE.parent.parent)}")
     return 0
