@@ -216,7 +216,7 @@ ppb is to be re-checked under the new chirality term.
 **C1.** Replace the empirical `c_αα = m_e · Vol(7²₁)` constant with the
 six-term formula applied to the JSJ-decomposed α-cluster atom. The
 `prop:atom-knot-mass-derivation` α-cluster recursion already lives in
-the content layer; the consumer just needs extending past Family 1.
+the content layer; the consumer needs extending past Family 1.
 
 **Eliminates constants:** #2 (c_αα).
 **Effort:** ~2 days; depends on A1.
