@@ -34,7 +34,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 50
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, vol_4_1_at
 Q0 = mp.mpf(str(Q0_FLOAT)); QI = 1/Q0
 m_e = mp.mpf("0.51099895")
 
@@ -101,7 +101,7 @@ print("─" * 100)
 KNOTS = [
     ("6_1", "3.16396322888314", 3, 4),
     ("8_11", "8.28631808635811", 4, 5),
-    ("4_1", "2.02988321281930725004", 3, 4),  # figure-eight
+    ("4_1", mp.nstr(vol_4_1_at(50), 50), 3, 4),  # figure-eight, exact via 2·Cl_2(π/3)
     ("5_2", "2.82812208833078", 3, 4),
 ]
 print(f"  {'K':<6} {'r_chir':>7} {'chir_MeV':>14} {'tail_MeV':>14} {'Q_pred':>12} {'err %':>10}")

@@ -47,6 +47,8 @@ import numpy as np
 import sympy as sp
 import mpmath as mp
 
+from q_parameter import vol_4_1_at
+
 mp.mp.dps = 40
 
 from hecke_core import (
@@ -75,7 +77,8 @@ def q_fact(n):
 
 
 # Figure-8 knot (4_1) hyperbolic volume — Catalan-related classical value.
-VOL_FIG8 = mp.mpf("2.029883212819307250042405108549")
+# Computed via Vol(4_1) = 2 Cl_2(π/3) at the current mpmath precision.
+VOL_FIG8 = vol_4_1_at(mp.mp.dps)
 
 
 def dim_q_value(shape):
