@@ -16,6 +16,7 @@
 //! Output: pretty-printed JSON to stdout, one block per partition λ.
 
 use hecke_engine::seminormal::{partitions_of, seminormal_matrices};
+use hecke_engine::wedderburn_psd::evaluate_all_blocks;
 
 const Q_0: f64 = 1.1099785955541806;
 
@@ -105,8 +106,16 @@ fn build_block_matrix(
 fn registry(name: &str) -> Option<(usize, Vec<i32>)> {
     match name {
         "proton" | "neutron" => {
-            // Borromean: σ_1 σ_2^{-1} σ_1 σ_2^{-1} (positive σ_1 convention)
-            Some((3, vec![1, -2, 1, -2]))
+            // 6-letter Borromean from joint-tower-sdp-rust.witness.json:
+            // σ_1 σ_2^{-1} σ_1 σ_2^{-1} σ_1 σ_2^{-1}
+            Some((3, vec![1, -2, 1, -2, 1, -2]))
+        }
+        "proton-H5" | "neutron-H5" => {
+            // Same Borromean, Markov-stabilized H_3 → H_5 by appending
+            // σ_3 σ_4. The Markov closure is unchanged; the
+            // representation lives in H_5. Used to discriminate the
+            // d_λ ≥ 4 H2 hypothesis from the ³H investigation.
+            Some((5, vec![1, -2, 1, -2, 1, -2, 3, 4]))
         }
         "helium3-3He" | "3He" => {
             // L_6a4 alternating: σ_1^{-1} σ_2 σ_1^{-1} σ_2 σ_1^{-1} σ_2
@@ -115,6 +124,23 @@ fn registry(name: &str) -> Option<(usize, Vec<i32>)> {
         "tritium-3H" | "3H" => {
             // 14-letter word from joint-tower-sdp-rust.witness.json
             Some((5, vec![-1, 2, -3, 2, 1, -3, -3, 4, -3, -2, -3, -4, -3, 2]))
+        }
+        "natural-h5-cycle" => {
+            // A "natural" 5-strand cycle that doesn't factor through any
+            // H_{n-1}: σ_1 σ_2 σ_3 σ_4 σ_3 σ_2 σ_1. Discriminates
+            // H2 (general d >= 4 Hoefsmit issue) from a stabilisation-
+            // specific effect.
+            Some((5, vec![1, 2, 3, 4, 3, 2, 1]))
+        }
+        "natural-h5-positive-half-twist" => {
+            // The full positive half-twist Δ_5 of B_5:
+            //    Δ_5 = (σ_1 σ_2 σ_3 σ_4)(σ_1 σ_2 σ_3)(σ_1 σ_2)(σ_1)
+            // Δ^2 is central in B_n; Δ itself has a known PSD profile
+            // in published Hoefsmit tables.
+            Some((
+                5,
+                vec![1, 2, 3, 4, 1, 2, 3, 1, 2, 1],
+            ))
         }
         _ => None,
     }
@@ -156,6 +182,32 @@ fn main() {
     println!("# n_strands: {n_strands}");
     println!("# q_0: {Q_0}");
     println!("# braid_word: {braid_word:?}");
+    println!();
+
+    // PSD report (symmetric-part min eigenvalue per block, same as
+    // sdp_verifier uses).
+    let reports = evaluate_all_blocks(n_strands, &braid_word, Q_0);
+    println!("## Wedderburn PSD report (symmetric-part eigenvalues)");
+    println!("  λ                     d_λ  min eig (sym)  max eig (sym)  PSD?");
+    let mut all_psd = true;
+    for r in &reports {
+        let mark = if r.psd_symmetric_part { "✓" } else { "✗" };
+        if !r.psd_symmetric_part {
+            all_psd = false;
+        }
+        println!(
+            "  {:<22} {:>3}  {:>13.6}  {:>13.6}  {}",
+            format!("{:?}", r.partition),
+            r.d_lambda,
+            r.min_eigenvalue,
+            r.max_eigenvalue,
+            mark,
+        );
+    }
+    println!(
+        "  ALL PSD: {}",
+        if all_psd { "YES (α* = 1)" } else { "NO" }
+    );
     println!();
 
     for shape in partitions_of(n_strands) {
