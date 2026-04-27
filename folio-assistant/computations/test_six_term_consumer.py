@@ -159,27 +159,34 @@ def test_attestation_no_volumes_no_fits():
     assert a["used_fitted_constants"] is False
 
 
-def test_t4_marked_pending_with_explicit_reason():
-    """T4 (Frobenius co-Casimir) is a known gap; the witness must
-    document why and what's needed to close it."""
+def test_t4_wired_with_partition_sum():
+    """T4 (Frobenius co-Casimir) was the gap from Sprint A v3; v4 wires
+    it via Σ_λ 1/dim_q(λ) over partitions of n=3·A."""
     w = _ensure_witness()
     for name in FAMILY_1:
         t4 = w["per_particle"][name]["terms"]["T4_frobenius_co_casimir"]
-        assert t4.get("pending") is True
-        assert "reason" in t4
-        assert "Sprint A v4" in t4["reason"], \
-            "T4 reason should reference where the helper will be added"
+        assert t4.get("pending") is not True, (
+            f"{name}: T4 should now be wired (Sprint A v4); got {t4!r}"
+        )
+        assert "T4_MeV" in t4, f"{name}: T4 missing T4_MeV value"
+        A = w["per_particle"][name]["A"]
+        assert "n_strands" in t4 and t4["n_strands"] == 3 * A
+        assert "n_partitions" in t4 and t4["n_partitions"] >= 1
+        s = t4["sum_inv_dim_q"]
+        assert 0 < s < 1e3, f"{name}: T4 sum_inv_dim_q={s} outside expected range"
 
 
 def test_ame_comparison_is_marked_pending():
-    """Sprint A v3 deliberately does NOT emit a calibrated
+    """Sprint A v3+v4 deliberately do NOT emit a calibrated
     AME-comparable binding-energy prediction — that requires the
-    Z·m_p + N·m_n − M conversion, queued for v4. The witness must
-    say so explicitly so reviewers don't expect ppb residuals here."""
+    Z·m_p + N·m_n − M conversion, queued for Sprint A v5."""
     w = _ensure_witness()
     a = w["attestation"]
     assert a["ame_comparison_pending"] is True
-    assert "Sprint A v4" in a["ame_comparison_reason"]
+    assert "Sprint A v5" in a["ame_comparison_reason"], (
+        f"AME comparison reason should reference Sprint A v5; "
+        f"got {a['ame_comparison_reason']!r}"
+    )
 
 
 # ── Runner ────────────────────────────────────────────────────────
@@ -192,7 +199,7 @@ def _run_all():
         ("witness_emits_per_particle_for_family_1", test_witness_emits_per_particle_for_family_1),
         ("each_term_finite_or_pending", test_each_term_finite_or_pending),
         ("attestation_no_volumes_no_fits", test_attestation_no_volumes_no_fits),
-        ("t4_marked_pending_with_explicit_reason", test_t4_marked_pending_with_explicit_reason),
+        ("t4_wired_with_partition_sum", test_t4_wired_with_partition_sum),
         ("ame_comparison_is_marked_pending", test_ame_comparison_is_marked_pending),
         ("t6_extracts_per_A_correctly", test_t6_extracts_per_A_correctly),
         ("witness_uses_canonical_computedAt_field", test_witness_uses_canonical_computedAt_field),
