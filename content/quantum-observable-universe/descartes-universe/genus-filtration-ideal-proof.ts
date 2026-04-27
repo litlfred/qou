@@ -8,5 +8,9 @@ export default proof({
   uses: [
     "prop:categorical-dq-squared",
     "def:quantum-characteristic-classes",
+    "lem:genus-from-hecke-completeness",
+    "lem:chebyshev-degree-genus",
+    "lem:genus-ideal-characterisation",
+    "lem:yekutieli-leading-coefficient",
   ],
 });
