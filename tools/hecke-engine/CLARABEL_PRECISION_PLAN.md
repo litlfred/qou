@@ -30,7 +30,7 @@ the f64→MPFR gap on the solver side is the missing rung for R5.6/R5.7.
 
 Every site below currently forces `f64` and must become generic over
 a `FloatT` parameter (or be paralleled by an MPFR sibling).  Grouped
-by file; each entry is `path:line — symbol — issue`.
+by file; each entry records the relevant symbol or site and the issue.
 
 ### `src/sdp_verifier.rs` (bisection — no Clarabel call)
 
@@ -128,8 +128,9 @@ generator matrices instead of contracting against a basis vector.
 
 ### S2.  Generic dense linear-algebra helpers (~200 LOC)
 
-New `src/dense_la.rs`.  Generic over a `Scalar: Clone + Add + Mul + ...`
-trait alias.  Ports the four helpers (`sparse_to_dense`,
+New `src/dense_la.rs`.  Generic over a stable `Scalar` trait
+(`trait Scalar: Clone + Add + Mul + ... {}`) or equivalent shared
+`where`-bounds.  Ports the four helpers (`sparse_to_dense`,
 `dense_dense_mul`, `invert_matrix_h`, `symmetrize`) once instead of
 duplicating per Clarabel module.  Two instantiations:
 
@@ -202,7 +203,7 @@ clarabel = { version = "0.12", features = ["sdp-netlib"] }   # bump
 
 [features]
 default = []
-clarabel-hp = ["dep:rug"]   # rug is already a hard dep; this gates the new modules
+clarabel-hp = []   # gate the new modules / HP Clarabel wiring; rug remains a hard dep
 ```
 
 `lib.rs` adds `#[cfg(feature = "clarabel-hp")] pub mod
@@ -312,7 +313,16 @@ principled-derivation methodology tag, replacing the deprecated
 
 1. **New CLI**: `src/bin/clarabel_precision_smoke.rs` — runs T1+T2 in
    under a minute, prints a comparison table, exits non-zero on any
-   pass-criterion failure.  Wired to `[[bin]]` in `Cargo.toml`.
+   pass-criterion failure.  Wired into `Cargo.toml` as
+
+   ```toml
+   [[bin]]
+   name = "clarabel-precision-smoke"
+   path = "src/bin/clarabel_precision_smoke.rs"
+   ```
+
+   matching the existing hyphenated-bin convention (`hecke-engine`,
+   `hecke-mass`, etc.).
 
 2. **CI gate**: add a step to `.github/workflows/lean_ci.yml` (or a
    new `clarabel-precision.yml`):
