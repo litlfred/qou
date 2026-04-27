@@ -41,6 +41,8 @@ either fix above.
 | ⁴⁰Ca | 3      | +195.1 M         |
 | ⁶Li, ⁷Li | 4 (quarantined) | n/a |
 
+Units: `M` = million ppb (10⁶ ppb), i.e. `+10.9 M` ≈ +10.9 × 10⁶ ppb ≈ 1.09 %.
+
 Source: [`mass-table-ppb.witness.json`](../folio-assistant/computations/mass-table-ppb.witness.json).
 Numerical precision is not the bottleneck — `q₀` is CODATA-bounded at
 σ/q ≈ 1.22 × 10⁻⁹, already 1-ppb-class. **All residual is structural-formula
@@ -64,7 +66,7 @@ $$
   z^2 \sum_{i<j} \Phi_q(|\hat V_i \hat V_j|) +
   m_e \tau(C) +
   a_K \mathcal{C}_K +
-  \sum_{\ell \geq 2} \mathrm{Res}_\zeta
+  \sum_{\ell \geq 2} \frac{\mathrm{Res}_{q = \zeta_\ell}[\,\cdot\,]}{q_0 - \zeta_\ell}
 $$
 
 | Term | Curvature-rank | Provenance                                    |
@@ -137,7 +139,7 @@ not been wired.
 | 4 | `Vol(K11a259)`, `Vol(L11a62)`, `ρ=5`         | 4         | volume-as-input + R5.6 gap   | Fix 1 + R5.6 |
 | 5 | `α₄ ≈ 0.8272` (n→p transition)               | universal | 2-term blend drops chirality | Fix 2 |
 | 6 | per-isotope `(α, r)` ladder fits             | 1–3       | residual patches             | redundant once 1+2 land |
-| 7 | `E_0 = 0.782 MeV` (β-decay Q)                | universal | = CODATA `m_n − m_p`         | label as fibre-functor input (not "empirical") |
+| 7 | `E_0 = 0.782 MeV` (β-decay Q)                | universal | = CODATA `m_n − m_p − m_e`   | label as fibre-functor input (not "empirical") |
 
 ### 3.1 Why `α*` is not closed-form
 
@@ -241,7 +243,8 @@ be redundant. Delete those that are. Document any that genuinely
 encode missing structure (and queue them as their own work item).
 
 **E2.** Label `E_0 = 0.782 MeV` (#7) as `fibre-functor-input` (= CODATA
-`m_n − m_p`) — not empirical, but a measurement input.
+`m_n − m_p − m_e`, the free-neutron β-decay Q-value) — not empirical,
+but a measurement input.
 
 **Eliminates constants:** #6, #7. **Effort:** ~half-day.
 
