@@ -52,36 +52,33 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 # Import the canonical baseline machinery from PR #450.
-import alpha_blend_tower as abt
+# Note: alpha_blend_tower's import-time `mp.mp.dps = 50` side effect
+# is what we rely on for module-level precision; we do not import the
+# `abt` module name itself (per Copilot review: drop unused imports).
 from alpha_blend_tower import (
-    Q0, QI, z_m, D, W_SYM, W_STD, W_ALT,
+    Q0, QI, D, W_SYM, W_STD, W_ALT,
     lam_sym, lam_alt, V_std, V_3term, tower, _DPS,
 )
 from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
 from experimental_constants import M_P_MEV, M_N_MEV
+from witness_base import WitnessBuilder
 
 WITNESS_OUT = HERE / "neutron-gap-probes.witness.json"
 
 
-def _calibrate_and_predict(mp_v, mn_v, chirality_factor=mp.mpf(1)):
+def _calibrate_and_predict(mp_v, mn_v):
     """Calibrate energy scale on the proton (single point, no fit) and
     predict the neutron mass. Returns (mp_pred, mn_pred, neutron_err_ppb).
 
-    `chirality_factor` is for H3: apply a per-particle scalar to the
-    tower output before calibration. For all other hypotheses it is 1.
-    """
+    Per Copilot review: tuple-based `chirality_factor` API was unused
+    (H3 already pre-multiplies tower outputs by `a_p`/`a_n` before
+    calling). Simplified to a single calibration path."""
     if mp_v == 0:
         return None, None, None
     with mp.workdps(_DPS):
-        E0 = mp.mpf(str(M_P_MEV)) / (mp_v * chirality_factor[0]
-                                       if isinstance(chirality_factor, tuple)
-                                       else mp_v)
-        if isinstance(chirality_factor, tuple):
-            mp_pred = float(mp_v * chirality_factor[0] * E0)
-            mn_pred = float(mn_v * chirality_factor[1] * E0)
-        else:
-            mp_pred = float(mp_v * E0)
-            mn_pred = float(mn_v * E0)
+        E0 = mp.mpf(str(M_P_MEV)) / mp_v
+        mp_pred = float(mp_v * E0)
+        mn_pred = float(mn_v * E0)
     err_n_ppb = ((mn_pred - M_N_MEV) / M_N_MEV) * 1e9
     return mp_pred, mn_pred, err_n_ppb
 
@@ -305,32 +302,53 @@ def main() -> int:
     print(f"  RECOMMENDATION: {rec}")
     print()
 
-    out = {
-        "computation": "neutron-gap-probes",
-        "description": (
+    # Emit the witness via WitnessBuilder so it conforms to the
+    # ComputationWitness schema (folio-assistant/schemas/types.ts) —
+    # `engine`, `engineVersion`, `assertions`, `allPassed`,
+    # `computedAt` etc. are all populated automatically.
+    w = (
+        WitnessBuilder("neutron-gap-probes", engine="mpmath")
+        .set_description(
             "Three canonical probes (H1: λ_alt sign flip; H2: [2]_q "
             "std weight; H3: chirality as Term-5 multiplicative factor) "
             "investigating PR #450's −56% neutron-mass residual. No "
             "fitting; each variant has a content-block-cited rationale "
-            "or is explicitly flagged as exploratory."
-        ),
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "precision_dps": _DPS,
-        "q_0": float(Q0),
-        "m_p_codata_MeV": M_P_MEV,
-        "m_n_codata_MeV": M_N_MEV,
-        "threshold_ppb": THRESHOLD_PPB,
-        "results": results,
-        "verdict": verdict,
-        "recommendation": rec,
-        "attestation": {
-            "used_fitting": False,
-            "used_root_find": False,
-            "modifies_baseline_alpha_blend_tower_py": False,
-        },
-    }
-    WITNESS_OUT.write_text(json.dumps(out, indent=2, default=str) + "\n")
-    print(f"  Witness: {WITNESS_OUT}")
+            "or is explicitly flagged as exploratory. Read-only "
+            "investigation: does NOT modify alpha_blend_tower.py or "
+            "any existing test."
+        )
+        .set_content_block("prop:joint-tower-sdp-confinement")
+        .add_parameter("q_0", float(Q0))
+        .add_parameter("m_p_codata_MeV", M_P_MEV)
+        .add_parameter("m_n_codata_MeV", M_N_MEV)
+        .add_parameter("precision_dps", _DPS)
+        .add_parameter("threshold_ppb", THRESHOLD_PPB)
+        .add_data("results", results)
+        .add_data("verdict", verdict)
+        .add_data("recommendation", rec)
+    )
+    # Sanity-style assertions: proton calibrates exactly by construction
+    # for every variant (single-point calibration).
+    for r in results:
+        if r.get("proton_pred_MeV") is not None:
+            w.add_assertion(
+                f"proton_calibration_exact_{r['name']}",
+                computed=r["proton_pred_MeV"],
+                expected=M_P_MEV,
+                tolerance=1e-6,
+                source="single-point proton calibration (E0 = m_p / mp_v)",
+            )
+        if r.get("neutron_err_ppb") is not None:
+            # Neutron residual is reported but NOT asserted — this is
+            # an investigation, not a verification.
+            w.add_data(f"neutron_err_ppb_{r['name']}", r["neutron_err_ppb"])
+    w.add_data("attestation", {
+        "used_fitting": False,
+        "used_root_find": False,
+        "modifies_baseline_alpha_blend_tower_py": False,
+    })
+    out_path = w.save()  # auto-derives path from name → neutron-gap-probes.witness.json
+    print(f"  Witness: {out_path}")
     return 0
 
 
