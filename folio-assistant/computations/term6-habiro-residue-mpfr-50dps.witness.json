@@ -1,35 +1,42 @@
 {
   "computation": "term6-habiro-residue-mpfr-50dps",
-  "description": "Plan F \u2014 Term 6 Habiro residue tail at the precision of the existing habiro-residue-symbolic.witness.json (~30 digits via sympy.evalf(30)). True 50 dps requires re-evaluating the Schur-Weyl symbolic sums in schur_weyl_symbolic.py with mp.dps=50 \u2014 separate task. Existing 30 dps is already 10^15\u00d7 better than f64; Term 6 is a small contribution to the total mass so 30 dps is sufficient for sub-ppb on magic-A isotopes.",
-  "computedAt": "2026-04-27T20:47:14.929878+00:00",
-  "precision": "mpfr_30dps_inherited_from_source",
-  "precision_floor_reason": "Source habiro-residue-symbolic.witness.json was emitted by sympy.evalf(30); recomputing at 50 dps requires the global Schur-Weyl symbolic sums from schur_weyl_symbolic.py.",
+  "description": "Plan F \u2014 Term 6 Habiro residue tail at MPFR @ 50 dps. Re-evaluates the global Schur-Weyl symbolic sums \u03a3_{\u03bb\u22a23A} w_\u03bb(q) from schur_weyl_symbolic.py at q_0 to 50 dps via sympy.evalf(50). Replaces the prior 30-dps value inherited from habiro-residue-symbolic.witness.json.",
+  "computedAt": "2026-04-27T20:50:41.342140+00:00",
+  "precision": "mpfr_50dps",
   "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
   "m_e_mev_50dps": "0.51099895",
   "results_by_atom": [
     {
       "atom": "A=1",
       "partition_count": 3,
-      "global_sum_at_q0_30dps": "1.33212695202435677847927393829",
-      "h3_additive_at_q0_30dps": "1.77456221630970294615286202583",
-      "ratio_global_over_h3_30dps": "0.750679204020575865443996472575",
-      "term6_b_pred_mev_30dps": "0.6807154737511466882282915792285547955"
+      "global_sum_at_q0_50dps": "1.3321269520243567789928274585968629293002507280650",
+      "h3_additive_at_q0_50dps": "1.7745622163097029475210989972479958625294713167007",
+      "ratio_global_over_h3_50dps": "0.75067920402057586515459916906703888068016263073015",
+      "term6_b_pred_mev_50dps": "0.68071547375114668849071688887416543016635235677795"
     },
     {
       "atom": "A=2",
       "partition_count": 11,
-      "global_sum_at_q0_30dps": "0.0831585889687035716872811457205",
-      "h3_additive_at_q0_30dps": "4.19496243227178831824995441755",
-      "ratio_global_over_h3_30dps": "0.0198234406889953745551186321540",
-      "term6_b_pred_mev_30dps": "0.042493951646489107993450393817972493475"
+      "global_sum_at_q0_50dps": "0.083158588968703574035263810013138852397220628982015",
+      "h3_additive_at_q0_50dps": "4.1949624322717883263360370592055063666679218049985",
+      "ratio_global_over_h3_50dps": "0.019823440688995375076622392905104506957173490512589",
+      "term6_b_pred_mev_50dps": "0.042493951646489109193267069889713439779184724328149"
     },
     {
       "atom": "A=3",
       "partition_count": 30,
-      "global_sum_at_q0_30dps": "0.00113270787017229721218585604267",
-      "h3_additive_at_q0_30dps": "9.91664853812058338386569674510",
-      "ratio_global_over_h3_30dps": "0.000114222851179817000616968504378",
-      "term6_b_pred_mev_30dps": "0.0005788125323147801945148996426555251965"
+      "global_sum_at_q0_50dps": "0.0011327078701722973167322372643972891003751726717857",
+      "h3_additive_at_q0_50dps": "9.9166485381205834144497473637725716657645740021293",
+      "ratio_global_over_h3_50dps": "0.00011422285117981701080720398272303598610268496929239",
+      "term6_b_pred_mev_50dps": "0.00057881253231478024793799067325788711313815784135119"
+    },
+    {
+      "atom": "A=4",
+      "partition_count": 77,
+      "global_sum_at_q0_50dps": "0.0000052888140349902449194110645565418415033284522651199",
+      "h3_additive_at_q0_50dps": "23.442383529368812697977501181331692518644644867428",
+      "ratio_global_over_h3_50dps": "0.00000022560905670553400809516025834073612120221722861019",
+      "term6_b_pred_mev_50dps": "0.0000027025784186252784140618886067750966392672606126014"
     }
   ]
 }

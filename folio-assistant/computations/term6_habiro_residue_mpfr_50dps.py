@@ -50,62 +50,51 @@ def main() -> int:
     q_0 = mpf(q_str)
     print(f"  q_0 (50 dps) = {q_str}")
 
-    src = json.load(open(WITNESS_30DPS))
+    # Lift the schur_weyl_symbolic computation to 50 dps using the
+    # full 50-digit q_0 string and sympy.evalf(50).
+    from schur_weyl_symbolic import (
+        global_wedderburn_sum_symbolic,
+        h3_additive_approximation_symbolic,
+        partitions_of,
+    )
+    q_sym = sp.Symbol("q", positive=True, real=True)
+    q0_sympy = sp.Float(q_str, 60)  # 60 internal digits, output truncated to 50
 
     rows = []
-    for atom_key, atom_data in src["schur_weyl_at_q0"].items():
-        # Existing values are strings at ~30 dps (sympy.evalf(30)).
-        # mpmath converts these to mpf with whatever precision they
-        # carry (max 30 dps). To get TRUE 50 dps we'd need to re-
-        # evaluate the symbolic sum at q_0 to 50 dps — that requires
-        # the underlying sympy expressions, which live in
-        # schur_weyl_symbolic.py and are too large to recompute here.
-        # The existing 30-dps values are already MUCH better than f64
-        # (~15 digits). Plan F's leverage is in lifting the per-isotope
-        # prediction path; the residue tail is a small contribution
-        # so 30 dps suffices for sub-ppb-on-magic-A targets.
-        global_sum_30dps = atom_data["global_sum_at_q0"]
-        h3_30dps = atom_data["h3_additive_at_q0"]
-        ratio_30dps = atom_data["ratio_global_over_h3"]
+    for A in (1, 2, 3, 4):
+        print(f"\n  === A={A} (re-evaluating symbolic Schur-Weyl at 50 dps) ===")
+        total, _ = global_wedderburn_sum_symbolic(A, q_sym)
+        h3 = h3_additive_approximation_symbolic(A, q_sym)
 
-        global_sum_mpf = mpf(global_sum_30dps)
-        h3_mpf = mpf(h3_30dps)
-        # Term 6 ≈ m_e · (Σ_{ℓ≥2} residue contributions). The
-        # `global_sum_at_q0` is the Schur-Weyl sum that contains
-        # the residue tail; multiply by m_e to get Term-6 mass
-        # contribution.
+        global_sum_50 = total.subs(q_sym, q0_sympy).evalf(50)
+        h3_50 = h3.subs(q_sym, q0_sympy).evalf(50)
+        ratio_50 = ((total) / h3).subs(q_sym, q0_sympy).evalf(50)
+
+        global_sum_mpf = mpf(str(global_sum_50))
         term6_mev = M_E_MEV * global_sum_mpf
 
         rows.append({
-            "atom": atom_key,
-            "partition_count": atom_data["partition_count"],
-            "global_sum_at_q0_30dps": global_sum_30dps,
-            "h3_additive_at_q0_30dps": h3_30dps,
-            "ratio_global_over_h3_30dps": ratio_30dps,
-            "term6_b_pred_mev_30dps": str(term6_mev),
+            "atom": f"A={A}",
+            "partition_count": len(partitions_of(3 * A)),
+            "global_sum_at_q0_50dps": str(global_sum_50),
+            "h3_additive_at_q0_50dps": str(h3_50),
+            "ratio_global_over_h3_50dps": str(ratio_50),
+            "term6_b_pred_mev_50dps": str(term6_mev),
         })
-        print(f"\n  === {atom_key} ===")
-        print(f"    partition_count = {atom_data['partition_count']}")
-        print(f"    Schur-Weyl global sum at q_0 (30 dps) = {global_sum_30dps}")
-        print(f"    Term 6 = m_e · Σ_λ w_λ = {term6_mev} MeV")
+        print(f"    partition_count = {len(partitions_of(3 * A))}")
+        print(f"    Schur-Weyl global sum at q_0 (50 dps) = {global_sum_50}")
+        print(f"    Term 6 = m_e · Σ_λ w_λ                = {term6_mev} MeV")
 
     out = {
         "computation": "term6-habiro-residue-mpfr-50dps",
         "description":
-            "Plan F — Term 6 Habiro residue tail at the precision of "
-            "the existing habiro-residue-symbolic.witness.json (~30 "
-            "digits via sympy.evalf(30)). True 50 dps requires "
-            "re-evaluating the Schur-Weyl symbolic sums in "
-            "schur_weyl_symbolic.py with mp.dps=50 — separate task. "
-            "Existing 30 dps is already 10^15× better than f64; "
-            "Term 6 is a small contribution to the total mass so "
-            "30 dps is sufficient for sub-ppb on magic-A isotopes.",
+            "Plan F — Term 6 Habiro residue tail at MPFR @ 50 dps. "
+            "Re-evaluates the global Schur-Weyl symbolic sums "
+            "Σ_{λ⊢3A} w_λ(q) from schur_weyl_symbolic.py at q_0 to "
+            "50 dps via sympy.evalf(50). Replaces the prior 30-dps "
+            "value inherited from habiro-residue-symbolic.witness.json.",
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "precision": "mpfr_30dps_inherited_from_source",
-        "precision_floor_reason":
-            "Source habiro-residue-symbolic.witness.json was emitted "
-            "by sympy.evalf(30); recomputing at 50 dps requires the "
-            "global Schur-Weyl symbolic sums from schur_weyl_symbolic.py.",
+        "precision": "mpfr_50dps",
         "q_0_50dps": q_str,
         "m_e_mev_50dps": str(M_E_MEV),
         "results_by_atom": rows,
