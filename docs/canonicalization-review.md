@@ -384,3 +384,46 @@ and one supporting Markov-trace-product theorem remain, plus the
 `degree_bound` placeholder). Original audit overcounted by a factor
 of ~2 (claimed 5 terms unproved; actual is 1 term + 1 support
 + 1 placeholder).
+
+---
+
+## Appendix: Post-rebase reuse audit (2026-04-27, after rebasing onto PR #454 + adjacent upstream work)
+
+Three upstream commits landed during this branch's lifetime that
+directly address items previously flagged as pending here.
+
+1. **`atomic_tr_m_mpfr_50dps.py` + `atomic-tr-m-mpfr-50dps.witness.json`**
+   compute `tr_M(T_w, q_0)` for proton, neutron, deuteron, tritium,
+   ³He at 50 dps in the canonical 3A-strand atom-braid convention
+   via the Hoefsmit + Wenzl bridge (`Σ_λ y_λ · χ_λ`).  This
+   supersedes the per-particle scope of `probe_neutron_gap_round2.py`
+   on this branch — round-2 only had Habiro-witness coverage for
+   the H₃ proton + neutron and could not directly evaluate atomic
+   tr_M for D/T/³He.  Round-2's −25 % H₃-convention finding still
+   stands as a per-nucleon datum, but D/T/³He follow-up should now
+   consume the upstream witness directly rather than reinventing
+   the bridge.
+
+2. **`audit(2H): markov_trace = 0 is structural; 6_2 ID is refuted`**
+   (commit `4cbc08f18`).  This refutes the historical knot
+   identification D ↔ 6₂ that this PR's Sprint A v5 naïve
+   AME-assembly inherits via `tower_isotope_absolute.compute_isotope_tower`.
+   Sprint A v5's assembly should be revised — its caveat block
+   already flags the open combination convention; the revised
+   convention should reflect the upstream refutation rather than
+   silently using `6_2`.  Marked as a follow-up.
+
+3. **`R5.6: design doc for Wedderburn-block decomposition`**
+   (commit `61e29d500`).  Closes the previously-pending item
+   *"R5.6 Wedderburn-block SDP decomposition needed for H_18+
+   memory feasibility"* — the design doc is now upstream; future
+   ⁶Li / ⁷Li dequarantine work should consume that design rather
+   than re-scoping it.
+
+No code on this branch needs to be deleted as a result of the
+reuse audit (the round-2/3 probes are still independently valuable
+data points; v5 is honest baseline data, not a canonical accuracy
+claim).  But the canonicalization-review's pending-work table
+above should be read with these upstream developments in mind:
+two pending items are now in flight upstream (atomic tr_M, R5.6
+design), and one assumption (D ↔ 6₂) is upstream-refuted.
