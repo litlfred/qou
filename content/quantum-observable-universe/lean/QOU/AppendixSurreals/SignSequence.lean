@@ -152,13 +152,11 @@ theorem gonshor_plus_plus : gonshor [Sign.plus, Sign.plus] = 2 := by
 @[simp]
 theorem gonshor_plus_minus : gonshor [Sign.plus, Sign.minus] = 1/2 := by
   simp [gonshor, GonshorState.init, GonshorState.step]
-  norm_num
 
 /-- Gonshor of `[-, +]` is -1/2.  Symmetric to `[+, -]`. -/
 @[simp]
 theorem gonshor_minus_plus : gonshor [Sign.minus, Sign.plus] = -1/2 := by
   simp [gonshor, GonshorState.init, GonshorState.step]
-  norm_num
 
 /-- Gonshor of `[-, -]` is -2. -/
 @[simp]
