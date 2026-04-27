@@ -134,6 +134,15 @@ DEPS = {
         # cvxpy SDP-feasibility check on H_3 Hoefsmit blocks for ²H, ³He
         # (B_3 braids); ³H (B_5 / 8_11) deferred to tools/hecke-engine.
     ],
+    "joint-tower-sdp-rust": [
+        "../../tools/hecke-engine/src/gb_nf_reducer.rs",
+        "../../tools/hecke-engine/src/joint_tower_sdp_certificate.rs",
+        "../../tools/hecke-engine/src/bin/joint_tower_sdp.rs",
+        "../../tools/hecke-engine/src/lib.rs",
+        "../../tools/hecke-engine/Cargo.toml",
+        # Phases R1+R2+R6 of RUST_INTEGRATION.md.  Bit-for-bit match
+        # with Python prototypes on H_3, H_5; 3,400x speedup.
+    ],
 }
 
 # Outputs produced by each artifact (for missing-output check)
@@ -150,6 +159,7 @@ OUTPUTS = {
     "gb-filtration-jet-order": ["gb-filtration-jet-order.witness.json"],
     "joint-tower-sdp-h3": ["joint-tower-sdp-h3.witness.json"],
     "joint-tower-sdp-h6-h9": ["joint-tower-sdp-h6-h9.witness.json"],
+    "joint-tower-sdp-rust": ["joint-tower-sdp-rust.witness.json"],
 }
 
 

@@ -4,6 +4,11 @@ version = "0.8.0"
 edition = "2021"
 description = "Gröbner reduction engine for H_n(q) — nuclear normal forms"
 
+# Joint-tower SDP certificate emitter (R1+R2+R6 of RUST_INTEGRATION.md)
+[[bin]]
+name = "joint-tower-sdp"
+path = "src/bin/joint_tower_sdp.rs"
+
 # Default binary: v8 inductive symbolic chaining (exact in q)
 [[bin]]
 name = "hecke-engine"
@@ -50,6 +55,7 @@ num-traits = "0.2"
 num-integer = "0.1"
 rayon = "1.10"
 clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
 
 [build-dependencies]
 

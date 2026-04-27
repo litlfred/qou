@@ -1,6 +1,8 @@
 pub mod certificate;
+pub mod gb_nf_reducer;
 pub mod geck_pfeiffer;
 pub mod gram;
+pub mod joint_tower_sdp_certificate;
 pub mod laurent_poly_q;
 pub mod littlewood_richardson;
 pub mod seminormal;
