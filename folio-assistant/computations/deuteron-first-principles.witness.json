@@ -11,7 +11,7 @@
     "braid_convention": "atomic_braid_to_crossings (proton_cross/neutron_cross/inter)",
     "note": "Symbolic-in-q variant (hecke_character_symbolic.py) worked at A=1 but blew up at A \u2265 2 due to sign of b\u00b2 in 2\u00d72 Hoefsmit blocks.  Numerical pipeline uses sqrt(abs(b\u00b2)) as established convention.  TODO: reformulate symbolic Hoefsmit to avoid sqrt issue."
   },
-  "timestamp": "2026-04-24T20:06:36.669320+00:00",
+  "computedAt": "2026-04-24T20:06:36.669320+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "E_0_MeV": 3.131194022652177

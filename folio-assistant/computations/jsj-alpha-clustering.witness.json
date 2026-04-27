@@ -1,7 +1,7 @@
 {
   "computation": "jsj-alpha-clustering",
   "description": "Unfold doubly-magic atoms as \u03b1-cluster aggregates: B(atom) = n_\u03b1\u00b7B(\u2074He) + n_pairs\u00b7c_\u03b1\u03b1.  Fit c_\u03b1\u03b1 from \u00b9\u00b2C (3 \u03b1 + 3 couplings) and predict other magic atoms.  If unfolding is correct, c_\u03b1\u03b1 should correspond to a specific hyperbolic knot volume, completing the picture that each binding interaction = one JSJ piece.",
-  "timestamp": "2026-04-20T17:09:45.354099+00:00",
+  "computedAt": "2026-04-20T17:09:45.354099+00:00",
   "parameters": {
     "B_4HE_AME_MeV": 28.295674,
     "m_e_MeV": 0.51099895,

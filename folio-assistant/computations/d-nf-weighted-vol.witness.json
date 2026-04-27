@@ -1,7 +1,7 @@
 {
   "computation": "d-nf-weighted-vol",
   "description": "Compute V_hyp(closure of w) for each NF basis word w of D, weight by coefficient c_w(q_0), sum. Tests whether D as a linear combination of link volumes matches B_AME/m_e.",
-  "timestamp": "2026-04-24T01:29:27.417452+00:00",
+  "computedAt": "2026-04-24T01:29:27.417452+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,

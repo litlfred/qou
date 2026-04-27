@@ -1,7 +1,7 @@
 {
   "computation": "unified-lift",
   "description": "Task B: unified Markov-stab + K\u00e4hler jet lift.  V\u0302^(1) = z\u00b7V\u0302^(0) + \u210f_q\u00b7q\u00b7d(z\u00b7V\u0302)/dq + (\u210f_q\u00b2/2)(q\u00b2d\u00b2+qd)(z\u00b7V\u0302), evaluated at q\u2080 via analytic sympy q-derivatives on the Plancherel-aggregated V\u0302(q).  The z(q) factor brings V\u0302 into the \u03a6_q-safe range (reconciling Markov-stab with K\u00e4hler); K\u00e4hler corrections reduce \u03b5 from O(\u210f_q\u00b3) \u2192 O(\u210f_q\u2074) \u2192 O(\u210f_q\u2075) per order.",
-  "timestamp": "2026-04-18T23:48:21.984993+00:00",
+  "computedAt": "2026-04-18T23:48:21.984993+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782

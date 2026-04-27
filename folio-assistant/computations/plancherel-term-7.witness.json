@@ -1,7 +1,7 @@
 {
   "computation": "plancherel-term-7-phase-d",
   "description": "Term 7 via Plancherel-weighted log-functional \u03a6_k at curvature-rank strata k=4..n.  Phase D: also tracks \u03a0_k = \u03a3_{\u03bb:depth=k} w_\u03bb\u00b7[\u03c7_\u03bb < 0], the Plancherel-weighted count of negative-character blocks (\u03c0-flux contribution to the full complex log).  Bounded weights w_\u03bb = dim_q\u00b2(\u03bb)/[n]_q!.  Log of trace gives O(10) magnitudes consistent with MeV scale.  Tested on D, T, 3He, 4He.",
-  "timestamp": "2026-04-26T04:32:13.309191+00:00",
+  "computedAt": "2026-04-26T04:32:13.309191+00:00",
   "precision": "f64_numeric_fallback",
   "q_0": 1.1099785955541805,
   "isotopes": [

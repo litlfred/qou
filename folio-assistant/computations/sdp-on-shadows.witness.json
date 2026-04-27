@@ -1,7 +1,7 @@
 {
   "computation": "sdp-on-shadows",
   "description": "SDP/LP/ILP on shadow prices over \u03bb \u22a2 3\u00b7A_magic to identify shell-operator partition support. Constraint: \u03a3 x_\u03bb y_\u03bb = target_y (physical binding scale \u2248 0.009). Full enumeration \u2014 no Plancherel truncation. Reports active partitions.",
-  "timestamp": "2026-04-18T00:41:01.557101+00:00",
+  "computedAt": "2026-04-18T00:41:01.557101+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "target_y": "0.009",

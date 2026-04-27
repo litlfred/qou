@@ -1,7 +1,7 @@
 {
   "computation": "alpha-k-jones-markov-h3",
   "description": "Solve for Jones-Markov weights y_\u03bb at H_3 via constraints tr_M(1)=1, tr_M(\u03c3_i)=z, tr_M(\u03c3_i\u03c3_j)=z\u00b2.  Then explicitly compute \u03b1_k on each surviving E_\u221e class with correct normalization.  Confirms \u03b1_2 = z\u00b2 structurally derived; \u03b1_1 = 0 vanishes; \u03b1_3 has q-rational form related to z\u00b3.",
-  "timestamp_utc": "2026-04-26T03:14:46.434920+00:00",
+  "computedAt": "2026-04-26T03:14:46.434920+00:00",
   "q_0": 1.1099785955541805,
   "z": 0.49932033403359827,
   "jones_markov_weights": {

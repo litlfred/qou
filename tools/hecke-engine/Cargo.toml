@@ -4,6 +4,26 @@ version = "0.8.0"
 edition = "2021"
 description = "Gröbner reduction engine for H_n(q) — nuclear normal forms"
 
+# Joint-tower SDP certificate emitter (R1+R2+R6 of RUST_INTEGRATION.md)
+[[bin]]
+name = "joint-tower-sdp"
+path = "src/bin/joint_tower_sdp.rs"
+
+# R5.5 scaling sanity check
+[[bin]]
+name = "r5-5-scale-test"
+path = "src/bin/r5_5_scale_test.rs"
+
+# R5.5 H_5 anomaly diagnostic
+[[bin]]
+name = "r5-5-diagnose-h5"
+path = "src/bin/r5_5_diagnose_h5.rs"
+
+# R5.5 minimal H_5 SDP isolation test
+[[bin]]
+name = "r5-5-minimal-h5"
+path = "src/bin/r5_5_minimal_h5.rs"
+
 # Default binary: v8 inductive symbolic chaining (exact in q)
 [[bin]]
 name = "hecke-engine"
@@ -50,6 +70,8 @@ num-traits = "0.2"
 num-integer = "0.1"
 rayon = "1.10"
 clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+clarabel = { version = "0.11", features = ["sdp-netlib"] }
 
 [build-dependencies]
 

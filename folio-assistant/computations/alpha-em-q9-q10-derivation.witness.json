@@ -1,7 +1,7 @@
 {
   "computation": "alpha-em-q9-q10-derivation",
   "description": "Numerical verification of 1/\u03b1_EM \u2248 q \u00b7 [9]_q \u00b7 [10]_q \u00b7 (1 + \u210f_q^3 \u00b7 1.6).  Leading term at -0.155%; with \u03b4_CS correction at -0.077%.  Same precision tier as np-splitting derivation (-0.16% via m_e\u00b7\u03a3_3 + chirality residue).",
-  "timestamp": "2026-04-25T19:26:44.574029+00:00",
+  "computedAt": "2026-04-25T19:26:44.574029+00:00",
   "q_0": 1.1099785955541805,
   "leading_q_q9_q10": 136.82321965456114,
   "codata_alpha_inv": 137.035999084,

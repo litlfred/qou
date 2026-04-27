@@ -1,7 +1,7 @@
 {
   "computation": "mass-at-3A-proper",
   "description": "Task-1 fix: H_{3A} Wedderburn-character binding. Two paths on the same H_{3A} character theory:\n(a) single-brane Markov trace: B = E_0 \u00b7 (|tr_M_free| \u2212 |tr_M_atom|), tr_M(W) = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7_\u03bb(W) / d_\u03bb;\n(b) FULL TOWER combining H_{3A} per-generator V\u0302_i with prop:mass-endomorphism-tower \u03a6_q formula: per-gen V\u0302_i = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7_\u03bb(W_i)/d_\u03bb, then \ud835\udd2a = |\u03a0 V\u0302_i| + \u03a3 \u03a6_q(|V\u0302_i|) + z\u00b2 \u03a3_{adj} \u03a6_q(|V\u0302_i V\u0302_j|), and B = E_0 \u00b7 (\ud835\udd2a_free \u2212 \ud835\udd2a_atom).\nE_0 = 0.782 MeV (free-neutron \u03b2-decay Q). No Catalan.",
-  "timestamp": "2026-04-18T02:13:04.576533+00:00",
+  "computedAt": "2026-04-18T02:13:04.576533+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782,

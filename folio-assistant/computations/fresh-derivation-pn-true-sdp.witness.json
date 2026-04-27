@@ -1,7 +1,7 @@
 {
   "computation": "fresh-derivation-pn-true-sdp",
   "description": "True SDP (confinement_sdp.solve_sdp, Lasserre moment relaxation) applied to proton/neutron NF nets to extract minimum Hecke-energy; diff gives observable \u0394m analog.  Prior-work framing: entanglement energy is non-observable, only S_dd \u2212 S_uu matters.  Algebraic prefactor (q+q\u207b\u00b9)/(q^\u00bd+q^(-\u00bd)) = [2]_q/z_JO^(-1) = 1.00395... at q\u2080; \u03bc_d \u2212 \u03bc_u calibrated from CODATA \u0394m = 1.293 MeV.",
-  "timestamp": "2026-04-24T17:15:50.205314+00:00",
+  "computedAt": "2026-04-24T17:15:50.205314+00:00",
   "q_0": 1.1099785955541805,
   "algebraic_prefactor": "1.00408169639535717322417248226",
   "mu_d_minus_mu_u_MeV": "1.28807482961104847833394649608",

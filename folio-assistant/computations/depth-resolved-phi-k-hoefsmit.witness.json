@@ -1,7 +1,7 @@
 {
   "computation": "depth-resolved-phi-k-hoefsmit",
   "description": "31a-proper: Per-partition Hoefsmit \u03a6_k(\u03b2) per isotope. Uses hecke_characters.nuclear_braid_character with build_seminormal_matrices to compute \u03c7_\u03bb(\u03b2) for each partition.  Depth-bins to \u03a6_k.  LSQ fits \u03b1_k per rank from {p, n, D, T} bindings and PREDICTS \u00b3He, \u2074He using same \u03b1_k.",
-  "timestamp_utc": "2026-04-25T23:43:51.666479+00:00",
+  "computedAt": "2026-04-25T23:43:51.666479+00:00",
   "max_rank": 7,
   "fitted_alpha_k_MeV": [
     -0.0027430560162517987,

@@ -1,7 +1,7 @@
 {
   "computation": "spectral-sequence-unified-h3",
   "description": "Unified spectral-sequence derivation at H_3: builds E_\u221e^{p,*} cell table for proton, neutron, and reads off m_p residual (Term 4 = Frobenius co-Casimir m_e\u00b7\u03a3_3), \u0394m_{n-p} (Term 4 + chirality residue from 6_1 knot in std channel, curvature-rank 3), and Q_\u03b2 = \u0394m - m_e. Verifies chain end-to-end per prop:spectral-sequence-collapse + prop:spectral-sequence-h3-explicit + prop:curvature-rank-gb-stratification.",
-  "timestamp_utc": "2026-04-25T20:26:59.222399+00:00",
+  "computedAt": "2026-04-25T20:26:59.222399+00:00",
   "precision_dps": 50,
   "parameters": {
     "q_0": 1.1099785955541805,

@@ -1,7 +1,7 @@
 {
   "computation": "binding-fast-pipeline",
   "description": "Fast end-to-end D/T/3He/4He binding via Ocneanu canonical Markov trace + multi-brane \u03a6_q tower (\u210f_q\u00b2 per-level damping, term-by-term series convergence to <0.1 keV per term).  Uses cached \u03c9_\u03bb for n \u2208 {6, 9, 12}.  Canonical trace computed via raw braid-word multiplication in seminormal irreps + \u03c9_\u03bb-weighted sum (~seconds vs ~minutes for Hecke-reduction path).  Jet lift is Markov-stab (task A); proper K\u00e4hler lift reconciliation (task B) still open.",
-  "timestamp": "2026-04-18T14:19:52.949194+00:00",
+  "computedAt": "2026-04-18T14:19:52.949194+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "z": 0.4993203340335982,

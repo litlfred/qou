@@ -1,7 +1,7 @@
 {
   "computation": "sym-alt-loo-validation",
   "description": "Leave-one-out cross-validation of the 2-parameter dev% = a\u00b7ln|J(q\u2080\u00b2)| + b\u00b7(\u03c7_sym \u2212 \u03c7_alt) + c fit.  If held-out residuals ~0.01%, fit captures real structure. If %-scale, it's just interpolation with 1 DoF remaining from 4 data points \u00d7 3 fitted params.",
-  "timestamp": "2026-04-24T02:20:45.445989+00:00",
+  "computedAt": "2026-04-24T02:20:45.445989+00:00",
   "input_rows": [
     [
       "D",

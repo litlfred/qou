@@ -1,8 +1,16 @@
 pub mod certificate;
+pub mod cross_level_embedding;
+pub mod gb_nf_reducer;
 pub mod geck_pfeiffer;
 pub mod gram;
+pub mod joint_tower_sdp_certificate;
 pub mod laurent_poly_q;
 pub mod littlewood_richardson;
+pub mod sdp_recover_canonical;
+pub mod sdp_solve_canonical_t_w;
+pub mod sdp_solver_clarabel;
+pub mod sdp_verifier;
 pub mod seminormal;
 pub mod seminormal_mn;
 pub mod seminormal_mpfr;
+pub mod wedderburn_psd;

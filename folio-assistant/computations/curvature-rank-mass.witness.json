@@ -1,7 +1,7 @@
 {
   "computation": "curvature-rank-mass",
   "description": "Apply curvature-rank stratification (prop:curvature-rank-gb-stratification) to mass prediction.  Each hyperbolic-knot ideal at curvature-rank r contributes m_e * Vol(K) * 1/[r+1]_q! * w_lambda (Wedderburn weight at jet channel).",
-  "timestamp": "2026-04-25T19:09:42.950090+00:00",
+  "computedAt": "2026-04-25T19:09:42.950090+00:00",
   "q_0": 1.1099785955541805,
   "codata_np_splitting": 1.2933323600000222,
   "precision": "f64_numeric_fallback",
