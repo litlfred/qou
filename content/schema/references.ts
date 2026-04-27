@@ -2497,7 +2497,7 @@ export const references: CSLData[] = [
     volume: "34",
     page: "53-104",
     issued: { "date-parts": [[1968]] },
-    URL: "http://www.numdam.org/item/PMIHES_1968__34__53_0/",
+    URL: "https://www.numdam.org/item/PMIHES_1968__34__53_0/",
   }),
 
   // ── Gromov 1982 (Volume and bounded cohomology) ───────────────
@@ -2511,7 +2511,7 @@ export const references: CSLData[] = [
     volume: "56",
     page: "5-99",
     issued: { "date-parts": [[1982]] },
-    URL: "http://www.numdam.org/item/PMIHES_1982__56__5_0/",
+    URL: "https://www.numdam.org/item/PMIHES_1982__56__5_0/",
   }),
 
   // ── Kashaev 1997 (Volume Conjecture) ──────────────────────────

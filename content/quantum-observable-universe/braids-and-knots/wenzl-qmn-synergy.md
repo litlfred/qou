@@ -77,8 +77,8 @@ on canonical T_w via q-Murnaghan-Nakayama.
 implements the Wenzl-bridge giving $y_\lambda(q)$ symbolic for
 $n = 2, \ldots, 12$.
 
-[`folio-assistant/computations/wenzl_qmn_trace_cross_check.py`](#)
-(this PR) verifies the cross-validation identity on canonical
+[`folio-assistant/computations/wenzl_qmn_trace_cross_check.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wenzl_qmn_trace_cross_check.py)
+verifies the cross-validation identity on canonical
 permutation braids at $n = 3, 4, 5$.
 
 ## Open

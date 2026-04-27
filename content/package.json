@@ -3,9 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "bun run check-witnesses && bun run pipeline/build.ts",
+    "build": "bun run check-witnesses && bun run render-atlas:write && bun run pipeline/build.ts",
     "check-witnesses": "cd .. && python3 folio-assistant/computations/witness_staleness_tracker.py check || (echo '[build] NOTE: stale witnesses detected — see folio-assistant/computations/witness-shas.json'; true)",
     "render-atlas": "cd .. && python3 folio-assistant/computations/recursive_atom_knot_atlas_render.py",
+    "render-atlas:write": "cd .. && python3 folio-assistant/computations/recursive_atom_knot_atlas_render.py > folio-assistant/computations/recursive-atom-knot-atlas.rendered.md",
     "validate": "bun run pipeline/validate.ts",
     "render": "bun run pipeline/render-latex.ts",
     "export-json": "bun run pipeline/export-json.ts",

@@ -16,7 +16,7 @@ application — one Planck step.  Therefore:*
 **The box braid: crossing-by-crossing.**
 
 The process $\gamma\gamma \to \nu\nu^{\sigma}$ has no tree-level
-realisation because photons ($K = \mathbf{1}_{B_4}$ 4-strand id;\\
+realisation because photons ($K = \mathbf{1}_{B_4}$ 4-strand id;
 see [confined-particle](#def:confined-particle),
 [photon](#ex:photon-wavefront-example)) carry no braid strands and
 neutrinos ($K_{0_1}$, [neutrino](#def:neutrino-knot)) have zero
