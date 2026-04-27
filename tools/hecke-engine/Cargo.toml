@@ -14,6 +14,16 @@ path = "src/bin/joint_tower_sdp.rs"
 name = "r5-5-scale-test"
 path = "src/bin/r5_5_scale_test.rs"
 
+# R5.5 H_5 anomaly diagnostic
+[[bin]]
+name = "r5-5-diagnose-h5"
+path = "src/bin/r5_5_diagnose_h5.rs"
+
+# R5.5 minimal H_5 SDP isolation test
+[[bin]]
+name = "r5-5-minimal-h5"
+path = "src/bin/r5_5_minimal_h5.rs"
+
 # Default binary: v8 inductive symbolic chaining (exact in q)
 [[bin]]
 name = "hecke-engine"
