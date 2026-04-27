@@ -1,0 +1,238 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-27T20:44:24.069777+00:00",
+  "commitSha": "6a01e4ae28cf456ac341e37c8eab75f79e55f59e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "term6-full-pole-sum",
+  "scriptFile": "term6_full_pole_sum.py",
+  "scriptHash": "ab57b80923db",
+  "scriptCommitSha": "",
+  "description": "Term 6 Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using symbolic Habiro residues + 1/(q_0 − ζ) kernel up to cutoff n_max=6. Currently only proton, neutron have Habiro coefficients in the upstream witness; D, T, ³He, ⁴He need extension to assess A≥5 5–20% error closure.",
+  "contentBlock": "prop:full-pole-structure-mass-trace",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "n_max_cutoff": 6
+  },
+  "data": {
+    "atoms": [
+      {
+        "atom": "p (proton, A=1)",
+        "n_max": 6,
+        "tr_M_at_q0_polynomial": 2.12258250945273,
+        "term6_total_real": 0.0,
+        "term6_in_MeV": 0.0,
+        "per_n_breakdown": [
+          {
+            "n": 2,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "-1",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 3,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 4,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "I",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "-I",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 5,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 2,
+                "zeta": "exp(-4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 3,
+                "zeta": "exp(-2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 6,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "atom": "n (neutron, A=1)",
+        "n_max": 6,
+        "tr_M_at_q0_polynomial": 1.5893934459539052,
+        "term6_total_real": 0.0,
+        "term6_in_MeV": 0.0,
+        "per_n_breakdown": [
+          {
+            "n": 2,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "-1",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 3,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 4,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "I",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "-I",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 5,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 2,
+                "zeta": "exp(-4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 3,
+                "zeta": "exp(-2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 6,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "caveats": [
+    "Primitive roots of unity are dense in S¹, so this is NOT a complex-analytic Mittag-Leffler in the ordinary sense. tr_M is a Habiro-ring element; convergence is q-adic. Truncation at n_max=6 captures the dominant Cauchy-kernel weighted residues (smaller n → closer to q_0 = 1.11 → larger 1/|q_0 − ζ| kernel).",
+    "Extend habiro-coefficients-atomic.witness.json to D, T, ³He, ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹²C, ¹⁶O before this script can answer 'does Term 6 close the A≥5 5-20% errors?'"
+  ]
+}
