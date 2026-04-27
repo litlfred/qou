@@ -1,10 +1,10 @@
 {
   "computation": "joint-tower-sdp-rust",
-  "computed_at": "2026-04-27T01:42:46.832092694+00:00",
+  "computed_at": "2026-04-27T02:00:19.091683062+00:00",
   "description": "Rust port of joint-tower SDP certificate emitter. Runs GB-NF reduction on the confined-particle registry, emits design-spec certificate (filtration + jet-order log per atom). Phases R1+R2+R6 of RUST_INTEGRATION.md; R3 (Wedderburn PSD) and R5 (SDP solver) deferred.",
   "design_spec": "prop:joint-tower-sdp-confinement",
   "consumed_by": "prop:atom-knot-mass-derivation",
-  "phase": "rust-r1-r2-r6",
+  "phase": "rust-r1-r2-r3-r4-r6",
   "engine": {
     "name": "hecke-engine",
     "version": "0.8.0",
@@ -596,6 +596,32 @@
           "psd_symmetric_part": true
         }
       ],
+      "cross_level_edges": [
+        {
+          "parent": "proton",
+          "constituent": "[\"quark\", \"quark\", \"quark\"]",
+          "embedding_codomain_n_0": 3,
+          "embedding_domain_n_0": 3,
+          "embedding_consistent": true,
+          "diagnostic": "λ=[3], d_λ=1, Σ c·Πd_μ = 1  [1·[[1], [1], [1]]]"
+        },
+        {
+          "parent": "proton",
+          "constituent": "[\"quark\", \"quark\", \"quark\"]",
+          "embedding_codomain_n_0": 3,
+          "embedding_domain_n_0": 3,
+          "embedding_consistent": true,
+          "diagnostic": "λ=[2, 1], d_λ=2, Σ c·Πd_μ = 2  [2·[[1], [1], [1]]]"
+        },
+        {
+          "parent": "proton",
+          "constituent": "[\"quark\", \"quark\", \"quark\"]",
+          "embedding_codomain_n_0": 3,
+          "embedding_domain_n_0": 3,
+          "embedding_consistent": true,
+          "diagnostic": "λ=[1, 1, 1], d_λ=1, Σ c·Πd_μ = 1  [1·[[1], [1], [1]]]"
+        }
+      ],
       "rho_factor": 1,
       "b_ame_mev": 938.272,
       "methodology": "principled-derivation"
@@ -1015,6 +1041,32 @@
           "min_eigenvalue": 1.0000000000000013,
           "max_eigenvalue": 1.0000000000000013,
           "psd_symmetric_part": true
+        }
+      ],
+      "cross_level_edges": [
+        {
+          "parent": "neutron",
+          "constituent": "[\"quark\", \"quark\", \"quark\"]",
+          "embedding_codomain_n_0": 3,
+          "embedding_domain_n_0": 3,
+          "embedding_consistent": true,
+          "diagnostic": "λ=[3], d_λ=1, Σ c·Πd_μ = 1  [1·[[1], [1], [1]]]"
+        },
+        {
+          "parent": "neutron",
+          "constituent": "[\"quark\", \"quark\", \"quark\"]",
+          "embedding_codomain_n_0": 3,
+          "embedding_domain_n_0": 3,
+          "embedding_consistent": true,
+          "diagnostic": "λ=[2, 1], d_λ=2, Σ c·Πd_μ = 2  [2·[[1], [1], [1]]]"
+        },
+        {
+          "parent": "neutron",
+          "constituent": "[\"quark\", \"quark\", \"quark\"]",
+          "embedding_codomain_n_0": 3,
+          "embedding_domain_n_0": 3,
+          "embedding_consistent": true,
+          "diagnostic": "λ=[1, 1, 1], d_λ=1, Σ c·Πd_μ = 1  [1·[[1], [1], [1]]]"
         }
       ],
       "rho_factor": 1,
