@@ -1,7 +1,7 @@
 {
   "computation": "all-isotopes-chirality-residue",
   "description": "Extension of np-splitting chirality-residue framework to D, T, 3He, 4He.  For each atom, scan atomic braid for hyperbolic-knot ideals; identify std-channel (chirality) residues; sum m_e\u00b7Vol\u00b7|(q;q)_r|.  Combined with atomic Frobenius co-Casimir \u03a3_{3A} for binding prediction.",
-  "computedAt": "2026-04-25T19:16:25.092213+00:00",
+  "timestamp": "2026-04-27T21:14:00.358860+00:00",
   "q_0": 1.1099785955541805,
   "isotopes": [
     {
@@ -22,12 +22,12 @@
       "A": 1,
       "word_length": 9,
       "n_std_matches": 1,
-      "chirality_residue_MeV": 0.015165946670257875,
+      "chirality_residue_MeV": 0.015165946670257908,
       "std_breakdown": [
         [
           3,
           "6_1",
-          0.015165946670257875
+          0.015165946670257908
         ]
       ],
       "ame_binding": 0.0
@@ -76,7 +76,5 @@
       "std_breakdown": [],
       "ame_binding": 28.29566
     }
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  ]
 }

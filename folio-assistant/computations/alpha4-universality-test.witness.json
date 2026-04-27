@@ -1,7 +1,7 @@
 {
   "computation": "alpha4-universality-test",
   "description": "Test whether \u03b1\u2084 = 0.8272 (fitted from n\u2192p) generalises to higher \u03b2-decay Q-values.  Tested transitions: n\u2192p, T\u2192\u00b3He, \u00b9\u2074C\u2192\u00b9\u2074N, \u2076He\u2192\u2076Li, \u2074\u2070K\u2192\u2074\u2070Ca.  Finding: the naive formula structure (\u03a3_n + chirality + tail) is NOT universal in n \u2014 the symmetric baseline (\u03a3_n - 1) only matches single-nucleon transition (n=3).  For multi-nucleon, the right baseline is parent-vs-daughter NF DIFFERENCE, analogous to \u0394(net) = h(h-2)/2.  \u03b1\u2084 may still be universal for the tail coefficient if applied to the right baseline structure.",
-  "computedAt": "2026-04-25T22:57:41.641404+00:00",
+  "timestamp_utc": "2026-04-27T21:14:02.770166+00:00",
   "frozen_alpha_4": 0.8272227623,
   "transitions": [
     {
@@ -13,11 +13,11 @@
       "r_chir": 3,
       "Sigma_n": 2.4972905450085916,
       "sym_piece_MeV": 0.765113896344318,
-      "chir_piece_MeV": 0.015165770415897159,
-      "tail_piece_MeV": 0.002053743239843687,
+      "chir_piece_MeV": 0.015165770415897192,
+      "tail_piece_MeV": 0.002053743239843693,
       "Q_pred_MeV": 0.7823334100000588,
       "Q_codata_MeV": 0.78233341,
-      "rel_err_pct": 7.520137024157028e-12
+      "rel_err_pct": 7.524874807423498e-12
     },
     {
       "transition": "\u00b3H \u2192 \u00b3He",
@@ -26,10 +26,10 @@
       "K_chi": "8_11",
       "Vol_K": 8.28631808635811,
       "r_chir": 4,
-      "Sigma_n": 1.5438838242158344,
-      "sym_piece_MeV": 0.27792406309627593,
-      "chir_piece_MeV": 0.020572414745619296,
-      "tail_piece_MeV": 0.0014065999017281573,
+      "Sigma_n": 1.5438838242158341,
+      "sym_piece_MeV": 0.2779240630962759,
+      "chir_piece_MeV": 0.020572414745619355,
+      "tail_piece_MeV": 0.0014065999017281625,
       "Q_pred_MeV": 0.2999030777436234,
       "Q_codata_MeV": 0.018592,
       "rel_err_pct": 1513.0759345074407
