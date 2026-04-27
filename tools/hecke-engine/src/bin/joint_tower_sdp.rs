@@ -16,6 +16,7 @@ use chrono::Utc;
 use clap::Parser;
 use hecke_engine::gb_nf_reducer::HeckeElement;
 use hecke_engine::joint_tower_sdp_certificate as cert;
+use hecke_engine::wedderburn_psd::evaluate_all_blocks;
 use std::fs;
 use std::path::PathBuf;
 
@@ -28,6 +29,14 @@ struct Args {
     /// Filter: only run atoms with native strand count <= this.
     #[arg(long)]
     max_n: Option<usize>,
+
+    /// q_0 substrate parameter (numerical) for Wedderburn-block PSD evaluation.
+    #[arg(long, default_value_t = 1.1097)]
+    q0: f64,
+
+    /// Skip Wedderburn-block PSD evaluation (faster).
+    #[arg(long)]
+    no_psd: bool,
 }
 
 #[derive(Clone, Debug)]
@@ -112,7 +121,11 @@ fn registry() -> Vec<RegistryEntry> {
     ]
 }
 
-fn solve_per_atom(entry: &RegistryEntry) -> cert::JointTowerSdpCertificate {
+fn solve_per_atom(
+    entry: &RegistryEntry,
+    q0: f64,
+    do_psd: bool,
+) -> cert::JointTowerSdpCertificate {
     let n = entry.native_strand_count.max(1);
     let e = HeckeElement::reduce_braid(n, &entry.braid_word);
     let filt = e.filtration_certificate();
@@ -123,6 +136,12 @@ fn solve_per_atom(entry: &RegistryEntry) -> cert::JointTowerSdpCertificate {
         .filter(|ev| ev.relation == "hecke-quadratic")
         .count() as u64;
 
+    let wedderburn = if do_psd && n >= 2 {
+        evaluate_all_blocks(n, &entry.braid_word, q0)
+    } else {
+        Vec::new()
+    };
+
     cert::JointTowerSdpCertificate {
         name: entry.name.to_string(),
         atomic_n_0: entry.atomic_n_0,
@@ -132,7 +151,7 @@ fn solve_per_atom(entry: &RegistryEntry) -> cert::JointTowerSdpCertificate {
         jet_log: e.jet_log,
         n_steps,
         n_hecke_relations_fired: n_hecke,
-        wedderburn_blocks: Vec::new(),
+        wedderburn_blocks: wedderburn,
         cross_level_edges: Vec::new(),
         rho_factor: entry.rho_factor,
         b_pred_mev: None,
@@ -171,12 +190,36 @@ fn main() {
             entry.name, entry.atomic_n_0, entry.native_strand_count
         );
         println!("  braid: {:?}", entry.braid_word);
-        let cert = solve_per_atom(entry);
+        let cert = solve_per_atom(entry, args.q0, !args.no_psd);
         println!("  filtration shape: {:?}", cert.filtration_certificate.shape);
         println!(
             "  max grade: {}, jet steps: {}, Hecke fires: {}",
             cert.filtration_certificate.max_grade, cert.n_steps, cert.n_hecke_relations_fired
         );
+        if !cert.wedderburn_blocks.is_empty() {
+            let n_blocks = cert.wedderburn_blocks.len();
+            let n_psd = cert
+                .wedderburn_blocks
+                .iter()
+                .filter(|b| b.psd_symmetric_part)
+                .count();
+            let min_eig = cert
+                .wedderburn_blocks
+                .iter()
+                .map(|b| b.min_eigenvalue)
+                .fold(f64::INFINITY, f64::min);
+            println!(
+                "  Wedderburn blocks: {}/{} PSD, global min eigenvalue {:+.4e}",
+                n_psd, n_blocks, min_eig
+            );
+            for b in &cert.wedderburn_blocks {
+                let flag = if b.psd_symmetric_part { "PSD" } else { "NOT PSD" };
+                println!(
+                    "    λ={:?} (d_λ={}): eigs ∈ [{:+.4e}, {:+.4e}]  {}",
+                    b.partition, b.d_lambda, b.min_eigenvalue, b.max_eigenvalue, flag
+                );
+            }
+        }
         max_n_observed = max_n_observed.max(entry.native_strand_count);
         total_jet += cert.n_steps;
         total_hecke += cert.n_hecke_relations_fired;

@@ -8,3 +8,4 @@ pub mod littlewood_richardson;
 pub mod seminormal;
 pub mod seminormal_mn;
 pub mod seminormal_mpfr;
+pub mod wedderburn_psd;
