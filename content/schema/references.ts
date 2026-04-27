@@ -2485,6 +2485,35 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1948]] },
   }),
 
+  // ── Mostow 1968 (rigidity for hyperbolic manifolds) ───────────
+  ref({
+    id: "mostow1968",
+    type: "article-journal",
+    title:
+      "Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms",
+    author: [{ family: "Mostow", given: "George D." }],
+    "container-title":
+      "Publications mathématiques de l'IHÉS",
+    volume: "34",
+    page: "53-104",
+    issued: { "date-parts": [[1968]] },
+    URL: "http://www.numdam.org/item/PMIHES_1968__34__53_0/",
+  }),
+
+  // ── Gromov 1982 (Volume and bounded cohomology) ───────────────
+  ref({
+    id: "gromov1982",
+    type: "article-journal",
+    title: "Volume and bounded cohomology",
+    author: [{ family: "Gromov", given: "Mikhail" }],
+    "container-title":
+      "Publications mathématiques de l'IHÉS",
+    volume: "56",
+    page: "5-99",
+    issued: { "date-parts": [[1982]] },
+    URL: "http://www.numdam.org/item/PMIHES_1982__56__5_0/",
+  }),
+
   // ── Kashaev 1997 (Volume Conjecture) ──────────────────────────
   ref({
     id: "kashaev1997",
