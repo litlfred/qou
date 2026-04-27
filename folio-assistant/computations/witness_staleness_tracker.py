@@ -143,6 +143,13 @@ DEPS = {
         # Phases R1+R2+R6 of RUST_INTEGRATION.md.  Bit-for-bit match
         # with Python prototypes on H_3, H_5; 3,400x speedup.
     ],
+    "rho-z-n-scan": [
+        "rho_z_n_scan.py",
+        "gb_filtration_jet_tracker.py",
+        # Exploration scan for the ρ(Z, N) structural rule; surfaces
+        # Wedderburn-multiplicity-style diagnostics per atom for
+        # human pattern-finding.  Does NOT prescribe a rule.
+    ],
 }
 
 # Outputs produced by each artifact (for missing-output check)
@@ -160,6 +167,7 @@ OUTPUTS = {
     "joint-tower-sdp-h3": ["joint-tower-sdp-h3.witness.json"],
     "joint-tower-sdp-h6-h9": ["joint-tower-sdp-h6-h9.witness.json"],
     "joint-tower-sdp-rust": ["joint-tower-sdp-rust.witness.json"],
+    "rho-z-n-scan": ["rho-z-n-scan.witness.json"],
 }
 
 
