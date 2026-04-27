@@ -87,14 +87,10 @@ $$
 
 $\square$
 
-## Numerical evaluation at $q_0 \approx 1.110$
-
-| $\alpha_k$ | symbolic | $q_0$ | matches predicted |
-|:--:|--|--:|--|
-| $\alpha_0$ | $1$ | $1.000000$ | $\checkmark$ |
-| $\alpha_1$ | $0$ | $1.2 \times 10^{-16}$ | exactly zero ($\checkmark$) |
-| $\alpha_2$ | $z^2$ | $0.249321$ | matches $z^2$ to $5.5 \times 10^{-17}$ |
-| $\alpha_3$ | $h z^2 + z$ | $0.551443$ | matches symbolic to $6 \times 10^{-16}$ |
+Numerical evaluation at $q_0 \approx 1.110$ matches the symbolic
+forms above to $\sim 10^{-16}$; values are tabulated in the witness
+file
+([`alpha-k-jones-markov-h3.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/alpha-k-jones-markov-h3.witness.json)).
 
 ## Significance
 

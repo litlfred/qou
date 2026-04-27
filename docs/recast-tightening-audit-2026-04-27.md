@@ -33,9 +33,9 @@ route 3 is the only QOU-internal step). Done in this PR.
 |------|--------|-------|
 | C1: drop "why this is absent from core" passages | partial | Ribbon block done; $\tau$-suppression and categorical-instanton are already concise (no such passages). |
 | C2: Markov-trace decomposition single canonical statement | OK | Only 5 files mention $\sum_\lambda y_\lambda \chi_\lambda$; canonical statement is `thm:jones-markov-trace` + `prop:alpha-k-derivation-procedure`. No rampant duplication. |
-| C3: move illustrative $y_\lambda$ computations to witness JSON | deferred | Editorial pass; needs per-block judgment. The followups branch has already moved several to `folio-assistant/computations/*.witness.json`. |
+| C3: move illustrative $y_\lambda$ computations to witness JSON | **done** | Three illustrative tables removed and replaced with witness-file links: `explicit-alpha-k-h3.md` (numerical-at-$q_0$ table → `alpha-k-jones-markov-h3.witness.json`), `explicit-alpha-k-h4.md` (numerical depth-stratum table + Hoefsmit character matrix → `wedderburn-orthogonal-r-3-h4.witness.json`), `y-lambda-sign-pattern.md` (sign-pattern table → `y-lambda-jones-markov-witness.json`). Saved 27 narrative lines without losing rigor. |
 | C4: unify Markov-trace symbol | done | Paper is 92% consistent on `\mathrm{tr}_M`; 7 brace-variants `\mathrm{tr}_{M}` normalized. |
-| C5: cap proof length at ~40 lines | audit only | 25 proof blocks exceed 40 lines (list below). Refactoring requires per-block judgment (split proposition vs. extract sub-proof). Recommend doing as a separate batch with peer review. |
+| C5: cap proof length at ~40 lines | **deliverable: audit + decision** | 25 proof blocks exceed 40 lines (list below). **Decision: not refactored in this PR.** The plan offers two options: (a) split into two propositions, or (b) extract a sub-proof into its own block referenced by `proves`. Both options are *math refactors* — they create new propositions/lemmas with new labels, new Lean stubs, and new content blocks; they require per-block mathematical judgment. Mechanical line-count tightening is not safe (risks introducing math errors in finished proofs). The list below is the deliverable; each row is a candidate for a follow-on PR with peer review on the chosen split. |
 | C6: transitive prune | done | `pipeline/prune-transitive-deps.ts --apply` removed **1797** transitive edges across **643** files; validation issue count 204 → 197 (7 unresolved-uses errors fixed as bonus). |
 
 ## Proof-length audit (Part C5 deferred list)
@@ -71,12 +71,20 @@ Proof blocks exceeding 40 lines, ordered by length:
 |  43 | `lifting-and-descent/descent-lemma-proof.md` |
 
 Top targets for splitting (over 80 lines):
-`topological-mass-proof`, `quantum-observable-universe-exists-proof`,
-`su2-emergence-proof`, `terminal-resolution-proof`,
-`topological-mass-categorical-proof`, `feynman-categorical-trace-proof`,
-`genus-filtration-ideal-proof`. Each is a candidate for either
-(a) splitting the parent statement into two propositions, or
-(b) extracting a key lemma into its own block referenced by `proves`.
+`topological-mass-proof` (169 lines, 4 named steps — natural split into
+4 sub-proofs / lemmas: eigenspace decomposition, holonomy
+identification, transient localisation, dilogarithm evaluation),
+`quantum-observable-universe-exists-proof` (111 lines),
+`su2-emergence-proof` (103 lines), `terminal-resolution-proof` (100 lines),
+`topological-mass-categorical-proof` (95 lines),
+`feynman-categorical-trace-proof` (93 lines),
+`genus-filtration-ideal-proof` (82 lines).
+
+For each: the recommended action is option (b) — extract the natural
+sub-step as its own block with a `prf:` label, link it via `proves`
+to the main statement, and let the parent proof reference each
+extracted lemma by label. This keeps the math intact and lets the
+parent proof drop to ~30-40 lines of high-level structure.
 
 ## Items that depend on the followups branch landing first
 

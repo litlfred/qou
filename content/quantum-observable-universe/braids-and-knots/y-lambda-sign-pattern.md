@@ -35,22 +35,12 @@ $$
 $$
 
 is **infeasible** at $n = 4, 5, 6$ — empirically verified via
-[`y_lambda_sdp.py`](#).  The sign pattern (computed at $q_0$):
-
-| $n$ | partition | $y_\lambda$ |
-|---|---|---|
-| $4$ | $(4)$ | $+0.2275$ |
-| $4$ | $(3,1)$ | $+0.1879$ |
-| $4$ | $(2,2)$ | $+0.0695$ |
-| $4$ | $(2,1,1)$ | $+0.0236$ |
-| $4$ | $(1^4)$ | $\mathbf{-0.000843}$ |
-| $5$ | $(5)$ | $+0.1181$ |
-| $5$ | $(4,1)$ | $+0.1094$ |
-| $5$ | $(3,2)$ | $+0.0617$ |
-| $5$ | $(3,1,1)$ | $+0.0168$ |
-| $5$ | $(2,2,1)$ | $+0.0077$ |
-| $5$ | $(2,1^3)$ | $\mathbf{-0.000929}$ |
-| $5$ | $(1^5)$ | $+0.0000862$ |
+[`y_lambda_sdp.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_sdp.py).
+The full sign pattern at $n \in \{2, \ldots, 6\}$ — including the
+sign-changing entries $y_{(1^4)} \approx -8.4 \times 10^{-4}$ at
+$n = 4$ and $y_{(2, 1^3)} \approx -9.3 \times 10^{-4}$ at $n = 5$
+— is recorded in
+[`y-lambda-jones-markov-witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-jones-markov-witness.json).
 
 The negative components are small in absolute value but
 non-negligible — they enter every $\alpha_k$ derivation and the
