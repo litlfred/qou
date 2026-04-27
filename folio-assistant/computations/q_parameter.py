@@ -79,6 +79,72 @@ def q_int_err(n):
 Q_RAT_NUM = 11099786
 Q_RAT_DEN = 10000000
 
+# ── High-precision (mpmath) parallel API ─────────────────────────
+# The f64 globals above are bit-identical to what every existing
+# witness script reads via `from q_parameter import Q, HBAR_Q, ...`.
+# Don't change them — downstream f64 callers depend on stability.
+#
+# For the Clarabel high-precision / 50-dps work (CLARABEL_PRECISION_PLAN
+# §S7), HP callers should use `q_at(dps)` or the `_MP` globals below,
+# which carry mpmath.mpf values computed at 50 decimal digits by
+# default.  Vol(4_1) is reused at 38-digit precision from
+# `alpha_em_pslq_uniqueness.py`; the mass ratio is bounded by CODATA
+# 2022's published precision (~7 sig figs).
+#
+# The mpmath path is bit-identical to f64 in the first ~15 digits
+# (SnapPy's Vol limit); past that it is stable but bounded by
+# CODATA m_μ/m_e uncertainty.
+
+VOL_FIGURE_EIGHT_STR = "2.029883212819307250042405108549332301525"  # 38 dps; Cl_2(π/3) source
+MASS_RATIO_MU_E_STR  = "206.7682830"                                 # CODATA 2022, ~7 sig figs
+
+_DPS_DEFAULT = 50
+
+try:
+    import mpmath as _mp
+
+    def q_at(dps: int = _DPS_DEFAULT):
+        """Return q at requested mpmath precision.  Caller should
+        set ``mpmath.mp.dps`` to at least ``dps`` before consuming
+        the result if it does further mpmath arithmetic."""
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps)
+            vol = _mp.mpf(VOL_FIGURE_EIGHT_STR)
+            r   = _mp.mpf(MASS_RATIO_MU_E_STR)
+            hbar_sq = vol / r
+            hbar    = _mp.sqrt(hbar_sq)
+            return _mp.mpf(1) / (_mp.mpf(1) - hbar)
+        finally:
+            _mp.mp.dps = prev
+
+    def q_str(dps: int = _DPS_DEFAULT) -> str:
+        """Return q as a decimal string at requested precision —
+        the canonical witness-JSON / Clarabel-HP serialisation."""
+        return _mp.nstr(q_at(dps), dps, strip_zeros=False)
+
+    _mp.mp.dps = _DPS_DEFAULT
+    Q_MP         = q_at(_DPS_DEFAULT)
+    HBAR_Q_SQ_MP = _mp.mpf(VOL_FIGURE_EIGHT_STR) / _mp.mpf(MASS_RATIO_MU_E_STR)
+    HBAR_Q_MP    = _mp.sqrt(HBAR_Q_SQ_MP)
+    Q_INV_MP     = _mp.mpf(1) / Q_MP
+    HA_MP        = Q_MP - Q_INV_MP
+    E_CROSS_MP   = HA_MP / 2
+    S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
+    TWO_Q_MP     = Q_MP + Q_INV_MP
+    TANH_LN_Q_MP = HA_MP / TWO_Q_MP
+    LN_Q_MP      = _mp.log(Q_MP)
+
+    HAS_MPMATH = True
+except ImportError:
+    HAS_MPMATH = False
+
+    def q_at(dps: int = _DPS_DEFAULT):
+        raise RuntimeError("q_at requires mpmath; install it with `pip install mpmath`")
+
+    def q_str(dps: int = _DPS_DEFAULT) -> str:
+        raise RuntimeError("q_str requires mpmath; install it with `pip install mpmath`")
+
 if __name__ == "__main__":
     print(f"Substrate parameter q (canonical)")
     print(f"  Vol(4_1)   = {VOL_FIGURE_EIGHT} ± {VOL_FIGURE_EIGHT_ERR}")
