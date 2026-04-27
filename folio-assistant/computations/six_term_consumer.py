@@ -119,6 +119,40 @@ def term_T5(Z, N):
     }
 
 
+_T4_CACHE: dict[int, dict] = {}
+
+
+def term_T4(Z, N, m_e_MeV):
+    """Frobenius co-Casimir contribution: m_e · Σ_λ 1/dim_q(λ)
+    summed over partitions λ of the strand count n = 3·(Z+N).
+
+    Per `frobenius-codim-universal.lean` and `frobenius-codim-universal`
+    theorem, the universal Frobenius co-Casimir element of `H_n(R, q)`
+    has Markov trace `Σ_λ 1/dim_q(λ)`. At n=3 this specialises to
+    `2 + 1/[2]_q ≈ 2.451` (matching `partition-sum-proton-residual`).
+    For atomic braids n = 3·A is the strand count.
+
+    Memoised per n (so D(n=6), T(n=9), ³He(n=9) share work)."""
+    n = 3 * (Z + N)
+    if n in _T4_CACHE:
+        return _T4_CACHE[n]
+    from hecke_characters import partitions_of, dim_q
+    total = mp.mpf(0)
+    parts = list(partitions_of(n))
+    for p in parts:
+        d = dim_q(p)
+        total += mp.mpf(1) / mp.mpf(str(d))
+    result = {
+        "n_strands": n,
+        "n_partitions": len(parts),
+        "sum_inv_dim_q": float(total),
+        "T4_MeV": float(mp.mpf(str(m_e_MeV)) * total),
+        "source": "Σ_λ 1/dim_q(λ) over λ⊢n  (Frobenius co-Casimir, frobenius-codim-universal.lean)",
+    }
+    _T4_CACHE[n] = result
+    return result
+
+
 _T6_CACHE: dict[int, dict] = {}
 
 
@@ -156,6 +190,9 @@ def main() -> int:
     in_data = json.loads(WITNESS_IN.read_text())
     certs_by_name = {c["name"]: c for c in in_data.get("per_atom_certificates", [])}
 
+    # Pull electron mass once for T4 (Frobenius co-Casimir = m_e · Σ 1/dim_q).
+    from experimental_constants import M_E_MEV
+
     # Compute the electron tower value ONCE, share across all particles
     # (per Copilot review: avoids redundant Phi_q iterations).
     import tower_isotope_absolute as tia
@@ -184,6 +221,7 @@ def main() -> int:
             print(f"  b_ame_mev = {b_ame}")
 
             t1_t2_t3, e1 = _safe(lambda: term_T1_T2_T3(Z, N, m_e_H), "T1+T2+T3")
+            t4, e4 = _safe(lambda: term_T4(Z, N, M_E_MEV), "T4")
             t5, e5 = _safe(lambda: term_T5(Z, N), "T5")
             t6, e6 = _safe(lambda: term_T6(A), "T6")
 
@@ -196,11 +234,7 @@ def main() -> int:
                     "T1_T2_T3_brane_tower":
                         t1_t2_t3 if t1_t2_t3 is not None else {"error": e1, "pending": True},
                     "T4_frobenius_co_casimir":
-                        {"pending": True,
-                         "reason": "frobenius_partition_sum.py lacks per-atom helper; "
-                                   "Term 4 contribution is partition-indexed and requires "
-                                   "summing the central-idempotent basis weighted by "
-                                   "[n]_q!/(dim_q(λ)²·dim(λ)) — to be added in Sprint A v4."},
+                        t4 if t4 is not None else {"error": e4, "pending": True},
                     "T5_chirality_content_average":
                         t5 if t5 is not None else {"error": e5, "pending": True},
                     "T6_habiro_residue":
@@ -214,7 +248,13 @@ def main() -> int:
                 print(f"  T1+T2+T3 (brane tower): M_MeV_raw = {t1_t2_t3['M_MeV_raw']}")
             else:
                 print(f"  T1+T2+T3: PENDING — {e1}")
-            print(f"  T4 (Frobenius co-Casimir): PENDING — needs per-atom helper")
+            if t4:
+                print(f"  T4 (Frobenius co-Casimir): n={t4['n_strands']}, "
+                      f"|partitions|={t4['n_partitions']}, "
+                      f"Σ 1/dim_q(λ) = {t4['sum_inv_dim_q']:.6f}, "
+                      f"T4 = {t4['T4_MeV']:.6f} MeV")
+            else:
+                print(f"  T4: PENDING — {e4}")
             if t5:
                 print(f"  T5 (chirality ⟨c(λ)⟩_β): c_avg = {t5['c_avg']:.10f}")
             else:
@@ -246,16 +286,18 @@ def main() -> int:
             "used_fitted_constants": False,
             "term_status": {
                 "T1_T2_T3": "wired (tower_isotope_absolute.compute_isotope_tower)",
-                "T4": "pending — needs per-atom Frobenius co-Casimir helper",
+                "T4": "wired (Σ_λ 1/dim_q(λ) over λ⊢3·A; Frobenius co-Casimir, frobenius-codim-universal.lean)",
                 "T5": "wired (ribbon_content_average.content_average)",
                 "T6": "wired (habiro_residue_symbolic.eval_schur_weyl_exact_at_q0)",
             },
             "ame_comparison_pending": True,
             "ame_comparison_reason": (
-                "Four-of-six terms wired but the consumer does not yet "
-                "calibrate to MeV via electron and convert tower mass to "
-                "binding energy via B = Z·m_p + N·m_n − M_total. "
-                "Sprint A v4 will land that conversion."
+                "All six terms now have per-atom values, but the consumer "
+                "does not yet assemble them into a single AME-comparable "
+                "binding-energy prediction. The conversion pipeline "
+                "(electron MeV calibration + B = Z·m_p + N·m_n − M_total + "
+                "appropriate term-by-term sign/sum convention) is queued "
+                "as Sprint A v5."
             ),
         },
     }
