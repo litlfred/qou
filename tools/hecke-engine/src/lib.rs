@@ -6,6 +6,7 @@ pub mod gram;
 pub mod joint_tower_sdp_certificate;
 pub mod laurent_poly_q;
 pub mod littlewood_richardson;
+pub mod sdp_recover_canonical;
 pub mod sdp_solver_clarabel;
 pub mod sdp_verifier;
 pub mod seminormal;
