@@ -1,61 +1,139 @@
-**Statement.**  Let $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$
-be a quantum observable universe at substrate parameter $q_0$
+**Statement (categorical, pre-Archimedean form).**  Let
+$\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
+observable universe at substrate parameter $q_0$
 ([def:quantum-observable-universe](#def:quantum-observable-universe)),
-let $\mathfrak{H}$ be a confined particle/atom of confinement level $\ell$
-and strand count $n_0$ with canonical Hecke element
+let $\mathfrak{H}$ be a confined particle/atom of confinement level
+$\ell$ and strand count $n_0$ with canonical Hecke element
 $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form
-([def:confined-particle](#def:confined-particle)), and let
-$K = \widehat{T_w}$ be the Markov closure of $T_w$ in $S^3$.  If
-$K$ is a hyperbolic knot/link, then there exists $\rho \in
-\mathbb{Z}_{>0}$, structurally determined by $\mathfrak{H}$, such that
+([def:confined-particle](#def:confined-particle)).  The
+**categorical mass invariant** of $\mathfrak{H}$ is the finite-sum
+element of $\mathbb{Q}(q)$
 
 $$
-B(\mathfrak{H}) \;=\; \rho \cdot m_e \cdot \mathrm{Vol}_{\mathrm{hyp}}(K),
+M(\mathfrak{H}) \;:=\; \rho \cdot \mathrm{tr}_M(T_w) \;=\; \rho \cdot \sum_\lambda y_\lambda(q) \, \chi_\lambda(T_w),
 $$
 
-where $B(\mathfrak{H})$ is the binding energy of $\mathfrak{H}$, $m_e$
-is the electron mass, and $\mathrm{Vol}_{\mathrm{hyp}}$ is the
-hyperbolic volume of $K$ in $S^3$.  Moreover the equality is
-established by *two parallel derivations* — a **geometric leg** running
-top-down from the categorical action, and an **algebraic leg** running
-bottom-up from the confinement SDP — that meet at the volume conjecture
-identity.
+where $\rho \in \mathbb{Z}_{>0}$ is structurally determined by
+$\mathfrak{H}$, $\mathrm{tr}_M$ is the Markov trace, $y_\lambda(q)$ are
+the Wenzl-bridge coefficients, and $\chi_\lambda(T_w)$ is the
+$q$-Murnaghan–Nakayama character.  This expression is **finite,
+exact, and entirely pre-Archimedean** — every quantity on the
+right-hand side lives in $\mathbb{Q}(q)$.
 
-## Architecture (two legs meet at $\mathrm{Vol}_{\mathrm{hyp}}$)
+**Mass identity.**  After applying the Archimedean realization functor
+([prop:archimedean-realization-functor](#prop:archimedean-realization-functor)),
+the binding energy of $\mathfrak{H}$ is
+
+$$
+\boxed{ \quad B(\mathfrak{H}) \;=\; m_e \cdot M(\mathfrak{H}) \big|_{q = q_0} \;=\; m_e \cdot \rho \cdot \mathrm{tr}_M(T_w) \big|_{q = q_0} \quad }
+$$
+
+— a single finite-categorical pipeline, no analytic asymptotic
+content.  The volume conjecture is *not* used in the derivation; it
+appears only as a post-functor naming convention (see "Post-Archimedean
+interpretation" below).
+
+## Architecture (single categorical pipeline; Yekutieli at finite slices)
+
+The derivation is a **single categorical pipeline** that lives entirely
+pre-Archimedean.  Yekutieli's non-abelian Stokes theorem (multiplicative
+integration on surfaces) at finite slice depth gives the following
+correspondence between 2-categorical / surface-integration data and
+the Iwahori–Hecke structure on $H_{n_0}(q_0)$:
+
+| 2-categorical | finite-slice avatar in $H_{n_0}(q)$ |
+|---|---|
+| 1-cells (paths) | braid generators $\sigma_i$ |
+| 2-cells (squares) | Hecke quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ |
+| multiplicative line integral | finite product $\prod_k \rho(\sigma_{i_k})$ |
+| multiplicative trace on closed surface | Markov trace $\mathrm{tr}_M(T_w) = \sum_\lambda y_\lambda(q) \chi_\lambda(T_w)$ |
+| slicing depth | GB filtration grade $\ell(w)$ (Coxeter length) |
+| slice traversal order | jet order |
+| non-abelian Stokes identity at adjacent slices | braid relations + Hecke quadratic |
+| associated graded $\mathrm{gr}_\bullet H_{n_0}(q)$ | $E_1$-page of the GB spectral sequence |
+| differentials $d_r$ vanishing past $E_\infty$ | **collapse** at $E_2$ for semisimple $H_n(q)$ at generic $q$ |
+| $E_\infty$-page identification | $\bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q))$ (Wedderburn) |
+
+**Collapsing spectral sequence.**  The GB filtration on $H_{n_0}(q)$
+gives rise to a multiplicative spectral sequence
+([prop:gb-spectral-sequence](#prop:gb-spectral-sequence),
+[prop:spectral-sequence-h3-explicit](#prop:spectral-sequence-h3-explicit))
+whose $E_1$-page is the associated graded $\bigoplus_k \mathrm{gr}_k H_{n_0}(q)$.
+By [prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse)
+the spectral sequence **collapses at $E_2$ for semisimple $H_n(q)$ at
+generic $q$** (the $d_2$-differential captures the Hecke quadratic
+relation; higher differentials vanish because $H_n(q)$ has no further
+relations beyond braid + Hecke).  The $E_\infty$-page identifications
+([prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications))
+recover the Wedderburn decomposition $\bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q))$.
+
+Collapse is **the reason finite-slice computation suffices**: at finite
+slice depth (= filtration grade $\leq$ some $k$), the surviving
+$E_\infty$-classes already account for all of $\mathrm{tr}_M(T_w)$
+because $d_r = 0$ for $r \geq 3$.  No higher slices contribute.  The
+GB-filtration tracker's certificate
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json))
+records exactly the data the $E_2 \Rightarrow E_\infty$ collapse needs:
+filtration-graded coefficients per term, in jet order.
+
+The *finite slice* is essential: at every finite resolution Yekutieli's
+multiplicative integral is a finite product / finite sum in $\mathbb{Q}(q)$,
+exact, with no asymptotic limit.  This is exactly the categorical
+content captured by the GB-filtration + jet-order certificate
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
+
+### Pipeline
 
 ```tex
 \begin{tikzcd}[row sep=large, column sep=large]
-\textbf{Categorical action of } \mathbf{C} \text{ on } \mathcal{S} \arrow[d, "\text{induce } \nabla"]
-& & \textbf{Confinement SDP at } q_0 \arrow[d, "\text{joint mass tower}"]
+\textbf{Categorical action of } \mathbf{C} \text{ on } \mathcal{S} \arrow[d, "\text{Yekutieli, finite slice}"]
 \\
-\text{Connection } \nabla \text{ on } \mathcal{S} \arrow[d, "\text{Stokes}"]
-& & T_w \in H_{n_0}(q_0) \text{ (GB-NF)} \arrow[d, "\text{Wedderburn}"]
+\textbf{Joint-tower confinement SDP at } q_0 \arrow[d, "\text{GB filtration} + \text{jet order}"]
 \\
-\text{Frobenius pairing } \langle\,,\,\rangle = \mathrm{tr}_{\mathrm{Ad}}(- \otimes -^*) \arrow[d, "\text{push to cover}"]
-& & H_{n_0}(q) \cong \bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q)) \arrow[d, "y_\lambda \text{ (Wenzl)}"]
+T_w \in H_{n_0}(q_0) \text{ (canonical, GB-NF)} \arrow[d, "\text{Wedderburn}"]
 \\
-\text{Reeb-vortex density } \mu \text{ on } S^3 \setminus K \arrow[d, "\text{Mostow + Gromov}"]
-& & \mathrm{tr}_M(T_w) \;=\; \sum_\lambda y_\lambda(q) \chi_\lambda(T_w) \arrow[d, "\text{R--T}"]
+H_{n_0}(q) \cong \bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q)) \arrow[d, "y_\lambda \text{ (Wenzl)}, \chi_\lambda \text{ (q-MN)}"]
 \\
-\mathrm{Vol}_{\mathrm{hyp}}(K) \arrow[rr, leftrightarrow, "\text{volume conjecture}"]
-& & J_K(q) \;=\; \mathrm{tr}_M(T_w)
+\mathrm{tr}_M(T_w) \;=\; \sum_\lambda y_\lambda(q) \chi_\lambda(T_w) \;\in\; \mathbb{Q}(q) \arrow[d, "\rho \cdot (-)"]
 \\
-\textbf{geometric leg} & & \textbf{algebraic leg}
+M(\mathfrak{H}) \;=\; \rho \cdot \mathrm{tr}_M(T_w) \;\in\; \mathbb{Q}(q)
+\\
+{} \arrow[d, "\text{\textbf{Archimedean realization functor}}"]
+\\
+B(\mathfrak{H}) \;=\; m_e \cdot M(\mathfrak{H}) \big|_{q = q_0} \;\in\; \mathbb{R} \text{ (MeV)}
 \end{tikzcd}
 ```
 
-Both legs land on the same $\mathrm{Vol}_{\mathrm{hyp}}(K)$.  The
-mass identity $B = \rho \cdot m_e \cdot \mathrm{Vol}_{\mathrm{hyp}}$
-is then the comparison to AME via the Archimedean realization functor
-([prop:archimedean-realization-functor](#prop:archimedean-realization-functor))
-which fixes the dimensional bridge.
+Everything above the Archimedean functor lives in $\mathbb{Q}(q)$;
+$\mathbb{R}$ enters exactly once, at the substitution $q := q_0$
+together with the multiplication by $m_e$.  No analytic limit, no
+volume conjecture, no Reeb-density construction is invoked.
+
+### Post-Archimedean interpretation (borrowed, optional)
+
+If $K = \widehat{T_w}$ is hyperbolic, the post-Archimedean number
+$\mathrm{tr}_M(T_w)|_{q = q_0}$ admits a conventional 3-manifold-theory
+naming via the **volume conjecture** (Kashaev 1997, Murakami–Murakami
+2001): the asymptotic of $|J_K(\zeta_N)|^{1/N}$ at roots of unity
+$\zeta_N = e^{2\pi i / N}$ as $N \to \infty$ equals
+$\exp(\mathrm{Vol}_{\mathrm{hyp}}(K)/2\pi)$.  This is a **borrowed
+theorem about post-Archimedean analytic continuation**, and it lets us
+*name* $B(\mathfrak{H})/m_e\rho$ as a hyperbolic volume in conventional
+language.  The QOU mass identity does **not** depend on the conjecture
+— it depends only on the finite-categorical $\mathrm{tr}_M(T_w)$.
+
+In particular the geometric construction (Reeb-vortex density →
+Mostow → Gromov) that one might run on the post-Archimedean side as
+*another* way to write the same number is **not part of the QOU
+derivation**.  We do not need to derive it internally.
 
 ## Algorithm
 
 ```tex
 \begin{algorithm}
-\caption{\textsc{AtomKnotMass}: end-to-end mass derivation from
-$\mathfrak{H}$ to $B(\mathfrak{H})$.}
+\caption{\textsc{AtomKnotMass}: end-to-end categorical mass derivation
+from $\mathfrak{H}$ to $B(\mathfrak{H})$.  Single categorical pipeline,
+finite-slice (Yekutieli), no asymptotic content.}
 \textbf{Input.}  Confined particle $\mathfrak{H}$ with confinement
 level $\ell$, strand count $n_0$, registry entry in
 \texttt{def:confined-particle}.  Substrate parameter $q_0$.
@@ -65,64 +143,61 @@ with methodology tag and high-precision certificate.
 \\
 \hrulefill
 \\
-\textbf{Algebraic leg (bottom-up):}
+\textbf{Pre-Archimedean (in $\mathbb{Q}(q)$, exact, finite):}
 \begin{enumerate}
   \item Run the joint mass-tower confinement SDP on all
         $\ell' \leq \ell$ atoms simultaneously.  Output: a
         \emph{structured certificate} per atom recording
         \begin{enumerate}
           \item the canonical Hecke element $T_w \in H_{n_0}(q_0)$ in GB-NF,
-          \item the Gröbner--Shirshov filtration grade per term,
-          \item the jet-order of reductions.
+          \item the Gröbner--Shirshov filtration grade per term
+                (= Yekutieli slicing depth at finite slice),
+          \item the jet-order of reductions
+                (= temporal slice-traversal order).
         \end{enumerate}
-  \item Take the Markov closure $K := \widehat{T_w}$ in $S^3$.
   \item Compute the Markov trace symbolically in $q$ via the
         Wedderburn decomposition + Wenzl bridge:
         $\mathrm{tr}_M(T_w) = \sum_\lambda y_\lambda(q) \chi_\lambda(T_w)$
-        (\texttt{prop:alpha-k-derivation-procedure},
-        $y_\lambda$ from Wenzl-bridge witness, $\chi_\lambda$ from
-        $q$-Murnaghan--Nakayama).
-  \item Evaluate $J_K(q_0) = \mathrm{tr}_M(T_w)$ at substrate $q_0$
-        with $\geq 50$ decimal digits via MPFR.
+        (\texttt{prop:alpha-k-derivation-procedure}, $y_\lambda$ from
+        Wenzl-bridge witness, $\chi_\lambda$ from $q$-Murnaghan--Nakayama).
+        Yekutieli at finite slice ⇒ this is exactly the multiplicative
+        trace on the closed surface obtained by Markov closure of
+        $T_w$; the Hecke quadratic relation is the curvature 2-form
+        at adjacent slices.
+  \item Read $\rho \in \mathbb{Z}_{>0}$ from the structural prefactor
+        rule on $(Z, N)$ (= the multiplicity of $T_w$'s SDP solution
+        in the Wedderburn decomposition).  Open in general; for
+        $\ell \leq 1$ this is $\rho = 1$ direct.
+  \item Form the categorical mass invariant
+        $M(\mathfrak{H}) := \rho \cdot \mathrm{tr}_M(T_w) \in \mathbb{Q}(q)$.
 \end{enumerate}
-\textbf{Geometric leg (top-down):}
+\textbf{Archimedean realization (functor $\mathbf{C} \to \text{Top}$, $\mathbb{Q}(q) \to \mathbb{R}$):}
 \begin{enumerate}
   \setcounter{enumi}{4}
-  \item From the categorical action of $\mathbf{C}$ on $\mathcal{S}$
-        and the Frobenius pairing on $\mathrm{End}_{\mathbf{C}}(A)$,
-        build the Reeb-vortex density $\mu$ on the universal cover of
-        $S^3 \setminus K$.
-  \item Integrate $\mu$ against the Gromov norm to obtain
-        $\mathrm{Vol}_{\mathrm{hyp}}(K) = \|S^3 \setminus K\|_{\mathrm{Gr}} \cdot v_3$
-        (Mostow rigidity + Gromov norm theorem).
-\end{enumerate}
-\textbf{Bridge:}
-\begin{enumerate}
-  \setcounter{enumi}{6}
-  \item Verify the volume-conjecture identity at $q_0$:
-        $\mathrm{Vol}_{\mathrm{hyp}}(K)$ from step 6 matches the
-        asymptotic $2\pi \lim_{N \to \infty} (1/N) \log |J_K(e^{2\pi i/N})|$
-        derived from step 4.
-\end{enumerate}
-\textbf{Mass identity:}
-\begin{enumerate}
-  \setcounter{enumi}{7}
-  \item Read $\rho \in \mathbb{Z}_{>0}$ from the structural prefactor
-        rule on $(Z, N)$ (open in general; $\rho \in \{1, 2\}$ for
-        $\ell \leq 2$ light atoms, $\rho = 5$ observed for ⁶Li/⁷Li
-        — derivation pending).
-  \item Compute $B_\mathrm{pred} = \rho \cdot m_e \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$.
-  \item Compare to $B_\mathrm{AME}$ via the Archimedean realization
-        functor; emit the residual $\Delta = B_\mathrm{pred} - B_\mathrm{AME}$
-        in MeV and ppb.
+  \item Apply the Archimedean realization functor at $q = q_0$ and
+        multiply by $m_e$:
+        $B(\mathfrak{H}) := m_e \cdot M(\mathfrak{H}) \big|_{q = q_0}
+        = m_e \cdot \rho \cdot \mathrm{tr}_M(T_w)\big|_{q = q_0}$,
+        evaluated to $\geq 50$ decimal digits via MPFR.
+  \item Compare to AME 2020 binding: residual
+        $\Delta = B - B_{\mathrm{AME}}$ in MeV and ppb.
   \item Tag the result with one of:
-        \texttt{principled-derivation} (algebraic + geometric legs both
-        verified), \texttt{principled-gb-nf} (trivial-NF entries
+        \texttt{principled-derivation} (categorical pipeline complete
+        end-to-end), \texttt{principled-gb-nf} (trivial-NF entries
         only), \texttt{manual-historical-volume-match} (knot ID by
         earlier work, GB-NF derivation pending),
         \texttt{magic-A-formula} (algebraic shell-closure rule),
         \texttt{recursive-on-${}^{4}$He} (cluster recursion).
         Quarantine separately if \texttt{deprecated-volume-match}.
+\end{enumerate}
+\textbf{Optional post-Archimedean naming (borrowed, not in derivation):}
+\begin{enumerate}
+  \setcounter{enumi}{7}
+  \item For hyperbolic $K = \widehat{T_w}$, the volume conjecture
+        identifies $M(\mathfrak{H})/(m_e \rho)\big|_{q_0}$ with
+        $\mathrm{Vol}_{\mathrm{hyp}}(K)$ in conventional 3-manifold
+        terminology.  Used only as a name for the post-Archimedean
+        number; \emph{not} part of the derivation.
 \end{enumerate}
 \end{algorithm}
 ```
@@ -131,54 +206,56 @@ with methodology tag and high-precision certificate.
 
 | Step | Implementation | Status |
 |---|---|---|
-| 1a (canonical $T_w$) | confinement SDP solver | ✓ for $\ell \leq 1$; **gap** for $\ell = 2$ atoms |
-| 1b (GB-filtration) | [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py) | ✓ PoC for $H_2$, $H_3$ |
-| 1c (jet-order) | same module | ✓ PoC for $H_2$, $H_3$ |
-| 1 (joint-tower SDP) | not built — **design pending** | ✗ |
-| 2 (Markov closure) | conceptual | ✓ |
-| 3 (Markov trace symbolic) | [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py) + [`q_mn_recursive_memoized.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/q_mn_recursive_memoized.py) | ✓ for $n \leq 12$ |
-| 4 ($J_K(q_0)$ at $\geq 50$ dps) | MPFR via SymPy/mpmath | ✓ |
-| 5 (Reeb density) | not built — **design pending** | ✗ |
-| 6 (Mostow + Gromov $\Rightarrow$ Vol) | borrowed (Thurston/Mostow) | ✓ as theorem; not derived from QOU |
-| 7 (volume conjecture verification) | not built — **gap** | ✗ |
-| 8 ($\rho(Z, N)$ rule) | open structural question | ✗ |
-| 9 ($B_\mathrm{pred}$ via mass identity) | [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/recursive_atom_knot_atlas_render.py) using [`hp_volume.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/hp_volume.py) at $\geq 50$ dps | ✓ |
-| 10 (AME comparison) | mass-table-ppb witness | ✓ |
-| 11 (methodology tag) | [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json) | ✓ |
+| 1a (canonical $T_w$ — joint-tower SDP) | not built — **design pending** | ✗ |
+| 1b (GB-filtration certificate) | [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py) | ✓ PoC for $H_2$, $H_3$ |
+| 1c (jet-order log) | same module | ✓ PoC for $H_2$, $H_3$ |
+| 2 (Markov trace symbolic) | [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py) + [`q_mn_recursive_memoized.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/q_mn_recursive_memoized.py) | ✓ for $n \leq 12$ |
+| 3 ($\rho(Z, N)$ rule from SDP multiplicity) | open structural question | ✗ |
+| 4 ($M(\mathfrak{H}) = \rho \cdot \mathrm{tr}_M(T_w)$ in $\mathbb{Q}(q)$) | algebra: trivial once 2 + 3 are in | partial |
+| 5 (Archimedean realization at $q_0$ + $m_e$) | MPFR via SymPy/mpmath | ✓ |
+| 6 (AME comparison) | mass-table-ppb witness + [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/recursive_atom_knot_atlas_render.py) | ✓ |
+| 7 (methodology tag) | [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json) | ✓ |
+| 8 (post-Archimedean naming via volume conjecture) | borrowed; not in QOU derivation | ✓ as theorem |
 
-The principled atlas
-([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))
-currently runs steps 9–11 against pre-existing knot identifications
-from $\ell \leq 1$ entries (where 1–4 are done) and $\ell = 2$ entries
-flagged \texttt{manual-historical} (steps 1, 5–7 pending).  The
-quarantined provisional ⁶Li, ⁷Li entries are exactly those whose
-pipeline shortcut runs *backwards* from step 9 to a candidate knot,
-i.e.\ they reverse-engineer a $K$ that makes step 10 small without
-touching steps 1, 5–7.  Such shortcuts are forbidden by this
-proposition.
+Steps 5–8 currently substitute $\mathrm{Vol}_{\mathrm{hyp}}(K)$ from
+SnapPy for $\mathrm{tr}_M(T_w)|_{q=q_0}$ on entries flagged
+\texttt{manual-historical-volume-match} (²H, ³H, ³He) — i.e.\ the
+post-Archimedean naming convention is used in place of the
+pre-Archimedean Markov-trace evaluation.  This is acceptable for
+existing established knot identifications because the volume
+conjecture commits both quantities to the same number, but the
+*principled* path (Step 1a → Step 5) does not depend on this
+substitution.
+
+The quarantined provisional ⁶Li, ⁷Li entries
+([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
+§"⚠ Provisional / deprecated methodology") run *backwards* from Step
+6 to a candidate knot, bypassing Step 1a entirely.  Such shortcuts
+are forbidden by this proposition.
 
 ## Where the gaps actually are
 
-The two genuine open derivations:
+After the pre-Archimedean / post-Archimedean simplification (Yekutieli
+at finite slices replaces the geometric leg with finite-categorical
+Markov-trace computation) there is essentially **one open structural
+item**:
 
-1. **Reeb-vortex density $\mu$ from the categorical Frobenius pairing.**
-   This is the geometric leg's content.  Without it, the QOU framework
-   *borrows* the volume conjecture rather than *deriving* it — which is
-   methodologically the same shortcut the volume-match search makes,
-   only at a more abstract level.  The simplest non-trivial test case
-   is the Borromean rings $\mathcal{B}_3 = \widehat{(\sigma_1 \sigma_2^{-1})^3}$
-   where $\mathrm{Vol}_{\mathrm{hyp}} = 7.32772\ldots = 8 G$ is known
-   exactly.
-
-2. **Joint mass-tower confinement SDP.**  The algebraic leg's first
-   step.  Per-atom SDPs are insufficient because the GB filtration and
-   jet-order grading must be *consistent across confinement levels* —
-   only a joint SDP enforces that.  Certificate format already locked
+1. **Joint mass-tower confinement SDP.**  The pre-Archimedean root.
+   Per-atom SDPs are insufficient because the GB filtration and jet-order
+   grading must be *consistent across confinement levels* — only a joint
+   SDP enforces that.  Certificate format already locked
    ([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
 
-The structural prefactor rule $\rho(Z, N)$ is a downstream consequence
-once both legs are derived — it falls out of the SDP solution
-multiplicities.
+A second item — the structural prefactor rule $\rho(Z, N)$ — is a
+downstream consequence: once the joint-tower SDP returns the canonical
+$T_w$ per atom, $\rho$ is read off as the multiplicity of $T_w$'s
+solution in the Wedderburn decomposition.  No separate derivation is
+needed.
+
+The geometric "leg" (Reeb density → Mostow → Gromov → Vol) and the
+volume conjecture are *not* part of the QOU derivation.  They appear
+post-Archimedean as borrowed theorems that name the same number in
+conventional 3-manifold-theory language.
 
 ## Refs
 

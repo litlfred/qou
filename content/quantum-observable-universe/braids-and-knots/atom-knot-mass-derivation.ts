@@ -19,6 +19,10 @@ export default proposition({
     "prop:alpha-k-derivation-procedure",
     "prop:recursive-atom-knot-atlas",
     "prop:archimedean-realization-functor",
+    "prop:gb-spectral-sequence",
+    "prop:spectral-sequence-collapse",
+    "prop:spectral-sequence-h3-explicit",
+    "prop:e-infinity-page-identifications",
   ],
   tags: [
     "mass-derivation",
