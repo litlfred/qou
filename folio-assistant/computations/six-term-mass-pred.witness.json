@@ -1,7 +1,7 @@
 {
   "computation": "six-term-mass-pred",
-  "description": "Per-particle six-term mass-formula enumeration for Family 1 (D, T, \u00b3He) consuming canonical GB-NF data from joint-tower-sdp-rust.witness.json. Reads each existing per-term script's helper (no SnapPy, no hp_volume, no fitted constants). T4 (Frobenius co-Casimir) is marked pending because frobenius_partition_sum.py lacks a per-atom helper; the AME-comparable binding-energy assembly is queued as Sprint A v4.",
-  "computedAt": "2026-04-27T20:24:36.020425+00:00",
+  "description": "Per-particle six-term mass-formula enumeration for Family 1 (D, T, \u00b3He) consuming canonical GB-NF data from joint-tower-sdp-rust.witness.json. Reads each existing per-term script's helper (no SnapPy, no hp_volume, no fitted constants). T4 (Frobenius co-Casimir) is marked pending because frobenius_partition_sum.py lacks a per-atom helper; the AME-comparable binding-energy assembly is queued as Sprint A v5.",
+  "computedAt": "2026-04-27T20:35:28.151053+00:00",
   "source_witness": "folio-assistant/computations/joint-tower-sdp-rust.witness.json",
   "precision_dps": 50,
   "per_particle": {
@@ -29,9 +29,9 @@
         "T4_frobenius_co_casimir": {
           "n_strands": 6,
           "n_partitions": 11,
-          "sum_inv_dim_q": 3.202133983803198,
-          "T4_MeV": 1.636287103482751,
-          "source": "\u03a3_\u03bb 1/dim_q(\u03bb) over \u03bb\u22a2n  (Frobenius co-Casimir, frobenius-codim-universal.lean)"
+          "sum_inv_dim_q": "3.2021339838031978008389346627595211497052027085859",
+          "source": "\u03a3_\u03bb 1/dim_q(\u03bb) over \u03bb\u22a2n  (Frobenius co-Casimir, frobenius-codim-universal.lean)",
+          "T4_MeV": "1.6362871034827510828710047317887194100021513936246"
         },
         "T5_chirality_content_average": {
           "c_avg": -3.783724658473894,
@@ -84,9 +84,9 @@
         "T4_frobenius_co_casimir": {
           "n_strands": 9,
           "n_partitions": 30,
-          "sum_inv_dim_q": 2.5438838242158344,
-          "T4_MeV": 1.299921963096276,
-          "source": "\u03a3_\u03bb 1/dim_q(\u03bb) over \u03bb\u22a2n  (Frobenius co-Casimir, frobenius-codim-universal.lean)"
+          "sum_inv_dim_q": "2.5438838242158344171121891335654401624306492810147",
+          "source": "\u03a3_\u03bb 1/dim_q(\u03bb) over \u03bb\u22a2n  (Frobenius co-Casimir, frobenius-codim-universal.lean)",
+          "T4_MeV": "1.2999219630962759605181906794533496792898912304168"
         },
         "T5_chirality_content_average": {
           "c_avg": 14.769938682379722,
@@ -131,9 +131,9 @@
         "T4_frobenius_co_casimir": {
           "n_strands": 9,
           "n_partitions": 30,
-          "sum_inv_dim_q": 2.5438838242158344,
-          "T4_MeV": 1.299921963096276,
-          "source": "\u03a3_\u03bb 1/dim_q(\u03bb) over \u03bb\u22a2n  (Frobenius co-Casimir, frobenius-codim-universal.lean)"
+          "sum_inv_dim_q": "2.5438838242158344171121891335654401624306492810147",
+          "source": "\u03a3_\u03bb 1/dim_q(\u03bb) over \u03bb\u22a2n  (Frobenius co-Casimir, frobenius-codim-universal.lean)",
+          "T4_MeV": "1.2999219630962759605181906794533496792898912304168"
         },
         "T5_chirality_content_average": {
           "c_avg": 1.6913141346905476,

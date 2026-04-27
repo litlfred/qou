@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Six-term mass-formula consumer for Family 1 (D, T, ³He).
 
-Sprint A v3 — canonical-only enumeration audit.
+Sprint A v4 — canonical-only enumeration audit (T4 wired).
 
 Per `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md`,
 the canonical mass is
@@ -28,9 +28,9 @@ Terms reused from existing scripts (no reimplementation):
             on its own would over-count once T2+T3 land via the brane
             tower, so we consume the combined T1+T2+T3 from the tower
             helper directly.
-  T4      : pending per-atom helper (Frobenius co-Casimir is partition-
-            indexed; `frobenius_partition_sum.py` lacks a clean per-atom
-            caller).
+  T4      : wired via `term_T4()` partition-sum helper below
+            (Σ_λ 1/dim_q(λ) over λ⊢n=3·A; Frobenius co-Casimir per
+            `frobenius-codim-universal.lean`).  Memoised per n.
   T5      : `ribbon_content_average.content_average(Z, N, include_inter)`
             returns ⟨c(λ)⟩_β (the chirality content average).
   T6      : `habiro_residue_symbolic.eval_schur_weyl_exact_at_q0(A_values=)`
@@ -41,7 +41,7 @@ The output witness records the canonical per-term contribution where
 available, marks pending terms explicitly, and DOES NOT emit a
 calibrated AME-comparable binding-energy prediction yet — that
 requires the calibration + (Z·m_p + N·m_n - M) conversion pipeline,
-which is queued as Sprint A v4.
+which is queued as Sprint A v5.
 
 Usage:
   python folio-assistant/computations/six_term_consumer.py
@@ -132,25 +132,36 @@ def term_T4(Z, N, m_e_MeV):
     `2 + 1/[2]_q ≈ 2.451` (matching `partition-sum-proton-residual`).
     For atomic braids n = 3·A is the strand count.
 
-    Memoised per n (so D(n=6), T(n=9), ³He(n=9) share work)."""
+    Memoised per n for the dimensionless partition sum only (so D(n=6),
+    T(n=9), ³He(n=9) share work).  `T4_MeV` is derived per call from
+    the current `m_e_MeV` so a stale electron-mass argument cannot
+    poison the cached scaled value (per Copilot review)."""
     n = 3 * (Z + N)
-    if n in _T4_CACHE:
-        return _T4_CACHE[n]
-    from hecke_characters import partitions_of, dim_q
-    total = mp.mpf(0)
-    parts = list(partitions_of(n))
-    for p in parts:
-        d = dim_q(p)
-        total += mp.mpf(1) / mp.mpf(str(d))
-    result = {
-        "n_strands": n,
-        "n_partitions": len(parts),
-        "sum_inv_dim_q": float(total),
-        "T4_MeV": float(mp.mpf(str(m_e_MeV)) * total),
-        "source": "Σ_λ 1/dim_q(λ) over λ⊢n  (Frobenius co-Casimir, frobenius-codim-universal.lean)",
+    if n not in _T4_CACHE:
+        from hecke_characters import partitions_of, dim_q
+        total = mp.mpf(0)
+        parts = list(partitions_of(n))
+        for p in parts:
+            d = dim_q(p)
+            total += mp.mpf(1) / mp.mpf(str(d))
+        # Per Gemini review: preserve full mpmath precision in the
+        # witness JSON via mp.nstr(..., _DPS) rather than float().
+        # The numerical bounds-check tests use float(s) at consumption
+        # time; downstream high-precision consumers can re-parse the
+        # mpmath string at any precision they like.
+        _T4_CACHE[n] = {
+            "n_strands": n,
+            "n_partitions": len(parts),
+            "sum_inv_dim_q": mp.nstr(total, _DPS),
+            "source": "Σ_λ 1/dim_q(λ) over λ⊢n  (Frobenius co-Casimir, frobenius-codim-universal.lean)",
+        }
+    cached = _T4_CACHE[n]
+    total = mp.mpf(cached["sum_inv_dim_q"])
+    t4_mev = mp.mpf(str(m_e_MeV)) * total
+    return {
+        **cached,
+        "T4_MeV": mp.nstr(t4_mev, _DPS),
     }
-    _T4_CACHE[n] = result
-    return result
 
 
 _T6_CACHE: dict[int, dict] = {}
@@ -249,10 +260,12 @@ def main() -> int:
             else:
                 print(f"  T1+T2+T3: PENDING — {e1}")
             if t4:
+                # sum_inv_dim_q and T4_MeV are 50-dps strings (mp.nstr);
+                # cast to float only at the print boundary.
                 print(f"  T4 (Frobenius co-Casimir): n={t4['n_strands']}, "
                       f"|partitions|={t4['n_partitions']}, "
-                      f"Σ 1/dim_q(λ) = {t4['sum_inv_dim_q']:.6f}, "
-                      f"T4 = {t4['T4_MeV']:.6f} MeV")
+                      f"Σ 1/dim_q(λ) = {float(t4['sum_inv_dim_q']):.6f}, "
+                      f"T4 = {float(t4['T4_MeV']):.6f} MeV")
             else:
                 print(f"  T4: PENDING — {e4}")
             if t5:
@@ -273,7 +286,7 @@ def main() -> int:
             "script's helper (no SnapPy, no hp_volume, no fitted constants). "
             "T4 (Frobenius co-Casimir) is marked pending because "
             "frobenius_partition_sum.py lacks a per-atom helper; the AME-"
-            "comparable binding-energy assembly is queued as Sprint A v4."
+            "comparable binding-energy assembly is queued as Sprint A v5."
         ),
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "source_witness": str(WITNESS_IN.relative_to(HERE.parent.parent)),
