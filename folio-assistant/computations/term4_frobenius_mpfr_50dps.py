@@ -110,7 +110,7 @@ def main() -> int:
     print(f"    Σ 1/dim_q(λ) at q_0 = {n2_mpf}")
     print(f"    Term 4 = m_e · Σ = {term4_n2} MeV")
 
-    # n=3..11 from existing witness
+    # n=3..6 from existing witness; n=7..9 computed inline
     for n_str, r in f64["results_by_n"].items():
         n = r["n"]
         if n < 3:
@@ -128,10 +128,31 @@ def main() -> int:
             "term4_b_pred_mev_50dps": str(term4),
             "f64_baseline": r.get("total_at_q0"),
         })
-        print(f"\n  === n={n} ===")
+        print(f"\n  === n={n} (from existing witness) ===")
         print(f"    Σ 1/dim_q(λ) at q_0 (50 dps) = {at_q0_mpf}")
         print(f"    Term 4 = m_e · Σ = {term4} MeV")
-        print(f"    f64 baseline                  = {r.get('total_at_q0')}")
+
+    # Extend to n=7..9 (T, ³He at n=9 needed by unified mass table)
+    for n in (7, 8, 9):
+        total = sp.Integer(0)
+        for lam in partitions_of(n):
+            d = q_dim_sym(lam, q_sym)
+            total += sp.cancel(sp.Integer(1) / d)
+        sym = sp.simplify(total)
+        free = list(sym.free_symbols)
+        at_q0 = sp.N(sym.subs({s: sp.Float(q_str, 60) for s in free}), 50)
+        at_q0_mpf = mpf(str(at_q0))
+        term4 = M_E_MEV * at_q0_mpf
+        rows.append({
+            "n": n,
+            "total_symbolic": str(sym),
+            "total_at_q0_50dps": str(at_q0_mpf),
+            "term4_b_pred_mev_50dps": str(term4),
+            "f64_baseline": None,
+        })
+        print(f"\n  === n={n} (computed inline) ===")
+        print(f"    Σ 1/dim_q(λ) at q_0 (50 dps) = {at_q0_mpf}")
+        print(f"    Term 4 = m_e · Σ = {term4} MeV")
 
     out = {
         "computation": "term4-frobenius-mpfr-50dps",
