@@ -164,6 +164,82 @@ So `N_v` is the **single open scalar** that, once derived, unlocks
 all β-decay half-lives categorically. That is why this audit
 classifies layer 3 as `not-computed` rather than `partial`.
 
+## Decision (2026-04-27): option **B** chosen — algebraic, pre-Archimedean only
+
+The canonical invariant is `tr_M(T_w)` evaluated at `q_0` via the
+Wenzl-Markov formula `Σ_λ y_λ(q_0) · χ_λ(T_w)`. **`Vol_hyp(K)` is
+post-Archimedean and is no longer used.** This forces a hard
+reclassification of every prior witness that uses hyperbolic volume:
+
+### Reclassification under option B
+
+| Prior witness | Prior status | Option B status |
+|---|---|---|
+| `mass-table-ppb.witness.json` family 1 (D, T, ³He) | `categorical-knot-id-via-vol-match` | **fitted** (uses `Vol_hyp(K)`) |
+| `mass-table-ppb.witness.json` family 2 (⁴He magic-A) | `categorical-derived` | **fitted** (uses `α = m_e · 8G = m_e · Vol(Borromean)`) |
+| `mass-table-ppb.witness.json` family 3 (⁸Be–⁴⁰Ca α-cluster) | `partial-c-alpha-empirical` | **fitted** (uses `c_αα = m_e · Vol(7²_1)`) |
+| `low-isotope-mass-table.witness.json` | `fitted` | **fitted** (unchanged) |
+| `binding-canonical.witness.json` | `partial` | **fitted** (uses `Vol_hyp`) |
+| `comprehensive-low-isotope-table-v2.witness.json` | `fitted` | **fitted** (unchanged) |
+| `binding-ladder-catalog.witness.json` | `categorical` | **fitted** (uses `Vol_hyp`) |
+| `categorical-bypass-volmatch-demo.witness.json` (this PR) | `bypass-demo` | **canonical** (Wenzl-Markov, no `Vol`) |
+| `categorical-q-decay-ba-low-isotopes.witness.json` (this PR, updated) | `partial` | **canonical** for family 1; explicitly flags family 2, 3 as fitted |
+
+### Algebraic predictions today (option B)
+
+```
+LAYER 1 — algebraic B (Wenzl-Markov on SDP-derived T_w at q_0)
+  ²H:  B_alg = 0.1471 MeV   vs AME 2.225 MeV  →  ratio 0.066
+  ³H:  B_alg = 0.0132 MeV   vs AME 8.482 MeV  →  ratio 0.0016
+  ³He: B_alg = 1.0203 MeV   vs AME 7.718 MeV  →  ratio 0.132
+
+LAYER 2 — algebraic Q
+  n → p:    Q_alg = −0.511 MeV  vs AME +0.782 MeV   →  ratio −0.65
+  ³H→³He:   Q_alg = +0.496 MeV  vs AME +0.019 MeV   →  ratio 26.7
+
+m_p_alg = 0.510 MeV   vs m_p_AME = 938.272 MeV  →  scale gap 1839×
+m_n_alg = 0.510 MeV   (T_w(n) ≈ T_w(p) under current SDP)
+Q_n→p_alg = m_n − m_p − m_e = −m_e (degenerate)
+```
+
+### The central open problem of option B
+
+> **What canonical `T_w(proton) ∈ H_3(q)` satisfies
+>   `tr_M(T_w(p)) |_{q_0} = m_p / m_e ≈ 1836`?**
+
+The current joint-tower SDP gives `T_w(p) ≈ identity` (all Wedderburn
+block traces are within 0.02 of `dim_λ`, i.e. `χ_λ ≈ dim_λ` so
+`tr_M ≈ Σ y_λ · dim_λ = 1`). The structural integer `ρ_p = 1` doesn't
+help — `1 · 1 = 1`, off by 1836×.
+
+The 1836× factor is **not** post-Archimedean: it should be a
+consequence of the categorical chain in `ℚ(q)`. Possible algebraic
+sources for this scale:
+
+- **Sub-tower depth**: the proton may live in a deeper level of the
+  brane sub-tower than H_3 — e.g. H_n with n > 3 quarks each
+  resolved into deeper braids. This would multiply the dimension and
+  trace by a known integer ratio.
+- **Frobenius-coform pairing**: `tr_M` may need to be paired with a
+  dual element through the Frobenius coform, giving
+  `⟨T_w, T_w⟩ = tr_M(T_w · T_w*)` instead of `tr_M(T_w)`. For
+  identity this gives 1; for a non-trivial `T_w` with `T_w · T_w* `
+  having large character, this can be huge.
+- **Quantum dimension `[n_0]_q!`**: the canonical Markov trace
+  formula in some normalizations carries a factor `[n_0]_q!`. At
+  `q_0`, `[3]_q! ≈ 6.085` for n=3 — too small. But at higher tower
+  levels the factor compounds.
+- **Wrong T_w**: the SDP currently picks `T_w` minimizing some PSD
+  cone width (R5min `α* = 1.0` for proton means trivially PSD).
+  Adding an additional structural constraint (e.g. that `T_w` be
+  the unique non-identity SDP solution with maximal `tr_M`) might
+  pick out a different element with the right scale.
+
+**This is THE research question of option B.** Until it is
+resolved, every algebraic B/A and Q is off from AME by orders of
+magnitude. No 1 ppb is possible. The Clarabel-rs H_5 fix and MPFR
+upgrade are downstream of this; they are not on the critical path.
+
 ## Critical finding (2026-04-27): two categorical invariants disagree at q_0
 
 [`categorical_bypass_volmatch_demo.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/categorical_bypass_volmatch_demo.py) computes `B(𝔥)` directly from the
