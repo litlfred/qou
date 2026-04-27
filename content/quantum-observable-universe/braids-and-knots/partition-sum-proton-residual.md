@@ -207,7 +207,7 @@ $B_{\mathrm{AME}} - B_{\mathrm{pred}} = 1.2293\;\mathrm{MeV}$:*
 
 | candidate | value (MeV) | error vs gap |
 |---|---|---|
-| $(5/2) \cdot m_e$  [= $\sum_{\lambda \vdash 3} 1/d_\lambda$] | $1.2775$ | **+3.92%** ★ |
+| $(5/2) \cdot m_e$  [= $\sum_{\lambda \vdash 3} 1/d_\lambda$] | $1.2775$ | **+3.92%** (best) |
 | $\sum_{\lambda \vdash 6} 1/d_\lambda \cdot m_e$  [= $(473/144) m_e$] | $1.6785$ | $+36.5\%$ |
 | $(\sum_{\lambda \vdash 6} - \sum_{\lambda \vdash 3}) \cdot m_e$ | $0.4010$ | $-67.4\%$ |
 | $A \cdot m_e = 2 m_e$ | $1.0220$ | $-16.9\%$ |

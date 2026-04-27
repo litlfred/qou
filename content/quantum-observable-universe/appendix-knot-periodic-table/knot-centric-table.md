@@ -40,10 +40,10 @@ trefoil resonance modes.
 | 1 | 2 | 0 | HO closure | H, He |
 | 2 | 8 | 1 | HO closure | Li $\to$ Ne |
 | 3 | 20 | 2 | HO closure | Na $\to$ Ca |
-| 4 | 28 | 3 | ★ spin-orbit | Sc $\to$ Ni |
-| 5 | 50 | 4 | ★ spin-orbit | Cu $\to$ Sn |
-| 6 | 82 | 5 | ★ spin-orbit | Sb $\to$ Pb |
-| 7 | 126 | 6 | ★ spin-orbit | Bi $\to$ U+ |
+| 4 | 28 | 3 | spin-orbit (magic-receptive) | Sc $\to$ Ni |
+| 5 | 50 | 4 | spin-orbit (magic-receptive) | Cu $\to$ Sn |
+| 6 | 82 | 5 | spin-orbit (magic-receptive) | Sb $\to$ Pb |
+| 7 | 126 | 6 | spin-orbit (magic-receptive) | Bi $\to$ U+ |
 
 Rows 1--3 close at pure HO shell boundaries.  Rows 4--7
 are magic shells created by spin-orbit coupling
@@ -122,7 +122,8 @@ Each element displays:
   index at the element's outermost shell
 - **$N_{\mathrm{pred}}$ vs $N_{\mathrm{obs}}$**: predicted
   and observed neutron number
-- **Magic-receptive indicator**: ★ if the element is in a
+- **Magic-receptive indicator**: a row labelled
+  *(magic-receptive)* indicates the element is in a
   spin-orbit magic shell
 
 **Visualization specification (for implementation).**

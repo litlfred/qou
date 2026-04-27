@@ -34,7 +34,7 @@ being processed.*
 
 **Physical interpretation — SPECULATIVE.**
 
-⚠ *The following is **interpretive**, not derived.  The limit
+**Caveat.** *The following is interpretive, not derived.  The limit
 structure (Proved: $\tau \to 2$ at $q \to 0, \infty$;
 $\tau = \sum 1/d_\lambda$ at $q = 1$; $q \leftrightarrow q^{-1}$
 symmetry) is rigorous.  The "substrate information cost" reading

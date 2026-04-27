@@ -63,7 +63,7 @@ For each partition $\lambda$ the witness records:
   [n]_q!$ (does not sum to $1$ at finite $q \neq 1$ —
   [Plancherel remark](#prop:plancherel-weight-boundedness))
 
-**Status of each coefficient.**
+**Coefficient summary.**
 
 | Coefficient | Spectral derivation | Empirical verification |
 |---|---|---|

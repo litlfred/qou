@@ -240,8 +240,7 @@ $$
 $\mathcal{Q}_{\mathrm{exp}} \approx 0.318 \pm 0.0001$ MeV.
 Error: $+61\%$.
 
-**Status:** The algorithm produces a definite answer for any
-$(Z, N)$ from $q$ alone.  The $+61\%$ error for ${}^{60}$Co
+**Coverage.** The algorithm produces a definite answer for any $(Z, N)$ from $q$ alone.  The $+61\%$ error for ${}^{60}$Co
 indicates the shell correction (Step 4) is not yet capturing
 the full structure.  The conjectures (C1)–(C3) need verification,
 and the magic number derivation (C1) from $q$ is the key

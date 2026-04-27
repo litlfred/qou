@@ -9,8 +9,7 @@ $$
   \mathrm{Vol}(\mathcal{B}_3) \notin \mathbb{Q}.
 $$
 
-**Status.**
-This is completely open.  No hyperbolic 3-manifold volume has ever been
+*Remark.* This conjecture is completely open.  No hyperbolic 3-manifold volume has ever been
 proved irrational.  The figure-eight volume $3\,\mathrm{Cl}_2(\pi/3)$
 is a value of the Clausen function at a rational multiple of $\pi$.
 Its irrationality would follow from the irrationality of

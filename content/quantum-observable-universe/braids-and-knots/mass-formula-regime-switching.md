@@ -209,9 +209,9 @@ categorical derivation of $w_A$ is open.*
 
 | $A$ | isotope | SW+Frob err | BW+$\chi$ err | regime-selected |
 |---|---|---|---|---|
-| $2$ | D | **$+2.1\%$** ★ | $-353\%$ ✗ | SW+Frob: $+2.1\%$ |
-| $3$ | T | $-79\%$ | **$+0.51\%$** ★ | BW+$\chi$: $+0.51\%$ |
-| $3$ | $^3$He | $-73\%$ | **$+0.86\%$** ★ | BW+$\chi$: $+0.86\%$ |
+| $2$ | D | **$+2.1\%$** (best) | $-353\%$ (fail) | SW+Frob: $+2.1\%$ |
+| $3$ | T | $-79\%$ | **$+0.51\%$** (best) | BW+$\chi$: $+0.51\%$ |
+| $3$ | $^3$He | $-73\%$ | **$+0.86\%$** (best) | BW+$\chi$: $+0.86\%$ |
 | $4$ | $^4$He | $-94\%$ | **$-4.07\%$** | BW+$\chi$: $-4.07\%$ |
 
 *All predictions use **zero** fitted constants beyond $q_0$ and

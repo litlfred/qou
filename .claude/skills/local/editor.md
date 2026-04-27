@@ -322,6 +322,15 @@ Content change detected
    missing blank lines before `$$`, `\operatorname{}` (KaTeX rejects),
    and similar pitfalls. Always end the proof pass by listing the
    GitHub blob URLs of changed `.md` files for the author's eyeball.
+4b. **One-voice audit**: also delegate to `one-voice-audit` to scan
+   for status leaks (`✅ Done`, `(TODO)`, `(TBD)`), warning emoji
+   (`⚠`), comparison markers in body prose (`✓`/`✗`/`★`), Unicode
+   crash characters, first-person work tone, and date-stamped
+   notes. The skill applies mechanical fixes (delete status leaks,
+   convert `⚠` to `**Caveat.**`, replace markers with words) and
+   files `TodoItem`s for substantive items needing author judgment
+   (genuine open questions, dense comparison tables, expository
+   proof status).
 5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
    propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
    exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each

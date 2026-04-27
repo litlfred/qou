@@ -122,13 +122,13 @@ for k in 2..K_PARTITION_MAX:
   for partition λ of k:
     H_q(λ)   = ∏_{x∈λ} [h_x]_q
     d_λ      = #SYT(λ)
-    w_λ      = d_q(λ)² / [k]_q!
+    w_λ      = d_q(λ)^2 / [k]_q!
     y_λ      = w_λ / d_λ − 1/[k]_q!
     σ_1..σ_{k−1} = YSN matrices in λ
 for step = 1..A:
   for each partition λ:
-    M_λ      ← M_λ × ∏(c·σ_g + d·I) over new crossings at this step
-    ΔB_λ     = m_e · H_q(λ) · y_λ · (ln|Tr M_λ| − previous)
+    M_λ      ← M_λ × ∏(c*σ_g + d*I) over new crossings at this step
+    ΔB_λ     = m_e * H_q(λ) * y_λ * (ln|Tr M_λ| − previous)
     cumulative_λ += ΔB_λ
     record witness row
 B_unified = Σ_λ cumulative_λ
@@ -144,12 +144,12 @@ $(A, Z_k, N_k, \{\ln|\mathrm{tr}|_\lambda\}, \mathrm{cumulative})$.
 | Atom | $B_{\mathrm{dedi}}$ | $B_{\mathrm{unif}}$ | $B_{\mathrm{AME}}$ | $\sum_\lambda B_\lambda$ |
 |:-----|--------------------:|--------------------:|-------------------:|-------------------------:|
 | D    | $2.224$ | $-16.45$ | $2.224$ | $-16.45$ |
-| ⁴He  | $28.19$ | $16.67$ | $28.30$ | $-13.67$ |
-| ¹⁴C  | $102.0$ | $108.1$ | $105.7$ | $-3.50$ |
-| ²⁰Ne | $162.6$ | $163.0$ | $160.7$ | $+0.43$ |
-| ²⁸Si | $234.9$ | $244.8$ | $236.5$ | $+9.94$ |
-| ⁴⁰Ca | $341.3$ | $366.7$ | $342.1$ | $+25.4$ |
-| ²⁰⁸Pb| $1631$ | $2592$ | $1636$ | $+798$ |
+| ${}^{4}\mathrm{He}$  | $28.19$ | $16.67$ | $28.30$ | $-13.67$ |
+| ${}^{14}\mathrm{C}$  | $102.0$ | $108.1$ | $105.7$ | $-3.50$ |
+| ${}^{20}\mathrm{Ne}$ | $162.6$ | $163.0$ | $160.7$ | $+0.43$ |
+| ${}^{28}\mathrm{Si}$ | $234.9$ | $244.8$ | $236.5$ | $+9.94$ |
+| ${}^{40}\mathrm{Ca}$ | $341.3$ | $366.7$ | $342.1$ | $+25.4$ |
+| ${}^{208}\mathrm{Pb}$| $1631$ | $2592$ | $1636$ | $+798$ |
 
 The unified path uses **one** symbolic algorithm with **zero**
 fitted parameters and **no special-case branches**.  The

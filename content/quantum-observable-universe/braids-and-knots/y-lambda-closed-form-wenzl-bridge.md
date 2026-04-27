@@ -119,7 +119,7 @@ Per-partition agreement at H_3, H_4, H_5 (representative entries):
 | 5 | $(5)$ | $+0.11814840$ | $+0.11814840$ | $\sim 10^{-16}$ |
 | ... | ... | ... | ... | ... |
 
-All differences are at numerical precision (10⁻¹⁶), confirming the
+All differences are at numerical precision ($10^{-16}$), confirming the
 identity exactly.
 
 ## Significance
@@ -145,14 +145,14 @@ required factor of $q$ in the Markov-parameter shift.
   specialization formula at $Q = q^2$ with $r$ from the bridge
   equation.
 
-- The y_λ values for $n = 5, \ldots, 12$ (currently only available
+- The $y_\lambda$ values for $n = 5, \ldots, 12$ (otherwise only available
   numerically via MPFR witness) can now be derived symbolically
   by sympy's principal-specialization implementation — orders of
   magnitude faster than the linear-system solve.
 
 - The depth-stratum decomposition Σ_{depth(λ)=k} $y_\lambda$ is
   gauge-invariant under this convention shift (verified to
-  10⁻¹⁶ in [GB filtration gauge invariance witness](#)), as
+  $10^{-16}$ in [GB filtration gauge invariance witness](#)), as
   expected since the GB filtration is partition-combinatorial.
 
 ## Witness
@@ -203,13 +203,13 @@ at $n \in \{3, 4, 5, 6, 9, 12\}$ sample points).
 
 [`y-lambda-closed-form-wenzl-bridge.lean`](#) defines:
 
-- `jonesMarkovZ q := 1 / (√q + 1/√q)`
-- `wenzlQ q := q²`,  `wenzlZ q := q · jonesMarkovZ q`
+- `jonesMarkovZ q := 1 / (Real.sqrt q + 1 / Real.sqrt q)`
+- `wenzlQ q := q^2`,  `wenzlZ q := q * jonesMarkovZ q`
 - `wenzlX q := wenzlZ q / (1 - wenzlQ q + wenzlZ q)` — the
   explicit `Q^r` substitution, avoiding fractional exponents
 - `wenzlSchurElement λ Q X` — the principal-specialization Schur
   element (axiomatic stub pending full Mathlib partition machinery)
-- `wenzlNormalization parts Q X := Σ_µ d_µ · s_{µ,r}(Q)`
+- `wenzlNormalization parts Q X := Σ_µ d_µ * s_{µ,r}(Q)`
 - `yLambdaWenzlBridge parts λ q := s_λ / Z`
 
 The main theorem `y_lambda_closed_form_wenzl_bridge` asserts that
@@ -218,15 +218,15 @@ defined directly from the trace.  The proof composes:
 
 1. [Wenzl 1988] — `s_{µ, r}(Q)` is the Markov-trace weight at
    parameter `z_GL = Q^r(1-Q)/(1-Q^r)` in the `g`-Hecke convention.
-2. The convention isomorphism `G = q σ` sends σ-Hecke (eigenvalues
-   `q, -q⁻¹`, parameter `z`) to `g`-Hecke (eigenvalues `Q = q²`,
-   `-1`, parameter `z_GL = q · z`).
+2. The convention isomorphism $G = q\sigma$ sends $\sigma$-Hecke
+   (eigenvalues $q, -q^{-1}$, parameter $z$) to $g$-Hecke
+   (eigenvalues $Q = q^{2}$, $-1$, parameter $z_{\mathrm{GL}} = q \cdot z$).
 3. [Chlouveraki HDR Theorem 6.20] — the type-A Markov-trace family
    is 1-parameter, so the trace is uniquely determined by its
    `z`-value.
 
 The companion theorem `wenzl_bridge_unique` states that the
-substitution `(Q, z_GL) = (q², q · z)` is the unique convention map
+substitution $(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is the unique convention map
 realising the Jones-Markov trace via the Wenzl formula — corollary
 of the 1-parameter family.
 

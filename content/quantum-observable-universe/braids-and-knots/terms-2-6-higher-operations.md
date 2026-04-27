@@ -208,7 +208,7 @@ level $N$ corresponds to a specific Wedderburn component of
 $H_n(R, q)$ at that level.  Summing across all $N$ reproduces the
 brane-tower Φ_q-kernel.*
 
-**Status: ALGEBRAIC SOURCE IDENTIFIED (already in paper).**
+**Algebraic source.**
 
 *Term 2 is derivable from the algebraically-established colored
 Jones / Habiro framework.  The paper's
@@ -305,7 +305,7 @@ cohomology was **looking in the wrong place**: $\Phi_q$ is simply
 an infinite Wedderburn sum, and the Wedderburn weights themselves
 have been algebraically derived from the start.*
 
-**Updated derivation status (Term 2).**
+**Term 2 — derivation.**
 
 *Status revised: Term 2 IS algebraically derived, via
 [mass endomorphism tower](#prop:mass-endomorphism-tower) +
@@ -435,12 +435,12 @@ derivation in
 prefix product; the correct identification is with root-of-unity
 residues summed over all $\ell \geq 2$.*
 
-**Status.**
-*This is a **structural proposal**, not a proof.  It requires:*
+**Caveat.**
+*This is a structural proposal, not a proof.  It requires:*
 
 1. *Confirming that the Mittag-Leffler sum for $\ell \geq 2$ reproduces
    the empirical Term 6 corrections needed to close the $A \geq 3$
-   binding errors (currently $5\%$-$20\%$ from paper's BW+$\chi$
+   binding errors (typically $5\%$-$20\%$ from the BW+$\chi$
    + shell).*
 2. *Rigorously identifying $E_\infty^{\ell, *}$ for $\ell \geq 3$
    with specific ribbon-residue combinations via the Cauchy

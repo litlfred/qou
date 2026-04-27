@@ -21,8 +21,7 @@ paper to keep them disambiguated:
   parameter) should not appear outside the introduction, Chapter 8
   (Information Theory, for falsifiability computations), and
   Chapter 11 (Observations). Geometry chapters should use symbolic
-  $q$. *(Currently violated in a handful of body chapters; tracked
-  for cleanup.)*
+  $q$.
 
 **Approximation convention (derived / observed values).** Numerical
 values derived from the substrate parameter $q_0$ or compared to
