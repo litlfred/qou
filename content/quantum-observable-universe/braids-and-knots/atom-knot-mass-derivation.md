@@ -204,18 +204,52 @@ with methodology tag and high-precision certificate.
 
 ## Pipeline status
 
+The categorical pipeline is now implemented in two parallel
+implementations:
+
+- **Python prototypes** ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py),
+  [`joint_tower_sdp_solver.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/joint_tower_sdp_solver.py),
+  [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/joint_tower_sdp_solver_v2.py)) — design-spec
+  reference, exact in $q$ via SymPy + cvxpy SDP feasibility for $H_3$.
+- **Rust production scaling** ([`tools/hecke-engine/src/{gb_nf_reducer,joint_tower_sdp_certificate,wedderburn_psd,cross_level_embedding,sdp_verifier}.rs`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/),
+  binary [`joint-tower-sdp`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/bin/joint_tower_sdp.rs)) — bit-for-bit
+  match with Python on small cases; **3,400× speedup** (47.5 s → 14 ms
+  for the 7-atom registry); scales to $H_5+$ where Python defers.
+  See [RUST_INTEGRATION.md](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/RUST_INTEGRATION.md)
+  for the implementation plan.
+
 | Step | Implementation | Status |
 |---|---|---|
-| 1a (canonical $T_w$ — joint-tower SDP) | not built — **design pending** | ✗ |
-| 1b (GB-filtration certificate) | [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py) | ✓ PoC for $H_2$, $H_3$ |
-| 1c (jet-order log) | same module | ✓ PoC for $H_2$, $H_3$ |
+| 1a (canonical $T_w$ — joint-tower SDP for *unknown* $T_w$) | R5-full pending — research-grade | ✗ |
+| 1b (GB-filtration certificate) | Python `gb_filtration_jet_tracker.py` (PoC) + Rust `gb_nf_reducer.rs` (R2; 6 unit tests; bit-for-bit match) | ✓ |
+| 1c (jet-order log) | same modules | ✓ |
+| 1d (Wedderburn-block PSD evaluator) | Python cvxpy at $H_3$ + Rust `wedderburn_psd.rs` (R3; 2 unit tests; scales to $H_5+$) | ✓ |
+| 1e (cross-level embedding LR) | Rust `cross_level_embedding.rs` (R4; multi-LR; 2 unit tests including 77-partition $H_{12}$ identity) | ✓ |
+| 1f (PSD-cone $\alpha^*$ verifier) | Rust `sdp_verifier.rs` (R5-minimal; bisection equivalent to SDP value function; 2 unit tests) | ✓ |
 | 2 (Markov trace symbolic) | [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py) + [`q_mn_recursive_memoized.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/q_mn_recursive_memoized.py) | ✓ for $n \leq 12$ |
-| 3 ($\rho(Z, N)$ rule from SDP multiplicity) | open structural question | ✗ |
-| 4 ($M(\mathfrak{H}) = \rho \cdot \mathrm{tr}_M(T_w)$ in $\mathbb{Q}(q)$) | algebra: trivial once 2 + 3 are in | partial |
+| 3 ($\rho(Z, N)$ rule from Wedderburn multiplicity) | downstream of 1a — read off SDP solution multiplicity | ✗ |
+| 4 ($M(\mathfrak{H}) = \rho \cdot \mathrm{tr}_M(T_w) \in \mathbb{Q}(q)$) | algebraically trivial once 2 + 3 are in | partial |
 | 5 (Archimedean realization at $q_0$ + $m_e$) | MPFR via SymPy/mpmath | ✓ |
 | 6 (AME comparison) | mass-table-ppb witness + [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/recursive_atom_knot_atlas_render.py) | ✓ |
 | 7 (methodology tag) | [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json) | ✓ |
 | 8 (post-Archimedean naming via volume conjecture) | borrowed; not in QOU derivation | ✓ as theorem |
+
+### PSD-cone $\alpha^*$ ranking (Rust R5-minimal, $q_0 = 1.1097$)
+
+For each historical entry the verifier emits
+$\alpha^*(\mathfrak{H}) := \max\{\alpha \in [0,1] :
+\alpha \cdot \rho_\lambda(T_w) + (1-\alpha) \cdot I \succeq 0
+\text{ for all } \lambda\}$.  $\alpha^* = 1$ ⇒ all blocks PSD;
+$\alpha^* < 1$ quantifies the gap.
+
+| atom | knot ID | $\alpha^*$ | gap $1-\alpha^*$ | diagnostic |
+|---|---|---|---|---|
+| proton | $\mathcal{B}_3$ Borromean | **1.000** | 0 | all 3 blocks PSD ✓ |
+| neutron | $\mathcal{B}_3$ Borromean | **1.000** | 0 | all 3 blocks PSD ✓ |
+| $^3\mathrm{He}$ | $L_{6a4}$ | **1.000** | 0 | all 3 blocks PSD ✓ |
+| electron | $\sigma_1^3 = T_{2,3}$ | 0.577 | 0.423 | sign block $\rho_{(1,1)} = -q^{-3}$ negative (algebraic, expected for fermionic odd permutations) |
+| $^2\mathrm{H}$ | $6_2$ | 0.546 | 0.454 | standard $(2,1)$ block NOT PSD |
+| $^3\mathrm{H}$ | $8_{11}$ | **0.424** | 0.576 | 5 of 7 blocks NOT PSD — *largest gap* in registry |
 
 Steps 5–8 currently substitute $\mathrm{Vol}_{\mathrm{hyp}}(K)$ from
 SnapPy for $\mathrm{tr}_M(T_w)|_{q=q_0}$ on entries flagged
@@ -237,20 +271,31 @@ are forbidden by this proposition.
 
 After the pre-Archimedean / post-Archimedean simplification (Yekutieli
 at finite slices replaces the geometric leg with finite-categorical
-Markov-trace computation) there is essentially **one open structural
-item**:
+Markov-trace computation) and the production-scale Rust port
+(R1–R4 + R5-minimal landed), the remaining open structural item is:
 
-1. **Joint mass-tower confinement SDP.**  The pre-Archimedean root.
-   Per-atom SDPs are insufficient because the GB filtration and jet-order
-   grading must be *consistent across confinement levels* — only a joint
-   SDP enforces that.  Certificate format already locked
-   ([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
+1. **Joint mass-tower confinement SDP — solver mode (R5-full).**
+   The current Rust binary verifies that *given* candidate $T_w$
+   inputs (electron $\sigma_1^3$, proton/neutron Borromean, ²H/³H/³He
+   historical IDs) the certificate format is well-formed and quantifies
+   the PSD-cone gap $\alpha^*$.  The remaining work is to invert this:
+   for ⁶Li ($H_{18}$), ⁷Li ($H_{21}$), and α-cluster atoms ($H_{24}$
+   to $H_{120}$) where canonical $T_w$ is *unknown*, formulate and
+   solve the SDP
+
+   $$
+   \min_{c_{w}(q_0) \in \mathbb{R}} \, \|\,c\,\|_1 \quad\text{s.t.}\quad
+   \rho_\lambda(T_w) \succeq 0 \,\forall \lambda,\ \pi_{\mathfrak{H}\to\mathfrak{H}'}(T_w(\mathfrak{H})) = T_w(\mathfrak{H}')
+   $$
+
+   via Clarabel.rs + system BLAS.  Slots cleanly into the existing
+   `JointTowerSdpCertificate` schema.  Once R5-full lands, the
+   deprecated `li-atom-knot-search` is fully retirable.
 
 A second item — the structural prefactor rule $\rho(Z, N)$ — is a
-downstream consequence: once the joint-tower SDP returns the canonical
-$T_w$ per atom, $\rho$ is read off as the multiplicity of $T_w$'s
-solution in the Wedderburn decomposition.  No separate derivation is
-needed.
+downstream consequence: once the SDP-solver returns canonical $T_w$
+per atom, $\rho$ is read off as the multiplicity of $T_w$'s solution
+in the Wedderburn decomposition.  No separate derivation is needed.
 
 The geometric "leg" (Reeb density → Mostow → Gromov → Vol) and the
 volume conjecture are *not* part of the QOU derivation.  They appear
