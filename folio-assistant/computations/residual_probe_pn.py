@@ -32,11 +32,18 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 50
 
-from q_parameter import Q as Q0_FLOAT, VOL_FIGURE_EIGHT, MASS_RATIO_MU_E
+from q_parameter import (
+    Q as Q0_FLOAT, VOL_FIGURE_EIGHT, MASS_RATIO_MU_E,
+    Q_MP, Q_INV_MP, vol_4_1_at,
+)
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+# Use HP globals from q_parameter directly.  Previously this script
+# went `mp.mpf(str(Q0_FLOAT))`, taking the f64 q (~16 dps), turning
+# it back into mpmath, and computing everything downstream at
+# f64 dressed up as 50 dps — past digit 16 it was trailing noise.
+Q0 = Q_MP
+QI = Q_INV_MP
 
 
 def q_int(k):
@@ -117,7 +124,7 @@ def probe_volumes():
     print("=" * 100)
     print("PROBE 2 — rational-of-V(4_1) contributions")
     print("=" * 100)
-    V_fig8 = mp.mpf(str(VOL_FIGURE_EIGHT))
+    V_fig8 = vol_4_1_at(50)
     print(f"  Vol(4_1) = V_fig8 = {mp.nstr(V_fig8, 25)}")
     print(f"  ℏ_q² = V_fig8 / m_μ/m_e = {mp.nstr(HBAR_Q_SQ, 20)}")
     print()
