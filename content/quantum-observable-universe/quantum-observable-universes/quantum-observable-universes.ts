@@ -339,6 +339,7 @@ export default chapter({
       blocks: [
         "braiding-unit-circle-convention",
         "sqrt-q-ribbon-structure",
+        "sign-as-spin-structure",
         "i-as-braiding-orientation",
         "affine-chart-origin-of-i-and-q",
         "categorical-coordinate-ring",
