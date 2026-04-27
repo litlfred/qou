@@ -9,6 +9,11 @@ description = "Gröbner reduction engine for H_n(q) — nuclear normal forms"
 name = "joint-tower-sdp"
 path = "src/bin/joint_tower_sdp.rs"
 
+# R5.5 scaling sanity check
+[[bin]]
+name = "r5-5-scale-test"
+path = "src/bin/r5_5_scale_test.rs"
+
 # Default binary: v8 inductive symbolic chaining (exact in q)
 [[bin]]
 name = "hecke-engine"
