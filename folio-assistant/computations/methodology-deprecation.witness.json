@@ -8,7 +8,28 @@
     "step_3": "Compute Vol_hyp directly from the closure (SnapPy on the closure complement).",
     "step_4": "B_pred = \u03c1 \u00b7 m_e \u00b7 Vol_hyp; compare a posteriori to AME.",
     "key_property": "Knot is OUTPUT of GB-NF, not INPUT chosen to match the answer.",
-    "constraint_joint_tower": "The SDP must be JOINT over the full mass tower (all confinement levels \u2113 and all atoms simultaneously), with Gr\u00f6bner-Shirshov filtration tracking AND jet-order tracking, so that the GB filtration and jet ordering are consistent across confinement levels. Per-atom SDP runs in isolation are insufficient \u2014 they cannot verify cross-tower consistency of the filtration."
+    "constraint_joint_tower": "The SDP must be JOINT over the full mass tower (all confinement levels \u2113 and all atoms simultaneously), with Gr\u00f6bner-Shirshov filtration tracking AND jet-order tracking, so that the GB filtration and jet ordering are consistent across confinement levels. Per-atom SDP runs in isolation are insufficient \u2014 they cannot verify cross-tower consistency of the filtration.",
+    "infrastructure_progress": {
+      "step_3_gb_filtration_tracking": {
+        "status": "proof-of-concept-complete",
+        "witness": "gb-filtration-jet-order.witness.json",
+        "evidence": "gb_filtration_jet_tracker.py reduces braid words in H_n(q) exactly via SymPy and emits a structured filtration certificate {grade \u2192 [(perm, q-coefficient)]} verified on \u03c3_1^3 (electron) and (\u03c3_1 \u03c3_2^{-1})^3 (proton/neutron body)."
+      },
+      "step_4_jet_order_tracking": {
+        "status": "proof-of-concept-complete",
+        "witness": "gb-filtration-jet-order.witness.json",
+        "evidence": "Each reduction event recorded as JetEvent(step, multiplier, predecessor, successor, \u2113_before, \u2113_after, relation \u2208 {ascending, hecke-quadratic}); jet-order index = step number.  Tested on 3 cases up to 16 steps."
+      },
+      "step_2_joint_tower_sdp": {
+        "status": "design-input-ready",
+        "blocked_on": "Solver formulation: cross-confinement-level consistency constraints; SDP encoding of filtration grade + jet-order as structured variables; scaling to H_18(q_0) / H_21(q_0).",
+        "consumes": [
+          "gb-filtration-jet-order.witness.json (certificate format)",
+          "confined-particle.md (per-level T_w registry)",
+          "y-lambda-wenzl-bridge-symbolic (Markov-trace coefficients)"
+        ]
+      }
+    }
   },
   "deprecated_methodology": {
     "name": "atom-knot volume-match search",

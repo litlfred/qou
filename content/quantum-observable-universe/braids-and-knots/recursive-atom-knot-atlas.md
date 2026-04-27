@@ -306,7 +306,14 @@ to the rendered appendix on the next `bun run build`.
   confinement levels $\ell$ and all atoms simultaneously — with
   **Gröbner–Shirshov filtration tracking** and **jet-order tracking**,
   yielding a canonical $T_w \in H_{n_0}(q_0)$ *per atom* as a structured
-  certificate.  The Markov closure of $T_w$ is then taken in $S^3$ and
+  certificate.  Status: **certificate format proof-of-concept complete**
+  ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py)
+  + [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
+  The reducer computes filtration grade + jet-order events exactly in
+  symbolic $q$ via SymPy on the test cases $\sigma_1^3$ (electron) and
+  $(\sigma_1 \sigma_2^{-1})^3$ (proton/neutron body).  The joint-tower
+  SDP solver consumes this certificate format; until that solver lands,
+  the volume-match results stay quarantined.  The Markov closure of $T_w$ is then taken in $S^3$ and
   $\mathrm{Vol}_{\mathrm{hyp}}$ is computed at $\geq 50$ decimal digits
   via `hp_volume_of_link_closure(braid_word, digits=50)`; comparison to
   $K_{11a259}$ / $L_{11a62}$ (or whatever closure the SDP yields) happens

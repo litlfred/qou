@@ -155,7 +155,24 @@ constant PrincipledPathForAtomKnot : Prop
 
 theorem principled_path_for_atom_knot : PrincipledPathForAtomKnot := by
   sorry  -- Ref: prop:confinement-sdp + def:confined-particle.
-         -- Implementation pending: extend the SDP solver to handle the
-         -- full tower jointly with GB-filtration + jet-order tracking.
+         -- Status: certificate format proof-of-concept complete
+         -- (gb_filtration_jet_tracker.py + gb-filtration-jet-order.witness.json,
+         -- verified on σ_1^3 and (σ_1 σ_2^{-1})^3 in symbolic q).
+         -- Pending: joint-tower SDP solver consuming this certificate format.
+
+/-- Filtration certificate format produced by gb_filtration_jet_tracker.py:
+    a Hecke element E ∈ H_n(q) is recorded as a map
+        FiltrationCertificate := ℕ → List (Perm n × ℚ(q))
+    where FiltrationCertificate grade lists every basis element T_w with
+    Coxeter length ℓ(w) = grade and its symbolic-q coefficient.
+
+    The jet-order log is the ordered list of reduction events; each
+    event tags the multiplication step T_w · T_i with (ℓ(w), ℓ(ws_i),
+    relation ∈ {ascending, hecke-quadratic}). -/
+constant FiltrationCertificateFormat : Prop
+
+theorem filtration_certificate_format_specified : FiltrationCertificateFormat := by
+  sorry  -- Ref: gb-filtration-jet-order.witness.json §framework.
+         -- Format is now stable; consumed by the future joint-tower SDP.
 
 end QOU.BraidsAndKnots
