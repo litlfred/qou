@@ -69,10 +69,29 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
-mp.mp.dps = 50  # 50 decimal places per Sprint B requirement
 
-from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
-                          h as H_A_F, z as Z_MARKOV)
+_DPS = 50  # 50 decimal places per Sprint B requirement.
+
+# Sprint B note (precision contract):
+#   This is a high-precision scientific-calculation script, not a
+#   reusable library. The canonical 3-term formula requires 50 dps so
+#   the proton calibration test lands within its 1e-12 threshold;
+#   under default mpmath precision (15 dps) the assertion would be
+#   round-off-noise-bounded rather than algebra-bounded.
+#
+#   Therefore we set mp.mp.dps = _DPS globally at import time. This is
+#   a deliberate, documented side-effect — *not* the bare mp.mp.dps = 50
+#   that Gemini's review flagged. Callers that import this module
+#   should treat 50-dps as the active precision floor; if a caller
+#   needs lower precision in its own scope, it can use
+#   `with mp.workdps(15):` locally.
+#
+#   The precision-critical calibration step inside main() additionally
+#   wraps in `with mp.workdps(_DPS):` for explicit, locally-scoped
+#   high precision (no reliance on the import-time global).
+mp.mp.dps = _DPS
+
+from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1)
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_P_MEV, M_N_MEV
 
@@ -82,9 +101,12 @@ QI = mp.mpf(1) / Q0
 # z = 1/(q^{1/2} + q^{-1/2}) — the Markov parameter
 z_m = mp.mpf(1) / (mp.sqrt(Q0) + mp.sqrt(QI))
 
-# ── Wedderburn weights at n=3 (sum w_λ · dim_λ² = 1) ───────────────
-# From [wedderburn-trace-identity.md]: dim_q([3])=1, dim_q([2,1])=q²+1,
-# dim_q([1,1,1])=1; [3]_q! = q⁴+4q²+1 = D.
+# ── Wedderburn weights at n=3 ──────────────────────────────────────
+# From [wedderburn-trace-identity.md]: q-deformed dimensions at n=3
+# are dim_q([3]) = q, dim_q([2,1]) = q²+1, dim_q([1,1,1]) = q;
+# [3]_q! = q⁴ + 4q² + 1 = D.  The Plancherel weights are
+# w_λ = dim_q(λ)² / D, and they sum to 1 by construction:
+#   q² + (q²+1)² + q²  =  q⁴ + 4q² + 1  =  D.
 D = Q0**4 + 4*Q0**2 + 1
 W_SYM = Q0**2 / D                     # trv channel weight
 W_STD = (Q0**2 + 1)**2 / D            # std channel weight
@@ -262,7 +284,7 @@ def main() -> int:
     print(f"    w_sym = {float(W_SYM):.12f}  (trv channel)")
     print(f"    w_std = {float(W_STD):.12f}  (std channel)")
     print(f"    w_alt = {float(W_ALT):.12f}  (alt = chirality channel)")
-    print(f"    sum   = {float(W_SYM + W_STD + W_ALT):.12f}  (should not = 1; weighted by dim²)")
+    print(f"    sum   = {float(W_SYM + W_STD + W_ALT):.12f}  (= 1 by construction; w_λ = dim_q(λ)²/D)")
     print()
 
     # Per-particle: proton, neutron
@@ -293,9 +315,12 @@ def main() -> int:
         return 1
 
     # Calibrate energy scale on the proton (single point; no fit).
-    E0 = M_P_MEV / float(mp_v)
-    mp_pred_MeV = float(mp_v) * E0  # exactly M_P_MEV by construction
-    mn_pred_MeV = float(mn_v) * E0
+    # Do the division and multiplication at 50 dps so the scale carries
+    # the full mpmath precision; only cast to float at the print boundary.
+    with mp.workdps(_DPS):
+        E0 = mp.mpf(str(M_P_MEV)) / mp_v
+        mp_pred_MeV = float(mp_v * E0)  # exactly M_P_MEV by construction
+        mn_pred_MeV = float(mn_v * E0)
     err_p_pct = (mp_pred_MeV - M_P_MEV) / M_P_MEV * 100
     err_neutron_pct = (mn_pred_MeV - M_N_MEV) / M_N_MEV * 100
     err_p_ppb = err_p_pct * 1e7

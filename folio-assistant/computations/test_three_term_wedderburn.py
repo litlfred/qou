@@ -90,8 +90,11 @@ def test_no_alpha_star_or_alpha4_definitions():
 def test_V_3term_returns_real_mpf():
     v = abt.V_3term(_PROTON_G0)
     assert v is not None
-    # mp.mpf doesn't carry an imaginary part; just validate it's real-valued
-    assert float(v) == float(v), "V_3term must produce a finite real number"
+    # Explicit finiteness — `float(v) == float(v)` would have passed
+    # even for ±inf (since inf == inf is true). Use mp.isfinite to
+    # actually catch a Φ_q pole or other divergence.
+    import mpmath as mp
+    assert mp.isfinite(v), f"V_3term must be finite; got {v!r}"
 
 
 def test_proton_mass_calibration_exact():
@@ -101,8 +104,11 @@ def test_proton_mass_calibration_exact():
     Vp1 = abt.V_3term(_PROTON_G1)
     mp_v = abt.tower([Vp0, Vp1])
     assert mp_v != 0, "tower(proton) must be non-zero"
-    E0 = M_P_MEV / float(mp_v)
-    mp_pred = float(mp_v) * E0
+    # Calibrate at 50 dps so the threshold check is bounded by the
+    # mpmath precision rather than the float64 round-off floor.
+    with abt.mp.workdps(abt._DPS):
+        E0 = abt.mp.mpf(str(M_P_MEV)) / mp_v
+        mp_pred = float(mp_v * E0)
     rel_err = abs(mp_pred - M_P_MEV) / M_P_MEV
     assert rel_err < 1e-12, (
         f"single-point proton calibration not exact: pred={mp_pred:.10f}, "
@@ -188,22 +194,32 @@ def test_alt_channel_distinguishes_proton_neutron():
 
 def test_V_3term_is_pure_wedderburn_sum():
     """V_3term should equal the sum of its three channel contributions
-    (no hidden mixing)."""
+    (no hidden mixing). Compare in mpmath at 50 dps — the previous
+    float64 cast capped error at ~1e-16 floor, which made the 1e-30
+    bound meaningless."""
     chain = _PROTON_G0
     decomp = abt.channel_decomposition(chain)
     direct = abt.V_3term(chain)
-    err = abs(float(direct) - float(decomp['total']))
-    scale = max(1.0, abs(float(direct)))
-    assert err / scale < 1e-30, (
-        f"V_3term({chain[:3]}...) = {float(direct)} but channel "
-        f"decomposition sums to {float(decomp['total'])} (Δ={err:.3e})"
+    # mp.almosteq(a, b, rel_eps) holds iff |a-b| <= rel_eps * max(|a|,|b|).
+    # Use a tolerance ~10^-(_DPS-2) so the test exercises mpmath
+    # precision rather than float round-off.
+    tol = abt.mp.mpf(10) ** (-(abt._DPS - 2))
+    assert abt.mp.almosteq(direct, decomp['total'], rel_eps=tol), (
+        f"V_3term({chain[:3]}...) = {direct} but channel decomposition "
+        f"sums to {decomp['total']} (|Δ|={abs(direct - decomp['total'])}, "
+        f"rel_eps tol={tol})"
     )
 
 
 def test_dps_is_50():
+    # alpha_blend_tower._DPS is the canonical Sprint B precision floor.
+    # The module sets mp.mp.dps = _DPS at import time as a deliberate
+    # documented side-effect; importers see the elevated precision.
     import mpmath as mp
-    # alpha_blend_tower.py sets mp.mp.dps = 50 at import time.
-    assert mp.mp.dps >= 50, f"precision is {mp.mp.dps} dps, expected >= 50"
+    assert abt._DPS == 50, f"abt._DPS is {abt._DPS}, expected 50"
+    assert mp.mp.dps >= abt._DPS, (
+        f"global mp.mp.dps is {mp.mp.dps}, expected >= {abt._DPS}"
+    )
 
 
 # ─── Standalone runner ─────────────────────────────────────────────
