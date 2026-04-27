@@ -125,6 +125,15 @@ DEPS = {
         # verifies cross-level consistency (nucleon ← 3⊗quark).
         # Consumed by prop:atom-knot-mass-derivation as step-1 input.
     ],
+    "joint-tower-sdp-h6-h9": [
+        "joint_tower_sdp_solver_v2.py",
+        "joint_tower_sdp_solver.py",
+        "gb_filtration_jet_tracker.py",
+        # Phase 3b: ²H, ³H, ³He historical knot identifications
+        # (6_2, 8_11, L6a4) processed through gb-filtration-jet-tracker.
+        # cvxpy SDP-feasibility check on H_3 Hoefsmit blocks for ²H, ³He
+        # (B_3 braids); ³H (B_5 / 8_11) deferred to tools/hecke-engine.
+    ],
 }
 
 # Outputs produced by each artifact (for missing-output check)
@@ -140,6 +149,7 @@ OUTPUTS = {
     "y-lambda-cyclotomic-factor": ["y-lambda-cyclotomic-factor.witness.json"],
     "gb-filtration-jet-order": ["gb-filtration-jet-order.witness.json"],
     "joint-tower-sdp-h3": ["joint-tower-sdp-h3.witness.json"],
+    "joint-tower-sdp-h6-h9": ["joint-tower-sdp-h6-h9.witness.json"],
 }
 
 
