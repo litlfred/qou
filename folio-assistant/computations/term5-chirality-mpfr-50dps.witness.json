@@ -1,0 +1,41 @@
+{
+  "computation": "term5-chirality-mpfr-50dps",
+  "description": "Plan F \u2014 Term 5 chirality factor a_K = \u03a0 (1 + sign\u00b7h) for the standard pn-crossing patterns at q_0 to 50 dps. The per-knot prefactor C_K is multi-block-determined and atom-specific (see bw_chirality_isotopes.py); this witness reports only the q-algebraic a_K factors at 50 dps.",
+  "computedAt": "2026-04-27T20:41:40.341103+00:00",
+  "precision": "mpfr_50dps",
+  "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
+  "h_50dps": "0.20906032198987946110160842229792190641371055417848",
+  "h_squared_50dps": "0.043706218230512077758279888274624924380543482278947",
+  "chirality_factors": [
+    {
+      "factor": "1 + h",
+      "value_at_q0_50dps": "1.2090603219898794611016084222979219064137105541785",
+      "context": "single positive pn crossing"
+    },
+    {
+      "factor": "1 - h",
+      "value_at_q0_50dps": "0.79093967801012053889839157770207809358628944582152",
+      "context": "single negative pn crossing"
+    },
+    {
+      "factor": "1 - h\u00b2",
+      "value_at_q0_50dps": "0.95629378176948792224172011172537507561945651772105",
+      "context": "one pn pair, opposite signs (figure-eight 4_1)"
+    },
+    {
+      "factor": "(1 - h\u00b2)\u00b2",
+      "value_at_q0_50dps": "0.91449779705098899078084870564708222642734399662367",
+      "context": "two pn pairs, opposite signs (\u2074He)"
+    },
+    {
+      "factor": "(1 - h\u00b2)\u00b3",
+      "value_at_q0_50dps": "0.87452855676175592153058770734881118203387814473544",
+      "context": "three pn pairs, opposite signs (extrapolation)"
+    },
+    {
+      "factor": "1",
+      "value_at_q0_50dps": "1.0",
+      "context": "no pn crossings (electron, single-nucleon)"
+    }
+  ]
+}
