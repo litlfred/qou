@@ -39,15 +39,15 @@ import mpmath as mp
 
 mp.mp.dps = 40
 
-from q_parameter import Q as Q0_FLOAT, HBAR_Q as HBAR_Q_FLOAT
+from q_parameter import Q as Q0_FLOAT, HBAR_Q as HBAR_Q_FLOAT, Q_MP, Q_INV_MP, HBAR_Q_MP
 
 
 # ── Substrate at high precision ──────────────────────────────────
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 HBAR_Q = Q0 - mp.mpf(1)  # ℏ_q = (q - 1) in paper convention? Let's check
 # Actually HBAR_Q from q_parameter is (q-1)/q.  Use that.
-HBAR_Q = mp.mpf(str(HBAR_Q_FLOAT))
+HBAR_Q = HBAR_Q_MP  # was f64 roundtrip
 HA = Q0 - QI
 B2 = Q0 + QI                            # [2]_q
 B3 = Q0**2 + 1 + QI**2                  # [3]_q
