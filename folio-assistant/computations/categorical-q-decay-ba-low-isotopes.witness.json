@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T19:20:24.373366+00:00",
-  "commitSha": "ac29496148609b0cb5798d8d7297066c0ebf840a",
+  "computedAt": "2026-04-27T19:34:10.601284+00:00",
+  "commitSha": "374777462e09ffd2967dcb61537976c4148de992",
   "assertions": [],
   "allPassed": true,
   "durationMs": 8,
   "computation": "categorical-q-decay-ba-low-isotopes",
   "scriptFile": "categorical_q_decay_ba_low_isotopes.py",
-  "scriptHash": "5270774ac1cf",
-  "scriptCommitSha": "ac29496148609b0cb5798d8d7297066c0ebf840a",
+  "scriptHash": "d8ad8a262b73",
+  "scriptCommitSha": "374777462e09ffd2967dcb61537976c4148de992",
   "description": "Canonical B/A and Q-values for low isotopes via the paper's 4-input Skein-pair scheme (m_μ/m_e, m_e, μ_u, μ_d) and 4-tier formula. Layer 1: best tier per isotope (D: T1+T4; T/³He: BW+chirality; ⁴He: BW+chirality²+shell; A≥5: BW+shell). Layer 2: Q_β⁻ = Q_β(n) + B_d − B_p where Q_β(n) = m_n − m_p − m_e is exact under the Skein-pair formula. Layer 3: NOT computed (N_v open). All canonical, no fits beyond the 4 structural inputs. p ≠ n via μ_d ≠ μ_u (Δ = μ_d − μ_u captures n-p splitting exactly).",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0": 1.1099785955541805,
     "q_0_err": 1.3578965598837824e-09,
     "m_e_MeV": 0.51099895,
-    "mu_u_MeV": 311.10125096044123,
-    "mu_d_MeV": 312.3893257900523,
-    "mu_d_minus_mu_u_MeV": 1.2880748296110485,
+    "mu_u_MeV": 311.25325505836093,
+    "mu_d_MeV": 312.032408201784,
+    "mu_d_minus_mu_u_MeV": 0.7791531434230373,
     "Q_beta_n_MeV_derived": 0.7823334100000222,
     "Q_beta_n_MeV_codata": 0.7823334100000222,
     "m_p_MeV": 938.27208816,
@@ -48,6 +48,9 @@
         "err_pct": null,
         "B_per_A_pred_MeV": 0.0,
         "B_per_A_AME_MeV": 0.0,
+        "M_atom_pred_MeV": 938.78308711,
+        "M_atom_AME_MeV": 938.78308711,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -63,6 +66,9 @@
         "err_pct": 2.1038977009599606,
         "B_per_A_pred_MeV": 1.135684357727507,
         "B_per_A_AME_MeV": 1.11228306,
+        "M_atom_pred_MeV": 1876.0771389145448,
+        "M_atom_AME_MeV": 1876.12394151,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -78,6 +84,9 @@
         "err_pct": 0.5050789085137422,
         "B_per_A_pred_MeV": 2.8415460582603522,
         "B_per_A_AME_MeV": 2.8272661333333335,
+        "M_atom_pred_MeV": 2809.389289975219,
+        "M_atom_AME_MeV": 2809.43212975,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -93,6 +102,9 @@
         "err_pct": 0.8564976100731363,
         "B_per_A_pred_MeV": 2.594714102244016,
         "B_per_A_AME_MeV": 2.5726791666666666,
+        "M_atom_pred_MeV": 2809.347452433268,
+        "M_atom_AME_MeV": 2809.41355724,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -108,6 +120,9 @@
         "err_pct": -4.0704574912619895,
         "B_per_A_pred_MeV": 6.78598177946131,
         "B_per_A_AME_MeV": 7.0739228,
+        "M_atom_pred_MeV": 3729.5530881421546,
+        "M_atom_AME_MeV": 3728.4013240599998,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -123,6 +138,9 @@
         "err_pct": 6.294965947163074,
         "B_per_A_pred_MeV": 5.6680107587697215,
         "B_per_A_AME_MeV": 5.332341666666667,
+        "M_atom_pred_MeV": 5601.037458337381,
+        "M_atom_AME_MeV": 5603.05147289,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -138,6 +156,9 @@
         "err_pct": 19.614427475723975,
         "B_per_A_pred_MeV": 6.706017125005533,
         "B_per_A_AME_MeV": 5.606361428571428,
+        "M_atom_pred_MeV": 6527.668823534961,
+        "M_atom_AME_MeV": 6535.36641341,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -153,6 +174,9 @@
         "err_pct": 11.919334334563063,
         "B_per_A_pred_MeV": 7.233095381314637,
         "B_per_A_AME_MeV": 6.462775555555556,
+        "M_atom_pred_MeV": 8387.86159260817,
+        "M_atom_AME_MeV": 8394.79447104,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -168,6 +192,9 @@
         "err_pct": 10.792750730234019,
         "B_per_A_pred_MeV": 7.675467954470758,
         "B_per_A_AME_MeV": 6.927770909090909,
+        "M_atom_pred_MeV": 10246.877811170822,
+        "M_atom_AME_MeV": 10255.10247867,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -183,6 +210,9 @@
         "err_pct": 5.782308126327955,
         "B_per_A_pred_MeV": 8.124235529968004,
         "B_per_A_AME_MeV": 7.6801458333333334,
+        "M_atom_pred_MeV": 11172.600219420385,
+        "M_atom_AME_MeV": 11177.92929578,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       },
       {
@@ -198,6 +228,9 @@
         "err_pct": 7.87189612412454,
         "B_per_A_pred_MeV": 8.604084246446579,
         "B_per_A_AME_MeV": 7.976205625,
+        "M_atom_pred_MeV": 14889.122713096853,
+        "M_atom_AME_MeV": 14899.168771039998,
+        "atomic_includes_electron": true,
         "status": "canonical-3-input-4-tier"
       }
     ],

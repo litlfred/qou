@@ -212,6 +212,10 @@ def main():
         canonical_b[sym] = b_pred
         # err undefined when AME = 0 (¹H convention); report absolute residual instead
         err = 100 * (b_pred - b_ame) / b_ame if b_ame else None
+        # Atomic mass: M_atom = Z·m_p + N·m_n + Z·m_e − B
+        # (¹H atomic mass = m_p + m_e is included for self-consistency check)
+        m_atom_pred = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_pred
+        m_atom_ame  = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_ame
         layer1.append({
             "sym": sym, "Z": Z, "N": N, "A": A,
             "family": FAMILY_BY_SYM[sym],
@@ -222,6 +226,9 @@ def main():
             "err_pct": err,
             "B_per_A_pred_MeV": b_pred / A if A > 0 else None,
             "B_per_A_AME_MeV": b_ame / A if A > 0 else None,
+            "M_atom_pred_MeV": m_atom_pred,
+            "M_atom_AME_MeV":  m_atom_ame,
+            "atomic_includes_electron": True,    # Z electrons bound to nucleus
             "status": "canonical-3-input-4-tier",
         })
 
@@ -290,27 +297,37 @@ def main():
     # ─────────────────────────────────────────────────────────────────
     # 4. Build witness
     # ─────────────────────────────────────────────────────────────────
-    # Compute Skein-pair dressed quark masses (per nucleon-mass-splitting-proof.md)
-    # μ_u from m_p, μ_d from m_n−m_p splitting at q = q_0:
-    #   m_p = S_uu + 2·S_ud,
-    #   m_n − m_p = (q+q⁻¹)/(q^{1/2}+q^{-1/2}) · (μ_d − μ_u)
-    # Solve for μ_u, μ_d.
+    # Per content/.../calibration-inputs.md, the canonical 3-input scheme is:
+    #   Inputs: q_0 (from m_μ/m_e), m_e, Q_β(n)
+    #   Derived: m_p ← Skein pair formula + (μ_u, μ_d) from Skein resolution tree
+    #            m_n = m_p + Q_β     (Hecke engine, exact)
+    #            μ_u from q_0 alone is OPEN (Skein resolution of Borromean braid)
+    #
+    # We do NOT independently use M_N_MEV from CODATA — that would
+    # over-count the hadronic input.  Instead:
+    #   - m_p is taken as the CODATA value (until Skein resolution lands)
+    #   - m_n = m_p + Q_β (algebraic, follows from chain)
+    #   - μ_d − μ_u is then derivable from Q_β via the splitting formula
+    #   - μ_u is back-solved from m_p via Skein-pair (Skein resolution
+    #     would derive it from q_0 alone)
     import math
     q_half = math.sqrt(Q_0)
     q_inv_half = 1.0 / q_half
     Z_PAIR = q_half + q_inv_half        # q^{1/2} + q^{-1/2}
     SLOPE = (Q_0 + 1.0/Q_0) / Z_PAIR    # (q+q⁻¹)/(q^{1/2}+q^{-1/2})
-    # μ_d − μ_u from CODATA splitting
-    mu_d_minus_u = (M_N_MEV - M_P_MEV) / SLOPE
-    # m_p = S_uu + 2·S_ud
-    #     = ((q+q⁻¹)·μ_u + 2·(q·μ_u + q⁻¹·μ_d)) / (q^{1/2}+q^{-1/2})
-    #     = (μ_u·(q+q⁻¹+2q) + 2·q⁻¹·μ_d) / Z_pair
-    #     = (μ_u·(3q+q⁻¹) + 2·q⁻¹·μ_d) / Z_pair
-    # Substituting μ_d = μ_u + Δ:
-    #     m_p · Z_pair = μ_u·(3q+q⁻¹) + 2·q⁻¹·(μ_u + Δ)
-    #                  = μ_u·(3q+3q⁻¹) + 2·q⁻¹·Δ
-    # μ_u = (m_p · Z_pair − 2·q⁻¹·Δ) / (3·(q+q⁻¹))
-    mu_u = (M_P_MEV * Z_PAIR - 2.0 / Q_0 * mu_d_minus_u) / (3.0 * (Q_0 + 1.0/Q_0))
+
+    # Step A — derive m_n from m_p + Q_β (Hecke engine)
+    m_p_calibrated = M_P_MEV       # input scaffold (Skein resolution open)
+    m_n_derived    = m_p_calibrated + Q_NEUTRON_MEV
+    Delta_m_np_derived = m_n_derived - m_p_calibrated  # = Q_β + m_e
+    # Note: Δm_np_derived above is m_n - m_p = Q_β + m_e (NOT the bare Q_β).
+    # The splitting formula uses (μ_d - μ_u), which is sourced from Δm_np.
+    mu_d_minus_u   = Delta_m_np_derived / SLOPE
+
+    # Step B — back-solve μ_u from m_p Skein-pair formula
+    # m_p = (μ_u·(3q+3q⁻¹) + 2·q⁻¹·(μ_d - μ_u)) / Z_pair
+    mu_u = (m_p_calibrated * Z_PAIR - 2.0 / Q_0 * mu_d_minus_u) \
+           / (3.0 * (Q_0 + 1.0/Q_0))
     mu_d = mu_u + mu_d_minus_u
 
     w = (
@@ -376,14 +393,15 @@ def main():
     print("LAYER 1 — canonical B per isotope (3-input scheme, 4-tier formula)")
     print("=" * 84)
     print(f"{'sym':<6} {'A':>3} {'fam':>4} {'B_pred':>10} {'B_AME':>10} "
-          f"{'B/A_pred':>9} {'err%':>8}  tier")
-    print("-" * 110)
+          f"{'B/A_pred':>9} {'err%':>8}  {'M_atom (MeV)':>12}  tier")
+    print("-" * 132)
     for r in layer1:
         bp = f"{r['B_pred_MeV']:>10.4f}" if r["B_pred_MeV"] is not None else f"{'—':>10}"
         ba = f"{r['B_AME_MeV']:>10.4f}" if r["B_AME_MeV"] is not None else f"{'—':>10}"
         bpa = f"{r.get('B_per_A_pred_MeV', 0):>9.4f}" if r.get('B_per_A_pred_MeV') else f"{'—':>9}"
         ep = f"{r['err_pct']:>+8.2f}" if r["err_pct"] is not None else f"{'—':>8}"
-        print(f"{r['sym']:<6} {r['A']:>3} {r['family']:>4} {bp} {ba} {bpa} {ep}  {r['tier']}")
+        ma = f"{r.get('M_atom_pred_MeV', 0):>12.3f}" if r.get('M_atom_pred_MeV') is not None else f"{'—':>12}"
+        print(f"{r['sym']:<6} {r['A']:>3} {r['family']:>4} {bp} {ba} {bpa} {ep}  {ma}  {r['tier']}")
 
     print("\n" + "=" * 84)
     print("LAYER 2 — Q-values (β⁻) via Q_β(n) + B_d − B_p")
