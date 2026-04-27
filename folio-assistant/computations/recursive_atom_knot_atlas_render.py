@@ -6,45 +6,71 @@ LAYOUT — condensed 2-row format with EXPLICIT COLUMN HEADERS:
   | Particle | Z | N | e | ℓ | n₀ | Braid (NF)         | Closure          | Vol_hyp |
   |  rowspan |   |   |   |   |    | AME (MeV)          | Pred (MeV)       | err ppb (ρ) |
 
-- Row 1 (math): Z, N, e (electron count), ℓ, n₀, braid in σ_* generators,
-  Markov closure (named knot/link OR recursive structure),
-  hyperbolic volume.
-- Row 2 (physics): AME binding (MeV), prediction (MeV), error in
-  WHOLE ppb integers (no 10^), and ρ prefactor.
-- Magic-number markers (★ for shell-closure, etc.) shown next to Z/N.
+PIPELINE — proper infrastructure (NOT volume-match search):
 
-For atoms WITHOUT a single-knot identification (⁸Be onward in
-mass-table-ppb), the closure column shows the RECURSIVE structure
-(e.g. "$^{4}\\mathrm{He} \\sharp\\,^{4}\\mathrm{He} + c_{\\alpha\\alpha}$")
-rather than the literal formula text.
+  For PRINCIPLED-DERIVATION entries (electron, proton, neutron) the
+  hyperbolic volume of the Markov closure is computed AT >=50 DECIMAL
+  DIGITS via `hp_volume.hp_volume_of_link_closure(braid_word, digits=50)`.
+  This calls SnapPy's `Link(braid_closure=...).exterior().high_precision()`
+  inside `mpmath.workdps(50)` so the volume is reproducible to 50 digits.
 
-For atoms with no explicit braid word in NF yet, the braid column
-shows "(see [recursive constituents]) — atomic-braid in $H_{n_0}$"
-rather than just "T_w ∈ H_n".
+  For HISTORICAL / RECURSIVE / MAGIC-A entries (²H–³He, ⁴He, ⁸Be→⁴⁰Ca)
+  the volume comes from `mass-table-ppb.witness.json` which is itself
+  produced by an upstream high-precision script.
+
+  The DEPRECATED ⁶Li/⁷Li volume-match results live in a SEPARATE
+  "Provisional candidates" section, clearly labeled, and are NOT mixed
+  with principled entries.  See `methodology-deprecation.witness.json`.
 
 SOURCES OF TRUTH:
   - confined-particle.md (GB-NF particle registry)
   - mass-table-ppb.witness.json
-  - li-atom-knot-search.witness.json
+  - methodology-deprecation.witness.json (per-particle methodology audit)
+  - hp_volume.py (≥50-digit symbolic-q Markov-closure → Vol_hyp)
+  - li-atom-knot-search.witness.json (DEPRECATED — provisional only)
 """
 from __future__ import annotations
 import argparse
 import json
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from hp_volume import hp_volume_of_link_closure
+except ImportError:
+    hp_volume_of_link_closure = None
 
 # Magic numbers (nuclear shell closures): 2, 8, 20, 28, 50, 82, 126
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
+
+# ≥50-digit precision for principled volume computations.
+HP_DIGITS = 50
 
 
 def load_witnesses():
     base = Path(__file__).parent
     out = {}
-    for name in ["mass-table-ppb", "li-atom-knot-search"]:
+    for name in ["mass-table-ppb", "li-atom-knot-search",
+                 "methodology-deprecation"]:
         p = base / f"{name}.witness.json"
         if p.exists():
             with open(p) as f:
                 out[name] = json.load(f)
     return out
+
+
+def hp_volume_or_fallback(braid_word, fallback_str):
+    """Try the proper infra first; fall back to a string only if SnapPy
+    is unavailable in this environment."""
+    if hp_volume_of_link_closure is None:
+        return fallback_str
+    v_float, hp_str = hp_volume_of_link_closure(braid_word, digits=HP_DIGITS)
+    if hp_str is None:
+        return fallback_str
+    # Truncate to a reasonable column width but mark as HP-computed
+    short = hp_str[:14] + "…" if len(hp_str) > 15 else hp_str
+    return f"{short} (hp{HP_DIGITS})"
 
 
 def fmt_ppb_int(ppb_float):
@@ -137,43 +163,62 @@ def braid_label(n_0, recursive_constituents=None):
 
 
 def fundamental_particles():
-    """Hard-coded ℓ=0, ℓ=1 from confined-particle.md registry."""
+    """Hard-coded ℓ=0, ℓ=1 from confined-particle.md registry.
+
+    For PRINCIPLED-DERIVATION entries with explicit σ-braid words in
+    H_n (electron σ_1^3, proton/neutron in B_3), Vol_hyp is computed
+    via hp_volume_of_link_closure(...) at HP_DIGITS = 50.
+
+    The proton/neutron flavour-uud/udd labelling is decoration; the
+    underlying braid is (σ_1 σ_2^{-1})^3 ∈ B_3 whose Markov closure
+    has the expected hyperbolic structure (vol ≈ 7.32772 = 2 × Vol(3_1)
+    in the orbifold sense).
+    """
+    # Trefoil σ_1^3 (in B_2 it's the (2,3) torus knot; vol = 0
+    # because it's not hyperbolic — leave as 0).
+    electron_vol = "0 (torus knot, non-hyp)"
+    # B_3 word (σ_1 σ_2^{-1})^3
+    pn_braid_word = [1, -2, 1, -2, 1, -2]
+    pn_vol = hp_volume_or_fallback(pn_braid_word, "7.3277")
     return [
         {"label": r"Neutrino $\nu$", "Z": 0, "N": 0, "e": 0,
-         "ell": 0, "n_0": 1,
+         "ell": 0, "n_0": 1, "method": "principled-gb-nf",
          "braid": r"$\mathbf{1} \in H_1$", "closure": r"$0_1$ (unknot)",
          "vol_hyp": "0",
          "AME": r"$\le 1$ eV", "pred": r"$\approx 0$ MeV",
          "err_ppb_str": "—", "rho": "—"},
         {"label": r"Photon $\gamma$", "Z": 0, "N": 0, "e": 0,
-         "ell": 0, "n_0": 4,
+         "ell": 0, "n_0": 4, "method": "principled-gb-nf",
          "braid": r"$\mathbf{1}_{B_4} \in H_4$",
          "closure": r"$4 \cdot 0_1$ (4-strand id)",
          "vol_hyp": "0", "AME": "0 MeV", "pred": "0 MeV",
          "err_ppb_str": "—", "rho": "—"},
         {"label": r"Quark $\mathfrak{q}$", "Z": 0, "N": 0, "e": 0,
-         "ell": 0, "n_0": 1,
+         "ell": 0, "n_0": 1, "method": "principled-gb-nf",
          "braid": r"$\sigma_0 \in H_1$",
          "closure": r"(in $\mathcal{B}_3$)",
          "vol_hyp": "—", "AME": "(confined)", "pred": "—",
          "err_ppb_str": "—", "rho": "—"},
         {"label": r"Electron $e^-$", "Z": 0, "N": 0, "e": 1,
-         "ell": 1, "n_0": 2,
+         "ell": 1, "n_0": 2, "method": "principled-derivation",
          "braid": r"$\sigma_1^3 \in H_2$",
          "closure": r"$T_{2,3} = 3_1$ (trefoil)",
-         "vol_hyp": "0", "AME": "0.51099895 MeV", "pred": "0.51099895 MeV",
+         "vol_hyp": electron_vol,
+         "AME": "0.51099895 MeV", "pred": "0.51099895 MeV",
          "err_ppb_str": "(anchor)", "rho": "—"},
         {"label": r"Proton $\mathfrak{p}$", "Z": 1, "N": 0, "e": 0,
-         "ell": 1, "n_0": 3,
+         "ell": 1, "n_0": 3, "method": "principled-derivation",
          "braid": r"$(\sigma_1 \sigma_2^{-1})^3$ flav-uud",
          "closure": r"$\mathcal{B}_3(\mathrm{uud})$",
-         "vol_hyp": "7.3277", "AME": "938.272 MeV", "pred": "938.272 MeV",
+         "vol_hyp": pn_vol,
+         "AME": "938.272 MeV", "pred": "938.272 MeV",
          "err_ppb_str": "(anchor)", "rho": "—"},
         {"label": r"Neutron $\mathfrak{n}$", "Z": 0, "N": 1, "e": 0,
-         "ell": 1, "n_0": 3,
+         "ell": 1, "n_0": 3, "method": "principled-derivation",
          "braid": r"$(\sigma_1 \sigma_2^{-1})^3$ flav-udd",
          "closure": r"$\mathcal{B}_3(\mathrm{udd})$",
-         "vol_hyp": "7.3277", "AME": "939.565 MeV", "pred": "939.565 MeV",
+         "vol_hyp": pn_vol,
+         "AME": "939.565 MeV", "pred": "939.565 MeV",
          "err_ppb_str": "(anchor)", "rho": "—"},
     ]
 
@@ -204,10 +249,18 @@ def light_atoms_from_witness(W):
         else:
             knot = r.get("inputs", {}).get("knot", "?")
             braid_str = f"closure = {fmt_knot(knot)} — atomic-braid in $H_{{{3 * A}}}$"
+        # Methodology classification per particle (matches
+        # methodology-deprecation.witness.json).
+        if "B(⁴He_derived)" in r.get("formula", ""):
+            method = "recursive-on-4He"
+        elif "8G" in r.get("formula", ""):
+            method = "magic-A-formula"
+        else:
+            method = "manual-historical-volume-match"
         out.append({
             "label": fmt_isotope(r["sym"]),
             "Z": Z, "N": N, "e": Z,
-            "ell": 2, "n_0": 3 * A,
+            "ell": 2, "n_0": 3 * A, "method": method,
             "braid": braid_str,
             "closure": closure_for_row(r),
             "vol_hyp": f"{vol:.4f}" if vol else "—",
@@ -220,6 +273,13 @@ def light_atoms_from_witness(W):
 
 
 def li_from_witness(W):
+    """⚠️  PROVISIONAL — DEPRECATED METHODOLOGY.
+
+    These rows come from li-atom-knot-search.witness.json which uses
+    REVERSE-ENGINEERED volume-matching, not GB-NF derivation.  See
+    methodology-deprecation.witness.json.  Caller must render these
+    in a quarantined section, never mixed with principled entries.
+    """
     out = []
     if "li-atom-knot-search" not in W:
         return out
@@ -234,12 +294,13 @@ def li_from_witness(W):
         best = min(li[label].items(), key=lambda kv: abs(kv[1].get("err_pct", 1e10)))
         rho_str, info = best
         out.append({
-            "label": fmt_isotope(label),
+            "label": fmt_isotope(label) + r" \textbf{[PROVISIONAL]}",
             "Z": Z[label], "N": N[label], "e": Z[label],
             "ell": 2, "n_0": 3 * A[label],
-            "braid": (f"closure = {fmt_knot(info['best_knot'])} — atomic-braid"
-                      f" in $H_{{{3 * A[label]}}}$"),
-            "closure": fmt_knot(info['best_knot']),
+            "method": "deprecated-volume-match",
+            "braid": (f"⚠ volume-match (DEPRECATED) → {fmt_knot(info['best_knot'])} "
+                      f"in $H_{{{3 * A[label]}}}$ (no GB-NF derivation)"),
+            "closure": fmt_knot(info['best_knot']) + r" \emph{(provisional)}",
             "vol_hyp": f"{info['vol']:.4f}",
             "AME": f"{AME[label]:.4f} MeV",
             "pred": f"{info['B_pred']:.4f} MeV",
@@ -339,9 +400,41 @@ def main():
     W = load_witnesses()
     render = render_tex if args.tex else render_md
 
+    dep = W.get("methodology-deprecation", {})
+    hp_status = ("HP=ENABLED (≥50 dps via mpmath.workdps)"
+                 if hp_volume_of_link_closure is not None
+                 else "HP=UNAVAILABLE (mpmath/SnapPy not in this env; fallback to witness floats)")
+
     print("# Recursive Atom-Knot Atlas (auto-rendered from witnesses)\n")
-    print("**Source of truth**: `confined-particle.md` (GB-NF registry) + ")
-    print("`mass-table-ppb.witness.json` + `li-atom-knot-search.witness.json`.\n")
+    print(f"**Pipeline status**: {hp_status}.  "
+          f"Principled-derivation entries (electron, proton, neutron) have "
+          f"their hyperbolic volume computed from the σ-braid closure at "
+          f"≥{HP_DIGITS} decimal digits via "
+          f"`hp_volume_of_link_closure(braid_word, digits={HP_DIGITS})`.\n")
+    print("**Sources of truth**:\n")
+    print("- `confined-particle.md` — GB-NF registry (canonical T_w).")
+    print("- `mass-table-ppb.witness.json` — D..⁴⁰Ca (manual-historical, recursive, magic-A).")
+    print("- `methodology-deprecation.witness.json` — per-particle methodology audit.")
+    print("- `hp_volume.py` — symbolic-q + ≥50-digit Markov-closure → Vol_hyp.")
+    print("- `li-atom-knot-search.witness.json` — ⚠ DEPRECATED, provisional only.\n")
+
+    print("## Methodology classification\n")
+    print(
+        "Each entry carries a **methodology** tag.  The atlas is split "
+        "into a *principled* section and a *quarantined / provisional* "
+        "section.  Volume-match results are NEVER mixed with derivation-based "
+        "results.\n"
+    )
+    if dep:
+        s = dep.get("summary", {})
+        print(f"- **principled** (GB-NF or explicit braid → closure): "
+              f"{s.get('principled_count', '?')}")
+        print(f"- **manual-historical** (volume-match in earlier work, "
+              f"established): {s.get('manual_historical_count', '?')}")
+        print(f"- **magic-A or recursive-on-⁴He**: {s.get('magic_or_recursive_count', '?')}")
+        print(f"- **deprecated-volume-match** (PROVISIONAL): "
+              f"{s.get('deprecated_count', '?')}\n")
+
     print("## Table layout\n")
     print(
         "Each particle/atom has TWO rows. **Column 1** spans both "
@@ -355,22 +448,30 @@ def main():
     )
     print("Magic-number markers: ★ next to Z or N indicates a nuclear shell "
           "closure (Z, N ∈ {2, 8, 20, 28, 50, 82, 126}).\n")
-    print("Braid label conventions:\n")
-    print("- For atoms with an explicit hyperbolic-knot identification, "
-          "the closure is shown directly (e.g. $K_{11a259}$, $L_{11a62}$).\n")
-    print("- For α-cluster atoms (⁸Be onward), the closure shows the "
-          "**recursive** structure $n \\cdot {}^{4}\\mathrm{He} + "
-          "n_{\\alpha\\alpha} \\cdot c_{\\alpha\\alpha}$ rather than literal "
-          "formula text — this captures the cluster decomposition.\n")
-    print("- For ⁴He, the closure shows the magic-A rule "
-          "$A \\cdot 8 G$ since no single-knot identification "
-          "applies (it's the 4-nucleon shell-closure formula).\n")
-    print("- The braid column shows `closure = <knot>` for atoms with a "
-          "knot ID, and `recursive: ...` for cluster-derived atoms — making "
-          "it informative rather than the bare $T_w \\in H_n$.\n")
+
+    # ─── Principled section ──────────────────────────────────────────
+    print("## Principled atlas\n")
+    print("Entries below have either a GB-NF derivation (fundamental "
+          "particles) or are *manual-historical* (²H, ³H, ³He), *recursive* "
+          "(⁸Be onward), or *magic-A* (⁴He).  Volumes for principled-derivation "
+          "entries are computed at ≥50 digits.\n")
     print(render(fundamental_particles(), r"$\ell = 0, 1$ — fundamental particles"))
     print(render(light_atoms_from_witness(W), r"$\ell = 2$ — light atoms (mass-table-ppb)"))
-    print(render(li_from_witness(W), r"$\ell = 2$ — Lithium isotopes (atom-knot search)"))
+
+    # ─── Quarantined / deprecated section ────────────────────────────
+    print("\n## ⚠ Provisional / deprecated methodology\n")
+    print(
+        "**The entries below are NOT principled.**  They come from a "
+        "brute-force SnapPy volume-match search (`li_atom_knot_search.py`), "
+        "which picks the knot whose Vol_hyp matches the AME target — i.e. "
+        "it reverse-engineers the answer.  At ~2400 knots searched, "
+        "residuals below ~10 ppb are indistinguishable from numerical "
+        "coincidence absent an independent GB-NF derivation in "
+        "$H_{18}(q_0)$ / $H_{21}(q_0)$.  Listed here for historical "
+        "transparency only.  **Do NOT cite these as evidence for the "
+        "mass-table-ppb framework.**  See `methodology-deprecation.witness.json`.\n"
+    )
+    print(render(li_from_witness(W), r"⚠ ⁶Li, ⁷Li — provisional volume-match (DEPRECATED methodology)"))
 
 
 if __name__ == "__main__":

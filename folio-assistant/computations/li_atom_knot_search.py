@@ -1,5 +1,40 @@
 #!/usr/bin/env python3
-"""Atom-knot identification for ⁶Li and ⁷Li.
+"""[DEPRECATED] Atom-knot identification for ⁶Li and ⁷Li by VOLUME MATCHING.
+
+⚠️  DEPRECATION NOTICE (2026-04-26):
+
+    This script is REVERSE-ENGINEERED methodology and is NOT a principled
+    derivation.  It searches the SnapPy hyperbolic-knot databases for a
+    knot whose volume matches the AME binding-energy target — i.e. it
+    USES the answer to find the knot, rather than DERIVING the knot from
+    the GB-NF source of truth.
+
+    The principled path (see `confined-particle.md` + `mass-table-ppb`)
+    is:
+       GB-NF(particle)  →  T_w ∈ H_{n_0}(q_0)
+                        →  Markov closure (knot/link complement)
+                        →  Vol_hyp (computed from closure)
+                        →  B_pred = ρ · m_e · Vol_hyp
+       compared a posteriori to AME.
+
+    Volume-match search short-circuits steps 1–3.  At an 11-crossing
+    search of ~2400 knots/links, a 4-ppb residual (⁷Li at L_{11a62})
+    is striking BUT cannot be distinguished from a numerical
+    coincidence without an independent derivation of the braid word
+    in H_21(q_0).  Likewise the ⁶Li K_{11a259} fit at 165,000 ppb
+    is at the noise floor of the search.
+
+    USE THIS SCRIPT ONLY for:
+      - reproducing the historical claim (⁶Li=K11a259, ⁷Li=L11a62)
+      - generating a list of CANDIDATE knots to be checked against an
+        independently-derived braid NF (when that becomes available)
+
+    DO NOT USE for:
+      - claiming a particle-knot identification as principled
+      - generating new mass predictions in the atlas
+
+    See `methodology-deprecation.witness.json` for the per-particle
+    methodology audit and the deprecation rationale.
 
 Mass-table-ppb framework:
     B_pred(K) = ρ · m_e · Vol_hyp(K)
@@ -14,7 +49,7 @@ Target Vol values (B_AME / (ρ · m_e)) over ρ = 1, ..., 8:
     ⁶Li: ρ=1→62.6, ρ=2→31.3, ρ=3→20.9, ρ=4→15.7, ρ=5→12.5, ρ=6→10.4, ρ=7→8.94, ρ=8→7.82
     ⁷Li: ρ=1→76.8, ρ=2→38.4, ρ=3→25.6, ρ=4→19.2, ρ=5→15.4, ρ=6→12.8, ρ=7→11.0, ρ=8→9.59
 
-Strategy:
+Strategy (volume-match, NOT derivation):
   1. Enumerate hyperbolic knots & links from SnapPy's manifold tables
      up to crossing-number 11 (covers volumes 0 to ~20).
   2. For each, compute Vol_hyp.
@@ -30,6 +65,24 @@ import warnings
 from pathlib import Path
 
 warnings.filterwarnings("ignore")
+
+
+def _emit_deprecation_warning():
+    """Emit a runtime DeprecationWarning so anyone re-running this
+    script sees the methodology caveat."""
+    import warnings as _w
+    _w.warn(
+        "li_atom_knot_search.py is DEPRECATED methodology — see "
+        "methodology-deprecation.witness.json for the principled "
+        "GB-NF → Markov-closure path. This script searches by "
+        "volume-match, which reverse-engineers the answer.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+
+
+_emit_deprecation_warning()
+
 
 # AME 2020 binding energies (MeV)
 B_AME_6Li = 31.99405
