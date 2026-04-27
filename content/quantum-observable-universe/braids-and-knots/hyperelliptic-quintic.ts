@@ -5,8 +5,5 @@ export default definition({
   lean: { ref: "qou:QOU.HyperellipticQuintic", validation: "not_checked" },
   title: "The hyperelliptic quintic $\\mathcal{X}_5 \\colon y^2 = x^5 - 1$",
   tags: ["hyperelliptic", "genus-2", "bolza", "roots-of-unity"],
-  uses: [
-    "def:brings-surface",
-    "prop:lagrange-resolvent-transform",
-  ],
+  uses: ["prop:lagrange-resolvent-transform"],
 });

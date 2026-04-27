@@ -13,10 +13,5 @@ export default remark({
     "proton-neutron",
     "parity",
   ],
-  uses: [
-    "prop:schur-weyl-mass-decomposition",
-    "prop:gb-residue-spectral-sum",
-    "prop:categorical-mass-markov",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:schur-weyl-mass-decomposition"],
 });

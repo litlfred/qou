@@ -7,8 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.BorromeanBaryon",
     validation: "not_checked",
   },
-  uses: [
-    "def:hadron",
-    "sec:knot-notation-convention",
-  ],
+  uses: ["def:hadron"],
 });

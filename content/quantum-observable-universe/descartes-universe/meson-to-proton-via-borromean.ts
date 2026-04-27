@@ -18,9 +18,7 @@ export default remark({
     "pair-production",
   ],
   uses: [
-    "def:categorical-proton",
     "def:quark-antiquark-production",
-    "conj:borromean-quark",
     "rem:energy-scale-planck",
   ],
 });

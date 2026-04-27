@@ -11,10 +11,5 @@ export default remark({
     "channel-sums",
   ],
   interprets: "prop:tritium-qvalue-symbolic",
-  uses: [
-    "prop:branching-qvalue-factorization",
-    "def:spectator-normalization",
-    "def:typed-crossing-operator",
-    "def:per-nucleon-channel-decomposition",
-  ],
+  uses: ["prop:branching-qvalue-factorization"],
 });

@@ -11,9 +11,5 @@ export default remark({
     "q-anomaly",
     "classical-comparison",
   ],
-  uses: [
-    "def:quantum-pressure",
-    "def:reeb-bundle",
-    "def:frobenius-pairing",
-  ],
+  uses: ["def:quantum-pressure"],
 });

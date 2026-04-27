@@ -15,12 +15,7 @@ export default remark({
     "incompleteness",
   ],
   uses: [
-    "prop:quantum-ideal-gas-law",
-    "prop:incompleteness-implies-horizon",
-    "def:computational-horizon",
     "prop:phase-transition-boundary",
     "rem:incompleteness-horizon",
-    "def:jet-horizon",
-    "rem:hawking-radiation",
   ],
 });

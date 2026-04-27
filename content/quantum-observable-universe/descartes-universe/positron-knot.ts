@@ -7,8 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.Descartes.Positron",
     validation: "not_checked",
   },
-  uses: [
-    "def:electron-knot",
-    "rem:chirality-trefoil-electron-positron",
-  ],
+  uses: ["rem:chirality-trefoil-electron-positron"],
 });

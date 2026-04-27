@@ -12,10 +12,6 @@ export default conjecture({
     "refinement",
     "open-problem",
   ],
-  uses: [
-    "prop:hoefsmit-is-surreal-construction",
-    "def:sign-sequence-of-braid",
-    "def:birthday-grading",
-  ],
+  uses: ["prop:hoefsmit-is-surreal-construction"],
   cites: ["gonshor1986"],
 });

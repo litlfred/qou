@@ -6,7 +6,6 @@ export default remark({
   title: "VOA--QOU dictionary",
   uses: [
     "def:reeb-bundle",
-    "prop:jet-prolongation",
     "def:recursive-brane-tower",
     "rem:observation-fermion-action",
   ],

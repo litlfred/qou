@@ -13,6 +13,5 @@ export default definition({
   uses: [
     "def:observable-subcategory",
     "def:aeon",
-    "def:jet-horizon",
   ],
 });

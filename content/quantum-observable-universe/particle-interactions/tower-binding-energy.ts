@@ -17,8 +17,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:topological-mass",
-    "def:recursive-brane-tower",
     "prop:mass-endomorphism-tower",
     "prop:atomic-braid-mass",
     "rem:hecke-charge-mass-duality",

@@ -7,7 +7,6 @@ export default remark({
   uses: [
     "prop:q-gl-obstruction-calc",
     "conj:q-gl-classical-limit",
-    "conj:q-geometric-langlands",
   ],
   tags: ["geometric-langlands", "classical-limit", "obstruction"],
 });

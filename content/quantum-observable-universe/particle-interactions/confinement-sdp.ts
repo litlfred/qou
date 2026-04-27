@@ -7,16 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.ParticleInteractions.ConfinementSDP",
     validation: "not_checked",
   },
-  uses: [
-    "prop:confinement-operator-selection",
-    "prop:frobenius-gram-matrix",
-    "prop:confinement-lp",
-    "prop:knot-operator-selection",
-    "def:crossing-energy",
-    "rem:hecke-algebra-from-braiding",
-    "thm:jones-markov-trace",
-    "def:substrate-parameter",
-  ],
+  uses: ["prop:confinement-lp"],
   tags: [
     "semidefinite-programming",
     "confinement",

@@ -11,9 +11,5 @@ export default remark({
     "formal-chain",
     "symbolic-computation",
   ],
-  uses: [
-    "conj:hyperbolic-volume-transcendence",
-    "prop:topological-mass-formula",
-    "def:quantum-planck-constant",
-  ],
+  uses: ["conj:hyperbolic-volume-transcendence"],
 });

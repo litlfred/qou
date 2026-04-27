@@ -5,7 +5,6 @@ export default proof({
   title: "Proof of Terminal Resolution of Hadronic Mass",
   uses: [
     "prop:skein-generation",
-    "prop:knot-eigenbasis-complete",
     "prf:knot-volumes-verification",
   ],
   lean: { ref: "qou:QOU.HadronicMass.terminal_resolution_hadronic_mass",

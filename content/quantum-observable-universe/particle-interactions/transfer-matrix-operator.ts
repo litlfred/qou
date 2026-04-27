@@ -18,8 +18,5 @@ export default definition({
   lean: { ref: "qou:QOU.Descartes.TransferMatrixOperator",
     validation: "not_checked",
   },
-  uses: [
-    "prop:beta-decay-transfer-matrix",
-    "rem:building-block-knots",
-  ],
+  uses: ["prop:beta-decay-transfer-matrix"],
 });

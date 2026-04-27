@@ -7,9 +7,7 @@ export default remark({
   tags: ["kashaev", "volume-conjecture", "realization-functor", "knot-volume", "archimedean"],
   uses: [
     "def:archimedean-realization-functor",
-    "def:algebraic-quantum-volume",
     "rem:kashaev-volume-density",
-    "thm:jones-markov-trace",
   ],
   cites: ["kashaev1997", "murakami-murakami2001"],
 });

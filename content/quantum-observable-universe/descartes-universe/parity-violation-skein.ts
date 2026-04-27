@@ -20,8 +20,5 @@ export default proposition({
   uses: [
     "def:beta-decay-skein",
     "prop:reidemeister-action-table",
-    "def:crossing-energy",
-    "rem:hecke-algebra-from-braiding",
-    "def:substrate-parameter",
   ],
 });

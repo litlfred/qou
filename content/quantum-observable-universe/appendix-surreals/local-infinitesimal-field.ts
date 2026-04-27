@@ -14,9 +14,7 @@ export default conjecture({
     "open-problem",
   ],
   uses: [
-    "def:substrate-parameter",
     "rem:valuation-ring-finite-surreals",
-    "def:standard-part-functor",
     "conj:hahn-substrate",
   ],
   cites: [

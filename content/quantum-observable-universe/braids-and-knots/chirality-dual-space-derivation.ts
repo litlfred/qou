@@ -8,14 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.chirality_dual_space_derivation",
     validation: "not_checked",
   },
-  uses: [
-    "prop:chirality-from-frobenius-self-pairing",
-    "prop:chirality-writhe-ribbon-derivation",
-    "prop:figure-eight-bw-coefficients",
-    "prop:three-parameters-wedderburn",
-    "thm:frobenius-codim-universal",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:chirality-writhe-ribbon-derivation"],
   tags: [
     "chirality",
     "dual-space",

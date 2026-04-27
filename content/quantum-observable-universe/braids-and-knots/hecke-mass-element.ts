@@ -13,9 +13,5 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.HeckeMassElement",
     validation: "not_checked",
   },
-  uses: [
-    "def:mass-identity",
-    "rem:hecke-algebra-from-braiding",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["rem:hecke-algebra-from-braiding"],
 });

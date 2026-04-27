@@ -12,9 +12,5 @@ export default remark({
     "hecke-algebra",
   ],
   interprets: "prop:shell-closure-normal-form",
-  uses: [
-    "rem:groebner-nf-computation",
-    "rem:kummer-shell-closure",
-    "prop:nuclear-groebner-reduction",
-  ],
+  uses: ["rem:kummer-shell-closure"],
 });

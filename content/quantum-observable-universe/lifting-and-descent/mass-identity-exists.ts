@@ -6,12 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.MassIdentity.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:mass-identity",
-    "def:quantum-observable-universe",
-    "def:frobenius-pairing",
-    "def:rigid-monoidal-category",
-  ],
+  uses: ["def:mass-identity"],
   proofs: ["prf:mass-identity-exists"],
   tags: ["existence", "mass-identity", "inertial-mass"],
 });

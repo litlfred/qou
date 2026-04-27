@@ -8,7 +8,6 @@ export default example({
   uses: [
     "rem:wavefront-propagation",
     "rem:instanton-on-shell",
-    "def:localized-knot",
     "rem:knot-basis-color-content",
   ],
 });

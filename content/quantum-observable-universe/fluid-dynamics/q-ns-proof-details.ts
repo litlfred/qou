@@ -6,8 +6,6 @@ export default remark({
   title: "Proof details: nonlinear estimates, enstrophy evolution, and uniqueness",
   uses: [
     "prop:q-ns-nonlinear-uniqueness",
-    "prop:q-spectral-sobolev",
-    "thm:q-ns-wellposedness",
     "thm:quantum-peter-weyl",
   ],
   tags: ["proof", "enstrophy", "ladyzhenskaya", "gronwall", "uniqueness"],

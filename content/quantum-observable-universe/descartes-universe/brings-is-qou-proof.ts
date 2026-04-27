@@ -6,7 +6,5 @@ export default proof({
   uses: [
     "prop:brings-is-qou",
     "prop:euler-char-stability",
-    "prop:jet-prolongation",
-    "prop:yekutieli-lifting",
   ],
 });

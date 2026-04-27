@@ -16,9 +16,4 @@ export default definition({
   lean: { ref: "qou:QOU.Descartes.BreitWheelerPairProduction",
     validation: "not_checked",
   },
-  uses: [
-    "def:electron-knot",
-    "def:positron-knot",
-    "sec:knot-notation-convention",
-  ],
 });

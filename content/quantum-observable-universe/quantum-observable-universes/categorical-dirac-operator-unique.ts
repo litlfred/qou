@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalDirac.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-dirac-operator",
-    "prop:categorical-dirac-operator-exists",
-  ],
+  uses: ["prop:categorical-dirac-operator-exists"],
   proofs: ["prf:categorical-dirac-operator-unique"],
   tags: ["uniqueness", "dirac-operator"],
 });

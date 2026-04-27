@@ -5,8 +5,6 @@ export default prose({
   title: "Heavy-atom worked examples",
   uses: [
     "def:transfer-matrix-operator",
-    "prop:skein-polynomial-transfer-matrix",
-    "conj:skein-shell-correction",
     "prop:shell-closure-normal-form",
     "rem:generator-volume-decomposition",
   ],

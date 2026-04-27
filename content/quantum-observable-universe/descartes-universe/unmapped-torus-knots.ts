@@ -14,7 +14,6 @@ export default remark({
   ],
   uses: [
     "prop:torus-embeddable-complete",
-    "def:categorical-neutron",
     "rem:knot-formula-table",
   ],
 });

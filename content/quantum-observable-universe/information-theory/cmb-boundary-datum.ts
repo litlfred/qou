@@ -10,10 +10,5 @@ export default definition({
   lean: { ref: "qou:QOU.CMBBoundaryDatum",
     validation: "not_checked",
   },
-  uses: [
-    "def:jet-horizon",
-    "def:big-bang-state",
-    "def:aeon",
-    "prop:jet-prolongation",
-  ],
+  uses: ["def:aeon"],
 });

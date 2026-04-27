@@ -9,11 +9,7 @@ export default definition({
   lean: { ref: "qou:QOU.Molecular.BenzeneBraid",
     validation: "not_checked",
   },
-  uses: [
-    "def:molecular-braid",
-    "def:covalent-bond-shared-trefoil",
-    "def:ch4-molecular-braid",
-  ],
+  uses: ["def:ch4-molecular-braid"],
   tags: [
     "benzene",
     "C6H6",

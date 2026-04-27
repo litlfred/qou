@@ -15,16 +15,6 @@ export default proposition({
     ref: "qou:QOU.Descent.descended_level_zero",
     validation: "not_checked",
   },
-  uses: [
-    "def:descent-involution",
-    "prop:descent-eigenspaces",
-    "prf:topological-mass",
-    "prop:mass-endomorphism-tower",
-    "rem:mass-endomorphism-jet-tower",
-    "prop:jet-tower-convergence",
-    "def:recursive-brane-tower",
-    "prop:categorical-mass-markov",
-    "thm:markov-trace-factorization",
-  ],
+  uses: ["prf:topological-mass"],
   cites: ["leitner2026"],
 });

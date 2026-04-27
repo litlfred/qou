@@ -7,8 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.BundleInitialConditions",
     validation: "not_checked",
   },
-  uses: [
-    "def:localized-knot",
-    "def:hadron",
-  ],
+  uses: ["def:hadron"],
 });

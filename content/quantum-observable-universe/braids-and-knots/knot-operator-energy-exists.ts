@@ -6,9 +6,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.KnotOperatorEnergy.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:knot-operator-energy",
-    "prop:bw-coefficient-shadow-price",
-  ],
+  uses: ["def:knot-operator-energy"],
   tags: ["existence", "knot-operator", "shadow-price", "lp-dual"],
 });

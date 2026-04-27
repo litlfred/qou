@@ -12,11 +12,6 @@ export default remark({
     "jones-polynomial",
   ],
   interprets: "def:quantum-observable-universe",
-  uses: [
-    "def:rigid-monoidal-category",
-    "def:quantum-observable-universe",
-    "prop:hoefsmit-seminormal-form",
-    "prop:hoefsmit-scattering-pipeline",
-  ],
+  uses: ["prop:hoefsmit-scattering-pipeline"],
   cites: ["conway1976", "gonshor1986"],
 });

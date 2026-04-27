@@ -15,12 +15,7 @@ export default conjecture({
     "neutron-star",
   ],
   uses: [
-    "def:hopf-diquark",
     "prop:borromean-hopf-energy-crossover",
-    "conj:borromean-quark",
-    "prop:strangelet-crossing-energy",
     "rem:deconfinement-golden-threshold",
-    "def:crossing-energy",
-    "def:color-tube-coordinates",
   ],
 });

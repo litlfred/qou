@@ -18,7 +18,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:embeddability-closure",
     "prop:cohomological-embedding",
     "prop:categorical-dq-squared",
   ],

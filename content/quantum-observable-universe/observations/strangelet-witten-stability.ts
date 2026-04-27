@@ -16,6 +16,5 @@ export default remark({
   uses: [
     "prop:strangelet-crossing-energy",
     "rem:golden-ratio-degeneration",
-    "def:hadron",
   ],
 });

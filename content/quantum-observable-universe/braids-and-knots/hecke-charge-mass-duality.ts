@@ -12,11 +12,5 @@ export default remark({
     "frobenius-pairing",
     "vertex-operator",
   ],
-  uses: [
-    "prop:hecke-mass-trace",
-    "def:coulomb-charge",
-    "def:crossing-energy",
-    "def:vertex-operator",
-    "def:frobenius-pairing",
-  ],
+  uses: ["prop:hecke-mass-trace"],
 });

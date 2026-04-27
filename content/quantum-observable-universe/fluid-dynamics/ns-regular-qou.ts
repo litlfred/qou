@@ -7,12 +7,7 @@ export default definition({
     ref: "qou:QOU.FluidDynamics.NSRegularQOU",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-universe",
-    "def:q-navier-stokes",
-    "def:recursive-brane-tower",
-    "def:quantum-characteristic-classes",
-  ],
+  uses: ["def:q-navier-stokes"],
   tags: [
     "definition",
     "navier-stokes",

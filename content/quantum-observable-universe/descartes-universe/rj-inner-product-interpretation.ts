@@ -13,9 +13,5 @@ export default remark({
     "action",
     "shell-correction",
   ],
-  uses: [
-    "prop:rj-canonical-inner-product",
-    "prop:qou-canonical-action",
-    "cor:spectral-decomposition-qvalue",
-  ],
+  uses: ["cor:spectral-decomposition-qvalue"],
 });

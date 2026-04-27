@@ -15,9 +15,6 @@ export default conjecture({
   lean: { ref: "qou:QOU.ParticleInteractions.LiftedCrossingLocality",
     validation: "not_checked",
   },
-  uses: [
-    "conj:crossing-graded-mass-expansion",
-    "conj:mass-volume-factorization",
-  ],
+  uses: ["conj:crossing-graded-mass-expansion"],
   cites: ["kohno1987"],
 });

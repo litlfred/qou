@@ -15,10 +15,7 @@ export default definition({
   },
   uses: [
     "ex:q-connection",
-    "def:contact-affine-chart",
     "def:operational-entropy",
-    "def:planck-time",
-    "prop:reeb-operations-per-planck",
     "rem:light-cone-affine",
   ],
 });

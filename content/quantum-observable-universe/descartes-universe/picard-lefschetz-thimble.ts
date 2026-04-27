@@ -17,7 +17,6 @@ export default definition({
     "baryon-mass",
   ],
   uses: [
-    "rem:color-tube-cubic",
     "rem:lepton-mass-integrals",
     "prop:descartes-elliptic-curve",
   ],

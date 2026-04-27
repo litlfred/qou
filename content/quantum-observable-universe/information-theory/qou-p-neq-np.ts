@@ -12,11 +12,5 @@ export default conjecture({
     "substrate-parameter",
     "computational-horizon",
   ],
-  uses: [
-    "def:skein-resolution-obstruction",
-    "thm:qou-obstruction-reduction",
-    "rem:kummer-filtration-obstruction",
-    "rem:substrate-gm-torsion",
-    "conj:p-vs-np-boundary",
-  ],
+  uses: ["conj:p-vs-np-boundary"],
 });

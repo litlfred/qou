@@ -10,10 +10,5 @@ export default conjecture({
   lean: { ref: "qou:QOU.aeon_boundary_generates_chart",
     validation: "not_checked",
   },
-  uses: [
-    "def:cmb-functor",
-    "def:observable-subcategory",
-    "def:aeon",
-    "def:torsion-knot-flow",
-  ],
+  uses: ["def:cmb-functor"],
 });

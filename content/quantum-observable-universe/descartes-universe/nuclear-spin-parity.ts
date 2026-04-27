@@ -17,8 +17,4 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.nuclear_spin_parity",
     validation: "not_checked",
   },
-  uses: [
-    "def:stable-nucleus",
-    "prop:fermion-boson-knot-link",
-  ],
 });

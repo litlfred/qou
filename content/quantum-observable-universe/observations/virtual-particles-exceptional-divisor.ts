@@ -5,10 +5,8 @@ export default remark({
   title: "Virtual particles as excitations of the exceptional divisor",
   interprets: "def:recursive-brane-tower",
   uses: [
-    "def:exceptional-divisor",
     "def:recursive-brane-tower",
     "prop:vertex-is-exceptional-divisor",
-    "prop:jet-prolongation",
     "rem:heisenberg-commutator",
   ],
   tags: [

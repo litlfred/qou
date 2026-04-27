@@ -12,9 +12,5 @@ export default example({
     "post-magic",
     "open-shell",
   ],
-  uses: [
-    "prop:four-term-pair-nucleon",
-    "prop:nuclear-operator-regimes",
-    "prop:demand-stability",
-  ],
+  uses: ["prop:nuclear-operator-regimes"],
 });

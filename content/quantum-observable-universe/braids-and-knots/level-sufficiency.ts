@@ -7,16 +7,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.LevelSufficiency",
     validation: "not_checked",
   },
-  uses: [
-    "def:confined-particle",
-    "def:confinement-category",
-    "def:confinement-level",
-    "def:hecke-normal-form",
-    "prop:confinement-sdp",
-    "prop:confinement-topological",
-    "prop:confinement-operator-selection",
-    "prop:confinement-phase-stratification",
-  ],
   tags: [
     "confinement",
     "markov-trace",

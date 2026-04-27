@@ -8,12 +8,7 @@ export default theorem({
     ref: "qou:QOU.BraidKnot.frobenius_codim_universal",
     validation: "not_checked",
   },
-  uses: [
-    "prop:hook-weight-derivation",
-    "thm:jones-markov-trace",
-    "prop:categorical-mass-markov",
-    "def:hecke-mass-element",
-  ],
+  uses: ["prop:hook-weight-derivation"],
   cites: ["kassel1995"],
   tags: [
     "frobenius",

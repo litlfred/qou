@@ -4,11 +4,7 @@ export default simulator({
   label: "sim:knot-atom-diagrams",
   title: "Knot Diagrams of Light Atoms ($Z \\leq 4$)",
   html: "folio-assistant/simulators/knot_atom_diagrams.html",
-  uses: [
-    "rem:knot-atom-diagrams",
-    "def:stable-nucleus",
-    "prop:shell-structure-eigenvalues",
-  ],
+  uses: ["rem:knot-atom-diagrams"],
   tags: [
     "knot-diagram",
     "trefoil",

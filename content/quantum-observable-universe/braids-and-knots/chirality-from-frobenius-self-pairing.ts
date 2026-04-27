@@ -8,13 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.chirality_frobenius_self_pairing",
     validation: "not_checked",
   },
-  uses: [
-    "prop:figure-eight-bw-coefficients",
-    "thm:frobenius-codim-universal",
-    "thm:jones-markov-trace",
-    "thm:knot-mass-formula-unified",
-    "prop:mass-formula-regime-switching",
-  ],
+  uses: ["prop:mass-formula-regime-switching"],
   tags: [
     "chirality",
     "frobenius",

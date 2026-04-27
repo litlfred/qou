@@ -18,8 +18,6 @@ export default proposition({
   uses: [
     "prop:bw-coefficient-shadow-price",
     "prop:hoefsmit-seminormal-form",
-    "prop:wedderburn-trace-identity",
-    "prop:wigner-coefficient-derivation",
   ],
   tags: [
     "wigner",

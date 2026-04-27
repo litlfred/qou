@@ -12,8 +12,4 @@ export default example({
     "ionization",
     "rydberg",
   ],
-  uses: [
-    "def:electron-knot",
-    "conj:electron-shells-hopf",
-  ],
 });

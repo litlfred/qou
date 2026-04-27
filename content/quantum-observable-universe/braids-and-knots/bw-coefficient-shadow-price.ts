@@ -22,10 +22,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:operator-selection-lp",
     "prop:bw-categorical-descent",
-    "prop:wedderburn-trace-identity",
-    "prop:frobenius-gram-matrix",
     "prop:wigner-coefficient-derivation",
   ],
   tags: [

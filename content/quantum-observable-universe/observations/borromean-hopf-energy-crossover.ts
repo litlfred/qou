@@ -16,10 +16,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.borromean_hopf_energy_crossover",
     validation: "not_checked",
   },
-  uses: [
-    "def:hopf-diquark",
-    "def:hadron",
-    "conj:borromean-quark",
-    "def:crossing-energy",
-  ],
+  uses: ["def:hopf-diquark"],
 });

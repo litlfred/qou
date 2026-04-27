@@ -15,9 +15,7 @@ export default remark({
   ],
   uses: [
     "conj:hyperbolic-volume-transcendence",
-    "def:quantum-characteristic-classes",
     "prop:cosimplicial-crossed-groupoid",
-    "prop:yekutieli-lifting",
   ],
   cites: ["yekutieli2010"],
 });

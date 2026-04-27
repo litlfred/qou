@@ -9,7 +9,6 @@ export default theorem({
   uses: [
     "def:q-chebyshev-function",
     "thm:tannaka-krein-isomorphism",
-    "def:categorical-reeb-derivation",
   ],
   tags: [
     "explicit-formula",

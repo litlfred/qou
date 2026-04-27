@@ -13,8 +13,6 @@ export default example({
     "shell-closure",
   ],
   uses: [
-    "def:categorical-proton",
-    "def:categorical-neutron",
     "prop:confinement-operator-selection",
     "rem:helium-hopf-diagram",
   ],

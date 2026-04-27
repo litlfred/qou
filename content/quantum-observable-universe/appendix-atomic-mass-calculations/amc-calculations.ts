@@ -5,7 +5,6 @@ export default prose({
   title: "Worked calculations for all elements",
   uses: [
     "prose:amc-method",
-    "prop:terminal-resolution",
     "prose:knot-periodic-table",
   ],
   tags: [

@@ -6,11 +6,7 @@ export default proposition({
     "Kummer specialisation: the NS obstruction survives $q = 1$ for $\\gcd(\\chi(A), n) \\neq n$",
   uses: [
     "rem:substrate-gm-torsion",
-    "prop:ns-obstruction-tower",
     "prop:ns-obstruction-computation",
-    "thm:qu-to-qou",
-    "def:quantum-characteristic-classes",
-    "conj:levi-degeneracy",
   ],
   tags: [
     "kummer",

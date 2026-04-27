@@ -14,10 +14,7 @@ export default conjecture({
   ],
   uses: [
     "def:classical-limit-functor",
-    "def:standard-part-functor",
     "def:substrate-parameter",
-    "conj:archimedean-stpart",
-    "rem:archimedean-stpart-strategy",
   ],
   cites: ["robinson1966", "berarducci-mantova2018"],
 });

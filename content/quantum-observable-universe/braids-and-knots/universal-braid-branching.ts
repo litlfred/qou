@@ -8,10 +8,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:hoefsmit-seminormal-form",
     "prop:figure-eight-branching-rule",
-    "def:hecke-algebra",
-    "rem:conway-normal-form",
     "rem:body-asymptotics-catalog",
   ],
   cites: ["hoefsmit1974", "wenzl1988"],

@@ -13,10 +13,6 @@ export default remark({
     "kohno-drinfeld",
     "locality-derivation",
   ],
-  uses: [
-    "conj:lifted-crossing-locality",
-    "conj:crossing-graded-mass-expansion",
-    "rem:soft-confinement-at-q0",
-  ],
+  uses: ["rem:soft-confinement-at-q0"],
   cites: ["kohno1987"],
 });

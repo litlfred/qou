@@ -11,8 +11,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Information.thermalEnergy",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-temperature",
-    "def:quantum-planck-constant",
-  ],
+  uses: ["def:quantum-temperature"],
 });

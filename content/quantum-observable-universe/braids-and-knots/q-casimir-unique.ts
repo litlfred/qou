@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QCasimir.unique_up_to_scalar",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-casimir",
-    "prop:q-casimir-exists",
-  ],
+  uses: ["prop:q-casimir-exists"],
   proofs: ["prf:q-casimir-unique"],
   tags: ["uniqueness", "casimir", "central-element"],
 });

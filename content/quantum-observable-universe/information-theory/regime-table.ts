@@ -11,7 +11,6 @@ export default remark({
   ],
   interprets: "def:substrate-parameter",
   uses: [
-    "def:substrate-parameter",
     "def:quantum-planck-constant",
     "prop:information-speed-of-light",
     "prop:hausdorff-dimension",

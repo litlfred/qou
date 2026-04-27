@@ -10,11 +10,7 @@ export default theorem({
   },
   uses: [
     "prop:chirality-dual-space-derivation",
-    "prop:chirality-from-frobenius-self-pairing",
-    "thm:frobenius-codim-universal",
-    "prop:mass-endomorphism-tower",
     "thm:six-term-mass-formula-complete",
-    "rem:np-discrepancy-resolution",
   ],
   cites: ["kassel1995"],
   tags: [

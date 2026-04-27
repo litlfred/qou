@@ -6,9 +6,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:shell-filling-rule",
   title: "Shell filling minimises $\\Phi_1$ (aufbau from LP dual)",
-  uses: [
-    "def:electron-shell-braid-capacity",
-    "def:atomic-braid",
-  ],
+  uses: ["def:electron-shell-braid-capacity"],
   tags: ["aufbau", "shell-filling", "LP-dual", "electron-configuration"],
 });

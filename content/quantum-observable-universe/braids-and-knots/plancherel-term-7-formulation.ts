@@ -9,9 +9,6 @@ export default proposition({
   },
   uses: [
     "prop:spectral-sequence-collapse",
-    "prop:curvature-rank-gb-stratification",
-    "thm:wedderburn-mass-formula",
-    "prop:categorical-mass-markov",
     "conj:shell-correction-term-seven",
   ],
 });

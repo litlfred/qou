@@ -9,16 +9,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:wedderburn-mass-formula",
-    "prop:three-parameters-wedderburn",
-    "prop:hook-weight-derivation",
-    "thm:markov-trace-product",
     "prop:wigner-2-coefficient",
-    "prop:hecke-mass-trace",
     "prop:markov-pair-z2",
     "prop:shell-schur-weyl-self-duality",
     "prop:gb-residue-spectral-sum",
-    "def:atomic-braid",
   ],
   tags: [
     "schur-weyl",

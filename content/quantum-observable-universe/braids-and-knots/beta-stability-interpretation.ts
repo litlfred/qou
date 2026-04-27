@@ -10,5 +10,5 @@ export default remark({
     "valley-of-stability",
     "derivation",
   ],
-  uses: ["prop:beta-stability", "def:skein-binding-lagrangian", "prose:knot-periodic-table"],
+  uses: ["prose:knot-periodic-table"],
 });

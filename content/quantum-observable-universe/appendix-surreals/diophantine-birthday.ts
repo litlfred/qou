@@ -14,10 +14,7 @@ export default conjecture({
     "transcendental",
     "open-problem",
   ],
-  uses: [
-    "def:birthday-grading",
-    "rem:conway-normal-form",
-  ],
+  uses: ["rem:conway-normal-form"],
   cites: [
     "conway1976",
     "gonshor1986",

@@ -7,11 +7,5 @@ export default proposition({
     ref: "qou:QOU.WedderburnMass.spectral_sequence_collapses_to_centre",
     validation: "not_checked",
   },
-  uses: [
-    "prop:gb-spectral-sequence",
-    "prop:three-parameters-wedderburn",
-    "prop:curvature-rank-gb-stratification",
-    "thm:knot-mass-formula-unified",
-    "prop:categorical-mass-markov",
-  ],
+  uses: ["prop:curvature-rank-gb-stratification"],
 });

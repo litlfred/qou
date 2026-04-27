@@ -11,9 +11,7 @@ export default proposition({
   uses: [
     "prop:eigenvalue-product-expansion",
     "prop:transfer-matrix-identities",
-    "prop:hecke-mass-trace",
     "prop:unified-curvature-rank-mass-formula",
-    "prop:hoefsmit-seminormal-form",
   ],
   tags: [
     "binding-energy",

@@ -7,9 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.QResolvent",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-heat-equation",
-    "def:categorical-laplace",
-    "def:q-exponential",
-  ],
+  uses: ["def:q-exponential"],
 });

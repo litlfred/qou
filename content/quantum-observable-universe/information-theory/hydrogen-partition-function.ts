@@ -10,10 +10,5 @@ export default example({
     "knot-gas",
     "borromean",
   ],
-  uses: [
-    "prop:quantum-ideal-gas-law",
-    "ex:hydrogen-knot-structure",
-    "def:q-energy",
-    "def:quantum-temperature",
-  ],
+  uses: ["prop:quantum-ideal-gas-law"],
 });

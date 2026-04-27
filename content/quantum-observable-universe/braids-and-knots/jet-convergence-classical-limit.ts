@@ -7,11 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.jet_convergence_classical_limit",
     validation: "not_checked",
   },
-  uses: [
-    "conj:jet-filtered-knot-factor",
-    "prop:three-parameters-wedderburn",
-    "prop:confined-knot-binding",
-  ],
+  uses: ["conj:jet-filtered-knot-factor"],
   tags: [
     "convergence",
     "classical-limit",

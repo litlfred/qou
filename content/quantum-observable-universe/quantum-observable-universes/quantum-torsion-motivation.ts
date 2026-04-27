@@ -5,9 +5,7 @@ export default remark({
   label: "rem:quantum-torsion-motivation",
   title: "$\\mathrm{SU}(2)$ action as quantum torsion",
   uses: [
-    "ex:q-torsion-leaf",
     "rem:q-torsion-existence",
-    "ex:q-reeb-flow",
     "def:categorical-q-connection",
     "def:quantum-gauge-group",
   ],

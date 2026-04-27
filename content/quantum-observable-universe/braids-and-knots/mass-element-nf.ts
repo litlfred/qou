@@ -3,12 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:mass-element-nf",
   title: "Normal form of the Hecke mass element",
-  uses: [
-    "def:hecke-mass-element",
-    "prop:hecke-mass-trace",
-    "prop:categorical-mass-markov",
-    "conj:mass-endomorphism",
-  ],
+  uses: ["conj:mass-endomorphism"],
   tags: [
     "mass",
     "hecke-algebra",

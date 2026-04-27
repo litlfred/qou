@@ -8,12 +8,9 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:bw-coefficient-shadow-price",
     "prop:unified-iterative-correction",
     "prop:wigner-2-coefficient",
-    "def:categorical-laplace",
     "prop:q-heat-kernel-peter-weyl",
-    "def:q-heat-equation",
   ],
   tags: [
     "sdp",

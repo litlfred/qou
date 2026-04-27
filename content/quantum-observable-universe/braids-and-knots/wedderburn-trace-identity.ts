@@ -18,8 +18,5 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.wedderburn_trace_identity",
     validation: "not_checked",
   },
-  uses: [
-    "prop:three-parameters-wedderburn",
-    "rem:hecke-algebra-from-braiding",
-  ],
+  uses: ["prop:three-parameters-wedderburn"],
 });

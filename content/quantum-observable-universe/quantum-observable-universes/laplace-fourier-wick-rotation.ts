@@ -6,7 +6,6 @@ export default remark({
   title: "Laplace and Fourier as Wick-rotated grouplike pairings",
   tags: ["laplace", "fourier", "wick-rotation", "hopf-algebra", "grouplike"],
   uses: [
-    "def:categorical-laplace",
     "def:categorical-fourier",
     "def:q-exponential",
   ],

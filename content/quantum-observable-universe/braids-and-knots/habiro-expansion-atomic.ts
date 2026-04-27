@@ -3,13 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:habiro-expansion-atomic",
   title: "Habiro cyclotomic expansion of the atomic-braid Markov trace",
-  uses: [
-    "def:habiro-ring",
-    "prop:categorical-mass-markov",
-    "prop:hecke-mass-trace",
-    "thm:jones-markov-trace",
-    "prop:full-pole-structure-mass-trace",
-  ],
+  uses: ["prop:full-pole-structure-mass-trace"],
   tags: [
     "habiro-ring",
     "cyclotomic-expansion",

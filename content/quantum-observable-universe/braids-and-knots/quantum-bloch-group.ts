@@ -7,6 +7,5 @@ export default remark({
   uses: [
     "def:habiro-ring",
     "cor:quantum-dilogarithm",
-    "thm:markov-trace-product",
   ],
 });

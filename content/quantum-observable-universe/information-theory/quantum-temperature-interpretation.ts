@@ -11,9 +11,5 @@ export default remark({
     "non-abelian-stokes",
     "classical-limit",
   ],
-  uses: [
-    "def:quantum-temperature",
-    "def:frobenius-pairing",
-    "def:yekutieli-triple",
-  ],
+  uses: ["def:quantum-temperature"],
 });

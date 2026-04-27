@@ -7,9 +7,7 @@ export default example({
     "Constructive extraction of $q$ on Bring's surface",
   tags: ["brings-surface", "substrate-parameter", "constructive", "hecke"],
   uses: [
-    "thm:substrate-parameter-exists",
     "ex:brings-surface-concrete",
-    "def:substrate-parameter",
     "rem:skein-mass-relation",
   ],
 });

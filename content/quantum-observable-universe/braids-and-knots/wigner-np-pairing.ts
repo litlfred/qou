@@ -7,12 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.ConfinedKnotBinding.wigner_energy_from_22",
     validation: "not_checked",
   },
-  uses: [
-    "prop:confined-knot-binding",
-    "prop:binding-scale-catalan",
-    "conj:jet-filtered-knot-factor",
-    "prop:hook-weight-derivation",
-  ],
+  uses: ["conj:jet-filtered-knot-factor"],
   cites: [
     "kerov1996",
     "feray-meliot2012",

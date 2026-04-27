@@ -6,11 +6,7 @@ export default proposition({
     "Core aspect ratio equals Levi form condition number on the normal plane",
   uses: [
     "prop:vorticity-lower-bound",
-    "rem:geodesic-vortices",
-    "def:levi-form-defect",
     "rem:c-substrate-via-levi",
-    "def:substrate-parameter",
-    "def:quantum-observable-universe",
   ],
   tags: [
     "levi-form",

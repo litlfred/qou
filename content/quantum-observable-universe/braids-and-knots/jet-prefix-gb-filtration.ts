@@ -8,14 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.jet_prefix_gb_filtration",
     validation: "not_checked",
   },
-  uses: [
-    "def:confinement-level",
-    "def:hecke-normal-form",
-    "thm:knot-mass-formula-unified",
-    "prop:gb-residue-spectral-sum",
-    "prop:schur-weyl-mass-decomposition",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["thm:knot-mass-formula-unified"],
   tags: [
     "jet-level",
     "prefix-formula",

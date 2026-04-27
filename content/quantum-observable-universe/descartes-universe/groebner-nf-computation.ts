@@ -14,11 +14,5 @@ export default remark({
     "computational-witness",
   ],
   interprets: "prop:shell-closure-normal-form",
-  uses: [
-    "prop:nuclear-groebner-reduction",
-    "prop:beta-decay-transfer-matrix",
-    "prop:skein-polynomial-transfer-matrix",
-    "thm:groebner-shirshov-energy",
-    "def:stable-nucleus",
-  ],
+  uses: ["prop:beta-decay-transfer-matrix"],
 });

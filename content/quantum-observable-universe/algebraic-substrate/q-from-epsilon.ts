@@ -7,16 +7,7 @@ export default definition({
     ref: "qou:QOU.AlgebraicSubstrate.QFromEpsilon",
     validation: "not_checked",
   },
-  uses: [
-    "def:reeb-epsilon",
-    "def:substrate-parameter",
-    "def:substrate-parameter-planck",
-    "conj:infinitesimal-frobenius",
-    "rem:calculus-up-to-epsilon",
-    "def:surreal-blowup-calculus",
-    "def:frobenius-hopf-substrate",
-    "def:classical-limit-obstruction",
-  ],
+  uses: ["def:reeb-epsilon"],
   tags: [
     "substrate-parameter",
     "surreal",

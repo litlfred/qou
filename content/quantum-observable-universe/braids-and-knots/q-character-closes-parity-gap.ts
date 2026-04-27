@@ -13,10 +13,5 @@ export default remark({
     "proton-neutron",
     "parity",
   ],
-  uses: [
-    "prop:schur-weyl-mass-decomposition",
-    "rem:mn-classical-parity-blind",
-    "prop:categorical-mass-markov",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["rem:mn-classical-parity-blind"],
 });

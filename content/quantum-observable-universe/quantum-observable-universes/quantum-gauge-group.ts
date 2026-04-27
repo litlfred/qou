@@ -7,9 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.QuantumGaugeGroup",
     validation: "leanok",
   },
-  uses: [
-    "def:substrate-parameter",
-    "prop:tannaka-krein-reconstruction",
-    "prop:braiding-eigenvalue-extraction",
-  ],
+  uses: ["def:substrate-parameter"],
 });

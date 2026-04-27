@@ -7,7 +7,6 @@ export default remark({
   uses: [
     "rem:vortex-intensity-modes",
     "conj:complex-chirality-rotation",
-    "def:exceptional-divisor",
   ],
   tags: [
     "vortex", "chirality", "reconnection", "trefoil",

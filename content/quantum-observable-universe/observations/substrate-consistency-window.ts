@@ -13,10 +13,7 @@ export default proposition({
     "speed-of-light",
   ],
   uses: [
-    "prop:local-substrate-q",
     "rem:fine-structure-observation",
-    "rem:half-life-as-q-probe",
-    "def:information-speed-of-light",
     "thm:mass-energy-equivalence",
     "prop:crossing-energy-decomposition",
   ],

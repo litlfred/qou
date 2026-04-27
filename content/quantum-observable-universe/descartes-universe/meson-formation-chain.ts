@@ -12,9 +12,5 @@ export default remark({
     "formation-chain",
     "hecke-algebra",
   ],
-  uses: [
-    "def:categorical-meson",
-    "def:breit-wheeler-pair-production",
-    "def:quark-antiquark-production",
-  ],
+  uses: ["def:categorical-meson"],
 });

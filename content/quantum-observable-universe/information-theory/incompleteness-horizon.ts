@@ -17,11 +17,6 @@ export default remark({
   ],
   uses: [
     "prop:incompleteness-implies-horizon",
-    "def:computational-horizon",
-    "rem:skein-turing-machine",
-    "def:jet-horizon",
-    "rem:hawking-radiation",
-    "def:observable-subcategory",
     "rem:substrate-computation",
     "rem:p-vs-np-event-horizon",
   ],

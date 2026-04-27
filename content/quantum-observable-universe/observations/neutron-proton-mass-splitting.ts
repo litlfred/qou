@@ -6,9 +6,5 @@ export default proposition({
   lean: { ref: "qou:QOU.NeutronProtonSplitting.splitting_value",
     validation: "not_checked",
   },
-  uses: [
-    "prop:wedderburn-mass-formula",
-    "def:categorical-proton",
-    "def:categorical-neutron",
-  ],
+  uses: ["prop:wedderburn-mass-formula"],
 });

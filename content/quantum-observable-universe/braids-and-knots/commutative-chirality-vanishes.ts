@@ -9,8 +9,6 @@ export default corollary({
   },
   uses: [
     "prop:frobenius-s-classification",
-    "thm:wedderburn-mass-formula",
-    "def:commutative-qou",
     "rem:commutative-crossing-energy",
   ],
 });

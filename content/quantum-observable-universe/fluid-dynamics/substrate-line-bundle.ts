@@ -8,12 +8,7 @@ export default definition({
     ref: "qou:QOU.FluidDynamics.SubstrateLineBundle",
     validation: "not_checked",
   },
-  uses: [
-    "def:substrate-parameter",
-    "def:quantum-observable-universe",
-    "def:weight-decomposition",
-    "def:categorical-reeb",
-  ],
+  uses: ["def:substrate-parameter"],
   tags: [
     "line-bundle",
     "multiplicative-group",

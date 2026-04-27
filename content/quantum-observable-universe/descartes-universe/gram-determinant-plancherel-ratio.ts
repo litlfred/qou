@@ -11,9 +11,7 @@ export default proposition({
   uses: [
     "prop:force-carrier-bring-uniqueness",
     "thm:em-spectral-completeness",
-    "prop:wedderburn-trace-identity",
     "rem:gram-matrix-spectral-connection",
-    "prop:hoefsmit-scattering-pipeline",
   ],
   tags: [
     "gram-matrix",

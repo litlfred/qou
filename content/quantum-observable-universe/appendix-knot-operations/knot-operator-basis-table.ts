@@ -12,9 +12,7 @@ export default remark({
     "frobenius-dual",
   ],
   uses: [
-    "rem:particle-nf-table",
     "rem:hecke-operations",
-    "prop:knot-operator-selection",
     "prop:frobenius-gram-matrix",
   ],
   interprets: "prop:knot-operator-selection",

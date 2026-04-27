@@ -14,9 +14,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Interactions.gram_indefinite_witness",
     validation: "not_checked",
   },
-  uses: [
-    "prop:confinement-lp",
-    "prop:frobenius-gram-matrix",
-    "prop:confinement-operator-selection",
-  ],
+  uses: ["prop:confinement-lp"],
 });

@@ -14,11 +14,7 @@ export default proposition({
     "derivation",
   ],
   uses: [
-    "def:breit-wheeler-pair-production",
     "def:quark-antiquark-production",
     "prop:confinement-operator-selection",
-    "prop:frobenius-gram-matrix",
-    "def:categorical-proton",
-    "def:categorical-neutron",
   ],
 });

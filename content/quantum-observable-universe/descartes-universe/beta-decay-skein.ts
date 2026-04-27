@@ -17,8 +17,5 @@ export default definition({
   lean: { ref: "qou:QOU.Descartes.BetaDecaySkein",
     validation: "not_checked",
   },
-  uses: [
-    "def:positron-knot",
-    "prop:nuclear-groebner-reduction",
-  ],
+  uses: ["def:positron-knot"],
 });

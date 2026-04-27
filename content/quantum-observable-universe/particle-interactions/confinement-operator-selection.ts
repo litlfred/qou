@@ -12,10 +12,5 @@ export default proposition({
     "operator-selection",
     "beta-decay",
   ],
-  uses: [
-    "prop:knot-operator-selection",
-    "prop:frobenius-gram-matrix",
-    "def:categorical-proton",
-    "def:categorical-neutron",
-  ],
+  uses: ["prop:frobenius-gram-matrix"],
 });

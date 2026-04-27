@@ -6,11 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.AtomKnot",
     validation: "not_checked",
   },
-  uses: [
-    "def:hecke-normal-form",
-    "def:atomic-braid",
-    "def:confinement-level",
-  ],
+  uses: ["def:confinement-level"],
   cites: [],
   tags: [
     "atom",

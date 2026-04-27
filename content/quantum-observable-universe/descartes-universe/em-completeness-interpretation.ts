@@ -6,10 +6,8 @@ export default remark({
     "Spectral completeness interpretation: nothing is missing from $\\alpha_{\\mathrm{EM}}$",
   interprets: "thm:em-spectral-completeness",
   uses: [
-    "thm:em-spectral-completeness",
     "cor:gauge-coupling-uniqueness",
     "prop:em-coupling-projection",
-    "prop:spectral-sequence-collapse",
     "prop:confinement-categorical",
   ],
   tags: [

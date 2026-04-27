@@ -8,9 +8,7 @@ export default proposition({
   },
   uses: [
     "prop:unified-curvature-rank-mass-formula",
-    "prop:spectral-sequence-collapse",
     "prop:spectral-sequence-h3-explicit",
-    "prop:plancherel-term-7-formulation",
   ],
   tags: [
     "spectral-sequence",

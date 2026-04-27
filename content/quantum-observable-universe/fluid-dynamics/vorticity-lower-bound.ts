@@ -7,10 +7,6 @@ export default proposition({
   uses: [
     "thm:q-bkm",
     "thm:q-aubin-lions",
-    "conj:ns-counterexample",
-    "rem:geodesic-vortices",
-    "rem:madelung-fluid",
-    "prop:blowup-yekutieli",
   ],
   tags: [
     "vorticity",

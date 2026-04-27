@@ -7,7 +7,6 @@ export default remark({
   interprets: "prop:force-carrier-bring-uniqueness",
   uses: [
     "prop:force-carrier-bring-uniqueness",
-    "prop:torus-knot-genus-four-unique",
     "rem:force-knot-identification",
   ],
   tags: [

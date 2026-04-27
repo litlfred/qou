@@ -11,8 +11,5 @@ export default remark({
     "substrate-parameter",
     "unit-circle",
   ],
-  uses: [
-    "prop:braiding-eigenvalue-extraction",
-    "def:quantum-observable-universe",
-  ],
+  uses: ["prop:braiding-eigenvalue-extraction"],
 });

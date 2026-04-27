@@ -7,9 +7,6 @@ export default proposition({
   uses: [
     "prop:critical-exponent",
     "prop:blowup-yekutieli",
-    "prop:euler-char-stability",
-    "def:recursive-brane-tower",
-    "conj:regularity-breakdown",
   ],
   tags: [
     "universality",

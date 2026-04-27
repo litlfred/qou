@@ -10,8 +10,6 @@ export default conjecture({
   },
   uses: [
     "prop:pauli-factor-wedderburn",
-    "conj:complex-chirality-rotation",
-    "prop:confinement-categorical",
     "sec:cp-violation-evidence",
   ],
   tags: [

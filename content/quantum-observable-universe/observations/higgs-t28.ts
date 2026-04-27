@@ -13,8 +13,4 @@ export default conjecture({
     "scalar",
     "genus-3",
   ],
-  uses: [
-    "prop:fermion-boson-knot-link",
-    "conj:borromean-quark",
-  ],
 });

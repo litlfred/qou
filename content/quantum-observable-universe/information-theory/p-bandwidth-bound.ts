@@ -11,12 +11,5 @@ export default proposition({
     "complexity",
     "polynomial-time",
   ],
-  uses: [
-    "def:computational-horizon",
-    "def:information-speed-of-light",
-    "def:operational-entropy",
-    "rem:skein-turing-machine",
-    "prop:reeb-operations-per-planck",
-    "prop:skein-polynomial-transfer-matrix",
-  ],
+  uses: ["def:computational-horizon"],
 });

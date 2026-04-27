@@ -20,9 +20,6 @@ export default remark({
   uses: [
     "prop:variational-equations",
     "def:q-energy",
-    "def:q-momentum",
-    "def:q-angular-momentum",
-    "def:categorical-action",
     "def:categorical-q-reeb-flow",
   ],
 });

@@ -7,16 +7,6 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.ShellSchurWeylSelfDuality",
     validation: "not_checked",
   },
-  uses: [
-    "def:confinement-level",
-    "def:stable-atom",
-    "prop:bw-coefficient-shadow-price",
-    "def:hecke-normal-form",
-    "thm:jones-markov-trace",
-    "def:quantum-su2",
-    "prop:skein-crossing-asymmetry",
-    "prop:shell-transition-knot",
-  ],
   cites: [
     "kassel1995",
   ],

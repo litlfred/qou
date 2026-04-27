@@ -5,9 +5,5 @@ export default remark({
   label: "rem:categorical-action-vs-chern-simons",
   title: "Comparison with the classical Chern--Simons action",
   tags: ["chern-simons", "classical-limit", "rigid-trace", "comparison"],
-  uses: [
-    "def:categorical-action",
-    "prop:qou-canonical-action",
-    "rem:physicist-translation",
-  ],
+  uses: ["rem:physicist-translation"],
 });

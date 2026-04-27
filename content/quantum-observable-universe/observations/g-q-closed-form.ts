@@ -8,8 +8,6 @@ export default remark({
   uses: [
     "prop:gravity-spectral-prefactor",
     "def:gravitational-constant",
-    "def:information-speed-of-light",
-    "def:operational-entropy",
     "rem:regime-table",
   ],
   tags: [

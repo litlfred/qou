@@ -7,7 +7,6 @@ export default proof({
   tags: ["chebyshev", "yekutieli", "hecke-algebra", "ideal"],
   uses: [
     "prop:categorical-dq-squared",
-    "def:yekutieli-lifting-condition",
     "def:quantum-characteristic-classes",
   ],
 });

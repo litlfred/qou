@@ -14,9 +14,5 @@ export default remark({
     "magnetic-field",
     "sensitivity",
   ],
-  uses: [
-    "rem:hadron-half-life-regimes",
-    "prop:hadron-q-self-correction",
-    "rem:c-substrate-via-levi",
-  ],
+  uses: ["rem:c-substrate-via-levi"],
 });

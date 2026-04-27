@@ -9,9 +9,7 @@ export default theorem({
   },
   uses: [
     "def:classical-limit-obstruction",
-    "def:quantum-observable-universe",
     "thm:qu-to-qou",
-    "def:quantum-characteristic-classes",
   ],
   tags: [
     "obstruction",

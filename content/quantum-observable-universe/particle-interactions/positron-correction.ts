@@ -13,8 +13,5 @@ export default proposition({
   lean: { ref: "qou:QOU.ParticleInteractions.positron_correction",
     validation: "not_checked",
   },
-  uses: [
-    "thm:parity-regime-selection",
-    "def:breit-wheeler-pair-production",
-  ],
+  uses: ["thm:parity-regime-selection"],
 });

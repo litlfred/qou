@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalLagrangian.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-lagrangian",
-    "prop:categorical-lagrangian-exists",
-  ],
+  uses: ["prop:categorical-lagrangian-exists"],
   proofs: ["prf:categorical-lagrangian-unique"],
   tags: ["uniqueness", "lagrangian"],
 });

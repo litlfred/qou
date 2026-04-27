@@ -7,10 +7,7 @@ export default remark({
   interprets: "prop:alpha-k-derivation-procedure",
   uses: [
     "prop:alpha-k-derivation-procedure",
-    "prop:plancherel-weight-boundedness",
-    "thm:jones-markov-trace",
     "prop:explicit-alpha-k-h3",
-    "prop:bw-coefficient-shadow-price",
   ],
   tags: [
     "jones-markov",

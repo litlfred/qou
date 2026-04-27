@@ -9,9 +9,5 @@ export default proposition({
   lean: { ref: "qou:QOU.tannaka_krein_reconstruction",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "thm:su2-emergence",
-    "prop:braiding-eigenvalue-extraction",
-  ],
+  uses: ["prop:braiding-eigenvalue-extraction"],
 });

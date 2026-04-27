@@ -9,8 +9,6 @@ export default proposition({
   },
   uses: [
     "prop:gb-spectral-sequence",
-    "thm:knot-mass-formula-unified",
-    "prop:categorical-mass-markov",
     "prop:frobenius-s-classification",
   ],
 });

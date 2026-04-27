@@ -18,11 +18,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:shell-closure-normal-form",
-    "prop:torus-knot-generators",
     "def:transfer-matrix-operator",
-    "prop:nuclear-groebner-reduction",
-    "thm:groebner-shirshov-energy",
     "prop:skein-finiteness-bound",
   ],
   examples: [

@@ -10,11 +10,7 @@ export default conjecture({
     "bloch-wigner",
     "open-problem",
   ],
-  uses: [
-    "prop:topological-mass-formula",
-    "conj:baryon-period-ratio",
-    "def:substrate-parameter",
-  ],
+  uses: ["conj:baryon-period-ratio"],
   lean: { ref: "qou:QOU.Descartes.HyperbolicVolumeIndependence",
     validation: "not_checked",
   },

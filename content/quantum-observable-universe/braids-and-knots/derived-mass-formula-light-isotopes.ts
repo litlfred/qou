@@ -8,12 +8,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:wedderburn-mass-formula",
-    "prop:binding-scale-catalan",
-    "prop:wigner-np-pairing",
     "prop:frobenius-s-classification",
-    "prop:three-parameters-wedderburn",
-    "prop:confined-knot-binding",
     "conj:shell-correction-term-seven",
   ],
 });

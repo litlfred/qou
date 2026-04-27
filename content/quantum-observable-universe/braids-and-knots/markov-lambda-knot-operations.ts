@@ -14,11 +14,5 @@ export default remark({
     "plancherel",
   ],
   cites: ["diaconis-ram2000", "jones1987"],
-  uses: [
-    "prop:hecke-markov-transition",
-    "prop:hoefsmit-seminormal-form",
-    "thm:jones-markov-trace",
-    "thm:markov-trace-product",
-    "rem:hecke-markov-interpretation",
-  ],
+  uses: ["rem:hecke-markov-interpretation"],
 });

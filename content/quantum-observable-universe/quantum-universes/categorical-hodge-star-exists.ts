@@ -8,7 +8,6 @@ export default proposition({
   },
   uses: [
     "def:categorical-hodge-star",
-    "def:quantum-universe",
     "def:frobenius-pairing",
   ],
   proofs: ["prf:categorical-hodge-star-exists"],

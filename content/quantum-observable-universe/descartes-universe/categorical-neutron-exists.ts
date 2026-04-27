@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalNeutron.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-neutron",
-    "prop:categorical-proton-exists",
-  ],
+  uses: ["prop:categorical-proton-exists"],
   proofs: ["prf:categorical-neutron-exists"],
   tags: ["existence", "neutron", "baryon"],
 });

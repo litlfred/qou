@@ -11,9 +11,5 @@ export default remark({
     "spin",
     "q-deformed",
   ],
-  uses: [
-    "def:q-angular-momentum",
-    "def:q-momentum",
-    "prop:nuclear-spin-parity",
-  ],
+  uses: ["def:q-angular-momentum"],
 });

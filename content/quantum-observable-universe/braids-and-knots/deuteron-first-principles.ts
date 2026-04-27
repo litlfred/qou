@@ -15,13 +15,7 @@ export default remark({
     "numerical",
   ],
   uses: [
-    "prop:schur-weyl-mass-decomposition",
     "rem:q-character-closes-parity-gap",
-    "rem:mn-classical-parity-blind",
-    "prop:categorical-mass-markov",
-    "thm:jones-markov-trace",
-    "prop:figure-eight-bw-coefficients",
-    "thm:frobenius-codim-universal",
     "thm:knot-mass-formula-unified",
   ],
 });

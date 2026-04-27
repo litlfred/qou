@@ -8,9 +8,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:q-exponential",
     "def:q-logarithm",
-    "def:categorical-laplace",
     "prop:tannaka-krein-reconstruction",
   ],
 });

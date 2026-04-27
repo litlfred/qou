@@ -9,7 +9,6 @@ export default proposition({
   uses: [
     "def:unit-particle-state",
     "def:categorical-reeb-derivation",
-    "def:levi-form-defect",
   ],
   tags: ["legendrian", "knot", "contact-geometry", "torsion-leaf"],
 });

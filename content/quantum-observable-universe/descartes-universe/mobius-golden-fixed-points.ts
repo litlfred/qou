@@ -15,9 +15,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.mobius_golden_fixed_points",
     validation: "not_checked",
   },
-  uses: [
-    "def:picard-lefschetz-thimble",
-    "rem:color-tube-cubic",
-    "prop:descartes-elliptic-curve",
-  ],
+  uses: ["def:picard-lefschetz-thimble"],
 });

@@ -6,13 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.LocalShadowOrdering",
     validation: "not_checked",
   },
-  uses: [
-    "def:knot-operator-energy",
-    "prop:bw-coefficient-shadow-price",
-    "def:confinement-level",
-    "def:unstable-atom",
-    "prop:mass-endomorphism-tower",
-  ],
+  uses: ["def:unstable-atom"],
   tags: [
     "ordering",
     "shadow-price",

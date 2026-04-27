@@ -5,16 +5,7 @@ export default remark({
   title:
     "Every $\\lambda \\vdash n$ appears in the unified mass formula exactly once",
   interprets: "prop:unified-curvature-rank-mass-formula",
-  uses: [
-    "prop:unified-curvature-rank-mass-formula",
-    "prop:plancherel-term-7-formulation",
-    "prop:spectral-sequence-collapse",
-    "prop:confinement-categorical",
-    "prop:curvature-rank-gb-stratification",
-    "prop:wedderburn-trace-identity",
-    "prop:pauli-factor-wedderburn",
-    "prop:schur-weyl-mass-decomposition",
-  ],
+  uses: ["prop:pauli-factor-wedderburn"],
   tags: [
     "completeness",
     "enumeration",

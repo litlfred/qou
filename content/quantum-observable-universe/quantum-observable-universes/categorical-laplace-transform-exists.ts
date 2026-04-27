@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalLaplace.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-laplace",
-    "prop:q-exponential-exists",
-  ],
+  uses: ["prop:q-exponential-exists"],
   proofs: ["prf:categorical-laplace-exists"],
   tags: ["existence", "laplace", "monoidal-functor"],
 });

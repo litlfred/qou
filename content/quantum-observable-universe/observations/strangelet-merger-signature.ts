@@ -17,7 +17,6 @@ export default remark({
   ],
   uses: [
     "rem:strangelet-witten-stability",
-    "conj:color-superconductivity-borromean",
     "prop:eos-borromean-cfl",
     "rem:cfl-neutron-star-observables",
   ],

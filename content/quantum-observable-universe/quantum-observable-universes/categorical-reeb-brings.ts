@@ -10,7 +10,6 @@ export default example({
     "thm:categorical-reeb-exists",
     "ex:reeb-su2",
     "def:brings-coordinate-ring",
-    "def:categorical-reeb",
     "ex:weight-decomposition-su2",
   ],
 });

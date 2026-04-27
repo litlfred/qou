@@ -16,8 +16,6 @@ export default conjecture({
   ],
   uses: [
     "prop:hoefsmit-is-surreal-construction",
-    "def:sign-sequence-of-braid",
-    "def:birthday-grading",
     "rem:algebraic-core-survives",
   ],
   cites: ["conway1976", "gonshor1986", "ehrlich2012"],

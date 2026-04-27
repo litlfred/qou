@@ -17,9 +17,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:confinement-operator-selection",
     "prop:demand-stability",
-    "def:derived-atom",
     "prop:torus-knot-shell-binding",
   ],
 });

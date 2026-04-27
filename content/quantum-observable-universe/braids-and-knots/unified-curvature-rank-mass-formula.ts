@@ -7,11 +7,5 @@ export default proposition({
     ref: "qou:QOU.WedderburnMass.unified_curvature_rank_mass",
     validation: "not_checked",
   },
-  uses: [
-    "prop:spectral-sequence-collapse",
-    "prop:curvature-rank-gb-stratification",
-    "prop:plancherel-term-7-formulation",
-    "thm:knot-mass-formula-unified",
-    "thm:wedderburn-mass-formula",
-  ],
+  uses: ["prop:plancherel-term-7-formulation"],
 });

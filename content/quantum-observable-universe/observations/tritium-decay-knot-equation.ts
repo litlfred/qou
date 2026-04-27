@@ -13,8 +13,5 @@ export default example({
     "helium-3",
     "borromean",
   ],
-  uses: [
-    "def:lepton-number-categorical",
-    "thm:markov-trace-factorization",
-  ],
+  uses: ["def:lepton-number-categorical"],
 });

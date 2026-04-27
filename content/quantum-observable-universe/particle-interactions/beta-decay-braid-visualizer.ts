@@ -16,12 +16,7 @@ export default simulator({
     "interactive",
   ],
   uses: [
-    "def:beta-decay-skein",
-    "prop:beta-decay-transfer-matrix",
     "def:transfer-matrix-operator",
-    "def:categorical-proton",
-    "def:categorical-neutron",
-    "rem:building-block-knots",
     "rem:force-knot-identification",
   ],
   html: "folio-assistant/simulators/beta_decay_braid.html",

@@ -8,10 +8,5 @@ export default remark({
   },
   title: "Classical limit and the symmetric degeneration",
   tags: ["path-integral", "classical-limit", "symmetric-group", "specht-module"],
-  uses: [
-    "prop:feynman-classical-limit",
-    "prop:topological-mass-formula",
-    "prop:knot-eigenbasis-complete",
-    "def:q-energy",
-  ],
+  uses: ["prop:feynman-classical-limit"],
 });

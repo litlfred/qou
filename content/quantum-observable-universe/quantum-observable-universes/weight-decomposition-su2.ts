@@ -9,6 +9,5 @@ export default example({
   uses: [
     "thm:weight-decomposition-exists",
     "ex:maximal-torus-su2",
-    "def:weight-decomposition",
   ],
 });
