@@ -56,12 +56,48 @@ which is *not* 6_2 (J_{6_2}(q_0) ≈ 1.027). The historical 6_2 ID is
 **structurally refuted** — corroborates the α\* = 0.546 PSD-cone
 anomaly.
 
-This is a strong identity: tr_M ≡ 0 in ℚ(q) means the symbolic Jones
-polynomial of ²H's atom braid (= Markov closure as a link) is the
-zero polynomial. The simplest such link is the unknot disjoint
-union — i.e., split links with one trivial component. Whether ²H's
-true link class is split needs further structural analysis (run
-the closure, check for Reidemeister reductions to a split form).
+## Refinement — which "²H atom braid" exactly?
+
+The `atom_nf_symbolic_D.py` script uses
+`mass_at_3A_proper.atom_braid_word_3A` — the **3A-strand atom-braid
+convention**: for an atom with A nucleons, each nucleon contributes
+three strands (intra g_0, intra g_1, and inter-crossing). For
+deuteron (A = 2), the result lives in H_6 (= 3A = 6 strands), not
+H_2.
+
+This is a different representation from the simple Borromean
+braid σ_1 σ_2^{-1} σ_1 σ_2^{-1} on B_3 used elsewhere. Habiro
+expansion in
+[`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro-coefficients-atomic.witness.json)
+reports proton's tr_M as a non-zero degree-48 polynomial in u
+= q^{1/2}; deuteron isn't included in that witness.
+
+So the precise statement is: **the 3A-strand atom-braid of ²H in
+H_6 has tr_M ≡ 0 in ℚ(q)**, while a different (simpler) braid
+representation might give a non-zero trace. The PSD-cone result
+(α\* = 0.546) is computed from a yet-different representation
+(²H listed as `n_strands = ?` in `joint-tower-sdp-rust.witness.json`).
+
+The cleanest interpretation: the historical 6_2 ID was assigned by
+volume-search against B(²H)/m_e, and *no* of the three internal
+representations (3A-strand, joint-tower-SDP, simple Borromean) is
+guaranteed to close to 6_2. R5-full will pick the correct
+canonical T_w from the categorical pipeline, decisively replacing
+the volume-search shortcut.
+
+## Remaining structural questions
+
+1. Why does the 3A-strand braid of ²H have tr_M ≡ 0 identically?
+   That's a strong identity — most braids don't. It may indicate
+   the 3A-strand convention puts deuteron at a *trace-cancellation
+   stratum* (one of the GB filtration's higher-codim slices). Worth
+   running the same script on the 3A-strand proton (Z=1,N=0,A=1)
+   and neutron (Z=0,N=1,A=1) to see if those traces are also zero
+   or non-zero.
+2. Is the α\* = 0.546 number consistent with the Habiro witness's
+   non-zero deuteron expansion (which the description claims
+   exists, even though the witness `results` field only contains
+   proton and neutron)?
 
 ## Connection to the ³H investigation
 
