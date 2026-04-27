@@ -31,8 +31,12 @@ LaTeX label: `prop:full-pole-structure-mass-trace`
 
 namespace QOU.BraidKnot
 
-/-- The q-Pochhammer factor `(q; q)_m = ∏_{k=1}^{m} (1 - q^k)`.
-    Vanishes at every primitive root of unity of order `≤ m`. -/
+/-- The real-valued q-Pochhammer factor
+    `(q; q)_m = ∏_{k=1}^{m} (1 - q^k)`, used below for the
+    `0 < q < 1` truncation bound.  The polynomial-typed version
+    over an arbitrary commutative ring (where vanishing at primitive
+    roots of unity makes sense) is in `habiro-expansion-atomic.lean`,
+    `QOU.BraidKnot.qPochhammer` over `R[u]`. -/
 noncomputable def qPochhammer (q : ℝ) (m : ℕ) : ℝ :=
   ∏ k ∈ Finset.range m, (1 - q ^ (k + 1))
 

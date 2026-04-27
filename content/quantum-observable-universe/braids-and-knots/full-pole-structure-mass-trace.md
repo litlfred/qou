@@ -20,11 +20,11 @@ Markov trace of any closed braid lies in the Habiro ring*
 
 $$
   \mathrm{tr}_M(T_w) \;\in\; \widehat{\mathbb{Z}[q]}
-  \;:=\; \varprojlim_n \mathbb{Z}[q] / (q;q)_n
-  \qquad ([\text{Habiro ring}](\#def:habiro-ring)).
+  \;:=\; \varprojlim_n \mathbb{Z}[q] / (q;q)_n.
 $$
 
-*and admits a unique cyclotomic expansion*
+*See [Habiro ring](#def:habiro-ring) for the cyclotomic-completion
+construction. The trace admits a unique cyclotomic expansion*
 
 $$
   \mathrm{tr}_M(T_w, q)

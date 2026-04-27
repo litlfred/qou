@@ -11,8 +11,8 @@ $A = Z + N$ nucleons
 ([categorical mass, Markov](#prop:categorical-mass-markov)), and
 let $u = q^{1/2}$. Then there exists a denominator $D(u)$ — a
 finite product of cyclotomic polynomials — and a Laurent
-polynomial $p(u) := D(u) \cdot \mathrm{tr}_M(T_w(Z, N), u^2) \in
-\mathbb{Z}[u, u^{-1}]$ admitting the finite Habiro expansion*
+polynomial $p(u) := D(u) \cdot \mathrm{tr}_M(T_w(Z, N), u^2) \in \mathbb{Z}[u, u^{-1}]$
+admitting the finite Habiro expansion*
 
 $$
   p(u) \;=\; \sum_{m=0}^{m_{\max}} a_m(u)\,(u; u)_m,

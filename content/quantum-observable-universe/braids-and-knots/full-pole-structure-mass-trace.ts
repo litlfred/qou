@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Habiro completion of the mass trace",
   lean: {
-    ref: "qou:QOU.BraidKnot.full_pole_structure",
+    ref: "qou:QOU.BraidKnot.HabiroCompletion",
     validation: "not_checked",
   },
   uses: ["def:habiro-ring", "prop:schur-weyl-mass-decomposition"],
