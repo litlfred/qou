@@ -40,3 +40,22 @@ linking through the Hopf base of $S^3_q$.  The $S^3$ topology
 provides the "potential" (through its boundary action), and
 the Hecke representation theory provides the discrete
 phase structure.
+
+**Scope: isotope-independence at the categorical level.**
+The boundary action $S_q^{(\partial)}$ depends on the
+molecular knot type and on $q$, but not on nuclear mass or
+nuclear stability.  Consequently, the categorical critical
+temperature $T_q^{(g \to l)} = S_q^{(\partial)}/[2]_q$ is
+identical for the homonuclear isotopologues
+$\mathrm{H}_2,\mathrm{D}_2,\mathrm{T}_2$ (all with $Z = 1$
+and the same molecular crossing budget).  Observed isotopic
+shifts in boiling and triple-point temperatures are then
+*engineering offsets* on top of an isotope-blind categorical
+prediction: zero-point motion narrows the operating window
+for $\mathrm{H}_2$, and β-self-heating (≈ $0.97\,\mathrm{W/mol}$
+from $\lambda \cdot \langle E_\beta \rangle$ with
+$t_{1/2} \approx 12.3\,\mathrm{yr}$ and
+$\langle E_\beta \rangle \approx 5.7\,\mathrm{keV}$) imposes
+a thermal floor for $\mathrm{T}_2$ that requires active
+cooling to reach the categorical liquid window.  Neither
+effect moves $T_q^{(g \to l)}$ itself.
