@@ -67,11 +67,19 @@ def primitive_roots_of_unity(n: int):
 def cyclotomic_residue(tr_M_expr, zeta, n: int):
     """Compute r_n^{(j)}(T_w) = lim_{q → ζ_n^{(j)}} (q − ζ) · tr_M(T_w, q).
 
-    Uses symbolic limit. If tr_M is regular at ζ, the residue is 0.
+    Returns:
+      sympy expression (residue value) for simple poles
+      sp.oo for higher-order poles (Mittag-Leffler formula needs Laurent expansion)
+      0 for regular points
+      None on error
     """
     expr = (q - zeta) * tr_M_expr
     try:
-        return sp.limit(expr, q, zeta)
+        result = sp.limit(expr, q, zeta)
+        # Normalize ±oo to a sentinel
+        if result == sp.oo or result == -sp.oo or result == sp.zoo:
+            return sp.oo
+        return result
     except Exception:
         return None
 
@@ -97,10 +105,18 @@ def mittag_leffler_term6(tr_M_poly_expr, q0_value: float, n_max: int = 6):
                         "residue": "0 or None", "contribution": 0.0,
                     })
                     continue
+                if residue == sp.oo:
+                    # Higher-order pole — simple residue formula doesn't apply
+                    roots_data.append({
+                        "j_index": j_idx, "zeta": str(zeta),
+                        "residue": "HIGHER-ORDER POLE",
+                        "contribution": 0.0,
+                        "note": "lim (q-ζ)·tr_M = ∞; Mittag-Leffler needs Laurent expansion",
+                    })
+                    continue
                 kernel = 1 / (q0_sym - zeta)
                 contribution = residue * kernel
                 contribution_complex = complex(sp.N(contribution))
-                # Take real part (imaginary parts cancel by symmetry over Φ_n)
                 contribution_real = float(contribution_complex.real)
                 n_contribution += sp.N(contribution)
                 roots_data.append({
