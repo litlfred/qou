@@ -200,3 +200,105 @@ implementing a Plancherel-weighted log-of-Markov-trace-ratio formula
 Those artifacts are deleted from the branch (preserved in git history).
 This document remains as the forward-looking error-bound framework for
 v5 work against the canonical chain.
+
+## Appendix A: structural hypotheses for GAPs 4 and 5
+
+The watched branch `claude/mass-units-bridge-followups` (commit
+`7fbbec14`, witness `joint-tower-sdp-h6-h9.witness.json`) provides three
+explicit principled-derivation atoms with `(A, n_0, knot, ρ)`:
+
+| atom | A | n_0 = 3A | knot | strands | word_len | binding | ρ | B_AME (MeV) |
+|---|---:|---:|---|---:|---:|---|---:|---:|
+| deuteron | 2 | 6 | 6_2 | 3 | 6 | L_H (Hopf) | 1 | 2.2246 |
+| tritium | 3 | 9 | 8_11 | 5 | 14 | T_3 trefoil-like | 2 | 8.4818 |
+| ³He | 3 | 9 | L6a4 | 3 | 6 | L6a4 (link) | 2 | 7.718 |
+
+Volume-match-only observations (deprecated methodology, not principled):
+⁶Li ρ = 5, ⁷Li ρ = 5 (per `li-atom-knot-search.witness.json`).
+
+### Hypothesis A.1: ρ = A − 1 (primary)
+
+Direct fit to the 3 explicit data points:
+
+| atom | A | A − 1 | observed ρ | match |
+|---|---:|---:|---:|:---:|
+| deuteron | 2 | 1 | 1 | ✓ |
+| tritium | 3 | 2 | 2 | ✓ |
+| ³He | 3 | 2 | 2 | ✓ |
+
+**Predictions** (testable once watched branch lands principled
+derivations):
+
+| atom | A | predicted ρ | volume-match observed | hypothesis verdict |
+|---|---:|---:|---:|---|
+| ⁴He | 4 | **3** | (none yet) | open |
+| ⁶Li | 6 | **5** | 5 | **agrees** with deprecated obs |
+| ⁷Li | 7 | **6** | 5 | **disagrees** with deprecated obs |
+
+If hypothesis A.1 holds for ⁶Li, the agreement with the volume-match ρ
+is a quantitative consistency check.  The disagreement at ⁷Li would
+suggest either:
+
+- (a) the volume-match observation for ⁷Li was incorrect (the
+  watched branch has commit `f970e86f deprecate volume-match atom-knot
+  search; quarantine ⁶Li/⁷Li`, supporting (a)); or
+- (b) ρ = A − 1 fails at ⁷Li due to a shell-closure correction (⁷Li has
+  one nucleon outside the K-shell magic 4); a corrected rule of the form
+  `ρ = A − 1 − δ_shell` with `δ_shell ∈ {0, 1}` could fit both ⁶Li and ⁷Li
+  if `δ_shell = 1` for nuclei with 1 valence nucleon outside a magic core.
+
+**Status:** A.1 is a 3-data-point hypothesis with one principled
+prediction (⁴He = 3) and one structural-consistency check (⁶Li = 5
+matches the deprecated volume-match).  Cannot be falsified or confirmed
+without watched-branch principled derivations for ⁴He, ⁶Li.
+
+### Hypothesis A.2: T_w recursive cluster decomposition (GAP 4)
+
+The pattern `n_0 = 3A` reflects the level-3 atomic braid: each nucleon
+contributes 3 quark strands, so an A-nucleon atom lives in H_{3A}.
+
+For light atoms the constituent decomposition tracks observable cluster
+structure:
+
+- D = p + n (one binding link, Hopf)
+- T = p + 2n (one binding knot, 8_11; 5-strand braid suggests a 3-2 cluster split)
+- ³He = 2p + n (one binding link, L6a4)
+- ⁴He: predict α-particle structure, knot/link on H_12, possibly two
+  Hopf-Hopf bindings (4-cluster)
+- ⁶Li: in nuclear physics ⁶Li ≈ α + D cluster.  Hypothesise
+  T_w(⁶Li) = LR_embed_{12 → 18}(T_w(⁴He)) ·
+            (binding_crossing on cluster boundary) ·
+            T_w(D) lifted to H_18
+- ⁷Li ≈ α + T cluster: T_w(⁷Li) = LR_embed_{12 → 21}(T_w(⁴He)) ·
+            (binding) · T_w(T) lifted to H_21
+- ⁸Be ≈ α + α: T_w(⁸Be) = LR_embed(T_w(⁴He)) ⊗ LR_embed(T_w(⁴He)) +
+            interaction.  Note: ⁸Be is unstable in nature, which would
+            be predicted by the SDP infeasibility at the
+            cluster-double-α configuration.
+
+The Littlewood–Richardson cross-level embedding infrastructure landed
+in the watched branch's commit `96ce5607` (`R4: cross-level embedding
+consistency via Littlewood-Richardson`) provides the embedding rule
+needed to run this recursion.
+
+**Status:** A.2 is a structural sketch, not a derivation.  Validation
+requires the watched branch to (i) derive ⁴He principled T_w, (ii) run
+LR_embed_{12 → 18} ∘ T_w(⁴He) and check whether the result + binding
+yields the SDP-feasible T_w(⁶Li) at the right ρ.
+
+### What this appendix contributes
+
+It does not close GAPs 4 or 5.  It provides:
+
+- A concrete falsifiable hypothesis (`ρ = A − 1`) that fits all known
+  principled data and matches the deprecated ⁶Li volume-match
+  observation.
+- A structural sketch (LR-embedding cluster decomposition) for the
+  recursive T_w construction, consistent with the watched branch's
+  R4 infrastructure.
+- A specific prediction at ⁴He (`ρ = 3`) that can be tested as soon
+  as the next phase lands on the watched branch.
+
+If A.1 and A.2 hold up, GAPs 4 and 5 reduce to "implement the
+recursion at the new infrastructure level."  If they fail at ⁴He, the
+hypothesis space narrows substantially.
