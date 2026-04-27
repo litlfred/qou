@@ -303,3 +303,84 @@ but a measurement input.
 6. **Two follow-up branches queued from this review:**
    - `claude/six-term-formula-consumer-family-1` (Sprint A)
    - `claude/three-term-wedderburn-upgrade` (Sprint B)
+
+---
+
+## Appendix: Theoretical-gap audit corrections (2026-04-27, post-rounds 2/3)
+
+The original gap audit (above) named two specific theoretical gaps that
+have substantively better state than initially asserted.
+
+### D2 (α_em closed form) — substantively closed
+
+The original framing — *"PSLQ-falsified at 25 digits in `{1, G, π, 1/π, q₀, ℏ_q}`"* —
+**conflated α_em (fine-structure) with α\* (the empirical mixing constant
+in the 2-term blend)**. PSLQ falsified `α*`, not `α_em`. The correct
+state is:
+
+- **Closed form** ([`alpha_em_pslq_uniqueness.py`](../folio-assistant/computations/alpha_em_pslq_uniqueness.py)):
+
+  $$\frac{1}{\alpha_{EM}} \;=\; 45 \cdot [3]_q \cdot \bigl(1 + \delta_{CS} + 8q \cdot \delta_{CS}^2\bigr), \qquad \delta_{CS} = \hbar_q^{4} \cdot [5]_q.$$
+
+- **Reproduces CODATA to ~7 ppb** at the q_0 precision floor. CODATA
+  m_μ/m_e is bounded to ~22 ppb, propagating to q_0 → α_em — the
+  formula sits inside the q_0-uncertainty band.
+
+- **PSLQ uniqueness** ([`alpha-em-pslq-uniqueness.witness.json`](../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json), 2026-04-26): no
+  competing integer relation found in 52-element basis at tolerances
+  tol_dps ∈ {50, 100, 200}. Above 200 dps PSLQ runs to its precision
+  ceiling without finding alternatives.
+
+- **Derivable from q_0 alone** — no separate calibration input needed.
+
+**Status:** structurally closed. Open work is incremental: push PSLQ
+uniqueness to higher tol_dps if a tighter falsifiability bound is
+desired.
+
+### E2 (Lean formalization of the six-term formula) — already 5/6 sorry-free
+
+The original audit asserted *"only Term 4 has sorry-free Lean"*. Direct
+inspection of the Lean files (counting actual `sorry` tactic uses, not
+in-comment matches) shows **the six-term formula has only 3 actual
+sorrys, distributed across 2 files** — and 5 of 6 terms are already
+sorry-free at the proof level:
+
+| Term | Lean file | Actual `sorry` tactic uses |
+|------|-----------|:------:|
+| T1 (descended Markov trace) | [`categorical-mass-markov.lean`](../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.lean) | **0 ✓** |
+| T2 / T3 (brane tower) | [`mass-endomorphism-tower.lean`](../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.lean) | **0 ✓** |
+| T4 (Frobenius co-Casimir) | [`frobenius-codim-universal.lean`](../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean) | **0 ✓** |
+| T5 (chirality) | [`chirality-dual-space-derivation.lean`](../content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.lean) | **0 ✓** |
+| T6 (full pole structure) | [`full-pole-structure-mass-trace.lean`](../content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean) | **0 ✓** |
+| T6 (cyclotomic-residue spectral sum) | [`gb-residue-spectral-sum.lean`](../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean) | **2** (line 86 in-type + line 89 body) |
+| support (Markov trace product) | [`markov-trace-product.lean`](../content/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) | **2** (line 110, line 120) |
+
+**Remaining work — 3 distinct sorry sites:**
+
+1. [`markov-trace-product.lean:110`](../content/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) — `markov_trace_product`
+   theorem. The proof outline is documented (Markov property recursion
+   from i = n-2 down to i = 0; Jones 1987 + Kassel 1995). Substantial
+   inductive proof; hard sorry.
+
+2. [`markov-trace-product.lean:120`](../content/quantum-observable-universe/braids-and-knots/markov-trace-product.lean) — `degree_bound`
+   theorem. **Stub: the type is literally `True`**, so `sorry` is
+   trivially closeable but the sorry-removal would be vacuous. The
+   actual mathematical claim (`polynomial degree ≤ n²−1`) is in the
+   comment, not in the type signature. Honest fix requires *first*
+   strengthening the type to express the claim, then closing it; the
+   sorry should not be removed without strengthening.
+
+3. [`gb-residue-spectral-sum.lean:86 + :89`](../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean) —
+   `spectral_sum_finite` theorem. Two sorrys: one inside the type
+   signature (`S.roots⟨0, sorry⟩` Fin index) and one in the body.
+   The statement asserts that above the confinement level `ℓ(K, q)`,
+   the graded Markov trace vanishes (`prop:confinement-level-unique`).
+   Substantial; the in-type sorry needs to be replaced with a real
+   index proof first.
+
+**Status:** E2 is ~80% closed (5 of 6 terms sorry-free at the
+mathematical claim level; only T6 cyclotomic-residue spectral sum
+and one supporting Markov-trace-product theorem remain, plus the
+`degree_bound` placeholder). Original audit overcounted by a factor
+of ~2 (claimed 5 terms unproved; actual is 1 term + 1 support
++ 1 placeholder).
