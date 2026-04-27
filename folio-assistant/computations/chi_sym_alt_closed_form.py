@@ -124,6 +124,64 @@ def closed_form_prediction(A: int, H_A: float) -> float:
     return -(1.0 + H_A * H_A / 4.0) ** (2 * A + 1)
 
 
+# ─────────────────────────────────────────────────────────────────────
+# Per-shape closed-form helpers (sym = (n,) and alt = (1,)*n).
+#
+# In the 1-dim irrep λ = (n) (sym): σ ↦ +q.   Each Hecke factor
+# (c·σ + d·I) acts as (c·q + d).
+# In the 1-dim irrep λ = (1ⁿ) (alt): σ ↦ −q⁻¹.  Each Hecke factor
+# acts as (−c/q + d).
+#
+# For the (c, d) pairs used by atomic_braid_to_crossings /
+# atom_braid_word_3A:
+#
+#   "sigma"      (c, d) = (1,  0)        χ_sym = q,           χ_alt = -q⁻¹
+#   "sigma_inv"  (c, d) = (1, -H_A)      χ_sym = q⁻¹,         χ_alt = -q
+#   "averaged"   (c, d) = (1, -H_A/2)    χ_sym = [2]_q/2,     χ_alt = -[2]_q/2
+#
+# Multiplicativity on 1-dim irreps gives closed forms in terms of
+# the factor counts (n_σ, n_σ_inv, n_ud).  These are exact (no
+# Hoefsmit/Wedderburn matrix product needed).
+# ─────────────────────────────────────────────────────────────────────
+
+
+def count_factor_types_from_crossings(crossings) -> dict:
+    """Count Hecke factor types from a `(gen_idx, cross_type)` list.
+
+    `cross_type` ∈ {"sigma", "sigma_inv", "averaged"} — same convention
+    as `atomic_braid_to_crossings` / `light_isotope_sweep`.
+    """
+    counts = {"sigma": 0, "sigma_inv": 0, "averaged": 0}
+    for _g, ct in crossings:
+        if ct in counts:
+            counts[ct] += 1
+        else:
+            raise ValueError(f"unknown cross_type: {ct!r}")
+    return counts
+
+
+def chi_sym_closed_form(crossings, q: float) -> float:
+    """χ_(n)(T_w) for the 1-dim sym irrep at substrate parameter q.
+
+    Closed form: q^(n_σ - n_σ_inv) · ([2]_q / 2)^n_ud.
+    """
+    c = count_factor_types_from_crossings(crossings)
+    two_q_half = (q + 1.0 / q) / 2.0  # = [2]_q / 2 = (q + q⁻¹)/2
+    return (q ** (c["sigma"] - c["sigma_inv"])) * (two_q_half ** c["averaged"])
+
+
+def chi_alt_closed_form(crossings, q: float) -> float:
+    """χ_(1ⁿ)(T_w) for the 1-dim alt irrep at substrate parameter q.
+
+    Closed form: (−1)^#(β) · q^(n_σ_inv − n_σ) · ([2]_q / 2)^n_ud.
+    """
+    c = count_factor_types_from_crossings(crossings)
+    two_q_half = (q + 1.0 / q) / 2.0
+    total = c["sigma"] + c["sigma_inv"] + c["averaged"]
+    sign = -1.0 if (total % 2 == 1) else 1.0
+    return sign * (q ** (c["sigma_inv"] - c["sigma"])) * (two_q_half ** c["averaged"])
+
+
 def main():
     w = WitnessBuilder("chi-sym-alt-closed-form", engine="numpy+sympy")
     w.set_description(

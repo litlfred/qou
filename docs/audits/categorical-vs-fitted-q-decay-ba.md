@@ -692,6 +692,69 @@ Mechanical refactor; net wall-time saved per atom ≈ (2 / total
 partitions) × Hoefsmit cost. Modest speedup but eliminates
 redundant numerical evaluation (and cuts 2 sources of f64 error).
 
+## Per-nucleon H_3 sub-tower probe (2026-04-27)
+
+[`probe_per_nucleon_self_duality.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_per_nucleon_self_duality.py)
+restricted the shell-self-duality test to the per-nucleon H_3
+sub-tower (instead of the atom-level H_{3A}):
+
+| nucleon | self-conjugate λ | dual pairs | NOT dual | all-dual? |
+|---|:---:|:---:|:---:|:---:|
+| proton (uud) | 1 (= (2,1)) | 0 | **1** (extreme pair) | ✗ |
+| neutron (udd) | 1 (= (2,1)) | 0 | **1** (extreme pair) | ✗ |
+
+The extreme pair `(3) ↔ (1,1,1)` gives `χ_(3) = q_0³` (sym) vs
+`χ_(1,1,1) = -q_0⁻³` (alt) — generically **sign-asymmetric** by the
+σ ↦ ±q±¹ eigenvalues. Equality is mathematically impossible.
+
+**Critical clarification.** The probes (atom + per-nucleon) tested
+the wrong object. Per [`shell-schur-weyl-self-duality.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/shell-schur-weyl-self-duality.md):
+
+> The shell-operator self-duality constraint `x_λ = x_{λ*}` for all
+> `λ ⊢ A_magic` applies to **`σ_shell ∈ H_{A_magic}(q)`** — a SPECIFIC
+> shell operator, NOT an arbitrary atom braid.
+
+Both probes confirm: `β = atom_braid_word_3A(Z, N) ≠ σ_shell` for
+any atom we tested. The shell-self-duality of `σ_shell` remains
+unrefuted; it just doesn't apply to `β`.
+
+**Open**: identify `σ_shell` for each magic atom categorically, and
+relate it to the Kashaev intra-exactness condition.
+
+## Term 6 (jet-prefix) status (2026-04-27)
+
+Per [`six-term-mass-formula-complete.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md), Term 6 is DERIVED via:
+
+- [`gb_residue_tower.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/gb_residue_tower.py) — **broken**: imports `markov_trace_three_channels` which is **never defined** anywhere in the codebase. Stale dependency.
+- [`habiro_residue_symbolic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/habiro_residue_symbolic.py) — **works**. Emits exact residues of `Φ_q · tr_M` at primitive `n`-th roots of unity (`n=2, 3` give nonzero; `n=4, 5, 6` give no pole at primitive roots).
+
+Habiro witness output:
+
+| A | Σ_{λ⊢3A} w_λ(q_0) | H_3^{3A−1}(q_0) | ratio (global / H_3) |
+|---:|---:|---:|---:|
+| 1 | 1.3321 | 1.7746 | **0.7507** |
+| 2 | 0.0832 | 4.1950 | **0.0198** |
+| 3 | 0.0011 | 9.9166 | **0.0001** |
+
+The "ratio" decays rapidly with A. In MeV terms (`× m_e`), Term 6
+contribution per atom is:
+
+| A | atom | Term-6 ~ (m_e · ratio) | as % of B | A≥5 error to close |
+|---:|---|---:|---:|---:|
+| 1 | proton | 0.38 MeV | – | – |
+| 2 | D | 0.010 MeV | 0.5% | (D handled by T1+T4) |
+| 3 | T, ³He | 5.8 × 10⁻⁵ MeV | sub-ppm | (handled by T5) |
+
+So **Term 6 alone is insufficient** to close the A ≥ 5 residuals
+(5–20%). Additional content required for ⁶Li → ¹⁶O — likely a
+combination of refined chirality factors, shell corrections beyond
+Term 5's BW form, and the open `σ_shell` categorical content.
+
+**Wiring TODO**: import the Habiro witness's residue contributions
+into `categorical_q_decay_ba_low_isotopes.py` as an explicit
+"Term-6-residual" column. Numerically tiny but completes the
+narrative that the 6-term formula is fully wired.
+
 ## Atomic mass derivation: arithmetic vs categorical-chain (2026-04-27)
 
 Per user question "1H atomic mass = 938.783 MeV (m_p + m_e) did

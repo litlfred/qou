@@ -9,7 +9,7 @@
     "4. Catastrophic cancellation: Mittag-Leffler residues alternate in sign; numerical sum loses digits.",
     "5. \u03a6_q branch cuts: any contour around \u03b6_n crosses branch cuts of the quantum dilogarithm."
   ],
-  "computedAt": "2026-04-24T20:07:51.650819+00:00",
+  "timestamp": "2026-04-27T20:30:27.885686+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "engine": "sympy Rational (exact)"
@@ -65,7 +65,5 @@
       "h3_additive_at_q0": "9.91664853812058338386569674510",
       "ratio_global_over_h3": "0.000114222851179817000616968504378"
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }
