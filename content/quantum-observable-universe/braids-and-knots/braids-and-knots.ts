@@ -196,6 +196,12 @@ export default chapter({
         "markov-lambda-knot-operations",
         "markov-chain-fluctuations",
         // Feynman path integrals as categorical traces
+        "feynman-eigenbasis-decomposition",
+        "feynman-eigenbasis-decomposition-proof",
+        "feynman-trace-collapse",
+        "feynman-trace-collapse-proof",
+        "feynman-markov-identification",
+        "feynman-markov-identification-proof",
         "feynman-categorical-trace",
         "feynman-categorical-trace-proof",
         "feynman-qou-dictionary",
