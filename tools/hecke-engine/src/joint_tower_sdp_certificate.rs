@@ -116,6 +116,12 @@ pub struct JointTowerSdpCertificate {
     #[serde(skip_serializing_if = "Vec::is_empty")]
     pub cross_level_edges: Vec<CrossLevelEdge>,
 
+    /// R5-minimal output: PSD-cone α* and gap.  None if not computed.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub psd_cone_alpha_star: Option<f64>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub psd_cone_gap: Option<f64>,
+
     pub rho_factor: u32,
     /// MeV (when computed).
     #[serde(skip_serializing_if = "Option::is_none")]

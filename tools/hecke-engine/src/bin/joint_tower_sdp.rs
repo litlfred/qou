@@ -17,6 +17,7 @@ use clap::Parser;
 use hecke_engine::cross_level_embedding::{verify_edge, TowerEdgeSpec};
 use hecke_engine::gb_nf_reducer::HeckeElement;
 use hecke_engine::joint_tower_sdp_certificate as cert;
+use hecke_engine::sdp_verifier::solve_alpha_psd;
 use hecke_engine::wedderburn_psd::evaluate_all_blocks;
 use std::fs;
 use std::path::PathBuf;
@@ -154,6 +155,8 @@ fn solve_per_atom(
         n_hecke_relations_fired: n_hecke,
         wedderburn_blocks: wedderburn,
         cross_level_edges: Vec::new(),
+        psd_cone_alpha_star: None,
+        psd_cone_gap: None,
         rho_factor: entry.rho_factor,
         b_pred_mev: None,
         b_ame_mev: entry.b_ame_mev,
@@ -252,6 +255,42 @@ fn main() {
         certs.push(cert);
     }
 
+    // ─── R5-minimal: PSD-cone α* verifier ─────────────────────────
+    if !args.no_psd {
+        println!(
+            "\n══════════════════════════════════════════════════════════════════════"
+        );
+        println!("  R5-minimal — PSD-cone α* (bisection on α; equiv. SDP value)");
+        println!(
+            "══════════════════════════════════════════════════════════════════════"
+        );
+        for (i, entry) in reg.iter().enumerate() {
+            if let Some(max_n) = args.max_n {
+                if entry.native_strand_count > max_n {
+                    continue;
+                }
+            }
+            let n = entry.native_strand_count.max(1);
+            if n < 2 {
+                continue;
+            }
+            let report = solve_alpha_psd(n, &entry.braid_word, args.q0);
+            println!(
+                "  {}: α* = {:.10}, gap = {:.4e}, min_eig at α* = {:+.4e}, iters = {}",
+                entry.name,
+                report.alpha_star,
+                1.0 - report.alpha_star,
+                report.min_eigenvalue_at_alpha_star,
+                report.iterations
+            );
+            // attach to cert
+            if let Some(c) = certs.get_mut(i) {
+                c.psd_cone_alpha_star = Some(report.alpha_star);
+                c.psd_cone_gap = Some(1.0 - report.alpha_star);
+            }
+        }
+    }
+
     // ─── R4: Cross-level edge verification ────────────────────────
     println!(
         "\n══════════════════════════════════════════════════════════════════════"
@@ -297,7 +336,7 @@ fn main() {
                 .to_string(),
         design_spec: "prop:joint-tower-sdp-confinement".to_string(),
         consumed_by: "prop:atom-knot-mass-derivation".to_string(),
-        phase: "rust-r1-r2-r3-r4-r6".to_string(),
+        phase: "rust-r1-r2-r3-r4-r5min-r6".to_string(),
         engine: cert::EngineMetadata {
             name: "hecke-engine".to_string(),
             version: env!("CARGO_PKG_VERSION").to_string(),
