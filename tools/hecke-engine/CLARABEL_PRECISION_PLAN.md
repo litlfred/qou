@@ -128,21 +128,48 @@ generator matrices instead of contracting against a basis vector.
 
 ### S2.  Generic dense linear-algebra helpers (~200 LOC)
 
-New `src/dense_la.rs`.  Generic over a stable `Scalar` trait
-(`trait Scalar: Clone + Add + Mul + ... {}`) or equivalent shared
-`where`-bounds.  Ports the four helpers (`sparse_to_dense`,
-`dense_dense_mul`, `invert_matrix_h`, `symmetrize`) once instead of
-duplicating per Clarabel module.  Two instantiations:
+New `src/dense_la.rs`.  Generic over a custom `Scalar` trait that
+explicitly handles the precision-context problem `rug::Float` has
+and `f64` doesn't:
+
+```rust
+pub trait Scalar:
+    Clone + std::ops::Add<Output=Self> + std::ops::Sub<Output=Self>
+    + std::ops::Mul<Output=Self> + std::ops::Div<Output=Self>
+{
+    /// Build from an `f64` literal — for `rug::Float` this carries
+    /// the working precision in the implementor's context.
+    fn from_f64(v: f64) -> Self;
+    /// Square root in the scalar's precision.
+    fn sqrt(self) -> Self;
+    /// Sparsity / zero-test threshold (≈ machine epsilon at the
+    /// scalar's precision).
+    fn epsilon() -> Self;
+    fn is_zero_within(&self, eps: &Self) -> bool;
+}
+```
+
+`num_traits::Float` plus `num_traits::FromPrimitive` covers most of
+this for `f64`, but `rug::Float` is not `Copy` and needs a
+precision-context constructor — so a custom trait (rather than just
+re-using `num_traits::Float`) is the cleanest path on stable Rust.
+
+Ports the four helpers (`sparse_to_dense`, `dense_dense_mul`,
+`invert_matrix_h`, `symmetrize`) once instead of duplicating per
+Clarabel module.  Constants like `0.5` (in `symmetrize`) flow
+through `Scalar::from_f64(0.5)`.  Two instantiations:
 
 - `Scalar = f64` — drop-in replacement for the existing `f64`
-  helpers in the three SDP modules.
-- `Scalar = rug::Float` — used by the MPFR path.
+  helpers in the three SDP modules; `from_f64` is identity.
+- `Scalar = rug::Float` — used by the MPFR path; `from_f64` calls
+  `Float::with_val(prec, v)` against the module-level precision.
 
 ### S3.  Generic `svec_pack` (~30 LOC)
 
 In `src/dense_la.rs` (alongside S2).  Replaces the three duplicate
 `svec_pack`/`svec_pack_symmetric` definitions.  √2 is computed via
-`Scalar::from(2u32).sqrt()` so MPFR uses the high-precision sqrt.
+`Scalar::from_f64(2.0).sqrt()` so MPFR uses the high-precision sqrt
+and f64 stays bit-identical to the current `2f64.sqrt()`.
 
 ### S4.  `sdp_solver_clarabel_hp.rs` — the high-precision solver
        (~350 LOC)
@@ -174,7 +201,13 @@ pub fn solve_alpha_psd_clarabel_hp<F: clarabel::algebra::FloatT>(
 Key choices:
 - **API takes `q_str`, not `f64`** — kills the lossy boundary at
   the entry.  Internally parses to `rug::Float` once then converts to
-  `F` for Clarabel.
+  `F` for Clarabel.  The `rug::Float → F` step is **the single
+  upstream-Clarabel constraint**: `clarabel::algebra::FloatT` does
+  not currently expose `From<rug::Float>`, so the upstream
+  high-precision feature must surface either (a) a conversion trait
+  the QOU side can call, or (b) a concrete HP scalar type we
+  monomorphize against.  S4 cannot land until this is settled with
+  upstream; track resolution in the PR description.
 - **Returns at solver precision** — caller decides whether to project
   to `f64` for witness JSON or keep at `F`.
 - **Sparsity threshold** is `F::epsilon() * <const factor>` instead
@@ -209,6 +242,15 @@ clarabel-hp = []   # gate the new modules / HP Clarabel wiring; rug remains a ha
 `lib.rs` adds `#[cfg(feature = "clarabel-hp")] pub mod
 sdp_solver_clarabel_hp;` (and the two siblings).  Default builds
 remain f64.
+
+**Why rug stays mandatory.**  `rug` is already a non-optional
+dependency (Cargo.toml L66) because `seminormal_mpfr.rs`,
+`laurent_poly_q::evaluate_mpfr`, and `bin/v9.rs` already use it
+unconditionally.  Making `rug` optional (so an `f64`-only build
+needs no MPFR/GMP system libs) is a desirable but separate
+refactor — it would require gating those existing modules too.
+This plan keeps that out of scope; the `clarabel-hp` flag gates
+only the *new* HP solver siblings.
 
 ### Estimated effort
 
