@@ -75,9 +75,9 @@ the Markov trace on the Hecke closure of $\beta_{K}$ with a
 Jones--Wenzl projector $p_{N-1}$ inserted, equivalently the quantum
 trace in the $N$-dimensional irreducible representation
 $V_{N-1}$ of $U_{q}(\mathfrak{sl}_{2})$.  The standard Markov trace
-$\mathrm{tr}_{M}$ recovers only the $N = 2$ case
+$\mathrm{tr}_M$ recovers only the $N = 2$ case
 ([Jones--Markov trace](#thm:jones-markov-trace)); higher colourings
-replace $\mathrm{tr}_{M}$ by the trace $\mathrm{tr}_{M}^{(N)}$ on the
+replace $\mathrm{tr}_M$ by the trace $\mathrm{tr}_M^{(N)}$ on the
 $V_{N-1}$-coloured closure, and all three --- coloured trace,
 categorical $\int_{A}$ on the $N$-th symmetric power, and
 $J_{N}$ --- agree.  In the QOU setting the left-hand side is the
@@ -104,13 +104,13 @@ swap:
    finite, exact, and defined without recourse to a continuous manifold.
    Through the representation $\rho \colon B_{n} \to H_{n}(q)$ the
    fundamental-colour ($N = 2$) case coincides with the standard
-   Markov trace $\mathrm{tr}_{M}$
+   Markov trace $\mathrm{tr}_M$
    ([Jones--Markov trace](#thm:jones-markov-trace)); higher colours
-   use the projector-inserted trace $\mathrm{tr}_{M}^{(N)}$, still
+   use the projector-inserted trace $\mathrm{tr}_M^{(N)}$, still
    defined purely inside $H_{n}(q)$.
 2. **The coloured Jones polynomials are coloured Markov traces.**
    Each $J_{N}(K;\,e^{2\pi i/N})$ is a finite algebraic evaluation of
-   $\mathrm{tr}_{M}^{(N)}$ on the Hecke image of the braid closure
+   $\mathrm{tr}_M^{(N)}$ on the Hecke image of the braid closure
    that represents $K$ --- equivalently, of the quantum trace in
    $V_{N-1}$.  The algebraic quantum volume
    $\mathrm{Vol}_{q}(\beta) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$
@@ -154,7 +154,7 @@ $$
 $$
 
 where each $J_{N}(K;\,e^{2\pi i/N})$ is the coloured Markov trace
-$\mathrm{tr}_{M}^{(N)}(\rho(\beta_{K}))$ at $q = e^{2\pi i/N}$ ---
+$\mathrm{tr}_M^{(N)}(\rho(\beta_{K}))$ at $q = e^{2\pi i/N}$ ---
 still an entirely algebraic evaluation inside $H_{n}(q)$.
 
 Three observations follow.
