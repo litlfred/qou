@@ -31,8 +31,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-import numpy as np
-
 from experimental_constants import M_E_MEV
 from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1, partitions_of, q_factorial, q_int
 from light_isotope_sweep import chi_lambda_numeric, dim_q

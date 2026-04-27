@@ -124,7 +124,9 @@ def main():
     by_scheme = {scheme: len(scripts) for scheme, scripts in buckets.items()}
     canonical_3input = sum(
         n for s, n in by_scheme.items()
-        if "3-input-canonical" in s or "Q_β-only-hadronic" in s
+        if "3-input-canonical" in s
+        or "3-input-alt" in s
+        or "Q_β-only-hadronic" in s
     )
     over_counts = sum(
         n for s, n in by_scheme.items() if "over-counts" in s

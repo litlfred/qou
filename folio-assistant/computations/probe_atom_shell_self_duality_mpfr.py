@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
-"""MPFR variant of probe_atom_shell_self_duality.py for higher-A atoms.
+"""Extension of probe_atom_shell_self_duality.py to ⁴He at H_12.
 
 The f64 probe (probe_atom_shell_self_duality.py) timed out at A=4
-(H_12, 77 partitions). This MPFR version uses mpmath at 50 dps to
-extend the test to ⁴He, with the goal of confirming or refuting
-shell-self-duality at H_12.
+(H_12, 77 partitions). This script extends the test to ⁴He by setting
+mpmath precision to 50 dps as a hint, BUT it ultimately calls
+chi_lambda_numeric / dim_q from light_isotope_sweep.py — which use
+numpy/float64 internally. The mpmath precision setting therefore
+does NOT propagate into the Wedderburn evaluations; results are
+still f64-precision.
+
+To obtain genuinely MPFR-precision Wedderburn coefficients at H_12,
+the seminormal pipeline (build_seminormal_matrices) must be ported
+to mpmath. That refactor is not done here. The label "mpfr" in the
+filename is therefore aspirational; the script's value lies in
+extending the (λ, λ*) test to A=4, not in numerical precision.
 
 Per the H_3 / H_6 / H_9 results, the (n) ↔ (1ⁿ) extreme pair gives
 χ_(n) = q_0^k_pos and χ_(1ⁿ) = -q_0^{-k_pos} — sign-asymmetric, so
 equality is generically impossible. We expect ⁴He at H_12 to also
 be NOT shell-self-dual.
 
-This script confirms/refutes that prediction at MPFR precision and
-extracts the FULL Wedderburn coefficient table for ⁴He so we have
-algebraic data for follow-up σ_shell investigations.
+This script confirms/refutes that prediction and extracts the FULL
+Wedderburn coefficient table for ⁴He so we have algebraic data for
+follow-up σ_shell investigations.
 
 NO Vol_hyp.  NO knot identification.  NO census search.
 

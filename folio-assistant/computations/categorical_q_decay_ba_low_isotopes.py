@@ -355,12 +355,20 @@ def main():
     Z_PAIR = q_half + q_inv_half        # q^{1/2} + q^{-1/2}
     SLOPE = (Q_0 + 1.0/Q_0) / Z_PAIR    # (q+q⁻¹)/(q^{1/2}+q^{-1/2})
 
-    # Step A — derive m_n from m_p + Q_β (Hecke engine)
+    # Step A — derive m_n from m_p + Q_β + m_e (Hecke engine + physical
+    # Q_β identity).
+    #
+    # Note: calibration-inputs.md literally says 'm_n = m_p + Q_β' but
+    # this drops m_e; the standard Q_β identity is Q_β(n) = m_n − m_p − m_e
+    # (kinetic energy released in n → p + e + ν̄), so the physically-
+    # consistent relation is m_n = m_p + Q_β + m_e. The +0.05% residual
+    # the paper documents in np-discrepancy-resolution.md is exactly m_e.
+    # Per Gemini review on PR #447: use the m_e-inclusive form to avoid
+    # propagating a 0.51 MeV/neutron error into M_atom_tower.
     m_p_calibrated = M_P_MEV       # input scaffold (Skein resolution open)
-    m_n_derived    = m_p_calibrated + Q_NEUTRON_MEV
-    Delta_m_np_derived = m_n_derived - m_p_calibrated  # = Q_β + m_e
-    # Note: Δm_np_derived above is m_n - m_p = Q_β + m_e (NOT the bare Q_β).
-    # The splitting formula uses (μ_d - μ_u), which is sourced from Δm_np.
+    m_n_derived    = m_p_calibrated + Q_NEUTRON_MEV + M_E_MEV
+    Delta_m_np_derived = m_n_derived - m_p_calibrated  # = Q_β + m_e ≈ 1.293 MeV
+    # The splitting formula uses (μ_d - μ_u), sourced from Δm_np.
     mu_d_minus_u   = Delta_m_np_derived / SLOPE
 
     # Step B — back-solve μ_u from m_p Skein-pair formula

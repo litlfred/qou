@@ -19,8 +19,9 @@ meaningful Term-6 contribution whose magnitude this script measures.
 
 Input:
   folio-assistant/computations/habiro-coefficients-atomic.witness.json
-  (provides full polynomial tr_M(T_w, q) for proton, neutron;
-   deuteron currently MISSING in that witness)
+  (provides full polynomial tr_M(T_w, q) for proton, neutron, deuteron;
+   T, ³He, ⁴He+ pending — symbolic Hoefsmit at H_9+ requires the
+   numerical-interpolation path of habiro_coefficients_interpolate.py)
 
 This script:
   1. Loads atom-specific tr_M(T_w, q) as a rational function in q
@@ -173,18 +174,31 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
 
     # Compute Term-6 sum
     total, per_n = mittag_leffler_term6(tr_M_expr, Q_0, n_max=n_max)
+    # Flag whether any higher-order pole was detected (status=incomplete).
+    higher_order_detected = any(
+        any(r.get("residue") == "HIGHER-ORDER POLE" for r in n_data["roots"])
+        for n_data in per_n
+    )
+    status = ("incomplete-higher-order-pole-detected" if higher_order_detected
+              else "complete-simple-poles-only")
     print(f"    Term-6 Mittag-Leffler total (n≤{n_max}) = {total:.6e}")
     print(f"    in MeV: {total * M_E_MEV:.6e}")
+    print(f"    status: {status}")
     for n_data in per_n:
         n = n_data["n"]
         cn = n_data["n_real_contribution"]
         print(f"      n={n}: contribution = {cn:+.6e}")
+    # Record term6_in_MeV as None when status is incomplete to avoid
+    # consumers treating a partial sum as the full Term-6 contribution.
+    term6_value = None if higher_order_detected else total * M_E_MEV
     return {
         "atom": atom_label,
         "n_max": n_max,
         "tr_M_at_q0_polynomial": tr_M_at_q0_check,
-        "term6_total_real": total,
-        "term6_in_MeV": total * M_E_MEV,
+        "term6_simple_residue_partial": total,
+        "term6_in_MeV": term6_value,
+        "status": status,
+        "higher_order_pole_detected": higher_order_detected,
         "per_n_breakdown": per_n,
     }
 
@@ -218,12 +232,16 @@ def main():
     print("Conclusion: Term 6 magnitude vs A≥5 5–20% errors")
     print("=" * 78)
     for r in out_atoms:
-        print(f"  {r['atom']:<25} Term-6 = {r['term6_in_MeV']:+.6f} MeV")
+        if r['term6_in_MeV'] is None:
+            print(f"  {r['atom']:<25} Term-6 = INCOMPLETE ({r['status']})")
+        else:
+            print(f"  {r['atom']:<25} Term-6 = {r['term6_in_MeV']:+.6f} MeV ({r['status']})")
     print()
-    print("NOTE: this witness has only proton and neutron Habiro data.")
-    print("To assess Term 6 for D, T, ³He, ⁴He, ⁶Li–¹⁶O (the A≥5 atoms")
+    print("NOTE: upstream Habiro witness now has proton, neutron, deuteron.")
+    print("To assess Term 6 for T, ³He, ⁴He, ⁶Li–¹⁶O (the A≥5 atoms")
     print("with large residuals), need to extend habiro-coefficients-")
-    print("atomic.witness.json to those atoms first.")
+    print("atomic.witness.json to those atoms via the numerical-")
+    print("interpolation path (habiro_coefficients_interpolate.py).")
 
     # Build witness
     w = (
@@ -233,9 +251,12 @@ def main():
             "prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} "
             "Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using "
             "symbolic Habiro residues + 1/(q_0 − ζ) kernel up to "
-            "cutoff n_max=6. Currently only proton, neutron have "
-            "Habiro coefficients in the upstream witness; D, T, ³He, "
-            "⁴He need extension to assess A≥5 5–20% error closure."
+            "cutoff n_max=6. Upstream Habiro witness has proton, neutron, "
+            "and deuteron; T, ³He, ⁴He+ pending — extension via "
+            "habiro_coefficients_interpolate.py is the next step for "
+            "A≥5 5–20% error assessment. Higher-order poles (e.g. "
+            "deuteron at ζ_4) are currently flagged but not contributed; "
+            "Laurent-expansion handling is a follow-up."
         )
         .set_content_block("prop:full-pole-structure-mass-trace")
         .add_parameter("q_0", Q_0)

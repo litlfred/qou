@@ -1,16 +1,16 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T21:03:19.774933+00:00",
-  "commitSha": "ebce2739ea4f9bfe52d5bc02b9155abed5d861a9",
+  "computedAt": "2026-04-27T21:31:44.156851+00:00",
+  "commitSha": "7f74e1458b4e5ebe5860dfa3f7a7a616312b968e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 15,
   "computation": "term6-full-pole-sum",
   "scriptFile": "term6_full_pole_sum.py",
-  "scriptHash": "c96d7aa82ef2",
-  "scriptCommitSha": "ab45bda4cd9fda8b3555021871bd5fa7fa60097d",
-  "description": "Term 6 Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using symbolic Habiro residues + 1/(q_0 − ζ) kernel up to cutoff n_max=6. Currently only proton, neutron have Habiro coefficients in the upstream witness; D, T, ³He, ⁴He need extension to assess A≥5 5–20% error closure.",
+  "scriptHash": "361d8473c2b2",
+  "scriptCommitSha": "d403037286699f562f88ee42e507eb9cb56250b0",
+  "description": "Term 6 Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using symbolic Habiro residues + 1/(q_0 − ζ) kernel up to cutoff n_max=6. Upstream Habiro witness has proton, neutron, and deuteron; T, ³He, ⁴He+ pending — extension via habiro_coefficients_interpolate.py is the next step for A≥5 5–20% error assessment. Higher-order poles (e.g. deuteron at ζ_4) are currently flagged but not contributed; Laurent-expansion handling is a follow-up.",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -23,8 +23,10 @@
         "atom": "p (proton, A=1)",
         "n_max": 6,
         "tr_M_at_q0_polynomial": 2.12258250945273,
-        "term6_total_real": 0.0,
+        "term6_simple_residue_partial": 0.0,
         "term6_in_MeV": 0.0,
+        "status": "complete-simple-poles-only",
+        "higher_order_pole_detected": false,
         "per_n_breakdown": [
           {
             "n": 2,
@@ -128,8 +130,10 @@
         "atom": "n (neutron, A=1)",
         "n_max": 6,
         "tr_M_at_q0_polynomial": 1.5893934459539052,
-        "term6_total_real": 0.0,
+        "term6_simple_residue_partial": 0.0,
         "term6_in_MeV": 0.0,
+        "status": "complete-simple-poles-only",
+        "higher_order_pole_detected": false,
         "per_n_breakdown": [
           {
             "n": 2,
@@ -233,8 +237,10 @@
         "atom": "D (deuteron, A=2)",
         "n_max": 6,
         "tr_M_at_q0_polynomial": 0.17743692421543206,
-        "term6_total_real": 0.0,
-        "term6_in_MeV": 0.0,
+        "term6_simple_residue_partial": 0.0,
+        "term6_in_MeV": null,
+        "status": "incomplete-higher-order-pole-detected",
+        "higher_order_pole_detected": true,
         "per_n_breakdown": [
           {
             "n": 2,

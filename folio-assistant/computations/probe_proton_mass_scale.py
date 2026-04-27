@@ -160,10 +160,14 @@ def candidate_2_frobenius(p_cert, y_n3):
 
 
 def candidate_3_q_factorial():
-    """Quantum factorial [n]_q! at various n.
+    """Quantum factorial [n]_q! at n = 1, 2, ..., 24.
 
     [n]_q! = ∏_{k=1}^{n} [k]_q, where [k]_q = (q^k - q^{-k})/(q - q^{-1}).
     Look for n with [n]_q! / m_p_AME / m_e_AME ratio = TARGET_RATIO.
+
+    n=24 is the cutoff: at q_0 ≈ 1.11, [24]_q! ≈ 1.7e27, far above
+    target 1836. The interesting region (where ratio crosses 1) is
+    between n=6 ([6]_q! ≈ 838) and n=7 ([7]_q! ≈ 6396).
     """
     results = []
     factorial = 1.0
@@ -251,6 +255,14 @@ def candidate_4_max_tr_m(p_cert, y_n3):
 def main():
     p_cert = load_proton_blocks()
     y_n3 = load_y_lambda(3)
+    if p_cert is None:
+        sys.exit("ERROR: proton certificate not found in "
+                 "joint-tower-sdp-rust.witness.json — required input. "
+                 "Re-run the joint-tower SDP pipeline first.")
+    if not y_n3:
+        sys.exit("ERROR: y_lambda data for n=3 not found in "
+                 "y-lambda-wenzl-witness.json — required input. "
+                 "Re-run the Wenzl-bridge pipeline first.")
 
     c1 = candidate_1_subtower(p_cert)
     c2 = candidate_2_frobenius(p_cert, y_n3)
