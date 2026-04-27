@@ -307,7 +307,7 @@ theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
       (fun n hn => let ⟨k, hk⟩ := hn; hk ▸ by simp; omega))
     (obstruction_finite_divisors χ hχ))
   intro n ⟨hn, hndvd⟩
-  exact ⟨hn, fun ⟨_, hdvd⟩ => hndvd hdvd⟩
+  exact ⟨hn, fun hdvd => hndvd ⟨hn, hdvd⟩⟩
 
 /-- **Kummer divisibility criterion**: `κ₀ mod n = 0` iff `n ∣ χ(A)`.
     This is the bridge between the Kummer exact sequence in sheaf

@@ -41,12 +41,8 @@ open QOU.Descartes
 
 /-! ## §1  The NF of σ₀σ₁⁻¹ -/
 
-/-- NF(σ₀σ₁⁻¹) = −HA·σ₀ + 1·L₊.
-    No γ, σ₁, L₋, or e⁻ components.
-
-    Proof: σ₀(σ₁ − HA) = σ₀σ₁ − HA·σ₀ = L₊ − HA·σ₀.
-    Both L₊ and σ₀ are NF basis elements, so no further reduction. -/
 /-- NF of σ₀σ₁⁻¹ = L₊ − HA·σ₀.
+    Proof: σ₀(σ₁ − HA) = σ₀σ₁ − HA·σ₀ = L₊ − HA·σ₀.
     Coefficients: c_γ=0, c_σ₀=−HA, c_σ₁=0, c_L₊=1, c_L₋=0, c_e=0. -/
 noncomputable def unit_nf : Fin 6 → R_q
   | 0 => 0           -- γ
