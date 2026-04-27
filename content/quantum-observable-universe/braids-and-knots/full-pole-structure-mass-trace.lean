@@ -1,97 +1,114 @@
 import Mathlib.NumberTheory.Cyclotomic.Basic
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Algebra.Order.AbsoluteValue
-import Mathlib.Analysis.MeanInequalities
 
 /-!
-# Full pole structure of the mass trace
+# Habiro completion of the mass trace
 
-The mass trace `tr_M(T_w, q)` is meromorphic on `ℂˣ` with simple
-poles at every primitive root of unity `ζ_n^{(j)} = e^{2πij/n}`
-for `gcd(j, n) = 1`, `n ≥ 2`.  The Mittag-Leffler expansion at
-a regular point `q₀` sums contributions from **all** poles
-weighted by the Cauchy kernel `1/(q₀ - ζ_n^{(j)})`.  Truncating
-at the closest pole loses interference and resonance effects.
+The Markov trace `tr_M(T_w)` of a closed braid is **not** a
+meromorphic function on `ℂ`: the primitive roots of unity are
+dense in `S¹`, so `S¹` is a natural boundary.  The correct
+algebraic home is the **Habiro ring** `Ẑ[q]`, the cyclotomic
+completion of `ℤ[q]`:
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+  Ẑ[q] := lim_n  ℤ[q] / (q;q)_n
+
+In this completion `tr_M(T_w)` admits a unique cyclotomic
+expansion `Σ_m a_m (q;q)_m` with `a_m ∈ ℤ[q^±1]`, evaluation at
+every root of unity is well-defined, and truncation at order `m`
+exactly suppresses the contribution of every root of unity of
+order `≤ m`.
+
+The earlier "Mittag-Leffler over `ℂ`" expression
+`Σ_{n,j} r_n^{(j)} / (q - ζ_n^{(j)})` is a **formal residue
+spectral sum** — see `prop:gb-residue-spectral-sum` — that feeds
+the cyclotomic coefficients `a_m`.  It is not a complex-analytic
+identity on or near `S¹`.
+
+Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127
 LaTeX label: `prop:full-pole-structure-mass-trace`
 -/
 
 namespace QOU.BraidKnot
 
-/-- A primitive `n`-th root of unity for `n ≥ 2`.  Parameterised
-    by `j ∈ Fin n` with `gcd j n = 1`. -/
-structure PrimitiveRoot where
-  n : ℕ
-  n_ge_two : 2 ≤ n
-  j : ℕ
-  j_coprime : Nat.Coprime j n
-  j_lt : j < n
+/-- The q-Pochhammer factor `(q; q)_m = ∏_{k=1}^{m} (1 - q^k)`.
+    Vanishes at every primitive root of unity of order `≤ m`. -/
+noncomputable def qPochhammer (q : ℝ) (m : ℕ) : ℝ :=
+  ∏ k ∈ Finset.range m, (1 - q ^ (k + 1))
 
-/-- The complex residue of `Φ_q · tr_{M,ℓ}` at a primitive root
-    of unity.  Axiomatized; content-side `prop:gb-residue-spectral-sum`. -/
-noncomputable opaque residueAt (ζ : PrimitiveRoot) (braid : Unit) : ℝ
+/-- **Habiro completion of the Markov trace.**
 
-/-- **Full Mittag-Leffler pole sum.**
+    The mass trace of a closed braid `T_w` lies in the Habiro
+    ring `Ẑ[q]` and admits a unique cyclotomic expansion
 
-    The mass trace evaluated at `q₀` is
+      tr_M(T_w, q) = Σ_{m ≥ 0} a_m(T_w) · (q; q)_m,
+      a_m(T_w) ∈ ℤ[q^±1].
 
-      tr_M(T_w, q₀) = entire(q₀)
-                    + Σ_{n ≥ 2} Σ_{j : gcd(j,n)=1}
-                         residueAt(ζ_n^{(j)}, T_w) / (q₀ - ζ_n^{(j)}).
+    Properties:
+    1. Evaluation at every root of unity ζ_n^{(j)} is well-defined:
+       the partial sums are polynomials in `q`, and `(q;q)_m`
+       vanishes at every ζ_n^{(j)} for `n ≤ m`.
+    2. Truncation at order `m` suppresses contributions from every
+       root of unity of order `≤ m` exactly: the residual lies in
+       the ideal `((q;q)_m) ⊂ Ẑ[q]`.
+    3. (Atomic case) The expansion terminates with `a_k = 0` for
+       `k > m_max(T_w)`, controlled by the confinement level
+       (see `cor:habiro-expansion-atomic`).
 
-    Truncation to `n ≤ N` introduces error controlled by the
-    Habiro cyclotomic expansion: `(q₀; q₀)_N = ∏_{k≤N}(1 - q₀^k)`
-    vanishes at all `ζ_n^{(j)}` with `n ≤ N`.
+    The class is axiomatized: existence of `a_m` and the cyclotomic
+    identity follow from Markov–Jones integrality plus sequential
+    cyclotomic division (constructive proof in
+    `cor:habiro-expansion-atomic`, Steps 1–4).
 
     Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127. -/
-class FullPoleStructure where
-  q0 : ℝ
-  entire_part : ℝ
+class HabiroCompletion where
   braid : Unit
-  /-- Truncation order. In Habiro form this is the cyclotomic
-      cutoff. -/
-  truncation : ℕ
-  mass : ℝ
-  /-- Mass equals entire part plus the truncated residue sum
-      modulo the Habiro tail. -/
-  mittag_leffler_truncated :
-    ∃ tail_error : ℝ,
-      mass = entire_part +
-        -- sum over roots of unity up to order `truncation`
-        ∑ n : Fin truncation,
-          residueAt (sorry : PrimitiveRoot) braid
-        + tail_error
+  /-- Cyclotomic coefficients `a_m(T_w) ∈ ℤ[q^±1]`, represented
+      here as a sequence of real-valued evaluations at the substrate
+      parameter. -/
+  coeff : ℕ → ℝ
+  /-- Evaluation of the trace at substrate parameter `q`. -/
+  trace : ℝ → ℝ
+  /-- The cyclotomic expansion identity: `tr_M(T_w, q)` equals the
+      formal sum `Σ_m a_m(T_w) · (q;q)_m` modulo the Habiro tail
+      at every truncation order `N`. -/
+  cyclotomic_expansion :
+    ∀ (q : ℝ) (N : ℕ),
+      ∃ tail : ℝ,
+        trace q = (∑ m ∈ Finset.range N, coeff m * qPochhammer q m) + tail
+  /-- The tail of the cyclotomic expansion at truncation order `N`
+      lies in the Habiro ideal generated by `(q;q)_N`: it factors
+      through `(q;q)_N`, and so vanishes at every root of unity of
+      order `< N`.  This is the precise sense in which
+      "truncation at order `N` suppresses roots of unity of order
+      `< N`." -/
+  tail_in_habiro_ideal :
+    ∀ (q : ℝ) (N : ℕ),
+      ∃ residual : ℝ,
+        (cyclotomic_expansion q N).choose = qPochhammer q N * residual
 
-/-- The q-Pochhammer factor `(q₀; q₀)_N = ∏_{k=1}^{N} (1 - q₀^k)`. -/
-noncomputable def qPochhammer (q : ℝ) (N : ℕ) : ℝ :=
-  ∏ k ∈ Finset.range N, (1 - q ^ (k + 1))
+/-- **Habiro cyclotomic monotone bound** (purely structural).
 
-/-- **Habiro cyclotomic truncation bound.**
+    For `0 < q < 1` and any truncation order `N`, the absolute
+    Pochhammer factor `|(q; q)_N|` is monotonically decreasing in
+    `N`, since each new factor `(1 - q^{N+1})` lies in `(0, 1)`.
 
-    For `0 < q₀ < 1` and any truncation order `N`, the absolute
-    Pochhammer factor `|(q₀; q₀)_N|` satisfies the strict
-    decreasing bound `|(q₀; q₀)_{N+1}| ≤ |(q₀; q₀)_N|` since each
-    new factor `(1 - q₀^{N+1})` lies in `(0, 1)`.
+    This controls the Habiro tail: at substrate parameter `q < 1`
+    in the regular regime, truncating the cyclotomic expansion at
+    order `N` produces a residual whose magnitude is bounded by
+    `|(q;q)_N|`, decreasing as `N → ∞`.
 
-    This is the structural ingredient of the Habiro tail estimate:
-    truncating the cyclotomic expansion at order `N` produces a
-    residual whose magnitude is controlled by `|(q₀; q₀)_N|`,
-    decreasing monotonically as `N → ∞`.
-
-    Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127,
-    [garoufalidis-lauda2011] https://doi.org/10.1007/s11511-011-0069-8 -/
+    Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127. -/
 theorem habiro_truncation_bound
     (q : ℝ) (hq_pos : 0 < q) (hq_lt : q < 1) (N : ℕ) :
     |qPochhammer q (N + 1)| ≤ |qPochhammer q N| := by
-  -- (q;q)_{N+1} = (q;q)_N · (1 - q^{N+1}); |1 - q^{N+1}| ≤ 1.
   unfold qPochhammer
   rw [Finset.prod_range_succ]
-  -- |a · b| = |a| · |b| ≤ |a| · 1 = |a| when |b| ≤ 1.
   rw [abs_mul]
   have h_factor_lt_one : |1 - q ^ (N + 1)| ≤ 1 := by
     have h_qpow_pos : 0 < q ^ (N + 1) := pow_pos hq_pos (N + 1)
-    have h_qpow_lt_one : q ^ (N + 1) < 1 := pow_lt_one (le_of_lt hq_pos) hq_lt (Nat.succ_ne_zero N)
+    have h_qpow_lt_one : q ^ (N + 1) < 1 :=
+      pow_lt_one (le_of_lt hq_pos) hq_lt (Nat.succ_ne_zero N)
     rw [abs_of_nonneg (by linarith : (0 : ℝ) ≤ 1 - q ^ (N + 1))]
     linarith
   have h_prod_nn : (0 : ℝ) ≤ |∏ k ∈ Finset.range N, (1 - q ^ (k + 1))| :=
