@@ -241,8 +241,15 @@ if __name__ == "__main__":
     print("duplicate term 1's information and term 6 is open) would be")
     print("the integrated target.")
 
+    # term1 path delegates to light_isotope_sweep.tr_M_at_q0, which
+    # uses chi_sym_alt_closed_form.{chi_sym_closed_form,chi_alt_closed_form}
+    # for the 1-dim irreps λ = (n,) and λ = (1,)*n; the remaining
+    # higher-dim partitions still go through the seminormal Hoefsmit
+    # numeric evaluator.
+    from light_isotope_sweep import CLOSED_FORM_USED as _CLOSED_FORM_USED
     witness = {
         "computation": "mass-formula-6term",
+        "closed_form_used": _CLOSED_FORM_USED,
         "description": (
             "Integrated 6-term mass formula computation for light "
             "isotopes. Reports each term separately plus binding "

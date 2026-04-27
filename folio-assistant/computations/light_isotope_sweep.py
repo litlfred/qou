@@ -43,12 +43,16 @@ from hecke_characters import (
     partitions_of, build_seminormal_matrices, qfac, dim_q,
 )
 from hecke_character_symbolic import atomic_braid_to_crossings
+from chi_sym_alt_closed_form import (
+    chi_sym_closed_form, chi_alt_closed_form,
+)
 
 
 M_E = M_E_MEV
 Q0 = _Q_CANONICAL
 H_VAL = float(Q0 - 1.0 / Q0)
 FROB_N3 = M_E * (2.0 + 1.0 / (Q0 + 1.0 / Q0))  # m_e · (2 + 1/[2]_q)
+CLOSED_FORM_USED = True  # use exact 1-dim irrep closed forms for sym/alt
 
 
 def chi_lambda_numeric(shape, crossings):
@@ -92,9 +96,21 @@ def tr_M_at_q0(Z, N, include_inter):
     total = 0.0
     per_lambda = []
     t_total = 0.0
+    sym_shape = (k,)
+    alt_shape = (1,) * k
     for shape in partitions_of(k):
         t0 = time.time()
-        chi, d = chi_lambda_numeric(shape, crossings)
+        used_closed_form = False
+        if CLOSED_FORM_USED and shape == sym_shape:
+            chi = chi_sym_closed_form(crossings, Q0)
+            d = 1
+            used_closed_form = True
+        elif CLOSED_FORM_USED and shape == alt_shape:
+            chi = chi_alt_closed_form(crossings, Q0)
+            d = 1
+            used_closed_form = True
+        else:
+            chi, d = chi_lambda_numeric(shape, crossings)
         dt = time.time() - t0
         t_total += dt
         if d == 0:
@@ -106,6 +122,7 @@ def tr_M_at_q0(Z, N, include_inter):
         per_lambda.append({
             "shape": shape, "dim": d, "w_lambda": w,
             "chi_lambda": chi, "contribution": contrib,
+            "closed_form": used_closed_form,
         })
     return total, per_lambda, t_total
 
@@ -219,6 +236,7 @@ if __name__ == "__main__":
 
     witness = {
         "computation": "light-isotope-sweep",
+        "closed_form_used": CLOSED_FORM_USED,
         "description": (
             "Schur-Weyl + Frobenius binding predictions for light "
             "isotopes (D, T, ³He, ⁴He) with β-decay calibration at A=1. "
