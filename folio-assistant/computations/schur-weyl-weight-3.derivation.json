@@ -15,7 +15,7 @@
       "output_value": "[k]_q := (q^k - q^{-k})/(q - q^{-1})",
       "trust_basis": "axiom",
       "jet_order": 0,
-      "lean_ref": "qou:QOU.BraidKnot.qInteger",
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
       "citation": "kassel1995",
       "notes": "Hecke energy axiom underwrites the (q - q^{-1}) normalisation (CLAUDE.md §7a).  q-integers are the canonical replacement for ordinary integers in every Hecke-algebra trace formula."
     },
@@ -51,7 +51,7 @@
       "trust_basis": "mathlib-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "lean_ref": "qou:QOU.BraidKnot.SchurWeyl.qHookFormula",
+      "lean_ref": "qou:STUB:SchurWeyl.qHookFormula",
       "citation": "kassel1995",
       "notes": "Mathlib has `Mathlib.RepresentationTheory.QuantumGroup.SchurWeyl` (stub) and the q-hook formula via `Mathlib.Combinatorics.Young.YoungDiagram`."
     },
@@ -70,7 +70,7 @@
       "trust_basis": "mathlib-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "lean_ref": "qou:QOU.BraidKnot.HeckeWedderburn",
+      "lean_ref": "qou:STUB:HeckeWedderburn",
       "citation": "kassel1995",
       "notes": "f_λ = #SYT(λ) is classical (Mathlib has `Mathlib.Combinatorics.Young.SemistandardTableau`)."
     },
@@ -87,7 +87,7 @@
       "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "lean_ref": "qou:QOU.BraidKnot.MarkovWeight",
+      "lean_ref": "qou:STUB:MarkovWeight",
       "citation": "kassel1995",
       "notes": "The (q - q^{-1})^{n - l(λ)} prefactor arises from Hoefsmit's normalisation of the simple reps of H_n(q); it ensures the Markov stabilisation tr_M(α σ_n) = z · tr_M(α) holds with the canonical stabilisation parameter z = 1/(q^{1/2} + q^{-1/2})."
     }

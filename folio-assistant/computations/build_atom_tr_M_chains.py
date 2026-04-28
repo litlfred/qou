@@ -34,6 +34,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import (  # noqa: E402
+    Q_0,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -46,12 +47,18 @@ HERE = Path(__file__).parent
 # Canonical numerical targets — shared with the realizer + cross-validator
 # witnesses on this branch and term6_full_pole_sum.py on
 # claude/continue-pr-442-DJRWm.
+# Target values match the committed `*-tr-M-q0.derivation.json`
+# leaf values exactly; rerunning the builder must produce bit-stable
+# JSON (Copilot review on #473).  Cross-checked against the
+# realizer + cross-validator witnesses on this branch and
+# term6_full_pole_sum.py on claude/continue-pr-442-DJRWm.
 TARGETS = {
-    "p":  ("p (proton, A=1)",   1, 0, False, 2.1225825094527304, 3, 6),  # 3 strands, 6 crossings
-    "n":  ("n (neutron, A=1)",  0, 1, False, 1.5893934459539052, 3, 5),
-    "D":  ("D (deuteron, A=2)", 1, 1, True,  0.1774369242154321, 6, 12),
+    "p":  ("p (proton, A=1)",   1, 0, False, 2.12258250945273,    3, 6),
+    "n":  ("n (neutron, A=1)",  0, 1, False, 1.5893934459539052,  3, 5),
+    "D":  ("D (deuteron, A=2)", 1, 1, True,  0.17743692421543206, 6, 12),
 }
-Q_0 = 1.1099785955541805
+# Q_0 imported from `derivation_chain` (single source of truth per
+# CLAUDE.md §7aa); do not redefine locally.
 
 
 @dataclass

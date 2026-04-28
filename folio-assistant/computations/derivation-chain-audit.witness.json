@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-28T21:04:08.764580+00:00",
-  "commitSha": "8d563d99b94e66fd8f49b49d614fe144d3086959",
+  "computedAt": "2026-04-28T22:39:21.990682+00:00",
+  "commitSha": "f7cbcf95f7d749fd67070b437d1ecbac2ecbf4b1",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -12,10 +12,10 @@
     },
     {
       "name": "leaf_value[D-tr-M-q0.derivation]",
-      "computed": 0.1774369242154321,
-      "expected": 0.1774369242154321,
+      "computed": 0.17743692421543206,
+      "expected": 0.17743692421543206,
       "passed": true,
-      "tolerance": 1.7743692421543213e-10
+      "tolerance": 1.7743692421543207e-10
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
@@ -73,16 +73,16 @@
   "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
-  "scriptHash": "1a04e6a44810",
-  "scriptCommitSha": "8d563d99b94e66fd8f49b49d614fe144d3086959",
+  "scriptHash": "3185120ad3c7",
+  "scriptCommitSha": "9bd76625e71bae8272fa36172dfd9bcc0ace746d",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "data": {
     "chain_results": [
       {
         "chain": "D-tr-M-q0.derivation.json",
         "target": "tr_M(D, q_0)",
-        "target_value": 0.1774369242154321,
-        "computed_value": 0.1774369242154321,
+        "target_value": 0.17743692421543206,
+        "computed_value": 0.17743692421543206,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -104,8 +104,7 @@
         "issues": [],
         "trust_summary": {
           "axiom": 2,
-          "mathlib-cited": 1,
-          "derived": 1,
+          "derived": 2,
           "computational": 1
         },
         "has_script_frontier": false

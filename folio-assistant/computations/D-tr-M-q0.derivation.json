@@ -1,9 +1,9 @@
 {
   "target": "tr_M(D, q_0)",
-  "target_value": 0.1774369242154321,
+  "target_value": 0.17743692421543206,
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
-  "description": "Step-by-step derivation of D (deuteron, A=2)'s archimedean Markov trace value tr_M(D, q_0) ≈ 0.1774369242154321 from the seven first-principles entrypoints.  Per the methodology directive (post-#472), every numerical claim must trace back here.  SCRIPT_CITED steps are the computational frontier; each needs its own derivation chain to push back the frontier.",
+  "description": "Step-by-step derivation of D (deuteron, A=2)'s archimedean Markov trace value tr_M(D, q_0) ≈ 0.17743692421543206 from the seven first-principles entrypoints.  Per the methodology directive (post-#472), every numerical claim must trace back here.  SCRIPT_CITED steps are the computational frontier; each needs its own derivation chain to push back the frontier.",
   "steps": [
     {
       "name": "Hecke algebra H_6(q) presentation",
@@ -117,7 +117,7 @@
         "tr_M_symbolic"
       ],
       "output_name": "tr_M_q0",
-      "output_value": 0.1774369242154321,
+      "output_value": 0.17743692421543206,
       "trust_basis": "computational",
       "jet_order": 0,
       "gb_filtration_level": 0,

@@ -35,6 +35,7 @@ computational-only and what the open frontier looks like.
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from dataclasses import dataclass
@@ -50,6 +51,24 @@ HERE = Path(__file__).parent
 # The audit's own output filename — excluded from the trust audit so
 # the audit does not classify itself as `computational-only`.
 AUDIT_WITNESS_NAME = "derivation-chain-audit.witness.json"
+
+# Repo root resolution: prefer the `QOU_REPO_ROOT` env var if set
+# (lets CI / external runners override the relative path).  Default
+# walks up from this file via `.git` discovery, falling back to
+# `HERE.parent.parent` (i.e. <repo>/folio-assistant/computations →
+# <repo>) which is the standard layout.
+def _resolve_repo_root() -> Path:
+    env_root = os.environ.get("QOU_REPO_ROOT")
+    if env_root:
+        return Path(env_root).resolve()
+    cur = HERE.resolve()
+    for ancestor in [cur, *cur.parents]:
+        if (ancestor / ".git").exists():
+            return ancestor
+    return HERE.parent.parent
+
+
+REPO_ROOT = _resolve_repo_root()
 
 SCRIPT_REGEX = re.compile(
     r"script:\s*([\w\-./]+\.(?:py|sing|sage|sh))"
@@ -104,22 +123,48 @@ def validate_chain(chain_path: Path) -> ChainResult:
     #    drift between schema and validator.
     defined: set[str] = {fp.value for fp in FirstPrinciple}
     structural_issues: list[str] = []
-    for s in steps:
+    for i, s in enumerate(steps):
+        # 1. inputs reference earlier outputs or first principles
         for inp in s.get("inputs", []):
             if inp not in defined:
                 structural_issues.append(
                     f"{s['name']!r}: input {inp!r} not defined"
                 )
-        # SCRIPT_CITED steps must reference an existing script.
-        if s.get("trust_basis") == "script-cited":
+
+        trust_basis = s.get("trust_basis")
+
+        # 2. AXIOM / MATHLIB_CITED / LEAN_PROVEN must declare lean_ref
+        if trust_basis in {"axiom", "mathlib-cited", "lean-proven"} \
+                and not s.get("lean_ref"):
+            structural_issues.append(
+                f"{s['name']!r}: {trust_basis} step requires lean_ref"
+            )
+
+        # 3. SCRIPT_CITED must include a `script:` note + the cited
+        #    script must exist on disk
+        if trust_basis == "script-cited":
             notes = s.get("notes") or ""
-            for m in SCRIPT_REGEX.finditer(notes):
-                script_path = HERE.parent.parent / m.group(1)
+            matches = list(SCRIPT_REGEX.finditer(notes))
+            if not matches:
+                structural_issues.append(
+                    f"{s['name']!r}: script-cited step requires a "
+                    "`script: <path>` note"
+                )
+            for m in matches:
+                script_path = REPO_ROOT / m.group(1)
                 if not script_path.exists():
                     structural_issues.append(
                         f"{s['name']!r}: cited script {m.group(1)!r} "
                         f"not found at {script_path}"
                     )
+
+        # 4. COMPUTATIONAL is the leaf only
+        if trust_basis == "computational" and i != len(steps) - 1:
+            structural_issues.append(
+                f"{s['name']!r}: computational step must be the final "
+                "step (numerical eval is leaf-only)"
+            )
+
         defined.add(s["output_name"])
     structural_ok = not structural_issues
 

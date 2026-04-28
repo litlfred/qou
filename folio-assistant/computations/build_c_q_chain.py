@@ -88,7 +88,11 @@ def build() -> DerivationChain:
         inputs=["q_connection_A_q", FirstPrinciple.FROBENIUS_PAIRING.value],
         output_name="reeb_decomposition",
         output_value="A_H ⊕ ⟨ι_ξ A, Θ⟩ — Frobenius-dual splitting of A",
-        trust_basis=TrustBasis.MATHLIB_CITED,
+        # DERIVED rather than MATHLIB_CITED: `QOU.ReebDecomposition` is
+        # a local Lean structure (built on top of Mathlib's contact
+        # geometry but itself a QOU-internal construction).  Per
+        # Copilot review on #473.
+        trust_basis=TrustBasis.DERIVED,
         lean_ref="qou:QOU.ReebDecomposition",
         citation="manuscript:§Reeb-foliation",
         jet_order=1,

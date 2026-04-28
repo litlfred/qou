@@ -42,7 +42,7 @@
       "trust_basis": "mathlib-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "lean_ref": "qou:QOU.BraidKnot.SchurWeyl.SYT",
+      "lean_ref": "qou:STUB:SchurWeyl.SYT",
       "citation": "kassel1995",
       "notes": "Mathlib has `Mathlib.Combinatorics.Young.YoungDiagram` and `Mathlib.Combinatorics.Young.SemistandardTableau`; the SYT count for λ = (2,1) is the dimension f_λ = 2 of the Hoefsmit block."
     },
@@ -84,7 +84,7 @@
       "trust_basis": "axiom",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "lean_ref": "qou:QOU.BraidKnot.HoefsmitRep",
+      "lean_ref": "qou:STUB:HoefsmitRep",
       "citation": "kassel1995",
       "notes": "Categorical action axiom: the braid generator σ_i acts on V^{⊗n} via the R-matrix; the Hoefsmit matrix is the projection of that action onto the λ-isotypic block.  Hecke energy axiom fixes the eigenvalues +q and −q^{-1} of σ_i (CLAUDE.md §7a)."
     },
@@ -99,7 +99,7 @@
       "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "lean_ref": "qou:QOU.BraidKnot.HoefsmitRep.matrix",
+      "lean_ref": "qou:STUB:HoefsmitRep.matrix",
       "citation": "kassel1995",
       "notes": "Pure algebraic substitution; one-line application of the recipe in step 3 to the contents from step 2."
     },
@@ -115,7 +115,7 @@
       "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "lean_ref": "qou:QOU.BraidKnot.HoefsmitRep.character",
+      "lean_ref": "qou:STUB:HoefsmitRep.character",
       "citation": "kassel1995",
       "notes": "Trace of an explicit 2x2 matrix; algebraic simplification using q_int(2) = q + q^{-1} and q_int(3) = q^2 + 1 + q^{-2}."
     }

@@ -106,25 +106,29 @@ as the single source of truth for the methodology rollout state.
 
 | Chain | Target | Trust profile | Frontier? |
 |-------|--------|---------------|-----------|
-| `c-q-q0.derivation.json` | `c_q(q_0) ≈ 9.0926` | 2 axiom + 1 mathlib + 1 derived + 1 computational | **fully-trusted** |
+| `c-q-q0.derivation.json` | `c_q(q_0) ≈ 9.0926` | 2 axiom + 0 mathlib + 2 derived + 1 computational | **fully-trusted** |
+| `schur-weyl-weight-3.derivation.json` | `w_(3)(q)` symbolic | 1 axiom + 2 mathlib + 2 derived | **fully-trusted** |
+| `hoefsmit-rep-21-sigma1.derivation.json` | `ρ^{(2,1)}(σ_1)` symbolic | 1 axiom + 1 mathlib + 3 derived | **fully-trusted** |
 | `p-tr-M-q0.derivation.json` | `tr_M(p, q_0) ≈ 2.1226` | 1 axiom + 1 mathlib + 5 script + 1 computational | script-frontier |
 | `n-tr-M-q0.derivation.json` | `tr_M(n, q_0) ≈ 1.5894` | same | script-frontier |
 | `D-tr-M-q0.derivation.json` | `tr_M(D, q_0) ≈ 0.1774` | same | script-frontier |
+
+The two new frontier-paydown chains (`schur-weyl-weight-3`,
+`hoefsmit-rep-21-sigma1`) discharge 4 of the 5 SCRIPT_CITED
+steps in the atom chains: Schur-Weyl weights, Wedderburn block
+dimensions, Hoefsmit-recipe categorical action, and Frobenius
+pairing.  Only the atomic-braid-recipe step remains as
+SCRIPT_CITED.
 
 ## Open frontier (next chains to author)
 
 Roughly in priority order:
 
-1. `schur_weyl_weight` chain — pushes back the Schur-Weyl weight
-   step in all three atom chains (currently SCRIPT_CITED).
-2. `hecke_character` chain — pushes back the Hoefsmit
-   evaluation + Frobenius pairing steps.
-3. `atomic_braid_recipe` chain — pushes back the atomic-braid
-   word construction step.
-4. Once the above three land, the atom chains become
-   **fully-trusted** with no `SCRIPT_CITED` frontier.
-5. After that: `c_q`-derived constants (`ℏ_q`, `η_q`, `χ_q`,
+1. `atomic_braid_recipe` chain — pushes back the last remaining
+   SCRIPT_CITED step in the atom chains.  Once this lands, the
+   atom chains become **fully-trusted**.
+2. After that: `c_q`-derived constants (`ℏ_q`, `η_q`, `χ_q`,
    `d_H(q)`) — short algebraic chains anchored in `c_q`.
-6. Mass formulas: per-atom `𝔪 = Vol/ℏ_q²`, `M = 𝔪 · E_0`.
-7. The 376 remaining `computational-only` witnesses (per the
+3. Mass formulas: per-atom `𝔪 = Vol/ℏ_q²`, `M = 𝔪 · E_0`.
+4. The 375 remaining `computational-only` witnesses (per the
    audit), in dependency order.
