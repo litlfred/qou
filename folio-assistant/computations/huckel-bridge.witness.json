@@ -1,0 +1,154 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T03:42:39.754767+00:00",
+  "commitSha": "a2ea8c50d58068b87a3e389b5aa80b05dc73a23f",
+  "assertions": [
+    {
+      "name": "topological prediction agrees with Hückel for N = 6 (benzene)",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "topological prediction agrees with Hückel for N = 10",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "topological prediction agrees with Hückel for N = 14",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "agreement fraction across all N ≥ 80%",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "huckel-bridge",
+  "scriptFile": "huckel_bridge.py",
+  "scriptHash": "1f6e5450ce85",
+  "scriptCommitSha": "",
+  "description": "Conjectural derivation of Hückel's 4n+2 aromaticity rule from the T(2,N) component count and Alexander-weight parity, compared against the standard Hückel classification for N = 2,…,14.",
+  "contentBlock": "conj:huckel-from-T2N-invariant",
+  "data": {
+    "table": [
+      {
+        "N": 2,
+        "components": 2,
+        "alexander_at_q_eq_1": 1.0,
+        "huckel_4n_plus_2": true,
+        "topological_prediction": true,
+        "agreement": true
+      },
+      {
+        "N": 3,
+        "components": 1,
+        "alexander_at_q_eq_1": 1.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 4,
+        "components": 2,
+        "alexander_at_q_eq_1": 2.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 5,
+        "components": 1,
+        "alexander_at_q_eq_1": 1.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 6,
+        "components": 2,
+        "alexander_at_q_eq_1": 3.0,
+        "huckel_4n_plus_2": true,
+        "topological_prediction": true,
+        "agreement": true
+      },
+      {
+        "N": 7,
+        "components": 1,
+        "alexander_at_q_eq_1": 1.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 8,
+        "components": 2,
+        "alexander_at_q_eq_1": 4.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 9,
+        "components": 1,
+        "alexander_at_q_eq_1": 1.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 10,
+        "components": 2,
+        "alexander_at_q_eq_1": 5.0,
+        "huckel_4n_plus_2": true,
+        "topological_prediction": true,
+        "agreement": true
+      },
+      {
+        "N": 11,
+        "components": 1,
+        "alexander_at_q_eq_1": 1.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 12,
+        "components": 2,
+        "alexander_at_q_eq_1": 6.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 13,
+        "components": 1,
+        "alexander_at_q_eq_1": 1.0,
+        "huckel_4n_plus_2": false,
+        "topological_prediction": false,
+        "agreement": true
+      },
+      {
+        "N": 14,
+        "components": 2,
+        "alexander_at_q_eq_1": 7.0,
+        "huckel_4n_plus_2": true,
+        "topological_prediction": true,
+        "agreement": true
+      }
+    ],
+    "agreement_count": 13,
+    "agreement_total": 13,
+    "agreement_fraction": 1.0
+  },
+  "caveats": [
+    "This is a *conjectural* bridge.  The Hückel rule is traditionally derived from molecular-orbital theory with the Hückel approximation; the topological derivation here uses only the T(2,N) component count and the parity of Δ_{T(2,N)}(1) = N/2.  Agreement is exact for N ∈ {2, 4, 6, 8, 10, 12, 14} but the bridge needs further work for the anti-aromatic case (cyclobutadiene, cyclooctatetraene), where Δ(1) = N/2 is *even* and the conjectural rule correctly predicts non-aromaticity but does not distinguish non-aromatic from anti-aromatic."
+  ]
+}

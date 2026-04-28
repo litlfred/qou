@@ -79,7 +79,20 @@ export default chapter({
       ],
     }),
 
-    // ── §6. Carbon chains and benzene ────────────────────────────────
+    // ── §6. Odd-N rings and the Hückel bridge ────────────────────────
+    section({
+      title: "Odd-$N$ rings and the Hückel bridge",
+      label: "sec:odd-N-and-huckel",
+      blocks: [
+        "torus-knot-T2-odd-alexander",
+        "odd-N-ring-barrier",
+        "prf-odd-N-ring-barrier",
+        "huckel-from-T2N-invariant",
+        "prf-huckel-from-T2N-invariant",
+      ],
+    }),
+
+    // ── §7. Carbon chains and benzene ────────────────────────────────
     section({
       title: "Carbon chains and benzene",
       label: "sec:carbon-chains-benzene",
@@ -92,12 +105,26 @@ export default chapter({
       ],
     }),
 
-    // ── §7. Organic chain taxonomy ───────────────────────────────────
+    // ── §8. Organic chain taxonomy ───────────────────────────────────
     section({
       title: "Organic chain taxonomy",
       label: "sec:organic-taxonomy",
       blocks: [
         "organic-chain-taxonomy",
+        "hydrogen-capacity",
+        "prf-hydrogen-capacity",
+        "bond-order-energy-formula",
+        "prf-bond-order-energy-formula",
+      ],
+    }),
+
+    // ── §9. Heteroaromatic extension ─────────────────────────────────
+    section({
+      title: "Heteroaromatic extension",
+      label: "sec:heteroaromatic",
+      blocks: [
+        "heteroaromatic-alexander",
+        "prf-heteroaromatic-alexander",
       ],
     }),
   ],

@@ -113,5 +113,42 @@
       "uncertainty": 3.3e-14,
       "citation": "CODATA 2018"
     }
+  },
+
+  "organic_taxonomy": {
+    "comment": "IUPAC molecular formulae for the standard organic taxonomy used to verify hydrogen-capacity and bond-order-energy formulae (C12, C13). 'd' is the degree of unsaturation = sum_i (k_i - 1).",
+    "citation": "IUPAC Recommendations on Organic Nomenclature 2013; CRC Handbook of Chemistry and Physics, 100th ed., 2019",
+    "families": [
+      { "name": "methane",       "formula": "CH4",     "N":  1, "degree_of_unsaturation": 0, "closed": false, "hydrogens":  4 },
+      { "name": "ethane",        "formula": "C2H6",    "N":  2, "degree_of_unsaturation": 0, "closed": false, "hydrogens":  6 },
+      { "name": "propane",       "formula": "C3H8",    "N":  3, "degree_of_unsaturation": 0, "closed": false, "hydrogens":  8 },
+      { "name": "n-butane",      "formula": "C4H10",   "N":  4, "degree_of_unsaturation": 0, "closed": false, "hydrogens": 10 },
+      { "name": "n-hexane",      "formula": "C6H14",   "N":  6, "degree_of_unsaturation": 0, "closed": false, "hydrogens": 14 },
+      { "name": "ethene",        "formula": "C2H4",    "N":  2, "degree_of_unsaturation": 1, "closed": false, "hydrogens":  4 },
+      { "name": "propene",       "formula": "C3H6",    "N":  3, "degree_of_unsaturation": 1, "closed": false, "hydrogens":  6 },
+      { "name": "1-butene",      "formula": "C4H8",    "N":  4, "degree_of_unsaturation": 1, "closed": false, "hydrogens":  8 },
+      { "name": "ethyne",        "formula": "C2H2",    "N":  2, "degree_of_unsaturation": 2, "closed": false, "hydrogens":  2 },
+      { "name": "propyne",       "formula": "C3H4",    "N":  3, "degree_of_unsaturation": 2, "closed": false, "hydrogens":  4 },
+      { "name": "1,3-butadiene", "formula": "C4H6",    "N":  4, "degree_of_unsaturation": 2, "closed": false, "hydrogens":  6 },
+      { "name": "allene",        "formula": "C3H4",    "N":  3, "degree_of_unsaturation": 2, "closed": false, "hydrogens":  4 },
+      { "name": "cyclopropane",  "formula": "C3H6",    "N":  3, "degree_of_unsaturation": 0, "closed": true,  "hydrogens":  6 },
+      { "name": "cyclobutane",   "formula": "C4H8",    "N":  4, "degree_of_unsaturation": 0, "closed": true,  "hydrogens":  8 },
+      { "name": "cyclopentane",  "formula": "C5H10",   "N":  5, "degree_of_unsaturation": 0, "closed": true,  "hydrogens": 10 },
+      { "name": "cyclohexane",   "formula": "C6H12",   "N":  6, "degree_of_unsaturation": 0, "closed": true,  "hydrogens": 12 },
+      { "name": "cyclohexene",   "formula": "C6H10",   "N":  6, "degree_of_unsaturation": 1, "closed": true,  "hydrogens": 10 },
+      { "name": "1,3-cyclohexadiene", "formula": "C6H8", "N": 6, "degree_of_unsaturation": 2, "closed": true, "hydrogens": 8 },
+      { "name": "benzene",       "formula": "C6H6",    "N":  6, "degree_of_unsaturation": 3, "closed": true,  "hydrogens":  6 }
+    ]
+  },
+
+  "single_bond_dissociation_energies_kJ_per_mol": {
+    "comment": "Bond dissociation energies for use in C13 (bond-order-energy formula). Single-bond C–C reference value is taken from the C–C BDE in ethane.",
+    "data": {
+      "CC_single":  { "value": 377, "uncertainty": 5,  "citation": "Luo, Y.-R., Comprehensive Handbook of Chemical Bond Energies, CRC Press 2007, Table 4-1" },
+      "CC_double":  { "value": 728, "uncertainty": 10, "citation": "Luo, Y.-R., 2007, Table 4-2 (ethene π bond + σ bond)" },
+      "CC_triple":  { "value": 965, "uncertainty": 12, "citation": "Luo, Y.-R., 2007, Table 4-3 (ethyne)" },
+      "CC_aromatic": { "value": 519, "uncertainty": 8, "citation": "Cox & Pilcher, Thermochemistry of Organic and Organometallic Compounds, Academic Press 1970 (benzene partial bond enthalpy)" }
+    }
   }
 }
+

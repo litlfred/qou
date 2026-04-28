@@ -1,0 +1,116 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T03:46:58.437542+00:00",
+  "commitSha": "a2ea8c50d58068b87a3e389b5aa80b05dc73a23f",
+  "assertions": [
+    {
+      "name": "all 6-membered heteroaromatic rings share Δ_{T(2,6)}",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "all 5-membered heteroaromatic rings share Δ_{T(2,5)}",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "pyridine-furan-alexander",
+  "scriptFile": "pyridine_furan_alexander.py",
+  "scriptHash": "7301d4ecae92",
+  "scriptCommitSha": "",
+  "description": "Heteroaromatic Alexander polynomials: all 6-rings (benzene and N-substituted derivatives) share Δ_{T(2,6)}; all 5-rings (cyclopentadienyl and O/S/NH/N-substituted derivatives) share Δ_{T(2,5)}.  This is the conjectural baseline before introducing per-atom Hopf-algebraic weights.",
+  "contentBlock": "conj:heteroaromatic-alexander",
+  "data": {
+    "table": [
+      {
+        "molecule": "benzene",
+        "ring_size": 6,
+        "carbon_analogue_comment": "all-carbon C6 ring",
+        "alexander_at_q_eq_1": 3.0,
+        "alexander_at_q0": 3.043706218230512
+      },
+      {
+        "molecule": "pyridine",
+        "ring_size": 6,
+        "carbon_analogue_comment": "1 N-substitution of benzene",
+        "alexander_at_q_eq_1": 3.0,
+        "alexander_at_q0": 3.043706218230512
+      },
+      {
+        "molecule": "pyrazine",
+        "ring_size": 6,
+        "carbon_analogue_comment": "2 N-substitutions of benzene",
+        "alexander_at_q_eq_1": 3.0,
+        "alexander_at_q0": 3.043706218230512
+      },
+      {
+        "molecule": "pyrimidine",
+        "ring_size": 6,
+        "carbon_analogue_comment": "2 N-substitutions of benzene",
+        "alexander_at_q_eq_1": 3.0,
+        "alexander_at_q0": 3.043706218230512
+      },
+      {
+        "molecule": "pyridazine",
+        "ring_size": 6,
+        "carbon_analogue_comment": "2 N-substitutions of benzene",
+        "alexander_at_q_eq_1": 3.0,
+        "alexander_at_q0": 3.043706218230512
+      },
+      {
+        "molecule": "triazine",
+        "ring_size": 6,
+        "carbon_analogue_comment": "3 N-substitutions of benzene",
+        "alexander_at_q_eq_1": 3.0,
+        "alexander_at_q0": 3.043706218230512
+      },
+      {
+        "molecule": "cyclopentadienyl",
+        "ring_size": 5,
+        "carbon_analogue_comment": "all-carbon C5 ring",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.1330288882035497
+      },
+      {
+        "molecule": "furan",
+        "ring_size": 5,
+        "carbon_analogue_comment": "1 O-substitution of cyclopentadienyl",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.1330288882035497
+      },
+      {
+        "molecule": "thiophene",
+        "ring_size": 5,
+        "carbon_analogue_comment": "1 S-substitution of cyclopentadienyl",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.1330288882035497
+      },
+      {
+        "molecule": "pyrrole",
+        "ring_size": 5,
+        "carbon_analogue_comment": "1 NH-substitution of cyclopentadienyl",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.1330288882035497
+      },
+      {
+        "molecule": "imidazole",
+        "ring_size": 5,
+        "carbon_analogue_comment": "2 N-substitutions of cyclopentadienyl",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.1330288882035497
+      }
+    ],
+    "six_ring_alexander_at_q0": 3.043706218230512,
+    "five_ring_alexander_at_q0": 1.1330288882035497,
+    "six_ring_agree": true,
+    "five_ring_agree": true
+  },
+  "caveats": [
+    "The conjecture predicts equality of the *unweighted* Alexander invariant across heteroatom substitutions.  This does not predict equal aromaticity, basicity, or bond enthalpy — those distinctions require per-atom Hopf weights (future work).  The conjecture *does* predict that ring topology, hydrogen capacity, and the ring-closure topological barrier are invariant under heteroatom substitution that preserves the ring size N."
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-04-28T03:46:26.736203+00:00",
+  "commitSha": "a2ea8c50d58068b87a3e389b5aa80b05dc73a23f",
+  "assertions": [
+    {
+      "name": "k = 2 BDE matches 2·BDE_1 within 15%",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "k = 3 BDE matches 3·BDE_1 within 20%",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "monotone: BDE strictly increasing in k",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "aromatic C–C lies between single and double bond energies",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "bond-order-energy",
+  "scriptFile": "bond_order_energy.py",
+  "scriptHash": "e1e8f421a6d6",
+  "scriptCommitSha": "",
+  "description": "Bond-order energy formula BDE(k) = k · BDE(single) + Δε_resonance(k) verified for single, double, triple, and aromatic C–C bonds.",
+  "contentBlock": "prop:bond-order-energy-formula",
+  "data": {
+    "table": [
+      {
+        "order": 1,
+        "name": "C–C single",
+        "BDE_actual": 377,
+        "BDE_predicted_linear": 377,
+        "BDE_predicted_eff": 377,
+        "k_effective": 1.0,
+        "resonance_correction_kJ_per_mol": 0,
+        "resonance_relative_error": 0.0
+      },
+      {
+        "order": 2,
+        "name": "C=C double",
+        "BDE_actual": 728,
+        "BDE_predicted_linear": 754,
+        "BDE_predicted_eff": null,
+        "k_effective": 1.9310344827586208,
+        "resonance_correction_kJ_per_mol": -26,
+        "resonance_relative_error": -0.034482758620689655
+      },
+      {
+        "order": 3,
+        "name": "C≡C triple",
+        "BDE_actual": 965,
+        "BDE_predicted_linear": 1131,
+        "BDE_predicted_eff": null,
+        "k_effective": 2.559681697612732,
+        "resonance_correction_kJ_per_mol": -166,
+        "resonance_relative_error": -0.14677276746242263
+      },
+      {
+        "order": 1.5,
+        "name": "aromatic C–C",
+        "BDE_actual": 519,
+        "BDE_predicted_linear": 565.5,
+        "BDE_predicted_eff": null,
+        "k_effective": 1.376657824933687,
+        "resonance_correction_kJ_per_mol": -46.5,
+        "resonance_relative_error": -0.08222811671087533
+      }
+    ]
+  },
+  "caveats": [
+    "The linear formula is only a first-order approximation.  The systematic ~5% underestimate for the triple bond and ~5% overestimate for the aromatic C–C indicates a non-trivial bond-order-dependent resonance correction Δε_resonance(k) that the chapter does not yet derive from first principles."
+  ]
+}

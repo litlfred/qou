@@ -1,0 +1,104 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T03:39:58.709863+00:00",
+  "commitSha": "a2ea8c50d58068b87a3e389b5aa80b05dc73a23f",
+  "assertions": [
+    {
+      "name": "Δ_{T(2,N)}(q=1) == 1 for all odd N in {3,5,7,9,11,13}",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "all odd-N predicted barriers strictly positive",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "trefoil T(2,3) Alexander symbolic form q² − 1 + q⁻²",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 35,
+  "computation": "torus-knot-T2-odd",
+  "scriptFile": "torus_knot_T2_odd.py",
+  "scriptHash": "e36064c7bd82",
+  "scriptCommitSha": "",
+  "description": "Odd-N ring closure barrier from torus-knot T(2, N) Alexander polynomials, N = 3, 5, 7, 9, 11, 13.  Closed-form Δ_{T(2, 2m+1)} evaluated at q₀; Δ(1) = 1 verified for all odd N.",
+  "contentBlock": "prop:odd-N-ring-barrier",
+  "parameters": {
+    "q_substrate": 1.1099785955541805
+  },
+  "data": {
+    "table": [
+      {
+        "N": 3,
+        "torus_knot": "T(2,3)",
+        "alexander_symbolic": "q**2 - 1 + q**(-2)",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.0437062182305121,
+        "chain_weight": 2,
+        "weight_difference": 0.9562937817694879,
+        "barrier_predicted_kJ_per_mol": 21.40742764122447
+      },
+      {
+        "N": 5,
+        "torus_knot": "T(2,5)",
+        "alexander_symbolic": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.1330288882035497,
+        "chain_weight": 4,
+        "weight_difference": 2.8669711117964503,
+        "barrier_predicted_kJ_per_mol": 64.17952076578236
+      },
+      {
+        "N": 7,
+        "torus_knot": "T(2,7)",
+        "alexander_symbolic": "(q**14*(q**2 + 1) + q**2 + 1)/(q**6*(q**2 + 1)**2)",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.2718719660258853,
+        "chain_weight": 6,
+        "weight_difference": 4.728128033974115,
+        "barrier_predicted_kJ_per_mol": 105.84305858232997
+      },
+      {
+        "N": 9,
+        "torus_knot": "T(2,9)",
+        "alexander_symbolic": "(q**18*(q**2 + 1) + q**2 + 1)/(q**8*(q**2 + 1)**2)",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.4663037575566191,
+        "chain_weight": 8,
+        "weight_difference": 6.533696242443381,
+        "barrier_predicted_kJ_per_mol": 146.2621970426679
+      },
+      {
+        "N": 11,
+        "torus_knot": "T(2,11)",
+        "alexander_symbolic": "(q**22*(q**2 + 1) + q**2 + 1)/(q**10*(q**2 + 1)**2)",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 1.7248221411073423,
+        "chain_weight": 10,
+        "weight_difference": 8.275177858892658,
+        "barrier_predicted_kJ_per_mol": 185.24670410876834
+      },
+      {
+        "N": 13,
+        "torus_knot": "T(2,13)",
+        "alexander_symbolic": "(q**26*(q**2 + 1) + q**2 + 1)/(q**12*(q**2 + 1)**2)",
+        "alexander_at_q_eq_1": 1.0,
+        "alexander_at_q0": 2.058725977566122,
+        "chain_weight": 12,
+        "weight_difference": 9.941274022433877,
+        "barrier_predicted_kJ_per_mol": 222.5436454298066
+      }
+    ]
+  },
+  "caveats": [
+    "Odd-N ring systems (cyclopropene, cyclopentadienyl, cycloheptatriene, …) are not equivalently 'aromatic' to even-N benzene-class systems; the topological prediction yields a single positive barrier, but Hückel's 4n+2 rule (implemented in C11) classifies aromaticity differently.  The witness records the topological barrier; aromatic stabilisation is left to C11."
+  ]
+}
