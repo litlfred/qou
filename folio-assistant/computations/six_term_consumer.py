@@ -228,15 +228,16 @@ def assemble_ame_comparison(per_particle, m_e_MeV, m_p_AME, m_n_AME):
         t6 = terms.get("T6_habiro_residue", {})
 
         # Extract numeric MeV contributions (None if pending).
+        # Per Gemini review: M_MeV_raw is an mpmath nstr string (50 dps);
+        # tolerate trailing unit suffixes (e.g. " MeV") via split().
         M_t123 = None
         if not t123.get("pending"):
-            M_t123 = float(t123.get("M_MeV_raw", "nan").split()[0]) \
-                if isinstance(t123.get("M_MeV_raw"), str) else None
-            # M_MeV_raw is a long-string mp.nstr; strip and float()
-            try:
-                M_t123 = float(t123["M_MeV_raw"])
-            except (TypeError, ValueError):
-                M_t123 = None
+            raw_val = t123.get("M_MeV_raw")
+            if raw_val is not None:
+                try:
+                    M_t123 = float(str(raw_val).split()[0])
+                except (ValueError, IndexError):
+                    M_t123 = None
 
         M_t4 = None
         if not t4.get("pending"):

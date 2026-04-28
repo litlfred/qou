@@ -1,7 +1,7 @@
 {
   "computation": "six-term-mass-pred",
   "description": "Per-particle six-term mass-formula enumeration for Family 1 (D, T, \u00b3He) consuming canonical GB-NF data from joint-tower-sdp-rust.witness.json. Reads each existing per-term script's helper (no SnapPy, no hp_volume, no fitted constants). All six terms wired (Sprint A v4); na\u00efve AME-comparable binding-energy assembly added (Sprint A v5) with explicit caveats about the open combination convention \u2014 round-2 neutron-gap probe established that full tr_M alone gives \u221225 % residual, so the assembly here is a baseline for further probing, not a canonical accuracy claim.",
-  "computedAt": "2026-04-27T20:48:43.222956+00:00",
+  "computedAt": "2026-04-28T01:37:14.474818+00:00",
   "source_witness": "folio-assistant/computations/joint-tower-sdp-rust.witness.json",
   "precision_dps": 50,
   "per_particle": {
