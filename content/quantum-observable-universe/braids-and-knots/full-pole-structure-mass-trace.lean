@@ -1,5 +1,7 @@
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Algebra.Order.AbsoluteValue
+import Mathlib.Algebra.GroupPower.Order
+import Mathlib.Tactic.Linarith
 
 /-!
 # Habiro completion of the mass trace
@@ -113,16 +115,13 @@ theorem habiro_truncation_bound
     (q : ℝ) (hq_pos : 0 < q) (hq_lt : q < 1) (N : ℕ) :
     |qPochhammer q (N + 1)| ≤ |qPochhammer q N| := by
   unfold qPochhammer
-  rw [Finset.prod_range_succ]
-  rw [abs_mul]
+  rw [Finset.prod_range_succ, abs_mul]
   have h_factor_lt_one : |1 - q ^ (N + 1)| ≤ 1 := by
     have h_qpow_pos : 0 < q ^ (N + 1) := pow_pos hq_pos (N + 1)
     have h_qpow_lt_one : q ^ (N + 1) < 1 :=
       pow_lt_one (le_of_lt hq_pos) hq_lt (Nat.succ_ne_zero N)
     rw [abs_of_nonneg (by linarith : (0 : ℝ) ≤ 1 - q ^ (N + 1))]
     linarith
-  have h_prod_nn : (0 : ℝ) ≤ |∏ k ∈ Finset.range N, (1 - q ^ (k + 1))| :=
-    abs_nonneg _
-  nlinarith
+  exact mul_le_of_le_one_right (abs_nonneg _) h_factor_lt_one
 
 end QOU.BraidKnot

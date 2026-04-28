@@ -8,6 +8,7 @@ export default conjecture({
     "prop:categorical-mass-markov",
     "def:habiro-ring",
     "def:motivic-substrate",
+    "def:archimedean-realization-functor",
     "thm:topological-mass",
   ],
   tags: [
