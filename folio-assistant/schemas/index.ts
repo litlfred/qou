@@ -219,6 +219,15 @@ export type {
 
 export { mathAuthoringWorkflow } from "./assistant-workflow";
 
+// ── Precision-scalar envelope (§S7 of CLARABEL_PRECISION_PLAN) ──
+
+export type { PrecisionScalar, PrecisionScalarOrNumber } from "./precision-scalar";
+export {
+  precisionScalar,
+  precisionScalarOrNumber,
+  isPrecisionScalar,
+} from "./precision-scalar";
+
 // ── Lean package registry ───────────────────────────────────────
 
 export type { LeanPackage, ParsedLeanRef } from "./lean-packages";
