@@ -85,11 +85,50 @@ So the categorical magic structure is:
 
 `σ_shell` and `β_atom` are independent Hecke elements at different strand counts (`3·A_magic` vs `3·A`); for `A = A_magic` they live in the same `H_{3A}(q)` but are distinct elements.
 
-## Implications for next branch
+## Empirical magnitude (from running `sigma_shell_characterization.py`)
 
-1. **`σ_shell` exists in compute** — `sigma_shell_characterization.py` and `sdp_on_shadows.py` ALREADY compute the LP-dual shadow prices and the self-dual ILP optima. **Wiring `Δm_shell` into the canonical predictor** (`categorical_q_decay_ba_low_isotopes.py`) for magic atoms (`A ∈ {2, 8, 20, ...}`) is the concrete next step.
-2. **Replace `mass-table-ppb`'s magic-A formula** `2A·8G` with the pre-Archimedean `Δm_shell`. This eliminates the post-Archimedean dependency for ⁴He, ⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca.
-3. **Test shell-self-duality on `σ_shell` directly** (not on `β_atom` as my probes did). Per the proposition, it holds by construction; numerical verification at A_magic = 8 already exists.
+The shell shadow-price contribution `y_shell × σ_shell` is **tiny**
+(in q-units):
+
+| A_magic | partition | `|y_shell|` | `y · σ` |
+|---:|---|---:|---:|
+| 2 | (3, 3) | 5.31×10⁻³ | 5.89×10⁻³ |
+| 8 | shell partition | 6.78×10⁻²⁶ | 7.52×10⁻²⁶ |
+| 20 | shell partition | 8.06×10⁻¹¹⁷ | 8.95×10⁻¹¹⁷ |
+| 28 | shell partition | 5.92×10⁻²¹⁰ | 6.57×10⁻²¹⁰ |
+
+**Higher A_magic is exponentially suppressed.** Dominant contribution
+is at A_magic = 2.
+
+In MeV (using E_0 ≈ 3.13 MeV/cat-unit from β-decay calibration), the
+A_magic=2 contribution is ≈ 0.018 MeV per atom. **Tiny vs bulk
+binding** (e.g., ⁴He B = 28.3 MeV; σ_shell is < 0.1% of B).
+
+So `σ_shell × y_shell` is **NOT a replacement** for `mass-table-ppb`'s
+`2A · 8G ≈ 30 MeV` for ⁴He. It is a **small structural correction**
+on top of the bulk magic-A formula.
+
+**However**, the full Δm_shell per the paper has the form
+
+$$\Delta\mathfrak{m}_{\text{shell}} = z^2 \cdot \Phi_q\bigl(|\hat{V}_{\text{shell}}|^2\bigr) \cdot y_{\text{shell}}(q) \cdot f^{\lambda_{\text{atom}} / \lambda_{\text{shell}}}$$
+
+which includes a `Φ_q(|V̂_shell|²)` amplification factor. At near-pole
+`V̂_shell` values, Φ_q is large (1000s), which would multiply the tiny
+y_shell × σ_shell into something physically relevant. The current
+`sigma_shell_characterization.py` does NOT include this amplification
+— it computes only the `y · σ` "bare contribution".
+
+**Open work** (deferred):
+
+1. Compute `V̂_shell` (additive Wedderburn-traced volume at the shell
+   boundary) and apply `Φ_q(|V̂_shell|²)` to get the full Δm_shell.
+2. Wire the full Δm_shell into `categorical_q_decay_ba_low_isotopes.py`
+   for magic atoms.
+3. Compare to `mass-table-ppb`'s `2A·8G` for ⁴He — does the full
+   Δm_shell reproduce the ~30 MeV magic-A contribution categorically?
+
+Until the Φ_q amplification is wired, the σ_shell content is documented
+but not numerically deployed.
 
 ## See also
 
