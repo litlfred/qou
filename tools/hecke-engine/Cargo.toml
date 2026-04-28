@@ -103,10 +103,13 @@ clarabel-sdp = ["dep:clarabel"]
 # that lets seminormal_mpfr's rug::Float outputs flow into the solver
 # without an f64 round-trip.  See CLARABEL_PRECISION_PLAN.md.
 #
-# Validated at cf7b5f4 (post-c43b4d7 chordal-decomp Copy fix): 71/71
-# hecke-engine tests pass under `cargo test --features clarabel-sdp`.
-# Same f64 SDP path that 0.11.1 from crates.io carried, just with the
-# extra trait headroom for high-precision T.
+# Validated at 9673209 (Round 4 + Phase 8a/8b): 71/71 hecke-engine
+# tests pass under `cargo test --features clarabel-sdp`.  This pin
+# is the branch HEAD and includes Phase 8a (denom-bit log), Phase 8b
+# (run-time MpfrFloat backend), and Round 4 (BlockDiagPSDConeT,
+# tighten_to_rational, structured Solution<T> accessors).
+# Same f64 SDP path that 0.11.1 from crates.io carried, plus all
+# the high-precision T headroom QOU's workplan needs.
 #
 # Will be lifted once the fork merges to its own main and a release
 # is cut on crates.io.
