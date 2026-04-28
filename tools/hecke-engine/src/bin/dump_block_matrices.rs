@@ -105,6 +105,15 @@ fn build_block_matrix(
 
 fn registry(name: &str) -> Option<(usize, Vec<i32>)> {
     match name {
+        "electron" => {
+            // T_{2,3} = σ_1³ in B_2; closure = right-handed trefoil 3_1.
+            Some((2, vec![1, 1, 1]))
+        }
+        "deuteron-2H" | "deuteron" => {
+            // 6-letter word in B_3 from joint-tower-sdp-rust.witness.json:
+            // σ_1 σ_2^{-1} σ_1 σ_1 σ_1 σ_2^{-1}
+            Some((3, vec![1, -2, 1, 1, 1, -2]))
+        }
         "proton" | "neutron" => {
             // 6-letter Borromean from joint-tower-sdp-rust.witness.json:
             // σ_1 σ_2^{-1} σ_1 σ_2^{-1} σ_1 σ_2^{-1}
