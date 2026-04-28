@@ -104,6 +104,10 @@ $\chi(A) \neq 0$:
    $\kappa_0$ is non-trivial at almost every finite place
    $p \nmid \chi(A)$ — perpetuity is realised place-by-place in
    the realization tower, not only as a torsion-filtration claim.
+   This is the content of
+   [motivic perpetual obstruction](#lem:motivic-perpetual-obstruction);
+   items 1–5 above are corollaries of that lemma at each adelic
+   place separately.
 
 The full consequences of this filtration for specific
 properties of the substrate family will be developed in the
