@@ -356,7 +356,10 @@ jobs:
           # Surface all ! errors as early warnings (does not fail the build)
           if grep -q "^! " main.log 2>/dev/null; then
             echo "::warning::LaTeX errors detected — see details below"
-            grep -B1 "^! " main.log | head -80
+            # `head` closes its stdin early, so `grep` may exit 141 (SIGPIPE).
+            # With `set -e -o pipefail` (GitHub Actions default), that would
+            # abort this advisory step.  Swallow it explicitly.
+            grep -B1 "^! " main.log | head -80 || true
           fi
           # Fail only for structural errors that guarantee no PDF can be produced
           if grep -qE "^! (Emergency stop|LaTeX Error: \\\\begin\{document\} ended|File ended while)" \
