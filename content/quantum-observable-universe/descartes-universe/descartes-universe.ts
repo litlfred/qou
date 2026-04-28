@@ -212,6 +212,7 @@ export default chapter({
         "gram-determinant-plancherel-ratio",
         "gram-kappa-spectral-interpretation",
         "chern-simons-as-knot-invariant",
+        "alpha-em-gluon-octet-form",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
