@@ -106,18 +106,28 @@ noncomputable def yLambdaRecipe (lam : List ℕ) (q : ℝ) : ℝ :=
       `y_λ = s_{λ, r}(q²) / Σ_µ d_µ s_{µ, r}(q²)`.
 
     The two give numerically *different* values for `tr_M(D)` and
-    are not interchangeable. This `inductive` tags an `Mhat`-valued
-    `tr_M` with the convention it implements, so that downstream
-    theorems can require, e.g.,
-    `[Fact (tr_M.convention = .wenzlSchur)]` (or carry the tag as
-    an explicit equation hypothesis) to rule out Plancherel-derived
-    inputs. To get typeclass inference on the discriminator instead,
-    wrap this in a `class` per consumer; we keep the bare inductive
-    here so both conventions remain first-class values. -/
+    are not interchangeable. This `inductive` and the wrapper
+    `MarkovTraceCoefficient` below provide vocabulary to tag a
+    coefficient value with the convention it implements, so that
+    downstream consumers can pattern-match on `c.convention` or
+    require an explicit equation hypothesis like
+    `(c : MarkovTraceCoefficient).convention = .wenzlSchur`. -/
 inductive MarkovTraceConvention : Type
   | plancherel : MarkovTraceConvention
   | wenzlSchur : MarkovTraceConvention
   deriving DecidableEq, Repr
+
+/-- A Markov-trace y_λ value paired with the convention it
+    implements. Wrapping a raw `value` in this structure lets
+    downstream theorems pattern-match on the `convention` field
+    (e.g. `(c : MarkovTraceCoefficient).convention = .wenzlSchur`)
+    rather than relying on prose annotations or external audit
+    docs. -/
+structure MarkovTraceCoefficient where
+  /-- The y_λ value at the substrate parameter. -/
+  value : ℝ
+  /-- The Markov-trace convention this value follows. -/
+  convention : MarkovTraceConvention
 
 /-! ## Main theorems -/
 
@@ -137,6 +147,19 @@ constant JonesMarkovCoefficient (q : ℝ) (lam : List ℕ) : ℝ
 /-- The Markov-trace convention this recipe implements. -/
 def yLambdaRecipeConvention : MarkovTraceConvention :=
   MarkovTraceConvention.wenzlSchur
+
+/-- The Wenzl–Schur-tagged y_λ wrapper, bundling
+    `JonesMarkovCoefficient` with its convention so that downstream
+    consumers can demand `convention = .wenzlSchur` at the type
+    level. -/
+noncomputable def jonesMarkovTagged (q : ℝ) (lam : List ℕ) :
+    MarkovTraceCoefficient :=
+  { value := JonesMarkovCoefficient q lam,
+    convention := yLambdaRecipeConvention }
+
+@[simp] theorem jonesMarkovTagged_convention (q : ℝ) (lam : List ℕ) :
+    (jonesMarkovTagged q lam).convention = MarkovTraceConvention.wenzlSchur :=
+  rfl
 
 theorem y_lambda_recipe_correct
     (q : ℝ) (hq : q > 1)
