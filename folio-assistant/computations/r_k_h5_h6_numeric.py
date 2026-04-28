@@ -17,6 +17,16 @@ import numpy as np
 import mpmath as mp
 
 mp.mp.dps = 30
+# NOTE (alpha-fsc-audit, 2026-04-28): observed numerical instability at
+# certain partitions of H_5 ((3,2), (2,2,1)) and H_6 ((4,2), (3,3),
+# (3,2,1), (2,2,2)) — α_λ values explode to ~10¹⁵ where they should be
+# small. Bumping mp.mp.dps from 30 → 50 does NOT fix the instability;
+# the y_λ consistency check (Δ < 6e-17) confirms y_λ themselves are
+# accurate. Root cause: the script's Wedderburn-orthogonal r_λ
+# computation uses numpy linalg (float64) internally, regardless of
+# mpmath dps. The fix requires migrating the r_λ matrix solve to
+# mpmath linear algebra (mp.lu_solve / mp.matrix). Filed as a follow-up
+# in docs/alpha-fsc-audit.md §"Open work".
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0_FLOAT
 from hecke_characters import build_seminormal_matrices
