@@ -14,7 +14,19 @@ export default chapter({
   title: "Organic Chemistry from Hopf Chains",
   label: "chap:organic-chemistry",
   sections: [
-    // ── §1. Covalent bonding as shared sub-Hopf links ────────────────
+    // ── §1. The molecular crossing-energy quantum ────────────────────
+    section({
+      title: "The molecular crossing-energy quantum",
+      label: "sec:molecular-crossing-quantum",
+      blocks: [
+        "molecular-crossing-quantum",
+        "prf-molecular-crossing-quantum",
+        "trefoil-volume-electronic-scale",
+        "prf-trefoil-volume-electronic-scale",
+      ],
+    }),
+
+    // ── §2. Covalent bonding as shared sub-Hopf links ────────────────
     section({
       title: "Covalent bonding as shared sub-Hopf links",
       label: "sec:covalent-bonding",
@@ -24,7 +36,7 @@ export default chapter({
       ],
     }),
 
-    // ── §2. Molecular Hopf chains and rings ──────────────────────────
+    // ── §3. Molecular Hopf chains and rings ──────────────────────────
     section({
       title: "Molecular Hopf chains and rings",
       label: "sec:molecular-chains-rings",
@@ -37,7 +49,7 @@ export default chapter({
       ],
     }),
 
-    // ── §3. Topological invariants of T(2,N) ─────────────────────────
+    // ── §4. Topological invariants of T(2,N) ─────────────────────────
     section({
       title: "Topological invariants of $T(2,N)$",
       label: "sec:t2n-invariants",
@@ -51,7 +63,7 @@ export default chapter({
       ],
     }),
 
-    // ── §4. Carbon chains and benzene ────────────────────────────────
+    // ── §5. Carbon chains and benzene ────────────────────────────────
     section({
       title: "Carbon chains and benzene",
       label: "sec:carbon-chains-benzene",
@@ -64,7 +76,7 @@ export default chapter({
       ],
     }),
 
-    // ── §5. Organic chain taxonomy ───────────────────────────────────
+    // ── §6. Organic chain taxonomy ───────────────────────────────────
     section({
       title: "Organic chain taxonomy",
       label: "sec:organic-taxonomy",

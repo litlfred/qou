@@ -1,0 +1,58 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-04-28T03:29:38.158781+00:00",
+  "commitSha": "5fb675984b8e1fbc8e7b736202634a52a4cdf8bd",
+  "assertions": [
+    {
+      "name": "high-precision and float |q+q⁻¹|_mol agree to ≤ 1e-9 eV",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "trefoil Alexander polynomial closed form q² − 1 + q⁻²",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "trefoil Δ(q) > 0 at substrate value",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 37,
+  "computation": "crossing-energy-mol-direct",
+  "scriptFile": "crossing_energy_mol_direct.py",
+  "scriptHash": "f68d233eeb7b",
+  "scriptCommitSha": "",
+  "description": "Independent cross-check of |q+q⁻¹|_mol at mpmath precision (dps=60) using the high-precision figure-eight volume Vol(4_1) and the trefoil Alexander polynomial as the electronic-scale topological invariant.",
+  "contentBlock": "lem:trefoil-volume-electronic-scale",
+  "parameters": {
+    "dps": 60,
+    "alpha": 0.0072973525693,
+    "m_e_over_m_p": 0.00054461702151,
+    "e_cross_nuc_MeV": 8.0
+  },
+  "data": {
+    "q_high_precision": "1.10997859555418057528159407960950937799328227995868680265283",
+    "q_float": 1.1099785955541805,
+    "q_diff": "0.0",
+    "two_q_high_precision": 2.010896869118482,
+    "two_q_float": 2.010896869118482,
+    "two_q_diff": 0.0,
+    "trefoil_alexander_symbolic": "q**2 - 1 + q**(-2)",
+    "trefoil_alexander_at_q_float": 1.0437062182305121,
+    "trefoil_alexander_at_q_mp": 1.0437062182305121,
+    "e_cross_mol_eV_high_precision": 0.23201275272335997,
+    "e_cross_mol_eV_float_C1": 0.23201275272335997,
+    "agreement_eV": 0.0
+  },
+  "caveats": [
+    "The trefoil 3_1 is a torus knot T(2,3) and is non-hyperbolic, so SnapPy reports Vol(3_1) = 0.  The 'trefoil at electronic scale' cross-check is therefore implemented via the trefoil's Alexander polynomial (a topological invariant carrying comparable information), not its hyperbolic volume.",
+    "Both routes share the same nuclear quantum |q+q⁻¹|_nuc = 8 MeV and CODATA values for α, m_e/m_p, so the cross-check verifies *precision*, not *independence* in the strong sense.  A truly independent route awaits a derivation of |q+q⁻¹|_nuc from first principles (Skein-binding Lagrangian)."
+  ]
+}
