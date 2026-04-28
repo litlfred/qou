@@ -6,7 +6,7 @@ replaced by the motivic substrate / Habiro-Adelic chain in PR #455.
 
 ## Current state
 
-### Family-4 atoms (no T_w on main)
+### Family-4 atoms (no knot assignments on main)
 
 `folio-assistant/computations/mass-table-ppb.witness.json`
 `atoms_no_assignment`:
@@ -50,9 +50,9 @@ The chain to atom-knot ID becomes:
 
 1. **Ground-state braid** — already in `braid-registry/li-{6,7}.json`.
 2. **q-Markov trace** — compute `tr_M(T_w)` for the parent braid via the
-   q-MN canonical wrapper (`mn_chi_q`, see `categorical-q-decay-ba`
-   audit doc §"Plancherel-vs-Wenzl-Schur Markov-trace bug" for the
-   convention pinning).
+   q-MN canonical wrapper (`mn_chi_q`, see
+   `categorical-vs-fitted-q-decay-ba.md` §"Plancherel-vs-Wenzl-Schur
+   Markov-trace bug" for the convention pinning).
 3. **Motivic-Galois action** — apply the motivic-perpetual-obstruction
    endomorphism (cf. `chi-minus-six-chain motivic-Galois Step 8`,
    commit `8ff85968`) to identify the Galois orbit of the braid.
@@ -76,7 +76,13 @@ six family-4 atoms.
    given parent braid. This is the principal gap.
 3. **Knot-class table in `K_motivic`** — the post-#455 chain replaces
    the volume-match census with a motivic-Galois-orbit table; the table
-   for braids of length ≤ 12 (covering n ≤ ¹⁹F) is not yet generated.
+   covering the family-4 atoms (up to ¹⁹F, which has $A = 19$ and
+   therefore $A - 1 = 18$ braid generators per the Skein product
+   $P_N(q) = \prod_{i=0}^{A-2} \hat V_i(q)$) is not yet generated.
+   Word lengths for a ground-state braid can be larger than the
+   generator count — up to $\binom{A}{2}$ in the worst case — so the
+   table must be sized against the longest expected word, not a fixed
+   word-length cutoff.
 
 ## Smallest defensible deliverable today
 
