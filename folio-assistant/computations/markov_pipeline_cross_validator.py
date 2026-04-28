@@ -82,13 +82,17 @@ def term6_archimedean_by_atom(term6_data: dict) -> dict[str, float]:
 
 
 def compare_value(label: str, x: float, y: float) -> dict:
-    """Relative-tolerance comparison; returns a per-atom check."""
+    """Relative-tolerance comparison; returns a per-atom check.
+
+    The denominator `max(abs(x), abs(y))` is non-zero whenever
+    either value is non-zero, so the single branch handles all
+    one-sided-zero cases correctly (rel_diff = 1.0, i.e. 100% off).
+    Only the both-zero case needs special-casing to avoid
+    division-by-zero.
+    """
     if x == 0 and y == 0:
         agree = True
         rel = 0.0
-    elif y == 0 or x == 0:
-        agree = False
-        rel = float("inf")
     else:
         rel = abs(x - y) / max(abs(x), abs(y))
         agree = rel <= AGREEMENT_RTOL
