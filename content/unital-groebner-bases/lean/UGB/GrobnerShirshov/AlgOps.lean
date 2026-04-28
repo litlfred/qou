@@ -40,10 +40,15 @@ def AlgElement.single [DecidableEq k] (m : Monomial G) (c : k) : AlgElement G k 
   coeff := fun m' => if m' = m then c else 0
   support := if c = 0 then ∅ else {m}
   support_spec := by
-    -- Ref: [bokut2005] §2 (singleton support spec).
-    -- Pending: split_ifs/simp interaction in the c = 0 branch under
-    -- general `Ring k` (no `Nontrivial`/decidability quirk).
-    sorry
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+    intro m' hm'
+    by_cases hc : c = 0
+    · -- c = 0: coefficient function is identically zero
+      subst hc
+      split_ifs <;> rfl
+    · -- c ≠ 0: support is {m}, so m' ≠ m, hence coeff m' = 0
+      simp [hc] at hm'
+      exact if_neg hm'
 
 /-- A single monomial with coefficient 1. -/
 def AlgElement.singleton [DecidableEq k] (m : Monomial G) : AlgElement G k :=
@@ -107,10 +112,23 @@ def AlgElement.leftMulGen (gen : G) (f : AlgElement G k) :
     | h :: t => if h = gen then f.coeff t else 0
   support := f.support.image (fun m => gen :: m)
   support_spec := by
-    -- Ref: [bokut2005] §3 (support invariants for prepend).
-    -- Pending refactor: Mathlib drift in `Finset.image`/`split_ifs` interaction
-    -- via `match`-bound discriminant; downstream uses only the API, not the proof.
-    sorry
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+    intro m hm
+    cases m with
+    | nil => rfl
+    | cons h t =>
+      by_cases hhg : h = gen
+      · -- h = gen, so m = gen :: t.  If t were in f.support, m would
+        -- be in the image — contradicting hm.  Hence t ∉ f.support
+        -- and f.coeff t = 0 by f.support_spec.
+        subst hhg
+        simp only [if_pos rfl]
+        apply f.support_spec
+        intro ht
+        apply hm
+        exact Finset.mem_image.mpr ⟨t, ht, rfl⟩
+      · -- h ≠ gen: coefficient is 0 directly
+        exact if_neg hhg
 
 /-- Right-multiply by a single generator: `f · g`.
     Appends `g` to every monomial in the support. -/
@@ -124,9 +142,24 @@ def AlgElement.rightMulGen (f : AlgElement G k) (gen : G) :
     else 0
   support := f.support.image (fun m => m ++ [gen])
   support_spec := by
-    -- Ref: [bokut2005] §3 (support invariants for append).
-    -- Same as `leftMulGen` — pending refactor.
-    sorry
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+    intro m hm
+    by_cases hne0 : m = []
+    · subst hne0; rfl
+    · -- m ≠ []
+      have hne : m ≠ [] := hne0
+      simp only [hne, ne_eq, not_false_eq_true, dif_pos]
+      by_cases hlast : m.getLast hne = gen
+      · -- last element is gen; need f.coeff (dropLast m) = 0
+        rw [if_pos hlast]
+        apply f.support_spec
+        intro hsupp
+        apply hm
+        refine Finset.mem_image.mpr ⟨m.dropLast, hsupp, ?_⟩
+        -- dropLast m ++ [gen] = m, using hlast and dropLast_append_getLast
+        conv_rhs => rw [← List.dropLast_append_getLast hne]
+        rw [hlast]
+      · exact if_neg hlast
 
 /-! ## §6  Multi-generator left multiplication -/
 
@@ -159,17 +192,18 @@ def AlgElement.ofTerms (terms : List (Monomial G × k)) :
     ((terms.filter (fun p => p.1 = m)).map Prod.snd).sum
   support := (terms.map Prod.fst).toFinset
   support_spec := by
-    -- Ref: [bokut2005] §2 (filter-and-sum support spec for term lists).
-    -- Pending: Mathlib's `List.filter_eq_nil` was renamed; downstream uses API only.
-    sorry
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+    intro m hm
+    have hfilter : ∀ p ∈ terms, p.1 ≠ m := by
+      simpa [List.mem_toFinset, List.mem_map] using hm
+    simp [List.filter_eq_nil_iff.mpr hfilter]
 
 /-- `ofTerms` with nonempty leading term has nonempty support. -/
 theorem AlgElement.ofTerms_support_nonempty
     {terms : List (Monomial G × k)} (h : terms ≠ []) :
     (AlgElement.ofTerms terms).support.Nonempty := by
-  -- Ref: [bokut2005] §2; pending Mathlib rename of
-  -- `List.toFinset_nonempty_iff` to a direct lemma.
-  sorry
+  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+  simp [AlgElement.ofTerms, List.toFinset_nonempty_iff, h]
 
 /-! ## §8  Generic Deg-Lex Order Construction -/
 
