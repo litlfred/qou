@@ -10,9 +10,9 @@ deliverable with three sections answering specific questions.
 
 | Question | Answer | Confidence |
 |----------|--------|:----------:|
-| Can α_k derivations be validated? | **Yes — fully derived.** Linear-system characterisation in `prop:alpha-k-derivation-procedure`, closed forms via Wenzl bridge, explicit values at H_3 and H_4 with witness consistency residual <10⁻¹⁵ | high |
+| Can α_k derivations be validated? | **Yes — fully derived.** Linear-system characterisation in `prop:alpha-k-derivation-procedure`, closed forms via Wenzl bridge, explicit values at H_3 and H_4 with witness consistency residual <10⁻¹⁵; H_5 and H_6 numerically closed with adaptive-gauge selection (residual ≤ 7×10⁻⁵¹ at 50 dps mpmath) | high |
 | Where is FSC referenced? | 13 content blocks + 6 doc files + 4 computation scripts (table below) | inventory |
-| Is α_em derived or fitted? | **Derived from q_0 alone via the gluon-octet formula.** Reproduces CODATA to ~7 ppb at the q_0 precision floor; PSLQ uniqueness verified to tol_dps 200 in 52-element basis | high |
+| Is α_em derived or fitted? | **Derived from q_0 alone via the gluon-octet formula.** Reproduces CODATA to ~7 ppb at the q_0 precision floor; PSLQ uniqueness verified to tol_dps 1000 in 52-element basis | high |
 
 ---
 
@@ -135,7 +135,7 @@ At $q_0 \approx 1.10998$ in 50 dps mpmath:
 
 ### 3.3 Uniqueness in the canonical basis
 
-PSLQ run at tol_dps ∈ {50, 100, 200} with 52-element basis $\{1, \pi, \pi^2, \pi^4, \zeta(3), G, e, \gamma_E, \log 2, [2]_q, [3]_q, \ldots, [12]_q, \hbar_q^k \text{ for } k=1\ldots 6, \pi^2, (q;q)_n \text{ for } n=2\ldots 6, q^k, \ldots\}$:
+PSLQ run at tol_dps ∈ {50, 100, 200, 500, 1000} with 52-element basis $\{1, \pi, \pi^2, \pi^4, \zeta(3), G, e, \gamma_E, \log 2, [2]_q, [3]_q, \ldots, [12]_q, \hbar_q^k \text{ for } k=1\ldots 6, (q;q)_n \text{ for } n=2\ldots 6, q^k, \ldots\}$:
 
 > **No competing integer relation found at any tested precision.**
 
@@ -175,11 +175,15 @@ This audit doc complements the `canonicalization-review.md` Appendix §D2 (which
 
 ## Open work
 
-- **α_em uniqueness at higher precision.** PSLQ tested only to tol_dps 200; running at higher precisions (1500+) is mechanical but expensive (~hours per tol level). Strengthens the falsifiability bound.
+- **α_em uniqueness at higher precision.** PSLQ tested only to tol_dps 1000; running at higher precisions (1500+) is mechanical but expensive (~hours per tol level). Strengthens the falsifiability bound.
 - **Lean formalisation of the gluon-octet derivation.** No Lean proof currently links the structural ingredients ($\dim V_{nat}^{\wedge 2} = 45$, $[3]_q$ factorisation, $\delta_{CS} = \hbar_q^4 [5]_q$) to the assembled formula. Would give a sorry-free Lean proof of $1/\alpha_{EM}$ derivability from $q_0$.
-- **α_k explicit values at H_n for n ≥ 5.** Currently H_3 and H_4 have explicit closed forms; the linear-system algorithm is generic but the closed forms grow combinatorially. Wenzl-bridge form remains tractable; explicit evaluation at $q_0$ in mpmath at 50 dps is straightforward. **Numerical-instability finding (2026-04-28, refined):** running [`r_k_h5_h6_numeric.py`](../folio-assistant/computations/r_k_h5_h6_numeric.py) reveals that **certain partitions explode to ~10¹⁵** at H_5 ((3,2), (2,2,1)) and H_6 ((4,2), (3,3), (3,2,1), (2,2,2)). Investigated three candidate fixes:
-    1. **Bump `mp.mp.dps` from 30 → 50:** does NOT fix the instability.
-    2. **Migrate matrix products to mpmath end-to-end** (lift Hoefsmit seminormal matrices to mpmath before multiplying): does NOT fix it either.
-    3. **The actual cause** is the gauge choice for the linear-system solve. The script tries `c[last]=1` first, then falls back to `c[0]=1`. For the unstable partitions, both pivots have near-zero coefficient in the constraint matrix, so the lu_solve produces magnitudes inversely proportional to the pivot. The y_λ consistency check (Δ < 6 × 10⁻¹⁷) confirms y_λ themselves are accurate; only the Wedderburn-orthogonal $r_\lambda$ extraction is unstable.
-  
-  **Correct fix:** scan all $p(n)$ candidate gauges (fix `c[k]=1` for each $k$) and pick the one with maximum-magnitude pivot; or use a pseudoinverse solve (`mp.lu_solve` of the symmetric $A A^T$ system) which is gauge-free. Approximately a 30-line refactor; queued as Sprint α_k v2.
+- **α_k explicit values at H_n for n ≥ 5.** Currently H_3, H_4, H_5, H_6 all close numerically; symbolic closed forms are available for H_3 and H_4, with the linear-system algorithm generic at higher $n$ and the Wenzl-bridge form remaining tractable through $n \leq 12$.
+  - **Numerical instability — diagnosed and fixed (2026-04-28).** The earlier `r_k_h5_h6_numeric.py` produced $\alpha_\lambda \sim 10^{15}$ at H_5 partitions $(3,2)$, $(2,2,1)$ and H_6 partitions $(4,2)$, $(3,3)$, $(3,2,1)$, $(2,2,2)$. Investigation pinned the root cause to **two compounding bugs**:
+    1. **Float64 character values.** `hecke_characters.build_seminormal_matrices` constructs the Hoefsmit matrices via `float(q0)` and `numpy.float64`; the `mp.mpf(repr(float(...)))` cast then truncated $\chi_\lambda(T_w)$ to $\sim 16$ digits regardless of `mp.dps`.
+    2. **Single fixed gauge.** The script gauged `c[last]=1` (or `c[0]=1` on fallback). For non-hook partitions $\lambda$, Murnaghan–Nakayama gives $\chi_\lambda((1\,2\,\ldots\,n)) = 0$, so the natural Wedderburn dual basis has $c_{\text{last}} \approx 0$ — and rescaling to $c_{\text{last}}=1$ amplifies error by $\sim 1/c_{\text{last}}$, producing the $10^{15}$ explosions.
+  - **Fix:** [`r_k_h5_h6_numeric.py`](../folio-assistant/computations/r_k_h5_h6_numeric.py) now (i) builds the Hoefsmit matrices in mpmath at the global `mp.dps`, and (ii) selects the gauge per partition — `c[last]=1` first, with adaptive fallback (try every $k$ and pick smallest $|c|_\infty$) when the canonical gauge produces $|c|_\infty > 10^6$. This replicates the H_4 closed-form proposition's adaptive convention ($c_{(1234)}=1$ for hooks, $c_{(123)}=1$ for the non-hook $(2,2)$).
+  - **Verification:**
+    - Sanity identity $\mathrm{tr}_M(T_w) = \sum_\lambda y_\lambda\, \chi_\lambda(T_w)$ holds with $\max |\Delta| \leq 4 \times 10^{-16}$ across all classes at H_5 and H_6.
+    - All 7 partitions of H_5 and all 11 partitions of H_6 produce finite $\alpha_\lambda$ values with residual $\leq 7 \times 10^{-51}$ (50 dps precision floor) and $|c|_\infty \leq 1.7$.
+    - H_4 reproduction: $\alpha_{(1^4)}(H_4) = +0.00346252$ matches the closed-form proposition's $+0.003463$, confirming gauge convention compatibility.
+  - **Remaining work:** symbolic closed forms in $\mathbb{Q}(q)$ at H_5 and H_6 (combinatorially larger than H_4 but still tractable via the same null-space approach that generated the H_4 prop's table).
