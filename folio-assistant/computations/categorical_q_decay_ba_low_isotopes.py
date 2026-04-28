@@ -102,6 +102,47 @@ FAMILY_BY_SYM = {
     "6Li": 3, "7Li": 3, "9Be": 3, "11B": 3, "12C": 3, "16O": 3,
 }
 
+
+# σ_shell bare contribution per A_magic at q_0 (from
+# sigma-shell-characterization.witness.json).  Higher A_magic is
+# exponentially suppressed; we list the dominant ones explicitly.
+# Multiply by E_0 to convert to MeV; E_0 ≈ Q_β(n) / |Q_cat| from
+# free-neutron β-decay calibration.  See
+# docs/audits/sigma-shell-categorical-identification.md.
+SIGMA_SHELL_BARE_AT_Q0 = {
+    2:  5.889176e-3,    # A_magic=2: y·σ ≈ 5.9e-3
+    8:  7.524648e-26,   # A_magic=8: essentially zero
+    20: 8.949636e-117,
+    28: 6.573605e-210,
+}
+# Hadronic energy scale for σ_shell bare → MeV conversion.
+# E_0 = Q_β / |Q_cat|; |Q_cat| ≈ 0.25 (numerical from β-decay).
+# This matches the convention of canonical-mass-table.witness.json.
+SIGMA_SHELL_E0_MEV = 3.131194
+
+
+def compute_delta_m_shell_bare(Z: int, N: int) -> float:
+    """Sum σ_shell BARE contributions (y·σ) over magic shells ≤ A.
+
+    This is the level-4 self-dual-ILP correction per
+    docs/audits/sigma-shell-categorical-identification.md.
+
+    For each A_magic ≤ Z+N, accumulate the bare y_shell · σ_shell
+    contribution and convert to MeV via E_0 calibration.
+
+    NOTE: this is the BARE contribution only.  The full Δm_shell per
+    the paper has an additional Φ_q(|V̂_shell|²) amplification factor
+    (deferred — see σ_shell audit doc 'Open work').
+
+    For Z+N < 2: returns 0 (no shell closure for ¹H).
+    """
+    A = Z + N
+    total = 0.0
+    for A_magic, y_sigma in SIGMA_SHELL_BARE_AT_Q0.items():
+        if A_magic <= A:
+            total += y_sigma * SIGMA_SHELL_E0_MEV
+    return total
+
 # Layer-2 reference Q-values (NNDC/ENSDF)
 Q_AME_REFERENCE = {
     "n → p":     (Q_NEUTRON_MEV, Q_NEUTRON_MEV_ERR),
@@ -239,14 +280,23 @@ def main():
         # The mass-endomorphism tower CATEGORICAL prediction for m_p is
         # 1869.85·m_e ≈ 955.5 MeV (1.84% off CODATA m_p), so a fully-
         # categorical m_atom would carry that residual.
-        m_atom_pred = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_pred
+        # σ_shell correction for magic atoms (per docs/audits/sigma-shell-
+        # categorical-identification.md). The bare y_shell × σ_shell
+        # contribution is small (~0.018 MeV per A_magic=2 shell at E_0
+        # calibration); higher A_magic exponentially suppressed. The
+        # FULL Δm_shell with Φ_q amplification is deferred — for now we
+        # include the bare contribution as a structural hook so future
+        # work can extend it.
+        delta_m_shell_MeV = compute_delta_m_shell_bare(Z, N)
+
+        m_atom_pred = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_pred - delta_m_shell_MeV
         m_atom_ame  = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV - b_ame
         # For comparison: fully-categorical m_atom using mass-endomorphism
         # tower prediction m_p_tower = 1869.85·m_e (per mass-endomorphism.witness.json)
-        # and m_n_tower = m_p_tower + Q_β (per calibration-inputs.md)
+        # and m_n_tower = m_p_tower + Q_β + m_e (per Gemini review fix)
         M_P_TOWER_MEV = 1869.85 * M_E_MEV       # categorical tower prediction
-        M_N_TOWER_MEV = M_P_TOWER_MEV + Q_NEUTRON_MEV
-        m_atom_tower = Z * M_P_TOWER_MEV + N * M_N_TOWER_MEV + Z * M_E_MEV - b_pred
+        M_N_TOWER_MEV = M_P_TOWER_MEV + Q_NEUTRON_MEV + M_E_MEV
+        m_atom_tower = Z * M_P_TOWER_MEV + N * M_N_TOWER_MEV + Z * M_E_MEV - b_pred - delta_m_shell_MeV
         layer1.append({
             "sym": sym, "Z": Z, "N": N, "A": A,
             "family": FAMILY_BY_SYM[sym],
@@ -261,6 +311,13 @@ def main():
             "M_atom_AME_MeV":  m_atom_ame,
             "M_atom_tower_categorical_MeV": m_atom_tower,
             "atomic_includes_electron": True,    # Z electrons bound to nucleus
+            "delta_m_shell_bare_MeV": delta_m_shell_MeV,
+            "delta_m_shell_method": (
+                "Bare σ_shell · y_shell from sigma_shell_characterization.py "
+                "(level-4 self-dual-ILP, summed over A_magic ≤ A). Full "
+                "Δm_shell with Φ_q amplification deferred — see "
+                "docs/audits/sigma-shell-categorical-identification.md"
+            ),
             "M_atom_pred_method":
                 "arithmetic: Z·m_p_CODATA + N·m_n_CODATA + Z·m_e − B (NOT "
                 "through GB-NF / SDP / knot-ops; uses CODATA scaffold)",
