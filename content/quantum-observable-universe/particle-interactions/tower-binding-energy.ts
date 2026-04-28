@@ -13,13 +13,10 @@ export default proposition({
     "zero-fitting",
     "analytic-continuation",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.towerBinding",
+  lean: { ref: "qou:QOU.ParticleInteractions.towerBinding",
     validation: "not_checked",
   },
   uses: [
-    "thm:topological-mass",
-    "def:recursive-brane-tower",
     "prop:mass-endomorphism-tower",
     "prop:atomic-braid-mass",
     "rem:hecke-charge-mass-duality",

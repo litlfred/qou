@@ -14,12 +14,10 @@ export default proposition({
     "hecke-algebra",
     "completeness",
   ],
-  lean: {
-    decl: "QOU.Descartes.genus_filtration_ideal",
+  lean: { ref: "qou:QOU.Descartes.genus_filtration_ideal",
     validation: "not_checked",
   },
   uses: [
-    "thm:embeddability-closure",
     "prop:cohomological-embedding",
     "prop:categorical-dq-squared",
   ],

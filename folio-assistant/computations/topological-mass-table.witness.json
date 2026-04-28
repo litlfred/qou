@@ -5,7 +5,7 @@
   "commitSha": "9c7af975ec8405b4f0c3f93dc70cfb8fe2d81ce6",
   "assertions": [
     {
-      "name": "m_μ/m_e = Vol(4₁)/ℏ_q² (self-consistency)",
+      "name": "m_\u03bc/m_e = Vol(4\u2081)/\u210f_q\u00b2 (self-consistency)",
       "computed": 206.768283,
       "expected": 206.768283,
       "passed": true,
@@ -14,16 +14,16 @@
       "source": "Defining relation (exact by construction)"
     },
     {
-      "name": "q₀ = 1/(1 − ℏ_q)",
+      "name": "q\u2080 = 1/(1 \u2212 \u210f_q)",
       "computed": 1.109978595554181,
       "expected": 1.109978595554181,
       "passed": true,
       "tolerance": 1e-15,
       "unit": "dimensionless",
-      "source": "Definition of ℏ_q = 1 − q⁻¹"
+      "source": "Definition of \u210f_q = 1 \u2212 q\u207b\u00b9"
     },
     {
-      "name": "det(T_pp) = −1 (unimodularity)",
+      "name": "det(T_pp) = \u22121 (unimodularity)",
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
@@ -32,7 +32,7 @@
       "source": "Transfer matrix T(1.0, 0.0) from Hecke relation"
     },
     {
-      "name": "det(T_nn) = −1 (unimodularity)",
+      "name": "det(T_nn) = \u22121 (unimodularity)",
       "computed": -1.0,
       "expected": -1.0,
       "passed": true,
@@ -41,7 +41,7 @@
       "source": "Transfer matrix T(1.0, -0.20906032198987945) from Hecke relation"
     },
     {
-      "name": "P_proton(q₀) = ∏ V̂_i (product consistency)",
+      "name": "P_proton(q\u2080) = \u220f V\u0302_i (product consistency)",
       "computed": 0.6468491163,
       "expected": 0.6468491163,
       "passed": true,
@@ -50,7 +50,7 @@
       "source": "Transfer matrix chain (proton, uud)"
     },
     {
-      "name": "P_neutron(q₀) = ∏ V̂_i (product consistency)",
+      "name": "P_neutron(q\u2080) = \u220f V\u0302_i (product consistency)",
       "computed": 0.5047761849,
       "expected": 0.5047761849,
       "passed": true,
@@ -59,7 +59,7 @@
       "source": "Transfer matrix chain (neutron, udd)"
     },
     {
-      "name": "𝔪(𝔅₃) = Vol(𝔅₃)/ℏ_q²",
+      "name": "\ud835\udd2a(\ud835\udd05\u2083) = Vol(\ud835\udd05\u2083)/\u210f_q\u00b2",
       "computed": 746.4179,
       "expected": 746.4179,
       "passed": true,
@@ -128,31 +128,31 @@
   "scriptFile": "topological-mass-table.py",
   "scriptHash": "df99f918db14",
   "scriptCommitSha": "ed07738267cd4ddece2d359e322a66330f9288b4",
-  "description": "Complete atomic mass table for all 118 elements built from the muon/electron mass ratio. Derivation chain: m_μ/m_e → Vol(4₁) → ℏ_q² → q₀ → transfer matrix T(c,d) → Skein polynomials P_p, P_n → M(Z,N) using CODATA m_p, m_n. Crossing convention matches hecke_division.py and HeckeH3.lean (σ⁻¹ = σ − HA). Binding energies B/A from AME2020.",
+  "description": "Complete atomic mass table for all 118 elements built from the muon/electron mass ratio. Derivation chain: m_\u03bc/m_e \u2192 Vol(4\u2081) \u2192 \u210f_q\u00b2 \u2192 q\u2080 \u2192 transfer matrix T(c,d) \u2192 Skein polynomials P_p, P_n \u2192 M(Z,N) using CODATA m_p, m_n. Crossing convention matches hecke_division.py and HeckeH3.lean (\u03c3\u207b\u00b9 = \u03c3 \u2212 HA). Binding energies B/A from AME2020.",
   "contentBlock": "rem:amc-calculations",
   "parameters": {
-    "m_μ/m_e": 206.768283,
-    "Vol(4₁)": 2.029883212819307,
-    "ℏ_q²": 0.00981718851347867,
-    "ℏ_q": 0.09908172643569887,
-    "q₀": 1.1099785955541805,
-    "q₀_err": 1.3578965598837824e-09,
+    "m_\u03bc/m_e": 206.768283,
+    "Vol(4\u2081)": 2.029883212819307,
+    "\u210f_q\u00b2": 0.00981718851347867,
+    "\u210f_q": 0.09908172643569887,
+    "q\u2080": 1.1099785955541805,
+    "q\u2080_err": 1.3578965598837824e-09,
     "HA": 0.20906032198987945,
     "z_markov": 0.4993203340335982,
     "m_p (MeV, CODATA)": 938.27208816,
     "m_n (MeV, CODATA)": 939.56542052,
     "m_e (MeV)": 0.51099895,
-    "𝔪(𝔅₃) (m_e)": 746.4178510331171,
-    "𝔪(𝔅₃) (MeV)": 381.41873813917925
+    "\ud835\udd2a(\ud835\udd05\u2083) (m_e)": 746.4178510331171,
+    "\ud835\udd2a(\ud835\udd05\u2083) (MeV)": 381.41873813917925
   },
   "data": {
     "derivation_chain": {
-      "input": "m_μ/m_e (CODATA 2022)",
-      "step_1": "ℏ_q² = Vol(4₁) / (m_μ/m_e)",
-      "step_2": "q₀ = 1 / (1 − ℏ_q)",
-      "step_3": "transfer matrix T(c,d) with Hecke σ⁻¹ = σ − HA",
-      "step_4": "Skein polynomials P_p(q), P_n(q) via ∏ V̂_i",
-      "step_5": "M(Z,N) = Z·m_p + N·m_n + Z·m_e − B(Z,N) (CODATA m_p, m_n)"
+      "input": "m_\u03bc/m_e (CODATA 2022)",
+      "step_1": "\u210f_q\u00b2 = Vol(4\u2081) / (m_\u03bc/m_e)",
+      "step_2": "q\u2080 = 1 / (1 \u2212 \u210f_q)",
+      "step_3": "transfer matrix T(c,d) with Hecke \u03c3\u207b\u00b9 = \u03c3 \u2212 HA",
+      "step_4": "Skein polynomials P_p(q), P_n(q) via \u220f V\u0302_i",
+      "step_5": "M(Z,N) = Z\u00b7m_p + N\u00b7m_n + Z\u00b7m_e \u2212 B(Z,N) (CODATA m_p, m_n)"
     },
     "skein_polynomials": {
       "P_proton": 0.6468491163,
@@ -184,7 +184,7 @@
       "m_n_CODATA_err_MeV": 5.4e-07,
       "m_e_CODATA_err_MeV": 1.5e-10,
       "dominant_source": "CODATA nucleon mass uncertainties + AME2020 B/A",
-      "parametric_uncertainty": "negligible (δq/q ~ 1e-8)"
+      "parametric_uncertainty": "negligible (\u03b4q/q ~ 1e-8)"
     },
     "atom_masses": [
       {
@@ -1371,9 +1371,11 @@
   },
   "caveats": [
     "Nucleon masses m_p, m_n are CODATA inputs, not derived from q alone. The Skein polynomial ratio P_n/P_p encodes the combinatorial crossing structure but does not directly equal m_n/m_p. Deriving absolute nucleon masses from q requires the colored Borromean volume, which is an open problem.",
-    "Binding energies B/A from AME2020 are used as input. The deeper test is whether the nuclear Skein polynomial at q₀ reproduces these B/A values (confirmed for Z ≤ 92 via transfer matrix).",
-    "For synthetic elements (Z ≥ 93), the q-torsion hypothesis predicts that Skein-derived B/A at q₀ may differ from AME2020 if nuclei were assembled at an effective q_eff > q₀.",
-    "The transfer matrix crossing convention σ⁻¹ = σ − (q−q⁻¹) matches hecke_division.py and the Lean formalization HeckeH3.lean. The pp and nn crossing matrices are unimodular (det = −1); the pn mixed crossing ½(σ+σ⁻¹) is an algebraic average, not a group element.",
-    "SOURCE CLASSIFICATION: The mass M(Z,N) = Z·m_p + N·m_n + Z·m_e − B uses CODATA m_p, m_n and AME2020 B/A as direct inputs. This is NOT a prediction from q alone. Genuine q-predictions are: (i) mass ratios (m_μ/m_e), (ii) Q-values (mass differences from Δnet × E₀), (iii) half-life ratios via log_q(ft). See certificate-to-mass.py and isotope-mass-table.py for detailed validation."
-  ]
+    "Binding energies B/A from AME2020 are used as input. The deeper test is whether the nuclear Skein polynomial at q\u2080 reproduces these B/A values (confirmed for Z \u2264 92 via transfer matrix).",
+    "For synthetic elements (Z \u2265 93), the q-torsion hypothesis predicts that Skein-derived B/A at q\u2080 may differ from AME2020 if nuclei were assembled at an effective q_eff > q\u2080.",
+    "The transfer matrix crossing convention \u03c3\u207b\u00b9 = \u03c3 \u2212 (q\u2212q\u207b\u00b9) matches hecke_division.py and the Lean formalization HeckeH3.lean. The pp and nn crossing matrices are unimodular (det = \u22121); the pn mixed crossing \u00bd(\u03c3+\u03c3\u207b\u00b9) is an algebraic average, not a group element.",
+    "SOURCE CLASSIFICATION: The mass M(Z,N) = Z\u00b7m_p + N\u00b7m_n + Z\u00b7m_e \u2212 B uses CODATA m_p, m_n and AME2020 B/A as direct inputs. This is NOT a prediction from q alone. Genuine q-predictions are: (i) mass ratios (m_\u03bc/m_e), (ii) Q-values (mass differences from \u0394net \u00d7 E\u2080), (iii) half-life ratios via log_q(ft). See certificate-to-mass.py and isotope-mass-table.py for detailed validation."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -1,6 +1,6 @@
 The torus knots embeddable on $\Sigma_4$ form a **complete,
-self-dual basis** for the Hilbert space of the Iwahori--Hecke algebra
-$H_n(q)$.  The $\mathcal{Q}_q$-value of beta decay is the
+self-dual basis** for the regular representation of the
+Iwahori--Hecke algebra $H_n(q)$.  The $\mathcal{Q}_q$-value of beta decay is the
 spectral decomposition of the decay operator in this basis.
 The decomposition is **exact and finite** — it terminates at
 degree $2$ because the embeddability bound on $\Sigma_4$ kills
@@ -163,7 +163,7 @@ The knot operators form a **jet bundle over the exceptional
 divisor chain** of $\Sigma_g$, with jet index given by the
 Gröbner--Shirshov class (= degree in the degree tower) of each torus knot.
 
-| Jet order $k$ | Torus knot basis | Hilbert space content |
+| Jet order $k$ | Torus knot basis | Representation content |
 |:---:|---|---|
 | $0$ | Identity | Ground state ($q = 1$: all crossings equal, $\mathcal{Q} = 0$) |
 | $1$ | $\tau(2,3), \tau(2,5), \tau(2,7), \tau(3,5)$ | Complete degree-$1$ irreps |
@@ -171,7 +171,8 @@ Gröbner--Shirshov class (= degree in the degree tower) of each torus knot.
 | $\geq 3$ | $\emptyset$ on $\Sigma_4$ | Tower terminates (null jet) |
 
 The jet decomposition is **exact and finite** — not by truncation
-but by the finite dimensionality of the Hilbert space on $\Sigma_g$.
+but by the finite dimensionality of the regular representation of
+$H_n(q)$ on $\Sigma_g$.
 Completeness follows from the self-duality $\tau(r,s) \leftrightarrow \tau(s,r)$ and the Rosso–Jones expansion: every irrep of $H_n(q)$ is
 recoverable from the torus knot invariants, so the knots form a
 complete orthogonal basis under the Markov trace inner product.

@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:glossary-quantum-flatness",
-  lean: { decl: "QOU.QuantumFlatness", validation: "not_checked" },
+  lean: { ref: "qou:QOU.QuantumFlatness", validation: "not_checked" },
   title: "Quantum flatness",
   tags: ["glossary", "flatness", "2-group", "instanton"],
   uses: [

@@ -1,7 +1,7 @@
 {
   "computation": "nuclear-braid",
   "description": "Braid word construction and Markov trace for nuclear beta decay",
-  "timestamp": "2026-04-14T16:24:55.052544+00:00",
+  "computedAt": "2026-04-14T16:24:55.052544+00:00",
   "parameters": {
     "q": 1.11,
     "hbar_q": 0.0990990990990992,
@@ -272,5 +272,7 @@
         "delta_pn": 43
       }
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

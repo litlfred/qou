@@ -5,8 +5,7 @@ export default example({
   label: "ex:reeb-decomposition",
   title: "Reeb decomposition",
   tags: ["reeb", "archimedean"],
-  lean: {
-    decl: "QOU.ReebDecomposition",
+  lean: { ref: "qou:QOU.ReebDecomposition",
     validation: "leanok",
   },
   uses: ["ex:c-quantum-universe"],

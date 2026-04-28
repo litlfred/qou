@@ -295,18 +295,20 @@ let $\gamma \colon S^1 \to \tau(A)$ be a knot embedding
 let $\varrho \colon S^1 \to \tau(A)$ be a knot embedding
 ```
 
-### Hecke relation: `$\sigma_i$` in the Hecke relation
+### Hecke relation: `$T_i$` legacy notation
 
 ```md
-<!-- WRONG (sigma is the braid generator, T is the Hecke image) -->
-the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$
+<!-- WRONG (legacy notation; the paper uses $\sigma_i$ throughout) -->
+the Hecke relation $T_i^2 = (q - q^{-1})T_i + 1$
 
 <!-- RIGHT -->
-the Hecke relation $T_i^2 = (q - q^{-1})T_i + 1$
+the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$
 ```
 
-**Note**: `$\sigma_i$` IS correct for the braid group generator in
-`$B_n$`. Only change to `$T_i$` when writing the Hecke relation itself.
+**Note**: `$\sigma_i$` is the standard knot-theory notation for the
+Hecke generator. The same symbol denotes the braid-group generator in
+`$B_n$` and its image in `$H_n(q)$`; context disambiguates (the Hecke
+relation only holds for the latter). See CLAUDE.md §7a.
 
 ### Fibre functor: `$\omega$` for the canonical fibre functor
 

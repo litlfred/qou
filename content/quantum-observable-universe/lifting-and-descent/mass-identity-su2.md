@@ -33,6 +33,6 @@ $$
 $$
 
 The comultiplication maps $f(x) \mapsto f(xy)$, so the trace picks out
-the character $\chi_{1/2}(g) = 2\cos(\theta/2)$ of the fundamental
+the character $\chi_{1/2}(g) = 2\cos(\varTheta/2)$ of the fundamental
 representation. Integrating the character against a winding-number-$1$
 cycle yields $\mathfrak{m}(\varrho) = 1$.

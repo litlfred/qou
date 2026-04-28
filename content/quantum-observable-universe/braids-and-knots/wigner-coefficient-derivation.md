@@ -1,14 +1,14 @@
 **Proposition.**
 *The Wigner term (term 9) of the BW mass formula has coefficient
 $[5]_q! \cdot m_e$, where $[5]_q! = [2]_q [3]_q [4]_q [5]_q$
-is the quantum factorial of $H_5(q)$.*
+is the quantum factorial of $H_5(R, q)$.*
 
 *Proof.*
 The isospin Casimir $T^2$ commutes with all $\sigma_i$ (it lies
 in the center of $H_n$).  By Schur's lemma, $T^2$ acts as a
 scalar $c_\lambda$ on each irreducible representation $\lambda$.
 
-The Markov trace of the Casimir over the complete $H_5(q)$:
+The Markov trace of the Casimir over the complete $H_5(R, q)$:
 
 $$
   \mathrm{tr}_M(T^2) = \sum_\lambda w_\lambda \cdot c_\lambda

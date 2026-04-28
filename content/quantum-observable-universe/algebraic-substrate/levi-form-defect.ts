@@ -3,10 +3,9 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:levi-form-defect",
   title: "Matter as Frobenius failure via the Levi form",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.LeviFormDefect",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.LeviFormDefect",
     validation: "not_checked",
   },
-  uses: ["def:frobenius-hopf-substrate", "def:frobenius-pairing"],
+  uses: ["def:frobenius-hopf-substrate"],
   tags: ["levi-form", "frobenius-failure", "matter", "defect"],
 });

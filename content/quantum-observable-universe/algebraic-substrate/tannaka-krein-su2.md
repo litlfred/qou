@@ -3,7 +3,7 @@ Continuing the
 we execute the
 [Tannaka--Krein reconstruction](#thm:tannaka-krein-isomorphism)
 algorithm concretely — replacing "the reconstruction theorem
-guarantees $H_\xi$ is uniquely determined" with an explicit
+guarantees $\mathcal{H}_\xi$ is uniquely determined" with an explicit
 computation.
 
 **Step 1: the monoidal category.** Start with

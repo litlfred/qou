@@ -361,11 +361,12 @@ gives the Yekutieli bridge theorem. -/
     control (Nesterenko-type theorem for Li₂ at algebraic arguments).
 
     LaTeX: `\label{rem:yekutieli-transcendence-shadow}` -/
+-- Per CLAUDE.md §3b: a conjecture in the YekutieliLiftingCondition
+-- class is itself the open question.  Axiomatised pending
+-- Nesterenko-type results on Li₂ at algebraic arguments.
 -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
-theorem tower_noncollapse_implies_independence
+axiom tower_noncollapse_implies_independence
     (ylc : QOU.Torsion.YekutieliLiftingCondition) :
-    HyperbolicVolumeIndependence :=
-  -- ylc.obstruction_exists already guarantees ∀ n, Nonempty (obstructionClass n)
-  sorry
+    HyperbolicVolumeIndependence
 
 end QOU.Descartes

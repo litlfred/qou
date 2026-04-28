@@ -44,12 +44,14 @@ embeddability requires $(m-1)(n-1) \leq 2g = 8$.
 
 **Physical interpretation.**
 
-1. **Three lepton generations.** The generators $T_{2,3}$,
-   $T_{2,5}$, $T_{2,7}$ (genera $1, 2, 3$) correspond to the three
-   charged leptons at Reeb degrees $\deg\alpha_V = 1, 2, 3$.
-   No fourth generation exists because $T_{2,9}$ saturates
-   genus $4$ — there is no room for a $T_{2,11}$ (which would
-   require genus $5$).
+1. **Lepton generations.** Charged leptons are $T_{2,3}$
+   (electron), $T_{2,5}$ (muon), $T_{2,7}$ (tau) at Reeb degrees
+   $\deg\alpha_V = 1, 2, 3$.  Only the first two are
+   $S_5$-equivariant
+   ([prop:s5-equivariant-torus-knots](#prop:s5-equivariant-torus-knots));
+   the tau embeds topologically but breaks its $\mathbb{Z}_7$
+   symmetry.  $T_{2,9}$ saturates $g = 4$ also symmetry-broken, and
+   $T_{2,11}$ is genus-excluded --- so no fourth generation.
 
 2. **Quark sector.** The $(3,n)$-family generators $T_{3,4}$ and
    $T_{3,5}$ are $H^{0,1}$ force carriers

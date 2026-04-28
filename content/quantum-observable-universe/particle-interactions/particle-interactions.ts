@@ -39,6 +39,7 @@ export default chapter({
       blocks: [
         "confinement-operator-selection",
         "confinement-lp",
+        "confinement-sdp",
         "operator-selection-lp",
         "confinement-topological",
         "confinement-nucleon-unit",
@@ -130,6 +131,13 @@ export default chapter({
         "groebner-reduction-methods",
         "tower-binding-energy",
         "bw-categorical-descent",
+        "thurston-volume-additivity",
+        "mass-volume-factorization",
+        "crossing-graded-mass-expansion",
+        "lifted-crossing-locality",
+        "q-holonomy-locality-derivation",
+        "frobenius-packing-density",
+        "soft-confinement-at-q0",
       ],
     }),
 

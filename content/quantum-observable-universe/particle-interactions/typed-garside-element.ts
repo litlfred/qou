@@ -13,13 +13,11 @@ export default definition({
     "normal-form",
     "staircase",
   ],
-  lean: {
-    decl: "QOU.Descartes.TypedGarsideElement",
+  lean: { ref: "qou:QOU.Descartes.TypedGarsideElement",
     validation: "not_checked",
   },
   uses: [
     "def:typed-crossing-operator",
     "prop:braiding-induced-ordering",
-    "prop:nuclear-groebner-reduction",
   ],
 });

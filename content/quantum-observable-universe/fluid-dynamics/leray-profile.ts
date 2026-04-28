@@ -4,14 +4,7 @@ export default proposition({
   label: "prop:leray-profile",
   title:
     "Self-similar blowup profile: the Leray equations with $\\mathrm{SU}_q(2)$ constraints",
-  uses: [
-    "thm:ns-singularity-descartes",
-    "prop:vorticity-lower-bound",
-    "prop:discrete-vortex-spectrum",
-    "thm:quantum-peter-weyl",
-    "prop:core-levi-form",
-    "def:q-navier-stokes",
-  ],
+  uses: ["thm:ns-singularity-descartes"],
   tags: [
     "leray",
     "self-similar",

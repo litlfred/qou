@@ -14,8 +14,7 @@ export default proposition({
     "temperley-lieb",
     "admissible-system",
   ],
-  lean: {
-    decl: "QOU.Descartes.nuclear_groebner_reduction",
+  lean: { ref: "qou:QOU.Descartes.nuclear_groebner_reduction",
     validation: "not_checked",
   },
   uses: [
@@ -24,6 +23,5 @@ export default proposition({
     "conj:shell-threading-energy",
     "unital-groebner-bases:def:groebner-basis",
     "unital-groebner-bases:def:division-algorithm",
-    "unital-groebner-bases:def:admissible-system",
   ],
 });

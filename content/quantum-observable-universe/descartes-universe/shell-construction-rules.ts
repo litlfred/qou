@@ -13,13 +13,5 @@ export default remark({
     "construction-rules",
   ],
   interprets: "cor:spectral-decomposition-qvalue",
-  uses: [
-    "cor:spectral-decomposition-qvalue",
-    "prop:shell-closure-normal-form",
-    "prop:skein-finiteness-bound",
-    "prop:nuclear-groebner-reduction",
-    "rem:fivefold-symmetry",
-    "rem:force-knot-identification",
-    "def:beta-decay-skein",
-  ],
+  uses: ["cor:spectral-decomposition-qvalue"],
 });

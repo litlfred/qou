@@ -295,6 +295,20 @@ Fix any TeX errors before committing.
 - The `chapter-analysis` skill's glossary gap analysis should include
   Ch 8 glossary blocks in its coverage check.
 
+### Wrap-every-occurrence: `:defterm` / `:refterm`
+
+Every term registered in any block's `defines: [...]` must appear
+wrapped at every mention — `:defterm[…]{#slug}` once at the canonical
+site, `:refterm[…]{#slug}` everywhere else. The ontologist owns the
+choice of canonical site for each new term: pick the block whose
+`.md` carries the most authoritative definition (Mathlib synonym → Ch
+8 glossary block; new mathematics → the relevant `def:` block) and
+add the slug to its `defines: [...]` field, then rewrite the bare
+mention to `:defterm[…]`. Subsequent backfill of `:refterm[…]` across
+the paper is the codemod's job
+(`bun run pipeline/codemod-refterm.ts <chapter-dir>`). See
+`local/glossary-build` skill and `.github/copilot-instructions.md §11.0`.
+
 ## Checklist
 
 - [ ] Every definition in `chapters/*.tex` has a glossary entry

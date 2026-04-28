@@ -25,10 +25,10 @@ cosimplicial structure
    ([recursive brane tower](#def:recursive-brane-tower)).  In the weight
    decomposition, this is the non-zero-weight (vertical) component
    $\alpha_V$: moving between levels of the tower.  The Markov property
-   $\mathrm{tr}_M(x T_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
+   $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
    ensures the trace scales predictably under these vertical inclusions.
 
-The Iwahori--Hecke algebra tower $H_1(q) \hookrightarrow H_2(q) \hookrightarrow \cdots$ thus shadows the brane tower
+The Iwahori--Hecke algebra tower $H_1(R, q) \hookrightarrow H_2(R, q) \hookrightarrow \cdots$ thus shadows the brane tower
 $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$, and the Jones
 polynomial is the observable invariant under *both* directions of this
 decomposition.  Markov's theorem --- that conjugation and stabilisation

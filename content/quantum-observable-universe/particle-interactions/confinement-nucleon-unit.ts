@@ -13,9 +13,7 @@ export default remark({
     "borromean",
   ],
   uses: [
-    "prop:confinement-lp",
     "prop:confinement-topological",
-    "prop:confinement-operator-selection",
     "def:transfer-matrix-operator",
   ],
   interprets: "prop:confinement-lp",

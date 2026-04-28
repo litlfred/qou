@@ -1,6 +1,6 @@
 {
   "computation": "tower-mass-neutrino",
-  "timestamp": "2026-04-14T16:24:55.155495+00:00",
+  "computedAt": "2026-04-14T16:24:55.155495+00:00",
   "q0": 1.1099785955541805,
   "corrected_traces": {
     "tr_M_proton": -0.07793779079830437,
@@ -25,5 +25,7 @@
     ],
     "m_nu_hbar_q2_eV": 5016.57302233966,
     "m_nu_hbar_q3_eV": 497.0507158441654
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -48,7 +48,9 @@ $\mathrm{SU}_q(2)$ gauge flow
   & Pronilpotent deformation of the coordinate algebra
   & \cite[\S2]{yekutieli2008} \\[6pt]
 Descartes condition $\chi(\mathcal{S}) = -6$
-  (Def.~\ref{def:descartes-condition})
+  ([def:descartes-condition](#def:descartes-condition);
+  authoritative statement and proof in
+  [Chapter](#chap:descartes-universe))
   & Topological constraint forcing $\kappa_n \neq 0$ (non-trivial gerbe)
   & \cite{yekutieli2010}; Ex.~\ref{ex:descartes-yekutieli} \\[6pt]
 Cosimplicial crossed groupoid

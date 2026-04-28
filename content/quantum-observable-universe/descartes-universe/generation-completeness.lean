@@ -61,7 +61,7 @@ theorem generation_completeness (K : KnotType)
 
 /-- Corollary: The Descartes particle spectrum is complete over
     embeddable knots — every knot with g(K) ≤ 4 corresponds to a
-    state in the physical Hilbert space. -/
+    state in the algebraic direct limit V_phys = colim V^⊗n. -/
 -- Ref: [manuscript] §5/generation-completeness
 theorem spectrum_complete (K : KnotType) (h : K.seifertGenus ≤ 4) :
     isEmbeddable K ∧ isReachable K := by

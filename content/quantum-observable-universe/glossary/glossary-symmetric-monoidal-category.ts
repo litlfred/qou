@@ -5,4 +5,5 @@ export default remark({
   title: "Symmetric monoidal category",
   tags: ["glossary", "category-theory", "monoidal"],
   uses: ["rem:glossary-braided-monoidal-category"],
+  defines: ["symmetric-monoidal-category"],
 });

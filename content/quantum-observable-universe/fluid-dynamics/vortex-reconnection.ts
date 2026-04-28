@@ -5,9 +5,6 @@ export default remark({
   label: "rem:vortex-reconnection",
   title: "Vortex reconnection as divisor surgery",
   uses: [
-    "rem:madelung-fluid",
-    "rem:braid-fluid",
-    "rem:geodesic-vortices",
     "prop:helicity-conservation",
     "rem:trefoil-vortex-chirality-flip",
   ],

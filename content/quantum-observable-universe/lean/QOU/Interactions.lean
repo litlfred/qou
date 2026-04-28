@@ -9,6 +9,7 @@ Re-exports all particle interaction formalization modules.
 - BorromeanUnique: uniqueness of B₃ among short braid words
 - CentralElement: B₃ as non-identity central element
 - ConfinementLP: LP proof that energy alone is insufficient
+- ConfinementSDP: matrix Frobenius positivity (LP is scalar projection)
 - DemandStability: demand profile determines nuclear stability
 - DerivedAtom: derived atom construction from typed crossings
 - GramIndefinite: Gram matrix indefiniteness (fully proved)
@@ -23,6 +24,7 @@ import QOU.Interactions.BetaReceptivity
 import QOU.Interactions.BorromeanUnique
 import QOU.Interactions.CentralElement
 import QOU.Interactions.ConfinementLP
+import QOU.Interactions.ConfinementSDP
 import QOU.Interactions.DemandStability
 import QOU.Interactions.DerivedAtom
 import QOU.Interactions.GramIndefinite

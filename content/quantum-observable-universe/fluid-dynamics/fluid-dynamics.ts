@@ -96,6 +96,9 @@ export default chapter({
         "ns-singularity-descartes",
         "torus-ns-regular",
         "root-of-unity-truncation",
+        // ── Observable MTC / anyons (Track B) ──────────────────────
+        "observable-mtc",
+        "bn-mtc-action",
       ],
     }),
 
@@ -107,6 +110,7 @@ export default chapter({
         "regularity-breakdown",
         "p2-critical-exponent",
         "p3-blowup-yekutieli",
+        "ns-surreal-bound",
         "p4-universality",
         "p5-counterexample",
         "q-aubin-lions",

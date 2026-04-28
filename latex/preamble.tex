@@ -24,14 +24,6 @@
 \usepackage{titlesec}         % Compact heading styles
 \usepackage{tikz}             % Inline figures
 \usepackage{tikz-cd}          % Commutative diagrams (tikzcd environment)
-% ── TikZ externalization (active only when -shell-escape is enabled) ──────
-% Caches compiled TikZ pictures as standalone PDFs so unchanged diagrams
-% are not recompiled. Silently disabled when shell escape is off.
-\usetikzlibrary{external}
-\ifnum\pdfshellescape=1
-  \tikzexternalize[prefix=tikz-cache/]
-  \immediate\write18{mkdir -p tikz-cache}
-\fi
 \usepackage[dvipsnames]{xcolor}  % Extended colour names (teal, etc.)
 \usepackage{booktabs}            % Professional table rules (\toprule, \midrule, \bottomrule)
 \usepackage{enumitem}            % Customised list labels (label=, leftmargin=)
@@ -56,7 +48,37 @@
 \newunicodechar{≈}{\unimathsafe{\approx}}
 \newunicodechar{∞}{\unimathsafe{\infty}}
 \newunicodechar{Δ}{\unimathsafe{\Delta}}
+\newunicodechar{α}{\unimathsafe{\alpha}}
 \newunicodechar{β}{\unimathsafe{\beta}}
+\newunicodechar{γ}{\unimathsafe{\gamma}}
+\newunicodechar{δ}{\unimathsafe{\delta}}
+\newunicodechar{ε}{\unimathsafe{\varepsilon}}
+\newunicodechar{ζ}{\unimathsafe{\zeta}}
+\newunicodechar{η}{\unimathsafe{\eta}}
+\newunicodechar{θ}{\unimathsafe{\theta}}
+\newunicodechar{ι}{\unimathsafe{\iota}}
+\newunicodechar{κ}{\unimathsafe{\kappa}}
+\newunicodechar{λ}{\unimathsafe{\lambda}}
+\newunicodechar{μ}{\unimathsafe{\mu}}
+\newunicodechar{ν}{\unimathsafe{\nu}}
+\newunicodechar{ξ}{\unimathsafe{\xi}}
+\newunicodechar{π}{\unimathsafe{\pi}}
+\newunicodechar{ρ}{\unimathsafe{\rho}}
+\newunicodechar{σ}{\unimathsafe{\sigma}}
+\newunicodechar{τ}{\unimathsafe{\tau}}
+\newunicodechar{υ}{\unimathsafe{\upsilon}}
+\newunicodechar{φ}{\unimathsafe{\varphi}}
+\newunicodechar{χ}{\unimathsafe{\chi}}
+\newunicodechar{ψ}{\unimathsafe{\psi}}
+\newunicodechar{ω}{\unimathsafe{\omega}}
+\newunicodechar{Γ}{\unimathsafe{\Gamma}}
+\newunicodechar{Λ}{\unimathsafe{\Lambda}}
+\newunicodechar{Σ}{\unimathsafe{\Sigma}}
+\newunicodechar{Π}{\unimathsafe{\Pi}}
+\newunicodechar{Φ}{\unimathsafe{\Phi}}
+\newunicodechar{Ψ}{\unimathsafe{\Psi}}
+\newunicodechar{Ω}{\unimathsafe{\Omega}}
+\newunicodechar{≠}{\unimathsafe{\neq}}
 \newunicodechar{⊙}{\unimathsafe{\odot}}
 \newunicodechar{●}{\textbullet}
 \newunicodechar{○}{$\circ$}
@@ -73,9 +95,53 @@
 \newunicodechar{₇}{\textsubscript{7}}
 \newunicodechar{₈}{\textsubscript{8}}
 \newunicodechar{₉}{\textsubscript{9}}
+% Superscript digits (U+2070, U+2074–U+2079)
+\newunicodechar{⁰}{\textsuperscript{0}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁵}{\textsuperscript{5}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{⁸}{\textsuperscript{8}}
+\newunicodechar{⁹}{\textsuperscript{9}}
+% Additional maths/arrow symbols (U+2194, U+2208, U+220F, U+2212, U+211D)
+\newunicodechar{↔}{\unimathsafe{\leftrightarrow}}
+\newunicodechar{∈}{\unimathsafe{\in}}
+\newunicodechar{∏}{\unimathsafe{\prod}}
+\newunicodechar{−}{\unimathsafe{-}}
+\newunicodechar{ℝ}{\unimathsafe{\mathbb{R}}}
 
 % ── Custom symbols ───────────────────────────────────────────────────────────
 \newcommand{\bigbowtie}{\mathop{\triangleright\!\!\!\triangleleft}}
+% Contact form (pseudo-Hermitian structure) in the QOU archimedean 4-tuple.
+% \varTheta is the upright capital theta, visually distinct from the
+% lowercase contact-form letter θ and from italic \Theta.
+\newcommand{\varTheta}{\mathrm{\Theta}}
+% Reeb vector field variants used in contact/brane geometry
+\newcommand{\xid}{{\xi_{d}}}   % ξ_d — Reeb field (d-component)
+\newcommand{\xiZ}{{\xi_{Z}}}   % ξ_Z — Reeb field (Z-component)
+\newcommand{\xiA}{{\xi_{A}}}   % ξ_A — Reeb field (A-component)
+% ── Stubs for compound macros (missing spaces in source content) ──────────────
+% These arise from LaTeX commands written without a separating space/brace.
+\newcommand{\pid}{\pi d}
+\newcommand{\nuk}{\nu_{k}}
+\newcommand{\varepsilonk}{\varepsilon_{k}}
+\newcommand{\varepsilonq}{\varepsilon_{q}}
+\newcommand{\foralln}{\forall n}
+\newcommand{\omegadV}{\omega\,dV}
+\newcommand{\omegads}{\omega\,ds}
+\newcommand{\Gammat}{\Gamma t}
+\newcommand{\psiK}{\psi_{K}}
+\newcommand{\pic}{\pi}
+\newcommand{\pia}{\pi a}
+\newcommand{\lambdaL}{\lambda L}
+\newcommand{\inftydt}{\infty\,dt}
+% \unicode{codepoint} — ConTeXt-style; used in appendix-surreals for ☉ (U+2609)
+\newcommand{\unicode}[1]{\ensuremath{\odot}}
+% Young-diagram macro stub (ytableau not loaded; renders partition as list)
+\newcommand{\yng}[1]{{\scriptsize[#1]}}
+
+% Unicode maths symbols that appear in plain text (outside $ … $)
+% are handled by \newunicodechar in the block above.
 
 \geometry{margin=1in}
 
@@ -106,12 +172,32 @@
 \renewcommand{\HyPsd@Warning}[1]{}
 \makeatother
 
-% ── Compact chapter/section formatting (normal-size fonts, hang style) ─────
-% Page breaks between chapters are handled by \clearpage in rendered .tex files.
-\titleclass{\chapter}{straight}
-\titleformat{\chapter}[hang]{\normalsize\bfseries}{%
-  \thechapter.}{0.5em}{}
-\titlespacing*{\chapter}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{0.8ex plus 0.2ex}
+% ── Book-style chapter / section formatting ────────────────────────────────
+% Chapter page breaks are handled by the renderer (it prepends \clearpage
+% to every \input chapter — see content/pipeline/render-latex.ts
+% renderChapter). The chapter numeral here is rendered very large,
+% left-aligned, with whitespace to the right — book convention. The
+% chapter title sits below the numeral. Sections and subsections stay
+% compact with normal-size fonts.
+\titleclass{\chapter}{straight}       % renderer-driven page breaks
+\titleformat{\chapter}[display]%
+  {\normalfont\bfseries\raggedright}%
+  {%
+    \fontsize{96pt}{96pt}\selectfont\bfseries\thechapter%
+    \hfill%
+  }%
+  {2em}%
+  {\Huge\bfseries\raggedright}%
+\titlespacing*{\chapter}{0pt}{0pt}{2em}
+
+% Unnumbered chapters (introduction, glossary, appendices) — same display
+% block but no large numeral, since \chapter* has no number.
+\titleformat{name=\chapter,numberless}[block]%
+  {\normalfont\Huge\bfseries\raggedright}%
+  {}%
+  {0pt}%
+  {\Huge\bfseries\raggedright}%
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{2em}
 
 \titleformat{\section}[hang]{\normalsize\bfseries}{%
   \thesection}{0.5em}{}
@@ -120,6 +206,9 @@
 \titleformat{\subsection}[hang]{\normalsize\bfseries}{%
   \thesubsection}{0.5em}{}
 \titlespacing*{\subsection}{0pt}{0.8ex plus 0.3ex minus 0.1ex}{0.4ex plus 0.1ex}
+
+% Show only chapters and sections in the table of contents — no subsections.
+\setcounter{tocdepth}{1}
 
 % ── Theorem environments ───────────────────────────────────────────────────────
 \newtheorem{theorem}{Theorem}[section]
@@ -189,6 +278,26 @@
 }
 \newcommand{\uses}[1]{}            % \uses{label1, label2, ...}
 \newcommand{\proves}[1]{}          % \proves{thm:label} (in proof environments)
+%
+% ── Glossary terms: \defterm{} / \refterm{} ─────────────────────────────────
+% PDF rendering is intentionally clean — the HTML viewer carries the
+% interactive affordance (dotted underline on hover, click-to-jump).
+%
+%   \defterm{slug}{Visible}  defining occurrence: bold-italic + invisible
+%                            \phantomsection\label{term:slug} target
+%   \refterm{slug}{Visible}  referencing occurrence: invisible
+%                            \hyperref[term:slug]{Visible} (no decoration)
+%
+% Single-arg forms \defterm{slug} / \refterm{slug} use the slug as the
+% visible label (the common case where slug == display text).
+\makeatletter
+\newcommand{\defterm}[1]{\@ifnextchar\bgroup{\defterm@two{#1}}{\defterm@one{#1}}}
+\newcommand{\defterm@one}[1]{\phantomsection\label{term:#1}\textbf{\emph{#1}}}
+\newcommand{\defterm@two}[2]{\phantomsection\label{term:#1}\textbf{\emph{#2}}}
+\newcommand{\refterm}[1]{\@ifnextchar\bgroup{\refterm@two{#1}}{\refterm@one{#1}}}
+\newcommand{\refterm@one}[1]{\hyperref[term:#1]{#1}}
+\newcommand{\refterm@two}[2]{\hyperref[term:#1]{#2}}
+\makeatother
 %
 % ── Proof-status legend (printed once in the document) ───────────────────────
 \newcommand{\proofstatuslegend}{%

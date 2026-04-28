@@ -1,0 +1,157 @@
+{
+  "engine": "closed-form+snappy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T04:56:16.262267+00:00",
+  "commitSha": "cbdfc5585089f8c76d87b31649a42e5fe2a10431",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 152,
+  "computation": "d-inter-nucleon-piece",
+  "scriptFile": "d_inter_nucleon_piece.py",
+  "scriptHash": "fe91ef37cb9c",
+  "scriptCommitSha": "",
+  "description": "Decompose D's atom braid word into proton / inter / neutron sub-blocks.  Compute Hecke-level Plancherel character data (no braid lift needed) and, for reference, SnapPy closures of each sub-block with an arbitrary ud-half sign convention.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "H_A": 0.20906032198987945,
+    "B_AME_D": 2.22456612,
+    "target_rho_me_Vol": 4.353367301439661
+  },
+  "data": {
+    "blocks": [
+      {
+        "name": "PROTON",
+        "n_factors": 11,
+        "counts": {
+          "pure_sigma": 6,
+          "pure_sigma_inv": 3,
+          "ud": 2
+        },
+        "chi_sym": 1.3824945145464396,
+        "chi_alt": -0.739223546970123,
+        "log_chi_sym": 0.32388948662813727,
+        "log_chi_alt": -0.30215490449463756,
+        "signed_braid_word_placeholder": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -2,
+          -2,
+          -2,
+          2
+        ],
+        "closure_volume": 5.697405131068289e-08,
+        "closure_components": null,
+        "closure_is_hyperbolic": false
+      },
+      {
+        "name": "INTER",
+        "n_factors": 1,
+        "counts": {
+          "pure_sigma": 0,
+          "pure_sigma_inv": 0,
+          "ud": 1
+        },
+        "chi_sym": 1.005448434559241,
+        "chi_alt": -1.005448434559241,
+        "log_chi_sym": 0.005433645533374881,
+        "log_chi_alt": 0.005433645533374881,
+        "signed_braid_word_placeholder": [
+          3
+        ],
+        "closure_volume": -2.631228568361621e-14,
+        "closure_components": null,
+        "closure_is_hyperbolic": false
+      },
+      {
+        "name": "NEUTRON",
+        "n_factors": 11,
+        "counts": {
+          "pure_sigma": 5,
+          "pure_sigma_inv": 4,
+          "ud": 2
+        },
+        "chi_sym": 1.1221068372363028,
+        "chi_alt": -0.9107622062323657,
+        "log_chi_sym": 0.11520802292054554,
+        "log_chi_alt": -0.09347344078704603,
+        "signed_braid_word_placeholder": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          -5,
+          -5,
+          -5,
+          -5
+        ],
+        "closure_volume": 3.343491215820893e-06,
+        "closure_components": null,
+        "closure_is_hyperbolic": false
+      },
+      {
+        "name": "FULL ATOM",
+        "n_factors": 23,
+        "counts": {
+          "pure_sigma": 11,
+          "pure_sigma_inv": 7,
+          "ud": 5
+        },
+        "chi_sym": 1.559758739418062,
+        "chi_alt": -0.6769250645272097,
+        "log_chi_sym": 0.4445311550820578,
+        "log_chi_alt": -0.3901946997483087,
+        "signed_braid_word_placeholder": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -2,
+          -2,
+          -2,
+          2,
+          3,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          -5,
+          -5,
+          -5,
+          -5
+        ],
+        "closure_volume": 1.8082309347249633e-06,
+        "closure_components": null,
+        "closure_is_hyperbolic": false
+      }
+    ],
+    "multiplicativity": {
+      "chi_sym_product_of_blocks": 1.5597587394180619,
+      "chi_sym_full_atom": 1.559758739418062,
+      "chi_alt_product_of_blocks": -0.6769250645272097,
+      "chi_alt_full_atom": -0.6769250645272097
+    },
+    "thurston_additive_accounting": {
+      "full_atom_vol": 1.8082309347249633e-06,
+      "proton_vol": 5.697405131068289e-08,
+      "neutron_vol": 3.343491215820893e-06,
+      "derived_inter_vol": -1.5922343324066125e-06,
+      "target_rho_me": 4.353367301439661
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

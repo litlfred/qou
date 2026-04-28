@@ -15,10 +15,10 @@ gauge-equivariant.  Every infinitesimal gauge transformation
 acts nontrivially on some observable.
 
 **Contact-geometric translation.**
-The Levi form $\mathcal{L}_\theta$ is non-degenerate everywhere.
-The horizontal distribution $\ker(\theta)$ is maximally
+The Levi form $\mathcal{L}_\varTheta$ is non-degenerate everywhere.
+The horizontal distribution $\ker(\varTheta)$ is maximally
 non-integrable (no integral submanifolds of dimension
-$> \frac{1}{2}\dim\ker\theta$).
+$> \frac{1}{2}\dim\ker\varTheta$).
 
 **Fluid-dynamical translation.**
 In the [brane fluid](#sec:brane-fluid):

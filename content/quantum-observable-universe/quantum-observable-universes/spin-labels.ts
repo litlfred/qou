@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:spin-labels",
   title: "Spin labels and the fundamental object",
-  lean: {
-    decl: "QOU.SpinDecomposition",
+  lean: { ref: "qou:QOU.SpinDecomposition",
     validation: "axioms_only",
   },
   uses: ["thm:su2-emergence"],

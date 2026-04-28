@@ -4,7 +4,7 @@ export default example({
   interprets: "prop:spin-labels",
   label: "ex:spin-labels-su2",
   title: "Spin decomposition of $\\mathrm{Rep}(\\mathrm{SU}(2))$",
-  lean: { decl: "QOU.Examples.su2SpinLabels", validation: "not_checked" },
+  lean: { ref: "qou:QOU.Examples.su2SpinLabels", validation: "not_checked" },
   uses: ["prop:spin-labels", "ex:qou-su2"],
   tags: ["su2", "spin"],
   rendered: [

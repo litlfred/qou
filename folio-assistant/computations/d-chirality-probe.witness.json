@@ -1,0 +1,94 @@
+{
+  "computation": "d-chirality-probe",
+  "description": "Probe alternative chirality factors for D, testing which a_K in B_K = a_K \u00b7 B_bulk + h\u00b7[2]_q \u00b7 B_Z matches B_AME(D) = 2.225 MeV.  Paper's (1+h) gives -353% error; this script searches alternatives.",
+  "reference_blocks": [
+    "prop:figure-eight-bw-coefficients",
+    "rem:deuteron-first-principles"
+  ],
+  "computedAt": "2026-04-24T20:42:55.751586+00:00",
+  "parameters": {
+    "q_0": "1.1099785955541805",
+    "h_q": 0.20906032198987934,
+    "m_e_MeV": 0.51099895,
+    "B_AME_MeV": 2.22457
+  },
+  "candidates": {
+    "(1 + h)  [paper, chiral+]": {
+      "a_K": 1.2090603219898792,
+      "B_pred_MeV": -5.6314164094804955,
+      "err_pct": -353.1462893719009
+    },
+    "(1 - h)  [chiral-]": {
+      "a_K": 0.7909396780101207,
+      "B_pred_MeV": -3.773193402893732,
+      "err_pct": -269.61450540525726
+    },
+    "(1 - h\u00b2) [amphichiral, T/\u00b3He]": {
+      "a_K": 0.956293781769488,
+      "B_pred_MeV": -4.508064556144099,
+      "err_pct": -302.64880656235135
+    },
+    "(1 + h\u00b2) [amphi-opposite]": {
+      "a_K": 1.0437062182305121,
+      "B_pred_MeV": -4.896545256230129,
+      "err_pct": -320.11198821480684
+    },
+    "h        [raw def]": {
+      "a_K": 0.20906032198987934,
+      "B_pred_MeV": -1.187189525823633,
+      "err_pct": -153.36714627202707
+    },
+    "(1 + h/2)": {
+      "a_K": 1.1045301609949396,
+      "B_pred_MeV": -5.166860657833804,
+      "err_pct": -332.26334338024
+    },
+    "(h + h\u00b2)": {
+      "a_K": 0.25276654022039136,
+      "B_pred_MeV": -1.3814298758666481,
+      "err_pct": -162.09873709825487
+    },
+    "1        [no chirality]": {
+      "a_K": 1.0,
+      "B_pred_MeV": -4.702304906187114,
+      "err_pct": -311.3803973885791
+    },
+    "(1 - h)/(1 + h)": {
+      "a_K": 0.6541771850625179,
+      "B_pred_MeV": -3.165389855060064,
+      "err_pct": -242.2922117559827
+    },
+    "(1 - h\u00b2)^2 [\u2074He Borromean\u00b2]": {
+      "a_K": 0.9144977970509891,
+      "B_pred_MeV": -4.3223137172292345,
+      "err_pct": -294.2988405502742
+    },
+    "(1 + h)/2": {
+      "a_K": 0.6045301609949396,
+      "B_pred_MeV": -2.944747216005373,
+      "err_pct": -232.37377183030307
+    },
+    "1/(1 + h) [inverse]": {
+      "a_K": 0.827088592531259,
+      "B_pred_MeV": -3.933847380623589,
+      "err_pct": -276.83630457228094
+    },
+    "(1 + h)^(-2)": {
+      "a_K": 0.684075539895339,
+      "B_pred_MeV": -3.2982649273851994,
+      "err_pct": -248.26527946457966
+    }
+  },
+  "best_discrete": {
+    "name": "h        [raw def]",
+    "a_K": 0.20906032198987934,
+    "err_pct": -153.36714627202707
+  },
+  "continuous_optimal": {
+    "a_K": -0.5589999999999999,
+    "B_pred_MeV": 2.2262448054339345,
+    "err_pct": 0.07528670412415038
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

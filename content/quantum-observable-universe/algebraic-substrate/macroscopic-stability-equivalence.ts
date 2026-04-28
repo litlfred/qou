@@ -4,8 +4,7 @@ export default theorem({
   label: "thm:macroscopic-stability-equivalence",
   title:
     "Macroscopic stability is equivalent to the Riemann hypothesis",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.macroscopic_stability_equivalence",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.macroscopic_stability_equivalence",
     validation: "not_checked",
   },
   uses: [

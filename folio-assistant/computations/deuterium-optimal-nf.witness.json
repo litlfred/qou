@@ -1,6 +1,6 @@
 {
   "computation": "deuterium-optimal-nf",
-  "timestamp": "2026-04-04T04:50:01.485659+00:00",
+  "computedAt": "2026-04-04T04:50:01.485659+00:00",
   "q0": 1.10998,
   "description": "Optimal Groebner basis for deuterium: the aleph_1^4 layer of the quark-level computation (7 strands, types u,u,d,u,d,d,e). These 7 terms have 100% protium completeness and match the 7-strand target.",
   "protium": {
@@ -355,5 +355,7 @@
       "abs_weight_q0": 0.000654115986597148
     }
   ],
-  "computation_time_s": 236.5
+  "computation_time_s": 236.5,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

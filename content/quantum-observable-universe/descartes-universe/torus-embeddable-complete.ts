@@ -12,8 +12,7 @@ export default proposition({
     "seifert-genus",
     "brings-surface",
   ],
-  lean: {
-    decl: "QOU.Descartes.torus_embeddable_complete",
+  lean: { ref: "qou:QOU.Descartes.torus_embeddable_complete",
     validation: "not_checked",
   },
   uses: ["thm:embeddability-closure"],

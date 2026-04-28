@@ -1,13 +1,17 @@
-The categorical mass at a single brane level is the Markov trace
-([categorical mass as Markov trace](#prop:categorical-mass-markov)).
-The full topological mass includes a tower sum over all brane
-levels
-([topological decomposition](#thm:topological-mass)), which
-evaluates to $\mathrm{Vol}(K)/\hbar_q^2$ in the archimedean
-realisation.
+In the unified six-term formula
+([unified knot mass](#thm:knot-mass-formula-unified)),
+$|\mathrm{tr}_M(\rho(\beta))|$ is **Term 1** ($E_\infty^{0,*}$,
+vortex-specific) and the brane tower $\sum \Phi_q(z_i)$ supplies
+**Terms 2–3** ($E_\infty^{1,*}$ and $E_\infty^{2,*}$).  In the
+archimedean realisation these three terms together evaluate to
+$\mathrm{Vol}(K)/\hbar_q^2$
+([topological decomposition](#thm:topological-mass)).
+Terms 4–6 (Frobenius co-Casimir, chirality, jet prefix) are
+separate structural pieces handled elsewhere; this conjecture
+concerns only the tower piece.
 
 The **Hecke mass element**
-$\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$
+$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) is categorically
 defined: it is the fibre functor image of the mass integrand
 $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$, and
@@ -23,7 +27,7 @@ braid words.
 **Conjecture (explicit mass endomorphism).**
 *The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$
 ([Hecke mass element](#def:hecke-mass-element)) admits a
-closed-form NF decomposition in $H_n(q)$ expressible in terms
+closed-form NF decomposition in $H_n(R, q)$ expressible in terms
 of the braid word $\beta$, the substrate parameter $q$, and
 the quantum dilogarithm $\Phi_q$.  Specifically, the
 transient component satisfies:*
@@ -78,7 +82,7 @@ the descended trace gives $\mathrm{Vol}(K)$, each transient
 trace gives $\Phi_q(z_i)$, and they sum to
 $\mathrm{Vol}(K)/\hbar_q^2$.
 
-**Step 3 (Markov trace ≠ Vol, the gap).**
+**Step 3 (Markov trace $\neq$ Vol, the gap).**
 The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is
 the Jones polynomial $J(K; q)$ — a Laurent polynomial
 in $q^{1/2}$.  The hyperbolic volume $\mathrm{Vol}(K)$ is a
@@ -125,14 +129,14 @@ The brane tower $\{A_n\}$ provides the categorical version of
 $N \to \infty$: each brane level $n$ contributes a transient
 trace $\Phi_q(z_n)$, and the full mass sums over all levels.
 A mass endomorphism $\Phi_{\mathrm{mass}}$ would need to
-encode this sum as a **single** element of $H_n(q)$.
+encode this sum as a **single** element of $H_n(R, q)$.
 
 The quantum dilogarithm $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$
 is an **infinite product** — it is not a finite element of
-$H_n(q)$ for any $n$.  However, the brane tower truncates at
+$H_n(R, q)$ for any $n$.  However, the brane tower truncates at
 finite $N$ (determined by the knot crossing number), so the
 relevant sum is finite.  The question is whether this finite
-sum has a closed-form expression in $H_n(q)$.
+sum has a closed-form expression in $H_n(R, q)$.
 
 ## Descended vs transient mass (computed)
 
@@ -186,13 +190,13 @@ $\mathrm{tr}_M(e^- \cdot 4_1) = hz^2 + z = \mathrm{tr}_M(e^-)$
 does not produce the correct mass ratios.  The figure-eight
 encodes the **mass mechanism** (amphichiral, hyperbolic,
 $\mathrm{Vol} = 2.0299$) but acts trivially on the trefoil
-in $H_3(q)$.
+in $H_3(R, q)$.
 
 **(b) Tower-accumulated operator.**
 The mass endomorphism may be the product
 $\Phi_{\mathrm{mass}} = \prod_{n=0}^{N} (1 + \Phi_q(z_n))$
 of Hecke elements at each brane level, composed via the
-comultiplication.  This would be an element of $H_n(q)$
+comultiplication.  This would be an element of $H_n(R, q)$
 growing with $N$ — a categorically defined object, but not a
 fixed element independent of the knot.
 
@@ -212,7 +216,7 @@ $\mathrm{Vol}(K)$ in the limit.
 
 The multi-channel decomposition
 ([knot operator selection](#prop:knot-operator-selection))
-showed that interactions decompose over irreps of $H_n(q)$
+showed that interactions decompose over irreps of $H_n(R, q)$
 weighted by quantum dimensions.  The mass endomorphism
 conjecture is the statement that **mass is a specific
 reweighting of the same decomposition** — the weights that

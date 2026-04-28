@@ -10,7 +10,6 @@ export default remark({
   interprets: "def:jet-horizon",
   uses: [
     "def:jet-horizon",
-    "rem:jet-planck-steps",
     "def:operational-entropy",
   ],
   cites: ["hawking1975", "bekenstein1973"],

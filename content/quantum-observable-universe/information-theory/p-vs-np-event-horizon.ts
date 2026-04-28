@@ -17,14 +17,7 @@ export default remark({
   ],
   uses: [
     "conj:p-vs-np-boundary",
-    "def:computational-horizon",
-    "def:jet-horizon",
     "rem:hawking-radiation",
-    "rem:skein-turing-machine",
-    "def:operational-entropy",
-    "def:information-speed-of-light",
-    "rem:jet-planck-steps",
     "def:big-bang-state",
-    "def:observable-subcategory",
   ],
 });

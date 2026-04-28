@@ -27,12 +27,12 @@
   "scriptFile": "certificate-to-mass.py",
   "scriptHash": "cb9b58ac0869",
   "scriptCommitSha": "d3c7c979dccd265671b6d5d669c6223fc01918da",
-  "description": "Validation of 47 hecke-engine certificates against AME2020 atomic masses. Evaluates certificate polynomial fields (tr_alt, net, f_pauli) at q₀ and compares to observed masses. Documents which computations are genuine predictions from q vs recombinations of CODATA/AME2020 inputs.",
+  "description": "Validation of 47 hecke-engine certificates against AME2020 atomic masses. Evaluates certificate polynomial fields (tr_alt, net, f_pauli) at q\u2080 and compares to observed masses. Documents which computations are genuine predictions from q vs recombinations of CODATA/AME2020 inputs.",
   "parameters": {
-    "q₀": 1.1099785955541805,
-    "q₀_err": 1.3578965598837824e-09,
-    "ℏ_q": 0.09908172643569887,
-    "ℏ_q²": 0.00981718851347867,
+    "q\u2080": 1.1099785955541805,
+    "q\u2080_err": 1.3578965598837824e-09,
+    "\u210f_q": 0.09908172643569887,
+    "\u210f_q\u00b2": 0.00981718851347867,
     "m_e (MeV)": 0.51099895,
     "m_p (MeV)": 938.27208816,
     "m_n (MeV)": 939.56542052,
@@ -702,24 +702,24 @@
     ],
     "source_classification": {
       "from_q_alone": [
-        "ℏ_q, q₀, HA (substrate parameter chain)",
+        "\u210f_q, q\u2080, HA (substrate parameter chain)",
         "Transfer matrix T(c,d) entries",
         "Skein polynomials P(q)",
         "Certificate polynomial evaluations",
-        "Mass ratio m_μ/m_e (definitional)"
+        "Mass ratio m_\u03bc/m_e (definitional)"
       ],
       "from_codata_ame2020": [
-        "m_e (absolute MeV scale — the RULER)",
+        "m_e (absolute MeV scale \u2014 the RULER)",
         "m_p, m_n (nucleon masses)",
         "B/A (binding energy per nucleon)"
       ],
       "mixed": [
-        "Topological mass 𝔪(K) = Vol(K)/ℏ_q² × m_e",
-        "E₀ = Q_neutron / |Δnet|"
+        "Topological mass \ud835\udd2a(K) = Vol(K)/\u210f_q\u00b2 \u00d7 m_e",
+        "E\u2080 = Q_neutron / |\u0394net|"
       ],
       "genuine_predictions_possible": [
         "Mass ratios between particles",
-        "Q-values (mass differences) from Δnet × E₀",
+        "Q-values (mass differences) from \u0394net \u00d7 E\u2080",
         "Half-life ratios via log_q(ft)",
         "B/A from transfer matrix (NOT YET IMPLEMENTED)"
       ]
@@ -729,20 +729,22 @@
         "name": "m_e",
         "value_MeV": 0.51099895,
         "source": "CODATA 2022",
-        "role": "Absolute MeV scale (ruler). Converts dimensionless q-derived quantities to physical units. Without m_e, only dimensionless ratios (m_μ/m_e, etc.) can be predicted."
+        "role": "Absolute MeV scale (ruler). Converts dimensionless q-derived quantities to physical units. Without m_e, only dimensionless ratios (m_\u03bc/m_e, etc.) can be predicted."
       },
       "parameter_2_potential_TODO": {
-        "name": "E₀",
+        "name": "E\u2080",
         "value_MeV": 4.1549,
-        "source": "Calibrated from neutron β-decay: E₀ = Q/|Δnet|",
-        "role": "Energy scale for Q-value predictions from net differences. Currently derived from observed Q and q-computed Δnet. TODO: determine if E₀ is independently derivable from q or if it reduces to m_e × f(q)."
+        "source": "Calibrated from neutron \u03b2-decay: E\u2080 = Q/|\u0394net|",
+        "role": "Energy scale for Q-value predictions from net differences. Currently derived from observed Q and q-computed \u0394net. TODO: determine if E\u2080 is independently derivable from q or if it reduces to m_e \u00d7 f(q)."
       }
     },
     "open_problem_B_over_A": {
       "statement": "Compute B/A purely from q without importing AME2020 values",
-      "physics": "B/A measures how tightly nucleons bind. For stable nuclei, B/A ≈ 7-9 MeV. In QOU, each nucleus has a topological structure (nucleon braids + inter-nucleon crossings) whose transfer matrix product gives the Skein polynomial P(q). The question is: can B/A be extracted from P(q₀)?",
+      "physics": "B/A measures how tightly nucleons bind. For stable nuclei, B/A \u2248 7-9 MeV. In QOU, each nucleus has a topological structure (nucleon braids + inter-nucleon crossings) whose transfer matrix product gives the Skein polynomial P(q). The question is: can B/A be extracted from P(q\u2080)?",
       "current_status": "No formula maps certificate fields (net, tr_alt, f_pauli) to B/A. The net values span ~50 orders of magnitude while B/A varies 0-9 MeV.",
-      "if_solved": "M(Z,N) = Z·m_p(q) + N·m_n(q) + Z·m_e − A·(B/A)(q) would be genuine predictions from q + m_e alone."
+      "if_solved": "M(Z,N) = Z\u00b7m_p(q) + N\u00b7m_n(q) + Z\u00b7m_e \u2212 A\u00b7(B/A)(q) would be genuine predictions from q + m_e alone."
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

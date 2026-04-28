@@ -1,7 +1,7 @@
 {
   "computation": "nuclear-markov-trace",
   "description": "Markov trace of nuclear braid words for half-life prediction",
-  "timestamp": "2026-03-26T23:33:56.108628+00:00",
+  "computedAt": "2026-03-26T23:33:56.108628+00:00",
   "parameters": {
     "q": 1.11,
     "delta_TL": -2.002723371037773,
@@ -153,5 +153,7 @@
       "tr_L0_direct": NaN,
       "tr_ei_context": NaN
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

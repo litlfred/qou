@@ -1,0 +1,98 @@
+{
+  "engine": "brane-tower-probe + alt-neutron",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T16:15:48.684009+00:00",
+  "commitSha": "90956b90bf248e263537f072819c9354a26d280e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "explore-1ppb-items-1-and-2",
+  "scriptFile": "explore_items_1_and_2.py",
+  "scriptHash": "aebc7e056e77",
+  "scriptCommitSha": "",
+  "description": "Two-part exploration: (1) level-2 brane-tower V\u0302^(2) for proton/neutron residuals; (2) alternative neutron braid structures \u2014 test whether any captures the factor-2 gap.",
+  "data": {
+    "item_1_level_2": {
+      "m_p_err_L0": 1.8352460228402738,
+      "m_p_err_L2": 473.94771818283994,
+      "m_n_err_L0": -55.36815946905864,
+      "m_n_err_L2": -54.10030950240239,
+      "m_p_L0_MeV": 955.4916893413767,
+      "m_p_L0_1_2_MeV": 5385.191240340804,
+      "m_n_L0_MeV": 419.345340170355,
+      "m_n_L0_1_2_MeV": 431.2576200411315
+    },
+    "item_2_alternatives": {
+      "m_p_baseline_MeV": 955.4916893413767,
+      "m_n_baseline_MeV": 419.345340170355,
+      "m_n_baseline_err_pct": -55.36815946905864,
+      "alternatives": [
+        {
+          "variant": "baseline",
+          "V0": 0.8542103128258388,
+          "V1": 0.9755094711077458,
+          "m_n_MeV": 419.345340170355,
+          "err_pct": -55.36815946905864
+        },
+        {
+          "variant": "(a) ud-purified",
+          "V0": 1.1508267301171204,
+          "V1": 0.9755094711077458,
+          "m_n_MeV": Infinity,
+          "err_pct": Infinity
+        },
+        {
+          "variant": "(b) W-insertion",
+          "V0": 1.3036416342899526,
+          "V1": 0.9755094711077458,
+          "m_n_MeV": Infinity,
+          "err_pct": Infinity
+        },
+        {
+          "variant": "(c) proton-like",
+          "V0": 0.9890073159292595,
+          "V1": 0.9710701586527437,
+          "m_n_MeV": 955.4916893413767,
+          "err_pct": 1.6950675784302933
+        },
+        {
+          "variant": "(d) squared",
+          "V0": 1.3929323758131753,
+          "V1": 0.9755094711077458,
+          "m_n_MeV": Infinity,
+          "err_pct": Infinity
+        },
+        {
+          "variant": "(e) weak dd",
+          "V0": 0.8542103128258388,
+          "V1": 1.021972498709757,
+          "m_n_MeV": 1418.4096793183262,
+          "err_pct": 50.96444040408715
+        },
+        {
+          "variant": "(f) g0^p+g1^n",
+          "V0": 0.9890073159292595,
+          "V1": 0.9755094711077458,
+          "m_n_MeV": 1002.962828684346,
+          "err_pct": 6.7475246299782885
+        },
+        {
+          "variant": "(g) g0^n+g1^p",
+          "V0": 0.8542103128258388,
+          "V1": 0.9710701586527437,
+          "m_n_MeV": 378.90889692640235,
+          "err_pct": -59.6718984488918
+        },
+        {
+          "variant": "(h) iso-swap",
+          "V0": 1.2143508927667297,
+          "V1": 0.9755094711077458,
+          "m_n_MeV": Infinity,
+          "err_pct": Infinity
+        }
+      ]
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

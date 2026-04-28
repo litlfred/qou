@@ -56,6 +56,8 @@ export default chapter({
         "spatial-realization-functor",
         "categorical-archimedean-bridge",
         "categorical-archimedean-bridge-proof",
+        "physicist-translation",
+        "categorical-action-vs-chern-simons",
       ],
     }),
 

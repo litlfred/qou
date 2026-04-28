@@ -65,5 +65,5 @@ energy on the Hopf link Seifert surface.
 | $n=2 \to 3$ | $+2$ | $1.89$ eV | $656.3$ nm | Balmer-$\alpha$ |
 | $n=3 \to 4$ | $+2$ | $0.66$ eV | $1875$ nm | Paschen-$\alpha$ |
 
-Each transition absorbs or emits a photon (point $\varnothing$)
+Each transition absorbs or emits a photon ($\mathbf{1}_{B_4}$ 4-strand identity, knot-trivial)
 whose energy equals the R-I crossing energy difference.

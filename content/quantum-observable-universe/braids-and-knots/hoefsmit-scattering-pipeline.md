@@ -6,7 +6,7 @@ functorial:*
 $$
   \beta
   \;\xrightarrow{\;\rho_\lambda\;}
-  \prod_i \rho_\lambda(T_i)
+  \prod_i \rho_\lambda(\sigma_i)
   \;\xrightarrow{\;\mathrm{tr}_M\;}
   J_K(q)
   \;\xrightarrow{\;\omega\;}
@@ -15,15 +15,15 @@ $$
   \mathfrak{m}
 $$
 
-*Stage 1 (Hoefsmit).  Each crossing $T_i$ in the braid word acts
+*Stage 1 (Hoefsmit).  Each crossing $\sigma_i$ in the braid word acts
 on the Wedderburn--Artin block $\rho_\lambda$ via the Hoefsmit
 seminormal matrix
 ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
 The scattering amplitude from tableau state $T$ to state $T'$
-under crossing $T_i$ is:*
+under crossing $\sigma_i$ is:*
 
 $$
-  W_{T \to T'} = \langle T' \mid T_i \mid T \rangle
+  W_{T \to T'} = \langle T' \mid \sigma_i \mid T \rangle
   = \begin{cases}
     a_\rho & T' = T \quad\text{(forward scattering)} \\
     b_\rho & T' = (T)_i \quad\text{(exchange scattering)} \\
@@ -102,7 +102,7 @@ Each stage is proved separately:
 **Stage 1** is [Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form).
 The $q$-deformation of the classical axial distance $1/\rho$ to
 $h/(1 - q^{-2\rho})$ follows from the Hecke relation
-$T_i^2 = hT_i + 1$ and the requirement $\det = -1$ for each $2 \times 2$
+$\sigma_i^2 = h\sigma_i + 1$ and the requirement $\det = -1$ for each $2 \times 2$
 block.  The eigenvalues are $q$ (symmetric) and $-q^{-1}$
 (antisymmetric), which are the eigenvalues of the universal
 $R$-matrix $\check{\mathcal{R}}$ of $U_q(\mathfrak{sl}_2)$ restricted
@@ -110,11 +110,11 @@ to the isotypic component of type $\lambda$.
 
 **Stage 2** is [Wedderburn--Artin trace identity](#prop:wedderburn-trace-identity).
 The Markov trace $\mathrm{tr}_M$ factors through the
-Wedderburn--Artin decomposition $H_k(q) \cong \bigoplus_\lambda
+Wedderburn--Artin decomposition $H_k(R, q) \cong \bigoplus_\lambda
 M_{d_\lambda}(\mathbb{C})$.  The weight $w_\lambda$ ensures that
 $\mathrm{tr}_M$ is the unique trace satisfying the Markov property
-$\mathrm{tr}_M(xT_k) = z \cdot \mathrm{tr}_M(x)$ for
-$x \in H_k(q)$.
+$\mathrm{tr}_M(x\sigma_k) = z \cdot \mathrm{tr}_M(x)$ for
+$x \in H_k(R, q)$.
 
 **Stage 3** is [Geom(K) alignment](#prop:geom-yekutieli-alignment).
 The observation frame $\tau$ is the fibre functor of the
@@ -138,3 +138,9 @@ each level $k$ introduces $p(k) - p(k-1)$ new partitions whose
 total Wedderburn--Artin weight is $O([2]_q^{-2})$ of the previous
 level's weight, by Plancherel concentration.
 $\square$
+
+*Formal asymptotic content. The truncation
+$\mathrm{MAE}(k) \leq C_0 \cdot [2]_q^{-2(k-3)}$ has
+$\ordw\bigl(\mathrm{MAE}(k)\bigr) = -2(k-3)\,\ordw([2]_q)$;
+see [Big-O via $\ordw$](#rem:conway-normal-form) and the
+[body asymptotics catalog](#rem:body-asymptotics-catalog).*

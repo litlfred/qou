@@ -15,6 +15,40 @@ This repository is a formal mathematics paper with:
 - **LaTeX** as a rendering target (generated from content objects)
 - **Lean 4** formalization linked to content objects
 
+## Always provide GitHub links — default to `.md`
+
+Whenever a skill or agent creates or modifies a file, the reply **must**
+include a clickable GitHub blob URL for every affected file on the
+pushed branch. This applies to all file kinds: `.md`, `.ts`, `.lean`,
+`.tex`, config files, scripts, etc.
+
+**Default link target for content blocks is always the `.md` file.**
+When citing a content block (definition, proposition, remark, etc.) in
+chat replies, reviews, or summaries, the primary clickable link
+**must** point to the `.md` sibling — never to `.ts` or `.lean` as the
+primary link.
+
+Rationale: `.md` is the narrative/authoritative human-readable face of a
+content block. `.ts` is manifest metadata; `.lean` is formalization.
+Users want to read the statement, not the manifest.
+
+Pattern (always):
+
+```
+https://github.com/litlfred/qou/blob/<branch>/<path-to>/<block>.md
+```
+
+**When to link siblings (`.ts`, `.lean`, `.tex`):**
+- Only in delivery summaries for **modified** files (see
+  `.claude/skills/local/delivery-summary.md`) — list every sibling that
+  actually changed.
+- When the user explicitly asks about the Lean formalization or TS
+  manifest.
+- Never as the primary citation link for a block reference.
+
+If the branch is not yet pushed, say so explicitly and do not fabricate
+URLs.
+
 ## CRITICAL: Protected Files — DO NOT MODIFY
 
 The following files are **strictly off-limits** to all coding agents
@@ -54,6 +88,11 @@ When a user request arrives, route to the right skill(s):
 | "review / check / audit Lean" | `local/lean-proof-review` | collaborator |
 | "status / tracking / manifest" | `local/proof-status-tracking` | reader |
 | "what next / priority / triage" | `local/proof-triage` | collaborator |
+| "proof gap / missing step / unproved assertion / bridging lemma" | `local/proof-gap-audit` | reader |
+| "audit proofs / review proofs / proof editor / coordinate proof review" | `local/proof-editor` | collaborator |
+| "simplify exposition / revisit old proof / integrate new content" | `local/proof-exposition-review` | collaborator |
+| "lean vs narrative / do they prove the same thing / equivalence audit" | `local/proof-narrative-lean-equivalence` | collaborator |
+| "concise proof / tighten proof / cut verbose narrative / shorten human proof" | `local/proof-conciseness` | collaborator |
 | "write / edit chapter text" | `local/scientific-accuracy` + `local/readability-editing` | reader (review) / collaborator (edit) |
 | "fix lean build / lake build fails" | `local/lean-build-fix` | collaborator |
 | "audit lean / completeness / coverage" | `local/lean-completeness-audit` | collaborator |
@@ -97,6 +136,8 @@ When a user request arrives, route to the right skill(s):
 | "rendering QC / visual check / overfull hbox" | `local/rendering-auditor` | reader |
 | "notation check / symbol audit / register compliance" | `local/rendering-auditor` (pass 2) + `local/ontologist` | reader |
 | "fix rendering / rendering fix / quick fix" | `local/rendering-fixes` | reader |
+| "check markdown render / GitHub view / proof markdown" | `local/markdown-render-check` | reader |
+| "one voice / status leak / TODO in prose / strip emoji / scholarly voice" | `local/one-voice-audit` | collaborator |
 
 ### External skill packages
 
@@ -129,8 +170,8 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -160,6 +201,86 @@ usage for content changes.
 These rules apply whenever an agent creates or modifies a `.lean` file.
 Agents **must** follow all of them; violations will be caught by the
 `content-block-review` skill.
+
+### 0. Standardized root Lake workspace
+
+The repo uses a **single root Lake workspace** (`/lakefile.toml`,
+`/lean-toolchain`).  Each paper is a Lake **package** declared by
+`[[require]]` with a short-form name:
+
+| Package | Paper directory | Library module |
+|---------|-----------------|----------------|
+| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+
+**Preferred build commands** (always run from repo root):
+
+```bash
+lake build           # build every paper package
+lake build QOU       # single paper library
+lake exe cache get   # fetch Mathlib cache for the workspace
+```
+
+Per-paper `cd content/<paper>/lean && lake build` still works, but
+root-workspace commands are the standardized entry point used by CI
+(`lean_ci.yml`, `blueprint.yml`) and the MCP server (`lean_build`).
+
+### 0a. Content-block `lean.ref` is a package-qualified URI
+
+Every `lean:` field on a content block uses a package-qualified URI
+of the form `"<package>:<Decl.Path>"`:
+
+```ts
+// definition in the qou package
+lean: { ref: "qou:QOU.Torsion.lifting_exists" }
+
+// cross-paper reference (ugb package)
+lean: { ref: "ugb:UGB.GrobnerShirshov.Basis" }
+```
+
+- **Package prefix** must be one of `qou`, `ugb`, `fred2005` — see
+  `folio-assistant/schemas/lean-packages.ts` for the registry and
+  `parseLeanRef()` helper.
+- The legacy `decl:` / `file:` shape is **removed**.  Validation fails
+  on blocks that still use it.
+- The pipeline resolves a `.lean` source file by: (1) sibling
+  `<rootName>.lean`, (2) `<lakeRoot>/<Decl/Path>.lean` under the
+  package's Lake root, (3) grep fallback on current branch.
+
+To register a **new paper** as a Lake package: add a `[[require]]`
+stanza to the root `lakefile.toml`, append to `LEAN_PACKAGES` in
+`lean-packages.ts`, and add the library name to `defaultTargets`.
+
+### 0b. Rebasing across the `lean.ref` migration — instructions for agents
+
+If you are an agent working on an older branch and you **rebase or
+merge onto a commit that contains this standardization**, your
+content blocks may still use the legacy `lean: { decl: "...", file? }`
+shape.  Zod validation will fail with a message pointing at this
+procedure.  **Run the migration, do not hand-edit each block:**
+
+```bash
+cd content
+bun run migrate-lean-refs        # apply (writes in place)
+bun run migrate-lean-refs:dry    # preview only (no writes)
+```
+
+The script ([content/pipeline/migrate-lean-refs.ts](content/pipeline/migrate-lean-refs.ts))
+is **idempotent** — safe to re-run after any rebase, merge, or
+cherry-pick.  It rewrites every `lean: { decl: "<Decl>", file? }`
+into `lean: { ref: "<pkg>:<Decl>" }` using the paper directory to
+choose the Lake package prefix (see `LEAN_PACKAGES` in
+`folio-assistant/schemas/lean-packages.ts`).
+
+After the migration, re-run `bun run validate` to confirm the schema
+is clean before continuing your task.  **Do not add `decl` back** to
+unblock a merge — that field was removed from the schema on purpose.
+
+If new `.lean` files were added on your branch, their content-block
+`lean.ref` URIs must use the correct `<package>:` prefix for the
+paper they live under.  Agents authoring new blocks should always
+consult `LEAN_PACKAGES` for the list of valid prefixes.
 
 ### 1. Every `sorry` requires a bibliographic citation
 
@@ -209,6 +330,35 @@ previously proved theorems, axioms) may use provable block kinds.
   with `interprets: "conj:..."` (proof *sketches*, not proofs).
 - `remark` blocks may freely interpret conjectures (they make no
   logical claims).
+
+**Definitions and conjectures (clarification):** The propagation
+rule above applies to **provable claims** (`theorem`, `proposition`,
+`lemma`, `corollary`). It does **not** force `definition` blocks to
+become conjectures even if their `uses[]` includes a `conj:` label.
+A definition names a construction; whether the named construction
+is "the right one" may itself be a conjecture, but the act of naming
+is not a logical claim.
+
+However:
+
+- A `definition` whose well-formedness genuinely depends on a
+  conjecture (e.g. defining "the unique X with property P" when P's
+  uniqueness is conjectural) **should** carry an explicit narrative
+  note in its `.md` flagging the conjectural backing, and should
+  cite any computational witnesses available
+  (`folio-assistant/computations/*.witness.json`) so empirical
+  support is discoverable from the manifest.
+- Any `theorem`/`proposition`/`lemma`/`corollary` whose `uses[]`
+  cites such a definition **does** trigger propagation — it is
+  downstream of the conjecture transitively. Track the chain via the
+  definition.
+
+Audit note: the `proof-gap-audit` skill must apply §I of its
+checklist (conjectural propagation) only to provable kinds. Flagging
+a definition as a propagation violation is a false positive (we have
+seen this hallucinated by sub-agents). Compute the transitive cone
+from any provable block; if it touches a `conj:` via any path
+(including through definitions), demote the provable block.
 
 **Lean formalization of conjectures:** Conjectures *can* (and should,
 when feasible) have `.lean` files.  The convention is:
@@ -343,6 +493,31 @@ conventions.
 lightweight wrapper around) a Mathlib type, add a glossary block. If
 the paper introduces genuinely new axioms/structure, add a definition.
 
+### 4c. Glossary terms — `\defterm` / `\refterm` (every occurrence wrapped)
+
+Every term registered in any block's `defines: [...]` field **must** be
+wrapped at every occurrence — `\defterm` once at the canonical site,
+`\refterm` everywhere else. Plain text and `\emph{}` are no longer
+permitted for defined terms. See
+`.github/copilot-instructions.md §11.0` for the full contract.
+
+- **Markdown** (`.md`): use the `remark-directive` syntax
+  `:defterm[Visible]{#slug}` / `:refterm[Visible]{#slug}` — short
+  forms `:defterm[term]` / `:refterm[term]` use the bracket text as
+  both label and slug.
+- **LaTeX**: use `\defterm{slug}[{Visible}]` / `\refterm{slug}[{Visible}]`.
+- **Validation**: `bun run validate <paper>` enforces five rules
+  (`defterm-declared`, `defterm-marked`, `refterm-resolves`,
+  `defterm-unique`, plus opt-in `term-mention-coverage` via `--strict`).
+  Run with `--strict` once the chapter has been backfilled.
+- **Codemod**: `bun run pipeline/codemod-refterm.ts <chapter-dir>`
+  (dry-run by default) wraps bare-text mentions of known glossary
+  slugs in `:refterm[…]{#slug}`. Mdast-based, idempotent. Pass
+  `--write` to apply.
+- **Glossary build**: `bun run pipeline/build-glossary.ts <paper>`
+  emits `glossary.json` (committed) + `chapters/glossary.tex`
+  (gitignored). `--check` mode is the CI gate.
+
 ### 5. Tactic strategy (try in order)
 
 | Goal pattern | Try first | Then try |
@@ -376,9 +551,9 @@ the paper introduces genuinely new axioms/structure, add a definition.
   Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
   is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
   explicitly used.
-- **QOU archimedean tuple**: `$(\mathbf{C}, \theta, G, \mathcal{S})$`.
-  The old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**.
-  - $M$ (base manifold) is subordinate to $\theta$ (its domain).
+- **QOU archimedean tuple**: `$(\mathbf{C}, \varTheta, G, \mathcal{S})$`.
+  The old 5-tuple $(M, \varTheta, G, P, E)$ is **deprecated**.
+  - $M$ (base manifold) is subordinate to $\varTheta$ (its domain).
   - $P$ (principal bundle) is subordinate to $\mathcal{S}$ (frame bundle
     of the state bundle under $G$). Mention $P$ only when discussing
     gauge structure directly.
@@ -390,33 +565,100 @@ the paper introduces genuinely new axioms/structure, add a definition.
 - Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
 - Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
 
-### 7aa. Notation register (STRICT)
+### 7aa. Notation register (STRICT) — see content notation block
 
-Every mathematical symbol belongs to exactly one register.
-Agents **must** use the correct font for each concept.
+The authoritative source for every mathematical symbol used in the
+paper is the front-matter **Notation** chapter, rendered into the
+PDF immediately after the table of contents:
 
-| Register | Font | Symbols |
-|----------|------|---------|
-| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
-| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
-| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass), `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). **Never** plain `$m$` for categorical mass. |
-| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
-| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
-| Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
-| Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
+- **Per-chapter symbol tables**:
+  [`content/quantum-observable-universe/notation/notation-register.md`](content/quantum-observable-universe/notation/notation-register.md)
+- **Collision avoidances + conventions**:
+  [`content/quantum-observable-universe/notation/notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md)
+
+Agents **must** treat those `.md` files as authoritative when picking
+a font/symbol for a concept. When adding a new symbol convention,
+edit the content block — not this section. CLAUDE.md mirrors only a
+short summary below; the content block is what readers see in the
+PDF and what `rendering-auditor`, `ontologist`, and Gemini-style
+review tools should cite.
+
+#### Summary (for quick agent lookup)
+
+The register groups symbols by the chapter where each is **first
+introduced**; entries within a chapter are sorted alphabetically by
+concept name. Below is a flat per-chapter summary; for the full
+table with usage notes, open the content block above.
+
+#### algebraic-substrate
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| $q$-shuffle Hopf algebra | calligraphic | `$\mathcal{H}_q$` — convolution algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under $\ast_q$; carries the grouplikes $\exp_q, \log_q, \mathrm{Li}_2^q$. **Never** plain `$H_q$` (collides with Hecke and Hamiltonian). |
 | Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
-| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
-| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
-| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
+
+#### braids-and-knots
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
+| Hook-length product | Latin cap + arg | `$H_q(\lambda) = \prod_{x \in \lambda} [h_x(\lambda)]_q$` — always with partition argument; unambiguous in knot/partition contexts. |
+| Iwahori–Hecke algebra | Latin cap | `$H_n(q)$` — always with subscript $n$; standard knot-theory convention (Kassel, Jones). |
+| Jones–Markov central coefficient | plain italic | `$y_\lambda$` — coefficient in $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ ([procedure](#prop:alpha-k-derivation-procedure)). Sign-indefinite at $n \geq 4$. **Never** confuse with $u_\lambda$ (LP shadow-price). |
+| LP shadow-price | plain italic | `$u_\lambda, u_0$` (Schrijver linear-programming convention) for operator-selection LP dual variables ([BW shadow price](#prop:bw-coefficient-shadow-price)). Non-negative by LP duality. **Never** write `$y_\lambda$` here (collides with Jones–Markov). |
+| Markov parameter | plain italic | `$z = 1/(q^{1/2} + q^{-1/2})$` |
+| Mass | fraktur | `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). |
+
+#### descartes-universe
+
+| Concept | Font | Symbols |
+|---------|------|---------|
 | Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
+| Gravitational constant | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
+| Julia-set measure | Greek | `$\mu_J$` (measure on Julia set) |
 | Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
-| Information | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
-| Measures | Greek | `$\mu_J$` (Julia-set measure) |
+
+#### information-theory
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Entropy (operational) | Greek | `$\eta_q = (2q-1)/q^3$` |
+| Information bandwidth | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
+| Lyapunov exponent | Greek | `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov). Distinct from $\chi_\zeta(c)$ (character). |
+
+#### observations
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
+| Mass number | Latin cap | `$A = Z + N$` |
+| Neutron number | Latin cap | `$N$` |
+| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
+| Proton number | Latin cap | `$Z$` (atomic number). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
+
+#### particle-interactions
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
+| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
+| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
+| Mass (categorical) | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass). **Never** plain `$m$` for categorical mass. |
+| $q$-Hamiltonian | hat | `$\hat{H}_q$` (operator hat, Dirac convention). **Never** plain `$H_q$`. Distinct from `$\mathcal{H}_q$` (shuffle algebra) and `$H_n(q)$` (Hecke). |
+
+#### quantum-observable-universes
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Bundles / sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
+
+#### quantum-universes
+
+| Concept | Font | Symbols |
+|---------|------|---------|
 | Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
-| Bundles/sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
 | Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
-| Proton number | Latin cap | `$Z$` (atomic number, standard nuclear convention). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
-| Neutron number | Latin cap | `$N$` (neutron number), `$A = Z + N$` (mass number) |
 
 **Key collision avoidances:**
 - `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
@@ -428,6 +670,7 @@ Agents **must** use the correct font for each concept.
 - `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
   **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
 - `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
+- `$H_q$` alone = **not used**. Three distinct concepts share the letter $H$: `$\mathcal{H}_q$` (shuffle Hopf algebra), `$\hat{H}_q$` (Hamiltonian operator), `$H_n(q)$` or `$H_q(\lambda)$` (Hecke/hook-length, always with argument).
 - `$q = 1.1097$` (or any specific numerical value of the substrate
   parameter) **must not appear** outside the introduction and
   Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.
@@ -462,26 +705,31 @@ numerical evaluations at `$q_0$`. Exact algebraic identities
 
 ### 7a. Hecke-Skein convention (STRICT)
 
-The Hecke algebra generator is **$T$** (never $\sigma$ for the Hecke
-relation, never $t$ or $A$ for the Jones polynomial variable).
+The Hecke algebra generator is **$\sigma_i$** (never $T$, never $t$ or
+$A$ for the Jones polynomial variable). The Iwahori–Hecke algebra
+$H_n(q)$ is presented as a quotient of the braid group algebra of
+$B_n$, so the same symbol $\sigma_i$ is used for the braid group
+generator and its image in $H_n(q)$ — context disambiguates.
 
-- **Hecke relation**: $(T - q)(T + q^{-1}) = 0$, equivalently
-  $T^2 = (q - q^{-1})T + 1$.
-- **Skein relation**: Multiply the Hecke relation by $T^{-1}$ to get
-  $T - T^{-1} = q - q^{-1}$, which is the Skein relation
-  $L_+ - L_- = (q - q^{-1})\,L_0$.
+- **Hecke relation**: $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$, equivalently
+  $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$.
+- **Skein relation**: Multiply the Hecke relation by $\sigma_i^{-1}$ to
+  get $\sigma_i - \sigma_i^{-1} = q - q^{-1}$, which is the Skein
+  relation $L_+ - L_- = (q - q^{-1})\,L_0$.
 - **Translation dictionary**:
-  - $T$ = positive crossing $L_+$
-  - $T^{-1}$ = negative crossing $L_-$
+  - $\sigma_i$ = positive crossing $L_+$
+  - $\sigma_i^{-1}$ = negative crossing $L_-$
   - $1$ = smoothed crossing $L_0$
-  - $q$ and $-q^{-1}$ are the eigenvalues of $T$ (symmetric and
+  - $q$ and $-q^{-1}$ are the eigenvalues of $\sigma_i$ (symmetric and
     antisymmetric channels respectively)
 - **Jones polynomial**: Always $J_K(q)$, never $V_K(t)$ or bracket
   with variable $A$.  The Jones polynomial is the Markov trace
   $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$ in $H_n(q)$.
-- **Braid generators**: $\sigma_i$ denotes the braid group generator
-  in $B_n$. The Hecke algebra image is $T_i = \rho(\sigma_i)$.
-  When writing the Hecke relation, always use $T$, not $\sigma$.
+- **Braid vs Hecke**: $\sigma_i$ denotes both the braid-group generator
+  in $B_n$ and its image in $H_n(q)$; the latter satisfies the Hecke
+  relation above while the former satisfies only the braid relations.
+  This shared notation follows the standard knot-theory convention
+  (Kassel, Jones).
 
 ### 8. File hygiene
 
@@ -689,15 +937,20 @@ configured via `.mcp.json`. It provides Claude Code with:
 Prerequisites: `git`, `curl`.
 
 Use the `lean_setup` MCP tool (provided by paper-assistant). It installs:
-uv, elan, the Lean toolchain pinned in
-`content/quantum-observable-universe/lean/lean-toolchain`, Mathlib cache,
-ripgrep, and runs `lake build`.
+uv, elan, the Lean toolchain pinned in the **root** `lean-toolchain`,
+Mathlib cache, ripgrep, and runs `lake build` in the **root Lake
+workspace**.
 
 Alternatively, from the command line:
 
 ```bash
-cd content/quantum-observable-universe/lean
+# Build every paper at once from the root workspace
 lake exe cache get && lake build
+
+# Or build a single paper package
+lake build QOU        # quantum-observable-universe
+lake build UGB        # unital-groebner-bases
+lake build Fred2005   # fred2005-formal-groups
 ```
 
 ### Local Mathlib cache
@@ -785,7 +1038,11 @@ tool rather than silently failing.
 | `main.tex` | LaTeX preamble and document structure (rendering target) |
 | `chapters/*.tex` | Generated LaTeX chapters (from content pipeline) |
 | `references.bib` | BibTeX database (auto-generated from `content/schema/references.ts`) |
-| `content/quantum-observable-universe/lean/` | Lean 4 formalization (lakefile.toml, QOU/) |
+| `lakefile.toml`, `lean-toolchain` | **Root Lake workspace** — aggregates every paper package; `lake build` here builds all |
+| `content/quantum-observable-universe/lean/` | `qou` Lake package (lib: `QOU`) |
+| `content/unital-groebner-bases/lean/` | `ugb` Lake package (lib: `UGB`) |
+| `content/fred2005-formal-groups/lean/` | `fred2005` Lake package (lib: `Fred2005`) |
+| `folio-assistant/schemas/lean-packages.ts` | Registry mapping `lean.ref` URI prefixes → Lake packages |
 | `blueprint/src/` | LeanBlueprint source (content.tex, preamble.tex, web.tex, print.tex) |
 | `home_page/` | Jekyll landing page for GitHub Pages |
 | `.github/workflows/` | CI/CD pipelines |
@@ -810,7 +1067,7 @@ configured to **deploy from the `gh-pages` branch** (not "GitHub Actions").
 | Workflow | Artifacts deployed to gh-pages |
 |----------|-------------------------------|
 | `blueprint.yml` | `blueprint/` (interactive dependency graph), `blueprint.pdf`, `docs/` (doc-gen4 API), `axiom-report.txt`, manifests |
-| `lean_ci.yml` | `content/quantum-observable-universe/lean/` (source browser), `content/quantum-observable-universe/lean/docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
+| `lean_ci.yml` | `lean/content/<paper>/lean/` (per-paper source browsers for QOU/UGB/Fred2005), `lean/.../docs/`, `axiom-report.txt`, `dependency-graph.svg`, manifests |
 | `publish.yml` | `papers/<dir>/` (per-paper viewers), `index.html` (folio), `schema-docs/` (TypeDoc), `drafts/` (feature branches) |
 
 ### Expected gh-pages contents

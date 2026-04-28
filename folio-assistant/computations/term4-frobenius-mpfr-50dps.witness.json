@@ -1,0 +1,79 @@
+{
+  "computation": "term4-frobenius-mpfr-50dps",
+  "description": "Plan F \u2014 Term 4 (Frobenius co-Casimir) of the unified mass formula at MPFR @ 50 dps for n = 2..11. Term 4 = m_e \u00b7 \u03a3_{\u03bb\u22a2n} 1/dim_q(\u03bb). Reads symbolic per-n expressions from frobenius-partition-sum.witness.json and evaluates at q_0 (50 dps from q-pinning-50-digit witness). The n=2 case is computed inline (not in the f64 witness).",
+  "computedAt": "2026-04-28T01:34:22.383796+00:00",
+  "precision": "mpfr_50dps",
+  "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
+  "m_e_mev_50dps": "0.51099895",
+  "results_by_n": [
+    {
+      "n": 2,
+      "total_symbolic": "2",
+      "total_at_q0_50dps": "2.0",
+      "term4_b_pred_mev_50dps": "1.0219979"
+    },
+    {
+      "n": 3,
+      "total_symbolic": "q/(q**2 + 1) + 2",
+      "total_at_q0_50dps": "2.4972905450085914754458311922210076140236059100915",
+      "term4_b_pred_mev_50dps": "1.2761128463443179849317705211021830587080678952706",
+      "f64_baseline": 2.4972905450085916
+    },
+    {
+      "n": 4,
+      "total_symbolic": "(2*q**8 + 5*q**6 + 5*q**4 + 5*q**2 + 2)/(q**8 + q**6 + 2*q**4 + q**2 + 1)",
+      "total_at_q0_50dps": "3.1464007588040498697529295108898038066135215376647",
+      "term4_b_pred_mev_50dps": "1.607807484028072739191383739488703310885512561549",
+      "f64_baseline": 3.1464007588040497
+    },
+    {
+      "n": 5,
+      "total_symbolic": "2*q**4/(q**8 + q**6 + q**4 + q**2 + 1) + q**4/(q**4*(q**4 + q**2 + 2) + q**2 + 1) + 2*q**3/(q**6 + q**4 + q**2 + 1) + 2",
+      "total_at_q0_50dps": "3.0305252772483847460962670611256902204755547908053",
+      "term4_b_pred_mev_50dps": "1.548595234622383494451209067154813520688276998769",
+      "f64_baseline": 3.0305252772483846
+    },
+    {
+      "n": 6,
+      "total_symbolic": "(2*q**22 + 8*q**20 + 20*q**18 + 42*q**16 + q**15 + 70*q**14 + 2*q**13 + 90*q**12 + 3*q**11 + 90*q**10 + 2*q**9 + 70*q**8 + q**7 + 42*q**6 + 20*q**4 + 8*q**2 + 2)/(q**22 + 4*q**20 + 9*q**18 + 15*q**16 + 20*q**14 + 23*q**12 + 23*q**10 + 20*q**8 + 15*q**6 + 9*q**4 + 4*q**2 + 1)",
+      "total_at_q0_50dps": "3.2021339838031971925527950871246437377856511346984",
+      "term4_b_pred_mev_50dps": "1.6362871034827507720374261090858514691325430548972",
+      "f64_baseline": 3.202133983803197
+    },
+    {
+      "n": 7,
+      "total_symbolic": "(numeric path: q substituted at per-hook level)",
+      "total_at_q0_50dps": "2.8644515413913931705138574659211594796489895902683",
+      "term4_b_pred_mev_50dps": "1.463731729976883449169752125535373276883180049188",
+      "f64_baseline": null
+    },
+    {
+      "n": 8,
+      "total_symbolic": "(numeric path: q substituted at per-hook level)",
+      "total_at_q0_50dps": "2.7594270102471113935762274164798231372160993488727",
+      "term4_b_pred_mev_50dps": "1.4100643048379131626504889547824023193031326903696",
+      "f64_baseline": null
+    },
+    {
+      "n": 9,
+      "total_symbolic": "(numeric path: q substituted at per-hook level)",
+      "total_at_q0_50dps": "2.5438838242158342193915854799681136539416761452196",
+      "term4_b_pred_mev_50dps": "1.2999219630962758594831698190989521106448598714473",
+      "f64_baseline": null
+    },
+    {
+      "n": 10,
+      "total_symbolic": "(numeric path: q substituted at per-hook level)",
+      "total_at_q0_50dps": "2.4273321188418736525079754568483803391604311951092",
+      "term4_b_pred_mev_50dps": "1.2403641640294726524642403250752926625116242222481",
+      "f64_baseline": null
+    },
+    {
+      "n": 11,
+      "total_symbolic": "(numeric path: q substituted at per-hook level)",
+      "total_at_q0_50dps": "2.3137574210006819849450880765053138773156387490084",
+      "term4_b_pred_mev_50dps": "1.1823276126860564435908558147517350607287202193226",
+      "f64_baseline": null
+    }
+  ]
+}

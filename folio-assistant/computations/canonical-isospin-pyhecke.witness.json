@@ -1,0 +1,60 @@
+{
+  "computation": "canonical-isospin-pyhecke",
+  "description": "Canonical Markov trace via pyhecke.trace.markov_trace_symbolic_eval for atomic braids p, n, D, T, \u00b3He, \u2074He.  Routes through the optimized backend (CRT/native).  Replaces the symbolic-q SymbolicHeckeDivision path which timed out on \u00b3He at >25 min wallclock.",
+  "reference_blocks": [
+    "prop:categorical-mass-markov",
+    "thm:jones-markov-trace",
+    "rem:commutative-crossing-energy"
+  ],
+  "computedAt": "2026-04-25T17:05:30.632142+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "precision": 30
+  },
+  "results": {
+    "p   (Z=1, N=0)": {
+      "Z": 1,
+      "N": 0,
+      "include_inter": false,
+      "tr_M_q0": 1.0653062285923887,
+      "walltime_sec": 0.007312774658203125
+    },
+    "n   (Z=0, N=1)": {
+      "Z": 0,
+      "N": 1,
+      "include_inter": false,
+      "tr_M_q0": 0.8008637862553291,
+      "walltime_sec": 0.00023221969604492188
+    },
+    "D   (Z=1, N=1)": {
+      "Z": 1,
+      "N": 1,
+      "include_inter": true,
+      "tr_M_q0": 0.3368212289448051,
+      "walltime_sec": 0.00034427642822265625
+    },
+    "T   (Z=1, N=2)": {
+      "Z": 1,
+      "N": 2,
+      "include_inter": true,
+      "tr_M_q0": 0.078297035873325,
+      "walltime_sec": 0.0005784034729003906
+    },
+    "\u00b3He (Z=2, N=1)": {
+      "Z": 2,
+      "N": 1,
+      "include_inter": true,
+      "tr_M_q0": 0.1791650003435875,
+      "walltime_sec": 0.0004420280456542969
+    },
+    "\u2074He (Z=2, N=2)": {
+      "Z": 2,
+      "N": 2,
+      "include_inter": true,
+      "tr_M_q0": 0.041648468842339324,
+      "walltime_sec": 0.0006129741668701172
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

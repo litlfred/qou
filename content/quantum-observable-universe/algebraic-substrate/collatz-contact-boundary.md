@@ -2,7 +2,7 @@
 Let $\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$
 be the Reeb bundle
 ([Reeb bundle](#def:reeb-bundle)) with $U(1)$ fiber
-parametrized by $q = e^{i\theta}$, $\theta \in [0, 2\pi)$.
+parametrized by $q = e^{i\varTheta}$, $\varTheta \in [0, 2\pi)$.
 
 ### From integer parity to the $[2]_q$-divisor
 

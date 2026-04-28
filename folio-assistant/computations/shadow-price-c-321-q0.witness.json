@@ -1,0 +1,23 @@
+{
+  "computation": "shadow-price-c-321-q0",
+  "description": "Numerical evaluation of the BW shadow-price coefficient C_{[3,2,1]} at q_0 via the closed form from prop:wigner-2-coefficient.  Uses [n]_q \u00b7 h / [3]_q^3 \u00b7 [5]_q closed form; cross-checks via Wigner-2 corollary C = w \u00b7 h/2.",
+  "reference_blocks": [
+    "prop:wigner-2-coefficient",
+    "prop:bw-coefficient-shadow-price",
+    "conj:shell-correction-term-seven"
+  ],
+  "computedAt": "2026-04-25T14:20:42.451720+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "results": {
+    "C_321_at_q0": 0.037488241447432055,
+    "w_321_at_q0": 0.35863564248453456,
+    "h_at_q0": 0.20906032198987945,
+    "trace_per_dim_at_q0": 0.10453016099493972,
+    "wigner_2_identity_check": true
+  },
+  "scope_note": "C_{[3,2,1]} is the SINGLE-PARTITION shadow price at k=6 (A=2 only).  The empirical \u03b1_5 fit from the higher-A shell diagnostic aggregates over ALL height-6 partitions across A=1..4.  Direct numerical comparison requires per-partition decomposition (see paper_six_term_isotope_sweep refactor).",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

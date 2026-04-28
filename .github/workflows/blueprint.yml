@@ -27,21 +27,6 @@
 name: Blueprint
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'content/quantum-observable-universe/lean/**'
-      - 'blueprint/**'
-      - 'home_page/**'
-      - 'chapters/**'
-      - 'references.bib'
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'content/quantum-observable-universe/lean/**'
-      - 'blueprint/**'
   workflow_dispatch:
 
 concurrency:
@@ -119,27 +104,42 @@ jobs:
         run: python3 .github/scripts/generate_lean_stubs.py
 
       # ── Build Lean project ───────────────────────────────────────
+      # Cache `.lake/` for the root workspace and every per-paper
+      # package.  The root lakefile pulls all three paper packages
+      # (qou, ugb, fred2005) via `[[require]]` stanzas.
       - name: Cache Lean build artifacts
         uses: actions/cache@v4
         with:
-          path: content/quantum-observable-universe/lean/.lake
-          key: lean-ci-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/quantum-observable-universe/lean/lake-manifest.json') }}
+          path: |
+            .lake
+            content/quantum-observable-universe/lean/.lake
+            content/unital-groebner-bases/lean/.lake
+            content/fred2005-formal-groups/lean/.lake
+          key: lean-ci-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lakefile.toml', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/unital-groebner-bases/lean/lakefile.toml', 'content/fred2005-formal-groups/lean/lakefile.toml') }}
           restore-keys: |
             lean-ci-${{ runner.os }}-
 
-      - name: Build and lint Lean project
+      # Build from the repo-root Lake workspace so cross-paper
+      # dependencies (QOU → UGB) resolve in a single pass.
+      - name: Build and lint Lean workspace
         id: lean_build
         uses: leanprover/lean-action@v1
         with:
           build: true
           lint: false
-          lake-package-directory: content/quantum-observable-universe/lean
+          lake-package-directory: .
         continue-on-error: true
 
       # ── Build blueprint + doc-gen4 (no deploy) ─────────────────
       # docgen-action builds blueprint HTML, blueprint PDF, and
       # doc-gen4 API docs into the homepage directory.  We disable
       # its built-in deploy and handle deployment ourselves below.
+      #
+      # The blueprint itself is paper-specific (only QOU has a
+      # blueprint/ directory today); the underlying Lake build uses
+      # the QOU package's lakefile so doc-gen4 can pick up Mathlib
+      # linkage.  When additional papers add blueprints, add parallel
+      # docgen-action steps scoped to their per-paper Lake dirs.
       - name: Compile blueprint and documentation
         id: docgen
         uses: leanprover-community/docgen-action@main

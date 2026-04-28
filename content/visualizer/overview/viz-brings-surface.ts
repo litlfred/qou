@@ -10,11 +10,8 @@ export default definition({
   label: "def:viz-brings-surface",
   title: "Bring's surface viewport",
   tags: ["visualizer", "brings-surface", "snappea"],
-  lean: {
-    decl: "QOU.BringsSurface.ViewportState",
-    file: "QOU/BringsSurface/Viewport.lean",
+  lean: { ref: "qou:QOU.BringsSurface.ViewportState",
     validation: "not_checked",
   },
-  status: "not_started",
   uses: [],
 });

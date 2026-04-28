@@ -1,7 +1,7 @@
 **Proposition.**
 *For any braid $K$ on $3$ strands and any partition $\lambda \vdash k$
 with $k \geq 3$, the Frobenius character of $K$ in the irreducible
-representation $\rho_\lambda$ of $H_k(q)$ is:*
+representation $\rho_\lambda$ of $H_k(R, q)$ is:*
 
 $$
   \chi(K, \lambda)
@@ -23,9 +23,9 @@ seminormal form
 | *unknot (identity)* | *$1$* | *$2$* | *$1$* |
 
 *Proof.*
-The braid $K$ lives in $H_3(q)$ (generators $T_1, T_2$).  The
-representation $\rho_\lambda$ of $H_k(q)$ restricts to $H_3(q)$
-via the standard inclusion $H_3(q) \hookrightarrow H_k(q)$
+The braid $K$ lives in $H_3(R, q)$ (generators $T_1, T_2$).  The
+representation $\rho_\lambda$ of $H_k(R, q)$ restricts to $H_3(R, q)$
+via the standard inclusion $H_3(R, q) \hookrightarrow H_k(R, q)$
 (using the first two generators).  The branching rule gives:
 
 $$
@@ -98,3 +98,8 @@ uncertainty $\delta q \approx 1.4 \times 10^{-9}$ (from CODATA
 $m_\mu/m_e$), giving $\delta M/M \sim 10^{-7}\%$, reached at
 $k \approx 13$.
 $\square$
+
+*Formal asymptotic content. The per-level Plancherel weight
+has $\ordw(\text{per-level weight}) = -2\,\ordw([2]_q)$ in the surreal
+valuation; see [Big-O via $\ordw$](#rem:conway-normal-form) and the
+[body asymptotics catalog](#rem:body-asymptotics-catalog).*

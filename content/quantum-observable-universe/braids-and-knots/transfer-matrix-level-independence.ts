@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:transfer-matrix-level-independence",
-  lean: {
-    decl: "QOU.transfer_matrix_level_independence",
+  lean: { ref: "qou:QOU.transfer_matrix_level_independence",
     validation: "not_checked",
   },
   title: "Transfer matrix level independence",
@@ -13,8 +12,6 @@ export default proposition({
   ],
   uses: [
     "def:categorical-transfer-matrix",
-    "thm:markov-trace-product",
-    "prop:vertex-is-exceptional-divisor",
     "def:bundle-isotopy-equivalence",
   ],
   proofs: ["prf:transfer-matrix-level-independence"],

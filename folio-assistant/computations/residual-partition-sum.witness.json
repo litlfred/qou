@@ -1,0 +1,91 @@
+{
+  "computation": "residual-partition-sum",
+  "description": "Tested hypothesis: tower residual = m_e \u00b7 \u03a3_\u03bb 1/d_\u03bb for n = 3\u00b7A.  Reports \u03a3 1/d_\u03bb for n = 3, 6, 9, 12, 15, 18, and the corresponding m_e\u00b7\u03a3 correction in MeV.  Includes sub-ppm residual analysis for p, n after 5/2\u00b7m_e applied.",
+  "computedAt": "2026-04-27T21:23:32.157573+00:00",
+  "q_0": 1.1099785955541805,
+  "partition_sums": {
+    "3": {
+      "fraction": "5/2",
+      "float": 2.5,
+      "m_e_correction_MeV": 1.2774973749999998
+    },
+    "6": {
+      "fraction": "473/144",
+      "float": 3.2847222222222223,
+      "m_e_correction_MeV": 1.6784896065972221
+    },
+    "9": {
+      "fraction": "60379/22680",
+      "float": 2.6622134038800707,
+      "m_e_correction_MeV": 1.3603882540586418
+    },
+    "12": {
+      "fraction": "282327329/119750400",
+      "float": 2.3576316154267545,
+      "m_e_correction_MeV": 1.2047472799698753
+    },
+    "15": {
+      "fraction": "966878573623/435891456000",
+      "float": 2.2181636283850446,
+      "m_e_correction_MeV": 1.1334792850329478
+    },
+    "18": {
+      "fraction": "873185388347/404190259200",
+      "float": 2.1603325871218817,
+      "m_e_correction_MeV": 1.1039276836700649
+    }
+  },
+  "isotope_table": [
+    {
+      "atom": "p / n",
+      "A": 1,
+      "n_strands": 3,
+      "sum_inv_d_lambda": 2.5,
+      "sum_inv_d_lambda_frac": "5/2",
+      "correction_MeV": 1.2774973749999998
+    },
+    {
+      "atom": "D",
+      "A": 2,
+      "n_strands": 6,
+      "sum_inv_d_lambda": 3.2847222222222223,
+      "sum_inv_d_lambda_frac": "473/144",
+      "correction_MeV": 1.6784896065972221
+    },
+    {
+      "atom": "T/\u00b3He",
+      "A": 3,
+      "n_strands": 9,
+      "sum_inv_d_lambda": 2.6622134038800707,
+      "sum_inv_d_lambda_frac": "60379/22680",
+      "correction_MeV": 1.3603882540586418
+    },
+    {
+      "atom": "\u2074He",
+      "A": 4,
+      "n_strands": 12,
+      "sum_inv_d_lambda": 2.3576316154267545,
+      "sum_inv_d_lambda_frac": "282327329/119750400",
+      "correction_MeV": 1.2047472799698753
+    },
+    {
+      "atom": "\u2075Li/\u2075He",
+      "A": 5,
+      "n_strands": 15,
+      "sum_inv_d_lambda": 2.2181636283850446,
+      "sum_inv_d_lambda_frac": "966878573623/435891456000",
+      "correction_MeV": 1.1334792850329478
+    },
+    {
+      "atom": "\u2076Li",
+      "A": 6,
+      "n_strands": 18,
+      "sum_inv_d_lambda": 2.1603325871218817,
+      "sum_inv_d_lambda_frac": "873185388347/404190259200",
+      "correction_MeV": 1.1039276836700649
+    }
+  ],
+  "sub_ppm_p_uMeV": 352.085,
+  "sub_ppm_n_uMeV": 685.495,
+  "sub_ratio_n_over_p": 1.9469588309641137
+}

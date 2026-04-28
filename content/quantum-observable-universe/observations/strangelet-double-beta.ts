@@ -14,14 +14,8 @@ export default proposition({
     "electromagnetic-signature",
     "falsifiability",
   ],
-  lean: {
-    decl: "QOU.Descartes.strangelet_double_beta",
+  lean: { ref: "qou:QOU.Descartes.strangelet_double_beta",
     validation: "not_checked",
   },
-  uses: [
-    "prop:strangelet-crossing-energy",
-    "rem:strangelet-witten-stability",
-    "def:crossing-energy",
-    "def:coulomb-charge",
-  ],
+  uses: ["rem:strangelet-witten-stability"],
 });

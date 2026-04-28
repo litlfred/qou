@@ -11,13 +11,8 @@ export default proposition({
     "independence",
     "strong-force",
   ],
-  lean: {
-    decl: "QOU.Interactions.confinementUniversality",
+  lean: { ref: "qou:QOU.Interactions.confinementUniversality",
     validation: "not_checked",
   },
-  uses: [
-    "prop:four-term-pair-nucleon",
-    "prop:confinement-operator-selection",
-    "def:breit-wheeler-pair-production",
-  ],
+  uses: ["prop:four-term-pair-nucleon"],
 });

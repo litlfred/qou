@@ -1,4 +1,4 @@
-**Monoidal category.** A category $\mathbf{C}$ equipped with a
+**:defterm[Monoidal category]{#monoidal-category}.** A category $\mathbf{C}$ equipped with a
 bifunctor $\otimes \colon \mathbf{C} \times \mathbf{C} \to \mathbf{C}$
 (the *tensor product*), a distinguished unit object $\mathbf{1}$, and
 coherent natural isomorphisms for associativity ($\alpha$), left

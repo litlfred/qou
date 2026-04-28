@@ -5,7 +5,7 @@
   "commitSha": "395f5c99532bb2d741a3d8350b10842b903966b6",
   "assertions": [
     {
-      "name": "m_p from ∏ dc_k/dz",
+      "name": "m_p from \u220f dc_k/dz",
       "computed": 938.267,
       "expected": 938.272,
       "passed": true,
@@ -92,55 +92,55 @@
     ],
     "amplification_factor_needed": 2.459952787539128,
     "simultaneous_3root": {
-      "Σ(c_k+z)": {
+      "\u03a3(c_k+z)": {
         "abs_plus": 26.020814044682815,
         "abs_minus": 26.020814044682815,
         "ratio_to_pi0_plus": 1.0905754135141568,
         "ratio_to_pi0_minus": 1.0905754135141568
       },
-      "∏(c_k+z)": {
+      "\u220f(c_k+z)": {
         "abs_plus": 561.8862670343954,
         "abs_minus": 561.8862670343954,
         "ratio_to_pi0_plus": 23.54958407399169,
         "ratio_to_pi0_minus": 23.54958407399169
       },
-      "Σ dc_k/dz": {
+      "\u03a3 dc_k/dz": {
         "abs_plus": 23.65432452976868,
         "abs_minus": 23.65432452976868,
         "ratio_to_pi0_plus": 0.9913919184523727,
         "ratio_to_pi0_minus": 0.9913919184523727
       },
-      "∏ dc_k/dz": {
+      "\u220f dc_k/dz": {
         "abs_plus": 23.247553941996443,
         "abs_minus": 23.247553941996443,
         "ratio_to_pi0_plus": 0.9743434894061742,
         "ratio_to_pi0_minus": 0.9743434894061742
       },
-      "Σ|dc_k/dz|": {
+      "\u03a3|dc_k/dz|": {
         "abs_plus": 30.001889344126035,
         "abs_minus": 30.001889344126035,
         "ratio_to_pi0_plus": 1.2574288729588077,
         "ratio_to_pi0_minus": 1.2574288729588077
       },
-      "Σ_{k≠l} dc_k/dz·(c_l+z)": {
+      "\u03a3_{k\u2260l} dc_k/dz\u00b7(c_l+z)": {
         "abs_plus": 99.9586255721578,
         "abs_minus": 99.9586255721578,
         "ratio_to_pi0_plus": 4.189431553927067,
         "ratio_to_pi0_minus": 4.189431553927067
       },
-      "d/dz[Σ c_k²]": {
+      "d/dz[\u03a3 c_k\u00b2]": {
         "abs_plus": 184.58986641903587,
         "abs_minus": 184.58986641903587,
         "ratio_to_pi0_plus": 7.736467028078979,
         "ratio_to_pi0_minus": 7.736467028078979
       },
-      "Vander×∏dc/dz": {
+      "Vander\u00d7\u220fdc/dz": {
         "abs_plus": 8745.09748012886,
         "abs_minus": 8745.09748012886,
         "ratio_to_pi0_plus": 366.52151943578434,
         "ratio_to_pi0_minus": 366.52151943578434
       },
-      "Σ 1/∂F_c": {
+      "\u03a3 1/\u2202F_c": {
         "abs_plus": 2.241900715778503e-15,
         "abs_minus": 2.241900715778503e-15,
         "ratio_to_pi0_plus": 9.396177214015475e-17,
@@ -149,7 +149,7 @@
     },
     "key_result": {
       "prescription": "product_of_3_prolongations",
-      "formula": "A(q₀) = |∫_{-a}^{a} ∏_k dc_k/dz dz| / |∫_{-a}^{a} (c₀+z) dz|",
+      "formula": "A(q\u2080) = |\u222b_{-a}^{a} \u220f_k dc_k/dz dz| / |\u222b_{-a}^{a} (c\u2080+z) dz|",
       "best_limit_name": "(4-q)/(4q+3)",
       "best_limit_value": 0.38844820732799046,
       "amplification_factor": 2.459938770426328,
@@ -161,6 +161,8 @@
   "caveats": [
     "Thimble tracing uses simple Euler integration of the gradient flow ODE. Higher-order integrators (RK4) and adaptive step sizes may improve accuracy.",
     "Intersection numbers depend on the length and accuracy of anti-thimble paths. Results should be verified with finer step sizes.",
-    "Nine simultaneous 3-root prescriptions are tested. The product prescription ∏_k dc_k/dz yields 0.0006% agreement with CODATA m_p on the real axis. Theoretical justification for this prescription (why product, not sum) and for the integration limit a = (4-q)/(4q+3) remains to be established."
-  ]
+    "Nine simultaneous 3-root prescriptions are tested. The product prescription \u220f_k dc_k/dz yields 0.0006% agreement with CODATA m_p on the real axis. Theoretical justification for this prescription (why product, not sum) and for the integration limit a = (4-q)/(4q+3) remains to be established."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -4,8 +4,7 @@ export default proof({
   label: "prf:skein-mass-relation",
   title: "Proof of $q$-Deformed Skein Relation",
   uses: ["rem:skein-mass-relation"],
-  lean: {
-    decl: "QOU.HadronicMass.SkeinMassRelation",
+  lean: { ref: "qou:QOU.HadronicMass.SkeinMassRelation",
     validation: "leanok",
   },
 });

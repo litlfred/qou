@@ -3,6 +3,10 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:picard-lefschetz-thimble",
   title: "Picard--Lefschetz thimble decomposition of the color-tube cubic",
+  lean: {
+    ref: "qou:QOU.Descartes.ThimbleData",
+    validation: "not_checked",
+  },
   tags: [
     "picard-lefschetz",
     "thimble",
@@ -13,7 +17,6 @@ export default definition({
     "baryon-mass",
   ],
   uses: [
-    "rem:color-tube-cubic",
     "rem:lepton-mass-integrals",
     "prop:descartes-elliptic-curve",
   ],

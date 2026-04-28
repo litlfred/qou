@@ -4,8 +4,7 @@ export default definition({
   label: "def:higher-forms",
   title: "Higher differential forms",
   tags: ["differential-forms", "category-theory"],
-  lean: {
-    decl: "QOU.HigherForms",
+  lean: { ref: "qou:QOU.HigherForms",
     validation: "not_checked",
   },
   uses: ["def:quantum-universe"],

@@ -1,0 +1,214 @@
+{
+  "generated": "2026-04-26T23:33:14.995Z",
+  "paper": "quantum-observable-universe",
+  "entries": [
+    {
+      "slug": "braided-monoidal-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Monoidal structure",
+      "block": "rem:glossary-braided-monoidal-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "categorical-q-torsion-leaf",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Geometry and transport",
+      "block": "rem:glossary-categorical-q-torsion-leaf",
+      "kind": "remark",
+      "lean": "qou:QOU.CategoricalQTorsionLeaf"
+    },
+    {
+      "slug": "categorical-transport",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Geometry and transport",
+      "block": "rem:glossary-categorical-transport",
+      "kind": "remark",
+      "lean": "qou:QOU.CategoricalTransport"
+    },
+    {
+      "slug": "compact-closed-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-compact-closed-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "descent",
+      "chapter": "lifting-and-descent",
+      "chapterTitle": "Lifting and Descent",
+      "section": "Descent Preliminaries",
+      "block": "def:descent-involution",
+      "kind": "definition",
+      "lean": "qou:QOU.DescentInvolution"
+    },
+    {
+      "slug": "exact-pairing",
+      "chapter": "quantum-universes",
+      "chapterTitle": "Quantum Universes",
+      "section": "Preliminary: rigid monoidal categories",
+      "block": "def:snake-identity",
+      "kind": "definition",
+      "lean": "qou:QOU.snake_identity_left"
+    },
+    {
+      "slug": "hom-set",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Basic categorical notions",
+      "block": "rem:glossary-hom-set",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "left-dual",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-left-dual",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "monoidal-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Monoidal structure",
+      "block": "rem:glossary-monoidal-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "monoidal-functor",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Monoidal structure",
+      "block": "rem:glossary-monoidal-functor",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "no-quasi-zeros",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Enrichment",
+      "block": "rem:glossary-no-quasi-zeros",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "observed-value",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Elliptic and surface geometry",
+      "block": "rem:glossary-observed-value",
+      "kind": "remark",
+      "lean": "qou:QOU.ObservedValue"
+    },
+    {
+      "slug": "pivotal-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-pivotal-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "q-bit",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Information theory",
+      "block": "rem:glossary-q-bit",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "q-bit-skein",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Information theory",
+      "block": "rem:glossary-q-bit-skein",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "quantum-flatness",
+      "chapter": "quantum-observable-universes",
+      "chapterTitle": "Quantum Observable Universes",
+      "section": "Elaboration: categorical context",
+      "block": "prop:emergence-to-quantum-flat",
+      "kind": "proposition",
+      "lean": "qou:QOU.emergence_to_quantum_flat"
+    },
+    {
+      "slug": "r-linear-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Enrichment",
+      "block": "rem:glossary-r-linear-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "reeb-gauge-group",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Geometry and transport",
+      "block": "rem:glossary-reeb-gauge-group",
+      "kind": "remark",
+      "lean": "qou:QOU.ReebGaugeGroup"
+    },
+    {
+      "slug": "right-dual",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-right-dual",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "rigid-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Duality and rigidity",
+      "block": "rem:glossary-rigid-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "s3-group",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Groups and symmetry",
+      "block": "rem:glossary-s3-group",
+      "kind": "remark",
+      "lean": "qou:QOU.S3Group"
+    },
+    {
+      "slug": "symmetric-monoidal-category",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Monoidal structure",
+      "block": "rem:glossary-symmetric-monoidal-category",
+      "kind": "remark",
+      "lean": null
+    },
+    {
+      "slug": "weierstrass-projection",
+      "chapter": "glossary",
+      "chapterTitle": "Glossary",
+      "section": "Elliptic and surface geometry",
+      "block": "rem:glossary-weierstrass-projection",
+      "kind": "remark",
+      "lean": "qou:QOU.Descartes.weierstrassProjection"
+    }
+  ],
+  "duplicates": {}
+}

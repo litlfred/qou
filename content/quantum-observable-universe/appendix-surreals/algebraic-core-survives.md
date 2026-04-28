@@ -1,0 +1,106 @@
+A systematic survey of the QOU content objects finds that the
+bulk of the formal structure is **purely algebraic**: it depends
+only on the ground ring being a field (frequently a field of
+characteristic zero), not on any analytic or topological
+property of $\mathbb{R}$ or $\mathbb{C}$.
+
+## Blocks that lift verbatim
+
+The following constructions are formulated over
+$\mathbb{Z}[q, q^{-1}]$, $\mathbb{Q}(q)$, or an arbitrary
+characteristic-zero field, and therefore lift unchanged to any
+real-closed extension $K \supseteq \mathbb{R}$, in particular to
+$\mathbf{No}$:
+
+1. **Hecke algebra $H_n(q)$.** The presentation
+   $(T - q)(T + q^{-1}) = 0$ plus the braid relations
+   $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ makes sense over any
+   commutative ring in which $q$ is invertible. The Wedderburn
+   decomposition $H_n(q) \cong \bigoplus_{\lambda \vdash n}
+   M_{d_\lambda}(K)$ holds at generic $q$ over any algebraically
+   closed field of characteristic zero.
+
+2. **Hoefsmit seminormal form**
+   ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
+   The matrix entries of $\rho_\lambda(\sigma_i)$ are rational
+   functions in $q$ with coefficients in $\mathbb{Z}$. The
+   eigenvalues $q$ (symmetric channel) and $-q^{-1}$
+   (antisymmetric channel) are field-polymorphic.
+
+3. **Markov trace and Jones polynomial.** The unique trace
+   $\mathrm{tr}_M : H_\infty(q) \to K[q, q^{-1}]$ satisfying the
+   Markov property yields the Jones polynomial $J_K(q)$ as an
+   element of $\mathbb{Z}[q, q^{-1}]$; nothing needs $\mathbb{R}$.
+
+4. **$q$-Schur--Weyl duality.** The decomposition of $V^{\otimes n}$
+   into irreducible $H_n(q)$-modules indexed by partitions
+   $\lambda \vdash n$ with at most two parts is purely
+   representation-theoretic.
+
+5. **$q$-deformed identities.**
+   $c_q = 1/(q - 1)$, $\hbar_q = (q-1)/q$, $[n]_q =
+   (q^n - q^{-n})/(q - q^{-1})$, $[n]_q! = \prod_{k=1}^n [k]_q$,
+   and the quantum dimension $\dim_q(\lambda)$ are all rational
+   in $q$ and lift field-polymorphically.
+
+6. **Rigid monoidal category axioms**
+   ([rigid monoidal category](#def:rigid-monoidal-category)).
+   The axioms of a strict rigid monoidal category (associator,
+   unitors, left/right duals, evaluation/coevaluation) are
+   categorical identities, not analytic conditions.
+
+7. **Hopf algebra structure on $\mathcal{H}_q$**. Comultiplication,
+   antipode, coassociativity, and the grouplike elements
+   $\exp_q, \log_q, \mathrm{Li}_2^q$ are all formal-power-series
+   manipulations over any field.
+
+8. **Frobenius algebra structure** on $A$ as a bare algebraic
+   structure (the non-degeneracy of $\int_A$ as a pairing $A
+   \otimes A \to K$). This is a bilinear form condition and
+   requires only a field.
+
+9. **Braid group action**: $B_n$ acts on $V^{\otimes n}$ via the
+   Hecke $R$-matrix; the action is functorial in the ground ring.
+
+10. **Character formulas**: the Hoefsmit-Murphy formula for
+    $\chi_\lambda(\sigma_w)$ in terms of contents of the Young
+    diagram is a rational-function identity.
+
+11. **Elliptic curve $\mathcal{E}_q$ as an algebraic variety.**
+    The Descartes Weierstrass equation defines a smooth
+    projective curve over $K[q, q^{-1}]$ (away from the
+    discriminant locus). Its group law is algebraic.
+
+12. **Tannaka--Krein reconstruction** of $\mathrm{SU}_q(2)$ from
+    $(\mathbf{C}, A, \tau)$: the reconstruction procedure
+    produces a Hopf algebra from a fibre functor to $K$-modules;
+    the ground field plays no essential role beyond being a
+    field.
+
+13. **Rigid dualizing complex** $\omega_A^\bullet$: the Van den
+    Bergh duality isomorphism
+    $\omega_A^\bullet \simeq R\mathrm{Hom}_{A^e}(A, A^e)$ is a
+    statement in derived algebra, unchanged over surreals.
+
+14. **Fibre functor rigidity** (deformation-theoretic): vanishing
+    of $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$ is a
+    cohomological condition independent of topology.
+
+## Consequence for the appendix
+
+The core mass formula — Hoefsmit seminormal form $\to$ Markov
+trace $\to$ Jones polynomial at the substrate value — runs
+identically over $\mathbf{No}$. The categorical mass
+$\mathfrak{m}(K)$, transfer matrix $T(c,d)$, and $q$-value
+predictions are all *field-polymorphic* and have well-defined
+interpretations wherever we choose $q \in \mathbf{No}$.
+
+The break from $\mathbb{R}$ to $\mathbf{No}$ only becomes
+non-trivial at the last step: when a categorical quantity is
+compared to a *measured* real number, a standard-part must be
+taken ([classical limit as standard-part](#conj:classical-limit-stpart)).
+
+This observation is the foundation for the appendix's central
+move: the substrate parameter $q$ can be taken in $\mathbf{No}$
+(indeed in the infinitesimal neighbourhood of $1$) without
+disturbing any of the algebraic machinery of the main paper.

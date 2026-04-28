@@ -3,11 +3,13 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:positive-definite-dagger",
   title: "Frobenius dagger is positive-definite",
-  lean: {
-    decl: "QOU.frobenius_dagger_positive_definite",
+  lean: { ref: "qou:QOU.frobenius_dagger_positive_definite",
     validation: "not_checked",
   },
-  uses: ["def:involutive-structure", "def:frobenius-pairing", "def:quantum-universe"],
+  uses: [
+    "def:involutive-structure",
+    "def:frobenius-pairing",
+  ],
   proofs: ["prf:positive-definite-dagger"],
   tags: ["category-theory", "positive-definite", "frobenius"],
   rendered: [

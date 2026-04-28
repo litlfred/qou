@@ -1,4 +1,3 @@
-
 The algebra $\mathcal{A}_\infty$ is the direct limit
 $\varinjlim \mathrm{End}_{\mathbf{C}}(A_n)$
 ([direct limit algebra](#def:direct-limit-algebra)), and the quantum gauge
@@ -7,40 +6,28 @@ group $G_q = \mathrm{Aut}^{\otimes}(\tau)$
 
 *Existence.*
 The fibre functor $\tau \colon \mathbf{C} \to \mathrm{Vect}_R$ is
-$R$-linear and exact.  It sends the unit $\mathbf{1} \in \mathbf{C}$ to
-$R$ and the [Frobenius pairing](#def:frobenius-pairing) on $A$ to a non-degenerate $R$-bilinear
-form on $\tau(A)$.  At each finite level, $\tau$ maps
-$\mathrm{End}_{\mathbf{C}}(A_n)$ to a finite-dimensional $R$-algebra
-$\mathrm{End}_R(\tau(A_n))$.  The Frobenius trace
-$\mathrm{tr}_n \colon \mathrm{End}_{\mathbf{C}}(A_n) \to R$ defined by
-
-$$
-  \mathrm{tr}_n(\alpha)
-  = 
-  (\varepsilon \circ \alpha \circ \eta)(\mathbf{1}),
-$$
-
-where $\eta \colon \mathbf{1} \to A_n$ and $\varepsilon \colon A_n \to \mathbf{1}$ are the Frobenius unit and counit, is $G_q$-invariant:
-for any $g \in G_q$, $\mathrm{tr}_n(g \cdot \alpha) = \mathrm{tr}_n(\alpha)$ by the naturality of $\eta$ and $\varepsilon$
-(they are morphisms in $\mathbf{C}$, hence invariant under monoidal
-automorphisms of the fibre functor).
-
+$R$-linear and exact, sending $\mathbf{1}$ to $R$ and the
+[Frobenius pairing](#def:frobenius-pairing) on $A$ to a non-degenerate
+$R$-bilinear form on $\tau(A)$.  At each finite level, the Frobenius trace
+$\mathrm{tr}_n(\alpha) = (\varepsilon \circ \alpha \circ \eta)(\mathbf{1})$,
+where $\eta$ and $\varepsilon$ are the Frobenius unit and counit, is
+$G_q$-invariant by naturality (they are morphisms in $\mathbf{C}$,
+hence invariant under monoidal automorphisms of $\tau$).
 The descent homomorphisms $\mathfrak{d}_n$ ([descent](#lem:descent)) are
-equivariant and satisfy $\mathrm{tr}_n \circ \mathfrak{d}_{n+1} = \mathrm{tr}_{n+1}$ (compatibility of the Frobenius trace with descent).
-By the universal property of the direct limit, the system
-$\{\mathrm{tr}_n\}$ determines a $G_q$-invariant $R$-linear functional
+equivariant and satisfy
+$\mathrm{tr}_n \circ \mathfrak{d}_{n+1} = \mathrm{tr}_{n+1}$, so by the
+universal property of the direct limit, the system $\{\mathrm{tr}_n\}$
+determines a $G_q$-invariant $R$-linear functional
 $\varphi \colon \mathcal{A}_\infty \to R$.
 
 *Uniqueness.*
 The vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
-of the quantum observable universe axioms implies, via Schur's lemma
-applied in $\mathbf{C}$, that $\mathrm{End}_{G_q}(\mathbf{1}) \cong R$.
-More precisely: a $G_q$-invariant functional
-$\psi \colon \mathcal{A}_\infty \to R$ must factor through the
-$G_q$-fixed subalgebra $\mathcal{A}_\infty^{G_q}$.  The vanishing
-condition forces this fixed subalgebra to be one-dimensional (generated
-by the identity), since any non-scalar $G_q$-invariant endomorphism
-would yield a non-zero element of
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$.  Therefore $\psi$ is
+of the quantum observable universe axioms implies, via Schur's lemma,
+that $\mathrm{End}_{G_q}(\mathbf{1}) \cong R$.  A $G_q$-invariant
+functional $\psi \colon \mathcal{A}_\infty \to R$ must factor through
+the $G_q$-fixed subalgebra $\mathcal{A}_\infty^{G_q}$, and the vanishing
+condition forces this fixed subalgebra to be one-dimensional (any
+non-scalar $G_q$-invariant endomorphism would yield a non-zero element
+of $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$).  Hence $\psi$ is
 determined up to scalar by its value on the identity, and normalising
-$\psi(\mathrm{id}) = 1$ gives $\psi = \varphi$.
+$\psi(\mathrm{id}) = 1$ gives $\psi = \varphi$.  $\square$

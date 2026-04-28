@@ -7,7 +7,6 @@ export default remark({
   tags: ["exposition", "reeb-flow", "prime-orbits", "vortex-filaments", "classical-limit"],
   uses: [
     "def:categorical-reeb-derivation",
-    "def:frobenius-hopf-substrate",
     "def:brings-coordinate-ring",
   ],
 });

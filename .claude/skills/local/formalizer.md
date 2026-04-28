@@ -18,6 +18,23 @@ tactic blocks.  It depends on the Ontologist skill having already produced
 a resolved glossary — every term used in theorems must have a unique type
 assignment before formalization can proceed.
 
+### Pre-flight: rebase + lean-ref migration
+
+Before authoring or editing `.lean` siblings, the working branch must
+be on the current `lean.ref` URI shape.  If the branch was rebased
+or merged from upstream, run the idempotent migration **first**:
+
+```bash
+cd content && bun run migrate-lean-refs
+```
+
+When authoring the `.ts` manifest for a new block, set
+`lean: { ref: "<pkg>:<Decl>" }` (never the legacy `decl:` / `file:`
+shape).  Use `<pkg>` from `LEAN_PACKAGES` in
+`folio-assistant/schemas/lean-packages.ts` (`qou`, `ugb`, `fred2005`,
+…).  See CLAUDE.md §0a for the URI grammar and §0b for the rebase
+workflow.
+
 ## When to Use This Skill
 
 - After the Ontologist has produced `glossary.json` and `Glossary.lean`
@@ -397,12 +414,25 @@ lake update
 Using `mv` to `/tmp` is safer than `rm -rf` — you can recover if
 the new resolution also fails.
 
-### Multiple Lean projects
+### Root Lake workspace (standardized)
 
-This repo has multiple Lean projects (`lean/`, `content/quantum-observable-universe/lean/`).
-Each has its own `lakefile.toml` and `lean-toolchain`. They may
-target different Lean versions. Always `cd` into the correct project
-directory before running `lake` commands.
+The repo is a **single Lake workspace** rooted at `/lakefile.toml`
+with one `lean-toolchain` at the root.  Every paper is a Lake
+**package** (`qou`, `ugb`, `fred2005`) declared via `[[require]]`.
+Prefer running `lake` from the **repo root**:
+
+```bash
+lake build           # build all papers
+lake build QOU       # just the QOU library
+lake build UGB       # just the UGB library
+lake exe cache get   # Mathlib cache for the workspace
+```
+
+Per-paper `cd content/<paper>/lean && lake build` still works as a
+standalone build path, but CI, the MCP `lean_build` tool, and the
+skills here all prefer the root workspace.  The registry mapping
+short-form package names to paper directories lives in
+`folio-assistant/schemas/lean-packages.ts`.
 
 ## Blueprint Synchronization
 
@@ -423,7 +453,7 @@ LaTeX. Every formalizable block is defined by three sibling files:
 
 ```
 content/<paper>/<chapter>/
-  <block-name>.ts    ← Manifest: kind, label, lean.decl, uses[]
+  <block-name>.ts    ← Manifest: kind, label, lean.ref, uses[]
   <block-name>.md    ← Narrative (markdown + TeX snippets)
   <block-name>.lean  ← Lean formalization (when required by kind)
 ```
@@ -432,20 +462,33 @@ content/<paper>/<chapter>/
 
 | Block kind | Lean required? | Completeness criteria |
 |-----------|---------------|----------------------|
-| `definition` | **Yes** (enforced) | `.ts` has `lean.decl`, sibling `.lean` exists, compiles |
+| `definition` | **Yes** (enforced) | `.ts` has `lean.ref` (URI form `pkg:Decl`), sibling `.lean` exists, compiles |
 | `theorem`, `lemma`, `proposition`, `corollary` | **Expected** (warning) | Same as definition |
 | `example`, `remark`, `conjecture` | Optional | `.lean` only if author requests |
 | `prose`, `equation`, `diagram` | N/A | No Lean needed |
 
 ### Workflow with content objects
 
-1. **Read the `.ts` manifest** to get `lean.decl` and `uses[]`
+1. **Read the `.ts` manifest** to get `lean.ref` (parse with
+   `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`
+   to extract `{ package, decl, module, name }`) and `uses[]`
 2. **Check `uses[]`** to understand upstream dependencies — ensure they're
    formalized first (dependency DAG ordering)
 3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
 4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules
+
+### Glossary terms in narrative `.md`
+
+If you author or update the `.md` sibling alongside a Lean file, defined
+terms (any slug in any block's `defines: [...]`) **must** be wrapped in
+`:defterm[…]{#slug}` (canonical site) or `:refterm[…]{#slug}` (every
+other mention). Do **not** add `\emph{}` or plain-text mentions of
+defined terms. The Lean side is unaffected by this contract — Lean
+declarations are linked via `lean.ref`, not glossary slugs — but the
+validator will flag stray plain-text mentions in the narrative
+companion. See `local/glossary-build`.
 
 ### The `uses[]` dependency graph
 

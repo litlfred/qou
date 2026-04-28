@@ -1,4 +1,4 @@
-**Pivotal category.** A rigid monoidal category equipped with a
+**:defterm[Pivotal category]{#pivotal-category}.** A rigid monoidal category equipped with a
 monoidal natural isomorphism $\delta_X \colon X \xrightarrow{\sim} X^{\vee\vee}$
 between each object and its double dual. This makes left and right
 traces (and hence quantum dimensions) coincide.

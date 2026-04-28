@@ -13,8 +13,7 @@ export default definition({
     "electron",
     "molecular",
   ],
-  lean: {
-    decl: "QOU.Organic.CovalentBond",
+  lean: { ref: "qou:QOU.Organic.CovalentBond",
     validation: "not_checked",
   },
   uses: ["prop:metallic-character-knot"],

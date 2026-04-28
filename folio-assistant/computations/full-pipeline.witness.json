@@ -1,6 +1,6 @@
 {
   "computation": "full-pipeline",
-  "timestamp": "2026-03-28T15:09:54.630555+00:00",
+  "computedAt": "2026-03-28T15:09:54.630555+00:00",
   "from_q": {
     "q": 1.1099785955541805,
     "alpha_em": 0.007308700983098551,
@@ -99,5 +99,7 @@
       "tr_type": "GT",
       "ln_ratio": -12.452087471959203
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

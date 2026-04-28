@@ -1,0 +1,39 @@
+{
+  "computation": "chi-std-pernucleon-closed-form",
+  "description": "Closed-form derivation of \u03c7_std(\u03b2_nuc) on 2-dim (2,1) irrep of H_3(q) via explicit 2\u00d72 Hoefsmit seminormal matrix trace.  Both proton and neutron characters take the form (H_A/4)\u00b7([m]+[m-2]+[m-4]+[m-8]) with m_p = 11, m_n = 9.  Proton factors as pure cyclotomic product; neutron has an irreducible residual degree-12 factor.",
+  "computedAt": "2026-04-24T04:59:46.177134+00:00",
+  "q_0": 1.1099785955541805,
+  "proton": {
+    "chi_std_laurent": "(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1)/(4*q**11)",
+    "chi_std_factored": "(q - 1)*(q + 1)*(q**8 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(4*q**11)",
+    "closed_form_indices": [
+      11,
+      9,
+      7,
+      3
+    ],
+    "closed_form_expr": "(H/4) \u00b7 ([11]_q + [9]_q + [7]_q + [3]_q)",
+    "chi_at_q0": 1.807703320098157,
+    "closed_form_at_q0": 1.807703320098157,
+    "match_symbolic": true
+  },
+  "neutron": {
+    "chi_std_laurent": "(q**18 + q**16 + q**14 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**9)",
+    "chi_std_factored": "(q - 1)*(q + 1)*(q**4 + 1)*(q**12 + 2*q**10 + 2*q**8 + q**6 + 2*q**4 + 2*q**2 + 1)/(4*q**9)",
+    "closed_form_indices": [
+      9,
+      7,
+      5,
+      1
+    ],
+    "closed_form_expr": "(H/4) \u00b7 ([9]_q + [7]_q + [5]_q + [1]_q)",
+    "chi_at_q0": 1.2653010867739343,
+    "closed_form_at_q0": 1.2653010867739343,
+    "match_symbolic": true
+  },
+  "unified_form": "(H_A/4) \u00b7 ([m]_q + [m-2]_q + [m-4]_q + [m-8]_q)",
+  "m_proton": 11,
+  "m_neutron": 9,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

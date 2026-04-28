@@ -1,7 +1,7 @@
 {
   "name": "free-neutrino-groebner-nf",
   "description": "Gr\u00f6bner normal form witness for the free neutrino. Computes NF(proton \u00b7 electron \u00b7 T\u2083,\u2085) in H\u2083(q) and identifies the neutrino as the coefficient on the identity word \ud835\udfcf (unknot K\u2080). All coefficients exact in \u2124[q^\u00bd, q^{-\u00bd}].",
-  "timestamp": "2026-04-06T10:54:44.527131+00:00",
+  "computedAt": "2026-04-06T10:54:44.527131+00:00",
   "particle_knot_dictionary": {
     "1": {
       "symbol": "\u03bd",
@@ -506,5 +506,7 @@
       "result": true,
       "n_terms": 6
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

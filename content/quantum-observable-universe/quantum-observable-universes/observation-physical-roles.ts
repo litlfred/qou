@@ -5,8 +5,5 @@ export default remark({
   label: "rem:observation-physical-roles",
   title: "Physical roles of the observation components",
   tags: ["observation", "interpretation", "jet", "adjoint"],
-  uses: [
-    "def:observation",
-    "prop:fibre-functor-atlas",
-  ],
+  uses: ["def:observation"],
 });

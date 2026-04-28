@@ -1,0 +1,84 @@
+{
+  "computation": "sdp-on-shadows",
+  "description": "SDP/LP/ILP on shadow prices over \u03bb \u22a2 3\u00b7A_magic to identify shell-operator partition support. Constraint: \u03a3 x_\u03bb y_\u03bb = target_y (physical binding scale \u2248 0.009). Full enumeration \u2014 no Plancherel truncation. Reports active partitions.",
+  "computedAt": "2026-04-18T00:41:01.557101+00:00",
+  "parameters": {
+    "q_0": "1.1099785955541805",
+    "target_y": "0.009",
+    "magic_numbers": [
+      2,
+      8
+    ],
+    "hecke_levels": [
+      6,
+      24
+    ]
+  },
+  "results": {
+    "2": {
+      "LP": {
+        "status": "solved",
+        "A_magic": 2,
+        "target_y": 0.009,
+        "objective_value": 0.05411399086009685,
+        "n_partitions": 11,
+        "n_active": 2,
+        "active_partitions": [
+          {
+            "partition": "(3, 3)",
+            "x": 0.7645174485597276,
+            "y_abs": 0.005886065790228648,
+            "w_lam": 0.035390945597144244
+          },
+          {
+            "partition": "(2, 2, 2)",
+            "x": 0.7645174485597276,
+            "y_abs": 0.005886065790228648,
+            "w_lam": 0.035390945597144244
+          }
+        ],
+        "use_integer": false
+      },
+      "SDP_PSD": {
+        "status": "solved",
+        "A_magic": 2,
+        "target_y": 0.009,
+        "objective_value": 0.05411399128231234,
+        "n_psd_blocks": 10,
+        "n_active": 2,
+        "active_partitions": [
+          {
+            "partition": "(3, 3)",
+            "x": 0.8048079244686022,
+            "y_abs": 0.005886065790228648,
+            "w_lam": 0.035390945597144244
+          },
+          {
+            "partition": "(2, 2, 2)",
+            "x": 0.7242269845810982,
+            "y_abs": 0.005886065790228648,
+            "w_lam": 0.035390945597144244
+          }
+        ]
+      },
+      "ILP": {
+        "status": "solve_error",
+        "error": "The solver GLPK_MI is not installed."
+      }
+    },
+    "8": {
+      "LP": {
+        "status": "no_solution"
+      },
+      "SDP_PSD": {
+        "status": "no_solution"
+      },
+      "ILP": {
+        "status": "solve_error",
+        "error": "The solver GLPK_MI is not installed."
+      }
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

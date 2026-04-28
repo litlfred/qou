@@ -13,8 +13,7 @@ export default theorem({
     "division-algorithm",
     "topological-invariant",
   ],
-  lean: {
-    decl: "QOU.Descartes.groebner_shirshov_energy",
+  lean: { ref: "qou:QOU.Descartes.groebner_shirshov_energy",
     validation: "not_checked",
   },
   uses: [

@@ -12,13 +12,8 @@ export default definition({
     "per-nucleon",
     "torus-knot",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.PerNucleonChannelDecomposition",
+  lean: { ref: "qou:QOU.ParticleInteractions.PerNucleonChannelDecomposition",
     validation: "not_checked",
   },
-  uses: [
-    "def:typed-crossing-operator",
-    "thm:jones-markov-trace",
-    "def:borromean-baryon",
-  ],
+  uses: ["def:typed-crossing-operator"],
 });

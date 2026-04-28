@@ -12,12 +12,7 @@ export default proposition({
     "yekutieli",
     "speed-of-light",
   ],
-  uses: [
-    "thm:mass-energy-equivalence",
-    "thm:groebner-shirshov-energy",
-    "def:mass-identity",
-    "def:crossing-energy",
-  ],
+  uses: ["thm:mass-energy-equivalence"],
   cites: [
     "yekutieli2015",
     "reshetikhin1991",

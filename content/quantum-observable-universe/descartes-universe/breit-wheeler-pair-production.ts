@@ -13,13 +13,7 @@ export default definition({
     "colored-photon",
     "normal-form",
   ],
-  lean: {
-    decl: "QOU.Descartes.BreitWheelerPairProduction",
+  lean: { ref: "qou:QOU.Descartes.BreitWheelerPairProduction",
     validation: "not_checked",
   },
-  uses: [
-    "def:electron-knot",
-    "def:positron-knot",
-    "sec:knot-notation-convention",
-  ],
 });

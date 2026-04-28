@@ -24,12 +24,15 @@ Usage:
     python3 inductive-symbolic-atoms.py
 """
 
+import sys
 import sympy as sp
 import json
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q as _Q_CANONICAL
 from hecke_symbolic import (
     SymbolicHeckeDivision, SymbolicHeckeElement,
     q, q_half, q_inv, q_half_inv,
@@ -217,7 +220,7 @@ def build_quark_atom_symbolic(types, div=None, label=""):
 if __name__ == '__main__':
     import sys
 
-    q0 = 1.10998  # q₀ for numerical evaluation
+    q0 = _Q_CANONICAL  # q₀ for numerical evaluation (from q_parameter)
     kappa_approx = 0.510999 / 3  # m_e / 3 in MeV (approx)
 
     print("=" * 80)

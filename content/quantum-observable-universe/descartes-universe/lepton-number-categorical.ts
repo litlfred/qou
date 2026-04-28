@@ -12,8 +12,7 @@ export default definition({
     "categorical",
     "weak-force",
   ],
-  lean: {
-    decl: "QOU.Descartes.LeptonNumber",
+  lean: { ref: "qou:QOU.Descartes.LeptonNumber",
     validation: "not_checked",
   },
   uses: ["def:beta-decay-skein"],

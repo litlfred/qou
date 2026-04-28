@@ -460,7 +460,7 @@ Respond in JSON: {"assessment": "...", "actionable": boolean, "proposedEdit": {"
                   return JSON.stringify({
                     kind: blk.kind, label: blk.label, title: blk.title,
                     md: (blk.md || "").slice(0, 3000),
-                    lean: blk.lean ? { decl: blk.lean.decl, validation: blk.lean.validation } : null,
+                    lean: blk.lean ? { ref: blk.lean.ref, validation: blk.lean.validation } : null,
                     status: blk.status, uses: blk.uses, tags: blk.tags,
                     chapter: ch.title, section: sec.title,
                   });

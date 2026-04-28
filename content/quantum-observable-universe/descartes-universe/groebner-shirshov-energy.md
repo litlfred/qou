@@ -58,7 +58,7 @@ The Yang--Baxter relation $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_
 on both sides ($\ell = 3$) and coefficient $1$.  Applying it to a
 term $c \cdot w$ produces $c \cdot w'$ where $|c| = |c|$ and
 $\ell(w') = \ell(w)$.  Similarly for far commutativity.  Only
-the Hecke relation $T_i^2 \mapsto (q - q^{-1})T_i + 1$
+the Hecke relation $\sigma_i^2 \mapsto (q - q^{-1})\sigma_i + 1$
 changes the word length (from $\ell$ to $\ell - 1$) and splits
 one coefficient into two.
 

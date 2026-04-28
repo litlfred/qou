@@ -17,7 +17,6 @@ export default remark({
   ],
   uses: [
     "rem:nucleon-nf-observability",
-    "prop:nuclear-groebner-reduction",
     "prop:beta-decay-transfer-matrix",
   ],
 });

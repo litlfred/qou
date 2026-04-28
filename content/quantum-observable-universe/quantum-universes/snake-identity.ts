@@ -12,8 +12,7 @@ export default definition({
   label: "def:snake-identity",
   title: "Snake identity",
   tags: ["category-theory", "monoidal", "duality"],
-  lean: {
-    decl: "QOU.snake_identity_left",
+  lean: { ref: "qou:QOU.snake_identity_left",
     validation: "not_checked",
     mathlibLinks: [
       "CategoryTheory.ExactPairing.evaluation_coevaluation'",
@@ -22,4 +21,5 @@ export default definition({
   },
   uses: [],
   examples: [],
+  defines: ["exact-pairing"],
 });

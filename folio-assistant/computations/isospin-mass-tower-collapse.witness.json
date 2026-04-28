@@ -1,0 +1,67 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-25T01:03:50.323484+00:00",
+  "commitSha": "b9ce28b43793144e88cdaf32b18a3631264e43af",
+  "assertions": [
+    {
+      "name": "T_eq_3He_corrected_under_isospin",
+      "computed": 3.4768752396012657,
+      "expected": 3.4763537648638594,
+      "passed": true,
+      "tolerance": 0.01,
+      "unit": "dimensionless ratio",
+      "source": "approach_1_multi_brane (tr-m-plus-tower-and-log) + standard Coulomb energy of 3He (Wigner-energy convention, satula1997)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "isospin-mass-tower-collapse",
+  "scriptFile": "isospin_mass_tower_collapse.py",
+  "scriptHash": "b9ebee97823c",
+  "scriptCommitSha": "",
+  "description": "Tests whether the T vs 3He gap in the mass-tower ratios is the Coulomb correction (isospin symmetry). Mirror nuclei T (1p,2n) and 3He (2p,1n) should have identical strong-force binding; their AME values differ by ~0.76 MeV due to Coulomb repulsion of the extra pp pair in 3He. Removing this from B(3He) should make T and 3He ratios coincide.",
+  "contentBlock": "rem:commutative-crossing-energy",
+  "parameters": {
+    "alpha_MeV": 3.74445965488548,
+    "E_coulomb_3He_MeV": 0.76,
+    "note": "Coulomb energy of 3He ground state \u2248 0.76 MeV (well-known)."
+  },
+  "data": {
+    "raw_ratios": {
+      "D": 3.052012052160693,
+      "T": 3.4763537648638594,
+      "3He": 3.8192453281240235
+    },
+    "isospin_corrected": {
+      "D": 3.052012052160693,
+      "T": 3.4763537648638594,
+      "3He_corrected": 3.4768752396012657,
+      "T_minus_3He_corr_pct": 0.015000623431277595
+    },
+    "branch_phase_predictions": {
+      "sin72_2x": 1.902113032590307,
+      "sin144_2x": 1.1755705045849465,
+      "sin72_over_sin144": 1.6180339887498945,
+      "phi": 1.618033988749895,
+      "D_pred": {
+        "formula": "2|sin72| + 2|sin144|",
+        "value": 3.0776835371752536,
+        "obs": 3.052012052160693,
+        "err_pct": 0.8411331467838146
+      },
+      "T_3He_pred": {
+        "formula": "3 * 2|sin144|",
+        "value": 3.5267115137548393,
+        "obs": 3.4766145022325627,
+        "err_pct": 1.4409711370100406
+      }
+    },
+    "structural_reading": "Two distinct branch-phase magnitudes 2|sin(2*pi*k/5)|: outer (k=1,4) = phi*inner (k=2,3). D (A=2) sums one of each; A=3 nuclei (T and Coulomb-corrected 3He) match 3 copies of the inner phase, suggesting the per-nucleon scaling pulls in the inner phase only. Both fits at <1.5% level, with the A=3 fit improving once Coulomb is removed."
+  },
+  "caveats": [
+    "Per-nucleon scaling A=2 -> A=3 not derived from first principles. Match at <1.5% level is suggestive, not a derivation."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

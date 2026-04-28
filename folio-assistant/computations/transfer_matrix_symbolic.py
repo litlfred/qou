@@ -43,13 +43,19 @@ Usage:
 """
 
 import math
+import sys
+from pathlib import Path
+
 import sympy as sp
 from sympy import sqrt, Rational, log, simplify, expand, Matrix
+
+sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import (
     Q_TRITIUM_MEV, Q_C14_MEV, Q_CO60_MEV,
     Q_SR90_MEV, Q_CS137_MEV, Q_BI210_MEV,
     M_P_MEV,
 )
+from q_parameter import Q as Q0
 
 # -- Symbolic ring: exact in q ------------------------------------------
 
@@ -64,8 +70,7 @@ HA = ha                               # Hecke amplitude q - q⁻¹ (crossing con
 s_skein = q_half - q_half_inv         # q^{1/2} - q^{-1/2}  (Skein amplitude, used in Delta_beta verification)
 z_markov = 1 / (q_half + q_half_inv)  # Markov parameter
 
-# Substrate parameter q0 (from q_parameter.py derivation)
-Q0 = 1.10998
+# Substrate parameter Q0 imported from q_parameter (single source of truth).
 
 # Threshold: for A <= SYMBOLIC_THRESHOLD, keep the full Skein
 # polynomial symbolic AND per-generator volumes symbolic.

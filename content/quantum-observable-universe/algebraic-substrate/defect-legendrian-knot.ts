@@ -3,14 +3,12 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:defect-legendrian-knot",
   title: "The unit defect as a Legendrian knot",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.defect_legendrian_knot",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.defect_legendrian_knot",
     validation: "not_checked",
   },
   uses: [
     "def:unit-particle-state",
     "def:categorical-reeb-derivation",
-    "def:levi-form-defect",
   ],
   tags: ["legendrian", "knot", "contact-geometry", "torsion-leaf"],
 });

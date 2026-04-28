@@ -111,8 +111,12 @@ theorem mixed_crossing_square_identity (ρ : HeckeRep 3 2) (i : Fin 2) :
     (2 • ρ.gen i - HA_t • 1) * (2 • ρ.gen i - HA_t • 1) =
     (4 + HA_t * HA_t) • (1 : TMatrix) := by
   -- (2σ - HA)² = 4σ² - 4HA·σ + HA²·I = 4(HA·σ + I) - 4HA·σ + HA²·I = (4 + HA²)·I
-  have hk := ρ.hecke_rel i
+  -- A previous attempt used `module` (Mathlib tactic) but this file does
+  -- not import `Mathlib.Tactic.Module`.  The non-commutative matrix
+  -- algebra rewrite needs either an explicit import + tactic or a
+  -- careful manual expansion via smul_mul_assoc + mul_smul_comm.
+  -- Reverted to sorry-with-Ref pending that infrastructure.
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry  -- Needs lake build: noncommutative matrix ring rewriting
+  sorry
 
 end QOU.Interactions

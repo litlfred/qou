@@ -56,10 +56,34 @@ theorem rowBump_length (row : List ℕ) (x : ℕ) :
     simp only [rowBump]
     split
     · simp  -- x < a: length preserved (replacement)
-    · simp only
-      have := ih
-      sorry -- inductive case: a :: rest', length = 1 + rest'.length
-      -- Follows from ih + list length properties
+    · -- x ≥ a: result is (a :: rest', bumped') where (rest', bumped') = rowBump rest x
+      -- LHS = 1 + rest'.length = 1 + rest.length + correction (by ih)
+      -- RHS = (a :: rest).length + correction = 1 + rest.length + correction
+      simp only [List.length_cons]
+      have h := ih
+      omega
+
+/-- Elements of `(rowBump row x).1` are either from `row` or equal to `x`.
+    This is the key structural lemma: row-bump substitutes at most one element. -/
+theorem rowBump_mem (row : List ℕ) (x b : ℕ)
+    (hb : b ∈ (rowBump row x).1) : b ∈ row ∨ b = x := by
+  induction row with
+  | nil => simp [rowBump] at hb; right; exact hb
+  | cons a rest ih =>
+    simp only [rowBump] at hb
+    split at hb
+    · -- x < a: result = x :: rest
+      simp at hb
+      rcases hb with rfl | hr
+      · right; rfl
+      · left; exact List.mem_cons_of_mem a hr
+    · -- x ≥ a: result = a :: (rowBump rest x).1
+      simp at hb
+      rcases hb with rfl | hr
+      · left; exact List.mem_cons_self _ _
+      · rcases ih hr with hrest | hx
+        · left; exact List.mem_cons_of_mem a hrest
+        · right; exact hx
 
 /-- The bumped element (if any) is > x. -/
 theorem rowBump_bumped_gt (row : List ℕ) (x : ℕ) (b : ℕ)
@@ -95,33 +119,25 @@ theorem rowBump_sorted (row : List ℕ) (x : ℕ)
     split
     · -- x < a: result = x :: rest, need x < all of rest
       next hlt =>
-      -- hsort: a < all of rest. hlt: x < a. So x < all of rest.
-      cases hsort with
-      | nil => exact List.sorted_cons.mpr ⟨by simp, List.sorted_nil⟩
-      | cons hall hrest =>
-        exact List.sorted_cons.mpr ⟨by
-          intro b hb
-          exact lt_trans hlt (hall b hb), hrest⟩
-    · -- x ≥ a: result = a :: rowBump rest x
+      rw [List.sorted_cons] at hsort
+      refine List.sorted_cons.mpr ⟨?_, hsort.2⟩
+      intro b hb
+      exact lt_trans hlt (hsort.1 b hb)
+    · -- x ≥ a: result = a :: (rowBump rest x).1
       next hge =>
       have ha_ne : x ≠ a := by
         intro heq; exact hfresh (heq ▸ List.mem_cons_self a rest)
       have hax : a < x := by omega
       have hfresh_rest : x ∉ rest := by
         intro hm; exact hfresh (List.mem_cons_of_mem a hm)
-      have hsort_rest : rest.Sorted (· < ·) := by
-        cases hsort with
-        | nil => exact List.sorted_nil
-        | cons _ h => exact h
-      have ih_result := ih hsort_rest hfresh_rest
-      -- Need: a < all elements of (rowBump rest x).1
-      -- Elements of (rowBump rest x).1 are either from rest or x.
-      -- a < x (proved). a < all of rest (from hsort).
-      sorry -- need to show a :: (rowBump rest x).1 is sorted
-      -- given: a < x, a < all of rest, and (rowBump rest x).1 is sorted.
-      -- The elements of rowBump rest x are a permutation of rest ∪ {x} \ {bumped} ∪ {bumped stays}
-      -- Since a < min(rest) and a < x, a < all elements of the result.
-      -- Combined with ih_result (rest sorted), gives a :: result sorted.
+      rw [List.sorted_cons] at hsort
+      have ih_result := ih hsort.2 hfresh_rest
+      -- Need: a < all elements of (rowBump rest x).1.  Use rowBump_mem:
+      refine List.sorted_cons.mpr ⟨?_, ih_result⟩
+      intro b hb
+      rcases rowBump_mem rest x b hb with hrest | rfl
+      · exact hsort.1 b hrest
+      · exact hax
 
 /-! ## §2  Schensted insertion (cascade) -/
 
@@ -140,7 +156,24 @@ def schenstedInsertRows : List (List ℕ) → ℕ → List (List ℕ) × (ℕ ×
 theorem schenstedInsertRows_size (rows : List (List ℕ)) (x : ℕ) :
     (schenstedInsertRows rows x).1.map List.length |>.sum =
     rows.map List.length |>.sum + 1 := by
-  sorry -- by induction: each step either appends (size+1) or bumps (size unchanged + recurse)
+  induction rows generalizing x with
+  | nil => simp [schenstedInsertRows]
+  | cons row rest ih =>
+    have hlen := rowBump_length row x
+    simp only [schenstedInsertRows]
+    -- Case-split on whether rowBump bumps a value or appends
+    cases hbump : (rowBump row x).2 with
+    | none =>
+      -- appended at current row: length grows by 1 (from hlen)
+      simp only [hbump, List.map_cons, List.sum_cons]
+      simp [hbump] at hlen
+      omega
+    | some b =>
+      -- bumped: length of new row preserved; recurse with b on rest
+      simp only [hbump, List.map_cons, List.sum_cons]
+      simp [hbump] at hlen
+      have := ih b
+      omega
 
 /-! ## §3  RSK map -/
 
@@ -169,12 +202,13 @@ theorem burnside_4 : 1 + 9 + 4 + 9 + 1 = Nat.factorial 4 := by decide
 /-- k! = Σ dim(λ)² for k = 5. -/
 theorem burnside_5 : 1 + 16 + 25 + 36 + 25 + 16 + 1 = Nat.factorial 5 := by decide
 
-/-- k! = Σ dim(λ)² for k = 6. -/
-theorem burnside_6 : 1 + 25 + 81 + 100 + 225 + 100 + 81 + 25 + 16 + 25 + 1 + 16 = Nat.factorial 6 := by
-  sorry -- need correct partition dimensions for k=6
-  -- dims: (6)→1, (5,1)→5, (4,2)→9, (4,1,1)→10, (3,3)→5,
-  -- (3,2,1)→16, (3,1,1,1)→10, (2,2,2)→5, (2,2,1,1)→9, (2,1,1,1,1)→5, (1^6)→1
-  -- 1+25+81+100+25+256+100+25+81+25+1 = 720? checking...
+/-- k! = Σ dim(λ)² for k = 6.
+    Partitions of 6 with irrep dimensions (hook-length formula):
+    (6)→1, (5,1)→5, (4,2)→9, (4,1,1)→10, (3,3)→5, (3,2,1)→16,
+    (3,1,1,1)→10, (2,2,2)→5, (2,2,1,1)→9, (2,1,1,1,1)→5, (1⁶)→1. -/
+theorem burnside_6 :
+    1 + 25 + 81 + 100 + 25 + 256 + 100 + 25 + 81 + 25 + 1 = Nat.factorial 6 := by
+  decide
 
 /-! ## §5  Fomin identity (concrete) -/
 

@@ -4,8 +4,7 @@ export default definition({
   label: "def:categorical-instanton",
   title: "Categorical instanton",
   tags: ["instanton", "self-dual"],
-  lean: {
-    decl: "QOU.CategoricalInstanton",
+  lean: { ref: "qou:QOU.CategoricalInstanton",
     validation: "leanok",
   },
   uses: [

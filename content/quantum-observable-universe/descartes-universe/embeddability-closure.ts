@@ -12,8 +12,7 @@ export default theorem({
     "localized-knot",
     "spectral-filter",
   ],
-  lean: {
-    decl: "QOU.Torsion.embeddability_closure",
+  lean: { ref: "qou:QOU.Torsion.embeddability_closure",
     validation: "not_checked",
   },
   uses: ["prop:torus-knot-generators"],

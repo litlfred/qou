@@ -20,7 +20,7 @@ $$
 
 *where $w_\lambda = d_q(\lambda)^2/[k]_q!$ are the Wedderburn
 weights and $\chi_\lambda^{(k)}(\beta)$ is the character of
-$\beta$ in $V_\lambda$ restricted to $H_3(q)$ via the branching
+$\beta$ in $V_\lambda$ restricted to $H_3(R, q)$ via the branching
 rule.*
 
 *Then $a_k$ **converges by $k = 4$**: for all $k \geq 4$, the
@@ -31,7 +31,7 @@ $(Z, N)$ beyond the $H_3$ characters of $\beta$).*
 $\sum_\lambda w_\lambda \dim \mathrm{Res} = 1 + W_{\mathrm{std}}$
 where $W_{\mathrm{std}} = (q^2 + 1)^2/(q^4 + 4q^2 + 1)$.*
 
-**Part 2 (Established).** *The three $H_3(q)$ characters of the
+**Part 2 (Established).** *The three $H_3(R, q)$ characters of the
 inter-nucleon braid satisfy exact algebraic identities:*
 
 1. *Extremal cancellation

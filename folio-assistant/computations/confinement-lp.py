@@ -34,6 +34,12 @@ from pathlib import Path
 import subprocess
 
 from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val, E_CROSS
+# z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
+# bootstrap for dev mode; the installed-pyhecke path is preferred.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+
 from experimental_constants import M_P_MEV, M_N_MEV
 
 try:
@@ -46,8 +52,8 @@ except Exception:
 
 # ── Hecke algebra constants ──────────────────────────────────
 HA = HA_val
-z = 1.0 / (q0**0.5 + q0**(-0.5))
-NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
+z = _PG_Z  # moved to pyhecke.gram
+NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 TR_M_BASIS = np.array([1.0, z, z, z**2, z**2, z**3])
 
@@ -497,6 +503,41 @@ for nucleon_name, quark_types, target_net in [
 #  WITNESS
 # ══════════════════════════════════════════════════════════════
 
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT VALIDATION  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+# The Gram matrix G has a negative eigenvalue (-0.74) at q₀, so the
+# componentwise `G·x ≥ 0` constraint enforced above is STRICTLY
+# weaker than the quadratic Frobenius positivity `xᵀG x ≥ 0`.  The
+# LP solutions here violate the quadratic form (see sdp_lift_audit).
+# We add a Lasserre moment-matrix SDP lift below to report both the
+# LP answer (kept for narrative continuity) and the SDP-valid one.
+
+print(f"\n{'═' * 80}")
+print("  SDP LIFT VALIDATION")
+print(f"{'═' * 80}")
+
+sdp_reports = []
+try:
+    from sdp_moment_lift import lp_vs_sdp_report
+
+    for _nuc_name, _qt in [("proton", ['u', 'u', 'd']),
+                             ("neutron", ['u', 'd', 'd'])]:
+        _confined = apply_typed_crossings(b3_vec, _qt)
+        _net = float(np.sum(_confined))
+        _rep = lp_vs_sdp_report(
+            c=TR_M_BASIS, G=G,
+            A_eq=np.ones((1, 6)),
+            b_eq=np.array([_net]),
+            label=f"confinement/{_nuc_name}")
+        for _line in _rep.summary_lines():
+            print(_line)
+        print()
+        sdp_reports.append(_rep.__dict__)
+except ImportError as _e:
+    print(f"  (cvxpy not available — skipping SDP lift: {_e})")
+
+
 witness = {
     "name": "confinement-lp",
     "description": "LP proof that B₃ is the unique optimal confinement operator over all of H₃(q)",
@@ -507,6 +548,7 @@ witness = {
     "gram_eigenvalues": sorted(np.linalg.eigvals(G).real.tolist()),
     "markov_traces": TR_M_BASIS.tolist(),
     "b3_nf": b3_vec.tolist(),
+    "sdp_lift": sdp_reports,
 }
 
 out_path = Path(__file__).parent / "confinement-lp.witness.json"

@@ -32,7 +32,7 @@ $$
 H(z_c) = \frac{\partial^2 S}{\partial z^2}\bigg|_{z=z_c}.
 $$
 
-The thimble $\mathcal{J}_{z_c}$ departs from $z_c$ along the direction $e^{i\theta}$ where $\theta = -\tfrac{1}{2}\arg H(z_c)$, and the anti-thimble $\mathcal{K}_{z_c}$ departs along $e^{i(\theta + \pi/2)}$.
+The thimble $\mathcal{J}_{z_c}$ departs from $z_c$ along the direction $e^{i\varTheta}$ where $\varTheta = -\tfrac{1}{2}\arg H(z_c)$, and the anti-thimble $\mathcal{K}_{z_c}$ departs along $e^{i(\varTheta + \pi/2)}$.
 
 We decompose the original real-axis integration contour $\gamma \subset \mathbb{R}$ into thimbles via:
 

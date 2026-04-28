@@ -10,15 +10,8 @@ export default proposition({
     "fibre-functor",
     "topological-decomposition",
   ],
-  lean: {
-    decl: "QOU.Braiding.hecke_mass_trace",
+  lean: { ref: "qou:QOU.Braiding.hecke_mass_trace",
     validation: "not_checked",
   },
-  uses: [
-    "def:hecke-mass-element",
-    "def:mass-identity",
-    "thm:jones-markov-trace",
-    "thm:topological-mass",
-    "prop:topological-mass-formula",
-  ],
+  uses: ["def:hecke-mass-element"],
 });

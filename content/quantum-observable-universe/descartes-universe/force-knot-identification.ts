@@ -17,8 +17,5 @@ export default remark({
     "coulomb",
     "symplectic",
   ],
-  uses: [
-    "rem:torus-knot-prime-powers",
-    "def:positron-knot",
-  ],
+  uses: ["rem:torus-knot-prime-powers"],
 });

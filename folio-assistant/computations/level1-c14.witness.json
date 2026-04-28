@@ -1,6 +1,6 @@
 {
   "computation": "level1-c14",
-  "timestamp": "2026-03-28T15:44:15.847407+00:00",
+  "computedAt": "2026-03-28T15:44:15.847407+00:00",
   "description": "Level 1 (quark-level) Q-value for \u00b9\u2074C \u2192 \u00b9\u2074N beta decay",
   "parameters": {
     "q": 1.1099785955541805,
@@ -39,5 +39,7 @@
     },
     "Q_exp": 0.01861,
     "Q_exp_err": 1e-05
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

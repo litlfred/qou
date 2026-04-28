@@ -51,11 +51,19 @@ When the MCP server is available, **prefer MCP tools over shell commands**:
 
 ### Fallback workflow (no MCP)
 
-When the MCP server is unavailable, parse `lake build` output directly:
+When the MCP server is unavailable, parse `lake build` output directly
+**from the repo root** (the root workspace builds all paper packages
+in one pass):
 
 ```bash
-cd content/quantum-observable-universe/lean && lake build 2>&1
+lake build 2>&1                       # build every paper (QOU + UGB + Fred2005)
+lake build QOU 2>&1                   # or just one library
+lake build UGB 2>&1
 ```
+
+Per-paper `cd content/<paper>/lean && lake build` still works, but the
+root workspace resolves cross-paper imports (QOU → UGB) in a single
+pass and is the standardized entry point.
 
 Parse the output for lines matching:
 - `error:` — build-breaking errors (must fix)

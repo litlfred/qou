@@ -13,14 +13,12 @@ export default proposition({
     "hecke-algebra",
     "adjoint-character",
   ],
-  lean: {
-    decl: "QOU.Descartes.gram_weighted_qvalue",
+  lean: { ref: "qou:QOU.Descartes.gram_weighted_qvalue",
     validation: "not_checked",
   },
   uses: [
     "def:typed-garside-element",
     "prop:frobenius-gram-matrix",
-    "prop:nuclear-groebner-reduction",
     "def:transfer-matrix-operator",
   ],
 });

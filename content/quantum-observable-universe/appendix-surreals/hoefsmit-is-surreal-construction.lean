@@ -1,0 +1,22 @@
+-- Ref: [conway1976] Conway, *On Numbers and Games*, Academic Press.
+-- Ref: [gonshor1986] Gonshor, *An Introduction to the Theory of Surreal
+--      Numbers*, Cambridge University Press.
+-- Ref: [hoefsmit1974] Hoefsmit, *Representations of Hecke algebras of finite
+--      groups with BN-pairs of classical type*, PhD Thesis, UBC.
+--
+-- Sibling stub for `prop:hoefsmit-is-surreal-construction`.
+--
+-- The compiled formalisation lives in:
+--   QOU/AppendixSurreals/HoefsmitBridge.lean
+--
+-- See `QOU.AppendixSurreals.TwoRowTableau`,
+--     `QOU.AppendixSurreals.hoefsmitDyadic`,
+--     `QOU.AppendixSurreals.hoefsmit_bridge_zero`        — proved
+--     `QOU.AppendixSurreals.hoefsmit_bridge_one`         — proved
+--     `QOU.AppendixSurreals.hoefsmit_bridge_two`         — proved
+--     `QOU.AppendixSurreals.hoefsmit_is_surreal_construction` — axiom
+--                                                            (general n)
+--
+-- The bridge is proved in Lean for tableau sizes n ≤ 2 (the first
+-- non-trivial cases).  The general statement remains an axiom pending
+-- a YJM-extension formalisation in mathlib.

@@ -97,12 +97,12 @@ async function analyzeRemark(filePath: string): Promise<RemarkInfo | null> {
     if (existsSync(mdPath)) {
       const { readFileSync } = await import("fs");
       const mdContent = readFileSync(mdPath, "utf-8").toLowerCase();
-      const usedLabels = new Set(block.uses ?? []);
+      const usedLabels = new Set<string>(block.uses ?? []);
 
       for (const [term, expectedDef] of Object.entries(PHYSICS_TERMS_NEEDING_DEFS)) {
         if (mdContent.includes(term.toLowerCase())) {
           // Check if the expected definition is in uses[]
-          const hasRef = Array.from(usedLabels).some(u =>
+          const hasRef = Array.from(usedLabels).some((u) =>
             expectedDef.split(" or ").some(d => u.includes(d.replace(/^def:|^prop:/, "")))
           );
           if (!hasRef) {

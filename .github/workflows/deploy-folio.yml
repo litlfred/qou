@@ -21,16 +21,6 @@
 name: Deploy Folio
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'deploy/**'
-      - 'lean-mcp.config.json'
-      - 'folio-assistant/**'
-  workflow_run:
-    workflows: ["Build Paper Assistant Image"]
-    types: [completed]
-    branches: [main]
   workflow_dispatch:
     inputs:
       action:

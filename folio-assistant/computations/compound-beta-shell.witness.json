@@ -1,0 +1,97 @@
+{
+  "computation": "compound-beta-shell-calibration",
+  "description": "y_target(A_magic) derivation from compound \u03b2-decay Q-values. Single archimedean input: E_0 = 0.782 MeV (free-neutron \u03b2-decay). For each magic A, find a representative compound \u03b2-decay crossing that shell and compute y_target from Q/(E_0\u00b7A_magic\u00b7m_p).",
+  "computedAt": "2026-04-17T23:55:27.075978+00:00",
+  "parameters": {
+    "E_0_MeV": 0.782,
+    "m_p_MeV": 938.272
+  },
+  "results": [
+    {
+      "A_magic": 2,
+      "beta_decay": "3H \u2192 3He",
+      "Q_MeV": 0.01859,
+      "description": "Tritium \u03b2\u207b (crosses N=2)",
+      "y_target": 1.2668170059760942e-05,
+      "anchor_atom": "4He",
+      "anchor_A": 4,
+      "anchor_B_AME": 28.3,
+      "anchor_B_over_rest": 0.007540457351386378,
+      "ratio_y_to_B_over_rest": 0.0016800267502914516
+    },
+    {
+      "A_magic": 8,
+      "beta_decay": "14C \u2192 14N",
+      "Q_MeV": 0.15648,
+      "description": "\u00b9\u2074C \u03b2\u207b (crosses N=8)",
+      "y_target": 2.6658354638937497e-05,
+      "anchor_atom": "16O",
+      "anchor_A": 16,
+      "anchor_B_AME": 127.62,
+      "anchor_B_over_rest": 0.008500999710105385,
+      "ratio_y_to_B_over_rest": 0.0031359081929208795
+    },
+    {
+      "A_magic": 20,
+      "beta_decay": "40K \u2192 40Ca",
+      "Q_MeV": 1.311,
+      "description": "\u2074\u2070K \u03b2\u207b (crosses Z=20, N=20 double)",
+      "y_target": 8.93381976780344e-05,
+      "anchor_atom": "40Ca",
+      "anchor_A": 40,
+      "anchor_B_AME": 342.05,
+      "anchor_B_over_rest": 0.009113828399440672,
+      "ratio_y_to_B_over_rest": 0.009802488456280041
+    },
+    {
+      "A_magic": 28,
+      "beta_decay": "56Mn \u2192 56Fe",
+      "Q_MeV": 3.695,
+      "description": "\u2075\u2076Mn \u03b2\u207b (near Z=N=28)",
+      "y_target": 0.00017985433170989272,
+      "anchor_atom": "56Ni",
+      "anchor_A": 56,
+      "anchor_B_AME": 483.99,
+      "anchor_B_over_rest": 0.009211271967434358,
+      "ratio_y_to_B_over_rest": 0.019525461016214905
+    },
+    {
+      "A_magic": 50,
+      "beta_decay": "120Ag \u2192 120Cd",
+      "Q_MeV": 8.0,
+      "description": "\u00b9\u00b2\u2070Ag \u03b2\u207b (crosses Z=50)",
+      "y_target": 0.00021806425062525562,
+      "anchor_atom": "120Sn",
+      "anchor_A": 120,
+      "anchor_B_AME": 1020.55,
+      "anchor_B_over_rest": 0.00906409157827723,
+      "ratio_y_to_B_over_rest": 0.024058037007024823
+    },
+    {
+      "A_magic": 82,
+      "beta_decay": "210Bi \u2192 210Po",
+      "Q_MeV": 1.163,
+      "description": "\u00b2\u00b9\u2070Bi \u03b2\u207b (crosses Z=82)",
+      "y_target": 1.9329933191857645e-05,
+      "anchor_atom": "208Pb",
+      "anchor_A": 208,
+      "anchor_B_AME": 1636.45,
+      "anchor_B_over_rest": 0.008385146393501113,
+      "ratio_y_to_B_over_rest": 0.0023052588809706724
+    },
+    {
+      "A_magic": 126,
+      "beta_decay": "209Pb \u2192 209Bi",
+      "Q_MeV": 0.644,
+      "description": "\u00b2\u2070\u2079Pb \u03b2\u207b (crosses N=126 anchor)",
+      "y_target": 6.965941339417888e-06,
+      "anchor_atom": null,
+      "anchor_A": null,
+      "anchor_B_AME": null,
+      "anchor_B_over_rest": null,
+      "ratio_y_to_B_over_rest": null
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

@@ -12,8 +12,5 @@ export default remark({
     "rydberg",
     "spectral-series",
   ],
-  uses: [
-    "rem:hydrogen-orbitals",
-    "prop:hydrogen-shell-writhe",
-  ],
+  uses: ["rem:hydrogen-orbitals"],
 });

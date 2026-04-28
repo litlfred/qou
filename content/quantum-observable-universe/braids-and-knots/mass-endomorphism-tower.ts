@@ -4,17 +4,12 @@ export default proposition({
   label: "prop:mass-endomorphism-tower",
   title:
     "Proton--electron mass ratio from the $\\Phi_q$ tower",
-  lean: {
-    decl: "QOU.MassEndomorphism.proton_electron_ratio",
+  lean: { ref: "qou:QOU.MassEndomorphism.proton_electron_ratio",
     validation: "not_checked",
   },
   uses: [
-    "def:hecke-mass-element",
-    "prop:hecke-mass-trace",
-    "thm:topological-mass",
-    "thm:jones-markov-trace",
-    "def:algebraic-quantum-volume",
+    "rem:kashaev-volume-density",
     "rem:photon-channel-wedderburn-chain",
-    "thm:wedderburn-mass-formula",
+    "cor:quantum-dilogarithm",
   ],
 });

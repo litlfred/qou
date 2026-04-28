@@ -6,5 +6,5 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:atomic-lp-stability",
   title: "LP stability of the atomic braid",
-  uses: ["def:atomic-braid", "def:borromean-baryon"],
+  uses: ["def:atomic-braid"],
 });

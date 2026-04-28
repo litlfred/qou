@@ -43,10 +43,10 @@ is the result of a $2 \times 2$ matrix product:*
 $$
   \begin{pmatrix} a_\pi \\ b_\pi \end{pmatrix}
   =
-  \left(\prod_{k=1}^{K} T_k^{\mathrm{std}}\right)
+  \left(\prod_{k=1}^{K} \sigma_k^{\mathrm{std}}\right)
   \begin{pmatrix} 0 \\ 1 \end{pmatrix},
   \qquad
-  T_k^{\mathrm{std}}(c, d)
+  \sigma_k^{\mathrm{std}}(c, d)
   =
   \begin{pmatrix}
     c(q - q^{-1}) + d & c \\
@@ -72,13 +72,13 @@ $$
   T_\mathfrak{p}^{\mathrm{std}}
   =
   \prod_{i=1}^{n_p}
-  T_i^{\mathrm{std}}(c_i, d_i)
+  \sigma_i^{\mathrm{std}}(c_i, d_i)
   \in \mathbb{R}^{2 \times 2},
   \qquad
   T_\mathfrak{n}^{\mathrm{std}}
   =
   \prod_{j=1}^{n_n}
-  T_j^{\mathrm{std}}(c_j, d_j)
+  \sigma_j^{\mathrm{std}}(c_j, d_j)
   \in \mathbb{R}^{2 \times 2}
 $$
 
@@ -115,7 +115,7 @@ $$
 three irreducible representations: symmetric ($\dim = 1$),
 standard ($\dim = 2$), and alternating ($\dim = 1$).  On the
 one-dimensional representations, the crossing operator
-$c \cdot T_i + d \cdot \mathbf{1}$ acts as a scalar:
+$c \cdot \sigma_i + d \cdot \mathbf{1}$ acts as a scalar:
 $\lambda_{\mathrm{sym}} = cq + d$ (eigenvalue $q$) and
 $\lambda_{\mathrm{alt}} = -cq^{-1} + d$ (eigenvalue $-q^{-1}$).
 The product of scalars commutes, so $S(\pi)$ and $A(\pi)$ are

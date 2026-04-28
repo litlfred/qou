@@ -1,0 +1,59 @@
+{
+  "computation": "proton-vol-over-hbarq-squared",
+  "description": "B.1 \u2014 Test cyFlQ-agent hypothesis #2: Vol(closure of \u03b2_p) / \u210f_q\u00b2 \u225f m_p. Reads existing proton-braid closure volumes from fresh-derivation-pn-steps-A-D.witness.json (4 channel branches, \u03b2_p \u2208 B_3 with 11 crossings) and divides by \u210f_q\u00b2 = ((q-1)/q)\u00b2.  Result: Vol/\u210f_q\u00b2 ranges 10\u207b\u2075\u201310\u207b\u00b3 vs m_p = 938.27 MeV \u2014 off by 8+ orders of magnitude. Hypothesis FALSIFIED with the current proton-braid representation.",
+  "computedAt": "2026-04-25T19:05:00Z",
+  "precision_dps": 30,
+  "inputs": {
+    "q_0": "1.1099785955541805",
+    "m_p_codata_MeV": "938.27208816",
+    "hbar_q_squared": "9.8171885135e-03",
+    "source_witness": "fresh-derivation-pn-steps-A-D.witness.json"
+  },
+  "branches": [
+    {
+      "idx": 0,
+      "is_hyperbolic": false,
+      "n_components": 2,
+      "vol": "8.9936e-08",
+      "vol_over_hbarq2": "9.161e-06",
+      "err_pct_vs_mp": -100.0
+    },
+    {
+      "idx": 1,
+      "is_hyperbolic": false,
+      "n_components": 2,
+      "vol": "7.6250e-07",
+      "vol_over_hbarq2": "7.767e-05",
+      "err_pct_vs_mp": -100.0
+    },
+    {
+      "idx": 2,
+      "is_hyperbolic": false,
+      "n_components": 2,
+      "vol": "9.5156e-08",
+      "vol_over_hbarq2": "9.693e-06",
+      "err_pct_vs_mp": -100.0
+    },
+    {
+      "idx": 3,
+      "is_hyperbolic": true,
+      "n_components": 2,
+      "vol": "3.8814e-06",
+      "vol_over_hbarq2": "3.954e-04",
+      "err_pct_vs_mp": -100.0
+    }
+  ],
+  "verdict": "FALSIFIED",
+  "interpretation": "For Vol/\u210f_q\u00b2 to equal m_p \u2248 938.27 MeV in natural units, the proton braid would need Vol(closure) \u2248 m_p \u00b7 \u210f_q\u00b2 \u2248 9.21 \u2014 a substantial hyperbolic knot like 4_1 (Vol 2.03) scaled up.  The actual \u03b2_p in B_3 with 11 crossings closes to a 2-component link of tiny volume (mostly torus-like, one branch Vol \u2248 4e-6).  The hypothesis as stated requires either: (i) a fundamentally different braid representation of the proton; (ii) a different Kashaev-volume formula scaling than Vol/\u210f_q\u00b2; or (iii) accepting m_p as a genuine third calibration input.  Combined with T1.1's falsification of \u0394m = m_e\u00b7\u03a3_3, the simplest 'drop to 2-cal' route via the fresh_derivation_pn pipeline is closed.",
+  "next_steps": [
+    "Test alt. functional forms: Vol\u00b7m_e/\u210f_q^k for k \u2208 {1,2,3,4}; Vol-via-colored-Jones (Kashaev limit) instead of geometric Vol.",
+    "Consider whether the proton's correct representation is a HIGHER-strand braid (B_3 with quark-only crossings is the leptonic-content sketch; full hadronic content may require multi-strand resolution of dressed quarks).",
+    "If no closed form exists for m_p from (q_0, m_e), accept the 3-input framework and focus on Term 7 (A.1-4) for the binding-gap closure."
+  ],
+  "reference_blocks": [
+    "calibration-inputs",
+    "rem:kashaev-volume-density",
+    "prop:topological-mass-formula",
+    "thm:topological-mass"
+  ]
+}

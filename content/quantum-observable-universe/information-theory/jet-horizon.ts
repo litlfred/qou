@@ -7,14 +7,8 @@ export default definition({
     "jet-horizon", "event-horizon", "degree-zero",
     "vanishing-ideal", "information-barrier",
   ],
-  lean: {
-    decl: "QOU.JetHorizon",
+  lean: { ref: "qou:QOU.JetHorizon",
     validation: "not_checked",
   },
-  uses: [
-    "prop:jet-prolongation",
-    "def:bundle-initial-conditions",
-    "def:exceptional-divisor",
-    "rem:jet-planck-steps",
-  ],
+  uses: ["rem:jet-planck-steps"],
 });

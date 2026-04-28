@@ -26,19 +26,6 @@
 name: Lean CI
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'content/quantum-observable-universe/lean/**'
-      - 'chapters/**'
-      - 'proof-objects.json'
-      - 'glossary.json'
-      - 'folio-assistant/schemas/**'
-  pull_request:
-    branches: [main]
-    paths:
-      - 'content/quantum-observable-universe/lean/**'
-      - 'chapters/**'
   workflow_dispatch:
 
 permissions:
@@ -118,18 +105,24 @@ jobs:
       - name: Cache Lean build artifacts
         uses: actions/cache@v4
         with:
-          path: content/quantum-observable-universe/lean/.lake
-          key: lean-ci-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/quantum-observable-universe/lean/lake-manifest.json') }}
+          path: |
+            .lake
+            content/quantum-observable-universe/lean/.lake
+            content/unital-groebner-bases/lean/.lake
+            content/fred2005-formal-groups/lean/.lake
+          key: lean-ci-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lakefile.toml', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/unital-groebner-bases/lean/lakefile.toml', 'content/fred2005-formal-groups/lean/lakefile.toml') }}
           restore-keys: |
             lean-ci-${{ runner.os }}-
 
       # ── Build ──────────────────────────────────────────────────────
-      - name: Build Lean project
+      # Runs from the repo-root Lake workspace, which aggregates every
+      # paper package (QOU, UGB, Fred2005).  Single `lake build`
+      # compiles them all.
+      - name: Build Lean workspace (root)
         id: build
-        working-directory: content/quantum-observable-universe/lean
         run: |
           lake update
-          lake build 2>&1 | tee ../build.log
+          lake build 2>&1 | tee build.log
         continue-on-error: true
 
       # ── Post-build analysis ────────────────────────────────────────
@@ -139,10 +132,15 @@ jobs:
       - name: Count sorry markers
         id: sorry
         run: |
-          COUNT=$(grep -rco "\bsorry\b" content/quantum-observable-universe/lean/QOU/*.lean 2>/dev/null \
+          # Scan every registered paper Lake package for `sorry` usage.
+          COUNT=$(grep -rco "\bsorry\b" \
+            content/quantum-observable-universe/lean/QOU \
+            content/unital-groebner-bases/lean/UGB \
+            content/fred2005-formal-groups/lean/Fred2005 \
+            --include='*.lean' 2>/dev/null \
             | awk -F: '{s+=$2} END {print s+0}')
           echo "count=${COUNT}" >> "$GITHUB_OUTPUT"
-          echo "Total sorry occurrences: ${COUNT}"
+          echo "Total sorry occurrences (across all paper packages): ${COUNT}"
 
       - name: Check for type errors
         if: steps.build.outcome == 'failure'
@@ -194,8 +192,12 @@ jobs:
       - name: Restore Lean cache
         uses: actions/cache@v4
         with:
-          path: content/quantum-observable-universe/lean/.lake
-          key: lean-ci-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/quantum-observable-universe/lean/lake-manifest.json') }}
+          path: |
+            .lake
+            content/quantum-observable-universe/lean/.lake
+            content/unital-groebner-bases/lean/.lake
+            content/fred2005-formal-groups/lean/.lake
+          key: lean-ci-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lakefile.toml', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/unital-groebner-bases/lean/lakefile.toml', 'content/fred2005-formal-groups/lean/lakefile.toml') }}
 
       # ── Generate axiom report ──────────────────────────────────────
       - name: Generate axiom report
@@ -255,11 +257,14 @@ jobs:
         id: lean-cache-docs
         uses: actions/cache@v4
         with:
-          path: content/quantum-observable-universe/lean/.lake
-          key: lean-ci-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/quantum-observable-universe/lean/lake-manifest.json') }}
+          path: |
+            .lake
+            content/quantum-observable-universe/lean/.lake
+            content/unital-groebner-bases/lean/.lake
+            content/fred2005-formal-groups/lean/.lake
+          key: lean-ci-${{ runner.os }}-${{ hashFiles('lean-toolchain', 'lakefile.toml', 'content/quantum-observable-universe/lean/lakefile.toml', 'content/unital-groebner-bases/lean/lakefile.toml', 'content/fred2005-formal-groups/lean/lakefile.toml') }}
 
-      - name: Build Lean project (ensure .olean files exist)
-        working-directory: content/quantum-observable-universe/lean
+      - name: Build Lean workspace (ensure .olean files exist)
         env:
           CACHE_HIT: ${{ steps.lean-cache-docs.outputs.cache-hit }}
         run: |
@@ -276,9 +281,11 @@ jobs:
       # syntax highlighting metadata.
       - name: Generate doc-gen4 documentation
         id: docgen
-        working-directory: content/quantum-observable-universe/lean
         run: |
-          if lake build QOU:docs 2>&1 | tee ../docgen.log; then
+          # Build docs for every registered paper library from the root
+          # workspace.  `lake build <lib>:docs` is a no-op if doc-gen4
+          # is not wired in; we fall back to a static source browser.
+          if lake build QOU:docs UGB:docs Fred2005:docs 2>&1 | tee docgen.log; then
             echo "docgen=true" >> "$GITHUB_OUTPUT"
             echo "✅ doc-gen4 succeeded"
           else
@@ -370,11 +377,20 @@ jobs:
       - name: Collect documentation output
         run: |
           mkdir -p _lean_docs
-          # doc-gen4 outputs to content/quantum-observable-universe/lean/.lake/build/doc/
-          if [ -d content/quantum-observable-universe/lean/.lake/build/doc ]; then
-            cp -r content/quantum-observable-universe/lean/.lake/build/doc/* _lean_docs/
-          elif [ -d lean-docs ]; then
-            cp -r lean-docs/* _lean_docs/
+          # doc-gen4 (from the root workspace) outputs to .lake/build/doc/.
+          # Per-paper builds may still drop artefacts under their own .lake
+          # dirs, so we collect from all known locations.
+          for dir in \
+            .lake/build/doc \
+            content/quantum-observable-universe/lean/.lake/build/doc \
+            content/unital-groebner-bases/lean/.lake/build/doc \
+            content/fred2005-formal-groups/lean/.lake/build/doc; do
+            if [ -d "$dir" ]; then
+              cp -r "$dir"/* _lean_docs/ 2>/dev/null || true
+            fi
+          done
+          if [ -d lean-docs ]; then
+            cp -r lean-docs/* _lean_docs/ 2>/dev/null || true
           fi
           echo "Documentation files: $(find _lean_docs -type f | wc -l)"
 
@@ -438,11 +454,29 @@ jobs:
             cp lean-build/mapping.json _deploy/ 2>/dev/null || true
           fi
 
-          # Copy raw Lean source for browsing
-          cp -r content/quantum-observable-universe/lean/QOU _deploy/lean/
-          cp content/quantum-observable-universe/lean/QOU.lean _deploy/lean/
-          cp content/quantum-observable-universe/lean/lakefile.toml _deploy/lean/
-          cp content/quantum-observable-universe/lean/lean-toolchain _deploy/lean/
+          # Copy the root workspace lakefile + toolchain, plus every
+          # paper package's Lean source for browsing.
+          cp lakefile.toml _deploy/lean/
+          cp lean-toolchain _deploy/lean/
+
+          for pkg_dir in \
+            content/quantum-observable-universe/lean \
+            content/unital-groebner-bases/lean \
+            content/fred2005-formal-groups/lean; do
+            if [ -d "$pkg_dir" ]; then
+              mkdir -p "_deploy/lean/$pkg_dir"
+              # Copy lakefile, toolchain, and the library subtree(s).
+              cp "$pkg_dir"/lakefile.toml "_deploy/lean/$pkg_dir/" 2>/dev/null || true
+              cp "$pkg_dir"/lean-toolchain "_deploy/lean/$pkg_dir/" 2>/dev/null || true
+              # Library roots: QOU.lean / UGB.lean / Fred2005.lean + dirs
+              for root in "$pkg_dir"/*.lean; do
+                [ -f "$root" ] && cp "$root" "_deploy/lean/$pkg_dir/"
+              done
+              for libdir in "$pkg_dir"/QOU "$pkg_dir"/UGB "$pkg_dir"/Fred2005; do
+                [ -d "$libdir" ] && cp -r "$libdir" "_deploy/lean/$pkg_dir/"
+              done
+            fi
+          done
 
           echo "Deployment contents:"
           find _deploy -type f | head -30

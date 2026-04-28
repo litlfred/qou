@@ -1,0 +1,365 @@
+{
+  "computation": "jsj-atom-volume",
+  "description": "Test the JSJ / hyperbolic-volume atom model.  Each nucleon modelled as Borromean rings (Vol=8G, hyperbolic).  Atom = either A disjoint Borromeans (free baseline) or A linked Borromeans (atom).  Binding = m_e \u00b7 \u0394Vol.  Explores three counting schemes for the number of couplings: A\u00b78G alone, all-pairs (C(A,2)), and adjacent-only (A-1).",
+  "computedAt": "2026-04-23T18:43:49.803737+00:00",
+  "parameters": {
+    "Catalan_G": 0.915965594177219,
+    "Vol_Borromean_8G": 7.327724753417752,
+    "m_e_MeV": 0.51099895,
+    "q0": 1.1099785955541805,
+    "snappy_Vol_L6a4": 7.327724753417754
+  },
+  "catalog": [
+    {
+      "status": "ok",
+      "manifold": "L6a4",
+      "volume": 7.327724753417754,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 8,
+      "n_cusps": 3,
+      "description": "Borromean rings (proton, Vol=8G)"
+    },
+    {
+      "status": "ok",
+      "manifold": "4_1",
+      "volume": 2.0298832128193074,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 2,
+      "n_cusps": 1,
+      "description": "Figure-8 knot (simplest hyperbolic)"
+    },
+    {
+      "status": "ok",
+      "manifold": "L6a1",
+      "volume": 5.33348956689812,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 6,
+      "n_cusps": 2,
+      "description": "Two-component link 6a1"
+    },
+    {
+      "status": "ok",
+      "manifold": "L6a2",
+      "volume": 4.059766425638614,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 4,
+      "n_cusps": 2,
+      "description": "Two-component link 6a2"
+    },
+    {
+      "status": "ok",
+      "manifold": "L6a5",
+      "volume": 5.333489566898121,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 6,
+      "n_cusps": 3,
+      "description": "Two-component link 6a5"
+    },
+    {
+      "status": "ok",
+      "manifold": "L8a1",
+      "volume": 11.370774179519003,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 12,
+      "n_cusps": 2,
+      "description": "Two-component link 8a1"
+    },
+    {
+      "status": "ok",
+      "manifold": "L8a12",
+      "volume": 4.851170757332736,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 5,
+      "n_cusps": 2,
+      "description": "Two-component link 8a12"
+    },
+    {
+      "status": "ok",
+      "manifold": "L6a4",
+      "volume": 7.327724753417754,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 8,
+      "n_cusps": 3,
+      "description": "Borromean (3-comp) \u2014 again"
+    },
+    {
+      "status": "ok",
+      "manifold": "L8n3",
+      "volume": 0.0,
+      "solution_type": "contains flat tetrahedra",
+      "n_tetrahedra": 6,
+      "n_cusps": 3,
+      "description": "Non-alternating 8-crossing 3-comp"
+    },
+    {
+      "status": "ok",
+      "manifold": "L10n107",
+      "volume": 7.327724753417803,
+      "solution_type": "contains degenerate tetrahedra",
+      "n_tetrahedra": 13,
+      "n_cusps": 4,
+      "description": "10-crossing non-alt link"
+    },
+    {
+      "status": "ok",
+      "manifold": "m003",
+      "volume": 2.0298832128193074,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 2,
+      "n_cusps": 1,
+      "description": "Gieseking manifold"
+    },
+    {
+      "status": "ok",
+      "manifold": "m004",
+      "volume": 2.029883212819307,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 2,
+      "n_cusps": 1,
+      "description": "Figure-8 knot complement"
+    },
+    {
+      "status": "ok",
+      "manifold": "s776",
+      "volume": 5.333489566898119,
+      "solution_type": "all tetrahedra positively oriented",
+      "n_tetrahedra": 6,
+      "n_cusps": 3,
+      "description": "Magic manifold (3-cusped, Vol=Vol_min)"
+    }
+  ],
+  "prediction_A_times_8G": [
+    {
+      "atom": "D",
+      "A": 2,
+      "B_AME": 2.22452,
+      "V_free_cat": 14.655449506835504,
+      "B_pred_MeV": 7.48891930977096,
+      "err_pct": 236.65326945907253
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "B_AME": 8.4818,
+      "V_free_cat": 21.983174260253257,
+      "B_pred_MeV": 11.23337896465644,
+      "err_pct": 32.44097909236766
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "B_AME": 7.718,
+      "V_free_cat": 21.983174260253257,
+      "B_pred_MeV": 11.23337896465644,
+      "err_pct": 45.54779689889143
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "B_AME": 28.2957,
+      "V_free_cat": 29.31089901367101,
+      "B_pred_MeV": 14.97783861954192,
+      "err_pct": -47.066732331972986
+    },
+    {
+      "atom": "6Li",
+      "A": 6,
+      "B_AME": 32.0,
+      "V_free_cat": 43.966348520506514,
+      "B_pred_MeV": 22.46675792931288,
+      "err_pct": -29.79138147089725
+    },
+    {
+      "atom": "12C",
+      "A": 12,
+      "B_AME": 92.16,
+      "V_free_cat": 87.93269704101303,
+      "B_pred_MeV": 44.93351585862576,
+      "err_pct": -51.244014910345314
+    },
+    {
+      "atom": "16O",
+      "A": 16,
+      "B_AME": 127.62,
+      "V_free_cat": 117.24359605468403,
+      "B_pred_MeV": 59.91135447816768,
+      "err_pct": -53.05488600676408
+    }
+  ],
+  "prediction_2me_A_times_8G": [
+    {
+      "atom": "D",
+      "A": 2,
+      "B_AME": 2.22452,
+      "B_pred_MeV": 14.97783861954192,
+      "err_pct": 573.3065389181451
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "B_AME": 8.4818,
+      "B_pred_MeV": 22.46675792931288,
+      "err_pct": 164.8819581847353
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "B_AME": 7.718,
+      "B_pred_MeV": 22.46675792931288,
+      "err_pct": 191.09559379778284
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "B_AME": 28.2957,
+      "B_pred_MeV": 29.95567723908384,
+      "err_pct": 5.866535336054031
+    },
+    {
+      "atom": "6Li",
+      "A": 6,
+      "B_AME": 32.0,
+      "B_pred_MeV": 44.93351585862576,
+      "err_pct": 40.4172370582055
+    },
+    {
+      "atom": "12C",
+      "A": 12,
+      "B_AME": 92.16,
+      "B_pred_MeV": 89.86703171725152,
+      "err_pct": -2.4880298206906204
+    },
+    {
+      "atom": "16O",
+      "A": 16,
+      "B_AME": 127.62,
+      "B_pred_MeV": 119.82270895633536,
+      "err_pct": -6.109772013528164
+    }
+  ],
+  "alt_all_pairs_from_D": [
+    {
+      "atom": "D",
+      "A": 2,
+      "n_pairs": 1,
+      "V_free_cat": 14.655449506835504,
+      "V_coupling_total": 4.353277046851075,
+      "V_atom_cat": 10.30217245998443,
+      "B_pred_MeV": 2.22452,
+      "err_pct": 0.0
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "n_pairs": 3,
+      "V_free_cat": 21.983174260253257,
+      "V_coupling_total": 13.059831140553225,
+      "V_atom_cat": 8.923343119700032,
+      "B_pred_MeV": 6.67356,
+      "err_pct": -21.319059633568344
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "n_pairs": 3,
+      "V_free_cat": 21.983174260253257,
+      "V_coupling_total": 13.059831140553225,
+      "V_atom_cat": 8.923343119700032,
+      "B_pred_MeV": 6.67356,
+      "err_pct": -13.532521378595488
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "n_pairs": 6,
+      "V_free_cat": 29.31089901367101,
+      "V_coupling_total": 26.11966228110645,
+      "V_atom_cat": 3.1912367325645583,
+      "B_pred_MeV": 13.34712,
+      "err_pct": -52.8298646084034
+    },
+    {
+      "atom": "6Li",
+      "A": 6,
+      "n_pairs": 15,
+      "V_free_cat": 43.966348520506514,
+      "V_coupling_total": 65.29915570276613,
+      "V_atom_cat": -21.332807182259614,
+      "B_pred_MeV": 33.3678,
+      "err_pct": 4.274375000000008
+    },
+    {
+      "atom": "12C",
+      "A": 12,
+      "n_pairs": 66,
+      "V_free_cat": 87.93269704101303,
+      "V_coupling_total": 287.316285092171,
+      "V_atom_cat": -199.38358805115794,
+      "B_pred_MeV": 146.81832,
+      "err_pct": 59.308072916666674
+    },
+    {
+      "atom": "16O",
+      "A": 16,
+      "n_pairs": 120,
+      "V_free_cat": 117.24359605468403,
+      "V_coupling_total": 522.393245622129,
+      "V_atom_cat": -405.149649567445,
+      "B_pred_MeV": 266.9424,
+      "err_pct": 109.16972261401034
+    }
+  ],
+  "alt_adjacent_only_from_D": [
+    {
+      "atom": "D",
+      "A": 2,
+      "n_adjacent": 1,
+      "B_pred_MeV": 2.22452,
+      "err_pct": 0.0
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "n_adjacent": 2,
+      "B_pred_MeV": 4.44904,
+      "err_pct": -47.54603975571223
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "n_adjacent": 2,
+      "B_pred_MeV": 4.44904,
+      "err_pct": -42.35501425239699
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "n_adjacent": 3,
+      "B_pred_MeV": 6.673560000000001,
+      "err_pct": -76.41493230420168
+    },
+    {
+      "atom": "6Li",
+      "A": 6,
+      "n_adjacent": 5,
+      "B_pred_MeV": 11.1226,
+      "err_pct": -65.24187500000001
+    },
+    {
+      "atom": "12C",
+      "A": 12,
+      "n_adjacent": 11,
+      "B_pred_MeV": 24.469720000000002,
+      "err_pct": -73.44865451388888
+    },
+    {
+      "atom": "16O",
+      "A": 16,
+      "n_adjacent": 15,
+      "B_pred_MeV": 33.3678,
+      "err_pct": -73.8537846732487
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

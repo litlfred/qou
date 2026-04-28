@@ -13,9 +13,9 @@ export default remark({
     "adjoint",
     "commutative",
   ],
-  lean: {
-    decl: "QOU.ReebGaugeGroup",
+  lean: { ref: "qou:QOU.ReebGaugeGroup",
     validation: "not_checked",
   },
   uses: ["def:contact-affine-chart"],
+  defines: ["reeb-gauge-group"],
 });

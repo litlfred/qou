@@ -21,7 +21,7 @@
       "source": "tools/hecke-engine/certificate-*.json"
     },
     {
-      "name": "⁴He mass (CODATA+AME2020)",
+      "name": "\u2074He mass (CODATA+AME2020)",
       "computed": 3728.4,
       "expected": 3728.4,
       "passed": true,
@@ -30,7 +30,7 @@
       "source": "AME2020 + CODATA 2022"
     },
     {
-      "name": "¹²C mass (CODATA+AME2020)",
+      "name": "\u00b9\u00b2C mass (CODATA+AME2020)",
       "computed": 11177.9,
       "expected": 11177.9,
       "passed": true,
@@ -39,7 +39,7 @@
       "source": "AME2020 + CODATA 2022"
     },
     {
-      "name": "⁵⁶Fe mass (CODATA+AME2020)",
+      "name": "\u2075\u2076Fe mass (CODATA+AME2020)",
       "computed": 52103.1,
       "expected": 52103.1,
       "passed": true,
@@ -56,8 +56,8 @@
   "scriptCommitSha": "d3c7c979dccd265671b6d5d669c6223fc01918da",
   "description": "Comprehensive isotope mass table for all stable and long-lived nuclides up to Z=30. Uses CODATA nucleon masses + AME2020 binding energies. Maps each isotope to its hecke-engine certificate where available. Documents source classification (CODATA/AME2020 input vs genuine q-predictions).",
   "parameters": {
-    "q₀": 1.1099785955541805,
-    "ℏ_q": 0.09908172643569887,
+    "q\u2080": 1.1099785955541805,
+    "\u210f_q": 0.09908172643569887,
     "m_p (MeV)": 938.27208816,
     "m_n (MeV)": 939.56542052,
     "m_e (MeV)": 0.51099895,
@@ -1462,6 +1462,8 @@
         "source": "CODATA+AME"
       }
     ],
-    "source_note": "All masses use M = Z·m_p + N·m_n + Z·m_e − B(Z,N) with CODATA m_p, m_n and AME2020 B/A. This is NOT a prediction from q — it recombines observed constants. Genuine q-predictions are mass ratios, Q-values (mass differences), and half-life ratios."
-  }
+    "source_note": "All masses use M = Z\u00b7m_p + N\u00b7m_n + Z\u00b7m_e \u2212 B(Z,N) with CODATA m_p, m_n and AME2020 B/A. This is NOT a prediction from q \u2014 it recombines observed constants. Genuine q-predictions are mass ratios, Q-values (mass differences), and half-life ratios."
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

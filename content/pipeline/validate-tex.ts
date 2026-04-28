@@ -26,9 +26,6 @@ import remarkMath from "remark-math";
 import { visit } from "unist-util-visit";
 import { parse as parseLatex } from "@unified-latex/unified-latex-util-parse";
 import { printRaw } from "@unified-latex/unified-latex-util-print-raw";
-import {
-  visitMatch,
-} from "@unified-latex/unified-latex-util-match";
 
 // ── Types ─────────────────────────────────────────────────────────
 

@@ -11,8 +11,7 @@ export default proposition({
     "coulomb",
     "lagrangian",
   ],
-  lean: {
-    decl: "QOU.Braiding.beta_stability",
+  lean: { ref: "qou:QOU.Braiding.beta_stability",
     validation: "not_checked",
   },
   uses: ["def:skein-binding-lagrangian"],

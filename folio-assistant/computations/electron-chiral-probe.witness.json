@@ -1,0 +1,192 @@
+{
+  "computation": "electron-chiral-probe",
+  "description": "Sweep P_L coefficient c \u2208 [0,1] on \u03bd_e partner strand added to the electron braid; compute m_e(cat) via \u03a6_q tower, calibrate against proton (E_0 = m_p_MeV/m_p_cat).  Binary-search c_star such that m_e_pred = CODATA 0.511 MeV; compare c_star to known SM coupling ratios (m_e/m_W, \u03b1_em, sin\u00b2\u03b8_W).  Also reports positron NF negative-coefficient directions from pair-production-nf.witness.json (the sector that was dropped when electron-only tracking was adopted).",
+  "computedAt": "2026-04-20T11:11:43.663821+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_proton_tower_MeV": 0.0007958232069470076,
+    "m_e_CODATA_MeV": 0.51099895,
+    "baseline_m_e_MeV": 0.5017898242105755,
+    "baseline_err_pct": -1.802180961315959
+  },
+  "sweep": [
+    {
+      "label": "zero",
+      "c_weak": 0.0,
+      "m_e_cat": 631.1847398918961,
+      "m_e_MeV": 0.5023114638767816,
+      "err_pct": -1.7000986250986128
+    },
+    {
+      "label": "m_e/m_W Higgs-Yukawa",
+      "c_weak": 6.2e-06,
+      "m_e_cat": 631.1847398918961,
+      "m_e_MeV": 0.5023114638767816,
+      "err_pct": -1.7000986250986128
+    },
+    {
+      "label": "alpha_em",
+      "c_weak": 0.0072973525205055605,
+      "m_e_cat": 631.1847424378901,
+      "m_e_MeV": 0.5023114659029427,
+      "err_pct": -1.7000982285887711
+    },
+    {
+      "label": "alpha_em \u00b7 100",
+      "c_weak": 0.0729,
+      "m_e_cat": 631.1872807018607,
+      "m_e_MeV": 0.5023134859123158,
+      "err_pct": -1.699702922615421
+    },
+    {
+      "label": "sin\u00b2\u03b8_W",
+      "c_weak": 0.2312,
+      "m_e_cat": 631.2683203386915,
+      "m_e_MeV": 0.5023779791359884,
+      "err_pct": -1.687081913575672
+    },
+    {
+      "label": "sin \u03b8_W",
+      "c_weak": 0.4815,
+      "m_e_cat": 632.1777056062442,
+      "m_e_MeV": 0.5031016890359625,
+      "err_pct": -1.5454554190448773
+    },
+    {
+      "label": "half",
+      "c_weak": 0.5,
+      "m_e_cat": 632.3415209601252,
+      "m_e_MeV": 0.5032320570962352,
+      "err_pct": -1.5199430260599862
+    },
+    {
+      "label": "unit",
+      "c_weak": 1.0,
+      "m_e_cat": 1268.6794681385568,
+      "m_e_MeV": 1.0096445629218502,
+      "err_pct": 97.58251223840094
+    }
+  ],
+  "c_star_fit": {
+    "c": 0.7471063086392193,
+    "m_e_pred_MeV": 0.5109989499999998
+  },
+  "positron_dressing": {
+    "bare_e_minus_cat": 630.5292680965872,
+    "bare_e_plus_cat": 1.519621527112886,
+    "sweep": [
+      {
+        "eta": 0.0,
+        "m_e_MeV": 0.5017898242105755,
+        "err_pct": -1.802180961315959,
+        "comment": "zero"
+      },
+      {
+        "eta": -0.002322819450245123,
+        "m_e_MeV": 0.5024512208373726,
+        "err_pct": -1.6727488701546962,
+        "comment": "\u2212\u03b1/\u03c0  (QED 1-loop)"
+      },
+      {
+        "eta": -0.0011614097251225616,
+        "m_e_MeV": 0.5021204059341104,
+        "err_pct": -1.7374877318024833,
+        "comment": "\u2212\u03b1/(2\u03c0) (Schwinger)"
+      },
+      {
+        "eta": -0.018,
+        "m_e_MeV": 0.5069396012561684,
+        "err_pct": -0.7943947328720568,
+        "comment": "\u22120.0180 (err match)"
+      },
+      {
+        "eta": -0.04,
+        "m_e_MeV": 0.5133107400643346,
+        "err_pct": 0.4524060302540122,
+        "comment": "\u22124% (self-E scale)"
+      },
+      {
+        "eta": -0.0072973525205055605,
+        "m_e_MeV": 0.5038708048363475,
+        "err_pct": -1.3949432114591342,
+        "comment": "\u2212\u03b1"
+      },
+      {
+        "eta": -0.1,
+        "m_e_MeV": 0.531126337862728,
+        "err_pct": 3.938831549992041,
+        "comment": "\u221210%"
+      },
+      {
+        "eta": -0.5,
+        "m_e_MeV": 0.6682055546138251,
+        "err_pct": 30.76456509623458,
+        "comment": "\u221250%"
+      },
+      {
+        "eta": 0.007297,
+        "m_e_MeV": 0.49971814209450816,
+        "err_pct": -2.2075990382155966,
+        "comment": "+\u03b1 (sanity)"
+      },
+      {
+        "eta": 0.5,
+        "m_e_MeV": 0.37896585948156475,
+        "err_pct": -25.838231275902864,
+        "comment": "+50%"
+      }
+    ],
+    "eta_star": -0.032051189450196846,
+    "m_e_at_eta_star_MeV": 0.5109989499999998,
+    "reference_scales": {
+      "alpha_em": 0.0072973525205055605,
+      "alpha_em_2pi": 0.0011614097251225616,
+      "one_over_2pi": 0.15915494309189535,
+      "one_minus_z_sq": 0.7506792040205759,
+      "positron_net": 0.451094
+    }
+  },
+  "positron_projected_calibration": {
+    "proton_full_cat": 1178995.525436587,
+    "proton_projected_cat": 14800580.715856867,
+    "alt_fraction_of_proton_V": 0.1480198864697173,
+    "fractional_shift": -11.55355121926875,
+    "E_0_full_MeV_per_cat": 0.0007958232069223113,
+    "E_0_projected_MeV_per_cat": 6.3394269320444e-05,
+    "electron_cat": 630.5292680965872,
+    "m_e_full_calibration_MeV": 0.5017898241950038,
+    "m_e_projected_calibration_MeV": 0.03997194223613748,
+    "m_e_CODATA_MeV": 0.51099895,
+    "err_full_pct": -1.8021809643632556,
+    "err_projected_pct": -92.17768603318315
+  },
+  "positron_nf_diagnostic": {
+    "eminus_nf_basis": {
+      "s0s1s0": 1.0
+    },
+    "eminus_net": 1.0,
+    "eplus_nf_basis": {
+      "identity": -0.21819755804611018,
+      "s0": 0.04370621823051213,
+      "s1": 0.04370621823051213,
+      "s0s1": -0.20906032198987945,
+      "s1s0": -0.20906032198987945,
+      "s0s1s0": 1.0
+    },
+    "eplus_net": 0.4510942344351552,
+    "eplus_negative_directions": {
+      "identity": -0.21819755804611018,
+      "s0s1": -0.20906032198987945,
+      "s1s0": -0.20906032198987945
+    },
+    "eplus_positive_directions": {
+      "s0": 0.04370621823051213,
+      "s1": 0.04370621823051213,
+      "s0s1s0": 1.0
+    },
+    "asymmetry_net": 0.5489057655648448,
+    "comment": "Positron NF has negative coefs on \u03bd, L\u208a, L\u208b; electron NF is pure +1 on e\u207b=\u03c3\u2080\u03c3\u2081\u03c3\u2080 basis element.  Dropping positron tracking = dropping the negative-coefficient sector of H_3(q)."
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

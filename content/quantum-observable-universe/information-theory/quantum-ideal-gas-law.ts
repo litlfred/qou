@@ -11,15 +11,12 @@ export default proposition({
     "noether",
     "hydrogen",
   ],
-  lean: {
-    decl: "QOU.Information.IdealKnotGas",
+  lean: { ref: "qou:QOU.Information.IdealKnotGas",
     validation: "not_checked",
   },
   uses: [
-    "def:quantum-temperature",
     "def:quantum-pressure",
     "def:quantum-volume",
-    "def:categorical-action",
     "rem:noether-theorem-callout",
   ],
 });

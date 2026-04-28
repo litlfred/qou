@@ -2,8 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:jones-markov-trace",
-  lean: {
-    decl: "QOU.Braiding.JonesMarkovTrace",
+  lean: { ref: "qou:QOU.Braiding.JonesMarkovTrace",
     validation: "not_checked",
   },
   title: "Existence and non-degeneracy of the Markov trace (Jones, 1987)",

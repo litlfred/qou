@@ -11,15 +11,10 @@ export default theorem({
     "ribbon-category",
     "information-theory",
   ],
-  lean: {
-    decl: "QOU.Information.massEnergyEquivalence",
+  lean: { ref: "qou:QOU.Information.massEnergyEquivalence",
     validation: "not_checked",
   },
-  uses: [
-    "def:information-speed-of-light",
-    "def:crossing-energy",
-    "def:mass-identity",
-  ],
+  uses: ["def:information-speed-of-light"],
   cites: [
     "reshetikhin1991",
     "yekutieli2015",

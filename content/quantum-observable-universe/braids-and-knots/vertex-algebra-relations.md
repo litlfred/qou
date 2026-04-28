@@ -1,8 +1,8 @@
 The vertex operator algebra $(V, Y, |0\rangle)$
 ([vertex operator](#def:vertex-operator)) inherits every QU and QUO
-axiom as a relation on the Hecke generators $T_1, \ldots, T_{n-1}$
-of $H_n(q)$.  Below we list each axiom and its explicit
-translation into **knot coordinates** — braid words in $T_i$,
+axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$
+of $H_n(R, q)$.  Below we list each axiom and its explicit
+translation into **knot coordinates** — braid words in $\sigma_i$,
 the affine coordinate $z$ on $\mathcal{S}_p$, the Markov trace
 $\mathrm{tr}_M$, and cup/cap morphisms
 $\cup\colon \mathbf{1} \to V^{\vee} \otimes V$,
@@ -15,27 +15,28 @@ $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$.
 ### QU-1: Rigid braided monoidal structure
 
 The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke
-representation $\rho_n\colon B_n \to H_n(q)$ with
-$T_i = \rho_n(\sigma_i)$.  Rigidity and braiding are encoded by
-three families of relations:
+representation $\rho_n\colon B_n \to H_n(R, q)$, where we write
+$\sigma_i$ both for the braid generator in $B_n$ and for its image
+$\rho_n(\sigma_i)$ in $H_n(R, q)$ (CLAUDE.md §7a).  Rigidity and
+braiding are encoded by three families of relations:
 
 **(QU-1a) Hecke relation** (quadratic):
 
 $$
-  T_i^2 =  (q - q^{-1})T_i + 1
+  \sigma_i^2 =  (q - q^{-1})\sigma_i + 1
   \qquad (1 \leq i \leq n-1).
 $$
 
-Equivalently $(T_i - q)(T_i + q^{-1}) = 0$: the eigenvalues $q$
+Equivalently $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$: the eigenvalues $q$
 (symmetric/bosonic channel) and $-q^{-1}$ (antisymmetric/fermionic
 channel) correspond to the two OPE channels of the vertex algebra.
 
 **(QU-1b) Yang--Baxter relation** (braid relation):
 
 $$
-  T_i T_{i+1} T_i
+  \sigma_i \sigma_{i+1} \sigma_i
   = 
-  T_{i+1} T_i T_{i+1}
+  \sigma_{i+1} \sigma_i \sigma_{i+1}
   \qquad (1 \leq i \leq n-2).
 $$
 
@@ -45,7 +46,7 @@ expressed in the Hecke basis.
 **(QU-1c) Far-commutativity**:
 
 $$
-  T_i T_j =  T_j T_i
+  \sigma_i \sigma_j =  \sigma_j \sigma_i
   \qquad (|i - j| \geq 2).
 $$
 
@@ -150,8 +151,8 @@ In knot coordinates, the antipode $S$ is the **braid reversal**
 (orientation reversal of all crossings):
 
 $$
-  S(T_i) =  T_i^{-1}
-  =  T_i - (q - q^{-1})
+  S(\sigma_i) =  \sigma_i^{-1}
+  =  \sigma_i - (q - q^{-1})
   \qquad\text{(from the Hecke relation)}.
 $$
 
@@ -196,19 +197,19 @@ relation on Hecke generators is:
 **(QU-3a) Markov property I** (conjugation invariance):
 
 $$
-  \mathrm{tr}_M\!\bigl(T_i \cdot w\bigr)
+  \mathrm{tr}_M\!\bigl(\sigma_i \cdot w\bigr)
   = 
-  \mathrm{tr}_M\!\bigl(w \cdot T_i\bigr)
-  \qquad \forall w \in H_n(q).
+  \mathrm{tr}_M\!\bigl(w \cdot \sigma_i\bigr)
+  \qquad \forall w \in H_n(R, q).
 $$
 
 **(QU-3b) Markov property II** (stabilisation):
 
 $$
-  \mathrm{tr}_M\!\bigl(w \cdot T_n^{\pm 1}\bigr)
+  \mathrm{tr}_M\!\bigl(w \cdot \sigma_n^{\pm 1}\bigr)
   = 
   \frac{1}{\delta} \mathrm{tr}_M(w)
-  \qquad \text{for } w \in H_n(q) \subset H_{n+1}(q),
+  \qquad \text{for } w \in H_n(R, q) \subset H_{n+1}(q),
 $$
 
 where $\delta = -(q + q^{-1})$ is the writhe normalisation.
@@ -219,7 +220,7 @@ $$
   \mathrm{tr}_M\!\bigl(\rho(\beta)\bigr) = 0
    \forall \beta \in B_n
   \quad\Longrightarrow\quad
-  \rho(\beta) = 0  \text{in } H_n(q).
+  \rho(\beta) = 0  \text{in } H_n(R, q).
 $$
 
 The fibre functor detects every nonzero morphism — equivalently,
@@ -281,7 +282,7 @@ $$
 
 Equivalently, the Gram matrix
 $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$
-over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(q)$ is
+over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is
 invertible.
 
 ### QUO-2: Observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$)
@@ -290,7 +291,7 @@ There is no braid word invariant under the adjoint (conjugation)
 action.  In Hecke generators:
 
 $$
-  T_i w T_i^{-1} =  w
+  \sigma_i w \sigma_i^{-1} =  w
   \quad \forall i
   \quad\Longrightarrow\quad
   w \in R \cdot 1
@@ -313,7 +314,7 @@ translate via the fibre functor to:
 $$
   \sum_{i=1}^{n-1}
   \mathrm{tr}_M\!\bigl(
-    T_i - T_i^{-1}
+    \sigma_i - \sigma_i^{-1}
   \bigr)
   =  0.
 $$
@@ -326,13 +327,13 @@ zero — the adjoint bundle is orientable.
 $$
   \sum_{i < j}
   \mathrm{tr}_M\!\bigl(
-    [T_i, T_j][T_i, T_j]^{\dagger}
+    [\sigma_i, \sigma_j][\sigma_i, \sigma_j]^{\dagger}
   \bigr)
   =  0,
 $$
 
-where $[T_i, T_j] = T_i T_j - T_j T_i$ and $\dagger$ is the
-anti-involution $T_i^{\dagger} = T_i^{-1}$.  This ensures no
+where $[\sigma_i, \sigma_j] = \sigma_i \sigma_j - \sigma_j \sigma_i$ and $\dagger$ is the
+anti-involution $\sigma_i^{\dagger} = \sigma_i^{-1}$.  This ensures no
 topological phases accumulate under transport around the adjoint
 bundle.
 
@@ -340,12 +341,12 @@ bundle.
 
 The exterior power $\Lambda^2 V$ maps onto $\mathbf{1}$ via a
 non-degenerate epimorphism $\epsilon$ preserved by gauge
-automorphisms.  The antisymmetriser in $H_2(q)$ is:
+automorphisms.  The antisymmetriser in $H_2(R, q)$ is:
 
 $$
   \mathrm{Alt}_2
   = 
-  \frac{1}{[2]_q}\bigl(\mathrm{id} - q^{-1} T_1\bigr),
+  \frac{1}{[2]_q}\bigl(\mathrm{id} - q^{-1} \sigma_1\bigr),
   \qquad
   [2]_q = q + q^{-1}.
 $$
@@ -370,7 +371,7 @@ In Hecke generators, this becomes: the antisymmetric contraction
 $\epsilon$ satisfies
 
 $$
-  \epsilon\!\bigl(v \otimes w - q^{-1}(T_1 \cdot v \otimes w)\bigr)
+  \epsilon\!\bigl(v \otimes w - q^{-1}(\sigma_1 \cdot v \otimes w)\bigr)
   = 
   [2]_q\epsilon(v \otimes w)
 $$
@@ -409,7 +410,7 @@ $$
 
 for all $\xi$-invariant states $a$ (those annihilated by the
 weight operator: $[\xi, a] = 0$, i.e.\ braid words in the
-centre of $H_n(q)$).
+centre of $H_n(R, q)$).
 
 ### C-2: $q$-Deformed obstruction to nilpotence ($d_q^2 \neq 0$)
 
@@ -430,7 +431,7 @@ $$
   = 
   \mathrm{wr}(a) a_m,
   \qquad
-  \mathrm{wr}(a) = \sum_i \mathrm{tr}_M(T_i - T_i^{-1})
+  \mathrm{wr}(a) = \sum_i \mathrm{tr}_M(\sigma_i - \sigma_i^{-1})
    \text{(writhe of $\hat{\beta}_a$)}.
 $$
 
@@ -440,7 +441,7 @@ $$
   \omega_V
   = 
   \sum_{i < j}
-  (T_i T_j - T_j T_i) dz^i \wedge dz^j.
+  (\sigma_i \sigma_j - \sigma_j \sigma_i) dz^i \wedge dz^j.
 $$
 
 So $d_q^2 = 0$ if and only if $q = 1$ (classical limit) or
@@ -463,7 +464,7 @@ $$
   = 
   S(a_m)^*
   = 
-  (T_i^{-1})_m^*
+  (\sigma_i^{-1})_m^*
   \qquad\text{where } (\cdot)^* \text{ is Frobenius conjugation.}
 $$
 
@@ -495,7 +496,7 @@ at strand count $n$:
 $$
   \chi(A)
   = 
-  \mathrm{tr}_M(\mathrm{id}_{H_n(q)})
+  \mathrm{tr}_M(\mathrm{id}_{H_n(R, q)})
   = 
   [n]_q!
   = 
@@ -505,9 +506,9 @@ $$
 **Stability under jet prolongation** (C-4a):
 
 $$
-  \mathrm{tr}_M\!\bigl(\mathrm{id}_{J^1 H_n(q)}\bigr)
+  \mathrm{tr}_M\!\bigl(\mathrm{id}_{J^1 H_n(R, q)}\bigr)
   = 
-  \mathrm{tr}_M\!\bigl(\mathrm{id}_{H_n(q)}\bigr).
+  \mathrm{tr}_M\!\bigl(\mathrm{id}_{H_n(R, q)}\bigr).
 $$
 
 The translation operator $L_{-1}$ preserves the Euler
@@ -557,7 +558,7 @@ $$
 
 In Hecke generators: at every brane level, there exist braid
 words $\beta_{n+1} \in H_{n+1}(q)$ that cannot be written as
-$L_{-1}(\beta_n)$ for any $\beta_n \in H_n(q)$.  The jet
+$L_{-1}(\beta_n)$ for any $\beta_n \in H_n(R, q)$.  The jet
 corrections and the base obstruction live in complementary
 subgroups, so cancellation is impossible.
 
@@ -573,17 +574,17 @@ $$
   = 
   \dim_R
   \frac{
-    \ker\!\bigl(d\colon \Omega^k_{H_n(q)} \to \Omega^{k+1}_{H_n(q)}\bigr)
+    \ker\!\bigl(d\colon \Omega^k_{H_n(R, q)} \to \Omega^{k+1}_{H_n(R, q)}\bigr)
   }{
-    \mathrm{im}\!\bigl(d\colon \Omega^{k-1}_{H_n(q)} \to \Omega^k_{H_n(q)}\bigr)
+    \mathrm{im}\!\bigl(d\colon \Omega^{k-1}_{H_n(R, q)} \to \Omega^k_{H_n(R, q)}\bigr)
   },
 $$
 
-where $\Omega^k_{H_n(q)}$ is the space of degree-$k$ antisymmetric
+where $\Omega^k_{H_n(R, q)}$ is the space of degree-$k$ antisymmetric
 Hecke words:
 
 $$
-  \Omega^k_{H_n(q)}
+  \Omega^k_{H_n(R, q)}
   = 
   \mathrm{span}\!\bigl\{
     T_{i_1} T_{i_2} \cdots T_{i_k}
@@ -606,9 +607,9 @@ curvature $F_\nabla = \nabla^2$ has components:
 $$
   (F_\nabla)_{ij}
   = 
-  [T_i, T_j]
+  [\sigma_i, \sigma_j]
   + 
-  \sum_k f^k_{ij} T_k,
+  \sum_k f^k_{ij} \sigma_k,
 $$
 
 where $f^k_{ij}$ are the structure constants of the Iwahori--Hecke algebra.
@@ -619,9 +620,9 @@ $$
   = 
   (F_\nabla)_{ij}
   \qquad\Longleftrightarrow\qquad
-  S\!\bigl([T_i, T_j]\bigr)^*
+  S\!\bigl([\sigma_i, \sigma_j]\bigr)^*
   = 
-  [T_i, T_j].
+  [\sigma_i, \sigma_j].
 $$
 
 That is, the curvature is invariant under the combined
@@ -635,7 +636,7 @@ $$
   = 
   \sum_{i < j}
   \mathrm{tr}_M\!\bigl(
-    [T_i, T_j] \cdot [T_i, T_j]^{\dagger}
+    [\sigma_i, \sigma_j] \cdot [\sigma_i, \sigma_j]^{\dagger}
   \bigr)
   = 
   c_2(A).
@@ -670,16 +671,19 @@ and $\iota_\xi$ is contraction with the weight vector.
 $\Delta_q \rho(\beta) = 0$.  In Hecke generators:
 
 $$
-  \Delta_q T_\beta = 0
+  \Delta_q \sigma_\beta = 0
   \quad\Longleftrightarrow\quad
-  d_qT_\beta = 0
+  d_q\sigma_\beta = 0
    \text{and} 
-  \delta_q T_\beta = 0.
+  \delta_q \sigma_\beta = 0.
 $$
 
-The space $\ker \Delta_q$ is the **particle Hilbert space** —
+The space $\ker \Delta_q$ is the **particle state space** —
 its dimension equals the number of linearly independent
-knot-particles at each brane level.
+knot-particles at each brane level.  Over $K = \mathbb{R}$ it
+acquires the Hilbert structure of $\ker \Delta_q \subset L^2(A)$;
+over a general field it is simply a finite-dimensional vector
+space.
 
 ### C-9: Cohomological embedding (knot basis for $H^*$)
 
@@ -720,7 +724,7 @@ braid word $\sigma^{(m,n)} \in B_m$.
 
 **Completeness**: the $6 \times 5$ character matrix
 $M_{ij} = \chi_{\lambda_j}(T_{(r_i, s_i)})$
-over irreps $\lambda \vdash r$ of $H_2(q) \oplus H_3(q)$
+over irreps $\lambda \vdash r$ of $H_2(R, q) \oplus H_3(R, q)$
 has rank $5$.  Every knot observable on $\Sigma_4$ is a
 linear combination of evaluations of the $6$ torus-knot
 Hecke words.
@@ -738,7 +742,7 @@ $$
   \bigl(a^{(n)}_{jk}\bigr)^{-1},
 $$
 
-where $g^{(n)}_{ijk} \in H_n(q)$ is the transition braid word
+where $g^{(n)}_{ijk} \in H_n(R, q)$ is the transition braid word
 on triple overlaps and $a^{(n)}_{ij}$ are 2-morphism braid words.
 In Hecke generators, the cocycle condition becomes:
 
@@ -746,7 +750,7 @@ $$
   T_{g_{ijk}} \cdot T_{g_{jkl}}
   = 
   T_{a_{ij}} \cdot T_{g_{ikl}} \cdot T_{a_{kl}}^{-1}
-  \qquad\text{(in $H_n(q)$)},
+  \qquad\text{(in $H_n(R, q)$)},
 $$
 
 where $T_g = \rho(g)$ denotes the Hecke image of a braid word.
@@ -758,25 +762,25 @@ to patch into a global knot invariant.
 ## Summary: complete presentation
 
 The vertex operator algebra of a QUO is the quotient of the free
-algebra on generators $\{T_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}$ by the relations:
+algebra on generators $\{\sigma_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}$ by the relations:
 
 **Structural relations (QU/QUO axioms)**:
 
 | Label | Relation | Axiom |
 |-------|----------|-------|
-| QU-1a | $T_i^2 = (q - q^{-1})T_i + 1$ | Hecke (braiding) |
-| QU-1b | $T_i T_{i+1} T_i = T_{i+1} T_i T_{i+1}$ | Yang--Baxter |
-| QU-1c | $T_i T_j = T_j T_i$ ($\lvert i-j\rvert \geq 2$) | Locality |
+| QU-1a | $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ | Hecke (braiding) |
+| QU-1b | $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ | Yang--Baxter |
+| QU-1c | $\sigma_i \sigma_j = \sigma_j \sigma_i$ ($\lvert i-j\rvert \geq 2$) | Locality |
 | QU-1d | $(\cap \otimes 1)(1 \otimes \cup) = \mathrm{id}$ | Rigidity |
 | QU-2b | $(\mu \otimes 1)(1 \otimes \Delta) = \Delta \circ \mu$ | Frobenius |
 | QU-2d | $\mu(S \otimes 1)\Delta = \eta\varepsilon$ | Antipode |
-| QU-3a | $\mathrm{tr}_M(T_i w) = \mathrm{tr}_M(w T_i)$ | Markov I |
-| QU-3b | $\mathrm{tr}_M(w T_n^{\pm 1}) = \delta^{-1}\mathrm{tr}_M(w)$ | Markov II |
+| QU-3a | $\mathrm{tr}_M(\sigma_i w) = \mathrm{tr}_M(w \sigma_i)$ | Markov I |
+| QU-3b | $\mathrm{tr}_M(w \sigma_n^{\pm 1}) = \delta^{-1}\mathrm{tr}_M(w)$ | Markov II |
 | QU-4a | $[L_{-1}, a_m] = -ma_{m-1}$ | Translation |
 | QUO-1 | $\det G_{ij} \neq 0$ | Non-degeneracy |
-| QUO-2 | $T_i w T_i^{-1} = w\forall i \Rightarrow w \in R$ | Observability |
-| QUO-3a | $\sum_i \mathrm{tr}_M(T_i - T_i^{-1}) = 0$ | $c_1 = 0$ |
-| QUO-3b | $\sum_{i<j} \mathrm{tr}_M([T_i,T_j][T_i,T_j]^{\dagger}) = 0$ | $c_2 = 0$ |
+| QUO-2 | $\sigma_i w \sigma_i^{-1} = w\forall i \Rightarrow w \in R$ | Observability |
+| QUO-3a | $\sum_i \mathrm{tr}_M(\sigma_i - \sigma_i^{-1}) = 0$ | $c_1 = 0$ |
+| QUO-3b | $\sum_{i<j} \mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^{\dagger}) = 0$ | $c_2 = 0$ |
 | QUO-4 | $\epsilon \circ \Lambda^2 g_V = \epsilon$ | Volume |
 
 **Cohomological relations**:
@@ -789,10 +793,10 @@ algebra on generators $\{T_i, \cup, \cap, L_{-1}, \mathrm{tr}_M, d, d_q, \star\}
 | C-4a | $\chi(A_{n+1}) = \chi(A_n)$ | Euler stability |
 | C-4b | $\mathrm{tr}_M(\mathrm{id}) = -6$ | Descartes |
 | C-5 | $\kappa_n = \mathrm{tr}_M(\check{R}_{(n+1)} - L_{-1}\check{R}_{(n)}) \neq 0$ | Perpetual obstruction |
-| C-6 | $b_k = \dim(\ker d / \mathrm{im} d)$ on $\mathrm{Alt}_k \cdot H_n(q)$ | Betti numbers |
-| C-7 | $S([T_i,T_j])^* = [T_i,T_j]$ | Self-dual curvature |
-| C-7a | $\sum_{i<j}\mathrm{tr}_M([T_i,T_j][T_i,T_j]^\dagger) = c_2(A)$ | Bogomolny bound |
-| C-8 | $\Delta_q T_\beta = 0 \Leftrightarrow d_q T_\beta = \delta_q T_\beta = 0$ | Harmonic braids |
+| C-6 | $b_k = \dim(\ker d / \mathrm{im} d)$ on $\mathrm{Alt}_k \cdot H_n(R, q)$ | Betti numbers |
+| C-7 | $S([\sigma_i,\sigma_j])^* = [\sigma_i,\sigma_j]$ | Self-dual curvature |
+| C-7a | $\sum_{i<j}\mathrm{tr}_M([\sigma_i,\sigma_j][\sigma_i,\sigma_j]^\dagger) = c_2(A)$ | Bogomolny bound |
+| C-8 | $\Delta_q \sigma_\beta = 0 \Leftrightarrow d_q \sigma_\beta = \delta_q \sigma_\beta = 0$ | Harmonic braids |
 | C-9 | $\mathrm{rank} M_{ij} = 5$ on $\Sigma_4$ | Completeness |
 | C-10 | $T_{g_{ijk}}T_{g_{jkl}} = T_{a_{ij}}T_{g_{ikl}}T_{a_{kl}}^{-1}$ | \v{C}ech cocycle |
 

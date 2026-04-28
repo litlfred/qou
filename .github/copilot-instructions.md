@@ -285,6 +285,39 @@ their own line, indented to match the surrounding content.
 
 ## 11  Notation Conventions
 
+### 11.0  Glossary terms — `\defterm{}` / `\refterm{}` (Phase A)
+
+Every term that appears in the paper's glossary is wrapped at every
+occurrence — defining and referencing alike. **Never use plain text or
+`\emph{}` for a defined term once the term is registered in a block's
+`defines: [...]` list.**
+
+- **Defining occurrence** (exactly one per term, in the block whose
+  `defines[]` contains the slug):
+  - LaTeX: `\defterm{slug}` or `\defterm{slug}{Visible}` when the
+    visible label differs from the slug.
+  - Markdown (`.md` files): `:defterm[Visible]` (slug = sluggified
+    label) or `:defterm[Visible]{#slug}` (explicit slug).
+- **Referencing occurrence** (every other mention, anywhere in the
+  paper):
+  - LaTeX: `\refterm{slug}` / `\refterm{slug}{Visible}`.
+  - Markdown: `:refterm[Visible]` / `:refterm[Visible]{#slug}`.
+- **PDF rendering** is intentionally clean — `\defterm` is bold-italic,
+  `\refterm` is plain text with an invisible hyperlink target
+  (`\phantomsection\label{term:slug}` → `\hyperref[term:slug]{...}`).
+  No marginal anchors, no underlines.
+- **HTML viewer** carries the affordance: `\defterm` becomes
+  `<dfn id="term-slug">`, `\refterm` becomes `<a class="termref"
+  href="#term-slug">` with a dotted underline on hover/focus and a
+  click-to-jump to the canonical entry.
+- The schema field `defines?: string[]` on `BlockBase` registers the
+  slugs introduced by a block. Phase B validators will enforce
+  declaration/coverage; for now the field is informational only.
+
+Discovery and audit go through proper AST processing
+(`remark-directive` for `.md`, `unified-latex` for `.tex`) — never
+grep over raw source.
+
 ### 11.1  Prime Numbers vs. Manifold Points
 
 - **Prime numbers** are typeset in Fraktur:  use the macro `\pp` (defined as
@@ -315,7 +348,7 @@ Following Herrlich–Strecker, categories are set in **bold upright**:
 | Monoidal unit | `$\mathbf{1}$` | (unchanged) |
 | Forgetful/fibre functor | `$\tau$` | Kept for Tannakian/trace/proper-time resonance (see `tau-notation.md`); minimise its appearance |
 | QOU categorical datum | `$(\mathbf{C}, A)$` | Suppress $\tau$ from the triple where possible; write $(\mathbf{C}, A, \tau)$ only when $\tau$ is needed |
-| QOU archimedean tuple | `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\theta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**. |
+| QOU archimedean tuple | `$(\mathbf{C}, \varTheta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\varTheta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \varTheta, G, P, E)$ is **deprecated**. |
 | State bundle | `$\mathcal{S}$` | The associated state bundle $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$; replaces $E$. Fibre at $p$: `$\mathcal{S}_p$` (never `$E_p$`). |
 | Elliptic curve | `$\mathcal{E}_q$` | Descartes elliptic curve (never `$E_q$`). |
 | Particles | fraktur | Quarks: `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$`. Nucleons: `$\mathfrak{p}, \mathfrak{n}$`. |
@@ -339,12 +372,12 @@ outside the introduction and Chapter 7 (Physical Observations).
 Geometry chapters use symbolic `$q$`.
 
 **Subordination rules for the archimedean tuple:**
-- $M$ is implicit — it is the domain of $\theta$. Write `$p \in M$` when
+- $M$ is implicit — it is the domain of $\varTheta$. Write `$p \in M$` when
   referring to points, but do not list $M$ in the tuple.
 - $P$ is implicit — it is the frame bundle of $\mathcal{S}$ under $G$.
   Mention $P$ only when discussing gauge structure directly.
-- The old 5-tuple $(M, \theta, G, P, E)$ must not appear in new content.
-  Existing occurrences should be migrated to $(\mathbf{C}, \theta, G, \mathcal{S})$.
+- The old 5-tuple $(M, \varTheta, G, P, E)$ must not appear in new content.
+  Existing occurrences should be migrated to $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 Where physics notation is more natural than category-theoretic notation
 (e.g.\ differential operators $d_q$, $\nabla$, $\star_q$, $\xi$),
@@ -415,10 +448,54 @@ When a user request arrives, apply this decision tree to select skills:
 
 ## 13  Lean Formalization & Proof Linkages
 
-This manuscript has a parallel Lean 4 formalization in the `lean/` directory.
+This repository is a **root Lake workspace** (`/lakefile.toml`,
+`/lean-toolchain`) that aggregates one Lake package per paper:
+
+| Package | Paper directory | Library |
+|---------|-----------------|---------|
+| `qou` | `content/quantum-observable-universe/lean/` | `QOU` |
+| `ugb` | `content/unital-groebner-bases/lean/` | `UGB` |
+| `fred2005` | `content/fred2005-formal-groups/lean/` | `Fred2005` |
+
+`lake build` at the repo root builds every paper; `lake build <lib>`
+builds a single library.  See `CLAUDE.md §0` for the full convention.
+
 Every theorem-like environment in `chapters/*.tex` is tracked in
-`proof-objects.json`, which maps LaTeX labels to Lean declarations (referenced
-by doc-gen4 URL).
+`proof-objects.json`, which maps LaTeX labels to Lean declarations.
+
+### Content-block `lean.ref` — package-qualified URIs
+
+Each content block manifest uses a single string URI to reference its
+Lean declaration:
+
+```ts
+lean: { ref: "qou:QOU.Torsion.lifting_exists" }
+lean: { ref: "ugb:UGB.GrobnerShirshov.Basis" }
+```
+
+- The `<package>` prefix must be registered in
+  `folio-assistant/schemas/lean-packages.ts` (`LEAN_PACKAGES`).
+- Use `parseLeanRef()` from that module when reading refs
+  programmatically — do not regex-split on `:`.
+- The legacy `lean: { decl, file? }` shape is **removed**.  Zod
+  validation fails on blocks that still use it.
+
+### Rebase / merge across the `lean.ref` migration — agent workflow
+
+If you are an agent working on an older branch and a rebase or merge
+surfaces `lean: { decl: "..." }` in content blocks, **run the
+idempotent migration script — do not hand-edit**:
+
+```bash
+cd content
+bun run migrate-lean-refs        # apply (writes in place)
+bun run migrate-lean-refs:dry    # preview only
+```
+
+The script is safe to re-run; it chooses the Lake package prefix
+from each block's paper directory via `LEAN_PACKAGES`.  Re-run
+`bun run validate` after the migration to confirm the schema is
+clean.  **Never add `decl` back to the schema to unblock a merge.**
 
 ### When reviewing LaTeX changes:
 - Check `proof-objects.json` for linked Lean declarations.
@@ -428,10 +505,13 @@ by doc-gen4 URL).
 
 ### LeanBlueprint macros:
 - `\lean{QOU.Namespace.decl_name}` — links to a Lean declaration.
+  (Blueprint macro uses the bare `<Decl>`, not the `<pkg>:<Decl>` URI.)
 - `\leanok` — claims the Lean proof is `sorry`-free.
 - `\uses{label1, label2}` — declares mathematical dependencies.
 - `\proves{thm:label}` — links a proof block to its statement.
 
 ### Lean file structure:
-One `.lean` file per chapter under `lean/QOU/`.  The `lakefile.lean`
-depends on `mathlib4`.  Stubs use `sorry` for incomplete proofs.
+`.lean` files live under each paper's Lake root (e.g.
+`content/quantum-observable-universe/lean/QOU/<Module>.lean`).
+Every paper's `lakefile.toml` pins `mathlib4` on the same commit.
+Stubs use `sorry` for incomplete proofs.

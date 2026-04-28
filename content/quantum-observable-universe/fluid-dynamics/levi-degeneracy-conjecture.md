@@ -8,7 +8,7 @@ $$
   = 
   \sup_{0 \leq t < T^*_\kappa}
   \mathrm{cond}\bigl(
-    \mathcal{L}_\theta\big|_{N_p\gamma(t)}
+    \mathcal{L}_\varTheta\big|_{N_p\gamma(t)}
   \bigr)
 $$
 
@@ -61,7 +61,7 @@ globally regular.
 **Equivalent formulations.**
 
 1. **Contact geometry:** Does the
-   [Levi form](#rem:levi-form-defect) $\mathcal{L}_\theta$
+   [Levi form](#rem:levi-form-defect) $\mathcal{L}_\varTheta$
    degenerate at the collision locus when $q \to 1$?
 
 2. **Representation theory:** Does the finite-dimensional
@@ -74,7 +74,7 @@ globally regular.
    locally on the collision locus at $q = 1$?
 
 4. **Integrability:** Does the horizontal distribution
-   $\ker(\theta)$ remain maximally non-integrable at the
+   $\ker(\varTheta)$ remain maximally non-integrable at the
    collision point, or does a 2-dimensional integral
    submanifold form?
 

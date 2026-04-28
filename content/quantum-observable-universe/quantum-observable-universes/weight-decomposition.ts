@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:weight-decomposition",
   title: "Weight decomposition",
-  lean: {
-    decl: "QOU.WeightDecomposition",
+  lean: { ref: "qou:QOU.WeightDecomposition",
     validation: "not_checked",
   },
   uses: [

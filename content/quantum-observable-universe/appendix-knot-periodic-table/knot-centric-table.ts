@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:nuclear-shell-intruder",
+  interprets: "prop:shell-transition-knot",
   label: "rem:knot-centric-table",
   title:
     "Knot-centric periodic table: reorganization by nuclear and electronic knot structure",
@@ -17,11 +17,9 @@ export default remark({
     "skein-polynomial",
   ],
   uses: [
-    "prop:nuclear-shell-intruder",
+    "prop:shell-transition-knot",
     "prop:shell-structure-eigenvalues",
     "thm:generation-completeness",
     "rem:knot-exhaustiveness",
-    "prop:fermion-boson-knot-link",
-    "rem:building-block-knots",
   ],
 });

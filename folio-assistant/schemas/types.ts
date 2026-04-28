@@ -130,12 +130,38 @@
 
 // ── Lean linkage ─────────────────────────────────────────────────
 
-/** Reference to a Lean 4 declaration. */
+/**
+ * Reference to a Lean 4 declaration, addressed by a package-qualified URI.
+ *
+ * Format of `ref`: `"<package>:<Decl.Path>"`, where:
+ *   - `<package>` is the Lake package short-name as declared in the
+ *     root `lakefile.toml` (see `lean-packages.ts`).  Examples: `qou`,
+ *     `ugb`, `fred2005`.
+ *   - `<Decl.Path>` is the fully qualified Lean 4 declaration
+ *     (namespace + name), e.g. `QOU.Torsion.lifting_exists`.
+ *
+ * Examples:
+ *   - `"qou:QOU.CategoricalTransferMatrix"`
+ *   - `"ugb:UGB.GrobnerShirshov.Basis"`
+ *   - `"fred2005:Fred2005.FormalGroups.FormalGroupLaw"`
+ *
+ * The pipeline resolves `ref` to a `.lean` source file by:
+ *   1. Looking up the package in `LEAN_PACKAGES` (→ paper directory,
+ *      Lake root).
+ *   2. Falling back to the sibling `.lean` file next to the block's
+ *      `.ts` / `.md` when present.
+ *
+ * Rationale: a single URI is addressable in JSON Schema, cross-paper
+ * references, and Lake build commands without encoding filesystem
+ * paths into content.
+ */
 export interface LeanRef {
-  /** Fully qualified Lean 4 name (e.g. "QOU.QuantumUniverse"). */
-  decl: string;
-  /** Path to .lean file relative to lean/ directory (resolved from sibling if omitted). */
-  file?: string;
+  /**
+   * Package-qualified Lean 4 declaration URI
+   * (e.g. `"qou:QOU.QuantumUniverse"`).  See module docstring above
+   * for grammar.  Parse with `parseLeanRef` from `lean-packages.ts`.
+   */
+  ref: string;
   /** Whether the declaration is sorry-free. */
   sorryFree?: boolean;
   /** Related mathlib4 declaration names. */
@@ -188,7 +214,8 @@ export type ComputationEngine =
   | "snappea"
   | "sympy"
   | "mpmath"
-  | "sage";
+  | "sage"
+  | "python";
 
 /**
  * Status of a computational verification.
@@ -387,6 +414,22 @@ interface BlockBase {
   meta?: Record<string, unknown>;
   /** Reference to an interactive simulator (opens overlay with [simulate] button). */
   simulator?: SimulatorRef;
+  /**
+   * Glossary terms *defined* by this block. Each entry is a slug used to
+   * mint the LaTeX label `\label{term:<slug>}` and the HTML id `term-<slug>`.
+   *
+   * Authors mark the defining occurrence in the `.md` body with the remark
+   * directive `:defterm[<slug>]`, and every subsequent reference (in any
+   * block) with `:refterm[<slug>]`. Phase B validation will check that every
+   * `defines[]` entry has at least one `:defterm[<slug>]` in this block's
+   * markdown, and that every `:refterm[X]` resolves to some block's
+   * `defines[]`.
+   *
+   * Slugs should be lowercase, hyphen-separated; the visible label is the
+   * directive's bracket text and may differ from the slug only via the
+   * long-form `:refterm[Visible]{#slug}`.
+   */
+  defines?: string[];
 }
 
 // ── Blocks that REQUIRE Lean ─────────────────────────────────────
@@ -413,6 +456,8 @@ export interface DefinitionBlock extends BlockBase {
  * Lean is expected but may be WIP — missing lean triggers a warning, not an error.
  */
 interface ProvableBase extends BlockBase {
+  /** Optional Lean formalization of the result. */
+  lean?: LeanRef;
   /** Labels of proof blocks for this result (like examples[]). */
   proofs?: string[];
   /** Labels of example blocks illustrating this result. */
@@ -453,6 +498,14 @@ export interface ExampleBlock extends BlockBase {
   kind: "example";
   /** Optional Lean formalization of the example. */
   lean?: LeanRef;
+  /**
+   * Label of the provable block this example illustrates.
+   *
+   * Parallel to `RemarkBlock.interprets` — when an example concretely
+   * instantiates a definition/proposition/theorem, link it here so
+   * the viewer can cross-reference bidirectionally.
+   */
+  interprets?: string;
 }
 
 /**
@@ -478,6 +531,8 @@ export interface RemarkBlock extends BlockBase {
    * explains. The referenced block should have Lean formalization.
    */
   interprets?: string;
+  /** Optional computational verification (Python/SnapPea/sympy/etc.). */
+  computation?: Computation;
 }
 
 /**
@@ -494,6 +549,12 @@ export interface RemarkBlock extends BlockBase {
  */
 export interface ProofBlock extends BlockBase {
   kind: "proof";
+  /**
+   * Label of the provable block this proof establishes (reverse link of
+   * `ProvableBase.proofs[]`). Canonical field name — use in preference to
+   * `proves`.
+   */
+  of?: string;
   /** Optional Lean formalization of the proof. */
   lean?: LeanRef;
   /** Optional computational verification (Python/SnapPea/sympy/etc.). */
@@ -564,6 +625,10 @@ export interface ProseBlock {
   kind: "prose";
   /** Optional label for cross-referencing. */
   label?: string;
+  /** Optional section-style title rendered as a paragraph heading. */
+  title?: string;
+  /** Labels of content blocks this prose depends on (for the dependency graph). */
+  uses?: string[];
   /** Bibliography keys cited by this block. */
   cites?: string[];
   tags?: string[];
@@ -597,10 +662,15 @@ export interface DiagramBlock {
   kind: "diagram";
   /** Diagram label (e.g. "fig:monoidal-structure"). */
   label?: string;
+  /** Optional display title (rendered as a figure heading). */
+  title?: string;
   /** tikzcd or diagram TeX source (can live inline for short diagrams). */
   tex?: string;
   /** Caption text (rendered below diagram in LaTeX). */
   caption?: string;
+  tags?: string[];
+  /** Labels of content blocks this diagram depends on (for the dependency graph). */
+  uses?: string[];
   companions?: Companions;
   /** Pre-rendered diagram (e.g. SVG from tikzcd server-side render). */
   rendered?: RenderedAsset[];

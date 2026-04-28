@@ -51,7 +51,7 @@ The same scale $\alpha = m_e \times 8G$ that governs nuclear
 binding also governs the quark-level confinement splitting:
 
 $$
-  \Delta m = 3.7445 \times 0.3476 = 1.302 \;\mathrm{MeV}
+  \Delta m = 3.7445 \times 0.3476 \approx 1.302 \;\mathrm{MeV}
 $$
 
 CODATA value: $\Delta m = 1.2934$ MeV.  Error: $0.63\%$.

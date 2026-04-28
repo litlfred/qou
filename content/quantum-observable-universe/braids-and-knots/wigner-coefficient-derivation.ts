@@ -3,11 +3,10 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:wigner-coefficient-derivation",
   title: "Wigner coefficient $[5]_q! \\cdot m_e$ from Frobenius reciprocity",
-  lean: { decl: "QOU.BraidKnot.wigner_coefficient", validation: "not_checked" },
+  lean: { ref: "qou:QOU.BraidKnot.wigner_coefficient", validation: "not_checked" },
   uses: [
     "prop:wedderburn-trace-identity",
     "prop:q-integer-mass-formula",
-    "prop:three-parameters-wedderburn",
   ],
   tags: ["wigner", "isospin", "casimir", "quantum-factorial", "frobenius-reciprocity"],
 });

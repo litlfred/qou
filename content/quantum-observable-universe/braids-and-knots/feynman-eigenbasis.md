@@ -22,9 +22,12 @@ $V^{\otimes n}$, and by
 *completely* decomposes $V^{\otimes n}$ into irreducible summands ---
 labelled by Young diagrams, or equivalently by knot types via Alexander's
 braid-closure theorem.  Alexander surjectivity ensures that every
-irreducible summand is reached by some knot type, and the density statement
-([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)(3)) guarantees that these
-summands span the physical Hilbert space.  Each irreducible summand
+irreducible summand is reached by some knot type, and the spanning
+statement
+([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)(3))
+guarantees that these summands span the algebraic direct limit
+$V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ (no metric completion is
+used).  Each irreducible summand
 corresponds to a particle identity
 ([skein decomposition](#rem:skein-decomposition)): the unknot to the neutrino, the
 trefoil to the electron, the figure-eight knot to the Higgs field (mass mechanism), and so on.

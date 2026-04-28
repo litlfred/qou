@@ -5,8 +5,6 @@ export default remark({
   label: "rem:geodesic-vortices",
   title: "Geodesic vortices: variational characterisation and stability",
   uses: [
-    "rem:madelung-fluid",
-    "def:mass-identity",
     "rem:geometric-drag",
     "prop:discrete-vortex-spectrum",
   ],

@@ -1,0 +1,65 @@
+{
+  "computation": "canonical-mass-table",
+  "description": "Canonical Jones-Markov trace binding via incremental GS (reduce_every=4), no K\u00e4hler tower.",
+  "computedAt": "2026-04-18T18:51:19.573972+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.782
+  },
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "tr_M_atom": 0.38828647154771295,
+      "tr_M_free": 0.9835261819186453,
+      "B_pred_MeV": 0.46547745351006914,
+      "B_AME_MeV": 2.22452,
+      "delta_MeV": -1.7590425464899309,
+      "delta_m_pct": 0.09373841202177678,
+      "time_sec": 2.792348623275757
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "tr_M_atom": 0.10405211867552604,
+      "tr_M_free": 0.9080241197853626,
+      "B_pred_MeV": 0.6287061048678922,
+      "B_AME_MeV": 8.481821,
+      "delta_MeV": -7.853114895132108,
+      "delta_m_pct": 0.2789921222251155,
+      "time_sec": 28.679811239242554
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "tr_M_atom": 0.20654085856226245,
+      "tr_M_free": 1.0477565675816238,
+      "B_pred_MeV": 0.6578306844531406,
+      "B_AME_MeV": 7.71804,
+      "delta_MeV": -7.060209315546859,
+      "delta_m_pct": 0.2508231200741668,
+      "time_sec": 14.36538553237915
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "tr_M_atom": 0.05534834587669799,
+      "tr_M_free": 0.9673237505194684,
+      "B_pred_MeV": 0.7131647664306464,
+      "B_AME_MeV": 28.295674,
+      "delta_MeV": -27.582509233569354,
+      "delta_m_pct": 0.7349283905298611,
+      "time_sec": 132.29091358184814
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

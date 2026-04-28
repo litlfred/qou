@@ -25,15 +25,16 @@ except ImportError:
     _V = 2.029883212819307; _R = 206.768283
     _h = math.sqrt(_V / _R); q0 = 1.0 / (1.0 - _h)
     qi0 = 1.0 / q0; HA = q0 - qi0
-z = 1.0 / (q0**0.5 + q0**(-0.5))  # Markov parameter
+# z, NF_BASIS, NF_NAMES, TR_M moved to pyhecke.gram via M2b inversion.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z, NF_BASIS, NF_NAMES  # noqa: E402
 
 print(f"q₀  = {q0:.10f}")
 print(f"HA  = q−q⁻¹ = {HA:.10f}")
 print(f"z   = 1/(q^½+q^-½) = {z:.10f}")
 
 # ── NF basis ─────────────────────────────────────────────────
-NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
-NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 NF_LATEX = [r"\gamma", r"\sigma_0", r"\sigma_1", r"L_+", r"L_-", r"e^-"]
 
 # Markov trace of each basis element:
@@ -44,7 +45,8 @@ NF_LATEX = [r"\gamma", r"\sigma_0", r"\sigma_1", r"L_+", r"L_-", r"e^-"]
 #   tr_M(σ₁σ₀) = z²  (cyclicity)
 #   tr_M(σ₀σ₁σ₀) = z³  (Markov chain: tr_M(σ₁σ₀σ₁) = z·tr_M(σ₀σ₁) = z·z² = z³)
 #   NOT HA·z² + z — vertex volume product fails for adjacent generators.
-TR_M_BASIS = [1.0, z, z, z**2, z**2, z**3]
+from pyhecke.gram import TR_M as _TR_M_NATIVE  # noqa: E402
+TR_M_BASIS = list(_TR_M_NATIVE)
 
 
 def markov_trace_nf(nf_vec):

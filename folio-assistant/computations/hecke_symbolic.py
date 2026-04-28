@@ -871,6 +871,11 @@ class SymbolicHeckeDivision:
 # ── Quick test ──────────────────────────────────────────────
 
 if __name__ == '__main__':
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent))
+    from q_parameter import Q as _Q_CANONICAL
+
     div = SymbolicHeckeDivision()
 
     print("PROTIUM ℵ(1,0) WITH SYMBOLIC q")
@@ -893,7 +898,7 @@ if __name__ == '__main__':
     elem.show()
 
     print()
-    print("  Evaluated at q₀ = 1.10998:")
-    for w, v in sorted(elem.evaluate(1.10998).items(), key=lambda x: (len(x[0]), x[0])):
+    print(f"  Evaluated at q₀ = {_Q_CANONICAL}:")
+    for w, v in sorted(elem.evaluate(_Q_CANONICAL).items(), key=lambda x: (len(x[0]), x[0])):
         ws = " · ".join(f"σ_{i}" for i in w) if w else "𝟏"
         print(f"    ({v:+.10f}) · {ws}")

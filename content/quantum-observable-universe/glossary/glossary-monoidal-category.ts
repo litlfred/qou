@@ -5,4 +5,5 @@ export default remark({
   title: "Monoidal category",
   tags: ["glossary", "category-theory", "monoidal"],
   uses: [],
+  defines: ["monoidal-category"],
 });

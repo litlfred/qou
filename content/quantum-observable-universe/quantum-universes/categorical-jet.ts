@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:categorical-jet",
   title: "Categorical jet object",
-  lean: {
-    decl: "QOU.CategoricalJet",
+  lean: { ref: "qou:QOU.CategoricalJet",
     validation: "axioms_only",
   },
   uses: ["def:categorical-connection"],

@@ -1,0 +1,108 @@
+{
+  "computation": "alpha-derivation-probe",
+  "description": "Probes structural forms for the multiplicative correction \u03b1*/(G/3) - 1 \u2248 0.0016 (where \u03b1* = 0.30581 closes neutron tower to 0 and G/3 = 0.30532 closes to 100 ppm).  Tests h, \u210f_q, q-integer combinations.",
+  "reference_blocks": [
+    "thm:frobenius-antipode-unifies-chirality-and-tower",
+    "rem:kashaev-volume-density"
+  ],
+  "computedAt": "2026-04-25T02:46:03.759942+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "G_catalan": 0.915965594177219,
+    "G_over_3": 0.3053218647257397,
+    "alpha_star": 0.305807430741241,
+    "delta": 0.0004855660155013283,
+    "ratio": 1.00159034144488,
+    "h_val": 0.2090603219898795,
+    "hbar_q_val": 0.0990817264356989
+  },
+  "candidates_multiplicative": [
+    {
+      "name": "\u210f_q\u00b2/6.18",
+      "value": 0.0015885418306599796,
+      "err_pct": 0.11315898391609956
+    },
+    {
+      "name": "h/130",
+      "value": 0.0016081563229990731,
+      "err_pct": 1.1201920302477832
+    },
+    {
+      "name": "h\u00b2/27",
+      "value": 0.0016187488233522997,
+      "err_pct": 1.786243989550593
+    },
+    {
+      "name": "h\u00b2/28",
+      "value": 0.001560936365375432,
+      "err_pct": 1.848979010076209
+    },
+    {
+      "name": "\u210f_q\u00b2/6",
+      "value": 0.0016361980855797789,
+      "err_pct": 2.883446246566414
+    },
+    {
+      "name": "(q-1)\u00b3",
+      "value": 0.0013302231697965487,
+      "err_pct": 16.35612754234127
+    },
+    {
+      "name": "h\u2074",
+      "value": 0.001910233512013148,
+      "err_pct": 20.114678402129123
+    },
+    {
+      "name": "h\u00b7\u210f_q\u00b2",
+      "value": 0.002052384591663198,
+      "err_pct": 29.053078398413813
+    },
+    {
+      "name": "\u210f_q\u00b3",
+      "value": 0.0009727039866601797,
+      "err_pct": 38.83678314541463
+    },
+    {
+      "name": "(q-1)/130",
+      "value": 0.00084598919657062,
+      "err_pct": 46.804555757863696
+    },
+    {
+      "name": "\u210f_q\u00b2/[2]_q\u00b2",
+      "value": 0.0024277699673678527,
+      "err_pct": 52.657152662668814
+    },
+    {
+      "name": "h\u00b3/13",
+      "value": 0.000702864312017754,
+      "err_pct": 55.804188196146995
+    },
+    {
+      "name": "(q\u00b2-1)\u00b2/100",
+      "value": 0.0005384835467545418,
+      "err_pct": 66.14038145781704
+    },
+    {
+      "name": "\u210f_q\u2074",
+      "value": 9.637719030917763e-05,
+      "err_pct": 93.93984287968664
+    },
+    {
+      "name": "\u210f_q\u00b2/[3]_q",
+      "value": 0.0032254060706246447,
+      "err_pct": 102.81217476970303
+    },
+    {
+      "name": "h\u00b2/[3]_q\u00b2",
+      "value": 0.004717780888974671,
+      "err_pct": 196.65207456951111
+    },
+    {
+      "name": "\u210f_q \u00b7 h",
+      "value": 0.02071405763196037,
+      "err_pct": 1202.4912165026258
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

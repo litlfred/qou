@@ -15,8 +15,7 @@ export default proposition({
     "mass",
     "invariant",
   ],
-  lean: {
-    decl: "QOU.Descartes.reidemeister_action_table",
+  lean: { ref: "qou:QOU.Descartes.reidemeister_action_table",
     validation: "not_checked",
   },
   uses: ["thm:markov-trace-factorization"],

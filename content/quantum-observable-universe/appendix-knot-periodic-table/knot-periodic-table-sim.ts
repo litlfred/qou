@@ -5,12 +5,9 @@ export default simulator({
   title: "Knot-Centric Periodic Table with Beta Decay",
   html: "folio-assistant/simulators/knot_periodic_table.html",
   uses: [
-    "prop:nuclear-shell-intruder",
+    "prop:shell-transition-knot",
     "prop:shell-structure-eigenvalues",
     "prop:knot-particle-correspondence",
-    "def:borromean-baryon",
-    "prop:fermion-boson-knot-link",
-    "rem:building-block-knots",
   ],
   tags: [
     "periodic-table",

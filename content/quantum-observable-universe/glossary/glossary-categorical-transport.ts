@@ -9,8 +9,8 @@ export default remark({
     "def:categorical-q-ext-deriv",
     "def:categorical-jet",
   ],
-  lean: {
-    decl: "QOU.CategoricalTransport",
+  defines: ["categorical-transport"],
+  lean: { ref: "qou:QOU.CategoricalTransport",
     validation: "leanok",
   },
   rendered: [

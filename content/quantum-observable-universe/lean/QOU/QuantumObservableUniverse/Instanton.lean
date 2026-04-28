@@ -170,7 +170,10 @@ theorem categorical_jet_prolongation {C : Type u}
     cj.jetEval ≫ jp.connection = jp.prolonged_connection ≫ cj.jetEval :=
   jp.commutes
 
-/-- **Categorical transport equation**: `ℏ_q π_V(∇ψ) = H_q(ψ)`.
+/-- **Categorical transport equation**: `ℏ_q π_V(∇ψ) = Ĥ_q(ψ)`.
+    (In LaTeX: `\hat{H}_q`; distinct from the q-shuffle Hopf algebra
+    `\mathcal{H}_q` of Ch 2 and the hook-length product `H_q(λ)` of
+    the knot chapter.)
     LaTeX: `\label{def:categorical-transport}` -/
 structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
@@ -181,12 +184,12 @@ structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
   instanton : @CategoricalInstanton C _ _ jet.frobHopf
   /-- The vertical projection of the covariant derivative `π_V(∇ψ)`. -/
   proj_V_nabla : jet.jetObj ⟶ jet.jetObj
-  /-- The q-Hamiltonian `H_q`. -/
+  /-- The q-Hamiltonian `Ĥ_q` (LaTeX `\hat{H}_q`). -/
   hamiltonian : jet.jetObj ⟶ jet.jetObj
-  /-- **Transport equation**: `π_V(∇ψ) = H_q`. -/
+  /-- **Transport equation**: `π_V(∇ψ) = Ĥ_q`. -/
   transport_eq : proj_V_nabla = hamiltonian
 
-/-- The transport equation implies `H_q − π_V ∇ = 0`. -/
+/-- The transport equation implies `Ĥ_q − π_V ∇ = 0`. -/
 theorem CategoricalTransport.kernel_condition {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]

@@ -13,8 +13,7 @@ export default proposition({
     "laplacian",
     "trefoil",
   ],
-  lean: {
-    decl: "QOU.orbital_fourier_decomposition",
+  lean: { ref: "qou:QOU.orbital_fourier_decomposition",
     validation: "not_checked",
   },
   uses: ["prop:orbital-space-normal-bundle"],

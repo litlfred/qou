@@ -99,7 +99,7 @@ Verified computationally:
 | $9$ | $234504$ | $29$s | — |
 | $10$ | $8.7$M | $4.3$s (v2) | — |
 | $12$ | $923319$ | $269$s (v3) / $\sim5$s (v6) | — |
-| $16$ | $3.4$M | $38$s (v6) | $A^3 = 4096$ ✓ |
+| $16$ | $3.4$M | $38$s (v6) | $A^3 = 4096$ (matches) |
 
 With quotient-during-construction (v6), the effective complexity
 is $O(A^3)$ — cubic in the mass number.  This makes nuclei up to

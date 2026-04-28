@@ -1,0 +1,189 @@
+{
+  "computation": "atom-NF-symbolic-D",
+  "description": "Symbolic Hecke NF of D's atom braid via Gr\u00f6bner-Shirshov (SymbolicHeckeDivision).  Extracts the NF coefficients in Z[q^{1/2},q^{-1/2}], computes the Markov trace symbolically (= Jones polynomial up to framing), and compares to J(6_2) from Kawauchi/KnotInfo.  If polynomials match (possibly up to writhe), D's atom link class IS 6_2 at the Hecke algebra level, confirming the census-search assignment; if not, 6_2 was an approximation.",
+  "computedAt": "2026-04-24T00:32:55.473943+00:00",
+  "parameters": {
+    "Z": 1,
+    "N": 1,
+    "A": 2,
+    "n_strands": 6
+  },
+  "stats": {
+    "n_factors": 23,
+    "n_reductions": 6,
+    "n_terms_nf": 32,
+    "elapsed_sec": 2.2682347297668457
+  },
+  "nf_top_terms": [
+    {
+      "basis": [
+        0,
+        2,
+        3
+      ],
+      "coeff": "(q**20*(q**20 + q**12 + 2*q**10 + q**8 + 2*q**2 + 2) + 2*q**18 + q**12 + 2*q**10 + q**8 + 1)/(16*q**20)"
+    },
+    {
+      "basis": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "coeff": "(q**18*(q**18 - q**12 - q**10 + q**8 + q**6 + q**4 - q**2 - 2) - q**16 + q**14 + q**12 + q**10 - q**8 - q**6 + 1)/(16*q**18)"
+    },
+    {
+      "basis": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "coeff": "(-q**38 + q**32 - 2*q**28 - q**26 + 2*q**22 + q**20 - q**18 - 2*q**16 + q**12 + 2*q**10 - q**6 + 1)/(16*q**19)"
+    },
+    {
+      "basis": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "coeff": "(q**34 - q**28 - 2*q**26 + q**22 + 2*q**20 + q**18 - q**16 - 2*q**14 - q**12 + 2*q**8 + q**6 - 1)/(16*q**17)"
+    },
+    {
+      "basis": [
+        0,
+        1,
+        2
+      ],
+      "coeff": "(q**18*(-q**18 + q**12 + q**10 - q**8 - q**6 - q**4 + q**2 + 2) + q**16 - q**14 - q**12 - q**10 + q**8 + q**6 - 1)/(16*q**18)"
+    },
+    {
+      "basis": [
+        0,
+        2,
+        3,
+        4
+      ],
+      "coeff": "(-q**38 - q**28 - q**26 + q**22 - q**16 + q**12 + q**10 + 1)/(16*q**19)"
+    },
+    {
+      "basis": [
+        0,
+        2,
+        4
+      ],
+      "coeff": "(-q**36 + q**28 - q**24 + q**20 + q**16 - q**12 + q**8 - 1)/(16*q**18)"
+    },
+    {
+      "basis": [
+        0,
+        2
+      ],
+      "coeff": "(q**38 + q**28 + q**26 - q**22 + q**16 - q**12 - q**10 - 1)/(16*q**19)"
+    },
+    {
+      "basis": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "coeff": "(-q**38 + q**36 + q**32 - 2*q**28 + 2*q**22 + q**20 - q**18 - 2*q**16 + 2*q**10 - q**6 - q**2 + 1)/(32*q**19)"
+    },
+    {
+      "basis": [
+        0,
+        1,
+        3
+      ],
+      "coeff": "(q**20*(q**20 - q**18 - q**14 + q**12 + 2*q**10 - q**8 - q**6 - 2*q**4 + q**2 + 2) + q**18 - 2*q**16 - q**14 - q**12 + 2*q**10 + q**8 - q**6 - q**2 + 1)/(32*q**20)"
+    },
+    {
+      "basis": [
+        0,
+        1,
+        4
+      ],
+      "coeff": "(q**18*(-q**18 + q**16 + q**12 + q**10 - 2*q**8 - q**6 - q**4 + q**2 + 2) + q**16 - q**14 - q**12 - 2*q**10 + q**8 + q**6 + q**2 - 1)/(32*q**18)"
+    },
+    {
+      "basis": [
+        0,
+        1
+      ],
+      "coeff": "(q**38 - q**36 - q**32 + 2*q**28 - 2*q**22 - q**20 + q**18 + 2*q**16 - 2*q**10 + q**6 + q**2 - 1)/(32*q**19)"
+    },
+    {
+      "basis": [
+        0,
+        3,
+        4
+      ],
+      "coeff": "(q**40 - q**38 + q**30 - q**26 - q**24 + q**22 + q**18 - q**16 - q**14 + q**10 - q**2 + 1)/(32*q**20)"
+    },
+    {
+      "basis": [
+        0,
+        3
+      ],
+      "coeff": "(q**24*(-q**18 + q**16 - q**10 - q**8 + q**6 + q**4 - 2) + 2*q**18 - q**14 - q**12 + q**10 + q**8 - q**2 + 1)/(32*q**21)"
+    },
+    {
+      "basis": [
+        0,
+        4
+      ],
+      "coeff": "(q**38 - q**36 - q**30 + q**28 + q**26 - q**24 - q**22 + q**20 - q**18 + q**16 + q**14 - q**12 - q**10 + q**8 + q**2 - 1)/(32*q**19)"
+    },
+    {
+      "basis": [
+        0
+      ],
+      "coeff": "(-q**40 + q**38 - q**30 + q**26 + q**24 - q**22 - q**18 + q**16 + q**14 - q**10 + q**2 - 1)/(32*q**20)"
+    },
+    {
+      "basis": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "coeff": "(q**34 - q**28 - q**26 + q**20 - q**14 + q**8 + q**6 - 1)/(16*q**17)"
+    },
+    {
+      "basis": [
+        1,
+        2,
+        3
+      ],
+      "coeff": "(-q**36 + q**30 - q**26 + q**20 + q**16 - q**10 + q**6 - 1)/(16*q**18)"
+    },
+    {
+      "basis": [
+        1,
+        2,
+        4
+      ],
+      "coeff": "(q**16*(q**16 - q**10 - 2*q**8 - q**6 + 2*q**2 + 2) + 2*q**14 - q**10 - 2*q**8 - q**6 + 1)/(16*q**16)"
+    },
+    {
+      "basis": [
+        1,
+        2
+      ],
+      "coeff": "(-q**34 + q**28 + q**26 - q**20 + q**14 - q**8 - q**6 + 1)/(16*q**17)"
+    }
+  ],
+  "markov_trace": "0",
+  "J_62": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + q**(-5)",
+  "difference": "None",
+  "at_q0": {
+    "tr_M_D": "0j",
+    "J_62": "(1.0269200125707252+0j)"
+  },
+  "symbolic_ratio": null,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

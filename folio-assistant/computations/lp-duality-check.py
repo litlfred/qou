@@ -219,6 +219,24 @@ witness = {
     },
 }
 
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT VALIDATION  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+print("\n━━━ SDP LIFT VALIDATION ━━━")
+_sdp_reports = []
+try:
+    from sdp_moment_lift import lp_vs_sdp_report
+    _rep = lp_vs_sdp_report(
+        c=t, G=G, A_eq=np.ones((1, 6)),
+        b_eq=np.array([net_p]),
+        label=f"lp-duality-check/proton-net={net_p:.4f}")
+    for _l in _rep.summary_lines():
+        print(_l)
+    _sdp_reports.append(_rep.__dict__)
+    witness["sdp_lift"] = _sdp_reports
+except ImportError as _e:
+    print(f"  (cvxpy not available: {_e})")
+
 out_path = DIR / "lp-duality-check.witness.json"
 out_path.write_text(json.dumps(witness, indent=2))
 print(f"\n  Witness written to {out_path.name}")

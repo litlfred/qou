@@ -254,6 +254,36 @@ witness = {
     },
 }
 
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT VALIDATION  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+# integer-lp-gluon enumerates gluon combinations + checks G·x ≥ 0
+# componentwise.  That's strictly weaker than xᵀGx ≥ 0 at q₀
+# (G has a negative eigenvalue).  The per-nucleon H_3 SDP lift
+# below adds tr(G·X) ≥ 0.  NB: the full-atom H_{3A} SDP for gluon
+# selection (P2.1b) is a separate problem — see
+# docs/mass-1ppm-workplan.md.
+print(f"\n━━━ SDP LIFT VALIDATION (per-nucleon H_3) ━━━")
+_sdp_reports = []
+try:
+    from sdp_moment_lift import lp_vs_sdp_report
+    _tr_m = np.array([1.0, z, z, z**2, z**2, z**3])
+    for _lbl, _nf in [("proton-9x", p9), ("neutron-9x", n9),
+                         ("proton-best", p_best[2]),
+                         ("neutron-best", n_best[2])]:
+        _net = float(sum(_nf))
+        _rep = lp_vs_sdp_report(
+            c=_tr_m, G=G, A_eq=np.ones((1, 6)),
+            b_eq=np.array([_net]),
+            label=f"integer-lp-gluon/{_lbl}")
+        for _l in _rep.summary_lines():
+            print(_l)
+        print()
+        _sdp_reports.append(_rep.__dict__)
+except ImportError as _e:
+    print(f"  (cvxpy not available: {_e})")
+witness["sdp_lift"] = _sdp_reports
+
 witness_path = Path(__file__).parent / "integer-lp-gluon.witness.json"
 witness_path.write_text(json.dumps(witness, indent=2))
 print(f"\nWitness: {witness_path.name}")

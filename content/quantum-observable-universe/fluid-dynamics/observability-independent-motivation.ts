@@ -5,12 +5,7 @@ export default remark({
   label: "rem:observability-independent-motivation",
   title:
     "Independent motivation for observability: why $\\mathrm{Hom}(\\mathbf{1}, \\mathrm{Ad}(A)) = 0$ is not an NS assumption",
-  uses: [
-    "def:quantum-observable-universe",
-    "def:quantum-universe",
-    "thm:ns-singularity-descartes",
-    "thm:observability-q-independent",
-  ],
+  uses: ["thm:ns-singularity-descartes"],
   tags: [
     "observability",
     "motivation",

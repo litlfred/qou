@@ -11,15 +11,8 @@ export default proposition({
     "hecke-algebra",
     "braid-representation",
   ],
-  lean: {
-    decl: "QOU.Information.gasLiquidCriticalTemp",
+  lean: { ref: "qou:QOU.Information.gasLiquidCriticalTemp",
     validation: "not_checked",
   },
-  uses: [
-    "prop:quantum-ideal-gas-law",
-    "def:quantum-temperature",
-    "def:quantum-volume",
-    "def:reeb-bundle",
-    "def:yekutieli-triple",
-  ],
+  uses: ["prop:quantum-ideal-gas-law"],
 });

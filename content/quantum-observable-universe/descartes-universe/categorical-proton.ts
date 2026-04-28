@@ -4,9 +4,9 @@ export default definition({
   label: "def:categorical-proton",
   title: "Proton (categorical)",
   tags: ["proton", "hadron", "baryon", "color-tube", "knot", "categorical"],
-  lean: {
-    decl: "QOU.Torsion.CategoricalProton",
+  lean: { ref: "qou:QOU.Torsion.CategoricalProton",
     validation: "not_checked",
   },
-  uses: ["def:down-quark", "conj:borromean-quark", "def:color-tube-coordinates"],
+  uses: ["def:down-quark"],
+  cites: ["manuscript"],
 });

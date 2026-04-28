@@ -10,13 +10,8 @@ export default definition({
     "reeb-flow",
     "hausdorff-dimension",
   ],
-  lean: {
-    decl: "QOU.Information.operationalEntropy",
+  lean: { ref: "qou:QOU.Information.operationalEntropy",
     validation: "not_checked",
   },
-  uses: [
-    "rem:julia-set-reeb",
-    "def:planck-time",
-    "prop:reeb-operations-per-planck",
-  ],
+  uses: ["prop:reeb-operations-per-planck"],
 });

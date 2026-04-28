@@ -57,10 +57,10 @@ spiral into vortex filaments of $\psi$.
 **Geodesics as stable vortex filaments.**
 Bosonic modes follow straight null geodesics of $g_{\mathrm{ac}}$.
 Fermionic modes spiral around the zeros of $\psi$, forming stable vortex
-filaments $\gamma$ whose mass is controlled by
+filaments $\varrho$ whose mass is controlled by
 
 $$
-  m  \propto  \oint_\gamma \|\nabla_A q\|\cdot\|L \wedge F^+\|,
+  m  \propto  \oint_\varrho \|\nabla_A q\|\cdot\|L \wedge F^+\|,
 $$
 
 reproducing the [mass identity](#def:mass-identity) as a line integral of

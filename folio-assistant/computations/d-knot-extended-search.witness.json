@@ -1,0 +1,69 @@
+{
+  "computation": "d-knot-extended-search",
+  "description": "Extended search for a hyperbolic 3-manifold whose volume matches B_AME(D) / m_e = 4.35328 at ppb precision. Covers SnapPy LinkExteriors up to 14 crossings plus Dehn surgeries on the magic manifold s776.",
+  "computedAt": "2026-04-24T01:14:02.178473+00:00",
+  "target_vol": 4.353367301439661,
+  "B_AME_D_MeV": 2.22456612,
+  "m_e_MeV": 0.51099895,
+  "census_matches": [
+    {
+      "name": "6_2",
+      "crossings": 6,
+      "cusps": 1,
+      "vol_float": 4.400832516123045,
+      "err_pct": 1.0903103596998822,
+      "err_ppb": 10903103.596998822
+    },
+    {
+      "name": "10^2_126",
+      "crossings": 10,
+      "cusps": 2,
+      "vol_float": 4.415332477453865,
+      "err_pct": 1.4233849735976105,
+      "err_ppb": 14233849.735976106
+    },
+    {
+      "name": "9^2_50",
+      "crossings": 9,
+      "cusps": 2,
+      "vol_float": 4.415332477453867,
+      "err_pct": 1.4233849735976511,
+      "err_ppb": 14233849.735976512
+    }
+  ],
+  "dehn_matches": [],
+  "combined_top": [
+    {
+      "name": "6_2",
+      "crossings": 6,
+      "cusps": 1,
+      "vol_float": 4.400832516123045,
+      "err_pct": 1.0903103596998822,
+      "err_ppb": 10903103.596998822,
+      "source": "census",
+      "vol_50digit": "4.4008325161230461014412038656409280339834854185165"
+    },
+    {
+      "name": "10^2_126",
+      "crossings": 10,
+      "cusps": 2,
+      "vol_float": 4.415332477453865,
+      "err_pct": 1.4233849735976105,
+      "err_ppb": 14233849.735976106,
+      "source": "census",
+      "vol_50digit": "4.4153324774538658249498396351470685976382799904376"
+    },
+    {
+      "name": "9^2_50",
+      "crossings": 9,
+      "cusps": 2,
+      "vol_float": 4.415332477453867,
+      "err_pct": 1.4233849735976511,
+      "err_ppb": 14233849.735976512,
+      "source": "census",
+      "vol_50digit": "4.4153324774538658249498396351470685976382799904376"
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

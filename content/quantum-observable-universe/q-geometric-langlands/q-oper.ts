@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:q-oper",
-  lean: { decl: "QOU.QOper", validation: "not_checked" },
+  lean: { ref: "qou:QOU.QOper", validation: "not_checked" },
   title: "$q$-Oper",
   uses: [
     "def:q-flat-connection",

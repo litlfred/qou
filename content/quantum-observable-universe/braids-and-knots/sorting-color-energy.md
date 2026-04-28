@@ -1,5 +1,5 @@
 **Proposition.**
-*Let $T_i$ be the Hecke generator
+*Let $\sigma_i$ be the Hecke generator
 ([R-matrix braiding](#rem:r-matrix-braiding)) acting on
 $V \otimes V$, where $V$ is the fundamental representation.
 Then:*
@@ -21,7 +21,7 @@ Then:*
 2. **(Sorting is projection.)** *A sorting operation —
    swapping two adjacent items into the correct order —
    is the projection from $\bigwedge^2(V)$ to
-   $\mathrm{Sym}^2(V)$ at the generator $T_i$.  This
+   $\mathrm{Sym}^2(V)$ at the generator $\sigma_i$.  This
    projection is the $\mathrm{Ad}$ component of the
    observation: it acts on the colour fibre by rotating
    the gauge degrees of freedom from the antisymmetric

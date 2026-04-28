@@ -12,13 +12,8 @@ export default definition({
     "hecke-algebra",
     "colored-photon",
   ],
-  lean: {
-    decl: "QOU.Descartes.QuarkAntiquarkProduction",
+  lean: { ref: "qou:QOU.Descartes.QuarkAntiquarkProduction",
     validation: "not_checked",
   },
-  uses: [
-    "def:breit-wheeler-pair-production",
-    "def:up-quark",
-    "def:down-quark",
-  ],
+  uses: ["def:breit-wheeler-pair-production"],
 });

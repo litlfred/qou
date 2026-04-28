@@ -14,8 +14,7 @@ export default proposition({
     "trefoil",
     "seifert-surface",
   ],
-  lean: {
-    decl: "QOU.orbital_space_normal_bundle",
+  lean: { ref: "qou:QOU.orbital_space_normal_bundle",
     validation: "not_checked",
   },
   uses: ["prop:reidemeister-mass-invariance"],

@@ -14,6 +14,5 @@ export default example({
   uses: [
     "def:rigid-dualizing-complex",
     "def:brings-coordinate-ring",
-    "def:frobenius-hopf-substrate",
   ],
 });

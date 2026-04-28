@@ -17,7 +17,7 @@ specialization of the substrate parameter
 ([Levi-curvature coupling](#rem:c-substrate-via-levi)) gives
 
 $$
-  q(p) = 1 + \bigl\lvert\langle L_\theta,
+  q(p) = 1 + \bigl\lvert\langle L_\varTheta,
   F_A^+\rangle\bigr\rvert(p)
    >  q_0.
 $$
@@ -32,7 +32,7 @@ depends on two factors:
    the production process.
 
 2. **Geometric projection onto the Bring surface.**  The Levi
-   form $L_\theta$ and $F_A^+$ both live in the $3$-dimensional
+   form $L_\varTheta$ and $F_A^+$ both live in the $3$-dimensional
    self-dual subspace $\Lambda^+ H^*$ of the horizontal
    distribution.  The $S_5$ automorphism group of the Bring
    surface forces the Webster curvature to be constant, and

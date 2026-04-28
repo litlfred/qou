@@ -10,13 +10,8 @@ export default definition({
     "boundary",
     "q-anomaly",
   ],
-  lean: {
-    decl: "QOU.Information.boundaryPressure",
+  lean: { ref: "qou:QOU.Information.boundaryPressure",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-temperature",
-    "def:categorical-action",
-    "def:frobenius-pairing",
-  ],
+  uses: ["def:quantum-temperature"],
 });

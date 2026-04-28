@@ -19,18 +19,11 @@ export default corollary({
     "self-duality",
     "hilbert-space-completeness",
   ],
-  lean: {
-    decl: "QOU.Descartes.spectral_decomposition_qvalue",
+  lean: { ref: "qou:QOU.Descartes.spectral_decomposition_qvalue",
     validation: "not_checked",
   },
   uses: [
     "prop:rj-canonical-inner-product",
-    "prop:cohomological-embedding",
     "prop:beta-decay-transfer-matrix",
-    "prop:shell-closure-normal-form",
-    "prop:skein-finiteness-bound",
-    "prop:nuclear-groebner-reduction",
-    "rem:force-knot-identification",
-    "rem:fivefold-symmetry",
   ],
 });

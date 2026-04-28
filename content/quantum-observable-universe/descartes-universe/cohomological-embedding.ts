@@ -14,15 +14,9 @@ export default proposition({
     "magic-numbers",
     "shell-model",
   ],
-  lean: {
-    decl: "QOU.Descartes.cohomological_embedding",
+  lean: { ref: "qou:QOU.Descartes.cohomological_embedding",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-universe",
-    "prop:skein-finiteness-bound",
-    "prop:shell-closure-normal-form",
-    "rem:fivefold-symmetry",
-  ],
+  uses: ["rem:fivefold-symmetry"],
   examples: ["rem:fivefold-symmetry"],
 });

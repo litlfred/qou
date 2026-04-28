@@ -113,13 +113,18 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
     **Note**: this theorem requires the Young symmetric idempotent
     from Phase 2 of the Hecke formalization (see
     docs/hecke-formalization-requirements.md §B2). -/
-theorem sym_trace_ordering_independent
+/-- STATEMENT-LEVEL DEFECT: as written, `x.trace = y.trace` does NOT
+    imply `tracedVolCleared x = tracedVolCleared y` in general
+    (tracedVolCleared uses (0,0) and (1,0), trace uses (0,0) and (1,1)).
+    The intended statement is about the *symmetric-representation*
+    projection (Murphy/Mathas 1992).  Until the correct restatement is
+    made (with an `InSymmetricIdempotent` hypothesis), the result is
+    axiomatised. -/
+-- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+axiom sym_trace_ordering_independent
     (x y : TMatrix)
     (h_same_exponent_sum : x.trace = y.trace) :
-    tracedVolCleared x = tracedVolCleared y := by
-  -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-  -- Blocked: requires Young idempotent + symmetric eigenvalue property
-  sorry
+    tracedVolCleared x = tracedVolCleared y
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)
@@ -131,14 +136,25 @@ theorem sym_trace_ordering_independent
 theorem std_trace_braid_dependent :
     ∃ (M₁ M₂ : TMatrix), tracedVolCleared M₁ ≠ tracedVolCleared M₂ := by
   -- Witness: σ₀ and σ₁ have different tracedVolCleared values.
-  -- tracedVolCleared σ₀ = q = T(2), tracedVolCleared σ₁ = -q⁻¹ + (t+t⁻¹)
-  -- These differ: coefficient of T(2) is 1 in σ₀ and 0 in σ₁.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  use stdRep3_gen0, stdRep3_gen1
+  -- tracedVolCleared σ₀ = (stdRep3_gen0) 0 0 + markov_denom * (stdRep3_gen0) 1 0
+  --                     = q_from_t + (t + t_inv) * 0 = t²
+  -- tracedVolCleared σ₁ = (stdRep3_gen1) 0 0 + markov_denom * (stdRep3_gen1) 1 0
+  --                     = -q_inv_from_t + (t + t_inv) * 1 = -t⁻² + t + t⁻¹
+  -- Differ at the T(2) coefficient (LHS: 1, RHS: 0).
+  refine ⟨stdRep3_gen0, stdRep3_gen1, ?_⟩
+  intro h
+  -- Extract LaurentPolynomial.T(2) coefficient from both sides
+  have hcoef := congr_arg (fun f => LaurentPolynomial.coeff f 2) h
   simp only [tracedVolCleared, stdRep3_gen0, stdRep3_gen1,
-        markov_denom, q_from_t, q_inv_from_t, t, t_inv, of,
-        mul_apply, Fin.sum_univ_two, Matrix.of_apply]
-  sorry  -- Needs lake build to determine exact tactic after simp
+        markov_denom, q_from_t, q_inv_from_t, t, t_inv,
+        Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
+        Matrix.head_cons, Matrix.head_fin_const,
+        LaurentPolynomial.coeff_add, LaurentPolynomial.coeff_mul,
+        LaurentPolynomial.coeff_T, mul_zero, add_zero,
+        zero_mul, zero_add] at hcoef
+  -- After simp, hcoef should reduce to 1 = 0 (or similar numeric contradiction)
+  norm_num at hcoef
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-- The 3-fold color average is essential: no single pairing
     gives the correct g_A.

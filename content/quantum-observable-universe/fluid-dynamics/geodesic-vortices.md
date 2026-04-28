@@ -3,29 +3,29 @@ with critical points of a $q$-deformed energy functional on closed
 curves in the [state bundle](#def:state-bundle) $\mathcal{S}$.
 
 **The $q$-energy functional.**
-For $\gamma \colon S^1 \to \mathcal{S}$:
+For $\varrho \colon S^1 \to \mathcal{S}$:
 
 $$
-  \mathcal{E}_q[\gamma]
+  \mathcal{E}_q[\varrho]
   = 
-  \oint_\gamma
+  \oint_\varrho
   \bigl(
-    \tfrac{1}{2}\lVert\dot\gamma^H\rVert^2
-    + Q_q(\gamma)
-    + \lVert F_A(\dot\gamma)\rVert^2
+    \tfrac{1}{2}\lVert\dot\varrho^H\rVert^2
+    + Q_q(\varrho)
+    + \lVert F_A(\dot\varrho)\rVert^2
   \bigr)ds,
 $$
 
-where $\dot\gamma^H$ is the horizontal velocity, $Q_q$ the
-[quantum pressure](#rem:madelung-fluid), and $F_A(\dot\gamma)$
+where $\dot\varrho^H$ is the horizontal velocity, $Q_q$ the
+[quantum pressure](#rem:madelung-fluid), and $F_A(\dot\varrho)$
 the curvature along the filament.
 
 **Critical points are geodesics.**
-$\delta\mathcal{E}_q / \delta\gamma = 0$ gives
+$\delta\mathcal{E}_q / \delta\varrho = 0$ gives
 
 $$
-  \nabla_{\dot\gamma}\dot\gamma
-  = -\nabla^\perp Q_q - \iota_{\dot\gamma}{*F_A}.
+  \nabla_{\dot\varrho}\dot\varrho
+  = -\nabla^\perp Q_q - \iota_{\dot\varrho}{*F_A}.
 $$
 
 At $q \to 1$: $Q_q \to 0$, the gauge term reduces to Biot--Savart

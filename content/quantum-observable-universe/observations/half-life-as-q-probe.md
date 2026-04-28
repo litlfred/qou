@@ -2,7 +2,7 @@ The sensitivity $\partial \ln \Gamma_\beta / \partial \ln q \approx 48$
 ([half-life regimes](#rem:hadron-half-life-regimes)) makes beta-decay
 half-lives one of the most sensitive probes of the local substrate
 parameter $q$.  Since $q$ is a field coupled to gauge-field curvature
-via $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|(p)$
+via $q(p) = 1 + |\langle L_\varTheta, F_A^+\rangle|(p)$
 ([Levi-curvature coupling](#rem:c-substrate-via-levi)), any
 environment with significant curvature or field strength shifts $q$
 from its background value $q_0$
@@ -65,7 +65,7 @@ detecting local $q$-gradients.
    within reach of next-generation ion-trap experiments that
    monitor single-ion decays over months.
 
-4. **Gravitational field gradients.**  The Levi form $L_\theta$
+4. **Gravitational field gradients.**  The Levi form $L_\varTheta$
    couples $q$ to spacetime curvature.  Near the Earth's surface,
    the Schwarzschild curvature produces $\Delta q / q_0 \sim 10^{-9}$ per metre of altitude — far too small for direct
    detection, but relevant for precision comparisons of half-lives

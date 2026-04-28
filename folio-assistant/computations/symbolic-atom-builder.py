@@ -7,10 +7,16 @@ LP stability checked symbolically (Gx ≥ 0 for all q > 1).
 Garside staircase with full C(n,2) crossings.
 """
 
+import sys
+from pathlib import Path
+
 import sympy as sp
 from sympy import sqrt, Rational as R, simplify, factor, collect, Abs
 from sympy import Matrix, Symbol, oo
 from itertools import combinations
+
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q as _Q_CANONICAL
 
 q = Symbol('q', positive=True)
 h = q - 1/q               # HA = q - q⁻¹
@@ -101,8 +107,8 @@ p = mul_sym(p, 1, -hq/2, 0)       # ud → mixed, gen 0
 proton = [sp.factor(x) for x in p]
 show_sym("Proton (11 crossings)", proton)
 
-# Verify at q₀
-q0 = 1.1099785955541805
+# Verify at q₀ (canonical substrate parameter from q_parameter)
+q0 = _Q_CANONICAL
 print(f"\n  Numerical at q₀ = {q0}:")
 for i, v in enumerate(proton):
     val = float(v.subs(q, q0))

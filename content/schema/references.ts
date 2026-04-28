@@ -653,6 +653,268 @@ export const references: CSLData[] = [
     note: "This manuscript",
   }),
 
+  // ── References added to clear CI bibliography validation ──────
+  // (PR #383; cited from .lean files in content/ after PR #384 merge)
+
+  ref({
+    id: "boyd-vandenberghe-2004",
+    type: "book",
+    title: "Convex Optimization",
+    author: [
+      { family: "Boyd", given: "Stephen" },
+      { family: "Vandenberghe", given: "Lieven" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[2004]] },
+    ISBN: "978-0-521-83378-3",
+  }),
+
+  ref({
+    id: "fomin1994",
+    type: "article-journal",
+    title: "Duality of graded graphs",
+    author: [
+      { family: "Fomin", given: "Sergey" },
+    ],
+    "container-title": "Journal of Algebraic Combinatorics",
+    volume: "3",
+    issue: "4",
+    page: "357-404",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.1023/A:1022412010826",
+  }),
+
+  ref({
+    id: "sagan2001",
+    type: "book",
+    title:
+      "The Symmetric Group: Representations, Combinatorial Algorithms, and Symmetric Functions",
+    author: [
+      { family: "Sagan", given: "Bruce E." },
+    ],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    edition: "2nd",
+    issued: { "date-parts": [[2001]] },
+    ISBN: "978-0-387-95067-9",
+  }),
+
+  ref({
+    id: "stanley1999",
+    type: "book",
+    title: "Enumerative Combinatorics, Volume 2",
+    author: [
+      { family: "Stanley", given: "Richard P." },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1999]] },
+    ISBN: "978-0-521-78987-5",
+  }),
+
+  ref({
+    id: "feray2010",
+    type: "article-journal",
+    title: "Stanley's formula for characters of the symmetric group",
+    author: [
+      { family: "F\u00e9ray", given: "Valentin" },
+    ],
+    "container-title": "Annals of Combinatorics",
+    volume: "13",
+    issue: "4",
+    page: "453-461",
+    issued: { "date-parts": [[2010]] },
+    DOI: "10.1007/s00026-009-0039-4",
+  }),
+
+  ref({
+    id: "fulton1997",
+    type: "book",
+    title:
+      "Young Tableaux: With Applications to Representation Theory and Geometry",
+    author: [
+      { family: "Fulton", given: "William" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1997]] },
+    ISBN: "978-0-521-56724-4",
+  }),
+
+  // ── Vershik-Kerov 1977 (Plancherel asymptotics / limit shape) ──
+  ref({
+    id: "vershik-kerov1977",
+    type: "article-journal",
+    title:
+      "Asymptotic theory of characters of the symmetric group",
+    author: [
+      { family: "Vershik", given: "Anatoly M." },
+      { family: "Kerov", given: "Sergei V." },
+    ],
+    "container-title":
+      "Functional Analysis and Its Applications",
+    volume: "15",
+    page: "246-255",
+    issued: { "date-parts": [[1977]] },
+    DOI: "10.1007/BF01106153",
+  }),
+
+  ref({
+    id: "kerov1993",
+    type: "article-journal",
+    title:
+      "Generalized Robinson-Schensted-Knuth correspondence",
+    author: [
+      { family: "Kerov", given: "Sergei V." },
+    ],
+    "container-title":
+      "Journal of Soviet Mathematics",
+    volume: "41",
+    page: "925-955",
+    issued: { "date-parts": [[1993]] },
+    DOI: "10.1007/BF01099447",
+  }),
+
+  ref({
+    id: "wedderburn1908",
+    type: "article-journal",
+    title: "On hypercomplex numbers",
+    author: [
+      { family: "Wedderburn", given: "Joseph Henry Maclagan" },
+    ],
+    "container-title":
+      "Proceedings of the London Mathematical Society",
+    volume: "s2-6",
+    issue: "1",
+    page: "77-118",
+    issued: { "date-parts": [[1908]] },
+    DOI: "10.1112/plms/s2-6.1.77",
+  }),
+
+  ref({
+    id: "atiyah1990",
+    type: "book",
+    title: "The Geometry and Physics of Knots",
+    author: [
+      { family: "Atiyah", given: "Michael" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1990]] },
+    ISBN: "978-0-521-39554-0",
+  }),
+
+  ref({
+    id: "atiyah1978",
+    type: "article-journal",
+    title:
+      "Self-duality in four-dimensional Riemannian geometry",
+    author: [
+      { family: "Atiyah", given: "M. F." },
+      { family: "Hitchin", given: "N. J." },
+      { family: "Singer", given: "I. M." },
+    ],
+    "container-title":
+      "Proceedings of the Royal Society A",
+    volume: "362",
+    page: "425-461",
+    issued: { "date-parts": [[1978]] },
+    DOI: "10.1098/rspa.1978.0143",
+  }),
+
+  ref({
+    id: "jimbo1986",
+    type: "article-journal",
+    title:
+      "A q-analogue of U(gl(N+1)), Hecke algebra, and the Yang-Baxter equation",
+    author: [
+      { family: "Jimbo", given: "Michio" },
+    ],
+    "container-title": "Letters in Mathematical Physics",
+    volume: "11",
+    issue: "3",
+    page: "247-252",
+    issued: { "date-parts": [[1986]] },
+    DOI: "10.1007/BF00400222",
+  }),
+
+  ref({
+    id: "lenstra1983",
+    type: "article-journal",
+    title:
+      "Integer programming with a fixed number of variables",
+    author: [
+      { family: "Lenstra", given: "Hendrik W." },
+    ],
+    "container-title": "Mathematics of Operations Research",
+    volume: "8",
+    issue: "4",
+    page: "538-548",
+    issued: { "date-parts": [[1983]] },
+    DOI: "10.1287/moor.8.4.538",
+  }),
+
+  ref({
+    id: "jucys1974",
+    type: "article-journal",
+    title:
+      "Symmetric polynomials and the center of the symmetric group ring",
+    author: [
+      { family: "Jucys", given: "Algimantas A." },
+    ],
+    "container-title": "Reports on Mathematical Physics",
+    volume: "5",
+    issue: "1",
+    page: "107-112",
+    issued: { "date-parts": [[1974]] },
+    DOI: "10.1016/0034-4877(74)90019-6",
+  }),
+
+  ref({
+    id: "kelly1982",
+    type: "book",
+    title: "Basic Concepts of Enriched Category Theory",
+    author: [
+      { family: "Kelly", given: "G. M." },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    "collection-title": "London Mathematical Society Lecture Note Series",
+    volume: "64",
+    issued: { "date-parts": [[1982]] },
+    ISBN: "978-0-521-28702-9",
+  }),
+
+  ref({
+    id: "connes1994",
+    type: "book",
+    title: "Noncommutative Geometry",
+    author: [
+      { family: "Connes", given: "Alain" },
+    ],
+    publisher: "Academic Press",
+    "publisher-place": "San Diego",
+    issued: { "date-parts": [[1994]] },
+    ISBN: "978-0-12-185860-5",
+  }),
+
+  ref({
+    id: "majid2002",
+    type: "book",
+    title: "A Quantum Groups Primer",
+    author: [
+      { family: "Majid", given: "Shahn" },
+    ],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    "collection-title":
+      "London Mathematical Society Lecture Note Series",
+    volume: "292",
+    issued: { "date-parts": [[2002]] },
+    ISBN: "978-0-521-01041-2",
+  }),
+
   // ── Woronowicz 1988 ───────────────────────────────────────────
   ref({
     id: "woronowicz1988",
@@ -908,6 +1170,47 @@ export const references: CSLData[] = [
     page: "2091-2170",
     DOI: "10.2140/gt.2008.12.2091",
     note: "First circulated 2002",
+  }),
+
+  ref({
+    id: "habiro2004",
+    type: "article-journal",
+    title: "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
+    author: [{ family: "Habiro", given: "Kazuo" }],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[2008]] },
+    volume: "171",
+    page: "1-81",
+    DOI: "10.1007/s00222-007-0071-0",
+    note: "Preprint 2004; introduces the Habiro ring cyclotomic expansion.",
+  }),
+
+  // ── Nuclear shell model (Mayer–Jensen) ──────────────────────────
+
+  ref({
+    id: "mayer1949",
+    type: "article-journal",
+    title: "On closed shells in nuclei. II",
+    author: [{ family: "Mayer", given: "Maria Goeppert" }],
+    "container-title": "Physical Review",
+    issued: { "date-parts": [[1949]] },
+    volume: "75",
+    issue: "12",
+    page: "1969-1970",
+    DOI: "10.1103/PhysRev.75.1969",
+  }),
+
+  ref({
+    id: "mayer1955",
+    type: "book",
+    title: "Elementary Theory of Nuclear Shell Structure",
+    author: [
+      { family: "Mayer", given: "Maria Goeppert" },
+      { family: "Jensen", given: "J. Hans D." },
+    ],
+    publisher: "Wiley",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1955]] },
   }),
 
   // ── BEC vortex experiments ──────────────────────────────────────
@@ -1173,6 +1476,22 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF01857727",
   }),
 
+  // ── Peña et al. 2022: Quantum Game of Life (QGoL) ─────────────
+  ref({
+    id: "pena2022",
+    type: "chapter",
+    title: "QGoL: A Quantum Game of Life",
+    author: [
+      { family: "Pe\\~{n}a" },
+      { literal: "others" },
+    ],
+    "container-title":
+      "Advances in Quantum Computation and Quantum Cellular Automata",
+    publisher: "Springer Nature",
+    issued: { "date-parts": [[2022]] },
+    note: "Models Conway's Game of Life as a reversible quantum circuit with Toffoli-based neighbour-count logic.",
+  }),
+
   // ── Cook 1971: NP-completeness ─────────────────────────────────
   ref({
     id: "cook1971",
@@ -1425,10 +1744,14 @@ export const references: CSLData[] = [
     type: "book",
     title: "The Geometry and Topology of Three-Manifolds",
     author: [{ family: "Thurston", given: "William P." }],
-    publisher: "Princeton University",
-    note: "Lecture notes",
+    publisher: "Princeton University lecture notes",
     issued: { "date-parts": [[1978]] },
     URL: "https://www.msri.org/publications/books/gt3m/",
+    note:
+      "Original lecture notes establishing the ideal-tetrahedron " +
+      "decomposition of hyperbolic 3-manifolds and the Bloch-Wigner " +
+      "volume formula $V = \\sum D(z_i)$ used in the crossing-graded " +
+      "expansion of the categorical mass endomorphism.",
   }),
 
   // ── Bring 1786 ────────────────────────────────────────────────
@@ -1440,6 +1763,51 @@ export const references: CSLData[] = [
     "container-title": "Promotionschrift, Lund",
     issued: { "date-parts": [[1786]] },
     URL: "https://en.wikipedia.org/wiki/Bring_radical",
+  }),
+
+  // ── Bolza 1887 ────────────────────────────────────────────────
+  ref({
+    id: "bolza1887",
+    type: "article-journal",
+    title: "On binary sextics with linear transformations into themselves",
+    author: [{ family: "Bolza", given: "Oskar" }],
+    "container-title": "American Journal of Mathematics",
+    issued: { "date-parts": [[1887]] },
+    volume: "10",
+    issue: "1",
+    page: "47-70",
+    DOI: "10.2307/2369402",
+  }),
+
+  // ── Moore and Seiberg 1989 ───────────────────────────────────
+  ref({
+    id: "moore-seiberg1989",
+    type: "article-journal",
+    title: "Classical and quantum conformal field theory",
+    author: [
+      { family: "Moore", given: "Gregory" },
+      { family: "Seiberg", given: "Nathan" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1989]] },
+    volume: "123",
+    issue: "2",
+    page: "177-254",
+    DOI: "10.1007/BF01238857",
+  }),
+
+  // ── Kitaev 2006 ───────────────────────────────────────────────
+  ref({
+    id: "kitaev2006",
+    type: "article-journal",
+    title: "Anyons in an exactly solved model and beyond",
+    author: [{ family: "Kitaev", given: "Alexei" }],
+    "container-title": "Annals of Physics",
+    issued: { "date-parts": [[2006]] },
+    volume: "321",
+    issue: "1",
+    page: "2-111",
+    DOI: "10.1016/j.aop.2005.10.005",
   }),
 
   // ── Deligne 2007 ──────────────────────────────────────────────
@@ -1585,7 +1953,7 @@ export const references: CSLData[] = [
     "publisher-place": "New York",
     issued: { "date-parts": [[2002]] },
     DOI: "10.1007/978-1-4757-6046-0",
-    collection_title: "Graduate Texts in Mathematics",
+    "collection-title": "Graduate Texts in Mathematics",
     volume: "210",
   }),
 
@@ -2117,6 +2485,35 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1948]] },
   }),
 
+  // ── Mostow 1968 (rigidity for hyperbolic manifolds) ───────────
+  ref({
+    id: "mostow1968",
+    type: "article-journal",
+    title:
+      "Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms",
+    author: [{ family: "Mostow", given: "George D." }],
+    "container-title":
+      "Publications mathématiques de l'IHÉS",
+    volume: "34",
+    page: "53-104",
+    issued: { "date-parts": [[1968]] },
+    URL: "https://www.numdam.org/item/PMIHES_1968__34__53_0/",
+  }),
+
+  // ── Gromov 1982 (Volume and bounded cohomology) ───────────────
+  ref({
+    id: "gromov1982",
+    type: "article-journal",
+    title: "Volume and bounded cohomology",
+    author: [{ family: "Gromov", given: "Mikhail" }],
+    "container-title":
+      "Publications mathématiques de l'IHÉS",
+    volume: "56",
+    page: "5-99",
+    issued: { "date-parts": [[1982]] },
+    URL: "https://www.numdam.org/item/PMIHES_1982__56__5_0/",
+  }),
+
   // ── Kashaev 1997 (Volume Conjecture) ──────────────────────────
   ref({
     id: "kashaev1997",
@@ -2147,6 +2544,276 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2001]] },
     DOI: "10.1007/BF02392716",
   }),
+
+  // ── Kerov 1996 (q-hook walk on Young diagrams) ────────────────
+  ref({
+    id: "kerov1996",
+    type: "article-journal",
+    title:
+      "A differential model for the growth of Young diagrams",
+    author: [{ family: "Kerov", given: "Sergei V." }],
+    "container-title":
+      "Proceedings of the St. Petersburg Mathematical Society",
+    volume: "4",
+    page: "165-192",
+    issued: { "date-parts": [[1996]] },
+    note:
+      "Introduces the q-deformed hook walk: a Markov chain on Young " +
+      "diagrams whose stationary measure is the q-Plancherel measure. " +
+      "The transition kernel projects step-by-step onto each partition, " +
+      "with branching weights determined by q-hook products.",
+  }),
+
+  // ── Féray-Méliot 2012 (q-Plancherel CLT) ──────────────────────
+  ref({
+    id: "feray-meliot2012",
+    type: "article-journal",
+    title:
+      "Asymptotics of $q$-Plancherel measures",
+    author: [
+      { family: "F\u00e9ray", given: "Valentin" },
+      { family: "M\u00e9liot", given: "Pierre-Lo\u00efc" },
+    ],
+    "container-title": "Probability Theory and Related Fields",
+    volume: "152",
+    page: "589-624",
+    issued: { "date-parts": [[2012]] },
+    DOI: "10.1007/s00440-010-0331-6",
+    note:
+      "Central limit theorem for the q-Plancherel measure on Young " +
+      "diagrams, with convergence rate $O(1/\\sqrt{k})$. Provides the " +
+      "asymptotic theory for iterative q-hook walk accumulation.",
+  }),
+
+  // ── Satuła et al. 1997 (Wigner energy in nuclei) ──────────────
+  ref({
+    id: "satula1997",
+    type: "article-journal",
+    title:
+      "On the origin of the Wigner energy",
+    author: [
+      { family: "Satu\u0142a", given: "W." },
+      { family: "Dean", given: "D. J." },
+      { family: "Gary", given: "J." },
+      { family: "Mizutori", given: "S." },
+      { family: "Nazarewicz", given: "W." },
+    ],
+    "container-title": "Physics Letters B",
+    volume: "407",
+    page: "103-109",
+    issued: { "date-parts": [[1997]] },
+    DOI: "10.1016/S0370-2693(97)00711-9",
+    note:
+      "Empirical extraction of the Wigner energy term \u0394_W \u2248 6.3 MeV " +
+      "in the nuclear mass formula, attributed to T=0 isoscalar " +
+      "proton-neutron pairing.",
+  }),
+
+  // ── Kohno 1987 (KZ connection / quantum braid monodromy) ──────
+  ref({
+    id: "kohno1987",
+    type: "article-journal",
+    title:
+      "Monodromy representations of braid groups and Yang-Baxter equations",
+    author: [{ family: "Kohno", given: "Toshitake" }],
+    "container-title": "Annales de l'Institut Fourier",
+    volume: "37",
+    issue: "4",
+    page: "139-160",
+    issued: { "date-parts": [[1987]] },
+    DOI: "10.5802/aif.1075",
+    note:
+      "Proves that monodromy of the Knizhnik-Zamolodchikov " +
+      "connection on the configuration space $X_n$ coincides with " +
+      "the quantum-group R-matrix representation of $U_q(g)$.  " +
+      "Flatness of the KZ connection at generic q is the " +
+      "mathematical content behind the lifted-crossing locality " +
+      "hypothesis in the mass-volume expansion.",
+  }),
+
+  // Note: a duplicate entry id "murakami2001" was removed here.
+  // The canonical key is `murakami-murakami2001` (defined above at
+  // line ~2393), following the `authorYEAR` hyphen convention for
+  // multiple authors (e.g. `kazhdan-lusztig1979`).
+
+  // ── Conway 1976 (On Numbers and Games / surreal numbers) ──────
+  ref({
+    id: "conway1976",
+    type: "book",
+    title: "On Numbers and Games",
+    author: [{ family: "Conway", given: "John H." }],
+    publisher: "Academic Press",
+    "publisher-place": "London",
+    issued: { "date-parts": [[1976]] },
+    note:
+      "Original construction of the surreal numbers $\\mathbf{No}$ " +
+      "as a proper-class real-closed field via the recursive " +
+      "$\\{L \\mid R\\}$ construction.  Basis for the birthday " +
+      "filtration and sign-sequence grading used in the surreal " +
+      "appendix.",
+  }),
+
+  // ── Gonshor 1986 (sign-sequence construction) ────────────────
+  ref({
+    id: "gonshor1986",
+    type: "book",
+    title: "An Introduction to the Theory of Surreal Numbers",
+    author: [{ family: "Gonshor", given: "Harry" }],
+    publisher: "Cambridge University Press",
+    "publisher-place": "Cambridge",
+    issued: { "date-parts": [[1986]] },
+    ISBN: "978-0521312059",
+    DOI: "10.1017/CBO9780511629143",
+    note:
+      "Sign-sequence presentation of $\\mathbf{No}$: every surreal " +
+      "number is a function $\\alpha \\to \\{+,-\\}$ for some ordinal " +
+      "$\\alpha$.  Provides the canonical grading used to lift braid " +
+      "words to surreals via Hecke eigenspace choices.",
+  }),
+
+  // ── Alling 1987 (analysis over surreal fields) ──────────────
+  ref({
+    id: "alling1987",
+    type: "book",
+    title: "Foundations of Analysis over Surreal Number Fields",
+    author: [{ family: "Alling", given: "Norman L." }],
+    publisher: "North-Holland",
+    "publisher-place": "Amsterdam",
+    issued: { "date-parts": [[1987]] },
+    ISBN: "978-0444702265",
+    note:
+      "Systematic development of analytic structure on surreal " +
+      "number fields: ordered-field topology, formal power series, " +
+      "and the absence of a canonical Lebesgue measure.  Reference " +
+      "for what survives of classical analysis under surreal " +
+      "replacement.",
+  }),
+
+  // ── Robinson 1966 (non-standard analysis) ───────────────────
+  ref({
+    id: "robinson1966",
+    type: "book",
+    title: "Non-standard Analysis",
+    author: [{ family: "Robinson", given: "Abraham" }],
+    publisher: "North-Holland",
+    "publisher-place": "Amsterdam",
+    issued: { "date-parts": [[1966]] },
+    note:
+      "Original model-theoretic construction of the hyperreals " +
+      "$^*\\mathbb{R}$ and the standard-part map $\\mathrm{st}$.  " +
+      "The surreal appendix adopts Robinson's standard-part " +
+      "construction as the replacement for the broken classical-" +
+      "limit functor $q \\to 1$.",
+  }),
+
+  // ── Berarducci-Mantova 2018 (derivations on surreals) ──────
+  ref({
+    id: "berarducci-mantova2018",
+    type: "article-journal",
+    title: "Surreal numbers, derivations and transseries",
+    author: [
+      { family: "Berarducci", given: "Alessandro" },
+      { family: "Mantova", given: "Vincenzo" },
+    ],
+    "container-title": "Journal of the European Mathematical Society",
+    volume: "20",
+    issue: "2",
+    page: "339-390",
+    issued: { "date-parts": [[2018]] },
+    DOI: "10.4171/JEMS/769",
+    note:
+      "Construction of a natural derivation on the surreal numbers " +
+      "extending $d/dx$ on the reals, making $\\mathbf{No}$ a " +
+      "differential field.  Provides the Jackson-derivative lift " +
+      "$d_q$ with $q = 1 + \\varepsilon$ used in " +
+      "\\ref{def:standard-part-functor}.",
+  }),
+
+  // ── Ehrlich 2012 (absolute continuum) ──────────────────────
+  ref({
+    id: "ehrlich2012",
+    type: "article-journal",
+    title:
+      "The absolute arithmetic continuum and the unification of all " +
+      "numbers great and small",
+    author: [{ family: "Ehrlich", given: "Philip" }],
+    "container-title": "Bulletin of Symbolic Logic",
+    volume: "18",
+    issue: "1",
+    page: "1-45",
+    issued: { "date-parts": [[2012]] },
+    DOI: "10.2178/bsl/1327328438",
+    note:
+      "Demonstrates that $\\mathbf{No}$ contains all real-closed " +
+      "ordered fields as subfields, including the hyperreals " +
+      "$^*\\mathbb{R}$ and the Hahn series $\\mathbb{R}((t^G))$ for " +
+      "any divisible ordered abelian group $G$.  Justifies " +
+      "embedding every analytic regime into a single surreal " +
+      "ambient.",
+  }),
+
+  // ── Tate 1967 (Tate's 1950 Princeton thesis: adelic Fourier analysis) ──
+  ref({
+    id: "tate1967",
+    type: "chapter",
+    title: "Fourier Analysis in Number Fields and Hecke's Zeta-Functions",
+    author: [{ family: "Tate", given: "John T." }],
+    "container-title": "Algebraic Number Theory",
+    editor: [
+      { family: "Cassels", given: "J. W. S." },
+      { family: "Fröhlich", given: "A." },
+    ],
+    publisher: "Academic Press",
+    "publisher-place": "London",
+    issued: { "date-parts": [[1967]] },
+    page: "305-347",
+    note:
+      "Tate's thesis (Princeton 1950). Establishes adelic " +
+      "integration and the local-global decomposition of zeta " +
+      "functions used in QOU's adelic substrate.",
+  }),
+
+  // ── Kontsevich 1995 (Motivic integration, Orsay lecture) ────────
+  ref({
+    id: "kontsevich1995",
+    type: "speech",
+    title: "Lecture at Orsay",
+    author: [{ family: "Kontsevich", given: "Maxim" }],
+    issued: { "date-parts": [[1995, 12, 7]] },
+    "publisher-place": "Université Paris-Sud, Orsay",
+    note:
+      "Original introduction of motivic integration. Defines the " +
+      "motivic measure on arc spaces valued in the dimension-completed " +
+      "Grothendieck ring of varieties, and proves the change-of-variables " +
+      "formula for blow-ups used to compute QOU's topological mass.",
+  }),
+
+  // ── Denef-Loeser 2001 (Geometry on arc spaces) ─────────────────
+  ref({
+    id: "denef-loeser2001",
+    type: "paper-conference",
+    title: "Geometry on Arc Spaces of Algebraic Varieties",
+    author: [
+      { family: "Denef", given: "Jan" },
+      { family: "Loeser", given: "François" },
+    ],
+    "container-title":
+      "European Congress of Mathematics, Vol. I (Barcelona, 2000)",
+    "collection-title": "Progress in Mathematics",
+    volume: "201",
+    publisher: "Birkhäuser",
+    "publisher-place": "Basel",
+    issued: { "date-parts": [[2001]] },
+    page: "327-348",
+    DOI: "10.1007/978-3-0348-8268-2_19",
+    URL: "https://doi.org/10.1007/978-3-0348-8268-2_19",
+    note:
+      "Foundational survey of arc spaces L(X) = lim L_n(X) and " +
+      "motivic integration. Provides the change-of-variables " +
+      "formula for blow-ups and the motivic measure on cylindrical " +
+      "subsets of L(X).",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

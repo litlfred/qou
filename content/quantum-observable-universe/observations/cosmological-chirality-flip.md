@@ -46,21 +46,18 @@ from equilibrium.
 
 **At heat death ($q \to 1$).**
 The Hopf algebra becomes cocommutative
-($\sigma \circ \Delta = \Delta$), and the
-[substrate parameter](#def:substrate-parameter) carries no
-information: $d_q \to d$, $\hbar_q \to 0$.  The QOU
-structure again degenerates, but in the opposite direction —
-quantum features disappear entirely.  The non-degeneracy of the
-Frobenius form is maintained but becomes trivial (the pairing
-carries no quantum content).
-
-In this limit, the distinction between $T_{2,3}$ and
-$T_{2,3}^{\sigma}$ becomes undetectable: with $\hbar_q = 0$,
-the crossing energy asymmetry
-$q - q^{-1} = 2\sinh(\ln q) \to 0$ vanishes.  The strong and
-Coulomb channels merge.  Chirality reversal does not require
-infinite energy because chirality itself becomes meaningless —
-the two sectors collapse into one.
+($\sigma \circ \Delta = \Delta$),
+[$\hbar_q \to 0$](#def:substrate-parameter), and by
+[prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction) the
+three Descartes color tubes collapse to a single $\mathrm{U}(1)$
+phase tube on $\mathcal{X}_5$.  The crossing-energy asymmetry
+$q - q^{-1} = 2\sinh(\ln q) \to 0$ vanishes, so chirality is
+undetectable: $T_{2,3}$ and $T_{2,3}^{\sigma}$ dissolve into one,
+strong and Coulomb channels merge.  Only the two
+$S_5$-equivariant generators of
+[rem:symmetry-preserving-leptons](#rem:symmetry-preserving-leptons)
+--- electron and muon --- survive as distinguishable topological
+excitations; their masses vanish with $q - q^{-1}$.
 
 **Categorical picture (conjectural).**
 

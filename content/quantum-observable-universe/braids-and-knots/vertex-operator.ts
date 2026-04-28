@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:vertex-operator",
-  lean: { decl: "QOU.VertexOperator", validation: "not_checked" },
+  lean: { ref: "qou:QOU.VertexOperator", validation: "not_checked" },
   title: "Vertex operator on the exceptional divisor",
   tags: [
     "vertex-operator", "exceptional-divisor", "reeb-bundle",
@@ -10,7 +10,6 @@ export default definition({
   ],
   uses: [
     "def:reeb-bundle",
-    "def:exceptional-divisor",
     "def:contact-affine-chart",
     "ex:projective-line-su2",
     "rem:r-matrix-braiding",

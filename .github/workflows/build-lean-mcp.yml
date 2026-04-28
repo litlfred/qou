@@ -10,7 +10,8 @@
 # Triggers on:
 #   - Push to main touching content, Lean, MCP server, Dockerfile, or CI scripts
 #   - Manual dispatch
-#   - Weekly (to pick up Mathlib cache + TeX Live security updates)
+#   - Twice weekly (to keep the Mathlib olean cache warm against drift
+#     and pick up TeX Live security updates)
 #
 # The self-updater on the folio server polls for new image digests
 # and auto-deploys.
@@ -23,14 +24,23 @@ on:
     paths:
       - 'scripts/mcp-server/**'
       - 'content/**'
-      - 'content/quantum-observable-universe/lean/**'
+      - 'lakefile.toml'
+      - 'lean-toolchain'
       - 'scripts/mcp-server/Dockerfile'
       - '.github/scripts/**'
       - 'folio-assistant/**'
       - 'tools/hecke-engine/**'
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * 0'  # Weekly Sunday 06:00 UTC
+    # Sunday + Wednesday 06:00 UTC — rebuild periodically to pick up
+    # OS / TeX Live security updates and keep the cached olean layer
+    # warm so folio-assistant `lean_build` calls do not pay a multi-
+    # minute `lake exe cache get` on first use after a cold pull.
+    # Mathlib itself is pinned by `rev` in `lakefile.toml`, so manual
+    # bumps trigger a rebuild via the `lakefile.toml` path filter
+    # above; the cron is for OS updates and cache freshness.
+    - cron: '0 6 * * 0'
+    - cron: '0 6 * * 3'
 
 env:
   REGISTRY: ghcr.io
@@ -48,6 +58,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # ubuntu-latest ships with ~14 GB free disk; the paper-assistant
+      # image build needs more once we add TeX Live full, Mathlib
+      # oleans for three papers, the hecke-engine Rust build, and
+      # GHA build-cache layers.  Reclaim ~30 GB by removing
+      # pre-installed toolchains we don't use.
+      - name: Free up runner disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+                      /usr/local/share/boost "$AGENT_TOOLSDIRECTORY"
+          sudo apt-get clean
+          df -h /
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -77,5 +99,9 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # Registry cache (ghcr.io/.../paper-assistant:buildcache) is
+          # faster on pull than `type=gha` and isn't subject to the
+          # GHA cache size / per-key churn limits.  The cache tag is
+          # separate from `:latest` and shares the same GHCR namespace.
+          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache
+          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache,mode=max

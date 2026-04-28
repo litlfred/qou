@@ -1,0 +1,85 @@
+{
+  "computation": "term7-only-strict-3cal",
+  "description": "35a: Strict 3-cal binding prediction with \u03b1_(k>=4) = m_e\u00b78G (universal Term 7 only) and \u03b1_0..\u03b1_3 = 0. Tests how much of binding comes from the Term 7 shell-correction prefactor alone \u2014 the only universal prefactor allowed under strict 3-cal (m_e, q_0, m_p).",
+  "computedAt": "2026-04-25T23:59:00Z",
+  "calibrations": {
+    "m_e_MeV": 0.51099895,
+    "q_0": 1.1099785955541805,
+    "m_p_MeV": 938.27208816
+  },
+  "structural_alpha_k": {
+    "0_to_3": 0,
+    "4_and_higher": 3.744459654884585,
+    "note": "\u03b1_(k>=4) = m_e \u00b7 8G (universal Term 7 prefactor per prop:plancherel-term-7-formulation). \u03b1_0..\u03b1_3 set to zero \u2014 captures ONLY the shell correction."
+  },
+  "predictions": [
+    {
+      "iso": "p",
+      "A": 1,
+      "B_AME_MeV": 0,
+      "Phi_k_ge_4_sum": 0.0,
+      "B_pred_MeV": 0.0,
+      "err_pct": null,
+      "note": "trivially zero (no k>=4 partitions at H_3)"
+    },
+    {
+      "iso": "n",
+      "A": 1,
+      "B_AME_MeV": 0,
+      "Phi_k_ge_4_sum": 0.0,
+      "B_pred_MeV": 0.0,
+      "err_pct": null,
+      "note": "trivially zero"
+    },
+    {
+      "iso": "D",
+      "A": 2,
+      "B_AME_MeV": 2.22456612,
+      "Phi_k_ge_4_sum": 0.035876,
+      "B_pred_MeV": 0.1343,
+      "err_pct": -93.96,
+      "fraction_captured": 0.06
+    },
+    {
+      "iso": "T",
+      "A": 3,
+      "B_AME_MeV": 8.481798,
+      "Phi_k_ge_4_sum": 0.228817,
+      "B_pred_MeV": 0.8568,
+      "err_pct": -89.9,
+      "fraction_captured": 0.101
+    },
+    {
+      "iso": "3He",
+      "A": 3,
+      "B_AME_MeV": 7.718058,
+      "Phi_k_ge_4_sum": 0.236184,
+      "B_pred_MeV": 0.8844,
+      "err_pct": -88.54,
+      "fraction_captured": 0.115
+    },
+    {
+      "iso": "4He",
+      "A": 4,
+      "B_AME_MeV": 28.29566,
+      "Phi_k_ge_4_sum": 1.87496,
+      "B_pred_MeV": 7.0207,
+      "err_pct": -75.19,
+      "fraction_captured": 0.248,
+      "note": "doubly magic \u2014 largest Term 7 fraction"
+    }
+  ],
+  "pattern": {
+    "observation": "Term 7 capture fraction grows with A \u2014 D 6%, T 10%, \u00b3He 11%, \u2074He 25%. Magic \u2074He has largest Term 7 contribution, consistent with shell-correction interpretation.",
+    "implication": "\u03b1_0..\u03b1_3 cannot be zero structurally. Volume, surface, Coulomb, Pauli sectors per skein-binding-lagrangian.md need their own structural derivation from (m_e, q_0) alone \u2014 this is the open project."
+  },
+  "verdict_strict_3cal_predictive_power": {
+    "single_nucleon_works": "n predicted at -0.19% from p; Q_\u03b2/\u0394m at ppb-class via fitted ladder",
+    "shell_correction_works": "Term 7 with universal m_e\u00b78G captures 25% of B(\u2074He)",
+    "multi_nucleon_binding_open": "Volume + surface + Coul + Pauli sectors need 3-cal derivation; without them, strict 3-cal predicts only the Term 7 shell fraction (6-25% of total binding)"
+  },
+  "next_structural_project": [
+    "Derive \u03bb_V, \u03bb_S, \u03bb_C, \u03bb_Pauli, \u03bb_pair (BW-Lagrangian prefactors) from m_e, q_0 alone \u2014 categorical analog of nuclear semi-empirical formula.",
+    "Verify that the resulting \u03a3 \u03b1_k \u03a6_k closes binding to <10% across light isotopes."
+  ]
+}

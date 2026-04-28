@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:vertex-algebra-jet-relations",
-  lean: {
-    decl: "QOU.VertexAlgebra.JetRelations.euler_level_stable",
+  lean: { ref: "qou:QOU.VertexAlgebra.JetRelations.euler_level_stable",
     validation: "not_checked",
   },
   title: "QU/QUO and cohomological relations on the jet bundle",
@@ -13,16 +12,6 @@ export default proposition({
   ],
   uses: [
     "prop:vertex-algebra-relations",
-    "prop:jet-prolongation",
-    "def:recursive-brane-tower",
-    "def:descent-involution",
-    "prop:descent-eigenspaces",
-    "def:quantum-characteristic-classes",
-    "prop:euler-char-stability",
-    "def:vertex-operator",
-    "thm:jones-markov-trace",
-    "prop:categorical-dq-squared",
-    "rem:instanton-on-shell",
     "rem:prolongation-categorical",
   ],
   cites: ["kassel1995", "jones1987", "yekutieli2010"],

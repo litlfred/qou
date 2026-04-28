@@ -122,3 +122,14 @@ terms cannot cancel.
 Therefore $\mathrm{Obs}_\partial(A) = 0$ and the Descartes
 universe is **NS-singular**.
 
+*Formal asymptotic content. The jet divergence
+$|j^n v|_\Sigma \sim 1/(T^*-t)^{(n+1)/2}$ has
+$\ordw(\lvert j^n v \rvert_\Sigma) = -\tfrac{n+1}{2}\,\ordw(T^*-t)$
+as $t \to T^*$; the
+recursive jet tower is the
+[surreal blow-up calculus](#def:surreal-blowup-calculus), and
+the $q \to 1$ classical-limit reading is the
+[standard-part functor](#def:standard-part-functor). See also
+[Big-O via $\ordw$](#rem:conway-normal-form) and the
+[body asymptotics catalog](#rem:body-asymptotics-catalog).*
+

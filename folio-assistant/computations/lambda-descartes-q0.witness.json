@@ -1,0 +1,100 @@
+{
+  "name": "lambda-descartes-q0",
+  "description": "Legendre lambda-invariant of the Descartes elliptic curve at the substrate parameter q_0.  Compares the per-crossing universal shape parameter (if z_c = lambda) to the regular tetrahedron shape e^{i pi/3} governing the figure-8 knot.",
+  "inputs": {
+    "q_0": 1.1099785955541805,
+    "hbar_q": 0.09908172643569887,
+    "hbar_q_sq": 0.00981718851347867
+  },
+  "descartes_weierstrass": {
+    "p_q0": 0.7087272693487072,
+    "r_q0": 0.8056305239481268,
+    "j_invariant": 129.86034702640617,
+    "j_target_from_paper": 129.9,
+    "j_error": 0.039652973593831575
+  },
+  "legendre_lambda": {
+    "u_root": 0.5014433481902598,
+    "lambda_pair": [
+      {
+        "re": 0.5,
+        "im": 0.4985545625202323
+      },
+      {
+        "re": 0.5,
+        "im": -0.4985545625202323
+      }
+    ],
+    "s3_orbit_first_root": [
+      {
+        "re": 0.5,
+        "im": 0.4985545625202323
+      },
+      {
+        "re": 0.5,
+        "im": -0.4985545625202323
+      },
+      {
+        "re": 1.0028950535210401,
+        "im": -0.9999958093237743
+      },
+      {
+        "re": 1.0028950535210401,
+        "im": 0.9999958093237743
+      },
+      {
+        "re": -0.0028950535210401796,
+        "im": 0.9999958093237743
+      },
+      {
+        "re": -0.0028950535210401796,
+        "im": -0.9999958093237743
+      }
+    ]
+  },
+  "bloch_wigner_at_lambda": [
+    {
+      "lambda": {
+        "re": 0.5,
+        "im": 0.4985545625202323
+      },
+      "abs": 0.7060854422870791,
+      "arg": 0.7839506346148861,
+      "D": 0.9149601503638116
+    },
+    {
+      "lambda": {
+        "re": 0.5,
+        "im": -0.4985545625202323
+      },
+      "abs": 0.7060854422870791,
+      "arg": -0.7839506346148861,
+      "D": -0.9149601503638116
+    }
+  ],
+  "comparisons": {
+    "regular_tetrahedron (e^{i pi/3})": {
+      "z": {
+        "re": 0.5000000000000001,
+        "im": 0.8660254037844386
+      },
+      "D": 1.0149418226993348,
+      "note": "Lobachevsky constant v_3; figure-8 knot shape"
+    },
+    "half_plus_half_i (1/2 + i/2)": {
+      "z": {
+        "re": 0.5,
+        "im": 0.5
+      },
+      "D": 0.9159655941772191,
+      "note": "Whitehead-link-like shape (approx)"
+    }
+  },
+  "ratio_D_lambda_to_v3": [
+    0.9014902429879061,
+    -0.9014902429879061
+  ],
+  "interpretation": "If ratio_D_lambda_to_v3 == 1, the universal shape parameter ansatz z_c = lambda(q_0) exactly reproduces Thurston volume for knots triangulated by regular tetrahedra (figure-8, knot complement census minimum).  Ratio < 1 means the universal ansatz UNDER-predicts volume and per-knot gluing is required.  Ratio > 1 means OVER-prediction.",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

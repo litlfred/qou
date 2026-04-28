@@ -26,17 +26,55 @@ parameter $q$ ([substrate parameter](#def:substrate-parameter)).
 
 The derivation proceeds from the categorical decomposition
 ([topological mass](#thm:topological-mass)) via three identifications,
-each following from the archimedean bridge:
+each following from the archimedean bridge.
 
-1. The baseline holonomy term
-   $\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert$
-   evaluates to $\mathrm{Vol}(K)$ via the Chern--Simons/volume
-   correspondence for the hyperbolic knot complement.
-2. The exceptional divisor contributions $\Phi_q(z_i)$ sum, after
-   evaluation in the Briggs--Klein spectral coordinates, to
-   $\mathrm{Vol}(K) \cdot (1/\hbar_q^{2} - 1)$.
-3. Adding baseline and exceptional terms:
-   $\mathfrak{m} = \mathrm{Vol}(K) + \mathrm{Vol}(K)(1/\hbar_q^{2} - 1) = \mathrm{Vol}(K)/\hbar_q^{2}$.
+**Step 1 — baseline holonomy $\mapsto$ hyperbolic volume.**
+The descended trace of the universal vortex $\varrho_0$ is the
+holonomy norm
+$\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \rVert$.
+Under the archimedean fibre functor
+([categorical-archimedean-bridge](#prop:categorical-archimedean-bridge))
+this is the imaginary part of the Chern--Simons functional on the
+flat connection associated to $K$, which by the Chern–Simons /
+hyperbolic-volume correspondence equals $\mathrm{Vol}(S^3 \setminus K)$
+([Möbius energy](#rem:mobius-energy);
+[Kashaev volume density](#rem:kashaev-volume-density)).  Concretely,
+$$
+  \mathrm{Re}\,\mathrm{tr}\bigl(\hat{\tau}_n^{\mathrm{desc}}\,\mathrm{Hol}\bigr)
+  \;=\; \mathrm{Vol}(K).
+$$
+
+**Step 2 — transient dilogarithm sum $\mapsto$ $(1/\hbar_q^{2} - 1)$ correction.**
+The transient eigenspace contributes one quantum-dilogarithm factor
+$\Phi_q(z_i)$ per blow-up exceptional divisor.  In the Briggs–Klein
+spectral coordinates of the brane tower
+([mass-endomorphism on the jet tower](#rem:mass-endomorphism-jet-tower)),
+the $z_i$ are the eigenvalues of the per-crossing transfer operator
+on the curvature-rank stratification.  Summing over the $N$ blow-ups
+and using the dilogarithm identity
+$\sum_{i=1}^N \Phi_q(z_i) = (1/\hbar_q^{2} - 1)\,\mathrm{Vol}(K)$
+(Kashaev–Murakami volume conjecture restricted to the
+$q$-deformation; this is `Hypothesis 2 (Dilogarithm evaluation)`
+on the Lean structure
+[`qou:QOU.ArchimedeanMassFormula`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/ArchimedeanMassFormula.lean),
+field `exceptional_sum_eq`):
+$$
+  \sum_{i=1}^{N} \Phi_q(z_i)
+  \;=\; \mathrm{Vol}(K)\bigl(\hbar_q^{-2} - 1\bigr).
+$$
+The Lean formalisation isolates this identity as a hypothesis on
+the archimedean structure rather than a derived theorem; the
+evaluation in Briggs–Klein coordinates is the categorical content
+the formula imports from the geometric side.
+
+**Step 3 — combine.**
+Adding the baseline and transient contributions and recognising
+$1 + (\hbar_q^{-2} - 1) = \hbar_q^{-2}$:
+$$
+  \mathfrak{m}(K)
+  \;=\; \mathrm{Vol}(K) + \mathrm{Vol}(K)\bigl(\hbar_q^{-2} - 1\bigr)
+  \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}.
+$$
 
 Combined with the knot--particle dictionary identifying particles with specific
 knots (e.g.\ the figure-eight knot $4_1$ with the Higgs field), this formula

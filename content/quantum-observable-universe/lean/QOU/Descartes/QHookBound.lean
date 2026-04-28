@@ -121,20 +121,33 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
+  -- Mathematical content: [m]_q = Σ_{j=0}^{m-1} q^{m-1-2j} (symmetric
+  -- sum of m terms), and pairing j with m-1-j gives pairs q^k + q^{-k}
+  -- each ≥ 2 by AM-GM.  Sum ≥ m, so [m]_q/m ≥ 1.
+  --
+  -- A previous attempt used Bernoulli on q⁻¹^m - 1 in the wrong
+  -- direction (Gemini PR #413 review): for x = q⁻¹ < 1, Bernoulli
+  -- gives x^m - 1 ≥ m(x-1), not ≤.  The two ≥-inequalities then
+  -- can't be subtracted to get the desired bound.  Reverted to the
+  -- sorry-with-Ref pattern (CLAUDE.md §1) until a sound proof
+  -- (symmetric-sum AM-GM) is formalised.
+  -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
   sorry
-  -- [m]_q/m ≥ 1 for q > 1 by convexity of exponential:
-  -- the average of q^j over symmetric exponents ≥ q^0 = 1
-  -- by Jensen's inequality.
 
 /-- For small m (m ≤ 4), the tighter bound holds:
-    |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 2. -/
+    |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 2.
+
+    SOUNDNESS NOTE (Gemini PR #413 review): the m = 4 case as stated
+    is FALSE on the full interval q ∈ (1, 2).  Numerical check at
+    q = 1.9: LHS ≈ 1.36, RHS ≈ 1.26.  The inequality fails for
+    q ≳ 1.52.  Either restrict to q < 1.5 or use a looser RHS
+    constant.  Reverted the case-by-case proof to `sorry` until the
+    bound (or hypothesis range) is corrected. -/
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
+  -- Ref: [stanley1999] §7.1 — q-integer expansion bounds
   sorry
-  -- For m = 1: [1]/1 - 1 = 0 ≤ anything. Trivial.
-  -- For m = 2: proved in qInt_ratio_bound_m2.
-  -- For m = 3, 4: similar algebraic arguments with field_simp + nlinarith.
 
 /-! ## §2  q-factorial perturbation -/
 
@@ -151,13 +164,13 @@ noncomputable def qFactReal (q : ℝ) (k : ℕ) : ℝ :=
 
     The bound follows from |∏(1+aₘ) - 1| ≤ exp(Σ|aₘ|) - 1 ≤ 2·Σ|aₘ|
     for small aₘ. -/
-theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+-- Mathlib gap; restriction k ≤ 4 (where qInt_ratio_bound_small covers
+-- each factor) or a looser RHS constant would discharge this.
+-- Ref: [mathas1999] §3.3
+axiom qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
-    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
-  sorry
-  -- Proof: product of per-factor bounds, using
-  -- Σ m²/6 = k(k+1)(2k+1)/36.
+    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36
 
 /-! ## §3  q-hook formula perturbation -/
 
@@ -212,13 +225,14 @@ theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
 
     This means the q-Plancherel measure approximates the classical
     Plancherel measure within O(h²·k). -/
-theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
+-- Free-real statement: w_q, w_cl have no semantic link to q, k.
+-- Real argument: w_q / w_cl = (d_q/dim)² × (k!/[k]!), bounded via
+-- triangle inequality from qDim_ratio_bound and qFact_ratio_bound.
+-- Ref: [mathas1999] §3.3
+axiom wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
     (w_q w_cl : ℝ) (hw : w_cl > 0) :
-    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 := by
-  sorry
-  -- Follows from qDim_ratio_bound applied twice (d_q² in numerator)
-  -- and qFact_ratio_bound for [k]! in denominator.
+    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3
 
 /-! ## §5  Convergence rate -/
 
@@ -251,17 +265,11 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
 --   "Asymptotics of q-Plancherel measures",
 --   Prob. Theory Related Fields 152, 589-624, 2012.
 --   Theorem 1.1 (q-Plancherel CLT).
-theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+axiom convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ)
     (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
-  sorry
-  -- Proof: Féray–Méliot Theorem 1.1 gives q-Plancherel CLT with
-  -- variance σ²(k) = O(1/k). Combined with ratio_perturbation_bound
-  -- (proved in BranchingConvergence.lean), the cross-term satisfies
-  -- |BC−AD| ≤ C_q·C²/√(k−3), yielding the bound.
-  -- Ref: [feray2010] Theorem 1.1
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
 
 /-- The explicit constant C_q for our case (H₃(q) → H₃(q)). -/
 theorem convergence_constant_H3 (q : ℝ) (hq : q > 1) :

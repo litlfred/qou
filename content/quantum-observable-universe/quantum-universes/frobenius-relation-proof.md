@@ -1,48 +1,29 @@
-
 The Frobenius form $\int_A$ and the multiplication $\mu$ together
-define a pairing $\langle a, b \rangle = \int_A(\mu(a \otimes b))$
-on $A$. Non-degeneracy of this pairing
-([Frobenius pairing](#def:frobenius-pairing)) gives an isomorphism
-$\phi \colon A \xrightarrow{ \sim } A^{\vee}$ defined by
-$\phi(a) = \langle a, - \rangle$. Define the *dual comultiplication*
-$\Delta_\mu$ as the transpose of $\mu$ under $\phi$:
+define a non-degenerate pairing
+$\langle a, b \rangle = \int_A(\mu(a \otimes b))$
+([Frobenius pairing](#def:frobenius-pairing)), giving an isomorphism
+$\phi \colon A \xrightarrow{\sim} A^{\vee}$.  Define the *dual
+comultiplication* $\Delta_\mu$ as the transpose of $\mu$ under $\phi$:
 
 $$
-  \Delta_\mu = (\phi^{-1} \otimes \phi^{-1}) \circ \mu^{\vee} \circ \phi,
+  \Delta_\mu = (\phi^{-1} \otimes \phi^{-1}) \circ \mu^{\vee} \circ \phi.
 $$
 
-where $\mu^{\vee} \colon A^{\vee} \to A^{\vee} \otimes A^{\vee}$ is
-the linear dual of $\mu$.
-
-To verify the Frobenius relation, consider the two composites
+To verify the Frobenius relation, the two composites
 $(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu)$
-and $\Delta_\mu \circ \mu$ as maps
-$A \otimes A \to A \otimes A$. It suffices to show they agree
-after pairing with an arbitrary test element
-$c \in A$ via $\int_A$, since the pairing is non-degenerate.
-
-For the left-hand side, using the definition of $\Delta_\mu$ and
-the associativity of $\mu$:
+and $\Delta_\mu \circ \mu$ are maps $A \otimes A \to A \otimes A$;
+by non-degeneracy it suffices to show they agree after pairing with
+an arbitrary test element $c \in A$.  Writing
+$\Delta_\mu(b) = b_1 \otimes b_2$ in Sweedler notation, the
+left-hand side equals
 
 $$
-  \bigl\langle (\mu \otimes \mathrm{id})
-  (\mathrm{id} \otimes \Delta_\mu)(a \otimes b), c \bigr\rangle
-  = \int_A \mu\bigl(\mu(a \otimes b_1) \otimes b_2\bigr) \cdot c
-  = \int_A \mu\bigl(a \otimes \mu(b_1 \otimes b_2)\bigr) \cdot c,
+  \int_A \mu\bigl(\mu(a \otimes b_1) \otimes b_2\bigr) \cdot c
+  = \int_A \mu\bigl(a \otimes \mu(b_1 \otimes b_2)\bigr) \cdot c
 $$
 
-where $\Delta_\mu(b) = b_1 \otimes b_2$ (Sweedler notation) and the
-second equality is associativity of $\mu$.
-
-For the right-hand side:
-
-$$
-  \bigl\langle \Delta_\mu(\mu(a \otimes b)), c \bigr\rangle
-  = \int_A \mu\bigl(a \otimes \mu(b_1 \otimes b_2)\bigr) \cdot c.
-$$
-
-Both sides equal the same expression, so the Frobenius relation holds.
-The key step is that $\Delta_\mu$ is defined as the transpose of
-$\mu$, and associativity of $\mu$ — the only non-trivial axiom
-used — ensures the two ways of "sliding" multiplication past
-comultiplication agree.
+by associativity of $\mu$, and the right-hand side equals
+$\int_A \mu(a \otimes \mu(b_1 \otimes b_2)) \cdot c$ directly.
+Both sides agree, so the Frobenius relation holds: $\Delta_\mu$ is
+the transpose of $\mu$, and associativity of $\mu$ is the only
+non-trivial axiom used.  $\square$

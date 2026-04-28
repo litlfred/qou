@@ -13,12 +13,9 @@ export default proposition({
   ],
   uses: [
     "prop:cosimplicial-crossed-groupoid",
-    "def:quantum-characteristic-classes",
     "prop:topological-mass-formula",
   ],
-  lean: {
-    decl: "QOU.Descartes.VolumeTowerDecomposition",
-    file: "QOU/Descartes/HyperbolicVolumeTranscendence.lean",
+  lean: { ref: "qou:QOU.Descartes.VolumeTowerDecomposition",
     validation: "not_checked",
   },
 });

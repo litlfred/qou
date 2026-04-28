@@ -1,0 +1,262 @@
+{
+  "computation": "atom-link-derivation",
+  "description": "Phase 3 prototype: derive an atom's knot/link class by closing its 3A-strand braid word (from atom_braid_word_3A). Each Hecke factor (c\u00b7T_g + d\u00b71) is mapped back to a signed braid generator via the Hecke dictionary (T=\u03c3, T\u207b\u00b9=\u03c3\u207b\u00b9). Mixed proton-neutron crossings do NOT lift uniquely to a braid generator; the MIXED_CROSSING_RULE selects a lift. Exterior volume is computed via SnapPy (float + 50-digit verified via ManifoldHP).",
+  "computedAt": "2026-04-23T23:44:38.206652+00:00",
+  "parameters": {
+    "m_e_MeV": 0.51099895,
+    "h_value": 0.20906032198987945,
+    "mixed_rule": "positive"
+  },
+  "results": [
+    {
+      "atom": "Z1N1",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME_MeV": 2.22452,
+      "braid_stats": {
+        "n_factors": 23,
+        "counts": {
+          "pos": 11,
+          "neg": 7,
+          "mixed": 5
+        },
+        "mixed_rule": "positive",
+        "interleave": "block",
+        "n_strands": 6,
+        "max_generator": 5
+      },
+      "braid_word_len": 23,
+      "volume": {
+        "status": "ok",
+        "components": 3,
+        "crossings": 23,
+        "volume_float": 1.8082309347249633e-06,
+        "volume_50digit": null,
+        "is_hyperbolic": false
+      },
+      "target_me_err_pct": -99.9999584627646,
+      "target_2me_err_pct": -99.99991692552919,
+      "atom_label": "D"
+    },
+    {
+      "atom": "Z1N2",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME_MeV": 8.481821,
+      "braid_stats": {
+        "n_factors": 35,
+        "counts": {
+          "pos": 16,
+          "neg": 12,
+          "mixed": 7
+        },
+        "mixed_rule": "positive",
+        "interleave": "block",
+        "n_strands": 9,
+        "max_generator": 8
+      },
+      "braid_word_len": 35,
+      "volume": {
+        "status": "ok",
+        "components": 4,
+        "crossings": 35,
+        "volume_float": 0.0005103013824974481,
+        "volume_50digit": null,
+        "is_hyperbolic": false
+      },
+      "target_me_err_pct": -99.9969256192669,
+      "target_2me_err_pct": -99.99385123853381,
+      "atom_label": "T"
+    },
+    {
+      "atom": "Z2N1",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME_MeV": 7.718043,
+      "braid_stats": {
+        "n_factors": 35,
+        "counts": {
+          "pos": 18,
+          "neg": 10,
+          "mixed": 7
+        },
+        "mixed_rule": "positive",
+        "interleave": "block",
+        "n_strands": 9,
+        "max_generator": 8
+      },
+      "braid_word_len": 35,
+      "volume": {
+        "status": "ok",
+        "components": 4,
+        "crossings": 35,
+        "volume_float": 3.417657114014594e-06,
+        "volume_50digit": null,
+        "is_hyperbolic": false
+      },
+      "target_me_err_pct": -99.9999773722536,
+      "target_2me_err_pct": -99.9999547445072,
+      "atom_label": "3He"
+    },
+    {
+      "atom": "Z2N2",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "B_AME_MeV": 28.295674,
+      "braid_stats": {
+        "n_factors": 47,
+        "counts": {
+          "pos": 23,
+          "neg": 15,
+          "mixed": 9
+        },
+        "mixed_rule": "positive",
+        "interleave": "block",
+        "n_strands": 12,
+        "max_generator": 11
+      },
+      "braid_word_len": 47,
+      "volume": {
+        "status": "ok",
+        "components": 5,
+        "crossings": 47,
+        "volume_float": 0.0008917918025928901,
+        "volume_50digit": null,
+        "is_hyperbolic": false
+      },
+      "target_me_err_pct": -99.99838948994555,
+      "target_2me_err_pct": -99.9967789798911,
+      "atom_label": "4He"
+    },
+    {
+      "atom": "Z1N1",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "B_AME_MeV": 2.22452,
+      "braid_stats": {
+        "n_factors": 23,
+        "counts": {
+          "pos": 11,
+          "neg": 7,
+          "mixed": 5
+        },
+        "mixed_rule": "positive",
+        "interleave": "interleaved",
+        "n_strands": 6,
+        "max_generator": 5
+      },
+      "braid_word_len": 23,
+      "volume": {
+        "status": "ok",
+        "components": 3,
+        "crossings": 23,
+        "volume_float": 20.52300675816776,
+        "volume_50digit": "20.522817202562213956825578568814725140079015219955",
+        "is_hyperbolic": true
+      },
+      "target_me_err_pct": 371.4381036927799,
+      "target_2me_err_pct": 842.8762073855598,
+      "atom_label": "D"
+    },
+    {
+      "atom": "Z1N2",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "B_AME_MeV": 8.481821,
+      "braid_stats": {
+        "n_factors": 35,
+        "counts": {
+          "pos": 16,
+          "neg": 12,
+          "mixed": 7
+        },
+        "mixed_rule": "positive",
+        "interleave": "interleaved",
+        "n_strands": 9,
+        "max_generator": 8
+      },
+      "braid_word_len": 35,
+      "volume": {
+        "status": "ok",
+        "components": 4,
+        "crossings": 35,
+        "volume_float": 35.71214483831257,
+        "volume_50digit": "35.712144838226308332064508475986184594673809242794",
+        "is_hyperbolic": true
+      },
+      "target_me_err_pct": 115.15271914634417,
+      "target_2me_err_pct": 330.30543829268834,
+      "atom_label": "T"
+    },
+    {
+      "atom": "Z2N1",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "B_AME_MeV": 7.718043,
+      "braid_stats": {
+        "n_factors": 35,
+        "counts": {
+          "pos": 18,
+          "neg": 10,
+          "mixed": 7
+        },
+        "mixed_rule": "positive",
+        "interleave": "interleaved",
+        "n_strands": 9,
+        "max_generator": 8
+      },
+      "braid_word_len": 35,
+      "volume": {
+        "status": "ok",
+        "components": 4,
+        "crossings": 35,
+        "volume_float": 25.856315323842985,
+        "volume_50digit": "25.856306769460333538419003494036025228275871329306",
+        "is_hyperbolic": true
+      },
+      "target_me_err_pct": 71.19041681100603,
+      "target_2me_err_pct": 242.3808336220121,
+      "atom_label": "3He"
+    },
+    {
+      "atom": "Z2N2",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "B_AME_MeV": 28.295674,
+      "braid_stats": {
+        "n_factors": 47,
+        "counts": {
+          "pos": 23,
+          "neg": 15,
+          "mixed": 9
+        },
+        "mixed_rule": "positive",
+        "interleave": "interleaved",
+        "n_strands": 12,
+        "max_generator": 11
+      },
+      "braid_word_len": 47,
+      "volume": {
+        "status": "ok",
+        "components": 5,
+        "crossings": 47,
+        "volume_float": 41.045860238344304,
+        "volume_50digit": "41.045634405124427913651157137794451263113886131589",
+        "is_hyperbolic": true
+      },
+      "target_me_err_pct": -25.874211430197114,
+      "target_2me_err_pct": 48.25157713960577,
+      "atom_label": "4He"
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

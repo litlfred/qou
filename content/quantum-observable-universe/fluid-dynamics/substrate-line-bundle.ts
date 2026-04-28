@@ -4,12 +4,11 @@ export default definition({
   label: "def:substrate-line-bundle",
   title:
     "The substrate line bundle and the $\\mathbb{G}_m$-family of differentials",
-  uses: [
-    "def:substrate-parameter",
-    "def:quantum-observable-universe",
-    "def:weight-decomposition",
-    "def:categorical-reeb",
-  ],
+  lean: {
+    ref: "qou:QOU.FluidDynamics.SubstrateLineBundle",
+    validation: "not_checked",
+  },
+  uses: ["def:substrate-parameter"],
   tags: [
     "line-bundle",
     "multiplicative-group",

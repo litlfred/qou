@@ -1,0 +1,515 @@
+{
+  "engine": "numpy+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T04:27:40.017330+00:00",
+  "commitSha": "867970ffcccef598aad080ba2c651b9504171b9f",
+  "assertions": [
+    {
+      "name": "Kashaev 2H: B_pred reproducible",
+      "computed": 2.2488207948647343,
+      "expected": 2.2488207948647343,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 3H: B_pred reproducible",
+      "computed": 8.46859838653302,
+      "expected": 8.46859838653302,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 3He: B_pred reproducible",
+      "computed": 7.48891930977096,
+      "expected": 7.48891930977096,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 4He: B_pred reproducible",
+      "computed": 29.95567723908384,
+      "expected": 29.95567723908384,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 8Be: B_pred reproducible",
+      "computed": 62.338343981930535,
+      "expected": 62.338343981930535,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 12C: B_pred reproducible",
+      "computed": 97.1480002285401,
+      "expected": 97.1480002285401,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 16O: B_pred reproducible",
+      "computed": 134.38464597891252,
+      "expected": 134.38464597891252,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 20Ne: B_pred reproducible",
+      "computed": 174.0482812330478,
+      "expected": 174.0482812330478,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 24Mg: B_pred reproducible",
+      "computed": 216.1389059909459,
+      "expected": 216.1389059909459,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    },
+    {
+      "name": "Kashaev 40Ca: B_pred reproducible",
+      "computed": 408.771300060167,
+      "expected": 408.771300060167,
+      "passed": true,
+      "tolerance": 0,
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "mass-table-combined",
+  "scriptFile": "mass_table_combined.py",
+  "scriptHash": "f3ca6e9d6e1f",
+  "scriptCommitSha": "867970ffcccef598aad080ba2c651b9504171b9f",
+  "description": "Low-isotope mass table. Three-way comparison: AME2020 vs Kashaev (\u03c1_F \u00b7 Vol_hyp with census/framework assignment) vs Paper formula (B = -\u03b1\u00b7\u03a6_1 with \u03b1 = m_e\u00b78G). NO FITTING.",
+  "parameters": {
+    "m_e_MeV": 0.51099895,
+    "alpha_paper_MeV": 3.74445965488548,
+    "Vol_Borromean_8G": 7.327724753417752,
+    "Vol_7_sq_1": 4.749499981874439,
+    "c_alpha_alpha_MeV": 2.426989503762857
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_AME": 2.22456612,
+        "kashaev": {
+          "B_pred": 2.2488207948647343,
+          "err_pct": 1.0903103596999093,
+          "formula": "1\u00b7m_e \u00b7 Vol(6_2)",
+          "origin": "hyp: census-assigned"
+        },
+        "paper": {
+          "B_pred": 4.984836803438028,
+          "err_pct": 124.08130550140841,
+          "phi_1": -1.3312566465856295
+        },
+        "rho_f": {
+          "rho_eff": 0.5054875666933474,
+          "rho_nominal": 0.51099895,
+          "deviation_pct": -1.0785508085002116
+        },
+        "chi_sym_alt": {
+          "A": 2,
+          "n_ud": 5,
+          "product": -1.0558397853274497
+        }
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_AME": 8.4817984,
+        "kashaev": {
+          "B_pred": 8.46859838653302,
+          "err_pct": -0.15562753138508753,
+          "formula": "2\u00b7m_e \u00b7 Vol(8_11)",
+          "origin": "hyp: census-assigned"
+        },
+        "paper": {
+          "B_pred": 11.855886187629112,
+          "err_pct": 39.78033464729734,
+          "phi_1": -3.1662475444649196
+        },
+        "rho_f": {
+          "rho_eff": 1.023590889232395,
+          "rho_nominal": 1.0219979,
+          "deviation_pct": 0.15587010818662872
+        },
+        "chi_sym_alt": {
+          "A": 3,
+          "n_ud": 7,
+          "product": -1.079039223648267
+        }
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_AME": 7.7180375,
+        "kashaev": {
+          "B_pred": 7.48891930977096,
+          "err_pct": -2.968606854126327,
+          "formula": "2\u00b7m_e \u00b7 Vol(L6a4)",
+          "origin": "hyp: census-assigned"
+        },
+        "paper": {
+          "B_pred": 8.721204799443493,
+          "err_pct": 12.997699213608286,
+          "phi_1": -2.3290956782148107
+        },
+        "rho_f": {
+          "rho_eff": 1.053265203008642,
+          "rho_nominal": 1.0219979,
+          "deviation_pct": 3.0594292814732915
+        },
+        "chi_sym_alt": {
+          "A": 3,
+          "n_ud": 7,
+          "product": -1.079039223648267
+        }
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_AME": 28.2956912,
+        "kashaev": {
+          "B_pred": 29.95567723908384,
+          "err_pct": 5.866568260696314,
+          "formula": "2\u00b7m_e\u00b74\u00b78G",
+          "origin": "framework: A\u00b78G"
+        },
+        "paper": {
+          "B_pred": 15.59225418363458,
+          "err_pct": -44.89530553106057,
+          "phi_1": -4.1640865760941015
+        },
+        "rho_f": {
+          "rho_eff": 0.9653641529999643,
+          "rho_nominal": 1.0219979,
+          "deviation_pct": -5.5414739110555615
+        },
+        "chi_sym_alt": {
+          "A": 4,
+          "n_ud": 9,
+          "product": -1.1027484115976558
+        }
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "B_AME": 31.99405,
+        "kashaev": {
+          "B_pred": null,
+          "err_pct": null,
+          "formula": null,
+          "origin": null
+        },
+        "paper": {
+          "B_pred": 26.19967156383113,
+          "err_pct": -18.110800089919437,
+          "phi_1": -6.996916505602574
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 6,
+          "n_ud": 13,
+          "product": -1.1517410843767508
+        }
+      },
+      {
+        "atom": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "B_AME": 39.24453,
+        "kashaev": {
+          "B_pred": null,
+          "err_pct": null,
+          "formula": null,
+          "origin": null
+        },
+        "paper": {
+          "B_pred": 33.07072094802222,
+          "err_pct": -15.731642223713157,
+          "phi_1": -8.831907403481864
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 7,
+          "n_ud": 15,
+          "product": -1.177047713867193
+        }
+      },
+      {
+        "atom": "8Be",
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "B_AME": 56.49951,
+        "kashaev": {
+          "B_pred": 62.338343981930535,
+          "err_pct": 10.33430906202644,
+          "formula": "2\u00b7B(\u2074He) + 1\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
+        },
+        "paper": {
+          "B_pred": 36.80708894402768,
+          "err_pct": -34.85414485182671,
+          "phi_1": -9.829746435111046
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 8,
+          "n_ud": 17,
+          "product": -1.2029103932414622
+        }
+      },
+      {
+        "atom": "9Be",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "B_AME": 58.16498,
+        "kashaev": {
+          "B_pred": null,
+          "err_pct": null,
+          "formula": null,
+          "origin": null
+        },
+        "paper": {
+          "B_pred": 43.67813832821877,
+          "err_pct": -24.906467210650167,
+          "phi_1": -11.664737332990336
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 9,
+          "n_ud": 19,
+          "product": -1.2293413403049134
+        }
+      },
+      {
+        "atom": "11B",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "B_AME": 76.20548,
+        "kashaev": {
+          "B_pred": null,
+          "err_pct": null,
+          "formula": null,
+          "origin": null
+        },
+        "paper": {
+          "B_pred": 54.285555708415316,
+          "err_pct": -28.76423623548422,
+          "phi_1": -14.497567262498807
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 11,
+          "n_ud": 23,
+          "product": -1.2839582568979861
+        }
+      },
+      {
+        "atom": "12C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "B_AME": 92.16175,
+        "kashaev": {
+          "B_pred": 97.1480002285401,
+          "err_pct": 5.410325030221432,
+          "formula": "3\u00b7B(\u2074He) + 3\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
+        },
+        "paper": {
+          "B_pred": 58.021923704420786,
+          "err_pct": -37.043378945798246,
+          "phi_1": -15.495406294127989
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 12,
+          "n_ud": 25,
+          "product": -1.3121700280410589
+        }
+      },
+      {
+        "atom": "14N",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "B_AME": 104.65877,
+        "kashaev": {
+          "B_pred": null,
+          "err_pct": null,
+          "formula": null,
+          "origin": null
+        },
+        "paper": {
+          "B_pred": 68.62934108461732,
+          "err_pct": -34.425618527126474,
+          "phi_1": -18.32823622363646
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 14,
+          "n_ud": 29,
+          "product": -1.3704668400230535
+        }
+      },
+      {
+        "atom": "16O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "B_AME": 127.61929,
+        "kashaev": {
+          "B_pred": 134.38464597891252,
+          "err_pct": 5.301201706193875,
+          "formula": "4\u00b7B(\u2074He) + 6\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
+        },
+        "paper": {
+          "B_pred": 79.23675846481389,
+          "err_pct": -37.91161315439548,
+          "phi_1": -21.161066153144933
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 16,
+          "n_ud": 33,
+          "product": -1.4313536504158009
+        }
+      },
+      {
+        "atom": "19F",
+        "Z": 9,
+        "N": 10,
+        "A": 19,
+        "B_AME": 147.80137,
+        "kashaev": {
+          "B_pred": null,
+          "err_pct": null,
+          "formula": null,
+          "origin": null
+        },
+        "paper": {
+          "B_pred": 96.71522522920152,
+          "err_pct": -34.56405361519888,
+          "phi_1": -25.828886980532694
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 19,
+          "n_ud": 39,
+          "product": -1.5277932157857224
+        }
+      },
+      {
+        "atom": "20Ne",
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "B_AME": 160.64486,
+        "kashaev": {
+          "B_pred": 174.0482812330478,
+          "err_pct": 8.34351079334116,
+          "formula": "5\u00b7B(\u2074He) + 10\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
+        },
+        "paper": {
+          "B_pred": 100.45159322520698,
+          "err_pct": -37.469774491877935,
+          "phi_1": -26.826726012161874
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 20,
+          "n_ud": 41,
+          "product": -1.5613626502483493
+        }
+      },
+      {
+        "atom": "24Mg",
+        "Z": 12,
+        "N": 12,
+        "A": 24,
+        "B_AME": 198.2569,
+        "kashaev": {
+          "B_pred": 216.1389059909459,
+          "err_pct": 9.019613436377693,
+          "formula": "6\u00b7B(\u2074He) + 15\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
+        },
+        "paper": {
+          "B_pred": 121.66642798560004,
+          "err_pct": -38.631932615913975,
+          "phi_1": -32.492385871178804
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 24,
+          "n_ud": 49,
+          "product": -1.7031802901277162
+        }
+      },
+      {
+        "atom": "40Ca",
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "B_AME": 342.05212,
+        "kashaev": {
+          "B_pred": 408.771300060167,
+          "err_pct": 19.505559579682476,
+          "formula": "10\u00b7B(\u2074He) + 45\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
+        },
+        "paper": {
+          "B_pred": 206.52576702717212,
+          "err_pct": -39.621550356953755,
+          "phi_1": -55.15502530724649
+        },
+        "rho_f": null,
+        "chi_sym_alt": {
+          "A": 40,
+          "n_ud": 81,
+          "product": -2.4115038966973534
+        }
+      }
+    ],
+    "mean_abs_err_pct": {
+      "kashaev": 6.799563261375073,
+      "paper": 44.728703931014074
+    }
+  },
+  "caveats": [
+    "Paper-formula column (B = \u2212\u03b1\u00b7\u03a6_1) fails for every light atom (+124% on D, \u221245% on \u2074He) \u2014 reproduced here side-by-side so the gap is explicit. Kashaev column with census-assigned knots is the current best zero-parameter predictor (\u2264 20% on A \u2264 40)."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

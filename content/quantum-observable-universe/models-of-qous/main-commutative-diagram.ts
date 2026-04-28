@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:main-commutative-diagram",
-  lean: {
-    decl: "QOU.main_commutative_diagram",
+  lean: { ref: "qou:QOU.main_commutative_diagram",
     validation: "not_checked",
   },
   title: "Main Commutative Diagram",

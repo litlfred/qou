@@ -118,7 +118,7 @@ $H_3(q)$ for all $q$.
 Equivalently, this is the Hopf relation
 ([vertex algebra relations](#rem:vertex-algebra-relations),
 QU-2d): $\mu(S \otimes \mathrm{id})\Delta = \eta\varepsilon$,
-where $S(T_i) = T_i^{-1}$ is the antipode.  The identity
+where $S(\sigma_i) = \sigma_i^{-1}$ is the antipode.  The identity
 $e^- \cdot e^+ = \gamma$ is the Hopf relation evaluated on
 the trefoil.
 

@@ -275,7 +275,9 @@ def main():
     parser.add_argument("--force", nargs="*", metavar="SCRIPT",
                         help="Force rerun of specific scripts + dependents")
     parser.add_argument("--jobs", "-j", type=int, default=1,
-                        help="Number of parallel jobs (default: 1, parallel not yet implemented)")
+                        help="Number of parallel jobs (default: 1). Scripts are "
+                             "grouped into dependency levels and scripts within "
+                             "the same level run concurrently.")
     parser.add_argument("--timeout", type=int, default=300,
                         help="Per-script timeout in seconds (default: 300)")
     parser.add_argument("--list-deps", action="store_true",
@@ -382,23 +384,72 @@ def main():
     failures = 0
     total_time = 0.0
 
-    for i, script in enumerate(run_order, 1):
-        cb = _has_content_block(script)
-        tag = f" [{cb}]" if cb else ""
-        print(f"  [{i}/{len(run_order)}] {script}{tag}...", end=" ", flush=True)
+    if args.jobs <= 1:
+        # Sequential path (original behaviour)
+        for i, script in enumerate(run_order, 1):
+            cb = _has_content_block(script)
+            tag = f" [{cb}]" if cb else ""
+            print(f"  [{i}/{len(run_order)}] {script}{tag}...", end=" ", flush=True)
 
-        ok, elapsed, output = _run_script(script, timeout=args.timeout)
-        total_time += elapsed
+            ok, elapsed, output = _run_script(script, timeout=args.timeout)
+            total_time += elapsed
 
-        if ok:
-            successes += 1
-            print(f"OK ({elapsed:.1f}s)")
-        else:
-            failures += 1
-            print(f"FAILED ({elapsed:.1f}s)")
-            # Show last line of output for diagnosis
-            last_line = output.strip().split("\n")[-1] if output else "(no output)"
-            print(f"         {last_line}")
+            if ok:
+                successes += 1
+                print(f"OK ({elapsed:.1f}s)")
+            else:
+                failures += 1
+                print(f"FAILED ({elapsed:.1f}s)")
+                last_line = output.strip().split("\n")[-1] if output else "(no output)"
+                print(f"         {last_line}")
+    else:
+        # Parallel path: group run_order into dependency levels, then
+        # run each level concurrently.  A script's level is 1 +
+        # max(level(dep) for dep in stale deps); scripts with no stale
+        # deps are at level 0.
+        from concurrent.futures import ProcessPoolExecutor, as_completed
+
+        stale_set = set(run_order)
+        level_of: dict[str, int] = {}
+        for script in run_order:
+            stale_deps = graph.get(script, set()) & stale_set
+            level_of[script] = 1 + max((level_of[d] for d in stale_deps), default=-1)
+
+        levels: dict[int, list[str]] = {}
+        for script, lvl in level_of.items():
+            levels.setdefault(lvl, []).append(script)
+
+        max_level = max(levels)
+        n_workers = min(args.jobs, len(run_order))
+        print(f"  Parallel: {n_workers} workers, {max_level + 1} dependency levels\n")
+
+        done = 0
+        total = len(run_order)
+        with ProcessPoolExecutor(max_workers=n_workers) as ex:
+            for lvl in range(max_level + 1):
+                batch = sorted(levels.get(lvl, []))
+                if not batch:
+                    continue
+                print(f"  Level {lvl}: {len(batch)} scripts")
+                futures = {
+                    ex.submit(_run_script, script, args.timeout): script
+                    for script in batch
+                }
+                for fut in as_completed(futures):
+                    script = futures[fut]
+                    ok, elapsed, output = fut.result()
+                    total_time += elapsed
+                    done += 1
+                    cb = _has_content_block(script)
+                    tag = f" [{cb}]" if cb else ""
+                    if ok:
+                        successes += 1
+                        print(f"  [{done}/{total}] {script}{tag}: OK ({elapsed:.1f}s)")
+                    else:
+                        failures += 1
+                        last_line = output.strip().split("\n")[-1] if output else "(no output)"
+                        print(f"  [{done}/{total}] {script}{tag}: FAILED ({elapsed:.1f}s)")
+                        print(f"         {last_line}")
 
     print(f"\nDone: {successes} ok, {failures} failed, {total_time:.1f}s total")
 

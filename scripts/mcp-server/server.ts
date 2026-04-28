@@ -237,7 +237,76 @@ function listAllFeedback(status?: string): { paperId: string; rootName: string; 
 // ── Content resolution (dynamic, no static JSON) ────────────────
 
 const CONTENT_DIR = resolve(REPO_ROOT, "content");
-const LEAN_DIR = resolve(REPO_ROOT, "lean");
+import {
+  leanPackageByName,
+  parseLeanRef,
+  type ParsedLeanRef,
+} from "../../folio-assistant/schemas/lean-packages.js";
+
+/**
+ * Parse a block's `lean.ref` URI; returns `undefined` on missing or
+ * malformed refs (so callers degrade to sibling-only resolution).
+ */
+function tryParseLeanRef(blk: any): ParsedLeanRef | undefined {
+  const ref = blk?.lean?.ref;
+  if (typeof ref !== "string" || ref.length === 0) return undefined;
+  try {
+    return parseLeanRef(ref);
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * Resolve the Lean source for a block across branch-backed storage.
+ * Mirrors the logic in `folio-assistant/adapters/paper/resolver.ts`
+ * but operates against the MCP server's git helpers.
+ */
+function resolveLeanSource(
+  blk: any,
+  chRel: string,
+  rootName: string,
+  branch: string,
+): string | undefined {
+  if (!blk?.lean) return undefined;
+  const parsed = tryParseLeanRef(blk);
+
+  // 1. sibling .lean file
+  let leanSource = readFileBranch(branch, `${chRel}/${rootName}.lean`) ?? undefined;
+  if (leanSource) return leanSource;
+
+  // 2. package-rooted path derived from parsed ref
+  if (parsed) {
+    const pkg = leanPackageByName(parsed.package);
+    if (pkg) {
+      const parts = parsed.decl.split(".");
+      for (let i = parts.length; i >= 2; i--) {
+        const candidate = `${pkg.lakeRoot}/${parts.slice(0, i).join("/")}.lean`;
+        leanSource = readFileBranch(branch, candidate) ?? undefined;
+        if (leanSource) return leanSource;
+      }
+    }
+  }
+
+  // 3. grep fallback (current branch + disk-backed package only)
+  if (parsed && isCurrentBranch(branch)) {
+    const pkg = leanPackageByName(parsed.package);
+    if (pkg) {
+      try {
+        const leanSrcDir = resolve(REPO_ROOT, pkg.lakeRoot, pkg.lib);
+        if (existsSync(leanSrcDir)) {
+          const result = Bun.spawnSync(["grep", "-rl", parsed.name, leanSrcDir]);
+          const files = result.stdout.toString().trim().split("\n").filter(Boolean);
+          if (files.length > 0 && existsSync(files[0])) {
+            return readFileSync(files[0], "utf-8");
+          }
+        }
+      } catch {}
+    }
+  }
+
+  return undefined;
+}
 
 interface ResolvedRenderedAsset {
   mime: string;
@@ -407,34 +476,7 @@ async function resolvePaper(id: string, branch?: string): Promise<(ResolvedPaper
           const blockTodos = feedback.length ? [...feedback] : undefined;
 
           // Read Lean source if available
-          let leanSource: string | undefined;
-          if (blk.lean) {
-            if (blk.lean.file) {
-              leanSource = readFileBranch(br, `lean/${blk.lean.file}`) ?? undefined;
-            }
-            if (!leanSource) {
-              leanSource = readFileBranch(br, `${chRel}/${rootName}.lean`) ?? undefined;
-            }
-            if (!leanSource && blk.lean.decl) {
-              const parts = blk.lean.decl.split(".");
-              for (let i = parts.length; i >= 2; i--) {
-                const candidate = `lean/${parts.slice(0, i).join("/")}.lean`;
-                leanSource = readFileBranch(br, candidate) ?? undefined;
-                if (leanSource) break;
-              }
-            }
-            // Grep fallback only works for current branch (needs disk access)
-            if (!leanSource && blk.lean.decl && isCurrentBranch(br)) {
-              const declName = blk.lean.decl.split(".").pop() || "";
-              try {
-                const result = Bun.spawnSync(["grep", "-rl", declName, join(LEAN_DIR, "QOU")]);
-                const files = result.stdout.toString().trim().split("\n").filter(Boolean);
-                if (files.length > 0 && existsSync(files[0])) {
-                  leanSource = readFileSync(files[0], "utf-8");
-                }
-              } catch {}
-            }
-          }
+          const leanSource = resolveLeanSource(blk, chRel, rootName, br);
 
           const rendered: ResolvedRenderedAsset[] | undefined = blk.rendered?.map(
             (r: { mime: string; url: string; blockIndex: number; hash?: string }) => ({
@@ -670,7 +712,7 @@ async function resolveChapterDetail(
           label: blk.label,
           title: blk.title,
           status: blk.status,
-          lean: blk.lean ? { decl: blk.lean.decl, file: blk.lean.file, validation: blk.lean.validation } : undefined,
+          lean: blk.lean ? { ref: blk.lean.ref, validation: blk.lean.validation } : undefined,
           todoCount: feedback.filter((t: any) => t.status === "open").length,
         });
       } catch {
@@ -740,33 +782,7 @@ async function resolveSection(
       const feedback = readFeedback(paperId, rootName);
       const blockTodos = feedback.length ? [...feedback] : undefined;
 
-      let leanSource: string | undefined;
-      if (blk.lean) {
-        if (blk.lean.file) {
-          leanSource = readFileBranch(br, `lean/${blk.lean.file}`) ?? undefined;
-        }
-        if (!leanSource) {
-          leanSource = readFileBranch(br, `${chRel}/${rootName}.lean`) ?? undefined;
-        }
-        if (!leanSource && blk.lean.decl) {
-          const parts = blk.lean.decl.split(".");
-          for (let i = parts.length; i >= 2; i--) {
-            const candidate = `lean/${parts.slice(0, i).join("/")}.lean`;
-            leanSource = readFileBranch(br, candidate) ?? undefined;
-            if (leanSource) break;
-          }
-        }
-        if (!leanSource && blk.lean.decl && isCurrentBranch(br)) {
-          const declName = blk.lean.decl.split(".").pop() || "";
-          try {
-            const result = Bun.spawnSync(["grep", "-rl", declName, join(LEAN_DIR, "QOU")]);
-            const files = result.stdout.toString().trim().split("\n").filter(Boolean);
-            if (files.length > 0 && existsSync(files[0])) {
-              leanSource = readFileSync(files[0], "utf-8");
-            }
-          } catch {}
-        }
-      }
+      const leanSource = resolveLeanSource(blk, chRel, rootName, br);
 
       const rendered: ResolvedRenderedAsset[] | undefined = blk.rendered?.map(
         (r: { mime: string; url: string; blockIndex: number; hash?: string }) => ({
@@ -2279,7 +2295,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
                       return JSON.stringify({
                         kind: blk.kind, label: blk.label, title: blk.title,
                         md: (blk.md || "").slice(0, 3000),
-                        lean: blk.lean ? { decl: blk.lean.decl, validation: blk.lean.validation, sorryFree: blk.lean.sorryFree } : null,
+                        lean: blk.lean ? { ref: blk.lean.ref, validation: blk.lean.validation, sorryFree: blk.lean.sorryFree } : null,
                         status: blk.status, uses: blk.uses, tags: blk.tags,
                         chapter: ch.title, section: sec.title,
                       });
@@ -2302,7 +2318,7 @@ async function handlePostRequest(url: URL, req: Request): Promise<Response | nul
                   blocks.push({
                     kind: blk.kind, label: blk.label, title: blk.title,
                     status: blk.status,
-                    lean: blk.lean ? { decl: blk.lean.decl, validation: blk.lean.validation } : null,
+                    lean: blk.lean ? { ref: blk.lean.ref, validation: blk.lean.validation } : null,
                     section: sec.title,
                   });
                 }

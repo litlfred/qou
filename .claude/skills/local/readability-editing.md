@@ -115,6 +115,19 @@ proceeding. Common issues:
 - Non-math environments inside `$$...$$` blocks
 - Malformed macros in ` ```tex ``` ` fenced blocks
 
+## Glossary terms (`:defterm` / `:refterm`)
+
+When polishing prose, do **not** convert `:refterm[…]` directives to
+plain text or `\emph{}`. The directives are the canonical link from
+every mention of a defined term back to its `defines: [...]` block;
+the viewer renders them as a subtle dotted underline, the PDF renders
+them as plain text with an invisible hyperlink, and the validator
+enforces resolution. Plain rephrasing is fine — just keep the wrapper
+intact, e.g. `:refterm[rigid monoidal category]` may move within the
+sentence but should not be unwrapped. New term mentions in edited
+prose should be wrapped via `bun run pipeline/codemod-refterm.ts`
+after editing. See `local/glossary-build` skill.
+
 ## Mandatory fallback participation
 
 This skill is invoked automatically by the editor's **content-change fallback**

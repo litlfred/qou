@@ -30,8 +30,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h
+# z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
+# bootstrap for dev mode; the installed-pyhecke path is preferred.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
 
-z = 1.0 / (q**0.5 + q**(-0.5))  # Markov parameter
+
+z = _PG_Z  # moved to pyhecke.gram
 m_e = 0.51099895  # electron mass in MeV
 
 print(f"q  = {q:.10f}")
@@ -43,14 +49,12 @@ print(f"z  = {z:.10f}")
 #  HECKE ALGEBRA ENGINE (H_3(q), 2 generators sigma_0, sigma_1)
 # ══════════════════════════════════════════════════════════════════
 
-NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
+NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 NF_NAMES = ["gamma", "sigma0", "sigma1", "L+", "L-", "e-"]
 NF_DISPLAY = ["\u03b3", "\u03c3\u2080", "\u03c3\u2081", "L\u208a", "L\u208b", "e\u207b"]
 
 # Markov traces of basis elements
-TR_M = [1.0, z, z, z**2, z**2, z**3]
-
-
+TR_M = list(_PG_TR_M)  # moved to pyhecke.gram
 def hecke_mul(t1, t2):
     """Multiply two elements in the free algebra."""
     result = {}

@@ -33,7 +33,8 @@ from witness_base import WitnessBuilder
 
 VOL_NEUTRON = 13.9484177283
 HA = q0 - 1.0/q0
-z = 1.0 / (q0**0.5 + q0**(-0.5))
+# z moved to pyhecke.gram via M2b inversion — re-import canonically.
+from pyhecke.gram import z  # noqa: E402
 m_n = VOL_NEUTRON / HBAR_Q_SQ
 
 
@@ -226,8 +227,8 @@ def interpolate_f_pauli(Z, N, n_pp, n_nn, n_pn, known_atoms):
 # §4  FULL GRAM MATRIX (small atoms)
 # ══════════════════════════════════════════════════════════════
 
-NF_BASIS_3 = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
-TR_M_3 = [1.0, z, z, z**2, z**2, z**3]
+from pyhecke.gram import NF_BASIS as NF_BASIS_3, TR_M as _TR_M_NATIVE  # noqa: E402
+TR_M_3 = list(_TR_M_NATIVE)  # local mutable-list copy for back-compat
 
 def hecke_mul(t1, t2):
     result = {}

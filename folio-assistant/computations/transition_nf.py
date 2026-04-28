@@ -31,9 +31,17 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from hecke_core import (
-    build_atom_nf_exact, hm_exact, nf_tr, NF_NAMES,
-    _TR_M_FRAC, _H_FRAC, check_frobenius, knot_factor,
-    binding_energy_bw,
+    build_atom_nf_exact,
+    _TR_M_FRAC,
+    _H_FRAC,
+    check_frobenius,
+    knot_factor,
+    binding_energy,
+)
+from pyhecke.gram import (
+    hm_exact,
+    nf_tr,
+    NF_NAMES,
 )
 from witness_base import WitnessBuilder
 
@@ -223,9 +231,9 @@ if __name__ == "__main__":
                 ln_r = math.log(r['tr_ratio'])
                 print(f"  ln|ratio|          = {ln_r:>+.8f}")
 
-        # Q from mass difference (BW)
-        B_par = binding_energy_bw(Z, N, k=11)
-        B_dau = binding_energy_bw(Z+1, N-1, k=11)
+        # Q from mass difference (categorical binding path)
+        B_par = binding_energy(Z, N)
+        B_dau = binding_energy(Z+1, N-1)
         M_par = Z*M_P_MEV + N*M_N_MEV + Z*M_E_MEV - B_par
         if Z == 0:
             M_par = M_N_MEV

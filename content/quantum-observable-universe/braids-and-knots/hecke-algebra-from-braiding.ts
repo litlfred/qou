@@ -11,9 +11,4 @@ export default remark({
     "categorical",
     "groebner-basis",
   ],
-  uses: [
-    "prop:braiding-eigenvalue-extraction",
-    "thm:jones-markov-trace",
-    "def:substrate-parameter",
-  ],
 });

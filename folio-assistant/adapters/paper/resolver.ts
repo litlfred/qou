@@ -22,6 +22,26 @@ import type {
   ChapterDetail,
   SectionStub,
 } from "../../src/types.js";
+import {
+  leanPackageByName,
+  parseLeanRef,
+  type ParsedLeanRef,
+} from "../../schemas/lean-packages.js";
+
+/**
+ * Parse a block's `lean.ref` URI to its components.  Returns
+ * `undefined` when the block has no lean ref, or when parsing fails
+ * (malformed content — logged but non-fatal).
+ */
+function tryParseLeanRef(blk: any): ParsedLeanRef | undefined {
+  const ref = blk?.lean?.ref;
+  if (typeof ref !== "string" || ref.length === 0) return undefined;
+  try {
+    return parseLeanRef(ref);
+  } catch {
+    return undefined;
+  }
+}
 
 export class PaperResolver {
   private outlineCache = new TtlCache<ContentOutline>();
@@ -195,7 +215,7 @@ export class PaperResolver {
             label: blk.label,
             title: blk.title,
             status: blk.status,
-            lean: blk.lean ? { decl: blk.lean.decl, file: blk.lean.file, validation: blk.lean.validation } : undefined,
+            lean: blk.lean ? { ref: blk.lean.ref, validation: blk.lean.validation } : undefined,
             todoCount: feedback.filter((t: any) => t.status === "open").length,
           });
         } catch {
@@ -329,7 +349,6 @@ export class PaperResolver {
   ): Promise<ResolvedBlock[]> {
     const br = branch;
     const blocks: ResolvedBlock[] = [];
-    const leanDir = resolve(this.repoRoot, "lean");
 
     for (const rootName of blockNames) {
       const blkTsRel = `${chRel}/${rootName}.ts`;
@@ -341,36 +360,41 @@ export class PaperResolver {
         const feedback = this.feedbackStore.read(paperId, rootName);
         const blockTodos = feedback.length ? [...feedback] : undefined;
 
-        // Read Lean source if available
+        // Read Lean source if available.  Resolution order:
+        //   1. sibling .lean file (primary authoring convention)
+        //   2. package-rooted path derived from parsed `lean.ref`
+        //      (<lakeRoot>/<Decl/Path>.lean)
+        //   3. grep the package's Lean source dir for the bare name
         let leanSource: string | undefined;
         if (blk.lean) {
-          if (blk.lean.file) {
-            leanSource = this.gitHelper.readFileBranch(br, `lean/${blk.lean.file}`) ?? undefined;
-          }
-          if (!leanSource) {
-            leanSource = this.gitHelper.readFileBranch(br, `${chRel}/${rootName}.lean`) ?? undefined;
-          }
-          if (!leanSource && blk.lean.decl) {
-            const parts = blk.lean.decl.split(".");
-            for (let i = parts.length; i >= 2; i--) {
-              const candidate = `lean/${parts.slice(0, i).join("/")}.lean`;
-              leanSource = this.gitHelper.readFileBranch(br, candidate) ?? undefined;
-              if (leanSource) break;
+          const parsed = tryParseLeanRef(blk);
+          leanSource = this.gitHelper.readFileBranch(br, `${chRel}/${rootName}.lean`) ?? undefined;
+          if (!leanSource && parsed) {
+            const pkg = leanPackageByName(parsed.package);
+            if (pkg) {
+              const parts = parsed.decl.split(".");
+              for (let i = parts.length; i >= 2; i--) {
+                const candidate = `${pkg.lakeRoot}/${parts.slice(0, i).join("/")}.lean`;
+                leanSource = this.gitHelper.readFileBranch(br, candidate) ?? undefined;
+                if (leanSource) break;
+              }
             }
           }
           // Grep fallback for current branch only
-          if (!leanSource && blk.lean.decl && this.gitHelper.isCurrentBranch(br)) {
-            const declName = blk.lean.decl.split(".").pop() || "";
-            try {
-              const leanSrcDir = join(leanDir, "QOU");
-              if (existsSync(leanSrcDir)) {
-                const result = Bun.spawnSync(["grep", "-rl", declName, leanSrcDir]);
-                const files = result.stdout.toString().trim().split("\n").filter(Boolean);
-                if (files.length > 0 && existsSync(files[0])) {
-                  leanSource = readFileSync(files[0], "utf-8");
+          if (!leanSource && parsed && this.gitHelper.isCurrentBranch(br)) {
+            const pkg = leanPackageByName(parsed.package);
+            if (pkg) {
+              try {
+                const leanSrcDir = join(this.repoRoot, pkg.lakeRoot, pkg.lib);
+                if (existsSync(leanSrcDir)) {
+                  const result = Bun.spawnSync(["grep", "-rl", parsed.name, leanSrcDir]);
+                  const files = result.stdout.toString().trim().split("\n").filter(Boolean);
+                  if (files.length > 0 && existsSync(files[0])) {
+                    leanSource = readFileSync(files[0], "utf-8");
+                  }
                 }
-              }
-            } catch {}
+              } catch {}
+            }
           }
         }
 

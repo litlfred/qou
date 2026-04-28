@@ -25,7 +25,7 @@ because:
 2. **Embedding.**  The Laurent polynomial ring
    $\mathbb{Z}[q, q^{-1}]$ embeds into
    $\widehat{\mathbb{Z}[q]}$.  The Hecke algebra
-   $H_n(q) = \mathbb{Z}[q, q^{-1}][B_n] / (\sigma_i^2 -
+   $H_n(R, q) = \mathbb{Z}[q, q^{-1}][B_n] / (\sigma_i^2 -
    H_A\sigma_i - 1)$ and its normal form coefficients
    $c_w \in \mathbb{Z}[q, q^{-1}]$ embed naturally.
 

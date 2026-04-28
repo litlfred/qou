@@ -3,11 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:categorical-mass-markov",
   title: "Categorical mass as Markov trace",
-  uses: [
-    "def:mass-identity",
-    "def:frobenius-pairing",
-    "prop:frobenius-gram-matrix",
-  ],
+  uses: ["prop:frobenius-gram-matrix"],
   tags: [
     "mass",
     "categorical-trace",
@@ -16,8 +12,7 @@ export default proposition({
     "nakayama",
     "hecke-algebra",
   ],
-  lean: {
-    decl: "QOU.CategoricalMassMarkov",
+  lean: { ref: "qou:QOU.CategoricalMassMarkov",
     validation: "not_checked",
   },
 });

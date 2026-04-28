@@ -12,13 +12,8 @@ export default proposition({
     "hecke-algebra",
     "categorical",
   ],
-  lean: {
-    decl: "QOU.braiding_eigenvalue_extraction",
+  lean: { ref: "qou:QOU.braiding_eigenvalue_extraction",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "prop:tannaka-krein-reconstruction",
-    "thm:su2-emergence",
-  ],
+  uses: ["prop:tannaka-krein-reconstruction"],
 });

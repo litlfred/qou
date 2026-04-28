@@ -30,7 +30,12 @@ export const get = {
   CONTENT_DIR: () => resolve(_repoRoot, "content"),
   CHAPTERS_DIR: () => resolve(_repoRoot, "chapters"),
   MAIN_TEX: () => resolve(_repoRoot, "main.tex"),
-  LEAN_DIR: () => resolve(_repoRoot, "lean"),
+  /**
+   * Default Lean workspace directory.  Points at the repo root where
+   * the aggregating `lakefile.toml` lives (see schemas/lean-packages.ts
+   * for per-paper Lake roots).
+   */
+  LEAN_DIR: () => _repoRoot,
   BUILD_DIR: () => resolve(_repoRoot, "build"),
   PREFS_FILE: () => resolve(_repoRoot, ".folio-prefs.json"),
   FEEDBACK_DIR: () => resolve(_repoRoot, ".folio-feedback"),
@@ -45,7 +50,7 @@ export const REPO_ROOT = _repoRoot;
 export const CONTENT_DIR = resolve(_repoRoot, "content");
 export const CHAPTERS_DIR = resolve(_repoRoot, "chapters");
 export const MAIN_TEX = resolve(_repoRoot, "main.tex");
-export const LEAN_DIR = resolve(_repoRoot, "lean");
+export const LEAN_DIR = _repoRoot;
 export const BUILD_DIR = resolve(_repoRoot, "build");
 export const PREFS_FILE = resolve(_repoRoot, ".folio-prefs.json");
 export const FEEDBACK_DIR = resolve(_repoRoot, ".folio-feedback");

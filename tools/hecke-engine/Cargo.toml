@@ -4,10 +4,48 @@ version = "0.8.0"
 edition = "2021"
 description = "Gröbner reduction engine for H_n(q) — nuclear normal forms"
 
+# Joint-tower SDP certificate emitter (R1+R2+R6 of RUST_INTEGRATION.md)
+[[bin]]
+name = "joint-tower-sdp"
+path = "src/bin/joint_tower_sdp.rs"
+
+# R5.5 scaling sanity check (requires Clarabel SDP backend)
+[[bin]]
+name = "r5-5-scale-test"
+path = "src/bin/r5_5_scale_test.rs"
+required-features = ["clarabel-sdp"]
+
+# R5.5 H_5 anomaly diagnostic (requires Clarabel SDP backend)
+[[bin]]
+name = "r5-5-diagnose-h5"
+path = "src/bin/r5_5_diagnose_h5.rs"
+required-features = ["clarabel-sdp"]
+
+# R5.5 minimal H_5 SDP isolation test (requires Clarabel SDP backend)
+[[bin]]
+name = "r5-5-minimal-h5"
+path = "src/bin/r5_5_minimal_h5.rs"
+required-features = ["clarabel-sdp"]
+
+# Per-Wedderburn-block matrix dump for sign-convention audits
+[[bin]]
+name = "dump-block-matrices"
+path = "src/bin/dump_block_matrices.rs"
+
 # Default binary: v8 inductive symbolic chaining (exact in q)
 [[bin]]
 name = "hecke-engine"
 path = "src/bin/v8.rs"
+
+# Gram matrix for H_3(q) — M3 Rust carve-out
+[[bin]]
+name = "hecke-gram"
+path = "src/bin/hecke_gram.rs"
+
+# Unified CLI — M2e — dispatches to subcommands (native Gram, exec for legacy).
+[[bin]]
+name = "hecke"
+path = "src/bin/hecke.rs"
 
 # Float engine for large A where symbolic overflows
 [[bin]]
@@ -39,8 +77,41 @@ num-rational = "0.4"
 num-traits = "0.2"
 num-integer = "0.1"
 rayon = "1.10"
+clap = { version = "4", features = ["derive"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+# Clarabel-rs is feature-gated behind `clarabel-sdp`. Default builds do not
+# pull in OpenBLAS / netlib / gfortran. The R5-full SDP-as-solver path
+# (sdp_solve_canonical_t_w, sdp_recover_canonical, sdp_solver_clarabel) is
+# compiled only when the feature is enabled. The bisection-based α* verifier
+# (sdp_verifier) and the Wedderburn-block PSD evaluator (wedderburn_psd) work
+# without it.
+clarabel = { version = "0.11", features = ["sdp-netlib"], optional = true }
+
+[features]
+default = []
+# Opt-in: enables the Clarabel-rs SDP-as-solver code path. Requires system
+# OpenBLAS + LAPACK + gfortran. Use `cargo build --features clarabel-sdp`.
+clarabel-sdp = ["dep:clarabel"]
 
 [build-dependencies]
+
+# Pin Clarabel-rs to the litlfred fork's bigrational-backend branch.
+#
+# Rationale: upstream PR https://github.com/litlfred/Clarabel.rs/pull/1
+# ships the trait-decoupling and Copy → Clone refactor that QOU needs
+# for the §S8 exact-rational diagnostic, plus the rug-interop feature
+# that lets seminormal_mpfr's rug::Float outputs flow into the solver
+# without an f64 round-trip.  See CLARABEL_PRECISION_PLAN.md.
+#
+# Validated at cf7b5f4 (post-c43b4d7 chordal-decomp Copy fix): 71/71
+# hecke-engine tests pass under `cargo test --features clarabel-sdp`.
+# Same f64 SDP path that 0.11.1 from crates.io carried, just with the
+# extra trait headroom for high-precision T.
+#
+# Will be lifted once the fork merges to its own main and a release
+# is cut on crates.io.
+[patch.crates-io]
+clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "cf7b5f4" }
 
 [profile.release]
 opt-level = 3

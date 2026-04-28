@@ -11,12 +11,7 @@ export default proposition({
     "euler-characteristic",
     "crossing-energy",
   ],
-  lean: {
-    decl: "QOU.Descartes.torus_hopf_stability",
+  lean: { ref: "qou:QOU.Descartes.torus_hopf_stability",
     validation: "not_checked",
   },
-  uses: [
-    "rem:skein-crossing-asymmetry",
-    "def:categorical-neutron",
-  ],
 });

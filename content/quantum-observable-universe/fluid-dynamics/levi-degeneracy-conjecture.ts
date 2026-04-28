@@ -7,11 +7,6 @@ export default conjecture({
   uses: [
     "prop:core-levi-form",
     "prop:root-of-unity-truncation",
-    "prop:vorticity-lower-bound",
-    "thm:q-aubin-lions",
-    "conj:ns-counterexample",
-    "def:quantum-observable-universe",
-    "def:levi-form-defect",
   ],
   tags: [
     "conjecture",

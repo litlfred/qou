@@ -1,0 +1,569 @@
+{
+  "computation": "all-isotopes-chirality-residue-extended",
+  "description": "Chirality-residue framework re-run with extended 56-knot B_3 hyperbolic database (4-10 crossing, channel annotation via Hoefsmit characters at q_0).  Compared to the original 11-knot run, this scans 8- and 10-crossing knot ideals as well, including all 19 std-channel knots in the database.",
+  "computedAt": "2026-04-25T20:21:51.263225+00:00",
+  "q_0": 1.1099785955541805,
+  "database": {
+    "count": 56,
+    "std_channel_count": 19,
+    "word_lengths": [
+      4,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "isotopes": [
+    {
+      "iso": "p (1H)",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "word_length": 9,
+      "n_total_matches": 7,
+      "n_sym_matches": 7,
+      "n_std_matches": 0,
+      "n_alt_matches": 0,
+      "chirality_residue_MeV": 0.0,
+      "std_breakdown": [],
+      "all_matches": [
+        {
+          "start": 0,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 0,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 6,
+          "knot": "5_2",
+          "volume": 2.828122,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        }
+      ],
+      "ame_binding": 0.0
+    },
+    {
+      "iso": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "word_length": 9,
+      "n_total_matches": 10,
+      "n_sym_matches": 9,
+      "n_std_matches": 1,
+      "n_alt_matches": 0,
+      "chirality_residue_MeV": 0.015165770756780378,
+      "std_breakdown": [
+        [
+          3,
+          "6_1",
+          0.015165770756780378
+        ]
+      ],
+      "all_matches": [
+        {
+          "start": 0,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 0,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 8,
+          "knot": "7_7",
+          "volume": 7.6433568,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 6,
+          "knot": "5_2",
+          "volume": 2.828122,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 6,
+          "knot": "6_1",
+          "volume": 3.1639633,
+          "channel": 1
+        }
+      ],
+      "ame_binding": 0.0
+    },
+    {
+      "iso": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "word_length": 13,
+      "n_total_matches": 7,
+      "n_sym_matches": 7,
+      "n_std_matches": 0,
+      "n_alt_matches": 0,
+      "chirality_residue_MeV": 0.0,
+      "std_breakdown": [],
+      "all_matches": [
+        {
+          "start": 0,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 0,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 6,
+          "knot": "5_2",
+          "volume": 2.828122,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        }
+      ],
+      "ame_binding": 2.22456612
+    },
+    {
+      "iso": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "word_length": 17,
+      "n_total_matches": 7,
+      "n_sym_matches": 7,
+      "n_std_matches": 0,
+      "n_alt_matches": 0,
+      "chirality_residue_MeV": 0.0,
+      "std_breakdown": [],
+      "all_matches": [
+        {
+          "start": 0,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 0,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 6,
+          "knot": "5_2",
+          "volume": 2.828122,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        }
+      ],
+      "ame_binding": 8.481798
+    },
+    {
+      "iso": "\u00b3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "word_length": 17,
+      "n_total_matches": 7,
+      "n_sym_matches": 7,
+      "n_std_matches": 0,
+      "n_alt_matches": 0,
+      "chirality_residue_MeV": 0.0,
+      "std_breakdown": [],
+      "all_matches": [
+        {
+          "start": 0,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 0,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 6,
+          "knot": "5_2",
+          "volume": 2.828122,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        }
+      ],
+      "ame_binding": 7.718058
+    },
+    {
+      "iso": "\u2074He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "word_length": 21,
+      "n_total_matches": 7,
+      "n_sym_matches": 7,
+      "n_std_matches": 0,
+      "n_alt_matches": 0,
+      "chirality_residue_MeV": 0.0,
+      "std_breakdown": [],
+      "all_matches": [
+        {
+          "start": 0,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 0,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 6,
+          "knot": "5_2",
+          "volume": 2.828122,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        }
+      ],
+      "ame_binding": 28.29566
+    },
+    {
+      "iso": "\u2076Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "word_length": 29,
+      "n_total_matches": 7,
+      "n_sym_matches": 7,
+      "n_std_matches": 0,
+      "n_alt_matches": 0,
+      "chirality_residue_MeV": 0.0,
+      "std_breakdown": [],
+      "all_matches": [
+        {
+          "start": 0,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 0,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 6,
+          "knot": "5_2",
+          "volume": 2.828122,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        }
+      ],
+      "ame_binding": 31.99405
+    },
+    {
+      "iso": "\u2077Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "word_length": 33,
+      "n_total_matches": 7,
+      "n_sym_matches": 7,
+      "n_std_matches": 0,
+      "n_alt_matches": 0,
+      "chirality_residue_MeV": 0.0,
+      "std_breakdown": [],
+      "all_matches": [
+        {
+          "start": 0,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 0,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 1,
+          "length": 7,
+          "knot": "6_3",
+          "volume": 5.6927297,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        },
+        {
+          "start": 2,
+          "length": 6,
+          "knot": "5_2",
+          "volume": 2.828122,
+          "channel": 0
+        },
+        {
+          "start": 3,
+          "length": 4,
+          "knot": "4_1",
+          "volume": 2.0298832,
+          "channel": 0
+        }
+      ],
+      "ame_binding": 39.24454
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

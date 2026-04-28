@@ -12,13 +12,8 @@ export default proposition({
     "binomial",
     "fixed-point",
   ],
-  lean: {
-    decl: "QOU.Descartes.mobius_golden_fixed_points",
+  lean: { ref: "qou:QOU.Descartes.mobius_golden_fixed_points",
     validation: "not_checked",
   },
-  uses: [
-    "def:picard-lefschetz-thimble",
-    "rem:color-tube-cubic",
-    "prop:descartes-elliptic-curve",
-  ],
+  uses: ["def:picard-lefschetz-thimble"],
 });

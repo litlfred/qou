@@ -1,0 +1,6653 @@
+{
+  "computation": "jsj-verification",
+  "description": "Search SnapPy's LinkExteriors census for hyperbolic link manifolds whose volume matches atomic binding / density targets.  Tests two density hypotheses (m_e, 2m_e).  Identifies candidate JSJ-decomposition link representatives per atom.  The 2m_e density gives match A\u00b78G for doubly-magic atoms at high precision.",
+  "computedAt": "2026-04-20T16:36:07.971344+00:00",
+  "parameters": {
+    "m_e_MeV": 0.51099895,
+    "Catalan_G": 0.915965594177219,
+    "Vol_Borromean_8G": 7.327724753417752
+  },
+  "targets_me_density": [
+    {
+      "atom": "D",
+      "B_AME": 2.22456612,
+      "V_target": 4.353367301439661,
+      "A": 2
+    },
+    {
+      "atom": "T",
+      "B_AME": 8.4817984,
+      "V_target": 16.59846541759039,
+      "A": 3
+    },
+    {
+      "atom": "3He",
+      "B_AME": 7.7180375,
+      "V_target": 15.103822620379164,
+      "A": 3
+    },
+    {
+      "atom": "4He",
+      "B_AME": 28.295674,
+      "V_target": 55.37325272390482,
+      "A": 4
+    },
+    {
+      "atom": "6Li",
+      "B_AME": 32.0,
+      "V_target": 62.62243787389387,
+      "A": 6
+    },
+    {
+      "atom": "12C",
+      "B_AME": 92.161728,
+      "V_target": 180.35600268845954,
+      "A": 12
+    },
+    {
+      "atom": "16O",
+      "B_AME": 127.619,
+      "V_target": 249.74415309463944,
+      "A": 16
+    }
+  ],
+  "targets_2me_density": [
+    {
+      "atom": "D",
+      "B_AME": 2.22456612,
+      "V_target": 2.1766836507198306,
+      "A": 2
+    },
+    {
+      "atom": "T",
+      "B_AME": 8.4817984,
+      "V_target": 8.299232708795195,
+      "A": 3
+    },
+    {
+      "atom": "3He",
+      "B_AME": 7.7180375,
+      "V_target": 7.551911310189582,
+      "A": 3
+    },
+    {
+      "atom": "4He",
+      "B_AME": 28.295674,
+      "V_target": 27.68662636195241,
+      "A": 4
+    },
+    {
+      "atom": "6Li",
+      "B_AME": 32.0,
+      "V_target": 31.311218936946936,
+      "A": 6
+    },
+    {
+      "atom": "12C",
+      "B_AME": 92.161728,
+      "V_target": 90.17800134422977,
+      "A": 12
+    },
+    {
+      "atom": "16O",
+      "B_AME": 127.619,
+      "V_target": 124.87207654731972,
+      "A": 16
+    }
+  ],
+  "matches_me_density_tol_10pct": [
+    {
+      "name": "8_20",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 4.124903251807677,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": -5.2479846935137155
+    },
+    {
+      "name": "9_34",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 14.344581387788965,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.026815076375275
+    },
+    {
+      "name": "9_40",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 15.018342857865118,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.519690645923935
+    },
+    {
+      "name": "9_40",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 15.018342857865118,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.565947870698048
+    },
+    {
+      "name": "9_42",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 4.05686022423682,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": -6.810982319474547
+    },
+    {
+      "name": "9_46",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 4.751701965517899,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": 9.150035742366798
+    },
+    {
+      "name": "9^2_42",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 13.948417728284886,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.649751464475774
+    },
+    {
+      "name": "9^2_50",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 4.415332477453867,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": 1.4233849735976511
+    },
+    {
+      "name": "9^3_12",
+      "crossings": 9,
+      "cusps": 3,
+      "volume": 13.813278440805405,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.5444871275995
+    },
+    {
+      "name": "10_45",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 13.716075984752733,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.18804908205148
+    },
+    {
+      "name": "10_60",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 13.980041535708045,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.440375280591768
+    },
+    {
+      "name": "10_69",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.12650517067015,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.47066291940126
+    },
+    {
+      "name": "10_73",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 13.70688084237152,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.2489286528219
+    },
+    {
+      "name": "10_81",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.492667031583345,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.046363653471435
+    },
+    {
+      "name": "10_83",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.341256139500095,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.048831014806543
+    },
+    {
+      "name": "10_84",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.709898781554164,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.608106892711315
+    },
+    {
+      "name": "10_86",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.258051849186288,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.599713347081432
+    },
+    {
+      "name": "10_87",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.273644598070362,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.496476244289748
+    },
+    {
+      "name": "10_88",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.646649171780131,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.734362917680098
+    },
+    {
+      "name": "10_88",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.646649171780131,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.593967997667999
+    },
+    {
+      "name": "10_89",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.566058923120135,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.2198912278731004
+    },
+    {
+      "name": "10_89",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.566058923120135,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.0603928181551097
+    },
+    {
+      "name": "10_90",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 13.866149863271106,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.194433874230626
+    },
+    {
+      "name": "10_92",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.855350171596802,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.645096443645366
+    },
+    {
+      "name": "10_95",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.04785288458121,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.341902965113281
+    },
+    {
+      "name": "10_95",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.04785288458121,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.37056669165615724
+    },
+    {
+      "name": "10_96",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.177851427724613,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.558706808885274
+    },
+    {
+      "name": "10_96",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.177851427724613,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.49013292334064074
+    },
+    {
+      "name": "10_97",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.852746708375891,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.662333558290756
+    },
+    {
+      "name": "10_98",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.41291902355026,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.574362492159357
+    },
+    {
+      "name": "10_99",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.334344519045011,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.0945917512028895
+    },
+    {
+      "name": "10_101",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.687506837621713,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.756360381217187
+    },
+    {
+      "name": "10_102",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 13.72734329713672,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.113450004273748
+    },
+    {
+      "name": "10_103",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 13.874789569933139,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.13723175474615
+    },
+    {
+      "name": "10_104",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.107126687552338,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.598964764602125
+    },
+    {
+      "name": "10_105",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.181695504612629,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.535547578249766
+    },
+    {
+      "name": "10_105",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.181695504612629,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.5155839431561696
+    },
+    {
+      "name": "10_106",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 13.933018994314386,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.751704025476608
+    },
+    {
+      "name": "10_107",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.35285269701981,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.5043848285548735
+    },
+    {
+      "name": "10_107",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.35285269701981,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.6487884087345936
+    },
+    {
+      "name": "10_109",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.900208603026842,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.3480959255810614
+    },
+    {
+      "name": "10_110",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.777462665072859,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.1607771986540474
+    },
+    {
+      "name": "10_111",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.26502301349321,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.553558380341317
+    },
+    {
+      "name": "10_112",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 14.75588407595318,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.303645594702103
+    },
+    {
+      "name": "10_113",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.473473661468837,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -0.7530320001094275
+    },
+    {
+      "name": "10_113",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.473473661468837,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 9.068241037481739
+    },
+    {
+      "name": "10_114",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.304904343443043,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.793257036740771
+    },
+    {
+      "name": "10_114",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.304904343443043,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.3313300090836961
+    },
+    {
+      "name": "10_115",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.638038056436635,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.23841143051879635
+    },
+    {
+      "name": "10_116",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.423866507314436,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.07655123967762
+    },
+    {
+      "name": "10_116",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.423866507314436,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.1189595175955374
+    },
+    {
+      "name": "10_117",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.125443523976962,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.8497929279181324
+    },
+    {
+      "name": "10_117",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.125443523976962,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.763989019702558
+    },
+    {
+      "name": "10_118",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.545214905676715,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.345469207035739
+    },
+    {
+      "name": "10_118",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.545214905676715,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.922387903986592
+    },
+    {
+      "name": "10_119",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.938694126282645,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.9748933091642673
+    },
+    {
+      "name": "10_119",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 15.938694126282645,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.527551050401055
+    },
+    {
+      "name": "10_120",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.271368282159344,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.9706468471742074
+    },
+    {
+      "name": "10_120",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.271368282159344,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.730133563703554
+    },
+    {
+      "name": "10_121",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.974877032190893,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 2.2677494884653435
+    },
+    {
+      "name": "10_122",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.41082315861028,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.1304795609674436
+    },
+    {
+      "name": "10_122",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 16.41082315861028,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.653442052925184
+    },
+    {
+      "name": "10_123",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 17.085709482982853,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 2.9354765825285374
+    },
+    {
+      "name": "10_125",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 4.611961374497319,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": 5.940093154375945
+    },
+    {
+      "name": "10_132",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 4.056860224236821,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": -6.810982319474526
+    },
+    {
+      "name": "10^2_5",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.099455198336477,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.649756470838862
+    },
+    {
+      "name": "10^2_6",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.09945519833647,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.649756470838909
+    },
+    {
+      "name": "10^2_7",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.640388911025719,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.689161122554998
+    },
+    {
+      "name": "10^2_11",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.390331965426086,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.723907800601324
+    },
+    {
+      "name": "10^2_15",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.95586698615165,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.600431116548006
+    },
+    {
+      "name": "10^2_28",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.705375661527503,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.380556175490934
+    },
+    {
+      "name": "10^2_28",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.705375661527503,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.9827867174279463
+    },
+    {
+      "name": "10^2_29",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.705375661527512,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.380556175490881
+    },
+    {
+      "name": "10^2_29",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.705375661527512,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.982786717428005
+    },
+    {
+      "name": "10^2_32",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.940425154453322,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.9644644645263574
+    },
+    {
+      "name": "10^2_32",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.940425154453322,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.539011911761689
+    },
+    {
+      "name": "10^2_33",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.958831512507572,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.878225871080822
+    },
+    {
+      "name": "10^2_33",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.958831512507572,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.9599629942419962
+    },
+    {
+      "name": "10^2_36",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.110029536389007,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.96731019256755
+    },
+    {
+      "name": "10^2_36",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.110029536389007,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.041095000688554054
+    },
+    {
+      "name": "10^2_37",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.843990490170189,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.34114754836381
+    },
+    {
+      "name": "10^2_38",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.962630289692935,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.855339555449879
+    },
+    {
+      "name": "10^2_38",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.962630289692935,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.9348118965308954
+    },
+    {
+      "name": "10^2_39",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.023396362046936,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.15332989196019
+    },
+    {
+      "name": "10^2_41",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.223244659743786,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.285228322307434
+    },
+    {
+      "name": "10^2_41",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.223244659743786,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.7906742707868478
+    },
+    {
+      "name": "10^2_42",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.707615408720086,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.623224739970708
+    },
+    {
+      "name": "10^2_43",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.30128401555935,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.8150682571916485
+    },
+    {
+      "name": "10^2_43",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.30128401555935,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.3073603957302629
+    },
+    {
+      "name": "10^2_44",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.039558934908502,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.391871136652313
+    },
+    {
+      "name": "10^2_44",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.039558934908502,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.42547960927422956
+    },
+    {
+      "name": "10^2_45",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.426096663787057,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.063115320051838
+    },
+    {
+      "name": "10^2_45",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.426096663787057,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.133725027815523
+    },
+    {
+      "name": "10^2_46",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.99298811185708,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.672444200967451
+    },
+    {
+      "name": "10^2_46",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.99298811185708,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.7338175990794394
+    },
+    {
+      "name": "10^2_47",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.992988111857084,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.67244420096743
+    },
+    {
+      "name": "10^2_47",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.992988111857084,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.7338175990794159
+    },
+    {
+      "name": "10^2_48",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.404120044421392,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.632619129237411
+    },
+    {
+      "name": "10^2_49",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.413823605620253,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.1370562408420035
+    },
+    {
+      "name": "10^2_49",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.413823605620253,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.052467067660167
+    },
+    {
+      "name": "10^2_50",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.300850415686572,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.316350866099052
+    },
+    {
+      "name": "10^2_52",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.960621939960031,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.568949325958345
+    },
+    {
+      "name": "10^2_53",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.21497727903869,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.884903204180774
+    },
+    {
+      "name": "10^2_54",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.226668688806056,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.807496245285542
+    },
+    {
+      "name": "10^2_55",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.126835170763108,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.468478041431935
+    },
+    {
+      "name": "10^2_56",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.84505059189537,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.33412878396339
+    },
+    {
+      "name": "10^2_57",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.84505059189537,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.33412878396339
+    },
+    {
+      "name": "10^2_61",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.323760017556488,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.164670046973139
+    },
+    {
+      "name": "10^2_63",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.32376001755649,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.164670046973128
+    },
+    {
+      "name": "10^2_69",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.026257306114907,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.134388037703307
+    },
+    {
+      "name": "10^2_73",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.775530476258629,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.794410378789195
+    },
+    {
+      "name": "10^2_86",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.66015134324486,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.55831721160708
+    },
+    {
+      "name": "10^2_126",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 4.415332477453865,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": 1.4233849735976105
+    },
+    {
+      "name": "10^2_137",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 17.861698107085523,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 7.610539033062719
+    },
+    {
+      "name": "10^2_140",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.139608354445395,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.789108067779306
+    },
+    {
+      "name": "10^2_140",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.139608354445395,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.23693163621999877
+    },
+    {
+      "name": "10^2_141",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 13.631257130275872,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.749621186072465
+    },
+    {
+      "name": "10^2_142",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.60284268991006,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.316908196426681
+    },
+    {
+      "name": "10^2_143",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.795120084861972,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.0438702391848014
+    },
+    {
+      "name": "10^2_144",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.027951909036744,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.461799443756275
+    },
+    {
+      "name": "10^2_144",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.027951909036744,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.5023278758587215
+    },
+    {
+      "name": "10^2_145",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.287014330687551,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.9010381617147285
+    },
+    {
+      "name": "10^2_145",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.287014330687551,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.212883088690486
+    },
+    {
+      "name": "10^2_147",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.851311284587418,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.501344637626368
+    },
+    {
+      "name": "10^2_147",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 15.851311284587418,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.949003196049773
+    },
+    {
+      "name": "10^2_150",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 16.34324908578382,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.537589924042621
+    },
+    {
+      "name": "10^2_150",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 16.34324908578382,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.20604489708674
+    },
+    {
+      "name": "10^2_151",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 16.352749578790274,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.4803527471865945
+    },
+    {
+      "name": "10^2_151",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 16.352749578790274,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.268946145633143
+    },
+    {
+      "name": "10^2_152",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 16.648733229297484,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.3028461393414264
+    },
+    {
+      "name": "10^2_153",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 16.060804123289344,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.2392229087109086
+    },
+    {
+      "name": "10^2_153",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 16.060804123289344,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.336021859916123
+    },
+    {
+      "name": "10^2_154",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 14.392128241164029,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.712014945507014
+    },
+    {
+      "name": "10^2_155",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 17.39495866770928,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.798595714003762
+    },
+    {
+      "name": "10^2_156",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 16.712674164004188,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.6880681047343334
+    },
+    {
+      "name": "10^3_2",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 14.603060753375448,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.315464433010831
+    },
+    {
+      "name": "10^3_5",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 13.939685680165704,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.7075649620164555
+    },
+    {
+      "name": "10^3_6",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 13.939685680165706,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.707564962016443
+    },
+    {
+      "name": "10^3_10",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 14.323760017556486,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.164670046973152
+    },
+    {
+      "name": "10^3_25",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.48290563099465,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.720860986422967
+    },
+    {
+      "name": "10^3_25",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.48290563099465,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.5098481367491625
+    },
+    {
+      "name": "10^3_26",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.415698542044128,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.125760398866832
+    },
+    {
+      "name": "10^3_26",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.415698542044128,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.0648807226069916
+    },
+    {
+      "name": "10^3_30",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.413823605620252,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.137056240842013
+    },
+    {
+      "name": "10^3_30",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.413823605620252,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.0524670676601553
+    },
+    {
+      "name": "10^3_31",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.045648467262877,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.3551838152574
+    },
+    {
+      "name": "10^3_31",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.045648467262877,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.38516178704187226
+    },
+    {
+      "name": "10^3_32",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 14.300850415686577,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.316350866099017
+    },
+    {
+      "name": "10^3_35",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 14.126835170763107,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.468478041431947
+    },
+    {
+      "name": "10^3_36",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 13.913057344712668,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.883866922932678
+    },
+    {
+      "name": "10^3_42",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 13.64038891102573,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.689161122554928
+    },
+    {
+      "name": "10^3_43",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 14.390331965426089,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.7239078006013
+    },
+    {
+      "name": "10^3_45",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 13.775530476258632,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.79441037878917
+    },
+    {
+      "name": "10^3_47",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 13.955866986151651,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.600431116547996
+    },
+    {
+      "name": "10^3_72",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 14.357689025686605,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.940031496965686
+    },
+    {
+      "name": "10^3_73",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.863744309648155,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.426439971755504
+    },
+    {
+      "name": "10^3_73",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.863744309648155,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.031320271489746
+    },
+    {
+      "name": "10^3_74",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.550914382788047,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.311131833260862
+    },
+    {
+      "name": "10^3_74",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 15.550914382788047,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.9601232326817364
+    },
+    {
+      "name": "10^4_2",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 13.939685680165706,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.707564962016443
+    },
+    {
+      "name": "10^4_6",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 14.603060753375443,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.3154644330108667
+    },
+    {
+      "name": "10^4_12",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 15.41569854204413,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.125760398866822
+    },
+    {
+      "name": "10^4_12",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 15.41569854204413,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.0648807226070036
+    },
+    {
+      "name": "10^4_13",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 15.482905630994647,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.720860986422979
+    },
+    {
+      "name": "10^4_13",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 15.482905630994647,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.509848136749151
+    },
+    {
+      "name": "10^4_17",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 17.47714081751427,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 5.293714676735699
+    },
+    {
+      "name": "10^5_1",
+      "crossings": 10,
+      "cusps": 5,
+      "volume": 14.60306075337545,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.3154644330108196
+    },
+    {
+      "name": "11_1",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.406572220885,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.1560899871022374
+    },
+    {
+      "name": "11_1",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.406572220885,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.625297272414151
+    },
+    {
+      "name": "11_2",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.029959321174154,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.425052148578483
+    },
+    {
+      "name": "11_2",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.029959321174154,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.131803345898537
+    },
+    {
+      "name": "11_4",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.653272822199742,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.9830183358450433
+    },
+    {
+      "name": "11_8",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.434139496040869,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.4338651291806785
+    },
+    {
+      "name": "11_9",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.759047108094851,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.903544129747957
+    },
+    {
+      "name": "11_10",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.58812850592119,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -0.0622763093402883
+    },
+    {
+      "name": "11_10",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.58812850592119,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 9.827352471282959
+    },
+    {
+      "name": "11_11",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.115583196511636,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.542975567881233
+    },
+    {
+      "name": "11_12",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.550029807478781,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.316461092846081
+    },
+    {
+      "name": "11_12",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.550029807478781,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.9542666006787055
+    },
+    {
+      "name": "11_16",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.890229068153792,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.035009300148326
+    },
+    {
+      "name": "11_18",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.101276406227342,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.9953914344162618
+    },
+    {
+      "name": "11_18",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.101276406227342,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.603982388553355
+    },
+    {
+      "name": "11_19",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.938969379852718,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.712307472114656
+    },
+    {
+      "name": "11_20",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.171449195945174,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.597278035913616
+    },
+    {
+      "name": "11_20",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.171449195945174,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.44774476810104397
+    },
+    {
+      "name": "11_26",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.128809655005975,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.85416648834857
+    },
+    {
+      "name": "11_26",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.128809655005975,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.1654351699886674
+    },
+    {
+      "name": "11_27",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.802997286684294,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.61255700884426
+    },
+    {
+      "name": "11_28",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.345537120333063,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.548458642023157
+    },
+    {
+      "name": "11_28",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.345537120333063,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.6003531425730606
+    },
+    {
+      "name": "11_30",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.085633034982461,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.7412708093041855
+    },
+    {
+      "name": "11_34",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.682565842103921,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.517977430105286
+    },
+    {
+      "name": "11_34",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.682565842103921,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.8317665419605436
+    },
+    {
+      "name": "11_36",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.686109321986866,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.7656131092845966
+    },
+    {
+      "name": "11_42",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.90055814975586,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 7.844657318655276
+    },
+    {
+      "name": "11_43",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.78626539764994,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 7.156083108747927
+    },
+    {
+      "name": "11_44",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.404693681296045,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.192060869851456
+    },
+    {
+      "name": "11_44",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.404693681296045,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.9920192952406917
+    },
+    {
+      "name": "11_45",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.794506070606039,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.843576359368424
+    },
+    {
+      "name": "11_45",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.794506070606039,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.5729049366281265
+    },
+    {
+      "name": "11_46",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.855928808939648,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.5511276788058306
+    },
+    {
+      "name": "11_47",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.923490269710864,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.9581620586203485
+    },
+    {
+      "name": "11_48",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.762311999083124,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.881927807374918
+    },
+    {
+      "name": "11_49",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.4828434379697,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.111404099592602
+    },
+    {
+      "name": "11_53",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.900558149755856,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 7.844657318655256
+    },
+    {
+      "name": "11_54",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.404693681296045,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.192060869851456
+    },
+    {
+      "name": "11_54",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.404693681296045,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.9920192952406917
+    },
+    {
+      "name": "11_55",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.85592880893965,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.5511276788058521
+    },
+    {
+      "name": "11_56",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.76231199908312,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.881927807374941
+    },
+    {
+      "name": "11_59",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.745582495486055,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.886329393678502
+    },
+    {
+      "name": "11_60",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.971328015071261,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.7782854423066925
+    },
+    {
+      "name": "11_60",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.971328015071261,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.743614821863682
+    },
+    {
+      "name": "11_61",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.22549777128613,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.247000773390802
+    },
+    {
+      "name": "11_61",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.22549777128613,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.426432229106823
+    },
+    {
+      "name": "11_62",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.073479231775377,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.162859774124986
+    },
+    {
+      "name": "11_62",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.073479231775377,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.4199417310944975
+    },
+    {
+      "name": "11_63",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.57991308450174,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.468721455789129
+    },
+    {
+      "name": "11_65",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.786265397649938,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 7.156083108747905
+    },
+    {
+      "name": "11_66",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.794506070606042,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.843576359368402
+    },
+    {
+      "name": "11_66",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.794506070606042,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.57290493662815
+    },
+    {
+      "name": "11_67",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.923490269710864,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.9581620586203485
+    },
+    {
+      "name": "11_68",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.482843437969693,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.111404099592649
+    },
+    {
+      "name": "11_70",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.347702028537018,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.513890845310418
+    },
+    {
+      "name": "11_71",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.812759554383764,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.2910478854646006
+    },
+    {
+      "name": "11_72",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.778822443984378,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.0865885601861305
+    },
+    {
+      "name": "11_73",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.52396800224625,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 5.575832231304039
+    },
+    {
+      "name": "11_74",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.452295801789344,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -0.8806212630123109
+    },
+    {
+      "name": "11_74",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.452295801789344,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.928025807127279
+    },
+    {
+      "name": "11_75",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.209201200886056,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.679471372386228
+    },
+    {
+      "name": "11_76",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.347783794976955,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.514383459765308
+    },
+    {
+      "name": "11_77",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.43351086978286,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 5.030859366719066
+    },
+    {
+      "name": "11_78",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.235275629408342,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.836560765087875
+    },
+    {
+      "name": "11_79",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.871402074289907,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.6443487384699438
+    },
+    {
+      "name": "11_80",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.172988973300384,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.4613052547685372
+    },
+    {
+      "name": "11_81",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.65594885440087,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.34631777916987555
+    },
+    {
+      "name": "11_82",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.98051320458214,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 2.3017054732473814
+    },
+    {
+      "name": "11_83",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.38730937548611,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.752511380116721
+    },
+    {
+      "name": "11_84",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.516124159948205,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -0.49607753229357276
+    },
+    {
+      "name": "11_84",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.516124159948205,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 9.350623183719481
+    },
+    {
+      "name": "11_85",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.050967326835266,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.2984861972535535
+    },
+    {
+      "name": "11_85",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.050967326835266,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.270893999894746
+    },
+    {
+      "name": "11_86",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.266319990845155,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.0010610522659573
+    },
+    {
+      "name": "11_86",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.266319990845155,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.696709632285176
+    },
+    {
+      "name": "11_87",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.01921125897294,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 2.5348478356117288
+    },
+    {
+      "name": "11_88",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.82425572386107,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.3603083212222624
+    },
+    {
+      "name": "11_89",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.211130062470712,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.33356123819251
+    },
+    {
+      "name": "11_89",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.211130062470712,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.3313059211744775
+    },
+    {
+      "name": "11_90",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.50318387929626,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.5986915702062054
+    },
+    {
+      "name": "11_90",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.50318387929626,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.6441071836890457
+    },
+    {
+      "name": "11_91",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.945556307266289,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.958204380583364
+    },
+    {
+      "name": "11_91",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.945556307266289,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.047856010301201
+    },
+    {
+      "name": "11_92",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.150985430616444,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.695911794952588
+    },
+    {
+      "name": "11_92",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.150985430616444,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.933097908766306
+    },
+    {
+      "name": "11_93",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.49266056632484,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.662090882773186
+    },
+    {
+      "name": "11_93",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.49266056632484,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.5744340073288994
+    },
+    {
+      "name": "11_94",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.158231913064593,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.652254250319156
+    },
+    {
+      "name": "11_94",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.158231913064593,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.981075712996951
+    },
+    {
+      "name": "11_95",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.990635806847521,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.6619626902298745
+    },
+    {
+      "name": "11_95",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.990635806847521,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.871448630969786
+    },
+    {
+      "name": "11_96",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.508928468397366,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.56408241233178
+    },
+    {
+      "name": "11_96",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.508928468397366,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.6821411916715983
+    },
+    {
+      "name": "11_97",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.689751256956207,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.741500438864149
+    },
+    {
+      "name": "11_98",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.099793871142545,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.0043231943561053
+    },
+    {
+      "name": "11_98",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.099793871142545,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.594166760271301
+    },
+    {
+      "name": "11_99",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.879937782718795,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.3288799102483795
+    },
+    {
+      "name": "11_99",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.879937782718795,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.138534673284894
+    },
+    {
+      "name": "11_100",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.718146009391537,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.303619256668904
+    },
+    {
+      "name": "11_100",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.718146009391537,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.067337153334175
+    },
+    {
+      "name": "11_101",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.181710354363792,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.535458113646923
+    },
+    {
+      "name": "11_101",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.181710354363792,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.5156822609895887
+    },
+    {
+      "name": "11_102",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.641350473979552,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.766285735044675
+    },
+    {
+      "name": "11_102",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.641350473979552,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.5588861648515144
+    },
+    {
+      "name": "11_103",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.801059170683704,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.804096203144337
+    },
+    {
+      "name": "11_103",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.801059170683704,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.616291966801691
+    },
+    {
+      "name": "11_104",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.27978244628627,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.9199544252229073
+    },
+    {
+      "name": "11_104",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.27978244628627,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.785842402044735
+    },
+    {
+      "name": "11_105",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.858247662167654,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.45955536731897
+    },
+    {
+      "name": "11_105",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.858247662167654,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.994927845422163
+    },
+    {
+      "name": "11_106",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.740275150778096,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.8543544816945674
+    },
+    {
+      "name": "11_107",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.702891258352444,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.6291294895935879
+    },
+    {
+      "name": "11_108",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.23534160315467,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.187695098914966
+    },
+    {
+      "name": "11_108",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.23534160315467,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.491606669484971
+    },
+    {
+      "name": "11_109",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.942348557276857,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.9528766292949395
+    },
+    {
+      "name": "11_109",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.942348557276857,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.551746455008635
+    },
+    {
+      "name": "11_110",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.34175431844945,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.0455326514592205
+    },
+    {
+      "name": "11_112",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.700257744524873,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.6719386608114215
+    },
+    {
+      "name": "11_113",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.416026261413435,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.5537899659765895
+    },
+    {
+      "name": "11_114",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.855496302154709,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.6441289365342222
+    },
+    {
+      "name": "11_115",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.813876118504986,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.9196895326548762
+    },
+    {
+      "name": "11_117",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.30931988647311,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.7420015877543498
+    },
+    {
+      "name": "11_117",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.30931988647311,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.981405081303065
+    },
+    {
+      "name": "11_118",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.693360009362655,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.717607464898877
+    },
+    {
+      "name": "11_120",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.59771414582814,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.029179484879928
+    },
+    {
+      "name": "11_120",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.59771414582814,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.2699769976282855
+    },
+    {
+      "name": "11_122",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.72391327486757,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.5153191682679923
+    },
+    {
+      "name": "11_123",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.84396244803644,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.545618830246551
+    },
+    {
+      "name": "11_123",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.84396244803644,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.900347721633233
+    },
+    {
+      "name": "11_125",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.065955176093672,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.232842934218635
+    },
+    {
+      "name": "11_125",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.065955176093672,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.25071430747868284
+    },
+    {
+      "name": "11_126",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.261766027379572,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.575122365800487
+    },
+    {
+      "name": "11_127",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.944980440697456,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.961673777026617
+    },
+    {
+      "name": "11_127",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.944980440697456,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.0516687309832835
+    },
+    {
+      "name": "11_128",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.175511491739904,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.5481507790609133
+    },
+    {
+      "name": "11_128",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.175511491739904,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.095481046730119
+    },
+    {
+      "name": "11_129",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.64209587287467,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.677859600471125
+    },
+    {
+      "name": "11_130",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.119127069594985,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.9125007088165
+    },
+    {
+      "name": "11_130",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.119127069594985,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.10132831668170322
+    },
+    {
+      "name": "11_132",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.796811542004292,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.653511837535477
+    },
+    {
+      "name": "11_134",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.05466650525514,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.276199929657083
+    },
+    {
+      "name": "11_134",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.05466650525514,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.295385670068895
+    },
+    {
+      "name": "11_136",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.770315231033358,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.2080992191725963
+    },
+    {
+      "name": "11_138",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.371680340914773,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.390954801011416
+    },
+    {
+      "name": "11_138",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.371680340914773,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.7734432353184306
+    },
+    {
+      "name": "11_140",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.888259940423856,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.048046580705892
+    },
+    {
+      "name": "11_142",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.484062342955655,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.713892197851829
+    },
+    {
+      "name": "11_142",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.484062342955655,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.517506542108379
+    },
+    {
+      "name": "11_144",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.23678351004818,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.740527627496843
+    },
+    {
+      "name": "11_148",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.401588530276976,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.2107683282878146
+    },
+    {
+      "name": "11_148",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.401588530276976,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.9714605857198368
+    },
+    {
+      "name": "11_150",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.242241842746202,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.704388877491554
+    },
+    {
+      "name": "11_152",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.894562005210418,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.006321615146124
+    },
+    {
+      "name": "11_156",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.533600877803808,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.775347187975922
+    },
+    {
+      "name": "11_157",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.331632718441002,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.632227843224889
+    },
+    {
+      "name": "11_157",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.331632718441002,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.5082943158671622
+    },
+    {
+      "name": "11_158",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.501228095339096,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.610474490542274
+    },
+    {
+      "name": "11_158",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.501228095339096,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.631158250122216
+    },
+    {
+      "name": "11_159",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.718339340856033,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.302454501616963
+    },
+    {
+      "name": "11_159",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.718339340856033,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.06861717011771
+    },
+    {
+      "name": "11_161",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.115872998761477,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.932105357509261
+    },
+    {
+      "name": "11_161",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.115872998761477,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.07978363282718409
+    },
+    {
+      "name": "11_163",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.759070548604013,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.903388933876347
+    },
+    {
+      "name": "11_164",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.013139269638074,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.2212404644468045
+    },
+    {
+      "name": "11_165",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.65465276887948,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.594722395272044
+    },
+    {
+      "name": "11_166",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.159719398074616,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.667946001749344
+    },
+    {
+      "name": "11_166",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.159719398074616,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.370083647698774
+    },
+    {
+      "name": "11_167",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.694316644041994,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.4471829220442
+    },
+    {
+      "name": "11_167",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.694316644041994,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.9095667269429693
+    },
+    {
+      "name": "11_168",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.643874841716846,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.751077294542585
+    },
+    {
+      "name": "11_168",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.643874841716846,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.5755996009182764
+    },
+    {
+      "name": "11_170",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.118084339372826,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.918782796924797
+    },
+    {
+      "name": "11_170",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.118084339372826,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.09442456623146055
+    },
+    {
+      "name": "11_172",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.458045652190908,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.275586283150119
+    },
+    {
+      "name": "11_174",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.348780631418819,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.999012554223114
+    },
+    {
+      "name": "11_176",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.184622438704022,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.085877759414967
+    },
+    {
+      "name": "11_183",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.457919930037262,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.276418669472481
+    },
+    {
+      "name": "11_190",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 4.124903251807676,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": -5.247984693513736
+    },
+    {
+      "name": "11_192",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.87903506619564,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.109123001292092
+    },
+    {
+      "name": "11_193",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.597714145828139,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.029179484879939
+    },
+    {
+      "name": "11_193",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.597714145828139,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.269976997628274
+    },
+    {
+      "name": "11_195",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.735401221111388,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.439259308902868
+    },
+    {
+      "name": "11_199",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.735401221111387,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.43925930890288
+    },
+    {
+      "name": "11_203",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.720439897033446,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.15915631503219
+    },
+    {
+      "name": "11_206",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.306360953050355,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.2798664773301605
+    },
+    {
+      "name": "11_207",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.138071558440254,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.798366730953747
+    },
+    {
+      "name": "11_207",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.138071558440254,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.22675675504079904
+    },
+    {
+      "name": "11_209",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.144410355469116,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.352115547328661
+    },
+    {
+      "name": "11_211",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.717000807807741,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.561085509899296
+    },
+    {
+      "name": "11_213",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.608420466033966,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.900819096799337
+    },
+    {
+      "name": "11_215",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.730539083706987,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.092291211227844
+    },
+    {
+      "name": "11_217",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.685443775558165,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.770019586011906
+    },
+    {
+      "name": "11_219",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.916185167732763,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.2423176394645081
+    },
+    {
+      "name": "11_221",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.318275947823762,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.200979197779279
+    },
+    {
+      "name": "11_223",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.890330834498453,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.03433552141549
+    },
+    {
+      "name": "11_224",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.964433686350336,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.543712361210349
+    },
+    {
+      "name": "11_226",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.974151270321066,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.785929641109718
+    },
+    {
+      "name": "11_226",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.974151270321066,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.8585333217773377
+    },
+    {
+      "name": "11_228",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.730082559061659,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.095313788073469
+    },
+    {
+      "name": "11_230",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.033412938935843,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.087011734360858
+    },
+    {
+      "name": "11_234",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.540585871724732,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.729100657567793
+    },
+    {
+      "name": "11_235",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.871122021685103,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.5406735403531853
+    },
+    {
+      "name": "11_236",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.647347922717621,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.0222461500947073
+    },
+    {
+      "name": "11_238",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.011642941108484,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.231147416926315
+    },
+    {
+      "name": "11_240",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.701418247174404,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.285095624153685
+    },
+    {
+      "name": "11_276",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 4.769889602307673,
+      "matches_target": "D",
+      "target_value": 4.353367301439661,
+      "err_pct": 9.567818932490896
+    },
+    {
+      "name": "11_280",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.794814974655091,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.666730791434649
+    },
+    {
+      "name": "11_285",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.802124626531734,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.618334752495606
+    },
+    {
+      "name": "11_290",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.083546034347084,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.755088507563972
+    },
+    {
+      "name": "11_293",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.699052547767135,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.300758542520306
+    },
+    {
+      "name": "11_295",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.763389316226139,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.2539545961940015
+    },
+    {
+      "name": "11_297",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.372309462698745,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.843231915961521
+    },
+    {
+      "name": "11_299",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.610151438655157,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.2685181369775274
+    },
+    {
+      "name": "11_305",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.606648536934417,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.912550756684949
+    },
+    {
+      "name": "11_307",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.998338232360638,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 2.409095086263087
+    },
+    {
+      "name": "11_312",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.397157762793517,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.237462166374578
+    },
+    {
+      "name": "11_312",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.397157762793517,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.9421251810688256
+    },
+    {
+      "name": "11_318",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.798872857723243,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.0190237287642736
+    },
+    {
+      "name": "11_319",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.208721520757893,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.926321581753329
+    },
+    {
+      "name": "11_321",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.94861280640158,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 2.109516633026321
+    },
+    {
+      "name": "11_322",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.27731814192916,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.089852328272168
+    },
+    {
+      "name": "11_324",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.248340824689038,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.109379295572132
+    },
+    {
+      "name": "11_324",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.248340824689038,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.5776724414494065
+    },
+    {
+      "name": "11_326",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.202035310851812,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.6362993691078405
+    },
+    {
+      "name": "11_327",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.914594038081308,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.9045653470826145
+    },
+    {
+      "name": "11_328",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.509948786228488,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 5.491371314797238
+    },
+    {
+      "name": "11_330",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.006779542378055,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.5647022801595236
+    },
+    {
+      "name": "11_330",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.006779542378055,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.978333728446708
+    },
+    {
+      "name": "11_331",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.23323817258136,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.2003675389290964
+    },
+    {
+      "name": "11_331",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.23323817258136,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.477680191227261
+    },
+    {
+      "name": "11_334",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.428298344055598,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.025197626730333
+    },
+    {
+      "name": "11_334",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.428298344055598,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.769142467876682
+    },
+    {
+      "name": "11_335",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.609804226058221,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.891657442435173
+    },
+    {
+      "name": "11_336",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.736367876098694,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.193838826679
+    },
+    {
+      "name": "11_336",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.736367876098694,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.187981225799446
+    },
+    {
+      "name": "11_337",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.41868437810758,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.536190999403996
+    },
+    {
+      "name": "11_338",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.302280302196078,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.240240690321967
+    },
+    {
+      "name": "11_339",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.246192207569706,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.9023293640921843
+    },
+    {
+      "name": "11_340",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.087970760406524,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 2.9490999950957866
+    },
+    {
+      "name": "11_341",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.23495329969803,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.190034492629201
+    },
+    {
+      "name": "11_341",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.23495329969803,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.4890357742460765
+    },
+    {
+      "name": "11_342",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.349486764771143,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.524643262411781
+    },
+    {
+      "name": "11_343",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.410593106075012,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.892787785212734
+    },
+    {
+      "name": "11_344",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.73216092494533,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.805469083986852
+    },
+    {
+      "name": "11_345",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.098517192506314,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.0126385923965566
+    },
+    {
+      "name": "11_346",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.374160315799198,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.6732928538487535
+    },
+    {
+      "name": "11_347",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.285519785743062,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.139264389011287
+    },
+    {
+      "name": "11_348",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.60859721119682,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.06104054411977462
+    },
+    {
+      "name": "11_348",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.60859721119682,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 9.962872503463496
+    },
+    {
+      "name": "11_349",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.279532892814473,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.103195434575023
+    },
+    {
+      "name": "11_350",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.55836278059612,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 5.7830488473257855
+    },
+    {
+      "name": "11_351",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.709206264876727,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 6.691828547651268
+    },
+    {
+      "name": "11_352",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.74395185331582,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.8765053398927478
+    },
+    {
+      "name": "11_354",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.808950980842884,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.2681025501877397
+    },
+    {
+      "name": "11_355",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.772817129313657,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.974244711813806
+    },
+    {
+      "name": "11_355",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.772817129313657,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.4293059164495014
+    },
+    {
+      "name": "11_356",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.745222405336897,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.140493357592326
+    },
+    {
+      "name": "11_356",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.745222405336897,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.246605651289294
+    },
+    {
+      "name": "11_357",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.31103257622665,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.756336558675904
+    },
+    {
+      "name": "11_357",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.31103257622665,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.3719040606839674
+    },
+    {
+      "name": "11_358",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.033930564528765,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.425780117019695
+    },
+    {
+      "name": "11_358",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.033930564528765,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.46274415164341154
+    },
+    {
+      "name": "11_359",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.509156601723902,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.56270798812571
+    },
+    {
+      "name": "11_359",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.509156601723902,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.6836516260316237
+    },
+    {
+      "name": "11_360",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.41597615555035,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.554121708902501
+    },
+    {
+      "name": "11_361",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.25831555190472,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.049285022006876
+    },
+    {
+      "name": "11_361",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.25831555190472,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.643713519038749
+    },
+    {
+      "name": "11_362",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.368944111951155,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.3827862990032644
+    },
+    {
+      "name": "11_362",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.368944111951155,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.376167566116658
+    },
+    {
+      "name": "11_363",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.677831156381105,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -5.546502270225738
+    },
+    {
+      "name": "11_363",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.677831156381105,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 3.800418943131966
+    },
+    {
+      "name": "11_364",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.34297558818083,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.5392376522880287
+    },
+    {
+      "name": "11_364",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.34297558818083,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.204234113089443
+    },
+    {
+      "name": "11_365",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.1442993652083,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.7361930211981025
+    },
+    {
+      "name": "11_365",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.1442993652083,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.888830536352108
+    },
+    {
+      "name": "11_366",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.040928301153635,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.3589678467860034
+    },
+    {
+      "name": "11_366",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.040928301153635,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.20442721242012
+    },
+    {
+      "name": "11_367",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.060550596026243,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.2407503225815475
+    },
+    {
+      "name": "11_367",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.060550596026243,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.334343296353284
+    },
+    {
+      "name": "11_368",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.43358683379288,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -0.9933363094083264
+    },
+    {
+      "name": "11_368",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.43358683379288,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.804156714734603
+    },
+    {
+      "name": "11_369",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.919292821984724,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.091779441766379
+    },
+    {
+      "name": "11_369",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.919292821984724,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 5.399098109807441
+    },
+    {
+      "name": "11_370",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.459423221656472,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -0.8376810291544573
+    },
+    {
+      "name": "11_370",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.459423221656472,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.975215317003485
+    },
+    {
+      "name": "11_371",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.509489266841824,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.560703796114266
+    },
+    {
+      "name": "11_371",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.509489266841824,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.685854148706069
+    },
+    {
+      "name": "11_372",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.288219728155415,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.8691227268888906
+    },
+    {
+      "name": "11_372",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.288219728155415,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 7.841704299269094
+    },
+    {
+      "name": "11_374",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.412592237986232,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.576526087245455
+    },
+    {
+      "name": "11_375",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.215956919002107,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.878417164268635
+    },
+    {
+      "name": "11_380",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.006522091919852,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.265051742455951
+    },
+    {
+      "name": "11_381",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.14874651803813,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -2.7094004670797163
+    },
+    {
+      "name": "11_381",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.14874651803813,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.918274425767422
+    },
+    {
+      "name": "11_382",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.30902758356007,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -7.76841594442716
+    },
+    {
+      "name": "11_382",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.30902758356007,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.3586293241025524
+    },
+    {
+      "name": "11_383",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.18099415517305,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.53977296548849
+    },
+    {
+      "name": "11_383",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.18099415517305,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.510940420405627
+    },
+    {
+      "name": "11_384",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.01321701380706,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -9.550572079412518
+    },
+    {
+      "name": "11_384",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.01321701380706,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -0.5998852664613062
+    },
+    {
+      "name": "11_386",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.787316799107264,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.095534549279248
+    },
+    {
+      "name": "11_388",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.747062872706824,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.3620493741165522
+    },
+    {
+      "name": "11_389",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.816873296615691,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.708821576640443
+    },
+    {
+      "name": "11_389",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.816873296615691,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.720994771710493
+    },
+    {
+      "name": "11_390",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.251236707077513,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.9327207248649785
+    },
+    {
+      "name": "11_392",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.629488169605356,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 6.211554659277895
+    },
+    {
+      "name": "11_393",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.89357303436226,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 7.802574419918155
+    },
+    {
+      "name": "11_396",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.551461373552243,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 5.741470262376824
+    },
+    {
+      "name": "11_397",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.77901237307582,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 7.112386150073443
+    },
+    {
+      "name": "11_398",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.344209674125494,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.492850620665176
+    },
+    {
+      "name": "11_399",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.99787522891075,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 8.430958983939094
+    },
+    {
+      "name": "11_404",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.496953054198931,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.017986581498918
+    },
+    {
+      "name": "11_405",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 18.245033900455038,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 9.920004298226754
+    },
+    {
+      "name": "11_411",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 18.071119407786018,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 8.87222977031942
+    },
+    {
+      "name": "11_412",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 18.047143140239143,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 8.727781070131355
+    },
+    {
+      "name": "11_413",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.368174879596767,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.870606331074152
+    },
+    {
+      "name": "11_415",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.656358537179962,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 6.373439308843933
+    },
+    {
+      "name": "11_416",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.534484871789804,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.7694944048215238
+    },
+    {
+      "name": "11_418",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.430491161491307,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 5.01266667109581
+    },
+    {
+      "name": "11_419",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.98207661095283,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.426901372059236
+    },
+    {
+      "name": "11_420",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.69722281062036,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 6.619632390025353
+    },
+    {
+      "name": "11_421",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.195407328297156,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.014472725972754
+    },
+    {
+      "name": "11_423",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.301767109764839,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.310281580850494
+    },
+    {
+      "name": "11_424",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.69193488610381,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 6.587774477962305
+    },
+    {
+      "name": "11_425",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.64937246936708,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.30669733915727426
+    },
+    {
+      "name": "11_426",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.739268147269037,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 6.872940967600957
+    },
+    {
+      "name": "11_428",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.307403387703275,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.271105504497908
+    },
+    {
+      "name": "11_429",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.33821351183721,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 4.456725821550137
+    },
+    {
+      "name": "11_431",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.211152557693968,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.6912276206827923
+    },
+    {
+      "name": "11_432",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.714491248569317,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 6.723668742269435
+    },
+    {
+      "name": "11_433",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.727562852972559,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.111996360111224
+    },
+    {
+      "name": "11_434",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.742881901063257,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 0.8700592484882361
+    },
+    {
+      "name": "11_435",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.03242628280487,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 2.614463772985821
+    },
+    {
+      "name": "11_437",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.920677213050695,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 1.9412143674368703
+    },
+    {
+      "name": "11_438",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.796953808856577,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -4.82882958495912
+    },
+    {
+      "name": "11_438",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.796953808856577,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 4.5891110210880655
+    },
+    {
+      "name": "11_439",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.461720863130003,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -6.8484918687465575
+    },
+    {
+      "name": "11_439",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.461720863130003,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 2.3695871684028953
+    },
+    {
+      "name": "11_441",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.099956866436255,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.02131212873694
+    },
+    {
+      "name": "11_442",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.38967677263093,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.2578792057378547
+    },
+    {
+      "name": "11_442",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.38967677263093,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.513435204918258
+    },
+    {
+      "name": "11_444",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.384037198573083,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -1.2918556843819116
+    },
+    {
+      "name": "11_444",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.384037198573083,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 8.476096484783666
+    },
+    {
+      "name": "11_448",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.158196884187973,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 3.372188045796101
+    },
+    {
+      "name": "11_451",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 18.017344500090413,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 8.548254593441824
+    },
+    {
+      "name": "11_452",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.09172281329318,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -3.052948519928735
+    },
+    {
+      "name": "11_452",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 16.09172281329318,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 6.540729573856827
+    },
+    {
+      "name": "11_459",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.560012045177466,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 5.792985094682712
+    },
+    {
+      "name": "11_460",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 17.931416372718598,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": 8.03056741447676
+    },
+    {
+      "name": "11_463",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.132711528342046,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.830659054149645
+    },
+    {
+      "name": "11_463",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.132711528342046,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 0.1912688508662901
+    },
+    {
+      "name": "11_464",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.960534313924724,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.569529483958807
+    },
+    {
+      "name": "11_465",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.72808187223783,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.4877195501114913
+    },
+    {
+      "name": "11_466",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.674500331510853,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.463314849445908
+    },
+    {
+      "name": "11_470",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.257328594842493,
+      "matches_target": "T",
+      "target_value": 16.59846541759039,
+      "err_pct": -8.079884429114838
+    },
+    {
+      "name": "11_470",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 15.257328594842493,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": 1.0163385675372498
+    },
+    {
+      "name": "11_471",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.755525726150227,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -2.3060181715785664
+    },
+    {
+      "name": "11_472",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.596966760674132,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.3558117864887125
+    },
+    {
+      "name": "11_473",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.874396872815007,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -1.5189912734713893
+    },
+    {
+      "name": "11_474",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.31264523467699,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -5.238259251235248
+    },
+    {
+      "name": "11_475",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.408873050322356,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.601150235432004
+    },
+    {
+      "name": "11_476",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.643515369060365,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.668461342683193
+    },
+    {
+      "name": "11_477",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.055114145526982,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.943331507595891
+    },
+    {
+      "name": "11_480",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.8695704444794,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.171786751748673
+    },
+    {
+      "name": "11_487",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.642364996365034,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -3.0552373105302397
+    },
+    {
+      "name": "11_489",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.872228846663992,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -8.154185894989373
+    },
+    {
+      "name": "11_491",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.134778831456941,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -6.415884331260083
+    },
+    {
+      "name": "11_500",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 14.430442634062977,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -4.458341462562027
+    },
+    {
+      "name": "11_501",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.979228496301507,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -7.445758284795224
+    },
+    {
+      "name": "11_502",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.608015889771336,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.903497731690642
+    },
+    {
+      "name": "11_505",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 13.718695369718764,
+      "matches_target": "3He",
+      "target_value": 15.103822620379164,
+      "err_pct": -9.170706552071701
+    }
+  ],
+  "matches_2me_density_tol_10pct": [
+    {
+      "name": "8_5",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 6.997189147792215,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -7.3454538806473595
+    },
+    {
+      "name": "8_6",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 7.475237429505245,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -9.928571811424362
+    },
+    {
+      "name": "8_6",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 7.475237429505245,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -1.015291063877876
+    },
+    {
+      "name": "8_7",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 7.022196589095252,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -7.014313321974545
+    },
+    {
+      "name": "8_8",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 7.801341224440061,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -5.999247181338684
+    },
+    {
+      "name": "8_8",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 7.801341224440061,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 3.3028713395234157
+    },
+    {
+      "name": "8_9",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 7.5881802236416265,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -8.567689449170686
+    },
+    {
+      "name": "8_9",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 7.5881802236416265,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 0.4802613797001004
+    },
+    {
+      "name": "8_10",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 8.651148558017079,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 4.2403419878675965
+    },
+    {
+      "name": "8_11",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 8.286316817806592,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -0.15562753138510754
+    },
+    {
+      "name": "8_11",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 8.286316817806592,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 9.724763406928478
+    },
+    {
+      "name": "8_12",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 8.935856927486691,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.670880441957332
+    },
+    {
+      "name": "8_13",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 8.531232201460416,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 2.795433033458104
+    },
+    {
+      "name": "8^2_3",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 6.947555448592515,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -8.002687488949016
+    },
+    {
+      "name": "8^2_4",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 7.517689896474568,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -9.417049018186692
+    },
+    {
+      "name": "8^2_4",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 7.517689896474568,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -0.4531490414729827
+    },
+    {
+      "name": "8^2_5",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 7.894594487233149,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -4.87561002034835
+    },
+    {
+      "name": "8^2_5",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 7.894594487233149,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 4.537701291343209
+    },
+    {
+      "name": "8^2_7",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 8.83066495490773,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 6.403390105561743
+    },
+    {
+      "name": "8^2_9",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 8.967360848788454,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.050480850900874
+    },
+    {
+      "name": "8^2_11",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 8.793345603864992,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 5.953717800275153
+    },
+    {
+      "name": "8^3_2",
+      "crossings": 8,
+      "cusps": 3,
+      "volume": 8.793345603864992,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 5.953717800275153
+    },
+    {
+      "name": "8^3_3",
+      "crossings": 8,
+      "cusps": 3,
+      "volume": 8.967360848788454,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.050480850900874
+    },
+    {
+      "name": "8^3_9",
+      "crossings": 8,
+      "cusps": 3,
+      "volume": 7.327724753417753,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968606854126325
+    },
+    {
+      "name": "8^4_2",
+      "crossings": 8,
+      "cusps": 4,
+      "volume": 7.327724753417752,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.9686068541263366
+    },
+    {
+      "name": "9_6",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 7.2036007616231625,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -4.612217149537414
+    },
+    {
+      "name": "9_7",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.014861457829953,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -3.4264764098478206
+    },
+    {
+      "name": "9_7",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.014861457829953,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 6.130238142703366
+    },
+    {
+      "name": "9_8",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.192347962434356,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -1.2878870868094434
+    },
+    {
+      "name": "9_8",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.192347962434356,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 8.48045780649795
+    },
+    {
+      "name": "9_9",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.016815565678016,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -3.40293076512826
+    },
+    {
+      "name": "9_9",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.016815565678016,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 6.156113815335085
+    },
+    {
+      "name": "9_10",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.773457282055679,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 5.7140773117244885
+    },
+    {
+      "name": "9_11",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.288589042858492,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -0.12824879492080443
+    },
+    {
+      "name": "9_11",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.288589042858492,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 9.754851486072555
+    },
+    {
+      "name": "9_12",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.836642343885844,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 6.475413498420444
+    },
+    {
+      "name": "9_14",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.954989262002549,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.90141180777362
+    },
+    {
+      "name": "9_35",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 7.9405792477813115,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -4.32152553854523
+    },
+    {
+      "name": "9_35",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 7.9405792477813115,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 5.1466168182789795
+    },
+    {
+      "name": "9_44",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 7.406767572367502,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -1.9219470655890982
+    },
+    {
+      "name": "9_45",
+      "crossings": 9,
+      "cusps": 1,
+      "volume": 8.6020311664015,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 3.648511473662043
+    },
+    {
+      "name": "9^2_2",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 7.244320350873283,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -4.073021340985226
+    },
+    {
+      "name": "9^2_3",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.085586605502176,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -2.574287416553649
+    },
+    {
+      "name": "9^2_3",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.085586605502176,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 7.066757982082238
+    },
+    {
+      "name": "9^2_5",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.051684058915045,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -2.9827895971371863
+    },
+    {
+      "name": "9^2_5",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.051684058915045,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 6.6178312773765455
+    },
+    {
+      "name": "9^2_8",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.584394654325495,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 3.436003731141273
+    },
+    {
+      "name": "9^2_19",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 7.453573250340332,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -1.3021612120439663
+    },
+    {
+      "name": "9^2_20",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 9.124415509374947,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 9.942880619617474
+    },
+    {
+      "name": "9^2_48",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 7.706911802810125,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -7.137056240842024
+    },
+    {
+      "name": "9^2_48",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 7.706911802810125,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.0524670676601433
+    },
+    {
+      "name": "9^2_52",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.209021220809309,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -1.0869858835297375
+    },
+    {
+      "name": "9^2_52",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.209021220809309,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 8.701239774004051
+    },
+    {
+      "name": "9^2_54",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 7.517689896474567,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -9.417049018186702
+    },
+    {
+      "name": "9^2_54",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 7.517689896474567,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -0.4531490414729945
+    },
+    {
+      "name": "9^2_55",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.997351943606994,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.411852749615754
+    },
+    {
+      "name": "9^2_56",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.997351943606995,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.411852749615775
+    },
+    {
+      "name": "9^2_57",
+      "crossings": 9,
+      "cusps": 2,
+      "volume": 8.355502146379562,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 0.6780077093721593
+    },
+    {
+      "name": "9^3_14",
+      "crossings": 9,
+      "cusps": 3,
+      "volume": 7.706911802810126,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -7.137056240842013
+    },
+    {
+      "name": "9^3_14",
+      "crossings": 9,
+      "cusps": 3,
+      "volume": 7.706911802810126,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.0524670676601553
+    },
+    {
+      "name": "9^3_15",
+      "crossings": 9,
+      "cusps": 3,
+      "volume": 8.355502146379566,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 0.6780077093722021
+    },
+    {
+      "name": "9^3_18",
+      "crossings": 9,
+      "cusps": 3,
+      "volume": 7.327724753417754,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968606854126313
+    },
+    {
+      "name": "9^3_19",
+      "crossings": 9,
+      "cusps": 3,
+      "volume": 7.327724753417752,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.9686068541263366
+    },
+    {
+      "name": "10_5",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.373935134274569,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.356703735051484
+    },
+    {
+      "name": "10_6",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.390937606724455,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 1.104980437915359
+    },
+    {
+      "name": "10_7",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 9.115906395629992,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 9.840351698649426
+    },
+    {
+      "name": "10_9",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.294099675229287,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -0.06184949556202133
+    },
+    {
+      "name": "10_9",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.294099675229287,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 9.827821521662877
+    },
+    {
+      "name": "10_15",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.97344932600136,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.123842779967562
+    },
+    {
+      "name": "10_17",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.536755599193235,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 2.8619861465786194
+    },
+    {
+      "name": "10_20",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.317378718415004,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 0.2186468346715752
+    },
+    {
+      "name": "10_34",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.422266667868568,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 1.4824739031957332
+    },
+    {
+      "name": "10_46",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.7169998093245065,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -7.015502756702572
+    },
+    {
+      "name": "10_46",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.7169998093245065,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.1860492311684743
+    },
+    {
+      "name": "10_61",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.458580267591309,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 1.9200276023980334
+    },
+    {
+      "name": "10_126",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 6.904256123806479,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -8.576043332357997
+    },
+    {
+      "name": "10_127",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.89681675963143,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.200473487180792
+    },
+    {
+      "name": "10_129",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.90151663727877,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.2571037542458345
+    },
+    {
+      "name": "10_133",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.798300232166507,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -6.035889029811395
+    },
+    {
+      "name": "10_133",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.798300232166507,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 3.2626034901188388
+    },
+    {
+      "name": "10_134",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.392922508336978,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 1.1288971261463083
+    },
+    {
+      "name": "10_136",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.746274546233128,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -6.662762474126846
+    },
+    {
+      "name": "10_136",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.746274546233128,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.573695956695053
+    },
+    {
+      "name": "10_141",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.936474229212681,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -4.370988166147898
+    },
+    {
+      "name": "10_141",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.936474229212681,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 5.092259472171228
+    },
+    {
+      "name": "10_143",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 9.070899270019321,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 9.29804704001546
+    },
+    {
+      "name": "10_152",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 8.53606534720561,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 2.8536690887029836
+    },
+    {
+      "name": "10_153",
+      "crossings": 10,
+      "cusps": 1,
+      "volume": 7.37434388930671,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.3512911313363234
+    },
+    {
+      "name": "10^2_2",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.140719221288093,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -1.9099776216555069
+    },
+    {
+      "name": "10^2_2",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.140719221288093,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 7.796806489292962
+    },
+    {
+      "name": "10^2_4",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.140719221288094,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -1.9099776216554856
+    },
+    {
+      "name": "10^2_4",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.140719221288094,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 7.796806489292986
+    },
+    {
+      "name": "10^2_8",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.997351943606995,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.411852749615775
+    },
+    {
+      "name": "10^2_13",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.7069118028101276,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -7.137056240841992
+    },
+    {
+      "name": "10^2_13",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.7069118028101276,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.052467067660179
+    },
+    {
+      "name": "10^2_17",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.706911802810127,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -7.1370562408420035
+    },
+    {
+      "name": "10^2_17",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.706911802810127,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.052467067660167
+    },
+    {
+      "name": "10^2_22",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.997351943606994,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.411852749615754
+    },
+    {
+      "name": "10^2_23",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.355502146379568,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 0.6780077093722235
+    },
+    {
+      "name": "10^2_26",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.327724753417753,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968606854126325
+    },
+    {
+      "name": "10^2_34",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.997351943606995,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.411852749615775
+    },
+    {
+      "name": "10^2_35",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.997351943606997,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.411852749615797
+    },
+    {
+      "name": "10^2_72",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.355884353942429,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 0.6826130455071674
+    },
+    {
+      "name": "10^2_76",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.706911802810126,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -7.137056240842013
+    },
+    {
+      "name": "10^2_76",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.706911802810126,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.0524670676601553
+    },
+    {
+      "name": "10^2_87",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.174138134308498,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -1.5073028902313694
+    },
+    {
+      "name": "10^2_87",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.174138134308498,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 8.239329072619835
+    },
+    {
+      "name": "10^2_92",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.967360848788452,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.050480850900852
+    },
+    {
+      "name": "10^2_98",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.327724753417753,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968606854126325
+    },
+    {
+      "name": "10^2_101",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.92931782309736,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.592088767849904
+    },
+    {
+      "name": "10^2_104",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.327724753417751,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.9686068541263486
+    },
+    {
+      "name": "10^2_108",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.92931782309736,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.592088767849904
+    },
+    {
+      "name": "10^2_114",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 9.104034392188261,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 9.697302288441307
+    },
+    {
+      "name": "10^2_118",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.79334560386499,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 5.953717800275132
+    },
+    {
+      "name": "10^2_138",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.11953285127723,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -2.165258691053772
+    },
+    {
+      "name": "10^2_138",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.11953285127723,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 7.51626333749142
+    },
+    {
+      "name": "10^2_165",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 6.927377112305535,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -8.269882579809698
+    },
+    {
+      "name": "10^2_169",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.971059665829475,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.095049031729225
+    },
+    {
+      "name": "10^2_177",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.51918360396565,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 2.650255787349603
+    },
+    {
+      "name": "10^2_178",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.693383422015451,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 4.749242816176859
+    },
+    {
+      "name": "10^2_179",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.501782521231297,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 2.44058480516455
+    },
+    {
+      "name": "10^2_180",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.274775284385392,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -0.2946950069719608
+    },
+    {
+      "name": "10^2_180",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 8.274775284385392,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 9.57193410389327
+    },
+    {
+      "name": "10^2_182",
+      "crossings": 10,
+      "cusps": 2,
+      "volume": 7.34941599622371,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.6813783378606497
+    },
+    {
+      "name": "10^3_8",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.327724753417753,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968606854126325
+    },
+    {
+      "name": "10^3_12",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 8.929317823097364,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.592088767849946
+    },
+    {
+      "name": "10^3_16",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 8.929317823097362,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.5920887678499245
+    },
+    {
+      "name": "10^3_19",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.327724753417753,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968606854126325
+    },
+    {
+      "name": "10^3_23",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.327724753417753,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968606854126325
+    },
+    {
+      "name": "10^3_24",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 8.929317823097362,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.5920887678499245
+    },
+    {
+      "name": "10^3_49",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.706911802810124,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -7.1370562408420355
+    },
+    {
+      "name": "10^3_49",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.706911802810124,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.0524670676601313
+    },
+    {
+      "name": "10^3_51",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 8.967360848788456,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.050480850900895
+    },
+    {
+      "name": "10^3_53",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.706911802810127,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -7.1370562408420035
+    },
+    {
+      "name": "10^3_53",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.706911802810127,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.052467067660167
+    },
+    {
+      "name": "10^3_59",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 8.793345603864994,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 5.953717800275174
+    },
+    {
+      "name": "10^3_65",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.940579247781311,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -4.321525538545241
+    },
+    {
+      "name": "10^3_65",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 7.940579247781311,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 5.146616818278968
+    },
+    {
+      "name": "10^3_69",
+      "crossings": 10,
+      "cusps": 3,
+      "volume": 6.927377112305535,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -8.269882579809698
+    },
+    {
+      "name": "10^4_4",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 7.327724753417751,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.9686068541263486
+    },
+    {
+      "name": "10^4_18",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 7.327725242930446,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968600372155437
+    },
+    {
+      "name": "10^4_23",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 8.929317823097362,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.5920887678499245
+    },
+    {
+      "name": "10^4_24",
+      "crossings": 10,
+      "cusps": 4,
+      "volume": 7.327724753417754,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.968606854126313
+    },
+    {
+      "name": "11_141",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.275143802046928,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -0.2902546246563025
+    },
+    {
+      "name": "11_141",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.275143802046928,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 9.576813897185325
+    },
+    {
+      "name": "11_147",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.3494159962237084,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -2.6813783378606733
+    },
+    {
+      "name": "11_179",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.070313358094408,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -2.758319458354112
+    },
+    {
+      "name": "11_179",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.070313358094408,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 6.864514513105584
+    },
+    {
+      "name": "11_182",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.244320350873284,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -4.073021340985214
+    },
+    {
+      "name": "11_188",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.061645950055095,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -2.862755715818348
+    },
+    {
+      "name": "11_188",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.061645950055095,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 6.749743461337289
+    },
+    {
+      "name": "11_225",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.776711512886454,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -6.296018128940932
+    },
+    {
+      "name": "11_225",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.776711512886454,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.9767325576712644
+    },
+    {
+      "name": "11_247",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.444836419633537,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -1.417851536624532
+    },
+    {
+      "name": "11_249",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.689986375329612,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 4.708310758900784
+    },
+    {
+      "name": "11_251",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 6.9091101320757655,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -8.51176810361243
+    },
+    {
+      "name": "11_262",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.803494495478067,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -5.973301758266933
+    },
+    {
+      "name": "11_262",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.803494495478067,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 3.3313842675698666
+    },
+    {
+      "name": "11_266",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.239652075887565,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -4.134837148851236
+    },
+    {
+      "name": "11_279",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.765193679003856,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 5.614506624387747
+    },
+    {
+      "name": "11_286",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 9.046995734491487,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 9.010026010041178
+    },
+    {
+      "name": "11_291",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.77076855255138,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 5.68167998538551
+    },
+    {
+      "name": "11_298",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.754453760202656,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -6.564208616721927
+    },
+    {
+      "name": "11_298",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.754453760202656,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 2.6820024983581217
+    },
+    {
+      "name": "11_301",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.612493964063868,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 3.7745809312792358
+    },
+    {
+      "name": "11_317",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 9.012071549351516,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.589213793232753
+    },
+    {
+      "name": "11_333",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.882564241889211,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 7.028740530143526
+    },
+    {
+      "name": "11_353",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.039875596871685,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": -3.125073377550358
+    },
+    {
+      "name": "11_353",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.039875596871685,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": 6.4614673906949385
+    },
+    {
+      "name": "11_486",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.567161376273193,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 3.228354679030239
+    },
+    {
+      "name": "11_514",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.5005839132914,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 2.4261424105245495
+    },
+    {
+      "name": "11_540",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.780872990004111,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 5.803431450939954
+    },
+    {
+      "name": "11_542",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 9.033284111437034,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 8.844810458970752
+    },
+    {
+      "name": "11_544",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.62875538644746,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 3.970519796402995
+    },
+    {
+      "name": "11_546",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 8.423244314959108,
+      "matches_target": "T",
+      "target_value": 8.299232708795195,
+      "err_pct": 1.4942538728006822
+    },
+    {
+      "name": "11_549",
+      "crossings": 11,
+      "cusps": 1,
+      "volume": 7.44001211918431,
+      "matches_target": "3He",
+      "target_value": 7.551911310189582,
+      "err_pct": -1.481733383895674
+    }
+  ],
+  "deuterium_candidates": [
+    {
+      "name": "6_2",
+      "crossings": 6,
+      "cusps": 1,
+      "volume": 4.400832516123045,
+      "err_pct": 1.0903103596998822
+    },
+    {
+      "name": "8_20",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 4.124903251807677,
+      "err_pct": -5.2479846935137155
+    },
+    {
+      "name": "7_3",
+      "crossings": 7,
+      "cusps": 1,
+      "volume": 4.592125697027061,
+      "err_pct": 5.484453276167219
+    },
+    {
+      "name": "6^2_2",
+      "crossings": 6,
+      "cusps": 2,
+      "volume": 4.059766425638614,
+      "err_pct": -6.744224768352382
+    },
+    {
+      "name": "7^2_1",
+      "crossings": 7,
+      "cusps": 2,
+      "volume": 4.74949998187444,
+      "err_pct": 9.09945458320912
+    },
+    {
+      "name": "8^2_2",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 4.851170757332738,
+      "err_pct": 11.4349059342742
+    },
+    {
+      "name": "8_2",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 4.935242678280655,
+      "err_pct": 13.366098850620014
+    },
+    {
+      "name": "7^2_8",
+      "crossings": 7,
+      "cusps": 2,
+      "volume": 3.6638623767088756,
+      "err_pct": -15.838427520295978
+    },
+    {
+      "name": "8^2_15",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 3.6638623767088756,
+      "err_pct": -15.838427520295978
+    },
+    {
+      "name": "7_4",
+      "crossings": 7,
+      "cusps": 1,
+      "volume": 5.137941201873416,
+      "err_pct": 18.022230749385564
+    },
+    {
+      "name": "8_3",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 5.23868410079844,
+      "err_pct": 20.33636810443272
+    },
+    {
+      "name": "8_1",
+      "crossings": 8,
+      "cusps": 1,
+      "volume": 3.4272052462740157,
+      "err_pct": -21.274613213991
+    },
+    {
+      "name": "6^2_3",
+      "crossings": 6,
+      "cusps": 2,
+      "volume": 5.333489566898118,
+      "err_pct": 22.514118327078204
+    },
+    {
+      "name": "6^3_1",
+      "crossings": 6,
+      "cusps": 3,
+      "volume": 5.33348956689812,
+      "err_pct": 22.514118327078247
+    },
+    {
+      "name": "8^2_16",
+      "crossings": 8,
+      "cusps": 2,
+      "volume": 5.33348956689812,
+      "err_pct": 22.514118327078247
+    },
+    {
+      "name": "8^3_8",
+      "crossings": 8,
+      "cusps": 3,
+      "volume": 5.33348956689812,
+      "err_pct": 22.514118327078247
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

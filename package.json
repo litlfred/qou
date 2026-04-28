@@ -15,6 +15,11 @@
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-parse": "^1.8.3",
+    "glob": "^11.0.0",
+    "mdast-util-gfm-strikethrough": "^2.0.0",
+    "mdast-util-gfm-table": "^2.0.0",
+    "micromark-extension-gfm-strikethrough": "^2.1.0",
+    "micromark-extension-gfm-table": "^2.1.1",
     "remark": "^15.0.1",
     "remark-math": "^6.0.0",
     "zod": "^4.3.6"

@@ -3,11 +3,10 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:hasse-weil-bound",
   title: "Hasse--Weil bound for the fundamental eigenvalues",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.hasse_weil_bound",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.hasse_weil_bound",
     validation: "not_checked",
   },
-  uses: ["def:local-q-zeta-function", "def:brings-coordinate-ring"],
+  uses: ["def:local-q-zeta-function"],
   tags: [
     "hasse-weil",
     "eigenvalue-bound",

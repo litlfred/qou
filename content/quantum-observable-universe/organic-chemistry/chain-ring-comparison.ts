@@ -14,8 +14,7 @@ export default proposition({
     "ring-closure",
     "substrate-parameter",
   ],
-  lean: {
-    decl: "QOU.Organic.benzene_weights",
+  lean: { ref: "qou:QOU.Organic.benzene_weights",
     validation: "not_checked",
   },
   uses: ["rem:chain-ring-energy"],

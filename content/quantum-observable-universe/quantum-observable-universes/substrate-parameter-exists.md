@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with
 [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$
 and [categorical Reeb derivation](#def:categorical-reeb)
-$(\xi, \theta_A)$. Then there exists a
+$(\xi, \varTheta_A)$. Then there exists a
 [substrate parameter](#def:substrate-parameter)
 $q \in \mathrm{End}(\mathbf{1}) \cong k$, with $q \notin \mu_\infty(k)$
 (not a root of unity).  In the archimedean realisation this specialises

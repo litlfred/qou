@@ -2,8 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:descartes",
-  lean: {
-    decl: "QOU.Descartes.descartes",
+  lean: { ref: "qou:QOU.Descartes.descartes",
     validation: "not_checked",
   },
   title: "Descartes theorem",

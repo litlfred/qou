@@ -1,7 +1,7 @@
 {
   "computation": "beta-decay-energy-scale",
   "description": "Derives the energy scale E\u2080 (MeV) converting dimensionless Hecke NF coefficient differences to physical decay energy. E\u2080 = Q_decay / |\u0394(net)| where Q = m_n \u2212 m_p \u2212 m_e. Includes NF\u208a/NF\u208b decomposition and observable-only (\u2113\u22652) scenarios.",
-  "timestamp": "2026-04-14T22:24:03.511682+00:00",
+  "computedAt": "2026-04-14T22:24:03.511682+00:00",
   "q0": 1.1099785955541805,
   "crossing_type": "typed (u-u, d-d, u-d)",
   "observed": {
@@ -86,5 +86,7 @@
     "delta_net_times_E0": 0.7823334100000222,
     "Q_observed": 0.7823334100000222,
     "match": true
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

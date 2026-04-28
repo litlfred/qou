@@ -7,15 +7,8 @@ export default definition({
     "cmb-functor", "cmb", "horizon-functor",
     "colimit", "jet-quotient", "aeon",
   ],
-  lean: {
-    decl: "QOU.CMBFunctor",
+  lean: { ref: "qou:QOU.CMBFunctor",
     validation: "not_checked",
   },
-  uses: [
-    "def:horizon-functor",
-    "def:cmb-boundary-datum",
-    "def:observable-subcategory",
-    "def:aeon",
-    "prop:jet-prolongation",
-  ],
+  uses: ["def:horizon-functor"],
 });

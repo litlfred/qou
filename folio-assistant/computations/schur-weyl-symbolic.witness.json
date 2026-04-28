@@ -1,0 +1,47 @@
+{
+  "computation": "schur-weyl-symbolic",
+  "description": "Global H_{3A} Wedderburn sum vs additive-H_3 approximation, computed symbolically in sympy with q kept as a Symbol. Implements prop:schur-weyl-mass-decomposition. Uses trivial Specht character (future iteration: plug in actual braid word's cycle type via Murnaghan-Nakayama).",
+  "reference_block": "prop:schur-weyl-mass-decomposition",
+  "computedAt": "2026-04-24T20:07:47.862894+00:00",
+  "parameters": {
+    "q_0": "1.1099785955541805",
+    "evalf_dps": 30,
+    "engine": "sympy"
+  },
+  "results_by_A": {
+    "A=1": {
+      "partition_count": 3,
+      "global_sum_symbolic": "(q**2 + 2*q + 1)/(q**2 + q + 1)",
+      "global_sum_at_q0": "1.33212695202435677847927393829",
+      "h3_approx_symbolic": "(q**4 + q**3 + q + 1)**2/(q**4 + q**2 + 1)**2",
+      "h3_approx_at_q0": "1.77456221630970294615286202583",
+      "relative_err_pct": -33.212695202435675
+    },
+    "A=2": {
+      "partition_count": 11,
+      "global_sum_symbolic": "2*q**7*(q**2 + 1)/(q**16 + 3*q**14 + 6*q**12 + 8*q**10 + 9*q**8 + 8*q**6 + 6*q**4 + 3*q**2 + 1)",
+      "global_sum_at_q0": "0.0831585889687035716872811457205",
+      "h3_approx_symbolic": "(q**4 + q**3 + q + 1)**5/(q**4 + q**2 + 1)**5",
+      "h3_approx_at_q0": "4.19496243227178831824995441755",
+      "relative_err_pct": -4944.532963216279
+    },
+    "A=3": {
+      "partition_count": 30,
+      "global_sum_symbolic": "q**18*(q**2 - 1)**6*(q**9*(q**2 - 1)**2*(q**4 - 1)*(q**6 - 1)*(q**8 - 1)*(q**10*(q**8 + q**6 + q**4 + q**2 + 1) + q**8 + q**6 + q**4 + q**2 + 1) + q**4*(q**4 - 1)*(q**6 - 1)*(q**8 - 1)*(q**16 - 1)**2 + q*(q**2 - 1)*(q**2 + 1)*(q**4 - 1)*(q**14 - 1)*(q**16 - 1)*(q**18 - 1) + q*(q**6 - 1)*(q**8 - 1)*(q**12 - 1)**2*(q**18 - 1) + (q**8 - 1)**3*(q**16 - 1)*(q**18 - 1))/((q**4 - 1)**2*(q**6 - 1)**2*(q**8 - 1)**2*(q**10 - 1)*(q**12 - 1)*(q**14 - 1)*(q**16 - 1)*(q**18 - 1))",
+      "global_sum_at_q0": "0.00113270787017229721218585604267",
+      "h3_approx_symbolic": "(q**4 + q**3 + q + 1)**8/(q**4 + q**2 + 1)**8",
+      "h3_approx_at_q0": "9.91664853812058338386569674510",
+      "relative_err_pct": -875381.5605379482
+    },
+    "A=4": {
+      "partition_count": 77,
+      "global_sum_symbolic": "2*q**34*(q**8 + 1)/(q**76 + 8*q**74 + 36*q**72 + 117*q**70 + 306*q**68 + 682*q**66 + 1343*q**64 + 2393*q**62 + 3925*q**60 + 6002*q**58 + 8642*q**56 + 11806*q**54 + 15393*q**52 + 19240*q**50 + 23132*q**48 + 26818*q**46 + 30036*q**44 + 32540*q**42 + 34130*q**40 + 34675*q**38 + 34130*q**36 + 32540*q**34 + 30036*q**32 + 26818*q**30 + 23132*q**28 + 19240*q**26 + 15393*q**24 + 11806*q**22 + 8642*q**20 + 6002*q**18 + 3925*q**16 + 2393*q**14 + 1343*q**12 + 682*q**10 + 306*q**8 + 117*q**6 + 36*q**4 + 8*q**2 + 1)",
+      "global_sum_at_q0": "0.00000528881403499024386234404098555",
+      "h3_approx_symbolic": "(q**4 + q**3 + q + 1)**11/(q**4 + q**2 + 1)**11",
+      "h3_approx_at_q0": "23.4423835293688125985664771467",
+      "relative_err_pct": -443244517.3050601
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

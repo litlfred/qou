@@ -4,8 +4,7 @@ export default definition({
   label: "def:rigid-monoidal-category",
   title: "Rigid monoidal category",
   tags: ["category-theory", "monoidal"],
-  lean: {
-    decl: "QOU.RigidMonoidalCategory",
+  lean: { ref: "qou:QOU.RigidMonoidalCategory",
     validation: "not_checked",
   },
   uses: ["def:snake-identity", "rem:glossary-no-quasi-zeros"],

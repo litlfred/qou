@@ -1,0 +1,97 @@
+{
+  "engine": "tower+geometric-series",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T11:04:51.299424+00:00",
+  "commitSha": "3830fc8c3b5c27346c0ca2432b9bf87674a638b6",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "jet-level-geometric-series",
+  "scriptFile": "jet_level_geometric_series.py",
+  "scriptHash": "edd36c8decd6",
+  "scriptCommitSha": "",
+  "description": "Geometric-series ansatz for the jet-tower expansion: m_total = m^(0) \u00b7 \u03a3 (\u2212\u03b1 \u210f_q\u00b2)^n.  Fit \u03b1 to proton CODATA, test universality on neutron.",
+  "data": {
+    "level_0": {
+      "m_e_Hecke": 630.5292680965904,
+      "m_p_Hecke": 1178995.5254365846,
+      "m_n_Hecke": 517436.5043554976,
+      "m_p_MeV": 955.4916893413767,
+      "m_n_MeV": 419.34534017035503,
+      "V_hat_proton": [
+        0.9890073159292595,
+        0.9710701586527437
+      ],
+      "V_hat_neutron": [
+        0.8542103128258388,
+        0.9755094711077458
+      ]
+    },
+    "fit_alpha_from_proton": {
+      "alpha_times_hbar_q_sq": 0.018352460228402867,
+      "alpha_A": 1.8694211894989652,
+      "alpha_B": 0.5173450163716963,
+      "twoQ": 2.010896869118482
+    },
+    "geometric_series_p": {
+      "m_p_pred_MeV": 938.2720881599998,
+      "by_construction": true
+    },
+    "geometric_series_n_with_same_alpha": {
+      "m_n_pred_MeV": 411.78801696644547,
+      "m_n_err_pct": -56.172501885122315
+    },
+    "truncation_table_alpha_is_two_q": [
+      {
+        "N": 0,
+        "m_p_pred": 955.4916893413767,
+        "err_pct": 1.8352460228402738,
+        "err_ppm": 18352.46022840274
+      },
+      {
+        "N": 1,
+        "m_p_pred": 936.6289899969433,
+        "err_pct": -0.1751195824527624,
+        "err_ppm": -1751.1958245276242
+      },
+      {
+        "N": 2,
+        "m_p_pred": 937.0013652154067,
+        "err_pct": -0.1354322440823291,
+        "err_ppm": -1354.322440823291
+      },
+      {
+        "N": 3,
+        "m_p_pred": 936.9940140245303,
+        "err_pct": -0.13621572586433928,
+        "err_ppm": -1362.1572586433927
+      },
+      {
+        "N": 4,
+        "m_p_pred": 936.9941591469891,
+        "err_pct": -0.13620025887340917,
+        "err_ppm": -1362.0025887340917
+      },
+      {
+        "N": 5,
+        "m_p_pred": 936.9941562820753,
+        "err_pct": -0.1362005642127456,
+        "err_ppm": -1362.005642127456
+      },
+      {
+        "N": 6,
+        "m_p_pred": 936.9941563386326,
+        "err_pct": -0.13620055818493448,
+        "err_ppm": -1362.005581849345
+      },
+      {
+        "N": 7,
+        "m_p_pred": 936.9941563375161,
+        "err_pct": -0.1362005583039318,
+        "err_ppm": -1362.005583039318
+      }
+    ]
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

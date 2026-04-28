@@ -4,8 +4,8 @@
     "repo": "litlfred/qou",
     "pdf_url": "https://litlfred.github.io/qou/quantum-observable-universe.pdf",
     "lean_docs_url": "https://litlfred.github.io/qou/lean/",
-    "generated_at": "2026-04-14T21:19:03.414462+00:00",
-    "commit_sha": "b189e6c907bea1aff523c0b0692e02c0dbf04788"
+    "generated_at": "2026-04-19T01:39:52.733272+00:00",
+    "commit_sha": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
   },
   "objects": [
     {
@@ -21,13 +21,11 @@
         "decl": "QOU.BringsSurface",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "4074a44575cc",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved"
+      "formalization_status": "stated"
     },
     {
       "label": "prop:brings-is-qou",
@@ -42,13 +40,11 @@
         "decl": "QOU.Brings.brings_is_qou",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "7f42be0b84f3",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface",
         "thm:qu-to-qou"
@@ -85,11 +81,11 @@
         "decl": "QOU.ColorTubeCoordinates",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:braid-group-action"
       ]
@@ -123,13 +119,11 @@
         "decl": "QOU.Brings.coral_elliptic",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "0d44de16f193",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:braid-group-action",
         "rem:holonomy-trefoil"
@@ -163,11 +157,11 @@
         "decl": "QOU.ColorTubeFibers",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:color-tube-cubic"
       ]
@@ -199,13 +193,11 @@
         "decl": "QOU.BringsSurface.brings_smoothness_resolution",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "6f7eb0a205d2",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:coral-bundles",
         "def:briggs-klein-chart"
@@ -238,11 +230,11 @@
         "decl": "QOU.BriggsKleinChart",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface"
       ]
@@ -260,11 +252,11 @@
         "decl": "QOU.QuaternionicSpectralResolvents",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:brings-surface",
         "rem:jet-shell"
@@ -283,13 +275,11 @@
         "decl": "QOU.Brings.mi_sw_abelianisation",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "c30c47c0c85c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:brings-smoothness",
         "def:mass-identity",
@@ -310,11 +300,11 @@
         "decl": "QOU.CoralSectorCoords",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:exceptional-divisor",
         "def:substrate-parameter",
@@ -334,13 +324,11 @@
         "decl": "QOU.Descartes.descartes_braid_structure",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "88dbac07ad9c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:braid-action-tensor",
         "def:coral-sector-coords",
@@ -363,13 +351,11 @@
         "decl": "QOU.Descartes.descartes_knot_eigenbasis",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "45f209e1d5bd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "cor:descartes-braid-structure",
         "thm:jones-markov-trace",
@@ -389,13 +375,11 @@
         "decl": "QOU.Descartes.descartes_elliptic_curve",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "1c564fc18563",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:color-tube-cubic",
         "prop:local-substrate-q"
@@ -414,11 +398,11 @@
         "decl": "QOU.DescartesCondition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:qu-to-qou"
       ]
@@ -436,13 +420,11 @@
         "decl": "QOU.Descartes.genus_maximal_descent",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "47587d1e44e7",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:descartes-condition"
       ]
@@ -499,11 +481,11 @@
         "decl": "QOU.Torsion.torus_knot_generators_finite",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:knot-particle-generation",
         "prop:euler-char-stability"
@@ -522,13 +504,11 @@
         "decl": "QOU.Torsion.embeddability_closure",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "5c9078687d64",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-knot-generators"
       ]
@@ -546,13 +526,11 @@
         "decl": "QOU.Descartes.genus_filtration_ideal",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "669b113d7047",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:embeddability-closure",
         "prop:cohomological-embedding",
@@ -564,7 +542,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1461,
+        "line": 1552,
         "chapter": 6
       },
       "title": "{Completeness of torus knots embeddable in the Bring's surface}",
@@ -572,13 +550,11 @@
         "decl": "QOU.Descartes.torus_embeddable_complete",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "85bed8246852",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:embeddability-closure"
       ]
@@ -588,7 +564,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1514,
+        "line": 1605,
         "chapter": 6
       },
       "title": "{Generation completeness: all embeddable knots are reachable}",
@@ -596,13 +572,11 @@
         "decl": "QOU.Descartes.generation_completeness",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "3b99b7eed30d",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-embeddable-complete",
         "rem:knot-formula-table"
@@ -613,7 +587,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1609,
+        "line": 1700,
         "chapter": 6
       },
       "title": "{Up quark}",
@@ -621,11 +595,11 @@
         "decl": "QOU.Descartes.UpQuark",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "conj:borromean-quark"
       ]
@@ -635,7 +609,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1631,
+        "line": 1722,
         "chapter": 6
       },
       "title": "{Down quark}",
@@ -643,11 +617,11 @@
         "decl": "QOU.Descartes.DownQuark",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:up-quark"
       ]
@@ -657,7 +631,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1655,
+        "line": 1746,
         "chapter": 6
       },
       "title": "{Electron}",
@@ -665,11 +639,11 @@
         "decl": "QOU.Descartes.Electron",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:up-quark"
       ]
@@ -679,7 +653,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1681,
+        "line": 1772,
         "chapter": 6
       },
       "title": "{Positron}",
@@ -687,11 +661,11 @@
         "decl": "QOU.Descartes.Positron",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:electron-knot",
         "rem:chirality-trefoil-electron-positron"
@@ -702,7 +676,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1708,
+        "line": 1799,
         "chapter": 6
       },
       "title": "{Neutrino}",
@@ -710,11 +684,11 @@
         "decl": "QOU.Descartes.Neutrino",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:torus-knot-generators",
         "sec:knot-notation-convention"
@@ -725,7 +699,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1743,
+        "line": 1834,
         "chapter": 6
       },
       "title": "{Antineutrino as mirror unknot $T_{1,0}^{\\sigma}$}",
@@ -733,11 +707,11 @@
         "decl": "QOU.Descartes.Antineutrino",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:parity-violation-skein"
       ]
@@ -747,7 +721,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1804,
+        "line": 1895,
         "chapter": 6
       },
       "title": "{Linking relations between building block knots}",
@@ -762,7 +736,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 1918,
+        "line": 2009,
         "chapter": 6
       },
       "title": "{$\\mathcal{Q}_q$-Value as Categorical Action Difference}",
@@ -770,11 +744,11 @@
         "decl": "QOU.Descartes.QValueTransition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:q-energy",
         "prop:branching-qvalue-factorization",
@@ -786,7 +760,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 2162,
+        "line": 2239,
         "chapter": 6
       },
       "title": "{Breit--Wheeler pair production (categorical)}",
@@ -794,11 +768,11 @@
         "decl": "QOU.Descartes.BreitWheelerPairProduction",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:electron-knot",
         "def:positron-knot",
@@ -810,7 +784,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 2346,
+        "line": 2423,
         "chapter": 6
       },
       "title": "{Quark--antiquark production from pair creation}",
@@ -818,11 +792,11 @@
         "decl": "QOU.Descartes.QuarkAntiquarkProduction",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:breit-wheeler-pair-production",
         "def:up-quark",
@@ -830,11 +804,46 @@
       ]
     },
     {
+      "label": "prop:knot-operator-selection",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 2630,
+        "chapter": 6
+      },
+      "title": "{Knot operator selection via Frobenius dual}",
+      "formalization_status": "not_started",
+      "uses": [
+        "def:categorical-action",
+        "def:breit-wheeler-pair-production",
+        "prop:rj-canonical-inner-product",
+        "prop:cohomological-embedding",
+        "prop:fiber-adjoint-involution"
+      ]
+    },
+    {
+      "label": "prop:frobenius-gram-matrix",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 2844,
+        "chapter": 6
+      },
+      "title": "{Frobenius Gram matrix and dual construction in $H_3(q)$}",
+      "formalization_status": "not_started",
+      "uses": [
+        "def:categorical-action",
+        "prop:fiber-adjoint-involution",
+        "prop:rj-canonical-inner-product",
+        "prop:knot-operator-selection"
+      ]
+    },
+    {
       "label": "def:categorical-meson",
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 2553,
+        "line": 2985,
         "chapter": 6
       },
       "title": "{Meson (categorical)}",
@@ -842,11 +851,11 @@
         "decl": "QOU.Torsion.CategoricalMeson",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:hadron",
         "def:quark-antiquark-production",
@@ -858,7 +867,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 2652,
+        "line": 3084,
         "chapter": 6
       },
       "title": "{Proton (categorical)}",
@@ -866,11 +875,11 @@
         "decl": "QOU.Torsion.CategoricalProton",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:down-quark",
         "conj:borromean-quark",
@@ -878,11 +887,56 @@
       ]
     },
     {
+      "label": "prop:categorical-proton-exists",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 3246,
+        "chapter": 6
+      },
+      "title": "{Existence of the categorical proton}",
+      "lean": {
+        "decl": "QOU.CategoricalProton.exists",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:categorical-proton",
+        "conj:borromean-quark"
+      ]
+    },
+    {
+      "label": "prop:categorical-proton-unique",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 3275,
+        "chapter": 6
+      },
+      "title": "{Uniqueness of the categorical proton up to braid isotopy}",
+      "lean": {
+        "decl": "QOU.CategoricalProton.unique_up_to_isotopy",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:categorical-proton",
+        "prop:categorical-proton-exists",
+        "prop:hadron-unique"
+      ]
+    },
+    {
       "label": "def:categorical-neutron",
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 2815,
+        "line": 3304,
         "chapter": 6
       },
       "title": "{Neutron (categorical)}",
@@ -890,13 +944,58 @@
         "decl": "QOU.Torsion.CategoricalNeutron",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-proton"
+      ]
+    },
+    {
+      "label": "prop:categorical-neutron-exists",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 3426,
+        "chapter": 6
+      },
+      "title": "{Existence of the categorical neutron}",
+      "lean": {
+        "decl": "QOU.CategoricalNeutron.exists",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:categorical-neutron",
+        "prop:categorical-proton-exists"
+      ]
+    },
+    {
+      "label": "prop:categorical-neutron-unique",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 3450,
+        "chapter": 6
+      },
+      "title": "{Uniqueness of the categorical neutron up to braid isotopy}",
+      "lean": {
+        "decl": "QOU.CategoricalNeutron.unique_up_to_isotopy",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:categorical-neutron",
+        "prop:categorical-neutron-exists",
+        "prop:hadron-unique"
       ]
     },
     {
@@ -904,7 +1003,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 2937,
+        "line": 3474,
         "chapter": 6
       },
       "title": "{Antiparticles from crossing reversal}",
@@ -918,7 +1017,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 2976,
+        "line": 3513,
         "chapter": 6
       },
       "title": "{Left and right trefoils: electron and positron}",
@@ -933,7 +1032,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3059,
+        "line": 3596,
         "chapter": 6
       },
       "title": "{Stable nucleus (Skein energy minimum)}",
@@ -941,11 +1040,11 @@
         "decl": "QOU.Torsion.StableNucleus",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:categorical-neutron",
         "prop:beta-stability"
@@ -956,7 +1055,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3125,
+        "line": 3662,
         "chapter": 6
       },
       "title": "{Torus knot composites on Bring's surface are stable hadrons}",
@@ -964,13 +1063,11 @@
         "decl": "QOU.Descartes.torus_hopf_stability",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "0079aa26e8f8",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:skein-crossing-asymmetry",
         "def:categorical-neutron"
@@ -981,7 +1078,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3181,
+        "line": 3718,
         "chapter": 6
       },
       "title": "{Unmapped genus-$4$ torus knot generators}",
@@ -997,7 +1094,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3332,
+        "line": 3869,
         "chapter": 6
       },
       "title": "{Force carriers from the involutive structure and saturating generators}",
@@ -1012,7 +1109,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3515,
+        "line": 4052,
         "chapter": 6
       },
       "title": "{Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings}",
@@ -1020,15 +1117,38 @@
         "decl": "QOU.Descartes.em_coupling_projection",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "1bed7820ece0",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:force-knot-identification"
+      ]
+    },
+    {
+      "label": "prop:em-coupling-chern-simons",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 4274,
+        "chapter": 6
+      },
+      "title": "{Fine structure constant with Chern-Simons correction on Bring's surface}",
+      "lean": {
+        "decl": "QOU.DescartesUniverse.em_coupling_chern_simons",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "prop:em-coupling-projection",
+        "def:brings-surface",
+        "prop:torus-knot-generators",
+        "def:knot-particle-generation",
+        "thm:topological-mass"
       ]
     },
     {
@@ -1036,7 +1156,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3642,
+        "line": 4358,
         "chapter": 6
       },
       "title": "{Integer stability: the valley of stability as a Diophantine constraint}",
@@ -1044,13 +1164,11 @@
         "decl": "QOU.Descartes.integer_stability",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "6201b8a6c4ed",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:stable-nucleus"
       ]
@@ -1060,7 +1178,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3723,
+        "line": 4439,
         "chapter": 6
       },
       "title": "{The valley of stability as a Diophantine approximation problem}",
@@ -1074,7 +1192,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3823,
+        "line": 4539,
         "chapter": 6
       },
       "title": "{Valley of stability: beta-stability curve vs integer lattice}",
@@ -1094,7 +1212,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 3861,
+        "line": 4577,
         "chapter": 6
       },
       "title": "{Beta decay as a Skein crossing change on the Gröbner normal form}",
@@ -1102,11 +1220,11 @@
         "decl": "QOU.Descartes.BetaDecaySkein",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:positron-knot",
         "prop:nuclear-groebner-reduction"
@@ -1117,7 +1235,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 4118,
+        "line": 4834,
         "chapter": 6
       },
       "title": "{Categorical Lepton Number}",
@@ -1125,11 +1243,11 @@
         "decl": "QOU.Descartes.LeptonNumber",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein"
       ]
@@ -1139,7 +1257,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 4217,
+        "line": 4933,
         "chapter": 6
       },
       "title": "{Continuant recurrence for the lepton tower $T_{2,n}$}",
@@ -1147,11 +1265,11 @@
         "decl": "QOU.Descartes.lepton_continuant_recurrence",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein",
         "rem:descartes-leptons"
@@ -1162,7 +1280,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 4310,
+        "line": 5026,
         "chapter": 6
       },
       "title": "{Lepton universality from the $T_{3,5}$ weak vertex}",
@@ -1170,11 +1288,11 @@
         "decl": "QOU.Descartes.tau_leptonic_universality",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein",
         "prop:lepton-continuant-recurrence",
@@ -1186,7 +1304,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 4418,
+        "line": 5134,
         "chapter": 6
       },
       "title": "{Parity non-conservation from the Skein relation at $q \\neq 1$}",
@@ -1194,13 +1312,11 @@
         "decl": "QOU.Descartes.parity_violation_skein",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "4d7d1a9860c9",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:beta-decay-skein",
         "prop:reidemeister-action-table"
@@ -1211,7 +1327,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 4549,
+        "line": 5265,
         "chapter": 6
       },
       "title": "{Nuclear spin is integral for even $A$ and half-integral for odd $A$}",
@@ -1219,13 +1335,11 @@
         "decl": "QOU.Descartes.nuclear_spin_parity",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "2b2ad8014294",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:stable-nucleus",
         "prop:fermion-boson-knot-link"
@@ -1236,7 +1350,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 4673,
+        "line": 5389,
         "chapter": 6
       },
       "title": "{Hadron half-life from the $q$-deformed transition amplitude}",
@@ -1244,13 +1358,11 @@
         "decl": "QOU.Descartes.hadron_half_life",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "44f0c94db312",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:integer-stability"
       ]
@@ -1260,7 +1372,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 4893,
+        "line": 5609,
         "chapter": 6
       },
       "title": "{Effective substrate parameter: hadron self-deformation of $q$}",
@@ -1268,13 +1380,11 @@
         "decl": "QOU.Descartes.hadron_q_self_correction",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "4d52d02471f2",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:hadron-half-life"
       ]
@@ -1284,7 +1394,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 5037,
+        "line": 5753,
         "chapter": 6
       },
       "title": "{Coulomb enhancement from electron-proton Skein crossings}",
@@ -1292,13 +1402,11 @@
         "decl": "QOU.Descartes.skein_coulomb_enhancement",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "0e2247d951f0",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:hadron-half-life",
         "def:electron-knot"
@@ -1309,7 +1417,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 5200,
+        "line": 5916,
         "chapter": 6
       },
       "title": "{Unique nuclear normal form via Gröbner reduction in $H_n(q)$}",
@@ -1317,13 +1425,11 @@
         "decl": "QOU.Descartes.nuclear_groebner_reduction",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "aa5aeac8cb6c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:braiding-eigenvalue-extraction",
         "rem:hecke-algebra-from-braiding",
@@ -1338,7 +1444,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 5383,
+        "line": 6099,
         "chapter": 6
       },
       "title": "{Energy as a Gröbner--Shirshov invariant of the nuclear braid}",
@@ -1346,13 +1452,11 @@
         "decl": "QOU.Descartes.groebner_shirshov_energy",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "24975b98cafb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:nuclear-groebner-reduction",
         "unital-groebner-bases:thm:main-theorem"
@@ -1363,7 +1467,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 5535,
+        "line": 6251,
         "chapter": 6
       },
       "title": "{The $\\gamma\\gamma \\to \\nu\\nu^{\\sigma}$ box braid is irreducible}",
@@ -1371,11 +1475,11 @@
         "decl": "QOU.Descartes.BoxBraidIrreducibility",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:neutrino-knot",
         "def:antineutrino-knot",
@@ -1396,7 +1500,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 5717,
+        "line": 6433,
         "chapter": 6
       },
       "title": "{Nuclear energy as a sum of generator volumes via Chebyshev recurrence}",
@@ -1404,13 +1508,11 @@
         "decl": "QOU.Descartes.generator_volume_decomposition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "fb6c142e7beb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:groebner-shirshov-energy"
       ]
@@ -1420,7 +1522,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 6033,
+        "line": 6749,
         "chapter": 6
       },
       "title": "{Exact factorization of the nuclear Markov trace}",
@@ -1428,13 +1530,11 @@
         "decl": "QOU.Descartes.markov_trace_factorization",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "924e31582bc3",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:generator-volume-decomposition",
         "thm:markov-trace-product"
@@ -1445,7 +1545,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 6255,
+        "line": 6971,
         "chapter": 6
       },
       "title": "{The nuclear Skein polynomial as a transfer matrix product in $q$}",
@@ -1453,13 +1553,11 @@
         "decl": "QOU.Descartes.skein_polynomial_transfer_matrix",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "7d2ff08df2fd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization"
       ]
@@ -1469,7 +1567,7 @@
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 6446,
+        "line": 7162,
         "chapter": 6
       },
       "title": "{Transfer Matrix Operator for Nuclear Braid Interactions}",
@@ -1477,11 +1575,11 @@
         "decl": "QOU.Descartes.TransferMatrixOperator",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:beta-decay-transfer-matrix",
         "rem:building-block-knots"
@@ -1492,7 +1590,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 6741,
+        "line": 7457,
         "chapter": 6
       },
       "title": "{Beta decay as a universal matrix-valued polynomial in $q$}",
@@ -1500,13 +1598,11 @@
         "decl": "QOU.Descartes.beta_decay_transfer_matrix",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "776724c4d5dd",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:skein-polynomial-transfer-matrix",
         "def:beta-decay-skein"
@@ -1517,7 +1613,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 6899,
+        "line": 7615,
         "chapter": 6
       },
       "title": "{Beta decay as $T_{3,5}$ braid insertion: crossing budget and transfer matrices}",
@@ -1533,11 +1629,25 @@
       ]
     },
     {
+      "label": "conj:skein-shell-correction",
+      "object_type": "conjecture",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 7690,
+        "chapter": 6
+      },
+      "title": "{Shell corrections from Skein polynomial factorization of the multi-nucleon link}",
+      "formalization_status": "not_started",
+      "uses": [
+        "conj:elliptic-stability-locus"
+      ]
+    },
+    {
       "label": "prop:shell-structure-eigenvalues",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 6974,
+        "line": 7840,
         "chapter": 6
       },
       "title": "{Orbital shells from eigenvalues of the photon-electron transfer matrix}",
@@ -1545,13 +1655,11 @@
         "decl": "QOU.Descartes.shell_structure_eigenvalues",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "6f6fa249370e",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:transfer-matrix-operator",
         "rem:hydrogen-orbitals"
@@ -1562,7 +1670,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 7218,
+        "line": 8084,
         "chapter": 6
       },
       "title": "{Nuclear energy from the quantum dilogarithm of the Markov trace}",
@@ -1570,13 +1678,11 @@
         "decl": "QOU.Descartes.quantum_dilogarithm_volume",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "2624633fffb2",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization",
         "cor:quantum-dilogarithm"
@@ -1587,7 +1693,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 7367,
+        "line": 8233,
         "chapter": 6
       },
       "title": "{Reidemeister moves on the categorical action: complete accounting}",
@@ -1595,13 +1701,11 @@
         "decl": "QOU.Descartes.reidemeister_action_table",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "72ded6ff0f49",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "thm:markov-trace-factorization"
       ]
@@ -1611,7 +1715,7 @@
       "object_type": "conjecture",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 7546,
+        "line": 8412,
         "chapter": 6
       },
       "title": "{The nuclear degeneracy locus is an elliptic curve over the Bring's surface}",
@@ -1626,7 +1730,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 7776,
+        "line": 8642,
         "chapter": 6
       },
       "title": "{Shell closure as symmetric Poincaré distribution in the Hecke normal form}",
@@ -1634,11 +1738,11 @@
         "decl": "QOU.OptimalNF.optimal_nf_is_standard_basis",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:nuclear-groebner-reduction",
         "thm:groebner-shirshov-energy",
@@ -1653,7 +1757,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 8045,
+        "line": 8911,
         "chapter": 6
       },
       "title": "{Shell binding from the torus knot hierarchy: $T_{2,3} \\to T_{2,5} \\to T_{2,7} \\to T_{2,9}$}",
@@ -1661,13 +1765,11 @@
         "decl": "QOU.Descartes.torus_knot_shell_binding",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "28b947757a41",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:shell-closure-normal-form",
         "prop:torus-knot-generators",
@@ -1682,7 +1784,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 8268,
+        "line": 9134,
         "chapter": 6
       },
       "title": "{Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary}",
@@ -1690,13 +1792,11 @@
         "decl": "QOU.Descartes.skein_finiteness_bound",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "85e345c7c146",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:shell-closure-normal-form",
         "prop:skein-polynomial-transfer-matrix",
@@ -1710,7 +1810,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 8561,
+        "line": 9427,
         "chapter": 6
       },
       "title": "{Canonical inner product on $R(H_r(q))$ via Schur orthogonality}",
@@ -1718,11 +1818,11 @@
         "decl": "QOU.Descartes.rj_canonical_inner_product",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
         "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:cohomological-embedding"
       ]
@@ -1732,7 +1832,7 @@
       "object_type": "corollary",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 8655,
+        "line": 9521,
         "chapter": 6
       },
       "title": "{Spectral decomposition of the $\\mathcal{Q}_q$-value over the torus knot basis of $\\Sigma_4$}",
@@ -1740,13 +1840,11 @@
         "decl": "QOU.Descartes.spectral_decomposition_qvalue",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "f096762e5e1f",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:rj-canonical-inner-product",
         "prop:cohomological-embedding",
@@ -1763,7 +1861,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 8967,
+        "line": 9833,
         "chapter": 6
       },
       "title": "{Construction rules for nuclear shells from the torus knot hierarchy}",
@@ -1783,7 +1881,7 @@
       "object_type": "conjecture",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 9235,
+        "line": 10101,
         "chapter": 6
       },
       "title": "{Electron shells as closed sub-Hopf links of the trefoil chain}",
@@ -1797,7 +1895,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 9372,
+        "line": 10238,
         "chapter": 6
       },
       "title": "{Noble gas characterization: full shell as full curls}",
@@ -1812,7 +1910,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 9477,
+        "line": 10343,
         "chapter": 6
       },
       "title": "{Metallic character from incomplete sub-Hopf links}",
@@ -1826,7 +1924,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 9620,
+        "line": 10486,
         "chapter": 6
       },
       "title": "{Electron shell number equals writhe level of the trefoil embedding}",
@@ -1834,13 +1932,11 @@
         "decl": "QOU.BringsSurface.hydrogen_shell_writhe",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "fa1748e092bb",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:electron-knot"
       ]
@@ -1850,7 +1946,7 @@
       "object_type": "theorem",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 9648,
+        "line": 10514,
         "chapter": 6
       },
       "title": "{Descartes theorem}",
@@ -1858,13 +1954,11 @@
         "decl": "QOU.Descartes.descartes",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "488e57f2bf5c",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:brings-is-qou",
         "prop:genus-maximal-descent"
@@ -1875,7 +1969,7 @@
       "object_type": "example",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 9686,
+        "line": 10552,
         "chapter": 6
       },
       "title": "{Bring's surface and $q$-flatness obstructions}",
@@ -1890,7 +1984,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 9912,
+        "line": 10973,
         "chapter": 6
       },
       "title": "{Terminal Resolution of Hadronic Mass}",
@@ -1898,16 +1992,174 @@
         "decl": "QOU.Experimental.terminal_resolution",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "0e3322501801",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "rem:skein-mass-relation",
         "cor:mass-identity-C"
+      ]
+    },
+    {
+      "label": "def:picard-lefschetz-thimble",
+      "object_type": "definition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 10993,
+        "chapter": 6
+      },
+      "title": "{Picard--Lefschetz thimble decomposition of the color-tube cubic}",
+      "lean": {
+        "decl": "QOU.PicardLefschetzThimble",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "rem:color-tube-cubic",
+        "rem:lepton-mass-integrals",
+        "prop:descartes-elliptic-curve"
+      ]
+    },
+    {
+      "label": "prop:volume-tower-decomposition",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 11042,
+        "chapter": 6
+      },
+      "title": "{Tower-level decomposition of hyperbolic volume}",
+      "lean": {
+        "decl": "QOU.Descartes.VolumeTowerDecomposition",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "prop:cosimplicial-crossed-groupoid",
+        "def:quantum-characteristic-classes",
+        "prop:topological-mass-formula"
+      ]
+    },
+    {
+      "label": "prop:cs-evaluation-faithfulness",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 11099,
+        "chapter": 6
+      },
+      "title": "{Faithfulness of the Chern--Simons evaluation on the brane tower}",
+      "lean": {
+        "decl": "QOU.Descartes.CSEvaluationFaithful",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "prop:volume-tower-decomposition",
+        "def:quantum-characteristic-classes",
+        "prop:yekutieli-lifting"
+      ]
+    },
+    {
+      "label": "conj:hyperbolic-volume-transcendence",
+      "object_type": "conjecture",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 11150,
+        "chapter": 6
+      },
+      "title": "{Algebraic independence of QOU hyperbolic volumes}",
+      "lean": {
+        "decl": "QOU.Descartes.HyperbolicVolumeIndependence",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "prop:topological-mass-formula",
+        "conj:baryon-period-ratio",
+        "def:substrate-parameter"
+      ]
+    },
+    {
+      "label": "conj:single-volume-irrationality",
+      "object_type": "conjecture",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 11205,
+        "chapter": 6
+      },
+      "title": "{Irrationality of a single hyperbolic knot volume}",
+      "formalization_status": "not_started",
+      "uses": [
+        "conj:hyperbolic-volume-transcendence"
+      ]
+    },
+    {
+      "label": "conj:borel-zagier-qou-volumes",
+      "object_type": "conjecture",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 11249,
+        "chapter": 6
+      },
+      "title": "{Rational linear independence of QOU hyperbolic volumes (Borel--Zagier)}",
+      "formalization_status": "not_started",
+      "uses": [
+        "conj:single-volume-irrationality",
+        "conj:hyperbolic-volume-transcendence"
+      ]
+    },
+    {
+      "label": "conj:baryon-period-ratio",
+      "object_type": "conjecture",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 11304,
+        "chapter": 6
+      },
+      "title": "{Proton--electron mass ratio from Picard--Lefschetz thimble periods}",
+      "formalization_status": "not_started",
+      "uses": [
+        "def:picard-lefschetz-thimble",
+        "rem:lepton-mass-integrals",
+        "thm:topological-mass"
+      ]
+    },
+    {
+      "label": "prop:mobius-golden-fixed-points",
+      "object_type": "proposition",
+      "latex": {
+        "file": "chapters/descartes-universe.tex",
+        "line": 11358,
+        "chapter": 6
+      },
+      "title": "{Fixed points of the baryon integration-limit transformation are $1/\\varphi$ and $-\\varphi$}",
+      "lean": {
+        "decl": "QOU.Descartes.mobius_golden_fixed_points",
+        "file": "QOU/DescartesUniverse.lean",
+        "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd"
+      },
+      "formalization_status": "stated",
+      "uses": [
+        "def:picard-lefschetz-thimble",
+        "rem:color-tube-cubic",
+        "prop:descartes-elliptic-curve"
       ]
     },
     {
@@ -1915,7 +2167,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 9935,
+        "line": 11402,
         "chapter": 6
       },
       "title": "{The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle}",
@@ -1923,13 +2175,11 @@
         "decl": "QOU.orbital_space_normal_bundle",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "becb8c3ead24",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:reidemeister-mass-invariance"
       ]
@@ -1939,7 +2189,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 10098,
+        "line": 11565,
         "chapter": 6
       },
       "title": "{Quantum numbers from Fourier decomposition of normal-bundle sections}",
@@ -1947,13 +2197,11 @@
         "decl": "QOU.orbital_fourier_decomposition",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "75cbeb1bb755",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "prop:orbital-space-normal-bundle"
       ]
@@ -1963,7 +2211,7 @@
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 10310,
+        "line": 11777,
         "chapter": 6
       },
       "title": "{Five-fold symmetry: the Bring surface, the golden ratio, and the crystallographic obstruction}",
@@ -1981,7 +2229,7 @@
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
-        "line": 10497,
+        "line": 11964,
         "chapter": 6
       },
       "title": "{Cohomological embedding: torus knot representations exhaust $H^1(\\Sigma_g)$}",
@@ -1989,13 +2237,11 @@
         "decl": "QOU.Descartes.cohomological_embedding",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
-        "github_source_url": "https://github.com/litlfred/qou/blob/b189e6c907bea1aff523c0b0692e02c0dbf04788/lean/QOU/DescartesUniverse.lean",
-        "last_edited_commit": "b189e6c907bea1aff523c0b0692e02c0dbf04788",
-        "sorry_free": true,
-        "lean_hash": "ecfe7da79871",
-        "witnessed": true
+        "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
+        "last_edited_commit": "e97213a5cd3c30d14e37cbec8bff645370569ecd",
+        "sorry_free": true
       },
-      "formalization_status": "proved",
+      "formalization_status": "stated",
       "uses": [
         "def:quantum-universe",
         "prop:skein-finiteness-bound",
@@ -2371,6 +2617,51 @@
       "relation": "uses"
     },
     {
+      "from": "prop:knot-operator-selection",
+      "to": "def:categorical-action",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:knot-operator-selection",
+      "to": "def:breit-wheeler-pair-production",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:knot-operator-selection",
+      "to": "prop:rj-canonical-inner-product",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:knot-operator-selection",
+      "to": "prop:cohomological-embedding",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:knot-operator-selection",
+      "to": "prop:fiber-adjoint-involution",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:frobenius-gram-matrix",
+      "to": "def:categorical-action",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:frobenius-gram-matrix",
+      "to": "prop:fiber-adjoint-involution",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:frobenius-gram-matrix",
+      "to": "prop:rj-canonical-inner-product",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:frobenius-gram-matrix",
+      "to": "prop:knot-operator-selection",
+      "relation": "uses"
+    },
+    {
       "from": "def:categorical-meson",
       "to": "def:hadron",
       "relation": "uses"
@@ -2401,8 +2692,58 @@
       "relation": "uses"
     },
     {
+      "from": "prop:categorical-proton-exists",
+      "to": "def:categorical-proton",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-proton-exists",
+      "to": "conj:borromean-quark",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-proton-unique",
+      "to": "def:categorical-proton",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-proton-unique",
+      "to": "prop:categorical-proton-exists",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-proton-unique",
+      "to": "prop:hadron-unique",
+      "relation": "uses"
+    },
+    {
       "from": "def:categorical-neutron",
       "to": "def:categorical-proton",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-neutron-exists",
+      "to": "def:categorical-neutron",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-neutron-exists",
+      "to": "prop:categorical-proton-exists",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-neutron-unique",
+      "to": "def:categorical-neutron",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-neutron-unique",
+      "to": "prop:categorical-neutron-exists",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:categorical-neutron-unique",
+      "to": "prop:hadron-unique",
       "relation": "uses"
     },
     {
@@ -2468,6 +2809,31 @@
     {
       "from": "prop:em-coupling-projection",
       "to": "rem:force-knot-identification",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:em-coupling-chern-simons",
+      "to": "prop:em-coupling-projection",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:em-coupling-chern-simons",
+      "to": "def:brings-surface",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:em-coupling-chern-simons",
+      "to": "prop:torus-knot-generators",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:em-coupling-chern-simons",
+      "to": "def:knot-particle-generation",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:em-coupling-chern-simons",
+      "to": "thm:topological-mass",
       "relation": "uses"
     },
     {
@@ -2771,6 +3137,11 @@
       "relation": "uses"
     },
     {
+      "from": "conj:skein-shell-correction",
+      "to": "conj:elliptic-stability-locus",
+      "relation": "uses"
+    },
+    {
       "from": "prop:shell-structure-eigenvalues",
       "to": "def:transfer-matrix-operator",
       "relation": "uses"
@@ -3023,6 +3394,111 @@
     {
       "from": "prop:terminal-resolution",
       "to": "cor:mass-identity-C",
+      "relation": "uses"
+    },
+    {
+      "from": "def:picard-lefschetz-thimble",
+      "to": "rem:color-tube-cubic",
+      "relation": "uses"
+    },
+    {
+      "from": "def:picard-lefschetz-thimble",
+      "to": "rem:lepton-mass-integrals",
+      "relation": "uses"
+    },
+    {
+      "from": "def:picard-lefschetz-thimble",
+      "to": "prop:descartes-elliptic-curve",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:volume-tower-decomposition",
+      "to": "prop:cosimplicial-crossed-groupoid",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:volume-tower-decomposition",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:volume-tower-decomposition",
+      "to": "prop:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:cs-evaluation-faithfulness",
+      "to": "prop:volume-tower-decomposition",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:cs-evaluation-faithfulness",
+      "to": "def:quantum-characteristic-classes",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:cs-evaluation-faithfulness",
+      "to": "prop:yekutieli-lifting",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:hyperbolic-volume-transcendence",
+      "to": "prop:topological-mass-formula",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:hyperbolic-volume-transcendence",
+      "to": "conj:baryon-period-ratio",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:hyperbolic-volume-transcendence",
+      "to": "def:substrate-parameter",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:single-volume-irrationality",
+      "to": "conj:hyperbolic-volume-transcendence",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:borel-zagier-qou-volumes",
+      "to": "conj:single-volume-irrationality",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:borel-zagier-qou-volumes",
+      "to": "conj:hyperbolic-volume-transcendence",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:baryon-period-ratio",
+      "to": "def:picard-lefschetz-thimble",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:baryon-period-ratio",
+      "to": "rem:lepton-mass-integrals",
+      "relation": "uses"
+    },
+    {
+      "from": "conj:baryon-period-ratio",
+      "to": "thm:topological-mass",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:mobius-golden-fixed-points",
+      "to": "def:picard-lefschetz-thimble",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:mobius-golden-fixed-points",
+      "to": "rem:color-tube-cubic",
+      "relation": "uses"
+    },
+    {
+      "from": "prop:mobius-golden-fixed-points",
+      "to": "prop:descartes-elliptic-curve",
       "relation": "uses"
     },
     {

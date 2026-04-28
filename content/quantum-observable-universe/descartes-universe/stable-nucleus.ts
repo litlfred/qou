@@ -13,12 +13,8 @@ export default definition({
     "beta-stability",
     "lagrangian",
   ],
-  lean: {
-    decl: "QOU.Torsion.StableNucleus",
+  lean: { ref: "qou:QOU.Torsion.StableNucleus",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-neutron",
-    "prop:beta-stability",
-  ],
+  uses: ["prop:beta-stability"],
 });

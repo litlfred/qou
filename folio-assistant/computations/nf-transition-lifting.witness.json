@@ -10,14 +10,14 @@
   "scriptFile": "nf_transition_lifting.py",
   "scriptHash": "676274c3dfd5",
   "scriptCommitSha": "",
-  "description": "NF transition lifting: per-step Wedderburn channel decomposition during atom construction. Proton steps increase R_std (pp chirality), neutron steps decrease (nn cancellation). Neutron-step V_new decays geometrically with ratio → W_STD. R_std = V_std(full)/V_std(free) tracks cumulative confinement.",
+  "description": "NF transition lifting: per-step Wedderburn channel decomposition during atom construction. Proton steps increase R_std (pp chirality), neutron steps decrease (nn cancellation). Neutron-step V_new decays geometrically with ratio \u2192 W_STD. R_std = V_std(full)/V_std(free) tracks cumulative confinement.",
   "contentBlock": "conj:jet-filtered-knot-factor",
   "parameters": {
     "q": 1.1099785955541805,
     "W_STD": 0.669077230463799
   },
   "data": {
-    "²H": [
+    "\u00b2H": [
       {
         "A": 1,
         "Z": 1,
@@ -41,7 +41,7 @@
         "R_std": 0.92084326
       }
     ],
-    "³H": [
+    "\u00b3H": [
       {
         "A": 1,
         "Z": 1,
@@ -76,7 +76,7 @@
         "R_std": 0.94270772
       }
     ],
-    "⁴He": [
+    "\u2074He": [
       {
         "A": 1,
         "Z": 1,
@@ -122,7 +122,7 @@
         "R_std": 1.0219725
       }
     ],
-    "⁶Li": [
+    "\u2076Li": [
       {
         "A": 1,
         "Z": 1,
@@ -190,7 +190,7 @@
         "R_std": 1.04918308
       }
     ],
-    "⁷Li": [
+    "\u2077Li": [
       {
         "A": 1,
         "Z": 1,
@@ -269,7 +269,7 @@
         "R_std": 0.78085322
       }
     ],
-    "¹²C": [
+    "\u00b9\u00b2C": [
       {
         "A": 1,
         "Z": 1,
@@ -403,7 +403,7 @@
         "R_std": 1.21605406
       }
     ],
-    "¹⁶O": [
+    "\u00b9\u2076O": [
       {
         "A": 1,
         "Z": 1,
@@ -581,5 +581,7 @@
         "R_std": 1.41588293
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

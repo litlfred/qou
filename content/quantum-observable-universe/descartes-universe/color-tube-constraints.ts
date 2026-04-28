@@ -4,7 +4,11 @@ export default remark({
   interprets: "def:color-tube-coordinates",
   label: "rem:color-tube-constraints",
   title: "Constraint equations in color tube coordinates",
-  uses: ["rem:aggregate-color-quantities"],
+  uses: [
+    "rem:aggregate-color-quantities",
+    "prop:x5-bring-weight-identification",
+    "rem:u1-phase-tube",
+  ],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/color-tube-constraints-0.svg", blockIndex: 0, hash: "560d3f6cd3c0" },
     { mime: "image/svg+xml", url: "rendered/color-tube-constraints-1.svg", blockIndex: 1, hash: "9e3dff9fca6d" },

@@ -16,6 +16,5 @@ export default proposition({
     "prop:shell-closure-nf-term-count",
     "prop:nuclear-knot-classification",
     "prop:bw-coefficient-shadow-price",
-    "thm:wedderburn-mass-formula",
   ],
 });

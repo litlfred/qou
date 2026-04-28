@@ -297,3 +297,20 @@ if best_thresh2:
 
 print(f"\n{'=' * 70}")
 print("DONE")
+
+
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT NOTE  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+# lp-constrained-6he uses a SIGN-BASED Frobenius filter (me_par and
+# me_dau must be same sign), not the Gram-matrix `G·x ≥ 0` form.
+# The Lasserre SDP moment relaxation in sdp_moment_lift.py targets
+# the Gram form — it does not apply here.
+#
+# The analogue SDP formulation would place each configuration's
+# (me_par, me_dau) pair as a 2-vector and require the covariance
+# matrix over the selected config set to be PSD.  That is a
+# different SDP (covariance PSD) and would need a dedicated lift;
+# left open for a future session.
+print("\n(SDP note: lp-constrained-6he uses sign-based Frobenius; "
+      "Gram-based SDP lift does not apply.  See end-of-file comment.)")

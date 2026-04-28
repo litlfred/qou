@@ -108,7 +108,7 @@ $$
   = 
   \bigl[ T \bigr]_{\sim}
    \in 
-  \mathrm{End}\bigl(H_n(q)\bigr) \big/ \sim
+  \mathrm{End}\bigl(H_n(R, q)\bigr) \big/ \sim
 $$
 
 where $T$ is any braiding operation on $\mathfrak{H}$ (at either level)

@@ -1,0 +1,91 @@
+{
+  "engine": "tower-term-breakdown",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T11:39:20.468742+00:00",
+  "commitSha": "f35109284e51a4e11b76b7b7e04913f1d1ee8960",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "p-n-error-isolate",
+  "scriptFile": "p_n_error_isolate.py",
+  "scriptHash": "c85d8c5c8e38",
+  "scriptCommitSha": "",
+  "description": "Term-by-term breakdown of the proton and neutron tower masses, showing which tower term drives the neutron \u221255% undershoot and why a single geometric-series \u03b1 cannot close it.",
+  "data": {
+    "level_0": {
+      "V_e": 0.5938490006705095,
+      "m_e_Hecke": 630.5292680965904,
+      "proton": {
+        "V0": 0.9890073159292595,
+        "V1": 0.9710701586527437,
+        "tower": {
+          "T1": 0.9603954911881503,
+          "T2": 671221.4103737363,
+          "T3": 425756.9858019375,
+          "T4": 82016.16886541968,
+          "sum": 1178995.5254365846,
+          "V0": 0.9890073159292595,
+          "V1": 0.9710701586527437,
+          "abs_prod": 0.9603954911881503
+        },
+        "m_MeV": 955.4916893413767,
+        "err_pct": 1.8352460228402738
+      },
+      "neutron": {
+        "V0": 0.8542103128258388,
+        "V1": 0.9755094711077458,
+        "tower": {
+          "T1": 0.8332902504795161,
+          "T2": 36047.91315102721,
+          "T3": 475250.3602002083,
+          "T4": 6137.397714011542,
+          "sum": 517436.50435549754,
+          "V0": 0.8542103128258388,
+          "V1": 0.9755094711077458,
+          "abs_prod": 0.8332902504795161
+        },
+        "m_MeV": 419.345340170355,
+        "err_pct": -55.36815946905864
+      }
+    },
+    "per_term_asymmetry": {
+      "|V\u0302_0 V\u0302_1|": {
+        "p_Hecke": 0.9603954911881503,
+        "n_Hecke": 0.8332902504795161,
+        "delta_Hecke": -0.12710524070863416,
+        "delta_MeV": -0.00010300972187647848
+      },
+      "\u03a6_q(|V\u0302_0|)": {
+        "p_Hecke": 671221.4103737363,
+        "n_Hecke": 36047.91315102721,
+        "delta_Hecke": -635173.4972227091,
+        "delta_MeV": -514.7627660940096
+      },
+      "\u03a6_q(|V\u0302_1|)": {
+        "p_Hecke": 425756.9858019375,
+        "n_Hecke": 475250.3602002083,
+        "delta_Hecke": 49493.3743982708,
+        "delta_MeV": 40.11084596567678
+      },
+      "z\u00b2 \u03a6_q(|V\u0302_0 V\u0302_1|)": {
+        "p_Hecke": 82016.16886541968,
+        "n_Hecke": 6137.397714011542,
+        "delta_Hecke": -75878.77115140813,
+        "delta_MeV": -61.49432603296709
+      }
+    },
+    "geometric_series_correction": {
+      "alpha": 2.010896869118482,
+      "hbar_q_sq": 0.009817188513478667,
+      "factor": 0.9806408227196728,
+      "m_p_L0": 955.4916893413767,
+      "m_p_corrected": 936.9941563375377,
+      "m_p_err_pct": -0.1362005583016296,
+      "m_n_L0": 419.345340170355,
+      "m_n_corrected": 411.22715938831794,
+      "m_n_err_pct": -56.232195182244425
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

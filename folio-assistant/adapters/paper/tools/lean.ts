@@ -31,9 +31,19 @@ function hasCommand(cmd: string): boolean {
   }
 }
 
-/** Resolve the Lean project directory. content/quantum-observable-universe/lean/ is the default. */
+/**
+ * Resolve the Lean project directory.  Prefers the repo-root Lake
+ * workspace (which aggregates every paper package); falls back to the
+ * legacy per-paper QOU directory when the root workspace is missing.
+ */
 function leanProjectDir(dir?: string): string {
   if (dir) return resolve(REPO_ROOT, dir);
+  if (
+    existsSync(join(REPO_ROOT, "lakefile.toml")) ||
+    existsSync(join(REPO_ROOT, "lakefile.lean"))
+  ) {
+    return REPO_ROOT;
+  }
   const leanArchive = join(REPO_ROOT, "content/quantum-observable-universe/lean");
   if (existsSync(join(leanArchive, "lakefile.toml")) || existsSync(join(leanArchive, "lakefile.lean"))) {
     return leanArchive;

@@ -4,8 +4,7 @@ export default theorem({
   label: "thm:topological-mass",
   title: "Topological Decomposition of Mass",
   tags: ["mass", "topological-decomposition", "descent-involution"],
-  lean: {
-    decl: "QOU.Torsion.mass_decomposition_categorical",
+  lean: { ref: "qou:QOU.Torsion.mass_decomposition_categorical",
     validation: "not_checked",
   },
   uses: [

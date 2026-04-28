@@ -4,15 +4,12 @@ export default theorem({
   label: "thm:qou-obstruction-reduction",
   title:
     "In a QOU the classical limit obstruction is one-dimensional",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.qou_obstruction_reduction",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction",
     validation: "not_checked",
   },
   uses: [
     "def:classical-limit-obstruction",
-    "def:quantum-observable-universe",
     "thm:qu-to-qou",
-    "def:quantum-characteristic-classes",
   ],
   tags: [
     "obstruction",

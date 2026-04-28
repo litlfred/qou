@@ -1,0 +1,43 @@
+{
+  "engine": "topology+\u03b2-chain-audit",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T11:40:57.320622+00:00",
+  "commitSha": "f35109284e51a4e11b76b7b7e04913f1d1ee8960",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "c-alpha-from-Q-beta-trace",
+  "scriptFile": "c_alpha_from_Q_beta_trace.py",
+  "scriptHash": "572ce04206d1",
+  "scriptCommitSha": "",
+  "description": "Audit: is c_\u03b1\u03b1 = m_e \u00b7 Vol(7\u00b2_1) \u2248 2.427 MeV reproducible from the framework's three-constant calibration (m_e, q_0, Q_\u03b2(\u00b3H)) without using B(\u00b9\u00b2C) or other AME inputs?",
+  "parameters": {
+    "m_e_MeV": 0.51099895,
+    "Vol_7_sq_1": 4.749499981874439,
+    "Q_beta_tritium_MeV": 0.01861
+  },
+  "data": {
+    "route_A_topological": {
+      "c_alpha_MeV": 2.426989503762857,
+      "formula": "m_e \u00b7 Vol(7\u00b2_1)",
+      "inputs_used": [
+        "m_e (calibration)",
+        "Vol(7\u00b2_1) (SnapPy topology)"
+      ],
+      "ame_inputs": [],
+      "valid_under_three_constant_rule": true
+    },
+    "route_B_beta_chain": {
+      "predictor_present": false,
+      "predictor_files": [],
+      "ame_inputs_required_in_practice": true,
+      "reason": "No non-magic-Q predictor \u2192 every intermediate Q uses AME"
+    },
+    "verdict": {
+      "c_alpha_zero_parameter_under_rule": true,
+      "caveat": "Zero-parameter ONLY under the interpretation that 7\u00b2_1 is independently derived from the framework's topology.  If 7\u00b2_1 was chosen by matching Vol(7\u00b2_1) to c_\u03b1\u03b1/m_e extracted from \u00b9\u00b2C AME, the derivation is implicitly AME-fitted."
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

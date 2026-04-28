@@ -58,10 +58,10 @@ Starting from generators with $g(T_{m,n}) \leq 4$, a crossing
 change produces a knot of genus at most $5$.  However, the Bring
 surface imposes a *spectral filter*: only knots with $g(K) \leq 4$
 admit localized knot structures.  A Skein descendant with $g = 5$
-has zero projection onto the physical Hilbert space
-$\mathcal{H}_{\mathrm{phys}}$ — its coefficient in the mass
-functional vanishes because the fibre functor $\tau$ cannot
-evaluate it.
+has zero image in the physical state space
+$V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ — its coefficient in
+the mass functional vanishes because the fibre functor $\tau$
+cannot evaluate it.
 
 The spectral filter acts at the level of the Skein resolution:
 

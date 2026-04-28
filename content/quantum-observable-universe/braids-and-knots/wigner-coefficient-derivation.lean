@@ -24,6 +24,6 @@ theorem wigner_coefficient (q₀ m_e : ℝ)
     (hq : q₀ = 1.109978595554181)
     (hme : m_e = 0.51099895) :
     |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03 := by
-  sorry
+  sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 — q-deformed Wigner/Clebsch-Gordan coefficients (§VII)
 
 end QOU.BraidKnot

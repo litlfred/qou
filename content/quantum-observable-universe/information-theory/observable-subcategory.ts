@@ -7,14 +7,12 @@ export default definition({
     "observable-subcategory", "bundle-category",
     "degree-zero", "frobenius-pairing",
   ],
-  lean: {
-    decl: "QOU.ObservableSubcategory",
+  lean: { ref: "qou:QOU.ObservableSubcategory",
     validation: "not_checked",
   },
   uses: [
     "rem:bundle-category",
     "def:jet-horizon",
     "def:observation",
-    "prop:jet-prolongation",
   ],
 });

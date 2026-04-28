@@ -19,7 +19,7 @@ $$
 
 The classical gauge group
 $G = \mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$
-([SU(2) emergence](#thm:su2-emergence)) is the $q = 1$ case
+([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)) is the $q = 1$ case
 (symmetric braiding).
 In the archimedean realisation, where the substrate parameter specialises
 to a substrate field over $M$, this yields a field of quantum groups

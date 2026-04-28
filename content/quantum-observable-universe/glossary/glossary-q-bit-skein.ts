@@ -14,9 +14,7 @@ export default remark({
   ],
   uses: [
     "rem:glossary-q-bit",
-    "def:operational-entropy",
-    "prop:skein-generation",
-    "prop:skein-polynomial-transfer-matrix",
     "def:categorical-transfer-matrix",
   ],
+  defines: ["q-bit-skein"],
 });

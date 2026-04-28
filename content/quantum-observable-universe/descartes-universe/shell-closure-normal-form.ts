@@ -15,15 +15,8 @@ export default proposition({
     "groebner-basis",
   ],
   lean: {
-    decl: "QOU.OptimalNF.optimal_nf_is_standard_basis",
-    validation: "has_sorry",
+    ref: "qou:QOU.OptimalNF.optimal_nf_is_standard_basis",
+    validation: "stub",
   },
-  uses: [
-    "prop:nuclear-groebner-reduction",
-    "thm:groebner-shirshov-energy",
-    "prop:integer-stability",
-    "def:stable-nucleus",
-    "prop:beta-stability",
-    "prop:skein-polynomial-transfer-matrix",
-  ],
+  uses: ["prop:skein-polynomial-transfer-matrix"],
 });

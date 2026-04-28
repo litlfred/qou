@@ -115,8 +115,8 @@ What agents **cannot** do without Lean:
 | "No such file or directory: 'lake'" | lean not on PATH | `export PATH="$HOME/.elan/bin:$PATH"` or install elan |
 | elan install 403 | Network restrictions | Run Claude Code locally where lean is installed |
 | "lake update" hangs | Git fetch blocked | Check `git ls-remote` works for mathlib4 |
-| Lean tools timeout | Project not built | Run `lake build` in `content/quantum-observable-universe/lean/` first |
-| "toolchain not installed" | Wrong lean version | `cd content/quantum-observable-universe/lean && elan toolchain install $(cat lean-toolchain)` |
+| Lean tools timeout | Workspace not built | Run `lake build` at the **repo root** (root workspace builds all paper packages) |
+| "toolchain not installed" | Wrong lean version | `elan toolchain install $(cat lean-toolchain)` from the repo root |
 | paper-assistant shows `✗ lean` | lean not on PATH | Add `$HOME/.elan/bin` to PATH in shell profile |
 
 ## PATH Configuration

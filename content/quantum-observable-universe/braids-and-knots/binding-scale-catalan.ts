@@ -3,12 +3,8 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:binding-scale-catalan",
   title: "Binding energy scale $\\alpha = m_e \\times 8G$",
-  lean: {
-    decl: "QOU.BindingScale.bindingScale_value",
+  lean: { ref: "qou:QOU.BindingScale.bindingScale_value",
     validation: "not_checked",
   },
-  uses: [
-    "thm:topological-mass",
-    "def:borromean-baryon",
-  ],
+  uses: ["def:borromean-baryon"],
 });

@@ -35,8 +35,13 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 q0 = Q; qi0 = Q_INV; h = HA; me = M_E_MEV
 z = 1.0 / (q0**0.5 + qi0**0.5)
 
-CATALAN_G = 0.915965594177219015054603514932
-ALPHA = me * 8 * CATALAN_G
+# E_0 calibration: free-neutron β-decay Q-value (MeV), per
+# prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.
+# This is the SINGLE archimedean calibration τ: R → ℝ from
+# categorical mass to MeV.  The former ALPHA = m_e · 8 · Catalan
+# convention (hyperbolic-volume heuristic) is removed — it was
+# not derivable from the mass-identity prescription.
+E_0_BETA_DECAY_Q_MEV = 0.782
 
 
 # ══════════════════════════════════════════════════════════════
@@ -119,12 +124,18 @@ def standard_young_tableaux(shape):
 # §2  SEMINORMAL REPRESENTATION MATRICES
 # ══════════════════════════════════════════════════════════════
 
-def build_seminormal_matrices(shape, sparse=None):
+def build_seminormal_matrices(shape, sparse=None, q=None):
     """Build representation matrices for σ₁..σ_{n-1} in the
     seminormal basis for partition `shape`.
 
     Returns: list of numpy/scipy arrays [σ₁, σ₂, ..., σ_{n-1}]
              (0-indexed: sigmas[0] = σ₁)
+
+    If `q` is supplied, build matrices at that q (override).  Otherwise
+    the module-level default `q0` from `q_parameter.py` is used.  The
+    override path enables CRT-style multi-q probing for q-rational
+    reconstruction (see prop:alpha-k-derivation-procedure
+    §"CRT-style q-rational reconstruction").
 
     If sparse=True (or sparse=None and dim > 500), uses scipy sparse
     CSR matrices. Each Hoefsmit matrix has at most 2 nonzeros per row
@@ -137,6 +148,10 @@ def build_seminormal_matrices(shape, sparse=None):
 
     if dim == 0:
         return [], dim, syts
+
+    # Resolve q (override or module default).  Derive amplitude h locally.
+    q_local = float(q0) if q is None else float(q)
+    h_local = q_local - 1.0 / q_local
 
     use_sparse = sparse if sparse is not None else (dim > 500)
 
@@ -156,7 +171,7 @@ def build_seminormal_matrices(shape, sparse=None):
             rho = contents[ci_k1] - contents[ci_k]
 
             # Diagonal element: a_ρ = h/(1-q^{-2ρ})
-            a = h / (1.0 - q0**(-2 * rho))
+            a = h_local / (1.0 - q_local**(-2 * rho))
 
             # Find swap partner: swap entries k and k+1
             swap_map = dict(syts[i])
@@ -178,7 +193,7 @@ def build_seminormal_matrices(shape, sparse=None):
                 processed.add(i)
             else:
                 # 2×2 block
-                a_prime = h / (1.0 - q0**(2 * rho))  # = a_{-ρ}
+                a_prime = h_local / (1.0 - q_local**(2 * rho))  # = a_{-ρ}
                 # b² = a·a' + 1 (from det = -1)
                 b_sq = a * a_prime + 1.0
                 b = math.sqrt(abs(b_sq))
@@ -206,6 +221,170 @@ def build_seminormal_matrices(shape, sparse=None):
 # ══════════════════════════════════════════════════════════════
 # §3  NUCLEAR BRAID CHARACTER
 # ══════════════════════════════════════════════════════════════
+
+# Optional Rust acceleration: pyhecke_native.chi_lambda_braid is
+# 50–100× faster than the pure-Python seminormal multiplication for
+# n ≥ 9.  Falls back transparently to Python if the wheel isn't
+# installed (CI without the Rust toolchain, or fresh checkout
+# without `maturin build`).
+try:
+    import pyhecke_native as _pyn
+    _RUST_CHI_AVAILABLE = True
+except ImportError:
+    _pyn = None
+    _RUST_CHI_AVAILABLE = False
+
+
+# Precision-tag registry — every character / mass / binding result
+# downstream is required to carry one of these tags.  See the user
+# directive: "no fittings, short cuts, approx — symbolic in q or
+# high precision > 50 — keep track of which".
+PRECISION_F64_FALLBACK = "f64_numeric_fallback"
+PRECISION_MPFR_50DPS = "mpfr_50dps"
+PRECISION_SYMBOLIC_Q = "symbolic_q"
+PRECISION_TAGS = {PRECISION_F64_FALLBACK, PRECISION_MPFR_50DPS, PRECISION_SYMBOLIC_Q}
+
+
+def _parse_precision(precision):
+    """Normalize a `precision` arg to a canonical tag.
+
+    Accepts:
+      - "f64" / "fast" / "f64_numeric_fallback"  → f64 (16 dps, fast)
+      - "mpfr" / "exact" / int N (≥ 50)          → mpfr at N dps (default 50)
+      - "symbolic" / "symbolic_q"                → symbolic (deferred)
+
+    Returns `(canonical_tag, dps_or_None)`.
+    """
+    if precision is None or precision == "f64" or precision == "fast" \
+            or precision == PRECISION_F64_FALLBACK:
+        return (PRECISION_F64_FALLBACK, None)
+    if precision == "mpfr" or precision == "exact" or precision == PRECISION_MPFR_50DPS:
+        return (PRECISION_MPFR_50DPS, 50)
+    if isinstance(precision, int) and precision >= 50:
+        return (f"mpfr_{precision}dps", precision)
+    if isinstance(precision, str) and precision.startswith("mpfr_") and precision.endswith("dps"):
+        try:
+            dps = int(precision[5:-3])
+            return (precision, dps)
+        except ValueError:
+            pass
+    if precision == "symbolic" or precision == PRECISION_SYMBOLIC_Q:
+        return (PRECISION_SYMBOLIC_Q, None)
+    raise ValueError(
+        f"Unrecognized precision tag: {precision!r}. "
+        f"Use one of: 'f64', 'mpfr', 'mpfr_50dps', int >= 50, or 'symbolic'."
+    )
+
+
+def chi_lambda_braid(shape, word, q_value=None, precision=None,
+                     return_precision=False):
+    """Character `χ_λ(β)` of a Hecke braid word at parameter `q`.
+
+    Args:
+        shape: partition `λ ⊢ n` as tuple/list of descending parts.
+        word: braid word as `[(sign, generator_1based), ...]`,
+              `sign ∈ {+1, -1}` or `'+'/'-'`,
+              `generator ∈ {1, ..., n-1}`.
+        q_value: Hecke parameter (default: substrate `q₀ = Q`).
+        precision: one of:
+            None / "f64" / "fast"        → f64 (~16 dps), fast Rust kernel
+            "mpfr" / "mpfr_50dps" / 50  → mpfr at 50 dps, exact (no f64 round)
+            "mpfr_<N>dps" / int N≥50    → mpfr at N dps
+            "symbolic" / "symbolic_q"    → symbolic in q (NotImplementedError; F3)
+        return_precision: if True, return `(value, precision_tag)`;
+            if False (default), return value only.
+
+    Defaults to `f64` for backward compatibility — but downstream code
+    that records witnesses MUST pass `precision="mpfr_50dps"` (or
+    higher) to satisfy the "no approximations" directive, OR record
+    the returned `precision` tag in the witness JSON.
+
+    Returns the character.  For `f64`: returns `float`. For `mpfr_*`:
+    returns a string of the decimal expansion (caller may parse via
+    `mpmath.mpf`).  For `symbolic_q`: not yet implemented (raises).
+    """
+    if q_value is None:
+        q_value = float(q0)
+    tag, dps = _parse_precision(precision)
+
+    # Normalize word.
+    word_marshalled = [
+        (1 if (s == '+' or s == 1 or s is True) else -1, int(g))
+        for s, g in word
+    ]
+
+    if tag == PRECISION_SYMBOLIC_Q:
+        raise NotImplementedError(
+            "symbolic-in-q character evaluation is deferred to F3 "
+            "(Murnaghan–Nakayama / Ram–Wenzl recursion in Rust). "
+            "For now use precision='mpfr_50dps' for exact evaluation."
+        )
+
+    if tag.startswith("mpfr_"):
+        if not _RUST_CHI_AVAILABLE:
+            raise NotImplementedError(
+                f"precision={tag} requires the Rust kernel "
+                "(pyhecke_native). Install via `maturin build` in "
+                "tools/pyhecke-native/."
+            )
+        # Preserve full precision in q_value: if caller passes a string
+        # like "1.10998", route it directly to mpfr without going through
+        # f64 (which would lose precision to ~16 dps).
+        if isinstance(q_value, str):
+            q_str = q_value
+        else:
+            # f64 → string at f64-equivalent precision (caller chose
+            # to pass a float — implicit acceptance of f64 boundary loss).
+            q_str = format(float(q_value), f".{(dps or 50) + 5}g")
+        result = _pyn.chi_lambda_braid_mpfr(
+            list(shape), word_marshalled, q_str, dps or 50
+        )
+        return (result, tag) if return_precision else result
+
+    # Default: f64 fast path.
+    if _RUST_CHI_AVAILABLE:
+        value = _pyn.chi_lambda_braid(
+            list(shape), word_marshalled, float(q_value)
+        )
+        return (value, PRECISION_F64_FALLBACK) if return_precision else value
+
+    # Python fallback: build seminormal matrices and multiply.
+    # `build_seminormal_matrices` is calibrated against the global
+    # substrate parameter `q0`/`h`, so the fallback is *only* valid at
+    # `q_value == q0`.  Reject non-default q_value here rather than
+    # silently returning an inconsistent character (Copilot review
+    # #r3142936624).
+    if not math.isclose(float(q_value), float(q0), rel_tol=0.0, abs_tol=0.0):
+        raise ValueError(
+            "chi_lambda_braid() Python fallback only supports "
+            "q_value == q0; install the Rust kernel (pyhecke_native) "
+            "for non-default q_value."
+        )
+    sigmas, dim, _ = build_seminormal_matrices(tuple(shape))
+    if dim == 0:
+        return 0.0
+    from scipy import sparse as sp_sparse
+    is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
+    if is_sparse:
+        product = sp_sparse.eye(dim, format='csr')
+        I = sp_sparse.eye(dim, format='csr')
+    else:
+        product = np.eye(dim)
+        I = np.eye(dim)
+    h_local = q_value - 1.0 / q_value
+    for sign, gen in word_marshalled:
+        idx = gen - 1
+        if idx < 0 or idx >= len(sigmas):
+            continue
+        if sign > 0:
+            M = sigmas[idx]
+        else:
+            M = sigmas[idx] - h_local * I
+        product = product @ M
+    if is_sparse:
+        return float(product.diagonal().sum())
+    return float(np.trace(product))
+
 
 def crossing_coeffs(ti, tj):
     """Crossing (c, d) for nucleon types: 1=proton, 0=neutron."""
@@ -294,7 +473,8 @@ def dim_q(shape):
     return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
 
 
-def compute_mass_at_level(Z, N, k=6, verbose=False):
+def compute_mass_at_level(Z, N, k=6, verbose=False, partition_filter=None,
+                            block_cache=None):
     """Compute atomic mass using ALL partitions at Hecke level k.
 
     For each partition λ of k:
@@ -302,8 +482,38 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
       2. Compute χ_λ(nuclear braid) by matrix multiplication
       3. Weight by w_λ = dim_q(λ)²/[k]_q!
 
-    The Markov trace = Σ_λ w_λ · χ_λ / dim(λ)
-    Binding = -ALPHA · ln|Markov trace|
+    The Markov trace = Σ_λ w_λ · χ_λ / dim(λ).  Binding is computed
+    via the categorical mass-identity prescription
+    (prop:categorical-mass-markov): at single-brane level,
+
+        B(Z, N) = E_0 · ( |tr_M(W_free)| − |tr_M(W_atom)| )
+
+    with E_0 = 0.782 MeV (free-neutron β-decay Q) — the SINGLE
+    archimedean calibration.  The former ALPHA = m_e · 8 · Catalan
+    convention is removed (it was a hyperbolic-volume heuristic, not
+    derivable from the mass-identity prescription).  Callers
+    wanting the full E_0-based binding should use the dedicated
+    ``mass_at_3A_proper.binding_3A`` module; the ``binding`` field
+    returned by this function is now the dimensionless categorical
+    mass defect ``|1 − |markov||`` — same information, no implicit
+    constant.
+
+    ``partition_filter``, if given, is a predicate ``λ → bool``; only
+    partitions for which it returns True contribute.  Useful for
+    audits (top-N by w_λ, etc.).  Default: include all partitions.
+
+    ``block_cache``, if given, must be a ``syt_prefix_cache.BlockCache``
+    pinned to the same q used for the seminormal-matrix build.  When
+    supplied, the per-partition loop routes through
+    ``syt_prefix_cache.build_seminormal_matrices_cached`` instead of
+    the uncached ``build_seminormal_matrices``, reusing Hoefsmit
+    content-distance arithmetic and the per-shape SYT→index map
+    across shapes.  Caller lifecycle: construct the cache once per
+    q (``BlockCache(q=Q)``), share across multiple
+    ``compute_mass_at_level`` / ``compute_mass_at_3A`` calls, discard
+    when q changes.  Default ``None`` preserves the legacy uncached
+    path.  Expected 5–20× speedup on heavy atoms (A ≥ 10, k = 3A
+    with p(3A) ≥ 5604 partitions and dim_λ up to ~1000).
 
     Returns: (M_predicted, details_dict)
     """
@@ -319,8 +529,17 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
     total_markov = 0.0
     partition_data = []
 
+    if block_cache is not None:
+        from syt_prefix_cache import build_seminormal_matrices_cached
+        _build = lambda shape: build_seminormal_matrices_cached(
+            shape, cache=block_cache)
+    else:
+        _build = build_seminormal_matrices
+
     for shape in partitions_of(k):
-        sigmas, dim, syts = build_seminormal_matrices(shape)
+        if partition_filter is not None and not partition_filter(shape):
+            continue
+        sigmas, dim, syts = _build(shape)
 
         if dim == 0:
             continue
@@ -344,19 +563,52 @@ def compute_mass_at_level(Z, N, k=6, verbose=False):
             'chi': chi, 'contribution': contribution,
         })
 
-    if abs(total_markov) < 1e-300:
-        B = 0.0
-    else:
-        B = -ALPHA * math.log(abs(total_markov))
+    # Dimensionless categorical mass defect relative to the Markov-
+    # trace identity (Σ w_λ = 1 at q = 1; at q₀ the identity sum is
+    # |1 − Σ w_λ · χ_λ(id)/d_λ|).  Use ``binding_defect`` for the
+    # dimensionless quantity; use mass_at_3A_proper.binding_3A for a
+    # MeV binding with the prop:categorical-mass-markov calibration
+    # E_0 = 0.782 MeV.
+    binding_defect = abs(1.0 - abs(total_markov))  # dimensionless
 
-    M_pred = Mfree - B
+    # M_pred is NOT converted to MeV here — the dimensionless defect
+    # has no meaningful sign or magnitude in MeV units.  Return
+    # M_pred = Mfree so the second slot of the return tuple is a
+    # well-defined MeV number (free-nucleon rest-mass sum).  Callers
+    # that need binding in MeV must use a proper calibration path.
+    M_pred = Mfree  # free rest-mass sum, MeV — no unit-mixed subtraction
 
     return M_pred, {
-        'binding': B,
+        'binding_defect_dimensionless': binding_defect,
+        'binding': binding_defect,  # legacy key; dimensionless
         'markov_trace': total_markov,
         'partitions': partition_data,
         'level': k,
     }
+
+
+def compute_mass_at_3A(Z, N, verbose=False, partition_filter=None,
+                          block_cache=None):
+    """Atomic mass summed over λ ⊢ 3A — the canonical H_{3A} Wedderburn form.
+
+    Replaces the per-generator H_3 weighting used in the tower formula
+    (hecke_core.atom_per_generator_volumes) with a full partition sum
+    at the atom-wide Iwahori–Hecke algebra H_{3A}(q).  This is the
+    principled form: the atom braid lives in H_{3A}, so weights should
+    be d_q(λ)²/[3A]_q! for λ ⊢ 3A — NOT a per-generator H_3 average.
+
+    A = Z + N.  Calls compute_mass_at_level(Z, N, k=3A).  For A ≥ 10
+    (p(3A) ≥ 5604) this is expensive; callers may pass a
+    ``partition_filter`` to restrict (audit mode), but the default
+    is the full sum — no Plancherel truncation.
+    """
+    A = Z + N
+    if A < 1:
+        return Z * M_P_MEV + N * M_N_MEV + Z * me, {
+            'binding': 0.0, 'markov_trace': 1.0, 'partitions': [], 'level': 0}
+    return compute_mass_at_level(Z, N, k=3 * A, verbose=verbose,
+                                   partition_filter=partition_filter,
+                                   block_cache=block_cache)
 
 
 # ══════════════════════════════════════════════════════════════

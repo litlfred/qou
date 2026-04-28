@@ -2,7 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:fiber-adjoint-involution",
-  lean: { decl: "QOU.FiberAdjointInvolution", validation: "not_checked" },
+  lean: { ref: "qou:QOU.FiberAdjointInvolution", validation: "not_checked" },
   title: "Fiber--adjoint-fiber involution",
   uses: [
     "def:frobenius-pairing",

@@ -1,0 +1,68 @@
+{
+  "engine": "alt-tower-shapes",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T12:55:56.657311+00:00",
+  "commitSha": "9ee5a506ee0bff6e487a979b2aeb67a7ebd733dd",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "neutron-alt-tower-shapes",
+  "scriptFile": "neutron_alt_tower_shapes.py",
+  "scriptHash": "639c6596a724",
+  "scriptCommitSha": "",
+  "description": "Test 4 alternative tower shapes against the neutron CODATA value to see if any closes the -56% gap with a physically-motivated extra term.",
+  "data": {
+    "params": {
+      "q": 1.1099785955541805,
+      "z": 0.4993203340335982,
+      "hbar_q_sq": 0.009817188513478667
+    },
+    "level_0_V_hat": {
+      "Ve": 0.5938490006705095,
+      "Vp0": 0.9890073159292595,
+      "Vp1": 0.9710701586527437,
+      "Vn0": 0.8542103128258388,
+      "Vn1": 0.9755094711077458
+    },
+    "shapes": {
+      "A_standard_n": {
+        "m_n_MeV": 419.345340170355,
+        "err_pct": -55.36815946905864
+      },
+      "A_swap_n": {
+        "m_n_MeV": 419.34534017035503,
+        "err_pct": -55.36815946905863
+      },
+      "B_symmetric": {
+        "m_n_MeV": 419.34534017035503,
+        "err_pct": -55.36815946905863
+      },
+      "C_V0_corrected": {
+        "m_n_MeV": 1002.9628286843439,
+        "err_pct": 6.747524629978058,
+        "factor": 1.1578030621727038
+      },
+      "D_saturated_both": {
+        "m_p_MeV": 981.0629924751701,
+        "m_n_MeV": 419.5676721443388,
+        "m_p_err_pct": 4.5606071900833465,
+        "m_n_err_pct": -55.344496191427496
+      },
+      "E_saturated_neutron_only": {
+        "m_n_MeV": 419.5676721443388,
+        "m_n_err_pct": -55.344496191427496
+      },
+      "F_required_delta": {
+        "delta_Hecke": 641907.3591286462,
+        "coefficient_if_Phi_V0sq": 145.44613914175312,
+        "coeff_over_z4": 2339.83475713423
+      }
+    },
+    "proton_reference": {
+      "m_p_std_MeV": 955.4916893413767,
+      "err_pct": 1.8352460228402738
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

@@ -4,8 +4,8 @@ the categorical structures specialise to familiar geometric objects:
 
 - **Volume constraint**
   (\ref{eq:categorical-volume-constraint}).
-  The Levi form $L_\theta = -id\theta|_{H \times H}$ is non-degenerate
-  on the rank-$4$ distribution $H = \ker\theta$, realising the
+  The Levi form $L_\varTheta = -id\varTheta|_{H \times H}$ is non-degenerate
+  on the rank-$4$ distribution $H = \ker\varTheta$, realising the
   categorical volume form
   $\epsilon \colon \Lambda^2 V \to \mathbf{1}$.  The induced Hodge star
   $*_H$ splits $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$,
@@ -21,7 +21,7 @@ the categorical structures specialise to familiar geometric objects:
 - **Variational equations**
   ([variational equations](#prop:variational-equations)).
   The categorical Einstein equation reduces to
-  $\mathrm{Ric}_{g_\theta} = T^{(q)}$
+  $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$
   ([GR substrate geometry](#rem:gr-substrate-geometry)); the transport equation
   reduces to the Schrodinger equation
   $J\hbar_q\iota_{\xi_q} D_A \psi = \hat{H}_q \psi$

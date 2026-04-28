@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:categorical-dq-squared",
-  lean: {
-    decl: "QOU.categorical_dq_squared",
+  lean: { ref: "qou:QOU.categorical_dq_squared",
     validation: "not_checked",
   },
   title: "Non-vanishing of $d_q^2$",

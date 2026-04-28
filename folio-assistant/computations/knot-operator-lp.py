@@ -314,3 +314,21 @@ witness_path = Path(__file__).parent / 'knot-operator-lp.witness.json'
 with open(witness_path, 'w') as f:
     json.dump(witness, f, indent=2)
 print(f"\n  Witness: {witness_path.name}")
+
+
+# ══════════════════════════════════════════════════════════════
+#  SDP LIFT NOTE  (see sdp_moment_lift.py / docs/ilp-sdp-audit.md)
+# ══════════════════════════════════════════════════════════════
+# knot-operator-lp is an LP-DUAL minimax: fit per-knot weights to
+# observed decay Q-values under a bounded-error constraint.  The
+# primal is a min-max LP, not a Gram-positivity LP.  The standard
+# Lasserre moment SDP lift targets Gram-based Frobenius LPs and does
+# not apply here.
+#
+# The SDP analogue would be: replace the minimax objective t with a
+# PSD-matrix slack variable over the residual vector — an SDP
+# relaxation of minimax (well-studied, see e.g. Lasserre 2001).
+# Left for a future session; the current LP-dual is correct on its
+# own terms.
+print("\n(SDP note: knot-operator-lp is LP-dual minimax; Gram-based "
+      "SDP lift does not apply.  See end-of-file comment.)")

@@ -1,0 +1,63 @@
+################################################################################
+# Folio root Lake workspace
+#
+# This workspace aggregates every paper in the folio into a single Lake
+# build.  Each paper lives under `content/<paper-dir>/lean/` and is
+# declared here as a path-based Lake package.  Running `lake build` at
+# the repo root builds every paper; running `lake build <target>` (e.g.
+# `lake build QOU`, `lake build UGB`) builds a single paper's library.
+#
+# Package names (short-form, used in content-block `lean.ref` URIs):
+#   qou       → content/quantum-observable-universe/lean/   (lib: QOU)
+#   ugb       → content/unital-groebner-bases/lean/         (lib: UGB)
+#   fred2005  → content/fred2005-formal-groups/lean/        (lib: Fred2005)
+#
+# Content-block `lean.ref` is a package-qualified URI:
+#   "qou:QOU.Torsion.lifting_exists"
+#   "ugb:UGB.GrobnerShirshov.Basis"
+#
+# Per-paper lakefiles remain as-is (so each paper still builds
+# standalone via `cd content/<paper>/lean && lake build`), but this root
+# file is the preferred build entry point for CI and agents.
+################################################################################
+
+name = "folio"
+defaultTargets = ["QOU", "UGB", "Fred2005"]
+
+[leanOptions]
+autoImplicit = false
+profiler = true
+
+################################################################################
+# External dependencies
+################################################################################
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+
+################################################################################
+# Paper packages (one `[[require]]` per paper with Lean formalization)
+#
+# Add new papers by:
+#   1. Creating content/<paper-dir>/lean/ with a paper-local lakefile.toml
+#      following the qou/ugb/fred2005 template.
+#   2. Adding a `[[require]]` stanza below.
+#   3. Adding the paper's default library name to `defaultTargets` above.
+#   4. Adding the package → paper-dir mapping to
+#      content/schema/lean-packages.ts (consumed by the schema + MCP
+#      server for resolving `lean.ref` URIs).
+################################################################################
+
+[[require]]
+name = "qou"
+path = "content/quantum-observable-universe/lean"
+
+[[require]]
+name = "ugb"
+path = "content/unital-groebner-bases/lean"
+
+[[require]]
+name = "fred2005"
+path = "content/fred2005-formal-groups/lean"

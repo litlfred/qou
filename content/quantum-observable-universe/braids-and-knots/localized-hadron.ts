@@ -4,13 +4,8 @@ export default definition({
   label: "def:localized-hadron",
   title: "Localized hadron",
   tags: ["hadron", "knot", "localized", "categorical"],
-  lean: {
-    decl: "QOU.LocalizedHadron",
+  lean: { ref: "qou:QOU.LocalizedHadron",
     validation: "not_checked",
   },
-  uses: [
-    "def:hadron",
-    "def:categorical-point",
-    "def:projective-line-object",
-  ],
+  uses: ["def:hadron"],
 });

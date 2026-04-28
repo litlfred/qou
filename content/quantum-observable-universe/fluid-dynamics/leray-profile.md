@@ -1,3 +1,11 @@
+> **Summary.** Near the blowup time $T^*$, the singular NS
+> solution approaches a self-similar Leray profile $V(\xi)$ on
+> the rescaled coordinate $\xi = (x-x_0)/\sqrt{T^*-t}$.  The QOU
+> representation theory constrains this profile to a finite-
+> dimensional ansatz: $V$ is a sum of weight-$j$ matrix entries
+> of $\mathrm{SU}_q(2)$ representations, with coefficients fixed
+> by the singular gerbe data $(\Sigma, n^*, \kappa_{n^*})$.
+
 Near the blowup time $T^*$, the
 [NS-singular solution](#thm:ns-singularity-descartes) approaches
 a self-similar profile.  The QOU representation theory constrains

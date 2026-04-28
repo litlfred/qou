@@ -5,8 +5,7 @@ export default example({
   label: "ex:instanton",
   title: "Instanton connection",
   tags: ["instanton", "archimedean"],
-  lean: {
-    decl: "QOU.InstantonConnection",
+  lean: { ref: "qou:QOU.InstantonConnection",
     validation: "leanok",
   },
   uses: ["ex:c-quantum-universe", "def:categorical-instanton"],

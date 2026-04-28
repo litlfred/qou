@@ -10,7 +10,7 @@
   "scriptFile": "jet_knot_invariants.py",
   "scriptHash": "d3d341c14ced",
   "scriptCommitSha": "",
-  "description": "Per-level knot invariants from jet-filtered branching. At each k, the nuclear braid's H₃ characters are weighted by the Wedderburn structure of H_k. Key finding: a_k converges by k=4 (topology-independent beyond k=3). For Z=N even-even: a_k = V_inter/(1+W_STD). Stable ratio ≈ W_STD.",
+  "description": "Per-level knot invariants from jet-filtered branching. At each k, the nuclear braid's H\u2083 characters are weighted by the Wedderburn structure of H_k. Key finding: a_k converges by k=4 (topology-independent beyond k=3). For Z=N even-even: a_k = V_inter/(1+W_STD). Stable ratio \u2248 W_STD.",
   "contentBlock": "prop:confined-knot-binding",
   "parameters": {
     "q": 1.1099785955541805,
@@ -18,7 +18,7 @@
     "1_plus_W_STD": 1.6690772304637989
   },
   "data": {
-    "³H": {
+    "\u00b3H": {
       "levels": [
         {
           "k": 3,
@@ -61,7 +61,7 @@
       "V_std": 0.2934315539012122,
       "ap": -1.1221068372363028
     },
-    "³He": {
+    "\u00b3He": {
       "levels": [
         {
           "k": 3,
@@ -104,7 +104,7 @@
       "V_std": 0.5047761849051494,
       "ap": -0.9107622062323656
     },
-    "⁴He": {
+    "\u2074He": {
       "levels": [
         {
           "k": 3,
@@ -147,7 +147,7 @@
       "V_std": 1.021972498709757,
       "ap": 1.0219724987097571
     },
-    "⁶Li": {
+    "\u2076Li": {
       "levels": [
         {
           "k": 3,
@@ -190,7 +190,7 @@
       "V_std": 0.41232982719790867,
       "ap": -1.050118284574484
     },
-    "⁷Li": {
+    "\u2077Li": {
       "levels": [
         {
           "k": 3,
@@ -233,7 +233,7 @@
       "V_std": 0.10021155573979001,
       "ap": -1.4596927114550908
     },
-    "⁹Be": {
+    "\u2079Be": {
       "levels": [
         {
           "k": 3,
@@ -276,7 +276,7 @@
       "V_std": 1.025268632777141,
       "ap": 1.692210797242475
     },
-    "¹²C": {
+    "\u00b9\u00b2C": {
       "levels": [
         {
           "k": 3,
@@ -319,7 +319,7 @@
       "V_std": 1.216054059281153,
       "ap": 1.2160540592811555
     },
-    "¹⁶O": {
+    "\u00b9\u2076O": {
       "levels": [
         {
           "k": 3,
@@ -362,5 +362,7 @@
       "V_std": 1.4158829283519496,
       "ap": 1.415882928351954
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

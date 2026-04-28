@@ -13,13 +13,11 @@ export default definition({
     "kinetic-energy",
     "skein",
   ],
-  lean: {
-    decl: "QOU.Descartes.QValueTransition",
+  lean: { ref: "qou:QOU.Descartes.QValueTransition",
     validation: "not_checked",
   },
   uses: [
     "def:q-energy",
-    "prop:branching-qvalue-factorization",
     "thm:parity-regime-selection",
   ],
 });

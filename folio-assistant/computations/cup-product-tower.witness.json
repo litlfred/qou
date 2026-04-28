@@ -1,0 +1,52 @@
+{
+  "computation": "cup-product-tower-probe",
+  "description": "Tests whether Markov traces of \u03c3_0 powers match the \u03a6_q Cauchy Taylor expansion (the proposed cup-product tower identification for Term 2).",
+  "reference_blocks": [
+    "prop:terms-2-6-higher-operations",
+    "prop:mass-endomorphism-tower",
+    "prop:gb-spectral-sequence"
+  ],
+  "computedAt": "2026-04-24T21:53:06.183488+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "results": [
+    {
+      "k": 1,
+      "tr_M_symbolic": "sqrt(q)/(q + 1)",
+      "tr_M_at_q0": 0.49932033403359827,
+      "phi_q_coeff_at_q0": -9.092678397655598,
+      "ratio_trM_over_phi_coeff": -0.05491454906865946
+    },
+    {
+      "k": 2,
+      "tr_M_symbolic": "(sqrt(q)*(q + 1)**2 + q**2*(q + 1) - q - 1)/(sqrt(q)*(q + 1)**2)",
+      "tr_M_at_q0": 1.1043880698091582,
+      "phi_q_coeff_at_q0": 39.183715236446716,
+      "ratio_trM_over_phi_coeff": 0.028184873821814428
+    },
+    {
+      "k": 3,
+      "tr_M_symbolic": "(q**(7/2)*(q + 1) - q**(3/2)*(q + 1) + q**3*(q**2 - 1) + q)/(q**(5/2)*(q + 1))",
+      "tr_M_at_q0": 0.7302040595096824,
+      "phi_q_coeff_at_q0": -106.60730338520332,
+      "ratio_trM_over_phi_coeff": -0.0068494750014569065
+    },
+    {
+      "k": 4,
+      "tr_M_symbolic": "(q**(13/2)*(q**2 - 1) + q**(9/2) - q**(5/2) + q**5*(q + 1)*(q**2 - 1) + q**3*(q + 1))/(q**5*(q + 1))",
+      "tr_M_at_q0": 1.2570447656085695,
+      "phi_q_coeff_at_q0": 205.8241530638323,
+      "ratio_trM_over_phi_coeff": 0.00610737246769441
+    },
+    {
+      "k": 5,
+      "tr_M_symbolic": "(q**(19/2)*(q**4 - q**2 + 1) - q**(15/2) + q**(11/2) + q**10*(q + 1)*(q**2 - 1) + q**8*(q + 1) - q**6*(q + 1))/(q**9*(q + 1))",
+      "tr_M_at_q0": 0.9930022429635026,
+      "phi_q_coeff_at_q0": -300.51897659885617,
+      "ratio_trM_over_phi_coeff": -0.0033042913103254663
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

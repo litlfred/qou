@@ -25,7 +25,7 @@ projection).
 The even-even, non-magic nucleus ${}^{90}\mathrm{Sr}$ ($Z = 38$,
 $N = 52$, shell 5) is the cleanest single-nucleus proof that the
 degree-2 torus knot correction is required.  The bare prediction
-$\mathcal{Q}_{\mathrm{bare}} = 0.944 \mathrm{MeV}$ overshoots
+$\mathcal{Q}_{\mathrm{bare}} \approx 0.944 \mathrm{MeV}$ overshoots
 $\mathcal{Q}_{\mathrm{exp}} = 0.546 \mathrm{MeV}$ by $+73\%$.
 After the Rosso--Jones weighted $F_{\mathrm{deg2}} = 0.5904$
 correction: $\mathcal{Q}_q \approx 0.557 \mathrm{MeV}$

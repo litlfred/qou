@@ -6,7 +6,7 @@ the following degenerations occur:*
 1. **(Hecke $\to$ symmetric group.)**
    *The Hecke relation $(T - q)(T + q^{-1}) = 0$ becomes
    $(T - 1)(T + 1) = 0$, i.e.\ $T^2 = 1$.  The Iwahori--Hecke algebra
-   $H_n(q)$ degenerates to the group algebra $k[S_n]$ of the symmetric
+   $H_n(R, q)$ degenerates to the group algebra $k[S_n]$ of the symmetric
    group
    ([Hecke algebra from braiding](#rem:hecke-algebra-from-braiding)).*
 
@@ -14,7 +14,7 @@ the following degenerations occur:*
    *The Jones--Markov trace parameter
    $z = (q - 1)/(q^{1/2} + q^{-1/2})^2 \to 0$
    ([Jones--Markov trace](#thm:jones-markov-trace)),
-   and the Markov trace $\mathrm{tr}_M$ on $H_n(q)$ degenerates to
+   and the Markov trace $\mathrm{tr}_M$ on $H_n(R, q)$ degenerates to
    the augmentation map
    $\varepsilon \colon k[S_n] \to k$ sending every group element to $1$.*
 

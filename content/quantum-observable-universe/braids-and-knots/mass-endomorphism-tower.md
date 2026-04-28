@@ -1,12 +1,57 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$
 ([quantum observable universe](#def:quantum-observable-universe)).
-Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
-the non-perturbative quantum dilogarithm
-([quantum Bloch group](#def:quantum-bloch-group)).  Let
-$\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
+Let $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
 ([three-invariant mass formula](#prop:atomic-braid-mass)).
+
+### Algebraic form
+
+Via the Kashaev volume--density reading
+([Kashaev volume--density](#rem:kashaev-volume-density)), the tower
+admits a compact algebraic statement: *for every braid
+$\beta \in B_{n}$ with $n - 1$ generators,*
+
+$$
+  \mathfrak{m}(\varrho)
+  \;=\;
+  \rho_{q} \cdot
+  \mathrm{Vol}_{q}^{\mathrm{tower}}(\beta),
+  \qquad
+  \mathrm{Vol}_{q}^{\mathrm{tower}}(\beta)
+  \;\in\; \mathbb{Z}[q^{1/2}, q^{-1/2}],
+$$
+
+*where $\rho_{q} = 1/\hbar_{q}^{2}$ is the substrate density
+([quantum Planck constant](#def:quantum-planck-constant)) and*
+
+$$
+  \mathrm{Vol}_{q}^{\mathrm{tower}}(\beta)
+  \;=\;
+  \prod_{i=0}^{n-2} \hat{V}_{i}^{\mathrm{full}}
+  \;+\;
+  \sum_{\emptyset \neq S \subseteq \{0,\ldots,n-2\},\;\lvert S \rvert \leq 2}
+    z^{\lvert S \rvert}
+    \cdot \mathrm{Vol}_{q}^{(S)}(\beta),
+$$
+
+*with each $\mathrm{Vol}_{q}^{(S)}(\beta) \in \mathbb{Z}[q^{1/2},
+q^{-1/2}]$ a Markov trace over the transfer-matrix chain supported on
+$S$
+([Markov trace product](#thm:markov-trace-product)), and $z = 1/(q^{1/2}
++ q^{-1/2})$ the Markov parameter.*
+
+Every per-generator contribution is a finite Laurent polynomial in $q$;
+no quantum-dilogarithm evaluation is required to **state** the tower.
+The archimedean realisation $\mathrm{Vol}_{q}^{(S)} \rightsquigarrow
+\Phi_{q}$ is a specialisation via the Kashaev limit, recorded in the
+expanded form below.
+
+### Quantum-dilogarithm form (archimedean specialisation)
+
+Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
+the non-perturbative quantum dilogarithm
+([quantum Bloch group](#def:quantum-bloch-group)).
 
 **Proposition.**
 *The mass of a vortex $\varrho$ with braid representative
@@ -20,7 +65,7 @@ $$
   \sum_{i=0}^{n-2}
     \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}\rvert\bigr)
   +
-  \sum_{\substack{i < j \\ |i - j| = 1}}
+  \sum_{0 \leq i < j \leq n-2}
     z^2 \cdot \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}
       \cdot \hat{V}_j^{\mathrm{full}}\rvert\bigr),
 $$
@@ -40,58 +85,82 @@ in the brane tower
    $\mathrm{tr}_M(\sigma_i) = z$ is already absorbed into the
    traced volume $\hat{V}_i$, which is computed via the Markov
    trace of the transfer chain.)*
-3. *Each **adjacent-generator blow-up** at the product $\sigma_i\sigma_j$
-   ($\lvert i - j\rvert = 1$) contributes
+3. *Each **pair blow-up** at the product $\sigma_i\sigma_j$
+   (any $i < j$) contributes
    $z^2 \cdot \Phi_q(\lvert\hat{V}_i \hat{V}_j\rvert)$, weighted by
    $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$.*
 
-*Products $\sigma_i\sigma_j$ with $\lvert i - j\rvert \geq 2$ commute
-(far-commutativity in $H_n(q)$) and do not generate independent
-blow-up centres.  The element $\sigma_i\sigma_j\sigma_i$
+*The weight $z^2$ holds for every pair $(i, j)$ with $i < j$ by
+the Markov-trace factorization theorem
+([Markov trace factorization](#thm:markov-trace-factorization)):
+for adjacent generators ($\lvert i - j\rvert = 1$) it reduces
+$\sigma_i\sigma_j$ via the Hecke braid relation and applies the
+Markov property $\mathrm{tr}_M(x\sigma_{n-2}) = z\,\mathrm{tr}_M(x)$;
+for non-adjacent generators ($\lvert i - j\rvert \geq 2$)
+far-commutativity makes $\sigma_j$ the rightmost active generator,
+and the Markov property peels first $\sigma_j$ then $\sigma_i$ — two
+successive Markov reductions each contributing a factor $z$, giving
+$\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$.  In both cases the pair
+supports an independent blow-up centre at the product spectral
+coordinate $\hat{V}_i\hat{V}_j$.*
+
+*The element $\sigma_i\sigma_j\sigma_i$
 ($\lvert i - j\rvert = 1$) reduces via the Yang--Baxter relation
 to $\sigma_j\sigma_i\sigma_j$ and does not contribute an independent
-centre.*
+order-3 centre; such triple interactions ascend to the next jet
+level ([jet-tower reformulation](#rem:mass-endomorphism-jet-tower))
+rather than appearing as explicit cubic terms.*
 
 *Proof.*
-The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$
+The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) decomposes via the
 descent involution into descended and transient contributions.  The
 transient trace localises to blow-up centres $p$ in the brane tower
-([topological decomposition](#thm:topological-mass)), each
-contributing $\Phi_q(z_p)$ where $z_p$ is the spectral coordinate at
-$p$ ([Briggs--Klein chart](#def:briggs-klein-chart)).
+([topological decomposition](#thm:topological-mass)); integrating the
+$q$-deformed expansion flow $\ln_q(1+t)/t$ along the radial
+coordinate of the Briggs--Klein chart
+([Briggs--Klein chart](#def:briggs-klein-chart)) over each resolved
+defect $E_i \cong \mathbb{P}^1(\mathbb{C})$ yields the quantum
+dilogarithm
+([quantum dilogarithm as localised torsion volume](#cor:quantum-dilogarithm)):
 
-The NF basis of $H_n(q)$ decomposes by generator content.  For $n = 3$:
+$$
+  \Phi_q(z_p) \;=\; \int_0^{z_p} \frac{\ln_q(1+t)}{t}\,dt
+             \;=\; \prod_{k\geq 1}(1 - q^{-k} z_p)^{-1},
+$$
 
-| Generator content | NF elements | Markov weight | Spectral coordinate |
-|:-------------------|:-----------|:-------------|:-------------------|
-| $\emptyset$ | $1$ | $1$ | $0$ |
-| $\{0\}$ | $\sigma_0$ | $z$ | $\hat{V}_0$ |
-| $\{1\}$ | $\sigma_1$ | $z$ | $\hat{V}_1$ |
-| $\{0,1\}$, adjacent | $\sigma_0\sigma_1$, $\sigma_1\sigma_0$ | $z^2$ (combined) | $\hat{V}_0\hat{V}_1$ |
-| $\{0,1,0\}$, dependent | $\sigma_0\sigma_1\sigma_0$ | — | reduces via YB |
+where $z_p$ is the spectral coordinate of the blow-up centre.
 
-The spectral coordinate $z_p$ at a blow-up centre $p$ corresponding
-to NF element $w = \sigma_{i_1}\cdots\sigma_{i_k}$ is the product
-$\hat{V}_{i_1}\cdots\hat{V}_{i_k}$.  The Markov weight is
-$\mathrm{tr}_M(w) = z^{\ell(w)}$ for reduced words of length $\ell$.
+The NF basis of $H_n(R, q)$ decomposes by generator content.  Each
+subset $S \subseteq \{0,\dots,n-2\}$ contributes a blow-up centre
+with spectral coordinate $\prod_{i\in S}\hat{V}_i$ and Markov
+weight $z^{|S|}$; triples and higher generator subsets are not
+independent at level $n$ (they ascend to jet level $n+1$ via the
+pentagon closure of $\Phi_q$, see
+[quantum Bloch group](#def:quantum-bloch-group)).  The independent
+order-1 and order-2 subsets enumerate exactly the singleton and
+pair sums above.
 
-The elements $\sigma_0\sigma_1$ and $\sigma_1\sigma_0$ have the same
-generator content $\{0,1\}$ and the same spectral coordinate
-$\hat{V}_0\hat{V}_1$; their combined weight is $2z^2$.  However,
-$\sigma_1\sigma_0 = \sigma_0\sigma_1$ modulo the braid relation only
-when $\lvert i - j\rvert \geq 2$; for adjacent generators they are
-distinct NF elements.  The topological mass formula counts
-**independent blow-up centres**, not NF elements.  Adjacent products
-$\sigma_i\sigma_j$ and $\sigma_j\sigma_i$ share the same blow-up
-centre (same support in the brane tower), so the combined weight
-is $z^2$ (not $2z^2$).
+For the adjacent pair $\{i, i+1\}$ the NF elements
+$\sigma_i\sigma_{i+1}$ and $\sigma_{i+1}\sigma_i$ share the same
+spectral support $\hat{V}_i\hat{V}_{i+1}$ (the same blow-up centre,
+distinct elements of $H_n(R, q)$ modulo Yang--Baxter); their combined
+weight is $z^2$, not $2z^2$.  For a non-adjacent pair
+$\{i, j\}$ with $\lvert i-j\rvert\geq 2$ far-commutativity gives
+$\sigma_i\sigma_j = \sigma_j\sigma_i$ and
+$\mathrm{tr}_M(\sigma_i\sigma_j) = z \cdot z = z^2$ — a single NF
+element supporting a single blow-up centre.  In every case the
+combined pair weight is $z^2$.  Summing over all pairs $i<j$ gives
+the claimed quadratic term.
 
 The element $\sigma_0\sigma_1\sigma_0$ is not an independent blow-up
-centre: it decomposes as $\sigma_1\sigma_0\sigma_1$ via the
-Yang--Baxter relation, which is a rearrangement of the same transient
-support.  Its contribution is already encoded in the descended term
-and the single/adjacent blow-up centres.  $\square$
+centre: it decomposes as $\sigma_1\sigma_0\sigma_1$ via Yang--Baxter,
+the same transient support as the adjacent pair.  Higher-order
+subsets of size $\geq 3$ are similarly subsumed — not into level-$n$
+singletons and pairs, but into the level-$(n{+}1)$ jet contribution
+via the pentagon identity of the quantum dilogarithm (for the
+explicit ascension see [jet-tower reformulation](#rem:mass-endomorphism-jet-tower)).
+$\square$
 
 ## Application to the proton--electron mass ratio
 

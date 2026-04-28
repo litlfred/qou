@@ -4,14 +4,12 @@ export default proposition({
   label: "prop:universal-braid-branching",
   title:
     "Universal braid character formula via Young's lattice branching",
-  lean: {
-    decl: "QOU.BraidKnot.universal_braid_branching",
+  lean: { ref: "qou:QOU.BraidKnot.universal_braid_branching",
     validation: "not_checked",
   },
   uses: [
-    "prop:hoefsmit-seminormal-form",
     "prop:figure-eight-branching-rule",
-    "def:hecke-algebra",
+    "rem:body-asymptotics-catalog",
   ],
   cites: ["hoefsmit1974", "wenzl1988"],
   tags: [

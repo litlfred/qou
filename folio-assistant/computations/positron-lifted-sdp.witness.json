@@ -1,0 +1,166 @@
+{
+  "computation": "positron-lifted-sdp",
+  "description": "SDP with explicit e\u207b / e\u207a sector variables.  Each generator variable is split into (V\u0302^+, V\u0302^-) corresponding to the +q (sym/electron) and \u2212q\u207b\u00b9 (alt/positron) eigenvalues of \u03c3_i.  2\u00d72 PSD per generator on (V^+, V^-), 4\u00d74 PSD per adjacent pair.  Compares unlifted (scalar V\u0302), lifted_free, lifted_cpt_sym (V^+=V^-), lifted_cpt_antisym (V^+=-V^-).  Probe: does explicit positron inclusion change the SDP objective in a way that could resolve the 1.8% m_p/m_e error in the electron_chiral_probe witness?",
+  "computedAt": "2026-04-20T15:34:16.271854+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "HA": 0.20906032198987945,
+    "w_sym": 0.16546138476810043,
+    "w_std": 0.6690772304637992,
+    "w_alt": 0.16546138476810043,
+    "M_P_MEV": 938.272,
+    "M_E_CODATA_MEV": 0.51099895
+  },
+  "proton_sdp": {
+    "unlifted": {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed."
+    },
+    "lifted_free": {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed."
+    },
+    "lifted_cpt_sym": {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed."
+    },
+    "lifted_cpt_antisym": {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed."
+    }
+  },
+  "atom_sdp_results": [
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "D",
+      "B_AME_MeV": 2.22452
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "D",
+      "B_AME_MeV": 2.22452
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "D",
+      "B_AME_MeV": 2.22452
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "D",
+      "B_AME_MeV": 2.22452
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "T",
+      "B_AME_MeV": 8.481821
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "T",
+      "B_AME_MeV": 8.481821
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "T",
+      "B_AME_MeV": 8.481821
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "T",
+      "B_AME_MeV": 8.481821
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "3He",
+      "B_AME_MeV": 7.71804
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "3He",
+      "B_AME_MeV": 7.71804
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "3He",
+      "B_AME_MeV": 7.71804
+    },
+    {
+      "status": "solver_error:SolverError",
+      "message": "The solver ECOS is not installed.",
+      "atom": "3He",
+      "B_AME_MeV": 7.71804
+    }
+  ],
+  "cpt_projection_direct": {
+    "electron_V_per_projection": {
+      "full": 0.5938490006705097,
+      "cpt_sym_avg": 0.5412059552403355,
+      "plus_only": 0.7148399383241224,
+      "minus_only": 0.3675719721565488
+    },
+    "electron_mass_per_projection": {
+      "full": 630.5292680965878,
+      "cpt_sym_avg": 317.4680488862805,
+      "plus_only": 3517.3145932902535,
+      "minus_only": 40.40350396530535
+    },
+    "proton_mass_per_projection": {
+      "full": 1178995.5254365874,
+      "cpt_sym_avg": 70210.97417805136,
+      "plus_only": 14800580.715856886,
+      "minus_only": 35147.42553577938
+    },
+    "summary_per_projection": [
+      {
+        "projection": "full",
+        "proton_cat": 1178995.5254365874,
+        "electron_cat": 630.5292680965878,
+        "m_p_over_m_e": 1869.850592337583,
+        "E_0_MeV_per_cat": 0.000795823206922311,
+        "m_e_pred_MeV": 0.5017898241950041,
+        "err_pct": -1.8021809643632123
+      },
+      {
+        "projection": "cpt_sym_avg",
+        "proton_cat": 70210.97417805136,
+        "electron_cat": 317.4680488862805,
+        "m_p_over_m_e": 221.15918255194705,
+        "E_0_MeV_per_cat": 0.013363608908496147,
+        "m_e_pred_MeV": 4.242518846259588,
+        "err_pct": 730.2402277459844
+      },
+      {
+        "projection": "plus_only",
+        "proton_cat": 14800580.715856886,
+        "electron_cat": 3517.3145932902535,
+        "m_p_over_m_e": 4207.920651763981,
+        "E_0_MeV_per_cat": 6.339426932044391e-05,
+        "m_e_pred_MeV": 0.22297758861176997,
+        "err_pct": -56.364374405902396
+      },
+      {
+        "projection": "minus_only",
+        "proton_cat": 35147.42553577938,
+        "electron_cat": 40.40350396530535,
+        "m_p_over_m_e": 869.9103316870887,
+        "E_0_MeV_per_cat": 0.026695326491121173,
+        "m_e_pred_MeV": 1.078584729739135,
+        "err_pct": 111.07376634318626
+      }
+    ]
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

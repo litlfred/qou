@@ -1,0 +1,10 @@
+{
+  "name": "QOU Folio (paper-assistant)",
+  "image": "ghcr.io/litlfred/qou/paper-assistant:latest",
+  "overrideCommand": true,
+  "workspaceFolder": "/workspace",
+  "remoteUser": "root",
+  "containerEnv": {
+    "PATH": "/root/.bun/bin:/root/.elan/bin:/root/.local/bin:${containerEnv:PATH}"
+  }
+}

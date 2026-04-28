@@ -4,8 +4,9 @@ representation.
 
 **Definition.**
 Let $K = \hat{\beta}$ be a knot/link with braid representative
-$\beta \in B_n$.  The **$q$-angular momentum** is defined by the
-$q$-Casimir operator $C_q$ of $\mathrm{SU}_q(2)$:
+$\beta \in B_n$.  The **$q$-angular momentum** is the eigenvalue of
+the $q$-Casimir element $C_q$ (cf. [def:q-casimir](#def:q-casimir))
+on the spin-$j$ irreducible of $\mathrm{SU}_q(2)$:
 
 $$
   J_q^2(K) =  [j]_q  [j+1]_q

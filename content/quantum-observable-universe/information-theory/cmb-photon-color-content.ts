@@ -16,8 +16,6 @@ export default remark({
   ],
   uses: [
     "def:cmb-boundary-datum",
-    "def:jet-horizon",
-    "rem:knot-basis-color-content",
     "rem:breit-wheeler-vertex",
   ],
 });

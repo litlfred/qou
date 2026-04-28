@@ -1,0 +1,55 @@
+**Remark (physical interpretation).**
+The $\mathrm{U}(1)$-equivariant reduction of
+[prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction) has
+a compact physical reading.  The three color tubes of the Descartes
+chapter --- the non-abelian observable channels
+$(\mathfrak{u}, \mathfrak{d}, \mathfrak{s}\text{-sector}$ and their
+cyclic images) --- originate from the $S_5$-symmetric action on the
+genus-$4$ Bring geometry, which lifts to a normal bundle structure
+on the exceptional divisor supporting three distinct
+$\mathrm{SU}(3)$-triality-compatible fibres.
+
+In the commutative-limit specialisation
+([def:commutative-qou](#def:commutative-qou)) the representation
+theory truncates to the maximal torus $\mathrm{U}(1) \subset \mathrm{SU}(2)$.
+By [prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction),
+$\mathrm{U}(1)$-equivariant observables on $\mathcal{S}_p$ reduce to
+a single phase coordinate $\varphi \in S^1$.  All three non-abelian
+tubes of the Descartes universe are consequently indistinguishable at
+the level of observables and collapse to **one $\mathrm{U}(1)$ phase
+tube**.
+
+**Weight-graded reading.**  Under the weight identification of
+[prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification)
+this collapse acquires a sharp $\mathbb{Z}_5$-representation-theoretic
+content.  The full non-commutative theory keeps the five Lagrange
+weights $\zeta_5^{\,0}, \zeta_5^{\,-1}, \ldots, \zeta_5^{\,-4}$
+distinguishable as separate observable channels (the trivial weight
+plus three colour tubes plus a chiral conjugate).  The
+commutative-limit theory keeps only the weight-$(-1)$ channel
+visible and identifies it canonically with the single coordinate
+$x \in \mathcal{O}(\mathcal{X}_5)$.  The "single phase tube" is
+therefore *precisely* the weight-$(-1)$ isotypical component of the
+$\mathbb{Z}_5$-graded coordinate ring --- not a vague geometric
+collapse.
+
+**Branch-point localisation.**  On the genus-$2$ curve
+$\mathcal{X}_5$ ([def:hyperelliptic-quintic](#def:hyperelliptic-quintic))
+the five branch points $\zeta_5^{k}$ of the double cover lie
+symmetrically along the unit circle of the $x$-plane.  Via the
+identification of $x$ with the Lagrange resolvent $w_1$
+(Remark [rem:lagrange-resolvents](#rem:lagrange-resolvents)), these
+five roots-of-unity pick out five preferred phase values
+$\varphi_k = 2\pi k / 5$ on the single $\mathrm{U}(1)$ tube.  These
+are the positions on the phase circle at which the double-cover
+monodromy is non-trivial and where the local variation of $q$ on
+the base manifold sees topological defects.  The smooth
+$\mathrm{U}(1)$ flow between them is the commutative-limit analogue
+of the color-sector braid currents of the Descartes chapter.
+
+**No anyons here.**  Because the braiding is symmetric in the
+commutative limit, these defects are not anyonic; they carry
+$S_n$-statistics.  The anyonic counterpart belongs to the
+root-of-unity specialisation
+([def:observable-mtc](#def:observable-mtc)) treated in the fluid
+dynamics chapter.

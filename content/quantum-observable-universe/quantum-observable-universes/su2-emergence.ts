@@ -2,7 +2,7 @@ import { theorem } from "../../schema/builders";
 
 export default theorem({
   label: "thm:su2-emergence",
-  lean: { decl: "QOU.RankOneGaugeData", validation: "not_checked" },
+  lean: { ref: "qou:QOU.RankOneGaugeData", validation: "not_checked" },
   title: "Emergence of the gauge group",
   uses: ["def:quantum-observable-universe"],
   proofs: ["prf:su2-emergence"],

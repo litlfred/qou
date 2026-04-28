@@ -1,0 +1,158 @@
+{
+  "engine": "numpy+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T02:31:30.611656+00:00",
+  "commitSha": "6f29ec78afc0d01932658d8eadc86774d40aac0a",
+  "assertions": [
+    {
+      "name": "D: n_ud(atom_braid_word_3A) = 2A+1",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 0,
+      "source": "atom_braid_word_3A + classify_factor"
+    },
+    {
+      "name": "D: \u03c7_sym\u00b7\u03c7_alt matches \u2212(1 + H_A\u00b2/4)^(2A+1)",
+      "computed": -1.055839785327462,
+      "expected": -1.0558397853274497,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "direct character product vs closed form"
+    },
+    {
+      "name": "T: n_ud(atom_braid_word_3A) = 2A+1",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "atom_braid_word_3A + classify_factor"
+    },
+    {
+      "name": "T: \u03c7_sym\u00b7\u03c7_alt matches \u2212(1 + H_A\u00b2/4)^(2A+1)",
+      "computed": -1.079039223648286,
+      "expected": -1.079039223648267,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "direct character product vs closed form"
+    },
+    {
+      "name": "3He: n_ud(atom_braid_word_3A) = 2A+1",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "atom_braid_word_3A + classify_factor"
+    },
+    {
+      "name": "3He: \u03c7_sym\u00b7\u03c7_alt matches \u2212(1 + H_A\u00b2/4)^(2A+1)",
+      "computed": -1.0790392236482862,
+      "expected": -1.079039223648267,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "direct character product vs closed form"
+    },
+    {
+      "name": "4He: n_ud(atom_braid_word_3A) = 2A+1",
+      "computed": 9,
+      "expected": 9,
+      "passed": true,
+      "tolerance": 0,
+      "source": "atom_braid_word_3A + classify_factor"
+    },
+    {
+      "name": "4He: \u03c7_sym\u00b7\u03c7_alt matches \u2212(1 + H_A\u00b2/4)^(2A+1)",
+      "computed": -1.1027484115976813,
+      "expected": -1.1027484115976558,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "direct character product vs closed form"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "chi-sym-alt-closed-form",
+  "scriptFile": "chi_sym_alt_closed_form.py",
+  "scriptHash": "1e2dc7c31e22",
+  "scriptCommitSha": "",
+  "description": "Exact closed form \u03c7_sym(\u03b2_atom)\u00b7\u03c7_alt(\u03b2_atom) = \u2212(1 + H_A\u00b2/4)^(2A+1) derived from eigenvalue algebra of Hecke factors + ud-factor counting in atom_braid_word_3A.",
+  "contentBlock": "rem:chi-sym-alt-closed-form",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "H_A": 0.20906032198987945
+  },
+  "data": {
+    "atoms": [
+      {
+        "atom": "D",
+        "A": 2,
+        "expected_n_ud": 5,
+        "observed_n_ud": 5,
+        "n_pure_sigma": 11,
+        "n_pure_sigma_inv": 7,
+        "chi_sym_direct": 1.559758739418077,
+        "chi_alt_direct": -0.6769250645272102,
+        "product_direct": -1.055839785327462,
+        "product_closed_form": -1.0558397853274497,
+        "rel_error": 1.1566578036353545e-14
+      },
+      {
+        "atom": "T",
+        "A": 3,
+        "expected_n_ud": 7,
+        "observed_n_ud": 7,
+        "n_pure_sigma": 16,
+        "n_pure_sigma_inv": 12,
+        "chi_sym_direct": 1.5768015283810746,
+        "chi_alt_direct": -0.684321523176193,
+        "product_direct": -1.079039223648286,
+        "product_closed_form": -1.079039223648267,
+        "rel_error": 1.74912931847044e-14
+      },
+      {
+        "atom": "3He",
+        "A": 3,
+        "expected_n_ud": 7,
+        "observed_n_ud": 7,
+        "n_pure_sigma": 18,
+        "n_pure_sigma_inv": 10,
+        "chi_sym_direct": 2.3935111147542574,
+        "chi_alt_direct": -0.4508185556343537,
+        "product_direct": -1.0790392236482862,
+        "product_closed_form": -1.079039223648267,
+        "rel_error": 1.769707310452445e-14
+      },
+      {
+        "atom": "4He",
+        "A": 4,
+        "expected_n_ud": 9,
+        "observed_n_ud": 9,
+        "n_pure_sigma": 23,
+        "n_pure_sigma_inv": 15,
+        "chi_sym_direct": 2.4196639445339216,
+        "chi_alt_direct": -0.4557444491780837,
+        "product_direct": -1.1027484115976813,
+        "product_closed_form": -1.1027484115976558,
+        "rel_error": 2.3155897843809582e-14
+      }
+    ],
+    "factor_eigenvalue_algebra": {
+      "sym_eigenvalue": "c\u00b7q + d",
+      "alt_eigenvalue": "-c/q + d",
+      "per_factor_product": "d\u00b2 \u2212 c\u00b2 + c\u00b7d\u00b7H_A",
+      "pure_sigma_product": -1.0,
+      "pure_sigma_inv_product": -1.0,
+      "ud_product_symbolic": "-(1 + H_A\u00b2/4)"
+    },
+    "closed_form": {
+      "formula": "chi_sym * chi_alt = -(1 + H_A^2/4)^(2A+1)",
+      "equivalent": "-([2]_q / 2)^(4A+2)",
+      "ud_factor_count": "n_ud = 2A + 1 (2 per nucleon + 1 p\u2192n transition)"
+    }
+  },
+  "caveats": [
+    "This is a structural identity (no fitting). It explains the numerical coincidence \u03c7_sym\u00b7\u03c7_alt \u2248 \u22121.08 as a function of A alone, but does NOT explain the atom-dependent density deviation (D \u22121.1%, T +0.2%, \u00b3He +3.1%, \u2074He \u22125.5%)."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

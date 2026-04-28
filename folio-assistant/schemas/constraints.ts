@@ -11,6 +11,7 @@
 
 import { z } from "zod";
 import { isCrossPaperRef } from "./types";
+import { LEAN_REF_PATTERN } from "./lean-packages";
 
 // ── Label patterns ───────────────────────────────────────────────
 
@@ -48,8 +49,17 @@ const LeanValidationSchema = z.enum([
 ]);
 
 export const LeanRefSchema = z.object({
-  decl: z.string().min(1, "Lean declaration name is required"),
-  file: z.string().optional(),
+  ref: z
+    .string()
+    .min(1, "Lean ref is required")
+    .regex(
+      LEAN_REF_PATTERN,
+      // Error message doubles as migration guidance for agents
+      // rebasing across the `lean.decl` → `lean.ref` URI change.
+      "Lean ref must be \"<package>:<Decl.Path>\" (e.g. \"qou:QOU.Foo\"). " +
+        "If this branch still uses the legacy { decl, file } shape, " +
+        "run `cd content && bun run migrate-lean-refs` to convert it.",
+    ),
   sorryFree: z.boolean().optional(),
   mathlibLinks: z.array(z.string()).optional(),
   validation: LeanValidationSchema.optional(),
@@ -115,6 +125,14 @@ const BlockBaseSchema = z.object({
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.string(), z.unknown()).optional(),
   simulator: SimulatorRefSchema.optional(),
+  /**
+   * Glossary term slugs introduced by this block. See `BlockBase.defines`
+   * in folio-assistant/schemas/types.ts for the authoring contract. Slugs
+   * must be lowercase, hyphen-separated identifiers (no spaces, no `:`).
+   */
+  defines: z
+    .array(z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "term slug must be lowercase, hyphen-separated"))
+    .optional(),
 });
 
 export const DefinitionSchema = BlockBaseSchema.extend({
@@ -382,13 +400,12 @@ export const CONSTRAINT_RULES: ConstraintRule[] = [
   },
   {
     id: "lean-file-exists",
-    description: "Definitions must have a companion .lean file or lean.file reference",
+    description: "Definitions must have a sibling .lean file matching the block rootName",
     appliesTo: ["definition"],
     check: (block, ctx) => {
-      if ("lean" in block && block.lean?.file) return null;
       const leanPath = `${ctx.dir}/${ctx.rootName}.lean`;
       return ctx.fileExists(leanPath) ? null
-        : `Definition "${block.label}" requires Lean formalization. Expected: ${leanPath} or lean.file`;
+        : `Definition "${block.label}" requires Lean formalization. Expected sibling file: ${leanPath}`;
     },
   },
   {

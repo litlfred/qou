@@ -24,9 +24,9 @@ Explicitly, for $\phi \in \mathrm{End}_{\mathbf{C}}(A_1)$,
 $$
   \hat{\tau}(\phi)(f \otimes \omega_a)
   =  \frac{1}{2\pi} \int_0^{2\pi}
-  \phi\bigl(e^{i\theta} \cdot (f \otimes \omega_a)\bigr) d\theta,
+  \phi\bigl(e^{i\varTheta} \cdot (f \otimes \omega_a)\bigr) d\varTheta,
 $$
 
-where $e^{i\theta}$ acts via the $\mathrm{U}(1) \hookrightarrow \mathrm{SU}(2)$
+where $e^{i\varTheta}$ acts via the $\mathrm{U}(1) \hookrightarrow \mathrm{SU}(2)$
 maximal torus. The fixed-point set $\mathrm{End}_{\mathbf{C}}(A_1)^{\hat{\tau}}$
 consists of the $\mathrm{U}(1)$-equivariant endomorphisms.

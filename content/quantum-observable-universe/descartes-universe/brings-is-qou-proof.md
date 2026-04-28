@@ -1,4 +1,3 @@
-
 *Item (1).*
 The quantised coordinate ring $A = \mathcal{O}_q(\mathrm{SU}(2))$ is a
 Hopf algebra over $R[q, q^{-1}]$ with antipode $S$, counit $\varepsilon$,
@@ -31,20 +30,12 @@ classification theorem, verifying the Yekutieli lifting condition
 ([Yekutieli lifting](#prop:yekutieli-lifting)).
 
 *Item (4).*
-The categorical trace of $\mathrm{id}_A$ in
-$\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is the quantum dimension
-$\mathrm{tr}(\mathrm{id}_A) = [N]_q \cdot [N-1]_q / [1]_q$ evaluated at
-$N = 2$ (the rank of $\mathrm{SU}(2)$).  At generic $q$, this recovers
-the topological Euler characteristic of $\Sigma_4$:
-$\chi(A) = 2 - 2g = 2 - 8 = -6$.
+The categorical Euler characteristic equals $-6$ on Bring's surface
+by ([Bring Euler-characteristic computation](#lem:brings-euler-characteristic)).
 
 *Item (5).*
-The Reeb quotient $M_S \to \Sigma_4$ collapses the $\mathrm{U}(1)$-orbits
-of the circle bundle (weight-$0$ subalgebra $A_0 = A^{\mathrm{U}(1)}$).
-The covering $\pi \colon \Sigma_4 \to \mathbb{P}(V)$ is the map to the
-projective line induced by the linear system $|K_{\Sigma_4}|$; it has
-degree $4$ and genus $4$ source, so by Riemann--Hurwitz
-$R_{\mathrm{tot}} = 2g(\Sigma_4) - 2 - 4(2g(\mathbb{P}^1) - 2) = 6 - 4(-2) = 14$.
-The $S_5$-symmetry of $\Sigma_4$ forces the $14$ units of ramification to
-be distributed over exactly $6$ branch points (with ramification indices
-determined by the cycle types of $S_5$).
+The canonical-system covering $\pi \colon \Sigma_4 \to \mathbb{P}(V)$
+has degree $4$, genus $4$ source, and total ramification
+$R_{\mathrm{tot}} = 14$ over exactly $6$ branch points by
+([Riemann--Hurwitz for $\Sigma_4 \to \mathbb{P}(V)$](#lem:brings-riemann-hurwitz)).
+$\square$

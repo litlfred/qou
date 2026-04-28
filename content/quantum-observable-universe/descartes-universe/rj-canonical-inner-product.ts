@@ -13,8 +13,7 @@ export default proposition({
     "markov-trace",
     "uniqueness",
   ],
-  lean: {
-    decl: "QOU.Descartes.rj_canonical_inner_product",
+  lean: { ref: "qou:QOU.Descartes.rj_canonical_inner_product",
     validation: "not_checked",
   },
   uses: [

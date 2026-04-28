@@ -1,19 +1,19 @@
-Let $\gamma$ be a [geodesic vortex](#rem:geodesic-vortices) in
-the [state bundle](#def:state-bundle) $(\mathcal{S}, \theta)$
-with contact form $\theta$ and
+Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
+the [state bundle](#def:state-bundle) $(\mathcal{S}, \varTheta)$
+with contact form $\varTheta$ and
 [Levi form](#rem:levi-form-defect)
-$\mathcal{L}_\theta(V, W) = -id\theta(V, \bar{W})$.  At each
-point $p \in \gamma$, let $N_p\gamma \subset \ker(\theta_p)$ be
+$\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$.  At each
+point $p \in \varrho$, let $N_p\varrho \subset \ker(\varTheta_p)$ be
 the horizontal normal plane.  Define:
 
 - $\lambda_\parallel(p)$, $\lambda_\perp(p)$: eigenvalues of
-  $\mathcal{L}_\theta|_{N_p\gamma}$ (the Levi form restricted to
+  $\mathcal{L}_\varTheta|_{N_p\varrho}$ (the Levi form restricted to
   the normal plane), with $\lambda_\parallel$ in the direction
   toward a second filament and $\lambda_\perp$ perpendicular to it.
 
 - $a_\parallel(p)$, $a_\perp(p)$: core radii of the vortex
   cross-section in the corresponding directions, defined as the
-  widths at half-maximum of $|\psi|^2$ in $N_p\gamma$.
+  widths at half-maximum of $|\psi|^2$ in $N_p\varrho$.
 
 Then:
 
@@ -28,10 +28,10 @@ $$
   \bigl(1 + O(\hbar_q^2)\bigr).
 $$
 
-**(b)** The Levi form condition number on $N_p\gamma$ is
+**(b)** The Levi form condition number on $N_p\varrho$ is
 
 $$
-  \mathrm{cond}(\mathcal{L}_\theta|_{N_p})
+  \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p})
   \equiv
   \frac{\max(\lambda_\parallel, \lambda_\perp)}
        {\min(\lambda_\parallel, \lambda_\perp)}
@@ -50,9 +50,9 @@ $$
    $\sup_{t < T^*} a_\perp(t) / a_\parallel(t) \leq C$.
 
 2. The Levi form condition number is bounded:
-   $\sup_{t < T^*} \mathrm{cond}(\mathcal{L}_\theta|_{N_p}) \leq C^2$.
+   $\sup_{t < T^*} \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p}) \leq C^2$.
 
-3. The contact structure $\ker(\theta)$ remains
+3. The contact structure $\ker(\varTheta)$ remains
    **non-degenerate** at the collision locus $\Sigma$: both
    eigenvalues $\lambda_\parallel, \lambda_\perp > 0$ on $\Sigma$.
 
@@ -60,14 +60,14 @@ $$
    $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
    holds locally at every $p \in \Sigma$.
 
-5. No 2-dimensional integral submanifold of $\ker(\theta)$
+5. No 2-dimensional integral submanifold of $\ker(\varTheta)$
    forms at $\Sigma$ (Frobenius integrability does not hold).
 
 **(d)** For $q > 1$, the [quantum pressure](#rem:madelung-fluid)
 enforces
 
 $$
-  \mathrm{cond}(\mathcal{L}_\theta|_{N_p})
+  \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p})
    \leq 
   1 + C_0\hbar_q^2
    <  \infty,

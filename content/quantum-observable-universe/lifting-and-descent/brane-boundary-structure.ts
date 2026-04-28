@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:brane-boundary",
-  lean: {
-    decl: "QOU.Torsion.brane_boundary_structure",
+  lean: { ref: "qou:QOU.Torsion.brane_boundary_structure",
     validation: "not_checked",
   },
   title: "Structure of the defining boundary",

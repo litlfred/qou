@@ -7,14 +7,8 @@ export default definition({
     "cmb", "boundary-datum", "jet-horizon",
     "big-bang-state", "aeon", "degree-one",
   ],
-  lean: {
-    decl: "QOU.CMBBoundaryDatum",
+  lean: { ref: "qou:QOU.CMBBoundaryDatum",
     validation: "not_checked",
   },
-  uses: [
-    "def:jet-horizon",
-    "def:big-bang-state",
-    "def:aeon",
-    "prop:jet-prolongation",
-  ],
+  uses: ["def:aeon"],
 });

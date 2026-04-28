@@ -31,13 +31,13 @@ $\mathbf{C}$:
 3. **The contact form.** The Frobenius form
    $\int_A \colon A \to \mathbf{1}$
    ([Frobenius pairing](#def:frobenius-pairing)) induces a canonical
-   $1$-form $\theta_A \in \Omega^1(A)$ via pullback along the
+   $1$-form $\varTheta_A \in \Omega^1(A)$ via pullback along the
    universal derivation $d \colon A \to \Omega^1(A)$.
 
 4. **The Reeb derivation.** The generator $\xi$ of the maximal torus
    action ([categorical Reeb](#def:categorical-reeb)) satisfies the
-   Cartan relations $\iota_\xi \theta_A = \mathrm{id}_{\mathbf{1}}$
-   and $\iota_\xid\theta_A = 0$ within the non-commutative
+   Cartan relations $\iota_\xi \varTheta_A = \mathrm{id}_{\mathbf{1}}$
+   and $\iota_\xid\varTheta_A = 0$ within the non-commutative
    differential calculus.
 
 ```tex
@@ -50,8 +50,8 @@ $\mathbf{C}$:
 \end{tikzcd}
 \qquad
 \begin{tikzcd}[row sep=2.5em, column sep=3em]
-  \theta_A \ar[r, mapsto, "\tau"]
-  & \theta \\
+  \varTheta_A \ar[r, mapsto, "\tau"]
+  & \varTheta \\
   \xi \ar[r, mapsto, "\tau"']
   & \xi_{\mathrm{Reeb}}
 \end{tikzcd}
@@ -60,7 +60,7 @@ $\mathbf{C}$:
 ```
 
 Under $\tau$, these algebraic objects map to their geometric
-counterparts: $\theta_A$ becomes the global contact $1$-form
-$\theta$, $\xi$ becomes the Reeb vector field, and non-degeneracy
-of $\int_A$ guarantees that $d\theta$ is maximally non-degenerate
-on $\ker\theta$ — the defining property of a contact manifold.
+counterparts: $\varTheta_A$ becomes the global contact $1$-form
+$\varTheta$, $\xi$ becomes the Reeb vector field, and non-degeneracy
+of $\int_A$ guarantees that $d\varTheta$ is maximally non-degenerate
+on $\ker\varTheta$ — the defining property of a contact manifold.

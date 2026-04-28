@@ -26,13 +26,22 @@ with a clickable viewer link and a short explanation of what changed.
 
 ### How to find changed blocks
 
-Run this to extract labels from changed content `.ts` files:
+Extract labels from changed content `.ts`/`.md`/`.lean` triples
+(a `.md`-only edit is still a block change):
 
 ```bash
-for f in $(git diff origin/main..HEAD --name-only -- 'content/**/*.ts' | grep -v '/rendered/' | grep -v 'schema/' | grep -v 'pipeline/'); do
-  label=$(grep -oP "label:\s*['\"]\\K[^'\"]+" "$f" 2>/dev/null || echo "")
-  if [ -n "$label" ]; then echo "$f|$label"; fi
-done
+# Collect changed content files (any sibling triggers the block)
+changed=$(git diff origin/main..HEAD --name-only -- \
+  'content/**/*.ts' 'content/**/*.md' 'content/**/*.lean' \
+  | grep -v '/rendered/' | grep -v 'schema/' | grep -v 'pipeline/')
+
+# For each, resolve to the sibling .ts and pull the label
+for f in $changed; do
+  ts="${f%.*}.ts"
+  [ -f "$ts" ] || continue
+  label=$(grep -oP "label:\s*['\"]\\K[^'\"]+" "$ts" 2>/dev/null || echo "")
+  [ -n "$label" ] && echo "$ts|$label"
+done | sort -u
 ```
 
 ### Link format
@@ -47,12 +56,43 @@ http://localhost:8080/assistant/#<label>
 ### Presentation format
 
 Group by chapter. Use a markdown table with columns: **Block** (clickable
-link), **What changed** (1-line description). For example:
+link — ALWAYS to the `.md` file), **Siblings** (GitHub blob links to
+`.ts`/`.lean`/etc. that **also changed**), **What changed** (1-line
+description).
 
-| Block | What changed |
-|-------|-------------|
-| [def:quantum-universe](http://localhost:8080/assistant/#def:quantum-universe) | Updated notation from λ to ∫_A |
-| [prf:dq-squared](http://localhost:8080/assistant/#prf:dq-squared) | Added first SVG render |
+**Rule: the Block column always links to the `.md` file.** Sibling
+links (`.ts`, `.lean`, `.tex`) appear in a separate column and only
+when that sibling was actually modified in this delivery.
+
+| Block | Siblings changed | What changed |
+|-------|------------------|-------------|
+| [def:quantum-universe](https://github.com/litlfred/qou/blob/<branch>/content/.../quantum-universe.md) | [ts](https://github.com/litlfred/qou/blob/<branch>/content/.../quantum-universe.ts) · [lean](https://github.com/litlfred/qou/blob/<branch>/content/.../quantum-universe.lean) | Updated notation from λ to ∫_A |
+| [prf:dq-squared](https://github.com/litlfred/qou/blob/<branch>/content/.../dq-squared.md) | — | Added first SVG render |
+
+Viewer anchor links (`http://localhost:8080/assistant/#<label>`) may be
+included as an additional row-end column when the folio-assistant is
+running locally, but the `.md` blob URL is the canonical reference.
+
+### GitHub blob links — ALWAYS PROVIDE, ALWAYS `.md` FIRST
+
+For **every** created or modified file, include a direct GitHub blob URL
+using the pattern:
+
+```
+https://github.com/litlfred/qou/blob/<branch>/<relative-path>
+```
+
+**The primary link for a block is always the `.md` file.** Sibling
+files (`.ts`, `.lean`, `.tex`) are listed only if they were actually
+modified.  Never make the `.ts` or `.lean` the primary clickable link
+for a block reference — readers want narrative first.
+
+This applies to **all** file kinds: `.md`, `.ts`, `.lean`, `.tex`, config
+files, etc.  Never report "created/edited `foo.md`" without also
+giving its clickable GitHub blob link on the pushed branch.
+
+If the branch is not yet pushed, say so explicitly — do not fabricate a
+URL that will 404.
 
 ### Categorize changes
 
@@ -71,7 +111,10 @@ For remote/deployed builds:
 
 ## 3. GitHub links
 
-Also provide:
+Always provide:
+- **File blob links**: `https://github.com/litlfred/qou/blob/<branch>/<path>`
+  for every created/modified file (see §2, "GitHub blob links — ALWAYS
+  PROVIDE")
 - **Commit links**: `https://github.com/litlfred/qou/commit/<hash>` for each commit
 - **Branch diff**: `https://github.com/litlfred/qou/compare/main...<branch>`
 

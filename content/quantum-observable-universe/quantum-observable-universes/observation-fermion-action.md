@@ -1,7 +1,7 @@
 The $\mathrm{Ad}$ component of an observation
 ([observation](#def:observation)) acts directly on
 fermions.  The mechanism is the eigenspace decomposition
-of the Hecke generator $T$:
+of the Hecke generator $\sigma$:
 
 $$
   V \otimes V
@@ -14,8 +14,8 @@ $$
 The two idempotents are:
 
 $$
-  e_+ = \frac{T + q^{-1}}{q + q^{-1}}, \qquad
-  e_- = \frac{q - T}{q + q^{-1}}
+  e_+ = \frac{\sigma + q^{-1}}{q + q^{-1}}, \qquad
+  e_- = \frac{q - \sigma}{q + q^{-1}}
 $$
 
 with $e_+$ projecting onto $\mathrm{Sym}^2$ (bosonic) and

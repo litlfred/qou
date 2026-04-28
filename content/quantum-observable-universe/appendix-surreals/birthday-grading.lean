@@ -1,0 +1,13 @@
+-- Ref: [conway1976] Conway, *On Numbers and Games*, Academic Press.
+-- Ref: [gonshor1986] Gonshor, *An Introduction to the Theory of Surreal
+--      Numbers*, Cambridge University Press.
+--
+-- Sibling stub for `def:birthday-grading`.
+--
+-- The compiled formalisation lives in:
+--   QOU/AppendixSurreals/Basic.lean              (SurrealField class)
+--   QOU/AppendixSurreals/BirthdayGrading.lean    (BirthdayGrading + theorems)
+--
+-- See `QOU.AppendixSurreals.SurrealField.birthday`,
+--     `QOU.AppendixSurreals.BirthdayGrading`,
+--     `QOU.AppendixSurreals.BirthdayGrading.archimedeanPart`.

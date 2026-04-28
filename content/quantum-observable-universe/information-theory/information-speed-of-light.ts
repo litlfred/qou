@@ -10,16 +10,12 @@ export default definition({
     "causal-structure",
     "q-connection",
   ],
-  lean: {
-    decl: "QOU.Information.speedOfLight",
+  lean: { ref: "qou:QOU.Information.speedOfLight",
     validation: "not_checked",
   },
   uses: [
     "ex:q-connection",
-    "def:contact-affine-chart",
     "def:operational-entropy",
-    "def:planck-time",
-    "prop:reeb-operations-per-planck",
     "rem:light-cone-affine",
   ],
 });

@@ -15,13 +15,7 @@ export default remark({
     "aeon-boundary",
   ],
   uses: [
-    "rem:hawking-radiation",
-    "def:jet-horizon",
-    "def:computational-horizon",
     "rem:incompleteness-horizon",
-    "def:aeon",
-    "def:big-bang-state",
-    "rem:skein-turing-machine",
     "conj:aeon-boundary-generates-chart",
   ],
   cites: ["hawking1975", "bekenstein1973", "goedel1931"],

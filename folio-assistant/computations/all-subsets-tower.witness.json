@@ -1,0 +1,162 @@
+{
+  "computation": "all-subsets-tower",
+  "description": "Tests whether including |S| \u2265 3 subsets in the brane tower (beyond paper's pair-truncation) changes mass predictions. Per-generator brane-tower formula extended to all subsets S of generators with weight z^{|S|-1}\u00b7\u03a6_q(|\u03a0_{i\u2208S} V\u0302_i|).",
+  "reference_blocks": [
+    "prop:mass-endomorphism-tower",
+    "thm:six-term-mass-formula-complete"
+  ],
+  "computedAt": "2026-04-27T21:14:02.672887+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "rows": [
+    {
+      "isotope": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_gens": 5,
+      "descended_atom": 0.2113922189397068,
+      "contribs_atom_by_size": {
+        "1": {
+          "total": 1608289.7568490324,
+          "count": 5
+        },
+        "2": {
+          "total": 506679.15806830407,
+          "count": 10
+        },
+        "3": {
+          "total": 61931.125994030415,
+          "count": 10
+        },
+        "4": {
+          "total": 1727.6250160749596,
+          "count": 5
+        },
+        "5": {
+          "total": 0.47239089745799645,
+          "count": 1
+        }
+      },
+      "paper_truncation_total": 2114969.1263095555,
+      "all_subsets_total": 2178628.349710558,
+      "higher_codim_contribution": 63659.223401002586,
+      "ratio_higher_to_paper_pct": 3.009936296899171
+    },
+    {
+      "isotope": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_gens": 8,
+      "descended_atom": 0.028116345849300853,
+      "contribs_atom_by_size": {
+        "1": {
+          "total": 2119592.5580956447,
+          "count": 8
+        },
+        "2": {
+          "total": 1009599.9949195335,
+          "count": 28
+        },
+        "3": {
+          "total": 243114.82083946487,
+          "count": 56
+        },
+        "4": {
+          "total": 30043.184516999652,
+          "count": 70
+        },
+        "5": {
+          "total": 1788.3662671505601,
+          "count": 56
+        },
+        "6": {
+          "total": 56.06535940844524,
+          "count": 28
+        }
+      },
+      "paper_truncation_total": 3129192.581131524,
+      "all_subsets_total": 3404195.0181145477,
+      "higher_codim_contribution": 275002.43698302377,
+      "ratio_higher_to_paper_pct": 8.78828738893348
+    },
+    {
+      "isotope": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_gens": 8,
+      "descended_atom": 0.07484850403357003,
+      "contribs_atom_by_size": {
+        "1": {
+          "total": 2705308.6859446657,
+          "count": 8
+        },
+        "2": {
+          "total": 1692874.2604143738,
+          "count": 28
+        },
+        "3": {
+          "total": 558573.1519068871,
+          "count": 56
+        },
+        "4": {
+          "total": 100126.8560915757,
+          "count": 70
+        },
+        "5": {
+          "total": 8804.883336406176,
+          "count": 56
+        },
+        "6": {
+          "total": 259.6634569932814,
+          "count": 28
+        }
+      },
+      "paper_truncation_total": 4398183.021207543,
+      "all_subsets_total": 5065947.575999405,
+      "higher_codim_contribution": 667764.5547918621,
+      "ratio_higher_to_paper_pct": 15.182736861380636
+    },
+    {
+      "isotope": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_gens": 11,
+      "descended_atom": 0.009955269102458685,
+      "contribs_atom_by_size": {
+        "1": {
+          "total": 3216611.487191278,
+          "count": 11
+        },
+        "2": {
+          "total": 2525939.0213746936,
+          "count": 55
+        },
+        "3": {
+          "total": 1130196.0611050462,
+          "count": 165
+        },
+        "4": {
+          "total": 311544.94679610286,
+          "count": 330
+        },
+        "5": {
+          "total": 53558.35787237588,
+          "count": 462
+        },
+        "6": {
+          "total": 5588.203003400445,
+          "count": 462
+        }
+      },
+      "paper_truncation_total": 5742550.518521241,
+      "all_subsets_total": 7243438.087298166,
+      "higher_codim_contribution": 1500887.568776925,
+      "ratio_higher_to_paper_pct": 26.136253637406696
+    }
+  ]
+}

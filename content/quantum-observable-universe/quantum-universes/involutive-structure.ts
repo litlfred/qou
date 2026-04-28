@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:involutive-structure",
   title: "Involutive structure ($\\ast$-structure)",
-  lean: {
-    decl: "QOU.InvolutiveStructure",
+  lean: { ref: "qou:QOU.InvolutiveStructure",
     validation: "not_checked",
   },
   uses: ["def:rigid-monoidal-category"],

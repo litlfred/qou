@@ -1,6 +1,28 @@
 **Parity is violated by the weak interaction if and only if
 $q \neq 1$.**
 
+### Origin: Hecke eigenvalue asymmetry
+
+The parity violation follows directly from the categorical origin of
+the crossing energy
+([crossing energy](#def:crossing-energy)): the Hecke generator $\sigma =
+P \circ R$ has eigenvalues $(q, -q^{-1})$ on $S^{2} V \oplus \Lambda^{2}
+V$, and $\lvert q \rvert \neq \lvert {-q^{-1}} \rvert$ for $q \neq 1$.
+A positive crossing $L_{+}$ carries the eigenvalue $q$; a negative
+crossing $L_{-}$ carries $-q^{-1}$.  Parity $\mathcal{P}$ exchanges
+$L_{+} \leftrightarrow L_{-}$ but does not change $q$ --- hence
+$\mathcal{P}$-invariance forces $q = -q^{-1}$, i.e.\ $q^{2} = -1$,
+impossible on the substrate ray.  The sign-asymmetry of the eigenvalue
+pair (inherited from $P|_{\Lambda^{2} V} = -\mathrm{id}$) is the
+algebraic source of P-violation; it is not a physical postulate added
+to the framework.
+
+The detailed Skein derivation below rederives the same conclusion from
+the Skein relation; both are consequences of the same eigenvalue
+structure.
+
+### Skein derivation
+
 The parity operation $\mathcal{P}$ on a link is the **mirror**:
 reverse all crossings ($L_+ \leftrightarrow L_-$).  In the braid
 group $B_n$, this is the involution
@@ -60,11 +82,11 @@ iff $q = q^{-1}$, which holds iff $q^2 = 1$, hence $q = 1$
 
 **Physical interpretation.**
 
-The Hecke relation $T^2 = (q - q^{-1})T + 1$ breaks
+The Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$ breaks
 the symmetry between positive and negative crossings.  At $q = 1$:
-$T^2 = 1$ (positive and negative crossings cancel — parity
+$\sigma^2 = 1$ (positive and negative crossings cancel — parity
 conserved).  At the substrate parameter $q$:
-$T^2 = 0.209T + 1$ (the $0.209T$ term
+$\sigma^2 = 0.209\,\sigma + 1$ (the $0.209\,\sigma$ term
 distinguishes positive from negative — parity violated).
 
 The **degree of parity violation** is controlled by:

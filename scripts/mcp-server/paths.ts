@@ -18,8 +18,15 @@ export const CHAPTERS_DIR = resolve(REPO_ROOT, "chapters");
 /** Main LaTeX file. */
 export const MAIN_TEX = resolve(REPO_ROOT, "main.tex");
 
-/** Lean project directory. */
-export const LEAN_DIR = resolve(REPO_ROOT, "lean");
+/**
+ * Default Lean project directory for the MCP server.
+ *
+ * Points at the repo-root Lake workspace, which aggregates every paper
+ * package registered in `folio-assistant/schemas/lean-packages.ts`.
+ * For per-paper operations use the package's `lakeRoot` from that
+ * registry instead.
+ */
+export const LEAN_DIR = REPO_ROOT;
 
 /** Build output directory. */
 export const BUILD_DIR = resolve(REPO_ROOT, "build");

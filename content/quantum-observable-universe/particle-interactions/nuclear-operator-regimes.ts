@@ -13,14 +13,11 @@ export default proposition({
     "shell-closure",
     "regime-transition",
   ],
-  lean: {
-    decl: "QOU.Interactions.nuclearOperatorRegimes",
+  lean: { ref: "qou:QOU.Interactions.nuclearOperatorRegimes",
     validation: "not_checked",
   },
   uses: [
-    "prop:confinement-operator-selection",
     "prop:demand-stability",
-    "def:derived-atom",
     "prop:torus-knot-shell-binding",
   ],
 });

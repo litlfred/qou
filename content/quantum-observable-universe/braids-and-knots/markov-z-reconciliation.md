@@ -6,7 +6,7 @@ the trace.
 **Convention 1 (Jones, 1987).**
 The Jones--Markov trace
 ([Jones--Markov trace](#thm:jones-markov-trace)) satisfies
-$\mathrm{tr}_M(x\,T_n^{\pm 1}) = z_{\mathrm{J}}^{\pm 1}\,\mathrm{tr}_M(x)$
+$\mathrm{tr}_M(x\,\sigma_n^{\pm 1}) = z_{\mathrm{J}}^{\pm 1}\,\mathrm{tr}_M(x)$
 with
 
 $$
@@ -48,9 +48,9 @@ Convention 1 is the natural normalisation for the Jones polynomial
 as a *link invariant*: the factor $(q-1)$ absorbs the writhe
 correction and makes $J_L(q)$ independent of braid representative.
 Convention 2 arises when one evaluates the trace on a *single
-generator* $T_i$ without the writhe prefactor:
-$\mathrm{tr}_M(T_i) = z_{\mathrm{m}}$ in Convention 2, whereas
-$\mathrm{tr}_M(T_i) = z_{\mathrm{J}}$ in Convention 1.
+generator* $\sigma_i$ without the writhe prefactor:
+$\mathrm{tr}_M(\sigma_i) = z_{\mathrm{m}}$ in Convention 2, whereas
+$\mathrm{tr}_M(\sigma_i) = z_{\mathrm{J}}$ in Convention 1.
 
 All mass tables, vertex volumes, and nuclear binding computations
 in this paper use $z = z_{\mathrm{m}} = 1/(q^{1/2} + q^{-1/2})$.

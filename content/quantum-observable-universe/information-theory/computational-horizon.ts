@@ -12,15 +12,12 @@ export default definition({
     "turing-machine",
     "planck-step",
   ],
-  lean: {
-    decl: "QOU.ComputationalHorizon",
+  lean: { ref: "qou:QOU.ComputationalHorizon",
     validation: "not_checked",
   },
   uses: [
     "def:jet-horizon",
     "rem:skein-turing-machine",
-    "def:operational-entropy",
-    "conj:quantum-computational-universality",
     "def:information-speed-of-light",
   ],
 });

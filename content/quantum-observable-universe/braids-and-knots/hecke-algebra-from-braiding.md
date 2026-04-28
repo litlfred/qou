@@ -21,8 +21,8 @@ family $d_q$ ([substrate parameter](#def:substrate-parameter)).
 The Iwahori--Hecke algebra on $n$ strands is therefore
 
 $$
-  H_n(q) =  k[B_n] \big/
-  \bigl\langle (T_i - q)(T_i + q^{-1})  \big| 
+  H_n(R, q) =  k[B_n] \big/
+  \bigl\langle (\sigma_i - q)(\sigma_i + q^{-1})  \big| 
   i = 1, \ldots, n{-}1 \bigr\rangle,
 $$
 
@@ -31,4 +31,8 @@ the braiding of $(\mathbf{C}, A, \tau)$, not chosen freely.
 Every Laurent polynomial $c_w \in \mathbb{Z}[q, q^{-1}]$ appearing
 in a Gröbner--Shirshov normal form
 ([nuclear normal form](#prop:nuclear-groebner-reduction)) inherits
-its $q$ from this categorical source.
+its $q$ from this categorical source.  The per-crossing weights
+$(q, -q^{-1})$ that define the crossing energy
+([crossing energy](#def:crossing-energy)) are precisely the two
+eigenvalues of $T$ on $S^{2} V \oplus \Lambda^{2} V$, forced by
+the categorical volume constraint and not posited separately.

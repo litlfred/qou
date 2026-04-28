@@ -29,6 +29,8 @@ export default chapter({
       blocks: [
         "borromean-quark",
         "higgs-t28",
+        "s5-equivariant-torus-knots",
+        "symmetry-preserving-leptons",
       ],
     }),
 
@@ -73,6 +75,14 @@ export default chapter({
         "neutron-proton-mass-splitting",
         "photon-channel-wedderburn-chain",
         "mass-formula-validation",
+        "nucleon-borromean-topology",
+        "nucleon-borromean-topology-proof",
+        "pair-skein-mass-formula",
+        "pair-skein-mass-formula-proof",
+        "nucleon-mass-splitting",
+        "nucleon-mass-splitting-proof",
+        "deuteron-binding-energy",
+        "deuteron-binding-energy-proof",
         "terminal-resolution-proof",
         "terminal-resolution-cz",
         "w-boson-mass-discrepancy",
@@ -108,9 +118,12 @@ export default chapter({
         "cmb-q-torsion",
         "cmb-torsion-data",
         "gravity-emergent",
+        "gravity-spectral-prefactor",
+        "g-q-closed-form",
         "gravity-emergent-data",
         "topological-defects",
         "topological-defects-data",
+        "ns-blowup-physical-evidence",
       ],
     }),
 
@@ -122,6 +135,7 @@ export default chapter({
         "valley-table",
         "golden-ratio-degeneration",
         "hydrogen-knot-structure",
+        "sdp-regime-switch",
       ],
     }),
 
@@ -163,6 +177,8 @@ export default chapter({
         "fine-structure-observation",
         "fine-structure-data",
         "color-confinement-observation",
+        "confinement-curvature-rank",
+        "physics-names-knot-operations",
         "lepton-discrepancies",
         "lepton-anomalies-data",
       ],
@@ -213,6 +229,7 @@ export default chapter({
       title: "Complexity and Interpretation",
       label: "sec:complexity-interpretation",
       blocks: [
+        "fermion-boson-chart-localization",
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
         "crossing-energy-decomposition",
@@ -221,8 +238,19 @@ export default chapter({
         "virtual-particles-exceptional-divisor",
         "vacuum-polarization-virtual-pairs",
         "cp-violation-evidence",
+        "cp-violation-spectral-form",
         "cosmological-chirality-flip",
         "electron-immortality",
+      ],
+    }),
+
+    // ── Transcendence falsifiability signatures ──────────────────────
+    section({
+      title: "Transcendence Falsifiability Signatures",
+      label: "sec:transcendence-signatures",
+      blocks: [
+        "observables-algebraic-independence",
+        "observables-algebraic-dependence",
       ],
     }),
 

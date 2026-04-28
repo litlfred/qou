@@ -12,8 +12,5 @@ export default conjecture({
     "K-theory",
     "open-problem",
   ],
-  uses: [
-    "conj:single-volume-irrationality",
-    "conj:hyperbolic-volume-transcendence",
-  ],
+  uses: ["conj:single-volume-irrationality"],
 });

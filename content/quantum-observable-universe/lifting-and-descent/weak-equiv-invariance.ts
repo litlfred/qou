@@ -2,8 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:weak-equiv-invariance",
-  lean: {
-    decl: "QOU.Torsion.weak_equiv_invariance",
+  lean: { ref: "qou:QOU.Torsion.weak_equiv_invariance",
     validation: "not_checked",
   },
   title: "Weak equivalence invariance of physical states",

@@ -5,11 +5,11 @@ The *$q$-deformed Lie bracket* on derivations of $A$ is
 
 $$
   [X, Y]_q =  q^{-1}[X, Y]
-  + (1 - q^{-1})\bigl(\theta_A(X)[\xi, Y]
-                        - \theta_A(Y)[\xi, X]\bigr),
+  + (1 - q^{-1})\bigl(\varTheta_A(X)[\xi, Y]
+                        - \varTheta_A(Y)[\xi, X]\bigr),
 $$
 
-where $\theta_A$ is the canonical $1$-form dual to $\xi$ and
+where $\varTheta_A$ is the canonical $1$-form dual to $\xi$ and
 $[X, Y]$ is the commutator of derivations in $\mathbf{C}$.
 
 ```tex

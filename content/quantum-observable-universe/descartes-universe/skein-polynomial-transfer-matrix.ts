@@ -14,8 +14,7 @@ export default proposition({
     "q-variable",
     "factored-form",
   ],
-  lean: {
-    decl: "QOU.Descartes.skein_polynomial_transfer_matrix",
+  lean: { ref: "qou:QOU.Descartes.skein_polynomial_transfer_matrix",
     validation: "not_checked",
   },
   uses: ["thm:markov-trace-factorization"],

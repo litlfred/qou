@@ -199,7 +199,13 @@ export async function buildPaper(
   //    no corresponding \label in the rendered output.
   //    Collect all defined labels (from blocks, sections, chapters).
   const definedLabels = new Set<string>();
-  for (const [, entry] of blocks) {
+  for (const [name, entry] of blocks) {
+    if (!entry.block || typeof entry.block !== "object") {
+      console.warn(`build: skipping malformed block entry for "${name}" `
+        + `(block is ${entry.block === null ? "null"
+          : typeof entry.block})`);
+      continue;
+    }
     const label = extractBlockLabel(entry.block);
     if (label) definedLabels.add(label);
   }

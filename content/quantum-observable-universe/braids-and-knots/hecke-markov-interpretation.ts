@@ -11,12 +11,15 @@ export default remark({
     "asep",
     "boltzmann-weight",
     "memoryless",
+    "syt",
+    "young-graph",
+    "amplitudes",
   ],
   cites: ["diaconis-ram2000", "bufetov2020"],
   uses: [
     "prop:hecke-markov-transition",
+    "prop:hoefsmit-seminormal-form",
     "def:information-theoretic-time",
-    "thm:markov-trace-product",
     "rem:markov-trace-product-interpretation",
   ],
 });

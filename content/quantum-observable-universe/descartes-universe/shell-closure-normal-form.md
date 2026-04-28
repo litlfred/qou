@@ -109,11 +109,11 @@ discontinuously** at shell closures:
 | $A$ | $(p,n)$ | Dominant $\lvert c_w\rvert$ | Word length | Ratio to $A-1$ |
 |-----|---------|:----------------:|:-----------:|:---------------:|
 | $3$ | $(2,1)$ | $1.246$ | $1$ | — |
-| $4$ | $(2,2)$ | $1.946$ | $4$ | $\times 1.56$ ★ |
+| $4$ | $(2,2)$ | $1.946$ | $4$ | $\times 1.56$ (best) |
 | $5$ | $(3,2)$ | $2.424$ | $4$ | $\times 1.25$ |
-| $6$ | $(3,3)$ | $5.084$ | $7$ | $\times 2.10$ ★ |
+| $6$ | $(3,3)$ | $5.084$ | $7$ | $\times 2.10$ (best) |
 | $7$ | $(4,3)$ | $7.193$ | $9$ | $\times 1.41$ |
-| $8$ | $(4,4)$ | $21.248$ | $16$ | $\times 2.95$ ★ |
+| $8$ | $(4,4)$ | $21.248$ | $16$ | $\times 2.95$ (best) |
 | $9$ | $(5,4)$ | $32.962$ | $22$ | $\times 1.55$ |
 
 The ratio to the previous step is **larger at shell closures**
@@ -126,8 +126,8 @@ the $k$-th nucleon) exhibits a **gap** at shell breaks:
 
 | Step | $\to (p,n)$ | $\Delta E$ | Hecke steps | |
 |:----:|:-----------:|:----------:|:-----------:|:---:|
-| $2$ | $(2,1)$ | $0.274$ | $2$ | ★ closure |
-| $3$ | $(2,2)$ | $0.095$ | $10$ | ★ closure |
+| $2$ | $(2,1)$ | $0.274$ | $2$ | closure |
+| $3$ | $(2,2)$ | $0.095$ | $10$ | closure |
 | $4$ | $(3,2)$ | $1.409$ | $58$ | shell break |
 | $5$ | $(3,3)$ | $2.174$ | $790$ | |
 
@@ -201,11 +201,11 @@ $\mathbf{1}$ in the support, I₉ chain-stripping has no root.
 
 | $Z \backslash N$ | $0$ | $1$ | $2$ | $3$ | $4$ | $5$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| $1$ | ★ | ★ | ★ | ★ | ★ | ★ |
-| $2$ | ✗ | ★ | ★ | ★ | ★ | ★ |
-| $3$ | ✗ | ★ | ★ | ★ | ★ | ★ |
-| $4$ | ✗ | ✗ | ★ | ★ | ★ | |
-| $5$ | ✗ | ✗ | ✗ | ✗ | | |
+| $1$ | yes | yes | yes | yes | yes | yes |
+| $2$ | no | yes | yes | yes | yes | yes |
+| $3$ | no | yes | yes | yes | yes | yes |
+| $4$ | no | no | yes | yes | yes | |
+| $5$ | no | no | no | no | | |
 
 The boundary $N \geq Z - 1$ matches the nuclear valley of stability.
 

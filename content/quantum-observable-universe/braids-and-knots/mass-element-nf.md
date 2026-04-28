@@ -1,5 +1,5 @@
 The Hecke mass element
-$\Phi_{\mathrm{mass}}(\beta) \in H_3(q)$
+$\Phi_{\mathrm{mass}}(\beta) \in H_3(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) has a
 specific normal form structure determined by the **word
 length filtration** on the NF basis.
@@ -8,7 +8,7 @@ length filtration** on the NF basis.
 
 **Proposition.**
 *For any particle with braid representative $\beta$ in
-$H_3(q)$, the Hecke mass element has the NF decomposition:*
+$H_3(R, q)$, the Hecke mass element has the NF decomposition:*
 
 $$
   \Phi_{\mathrm{mass}}(\beta)
@@ -27,7 +27,7 @@ particle through its brane tower weights.*
 ## Why $\gamma = 0$ (photon masslessness)
 
 The descent involution $\hat\tau_n$ at the first brane level
-projects onto the $H_1(q)$ content of $H_3(q)$.  Since
+projects onto the $H_1(q)$ content of $H_3(R, q)$.  Since
 $H_1(q) = \mathrm{span}\{\gamma\}$ (the identity is the
 only degree-0 element), the descended component at level
 0 is $\gamma$.  The **transient** component at level 0

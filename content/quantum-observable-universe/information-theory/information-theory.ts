@@ -17,6 +17,7 @@ export default chapter({
       label: "sec:info-emergent-gravity",
       blocks: [
         "information-theory-intro",
+        "regime-table",
         "emergent-gravity-info",
         "planck-info-unit",
       ],
@@ -64,6 +65,8 @@ section({
         "planck-scale-computation",
         "toffoli-transfer-matrix",
         "toffoli-q-and",
+        "toffoli-lp-stability",
+        "q-game-of-life",
         "substrate-computation",
         "quantum-computational-universality",
         "skein-turing-machine",

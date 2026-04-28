@@ -12,8 +12,8 @@
   "scriptCommitSha": "3c7913376941bc1924990f5e68b587eaa2eca947",
   "description": "Correlated per-nucleon channel product mass: 4-channel T_{2,3} eigendecomposition with per-generator inter-nucleon crossing eigenvalues, Wedderburn-weighted. Also reports all-confining channel (LP-optimal for Q-values).",
   "parameters": {
-    "q₀": 1.1099785955541805,
-    "α (MeV)": 3.74445965488548,
+    "q\u2080": 1.1099785955541805,
+    "\u03b1 (MeV)": 3.74445965488548,
     "G_P(sym)": 1.1221068372363023,
     "G_N(sym)": 0.9107622062323653,
     "G_P(std1)": -1.1743719177337724,
@@ -235,5 +235,7 @@
         "err_conf": -0.9763
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

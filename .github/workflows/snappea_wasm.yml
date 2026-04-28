@@ -1,14 +1,7 @@
 name: SnapPea WASM Build & Test
 
 on:
-  push:
-    paths:
-      - 'snappea-wasm/**'
-      - '.github/workflows/snappea_wasm.yml'
-  pull_request:
-    paths:
-      - 'snappea-wasm/**'
-      - '.github/workflows/snappea_wasm.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read

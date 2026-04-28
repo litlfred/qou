@@ -6,15 +6,10 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:benzene-molecular-braid",
   title: "Benzene $C_6H_6$ as a molecular braid",
-  lean: {
-    decl: "QOU.Molecular.BenzeneBraid",
+  lean: { ref: "qou:QOU.Molecular.BenzeneBraid",
     validation: "not_checked",
   },
-  uses: [
-    "def:molecular-braid",
-    "def:covalent-bond-shared-trefoil",
-    "def:ch4-molecular-braid",
-  ],
+  uses: ["def:ch4-molecular-braid"],
   tags: [
     "benzene",
     "C6H6",

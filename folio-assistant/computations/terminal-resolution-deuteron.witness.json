@@ -1,7 +1,7 @@
 {
   "computation": "terminal-resolution-deuteron",
   "description": "Skein resolution of 9 inter-nucleon crossings in deuteron composite",
-  "timestamp": "2026-03-27T15:46:20.156963+00:00",
+  "computedAt": "2026-03-27T15:46:20.156963+00:00",
   "parameters": {
     "q": 1.11,
     "hbar_q2": 0.009820631442253083,
@@ -23,5 +23,7 @@
     "min": 14.642303717625795,
     "max": 14.66223041659425,
     "mean": 14.655462236059309
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

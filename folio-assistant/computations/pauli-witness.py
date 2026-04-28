@@ -14,11 +14,15 @@ Usage:
     python3 pauli-witness.py
 """
 
+import sys
 import sympy as sp
 import json
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q as _Q_CANONICAL
 from hecke_symbolic import (
     SymbolicHeckeDivision, SymbolicHeckeElement,
     q, q_inv, HA, C_PP, C_NN, C_MIX, D_MIX, D_NN,
@@ -67,7 +71,7 @@ def compute_pauli(elem):
 # ══════════════════════════════════════════════════════════════
 
 if __name__ == '__main__':
-    q0 = 1.10998
+    q0 = _Q_CANONICAL
 
     nuclei = [
         ('D', 1, 1), ('3H', 1, 2), ('3He', 2, 1), ('4He', 2, 2),

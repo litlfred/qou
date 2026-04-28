@@ -1,6 +1,5 @@
-The identification of one $q$-bit
-([glossary $q$-bit](#rem:glossary-q-bit)) with one Skein
-operation unifies several structures in the paper.
+The :defterm[identification of one $q$-bit with one Skein operation]{#q-bit-skein}
+([glossary $q$-bit](#rem:glossary-q-bit)) unifies several structures in the paper.
 
 ### One $q$-bit $=$ one crossing resolution
 

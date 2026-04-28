@@ -13,7 +13,7 @@ $$
 
 the sub-group scheme of
 $G = \mathrm{Aut}^{\otimes}(\tau)$
-([SU(2) emergence](#thm:su2-emergence)) consisting of those natural
+([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)) consisting of those natural
 automorphisms that act diagonally on each weight space of $V$.
 
 ```tex

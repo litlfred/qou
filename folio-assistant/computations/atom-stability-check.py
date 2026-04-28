@@ -32,10 +32,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
+# z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
+# bootstrap for dev mode; the installed-pyhecke path is preferred.
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
 
-z = 1.0 / (q0**0.5 + qi0**0.5)
 
-NF_BASIS = [(), (0,), (1,), (0,1), (1,0), (0,1,0)]
+z = _PG_Z  # moved to pyhecke.gram
+NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 TR_M = np.array([1.0, z, z, z**2, z**2, z**3])
 

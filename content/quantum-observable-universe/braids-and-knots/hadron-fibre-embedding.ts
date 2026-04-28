@@ -4,8 +4,7 @@ export default definition({
   label: "def:hadron-fibre-embedding",
   title: "Fibre-compatible hadron embedding",
   tags: ["hadron", "embedding", "fibre", "mobius-energy", "knot"],
-  lean: {
-    decl: "QOU.HadronFibreEmbedding",
+  lean: { ref: "qou:QOU.HadronFibreEmbedding",
     validation: "not_checked",
   },
   uses: ["def:localized-hadron"],

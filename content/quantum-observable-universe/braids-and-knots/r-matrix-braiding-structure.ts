@@ -4,8 +4,7 @@ export default proposition({
   label: "prop:r-matrix-braiding-structure",
   title: "Yang--Baxter equation and braid operator from the $R$-matrix",
   tags: ["r-matrix", "yang-baxter", "quantum-group", "braiding"],
-  lean: {
-    decl: "QOU.Braiding.r_matrix_braiding_structure",
+  lean: { ref: "qou:QOU.Braiding.r_matrix_braiding_structure",
     validation: "not_checked",
   },
   uses: [

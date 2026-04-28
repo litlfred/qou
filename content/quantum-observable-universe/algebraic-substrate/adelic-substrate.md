@@ -1,0 +1,56 @@
+**Definition.**
+*The **adelic substrate** of the QOU framework is the ring of adeles
+of $\mathbb{Q}$,*
+
+$$
+  \mathbb{A}
+  \;=\;
+  \mathbb{R} \;\times\; \prod_{p}{}^{\!\!\prime}\;\mathbb{Q}_p,
+$$
+
+*the restricted product of the archimedean completion $\mathbb{R}$
+with all $p$-adic completions $\mathbb{Q}_p$ (restriction: almost
+all components lie in the maximal compact subring $\mathbb{Z}_p$).*
+
+Each non-archimedean place $p$ corresponds to a localized quantum
+geometric state of the substrate: a specific $q$-deformation
+evaluated at a primitive root of unity, equivalently a Kummer level
+in the Habiro / cyclotomic completion
+([algebraic quantum volume](#def:algebraic-quantum-volume)).
+The archimedean place $\infty$ — the $\mathbb{R}$ component — is
+the laboratory continuum, accessible only through the
+[classical limit functor](#def:classical-limit-functor) and the
+[archimedean realization functor](#def:archimedean-realization-functor).
+
+**Why adeles.** Replacing $\mathbb{R}$ by $\mathbb{A}$ resolves a
+structural tension already noted in
+[classical limit (preamble)](#sec:classical-limit-preamble): the
+local $q$-geometries at each prime do not assemble into a continuous
+manifold, but they *do* assemble into a global adelic object. The
+macroscopic universe is therefore not the real continuum
+$\mathbb{R}$ alone but the simultaneous integration of all local
+non-archimedean data weighted by their archimedean shadow.
+
+**Adelic integration (Tate's thesis).** Global observables of the
+substrate — the macroscopic mass functional, the global
+$L$-function of Bring's coordinate ring, the partition functions of
+the brane tower — are not Riemann integrals over $\mathbb{R}$. They
+are Tate integrals over $\mathbb{A}$:
+
+$$
+  \mathcal{Z}(s)
+  \;=\;
+  \int_{\mathbb{A}^\times} \! f(x)\,|x|^s\, d^\times x
+  \;=\;
+  \zeta_\infty(s) \cdot \prod_{p} \zeta_p(s),
+$$
+
+a product of local zeta integrals, one per place. The classical
+$\zeta(s)$ of [classical Riemann zeta](#def:classical-riemann-zeta)
+is recovered as the global Tate integral of the standard adelic
+Schwartz function. Local $q$-zeta data and macroscopic real-valued
+observables are two faces of the same adelic object.
+
+This is the global stitch: discrete quantum data at every prime,
+glued by adelic restriction, projected to physical numbers by the
+[archimedean realization functor](#def:archimedean-realization-functor).

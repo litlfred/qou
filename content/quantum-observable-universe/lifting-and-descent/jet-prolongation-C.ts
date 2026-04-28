@@ -2,8 +2,7 @@ import { corollary } from "../../schema/builders";
 
 export default corollary({
   label: "cor:jet-prolongation-C",
-  lean: {
-    decl: "QOU.Torsion.jet_prolongation_C",
+  lean: { ref: "qou:QOU.Torsion.jet_prolongation_C",
     validation: "not_checked",
   },
   title: "Archimedean realisation of jet prolongation",

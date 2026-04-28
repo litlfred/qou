@@ -4,8 +4,7 @@ export default definition({
   label: "def:localized-knot",
   title: "Localized knot (knot at a point)",
   tags: ["knot", "point", "fibre", "categorical"],
-  lean: {
-    decl: "QOU.LocalizedKnot",
+  lean: { ref: "qou:QOU.LocalizedKnot",
     validation: "not_checked",
   },
   uses: [

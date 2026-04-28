@@ -101,7 +101,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "bool",
-      "source": "2 ops: σ₁·σ₁"
+      "source": "2 ops: \u03c3\u2081\u00b7\u03c3\u2081"
     },
     {
       "name": "LP_stable(N14)",
@@ -119,7 +119,7 @@
       "passed": true,
       "tolerance": 0,
       "unit": "bool",
-      "source": "1 ops: σ₁"
+      "source": "1 ops: \u03c3\u2081"
     }
   ],
   "allPassed": true,
@@ -238,7 +238,7 @@
         "A": 14,
         "bare_stable": false,
         "n_ops": 2,
-        "stabilizer": "σ₁·σ₁",
+        "stabilizer": "\u03c3\u2081\u00b7\u03c3\u2081",
         "tr_M": 0.56847693
       },
       {
@@ -258,7 +258,7 @@
         "A": 16,
         "bare_stable": false,
         "n_ops": 1,
-        "stabilizer": "σ₁",
+        "stabilizer": "\u03c3\u2081",
         "tr_M": 11.7528194
       },
       {
@@ -302,5 +302,7 @@
         "tr_M": 5.706369638814518e+29
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

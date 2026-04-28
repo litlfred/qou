@@ -14,16 +14,11 @@ export default proposition({
     "nuclear-structure",
     "inductive-construction",
   ],
-  lean: {
-    decl: "QOU.Descartes.torus_knot_shell_binding",
+  lean: { ref: "qou:QOU.Descartes.torus_knot_shell_binding",
     validation: "not_checked",
   },
   uses: [
-    "prop:shell-closure-normal-form",
-    "prop:torus-knot-generators",
     "def:transfer-matrix-operator",
-    "prop:nuclear-groebner-reduction",
-    "thm:groebner-shirshov-energy",
     "prop:skein-finiteness-bound",
   ],
   examples: [

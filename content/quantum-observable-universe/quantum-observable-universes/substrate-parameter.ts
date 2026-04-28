@@ -5,8 +5,7 @@ export default definition({
   cites: ["lusztig1993"],
   title: "Substrate parameter",
   tags: ["substrate", "deformation", "fibre-coordinate"],
-  lean: {
-    decl: "QOU.SubstrateParameter",
+  lean: { ref: "qou:QOU.SubstrateParameter",
     validation: "leanok",
   },
   uses: ["def:categorical-reeb"],

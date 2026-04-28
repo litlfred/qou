@@ -3,8 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:q-von-mangoldt-function",
   title: "The $q$-von Mangoldt function",
-  lean: {
-    decl: "QOU.AlgebraicSubstrate.QVonMangoldtFunction",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.QVonMangoldtFunction",
     validation: "not_checked",
   },
   uses: ["def:brings-coordinate-ring", "def:substrate-parameter-planck"],

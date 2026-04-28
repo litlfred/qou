@@ -12,15 +12,12 @@ export default proposition({
   label: "prop:wigner-2-coefficient",
   title:
     "Wigner-2 coefficient $C_{[3,2,1]} = w_{[3,2,1]} \\cdot h/2$ from self-conjugate trace pairing",
-  lean: {
-    decl: "QOU.BraidKnot.wigner2_coefficient",
+  lean: { ref: "qou:QOU.BraidKnot.wigner2_coefficient",
     validation: "not_checked",
   },
   uses: [
     "prop:bw-coefficient-shadow-price",
     "prop:hoefsmit-seminormal-form",
-    "prop:wedderburn-trace-identity",
-    "prop:wigner-coefficient-derivation",
   ],
   tags: [
     "wigner",

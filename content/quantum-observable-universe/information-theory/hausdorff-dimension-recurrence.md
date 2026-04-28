@@ -68,17 +68,17 @@ Bang ($q \to \infty$, no fractal, $d_{H,q} = 0$).
 
 **$d_{H,q}$ vs. $d_H$: comparison with classical Hausdorff dimension.**
 
-For parameters $c(\theta)$ on the main cardioid of the Mandelbrot
-set (rotation number $\theta$, multiplier $\lambda = e^{2\pi i \theta}$), the Julia set is a quasicircle and the classical
+For parameters $c(\varTheta)$ on the main cardioid of the Mandelbrot
+set (rotation number $\varTheta$, multiplier $\lambda = e^{2\pi i \varTheta}$), the Julia set is a quasicircle and the classical
 Hausdorff dimension $d_H$ satisfies:
 
 1. **Ruelle perturbative** [ruelle1982] (valid near $|c| \ll 1$):
 
    $$
-     d_H =  1 + \frac{|c(\theta)|^2}{4 \ln 2} + O(|c|^4).
+     d_H =  1 + \frac{|c(\varTheta)|^2}{4 \ln 2} + O(|c|^4).
    $$
 
-   At $\theta = 0.1097$: $|c| = 0.346$, giving $d_H \approx 1.043$.
+   At $\varTheta = 0.1097$: $|c| = 0.346$, giving $d_H \approx 1.043$.
 
 2. **Transfer operator** (numerical, Bowen–Ruelle): $d_H \approx 1.047$ at $N = 800$ grid points.
 

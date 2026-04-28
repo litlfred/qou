@@ -1,0 +1,14 @@
+-- Ref: [gonshor1986] Gonshor, *An Introduction to the Theory of Surreal
+--      Numbers*, Cambridge University Press.
+-- Ref: [conway1976] Conway, *On Numbers and Games*, Academic Press.
+--
+-- Sibling stub for `def:sign-sequence-of-braid`.
+--
+-- The compiled formalisation lives in:
+--   QOU/AppendixSurreals/SignSequence.lean
+--
+-- See `QOU.AppendixSurreals.Sign`,
+--     `QOU.AppendixSurreals.SignSequence`,
+--     `QOU.AppendixSurreals.gonshor`        (constructive ℚ-valued)
+--     `QOU.AppendixSurreals.gonshorIn`      (transported into K)
+--     `QOU.AppendixSurreals.birthday_gonshorIn_le_length`.

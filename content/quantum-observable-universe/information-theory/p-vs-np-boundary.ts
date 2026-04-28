@@ -14,14 +14,10 @@ export default conjecture({
     "computational-horizon",
   ],
   uses: [
-    "def:computational-horizon",
     "prop:p-bandwidth-bound",
-    "def:jet-horizon",
     "def:observable-subcategory",
     "def:skein-resolution-obstruction",
     "rem:substrate-gm-torsion",
-    "thm:qou-obstruction-reduction",
-    "rem:skein-turing-machine",
   ],
   cites: ["cook1971", "freedman2003"],
 });

@@ -1,6 +1,6 @@
 {
   "computation": "end-to-end-halflife",
-  "timestamp": "2026-03-28T14:43:20.083682+00:00",
+  "computedAt": "2026-03-28T14:43:20.083682+00:00",
   "description": "End-to-end: q \u2192 half-life. No tuning parameters.",
   "inputs": {
     "q": 1.1099785955541805,
@@ -154,5 +154,7 @@
       "t_half": 0.6601075128648372,
       "ratio": 0.13170540958995156
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

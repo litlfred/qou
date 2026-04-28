@@ -21,7 +21,7 @@ rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
 # Cross-paper dependency: Gröbner–Shirshov basis engine
 # (provides HeckeGS types for crossing energy / categorical mass)
 [[require]]
-name = "unital-groebner-bases"
+name = "ugb"
 path = "../../unital-groebner-bases/lean"
 
 # doc-gen4 and checkdecls are CI-only dependencies.

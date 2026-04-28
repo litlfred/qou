@@ -11,12 +11,8 @@ export default proposition({
     "even-A",
     "config-exclusion",
   ],
-  lean: {
-    decl: "QOU.ParticleInteractions.frobenius_positivity_filter",
+  lean: { ref: "qou:QOU.ParticleInteractions.frobenius_positivity_filter",
     validation: "not_checked",
   },
-  uses: [
-    "prop:confinement-lp",
-    "thm:parity-regime-selection",
-  ],
+  uses: ["thm:parity-regime-selection"],
 });

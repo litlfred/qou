@@ -5,8 +5,7 @@ export default proposition({
   title:
     "Smoothness of the Bring's surface and intrinsic resolution of projection singularities",
   tags: ["brings-surface", "smooth", "resolution", "branch-point", "coral"],
-  lean: {
-    decl: "QOU.BringsSurface.brings_smoothness_resolution",
+  lean: { ref: "qou:QOU.BringsSurface.brings_smoothness_resolution",
     validation: "not_checked",
   },
   uses: [

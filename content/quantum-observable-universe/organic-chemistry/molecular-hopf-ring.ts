@@ -12,8 +12,7 @@ export default definition({
     "circulant",
     "cyclic",
   ],
-  lean: {
-    decl: "QOU.Organic.MolecularHopfRing",
+  lean: { ref: "qou:QOU.Organic.MolecularHopfRing",
     validation: "not_checked",
   },
   uses: ["def:threading-link"],

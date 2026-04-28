@@ -22,13 +22,13 @@ $[-1]_q = -1$, but with $q$-weighting that distinguishes
 the two.
 
 **Equivalently**, the $q$-momentum is the trace of the braid
-in the fundamental representation of $H_n(q)$:
+in the fundamental representation of $H_n(R, q)$:
 
 $$
   p_q(\beta) =  \mathrm{tr}_{\mathrm{fund}}(\rho(\beta))
 $$
 
-where $\rho: B_n \to H_n(q)$ is the Hecke representation.
+where $\rho: B_n \to H_n(R, q)$ is the Hecke representation.
 
 **Properties.**
 
