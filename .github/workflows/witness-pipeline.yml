@@ -1,0 +1,101 @@
+# Witness pipeline CI — keeps the QOU computation witnesses green
+#
+# Triggers
+# ────────
+#   pull_request — PRs that touch any of:
+#     - folio-assistant/computations/{habiro_*,markov_*,witness_base}.py
+#     - any *.witness.json under folio-assistant/computations/
+#     - this workflow file
+#   push (main) — same path filters
+#   workflow_dispatch — manual run
+#
+# Steps
+# ─────
+#   1. Set up Python + uv + sympy + mpmath.
+#   2. Run `habiro_witness_validator.py` — certifies the
+#      `tail_in_ideal` axiom on the atomic Habiro witness
+#      (proton, neutron, deuteron).
+#   3. Run `markov_substrate_realizer.py` — recomputes the
+#      Place → realize map (archimedean + 6 finite primes) for
+#      every atom; the WitnessBuilder asserts `tail_in_ideal mod p`
+#      across all primes.
+#   4. Run `markov_pipeline_cross_validator.py` — if
+#      `term6-full-pole-sum.witness.json` is present (after
+#      claude/continue-pr-442-DJRWm lands), cross-checks the
+#      polynomial-ring path against the Mittag-Leffler residue-sum
+#      path.  Skips with exit 0 when the input is absent.
+#   5. Run `habiro_interpolate_cross_validator.py` — cross-checks
+#      the atomic-polynomial evaluation against the
+#      Vandermonde-interpolation pipeline at machine precision.
+#   6. Validate that the regenerated witnesses are bit-stable
+#      (modulo the `computedAt` timestamp): no unexpected drift in
+#      assertions, parameters, or per-atom payloads.
+
+name: Witness pipeline
+
+on:
+  pull_request:
+    paths:
+      - "folio-assistant/computations/habiro_*.py"
+      - "folio-assistant/computations/markov_*.py"
+      - "folio-assistant/computations/witness_base.py"
+      - "folio-assistant/computations/*.witness.json"
+      - ".github/workflows/witness-pipeline.yml"
+  push:
+    branches: [main]
+    paths:
+      - "folio-assistant/computations/habiro_*.py"
+      - "folio-assistant/computations/markov_*.py"
+      - "folio-assistant/computations/witness_base.py"
+      - "folio-assistant/computations/*.witness.json"
+      - ".github/workflows/witness-pipeline.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install sympy mpmath
+
+      - name: Run habiro_witness_validator
+        run: python3 folio-assistant/computations/habiro_witness_validator.py
+
+      - name: Run markov_substrate_realizer
+        run: python3 folio-assistant/computations/markov_substrate_realizer.py
+
+      - name: Run markov_pipeline_cross_validator (skips if term6 absent)
+        run: python3 folio-assistant/computations/markov_pipeline_cross_validator.py
+
+      - name: Run habiro_interpolate_cross_validator
+        run: python3 folio-assistant/computations/habiro_interpolate_cross_validator.py
+
+      - name: Detect drift in committed witnesses
+        run: |
+          # The validators write witness files; we expect bit-stable
+          # outputs except for the `computedAt` timestamp.  If `git
+          # diff` shows changes outside that field, something is
+          # actually drifting.
+          if git diff --quiet folio-assistant/computations/*.witness.json; then
+            echo "Witnesses bit-stable."
+            exit 0
+          fi
+          echo "Witnesses changed — checking whether the diff is just timestamp drift..."
+          drift=$(git diff folio-assistant/computations/*.witness.json | \
+                  grep -E "^[+-]" | \
+                  grep -vE "^\+\+\+|^---|computedAt|durationMs|commitSha|scriptCommitSha")
+          if [ -z "$drift" ]; then
+            echo "Only timestamp/commit drift — OK."
+            exit 0
+          fi
+          echo "Substantive witness drift detected:"
+          echo "$drift"
+          exit 1
