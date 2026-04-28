@@ -231,6 +231,16 @@ jobs:
           # Store as output for downstream steps
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
 
+      # ── 0d¼. Install Python scientific stack for witness computations ──
+      - name: Install Python scientific dependencies
+        run: |
+          # The witness scripts under folio-assistant/computations/ depend
+          # on the standard scientific Python stack. Install at minimum
+          # the packages imported by the content-linked scripts that
+          # run in CI (numpy, sympy, scipy, mpmath).
+          pip3 install --break-system-packages --no-cache-dir \
+              numpy sympy scipy mpmath
+
       # ── 0d½. Regenerate stale computation witnesses (appendix tables, etc.) ─
       - name: Regenerate stale witnesses
         continue-on-error: true
