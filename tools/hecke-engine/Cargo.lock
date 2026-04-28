@@ -202,7 +202,10 @@ dependencies = [
  "lapack-src",
  "lazy_static",
  "netlib-src",
+ "num-bigint",
+ "num-rational",
  "num-traits",
+ "rug",
  "serde",
  "serde-big-array",
  "serde_json",
@@ -545,6 +548,7 @@ checksum = "a5e44f723f1133c9deac646763579fdb3ac745e418f2a7af9cd0c431da1f20b9"
 dependencies = [
  "num-integer",
  "num-traits",
+ "serde",
 ]
 
 [[package]]
@@ -574,6 +578,7 @@ dependencies = [
  "num-bigint",
  "num-integer",
  "num-traits",
+ "serde",
 ]
 
 [[package]]

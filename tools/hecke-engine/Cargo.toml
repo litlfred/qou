@@ -27,6 +27,24 @@ name = "r5-5-minimal-h5"
 path = "src/bin/r5_5_minimal_h5.rs"
 required-features = ["clarabel-sdp"]
 
+# Round 4 SDP-side smoke test: BlockDiagPSDConeT + Solution<T> accessors
+[[bin]]
+name = "clarabel-round4-sdp-smoke"
+path = "src/bin/clarabel_round4_sdp_smoke.rs"
+required-features = ["clarabel-sdp"]
+
+# Round 4 + Phase 8a smoke test: tighten_to_rational + iter_diagnostics on rationals
+[[bin]]
+name = "clarabel-round4-rational-smoke"
+path = "src/bin/clarabel_round4_rational_smoke.rs"
+required-features = ["clarabel-bigrational"]
+
+# Phase 8b smoke test: MpfrFloat run-time MPFR float backend
+[[bin]]
+name = "clarabel-phase8b-mpfr-smoke"
+path = "src/bin/clarabel_phase8b_mpfr_smoke.rs"
+required-features = ["clarabel-mpfr"]
+
 # Per-Wedderburn-block matrix dump for sign-convention audits
 [[bin]]
 name = "dump-block-matrices"
@@ -85,13 +103,20 @@ chrono = { version = "0.4", default-features = false, features = ["clock", "serd
 # compiled only when the feature is enabled. The bisection-based α* verifier
 # (sdp_verifier) and the Wedderburn-block PSD evaluator (wedderburn_psd) work
 # without it.
-clarabel = { version = "0.11", features = ["sdp-netlib"], optional = true }
+clarabel = { version = "0.11", default-features = false, optional = true }
 
 [features]
 default = []
 # Opt-in: enables the Clarabel-rs SDP-as-solver code path. Requires system
 # OpenBLAS + LAPACK + gfortran. Use `cargo build --features clarabel-sdp`.
-clarabel-sdp = ["dep:clarabel"]
+clarabel-sdp = ["dep:clarabel", "clarabel?/sdp-netlib", "clarabel?/serde"]
+# Opt-in: exact-rational backend (Round 4 + Phase 8a). Mutually exclusive
+# with `clarabel-sdp` — the upstream `bigrational + sdp` combo is intentionally
+# unsupported (eigendecomposition on rationals is not feasible).
+clarabel-bigrational = ["dep:clarabel", "clarabel?/bigrational", "clarabel?/serde"]
+# Opt-in: run-time MPFR float backend (Phase 8b).  Provides MpfrFloat
+# at arbitrary precision; recommended path for QOU §S4-S6 (50-dps SDP).
+clarabel-mpfr = ["dep:clarabel", "clarabel?/mpfr", "clarabel?/serde"]
 
 [build-dependencies]
 
