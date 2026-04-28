@@ -17,8 +17,9 @@ Candidates:
    spread, the squared form can be much larger.
 
 3. **Quantum factorial [n_0]_q!** — Wenzl normalization may carry this
-   factor as a hidden multiplier. Computes [n]_q! at q_0 for n ∈
-   {3, 6, 9, 12, ..., 50} and looks for natural ratios near 1836.
+   factor as a hidden multiplier. Computes [n]_q! at q_0 for n =
+   1, 2, …, 24 (covering the regime where [n]_q!/1836 crosses 1) and
+   looks for natural ratios near 1836.
 
 4. **Wrong canonical T_w** — the current SDP gives T_w(p) ≈ identity
    because R5min minimizes the PSD-cone gap. A maximizing

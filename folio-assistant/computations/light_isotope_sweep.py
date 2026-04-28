@@ -305,7 +305,7 @@ if __name__ == "__main__":
             "thm:knot-mass-formula-unified",
             "prop:partition-sum-proton-residual",
         ],
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": Q0,
             "m_e_MeV": M_E,

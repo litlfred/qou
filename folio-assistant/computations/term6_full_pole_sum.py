@@ -19,9 +19,9 @@ meaningful Term-6 contribution whose magnitude this script measures.
 
 Input:
   folio-assistant/computations/habiro-coefficients-atomic.witness.json
-  (provides full polynomial tr_M(T_w, q) for proton, neutron, deuteron;
-   T, ³He, ⁴He+ pending — symbolic Hoefsmit at H_9+ requires the
-   numerical-interpolation path of habiro_coefficients_interpolate.py)
+  (provides full polynomial tr_M(T_w, q) for proton, neutron, and
+   deuteron; T, ³He, ⁴He+ pending — symbolic Hoefsmit at H_9+ requires
+   the numerical-interpolation path of habiro_coefficients_interpolate.py)
 
 This script:
   1. Loads atom-specific tr_M(T_w, q) as a rational function in q
@@ -100,7 +100,9 @@ def mittag_leffler_term6(tr_M_poly_expr, q0_value: float, n_max: int = 6):
         for j_idx, zeta in enumerate(primitive_roots_of_unity(n)):
             try:
                 residue = cyclotomic_residue(tr_M_poly_expr, zeta, n)
-                if residue is None or residue == 0:
+                if residue is None or (
+                    hasattr(residue, "equals") and residue.equals(0)
+                ) or residue == 0:
                     roots_data.append({
                         "j_index": j_idx, "zeta": str(zeta),
                         "residue": "0 or None", "contribution": 0.0,
