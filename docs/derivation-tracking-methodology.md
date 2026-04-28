@@ -90,7 +90,7 @@ Only then does the comparison against AME tell us anything about the formula. Th
 
 ---
 
-## 4. Walkthrough: deuteron
+## 4. Walkthrough: deuteron — partial data
 
 To make the methodology concrete. **Status of each row** for this branch's analysis:
 
@@ -99,16 +99,28 @@ To make the methodology concrete. **Status of each row** for this branch's analy
 | 1 → 2 | confinement-SDP problem stated | ✓ in paper (`prop:confinement-sdp`) |
 | 2 → 3 | canonical $T_w(D)$ at $\alpha^* = 1$ | ✗ R5-full SDP not implemented (parallel-branch flag) |
 | 2 → 3 | candidate $T_w(D) = 6_2$ historical | ✓ but $\alpha^* = 0.546$, not PSD |
-| 3 | GB-NF + jet order on candidate | partial — parallel branch has Rust `gb_nf_reducer` |
-| 3 → 4 | Wedderburn blocks $\rho_\lambda(6_2)$ | derivable; Hoefsmit seminormal × word |
+| 3 | GB-NF + jet order on candidate | ✓ in `atom_nf_symbolic_D.py` (D@A=2 reduces 23-factor → 32-term NF in 2.27 s) |
+| 3 → 4 | Wedderburn blocks $\rho_\lambda(T_w)$ | derivable; Hoefsmit seminormal × word |
 | 4 → 5 | $y_\lambda$ at $n_0 = 3A = 6$ | ✓ from `y-lambda-wenzl-bridge-symbolic-witness.json` |
-| 4 → 5 | $\chi_\lambda(6_2)$ symbolic in $Q(q)$ | derivable (this branch's `r_k_h6_symbolic.py` covers $H_6$ characters) |
-| 5 | $\mathrm{tr}_M(6_2) \in Q(q)$ | derivable from above |
+| 4 → 5 | $\chi_\lambda(T_w)$ symbolic in $Q(q)$ | derivable (this branch's `r_k_h6_symbolic.py` covers $H_6$ characters) |
+| 5 | $\mathrm{tr}_M(T_w) \in Q(q)$ — **symbolic** | **in flight** (Markov trace takes >5 min over all 11 partitions of 6; running in background) |
+| 5 | $\mathrm{tr}_M(T_w(D))|_{q_0}$ — **numeric** | $+0.388$ from `atomic-tr-m-mpfr-50dps.witness.json` (Wenzl-Schur, Hoefsmit + Wenzl bridge) |
 | 5 → 6 | $\rho(D)$ | paper: 1 (ℓ ≤ 1 rule); SDP: 1; agree |
-| 6 → 7 | mpmath at $q_0$, 50 dps | this branch's $r_k_h{5,6,7}$ infrastructure handles this |
+| 6 → 7 | mpmath at $q_0$, 50 dps | ✓ for numeric path |
 | 7 | $m_e \cdot M$ MeV | ✓ |
 
-**What's missing for a faithful test of `prop:atom-knot-mass-derivation` on D**: row "2 → 3" — the canonical $T_w(D)$ from R5-full SDP. Without that, the test uses a non-canonical $T_w$ and the −93.4 % residual is at most a falsification of "$T_w(D) = 6_2$ is canonical", not a falsification of the formula itself.
+**Two independent calculations of $\mathrm{tr}_M(T_w(D))|_{q_0}$ disagree:**
+
+| Source | Convention | tr_M(D) at q_0 | Implied B = m_e · ρ · tr_M | AME residual |
+|--------|------------|---------------:|---------------------------:|-------------:|
+| `atomic-tr-m-mpfr-50dps.witness.json` (Hoefsmit + Wenzl bridge) | Wenzl–Schur | +0.388 | 0.198 MeV | −91.1 % |
+| Parallel branch `a12818da2` (SDP-canonical block-matrix dump) | Wenzl–Schur | +0.288 | 0.147 MeV | −93.4 % |
+
+Both Wenzl–Schur. Both should give the same number if both are evaluating the same $T_w$. They don't. **Either two different $T_w$ are in play, or one of the calculations is wrong.** This is exactly the kind of discrepancy the data manifest is meant to surface.
+
+**Pending output (running in background):** `atom_nf_symbolic_D.py` is computing $\mathrm{tr}_M(T_w(D))$ **symbolically in $Q(q)$** from the GB-NF expansion (32 NF terms, 11 partitions of 6). This is the **canonical** value per the chain — once it lands we can tell which numeric calculation (if either) is faithful.
+
+The earlier `atom-nf-symbolic-D.witness.json` reports `markov_trace: 0` — but that's a `SKIP_TRACE=1` placeholder, not a computed result; the witness was emitted in NF-only mode to bypass the >5-minute symbolic-trace cost.
 
 ---
 
