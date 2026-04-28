@@ -948,12 +948,17 @@ These conventions are **incompatible for naive summation**. Two paths:
 
 1. **4-tier structural rule** (deployed) — sub-percent on T (0.5%),
    ³He (0.9%); 2–20% on others. Documented as derivable above.
-2. **Calibration-consistent rewrite** (deferred) — refit
-   `entanglement-orders.witness.json` to β-calibration, refactor BW
-   coefficients to expose T4 explicitly. ~1–2 days work; would let
-   naive summation work end-to-end.
+2. **Calibration-consistent rewrite** — refit `entanglement-orders`
+   to β-calibration, refactor BW coefficients to expose T4 explicitly.
+   Per `np-discrepancy-resolution.md` line 113 ("**No single formula
+   works for all A — the four tiers have** different structural
+   applicability"), this is **open research, not refactoring**. The
+   tiered formula's branch-by-A structure reflects genuine physical
+   regime changes (BW domain validity, magic shell existence,
+   chirality factor saturation), not arbitrary tier-picking.
 
-The current canonical predictor uses option (1). Option (2) is open work.
+The current canonical predictor uses option (1). Option (2)
+remains open per the paper itself.
 
 ## Critical audit (Frobenius wiring + categorical-chain status)
 
