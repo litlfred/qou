@@ -12,8 +12,11 @@ import time
 from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q as Q0_FLOAT  # noqa: E402
 
 import sympy as sp
+
 from sympy import simplify, together
 
 q = sp.symbols('q', positive=True)
@@ -113,7 +116,7 @@ def char_value_symbolic(shape, word):
     M = Ms[0]
     for X in Ms[1:]:
         M = M * X
-    return simplify(M.trace())
+    return sp.cancel(M.trace())
 
 
 def main():
@@ -158,7 +161,7 @@ def main():
     print(f"Character table assembled ({time.time()-t_chi:.1f}s).\n", flush=True)
 
     # Numerical sanity check at q_0
-    q0_rational = sp.Rational(11099785955541805, 10000000000000000)
+    q0_rational = sp.Rational(str(Q0_FLOAT))  # centralized via q_parameter
     print("Numerical sanity (entries at q_0):")
     for label, word in classes:
         row = []
@@ -256,7 +259,7 @@ def main():
         tr_M = sum(c_simplified[j] * z_sym**len(word)
                    for j, (_, word) in enumerate(classes))
         try:
-            tr_M_simp = together(simplify(tr_M))
+            tr_M_simp = sp.cancel(tr_M)
         except Exception:
             tr_M_simp = tr_M
         try:

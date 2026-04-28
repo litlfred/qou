@@ -44,7 +44,7 @@ def main() -> int:
     W = json.loads(src.read_text())
 
     q = sp.symbols("q", positive=True)
-    q0 = sp.Rational(11099785955541805, 10000000000000000)
+    q0 = sp.Rational(str(Q0_FLOAT))  # centralized via q_parameter
 
     print("=" * 90)
     print(f"α_λ(H_n) via Wenzl bridge (natural normalization: α_λ = y_λ)")
