@@ -122,6 +122,60 @@ Both Wenzl–Schur. Both should give the same number if both are evaluating the 
 
 The earlier `atom-nf-symbolic-D.witness.json` reports `markov_trace: 0` — but that's a `SKIP_TRACE=1` placeholder, not a computed result; the witness was emitted in NF-only mode to bypass the >5-minute symbolic-trace cost.
 
+### Result — symbolic computation completed (228 s)
+
+$$
+\mathrm{tr}_M(T_w(D)) \;=\; \frac{N(q)}{32 \cdot q^{1332} \cdot (q+1)^5}
+$$
+
+where $N(q)$ is a 73-term polynomial in $q$ and $q^{1/2}$ with degrees ranging from $q^{1312}$ to $q^{2713/2}$ (= $q^{1356.5}$). The full symbolic expression is in `/tmp/atom_nf_D.log` and will land in the regenerated `atom-nf-symbolic-D.witness.json`.
+
+**Numerical evaluation at $q_0 \approx 1.10998$ (50 dps mpmath):**
+
+$$
+\mathrm{tr}_M(T_w(D))\big|_{q_0} \;=\; +0.38828647154771299936605791605\ldots
+$$
+
+**Comparison against the two prior calculations:**
+
+| Source | tr_M(D) at $q_0$ | Match to canonical symbolic? |
+|--------|------------------:|:----------------------------:|
+| **Canonical symbolic chain** (this calculation) | **+0.388286471547713...** | — |
+| `atomic-tr-m-mpfr-50dps.witness.json` (Hoefsmit + Wenzl bridge) | +0.388286471547713... | ✅ **30-digit match** |
+| Parallel branch `a12818da2` (SDP block-matrix dump) | +0.288 | ❌ disagrees |
+
+**Conclusion:** the canonical Hoefsmit + Wenzl-bridge calculation in `atomic-tr-m-mpfr-50dps.witness.json` **faithfully implements** the symbolic chain. The parallel branch's `+0.288` value (which produced their `−93.4 %` residual) **does not match the canonical chain** — it represents an error in the SDP block-matrix dump path or a different normalization convention masquerading as Wenzl–Schur.
+
+### Implication for the "refutation"
+
+Under the **correct** tr_M(D) value, the single-term formula gives:
+
+| Step | Value |
+|------|-------|
+| ρ(D) (paper text + SDP agree) | 1 |
+| tr_M(T_w(D)) at q_0 | +0.388286 |
+| m_e (CODATA) | 0.510998946 MeV |
+| **B(D) = m_e · ρ · tr_M** | **0.198414 MeV** |
+| AME B(D) | 2.224566 MeV |
+| **Residual** | **−91.08 %** |
+
+vs. the parallel branch's claim of **−93.4 %** under their wrong tr_M value.
+
+**Both narratives lead to "the single-term formula fails on D",** but:
+- The parallel branch's specific number and intermediate value are wrong;
+- The correct number (−91.08 %) is still bad;
+- AND this is conditional on `T_w(D) = 6_2` (the historical census ID) being canonical.
+
+**Independent finding from the same calculation: $T_w(D) \neq 6_2$ at the Hecke level.**
+
+$$
+J(6_2)\big|_{q_0} = +1.026920 \quad\text{vs.}\quad \mathrm{tr}_M(T_w(D))\big|_{q_0} = +0.388286
+$$
+
+The Jones polynomial of knot $6_2$ does not match the Markov trace of D's atom braid (after GB-NF). So the historical knot ID assigned to D is **wrong at the Hecke level** — the GB-NF reducer produces a different Hecke element than the closure of $6_2$.
+
+**Net for the refutation question:** the formula's −91 % failure on D is not "the formula is broken at the type level". It's "either ρ ≠ 1, or the right T_w(D) ≠ 6_2, or the multi-term tail is needed". Each of these is a separate, narrower question with its own audit trail.
+
 ---
 
 ## 5. Action items
