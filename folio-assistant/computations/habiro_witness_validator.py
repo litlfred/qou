@@ -38,6 +38,9 @@ from pathlib import Path
 import sympy as sp
 from sympy import Integer, Symbol
 
+sys.path.insert(0, str(Path(__file__).parent))
+from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord
+
 
 HERE = Path(__file__).parent
 INPUT_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
@@ -58,11 +61,10 @@ def parse_poly(s: str, u: Symbol) -> sp.Poly:
     return sp.Poly(sp.expand(expr), u, domain="ZZ")
 
 
-def validate_atom(atom_label: str, atom_data: dict, u: Symbol) -> dict:
+def validate_atom(record: HabiroCompletionRecord, u: Symbol) -> dict:
     """Reconstruct residuals and certify divisibility for one atom."""
-    p_u = parse_poly(atom_data["p_in_u"], u)
-    coeff_list = atom_data["habiro_coefficients"]
-    coeffs = [parse_poly(c["a_m"], u) for c in coeff_list]
+    p_u = parse_poly(record.p_in_u, u)
+    coeffs = [parse_poly(c.a_m, u) for c in record.habiro_coefficients]
 
     checks: list[dict] = []
     overall_pass = True
@@ -119,8 +121,8 @@ def validate_atom(atom_label: str, atom_data: dict, u: Symbol) -> dict:
         overall_pass = False
 
     return {
-        "atom": atom_label,
-        "deg_p_u": atom_data.get("deg_p_u"),
+        "atom": record.atom_label,
+        "deg_p_u": record.deg_p_u,
         "n_coefficients": len(coeffs),
         "all_pass": overall_pass,
         "exact_reconstruction": bool(exact_reconstruction),
@@ -133,15 +135,14 @@ def main() -> int:
         print(f"ERROR: input witness not found at {INPUT_WITNESS}", file=sys.stderr)
         return 1
 
-    with INPUT_WITNESS.open() as f:
-        input_data = json.load(f)
+    witness = HabiroAtomicWitness.from_json(INPUT_WITNESS)
 
     u = sp.symbols("u")
     per_atom_results: list[dict] = []
     overall_pass = True
 
-    for atom_label, atom_data in input_data["results"].items():
-        atom_result = validate_atom(atom_label, atom_data, u)
+    for record in witness.records:
+        atom_result = validate_atom(record, u)
         per_atom_results.append(atom_result)
         overall_pass = overall_pass and atom_result["all_pass"]
 
