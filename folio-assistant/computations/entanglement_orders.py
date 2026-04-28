@@ -30,7 +30,7 @@ import mpmath as mp
 mp.mp.dps = 50
 
 from hecke_core import atom_per_generator_volumes, z as Z_MARKOV
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip

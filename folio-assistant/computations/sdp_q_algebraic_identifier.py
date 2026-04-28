@@ -53,7 +53,7 @@ import numpy as np
 import cvxpy as cp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT  # canonical substrate parameter
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # canonical substrate parameter
 try:
     from experimental_constants import (
         ALPHA_EM_INV, M_E_MEV, M_N_MINUS_P_MEV,

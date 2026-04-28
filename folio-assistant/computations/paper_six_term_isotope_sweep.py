@@ -56,7 +56,7 @@ import numpy as np
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_core import (
     atom_per_generator_volumes, h as h_val, z as z_mark,
 )

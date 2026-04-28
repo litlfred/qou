@@ -52,7 +52,7 @@ sys.path.insert(0, str(REPO / "tools/pyhecke/python"))
 sys.path.insert(0, str(Path(__file__).parent))
 
 import pyhecke
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 
 mp.mp.dps = 30

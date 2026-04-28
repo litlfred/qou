@@ -33,7 +33,7 @@ import mpmath as mp
 import numpy as np
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import (
     build_seminormal_matrices, nuclear_braid_character,
     partitions_of, dim_q, qfac, q_int

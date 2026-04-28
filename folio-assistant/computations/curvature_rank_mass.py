@@ -38,7 +38,7 @@ import mpmath as mp
 mp.mp.dps = 30
 
 from hecke_core import (h as H_A_F, z as Z_MARKOV, _step_chain_generic)
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip

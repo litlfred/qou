@@ -36,7 +36,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent / "tools/pyhecke/pyth
 import mpmath as mp
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 import pyhecke
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip

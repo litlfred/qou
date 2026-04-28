@@ -32,7 +32,7 @@ warnings.filterwarnings("ignore")
 mp.mp.dps = 30
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import (
     build_seminormal_matrices, nuclear_braid_character,
     partitions_of as partitions_of_n,

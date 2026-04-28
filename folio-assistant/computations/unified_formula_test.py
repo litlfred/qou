@@ -27,7 +27,7 @@ import mpmath as mp
 mp.mp.dps = 50
 import sympy as sp
 
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 from hecke_characters import partitions_of, young_hooks
 from hecke_core import (atom_per_generator_volumes, _ensure_ysn_attached,

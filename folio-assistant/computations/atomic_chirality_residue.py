@@ -35,7 +35,7 @@ import numpy as np
 import mpmath as mp
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 from hecke_characters import (
     partitions_of, dim_q,

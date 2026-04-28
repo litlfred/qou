@@ -39,7 +39,7 @@ mp.mp.dps = 50
 
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                           h as H_A_F, vertex_volume)
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 h = Q0 - QI

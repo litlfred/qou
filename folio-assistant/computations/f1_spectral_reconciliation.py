@@ -39,7 +39,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 import sympy as sp
 mp.mp.dps = 60
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 m_e = mp.mpf("0.51099895")
 Q_b_codata = mp.mpf("0.78233341")

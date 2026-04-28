@@ -57,7 +57,7 @@ from hecke_core import (
 )
 from hecke_characters import (build_seminormal_matrices, dim_q, qfac,
                                 partitions_of, young_hooks)
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 

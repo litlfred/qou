@@ -45,7 +45,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP, Q_MP, Q_INV_MP
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from hyperbolic_knot_db_extended import get_extended_knots
 EXTENDED_KNOTS = get_extended_knots()
