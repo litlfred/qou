@@ -59,15 +59,18 @@ inductive Place : Type
     * `realize : (v : Place) → Mhat →+* Target v` — the
       realization functor at each place.
 
-    Substrate axiom (`archimedean_nontrivial`): the archimedean
-    realization target `Target Place.infty` is nontrivial — the
-    minimal non-vacuous fragment of the Tate factorisation
-    `ρ_tot([X]) = (ρ_v([X]))_v` of `def:adelic-substrate`.  Concrete
-    instances may strengthen this to the full place-compatibility
-    statement once the adelic-Tate substrate is formalised; that
-    refinement is supplied as a `sorry`-axiom in instances rather
-    than as a structure field, so the class itself stays free of
-    vacuous logical placeholders.
+    Substrate axioms (paired place compatibility): the realization
+    target is nontrivial at the archimedean place AND at some
+    finite place — the minimal non-vacuous fragment of the Tate
+    factorisation `ρ_tot([X]) = (ρ_v([X]))_v` of
+    `def:adelic-substrate`.  This guarantees the substrate is
+    genuinely adelic (supported neither entirely at `∞` nor entirely
+    at one finite place) without committing to a specific integral
+    subring data.  The full place-compatibility statement (almost-
+    integral finite-place components for every motivic class)
+    requires auxiliary `Integral : ∀ v, Subring (Target v)` data
+    and is supplied as a `sorry`-axiom in concrete instances of
+    an extension class.
 
     Ref: [kontsevich1995], [denef-loeser2001], [tate1967]. -/
 class MotivicSubstrate
@@ -91,9 +94,7 @@ class MotivicSubstrate
       `ρ_tot([X]) = (ρ_v([X]))_v` of `def:adelic-substrate`: the
       restricted product over places assembles a non-trivial
       classical-limit object only when the archimedean place
-      contributes non-degenerately.  The full place-compatibility
-      across all finite places is conjectural and supplied as a
-      `sorry`-axiom in concrete instances.
+      contributes non-degenerately.
 
       A trivial archimedean target would degenerate every motivic
       class to zero, contradicting `lefschetz_invertible` — so this
@@ -102,5 +103,26 @@ class MotivicSubstrate
 
       Ref: [tate1967]. -/
   archimedean_nontrivial : Nontrivial (Target Place.infty)
+  /-- **Substrate axiom (non-archimedean non-degeneracy).**
+
+      At least one finite place `p` has a non-trivial realization
+      target.  Together with `archimedean_nontrivial`, this is the
+      minimal restricted-product condition of `def:adelic-substrate`:
+      the substrate is genuinely adelic, supported neither entirely
+      at `∞` nor entirely on the archimedean continuum, but spread
+      across the archimedean place AND at least one non-archimedean
+      place.
+
+      The full place-compatibility statement — that for every
+      motivic class `x ∈ Mhat` the family `(realize v x)_v` is a
+      finite-support adelic class with almost all finite-place
+      components in a designated integral subring — requires the
+      auxiliary integral-subring data `Integral : ∀ v, Subring
+      (Target v)` and is supplied as a `sorry`-axiom in concrete
+      instances of an extension class (CLAUDE.md §3b).
+
+      Ref: [tate1967]. -/
+  nonarchimedean_nontrivial :
+    ∃ p : ℕ, Nontrivial (Target (Place.finite p))
 
 end QOU.AlgebraicSubstrate
