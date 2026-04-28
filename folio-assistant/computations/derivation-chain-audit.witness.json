@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T11:17:32.218662+00:00",
-  "commitSha": "3c166f6e1778fd11d1939ff70e285a3e1183c663",
+  "computedAt": "2026-04-28T23:49:51.007554+00:00",
+  "commitSha": "fcdd67227f9714497b7c752215a7b7ab6bc3db3c",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -37,25 +37,6 @@
       "passed": true
     },
     {
-      "name": "chain_valid[hoefsmit-rep-21-sigma2.derivation]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "chain_valid[markov-trace-assembly-proton.derivation]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "leaf_value[markov-trace-assembly-proton.derivation]",
-      "computed": 2.12258250945273,
-      "expected": 2.12258250945273,
-      "passed": true,
-      "tolerance": 2.1225825094527304e-09
-    },
-    {
       "name": "chain_valid[n-tr-M-q0.derivation]",
       "computed": true,
       "expected": true,
@@ -82,22 +63,23 @@
       "tolerance": 2.1225825094527304e-09
     },
     {
-      "name": "chain_valid[schur-weyl-weight-111.derivation]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "chain_valid[schur-weyl-weight-21.derivation]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
       "name": "chain_valid[schur-weyl-weight-3.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "chain_valid[sigma-shell-A2-closed-form.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[sigma-shell-A2-closed-form.derivation]",
+      "computed": 0.03748824144743201,
+      "expected": 0.03748824144743201,
+      "passed": true,
+      "tolerance": 3.7488241447432005e-14
     }
   ],
   "allPassed": true,
@@ -156,37 +138,6 @@
         "has_script_frontier": false
       },
       {
-        "chain": "hoefsmit-rep-21-sigma2.derivation.json",
-        "target": "ρ^{(2,1)}(σ_2)",
-        "target_value": "ρ^{(2,1)}(σ_2) ∈ M_2(K(q)) — Hoefsmit matrix in the SYT basis {T_1=[1 2 / 3], T_2=[1 3 / 2]}; trace χ^(2,1)_q(σ_2) = q − q^{-1}",
-        "computed_value": null,
-        "structural_ok": true,
-        "leaf_matches": true,
-        "issues": [],
-        "trust_summary": {
-          "mathlib-cited": 1,
-          "derived": 3,
-          "axiom": 1
-        },
-        "has_script_frontier": false
-      },
-      {
-        "chain": "markov-trace-assembly-proton.derivation.json",
-        "target": "tr_M(p, q_0)",
-        "target_value": 2.12258250945273,
-        "computed_value": 2.12258250945273,
-        "structural_ok": true,
-        "leaf_matches": true,
-        "issues": [],
-        "trust_summary": {
-          "axiom": 1,
-          "derived": 5,
-          "script-cited": 1,
-          "computational": 1
-        },
-        "has_script_frontier": true
-      },
-      {
         "chain": "n-tr-M-q0.derivation.json",
         "target": "tr_M(n, q_0)",
         "target_value": 1.5893934459539052,
@@ -213,41 +164,10 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 4,
-          "derived": 1,
+          "script-cited": 5,
           "computational": 1
         },
         "has_script_frontier": true
-      },
-      {
-        "chain": "schur-weyl-weight-111.derivation.json",
-        "target": "w_(1,1,1)(q)",
-        "target_value": "1 / ([3]_q · [2]_q · [1]_q)",
-        "computed_value": null,
-        "structural_ok": true,
-        "leaf_matches": true,
-        "issues": [],
-        "trust_summary": {
-          "axiom": 1,
-          "mathlib-cited": 2,
-          "derived": 1
-        },
-        "has_script_frontier": false
-      },
-      {
-        "chain": "schur-weyl-weight-21.derivation.json",
-        "target": "w_(2,1)(q)",
-        "target_value": "(q − q^{-1}) / ([3]_q · [1]_q · [1]_q)",
-        "computed_value": null,
-        "structural_ok": true,
-        "leaf_matches": true,
-        "issues": [],
-        "trust_summary": {
-          "axiom": 1,
-          "mathlib-cited": 2,
-          "derived": 1
-        },
-        "has_script_frontier": false
       },
       {
         "chain": "schur-weyl-weight-3.derivation.json",
@@ -261,6 +181,22 @@
           "axiom": 1,
           "derived": 2,
           "mathlib-cited": 2
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "sigma-shell-A2-closed-form.derivation.json",
+        "target": "C_{(3,2,1)}(q_0)",
+        "target_value": 0.03748824144743201,
+        "computed_value": 0.03748824144743201,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 4,
+          "mathlib-cited": 1,
+          "computational": 1
         },
         "has_script_frontier": false
       }
@@ -495,6 +431,7 @@
         "mass-endomorphism-atom-tower.witness.json",
         "mass-endomorphism-magic-interpolation.witness.json",
         "mass-endomorphism.witness.json",
+        "mass-formula-6term-mpfr-50dps.witness.json",
         "mass-formula-6term.witness.json",
         "mass-formula-integrated.witness.json",
         "mass-from-q-symbolic.witness.json",
