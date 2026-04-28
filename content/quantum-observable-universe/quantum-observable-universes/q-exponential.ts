@@ -7,5 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.QExponential",
     validation: "not_checked",
   },
-  uses: ["def:categorical-laplace"],
+  uses: ["def:categorical-laplace", "def:habiro-ring"],
 });

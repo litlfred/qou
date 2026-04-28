@@ -85,6 +85,18 @@ a well-defined primitive, even when the series representation fails
   of $\mathbb{C}_p^\times$ via $\log_q(p) = 0$ if one wants a global
   branch.
 
+**Native algebraic home: the Habiro ring.**  The series
+representation $\log_q(1 + x) = \sum_{n \geq 1} (-1)^{n-1} x^n/[n]_q$
+has cyclotomic denominators $[n]_q$, so its partial sums are
+coherent modulo the Habiro ideal $((q;q)_m)$. Equivalently, the
+adjoint pair $(\log_q, \exp_q)$ acts on the formal-power-series
+ring $\widehat{\mathbb{Z}[q]}[\![x]\!]$ over the Habiro ring
+([Habiro ring](#def:habiro-ring)). Cyclotomic-projection
+$\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$ at the
+$N$-th finite place sends $\log_q$ to its level-$N$ truncation,
+giving evaluation at any root of unity without invoking
+$\mathbb{C}$ or analytic continuation.
+
 **Archimedean realisation.**  Over $\mathbb{C}$ the adjoint pair
 $(\log_q, \exp_q)$ is represented by the convergent series
 
