@@ -2814,6 +2814,93 @@ export const references: CSLData[] = [
       "subsets of L(X).",
   }),
 
+  // ── Mac Lane 1971 ─────────────────────────────────────────────
+  ref({
+    id: "maclane1971",
+    type: "book",
+    title: "Categories for the Working Mathematician",
+    author: [
+      { family: "Mac Lane", given: "Saunders" },
+    ],
+    publisher: "Springer",
+    issued: { "date-parts": [[1971]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": 5,
+    DOI: "10.1007/978-1-4757-4721-8",
+    URL: "https://doi.org/10.1007/978-1-4757-4721-8",
+  }),
+
+  // ── Bokut & Chen 2005 ─────────────────────────────────────────
+  ref({
+    id: "bokut2005",
+    type: "article-journal",
+    title: "Gröbner-Shirshov bases: Some new results",
+    author: [
+      { family: "Bokut", given: "L. A." },
+      { family: "Chen", given: "Yuqun" },
+    ],
+    "container-title":
+      "Advances in Algebra and Combinatorics: Proceedings of the Second International Congress in Algebra and Combinatorics",
+    publisher: "World Scientific",
+    issued: { "date-parts": [[2005]] },
+    page: "35-56",
+    DOI: "10.1142/9789812790019_0003",
+    URL: "https://doi.org/10.1142/9789812790019_0003",
+  }),
+
+  // ── Verlinde 2011 ─────────────────────────────────────────────
+  ref({
+    id: "verlinde2011",
+    type: "article-journal",
+    title: "On the origin of gravity and the laws of Newton",
+    author: [
+      { family: "Verlinde", given: "Erik P." },
+    ],
+    "container-title": "Journal of High Energy Physics",
+    issued: { "date-parts": [[2011]] },
+    volume: "2011",
+    issue: "4",
+    page: "29",
+    DOI: "10.1007/JHEP04(2011)029",
+    URL: "https://doi.org/10.1007/JHEP04(2011)029",
+  }),
+
+  // ── Rolfsen 1976 ──────────────────────────────────────────────
+  ref({
+    id: "rolfsen",
+    type: "book",
+    title: "Knots and Links",
+    author: [
+      { family: "Rolfsen", given: "Dale" },
+    ],
+    publisher: "Publish or Perish",
+    "publisher-place": "Berkeley, CA",
+    issued: { "date-parts": [[1976]] },
+    "collection-title": "Mathematics Lecture Series",
+    "collection-number": 7,
+    URL: "https://bookstore.ams.org/chel-346-h",
+    note:
+      "Reprinted by AMS Chelsea Publishing, 2003 (ISBN 978-0-8218-3436-7).",
+  }),
+
+  // ── Murakami & Murakami 2001 ──────────────────────────────────
+  ref({
+    id: "murakami2001",
+    type: "article-journal",
+    title: "The colored Jones polynomials and the simplicial volume of a knot",
+    author: [
+      { family: "Murakami", given: "Hitoshi" },
+      { family: "Murakami", given: "Jun" },
+    ],
+    "container-title": "Acta Mathematica",
+    issued: { "date-parts": [[2001]] },
+    volume: "186",
+    issue: "1",
+    page: "85-104",
+    DOI: "10.1007/BF02392716",
+    URL: "https://doi.org/10.1007/BF02392716",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

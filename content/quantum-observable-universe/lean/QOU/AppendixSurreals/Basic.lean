@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.SetTheory.Ordinal.Arithmetic
-import Mathlib.SetTheory.Ordinal.NaturalOps
+import Mathlib.SetTheory.Ordinal.Family
+import Mathlib.Tactic.Abel
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 import Mathlib.Order.ConditionallyCompleteLattice.Basic
