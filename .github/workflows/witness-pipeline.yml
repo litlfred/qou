@@ -80,20 +80,24 @@ jobs:
 
       - name: Detect drift in committed witnesses
         run: |
-          # The validators write witness files; we expect bit-stable
-          # outputs except for the `computedAt` timestamp.  If `git
-          # diff` shows changes outside that field, something is
-          # actually drifting.
+          # The validators rewrite their output witnesses on every run.
+          # Some fields are expected to differ between local commits
+          # and CI re-runs (timestamps, commit SHAs, engine versions,
+          # script hashes when the script itself was just touched).
+          # Anything else differing means a genuine numerical or
+          # structural change.
+          set -eu
           if git diff --quiet folio-assistant/computations/*.witness.json; then
             echo "Witnesses bit-stable."
             exit 0
           fi
-          echo "Witnesses changed — checking whether the diff is just timestamp drift..."
+          echo "Witnesses changed — filtering expected drift fields..."
           drift=$(git diff folio-assistant/computations/*.witness.json | \
                   grep -E "^[+-]" | \
-                  grep -vE "^\+\+\+|^---|computedAt|durationMs|commitSha|scriptCommitSha")
+                  grep -vE "^\+\+\+|^---" | \
+                  grep -vE '"(computedAt|durationMs|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version)":' || true)
           if [ -z "$drift" ]; then
-            echo "Only timestamp/commit drift — OK."
+            echo "Only environment / timestamp drift — OK."
             exit 0
           fi
           echo "Substantive witness drift detected:"
