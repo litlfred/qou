@@ -56,10 +56,18 @@ def term_1_descended(Z, N, include_inter):
 
 def term_23_brane_tower(Z, N, include_inter):
     """Terms 2 + 3: Σ Φ_q(|V̂|) + z²·Σ Φ_q(|V̂V̂|) from
-    atom_per_generator_volumes."""
+    atom_per_generator_volumes.
+
+    Per thm:knot-mass-formula-unified, the brane-tower terms use the
+    `full` (additive-Wedderburn) channel of each per-generator volume.
+    `atom_per_generator_volumes` returns dicts {std, sym, alt, full};
+    extract `full` and feed into Φ_q. Earlier code passed the raw dict
+    to Phi_q which silently raised TypeError → both terms returned 0.
+    """
     from hecke_core import atom_per_generator_volumes, h as h_val, z as z_mark
     from mass_endomorphism import Phi_q
-    vols = atom_per_generator_volumes(Z, N, include_inter=include_inter)
+    vols_raw = atom_per_generator_volumes(Z, N, include_inter=include_inter)
+    vols = [v['full'] if isinstance(v, dict) else v for v in vols_raw]
     single = mp.mpf(0)
     pair = mp.mpf(0)
     for v in vols:

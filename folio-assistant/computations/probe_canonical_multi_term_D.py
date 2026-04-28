@@ -86,28 +86,43 @@ def main() -> int:
     print(f"  T4 per-vortex (Frobenius, n=3) = m_e · (2 + 1/[2]_q) = "
           f"{mp.nstr(T4_pervortex_MeV, 12)} MeV")
 
-    # T2, T3, T5, T6: canonical chain wires these via brane-tower / chirality /
-    # Habiro residue. Pull from `mass-formula-6term.witness.json` if it
-    # records them; otherwise placeholder.
+    # T2, T3, T5, T6: pull from the regenerated `mass-formula-6term.witness.json`.
+    # The brane-tower terms use the canonical `Φ_q(|V_i^full|)` formula with
+    # the `full` channel extracted from `atom_per_generator_volumes` (the
+    # earlier silent-bug version returned dicts and silently caught the
+    # TypeError, leaving T2=T3=0). Witness `rows` has top-level dict keyed
+    # on iso label.
     witness_path = HERE / "mass-formula-6term.witness.json"
-    T2_MeV = T3_MeV = T5_MeV = T6_MeV = mp.mpf(0)
+    T2_raw = T3_raw = T5_raw = T6_raw = mp.mpf(0)
     if witness_path.exists():
         try:
             w = json.loads(witness_path.read_text())
-            for r in w.get("results", []):
-                if r.get("isotope", "").upper() in {"D", "DEUTERON", "²H", "2H"}:
-                    T2_MeV = mp.mpf(str(r.get("term2_brane_single_atom", 0))) * m_e
-                    T3_MeV = mp.mpf(str(r.get("term3_brane_pair_atom", 0))) * m_e
-                    T5_MeV = mp.mpf(str(r.get("term5_bw_chirality_binding", 0)))
-                    T6_MeV = mp.mpf(str(r.get("term6_habiro_residue", 0)))
-                    break
+            d_row = w.get("rows", {}).get("D", {})
+            t23 = d_row.get("term23_tower_atom", {})
+            T2_raw = mp.mpf(str(t23.get("single", 0)))   # dimensionless Φ_q sum
+            T3_raw = mp.mpf(str(t23.get("pair", 0)))      # dimensionless (z² folded in)
+            T5_raw = mp.mpf(str(d_row.get("term5_bw_chirality_binding", 0)))  # already MeV
+            T6_raw = mp.mpf(0)  # placeholder
         except Exception as e:
             print(f"  [warn] could not load mass-formula-6term witness: {e}")
-    print(f"  T2 (brane single, m_e·Σ Φ_q) = {mp.nstr(T2_MeV, 12)} MeV   "
-          f"(from witness if available, else 0)")
-    print(f"  T3 (brane pair, m_e·z²·Σ Φ_q²) = {mp.nstr(T3_MeV, 12)} MeV")
-    print(f"  T5 (BW chirality)           = {mp.nstr(T5_MeV, 12)} MeV")
-    print(f"  T6 (Habiro residue)         = {mp.nstr(T6_MeV, 12)} MeV")
+
+    # Convert dimensionless brane-tower to MeV via m_e prefactor (Option A
+    # from docs/paper-formula-reconciliation-diagnostic.md).
+    T2_MeV = m_e * T2_raw
+    T3_MeV = m_e * T3_raw
+    T5_MeV = T5_raw       # already MeV in witness
+    T6_MeV = T6_raw       # placeholder
+
+    print(f"  T2 (brane single, dimensionless Σ Φ_q) = {float(T2_raw):.4e} → "
+          f"× m_e = {float(T2_MeV):.4e} MeV")
+    print(f"  T3 (brane pair, dimensionless z²·Σ Φ_q²) = {float(T3_raw):.4e} → "
+          f"× m_e = {float(T3_MeV):.4e} MeV")
+    print(f"  T5 (BW chirality, MeV)               = {float(T5_MeV):+.6f} MeV")
+    print(f"  T6 (Habiro residue, placeholder)     = {float(T6_MeV):+.6f} MeV")
+    print()
+    print(f"  ⚠ T2 and T3 are DIVERGENT (Φ_q has a pole at z=1; D's atom "
+          f"volumes are ~0.99, near the pole).")
+    print(f"  ⚠ Naive sum of literal multi-term formula gives nonsense.")
     print()
 
     # --- Variant assembles ---
