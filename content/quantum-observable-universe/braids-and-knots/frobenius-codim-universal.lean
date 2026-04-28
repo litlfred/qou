@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.RepresentationTheory.FDRep
 
 /-!
@@ -82,6 +83,42 @@ theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
   intro λ _
   exact codim_block_contribution λ
 
+/-- **τ-invariance of the Frobenius co-Casimir trace.**
+
+    The Markov-trace identity `τ(C_{dim_q}) = Σ_λ 1/dim_q(λ)` does
+    NOT depend on the specific Frobenius pairing τ used to construct
+    `C_{dim_q}`.  In particular, on `H_n(q)` the two natural choices
+
+      - **Plancherel-A**:  `τ_P(p_λ) = dim_q(λ)·d_λ / [n]_q!`
+      - **Wenzl-Schur**:   `τ_W(p_λ) = y_λ`
+
+    give different `C_{dim_q}` elements but the **same** trace value
+    `Σ_λ 1/dim_q(λ)`, because the per-block contribution
+    `c_λ · τ(p_λ) = [1/(dim_q(λ)·τ(p_λ))] · τ(p_λ) = 1/dim_q(λ)`
+    cancels τ.
+
+    Computational verification:
+    `folio-assistant/computations/probe_term4_conventions.py`.
+
+    Consequence: the Plancherel-vs-Wenzl-Schur convention disagreement
+    affecting `tr_M(T_w)` (Term 1 of the unified mass formula) does
+    NOT propagate into Term 4.  Term 4 is convention-rigid.
+
+    Ref: [manuscript] `thm:frobenius-codim-universal`,
+    `audit:plancherel-vs-wenzl-schur-markov-trace`. -/
+theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
+    (dim_q : Λ → ℝ) (h_dim : ∀ λ, dim_q λ ≠ 0)
+    (τ₁ τ₂ : Λ → ℝ) (hτ₁ : ∀ λ, τ₁ λ ≠ 0) (hτ₂ : ∀ λ, τ₂ λ ≠ 0) :
+    -- Both Frobenius pairings give the same C_{dim_q} trace value.
+    ∑ λ, (1 / (dim_q λ * τ₁ λ)) * τ₁ λ
+      = ∑ λ, (1 / (dim_q λ * τ₂ λ)) * τ₂ λ := by
+  apply Finset.sum_congr rfl
+  intro λ _
+  have h₁ : dim_q λ ≠ 0 := h_dim λ
+  have hτ₁_ne : τ₁ λ ≠ 0 := hτ₁ λ
+  have hτ₂_ne : τ₂ λ ≠ 0 := hτ₂ λ
+  field_simp
+
 /-- Specialisation to H_n(q): `Λ = partitions of n`, `A = H_n(q)`,
     `dim_q` = q-hook-length dimension, `τ` = Markov trace.
     The trace of the Frobenius co-dim element is `Σ_{λ⊢n} 1/dim_q(λ)`.
@@ -90,12 +127,53 @@ theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
     proton tower residual to 0.14% at `q_0 ≈ 1.11`.
 
     Ref: [manuscript] `prop:partition-sum-proton-residual`. -/
-theorem hecke_n3_frobenius_codim :
-    -- Σ_{λ⊢3} 1/dim_q(λ) = 2 + 1/[2]_q
-    ∃ (q two_q : ℝ) (_: 0 < q),
-      two_q = q + 1 / q ∧
-      (2 : ℝ) + 1 / two_q = 1 + 1 / two_q + 1 := by
-  refine ⟨1, 2, by norm_num, by norm_num, ?_⟩
+
+/-- The q-hook-length dimensions of the three partitions of n=3.
+    Indexed by `Fin 3`:
+      0 ↦ λ = (3)     (symmetric)        : dim_q = 1
+      1 ↦ λ = (2,1)   (mixed)            : dim_q = [2]_q = q + q⁻¹
+      2 ↦ λ = (1,1,1) (alternating)      : dim_q = 1
+
+    Computed in `folio-assistant/computations/frobenius_partition_sum.py`
+    via the q-hook-length formula `dim_q(λ) = [n]_q!/H_q(λ)` with
+    H_q((3)) = [3]_q[2]_q[1]_q, H_q((2,1)) = [3]_q·[1]_q²,
+    H_q((1,1,1)) = [3]_q[2]_q[1]_q. -/
+noncomputable def heckeH3DimQ (q : ℝ) (i : Fin 3) : ℝ :=
+  if i.val = 1 then q + q⁻¹ else 1
+
+@[simp] theorem heckeH3DimQ_zero (q : ℝ) : heckeH3DimQ q 0 = 1 := by
+  unfold heckeH3DimQ; simp
+
+@[simp] theorem heckeH3DimQ_one  (q : ℝ) : heckeH3DimQ q 1 = q + q⁻¹ := by
+  unfold heckeH3DimQ; simp
+
+@[simp] theorem heckeH3DimQ_two  (q : ℝ) : heckeH3DimQ q 2 = 1 := by
+  unfold heckeH3DimQ
+  have : ((2 : Fin 3).val) = 2 := rfl
+  simp [this]
+
+/-- **H_3 specialisation: τ(C_dim_q) = Σ_{λ⊢3} 1/dim_q(λ) = 2 + 1/[2]_q.**
+
+    The three partitions of 3 are `(3)`, `(2,1)`, `(1,1,1)`, with
+    q-hook-length dimensions `1`, `[2]_q = q + q⁻¹`, `1`.  Summing
+    `1/dim_q(λ)` over them gives `1/1 + 1/[2]_q + 1/1 = 2 + 1/[2]_q`.
+
+    Numerically at `q_0 ≈ 1.11`: `[2]_q ≈ 2.0107`, so
+    `2 + 1/[2]_q ≈ 2.4973`.  Multiplied by `m_e ≈ 0.511 MeV` this
+    gives the proton tower residual `≈ 1.276 MeV`, matching the
+    observed `1.278 MeV` to `0.14%`.
+
+    This **replaces** the previous tautological statement (which only
+    proved `2 + 1/two_q = 1 + 1/two_q + 1`, a trivial real identity);
+    here we actually evaluate the partition sum at the three `Fin 3`
+    indices and conclude.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual`,
+    `folio-assistant/computations/frobenius_partition_sum.py`. -/
+theorem hecke_n3_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 3, 1 / heckeH3DimQ q i = 2 + 1 / (q + q⁻¹) := by
+  rw [Fin.sum_univ_three]
+  simp
   ring
 
 /-- **Self-dual lower bound on the Frobenius co-Casimir trace.**

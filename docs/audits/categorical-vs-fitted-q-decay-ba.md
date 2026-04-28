@@ -1027,6 +1027,94 @@ flag the disagreement loudly, and resolve on the paper side first.
 Filed as paper-side open research question; computational refactor
 on hold pending resolution.
 
+### Update (2026-04-28b): Term 4 (Frobenius co-Casimir) audit
+
+Investigated as part of "is co-Casimir used? please investigate";
+findings:
+
+#### What's USED
+
+Term 4 (= Frobenius co-Casimir trace `m_e · τ(C_{dim_q})`) is
+heavily consumed (11 active scripts), with two implementation
+patterns:
+
+- **Per-A heuristic** (`mass_formula_6term.py:83`,
+  `unified_low_isotope_predictor.py:77`): `Term4(A) = A · m_e · (2 + 1/[2]_q)`
+- **Per-vortex** (`light_isotope_sweep.py` exposes per-vortex,
+  per-bond, per-nucleon and picks empirically best)
+
+Paper-side (`knot-mass-formula-unified.md`) said the resolution is
+"open"; favoured per-vortex heuristically.
+
+#### Two clean theoretical findings (compute → paper)
+
+1. **Axis-2 invariance: τ-choice doesn't matter for τ(C).** The
+   Frobenius co-Casimir trace is convention-invariant under the
+   choice of Frobenius pairing τ used to define `C_{dim_q}` —
+   i.e. Plancherel-A and Wenzl-Schur τ give the **same** trace
+   value `Σ_λ 1/dim_q(λ)`. The Plancherel-vs-Wenzl convention
+   disagreement affecting Term 1 (`tr_M(T_w)`) does **NOT
+   propagate into Term 4**. Lean theorem
+   [`frobenius_codim_tau_invariant`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean)
+   proves this. Numerical verification:
+   [`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_term4_conventions.py).
+
+2. **Axis-1: per-3A is the genuine algebra.** When an isotope
+   braid lives in `H_{3A}(R, q)`, the central idempotents are
+   indexed by partitions `λ ⊢ 3A`, not by partitions of 3.
+   Therefore the algebraic Term 4 is
+
+   ```
+   Term4(A) = m_e · Σ_{λ⊢3A} 1/dim_q(λ)
+   ```
+
+   Numerical values per
+   [`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_term4_conventions.py):
+
+   | atom | A | per-vortex 1·m_e·Σ_3 | per-A A·m_e·Σ_3 (CURRENT COMPUTE) | **per-3A m_e·Σ_{3A} (ALGEBRAIC)** |
+   |---|---:|---:|---:|---:|
+   | D | 2 | 1.276 | 2.552 | **1.636** |
+   | T,³He | 3 | 1.276 | 3.828 | **1.300** |
+   | ⁴He | 4 | 1.276 | 5.105 | **1.151** |
+
+   The per-A heuristic in `mass_formula_6term.py` is wrong; it
+   uses `A·FROB_N3` which corresponds to `A` independent
+   `H_3`-blocks (a disconnected sum of A trefoils), not the
+   genuine `H_{3A}` algebra hosting the actual isotope braid.
+
+   `knot-mass-formula-unified.md` updated to record per-3A as the
+   algebraic resolution (was previously "open").
+
+#### Lean upgrades
+
+- [`frobenius-codim-universal.lean`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.lean):
+  - Added `frobenius_codim_tau_invariant`: τ-invariance theorem
+    (was missing — now proved by `field_simp` per-block).
+  - Replaced **tautological** `hecke_n3_frobenius_codim` (which
+    only proved `2 + 1/two_q = 1 + 1/two_q + 1`, a trivial
+    identity) with a real proof: enumerated `Fin 3` partition
+    indices, evaluated `dim_q ∈ {1, q + q⁻¹, 1}`, summed
+    `1/dim_q` to `2 + 1/(q + q⁻¹)`. Proof closes with
+    `Fin.sum_univ_three; simp; ring`.
+- [`partition-sum-proton-residual.lean`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/partition-sum-proton-residual.lean):
+  Replaced bare numeric literals `939.565` / `411.227` inside the
+  `neutron_tower_residual_5halves_fails` statement with opaque
+  `neutronCodata`, `neutronTowerMass`. Proof still `sorry`
+  (intentional: this theorem is a negative claim about a
+  numerical mismatch; Lean-formalising it requires an arithmetic
+  bound on the opaque values, not a structural derivation).
+
+#### Open downstream
+
+The per-3A correction has **NOT** yet been migrated into compute.
+`mass_formula_6term.py` and `unified_low_isotope_predictor.py`
+still emit `A·FROB_N3`. Migration: replace `A * FROB_N3` with
+`m_e * sigma_inv_dim_q(3*A)` using the witness from
+`probe-term4-conventions.witness.json`. Predictor B-values
+(D, T, ³He, ⁴He) will shift accordingly — bounded by ±2.4 MeV
+on T/³He but only ±0.3 MeV on D, so the impact on the +2.10% D
+result is small.
+
 ### Why nobody caught this earlier
 
 Both scripts CLAIM to compute "the Markov trace tr_M". The

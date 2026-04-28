@@ -1,0 +1,50 @@
+{
+  "computation": "probe-term4-conventions",
+  "computedAt": "auto",
+  "description": "Term 4 under per-vortex / per-A / per-3A scaling",
+  "FROB_N3_MeV": 1.2761128463443179,
+  "sigma_inv_dim_q_at_q0": {
+    "n=3": 2.4972905450085916,
+    "n=6": 3.202133983803197,
+    "n=9": 2.5438838242158344,
+    "n=12": 2.251934030169883
+  },
+  "rows": [
+    {
+      "atom": "D",
+      "A": 2,
+      "B_AME_MeV": 2.22457,
+      "Term4_per_vortex_MeV": 1.2761128463443179,
+      "Term4_per_A_MeV": 2.5522256926886357,
+      "Term4_per_3A_genuine_MeV": 1.6362871034827506,
+      "sigma_inv_dim_q_at_q0_n3A": 3.202133983803197
+    },
+    {
+      "atom": "T",
+      "A": 3,
+      "B_AME_MeV": 8.4818,
+      "Term4_per_vortex_MeV": 1.2761128463443179,
+      "Term4_per_A_MeV": 3.828338539032954,
+      "Term4_per_3A_genuine_MeV": 1.2999219630962757,
+      "sigma_inv_dim_q_at_q0_n3A": 2.5438838242158344
+    },
+    {
+      "atom": "3He",
+      "A": 3,
+      "B_AME_MeV": 7.71806,
+      "Term4_per_vortex_MeV": 1.2761128463443179,
+      "Term4_per_A_MeV": 3.828338539032954,
+      "Term4_per_3A_genuine_MeV": 1.2999219630962757,
+      "sigma_inv_dim_q_at_q0_n3A": 2.5438838242158344
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "B_AME_MeV": 28.29569,
+      "Term4_per_vortex_MeV": 1.2761128463443179,
+      "Term4_per_A_MeV": 5.1044513853772715,
+      "Term4_per_3A_genuine_MeV": 1.1507359248860785,
+      "sigma_inv_dim_q_at_q0_n3A": 2.251934030169883
+    }
+  ]
+}

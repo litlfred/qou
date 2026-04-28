@@ -74,21 +74,37 @@ theorem proton_tower_residual_frobenius :
   -- The q → 1 limit recovers the classical (5/2)·m_e form.
   sorry
 
+/-- The CODATA neutron mass and the pure-tower neutron mass at q_0,
+    in MeV.  Axiomatised opaques (computed in
+    `folio-assistant/computations/six_term_consumer.py`). -/
+noncomputable opaque neutronCodata : ℝ
+noncomputable opaque neutronTowerMass : ℝ
+
 /-- The neutron counterpart fails: tower residual for the neutron
     is NOT (5/2)·m_e but rather ~1034·m_e, a factor-400 miss.
 
     The neutron-containing isotope binding failures (D, T, ³He,
     ⁴He) all inherit this gap.
 
+    Statement: there is **no** ε with |ε| ≤ 3‰·m_e satisfying
+    `m_n_codata − m_n_tower = (5/2)·m_e + ε`.  The bare numeric
+    literals 939.565 / 411.227 of the previous formulation are
+    moved into opaque values to keep the type-level statement
+    structural; the witness gap (528.34 MeV vs 1.278 MeV predicted,
+    factor 413) is recorded in the proof comment and the witness
+    JSON.
+
     Ref: [manuscript] `rem:deuteron-first-principles`. -/
 theorem neutron_tower_residual_5halves_fails :
     ¬ ∃ (ε : ℝ), abs ε ≤ electronMass * (3 / 1000) ∧
-      (let m_n_codata : ℝ := 939.565
-       let m_n_tower : ℝ := 411.227
-       m_n_codata - m_n_tower = electronMass * (5 / 2) + ε) := by
-  -- Observed residual is 528.34 MeV; predicted 1.278 MeV. Off by
-  -- factor 413. The tower formula structurally undershoots neutron
-  -- mass due to V̂_0^n = 0.854 being far from q_0 pole at 1.11.
+      neutronCodata - neutronTowerMass = electronMass * (5 / 2) + ε := by
+  -- Observed residual is 528.34 MeV (CODATA m_n = 939.565 vs tower
+  -- m_n_tower = 411.227 at q_0); predicted (5/2)·m_e ≈ 1.278 MeV.
+  -- Off by factor 413. The tower formula structurally undershoots
+  -- neutron mass because V̂_0^n = 0.854 is far from the q_0 pole at
+  -- q_0 ≈ 1.11. Witness:
+  --   `folio-assistant/computations/six_term_consumer.py`
+  -- Ref: [manuscript] `rem:deuteron-first-principles`.
   sorry
 
 end QOU.BraidKnot
