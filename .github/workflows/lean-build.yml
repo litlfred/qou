@@ -2,6 +2,17 @@ name: Lean Build & Proof Status
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        description: >
+          Branch, tag, or commit SHA to build from.
+          Leave blank to use the ref selected in the GitHub UI's
+          "Use workflow from" dropdown. Provide a value here when the
+          dropdown will not accept your branch name (e.g. very long
+          `copilot/...` or `claude/...` branch names).
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -20,6 +31,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
 
       # Lean is pre-installed in the paper-assistant image (via elan).
       - name: Verify Lean installation
