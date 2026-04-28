@@ -46,6 +46,7 @@ export default chapter({
         "benzene-ring",
         "chain-ring-energy",
         "chain-ring-comparison",
+        "benzene-resonance-verification",
       ],
     }),
 
