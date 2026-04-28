@@ -281,11 +281,27 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
     intro a b d h
     rcases h with hlen | ⟨heq, hlex⟩
     · left; simp; omega
-    · right; refine ⟨?_, ?_⟩
-      · simp; omega
-      · -- a ++ d lex< b ++ d when a lex< b (same length).
-        -- Ref: [bokut2005] §1 (right-compatibility under deg-lex);
-        -- pending: induction generates nil case forced by length-eq hyp.
-        sorry
+    · right; refine ⟨by simp; omega, ?_⟩
+      -- a ++ d lex< b ++ d when a lex< b (same length).
+      -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+      -- Induction on a (generalising b): the lex difference is in the
+      -- prefix, so appending a common suffix preserves it.
+      clear hlen
+      induction a generalizing b with
+      | nil =>
+        cases b with
+        | nil => cases hlex
+        | cons _ _ => simp at heq
+      | cons x xs ih =>
+        cases b with
+        | nil => simp at heq
+        | cons y ys =>
+          simp only [List.cons_append]
+          cases hlex with
+          | cons h =>
+            have heq' : xs.length = ys.length := by
+              simp [List.length_cons] at heq; exact heq
+            exact List.Lex.cons (ih heq' h)
+          | rel h => exact List.Lex.rel h
 
 end UGB.GrobnerShirshov
