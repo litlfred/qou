@@ -106,12 +106,15 @@ theorem eigenbasis_decomposition
     weighted sum over irreducible summands.  No regularisation is
     needed because H_n(R, q) is semisimple at non-root-of-unity q.
 
+    The conclusion (partition count ≤ n/2 + 1) is the same as
+    `eigenbasis_decomposition`; the trace collapse is a corollary.
+
     LaTeX: `\label{lem:feynman-trace-collapse}` -/
 -- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
 theorem trace_collapse
     (decomp : PathIntegrals.SchurWeylDecomposition) :
-    decomp.partitions.length ≤ decomp.n / 2 + 1 := by
-  sorry
+    decomp.partitions.length ≤ decomp.n / 2 + 1 :=
+  eigenbasis_decomposition decomp
 
 /-- **Markov identification.**  The Markov-weighted sum of partial
     traces on the eigenbasis equals the Jones–Markov trace on
