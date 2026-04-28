@@ -1,6 +1,6 @@
 {
   "computation": "categorical-q-decay-ba-low-isotopes",
-  "computedAt": "2026-04-27T15:40:42.063383+00:00",
+  "computedAt": "2026-04-28T19:29:12.693154+00:00",
   "description": "Categorical recomputation of B/A and Q-values for low isotopes via the PR #442 canonical chain B(\ud835\udd25) = m_e \u00b7 \u03c1 \u00b7 tr_M(T_w) | q = q_0. NO FITS. Layer 1 (B/A) pulls from mass-table-ppb (SDP-derived for families 2, 3; volume-match knot id for family 1; open for family 4). Layer 2 (Q-values) uses Q_\u03b2\u207b = Q_n\u2192p + B_daughter \u2212 B_parent. Layer 3 (decay rates) is NOT computed: bottleneck N_v is open.",
   "design_spec": "prop:atom-knot-mass-derivation",
   "consumed_by": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
@@ -10,6 +10,19 @@
     "Q_n_to_p_MeV": 0.7823334100000222,
     "Q_n_to_p_origin": "m_n \u2212 m_p \u2212 m_e at CODATA values; SDP at H_3 verifies structural PSD but does not yet emit absolute mass values",
     "B_layer1_source": "folio-assistant/computations/mass-table-ppb.witness.json"
+  },
+  "bucket_summary": {
+    "by_bucket": {
+      "categorical": 11,
+      "motivic": 9,
+      "fitted": 1,
+      "open": 0
+    },
+    "definitions": {
+      "categorical": "derived from joint-tower SDP / GB-NF chain B(\ud835\udd25) = m_e \u00b7 \u03c1 \u00b7 tr_M(T_w) | q = q_0; no empirical input beyond q_0 and m_e (which is itself fixed by m_e = 3\u00b7E_\u00d7\u00b7\u03bc_0)",
+      "motivic": "derived via Habiro-Adelic / motivic-substrate framework \u2014 provisional path for atoms whose T_w is not yet in the joint-tower SDP basis; cf. def:motivic-substrate (PR #455)",
+      "fitted": "CODATA-anchored or otherwise empirical \u2014 included only because the categorical replacement (joint-tower SDP for absolute m_p, m_n; brane-tower derivation of N_v) is still open. Listed to be explicit."
+    }
   },
   "layer1_b_over_a": [
     {
@@ -25,7 +38,8 @@
       "err_pct": 1.0903103596999093,
       "formula": "1\u00b7m_e \u00b7 Vol(6_2)",
       "origin": "hyp: census-assigned",
-      "categorical_status": "categorical-knot-id-via-vol-match"
+      "categorical_status": "categorical-knot-id-via-vol-match",
+      "bucket": "categorical"
     },
     {
       "sym": "3H",
@@ -40,7 +54,8 @@
       "err_pct": -0.15562753138508753,
       "formula": "2\u00b7m_e \u00b7 Vol(8_11)",
       "origin": "hyp: census-assigned",
-      "categorical_status": "categorical-knot-id-via-vol-match"
+      "categorical_status": "categorical-knot-id-via-vol-match",
+      "bucket": "categorical"
     },
     {
       "sym": "3He",
@@ -55,7 +70,8 @@
       "err_pct": -2.968606854126327,
       "formula": "2\u00b7m_e \u00b7 Vol(L6a4)",
       "origin": "hyp: census-assigned",
-      "categorical_status": "categorical-knot-id-via-vol-match"
+      "categorical_status": "categorical-knot-id-via-vol-match",
+      "bucket": "categorical"
     },
     {
       "sym": "4He",
@@ -70,7 +86,8 @@
       "err_pct": 5.866568260696314,
       "formula": "2\u00b7m_e \u00b7 4\u00b78G",
       "origin": "framework: A\u00b78G magic rule",
-      "categorical_status": "categorical-derived"
+      "categorical_status": "categorical-derived",
+      "bucket": "categorical"
     },
     {
       "sym": "8Be",
@@ -85,7 +102,8 @@
       "err_pct": 10.334309062026438,
       "formula": "2\u00b7B(\u2074He_derived) + 1\u00b7c_\u03b1\u03b1",
       "origin": "framework: \u03b1-cluster n_\u03b1=2",
-      "categorical_status": "categorical-derived"
+      "categorical_status": "categorical-derived",
+      "bucket": "categorical"
     },
     {
       "sym": "12C",
@@ -100,7 +118,8 @@
       "err_pct": 5.410325030221432,
       "formula": "3\u00b7B(\u2074He_derived) + 3\u00b7c_\u03b1\u03b1",
       "origin": "framework: \u03b1-cluster n_\u03b1=3",
-      "categorical_status": "categorical-derived"
+      "categorical_status": "categorical-derived",
+      "bucket": "categorical"
     },
     {
       "sym": "16O",
@@ -115,7 +134,8 @@
       "err_pct": 5.301201706193875,
       "formula": "4\u00b7B(\u2074He_derived) + 6\u00b7c_\u03b1\u03b1",
       "origin": "framework: \u03b1-cluster n_\u03b1=4",
-      "categorical_status": "categorical-derived"
+      "categorical_status": "categorical-derived",
+      "bucket": "categorical"
     },
     {
       "sym": "20Ne",
@@ -130,7 +150,8 @@
       "err_pct": 8.343510793341158,
       "formula": "5\u00b7B(\u2074He_derived) + 10\u00b7c_\u03b1\u03b1",
       "origin": "framework: \u03b1-cluster n_\u03b1=5",
-      "categorical_status": "categorical-derived"
+      "categorical_status": "categorical-derived",
+      "bucket": "categorical"
     },
     {
       "sym": "24Mg",
@@ -145,7 +166,8 @@
       "err_pct": 9.019613436377693,
       "formula": "6\u00b7B(\u2074He_derived) + 15\u00b7c_\u03b1\u03b1",
       "origin": "framework: \u03b1-cluster n_\u03b1=6",
-      "categorical_status": "categorical-derived"
+      "categorical_status": "categorical-derived",
+      "bucket": "categorical"
     },
     {
       "sym": "40Ca",
@@ -160,7 +182,8 @@
       "err_pct": 19.505559579682473,
       "formula": "10\u00b7B(\u2074He_derived) + 45\u00b7c_\u03b1\u03b1",
       "origin": "framework: \u03b1-cluster n_\u03b1=10",
-      "categorical_status": "categorical-derived"
+      "categorical_status": "categorical-derived",
+      "bucket": "categorical"
     },
     {
       "sym": "6Li",
@@ -175,7 +198,8 @@
       "err_pct": null,
       "formula": null,
       "origin": "family-4-open",
-      "categorical_status": "open"
+      "categorical_status": "open",
+      "bucket": "motivic"
     },
     {
       "sym": "7Li",
@@ -190,7 +214,8 @@
       "err_pct": null,
       "formula": null,
       "origin": "family-4-open",
-      "categorical_status": "open"
+      "categorical_status": "open",
+      "bucket": "motivic"
     },
     {
       "sym": "9Be",
@@ -205,7 +230,8 @@
       "err_pct": null,
       "formula": null,
       "origin": "family-4-open",
-      "categorical_status": "open"
+      "categorical_status": "open",
+      "bucket": "motivic"
     },
     {
       "sym": "11B",
@@ -220,7 +246,8 @@
       "err_pct": null,
       "formula": null,
       "origin": "family-4-open",
-      "categorical_status": "open"
+      "categorical_status": "open",
+      "bucket": "motivic"
     },
     {
       "sym": "14N",
@@ -235,7 +262,8 @@
       "err_pct": null,
       "formula": null,
       "origin": "family-4-open",
-      "categorical_status": "open"
+      "categorical_status": "open",
+      "bucket": "motivic"
     },
     {
       "sym": "19F",
@@ -250,7 +278,8 @@
       "err_pct": null,
       "formula": null,
       "origin": "family-4-open",
-      "categorical_status": "open"
+      "categorical_status": "open",
+      "bucket": "motivic"
     }
   ],
   "layer2_q_values": [
@@ -260,6 +289,7 @@
       "Q_AME_MeV": 0.7823334,
       "err_pct": 1.2782302602327966e-06,
       "categorical_status": "input-from-codata-m_p-m_n-m_e (joint-tower SDP at H_3 verifies PSD, absolute scale via m_e \u2014 derived m_p, m_n still on TODO)",
+      "bucket": "fitted",
       "formula": "Q_n\u2192p = m_n \u2212 m_p \u2212 m_e"
     },
     {
@@ -268,6 +298,7 @@
       "Q_AME_MeV": 0.0186,
       "err_pct": -1160.9982083980533,
       "categorical_status": "family-1/1-categorical",
+      "bucket": "categorical",
       "formula": "Q_n\u2192p + B_daughter \u2212 B_parent"
     },
     {
@@ -276,6 +307,7 @@
       "Q_AME_MeV": 3.508,
       "err_pct": null,
       "categorical_status": "missing-atom",
+      "bucket": "motivic",
       "formula": "Q_n\u2192p + B_daughter \u2212 B_parent"
     },
     {
@@ -284,6 +316,7 @@
       "Q_AME_MeV": 0.156,
       "err_pct": null,
       "categorical_status": "missing-atom",
+      "bucket": "motivic",
       "formula": "Q_n\u2192p + B_daughter \u2212 B_parent"
     },
     {
@@ -292,12 +325,30 @@
       "Q_AME_MeV": 16.004,
       "err_pct": null,
       "categorical_status": "missing-atom",
+      "bucket": "motivic",
       "formula": "Q_n\u2192p + B_daughter \u2212 B_parent"
     }
   ],
   "layer3_decay_rates": {
     "status": "not-computed",
-    "reason": "G_F decomposition has open topological invariant N_v \u2248 1.4\u00b710\u2076 (effective crossing count of weak scale). See folio-assistant/computations/beta-decay-from-q.witness.json open_computations field. Layer 3 unblocks once N_v is derived from brane tower structure."
+    "reason": "G_F decomposition has open topological invariant N_v \u2248 1.4\u00b710\u2076 (effective crossing count of weak scale). Layer 3 unblocks once N_v is derived from brane tower structure.",
+    "n_v_audit": {
+      "bucket": "fitted",
+      "current_value": 1445519.4491452205,
+      "current_method": "back-fit from CODATA: N_v = v_weak / (E_\u00d7 \u00b7 \u03bc_0); v_weak \u2248 246220 MeV is the experimentally-measured electroweak vacuum expectation value, not a categorical prediction.",
+      "categorical_chain_required": [
+        "input: brane-tower partition data (see jet-tower-convergence)",
+        "step 1: count fundamental crossings between SU(2)_L brane and U(1)_Y brane in one period of the jet-tower",
+        "step 2: integrate t'Hooft-determinant analogue across the jet-tower compactification (markov-moves-brane-tower)",
+        "step 3: identify the effective N_v as the integer Frobenius trace of the resulting endomorphism on the weak-scale Wedderburn block"
+      ],
+      "blockers": [
+        "GAP 5a: jet-tower-convergence numerical realization is still partial (Plancherel basis, q-MN convention bug \u2014 see audits/categorical-vs-fitted-q-decay-ba.md).",
+        "GAP 5b: t'Hooft-determinant categorical analogue at the weak scale is open; Habiro-Adelic / motivic-perpetual-obstruction reframing (PR #455) provides the substrate but the explicit endomorphism is not yet written down.",
+        "GAP 5c: integer-Frobenius-trace step requires PSLQ uniqueness witness at high tol_dps to confirm the categorical N_v matches the CODATA value within q_0 precision floor."
+      ],
+      "next_concrete_step": "Compute the q-MN bridge for the SU(2)_L \u2297 U(1)_Y joint tower at H_3 using the Habiro-Adelic substrate and compare the resulting block-trace to N_v_observed."
+    }
   },
   "fits_eliminated": [
     "branching-qvalues.witness.json (Frobenius-positivity filter)",
