@@ -82,33 +82,43 @@ def term_1_descended(Z, N, include_inter):
 
 
 def term_23_brane_tower(Z, N, include_inter):
-    """Terms 2 + 3: Σ Φ_q(|V̂|) + z²·Σ Φ_q(|V̂V̂|) from
-    atom_per_generator_volumes.
+    """Terms 2 + 3: Σ_i Φ_q(|V̂_i|) + z²·Σ_{i<j} Φ_q(|V̂_i V̂_j|).
 
-    Per thm:knot-mass-formula-unified, the brane-tower terms use the
-    `full` (additive-Wedderburn) channel of each per-generator volume.
-    `atom_per_generator_volumes` returns dicts {std, sym, alt, full};
-    extract `full` and feed into Φ_q. Earlier code passed the raw dict
-    to Phi_q which silently raised TypeError → both terms returned 0.
+    Per thm:knot-mass-formula-unified, V̂_i is the full additive-
+    Wedderburn-traced volume at generator i (the 'full' key from
+    atom_per_generator_volumes; std/sym/alt are Wedderburn-block
+    components, full is their weighted aggregate).
+
+    Returns dict {T2, T3, status, max_abs_V}; status is one of:
+      "ok": all |V̂_i| < 0.95, Φ_q convergent
+      "near-pole": some |V̂_i| ∈ [0.95, 1.05); Φ_q values huge but finite
+      "divergent": some |V̂_i| ≥ 1.05; Φ_q diverges (T23 unphysical)
+
+    The previous version silently caught TypeError when abs() was
+    applied to the dict-typed volume, returning T2 = T3 = 0.  This
+    masked the deeper structural issue that |V̂_i| for D is at or
+    above 1, putting it AT the Φ_q convergence boundary.
     """
     from hecke_core import atom_per_generator_volumes, h as h_val, z as z_mark
     from mass_endomorphism import Phi_q
-    vols_raw = atom_per_generator_volumes(Z, N, include_inter=include_inter)
-    vols = [v['full'] if isinstance(v, dict) else v for v in vols_raw]
+    vols_dict = atom_per_generator_volumes(Z, N, include_inter=include_inter)
+    vols = [v["full"] if isinstance(v, dict) else v for v in vols_dict]
+    abs_vols = [abs(float(v)) for v in vols]
+    max_abs = max(abs_vols) if abs_vols else 0.0
+
+    if max_abs >= 1.05:
+        return {"T2": 0.0, "T3": 0.0, "status": "divergent",
+                "max_abs_V": max_abs}
+    status = "near-pole" if max_abs >= 0.95 else "ok"
     single = mp.mpf(0)
     pair = mp.mpf(0)
     for v in vols:
-        try:
-            single += Phi_q(abs(v))
-        except Exception:
-            pass
+        single += Phi_q(abs(v))
     for i in range(len(vols) - 1):
-        try:
-            pair += Phi_q(abs(vols[i] * vols[i + 1]))
-        except Exception:
-            pass
+        pair += Phi_q(abs(vols[i] * vols[i + 1]))
     pair *= z_mark ** 2
-    return float(single), float(pair)
+    return {"T2": float(single), "T3": float(pair),
+            "status": status, "max_abs_V": max_abs}
 
 
 def term_4_frobenius(A):
@@ -195,8 +205,8 @@ def predict_all_terms(Z, N, knot_type):
         "knot_type": knot_type,
         "term1_descended_free": t1_free,
         "term1_descended_atom": t1_atom,
-        "term23_tower_free": {"single": t23_free[0], "pair": t23_free[1]},
-        "term23_tower_atom": {"single": t23_atom[0], "pair": t23_atom[1]},
+        "term23_tower_free": t23_free,
+        "term23_tower_atom": t23_atom,
         "term4_frobenius_pervortex": t4_pv,
         "term4_frobenius_per_A": t4_pa,
         "term4_frobenius_per_3A_canonical": t4_p3A,
@@ -233,22 +243,40 @@ if __name__ == "__main__":
 
         # Binding predictions from different term subsets
         B_term1 = E_0 * (r["term1_descended_free"] - r["term1_descended_atom"])
+        # T2+T3 brane-tower binding contribution (free - atom subtraction
+        # in cat units, multiplied by E_0 to convert).  Only included when
+        # |V̂| < 0.95 (Φ_q convergent).  For D the atom volumes hit |V̂|≈1
+        # so the brane tower diverges; flagged via status.
+        t23_f = r["term23_tower_free"]
+        t23_a = r["term23_tower_atom"]
+        if (t23_f.get("status") == "ok" and t23_a.get("status") == "ok"):
+            B_term23 = E_0 * (
+                (t23_f["T2"] + t23_f["T3"])
+                - (t23_a["T2"] + t23_a["T3"])
+            )
+            t23_status = "included"
+        else:
+            B_term23 = 0.0
+            t23_status = (f"excluded ({t23_f.get('status','?')}/"
+                          f"{t23_a.get('status','?')})")
         # Term 4 — show per-vortex (legacy) and per-3A (canonical algebraic)
-        B_term1_plus_frob_pv = B_term1 + r["term4_frobenius_pervortex"]
+        B_term1_plus_frob_pv = B_term1 + B_term23 + r["term4_frobenius_pervortex"]
         t4_p3A = r["term4_frobenius_per_3A_canonical"]
         B_term1_plus_frob_p3A = (
-            B_term1 + t4_p3A if t4_p3A is not None else None
+            B_term1 + B_term23 + t4_p3A if t4_p3A is not None else None
         )
         B_term5 = r["term5_bw_chirality_binding"]
 
+        print(f"  Term 2+3 (brane tower)               : B23 = "
+              f"{B_term23:8.4f} MeV  ({t23_status})")
         print(f"  Term 1 only (descended)              : B = "
               f"{B_term1:8.4f} MeV "
               f"({(B_term1-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
-        print(f"  Term 1 + Term 4 per-vortex (1·n=3)  : B = "
+        print(f"  T1 + T2+3 + T4 per-vortex            : B = "
               f"{B_term1_plus_frob_pv:8.4f} MeV "
               f"({(B_term1_plus_frob_pv-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
         if B_term1_plus_frob_p3A is not None:
-            print(f"  Term 1 + Term 4 per-3A (CANONICAL)   : B = "
+            print(f"  T1 + T2+3 + T4 per-3A (CANONICAL)    : B = "
                   f"{B_term1_plus_frob_p3A:8.4f} MeV "
                   f"({(B_term1_plus_frob_p3A-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
         if B_term5 is not None:

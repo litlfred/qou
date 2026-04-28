@@ -1257,6 +1257,132 @@ gives sizable positive. This is driven by the (6) and (5,1)
 symmetric blocks where Wenzl y_λ are 50× larger than Plancherel
 weights.
 
+### D follow-up (2026-04-28e): four parallel investigations
+
+User: "1 2 3 4" — execute all four follow-ups together.
+
+#### Item 1: T2+T3 brane tower added with proper guard
+
+Surfaced an additional silent bug in `term_23_brane_tower`:
+
+- The function silently `try/except`-suppressed `TypeError: bad
+  operand type for abs(): 'dict'`. The volumes returned by
+  `atom_per_generator_volumes` are dicts with keys
+  `{std, sym, alt, full}` (Wedderburn-block aggregates); `abs(dict)`
+  raises TypeError; the bare except swallowed it; T2 and T3
+  silently returned 0.
+
+- After fixing to use `v["full"]`, **Φ_q diverges** at all D
+  generators. D atom volumes are
+  `|V̂| ∈ {0.989, 0.971, 0.264, 0.854, 0.976}` — most are at or
+  above the Φ_q convergence boundary `|z|=1`. Φ_q evaluations
+  give values in the millions or `+∞`.
+
+- Resolution: the function now returns
+  `{T2, T3, status, max_abs_V}` with `status ∈ {ok, near-pole,
+  divergent}`. For D/T/³He all return `near-pole`, so T2+T3
+  is excluded from the binding sum with a clear flag.
+
+This means **the paper's brane-tower formula is structurally
+inapplicable for low isotopes**: the per-generator volumes in the
+hand-built braid are at the Φ_q convergence boundary. Either:
+- (a) the volumes need rescaling to `|V̂| < 1`,
+- (b) Φ_q needs a cyclotomic-completion (Habiro-ring) interpretation
+  to handle `|V̂|=1`, OR
+- (c) the brane-tower decomposition is wrong for atoms.
+
+#### Item 2: Reconciling the two paper formulas
+
+Tested whether interpreting prop:atom-knot-mass-derivation's
+`B = m_e · ρ · tr_M(T_w)` as **shorthand** for
+`B = m_e · ρ · m(ϱ)` where `m(ϱ) = |tr_M| + tower + Σ 1/dim_q`
+(the multi-term decomposition from thm:knot-mass-formula-unified)
+gives the right reconciliation.
+
+Test (skipping tower since |V̂|≈1 puts it outside Φ_q):
+
+| atom | n_0 | ρ | err single | err multi-term |
+|---|---:|---:|---:|---:|
+| D | 3 | 1 | -93.4% | **-36.0%** |
+| T | 5 | 2 | -99.8% | **-63.3%** |
+| ³He | 3 | 2 | -86.8% | **-53.7%** |
+
+Multi-term improves all three by 30-60 percentage points. **The
+single-term `tr_M` in prop:atom-knot-mass-derivation should be
+read as shorthand for the multi-term `m(ϱ)`.** With that reading
+the two formulas reconcile, but they're still 30-60% off because
+the tower term (the dominant remaining piece) is excluded.
+
+Recommended paper edit: clarify in prop:atom-knot-mass-derivation
+that `tr_M(T_w)` denotes the full multi-term `m(ϱ)`, with explicit
+cross-reference to thm:knot-mass-formula-unified.
+
+#### Item 3: ρ_T = 2, ρ_³He = 2 contradicts paper text
+
+Paper text ([atom-knot-mass-derivation.md:171](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md#L171)):
+"for ℓ ≤ 1 this is ρ = 1 direct".
+
+SDP witness `joint-tower-sdp-h6-h9` actual values:
+
+| atom | knot | binding link | rho_factor | text says |
+|---|---|---|---:|---:|
+| D | 6_2 | L_H (Hopf) | 1 | 1 (consistent) |
+| T | 8_11 | T_3 trefoil-like | **2** | 1 (**inconsistent**) |
+| ³He | L6a4 | L6a4 link | **2** | 1 (**inconsistent**) |
+
+The paper text is **wrong** for T and ³He, OR T/³He have
+confinement level ℓ > 1, OR the ρ rule for ℓ > 1 must be
+specified.
+
+Looking at the ρ-rule paper text in full: "Read `ρ ∈ ℤ_{>0}` from
+the structural prefactor rule on `(Z, N)` (= the multiplicity of
+T_w's SDP solution in the Wedderburn decomposition). Open in
+general; for ℓ ≤ 1 this is ρ = 1 direct."
+
+The phrasing **"open in general"** is the escape hatch — for
+T and ³He (which have ρ=2 per SDP), the rule is "open" rather
+than ρ=1. Recommended paper edit: replace "for ℓ ≤ 1 this is ρ=1"
+with an explicit table of confirmed ρ values per atom from the
+SDP witness, since the simple ρ=1 rule covers only D.
+
+#### Item 4: Multi-term on SDP braid words
+
+[`probe_sdp_canonical_paper_formula.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_sdp_canonical_paper_formula.py)
+already records per-λ Plancherel and Wenzl-Schur breakdowns for
+the SDP braids. The new test (item 2) confirms multi-term is
+better but still 30-60% off without the brane tower.
+
+The brane tower for SDP-canonical braids would require
+`atom_per_generator_volumes` for arbitrary `B_n` words (currently
+the function operates only on hand-built `(Z, N)` atoms). Adding
+this is a non-trivial extension; deferred.
+
+### Summary of the D investigation chain
+
+The user's investigation (Q1, Q2, Q3, Q4 + 4 follow-ups) has
+established:
+
+1. **Compute is missing T2+T3 + has TWO silent bugs in T2+T3** —
+   bare `except` masking TypeError + divergent Φ_q at |V̂|≈1.
+
+2. **Per-3A canonical Term 4 substantially improves predictions**
+   but D still residual +18.29% (compute) or -36% (paper-multi-term-
+   no-tower).
+
+3. **Paper's flagship `B = m_e · ρ · tr_M` formula is structurally
+   inadequate** — fails by 87-100% on SDP-canonical T_w for
+   D/T/³He under any convention.
+
+4. **Multi-term reading of prop:atom-knot-mass-derivation
+   reconciles the two paper formulas** and gets within 30-60%
+   without the tower; the tower would close the rest IF the Φ_q
+   convergence problem is resolved.
+
+5. **ρ rule "ρ=1 for ℓ ≤ 1" is paper-text-wrong** — contradicted
+   by SDP witness which gives ρ=2 for T and ³He. The paper's "open
+   in general" qualifier covers this but the specific ℓ ≤ 1 rule
+   is misleading.
+
 ### Why nobody caught this earlier
 
 Both scripts CLAIM to compute "the Markov trace tr_M". The

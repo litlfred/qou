@@ -10,15 +10,39 @@ $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form
 element of $\mathbb{Q}(q)$
 
 $$
-M(\mathfrak{H}) \;:=\; \rho \cdot \mathrm{tr}_M(T_w) \;=\; \rho \cdot \sum_\lambda y_\lambda(q) \, \chi_\lambda(T_w),
+M(\mathfrak{H}) \;:=\; \rho \cdot m(\mathfrak{H}) \;=\; \rho \cdot \bigl[\,|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})\,\bigr],
 $$
 
-where $\rho \in \mathbb{Z}_{>0}$ is structurally determined by
-$\mathfrak{H}$, $\mathrm{tr}_M$ is the Markov trace, $y_\lambda(q)$ are
-the Wenzl-bridge coefficients, and $\chi_\lambda(T_w)$ is the
-$q$-Murnaghan–Nakayama character.  This expression is **finite,
-exact, and entirely pre-Archimedean** — every quantity on the
-right-hand side lives in $\mathbb{Q}(q)$.
+where $m(\mathfrak{H})$ is the **categorical mass invariant** in
+the multi-term form of the
+[unified knot mass formula](#thm:knot-mass-formula-unified):
+$|\mathrm{tr}_M(T_w)|$ is the descended Markov trace
+$\sum_\lambda y_\lambda(q)\,\chi_\lambda(T_w)$
+(Wenzl-bridge coefficients $y_\lambda$,
+$q$-Murnaghan–Nakayama character $\chi_\lambda$),
+$\mathrm{tower}(T_w) = \sum_i \Phi_q(|\hat{V}_i|) + z^2 \sum_{i<j} \Phi_q(|\hat{V}_i \hat{V}_j|)$
+is the brane tower built from per-generator additive-Wedderburn
+volumes $\hat{V}_i$
+([mass endomorphism tower](#prop:mass-endomorphism-tower)),
+and $\mathrm{tr}_M(C_{\dim_q}) = \sum_{\lambda \vdash n_0} 1/\dim_q(\lambda)$
+is the Frobenius co-Casimir trace
+([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)).
+The scalar $\rho \in \mathbb{Z}_{>0}$ is the multiplicity of
+$T_w$'s SDP solution in the Wedderburn decomposition (see
+algorithm step below).  This expression is **finite, exact, and
+entirely pre-Archimedean** — every quantity on the right-hand side
+lives in $\mathbb{Q}(q)$.
+
+**Important historical note.**  An earlier wording wrote
+$M(\mathfrak{H}) = \rho \cdot \mathrm{tr}_M(T_w)$ (single term).
+That single-term form is **shorthand** for the multi-term sum
+above; on its own it is structurally inadequate (verified
+empirically in
+[`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json):
+single-term fails by 87--100% on $D$, $T$, ${}^3\mathrm{He}$
+under both Plancherel and Wenzl-Schur conventions; multi-term
+without the brane tower reduces error to 36--63%; the brane tower
+remains technically open at $|\hat{V}|\approx 1$).
 
 **Mass identity.**  After applying the Archimedean realization functor
 ([archimedean realization functor](#def:archimedean-realization-functor)),
@@ -167,8 +191,14 @@ with methodology tag and high-precision certificate.
         at adjacent slices.
   \item Read $\rho \in \mathbb{Z}_{>0}$ from the structural prefactor
         rule on $(Z, N)$ (= the multiplicity of $T_w$'s SDP solution
-        in the Wedderburn decomposition).  Open in general; for
-        $\ell \leq 1$ this is $\rho = 1$ direct.
+        in the Wedderburn decomposition).  Currently OPEN in
+        general; confirmed values from the joint-tower SDP witness
+        are $\rho_D = 1$, $\rho_T = 2$, $\rho_{{}^3\mathrm{He}} = 2$.
+        The earlier statement "$\rho = 1$ for $\ell \leq 1$" was
+        too narrow — it holds for $D$ but is contradicted by the
+        SDP witness for $T$ and ${}^3\mathrm{He}$ (each carrying
+        $\rho = 2$ from the multiplicity of the trefoil-like
+        constituent in the $H_5$ / $H_3$ Wedderburn decomposition).
   \item Form the categorical mass invariant
         $M(\mathfrak{H}) := \rho \cdot \mathrm{tr}_M(T_w) \in \mathbb{Q}(q)$.
 \end{enumerate}
