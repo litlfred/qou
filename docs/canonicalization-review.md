@@ -441,9 +441,9 @@ PR #456 landed substantial new infrastructure:
   **the canonical aggregator**, summing all six terms per atom
 
 The unified mass-table aggregator's per-atom predictions exhibit
-exactly the same structural gap that my round-1, round-2, round-4,
-and round-5 probes quantified independently: the proton lands at
-~+1.3 % (versus my round-1 V_3term proton at similar magnitude), and
+exactly the same structural gap that this branch's round-1, round-2,
+round-4, and round-5 probes quantified independently: the proton
+lands at ~+1.3 % (matching round-1's V_3term proton residual), and
 the neutron / D / T / ³He show ~−55 % to −63 % residuals —
 matching round-1's −56 % neutron baseline and round-5's brane-tower
 ~−58 % deuteron predictions.
@@ -461,5 +461,5 @@ assembly probes remain independently informative quantifications
 (they show how each candidate atomic combination convention
 fares).  The `unified_mass_table_50dps.py` witness is the
 canonical place to read off the current six-term sum's accuracy;
-my probes are the canonical place to read off how various
-alternative assemblies fare.
+this branch's probes are the canonical place to read off how
+various alternative assemblies fare.
