@@ -14,5 +14,10 @@ export default remark({
     "interpretation",
     "brane-tower",
   ],
-  uses: ["rem:deuteron-first-principles"],
+  uses: [
+    "rem:deuteron-first-principles",
+    "conj:tau-codim-shannon",
+    "conj:tau-codim-landauer",
+    "conj:tau-codim-entropic-area",
+  ],
 });

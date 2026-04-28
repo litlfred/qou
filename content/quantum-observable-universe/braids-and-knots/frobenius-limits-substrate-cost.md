@@ -82,7 +82,12 @@ done.  Candidates and what they would require:*
 
 *Until one of these is rigorously established, the
 "information cost" language is **analogy, not theorem**.  The
-limit structure is real; the physical reading is a conjecture.*
+limit structure is real; the physical reading is a conjecture.
+The three candidate identifications are now stated as proper
+conjectures with proof sketches:
+[Shannon-channel](#conj:tau-codim-shannon),
+[Landauer-bound](#conj:tau-codim-landauer), and
+[entropic-area](#conj:tau-codim-entropic-area).*
 
 **Brane tower = cost of the specific computation.**
 
@@ -171,6 +176,11 @@ free-energy of the substrate's mixing measure on the Young
 lattice, up to the fibre-functor scale.  Upstream
 `kerov_walk_verify.py` ruled out the simplest Kerov random-walk
 interpretation; the correct information-theoretic frame is
-open.  Candidates: heat-kernel regularisation of the Plancherel
-trace, Kerov growth model with non-trivial feed, or a
-categorical version of the Jarzynski equality.*
+open.  The three candidate frames are now stated as conjectures
+with explicit proof sketches:
+[Shannon-channel](#conj:tau-codim-shannon) (Plancherel-like
+measure + categorical entropy),
+[Landauer-bound](#conj:tau-codim-landauer) (categorical
+second-law inequality), and
+[entropic-area](#conj:tau-codim-entropic-area) (area law on the
+exceptional divisor).*
