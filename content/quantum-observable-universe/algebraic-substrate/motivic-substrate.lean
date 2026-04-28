@@ -59,11 +59,15 @@ inductive Place : Type
     * `realize : (v : Place) → Mhat →+* Target v` — the
       realization functor at each place.
 
-    Substrate axiom (`place_compatibility`): the family of
-    realizations factors a single motivic class through the adelic
-    decomposition of `def:adelic-substrate`.  Kept here as a
-    placeholder `True`; concrete instances refine it once the
-    adelic-Tate substrate is formalised.
+    Substrate axiom (`archimedean_nontrivial`): the archimedean
+    realization target `Target Place.infty` is nontrivial — the
+    minimal non-vacuous fragment of the Tate factorisation
+    `ρ_tot([X]) = (ρ_v([X]))_v` of `def:adelic-substrate`.  Concrete
+    instances may strengthen this to the full place-compatibility
+    statement once the adelic-Tate substrate is formalised; that
+    refinement is supplied as a `sorry`-axiom in instances rather
+    than as a structure field, so the class itself stays free of
+    vacuous logical placeholders.
 
     Ref: [kontsevich1995], [denef-loeser2001], [tate1967]. -/
 class MotivicSubstrate
