@@ -81,6 +81,23 @@ term.  After applying the Hecke relation:
 The total weight changes by
 $|c(q-q^{-1})| + |c| - |c| = |c| \cdot |q - q^{-1}|$.
 
+**Substrate-internal: GS reduction over the Habiro embedding.**
+*The reduction rules in $G$ — Hecke, Yang–Baxter, far commutativity —
+are formal rewriting rules that act strictly within the polynomial
+embedding $\mathbb{Z}[q^{\pm 1}] \hookrightarrow \widehat{\mathbb{Z}[q]}$
+([Habiro ring](#def:habiro-ring)). Confluence (Bergman diamond) is
+an exact algebraic consequence of the foundational triple
+$(\mathbf{C}, A, \tau)$, holding in any base ring where the
+Hecke relation $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ can be
+imposed — and in particular over the
+[motivic substrate](#def:motivic-substrate) before any place-realization
+is applied. The energy functional $E(\xi)$ takes values in
+$\mathbb{Z}_{\geq 0}[q^{\pm 1}]$ as a formal Laurent polynomial;
+its evaluation as a real-valued physical quantity (Skein binding
+energy) requires the archimedean realization $\rho_\infty$
+([archimedean realization](#def:archimedean-realization-functor))
+of the substrate, and is downstream of the reduction itself.*
+
 **Physical interpretation.**
 The energy functional $E(\mathcal{N}(Z, N))$ is the
 **Skein binding energy** of the nucleus, expressed in the

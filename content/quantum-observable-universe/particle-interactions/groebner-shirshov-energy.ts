@@ -18,6 +18,9 @@ export default theorem({
   },
   uses: [
     "prop:nuclear-groebner-reduction",
+    "def:habiro-ring",
+    "def:motivic-substrate",
+    "def:archimedean-realization-functor",
     "unital-groebner-bases:thm:main-theorem",
   ],
 });
