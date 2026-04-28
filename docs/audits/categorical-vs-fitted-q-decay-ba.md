@@ -1165,6 +1165,98 @@ percent errors (⁶Li hits AME to **−0.08%**). The remaining residuals
 (+10–16% on ⁷Li/⁹Be/¹¹B) are real structural content for Term 6
 (jet-prefix Habiro) to capture.
 
+### D end-to-end audit (2026-04-28d)
+
+User asked: "investigate D, restate exactly what is calculated, walk
+through compute, does it align with paper and the cat-action chain?"
+
+#### Q1: Are all terms of the tower being done for D?
+
+**No.** Audit:
+
+| Term | Paper | `mass_formula_6term.py` | `unified_low_isotope_predictor.py` |
+|---|---|---|---|
+| T1: \|tr_M(T_w)\| descended | ✓ | added | added |
+| T2: Σ_i Φ_q(\|V̂_i\|) (single-gen tower) | ✓ | computed but **not added** | **NOT computed** |
+| T3: z²·Σ_{i<j} Φ_q(\|V̂_iV̂_j\|) (pair-gen) | ✓ | computed but **not added** | **NOT computed** |
+| T4: m_e·Σ_{λ⊢3A} 1/dim_q (Frobenius) | ✓ | added (per-3A canonical) | added (per-3A canonical) |
+| T5: a_K · B_BW (chirality) | ✓ | added when BW valid (A≥3) | added when valid |
+| T6: Habiro residue | ✓ | placeholder = 0 | placeholder = 0 |
+
+The +18.29% D residual under canonical Term 4 is from a 4-term sum
+(T1, T4, T5=0, T6=0), with **T2+T3 brane tower missing**.
+
+#### Q2: What is ρ for D?
+
+| Source | ρ_D | ρ_T | ρ_³He |
+|---|---:|---:|---:|
+| Paper text "ρ=1 for ℓ ≤ 1" | 1 | 1 | 1 |
+| [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json) `rho_factor` | **1** | **2** | **2** |
+| Empirical (Wenzl-Schur, paper formula → AME) | ~13 | ~660 | ~7.6 |
+
+The paper text says "ρ = 1 for ℓ ≤ 1 direct". The SDP witness gives
+ρ = 1, 2, 2 for D, T, ³He. The text and the witness **disagree**
+for T and ³He. The empirical ρ-needed under the paper formula is
+13 (D), ~660 (T), ~7.6 (³He) — far from any small-integer rule.
+
+#### Q3: Wire cat-action → SDP → GB-NF chain into D's compute
+
+The SDP witness already exists with D's canonical structure:
+- D: n_0=3, braid=`[1,-2,1,1,1,-2]`, knot=6_2, ρ=1
+- T: n_0=5, braid=`[-1,2,-3,2,1,-3,-3,4,-3,-2,-3,-4,-3,2]`, knot=8_11, ρ=2
+- ³He: n_0=3, braid=`[-1,2,-1,2,-1,2]`, knot=L6a4, ρ=2
+
+[`probe_sdp_canonical_paper_formula.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_sdp_canonical_paper_formula.py)
+applies `B(H) = m_e · ρ · tr_M(T_w(H))` on these SDP-canonical
+words. **Result: paper formula fails on all three atoms by
+87-100%, regardless of Plancherel/Wenzl-Schur convention.**
+
+| atom | tr_M Pl | tr_M W | B Pl | B W | AME | err Pl | err W |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| D | 0.049 | 0.288 | 0.025 | 0.147 | 2.225 | -98.9% | -93.4% |
+| T | -0.001 | 0.013 | -0.001 | 0.013 | 8.482 | -100% | -99.8% |
+| ³He | 0.986 | 0.998 | 1.007 | 1.020 | 7.718 | -87.0% | -86.8% |
+
+This **definitively refutes** the paper's flagship single-term
+formula `B = m_e · ρ · tr_M(T_w(H))` (prop:atom-knot-mass-derivation).
+The thm:knot-mass-formula-unified multi-term decomposition is
+required, and these two paper formulas are **internally
+inconsistent**.
+
+The compute's `B = E_0 · |tr_free − tr_atom| + Term4` heuristic is
+NOT in the paper — it's an empirical free-minus-atom subtraction
+that gets within ~50-80% of AME on D but is not formally derived.
+
+#### Q4: Test Wenzl-Schur paper formula
+
+Tested in Q3 above. Wenzl-Schur is closer than Plancherel for D
+(off by 93% vs 99%) but still wrong by orders of magnitude.
+
+#### D mass table at H_6 (hand-built braid, 23 crossings)
+
+Per-λ contributions for both conventions:
+
+| λ | dim_q | χ_λ(T_w) | w_Planch | y_Wenzl | contrib_P | contrib_W |
+|---|---:|---:|---:|---:|---:|---:|
+| (6) | 1.000 | +1.560 | 0.0012 | 0.0592 | +0.0019 | +0.0923 |
+| (5,1) | 5.220 | +2.673 | 0.0325 | 0.0590 | +0.0174 | +0.1576 |
+| (4,2) | 9.669 | +1.584 | 0.1115 | 0.0403 | +0.0196 | +0.0638 |
+| (4,1,1) | 10.669 | -0.648 | 0.1357 | 0.0101 | -0.0088 | -0.0066 |
+| (3,3) | 5.449 | +3.208 | 0.0354 | 0.0141 | +0.0227 | +0.0453 |
+| (3,2,1) | 17.345 | -1.885 | 0.3586 | 0.0073 | -0.0422 | -0.0138 |
+| (3,1,1,1) | 10.669 | +0.079 | 0.1357 | -0.0007 | +0.0011 | -0.0001 |
+| (2,2,2) | 5.449 | -2.907 | 0.0354 | 0.0008 | -0.0206 | -0.0022 |
+| (2,2,1,1) | 9.669 | -0.678 | 0.1115 | -0.0003 | -0.0084 | +0.0002 |
+| (2,1⁴) | 5.220 | +2.011 | 0.0325 | 0.0001 | +0.0131 | +0.0002 |
+| (1⁶) | 1.000 | -0.677 | 0.0012 | -0.0000 | -0.0008 | +0.0000 |
+| **TOTAL** | | | | | **−0.0051** | **+0.3368** |
+
+Plancherel and Wenzl-Schur **disagree on sign** of tr_M(D atom) at
+H_6: Plancherel gives essentially zero with negative sign, Wenzl
+gives sizable positive. This is driven by the (6) and (5,1)
+symmetric blocks where Wenzl y_λ are 50× larger than Plancherel
+weights.
+
 ### Why nobody caught this earlier
 
 Both scripts CLAIM to compute "the Markov trace tr_M". The
