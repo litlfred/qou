@@ -599,6 +599,172 @@ truncations + denominator histograms.  No CI gate (research mode).
 
 ---
 
+## Section 4 — §S9 dual-certificate verification (Peyrl-Parrilo)
+
+Added after the Round 4 + Phase 8a/8b smoke validation
+([`tools/hecke-engine/src/bin/clarabel_round4_*_smoke.rs`](src/bin/),
+[`clarabel_phase8b_mpfr_smoke.rs`](src/bin/)) confirmed the upstream
+APIs work as advertised.
+
+**Goal.** Take a Clarabel solution at f64 / MpfrFloat precision,
+round each Wedderburn-block dual matrix to nearby rationals, and
+verify per-block PSD exactly via Sturm sequences on the
+characteristic polynomial.  Output: a `CertifiedSdpReport` carrying
+the rational dual + a per-block PSD verdict.  This is the realistic
+"exact SDP-derived result" path documented in
+[`docs/audits/exact-sdp-feasibility.md`](../../docs/audits/exact-sdp-feasibility.md):
+the IPM cost in exact rationals doesn't scale, but rationalising
+*after* the IPM is finite and the Wedderburn-block structure keeps
+each per-block verification at degree $d_\lambda$, not $n_0!$.
+
+**Architectural blocker uncovered by the smoke validation.**
+`clarabel-sdp` (which we need for the IPM solve) and
+`clarabel-bigrational` (which provides `tighten_to_rational` and
+`RationalReal`) are **mutually exclusive feature flags**.  The
+fork's CI surfaces this — `bigrational + sdp` is intentionally
+unsupported.  So §S9 cannot be a single-binary in-process
+verification; it must be split.
+
+**Implementation outline:**
+
+### S9.1 — Local Stern-Brocot rationalisation (~80 LOC)
+
+New `src/rational_round.rs` (under `clarabel-sdp` gate or default):
+
+```rust
+pub fn tighten_f64(x: f64, q_max: u64) -> (BigInt, BigInt);
+pub fn tighten_vec(xs: &[f64], q_max: u64) -> Vec<(BigInt, BigInt)>;
+```
+
+Reimplements the upstream `tighten_scalar` algorithm using
+`num-bigint` (already a hecke-engine dep).  ~30 LOC of
+continued-fraction expansion.  Cross-validate against
+`clarabel::algebra::tighten_scalar` from the smoke bin output.
+
+### S9.2 — `sdp_dual_certificate.rs` module (~150 LOC)
+
+```rust
+pub struct CertifiedSdpReport {
+    pub n: usize,
+    pub q_str: String,                    // exact-decimal q₀
+    pub block_dims: Vec<usize>,
+    /// Rounded dual matrices, one per Wedderburn block.
+    pub rational_dual_blocks: Vec<Vec<Vec<(BigInt, BigInt)>>>,
+    /// Per-block PSD verdict at rational precision.
+    pub block_psd: Vec<bool>,
+    /// Min eigenvalue per block as a rational lower bound.
+    pub block_min_eig_lb: Vec<(BigInt, BigInt)>,
+    pub all_blocks_psd: bool,
+}
+
+pub fn certify(
+    report: &ClarabelSdpReport,
+    q_max: u64,
+) -> CertifiedSdpReport;
+```
+
+The verifier walks each PSD block returned by
+`solution.dual_psd_block(idx)`, tightens entries via S9.1, then
+runs a Sturm chain on the rational characteristic polynomial.
+
+### S9.3 — Sturm-chain PSD verification (~80 LOC)
+
+For an $n \times n$ rational symmetric matrix $M$, compute the
+characteristic polynomial $\det(xI - M)$ as a polynomial in
+$\mathbb{Q}[x]$, then run Sturm's theorem to count real roots in
+$(-\infty, 0)$.  Zero negative roots ⇒ $M$ is PSD.
+
+Implementation: rational arithmetic via `num-rational::BigRational`,
+char-poly via Faddeev-LeVerrier (cubic in $n$, fine for
+$n = d_\lambda \leq$ a few hundred).  Reuses `wedderburn_psd.rs`
+infrastructure.
+
+For larger blocks ($d_\lambda > 50$), Sturm becomes expensive;
+fall back to a **certified eigenvalue-bracket** mode that proves
+$\lambda_{\min} \geq -\varepsilon$ via interval arithmetic
+(`num-rational` makes this exact).  This is "ball arithmetic light"
+and matches what most published exact-SDP papers actually deliver
+in practice.
+
+### S9.4 — CLI: `clarabel-certify` binary (~50 LOC)
+
+Reads a `joint-tower-sdp-{atom}.witness.json` produced by the f64
+SDP solver and emits a `joint-tower-sdp-{atom}.certified.witness.json`
+with the rational dual + PSD verdicts.  Required-features:
+`clarabel-sdp` (the witness reading needs the SDP-cone schema).
+
+### S9 effort (~280 LOC, 1.5–2 days)
+
+| Step | LOC | Time |
+|---|---|---|
+| S9.1 — local Stern-Brocot | ~80 | 4 hr |
+| S9.2 — certificate module | ~150 | 4-6 hr |
+| S9.3 — Sturm-chain PSD | ~80 | 4-6 hr |
+| S9.4 — CLI + witness wiring | ~50 | 2 hr |
+
+This unlocks the genuinely new work that was originally pencilled
+into §S8 — exact-rational results — but *via certificate
+verification*, not via exact-rational IPM.  Doesn't pay the
+factorial-extension cost; the IPM stays in f64 / MpfrFloat.
+
+---
+
+## Section 5 — §S4-S6 update after Phase 8b validation
+
+Phase 8b ships `T = MpfrFloat` end-to-end (validated:
+[`clarabel_phase8b_mpfr_smoke.rs`](src/bin/clarabel_phase8b_mpfr_smoke.rs)
+produces a 54-character obj_val string, proving MPFR is the active
+scalar through the IPM).  Implementation sketch refresh:
+
+### S4-MPFR.  `sdp_solver_clarabel_mpfr.rs` (~350 LOC)
+
+Direct port of `sdp_solver_clarabel.rs` with `T = MpfrFloat`
+substituted throughout.  Three concrete adjustments learned from
+the smoke test:
+
+1. **Solver tolerances must be tightened** to engage MPFR's
+   precision; defaults are ~1e-8 (f64-tuned).  Recommended:
+
+   ```rust
+   .tol_gap_abs(MpfrFloat::from_f64(1e-30))
+   .tol_gap_rel(MpfrFloat::from_f64(1e-30))
+   .tol_feas(MpfrFloat::from_f64(1e-30))
+   .reduced_tol_gap_abs(MpfrFloat::from_f64(1e-15))
+   .reduced_tol_gap_rel(MpfrFloat::from_f64(1e-15))
+   .reduced_tol_feas(MpfrFloat::from_f64(1e-15))
+   ```
+
+   Reduced-tol fallbacks matter — without them an
+   `InsufficientProgress` exit at the strict-tol level masks an
+   AlmostSolved success that's still 25 dps better than f64.
+
+2. **Vertex-optimum problems trigger central-path degeneracy** —
+   exit with `InsufficientProgress` after a few iterations
+   regardless of scalar precision.  H₆+ confinement SDPs aren't
+   degenerate this way (they have interior optima), but the H₃
+   smoke test from the existing `sdp_solver_clarabel::tests` will
+   need a non-degenerate variant under MpfrFloat.
+
+3. **`set_mpfr_default_precision(167)` at solver entry** — matches
+   the QOU R5_FULL_PLAN ≥ 50 dps target and aligns with
+   `seminormal_mpfr.rs`'s 167-bit working precision.
+
+### S5-MPFR.  `sdp_solve_canonical_t_w_mpfr.rs` + `sdp_recover_canonical_mpfr.rs` (~600 LOC)
+
+Same pattern as S4-MPFR.  Plus a key win discovered in the smoke:
+the `eval_laurent_at` issue from §1 of the audit is fully
+addressable now — `MpfrFloat::from_str` accepts a decimal string,
+so `LaurentQ::evaluate_mpfr` can return `MpfrFloat` directly with
+no rug→f64→MpfrFloat round-trip in between.
+
+### S6-MPFR.  Cargo wiring (already done in PR #459)
+
+`clarabel-mpfr` feature flag landed at
+[`tools/hecke-engine/Cargo.toml`](Cargo.toml).
+Implementation work just adds the new modules behind that flag.
+
+---
+
 ## Status retrospective
 
 ### Upstream Clarabel.rs#1 — `claude/bigrational-backend-BeGUU`
