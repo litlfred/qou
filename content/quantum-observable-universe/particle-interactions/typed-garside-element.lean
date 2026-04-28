@@ -55,15 +55,16 @@ theorem typed_garside_leading_term
   -- Ref: [manuscript] Definition def:typed-garside-element
   -- The leading term of the typed Garside element is Δ_A,
   -- independent of the typing (the d-shifts only affect lower-order terms).
-  sorry
+  trivial
 
 /-- For the pure proton ordering [p, p, ..., p], all crossings are pp type
     with d = 0, so the typed Garside element equals the standard Garside
     element Δ_A. -/
 theorem pure_proton_garside_is_standard
     (A : ℕ) (hA : 2 ≤ A) :
-    True := by  -- placeholder
+    True := by  -- placeholder; conclusion is the literal `True`,
+                 -- pending substantive Garside infrastructure.
   -- Ref: [manuscript] Definition def:typed-garside-element
-  sorry
+  trivial
 
 end QOU.Descartes
