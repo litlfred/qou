@@ -46,7 +46,17 @@ noncomputable def qPochhammer (q : ℝ) (m : ℕ) : ℝ :=
     `qPochhammerPoly N` has degree `N(N+1)/2` and is a non-unit in
     `ℤ[u]`, so divisibility encodes the Habiro-ideal property
     genuinely (unlike real divisibility, which is trivially solvable
-    whenever the divisor is non-zero). -/
+    whenever the divisor is non-zero).
+
+    The generic ring-valued analogue
+    `QOU.BraidKnot.qPochhammer (u : R) : ℕ → R` over an arbitrary
+    `[CommRing R]` lives in the sibling file
+    `habiro-expansion-atomic.lean`; this is the specialisation
+    `qPochhammer (Polynomial.X : Polynomial ℤ)`.  The two
+    definitions are duplicated only because each sibling `.lean`
+    file is read standalone (not yet part of a shared Lake
+    module); a future `QOU.BraidKnot.HabiroBasic` module would let
+    both files import a single source. -/
 noncomputable def qPochhammerPoly (m : ℕ) : Polynomial ℤ :=
   ∏ k ∈ Finset.range m, (1 - (Polynomial.X : Polynomial ℤ) ^ (k + 1))
 
@@ -56,7 +66,12 @@ noncomputable def qPochhammerPoly (m : ℕ) : Polynomial ℤ :=
     ring `Ẑ[q]` and admits a unique cyclotomic expansion
 
       tr_M(T_w, u) = Σ_{m ≥ 0} a_m(T_w) · (u; u)_m,
-      a_m(T_w) ∈ ℤ[u^±1].
+      a_m(T_w) ∈ ℤ[u].
+
+    (After Markov normalisation by `D(u)` — see field `trace`
+    below — the prefactor leaves the cyclotomic coefficients
+    `a_m` in the regular polynomial ring `ℤ[u]` rather than in
+    the Laurent ring `ℤ[u^±1]`.)
 
     This class records the trace as a polynomial `trace : ℤ[u]`,
     the cyclotomic coefficients `coeff : ℕ → ℤ[u]`, and the

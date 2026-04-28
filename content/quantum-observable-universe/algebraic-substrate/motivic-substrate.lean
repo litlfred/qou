@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Ring.Defs
+import Mathlib.Data.Nat.Prime.Basic
 import Mathlib.RingTheory.Localization.Basic
 
 /-!
@@ -123,6 +124,6 @@ class MotivicSubstrate
 
       Ref: [tate1967]. -/
   nonarchimedean_nontrivial :
-    ∃ p : ℕ, Nontrivial (Target (Place.finite p))
+    ∃ p : ℕ, Nat.Prime p ∧ Nontrivial (Target (Place.finite p))
 
 end QOU.AlgebraicSubstrate
