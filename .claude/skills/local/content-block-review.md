@@ -51,7 +51,7 @@ block, with severity (error / warning / info).
 
 | Check | Severity | Rule |
 |-------|----------|------|
-| `lean.decl` in `.ts` matches actual declaration in `.lean` | **error** | The manifest must name the real Lean declaration |
+| `lean.ref` URI in `.ts` matches actual declaration in `.lean` | **error** | The manifest must name the real Lean declaration (parse with `parseLeanRef()`) |
 | Declaration lives under `QOU.*` namespace | **warning** | All project declarations should be namespaced |
 | Naming convention followed (hyphens → underscores, correct case) | **warning** | See CLAUDE.md §2 naming table |
 | Block kind matches Lean construct (`definition` → `def`/`structure`/`class`, `theorem` → `theorem`/`lemma`) | **warning** | A `definition` block should not contain a `theorem` in Lean |

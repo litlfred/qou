@@ -1,3 +1,5 @@
+import QOU.Descartes.HeckeH3
+
 /-!
 # B₃ is the unique optimal braid word for confinement
 
@@ -18,8 +20,6 @@ Symbolic proofs over ℤ[t, t⁻¹] (where q = t²).
 
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import QOU.Descartes.HeckeH3
 
 namespace QOU.Interactions
 

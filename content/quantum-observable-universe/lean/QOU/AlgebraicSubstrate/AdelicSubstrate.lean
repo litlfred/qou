@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.AdelicSubstrate — adelic substrate interface
 
@@ -21,8 +23,6 @@ archimedean projection with the classical-limit functor.
   Zeta-Functions*. In *Algebraic Number Theory* (Cassels-Fröhlich,
   eds.), Academic Press, 1967.
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.AlgebraicSubstrate
 

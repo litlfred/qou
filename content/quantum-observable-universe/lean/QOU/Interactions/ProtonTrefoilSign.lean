@@ -1,3 +1,5 @@
+import QOU.Descartes.GroundRing
+
 /-!
 # Proton e⁻ coefficient is negative for 1 < q < q*
 
@@ -19,8 +21,6 @@ categorical origin of beta decay.
 - [prop:demand-stability]
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import QOU.Descartes.GroundRing
 
 namespace QOU.Interactions
 

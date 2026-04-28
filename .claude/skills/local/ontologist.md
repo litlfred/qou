@@ -214,12 +214,13 @@ and a `.md` file containing the narrative definition.
   `lean_name` and include cross-refs using `[term](#def:label)` format.
 - New glossary entries should record the content object `label` they
   originate from, ensuring bidirectional traceability.
-- The `lean.decl` in a definition's `.ts` manifest should match the
-  corresponding `Glossary.lean` declaration name.
+- The `lean.ref` URI in a definition's `.ts` manifest should match the
+  corresponding `Glossary.lean` declaration name (parse via
+  `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`).
 
 **Content object triples.** Each definition is a `.ts` + `.md` + `.lean`
 triple. The `.ts` manifest is authoritative for the `kind`, `label`, and
-`lean.decl`. When the Ontologist detects a new term in a `.md` file, it
+`lean.ref`. When the Ontologist detects a new term in a `.md` file, it
 should check whether a content object already exists before creating a
 glossary entry, to avoid duplication.
 

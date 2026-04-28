@@ -65,7 +65,7 @@ theorem i9_absorb_cons (support : List HeckeWord) (a : ℕ) (rest : HeckeWord)
   refine ⟨?_, ?_⟩
   · simp
   · simp only [List.dropLast_append_of_ne_nil _ (by simp : [g] ≠ []),
-               List.dropLast_single, List.append_nil]
+               List.dropLast_singleton, List.append_nil]
     exact h_prefix
 
 -- ════════════════════════════════════════════════════════════════
@@ -114,7 +114,7 @@ theorem standardBasis_not_absorbable (n : ℕ) (w : HeckeWord)
     Adjacent: I₈. Non-adjacent: I₉ (prefix [i] present). -/
 -- Ref: [leitner2026]
 theorem cross_term_absorbable (n : ℕ) (i k : ℕ)
-    (hi : i < n) (hk : k < n) (hne : i ≠ k) :
+    (hi : i < n) (hk : k < n) (_hne : i ≠ k) :
     IsAbsorbable (standardBasis n) [i, k] := by
   by_cases hadj : k = i + 1
   · -- Adjacent: I₈
@@ -207,7 +207,7 @@ theorem d_nonzero_preserves_prefix (S : List HeckeWord) (k : ℕ)
   · -- w = v ++ [k]: dropLast is v, which is in S
     left
     simp only [List.dropLast_append_of_ne_nil _ (by simp : [k] ≠ []),
-               List.dropLast_single, List.append_nil]
+               List.dropLast_singleton, List.append_nil]
     exact hv
 
 -- ════════════════════════════════════════════════════════════════

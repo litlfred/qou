@@ -1,3 +1,6 @@
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Category.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.ReebEpsilon — The Reeb infinitesimal `ε`
 
@@ -24,9 +27,6 @@ LaTeX label: `def:reeb-epsilon`.
 - [conway1976] Conway, *On Numbers and Games*, Academic Press.
 - [manuscript] Chapter 8 §5 (Classical Limit and Macroscopic Continuum).
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 

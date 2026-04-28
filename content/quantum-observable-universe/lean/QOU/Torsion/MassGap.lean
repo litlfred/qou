@@ -216,7 +216,7 @@ theorem yang_mills_gap_lower_bound (ymg : YangMillsMassGap) :
 -- Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
 -- Ref: [manuscript] Chapter 5, §1
 axiom yangMillsMassGap_construction :
-    ∀ (q : ℝ) (_ : 1 < q) (tm : CategoricalTransferMatrix),
+    ∀ (q : ℝ) (_ : 1 < q) (_tm : CategoricalTransferMatrix),
     Nonempty YangMillsMassGap
 
 /-! ## Confinement corollary -/

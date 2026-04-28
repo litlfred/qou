@@ -1,3 +1,5 @@
+import QOU.AppendixSurreals.Basic
+
 /-!
 # QOU.AppendixSurreals.StandardPart — Robinson's standard-part map
 
@@ -20,11 +22,10 @@ This module provides:
 LaTeX label: `def:standard-part-functor`
 -/
 
-import QOU.AppendixSurreals.Basic
-
 namespace QOU.AppendixSurreals
 
 open SurrealField
+open Classical
 
 universe u
 
@@ -60,7 +61,7 @@ theorem ofReal_isFinite (r : ℝ) : IsFinite (SurrealField.ofReal (K := K) r) :=
     have : |r| ≤ (Nat.ceil |r| : ℝ) := Nat.le_ceil _
     push_cast
     linarith
-  have hmono := SurrealField.ofReal_strictMono.monotone hbound
+  have hmono := (SurrealField.ofReal_strictMono (K := K)).monotone hbound
   -- hmono : ofReal |r| ≤ ofReal ((⌈|r|⌉₊ + 1 : ℕ) : ℝ)
   have hnat : SurrealField.ofReal ((Nat.ceil |r| + 1 : ℕ) : ℝ)
               = ((Nat.ceil |r| + 1 : ℕ) : K) := by
@@ -81,7 +82,7 @@ theorem standardPart_ofReal (r : ℝ) :
     exact zero_isInfinitesimal
   have hspec := standardPart_spec hfin
   have huniq := (isFinite_decomposition hfin).unique hspec hzero
-  exact huniq.symm
+  exact huniq
 
 /-- The standard part of zero is zero. -/
 @[simp]
@@ -102,8 +103,7 @@ theorem standardPart_of_infinitesimal {x : K} (hx : IsInfinitesimal x) :
   have h0 : IsInfinitesimal (x - SurrealField.ofReal (0 : ℝ)) := by
     simp [map_zero]; exact hx
   have hspec := standardPart_spec hfin
-  have huniq := (isFinite_decomposition hfin).unique
-  exact huniq hspec h0 |>.symm
+  exact (isFinite_decomposition hfin).unique hspec h0
 
 /-- Standard-part is additive on the finite subring. -/
 -- Ref: [robinson1966] Theorem 3.2.4 (i)
@@ -206,8 +206,8 @@ theorem standardPart_le_of_le {x y : K} (hx : IsFinite x) (hy : IsFinite y)
     exact hy.add (by
       obtain ⟨n, hn⟩ := hx
       exact ⟨n, by rwa [abs_neg]⟩)
-  -- y - x is finite and ≤ 0.
-  have hy_minus_x_le_zero : y - x ≤ 0 := by linarith
+  -- y - x is finite and ≥ 0 (since x ≤ y).
+  have hy_minus_x_nonneg : 0 ≤ y - x := by linarith
   -- (y - x) - ofReal(st y - st x) is infinitesimal.
   have hsub_eq := standardPart_add hy (by
     obtain ⟨n, hn⟩ := hx
@@ -248,8 +248,8 @@ theorem standardPart_le_of_le {x y : K} (hx : IsFinite x) (hy : IsFinite y)
   have hinf_bound := hspec (-d / 2) hhalf
   -- But (y - x) ≤ 0 and d < 0 so -ofReal d > 0, meaning
   -- (y - x) - ofReal d ≤ -ofReal d, and |(y - x) - ofReal d| ≥ -ofReal d.
-  have hofd_neg : SurrealField.ofReal d < 0 := by
-    have := SurrealField.ofReal_strictMono hd_neg
+  have hofd_neg : (SurrealField.ofReal d : K) < 0 := by
+    have := SurrealField.ofReal_strictMono (K := K) hd_neg
     rwa [map_zero] at this
   have hyx_minus_d : (y - x) - SurrealField.ofReal d ≥ -SurrealField.ofReal d := by
     linarith
@@ -258,10 +258,10 @@ theorem standardPart_le_of_le {x y : K} (hx : IsFinite x) (hy : IsFinite y)
     calc |(y - x) - SurrealField.ofReal d|
         ≥ (y - x) - SurrealField.ofReal d := le_abs_self _
       _ ≥ -SurrealField.ofReal d := hyx_minus_d
-  have hofhalf : SurrealField.ofReal (-d / 2) < -SurrealField.ofReal d := by
+  have hofhalf : (SurrealField.ofReal (-d / 2) : K) < -SurrealField.ofReal d := by
     -- -d/2 < -d (since -d > 0), so ofReal (-d/2) < ofReal (-d) = -ofReal d.
     have h1 : -d / 2 < -d := by linarith
-    have h2 := SurrealField.ofReal_strictMono h1
+    have h2 := SurrealField.ofReal_strictMono (K := K) h1
     rw [map_neg] at h2
     exact h2
   -- Contradiction: |(y-x)-ofReal d| < ofReal(-d/2) < -ofReal d ≤ |(y-x)-ofReal d|.

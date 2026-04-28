@@ -1,3 +1,10 @@
+import QOU.AlgebraicSubstrate.AdelicSubstrate
+import QOU.AlgebraicSubstrate.ReebEpsilon
+import QOU.AlgebraicSubstrate.QFromEpsilon
+import QOU.AlgebraicSubstrate.SurrealRateCalculus
+import QOU.AlgebraicSubstrate.SurrealSqueeze
+import QOU.AlgebraicSubstrate.PvsNPQou
+
 /-!
 # QOU.AlgebraicSubstrate — Chapter 8 aggregator
 
@@ -16,10 +23,3 @@ Aggregator module for the algebraic-substrate chapter:
 - **P vs NP conjecture** (`PvsNPQou.lean`) — the QOU-framework
   complexity-theoretic squeeze instance.
 -/
-
-import QOU.AlgebraicSubstrate.AdelicSubstrate
-import QOU.AlgebraicSubstrate.ReebEpsilon
-import QOU.AlgebraicSubstrate.QFromEpsilon
-import QOU.AlgebraicSubstrate.SurrealRateCalculus
-import QOU.AlgebraicSubstrate.SurrealSqueeze
-import QOU.AlgebraicSubstrate.PvsNPQou

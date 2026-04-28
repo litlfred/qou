@@ -69,7 +69,8 @@ that doesn't require a full `lake build` between attempts.
 
 - `lake build` should be run once before starting (to populate oleans)
 - paper-assistant MCP server configured (`.mcp.json`)
-- Mathlib4 and any project-specific libraries are in `lakefile.lean`
+- Mathlib4 and any project-specific libraries are in `lakefile.toml`
+  (per-paper) and aggregated in the root `/lakefile.toml`
 - The Lean files follow QOU naming conventions
 
 ## Workflow
@@ -232,15 +233,19 @@ placeholders in the codebase (e.g. `FrobeniusHopfData`, `QuantumObservableUniver
 
 ### 3. Pin external dependencies to commit hashes
 
-In `lakefile.lean`, never track `main` for external dependencies:
-```lean
--- Wrong: tracks a moving target, non-reproducible builds
-require «quantumInfo» from git
-  "https://github.com/Timeroot/Lean-QuantumInfo" @ "main"
+In `lakefile.toml`, never track `main` for external dependencies:
+```toml
+# Wrong: tracks a moving target, non-reproducible builds
+[[require]]
+name = "quantumInfo"
+git  = "https://github.com/Timeroot/Lean-QuantumInfo"
+rev  = "main"
 
--- Right: pinned to a specific commit
-require «quantumInfo» from git
-  "https://github.com/Timeroot/Lean-QuantumInfo" @ "abc1234def5678"
+# Right: pinned to a specific commit
+[[require]]
+name = "quantumInfo"
+git  = "https://github.com/Timeroot/Lean-QuantumInfo"
+rev  = "abc1234def5678"
 ```
 After adding a new dependency, run `lake update` and use the commit hash from
 the generated `lake-manifest.json`.
@@ -254,52 +259,22 @@ In `glossary.json`, follow the existing notation conventions:
 - Use `textstylesum` not `sum` for summation notation
 - Check 2–3 neighboring entries for the prevailing style before adding new ones
 
-## Current Sorry Inventory (as of 2026-03-20, post-triage)
+## Current Sorry Inventory
 
-**11 active `sorry` statements** across 3 files (down from 27).
-0 `admit`, 0 `axiom` declarations.
+Live state — **do not** maintain a static snapshot in this skill file
+(prior dated tables drifted within months and misled fresh agents).
+Pull the current inventory at the start of each triage pass:
 
-### Resolved (16 sorry eliminated)
+| Source | Command |
+|--------|---------|
+| All sorry sites with file/line/category | `lean_diagnostic_messages` per file (MCP), or `grep -rn 'sorry' content/<paper>/lean/` as fallback |
+| Per-block formalization status | Read `proof-objects.json` (CI artefact, derived from Lean diagnostics) |
+| Axiom dependencies for any theorem | `lean_verify` |
+| Bibliographic backing of each sorry | `grep -B2 'sorry' <file>.lean` — every sorry must carry a `-- Ref: [key]` line per CLAUDE.md §1 |
 
-| File | Count | How resolved |
-|------|-------|-------------|
-| `BringsSurface.lean` | 2 | Goal was `True`; replaced `sorry` with `trivial` |
-| `DescartesUniverse.lean` | 1 | Goal was `True`; replaced `sorry` with `trivial` |
-| `QuantumObservableUniverse.lean` | 2 | Structural: `leibniz` RHS made explicit field; `obs_well_defined` given proper type |
-| `FormalGroups.lean` (defaults) | 5 | Removed `:= by sorry` defaults from structure fields; fields now required |
-| `Torsion.lean` | 1 | Was already commented out — not active |
-
-### Remaining (11 sorry — all unresolvable without external input)
-
-| File | Count | Category | Why unresolvable |
-|------|-------|----------|-----------------|
-| `FormalGroups.lean` | 6 | External [fred2005] | Theorems from L. Fred's 2005 PhD thesis. Proofs require porting 200+ pages of formal-group theory into Lean 4. No shortcuts. |
-| `PAdicQuantumGroups.lean` | 3 | External [fred2005] | Same — Witt vector lift, Frobenius relation, unit-root equivalence all cite [fred2005]. |
-| `HadronicMass.lean` | 2 | `Real.rpow` blocked | `pair_skein_mass` uses `q ^ (1/2 : ℝ)` which `norm_num` cannot evaluate. Resolution requires ~80 lines of interval arithmetic bounding `Real.sqrt` between rational bounds. Numerically verified; not mathematically deep, just tedious. |
-
-### Why each remaining sorry cannot be resolved now
-
-**FormalGroups.lean (6 sorry):**
-- `skew_poisson_integrates` (L146) — Main Theorem of [fred2005]: existence of non-commutative formal group from skewed-Poisson data. Requires full integration construction.
-- `reduction_mod_p_commutative` (L163) — [fred2005, Main Theorem, item (1)]: reduction mod p recovers commutativity. Requires the explicit Gröbner–Shirshov deformation machinery.
-- `grobner_shirshov_basis_exists` (L198) — [fred2005, Proposition 3.8]: existence of the normal-form basis. Requires the composition lemma proof.
-- `strong_multiplicativity_holds` (L222) — [fred2005, Theorem 4.12]: Frobenius relation preserved under deformation. Core technical result of the thesis.
-- `witt_vector_lift_exists` (L254) — [fred2005, Main Theorem + §5]: existence of Witt vector lift. Combines all preceding results.
-- `unit_root_iff_integrable` (L295) — [fred2005, Corollary 5.3]: equivalence between unit-root F-crystal and integrability. Non-trivial direction (←) requires the full integration theorem.
-
-**PAdicQuantumGroups.lean (3 sorry):**
-- `padic_qou_lifts_from_finite_field` (L142) — [fred2005, Main Theorem] + Witt vector functor: existence of p-adic QOU from finite-field data.
-- `padic_frobenius_relation_preserved` (L157) — [fred2005, Theorem 4.12]: Frobenius/Verschiebung commutation in the lifted setting.
-- `unit_root_iff_skew_poisson_integrable` (L171) — [fred2005, Corollary 5.3]: surjectivity of Frobenius from integrability.
-
-**HadronicMass.lean (2 sorry):**
-- `proton_pair_skein_approx` (L390) — Needs `Real.sqrt 1.1097` bounded between `1053/1000` and `1054/1000` via `Real.sqrt_lt_sqrt`, then interval propagation through division. Difference ≈ 0.03 MeV.
-- `neutron_pair_skein_approx` (L400) — Same technique. Difference ≈ 0.05 MeV.
-
-### Trivial proofs (not sorry, but worth noting)
-
-6 single-tactic proofs (`by rfl`, `by simp`) in `BringsSurface.lean` and
-`Calculations.lean`. All are definitional equalities — legitimate, not placeholders.
+When triaging, classify each live sorry into the four categories from
+Phase 1 (type stub / proof stub / field stub / axiom placeholder) and
+apply the priority ordering from Phase 2.
 
 ## Feedback & Iteration Notes
 
@@ -359,9 +334,11 @@ Update them after each triage pass.
 ## Content Object Integration
 
 Each formalizable item lives as a **triple**: `block.ts` (typed manifest with
-`kind`, `label`, `status`, `lean.decl`), `block.md` (narrative), and
+`kind`, `label`, and `lean.ref` URI), `block.md` (narrative), and
 `block.lean` (formalization). The `.ts` manifest is authoritative — it
-determines whether a block requires Lean and tracks formalization status.
+determines whether a block requires Lean. Formalization status is **not**
+stored in `.ts`; it is derived at build time and written to
+`proof-objects.json`.
 
 **Kind-aware filtering.** Only triage blocks whose `kind` requires Lean:
 - `definition`: `.lean` required — always triage if sorry present.
@@ -391,6 +368,6 @@ imports in Phase 2.
 - [ ] Mathlib searched for similar lemmas on failed attempts
 - [ ] Failed proofs documented with similar-lemma suggestions
 - [ ] `lake build` passes (sorry warnings OK, errors not OK)
-- [ ] External deps pinned to commit hashes in `lakefile.lean`
+- [ ] External deps pinned to commit hashes in `lakefile.toml`
 - [ ] Resolved proofs committed with descriptive messages
 - [ ] Summary table generated

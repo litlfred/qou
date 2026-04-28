@@ -1,3 +1,7 @@
+import QOU.Descartes.HeckeH3
+import QOU.Interactions.BorromeanUnique
+import QOU.Interactions.HeckeEngine
+
 /-!
 # Proton and neutron NF witness verification
 
@@ -17,10 +21,6 @@ Since ½ is not in ℤ[t,t⁻¹], we work with 4× the nucleon matrix
 - [def:categorical-proton]
 - [def:categorical-neutron]
 -/
-
-import QOU.Descartes.HeckeH3
-import QOU.Interactions.BorromeanUnique
-import QOU.Interactions.HeckeEngine
 
 namespace QOU.Interactions
 

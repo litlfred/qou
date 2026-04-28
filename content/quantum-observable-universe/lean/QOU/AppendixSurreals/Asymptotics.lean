@@ -1,3 +1,7 @@
+import Mathlib.Algebra.Order.Monoid.WithTop
+import QOU.AppendixSurreals.Basic
+import QOU.AppendixSurreals.StandardPart
+
 /-!
 # QOU.AppendixSurreals.Asymptotics — ω-adic Big-O valuation
 
@@ -32,10 +36,6 @@ LaTeX label: `rem:conway-normal-form`.
   Bull. Symbolic Logic 18 (2012) 1–45.
   https://doi.org/10.2178/bsl/1327328438
 -/
-
-import Mathlib.Algebra.Order.Monoid.WithTop
-import QOU.AppendixSurreals.Basic
-import QOU.AppendixSurreals.StandardPart
 
 namespace QOU.AppendixSurreals
 

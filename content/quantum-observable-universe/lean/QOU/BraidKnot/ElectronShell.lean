@@ -1,3 +1,5 @@
+import QOU.BraidKnot.ConfinedParticle
+
 /-!
 # Electron Shell
 
@@ -13,8 +15,6 @@ multi-operator regime.
 - [def:electron-shell]
 - [prop:confinement-sdp]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
 
 namespace QOU.BraidKnot
 

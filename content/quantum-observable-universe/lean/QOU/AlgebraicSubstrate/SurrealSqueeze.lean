@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Order.Field.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.SurrealSqueeze — the squeeze lemma
 
@@ -21,8 +23,6 @@ LaTeX label: `lem:surreal-squeeze`.
   Numbers*. DOI:10.1017/CBO9780511629143.
 -/
 
-import Mathlib.Algebra.Order.Field.Basic
-
 namespace QOU.AlgebraicSubstrate
 
 universe u
@@ -41,7 +41,7 @@ universe u
     statement is registered via `sorry` with bibliographic citation
     per CLAUDE.md §1. -/
 theorem surreal_squeeze
-    {F : Type u} [LinearOrderedField F]
+    {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
     (ε δ : F) (hε : 0 < ε) (hδ : 0 < δ) (h_inf : ε ≤ δ) :
     δ^2 * ε⁻¹ > ε^3 := by
   -- Multiplying by ε > 0 reduces to δ² > ε⁴.

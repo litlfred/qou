@@ -162,8 +162,9 @@ stays consistent.
 
 **Post-simplification validation.** Run content object validation
 (`content_validate`) after changes to verify:
-- The `.ts` manifest's `lean.decl` still matches the (possibly renamed)
-  Lean declaration.
+- The `.ts` manifest's `lean.ref` (URI form `pkg:Decl`, parsed via
+  `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`) still
+  matches the (possibly renamed) Lean declaration.
 - The `uses[]` dependencies are still correct — if a shared lemma was
   extracted or a dependency removed, update `uses[]` accordingly.
 

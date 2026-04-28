@@ -1,3 +1,7 @@
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.HeckeH3
+import QOU.Interactions.BorromeanUnique
+
 /-!
 # Nuclear operator regimes: three binding regimes at magic numbers
 
@@ -13,10 +17,6 @@ distinct regimes. L₊ ≠ L₋ is proved symbolically.
 - [prop:nuclear-operator-regimes]
 - [prop:demand-stability]
 -/
-
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.HeckeH3
-import QOU.Interactions.BorromeanUnique
 
 namespace QOU.Interactions
 

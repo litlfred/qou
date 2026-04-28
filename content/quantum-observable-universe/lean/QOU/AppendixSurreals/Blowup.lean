@@ -1,3 +1,5 @@
+import QOU.AppendixSurreals.Basic
+
 /-!
 # QOU.AppendixSurreals.Blowup — Named infinite/infinitesimal surreals
 
@@ -20,8 +22,6 @@ endpoints used by the appendix's blow-up calculus.
 LaTeX label: `def:surreal-blowup-calculus`
 -/
 
-import QOU.AppendixSurreals.Basic
-
 namespace QOU.AppendixSurreals
 
 universe u
@@ -42,10 +42,8 @@ theorem omegaSurreal_gt_natCast (n : ℕ) :
 
 /-- `ω` is positive. -/
 theorem omegaSurreal_pos : (0 : K) < omegaSurreal K := by
-  have : (0 : K) < (omegaSurreal K) :=
-    lt_of_le_of_lt (le_refl 0)
-      (omegaSurreal_gt_natCast K 0 |>.trans_eq (by simp))
-  exact this
+  have h := omegaSurreal_gt_natCast K 0
+  simpa using h
 
 /-- `ω` is non-zero. -/
 theorem omegaSurreal_ne_zero : omegaSurreal K ≠ 0 :=
@@ -94,8 +92,8 @@ theorem epsilonSurreal_isInfinitesimal :
   have hn_pos_K : (0 : K) < (n : K) := by exact_mod_cast hn_pos_nat
   have hω_pos : (0 : K) < omegaSurreal K := omegaSurreal_pos K
   -- ε = ω⁻¹; want ε < (n : K)⁻¹.
-  have hinv_lt : (omegaSurreal K)⁻¹ < ((n : K)⁻¹) := by
-    apply inv_lt_inv_of_lt hn_pos_K hω_gt_n
+  have hinv_lt : (omegaSurreal K)⁻¹ < ((n : K)⁻¹) :=
+    (inv_lt_inv₀ hω_pos hn_pos_K).mpr hω_gt_n
   -- (n : K)⁻¹ = ofReal (1/n : ℝ).
   have hnK_eq : (n : K) = SurrealField.ofReal ((n : ℝ)) := by
     rw [← map_natCast SurrealField.ofReal n]
@@ -104,13 +102,17 @@ theorem epsilonSurreal_isInfinitesimal :
     congr 1
     rw [one_div]
   -- Final chain: ε = ω⁻¹ < (n : K)⁻¹ = ofReal (1/n) < ofReal r.
-  have hε_eq : epsilonSurreal K = (omegaSurreal K)⁻¹ := rfl
-  rw [hε_eq, hninv_eq] at hinv_lt
+  rw [hninv_eq] at hinv_lt
   have h1n_lt_r : (1 / n : ℝ) < r := by
-    rw [div_lt_iff hn_pos_real]
-    rw [lt_div_iff hr] at hn_lt
+    rw [div_lt_iff₀ hn_pos_real]
+    have := hn_lt
+    rw [div_lt_iff₀ hr] at this
     linarith
-  have hofmono := SurrealField.ofReal_strictMono h1n_lt_r
-  linarith [hinv_lt, hofmono]
+  have hofmono := SurrealField.ofReal_strictMono (K := K) h1n_lt_r
+  -- hinv_lt : (omegaSurreal K)⁻¹ < SurrealField.ofReal (1/n : ℝ)
+  -- hofmono : SurrealField.ofReal (1/n : ℝ) < SurrealField.ofReal r
+  -- Goal: (epsilonSurreal K) < SurrealField.ofReal r
+  show (omegaSurreal K)⁻¹ < SurrealField.ofReal r
+  exact hinv_lt.trans hofmono
 
 end QOU.AppendixSurreals

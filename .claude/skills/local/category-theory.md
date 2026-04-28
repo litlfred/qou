@@ -377,17 +377,18 @@ Category-theory blocks are content object triples (`.ts` + `.md` +
 requirements:
 
 - `definition` (e.g., monoidal structure, Frobenius data): `.lean`
-  **required**, `lean.decl` must name the `structure` or `def` in Lean,
+  **required**, `lean.ref` URI must name the `structure` or `def` in Lean,
   label prefix `def:`.
 - `theorem` / `lemma` / `proposition` (e.g., naturality, diagram
-  commutativity): `.lean` expected, `lean.decl` must name the `theorem`,
+  commutativity): `.lean` expected, `lean.ref` URI must name the `theorem`,
   label prefix `thm:` / `lem:` / `prop:`.
 - `example` / `remark`: `.lean` optional.
 
-**Lean declaration alignment.** The `lean.decl` in the `.ts` manifest must
-match the actual declaration name in the `.lean` sibling. For categorical
-structures, this is typically `QOU.<PascalCaseName>`. Verify with
-`lean_hover_info` when reviewing.
+**Lean declaration alignment.** The `lean.ref` URI (form `"<pkg>:<Decl>"`,
+parsed via `parseLeanRef()`) in the `.ts` manifest must match the actual
+declaration name in the `.lean` sibling. For categorical structures, this
+is typically `"qou:QOU.<PascalCaseName>"`. Verify with `lean_hover_info`
+when reviewing.
 
 **Dependency graph.** Use `uses[]` in `.ts` manifests to track which
 categorical definitions a theorem depends on. This mirrors the Lean import

@@ -1,6 +1,12 @@
 ---
 name: lean-witness-audit
 roles: [collaborator, owner]
+description: >
+  Audit Python computation scripts that produce witness statements for Lean
+  formalization. Verify witnesses are complete, self-documenting, use paper
+  notation, link to a content block, and emit Lean-compatible declarations.
+  Detects staleness via script content hash and git commit SHA.
+allowed-tools: Read Edit Bash Grep Glob
 ---
 
 # Lean Witness Audit Skill

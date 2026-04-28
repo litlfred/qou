@@ -84,9 +84,19 @@ Default dispatch fan-out:
 
 | Target scope | Agents launched |
 |-------------|-----------------|
-| Single proof block | `proof-gap-audit`, `lean-proof-review` |
-| Chapter | above + `lean-completeness-audit`, `proof-simplifier`, `remark-audit` |
-| Paper / branch-diff | above + `proof-triage`, `content-block-review` |
+| Single proof block | `proof-gap-audit`, `lean-proof-review`, `proof-narrative-lean-equivalence` |
+| Chapter | above + `lean-completeness-audit`, `proof-simplifier`, `proof-conciseness`, `remark-audit` |
+| Paper / branch-diff | above + `proof-triage`, `proof-exposition-review`, `lean-witness-audit`, `content-block-review` |
+
+Notes:
+- `proof-narrative-lean-equivalence` runs at every tier — it is the
+  only skill that catches Class A "stub weakening" (`theorem foo : True
+  := trivial` while the narrative claims something substantial).
+- `proof-conciseness` operates on `.md` proof bodies; chapter scope is
+  the natural dispatch point for paper-wide tone consistency.
+- `proof-exposition-review` and `lean-witness-audit` are paper-scope
+  retrospective audits; they are cheap to run on a branch diff because
+  they self-scope to changed blocks.
 
 Ask each agent to produce its report in the standard format with
 severity levels and concrete remediation suggestions.

@@ -179,7 +179,7 @@ theorem small_data_decay (eb : EnstrophyBound)
     for all t ≥ 0, providing an explicit upper bound on enstrophy
     that never reaches infinity in finite time. -/
 theorem enstrophy_gronwall_nonneg (eb : EnstrophyBound)
-    (Ω₀ : ℝ) (hΩ₀ : 0 ≤ Ω₀) (t : ℝ) (ht : 0 ≤ t) :
+    (Ω₀ : ℝ) (hΩ₀ : 0 ≤ Ω₀) (t : ℝ) (_ht : 0 ≤ t) :
     0 ≤ Ω₀ * Real.exp (eb.Λq * t) :=
   mul_nonneg hΩ₀ (le_of_lt (Real.exp_pos _))
 
@@ -247,7 +247,7 @@ noncomputable def AntiParallelDynamics.separation_sq
 
 /-- d(t)² > 0 for t < T*. -/
 theorem separation_pos (dyn : AntiParallelDynamics) (t : ℝ)
-    (ht : t < dyn.blowupTime) (ht0 : 0 ≤ t) :
+    (ht : t < dyn.blowupTime) (_ht0 : 0 ≤ t) :
     dyn.separation_sq t > 0 := by
   -- separation_sq t = d₀² - Γ*t/π, blowupTime = π*d₀²/Γ
   -- t < blowupTime means d₀² - Γ*t/π > 0
@@ -575,7 +575,7 @@ structure ObservabilityData (C : Type*) where
 -- Ref: [manuscript] Ch 5 §8 Observability is q-independent
 theorem observability_q_independent (C : Type*)
     (obs : ObservabilityData C) (q₁ q₂ : ℝ)
-    (hq₁ : q₁ > 0) (hq₂ : q₂ > 0) :
+    (_hq₁ : q₁ > 0) (_hq₂ : q₂ > 0) :
     obs.hom_rank = 0 :=
   obs.observable  -- Same value for any q — it doesn't appear in the type.
 

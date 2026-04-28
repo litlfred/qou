@@ -126,7 +126,8 @@ cd content/<paper>
 grep -r '"lean"' --include='*.ts' -l | sort
 ```
 
-Check that each `lean.decl` in a `.ts` manifest has a corresponding
+Check that each `lean.ref` URI in a `.ts` manifest (form `"<pkg>:<Decl>"`,
+parse with `parseLeanRef()`) has a corresponding
 declaration in the `.lean` files.
 
 ### 4. Cross-Paper Import Audit

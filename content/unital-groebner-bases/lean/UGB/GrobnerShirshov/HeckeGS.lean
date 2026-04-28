@@ -3,6 +3,8 @@ import UGB.GrobnerShirshov.AlgOps
 import UGB.GrobnerShirshov.CompositionLemma
 import Mathlib.Data.Real.Basic
 import Mathlib.Logic.Function.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 /-!
 # Gröbner–Shirshov Basis for the Hecke Algebra
@@ -133,18 +135,20 @@ noncomputable def heckeRewritingSystem (n : ℕ) (hp : HeckeParams) :
     -- Hecke relations: σᵢ² → (q-q⁻¹)σᵢ + 1 for each i
     (List.finRange n).map (fun i => heckeRelation i hp) ++
     -- Yang–Baxter: σᵢσᵢ₊₁σᵢ → σᵢ₊₁σᵢσᵢ₊₁ for adjacent pairs
-    ((List.finRange n).bind (fun i =>
+    ((List.finRange n).flatMap (fun i =>
       (List.finRange n).filterMap (fun j =>
         if j.val = i.val + 1 then some (yangBaxterRelation i j) else none))) ++
     -- Far-commutativity: σᵢσⱼ → σⱼσᵢ for |i-j| ≥ 2, i > j
-    ((List.finRange n).bind (fun i =>
+    ((List.finRange n).flatMap (fun i =>
       (List.finRange n).filterMap (fun j =>
         if i.val > j.val + 1 then some (farCommRelation i j) else none))) ++
     -- Sentinel rule for n = 0 (ensures nonempty)
     [⟨AlgElement.ofTerms [([], hp.q)],
       AlgElement.ofTerms_support_nonempty (by simp)⟩]
   nonempty := by
-    simp [List.append_ne_nil_of_ne_nil_right]
+    -- The rules list ends with a sentinel singleton, so it is never empty.
+    intro h
+    exact absurd (List.append_eq_nil_iff.mp h).2 (List.cons_ne_nil _ _)
 
 /-- **Theorem** (Bokut & Shiao 2001, Theorem 3.5):
     The Hecke relations form a GS basis for `H_n(q)`. -/
@@ -177,12 +181,16 @@ noncomputable def embedNegativeGen {n : ℕ} (i : Fin n) (hp : HeckeParams) :
 
 /-- Embed a signed braid generator into `AlgElement`.
     Positive index → singleton monomial.
-    Negative index → Hecke inverse. -/
-noncomputable def embedGenerator {n : ℕ} (hp : HeckeParams) (g : ℤ) :
+    Negative index → Hecke inverse.
+
+    Requires `[NeZero n]` so that `_ % n < n` is well-defined. -/
+noncomputable def embedGenerator {n : ℕ} [NeZero n]
+    (hp : HeckeParams) (g : ℤ) :
     AlgElement (HeckeGen n) ℝ :=
+  have hn : 0 < n := Nat.pos_of_ne_zero (NeZero.ne n)
   if g ≥ 0
-  then embedPositiveGen ⟨g.toNat % n, by omega⟩
-  else embedNegativeGen ⟨g.natAbs % n, by omega⟩
+  then embedPositiveGen ⟨g.toNat % n, Nat.mod_lt _ hn⟩
+  else embedNegativeGen ⟨g.natAbs % n, Nat.mod_lt _ hn⟩ hp
 
 /-- Embed a braid word (list of signed generators) into `AlgElement`
     by left-multiplying each generator's embedding successively.
@@ -199,15 +207,16 @@ noncomputable def embedGenerator {n : ℕ} (hp : HeckeParams) (g : ℤ) :
     For positive generators (which are singletons `[σᵢ]`), the
     multiplication is simply `leftMulGen σᵢ`.  For negative generators
     (which are 2-term sums), we distribute the multiplication. -/
-noncomputable def braidToAlg {n : ℕ} (hp : HeckeParams)
+noncomputable def braidToAlg {n : ℕ} [NeZero n] (hp : HeckeParams)
     (generators : List ℤ) : AlgElement (HeckeGen n) ℝ :=
+  have hn : 0 < n := Nat.pos_of_ne_zero (NeZero.ne n)
   generators.foldr
     (fun g acc =>
       if g ≥ 0
-      then AlgElement.leftMulGen ⟨g.toNat % n, by omega⟩ acc
+      then AlgElement.leftMulGen ⟨g.toNat % n, Nat.mod_lt _ hn⟩ acc
       else
         -- σᵢ⁻¹ · acc = (q⁻¹ - q) · σᵢ · acc + q⁻¹ · acc
-        let i : Fin n := ⟨g.natAbs % n, by omega⟩
+        let i : Fin n := ⟨g.natAbs % n, Nat.mod_lt _ hn⟩
         AlgElement.add
           (AlgElement.smul (hp.q⁻¹ - hp.q) (AlgElement.leftMulGen ⟨i⟩ acc))
           (AlgElement.smul hp.q⁻¹ acc))
