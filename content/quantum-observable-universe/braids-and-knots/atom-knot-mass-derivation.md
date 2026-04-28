@@ -92,7 +92,7 @@ content captured by the GB-filtration + jet-order certificate
 \\
 T_w \in H_{n_0}(q_0) \text{ (canonical, GB-NF)} \arrow[d, "\text{Wedderburn}"]
 \\
-H_{n_0}(q) \cong \bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q)) \arrow[d, "y_\lambda \text{ (Wenzl)}, \chi_\lambda \text{ (q-MN)}"]
+H_{n_0}(q) \cong \bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q)) \arrow[d, "{y_\lambda \text{ (Wenzl)}, \chi_\lambda \text{ (q-MN)}}"]
 \\
 \mathrm{tr}_M(T_w) \;=\; \sum_\lambda y_\lambda(q) \chi_\lambda(T_w) \;\in\; \mathbb{Q}(q) \arrow[d, "\rho \cdot (-)"]
 \\
