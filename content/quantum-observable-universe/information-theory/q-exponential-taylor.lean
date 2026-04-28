@@ -67,9 +67,14 @@ theorem qExpSeries_classical_limit (x : ℝ) :
   induction n with
   | zero => simp [jacksonFactorial]
   | succ n ih =>
-    simp [jacksonFactorial, jacksonInt, ih]
-    ring_nf
-    -- [n+1]_1 = n+1
-    sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 — q-exponential Taylor convergence (Appendix)
+    -- jacksonFactorial 1 (n+1) = jacksonInt 1 (n+1) * jacksonFactorial 1 n
+    -- jacksonInt 1 (n+1) = (n+1 : ℝ) since the if-condition is true
+    -- jacksonFactorial 1 n = (n.factorial : ℝ) by IH
+    -- Combined: (n+1) * n! = (n+1)!
+    show jacksonInt 1 (n + 1) * jacksonFactorial 1 n
+        = (((n + 1).factorial : ℕ) : ℝ)
+    rw [jacksonInt, if_pos rfl, ih, Nat.factorial_succ]
+    push_cast
+    ring
 
 end QOU
