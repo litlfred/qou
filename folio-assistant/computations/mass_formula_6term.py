@@ -58,10 +58,15 @@ def _load_sigma_3A_table():
         return {}
     try:
         d = json.loads(path.read_text())
-        return {1: float(d["sigma_inv_dim_q_at_q0"]["n=3"]),
-                2: float(d["sigma_inv_dim_q_at_q0"]["n=6"]),
-                3: float(d["sigma_inv_dim_q_at_q0"]["n=9"]),
-                4: float(d["sigma_inv_dim_q_at_q0"]["n=12"])}
+        sigma = d["sigma_inv_dim_q_at_q0"]
+        out = {}
+        # Map A → n=3A entry (covers all A whose key is present in witness).
+        for key, val in sigma.items():
+            if key.startswith("n="):
+                n = int(key.split("=")[1])
+                if n % 3 == 0:
+                    out[n // 3] = float(val)
+        return out
     except Exception:
         return {}
 
