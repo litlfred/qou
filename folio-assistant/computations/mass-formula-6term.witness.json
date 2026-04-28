@@ -6,7 +6,7 @@
     "thm:frobenius-codim-universal",
     "prop:figure-eight-bw-coefficients"
   ],
-  "computedAt": "2026-04-24T22:07:54.246305+00:00",
+  "timestamp": "2026-04-28T22:16:26.381581+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -28,12 +28,12 @@
       "term1_descended_free": 0.32297840939398015,
       "term1_descended_atom": 0.00512654141305666,
       "term23_tower_free": {
-        "single": 0.0,
-        "pair": 0.0
+        "single": 1608276.6695269095,
+        "pair": 93889.20872074971
       },
       "term23_tower_atom": {
-        "single": 0.0,
-        "pair": 0.0
+        "single": 1608289.7568490328,
+        "pair": 88158.76990491539
       },
       "term4_frobenius_pervortex": 1.2761128463443179,
       "term4_frobenius_per_A": 2.5522256926886357,
@@ -56,24 +56,24 @@
       "term1_descended_free": 0.16588538581899162,
       "term1_descended_atom": 0.0003097540266663153,
       "term23_tower_free": {
-        "single": 0.0,
-        "pair": 0.0
+        "single": 2119574.9428781434,
+        "pair": 106164.0041487728
       },
       "term23_tower_atom": {
-        "single": 0.0,
-        "pair": 0.0
+        "single": 2119592.5580956456,
+        "pair": 94298.15264266176
       },
       "term4_frobenius_pervortex": 1.2761128463443179,
       "term4_frobenius_per_A": 3.828338539032954,
-      "term5_bw_chirality_binding": 8.524638174781057,
+      "term5_bw_chirality_binding": 8.524638174781058,
       "B_pred_term1": 0.5184494285649868,
       "B_pred_term1_plus_term4": 1.7945622749093046,
-      "B_pred_term5_bw_chirality": 8.524638174781057,
+      "B_pred_term5_bw_chirality": 8.524638174781058,
       "B_AME_MeV": 8.4818,
       "err_pct": {
         "term1_only": -93.88750703193914,
         "term1_plus_term4": -78.84220006473502,
-        "term5_only": 0.5050599493156747
+        "term5_only": 0.5050599493156956
       }
     },
     "3He": {
@@ -84,27 +84,25 @@
       "term1_descended_free": 0.25743681736164964,
       "term1_descended_atom": 0.0003768389794272582,
       "term23_tower_free": {
-        "single": 0.0,
-        "pair": 0.0
+        "single": 2705255.065702586,
+        "pair": 257921.5464515902
       },
       "term23_tower_atom": {
-        "single": 0.0,
-        "pair": 0.0
+        "single": 2705308.6859446666,
+        "pair": 170193.57014710706
       },
       "term4_frobenius_pervortex": 1.2761128463443179,
       "term4_frobenius_per_A": 3.828338539032954,
-      "term5_bw_chirality_binding": 7.784142306732049,
+      "term5_bw_chirality_binding": 7.78414230673205,
       "B_pred_term1": 0.8049046677735125,
       "B_pred_term1_plus_term4": 2.08101751411783,
-      "B_pred_term5_bw_chirality": 7.784142306732049,
+      "B_pred_term5_bw_chirality": 7.78414230673205,
       "B_AME_MeV": 7.71806,
       "err_pct": {
         "term1_only": -89.57115301288779,
         "term1_plus_term4": -73.03703891757993,
-        "term5_only": 0.8562035891409032
+        "term5_only": 0.8562035891409147
       }
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

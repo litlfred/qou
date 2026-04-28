@@ -1,0 +1,35 @@
+{
+  "computation": "probe-canonical-multi-term-D",
+  "description": "Tests literal multi-term formula on D with canonical tr_M from symbolic GB-NF chain (NOT the parallel branch's wrong +0.288 number). NO census data.",
+  "tr_M_D_atom_q0_canonical": "0.38828647154771299936605791605",
+  "AME_B_D_MeV": 2.22456612,
+  "rho_D": 1,
+  "T4_pervortex_MeV": "1.2761128463443179867235568943300722795286695834518",
+  "T2_MeV": "821834.37704561106931556",
+  "T3_MeV": "45049.0388547033641288405",
+  "T5_MeV": "-5.6314164094804955",
+  "T6_MeV": "0.0",
+  "variants": {
+    "S1: m_e \u00b7 \u03c1 \u00b7 |tr_M|": {
+      "B_pred_MeV": 0.19841397926008622,
+      "err_pct": -91.08077851783132
+    },
+    "S2: + T4 Frobenius (m_e \u00b7 (2 + 1/[2]_q))": {
+      "B_pred_MeV": 1.4745268256044042,
+      "err_pct": -33.7162059447168
+    },
+    "S3: + T2 + T3 brane": {
+      "B_pred_MeV": 866884.89042714,
+      "err_pct": 38968617.65839624
+    },
+    "S4: + T5 chirality": {
+      "B_pred_MeV": 866879.2590107305,
+      "err_pct": 38968364.511665344
+    },
+    "S5: + T6 Habiro (placeholder)": {
+      "B_pred_MeV": 866879.2590107305,
+      "err_pct": 38968364.511665344
+    }
+  },
+  "best_variant": "S2: + T4 Frobenius (m_e \u00b7 (2 + 1/[2]_q))"
+}

@@ -37,13 +37,16 @@ class MotivicGaloisCharacter
     (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
     (motiveA : Mhat) where
   /-- Local Frobenius eigenvalue at a finite prime `p`,
-      represented as an element of the dimension-completion. -/
-  frobenius_at : ℕ → Mhat
+      represented as an element of the dimension-completion. The
+      domain is `Nat.Primes` (Mathlib subtype `{p // p.Prime}`)
+      rather than `ℕ` so that non-prime indices are ruled out at
+      the type level. -/
+  frobenius_at : Nat.Primes → Mhat
   /-- The character is non-trivial: at almost every prime, the
       Frobenius eigenvalue is not a unit (which would make the
       character trivial there).  This encapsulates the perpetual
       obstruction phenomenon. -/
   almost_everywhere_nontrivial :
-    ∃ N : ℕ, ∀ p : ℕ, p ≥ N → Nat.Prime p → ¬IsUnit (frobenius_at p)
+    ∃ N : ℕ, ∀ p : Nat.Primes, (p : ℕ) ≥ N → ¬IsUnit (frobenius_at p)
 
 end QOU.LiftingDescent

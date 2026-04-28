@@ -131,10 +131,15 @@ class HabiroCompletion where
     Pochhammer factor `|(q; q)_N|` is monotonically decreasing in
     `N`, since each new factor `(1 - q^{N+1})` lies in `(0, 1)`.
 
-    This controls the Habiro tail: at substrate parameter `q < 1`
-    in the regular regime, truncating the cyclotomic expansion at
-    order `N` produces a residual whose magnitude is bounded by
-    `|(q;q)_N|`, decreasing as `N → ∞`.
+    Scope: this lemma is stated for `q ∈ (0, 1)`. The QOU substrate
+    sits at `q₀ ≈ 1.110 > 1`, so this bound does **not** apply
+    directly at the substrate value: for `q > 1` the factor
+    `|1 - q^{N+1}|` grows with `N` and `|(q;q)_N|` is monotone
+    *increasing*. Truncation control at the substrate uses the
+    `q ↔ q⁻¹` duality of the Hecke algebra (so that `q₀⁻¹ ≈ 0.901`
+    falls in the `(0, 1)` regime where this lemma applies); the
+    duality bridge itself is left to `prop:full-pole-structure-mass-trace`
+    in the narrative.
 
     Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127. -/
 theorem habiro_truncation_bound
