@@ -64,12 +64,17 @@ theorem ConfinementPhaseStratification_mu_constant
 
 /-- **Phase stratification (headline).** The umbrella statement
     collecting openness (claim 1), stratification of the complement
-    (claim 2), and local constancy on components (claims 3–4). -/
+    (claim 2), and local constancy on components (claims 3–4).
+
+    This particular signature only records claim (1); it is therefore
+    a direct delegate to `ConfinementPhaseStratification_open`. The
+    fuller statement (with stratification + local constancy) is
+    captured by the companion theorems above. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem ConfinementPhaseStratification
     (P : ConfinedParticleTy) :
-    IsOpen (confinementLocus P) := by
-  sorry
+    IsOpen (confinementLocus P) :=
+  ConfinementPhaseStratification_open P
 
 end QOU.BraidKnot
