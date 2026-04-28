@@ -138,6 +138,7 @@ pub struct JointTowerSdpCertificate {
 #[derive(Serialize, Clone, Debug)]
 pub struct JointTowerSdpWitness {
     pub computation: String,
+    #[serde(rename = "computedAt")]
     pub computed_at: String,
     pub description: String,
     pub design_spec: String,

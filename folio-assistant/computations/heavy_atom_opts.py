@@ -43,7 +43,7 @@ MAGIC = {2, 8, 20, 28, 50, 82, 126}
 def load_cache():
     if CACHE_FILE.exists():
         return json.loads(CACHE_FILE.read_text())
-    return {"created": datetime.now(timezone.utc).isoformat(),
+    return {"computedAt": datetime.now(timezone.utc).isoformat(),
             "parameters": {"q": q0},
             "opt2_nucleon_chars": {},
             "opt3_skew_syt": {},
@@ -52,7 +52,7 @@ def load_cache():
 
 
 def save_cache(cache):
-    cache["last_updated"] = datetime.now(timezone.utc).isoformat()
+    cache["computedAt"] = datetime.now(timezone.utc).isoformat()
     CACHE_FILE.write_text(json.dumps(cache, indent=2, default=str))
 
 
