@@ -134,6 +134,217 @@ def y_lambda_wenzl_bridge_symbolic(partition):
     return sp.simplify(sp.cancel(s_self / norm))
 
 
+# ════════════════════════════════════════════════════════════════════
+#  Numeric Hecke characters (mpmath) — used by the validation suite
+# ════════════════════════════════════════════════════════════════════
+
+def _young_diagram_cells(shape):
+    """List of (row, col) cells of a Young diagram in row-major order."""
+    return [(r, c) for r, row in enumerate(shape) for c in range(row)]
+
+
+def _standard_young_tableaux(shape):
+    """All SYT of given shape; returns (syts, cells, contents) where
+    each SYT is a dict {entry: cell_index}."""
+    n = sum(shape)
+    cells = _young_diagram_cells(shape)
+    contents = [c - r for r, c in cells]
+    nc = len(cells)
+    results = []
+
+    def _fill(entry, filled, cell_available):
+        if entry > n:
+            results.append(dict(filled))
+            return
+        for ci in range(nc):
+            if not cell_available[ci]:
+                continue
+            r, c = cells[ci]
+            if c > 0:
+                # if the left neighbour is still available, skip — SYTs
+                # require left-to-right increase along each row
+                left_avail = any(
+                    rr == r and cc == c - 1 and cell_available[k]
+                    for k, (rr, cc) in enumerate(cells)
+                )
+                if left_avail:
+                    continue
+            if r > 0:
+                above_avail = any(
+                    rr == r - 1 and cc == c and cell_available[k]
+                    for k, (rr, cc) in enumerate(cells)
+                )
+                if above_avail:
+                    continue
+            filled[entry] = ci
+            cell_available[ci] = False
+            _fill(entry + 1, filled, cell_available)
+            del filled[entry]
+            cell_available[ci] = True
+
+    _fill(1, {}, [True] * nc)
+    return results, cells, contents
+
+
+def _seminormal_block_data(shape, q):
+    """Sparse per-generator data for the seminormal representation.
+
+    For each generator σ_k (k = 1 … n-1) returns a list of "block"
+    descriptors:
+
+      ('diag', i, a)              — basis vector i picks up coefficient a
+      ('mix',  i, j, a, ap, b)    — basis vectors i, j mix as the 2×2
+                                    block [[a, b], [b, a']]
+
+    Together these cover every basis index exactly once per generator.
+    Multiplying by σ_k acts independently on each block, so a vector
+    with k nonzeros expands to at most 2k nonzeros.  This is the same
+    information as the Hoefsmit matrix but stored as O(dim) entries
+    instead of dim² entries — essential for n ≥ 10 where dim can
+    reach several thousand.
+    """
+    n = sum(shape)
+    syts, cells, contents = _standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], 0, syts
+    h = q - 1 / q
+    blocks_per_gen = []
+    for k in range(1, n):
+        blocks = []
+        processed = set()
+        for i in range(dim):
+            if i in processed:
+                continue
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+            a = h / (1 - q ** (-2 * rho))
+            swap_map = dict(syts[i])
+            swap_map[k] = ci_k1
+            swap_map[k + 1] = ci_k
+            j = next(
+                (jj for jj in range(dim)
+                 if jj != i and syts[jj] == swap_map),
+                None,
+            )
+            if j is None:
+                blocks.append(("diag", i, a))
+                processed.add(i)
+            else:
+                a_prime = h / (1 - q ** (2 * rho))
+                b_sq = a * a_prime + 1
+                b = mp.sqrt(b_sq)
+                blocks.append(("mix", i, j, a, a_prime, b))
+                processed.add(i)
+                processed.add(j)
+        blocks_per_gen.append(blocks)
+    return blocks_per_gen, dim, syts
+
+
+def _apply_generator_sparse(vec: dict, blocks):
+    """Apply σ_k (described by `blocks`) to a sparse vector represented
+    as a dict {index: mpmath value}.  Returns the new sparse vector
+    (the input is not mutated).
+    """
+    new = {}
+    for block in blocks:
+        if block[0] == "diag":
+            _, i, a = block
+            v = vec.get(i)
+            if v is not None:
+                new[i] = a * v
+        else:
+            _, i, j, a, ap, b = block
+            vi = vec.get(i, 0)
+            vj = vec.get(j, 0)
+            if vi == 0 and vj == 0:
+                continue
+            # Action on column basis: σ_k e_i = a e_i + b e_j,
+            #                        σ_k e_j = b e_i + a' e_j.
+            # As linear map on a column vector v:
+            # new[i] = a * vi + b * vj,  new[j] = b * vi + a' * vj.
+            ni = a * vi + b * vj
+            nj = b * vi + ap * vj
+            if ni != 0:
+                new[i] = ni
+            if nj != 0:
+                new[j] = nj
+    return new
+
+
+def chi_lambda_mpmath(partition, word, q_val, dps: int = 50):
+    """χ_λ(σ_{i_1} … σ_{i_k}) at mpmath precision (dps decimal places).
+
+    Computes tr(ρ_λ(σ_{i_1} … σ_{i_k})) via sparse seminormal action:
+    for each basis index i, propagate e_i through the word using
+    block-sparse matvecs and accumulate the i-th diagonal component.
+    Cost is O(dim · 2^len(word)) mpmath ops, which is tractable up to
+    n = 12 for the extreme cycle classes (word length ≤ n-1).
+    """
+    mp.mp.dps = dps
+    q = mp.mpf(str(q_val))
+    blocks_per_gen, dim, _ = _seminormal_block_data(partition, q)
+    if dim == 0:
+        return mp.mpf(0)
+    # Empty word → identity → trace = dim.  Return as mpf for type
+    # consistency with the non-empty case.
+    if len(word) == 0:
+        return mp.mpf(dim)
+    trace = mp.mpf(0)
+    for i in range(dim):
+        vec = {i: mp.mpf(1)}
+        for idx in word:
+            vec = _apply_generator_sparse(vec, blocks_per_gen[idx - 1])
+            if not vec:
+                break
+        trace += vec.get(i, mp.mpf(0))
+    return trace
+
+
+def cycle_type_word(mu):
+    """Reduced word realising cycle type μ on n = sum(μ) strands."""
+    word = []
+    s = 0
+    for m in mu:
+        for j in range(m - 1):
+            word.append(s + j + 1)
+        s += m
+    return word
+
+
+def plancherel_sum_numeric(n: int, q_val, dps: int = 50):
+    """Σ_λ y_λ(q_val) · d_λ at mpmath precision.  Should equal 1."""
+    mp.mp.dps = dps
+    parts = partitions_of(n)
+    total = mp.mpf(0)
+    for lam in parts:
+        y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps)
+        total += y * classical_dim(lam)
+    return total
+
+
+def markov_trace_lhs_numeric(n: int, mu, q_val, dps: int = 50):
+    """Σ_λ y_λ(q_val) · χ_λ(σ_w_μ) at mpmath precision."""
+    mp.mp.dps = dps
+    word = cycle_type_word(tuple(mu))
+    parts = partitions_of(n)
+    total = mp.mpf(0)
+    for lam in parts:
+        y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps)
+        chi = chi_lambda_mpmath(lam, word, q_val, dps)
+        total += y * chi
+    return total
+
+
+def markov_trace_target_numeric(n: int, mu, q_val, dps: int = 50):
+    """z^{n-len(μ)} at mpmath precision (the RHS of the defining identity)."""
+    mp.mp.dps = dps
+    q = mp.mpf(str(q_val))
+    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    return z ** (n - len(tuple(mu)))
+
+
 def main(ns: list[int], dps: int = 100, do_symbolic: bool = True) -> None:
     out_path = Path(__file__).parent / "y-lambda-wenzl-witness.json"
     if out_path.exists():
