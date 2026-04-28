@@ -1,0 +1,73 @@
+{
+  "computation": "three-term-wedderburn",
+  "description": "Canonical 3-term Wedderburn-decomposition mass formula. V_3term(g) = w_sym\u00b7lam_sym + w_alt\u00b7lam_alt + w_std\u00b7V_std with Wedderburn weights w_sym=w_alt=q^2/D, w_std=(q^2+1)^2/D, D=q^4+4q^2+1. The alt channel restores the chirality contribution (prop:chirality-dual-space-derivation) that the previous 2-term symmetrised blend dropped. No fitted mixing parameter, no n->p transition calibration constant, no numerical root-find anywhere in the path. Eliminates empirical constants #1 and #5 of docs/canonicalization-review.md \u00a73.1.",
+  "computedAt": "2026-04-28T02:15:52.977646+00:00",
+  "q_0": 1.1099785955541805,
+  "precision_dps": 50,
+  "wedderburn_weights": {
+    "w_sym": 0.16546138476810046,
+    "w_std": 0.6690772304637991,
+    "w_alt": 0.16546138476810046,
+    "D": 7.44616325020604
+  },
+  "particles": {
+    "proton": {
+      "V_3term": 1178995.5254365918,
+      "pred_MeV": 938.27208816,
+      "codata_MeV": 938.27208816,
+      "err_pct": 0.0,
+      "err_ppb": 0.0,
+      "channel_decomposition_g0": {
+        "trv": 0.3111315706862213,
+        "alt": -0.0889546862965202,
+        "std": 0.766830431539558,
+        "total": 0.9890073159292592
+      },
+      "channel_decomposition_g1": {
+        "trv": 0.12165014885967955,
+        "alt": 0.22750988409607872,
+        "std": 0.6219101256969853,
+        "total": 0.9710701586527436
+      }
+    },
+    "neutron": {
+      "V_3term": 517436.50435550377,
+      "pred_MeV": 411.78801696644797,
+      "codata_MeV": 939.56542052,
+      "err_pct": -56.17250188512205,
+      "err_ppb": -561725018.8512205,
+      "channel_decomposition_g0": {
+        "trv": 0.28183133615494055,
+        "alt": -0.09927576419301151,
+        "std": 0.6716547408639094,
+        "total": 0.8542103128258384
+      },
+      "channel_decomposition_g1": {
+        "trv": 0.1090029466678187,
+        "alt": 0.25116265831609963,
+        "std": 0.6153438661238275,
+        "total": 0.9755094711077459
+      }
+    }
+  },
+  "attestation": {
+    "forbidden_tokens_present": [],
+    "forbidden_tokens_checked": [
+      "brentq",
+      "fsolve",
+      "0.305807",
+      "0.8272",
+      "alpha_star",
+      "alpha_optimal",
+      "alpha_4",
+      "alpha4",
+      "V_blend",
+      "sym_alt",
+      "S_chain",
+      "std_za_b",
+      "std_det",
+      "def err_n("
+    ],
+    "canonical_only": true
+  }
+}
