@@ -164,58 +164,65 @@ def main():
         print(f"  {label:>10}: {' '.join(row)}")
     print()
 
-    # Solve the symbolic null-space problem per partition
+    # Solve the symbolic linear system per partition.
+    # Strategy: use sympy.linsolve on the (p_n-1)-equation gauge-fixed
+    # system rather than M.nullspace() + simplify (which is O(p(n)^2 ·
+    # determinant-cost) and explodes at H_5). For each gauge index k,
+    # set c[k]=1 and solve for the remaining p_n-1 coefficients.
     print("=" * 72)
     print("Closed-form r_λ coefficients in Q(q^{1/2}):")
     print("=" * 72)
 
+    # Pick gauge per partition based on numerical run (already validated)
+    GAUGE_HINT = {
+        (5,):              6,
+        (4, 1):            6,
+        (3, 2):            5,   # non-hook, c[(12345)] = 0
+        (3, 1, 1):         6,
+        (2, 2, 1):         5,   # non-hook
+        (2, 1, 1, 1):      6,
+        (1, 1, 1, 1, 1):   6,
+    }
+
     results = {}
     for target in partitions:
         constraints = [p for p in partitions if p != target]
-        M = sp.Matrix(p_n - 1, p_n,
-                      lambda i, j: chi[(constraints[i], classes[j][1])])
+        gauge_idx = GAUGE_HINT.get(target, p_n - 1)
+        # Set up (p_n - 1) linear equations Σ_j A[i,j] c[j] = 0
+        # with the gauge c[gauge_idx] = 1.
+        c_syms = [sp.Symbol(f"c_{j}") for j in range(p_n)]
+        equations = []
+        for i, p in enumerate(constraints):
+            row = sum(chi[(p, classes[j][1])] * c_syms[j] for j in range(p_n))
+            equations.append(row)
+        # Substitute the gauge
+        equations_subst = [eq.subs(c_syms[gauge_idx], 1) for eq in equations]
+        unknowns = [c_syms[j] for j in range(p_n) if j != gauge_idx]
         t0 = time.time()
         try:
-            ns = M.nullspace()
+            sol = sp.solve(equations_subst, unknowns, rational=True)
         except Exception as e:
-            print(f"\n  λ = {target}: nullspace FAILED ({e})")
-            results[str(target)] = {"error": f"nullspace: {e}"}
+            print(f"\n  λ = {target}: solve FAILED ({e})")
+            results[str(target)] = {"error": f"solve: {e}"}
             continue
-        t_ns = time.time() - t0
-        if not ns:
-            print(f"\n  λ = {target}: NO null vector ({t_ns:.1f}s)")
-            results[str(target)] = {"closed_form": None, "error": "full rank"}
+        t_solve = time.time() - t0
+        if not sol:
+            print(f"\n  λ = {target}: no solution")
+            results[str(target)] = {"error": "no solution"}
             continue
-        c = ns[0]
-        # Pick a non-zero gauge component (prefer last per H_4 prop convention,
-        # else pick the largest-modulus component at q_0)
-        gauge_idx = None
-        c_at_q0 = []
-        for i in range(p_n):
-            try:
-                c_at_q0.append(complex(c[i, 0].subs(q, q0_rational)))
-            except Exception:
-                c_at_q0.append(0)
-        if abs(c_at_q0[p_n - 1]) > 1e-10:
-            gauge_idx = p_n - 1
-        else:
-            # Adaptive: pick max-modulus component
-            gauge_idx = max(range(p_n), key=lambda i: abs(c_at_q0[i]))
-        gauge = c[gauge_idx, 0]
-        if gauge == 0:
-            print(f"\n  λ = {target}: gauge component zero")
-            results[str(target)] = {"error": "gauge zero"}
-            continue
-        c = c / gauge
+        # Reassemble full c vector (gauge_idx → 1)
+        c_full = []
+        for j in range(p_n):
+            if j == gauge_idx:
+                c_full.append(sp.S(1))
+            else:
+                c_full.append(sol.get(c_syms[j], sp.S(0)))
         c_simplified = []
-        for i in range(p_n):
-            t1 = time.time()
+        for ci in c_full:
             try:
-                ci_simp = together(simplify(c[i, 0]))
+                c_simplified.append(together(simplify(ci)))
             except Exception:
-                ci_simp = c[i, 0]
-            c_simplified.append(ci_simp)
-        # Numerical α at q_0
+                c_simplified.append(ci)
         z_sym = sp.S(1) / (sp.sqrt(q) + 1 / sp.sqrt(q))
         tr_M = sum(c_simplified[j] * z_sym**len(word)
                    for j, (_, word) in enumerate(classes))
@@ -228,36 +235,60 @@ def main():
         except Exception:
             val_num = None
         print(f"\n  λ = {target}: gauge = c[{gauge_idx}], "
-              f"nullspace {t_ns:.1f}s")
+              f"solve {t_solve:.1f}s")
         for (label, _), ci in zip(classes, c_simplified):
             s = str(ci)
             if len(s) > 100:
                 s = s[:97] + "..."
-            print(f"    c_{label:10}  =  {s}")
+            print(f"    c_{label:10}  =  {s}", flush=True)
         if val_num is not None:
-            print(f"    tr_M(r_λ) at q_0 = {val_num:+.10f}")
+            print(f"    tr_M(r_λ) at q_0 = {val_num:+.10f}", flush=True)
         results[str(target)] = {
             "gauge_idx": gauge_idx,
             "closed_form_c": [str(ci) for ci in c_simplified],
             "tr_M_symbolic": str(tr_M_simp)[:1000],
             "tr_M_at_q0_numerical": val_num,
+            "solve_time_s": t_solve,
         }
+
+        # Incremental witness write (so we don't lose progress on crash)
+        out_partial = {
+            "computation": "r-k-h5-symbolic",
+            "description": (
+                "Symbolic closed-form r_λ coefficients at H_5 in Q(q^{1/2}) "
+                "via sympy.solve on the gauge-fixed linear system (faster "
+                "than nullspace+simplify on full Q(q) matrices). Full "
+                "Hoefsmit construction with off-diagonal b·e_T' entries. "
+                "Gauge per partition follows the H_4 closed-form prop "
+                "convention: c[last]=1 for hooks, adaptive for non-hooks."
+            ),
+            "engine": "sympy",
+            "computedAt": datetime.now(timezone.utc).isoformat(),
+            "q_0_rational": "11099785955541805/10000000000000000",
+            "results": results,
+            "partial": True,
+        }
+        out_path_partial = Path(__file__).parent / "r-k-h5-symbolic.witness.json"
+        with open(out_path_partial, "w") as fp:
+            json.dump(out_partial, fp, indent=2, default=str)
 
     out = {
         "computation": "r-k-h5-symbolic",
         "description": (
             "Symbolic closed-form r_λ coefficients at H_5 in Q(q^{1/2}) via "
-            "sympy nullspace solve on the 6×7 character matrix per partition. "
-            "Uses full Hoefsmit seminormal construction (off-diagonal "
-            "b·e_{T'} entries included, fixing the H_4 script's bug). "
-            "Adaptive gauge: c[last]=1 if non-zero at q_0, else max-modulus "
-            "component."
+            "sympy.solve on the gauge-fixed linear system (faster than "
+            "nullspace+simplify on full Q(q) matrices). Full Hoefsmit "
+            "construction with off-diagonal b·e_{T'} entries (fixes the "
+            "H_4 script's bug). Gauge per partition follows the H_4 "
+            "closed-form prop convention: c[last]=1 for hooks, adaptive "
+            "for non-hooks ((3,2), (2,2,1) at H_5)."
         ),
         "engine": "sympy",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "q_0_rational": "11099785955541805/10000000000000000",
         "results": results,
         "wall_time_s": time.time() - t_total,
+        "partial": False,
     }
     out_path = Path(__file__).parent / "r-k-h5-symbolic.witness.json"
     with open(out_path, "w") as fp:
