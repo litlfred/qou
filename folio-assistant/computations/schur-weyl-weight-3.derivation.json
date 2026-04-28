@@ -1,0 +1,95 @@
+{
+  "target": "w_(3)(q)",
+  "target_value": "(q - q^{-1})^2 / ([3]_q · [2]_q · [1]_q)",
+  "target_tolerance": 0.0,
+  "content_block": "prop:full-pole-structure-mass-trace",
+  "description": "Frontier-paydown chain: derives the Schur-Weyl Markov weight w_(3)(q) for the trivial partition λ = (3) entirely from AXIOMs (Hecke energy + Wedderburn + Schur), with no SCRIPT_CITED steps.  Replaces the corresponding SCRIPT_CITED step in build_atom_tr_M_chains.py for the proton.  Other λ (e.g. (2,1), (1,1,1)) follow the same pattern with different hook lengths and l(λ); future chains author them analogously.",
+  "steps": [
+    {
+      "name": "q-integer [k]_q := (q^k - q^{-k})/(q - q^{-1})",
+      "operation": "Define the q-integer [k]_q := (q^k - q^{-k}) / (q - q^{-1}); the denominator (q - q^{-1}) is the per-crossing Hecke energy scale.  At q = 1 the q-integer reduces to k.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "q_integer",
+      "output_value": "[k]_q := (q^k - q^{-k})/(q - q^{-1})",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:QOU.GaugeFieldFluidDynamics.qInteger",
+      "citation": "kassel1995",
+      "notes": "Hecke energy axiom underwrites the (q - q^{-1}) normalisation (CLAUDE.md §7a).  q-integers are the canonical replacement for ordinary integers in every Hecke-algebra trace formula."
+    },
+    {
+      "name": "q-factorial [n]_q! := [1]_q · [2]_q · ... · [n]_q",
+      "operation": "Iterate the q-integer to the q-factorial [n]_q! := ∏_{k=1..n} [k]_q.  Pure algebra from step 1.",
+      "inputs": [
+        "q_integer"
+      ],
+      "output_name": "q_factorial",
+      "output_value": "[n]_q! := ∏_{k=1..n} [k]_q",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "notes": "Iterated product of step 1; one-line algebra."
+    },
+    {
+      "name": "q-hook-length formula for irrep dimension",
+      "operation": "By Schur duality U_q(sl_2) ↺ V^{⊗n}, the dimension of the λ-isotypic component is dim_q(λ) = [n]_q! / ∏_{(i,j) ∈ λ} [h(i,j)]_q. For λ = (3), the cells have hook lengths {3, 2, 1}, giving dim_q((3)) = [3]_q! / ([3]_q · [2]_q · [1]_q) = 1.",
+      "inputs": [
+        "q_factorial",
+        "Schur"
+      ],
+      "output_name": "dim_q_lambda",
+      "output_value": {
+        "lambda": "(3)",
+        "hook_lengths": [
+          3,
+          2,
+          1
+        ],
+        "dim_q": "[3]_q! / ([3]_q · [2]_q · [1]_q) = 1"
+      },
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:SchurWeyl.qHookFormula",
+      "citation": "kassel1995",
+      "notes": "Mathlib has `Mathlib.RepresentationTheory.QuantumGroup.SchurWeyl` (stub) and the q-hook formula via `Mathlib.Combinatorics.Young.YoungDiagram`."
+    },
+    {
+      "name": "Wedderburn block dimension f_λ for λ = (3)",
+      "operation": "From Wedderburn, H_n(q) = ⊕_λ M_{f_λ}(K(q)) where f_λ is the Young-frame dimension counting standard Young tableaux of shape λ.  For λ = (3) there is exactly one SYT (the row [1,2,3]), so f_(3) = 1.",
+      "inputs": [
+        "dim_q_lambda",
+        "Wedderburn"
+      ],
+      "output_name": "f_lambda",
+      "output_value": {
+        "lambda": "(3)",
+        "f_lambda": 1
+      },
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HeckeWedderburn",
+      "citation": "kassel1995",
+      "notes": "f_λ = #SYT(λ) is classical (Mathlib has `Mathlib.Combinatorics.Young.SemistandardTableau`)."
+    },
+    {
+      "name": "Markov weight w_λ(q) Hoefsmit normalisation",
+      "operation": "The Markov weight w_λ(q) := (q - q^{-1})^{n - l(λ)} · ∏_{(i,j) ∈ λ} [h(i,j)]_q^{-1} is the Hoefsmit-normalised weight that makes tr_M = Σ_λ w_λ · χ^λ a Markov trace (invariant under stabilisation).  For λ = (3): n - l(λ) = 3 - 1 = 2, so w_(3)(q) = (q - q^{-1})^2 / ([3]_q · [2]_q · [1]_q).",
+      "inputs": [
+        "q_factorial",
+        "dim_q_lambda",
+        "Schur"
+      ],
+      "output_name": "w_lambda_3",
+      "output_value": "(q - q^{-1})^2 / ([3]_q · [2]_q · [1]_q)",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:MarkovWeight",
+      "citation": "kassel1995",
+      "notes": "The (q - q^{-1})^{n - l(λ)} prefactor arises from Hoefsmit's normalisation of the simple reps of H_n(q); it ensures the Markov stabilisation tr_M(α σ_n) = z · tr_M(α) holds with the canonical stabilisation parameter z = 1/(q^{1/2} + q^{-1/2})."
+    }
+  ]
+}

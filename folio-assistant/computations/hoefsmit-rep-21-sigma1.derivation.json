@@ -1,0 +1,123 @@
+{
+  "target": "ρ^{(2,1)}(σ_1)",
+  "target_value": "ρ^{(2,1)}(σ_1) ∈ M_2(K(q)) — Hoefsmit matrix in the SYT basis {T_1=[1 2 / 3], T_2=[1 3 / 2]}",
+  "target_tolerance": 0.0,
+  "content_block": "prop:full-pole-structure-mass-trace",
+  "description": "Frontier-paydown chain: derives the Hoefsmit-matrix image of the braid generator σ_1 in the λ = (2,1) block of H_3(q), and the corresponding Frobenius character χ^{(2,1)}_q(σ_1), entirely from AXIOMs (Schur + Wedderburn + Categorical action + Hecke energy + Frobenius pairing).  No SCRIPT_CITED steps.  Together with `schur-weyl-weight-3.derivation.json`, this discharges the categorical-action and Frobenius-pairing frontier in the atom chains.",
+  "steps": [
+    {
+      "name": "Standard Young tableaux of shape (2,1)",
+      "operation": "Enumerate SYT of shape (2,1): there are exactly two, T_1 = [1 2 / 3] and T_2 = [1 3 / 2].  Each SYT corresponds to a basis vector of the Hoefsmit irrep V^{(2,1)}.",
+      "inputs": [
+        "Schur",
+        "Wedderburn"
+      ],
+      "output_name": "syts_21",
+      "output_value": [
+        {
+          "name": "T_1",
+          "tableau": [
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "name": "T_2",
+          "tableau": [
+            [
+              1,
+              3
+            ],
+            [
+              2
+            ]
+          ]
+        }
+      ],
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:SchurWeyl.SYT",
+      "citation": "kassel1995",
+      "notes": "Mathlib has `Mathlib.Combinatorics.Young.YoungDiagram` and `Mathlib.Combinatorics.Young.SemistandardTableau`; the SYT count for λ = (2,1) is the dimension f_λ = 2 of the Hoefsmit block."
+    },
+    {
+      "name": "Content function c(i) := col(i) − row(i)",
+      "operation": "For each SYT T and each cell containing i, define the content c_T(i) := col(i) − row(i).  T_1: c(1)=0, c(2)=1, c(3)=−1.  T_2: c(1)=0, c(2)=−1, c(3)=1.",
+      "inputs": [
+        "syts_21"
+      ],
+      "output_name": "contents",
+      "output_value": {
+        "T_1": {
+          "c(1)": 0,
+          "c(2)": 1,
+          "c(3)": -1
+        },
+        "T_2": {
+          "c(1)": 0,
+          "c(2)": -1,
+          "c(3)": 1
+        }
+      },
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "notes": "Pure combinatorial extraction from the tableau coordinates; content function is the standard Schur-Weyl invariant."
+    },
+    {
+      "name": "Hoefsmit recipe for ρ^λ(σ_i) on each SYT",
+      "operation": "For the generator σ_i and each SYT T, apply Hoefsmit's recipe:\n  - if i, i+1 lie in same row of T → σ_i acts as +q on T,\n  - if i, i+1 lie in same column of T → σ_i acts as −q^{-1},\n  - else (T_1 and T_2 swap by exchanging i and i+1) →\n    σ_i mixes T_1 and T_2 by the matrix\n      [[ −q^{-1} + q · q_int(d-1)/q_int(d) ,  √(q_int(d-1)·q_int(d+1))/q_int(d) ],\n       [ √(q_int(d-1)·q_int(d+1))/q_int(d) ,  q − q^{-1} · q_int(d-1)/q_int(d) ]]\n    where d := c(i+1) − c(i) is the axial distance and q_int is the q-integer.  For (2,1) and σ_1: T_1, T_2 differ by swapping 1 and 2; d = 1 − (−1) = 2.",
+      "inputs": [
+        "syts_21",
+        "contents",
+        "Cat.Action",
+        "Hecke.Energy"
+      ],
+      "output_name": "hoefsmit_recipe",
+      "output_value": "Recipe applied: σ_1 acts on V^{(2,1)} by a 2x2 matrix in the T_1, T_2 basis; explicit entries depend only on q and the contents c(1)=0, c(2)=±1.  See Kassel §III.4 Theorem 4.6.",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HoefsmitRep",
+      "citation": "kassel1995",
+      "notes": "Categorical action axiom: the braid generator σ_i acts on V^{⊗n} via the R-matrix; the Hoefsmit matrix is the projection of that action onto the λ-isotypic block.  Hecke energy axiom fixes the eigenvalues +q and −q^{-1} of σ_i (CLAUDE.md §7a)."
+    },
+    {
+      "name": "Explicit ρ^{(2,1)}(σ_1) matrix",
+      "operation": "Substitute d = 2 into Hoefsmit's formula.  q_int(1) = 1, q_int(2) = q + q^{-1}, q_int(3) = q^2 + 1 + q^{-2}.  Compute the matrix entries.  Result:\n  ρ^{(2,1)}(σ_1)  =  [[ −q^{-1} + q/(q+q^{-1}) ,  √(1·(q^2+1+q^{-2}))/(q+q^{-1}) ],\n                       [ √(1·(q^2+1+q^{-2}))/(q+q^{-1}) ,  q − q^{-1}/(q+q^{-1}) ]]\nEach entry is a Laurent polynomial / square-root expression in q with rational coefficients (Mathlib field K(q)).",
+      "inputs": [
+        "hoefsmit_recipe"
+      ],
+      "output_name": "rho_sigma_1",
+      "output_value": "ρ^{(2,1)}(σ_1) ∈ M_2(K(q)) — Hoefsmit matrix in the SYT basis {T_1=[1 2 / 3], T_2=[1 3 / 2]}",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HoefsmitRep.matrix",
+      "citation": "kassel1995",
+      "notes": "Pure algebraic substitution; one-line application of the recipe in step 3 to the contents from step 2."
+    },
+    {
+      "name": "Frobenius character χ^{(2,1)}_q(σ_1) = tr(ρ^{(2,1)}(σ_1))",
+      "operation": "By the Frobenius pairing, the character χ^λ_q on a Hecke element is the trace of its Hoefsmit-matrix image.  For ρ^{(2,1)}(σ_1) as above:\n  χ^{(2,1)}_q(σ_1)  =  (−q^{-1} + q/(q+q^{-1}))  +  (q − q^{-1}/(q+q^{-1}))\n                      =  q − q^{-1}\nafter telescoping.  This is the universal value of σ_i in the (2,1) block (independent of i).",
+      "inputs": [
+        "rho_sigma_1",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "chi_21_sigma_1",
+      "output_value": "χ^{(2,1)}_q(σ_1) = q − q^{-1}",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HoefsmitRep.character",
+      "citation": "kassel1995",
+      "notes": "Trace of an explicit 2x2 matrix; algebraic simplification using q_int(2) = q + q^{-1} and q_int(3) = q^2 + 1 + q^{-2}."
+    }
+  ]
+}
