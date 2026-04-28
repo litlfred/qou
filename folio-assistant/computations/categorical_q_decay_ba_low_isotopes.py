@@ -52,7 +52,7 @@ from pathlib import Path
 M_E_MEV = 0.51099895   # joint-tower SDP at H_2 confirms ρ_e = 1, M(e) = 1 in ℚ(q)
 M_P_MEV = 938.27208816  # SDP at H_3 verified PSD; absolute mass scale via m_e
 M_N_MEV = 939.56542052  # SDP at H_3 verified PSD; absolute mass scale via m_e
-Q_N_TO_P = M_N_MEV - M_P_MEV - M_E_MEV  # 0.7823321... MeV
+Q_N_TO_P = M_N_MEV - M_P_MEV - M_E_MEV  # 0.7823334... MeV
 
 # q_0 — substrate parameter (calibrated by m_e = 3·E_×·μ_0)
 Q_0 = 1.1099785955541805
@@ -121,9 +121,11 @@ def _n_v_audit():
     determinant counting (markov-moves-brane-tower) at the weak scale.
     """
     # Currently observed (CODATA-anchored) value.
-    E_CROSS = 0.10453016099493972  # ½(q − q⁻¹) at q_0
-    MU_0_MEV = 1.6295103892701275  # set by m_e = 3·E_×·μ_0
-    V_WEAK_MEV = 246219.64023926202  # CODATA electroweak vev
+    # Derive E_× and μ_0 from the global Q_0 / M_E_MEV to keep this
+    # function consistent with the canonical inputs (no magic numbers).
+    E_CROSS = 0.5 * (Q_0 - 1.0 / Q_0)        # ½(q − q⁻¹) at q_0
+    MU_0_MEV = M_E_MEV / (3.0 * E_CROSS)     # m_e = 3·E_×·μ_0
+    V_WEAK_MEV = 246219.64023926202           # CODATA electroweak vev
     N_v_observed = V_WEAK_MEV / (E_CROSS * MU_0_MEV)
 
     return {
@@ -240,7 +242,8 @@ def main():
             "B_pred_MeV": b["B_pred_MeV"],
             "B_per_A_AME_MeV": b["B_AME_MeV"] / b["A"] if b["A"] > 0 else None,
             "B_per_A_pred_MeV": (
-                b["B_pred_MeV"] / b["A"] if b["B_pred_MeV"] is not None else None
+                b["B_pred_MeV"] / b["A"]
+                if b["B_pred_MeV"] is not None and b["A"] > 0 else None
             ),
             "err_pct": (
                 100 * (b["B_pred_MeV"] - b["B_AME_MeV"]) / b["B_AME_MeV"]

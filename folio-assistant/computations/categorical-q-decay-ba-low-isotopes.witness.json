@@ -1,6 +1,6 @@
 {
   "computation": "categorical-q-decay-ba-low-isotopes",
-  "computedAt": "2026-04-28T19:29:12.693154+00:00",
+  "computedAt": "2026-04-28T19:34:47.157194+00:00",
   "description": "Categorical recomputation of B/A and Q-values for low isotopes via the PR #442 canonical chain B(\ud835\udd25) = m_e \u00b7 \u03c1 \u00b7 tr_M(T_w) | q = q_0. NO FITS. Layer 1 (B/A) pulls from mass-table-ppb (SDP-derived for families 2, 3; volume-match knot id for family 1; open for family 4). Layer 2 (Q-values) uses Q_\u03b2\u207b = Q_n\u2192p + B_daughter \u2212 B_parent. Layer 3 (decay rates) is NOT computed: bottleneck N_v is open.",
   "design_spec": "prop:atom-knot-mass-derivation",
   "consumed_by": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
