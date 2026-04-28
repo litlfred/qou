@@ -3,15 +3,16 @@
 
 Usage
 -----
-    python generate-index.py OUTPUT_HTML PAPER_HTML \\
-        --pdf PDF_NAME --md MD_NAME \\
+    python generate-index.py OUTPUT_HTML PAPER_EMBED \\
+        --pdf PDF_NAME [--md MD_NAME] \\
         [--visualizer VISUALIZER_HTML] \\
         [--builds-json BUILDS_JSON] \\
         [--branch BRANCH] [--repo OWNER/REPO] [--sha SHA] \\
         [--diff-pdf DIFF_PDF_NAME]
 
 Produces a single-page shell that lets the user toggle between:
-  - the paper (enhanced Pandoc HTML, shown by default)
+  - the paper (PAPER_EMBED rendered in an <iframe>; typically the PDF,
+    which modern browsers render inline as application/pdf)
   - the interactive visualizer (Bring's surface / Three.js)
   - recent feature builds (main builds only, read from builds.json)
 """
@@ -201,7 +202,7 @@ a:hover {{ text-decoration: underline; }}
 
 <!-- Paper panel -->
 <div id="panel-paper" class="tab-panel active">
-  <iframe class="paper-frame" src="paper.html" title="Paper"></iframe>
+  <iframe class="paper-frame" src="{paper_embed_src}" title="Paper"></iframe>
 </div>
 
 {visualizer_panel}
@@ -295,7 +296,7 @@ def _builds_js_main(builds_json_url: str) -> str:
 
 
 def generate_index(
-    paper_html_name: str,
+    paper_embed_src: str,
     pdf_name: str,
     md_name: str,
     visualizer_name: str | None = None,
@@ -377,6 +378,7 @@ def generate_index(
         header_badges=header_badges,
         source_bar=source_bar,
         pdf_name=html_mod.escape(pdf_name),
+        paper_embed_src=html_mod.escape(paper_embed_src),
         md_link=f'<a href="{html_mod.escape(md_name)}">&#x1F4DD; Markdown</a>' if md_name else "",
         extra_downloads=extra_downloads,
         visualizer_tab=visualizer_tab,
@@ -390,8 +392,12 @@ def generate_index(
 def main() -> None:
     ap = argparse.ArgumentParser(description="Generate gh-pages index.html with paper/visualizer toggle")
     ap.add_argument("output_html", help="Output path for index.html")
-    ap.add_argument("paper_html", help="Filename of the enhanced paper HTML (e.g. paper.html)")
-    ap.add_argument("--pdf", required=True, help="PDF filename")
+    ap.add_argument(
+        "paper_embed",
+        help="Filename to embed in the Paper tab's <iframe> "
+             "(typically the PDF; modern browsers render application/pdf inline).",
+    )
+    ap.add_argument("--pdf", required=True, help="PDF filename (used in download links)")
     ap.add_argument("--md", default=None, help="Markdown filename (optional)")
     ap.add_argument("--visualizer", default=None, help="Visualizer HTML filename")
     ap.add_argument("--builds-json", default=None, help="URL or path to builds.json")
@@ -402,7 +408,7 @@ def main() -> None:
     args = ap.parse_args()
 
     result = generate_index(
-        paper_html_name=args.paper_html,
+        paper_embed_src=args.paper_embed,
         pdf_name=args.pdf,
         md_name=args.md,
         visualizer_name=args.visualizer,
