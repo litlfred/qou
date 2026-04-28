@@ -889,6 +889,67 @@ are in the paper; they differ by whether `m_e` is absorbed into the
 The script (`categorical_q_decay_ba_low_isotopes.py`) now follows
 **`calibration-inputs.md` exclusively** (3-input, `m_n = m_p + Q_β`).
 
+## ⚠️ CRITICAL: Two different Markov-trace conventions in the codebase
+
+`d_from_scratch.py` diagnostic surfaced a structural bug:
+**`tr_M(D, atom)` differs by orders of magnitude AND sign across
+canonical scripts** because they use **two different Markov-trace
+conventions**:
+
+| Script | Formula | tr_M(D, atom) at q_0 |
+|---|---|---:|
+| `light_isotope_sweep`, `mass_formula_6term` | `Σ_λ (dim_q²/[n]_q!) · χ_λ / dim_λ_classical` (**Plancherel**) | **−0.00513** |
+| `habiro_coefficients_atomic` (canonical per paper) | `Σ_λ s_λ(q, q⁻¹)/H_q(λ) · χ_λ` (**Wenzl-Schur**) | **+0.17744** |
+
+Per [`prop:y-lambda-recipe-from-partition`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md), the **Wenzl-Schur form is the canonical
+Markov trace**. The Plancherel form is a different (incompatible)
+trace.
+
+### Consequences for D
+
+| convention | T1 (descended) | T4 (Frobenius) | Δm_shell | Total | err vs AME |
+|---|---:|---:|---:|---:|---:|
+| Plancherel-A (`mass_formula_6term`) | 0.99 MeV | 1.28 MeV | 0 | 2.27 MeV | **+2.10%** |
+| Wenzl-Schur (`d_from_scratch`) | 0.46 MeV | 2.55 MeV | 0.018 MeV | 3.03 MeV | **+36%** |
+
+**The "+2.10%" reported in this audit doc until now is a
+FALSE-PRECISION result from the wrong Markov-trace convention.**
+
+The actual canonical-Wenzl-Schur D residual is **+36%**, not +2.10%.
+
+### Implication for ALL atom predictions
+
+The `categorical_q_decay_ba_low_isotopes.py` predictor sources D's
+B-value from `mass-formula-6term.witness.json` (Plancherel) and
+T/³He/⁴He+'s B-values from `bw-chirality-isotopes.witness.json`
+(also Plancherel-derived BW coefficients). **All of these are
+suspect under the canonical Wenzl-Schur convention.**
+
+### Fix path
+
+1. **Audit ALL existing tr_M-based scripts** for Markov-trace
+   convention. Flag every Plancherel-A user.
+2. **Refactor** `light_isotope_sweep`, `mass_formula_6term`,
+   `bw_chirality_isotopes` to use Wenzl-Schur (consume from
+   `y-lambda-wenzl-witness.json` already exact at 100 dps).
+3. **Recompute** all canonical predictor B-values.
+4. **Re-validate** the 4-tier rule against paper (it may not survive
+   convention correction; the rule was empirical-match against the
+   wrong-convention numbers).
+
+This is a fundamental bookkeeping bug. Until fixed, **all "best
+prediction" claims are contingent on the wrong convention** and
+should be re-evaluated.
+
+### Why nobody caught this earlier
+
+Both scripts CLAIM to compute "the Markov trace tr_M". The
+docstrings reference the same proposition. But the actual formulas
+encoded are different. The 4-tier rule's match against AME (T 0.5%,
+³He 0.9%, etc.) gave a false confidence that the convention was
+correct — but those matches are accidents of the wrong convention
++ tier-picking.
+
 ## The 4-tier formula IS structurally derivable (not special-casing)
 
 Per user pushback "we should not be special casing — there should be
