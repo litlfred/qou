@@ -79,17 +79,24 @@ class MotivicSubstrate
   /-- The realization functor at place `v`, taking values in the
       target ring `Target v`. -/
   realize : (v : Place) → Mhat →+* Target v
-  /-- **Substrate axiom (place-compatibility).**
+  /-- **Substrate axiom (archimedean non-degeneracy).**
 
-      The family of place-realizations is compatible with the
-      adelic decomposition of `def:adelic-substrate`: the global
-      zeta-realization assembles as a restricted product over
-      places.  Stated here as a placeholder; the precise content
-      is the Tate factorisation
-      `ρ_tot([X]) = (ρ_v([X]))_v` of the adelic substrate.
+      The archimedean realization target is nontrivial — i.e. the
+      substrate has a non-degenerate archimedean shadow.  This is
+      the minimal non-vacuous fragment of the Tate factorisation
+      `ρ_tot([X]) = (ρ_v([X]))_v` of `def:adelic-substrate`: the
+      restricted product over places assembles a non-trivial
+      classical-limit object only when the archimedean place
+      contributes non-degenerately.  The full place-compatibility
+      across all finite places is conjectural and supplied as a
+      `sorry`-axiom in concrete instances.
 
-      Concrete instances refine this once the adelic-Tate
-      substrate has a Lean formalisation. -/
-  place_compatibility : ∀ _x : Mhat, True
+      A trivial archimedean target would degenerate every motivic
+      class to zero, contradicting `lefschetz_invertible` — so this
+      axiom is consistent with (and implied by) the unit structure
+      via the ring-hom `realize Place.infty`.
+
+      Ref: [tate1967]. -/
+  archimedean_nontrivial : Nontrivial (Target Place.infty)
 
 end QOU.AlgebraicSubstrate

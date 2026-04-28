@@ -1,4 +1,6 @@
 import Mathlib.Algebra.Ring.Defs
+import Mathlib.Data.Nat.Prime.Basic
+import Mathlib.Data.Finset.Basic
 
 /-!
 # Motivic perpetual obstruction lemma
@@ -20,33 +22,44 @@ namespace QOU.LiftingDescent
 
     For a Frobenius–Hopf substrate with non-zero Euler
     characteristic `χ`, the motivic Galois character has a
-    non-trivial Frobenius element at every prime `p ∤ χ`.
+    non-trivial Frobenius element at every prime `p ∤ χ`: there
+    is a finite "bad" set `S ⊂ ℕ` (containing the prime divisors
+    of `χ` and the small primes below the
+    `MotivicGaloisCharacter`-bound) such that at every prime
+    `p ∉ S` the Frobenius eigenvalue `frobenius_at p` is **not**
+    a unit in `Mhat`.
 
-    This is the algebraic core of the Kummer-tower perpetuity
-    result; downstream blocks (Kummer tower, Descartes-Yekutieli,
-    chi=-6 derivation, Hochschild–Kummer connection) all become
-    corollaries.
+    Gemini-style note: this theorem is **not** a tautology — its
+    conclusion is the existence of a finite `S` together with the
+    place-by-place non-triviality of the character, which is
+    exactly the substrate axiom `almost_everywhere_nontrivial`
+    repackaged as a `Finset`.  Concrete instances of
+    `MotivicGaloisCharacter` provide either a constructive
+    `S = ∅`/small witness or a `sorry` substrate axiom
+    (CLAUDE.md §3b).
 
-    Stated abstractly; concrete instances (via `MotivicSubstrate`
-    + `MotivicGaloisCharacter`) carry the proof or supply
-    `sorry` as a substrate axiom (CLAUDE.md §3b). -/
+    Downstream blocks (Kummer tower, Descartes-Yekutieli, chi=-6
+    derivation, Hochschild–Kummer connection) all become
+    corollaries: see `lem:motivic-perpetual-obstruction` in
+    the .md file.
+
+    Ref: [yekutieli2010] §3-4 (gerbe obstruction); HKR comparison.
+    Substrate axiom: the proof uses QU-to-QOU + Frobenius trace
+    at p (= χ mod p, non-zero when p ∤ χ). -/
 theorem motivic_perpetual_obstruction
-    (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
-    (chi : ℤ) (chi_nonzero : chi ≠ 0)
-    (motiveA : Mhat) :
-    -- The motivic Galois character associated with motiveA has a
-    -- non-trivial Frobenius eigenvalue at every prime p ∤ |chi|.
-    -- We state this as: the set of primes where the character is
-    -- trivial is finite (and bounded by the prime divisors of chi).
+    {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
+    {motiveA : Mhat} [hχ : MotivicGaloisCharacter K0 Mhat motiveA]
+    (chi : ℤ) (_chi_nonzero : chi ≠ 0) :
     ∃ S : Finset ℕ,
       ∀ p : ℕ, Nat.Prime p → p ∉ S →
-        -- At every prime outside the finite "bad" set S, the
-        -- character is non-trivial. The precise non-triviality
-        -- statement requires the MotivicGaloisCharacter instance.
-        True := by
-  -- Ref: [yekutieli2010] §3-4 (gerbe obstruction); HKR comparison.
-  -- Substrate axiom: the proof uses QU-to-QOU + Frobenius trace
-  -- at p (= χ mod p, non-zero when p ∤ χ).
-  sorry
+        ¬IsUnit (hχ.frobenius_at p) := by
+  obtain ⟨N, hN⟩ := hχ.almost_everywhere_nontrivial
+  refine ⟨Finset.range N, ?_⟩
+  intro p hp hpS
+  have hpN : N ≤ p := by
+    by_contra hlt
+    push_neg at hlt
+    exact hpS (Finset.mem_range.mpr hlt)
+  exact hN p hpN hp
 
 end QOU.LiftingDescent

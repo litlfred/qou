@@ -1,4 +1,3 @@
-import Mathlib.NumberTheory.Cyclotomic.Basic
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Algebra.Order.AbsoluteValue
 
