@@ -43,10 +43,10 @@ sys.path.insert(0, str(HERE))
 import json
 import mpmath as mp
 
-import tower_isotope_absolute as tia
-from q_parameter import Q as Q0_FLOAT
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
-from witness_base import WitnessBuilder
+import tower_isotope_absolute as tia  # noqa: E402
+from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 _DPS = 50
 

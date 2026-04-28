@@ -91,9 +91,9 @@ _DPS = 50  # 50 decimal places per Sprint B requirement.
 #   high precision (no reliance on the import-time global).
 mp.mp.dps = _DPS
 
-from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1)
-from q_parameter import Q as Q0_FLOAT
-from experimental_constants import M_P_MEV, M_N_MEV
+from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1)  # noqa: E402
+from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
 
 # ── Substrate parameter and Markov parameter (CLAUDE.md notation) ──
 Q0 = mp.mpf(str(Q0_FLOAT))
@@ -125,12 +125,16 @@ def Phi_q(v, max_it=3000):
         return mp.mpf('inf')
     p = mp.mpf(1)
     c = mp.mpf(1) / Q0
+    # Per Gemini review: tolerances tied to current mp.mp.dps so they
+    # scale automatically when precision is changed.
+    tol_singular = mp.mpf(10) ** (-mp.mp.dps)
+    tol_converge = mp.mpf(10) ** (-(mp.mp.dps + 20))
     for _ in range(max_it):
         t = mp.mpf(1) - c * v
-        if abs(t) < mp.mpf('1e-50'):
+        if abs(t) < tol_singular:
             return mp.mpf('inf')
         p /= t
-        if abs(c * v) < mp.mpf('1e-70'):
+        if abs(c * v) < tol_converge:
             break
         c /= Q0
     return p
@@ -360,7 +364,7 @@ def main() -> int:
             'in the path. Eliminates empirical constants #1 and #5 of '
             'docs/canonicalization-review.md §3.1.'
         ),
-        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'computedAt': datetime.now(timezone.utc).isoformat(),
         'q_0': Q0_FLOAT,
         'precision_dps': 50,
         'wedderburn_weights': {

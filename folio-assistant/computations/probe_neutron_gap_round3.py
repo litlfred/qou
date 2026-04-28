@@ -44,9 +44,9 @@ sys.path.insert(0, str(HERE))
 import json
 import mpmath as mp
 
-from q_parameter import Q as Q0_FLOAT
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV
-from witness_base import WitnessBuilder
+from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 _DPS = 50
 

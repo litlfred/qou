@@ -43,9 +43,9 @@ import json
 import sympy as sp
 import mpmath as mp
 
-from q_parameter import Q as Q0_FLOAT
-from experimental_constants import M_P_MEV, M_N_MEV
-from witness_base import WitnessBuilder
+from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 _DPS = 50
 HABIRO_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"

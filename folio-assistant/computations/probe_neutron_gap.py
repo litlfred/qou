@@ -55,13 +55,13 @@ import mpmath as mp
 # Note: alpha_blend_tower's import-time `mp.mp.dps = 50` side effect
 # is what we rely on for module-level precision; we do not import the
 # `abt` module name itself (per Copilot review: drop unused imports).
-from alpha_blend_tower import (
+from alpha_blend_tower import (  # noqa: E402
     Q0, QI, D, W_SYM, W_STD, W_ALT,
     lam_sym, lam_alt, V_std, V_3term, tower, _DPS,
 )
-from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
-from experimental_constants import M_P_MEV, M_N_MEV
-from witness_base import WitnessBuilder
+from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1  # noqa: E402
+from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 WITNESS_OUT = HERE / "neutron-gap-probes.witness.json"
 
