@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Closed-form symbolic r_λ coefficients at H_7 in Q(q^{1/2}).
 
-Extends r_k_h5_symbolic.py to H_7 (11 partitions × 11 conjugacy classes).
-H_7 has SYTs up to dim 35 (for (3,2,1)); symbolic matrix products are
-larger but remain tractable via sympy.solve on the gauge-fixed linear
-system (avoids the nullspace+simplify path that explodes at H_5).
+Same scheme as r_k_h{5,6}_symbolic.py (15 partitions × 15 conjugacy
+classes; max SYT dim 35 for (3,2,1,1)). Gauge auto-fallback on
+non-hooks where χ_λ((1234567)) = 0.
 """
 from __future__ import annotations
 import json

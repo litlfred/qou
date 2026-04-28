@@ -17,18 +17,6 @@ import numpy as np
 import mpmath as mp
 
 mp.mp.dps = 50
-# NOTE (alpha-fsc-audit, 2026-04-28): the original script gauged the
-# Wedderburn-orthogonal r_λ solve by setting c[last]=1 (or, on
-# fallback, c[0]=1). For partitions of H_5 ((3,2), (2,2,1)) and
-# H_6 ((4,2), (3,3), (3,2,1), (2,2,2)) the corresponding column of
-# the (p_n-1) × p_n constraint matrix has a near-zero coefficient,
-# making the (p_n-1) × (p_n-1) sub-system ill-conditioned and α_λ
-# explodes to ~10¹⁵. Fix (this commit): try all p_n gauges
-# c[k]=1 for k=0…p_n-1, rescale each candidate to c[last]=1 (the
-# canonical convention from r_k_h4_symbolic.py), pick the one whose
-# residual on the original constraints is smallest. This is gauge
-# pivoting — analogous to partial pivoting on the gauge index
-# rather than within the LU factor.
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0_FLOAT
 from hecke_characters import standard_young_tableaux  # pure-Python SYT enumerator
@@ -40,13 +28,7 @@ h_mp = q - qi  # quantum amplitude h = q - q^{-1}
 
 
 def _build_seminormal_matrices_mpmath(shape):
-    """Hoefsmit seminormal σ_1, …, σ_{n-1} as mpmath dense matrices.
-
-    Replaces hecke_characters.build_seminormal_matrices, which evaluates
-    matrix entries via float64 (capping precision at ~16 digits regardless
-    of mpmath dps). This local builder uses mpmath arithmetic throughout
-    so χ_λ(T_w) values land at the global mp.dps precision.
-    """
+    """Hoefsmit seminormal σ_1, …, σ_{n-1} as mpmath dense matrices at mp.dps."""
     syts, cells, contents = standard_young_tableaux(shape)
     dim = len(syts)
     if dim == 0:
@@ -215,16 +197,9 @@ def extract_r_k_at_h_n(n):
         print(f"  WARNING: sanity check failed (>1e-10), aborting.")
         return None
 
-    # For each partition, solve for r_λ. The H_4 closed-form proposition
-    # (explicit-alpha-k-h4.md) tabulates c_C(λ) using gauge c_{(1234)}=1
-    # for hooks but c_{(123)}=1 for the non-hook (2,2) — different gauges
-    # per partition, dictated by which column is non-zero in the natural
-    # Wedderburn dual basis. We replicate that convention:
-    #   1. Try gauge c[last]=1 first (the canonical hook convention).
-    #   2. If the resulting |c|_∞ is huge (>1e6) — i.e. the n-cycle column
-    #      is structurally near-zero in the dual basis (Murnaghan-Nakayama:
-    #      χ_λ((1…n)) = 0 for non-hook λ) — fall back to adaptive: pick
-    #      gauge k ∈ {0,…,p_n-1} minimising |c|_∞.
+    # Gauge convention follows explicit-alpha-k-h4.md: c[last]=1 for
+    # hooks, adaptive (smallest |c|_∞ across all p_n choices) for
+    # non-hooks where χ_λ((1…n))=0 makes c[last] structurally zero.
     print(f"\nPer-partition α_λ(H_{n}):")
     print(f"{'partition':>16} {'depth':>5} {'gauge_k':>8} {'|c|_∞':>10} "
           f"{'residual':>10} {'α_λ(H_n) at q_0':>20}")

@@ -1,16 +1,10 @@
 #!/usr/bin/env python3
 """Closed-form symbolic r_λ coefficients at H_5 in Q(q^{1/2}).
 
-Extends r_k_h4_symbolic.py to H_5 (7 partitions × 7 conjugacy classes).
-Fixes a bug in the H_4 script's 2×2-block construction (which only set the
-diagonal, ignoring the off-diagonal b·e_{T'} component) — that bug happens
-to cancel for H_4 because non-trivial 2×2 blocks at H_4 land on
-class-word indices where the off-diagonal product vanishes anyway. At H_5
-the bug would propagate, so this file uses the full Hoefsmit form.
-
-Companion to the numerical r_k_h5_h6_numeric.py (50 dps mpmath, fixed
-gauge instability via gauge pivoting). Promotes the 7 H_5 numerical
-α_λ(H_5) values to closed q-rational expressions.
+Solves the gauge-fixed Hoefsmit linear system per partition and
+emits closed-form r_λ coefficients with their α_λ evaluated at q_0.
+Uses the full Hoefsmit seminormal form (off-diagonal b·e_{T'}
+entries on 2×2 blocks).
 """
 from __future__ import annotations
 import json

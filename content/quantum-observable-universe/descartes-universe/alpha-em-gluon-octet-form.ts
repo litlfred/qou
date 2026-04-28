@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Closed form $1/\\alpha_{EM} = 45 \\cdot [3]_q \\cdot (1 + \\delta_{CS} + 8q \\cdot \\delta_{CS}^2)$ from spectral completeness, gauge uniqueness, and Gram--Plancherel structure",
   lean: {
-    ref: "qou:QOU.Descartes.alpha_em_gluon_octet_form",
+    ref: "qou:QOU.DescartesUniverse.alpha_em_gluon_octet_form",
     validation: "not_checked",
   },
   uses: [
