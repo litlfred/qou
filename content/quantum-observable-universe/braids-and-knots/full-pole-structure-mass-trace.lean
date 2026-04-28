@@ -1,6 +1,7 @@
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Algebra.Order.AbsoluteValue
 import Mathlib.Algebra.GroupPower.Order
+import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Tactic.Linarith
 
 /-!
@@ -33,71 +34,96 @@ LaTeX label: `prop:full-pole-structure-mass-trace`
 namespace QOU.BraidKnot
 
 /-- The real-valued q-Pochhammer factor
-    `(q; q)_m = ∏_{k=1}^{m} (1 - q^k)`, used below for the
-    `0 < q < 1` truncation bound.  The polynomial-typed version
-    over an arbitrary commutative ring (where vanishing at primitive
-    roots of unity makes sense) is in `habiro-expansion-atomic.lean`,
-    `QOU.BraidKnot.qPochhammer` over `R[u]`. -/
+    `(q; q)_m = ∏_{k=1}^{m} (1 - q^k)`, used in the
+    `0 < q < 1` truncation bound below. -/
 noncomputable def qPochhammer (q : ℝ) (m : ℕ) : ℝ :=
   ∏ k ∈ Finset.range m, (1 - q ^ (k + 1))
 
-/-- **Habiro completion of the Markov trace** (ℝ-evaluation form).
+/-- **Polynomial q-Pochhammer** `(u; u)_m = Π_{k=1}^{m} (1 - u^k) ∈ ℤ[u]`.
+
+    This is the polynomial-ring companion of `qPochhammer` above.
+    Polynomial divisibility by `qPochhammerPoly N` is non-trivial:
+    `qPochhammerPoly N` has degree `N(N+1)/2` and is a non-unit in
+    `ℤ[u]`, so divisibility encodes the Habiro-ideal property
+    genuinely (unlike real divisibility, which is trivially solvable
+    whenever the divisor is non-zero).
+
+    The generic ring-valued analogue
+    `QOU.BraidKnot.qPochhammer (u : R) : ℕ → R` over an arbitrary
+    `[CommRing R]` lives in the sibling file
+    `habiro-expansion-atomic.lean`; this is the specialisation
+    `qPochhammer (Polynomial.X : Polynomial ℤ)`.  The two
+    definitions are duplicated only because each sibling `.lean`
+    file is read standalone (not yet part of a shared Lake
+    module); a future `QOU.BraidKnot.HabiroBasic` module would let
+    both files import a single source. -/
+noncomputable def qPochhammerPoly (m : ℕ) : Polynomial ℤ :=
+  ∏ k ∈ Finset.range m, (1 - (Polynomial.X : Polynomial ℤ) ^ (k + 1))
+
+/-- **Habiro completion of the Markov trace** (polynomial-ring form).
 
     The mass trace of a closed braid `T_w` lies in the Habiro
     ring `Ẑ[q]` and admits a unique cyclotomic expansion
 
-      tr_M(T_w, q) = Σ_{m ≥ 0} a_m(T_w) · (q; q)_m,
-      a_m(T_w) ∈ ℤ[q^±1].
+      tr_M(T_w, u) = Σ_{m ≥ 0} a_m(T_w) · (u; u)_m,
+      a_m(T_w) ∈ ℤ[u].
 
-    This class records the **real-valued evaluation observable** of
-    that polynomial-ring statement: a sequence of cyclotomic
-    coefficients `coeff : ℕ → ℝ` and a trace function
-    `trace : ℝ → ℝ` related by the axiom
-    `trace_at_pochhammer_zero` — at any `q` annihilating `(q;q)_n`,
-    the trace coincides with the cyclotomic partial sum up to
-    order `n`.  This is the ℝ-shadow of the Habiro-ideal divisibility
-    in `Ẑ[q]`; the polynomial-typed version with explicit
-    `a_m ∈ ℤ[u]` and constructive `(u;u)_n`-divisibility is in
-    `cor:habiro-expansion-atomic`.
+    (After Markov normalisation by `D(u)` — see field `trace`
+    below — the prefactor leaves the cyclotomic coefficients
+    `a_m` in the regular polynomial ring `ℤ[u]` rather than in
+    the Laurent ring `ℤ[u^±1]`.)
 
-    The atomic-case termination property `a_k = 0` for
-    `k > m_max(T_w)` is also a corollary (see
-    `cor:habiro-expansion-atomic`).
+    This class records the trace as a polynomial `trace : ℤ[u]`,
+    the cyclotomic coefficients `coeff : ℕ → ℤ[u]`, and the
+    substantive axiom `tail_in_ideal`: at every truncation order
+    `N`, the residual `trace - Σ_{m<N} a_m · (u;u)_m` lies in the
+    Habiro ideal `((u;u)_N) ⊂ ℤ[u]`.
 
-    The class is axiomatized: existence of the cyclotomic expansion
+    **Why polynomial-typed.**  Polynomial divisibility by
+    `qPochhammerPoly N` is non-trivial: the divisor has degree
+    `N(N+1)/2` and is a non-unit, so the divisibility constraint
+    cuts out a proper subset of polynomials.  An earlier
+    ℝ-evaluation-only formulation was vacuous (real divisibility by
+    a non-zero divisor is always solvable); the polynomial form
+    above repairs that and is what Gemini and Copilot reviews
+    requested as the "honest Habiro-ideal" statement.
+
+    **ℝ-evaluation shadow.**  The earlier ℝ-evaluation observable
+    ("at any `q` annihilating `(q;q)_n`, the trace equals the
+    cyclotomic partial sum up to order `n`") follows by evaluating
+    both sides of `tail_in_ideal` at the relevant `q` (mapping
+    `ℤ[u] → ℝ` via `Polynomial.eval₂ (Int.castRingHom ℝ) q`): if
+    `(u;u)_N` divides the tail in `ℤ[u]`, then at any `q` where
+    `(q;q)_N = 0` the tail evaluates to `0`.
+
+    The class is axiomatised: existence of the cyclotomic expansion
     follows from Markov–Jones integrality plus sequential cyclotomic
-    division.
+    division, formalised in `cor:habiro-expansion-atomic`.
 
     Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127. -/
 class HabiroCompletion where
-  braid : Unit
-  /-- Cyclotomic coefficients `a_m(T_w) ∈ ℤ[q^±1]`, represented
-      here as a sequence of real-valued evaluations at the substrate
-      parameter. -/
-  coeff : ℕ → ℝ
-  /-- Evaluation of the trace at substrate parameter `q`. -/
-  trace : ℝ → ℝ
-  /-- **ℝ-shadow of the Habiro-ideal property.**
+  /-- The Markov trace as a polynomial in `ℤ[u]` (Markov-normalised
+      so that the result is integer-coefficient; the Laurent prefactor
+      `D(u)` is folded into `trace`). -/
+  trace : Polynomial ℤ
+  /-- Cyclotomic coefficients `a_m(T_w) ∈ ℤ[u]`. -/
+  coeff : ℕ → Polynomial ℤ
+  /-- **Habiro-ideal property.**
 
-      At any `q` where `(q;q)_n = 0` (i.e. `q` is a root of unity of
-      order ≤ n), the trace equals the cyclotomic partial sum up to
-      order `n` exactly.  This is the ℝ-evaluation observable of the
-      polynomial-ring statement "tail ∈ ((q;q)_n) ⊂ Ẑ[q]": polynomial
-      divisibility of the tail by `(q;q)_n` forces the tail to vanish
-      wherever `(q;q)_n` vanishes.  We axiomatise the vanishing
-      directly because real-valued divisibility (`tail = (q;q)_n · r`
-      for some `r ∈ ℝ`) is trivially solvable whenever
-      `(q;q)_n ≠ 0`, and so cannot encode the intended polynomial
-      divisibility on its own.
+      At every truncation order `N`, the residual
+      `trace - Σ_{m<N} a_m · (u;u)_m` lies in the principal ideal
+      `((u;u)_N) ⊂ ℤ[u]`.
 
-      The honest polynomial-ring version of this property is the
-      content of the corollary `cor:habiro-expansion-atomic`, where
-      the cyclotomic-division algorithm produces explicit `a_m ∈ ℤ[u]`
-      witnessing the divisibility constructively. -/
-  trace_at_pochhammer_zero :
-    ∀ (q : ℝ) (n : ℕ),
-      qPochhammer q n = 0 →
-      trace q = ∑ m ∈ Finset.range n, coeff m * qPochhammer q m
+      Non-vacuous: `qPochhammerPoly N` has degree `N(N+1)/2` and is
+      a non-unit, so this divisibility genuinely constrains the
+      coefficient sequence.  In particular, evaluating both sides
+      at any `q` with `qPochhammer q N = 0` forces the trace to
+      equal the cyclotomic partial sum up to order `N` (the
+      ℝ-evaluation shadow). -/
+  tail_in_ideal :
+    ∀ (N : ℕ),
+      qPochhammerPoly N ∣
+        (trace - ∑ m ∈ Finset.range N, coeff m * qPochhammerPoly m)
 
 /-- **Habiro cyclotomic monotone bound** (purely structural).
 
