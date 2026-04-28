@@ -39,7 +39,7 @@ import sympy as sp
 from sympy import Integer, Symbol
 
 sys.path.insert(0, str(Path(__file__).parent))
-from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord
+from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord  # noqa: E402
 
 
 HERE = Path(__file__).parent

@@ -1,0 +1,78 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-04-28T20:29:37.561180+00:00",
+  "commitSha": "fd9a4a4301c1acffdc883d3ba50f1fed1f557eef",
+  "assertions": [
+    {
+      "name": "tr_M_q0_atomic_vs_interpolate[D (deuteron, A=2)]",
+      "computed": 0.17743692421543206,
+      "expected": 0.17743692421543206,
+      "passed": true,
+      "tolerance": 1.7743692421543205e-13
+    },
+    {
+      "name": "tr_M_q0_atomic_vs_interpolate[n (neutron, A=1)]",
+      "computed": 1.5893934459539047,
+      "expected": 1.589393445953905,
+      "passed": true,
+      "tolerance": 1.589393445953905e-12
+    },
+    {
+      "name": "tr_M_q0_atomic_vs_interpolate[p (proton, A=1)]",
+      "computed": 2.12258250945273,
+      "expected": 2.1225825094527306,
+      "passed": true,
+      "tolerance": 2.1225825094527307e-12
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "habiro-interpolate-cross-validation",
+  "scriptFile": "habiro_interpolate_cross_validator.py",
+  "scriptHash": "1c39fa22be84",
+  "scriptCommitSha": "",
+  "description": "Verifies tr_M(q_0) agreement between the atomic-polynomial path (habiro_coefficients_atomic.py) and the Vandermonde-interpolation path (habiro_coefficients_interpolate.py).",
+  "contentBlock": "prop:full-pole-structure-mass-trace",
+  "parameters": {
+    "q_0": "1.109978595554180547111400301218964159488677978515625",
+    "agreement_rtol_dps": 50,
+    "mp_dps": 70
+  },
+  "data": {
+    "reference_blocks": [
+      "prop:full-pole-structure-mass-trace",
+      "def:habiro-ring"
+    ],
+    "atoms_only_in_atomic": [],
+    "atoms_only_in_interpolate": [
+      "T (triton, A=3)"
+    ],
+    "checks": [
+      {
+        "atom": "D (deuteron, A=2)",
+        "atomic_tr_M_q0": "0.177436924215432065497825286391205755913993404475647259134501707287708",
+        "interpolate_tr_M_q0": "0.177436924215432056950447758936206810176372528076171875",
+        "abs_diff": "0.000000000000000008547377527454998945737620876399475384134501707287707997833578138108683",
+        "rel_diff": "0.00000000000000004817135759791092794521905762445213406312589232655896252813340407655877",
+        "agree": true
+      },
+      {
+        "atom": "n (neutron, A=1)",
+        "atomic_tr_M_q0": "1.589393445953904856080868326028783841987368902502730596749039710423536",
+        "interpolate_tr_M_q0": "1.5893934459539049708354241374763660132884979248046875",
+        "abs_diff": "0.0000000000000001147545558114475821713011290223019569032509602895764640579726712544129",
+        "rel_diff": "0.00000000000000007220021958916247689054101893758876385482689830509348368692559377933166",
+        "agree": true
+      },
+      {
+        "atom": "p (proton, A=1)",
+        "atomic_tr_M_q0": "2.122582509452730296695817609404243767654194384405483281198523805054105",
+        "interpolate_tr_M_q0": "2.122582509452730636922979101655073463916778564453125",
+        "abs_diff": "0.0000000000000003402271614922508296962625841800476417188014761949458949789439651322593",
+        "rel_diff": "0.0000000000000001602892514081689225934984574911440317601121281891116215987846742939798",
+        "agree": true
+      }
+    ]
+  }
+}

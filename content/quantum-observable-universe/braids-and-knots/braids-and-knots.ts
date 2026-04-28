@@ -426,6 +426,7 @@ export default chapter({
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",
+        "habiro-residue-sum-equivalence",
         "mn-classical-parity-blind",
         "q-character-closes-parity-gap",
         "frobenius-codim-universal",
