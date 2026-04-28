@@ -1,15 +1,15 @@
 {
   "engine": "python+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-28T11:54:54.144496+00:00",
-  "commitSha": "99c379da71731df65cc5d9e07aa1a3ceffa6f6a3",
+  "computedAt": "2026-04-28T17:29:32.175688+00:00",
+  "commitSha": "66331497763be0936f0d015fb2ed1403462d6b02",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 23,
   "computation": "unified-low-isotope-predictor",
   "scriptFile": "unified_low_isotope_predictor.py",
-  "scriptHash": "d30b9a6e1418",
-  "scriptCommitSha": "",
+  "scriptHash": "cb15c4c677d0",
+  "scriptCommitSha": "a5135cd8bd177e1de4ddec85047d2f492b67d170",
   "description": "Unified low-isotope binding predictor — applies all 6 derived terms uniformly, with derivable rules for term applicability (no special-casing). T1 = descended Markov trace binding via free-vs-atom subtraction. T4 = universal Frobenius co-Casimir (Lean-proved). T5 = BW + chirality, applied only where BW is structurally valid (A ≥ 3). T6 = Habiro residue (placeholder, deferred Laurent expansion). k≥3 = entanglement-orders tail in subtractive form. Δm_shell = σ_shell ILP-derived. SINGLE β-decay calibration throughout.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
@@ -28,14 +28,14 @@
         "N": 1,
         "A": 2,
         "T1_descended": 1.0277982814659559,
-        "T4_frobenius": 2.5522256926886357,
+        "T4_frobenius": 1.6362871034827506,
         "T5_BW_chirality": 0.0,
         "T6_habiro": 0.0,
-        "k3_plus_tail": -4482.250986015552,
+        "k3_plus_tail": -4482.250986015518,
         "delta_m_shell": 0.018448014750043623,
-        "B_pred_MeV": -4478.652514026648,
+        "B_pred_MeV": -4479.568452615819,
         "B_AME_MeV": 2.22456612,
-        "err_pct": -201427.0126592887
+        "err_pct": -201468.18646756248
       },
       {
         "sym": "T",
@@ -43,14 +43,14 @@
         "N": 2,
         "A": 3,
         "T1_descended": 0.5186704723296789,
-        "T4_frobenius": 3.828338539032954,
+        "T4_frobenius": 1.2999219630962757,
         "T5_BW_chirality": 8.750090093641267,
         "T6_habiro": 0.0,
-        "k3_plus_tail": -6154.770447260537,
+        "k3_plus_tail": -6154.770447260491,
         "delta_m_shell": 0.018448014750043623,
-        "B_pred_MeV": -6141.654900140784,
+        "B_pred_MeV": -6144.183316716674,
         "B_AME_MeV": 8.4817984,
-        "err_pct": -72509.81936261045
+        "err_pct": -72539.62927386572
       },
       {
         "sym": "3He",
@@ -58,14 +58,14 @@
         "N": 1,
         "A": 3,
         "T1_descended": 0.8076087613857803,
-        "T4_frobenius": 3.828338539032954,
+        "T4_frobenius": 1.2999219630962757,
         "T5_BW_chirality": 8.242945577443654,
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
         "delta_m_shell": 0.018448014750043623,
-        "B_pred_MeV": 12.897340892612432,
+        "B_pred_MeV": 10.368924316675754,
         "B_AME_MeV": 7.7180375,
-        "err_pct": 67.10648131228218
+        "err_pct": 34.34664338798242
       },
       {
         "sym": "4He",
@@ -73,14 +73,14 @@
         "N": 2,
         "A": 4,
         "T1_descended": 0.0,
-        "T4_frobenius": 5.1044513853772715,
+        "T4_frobenius": 1.1507359248860785,
         "T5_BW_chirality": 22.546675462530366,
         "T6_habiro": 0.0,
         "k3_plus_tail": 0.0,
         "delta_m_shell": 0.018448014750043623,
-        "B_pred_MeV": 27.66957486265768,
+        "B_pred_MeV": 23.715859402166487,
         "B_AME_MeV": 28.2956912,
-        "err_pct": -2.212762123097812
+        "err_pct": -16.185615560554016
       },
       {
         "sym": "6Li",
@@ -174,8 +174,8 @@
       }
     ],
     "stats": {
-      "mean_abs_err_pct": 27416.14647425383,
-      "max_abs_err_pct": 201427.0126592887
+      "mean_abs_err_pct": 27421.366147758043,
+      "max_abs_err_pct": 201468.18646756248
     }
   },
   "caveats": [

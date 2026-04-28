@@ -47,6 +47,28 @@ m_e = M_E_MEV
 FROB_N3 = m_e * (2.0 + 1.0 / (Q0 + 1.0 / Q0))  # m_e · (2 + 1/[2]_q)
 
 
+def _load_sigma_3A_table():
+    """Load Σ_{λ⊢3A} 1/dim_q(λ) values at q_0 from the per-3A probe witness.
+
+    Per the per-3A correction (audit 2026-04-28b): the genuine algebraic
+    Term 4 is m_e · Σ_{λ⊢3A} 1/dim_q(λ), NOT A · m_e · (2 + 1/[2]_q).
+    The probe witness records Σ_{λ⊢3A} 1/dim_q(λ) at q_0 for A=1..4."""
+    path = Path(__file__).parent / "probe-term4-conventions.witness.json"
+    if not path.exists():
+        return {}
+    try:
+        d = json.loads(path.read_text())
+        return {1: float(d["sigma_inv_dim_q_at_q0"]["n=3"]),
+                2: float(d["sigma_inv_dim_q_at_q0"]["n=6"]),
+                3: float(d["sigma_inv_dim_q_at_q0"]["n=9"]),
+                4: float(d["sigma_inv_dim_q_at_q0"]["n=12"])}
+    except Exception:
+        return {}
+
+
+_SIGMA_3A_AT_Q0 = _load_sigma_3A_table()
+
+
 def term_1_descended(Z, N, include_inter):
     """Term 1: |tr_M(T_w)| via numerical Hoefsmit at H_{3A}."""
     from light_isotope_sweep import tr_M_at_q0
@@ -85,10 +107,28 @@ def term_23_brane_tower(Z, N, include_inter):
 
 
 def term_4_frobenius(A):
-    """Term 4: universal Frobenius correction m_e · (2 + 1/[2]_q) per
-    nucleon — scaling interpretation per-vortex (A=constant) or
-    per-A (A·Frob) is OPEN; here we return both to compare."""
-    return FROB_N3, A * FROB_N3
+    """Term 4: Frobenius co-Casimir trace m_e · τ(C_{dim_q}^{H_{3A}}).
+
+    Per ``thm:frobenius-codim-universal`` and the per-3A correction
+    (audit 2026-04-28b), the algebraic Term 4 for an isotope braid in
+    H_{3A}(q) is
+
+        Term4(A) = m_e · Σ_{λ⊢3A} 1/dim_q(λ)
+
+    The two earlier compute heuristics are RETAINED for comparison only:
+
+      - per-vortex 1·FROB_N3        (constant, ≈ 1.276 MeV)
+      - per-A     A·FROB_N3         (legacy compute, deprecated)
+
+    Returns (per-vortex, per-A, per-3A_genuine).  Use per-3A_genuine
+    in canonical predictions; the others are kept for backward
+    comparison.
+    """
+    pv = FROB_N3
+    pA = A * FROB_N3
+    sigma_3A = _SIGMA_3A_AT_Q0.get(A)
+    p3A = m_e * sigma_3A if sigma_3A is not None else None
+    return pv, pA, p3A
 
 
 def term_5_chirality_bw(Z, N, knot_type):
@@ -142,7 +182,7 @@ def predict_all_terms(Z, N, knot_type):
     t23_free = term_23_brane_tower(Z, N, include_inter=False)
     t23_atom = term_23_brane_tower(Z, N, include_inter=True)
 
-    t4_pv, t4_pa = term_4_frobenius(A)  # per-vortex, per-A
+    t4_pv, t4_pa, t4_p3A = term_4_frobenius(A)  # per-vortex, per-A, per-3A
     t5 = term_5_chirality_bw(Z, N, knot_type)
 
     return {
@@ -154,6 +194,7 @@ def predict_all_terms(Z, N, knot_type):
         "term23_tower_atom": {"single": t23_atom[0], "pair": t23_atom[1]},
         "term4_frobenius_pervortex": t4_pv,
         "term4_frobenius_per_A": t4_pa,
+        "term4_frobenius_per_3A_canonical": t4_p3A,
         "term5_bw_chirality_binding": t5,
     }
 
@@ -187,28 +228,47 @@ if __name__ == "__main__":
 
         # Binding predictions from different term subsets
         B_term1 = E_0 * (r["term1_descended_free"] - r["term1_descended_atom"])
-        B_term1_plus_frob = B_term1 + r["term4_frobenius_pervortex"]
+        # Term 4 — show per-vortex (legacy) and per-3A (canonical algebraic)
+        B_term1_plus_frob_pv = B_term1 + r["term4_frobenius_pervortex"]
+        t4_p3A = r["term4_frobenius_per_3A_canonical"]
+        B_term1_plus_frob_p3A = (
+            B_term1 + t4_p3A if t4_p3A is not None else None
+        )
         B_term5 = r["term5_bw_chirality_binding"]
 
-        print(f"  Term 1 only (descended)     : B = {B_term1:8.4f} MeV "
+        print(f"  Term 1 only (descended)              : B = "
+              f"{B_term1:8.4f} MeV "
               f"({(B_term1-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
-        print(f"  Term 1 + Term 4 (Frob n=3) : B = "
-              f"{B_term1_plus_frob:8.4f} MeV "
-              f"({(B_term1_plus_frob-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+        print(f"  Term 1 + Term 4 per-vortex (1·n=3)  : B = "
+              f"{B_term1_plus_frob_pv:8.4f} MeV "
+              f"({(B_term1_plus_frob_pv-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
+        if B_term1_plus_frob_p3A is not None:
+            print(f"  Term 1 + Term 4 per-3A (CANONICAL)   : B = "
+                  f"{B_term1_plus_frob_p3A:8.4f} MeV "
+                  f"({(B_term1_plus_frob_p3A-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
         if B_term5 is not None:
-            print(f"  Term 5 only (paper BW+χ)   : B = {B_term5:8.4f} MeV "
+            print(f"  Term 5 only (paper BW+χ)             : B = "
+                  f"{B_term5:8.4f} MeV "
                   f"({(B_term5-B_AME[iso])/B_AME[iso]*100:+7.2f}%)")
-        print(f"  B_AME                        : {B_AME[iso]:8.4f} MeV")
+        print(f"  B_AME                                : "
+              f"{B_AME[iso]:8.4f} MeV")
         print()
 
+        err_p3A = (
+            (B_term1_plus_frob_p3A - B_AME[iso]) / B_AME[iso] * 100
+            if B_term1_plus_frob_p3A is not None else None
+        )
         rows[iso].update({
             "B_pred_term1": B_term1,
-            "B_pred_term1_plus_term4": B_term1_plus_frob,
+            "B_pred_term1_plus_term4_pervortex_legacy": B_term1_plus_frob_pv,
+            "B_pred_term1_plus_term4_per3A_canonical": B_term1_plus_frob_p3A,
             "B_pred_term5_bw_chirality": B_term5,
             "B_AME_MeV": B_AME[iso],
             "err_pct": {
                 "term1_only": (B_term1 - B_AME[iso]) / B_AME[iso] * 100,
-                "term1_plus_term4": (B_term1_plus_frob - B_AME[iso]) / B_AME[iso] * 100,
+                "term1_plus_term4_pervortex_legacy":
+                    (B_term1_plus_frob_pv - B_AME[iso]) / B_AME[iso] * 100,
+                "term1_plus_term4_per3A_canonical": err_p3A,
                 "term5_only": (
                     (B_term5 - B_AME[iso]) / B_AME[iso] * 100
                     if B_term5 is not None else None
@@ -218,14 +278,20 @@ if __name__ == "__main__":
 
     # Summary table
     print("Summary (binding errors by term subset)")
-    print(f"{'iso':>5}  {'term1':>10}  {'term1+4':>10}  {'term5 (BW+χ)':>14}")
-    print("-" * 48)
+    print(f"{'iso':>5}  {'term1':>10}  "
+          f"{'t1+4 pv (legacy)':>18}  {'t1+4 per-3A (CAN)':>18}  "
+          f"{'term5 (BW+χ)':>14}")
+    print("-" * 78)
     for iso in ["D", "T", "3He"]:
         r = rows[iso]
+        e1 = r['err_pct']['term1_only']
+        e14_pv = r['err_pct']['term1_plus_term4_pervortex_legacy']
+        e14_p3A = r['err_pct']['term1_plus_term4_per3A_canonical']
+        e14_p3A_str = f"{e14_p3A:>+15.2f}%" if e14_p3A is not None else "     (N/A)"
         t5 = r['err_pct']['term5_only']
         t5_str = f"{t5:>+11.2f}%" if t5 is not None else "     (N/A)"
-        print(f"{iso:>5}  {r['err_pct']['term1_only']:>+8.2f}%  "
-              f"{r['err_pct']['term1_plus_term4']:>+8.2f}%  {t5_str}")
+        print(f"{iso:>5}  {e1:>+8.2f}%  "
+              f"{e14_pv:>+15.2f}%   {e14_p3A_str}  {t5_str}")
 
     print()
     print("KEY FINDING: n/p discrepancy is NOT visible here because we")
@@ -266,7 +332,9 @@ if __name__ == "__main__":
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": Q0, "m_e_MeV": m_e, "E_0_MeV": E_0,
-            "frobenius_universal_MeV": FROB_N3,
+            "frobenius_n3_pervortex_MeV": FROB_N3,
+            "sigma_inv_dim_q_at_q0_3A": _SIGMA_3A_AT_Q0,
+            "term4_convention": "per-3A canonical (m_e · Σ_{λ⊢3A} 1/dim_q(λ))",
         },
         "A1_calibration": {
             "tr_p_q0": t1_p,

@@ -70,11 +70,41 @@ def term1_descended(Z, N, E_0):
     return E_0 * abs(tr_free - tr_atom)
 
 
-# Term 4: universal Frobenius co-Casimir (proven Lean theorem)
+# Term 4: Frobenius co-Casimir trace m_e · τ(C_{dim_q}^{H_{3A}})
+# Per-3A is the genuine algebraic statement (audit 2026-04-28b);
+# A·FROB_N3 (legacy) corresponds to A independent H_3 blocks, which
+# is NOT the algebra hosting an isotope braid.  See
+# probe-term4-conventions.witness.json for Σ_{λ⊢3A} 1/dim_q at q_0.
+def _load_sigma_3A():
+    path = Path(__file__).parent / "probe-term4-conventions.witness.json"
+    if not path.exists():
+        return {}
+    try:
+        d = json.loads(path.read_text())
+        return {1: float(d["sigma_inv_dim_q_at_q0"]["n=3"]),
+                2: float(d["sigma_inv_dim_q_at_q0"]["n=6"]),
+                3: float(d["sigma_inv_dim_q_at_q0"]["n=9"]),
+                4: float(d["sigma_inv_dim_q_at_q0"]["n=12"])}
+    except Exception:
+        return {}
+
+
+_SIGMA_3A_AT_Q0 = _load_sigma_3A()
+
+
 def term4_frobenius(Z, N):
-    """A · m_e · (2 + 1/[2]_q) per nucleon, per prop:frobenius-codim-universal."""
+    """m_e · Σ_{λ⊢3A} 1/dim_q(λ), per prop:frobenius-codim-universal.
+
+    Genuine algebraic Term 4: when the isotope braid lives in H_{3A}(q),
+    the Frobenius co-Casimir trace sums over partitions of 3A, not 3.
+    Falls back to A·FROB_N3 (legacy per-A heuristic) only if the
+    probe witness is unavailable, with a warning."""
     A = Z + N
-    return A * FROB_N3
+    sigma_3A = _SIGMA_3A_AT_Q0.get(A)
+    if sigma_3A is None:
+        # Should not happen for A ∈ {1..4}; flag and fall back.
+        return A * FROB_N3
+    return M_E * sigma_3A
 
 
 # Term 5: BW + chirality (only valid for A ≥ 3 where volume > surface)

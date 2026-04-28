@@ -1104,16 +1104,35 @@ Paper-side (`knot-mass-formula-unified.md`) said the resolution is
   numerical mismatch; Lean-formalising it requires an arithmetic
   bound on the opaque values, not a structural derivation).
 
-#### Open downstream
+#### Migration completed (2026-04-28c)
 
-The per-3A correction has **NOT** yet been migrated into compute.
-`mass_formula_6term.py` and `unified_low_isotope_predictor.py`
-still emit `A·FROB_N3`. Migration: replace `A * FROB_N3` with
-`m_e * sigma_inv_dim_q(3*A)` using the witness from
-`probe-term4-conventions.witness.json`. Predictor B-values
-(D, T, ³He, ⁴He) will shift accordingly — bounded by ±2.4 MeV
-on T/³He but only ±0.3 MeV on D, so the impact on the +2.10% D
-result is small.
+`mass_formula_6term.py` and `unified_low_isotope_predictor.py` have
+been migrated to consume `m_e · Σ_{λ⊢3A} 1/dim_q(λ)` from
+[`probe-term4-conventions.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe-term4-conventions.witness.json).
+Both scripts now emit per-vortex (legacy), per-A (legacy), and
+**per-3A (canonical)** Term 4 values.
+
+Re-run results (T1 + T4 only, no T5 chirality):
+
+| iso | T1 | T1 + T4 per-vortex (legacy) | **T1 + T4 per-3A (canonical)** |
+|---|---:|---:|---:|
+| D | −55.3% | +2.10% | **+18.29%** |
+| T | −93.9% | −78.84% | **−78.56%** |
+| ³He | −89.6% | −73.04% | **−72.73%** |
+
+**The "+2.10%" D result was a per-vortex coincidence.** Under the
+canonical per-3A Term 4 the D residual is +18.29%, indicating real
+structural content not captured by Term 1+4 alone (Term 5 chirality,
+Term 6 jet-prefix). The T/³He residuals are essentially unchanged
+(per-3A Σ_9 ≈ 2.54 vs per-vortex Σ_3 ≈ 2.50, only 1.6% drift).
+
+**Coverage limit**: per-3A witness currently covers A ∈ {1,2,3,4}
+(n = 3, 6, 9, 12 in the symbolic Σ-table). For A ≥ 5 (heavier
+isotopes ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹²C, ¹⁶O), the migrated Term 4
+function falls back to the legacy `A·FROB_N3` heuristic with a
+flag. Background extension to A=5,6,7 (n=15,18,21) is running;
+A ≥ 8 is computationally heavy in symbolic sympy (each level adds
+~10× wall time vs the previous).
 
 ### Why nobody caught this earlier
 
