@@ -44,10 +44,68 @@ from y_lambda_jones_markov_witness import solve_jones_markov_weights
 
 
 # ── Validation 1: Jones–Markov sign-indefiniteness at n ≥ 4 ─────────
+def _symbolic_y_one4_at_q0() -> dict | None:
+    """Cross-check pathway: evaluate the pre-existing q-rational
+    symbolic expression for y_{(1,1,1,1)} at q₀ via sympy."""
+    sym_path = (
+        Path(__file__).parent / "y-lambda-symbolic-witness.json"
+    )
+    if not sym_path.exists():
+        return None
+    try:
+        import sympy as sp  # type: ignore[import-not-found]
+    except ImportError:
+        return None
+    payload = json.loads(sym_path.read_text())
+    n4 = payload.get("tables_by_n", {}).get("4")
+    if n4 is None:
+        return None
+    for entry in n4.get("weights", []):
+        if entry.get("partition") == [1, 1, 1, 1]:
+            q = sp.Symbol("q", positive=True)
+            sym = sp.sympify(
+                entry["y_lambda_symbolic"], locals={"q": q}
+            )
+            from q_parameter import Q as Q0_FLOAT
+
+            q0_rat = sp.Rational(str(Q0_FLOAT))
+            val = float(sym.subs(q, q0_rat).evalf(50))
+            return {
+                "pathway": "sympy q-rational symbolic",
+                "y_lambda_one4_at_q0": val,
+                "source_witness": "y-lambda-symbolic-witness.json",
+            }
+    return None
+
+
+def _mpfr_y_one4_at_q0() -> dict | None:
+    """Cross-check pathway: lift y_{(1,1,1,1)} from the pre-existing
+    50-digit mpfr witness."""
+    mpfr_path = (
+        Path(__file__).parent / "y-lambda-mpfr-witness.json"
+    )
+    if not mpfr_path.exists():
+        return None
+    payload = json.loads(mpfr_path.read_text())
+    # Two possible layouts: flat 'weights' or 'tables_by_n[4]'
+    table = payload.get("tables_by_n", {}).get("4", payload)
+    for entry in table.get("weights", []):
+        if entry.get("partition") == [1, 1, 1, 1]:
+            return {
+                "pathway": "pre-existing 50-digit mpfr witness",
+                "y_lambda_one4_at_q0": float(entry["y_lambda"]),
+                "source_witness": "y-lambda-mpfr-witness.json",
+            }
+    return None
+
+
 def validate_shannon_no_go() -> dict:
     """Solve the Jones–Markov linear system from scratch at n ∈ {3, 4, 5}
-    and report which partitions have negative y_λ at q₀."""
+    and report which partitions have negative y_λ at q₀.  Cross-check
+    the critical entry y_{(1,1,1,1)}(q₀) against two independent
+    pre-existing witnesses (mpfr, sympy symbolic)."""
     results: list[dict] = []
+    fresh_y_one4: float | None = None
     for n in (3, 4, 5):
         r = solve_jones_markov_weights(n, do_crt_probes=False)
         negative = [
@@ -55,6 +113,10 @@ def validate_shannon_no_go() -> dict:
             for w in r["weights"]
             if w["y_lambda"] < 0
         ]
+        if n == 4:
+            for w in r["weights"]:
+                if w["partition"] == [1, 1, 1, 1]:
+                    fresh_y_one4 = w["y_lambda"]
         results.append(
             {
                 "n": n,
@@ -67,6 +129,25 @@ def validate_shannon_no_go() -> dict:
                 "all_positive": len(negative) == 0,
             }
         )
+
+    # Three-pathway cross-check on y_{(1,1,1,1)}(q₀)
+    pathways: list[dict] = [
+        {
+            "pathway": "fresh numpy linear solve (this script)",
+            "y_lambda_one4_at_q0": fresh_y_one4,
+            "source_witness": (
+                "tau-codim-conjectures-validation.witness.json"
+            ),
+        }
+    ]
+    for cross in (_mpfr_y_one4_at_q0(), _symbolic_y_one4_at_q0()):
+        if cross is not None:
+            pathways.append(cross)
+    finite = [p["y_lambda_one4_at_q0"] for p in pathways if p["y_lambda_one4_at_q0"] is not None]
+    max_pairwise_diff = (
+        max(finite) - min(finite) if len(finite) >= 2 else None
+    )
+
     return {
         "claim": (
             "Jones–Markov block weights y_λ(q₀) are non-negative at "
@@ -74,6 +155,15 @@ def validate_shannon_no_go() -> dict:
         ),
         "tested_n": [3, 4, 5],
         "per_n": results,
+        "three_pathway_cross_check_on_y_one4_at_q0": {
+            "pathways": pathways,
+            "max_pairwise_difference": max_pairwise_diff,
+            "all_negative": all(
+                p["y_lambda_one4_at_q0"] is not None
+                and p["y_lambda_one4_at_q0"] < 0
+                for p in pathways
+            ),
+        },
         "verdict": (
             "VALIDATED" if (
                 results[0]["all_positive"]

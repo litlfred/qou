@@ -84,6 +84,21 @@ between the categorical mass $\mathfrak{m}$ and a thermodynamic
 energy $\mathfrak{E}$ of the substrate — i.e., a categorical
 formulation of the first law $d\mathfrak{E} = T \, d S$.
 
+**No-go: a purely Cauchy--Schwarz proof is ruled out on the
+balanced family.**  The most natural Hilbert-space attempt — apply
+the L${}^2$-Cauchy--Schwarz inequality to $\langle f, C
+\rangle = \tau(f^\dagger C)$ — delivers only
+$\tau(f^\dagger f) \geq 1/\|C\|^2$.
+[`prop:landauer-cauchy-schwarz-insufficient`](#prop:landauer-cauchy-schwarz-insufficient)
+shows that on the balanced Frobenius family
+$d_q(\lambda) = \tau(p_\lambda) = 1$ with $|\Lambda| = n \geq 2$
+blocks, the Cauchy--Schwarz bound $1/n$ is strictly less than the
+conjectured $\tau(C_{\dim_q}) = n$, with the gap growing as
+$n^2$.  Any proof of step (L2) must therefore use categorical
+input — Frobenius reciprocity, AM-HM on block traces, or the
+spectral theory of the multiplication-comultiplication Laplacian —
+beyond the Hilbert-space inner product alone.
+
 **Verification path.**  Direct verification is impossible (no
 controlled experiment isolates substrate dissipation from particle
 creation).  The strongest possible evidence is consistency with

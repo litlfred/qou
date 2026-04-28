@@ -34,14 +34,15 @@ critical entry $y_{(1,1,1,1)}(q_0)$:
 
 | Pathway | $y_{(1,1,1,1)}(q_0)$ |
 |---|---|
-| Fresh numpy linear solve (this PR's witness) | $-8.4253 \times 10^{-4}$ |
-| Pre-existing 50-digit mpfr witness | $-8.4252749 \times 10^{-4}$ |
-| Sympy $q$-rational symbolic solve | $-8.4253 \times 10^{-4}$ |
+| Fresh numpy linear solve (this PR's witness) | $-8.42527491154525 \times 10^{-4}$ |
+| Pre-existing 50-digit mpfr witness | $-8.42527491154563 \times 10^{-4}$ |
+| Sympy symbolic $q$-rational solve at $q_0$ | $-8.42527491154563 \times 10^{-4}$ |
 
-The linear system has condition number $\sim 3$ and residual
-$\sim 10^{-16}$ — the negative sign is real, not a numerical
-artifact.  A continuous $q$-sweep
-($q \in \{1.0001, 1.001, 1.01, 1.05, 1.1097\}$) shows
+The three pathways agree to a maximum pairwise difference of
+$3.8 \times 10^{-17}$ (machine $\epsilon$).  The linear system
+has condition number $\sim 3$ and residual $\sim 10^{-16}$ — the
+negative sign is real, not a numerical artifact.  A continuous
+$q$-sweep ($q \in \{1.0001, 1.001, 1.01, 1.05, 1.1097\}$) shows
 $y_{(1,1,1,1)}(q)$ remains negative across the whole interval and
 varies smoothly, ruling out any singularity at $q_0$.
 

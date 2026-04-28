@@ -10,10 +10,13 @@ export default proof({
     validation: "not_checked",
   },
   computation: {
+    engine: "sympy",
+    status: "verified",
     script:
       "folio-assistant/computations/tau_codim_conjectures_validate.py",
     witness:
       "folio-assistant/computations/tau-codim-conjectures-validation.witness.json",
+    requires: ["numpy", "scipy", "mpmath", "sympy"],
   },
   uses: ["prop:shannon-jones-markov-no-go"],
 });

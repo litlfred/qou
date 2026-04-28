@@ -72,6 +72,17 @@ $Z_q = \sum_\lambda \dim_q(\lambda)^2 = [n]_q!$ (the $q$-Plancherel
 measure), restricted to its **crystal limit** at $q \to 0, \infty$.
 The calibration is conjecturally $\kappa(q) = m_e / \log Z_q$.
 
+**No-go: the Jones--Markov candidate is ruled out.**  The most
+naive candidate measure $p_q(\lambda) = y_\lambda(q) \cdot
+d_\lambda$ (which has the desired Plancherel-type normalisation
+$\sum_\lambda y_\lambda^{(n)} d_\lambda = 1$) is **not** a
+probability measure for any $n \geq 4$:
+[`prop:shannon-jones-markov-no-go`](#prop:shannon-jones-markov-no-go)
+proves $p_q((1,1,1,1)) < 0$ at $q_0$ via three independent
+computational pathways agreeing to machine $\epsilon$.  This
+narrows the search to the crystal-basis or heat-kernel-regularised
+candidates listed above.
+
 **Verification path.**  Symbolic computation at $n = 3, 4, 5, 6$
 is tractable; the witness file would live at
 `folio-assistant/computations/tau-codim-shannon.witness.json`.  If

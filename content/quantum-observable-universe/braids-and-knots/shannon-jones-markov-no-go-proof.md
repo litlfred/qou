@@ -41,15 +41,21 @@ with linear-system condition $\sim 3$ and residual $\sim 10^{-16}$.
 
 **Step 2: Cross-check with three independent pathways.**
 
-| Pathway | $y_{(1,1,1,1)}(q_0)$ | Agreement |
-|---|---|---|
-| Fresh numpy solve (this PR) | $-8.4253 \times 10^{-4}$ | — |
-| Pre-existing 50-digit mpfr witness | $-8.4252749 \times 10^{-4}$ | $4 \times 10^{-7}$ |
-| Sympy symbolic $q$-rational solve | $-8.4253 \times 10^{-4}$ | machine $\epsilon$ |
+The validation script also lifts $y_{(1,1,1,1)}(q_0)$ from two
+pre-existing witnesses for cross-checking:
 
-All three pathways agree on both magnitude and sign; the prior
-mpfr witness (50-digit precision) confirms that the negativity is
-not a single-precision artifact.
+| Pathway | $y_{(1,1,1,1)}(q_0)$ |
+|---|---|
+| Fresh numpy linear solve (this PR) | $-8.42527491154525 \times 10^{-4}$ |
+| Pre-existing 50-digit mpfr witness | $-8.42527491154563 \times 10^{-4}$ |
+| Sympy symbolic $q$-rational solve | $-8.42527491154563 \times 10^{-4}$ |
+
+Maximum pairwise difference: $3.8 \times 10^{-17}$ (machine
+$\epsilon$).  All three pathways agree on both magnitude and sign;
+the prior mpfr witness (50-digit precision) and the symbolic
+$q$-rational expression evaluated at $q_0$ confirm that the
+negativity is not a single-precision artifact and not a numerical
+coincidence at $q_0$.
 
 **Step 3: Continuity in $q$ rules out singularity.**
 

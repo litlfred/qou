@@ -7,7 +7,7 @@
     "conj:tau-codim-shannon",
     "conj:tau-codim-landauer"
   ],
-  "generated_at_utc": "2026-04-28T00:25:17.570555+00:00",
+  "generated_at_utc": "2026-04-28T02:46:08.045810+00:00",
   "shannon_no_go": {
     "claim": "Jones\u2013Markov block weights y_\u03bb(q\u2080) are non-negative at n \u2264 3 and sign-indefinite at n \u2265 4.",
     "tested_n": [
@@ -19,15 +19,15 @@
       {
         "n": 3,
         "num_partitions": 3,
-        "condition_number": 1.812163436778838,
-        "linear_system_residual": 1.1102230246251565e-16,
+        "condition_number": 1.8121634367788375,
+        "linear_system_residual": 2.7755575615628914e-17,
         "negative_partitions": [],
         "all_positive": true
       },
       {
         "n": 4,
         "num_partitions": 5,
-        "condition_number": 3.10334421299662,
+        "condition_number": 3.1033442129966184,
         "linear_system_residual": 1.1102230246251565e-16,
         "negative_partitions": [
           {
@@ -37,7 +37,7 @@
               1,
               1
             ],
-            "y_lambda": -0.000842527491154533
+            "y_lambda": -0.0008425274911545252
           }
         ],
         "all_positive": false
@@ -45,8 +45,8 @@
       {
         "n": 5,
         "num_partitions": 7,
-        "condition_number": 6.087945585956461,
-        "linear_system_residual": 1.6653345369377348e-16,
+        "condition_number": 6.0879455859564615,
+        "linear_system_residual": 1.1102230246251565e-16,
         "negative_partitions": [
           {
             "partition": [
@@ -55,12 +55,33 @@
               1,
               1
             ],
-            "y_lambda": -0.0009287250802900693
+            "y_lambda": -0.0009287250802900649
           }
         ],
         "all_positive": false
       }
     ],
+    "three_pathway_cross_check_on_y_one4_at_q0": {
+      "pathways": [
+        {
+          "pathway": "fresh numpy linear solve (this script)",
+          "y_lambda_one4_at_q0": -0.0008425274911545252,
+          "source_witness": "tau-codim-conjectures-validation.witness.json"
+        },
+        {
+          "pathway": "pre-existing 50-digit mpfr witness",
+          "y_lambda_one4_at_q0": -0.0008425274911545631,
+          "source_witness": "y-lambda-mpfr-witness.json"
+        },
+        {
+          "pathway": "sympy q-rational symbolic",
+          "y_lambda_one4_at_q0": -0.0008425274911545631,
+          "source_witness": "y-lambda-symbolic-witness.json"
+        }
+      ],
+      "max_pairwise_difference": 3.7947076036992655e-17,
+      "all_negative": true
+    },
     "verdict": "VALIDATED"
   },
   "landauer_no_go": {
