@@ -6,7 +6,9 @@ export default conjecture({
   uses: [
     "prop:hecke-mass-trace",
     "prop:categorical-mass-markov",
-    "cor:topological-decomposition-mass",
+    "def:habiro-ring",
+    "def:motivic-substrate",
+    "thm:topological-mass",
   ],
   tags: [
     "mass",
@@ -15,6 +17,7 @@ export default conjecture({
     "volume-conjecture",
     "higgs",
     "brane-tower",
+    "habiro-ring",
     "open-problem",
   ],
 });

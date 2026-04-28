@@ -138,6 +138,45 @@ finite $N$ (determined by the knot crossing number), so the
 relevant sum is finite.  The question is whether this finite
 sum has a closed-form expression in $H_n(R, q)$.
 
+**Habiro-ring home for the tower limit.**  *Even when the brane
+tower does not truncate finitely, the partial sums*
+
+$$
+  \Phi_{\mathrm{mass}}^{(N)}(\beta)
+  \;:=\;
+  \sum_{i=1}^{N} \Phi_q(z_i)
+$$
+
+*form a Cauchy sequence in the $(q;q)_n$-adic topology on
+$\widehat{\mathbb{Z}[q]}$ ([Habiro ring](#def:habiro-ring)): each
+factor $\Phi_q(z_i)$ has cyclotomic-denominator structure (the
+$[k]_q$ in $\Phi_q$ are cyclotomic), so successive partial sums
+agree modulo $((q;q)_n)$ for $n$ growing with $N$. Therefore the
+limit*
+
+$$
+  \Phi_{\mathrm{mass}}^{(\infty)}(\beta)
+  \;\in\;\widehat{\mathbb{Z}[q]}
+$$
+
+*exists as an element of the Habiro completion — well-defined
+purely algebraically, with no analytic convergence required. This
+limit object **is** the motive of the mass:* it carries the
+combinatorial data needed to map to $\mathrm{Vol}(K)/\hbar_q^2$
+**only** when the archimedean realization
+[$\rho_\infty$](#def:archimedean-realization-functor) of
+the [motivic substrate](#def:motivic-substrate) is applied at
+$q_0 \in \mathbb{R}$. The non-archimedean realizations
+$\{\rho_p\}$ recover the colored-Jones data via cyclotomic
+projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$
+without any complex-analytic limit.
+
+The conjecture's "closed-form expression in $H_n(R, q)$" is a
+question at the level of the **finite-rank Hecke algebra**; the
+$N \to \infty$ tower limit is then a question at the level of the
+**Habiro completion** $\widehat{\mathbb{Z}[q]}$. Both senses are
+algebraic.
+
 ## Descended vs transient mass (computed)
 
 The Hecke mass element splits as
