@@ -1440,6 +1440,94 @@ multi-term sum |tr_M| + tower + Σ 1/dim_q (already amended in
 [`atom-knot-mass-derivation.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
 2026-04-28e).
 
+### Habiro = Jones identification (2026-04-28h)
+
+User: "I think Habiro and Jones are key to correct derivation."
+Verified by tracing the structural difference between two existing
+trace conventions:
+
+**Schur-Weyl weight** (used by `habiro_coefficients_atomic.py`):
+```
+w_λ(q) = s_λ(q, q⁻¹) / H_q(λ)        2-variable Schur specialisation
+```
+The 2-variable Schur polynomial `s_λ(q, q⁻¹)` **vanishes for partitions
+of height > 2**. So this trace projects onto the SU(2) / height-≤-2
+subspace — **exactly the standard Jones polynomial**.
+
+**Wenzl Markov trace** (used by `light_isotope_sweep`,
+`y-lambda-wenzl-witness`):
+```
+y_λ(q) = s_λ,X(Q) / Σ_μ d_μ s_μ,X(Q)   cyclotomic Schur full
+```
+This sums over ALL partitions including height > 2.
+
+**Numerical verification on D's atom braid** (n=6):
+
+| height | # partitions | contribution | cumulative |
+|---:|---:|---:|---:|
+| 1 | 1 | +0.092319 | +0.092319 |
+| 2 | 3 | +0.266726 | **+0.359045** ← Wenzl-h≤2 |
+| 3 | 3 | −0.022608 | +0.336437 |
+| 4 | 2 | +0.000177 | +0.336614 |
+| 5 | 1 | +0.000198 | +0.336813 |
+| 6 | 1 | +0.000008 | +0.336821 ← full Wenzl |
+
+The **Habiro polynomial value** for D is **0.177437** = (Wenzl height-
+≤-2 = 0.359) / 2.025. The factor 2 is exactly the **Jones-polynomial
+identity-normalization**: `J_K(q) := tr_h≤2(σ_w) / tr_h≤2(1)`.
+
+Heights > 2 contribute **negligibly** (≤ 0.001 in absolute value) —
+the height-stratification of Wenzl tr_M does NOT supply the missing
+brane tower contribution.
+
+**Three normalizations** for D's Markov trace at q_0 = 1.11:
+
+| convention | value | meaning |
+|---|---:|---|
+| Wenzl-Schur full | 0.336821 | full braid Markov trace |
+| Wenzl-Schur (h ≤ 2 only) | 0.359045 | Wenzl projected to SU(2) sector |
+| Schur-Weyl / Habiro / Jones | 0.177437 | knot-invariant Jones polynomial |
+
+The Jones polynomial value (0.177437) is **2× smaller** than the
+Wenzl-h≤2 partial sum because Jones divides by `tr_h≤2(1) ≈ 2`
+(identity normalization → knot-invariant rather than braid-invariant).
+
+### What this means for the paper
+
+The paper's `tr_M(T_w)` in prop:atom-knot-mass-derivation refers to
+"Wenzl-bridge coefficients y_λ" (full Markov trace). But the empirical
+match path via `habiro-coefficients-atomic` uses Schur-Weyl weight
+(= Jones polynomial). **These are different objects.**
+
+Three candidate paper formulas, with B(D) values (ρ_D = 1):
+
+| formula | tr_M used | B(D) pred | err vs AME 2.225 |
+|---|---|---:|---:|
+| `B = m_e · ρ · tr_M` (canonical Wenzl) | 0.337 | 0.172 MeV | −92.3% |
+| `B = m_e · ρ · J_K(q_0)` (Habiro-Jones) | 0.177 | 0.091 MeV | −95.9% |
+| `B = m_e · ρ · m(ϱ)` (multi-term sum) | 0.337 + 2.50 + tower | needs tower ≈ 1.57 cat | TARGET |
+
+**Single-term formulas are inadequate** under either Markov-trace
+convention. **Multi-term is needed** but the brane tower is
+structurally independent of the height stratification — it represents
+surface-integration depth (Yekutieli finite slice), not algebra
+projections.
+
+### Open: z-Habiro completion in the volume variable
+
+The Habiro framework (q-cyclotomic completion) does NOT directly
+address the brane-tower divergence at `|V̂| ≈ 1`. The brane tower's
+Φ_q(z) is a function of the volume z, and z-completion (parallel
+to q-completion) is the open construction. This would replace
+`Σ Φ_q(|V̂_i|)` with a cyclotomic-in-z series whose evaluation at
+any specific |V̂| is finite.
+
+Both PR #472 (`prop:habiro-residue-sum-equivalence`) and the multi-
+term mass formula reconciliation (this audit) point to the same
+unfilled gap: **the brane tower needs a Habiro-style cyclotomic
+expansion in the z-variable**, not just the q-variable. This is
+the residual research direction.
+
 ### Why nobody caught this earlier
 
 Both scripts CLAIM to compute "the Markov trace tr_M". The
