@@ -203,29 +203,40 @@ def main():
     results = {}
     for target in partitions:
         constraints = [p for p in partitions if p != target]
-        gauge_idx = GAUGE_HINT.get(target, p_n - 1)
-        # Set up (p_n - 1) linear equations Σ_j A[i,j] c[j] = 0
-        # with the gauge c[gauge_idx] = 1.
+        # Build per-target equations once; substitute different gauges per attempt.
         c_syms = [sp.Symbol(f"c_{j}") for j in range(p_n)]
         equations = []
         for i, p in enumerate(constraints):
             row = sum(chi[(p, classes[j][1])] * c_syms[j] for j in range(p_n))
             equations.append(row)
-        # Substitute the gauge
-        equations_subst = [eq.subs(c_syms[gauge_idx], 1) for eq in equations]
-        unknowns = [c_syms[j] for j in range(p_n) if j != gauge_idx]
-        t0 = time.time()
-        try:
-            sol = sp.solve(equations_subst, unknowns, rational=True)
-        except Exception as e:
-            print(f"\n  λ = {target}: solve FAILED ({e})")
-            results[str(target)] = {"error": f"solve: {e}"}
+
+        # Try gauges in this order: hint first, then descend from p_n-1.
+        # Multiple non-hooks at H_7 have several zero columns, so a single
+        # gauge index isn't enough. Iterate and accept the first that solves.
+        hinted = GAUGE_HINT.get(target, p_n - 1)
+        gauge_order = [hinted] + [k for k in range(p_n - 1, -1, -1) if k != hinted]
+        sol = None
+        gauge_idx = None
+        t_solve_total = 0.0
+        for k_try in gauge_order:
+            equations_subst = [eq.subs(c_syms[k_try], 1) for eq in equations]
+            unknowns = [c_syms[j] for j in range(p_n) if j != k_try]
+            t0 = time.time()
+            try:
+                cand = sp.solve(equations_subst, unknowns, rational=True)
+            except Exception as e:
+                t_solve_total += time.time() - t0
+                continue
+            t_solve_total += time.time() - t0
+            if cand:
+                sol = cand
+                gauge_idx = k_try
+                break
+        if sol is None:
+            print(f"\n  λ = {target}: no gauge solved (tried all {p_n})")
+            results[str(target)] = {"error": "no gauge solved"}
             continue
-        t_solve = time.time() - t0
-        if not sol:
-            print(f"\n  λ = {target}: no solution")
-            results[str(target)] = {"error": "no solution"}
-            continue
+        t_solve = t_solve_total
         # Reassemble full c vector (gauge_idx → 1)
         c_full = []
         for j in range(p_n):
