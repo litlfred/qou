@@ -109,11 +109,21 @@ def validate_atom(atom_label: str, atom_data: dict, u: Symbol) -> dict:
         if not divisible:
             overall_pass = False
 
+    # Termination check: p_u must equal the full partial sum exactly.
+    full_sum = sp.Poly(Integer(0), u, domain="ZZ")
+    for m, a_m in enumerate(coeffs):
+        full_sum = full_sum + a_m * q_pochhammer_poly(m, u)
+    full_residual = p_u - full_sum
+    exact_reconstruction = full_residual.is_zero
+    if not exact_reconstruction:
+        overall_pass = False
+
     return {
         "atom": atom_label,
         "deg_p_u": atom_data.get("deg_p_u"),
         "n_coefficients": len(coeffs),
         "all_pass": overall_pass,
+        "exact_reconstruction": bool(exact_reconstruction),
         "checks": checks,
     }
 
@@ -167,7 +177,8 @@ def main() -> int:
         atom = r["atom"]
         n_checks = len(r["checks"])
         n_passed = sum(1 for c in r["checks"] if c.get("divisible"))
-        print(f"  {atom:>24}  {n_passed}/{n_checks} divisibility checks pass")
+        recon = "exact" if r.get("exact_reconstruction") else "INCOMPLETE"
+        print(f"  {atom:>24}  {n_passed}/{n_checks} divisibility   reconstruction: {recon}")
 
     print(f"Wrote {OUTPUT_WITNESS}")
     return 0 if overall_pass else 2

@@ -7,7 +7,7 @@
   ],
   "lean_axiom": "qou:QOU.BraidKnot.HabiroCompletion.tail_in_ideal",
   "input_witness": "habiro-coefficients-atomic.witness.json",
-  "computedAt": "2026-04-28T14:36:59.276151+00:00",
+  "computedAt": "2026-04-28T14:39:58.922794+00:00",
   "engine": "sympy.div over ZZ[u]",
   "overall_pass": true,
   "results": [
@@ -16,6 +16,7 @@
       "deg_p_u": 48,
       "n_coefficients": 10,
       "all_pass": true,
+      "exact_reconstruction": true,
       "checks": [
         {
           "N": 1,
@@ -104,6 +105,7 @@
       "deg_p_u": 40,
       "n_coefficients": 9,
       "all_pass": true,
+      "exact_reconstruction": true,
       "checks": [
         {
           "N": 1,
