@@ -86,12 +86,40 @@ def chi_lambda_numeric(shape, crossings):
     return chi, dim
 
 
-def tr_M_at_q0(Z, N, include_inter):
-    """Full tr_M = Σ_λ w_λ · χ^λ_q(T_w) / dim(λ) at q_0."""
+def tr_M_at_q0(Z, N, include_inter, convention="plancherel"):
+    """Full tr_M at q_0.
+
+    convention="plancherel" (LEGACY): tr_M = Σ_λ (dim_q²/[n]_q!) · χ_λ / dim_λ_classical
+        Use w_λ = dim_q² / [n]_q! and divide by classical dim_λ inside.
+        This is the Plancherel-A convention. Some scripts depend on this.
+
+    convention="wenzl-schur" (CANONICAL per prop:y-lambda-recipe-from-partition):
+        tr_M = Σ_λ y_λ · χ_λ where y_λ from y-lambda-wenzl-witness.json.
+        Per the d_from_scratch diagnostic, this is the right Markov trace.
+
+    Returns (tr_M, per_lambda_breakdown, walltime_sec).
+    """
     A = Z + N
     k = 3 * A
     nfac = qfac(k)
     crossings = atomic_braid_to_crossings(Z, N, include_inter)
+
+    # Lazy-load Wenzl y_λ if requested
+    wenzl_y = None
+    if convention == "wenzl-schur":
+        import json
+        from pathlib import Path
+        path = Path(__file__).parent / "y-lambda-wenzl-witness.json"
+        with open(path) as f:
+            wd = json.load(f)
+        table = wd["tables_by_n"].get(str(k))
+        if table is None:
+            raise ValueError(
+                f"y-lambda-wenzl-witness.json has no n={k} table; "
+                f"extend the witness or fall back to convention='plancherel'."
+            )
+        wenzl_y = {tuple(w["partition"]): float(w["y_lambda_numeric"])
+                   for w in table["weights"]}
 
     total = 0.0
     per_lambda = []
@@ -115,9 +143,14 @@ def tr_M_at_q0(Z, N, include_inter):
         t_total += dt
         if d == 0:
             continue
-        d_q_val = dim_q(shape)
-        w = float(d_q_val ** 2 / nfac)
-        contrib = w * chi / d
+        if convention == "wenzl-schur":
+            y = wenzl_y.get(shape, 0.0)
+            w = y               # for the breakdown
+            contrib = y * chi   # canonical: NO /dim_classical
+        else:  # plancherel (legacy)
+            d_q_val = dim_q(shape)
+            w = float(d_q_val ** 2 / nfac)
+            contrib = w * chi / d
         total += contrib
         per_lambda.append({
             "shape": shape, "dim": d, "w_lambda": w,
@@ -128,10 +161,27 @@ def tr_M_at_q0(Z, N, include_inter):
 
 
 if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument(
+        "--convention",
+        choices=["plancherel", "wenzl-schur"],
+        default="plancherel",
+        help=(
+            "Markov-trace weight convention. 'plancherel' (legacy) uses "
+            "w_λ = dim_q²/[n]_q! with /dim_λ_classical inside. 'wenzl-schur' "
+            "(canonical per prop:y-lambda-recipe-from-partition) uses "
+            "y_λ = s_λ(q,q^-1)/H_q(λ) loaded from y-lambda-wenzl-witness.json."
+        ),
+    )
+    args = ap.parse_args()
+    CONV = args.convention
+
     print("LIGHT ISOTOPE SWEEP — Schur-Weyl + Frobenius pipeline")
     print("=" * 96)
     print(f"q_0 = {Q0}")
     print(f"m_e = {M_E} MeV")
+    print(f"convention = {CONV}")
     print(f"Universal Frobenius (n=3) per nucleon: "
           f"m_e · (2 + 1/[2]_q) = {FROB_N3:.6f} MeV")
     print()
@@ -140,8 +190,8 @@ if __name__ == "__main__":
     print("[calibration] A=1 free p, free n (β-decay)")
     print("-" * 72)
     t = time.time()
-    tr_p, _, dt_p = tr_M_at_q0(1, 0, include_inter=False)
-    tr_n, _, dt_n = tr_M_at_q0(0, 1, include_inter=False)
+    tr_p, _, dt_p = tr_M_at_q0(1, 0, include_inter=False, convention=CONV)
+    tr_n, _, dt_n = tr_M_at_q0(0, 1, include_inter=False, convention=CONV)
     Q_cat = tr_n - tr_p
     E_0 = 0.782 / abs(Q_cat)
     print(f"  |tr_M(p)| = {abs(tr_p):.6e}  (walltime: {dt_p:.2f}s)")
@@ -168,8 +218,10 @@ if __name__ == "__main__":
         n = 3 * A
         t = time.time()
         try:
-            tr_free, free_lam, dt_free = tr_M_at_q0(Z, N, include_inter=False)
-            tr_atom, atom_lam, dt_atom = tr_M_at_q0(Z, N, include_inter=True)
+            tr_free, free_lam, dt_free = tr_M_at_q0(
+                Z, N, include_inter=False, convention=CONV)
+            tr_atom, atom_lam, dt_atom = tr_M_at_q0(
+                Z, N, include_inter=True, convention=CONV)
         except Exception as exc:
             print(f"  {iso:>5} {A:>3}  ERROR: {type(exc).__name__}: {exc}")
             continue
@@ -236,6 +288,7 @@ if __name__ == "__main__":
 
     witness = {
         "computation": "light-isotope-sweep",
+        "convention": CONV,
         "closed_form_used": CLOSED_FORM_USED,
         "description": (
             "Schur-Weyl + Frobenius binding predictions for light "
@@ -267,6 +320,7 @@ if __name__ == "__main__":
         },
         "rows": rows,
     }
-    out = Path(__file__).parent / "light-isotope-sweep.witness.json"
+    suffix = "" if CONV == "plancherel" else f".{CONV}"
+    out = Path(__file__).parent / f"light-isotope-sweep{suffix}.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")

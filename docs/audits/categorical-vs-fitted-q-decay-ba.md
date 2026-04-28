@@ -941,6 +941,92 @@ This is a fundamental bookkeeping bug. Until fixed, **all "best
 prediction" claims are contingent on the wrong convention** and
 should be re-evaluated.
 
+### Update (2026-04-28): calibration-consistent Wenzl-Schur sweep
+
+Refactored [`light_isotope_sweep.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/light_isotope_sweep.py) with a
+`--convention {plancherel,wenzl-schur}` flag. Both modes use the
+same atomic braid words, the same E_0 calibration formula
+(`E_0 = 0.782 / |tr_n - tr_p|`), but **different per-λ weights**:
+
+- `plancherel` (legacy): `w_λ = dim_q² / [n]_q!`, contrib = `w_λ · χ_λ / dim_λ_classical`
+- `wenzl-schur` (canonical): `w_λ = y_λ` from
+  [`y-lambda-wenzl-witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/y-lambda-wenzl-witness.json) (100-dps closed-form), contrib = `y_λ · χ_λ`
+
+Numerical sanity at A=1: tr_M(p, plancherel) = 0.7022, tr_M(p,
+wenzl-schur) = 1.0653, tr_M(p, habiro) = 2.1226. **All three differ.**
+The Wenzl-witness y_λ at n=3 sums to ~1 on identity (normalized so
+tr(1) = 1). The Habiro witness has no such normalization. So the
+~2× factor between Wenzl-schur and Habiro is a normalization
+choice, while the ratio between Plancherel and Wenzl-Schur per-λ
+weights varies across λ (0.39× for λ=(3), 2.35× for λ=(2,1), 7.18×
+for λ=(1,1,1) — see calculation below). **These are NOT
+proportional**, so they encode different functionals on H_n(q), not
+just different normalizations of the same trace.
+
+Calibration-consistent sweep results (no Frobenius added):
+
+| isotope | plancherel B_pred | err vs AME | wenzl-schur B_pred | err vs AME |
+|---|---:|---:|---:|---:|
+| D | 2.27 MeV | +2.10% | **1.53 MeV** | **−31.36%** |
+| T | 8.52 MeV | +0.5% | **1.79 MeV** | **−78.91%** |
+| ³He | 7.79 MeV | +0.9% | **2.16 MeV** | **−72.04%** |
+| ⁴He | 28.46 MeV | +0.6% | **2.03 MeV** | **−92.83%** |
+
+(Wenzl-schur with per-vortex Frobenius (+1·Frob): D = +26.00%, T
+= −63.86%, ³He = −55.51%, ⁴He = −88.32% — Frobenius doesn't close
+the gap.)
+
+**Diagnosis:** the Wenzl-Schur Markov trace at q_0, calibrated
+against the same neutron decay Q_β, **does not reproduce nuclear
+binding to better than ~30%** for D and worse for heavier nuclei.
+Plancherel-A's near-perfect agreement is therefore either
+(a) accidental, (b) the result of the additional T4/T5/T6 structure
+on top of T1, which has been engineered to compensate the
+Plancherel error, or (c) Plancherel-A is in fact the right
+convention for QOU and the paper's prop:y-lambda-recipe-from-
+partition is incomplete (missing a normalization factor or
+referring to a different functional).
+
+### Per-λ weight ratios (n=3, q=q_0=1.1097)
+
+| λ | plancherel weight `dim_q²/[3]_q!` | wenzl-schur y_λ | ratio P/W |
+|---|---:|---:|---:|
+| (3) | 1/6.119 = 0.1634 | 0.4154 | 0.393 |
+| (2,1) | [2]_q²/[3]_q! = 4.043/6.119 = 0.6608 | 0.2809 | 2.353 |
+| (1,1,1) | 1/6.119 = 0.1634 | 0.0227 | 7.180 |
+
+Wenzl-Schur **strongly weights symmetric channel (λ=(3))** relative
+to Plancherel. Plancherel **strongly weights mixed channel (λ=(2,1))**
+relative to Wenzl. These are encoding genuinely different physics
+selections.
+
+### Path forward (open research question)
+
+Three hypotheses:
+
+1. **Plancherel is correct.** The paper's
+   `prop:y-lambda-recipe-from-partition` needs revision; what's
+   actually being used in `mass_formula_6term` is the right Markov
+   trace and it just needs to be re-derived from first principles.
+2. **Wenzl-Schur is correct, but the 4-tier rule + Frobenius are
+   wrong.** Need to find the additional structural terms (Habiro
+   jet-prefix, shell, etc.) that close the −31% to −93% gaps under
+   Wenzl-Schur.
+3. **Both are valid Markov traces, but represent different
+   physical observables.** E.g. Plancherel = "thermal" trace,
+   Wenzl-Schur = "ground-state" trace. Need paper-side categorical
+   identification of which observable is the binding energy.
+
+Until the paper resolves this, **`mass_formula_6term` and
+`bw_chirality_isotopes` should NOT be refactored to Wenzl-Schur** —
+that would replace a +2% predictor with a −30%+ predictor on the
+basis of an unresolved conjecture. Better: keep both code paths
+exposed via a `--convention` flag (as `light_isotope_sweep` now is),
+flag the disagreement loudly, and resolve on the paper side first.
+
+Filed as paper-side open research question; computational refactor
+on hold pending resolution.
+
 ### Why nobody caught this earlier
 
 Both scripts CLAIM to compute "the Markov trace tr_M". The
