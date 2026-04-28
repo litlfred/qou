@@ -1,36 +1,34 @@
 {
   "computation": "frobenius-high-prec",
   "description": "High-precision (80-digit) \u03a3 1/dim_q(\u03bb) at q_0 for n = 3, 6, 9, 11.  Verifies analytical closed form 2 + 1/[2]_q at n=3.  Compares per-vortex, per-atom, universal Frobenius interpretations.",
-  "computedAt": "2026-04-24T20:05:18.259814+00:00",
+  "computedAt": "2026-04-27T21:04:21.082202+00:00",
   "q_0": 1.1099785955541805,
   "dps_used": 80,
   "n_table": [
     {
       "n": 3,
-      "sum_inv_dim_q_q0": "2.4972905450085914789522696559945422187827775056128",
+      "sum_inv_dim_q_q0": "2.4972905450085914754458311922210076140223706534548",
       "sum_inv_dim_classical": "5/2",
-      "m_e_correction_MeV": "1.276112846344317986723557"
+      "m_e_correction_MeV": "1.276112846344317984931771"
     },
     {
       "n": 6,
-      "sum_inv_dim_q_q0": "3.2021339838031972949754068984447179996318093988841",
+      "sum_inv_dim_q_q0": "3.2021339838031971925527950871246437377495694488791",
       "sum_inv_dim_classical": "473/144",
-      "m_e_correction_MeV": "1.636287103482750824375273"
+      "m_e_correction_MeV": "1.636287103482750772037426"
     },
     {
       "n": 9,
-      "sum_inv_dim_q_q0": "2.5438838242158343532554936440679707440438038244699",
+      "sum_inv_dim_q_q0": "2.543883824215834219391585479968113653894518243351",
       "sum_inv_dim_classical": "60379/22680",
-      "m_e_correction_MeV": "1.299921963096275927887486"
+      "m_e_correction_MeV": "1.29992196309627585948317"
     },
     {
       "n": 11,
-      "sum_inv_dim_q_q0": "2.3137574210006820969873722078630509755274954484018",
+      "sum_inv_dim_q_q0": "2.3137574210006819849450880765053138772761682217194",
       "sum_inv_dim_classical": "1006651/415800",
-      "m_e_correction_MeV": "1.182327612686056500844345"
+      "m_e_correction_MeV": "1.182327612686056443590856"
     }
   ],
-  "n3_value_MeV": "1.27611284634431798672355689433",
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "n3_value_MeV": "1.2761128463443179849317705211"
 }

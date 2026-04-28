@@ -27,10 +27,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 50
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
 
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = 1/Q0
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 m_e = mp.mpf("0.51099895")
 h = Q0 - QI
 hbar_q2 = ((Q0-1)/Q0)**2

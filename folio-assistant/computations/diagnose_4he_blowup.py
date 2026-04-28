@@ -15,13 +15,13 @@ import mpmath as mp
 import numpy as np
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import (
     build_seminormal_matrices, nuclear_braid_character,
     partitions_of, dim_q, qfac
 )
 
-Q0 = mp.mpf(str(Q0_FLOAT))
+Q0 = Q_MP  # was f64 roundtrip
 
 # ⁴He: Z=2, N=2, A=4, n=12
 Z, N = 2, 2

@@ -41,13 +41,21 @@ from datetime import datetime, timezone
 from mpmath import mp, mpf, mpc, sqrt, log
 from mpmath import polylog, im, arg
 
+from q_parameter import vol_4_1_at
+
 # ── Set precision: 50 decimal digits (~165 bits) ─────────────
 mp.dps = 50
 
 # ── Calibration inputs (high-precision values) ───────────────
-# SnapPy 3.3.2 figure-8 volume to 50 digits (verified numerically)
-VOL_4_1_STR = "2.0298832128193072500424051085490405710014"
-VOL_4_1 = mpf(VOL_4_1_STR)
+# Vol(4_1) computed at the working precision via the Clausen
+# identity Vol(4_1) = 2 Cl_2(π/3) — see q_parameter.vol_4_1_at.
+# The previously-hardcoded 50-dps string here was actually
+# inaccurate past digit ~37 (its trailing digits "100 14" do not
+# match the converged Clausen value's "188 33...").  Pinning at
+# 50 dps with a wrong constant past digit 37 corrupted the
+# pinning result.
+VOL_4_1 = vol_4_1_at(mp.dps)
+VOL_4_1_STR = mp.nstr(VOL_4_1, mp.dps, strip_zeros=False)
 
 # CODATA 2022 muon-electron mass ratio
 M_MU_OVER_E_STR = "206.7682830"

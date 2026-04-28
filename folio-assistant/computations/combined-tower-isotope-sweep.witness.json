@@ -5,7 +5,7 @@
     "thm:frobenius-antipode-unifies-chirality-and-tower",
     "prop:mass-endomorphism-tower"
   ],
-  "computedAt": "2026-04-25T02:45:28.670763+00:00",
+  "computedAt": "2026-04-27T21:18:23.121594+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "E_0_MeV_per_catunit": 0.0007439312331462498,
@@ -117,7 +117,5 @@
       "err_pct_S_2": 46.595033256116665,
       "err_pct_S_6": 200.86729337419814
     }
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  ]
 }

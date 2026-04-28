@@ -40,6 +40,8 @@ from datetime import datetime, timezone
 
 import mpmath as mp
 
+from q_parameter import vol_4_1_at
+
 
 def main():
     DPS = 1500  # Working precision; PSLQ at 1000 dps tolerance
@@ -54,8 +56,13 @@ def main():
     # is not knowable — but we can test the formula's algebraic
     # CONSISTENCY at 1000 dps with a self-consistently extended q_0.
 
-    Vol_4_1 = mp.mpf("2.029883212819307250042405108549332301525")
-    # extend Vol(4_1) more if needed; 38 digits here
+    # Vol(4_1) computed on demand at the working precision via the
+    # Clausen identity Vol(4_1) = 2 Cl_2(π/3).  The previously-
+    # hardcoded 38-dps string used here was inaccurate past digit
+    # ~30 (its trailing digits did not match the converged Clausen
+    # value), so PSLQ runs past 30 dps were searching corrupted
+    # input.  See q_parameter.vol_4_1_at for the canonical source.
+    Vol_4_1 = vol_4_1_at(DPS)
     m_mu_over_m_e = mp.mpf("206.7682830")
 
     # Solve q · m_mu/m_e = q · Vol(4_1) / ℏ_q²

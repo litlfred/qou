@@ -52,12 +52,12 @@ sys.path.insert(0, str(REPO / "tools/pyhecke/python"))
 sys.path.insert(0, str(Path(__file__).parent))
 
 import pyhecke
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 
 mp.mp.dps = 30
 
-Q0 = mp.mpf(str(Q0_FLOAT))
+Q0 = Q_MP  # was f64 roundtrip
 ME = mp.mpf(str(M_E_MEV))
 
 # ────────────────────────────────────────────────────────────────────────

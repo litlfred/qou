@@ -1,10 +1,10 @@
 {
   "computation": "alpha-em-pslq-uniqueness",
   "description": "PSLQ uniqueness test for the hecke-engine-knot-tracker \u03b1_EM formula at 1000+ digit precision.  Tests whether 1/\u03b1 = 45\u00b7[3]_q\u00b7(1 + \u210f_q^4\u00b7[5]_q + 8q\u00b7(\u210f_q^4\u00b7[5]_q)\u00b2) is the UNIQUE integer relation in the q-arithmetic + transcendental basis at extreme precision, or whether spurious relations exist with comparable coefficient norms.",
-  "computedAt": "2026-04-26T05:33:05.578184+00:00",
+  "computedAt": "2026-04-27T20:28:38.064598+00:00",
   "precision_dps": 1500,
-  "q_0_extended_50dp": "1.109978595554180575281594079609518150067234842238",
-  "one_over_alpha_value_50dp": "137.03599999817522076201684190212167401513339380723",
+  "q_0_extended_50dp": "1.1099785955541805752815940796095093779932822799587",
+  "one_over_alpha_value_50dp": "137.03599999817522076201684190212135441251466445012",
   "basis_size": 52,
   "basis_labels": [
     "1/alpha",
@@ -64,27 +64,27 @@
     {
       "tol_dps": 50,
       "relation": null,
-      "walltime_s": 14.170152187347412
+      "walltime_s": 14.023053169250488
     },
     {
       "tol_dps": 100,
       "relation": null,
-      "walltime_s": 14.210970878601074
+      "walltime_s": 13.887500762939453
     },
     {
       "tol_dps": 200,
       "relation": null,
-      "walltime_s": 14.135170698165894
+      "walltime_s": 13.81033182144165
     },
     {
       "tol_dps": 500,
       "relation": null,
-      "walltime_s": 13.945785284042358
+      "walltime_s": 13.87904691696167
     },
     {
       "tol_dps": 1000,
       "relation": null,
-      "walltime_s": 13.917428731918335
+      "walltime_s": 13.76907229423523
     }
   ]
 }

@@ -95,6 +95,24 @@ clarabel-sdp = ["dep:clarabel"]
 
 [build-dependencies]
 
+# Pin Clarabel-rs to the litlfred fork's bigrational-backend branch.
+#
+# Rationale: upstream PR https://github.com/litlfred/Clarabel.rs/pull/1
+# ships the trait-decoupling and Copy → Clone refactor that QOU needs
+# for the §S8 exact-rational diagnostic, plus the rug-interop feature
+# that lets seminormal_mpfr's rug::Float outputs flow into the solver
+# without an f64 round-trip.  See CLARABEL_PRECISION_PLAN.md.
+#
+# Validated at cf7b5f4 (post-c43b4d7 chordal-decomp Copy fix): 71/71
+# hecke-engine tests pass under `cargo test --features clarabel-sdp`.
+# Same f64 SDP path that 0.11.1 from crates.io carried, just with the
+# extra trait headroom for high-precision T.
+#
+# Will be lifted once the fork merges to its own main and a release
+# is cut on crates.io.
+[patch.crates-io]
+clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "cf7b5f4" }
+
 [profile.release]
 opt-level = 3
 lto = true

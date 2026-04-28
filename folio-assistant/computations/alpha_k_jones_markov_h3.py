@@ -27,10 +27,10 @@ import mpmath as mp
 import numpy as np
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import build_seminormal_matrices, dim_q, qfac, q_int
 
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = 1/Q0
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 m_e = mp.mpf("0.51099895")
 h_amp = Q0 - QI
 z_mark = 1/(mp.sqrt(Q0) + 1/mp.sqrt(Q0))

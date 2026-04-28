@@ -1,7 +1,7 @@
 {
   "computation": "q-beta-path-a-extended",
   "description": "Structural derivation of Q_\u03b2 extending Path A (np\u0394 - m_e) with rank-4 universal Pochhammer contribution.  Achieves +0.055% precision via \u03a3_3 + Vol(6_1)\u00b7|(q;q)_3| + |(q;q)_4|, all structural ingredients (no fitted multipliers).",
-  "computedAt": "2026-04-25T22:58:14.743984+00:00",
+  "computedAt": "2026-04-27T21:23:31.856027+00:00",
   "q_0": 1.1099785955541805,
   "sigma_3": 2.4972905450085916,
   "Vol_61": 3.16396324,
@@ -12,7 +12,5 @@
   "rank4_T4_MeV": 0.0024826967214169548,
   "predicted_Qbeta_MeV": 0.7827623635349183,
   "codata_Qbeta_MeV": 0.7823334100000222,
-  "error_pct": 0.054830016130357845,
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "error_pct": 0.054830016130357845
 }

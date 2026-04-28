@@ -56,14 +56,14 @@ import numpy as np
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_core import (
     atom_per_generator_volumes, h as h_val, z as z_mark,
 )
 from mass_endomorphism import Phi_q
 
 
-Q0 = mp.mpf(str(Q0_FLOAT))
+Q0 = Q_MP  # was f64 roundtrip
 Z_MARK = mp.mpf(str(float(z_mark)))
 H_VAL = mp.mpf(str(float(h_val)))
 

@@ -41,10 +41,10 @@ mp.mp.dps = 40
 from hecke_core import (_partition_table, _ensure_ysn_attached,
                            atom_character_raw,)
 from hecke_characters import dim_q, young_hooks, partitions_of
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1) / Q0
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 h = Q0 - QI
 me = mp.mpf(str(M_E_MEV))
 E0 = mp.mpf('0.782')

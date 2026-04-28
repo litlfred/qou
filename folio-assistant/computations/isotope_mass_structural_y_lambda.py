@@ -32,14 +32,14 @@ warnings.filterwarnings("ignore")
 mp.mp.dps = 30
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import (
     build_seminormal_matrices, nuclear_braid_character,
     partitions_of as partitions_of_n,
 )
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = 1 / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
 h_amp = Q0 - QI
 

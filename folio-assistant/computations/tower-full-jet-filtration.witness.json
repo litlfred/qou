@@ -1,10 +1,10 @@
 {
   "computation": "tower-full-jet-filtration",
   "description": "Complete all-orders brane tower with z^(2\u00b7span) weighting. Supersedes paper's adjacent-pair-only formula.  Orders 0..n_gens summed with proper GB filtration suppression.  Replaces partial tower formula in unified knot-mass formula.",
-  "computedAt": "2026-04-24T22:05:58.440425+00:00",
+  "computedAt": "2026-04-27T21:24:50.329611+00:00",
   "q_0": 1.1099785955541805,
   "z": 0.4993203340335982,
-  "E0_MeV_per_cat": 0.0007958232816978121,
+  "E0_MeV_per_cat": 0.0007958232816978196,
   "results": [
     {
       "particle": "proton",
@@ -15,7 +15,7 @@
         0.98900731592926,
         0.9710701586527439
       ],
-      "tower_H": 1178995.525436611,
+      "tower_H": 1178995.5254365997,
       "mass_MeV": 938.27208816,
       "err_pct": 0.0
     },
@@ -28,8 +28,8 @@
         0.854210312825839,
         0.975509471107746
       ],
-      "tower_H": 517436.50435550534,
-      "mass_MeV": 411.7880169664425,
+      "tower_H": 517436.5043555006,
+      "mass_MeV": 411.7880169664426,
       "err_pct": -56.17250188512264
     },
     {
@@ -44,7 +44,7 @@
         0.854210312825839,
         0.975509471107746
       ],
-      "tower_H": 1704949.7310652605,
+      "tower_H": 1704949.7310652444,
       "mass_MeV": 1356.8386901061576,
       "err_pct": null
     },
@@ -63,7 +63,7 @@
         0.854210312825839,
         0.975509471107746
       ],
-      "tower_H": 2228879.5936684264,
+      "tower_H": 2228879.5936684054,
       "mass_MeV": 1773.794272742493,
       "err_pct": null
     },
@@ -82,11 +82,9 @@
         0.854210312825839,
         0.975509471107746
       ],
-      "tower_H": 2926282.2970697307,
+      "tower_H": 2926282.2970697028,
       "mass_MeV": 2328.803580828245,
       "err_pct": null
     }
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  ]
 }

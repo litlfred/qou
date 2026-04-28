@@ -1,7 +1,7 @@
 {
   "computation": "chirality-convergence-bound",
   "description": "Convergence-cutoff analysis for the chirality-residue sum \u03a3_chir = m_e \u00b7 \u03a3 Vol(K)\u00b7|(q;q)_r|.  Tabulates |(q;q)_r| for r=0..30 at q_0 = 1.10998, computes a max-Vol upper envelope max_Vol(r) = 0.5\u00b7r\u00b7v_3 (Adams/Thurston bound), identifies the convergence cutoff r* (largest r at which a single match contributes <0.01 MeV), and reports n_std_knots_needed for each isotope to bridge its binding gap.",
-  "computedAt": "2026-04-25T19:24:25.918690+00:00",
+  "computedAt": "2026-04-27T21:18:12.086618+00:00",
   "q_0": 1.1099785955541805,
   "m_e_MeV": 0.51099895,
   "v_3": 1.0149416064096535,
@@ -16,223 +16,221 @@
     },
     {
       "r": 1,
-      "qpoch_abs": 0.1099785955541805,
+      "qpoch_abs": 0.10997859555418057,
       "max_vol": 0.5074708032048267,
-      "ub_term_MeV": 0.028519324697570257
+      "ub_term_MeV": 0.028519324697570278
     },
     {
       "r": 2,
-      "qpoch_abs": 0.025520806129936565,
+      "qpoch_abs": 0.025520806129936603,
       "max_vol": 1.0149416064096535,
-      "ub_term_MeV": 0.013235960195633466
+      "ub_term_MeV": 0.013235960195633483
     },
     {
       "r": 3,
-      "qpoch_abs": 0.00938022038121258,
+      "qpoch_abs": 0.009380220381212601,
       "max_vol": 1.5224124096144802,
-      "ub_term_MeV": 0.0072973531650922865
+      "ub_term_MeV": 0.007297353165092302
     },
     {
       "r": 4,
-      "qpoch_abs": 0.004858516287395414,
+      "qpoch_abs": 0.004858516287395429,
       "max_vol": 2.029883212819307,
-      "ub_term_MeV": 0.005039584397325808
+      "ub_term_MeV": 0.005039584397325823
     },
     {
       "r": 5,
-      "qpoch_abs": 0.003327576884886148,
+      "qpoch_abs": 0.0033275768848861605,
       "max_vol": 2.5373540160241337,
-      "ub_term_MeV": 0.004314487067142316
+      "ub_term_MeV": 0.004314487067142332
     },
     {
       "r": 6,
-      "qpoch_abs": 0.0028956512697664513,
+      "qpoch_abs": 0.002895651269766465,
       "max_vol": 3.0448248192289604,
-      "ub_term_MeV": 0.00450535042881416
+      "ub_term_MeV": 0.004505350428814181
     },
     {
       "r": 7,
-      "qpoch_abs": 0.003115373064577278,
+      "qpoch_abs": 0.003115373064577295,
       "max_vol": 3.552295622433787,
-      "ub_term_MeV": 0.005655085416805599
+      "ub_term_MeV": 0.005655085416805631
     },
     {
       "r": 8,
-      "qpoch_abs": 0.004063014350307278,
+      "qpoch_abs": 0.004063014350307305,
       "max_vol": 4.059766425638614,
-      "ub_term_MeV": 0.008428871085207897
+      "ub_term_MeV": 0.008428871085207953
     },
     {
       "r": 9,
-      "qpoch_abs": 0.006328522761496056,
+      "qpoch_abs": 0.006328522761496104,
       "max_vol": 4.567237228843441,
-      "ub_term_MeV": 0.014769844543244712
+      "ub_term_MeV": 0.014769844543244823
     },
     {
       "r": 10,
-      "qpoch_abs": 0.011637352799952832,
+      "qpoch_abs": 0.011637352799952932,
       "max_vol": 5.074708032048267,
-      "ub_term_MeV": 0.030177639698856604
+      "ub_term_MeV": 0.03017763969885686
     },
     {
       "r": 11,
-      "qpoch_abs": 0.025032979507398884,
+      "qpoch_abs": 0.025032979507399123,
       "max_vol": 5.582178835253094,
-      "ub_term_MeV": 0.07140626172155122
+      "ub_term_MeV": 0.07140626172155191
     },
     {
       "r": 12,
-      "qpoch_abs": 0.06252339955880086,
+      "qpoch_abs": 0.06252339955880154,
       "max_vol": 6.089649638457921,
-      "ub_term_MeV": 0.19456060054903104
+      "ub_term_MeV": 0.19456060054903315
     },
     {
       "r": 13,
-      "qpoch_abs": 0.1802116199618947,
+      "qpoch_abs": 0.18021161996189686,
       "max_vol": 6.597120441662748,
-      "ub_term_MeV": 0.6075152879968705
+      "ub_term_MeV": 0.6075152879968778
     },
     {
       "r": 14,
-      "qpoch_abs": 0.5963702508691844,
+      "qpoch_abs": 0.5963702508691923,
       "max_vol": 7.104591244867574,
-      "ub_term_MeV": 2.1650856181904086
+      "ub_term_MeV": 2.165085618190437
     },
     {
       "r": 15,
-      "qpoch_abs": 2.256191353941961,
+      "qpoch_abs": 2.2561913539419938,
       "max_vol": 7.612062048072401,
-      "ub_term_MeV": 8.776033210647174
+      "ub_term_MeV": 8.776033210647302
     },
     {
       "r": 16,
-      "qpoch_abs": 9.722506095797517,
+      "qpoch_abs": 9.722506095797671,
       "max_vol": 8.119532851277228,
-      "ub_term_MeV": 40.33938521552478
+      "ub_term_MeV": 40.33938521552542
     },
     {
       "r": 17,
-      "qpoch_abs": 47.573782807659114,
+      "qpoch_abs": 47.57378280765993,
       "max_vol": 8.627003654482055,
-      "ub_term_MeV": 209.72377930897864
+      "ub_term_MeV": 209.72377930898224
     },
     {
       "r": 18,
-      "qpoch_abs": 263.619747166995,
+      "qpoch_abs": 263.61974716699996,
       "max_vol": 9.134474457686881,
-      "ub_term_MeV": 1230.4997014075823
+      "ub_term_MeV": 1230.4997014076052
     },
     {
       "r": 19,
-      "qpoch_abs": 1650.4396765876475,
+      "qpoch_abs": 1650.4396765876807,
       "max_vol": 9.641945260891708,
-      "ub_term_MeV": 8131.755739108167
+      "ub_term_MeV": 8131.755739108331
     },
     {
       "r": 20,
-      "qpoch_abs": 11650.788301572233,
+      "qpoch_abs": 11650.788301572486,
       "max_vol": 10.149416064096535,
-      "ub_term_MeV": 60424.96048997078
+      "ub_term_MeV": 60424.96048997209
     },
     {
       "r": 21,
-      "qpoch_abs": 92571.83417156574,
+      "qpoch_abs": 92571.8341715679,
       "max_vol": 10.656886867301361,
-      "ub_term_MeV": 504114.5492810517
+      "ub_term_MeV": 504114.54928106343
     },
     {
       "r": 22,
-      "qpoch_abs": 826607.3030005255,
+      "qpoch_abs": 826607.3030005461,
       "max_vol": 11.164357670506188,
-      "ub_term_MeV": 4715774.037329866
+      "ub_term_MeV": 4715774.037329984
     },
     {
       "r": 23,
-      "qpoch_abs": 8283744.162197182,
+      "qpoch_abs": 8283744.162197404,
       "max_vol": 11.671828473711015,
-      "ub_term_MeV": 49406669.82066618
+      "ub_term_MeV": 49406669.8206675
     },
     {
       "r": 24,
-      "qpoch_abs": 93055386.76325954,
+      "qpoch_abs": 93055386.7632622,
       "max_vol": 12.179299276915842,
-      "ub_term_MeV": 579140355.7944784
+      "ub_term_MeV": 579140355.7944949
     },
     {
       "r": 25,
-      "qpoch_abs": 1170535894.2890399,
+      "qpoch_abs": 1170535894.2890754,
       "max_vol": 12.686770080120668,
-      "ub_term_MeV": 7588497805.2261
+      "ub_term_MeV": 7588497805.22633
     },
     {
       "r": 26,
-      "qpoch_abs": 16472139429.966314,
+      "qpoch_abs": 16472139429.966845,
       "max_vol": 13.194240883325495,
-      "ub_term_MeV": 111059170677.63515
+      "ub_term_MeV": 111059170677.63872
     },
     {
       "r": 27,
-      "qpoch_abs": 259105718451.38422,
+      "qpoch_abs": 259105718451.39307,
       "max_vol": 13.701711686530322,
-      "ub_term_MeV": 1814144307930.714
+      "ub_term_MeV": 1814144307930.776
     },
     {
       "r": 28,
-      "qpoch_abs": 4552454352903.563,
+      "qpoch_abs": 4552454352903.728,
       "max_vol": 14.209182489735149,
-      "ub_term_MeV": 33054812618753.08
+      "ub_term_MeV": 33054812618754.273
     },
     {
       "r": 29,
-      "qpoch_abs": 89283466057219.97,
+      "qpoch_abs": 89283466057223.39,
       "max_vol": 14.716653292939975,
-      "ub_term_MeV": 671429019688851.9
+      "ub_term_MeV": 671429019688877.5
     },
     {
       "r": 30,
-      "qpoch_abs": 1953438053209724.2,
+      "qpoch_abs": 1953438053209803.2,
       "max_vol": 15.224124096144802,
-      "ub_term_MeV": 1.5196793658443836e+16
+      "ub_term_MeV": 1.5196793658444448e+16
     }
   ],
   "r_star": 8,
   "r_safe_start": 3,
-  "T_rstar": 0.1506774455281988,
-  "m_e_T_rstar_MeV": 0.07699601645359179,
-  "tail_truncated_MeV": 1.5903210916564816e+16,
+  "T_rstar": 0.1506774455281992,
+  "m_e_T_rstar_MeV": 0.07699601645359198,
+  "tail_truncated_MeV": 1.5903210916565458e+16,
   "isotope_n_std_needed": {
     "D    (Z=1,N=1,A=2)": {
       "gap_MeV": 0.59,
       "braid_length": 13,
-      "n_std_needed": 7.6627340890500975
+      "n_std_needed": 7.662734089050078
     },
     "T    (Z=1,N=2,A=3)": {
       "gap_MeV": 7.18,
       "braid_length": 17,
-      "n_std_needed": 93.25157755827068
+      "n_std_needed": 93.25157755827044
     },
     "3He  (Z=2,N=1,A=3)": {
       "gap_MeV": 6.42,
       "braid_length": 17,
-      "n_std_needed": 83.38093703678241
+      "n_std_needed": 83.3809370367822
     },
     "4He  (Z=2,N=2,A=4)": {
       "gap_MeV": 27.15,
       "braid_length": 21,
-      "n_std_needed": 352.6156449452714
+      "n_std_needed": 352.61564494527056
     },
     "6Li  (Z=3,N=3,A=6)": {
       "gap_MeV": 30.4,
       "braid_length": 27,
-      "n_std_needed": 394.82562085953043
+      "n_std_needed": 394.82562085952947
     },
     "7Li  (Z=3,N=4,A=7)": {
       "gap_MeV": 38.0,
       "braid_length": 31,
-      "n_std_needed": 493.53202607441307
+      "n_std_needed": 493.5320260744118
     }
   },
-  "interpretation": "At q_0 > 1, |(q;q)_r| grows super-exponentially (~q_0^{r(r+1)/2}); the chirality-residue series does NOT converge classically.  The operational safe valley is r \u2208 [3, 8], where each single std-channel match contributes less than 0.01 MeV under the Adams/Thurston max-Vol envelope.  Outside this valley the predictions diverge.  The n_std_knots_needed row reports how many std-channel matches drawn from depths in this valley would (under the max-Vol envelope) be required to close each isotope's binding gap.",
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "interpretation": "At q_0 > 1, |(q;q)_r| grows super-exponentially (~q_0^{r(r+1)/2}); the chirality-residue series does NOT converge classically.  The operational safe valley is r \u2208 [3, 8], where each single std-channel match contributes less than 0.01 MeV under the Adams/Thurston max-Vol envelope.  Outside this valley the predictions diverge.  The n_std_knots_needed row reports how many std-channel matches drawn from depths in this valley would (under the max-Vol envelope) be required to close each isotope's binding gap."
 }

@@ -92,12 +92,12 @@ _DPS = 50  # 50 decimal places per Sprint B requirement.
 mp.mp.dps = _DPS
 
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1)  # noqa: E402
-from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
 
 # ── Substrate parameter and Markov parameter (CLAUDE.md notation) ──
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP    # was f64 roundtrip — now genuine 50 dps via vol_4_1_at
+QI = Q_INV_MP
 # z = 1/(q^{1/2} + q^{-1/2}) — the Markov parameter
 z_m = mp.mpf(1) / (mp.sqrt(Q0) + mp.sqrt(QI))
 

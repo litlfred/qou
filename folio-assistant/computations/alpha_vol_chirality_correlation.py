@@ -30,8 +30,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 50
 
-from q_parameter import Q as Q0_FLOAT
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = 1/Q0
+from q_parameter import Q as Q0_FLOAT, vol_4_1_at, Q_MP, Q_INV_MP
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 m_e = mp.mpf("0.51099895")
 
 
@@ -54,7 +54,7 @@ residual_T = Q_T_codata - Q_T_closed
 
 # Knot DB (Vol, std/sym/alt channel from curvature_rank_mass.py)
 KNOTS = [
-    ("4_1",  "2.02988321281930725004", 0),  # sym
+    ("4_1",  mp.nstr(vol_4_1_at(50), 50), 0),  # exact via 2·Cl_2(π/3)  (was 20-dps string)
     ("5_2",  "2.82812208833078",       0),
     ("6_1",  "3.16396322888314",       1),  # std
     ("6_2",  "4.40083251397820",       0),

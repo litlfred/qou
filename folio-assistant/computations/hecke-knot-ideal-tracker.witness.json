@@ -1,7 +1,7 @@
 {
   "computation": "hecke-knot-ideal-tracker",
   "description": "Track hyperbolic-knot braid words appearing as sub-words of proton and neutron atomic braids.  Each match is an ideal in the GB filtration whose left part is a known hyperbolic knot.  Compare trajectories between p and n to look for structural distinction.",
-  "computedAt": "2026-04-25T18:51:01.227903+00:00",
+  "computedAt": "2026-04-27T21:20:40.446377+00:00",
   "q_0": 1.1099785955541805,
   "proton_word": [
     1,
@@ -304,7 +304,5 @@
       3,
       "6_1"
     ]
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  ]
 }

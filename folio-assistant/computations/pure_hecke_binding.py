@@ -43,7 +43,7 @@ mp.mp.dps = 40
 
 from hecke_core import atom_character_raw, _partition_table, _ensure_ysn_attached
 from hecke_characters import partitions_of, dim_q, young_hooks, qfac
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 
 _ensure_ysn_attached()
@@ -52,8 +52,8 @@ _PT = _partition_table()
 def _entries_for_k(k: int):
     return [e for e in _PT if e['k'] == k]
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 h = Q0 - QI           # Hecke deformation H_A
 me = mp.mpf(str(M_E_MEV))
 E0 = mp.mpf('0.782')  # neutron β-decay Q, single calibration

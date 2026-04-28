@@ -43,10 +43,10 @@ from hecke_core import (_step_chain_generic, _PROTON_G0, _PROTON_G1,
                           _NEUTRON_G0, _NEUTRON_G1, h as H_A)
 from hecke_characters import (build_seminormal_matrices, dim_q,
                                  partitions_of, young_hooks)
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 
 
 def q_int(n):

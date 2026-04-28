@@ -30,8 +30,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 50
 
-from q_parameter import Q as Q0_FLOAT
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = 1/Q0
+from q_parameter import Q as Q0_FLOAT, vol_4_1_at, Q_MP, Q_INV_MP
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 m_e = mp.mpf("0.51099895")
 G = mp.catalan
 
@@ -50,7 +50,7 @@ VOLS = {
     "L6a4":    mp.mpf("7.32772475300860"),  # = 8G
     "5_2":     mp.mpf("2.82812208833078"),
     "7_4":     mp.mpf("5.01376240499"),
-    "4_1":     mp.mpf("2.02988321281930725004"),
+    "4_1":     vol_4_1_at(mp.mp.dps),  # was 20-dps string; now exact at working precision
 }
 
 
