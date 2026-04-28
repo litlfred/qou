@@ -427,3 +427,39 @@ claim).  But the canonicalization-review's pending-work table
 above should be read with these upstream developments in mind:
 two pending items are now in flight upstream (atomic tr_M, R5.6
 design), and one assumption (D ↔ 6₂) is upstream-refuted.
+
+### Second post-rebase audit (after PR #456 merge)
+
+PR #456 landed substantial new infrastructure:
+
+- `term4_frobenius_mpfr_50dps.py` + witness — Term 4 numeric n=2..11
+- `term5_chirality_mpfr_50dps.py` + witness — Term 5 at 50 dps
+- `term6_habiro_residue_mpfr_50dps.py` + witness — Term 6 at 50 dps
+- `terms_2_3_brane_tower_mpfr_50dps.py` + `terms_2_3_atom_per_gen_mpfr_50dps.py` — Terms 2+3 for {electron, p, n} AND {D, T, ³He} (3A-strand)
+- `atomic_tr_m_via_wenzl_bridge.py` + witness — refutes 8₁₁ for ³H and L₆ₐ₄ for ³He (in addition to the prior 6₂ refutation for ²H)
+- `unified_mass_table_50dps.py` + `unified-mass-table-mpfr-50dps.witness.json` —
+  **the canonical aggregator**, summing all six terms per atom
+
+The unified mass-table aggregator's per-atom predictions exhibit
+exactly the same structural gap that my round-1, round-2, round-4,
+and round-5 probes quantified independently: the proton lands at
+~+1.3 % (versus my round-1 V_3term proton at similar magnitude), and
+the neutron / D / T / ³He show ~−55 % to −63 % residuals —
+matching round-1's −56 % neutron baseline and round-5's brane-tower
+~−58 % deuteron predictions.
+
+This **cross-validation between independent probes and the upstream
+unified aggregator** strengthens the canonicalization-review's
+conclusion that the central remaining theoretical gap is the
+combination convention itself (or an analogue of round-3's
+3-input Skein-pair structural input that lifts to atoms), not the
+numerical implementation of any single term.
+
+No code on this branch needs deletion as a result of the PR #456
+landing — round-3's 3-input-canonical and round-4/5's atomic-
+assembly probes remain independently informative quantifications
+(they show how each candidate atomic combination convention
+fares).  The `unified_mass_table_50dps.py` witness is the
+canonical place to read off the current six-term sum's accuracy;
+my probes are the canonical place to read off how various
+alternative assemblies fare.
