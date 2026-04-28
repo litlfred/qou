@@ -262,8 +262,17 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
         · right; left; exact heq'
         · right; right; right; exact ⟨heq.symm, hrx⟩
   wf := by
-    -- Ref: [bokut2005] §1 (deg-lex well-foundedness via product order).
-    -- Pending Mathlib rename of `List.Lex.wellFounded`.
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+    -- The deg-lex order is well-founded as `Prod.Lex Nat.lt L` where L
+    -- is the length-restricted lex order on `(map rank ·) : Monomial G
+    -- → List ℕ`. Mathlib provides `Nat.lt_wfRel.wf.prod_lex` for the
+    -- outer pair; the inner length-restricted lex needs `List.Shortlex`
+    -- (or `lexEncoding` à la NormalForms.lean's `degLexLt_wf`, which
+    -- itself currently sorrys at `lexLt_wf` for the same reason).
+    -- Closing this requires running against Mathlib to confirm the
+    -- post-rename API name (candidates: `List.Shortlex.wf`,
+    -- `WellFoundedRelation.shortlex`, or hand-rolling via strong
+    -- induction on length). Deferred.
     sorry
   left_compat := by
     intro a b c h

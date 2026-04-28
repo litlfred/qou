@@ -19,9 +19,13 @@ noncomputable def baseError : ℝ := 0.001
 noncomputable def predictedMAE (k : ℕ) : ℝ :=
   baseError * convergenceRate ^ (3 - k : ℤ)
 
-/-- At k = 11, the model error is below the q₀ measurement floor. -/
+/-- At k = 11, the model error is below the q₀ measurement floor.
+    Numerical bound: `predictedMAE 11 = 0.001 * 4^(-8) ≈ 1.526·10⁻⁸ < 2·10⁻⁸`.
+    Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 —
+    numerical convergence of Hecke-representation approximants. -/
 theorem hecke_convergence_bound :
     predictedMAE 11 < 2e-8 := by
-  sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 — numerical convergence of Hecke-representation approximants
+  unfold predictedMAE baseError convergenceRate
+  norm_num
 
 end QOU.BraidKnot
