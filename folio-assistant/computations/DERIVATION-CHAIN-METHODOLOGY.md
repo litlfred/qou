@@ -41,7 +41,7 @@ must derive from them by named operations.
 
 A chain with **zero `SCRIPT_CITED` steps** is the goal —
 "fully-trusted modulo axioms".  The validator flags chains with a
-`SCRIPT_CITED` frontier so we know what work remains.
+`SCRIPT_CITED` frontier to make the remaining work explicit.
 
 ## Per-step annotations
 
