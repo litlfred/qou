@@ -1,0 +1,11 @@
+{
+  "computation": "markov-pipeline-cross-validation",
+  "description": "Cross-pipeline check between markov_substrate_realizer.py and term6_full_pole_sum.py.  The term6 witness is not yet present on this branch (likely still open on claude/continue-pr-442-DJRWm).  Forward-compatible: re-run this script after 442 merges to obtain the cross-validation certificate.",
+  "computedAt": "2026-04-28T19:08:36.561723+00:00",
+  "status": "skipped-term6-witness-absent",
+  "expected_input": "term6-full-pole-sum.witness.json",
+  "available_realizer_atoms": [
+    "n (neutron, A=1)",
+    "p (proton, A=1)"
+  ]
+}

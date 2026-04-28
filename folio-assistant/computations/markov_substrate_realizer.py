@@ -35,6 +35,7 @@ per-atom, per-place table of realizations.
 
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from datetime import datetime, timezone
@@ -52,6 +53,18 @@ INPUT_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
 OUTPUT_WITNESS = HERE / "markov-substrate-realization.witness.json"
 
 FINITE_PLACES = [2, 3, 5, 7, 11, 13]
+
+# The Markov-trace convention used in the upstream witness.  The
+# `claude/continue-pr-442-DJRWm` audit (now merging via PR #442+
+# follow-ups) flags Plancherel vs Wenzl-Schur as a critical
+# distinction: the two conventions assign different λ-weights
+# `w_λ(q)` in the trace decomposition `tr_M = Σ_λ w_λ(q) χ^λ_q(T_w)`,
+# and consume different `tr_M(q_0)` values.  This realizer evaluates
+# whatever polynomial it is handed; the flag records the convention
+# of the upstream producer so downstream consumers know which trace
+# the realizations correspond to.
+KNOWN_CONVENTIONS = ("plancherel", "wenzl-schur")
+DEFAULT_CONVENTION = "wenzl-schur"
 
 
 def q_pochhammer_poly(N: int, u: Symbol, domain) -> sp.Poly:
@@ -145,6 +158,19 @@ def realize_atom(record: HabiroCompletionRecord, q_0: float) -> dict:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0] if __doc__ else "")
+    parser.add_argument(
+        "--convention",
+        choices=KNOWN_CONVENTIONS,
+        default=DEFAULT_CONVENTION,
+        help=(
+            "Markov-trace convention assumed for the upstream witness. "
+            "Recorded in the output for downstream consumers; this realizer "
+            "does not re-run the trace computation."
+        ),
+    )
+    args = parser.parse_args()
+
     if not INPUT_WITNESS.exists():
         print(f"ERROR: input witness not found at {INPUT_WITNESS}", file=sys.stderr)
         return 1
@@ -181,7 +207,11 @@ def main() -> int:
         ],
         "input_witness": INPUT_WITNESS.name,
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "parameters": {"q_0": q_0, "finite_places": FINITE_PLACES},
+        "parameters": {
+            "q_0": q_0,
+            "finite_places": FINITE_PLACES,
+            "convention": args.convention,
+        },
         "engine": "sympy.Poly over ZZ and GF(p)",
         "overall_pass": overall_pass,
         "results": per_atom,

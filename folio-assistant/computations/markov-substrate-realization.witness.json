@@ -11,7 +11,7 @@
     "qou:QOU.BraidKnot.HabiroCompletion"
   ],
   "input_witness": "habiro-coefficients-atomic.witness.json",
-  "computedAt": "2026-04-28T17:05:07.926485+00:00",
+  "computedAt": "2026-04-28T19:08:36.465214+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "finite_places": [
@@ -21,7 +21,8 @@
       7,
       11,
       13
-    ]
+    ],
+    "convention": "wenzl-schur"
   },
   "engine": "sympy.Poly over ZZ and GF(p)",
   "overall_pass": true,
