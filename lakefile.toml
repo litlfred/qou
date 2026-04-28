@@ -22,7 +22,7 @@
 ################################################################################
 
 name = "folio"
-defaultTargets = ["QOU", "UGB", "Fred2005"]
+defaultTargets = ["qou/QOU", "ugb/UGB", "fred2005/Fred2005"]
 
 [leanOptions]
 autoImplicit = false
