@@ -9,6 +9,7 @@ export default definition({
   },
   uses: [
     "def:q-logarithm",
+    "def:habiro-ring",
     "prop:tannaka-krein-reconstruction",
   ],
 });

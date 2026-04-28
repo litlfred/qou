@@ -10,6 +10,12 @@ export default proposition({
     "frobenius-dual",
     "gram-matrix",
     "knot-operator",
+    "motivic-shadows",
   ],
-  uses: ["prop:confinement-lp"],
+  uses: [
+    "prop:confinement-lp",
+    "def:habiro-ring",
+    "def:motivic-substrate",
+    "def:archimedean-realization-functor",
+  ],
 });

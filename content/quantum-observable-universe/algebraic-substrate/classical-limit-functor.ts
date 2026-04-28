@@ -8,6 +8,8 @@ export default definition({
   },
   uses: [
     "def:substrate-parameter-planck",
+    "def:motivic-substrate",
+    "def:adelic-substrate",
     "def:classical-limit-obstruction",
   ],
   tags: [
@@ -16,5 +18,7 @@ export default definition({
     "q-to-1",
     "deformation",
     "symmetric-monoidal",
+    "adelic-assembly",
+    "realization-tower",
   ],
 });

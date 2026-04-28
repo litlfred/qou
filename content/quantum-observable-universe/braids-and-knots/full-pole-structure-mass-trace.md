@@ -1,149 +1,124 @@
-The Mittag-Leffler formula
-([GB residue spectral sum](#prop:gb-residue-spectral-sum)) sums
-residues of the mass trace at the root-of-unity poles
-$\zeta_\ell$.  The previous exposition illustrated the dominant
-contribution at $\zeta_1 = 1$, closest to $q_0 \approx 1.11$.
-This proposition enumerates **all** poles and shows why the sum
-cannot be truncated at the nearest one without losing structural
-information: the higher-order residues can interfere constructively
-or resonate.
+The Markov trace $\mathrm{tr}_M(T_w, q)$ has been written so far as a
+function of $q \in \mathbb{C}$ with poles at the roots of unity, and
+the residue spectral sum
+([GB residue spectral sum](#prop:gb-residue-spectral-sum)) has been
+treated as a Mittag-Leffler partial-fraction expansion in $\mathbb{C}$.
+That picture is misleading: the primitive roots of unity are dense
+in $S^1$, so $S^1$ is a **natural boundary** of $\mathrm{tr}_M$, not
+an isolated singular set, and the Cauchy-kernel sum
+$\sum_{n,j} r_n^{(j)}/(q - \zeta_n^{(j)})$ is not a complex-analytic
+identity in any neighbourhood of $S^1$.
 
-**Proposition (full pole enumeration).**
-*Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ and
-specialising to a target ring $k$ with $q$ taking values in $k^\times$,
-the Markov trace $q \mapsto \mathrm{tr}_M(T_w, q)$ extends to a
-meromorphic function of $q$ with simple poles at every primitive
-root of unity $\zeta_n^{(j)} = e^{2\pi i j/n}$ for $\gcd(j, n) = 1$
-and $n \geq 2$, arising from zeros of the $q$-integer factors
-$[k]_q = (q^k - q^{-k})/(q - q^{-1})$ in the denominators of the
-Wedderburn weights $w_\lambda(q)$.*
+The correct algebraic home is the **Habiro ring** — the cyclotomic
+completion of $\mathbb{Z}[q]$ — where convergence is $q$-adic and
+values at every root of unity are well-defined, but no
+$\mathbb{C}$-meromorphic structure is asserted on or across $S^1$.
 
-*The Mittag-Leffler expansion at $q_0$ is*
+**Proposition (Habiro completion of the mass trace).**
+*Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q - q^{-1})^{-1}]$, the
+Markov trace of any closed braid lies in the Habiro ring*
 
 $$
-  \mathrm{tr}_M(T_w, q_0)
+  \mathrm{tr}_M(T_w) \;\in\; \widehat{\mathbb{Z}[q]}
+  \;:=\; \varprojlim_n \mathbb{Z}[q] / (q;q)_n.
+$$
+
+*See [Habiro ring](#def:habiro-ring) for the cyclotomic-completion
+construction. The trace admits a unique cyclotomic expansion*
+
+$$
+  \mathrm{tr}_M(T_w, q)
   \;=\;
-  \mathrm{tr}_M^{\mathrm{entire}}(T_w, q_0)
-  \;+\;
-  \sum_{n \geq 2} \sum_{\substack{j=1 \\ \gcd(j,n)=1}}^{n-1}
-    \frac{r_n^{(j)}(T_w)}{q_0 - \zeta_n^{(j)}},
-$$
-
-*with residues $r_n^{(j)}(T_w) \in k$ and kernel
-$1/(q_0 - \zeta_n^{(j)})$.  The sum is absolutely convergent on
-the regular locus (Habiro's theorem,
-[Habiro ring](#def:habiro-ring)).*
-
-**Distances to $q_0 = 1.11$: not monotone in $n$.**
-*Write $\zeta_n^{(j)} = \cos(2\pi j/n) + i\sin(2\pi j/n)$.  Then*
-
-$$
-  \bigl|q_0 - \zeta_n^{(j)}\bigr|^2
-  \;=\;
-  q_0^2 - 2 q_0 \cos(2\pi j/n) + 1.
-$$
-
-*Distances for the lowest $n$ with $q_0 = 1.11$:*
-
-| $n$ | $\zeta_n^{(j)}$ | $|q_0 - \zeta_n^{(j)}|$ | $1/\lvert q_0 - \zeta_n^{(j)}\rvert$ |
-|---|---|---|---|
-| 1 | $+1$  | $0.11$ | $9.1$ |
-| 2 | $-1$  | $2.11$ | $0.47$ |
-| 3 | $e^{\pm 2\pi i/3}$ | $1.67$ | $0.60$ |
-| 4 | $\pm i$ | $1.49$ | $0.67$ |
-| 5 | $e^{\pm 2\pi i/5}$ | $1.33$ | $0.75$ |
-| 6 | $e^{\pm\pi i/3}$ | $1.06$ | $0.94$ |
-| 7 | $e^{\pm 2\pi i/7}$ | $0.92$ | $1.09$ |
-| 8 | $e^{\pm\pi i/4}$ | $0.84$ | $1.19$ |
-| 10 | $e^{\pm\pi i/5}$ | $0.72$ | $1.39$ |
-| 12 | $e^{\pm\pi i/6}$ | $0.62$ | $1.61$ |
-
-*The distance is **not monotone** in $n$: $\zeta_1$ is uniquely
-closest, but $\zeta_6, \zeta_7, \zeta_8, \ldots$ are all closer to
-$q_0$ than $\zeta_2$ or $\zeta_3$.  Truncating at the closest pole
-(only $\zeta_1$) discards the bulk of the sum.*
-
-**Conjugate pairs and reality.**
-*For each non-real $\zeta_n^{(j)}$ the conjugate $\zeta_n^{(n-j)}
-= \overline{\zeta_n^{(j)}}$ is also a primitive $n$-th root of
-unity, and $r_n^{(j)} = \overline{r_n^{(n-j)}}$.  The pair's
-Mittag-Leffler contribution sums to the real quantity*
-
-$$
-  \frac{r_n^{(j)}}{q_0 - \zeta_n^{(j)}}
-  + \frac{\overline{r_n^{(j)}}}{q_0 - \overline{\zeta_n^{(j)}}}
-  \;=\;
-  \frac{2 \operatorname{Re}\bigl[r_n^{(j)} (q_0 - \overline{\zeta_n^{(j)}})\bigr]}
-       {q_0^2 - 2q_0\cos(2\pi j/n) + 1},
-$$
-
-*so each cyclotomic level $n \geq 3$ contributes a real sum over
-$\varphi(n)/2$ conjugate pairs.  The total mass is real despite
-being built from complex residues.*
-
-**Interference and resonance.**
-*Because the residues $r_n^{(j)}(T_w)$ depend on how the braid
-word $T_w$ intersects the $n$-th filtration stratum, different
-braids have different residue patterns.  Three observable
-regimes:*
-
-1. *$\zeta_1$-dominant (simple braids, confinement level
-   $\ell(K) = 1$).  Only $r_1(T_w)$ is large; higher $r_n$ are
-   suppressed.  Regime of trefoil and other level-$1$ nuclei.*
-2. *Resonant cancellation (intermediate braids).  Residues
-   $r_n^{(j)}$ at several $n$ have alternating signs and similar
-   magnitudes; their sum is smaller than any individual term.
-   This regime produces **stable** configurations whose masses
-   sit below the $\zeta_1$-only approximation.*
-3. *Resonant enhancement (deep braids, $\ell(K) \geq 3$).
-   Residues at several $n$ reinforce each other.  This regime
-   produces **unstable** configurations whose masses sit above
-   the $\zeta_1$-only approximation — a structural account of
-   the drip-line kinks noted in
-   ([what empirical BW misses](#rem:bw-empirical-misses)).*
-
-*Truncating at $\zeta_1$ alone replaces every configuration with
-a non-resonant baseline, losing precisely the regimes (2) and
-(3) that encode nuclear stability structure.*
-
-**Habiro-ring reformulation (convergent form).**
-*Instead of summing the Mittag-Leffler expansion pole by pole,
-the full residue structure is packaged in the Habiro cyclotomic
-expansion*
-
-$$
-  \mathrm{tr}_M(T_w, q_0)
-  \;=\;
-  \sum_{m \geq 0} a_m(T_w) \cdot (q_0; q_0)_m,
+  \sum_{m \geq 0} a_m(T_w)\,(q; q)_m,
   \qquad
-  (q_0; q_0)_m = \prod_{k=1}^{m}(1 - q_0^k),
+  (q; q)_m = \prod_{k=1}^{m}(1 - q^k),
+  \quad
+  a_m(T_w) \in \mathbb{Z}\bigl[q^{\pm 1}\bigr].
 $$
 
-*where $a_m(T_w) \in \mathbb{Z}[q, q^{-1}]$ are the cyclotomic
-coefficients.  The $m$-th term $(q_0; q_0)_m$ vanishes at every
-$\zeta_n$ with $n \leq m$, so truncating at order $m$ **neglects
-exactly** the residues from roots of unity of order $\leq m$.
-Habiro's convergence theorem
-([Habiro ring](#def:habiro-ring)) shows the series converges for
-all $q_0$ in the image of the Habiro ring's completion.
-Consequence: **every order-$m$ truncation loses only the
-$\zeta_1, \ldots, \zeta_m$ residues, not the higher ones**, so
-the Habiro form is the natural symbolic-computation target for
-the spectral sum.*
+*The expansion has the following properties:*
 
-**Relation to Chern–Simons level-$k$ truncation.**
-*Each root of unity $\zeta_k^{(1)} = e^{2\pi i/k}$ corresponds to
-a level-$(k-2)$ Chern–Simons theory on $S^3$ (Reshetikhin–Turaev).
-The residue $r_k^{(1)}(T_w)$ at $\zeta_k^{(1)}$ is the RT
-invariant of the closed braid at level $k-2$.  The full
-spectral sum is therefore a sum over all Chern–Simons levels,
-with the Cauchy kernel giving each level a geometric weight.*
+1. *(Roots of unity.) $\mathrm{tr}_M(T_w, q)$ has well-defined values
+   at every root of unity $\zeta_n^{(j)}$, since $(q;q)_m$ vanishes
+   at $\zeta_n^{(j)}$ for every $n \leq m$ and the partial sums are
+   polynomials in $q$.*
+2. *(Cyclotomic truncation.) Truncation at order $m$ exactly
+   suppresses the contribution from every root of unity of order
+   $\leq m$: the residual $\mathrm{tr}_M(T_w) - \sum_{k < m} a_k (q;q)_k$
+   lies in the ideal $((q;q)_m) \subset \widehat{\mathbb{Z}[q]}$.*
+3. *(Confinement-level support.) For an atomic closed braid the
+   expansion terminates: $a_m = 0$ for $m > m_{\max}(T_w)$ with
+   $m_{\max}$ controlled by the confinement level
+   ([atomic Habiro expansion](#cor:habiro-expansion-atomic)).*
 
-**Consistency with the dominant-pole approximation.**
-*The $\zeta_1$-only approximation captures $\sim 9.1/\sum_n 1/|q_0
-- \zeta_n^{(j)}|$ of the total kernel weight: dominant but not
-overwhelming.  For light atoms in the regime-(1) baseline the
-approximation is good; for atoms in regime (2) or (3) it fails
-at the percent level — consistent with the observed $5\%$–$20\%$
-discrepancies on $^4$He through $^{40}$Ca in the current
-three-channel witness.*
+**What the Mittag-Leffler picture actually was.**
+*The earlier "$\sum_{n,j} r_n^{(j)}/(q_0 - \zeta_n^{(j)})$" expression
+is a formal residue spectral sum
+([GB residue spectral sum](#prop:gb-residue-spectral-sum)) — a
+**heuristic shadow** of the Habiro expansion valid only after one
+fixes a finite cyclotomic order and a regular evaluation point $q_0$
+disjoint from $S^1$. It is not a convergent sum on or near $S^1$
+and does **not** define $\mathrm{tr}_M$ as a meromorphic function on
+$\mathbb{C}$. Each finite-order Cauchy-kernel partial sum is the
+$q$-adic image of a Habiro truncation; computational data confirms
+that for the proton and neutron the Cauchy kernel partial sum
+truncated at $n \leq 6$ is identically zero, in agreement with
+property (2) above (the Habiro coefficients $a_0, \ldots, a_5$
+vanish on the atomic trefoil class).*
+
+**Empirical regimes.**
+*The qualitative regimes formerly described as "$\zeta_1$-dominant",
+"resonant cancellation", and "resonant enhancement" reflect the
+distribution of nonzero $a_m$ across cyclotomic orders. In Habiro
+form they are cleanly stated as: a braid is regime-(1) if only
+$a_0, a_1$ are nonzero; regime-(2) if signs alternate across $a_m$;
+regime-(3) if signs reinforce. The Habiro expansion is the natural
+target for the symbolic computation of these regimes (see
+[atomic Habiro expansion](#cor:habiro-expansion-atomic)).*
+
+## Proof
+
+The Habiro ring $\widehat{\mathbb{Z}[q]}$ is by definition the
+inverse limit $\varprojlim_n \mathbb{Z}[q]/((q;q)_n)$; an element is
+specified by a coherent sequence of cyclotomic remainders
+\cite{habiro2004}. Existence of the
+expansion: the Markov trace of a finite braid word in the standard
+Hecke generators $\sigma_i$ lies in $\mathbb{Z}[q^{\pm 1/2}]$ after
+clearing the cyclotomic denominators that arise from the Wedderburn
+weights $w_\lambda(q) = \dim_q(\lambda)^2/[n]_q!$ (Markov–Jones
+integrality, \cite{jones1987} Thm 3). Sequential cyclotomic division
+by $(1 - q^{m+1})$ produces the unique sequence
+$\{a_m\} \subset \mathbb{Z}[q^{\pm 1}]$ with $\deg_q a_m \leq m$
+([atomic Habiro expansion](#cor:habiro-expansion-atomic), Step 2).
+Property (1) is immediate from $(q;q)_m(\zeta_n^{(j)}) = 0$ for
+$n \leq m$. Property (2) is the definition of the Habiro topology.
+Property (3) is the termination clause of the atomic case. $\square$
+
+## Why the previous wording was misleading
+
+Two specific failures of the "meromorphic on $\mathbb{C}$" picture:
+
+1. **Density on $S^1$.** The set
+   $\{\zeta_n^{(j)} : \gcd(j,n)=1, n \geq 2\}$ is dense in $S^1$.
+   A meromorphic function on a connected open set has only
+   isolated poles; with poles dense in $S^1$ the only consistent
+   picture is that $S^1$ is a natural boundary, and there is no
+   single connected meromorphic continuation across it. The Habiro
+   ring sidesteps this by working in the cyclotomic completion of
+   $\mathbb{Z}[q]$, where evaluation at each root of unity is
+   defined polynomially without any complex-analytic continuation.
+2. **Convergence.** The Cauchy-kernel partial sum
+   $\sum_{n \leq N} \sum_j r_n^{(j)}/(q - \zeta_n^{(j)})$ does not
+   converge uniformly on any neighbourhood that crosses $S^1$.
+   The Habiro expansion converges in the $q$-adic
+   $((q;q)_\bullet)$-topology by construction, and reduces
+   modulo $(q;q)_m$ at every truncation order.
+
+This proposition replaces the earlier "meromorphic with poles at
+all primitive roots of unity" wording with the algebraically
+correct Habiro-ring statement; the residue spectral sum
+([GB residue spectral sum](#prop:gb-residue-spectral-sum)) is
+retained as the **symbolic feeding lemma** that produces the
+cyclotomic coefficients $a_m$ from the Wedderburn-stratum residues
+$r_n^{(j)}$, but is no longer claimed to define a global
+$\mathbb{C}$-meromorphic function.

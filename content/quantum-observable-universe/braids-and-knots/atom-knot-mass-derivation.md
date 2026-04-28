@@ -21,7 +21,7 @@ exact, and entirely pre-Archimedean** — every quantity on the
 right-hand side lives in $\mathbb{Q}(q)$.
 
 **Mass identity.**  After applying the Archimedean realization functor
-([prop:archimedean-realization-functor](#prop:archimedean-realization-functor)),
+([archimedean realization functor](#def:archimedean-realization-functor)),
 the binding energy of $\mathfrak{H}$ is
 
 $$
@@ -117,15 +117,16 @@ naming via the **volume conjecture** (Kashaev 1997, Murakami–Murakami
 2001): the asymptotic of $|J_K(\zeta_N)|^{1/N}$ at roots of unity
 $\zeta_N = e^{2\pi i / N}$ as $N \to \infty$ equals
 $\exp(\mathrm{Vol}_{\mathrm{hyp}}(K)/2\pi)$.  This is a **borrowed
-theorem about post-Archimedean analytic continuation**, and it lets us
-*name* $B(\mathfrak{H})/m_e\rho$ as a hyperbolic volume in conventional
-language.  The QOU mass identity does **not** depend on the conjecture
-— it depends only on the finite-categorical $\mathrm{tr}_M(T_w)$.
+theorem about post-Archimedean analytic continuation**, allowing
+$B(\mathfrak{H})/m_e\rho$ to be *named* as a hyperbolic volume in
+conventional language.  The QOU mass identity does **not** depend on
+the conjecture — it depends only on the finite-categorical
+$\mathrm{tr}_M(T_w)$.
 
 In particular the geometric construction (Reeb-vortex density →
-Mostow → Gromov) that one might run on the post-Archimedean side as
-*another* way to write the same number is **not part of the QOU
-derivation**.  We do not need to derive it internally.
+Mostow → Gromov), available on the post-Archimedean side as
+*another* way to write the same number, is **not part of the QOU
+derivation** and need not be derived internally.
 
 ## Algorithm
 

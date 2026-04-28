@@ -10,9 +10,11 @@ export default remark({
     "hkr",
     "deformation",
     "obstruction",
+    "motivic-galois",
   ],
   uses: [
     "def:quantum-characteristic-classes",
+    "def:motivic-substrate",
   ],
   cites: ["yekutieli2010"],
 });

@@ -23,11 +23,16 @@ $$
    computed on the associated graded algebra, obtained by
    replacing each generator product with its leading-order term
    in the Gröbner–Shirshov filtration (no rewriting defects).*
-2. *$\mathrm{Res}_{\mathrm{GB}}(T_w, q_0) = \sum_{\ell \geq 1}
-   (q_0 - \zeta_\ell)^{-1} \cdot
+2. *$\mathrm{Res}_{\mathrm{GB}}(T_w, q_0)$ is the sum of
+   rewriting-defect residues from
+   ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).
+   In symbolic feeding-lemma form this is
+   $\sum_{\ell \geq 1} (q_0 - \zeta_\ell)^{-1} \cdot
    \mathrm{Res}_{q=\zeta_\ell}[\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)]$
-   is the sum of rewriting-defect residues from
-   ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
+   — formal cyclotomic shadow, not a $\mathbb{C}$-analytic
+   identity. The convergent statement is the Habiro expansion
+   ([Habiro completion](#prop:full-pole-structure-mass-trace))
+   of $\mathrm{tr}_M(T_w)$ minus its level-$0$ piece.*
 
 *Both pieces are computable from $T_w$ alone; neither involves
 empirical calibration.*

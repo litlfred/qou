@@ -92,32 +92,13 @@ level $n$.
 
 ## $\mathcal{P}_n$ is the full set $\{(i,j) : i < j\}$ at every level
 
-An earlier version of [mass endomorphism tower](#prop:mass-endomorphism-tower)
-restricted $\mathcal{P}_n$ to adjacent pairs $\{(i,j) : |i-j|=1\}$
-on the grounds that far-commutativity of non-adjacent generators
-in $H_n(R, q)$ gives no independent blow-up centre.  That claim is
-incorrect.  The Markov weight $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
-holds for every pair $i < j$:
-
-by the Markov-trace factorization theorem
-([Markov trace factorization](#thm:markov-trace-factorization)):
-
-- **Adjacent** ($|i-j|=1$): Hecke braid relation
-  $\sigma_i\sigma_j\sigma_i = \sigma_j\sigma_i\sigma_j$ reduces the
-  pair, then the Markov property
-  $\mathrm{tr}_M(x\sigma_{n-2}) = z\,\mathrm{tr}_M(x)$ peels the
-  rightmost generator.
-- **Non-adjacent** ($|i-j|\geq 2$): far-commutativity
-  $\sigma_i\sigma_j = \sigma_j\sigma_i$ makes $\sigma_j$ the
-  rightmost active generator; the Markov property peels it first
-  (factor $z$), then peels the remaining $\sigma_i$ in $H_{n-1}(q)$
-  (another factor $z$), giving $\mathrm{tr}_M(\sigma_i\sigma_j)
-  = z^2$.  This is the Markov-trace factorization at the pair — not
-  a generic trace multiplicativity claim.
-
-Both cases support an independent blow-up centre at spectral
-coordinate $\hat V_i\hat V_j$, so $\mathcal{P}_n = \{(i,j) : i<j\}$
-at every level.
+The pair set is the full set of unordered pairs at every jet level,
+not only adjacent ones — the Markov-trace factorization theorem
+gives weight $z^2$ for every pair $(i, j)$, by the same argument
+([mass endomorphism tower](#prop:mass-endomorphism-tower) §proof,
+Markov-trace factorization paragraph) used at level $0$. The jet
+ascension argument above lifts that level-$0$ proof to every
+subsequent level.
 
 The empirical verification on stable atoms $A \geq 6$:
 

@@ -46,9 +46,12 @@ $$
 $$
 
 where $\delta_n$ is the jet correction at level $n$.  By the
-perpetual obstruction ([QU-to-QOU](#thm:qu-to-qou) item 3),
-$\kappa_0$ and $\delta_n$ live in complementary subgroups
-when $\kappa_0$ is non-torsion, so $\kappa_n \neq 0$ for all $n$.
+perpetual obstruction ([QU-to-QOU](#thm:qu-to-qou) item 3,
+strengthened by [motivic perpetual obstruction](#lem:motivic-perpetual-obstruction)
+to a place-by-place non-vanishing of the substrate's motivic
+Galois character), $\kappa_0$ and $\delta_n$ live in complementary
+subgroups when $\kappa_0$ is non-torsion, so $\kappa_n \neq 0$
+for all $n$.
 
 **(b) Restriction to the collision locus.**
 
