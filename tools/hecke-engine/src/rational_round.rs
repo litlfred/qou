@@ -88,7 +88,6 @@ pub fn tighten_f64(x: f64, q_max: u64) -> (BigInt, BigInt) {
                     }
                 }
             }
-            let _ = best_err;
             let sign_bi = if sign < 0 {
                 -BigInt::one()
             } else {

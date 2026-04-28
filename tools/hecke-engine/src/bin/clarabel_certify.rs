@@ -28,9 +28,12 @@ fn parse_big(s: &str) -> BigInt {
     BigInt::from_str(s).expect("BigInt parse")
 }
 
-/// Build the §S9.4 example SDP — the proton Borromean H_3 problem
+/// Build the §S9.4 example SDP — a proton-Borromean-style stand-in
 /// posed as `find max α s.t. α·(B-I) + I ⪰ 0` where B is a
-/// hand-chosen positive matrix.  Three NonneCones + two PSD cones.
+/// hand-chosen positive matrix.  Two `NonnegativeConeT(1)` cones
+/// (for `0 ≤ α ≤ 1`) plus two `PSDTriangleConeT` blocks
+/// (`d=1` and `d=2`) — not the QOU joint-tower SDP, just a
+/// minimal test case for the §S9 pipeline.
 fn build_h3_sdp() -> (CscMatrix<f64>, Vec<f64>, Vec<f64>, Vec<SupportedConeT<f64>>) {
     // Variables: just α.
     let p: CscMatrix<f64> = CscMatrix::<f64>::zeros((1, 1));

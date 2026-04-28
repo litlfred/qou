@@ -165,8 +165,14 @@ pub fn tighten_solution(
                     if num < zero {
                         block_diag_nonneg = false;
                     }
+                    // Filter only NaN — let `-INFINITY` through so an
+                    // overflow on a huge negative numerator still
+                    // surfaces as the most-extreme negative value.
+                    // The PSD verdict itself runs on `block_diag_nonneg`
+                    // (exact BigInt sign test), so this f64 path is
+                    // for human display only.
                     let proj = rational_to_f64(&num, &den);
-                    if proj.is_finite() && proj < min_diag_f64 {
+                    if !proj.is_nan() && proj < min_diag_f64 {
                         min_diag_f64 = proj;
                     }
                 }

@@ -314,8 +314,8 @@ mod tests {
     }
 
     #[test]
-    fn char_poly_2x2_rotation_minus_eye() {
-        // [[2, 0], [0, 3]]: char poly = (λ-2)(λ-3) = λ^2 - 5λ + 6
+    fn char_poly_2x2_diagonal_2_3() {
+        // diag(2, 3): char poly = (λ-2)(λ-3) = λ² - 5λ + 6
         let m = vec![vec![ri(2), ri(0)], vec![ri(0), ri(3)]];
         let cp = char_poly_rational(&m);
         assert_eq!(cp, vec![ri(6), -ri(5), ri(1)]);
