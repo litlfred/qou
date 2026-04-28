@@ -1,0 +1,73 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-04-28T13:09:36.974083+00:00",
+  "commitSha": "9000920799dd392ea1c1526da2b0e38cf9af0e57",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "neutron-gap-probes-round6",
+  "scriptFile": "probe_neutron_gap_round6.py",
+  "scriptHash": "8508bca1dd52",
+  "scriptCommitSha": "",
+  "description": "Round-6 probe: tests the per-nucleon trace-deficit hypothesis B_pred = E0 · |Z·tr_M(p) + N·tr_M(n) − tr_M(atom)| against AME binding energies for D / T / ³He. Compared to round-4's |tr_M(atom)| · E0 - constituent_sum. Both calibrate E0 on the proton; difference is in the binding extraction.",
+  "contentBlock": "prop:atom-knot-mass-derivation",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_p_codata_MeV": 938.27208816,
+    "m_n_codata_MeV": 939.56542052,
+    "m_e_codata_MeV": 0.51099895,
+    "precision_dps": 50,
+    "hypothesis": "B = E0 · |Z·tr_M(p) + N·tr_M(n) − tr_M(atom)|"
+  },
+  "data": {
+    "results": [
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "tr_M_atom": "0.388286471547713419620628617786",
+        "Z_tr_p_plus_N_tr_n": "1.98853952576197305348619236425",
+        "trace_deficit": "1.60025305421425963386556374646",
+        "B_AME_MeV": 2.22456612,
+        "B_pred_MeV_round6": "1409.4283263000887738",
+        "B_err_ppb_round6": 632574481616.2573,
+        "B_err_ppb_round4_compare": 689635293732.5419
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "tr_M_atom": "0.104052118675525731457683054587",
+        "Z_tr_p_plus_N_tr_n": "2.9117728229315567733606072635",
+        "trace_deficit": "2.80772070425603104190292420891",
+        "B_AME_MeV": 8.4817984,
+        "B_pred_MeV_round6": "2472.9095704558734565",
+        "B_err_ppb_round6": 290554862994.135,
+        "B_err_ppb_round4_compare": 320425898348.75323
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "tr_M_atom": "0.206540858562262749305988545945",
+        "Z_tr_p_plus_N_tr_n": "3.05384575435436238709796982924",
+        "trace_deficit": "2.84730489579209963779198128329",
+        "B_AME_MeV": 7.7180375,
+        "B_pred_MeV_round6": "2507.7734819339348334",
+        "B_err_ppb_round6": 323923723412.0636,
+        "B_err_ppb_round4_compare": 340436541387.30304
+      }
+    ],
+    "verdict": "R6 improves on R4 by 1.09× on worst-atom (deuteron: R6 = +6.33e+11 ppb, R4 = +6.90e+11 ppb)",
+    "attestation": {
+      "used_fitting": false,
+      "used_root_find": false,
+      "uses_codata_inputs": true,
+      "uses_upstream_atomic_tr_m": true
+    }
+  }
+}

@@ -173,6 +173,20 @@ This audit doc complements the `canonicalization-review.md` Appendix §D2 (which
 
 ---
 
+## Round-6 atomic probe (2026-04-28) — trace-deficit hypothesis falsified
+
+The atomic mass-prediction gap (rounds 4 and 5 both fail at ~10¹¹ ppb on D/T/³He) was probed once more under the **per-nucleon trace-deficit hypothesis**:
+
+$$
+  B_{\mathrm{pred}} \;=\; E_0 \cdot \bigl|Z \cdot \mathrm{tr}_M(p) + N \cdot \mathrm{tr}_M(n) - \mathrm{tr}_M(\mathrm{atom})\bigr|.
+$$
+
+[`probe_neutron_gap_round6.py`](../folio-assistant/computations/probe_neutron_gap_round6.py) reports only **1.09× improvement** on the worst atom (deuteron: +6.33×10¹¹ ppb vs round-4's +6.90×10¹¹ ppb) — the trace-deficit hypothesis is essentially equivalent to round-4 within numerical tolerance, and the gap remains.
+
+A diagnostic finding from round 6: **proton-calibrated $E_0$ fails on the neutron by 13%** under naive $E_0 \cdot |\mathrm{tr}_M(n)|$. The round-3 success (which closed the n/p split to ~5×10⁻⁸ ppb) crucially required the Q_β third structural input. Atoms — composite of multiple nucleons + electrons — appear to require an analogous categorical structural input (per-bond binding-energy Skein structure) rather than any rearrangement of E0-calibrated nucleon traces.
+
+**Conclusion:** the atomic combination convention for binding energy is **not** any single-channel rearrangement of the nucleon $\mathrm{tr}_M$ values. The next probe (round 7+) needs a genuinely new framework — candidate: per-bond Skein-pair binding with Z-dependent third structural inputs (analogous to Q_β at the nucleon level).
+
 ## Open work
 
 - **α_em uniqueness at higher precision — done (2026-04-28).** Extended to tol_dps ∈ {1000, 2000} at DPS = 3000 working precision. Both levels report `relation = None` over the same 52-element basis. Witness: [`alpha-em-pslq-uniqueness-2000dps.witness.json`](../folio-assistant/computations/alpha-em-pslq-uniqueness-2000dps.witness.json). Total wall-time ≈ 80 s (much faster than the original "hours per tol level" worry). **Falsifiability bound now**: no q-arithmetic alternative in this 52-element basis matches CODATA at $> 10^{-2000}$ precision.
