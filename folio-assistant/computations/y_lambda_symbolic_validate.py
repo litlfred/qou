@@ -290,7 +290,12 @@ def main(ns: list[int] | None = None) -> int:
     out_path = Path(__file__).parent / "y-lambda-symbolic-validation.json"
     # Merge-aware load — preserve entries for n not in this run.
     if out_path.exists():
-        existing = json.loads(out_path.read_text())
+        try:
+            existing = json.loads(out_path.read_text())
+        except json.JSONDecodeError:
+            print(f"Warning: existing validation file {out_path} is not "
+                  "valid JSON; starting fresh.")
+            existing = {}
     else:
         existing = {}
     summary_by_n = existing.get("summary_by_n", {})

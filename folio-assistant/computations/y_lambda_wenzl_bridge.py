@@ -161,12 +161,8 @@ def _standard_young_tableaux(shape):
                 continue
             r, c = cells[ci]
             if c > 0:
-                for k, (rr, cc) in enumerate(cells):
-                    if rr == r and cc == c - 1 and cell_available[k]:
-                        break
-                else:
-                    pass
-                # if the left neighbour is still available, skip
+                # if the left neighbour is still available, skip — SYTs
+                # require left-to-right increase along each row
                 left_avail = any(
                     rr == r and cc == c - 1 and cell_available[k]
                     for k, (rr, cc) in enumerate(cells)
