@@ -1,6 +1,6 @@
 {
   "computation": "probe-canonical-multi-term-D",
-  "description": "Tests literal multi-term formula on D with canonical tr_M from symbolic GB-NF chain (NOT the parallel branch's wrong +0.288 number). NO census data.",
+  "description": "Tests literal multi-term formula on D with canonical tr_M loaded at runtime from D-tr-M-q0.derivation.json (PR #473 derivation-chain registry, cross-validated by PR #472's habiro-residue-sum-equivalence). NO census data; T_w(D) is the GB-NF reduction of atom_braid_word_3A(1, 1).",
   "tr_M_D_atom_q0_canonical": "0.17743692421543206",
   "AME_B_D_MeV": 2.22456612,
   "rho_D": 1,

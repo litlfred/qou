@@ -1,11 +1,11 @@
 # tr_M(D) reconciliation (post-#472, post-#473)
 
-After PR #457 merged, two new propositions on main resolved the
+After PR #457 merged, two PRs landed on main that resolved the
 tr_M-normalization ambiguity I flagged in
 `docs/derivation-tracking-methodology.md`:
 
-- **PR #472**: [`prop:habiro-residue-sum-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.md) — cross-validates `tr_M(D, q_0)` between the polynomial-ring path and the residue-spectral-sum path at relative tolerance $\leq 10^{-9}$.
-- **PR #473**: `D-tr-M-q0.derivation.json` — registers `tr_M(D, q_0) = 0.17743692421543206` as the canonical value via an 8-step derivation chain from the 7 first-principles entrypoints.
+- **PR #472** (content): [`prop:habiro-residue-sum-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.md) — cross-validates `tr_M(D, q_0)` between the polynomial-ring path and the residue-spectral-sum path at relative tolerance $\leq 10^{-9}$.
+- **PR #473** (computation registry): `D-tr-M-q0.derivation.json` — registers `tr_M(D, q_0) = 0.17743692421543206` as the canonical value via an 8-step derivation chain from the 7 first-principles entrypoints.
 
 | Convention | tr_M(p) | tr_M(n) | tr_M(D) |
 |------------|--------:|--------:|--------:|
