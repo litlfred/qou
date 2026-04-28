@@ -78,6 +78,7 @@ noncomputable instance : BaryonPeriodRatio (1.1100 : ℝ) where
   mass_ratio_eq := 1836.15
   mass_ratio_approx := by
     -- Ref: [manuscript] §5/baryon-period-conjecture
-    sorry
+    -- Numerical inequality 1835 < 1836.15 < 1837.
+    refine ⟨?_, ?_⟩ <;> norm_num
 
 end QOU.Descartes
