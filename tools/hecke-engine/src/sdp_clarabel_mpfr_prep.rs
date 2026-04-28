@@ -88,10 +88,19 @@ pub fn build_rho_lambda_mpfr_to_f64(
     // Walk the braid word, multiplying generators (or their
     // Hecke-relation inverses) at MPFR precision.
     for &gen in braid_word {
+        assert!(
+            gen != 0,
+            "build_rho_lambda_mpfr_to_f64: braid generator 0 is invalid \
+             (generators are 1-indexed σ_1, σ_2, ...)"
+        );
         let idx = gen.unsigned_abs() as usize - 1;
-        if idx >= dense_gens.len() {
-            continue;
-        }
+        assert!(
+            idx < dense_gens.len(),
+            "build_rho_lambda_mpfr_to_f64: braid generator {} out of range \
+             for {} available generators (shape requires |gen| ≤ n-1)",
+            gen,
+            dense_gens.len()
+        );
         let g = if gen > 0 {
             &dense_gens[idx]
         } else {
@@ -155,10 +164,22 @@ pub fn build_rho_lambda_for_basis_element_mpfr_to_f64(
         .collect();
 
     for &g in canonical_word {
+        assert!(
+            g >= 1,
+            "build_rho_lambda_for_basis_element_mpfr_to_f64: canonical-word \
+             generator {} is invalid (canonical words use positive 1-indexed \
+             generators only — no zero, no negatives)",
+            g
+        );
         let idx = g as usize - 1;
-        if idx >= dense_gens.len() {
-            continue;
-        }
+        assert!(
+            idx < dense_gens.len(),
+            "build_rho_lambda_for_basis_element_mpfr_to_f64: canonical-word \
+             generator {} out of range for {} available generators \
+             (likely word/shape mismatch)",
+            g,
+            dense_gens.len()
+        );
         prod = dense_dense_mul_mpfr(&prod, &dense_gens[idx], prec);
     }
 

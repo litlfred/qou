@@ -38,14 +38,12 @@ try:
     HAS_MPMATH = True
 
     def _mpf_at(value: str, dps: int) -> "_mp.mpf":
-        """Parse a decimal string at the given dps, raising mp.dps
-        to at least `dps + 4` while parsing."""
-        prev = _mp.mp.dps
-        try:
-            _mp.mp.dps = max(prev, dps + 4)
+        """Parse a decimal string at the given dps via mpmath's
+        scoped `workdps` context — thread-safe and never leaks
+        the precision change to other concurrent users of the
+        global `mpmath.mp.dps`."""
+        with _mp.workdps(max(_mp.mp.dps, dps + 4)):
             return _mp.mpf(value)
-        finally:
-            _mp.mp.dps = prev
 
     Scalar = Union[float, "_mp.mpf"]
 except ImportError:
@@ -98,12 +96,8 @@ def write_scalar(value: Scalar, dps: int = 50) -> dict | float:
     - For float inputs: emit a plain f64 number (legacy path).
     """
     if HAS_MPMATH and isinstance(value, _mp.mpf):
-        prev = _mp.mp.dps
-        try:
-            _mp.mp.dps = max(prev, dps + 4)
+        with _mp.workdps(max(_mp.mp.dps, dps + 4)):
             return {"value": _mp.nstr(value, dps, strip_zeros=False), "dps": dps}
-        finally:
-            _mp.mp.dps = prev
     return float(value)
 
 

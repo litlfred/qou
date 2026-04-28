@@ -51,6 +51,13 @@ name = "clarabel-h3-exact-lp"
 path = "src/bin/clarabel_h3_exact_lp.rs"
 required-features = ["clarabel-bigrational"]
 
+# §S9.4 — Peyrl-Parrilo dual-certificate CLI: f64 IPM → rationalise dual
+# → Sturm-chain PSD verify
+[[bin]]
+name = "clarabel-certify"
+path = "src/bin/clarabel_certify.rs"
+required-features = ["clarabel-sdp"]
+
 # Per-Wedderburn-block matrix dump for sign-convention audits
 [[bin]]
 name = "dump-block-matrices"

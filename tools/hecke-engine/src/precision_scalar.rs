@@ -53,7 +53,7 @@ impl PrecisionScalar {
     /// Adds 8 buffer bits for safe rounding.
     pub fn to_rug(&self, dps: u32) -> rug::Float {
         // bits = ceil(dps · log₂(10)) + 8 buffer
-        let bits = (dps as f64 * 3.32193 + 8.0).ceil() as u32;
+        let bits = (dps as f64 * std::f64::consts::LOG2_10 + 8.0).ceil() as u32;
         rug::Float::parse(&self.value)
             .map(|p| rug::Float::with_val(bits, p))
             .unwrap_or_else(|e| {

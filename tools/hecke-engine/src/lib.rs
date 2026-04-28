@@ -58,4 +58,5 @@ pub mod sdp_verifier;
 pub mod seminormal;
 pub mod seminormal_mn;
 pub mod seminormal_mpfr;
+pub mod sturm_psd;
 pub mod wedderburn_psd;

@@ -1,10 +1,18 @@
 //! §S9.2 — Dual-certificate verification (Peyrl–Parrilo recipe).
 //!
-//! Take a Clarabel-rs SDP solution at f64 / MpfrFloat precision,
-//! tighten each Wedderburn-block dual matrix to nearby small-denom
-//! rationals via the §S9.1 Stern–Brocot helper, and emit a
-//! [`CertifiedSdpReport`] that carries the rational dual + a
-//! per-block summary.
+//! Take a Clarabel-rs **f64** SDP solution, tighten each
+//! Wedderburn-block dual matrix to nearby small-denom rationals via
+//! the §S9.1 Stern–Brocot helper, and emit a [`CertifiedSdpReport`]
+//! that carries the rational dual + a per-block summary.
+//!
+//! `tighten_solution` is hard-wired to `DefaultSolution<f64>` —
+//! upstream `dual_psd_block` returns f64 entries which §S9.1's
+//! Stern-Brocot helper rounds to BigInt rationals.  An MpfrFloat
+//! variant would need a separate `dual_psd_block_mpfr` accessor +
+//! a different Stern-Brocot kernel; not in scope here.  Per the
+//! `clarabel-mpfr ⊥ clarabel-sdp` mutex documented in
+//! [`docs/audits/exact-sdp-feasibility.md`](../../docs/audits/exact-sdp-feasibility.md),
+//! a single binary cannot mix MpfrFloat and SDP cones in any case.
 //!
 //! This is the post-IPM rationalisation pipeline described in
 //! [`docs/audits/exact-sdp-feasibility.md`](../../docs/audits/exact-sdp-feasibility.md):
@@ -22,12 +30,19 @@
 
 use crate::rational_round::{rational_to_f64, tighten_f64};
 use clarabel::solver::DefaultSolution;
+use num_bigint::BigInt;
+use num_traits::Zero;
 use serde::{Deserialize, Serialize};
 
 /// One Wedderburn-block dual matrix tightened to rationals.
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct CertifiedDualBlock {
-    /// Block index in the original cone list.
+    /// Index into Clarabel's *internal* cone-block list (the
+    /// collapsed `cone_specs`, not the user-supplied cone list).
+    /// Clarabel collapses adjacent same-type cones — e.g. two
+    /// `NonnegativeConeT(1)` become one `NonnegativeConeT(2)` in
+    /// the internal layout — so `idx` here is not the same as the
+    /// caller's input-cone index.
     pub idx: usize,
     /// Block dimension `d_λ`.
     pub d: usize,
@@ -35,10 +50,17 @@ pub struct CertifiedDualBlock {
     /// stringified so the witness JSON serialises cleanly without
     /// requiring a custom serde impl for `BigInt`.
     pub entries: Vec<Vec<(String, String)>>,
-    /// Min diagonal entry (as f64 projection of the rational) — a
-    /// quick PSD-screen approximator.  Negative ⇒ block is not
-    /// PSD; non-negative ⇒ likely PSD but Sturm-chain verification
-    /// is still required for a hard certificate.
+    /// `true` iff every diagonal entry is non-negative.  A hard
+    /// PSD precondition (necessary; not sufficient — full PSD
+    /// verification needs Sturm-chain via `crate::sturm_psd`).
+    /// Computed from the BigInt numerator sign directly (since
+    /// `den > 0`), so this flag never corrupts on f64 over/underflow.
+    pub all_diag_nonneg: bool,
+    /// Min diagonal entry as f64 projection — for human display
+    /// and quick screening only.  May be `f64::INFINITY` if all
+    /// diagonals f64-projected to NaN/overflow.  For correctness
+    /// checks, use `all_diag_nonneg` (computed via exact integer
+    /// sign tests on the rational numerators).
     pub min_diag_f64: f64,
     /// Max absolute entry across the matrix.  Useful for spotting
     /// numerical anomalies in the f64 solve before tightening.
@@ -63,12 +85,16 @@ pub struct CertifiedSdpReport {
     /// 10_000 for "easily-readable" certificates, 10^12 for
     /// faithful round-tripping of the f64 solution.
     pub q_max: u64,
-    /// One entry per cone in the original solution; PSD blocks
-    /// have a `Some(CertifiedDualBlock)`, non-PSD cones have `None`.
+    /// One entry per cone in Clarabel's *internal* (collapsed)
+    /// cone-block list.  PSD blocks have `Some(CertifiedDualBlock)`;
+    /// non-PSD cones have `None`.  The length of this vector
+    /// matches `solution.primal_residual_per_block().len()`, NOT
+    /// the user's input-cone count.
     pub blocks: Vec<Option<CertifiedDualBlock>>,
-    /// Aggregate verdict — true iff every PSD block has
-    /// `min_diag_f64 >= 0`.  This is a *necessary* condition for
-    /// PSD; sufficient verification needs Sturm chains (§S9.3).
+    /// Aggregate verdict — true iff every PSD block has all-
+    /// non-negative diagonals (computed via exact BigInt sign
+    /// tests).  Necessary condition for PSD; sufficient
+    /// verification needs Sturm chains (`crate::sturm_psd`).
     pub all_diags_nonneg: bool,
 }
 
@@ -107,12 +133,17 @@ pub fn tighten_solution(
             }
         };
         let d = dual_mat.len();
+        // Track exact-rational non-negativity via BigInt sign tests
+        // (num >= 0 since den > 0 by construction).  Fall back to
+        // f64 projection for the human-readable min_diag_f64 only.
         // Tighten every entry; track stats.
         let mut entries: Vec<Vec<(String, String)>> =
             Vec::with_capacity(d);
         let mut min_diag_f64 = f64::INFINITY;
         let mut max_abs_f64 = 0.0_f64;
         let mut max_denom_bits = 0_u64;
+        let mut block_diag_nonneg = true;
+        let zero = BigInt::zero();
         for (i, row) in dual_mat.iter().enumerate() {
             let mut row_out: Vec<(String, String)> = Vec::with_capacity(d);
             for (j, &v) in row.iter().enumerate() {
@@ -126,8 +157,16 @@ pub fn tighten_solution(
                     max_denom_bits = bits;
                 }
                 if i == j {
+                    // Exact-rational non-negativity: den > 0 by
+                    // construction in tighten_f64, so the sign of
+                    // (num/den) equals the sign of num.  Avoids
+                    // any f64 over/underflow corrupting the
+                    // verdict.
+                    if num < zero {
+                        block_diag_nonneg = false;
+                    }
                     let proj = rational_to_f64(&num, &den);
-                    if proj < min_diag_f64 {
+                    if proj.is_finite() && proj < min_diag_f64 {
                         min_diag_f64 = proj;
                     }
                 }
@@ -135,13 +174,14 @@ pub fn tighten_solution(
             }
             entries.push(row_out);
         }
-        if min_diag_f64 < 0.0 {
+        if !block_diag_nonneg {
             all_diags_nonneg = false;
         }
         blocks.push(Some(CertifiedDualBlock {
             idx,
             d,
             entries,
+            all_diag_nonneg: block_diag_nonneg,
             min_diag_f64,
             max_abs_f64,
             max_denom_bits,

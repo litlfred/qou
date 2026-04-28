@@ -33,6 +33,7 @@ pub fn tighten_f64(x: f64, q_max: u64) -> (BigInt, BigInt) {
         return (BigInt::zero(), BigInt::one());
     }
     let sign = if x < 0.0 { -1 } else { 1 };
+    let x_orig = x;
     let mut x = x.abs();
 
     // Convergents (h_{k-2}, h_{k-1}) → h_k = a_k h_{k-1} + h_{k-2}
@@ -56,30 +57,44 @@ pub fn tighten_f64(x: f64, q_max: u64) -> (BigInt, BigInt) {
         let h_new: BigInt = &a_bi * &h_prev + &h_prev2;
         let k_new: BigInt = &a_bi * &k_prev + &k_prev2;
         if k_new > q_max_bi {
-            // Try semi-convergents (a · h_prev + h_prev2 with smaller a).
+            // Out-of-budget: candidate convergents are
+            //   (h_prev / k_prev)        — the previous full convergent
+            //   (h_semi / k_semi)        — best semi-convergent within q_max
+            // Pick whichever is closer to the original `x`.  This
+            // matches the standard "best rational approximation under
+            // a denominator bound" definition (see Khinchin 1964 §16).
             let a_max_num: BigInt = &q_max_bi - &k_prev2;
             let a_max = if k_prev > BigInt::zero() {
                 &a_max_num / &k_prev
             } else {
                 BigInt::zero()
             };
+            // Always-available candidate: the prior convergent.
+            let mut best_h = h_prev.clone();
+            let mut best_k = k_prev.clone();
+            // Compute its approximation error vs original |x|.
+            let orig = x_orig.abs();
+            let err_prev = approx_error(&best_h, &best_k, orig);
+            let mut best_err = err_prev;
             if a_max > BigInt::zero() && a_max < a_bi {
                 let h_semi: BigInt = &a_max * &h_prev + &h_prev2;
                 let k_semi: BigInt = &a_max * &k_prev + &k_prev2;
                 if k_semi > BigInt::zero() && k_semi <= q_max_bi {
-                    // Compare semi-convergent vs prior convergent
-                    // — pick whichever is closer to x.  But we
-                    // already iterated past a_bi, so use the
-                    // semi-convergent as the result.
-                    let sign_bi = if sign < 0 {
-                        -BigInt::one()
-                    } else {
-                        BigInt::one()
-                    };
-                    return (sign_bi * h_semi, k_semi);
+                    let err_semi = approx_error(&h_semi, &k_semi, orig);
+                    if err_semi < best_err {
+                        best_err = err_semi;
+                        best_h = h_semi;
+                        best_k = k_semi;
+                    }
                 }
             }
-            break;
+            let _ = best_err;
+            let sign_bi = if sign < 0 {
+                -BigInt::one()
+            } else {
+                BigInt::one()
+            };
+            return (sign_bi * best_h, best_k);
         }
         h_prev2 = h_prev;
         h_prev = h_new;
@@ -98,6 +113,14 @@ pub fn tighten_f64(x: f64, q_max: u64) -> (BigInt, BigInt) {
         BigInt::one()
     };
     (sign_bi * h_prev, k_prev)
+}
+
+/// Internal: |x − num/den| as f64 (sufficient for the candidate
+/// comparison since both candidates are within Stern-Brocot's
+/// guaranteed envelope of f64's representable rationals).
+fn approx_error(num: &BigInt, den: &BigInt, x_abs: f64) -> f64 {
+    let p = rational_to_f64(num, den);
+    (x_abs - p).abs()
 }
 
 /// Element-wise [`tighten_f64`] over an `f64` slice.
