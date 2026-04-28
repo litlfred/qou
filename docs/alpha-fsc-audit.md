@@ -173,6 +173,24 @@ This audit doc complements the `canonicalization-review.md` Appendix §D2 (which
 
 ---
 
+## Round-7 atomic probe (2026-04-28) — per-bond Skein-pair, K_A falsified
+
+Generalises round-3's nucleon-level Skein-pair scheme to atoms via the **3-input bond hypothesis**:
+
+$$
+  B \;=\; z_{\mathrm{inv}} \cdot (n_{pp} \mu_{pp} + n_{pn} \mu_{pn} + n_{nn} \mu_{nn}),
+  \qquad z_{\mathrm{inv}} = \frac{q + q^{-1}}{q^{1/2} + q^{-1/2}}.
+$$
+
+Calibration on D, T, ³He under $K_A$ complete-graph bond counting determines the three structural inputs exactly:
+- $\mu_{pn} = 2.21552$ MeV (from D)
+- $\mu_{nn} = 4.01627$ MeV (from T)
+- $\mu_{pp} = 3.25562$ MeV (from ³He)
+
+[`probe_neutron_gap_round7.py`](../folio-assistant/computations/probe_neutron_gap_round7.py) tests on ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹²C, ¹⁶O. Result: errors range −42.7% (⁴He under-prediction; α-particle shell closure) to +172% (¹⁶O over-prediction). The $K_A$ complete-graph hypothesis predicts $B \sim A^2$ but real binding scales $B \sim A$ (nuclear saturation: short-range force = nearest-neighbour, not all-pairs).
+
+**Conclusion:** $K_A$ falsified, but the calibrated $\mu_{pp}, \mu_{pn}, \mu_{nn}$ values are physically meaningful per-bond Skein-pair contributions. The right bond topology is **nearest-neighbour in a shell-structured orbital lattice** — derivable from the categorical Bratteli diagram + GB residue structure (upstream theory work, queued as round-8 design).
+
 ## Round-6 atomic probe (2026-04-28) — trace-deficit hypothesis falsified
 
 The atomic mass-prediction gap (rounds 4 and 5 both fail at ~10¹¹ ppb on D/T/³He) was probed once more under the **per-nucleon trace-deficit hypothesis**:
@@ -203,4 +221,5 @@ A diagnostic finding from round 6: **proton-calibrated $E_0$ fails on the neutro
     - All 7 partitions of H_5 and all 11 partitions of H_6 produce finite $\alpha_\lambda$ values with residual $\leq 7 \times 10^{-51}$ (50 dps precision floor) and $|c|_\infty \leq 1.7$.
     - H_4 reproduction: $\alpha_{(1^4)}(H_4) = +0.00346252$ matches the closed-form proposition's $+0.003463$, confirming gauge convention compatibility.
     - **H_5 symbolic ⇔ numeric agreement (10 digits).** The Q(q) closed forms evaluate at $q_0$ to exactly the values in the numeric witness.
-  - **Remaining work:** H_6 symbolic Q(q) closed forms (combinatorially larger; max SYT dim is 16 for (3,2,1), so symbolic matrix products grow but the `solve`-based approach remains tractable).
+  - **α_λ via Wenzl bridge for n=2..12 (2026-04-28).** [`alpha_k_via_wenzl_bridge.py`](../folio-assistant/computations/alpha_k_via_wenzl_bridge.py) promotes the Wenzl-bridge symbolic y_λ witness (n=2..12, 270 partitions) to closed-form α_λ in the natural Wedderburn dual basis (where χ_λ(r_λ)=1 ⇒ α_λ = y_λ). Witness: [`alpha-k-via-wenzl-bridge.witness.json`](../folio-assistant/computations/alpha-k-via-wenzl-bridge.witness.json) (~7 MB). Largest partition tabulated: $(1^{12})$ at $\alpha_\lambda \approx -1.03 \times 10^{-9}$ (depth 11), confirming the $|\alpha_\lambda|$ → 0 trend at high depth.
+  - **Remaining work:** H_n symbolic per-partition Hoefsmit-solve closed forms beyond n=6 are queued (H_7 in progress at time of commit).
