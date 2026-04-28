@@ -41,12 +41,20 @@ theorem knot_factor_shell_closed
     (triv_nz : β.trivial trivialPartition ≠ 0) :
     knotFactor n β β_mirror
       = β.weight trivialPartition := by
-  -- Sum over partitions: every λ ≠ trivialPartition contributes 0
-  -- by `vanish_offblock`; the trivial block contributes
-  -- weight · (c · c) / trivial² = weight · trivial² / trivial² = weight.
-  -- After `weight_normalised`, this is 1.
   -- Ref: [manuscript] Ch. Braids and Knots, §Knot factor / shell-closed
-  sorry
+  unfold knotFactor
+  rw [Finset.sum_eq_single trivialPartition]
+  · -- Surviving trivialPartition term:
+    -- weight · (c · c_mirror) / trivial² = weight · trivial² / trivial² = weight
+    rw [eq.trivial_block]
+    field_simp
+  · -- Off-trivial terms vanish via vanish_offblock
+    intro μ hμ_in hμ_ne
+    rw [eq.vanish_offblock μ hμ_in hμ_ne]
+    simp
+  · -- trivialPartition ∈ partitions (from eq.trivial_in)
+    intro h_not_in
+    exact absurd eq.trivial_in h_not_in
 
 /-- **Existence form**: there exists a real `a = 1` realising the
     shell-closed knot factor. -/
