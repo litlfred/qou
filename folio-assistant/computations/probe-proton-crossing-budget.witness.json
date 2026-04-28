@@ -1,0 +1,195 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T01:20:57.228659+00:00",
+  "commitSha": "edfc430496f17026716dfb3e6c358ac86bc89b85",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "probe-proton-crossing-budget",
+  "scriptFile": "probe_proton_crossing_budget.py",
+  "scriptHash": "35e2963dbca4",
+  "scriptCommitSha": "",
+  "description": "Probe of proton crossing-budget alternatives at 50 dps. Current budget (B_3 power 3, 2 gluons, 11 total crossings) gives m_p/m_e = 1869.85 (+1.84% off CODATA). Scans n_b3 ∈ {2, 3, 4} and n_gluon ∈ {0..4} to identify any (n_b3, n_gluon) combination that yields CODATA m_p/m_e = 1836.15 exactly (within 0.1%). NO Vol_hyp, NO knot identification, NO census search — pure mpmath at 50 dps.",
+  "contentBlock": "rem:photon-channel-wedderburn-chain",
+  "parameters": {
+    "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
+    "m_e_MeV": 0.51099895,
+    "m_p_AME_MeV": 938.27208816,
+    "target_m_p_over_m_e_codata": 1836.1526734252586,
+    "mpmath_dps": 50
+  },
+  "data": {
+    "scan_results": [
+      {
+        "n_b3": 2,
+        "n_gluon": 0,
+        "n_total_crossings": 7,
+        "V_0": 1.139150503679543,
+        "V_1": 0.0585728766203652,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 2,
+        "n_gluon": 1,
+        "n_total_crossings": 8,
+        "V_0": 0.7194133097224181,
+        "V_1": 0.0585728766203652,
+        "m_p_pred_in_me_units_50dps": "3772.15763923481568678763494995",
+        "m_p_over_m_e": 5.982525839953486,
+        "err_pct_vs_codata": -99.67418145960633,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 2,
+        "n_gluon": 2,
+        "n_total_crossings": 9,
+        "V_0": 1.2895512818539168,
+        "V_1": 0.0585728766203652,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 2,
+        "n_gluon": 3,
+        "n_total_crossings": 10,
+        "V_0": 0.9890073159292597,
+        "V_1": 0.0585728766203652,
+        "m_p_pred_in_me_units_50dps": "671223.609929697890557878702613",
+        "m_p_over_m_e": 1064.53997283259,
+        "err_pct_vs_codata": -42.02334107398927,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 2,
+        "n_gluon": 4,
+        "n_total_crossings": 11,
+        "V_0": 1.496313469772434,
+        "V_1": 0.0585728766203652,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 3,
+        "n_gluon": 0,
+        "n_total_crossings": 9,
+        "V_0": 0.7194133097224181,
+        "V_1": 0.9710701586527437,
+        "m_p_pred_in_me_units_50dps": "430214.590650586876556213305927",
+        "m_p_over_m_e": 682.3070909131566,
+        "err_pct_vs_codata": -62.84039444060259,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 3,
+        "n_gluon": 1,
+        "n_total_crossings": 10,
+        "V_0": 1.2895512818539168,
+        "V_1": 0.9710701586527437,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 3,
+        "n_gluon": 2,
+        "n_total_crossings": 11,
+        "V_0": 0.9890073159292597,
+        "V_1": 0.9710701586527437,
+        "m_p_pred_in_me_units_50dps": "1178995.52543659290264299208124",
+        "m_p_over_m_e": 1869.850592337582,
+        "err_pct_vs_codata": 1.8352460228408638,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 3,
+        "n_gluon": 3,
+        "n_total_crossings": 12,
+        "V_0": 1.496313469772434,
+        "V_1": 0.9710701586527437,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 3,
+        "n_gluon": 4,
+        "n_total_crossings": 13,
+        "V_0": 1.3018270917176786,
+        "V_1": 0.9710701586527437,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 4,
+        "n_gluon": 0,
+        "n_total_crossings": 11,
+        "V_0": 1.2895512818539168,
+        "V_1": -0.14443936342234073,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 4,
+        "n_gluon": 1,
+        "n_total_crossings": 12,
+        "V_0": 0.9890073159292597,
+        "V_1": -0.14443936342234073,
+        "m_p_pred_in_me_units_50dps": "671226.41196277807334170476038",
+        "m_p_over_m_e": 1064.5444167707574,
+        "err_pct_vs_codata": -42.02309904955243,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 4,
+        "n_gluon": 2,
+        "n_total_crossings": 13,
+        "V_0": 1.496313469772434,
+        "V_1": -0.14443936342234073,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 4,
+        "n_gluon": 3,
+        "n_total_crossings": 14,
+        "V_0": 1.3018270917176786,
+        "V_1": -0.14443936342234073,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      },
+      {
+        "n_b3": 4,
+        "n_gluon": 4,
+        "n_total_crossings": 15,
+        "V_0": 1.7684738607420802,
+        "V_1": -0.14443936342234073,
+        "m_p_pred_in_me_units_50dps": "+inf",
+        "m_p_over_m_e": Infinity,
+        "err_pct_vs_codata": Infinity,
+        "matches_within_0.1pct": false
+      }
+    ],
+    "matches_count": 0
+  },
+  "caveats": [
+    "If no match is found, the 1.84% residual is structurally encoded outside the simple crossing-count parameter space. Possible structural sources: (a) crossing TYPE distribution (σ vs σ⁻¹ vs ud-half), (b) Φ_q tower truncation at order 2 (but ¹H has only 2 gens, so no order-3+), (c) Wedderburn weight choice (q-deformed vs Plancherel), (d) calibration of m_e (currently CODATA leptonic input)."
+  ]
+}
