@@ -111,6 +111,67 @@ pub fn build_rho_lambda_mpfr_to_f64(
         .collect()
 }
 
+/// §S5-MPFR — basis-element variant.  Walks a canonical reduced
+/// word (1-indexed positive generators only — no inverses, no
+/// signs) and builds ρ_λ(T_w) at MPFR precision, projecting to
+/// f64 only at the boundary.
+///
+/// Mirrors `build_rho_lambda_for_basis_element` (the duplicated
+/// f64 helper in [`crate::sdp_solve_canonical_t_w`] and
+/// [`crate::sdp_recover_canonical`]).  Used by the §S5-MPFR
+/// callers to build `Σ_w c_w · ρ_λ(T_w)` constraint matrices
+/// without the all-f64 round-trip in the matrix-arithmetic core.
+///
+/// Note: canonical words have no negative generators (all `T_w`
+/// in the GB-NF basis are positive products), so this function
+/// does NOT use the inverse generators from §S4-MPFR.  Matches
+/// the f64 helper's signature semantically.
+pub fn build_rho_lambda_for_basis_element_mpfr_to_f64(
+    shape: &[usize],
+    canonical_word: &[u32],
+    q_str: &str,
+    dps: u32,
+) -> Vec<Vec<f64>> {
+    let prec = dps_to_bits(dps);
+
+    let sparse_gens = seminormal_matrices_mpfr(shape, q_str, dps);
+    let dim = if sparse_gens.is_empty() {
+        1
+    } else {
+        sparse_gens[0].len()
+    };
+
+    let dense_gens: Vec<Vec<Vec<Float>>> = sparse_gens
+        .iter()
+        .map(|sg| sparse_to_dense_mpfr(sg, dim, prec))
+        .collect();
+
+    let mut prod: Vec<Vec<Float>> = (0..dim)
+        .map(|i| {
+            (0..dim)
+                .map(|j| Float::with_val(prec, if i == j { 1 } else { 0 }))
+                .collect()
+        })
+        .collect();
+
+    for &g in canonical_word {
+        let idx = g as usize - 1;
+        if idx >= dense_gens.len() {
+            continue;
+        }
+        prod = dense_dense_mul_mpfr(&prod, &dense_gens[idx], prec);
+    }
+
+    // Note: callers project to f64 *without* symmetrising, since the
+    // basis-element ρ_λ(T_w) is not generally symmetric — the
+    // symmetrisation happens later when building the full
+    // Σ_w c_w · ρ_λ(T_w) for the PSD constraint.  This matches the
+    // f64 helper.
+    prod.iter()
+        .map(|row| row.iter().map(|v| v.to_f64()).collect())
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -207,6 +268,77 @@ mod tests {
                     "mpfr-then-f64 vs all-f64 disagree at ({i},{j}): {} vs {} (diff {:.2e})",
                     mpfr_proj[i][j],
                     f64_path[i][j],
+                    diff
+                );
+            }
+        }
+    }
+
+    /// §S5-MPFR — basis-element variant cross-validates against
+    /// the existing f64 helper (replicated inline since the f64
+    /// version is module-private).  Canonical word multiplication
+    /// without inverses.
+    #[test]
+    fn mpfr_prep_basis_element_matches_f64_h3() {
+        let shape = vec![2, 1];
+        // canonical word: σ_1 σ_2 σ_1 → represents w = (1 3 2) ∈ S_3
+        let word: Vec<u32> = vec![1, 2, 1];
+        let q_str = "1.10998";
+        let q_f64: f64 = q_str.parse().unwrap();
+
+        let mpfr_proj = build_rho_lambda_for_basis_element_mpfr_to_f64(
+            &shape, &word, q_str, 50,
+        );
+
+        // f64 reference computation
+        let sparse_gens = seminormal_matrices(&shape, q_f64);
+        let dim = sparse_gens[0].len();
+        let dense_gens: Vec<Vec<Vec<f64>>> = sparse_gens
+            .iter()
+            .map(|sg| {
+                let mut m = vec![vec![0.0; dim]; dim];
+                for (i, row) in sg.iter().enumerate() {
+                    for &(j, v) in row {
+                        m[i][j] = v;
+                    }
+                }
+                m
+            })
+            .collect();
+        let mut prod = vec![vec![0.0_f64; dim]; dim];
+        for i in 0..dim {
+            prod[i][i] = 1.0;
+        }
+        for &g in &word {
+            let idx = g as usize - 1;
+            if idx >= dense_gens.len() {
+                continue;
+            }
+            let m = &dense_gens[idx];
+            let mut next = vec![vec![0.0_f64; dim]; dim];
+            for i in 0..dim {
+                for k in 0..dim {
+                    if prod[i][k] == 0.0 {
+                        continue;
+                    }
+                    let aik = prod[i][k];
+                    for j in 0..dim {
+                        next[i][j] += aik * m[k][j];
+                    }
+                }
+            }
+            prod = next;
+        }
+
+        for i in 0..dim {
+            for j in 0..dim {
+                let diff = (mpfr_proj[i][j] - prod[i][j]).abs();
+                assert!(
+                    diff < 1e-12,
+                    "mpfr-then-f64 vs all-f64 (basis-element) disagree at ({i},{j}): \
+                     {} vs {} (diff {:.2e})",
+                    mpfr_proj[i][j],
+                    prod[i][j],
                     diff
                 );
             }
