@@ -34,9 +34,11 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
+
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_base import WitnessBuilder
 
 
 HERE = Path(__file__).parent
@@ -62,8 +64,17 @@ def load_term6_full() -> Optional[dict]:
 
 
 def realizer_archimedean_by_atom(realizer_data: dict) -> dict[str, float]:
+    """Extract per-atom archimedean tr_M(q_0) values.
+
+    The realizer emits results under the WitnessBuilder `data.results`
+    field; older revisions stored them at the top level under `results`.
+    Look in both places to stay forward- and backward-compatible.
+    """
     by_atom: dict[str, float] = {}
-    for atom_record in realizer_data.get("results", []):
+    nested = realizer_data.get("data", {}).get("results")
+    legacy = realizer_data.get("results")
+    atom_records = nested if nested is not None else (legacy or [])
+    for atom_record in atom_records:
         atom = atom_record["atom"]
         for rz in atom_record.get("realizations", []):
             if rz.get("place") == "infty" and "tr_M_at_q0" in rz:
@@ -120,29 +131,24 @@ def main() -> int:
     realizer_arch = realizer_archimedean_by_atom(realizer_data)
 
     if term6_data is None:
-        skipped = {
-            "computation": "markov-pipeline-cross-validation",
-            "description": (
-                "Cross-pipeline check between markov_substrate_realizer.py "
-                "and term6_full_pole_sum.py.  The term6 witness is not yet "
-                "present on this branch (likely still open on "
-                "claude/continue-pr-442-DJRWm).  Forward-compatible: re-run "
-                "this script after 442 merges to obtain the cross-validation "
-                "certificate."
-            ),
-            "computedAt": datetime.now(timezone.utc).isoformat(),
-            "status": "skipped-term6-witness-absent",
-            "expected_input": TERM6_FULL_WITNESS.name,
-            "available_realizer_atoms": sorted(realizer_arch.keys()),
-        }
-        with OUTPUT_WITNESS.open("w") as f:
-            json.dump(skipped, f, indent=2)
-            f.write("\n")
-        print(f"markov_pipeline_cross_validator: SKIP (term6 witness not on this branch yet)")
+        # SKIP path: don't write a witness — absence of file means
+        # "not yet generated", which lets run_pipeline.py and human
+        # readers detect that the cross-validation is pending.  When
+        # the term6 witness lands, this script will produce a real
+        # PASS/FAIL witness with full WitnessBuilder metadata.
+        if OUTPUT_WITNESS.exists():
+            OUTPUT_WITNESS.unlink()
+        print(
+            f"markov_pipeline_cross_validator: SKIP "
+            f"({TERM6_FULL_WITNESS.name} not present)"
+        )
         print(f"  realizer has {len(realizer_arch)} atoms with archimedean values:")
         for a, v in realizer_arch.items():
             print(f"    {a:>24}  tr_M(q_0) = {v:.10f}")
-        print(f"Wrote {OUTPUT_WITNESS}")
+        print(
+            "  no witness written — re-run after term6 lands to "
+            "produce the cross-validation certificate."
+        )
         return 0
 
     term6_arch = term6_archimedean_by_atom(term6_data)
@@ -156,35 +162,38 @@ def main() -> int:
         compare_value(atom, realizer_arch[atom], term6_arch[atom])
         for atom in common
     ]
-    overall_pass = all(c["agree"] for c in checks)
 
-    output = {
-        "computation": "markov-pipeline-cross-validation",
-        "description": (
-            "Verifies archimedean tr_M(q_0) agreement between the polynomial-"
-            "ring realization (markov_substrate_realizer.py) and the "
-            "Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py)."
-        ),
-        "reference_blocks": [
-            "prop:full-pole-structure-mass-trace",
-            "prop:gb-residue-spectral-sum",
-            "def:motivic-substrate",
-        ],
-        "lean_classes": [
-            "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
-            "qou:QOU.BraidKnot.HabiroCompletion",
-        ],
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "agreement_rtol": AGREEMENT_RTOL,
-        "overall_pass": overall_pass,
-        "checks": checks,
-        "atoms_only_in_realizer": only_in_realizer,
-        "atoms_only_in_term6": only_in_term6,
-    }
+    w = WitnessBuilder("markov-pipeline-cross-validation", engine="python")
+    w.set_description(
+        "Verifies archimedean tr_M(q_0) agreement between the polynomial-"
+        "ring realization (markov_substrate_realizer.py) and the "
+        "Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py)."
+    )
+    w.set_content_block("prop:full-pole-structure-mass-trace")
+    w.add_parameter("agreement_rtol", AGREEMENT_RTOL)
+    w.add_data("reference_blocks", [
+        "prop:full-pole-structure-mass-trace",
+        "prop:gb-residue-spectral-sum",
+        "def:motivic-substrate",
+    ])
+    w.add_data("lean_classes", [
+        "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
+        "qou:QOU.BraidKnot.HabiroCompletion",
+    ])
+    w.add_data("checks", checks)
+    w.add_data("atoms_only_in_realizer", only_in_realizer)
+    w.add_data("atoms_only_in_term6", only_in_term6)
 
-    with OUTPUT_WITNESS.open("w") as f:
-        json.dump(output, f, indent=2)
-        f.write("\n")
+    for c in checks:
+        w.add_assertion(
+            f"tr_M_at_q0_archimedean[{c['atom']}]",
+            computed=c["realizer_value"],
+            expected=c["term6_value"],
+            tolerance=AGREEMENT_RTOL * max(abs(c["realizer_value"]), abs(c["term6_value"])),
+        )
+
+    overall_pass = all(a.passed for a in w.assertions)
+    w.save()
 
     status = "PASS" if overall_pass else "FAIL"
     print(f"markov_pipeline_cross_validator: {status}")
@@ -196,7 +205,6 @@ def main() -> int:
         )
     if only_in_realizer or only_in_term6:
         print(f"  asymmetric atom coverage: realizer-only={only_in_realizer}, term6-only={only_in_term6}")
-    print(f"Wrote {OUTPUT_WITNESS}")
     return 0 if overall_pass else 2
 
 

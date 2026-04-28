@@ -36,9 +36,7 @@ per-atom, per-place table of realizations.
 from __future__ import annotations
 
 import argparse
-import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 import sympy as sp
@@ -46,11 +44,11 @@ from sympy import GF, Integer, Symbol
 
 sys.path.insert(0, str(Path(__file__).parent))
 from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord
+from witness_base import WitnessBuilder
 
 
 HERE = Path(__file__).parent
 INPUT_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
-OUTPUT_WITNESS = HERE / "markov-substrate-realization.witness.json"
 
 FINITE_PLACES = [2, 3, 5, 7, 11, 13]
 
@@ -180,46 +178,43 @@ def main() -> int:
 
     per_atom = [realize_atom(record, q_0) for record in witness.records]
 
-    overall_pass = all(
-        rz["tail_in_ideal_mod_p"]
-        for r in per_atom
-        for rz in r["realizations"]
-        if rz["place"].startswith("finite")
+    w = WitnessBuilder("markov-substrate-realization", engine="sympy")
+    w.set_description(
+        "Place-by-place realization of the Habiro Markov trace via "
+        "the Lean MotivicSubstrate.realize map: Place.infty → ℝ "
+        "(numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p "
+        "coefficient reduction).  Free consistency check: the "
+        "tail_in_ideal axiom is re-verified in 𝔽_p[u]."
     )
+    w.set_content_block("prop:full-pole-structure-mass-trace")
+    w.add_parameter("q_0", q_0)
+    w.add_parameter("finite_places", FINITE_PLACES)
+    w.add_parameter("convention", args.convention)
+    w.add_data("lean_classes", [
+        "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
+        "qou:QOU.BraidKnot.HabiroCompletion",
+    ])
+    w.add_data("reference_blocks", [
+        "def:motivic-substrate",
+        "def:adelic-substrate",
+        "prop:full-pole-structure-mass-trace",
+    ])
+    w.add_data("input_witness", INPUT_WITNESS.name)
+    w.add_data("results", per_atom)
 
-    output = {
-        "computation": "markov-substrate-realization",
-        "description": (
-            "Place-by-place realization of the Habiro Markov trace "
-            "via the Lean MotivicSubstrate.realize map: Place.infty → ℝ "
-            "(numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p "
-            "coefficient reduction).  Free consistency check: the "
-            "tail_in_ideal axiom is re-verified in 𝔽_p[u]."
-        ),
-        "reference_blocks": [
-            "def:motivic-substrate",
-            "def:adelic-substrate",
-            "prop:full-pole-structure-mass-trace",
-        ],
-        "lean_classes": [
-            "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
-            "qou:QOU.BraidKnot.HabiroCompletion",
-        ],
-        "input_witness": INPUT_WITNESS.name,
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "parameters": {
-            "q_0": q_0,
-            "finite_places": FINITE_PLACES,
-            "convention": args.convention,
-        },
-        "engine": "sympy.Poly over ZZ and GF(p)",
-        "overall_pass": overall_pass,
-        "results": per_atom,
-    }
+    # Per-atom-per-prime assertions for tail_in_ideal mod p (the
+    # substantive empirical claim of the realizer).
+    for r in per_atom:
+        for rz in r["realizations"]:
+            if rz["place"].startswith("finite"):
+                w.add_assertion(
+                    f"tail_in_ideal_mod_p[{r['atom']}/{rz['place']}]",
+                    computed=bool(rz["tail_in_ideal_mod_p"]),
+                    expected=True,
+                )
 
-    with OUTPUT_WITNESS.open("w") as f:
-        json.dump(output, f, indent=2)
-        f.write("\n")
+    overall_pass = all(a.passed for a in w.assertions)
+    w.save()
 
     status = "PASS" if overall_pass else "FAIL"
     print(f"markov_substrate_realizer: {status}")
@@ -235,7 +230,6 @@ def main() -> int:
             f"  {atom:>24}  tr_M(q_0)={infty_val:.6e}   "
             f"{finite_count}/{finite_total} finite-place divisibility checks"
         )
-    print(f"Wrote {OUTPUT_WITNESS}")
     return 0 if overall_pass else 2
 
 
