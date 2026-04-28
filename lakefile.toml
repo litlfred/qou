@@ -22,7 +22,6 @@
 ################################################################################
 
 name = "folio"
-defaultTargets = ["qou/QOU", "ugb/UGB", "fred2005/Fred2005"]
 
 [leanOptions]
 autoImplicit = false
