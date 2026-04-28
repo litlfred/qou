@@ -106,10 +106,14 @@ noncomputable def yLambdaRecipe (lam : List ℕ) (q : ℝ) : ℝ :=
       `y_λ = s_{λ, r}(q²) / Σ_µ d_µ s_{µ, r}(q²)`.
 
     The two give numerically *different* values for `tr_M(D)` and
-    are not interchangeable. This typeclass tags an `Mhat`-valued
+    are not interchangeable. This `inductive` tags an `Mhat`-valued
     `tr_M` with the convention it implements, so that downstream
-    theorems can require `[MarkovTraceConvention.WenzlSchur]` to
-    rule out Plancherel-derived inputs at the type level. -/
+    theorems can require, e.g.,
+    `[Fact (tr_M.convention = .wenzlSchur)]` (or carry the tag as
+    an explicit equation hypothesis) to rule out Plancherel-derived
+    inputs. To get typeclass inference on the discriminator instead,
+    wrap this in a `class` per consumer; we keep the bare inductive
+    here so both conventions remain first-class values. -/
 inductive MarkovTraceConvention : Type
   | plancherel : MarkovTraceConvention
   | wenzlSchur : MarkovTraceConvention
