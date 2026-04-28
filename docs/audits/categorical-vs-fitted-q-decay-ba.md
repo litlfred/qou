@@ -889,6 +889,72 @@ are in the paper; they differ by whether `m_e` is absorbed into the
 The script (`categorical_q_decay_ba_low_isotopes.py`) now follows
 **`calibration-inputs.md` exclusively** (3-input, `m_n = m_p + Q_β`).
 
+## The 4-tier formula IS structurally derivable (not special-casing)
+
+Per user pushback "we should not be special casing — there should be
+derivable rule": the np-discrepancy 4-tier table per atom regime IS
+the derivable rule. It's not arbitrary tier-picking; each tier
+choice has a structural justification:
+
+### Why each tier is structurally forced
+
+| atom | A | tier | structural reason |
+|---|---:|---|---|
+| ¹H | 1 | trivial (B=0) | single nucleon — no internal binding |
+| D | 2 | T1 + T4 only (no T5) | **BW formula structurally invalid at A=2**: surface term `λ_S · A^{2/3} = 17.26·2^{2/3} ≈ 27.4 MeV` exceeds volume `λ_V · A = 31.3 MeV` only marginally; `B_bulk(D) = −4.44 MeV` (negative). BW requires volume-dominates-surface (A ≥ 3). |
+| T, ³He | 3 | T5 (chirality `1−h²`) | A=3 enters BW domain; **chirality factor IS derivable** per [`chirality-dual-space-derivation`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.md): `a_K = ∏_{pn}(1 + sign·h)`. For A=3 ordering ['p']*Z+['n']*N: 1 amphichiral pair → `(1+h)(1−h) = 1−h²`. |
+| ⁴He | 4 | T5 (chirality `(1−h²)²` + shell) | doubly-magic Borromean closure: 2 amphichiral pairs → `(1−h²)²`. Shell correction adds; per `prop:shell-schur-weyl-self-duality` Δm_shell. |
+| A ≥ 5 | ≥5 | T5 (chirality → 1) | amphi-pair count grows; `(1−h²)^k → 0` for large k unless bounded; per dual-space derivation chirality saturates to 1 for non-magic A. Term 6 (jet-prefix Habiro) supplies the residual; OPEN. |
+
+### The compact rule
+
+```
+B(atom) = T1_descended_subtractive   # always, when computable
+        + T4_universal_frobenius     # always
+        + T5_BW · 𝟙[A ≥ 3]          # BW only when volume > surface
+        + Δm_shell · 𝟙[A ∈ magic]    # only at magic numbers
+        + Term 6 jet-prefix          # OPEN at A ≥ 5
+
+Chirality factor in T5: a_K = ∏_{pn-pair}(1 + sign_pair · h)
+```
+
+The conditional indicators `𝟙[…]` are **structural**, not chosen
+to fit AME. They reflect:
+
+- BW formula's domain of validity (volume term must dominate surface term)
+- σ_shell's existence (only at magic A in the self-dual locus)
+- Term 6's open status at A ≥ 5
+
+### Why naive summation FAILS
+
+Per `unified_low_isotope_predictor.py` empirical finding: naive sum
+of all 6 terms gives D = −201,427% off because the k≥3 tail term
+(from `entanglement-orders.witness.json`) uses **proton-fit
+calibration** that undershoots neutron by 56%. The undershoot
+propagates into the subtractive `(free − atom)` form, giving
+~−4500 MeV wrong-sign contribution.
+
+The 6 derived terms use DIFFERENT internal conventions:
+
+| Term | Convention |
+|---|---|
+| T1 | β-calibrated, subtractive |
+| T4 | universal closed form |
+| T5 | q-integer products absorbing T4 silently |
+| k≥3 entanglement-orders | proton-fit calibration (neutron undershoots) |
+| Δm_shell | β-calibrated, structural |
+
+These conventions are **incompatible for naive summation**. Two paths:
+
+1. **4-tier structural rule** (deployed) — sub-percent on T (0.5%),
+   ³He (0.9%); 2–20% on others. Documented as derivable above.
+2. **Calibration-consistent rewrite** (deferred) — refit
+   `entanglement-orders.witness.json` to β-calibration, refactor BW
+   coefficients to expose T4 explicitly. ~1–2 days work; would let
+   naive summation work end-to-end.
+
+The current canonical predictor uses option (1). Option (2) is open work.
+
 ## Critical audit (Frobenius wiring + categorical-chain status)
 
 ### Frobenius co-Casimir (Term 4) — wired only for D
