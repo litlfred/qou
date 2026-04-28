@@ -181,7 +181,7 @@ algebraic.
 
 The Hecke mass element splits as
 $\Phi_{\mathrm{mass}} = \Phi^{\mathrm{desc}} + \Phi^{\mathrm{trans}}$
-([Hecke mass element](#def:hecke-mass-element)).  At our $q_0$,
+([Hecke mass element](#def:hecke-mass-element)).  At $q_0$,
 the transient (tower) component dominates overwhelmingly:
 
 | Particle | $\mathrm{tr}_M(\Phi^{\mathrm{desc}})$ | $\mathrm{tr}_M(\Phi^{\mathrm{trans}})$ | Ratio trans/desc |

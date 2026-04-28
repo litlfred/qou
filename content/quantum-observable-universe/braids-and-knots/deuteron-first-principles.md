@@ -173,7 +173,7 @@ is an open problem.*
 
 **Integrated picture.**
 
-*The deuteron binding predicted by my Schur–Weyl pipeline
+*The deuteron binding predicted by the Schur–Weyl pipeline
 ($0.995\;\mathrm{MeV}$) and the paper's BW + chirality formula
 ($\sim 2.20\;\mathrm{MeV}$) differ by $\sim 1.2\;\mathrm{MeV}$
 — very close to the universal Frobenius co-Casimir correction

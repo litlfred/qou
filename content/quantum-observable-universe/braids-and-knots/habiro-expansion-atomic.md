@@ -34,8 +34,8 @@ The proof is the constructive sequential cyclotomic-division
 algorithm. The general existence/uniqueness of the cyclotomic
 expansion (with $a_m \in \mathbb{Z}[q^{\pm 1}]$, no termination)
 is the content of
-([Habiro completion](#prop:full-pole-structure-mass-trace)) — we
-specialise here to atomic braids and prove termination.
+([Habiro completion](#prop:full-pole-structure-mass-trace)); the
+present proof specialises to atomic braids and establishes termination.
 
 ### Step 1: Integrality of $p(u)$
 
