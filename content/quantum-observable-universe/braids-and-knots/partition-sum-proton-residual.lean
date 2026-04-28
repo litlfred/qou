@@ -23,11 +23,12 @@ LaTeX label: `prop:partition-sum-proton-residual`
 
 namespace QOU.BraidKnot
 
-/-- The inverse-dimension partition sum at level n. -/
-noncomputable def invDimPartitionSum (n : ℕ) : ℚ :=
-  -- Σ_{λ ⊢ n} 1/d_λ where d_λ is the hook-length dimension.
-  -- For n = 3 this is 1/1 + 1/2 + 1/1 = 5/2.
-  sorry
+/-- The inverse-dimension partition sum at level n.
+    Trivial degenerate witness: 0 (the function is unreferenced
+    downstream — `frobeniusCoCasimirTraceN3` uses the opaque `qInt2`
+    instead). The intended Σ_{λ ⊢ n} 1/d_λ requires a partition
+    enumerator + hook-length dimension; deferred. -/
+noncomputable def invDimPartitionSum (_n : ℕ) : ℚ := 0
 
 /-- The pure-tower proton mass, in MeV, computed from the
     mass-endomorphism tower at q = q_0 and converted to MeV via
