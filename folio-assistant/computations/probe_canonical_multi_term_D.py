@@ -43,15 +43,18 @@ from experimental_constants import M_E_MEV  # noqa: E402
 mp.mp.dps = 50
 q = mp.mpf(repr(Q0_FLOAT))
 
-# --- canonical tr_M(D) at q_0 from the registered derivation chain ---
-# Per `D-tr-M-q0.derivation.json` (introduced in PR #473 derivation-chain
-# registry), tr_M(D, q_0) is derived step-by-step from the 7 first-
-# principles entrypoints (Hecke.Energy, Wedderburn, Schur, …) to the
-# value below. PR #472's `prop:habiro-residue-sum-equivalence`
-# cross-validates this via two independent paths (polynomial-ring +
-# residue-spectral-sum) at relative tolerance ≤ 10⁻⁹.
+# --- canonical tr_M(D) at q_0, loaded from the registered derivation
+# chain `D-tr-M-q0.derivation.json` (PR #473 registry). The chain
+# derives the value step-by-step from the 7 first-principles
+# entrypoints (Hecke.Energy, Wedderburn, Schur, …); PR #472's
+# `prop:habiro-residue-sum-equivalence` cross-validates via two
+# independent paths (polynomial-ring + residue-spectral-sum) at
+# relative tolerance ≤ 10⁻⁹. Loading from the registry keeps the
+# value in a single source of truth.
+_REGISTRY_PATH = HERE / "D-tr-M-q0.derivation.json"
+with _REGISTRY_PATH.open() as _f:
+    TR_M_D_ATOM_ATQ0 = mp.mpf(str(json.load(_f)["target_value"]))
 TR_M_D_FREE = mp.mpf("0")  # placeholder; paper requires "free" T_w too
-TR_M_D_ATOM_ATQ0 = mp.mpf("0.17743692421543206")
 
 # AME deuteron binding
 B_AME_D_MEV = 2.22456612
