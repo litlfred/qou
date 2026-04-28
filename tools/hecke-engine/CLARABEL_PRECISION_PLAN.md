@@ -821,9 +821,9 @@ Smoke validation results (PR #459):
 
 | Smoke bin | Features | Validates | Status |
 |---|---|---|---|
-| `clarabel-round4-sdp-smoke` | `clarabel-sdp` | Wishlist #1 + #2 (BlockDiagPSDConeT, dual_psd_block) | ✅ All passed |
-| `clarabel-round4-rational-smoke` | `clarabel-bigrational` | Wishlist #3 + Phase 8a (tighten_scalar, iter_diagnostics) | ✅ All passed |
-| `clarabel-phase8b-mpfr-smoke` | `clarabel-mpfr` | Phase 8b (T = MpfrFloat end-to-end) | ✅ All passed |
+| `clarabel-round4-sdp-smoke` | `clarabel-sdp` | Wishlist #1 + #2 (BlockDiagPSDConeT, dual_psd_block) | All tests pass |
+| `clarabel-round4-rational-smoke` | `clarabel-bigrational` | Wishlist #3 + Phase 8a (tighten_scalar, iter_diagnostics) | All tests pass |
+| `clarabel-phase8b-mpfr-smoke` | `clarabel-mpfr` | Phase 8b (T = MpfrFloat end-to-end) | All tests pass |
 
 Two architectural realities surfaced by the smoke validation:
 
