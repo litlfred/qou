@@ -101,6 +101,7 @@ export default chapter({
         "benzene-ring",
         "chain-ring-energy",
         "chain-ring-comparison",
+        "hecke-cyclic-braid-energy",
         "benzene-resonance-verification",
       ],
     }),

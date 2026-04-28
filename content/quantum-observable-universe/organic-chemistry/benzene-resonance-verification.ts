@@ -25,9 +25,8 @@ export default proof({
     "computation",
   ],
   uses: [
-    "prop:chain-ring-comparison",
+    "prop:hecke-cyclic-braid-energy",
     "ex:benzene-ring",
-    "rem:chain-ring-energy",
   ],
   computation: {
     engine: "sympy",
