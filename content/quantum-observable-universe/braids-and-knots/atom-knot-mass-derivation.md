@@ -21,7 +21,7 @@ exact, and entirely pre-Archimedean** — every quantity on the
 right-hand side lives in $\mathbb{Q}(q)$.
 
 **Mass identity.**  After applying the Archimedean realization functor
-([prop:archimedean-realization-functor](#prop:archimedean-realization-functor)),
+([archimedean realization functor](#def:archimedean-realization-functor)),
 the binding energy of $\mathfrak{H}$ is
 
 $$
