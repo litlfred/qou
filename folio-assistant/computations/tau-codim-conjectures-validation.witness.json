@@ -1,0 +1,129 @@
+{
+  "description": "Independent validation of the two no-go propositions supporting `conj:tau-codim-shannon` and `conj:tau-codim-landauer`.",
+  "references": [
+    "prop:shannon-jones-markov-no-go",
+    "prop:landauer-cauchy-schwarz-insufficient",
+    "rem:y-lambda-sign-pattern",
+    "conj:tau-codim-shannon",
+    "conj:tau-codim-landauer"
+  ],
+  "generated_at_utc": "2026-04-28T00:25:17.570555+00:00",
+  "shannon_no_go": {
+    "claim": "Jones\u2013Markov block weights y_\u03bb(q\u2080) are non-negative at n \u2264 3 and sign-indefinite at n \u2265 4.",
+    "tested_n": [
+      3,
+      4,
+      5
+    ],
+    "per_n": [
+      {
+        "n": 3,
+        "num_partitions": 3,
+        "condition_number": 1.812163436778838,
+        "linear_system_residual": 1.1102230246251565e-16,
+        "negative_partitions": [],
+        "all_positive": true
+      },
+      {
+        "n": 4,
+        "num_partitions": 5,
+        "condition_number": 3.10334421299662,
+        "linear_system_residual": 1.1102230246251565e-16,
+        "negative_partitions": [
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "y_lambda": -0.000842527491154533
+          }
+        ],
+        "all_positive": false
+      },
+      {
+        "n": 5,
+        "num_partitions": 7,
+        "condition_number": 6.087945585956461,
+        "linear_system_residual": 1.6653345369377348e-16,
+        "negative_partitions": [
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "y_lambda": -0.0009287250802900693
+          }
+        ],
+        "all_positive": false
+      }
+    ],
+    "verdict": "VALIDATED"
+  },
+  "landauer_no_go": {
+    "claim": "There exists a semisimple Frobenius algebra (in fact an infinite balanced family) for which the L\u00b2-Cauchy\u2013Schwarz lower bound 1/\u2016C\u2016\u00b2 on \u03c4(f\u2020f) under unit-creation normalisation is strictly less than the conjectured Landauer bound \u03c4(C_dim_q) = \u03a3 1/d_q(\u03bb).  Hence no proof of `conj:tau-codim-landauer` can rest on the L\u00b2-Cauchy\u2013Schwarz inequality alone.",
+    "fixed_two_block_witness": {
+      "d_q": [
+        1.0,
+        1.0
+      ],
+      "tau_p": [
+        1.0,
+        1.0
+      ],
+      "tau_C": 2.0,
+      "norm_C_sq": 2.0,
+      "cs_bound": 0.5,
+      "cs_strictly_weaker": true
+    },
+    "balanced_family_witness": [
+      {
+        "nblocks": 2,
+        "tau_C": 2.0,
+        "norm_C_sq": 2.0,
+        "cs_bound": 0.5,
+        "cs_strictly_weaker": true
+      },
+      {
+        "nblocks": 3,
+        "tau_C": 3.0,
+        "norm_C_sq": 3.0,
+        "cs_bound": 0.3333333333333333,
+        "cs_strictly_weaker": true
+      },
+      {
+        "nblocks": 5,
+        "tau_C": 5.0,
+        "norm_C_sq": 5.0,
+        "cs_bound": 0.2,
+        "cs_strictly_weaker": true
+      },
+      {
+        "nblocks": 10,
+        "tau_C": 10.0,
+        "norm_C_sq": 10.0,
+        "cs_bound": 0.1,
+        "cs_strictly_weaker": true
+      },
+      {
+        "nblocks": 20,
+        "tau_C": 20.0,
+        "norm_C_sq": 20.0,
+        "cs_bound": 0.05,
+        "cs_strictly_weaker": true
+      }
+    ],
+    "incomparability_evidence": {
+      "n_random_trials": 50,
+      "n_with_cs_strictly_weaker": 46,
+      "n_with_cs_strictly_stronger": 4,
+      "min_ratio_cs_over_tau_C": 0.0040748515343373365,
+      "max_ratio_cs_over_tau_C": 4.860371557086991,
+      "interpretation": "CS and \u03c4(C) are incomparable in general: both directions occur in random Frobenius algebras with block counts in [2, 20] and parameters in [0.5, 3]. This makes the conjecture non-trivial (not implied by CS) for the balanced class, and potentially non-tight (weaker than CS) for the imbalanced class."
+    },
+    "verdict": "VALIDATED"
+  }
+}
