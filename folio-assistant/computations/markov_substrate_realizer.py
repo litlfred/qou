@@ -43,8 +43,8 @@ import sympy as sp
 from sympy import GF, Integer, Symbol
 
 sys.path.insert(0, str(Path(__file__).parent))
-from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord
-from witness_base import WitnessBuilder
+from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 HERE = Path(__file__).parent
@@ -226,8 +226,12 @@ def main() -> int:
             1 for rz in r["realizations"] if rz["place"].startswith("finite") and rz["tail_in_ideal_mod_p"]
         )
         finite_total = len(FINITE_PLACES)
+        infty_repr = (
+            f"{infty_val:.6e}" if isinstance(infty_val, (int, float))
+            else (infty.get("error") if infty else "missing")
+        )
         print(
-            f"  {atom:>24}  tr_M(q_0)={infty_val:.6e}   "
+            f"  {atom:>24}  tr_M(q_0)={infty_repr}   "
             f"{finite_count}/{finite_total} finite-place divisibility checks"
         )
     return 0 if overall_pass else 2

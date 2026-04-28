@@ -38,7 +38,7 @@ from pathlib import Path
 from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).parent))
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 HERE = Path(__file__).parent
@@ -191,6 +191,27 @@ def main() -> int:
             expected=c["term6_value"],
             tolerance=AGREEMENT_RTOL * max(abs(c["realizer_value"]), abs(c["term6_value"])),
         )
+
+    # Asymmetric coverage is a failure: a PASS witness must require
+    # both pipelines to cover the same atom set, and the empty-
+    # intersection case must not vacuously pass.
+    w.add_assertion(
+        "no_atoms_only_in_realizer",
+        computed=len(only_in_realizer),
+        expected=0,
+    )
+    w.add_assertion(
+        "no_atoms_only_in_term6",
+        computed=len(only_in_term6),
+        expected=0,
+    )
+    # `atom_intersection_size` passes iff there is at least one common
+    # atom (max(n, 1) == n only when n ≥ 1); avoids a vacuous PASS.
+    w.add_assertion(
+        "atom_intersection_size",
+        computed=len(common),
+        expected=max(len(common), 1),
+    )
 
     overall_pass = all(a.passed for a in w.assertions)
     w.save()
