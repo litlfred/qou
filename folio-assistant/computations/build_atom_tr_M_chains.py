@@ -83,7 +83,7 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
         output_name=f"H_{nstrands}_q",
         output_value=f"H_{nstrands}(q) — Iwahori–Hecke algebra (A={A})",
         trust_basis=TrustBasis.AXIOM,
-        lean_ref="qou:QOU.BraidKnot.HeckeAlgebra",
+        lean_ref="qou:QOU.PathIntegrals.HeckeAlgebra",
         citation="kassel1995",
         jet_order=0,
         notes=(
@@ -103,7 +103,7 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
         output_name="wedderburn_decomp",
         output_value=f"⊕_{{λ ⊢ {A_strands}}} M_{{f_λ}}(K(q)) — see partitions_of({A_strands})",
         trust_basis=TrustBasis.MATHLIB_CITED,
-        lean_ref="qou:QOU.BraidKnot.HeckeWedderburn",
+        lean_ref="qou:STUB:HeckeWedderburn",
         citation="kassel1995",
         jet_order=0,
         gb_filtration_level=0,

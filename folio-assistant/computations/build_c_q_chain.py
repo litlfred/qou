@@ -37,6 +37,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import (  # noqa: E402
+    Q_0,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -47,8 +48,7 @@ from derivation_chain import (  # noqa: E402
 HERE = Path(__file__).parent
 OUTPUT = HERE / "c-q-q0.derivation.json"
 
-Q_0 = 1.1099785955541805
-C_Q_AT_Q0 = 1.0 / (Q_0 - 1.0)  # 9.092553...
+C_Q_AT_Q0 = 1.0 / (Q_0 - 1.0)  # 9.0926784...
 
 
 def build() -> DerivationChain:
@@ -66,7 +66,7 @@ def build() -> DerivationChain:
         output_name="q_connection_A_q",
         output_value="A_q = q^{-1} A + ℏ_q · ι_ξ A · Θ",
         trust_basis=TrustBasis.AXIOM,
-        lean_ref="qou:QOU.QuantumUniverses.qConnection",
+        lean_ref="qou:QOU.qConnection",
         citation="manuscript:§q-connection",
         jet_order=1,  # connection is a 1-form / first-order object
         notes=(
@@ -89,7 +89,7 @@ def build() -> DerivationChain:
         output_name="reeb_decomposition",
         output_value="A_H ⊕ ⟨ι_ξ A, Θ⟩ — Frobenius-dual splitting of A",
         trust_basis=TrustBasis.MATHLIB_CITED,
-        lean_ref="qou:QOU.Torsion.ReebDecomposition",
+        lean_ref="qou:QOU.ReebDecomposition",
         citation="manuscript:§Reeb-foliation",
         jet_order=1,
         notes=(
@@ -114,7 +114,11 @@ def build() -> DerivationChain:
         output_name="weights_pinned",
         output_value={"horizontal": "q^{-1}", "vertical": "ℏ_q = 1 − q^{-1}"},
         trust_basis=TrustBasis.AXIOM,
-        lean_ref="qou:QOU.Torsion.NonabelianStokes",
+        # No Lean declaration formalising nonabelian Stokes yet; the
+        # `qou:STUB:` prefix marks this as an intentionally-unbound
+        # target so the structural check doesn't break.  Tracked as
+        # a Lean-formalisation TODO.
+        lean_ref="qou:STUB:NonabelianStokes",
         citation="manuscript:§Nonabelian-Stokes",
         jet_order=2,  # F_q is dA_q + ... → second-order object
         notes=(
@@ -137,7 +141,9 @@ def build() -> DerivationChain:
         output_name="c_q_symbolic",
         output_value="c_q = 1 / (q − 1)",
         trust_basis=TrustBasis.DERIVED,
-        lean_ref="qou:QOU.InformationTheory.cQ",
+        # No Lean declaration `c_q` exists yet in QOU/InformationTheory.lean;
+        # the constant is constructed inline in the .md.  Stub for now.
+        lean_ref="qou:STUB:InformationTheory.c_q",
         citation="manuscript:§Speed-of-light",
         jet_order=0,  # algebraic ratio of jet-1 / jet-1 is jet-0
         notes=(
@@ -173,7 +179,10 @@ def build() -> DerivationChain:
         target="c_q(q_0)",
         target_value=C_Q_AT_Q0,
         target_tolerance=1e-12,
-        content_block="def:speed-of-light",  # stub — see information-speed-of-light.md
+        # No `def:speed-of-light` content label exists yet (the
+        # information-speed-of-light.md file does not declare a label).
+        # Reference the closest stable block instead.
+        content_block="prop:full-pole-structure-mass-trace",
         description=(
             "Step-by-step derivation of c_q ≈ 9.0926 at the substrate "
             "parameter q_0 from first principles (categorical action + "

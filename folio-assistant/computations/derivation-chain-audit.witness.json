@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-28T20:46:59.683334+00:00",
-  "commitSha": "8dfc343d736054ce55ece761f8963d2d01727a73",
+  "computedAt": "2026-04-28T21:04:08.764580+00:00",
+  "commitSha": "8d563d99b94e66fd8f49b49d614fe144d3086959",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -28,7 +28,13 @@
       "computed": 9.092678397655604,
       "expected": 9.092678397655604,
       "passed": true,
-      "tolerance": 9.092678397655604e-09
+      "tolerance": 9.092678397655603e-12
+    },
+    {
+      "name": "chain_valid[hoefsmit-rep-21-sigma1.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     },
     {
       "name": "chain_valid[n-tr-M-q0.derivation]",
@@ -55,16 +61,21 @@
       "expected": 2.12258250945273,
       "passed": true,
       "tolerance": 2.1225825094527304e-09
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-3.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     }
   ],
   "allPassed": true,
   "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
-  "scriptHash": "fe5d3f72d3e4",
-  "scriptCommitSha": "",
+  "scriptHash": "1a04e6a44810",
+  "scriptCommitSha": "8d563d99b94e66fd8f49b49d614fe144d3086959",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
-  "contentBlock": "def:derivation-chain",
   "data": {
     "chain_results": [
       {
@@ -100,6 +111,21 @@
         "has_script_frontier": false
       },
       {
+        "chain": "hoefsmit-rep-21-sigma1.derivation.json",
+        "target": "ρ^{(2,1)}(σ_1)",
+        "target_value": "ρ^{(2,1)}(σ_1) ∈ M_2(K(q)) — Hoefsmit matrix in the SYT basis {T_1=[1 2 / 3], T_2=[1 3 / 2]}",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "mathlib-cited": 1,
+          "derived": 3,
+          "axiom": 1
+        },
+        "has_script_frontier": false
+      },
+      {
         "chain": "n-tr-M-q0.derivation.json",
         "target": "tr_M(n, q_0)",
         "target_value": 1.5893934459539052,
@@ -130,9 +156,25 @@
           "computational": 1
         },
         "has_script_frontier": true
+      },
+      {
+        "chain": "schur-weyl-weight-3.derivation.json",
+        "target": "w_(3)(q)",
+        "target_value": "(q - q^{-1})^2 / ([3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 2,
+          "mathlib-cited": 2
+        },
+        "has_script_frontier": false
       }
     ],
     "witness_trust": {
+      "derivation-fully-trusted": [],
       "derivation-backed": [
         "habiro-coefficients-atomic.witness.json",
         "hecke-character-symbolic.witness.json",
@@ -245,7 +287,6 @@
         "delta-mn-mp-vs-frobenius-sigma3.witness.json",
         "depth-resolved-phi-k-hoefsmit.witness.json",
         "depth-resolved-phi-k-test.witness.json",
-        "derivation-chain-audit.witness.json",
         "derivation-checks.witness.json",
         "derived-characters.witness.json",
         "derived-e0-leading-order.witness.json",

@@ -20,9 +20,13 @@ step is valid?  The seven first-principles entrypoints are
 `mathlib-cited`, `script-cited` (existing computation, marked but
 not yet derived), or `derived` (this chain itself).
 
-The validator walks each chain bottom-up, re-evaluates each step's
-operation on its declared inputs, and certifies the final output
-matches the chain's claimed value to a declared tolerance.
+The validator performs structural and trust-basis checks, and
+validates selected computational claims where explicit evaluators
+are implemented (currently the COMPUTATIONAL leaf and a small set
+of recognised algebraic patterns such as `c_q = 1/(q-1)`).  It
+does NOT, in general, re-evaluate every declared step operation —
+that would require either a Lean-kernel-style symbolic engine or
+domain-specific evaluators per first-principles entrypoint.
 
 Schema is JSON-serializable so chains can be stored alongside
 witnesses (`*.derivation.json`) and rebuilt incrementally.
@@ -35,6 +39,15 @@ import json
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Optional, Union
+
+
+# ── Shared constants ───────────────────────────────────────────
+
+# Canonical substrate parameter — single source of truth for every
+# `*.derivation.json` chain in this directory.  See CLAUDE.md §7aa
+# (notation register).  Other modules import `Q_0` from here rather
+# than redefining their own constant.
+Q_0: float = 1.1099785955541805
 
 
 # ── First principles ────────────────────────────────────────────
@@ -229,6 +242,14 @@ class DerivationChain:
                         f"SCRIPT_CITED step {step.name!r} should record "
                         "the script path in `notes` (e.g. 'script: foo.py @ <sha>')"
                     )
+            # COMPUTATIONAL is the leaf only — numerical eval may not
+            # appear in the middle of a chain (per the docstring of
+            # TrustBasis.COMPUTATIONAL).  Enforced per Gemini #473.
+            if step.trust_basis == TrustBasis.COMPUTATIONAL and step is not self.steps[-1]:
+                issues.append(
+                    f"COMPUTATIONAL step {step.name!r} is not the leaf; "
+                    "numerical evaluation is only permitted as the final step."
+                )
             defined.add(step.output_name)
 
         return (not issues, issues)

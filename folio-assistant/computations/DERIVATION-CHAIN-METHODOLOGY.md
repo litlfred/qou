@@ -13,15 +13,15 @@ they must be backed by (or pushed back via) a derivation chain.
 
 `derivation_chain.FirstPrinciple` (canonical names + Lean refs):
 
-| Enum | Canonical ref |
-|------|---------------|
-| `HECKE_ENERGY` | `Hecke.Energy` — per-crossing energy `(q − q^{-1})` from the Hecke relation |
-| `CATEGORICAL_ACTION` | `Cat.Action` — categorical action of `B_n` via the R-matrix |
-| `FROBENIUS_PAIRING` | `Frobenius.Pairing` — trace ↔ character duality + Reeb-foliation splitting |
-| `NONABELIAN_STOKES` | `Nonabelian.Stokes` — holonomy consistency of the q-connection |
-| `WEDDERBURN` | `Wedderburn` — semisimple decomposition `H_n(q) ≅ ⊕_λ M_{f_λ}(K(q))` |
-| `SCHUR` | `Schur` — Schur–Weyl duality `U_q(sl_2) ↺ V^{⊗n}` and weights `w_λ(q)` |
-| `FINITE_JONES` | `FiniteJones` — existence + uniqueness of the Markov trace |
+| Enum | Canonical ref | Meaning |
+|------|---------------|---------|
+| `HECKE_ENERGY` | `Hecke.Energy` | per-crossing energy `(q − q^{-1})` from the Hecke relation |
+| `CATEGORICAL_ACTION` | `Cat.Action` | categorical action of `B_n` via the R-matrix |
+| `FROBENIUS_PAIRING` | `Frobenius.Pairing` | trace ↔ character duality + Reeb-foliation splitting |
+| `NONABELIAN_STOKES` | `Nonabelian.Stokes` | holonomy consistency of the q-connection |
+| `WEDDERBURN` | `Wedderburn` | semisimple decomposition `H_n(q) ≅ ⊕_λ M_{f_λ}(K(q))` |
+| `SCHUR` | `Schur` | Schur–Weyl duality `U_q(sl_2) ↺ V^{⊗n}` and weights `w_λ(q)` |
+| `FINITE_JONES` | `FiniteJones` | existence + uniqueness of the Markov trace |
 
 These are the **only** nodes without inputs.  Everything else
 must derive from them by named operations.

@@ -39,14 +39,17 @@ import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 sys.path.insert(0, str(Path(__file__).parent))
+from derivation_chain import FirstPrinciple, Q_0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
 HERE = Path(__file__).parent
-OUTPUT_WITNESS = HERE / "derivation-chain-audit.witness.json"
+# The audit's own output filename — excluded from the trust audit so
+# the audit does not classify itself as `computational-only`.
+AUDIT_WITNESS_NAME = "derivation-chain-audit.witness.json"
 
 SCRIPT_REGEX = re.compile(
     r"script:\s*([\w\-./]+\.(?:py|sing|sage|sh))"
@@ -59,7 +62,8 @@ SCRIPT_REGEX = re.compile(
 class ChainResult:
     chain_path: Path
     target: str
-    target_value: float
+    target_value: Any
+    target_tolerance: float
     computed_value: Optional[float]
     structural_ok: bool
     leaf_matches: bool
@@ -84,16 +88,21 @@ def validate_chain(chain_path: Path) -> ChainResult:
         chain_data = json.load(f)
 
     target = chain_data["target"]
-    target_value = float(chain_data["target_value"])
+    target_value_raw = chain_data["target_value"]
+    try:
+        target_value: Any = float(target_value_raw)
+        target_is_numeric = True
+    except (TypeError, ValueError):
+        target_value = target_value_raw
+        target_is_numeric = False
     target_tolerance = float(chain_data.get("target_tolerance", 1e-9))
     steps = chain_data["steps"]
 
     # 1. Structural well-formedness re-check (defended by the schema,
-    #    but a chain might have been hand-edited).
-    defined: set[str] = {
-        "Hecke.Energy", "Cat.Action", "Frobenius.Pairing",
-        "Nonabelian.Stokes", "Wedderburn", "Schur", "FiniteJones",
-    }
+    #    but a chain might have been hand-edited).  Initialise the
+    #    `defined` set from the canonical FirstPrinciple enum to avoid
+    #    drift between schema and validator.
+    defined: set[str] = {fp.value for fp in FirstPrinciple}
     structural_issues: list[str] = []
     for s in steps:
         for inp in s.get("inputs", []):
@@ -101,6 +110,16 @@ def validate_chain(chain_path: Path) -> ChainResult:
                 structural_issues.append(
                     f"{s['name']!r}: input {inp!r} not defined"
                 )
+        # SCRIPT_CITED steps must reference an existing script.
+        if s.get("trust_basis") == "script-cited":
+            notes = s.get("notes") or ""
+            for m in SCRIPT_REGEX.finditer(notes):
+                script_path = HERE.parent.parent / m.group(1)
+                if not script_path.exists():
+                    structural_issues.append(
+                        f"{s['name']!r}: cited script {m.group(1)!r} "
+                        f"not found at {script_path}"
+                    )
         defined.add(s["output_name"])
     structural_ok = not structural_issues
 
@@ -111,12 +130,26 @@ def validate_chain(chain_path: Path) -> ChainResult:
         trust_summary[tb] = trust_summary.get(tb, 0) + 1
     has_script_frontier = trust_summary.get("script-cited", 0) > 0
 
-    # 3. COMPUTATIONAL leaf consistency: the last COMPUTATIONAL step's
-    #    output_value should match the chain's target_value.
+    # 3. COMPUTATIONAL leaf consistency.  Symbolic chains (no
+    #    COMPUTATIONAL leaf, target_value is a string formula) are
+    #    vacuously leaf-matched.
     leaves = [s for s in steps if s["trust_basis"] == "computational"]
     computed = None
-    leaf_matches = False
-    if leaves:
+    if not target_is_numeric and not leaves:
+        leaf_matches = True
+    elif not target_is_numeric and leaves:
+        structural_issues.append(
+            "chain has a COMPUTATIONAL leaf but target_value is not numeric "
+            f"({target_value!r})"
+        )
+        leaf_matches = False
+    elif target_is_numeric and not leaves:
+        structural_issues.append(
+            f"chain target_value is numeric ({target_value}) but no "
+            "COMPUTATIONAL leaf step is present"
+        )
+        leaf_matches = False
+    else:
         last = leaves[-1]
         try:
             computed = float(last["output_value"])
@@ -125,6 +158,7 @@ def validate_chain(chain_path: Path) -> ChainResult:
                 f"COMPUTATIONAL leaf {last['name']!r} output_value not "
                 f"numeric: {last['output_value']!r}"
             )
+            leaf_matches = False
         else:
             if target_value == 0:
                 leaf_matches = computed == 0
@@ -132,23 +166,23 @@ def validate_chain(chain_path: Path) -> ChainResult:
                 rel = abs(computed - target_value) / abs(target_value)
                 leaf_matches = rel <= target_tolerance
 
-    # 4. Re-evaluate simple algebraic targets (c_q chain).
-    if "c_q" in target:
-        # The c_q chain's leaf is at q_0; re-run the algebra.
-        q_0 = 1.1099785955541805
-        recomputed = _eval_simple_algebra(steps[-1].get("operation", ""), q_0)
+    # 4. Re-evaluate simple algebraic targets (c_q chain) at the shared Q_0.
+    if "c_q" in target and target_is_numeric:
+        recomputed = _eval_simple_algebra(steps[-1].get("operation", ""), Q_0)
         if recomputed is not None:
             rel = abs(recomputed - target_value) / abs(target_value)
-            if rel > 1e-12:
+            if rel > target_tolerance:
                 structural_issues.append(
-                    f"c_q algebra re-eval at q_0={q_0} gives {recomputed} "
-                    f"vs target {target_value} (rel_diff {rel:.2e})"
+                    f"c_q algebra re-eval at q_0={Q_0} gives {recomputed} "
+                    f"vs target {target_value} (rel_diff {rel:.2e}, "
+                    f"target_tolerance {target_tolerance:.2e})"
                 )
 
     return ChainResult(
         chain_path=chain_path,
         target=target,
         target_value=target_value,
+        target_tolerance=target_tolerance,
         computed_value=computed,
         structural_ok=structural_ok,
         leaf_matches=leaf_matches,
@@ -183,34 +217,59 @@ def _expected_script_for_witness(witness_filename: str) -> str:
     return stem.replace("-", "_") + ".py"
 
 
+def collect_fully_trusted_scripts(chains_dir: Path) -> set[str]:
+    """Walk every chain JSON and collect scripts referenced by chains
+    that have **zero** SCRIPT_CITED steps — those scripts are
+    derivation-fully-trusted (the chain proves their output from
+    first principles, no computational shortcuts)."""
+    fully: set[str] = set()
+    for cp in sorted(chains_dir.glob("*.derivation.json")):
+        with cp.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        steps = data.get("steps", [])
+        if any(s.get("trust_basis") == "script-cited" for s in steps):
+            continue
+        for s in steps:
+            notes = s.get("notes") or ""
+            for m in SCRIPT_REGEX.finditer(notes):
+                fully.add(m.group(1))
+    return fully
+
+
 def audit_witness_trust(chains_dir: Path) -> dict:
     referenced = collect_referenced_scripts(chains_dir)
     referenced_basenames = {Path(r).name for r in referenced}
+    fully_trusted = collect_fully_trusted_scripts(chains_dir)
+    fully_trusted_basenames = {Path(r).name for r in fully_trusted}
+
     out: dict[str, list[str]] = {
+        "derivation-fully-trusted": [],
         "derivation-backed": [],
         "computational-only": [],
     }
+
+    def _is_in_set(witness_name: str, script_field: Optional[str], basenames: set[str], fullpaths: set[str]) -> bool:
+        if script_field and (script_field in basenames or any(script_field in r for r in fullpaths)):
+            return True
+        guessed = _expected_script_for_witness(witness_name)
+        return guessed in basenames
+
     for wp in sorted(chains_dir.glob("*.witness.json")):
+        # Skip the audit's own output to avoid self-reference noise.
+        if wp.name == AUDIT_WITNESS_NAME:
+            continue
         try:
             with wp.open("r", encoding="utf-8") as f:
                 data = json.load(f)
         except (json.JSONDecodeError, OSError):
             continue
-        # Match path 1: explicit scriptFile field (modern witnesses).
         script_file = data.get("scriptFile")
-        if script_file and (
-            script_file in referenced_basenames
-            or any(script_file in r for r in referenced)
-        ):
+        if _is_in_set(wp.name, script_file, fully_trusted_basenames, fully_trusted):
+            out["derivation-fully-trusted"].append(wp.name)
+        elif _is_in_set(wp.name, script_file, referenced_basenames, referenced):
             out["derivation-backed"].append(wp.name)
-            continue
-        # Match path 2: filename convention (legacy witnesses without
-        # scriptFile metadata).
-        guessed = _expected_script_for_witness(wp.name)
-        if guessed in referenced_basenames:
-            out["derivation-backed"].append(wp.name)
-            continue
-        out["computational-only"].append(wp.name)
+        else:
+            out["computational-only"].append(wp.name)
     return out
 
 
@@ -237,7 +296,10 @@ def main() -> int:
         "QOU methodology directive: every numerical claim must trace "
         "back to first-principles axioms via a DerivationChain."
     )
-    w.set_content_block("def:derivation-chain")
+    # No `def:derivation-chain` content block exists yet (the
+    # methodology lives in `DERIVATION-CHAIN-METHODOLOGY.md`); leaving
+    # contentBlock unset avoids generating broken cross-reference
+    # warnings in the content pipeline.
     w.add_data("chain_results", [
         {
             "chain": r.chain_path.name,
@@ -260,13 +322,23 @@ def main() -> int:
             computed=bool(r.structural_ok and r.leaf_matches and not r.issues),
             expected=True,
         )
-        w.add_assertion(
-            f"leaf_value[{r.chain_path.stem}]",
-            computed=r.computed_value if r.computed_value is not None else float("nan"),
-            expected=r.target_value,
-            tolerance=abs(r.target_value) * 1e-9 if r.target_value != 0 else 1e-9,
-        )
-
+        # Numerical leaf assertions only.  Tolerance honours the
+        # chain's declared `target_tolerance` (relative; high-precision
+        # chains declare tighter values).  Symbolic chains (no
+        # COMPUTATIONAL leaf) skip this — they are validated purely
+        # structurally + via `chain_valid[...]` above.
+        if isinstance(r.target_value, (int, float)) and r.computed_value is not None:
+            abs_tol = (
+                abs(r.target_value) * r.target_tolerance
+                if r.target_value != 0
+                else r.target_tolerance
+            )
+            w.add_assertion(
+                f"leaf_value[{r.chain_path.stem}]",
+                computed=r.computed_value,
+                expected=r.target_value,
+                tolerance=abs_tol,
+            )
     w.save()
 
     print(f"derivation_chain_validator: {'PASS' if overall_ok else 'FAIL'}")
@@ -279,12 +351,18 @@ def main() -> int:
         )
         for i in r.issues:
             print(f"      - {i}")
+    n_full = len(audit["derivation-fully-trusted"])
     n_backed = len(audit["derivation-backed"])
     n_comp = len(audit["computational-only"])
     print(
         f"\nWitness trust audit: "
-        f"derivation-backed={n_backed}, computational-only={n_comp}"
+        f"fully-trusted={n_full}, derivation-backed={n_backed}, "
+        f"computational-only={n_comp}"
     )
+    if audit["derivation-fully-trusted"]:
+        print("  derivation-fully-trusted witnesses:")
+        for w_name in audit["derivation-fully-trusted"][:5]:
+            print(f"    - {w_name}")
     if audit["computational-only"]:
         print("  computational-only witnesses (need a derivation chain):")
         for w_name in audit["computational-only"][:10]:

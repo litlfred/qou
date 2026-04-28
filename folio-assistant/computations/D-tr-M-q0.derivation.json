@@ -15,7 +15,7 @@
       "output_value": "H_6(q) — Iwahori–Hecke algebra (A=2)",
       "trust_basis": "axiom",
       "jet_order": 0,
-      "lean_ref": "qou:QOU.BraidKnot.HeckeAlgebra",
+      "lean_ref": "qou:QOU.PathIntegrals.HeckeAlgebra",
       "citation": "kassel1995",
       "notes": "Hecke energy axiom: each σ_i carries σ_i^2 = (q-q^{-1})σ_i + 1; the (q-q^{-1}) factor is the per-crossing energy (CLAUDE.md §7a)."
     },
@@ -31,7 +31,7 @@
       "trust_basis": "mathlib-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "lean_ref": "qou:QOU.BraidKnot.HeckeWedderburn",
+      "lean_ref": "qou:STUB:HeckeWedderburn",
       "citation": "kassel1995",
       "notes": "Partitions of 6 index the simple factors; Hoefsmit frame dimensions f_λ from `schur_weyl_symbolic.partitions_of`.  Mathlib backs the abstract direct-sum statement via `Algebra.Algebraic.Module.WedderburnArtin`."
     },
