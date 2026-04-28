@@ -1,10 +1,15 @@
 # Clarabel high-precision integration — QOU workplan
 
-Companion to [`RUST_INTEGRATION.md`](RUST_INTEGRATION.md) and
-[`R5_FULL_PLAN.md`](R5_FULL_PLAN.md).  Tracks QOU's adoption of a
-higher-precision Clarabel.rs build (work-in-progress upstream by the
-repo owner) so the joint-tower SDP can be solved at the MPFR precision
-that the Hoefsmit seminormal kernel already supports.
+Companion to [`RUST_INTEGRATION.md`](RUST_INTEGRATION.md),
+[`R5_FULL_PLAN.md`](R5_FULL_PLAN.md), and
+[`SOLVER_SWAP_STATUS.md`](SOLVER_SWAP_STATUS.md).  This plan is
+also the **solver leg** of [`docs/plans/F-precision-lift-mpfr.md`](../../docs/plans/F-precision-lift-mpfr.md)
+— Plan F covers the categorical pipeline end-to-end (substrate q₀
+→ Hoefsmit → χ_λ → y_λ → tr_M → mass-excess); this plan is
+specifically the §1b/SDP rung where `f64` becomes `FloatT`.
+Plan F's §1a (substrate q₀ at 50 dps) is already implemented via
+the `Q_MP`/`q_at(dps)`/`vol_4_1_at(dps)` HP API in
+[`folio-assistant/computations/q_parameter.py`](../../folio-assistant/computations/q_parameter.py).
 
 ## Why precision is the bottleneck
 
@@ -226,22 +231,31 @@ path stays exact / arbitrary-precision end-to-end.
 
 ### S6.  Cargo wiring + feature flag (~20 LOC)
 
-Bump `clarabel` to whatever version exposes the high-precision
-generic.  Gate behind a feature flag so the f64 path stays the
-default until S1–S5 land:
+**Note (post-rebase, 2026-04-27):** `tools/hecke-engine/Cargo.toml`
+already has a `clarabel-sdp` feature flag landed via main commit
+[`0b1552f`](https://github.com/litlfred/qou/commit/0b1552f) — see
+[`SOLVER_SWAP_STATUS.md`](SOLVER_SWAP_STATUS.md).  That flag gates
+*Clarabel itself* (and its system BLAS/LAPACK toolchain
+dependency) so default builds skip OpenBLAS / netlib entirely.
+This plan's high-precision flag layers on top — `clarabel-hp` is
+the *new HP-solver-siblings* flag, requires `clarabel-sdp`, and
+won't be added until §S4–S6 implementation work begins.
+
+Final Cargo wiring:
 
 ```toml
 [dependencies]
-clarabel = { version = "0.12", features = ["sdp-netlib"] }   # bump
+clarabel = { version = "0.12", features = ["sdp-netlib"], optional = true }   # bump
 
 [features]
 default = []
-clarabel-hp = []   # gate the new modules / HP Clarabel wiring; rug remains a hard dep
+clarabel-sdp = ["dep:clarabel"]   # already on main: gates the f64 SDP solver
+clarabel-hp  = ["clarabel-sdp"]   # adds the new HP solver siblings; rug already mandatory
 ```
 
 `lib.rs` adds `#[cfg(feature = "clarabel-hp")] pub mod
 sdp_solver_clarabel_hp;` (and the two siblings).  Default builds
-remain f64.
+remain f64 *and* skip Clarabel/BLAS entirely.
 
 **Why rug stays mandatory.**  `rug` is already a non-optional
 dependency (Cargo.toml L66) because `seminormal_mpfr.rs`,
