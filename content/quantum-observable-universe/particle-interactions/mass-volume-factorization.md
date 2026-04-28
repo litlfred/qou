@@ -111,4 +111,4 @@ Factorization requires:
    Thurston volume are literally equal (not merely proportional with
    a $q$-dependent prefactor hidden in $\rho$) — this is the
    **volume conjecture at real $q$**, parallel to the classical
-   statement \cite{murakami2001} at $q \to e^{2\pi i/N}$.
+   statement \cite{murakami-murakami2001} at $q \to e^{2\pi i/N}$.
