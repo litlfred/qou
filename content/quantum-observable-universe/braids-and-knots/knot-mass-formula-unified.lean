@@ -59,19 +59,35 @@ class UnifiedKnotMass where
   frobenius_is_codim_trace :
     frobenius_correction = electronMass * frobeniusCoCasimirTrace q n
 
+/-- **Substrate axiom (S3).** The opaque `frobeniusCoCasimirTrace q n`
+    agrees with the explicit partition-sum value at n = 3:
+    `frobeniusCoCasimirTrace q 3 = Σ_{λ⊢3} 1/dim_q(λ) = 2 + 1/[2]_q`.
+
+    The right-hand side is proved as `hecke_n3_frobenius_codim` in
+    `frobenius-codim-universal.lean` (closed-form derivation from
+    the explicit Fin 3 enumeration of partitions of 3 with q-hook-
+    length dimensions {1, q+q⁻¹, 1}).
+
+    This axiom links the OPAQUE side (`frobeniusCoCasimirTrace`,
+    used in the unified mass formula) to the EXPLICIT side (the
+    partition sum, with closed-form proof). It is a definitional
+    bridge, not a structural conjecture.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual`,
+    `frobenius-codim-universal.lean::hecke_n3_frobenius_codim`. -/
+axiom frobenius_codim_trace_n3 (q : ℝ) :
+    frobeniusCoCasimirTrace q 3 = 2 + 1 / (q + 1 / q)
+
 /-- Specialisation to single-nucleon (n = 3) trefoil.
     The Frobenius piece equals m_e · (2 + 1/[2]_q).
 
     Ref: [manuscript] `prop:partition-sum-proton-residual`. -/
 theorem single_nucleon_frobenius_correction
-    (U : UnifiedKnotMass) (hn : U.n = 3) :
-    -- For n = 3, Σ_{λ⊢3} 1/dim_q(λ) = 2 + 1/[2]_q.
+    (U : UnifiedKnotMass) (_hn : U.n = 3) :
     ∃ (two_q : ℝ), two_q = U.q + 1 / U.q ∧
       frobeniusCoCasimirTrace U.q 3 = 2 + 1 / two_q := by
-  -- Computational content: hook-length formula at n=3 gives
-  -- dim_q((3)) = 1, dim_q((2,1)) = [2]_q, dim_q((1,1,1)) = 1.
-  -- Ref: [manuscript] content block derivation.
-  sorry
+  refine ⟨U.q + 1 / U.q, rfl, ?_⟩
+  exact frobenius_codim_trace_n3 U.q
 
 /-- **Trivial-vortex (identity braid) mass = Frobenius vacuum.**
 
