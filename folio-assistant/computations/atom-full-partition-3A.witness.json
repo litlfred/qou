@@ -1,7 +1,7 @@
 {
   "computation": "atom-full-partition-3A",
   "description": "Full atom-level Wedderburn over all \u03bb \u22a2 3A.  For each isotope compute tr_M(\u03b2_atom) = \u03a3_\u03bb w_\u03bb\u00b7\u03c7_\u03bb/dim_q V_\u03bb with algebraic weights w_\u03bb = (dim_q V_\u03bb)\u00b2/[3A]_q!.  Calibrated to M_p; predicts m_n, D, T, \u00b3He, \u2074He.  S-eigenspace decomposition (\u03bb \u2194 \u03bb') extracts S-even and S-odd contributions; np splitting localised to S-odd subspace.",
-  "timestamp": "2026-04-27T21:15:33.652058+00:00",
+  "computedAt": "2026-04-27T21:15:33.652058+00:00",
   "q_0": 1.1099785955541805,
   "E0_MeV_per_cat": 9264.323140455777,
   "isotopes": [

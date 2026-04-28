@@ -1,7 +1,7 @@
 {
   "computation": "alpha-per-transition-catalog",
   "description": "28a: Per-transition \u03b1 catalog for \u03b2-decay Q-values. Computes closed-form Q via branching factorization, residual to CODATA, and implied \u03b1 at each rank.  Looks for scaling patterns \u03b1(A, Z, N, N-Z, ...).",
-  "timestamp_utc": "2026-04-27T21:14:58.497039+00:00",
+  "computedAt": "2026-04-27T21:14:58.497039+00:00",
   "a_per_nucleon": -0.10453016099493972,
   "b_per_nucleon": -0.6340338930118115,
   "transitions": [

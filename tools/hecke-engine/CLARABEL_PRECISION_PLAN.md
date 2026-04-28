@@ -333,7 +333,7 @@ JSON via Zod.  Add a `precisionScalar` Zod schema:
 
 ```ts
 export const precisionScalar = z.object({
-  value: z.string().regex(/^-?\d+(\.\d+)?(e-?\d+)?$/),
+  value: z.string().regex(/^-?\d+(\.\d+)?([eE][+-]?\d+)?$/),
   dps: z.number().int().positive(),
 });
 ```

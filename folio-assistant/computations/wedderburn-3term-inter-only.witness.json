@@ -1,7 +1,7 @@
 {
   "computation": "wedderburn-3term-inter-only",
   "description": "Refined 3-term Wedderburn formula: subtract free constituent intra-nucleon Phi to avoid double-counting; add Wigner (2,2)|-4 isoscalar pairing correction Delta_W = m_e * [3]_q * [2]_q^2 * min(Z,N)/A.  Tests whether these refinements bridge np splitting and 4He binding gaps.",
-  "timestamp": "2026-04-27T21:25:31.893753+00:00",
+  "computedAt": "2026-04-27T21:25:31.893753+00:00",
   "q_0": 1.1099785955541805,
   "alpha_MeV": 3.74445965488548,
   "delta_W_per_pair_MeV": 6.289300348688731,

@@ -1,7 +1,7 @@
 {
   "computation": "kerov-knot-factor",
   "description": "Kerov q-hook walk entanglement knot factor for proton and neutron.  K_geom(\u03c1) = exp \u03a3 \u03c0_\u03bb ln(p_\u03bb(\u03c1)/\u03c0_\u03bb) where p_\u03bb(\u03c1) = |\u03c7_\u03bb(\u03b2_\u03c1)|\u00b2\u00b7d_q\u00b2 / \u03a3, \u03c0_\u03bb = d_q\u00b2/[n]_q! is the q-Plancherel equilibrium.  Tests whether \u0394m_n_p emerges from (K(n) \u2212 K(p)) \u00b7 (m_e \u00b7 q-prefactor), no hadronic calibration.",
-  "timestamp": "2026-04-27T21:04:21.536604+00:00",
+  "computedAt": "2026-04-27T21:04:21.536604+00:00",
   "q_0": 1.1099785955541805,
   "proton": {
     "pi": {

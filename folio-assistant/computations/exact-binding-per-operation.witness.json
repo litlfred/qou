@@ -1,7 +1,7 @@
 {
   "name": "exact-binding-per-operation",
   "description": "Exact per-operation binding computation.  Tracks each knot operation in the atomic braid, applies the exact (c, d) coefficient in (q, q\u207b\u00b9), accumulates the transfer-matrix chain in mpmath at 100 decimal digits, and sums ln|V\u0302_i| over crossings.  Replaces the float pipeline of atom_mass_atomic_braid.py.  Zero free parameters; uses \u03b1 = m_e as leading-order energy scale pending Wedderburn-weighted refinement.",
-  "timestamp": "2026-04-27T21:04:14.497256+00:00",
+  "computedAt": "2026-04-27T21:04:14.497256+00:00",
   "parameters": {
     "q_0_mp_str": "1.109978595554180575281594079609509377993",
     "hbar_q_sq_mp_str": "0.009817188513478671436481411941448682300483",

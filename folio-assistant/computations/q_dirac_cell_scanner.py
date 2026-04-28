@@ -45,7 +45,11 @@ from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import partitions_of, dim_q, young_hooks
 from q_mpmath import set_q, qint, qfac
 
-set_q(Q0_FLOAT)
+# Pass the high-precision Q_MP to q_mpmath so qint/qfac/qpoch run at
+# the same precision as the direct Q0/QI arithmetic below.  The earlier
+# `set_q(Q0_FLOAT)` would have left q_mpmath bounded to f64 while this
+# module does HP arithmetic — silent precision floor.
+set_q(Q_MP)
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 
 

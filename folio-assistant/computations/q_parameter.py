@@ -143,18 +143,23 @@ try:
         the canonical witness-JSON / Clarabel-HP serialisation."""
         return _mp.nstr(q_at(dps), dps, strip_zeros=False)
 
-    _mp.mp.dps = _DPS_DEFAULT
-    Q_MP         = q_at(_DPS_DEFAULT)
-    VOL_4_1_MP   = vol_4_1_at(_DPS_DEFAULT)
-    HBAR_Q_SQ_MP = VOL_4_1_MP / _mp.mpf(MASS_RATIO_MU_E_STR)
-    HBAR_Q_MP    = _mp.sqrt(HBAR_Q_SQ_MP)
-    Q_INV_MP     = _mp.mpf(1) / Q_MP
-    HA_MP        = Q_MP - Q_INV_MP
-    E_CROSS_MP   = HA_MP / 2
-    S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
-    TWO_Q_MP     = Q_MP + Q_INV_MP
-    TANH_LN_Q_MP = HA_MP / TWO_Q_MP
-    LN_Q_MP      = _mp.log(Q_MP)
+    # Compute the cached _MP globals at the default precision via
+    # `mp.workdps` so this module does NOT mutate the caller's
+    # `mp.mp.dps`.  Many downstream scripts set `mp.mp.dps` BEFORE
+    # importing q_parameter; the previous global assignment silently
+    # overrode their precision setting.  workdps restores on exit.
+    with _mp.workdps(_DPS_DEFAULT):
+        Q_MP         = q_at(_DPS_DEFAULT)
+        VOL_4_1_MP   = vol_4_1_at(_DPS_DEFAULT)
+        HBAR_Q_SQ_MP = VOL_4_1_MP / _mp.mpf(MASS_RATIO_MU_E_STR)
+        HBAR_Q_MP    = _mp.sqrt(HBAR_Q_SQ_MP)
+        Q_INV_MP     = _mp.mpf(1) / Q_MP
+        HA_MP        = Q_MP - Q_INV_MP
+        E_CROSS_MP   = HA_MP / 2
+        S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
+        TWO_Q_MP     = Q_MP + Q_INV_MP
+        TANH_LN_Q_MP = HA_MP / TWO_Q_MP
+        LN_Q_MP      = _mp.log(Q_MP)
 
     HAS_MPMATH = True
 except ImportError:

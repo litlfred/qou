@@ -1,7 +1,7 @@
 {
   "computation": "higher-a-bigraded-stratification",
   "description": "Higher-A (A=2..7) bigraded GB stratification.  Counts partitions of n=3A by (depth, max-row) cell and checks the q-Plancherel identity \u03a3 dim_q\u00b2 = [n]_q!. FINDING: the identity holds at A=1 (n=3) and is approximate at higher A \u2014 the deviation increases with A, suggesting a missing z-Markov normalization in the proposition's 'sum bounded by 1' claim.",
-  "timestamp_utc": "2026-04-27T21:20:40.781705+00:00",
+  "computedAt": "2026-04-27T21:20:40.781705+00:00",
   "precision_dps": 30,
   "isotopes": [
     {

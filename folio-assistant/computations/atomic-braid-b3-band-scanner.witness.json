@@ -1,7 +1,7 @@
 {
   "computation": "atomic-braid-b3-band-scanner",
   "description": "Markov sub-folding scan: extract every contiguous run of (\u03c3_anchor, \u03c3_anchor+1) letters from the atomic braid, relabel as B_3 word (1, 2), and scan against the 56-knot extended database.  Captures inter-nucleon B_3-band knot ideals not visible to the original prefix-only scan.",
-  "timestamp": "2026-04-27T21:17:09.686329+00:00",
+  "computedAt": "2026-04-27T21:17:09.686329+00:00",
   "q_0": 1.1099785955541805,
   "n_knots_in_db": 11,
   "isotopes": [

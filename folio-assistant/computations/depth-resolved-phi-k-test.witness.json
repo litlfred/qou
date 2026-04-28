@@ -1,7 +1,7 @@
 {
   "computation": "depth-resolved-phi-k-test",
   "description": "31a: Depth-resolved \u03a6_k per isotope.  APPROXIMATES depth-decomposition by Plancherel-weight fraction \u00d7 log|tr_M|.  Fits \u03b1_k per rank from {p, n, D, T} via LSQ and predicts \u00b3He, \u2074He using same \u03b1_k. Tests whether per-rank structural recipe gives universal predictions even with the coarse depth approximation.",
-  "timestamp_utc": "2026-04-27T21:19:23.797745+00:00",
+  "computedAt": "2026-04-27T21:19:23.797745+00:00",
   "max_rank": 7,
   "fitted_alpha_k": [
     -0.0076310387925386846,

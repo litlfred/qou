@@ -1,7 +1,7 @@
 {
   "computation": "fresh-derivation-gamma-gamma-sdp",
   "description": "Fresh p/n construction from \u03b3\u03b3 pair-production initial state using greedy LP proxy for SDP operator selection.  \u03b3\u03b3 = \ud835\udfd9 + \u03c3_0 + \u03c3_1 + \u03c3_0\u00b7\u03c3_1 in H_3(q); fit per-block Hecke-generator sequence to reach proton/neutron NF; sum Hecke energies as mass proxy.  Symmetric polarization, \u03c6 = 1.  Proper SDP deferred (requires cvxpy + matrix-valued dual variables).",
-  "timestamp": "2026-04-27T21:04:17.742507+00:00",
+  "computedAt": "2026-04-27T21:04:17.742507+00:00",
   "q_0": 1.1099785955541805,
   "electron": {
     "name": "electron",

@@ -1,7 +1,7 @@
 {
   "computation": "d-wedderburn-mass",
   "description": "D binding via the full Wedderburn-weighted mass formula (prop:wedderburn-mass-formula).  Uses V\u0302^full = w_sym\u00b7\u03bb^sym + w_std\u00b7V\u0302^std + w_alt\u00b7\u03bb^alt with weights derived from q\u2080 (zero fitted parameters).  mpmath 50 digits.",
-  "timestamp": "2026-04-27T20:46:42.615998+00:00",
+  "computedAt": "2026-04-27T20:46:42.615998+00:00",
   "parameters": {
     "q_0_mp": "1.109978595554180575281594079609509377993",
     "hbar_q_sq_mp": "0.009817188513478671436481411941448682300483",
