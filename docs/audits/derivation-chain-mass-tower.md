@@ -179,8 +179,84 @@ that doesn't go through the axiomatic `MassEvaluation` itself.
 
 | File | Before | After |
 |------|--------|-------|
-| `hecke-convergence-bound.lean` | 1 sorry | 0 sorrys (real `norm_num` proof of `0.001·4⁻⁸ < 2·10⁻⁸`) |
-| `AlgOps.lean` | 7 sorrys | **1** sorry (5 closed in earlier commits + `mkDegLexOrder.right_compat` closed in this branch; `mkDegLexOrder.wf` deferred — needs Mathlib `Shortlex` API) |
+| `hecke-convergence-bound.lean` | 1 sorry | **0 sorrys** (real `norm_num` proof of `0.001·4⁻⁸ < 2·10⁻⁸`) |
+| `AlgOps.lean` | 7 sorrys | **1** sorry (5 closed earlier + `mkDegLexOrder.right_compat` closed; `mkDegLexOrder.wf` deferred — needs Mathlib `Shortlex` API) |
+| `wedderburn-bratteli-recursion.lean` | 2 sorrys | **1** sorry (existence closed with trivial witness `y ≡ 0`; `plancherel_completeness` deferred) |
+| `frobenius-pairing-exists.lean` | 1 sorry (false claim: `Nonempty` for arbitrary `C`) | **0 sorrys** (restated with `QuantumUniverse k` hypothesis; provable by `⟨qu.frobHopf⟩`) |
+| `categorical-action-exists.lean` | 1 sorry | **0 sorrys** (closed with explicit trivial witness using `(ρ_ A).inv`-connection + identity-on-unit terms) |
+| `frobenius-pairing-unique.lean` | 1 sorry (false `Subsingleton` claim) | 1 sorry retained, but with full diagnosis: claim is strictly false, restatement requires simplicity hypothesis + scalar uniqueness |
+| `categorical-action-unique.lean` | 1 sorry (false `Subsingleton` claim) | 1 sorry retained, but with full diagnosis: scaffold has free fields making `Subsingleton` impossible; needs scaffold tightening |
+
+## Jet-order / GB-filtration / spectral pass
+
+These are the bookkeeping infrastructure that lets us *track*
+derivations step-by-step (the principal repo-owner ask). Status as
+of `0717c94b7`:
+
+### Jet-order machinery
+
+**File:** `content/unital-groebner-bases/lean/UGB/GrobnerShirshov/JetOrder.lean`
+**Status:** ⚠️ 3 sorrys + 3 axioms (intentional).
+
+- 3 sorrys (`degLexNat_wf`, `degLexNat_left_compat`,
+  `degLexNat_right_compat`) — same Mathlib-drift issue as
+  `AlgOps.lean.mkDegLexOrder.{wf, left_compat, right_compat}`. Need
+  the post-rename `List.Shortlex` / `WellFoundedRelation` /
+  `List.append_lt_append_left` lemma names. Deferred consistent with
+  AlgOps.
+- 3 axioms (`descended_gs_inherited`, `jet_stratified_gs_criterion`,
+  `degree_filtered_reduction_correct`) — **deliberate** per CLAUDE.md
+  §3b. Each represents a substantive Buchberger-style claim whose
+  formalization requires Mathlib's incomplete `RewritingSystem`
+  infrastructure.
+- Theorems that *do* close: `wellfounded_at_level`,
+  `direct_limit_terminates`, `jet_stratified_correct` (uses the 2
+  axioms above as inputs but is itself a real proof).
+
+The infrastructure is **structurally complete** for tracking
+derivations — every reduction step can be classified
+(descended/transient) and bucketed by degree. The complexity bound
+`O(|Σₙ|·k + k²)` vs naive `O((|Σₙ|+k)²)` is recorded as plain `def`s
+(`spolyCountNaive`, `spolyCountStratified`).
+
+**Gap to close (tractable):** the 3 `degLexNat_*` sorries fall once
+`AlgOps.mkDegLexOrder.wf` lands; same proof structure.
+
+### Spectral-sequence collapse
+
+**File:** `content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.lean`
+**Status:** ✅ 0 sorrys, 2 axioms/classes.
+
+Both axioms are intentional class declarations encoding the
+collapse hypothesis at finite Hecke level. No proof gap.
+
+### GB-residue spectral sum
+
+**File:** `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean`
+**Status:** ⚠️ 2 sorrys + 1 class.
+
+The 2 sorries connect the GB filtration's residue sequence to the
+mass-tower decomposition. Closing them requires the Wedderburn block
+machinery (link 5) plus the Bratteli recursion (also link 5,
+`wedderburn-bratteli-recursion.lean`).
+
+**Gap to close:** depends on link 5 being sharpened first; not a
+single-session target.
+
+### Content-only files (TS/MD)
+
+`gb-spectral-sequence.{ts,md}`, `jet-prefix-gb-filtration.{ts,md}`,
+`spectral-sequence-h3-explicit.{ts,md}` — narrative + manifest, no
+Lean. Out of scope for proof-gap audit.
+
+### Bottom line for jet/GB/spectral
+
+The bookkeeping is ready (`JetOrder`, `JetStratifiedSystem`,
+`DegreeBucket`, `RuleClass`, `SPolyClass`). Real per-step derivation
+tracking is computable today through these structures. The 5
+non-deliberate sorries (3 in `JetOrder` + 2 in `gb-residue-spectral-sum`)
+are all downstream of either (a) the `List.Shortlex` API hunt or
+(b) the link-5 sharpening.
 
 ## What this audit does NOT do
 
@@ -190,7 +266,3 @@ that doesn't go through the axiomatic `MassEvaluation` itself.
 - Does **not** invent witness values for link 8. Constructing the
   `MassEvaluation` instance is research; the audit just maps which
   upstream pieces are needed.
-- Does **not** address jet-order / GB-filtration / spectral
-  bookkeeping yet — those are the `prop:joint-tower-sdp-confinement`
-  / `prop:atom-knot-mass-derivation` files, audit deferred to a
-  separate pass.
