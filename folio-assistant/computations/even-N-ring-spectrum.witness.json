@@ -1,0 +1,83 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-04-28T03:34:22.566844+00:00",
+  "commitSha": "f8e0ab482be24ffa24ad23a9f704350be1b37313",
+  "assertions": [
+    {
+      "name": "linear fit slope matches half-weight prediction within 15% (limit q→1 gives exact match; q₀ ≠ 1 introduces O((q-1)²) correction)",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "predicted barriers strictly increase with N",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "slope numerically equals e_mol_kJ_per_mol / 2 within 15%",
+      "computed": 9.8446,
+      "expected": 11.1929,
+      "passed": true,
+      "tolerance": 2.0,
+      "unit": "kJ/mol per C"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "even-N-ring-spectrum",
+  "scriptFile": "even_N_ring_spectrum.py",
+  "scriptHash": "bca253e33ecc",
+  "scriptCommitSha": "",
+  "description": "Linear trend of predicted ring-closure barriers for even N = 4,…,14, fit by least squares and compared against the half-weight-derived slope |q+q⁻¹|_mol · ½.",
+  "contentBlock": "prop:even-N-barrier-spectrum",
+  "parameters": {
+    "e_cross_mol_kJ_per_mol": 22.385827503356783
+  },
+  "data": {
+    "table": [
+      {
+        "N": 4,
+        "weight_difference": 0.9891031308815181,
+        "barrier_predicted_kJ_per_mol": 22.141892070943793
+      },
+      {
+        "N": 6,
+        "weight_difference": 1.9562937817694879,
+        "barrier_predicted_kJ_per_mol": 43.79325514458125
+      },
+      {
+        "N": 8,
+        "weight_difference": 2.8903175643622907,
+        "barrier_predicted_kJ_per_mol": 64.70215042573656
+      },
+      {
+        "N": 10,
+        "weight_difference": 3.7795586753354264,
+        "barrier_predicted_kJ_per_mol": 84.60854854487452
+      },
+      {
+        "N": 12,
+        "weight_difference": 4.611913320452979,
+        "barrier_predicted_kJ_per_mol": 103.24149605209381
+      },
+      {
+        "N": 14,
+        "weight_difference": 5.374657821105993,
+        "barrier_predicted_kJ_per_mol": 120.31616287284618
+      }
+    ],
+    "linear_fit": {
+      "intercept_kJ_per_mol": -15.467543533782845,
+      "slope_kJ_per_mol_per_C": 9.844606783588393,
+      "predicted_slope_half_weight_kJ_per_mol_per_C": 11.192913751678391,
+      "slope_relative_error": 0.12046076633868621,
+      "residual_sum_squares": 12.31375247357341
+    }
+  },
+  "caveats": [
+    "The experimental trend (kJ/mol vs. N from the data file) is approximately *flat* or weakly *decreasing* (260, 290, 240, 220, 210, 200 for N=4,6,8,10,12,14), opposite to the predicted monotone-increasing trend.  This sign disagreement is a key falsifier of the simple model and indicates that additional contributions (entropic, ring-strain, Hückel-electronic) dominate beyond the topological barrier.  The witness records the disagreement quantitatively for the chapter to address."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T03:35:09.481076+00:00",
+  "commitSha": "f8e0ab482be24ffa24ad23a9f704350be1b37313",
+  "assertions": [
+    {
+      "name": "ΔE in classical limit q→1 equals −2·|q+q⁻¹|_mol",
+      "computed": -0.464026,
+      "expected": -0.464026,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "eV"
+    },
+    {
+      "name": "Δ_{T(2,6)}(q=1) = 3",
+      "computed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "ring is energetically favoured (ΔE < 0) in classical limit",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "chain-vs-ring-energy-N6",
+  "scriptFile": "chain_vs_ring_energy_N6.py",
+  "scriptHash": "5c9586e04134",
+  "scriptCommitSha": "",
+  "description": "Linear C6 chain vs. benzene ring topological energy difference: ΔE = (Δ_{T(2,6)} − 5) · |q+q⁻¹|_mol.  In the classical limit q→1, ΔE = −2·|q+q⁻¹|_mol, i.e. the ring is energetically favoured.",
+  "contentBlock": "lem:c6-energy-comparison",
+  "parameters": {
+    "N": 6,
+    "q_substrate": 1.1099785955541805,
+    "e_cross_mol_eV": 0.23201275272335997
+  },
+  "data": {
+    "table": {
+      "alexander_at_q0": 3.043706218230512,
+      "alexander_at_q_eq_1": 3.0,
+      "chain_weight": 5,
+      "weight_difference_at_q0": -1.9562937817694879,
+      "weight_difference_at_q_eq_1": -2.0,
+      "delta_E_at_q0_eV": -0.4538851054439309,
+      "delta_E_at_q0_kJ_per_mol": -43.79325514458125,
+      "delta_E_at_q0_kcal_per_mol": -10.46683918369533,
+      "delta_E_classical_eV": -0.46402550544671994,
+      "delta_E_classical_kJ_per_mol": -44.771655006713566,
+      "ring_favoured_at_q0": true,
+      "ring_favoured_at_q_eq_1": true
+    }
+  },
+  "caveats": [
+    "At q₀ ≈ 1.11, Δ_{T(2,6)}(q₀) ≈ 3.04 > 3, which leaves the ring still favoured (ΔE ≈ -1.96·|q+q⁻¹|_mol) but with a small positive correction reflecting the finite-q deviation from the classical half-weight."
+  ]
+}

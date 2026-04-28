@@ -63,7 +63,23 @@ export default chapter({
       ],
     }),
 
-    // ── §5. Carbon chains and benzene ────────────────────────────────
+    // ── §5. Energy predictions for even-N rings ──────────────────────
+    section({
+      title: "Energy predictions for even-$N$ rings",
+      label: "sec:even-N-energy-predictions",
+      blocks: [
+        "ring-closure-barrier-quantitative",
+        "prf-ring-closure-barrier-quantitative",
+        "even-N-barrier-spectrum",
+        "prf-even-N-barrier-spectrum",
+        "c6-energy-comparison",
+        "prf-c6-energy-comparison",
+        "benzene-resonance-from-threading",
+        "prf-benzene-resonance-from-threading",
+      ],
+    }),
+
+    // ── §6. Carbon chains and benzene ────────────────────────────────
     section({
       title: "Carbon chains and benzene",
       label: "sec:carbon-chains-benzene",
@@ -76,7 +92,7 @@ export default chapter({
       ],
     }),
 
-    // ── §6. Organic chain taxonomy ───────────────────────────────────
+    // ── §7. Organic chain taxonomy ───────────────────────────────────
     section({
       title: "Organic chain taxonomy",
       label: "sec:organic-taxonomy",

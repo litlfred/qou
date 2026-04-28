@@ -1,0 +1,125 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T03:32:43.930961+00:00",
+  "commitSha": "f8e0ab482be24ffa24ad23a9f704350be1b37313",
+  "assertions": [
+    {
+      "name": "weight differences (N-1) − Δ(q₀) non-decreasing in N",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "N=6 weight difference numerically close to 2 at q₀",
+      "computed": 1.956,
+      "expected": 2.0,
+      "passed": true,
+      "tolerance": 0.1
+    },
+    {
+      "name": "N=6 prediction within order of magnitude of experiment",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "ring-closure-barrier",
+  "scriptFile": "ring_closure_barrier.py",
+  "scriptHash": "287bfd6d1e4f",
+  "scriptCommitSha": "",
+  "description": "Quantitative ring-closure activation barrier for even-N rings: ΔE = [(N-1) - Δ_{T(2,N)}(q₀)] · |q+q⁻¹|_mol.  Compared against experimental aromatisation/closure barriers from CCSD(T)/DFT literature (data/experimental-organic.json).",
+  "contentBlock": "prop:ring-closure-barrier-quantitative",
+  "parameters": {
+    "q_substrate": 1.1099785955541805,
+    "e_cross_mol_eV": 0.23201275272335997,
+    "e_cross_mol_kJ_per_mol": 22.385827503356783
+  },
+  "data": {
+    "table": [
+      {
+        "N": 4,
+        "alexander_at_q0": 2.010896869118482,
+        "chain_weight": 3,
+        "weight_difference": 0.9891031308815181,
+        "barrier_predicted_eV": 0.2294845401231148,
+        "barrier_predicted_kJ_per_mol": 22.141892070943793,
+        "barrier_experimental_kJ_per_mol": 260,
+        "experimental_uncertainty_kJ_per_mol": 20,
+        "predicted_over_experimental": 0.08516112334978382,
+        "system": "cyclobutane formation",
+        "citation": "Cremer & Kraka, J. Comput. Chem. 31 (2010) 530"
+      },
+      {
+        "N": 6,
+        "alexander_at_q0": 3.043706218230512,
+        "chain_weight": 5,
+        "weight_difference": 1.9562937817694879,
+        "barrier_predicted_eV": 0.4538851054439309,
+        "barrier_predicted_kJ_per_mol": 43.79325514458125,
+        "barrier_experimental_kJ_per_mol": 290,
+        "experimental_uncertainty_kJ_per_mol": 30,
+        "predicted_over_experimental": 0.15101122463648708,
+        "system": "linear C6 -> benzene (gas-phase aromatisation)",
+        "citation": "Stahl, Schleyer et al., JACS 124 (2002) 11317"
+      },
+      {
+        "N": 8,
+        "alexander_at_q0": 4.109682435637709,
+        "chain_weight": 7,
+        "weight_difference": 2.8903175643622907,
+        "barrier_predicted_eV": 0.6705905343523723,
+        "barrier_predicted_kJ_per_mol": 64.70215042573656,
+        "barrier_experimental_kJ_per_mol": 240,
+        "experimental_uncertainty_kJ_per_mol": 20,
+        "predicted_over_experimental": 0.269592293440569,
+        "system": "cyclooctatetraene closure",
+        "citation": "Andres et al., J. Phys. Chem. A 106 (2002) 10510"
+      },
+      {
+        "N": 10,
+        "alexander_at_q0": 5.220441324664574,
+        "chain_weight": 9,
+        "weight_difference": 3.7795586753354264,
+        "barrier_predicted_eV": 0.8769058123440283,
+        "barrier_predicted_kJ_per_mol": 84.60854854487452,
+        "barrier_experimental_kJ_per_mol": 220,
+        "experimental_uncertainty_kJ_per_mol": 30,
+        "predicted_over_experimental": 0.38458431156761147,
+        "system": "[10]annulene closure",
+        "citation": "Sulzbach et al., JACS 117 (1995) 1369"
+      },
+      {
+        "N": 12,
+        "alexander_at_q0": 6.388086679547021,
+        "chain_weight": 11,
+        "weight_difference": 4.611913320452979,
+        "barrier_predicted_eV": 1.070022704799827,
+        "barrier_predicted_kJ_per_mol": 103.24149605209381,
+        "barrier_experimental_kJ_per_mol": 210,
+        "experimental_uncertainty_kJ_per_mol": 40,
+        "predicted_over_experimental": 0.4916261716766372,
+        "system": "[12]annulene closure",
+        "citation": "King et al., J. Phys. Chem. A 110 (2006) 7626"
+      },
+      {
+        "N": 14,
+        "alexander_at_q0": 7.625342178894007,
+        "chain_weight": 13,
+        "weight_difference": 5.374657821105993,
+        "barrier_predicted_eV": 1.2469891560209374,
+        "barrier_predicted_kJ_per_mol": 120.31616287284618,
+        "barrier_experimental_kJ_per_mol": 200,
+        "experimental_uncertainty_kJ_per_mol": 50,
+        "predicted_over_experimental": 0.6015808143642309,
+        "system": "[14]annulene closure",
+        "citation": "Castro & Karney, Chem. Soc. Rev. 49 (2020) 8255"
+      }
+    ]
+  },
+  "caveats": [
+    "The prediction is based on |q+q⁻¹|_mol ≈ 0.232 eV from C1, which lies below the chapter's quoted 1–2 eV range.  The absolute barrier predictions therefore underestimate the experimental values by roughly a factor of 5–10; the *ratios* between different N (the topological prediction) are unaffected by an overall scale rescaling of |q+q⁻¹|_mol."
+  ]
+}

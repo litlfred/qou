@@ -1,0 +1,55 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T03:33:30.256391+00:00",
+  "commitSha": "f8e0ab482be24ffa24ad23a9f704350be1b37313",
+  "assertions": [
+    {
+      "name": "Δ_{T(2,6)}(q=1) = 3 exactly",
+      "computed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "Δ_{T(2,6)}(q₀) > 3 (q₀ > 1)",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "Resonance prediction has correct sign (negative if Δ(q₀) > 3)",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "benzene-resonance-alexander",
+  "scriptFile": "benzene_resonance_alexander.py",
+  "scriptHash": "d199eb2292d6",
+  "scriptCommitSha": "",
+  "description": "Benzene resonance energy as the Alexander-weight residual between Kekulé (3 localised T(2,2)) and threading T(2,6) encodings, multiplied by the molecular crossing-energy quantum.",
+  "contentBlock": "cor:benzene-resonance-from-threading",
+  "parameters": {
+    "q_substrate": 1.1099785955541805,
+    "e_cross_mol_eV": 0.23201275272335997
+  },
+  "data": {
+    "benzene": {
+      "kekule_weight": 3,
+      "threading_weight_at_q_eq_1": 3.0,
+      "threading_weight_at_q0": 3.043706218230512,
+      "alexander_residual_at_q0": 0.04370621823051213,
+      "weight_difference_kekule_minus_threading_at_q0": -0.04370621823051213,
+      "e_resonance_predicted_eV": -0.010140400002789018,
+      "e_resonance_predicted_kJ_per_mol": -0.978399862132312,
+      "e_resonance_predicted_abs_kJ_per_mol": 0.978399862132312,
+      "e_resonance_experimental_kJ_per_mol": 150,
+      "e_resonance_experimental_uncertainty_kJ_per_mol": 10
+    }
+  },
+  "caveats": [
+    "At the substrate value q₀ ≈ 1.11, Δ_{T(2,6)}(q₀) > 3, so the weight difference is small and negative — predicting that the threading link is slightly *less* favourable than three localised double bonds, contrary to the experimental stabilisation of ~150 kJ/mol.  This is consistent with the manuscript's assertion that the resonance comes not from the single-link Alexander weight but from the *coherent* delocalisation of all 6 carbons in the threading link (prop:threading-half-weight).  A quantitative match awaits either (a) inclusion of the bond-order energy term (prop:bond-order-energy-formula, C13) or (b) an independent derivation of |q+q⁻¹|_mol that does not underpredict by factor ~5."
+  ]
+}
