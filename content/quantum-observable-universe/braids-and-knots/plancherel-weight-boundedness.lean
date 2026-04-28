@@ -55,9 +55,21 @@ theorem weighted_sum_bounded
     (f : List ℕ → ℝ) (M : ℝ)
     (hM : ∀ λ ∈ P.partitions, |f λ| ≤ M) (hM_nn : 0 ≤ M) :
     |P.partitions.sum (fun λ => P.weight λ * f λ)| ≤ M := by
-  -- |Σ w · f| ≤ Σ w · |f| ≤ M · Σ w = M.
-  -- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
-  sorry
+  -- |Σ w · f| ≤ Σ |w · f| = Σ w · |f| ≤ Σ w · M = M · Σ w = M
+  calc |P.partitions.sum (fun λ => P.weight λ * f λ)|
+      ≤ P.partitions.sum (fun λ => |P.weight λ * f λ|) :=
+        Finset.abs_sum_le_sum_abs _ _
+    _ = P.partitions.sum (fun λ => P.weight λ * |f λ|) := by
+        apply Finset.sum_congr rfl
+        intro λ hλ
+        rw [abs_mul, abs_of_nonneg (P.weight_nonneg λ hλ)]
+    _ ≤ P.partitions.sum (fun λ => P.weight λ * M) := by
+        apply Finset.sum_le_sum
+        intro λ hλ
+        exact mul_le_mul_of_nonneg_left (hM λ hλ) (P.weight_nonneg λ hλ)
+    _ = (P.partitions.sum P.weight) * M := by
+        rw [← Finset.sum_mul]
+    _ = M := by rw [P.weight_sum_one, one_mul]
 
 end PlancherelDistribution
 
