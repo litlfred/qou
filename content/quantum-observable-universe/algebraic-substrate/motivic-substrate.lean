@@ -36,10 +36,12 @@ LaTeX label: `def:motivic-substrate`
 namespace QOU.AlgebraicSubstrate
 
 /-- A **place** of `ℚ`: either the archimedean place `∞` or a
-    finite prime `p`. -/
+    finite prime `p`. The `finite` constructor takes a
+    `Nat.Primes` value (Mathlib subtype `{p : ℕ // p.Prime}`) so
+    that non-prime indices are ruled out at the type level. -/
 inductive Place : Type
   | infty : Place
-  | finite : ℕ → Place
+  | finite : Nat.Primes → Place
   deriving DecidableEq
 
 /-- **The motivic substrate** (axiomatic class).
@@ -97,10 +99,12 @@ class MotivicSubstrate
       classical-limit object only when the archimedean place
       contributes non-degenerately.
 
-      A trivial archimedean target would degenerate every motivic
-      class to zero, contradicting `lefschetz_invertible` — so this
-      axiom is consistent with (and implied by) the unit structure
-      via the ring-hom `realize Place.infty`.
+      Note: this is genuinely an axiom, not a consequence of
+      `lefschetz_invertible`. A trivial `Target Place.infty` (where
+      `0 = 1` in the target ring) admits a perfectly valid `RingHom`
+      from `Mhat` regardless of whether `inclusion lefschetz` is a
+      unit in `Mhat`; the existence of `realize Place.infty` does
+      not force `Target Place.infty` to be nontrivial.
 
       Ref: [tate1967]. -/
   archimedean_nontrivial : Nontrivial (Target Place.infty)
@@ -124,6 +128,6 @@ class MotivicSubstrate
 
       Ref: [tate1967]. -/
   nonarchimedean_nontrivial :
-    ∃ p : ℕ, Nat.Prime p ∧ Nontrivial (Target (Place.finite p))
+    ∃ p : Nat.Primes, Nontrivial (Target (Place.finite p))
 
 end QOU.AlgebraicSubstrate

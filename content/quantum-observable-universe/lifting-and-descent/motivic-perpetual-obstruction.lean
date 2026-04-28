@@ -50,15 +50,15 @@ theorem motivic_perpetual_obstruction
     {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
     {motiveA : Mhat} [hχ : MotivicGaloisCharacter K0 Mhat motiveA] :
     ∃ S : Finset ℕ,
-      ∀ p : ℕ, Nat.Prime p → p ∉ S →
+      ∀ p : Nat.Primes, (p : ℕ) ∉ S →
         ¬IsUnit (hχ.frobenius_at p) := by
   obtain ⟨N, hN⟩ := hχ.almost_everywhere_nontrivial
   refine ⟨Finset.range N, ?_⟩
-  intro p hp hpS
-  have hpN : N ≤ p := by
+  intro p hpS
+  have hpN : N ≤ (p : ℕ) := by
     by_contra hlt
     push_neg at hlt
     exact hpS (Finset.mem_range.mpr hlt)
-  exact hN p hpN hp
+  exact hN p hpN
 
 end QOU.LiftingDescent
