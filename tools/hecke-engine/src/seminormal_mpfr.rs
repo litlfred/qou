@@ -264,7 +264,14 @@ pub fn seminormal_matrices_mpfr(
     let prec = dps_to_bits(dps);
     let q = Float::parse(q_str)
         .map(|p| Float::with_val(prec, p))
-        .unwrap_or_else(|_| Float::with_val(prec, 1));
+        .unwrap_or_else(|e| {
+            panic!(
+                "seminormal_matrices_mpfr: invalid q_str {:?}: {} \
+                 (a silent fallback to q=1 would trigger divide-by-zero \
+                 in the Hoefsmit coefficients via 1 - q^{{-2ρ}} = 0)",
+                q_str, e
+            )
+        });
 
     let (dim, all_blocks) = build_blocks_mpfr(shape, &q, prec);
     if dim == 0 {
