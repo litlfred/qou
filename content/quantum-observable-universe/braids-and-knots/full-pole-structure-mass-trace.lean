@@ -47,9 +47,8 @@ noncomputable def qPochhammer (q : ℝ) (m : ℕ) : ℝ :=
     `ℤ[u]`, so divisibility encodes the Habiro-ideal property
     genuinely (unlike real divisibility, which is trivially solvable
     whenever the divisor is non-zero). -/
-noncomputable def qPochhammerPoly : ℕ → Polynomial ℤ
-  | 0     => 1
-  | m + 1 => qPochhammerPoly m * (1 - Polynomial.X ^ (m + 1))
+noncomputable def qPochhammerPoly (m : ℕ) : Polynomial ℤ :=
+  ∏ k ∈ Finset.range m, (1 - (Polynomial.X : Polynomial ℤ) ^ (k + 1))
 
 /-- **Habiro completion of the Markov trace** (polynomial-ring form).
 
