@@ -1383,6 +1383,63 @@ established:
    in general" qualifier covers this but the specific ℓ ≤ 1 rule
    is misleading.
 
+### From-scratch derivation chain (2026-04-28g)
+
+User: "I don't necessarily believe existing computations. We need to
+derive from Hecke energy / cat action / Frobenius pairing / non-abelian
+Stokes / Wedderburn / Schur / finite Jones."
+
+Built a fully self-contained derivation tree at
+[`folio-assistant/computations/from_scratch/`](https://github.com/litlfred/qou/tree/claude/continue-pr-442-DJRWm/folio-assistant/computations/from_scratch)
+with NO dependencies on the existing compute infrastructure:
+
+**Chain steps** (each step traced + logged):
+1. Hecke H_n(q) from quadratic σ_i² = (q-q⁻¹)σ_i + 1 + braid relations
+2. Braid word reduction with GB-filtration grade tracking
+3. Wedderburn irreps from Hoefsmit seminormal matrices
+4. Wenzl y_λ from Markov axioms (tr_M(1)=1, tr_M peel, conjugacy class reps)
+5. χ_λ via matrix product on each irrep
+6. tr_M(T_w) = Σ_λ y_λ · χ_λ(T_w)
+
+**Triple validation** of existing Wenzl-Schur compute:
+
+| atom | n_0 | from-scratch tr_M | existing Wenzl | match |
+|---|---:|---:|---:|---|
+| D | 3 | 0.288326 | 0.288326 | bit-exact |
+| ³He | 3 | 0.998367 | 0.998367 | bit-exact |
+| T | 5 | 0.012889 | 0.012889 | bit-exact |
+
+**Surfaced two real bugs** in the from-scratch construction
+(both fixed; would have caused similar errors in any independent
+re-derivation):
+
+1. **Hoefsmit off-diagonal formula** ([`hoefsmit_general.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/from_scratch/hoefsmit_general.py)):
+   the constraint from σ_i² = h σ_i + 1 is `bc = d_T · d_{sT} + 1`,
+   NOT `h · α + 1 - α · α'`. The wrong formula gave reps that
+   coincidentally produced correct trace at H_3 (where braid is
+   automatic in 2×2) but failed at H_5.
+
+2. **Test elements for Markov-axiom y_λ** ([`wenzl_y_axiomatic.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/from_scratch/wenzl_y_axiomatic.py)):
+   must use distinct conjugacy-class representatives. Earlier
+   choice [4,4] and [3,4,3] duplicated cycle types of [] and [4],
+   making the χ_λ matrix rank-deficient. Fixed to use one rep per
+   cycle type of S_n: [], [n-1], [1,n-1], [n-2,n-1], [1,2,n-1],
+   [2,...,n-1], [1,...,n-1] for S_5 → 7 cycle types → full rank.
+
+**Conclusions** (paper-side):
+
+The Wenzl-Schur convention IS the unique canonical Markov trace
+on H_n(q) determined by the standard Markov axioms. The existing
+compute correctly implements it. The single-term paper formula
+B = m_e · ρ · tr_M(T_w) is structurally inadequate (87-100%
+error on D/T/³He even with these verified-correct tr_M values);
+the multi-term decomposition is required.
+
+The paper's flagship formula needs revision to read M(H) as the
+multi-term sum |tr_M| + tower + Σ 1/dim_q (already amended in
+[`atom-knot-mass-derivation.md`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
+2026-04-28e).
+
 ### Why nobody caught this earlier
 
 Both scripts CLAIM to compute "the Markov trace tr_M". The
