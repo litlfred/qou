@@ -43,12 +43,15 @@ from experimental_constants import M_E_MEV  # noqa: E402
 mp.mp.dps = 50
 q = mp.mpf(repr(Q0_FLOAT))
 
-# --- canonical tr_M(D) at q_0 from symbolic chain (atom-nf-symbolic-D) ---
-# Symbolic GB-NF + Hoefsmit + Wenzl-bridge Markov trace, 30 dps.
-# This number IS the canonical value per the chain documented in
-# docs/derivation-tracking-methodology.md.
+# --- canonical tr_M(D) at q_0 from the registered derivation chain ---
+# Per `D-tr-M-q0.derivation.json` (introduced in PR #473 derivation-chain
+# registry), tr_M(D, q_0) is derived step-by-step from the 7 first-
+# principles entrypoints (Hecke.Energy, Wedderburn, Schur, …) to the
+# value below. PR #472's `prop:habiro-residue-sum-equivalence`
+# cross-validates this via two independent paths (polynomial-ring +
+# residue-spectral-sum) at relative tolerance ≤ 10⁻⁹.
 TR_M_D_FREE = mp.mpf("0")  # placeholder; paper requires "free" T_w too
-TR_M_D_ATOM_ATQ0 = mp.mpf("0.38828647154771299936605791605")
+TR_M_D_ATOM_ATQ0 = mp.mpf("0.17743692421543206")
 
 # AME deuteron binding
 B_AME_D_MEV = 2.22456612
