@@ -231,7 +231,7 @@ path stays exact / arbitrary-precision end-to-end.
 
 ### S6.  Cargo wiring + feature flag (~20 LOC)
 
-**Note (post-rebase, 2026-04-27):** `tools/hecke-engine/Cargo.toml`
+**Note.** `tools/hecke-engine/Cargo.toml`
 already has a `clarabel-sdp` feature flag landed via main commit
 [`0b1552f`](https://github.com/litlfred/qou/commit/0b1552f) — see
 [`SOLVER_SWAP_STATUS.md`](SOLVER_SWAP_STATUS.md).  That flag gates
@@ -599,7 +599,7 @@ truncations + denominator histograms.  No CI gate (research mode).
 
 ---
 
-## Status retrospective (after PR #448 follow-ups)
+## Status retrospective
 
 ### Upstream Clarabel.rs#1 — `claude/bigrational-backend-BeGUU`
 
