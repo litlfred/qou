@@ -37,7 +37,21 @@ export default chapter({
       ],
     }),
 
-    // ── §3. Carbon chains and benzene ────────────────────────────────
+    // ── §3. Topological invariants of T(2,N) ─────────────────────────
+    section({
+      title: "Topological invariants of $T(2,N)$",
+      label: "sec:t2n-invariants",
+      blocks: [
+        "alexander-T2N-closed-form",
+        "prf-alexander-T2N-closed-form",
+        "T2N-components",
+        "prf-T2N-components",
+        "threading-half-weight",
+        "prf-threading-half-weight",
+      ],
+    }),
+
+    // ── §4. Carbon chains and benzene ────────────────────────────────
     section({
       title: "Carbon chains and benzene",
       label: "sec:carbon-chains-benzene",
@@ -50,7 +64,7 @@ export default chapter({
       ],
     }),
 
-    // ── §4. Organic chain taxonomy ───────────────────────────────────
+    // ── §5. Organic chain taxonomy ───────────────────────────────────
     section({
       title: "Organic chain taxonomy",
       label: "sec:organic-taxonomy",

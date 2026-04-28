@@ -1,0 +1,215 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T03:22:59.231954+00:00",
+  "commitSha": "dc7be52739d8312e415eef868fce6bfb19ba84e2",
+  "assertions": [
+    {
+      "name": "defining_identity_N=2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=5",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=7",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=8",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=9",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=10",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=11",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "defining_identity_N=12",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "T(2,6) closed form matches q^2 + 1 + q^-2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "T(2,6) Δ(1) == 3",
+      "computed": 3,
+      "expected": 3,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 964,
+  "computation": "alexander-T2N",
+  "scriptFile": "alexander_T2N.py",
+  "scriptHash": "3c2fc2fb0611",
+  "scriptCommitSha": "",
+  "description": "Closed-form Alexander polynomials Δ_{T(2,N)}(q) for N = 2,…,12, verifying the defining identity (q∓q⁻¹)·Δ == q^m∓q^{-m}.",
+  "contentBlock": "lem:alexander-T2N-closed-form",
+  "parameters": {
+    "N_range": [
+      2,
+      12
+    ],
+    "q_substrate": 1.1099785955541805
+  },
+  "data": {
+    "table": [
+      {
+        "N": 2,
+        "alexander_symbolic": "1",
+        "alexander_at_1": "1",
+        "weight_per_atom_at_1": "1/2",
+        "alexander_at_q0": 1.0,
+        "parity": "even",
+        "components": 2,
+        "identity_passed": true
+      },
+      {
+        "N": 3,
+        "alexander_symbolic": "q**2 - 1 + q**(-2)",
+        "alexander_at_1": "1",
+        "weight_per_atom_at_1": "1/3",
+        "alexander_at_q0": 1.0437062182305121,
+        "parity": "odd",
+        "components": 1,
+        "identity_passed": true
+      },
+      {
+        "N": 4,
+        "alexander_symbolic": "q + 1/q",
+        "alexander_at_1": "2",
+        "weight_per_atom_at_1": "1/2",
+        "alexander_at_q0": 2.010896869118482,
+        "parity": "even",
+        "components": 2,
+        "identity_passed": true
+      },
+      {
+        "N": 5,
+        "alexander_symbolic": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4",
+        "alexander_at_1": "1",
+        "weight_per_atom_at_1": "1/5",
+        "alexander_at_q0": 1.1330288882035497,
+        "parity": "odd",
+        "components": 1,
+        "identity_passed": true
+      },
+      {
+        "N": 6,
+        "alexander_symbolic": "q**2 + 1 + q**(-2)",
+        "alexander_at_1": "3",
+        "weight_per_atom_at_1": "1/2",
+        "alexander_at_q0": 3.043706218230512,
+        "parity": "even",
+        "components": 2,
+        "identity_passed": true
+      },
+      {
+        "N": 7,
+        "alexander_symbolic": "(q**14*(q**2 + 1) + q**2 + 1)/(q**6*(q**2 + 1)**2)",
+        "alexander_at_1": "1",
+        "weight_per_atom_at_1": "1/7",
+        "alexander_at_q0": 1.2718719660258853,
+        "parity": "odd",
+        "components": 1,
+        "identity_passed": true
+      },
+      {
+        "N": 8,
+        "alexander_symbolic": "q**3 + q + 1/q + q**(-3)",
+        "alexander_at_1": "4",
+        "weight_per_atom_at_1": "1/2",
+        "alexander_at_q0": 4.109682435637709,
+        "parity": "even",
+        "components": 2,
+        "identity_passed": true
+      },
+      {
+        "N": 9,
+        "alexander_symbolic": "(q**18*(q**2 + 1) + q**2 + 1)/(q**8*(q**2 + 1)**2)",
+        "alexander_at_1": "1",
+        "weight_per_atom_at_1": "1/9",
+        "alexander_at_q0": 1.4663037575566191,
+        "parity": "odd",
+        "components": 1,
+        "identity_passed": true
+      },
+      {
+        "N": 10,
+        "alexander_symbolic": "(q**8 + q**6 + q**4 + q**2 + 1)/q**4",
+        "alexander_at_1": "5",
+        "weight_per_atom_at_1": "1/2",
+        "alexander_at_q0": 5.220441324664574,
+        "parity": "even",
+        "components": 2,
+        "identity_passed": true
+      },
+      {
+        "N": 11,
+        "alexander_symbolic": "(q**22*(q**2 + 1) + q**2 + 1)/(q**10*(q**2 + 1)**2)",
+        "alexander_at_1": "1",
+        "weight_per_atom_at_1": "1/11",
+        "alexander_at_q0": 1.7248221411073423,
+        "parity": "odd",
+        "components": 1,
+        "identity_passed": true
+      },
+      {
+        "N": 12,
+        "alexander_symbolic": "(q**10 + q**8 + q**6 + q**4 + q**2 + 1)/q**5",
+        "alexander_at_1": "6",
+        "weight_per_atom_at_1": "1/2",
+        "alexander_at_q0": 6.388086679547021,
+        "parity": "even",
+        "components": 2,
+        "identity_passed": true
+      }
+    ]
+  }
+}

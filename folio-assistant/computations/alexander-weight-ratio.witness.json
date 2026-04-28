@@ -1,0 +1,127 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T03:23:00.473555+00:00",
+  "commitSha": "dc7be52739d8312e415eef868fce6bfb19ba84e2",
+  "assertions": [
+    {
+      "name": "limit Δ/N at q=1 for N=2 == 1/2",
+      "computed": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "limit Δ/N at q=1 for N=4 == 1/2",
+      "computed": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "limit Δ/N at q=1 for N=6 == 1/2",
+      "computed": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "limit Δ/N at q=1 for N=8 == 1/2",
+      "computed": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "limit Δ/N at q=1 for N=10 == 1/2",
+      "computed": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "limit Δ/N at q=1 for N=12 == 1/2",
+      "computed": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "limit Δ/N at q=1 for N=14 == 1/2",
+      "computed": "1/2",
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "all even N yield limit 1/2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 851,
+  "computation": "alexander-weight-ratio",
+  "scriptFile": "alexander_weight_ratio.py",
+  "scriptHash": "fdf0e97527a0",
+  "scriptCommitSha": "",
+  "description": "Verifies Δ_{T(2,2m)}(q)/N → 1/2 as |q| → 1 for even N = 2,…,14, the central topological claim of the threading-link chapter.",
+  "contentBlock": "prop:threading-half-weight",
+  "parameters": {
+    "q_substrate": 1.1099785955541805
+  },
+  "data": {
+    "table": [
+      {
+        "N": 2,
+        "ratio_at_unit_symbolic": "1/2",
+        "ratio_at_unit_numeric": 0.5,
+        "ratio_at_q0": 0.5,
+        "deviation_from_half_at_q0": 0.0,
+        "series_about_q_eq_1": "1/2"
+      },
+      {
+        "N": 4,
+        "ratio_at_unit_symbolic": "1/2",
+        "ratio_at_unit_numeric": 0.5,
+        "ratio_at_q0": 0.5027242172796205,
+        "deviation_from_half_at_q0": 0.0027242172796204667,
+        "series_about_q_eq_1": "-(q - 1)**3/4 + (q - 1)**2/4 + 1/2"
+      },
+      {
+        "N": 6,
+        "ratio_at_unit_symbolic": "1/2",
+        "ratio_at_unit_numeric": 0.5,
+        "ratio_at_q0": 0.5072843697050854,
+        "deviation_from_half_at_q0": 0.007284369705085392,
+        "series_about_q_eq_1": "-2*(q - 1)**3/3 + 2*(q - 1)**2/3 + 1/2"
+      },
+      {
+        "N": 8,
+        "ratio_at_unit_symbolic": "1/2",
+        "ratio_at_unit_numeric": 0.5,
+        "ratio_at_q0": 0.5137103044547137,
+        "deviation_from_half_at_q0": 0.013710304454713662,
+        "series_about_q_eq_1": "-5*(q - 1)**3/4 + 5*(q - 1)**2/4 + 1/2"
+      },
+      {
+        "N": 10,
+        "ratio_at_unit_symbolic": "1/2",
+        "ratio_at_unit_numeric": 0.5,
+        "ratio_at_q0": 0.5220441324664573,
+        "deviation_from_half_at_q0": 0.02204413246645731,
+        "series_about_q_eq_1": "-2*(q - 1)**3 + 2*(q - 1)**2 + 1/2"
+      },
+      {
+        "N": 12,
+        "ratio_at_unit_symbolic": "1/2",
+        "ratio_at_unit_numeric": 0.5,
+        "ratio_at_q0": 0.5323405566289184,
+        "deviation_from_half_at_q0": 0.03234055662891844,
+        "series_about_q_eq_1": "-35*(q - 1)**3/12 + 35*(q - 1)**2/12 + 1/2"
+      },
+      {
+        "N": 14,
+        "ratio_at_unit_symbolic": "1/2",
+        "ratio_at_unit_numeric": 0.5,
+        "ratio_at_q0": 0.5446672984924291,
+        "deviation_from_half_at_q0": 0.04466729849242912,
+        "series_about_q_eq_1": "-4*(q - 1)**3 + 4*(q - 1)**2 + 1/2"
+      }
+    ]
+  }
+}

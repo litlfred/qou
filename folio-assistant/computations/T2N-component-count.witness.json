@@ -1,0 +1,149 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-04-28T03:22:59.359926+00:00",
+  "commitSha": "dc7be52739d8312e415eef868fce6bfb19ba84e2",
+  "assertions": [
+    {
+      "name": "components(T(2,2)) == 2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "components(T(2,3)) == 1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "components(T(2,6)) == 2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "braid-word crossings T(2,6)",
+      "computed": 10,
+      "expected": 10,
+      "passed": true
+    },
+    {
+      "name": "signature T(2,6)",
+      "computed": -5,
+      "expected": -5,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "T2N-component-count",
+  "scriptFile": "T2N_component_count.py",
+  "scriptHash": "6a2d46cbe7de",
+  "scriptCommitSha": "",
+  "description": "Component count, writhe, and signature of T(2,N) for N = 2,…,12. Verifies the gcd(2,N) component formula and the all-positive crossing convention from def:threading-link.",
+  "contentBlock": "lem:T2N-components",
+  "data": {
+    "table": [
+      {
+        "N": 2,
+        "components": 2,
+        "braid_word_crossings": 2,
+        "min_diagram_crossings": 2,
+        "writhe_positive": 2,
+        "signature": -1,
+        "is_knot": false
+      },
+      {
+        "N": 3,
+        "components": 1,
+        "braid_word_crossings": 4,
+        "min_diagram_crossings": 3,
+        "writhe_positive": 4,
+        "signature": -2,
+        "is_knot": true
+      },
+      {
+        "N": 4,
+        "components": 2,
+        "braid_word_crossings": 6,
+        "min_diagram_crossings": 4,
+        "writhe_positive": 6,
+        "signature": -3,
+        "is_knot": false
+      },
+      {
+        "N": 5,
+        "components": 1,
+        "braid_word_crossings": 8,
+        "min_diagram_crossings": 5,
+        "writhe_positive": 8,
+        "signature": -4,
+        "is_knot": true
+      },
+      {
+        "N": 6,
+        "components": 2,
+        "braid_word_crossings": 10,
+        "min_diagram_crossings": 6,
+        "writhe_positive": 10,
+        "signature": -5,
+        "is_knot": false
+      },
+      {
+        "N": 7,
+        "components": 1,
+        "braid_word_crossings": 12,
+        "min_diagram_crossings": 7,
+        "writhe_positive": 12,
+        "signature": -6,
+        "is_knot": true
+      },
+      {
+        "N": 8,
+        "components": 2,
+        "braid_word_crossings": 14,
+        "min_diagram_crossings": 8,
+        "writhe_positive": 14,
+        "signature": -7,
+        "is_knot": false
+      },
+      {
+        "N": 9,
+        "components": 1,
+        "braid_word_crossings": 16,
+        "min_diagram_crossings": 9,
+        "writhe_positive": 16,
+        "signature": -8,
+        "is_knot": true
+      },
+      {
+        "N": 10,
+        "components": 2,
+        "braid_word_crossings": 18,
+        "min_diagram_crossings": 10,
+        "writhe_positive": 18,
+        "signature": -9,
+        "is_knot": false
+      },
+      {
+        "N": 11,
+        "components": 1,
+        "braid_word_crossings": 20,
+        "min_diagram_crossings": 11,
+        "writhe_positive": 20,
+        "signature": -10,
+        "is_knot": true
+      },
+      {
+        "N": 12,
+        "components": 2,
+        "braid_word_crossings": 22,
+        "min_diagram_crossings": 12,
+        "writhe_positive": 22,
+        "signature": -11,
+        "is_knot": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "../../../schemas/experimental-organic.schema.json",
+  "comment": "Experimental reference data for organic-chemistry chapter. Numerical values are not authored by QOU; each datum carries its literature citation. Witness scripts must read values from this file rather than hard-coding numbers.",
+  "version": "2026.04.28",
+
+  "ring_closure_barriers_kJ_per_mol": {
+    "comment": "Activation energies for cyclic-alkane ring closure / aromatisation. Values from CCSD(T)/CBS or Bergman-cyclisation calorimetry where indicated.",
+    "data": [
+      {
+        "N": 4,
+        "system": "cyclobutane formation",
+        "barrier": 260,
+        "uncertainty": 20,
+        "method": "CCSD(T)/cc-pVTZ",
+        "citation": "Cremer & Kraka, J. Comput. Chem. 31 (2010) 530"
+      },
+      {
+        "N": 6,
+        "system": "linear C6 -> benzene (gas-phase aromatisation)",
+        "barrier": 290,
+        "uncertainty": 30,
+        "method": "Bergman-type CCSD(T)/CBS",
+        "citation": "Stahl, Schleyer et al., JACS 124 (2002) 11317"
+      },
+      {
+        "N": 8,
+        "system": "cyclooctatetraene closure",
+        "barrier": 240,
+        "uncertainty": 20,
+        "method": "B3LYP/6-311+G(d,p)",
+        "citation": "Andres et al., J. Phys. Chem. A 106 (2002) 10510"
+      },
+      {
+        "N": 10,
+        "system": "[10]annulene closure",
+        "barrier": 220,
+        "uncertainty": 30,
+        "method": "CCSD(T)/cc-pVDZ",
+        "citation": "Sulzbach et al., JACS 117 (1995) 1369"
+      },
+      {
+        "N": 12,
+        "system": "[12]annulene closure",
+        "barrier": 210,
+        "uncertainty": 40,
+        "method": "B3LYP",
+        "citation": "King et al., J. Phys. Chem. A 110 (2006) 7626"
+      },
+      {
+        "N": 14,
+        "system": "[14]annulene closure",
+        "barrier": 200,
+        "uncertainty": 50,
+        "method": "DFT estimate",
+        "citation": "Castro & Karney, Chem. Soc. Rev. 49 (2020) 8255"
+      }
+    ]
+  },
+
+  "benzene_resonance_energy_kJ_per_mol": {
+    "comment": "Benzene resonance / aromatic stabilisation energy. Definition-dependent; the canonical value of 150 kJ/mol is from hydrogenation calorimetry.",
+    "value": 150,
+    "uncertainty": 10,
+    "method": "hydrogenation enthalpy comparison vs. cyclohexene",
+    "citation": "Wheland, Resonance in Organic Chemistry, Wiley 1955; cited as 36 kcal/mol = 150.6 kJ/mol"
+  },
+
+  "carbon_carbon_bond_enthalpies_kJ_per_mol": {
+    "comment": "Mean bond dissociation enthalpies for C-C, C=C, C#C in alkanes/alkenes/alkynes.",
+    "data": [
+      {
+        "bond_order": 1,
+        "label": "C-C",
+        "enthalpy": 346,
+        "uncertainty": 5,
+        "citation": "Luo, Comprehensive Handbook of Chemical Bond Energies, CRC 2007"
+      },
+      {
+        "bond_order": 2,
+        "label": "C=C",
+        "enthalpy": 614,
+        "uncertainty": 8,
+        "citation": "Luo, Comprehensive Handbook of Chemical Bond Energies, CRC 2007"
+      },
+      {
+        "bond_order": 3,
+        "label": "C#C",
+        "enthalpy": 839,
+        "uncertainty": 10,
+        "citation": "Luo, Comprehensive Handbook of Chemical Bond Energies, CRC 2007"
+      }
+    ]
+  },
+
+  "molecular_crossing_quantum_eV": {
+    "comment": "Molecular-scale crossing energy quantum |q + q^{-1}|_mol. Currently quoted as a 1-2 eV range pending derivation in C1.",
+    "lower_bound": 1.0,
+    "upper_bound": 2.0,
+    "method": "order-of-magnitude estimate from typical bond dissociation",
+    "citation": "manuscript Ch. 10 chain-ring-comparison.md (placeholder)"
+  },
+
+  "fundamental_constants": {
+    "alpha": {
+      "comment": "Fine-structure constant.",
+      "value": 7.2973525693e-3,
+      "uncertainty": 1.1e-12,
+      "citation": "CODATA 2018"
+    },
+    "m_e_over_m_p": {
+      "comment": "Electron-to-proton mass ratio.",
+      "value": 5.4461702151e-4,
+      "uncertainty": 3.3e-14,
+      "citation": "CODATA 2018"
+    }
+  }
+}
