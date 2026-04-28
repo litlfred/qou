@@ -111,7 +111,7 @@ clarabel-sdp = ["dep:clarabel"]
 # Will be lifted once the fork merges to its own main and a release
 # is cut on crates.io.
 [patch.crates-io]
-clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "cf7b5f4" }
+clarabel = { git = "https://github.com/litlfred/Clarabel.rs", rev = "9673209" }
 
 [profile.release]
 opt-level = 3
