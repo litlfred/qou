@@ -92,7 +92,7 @@ def term6_archimedean_by_atom(term6_data: dict) -> dict[str, float]:
     return by_atom
 
 
-def compare_value(label: str, x: float, y: float) -> dict:
+def compare_value(label: str, x: float, y: float, rtol: float) -> dict:
     """Relative-tolerance comparison; returns a per-atom check.
 
     The denominator `max(abs(x), abs(y))` is non-zero whenever
@@ -106,7 +106,7 @@ def compare_value(label: str, x: float, y: float) -> dict:
         rel = 0.0
     else:
         rel = abs(x - y) / max(abs(x), abs(y))
-        agree = rel <= AGREEMENT_RTOL
+        agree = rel <= rtol
     return {
         "atom": label,
         "realizer_value": x,
@@ -159,7 +159,7 @@ def main() -> int:
     only_in_term6 = sorted(set(term6_arch) - set(realizer_arch))
 
     checks = [
-        compare_value(atom, realizer_arch[atom], term6_arch[atom])
+        compare_value(atom, realizer_arch[atom], term6_arch[atom], AGREEMENT_RTOL)
         for atom in common
     ]
 

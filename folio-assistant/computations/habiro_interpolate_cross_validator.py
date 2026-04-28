@@ -44,14 +44,25 @@ HERE = Path(__file__).parent
 ATOMIC_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
 INTERPOLATE_WITNESS = HERE / "habiro-coefficients-interpolate.witness.json"
 
+def _agreement_rtol_for(working_dps: int) -> mp.mpf:
+    """Tolerance dynamically tied to the working precision.
+
+    The atomic polynomial path evaluates a high-degree polynomial at
+    `u_0 = q_0^{1/2}` via mpmath at `working_dps` digits.  Rounding
+    accumulates roughly by the polynomial degree, so leave a margin
+    of ~18 digits below the working precision.  Output is then
+    bounded by the witness JSON's float-roundtrip noise (~1e-16),
+    so cap at 1e-12 (comfortably above arithmetic noise, comfortably
+    below any meaningful disagreement).
+    """
+    return mp.mpf(10) ** -min(working_dps - 18, 12)
+
+
+# AGREEMENT_RTOL is set in `main()` from the active `mp.mp.dps` so a
+# higher-precision rerun of this script automatically tightens the
+# tolerance.  Default value (1e-12) used as a module-level fallback
+# for downstream consumers that import the constant directly.
 AGREEMENT_RTOL = mp.mpf("1e-12")
-# Realistic floor: the atomic polynomial path evaluates a high-degree
-# polynomial at u_0 = q_0^{1/2} via mpmath; rounding accumulates to
-# ~machine-epsilon (~1e-16) on the proton's degree-48 trace.  The
-# interpolate witness stores 60-digit decimals but its underlying
-# computation is bounded by similar arithmetic noise.  1e-12 is
-# loose enough to cover that noise while still flagging genuine
-# disagreements (real bugs are typically O(1) or rel_diff > 1e-3).
 
 
 def parse_polynomial_in_u(s: str, u_value: mp.mpf) -> mp.mpf:
@@ -90,6 +101,9 @@ def main() -> int:
 
     q_0 = mp.mpf(str(atomic.parameters.get("q_0", "1.1099785955541805")))
     mp.mp.dps = 70  # work above the 60 dps interpolate precision
+    # Tie tolerance to the active precision (Gemini #472 medium).
+    global AGREEMENT_RTOL
+    AGREEMENT_RTOL = _agreement_rtol_for(mp.mp.dps)
     u_0 = mp.sqrt(q_0)
 
     common = sorted(
