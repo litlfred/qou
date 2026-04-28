@@ -4,6 +4,76 @@
 **Branch.** `claude/continue-pr-442-DJRWm`
 **Companion branch.** `claude/mass-table-display-bkkZU` (audit-scope seed)
 
+## Investigation summary (Wedderburn weights / Φ_q ↔ Habiro)
+
+Two deep audits resolved during PR #447:
+
+### A. Wedderburn weight scheme — two inconsistent forms in compute
+
+`mass_endomorphism.py` and `light_isotope_sweep.py` use **normalized
+Plancherel** weights `w_λ = (dim_q²/[n]_q!) / Σ`.
+`y-lambda-wenzl-witness.json` and the canonical Markov-trace pipeline
+use **Wenzl** `y_λ` (Schur specialization at Markov parameter `z`).
+These are **mathematically inequivalent** (per `probe_wedderburn_weight_scheme.py`):
+
+| H_3 partition | Plancherel-A | Wenzl-B | B/A |
+|---|---:|---:|---:|
+| (3) | 0.163 | 0.415 | 2.54 |
+| (2,1) | 0.661 | 0.281 | 0.42 |
+| (1,1,1) | 0.163 | 0.023 | 0.14 |
+
+Both schemes have categorical basis but use different conventions
+for the Markov trace. The +1.84% `m_p/m_e` residual is **NOT** in
+the choice between them — substituting Wenzl into mass_endomorphism
+gives +168% (worse). The schemes use different normalization
+conventions of `V̂_full` itself, not just per-irrep weight.
+
+**Audit recommendation** (deferred to follow-up): pick ONE scheme
+as canonical (likely Wenzl per `y-lambda-recipe-from-partition.md`
+proposition status), refactor mass_endomorphism + light_isotope_sweep
+to match. This is bookkeeping cleanup, not residual-closing.
+
+### B. Φ_q ↔ Habiro ↔ q-dilog connection — bridge missing in paper
+
+`mass-endomorphism-tower.md` defines:
+
+>   `Φ_q(z) = ∏_{k≥1}(1 − q^{-k}z)^{-1}`
+
+and labels it the "non-perturbative quantum dilogarithm." It cites
+`def:quantum-bloch-group` but **does NOT cross-reference**
+`def:habiro-ring`, `prop:habiro-expansion-atomic`, or any cyclotomic
+expansion. **The connection is mathematically valid but missing in the
+paper's exposition.**
+
+Mathematically, Φ_q IS a Habiro-ring element:
+
+>   `Φ_q(z) = 1 / (z; q^{-1})_∞`,    `(z; q)_∞ = ∏_{k≥0}(1 − q^k z)`
+
+The q-Pochhammer `(z; q)_∞` is a natural Habiro ring element. Its
+**values at roots of unity** (where `S¹` is a natural boundary for
+analytic continuation) are well-defined via the Habiro cyclotomic
+form — which is what `habiro_residue_symbolic.py` already computes.
+
+**In compute**: `mass_endomorphism.Phi_q` is a truncated series at
+`max_iter=2000`. The Habiro-cyclotomic form gives the same values
+at `q_0` exactly, with the additional categorical advantage of
+well-defined values at roots of unity (where the series diverges
+or oscillates).
+
+**Recommendation** (next branch): add a content block
+`prop:phi-q-as-habiro` (or amend `mass-endomorphism-tower.md`)
+that:
+1. States `Φ_q ∈ Ẑ[q]` explicitly via the q-Pochhammer identity
+2. Cross-references `def:habiro-ring` + `prop:habiro-expansion-atomic`
+3. Notes that Term 6 (root-of-unity residues per
+   `prop:full-pole-structure-mass-trace`) IS the natural Habiro
+   evaluation of Φ_q-tower contributions — which makes Term 6
+   computable in a unified way for all isotopes
+
+This bridges `Φ_q` (analytic, infinite-product) to the Habiro
+ring (categorical, cyclotomic-exact) — closing an exposition gap
+the user surfaced during ¹H/D error budget review.
+
 **Motivation.** Per recent direction: the framework is to be
 **categorically derived end-to-end**. Every Q, decay, B/A number
 should come from the canonical pipeline
