@@ -769,54 +769,101 @@ Implementation work just adds the new modules behind that flag.
 
 ### Upstream Clarabel.rs#1 — `claude/bigrational-backend-BeGUU`
 
+All seven phases plus three Round 4 wishlist items have shipped
+upstream and are validated against QOU's hecke-engine SDP test
+suite (71/71 passing under `clarabel-sdp` at fork rev `cf7b5f4`,
+re-validated at `9673209`).
+
 | Phase | What | Status |
 |---|---|---|
 | Phase 1 | Decouple `FloatT` from `num_traits::Float` | **Done** (`3799405`) |
-| Phase 2 | Replace `Copy` with `Clone` bounds across cones, vecmath, info, variables, etc. | **Done** (`735a35f` — "all ~25 files compile under the Clone bound; 120/120 lib tests, 6/6 examples Solved") |
-| Phase 4 | `RationalReal` newtype: rational-arithmetic backend with thread-local arena, numeric traits, Display/LowerExp/Debug | **In progress** (`9b46bd5` and earlier) |
+| Phase 2 | Replace `Copy` with `Clone` bounds across cones, vecmath, info, variables, etc. | **Done** (`735a35f` — 120/120 lib tests, 6/6 examples) |
+| Phase 4 | `RationalReal` newtype with thread-local arena, numeric traits, Display/LowerExp/Debug | **Done** (`9b46bd5`) |
+| Phase 5 | `set_max_arena_bits` opt-in inner-loop precision capping | **Done** (`a47e20e`) |
+| Phase 6 | CI bigrational job; QP and SOCP regression tests passing | **Done** (`45c259c`) |
+| Phase 7 | Docs / README / CHANGELOG | **Done** (`63c3020`) |
+| Phase 8a | Per-iteration `iter_diagnostics` log on `DefaultInfo` | **Done** (`eab6a34`) |
+| Phase 8b | Run-time `MpfrFloat` backend; `lp_mpfr` example + CI | **Done** (`67eafd0`, `ee0b273`) |
+| Wishlist #1 | `BlockDiagPSDConeT { block_dims }` cone sugar | **Done** (`7d3ff18`) |
+| Wishlist #2 | Structured `Solution<T>` per-cone accessors (`dual_psd_block`, `primal_psd_block`, `primal_residual_per_block`) | **Done** (`b722064`) |
+| Wishlist #3 | `tighten_to_rational(solution, denom_bound)` Peyrl–Parrilo helper | **Done** (`9673209`) |
+| Wishlist (earlier) | Solution<T> serde derive, rug-interop, exact-mode tolerance docs | **Done** (`a435b2c`, `d245be4`) |
 
-Phase 4 is what unblocks §S8 (exact-in-q₀ optimization).  When it
-lands, QOU instantiates `Scalar = RationalReal` directly via the
-upstream-provided concrete type — no `From<rug::Float>` conversion
-trait needed (the §S4 "single upstream-Clarabel constraint" flagged
-in PR #448 review goes away).
+Out of scope upstream (explicitly deferred to Phase 9+):
 
-### QOU side — what's already landed on the feature branch
+- **Exact-rational SDP** (PSD cone projection on rationals) — needs
+  eigendecomposition over algebraic numbers; the IPM iterate
+  extension-degree blow-up makes it intractable past the smallest
+  blocks.  See `docs/audits/exact-sdp-feasibility.md` for the
+  Galois / Sturm / cost analysis.  QOU's §T5 routes around this
+  via the §S9 dual-certificate path instead.
+- **Sentinel propagation through arithmetic** — `inf + 1 → finite`
+  by design; doesn't bite LP/QP/SOCP regression tests.
+- **Per-iteration denom-bit log on iterates** (vs. per-iter on
+  primal `x` only) — solver instrumentation; nice-to-have.
 
-§S1–S6 / §S7 / §S8 are still **not implemented** (waiting on
-upstream Phase 4 to settle).  But the audit + cleanup work
-*motivated* by this plan has already shipped:
+### QOU side — what's landed (PRs #448 + #459)
 
-| Commit | Scope |
-|---|---|
-| `307b20b` | `q_parameter`: add mpmath HP parallel API (`Q_MP`, `q_at(dps)`, `q_str(dps)`, `vol_4_1_at(dps)`) |
-| `0a4124c` | `q_parameter`: compute Vol(4_1) on demand via mpmath.clsin (was reusing a hardcoded 38-dps string that diverged from the converged Clausen value at digit ~31) |
-| `f31f5bc` | `alpha_em_pslq_uniqueness`: drop bad hardcoded Vol — the file was running PSLQ at 1500-dps tolerance against a constant correct only to ~30 dps |
-| `7d33adb` | `q_pinning_50_digit`: ditto — claimed 50 dps in its name but constant was wrong past digit 37 |
-| `13121f0` | Migrate four 20-30 dps consumers to `vol_4_1_at()` for forward-compat |
-| `929238f`, `d8cd36f` | `d_wedderburn_mass`, `exact_binding_per_operation`, `residual_probe_pn`: stop the `mp.mpf(str(VOL_FIGURE_EIGHT))` f64-roundtrip antipattern |
-| `28d23db` | Mass sed-rewrite of 9 high-impact files (witness JSONs quoted >16-digit fields from corrupted Q0) |
-| `e129db5` | Mass sed-rewrite of remaining ~80 files (lower-impact: same antipattern, but their witnesses don't expose past-f64 corruption) |
-| `ebfdae0`, `cc3104f`, `650997c` | Regenerate 13 witnesses (q-pinning, alpha-em, d-wedderburn + 10 high-impact) with corrected HP substrate |
+| PR | Commits | Scope |
+|---|---|---|
+| #448 | 24 | Workplan §1–§T5; substrate-precision audit (100 files); 65 witnesses regenerated; canonical-timestamp migration; first fork pin (`cf7b5f4`) |
+| #459 | 4 + counting | Fork pin bump to `9673209` (Round 4 + Phase 8a/8b); 3 smoke-test bins validating all 5 new APIs end-to-end; §S9 + §S4-S6 implementation outlines |
 
-Audit headline: the antipattern `Q0 = mp.mpf(str(Q0_FLOAT))`
-appeared in **100 files** under `folio-assistant/computations/`,
-each silently capping its "50-dps" computation at f64 precision.
-After this work, every file uses `Q0 = Q_MP` (or equivalent
-`Q_INV_MP`, `HBAR_Q_MP`, `vol_4_1_at(dps)`) directly from
-`q_parameter`, so the substrate values are genuinely 50 dps.
+Substrate-precision audit headline (PR #448): the antipattern
+`Q0 = mp.mpf(str(Q0_FLOAT))` appeared in **100 files** under
+`folio-assistant/computations/`, each silently capping its "50-dps"
+computation at f64 precision.  Plus the canonical 38-dps `Vol(4_1)`
+string was actually inaccurate past digit ~30.  After this work,
+every file uses `Q0 = Q_MP` / `vol_4_1_at(dps)` from `q_parameter`,
+so substrate values are genuinely 50 dps.
 
-### Workplan items still pending
+Smoke validation results (PR #459):
 
-- **§S1–S6** — implementation of HP solver siblings.  Waiting on
-  Phase 4 stabilisation upstream so we can pin a concrete
-  `RationalReal` type (or its eventual public re-export).
-- **§S7** — consumer-side schema work (`PrecisionScalar` envelope,
-  Zod schema, Python mpmath consumer).  Independent of upstream;
-  could land first, but blocked behind §S4–S6 in scheduling.
-- **§S8** — exact-rational diagnostic.  Will use the
-  `RationalReal` scalar from upstream Phase 4 directly.
+| Smoke bin | Features | Validates | Status |
+|---|---|---|---|
+| `clarabel-round4-sdp-smoke` | `clarabel-sdp` | Wishlist #1 + #2 (BlockDiagPSDConeT, dual_psd_block) | ✅ All passed |
+| `clarabel-round4-rational-smoke` | `clarabel-bigrational` | Wishlist #3 + Phase 8a (tighten_scalar, iter_diagnostics) | ✅ All passed |
+| `clarabel-phase8b-mpfr-smoke` | `clarabel-mpfr` | Phase 8b (T = MpfrFloat end-to-end) | ✅ All passed |
+
+Two architectural realities surfaced by the smoke validation:
+
+1. **`clarabel-sdp` and `clarabel-bigrational` are mutually
+   exclusive feature flags** — `bigrational + sdp` is intentionally
+   unsupported upstream.  §S9 must be split: f64 / MpfrFloat IPM
+   in one binary, then post-process via local Stern-Brocot
+   rationalisation in the same binary (avoiding the feature mutex).
+2. **`MpfrFloat` solver tolerances must be tightened** to engage
+   MPFR precision (defaults are f64-tuned ~1e-8).  Recommended
+   `tol_gap_abs/rel = 1e-30`, `tol_feas = 1e-30`,
+   `reduced_tol_* = 1e-15`.  Vertex-optimum LPs hit central-path
+   degeneracy regardless; H_n confinement problems are interior
+   and unaffected.
+
+### Workplan items still pending (after PR #459 merges)
+
+- **§S1–§S3** (~350 LOC) — `seminormal_matrices_mpfr` (port the
+  existing character-only MPFR machinery to materialise generator
+  matrices), generic `dense_la` helpers, generic `svec_pack`.
+  Independent of upstream; can land as a non-breaking refactor.
+- **§S4-MPFR / §S5-MPFR** (~950 LOC) — port `sdp_solver_clarabel.rs`
+  / `sdp_solve_canonical_t_w.rs` / `sdp_recover_canonical.rs` to
+  `T = MpfrFloat` siblings under `clarabel-mpfr`.  Smoke
+  validation cleared the path.
+- **§S7** (~250 LOC) — consumer-side `PrecisionScalar` schema,
+  Zod schema, Python mpmath consumer.  Independent of upstream
+  status.
+- **§S8** (~150 LOC) — exact-rational LP/QP diagnostic at small n
+  via `T = RationalReal`.  SDP path scoped out of §S8 per the
+  exact-SDP-feasibility audit.
+- **§S9** (~280 LOC) — dual-certificate verification: local
+  Stern-Brocot tightening + Sturm-chain PSD verification on
+  rationalised dual blocks.  Architectural blocker resolved by
+  splitting the IPM solve from the certificate verification.
 - **§T1–T5** — test plan.  Implements once §S4–S6 land.
+
+Both §S9 and §S4–S6 deserve focused implementation PRs after
+#459 merges.  §S1–S3 and §S7 can land in parallel since they're
+upstream-independent.
 
 ---
 
