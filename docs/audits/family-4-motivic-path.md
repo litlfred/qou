@@ -22,16 +22,20 @@ replaced by the motivic substrate / Habiro-Adelic chain in PR #455.
 
 ### What main already has
 
-`folio-assistant/computations/braid-registry/`:
+`folio-assistant/computations/braid-registry/` has parent-braid
+ground-state entries for every family-4 atom in the table above:
 
-- `li-6.json` — parent braid ordering `[0,1,0,1,1,0]` via exhaustive
+- `li-6.json` — parent ordering `[0,1,0,1,1,0]` via exhaustive
   ground-state search (`log_trace = −3.6339`, n_orderings_searched = 20).
 - `li-7.json` — analogous entry for ⁷Li.
+- `be-9.json` — registry entry present for ⁹Be.
+- `b-11.json` — registry entry present for ¹¹B.
+- `n-14.json` — registry entry present for ¹⁴N.
+- `f-19.json` — registry entry present for ¹⁹F.
 
-These provide a candidate ground-state braid for each lithium isotope,
-but **no `knot_id`** — the registry stops at "we found the lowest-trace
-ordering" and does not match the resulting braid against a knot-type
-table.
+Each provides a candidate ground-state braid, but **no `knot_id`** —
+the registry stops at "we found the lowest-trace ordering" and does not
+match the resulting braid against a knot-type table.
 
 ### What deprecated approach did (volume-match census)
 
@@ -67,7 +71,9 @@ six family-4 atoms.
 ## Concrete blockers (numbered, ranked)
 
 1. **q-MN convention pin** — the Plancherel-vs-Wenzl-Schur Markov-trace
-   bug surfaced in the #447 audit (`categorical-vs-fitted-q-decay-ba.md`)
+   bug surfaced in the #447 audit (sibling doc
+   `docs/audits/categorical-vs-fitted-q-decay-ba.md`, landing in
+   [PR #469](https://github.com/litlfred/qou/pull/469); not yet on `main`)
    blocks step 2 from emitting consistent values across scripts.
    Fix lands in #447 territory, not here.
 2. **Motivic-Galois endomorphism** — main has the *axiomatic* class
@@ -76,13 +82,16 @@ six family-4 atoms.
    given parent braid. This is the principal gap.
 3. **Knot-class table in `K_motivic`** — the post-#455 chain replaces
    the volume-match census with a motivic-Galois-orbit table; the table
-   covering the family-4 atoms (up to ¹⁹F, which has $A = 19$ and
-   therefore $A - 1 = 18$ braid generators per the Skein product
-   $P_N(q) = \prod_{i=0}^{A-2} \hat V_i(q)$) is not yet generated.
-   Word lengths for a ground-state braid can be larger than the
+   covering the family-4 atoms (up to ¹⁹F) is not yet generated.
+   Here the current `f-19.json` braid-registry entry has parent ordering
+   length $19$, i.e.\ a $19$-strand braid, so there are $19 - 1 = 18$
+   Artin generators per the Skein product
+   $P_N(q) = \prod_{i=0}^{A-2} \hat V_i(q)$.
+   This parent-ordering length is not the same as braid-word length:
+   word lengths for a ground-state braid can be larger than the
    generator count — up to $\binom{A}{2}$ in the worst case — so the
-   table must be sized against the longest expected word, not a fixed
-   word-length cutoff.
+   table must be sized against the longest expected word, not against
+   the strand count or a fixed word-length cutoff.
 
 ## Smallest defensible deliverable today
 
@@ -109,6 +118,8 @@ next agent picking this up has a concrete starting point.
 
 - PR #455 (motivic-perpetual-obstruction reframing, merged `7955c65`)
 - `dc5027e` (volume-match deprecation)
-- `categorical-vs-fitted-q-decay-ba.md` (companion audit, PR #447)
+- `docs/audits/categorical-vs-fitted-q-decay-ba.md` (companion audit;
+  landing in [PR #469](https://github.com/litlfred/qou/pull/469), not
+  yet on `main`)
 - `def:motivic-substrate`,
   `prop:motivic-perpetual-obstruction` (content blocks on main)
