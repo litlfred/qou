@@ -9,6 +9,7 @@ import json
 import sys
 import time
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
 
 import sympy as sp
@@ -17,6 +18,7 @@ from sympy import simplify, together
 q = sp.symbols('q', positive=True)
 
 
+@lru_cache(maxsize=None)
 def standard_young_tableaux(shape):
     n = sum(shape)
     if n == 0:
@@ -42,6 +44,7 @@ def standard_young_tableaux(shape):
     return list(fill(shape, set(), {}))
 
 
+@lru_cache(maxsize=None)
 def hoefsmit_T_i_symbolic(shape, i):
     """Full Hoefsmit seminormal σ_i over Q(q^{1/2}) with off-diagonal entries.
 
@@ -223,7 +226,7 @@ def main():
         c_simplified = []
         for ci in c_full:
             try:
-                c_simplified.append(together(simplify(ci)))
+                c_simplified.append(sp.cancel(ci))
             except Exception:
                 c_simplified.append(ci)
         z_sym = sp.S(1) / (sp.sqrt(q) + 1 / sp.sqrt(q))

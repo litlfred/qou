@@ -12,6 +12,7 @@ H_5 (7 conjugacy classes) and H_6 (11 classes).
 """
 from __future__ import annotations
 import json, sys
+from functools import lru_cache
 from pathlib import Path
 import numpy as np
 import mpmath as mp
@@ -27,8 +28,12 @@ z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
 h_mp = q - qi  # quantum amplitude h = q - q^{-1}
 
 
+@lru_cache(maxsize=None)
 def _build_seminormal_matrices_mpmath(shape):
-    """Hoefsmit seminormal σ_1, …, σ_{n-1} as mpmath dense matrices at mp.dps."""
+    """Hoefsmit seminormal σ_1, …, σ_{n-1} as mpmath dense matrices at mp.dps.
+
+    Cached on `shape`; callers must not mutate the returned matrices.
+    """
     syts, cells, contents = standard_young_tableaux(shape)
     dim = len(syts)
     if dim == 0:
