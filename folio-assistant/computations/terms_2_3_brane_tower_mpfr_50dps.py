@@ -32,28 +32,15 @@ from mpmath import mp, mpf, sqrt as mp_sqrt
 mp.dps = 50
 
 HERE = Path(__file__).parent
+import sys
+sys.path.insert(0, str(HERE))
 Q0 = HERE / "q-pinning-50-digit.witness.json"
 OUT = HERE / "terms-2-3-brane-tower-mpfr-50dps.witness.json"
 
 M_E_MEV = mpf("0.51099895")
 
 
-def Phi_q(z_val: mpf, q_inv: mpf, max_k: int = 2000, eps: mpf = mpf(10) ** -55) -> mpf:
-    """Quantum dilogarithm Φ_q(z) = Π_{k≥1} (1 - q^{-k}·z)^{-1}, mpmath @ mp.dps."""
-    if mp.fabs(z_val) >= mpf(1) / q_inv:
-        return mpf("inf")
-    product = mpf(1)
-    qi_pow = q_inv
-    for _ in range(max_k):
-        term = qi_pow * z_val
-        factor = mpf(1) - term
-        if mp.fabs(factor) < eps:
-            return mpf("inf")
-        product /= factor
-        if mp.fabs(term) < eps:
-            break
-        qi_pow *= q_inv
-    return product
+from _phi_q_util import phi_q as Phi_q  # noqa: E402  (after sys.path setup)
 
 
 def additive_wedderburn_volumes(crossings_per_gen, n_gens, q, h, w_sym, w_std, w_alt, z_mark):

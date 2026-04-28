@@ -1,7 +1,7 @@
 {
   "computation": "term6-habiro-residue-mpfr-50dps",
   "description": "Plan F \u2014 Term 6 Habiro residue tail at MPFR @ 50 dps. Re-evaluates the global Schur-Weyl symbolic sums \u03a3_{\u03bb\u22a23A} w_\u03bb(q) from schur_weyl_symbolic.py at q_0 to 50 dps via sympy.evalf(50). Replaces the prior 30-dps value inherited from habiro-residue-symbolic.witness.json.",
-  "computedAt": "2026-04-27T21:22:40.937528+00:00",
+  "computedAt": "2026-04-27T21:27:59.156076+00:00",
   "precision": "mpfr_50dps",
   "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
   "m_e_mev_50dps": "0.51099894999999995182093925905064679682254791259766",

@@ -132,27 +132,58 @@ def main() -> int:
         print(f"    Σ 1/dim_q(λ) at q_0 (50 dps) = {at_q0_mpf}")
         print(f"    Term 4 = m_e · Σ = {term4} MeV")
 
-    # Extend to n=7..9 (T, ³He at n=9 needed by unified mass table).
-    # Use sp.cancel (much faster than sp.simplify on sums of rational
-    # functions of q; per Gemini review on PR #456).
-    for n in (7, 8, 9):
-        total = sp.Integer(0)
+    # Extend to n=7..11. For n ≤ 9 use the symbolic-then-substitute
+    # path (still feasible with sp.cancel, completes in seconds). For
+    # n ≥ 10 the symbolic q-hook product blows up combinatorially
+    # (42 partitions at n=10, 56 at n=11; each needs a degree-O(n²)
+    # rational reduction). Instead we substitute q=q_0 (mpf @ 50 dps)
+    # at the per-hook level and sum mpf scalars — purely numeric, no
+    # sympy reduction needed since each 1/dim_q(λ) is already a single
+    # mpf number once q is fixed.
+    q_mpf = mpf(q_str)
+    _q_int_cache: dict = {}
+
+    def q_int_mpf(k):
+        if k in _q_int_cache:
+            return _q_int_cache[k]
+        v = mpf(0) if k == 0 else sum(q_mpf ** (k - 1 - 2 * i) for i in range(k))
+        _q_int_cache[k] = v
+        return v
+
+    def dim_q_mpf(partition):
+        n_local = sum(partition)
+        hooks = []
+        for i, rl in enumerate(partition):
+            for j in range(rl):
+                arm = rl - j - 1
+                leg = sum(1 for r2 in range(i + 1, len(partition)) if partition[r2] > j)
+                hooks.append(arm + leg + 1)
+        num = mpf(1)
+        for k in range(1, n_local + 1):
+            num *= q_int_mpf(k)
+        den = mpf(1)
+        for h in hooks:
+            den *= q_int_mpf(h)
+        return num / den
+
+    # All n ≥ 7 take the numeric-only path (substitute q=q_0 at the
+    # per-hook level and sum mpf scalars). Memoized q_int_mpf makes this
+    # ~milliseconds even for n=11 (56 partitions). Sympy reduction is
+    # avoided because for our purposes the q-rational symbolic form is
+    # not needed downstream — only the value at q_0 to 50 dps.
+    for n in (7, 8, 9, 10, 11):
+        at_q0_mpf = mpf(0)
         for lam in partitions_of(n):
-            d = q_dim_sym(lam, q_sym)
-            total += sp.cancel(sp.Integer(1) / d)
-        sym = sp.cancel(total)
-        free = list(sym.free_symbols)
-        at_q0 = sp.N(sym.subs({s: sp.Float(q_str, 60) for s in free}), 50)
-        at_q0_mpf = mpf(str(at_q0))
+            at_q0_mpf += mpf(1) / dim_q_mpf(lam)
         term4 = M_E_MEV * at_q0_mpf
         rows.append({
             "n": n,
-            "total_symbolic": str(sym),
+            "total_symbolic": "(numeric path: q substituted at per-hook level)",
             "total_at_q0_50dps": str(at_q0_mpf),
             "term4_b_pred_mev_50dps": str(term4),
             "f64_baseline": None,
         })
-        print(f"\n  === n={n} (computed inline) ===")
+        print(f"\n  === n={n} (numeric q=q_0) ===")
         print(f"    Σ 1/dim_q(λ) at q_0 (50 dps) = {at_q0_mpf}")
         print(f"    Term 4 = m_e · Σ = {term4} MeV")
 

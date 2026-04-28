@@ -42,7 +42,15 @@ import sympy as sp
 
 HERE = Path(__file__).parent
 Y_LAMBDA = HERE / "y-lambda-mpfr-witness.json"
-DUMP_BIN = HERE.parent.parent / "tools/hecke-engine/target/release/dump-block-matrices"
+# Override via QOU_DUMP_BLOCK_MATRICES env var if the binary is not at
+# the default Cargo release path (per Gemini review on PR #456).
+import os  # noqa: E402
+DUMP_BIN = Path(
+    os.environ.get(
+        "QOU_DUMP_BLOCK_MATRICES",
+        str(HERE.parent.parent / "tools/hecke-engine/target/release/dump-block-matrices"),
+    )
+)
 OUT = HERE / "atomic-tr-m-wenzl-bridge.witness.json"
 
 M_E_MEV = mpf("0.51099895")
@@ -95,18 +103,25 @@ def parse_block_matrix_dump(atom_name: str) -> dict[tuple, float]:
     }
 
 
-def load_y_lambda(n: int) -> dict[tuple, mpf]:
-    """Load y_λ(q_0) at 50 dps for partitions of n."""
+def load_y_lambda(n: int, q0: mpf | None = None) -> dict[tuple, mpf]:
+    """Load y_λ(q_0) at 50 dps for partitions of n.
+
+    `q0` is required for n=2 (witness only covers n ≥ 3). Per Gemini
+    review on PR #456: q0 is now passed in by the caller instead of
+    being hardcoded — single source of truth from main()'s
+    q-pinning-50-digit witness load.
+    """
     if n == 2:
-        # Witness only has n ≥ 3; compute n=2 in mpmath directly.
+        if q0 is None:
+            raise ValueError("q0 required for n=2 (not in y-lambda witness)")
         # Linear system: y_(2) + y_(1,1) = 1; y_(2)·q + y_(1,1)·(-q^{-1}) = z.
-        q0 = mpf("1.1099785955541805752815940796095093779667618976181")
         z = mpf(1) / (mp.sqrt(q0) + mp.sqrt(mpf(1) / q0))
         q_inv = mpf(1) / q0
         y_2 = (z + q_inv) / (q0 + q_inv)
         y_11 = mpf(1) - y_2
         return {(2,): y_2, (1, 1): y_11}
-    d = json.load(open(Y_LAMBDA))
+    with open(Y_LAMBDA) as f:
+        d = json.load(f)
     table = d["tables_by_n"][str(n)]
     return {
         tuple(w["partition"]): mpf(w["y_lambda"])
@@ -114,10 +129,10 @@ def load_y_lambda(n: int) -> dict[tuple, mpf]:
     }
 
 
-def compute_tr_m(atom: str, n: int) -> tuple[mpf, dict]:
+def compute_tr_m(atom: str, n: int, q0: mpf) -> tuple[mpf, dict]:
     """tr_M = Σ_λ y_λ · Tr(ρ_λ(T_w))."""
     traces = parse_block_matrix_dump(atom)
-    y_lambdas = load_y_lambda(n)
+    y_lambdas = load_y_lambda(n, q0=q0)
     tr_m = mpf(0)
     breakdown = []
     for lam, y in y_lambdas.items():
@@ -141,14 +156,15 @@ def main() -> int:
 
     # Local precision scope per Gemini review on PR #456.
     with mp.workdps(50):
-        q0_str = json.load(open(HERE / "q-pinning-50-digit.witness.json"))["derived_50_digit"]["q"]
+        with open(HERE / "q-pinning-50-digit.witness.json") as f:
+            q0_str = json.load(f)["derived_50_digit"]["q"]
         q0_mpf = mpf(q0_str)
         print(f"  q_0 = {q0_str}")
 
         results = []
         for atom, rho, n, historical_K in ATOMS:
             print(f"\n  === {atom} (n={n}, ρ={rho}) ===")
-            tr_m, breakdown = compute_tr_m(atom, n)
+            tr_m, breakdown = compute_tr_m(atom, n, q0=q0_mpf)
             b_term1 = M_E_MEV * rho * abs(tr_m)
             print(f"    tr_M(q_0) (mixed precision: y_λ@50dps × Tr(ρ_λ)@f64) = {tr_m}")
             print(f"    Term-1 contribution: m_e · ρ · |tr_M| = {b_term1} MeV")

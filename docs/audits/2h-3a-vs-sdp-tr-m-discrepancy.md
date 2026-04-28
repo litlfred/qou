@@ -102,7 +102,7 @@ identity's canonical input.
 The Term-1 contribution to B(²H) is `m_e · ρ · |tr_M(T_w)|`. With
 ρ = 1 (per witness) and tr_M = 0.288326 (canonical SDP value):
 
-  Term-1(²H) = 0.51100 · 1 · 0.288326 = 0.14734 MeV
+  Term-1(²H) = 0.51100 · 1 · 0.288326 = 0.14733 MeV
 
 vs B_AME(²H) = 2.22458 MeV. So Term-1 is about 6.6% of the total ²H
 binding energy — the rest comes from Terms 2-6 of the unified mass

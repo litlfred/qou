@@ -48,7 +48,6 @@ from schur_weyl_symbolic import (  # noqa: E402
     partitions_of,
 )
 
-WITNESS_30DPS = HERE / "habiro-residue-symbolic.witness.json"
 Q0 = HERE / "q-pinning-50-digit.witness.json"
 OUT = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
 

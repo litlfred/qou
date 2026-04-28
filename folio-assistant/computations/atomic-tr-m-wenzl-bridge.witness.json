@@ -1,7 +1,7 @@
 {
   "computation": "atomic-tr-m-wenzl-bridge",
   "description": "tr_M(T_w, q_0) computed via Hoefsmit + Wenzl-bridge per prop:atom-knot-mass-derivation: tr_M = \u03a3_\u03bb y_\u03bb \u00b7 Tr(\u03c1_\u03bb(T_w)). y_\u03bb at 50 dps from y-lambda-mpfr-witness.json; Tr(\u03c1_\u03bb) at f64 from dump-block-matrices Rust binary. Mixed precision: the y_\u03bb \u00d7 Tr product is at f64 precision (~15 digits). Sidesteps sympy's H_9 cost wall (>4 min vs <1 sec here). J_K writhe-match test disabled per docs/audits/markov-test-is-post-archimedean.md.",
-  "computedAt": "2026-04-27T21:22:13.732472+00:00",
+  "computedAt": "2026-04-27T21:27:46.973442+00:00",
   "precision": "mixed (y_\u03bb@50dps; Tr(\u03c1_\u03bb)@f64)",
   "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
   "results": [
