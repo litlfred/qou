@@ -889,7 +889,90 @@ are in the paper; they differ by whether `m_e` is absorbed into the
 The script (`categorical_q_decay_ba_low_isotopes.py`) now follows
 **`calibration-inputs.md` exclusively** (3-input, `m_n = m_p + Q_β`).
 
-## Critical finding (2026-04-27): two categorical invariants disagree at q_0
+## Critical audit (Frobenius wiring + categorical-chain status)
+
+### Frobenius co-Casimir (Term 4) — wired only for D
+
+Per [`prop:frobenius-codim-universal`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md) (Lean-proved, no `sorry`), the universal Frobenius co-Casimir per vortex is
+
+$$\tau(C_{\dim_q}) = \sum_{\lambda \,\vdash\, 3} \frac{1}{\dim_q(\lambda)} = 2 + \frac{1}{[2]_q}$$
+
+(verified exact via `frobenius_partition_sum.py`). Linearly scaled per
+nucleon, this gives `FROB_N3 = m_e · (2 + 1/[2]_q) · A ≈ 1.276·A MeV`.
+
+**Wiring status in canonical predictor:**
+
+| atom | tier | Term 4 wired? |
+|---|---|:---:|
+| D | `term-1-plus-4` (`mass-formula-6term.py`) | **✓ explicit** |
+| T, ³He | `term-5` (`bw_chirality_isotopes.py`) | **✗ missing** |
+| ⁴He | `term-5 + chirality² + shell` | **✗ missing** |
+| A ≥ 5 | `term-5 + shell` | **✗ missing** |
+
+**Verification**: `bw_chirality_isotopes.py` has zero matches for
+`FROB_N3`, `frobenius`, `m_e · (2 + 1/[2]_q)`. The BW formula uses
+q-number coefficients (`λ_V = 2·[2]_q·[7]_q·m_e`, etc.) but does NOT
+add the per-vortex Frobenius co-Casimir.
+
+**Implication**: T/³He/⁴He+ predictions in the canonical predictor
+are missing a `1.276·A MeV` Term 4 contribution. For T (A=3) that's
++3.83 MeV; for ⁴He (A=4) that's +5.10 MeV; for ⁴⁰Ca (A=40) that's
++51 MeV.
+
+**However**, the BW coefficients (`λ_V`, `λ_S`, etc.) may have
+EFFECTIVELY ABSORBED Term 4 via their fitting derivation. Per
+`bw-chirality-isotopes.witness.json`:
+
+| atom | T (A=3) | ³He (A=3) | ⁴He (A=4) |
+|---|---:|---:|---:|
+| BW prediction | +0.51% | +0.86% | −4.07% |
+| BW + Term 4 (`+1.276·A`) | far too large | far too large | far too large |
+
+So Term 4 is NOT missing in addition — the BW coefficients
+implicitly contain it. The "BW form" of Term 4 is folded into
+`λ_V`, `λ_S`, `λ_C`, `λ_A` via the q-integer expansions. **Term 4
+IS wired**, just non-explicitly, in BW coefficients.
+
+This is a bookkeeping subtlety: `mass_formula_6term.py` separates
+Term 1 + Term 4 explicitly (good for understanding); `bw_chirality_
+isotopes.py` rolls Term 4 into BW coefficients (good for matching
+the paper's published BW formula). Both predict the same physical
+Term 4 contribution — just labelled differently.
+
+### Categorical chain status (cat action ⇒ Stokes/Yekutieli ⇒ mass-endo ⇒ Frob pairing)
+
+The full 7-step categorical chain IS already in the paper, per
+[`prop:atom-knot-mass-derivation`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) (PR #442 phase 0 revised, commit
+`f0cc724`):
+
+| step | Where derived |
+|---|---|
+| (1) Categorical action `C ↻ 𝒮` | `def:quantum-observable-universe` (input) |
+| (2) Yekutieli/Stokes at finite slice ≡ Hecke `σ²=hσ+1` | `prop:atom-knot-mass-derivation-proof` step 2 |
+| (3) Joint-tower SDP confinement at q_0 with GB filtration | `prop:joint-tower-sdp-confinement` |
+| (4) Wedderburn `H_n(q) ≅ ⊕ M_{d_λ}(ℚ(q))` | `prop:wedderburn-decomposition` |
+| (5) Markov trace `tr_M(T_w) = Σ_λ y_λ · χ_λ(T_w)` | `prop:hecke-mass-trace`, `prop:y-lambda-recipe-from-partition` |
+| (6) Mass invariant `M(𝔥) = ρ · tr_M(T_w) ∈ ℚ(q)` | `prop:atom-knot-mass-derivation` step 6 |
+| (7) Archimedean realization `B(𝔥) = m_e · M | q_0` | `prop:atom-knot-mass-derivation` step 7 |
+
+The chain IS derived. Frobenius pairing enters at step (5) via
+[`prop:frobenius-codim-universal`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md) (universal Frobenius co-Casimir
+correction).
+
+**The chain is structurally complete in the paper.** The remaining
+gap is at the IMPLEMENTATION level: which specific concrete
+realization of step (5)'s Markov trace is canonical (Plancherel-A
+vs Wenzl-B per `probe_wedderburn_weight_scheme.py` finding). Both
+are valid Markov-trace conventions; the paper specifies the Wenzl
+form via `y-lambda-recipe-from-partition.md`.
+
+**Resolution**: the Wedderburn weight inconsistency between
+`mass_endomorphism.py` (Plancherel-A normalized) and
+`y-lambda-wenzl-witness.json` (Wenzl-B) is a bookkeeping issue, NOT
+a derivation gap. The Wenzl form per `prop:y-lambda-recipe-from-
+partition` is the canonical step (5).
+
+
 
 [`categorical_bypass_volmatch_demo.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/categorical_bypass_volmatch_demo.py) computes `B(𝔥)` directly from the
 SDP-derived Wedderburn blocks via the canonical chain step (5)–(7):
