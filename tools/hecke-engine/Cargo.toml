@@ -45,6 +45,12 @@ name = "clarabel-phase8b-mpfr-smoke"
 path = "src/bin/clarabel_phase8b_mpfr_smoke.rs"
 required-features = ["clarabel-mpfr"]
 
+# §S8 — exact-rational LP at QOU's canonical q_0
+[[bin]]
+name = "clarabel-h3-exact-lp"
+path = "src/bin/clarabel_h3_exact_lp.rs"
+required-features = ["clarabel-bigrational"]
+
 # Per-Wedderburn-block matrix dump for sign-convention audits
 [[bin]]
 name = "dump-block-matrices"
