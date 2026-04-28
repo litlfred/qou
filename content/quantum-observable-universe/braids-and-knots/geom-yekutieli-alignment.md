@@ -112,11 +112,14 @@ $1 - h^2 = 4 - [3]_q$ and $h[2]_q = q^2 - q^{-2}$.
 
 **Connection to transcendence.**
 The non-vanishing Yekutieli obstruction classes $\kappa_n \neq 0$
-at every level of the brane tower
-([Yekutieli lifting](#prop:yekutieli-lifting)) ensure that the
-evaluation $\mathrm{Geom}(K)$ for distinct hyperbolic knots
-produces algebraically independent values.  A polynomial relation
-among the $\mathrm{Vol}(K_i)/\hbar_q^2$ would force the tower
-to collapse at finite height, contradicting $\kappa_n \neq 0$
+at every level of the brane tower — the content of
+[motivic perpetual obstruction](#lem:motivic-perpetual-obstruction)
+applied to the substrate's motivic Galois character at every
+finite place — ensure that the evaluation $\mathrm{Geom}(K)$ for
+distinct hyperbolic knots produces algebraically independent
+values. A polynomial relation among the
+$\mathrm{Vol}(K_i)/\hbar_q^2$ would force the tower to collapse
+at finite height, contradicting place-by-place non-vanishing of
+the motivic Galois character
 ([hyperbolic volume transcendence](#conj:hyperbolic-volume-transcendence)).
 $\square$

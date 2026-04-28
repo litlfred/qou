@@ -21,10 +21,17 @@ that "close up" after finitely many levels.
 But the cosimplicial structure theorem guarantees that the tower is
 genuinely infinite: the obstruction classes $\kappa_n$ never
 simultaneously vanish, and the crossed groupoid does not degenerate.
-Thus the algebraic independence of the volumes is the
-*transcendence shadow* of the non-vanishing Yekutieli obstructions
---- the tower never terminates, so no polynomial envelope can hold
-among the volumes it produces.
+This is precisely
+[motivic perpetual obstruction](#lem:motivic-perpetual-obstruction):
+the motivic Galois character of the substrate is non-trivial at
+every finite place $p \nmid \chi(A)$, so $\kappa_n$ — which is the
+HKR image of that character at level $n$
+([Hochschild–Kummer connection](#rem:hochschild-kummer-connection)) —
+cannot vanish at the corresponding cyclotomic levels. Thus the
+algebraic independence of the volumes is the *transcendence shadow*
+of the non-vanishing motivic Galois character — the tower never
+terminates, so no polynomial envelope can hold among the volumes
+it produces.
 
 Making this heuristic rigorous requires controlling the arithmetic of
 the quantum dilogarithm at every tower level.  This would likely need
