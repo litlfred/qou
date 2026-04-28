@@ -194,41 +194,16 @@ def AlgElement.ofTerms (terms : List (Monomial G × k)) :
   support_spec := by
     -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
     intro m hm
-    -- m is not the first projection of any term.  Hence every filtered
-    -- term has snd = 0 (vacuously, since the filter is empty).
-    -- We show the underlying list is `[]` by membership.
-    have hfilter : ∀ p ∈ terms, ¬ p.1 = m := by
-      intro p hp hp1
-      apply hm
-      simp only [List.mem_toFinset, List.mem_map]
-      exact ⟨p, hp, hp1⟩
-    -- Hence the filter contains no elements, so its sum is 0.
-    suffices h : ((terms.filter (fun p => p.1 = m)).map Prod.snd).sum = 0 by
-      exact h
-    have : terms.filter (fun p => p.1 = m) = [] := by
-      induction terms with
-      | nil => rfl
-      | cons p ps ih =>
-        have hp : ¬ p.1 = m := hfilter p (List.mem_cons_self _ _)
-        have hps : ∀ q ∈ ps, ¬ q.1 = m := fun q hq =>
-          hfilter q (List.mem_cons_of_mem _ hq)
-        rw [List.filter_cons]
-        simp [hp, ih hps]
-    rw [this]
-    simp
+    have hfilter : ∀ p ∈ terms, p.1 ≠ m := by
+      simpa [List.mem_toFinset, List.mem_map] using hm
+    simp [List.filter_eq_nil_iff.mpr hfilter]
 
 /-- `ofTerms` with nonempty leading term has nonempty support. -/
 theorem AlgElement.ofTerms_support_nonempty
     {terms : List (Monomial G × k)} (h : terms ≠ []) :
     (AlgElement.ofTerms terms).support.Nonempty := by
   -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-  -- support = (terms.map Prod.fst).toFinset; pick the first term.
-  unfold AlgElement.ofTerms
-  match h_eq : terms with
-  | [] => exact absurd h_eq h
-  | p :: ps =>
-    refine ⟨p.1, ?_⟩
-    simp [List.mem_toFinset]
+  simp [AlgElement.ofTerms, List.toFinset_nonempty_iff, h]
 
 /-! ## §8  Generic Deg-Lex Order Construction -/
 
