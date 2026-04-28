@@ -1,0 +1,47 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T01:37:44.638792+00:00",
+  "commitSha": "77d2db8b247d9347d1f6a1ceaa5e9aa12c232f17",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "probe-proton-with-wenzl-weights",
+  "scriptFile": "probe_proton_with_wenzl_weights.py",
+  "scriptHash": "790254631b57",
+  "scriptCommitSha": "",
+  "description": "Test if switching mass_endomorphism's Plancherel weights (dim_q²/[n]_q!) to Wenzl y_λ from y-lambda-wenzl-witness closes the +1.84% m_p/m_e residual. Both at 50 dps.",
+  "contentBlock": "prop:y-lambda-recipe-from-partition",
+  "parameters": {
+    "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
+    "m_e_MeV": 0.51099895,
+    "m_p_AME_MeV": 938.27208816,
+    "m_n_AME_MeV": 939.56542052,
+    "mpmath_dps": 50
+  },
+  "data": {
+    "plancherel_results": {
+      "e_total_50dps": "570.960847846481560319066048223",
+      "p_total_50dps": "852842.676039916415086189359635",
+      "n_total_50dps": "386055.672432893957157113212991",
+      "m_p_over_m_e_50dps": "1493.69729860921478406572299437",
+      "m_n_over_m_e_50dps": "676.150867242469107592973497411",
+      "m_p_over_m_e_err_pct": -18.650702622522616,
+      "m_n_over_m_e_err_pct": -63.226362352579116
+    },
+    "wenzl_results": {
+      "e_total_50dps": "6736.56942323323953180456791682",
+      "p_total_50dps": "33135439.5679923839264594407077",
+      "n_total_50dps": "480573.925983864865353750457267",
+      "m_p_over_m_e_50dps": "4918.74090300533359487869692334",
+      "m_n_over_m_e_50dps": "71.3380796353779378337682316077",
+      "m_p_over_m_e_err_pct": 167.88300200710697,
+      "m_n_over_m_e_err_pct": -96.12015480853698
+    },
+    "plancherel_minus_wenzl_in_me_units": {
+      "e_total_diff": "-6165.608575",
+      "p_total_diff": "-32282596.89",
+      "n_total_diff": "-94518.25355"
+    }
+  }
+}
