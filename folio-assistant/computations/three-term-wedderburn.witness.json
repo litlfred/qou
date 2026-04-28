@@ -1,7 +1,7 @@
 {
   "computation": "three-term-wedderburn",
   "description": "Canonical 3-term Wedderburn-decomposition mass formula. V_3term(g) = w_sym\u00b7lam_sym + w_alt\u00b7lam_alt + w_std\u00b7V_std with Wedderburn weights w_sym=w_alt=q^2/D, w_std=(q^2+1)^2/D, D=q^4+4q^2+1. The alt channel restores the chirality contribution (prop:chirality-dual-space-derivation) that the previous 2-term symmetrised blend dropped. No fitted mixing parameter, no n->p transition calibration constant, no numerical root-find anywhere in the path. Eliminates empirical constants #1 and #5 of docs/canonicalization-review.md \u00a73.1.",
-  "timestamp": "2026-04-27T17:17:12.238868+00:00",
+  "computedAt": "2026-04-28T02:15:52.977646+00:00",
   "q_0": 1.1099785955541805,
   "precision_dps": 50,
   "wedderburn_weights": {
