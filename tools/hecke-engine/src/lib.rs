@@ -45,6 +45,8 @@ pub mod rational_round;
 // Default builds use only the bisection-based α* verifier (sdp_verifier),
 // which works at any d without an external SDP solver.
 #[cfg(feature = "clarabel-sdp")]
+pub mod sdp_clarabel_mpfr_prep;
+#[cfg(feature = "clarabel-sdp")]
 pub mod sdp_dual_certificate;
 #[cfg(feature = "clarabel-sdp")]
 pub mod sdp_recover_canonical;
