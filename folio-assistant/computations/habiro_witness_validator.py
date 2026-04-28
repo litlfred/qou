@@ -1,0 +1,177 @@
+#!/usr/bin/env python3
+"""
+Habiro divisibility validator — `tail_in_ideal` axiom witness.
+
+The Lean class `QOU.BraidKnot.HabiroCompletion`
+(content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.lean)
+records the Habiro-ideal property as
+
+    ∀ N : ℕ,
+      qPochhammerPoly N ∣
+        (trace - ∑ m ∈ Finset.range N, coeff m · qPochhammerPoly m)
+
+where `qPochhammerPoly N = ∏_{k=1..N} (1 − u^k) ∈ ℤ[u]`.
+
+This script consumes `habiro-coefficients-atomic.witness.json`
+(produced by `habiro_coefficients_atomic.py`), reconstructs each
+truncation residual as a `sympy.Poly` over ℤ[u], and certifies
+divisibility by `(u;u)_N` for every atom and every truncation
+order N up to the recorded coefficient list length.
+
+The output witness `habiro-tail-in-ideal-validation.witness.json`
+records, per atom and per N:
+  - `divisible` — whether `(u;u)_N` exactly divides the residual,
+  - `residual_deg`, `divisor_deg`, `quotient_deg` — for sanity,
+  - `quotient_norm` — sup-norm of the quotient coefficients (sanity).
+
+A green run of this script is direct empirical evidence for the
+`tail_in_ideal` axiom on the existing Habiro coefficients.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+import sympy as sp
+from sympy import Integer, Symbol
+
+
+HERE = Path(__file__).parent
+INPUT_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
+OUTPUT_WITNESS = HERE / "habiro-tail-in-ideal-validation.witness.json"
+
+
+def q_pochhammer_poly(N: int, u: Symbol) -> sp.Poly:
+    """`(u;u)_N = ∏_{k=1..N} (1 − u^k)` as a sympy Poly over ℤ[u]."""
+    expr = Integer(1)
+    for k in range(1, N + 1):
+        expr *= (1 - u ** k)
+    return sp.Poly(sp.expand(expr), u, domain="ZZ")
+
+
+def parse_poly(s: str, u: Symbol) -> sp.Poly:
+    """Parse a witness-format polynomial string to `sympy.Poly` over ℤ[u]."""
+    expr = sp.sympify(s, locals={"u": u})
+    return sp.Poly(sp.expand(expr), u, domain="ZZ")
+
+
+def validate_atom(atom_label: str, atom_data: dict, u: Symbol) -> dict:
+    """Reconstruct residuals and certify divisibility for one atom."""
+    p_u = parse_poly(atom_data["p_in_u"], u)
+    coeff_list = atom_data["habiro_coefficients"]
+    coeffs = [parse_poly(c["a_m"], u) for c in coeff_list]
+
+    checks: list[dict] = []
+    overall_pass = True
+
+    for N in range(1, len(coeffs) + 1):
+        partial_sum = sp.Poly(Integer(0), u, domain="ZZ")
+        for m in range(N):
+            partial_sum = partial_sum + coeffs[m] * q_pochhammer_poly(m, u)
+        residual = p_u - partial_sum
+        divisor = q_pochhammer_poly(N, u)
+
+        try:
+            quotient, remainder = sp.div(residual, divisor, u, domain="ZZ")
+            divisible = remainder.is_zero
+        except sp.PolynomialError as exc:
+            quotient, remainder = None, None
+            divisible = False
+            checks.append({
+                "N": N,
+                "divisible": False,
+                "error": str(exc),
+            })
+            overall_pass = False
+            continue
+
+        # Sanity stats
+        residual_deg = sp.Poly(residual, u, domain="ZZ").degree() if not residual.is_zero else -1
+        divisor_deg = divisor.degree()
+        quotient_deg = quotient.degree() if quotient is not None and not quotient.is_zero else -1
+        if quotient is not None:
+            qcoeffs = quotient.all_coeffs()
+            quotient_norm = max((abs(int(c)) for c in qcoeffs), default=0)
+        else:
+            quotient_norm = None
+
+        checks.append({
+            "N": N,
+            "divisible": bool(divisible),
+            "residual_deg": int(residual_deg),
+            "divisor_deg": int(divisor_deg),
+            "quotient_deg": int(quotient_deg),
+            "quotient_norm": int(quotient_norm) if quotient_norm is not None else None,
+        })
+        if not divisible:
+            overall_pass = False
+
+    return {
+        "atom": atom_label,
+        "deg_p_u": atom_data.get("deg_p_u"),
+        "n_coefficients": len(coeffs),
+        "all_pass": overall_pass,
+        "checks": checks,
+    }
+
+
+def main() -> int:
+    if not INPUT_WITNESS.exists():
+        print(f"ERROR: input witness not found at {INPUT_WITNESS}", file=sys.stderr)
+        return 1
+
+    with INPUT_WITNESS.open() as f:
+        input_data = json.load(f)
+
+    u = sp.symbols("u")
+    per_atom_results: list[dict] = []
+    overall_pass = True
+
+    for atom_label, atom_data in input_data["results"].items():
+        atom_result = validate_atom(atom_label, atom_data, u)
+        per_atom_results.append(atom_result)
+        overall_pass = overall_pass and atom_result["all_pass"]
+
+    output = {
+        "computation": "habiro-tail-in-ideal-validation",
+        "description": (
+            "Certifies the Lean axiom HabiroCompletion.tail_in_ideal "
+            "on the witnesses produced by habiro_coefficients_atomic.py: "
+            "for every atom and every truncation order N, the residual "
+            "p(u) − Σ_{m<N} a_m(u) · (u;u)_m is exactly divisible by "
+            "(u;u)_N in ℤ[u]."
+        ),
+        "reference_blocks": [
+            "prop:full-pole-structure-mass-trace",
+            "def:habiro-ring",
+        ],
+        "lean_axiom": "qou:QOU.BraidKnot.HabiroCompletion.tail_in_ideal",
+        "input_witness": INPUT_WITNESS.name,
+        "computedAt": datetime.now(timezone.utc).isoformat(),
+        "engine": "sympy.div over ZZ[u]",
+        "overall_pass": overall_pass,
+        "results": per_atom_results,
+    }
+
+    with OUTPUT_WITNESS.open("w") as f:
+        json.dump(output, f, indent=2)
+        f.write("\n")
+
+    # Console summary
+    status = "PASS" if overall_pass else "FAIL"
+    print(f"habiro_witness_validator: {status}")
+    for r in per_atom_results:
+        atom = r["atom"]
+        n_checks = len(r["checks"])
+        n_passed = sum(1 for c in r["checks"] if c.get("divisible"))
+        print(f"  {atom:>24}  {n_passed}/{n_checks} divisibility checks pass")
+
+    print(f"Wrote {OUTPUT_WITNESS}")
+    return 0 if overall_pass else 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())
