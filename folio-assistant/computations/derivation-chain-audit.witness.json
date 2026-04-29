@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T20:36:14.578452+00:00",
-  "commitSha": "fb30e8e139c53e10010f477cf42908f12b62059b",
+  "computedAt": "2026-04-29T20:44:09.669644+00:00",
+  "commitSha": "13c5217783a2e13320b911ebb3b9f8059ed36360",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -390,7 +390,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
-  "scriptCommitSha": "c9a1b38138faac4877b1ff9215f1213f748ef9c5",
+  "scriptCommitSha": "542ba2a1f71f1580740a15f97c5a62a83f5ec101",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "data": {
     "chain_results": [
@@ -1260,6 +1260,7 @@
         "atomic-chirality-residue.witness.json",
         "atomic-tr-m-mpfr-50dps.witness.json",
         "atomic-tr-m-wenzl-bridge.witness.json",
+        "baryon-product-from-alt.witness.json",
         "basis-knot-tables.witness.json",
         "benzene-resonance.witness.json",
         "beta-decay-energy-scale.witness.json",
@@ -1413,6 +1414,7 @@
         "isotope-mass-structural-y-lambda.witness.json",
         "isotope-mass-table.witness.json",
         "iterative-tower-unified-mass.witness.json",
+        "jet-gb-pl-correspondence.witness.json",
         "jet-knot-invariants.witness.json",
         "jet-level-1-and-residual-search.witness.json",
         "jet-level-geometric-series.witness.json",
@@ -1465,6 +1467,7 @@
         "meson-nucleon-nf.witness.json",
         "methodology-deprecation.witness.json",
         "misdp-cross-channel.witness.json",
+        "mobius-limit-from-thimble.witness.json",
         "molecular-binding-level-k.witness.json",
         "molecular-frobenius-lp.witness.json",
         "molecular-trefoil-scan.witness.json",
@@ -1579,6 +1582,7 @@
         "spectral-sequence-unified-h3.witness.json",
         "std-matrix-trace-closed-form.witness.json",
         "strict-3cal-unified-mass.witness.json",
+        "sw-period-thimble-equivalence.witness.json",
         "sym-alt-loo-validation.witness.json",
         "sym-alt-mirror-probe.witness.json",
         "syt-cell-jm-tower.witness.json",
