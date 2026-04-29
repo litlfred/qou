@@ -167,11 +167,21 @@ noncomputable def HeckeRep.halfBorromeanConjMat (ρ : HeckeRep n d)
     partition (n) of n. -/
 noncomputable def trivRep (n : ℕ) : HeckeRep n 1 where
   gen _ := q_from_t • 1
-  -- Ref: [iwahori1964]; pending Mathlib drift in the
-  -- `(c • 1) * (c • 1) = (c*c) • 1` rewrite for matrices.
-  hecke_rel _ := by sorry
-  braid_adj _ _ _ := by sorry
-  braid_far _ _ _ := by sorry
+  -- Hecke relation reduces to q² = HA·q + 1 in R_t.
+  -- Algebraic identity: HA·q + 1 = (q − q⁻¹)·q + 1 = q² − 1 + 1 = q².
+  hecke_rel _ := by
+    show (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t))
+        * (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t))
+      = HA_t • (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t)) + 1
+    rw [smul_mul_smul_comm, Matrix.one_mul, ← smul_assoc]
+    -- Reduce to (q_from_t * q_from_t) • 1 = (HA_t * q_from_t) • 1 + 1.
+    -- The ring identity: q² = HA·q + 1 with q · q⁻¹ = 1 in R_t.
+    -- Closing this requires the Laurent identity q_from_t·q_inv_from_t = 1
+    -- (LaurentPolynomial.T_add) plus matrix-smul + identity-matrix lemmas.
+    sorry
+  -- braid_adj and braid_far close by reflexivity since `gen` is constant.
+  braid_adj _ _ _ := rfl
+  braid_far _ _ _ := rfl
 
 /-- The sign (alternating) representation of H_n(q):
     every generator σ_i maps to `−q⁻¹ · I` (scalar matrix).
@@ -180,10 +190,16 @@ noncomputable def trivRep (n : ℕ) : HeckeRep n 1 where
     partition (1, 1, …, 1) of n. -/
 noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
   gen _ := (-q_inv_from_t) • 1
-  -- Ref: [iwahori1964]; same as `trivRep`.
-  hecke_rel _ := by sorry
-  braid_adj _ _ _ := by sorry
-  braid_far _ _ _ := by sorry
+  -- Hecke relation: (−q⁻¹)² = q⁻² = HA·(−q⁻¹) + 1
+  --   = −HA·q⁻¹ + 1 = −(q − q⁻¹)·q⁻¹ + 1 = −1 + q⁻² + 1 = q⁻². ✓
+  hecke_rel _ := by
+    show ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t))
+        * ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t))
+      = HA_t • ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t)) + 1
+    rw [smul_mul_smul_comm, Matrix.one_mul, ← smul_assoc]
+    sorry  -- same Laurent + matrix-smul scaffold as trivRep
+  braid_adj _ _ _ := rfl
+  braid_far _ _ _ := rfl
 
 /-! ## §6  Transfer matrix commutativity -/
 
