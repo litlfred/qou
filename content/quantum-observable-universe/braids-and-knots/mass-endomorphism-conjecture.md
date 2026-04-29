@@ -209,23 +209,34 @@ closes the gap:*
    *gives* $B(D) \approx +1.74 \mathrm{MeV}$ *(error* $-22\%$*) but
    fails for* $T$ *(deeper filtration* $k_{\max}=9$ *gives* $B(T) \approx 1449 \mathrm{MeV}$, *grossly off).*
 
-2. *A "z-Habiro" completion — analogous to the* $q$*-Habiro one
-   above but in the* $z$*-variable — is conjecturally what would
-   regularize* $\Phi_q$ *at* $|z|=1$. *The construction would replace
-   the analytic product with a cyclotomic series in* $z$ *whose
-   evaluation at any specific* $|z|<\infty$ *is finite. This
-   construction is OPEN; it would require identifying a cyclotomic
-   denominator structure in* $z$ *parallel to the* $(q; q)_n$ *ideal
-   in* $q$.*
+2. *The [$z$-Habiro completion](#def:z-habiro-ring) — analogous to the
+   $q$-Habiro one above but in the $z$-variable. The cyclotomic
+   denominator structure in $z$ parallel to $(q; q)_n$ in $q$ is*
+
+   $$
+     P_n(q, z) \;=\; \prod_{k=1}^{n} \bigl(1 - q^{-k} z\bigr)
+     \;=\; (z q^{-1};\, q^{-1})_n,
+   $$
+
+   *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The
+   completion $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z = \varprojlim_n
+   \mathbb{Z}[q^{\pm 1}][z] / (P_n(q, z))$ has cyclotomic projections
+   $\pi_n^{(z)}$ that act as structural truncations at depth $n$,
+   replacing Yekutieli's ad-hoc cutoff with a quotient by a
+   structural ideal. The* [conjecture that the brane tower lives in
+   this ring](#conj:brane-tower-z-habiro) *— with a canonically
+   determined level-selection rule $n_\star(\mathfrak{H})$ derivable
+   from substrate data — is the structural form of the open problem.*
 
 *Until either (1) extended uniformly across atoms (which requires
-understanding why Yekutieli depth differs by* $A$*) or (2) the* $z$*-
-Habiro completion is constructed, the brane tower contribution to the
-multi-term mass formula is not computable in closed form for*
-$|\hat{V}|\approx 1$. *Empirically the descended Markov trace plus
-Frobenius co-Casimir alone reproduces the binding within* $\sim 30\%$
-*for low isotopes; closing the residual to AME requires the brane
-tower in some regularized form.*
+understanding why Yekutieli depth differs by* $A$*) or (2) the
+[brane-tower-in-$z$-Habiro conjecture](#conj:brane-tower-z-habiro)
+is established with an explicit $n_\star$ rule, the brane tower
+contribution to the multi-term mass formula is not computable in closed
+form for* $|\hat{V}|\approx 1$. *Empirically the descended Markov
+trace plus Frobenius co-Casimir alone reproduces the binding within*
+$\sim 30\%$ *for low isotopes; closing the residual to AME requires the
+brane tower in some regularized form.*
 
 ## Descended vs transient mass (computed)
 
