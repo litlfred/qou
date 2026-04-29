@@ -61,8 +61,8 @@ parameterizations:
 The map $g_i := q \, \sigma_i$ realises an algebra isomorphism with
 $Q = q^2$, and the Markov parameters are related by
 $z_{\mathrm{GL}} = q \cdot z$.  This is the affine convention
-shift; my $z$ does NOT correspond to the same Wenzl level $r$ as
-the substitution $q_W \mapsto q_{\mathrm{my}}$ would suggest
+shift; the $\sigma$-convention $z$ does NOT correspond to the same
+Wenzl level $r$ as the substitution $q_W \mapsto q$ would suggest
 ([explicit $\alpha_k$ at $H_3$](#prop:explicit-alpha-k-h3); 10
 candidates in `schur_element_identify.py`).
 
@@ -78,8 +78,8 @@ $d=1$ case)], the type-A Markov-trace family is 1-dimensional,
 parameterised by $z$.
 
 The convention isomorphism $g = q\sigma$ transports $\mathrm{tr}_M$
-on $\sigma$-Hecke (with my $z$) to $\mathrm{tr}_{\mathrm{GL}}$ on
-$g$-Hecke (with $z_{\mathrm{GL}} = q z$).  Both traces have the
+on $\sigma$-Hecke (with the $\sigma$-convention $z$) to
+$\mathrm{tr}_{\mathrm{GL}}$ on $g$-Hecke (with $z_{\mathrm{GL}} = q z$).  Both traces have the
 same expansion $\mathrm{tr} = \sum_\lambda y_\lambda \chi_\lambda$
 for any choice of irreducible character basis (which is intrinsic
 to the algebra, hence convention-independent).  By uniqueness, the
@@ -115,30 +115,30 @@ identity exactly.
 
 ## Significance
 
-This **closes** the long-standing puzzle of the convention
-mismatch between this paper's symmetric Hecke convention and the
-standard Wenzl-Orellana literature formulas.  The bridge is:
+This resolves the convention mismatch between this paper's
+symmetric Hecke convention and the standard Wenzl-Orellana
+literature formulas.  The bridge is:
 
 1. Substitute $Q = q^2$ (not $Q = q$).
 2. Substitute $z_{\mathrm{GL}} = q \cdot z$ (not $z_{\mathrm{GL}} = z$).
 3. Apply Wenzl's $s_{\lambda, r}(Q)$ formula at the resulting $r$.
 
-The earlier 10-candidate harness
-([`schur_element_identify.py`](#)) failed because it tested
-$Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$ — missing the
-required factor of $q$ in the Markov-parameter shift.
+A 10-candidate identification harness without the factor of $q$ in
+the Markov-parameter shift
+([`schur_element_identify.py`](#)) fails to recover the closed
+form, since it tests $Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$
+— missing the required factor of $q$.
 
 **Implications**:
 
-- $y_\lambda$ at every $n$ now has a closed q-rational form in
+- $y_\lambda$ at every $n$ has a closed q-rational form in
   $\mathbb{Q}(q^{1/2})$ — no Rust kernel or PSLQ needed for
-  symbolic extraction.  Just apply the Schur principal
-  specialization formula at $Q = q^2$ with $r$ from the bridge
-  equation.
+  symbolic extraction.  Apply the Schur principal-specialization
+  formula at $Q = q^2$ with $r$ from the bridge equation.
 
-- The $y_\lambda$ values for $n = 5, \ldots, 12$ (otherwise only available
-  numerically via MPFR witness) can now be derived symbolically
-  by sympy's principal-specialization implementation — orders of
+- The $y_\lambda$ values for $n = 5, \ldots, 12$ (otherwise only
+  available numerically via MPFR witness) derive symbolically via
+  sympy's principal-specialization implementation — orders of
   magnitude faster than the linear-system solve.
 
 - The depth-stratum decomposition Σ_{depth(λ)=k} $y_\lambda$ is
