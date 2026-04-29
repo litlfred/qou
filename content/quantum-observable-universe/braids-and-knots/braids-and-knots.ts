@@ -357,6 +357,8 @@ export default chapter({
         "algebraic-quantum-volume",
         "habiro-ring",
         "habiro-expansion-atomic",
+        "z-habiro-ring",
+        "brane-tower-z-habiro",
         "algebraic-quantum-volume-specialization",
         "archimedean-realization-functor",
         "vol-through-tau",

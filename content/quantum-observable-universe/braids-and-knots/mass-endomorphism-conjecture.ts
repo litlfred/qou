@@ -7,6 +7,8 @@ export default conjecture({
     "prop:hecke-mass-trace",
     "prop:categorical-mass-markov",
     "def:habiro-ring",
+    "def:z-habiro-ring",
+    "conj:brane-tower-z-habiro",
     "def:motivic-substrate",
     "def:archimedean-realization-functor",
     "thm:topological-mass",
