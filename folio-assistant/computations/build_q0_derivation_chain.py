@@ -56,24 +56,41 @@ OUTPUT = HERE / "q0-derivation-skeleton.derivation.json"
 def build() -> DerivationChain:
     steps: list[DerivationStep] = []
 
-    # 1 — Substrate parameter as the unknown
+    # 1 — Substrate parameter as the unknown (manuscript-cited)
+    # Per DERIVATION-CHAIN-METHODOLOGY.md, AXIOM is reserved for the
+    # seven FirstPrinciple entrypoints.  The substrate parameter
+    # itself is a manuscript axiom/definition; mark as SCRIPT_CITED
+    # with citation pointing at the def-block + q_parameter.py.
     steps.append(DerivationStep(
         name="q_0 := unique substrate parameter",
         operation=(
-            "By `def:substrate-parameter`, the QOU framework axiomatises "
-            "a single real parameter q_0 ∈ ℝ_{>1} characterising the "
-            "Hecke energy scale (q − q^{-1}).  Empirically q_0 ≈ "
-            "1.10997855... matches CODATA observables; the framework's "
-            "claim of being **derivative** rather than empirical "
-            "requires closing q_0 via a first-principles derivation."
+            "By `def:substrate-parameter`, the QOU manuscript "
+            "introduces a single real parameter q_0 ∈ ℝ_{>1} "
+            "characterising the Hecke energy scale (q − q^{-1}).  "
+            "Empirically q_0 ≈ 1.10997855... matches CODATA "
+            "observables; the framework's claim of being "
+            "**derivative** rather than empirical requires closing "
+            "q_0 via a first-principles derivation."
         ),
         inputs=[FirstPrinciple.HECKE_ENERGY.value],
         output_name="q_0_axiom",
         output_value="q_0 ∈ ℝ_{>1} — substrate parameter",
-        trust_basis=TrustBasis.AXIOM,
+        trust_basis=TrustBasis.SCRIPT_CITED,
         lean_ref="qou:STUB:SubstrateParameter",
         citation="manuscript:§Substrate-axiom",
         jet_order=0,
+        notes=(
+            "script: folio-assistant/computations/q_parameter.py — "
+            "ships the canonical numeric value of q_0 used by every "
+            "downstream chain.  This step is SCRIPT_CITED because "
+            "AXIOM is reserved for the seven FirstPrinciple "
+            "entrypoints (per DERIVATION-CHAIN-METHODOLOGY.md); "
+            "extending FirstPrinciple to include `SubstrateParameter` "
+            "is a candidate Lean-side refinement that would let this "
+            "step become AXIOM, but the q_0 numerical value would "
+            "still need to be sourced from the substrate definition "
+            "(currently empirical-fitted)."
+        ),
     ))
 
     # 2 — Path A: from α-FSC via PSLQ
@@ -96,7 +113,7 @@ def build() -> DerivationChain:
         citation="manuscript:§alpha-em-pslq",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/alpha_em_pslq_uniqueness.py "
+            "script: folio-assistant/computations/alpha_em_pslq_uniqueness_2000dps.py "
             "(2000 dps PSLQ search).  Currently SCRIPT_CITED — no "
             "stable rational relation found at 2000 dps within "
             "norm-bounded candidates.  Closing this step requires "
@@ -165,7 +182,7 @@ def build() -> DerivationChain:
         name="q_0 numerical value (empirical fit)",
         operation=(
             "Until any of paths A/B/C closes, the canonical q_0 value "
-            "is the empirical fit q_0 ≈ 1.1099785955541805 from "
+            f"is the empirical fit q_0 ≈ {Q_0} from "
             "CODATA-bounded observables (`q_parameter.py`)."
         ),
         inputs=["path_A_alpha", "path_B_mp_me", "path_C_topology"],

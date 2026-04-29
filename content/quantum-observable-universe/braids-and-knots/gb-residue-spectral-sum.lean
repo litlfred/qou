@@ -137,19 +137,35 @@ noncomputable def computeResidueAtRoot
     (_trace : ℝ → ℝ) (_ℓ : ℕ) (_ζ : RootOfUnity) (_q : ℝ) : ℝ :=
   0  -- placeholder; full def needs Mathlib residue API
 
+/-- Canonical trace whose residue is represented by the opaque
+    `residueAtRoot`.  Per the analytic intent, the residue at
+    level `ℓ` is computed using the graded Markov trace on
+    `J^ℓ / J^{ℓ+1}`.  Currently `noncomputable opaque` like
+    `gradedMarkovTrace`; an actual definition would compose the
+    filtration quotient with the Markov-trace functor. -/
+noncomputable def residueAtRootTrace (ℓ : ℕ) : ℝ → ℝ :=
+  gradedMarkovTrace ℓ
+
 /-- Once `computeResidueAtRoot` is genuinely defined, this lemma
-    discharges the `residueAtRoot` opaque to its computable form.
+    discharges the `residueAtRoot` opaque to its computable form
+    for the canonical trace `gradedMarkovTrace ℓ`.  The lemma is
+    not quantified over arbitrary traces — the residue at level
+    `ℓ` is **specifically** the residue of `gradedMarkovTrace ℓ`,
+    not an arbitrary function.
+
     The `sorry` here is the **specification gap**: the opaque
     declaration is currently abstract, and equating it with a
     computable function requires refining the abstraction. -/
 theorem residueAtRoot_eq_compute
-    (ℓ : ℕ) (ζ : RootOfUnity) (q : ℝ) (trace : ℝ → ℝ) :
-    residueAtRoot ℓ ζ q = computeResidueAtRoot trace ℓ ζ q := by
+    (ℓ : ℕ) (ζ : RootOfUnity) (q : ℝ) :
+    residueAtRoot ℓ ζ q
+      = computeResidueAtRoot (residueAtRootTrace ℓ) ℓ ζ q := by
   -- Ref: [manuscript] prop:habiro-residue-sum-equivalence
   -- Open: requires either (a) refining the opaque to a
-  -- noncomputable def matching computeResidueAtRoot, or (b) adding
-  -- a Mathlib-backed `MeromorphicAt.residue` API and using it to
-  -- compute residueAtRoot directly.
+  -- noncomputable def matching `computeResidueAtRoot
+  --   (residueAtRootTrace ℓ) ℓ ζ q`, or (b) adding a
+  -- Mathlib-backed `MeromorphicAt.residue` API and using it to
+  -- compute `residueAtRoot` directly.
   sorry
 
 end QOU.BraidKnot

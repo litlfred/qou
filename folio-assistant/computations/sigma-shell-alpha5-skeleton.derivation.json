@@ -7,7 +7,7 @@
   "steps": [
     {
       "name": "Substrate constants q_0, ℏ_q, m_e",
-      "operation": "Anchor inputs: substrate parameter q_0 ≈ 1.10997, derived constants ℏ_q := 1 − q^{-1} (per `def:hbar-q`) and M_E_MEV := 0.51099895 (CODATA electron mass).  α_5 should be expressible in terms of these by `conj:shell-correction-term-seven` step 'Status'.",
+      "operation": "Anchor inputs: substrate parameter q_0 (per `q_parameter.Q`), derived constant ℏ_q := 1 − q^{-1} (per `def:hbar-q`), and M_E_MEV := 0.51099895 (CODATA electron mass, `experimental_constants.M_E_MEV`).  α_5 should be expressible in terms of these by `conj:shell-correction-term-seven` step 'Status'.",
       "inputs": [
         "Hecke.Energy"
       ],
@@ -17,10 +17,10 @@
         "hbar_q": 0.0990817264356989,
         "m_e_MeV": 0.51099895
       },
-      "trust_basis": "axiom",
+      "trust_basis": "script-cited",
       "jet_order": 0,
-      "lean_ref": "qou:STUB:SubstrateConstants",
-      "citation": "manuscript:§Substrate-anchors"
+      "citation": "manuscript:§Substrate-anchors",
+      "notes": "script: folio-assistant/computations/q_parameter.py + folio-assistant/computations/experimental_constants.py.  These ship the canonical numeric values used by every downstream chain; until the substrate parameter q_0 has its own derivation chain (Phase B; see `q0-derivation-skeleton.derivation.json`), this step remains SCRIPT_CITED."
     },
     {
       "name": "Catalan G constant",
@@ -54,7 +54,7 @@
     },
     {
       "name": "α_5 numerical value (empirical fit)",
-      "operation": "From the BW-residual diagnostic on A=1..4 isotopes (`higher-a-shell-diagnostic.witness.json`), the best-fit level-5 coefficient is α_5 ≈ −4.2 × 10^5 MeV, with RMSE 342 MeV across 4 isotopes.  Until step 3's closed form is established, this is the **only known value** of α_5; it functions as a COMPUTATIONAL leaf reading the diagnostic witness.",
+      "operation": "From the BW-residual diagnostic on A=1..4 isotopes (`higher-a-shell-diagnostic.witness.json`), the best-fit level-5 coefficient is α_5 ≈ -4.20e+05 MeV, with RMSE 342 MeV across 4 isotopes.  Until step 3's closed form is established, this is the **only known value** of α_5; it functions as a COMPUTATIONAL leaf reading the diagnostic witness.",
       "inputs": [
         "alpha5_closed_form"
       ],

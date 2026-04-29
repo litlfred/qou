@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T12:54:03.146219+00:00",
-  "commitSha": "d506d196e0063c8fbe76ddeddfa85cd306f42343",
+  "computedAt": "2026-04-29T15:22:52.410313+00:00",
+  "commitSha": "b993538896588395e130865bffc6ce16116cc9a3",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -127,7 +127,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3185120ad3c7",
@@ -254,8 +254,7 @@
         "leaf_matches": true,
         "issues": [],
         "trust_summary": {
-          "axiom": 1,
-          "script-cited": 3,
+          "script-cited": 4,
           "computational": 1
         },
         "has_script_frontier": true
@@ -314,9 +313,8 @@
         "leaf_matches": true,
         "issues": [],
         "trust_summary": {
-          "axiom": 1,
+          "script-cited": 2,
           "mathlib-cited": 1,
-          "script-cited": 1,
           "computational": 1
         },
         "has_script_frontier": true
@@ -325,7 +323,7 @@
     "witness_trust": {
       "derivation-fully-trusted": [],
       "derivation-backed": [
-        "alpha-em-pslq-uniqueness.witness.json",
+        "alpha-em-pslq-uniqueness-2000dps.witness.json",
         "habiro-coefficients-atomic.witness.json",
         "hecke-character-symbolic.witness.json",
         "higher-a-shell-diagnostic.witness.json",
@@ -343,7 +341,7 @@
         "alpha-blend-tower.witness.json",
         "alpha-cs-kappa-verification.witness.json",
         "alpha-derivation-probe.witness.json",
-        "alpha-em-pslq-uniqueness-2000dps.witness.json",
+        "alpha-em-pslq-uniqueness.witness.json",
         "alpha-em-q9-q10-derivation.witness.json",
         "alpha-high-precision.witness.json",
         "alpha-k-jones-markov-h3.witness.json",

@@ -7,16 +7,17 @@
   "steps": [
     {
       "name": "q_0 := unique substrate parameter",
-      "operation": "By `def:substrate-parameter`, the QOU framework axiomatises a single real parameter q_0 ∈ ℝ_{>1} characterising the Hecke energy scale (q − q^{-1}).  Empirically q_0 ≈ 1.10997855... matches CODATA observables; the framework's claim of being **derivative** rather than empirical requires closing q_0 via a first-principles derivation.",
+      "operation": "By `def:substrate-parameter`, the QOU manuscript introduces a single real parameter q_0 ∈ ℝ_{>1} characterising the Hecke energy scale (q − q^{-1}).  Empirically q_0 ≈ 1.10997855... matches CODATA observables; the framework's claim of being **derivative** rather than empirical requires closing q_0 via a first-principles derivation.",
       "inputs": [
         "Hecke.Energy"
       ],
       "output_name": "q_0_axiom",
       "output_value": "q_0 ∈ ℝ_{>1} — substrate parameter",
-      "trust_basis": "axiom",
+      "trust_basis": "script-cited",
       "jet_order": 0,
       "lean_ref": "qou:STUB:SubstrateParameter",
-      "citation": "manuscript:§Substrate-axiom"
+      "citation": "manuscript:§Substrate-axiom",
+      "notes": "script: folio-assistant/computations/q_parameter.py — ships the canonical numeric value of q_0 used by every downstream chain.  This step is SCRIPT_CITED because AXIOM is reserved for the seven FirstPrinciple entrypoints (per DERIVATION-CHAIN-METHODOLOGY.md); extending FirstPrinciple to include `SubstrateParameter` is a candidate Lean-side refinement that would let this step become AXIOM, but the q_0 numerical value would still need to be sourced from the substrate definition (currently empirical-fitted)."
     },
     {
       "name": "Path A: q_0 from α-FSC via PSLQ",
@@ -29,7 +30,7 @@
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§alpha-em-pslq",
-      "notes": "script: folio-assistant/computations/alpha_em_pslq_uniqueness.py (2000 dps PSLQ search).  Currently SCRIPT_CITED — no stable rational relation found at 2000 dps within norm-bounded candidates.  Closing this step requires either a higher PSLQ precision or a theoretical insight constraining the form of f."
+      "notes": "script: folio-assistant/computations/alpha_em_pslq_uniqueness_2000dps.py (2000 dps PSLQ search).  Currently SCRIPT_CITED — no stable rational relation found at 2000 dps within norm-bounded candidates.  Closing this step requires either a higher PSLQ precision or a theoretical insight constraining the form of f."
     },
     {
       "name": "Path B: q_0 from m_p/m_e Hecke ratio",

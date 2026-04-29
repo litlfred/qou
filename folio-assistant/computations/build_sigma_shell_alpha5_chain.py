@@ -48,15 +48,19 @@ ALPHA_5_MEV_FIT = -4.2e5  # empirical fit result; target of this chain
 def build() -> DerivationChain:
     steps: list[DerivationStep] = []
 
-    # 1 — Substrate constants (anchor)
+    # 1 — Substrate constants (script-cited per
+    # DERIVATION-CHAIN-METHODOLOGY.md: AXIOM is reserved for the seven
+    # FirstPrinciple entrypoints; substrate-numeric anchors are sourced
+    # from q_parameter.py + experimental_constants.py).
     steps.append(DerivationStep(
         name="Substrate constants q_0, ℏ_q, m_e",
         operation=(
-            "Anchor inputs: substrate parameter q_0 ≈ 1.10997, derived "
-            "constants ℏ_q := 1 − q^{-1} (per `def:hbar-q`) and "
-            "M_E_MEV := 0.51099895 (CODATA electron mass).  α_5 should "
-            "be expressible in terms of these by `conj:shell-correction-"
-            "term-seven` step 'Status'."
+            "Anchor inputs: substrate parameter q_0 (per "
+            "`q_parameter.Q`), derived constant ℏ_q := 1 − q^{-1} "
+            "(per `def:hbar-q`), and M_E_MEV := 0.51099895 (CODATA "
+            "electron mass, `experimental_constants.M_E_MEV`).  α_5 "
+            "should be expressible in terms of these by "
+            "`conj:shell-correction-term-seven` step 'Status'."
         ),
         inputs=[FirstPrinciple.HECKE_ENERGY.value],
         output_name="substrate_constants",
@@ -65,10 +69,18 @@ def build() -> DerivationChain:
             "hbar_q": 1.0 - 1.0 / Q_0,
             "m_e_MeV": 0.51099895,
         },
-        trust_basis=TrustBasis.AXIOM,
-        lean_ref="qou:STUB:SubstrateConstants",
+        trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§Substrate-anchors",
         jet_order=0,
+        notes=(
+            "script: folio-assistant/computations/q_parameter.py + "
+            "folio-assistant/computations/experimental_constants.py.  "
+            "These ship the canonical numeric values used by every "
+            "downstream chain; until the substrate parameter q_0 has "
+            "its own derivation chain (Phase B; see "
+            "`q0-derivation-skeleton.derivation.json`), this step "
+            "remains SCRIPT_CITED."
+        ),
     ))
 
     # 2 — Catalan-G constant (open analytic input)
@@ -135,7 +147,7 @@ def build() -> DerivationChain:
         operation=(
             "From the BW-residual diagnostic on A=1..4 isotopes "
             "(`higher-a-shell-diagnostic.witness.json`), the best-fit "
-            "level-5 coefficient is α_5 ≈ −4.2 × 10^5 MeV, with RMSE "
+            f"level-5 coefficient is α_5 ≈ {ALPHA_5_MEV_FIT:.2e} MeV, with RMSE "
             "342 MeV across 4 isotopes.  Until step 3's closed form "
             "is established, this is the **only known value** of α_5; "
             "it functions as a COMPUTATIONAL leaf reading the "
