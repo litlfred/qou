@@ -464,6 +464,7 @@ export default chapter({
         "atom-knot-mass-derivation-proof",
         "joint-tower-sdp-confinement",
         "y-lambda-closed-form-wenzl-bridge",
+        "wenzl-bridge-applicability-qou",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
         "wedderburn-bratteli-recursion",

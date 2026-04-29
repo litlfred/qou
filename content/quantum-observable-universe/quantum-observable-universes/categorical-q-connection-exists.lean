@@ -26,9 +26,18 @@ theorem CategoricalQConnection.exists
     [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
     [CategoryTheory.Linear R_q C] :
-    Nonempty (CategoricalQConnection C) := by
-  -- Compositional witness via base connection + Reeb interior product.
+    Nonempty (CategoricalQConnection C) :=
+  -- Trivial witness: take A = Ω¹ = 𝟙_ C, all morphisms identity (or
+  -- the right-unitor inverse), q = 1 (one_ne_zero in LaurentPolynomial ℤ).
+  -- The intended ∇_q = q⁻¹·∇ + (1−q⁻¹)·ι_ξ ∇ composition is sharper
+  -- but requires Reeb / interior-product infrastructure.
   -- Ref: [connes1994]
-  sorry
+  ⟨{ A := 𝟙_ C
+     Omega1 := 𝟙_ C
+     nabla := (CategoryTheory.MonoidalCategory.rightUnitor (𝟙_ C)).inv
+     xi_contract_nabla := 𝟙 (𝟙_ C)
+     theta_nabla := (CategoryTheory.MonoidalCategory.rightUnitor (𝟙_ C)).inv
+     q := 1
+     q_ne_zero := one_ne_zero }⟩
 
 end QOU

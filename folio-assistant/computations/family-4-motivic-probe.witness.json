@@ -1,0 +1,192 @@
+{
+  "computation": "family-4-motivic-probe",
+  "computedAt": "2026-04-28T20:36:06.462020+00:00",
+  "description": "Honest categorical state of family-4 atom-knot ID under the motivic-substrate framework (post PR #455). For each of {⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹⁴N, ¹⁹F}, reports which of the four steps in `docs/audits/family-4-motivic-path.md` is currently passable. No fits, no derived knot IDs — those wait for the K_motivic orbit table (audit blocker #3).",
+  "design_spec": "docs/audits/family-4-motivic-path.md",
+  "consumed_by": "mass-table-ppb (eventually, post-blockers)",
+  "atoms": [
+    {
+      "sym": "6Li",
+      "registry_file": "li-6.json",
+      "step_1_ground_state_braid": "present",
+      "step_2_q_mn_character": "pending-convention-pin",
+      "step_3_motivic_galois_orbit": "pending-realization",
+      "step_4_knot_id": "pending-orbit-table",
+      "bucket": "motivic",
+      "status": "motivic-pending-orbit-table",
+      "parent_braid": {
+        "ordering": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "log_trace": -3.633930222332663,
+        "trace_numerical": 0.026412174433800555,
+        "ground_state_method": "exhaustive",
+        "n_orderings_searched": 20
+      }
+    },
+    {
+      "sym": "7Li",
+      "registry_file": "li-7.json",
+      "step_1_ground_state_braid": "present",
+      "step_2_q_mn_character": "pending-convention-pin",
+      "step_3_motivic_galois_orbit": "pending-realization",
+      "step_4_knot_id": "pending-orbit-table",
+      "bucket": "motivic",
+      "status": "motivic-pending-orbit-table",
+      "parent_braid": {
+        "ordering": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "log_trace": -5.049209609372196,
+        "trace_numerical": 0.006414401325881222,
+        "ground_state_method": "exhaustive",
+        "n_orderings_searched": 35
+      }
+    },
+    {
+      "sym": "9Be",
+      "registry_file": "be-9.json",
+      "step_1_ground_state_braid": "present",
+      "step_2_q_mn_character": "pending-convention-pin",
+      "step_3_motivic_galois_orbit": "pending-realization",
+      "step_4_knot_id": "pending-orbit-table",
+      "bucket": "motivic",
+      "status": "motivic-pending-orbit-table",
+      "parent_braid": {
+        "ordering": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "log_trace": -10.906726751924154,
+        "trace_numerical": -1.8334486710001028e-05,
+        "ground_state_method": "exhaustive",
+        "n_orderings_searched": 126
+      }
+    },
+    {
+      "sym": "11B",
+      "registry_file": "b-11.json",
+      "step_1_ground_state_braid": "present",
+      "step_2_q_mn_character": "pending-convention-pin",
+      "step_3_motivic_galois_orbit": "pending-realization",
+      "step_4_knot_id": "pending-orbit-table",
+      "bucket": "motivic",
+      "status": "motivic-pending-orbit-table",
+      "parent_braid": {
+        "ordering": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "log_trace": -12.941287903366742,
+        "trace_numerical": 2.3970112638777125e-06,
+        "ground_state_method": "exhaustive",
+        "n_orderings_searched": 462
+      }
+    },
+    {
+      "sym": "14N",
+      "registry_file": "n-14.json",
+      "step_1_ground_state_braid": "present",
+      "step_2_q_mn_character": "pending-convention-pin",
+      "step_3_motivic_galois_orbit": "pending-realization",
+      "step_4_knot_id": "pending-orbit-table",
+      "bucket": "motivic",
+      "status": "motivic-pending-orbit-table",
+      "parent_braid": {
+        "ordering": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "log_trace": -14.719450845938445,
+        "trace_numerical": -4.0497081023203296e-07,
+        "ground_state_method": "exhaustive",
+        "n_orderings_searched": 3432
+      }
+    },
+    {
+      "sym": "19F",
+      "registry_file": "f-19.json",
+      "step_1_ground_state_braid": "present",
+      "step_2_q_mn_character": "pending-convention-pin",
+      "step_3_motivic_galois_orbit": "pending-realization",
+      "step_4_knot_id": "pending-orbit-table",
+      "bucket": "motivic",
+      "status": "motivic-pending-orbit-table",
+      "parent_braid": {
+        "ordering": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "log_trace": -15.37128272274412,
+        "trace_numerical": 2.1102637258123133e-07,
+        "ground_state_method": "yb-optimized(0)",
+        "n_orderings_searched": 92378
+      }
+    }
+  ],
+  "summary": {
+    "n_atoms": 6,
+    "with_parent_braid": 6,
+    "blockers_referenced": [
+      "GAP 5a",
+      "GAP 5b",
+      "GAP 5c"
+    ]
+  }
+}

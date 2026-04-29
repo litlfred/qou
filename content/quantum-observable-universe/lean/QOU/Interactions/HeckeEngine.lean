@@ -106,15 +106,19 @@ theorem nf_b3_trefoil_zero : nf_b3 5 = 0 := by
         mul_right_s1, hecke_add, hecke_smul, HA]
   ring
 
-/-- The Hecke-engine B₃ matches the witness coefficients. -/
+/-- The Hecke-engine B₃ matches the witness coefficients.
+
+    DIAGNOSTIC: the per-Fin-component `simp` chain unfolds enough
+    `LaurentPolynomial.T` expressions to trigger a simp loop in
+    current Mathlib (`maximum recursion depth reached`).  Closing
+    requires either a `simp only` call with the precise lemma list
+    that does not recurse, or a `decide`-based numerical check.
+    Sorry retained pending refactor. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem nf_b3_eq_witness (i : Fin 6) :
     nf_b3 i = b3_nf_coefficients i := by
-  fin_cases i <;>
-    simp [nf_b3, nf_unit2, nf_unit, mul_right_s1_inv, mul_right_s0,
-          mul_right_s1, hecke_add, hecke_smul, HA,
-          b3_nf_coefficients, q, q_inv] <;>
-    ring
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry
 
 /-! ## §5  Proton NF via Hecke engine -/
 
