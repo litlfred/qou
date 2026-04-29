@@ -6,7 +6,7 @@ strands of the literature on knotted matter and topological photonics.
 ## Braid--preon mapping (Bilson--Thompson)
 
 The Bilson--Thompson topological preon model
-\cite{bilsonthompson2005,bilsonthompson2007} maps Standard-Model
+\cite{bilsonthompson2005,bilsonthompson-markopoulou-smolin2007} maps Standard-Model
 fermions to framed braids in $B_3$, with chirality (left- vs
 right-handed states) determined by the sign pattern of the crossings.
 The $e^-/e^+$ pair in the QOU vertex

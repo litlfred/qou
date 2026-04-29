@@ -2917,7 +2917,7 @@ export const references: CSLData[] = [
 
   // ── Bilson-Thompson, Markopoulou, Smolin 2007 ─────────────────
   ref({
-    id: "bilsonthompson2007",
+    id: "bilsonthompson-markopoulou-smolin2007",
     type: "article-journal",
     title:
       "Quantum gravity and the standard model",
