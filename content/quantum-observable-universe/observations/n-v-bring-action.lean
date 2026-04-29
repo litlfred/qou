@@ -88,4 +88,25 @@ axiom s5_acts_on_ew_slice (Σ : ElectroweakSlice) :
     tau_M_C_dim_q_EW Σ * rescale_EW Σ
       = 120 * tau_M_C_dim_q_EW Σ
 
+/-- **Corollary.** The rescaling factor at the EW slice equals 120
+    whenever the Markov co-Casimir trace at that slice is nonzero.
+
+    This isolates the structural content of `s5_acts_on_ew_slice`:
+    the `|S_5| = 120` factor is a *property of the rescaling*,
+    independent of the trace's particular value.  Cancellation
+    requires `tau_M_C_dim_q_EW Σ ≠ 0`, which holds at generic q
+    by the non-degeneracy of the canonical Jones-Markov trace
+    (`prop:markov-trace-frobenius-selection`).
+
+    Proof: divide the axiom by `tau_M_C_dim_q_EW Σ`. -/
+theorem rescale_EW_eq_120 (Σ : ElectroweakSlice)
+    (h : tau_M_C_dim_q_EW Σ ≠ 0) :
+    rescale_EW Σ = 120 := by
+  -- From the axiom: τ · r = 120 · τ.  Rewrite RHS as τ · 120
+  -- (commute) and cancel τ from the left.
+  have h2 : tau_M_C_dim_q_EW Σ * rescale_EW Σ
+          = tau_M_C_dim_q_EW Σ * 120 := by
+    rw [s5_acts_on_ew_slice Σ, mul_comm 120]
+  exact mul_left_cancel₀ h h2
+
 end QOU.Observations
