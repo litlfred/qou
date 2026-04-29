@@ -22,6 +22,7 @@ namespace QOU.PhiQPiece
 structure Braid where
   n : ℕ
   word : List (Fin (n - 1) × Bool)
+deriving Repr
 
 /-- Abstract sub-link type carrying a name and a (placeholder) topological
     invariant.  In the formal development this is replaced by the actual

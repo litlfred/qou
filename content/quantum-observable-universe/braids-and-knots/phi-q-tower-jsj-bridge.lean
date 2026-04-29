@@ -50,10 +50,10 @@ class TowerSummandRealization (q : ℝ) where
   /-- Archimedean realisation of the per-`S` dilog summand of the
       tower (with the appropriate Markov weight `z^|S|` already
       absorbed). -/
-  realisation : Braid → ∀ {n : ℕ}, Finset (Fin (n - 1)) → ℝ
+  realisation : (β : Braid) → Finset (Fin (β.n - 1)) → ℝ
   /-- The realisation is non-negative (real volumes are non-negative). -/
   realisation_nonneg :
-    ∀ (β : Braid) {n : ℕ} (S : Finset (Fin (n - 1))), 0 ≤ realisation β S
+    ∀ (β : Braid) (S : Finset (Fin (β.n - 1))), 0 ≤ realisation β S
 
 /-- **Φ_q–JSJ archimedean bridge (per-piece).**
 

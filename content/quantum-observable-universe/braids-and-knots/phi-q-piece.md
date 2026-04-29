@@ -1,13 +1,12 @@
 Let $\beta \in B_n$ be a braid with closure
 $\widehat{\beta} = K \subset S^3$ and let
 $\{\sigma_0, \dots, \sigma_{n-2}\}$ enumerate its crossings (one
-per Hecke generator instance). For each non-empty subset
-$S \subseteq \{0, \dots, n-2\}$ with $\lvert S \rvert \leq 2$, the
-**Φ$_q$-piece $K_S \subseteq S^3$** is the link obtained from
-$\widehat{\beta}$ by replacing each crossing $\sigma_i$ with $i \notin S$
-by its $L_0$-smoothing (Kauffman skein resolution
-[Kauffman bracket](#thm:jones-markov-trace)) while leaving the
-crossings $\{\sigma_i : i \in S\}$ intact.
+per Hecke generator instance). For each subset
+$S \subseteq \{0, \dots, n-2\}$, the **Φ$_q$-piece $K_S \subseteq S^3$**
+is the link obtained from $\widehat{\beta}$ by replacing each crossing
+$\sigma_i$ with $i \notin S$ by its $L_0$-smoothing (Kauffman skein
+resolution [Kauffman bracket](#thm:jones-markov-trace)) while leaving
+the crossings $\{\sigma_i : i \in S\}$ intact.
 
 Concretely: let $\beta_S \in B_n$ denote the braid obtained from
 $\beta$ by deleting (i.e., replacing by the identity strand) every
@@ -18,6 +17,17 @@ $$
   K_S \;:=\; \widehat{\beta_S}
   \;\subseteq\; S^3.
 $$
+
+The Φ$_q$ tower
+([mass endomorphism tower](#prop:mass-endomorphism-tower))
+indexes its summands by the *non-empty* subsets with
+$\lvert S \rvert \leq 2$ — singletons and pairs — but the
+construction above is well-defined for *every* $S$, including
+$S = \emptyset$ (the trivial unlink) and $S = \{0, \dots, n-2\}$
+(the original closure $K$). The full family $\{K_S\}_{S \subseteq
+\{0,\dots,n-2\}}$ is what enjoys the structural properties below;
+the truncation $\lvert S \rvert \leq 2$ is a property of the tower,
+not of the Φ$_q$-piece itself.
 
 The construction satisfies three structural properties:
 
