@@ -208,6 +208,57 @@ theorem markov_trace_product_recursion
   | cons c cs ih =>
     rw [MarkovTraceAxioms.trace_cons, chainProduct, ih]
 
+/-- **Concatenation of chain products** (pure list lemma).
+    The recursive product `chainProduct` is multiplicative on
+    `List.append`:
+    `chainProduct z (cs ++ ds) = chainProduct z cs * chainProduct z ds`.
+
+    This is purely a property of `chainProduct` as a `foldr`-style
+    list aggregator and does NOT involve `MarkovTraceAxioms`.  When
+    a Markov-trace instance is in scope, combining this lemma with
+    `markov_trace_product_recursion` yields the multiplicativity
+    `MarkovTraceAxioms.trace (cs ++ ds) = trace cs * trace ds` —
+    but that combined lemma is downstream and is not stated here.
+
+    Proof: cons-induction on `cs`, closed with `simp [mul_assoc]`
+    (associativity of `R_q` multiplication only — no full polynomial
+    algebra needed). -/
+theorem chainProduct_append (z : R_q) (cs ds : List GeneratorChain) :
+    chainProduct z (cs ++ ds) = chainProduct z cs * chainProduct z ds := by
+  induction cs with
+  | nil => simp [chainProduct]
+  | cons c cs ih =>
+    simp [chainProduct, ih, mul_assoc]
+
+/-- **Markov trace of the empty chain.**  Direct unfolding of the
+    typeclass axiom `trace_nil`.  Useful as a base case for downstream
+    inductions that pattern-match on chain-list shape. -/
+theorem markov_trace_nil {z : R_q} [inst : MarkovTraceAxioms z] :
+    MarkovTraceAxioms.trace (z := z) [] = 1 :=
+  MarkovTraceAxioms.trace_nil
+
+/-- **Markov trace of a singleton chain.**  By the cons-form Markov
+    axiom, `trace [c] = vertexVolume z c · trace [] = vertexVolume z c`.
+    Demonstrates that the Markov-property cons-recursion suffices to
+    discharge the n = 1 case explicitly. -/
+theorem markov_trace_singleton {z : R_q} [inst : MarkovTraceAxioms z]
+    (c : GeneratorChain) :
+    MarkovTraceAxioms.trace (z := z) [c] = vertexVolume z c := by
+  rw [markov_trace_product_recursion]
+  simp [chainProduct]
+
+/-- **Markov trace of a two-chain.**  By two applications of the
+    cons-form Markov axiom, `trace [c₁, c₂] = V̂(c₁) · V̂(c₂)`.  The
+    pattern generalises: for any finite chain list of length n the
+    trace is the product of `n` vertex volumes (`chainProduct`),
+    discharged by induction on the list (= `markov_trace_product_recursion`). -/
+theorem markov_trace_pair {z : R_q} [inst : MarkovTraceAxioms z]
+    (c₁ c₂ : GeneratorChain) :
+    MarkovTraceAxioms.trace (z := z) [c₁, c₂]
+      = vertexVolume z c₁ * vertexVolume z c₂ := by
+  rw [markov_trace_product_recursion]
+  simp [chainProduct, mul_assoc]
+
 /-- The degree of the product polynomial is bounded by n² − 1.
     This follows from the conformal weight bound: each vertex volume
     has weight ≤ 2k_i + 1, and the total is ≤ (n-1)(n+1) = n²-1. -/
