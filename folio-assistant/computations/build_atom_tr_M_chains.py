@@ -215,11 +215,28 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
     has_assembly_chain = spec.short in ("p", "n")
     step7_trust = TrustBasis.DERIVED if has_assembly_chain else TrustBasis.SCRIPT_CITED
     _atom_long = {"p": "proton", "n": "neutron"}.get(spec.short, "")
+    # Atom-specific input list per assembly-chain inspection.
+    if spec.short == "p":
+        _inputs_descr = (
+            "schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-sigma1 "
+            "(σ_2 covered by SYT-relabelling symmetry within the "
+            "(2,1) block); the σ-word T_w_p is supplied inline via "
+            "hecke_character_symbolic.atomic_braid_to_crossings"
+        )
+    elif spec.short == "n":
+        _inputs_descr = (
+            "schur-weyl-weight-{3,21,111} + "
+            "hoefsmit-rep-21-{sigma1,sigma2}; the σ-word T_w_n is "
+            "supplied (currently SCRIPT_CITED) via "
+            "hecke_character_symbolic.atomic_braid_to_crossings(Z=0, "
+            "N=1, include_inter=False), upgrading to DERIVED when "
+            "PR #476's atomic-braid-recipe-n chain lands"
+        )
+    else:
+        _inputs_descr = ""
     step7_notes = (
         f"Derivation chain: markov-trace-assembly-{_atom_long}.derivation.json.  "
-        f"Combines schur-weyl-weight-{{3,21,111}} + hoefsmit-rep-21-"
-        f"{{sigma1,sigma2}} + atomic-braid-recipe-{spec.short} "
-        f"via finite-Jones."
+        f"Combines {_inputs_descr} via the finite-Jones axiom."
         if has_assembly_chain else
         "script: folio-assistant/computations/habiro_coefficients_atomic.py "
         "function `markov_trace_symbolic(Z, N, q, include_inter)`.  "

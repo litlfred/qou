@@ -102,20 +102,27 @@ def build() -> DerivationChain:
     steps.append(DerivationStep(
         name="Atomic-braid recipe for T_w_n",
         operation=(
-            "Reference `atomic-braid-recipe-n.derivation.json`.  The "
-            "neutron σ-word has 5 crossings on 3 strands, with the "
+            "The neutron σ-word has 5 crossings on 3 strands, with the "
             "mixed σ / σ^{-1} type pattern σ_1 σ_1^{-1} σ_2 σ_1 σ_2^{-1} "
-            "(per the substrate-level neutron-cross table)."
+            "(per the substrate-level neutron-cross table).  Currently "
+            "produced by `hecke_character_symbolic.atomic_braid_to_crossings"
+            "(Z=0, N=1, include_inter=False)`.  When the dedicated "
+            "`atomic-braid-recipe-n.derivation.json` chain ships "
+            "(PR #476 family, currently in review), this step upgrades "
+            "to DERIVED via that chain reference."
         ),
         inputs=["partitions_of_3", FirstPrinciple.HECKE_ENERGY.value],
         output_name="T_w_n",
-        output_value="T_w_n = σ-word of length 5 (per atomic-braid-recipe-n)",
-        trust_basis=TrustBasis.DERIVED,
+        output_value="T_w_n = σ-word of length 5",
+        trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§Atomic-braid recipe",
         jet_order=0,
         notes=(
-            "Derivation chain: atomic-braid-recipe-n.derivation.json "
-            "(builder: build_atomic_braid_recipe_chain.py).  Fully-trusted."
+            "script: folio-assistant/computations/hecke_character_symbolic.py "
+            "function `atomic_braid_to_crossings(Z=0, N=1, "
+            "include_inter=False)`.  SCRIPT_CITED until PR #476 "
+            "(claude/phase-a-precision) ships the `atomic-braid-recipe-n` "
+            "derivation chain on main."
         ),
     ))
 

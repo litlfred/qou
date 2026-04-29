@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T12:56:50.294061+00:00",
-  "commitSha": "630c971f019257a40960a7a59e7853686764ac58",
+  "computedAt": "2026-04-29T13:01:05.522650+00:00",
+  "commitSha": "97f80d79cd2fcd7ec23f2d40bf6117b86136a58c",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -193,10 +193,11 @@
         "issues": [],
         "trust_summary": {
           "axiom": 1,
-          "derived": 7,
+          "derived": 6,
+          "script-cited": 1,
           "computational": 1
         },
-        "has_script_frontier": false
+        "has_script_frontier": true
       },
       {
         "chain": "markov-trace-assembly-proton.derivation.json",

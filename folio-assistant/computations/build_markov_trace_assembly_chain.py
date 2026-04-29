@@ -153,8 +153,11 @@ def build() -> DerivationChain:
         gb_filtration_level=0,
         notes=(
             "1-dim rep; trace is a monomial in q.  No script needed.  "
-            "Atomic-braid recipe (atomic-braid-recipe-p chain) supplies "
-            "the n_±=6/0 count."
+            "Atomic-braid recipe (`hecke_character_symbolic."
+            "atomic_braid_to_crossings(Z=1, N=0, include_inter=False)`) "
+            "supplies the n_±=6/0 count.  When PR #476's dedicated "
+            "`atomic-braid-recipe-p.derivation.json` chain lands on "
+            "main, this note can reference that chain instead."
         ),
     ))
 
@@ -264,10 +267,13 @@ def build() -> DerivationChain:
         target_tolerance=1e-9,
         content_block="prop:full-pole-structure-mass-trace",
         description=(
-            "Markov-trace assembly chain for the proton: combines "
-            "schur-weyl-weight-3 + hoefsmit-rep-21-sigma1 + "
-            "atomic-braid-recipe-p chains via the finite-Jones axiom "
-            "into tr_M(p, q_0) ≈ 2.1226.  Trust profile is "
+            "Markov-trace assembly chain for the proton: combines the "
+            "schur-weyl-weight-{3,21,111} chains + the hoefsmit-rep-21-"
+            "sigma1 chain (with σ_2 covered by SYT-relabelling symmetry) "
+            "via the finite-Jones axiom into tr_M(p, q_0) ≈ 2.1226.  "
+            "The proton σ-word T_w_p is supplied inline (n_+ = 6, n_- = 0 "
+            "for the trivial / sign reps) using `hecke_character_symbolic."
+            "atomic_braid_to_crossings`.  Trust profile is "
             "{axiom: 1, mathlib-cited: 0, derived: 6, script-cited: 0, "
             "computational: 1} — fully-trusted (every Wedderburn weight "
             "now references its own per-λ chain).  Closes 5 of 5 "
