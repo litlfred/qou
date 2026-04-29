@@ -20,7 +20,7 @@
     },
     {
       "name": "Hook-length set for λ = (1, 1, 1)",
-      "operation": "For λ = (1, 1, 1) ⊢ 3, the hook lengths are {1, 2, 3}.  The number of parts is l(λ) = 3 (so the weight exponent is n − l(λ) = 0).",
+      "operation": "For λ = (1, 1, 1) ⊢ 3, the hook lengths are [3, 2, 1].  The number of parts is l(λ) = 3 (so the weight exponent is n − l(λ) = 0).",
       "inputs": [
         "q_integer",
         "Schur"

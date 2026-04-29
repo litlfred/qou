@@ -117,7 +117,7 @@ def build(spec: PartitionSpec) -> DerivationChain:
         name=f"Hook-length set for λ = {spec.label}",
         operation=(
             f"For λ = {spec.label} ⊢ {spec.n}, the hook lengths are "
-            f"{set(spec.hook_lengths)}.  The number of parts is "
+            f"{list(spec.hook_lengths)}.  The number of parts is "
             f"l(λ) = {spec.length} (so the weight exponent is "
             f"n − l(λ) = {spec.h_exponent})."
         ),
