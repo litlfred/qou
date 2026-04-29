@@ -208,23 +208,27 @@ theorem markov_trace_product_recursion
   | cons c cs ih =>
     rw [MarkovTraceAxioms.trace_cons, chainProduct, ih]
 
-/-- **Concatenation of chain products.**  The product of vertex
-    volumes over `cs ++ ds` equals the product over `cs` times the
-    product over `ds`.  This is the multiplicativity of the Markov
-    trace transported through `markov_trace_product_recursion`:
-    `tr_M(β₁ β₂) = tr_M(β₁) · tr_M(β₂)` for braids whose generator
-    chains concatenate cleanly (no shared rightmost strand).
+/-- **Concatenation of chain products** (pure list lemma).
+    The recursive product `chainProduct` is multiplicative on
+    `List.append`:
+    `chainProduct z (cs ++ ds) = chainProduct z cs * chainProduct z ds`.
 
-    Proof: cons-induction on `cs`, identical pattern to the recursion
-    proof.  The Markov property is what makes the cons-step factor
-    cleanly. -/
+    This is purely a property of `chainProduct` as a `foldr`-style
+    list aggregator and does NOT involve `MarkovTraceAxioms`.  When
+    a Markov-trace instance is in scope, combining this lemma with
+    `markov_trace_product_recursion` yields the multiplicativity
+    `MarkovTraceAxioms.trace (cs ++ ds) = trace cs * trace ds` —
+    but that combined lemma is downstream and is not stated here.
+
+    Proof: cons-induction on `cs`, closed with `simp [mul_assoc]`
+    (associativity of `R_q` multiplication only — no full polynomial
+    algebra needed). -/
 theorem chainProduct_append (z : R_q) (cs ds : List GeneratorChain) :
     chainProduct z (cs ++ ds) = chainProduct z cs * chainProduct z ds := by
   induction cs with
   | nil => simp [chainProduct]
   | cons c cs ih =>
-    simp [chainProduct, ih]
-    ring
+    simp [chainProduct, ih, mul_assoc]
 
 /-- **Markov trace of the empty chain.**  Direct unfolding of the
     typeclass axiom `trace_nil`.  Useful as a base case for downstream
@@ -253,8 +257,7 @@ theorem markov_trace_pair {z : R_q} [inst : MarkovTraceAxioms z]
     MarkovTraceAxioms.trace (z := z) [c₁, c₂]
       = vertexVolume z c₁ * vertexVolume z c₂ := by
   rw [markov_trace_product_recursion]
-  simp [chainProduct]
-  ring
+  simp [chainProduct, mul_assoc]
 
 /-- The degree of the product polynomial is bounded by n² − 1.
     This follows from the conformal weight bound: each vertex volume

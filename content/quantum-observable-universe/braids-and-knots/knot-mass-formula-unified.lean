@@ -178,19 +178,30 @@ theorem single_nucleon_frobenius_correction
     Two strands → two partitions, both with `dim_q = 1`, so the
     sum saturates the self-dual lower bound.
 
+    The conclusion is stated in terms of `U.n` (not the literal
+    `2`) so the hypothesis `hn : U.n = 2` is genuinely used and
+    the lemma applies directly at call sites where one has a
+    `UnifiedKnotMass` with `U.n = 2`.
+
     Ref: [manuscript] `prop:partition-sum-proton-residual`. -/
 theorem two_strand_frobenius_correction
-    (U : UnifiedKnotMass) (_hn : U.n = 2) :
-    frobeniusCoCasimirTrace U.q 2 = 2 :=
-  frobenius_codim_trace_n2 U.q
+    (U : UnifiedKnotMass) (hn : U.n = 2) :
+    frobeniusCoCasimirTrace U.q U.n = 2 := by
+  rw [hn]
+  exact frobenius_codim_trace_n2 U.q
 
 /-- Specialisation to n = 4 (e.g. four-strand Borromean closure).
-    The Frobenius piece equals `2 + 2/[3]_q + 1/(q²+q⁻²)`. -/
+    The Frobenius piece equals `2 + 2/[3]_q + 1/(q²+q⁻²)`.
+
+    As with the n = 2 specialisation, the conclusion is stated in
+    terms of `U.n` so the hypothesis `hn : U.n = 4` is genuinely
+    used and the lemma applies at call sites with `U.n = 4`. -/
 theorem four_strand_frobenius_correction
-    (U : UnifiedKnotMass) (_hn : U.n = 4) :
-    frobeniusCoCasimirTrace U.q 4
-      = 2 + 2 / (U.q ^ 2 + 1 + (U.q ^ 2)⁻¹) + 1 / (U.q ^ 2 + (U.q ^ 2)⁻¹) :=
-  frobenius_codim_trace_n4 U.q
+    (U : UnifiedKnotMass) (hn : U.n = 4) :
+    frobeniusCoCasimirTrace U.q U.n
+      = 2 + 2 / (U.q ^ 2 + 1 + (U.q ^ 2)⁻¹) + 1 / (U.q ^ 2 + (U.q ^ 2)⁻¹) := by
+  rw [hn]
+  exact frobenius_codim_trace_n4 U.q
 
 /-- **Trivial-vortex (identity braid) mass = Frobenius vacuum.**
 
