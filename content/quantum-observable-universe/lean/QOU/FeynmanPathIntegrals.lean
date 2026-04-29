@@ -185,9 +185,11 @@ structure FeynmanCategoricalTrace where
   transitionAmplitude : decomp.hecke.carrier → ℝ := fun h =>
     decomp.partitions.foldl (fun acc μ => acc + markovWeight μ * partialTrace μ h) 0
   /-- **Central identity**: the transition amplitude equals the Markov trace.
-      Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β)). -/
+      Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β)).
+      The `consistent` field bridges `decomp.hecke.carrier` and
+      `markov.hecke.carrier` so `markov.tr` accepts the cast element. -/
   amplitude_eq_markov : ∀ (h : decomp.hecke.carrier),
-    transitionAmplitude h = markov.tr h
+    transitionAmplitude h = markov.tr (consistent.symm ▸ h)
   /-- The partition list has at most ⌊n/2⌋ + 1 entries. -/
   partitions_count : decomp.partitions.length ≤ decomp.n / 2 + 1
 
@@ -204,7 +206,7 @@ theorem amplitude_finite_sum (fct : FeynmanCategoricalTrace) :
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem mass_eq_abs_amplitude (fct : FeynmanCategoricalTrace)
     (h : fct.decomp.hecke.carrier) :
-    |fct.markov.tr h| = |fct.transitionAmplitude h| := by
+    |fct.markov.tr (fct.consistent.symm ▸ h)| = |fct.transitionAmplitude h| := by
   rw [fct.amplitude_eq_markov h]
 
 /-! ## §3  Classical Limit: q → 1 Degeneration -/
@@ -321,13 +323,14 @@ structure SingleLevelMassAmplitude where
   braidElement : fct.decomp.hecke.carrier
   singleLevelMass : ℝ
   singleLevelMass_nonneg : 0 ≤ singleLevelMass
-  mass_eq_abs_tr : singleLevelMass = |fct.markov.tr braidElement|
+  mass_eq_abs_tr :
+    singleLevelMass = |fct.markov.tr (fct.consistent.symm ▸ braidElement)|
   mass_eq_abs_amplitude :
     singleLevelMass = |fct.transitionAmplitude braidElement|
 
 /-- Mass via Markov trace = mass via transition amplitude. -/
 theorem single_level_mass_consistent (slma : SingleLevelMassAmplitude) :
-    |slma.fct.markov.tr slma.braidElement| =
+    |slma.fct.markov.tr (slma.fct.consistent.symm ▸ slma.braidElement)| =
     |slma.fct.transitionAmplitude slma.braidElement| := by
   rw [slma.fct.amplitude_eq_markov]
 
