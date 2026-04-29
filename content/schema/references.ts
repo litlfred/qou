@@ -2904,13 +2904,14 @@ export const references: CSLData[] = [
   // ── Bilson-Thompson 2005 ──────────────────────────────────────
   ref({
     id: "bilsonthompson2005",
-    type: "article",
+    type: "report",
     title: "A topological model of composite preons",
     author: [
       { family: "Bilson-Thompson", given: "Sundance O." },
     ],
+    publisher: "arXiv",
     issued: { "date-parts": [[2005]] },
-    note: "arXiv:hep-ph/0503213",
+    number: "hep-ph/0503213",
     URL: "https://arxiv.org/abs/hep-ph/0503213",
   }),
 
@@ -2955,7 +2956,7 @@ export const references: CSLData[] = [
     volume: "12",
     page: "6785",
     DOI: "10.1038/s41467-021-26171-5",
-    URL: "https://www.nature.com/articles/s41467-021-26171-5",
+    URL: "https://doi.org/10.1038/s41467-021-26171-5",
   }),
 
 ];
