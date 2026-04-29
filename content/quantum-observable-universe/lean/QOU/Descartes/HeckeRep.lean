@@ -116,7 +116,7 @@ theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
   -- Both reduce to: 1 − HA•σ + (HA·HA)•1, closing by `abel`.
   rw [mul_sub, sub_mul, sub_mul, mul_smul_comm, smul_mul_assoc,
       Matrix.one_mul, Matrix.mul_one, smul_mul_smul_comm, Matrix.one_mul,
-      hecke, smul_sub, smul_smul]
+      hecke, smul_sub, smul_smul, neg_smul, neg_mul]
   abel
 
 /-! ## §3  Braid word evaluation -/
