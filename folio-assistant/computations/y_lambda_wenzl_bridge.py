@@ -208,6 +208,12 @@ def _seminormal_block_data(shape, q):
     dim = len(syts)
     if dim == 0:
         return [], 0, syts
+    # Precompute a stable signature → index lookup so the swap-partner
+    # search below is O(1) per (i, k) instead of O(dim).  Per Copilot
+    # review on PR #467: the O(dim²) inner scan dominates for n ≥ 10.
+    sig_to_idx = {
+        tuple(sorted(syts[i].items())): i for i in range(dim)
+    }
     h = q - 1 / q
     blocks_per_gen = []
     for k in range(1, n):
@@ -223,11 +229,8 @@ def _seminormal_block_data(shape, q):
             swap_map = dict(syts[i])
             swap_map[k] = ci_k1
             swap_map[k + 1] = ci_k
-            j = next(
-                (jj for jj in range(dim)
-                 if jj != i and syts[jj] == swap_map),
-                None,
-            )
+            j_lookup = sig_to_idx.get(tuple(sorted(swap_map.items())))
+            j = j_lookup if (j_lookup is not None and j_lookup != i) else None
             if j is None:
                 blocks.append(("diag", i, a))
                 processed.add(i)
