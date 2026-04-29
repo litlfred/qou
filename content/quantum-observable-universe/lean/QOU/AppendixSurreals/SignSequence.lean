@@ -174,16 +174,30 @@ theorem gonshorIn_nil (K : Type u) [SurrealField K] :
     gonshorIn K [] = 0 := by
   simp [gonshorIn, map_zero]
 
-/-- The birthday of `gonshorIn K s` is bounded by the list length. -/
+/-- The birthday of `gonshorIn K s` is bounded by the list length.
+
+    DIAGNOSTIC: the substantive content is Gonshor's Theorem 2.1
+    (the birthday of a sign sequence equals the list length, with
+    inequality once we transport into a general SurrealField via
+    `ofReal`). The induction on `s.length` requires:
+    1. a base case `birthday 0 = 0` (provided as `birthday_zero` field
+       on `SurrealField`);
+    2. a step lemma: extending by one sign in the foldl adds at most
+       1 to the birthday under the `ofReal` embedding. The natural
+       form uses `birthday_add_le` (`SurrealField` field) plus a
+       per-step bound on `birthday (ofReal (1/2^k))`.
+
+    Closing requires either the dedicated `Surreal.Hessenberg.lt_omega0`
+    chain in Mathlib's surreal stack, or extracting the dyadic
+    structure of `gonshor` and using the embedding's preservation of
+    the dyadic-birthday filtration. Both paths require infrastructure
+    not currently in Mathlib's `AppendixSurreals.Basic` or `SurrealField`.
+    Sorry retained with this diagnosis. -/
 -- Ref: [gonshor1986] Theorem 2.1
 theorem birthday_gonshorIn_le_length
     (K : Type u) [SurrealField K] (s : List Sign) :
     SurrealField.birthday (gonshorIn K s) ≤ (s.length : Ordinal) := by
-  -- Inductive proof on s.length.
-  -- Base: s = [] gives 0, birthday 0 = 0 ≤ 0.
-  -- Step: extending by one sign adds at most 1 to the birthday.
-  -- Requires birthday-gonshor-of-singleton bound + birthday_add_le.
-  -- Ref: [gonshor1986] §2 — sign-sequence length = birthday.
+  -- See docstring DIAGNOSTIC for the proof obligations.
   sorry
 
 /-- An abstract braid in `B_n` as a list of generator-choices.
