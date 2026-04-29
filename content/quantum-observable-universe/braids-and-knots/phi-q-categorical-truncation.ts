@@ -13,6 +13,8 @@ export default proposition({
     "cor:quantum-dilogarithm",
     "def:hecke-normal-form",
     "def:confinement-level",
+    "prop:full-pole-structure-mass-trace",
+    "cor:habiro-expansion-atomic",
   ],
   proofs: ["prf:phi-q-categorical-truncation"],
   tags: [

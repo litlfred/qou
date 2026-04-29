@@ -25,7 +25,13 @@ ideals $I_n = (P_n(q, z))$.*
 The construction is parallel to the [Habiro ring](#def:habiro-ring)
 $\widehat{\mathbb{Z}[q]}$ — the latter is the cyclotomic completion of
 $\mathbb{Z}[q]$ at $((q;q)_n)$, the former is the cyclotomic completion of
-$\mathbb{Z}[q^{\pm 1}][z]$ at $((zq^{-1};q^{-1})_n)$.
+$\mathbb{Z}[q^{\pm 1}][z]$ at $((zq^{-1};q^{-1})_n)$. The q-side
+construction is now established for the Markov trace
+([Habiro completion of mass trace](#prop:full-pole-structure-mass-trace),
+[atomic Habiro expansion](#cor:habiro-expansion-atomic) — termination
+at $m_{\max} \leq \lceil\sqrt{2 \deg p}\rceil$), so the z-side
+parallel below is the natural extension to the brane-tower /
+exceptional-divisor variable.
 
 | Variable | Cyclotomic ideal generator | Completion | Universal element |
 |:---|:---|:---|:---|

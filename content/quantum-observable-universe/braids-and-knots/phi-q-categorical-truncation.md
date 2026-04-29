@@ -77,11 +77,23 @@ character computation
 gives $\chi_\lambda(\rho(\mathrm{T_w})) \neq 0$ for **every**
 $\lambda \vdash 5$, so $\mathrm{supp}(\mathrm{T_w}) = \{\lambda : \lambda \vdash 5\}$
 and $k_\star(\mathrm{T_w}) = \max_{\lambda \vdash 5} \mathrm{maxhook}(\lambda) = 5$.
-The witness's $k_{\max} = 9$ is therefore **distinct** from $k_\star$:
-the value $9$ is the Coxeter-length filtration depth of $\mathrm{T_w}$'s
-NF (the longest reduced word in its filtration_certificate has
-length $9$ in $S_5$), while $k_\star = 5$ is the partition-depth
-support.
+
+**Three distinct "depths" — disambiguation.**
+The literature and witness data conflate three structurally
+different depth invariants of $T_w$:
+
+| Depth | Formal definition | Tritium value |
+|:---|:---|:---:|
+| Coxeter length $\ell_{\max}(T_w)$ | longest reduced NF word in $S_{n_0}$ supporting $T_w$ | $9$ |
+| q-Habiro depth $m_{\max}(T_w)$ | termination depth of cyclotomic expansion in $q$, $\leq \lceil\sqrt{2 \deg p}\rceil$ ([atomic Habiro expansion](#cor:habiro-expansion-atomic)) | $\approx 9$ |
+| Partition GB-depth $k_\star(T_w)$ | $\max_\lambda \mathrm{maxhook}(\lambda)$ over $\mathrm{supp}(T_w)$ (this proposition) | $5$ |
+
+The witness's $\mathtt{max\_grade} = 9$ matches both $\ell_{\max}$
+and $m_{\max}$ for tritium (a numerical coincidence following from
+$\deg p \approx 40$ and $\binom{5}{2} = 10$), but it does **not**
+match $k_\star = 5$. This proposition's truncation depth is
+$k_\star$, not $\ell_{\max}$ or $m_{\max}$ — these are independent
+structural quantities, all bounded but not equal.
 
 **Structural upper bound.** For any $T_w \in H_{n_0}(q)$,
 $k_\star(T_w) \leq n_0$ because every partition $\lambda \vdash n_0$

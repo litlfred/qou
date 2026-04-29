@@ -79,7 +79,7 @@ $(1 - q^{-k} z)^{-c_k(n)}$ contributes the depth-$k$ stratum of $Z(A)$.
 
 (e) The single-stratum factor $(1 - q^{-k}z)^{-1}$ in $\Phi_q$ is
 the $c_k = 1$ specialisation of (d) — applicable when each depth-$k$
-stratum is one-dimensional or when we factor over irreducible
+stratum is one-dimensional or when factoring over irreducible
 strata. For the brane-tower, each exceptional divisor $p_i$
 contributes one $(1 - q^{-k} z_i)^{-1}$ per depth $k$, and the full
 $\Phi_q(z_i) = \prod_k (1 - q^{-k} z_i)^{-1}$ is the universal

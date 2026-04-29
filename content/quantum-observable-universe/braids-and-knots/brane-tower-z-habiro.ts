@@ -10,6 +10,8 @@ export default conjecture({
     "cor:quantum-dilogarithm",
     "prop:atom-knot-mass-derivation",
     "thm:topological-mass",
+    "cor:habiro-expansion-atomic",
+    "prop:habiro-residue-sum-equivalence",
   ],
   tags: [
     "brane-tower",

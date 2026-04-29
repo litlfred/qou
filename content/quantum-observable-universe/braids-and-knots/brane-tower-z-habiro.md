@@ -29,7 +29,10 @@ the gap (see [mass-endomorphism conjecture §"Two distinct convergence problems"
 2. **$q$-Habiro completion** (the
    [Habiro ring](#def:habiro-ring) at $((q;q)_n)$) — regularizes in
    the variable $q$, not $z$. Does not change the analytic value of
-   $\Phi_q$ at fixed $z$.
+   $\Phi_q$ at fixed $z$. The $q$-side termination
+   ([atomic Habiro expansion](#cor:habiro-expansion-atomic), proved:
+   $m_{\max} \leq \lceil\sqrt{2 \deg p}\rceil$) is the q-analog of
+   the parallel claim conjectured for $z$ below.
 
 ## Statement
 
