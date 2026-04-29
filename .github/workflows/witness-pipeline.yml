@@ -137,12 +137,18 @@ jobs:
           # Anything else differing means a genuine numerical or
           # structural change.
           set -eu
-          if git diff --quiet folio-assistant/computations/*.witness.json folio-assistant/computations/*.derivation.json; then
+          # Use git pathspec `:(glob)` magic so git does the glob
+          # expansion internally — avoids potential "argument list
+          # too long" if the witness/derivation directory grows
+          # past the OS ARG_MAX on shell glob expansion.
+          PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
+          :(glob)folio-assistant/computations/*.derivation.json'
+          if git diff --quiet -- $PATHSPECS; then
             echo "Witnesses + derivation chains bit-stable."
             exit 0
           fi
           echo "Witnesses changed — filtering expected drift fields..."
-          drift=$(git diff folio-assistant/computations/*.witness.json folio-assistant/computations/*.derivation.json | \
+          drift=$(git diff -- $PATHSPECS | \
                   grep -E "^[+-]" | \
                   grep -vE "^\+\+\+|^---" | \
                   grep -vE '"(computedAt|durationMs|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version)":' || true)
