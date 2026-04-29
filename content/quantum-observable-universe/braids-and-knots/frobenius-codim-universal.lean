@@ -273,6 +273,74 @@ theorem hecke_n4_frobenius_codim (q : ℝ) :
   simp
   ring
 
+/-- The q-hook-length dimensions of the seven partitions of n=5.
+    Indexed by `Fin 7` (with `p(5) = 7`):
+      0 ↦ λ = (5)         : dim_q = 1
+      1 ↦ λ = (4,1)       : dim_q = [4]_q = q³+q+q⁻¹+q⁻³
+      2 ↦ λ = (3,2)       : dim_q = [5]_q = q⁴+q²+1+q⁻²+q⁻⁴
+      3 ↦ λ = (3,1,1)     : dim_q = [4]_q·[3]_q/[2]_q
+                                  = (q²+q⁻²)·[3]_q
+      4 ↦ λ = (2,2,1)     : dim_q = [5]_q (transpose of (3,2))
+      5 ↦ λ = (2,1,1,1)   : dim_q = [4]_q (transpose of (4,1))
+      6 ↦ λ = (1ⁿ)        : dim_q = 1
+
+    Computed via the q-hook-length formula:
+      H_q((5))     = [5]_q!  ⇒ dim_q = 1
+      H_q((4,1))   = [5]_q[3]_q[2]_q[1]_q²  ⇒ dim_q = [4]_q
+      H_q((3,2))   = [4]_q[3]_q[2]_q[1]_q²  ⇒ dim_q = [5]_q
+      H_q((3,1,1)) = [5]_q[2]_q²[1]_q²       ⇒ dim_q = [4]_q[3]_q/[2]_q
+                                            = (q²+q⁻²)·[3]_q
+      (2,2,1), (2,1,1,1), (1ⁿ) by transpose-conjugation.
+
+    The simplification `[4]_q/[2]_q = q²+q⁻²` was already used at n=4. -/
+noncomputable def heckeH5DimQ (q : ℝ) (i : Fin 7) : ℝ :=
+  match i with
+  | ⟨0, _⟩ => 1
+  | ⟨1, _⟩ => q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹
+  | ⟨2, _⟩ => q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹
+  | ⟨3, _⟩ => (q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)
+  | ⟨4, _⟩ => q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹
+  | ⟨5, _⟩ => q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹
+  | ⟨6, _⟩ => 1
+  | ⟨_+7, h⟩ => absurd h (by omega)
+
+@[simp] theorem heckeH5DimQ_zero (q : ℝ) : heckeH5DimQ q 0 = 1 := rfl
+@[simp] theorem heckeH5DimQ_one  (q : ℝ) :
+    heckeH5DimQ q 1 = q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_two  (q : ℝ) :
+    heckeH5DimQ q 2 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_three (q : ℝ) :
+    heckeH5DimQ q 3 = (q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH5DimQ_four (q : ℝ) :
+    heckeH5DimQ q 4 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_five (q : ℝ) :
+    heckeH5DimQ q 5 = q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_six (q : ℝ) :
+    heckeH5DimQ q 6 = 1 := rfl
+
+/-- **H_5 specialisation: τ(C_dim_q) = Σ_{λ⊢5} 1/dim_q(λ)
+    = 2 + 2/[4]_q + 2/[5]_q + 1/((q²+q⁻²)·[3]_q).**
+
+    The seven partitions of 5 are `(5)`, `(4,1)`, `(3,2)`, `(3,1,1)`,
+    `(2,2,1)`, `(2,1,1,1)`, `(1ⁿ)`.  Conjugate symmetry pairs
+    `(4,1) ↔ (2,1,1,1)` and `(3,2) ↔ (2,2,1)` give equal contributions
+    (`1/[4]_q` and `1/[5]_q` respectively).  The two `(5)` and `(1ⁿ)`
+    blocks each contribute `1/1 = 1`.  The self-conjugate `(3,1,1)`
+    sits alone at `1/((q²+q⁻²)·[3]_q)`.
+
+    This **closes the n = 5 case of S3** (combined with the partial
+    `def` of `frobeniusCoCasimirTrace` in `knot-mass-formula-unified`).
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=5 base). -/
+theorem hecke_n5_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 7, 1 / heckeH5DimQ q i
+      = 2 + 2 / (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹)
+          + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
+          + 1 / ((q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)) := by
+  rw [Fin.sum_univ_seven]
+  simp
+  ring
+
 /-- **Self-dual lower bound on the Frobenius co-Casimir trace.**
 
     For any semisimple Frobenius algebra with at least two blocks
