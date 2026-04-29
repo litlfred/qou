@@ -359,6 +359,8 @@ export default chapter({
         "habiro-expansion-atomic",
         "z-habiro-ring",
         "brane-tower-z-habiro",
+        "phi-q-categorical-truncation",
+        "phi-q-categorical-truncation-proof",
         "algebraic-quantum-volume-specialization",
         "archimedean-realization-functor",
         "vol-through-tau",
