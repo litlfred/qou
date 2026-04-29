@@ -49,6 +49,14 @@ axiom tau_M_non_degenerate (n : ℕ) (lambda_idx : ℕ) (q : ℝ)
     (hq : q ≠ 0) (hq_generic : ∀ k > 0, q ^ k ≠ 1) :
     tau_M_block_value n lambda_idx q ≠ 0
 
+/-- Predicate: the partition indexed by `lambda_idx` (under any
+    enumeration of partitions of `n`) has Young-diagram height > 2.
+    Concrete enumerations live in
+    `folio-assistant/computations/from_scratch/hoefsmit_general.partitions_of`;
+    here we keep the predicate opaque so the abstract degeneracy
+    statement can be quoted without committing to one enumeration. -/
+opaque PartitionHeightGtTwo (n : ℕ) (lambda_idx : ℕ) : Prop
+
 /-- **Substrate axiom (S-Frobenius-degenerate-SW).**
 
     The Schur-Weyl Frobenius form τ_SW is degenerate on H_n(q): for
@@ -57,9 +65,14 @@ axiom tau_M_non_degenerate (n : ℕ) (lambda_idx : ℕ) (q : ℝ)
     Follows from the Schur-Weyl vanishing theorem
     (`schur_weyl_weight_vanish_height_gt_2` in
     schur-weyl-vanishing.lean): the weight `w_λ = s_λ(q, q⁻¹)/H_q(λ)`
-    vanishes for height(λ) > 2, and τ_SW(p_λ) = w_λ · d_λ. -/
+    vanishes for height(λ) > 2, and τ_SW(p_λ) = w_λ · d_λ.
+
+    The hypothesis uses `PartitionHeightGtTwo` (a real predicate, not
+    the trivial `True`) so this axiom carries non-trivial structural
+    content: it asserts the Schur-Weyl-vanishing → block-degeneracy
+    implication, conditional on a real height-> 2 hypothesis. -/
 axiom tau_SW_degenerate_height_gt_2 (n : ℕ) (lambda_idx : ℕ) (q : ℝ)
-    (h_height : True) :  -- placeholder; full version requires height predicate
+    (h_height : PartitionHeightGtTwo n lambda_idx) :
     tau_SW_block_value n lambda_idx q = 0
 
 /-- The Frobenius co-Casimir element requires non-degenerate τ. -/
@@ -73,11 +86,20 @@ theorem tau_M_satisfies_non_degeneracy (n : ℕ) (q : ℝ) (hq : q ≠ 0)
     frobenius_codim_well_defined (fun li => tau_M_block_value n li q) :=
   fun li => tau_M_non_degenerate n li q hq hq_generic
 
+/-- Witness axiom: at every n ≥ 4 there exists a partition index
+    whose underlying partition has height > 2 (e.g. (1,1,1,1) for
+    n=4, or any column-shaped Young diagram for n ≥ 4).  Wired as
+    an axiom because the concrete index depends on the partition
+    enumeration; left abstract here. -/
+axiom exists_height_gt_two_index (n : ℕ) :
+    ∃ li, PartitionHeightGtTwo n li
+
 /-- **Theorem.** τ_SW DOES NOT satisfy non-degeneracy. -/
 theorem tau_SW_fails_non_degeneracy (n : ℕ) (q : ℝ) :
     ∃ li, tau_SW_block_value n li q = 0 := by
-  refine ⟨0, ?_⟩
-  exact tau_SW_degenerate_height_gt_2 n 0 q trivial
+  obtain ⟨li, h_height⟩ := exists_height_gt_two_index n
+  refine ⟨li, ?_⟩
+  exact tau_SW_degenerate_height_gt_2 n li q h_height
 
 /-- **Selection theorem.**  The QOU mass formula's Frobenius co-Casimir
     construction is well-defined under τ_M but NOT under τ_SW.

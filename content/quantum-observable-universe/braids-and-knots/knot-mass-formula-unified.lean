@@ -73,6 +73,16 @@ class UnifiedKnotMass where
     partition sum, with closed-form proof). It is a definitional
     bridge, not a structural conjecture.
 
+    **Consistency with the explicit theorem.**  The right-hand side
+    `2 + 1/(q + 1/q)` matches `hecke_n3_frobenius_codim` in
+    `frobenius-codim-universal.lean`, which proves
+    `∑_{i:Fin 3} 1/heckeH3DimQ q i = 2 + 1/(q + q⁻¹)`
+    (same expression up to `1/q ≡ q⁻¹`).  The axiom is the bridge
+    that lifts the explicit partition-sum value to the opaque
+    `frobeniusCoCasimirTrace q 3`; without it the opaque could not
+    be evaluated, but with it the unified mass formula's
+    `single_nucleon_frobenius_correction` discharges trivially.
+
     Ref: [manuscript] `prop:partition-sum-proton-residual`,
     `frobenius-codim-universal.lean::hecke_n3_frobenius_codim`. -/
 axiom frobenius_codim_trace_n3 (q : ℝ) :

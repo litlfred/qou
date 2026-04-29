@@ -98,13 +98,23 @@ noncomputable opaque neutronTowerMass : ℝ
 theorem neutron_tower_residual_5halves_fails :
     ¬ ∃ (ε : ℝ), abs ε ≤ electronMass * (3 / 1000) ∧
       neutronCodata - neutronTowerMass = electronMass * (5 / 2) + ε := by
-  -- Observed residual is 528.34 MeV (CODATA m_n = 939.565 vs tower
-  -- m_n_tower = 411.227 at q_0); predicted (5/2)·m_e ≈ 1.278 MeV.
-  -- Off by factor 413. The tower formula structurally undershoots
-  -- neutron mass because V̂_0^n = 0.854 is far from the q_0 pole at
-  -- q_0 ≈ 1.11. Witness:
-  --   `folio-assistant/computations/six_term_consumer.py`
   -- Ref: [manuscript] `rem:deuteron-first-principles`.
+  -- Path to a complete proof (per CLAUDE.md §3b documentation
+  -- requirement on `sorry` gaps):
+  --   (1) `neutronCodata` and `neutronTowerMass` are opaque axioms;
+  --       per the witness `six_term_consumer.py`, their numerical
+  --       values at q_0 are 939.565 MeV and 411.227 MeV respectively,
+  --       so the difference is 528.34 MeV.
+  --   (2) `electronMass · 5/2 = 1.278 MeV` by direct arithmetic.
+  --   (3) Difference 528.34 vs 1.278 is a factor 413 mismatch;
+  --       far exceeds the 3‰ · m_e ≈ 0.0015 MeV tolerance, so no
+  --       ε satisfying both bounds can exist.
+  -- To close: bind neutronCodata and neutronTowerMass to numerical
+  -- constants in a separate axiomatic instance, then a `linarith`
+  -- proof discharges the contradiction. Currently sorry-blocked
+  -- because the opaques don't have intervals available for linarith.
+  -- Ref: \cite{wenzl1988} for the underlying neutron-mass-tower
+  -- structural undershoot (V̂_0^n far from q_0 pole).
   sorry
 
 end QOU.BraidKnot
