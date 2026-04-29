@@ -101,13 +101,10 @@ theorem massGapReal_eq_zero_iff {q₀ : ℝ} (hq : q₀ ≠ 0) :
   constructor
   · rintro ((h | h) | h)
     · -- q₀ - q₀⁻¹ = 0 means q₀ = q₀⁻¹ means q₀² = 1
-      have : q₀ = q₀⁻¹ := by linarith
-      have hsq : q₀ * q₀ = 1 := by
-        -- From `this : q₀ = q₀⁻¹`, multiply both sides by `q₀`:
-        --   q₀ * q₀ = q₀⁻¹ * q₀ = 1.
-        have h1 : q₀ * q₀ = q₀⁻¹ * q₀ := by rw [← this]
-        rw [inv_mul_cancel₀ hq] at h1
-        exact h1
+      have hinv : q₀ = q₀⁻¹ := by linarith
+      -- Per Gemini review: `eq_inv_iff_mul_eq_one₀` captures
+      -- `a = b⁻¹ ↔ a * b = 1` directly.
+      have hsq : q₀ * q₀ = 1 := (eq_inv_iff_mul_eq_one₀ hq).mp hinv
       have : (q₀ - 1) * (q₀ + 1) = 0 := by nlinarith [hsq]
       rcases mul_eq_zero.mp this with h1 | h1
       · left; linarith
