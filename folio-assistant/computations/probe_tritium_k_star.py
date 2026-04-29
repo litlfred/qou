@@ -31,13 +31,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 import numpy as np
 from hecke_core import (
-    _build_ysn_matrices, partitions_of, q_hook_product,
+    _build_ysn_matrices, partitions_of, q_hook_product, _standard_tableaux,
 )
 from q_parameter import Q as Q0
 from witness_base import WitnessBuilder
 
 H_VAL = float(Q0 - 1.0/Q0)
 qi0 = 1.0 / Q0
+CHI_THRESHOLD = 1e-10
 
 
 def max_hook(partition):
@@ -55,6 +56,8 @@ def chi_lambda(partition, braid_word, n):
     evaluated at q = q_0. Uses YSN matrices.
 
     braid_word is a list of generator indices ±i ∈ ±{1, …, n-1}.
+    Negative generators σ_i^{-1} are computed via the Hecke relation
+    σ_i^{-1} = σ_i - (q - q^{-1}) (algebraic, no matrix inversion).
     """
     matrices = _build_ysn_matrices(partition, sparse_threshold=10**9)
     # matrices[k-1] is σ_k for k ∈ {1, …, n-1}
@@ -62,7 +65,8 @@ def chi_lambda(partition, braid_word, n):
         # 1-dim partition; σ_i acts as identity scalar
         return 1.0
     dim = len(matrices[0])
-    M = np.eye(dim)
+    eye = np.eye(dim)
+    M = eye.copy()
     for sigma in braid_word:
         idx = abs(sigma) - 1
         if idx >= len(matrices):
@@ -75,10 +79,9 @@ def chi_lambda(partition, braid_word, n):
         if sigma > 0:
             M = M @ sig_arr
         else:
-            try:
-                M = M @ np.linalg.inv(sig_arr)
-            except np.linalg.LinAlgError:
-                return float('nan')
+            # Algebraic Hecke inverse: σ_i^{-1} = σ_i - (q - q^{-1}) I
+            # from σ_i² = (q - q^{-1}) σ_i + I  ⇒  σ_i (σ_i - (q - q^{-1}) I) = I.
+            M = M @ (sig_arr - H_VAL * eye)
     return float(np.trace(M))
 
 
@@ -104,7 +107,6 @@ def main():
 
     parts = list(partitions_of(n_0))
     support = []
-    chi_threshold = 1e-10
     for lam in parts:
         try:
             chi = chi_lambda(lam, word, n_0)
@@ -112,10 +114,8 @@ def main():
             chi = float('nan')
             print(f"   error for {lam}: {e}")
         mh = max_hook(lam)
-        # dim is # standard tableaux
-        from hecke_core import _standard_tableaux
         d = len(list(_standard_tableaux(lam)))
-        in_supp = abs(chi) > chi_threshold if not np.isnan(chi) else False
+        in_supp = abs(chi) > CHI_THRESHOLD if not np.isnan(chi) else False
         marker = "*" if in_supp else " "
         print(f"{str(lam):>16} {mh:>9} {d:>4} {chi:>+14.6e} {marker:>9}")
         if in_supp:
@@ -164,7 +164,7 @@ def main():
         .add_caveat(
             "Character computation uses YSN matrices at numerical q_0; "
             "tiny but nonzero characters could be misclassified at the "
-            f"chi_threshold={chi_threshold}. For n=5 the partition basis "
+            f"chi_threshold={CHI_THRESHOLD}. For n=5 the partition basis "
             "is small (7 partitions), so robust to threshold choice."
         )
     )

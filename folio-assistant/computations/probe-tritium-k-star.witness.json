@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T20:21:35.284111+00:00",
-  "commitSha": "46749812eb2b024ce578fa873ca2c9fa6a967892",
+  "computedAt": "2026-04-29T21:20:01.832079+00:00",
+  "commitSha": "95ed33748d4b28a0b78e8f7751aa76c1c4cc2f9d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 7,
   "computation": "probe-tritium-k-star",
   "scriptFile": "probe_tritium_k_star.py",
-  "scriptHash": "8d143d62a9f7",
-  "scriptCommitSha": "",
+  "scriptHash": "51b9f6d829df",
+  "scriptCommitSha": "641fda128046f94890cdf7a13decbc3685f859c4",
   "description": "Compute k★(T_w) := max GB-depth (= max-hook) over partition support supp(T_w) for tritium's H_5 braid word. Compares to the witness's max_grade (Coxeter-length filtration depth) and falsifies the identification of max_grade with k★.",
   "contentBlock": "prop:phi-q-categorical-truncation",
   "parameters": {
@@ -59,7 +59,7 @@
           2
         ],
         "max_hook": 4,
-        "chi": 0.7678099469370784,
+        "chi": 0.7678099469370783,
         "dim": 5
       },
       {
@@ -69,7 +69,7 @@
           1
         ],
         "max_hook": 5,
-        "chi": 0.5639854723553689,
+        "chi": 0.563985472355369,
         "dim": 6
       },
       {
@@ -79,7 +79,7 @@
           1
         ],
         "max_hook": 4,
-        "chi": 0.9075874971529743,
+        "chi": 0.9075874971529748,
         "dim": 5
       },
       {
@@ -90,7 +90,7 @@
           1
         ],
         "max_hook": 5,
-        "chi": -1.293402831278145,
+        "chi": -1.2934028312781451,
         "dim": 4
       },
       {

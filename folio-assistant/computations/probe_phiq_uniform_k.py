@@ -26,6 +26,15 @@ H_VAL = float(Q0 - 1.0/Q0)
 qi0 = 1.0 / Q0
 z_mark = 1.0 / (Q0**0.5 + (1.0/Q0)**0.5)
 
+# ── Atom-specific data (single source of truth) ────────────────────
+AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
+Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "he3": (2, 1)}
+RHO_MAP = {"deuteron": 1, "tritium": 2, "he3": 2}
+TR_M_AT_Q0 = {"deuteron": 0.336821, "tritium": 0.078, "he3": 0.179}
+# β-cal calibration scale from light_isotope_sweep (subtractive interp).
+E_0_VAL = 3.131194
+SWEEP_K = [1, 2, 3, 4, 5, 6, 8, 10]
+
 class PhiQPoleHit(Exception):
     """Raised when a Φ_q truncation factor (1 - q^{-k}z) is within
     numerical zero. Subtracting two `inf`s downstream produces NaN and
@@ -70,14 +79,10 @@ def brane_tower_truncated(Z, N, include_inter, k_max):
 
 def main():
     HERE = Path(__file__).parent
-    AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
-    Z_N = {"deuteron": (1,1), "tritium": (1,2), "he3": (2,1)}
-    rho_map = {"deuteron": 1, "tritium": 2, "he3": 2}
     sigma_3A_witness = json.loads(
         (HERE / "probe-term4-conventions.witness.json").read_text()
     )["sigma_inv_dim_q_at_q0"]
-    def sigma(A): return float(sigma_3A_witness[f"n={3*A}"])
-    tr_M = {"deuteron": 0.336821, "tritium": 0.078, "he3": 0.179}
+    def sigma(A): return float(sigma_3A_witness[f"n={3 * A}"])
 
     print("=" * 102)
     print("Uniform-k Yekutieli truncation probe")
@@ -85,8 +90,6 @@ def main():
     print(f"  q_0 = {Q0}, m_e = {M_E_MEV} MeV, z_mark = {z_mark:.6f}")
     print()
 
-    sweep_k = [1, 2, 3, 4, 5, 6, 8, 10]
-    E_0_VAL = 3.131194
     print(f"  Per-atom |V̂_i| ranges:")
     for name, (Z, N) in Z_N.items():
         _, _, mags = brane_tower_truncated(Z, N, True, 1)
@@ -100,11 +103,11 @@ def main():
     print("-" * 102)
 
     results = {}
-    for k in sweep_k:
+    for k in SWEEP_K:
         results[k] = {}
         for name, (Z, N) in Z_N.items():
             A = Z + N
-            rho = rho_map[name]
+            rho = RHO_MAP[name]
             try:
                 T2a, T3a, _ = brane_tower_truncated(Z, N, True, k)
                 T2f, T3f, _ = brane_tower_truncated(Z, N, False, k)
@@ -119,7 +122,7 @@ def main():
             tower_f = T2f + T3f
             dtow = tower_f - tower_a
             sigma_3A = sigma(A)
-            B_abs = M_E_MEV * rho * (abs(tr_M[name]) + tower_a + sigma_3A)
+            B_abs = M_E_MEV * rho * (abs(TR_M_AT_Q0[name]) + tower_a + sigma_3A)
             B_sub = E_0_VAL * dtow
             err_abs = 100.0 * (B_abs - AME[name]) / AME[name]
             err_sub = 100.0 * (B_sub - AME[name]) / AME[name]
@@ -136,7 +139,7 @@ def main():
         print()
 
     print("Verdict (does any uniform k close all three within 10%?):")
-    for k in sweep_k:
+    for k in SWEEP_K:
         max_abs = max(abs(results[k][n]["err_abs_pct"]) for n in AME)
         max_sub = max(abs(results[k][n]["err_sub_pct"]) for n in AME)
         v_a = "YES" if max_abs < 10 else f"NO ({max_abs:.0f}%)"
@@ -154,7 +157,7 @@ def main():
         .set_content_block("conj:brane-tower-z-habiro")
         .add_parameter("q_0", float(Q0))
         .add_parameter("m_e_MeV", M_E_MEV)
-        .add_parameter("k_sweep", sweep_k)
+        .add_parameter("k_sweep", SWEEP_K)
         .add_data("results", results)
         .add_caveat(
             "Uses absolute paper formula B = m_e·ρ·(|tr_M|+tower+σ); "
