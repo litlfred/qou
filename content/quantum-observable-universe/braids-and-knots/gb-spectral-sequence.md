@@ -249,3 +249,27 @@ of quantum topology and deformation theory — the unification
 target is to show that the six-term mass is a specific
 **spectral-sequence cohomology class** paired with the atomic
 braid, computable from the Hecke algebra alone.*
+
+**Archimedean realisation: the $\mathbb{C}$-side of the
+$E_\infty$-pairing is a Picard–Lefschetz period.**
+*Strict archimedean split: the spectral sequence above lives
+entirely over the categorical base ring $R$ — pairings
+$\langle \mathrm{tr}_M, E_\infty^{p,*}(T_w)\rangle$ land in $R$,
+not $\mathbb{C}$.  Applying the archimedean fibre functor
+$\tau \colon R \hookrightarrow \mathbb{C}$ promotes the
+$E_\infty$-pairing to a contour integral on the Descartes elliptic
+curve $\mathcal{E}_q(\mathbb{C})$.  Specifically, the level-$p$
+stratum corresponds via
+([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence))
+to the geometric jet bundle $J^p\mathcal{S}$, on which the
+Seiberg–Witten differential $\lambda_{\mathrm{SW}}^{(p)}$ is the
+tautological section.  The pairing's $\mathbb{C}$-realisation is
+the Picard–Lefschetz thimble period $\Pi^{(p)}$
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)),
+which equals $\tau\bigl\langle\mathrm{tr}_M,
+E_\infty^{p,*}(T_w)\bigr\rangle$ up to the integer intersection
+numbers $n_\sigma^{(p)}$ of the Lefschetz decomposition.  The
+spectral sequence and the PL thimble decomposition are therefore
+two presentations of the same data on opposite sides of $\tau$;
+their agreement is the content of
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).*
