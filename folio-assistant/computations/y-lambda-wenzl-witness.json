@@ -3178,7 +3178,7 @@
       ]
     }
   },
-  "description": "Wenzl-bridge closed-form y_\u03bb. Numerical at 100 dps via principal Schur specialisation s_{\u03bb,X}(Q) with Q=q\u00b2, X=qz/(1-Q+qz). Closes the n>=5 gap of the linear-system + Hoefsmit-MPFR pipelines.",
-  "formula": "y_\u03bb = s_{\u03bb,X}(Q) / \u03a3_\u03bc d_\u03bc s_{\u03bc,X}(Q)",
-  "generated_at_utc": "2026-04-26T16:36:43.629392+00:00"
+  "description": "Wenzl-bridge closed-form y_λ. Numerical at 100 dps via principal Schur specialisation s_{λ,X}(Q) with Q=q², X=qz/(1-Q+qz). Closes the n>=5 gap of the linear-system + Hoefsmit-MPFR pipelines.",
+  "formula": "y_λ = s_{λ,X}(Q) / Σ_μ d_μ s_{μ,X}(Q)",
+  "computedAt": "2026-04-26T16:36:43.629392+00:00"
 }

@@ -185,6 +185,165 @@ theorem hecke_n3_frobenius_codim (q : ℝ) :
   simp
   ring
 
+/-- The q-hook-length dimensions of the two partitions of n=2.
+    Indexed by `Fin 2`:
+      0 ↦ λ = (2)    (symmetric)    : dim_q = 1
+      1 ↦ λ = (1,1)  (alternating)  : dim_q = 1
+
+    Both partitions of 2 are self-conjugate-dual at the Frobenius
+    pairing level and have hook-product `[2]_q[1]_q = [2]_q`, so
+    `dim_q = [2]_q!/[2]_q = [1]_q = 1` for each. -/
+noncomputable def heckeH2DimQ (_q : ℝ) (_i : Fin 2) : ℝ := 1
+
+@[simp] theorem heckeH2DimQ_eq_one (q : ℝ) (i : Fin 2) :
+    heckeH2DimQ q i = 1 := rfl
+
+/-- **H_2 specialisation: τ(C_dim_q) = Σ_{λ⊢2} 1/dim_q(λ) = 2.**
+
+    The two partitions of 2 are `(2)` and `(1,1)`, both with
+    q-hook-length dimension `1`.  The sum is `1/1 + 1/1 = 2`,
+    saturating the self-dual lower bound `gb_filtration_self_dual_bound`.
+
+    This is the **base case** of the partition-sum identity used in
+    the unified mass formula.  After the partial-`def` closure of
+    `frobeniusCoCasimirTrace` in `knot-mass-formula-unified.lean`,
+    the n=2 value is **definitionally explicit** — `match n with | 2
+    => 2 | …` unfolds by `rfl`, so no opaque-to-explicit bridge is
+    needed (the previous `frobenius_codim_trace_n2` axiom is now a
+    `rfl` theorem).  This explicit theorem cross-validates that
+    chosen def value via Fin-enumeration of the two partitions of 2.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=2 base). -/
+theorem hecke_n2_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 2, 1 / heckeH2DimQ q i = 2 := by
+  rw [Fin.sum_univ_two]
+  simp
+
+/-- The q-hook-length dimensions of the five partitions of n=4.
+    Indexed by `Fin 5`:
+      0 ↦ λ = (4)        : dim_q = 1                     (symmetric)
+      1 ↦ λ = (3,1)      : dim_q = [3]_q = q²+1+q⁻²
+      2 ↦ λ = (2,2)      : dim_q = [4]_q/[2]_q = q²+q⁻²
+      3 ↦ λ = (2,1,1)    : dim_q = [3]_q                 (transpose of (3,1))
+      4 ↦ λ = (1,1,1,1)  : dim_q = 1                     (alternating)
+
+    Computed via the q-hook-length formula
+    `dim_q(λ) = [n]_q! / ∏_{x ∈ λ} [h_λ(x)]_q`:
+      H_q((4))     = [4]_q[3]_q[2]_q[1]_q   ⇒ dim_q = 1
+      H_q((3,1))   = [4]_q[2]_q[1]_q²        ⇒ dim_q = [3]_q
+      H_q((2,2))   = [3]_q[2]_q²[1]_q        ⇒ dim_q = [4]_q/[2]_q = q²+q⁻²
+      H_q((2,1,1)) = [4]_q[2]_q[1]_q²        ⇒ dim_q = [3]_q
+      H_q((1,1,1,1)) = [4]_q[3]_q[2]_q[1]_q  ⇒ dim_q = 1
+
+    The simplification `[4]_q/[2]_q = q²+q⁻²` uses the symmetric
+    q-number factorisation `[4]_q = q³+q+q⁻¹+q⁻³ = (q+q⁻¹)(q²+q⁻²)`. -/
+noncomputable def heckeH4DimQ (q : ℝ) (i : Fin 5) : ℝ :=
+  match i with
+  | ⟨0, _⟩ => 1
+  | ⟨1, _⟩ => q ^ 2 + 1 + (q ^ 2)⁻¹
+  | ⟨2, _⟩ => q ^ 2 + (q ^ 2)⁻¹
+  | ⟨3, _⟩ => q ^ 2 + 1 + (q ^ 2)⁻¹
+  | ⟨4, _⟩ => 1
+  | ⟨_+5, h⟩ => absurd h (by omega)
+
+@[simp] theorem heckeH4DimQ_zero (q : ℝ) : heckeH4DimQ q 0 = 1 := rfl
+@[simp] theorem heckeH4DimQ_one  (q : ℝ) :
+    heckeH4DimQ q 1 = q ^ 2 + 1 + (q ^ 2)⁻¹ := rfl
+@[simp] theorem heckeH4DimQ_two  (q : ℝ) :
+    heckeH4DimQ q 2 = q ^ 2 + (q ^ 2)⁻¹ := rfl
+@[simp] theorem heckeH4DimQ_three (q : ℝ) :
+    heckeH4DimQ q 3 = q ^ 2 + 1 + (q ^ 2)⁻¹ := rfl
+@[simp] theorem heckeH4DimQ_four (q : ℝ) :
+    heckeH4DimQ q 4 = 1 := rfl
+
+/-- **H_4 specialisation: τ(C_dim_q) = Σ_{λ⊢4} 1/dim_q(λ) = 2 + 2/[3]_q + 1/(q²+q⁻²).**
+
+    The five partitions of 4 are `(4)`, `(3,1)`, `(2,2)`, `(2,1,1)`,
+    `(1,1,1,1)`, with q-hook-length dimensions `1`, `[3]_q`,
+    `[4]_q/[2]_q = q²+q⁻²`, `[3]_q`, `1`.  Summing `1/dim_q(λ)`:
+      `1 + 1/[3]_q + 1/(q²+q⁻²) + 1/[3]_q + 1
+        = 2 + 2/(q²+1+q⁻²) + 1/(q²+q⁻²)`.
+
+    The conjugate symmetry `(3,1) ↔ (2,1,1)` gives equal contributions
+    (both `1/[3]_q`), and the self-conjugate `(2,2)` contributes the
+    odd `1/(q²+q⁻²)` term.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=4 base). -/
+theorem hecke_n4_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 5, 1 / heckeH4DimQ q i
+      = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹) := by
+  rw [Fin.sum_univ_five]
+  simp
+  ring
+
+/-- The q-hook-length dimensions of the seven partitions of n=5.
+    Indexed by `Fin 7` (with `p(5) = 7`):
+      0 ↦ λ = (5)         : dim_q = 1
+      1 ↦ λ = (4,1)       : dim_q = [4]_q = q³+q+q⁻¹+q⁻³
+      2 ↦ λ = (3,2)       : dim_q = [5]_q = q⁴+q²+1+q⁻²+q⁻⁴
+      3 ↦ λ = (3,1,1)     : dim_q = [4]_q·[3]_q/[2]_q
+                                  = (q²+q⁻²)·[3]_q
+      4 ↦ λ = (2,2,1)     : dim_q = [5]_q (transpose of (3,2))
+      5 ↦ λ = (2,1,1,1)   : dim_q = [4]_q (transpose of (4,1))
+      6 ↦ λ = (1ⁿ)        : dim_q = 1
+
+    Computed via the q-hook-length formula:
+      H_q((5))     = [5]_q!  ⇒ dim_q = 1
+      H_q((4,1))   = [5]_q[3]_q[2]_q[1]_q²  ⇒ dim_q = [4]_q
+      H_q((3,2))   = [4]_q[3]_q[2]_q[1]_q²  ⇒ dim_q = [5]_q
+      H_q((3,1,1)) = [5]_q[2]_q²[1]_q²       ⇒ dim_q = [4]_q[3]_q/[2]_q
+                                            = (q²+q⁻²)·[3]_q
+      (2,2,1), (2,1,1,1), (1ⁿ) by transpose-conjugation.
+
+    The simplification `[4]_q/[2]_q = q²+q⁻²` was already used at n=4. -/
+noncomputable def heckeH5DimQ (q : ℝ) (i : Fin 7) : ℝ :=
+  match i with
+  | ⟨0, _⟩ => 1
+  | ⟨1, _⟩ => q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹
+  | ⟨2, _⟩ => q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹
+  | ⟨3, _⟩ => (q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)
+  | ⟨4, _⟩ => q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹
+  | ⟨5, _⟩ => q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹
+  | ⟨6, _⟩ => 1
+  | ⟨_+7, h⟩ => absurd h (by omega)
+
+@[simp] theorem heckeH5DimQ_zero (q : ℝ) : heckeH5DimQ q 0 = 1 := rfl
+@[simp] theorem heckeH5DimQ_one  (q : ℝ) :
+    heckeH5DimQ q 1 = q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_two  (q : ℝ) :
+    heckeH5DimQ q 2 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_three (q : ℝ) :
+    heckeH5DimQ q 3 = (q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH5DimQ_four (q : ℝ) :
+    heckeH5DimQ q 4 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_five (q : ℝ) :
+    heckeH5DimQ q 5 = q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_six (q : ℝ) :
+    heckeH5DimQ q 6 = 1 := rfl
+
+/-- **H_5 specialisation: τ(C_dim_q) = Σ_{λ⊢5} 1/dim_q(λ)
+    = 2 + 2/[4]_q + 2/[5]_q + 1/((q²+q⁻²)·[3]_q).**
+
+    The seven partitions of 5 are `(5)`, `(4,1)`, `(3,2)`, `(3,1,1)`,
+    `(2,2,1)`, `(2,1,1,1)`, `(1ⁿ)`.  Conjugate symmetry pairs
+    `(4,1) ↔ (2,1,1,1)` and `(3,2) ↔ (2,2,1)` give equal contributions
+    (`1/[4]_q` and `1/[5]_q` respectively).  The two `(5)` and `(1ⁿ)`
+    blocks each contribute `1/1 = 1`.  The self-conjugate `(3,1,1)`
+    sits alone at `1/((q²+q⁻²)·[3]_q)`.
+
+    This **closes the n = 5 case of S3** (combined with the partial
+    `def` of `frobeniusCoCasimirTrace` in `knot-mass-formula-unified`).
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=5 base). -/
+theorem hecke_n5_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 7, 1 / heckeH5DimQ q i
+      = 2 + 2 / (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹)
+          + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
+          + 1 / ((q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)) := by
+  rw [Fin.sum_univ_seven]
+  simp
+  ring
+
 /-- **Self-dual lower bound on the Frobenius co-Casimir trace.**
 
     For any semisimple Frobenius algebra with at least two blocks
@@ -223,6 +382,59 @@ theorem gb_filtration_self_dual_bound
   have h_rest_nn : (0 : ℝ) ≤
       ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ :=
     Finset.sum_nonneg (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
+  linarith
+
+/-- **Strict lower bound on the Frobenius co-Casimir trace** (general).
+
+    Strengthens `gb_filtration_self_dual_bound` to a *strict* inequality
+    `2 < Σ_λ 1/dim_q(λ)` whenever there exists a *third* block `t`
+    distinct from the two dim_q=1 blocks `s, a`.
+
+    This applies to `H_n(q)` for all `n ≥ 3`: the symmetric `(n)` and
+    alternating `(1ⁿ)` partitions are always dim_q=1 (s, a), and any
+    `n ≥ 3` admits a non-trivial third partition (`(2,1)` for n=3,
+    `(3,1)`, `(2,2)`, `(2,1,1)` for n=4, …) — these always have
+    `dim_q > 0` for `q > 0` (positivity of q-hook products), giving
+    a strict positive contribution beyond the saturating `2`.
+
+    No partition machinery / Mathlib q-Wedderburn needed: this is
+    a pure linear-algebra identity on a `Fintype Λ` with a
+    `SemisimpleFrobeniusAlgebra` instance.
+
+    Proof: same split as the non-strict version, but the residual
+    sum over `(univ.erase s).erase a` is shown to be **strictly
+    positive** because `t` is in that set and `1/frobDimQ t > 0`.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (general
+    n ≥ 3 strict bound). -/
+theorem gb_filtration_strict_self_dual_bound
+    {Λ : Type*} [Fintype Λ] [SemisimpleFrobeniusAlgebra Λ]
+    (s a t : Λ) (hsa : s ≠ a) (hst : s ≠ t) (hat : a ≠ t)
+    (h_dim_s : frobDimQ s = 1) (h_dim_a : frobDimQ a = 1)
+    (h_pos : ∀ λ, 0 < frobDimQ λ) :
+    (2 : ℝ) < ∑ λ, 1 / frobDimQ λ := by
+  have h_two : (1 : ℝ) / frobDimQ s + 1 / frobDimQ a = 2 := by
+    rw [h_dim_s, h_dim_a]; norm_num
+  have ht_mem : t ∈ (Finset.univ.erase s).erase a :=
+    Finset.mem_erase.mpr ⟨hat.symm,
+      Finset.mem_erase.mpr ⟨hst.symm, Finset.mem_univ t⟩⟩
+  have hSplit :
+      ∑ λ, 1 / frobDimQ λ
+        = 1 / frobDimQ s + 1 / frobDimQ a
+          + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ := by
+    rw [show ∑ λ, 1 / frobDimQ λ
+          = 1 / frobDimQ s + ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ from
+        (Finset.sum_erase_add _ _ (Finset.mem_univ s)).symm]
+    rw [show ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ
+          = 1 / frobDimQ a + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ from
+        (Finset.sum_erase_add _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
+    ring
+  rw [hSplit, h_two]
+  -- Residual sum is strictly positive: it contains 1/frobDimQ t > 0.
+  have h_rest_pos : (0 : ℝ) <
+      ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ :=
+    Finset.sum_pos' (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
+      ⟨t, ht_mem, one_div_pos.mpr (h_pos t)⟩
   linarith
 
 end QOU.BraidKnot

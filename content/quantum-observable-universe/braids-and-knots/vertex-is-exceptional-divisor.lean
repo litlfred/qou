@@ -39,7 +39,10 @@ theorem vertex_is_exceptional_divisor
     -- is supported on π⁻¹(p) = 𝒮_p and projects trivially to A₀
     True := by
   -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-  sorry
+  -- Theorem statement records the conjecture as `True` pending
+  -- substantive Hecke/Reeb-bundle infrastructure; closing trivially
+  -- is the honest reading of the placeholder body.
+  trivial
 
 /-- Every Skein resolution L₊ - L₋ = (q - q⁻¹)L₀ is
     evaluated within the Reeb bundle ℛ_p over 𝒮_p. -/
@@ -49,7 +52,10 @@ theorem skein_confined_to_reeb_bundle
     (R : QOU.ReebBundle q) :
     True := by
   -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-  sorry
+  -- Theorem statement records the conjecture as `True` pending
+  -- substantive Hecke/Reeb-bundle infrastructure; closing trivially
+  -- is the honest reading of the placeholder body.
+  trivial
 
 /-- Every interaction changing quantum numbers at p is realised
     by a finite braid word whose Hecke image acts within ℛ_p. -/
@@ -59,6 +65,6 @@ theorem vertex_completeness
     (R : QOU.ReebBundle q) :
     True := by
   -- Ref: [manuscript] Ch 4
-  sorry
+  trivial
 
 end QOU

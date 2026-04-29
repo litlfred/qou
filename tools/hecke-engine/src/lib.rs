@@ -49,6 +49,8 @@ pub mod sdp_clarabel_mpfr_prep;
 #[cfg(feature = "clarabel-sdp")]
 pub mod sdp_dual_certificate;
 #[cfg(feature = "clarabel-sdp")]
+pub mod sdp_per_block;
+#[cfg(feature = "clarabel-sdp")]
 pub mod sdp_recover_canonical;
 #[cfg(feature = "clarabel-sdp")]
 pub mod sdp_solve_canonical_t_w;

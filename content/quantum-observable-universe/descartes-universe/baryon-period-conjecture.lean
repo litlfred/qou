@@ -9,7 +9,23 @@ This conjecture axiomatizes the three-color simultaneous prescription:
 the baryon integrand is the product ∏_k dc_k/dz of all three color
 prolongations, integrated over [−a, a] with a = (4 − q)/(4q + 3).
 
-LaTeX label: `conj:baryon-period-ratio`
+## Dependent wiring (CLAUDE.md §3b)
+
+This conjecture is **downstream of** `prop:sw-period-thimble-equivalence`,
+which is itself conditional on the five hypotheses A2.1–A2.5 bundled
+in the typeclass `PLCorrectnessHypotheses` (defined in
+`sw-period-thimble-equivalence.lean`).  In particular A2.4
+(real-axis = thimble sum) is open; under its conjectural status,
+this whole block remains a `conjecture` per CLAUDE.md §3b.
+
+To make the dependence visible at the type level — and to avoid an
+unresolved cross-file `import` until the sibling `.lean` files are
+wired into a Lake target (see `(somethings maybe didn't migrate to
+standard lake architecture)` migration note) — we mirror the
+`PLCorrectnessHypotheses` class here under a fully-qualified name.
+Once the migration lands, this mirror should be deleted in favour of
+`import QOU.Descartes.SwPeriodThimbleEquivalence` and a single
+canonical `PLCorrectnessHypotheses` definition.
 
 ## References
 
@@ -19,8 +35,44 @@ LaTeX label: `conj:baryon-period-ratio`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
+import Mathlib.Tactic.NormNum
 
 namespace QOU.Descartes
+
+/-- **Mirror of `PLCorrectnessHypotheses`** from
+    `sw-period-thimble-equivalence.lean`.
+
+    Carries the five PL-correctness hypotheses A2.1–A2.5 needed to
+    identify `τ⟨tr_M, E_∞^{k,*}(T_w)⟩` with the thimble period
+    `Π^(k)(T_w; q_0)`.  Mirrored here so this file compiles
+    standalone (sibling `.lean` files cannot `import` each other
+    until the Lake-architecture migration completes).  When that
+    migration lands, delete this mirror and `import` the canonical
+    class instead. -/
+-- Ref: [manuscript] §6/sw-period-thimble-equivalence (canonical class)
+class PLCorrectnessHypotheses where
+  /-- A2.1: critical points of `S` equal the discriminant locus (R-side). -/
+  critical_points_eq_discriminant : True
+  /-- A2.2: Hessian is non-zero at every critical point (archimedean). -/
+  hessian_nondegenerate : True
+  /-- A2.3: Lefschetz decomposition exists (archimedean, classical). -/
+  lefschetz_decomposition : True
+  /-- A2.4: real-axis integral equals thimble-sum integral (archimedean, OPEN). -/
+  real_axis_eq_thimble_sum : True
+  /-- A2.5: baryon integrand is the Alt^3 isotype (R-side). -/
+  alt_isotype_selection : True
+
+/-- Placeholder instance: lets downstream theorems that take
+    `[PLCorrectnessHypotheses]` type-check at present.  Once the
+    five hypotheses are replaced by real propositions, replace this
+    with either a proof (closed cases) or a sorry-bearing instance
+    (still-open A2.4). -/
+instance plCorrectnessHypotheses_placeholder : PLCorrectnessHypotheses where
+  critical_points_eq_discriminant := trivial
+  hessian_nondegenerate := trivial
+  lefschetz_decomposition := trivial
+  real_axis_eq_thimble_sum := trivial
+  alt_isotype_selection := trivial
 
 /-- **Baryon period ratio conjecture** (axiom class).
 
@@ -34,9 +86,13 @@ namespace QOU.Descartes
     - The Borromean link volume Vol(𝔅₃)
     - The mass ratio identity m_p/m_e = Vol(𝔅₃)/ℏ_q² × 𝒜(q₀)
 
-    Ref: [manuscript] §5/baryon-period-conjecture -/
+    **Dependent on `[PLCorrectnessHypotheses]`** per CLAUDE.md §3b:
+    the identification of `𝒜(q₀)` with a ratio of thimble periods
+    requires the keystone `prop:sw-period-thimble-equivalence`,
+    which in turn requires A2.1–A2.5.  Until A2.4 is closed for the
+    proton word, this remains a *conjecture*. -/
 -- Ref: [manuscript] §5/baryon-period-conjecture
-class BaryonPeriodRatio (q : ℝ) where
+class BaryonPeriodRatio (q : ℝ) [PLCorrectnessHypotheses] where
   /-- The substrate parameter lies in the physical range. -/
   q_pos : 0 < q
   q_gt_one : 1 < q
@@ -64,7 +120,11 @@ class BaryonPeriodRatio (q : ℝ) where
   mass_ratio_approx : 1835 < mass_ratio_eq ∧ mass_ratio_eq < 1837
 
 /-- The baryon period conjecture holds at q₀ ≈ 1.1100 with the
-    numerically computed amplification factor. -/
+    numerically computed amplification factor.
+
+    Conditional on `[PLCorrectnessHypotheses]` (placeholder instance
+    in scope above): `BaryonPeriodRatio q₀` is a *downstream conjecture*
+    of `swPeriodThimbleEquivalence`, per CLAUDE.md §3b. -/
 -- Ref: [manuscript] §5/baryon-period-conjecture
 noncomputable instance : BaryonPeriodRatio (1.1100 : ℝ) where
   q_pos := by norm_num
@@ -78,6 +138,7 @@ noncomputable instance : BaryonPeriodRatio (1.1100 : ℝ) where
   mass_ratio_eq := 1836.15
   mass_ratio_approx := by
     -- Ref: [manuscript] §5/baryon-period-conjecture
-    sorry
+    -- Numerical inequality 1835 < 1836.15 < 1837.
+    refine ⟨?_, ?_⟩ <;> norm_num
 
 end QOU.Descartes

@@ -261,15 +261,14 @@ class FibreFunctorRigidity (M : Type*) where
     uses: `def:q-hecke-eigensheaf`, `def:q-hecke-operator`,
           `rem:fibre-functor-rigidity` -/
 -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
-theorem q_hecke_eigenvalue {M : Type*} [FibreFunctorRigidity M]
+theorem q_hecke_eigenvalue {M : Type*} [inst : FibreFunctorRigidity M]
     (es : QHeckeEigensheaf M) (es' : QHeckeEigensheaf M)
-    (h_op : es.heckeOp = es'.heckeOp)
+    (_h_op : es.heckeOp = es'.heckeOp)
     (h_sp : es.eigenvalue.sp = es'.eigenvalue.sp)
     (h_res : ∀ p, es.eigenvalue.holonomyResidue p =
                    es'.eigenvalue.holonomyResidue p) :
     es.eigenvalue = es'.eigenvalue :=
-  FibreFunctorRigidity.eigenvalue_unique
-    es.eigenvalue es'.eigenvalue h_sp h_res
+  inst.eigenvalue_unique es.eigenvalue es'.eigenvalue h_sp h_res
 
 /-- **Perpetual obstruction — finite divisor set**: for any nonzero
     integer `χ`, the set of positive integers dividing `χ` is finite.

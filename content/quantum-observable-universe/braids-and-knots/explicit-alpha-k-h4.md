@@ -48,8 +48,8 @@ $\{T_{w_C}\}_C$.  At $H_4$ this is 5-dimensional.  The
 length-restricted (length-$k$ word) approach fails: at $H_4$ the 6
 length-3 reduced words collapse to just 2 conjugacy classes (3-cycle
 $+$ 4-cycle) — only a 2-dim space, insufficient to satisfy 4
-lower-depth orthogonality constraints
-([working note](#wedderburn-orthogonal-r-k-notes)).
+lower-depth orthogonality constraints (working note:
+`folio-assistant/computations/r-k-wedderburn-orthogonal-derivation-notes.md`).
 
 **Linear system.**  Let
 $M \in \mathbb{R}^{4 \times 5}$ have entries
@@ -132,8 +132,8 @@ The closed-form $\mathbb{Q}(q)$ expressions for the $r_\lambda$
 coefficients are tabulated above (lines 21–31). The closed forms
 factor through cyclotomic denominators $(q+1)$, $(q^2+1)^2$,
 $q^3 \Phi_{(4)}$, etc. (standard Schur-element pattern). All five
-partitions of 4 — including the self-conjugate $(2, 2)$ that
-previously diverged numerically — close via the sympy null-space
+partitions of 4 — including the self-conjugate $(2, 2)$ whose
+numerical inverse is ill-conditioned — close via the sympy null-space
 solve.
 
 For $H_5$ and $H_6$, all $18$ partitions admit numerical $r_\lambda$

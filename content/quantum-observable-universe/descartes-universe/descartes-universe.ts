@@ -316,6 +316,7 @@ export default chapter({
         "mass-from-generators",
         // Volume tower and Picard-Lefschetz decomposition
         "picard-lefschetz-thimble",
+        "pl-yekutieli-stokes",
         "volume-tower-decomposition",
         "cs-evaluation-faithfulness",
         // Transcendence and algebraic independence
@@ -327,9 +328,14 @@ export default chapter({
         "implications-algebraic-independence",
         "implications-algebraic-dependence",
         // Baryon periods and integration limits
+        "baryon-product-from-alt",
         "baryon-period-conjecture",
         "baryon-integration-limit",
         "mobius-golden-fixed-points",
+        "mobius-limit-from-thimble",
+        // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
+        "sw-period-thimble-equivalence",
+        "jet-gb-pl-correspondence",
       ],
     }),
     // ── §5. Orbital symmetry and cohomological embedding ────────────

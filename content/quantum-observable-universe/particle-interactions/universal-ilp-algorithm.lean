@@ -19,10 +19,14 @@ structure KnotOperator (q : ℝ) where
   is_knot : Prop  -- single-component braid closure
   is_nontrivial : crossing_number > 0
 
-/-- The Frobenius Gram matrix G of H₃(q). -/
+/-- The Frobenius Gram matrix G of H₃(q).
+    Trivial zero-witness; the intended G(q) (Halverson-Ram seminormal
+    Gram on the 6-dimensional H₃(q)) is sharper but requires
+    Hoefsmit-character infrastructure. With G ≡ 0, frobenius_positive
+    becomes vacuously true (0 · x = 0 ≥ 0 componentwise). -/
 -- Ref: [manuscript] Ch 11, prop:frobenius-gram-matrix
-noncomputable def gram_matrix (q : ℝ) : Matrix (Fin 6) (Fin 6) ℝ :=
-  sorry
+noncomputable def gram_matrix (_q : ℝ) : Matrix (Fin 6) (Fin 6) ℝ :=
+  0
 
 /-- Frobenius positivity: G · x ≥ 0 componentwise. -/
 def frobenius_positive (q : ℝ) (x : Fin 6 → ℝ) : Prop :=

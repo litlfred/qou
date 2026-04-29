@@ -121,29 +121,101 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
-  -- Mathematical content: [m]_q = Σ_{j=0}^{m-1} q^{m-1-2j} (symmetric
-  -- sum of m terms), and pairing j with m-1-j gives pairs q^k + q^{-k}
-  -- each ≥ 2 by AM-GM.  Sum ≥ m, so [m]_q/m ≥ 1.
+  -- Strategy: prove `(m : ℝ) ≤ qIntReal q m` by induction on m using
+  -- the recurrence `qIntReal q (k+1) = q · qIntReal q k + q^(-k)`,
+  -- then divide by m to obtain the original goal.
   --
-  -- A previous attempt used Bernoulli on q⁻¹^m - 1 in the wrong
-  -- direction (Gemini PR #413 review): for x = q⁻¹ < 1, Bernoulli
-  -- gives x^m - 1 ≥ m(x-1), not ≤.  The two ≥-inequalities then
-  -- can't be subtracted to get the desired bound.  Reverted to the
-  -- sorry-with-Ref pattern (CLAUDE.md §1) until a sound proof
-  -- (symmetric-sum AM-GM) is formalised.
-  -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
-  sorry
+  -- The induction step reduces to the Bernoulli-like inequality
+  -- `(q-1)·k + q^(-k) ≥ 1`, which holds for q > 1, k ≥ 0 because
+  -- `q^(-k) ≥ 1 - k(q-1)/q` by Bernoulli, and rearrangement gives
+  -- `(q-1)·k + q^(-k) ≥ 1 + k(q-1)²/q ≥ 1`.
+  have hq_pos : q > 0 := lt_trans zero_lt_one hq
+  have hq_ne_zero : q ≠ 0 := ne_of_gt hq_pos
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hq_inv_lt_one : q⁻¹ < 1 := by
+    rw [inv_lt_one_iff_of_pos hq_pos]; exact hq
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  -- Reduce to (m : ℝ) ≤ qIntReal q m.
+  suffices h : (m : ℝ) ≤ qIntReal q m by
+    have hm_pos : (0 : ℝ) < m := Nat.cast_pos.mpr hm
+    rw [ge_iff_le, le_div_iff₀ hm_pos, one_mul]
+    exact h
+  -- Induction on m, dropping the hm hypothesis (the m=0 case handles itself).
+  clear hm
+  induction m with
+  | zero =>
+    -- qIntReal q 0 = (q^0 - q^0)/(q - q⁻¹) = 0; goal: 0 ≤ 0.
+    unfold qIntReal
+    rw [if_neg hq_ne_one]
+    simp
+  | succ k ih =>
+    -- Recurrence: qIntReal q (k+1) = q · qIntReal q k + q^(-k).
+    -- (q^(k+1) - q^(-(k+1)))/(q - q⁻¹) = q·(q^k - q^(-k))/(q - q⁻¹) + q^(-k)
+    -- via algebraic manipulation; verified by `field_simp; ring`.
+    have h_rec : qIntReal q (k+1) = q * qIntReal q k + q ^ (-(k:ℤ)) := by
+      unfold qIntReal
+      rw [if_neg hq_ne_one, if_neg hq_ne_one]
+      have hd : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+      field_simp
+      push_cast
+      ring
+    rw [h_rec]
+    -- Multiply IH by q (positive).
+    have h_qk : q * (k : ℝ) ≤ q * qIntReal q k :=
+      mul_le_mul_of_nonneg_left ih (le_of_lt hq_pos)
+    -- The induction step reduces to `(q-1)·k + q^(-k) ≥ 1`, which is
+    -- the substantive Bernoulli-driven content of the proof.
+    have h_step : ((k : ℝ) + 1) ≤ q * (k : ℝ) + q ^ (-(k:ℤ)) := by
+      -- Convert q^(-(k:ℤ)) to (1/q)^k for Bernoulli's lemma.
+      have h_pow_eq : q ^ (-(k:ℤ)) = ((1:ℝ)/q)^k := by
+        rw [zpow_neg, zpow_natCast, one_div, ← inv_pow]
+      rw [h_pow_eq]
+      -- Bernoulli: 1 + k·(1/q - 1) ≤ (1/q)^k, valid for 1/q - 1 ≥ -1
+      -- (i.e. 1/q ≥ 0), which `one_add_mul_le_pow` requires literally
+      -- as `(-1 : ℝ) ≤ a` where `a = 1/q - 1`.
+      have h_pos : (0 : ℝ) ≤ (1:ℝ)/q := by positivity
+      have h_inv_minus_one : (-1 : ℝ) ≤ (1:ℝ)/q - 1 := by linarith
+      have h_bern : 1 + (k : ℝ) * ((1:ℝ)/q - 1) ≤ ((1:ℝ)/q)^k :=
+        one_add_mul_le_pow h_inv_minus_one k
+      -- Goal: (k+1) ≤ q*k + (1/q)^k.
+      -- From h_bern: (1/q)^k ≥ 1 - k·(q-1)/q.  Hence
+      --   q*k + (1/q)^k ≥ q*k + 1 - k·(q-1)/q = 1 + k·(q²-q+1)/q.
+      -- Need (k+1) ≤ this; equivalently k·(q-1)²/q ≥ 0, true since q > 0.
+      have h_calc : 1 + (k : ℝ) * ((1:ℝ)/q - 1) = 1 - (k : ℝ) * (q - 1) / q := by
+        field_simp
+      rw [h_calc] at h_bern
+      -- h_bern: 1 - k·(q-1)/q ≤ (1/q)^k.
+      -- So q*k + (1/q)^k ≥ q*k + 1 - k·(q-1)/q.
+      -- We need (k+1) ≤ q*k + 1 - k·(q-1)/q, i.e., k ≤ q*k - k·(q-1)/q = k·(q-1) + k/q · ... hmm
+      -- Direct: q*k - k·(q-1)/q = k·(q² - q + 1)/q ≥ k (since (q-1)²≥0)
+      -- So q*k + 1 - k·(q-1)/q ≥ k + 1. ✓
+      have h_main : q * (k : ℝ) + 1 - (k : ℝ) * (q - 1) / q ≥ (k : ℝ) + 1 := by
+        have h_nn : 0 ≤ (k : ℝ) * (q - 1)^2 / q := by positivity
+        have : q * (k : ℝ) + 1 - (k : ℝ) * (q - 1) / q
+             = (k : ℝ) + 1 + (k : ℝ) * (q - 1)^2 / q := by
+          field_simp
+          ring
+        linarith
+      linarith
+    push_cast
+    linarith
 
 /-- For small m (m ≤ 4), the tighter bound holds:
-    |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 2.
+    |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 3/2.
 
-    SOUNDNESS NOTE (Gemini PR #413 review): the m = 4 case as stated
-    is FALSE on the full interval q ∈ (1, 2).  Numerical check at
-    q = 1.9: LHS ≈ 1.36, RHS ≈ 1.26.  The inequality fails for
-    q ≳ 1.52.  Either restrict to q < 1.5 or use a looser RHS
-    constant.  Reverted the case-by-case proof to `sorry` until the
-    bound (or hypothesis range) is corrected. -/
-theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+    SOUNDNESS DIAGNOSTIC: on the wider interval q ∈ (1, 2) the m = 4
+    case is **FALSE** — at q = 1.9, LHS ≈ 1.36, RHS ≈ 1.26 (the
+    inequality flips for q ≳ 1.52). The hypothesis is therefore
+    sharpened to `q < 3/2`, where numerical sweeps confirm the
+    inequality holds with a small margin.
+
+    The proof remains open. The substantive content is the
+    series-expansion bound `[m]_q/m = 1 + h²(m²−1)/24 + O(h⁴)`,
+    closed via `Real.add_pow_le_pow_mul_pow_of_sq` plus a tail bound
+    on the O(h⁴) remainder. -/
+-- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
+theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
   -- Ref: [stanley1999] §7.1 — q-integer expansion bounds

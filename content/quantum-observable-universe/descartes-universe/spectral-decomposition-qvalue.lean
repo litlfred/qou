@@ -83,15 +83,13 @@ theorem spectral_decomposition_qvalue
     (m_e : ℝ) (hme : 0 < m_e)
     (knotOperator : ℝ)
     : ∃ Q_q : ℝ,
-        Q_q = bareQValue q (daughterPoly / parentPoly) m_e * knotOperator := by
-  -- The spectral decomposition follows from:
-  -- 1. Rosso-Jones completeness of torus knot invariants on Σ₄
-  -- 2. Inductive chain construction (zero Hecke steps)
-  -- 3. Shell cancellation between parent and daughter
-  -- 4. Pauli projection via alternating Young symmetrizer e_{(1³)}
-  -- 5. Tower termination at degree 2 (genus ≥ 13 for degree 3)
+        Q_q = bareQValue q (daughterPoly / parentPoly) m_e * knotOperator :=
+  -- Trivial existential: take Q_q to be the right-hand side itself.
+  -- The substantive content (Rosso-Jones completeness, shell cancellation,
+  -- tower termination at degree 2) belongs in a sharper theorem that
+  -- *characterises* Q_q rather than asserts existence.
   -- Ref: [manuscript] §5/spectral-decomposition-qvalue
-  sorry
+  ⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩
 
 /-- The jet bundle over Σ₄ has exactly three non-zero levels (k = 0, 1, 2).
     Degree 3 requires genus ≥ 13, exceeding the genus-4 bound. -/

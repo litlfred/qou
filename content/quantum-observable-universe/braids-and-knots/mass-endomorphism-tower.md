@@ -234,3 +234,24 @@ to $\mathrm{tr}_M > 0$ (stable) with minimum categorical
 action.
 
 **Witness**: `mass-endomorphism.witness.json`.
+
+**Extension beyond $|S| = 2$ (archimedean realisation).**
+*The tower formula $\mathrm{Vol}_q^{\mathrm{tower}}(\beta)$ above is
+truncated at subset size $|S| \leq 2$.  Higher subset sizes
+$|S| \geq 3$ are accessible — but only on the archimedean side of
+$\tau \colon R \hookrightarrow \mathbb{C}$ — via the
+([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence)).
+The $|S| = 3$ contribution corresponds to the simultaneous product
+of three colour-sheet prolongations on the color-tube cubic
+([baryon product from Alt](#prop:baryon-product-from-alt)), which
+under the fibre functor becomes the baryon Picard–Lefschetz period
+$\Pi^{(3)}$
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).
+Higher $|S| \geq 4$ contributions correspond to higher-jet bundles
+$J^p\mathcal{S}$ for $p \geq 4$ and their PL evaluations.*
+
+*Strict archimedean split: the truncation at $|S| \leq 2$ is the
+maximal $R$-side statement available without invoking PL machinery
+(which is intrinsically $\mathbb{C}$-side); the extension to
+$|S| \geq 3$ requires moving across $\tau$ and so is recorded as an
+archimedean addendum, not as part of the $R$-side tower formula.*

@@ -66,7 +66,11 @@ theorem gramWeight_sum_one {n N : ℕ} (hN : 0 < N)
     (h_nonzero : ∑ j, frobeniusNorm G (deltas j) ≠ 0) :
     ∑ k, gramWeight G deltas k = 1 := by
   -- Ref: [manuscript] Proposition prop:gram-weighted-qvalue
-  sorry
+  -- Each weight = norms k / total (else-branch since total ≠ 0);
+  -- summing gives (Σ norms) / total = total / total = 1.
+  simp only [gramWeight, if_neg h_nonzero]
+  rw [← Finset.sum_div]
+  exact div_self h_nonzero
 
 /-- Each Gram weight is non-negative: w_k ≥ 0. -/
 theorem gramWeight_nonneg {n N : ℕ}
@@ -75,8 +79,17 @@ theorem gramWeight_nonneg {n N : ℕ}
     (k : Fin N) :
     0 ≤ gramWeight G deltas k := by
   -- Ref: [manuscript] Proposition prop:gram-weighted-qvalue
-  -- Follows from frobeniusNorm ≥ 0 (it's a sqrt of |·|)
-  sorry
+  -- frobeniusNorm = √|·| ≥ 0; sum of nonneg ≥ 0; ratio of nonneg ≥ 0.
+  unfold gramWeight
+  split_ifs with h
+  · positivity
+  · apply div_nonneg
+    · unfold frobeniusNorm
+      exact Real.sqrt_nonneg _
+    · apply Finset.sum_nonneg
+      intro j _
+      unfold frobeniusNorm
+      exact Real.sqrt_nonneg _
 
 /-- If all δ_k have the same Frobenius norm, the weights are uniform:
     w_k = 1/N for all k. -/
@@ -86,7 +99,25 @@ theorem gramWeight_uniform_when_equal {n N : ℕ} (hN : 0 < N)
     (h_equal : ∀ j k, frobeniusNorm G (deltas j) = frobeniusNorm G (deltas k)) :
     ∀ k, gramWeight G deltas k = 1 / N := by
   -- Ref: [manuscript] Proposition prop:gram-weighted-qvalue
-  -- When all norms equal, the normalisation gives 1/N each.
-  sorry
+  intro k
+  unfold gramWeight
+  -- Every j-th norm equals the k-th norm.
+  have h_const : (fun j : Fin N => frobeniusNorm G (deltas j)) =
+      fun _ => frobeniusNorm G (deltas k) := funext (fun j => h_equal j k)
+  -- Sum collapses to N * (frobeniusNorm G (deltas k)).
+  have h_total : (∑ j, frobeniusNorm G (deltas j))
+      = (N : ℝ) * frobeniusNorm G (deltas k) := by
+    rw [h_const]
+    simp [Finset.sum_const, Finset.card_univ, Fintype.card_fin, mul_comm]
+  rw [h_total]
+  by_cases h_zero : frobeniusNorm G (deltas k) = 0
+  · -- All norms 0: total = 0, the if-branch gives 1/N directly.
+    simp [h_zero]
+  · -- Nonzero norm: total = N · norm ≠ 0; ratio = 1/N.
+    have hN' : (N : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (Nat.pos_iff_ne_zero.mp hN)
+    have h_total_nz : (N : ℝ) * frobeniusNorm G (deltas k) ≠ 0 :=
+      mul_ne_zero hN' h_zero
+    rw [if_neg h_total_nz]
+    field_simp
 
 end QOU.Descartes

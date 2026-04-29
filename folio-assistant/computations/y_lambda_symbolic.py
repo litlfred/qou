@@ -168,7 +168,7 @@ def main(ns: list[int]) -> None:
         "prop:alpha-k-derivation-procedure",
         "prop:explicit-alpha-k-h3",
     ]
-    out["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+    out["computedAt"] = datetime.now(timezone.utc).isoformat()
     out.setdefault("tables_by_n", {})
 
     preserved = sorted(

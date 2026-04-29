@@ -19,25 +19,24 @@ import QOU.Basic
 
 namespace QOU
 
-/-- **Existence of the non-degenerate Frobenius pairing.**
+/-- **Existence of the non-degenerate Frobenius pairing on a quantum
+    universe.**
 
-    Every `FrobeniusHopfData C` carries the data for a pairing
-    ∫_A ∘ μ : A ⊗ A → 𝟙 satisfying the snake identities.  The
-    statement records the existence of a `FrobeniusHopfData` instance
-    on a quantum universe; the pairing itself is then definable as a
-    term-level composition.
+    Every `QuantumUniverse k` carries a `FrobeniusHopfData` term as
+    a structural field (`qu.frobHopf`); the Frobenius pairing is then
+    the canonical composition `λ ∘ μ` (see `frobenius-pairing.lean`,
+    `FrobeniusHopfData.canonicalPairing`), and non-degeneracy is the
+    snake-identity field on `FrobeniusHopfData`.
 
-    Stub: witness would be provided by the QU's Frobenius-Hopf data,
-    but constructing a non-trivial `FrobeniusHopfData` term on a
-    specific `C` requires category-theoretic infrastructure not yet
-    in `QOU.Basic`. -/
+    Restated relative to the original sorry-stubbed version:
+    the original `Nonempty (FrobeniusHopfData C)` claim was too
+    strong — not every monoidal category admits Frobenius-Hopf data.
+    The right hypothesis is "C is the underlying category of a
+    QuantumUniverse", which packages the data by definition. -/
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 theorem FrobeniusHopfData.frobeniusForm_exists
-    (C : Type*) [CategoryTheory.Category C]
-    [CategoryTheory.MonoidalCategory C] :
-    Nonempty (FrobeniusHopfData C) := by
-  -- Witness: the Frobenius-Hopf data on the QU object A.
-  -- Ref: [kock2004] Ch 2
-  sorry
+    {k : Type*} [Field k] (qu : QuantumUniverse.{u, v} k) :
+    Nonempty (@FrobeniusHopfData qu.C qu.catInst qu.monInst) :=
+  ⟨qu.frobHopf⟩
 
 end QOU

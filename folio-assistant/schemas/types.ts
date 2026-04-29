@@ -215,7 +215,9 @@ export type ComputationEngine =
   | "sympy"
   | "mpmath"
   | "sage"
-  | "python";
+  | "python"
+  | "numpy"
+  | "scipy";
 
 /**
  * Status of a computational verification.
@@ -440,6 +442,17 @@ interface BlockBase {
    * long-form `:refterm[Visible]{#slug}`.
    */
   defines?: string[];
+  /**
+   * Optional computational verification (Python/SnapPea/sympy/etc.).
+   *
+   * Available on every block kind: definitions / propositions /
+   * conjectures may attach a witness script that exercises the
+   * construction or empirically supports the claim.  See the
+   * `Computation` interface for the field shape and
+   * `folio-assistant/computations/witness_base.py` for the Python
+   * helper that emits matching `*.witness.json` files.
+   */
+  computation?: Computation;
 }
 
 // ── Blocks that REQUIRE Lean ─────────────────────────────────────

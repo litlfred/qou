@@ -57,16 +57,25 @@ noncomputable def fifthRoot (k : Fin 5) : ℂ :=
     exp(2π i / 5)^5 = exp(2π i) = 1. -/
 -- Ref: [bolza1887] https://doi.org/10.2307/2369402
 theorem zeta5_pow_five : zeta5 ^ 5 = 1 := by
-  -- Intended proof:
-  -- rw [zeta5, ← Complex.exp_nat_mul]; ring_nf;
-  --   simpa using Complex.exp_two_pi_mul_I
-  -- Left as sorry pending Mathlib lemma name confirmation in a
-  -- Lean environment (not available in content pipeline).
-  sorry
+  unfold zeta5
+  rw [← Complex.exp_nat_mul]
+  have h5 : (5 : ℕ) * (2 * (Real.pi : ℂ) * Complex.I / 5) =
+      2 * (Real.pi : ℂ) * Complex.I := by
+    push_cast
+    ring
+  rw [h5]
+  exact Complex.exp_two_pi_mul_I
 
-/-- Each fifth-root of unity is a root of x⁵ = 1. -/
+/-- Each fifth-root of unity is a root of x⁵ = 1.
+    `(exp(2πi·k/5))^5 = exp(5 · 2πi·k/5) = exp(2πi·k) = (exp(2πi))^k = 1`. -/
 -- Ref: [bolza1887] https://doi.org/10.2307/2369402
 theorem fifthRoot_is_root (k : Fin 5) : (fifthRoot k) ^ 5 = 1 := by
-  sorry
+  unfold fifthRoot
+  rw [← Complex.exp_nat_mul]
+  have hk : (5 : ℕ) * (2 * (Real.pi : ℂ) * Complex.I * (k.val : ℂ) / 5) =
+      (k.val : ℂ) * (2 * (Real.pi : ℂ) * Complex.I) := by
+    push_cast
+    ring
+  rw [hk, Complex.exp_nat_mul, Complex.exp_two_pi_mul_I, one_pow]
 
 end QOU
