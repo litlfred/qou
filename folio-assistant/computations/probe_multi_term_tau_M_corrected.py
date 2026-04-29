@@ -153,13 +153,21 @@ def main() -> int:
         print(f"  {label:<10} {m_str:<22} {sw_str:<22}")
     print()
 
+    # ³He is intentionally excluded — its τ_M entry in the wenzl-bridge
+    # witness shares the bit-exact buggy 0.998… value with the
+    # (also buggy) proton/neutron entries (per
+    # probe_wenzl_bridge_witness_audit) and would require H_8 Wenzl-bridge
+    # computation to verify. Re-include once a verified τ_M(³He) is
+    # available (e.g. via PR #484's generalized per-λ infrastructure).
     atoms = [
         ("D",   "deuteron", 1, 1, 2.22456612, 1),
         ("T",   "tritium",  1, 2, 8.4817984,  1),
-        ("3He", "helium-3", 2, 1, 7.7180375,  1),
+        # ("3He", "helium-3", 2, 1, 7.7180375,  1),  # τ_M unverified — see audit
     ]
 
     print(f"  Multi-term assembly under τ_M (CANONICAL):")
+    print(f"  Note: ³He omitted — τ_M(³He) entry in wenzl-bridge witness is")
+    print(f"        suspect per probe_wenzl_bridge_witness_audit; needs H_8.")
     print(f"  {'atom':<4} {'τ_M':<10} {'Vol_q':<8} {'T1':<9} {'T2+T3':<9} "
           f"{'T4':<7} {'T5':<10} {'B_naive':<9} {'AME':<8} {'err %':<10}")
     print("  " + "-" * 100)

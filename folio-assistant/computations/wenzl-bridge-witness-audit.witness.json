@@ -1,16 +1,16 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T20:27:54.638816+00:00",
-  "commitSha": "9814a35284e985b4d7eb259f211b72973e0199fc",
+  "computedAt": "2026-04-29T20:44:30.571142+00:00",
+  "commitSha": "decb3ca664ecd1169dc094981574e2c5043302b3",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 17,
   "computation": "wenzl-bridge-witness-audit",
   "scriptFile": "probe_wenzl_bridge_witness_audit.py",
-  "scriptHash": "182c20efd99a",
-  "scriptCommitSha": "unknown",
-  "description": "Audit of `atomic-tr-m-wenzl-bridge.witness.json` per-atom braid input. Finding: proton, neutron, ³He entries all share bit-exact tr_M = 0.998366751 (and identical (1, 1.994, 1) per-block breakdown), indicating the witness-generation Rust binary used the same trivial/identity braid for all three. Direct re-computation via atomic_braid_to_crossings + Wenzl-bridge y_λ gives parity-distinguishing values: τ_M(p)=1.7339, τ_M(n)=1.4060. Deuteron, tritium witness values are correct (consistent with from-scratch chain). ³He value would require H_8 Wenzl y_λ, deferred.",
+  "scriptHash": "913a84d5ea7b",
+  "scriptCommitSha": "616239467b4d7809f79685f9e5ff7945a408dfa2",
+  "description": "Audit of `atomic-tr-m-wenzl-bridge.witness.json` per-atom braid input. Finding: proton, neutron, ³He entries all share bit-exact the same tr_M value (and identical (1, 1.994, 1) per-block breakdown), indicating the witness-generation Rust binary used the same trivial/identity braid for all three. Direct re-computation via atomic_braid_to_crossings + Wenzl-bridge y_λ gives parity-distinguishing values: τ_M(p)=1.7339, τ_M(n)=1.4060. Deuteron, tritium witness values are correct (consistent with from-scratch chain). ³He value would require H_8 Wenzl y_λ, deferred.",
   "parameters": {
     "q_0": 1.1099785955541805,
     "witness_audited": "atomic-tr-m-wenzl-bridge.witness.json"
@@ -23,7 +23,7 @@
         "N": 0,
         "include_inter": false,
         "max_gen_idx": 1,
-        "tau_M_direct_at_q0": 1.7338506712341113,
+        "tau_M_direct_at_q0": 1.7338506712341097,
         "tau_M_witness_at_q0": 0.9983666751080411,
         "match_within_1e-4": false,
         "per_lambda": [
@@ -31,18 +31,18 @@
             "partition": [
               3
             ],
-            "y_lambda_at_q0": -0.15874185351530348,
-            "chi_at_q0": 1.3824945145464393,
-            "contrib_at_q0": -0.21945974171384147
+            "y_lambda_at_q0": -0.15874185351530334,
+            "chi_at_q0": 1.3824945145464391,
+            "contrib_at_q0": -0.21945974171384125
           },
           {
             "partition": [
               2,
               1
             ],
-            "y_lambda_at_q0": 0.8550672738297341,
-            "chi_at_q0": 1.8077033200981583,
-            "contrib_at_q0": 1.5457079498092914
+            "y_lambda_at_q0": 0.855067273829734,
+            "chi_at_q0": 1.8077033200981563,
+            "contrib_at_q0": 1.5457079498092896
           },
           {
             "partition": [
@@ -51,8 +51,8 @@
               1
             ],
             "y_lambda_at_q0": -0.5513926941441647,
-            "chi_at_q0": -0.7392235469701227,
-            "contrib_at_q0": 0.40760246313866144
+            "chi_at_q0": -0.7392235469701229,
+            "contrib_at_q0": 0.40760246313866155
           }
         ]
       },
@@ -62,7 +62,7 @@
         "N": 0,
         "include_inter": true,
         "max_gen_idx": 1,
-        "tau_M_direct_at_q0": 1.7338506712341113,
+        "tau_M_direct_at_q0": 1.7338506712341097,
         "tau_M_witness_at_q0": 0.9983666751080411,
         "match_within_1e-4": false,
         "per_lambda": [
@@ -70,18 +70,18 @@
             "partition": [
               3
             ],
-            "y_lambda_at_q0": -0.15874185351530348,
-            "chi_at_q0": 1.3824945145464393,
-            "contrib_at_q0": -0.21945974171384147
+            "y_lambda_at_q0": -0.15874185351530334,
+            "chi_at_q0": 1.3824945145464391,
+            "contrib_at_q0": -0.21945974171384125
           },
           {
             "partition": [
               2,
               1
             ],
-            "y_lambda_at_q0": 0.8550672738297341,
-            "chi_at_q0": 1.8077033200981583,
-            "contrib_at_q0": 1.5457079498092914
+            "y_lambda_at_q0": 0.855067273829734,
+            "chi_at_q0": 1.8077033200981563,
+            "contrib_at_q0": 1.5457079498092896
           },
           {
             "partition": [
@@ -90,8 +90,8 @@
               1
             ],
             "y_lambda_at_q0": -0.5513926941441647,
-            "chi_at_q0": -0.7392235469701227,
-            "contrib_at_q0": 0.40760246313866144
+            "chi_at_q0": -0.7392235469701229,
+            "contrib_at_q0": 0.40760246313866155
           }
         ]
       },
@@ -101,7 +101,7 @@
         "N": 1,
         "include_inter": false,
         "max_gen_idx": 1,
-        "tau_M_direct_at_q0": 1.4059798582756502,
+        "tau_M_direct_at_q0": 1.405979858275649,
         "tau_M_witness_at_q0": 0.9983666751080411,
         "match_within_1e-4": false,
         "per_lambda": [
@@ -109,18 +109,18 @@
             "partition": [
               3
             ],
-            "y_lambda_at_q0": -0.15874185351530348,
-            "chi_at_q0": 1.1221068372363028,
-            "contrib_at_q0": -0.17812531918508567
+            "y_lambda_at_q0": -0.15874185351530334,
+            "chi_at_q0": 1.1221068372363026,
+            "contrib_at_q0": -0.17812531918508548
           },
           {
             "partition": [
               2,
               1
             ],
-            "y_lambda_at_q0": 0.8550672738297341,
-            "chi_at_q0": 1.265301086773935,
-            "contrib_at_q0": 1.0819175508415884
+            "y_lambda_at_q0": 0.855067273829734,
+            "chi_at_q0": 1.2653010867739336,
+            "contrib_at_q0": 1.081917550841587
           },
           {
             "partition": [
@@ -129,7 +129,7 @@
               1
             ],
             "y_lambda_at_q0": -0.5513926941441647,
-            "chi_at_q0": -0.9107622062323655,
+            "chi_at_q0": -0.9107622062323656,
             "contrib_at_q0": 0.5021876266191474
           }
         ]
@@ -140,7 +140,7 @@
         "N": 1,
         "include_inter": true,
         "max_gen_idx": 1,
-        "tau_M_direct_at_q0": 1.4059798582756502,
+        "tau_M_direct_at_q0": 1.405979858275649,
         "tau_M_witness_at_q0": 0.9983666751080411,
         "match_within_1e-4": false,
         "per_lambda": [
@@ -148,18 +148,18 @@
             "partition": [
               3
             ],
-            "y_lambda_at_q0": -0.15874185351530348,
-            "chi_at_q0": 1.1221068372363028,
-            "contrib_at_q0": -0.17812531918508567
+            "y_lambda_at_q0": -0.15874185351530334,
+            "chi_at_q0": 1.1221068372363026,
+            "contrib_at_q0": -0.17812531918508548
           },
           {
             "partition": [
               2,
               1
             ],
-            "y_lambda_at_q0": 0.8550672738297341,
-            "chi_at_q0": 1.265301086773935,
-            "contrib_at_q0": 1.0819175508415884
+            "y_lambda_at_q0": 0.855067273829734,
+            "chi_at_q0": 1.2653010867739336,
+            "contrib_at_q0": 1.081917550841587
           },
           {
             "partition": [
@@ -168,7 +168,7 @@
               1
             ],
             "y_lambda_at_q0": -0.5513926941441647,
-            "chi_at_q0": -0.9107622062323655,
+            "chi_at_q0": -0.9107622062323656,
             "contrib_at_q0": 0.5021876266191474
           }
         ]

@@ -125,8 +125,32 @@ def main() -> int:
               f"{'B(m_e)':>10} {'err %':>10} {'AME':>8}")
         print("  " + "-" * 90)
 
+        # Atoms whose τ_M(atom) is verified (D and T match the from-scratch
+        # chain bit-exactly). ³He's witness entry shares the buggy 0.998…
+        # value with the buggy proton/neutron entries and would require an
+        # H_8 Wenzl-bridge computation to verify; skip until that lands.
+        VERIFIED_ATOMS = {"deuteron", "tritium"}
+        UNVERIFIED_ATOMS = {"helium-3"}
+
         for label in ["deuteron", "tritium", "helium-3"]:
             Z, N = ZN[label]
+            verified = label in VERIFIED_ATOMS
+            if not verified:
+                print(f"  {label:<10} {Z:>2} {N:>2} "
+                      f"  SKIPPED — τ_M({label}) entry in the wenzl-bridge "
+                      f"witness is suspect (audit) and no verified value "
+                      f"available (needs H_8).")
+                results.append({
+                    "atom": label, "Z": Z, "N": N,
+                    "skipped": True,
+                    "reason": ("τ_M(atom) entry in wenzl-bridge witness is "
+                               "suspect per probe_wenzl_bridge_witness_audit "
+                               "(shares bit-exact value with buggy p, n "
+                               "entries); needs H_8 Wenzl-bridge computation "
+                               "to verify."),
+                    "B_AME_MeV": B_AME[label],
+                })
+                continue
             deficit = mp.fabs(Z * tau["proton"] + N * tau["neutron"] - tau[label])
             B_proton_cal = E0_proton_cal * deficit
             B_electron   = E0_electron * deficit
@@ -171,7 +195,8 @@ def main() -> int:
         print()
 
         # Verdict
-        best_pct = min(abs(r["err_pct_proton_calibration"]) for r in results)
+        verified_results = [r for r in results if not r.get("skipped")]
+        best_pct = min(abs(r["err_pct_proton_calibration"]) for r in verified_results)
         if best_pct < 1.0:
             verdict = f"trace-deficit hypothesis CLOSES under τ_M ({best_pct:.2f}%)"
         elif best_pct < 50.0:

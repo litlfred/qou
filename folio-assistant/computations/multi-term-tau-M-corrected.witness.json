@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T16:20:16.712529+00:00",
-  "commitSha": "0413e0c263b9c24d30bbb427a15a491eb5107150",
+  "computedAt": "2026-04-29T20:44:19.379028+00:00",
+  "commitSha": "decb3ca664ecd1169dc094981574e2c5043302b3",
   "assertions": [],
   "allPassed": true,
   "durationMs": 15,
   "computation": "multi-term-tau-M-corrected",
   "scriptFile": "probe_multi_term_tau_M_corrected.py",
-  "scriptHash": "35493fefb845",
-  "scriptCommitSha": "1a91da143f2348d5fc0b8fa5d3e5f80a960e64da",
+  "scriptHash": "e7e824976a77",
+  "scriptCommitSha": "5f13061cb19f44fbce6dd71ff2573f1676b96963",
   "description": "Multi-term mass formula assembly RE-RUN under canonical τ_M (Wenzl-bridge / Markov-axiom-derived) per pr-442's selection theorem (prop:markov-trace-frobenius-selection). The earlier `multi-term-canonical-assembly.witness.json` (PR #475) used τ_SW from `D-tr-M-q0.derivation.json`'s `target_value` field; that value is τ_SW (Schur-Weyl, degenerate on height>2), NOT τ_M (Jones-Markov, non-degenerate). The QOU mass formula's Frobenius co-Casimir construction requires non-degeneracy, hence τ_M is canonical. Only T1 shifts; T2+T3+T4+T5+T6 are unchanged.",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -59,26 +59,6 @@
         "B_naive_under_tau_SW_MeV": null,
         "AME_binding_MeV": 8.4817984,
         "err_pct_tau_M": 57.36594989341924,
-        "err_pct_tau_SW": null
-      },
-      {
-        "atom": "helium-3",
-        "Z": 2,
-        "N": 1,
-        "rho": 1,
-        "tau_M_canonical_wenzl_bridge": "0.998366675108041074272925644072",
-        "tau_SW_registry_mislabeled": null,
-        "Vol_q_tower": "7.62616658180231372158897612303",
-        "T1_descended_MeV_under_tau_M": "0.510164322695200125510337017549",
-        "T1_descended_MeV_under_tau_SW": null,
-        "T2_T3_brane_MeV": "3.89696311582607141930255913045",
-        "T4_frobenius_MeV": "1.27611284634431798672355689433",
-        "T5_chirality_MeV": 7.78414230673205,
-        "T6_habiro_MeV": 0.0,
-        "B_naive_under_tau_M_MeV": "13.467382591597639532",
-        "B_naive_under_tau_SW_MeV": null,
-        "AME_binding_MeV": 7.7180375,
-        "err_pct_tau_M": 74.49231869627012,
         "err_pct_tau_SW": null
       }
     ]

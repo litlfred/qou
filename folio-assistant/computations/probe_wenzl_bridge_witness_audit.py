@@ -65,7 +65,7 @@ from q_parameter import Q as Q0_FLOAT  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 q = sp.Symbol("q", positive=True, real=True)
-q0 = sp.Rational(int(Q0_FLOAT * 10**16), 10**16)
+q0 = sp.Rational(str(Q0_FLOAT))
 
 
 def direct_tau_M(Z, N, include_inter=False):
@@ -186,7 +186,8 @@ def main() -> int:
     print("  ─" * 50)
     print("  FINDINGS:")
     print()
-    print("    1. proton, neutron, ³He: witness shows bit-exact 0.998366751...")
+    print("    1. proton, neutron, ³He: witness shows bit-exact identical")
+    print(f"       value (= {p_val[:24]}...).")
     print("       Direct computation (free, 3-strand atomic braid):")
     print(f"         τ_M(p)  = +1.733851  (witness wrong by factor ~1.74)")
     print(f"         τ_M(n)  = +1.405980  (witness wrong by factor ~1.41)")
@@ -207,7 +208,7 @@ def main() -> int:
         .set_description(
             "Audit of `atomic-tr-m-wenzl-bridge.witness.json` per-atom braid "
             "input. Finding: proton, neutron, ³He entries all share bit-exact "
-            "tr_M = 0.998366751 (and identical (1, 1.994, 1) per-block "
+            "the same tr_M value (and identical (1, 1.994, 1) per-block "
             "breakdown), indicating the witness-generation Rust binary used "
             "the same trivial/identity braid for all three. Direct re-"
             "computation via atomic_braid_to_crossings + Wenzl-bridge y_λ "

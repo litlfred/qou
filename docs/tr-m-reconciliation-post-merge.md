@@ -136,9 +136,10 @@ extensions on PR #484.
   $\tau_{\mathrm{SW}}$ correctly) and add new `D-tau-M-q0.derivation.json`
   for the canonical $\tau_M$ chain (already done on pr-442). Same for
   $n,p$.
-- **Selection-theorem block on main**: pr-442's
-  `prop:markov-trace-frobenius-selection` (the Lean proof + .md) is
-  not yet on main. Once merged, every downstream chain referencing the
-  "tr_M" registry needs an `interprets`/`uses` link to it.
+- **Cross-link the selection theorem from downstream chains**: now
+  that `prop:markov-trace-frobenius-selection` is on main (PR #447),
+  every downstream chain referencing the "tr_M" registry should add
+  an `interprets`/`uses` link to it. Most chains were authored before
+  the selection theorem landed and don't yet reference it.
 - **Brane-tower regularization** is the remaining theory gap and is
   independent of the trace convention.

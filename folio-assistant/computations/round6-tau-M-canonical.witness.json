@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-04-29T20:28:45.188277+00:00",
-  "commitSha": "9814a35284e985b4d7eb259f211b72973e0199fc",
+  "computedAt": "2026-04-29T20:45:08.813723+00:00",
+  "commitSha": "decb3ca664ecd1169dc094981574e2c5043302b3",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
   "computation": "round6-tau-M-canonical",
   "scriptFile": "probe_round6_tau_M_canonical.py",
-  "scriptHash": "09031adb4db0",
-  "scriptCommitSha": "0413e0c263b9c24d30bbb427a15a491eb5107150",
+  "scriptHash": "eba120a45c1c",
+  "scriptCommitSha": "616239467b4d7809f79685f9e5ff7945a408dfa2",
   "description": "Round-6 trace-deficit hypothesis B = E_0·|Z·τ(p)+N·τ(n)−τ(atom)| evaluated under canonical τ_M (Wenzl-bridge / Markov-axiom) per pr-442's selection theorem. Predecessor `probe_neutron_gap_round6_canonical.py` used τ_SW from the mislabeled registry. Two prefactor variants: E_0 = m_p_AME/|τ_M(p)| (proton calibration) and E_0 = m_e (electron natural scale).",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -56,16 +56,9 @@
         "atom": "helium-3",
         "Z": 2,
         "N": 1,
-        "tau_M_p": "1.733851",
-        "tau_M_n": "1.40598",
-        "tau_M_atom": "0.9983666751080410742729256440716118439789022368416",
-        "deficit_canonical": "3.87531532489195892572707435593",
-        "E0_proton_calibration_MeV": "541.149203801249357643765237036",
-        "B_pred_proton_calibration_MeV": "2097.1238025440635485",
-        "B_pred_electron_MeV": "1.9802820619386998745",
-        "B_AME_MeV": 7.7180375,
-        "err_pct_proton_calibration": 27071.72341471603,
-        "err_pct_electron": -74.34215547749412
+        "skipped": true,
+        "reason": "τ_M(atom) entry in wenzl-bridge witness is suspect per probe_wenzl_bridge_witness_audit (shares bit-exact value with buggy p, n entries); needs H_8 Wenzl-bridge computation to verify.",
+        "B_AME_MeV": 7.7180375
       }
     ],
     "D_comparison_tau_SW": {
@@ -77,6 +70,6 @@
       "err_pct_SW": 70134.69147952463,
       "note": "τ_SW (registry) values were mislabeled as 'tr_M' — see prop:markov-trace-frobenius-selection. The QOU mass formula's Frobenius co-Casimir requires non-degeneracy, ruling out τ_SW."
     },
-    "verdict": "trace-deficit hypothesis FAILS at canonical τ_M (best residual 27072% — same scale as the τ_SW failure)"
+    "verdict": "trace-deficit hypothesis FAILS at canonical τ_M (best residual 28821% — same scale as the τ_SW failure)"
   }
 }
