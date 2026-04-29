@@ -45,5 +45,9 @@ Each derivation emits a witness with full step-by-step trace:
 ## Files
 
 - `hecke_step_by_step.py` — H_n(q) implementation with traced operations
-- `derive_d_mass.py` — full D derivation from SDP-canonical braid
-- `derive_proton_mass.py` — proton (single-vortex baseline)
+- `h3_canonical_basis.py` — H_3 canonical-basis reduction
+- `wedderburn_markov.py` — Wedderburn decomposition + Markov trace at H_3
+- `wenzl_y_axiomatic.py` — Wenzl y_λ via Markov axioms
+- `hoefsmit_general.py` — Hoefsmit seminormal σ_i^λ for general λ ⊢ n
+- `derive_he3.py` — ³He at H_3 (SDP-canonical braid)
+- `derive_t_h5.py` — tritium at H_5 (SDP-canonical braid)

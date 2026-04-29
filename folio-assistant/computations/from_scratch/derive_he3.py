@@ -15,11 +15,13 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))  # for experimental_constants
 from hecke_step_by_step import q, from_braid_word
 from h3_canonical_basis import normalize_to_h3_basis, display_basis_coeffs
 from wedderburn_markov import (
     markov_trace_from_basis, chi_lambda_on_basis_word, wenzl_y_lambda,
 )
+from experimental_constants import M_E_MEV  # noqa: E402
 
 
 if __name__ == "__main__":
@@ -57,7 +59,7 @@ if __name__ == "__main__":
     print()
 
     # Step 3: paper formula B = m_e · ρ · tr_M
-    M_E = 0.51099895
+    M_E = M_E_MEV
     B_pred = M_E * rho * tr_M_q0
     B_AME = 7.7181
     err = (B_pred - B_AME) / B_AME * 100

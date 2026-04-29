@@ -24,10 +24,12 @@ import sys, time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))  # for experimental_constants
 from hoefsmit_general import (
     q, partitions_of, chi_lambda_braid, chi_lambda_braid_numeric,
 )
 from wenzl_y_axiomatic import derive_wenzl_y
+from experimental_constants import M_E_MEV  # noqa: E402
 
 
 if __name__ == "__main__":
@@ -93,7 +95,7 @@ if __name__ == "__main__":
     print("─" * 78)
     print("Step 4: Paper formula B = m_e · ρ · tr_M(T_w)")
     print("─" * 78)
-    M_E = 0.51099895
+    M_E = M_E_MEV
     B_pred = M_E * rho * tr_M_q0
     B_AME = 8.481798
     err = (B_pred - B_AME) / B_AME * 100

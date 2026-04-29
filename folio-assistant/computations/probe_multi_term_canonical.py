@@ -2,8 +2,11 @@
 """Full multi-term mass formula with canonical components — D, T, ³He.
 
 Assembles each term from its canonical source:
-  T1 (descended, m_e·|tr_M|): canonical tr_M from
-    {p,n,D,T,He3}-tr-M-q0.derivation.json (PR #473)
+  T1 (descended, m_e·|tr_M|): canonical tr_M loaded from registry
+    for {p, n, D} via {p,n,D}-tr-M-q0.derivation.json (PR #473);
+    T and ³He values are taken from from_scratch/derive_t_h5.py
+    and derive_he3.py outputs (= 0.012889, 0.998367) until those
+    atoms are added to the derivation-chain registry as well.
   T2+T3 (brane tower): Vol_q^tower algebraic (from symbolic port
     in atom_per_generator_volumes_sym.py)
   T4 (Frobenius co-Casimir): m_e · (2 + 1/[2]_q) per-vortex (n=3)
@@ -153,23 +156,23 @@ def main() -> int:
         print(f"  {short:<4} {T1_def:<10.2f} {T23:<9.4f} {T4:<7.4f} {T5_val:<+10.4f} "
               f"{B:<9.2f} {ame:<8.4f} {err:<+8.2f}%")
 
-    out = {
-        "computation": "multi-term-canonical-assembly",
-        "description": (
+    from witness_base import WitnessBuilder
+    w = (
+        WitnessBuilder("multi-term-canonical-assembly", engine="sympy+mpmath")
+        .set_description(
             "Full multi-term mass formula (T1+T2+T3+T4+T5+T6) assembled "
-            "from canonical sources: T1 from canonical tr_M registry, "
-            "T2+T3 from algebraic Vol_q^tower (symbolic Wedderburn port), "
-            "T4 from m_e·(2+1/[2]_q), T5 from existing 6-term witness "
-            "(Plancherel-derived; caveat), T6=0 placeholder."
-        ),
-        "q_0": float(q0),
-        "m_e_MeV": m_e,
-        "T4_pervortex_MeV": T4_pervortex,
-        "results": results,
-    }
-    out_path = HERE / "multi-term-canonical-assembly.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2)
+            "from canonical sources: T1 from canonical tr_M registry "
+            "(p, n, D from PR #473), T2+T3 from algebraic Vol_q^tower "
+            "(symbolic Wedderburn port), T4 from m_e·(2+1/[2]_q), T5 "
+            "from existing 6-term witness (Plancherel-derived; caveat), "
+            "T6=0 placeholder."
+        )
+        .add_parameter("q_0", float(q0))
+        .add_parameter("m_e_MeV", m_e)
+        .add_parameter("T4_pervortex_MeV", T4_pervortex)
+        .add_data("results", results)
+    )
+    out_path = w.save()
     print(f"\n  Witness: {out_path}")
     return 0
 

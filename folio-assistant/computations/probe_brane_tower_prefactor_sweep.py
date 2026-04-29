@@ -129,22 +129,21 @@ def main() -> int:
     print(" 4. Free-nucleon mass (938 MeV) is not produced by EITHER form — likely")
     print("    requires upstream physics not captured by Vol_q^tower alone.")
 
-    out = {
-        "computation": "brane-tower-prefactor-sweep",
-        "description": (
+    from witness_base import WitnessBuilder
+    w = (
+        WitnessBuilder("brane-tower-prefactor-sweep", engine="sympy+mpmath")
+        .set_description(
             "Tests the ρ_q prefactor in prop:mass-endomorphism-tower by "
             "computing m_e·Vol_q^tower and m_e·ρ_q·Vol_q^tower across "
             "p, n, D, T, ³He using the symbolic Wedderburn port."
-        ),
-        "q_0": float(q0),
-        "hbar_q": float(hbar_q),
-        "rho_q": rho_q,
-        "m_e_MeV": m_e,
-        "results": results,
-    }
-    out_path = HERE / "brane-tower-prefactor-sweep.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2)
+        )
+        .add_parameter("q_0", float(q0))
+        .add_parameter("hbar_q", float(hbar_q))
+        .add_parameter("rho_q", rho_q)
+        .add_parameter("m_e_MeV", m_e)
+        .add_data("results", results)
+    )
+    out_path = w.save()
     print(f"\n  Witness: {out_path}")
     return 0
 

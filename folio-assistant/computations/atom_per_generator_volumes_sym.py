@@ -232,29 +232,31 @@ def main() -> int:
     print(f"    AME B(D)         = 2.2246 MeV")
     print(f"    err              = {(B_pred - 2.22456612) / 2.22456612 * 100:+.2f}%")
 
-    out = {
-        "computation": "brane-tower-symbolic-D",
-        "description": (
+    from witness_base import WitnessBuilder
+    w = (
+        WitnessBuilder("brane-tower-symbolic-D", engine="sympy")
+        .set_description(
             "Symbolic port of atom_per_generator_volumes for D (Z=1,N=1) "
             "via direct sympy translation of hecke_core._step_chain_generic. "
             "Produces V̂_i^full as Laurent polynomials in q^{1/2}; "
             "Vol_q^tower(D) is an exact element of ℤ[q^{1/2}, q^{-1/2}] "
             "per prop:mass-endomorphism-tower's algebraic-form guarantee."
-        ),
-        "Z": Z, "N": N, "n_generators": len(vols),
-        "vols_full_symbolic": [str(vd["full"]) for vd in vols],
-        "vols_full_at_q0": [float(vd["full"].subs(q, q0_rat)) for vd in vols],
-        "Vol_q_tower_symbolic": str(vol_alg)[:5000],
-        "Vol_q_tower_at_q0": vol_at_q0,
-        "rho_q": rho_q_val,
-        "m_invariant_at_q0": m_inv,
-        "B_pred_via_m_e_MeV": B_pred,
-        "AME_B_D_MeV": 2.22456612,
-        "err_pct": (B_pred - 2.22456612) / 2.22456612 * 100,
-    }
-    out_path = HERE / "brane-tower-symbolic-D.witness.json"
-    with open(out_path, "w") as fp:
-        json.dump(out, fp, indent=2)
+        )
+        .set_content_block("prop:mass-endomorphism-tower")
+        .add_parameter("Z", Z)
+        .add_parameter("N", N)
+        .add_parameter("n_generators", len(vols))
+        .add_data("vols_full_symbolic", [str(vd["full"]) for vd in vols])
+        .add_data("vols_full_at_q0", [float(vd["full"].subs(q, q0_rat)) for vd in vols])
+        .add_data("Vol_q_tower_symbolic", str(vol_alg)[:5000])
+        .add_data("Vol_q_tower_at_q0", vol_at_q0)
+        .add_data("rho_q", rho_q_val)
+        .add_data("m_invariant_at_q0", m_inv)
+        .add_data("B_pred_via_m_e_MeV", B_pred)
+        .add_data("AME_B_D_MeV", 2.22456612)
+        .add_data("err_pct", (B_pred - 2.22456612) / 2.22456612 * 100)
+    )
+    out_path = w.save()
     print(f"\n  Witness: {out_path}")
     return 0
 

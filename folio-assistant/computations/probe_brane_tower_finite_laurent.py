@@ -4,12 +4,15 @@
 Per [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower)
 the brane-tower has TWO equivalent forms:
 
-(A) **Algebraic form** (canonical):
-      Vol_q^tower(β) = ∏ V̂_i^full
+(A) **Algebraic form** (canonical, archimedean evaluation):
+      Vol_q^tower(β) = |∏ V̂_i^full|
                      + Σ_{|S|=1} z·V̂_i^full
                      + Σ_{|S|=2} z²·V̂_i^full·V̂_j^full
-                     ∈ ℤ[q^{1/2}, q^{-1/2}]
-    A FINITE Laurent polynomial in q^{1/2}.
+    The pre-archimedean Laurent statement
+    Vol_q^(S)(β) ∈ ℤ[q^{1/2}, q^{-1/2}] is signed; the archimedean
+    realisation of the descended product takes |·| (matching the
+    Φ_q form's `|∏ V̂_i|`). The implementation below uses
+    `mp.fabs(prod_term)` consistently with this convention.
 
 (B) **Quantum-dilogarithm form** (archimedean specialisation
     via Kashaev limit):

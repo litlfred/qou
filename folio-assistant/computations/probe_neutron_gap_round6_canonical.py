@@ -36,12 +36,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 _DPS = 50
 
 B_AME = {"deuteron": 2.22456612}
-Z_N = {"proton": (1, 0), "neutron": (0, 1), "deuteron": (1, 1)}
+Z_N_BY_ATOM = {"deuteron": (1, 1)}
 
 
 def load_canonical_tr_M(atom_short: str) -> str:
+    """Return the registry's `target_value` as a string to preserve
+    exact decimal precision when fed into mp.mpf (passing a Python
+    float would round-trip through binary floats, losing digits)."""
     p = HERE / f"{atom_short}-tr-M-q0.derivation.json"
-    return json.loads(p.read_text())["target_value"]
+    return str(json.loads(p.read_text())["target_value"])
 
 
 def main() -> int:
@@ -74,7 +77,7 @@ def main() -> int:
         print()
 
         # Round-6 hypothesis on D:
-        Z, N = 1, 1
+        Z, N = Z_N_BY_ATOM["deuteron"]
         deficit = Z * tr_p + N * tr_n - tr_d
         B_pred = E0 * mp.fabs(deficit)
         B_AME_D = mp.mpf(str(B_AME["deuteron"]))
@@ -96,8 +99,9 @@ def main() -> int:
               f"{float(err_ppb):+.4e} ppb")
         print()
 
-        # Verdict
-        if abs(err_pct) < 1e3 / 1e9:
+        # Verdict — `err_ppb = err_pct * 1e7`, so 1000-ppb threshold
+        # corresponds to `|err_pct| < 1e3 / 1e7 = 1e-4`.
+        if abs(err_pct) < 1e3 / 1e7:
             verdict = "passes ppb"
         elif abs(err_pct) < 0.5:
             verdict = "closes to <0.5% — significant improvement under canonical convention"

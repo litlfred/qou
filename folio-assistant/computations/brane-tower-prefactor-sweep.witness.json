@@ -1,70 +1,84 @@
 {
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-29T13:00:33.488345+00:00",
+  "commitSha": "454e072c56b603ff2c1dd76118ba311d01f73684",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 14,
   "computation": "brane-tower-prefactor-sweep",
-  "description": "Tests the \u03c1_q prefactor in prop:mass-endomorphism-tower by computing m_e\u00b7Vol_q^tower and m_e\u00b7\u03c1_q\u00b7Vol_q^tower across p, n, D, T, \u00b3He using the symbolic Wedderburn port.",
-  "q_0": 1.1099785955541805,
-  "hbar_q": 0.09908172643569882,
-  "rho_q": 101.86215723850415,
-  "m_e_MeV": 0.5109989461,
-  "results": [
-    {
-      "atom": "proton",
-      "Z": 1,
-      "N": 0,
-      "kind": "mass",
-      "AME_value_MeV": 938.27208816,
-      "Vol_q_tower_at_q0": 2.1785485988462474,
-      "m_e_x_Vol_MeV": 1.113236038038064,
-      "m_e_x_rho_q_x_Vol_MeV": 113.39662435020267,
-      "err_pct_no_rho": -99.88135253599826,
-      "err_pct_with_rho": -87.91431336590442
-    },
-    {
-      "atom": "neutron",
-      "Z": 0,
-      "N": 1,
-      "kind": "mass",
-      "AME_value_MeV": 939.56542052,
-      "Vol_q_tower_at_q0": 1.9546631327125634,
-      "m_e_x_Vol_MeV": 0.9988308007966443,
-      "m_e_x_rho_q_x_Vol_MeV": 101.7430600854088,
-      "err_pct_no_rho": -99.8936922561237,
-      "err_pct_with_rho": -89.17126387760212
-    },
-    {
-      "atom": "deuteron",
-      "Z": 1,
-      "N": 1,
-      "kind": "binding",
-      "AME_value_MeV": 2.22456612,
-      "Vol_q_tower_at_q0": 3.826557664448327,
-      "m_e_x_Vol_MeV": 1.9553669337239723,
-      "m_e_x_rho_q_x_Vol_MeV": 199.177894061963,
-      "err_pct_no_rho": -12.101199593744944,
-      "err_pct_with_rho": 8853.561428057847
-    },
-    {
-      "atom": "tritium",
-      "Z": 1,
-      "N": 2,
-      "kind": "binding",
-      "AME_value_MeV": 8.4817984,
-      "Vol_q_tower_at_q0": 6.92785252071563,
-      "m_e_x_Vol_MeV": 3.5401253368219154,
-      "m_e_x_rho_q_x_Vol_MeV": 360.60480370336643,
-      "err_pct_no_rho": -58.2620905394083,
-      "err_pct_with_rho": 4151.513496281242
-    },
-    {
-      "atom": "helium-3",
-      "Z": 2,
-      "N": 1,
-      "kind": "binding",
-      "AME_value_MeV": 7.7180375,
-      "Vol_q_tower_at_q0": 7.6261665818023125,
-      "m_e_x_Vol_MeV": 3.8969630860840208,
-      "m_e_x_rho_q_x_Vol_MeV": 396.95306662733697,
-      "err_pct_no_rho": -49.50836807823206,
-      "err_pct_with_rho": 5043.1865500438025
-    }
-  ]
+  "scriptFile": "probe_brane_tower_prefactor_sweep.py",
+  "scriptHash": "68bbbb4cd95d",
+  "scriptCommitSha": "ef24550ab4836b544ff1a6d4e84ad094b235380b",
+  "description": "Tests the ρ_q prefactor in prop:mass-endomorphism-tower by computing m_e·Vol_q^tower and m_e·ρ_q·Vol_q^tower across p, n, D, T, ³He using the symbolic Wedderburn port.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "hbar_q": 0.09908172643569882,
+    "rho_q": 101.86215723850415,
+    "m_e_MeV": 0.5109989461
+  },
+  "data": {
+    "results": [
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "kind": "mass",
+        "AME_value_MeV": 938.27208816,
+        "Vol_q_tower_at_q0": 2.1785485988462474,
+        "m_e_x_Vol_MeV": 1.113236038038064,
+        "m_e_x_rho_q_x_Vol_MeV": 113.39662435020267,
+        "err_pct_no_rho": -99.88135253599826,
+        "err_pct_with_rho": -87.91431336590442
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "kind": "mass",
+        "AME_value_MeV": 939.56542052,
+        "Vol_q_tower_at_q0": 1.9546631327125634,
+        "m_e_x_Vol_MeV": 0.9988308007966443,
+        "m_e_x_rho_q_x_Vol_MeV": 101.7430600854088,
+        "err_pct_no_rho": -99.8936922561237,
+        "err_pct_with_rho": -89.17126387760212
+      },
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "kind": "binding",
+        "AME_value_MeV": 2.22456612,
+        "Vol_q_tower_at_q0": 3.826557664448327,
+        "m_e_x_Vol_MeV": 1.9553669337239723,
+        "m_e_x_rho_q_x_Vol_MeV": 199.177894061963,
+        "err_pct_no_rho": -12.101199593744944,
+        "err_pct_with_rho": 8853.561428057847
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "kind": "binding",
+        "AME_value_MeV": 8.4817984,
+        "Vol_q_tower_at_q0": 6.92785252071563,
+        "m_e_x_Vol_MeV": 3.5401253368219154,
+        "m_e_x_rho_q_x_Vol_MeV": 360.60480370336643,
+        "err_pct_no_rho": -58.2620905394083,
+        "err_pct_with_rho": 4151.513496281242
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "kind": "binding",
+        "AME_value_MeV": 7.7180375,
+        "Vol_q_tower_at_q0": 7.6261665818023125,
+        "m_e_x_Vol_MeV": 3.8969630860840208,
+        "m_e_x_rho_q_x_Vol_MeV": 396.95306662733697,
+        "err_pct_no_rho": -49.50836807823206,
+        "err_pct_with_rho": 5043.1865500438025
+      }
+    ]
+  }
 }
