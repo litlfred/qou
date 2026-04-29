@@ -7,7 +7,7 @@
     "thm:frobenius-codim-universal",
     "prop:figure-eight-bw-coefficients"
   ],
-  "timestamp": "2026-04-29T15:36:59.133960+00:00",
+  "timestamp": "2026-04-29T15:45:11.451344+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -41,12 +41,16 @@
       "term23_tower_free": {
         "T2": 1608276.6695269095,
         "T3": 93889.20872074971,
+        "single": 1608276.6695269095,
+        "pair": 93889.20872074971,
         "status": "near-pole",
         "max_abs_V": 0.98900731592926
       },
       "term23_tower_atom": {
         "T2": 1608289.7568490328,
         "T3": 88158.76990491539,
+        "single": 1608289.7568490328,
+        "pair": 88158.76990491539,
         "status": "near-pole",
         "max_abs_V": 0.98900731592926
       },
@@ -55,12 +59,14 @@
       "term4_frobenius_per_3A_canonical": 1.6362871034827506,
       "term5_bw_chirality_binding": -5.6314164094804955,
       "B_pred_term1": 0.9952558691106962,
+      "B_pred_term1_plus_term4": 2.271368715455014,
       "B_pred_term1_plus_term4_pervortex_legacy": 2.271368715455014,
       "B_pred_term1_plus_term4_per3A_canonical": 2.6315429725934467,
       "B_pred_term5_bw_chirality": -5.6314164094804955,
       "B_AME_MeV": 2.22457,
       "err_pct": {
         "term1_only": -55.26075290457499,
+        "term1_plus_term4": 2.103719615701652,
         "term1_plus_term4_pervortex_legacy": 2.103719615701652,
         "term1_plus_term4_per3A_canonical": 18.294455674285224,
         "term5_only": -353.1462893719009
@@ -76,12 +82,16 @@
       "term23_tower_free": {
         "T2": 2119574.9428781434,
         "T3": 106164.0041487728,
+        "single": 2119574.9428781434,
+        "pair": 106164.0041487728,
         "status": "near-pole",
         "max_abs_V": 0.98900731592926
       },
       "term23_tower_atom": {
         "T2": 2119592.5580956456,
         "T3": 94298.15264266176,
+        "single": 2119592.5580956456,
+        "pair": 94298.15264266176,
         "status": "near-pole",
         "max_abs_V": 0.98900731592926
       },
@@ -90,12 +100,14 @@
       "term4_frobenius_per_3A_canonical": 1.2999219630962757,
       "term5_bw_chirality_binding": 8.524638174781058,
       "B_pred_term1": 0.5184494285649867,
+      "B_pred_term1_plus_term4": 1.7945622749093046,
       "B_pred_term1_plus_term4_pervortex_legacy": 1.7945622749093046,
       "B_pred_term1_plus_term4_per3A_canonical": 1.8183713916612625,
       "B_pred_term5_bw_chirality": 8.524638174781058,
       "B_AME_MeV": 8.4818,
       "err_pct": {
         "term1_only": -93.88750703193914,
+        "term1_plus_term4": -78.84220006473502,
         "term1_plus_term4_pervortex_legacy": -78.84220006473502,
         "term1_plus_term4_per3A_canonical": -78.56149176281848,
         "term5_only": 0.5050599493156956
@@ -111,12 +123,16 @@
       "term23_tower_free": {
         "T2": 2705255.065702586,
         "T3": 257921.5464515902,
+        "single": 2705255.065702586,
+        "pair": 257921.5464515902,
         "status": "near-pole",
         "max_abs_V": 0.98900731592926
       },
       "term23_tower_atom": {
         "T2": 2705308.6859446666,
         "T3": 170193.57014710706,
+        "single": 2705308.6859446666,
+        "pair": 170193.57014710706,
         "status": "near-pole",
         "max_abs_V": 0.98900731592926
       },
@@ -125,12 +141,14 @@
       "term4_frobenius_per_3A_canonical": 1.2999219630962757,
       "term5_bw_chirality_binding": 7.78414230673205,
       "B_pred_term1": 0.8049046677735124,
+      "B_pred_term1_plus_term4": 2.08101751411783,
       "B_pred_term1_plus_term4_pervortex_legacy": 2.08101751411783,
       "B_pred_term1_plus_term4_per3A_canonical": 2.104826630869788,
       "B_pred_term5_bw_chirality": 7.78414230673205,
       "B_AME_MeV": 7.71806,
       "err_pct": {
         "term1_only": -89.57115301288779,
+        "term1_plus_term4": -73.03703891757993,
         "term1_plus_term4_pervortex_legacy": -73.03703891757993,
         "term1_plus_term4_per3A_canonical": -72.72855314846232,
         "term5_only": 0.8562035891409147

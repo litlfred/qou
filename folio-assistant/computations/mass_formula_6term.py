@@ -107,7 +107,9 @@ def term_23_brane_tower(Z, N, include_inter):
     max_abs = max(abs_vols) if abs_vols else 0.0
 
     if max_abs >= 1.05:
-        return {"T2": 0.0, "T3": 0.0, "status": "divergent",
+        return {"T2": 0.0, "T3": 0.0,
+                "single": 0.0, "pair": 0.0,  # legacy aliases
+                "status": "divergent",
                 "max_abs_V": max_abs}
     status = "near-pole" if max_abs >= 0.95 else "ok"
     single = mp.mpf(0)
@@ -118,6 +120,10 @@ def term_23_brane_tower(Z, N, include_inter):
         pair += Phi_q(abs(vols[i] * vols[i + 1]))
     pair *= z_mark ** 2
     return {"T2": float(single), "T3": float(pair),
+            # Legacy aliases for backward compat with downstream
+            # consumers (probe_canonical_multi_term_D, etc.) that read
+            # `.single` and `.pair` on this dict.
+            "single": float(single), "pair": float(pair),
             "status": status, "max_abs_V": max_abs}
 
 
@@ -293,12 +299,21 @@ if __name__ == "__main__":
         )
         rows[iso].update({
             "B_pred_term1": B_term1,
+            # Legacy aliases retained for backward compat with downstream
+            # consumers (e.g. categorical_q_decay_ba_low_isotopes,
+            # probe_canonical_multi_term_D); same values as
+            # `*_pervortex_legacy` below.
+            "B_pred_term1_plus_term4": B_term1_plus_frob_pv,
             "B_pred_term1_plus_term4_pervortex_legacy": B_term1_plus_frob_pv,
             "B_pred_term1_plus_term4_per3A_canonical": B_term1_plus_frob_p3A,
             "B_pred_term5_bw_chirality": B_term5,
             "B_AME_MeV": B_AME[iso],
             "err_pct": {
                 "term1_only": (B_term1 - B_AME[iso]) / B_AME[iso] * 100,
+                # Legacy alias: `term1_plus_term4` aliases the per-vortex
+                # value for backward compat.
+                "term1_plus_term4":
+                    (B_term1_plus_frob_pv - B_AME[iso]) / B_AME[iso] * 100,
                 "term1_plus_term4_pervortex_legacy":
                     (B_term1_plus_frob_pv - B_AME[iso]) / B_AME[iso] * 100,
                 "term1_plus_term4_per3A_canonical": err_p3A,
