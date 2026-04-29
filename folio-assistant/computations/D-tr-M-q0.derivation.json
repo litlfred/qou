@@ -1,9 +1,9 @@
 {
-  "target": "tr_M(D, q_0)",
+  "target": "τ_SW(D, q_0)  [Schur-Weyl trace, NOT canonical Jones-Markov]",
   "target_value": 0.17743692421543206,
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
-  "description": "Step-by-step derivation of D (deuteron, A=2)'s archimedean Markov trace value tr_M(D, q_0) ≈ 0.17743692421543206 from the seven first-principles entrypoints.  Per the methodology directive (post-#472), every numerical claim must trace back here.  SCRIPT_CITED steps are the computational frontier; each needs its own derivation chain to push back the frontier.",
+  "description": "Step-by-step derivation of D's Schur-Weyl trace τ_SW(D, q_0) ≈ 0.17743692421543206. CORRECTION (2026-04-28): the value computed here is τ_SW = Σ_λ [s_λ(q,q⁻¹)/H_q(λ)] χ_λ — the Schur-Weyl / Reshetikhin-Turaev-at-SU(2) functional, NOT the canonical Jones-Markov trace τ_M. The two differ: τ_SW(σ_i) ≈ 0.883 at q_0 vs τ_M(σ_i) = z ≈ 0.499 (Markov axiom). The previous label 'tr_M' (suggesting Jones-Markov) was structurally wrong — see prop:markov-trace-frobenius-selection. Use the parallel derivation chain `D-tau-M-q0.derivation.json` for the canonical Jones-Markov trace τ_M(D) ≈ 0.336821.",
   "steps": [
     {
       "name": "Hecke algebra H_6(q) presentation",

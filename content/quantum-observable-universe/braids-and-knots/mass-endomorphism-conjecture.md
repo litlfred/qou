@@ -177,6 +177,56 @@ $N \to \infty$ tower limit is then a question at the level of the
 **Habiro completion** $\widehat{\mathbb{Z}[q]}$. Both senses are
 algebraic.
 
+**Two distinct convergence problems (clarification, 2026-04-28f).**
+*The Habiro completion above resolves the* $N \to \infty$ *tower-limit
+problem (number of summands) in the* $((q;q)_n)$*-adic topology on* $q$.
+*This is well-defined and at* $q_0 \approx 1.11$ *(real,* $|q| > 1$,
+*outside the natural boundary* $S^1$*) the Habiro evaluation
+agrees with the analytic infinite product.*
+
+*A separate convergence problem affects the brane tower numerically:
+for the per-generator volumes* $|\hat{V}_i|$ *of low isotopes, all values
+sit at* $|\hat{V}_i| \in [0.85, 1.0]$ *— at the boundary of the
+* $z$*-radius of convergence of* $\Phi_q(z) = \prod (1 - q^{-k} z)^{-1}$.
+*Numerically* $\Phi_q(0.989) \approx 6.7 \times 10^5$ *and* $\Phi_q(1) \approx 9 \times 10^5$.
+*The Habiro framework above is about completion in* $q$*, not in* $z$;
+*it does not regularize the* $|\hat{V}|\approx 1$ *behaviour.*
+
+*Two partial mitigations are documented but neither universally
+closes the gap:*
+
+1. *Yekutieli finite-slice truncation
+   ([atom-knot-mass-derivation §Architecture](#prop:atom-knot-mass-derivation)).
+   The non-abelian Stokes theorem at finite slice depth gives a
+   finite multiplicative integral; per-atom max slice depth equals
+   the GB filtration* $\mathrm{max\_grade}$ *recorded in
+   `joint-tower-sdp-h6-h9.witness.json`. Truncating the* $\Phi_q$
+   *product at this depth reduces* $\Phi_q(0.989)$ *from* $6.7 \times 10^5$
+   *to* $46.5$ *for* $\mathrm{max\_grade}=2$ *(D's filtration depth).*
+   *Empirical test in*
+   [`probe_phiq_yekutieli_truncation.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_phiq_yekutieli_truncation.py):
+   *the free-minus-atom subtraction* $E_0 \cdot (\mathrm{tower}^{\mathrm{free}}_{\leq k_{\max}} - \mathrm{tower}^{\mathrm{atom}}_{\leq k_{\max}})$
+   *gives* $B(D) \approx +1.74 \mathrm{MeV}$ *(error* $-22\%$*) but
+   fails for* $T$ *(deeper filtration* $k_{\max}=9$ *gives* $B(T) \approx 1449 \mathrm{MeV}$, *grossly off).*
+
+2. *A "z-Habiro" completion — analogous to the* $q$*-Habiro one
+   above but in the* $z$*-variable — is conjecturally what would
+   regularize* $\Phi_q$ *at* $|z|=1$. *The construction would replace
+   the analytic product with a cyclotomic series in* $z$ *whose
+   evaluation at any specific* $|z|<\infty$ *is finite. This
+   construction is OPEN; it would require identifying a cyclotomic
+   denominator structure in* $z$ *parallel to the* $(q; q)_n$ *ideal
+   in* $q$.*
+
+*Until either (1) extended uniformly across atoms (which requires
+understanding why Yekutieli depth differs by* $A$*) or (2) the* $z$*-
+Habiro completion is constructed, the brane tower contribution to the
+multi-term mass formula is not computable in closed form for*
+$|\hat{V}|\approx 1$. *Empirically the descended Markov trace plus
+Frobenius co-Casimir alone reproduces the binding within* $\sim 30\%$
+*for low isotopes; closing the residual to AME requires the brane
+tower in some regularized form.*
+
 ## Descended vs transient mass (computed)
 
 The Hecke mass element splits as

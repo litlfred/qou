@@ -1,0 +1,65 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T20:25:33.912648+00:00",
+  "commitSha": "63f06b944414deba53dccb696f580debc3a27fd7",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "probe-phiq-yekutieli-truncation",
+  "scriptFile": "probe_phiq_yekutieli_truncation.py",
+  "scriptHash": "8c1a7bfc321f",
+  "scriptCommitSha": "",
+  "description": "Test brane-tower formula with Φ_q truncated at SDP max_grade (Yekutieli finite-slice interpretation). Per atom-knot-mass-derivation §Architecture, Yekutieli's non-abelian Stokes truncates the multiplicative integral at finite slice depth = GB filtration max_grade. The brane-tower Σ Φ_q in this interpretation uses the TRUNCATED q-Pochhammer ∏_{k=1}^{k_max} (1 - q^{-k} z)^{-1} instead of the divergent infinite product.",
+  "contentBlock": "thm:knot-mass-formula-unified",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895
+  },
+  "data": {
+    "results": {
+      "deuteron": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "rho_factor": 1,
+        "k_max_yekutieli": 2,
+        "tower_atom_truncated_cat": 151.9733319862509,
+        "tower_free_truncated_cat": 152.53009301720837,
+        "delta_tower_cat_free_minus_atom": 0.5567610309574604,
+        "B_absolute_paper_formula_MeV": 79.46661535379633,
+        "B_subtractive_compute_heuristic_MeV": 1.7433267995678143,
+        "B_AME_MeV": 2.224566
+      },
+      "tritium": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "rho_factor": 2,
+        "k_max_yekutieli": 9,
+        "tower_atom_truncated_cat": 48106.59639295845,
+        "tower_free_truncated_cat": 48569.38193991106,
+        "delta_tower_cat_free_minus_atom": 462.7855469526112,
+        "B_absolute_paper_formula_MeV": 49167.5200495135,
+        "B_subtractive_compute_heuristic_MeV": 1449.0713279047343,
+        "B_AME_MeV": 8.481798
+      },
+      "he3": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "rho_factor": 2,
+        "k_max_yekutieli": 2,
+        "tower_atom_truncated_cat": 247.78271994662143,
+        "tower_free_truncated_cat": 253.54735599128244,
+        "delta_tower_cat_free_minus_atom": 5.764636044661017,
+        "B_absolute_paper_formula_MeV": 256.01620099202773,
+        "B_subtractive_compute_heuristic_MeV": 18.05019379522631,
+        "B_AME_MeV": 7.71806
+      }
+    }
+  },
+  "caveats": [
+    "Compute uses hand-built atom volumes (atom_per_generator_volumes) for the brane tower. Wenzl |tr_M| values are reused from light_isotope_sweep H_{3A} computation (matching the 6-strand braid). The SDP-canonical braid word is at H_{n_0}, not H_{3A}; consistency between H_{3A} brane-tower and H_{n_0} Markov-trace is open — one of the deeper compute/paper alignment issues."
+  ]
+}

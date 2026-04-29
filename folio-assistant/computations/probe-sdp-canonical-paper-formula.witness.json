@@ -1,0 +1,275 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T19:52:36.773160+00:00",
+  "commitSha": "90782cf26de56316b61f2fd6818e973cc4bde6d2",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "probe-sdp-canonical-paper-formula",
+  "scriptFile": "probe_sdp_canonical_paper_formula.py",
+  "scriptHash": "46ef557c8cbc",
+  "scriptCommitSha": "",
+  "description": "Test prop:atom-knot-mass-derivation flagship formula B(H) = m_e · ρ · tr_M(T_w(H)) on the SDP-canonical braid words + ρ_factor from joint-tower-sdp-h6-h9.witness.json. Tests both Plancherel and Wenzl-Schur Markov-trace conventions. Result: -87% to -100% error on all of {D, T, ³He} for both conventions; single-term formula is structurally inadequate.",
+  "contentBlock": "prop:atom-knot-mass-derivation",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895
+  },
+  "data": {
+    "results": {
+      "deuteron": {
+        "n_0": 3,
+        "braid_word": [
+          1,
+          -2,
+          1,
+          1,
+          1,
+          -2
+        ],
+        "rho_factor": 1,
+        "knot": "6_2",
+        "tr_M_plancherel": 0.04943542148932806,
+        "tr_M_wenzl_schur": 0.2883259310126921,
+        "B_predicted_plancherel_MeV": 0.025261448473854073,
+        "B_predicted_wenzl_schur_MeV": 0.1473342480052581,
+        "B_AME_MeV": 2.224566,
+        "err_plancherel_pct": -98.864432501717,
+        "err_wenzl_schur_pct": -93.37694417674018,
+        "per_lambda": [
+          {
+            "lambda": [
+              3
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.2320524825884343,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.4153957863345666,
+            "contrib_P": 0.2012967108572597,
+            "contrib_W": 0.5117894098102775
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "d_lambda": 2,
+            "dim_q": 2.010896869118482,
+            "chi": -0.8611569221776639,
+            "w_planch": 0.6606737723483499,
+            "y_wenzl": 0.2809296339798641,
+            "contrib_P": -0.2844718961795058,
+            "contrib_W": -0.24192449894659743
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 0.8116537356420811,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.022744945705705264,
+            "contrib_P": 0.13261060681157416,
+            "contrib_W": 0.01846102014901199
+          }
+        ]
+      },
+      "tritium": {
+        "n_0": 5,
+        "braid_word": [
+          -1,
+          2,
+          -3,
+          2,
+          1,
+          -3,
+          -3,
+          4,
+          -3,
+          -2,
+          -3,
+          -4,
+          -3,
+          2
+        ],
+        "rho_factor": 2,
+        "knot": "8_11",
+        "tr_M_plancherel": -0.0009949539522382048,
+        "tr_M_wenzl_schur": 0.012888943963108688,
+        "B_predicted_plancherel_MeV": -0.0010168408497841454,
+        "B_predicted_wenzl_schur_MeV": 0.013172473663514756,
+        "B_AME_MeV": 8.481798,
+        "err_plancherel_pct": -100.01198850585436,
+        "err_wenzl_schur_pct": -99.84469715426476,
+        "per_lambda": [
+          {
+            "lambda": [
+              5
+            ],
+            "d_lambda": 1,
+            "dim_q": 0.9999999999999998,
+            "chi": 0.6587817865817491,
+            "w_planch": 0.007615387159641048,
+            "y_wenzl": 0.1181483983336024,
+            "contrib_P": 0.005016878358540042,
+            "contrib_W": 0.07783401293598274
+          },
+          {
+            "lambda": [
+              4,
+              1
+            ],
+            "d_lambda": 4,
+            "dim_q": 4.109682435637708,
+            "chi": -0.9052229257542168,
+            "w_planch": 0.1286200031602021,
+            "y_wenzl": 0.10937853185946189,
+            "contrib_P": -0.029107443892798693,
+            "contrib_W": -0.0990119546245229
+          },
+          {
+            "lambda": [
+              3,
+              2
+            ],
+            "d_lambda": 5,
+            "dim_q": 5.220441324664571,
+            "chi": 0.3339012957138872,
+            "w_planch": 0.20754220432343176,
+            "y_wenzl": 0.06172371532319623,
+            "contrib_P": 0.01385972218778204,
+            "contrib_W": 0.020609628522690337
+          },
+          {
+            "lambda": [
+              3,
+              1,
+              1
+            ],
+            "d_lambda": 6,
+            "dim_q": 6.220441324664571,
+            "chi": 0.9859531547697895,
+            "w_planch": 0.294668955146093,
+            "y_wenzl": 0.016766608958844187,
+            "contrib_P": 0.04842163098983466,
+            "contrib_W": 0.016531090997763842
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              1
+            ],
+            "d_lambda": 5,
+            "dim_q": 5.220441324664571,
+            "chi": -0.5219160696026084,
+            "w_planch": 0.20754220432343176,
+            "y_wenzl": 0.007749589318305704,
+            "contrib_P": -0.021663922311429395,
+            "contrib_W": -0.00404463519804447
+          },
+          {
+            "lambda": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "d_lambda": 4,
+            "dim_q": 4.109682435637708,
+            "chi": -0.9044198659793903,
+            "w_planch": 0.1286200031602021,
+            "y_wenzl": -0.0009287250802900655,
+            "contrib_P": -0.029081621505104686,
+            "contrib_W": 0.0008399574126476396
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "d_lambda": 1,
+            "dim_q": 0.9999999999999998,
+            "chi": 1.5179533198523165,
+            "w_planch": 0.007615387159641048,
+            "y_wenzl": 8.619758913550236e-05,
+            "contrib_P": 0.011559802220937831,
+            "contrib_W": 0.0001308439165915018
+          }
+        ]
+      },
+      "he3": {
+        "n_0": 3,
+        "braid_word": [
+          -1,
+          2,
+          -1,
+          2,
+          -1,
+          2
+        ],
+        "rho_factor": 2,
+        "knot": "L6a4",
+        "tr_M_plancherel": 0.9855195857335708,
+        "tr_M_wenzl_schur": 0.998366621838506,
+        "B_predicted_plancherel_MeV": 1.0071989470285792,
+        "B_predicted_wenzl_schur_MeV": 1.0203285909490472,
+        "B_AME_MeV": 7.71806,
+        "err_plancherel_pct": -86.95010213669525,
+        "err_wenzl_schur_pct": -86.77998627959556,
+        "per_lambda": [
+          {
+            "lambda": [
+              3
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0000000000000027,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.4153957863345666,
+            "contrib_P": 0.16338322733975869,
+            "contrib_W": 0.4153957863345677
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "d_lambda": 2,
+            "dim_q": 2.010896869118482,
+            "chi": 1.994185810381214,
+            "w_planch": 0.6606737723483499,
+            "y_wenzl": 0.2809296339798641,
+            "contrib_P": 0.6587531310540539,
+            "contrib_W": 0.5602258897982331
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.022744945705705264,
+            "contrib_P": 0.16338322733975824,
+            "contrib_W": 0.022744945705705264
+          }
+        ]
+      }
+    }
+  },
+  "caveats": [
+    "Paper formula B = m_e · ρ · tr_M assumes the single-term Markov trace captures all of the categorical mass. The thm:knot-mass-formula-unified multi-term decomposition (T1 |tr_M| + T2+T3 brane tower Σ Φ_q + T4 m_e·Σ 1/dim_q + T5 chirality + T6 jet-prefix) gives a different answer. These two paper formulas are NOT reconciled. The single-term formula tested here fails empirically; the multi-term version is what compute approximately implements (with T2+T3 missing in current state)."
+  ]
+}
