@@ -103,9 +103,11 @@ theorem massGapReal_eq_zero_iff {q₀ : ℝ} (hq : q₀ ≠ 0) :
     · -- q₀ - q₀⁻¹ = 0 means q₀ = q₀⁻¹ means q₀² = 1
       have : q₀ = q₀⁻¹ := by linarith
       have : q₀ * q₀ = 1 := by
-        have := congr_arg (· * q₀) this
-        simp [mul_comm] at this
-        rwa [inv_mul_cancel₀ hq] at this
+        -- From `this : q₀ = q₀⁻¹`, multiply both sides by `q₀`:
+        --   q₀ * q₀ = q₀⁻¹ * q₀ = 1.
+        have h1 : q₀ * q₀ = q₀⁻¹ * q₀ := by rw [← this]
+        rw [inv_mul_cancel₀ hq] at h1
+        exact h1
       have : q₀ ^ 2 = 1 := by ring_nf; exact this
       have : (q₀ - 1) * (q₀ + 1) = 0 := by nlinarith
       rcases mul_eq_zero.mp this with h1 | h1
@@ -196,9 +198,10 @@ theorem massGapReal_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ 
     linarith
   have hf1_mono : q₁ - q₁⁻¹ ≤ q₂ - q₂⁻¹ := by
     have hinv : q₂⁻¹ ≤ q₁⁻¹ := by
-      have : (1 : ℝ) / q₂ ≤ 1 / q₁ := by
-        rw [div_le_div_iff h2_pos h1_pos]; linarith
-      simpa using this
+      -- `0 < a ≤ b` ⇒ `1/b ≤ 1/a`, then `1/x = x⁻¹`.
+      have hone_div : (1 : ℝ) / q₂ ≤ 1 / q₁ :=
+        one_div_le_one_div_of_le h1_pos hq₂
+      simpa [one_div] using hone_div
     linarith
   -- Factor 2: 1 - q⁻¹ is increasing for q > 0
   have hf2_1 : 0 < 1 - q₁⁻¹ := by
@@ -209,9 +212,10 @@ theorem massGapReal_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ 
     linarith
   have hf2_mono : 1 - q₁⁻¹ ≤ 1 - q₂⁻¹ := by
     have hinv : q₂⁻¹ ≤ q₁⁻¹ := by
-      have : (1 : ℝ) / q₂ ≤ 1 / q₁ := by
-        rw [div_le_div_iff h2_pos h1_pos]; linarith
-      simpa using this
+      -- `0 < a ≤ b` ⇒ `1/b ≤ 1/a`, then `1/x = x⁻¹`.
+      have hone_div : (1 : ℝ) / q₂ ≤ 1 / q₁ :=
+        one_div_le_one_div_of_le h1_pos hq₂
+      simpa [one_div] using hone_div
     linarith
   -- Product of positive increasing factors is increasing
   unfold massGapReal

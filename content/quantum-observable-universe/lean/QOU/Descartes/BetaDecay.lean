@@ -70,20 +70,21 @@ noncomputable def skeinRatio (op : BetaDecayOp) : FractionRing R_t :=
   algebraMap R_t (FractionRing R_t) P_dau /
     algebraMap R_t (FractionRing R_t) P_par
 
-/-! ## §3  Markov trace on H_n(q) (cleared form) -/
+/-! ## §3  Markov trace on H_n(q) (cleared form)
 
-/-- The Markov trace on `H_n(q)` is defined recursively by:
-    - `tr_M(1) = 1`
-    - `tr_M(b · σ_{n-1}) = z · tr_M(b)` for `b ∈ H_{n-1}(q)`
-    where `z = 1/(t + t⁻¹)`.
+The Markov trace on `H_n(q)` is defined recursively by:
+- `tr_M(1) = 1`
+- `tr_M(b · σ_{n-1}) = z · tr_M(b)` for `b ∈ H_{n-1}(q)`
+  where `z = 1/(t + t⁻¹)`.
 
-    Since `z ∉ ℤ[t, t⁻¹]`, we work with the **cleared Markov trace**:
-    `tr_M^cl(x) := (t + t⁻¹)^k · tr_M(x)` where `k` is chosen to
-    clear all denominators.
+Since `z ∉ ℤ[t, t⁻¹]`, we work with the **cleared Markov trace**:
+`tr_M^cl(x) := (t + t⁻¹)^k · tr_M(x)` where `k` is chosen to
+clear all denominators.
 
-    For a 2×2 transfer matrix `M` representing an element of `H_n(q)`,
-    the cleared Markov trace is `M[0][0] + (t + t⁻¹) · M[1][0]`,
-    which is exactly `tracedVolCleared` from TransferMatrix.lean. -/
+For a 2×2 transfer matrix `M` representing an element of `H_n(q)`,
+the cleared Markov trace is `M[0][0] + (t + t⁻¹) · M[1][0]`,
+which is exactly `tracedVolCleared` from TransferMatrix.lean.
+-/
 
 /-- The beta decay transfer matrix `T_{β-decay} = σ₀ · σ₁⁻¹` in H₃(q).
 
@@ -269,8 +270,8 @@ theorem no_degree3_on_sigma4 :
 theorem jet_levels_sigma4 :
     (sigma4_knots.filter (fun τ => τ.degree = 1)).length = 4 ∧
     (sigma4_knots.filter (fun τ => τ.degree = 2)).length = 2 := by
-  simp [sigma4_knots, e_label, gen2_label, c_label, t_label, weak_label,
-        strong_label, TorusKnotLabel.degree]
-  constructor <;> decide
+  refine ⟨?_, ?_⟩ <;>
+    simp [sigma4_knots, e_label, gen2_label, c_label, t_label, weak_label,
+          strong_label, TorusKnotLabel.degree]
 
 end QOU.Descartes

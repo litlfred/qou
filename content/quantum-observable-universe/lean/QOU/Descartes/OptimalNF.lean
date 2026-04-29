@@ -245,7 +245,7 @@ theorem nf_support_prefix_closed (Z N : ℕ)
     simp only [standardBasis, List.mem_append, List.mem_singleton, List.mem_map,
                List.mem_range] at hw
     rcases hw with rfl | ⟨i, hi, rfl⟩
-    · exact absurd hg (List.not_mem_nil g)   -- g ∈ [] is impossible
+    · simp at hg   -- g ∈ [] is impossible
     · rw [List.mem_singleton] at hg; subst hg; exact hi  -- g = i < A-1
 
 -- ════════════════════════════════════════════════════════════════

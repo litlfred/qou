@@ -195,16 +195,16 @@ def AlgElement.ofTerms (terms : List (Monomial G × k)) :
   support := (terms.map Prod.fst).toFinset
   support_spec := by
     -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-    -- DIAGNOSTIC: the filter-eq-nil bridge requires Prop↔Bool
-    -- coercion (`decide_eq_true_eq` / `of_decide_eq_true`) whose
-    -- exact name has churned across Mathlib revisions, and the
-    -- `simpa` form against `List.filter_eq_nil_iff` doesn't reliably
-    -- produce a closed proof.  The cleanest robust fix is to refactor
-    -- `ofTerms` to use `Finset.sum` directly over a `Finset` of
-    -- monomials (avoiding `List.filter` + Bool-decide coercion),
-    -- which we have not done yet.  Sorry retained pending refactor.
-    intro m _hm
-    sorry
+    -- Per Gemini review on PR #467: m ∉ supports of `terms` ⇒
+    -- the filter is empty ⇒ the coefficient sum is zero.
+    intro m hm
+    rw [List.mem_toFinset, List.mem_map, not_exists] at hm
+    push_neg at hm
+    have h_empty : terms.filter (fun p => p.1 = m) = [] := by
+      rw [List.filter_eq_nil_iff]
+      intro x hx heq
+      exact hm x hx heq
+    rw [h_empty, List.map_nil, List.sum_nil]
 
 /-- `ofTerms` with nonempty leading term has nonempty support. -/
 theorem AlgElement.ofTerms_support_nonempty

@@ -204,22 +204,20 @@ lemma q_from_t_mul_q_inv_from_t : q_from_t * q_inv_from_t = (1 : R_t) := by
 /-- The Hecke quadratic identity in R_t: `q² = HA · q + 1`. -/
 lemma q_squared_eq : q_from_t * q_from_t = HA_t * q_from_t + 1 := by
   unfold HA_t
-  -- (q − q⁻¹)·q = q² − q⁻¹·q = q² − 1 (using q⁻¹ · q = 1)
-  have h := q_from_t_mul_q_inv_from_t
-  -- Rewrite q⁻¹ · q from q · q⁻¹ = 1 via commutativity
+  -- Goal: q*q = (q − q⁻¹)*q + 1
+  -- Residual: q*q − (q − q⁻¹)*q − 1 = q⁻¹*q − 1, which matches h' below.
   have h' : q_inv_from_t * q_from_t = (1 : R_t) := by
-    rw [mul_comm]; exact h
-  ring_nf
-  linear_combination -h'
+    rw [mul_comm]; exact q_from_t_mul_q_inv_from_t
+  linear_combination h'
 
 /-- The signed Hecke quadratic identity: `q⁻² = −HA · q⁻¹ + 1`. -/
 lemma q_inv_squared_eq :
     q_inv_from_t * q_inv_from_t = (- HA_t) * q_inv_from_t + 1 := by
   unfold HA_t
-  -- (-(q - q⁻¹))·q⁻¹ + 1 = (-q + q⁻¹)·q⁻¹ + 1 = -1 + q⁻² + 1 = q⁻²
+  -- Goal: q⁻¹*q⁻¹ = -(q − q⁻¹)*q⁻¹ + 1 = -q*q⁻¹ + q⁻¹*q⁻¹ + 1
+  -- Residual: q⁻¹*q⁻¹ + q*q⁻¹ − q⁻¹*q⁻¹ − 1 = q*q⁻¹ − 1, matches h.
   have h := q_from_t_mul_q_inv_from_t
-  ring_nf
-  linear_combination -h
+  linear_combination h
 
 /-! ## §5  Trivial (symmetric) representation -/
 

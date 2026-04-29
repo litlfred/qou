@@ -141,7 +141,7 @@ structure VolumeTowerDecomposition where
 theorem VolumeTowerDecomposition.tendsto_zero
     (vtd : VolumeTowerDecomposition) :
     Filter.Tendsto vtd.levelContribution Filter.atTop (nhds 0) :=
-  vtd.sum_eq.tendsto_atTop_zero
+  vtd.sum_eq.summable.tendsto_atTop_zero
 
 /-- For any ε > 0, eventually |Φ_n(K)| < ε. -/
 theorem VolumeTowerDecomposition.eventually_small
@@ -149,7 +149,11 @@ theorem VolumeTowerDecomposition.eventually_small
     ∃ N, ∀ n, n ≥ N → |vtd.levelContribution n| < ε := by
   have h := vtd.tendsto_zero
   rw [Metric.tendsto_atTop] at h
-  exact h ε hε
+  obtain ⟨N, hN⟩ := h ε hε
+  refine ⟨N, fun n hn => ?_⟩
+  have := hN n hn
+  -- `dist x 0 = |x|` on ℝ
+  simpa [Real.dist_eq, sub_zero] using this
 
 /-- Baseline tower decomposition: all volume concentrated at level 0.
 

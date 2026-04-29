@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Family-4 motivic-substrate probe — atom-knot ID scaffold.
 
-Continues PR #471 (`docs/audits/family-4-motivic-path.md`).
+Continues `docs/audits/family-4-motivic-path.md`.
 
 For each family-4 atom (⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹⁴N, ¹⁹F):
 
   1. Load the parent ground-state braid from `braid-registry/<sym>.json`.
-  2. Compute a q-MN character via the existing wrapper at q_0.
+  2. Record a q-MN character placeholder (`pending-convention-pin`)
+     until the q-MN convention is pinned to the canonical Markov-trace
+     conventions used elsewhere.
   3. Emit a witness row with status `motivic-pending-orbit-table`.
 
 This script does NOT assign knot IDs — it cannot, until the
@@ -14,8 +16,9 @@ K_motivic orbit table is generated (blocker #3 in the audit).  The
 output is an honest categorical state:
 
   - parent braid present?         → registry lookup succeeded
-  - q-MN character present?        → trace computed at q_0
-  - knot id?                       → null until orbit table lands
+  - q-MN character status?        → `pending-convention-pin`
+                                    (step 2 not yet implemented)
+  - knot id?                      → null until orbit table lands
 
 Output: `family-4-motivic-probe.witness.json`
 """

@@ -145,11 +145,14 @@ theorem derivFactor_at_3_2_neg : derivFactor (3/2 : ℝ) < 0 := by
 theorem derivFactor_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
     derivFactor q < 0 := by
   unfold derivFactor
-  -- Goal: 4q⁶ − 9q⁴ − 3 < 0, i.e., 4q⁶ − 9q⁴ < 3
-  -- Write as q⁴(4q² − 9) < 3
-  -- For q ≤ 3/2: 4q² ≤ 9, so 4q² − 9 ≤ 0, so q⁴(4q²−9) ≤ 0 < 3.
-  nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q * (2 * q - 3)),
-             mul_self_nonneg (q ^ 2)]
+  -- Goal: 4q⁶ − 9q⁴ − 3 < 0, i.e., q⁴·(4q² − 9) − 3 < 0.
+  -- Strategy: bound `4q² − 9 ≤ 0` (from q ≤ 3/2), pair with q⁴ ≥ 0,
+  -- so `q⁴·(4q² − 9) ≤ 0`, hence the whole expression ≤ −3 < 0.
+  have h_pow_nonneg : (0 : ℝ) ≤ q^4 := by positivity
+  have h_quad_nonpos : 4 * q^2 - 9 ≤ 0 := by nlinarith [hq2]
+  have h_prod_nonpos : q^4 * (4 * q^2 - 9) ≤ 0 :=
+    mul_nonpos_of_nonneg_of_nonpos h_pow_nonneg h_quad_nonpos
+  nlinarith [h_prod_nonpos]
 
 /-- p'(q) = 2q · r(q) < 0 for q ∈ (1, 3/2].
     Since r(q) < 0 (proved above) and q > 0, the product is negative.

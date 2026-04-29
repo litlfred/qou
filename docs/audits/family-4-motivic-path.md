@@ -99,7 +99,9 @@ A scaffold script `family_4_motivic_probe.py` that, for each of
 {⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹⁴N, ¹⁹F}:
 
 - loads the `braid-registry/<sym>.json` parent ordering (where it exists)
-- computes a q-MN character via the existing wrapper at q_0
+- records a q-MN character placeholder (`pending-convention-pin`)
+  until the q-MN convention is pinned to the canonical Markov-trace
+  conventions; the actual trace computation is blocker #2
 - emits a witness JSON with status `motivic-pending-orbit-table`
   for each atom
 

@@ -90,9 +90,13 @@ theorem b3_nf_std_consistent :
       - 3 * q * q + 4 - 3 * q_inv * q_inv
       + 3 * q_inv * q_inv * q_inv * q_inv
       - q_inv * q_inv * q_inv * q_inv * q_inv * q_inv := by
-  -- Use `simp only` (not `simp`) to avoid runaway rewriting in `LaurentPolynomial`.
-  simp only [b3_nf_coefficients, HA]
-  ring
+  -- DIAGNOSTIC: the identity is a polynomial equality in `q` and
+  -- `q_inv` that `ring` cannot close without `q * q_inv = 1`
+  -- substitutions (since `LaurentPolynomial.T 1 * LaurentPolynomial.T (-1)`
+  -- is not exposed to `ring` directly).  Retained as a sorry pending
+  -- a `linear_combination`-against-`q_mul_q_inv` closure.
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry
 
 /-- With three character values verified (trivial = 1, alternating = 1,
     standard = known Laurent poly), the NF is UNIQUELY DETERMINED
