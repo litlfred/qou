@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 """Probe the literal multi-term formula on D with the CANONICAL tr_M.
 
-The parallel branch at `claude/continue-pr-442-DJRWm@a12818da2` reported
-that the unified multi-term formula (single-term ρ·tr_M, naive sum,
-etc.) all fail on D. But that audit used `tr_M(D)|_{q_0} = +0.288`
-from an SDP block-matrix dump path that disagrees with the canonical
-chain (Hoefsmit + Wenzl bridge): the symbolic GB-NF + tr_M
-calculation in `atom-nf-symbolic-D.witness.json` gives
-`tr_M(D)|_{q_0} = +0.388286...` — matching `atomic-tr-m-mpfr-50dps`
-to 30 digits. So the parallel branch's specific number was wrong.
+`tr_M(D, q_0)` is loaded at runtime from the derivation-chain
+registry `D-tr-M-q0.derivation.json` (PR #473), whose chain
+derives the value step-by-step from the 7 first-principles
+entrypoints (Hecke.Energy, Wedderburn, Schur, …). PR #472's
+`prop:habiro-residue-sum-equivalence` cross-validates the
+registry value via two independent paths (polynomial-ring +
+residue-spectral-sum) at relative tolerance ≤ 10⁻⁹. The
+canonical value at the time of writing is
+  tr_M(D, q_0) = 0.17743692421543206
+but the probe always reads `target_value` from the registry
+JSON so it tracks any future re-derivations automatically.
 
-This probe re-tests the LITERAL paper formulas under the canonical
-chain (Hoefsmit + Wenzl):
+This probe re-tests the LITERAL paper formulas under that
+canonical convention:
 
   (S1) Single-term:     B = m_e · ρ · |tr_M(T_w)|
   (S2) +T4 Frobenius:   B = m_e · ρ · |tr_M(T_w)| + m_e · tr_M(C_dim_q)
@@ -43,12 +46,18 @@ from experimental_constants import M_E_MEV  # noqa: E402
 mp.mp.dps = 50
 q = mp.mpf(repr(Q0_FLOAT))
 
-# --- canonical tr_M(D) at q_0 from symbolic chain (atom-nf-symbolic-D) ---
-# Symbolic GB-NF + Hoefsmit + Wenzl-bridge Markov trace, 30 dps.
-# This number IS the canonical value per the chain documented in
-# docs/derivation-tracking-methodology.md.
+# --- canonical tr_M(D) at q_0, loaded from the registered derivation
+# chain `D-tr-M-q0.derivation.json` (PR #473 registry). The chain
+# derives the value step-by-step from the 7 first-principles
+# entrypoints (Hecke.Energy, Wedderburn, Schur, …); PR #472's
+# `prop:habiro-residue-sum-equivalence` cross-validates via two
+# independent paths (polynomial-ring + residue-spectral-sum) at
+# relative tolerance ≤ 10⁻⁹. Loading from the registry keeps the
+# value in a single source of truth.
+_REGISTRY_PATH = HERE / "D-tr-M-q0.derivation.json"
+with _REGISTRY_PATH.open() as _f:
+    TR_M_D_ATOM_ATQ0 = mp.mpf(str(json.load(_f)["target_value"]))
 TR_M_D_FREE = mp.mpf("0")  # placeholder; paper requires "free" T_w too
-TR_M_D_ATOM_ATQ0 = mp.mpf("0.38828647154771299936605791605")
 
 # AME deuteron binding
 B_AME_D_MEV = 2.22456612
@@ -176,8 +185,10 @@ def main() -> int:
         "computation": "probe-canonical-multi-term-D",
         "description": (
             "Tests literal multi-term formula on D with canonical tr_M "
-            "from symbolic GB-NF chain (NOT the parallel branch's wrong "
-            "+0.288 number). NO census data."
+            "loaded at runtime from D-tr-M-q0.derivation.json (PR #473 "
+            "derivation-chain registry, cross-validated by PR #472's "
+            "habiro-residue-sum-equivalence). NO census data; T_w(D) is "
+            "the GB-NF reduction of atom_braid_word_3A(1, 1)."
         ),
         "tr_M_D_atom_q0_canonical": str(TR_M_D_ATOM_ATQ0),
         "AME_B_D_MeV": B_AME_D_MEV,

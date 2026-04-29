@@ -1,0 +1,57 @@
+{
+  "computation": "multi-term-canonical-assembly",
+  "description": "Full multi-term mass formula (T1+T2+T3+T4+T5+T6) assembled from canonical sources: T1 from canonical tr_M registry, T2+T3 from algebraic Vol_q^tower (symbolic Wedderburn port), T4 from m_e\u00b7(2+1/[2]_q), T5 from existing 6-term witness (Plancherel-derived; caveat), T6=0 placeholder.",
+  "q_0": 1.1099785955541805,
+  "m_e_MeV": 0.5109989461,
+  "T4_pervortex_MeV": 1.2761128366048848,
+  "results": [
+    {
+      "atom": "deuteron",
+      "Z": 1,
+      "N": 1,
+      "rho": 1,
+      "canonical_tr_M": 0.17743692421543206,
+      "Vol_q_tower": 3.826557664448327,
+      "T1_descended_MeV": 0.09067008127331135,
+      "T2_T3_brane_MeV": 1.9553669337239723,
+      "T4_frobenius_MeV": 1.2761128366048848,
+      "T5_chirality_MeV": -5.6314164094804955,
+      "T6_habiro_MeV": 0.0,
+      "B_naive_sum_MeV": -2.309266557878327,
+      "AME_binding_MeV": 2.22456612,
+      "err_pct": -203.80750372474105
+    },
+    {
+      "atom": "tritium",
+      "Z": 1,
+      "N": 2,
+      "rho": 1,
+      "canonical_tr_M": 0.012889,
+      "Vol_q_tower": 6.92785252071563,
+      "T1_descended_MeV": 0.0065862654162829,
+      "T2_T3_brane_MeV": 3.5401253368219154,
+      "T4_frobenius_MeV": 1.2761128366048848,
+      "T5_chirality_MeV": 8.524638174781058,
+      "T6_habiro_MeV": 0.0,
+      "B_naive_sum_MeV": 13.347462613624142,
+      "AME_binding_MeV": 8.4817984,
+      "err_pct": 57.365949815833176
+    },
+    {
+      "atom": "helium-3",
+      "Z": 2,
+      "N": 1,
+      "rho": 1,
+      "canonical_tr_M": 0.998367,
+      "Vol_q_tower": 7.6261665818023125,
+      "T1_descended_MeV": 0.5101644848210186,
+      "T2_T3_brane_MeV": 3.8969630860840208,
+      "T4_frobenius_MeV": 1.2761128366048848,
+      "T5_chirality_MeV": 7.78414230673205,
+      "T6_habiro_MeV": 0.0,
+      "B_naive_sum_MeV": 13.467382714241975,
+      "AME_binding_MeV": 7.7180375,
+      "err_pct": 74.49232028533127
+    }
+  ]
+}
