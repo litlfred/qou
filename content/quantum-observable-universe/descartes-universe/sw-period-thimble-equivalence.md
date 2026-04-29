@@ -14,7 +14,7 @@ presentations of the degree-$k$ mass functional:*
 $$
   \mathfrak{m}^{(k)}_{\text{alg}}(T_w)
   \;:=\;
-  \bigl\langle \mathrm{tr}_M,\ E_\infty^{k, *}(T_w) \bigr\rangle
+  \bigl|\bigl\langle \mathrm{tr}_M,\ E_\infty^{k, *}(T_w) \bigr\rangle\bigr|
   \;\in\; R,
 $$
 

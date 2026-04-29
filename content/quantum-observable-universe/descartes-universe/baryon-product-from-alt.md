@@ -100,24 +100,25 @@ $$
   (dc_1/dz) \wedge (dc_2/dz) \wedge (dc_3/dz),
 $$
 
-*which, viewed as a $3 \times 3$ Jacobian determinant of the root map
-$z \mapsto (c_1(z), c_2(z), c_3(z))$, factors through the Vandermonde
-relation*
+*which, evaluated on the diagonal vector $\bigl((dc_k/dz)\,e_k\bigr)_{k=1}^{3}$
+(where $e_1, e_2, e_3$ is the chosen $R$-basis of $V$), gives*
 
 $$
-  \det\bigl(\partial c_k/\partial z\bigr)_{k=1}^{3}
+  \bigl((dc_1/dz)\,e_1\bigr) \wedge \bigl((dc_2/dz)\,e_2\bigr)
+    \wedge \bigl((dc_3/dz)\,e_3\bigr)
   \;=\;
+  \Bigl(\prod_{k=1}^{3} \frac{dc_k}{dz}\Bigr)\,
+  e_1 \wedge e_2 \wedge e_3
+  \;\longmapsto\;
   \prod_{k=1}^{3} \frac{dc_k}{dz}
-  \;\cdot\;
-  V_3(c_1, c_2, c_3) / V_3(c_1, c_2, c_3)
-  \;=\;
-  \prod_{k=1}^{3} \frac{dc_k}{dz},
 $$
 
-*because in the diagonal change of variables — each $c_k$ depends
-on $z$ alone, not on the other $c_l$ — the off-diagonal entries
-of the Jacobian vanish and the determinant reduces to the product
-of diagonal entries.*
+*under the basis identification $e_1 \wedge e_2 \wedge e_3 \mapsto 1$.
+Note that this is a top exterior power on the rank-$3$ free module $V$
+— not a Jacobian determinant of the (scalar-input) root map
+$z \mapsto (c_1(z), c_2(z), c_3(z))$, whose differential is a
+$3 \times 1$ matrix.  The product structure arises purely from
+multilinearity of $\wedge$, not from any change-of-variables identity.*
 
 **Step 4 (Discriminant identity for the Vandermonde square).**
 *The squared Vandermonde of the colour-tube roots equals the cubic's
@@ -133,11 +134,35 @@ $$
   \;\in\; R[z].
 $$
 
-*Hence the Alt-isotype representative
-$\prod_k dc_k/dz$ is the unique (up to sign) $\mathrm{S}_3$-equivariant
-volume form on $V$ whose square is the rational function
-$\Delta(z) \cdot \bigl(\prod_k 1/(\partial F/\partial c)|_{c_k}\bigr)^2$
-— a manifestly $R$-rational quantity. $\square$*
+*Combining this with implicit differentiation
+$dc_k/dz = -(\partial F/\partial z)|_{(z, c_k)} \big/
+(\partial F/\partial c)|_{(z, c_k)}$ along each colour sheet, and
+the resultant identity
+$J(z) := \prod_{k=1}^{3} (\partial F/\partial c)|_{(z, c_k)}
+= \pm\, \Delta(z)$ for the monic cubic $F(z, \cdot)$, the Alt-isotype
+representative satisfies*
+
+$$
+  \prod_{k=1}^{3} \frac{dc_k}{dz}
+  \;=\;
+  (-1)^{3}\,
+  \frac{V_3(c_1, c_2, c_3)}{J(z)}
+  \;=\;
+  \pm\,\frac{V_3(c_1, c_2, c_3)}{\Delta(z)},
+$$
+
+*so that*
+
+$$
+  \Bigl(\prod_{k=1}^{3} \frac{dc_k}{dz}\Bigr)^{2}
+  \;=\;
+  \frac{V_3(c_1, c_2, c_3)^2}{\Delta(z)^2}
+  \;=\;
+  \frac{1}{\Delta(z)}
+  \;\in\; R(z),
+$$
+
+*a manifestly $R$-rational quantity. $\square$*
 
 **Why "product, not sum".**
 *The sum $\sum_k dc_k/dz$ is the projection onto $V_{(3)}$ (the
