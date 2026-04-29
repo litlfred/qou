@@ -1,14 +1,15 @@
-# tr_M(D) reconciliation (post-#472, #473, #475 → corrected by pr-442)
+# tr_M(D) reconciliation (post-#472, #473, #475, #447)
 
 After PR #457 merged, two PRs landed on main that *appeared* to resolve the
 tr_M-normalization ambiguity:
 
 - **PR #472** (content): [`prop:habiro-residue-sum-equivalence`](../content/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.md) — cross-validates `tr_M(D, q_0)` between the polynomial-ring path and the residue-spectral-sum path at relative tolerance $\leq 10^{-9}$.
-- **PR #473** (computation registry): `D-tr-M-q0.derivation.json` — registered `tr_M(D, q_0) = 0.17743692421543206` as the "canonical" value via an 8-step derivation chain.
+- **PR #473** (computation registry): `D-tr-M-q0.derivation.json` — registered $0.177437$ as the "canonical" value via an 8-step derivation chain.
 
-## Update (pr-442): the registry value is τ_SW, not the canonical τ_M
+## Correction (PR #447, now merged): the registry value is τ_SW, not τ_M
 
-[`prop:markov-trace-frobenius-selection`](https://github.com/litlfred/qou/blob/25a204efaf61ceba7c11f4f8861c533b6d37f0cf/content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md) (proven at commit [`25a204e`](https://github.com/litlfred/qou/commit/25a204efaf61ceba7c11f4f8861c533b6d37f0cf), pending merge as part of pr-442) shows the QOU mass formula's Frobenius co-Casimir construction
+[`prop:markov-trace-frobenius-selection`](../content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md)
+(merged via PR #447) shows the QOU mass formula's Frobenius co-Casimir construction
 $C_{\dim_q} = \sum_\lambda [\dim_q(\lambda)\cdot \tau(p_\lambda)]^{-1} p_\lambda$
 requires $\tau$ **non-degenerate on every Wedderburn block**. Two
 distinct Frobenius pairings on $H_n(q)$ compete:
@@ -26,14 +27,23 @@ of $\tau_M$.
 
 | Trace | $\tau(p)$ | $\tau(n)$ | $\tau(D)$ |
 |------------|--------:|--------:|--------:|
-| $\tau_M$ (Wenzl-bridge / Markov-axiom) — `atomic-tr-m-wenzl-bridge.witness.json` | 0.998367 | 0.998367 | **0.288326** |
+| $\tau_M$ (Wenzl-bridge / Markov-axiom) — direct from atomic braid | **+1.733851** | **+1.405980** | **+0.288326** (SDP-canonical) / 0.336821 (hand-built H_6) |
 | $\tau_{\mathrm{SW}}$ — `*-tr-M-q0.derivation.json` registry (mislabeled "tr_M") | 2.122582 | 1.589393 | 0.177437 |
 
-The from-scratch chain on this branch
-([`folio-assistant/computations/from_scratch/wedderburn_markov.py`](../folio-assistant/computations/from_scratch/wedderburn_markov.py))
-independently derives $\tau_M(D, q_0) = 0.288326$ from the Markov axioms
-$\tau(1)=1$, $\tau(\sigma_i)=z$, $\tau(xy)=\tau(yx)$, $\tau(x\sigma_n)=z\tau(x)$
-— matching the Wenzl-bridge witness bit-exactly.
+`atomic-tr-m-wenzl-bridge.witness.json` records 0.998367 for p, n, ³He
+— bit-exact identical, with identical per-block $\mathrm{Tr}(\rho_\lambda) = (1, 1.994, 1)$
+— a witness-generation bug surfaced by PR #487's audit. Direct
+re-computation via [`atomic_braid_to_crossings`](../folio-assistant/computations/hecke_character_symbolic.py)
++ [`wenzl_y_lambda`](../folio-assistant/computations/from_scratch/wedderburn_markov.py)
+gives the parity-distinguishing values shown.
+
+For D, the SDP-canonical 6-strand atom braid reduced to H_3 gives
+$\tau_M = 0.288326$ (validated bit-exactly by the from-scratch
+chain on this branch and matching `atomic-tr-m-wenzl-bridge`'s
+deuteron entry which IS correct). The "hand-built H_6 atom" braid
+registered by PR #447's [`D-tau-M-q0.derivation.json`](../folio-assistant/computations/D-tau-M-q0.derivation.json)
+chain gives $0.336821$ — same trace functional ($\tau_M$), different
+braid representative.
 
 ## D walkthrough — recomputed under canonical $\tau_M$
 
