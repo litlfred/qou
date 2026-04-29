@@ -95,8 +95,8 @@ Entries below have either a GB-NF derivation (fundamental particles) or are *man
 <tr><th>Z</th><th>N</th><th>e<sup>−</sup></th><th>ℓ</th><th>n₀</th><th>Braid (NF) / AME (MeV)</th><th>Closure / Pred (MeV)</th><th>Vol<sub>hyp</sub> / err ppb (ρ)</th></tr>
 </thead>
 <tbody>
-<tr><td rowspan='2'><strong>$^{6}\mathrm{Li}$ \textbf{[PROVISIONAL]}</strong></td><td>3</td><td>3</td><td>3</td><td>2</td><td>18</td><td>⚠ volume-match (DEPRECATED) → $K_{11a259}(0,0)$ in $H_{18}$ (no GB-NF derivation)</td><td>$K_{11a259}(0,0)$ \emph{(provisional)}</td><td>Vol<sub>hyp</sub>: 12.5201</td></tr>
+<tr><td rowspan='2'><strong>$^{6}\mathrm{Li}$ [PROVISIONAL]</strong></td><td>3</td><td>3</td><td>3</td><td>2</td><td>18</td><td>⚠ volume-match (DEPRECATED) → $K_{11a259}(0,0)$ in $H_{18}$ (no GB-NF derivation)</td><td>$K_{11a259}(0,0)$ *(provisional)*</td><td>Vol<sub>hyp</sub>: 12.5201</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 31.9941 MeV</td><td>Pred: 31.9888 MeV</td><td>err: -164,991 ppb (ρ=5)</td></tr>
-<tr><td rowspan='2'><strong>$^{7}\mathrm{Li}$ \textbf{[PROVISIONAL]}</strong></td><td>3</td><td>4</td><td>3</td><td>2</td><td>21</td><td>⚠ volume-match (DEPRECATED) → $L_{11a62}(0,0)(0,0)$ in $H_{21}$ (no GB-NF derivation)</td><td>$L_{11a62}(0,0)(0,0)$ \emph{(provisional)}</td><td>Vol<sub>hyp</sub>: 15.3600</td></tr>
+<tr><td rowspan='2'><strong>$^{7}\mathrm{Li}$ [PROVISIONAL]</strong></td><td>3</td><td>4</td><td>3</td><td>2</td><td>21</td><td>⚠ volume-match (DEPRECATED) → $L_{11a62}(0,0)(0,0)$ in $H_{21}$ (no GB-NF derivation)</td><td>$L_{11a62}(0,0)(0,0)$ *(provisional)*</td><td>Vol<sub>hyp</sub>: 15.3600</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 39.2445 MeV</td><td>Pred: 39.2447 MeV</td><td>err: +4,009 ppb (ρ=5)</td></tr>
 </tbody></table>
