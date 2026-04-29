@@ -49,6 +49,17 @@ from typing import Any, Optional, Union
 # than redefining their own constant.
 Q_0: float = 1.1099785955541805
 
+# Canonical atom-target Markov-trace values at q_0 — match the
+# committed `*-tr-M-q0.derivation.json` leaf values exactly.  Per
+# Copilot review on #473: re-running any builder must produce
+# bit-stable JSON, so the literals must be the single source of
+# truth.  Other modules import these rather than redefining.
+TR_M_AT_Q0: dict[str, float] = {
+    "p": 2.12258250945273,
+    "n": 1.5893934459539052,
+    "D": 0.17743692421543206,
+}
+
 
 # ── First principles ────────────────────────────────────────────
 

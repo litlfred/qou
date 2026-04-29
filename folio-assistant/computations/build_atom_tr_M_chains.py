@@ -35,6 +35,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import (  # noqa: E402
     Q_0,
+    TR_M_AT_Q0,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -47,15 +48,14 @@ HERE = Path(__file__).parent
 # Canonical numerical targets — shared with the realizer + cross-validator
 # witnesses on this branch and term6_full_pole_sum.py on
 # claude/continue-pr-442-DJRWm.
-# Target values match the committed `*-tr-M-q0.derivation.json`
-# leaf values exactly; rerunning the builder must produce bit-stable
-# JSON (Copilot review on #473).  Cross-checked against the
-# realizer + cross-validator witnesses on this branch and
-# term6_full_pole_sum.py on claude/continue-pr-442-DJRWm.
+# Target values pulled from `derivation_chain.TR_M_AT_Q0` (single
+# source of truth; matches every committed `*-tr-M-q0.derivation.json`
+# leaf).  Cross-checked against the realizer + cross-validator
+# witnesses and term6_full_pole_sum.py on claude/continue-pr-442-DJRWm.
 TARGETS = {
-    "p":  ("p (proton, A=1)",   1, 0, False, 2.12258250945273,    3, 6),
-    "n":  ("n (neutron, A=1)",  0, 1, False, 1.5893934459539052,  3, 5),
-    "D":  ("D (deuteron, A=2)", 1, 1, True,  0.17743692421543206, 6, 12),
+    "p":  ("p (proton, A=1)",   1, 0, False, TR_M_AT_Q0["p"], 3, 6),
+    "n":  ("n (neutron, A=1)",  0, 1, False, TR_M_AT_Q0["n"], 3, 5),
+    "D":  ("D (deuteron, A=2)", 1, 1, True,  TR_M_AT_Q0["D"], 6, 12),
 }
 # Q_0 imported from `derivation_chain` (single source of truth per
 # CLAUDE.md §7aa); do not redefine locally.
@@ -208,6 +208,24 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
     ))
 
     # 7 — Markov trace via finite-Jones formula
+    # Proton has a dedicated assembly chain
+    # (markov-trace-assembly-proton.derivation.json); other atoms still
+    # delegate to the upstream script.
+    has_assembly_chain = spec.short == "p"
+    step7_trust = TrustBasis.DERIVED if has_assembly_chain else TrustBasis.SCRIPT_CITED
+    step7_notes = (
+        "Derivation chain: markov-trace-assembly-proton.derivation.json "
+        "(builder: build_markov_trace_assembly_chain.py).  Combines "
+        "schur-weyl-weight-3 + hoefsmit-rep-21-sigma1 + "
+        "atomic-braid-recipe-p via finite-Jones."
+        if has_assembly_chain else
+        "script: folio-assistant/computations/habiro_coefficients_atomic.py "
+        "function `markov_trace_symbolic(Z, N, q, include_inter)`.  "
+        "Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov "
+        "trace in H_n(q); finite-Jones is existence + uniqueness.  "
+        "Per-atom assembly chains for n, D pending (extend "
+        "build_markov_trace_assembly_chain.py)."
+    )
     steps.append(DerivationStep(
         name="Markov trace via finite-Jones formula",
         operation=(
@@ -217,16 +235,11 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
         inputs=["schur_weights", "chi_lambda", FirstPrinciple.FINITE_JONES.value],
         output_name="tr_M_symbolic",
         output_value="symbolic Laurent polynomial in q (Markov trace)",
-        trust_basis=TrustBasis.SCRIPT_CITED,
+        trust_basis=step7_trust,
         citation="jones1987",
         jet_order=0,
         gb_filtration_level=0,
-        notes=(
-            "script: folio-assistant/computations/habiro_coefficients_atomic.py "
-            "function `markov_trace_symbolic(Z, N, q, include_inter)`.  "
-            "Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov "
-            "trace in H_n(q); finite-Jones is existence + uniqueness."
-        ),
+        notes=step7_notes,
     ))
 
     # 8 — Numerical eval at q_0 (COMPUTATIONAL leaf)

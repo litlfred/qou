@@ -108,7 +108,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "jones1987",
-      "notes": "script: folio-assistant/computations/habiro_coefficients_atomic.py function `markov_trace_symbolic(Z, N, q, include_inter)`.  Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov trace in H_n(q); finite-Jones is existence + uniqueness."
+      "notes": "script: folio-assistant/computations/habiro_coefficients_atomic.py function `markov_trace_symbolic(Z, N, q, include_inter)`.  Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov trace in H_n(q); finite-Jones is existence + uniqueness.  Per-atom assembly chains for n, D pending (extend build_markov_trace_assembly_chain.py)."
     },
     {
       "name": "Evaluate tr_M(n, q_0) at q_0 = 1.1099785955541805",
