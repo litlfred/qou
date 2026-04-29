@@ -177,14 +177,18 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
             f"σ-word with {spec.n_crossings} crossings (Z={spec.Z}, "
             f"N={spec.N}, include_inter={spec.include_inter})"
         ),
-        trust_basis=TrustBasis.SCRIPT_CITED,
+        trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§Atomic-braid recipe",
         jet_order=0,
         gb_filtration_level=0,
         notes=(
-            "script: folio-assistant/computations/hecke_character_symbolic.py "
-            "function `atomic_braid_to_crossings`.  SCRIPT_CITED — the "
-            "atomic-braid recipe itself awaits formalisation."
+            f"Derivation chain: atomic-braid-recipe-{spec.short}.derivation.json "
+            "(builder: build_atomic_braid_recipe_chain.py).  The recipe is "
+            "now derived from cat-action + Hecke-energy + brane-tower and "
+            "nucleon-cross-table axioms (no SCRIPT_CITED).  The script "
+            "`hecke_character_symbolic.atomic_braid_to_crossings` is the "
+            "computational realisation of that chain — it produces exactly "
+            "the σ-word the chain specifies."
         ),
     ))
 

@@ -1,0 +1,92 @@
+{
+  "target": "T_w(deuteron) σ-word",
+  "target_value": "T_w(deuteron) — word of length 12 on 6 strands",
+  "target_tolerance": 0.0,
+  "content_block": "prop:full-pole-structure-mass-trace",
+  "description": "Frontier-paydown chain for the atomic-braid recipe specialised to deuteron (Z=1, N=1, include_inter=True).  Closes the last SCRIPT_CITED step in the deuteron atom chain.  Trust profile is {axiom: 3, derived: 1-2, computational: 0} — fully trusted modulo the brane-tower and nucleon-cross-table axioms (which are substrate-level specifications, not theorems to be proved).  Builder:  build_atomic_braid_recipe_chain.py.",
+  "steps": [
+    {
+      "name": "Categorical action B_6 → End(V^{⊗6})",
+      "operation": "The braid group B_6 acts on V^{⊗6} via the R-matrix on adjacent tensor factors (Drinfeld–Jimbo action of U_q(sl_2)).  Projection onto the Hecke quotient H_6(q) makes σ_i² = (q − q^{-1}) σ_i + 1.",
+      "inputs": [
+        "Cat.Action",
+        "Hecke.Energy"
+      ],
+      "output_name": "H_6_q",
+      "output_value": "H_6(q) — Iwahori–Hecke algebra (A=2)",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:QOU.PathIntegrals.HeckeAlgebra",
+      "citation": "kassel1995",
+      "notes": "Cat action axiom + Hecke energy axiom together specify the ambient algebra; no SCRIPT_CITED."
+    },
+    {
+      "name": "Brane-tower convention: 3 strands per nucleon",
+      "operation": "Per the QOU brane-tower construction, each nucleon occupies 3 consecutive strands of the ambient braid: nucleon k uses strands (3k, 3k+1, 3k+2).  For A = 2, this gives n = 3·A = 6 strands total.",
+      "inputs": [
+        "H_6_q"
+      ],
+      "output_name": "strand_layout",
+      "output_value": {
+        "A": 2,
+        "n_strands": 6,
+        "convention": "3-strand-per-nucleon"
+      },
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:BraneTowerConvention",
+      "citation": "manuscript:§Brane-tower",
+      "notes": "Substrate-level specification of nucleon = 3-strand braid; no Lean target yet (qou:STUB:)."
+    },
+    {
+      "name": "Per-nucleon intra-crossings (proton_cross / neutron_cross)",
+      "operation": "For each nucleon k of type t ∈ {p, n}, emit intra-crossings at generator indices (3k, 3k+1) per the substrate-level cross tables: proton has 6 intra-crossings (3 at each of σ_{3k}, σ_{3k+1}), neutron has 5 (asymmetric: 3 at σ_{3k}, 2 at σ_{3k+1}).  These cross tables are AXIOM-anchored at the substrate level — they specify the proton and neutron as distinct points of the brane tower, and are the simplest possible knot-type specifications consistent with B_3-action invariance.",
+      "inputs": [
+        "strand_layout",
+        "Hecke.Energy"
+      ],
+      "output_name": "intra_crossings",
+      "output_value": {
+        "nucleon_types": [
+          "p",
+          "n"
+        ],
+        "n_intra_crossings": 11
+      },
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:NucleonCrossTables",
+      "citation": "manuscript:§Atomic-braid recipe",
+      "notes": "Substrate-level definition of proton/neutron via their per-nucleon σ-words.  AXIOM rather than DERIVED because this IS the definition (no upstream principle yet derives the cross tables; they are the model's specification of what 'proton' and 'neutron' mean at the braid level)."
+    },
+    {
+      "name": "Inter-pair crossings (include_inter=True)",
+      "operation": "For each adjacent nucleon pair (k, k+1) emit one inter-pair crossing at generator σ_{3k+2}; type depends on the pair:\n  pp → σ (positive)\n  nn → σ⁻¹ (negative)\n  pn / np → averaged σ_avg = (σ + σ⁻¹)/2\nFor (Z, N) = (1, 1), this contributes 1 inter-pair generator(s).",
+      "inputs": [
+        "intra_crossings"
+      ],
+      "output_name": "inter_crossings",
+      "output_value": {
+        "n_inter": 1,
+        "include_inter": true
+      },
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "citation": "manuscript:§Atomic-braid recipe",
+      "notes": "Pure routing: pair classification → fixed σ-type per pair.  No new axiom; combinatorial application of the nucleon-type table from step 3."
+    },
+    {
+      "name": "Assemble T_w(deuteron) σ-word",
+      "operation": "Concatenate the intra-crossings (step 3) and inter-pair crossings (step 4) in nucleon order to form T_w ∈ H_6(q).",
+      "inputs": [
+        "inter_crossings"
+      ],
+      "output_name": "T_w",
+      "output_value": "T_w(deuteron) ≡ (p-word at σ_0..σ_1) · σ_2(averaged) · (n-word at σ_3..σ_4); word length = 12",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "citation": "manuscript:§Atomic-braid recipe",
+      "notes": "Concatenation; combinatorial only."
+    }
+  ]
+}

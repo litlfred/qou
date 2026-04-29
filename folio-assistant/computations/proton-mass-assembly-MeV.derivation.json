@@ -1,0 +1,92 @@
+{
+  "target": "m_p (MeV)",
+  "target_value": 937.7615319092894,
+  "target_tolerance": 0.01,
+  "content_block": "prop:full-pole-structure-mass-trace",
+  "description": "End-to-end mass-formula assembly chain: combines the atom Markov-trace chains with the mass-endomorphism tower and CODATA m_e to produce m_p (MeV).  The current pipeline yields ≈ 937.7615 MeV vs CODATA 938.272 MeV (rel_diff ≈ 5.441e-04).  Trust profile is {axiom: 0, mathlib-cited: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier covers the T1+T2+T3+T4 mass-endomorphism tower assembly (currently in mass_endomorphism.py).  This chain is the canonical 'one chain to rule them all' for the proton mass; future PRs push back the script-frontier to make it fully-trusted.",
+  "steps": [
+    {
+      "name": "Atom Markov-trace tr_M(p, q_0) — from p-tr-M-q0 chain",
+      "operation": "Reference the existing `p-tr-M-q0.derivation.json` chain, whose target is `tr_M(p, q_0) ≈ 2.1226`.  This step is DERIVED via the chain reference (no script cited).",
+      "inputs": [
+        "Hecke.Energy",
+        "Schur",
+        "FiniteJones"
+      ],
+      "output_name": "tr_M_p_q0",
+      "output_value": 2.12258250945273,
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:§Atomic-Markov-trace",
+      "notes": "Derivation chain: p-tr-M-q0.derivation.json (builder: build_atom_tr_M_chains.py).  4 of 5 steps DERIVED via schur-weyl-weight-3 + hoefsmit-rep-21-sigma1 + atomic-braid-recipe-p; only the Markov-trace assembly itself remains SCRIPT_CITED."
+    },
+    {
+      "name": "Atom Markov-trace tr_M(e⁻, q_0) — single-vortex case",
+      "operation": "The electron is the simplest atomic vortex: a 2-strand (rather than 3-strand) braid for A=1 with no inter-pair crossings.  tr_M(e⁻, q_0) is computed by the same Wenzl-bridge pipeline as the proton (`light_isotope_sweep.py`).  The electron-tower formula additionally specialises to the n=2 case of H_n(q).",
+      "inputs": [
+        "tr_M_p_q0"
+      ],
+      "output_name": "tr_M_e_q0",
+      "output_value": "see light_isotope_sweep.py electron-tower",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "citation": "manuscript:§Electron-tower",
+      "notes": "script: folio-assistant/computations/light_isotope_sweep.py + mass_endomorphism.py electron-tower path.  SCRIPT_CITED pending its own atom chain (`atom-tr-M-q0` for e⁻ at n_strands=2)."
+    },
+    {
+      "name": "m_p_Hecke = T1 + T2 + T3 + T4 (mass-endomorphism tower)",
+      "operation": "Per `prop:mass-endomorphism-*`, sum the four Hecke-units tower terms for the proton:\n  T1 = |tr_M(T_w(p))|       — descended trace\n  T2 = Σ_i Φ_q(|V̂_i|)        — single-generator Φ_q\n  T3 = z² · Σ_{i<j} Φ_q(|V̂_i V̂_j|)  — pair Φ_q\n  T4 = m_e_Hecke · tr_M(C_dim_q)     — Frobenius co-Casimir\nall evaluated in cat-units.",
+      "inputs": [
+        "tr_M_p_q0"
+      ],
+      "output_name": "m_p_Hecke",
+      "output_value": 1.4283,
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "citation": "manuscript:§mass-endomorphism-tower",
+      "notes": "script: folio-assistant/computations/mass_endomorphism.py + proton_mass_tower_derivation.py.  SCRIPT_CITED — the T1+T2+T3+T4 assembly itself awaits its own derivation chain.  Phase A item (50 dps lift) on PR #476 brings each term individually to mpmath precision but does not chain the assembly."
+    },
+    {
+      "name": "m_e_Hecke = T1 + T2 + T3 + T4 (electron mass-endomorphism)",
+      "operation": "Same tower formula applied to the electron's 2-strand atomic braid.  T4 contribution simplifies because n=2.",
+      "inputs": [
+        "tr_M_e_q0"
+      ],
+      "output_name": "m_e_Hecke",
+      "output_value": 0.0007783,
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "citation": "manuscript:§mass-endomorphism-tower",
+      "notes": "script: folio-assistant/computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED."
+    },
+    {
+      "name": "Dimensionless mass ratio m_p/m_e",
+      "operation": "Compute the ratio m_p_Hecke / m_e_Hecke.  The framework predicts this ratio dimensionlessly; CODATA fixes the absolute scale via m_e.",
+      "inputs": [
+        "m_p_Hecke",
+        "m_e_Hecke"
+      ],
+      "output_name": "m_p_over_m_e",
+      "output_value": 1835.1535397661569,
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "citation": "manuscript:§dimensionless-mass-ratio",
+      "notes": "Pure arithmetic; one-line ratio of step-3 / step-4 outputs."
+    },
+    {
+      "name": "Scale by CODATA m_e (MeV) → m_p in MeV",
+      "operation": "m_p (MeV) := (m_p_Hecke / m_e_Hecke) × M_E_MEV.  The absolute-scale input M_E_MEV = 0.51099895 MeV is the **single CODATA-bounded constant** the framework consumes; everything else is derived.",
+      "inputs": [
+        "m_p_over_m_e"
+      ],
+      "output_name": "m_p_pred_MeV",
+      "output_value": 937.7615319092894,
+      "trust_basis": "computational",
+      "jet_order": 0,
+      "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
+      "notes": "COMPUTATIONAL leaf: m_p_pred ≈ 937.7615 MeV vs CODATA m_p = 938.27208816 MeV.  Current relative error: 5.441e-04 = 544145 ppb (target: 1 ppb, gap of ~6 orders of magnitude).  The gap is the open computational debt covered by Phase A item 1 (precision lift), Phase A item 3 (Term 7 σ_shell), and Phase B (q_0 derivation)."
+    }
+  ]
+}

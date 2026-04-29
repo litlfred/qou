@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-28T23:49:51.007554+00:00",
-  "commitSha": "fcdd67227f9714497b7c752215a7b7ab6bc3db3c",
+  "computedAt": "2026-04-29T00:04:13.771421+00:00",
+  "commitSha": "f661e3456e6c27258dfc64a6aebf703e6f3f296a",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -16,6 +16,24 @@
       "expected": 0.17743692421543206,
       "passed": true,
       "tolerance": 1.7743692421543207e-10
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-D.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-n.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-p.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
@@ -63,6 +81,19 @@
       "tolerance": 2.1225825094527304e-09
     },
     {
+      "name": "chain_valid[proton-mass-assembly-MeV.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[proton-mass-assembly-MeV.derivation]",
+      "computed": 937.7615319092894,
+      "expected": 937.7615319092894,
+      "passed": true,
+      "tolerance": 9.377615319092895
+    },
+    {
       "name": "chain_valid[schur-weyl-weight-3.derivation]",
       "computed": true,
       "expected": true,
@@ -102,10 +133,53 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 5,
+          "script-cited": 4,
+          "derived": 1,
           "computational": 1
         },
         "has_script_frontier": true
+      },
+      {
+        "chain": "atomic-braid-recipe-D.derivation.json",
+        "target": "T_w(deuteron) σ-word",
+        "target_value": "T_w(deuteron) — word of length 12 on 6 strands",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 3,
+          "derived": 2
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "atomic-braid-recipe-n.derivation.json",
+        "target": "T_w(neutron) σ-word",
+        "target_value": "T_w(neutron) — word of length 5 on 3 strands",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 3,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "atomic-braid-recipe-p.derivation.json",
+        "target": "T_w(proton) σ-word",
+        "target_value": "T_w(proton) — word of length 6 on 3 strands",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 3,
+          "derived": 1
+        },
+        "has_script_frontier": false
       },
       {
         "chain": "c-q-q0.derivation.json",
@@ -148,7 +222,8 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 5,
+          "script-cited": 4,
+          "derived": 1,
           "computational": 1
         },
         "has_script_frontier": true
@@ -164,7 +239,23 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 5,
+          "script-cited": 4,
+          "derived": 1,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "proton-mass-assembly-MeV.derivation.json",
+        "target": "m_p (MeV)",
+        "target_value": 937.7615319092894,
+        "computed_value": 937.7615319092894,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "derived": 2,
+          "script-cited": 3,
           "computational": 1
         },
         "has_script_frontier": true
@@ -206,6 +297,8 @@
       "derivation-backed": [
         "habiro-coefficients-atomic.witness.json",
         "hecke-character-symbolic.witness.json",
+        "light-isotope-sweep.witness.json",
+        "mass-endomorphism.witness.json",
         "schur-weyl-symbolic.witness.json"
       ],
       "computational-only": [
@@ -415,7 +508,6 @@
         "level1-qvalues.witness.json",
         "level1-vhat-brane-tower.witness.json",
         "li-atom-knot-search.witness.json",
-        "light-isotope-sweep.witness.json",
         "low-isotope-binding-sweep.witness.json",
         "low-isotope-mass-table-precision-audit.witness.json",
         "low-isotope-mass-table.witness.json",
@@ -430,7 +522,6 @@
         "mass-endomorphism-atom-exact.witness.json",
         "mass-endomorphism-atom-tower.witness.json",
         "mass-endomorphism-magic-interpolation.witness.json",
-        "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
         "mass-formula-6term.witness.json",
         "mass-formula-integrated.witness.json",

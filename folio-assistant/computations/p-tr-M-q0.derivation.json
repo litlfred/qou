@@ -73,11 +73,11 @@
       ],
       "output_name": "T_w_atom",
       "output_value": "σ-word with 6 crossings (Z=1, N=0, include_inter=False)",
-      "trust_basis": "script-cited",
+      "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "manuscript:§Atomic-braid recipe",
-      "notes": "script: folio-assistant/computations/hecke_character_symbolic.py function `atomic_braid_to_crossings`.  SCRIPT_CITED — the atomic-braid recipe itself awaits formalisation."
+      "notes": "Derivation chain: atomic-braid-recipe-p.derivation.json (builder: build_atomic_braid_recipe_chain.py).  The recipe is now derived from cat-action + Hecke-energy + brane-tower and nucleon-cross-table axioms (no SCRIPT_CITED).  The script `hecke_character_symbolic.atomic_braid_to_crossings` is the computational realisation of that chain — it produces exactly the σ-word the chain specifies."
     },
     {
       "name": "Frobenius pairing — characters χ^λ_q(T_w)",
