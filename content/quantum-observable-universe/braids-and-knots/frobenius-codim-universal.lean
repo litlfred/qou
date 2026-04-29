@@ -205,10 +205,13 @@ noncomputable def heckeH2DimQ (_q : ℝ) (_i : Fin 2) : ℝ := 1
     saturating the self-dual lower bound `gb_filtration_self_dual_bound`.
 
     This is the **base case** of the partition-sum identity used in
-    the unified mass formula.  At n=2 the formula is fully evaluated
-    in Lean — no opaque `frobeniusCoCasimirTrace q 2` axiom is
-    needed structurally; the bridge in `knot-mass-formula-unified`
-    just transports this proved value to the opaque side.
+    the unified mass formula.  After the partial-`def` closure of
+    `frobeniusCoCasimirTrace` in `knot-mass-formula-unified.lean`,
+    the n=2 value is **definitionally explicit** — `match n with | 2
+    => 2 | …` unfolds by `rfl`, so no opaque-to-explicit bridge is
+    needed (the previous `frobenius_codim_trace_n2` axiom is now a
+    `rfl` theorem).  This explicit theorem cross-validates that
+    chosen def value via Fin-enumeration of the two partitions of 2.
 
     Ref: [manuscript] `prop:partition-sum-proton-residual` (n=2 base). -/
 theorem hecke_n2_frobenius_codim (q : ℝ) :

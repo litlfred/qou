@@ -26,38 +26,42 @@ noncomputable opaque descendedMarkov (q : ℝ) (braid : Unit) : ℝ
 noncomputable opaque braneTower (q : ℝ) (braid : Unit) : ℝ
 noncomputable opaque electronMass : ℝ
 
-/-- **Opaque fallback for n ≥ 5.**  Parks the genuine q-Wedderburn
-    obstruction: for `n ≥ 5` the partition sum `Σ_{λ⊢n} 1/dim_q(λ)`
+/-- **Opaque fallback for n ≥ 6.**  Parks the genuine q-Wedderburn
+    obstruction: for `n ≥ 6` the partition sum `Σ_{λ⊢n} 1/dim_q(λ)`
     has no Lean closed form yet (the Hecke / Wedderburn-Bratteli
     recursion route exists structurally but needs constructive
     Markov-trace existence on `H_n(q)`, currently `sorry`-blocked
-    in `wedderburn-bratteli-recursion.lean`). -/
+    in `wedderburn-bratteli-recursion.lean`).  Cases n ∈ {2,3,4,5}
+    are now closed-form via the partial `def` below. -/
 noncomputable opaque frobeniusCoCasimirTraceFallback (q : ℝ) (n : ℕ) : ℝ
 
 /-- **Frobenius co-Casimir trace** `τ(C_dim_q)` on `H_n(q)`.
 
-    For `n ∈ {2, 3, 4}` this is the **closed-form partition sum**
+    For `n ∈ {2, 3, 4, 5}` this is the **closed-form partition sum**
     `Σ_{λ⊢n} 1/dim_q(λ)`, evaluated explicitly:
 
       n = 2:  `2`
       n = 3:  `2 + 1/(q + 1/q)`
       n = 4:  `2 + 2/(q² + 1 + (q²)⁻¹) + 1/(q² + (q²)⁻¹)`
+      n = 5:  `2 + 2/[4]_q + 2/[5]_q + 1/((q²+q⁻²)·[3]_q)`
 
     These values match the explicit partition-sum theorems
     `hecke_n2_frobenius_codim`, `hecke_n3_frobenius_codim`,
-    `hecke_n4_frobenius_codim` in `frobenius-codim-universal.lean`.
+    `hecke_n4_frobenius_codim`, `hecke_n5_frobenius_codim` in
+    `frobenius-codim-universal.lean`.
 
-    For `n ≥ 5` the value is `frobeniusCoCasimirTraceFallback q n`,
+    For `n ≥ 6` the value is `frobeniusCoCasimirTraceFallback q n`,
     parking the q-Wedderburn obstruction.
 
-    **Closure of S3@n=2,3,4 (this PR).**  The previous formulation
+    **Closure of S3@n=2,3,4,5 (this PR).**  The previous formulation
     declared `frobeniusCoCasimirTrace` as `noncomputable opaque`
     and used three axioms (`frobenius_codim_trace_n2/n3/n4`) to
     bridge to the explicit values.  Giving the function a partial
-    `def` with `match n` discharges those three axioms — they are
-    now **theorems** (closed by `rfl` plus the explicit partition
-    sums).  Only the `n ≥ 5` cases retain genuine axiomatic
-    content (via the renamed `frobeniusCoCasimirTraceFallback`). -/
+    `def` with `match n` discharges those axioms — they are now
+    **theorems** (closed by `rfl` plus the explicit partition sums).
+    The PR also extended the closure to n=5 (a fresh
+    `frobenius_codim_trace_n5 := rfl` theorem).  Only `n ≥ 6` retains
+    genuine axiomatic content (via `frobeniusCoCasimirTraceFallback`). -/
 noncomputable def frobeniusCoCasimirTrace (q : ℝ) (n : ℕ) : ℝ :=
   match n with
   | 2 => 2
@@ -162,17 +166,19 @@ theorem frobenius_codim_trace_n5 (q : ℝ) :
 /-- **Bridge audit: tractability frontier (post-closure).**
 
     The substrate axiom **S3 has been fully discharged at
-    `n ∈ {2, 3, 4}`** by giving `frobeniusCoCasimirTrace` a partial
+    `n ∈ {2, 3, 4, 5}`** by giving `frobeniusCoCasimirTrace` a partial
     `def` with `match n`.  The previous bridge axioms
     `frobenius_codim_trace_n2`, `frobenius_codim_trace_n3`,
-    `frobenius_codim_trace_n4` are now `rfl` theorems.  The
-    explicit partition-sum theorems
+    `frobenius_codim_trace_n4` are now `rfl` theorems, and
+    `frobenius_codim_trace_n5` is a new `rfl` theorem added in this PR.
+    The explicit partition-sum theorems
     `hecke_n2_frobenius_codim`, `hecke_n3_frobenius_codim`,
-    `hecke_n4_frobenius_codim` in `frobenius-codim-universal.lean`
-    cross-validate the chosen def values.
+    `hecke_n4_frobenius_codim`, `hecke_n5_frobenius_codim` in
+    `frobenius-codim-universal.lean` cross-validate the chosen def
+    values.
 
     The remaining axiomatic content for the partition trace is
-    `frobeniusCoCasimirTraceFallback q n` (for `n ≥ 5`).  Closing
+    `frobeniusCoCasimirTraceFallback q n` (for `n ≥ 6`).  Closing
     that gap requires either:
 
       (a) a fresh Fin-enumeration of the `p(n)` partitions of n
