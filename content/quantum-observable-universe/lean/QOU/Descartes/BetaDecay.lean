@@ -253,6 +253,7 @@ theorem interaction_completeness :
   -- Sorry retained pending refactor that pre-computes the
   -- coprimality discriminant as a `decide`-able predicate.
   intro _τ _hτ
+  -- Ref: [rosso-jones1993] https://doi.org/10.1016/0393-0440(93)90033-B
   sorry
 
 /-! ## §6  Tower termination -/

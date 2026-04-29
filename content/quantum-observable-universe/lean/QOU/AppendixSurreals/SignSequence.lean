@@ -198,6 +198,7 @@ theorem birthday_gonshorIn_le_length
     (K : Type u) [SurrealField K] (s : List Sign) :
     SurrealField.birthday (gonshorIn K s) ≤ (s.length : Ordinal) := by
   -- See docstring DIAGNOSTIC for the proof obligations.
+  -- Ref: [gonshor1986] Theorem 2.1
   sorry
 
 /-- An abstract braid in `B_n` as a list of generator-choices.

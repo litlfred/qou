@@ -57,6 +57,7 @@ theorem surreal_squeeze
     (ε δ : F) (hε : 0 < ε) (hδ : 0 < δ) (h_inf : ε ≤ δ) :
     δ^2 * ε⁻¹ > ε^3 := by
   -- See docstring: false as stated on standard reals.
+  -- Ref: [conway1976] https://doi.org/10.1201/9781439864159
   sorry
 
 /-- **surreal_squeeze (provable form)**: with the sharper hypothesis

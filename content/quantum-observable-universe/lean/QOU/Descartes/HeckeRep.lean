@@ -116,6 +116,7 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 := by
+  -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
   -- See docstring DIAGNOSTIC for the proof obligations.
   sorry
 

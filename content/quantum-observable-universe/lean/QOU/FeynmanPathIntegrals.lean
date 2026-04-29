@@ -118,6 +118,7 @@ theorem eigenbasis_decomposition
     decomp.partitions.length ≤ decomp.n / 2 + 1 := by
   -- See DIAGNOSTIC in docstring: structure needs `partitions_nodup`
   -- to make this bound provable.
+  -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
   sorry
 
 /-- **Trace collapse.**  Given the complete eigenbasis, the Feynman

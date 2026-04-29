@@ -174,6 +174,7 @@ noncomputable def baselineDecomposition
     -- DIAGNOSTIC: the lemma name `summable_of_ne_finset_zero` was
     -- renamed in recent Mathlib; sorry retained pending an update of
     -- the helper to the current Mathlib API.
+    -- Ref: [yekutieli2010] manuscript Chapter 5
     sorry
   sum_eq := by
     apply hasSum_ite_eq
@@ -338,6 +339,7 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
     [_hvi : HyperbolicVolumeIndependence] :
     BorelZagierQOU where
   linear_independent := by
+    -- Ref: [borel1986] manuscript Chapter 5 — Borel-Zagier
     -- See docstring DIAGNOSTIC for the proof obligations.
     sorry
 
