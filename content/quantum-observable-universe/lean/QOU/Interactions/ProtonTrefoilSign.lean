@@ -180,12 +180,16 @@ theorem signPoly_deriv_neg (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
 theorem signPoly_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
     signPoly q < 0 := by
   unfold signPoly
-  -- Goal: q⁸ − 3q⁶ − 3q² + 1 < 0
-  -- Equivalently: q⁶(q² − 3) + (1 − 3q²) < 0
-  -- Equivalently: q⁶(3 − q²) + (3q² − 1) > 0  (negated)
-  nlinarith [sq_nonneg q, sq_nonneg (q * q * q),
-             sq_nonneg (q - 1), sq_nonneg (3/2 - q),
-             mul_self_nonneg (q ^ 2 - 1)]
+  -- Goal: q⁸ − 3q⁶ − 3q² + 1 < 0.
+  -- Strategy:
+  --   1. q² ≤ 9/4 ⇒ q⁸ = q⁶·q² ≤ 3·q⁶, so q⁸ − 3q⁶ ≤ 0.
+  --   2. q ≥ 1 ⇒ q² ≥ 1 ⇒ 1 − 3q² ≤ −2.
+  --   3. Sum ≤ 0 + (−2) = −2 < 0.
+  have h_q2_ge : 1 ≤ q^2 := by nlinarith [hq1]
+  have h_q2_le : q^2 ≤ 9/4 := by nlinarith [hq2]
+  have h_q6_nonneg : 0 ≤ q^6 := by positivity
+  have h_q8_le : q^8 ≤ 3 * q^6 := by nlinarith [h_q2_le, h_q6_nonneg]
+  nlinarith [h_q8_le, h_q2_ge]
 
 /-- The proton e⁻ coefficient is negative for all q ∈ (1, 3/2].
 

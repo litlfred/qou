@@ -122,13 +122,14 @@ def AlgElement.leftMulGen (gen : G) (f : AlgElement G k) :
         -- be in the image — contradicting hm.  Hence t ∉ f.support
         -- and f.coeff t = 0 by f.support_spec.
         subst hhg
+        have h_t_zero : f.coeff t = 0 := by
+          apply f.support_spec
+          intro ht
+          apply hm
+          exact Finset.mem_image.mpr ⟨t, ht, rfl⟩
         -- Goal: (if gen = gen then f.coeff t else 0) = 0.
-        -- The `if`-condition reduces by `rfl`; close via `f.support_spec`.
-        rw [if_pos rfl]
-        apply f.support_spec
-        intro ht
-        apply hm
-        exact Finset.mem_image.mpr ⟨t, ht, rfl⟩
+        -- `simp` collapses both branches via `h_t_zero`.
+        simp [h_t_zero]
       · -- h ≠ gen: coefficient is 0 directly
         exact if_neg hhg
 
@@ -203,7 +204,8 @@ def AlgElement.ofTerms (terms : List (Monomial G × k)) :
     have h_empty : terms.filter (fun p => p.1 = m) = [] := by
       rw [List.filter_eq_nil_iff]
       intro x hx heq
-      exact hm x hx heq
+      -- `heq : decide (x.1 = m) = true`, convert to Prop equality.
+      exact hm x hx (decide_eq_true_eq.mp heq)
     rw [h_empty, List.map_nil, List.sum_nil]
 
 /-- `ofTerms` with nonempty leading term has nonempty support. -/

@@ -310,8 +310,9 @@ theorem pp_extension_not_prefix_closed (S : List HeckeWord) (k : ℕ)
     ¬ IsPrefixClosed (S.map (fun w => w ++ [k])) := by
   intro h_closed
   -- w ++ [k] ∈ S.map(..) and has length ≥ 2
-  have hmem : w ++ [k] ∈ S.map (fun w => w ++ [k]) :=
-    List.mem_map_of_mem _ hw
+  have hmem : w ++ [k] ∈ S.map (fun w => w ++ [k]) := by
+    rw [List.mem_map]
+    exact ⟨w, hw, rfl⟩
   have hlen2 : (w ++ [k]).length ≥ 2 := by simp; omega
   -- Prefix closure: (w ++ [k]).dropLast = w must be in the mapped set
   have hdrop := h_closed (w ++ [k]) hmem hlen2

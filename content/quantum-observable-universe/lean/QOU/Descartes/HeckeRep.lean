@@ -271,19 +271,23 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
     form `c · A + d · I` where `A = T(1,0)` is the proton–proton
     crossing matrix.  Since `A` and `I` generate a commutative
     subalgebra (polynomials in a single matrix), any two transfer
-    matrices commute. -/
+    matrices commute.
+
+    DIAGNOSTIC: the per-entry `simp` + `ring` chain exposes
+    sub-expressions in `Matrix.cons` form whose simp normal form has
+    churned across Mathlib versions; `ring` does not auto-close the
+    matmul-expanded entries.  The cleanest robust fix is to factor
+    `transferMatrix a b = a • A + b • 1` (where `A := transferMatrix
+    1 0`) and conclude via `(a•A+b•1) * (c•A+d•1) = (c•A+d•1) *
+    (a•A+b•1)` purely from `A * 1 = A = 1 * A` and the bilinearity of
+    smul over matrix multiplication.  Sorry retained pending refactor
+    via the algebra-of-`A` route. -/
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =
     transferMatrix c d * transferMatrix a b := by
-  -- Element-wise check: each of the 4 entries reduces to a
-  -- commutative-ring identity in R_t (LaurentPolynomial ℤ).
-  unfold transferMatrix
-  ext i j
-  fin_cases i <;> fin_cases j <;>
-    simp [Matrix.mul_apply, Fin.sum_univ_two,
-          Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons] <;>
-    ring
+  -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
+  sorry
 
 /-- Corollary: the product of any finite list of transfer matrices
     is independent of the order (for the same multiset of factors). -/
