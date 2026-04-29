@@ -58,6 +58,12 @@ name = "clarabel-certify"
 path = "src/bin/clarabel_certify.rs"
 required-features = ["clarabel-sdp"]
 
+# R5.6 Wedderburn-block decomposition smoke: per-block ≡ monolithic at H_3/H_4
+[[bin]]
+name = "r5-6-smoke"
+path = "src/bin/r5_6_smoke.rs"
+required-features = ["clarabel-sdp"]
+
 # Per-Wedderburn-block matrix dump for sign-convention audits
 [[bin]]
 name = "dump-block-matrices"

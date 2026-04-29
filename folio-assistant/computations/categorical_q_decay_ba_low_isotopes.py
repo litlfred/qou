@@ -67,7 +67,27 @@ from q_parameter import Q as Q_0
 from q_parameter import Q_ERR as Q_0_ERR
 from witness_base import WitnessBuilder
 
+from functools import lru_cache
+
 HERE = Path(__file__).parent
+
+
+@lru_cache(maxsize=8)
+def _load_witness_cached(path_str: str) -> dict | None:
+    """Load and parse a witness JSON, caching by path string.
+
+    `load_canonical_b` is called once per isotope; without caching
+    each call would re-parse the same witness JSON.  Returns `None`
+    when the file is absent, preserving the previous "skip if missing"
+    semantics of each tier.  Cache is keyed by string (lru_cache keys
+    must be hashable — `Path` is hashable, but using `str` avoids any
+    ambiguity from path normalisation).
+    """
+    p = Path(path_str)
+    if not p.exists():
+        return None
+    with open(p) as f:
+        return json.load(f)
 
 # ─────────────────────────────────────────────────────────────────────
 # Source witnesses (canonical, 3-input scheme)
@@ -87,12 +107,21 @@ TIER_BY_SYM = {
     "T":   "term-5 (BW + chirality (1-h²))",
     "3He": "term-5 (BW + chirality (1-h²))",
     "4He": "term-5 (BW + chirality (1-h²)² + shell)",
-    "6Li": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
-    "7Li": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
-    "9Be": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
-    "11B": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
-    "12C": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
-    "16O": "term-5 (BW + shell, chirality→1, term-6 OPEN)",
+    # Family-3 atoms (A ≥ 5): use the per-3A canonical unified
+    # predictor.  T1_descended = 0 at A ≥ 5; T4 uses
+    # m_e · Σ_{λ⊢3A} 1/dim_q (per-3A canonical from
+    # probe-term4-conventions witness); T5 = BW + chirality (→ 1)
+    # + Z-dependent + shell.  Per the audit (PR #447), this routing
+    # gives ⁶Li −0.08%, ⁷Li +16.00%, ⁹Be +10.87%, ¹¹B +10.20%,
+    # ¹²C +5.13%, ¹⁶O +6.86% — substantially better than the
+    # term-5-only path which over-binds by ~20% systemically due
+    # to per-A FROB_N3 heuristic.
+    "6Li": "unified-per3A (T1=0 + T4_per3A + T5_BW + shell)",
+    "7Li": "unified-per3A (T1=0 + T4_per3A + T5_BW + shell)",
+    "9Be": "unified-per3A (T1=0 + T4_per3A + T5_BW + shell)",
+    "11B": "unified-per3A (T1=0 + T4_per3A + T5_BW + shell)",
+    "12C": "unified-per3A (T1=0 + T4_per3A + T5_BW + shell)",
+    "16O": "unified-per3A (T1=0 + T4_per3A + T5_BW + shell)",
 }
 
 FAMILY_BY_SYM = {
@@ -176,17 +205,30 @@ def load_canonical_b(sym: str):
 
     # Term 1+4 lives in mass-formula-6term.witness.json
     if "term-1-plus-4" in tier:
-        if not SIX_TERM_WITNESS.exists():
+        d = _load_witness_cached(str(SIX_TERM_WITNESS))
+        if d is None:
             return None
-        with open(SIX_TERM_WITNESS) as f:
-            d = json.load(f)
         rows = d.get("rows", {})
         if sym in rows:
             r = rows[sym]
+            # Prefer per-3A canonical Term 4 (m_e · Σ_{λ⊢3A} 1/dim_q(λ))
+            # over the legacy per-vortex (1·m_e·(2+1/[2]_q)).  Per the
+            # audit, per-vortex's near-perfect +2.10% on D is a
+            # coincidence; per-3A gives the genuine algebraic +18.29%.
+            # Fall back to per-vortex only if per-3A field is absent
+            # (e.g. older witnesses pre-PR-#447).
+            if "B_pred_term1_plus_term4_per3A_canonical" in r:
+                return {
+                    "B_pred_MeV": float(r["B_pred_term1_plus_term4_per3A_canonical"]),
+                    "err_pct": float(
+                        r["err_pct"]["term1_plus_term4_per3A_canonical"]
+                    ),
+                    "tier": tier + " (per-3A canonical)",
+                }
             return {
                 "B_pred_MeV": float(r["B_pred_term1_plus_term4"]),
                 "err_pct": float(r["err_pct"]["term1_plus_term4"]),
-                "tier": tier,
+                "tier": tier + " (per-vortex legacy fallback)",
             }
         return None
 
@@ -195,10 +237,9 @@ def load_canonical_b(sym: str):
     # ud-half pn factor; works perfectly for D, not for A≥3.)
     if "kashaev-with-inter" in tier:
         kic_path = HERE / "d-inter-correction-test.witness.json"
-        if not kic_path.exists():
+        d = _load_witness_cached(str(kic_path))
+        if d is None:
             return None
-        with open(kic_path) as f:
-            d = json.load(f)
         for row in d.get("data", {}).get("atoms", []):
             if row.get("atom") == sym:
                 return {
@@ -208,12 +249,30 @@ def load_canonical_b(sym: str):
                 }
         return None
 
+    # Per-3A canonical for Family-3 (A ≥ 5) — sources B from the
+    # unified predictor witness, which sums T1=0 + T4_per3A +
+    # T5_BW + shell.  Better than term-5-only because Term 4 uses
+    # the genuine algebraic m_e·Σ_{λ⊢3A} 1/dim_q rather than the
+    # per-A heuristic that over-binds by ~20%.
+    if "unified-per3A" in tier:
+        unified_path = HERE / "unified-low-isotope-predictor.witness.json"
+        d = _load_witness_cached(str(unified_path))
+        if d is None:
+            return None
+        for row in d.get("data", {}).get("isotopes", []):
+            if row.get("sym") == sym:
+                return {
+                    "B_pred_MeV": float(row["B_pred_MeV"]),
+                    "err_pct": float(row["err_pct"]),
+                    "tier": tier,
+                }
+        return None
+
     # Term 5 lives in bw-chirality-isotopes.witness.json (rows is a list)
     if "term-5" in tier:
-        if not BW_WITNESS.exists():
+        d = _load_witness_cached(str(BW_WITNESS))
+        if d is None:
             return None
-        with open(BW_WITNESS) as f:
-            d = json.load(f)
         rows = d.get("rows", [])
         # row key is "isotope" not "sym" in this witness
         for row in rows:
