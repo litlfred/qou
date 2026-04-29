@@ -38,6 +38,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import (  # noqa: E402
     Q_0,
+    TR_M_AT_Q0,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -48,8 +49,9 @@ from derivation_chain import (  # noqa: E402
 HERE = Path(__file__).parent
 OUTPUT = HERE / "markov-trace-assembly-proton.derivation.json"
 
-# Pinned proton tr_M(q_0) value (matches all upstream chains).
-PROTON_TR_M_Q0 = 2.12258250945273
+# Proton tr_M(q_0) imported from `derivation_chain.TR_M_AT_Q0` (single
+# source of truth; matches the committed p-tr-M-q0.derivation.json leaf).
+PROTON_TR_M_Q0 = TR_M_AT_Q0["p"]
 
 
 def build() -> DerivationChain:
@@ -104,14 +106,14 @@ def build() -> DerivationChain:
         operation=(
             "For partitions other than (3), the Wedderburn weights "
             "follow the same Schur formula but with hook-length sets "
-            "{4, 1, 1} for (2,1) and {3, 2, 1} for (1,1,1).  Per-λ "
+            "{3, 1, 1} for (2,1) and {3, 2, 1} for (1,1,1).  Per-λ "
             "chains for these are not yet shipped; remains "
             "SCRIPT_CITED until the chain set is complete."
         ),
         inputs=["partitions_of_3"],
         output_name="w_other",
         output_value={
-            "w_(2,1)": "f_λ² · [3]_q! / ∏ [h_x]_q  with hooks {4,1,1}",
+            "w_(2,1)": "f_λ² · [3]_q! / ∏ [h_x]_q  with hooks {3,1,1}",
             "w_(1,1,1)": "[3]_q! / ([3]_q · [2]_q · [1]_q)",
         },
         trust_basis=TrustBasis.SCRIPT_CITED,
@@ -156,12 +158,12 @@ def build() -> DerivationChain:
             "Reference the existing `hoefsmit-rep-21-sigma1.derivation.json` "
             "chain for ρ^(2,1)(σ_1) and its trace; extend by braid-word "
             "matrix multiplication to the full T_w_p word (six σ-crossings "
-            "alternating σ_0, σ_1).  The character χ^(2,1)_q(T_w_p) is the "
+            "alternating σ_1, σ_2).  The character χ^(2,1)_q(T_w_p) is the "
             "trace of the resulting 2x2 matrix product."
         ),
         inputs=["partitions_of_3", FirstPrinciple.FROBENIUS_PAIRING.value],
         output_name="chi_21_proton",
-        output_value="χ^(2,1)_q(T_w_p) = trace of ρ^(2,1)(σ_0 σ_1 σ_0 σ_1 σ_0 σ_1)",
+        output_value="χ^(2,1)_q(T_w_p) = trace of ρ^(2,1)(σ_1 σ_2 σ_1 σ_2 σ_1 σ_2)",
         trust_basis=TrustBasis.DERIVED,
         citation="kassel1995",
         jet_order=0,
