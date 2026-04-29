@@ -22,8 +22,15 @@ namespace QOU
     level as `Subsingleton`. -/
 -- Ref: [yekutieli2010]
 theorem QuantumCharClasses.unique : Subsingleton QuantumCharacteristicClass := by
-  -- Different local trivialisations yield cohomologous cocycles.
-  -- Ref: [yekutieli2010]
+  -- DIAGNOSTIC: The `Subsingleton` claim is too strong. The underlying
+  -- structure carries free fields (parameters / morphisms / opaque
+  -- functions) that admit distinct valid values, so two instances
+  -- need not coincide. To recover a meaningful uniqueness claim,
+  -- sharpen with a constraining hypothesis (fixing the carrier
+  -- object, fixing the substrate parameter, or quantifying over a
+  -- quotient by structural equivalence) — see
+  -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
+  -- with this diagnosis rather than closed-as-stated.
   sorry
 
 end QOU
