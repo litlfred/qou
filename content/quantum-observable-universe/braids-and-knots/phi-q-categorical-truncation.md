@@ -70,25 +70,42 @@ defined above:*
 *The two coincide whenever the GB-depth filtration is induced by the
 strand-size filtration on partitions, but they **can differ** when a
 small-$k$ partition $\lambda$ sits at large GB-depth or vice versa.
-Tritium's anomalously high $k_{\max} = 9$ in the witness data is
-suspect under this distinction: the* $k_\star(T_w)$ *of T's actual
-NF should be no larger than 2 (consistent with D's and ${}^3\mathrm{He}$'s
-$k_\star = 2$), and the witness's $k_{\max} = 9$ likely reflects a
-strand-padding artifact in the SDP search rather than genuine
-GB-depth content. Resolving this discrepancy is a focused open
-computation
-([brane-tower in $z$-Habiro](#conj:brane-tower-z-habiro), level-selection rule).*
+
+**Computed for tritium (2026-04-29).** A direct YSN/Hoefsmit
+character computation
+([`probe_tritium_k_star.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/probe_tritium_k_star.py))
+gives $\chi_\lambda(\rho(\mathrm{T_w})) \neq 0$ for **every**
+$\lambda \vdash 5$, so $\mathrm{supp}(\mathrm{T_w}) = \{\lambda : \lambda \vdash 5\}$
+and $k_\star(\mathrm{T_w}) = \max_{\lambda \vdash 5} \mathrm{maxhook}(\lambda) = 5$.
+The witness's $k_{\max} = 9$ is therefore **distinct** from $k_\star$:
+the value $9$ is the Coxeter-length filtration depth of $\mathrm{T_w}$'s
+NF (the longest reduced word in its filtration_certificate has
+length $9$ in $S_5$), while $k_\star = 5$ is the partition-depth
+support.
+
+**Structural upper bound.** For any $T_w \in H_{n_0}(q)$,
+$k_\star(T_w) \leq n_0$ because every partition $\lambda \vdash n_0$
+has $\mathrm{maxhook}(\lambda) \leq n_0$. The witness's $k_{\max}$ is
+**not** so bounded — it is the Coxeter-length filtration, which can
+reach $\binom{n_0}{2}$ (the longest element in $S_{n_0}$). Identifying
+the two is the strand-padding artifact: padding $T_w$'s NF to longer
+Coxeter words does not change partition support, but does inflate
+$k_{\max}$ in the witness.
 
 **Empirical implication.**
-*Under this proposition, the right uniform truncation across light
-isotopes is $k = 2$ (matching D and ${}^3\mathrm{He}$'s witness
-$k_{\max} = 2$). The* uniform-$k$ *probe
+*Under this proposition, the structural truncation depth for tritium
+is $k_\star(\mathrm{T_w}) = 5$ (computed; full partition support of
+$\lambda \vdash 5$), and for D and ${}^3\mathrm{He}$ at most
+$k_\star \leq 3$ (since they live in $H_3$). The* uniform-$k$ *probe
 ([`probe_phiq_uniform_k.py`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/probe_phiq_uniform_k.py))
-shows $k = 2$ subtractive form gives D within $-22\%$, T within
-$-39\%$, but ${}^3\mathrm{He}$ overshoots $+134\%$. The residual
-${}^3\mathrm{He}$ overshoot is then* not *a brane-tower regularization
-issue — by this proposition the brane-tower is centre-only and
-correctly truncated — but a separate structural feature of
-${}^3\mathrm{He}$'s NF, likely the doubled near-pole entry
-$|\hat{V}_0| = |\hat{V}_3| \approx 0.989$ producing a multiplicity in
-the centre projection that the uniform sweep does not absorb.*
+shows the Frobenius-paired truncation is far from numerically closed:
+at $k = 2$ subtractive form, D errs $-22\%$, T errs $-39\%$,
+${}^3\mathrm{He}$ overshoots $+134\%$; at $k = 5$ (the
+structural truncation for tritium), the absolute formula errs by
+$\sim 70000\%$. The Frobenius-paired equality
+$\mathrm{tr}_M(\Phi_q \cdot T_w) = \mathrm{tr}_M(\Phi_q^{[\leq k_\star]} \cdot T_w)$
+is a **categorical identity**, not a real-valued numerical identity;
+the real-valued mass at $|\hat V|\approx 1$ requires the open
+$z$-Habiro uniform bound to convert categorical equality into
+numerical equality
+([brane tower in $z$-Habiro](#conj:brane-tower-z-habiro)).*

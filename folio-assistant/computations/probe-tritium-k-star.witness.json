@@ -1,0 +1,114 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-29T20:21:35.284111+00:00",
+  "commitSha": "46749812eb2b024ce578fa873ca2c9fa6a967892",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "probe-tritium-k-star",
+  "scriptFile": "probe_tritium_k_star.py",
+  "scriptHash": "8d143d62a9f7",
+  "scriptCommitSha": "",
+  "description": "Compute k★(T_w) := max GB-depth (= max-hook) over partition support supp(T_w) for tritium's H_5 braid word. Compares to the witness's max_grade (Coxeter-length filtration depth) and falsifies the identification of max_grade with k★.",
+  "contentBlock": "prop:phi-q-categorical-truncation",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "braid_word": [
+      -1,
+      2,
+      -3,
+      2,
+      1,
+      -3,
+      -3,
+      4,
+      -3,
+      -2,
+      -3,
+      -4,
+      -3,
+      2
+    ],
+    "n_0": 5
+  },
+  "data": {
+    "witness_max_grade": 9,
+    "k_star_computed": 5,
+    "partition_support": [
+      {
+        "partition": [
+          5
+        ],
+        "max_hook": 5,
+        "chi": 0.6587817865817449,
+        "dim": 1
+      },
+      {
+        "partition": [
+          4,
+          1
+        ],
+        "max_hook": 5,
+        "chi": -1.1871272651316545,
+        "dim": 4
+      },
+      {
+        "partition": [
+          3,
+          2
+        ],
+        "max_hook": 4,
+        "chi": 0.7678099469370784,
+        "dim": 5
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1
+        ],
+        "max_hook": 5,
+        "chi": 0.5639854723553689,
+        "dim": 6
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1
+        ],
+        "max_hook": 4,
+        "chi": 0.9075874971529743,
+        "dim": 5
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "max_hook": 5,
+        "chi": -1.293402831278145,
+        "dim": 4
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "max_hook": 5,
+        "chi": 1.5179533198523163,
+        "dim": 1
+      }
+    ],
+    "structural_upper_bound": 5
+  },
+  "caveats": [
+    "Character computation uses YSN matrices at numerical q_0; tiny but nonzero characters could be misclassified at the chi_threshold=1e-10. For n=5 the partition basis is small (7 partitions), so robust to threshold choice."
+  ]
+}
