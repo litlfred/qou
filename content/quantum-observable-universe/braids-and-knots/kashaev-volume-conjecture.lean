@@ -70,17 +70,26 @@ class VolumeConjecture (q : ℝ) where
 --                   kashaev-volume-conjecture
 noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
-  -- Replace each crossing outside S by the identity strand; take the
-  -- closure.  The Φ_q-piece sub-braid is recorded abstractly via
-  -- `subLink`; its hyperbolic volume is supplied by the class.
-  VolumeConjecture.hypVolume (q := q) β
-  -- (placeholder: the sub-braid extraction is encoded in the .md;
-  -- a refinement that depends on `S` is added when `subLink` is
-  -- given a concrete combinatorial constructor.)
+  -- The Φ_q-piece K_S is the closure of the sub-braid obtained by
+  -- replacing each crossing outside `S` with the identity strand.
+  -- A combinatorial constructor for `subLink β S` and its hyperbolic
+  -- volume is deferred to the SnapPy bridge layer; until that bridge
+  -- lands we leave the value as `sorry` so callers cannot mistake a
+  -- placeholder (the full-braid volume) for the genuine S-dependent
+  -- piece volume.  The KVC class only constrains the full-braid
+  -- limit, not the per-piece values.
+  -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+  --                   kashaev-volume-conjecture
+  sorry
 
 theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
-    0 ≤ pieceVolume q β S :=
-  inst.hypVolume_nonneg β
+    0 ≤ pieceVolume q β S := by
+  -- Once `pieceVolume` is given a concrete combinatorial definition,
+  -- this becomes a non-trivial fact derived from `inst.hypVolume_nonneg`
+  -- applied to the sub-braid `subLink β S`.
+  -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
+  --                   kashaev-volume-conjecture
+  sorry
 
 end QOU.Kashaev
