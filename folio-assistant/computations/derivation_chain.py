@@ -248,7 +248,11 @@ class DerivationChain:
                     )
             # SCRIPT_CITED steps should record the script path in notes.
             if step.trust_basis == TrustBasis.SCRIPT_CITED:
-                if step.notes is None or "script:" not in step.notes:
+                # Accept either `script:` or `Script:` (legacy chains).
+                if step.notes is None or (
+                    "script:" not in step.notes
+                    and "Script:" not in step.notes
+                ):
                     issues.append(
                         f"SCRIPT_CITED step {step.name!r} should record "
                         "the script path in `notes` (e.g. 'script: foo.py @ <sha>')"

@@ -70,8 +70,11 @@ def _resolve_repo_root() -> Path:
 
 REPO_ROOT = _resolve_repo_root()
 
+# Match `script:` or `Script:` (case-insensitive); accommodates legacy
+# chains that use the capitalized form.
 SCRIPT_REGEX = re.compile(
-    r"script:\s*([\w\-./]+\.(?:py|sing|sage|sh))"
+    r"script:\s*([\w\-./]+\.(?:py|sing|sage|sh))",
+    re.IGNORECASE,
 )
 
 

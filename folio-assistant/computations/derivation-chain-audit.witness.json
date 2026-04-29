@@ -1,9 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T11:17:32.218662+00:00",
-  "commitSha": "3c166f6e1778fd11d1939ff70e285a3e1183c663",
+  "computedAt": "2026-04-29T15:50:13.361361+00:00",
+  "commitSha": "69a449395591a5a529aa789f1f2db15600ca0ba3",
   "assertions": [
+    {
+      "name": "chain_valid[D-tau-M-q0.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[D-tau-M-q0.derivation]",
+      "computed": 0.336821,
+      "expected": 0.336821,
+      "passed": true,
+      "tolerance": 3.3682099999999994e-07
+    },
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
       "computed": true,
@@ -82,7 +95,32 @@
       "tolerance": 2.1225825094527304e-09
     },
     {
+      "name": "chain_valid[proton-mass-50dps.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[proton-mass-50dps.derivation]",
+      "computed": 937.7615319092894,
+      "expected": 937.7615319092894,
+      "passed": true,
+      "tolerance": 9.377615319092895
+    },
+    {
       "name": "chain_valid[schur-weyl-weight-111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-111111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-111111111.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
@@ -94,24 +132,289 @@
       "passed": true
     },
     {
+      "name": "chain_valid[schur-weyl-weight-21111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-21111111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-2211.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-2211111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-222.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-222111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-22221.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
       "name": "chain_valid[schur-weyl-weight-3.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-3111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-3111111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-321.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-321111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-32211.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-3222.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-33.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-33111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-3321.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-333.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-411.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-411111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-42.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-42111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-4221.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-4311.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-432.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-441.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-51.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-51111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-5211.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-522.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-531.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-54.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-6.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-6111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-621.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-63.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-711.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-72.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-81.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-9.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[sigma-shell-A2-closed-form.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[sigma-shell-A2-closed-form.derivation]",
+      "computed": 0.03748824144743201,
+      "expected": 0.03748824144743201,
+      "passed": true,
+      "tolerance": 3.7488241447432005e-14
     }
   ],
   "allPassed": true,
   "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
-  "scriptHash": "3185120ad3c7",
+  "scriptHash": "d0c7ed1b810b",
   "scriptCommitSha": "675c52321592322b6033bbaaed9674fee1345114",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "data": {
     "chain_results": [
       {
+        "chain": "D-tau-M-q0.derivation.json",
+        "target": "τ_M(D, q_0)  [canonical Jones-Markov trace, Wenzl-bridge]",
+        "target_value": 0.336821,
+        "computed_value": 0.336821,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 1,
+          "lean-proven": 2,
+          "derived": 3,
+          "script-cited": 1,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "D-tr-M-q0.derivation.json",
-        "target": "tr_M(D, q_0)",
+        "target": "τ_SW(D, q_0)  [Schur-Weyl trace, NOT canonical Jones-Markov]",
         "target_value": 0.17743692421543206,
         "computed_value": 0.17743692421543206,
         "structural_ok": true,
@@ -220,9 +523,54 @@
         "has_script_frontier": true
       },
       {
+        "chain": "proton-mass-50dps.derivation.json",
+        "target": "m_p (MeV)",
+        "target_value": 937.7615319092894,
+        "computed_value": 937.7615319092894,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "derived": 2,
+          "script-cited": 3,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "schur-weyl-weight-111.derivation.json",
         "target": "w_(1,1,1)(q)",
         "target_value": "1 / ([3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-111111.derivation.json",
+        "target": "w_(1,1,1,1,1,1)(q)",
+        "target_value": "1 / ([6]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-111111111.derivation.json",
+        "target": "w_(1,1,1,1,1,1,1,1,1)(q)",
+        "target_value": "1 / ([9]_q · [8]_q · [7]_q · [6]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
         "computed_value": null,
         "structural_ok": true,
         "leaf_matches": true,
@@ -250,6 +598,111 @@
         "has_script_frontier": false
       },
       {
+        "chain": "schur-weyl-weight-21111.derivation.json",
+        "target": "w_(2,1,1,1,1)(q)",
+        "target_value": "(q − q^{-1}) / ([6]_q · [1]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-21111111.derivation.json",
+        "target": "w_(2,1,1,1,1,1,1,1)(q)",
+        "target_value": "(q − q^{-1}) / ([9]_q · [1]_q · [7]_q · [6]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-2211.derivation.json",
+        "target": "w_(2,2,1,1)(q)",
+        "target_value": "(q − q^{-1})^2 / ([5]_q · [2]_q · [4]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-2211111.derivation.json",
+        "target": "w_(2,2,1,1,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^2 / ([8]_q · [2]_q · [7]_q · [1]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-222.derivation.json",
+        "target": "w_(2,2,2)(q)",
+        "target_value": "(q − q^{-1})^3 / ([4]_q · [3]_q · [3]_q · [2]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-222111.derivation.json",
+        "target": "w_(2,2,2,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^3 / ([7]_q · [3]_q · [6]_q · [2]_q · [5]_q · [1]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-22221.derivation.json",
+        "target": "w_(2,2,2,2,1)(q)",
+        "target_value": "(q − q^{-1})^4 / ([6]_q · [4]_q · [5]_q · [3]_q · [4]_q · [2]_q · [3]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
         "chain": "schur-weyl-weight-3.derivation.json",
         "target": "w_(3)(q)",
         "target_value": "(q - q^{-1})^2 / ([3]_q · [2]_q · [1]_q)",
@@ -263,6 +716,502 @@
           "mathlib-cited": 2
         },
         "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-3111.derivation.json",
+        "target": "w_(3,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^2 / ([6]_q · [2]_q · [1]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-3111111.derivation.json",
+        "target": "w_(3,1,1,1,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^2 / ([9]_q · [2]_q · [1]_q · [6]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-321.derivation.json",
+        "target": "w_(3,2,1)(q)",
+        "target_value": "(q − q^{-1})^3 / ([5]_q · [3]_q · [1]_q · [3]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-321111.derivation.json",
+        "target": "w_(3,2,1,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^3 / ([8]_q · [3]_q · [1]_q · [6]_q · [1]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-32211.derivation.json",
+        "target": "w_(3,2,2,1,1)(q)",
+        "target_value": "(q − q^{-1})^4 / ([7]_q · [4]_q · [1]_q · [5]_q · [2]_q · [4]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-3222.derivation.json",
+        "target": "w_(3,2,2,2)(q)",
+        "target_value": "(q − q^{-1})^5 / ([6]_q · [5]_q · [1]_q · [4]_q · [3]_q · [3]_q · [2]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-33.derivation.json",
+        "target": "w_(3,3)(q)",
+        "target_value": "(q − q^{-1})^4 / ([4]_q · [3]_q · [2]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-33111.derivation.json",
+        "target": "w_(3,3,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^4 / ([7]_q · [3]_q · [2]_q · [6]_q · [2]_q · [1]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-3321.derivation.json",
+        "target": "w_(3,3,2,1)(q)",
+        "target_value": "(q − q^{-1})^5 / ([6]_q · [4]_q · [2]_q · [5]_q · [3]_q · [1]_q · [3]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-333.derivation.json",
+        "target": "w_(3,3,3)(q)",
+        "target_value": "(q − q^{-1})^6 / ([5]_q · [4]_q · [3]_q · [4]_q · [3]_q · [2]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-411.derivation.json",
+        "target": "w_(4,1,1)(q)",
+        "target_value": "(q − q^{-1})^3 / ([6]_q · [3]_q · [2]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-411111.derivation.json",
+        "target": "w_(4,1,1,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^3 / ([9]_q · [3]_q · [2]_q · [1]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-42.derivation.json",
+        "target": "w_(4,2)(q)",
+        "target_value": "(q − q^{-1})^4 / ([5]_q · [4]_q · [2]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-42111.derivation.json",
+        "target": "w_(4,2,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^4 / ([8]_q · [4]_q · [2]_q · [1]_q · [5]_q · [1]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-4221.derivation.json",
+        "target": "w_(4,2,2,1)(q)",
+        "target_value": "(q − q^{-1})^5 / ([7]_q · [5]_q · [2]_q · [1]_q · [4]_q · [2]_q · [3]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-4311.derivation.json",
+        "target": "w_(4,3,1,1)(q)",
+        "target_value": "(q − q^{-1})^5 / ([7]_q · [4]_q · [3]_q · [1]_q · [5]_q · [2]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-432.derivation.json",
+        "target": "w_(4,3,2)(q)",
+        "target_value": "(q − q^{-1})^6 / ([6]_q · [5]_q · [3]_q · [1]_q · [4]_q · [3]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-441.derivation.json",
+        "target": "w_(4,4,1)(q)",
+        "target_value": "(q − q^{-1})^6 / ([6]_q · [4]_q · [3]_q · [2]_q · [5]_q · [3]_q · [2]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-51.derivation.json",
+        "target": "w_(5,1)(q)",
+        "target_value": "(q − q^{-1})^4 / ([6]_q · [4]_q · [3]_q · [2]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-51111.derivation.json",
+        "target": "w_(5,1,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^4 / ([9]_q · [4]_q · [3]_q · [2]_q · [1]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-5211.derivation.json",
+        "target": "w_(5,2,1,1)(q)",
+        "target_value": "(q − q^{-1})^5 / ([8]_q · [5]_q · [3]_q · [2]_q · [1]_q · [4]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-522.derivation.json",
+        "target": "w_(5,2,2)(q)",
+        "target_value": "(q − q^{-1})^6 / ([7]_q · [6]_q · [3]_q · [2]_q · [1]_q · [3]_q · [2]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-531.derivation.json",
+        "target": "w_(5,3,1)(q)",
+        "target_value": "(q − q^{-1})^6 / ([7]_q · [5]_q · [4]_q · [2]_q · [1]_q · [4]_q · [2]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-54.derivation.json",
+        "target": "w_(5,4)(q)",
+        "target_value": "(q − q^{-1})^7 / ([6]_q · [5]_q · [4]_q · [3]_q · [1]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-6.derivation.json",
+        "target": "w_(6)(q)",
+        "target_value": "(q − q^{-1})^5 / ([6]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-6111.derivation.json",
+        "target": "w_(6,1,1,1)(q)",
+        "target_value": "(q − q^{-1})^5 / ([9]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-621.derivation.json",
+        "target": "w_(6,2,1)(q)",
+        "target_value": "(q − q^{-1})^6 / ([8]_q · [6]_q · [4]_q · [3]_q · [2]_q · [1]_q · [3]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-63.derivation.json",
+        "target": "w_(6,3)(q)",
+        "target_value": "(q − q^{-1})^7 / ([7]_q · [6]_q · [5]_q · [3]_q · [2]_q · [1]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-711.derivation.json",
+        "target": "w_(7,1,1)(q)",
+        "target_value": "(q − q^{-1})^6 / ([9]_q · [6]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-72.derivation.json",
+        "target": "w_(7,2)(q)",
+        "target_value": "(q − q^{-1})^7 / ([8]_q · [7]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-81.derivation.json",
+        "target": "w_(8,1)(q)",
+        "target_value": "(q − q^{-1})^7 / ([9]_q · [7]_q · [6]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-9.derivation.json",
+        "target": "w_(9)(q)",
+        "target_value": "(q − q^{-1})^8 / ([9]_q · [8]_q · [7]_q · [6]_q · [5]_q · [4]_q · [3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "sigma-shell-A2-closed-form.derivation.json",
+        "target": "C_{(3,2,1)}(q_0)",
+        "target_value": 0.03748824144743201,
+        "computed_value": 0.03748824144743201,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 4,
+          "mathlib-cited": 1,
+          "computational": 1
+        },
+        "has_script_frontier": false
       }
     ],
     "witness_trust": {
@@ -270,6 +1219,8 @@
       "derivation-backed": [
         "habiro-coefficients-atomic.witness.json",
         "hecke-character-symbolic.witness.json",
+        "mass-endomorphism.witness.json",
+        "mass-formula-6term-mpfr-50dps.witness.json",
         "schur-weyl-symbolic.witness.json"
       ],
       "computational-only": [
@@ -327,6 +1278,9 @@
         "branching-qvalue-chain.witness.json",
         "branching-qvalues.witness.json",
         "brane-tower-distance-weighted.witness.json",
+        "brane-tower-finite-laurent.witness.json",
+        "brane-tower-prefactor-sweep.witness.json",
+        "brane-tower-symbolic-D.witness.json",
         "breit-wheeler-nucleon-nf.witness.json",
         "bw-chirality-isotopes.witness.json",
         "bw-lagrangian-prefactor-attempt.witness.json",
@@ -336,8 +1290,11 @@
         "canonical-isospin-test.witness.json",
         "canonical-mass-table.witness.json",
         "canonical-plus-multibrane.witness.json",
+        "canonical-script-input-audit.witness.json",
         "canonical-with-proper-tower.witness.json",
         "catalan-binding.witness.json",
+        "categorical-bypass-volmatch-demo.witness.json",
+        "categorical-q-decay-ba-low-isotopes.witness.json",
         "certificate-to-mass.witness.json",
         "ch-bond-writhe-lp.witness.json",
         "channel-product-mass.witness.json",
@@ -350,7 +1307,6 @@
         "comparison-table.witness.json",
         "compound-beta-shell.witness.json",
         "comprehensive-low-isotope-structural-table.witness.json",
-        "comprehensive-low-isotope-table-v2.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-adaptive.witness.json",
         "confinement-level-strand-counts.witness.json",
@@ -367,6 +1323,7 @@
         "d-chirality-probe.witness.json",
         "d-colored-jones-tower.witness.json",
         "d-density-derivation.witness.json",
+        "d-from-scratch.witness.json",
         "d-inter-correction-test.witness.json",
         "d-inter-nucleon-piece.witness.json",
         "d-knot-extended-search.witness.json",
@@ -429,6 +1386,7 @@
         "h2-molecular-binding.witness.json",
         "h6-full-computation.witness.json",
         "habiro-coefficients-interpolate.witness.json",
+        "habiro-exact-mass-endomorphism.witness.json",
         "habiro-interpolate-cross-validation.witness.json",
         "habiro-interpolation-recovery-demo.witness.json",
         "habiro-residue-symbolic.witness.json",
@@ -479,6 +1437,7 @@
         "level1-qvalues.witness.json",
         "level1-vhat-brane-tower.witness.json",
         "li-atom-knot-search.witness.json",
+        "light-isotope-sweep.wenzl-schur.witness.json",
         "light-isotope-sweep.witness.json",
         "low-isotope-binding-sweep.witness.json",
         "low-isotope-mass-table-precision-audit.witness.json",
@@ -494,7 +1453,6 @@
         "mass-endomorphism-atom-exact.witness.json",
         "mass-endomorphism-atom-tower.witness.json",
         "mass-endomorphism-magic-interpolation.witness.json",
-        "mass-endomorphism.witness.json",
         "mass-formula-6term.witness.json",
         "mass-formula-integrated.witness.json",
         "mass-from-q-symbolic.witness.json",
@@ -512,12 +1470,14 @@
         "molecule-registry.witness.json",
         "multi-level-jet-sum.witness.json",
         "multi-level-sdp.witness.json",
+        "multi-term-canonical-assembly.witness.json",
         "neutron-alt-tower-shapes.witness.json",
         "neutron-from-photons.witness.json",
         "neutron-gap-probes-round2.witness.json",
         "neutron-gap-probes-round3.witness.json",
         "neutron-gap-probes-round4.witness.json",
         "neutron-gap-probes-round5.witness.json",
+        "neutron-gap-probes-round6-canonical.witness.json",
         "neutron-gap-probes-round6.witness.json",
         "neutron-gap-probes-round7.witness.json",
         "neutron-gap-probes.witness.json",
@@ -553,9 +1513,24 @@
         "positron-lifted-sdp.witness.json",
         "predictive-binding-from-braid.witness.json",
         "prefix-all-variants.witness.json",
+        "probe-atom-shell-self-duality-mpfr.witness.json",
+        "probe-atom-shell-self-duality.witness.json",
         "probe-canonical-multi-term-D.witness.json",
+        "probe-d-height-stratification.witness.json",
+        "probe-d-term23-binding.witness.json",
+        "probe-gamma-gamma-h3-psd-scan.witness.json",
+        "probe-gamma-gamma-lr-embed-h6.witness.json",
+        "probe-per-nucleon-self-duality.witness.json",
+        "probe-phiq-yekutieli-truncation.witness.json",
+        "probe-proton-crossing-budget.witness.json",
+        "probe-proton-mass-scale.witness.json",
+        "probe-proton-with-wenzl-weights.witness.json",
+        "probe-sdp-canonical-paper-formula.witness.json",
+        "probe-term4-conventions.witness.json",
+        "probe-wedderburn-weight-scheme.witness.json",
         "protium-deep-trace.witness.json",
         "proton-braid-sweep-gg.witness.json",
+        "proton-mass-codata-50dps.witness.json",
         "proton-mass-mpfr-50dps.witness.json",
         "proton-mass-tower-derivation.witness.json",
         "proton-neutron-mass-error.witness.json",
@@ -585,6 +1560,7 @@
         "sage-cgeom.witness.json",
         "schur-weyl-mn.witness.json",
         "schur-weyl-uq-sl2.witness.json",
+        "sdp-gamma-gamma-to-qqbar.witness.json",
         "sdp-knot-match.witness.json",
         "sdp-lift-audit.witness.json",
         "sdp-on-shadows.witness.json",
@@ -618,6 +1594,7 @@
         "term-seven-plancherel-lagrangian.witness.json",
         "term4-frobenius-mpfr-50dps.witness.json",
         "term5-chirality-mpfr-50dps.witness.json",
+        "term6-full-pole-sum.witness.json",
         "term6-habiro-residue-mpfr-50dps.witness.json",
         "term7_only_strict_3cal.witness.json",
         "terminal-resolution-deuteron.witness.json",
@@ -642,6 +1619,7 @@
         "unified-binding.witness.json",
         "unified-formula-test.witness.json",
         "unified-lift.witness.json",
+        "unified-low-isotope-predictor.witness.json",
         "unified-mass-molecular.witness.json",
         "unified-mass-table-mpfr-50dps.witness.json",
         "universal-ilp.witness.json",
