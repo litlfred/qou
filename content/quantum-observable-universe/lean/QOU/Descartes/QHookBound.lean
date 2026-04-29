@@ -171,9 +171,11 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
       have h_pow_eq : q ^ (-(k:ℤ)) = ((1:ℝ)/q)^k := by
         rw [zpow_neg, zpow_natCast, one_div, ← inv_pow]
       rw [h_pow_eq]
-      -- Bernoulli: 1 + k·(1/q - 1) ≤ (1/q)^k, valid for 1/q - 1 ≥ -1 (i.e. 1/q ≥ 0).
+      -- Bernoulli: 1 + k·(1/q - 1) ≤ (1/q)^k, valid for 1/q - 1 ≥ -1
+      -- (i.e. 1/q ≥ 0), which `one_add_mul_le_pow` requires literally
+      -- as `(-1 : ℝ) ≤ a` where `a = 1/q - 1`.
       have h_pos : (0 : ℝ) ≤ (1:ℝ)/q := by positivity
-      have h_inv_minus_one : (-2 : ℝ) ≤ (1:ℝ)/q - 1 := by linarith
+      have h_inv_minus_one : (-1 : ℝ) ≤ (1:ℝ)/q - 1 := by linarith
       have h_bern : 1 + (k : ℝ) * ((1:ℝ)/q - 1) ≤ ((1:ℝ)/q)^k :=
         one_add_mul_le_pow h_inv_minus_one k
       -- Goal: (k+1) ≤ q*k + (1/q)^k.

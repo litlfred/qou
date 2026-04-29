@@ -1,9 +1,10 @@
 {
-  "description": "Cross-check of Wenzl-bridge symbolic y_\u03bb vs MPFR linear-system y_\u03bb at every n with overlapping coverage in both witnesses.  Independent verification at high precision (50 dps comparison).",
+  "description": "Cross-check of Wenzl-bridge symbolic y_λ vs MPFR linear-system y_λ at every n with overlapping coverage in both witnesses.  Independent verification at high precision (50 dps comparison).",
   "references": [
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:alpha-k-derivation-procedure"
   ],
+  "computedAt": "2026-04-29T20:36:59.509015+00:00",
   "comparison_dps": 50,
   "rows": [
     {

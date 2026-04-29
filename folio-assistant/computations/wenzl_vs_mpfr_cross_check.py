@@ -17,6 +17,7 @@ Output: y-lambda-wenzl-vs-mpfr-cross-check.json
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
@@ -75,6 +76,7 @@ def main() -> None:
             "prop:y-lambda-closed-form-wenzl-bridge",
             "prop:alpha-k-derivation-procedure",
         ],
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "comparison_dps": 50,
         "rows": rows,
     }
