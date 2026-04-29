@@ -237,19 +237,19 @@ theorem hecke_n2_frobenius_codim (q : ℝ) :
 noncomputable def heckeH4DimQ (q : ℝ) (i : Fin 5) : ℝ :=
   match i with
   | ⟨0, _⟩ => 1
-  | ⟨1, _⟩ => q^2 + 1 + q⁻²
-  | ⟨2, _⟩ => q^2 + q⁻²
-  | ⟨3, _⟩ => q^2 + 1 + q⁻²
+  | ⟨1, _⟩ => q ^ 2 + 1 + (q ^ 2)⁻¹
+  | ⟨2, _⟩ => q ^ 2 + (q ^ 2)⁻¹
+  | ⟨3, _⟩ => q ^ 2 + 1 + (q ^ 2)⁻¹
   | ⟨4, _⟩ => 1
-  | ⟨n+5, h⟩ => absurd h (by omega)
+  | ⟨_+5, h⟩ => absurd h (by omega)
 
 @[simp] theorem heckeH4DimQ_zero (q : ℝ) : heckeH4DimQ q 0 = 1 := rfl
 @[simp] theorem heckeH4DimQ_one  (q : ℝ) :
-    heckeH4DimQ q 1 = q^2 + 1 + q⁻² := rfl
+    heckeH4DimQ q 1 = q ^ 2 + 1 + (q ^ 2)⁻¹ := rfl
 @[simp] theorem heckeH4DimQ_two  (q : ℝ) :
-    heckeH4DimQ q 2 = q^2 + q⁻² := rfl
+    heckeH4DimQ q 2 = q ^ 2 + (q ^ 2)⁻¹ := rfl
 @[simp] theorem heckeH4DimQ_three (q : ℝ) :
-    heckeH4DimQ q 3 = q^2 + 1 + q⁻² := rfl
+    heckeH4DimQ q 3 = q ^ 2 + 1 + (q ^ 2)⁻¹ := rfl
 @[simp] theorem heckeH4DimQ_four (q : ℝ) :
     heckeH4DimQ q 4 = 1 := rfl
 
@@ -268,7 +268,7 @@ noncomputable def heckeH4DimQ (q : ℝ) (i : Fin 5) : ℝ :=
     Ref: [manuscript] `prop:partition-sum-proton-residual` (n=4 base). -/
 theorem hecke_n4_frobenius_codim (q : ℝ) :
     ∑ i : Fin 5, 1 / heckeH4DimQ q i
-      = 2 + 2 / (q^2 + 1 + q⁻²) + 1 / (q^2 + q⁻²) := by
+      = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹) := by
   rw [Fin.sum_univ_five]
   simp
   ring

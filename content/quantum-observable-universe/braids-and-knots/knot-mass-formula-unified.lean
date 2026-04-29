@@ -126,7 +126,7 @@ axiom frobenius_codim_trace_n2 (q : ℝ) :
     `frobenius-codim-universal.lean::hecke_n4_frobenius_codim`. -/
 axiom frobenius_codim_trace_n4 (q : ℝ) :
     frobeniusCoCasimirTrace q 4
-      = 2 + 2 / (q^2 + 1 + q⁻²) + 1 / (q^2 + q⁻²)
+      = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹)
 
 /-- **Bridge audit: tractability frontier.**  The explicit partition-
     sum side is fully formal in Lean for `n ∈ {2, 3, 4}` (theorems
@@ -189,7 +189,7 @@ theorem two_strand_frobenius_correction
 theorem four_strand_frobenius_correction
     (U : UnifiedKnotMass) (_hn : U.n = 4) :
     frobeniusCoCasimirTrace U.q 4
-      = 2 + 2 / (U.q^2 + 1 + U.q⁻²) + 1 / (U.q^2 + U.q⁻²) :=
+      = 2 + 2 / (U.q ^ 2 + 1 + (U.q ^ 2)⁻¹) + 1 / (U.q ^ 2 + (U.q ^ 2)⁻¹) :=
   frobenius_codim_trace_n4 U.q
 
 /-- **Trivial-vortex (identity braid) mass = Frobenius vacuum.**
