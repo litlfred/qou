@@ -121,16 +121,35 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
-  -- Mathematical content: [m]_q = Σ_{j=0}^{m-1} q^{m-1-2j} (symmetric
-  -- sum of m terms), and pairing j with m-1-j gives pairs q^k + q^{-k}
-  -- each ≥ 2 by AM-GM.  Sum ≥ m, so [m]_q/m ≥ 1.
+  -- Mathematical content via induction on m + Bernoulli:
   --
-  -- A previous attempt used Bernoulli on q⁻¹^m - 1 in the wrong
-  -- direction (Gemini PR #413 review): for x = q⁻¹ < 1, Bernoulli
-  -- gives x^m - 1 ≥ m(x-1), not ≤.  The two ≥-inequalities then
-  -- can't be subtracted to get the desired bound.  Reverted to the
-  -- sorry-with-Ref pattern (CLAUDE.md §1) until a sound proof
-  -- (symmetric-sum AM-GM) is formalised.
+  -- Claim: q^m - q^{-m} ≥ m·(q - q^{-1}) for q > 1, m ≥ 1.
+  -- Base m = 1: q^1 - q^{-1} = 1·(q - q^{-1}) ✓.
+  -- Step m → m+1:
+  --   q^{m+1} - q^{-(m+1)} = q·(q^m - q^{-m}) + q^{-m}·(q - q^{-1})
+  --                       ≥ q·m·(q - q^{-1}) + q^{-m}·(q - q^{-1})  [IH]
+  --                       = (q·m + q^{-m})·(q - q^{-1}).
+  -- So need (q·m + q^{-m}) ≥ m+1, i.e., (q-1)·m + q^{-m} ≥ 1.
+  -- By Bernoulli: q^{-m} = (1/q)^m ≥ 1 - m·(q-1)/q.
+  -- Therefore (q-1)·m + q^{-m} ≥ (q-1)·m + 1 - m·(q-1)/q
+  --                           = 1 + m·(q-1)²/q ≥ 1.
+  --
+  -- Setup: positivity + denominator manipulation.
+  have hq_pos : q > 0 := lt_trans zero_lt_one hq
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hq_inv_lt_one : q⁻¹ < 1 := by
+    rw [inv_lt_one_iff_of_pos hq_pos]; exact hq
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  have hm_pos : (0 : ℝ) < m := Nat.cast_pos.mpr hm
+  rw [ge_iff_le, le_div_iff₀ hm_pos, one_mul]
+  unfold qIntReal
+  rw [if_neg hq_ne_one]
+  rw [le_div_iff₀ h_diff_pos]
+  -- Goal: m * (q - q⁻¹) ≤ q^m - q^(-m).
+  -- This is the substantive inequality. Closing fully requires
+  -- the Bernoulli-driven induction sketched above. The setup above
+  -- normalises the goal; the induction step itself remains open.
   -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
   sorry
 
