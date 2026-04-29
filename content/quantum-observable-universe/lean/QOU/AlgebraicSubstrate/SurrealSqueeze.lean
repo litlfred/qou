@@ -59,4 +59,21 @@ theorem surreal_squeeze
   -- See docstring: false as stated on standard reals.
   sorry
 
+/-- **surreal_squeeze (provable form)**: with the sharper hypothesis
+    `ε^4 < δ^2` (which captures the substantive size separation
+    between standard δ and infinitesimal ε), the conclusion holds in
+    any `LinearOrderedField`. This is the form callers should use;
+    `surreal_squeeze` above is the loose-hypothesis version that
+    requires a surreal-completion model. -/
+theorem surreal_squeeze_of_pow_lt
+    {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+    (ε δ : F) (hε : 0 < ε) (hsq : ε^4 < δ^2) :
+    δ^2 * ε⁻¹ > ε^3 := by
+  -- Multiply both sides by ε > 0:
+  --   δ²·ε⁻¹ > ε³ ⟺ δ² > ε³·ε = ε⁴ ✓ (hsq).
+  rw [show δ^2 * ε⁻¹ = δ^2 / ε from div_eq_mul_inv _ _ |>.symm,
+      gt_iff_lt, lt_div_iff₀ hε,
+      show ε^3 * ε = ε^4 from by ring]
+  exact hsq
+
 end QOU.AlgebraicSubstrate
