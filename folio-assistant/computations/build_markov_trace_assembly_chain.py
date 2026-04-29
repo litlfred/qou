@@ -3,7 +3,9 @@
 Frontier-paydown chain — Markov-trace assembly via finite-Jones.
 
 Closes the last SCRIPT_CITED step (step 7, "Markov trace via
-finite-Jones formula") in the proton/neutron/deuteron atom chains.
+finite-Jones formula") in the **proton** atom chain.  Neutron and
+deuteron variants reuse the same builder pattern but require their
+own n-strands ⊢ 3A partition table; deferred to follow-up PRs.
 
 The Markov trace of an atomic braid is, by Schur–Weyl + finite-Jones,
 
@@ -100,29 +102,39 @@ def build() -> DerivationChain:
         ),
     ))
 
-    # 3 — w_(2,1)(q) and w_(1,1,1)(q) — still SCRIPT_CITED for now
+    # 3 — w_(2,1)(q) and w_(1,1,1)(q) — pending per-λ chains
     steps.append(DerivationStep(
         name="Wedderburn weights w_(2,1)(q), w_(1,1,1)(q)",
         operation=(
-            "For partitions other than (3), the Wedderburn weights "
-            "follow the same Schur formula but with hook-length sets "
-            "{3, 1, 1} for (2,1) and {3, 2, 1} for (1,1,1).  Per-λ "
-            "chains for these are not yet shipped; remains "
+            "Use the same Markov weight convention as "
+            "`schur-weyl-weight-3.derivation.json`: "
+            "w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏_x [h_x]_q^{-1}.  "
+            "For n=3 with hook-length sets {3, 1, 1} for (2,1) and "
+            "{3, 2, 1} for (1,1,1):\n"
+            "  w_(2,1)(q)   = (q − q^{-1})^1 / ([3]_q · [1]_q · [1]_q)\n"
+            "  w_(1,1,1)(q) = (q − q^{-1})^0 / ([3]_q · [2]_q · [1]_q)\n"
+            "Per-λ chains for these are not yet shipped; remains "
             "SCRIPT_CITED until the chain set is complete."
         ),
         inputs=["partitions_of_3"],
         output_name="w_other",
         output_value={
-            "w_(2,1)": "f_λ² · [3]_q! / ∏ [h_x]_q  with hooks {3,1,1}",
-            "w_(1,1,1)": "[3]_q! / ([3]_q · [2]_q · [1]_q)",
+            "w_(2,1)":   "(q − q^{-1}) / ([3]_q · [1]_q · [1]_q)",
+            "w_(1,1,1)": "1 / ([3]_q · [2]_q · [1]_q)",
         },
         trust_basis=TrustBasis.SCRIPT_CITED,
         citation="kassel1995",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/schur_weyl_symbolic.py "
-            "function `schur_weyl_weight(lam, q)`.  SCRIPT_CITED — per-λ "
-            "schur-weyl-weight chains for (2,1) and (1,1,1) are pending."
+            "Normalization matches `schur-weyl-weight-3.derivation.json` "
+            "(w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏ [h_x]_q^{-1}).  "
+            "script: folio-assistant/computations/build_schur_weyl_weight_chain.py — "
+            "this is the BUILDER pattern that should be specialised "
+            "to λ=(2,1) and λ=(1,1,1) in follow-up PRs.  The existing "
+            "helper `schur_weyl_symbolic.py:schur_weyl_weight(lam, q)` "
+            "computes a different normalisation (s_λ(q,q^{-1}) / ∏ [h]_q, "
+            "returning 0 for partitions with >2 rows) and is "
+            "intentionally NOT the cited source for these weights."
         ),
     ))
 
@@ -156,10 +168,19 @@ def build() -> DerivationChain:
         name="Hoefsmit rep χ^(2,1)_q on proton braid word",
         operation=(
             "Reference the existing `hoefsmit-rep-21-sigma1.derivation.json` "
-            "chain for ρ^(2,1)(σ_1) and its trace; extend by braid-word "
-            "matrix multiplication to the full T_w_p word (six σ-crossings "
-            "alternating σ_1, σ_2).  The character χ^(2,1)_q(T_w_p) is the "
-            "trace of the resulting 2x2 matrix product."
+            "chain for ρ^(2,1)(σ_1).  ρ^(2,1)(σ_2) is obtained by the same "
+            "Hoefsmit recipe applied to the σ_2 generator: the recipe "
+            "depends only on the cell adjacency between i and i+1 in each "
+            "SYT (which is intrinsic to the partition shape, not to the "
+            "specific generator index), so ρ^(2,1)(σ_2) = ρ^(2,1)(σ_1)' "
+            "where the prime denotes the SYT-basis automorphism that "
+            "swaps the role of i=1, i+1=2 with i=2, i+1=3.  Concretely "
+            "for λ=(2,1): the two SYT (T_1=[1 2 / 3], T_2=[1 3 / 2]) "
+            "have the same cell-adjacency profile under the σ_1 ↔ σ_2 "
+            "swap, so the matrix entries are identical (after relabelling "
+            "T_1, T_2).  Extend by braid-word matrix multiplication to "
+            "T_w_p (six σ-crossings alternating σ_1, σ_2); χ^(2,1)_q(T_w_p) "
+            "is the trace of the 2x2 matrix product."
         ),
         inputs=["partitions_of_3", FirstPrinciple.FROBENIUS_PAIRING.value],
         output_name="chi_21_proton",
@@ -170,9 +191,12 @@ def build() -> DerivationChain:
         gb_filtration_level=0,
         notes=(
             "Derivation chain: hoefsmit-rep-21-sigma1.derivation.json "
-            "(builder: build_hoefsmit_rep_chain.py).  For the proton the "
-            "matrix product is over 6 σ-generators; chain-extension "
-            "applies the same recipe iteratively."
+            "(builder: build_hoefsmit_rep_chain.py) supplies ρ^(2,1)(σ_1).  "
+            "ρ^(2,1)(σ_2) follows by the SYT-relabelling symmetry of "
+            "the Hoefsmit recipe (operation step above).  A dedicated "
+            "hoefsmit-rep-21-sigma2 chain would discharge this step's "
+            "DERIVED trust basis without the symmetry argument; "
+            "deferred as a small follow-up."
         ),
     ))
 
@@ -249,8 +273,8 @@ def build() -> DerivationChain:
             "schur-weyl-weight-3 + hoefsmit-rep-21-sigma1 + "
             "atomic-braid-recipe-p chains via the finite-Jones axiom "
             "into tr_M(p, q_0) ≈ 2.1226.  Trust profile is "
-            "{axiom: 1, mathlib: 0, derived: 4, script: 1, "
-            "computational: 1} — closes 4 of 5 SCRIPT_CITED steps in "
+            "{axiom: 1, mathlib-cited: 0, derived: 5, script-cited: 1, "
+            "computational: 1} — closes 5 of 5 SCRIPT_CITED steps in "
             "the proton atom-tr-M-q0 chain.  Remaining script-frontier "
             "covers w_(2,1) and w_(1,1,1) Wedderburn weights, which "
             "need their own per-λ chains (analogous to "
