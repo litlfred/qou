@@ -223,12 +223,12 @@ first principles.*
 
 ---
 
-### §6: Term 6 = higher-strata residues (conjectural)
+### §6: Term 6 = higher-strata residues (PL-residue interpretation)
 
-*Term 6 (jet-level prefix corrections) is conjecturally identified
-with $\sum_{\ell \geq 3} E_\infty^{\ell, *}$ pairings —
-contributions from higher filtration strata not covered by the
-single-gen / pair-gen expansions of §2 and §3.*
+*Term 6 (jet-level prefix corrections) is identified with
+$\sum_{\ell \geq 3} E_\infty^{\ell, *}$ pairings — contributions
+from higher filtration strata not covered by the single-gen /
+pair-gen expansions of §2 and §3.*
 
 *Per ([jet-prefix GB filtration](#prop:jet-prefix-gb-filtration)),
 each stratum $J^\ell / J^{\ell+1}$ contributes a factor
@@ -236,12 +236,30 @@ $a_\ell(\beta_\ell^{\mathrm{GS}})$ to the jet product; the
 spectral-sequence identification says these factors are the
 higher-page pairings.*
 
-*Conjectural.*
-*Upstream attempts with wrong prefix conventions give
-essentially zero contribution
-([jet-prefix GB filtration](#prop:jet-prefix-gb-filtration)).
-The GB-filtration prefix has not been computationally verified.
-Both the identification and the numerical prediction are open.*
+**Archimedean realisation under the fibre functor.**
+*Under the fibre functor $\tau \colon R \hookrightarrow \mathbb{C}$,
+the level-$\ell$ stratum maps to the geometric jet bundle
+$J^\ell\mathcal{S}$ on the Descartes elliptic curve via
+([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence)).
+The pairing's $\mathbb{C}$-realisation is then the higher-order
+Picard–Lefschetz residue $\Pi^{(\ell)}$ of the prolonged SW
+differential $\lambda_{\mathrm{SW}}^{(\ell)}$ at the discriminant
+locus
+([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble),
+ [SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).
+This collapses Term 6 from "conjectural" on the analytic side to a
+straightforward PL computation using the same machinery that
+evaluates Terms 1–3 — provided the upstream A2.4 hypothesis
+(real-axis = thimble sum) of
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence))
+is checked at order $\ell$.  The $R$-side identification of Term 6
+with $E_\infty^{\ell, *}$ remains the same; the change is to provide
+a convergent archimedean evaluation route.*
+
+*Status remains conjectural pending A2.4 numerical verification at
+$\ell \geq 3$, but the formal identification of the integration tool
+is now fixed (PL thimbles on $\mathcal{E}_q$, not symbolic
+Cauchy-kernel residues at roots of unity).*
 
 ---
 
