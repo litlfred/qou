@@ -3,8 +3,10 @@
 # Triggers
 # ────────
 #   pull_request — PRs that touch any of:
-#     - folio-assistant/computations/{habiro_*,markov_*,witness_base}.py
-#     - any *.witness.json under folio-assistant/computations/
+#     - folio-assistant/computations/{habiro_*,markov_*,witness_base,
+#       derivation_chain*,build_*}.py
+#     - any *.witness.json or *.derivation.json under
+#       folio-assistant/computations/
 #     - this workflow file
 #   push (main) — same path filters
 #   workflow_dispatch — manual run
@@ -12,24 +14,16 @@
 # Steps
 # ─────
 #   1. Set up Python + uv + sympy + mpmath.
-#   2. Run `habiro_witness_validator.py` — certifies the
-#      `tail_in_ideal` axiom on the atomic Habiro witness
-#      (proton, neutron, deuteron).
-#   3. Run `markov_substrate_realizer.py` — recomputes the
-#      Place → realize map (archimedean + 6 finite primes) for
-#      every atom; the WitnessBuilder asserts `tail_in_ideal mod p`
-#      across all primes.
-#   4. Run `markov_pipeline_cross_validator.py` — if
-#      `term6-full-pole-sum.witness.json` is present (after
-#      claude/continue-pr-442-DJRWm lands), cross-checks the
-#      polynomial-ring path against the Mittag-Leffler residue-sum
-#      path.  Skips with exit 0 when the input is absent.
-#   5. Run `habiro_interpolate_cross_validator.py` — cross-checks
-#      the atomic-polynomial evaluation against the
-#      Vandermonde-interpolation pipeline at machine precision.
-#   6. Validate that the regenerated witnesses are bit-stable
-#      (modulo the `computedAt` timestamp): no unexpected drift in
-#      assertions, parameters, or per-atom payloads.
+#   2. Habiro / Markov pipeline:
+#      - habiro_witness_validator (tail_in_ideal axiom)
+#      - markov_substrate_realizer (Place → realize)
+#      - markov_pipeline_cross_validator (skips if term6 absent)
+#      - habiro_interpolate_cross_validator
+#   3. Derivation-chain pipeline:
+#      - derivation_chain_validator runs structural + script-existence
+#        + leaf-value checks across every *.derivation.json + emits
+#        the chain audit witness.
+#   4. Drift check on regenerated witnesses (timestamp-tolerant).
 
 name: Witness pipeline
 
@@ -46,7 +40,10 @@ on:
       - "folio-assistant/computations/sw_period_thimble_equivalence.py"
       - "folio-assistant/computations/jet_gb_pl_correspondence.py"
       - "folio-assistant/computations/q_parameter.py"
+      - "folio-assistant/computations/derivation_chain*.py"
+      - "folio-assistant/computations/build_*.py"
       - "folio-assistant/computations/*.witness.json"
+      - "folio-assistant/computations/*.derivation.json"
       - ".github/workflows/witness-pipeline.yml"
   push:
     branches: [main]
@@ -61,7 +58,10 @@ on:
       - "folio-assistant/computations/sw_period_thimble_equivalence.py"
       - "folio-assistant/computations/jet_gb_pl_correspondence.py"
       - "folio-assistant/computations/q_parameter.py"
+      - "folio-assistant/computations/derivation_chain*.py"
+      - "folio-assistant/computations/build_*.py"
       - "folio-assistant/computations/*.witness.json"
+      - "folio-assistant/computations/*.derivation.json"
       - ".github/workflows/witness-pipeline.yml"
   workflow_dispatch:
 
@@ -121,6 +121,13 @@ jobs:
           python3 folio-assistant/computations/jet_gb_pl_correspondence.py
           python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/jet-gb-pl-correspondence.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
 
+      - name: Run derivation_chain_validator
+        # Walks every *.derivation.json: structural well-formedness,
+        # SCRIPT_CITED file-existence checks, COMPUTATIONAL leaf-value
+        # consistency.  Emits derivation-chain-audit.witness.json with
+        # per-chain results + the global witness-trust audit.
+        run: python3 folio-assistant/computations/derivation_chain_validator.py
+
       - name: Detect drift in committed witnesses
         run: |
           # The validators rewrite their output witnesses on every run.
@@ -130,12 +137,18 @@ jobs:
           # Anything else differing means a genuine numerical or
           # structural change.
           set -eu
-          if git diff --quiet folio-assistant/computations/*.witness.json; then
-            echo "Witnesses bit-stable."
+          # Use git pathspec `:(glob)` magic so git does the glob
+          # expansion internally — avoids potential "argument list
+          # too long" if the witness/derivation directory grows
+          # past the OS ARG_MAX on shell glob expansion.
+          PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
+          :(glob)folio-assistant/computations/*.derivation.json'
+          if git diff --quiet -- $PATHSPECS; then
+            echo "Witnesses + derivation chains bit-stable."
             exit 0
           fi
           echo "Witnesses changed — filtering expected drift fields..."
-          drift=$(git diff folio-assistant/computations/*.witness.json | \
+          drift=$(git diff -- $PATHSPECS | \
                   grep -E "^[+-]" | \
                   grep -vE "^\+\+\+|^---" | \
                   grep -vE '"(computedAt|durationMs|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version)":' || true)

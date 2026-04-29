@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import enum
 import json
+import re
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Optional, Union
@@ -59,6 +60,27 @@ TR_M_AT_Q0: dict[str, float] = {
     "n": 1.5893934459539052,
     "D": 0.17743692421543206,
 }
+
+# Atom-target Markov-trace values in cat-units (Hecke-pipeline output)
+# at q_0 — 4-sig-fig rounded summaries of the upstream
+# `mass_endomorphism.py` + `proton_mass_tower_derivation.py` tower.
+# Single source of truth so chain builders (e.g.
+# `build_proton_mass_50dps_chain.py`) don't redefine the literals
+# (per Gemini PR #484 review, "magic-value-centralisation").  When
+# the full-precision 50 dps tower-derivation chain lands these
+# summaries should be regenerated together with their consumers.
+M_HECKE_PIPELINE_AT_Q0: dict[str, float] = {
+    "e": 0.0007783,  # electron, atomic 2-strand braid
+    "p": 1.4283,     # proton, T1+T2+T3+T4 mass-endomorphism tower
+}
+
+
+# Pre-compiled module-level regex for SCRIPT_CITED `notes` validation
+# (per Gemini PR #484 review): tolerates leading whitespace after the
+# colon AND requires a path-like token ending in a recognisable
+# extension (`.py`, `.sh`, …).  Compiled once rather than rebuilt on
+# every step check.
+_SCRIPT_NOTE_RE = re.compile(r"script:\s*\S+\.\w+", re.IGNORECASE)
 
 
 # ── First principles ────────────────────────────────────────────
@@ -248,7 +270,9 @@ class DerivationChain:
                     )
             # SCRIPT_CITED steps should record the script path in notes.
             if step.trust_basis == TrustBasis.SCRIPT_CITED:
-                if step.notes is None or "script:" not in step.notes:
+                # Accept either `script:` or `Script:` (legacy chains)
+                # via the module-level pre-compiled `_SCRIPT_NOTE_RE`.
+                if step.notes is None or not _SCRIPT_NOTE_RE.search(step.notes):
                     issues.append(
                         f"SCRIPT_CITED step {step.name!r} should record "
                         "the script path in `notes` (e.g. 'script: foo.py @ <sha>')"

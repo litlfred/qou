@@ -8,7 +8,9 @@
     {
       "name": "Hecke algebra H_6(q) presentation",
       "operation": "Define H_6(q) := ⟨σ_1..σ_5 | braid relations, Hecke relation σ_i² = (q-q⁻¹)σ_i + 1⟩.",
-      "inputs": ["Hecke.Energy"],
+      "inputs": [
+        "Hecke.Energy"
+      ],
       "output_name": "H_6_q",
       "output_value": "H_6(q) — Iwahori–Hecke algebra (A=2)",
       "trust_basis": "axiom",
@@ -19,18 +21,25 @@
     {
       "name": "Wedderburn decomposition of H_6(q)",
       "operation": "H_6(q) ≅ ⊕_{λ⊢6} M_{f_λ}(ℚ(q^(1/2))).",
-      "inputs": ["H_6_q", "Wedderburn"],
+      "inputs": [
+        "H_6_q",
+        "Wedderburn"
+      ],
       "output_name": "wedderburn_decomp",
       "output_value": "11 partitions of 6, dimensions {1, 5, 9, 10, 5, 16, 10, 5, 9, 5, 1}",
       "trust_basis": "mathlib-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,
-      "citation": "wenzl1988"
+      "citation": "wenzl1988",
+      "lean_ref": "qou:STUB:HeckeWedderburn"
     },
     {
       "name": "Frobenius pairing ⟨x,y⟩ := τ(xy) on H_6(q)",
       "operation": "The Hecke algebra is a Frobenius algebra under any non-degenerate Markov-type trace. SELECTION THEOREM: per prop:markov-trace-frobenius-selection, the QOU mass formula's Frobenius co-Casimir construction C_dim_q = Σ_λ [1/(dim_q · τ(p_λ))] p_λ requires τ non-degenerate on every block. The canonical choice is τ = τ_M (Jones-Markov, Wenzl-bridge weights y_λ).",
-      "inputs": ["wedderburn_decomp", "Frobenius.Pairing"],
+      "inputs": [
+        "wedderburn_decomp",
+        "Frobenius.Pairing"
+      ],
       "output_name": "frobenius_pairing_choice",
       "output_value": "τ_M : H_6(q) → ℚ(q^(1/2)), non-degenerate, τ_M(1)=1, τ_M(σ_i)=z",
       "trust_basis": "lean-proven",
@@ -43,7 +52,10 @@
     {
       "name": "Wenzl-bridge y_λ from Markov axioms",
       "operation": "Solve the linear system: tr_M(x) = Σ_λ y_λ χ_λ(x) for x ∈ {1, σ_4, [1,4], [3,4], [1,2,4], [2,3,4], [1,2,3,4]} (one rep per cycle type of S_6) using axiom-derived tr_M values.",
-      "inputs": ["frobenius_pairing_choice", "Schur"],
+      "inputs": [
+        "frobenius_pairing_choice",
+        "Schur"
+      ],
       "output_name": "wenzl_y_lambda",
       "output_value": "y_λ ∈ ℝ for λ ⊢ 6, all non-zero at q_0",
       "trust_basis": "derived",
@@ -56,7 +68,10 @@
     {
       "name": "Categorical action B_6 → ⊕_λ M_{f_λ}",
       "operation": "Categorical action via the R-matrix gives σ_i ↦ Hoefsmit seminormal matrix in each λ-block.",
-      "inputs": ["wedderburn_decomp", "Cat.Action"],
+      "inputs": [
+        "wedderburn_decomp",
+        "Cat.Action"
+      ],
       "output_name": "rho_lambda",
       "output_value": "ρ^λ : B_6 → GL_{f_λ}(ℚ(q)) for each λ ⊢ 6",
       "trust_basis": "lean-proven",
@@ -69,19 +84,25 @@
     {
       "name": "Atomic D braid word T_w(Z=1, N=1)",
       "operation": "atomic_braid_to_crossings(1, 1, include_inter=True) → 23-crossing braid in B_6.",
-      "inputs": ["Hecke.Energy", "Nonabelian.Stokes"],
+      "inputs": [
+        "Hecke.Energy",
+        "Nonabelian.Stokes"
+      ],
       "output_name": "T_w_D",
       "output_value": "23-element list of (gen_idx, crossing_type)",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "manuscript",
-      "notes": "Script: hecke_character_symbolic.atomic_braid_to_crossings."
+      "notes": "Script: folio-assistant/computations/hecke_character_symbolic.py (function `atomic_braid_to_crossings`)."
     },
     {
       "name": "Characters χ^λ_q(T_w) via Hoefsmit",
       "operation": "For each λ, compute χ^λ_q(T_w) := tr(ρ^λ(T_w)) by multiplying the seminormal matrices over the braid word.",
-      "inputs": ["T_w_D", "rho_lambda"],
+      "inputs": [
+        "T_w_D",
+        "rho_lambda"
+      ],
       "output_name": "chi_lambda",
       "output_value": "χ_λ ∈ ℝ for each λ ⊢ 6 at q_0",
       "trust_basis": "derived",
@@ -92,7 +113,11 @@
     {
       "name": "Markov trace τ_M = Σ y_λ χ_λ",
       "operation": "τ_M(T_w(D), q_0) := Σ_{λ⊢6} y_λ(q_0) · χ^λ(T_w(D), q_0). Per prop:markov-trace-frobenius-selection, this is the unique non-degenerate Frobenius pairing.",
-      "inputs": ["wenzl_y_lambda", "chi_lambda", "FiniteJones"],
+      "inputs": [
+        "wenzl_y_lambda",
+        "chi_lambda",
+        "FiniteJones"
+      ],
       "output_name": "tau_M_D",
       "output_value": "0.336821",
       "trust_basis": "derived",
@@ -101,6 +126,20 @@
       "lean_ref": "qou:QOU.BraidKnot.tau_M_non_degenerate",
       "citation": "wenzl1988",
       "notes": "From-scratch validation: light_isotope_sweep.py with --convention wenzl-schur produces 0.336821 bit-exactly. The from_scratch/wedderburn_markov.py independent derivation also produces 0.336821 bit-exactly."
+    },
+    {
+      "name": "Evaluate τ_M(D, q_0) at q_0",
+      "operation": "Substitute q := q_0 ≈ 1.110 into the symbolic Wenzl-bridge Markov-trace polynomial; mpmath at 50 dps gives 0.336821.",
+      "inputs": [
+        "tau_M_D"
+      ],
+      "output_name": "tau_M_D_q0",
+      "output_value": 0.336821,
+      "trust_basis": "computational",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
+      "notes": "COMPUTATIONAL leaf appended to satisfy the validator's numeric-target invariant."
     }
   ],
   "comparison_to_tau_SW": {

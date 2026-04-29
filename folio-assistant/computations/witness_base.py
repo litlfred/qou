@@ -61,7 +61,11 @@ def _git_file_sha(path: str) -> str:
     """Return the last commit SHA that touched a given file. `git log` exits
     cleanly with empty stdout for paths that have never been committed
     (e.g. a script generating its first witness pre-commit), so empty
-    output is also normalised to "unknown" — matching `_git_head_sha`."""
+    output is also normalised to "unknown" — matching `_git_head_sha`.
+
+    Per Copilot review on PR #484: never return an ambiguous empty
+    string; "unknown" is the canonical sentinel and serialises into
+    witness JSON as a clear marker rather than `""`."""
     try:
         sha = subprocess.check_output(
             ["git", "log", "-1", "--format=%H", "--", path],
