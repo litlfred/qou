@@ -26,18 +26,40 @@ H_VAL = float(Q0 - 1.0/Q0)
 qi0 = 1.0 / Q0
 z_mark = 1.0 / (Q0**0.5 + (1.0/Q0)**0.5)
 
+class PhiQPoleHit(Exception):
+    """Raised when a Φ_q truncation factor (1 - q^{-k}z) is within
+    numerical zero. Subtracting two `inf`s downstream produces NaN and
+    silently corrupts witness data, so we surface the pole instead.
+    Callers may catch and decide how to handle (skip the atom, fall
+    back to a different k, etc.)."""
+    def __init__(self, k, qi_pow, z):
+        super().__init__(
+            f"Φ_q pole encountered at k={k}: |1 - q^(-k)·z| < 1e-14 "
+            f"(q^(-k)={qi_pow:.6g}, z={z:.6g})"
+        )
+        self.k = k
+        self.qi_pow = qi_pow
+        self.z = z
+
 def Phi_q_truncated(z, k_max):
+    """Truncated Φ_q^[≤k_max](z) = ∏_{k=1}^{k_max} (1 - q^{-k}z)^{-1}.
+    Raises PhiQPoleHit if a factor is within numerical zero — the
+    caller can then skip the atom rather than letting `inf - inf`
+    propagate to NaN downstream."""
     product = 1.0
     qi_pow = qi0
-    for _ in range(k_max):
+    for k in range(1, k_max + 1):
         factor = 1.0 - qi_pow * z
         if abs(factor) < 1e-14:
-            return float('inf')
+            raise PhiQPoleHit(k, qi_pow, z)
         product /= factor
         qi_pow *= qi0
     return product
 
 def brane_tower_truncated(Z, N, include_inter, k_max):
+    """Returns (T2, T3, magnitudes). May raise PhiQPoleHit, which the
+    caller is expected to surface (do not let it become inf-inf=NaN
+    downstream)."""
     vols_dict = atom_per_generator_volumes(Z, N, include_inter=include_inter)
     vols = [v["full"] if isinstance(v, dict) else v for v in vols_dict]
     T2 = sum(Phi_q_truncated(abs(v), k_max) for v in vols)
@@ -83,8 +105,16 @@ def main():
         for name, (Z, N) in Z_N.items():
             A = Z + N
             rho = rho_map[name]
-            T2a, T3a, _ = brane_tower_truncated(Z, N, True, k)
-            T2f, T3f, _ = brane_tower_truncated(Z, N, False, k)
+            try:
+                T2a, T3a, _ = brane_tower_truncated(Z, N, True, k)
+                T2f, T3f, _ = brane_tower_truncated(Z, N, False, k)
+            except PhiQPoleHit as e:
+                # A pole was hit at this (atom, k); skip rather than let
+                # inf − inf propagate to NaN in the witness.
+                print(f"{k:>3} {name:>10} -- pole hit at k={e.k} (q^-k·z="
+                      f"{e.qi_pow * e.z:.6g}), skipping")
+                results[k][name] = {"pole_hit": True, "k_at_pole": e.k}
+                continue
             tower_a = T2a + T3a
             tower_f = T2f + T3f
             dtow = tower_f - tower_a
