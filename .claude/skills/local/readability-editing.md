@@ -25,6 +25,14 @@ ideas to a graduate-level reader.
 - Technical terms are introduced with `\emph{...}` on first use and
   are not re-defined later.
 - Every non-trivial definition is followed by at least one example.
+- **Witnessed-value drift check**: in any block (definition, example,
+  remark, prose), a numerical literal derived from the substrate
+  (`q_0`, `\hbar_q`, `Vol(4_1)`, `m_μ/m_e`, binding energies, etc.)
+  must be cited via `:val[name]`, not hard-coded.  This applies to
+  propositions, theorems, lemmas, conjectures, and proofs as well.
+  See [`witnessed-values.md`](./witnessed-values.md) for the
+  registry, directive syntax, and codemod that rewrites legacy
+  literals.
 
 ### 2a. Forward-Reference Hygiene
 - An example, remark, or definition must **not** reference a lemma,

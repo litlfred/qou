@@ -4,7 +4,7 @@ as the unit against which all other masses are measured.  The Higgs
 field is identified with the figure-eight knot $4_1$
 ([cohomological embedding](#prop:cohomological-embedding)), whose
 complement carries a complete hyperbolic structure of volume
-$\mathrm{Vol}(4_1) \approx 2.02988$.
+$\mathrm{Vol}(4_1) \approx :val[Vol_4_1]{precision=6}$.
 
 Applying the [topological mass theorem](#thm:topological-mass) to the
 muon--electron *ratio* eliminates the overall mass scale and gives
@@ -15,13 +15,13 @@ $m_\mu / m_e \approx 206.7682827(46)$ yields
 $$
   \hbar_q^{2}
   = \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}
-  = \frac{2.02988}{206.7683}
-  \approx 0.009817,
+  = \frac{:val[Vol_4_1]{precision=6}}{:val[m_mu_over_e]{precision=7}}
+  \approx :val[hbar_q_sq]{precision=4},
   \qquad
-  \hbar_q \approx 0.09908,
+  \hbar_q \approx :val[hbar_q]{precision=4},
 $$
 
-so $1/q = 1 - 0.09908 = 0.90092$ and $q \approx 1.10997$.
+so $1/q = 1 - :val[hbar_q]{precision=4} = :val[q_inv]{precision=4}$ and $q \approx :val[q_0]{precision=6}$.
 
 The Skein relation itself is the mass-functional analogue of the Kauffman
 bracket recursion.  At each crossing in the color-exchange diagram of a

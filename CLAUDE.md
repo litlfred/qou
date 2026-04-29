@@ -103,6 +103,7 @@ When a user request arrives, route to the right skill(s):
 | "add / edit content block" | `local/content-validation` + relevant skill | collaborator |
 | "review / audit blocks" | `local/content-block-review` | collaborator |
 | "glossary / terminology / naming" | `local/ontologist` + `local/content-validation` | collaborator |
+| "witnessed value / drift / numerical literal / :val / hardcoded number / pin to witness" | `local/witnessed-values` + `local/content-validation` | collaborator |
 | "work on todos / process feedback" | `local/todo-review` | reader |
 | "missing proof (narrative)" | `local/editor` §Proof workflow | collaborator |
 | "missing proof (Lean)" | `local/formalizer` + `local/proof-triage` | collaborator |
@@ -170,7 +171,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit |
 | `owner` | All collaborator skills + deployment-auth |
 

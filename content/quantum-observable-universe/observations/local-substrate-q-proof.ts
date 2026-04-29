@@ -6,8 +6,11 @@ export default proof({
   uses: ["prop:local-substrate-q", "prf:knot-volumes-verification"],
   computation: {
     engine: "snappea",
-    script: "computations/knot-volumes.py",
-    witness: "computations/knot-volumes.witness.json",
+    script: "folio-assistant/computations/knot-volumes.py",
+    witness: [
+      "folio-assistant/computations/knot-volumes.witness.json",
+      "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    ],
     status: "verified",
     requires: ["snappy>=3.3"],
   },

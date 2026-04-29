@@ -35,6 +35,11 @@ import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 import { isCrossPaperRef } from "../schema/types";
 import { parseLeanRef } from "../../folio-assistant/schemas/lean-packages";
 import { extractCitations } from "./citations";
+import {
+  renderValue,
+  parseValAttrs,
+  substituteValuesInMath,
+} from "./render-value";
 
 // ── LaTeX character escaping ─────────────────────────────────────
 
@@ -159,16 +164,16 @@ export function extractMathContent(md: string): string {
 
   for (const child of (tree as any).children ?? []) {
     if (child.type === "math") {
-      // Display math: extract inner TeX
-      parts.push(child.value);
+      // Display math: extract inner TeX (substituting :val[…] references).
+      parts.push(substituteValuesInMath(child.value));
     } else if (child.type === "code" && child.lang === "tex") {
-      // Fenced TeX: raw passthrough
-      parts.push(child.value);
+      // Fenced TeX: raw passthrough with witness substitution.
+      parts.push(substituteValuesInMath(child.value));
     } else if (child.type === "paragraph") {
       // Check for inline math in paragraphs (rare in equation blocks)
       for (const inline of child.children ?? []) {
         if (inline.type === "inlineMath") {
-          parts.push(inline.value);
+          parts.push(substituteValuesInMath(inline.value));
         } else if (inline.type === "text") {
           // Plain text in an equation .md — treat as raw TeX
           const trimmed = inline.value.trim();
@@ -293,10 +298,10 @@ function renderMdastNode(node: any): string {
       return `\\emph{${renderChildren(node).join("")}}`;
 
     case "inlineMath":
-      return `$${node.value}$`;
+      return `$${substituteValuesInMath(node.value)}$`;
 
     case "math":
-      return `\\[\n${node.value}\n\\]`;
+      return `\\[\n${substituteValuesInMath(node.value)}\n\\]`;
 
     case "inlineCode":
       // Inline code: `text` → \texttt{escaped text}
@@ -394,11 +399,18 @@ function renderMdastNode(node: any): string {
     }
 
     case "textDirective": {
-      // remark-directive inline node: :name[label]{#slug}
-      // We recognise :defterm[X] / :refterm[X] and emit \defterm{slug}{label}
-      // when label and slug differ; otherwise the single-arg \defterm{slug}.
+      // remark-directive inline node: :name[label]{#slug} or :val[name]{key=value}.
+      // We recognise:
+      //   - :defterm[X] / :refterm[X] → \defterm{slug}{label} / \refterm{slug}{label}
+      //   - :val[name]{precision=N format=… units=…} → rendered numeral
       // Unknown directives fall through to children rendering.
       const name: string = node.name ?? "";
+      if (name === "val") {
+        // :val[<registry-name>]{key=value ...}
+        const valName = renderChildren(node).join("").trim();
+        const attrs = parseValAttrs(node.attributes);
+        return renderValue(valName, attrs, "text");
+      }
       if (name === "defterm" || name === "refterm") {
         const label = renderChildren(node).join("").trim();
         const slug = (node.attributes && (node.attributes.id || node.attributes["#"])) || label;

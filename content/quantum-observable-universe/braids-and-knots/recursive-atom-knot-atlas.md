@@ -85,7 +85,7 @@ where the flavor labels colour the crossings.
 
 Word: $\sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1}$.  Closure: the
 **figure-eight knot**, amphichiral (equal to its mirror).
-Hyperbolic volume: $\mathrm{Vol}(4_1) = 2.029883 \cdot \pi$, the
+Hyperbolic volume: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6} \cdot \pi$, the
 smallest among hyperbolic knots.  Used for: **Higgs field** (mass
 mechanism).
 

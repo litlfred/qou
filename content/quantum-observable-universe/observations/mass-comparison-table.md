@@ -10,7 +10,7 @@ PDG 2024 averages.  All masses are in MeV/$c^2$.
 $$
   q = q_0, \quad
   \hbar_q = 1 - q^{-1} = 0.09905, \quad
-  \mathrm{Vol}(4_1) = 2.02988.
+  \mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6}.
 $$
 
 **Table 2: Predicted vs.\ observed masses.**

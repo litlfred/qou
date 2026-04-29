@@ -28,6 +28,7 @@ import {
 import type { Block, Paper, Chapter, Section, ValidationIssue, ValidationResult } from "../schema/types";
 import { renderBlock, validateLatexAst, markdownToLatex } from "./render-latex";
 import { validateDefterms } from "./validate-defterm";
+import { validateValueDirectives } from "./validate-value";
 
 // ── File discovery ───────────────────────────────────────────────
 
@@ -312,6 +313,9 @@ export async function validateObjects(
     defBlocks.set(name, { block, md: mdCache.get(name) });
   }
   issues.push(...validateDefterms(defBlocks, { strict: opts.strict }));
+
+  // Phase 5: Witnessed-value directive validation (:val[name] rules)
+  issues.push(...validateValueDirectives(defBlocks, { strict: opts.strict }));
 
   const hasErrors = issues.some(i => i.level === "error");
   return { valid: !hasErrors, issues };

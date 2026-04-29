@@ -15,7 +15,7 @@ $$
   q_0 = \frac{1}{1 - \hbar_q} \approx 1.10998
 $$
 
-Three inputs: $\mathrm{Vol}(4_1) = 2.02988$ (mathematical constant),
+Three inputs: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6}$ (mathematical constant),
 $m_\mu/m_e = 206.7683$ (CODATA), $m_e = 0.5110$ MeV (CODATA).
 The first fixes $q_0$; the second sets the energy scale.
 
