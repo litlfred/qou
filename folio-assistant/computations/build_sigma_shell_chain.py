@@ -61,10 +61,15 @@ def _c_321_at(q: mp.mpf) -> mp.mpf:
 
 # Numerical anchor at q = q_0 — the leaf of this chain is the
 # C_{(3,2,1)}(q_0) value to 30 dps; downstream consumers use it
-# directly in the Term-7 assembly.
+# directly in the Term-7 assembly.  Keep as mp.mpf to preserve
+# precision (float() would truncate to ~16 dp, contradicting the
+# 30-dp contract).  Serialize via mp.nstr at the point of use.
 mp.mp.dps = 60
 Q0_MP = mp.mpf(repr(Q_0))
-C_321_AT_Q0 = float(_c_321_at(Q0_MP))
+C_321_AT_Q0_MP = _c_321_at(Q0_MP)
+# Float view retained for downstream consumers that explicitly
+# want f64 (e.g. logging); mp.mpf is the canonical value.
+C_321_AT_Q0 = float(C_321_AT_Q0_MP)
 
 
 def build() -> DerivationChain:
@@ -204,7 +209,10 @@ def build() -> DerivationChain:
         ),
         inputs=["C_321_symbolic"],
         output_name="C_321_at_q0",
-        output_value=C_321_AT_Q0,
+        # Serialize at 30+ dp via mp.nstr to preserve precision; the
+        # raw mp.mpf can't go through JSON, but the string form keeps
+        # all digits for downstream consumers that want >16 dp.
+        output_value=mp.nstr(C_321_AT_Q0_MP, 30, strip_zeros=False),
         trust_basis=TrustBasis.COMPUTATIONAL,
         jet_order=0,
         gb_filtration_level=5,
@@ -221,7 +229,9 @@ def build() -> DerivationChain:
 
     return DerivationChain(
         target="C_{(3,2,1)}(q_0)",
-        target_value=C_321_AT_Q0,
+        # 30-dp string preserves the full mp.mpf precision under JSON
+        # serialization (float would truncate to ~16 dp).
+        target_value=mp.nstr(C_321_AT_Q0_MP, 30, strip_zeros=False),
         target_tolerance=1e-12,
         content_block="conj:shell-correction-term-seven",
         description=(

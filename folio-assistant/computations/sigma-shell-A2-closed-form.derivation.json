@@ -1,6 +1,6 @@
 {
   "target": "C_{(3,2,1)}(q_0)",
-  "target_value": 0.03748824144743201,
+  "target_value": "0.0374882414474320101048710547827",
   "target_tolerance": 1e-12,
   "content_block": "conj:shell-correction-term-seven",
   "description": "Frontier-paydown chain for the σ_shell (Term 7) closed-form coefficient at A = 2: derives C_{(3,2,1)}(q) from Hecke energy + Schur–Weyl + Wigner-2 with NO SCRIPT_CITED steps — fully trusted modulo AXIOMs and the still-conjectural classifications (MarkovWeight.staircase, Wigner2Coefficient, ShadowPriceStaircase) marked qou:STUB:.  The OUTER α_5 empirical fit (−4.2 × 10^5 MeV) is the remaining frontier debt for σ_shell at A ≥ 4.",
@@ -102,7 +102,7 @@
         "C_321_symbolic"
       ],
       "output_name": "C_321_at_q0",
-      "output_value": 0.03748824144743201,
+      "output_value": "0.0374882414474320101048710547827",
       "trust_basis": "computational",
       "jet_order": 0,
       "gb_filtration_level": 5,

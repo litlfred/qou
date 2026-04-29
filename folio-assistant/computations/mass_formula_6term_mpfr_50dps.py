@@ -137,8 +137,20 @@ def _load_mpfr_native_volumes(Z: int, N: int) -> list[mp.mpf]:
     precision.  For 50-dps end-to-end Term 2/3, we must source the
     volumes from an MPFR-native pipeline.
 
+    Schema of the witness (per inspection 2026-04-29):
+      data["results"] = [
+        {"atom": "D", "Z": 1, "N": 1, "wedderburn_vols": [
+          {"std": ..., "sym": ..., "alt": ..., "full": ...},  # one per gen
+          ...
+        ], ...},
+        ...
+      ]
+    We extract the `full` channel from each per-generator dict.
+
     Raises FileNotFoundError if the witness is absent;
-    KeyError if no entry matches (Z, N).
+    KeyError if no entry matches (Z, N).  By design the witness
+    covers A≥2 (D, T, ³He); single-nucleon (A=1) is out-of-scope
+    and the caller should handle it separately.
     """
     path = Path(__file__).parent / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
     if not path.exists():
@@ -150,43 +162,25 @@ def _load_mpfr_native_volumes(Z: int, N: int) -> list[mp.mpf]:
         )
     with path.open() as f:
         data = json.load(f)
-    # Walk the witness JSON looking for an entry with matching Z, N
-    # and a `full_volumes` (or similar) field.  The schema may carry
-    # data under "results", "results_by_atom", "atoms", or in the
-    # data block itself; iterate flexibly.
-    def _iter(node):
-        if isinstance(node, dict):
-            yield node
-            for v in node.values():
-                yield from _iter(v)
-        elif isinstance(node, list):
-            for v in node:
-                yield from _iter(v)
-
-    for record in _iter(data):
+    for record in data.get("results", []):
         if record.get("Z") != Z or record.get("N") != N:
             continue
-        for key in ("full_volumes_mpfr", "full_volumes",
-                    "per_generator_full", "per_generator_volumes",
-                    "volumes"):
-            vols = record.get(key)
-            if not isinstance(vols, list):
-                continue
-            out: list[mp.mpf] = []
-            for entry in vols:
-                if isinstance(entry, dict):
-                    val = entry.get("full") or entry.get("volume") or entry.get("value")
-                    if val is None:
-                        out = []
-                        break
-                    out.append(mp.mpf(str(val)))
-                else:
-                    out.append(mp.mpf(str(entry)))
-            if out:
-                return out
+        wv = record.get("wedderburn_vols")
+        if not isinstance(wv, list):
+            continue
+        out: list[mp.mpf] = []
+        for entry in wv:
+            if not isinstance(entry, dict) or "full" not in entry:
+                raise KeyError(
+                    f"Entry for (Z={Z}, N={N}) has malformed "
+                    f"wedderburn_vols (missing 'full' key)"
+                )
+            out.append(mp.mpf(str(entry["full"])))
+        return out
     raise KeyError(
         f"No MPFR-native per-generator volumes found for Z={Z}, N={N} "
-        f"in {path.name}; check the witness layout or regenerate."
+        f"in {path.name}; the witness covers A≥2 only "
+        f"(extend `terms_2_3_atom_per_gen_mpfr_50dps.py` to add A=1)."
     )
 
 
@@ -259,7 +253,7 @@ def term_5_chirality_bw_mp(Z: int, N: int, knot_type: str) -> mp.mpf:
     return a_K * bulk + f_Zdep_scale * zdep + shell
 
 
-def term_6_habiro_residue_mp(A: int) -> mp.mpf | None:
+def term_6_habiro_residue_mp(A: int) -> mp.mpf:
     """Term 6: Σ_ℓ Res_{q→ζ_ℓ}[Φ_q · gradedMarkovTrace] at 50 dps.
 
     Loads from `term6-habiro-residue-mpfr-50dps.witness.json` (this
@@ -272,16 +266,28 @@ def term_6_habiro_residue_mp(A: int) -> mp.mpf | None:
     Laurent-expansion machinery needed; the `tail_in_ideal` axiom
     of `HabiroCompletion` covers arbitrary multiplicities by
     construction.
+
+    Raises FileNotFoundError if the witness is absent;
+    KeyError if no entry matches A.  Silently returning None
+    would produce an incomplete 6-term sum and misleading witness
+    output.
     """
     path = Path(__file__).parent / "term6-habiro-residue-mpfr-50dps.witness.json"
     if not path.exists():
-        return None
+        raise FileNotFoundError(
+            f"Term 6 Habiro residue witness missing at {path}; "
+            f"run the residue pipeline (see term6_habiro_residue_mpfr_50dps.py "
+            f"or equivalent) to regenerate before invoking the 6-term sum."
+        )
     with path.open() as f:
         data = json.load(f)
     for r in data.get("results_by_atom", []):
         if r.get("atom") == f"A={A}":
             return mp.mpf(r["term6_b_pred_mev_50dps"])
-    return None
+    raise KeyError(
+        f"No Term 6 entry for A={A} in {path.name}; "
+        f"add the atom to the residue pipeline before running."
+    )
 
 
 # ── Entry point ───────────────────────────────────────────────
@@ -310,20 +316,40 @@ CODATA_MASS = {
 def predict_atom_mp(label: str, Z: int, N: int, knot_type: str) -> dict:
     A = Z + N
     t1 = term_1_descended_mp(Z, N)
-    t23 = term_23_brane_tower_mp(Z, N)
+    # Term 2/3 brane tower: witness covers A≥2.  For A=1 (single
+    # nucleon) the brane tower is conceptually 0 — there are no
+    # inter-vortex bonds — but the per-generator volumes do exist.
+    # Surface as None with documented reason rather than failing.
+    try:
+        t23 = term_23_brane_tower_mp(Z, N)
+        t23_error = None
+    except (FileNotFoundError, KeyError) as exc:
+        t23 = (mp.mpf(0), mp.mpf(0))
+        t23_error = f"{type(exc).__name__}: {exc}"
     t4_pv, t4_pa = term_4_frobenius_mp(A)
     t5 = term_5_chirality_bw_mp(Z, N, knot_type)
-    t6 = term_6_habiro_residue_mp(A)
+    # Term 6 raises if witness/atom missing; surface in the per-atom
+    # row instead of crashing the whole sweep so that other atoms
+    # can still complete.  The error message is preserved verbatim.
+    try:
+        t6 = term_6_habiro_residue_mp(A)
+        t6_str = mp.nstr(t6, WORKING_DPS)
+        t6_error = None
+    except (FileNotFoundError, KeyError) as exc:
+        t6_str = None
+        t6_error = f"{type(exc).__name__}: {exc}"
     return {
         "atom": label, "A": A, "Z": Z, "N": N,
         "knot_type": knot_type,
         "term1_descended":      mp.nstr(t1, WORKING_DPS),
         "term2_single":         mp.nstr(t23[0], WORKING_DPS),
         "term3_pair":           mp.nstr(t23[1], WORKING_DPS),
+        "term23_error":         t23_error,
         "term4_frob_per_vortex": mp.nstr(t4_pv, WORKING_DPS),
         "term4_frob_per_A":     mp.nstr(t4_pa, WORKING_DPS),
         "term5_chirality_bw":   mp.nstr(t5, WORKING_DPS),
-        "term6_habiro_residue": (mp.nstr(t6, WORKING_DPS) if t6 is not None else None),
+        "term6_habiro_residue": t6_str,
+        "term6_error":          t6_error,
     }
 
 
