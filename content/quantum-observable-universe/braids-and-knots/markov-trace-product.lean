@@ -214,8 +214,10 @@ theorem markov_trace_product_recursion
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 theorem degree_bound (mtp : MarkovTraceProduct) :
     -- The polynomial degree of the trace product is ≤ n² - 1
+    -- Conclusion is the literal `True` placeholder pending a real
+    -- polynomial-degree formalisation.
     True := by
   -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-  sorry
+  trivial
 
 end QOU.Braiding

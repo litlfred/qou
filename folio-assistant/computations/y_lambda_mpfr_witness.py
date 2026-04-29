@@ -138,7 +138,7 @@ def main(ns: list[int], dps: int = 50) -> None:
         "prop:alpha-k-derivation-procedure",
         "tools/pyhecke-native (Rust kernel)",
     ]
-    out["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+    out["computedAt"] = datetime.now(timezone.utc).isoformat()
     out.setdefault("tables_by_n", {})
     out["dps"] = dps
 

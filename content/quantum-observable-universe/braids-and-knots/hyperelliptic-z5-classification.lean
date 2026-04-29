@@ -39,10 +39,17 @@ def AdmissibleBranchSize (n : ℕ) : Prop :=
 theorem minimal_z5_branch_size
     (n : ℕ) (h_adm : AdmissibleBranchSize n)
     (h_even : Even n) (h_min : 4 ≤ n) : 6 ≤ n := by
-  -- Proof sketch: admissible sizes in [4, 6) are ∅ (5 is odd and
-  -- size-5-orbit-only; 4 is not admissible since b ≤ 2 and
-  -- 5 · 0 + b ≤ 2 < 4).  Hence n ≥ 6.  Left as `sorry` pending
-  -- Lean environment validation.
-  sorry -- Ref: [bolza1887] https://doi.org/10.2307/2369402
+  -- Ref: [bolza1887] https://doi.org/10.2307/2369402
+  -- Cases n ∈ {4, 5}: n=4 not admissible (b ≤ 2 forces 5a + b ≤ 2 or
+  -- 5a + b ≥ 5); n=5 not even.
+  by_contra hlt
+  push_neg at hlt
+  interval_cases n
+  · -- n = 4: not admissible since b ≤ 2 and 5a + b = 4 has no nat solution
+    obtain ⟨a, b, hb, hab⟩ := h_adm
+    omega
+  · -- n = 5: not even
+    obtain ⟨k, hk⟩ := h_even
+    omega
 
 end QOU.X5Classification

@@ -79,13 +79,17 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     apply div_pos_of_neg_of_neg
     · have h1 : q < q⁻¹ := by
         calc q < 1 := hq_lt
-          _ < q⁻¹ := by rw [lt_inv_comm₀ (by linarith) hq]; exact hq_lt
+          _ < q⁻¹ := by
+              rw [lt_inv_comm₀ (by linarith) hq, inv_one]
+              exact hq_lt
       have h2 : q ^ n < (q⁻¹) ^ n :=
         pow_lt_pow_left₀ h1 hq.le (hn.ne')
       linarith
     · have : q < q⁻¹ := by
         calc q < 1 := hq_lt
-          _ < q⁻¹ := by rw [lt_inv_comm₀ (by linarith) hq]; exact hq_lt
+          _ < q⁻¹ := by
+              rw [lt_inv_comm₀ (by linarith) hq, inv_one]
+              exact hq_lt
       linarith
 
 /-! ## §2  Transition Amplitude on the Eigenbasis -/
@@ -94,11 +98,27 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     V^{⊗n} ≅ ⊕_{λ ⊢ n, ℓ(λ) ≤ 2} V_λ ⊗ S_λ, and the number of
     summands is ⌊n/2⌋ + 1, finite for every n.
 
+    DIAGNOSTIC: as written, the bound is **not** provable from the
+    `SchurWeylDecomposition` structure alone, because `partitions :
+    List YoungDiagram` is a free field — a user can pick any list
+    satisfying the per-element constraints (`partitions_size`,
+    `partitions_rank`), including duplicates. Without `Nodup`, the
+    length is unbounded.
+
+    To recover provability, sharpen the structure with
+    `partitions_nodup : partitions.Nodup` (then length ≤ count of
+    valid 2-row partitions of n, which is `n/2 + 1`). The
+    `complete` field already provides the surjectivity direction.
+    Sorry retained with this diagnosis.
+
     LaTeX: `\label{lem:feynman-eigenbasis-decomposition}` -/
 -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
 theorem eigenbasis_decomposition
     (decomp : PathIntegrals.SchurWeylDecomposition) :
     decomp.partitions.length ≤ decomp.n / 2 + 1 := by
+  -- See DIAGNOSTIC in docstring: structure needs `partitions_nodup`
+  -- to make this bound provable.
+  -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
   sorry
 
 /-- **Trace collapse.**  Given the complete eigenbasis, the Feynman
@@ -106,12 +126,15 @@ theorem eigenbasis_decomposition
     weighted sum over irreducible summands.  No regularisation is
     needed because H_n(R, q) is semisimple at non-root-of-unity q.
 
+    The conclusion (partition count ≤ n/2 + 1) is the same as
+    `eigenbasis_decomposition`; the trace collapse is a corollary.
+
     LaTeX: `\label{lem:feynman-trace-collapse}` -/
 -- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
 theorem trace_collapse
     (decomp : PathIntegrals.SchurWeylDecomposition) :
-    decomp.partitions.length ≤ decomp.n / 2 + 1 := by
-  sorry
+    decomp.partitions.length ≤ decomp.n / 2 + 1 :=
+  eigenbasis_decomposition decomp
 
 /-- **Markov identification.**  The Markov-weighted sum of partial
     traces on the eigenbasis equals the Jones–Markov trace on
@@ -162,9 +185,11 @@ structure FeynmanCategoricalTrace where
   transitionAmplitude : decomp.hecke.carrier → ℝ := fun h =>
     decomp.partitions.foldl (fun acc μ => acc + markovWeight μ * partialTrace μ h) 0
   /-- **Central identity**: the transition amplitude equals the Markov trace.
-      Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β)). -/
+      Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β)).
+      The `consistent` field bridges `decomp.hecke.carrier` and
+      `markov.hecke.carrier` so `markov.tr` accepts the cast element. -/
   amplitude_eq_markov : ∀ (h : decomp.hecke.carrier),
-    transitionAmplitude h = markov.tr h
+    transitionAmplitude h = markov.tr (consistent.symm ▸ h)
   /-- The partition list has at most ⌊n/2⌋ + 1 entries. -/
   partitions_count : decomp.partitions.length ≤ decomp.n / 2 + 1
 
@@ -181,7 +206,7 @@ theorem amplitude_finite_sum (fct : FeynmanCategoricalTrace) :
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem mass_eq_abs_amplitude (fct : FeynmanCategoricalTrace)
     (h : fct.decomp.hecke.carrier) :
-    |fct.markov.tr h| = |fct.transitionAmplitude h| := by
+    |fct.markov.tr (fct.consistent.symm ▸ h)| = |fct.transitionAmplitude h| := by
   rw [fct.amplitude_eq_markov h]
 
 /-! ## §3  Classical Limit: q → 1 Degeneration -/
@@ -298,13 +323,14 @@ structure SingleLevelMassAmplitude where
   braidElement : fct.decomp.hecke.carrier
   singleLevelMass : ℝ
   singleLevelMass_nonneg : 0 ≤ singleLevelMass
-  mass_eq_abs_tr : singleLevelMass = |fct.markov.tr braidElement|
+  mass_eq_abs_tr :
+    singleLevelMass = |fct.markov.tr (fct.consistent.symm ▸ braidElement)|
   mass_eq_abs_amplitude :
     singleLevelMass = |fct.transitionAmplitude braidElement|
 
 /-- Mass via Markov trace = mass via transition amplitude. -/
 theorem single_level_mass_consistent (slma : SingleLevelMassAmplitude) :
-    |slma.fct.markov.tr slma.braidElement| =
+    |slma.fct.markov.tr (slma.fct.consistent.symm ▸ slma.braidElement)| =
     |slma.fct.transitionAmplitude slma.braidElement| := by
   rw [slma.fct.amplitude_eq_markov]
 

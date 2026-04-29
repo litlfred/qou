@@ -30,11 +30,18 @@ noncomputable def zeta5 : ℂ :=
 def HyperellipticQuintic : ℂ × ℂ → Prop :=
   fun p => p.2 ^ 2 = p.1 ^ 5 - 1
 
-/-- ζ₅ raised to the fifth power is 1 (sorry pending Mathlib
-    lemma-name confirmation in a Lean environment). -/
+/-- ζ₅ raised to the fifth power is 1.
+    `zeta5^5 = (exp(2πi/5))^5 = exp(5 · 2πi/5) = exp(2πi) = 1`. -/
 -- Ref: [bolza1887] https://doi.org/10.2307/2369402
 theorem zeta5_pow_five : zeta5 ^ 5 = 1 := by
-  sorry
+  unfold zeta5
+  rw [← Complex.exp_nat_mul]
+  have h5 : (5 : ℕ) * (2 * (Real.pi : ℂ) * Complex.I / 5) =
+      2 * (Real.pi : ℂ) * Complex.I := by
+    push_cast
+    ring
+  rw [h5]
+  exact Complex.exp_two_pi_mul_I
 
 /-- **ℤ₅ automorphism of 𝒳₅**: the map (x, y) ↦ (ζ₅·x, y) preserves
     the defining equation y² = x⁵ - 1.

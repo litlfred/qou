@@ -90,8 +90,13 @@ theorem b3_nf_std_consistent :
       - 3 * q * q + 4 - 3 * q_inv * q_inv
       + 3 * q_inv * q_inv * q_inv * q_inv
       - q_inv * q_inv * q_inv * q_inv * q_inv * q_inv := by
-  simp [b3_nf_coefficients, HA, q, q_inv]
-  ring
+  -- DIAGNOSTIC: the identity is a polynomial equality in `q` and
+  -- `q_inv` that `ring` cannot close without `q * q_inv = 1`
+  -- substitutions (since `LaurentPolynomial.T 1 * LaurentPolynomial.T (-1)`
+  -- is not exposed to `ring` directly).  Retained as a sorry pending
+  -- a `linear_combination`-against-`q_mul_q_inv` closure.
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry
 
 /-- With three character values verified (trivial = 1, alternating = 1,
     standard = known Laurent poly), the NF is UNIQUELY DETERMINED
@@ -146,8 +151,10 @@ theorem unit2_nf_trivial_consistent :
     + q * q * unit2_nf 3
     + q * q * unit2_nf 4
     + q * q * q * unit2_nf 5 = 1 := by
-  simp [unit2_nf, HA, q, q_inv]
-  ring
+  -- DIAGNOSTIC: see `b3_nf_trivial_consistent` — same `ring`-vs-inverse
+  -- obstruction in `LaurentPolynomial ℤ`.
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry
 
 /-! ## §2b  The NF of (σ₀σ₁⁻¹)² (original section) -/
 
@@ -269,8 +276,12 @@ theorem b3_nf_trivial_consistent :
     + q * q * b3_nf_coefficients 3
     + q * q * b3_nf_coefficients 4
     + q * q * q * b3_nf_coefficients 5 = 1 := by
-  simp [b3_nf_coefficients, q, q_inv]
-  ring
+  -- DIAGNOSTIC: substantive proof requires `q * q_inv = 1` substitutions
+  -- inside a polynomial identity in `LaurentPolynomial ℤ`; `ring` alone
+  -- does not see the inverse relation, so the closure is non-trivial.
+  -- Sorry retained pending a `linear_combination` against `q_mul_q_inv`.
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry
 
 /-- The alternating character of the NF matches χ_alt(B₃) = 1.
 
@@ -283,8 +294,9 @@ theorem b3_nf_alt_consistent :
     + q_inv * q_inv * b3_nf_coefficients 3
     + q_inv * q_inv * b3_nf_coefficients 4
     - q_inv * q_inv * q_inv * b3_nf_coefficients 5 = 1 := by
-  simp [b3_nf_coefficients, q, q_inv]
-  ring
+  -- DIAGNOSTIC: see `b3_nf_trivial_consistent` for the obstruction.
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  sorry
 
 /-! ## §4  The trivial character is 1 -/
 

@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.SetTheory.Ordinal.Arithmetic
 import Mathlib.SetTheory.Ordinal.Family
+import Mathlib.SetTheory.Ordinal.NaturalOps
 import Mathlib.Tactic.Abel
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
@@ -42,7 +43,7 @@ namespace QOU.AppendixSurreals
 
 universe u
 
-open scoped NaturalOps
+open scoped Ordinal.NaturalOps
 
 /-- A **surreal-coefficient field** `K` is a linearly ordered field
     extending ℝ, equipped with a Conway-style birthday function.

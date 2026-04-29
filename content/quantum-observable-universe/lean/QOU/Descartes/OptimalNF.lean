@@ -64,8 +64,8 @@ theorem i9_absorb_cons (support : List HeckeWord) (a : ℕ) (rest : HeckeWord)
     IsI9Absorbable support (a :: rest ++ [g]) := by
   refine ⟨?_, ?_⟩
   · simp
-  · simp only [List.dropLast_append_of_ne_nil _ (by simp : [g] ≠ []),
-               List.dropLast_singleton, List.append_nil]
+  · -- `(xs ++ [g]).dropLast = xs` via `List.dropLast_concat`.
+    simp only [List.dropLast_concat]
     exact h_prefix
 
 -- ════════════════════════════════════════════════════════════════
@@ -206,8 +206,7 @@ theorem d_nonzero_preserves_prefix (S : List HeckeWord) (k : ℕ)
     left; exact h_closed w hw_left hlen
   · -- w = v ++ [k]: dropLast is v, which is in S
     left
-    simp only [List.dropLast_append_of_ne_nil _ (by simp : [k] ≠ []),
-               List.dropLast_singleton, List.append_nil]
+    simp only [List.dropLast_concat]
     exact hv
 
 -- ════════════════════════════════════════════════════════════════
@@ -246,7 +245,7 @@ theorem nf_support_prefix_closed (Z N : ℕ)
     simp only [standardBasis, List.mem_append, List.mem_singleton, List.mem_map,
                List.mem_range] at hw
     rcases hw with rfl | ⟨i, hi, rfl⟩
-    · exact absurd hg (List.not_mem_nil g)   -- g ∈ [] is impossible
+    · simp at hg   -- g ∈ [] is impossible
     · rw [List.mem_singleton] at hg; subst hg; exact hi  -- g = i < A-1
 
 -- ════════════════════════════════════════════════════════════════
@@ -311,13 +310,13 @@ theorem pp_extension_not_prefix_closed (S : List HeckeWord) (k : ℕ)
     ¬ IsPrefixClosed (S.map (fun w => w ++ [k])) := by
   intro h_closed
   -- w ++ [k] ∈ S.map(..) and has length ≥ 2
-  have hmem : w ++ [k] ∈ S.map (fun w => w ++ [k]) :=
-    List.mem_map_of_mem _ hw
+  have hmem : w ++ [k] ∈ S.map (fun w => w ++ [k]) := by
+    rw [List.mem_map]
+    exact ⟨w, hw, rfl⟩
   have hlen2 : (w ++ [k]).length ≥ 2 := by simp; omega
   -- Prefix closure: (w ++ [k]).dropLast = w must be in the mapped set
   have hdrop := h_closed (w ++ [k]) hmem hlen2
-  rw [List.dropLast_append_of_ne_nil _ (by simp : [k] ≠ []),
-      List.dropLast_single, List.append_nil] at hdrop
+  rw [List.dropLast_concat] at hdrop
   -- So w ∈ S.map(v ↦ v ++ [k]), meaning w = v ++ [k] for some v
   rw [List.mem_map] at hdrop
   obtain ⟨v, _, rfl⟩ := hdrop

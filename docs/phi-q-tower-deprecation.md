@@ -1,67 +1,26 @@
-# Φ_q Tower Code — RE-SCOPED (2026-04-29)
+# Φ_q Tower Code — DEPRECATED (2026-04-24)
 
-*Status marker for the Φ_q tower in the wake of the JSJ pivot.
-Originally written as a deprecation notice (2026-04-24); re-scoped
-on 2026-04-29 once the
-[Φ_q–JSJ archimedean bridge conjecture](../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
-made it clear that Φ_q and JSJ are dual presentations of the same
-archimedean number, not competing engines.*
+*Status marker written after the pivot to the JSJ + hyperbolic-volume
+framework described in [`path-to-1ppb.md`](./path-to-1ppb.md).*
 
 ## TL;DR
 
 The Φ_q-tower binding pipeline (`binding_per_block_log.py`,
 `canonical_plus_multibrane.py`, `unified_lift.py`, `kahler_lift.py`,
 `binding_full_pipeline.py`, `binding_fast_pipeline.py`,
-`binding_full_content_pair.py`) is **paused for binding-energy
-production runs** in favour of the JSJ canonical pipeline:
+`binding_full_content_pair.py`) is **paused** in favor of the JSJ
+canonical pipeline:
 
 $$B(Z, N) = \sum_{P \in \mathrm{JSJ}(K_{Z,N})}
            \rho_F(P) \cdot \mathrm{Vol}_{\mathrm{hyp}}(P).$$
 
-The Φ_q code is **kept as a theoretical engine and Phase 2 substrate**.
-Treat the files in "Files affected" below as legacy *for binding-energy
-production*, not as deprecated mathematics.
+The Φ_q code is **not deleted** — it may return if the JSJ path hits
+a wall, or if the pentagon-defect expansion (Phase 2 in the
+handover) needs the per-block Wedderburn machinery.  Treat
+everything in "Files affected" below as legacy / reference until
+further notice.
 
-## Why we're keeping Φ_q (not deprecating it)
-
-The new
-[Φ_q–JSJ archimedean bridge conjecture](../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
-asserts that, on the archimedean side,
-
-$$\Phi_q\bigl(\lvert V_S \rvert\bigr) \cdot z^{|S|}
-   \;=\;
-   \rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S),$$
-
-where $K_S$ is the
-[Φ_q-piece](../content/quantum-observable-universe/braids-and-knots/phi-q-piece.md)
-of the braid. Summed over $S$ this reproduces the JSJ piecewise sum.
-So Φ_q and JSJ are the **same archimedean number** computed through
-two different convergence schemes. JSJ wins on numerical precision for
-binding energies; Φ_q wins on three other axes:
-
-1. **Closed form per generator and per pair.** Each summand is a
-   Laurent polynomial in $q^{1/2}$ — differentiable in $q$,
-   $q$-asymptotically tractable, and amenable to symbolic identities
-   that SnapPy cannot expose.
-2. **Phase 2 substrate (pentagon defects).** The pentagon-defect
-   expansion in the 1ppb handover is *intrinsically* a Φ_q
-   computation: the pentagon identity is the Φ_q five-term relation.
-   JSJ has no analogue.
-3. **Categorical lineage.** Φ_q descends from
-   [`def:quantum-bloch-group`](../content/quantum-observable-universe/braids-and-knots/quantum-bloch-group.md)
-   and
-   [`cor:quantum-dilogarithm`](../content/quantum-observable-universe/braids-and-knots/cor-quantum-dilogarithm.md);
-   it is the natural form for talking to Wedderburn blocks, Bratteli
-   diagrams, and the Hecke trace.
-
-The empirical 0.15% Φ_q floor on $D$ is a **Kashaev-convergence
-floor**, not a model floor. Both pipelines compute the same atomic
-mass; SnapPy converges faster numerically while Φ_q stays open
-algebraically. The bridge conjecture lifts this from observation to
-mathematical claim (open, but Lean-axiomatised under
-[`conj:kashaev-volume-conjecture`](../content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md)).
-
-## Why the binding-energy pipeline pivoted
+## Why the pivot
 
 The per-block log formula `B = Σ_λ w_λ m_e Σ_i ln|Φ_q(V̂_i^λ)|`
 implemented in this branch reaches a **0.15% baseline floor** on
@@ -144,19 +103,14 @@ the mass engine uses Φ_q, JSJ volumes, or something else:
 ## How to un-deprecate (if needed)
 
 If the JSJ path hits an obstruction and the Φ_q tower must
-return as the *production* binding-energy engine:
+return:
 
 1. Delete the DEPRECATED banners from the seven code files listed
    above.
 2. Un-tag `delta-max-uniform-bound.ts` (remove the `deprecated`
    tag).
-3. Refresh this doc's status line back to "ACTIVE".
-
-Note that the **mathematical content** of the Φ_q tower is no longer
-deprecated as of 2026-04-29: see the
-[Φ_q–JSJ archimedean bridge](../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md)
-for the re-scoped status. The above instructions apply only to the
-binding-energy production pipeline.
+3. Refresh this doc's status line from "DEPRECATED" back to
+   "ACTIVE".
 
 No code needs to be rewritten — everything still runs as of this
 commit (sanity checks pass in `binding-per-block-log.witness.json`

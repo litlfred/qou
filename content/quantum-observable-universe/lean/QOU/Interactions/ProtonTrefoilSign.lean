@@ -145,11 +145,14 @@ theorem derivFactor_at_3_2_neg : derivFactor (3/2 : ℝ) < 0 := by
 theorem derivFactor_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
     derivFactor q < 0 := by
   unfold derivFactor
-  -- Goal: 4q⁶ − 9q⁴ − 3 < 0, i.e., 4q⁶ − 9q⁴ < 3
-  -- Write as q⁴(4q² − 9) < 3
-  -- For q ≤ 3/2: 4q² ≤ 9, so 4q² − 9 ≤ 0, so q⁴(4q²−9) ≤ 0 < 3.
-  nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q * (2 * q - 3)),
-             mul_self_nonneg (q ^ 2)]
+  -- Goal: 4q⁶ − 9q⁴ − 3 < 0, i.e., q⁴·(4q² − 9) − 3 < 0.
+  -- Strategy: bound `4q² − 9 ≤ 0` (from q ≤ 3/2), pair with q⁴ ≥ 0,
+  -- so `q⁴·(4q² − 9) ≤ 0`, hence the whole expression ≤ −3 < 0.
+  have h_pow_nonneg : (0 : ℝ) ≤ q^4 := by positivity
+  have h_quad_nonpos : 4 * q^2 - 9 ≤ 0 := by nlinarith [hq2]
+  have h_prod_nonpos : q^4 * (4 * q^2 - 9) ≤ 0 :=
+    mul_nonpos_of_nonneg_of_nonpos h_pow_nonneg h_quad_nonpos
+  nlinarith [h_prod_nonpos]
 
 /-- p'(q) = 2q · r(q) < 0 for q ∈ (1, 3/2].
     Since r(q) < 0 (proved above) and q > 0, the product is negative.
@@ -177,12 +180,16 @@ theorem signPoly_deriv_neg (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
 theorem signPoly_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
     signPoly q < 0 := by
   unfold signPoly
-  -- Goal: q⁸ − 3q⁶ − 3q² + 1 < 0
-  -- Equivalently: q⁶(q² − 3) + (1 − 3q²) < 0
-  -- Equivalently: q⁶(3 − q²) + (3q² − 1) > 0  (negated)
-  nlinarith [sq_nonneg q, sq_nonneg (q * q * q),
-             sq_nonneg (q - 1), sq_nonneg (3/2 - q),
-             mul_self_nonneg (q ^ 2 - 1)]
+  -- Goal: q⁸ − 3q⁶ − 3q² + 1 < 0.
+  -- Strategy:
+  --   1. q² ≤ 9/4 ⇒ q⁸ = q⁶·q² ≤ 3·q⁶, so q⁸ − 3q⁶ ≤ 0.
+  --   2. q ≥ 1 ⇒ q² ≥ 1 ⇒ 1 − 3q² ≤ −2.
+  --   3. Sum ≤ 0 + (−2) = −2 < 0.
+  have h_q2_ge : 1 ≤ q^2 := by nlinarith [hq1]
+  have h_q2_le : q^2 ≤ 9/4 := by nlinarith [hq2]
+  have h_q6_nonneg : 0 ≤ q^6 := by positivity
+  have h_q8_le : q^8 ≤ 3 * q^6 := by nlinarith [h_q2_le, h_q6_nonneg]
+  nlinarith [h_q8_le, h_q2_ge]
 
 /-- The proton e⁻ coefficient is negative for all q ∈ (1, 3/2].
 
@@ -227,12 +234,13 @@ theorem neutron_trefoil_neg (q : ℝ) (hq : q > 1) :
     neutronTrefoilCoeff q < 0 := by
   unfold neutronTrefoilCoeff
   apply div_neg_of_neg_of_pos
-  · -- Numerator: -(positive) < 0
-    apply neg_neg_of_neg
-    apply mul_pos
-    apply mul_pos
-    · exact mul_pos (sq_pos_of_ne_zero _ (by linarith)) (sq_pos_of_ne_zero _ (by linarith))
-    · exact sq_pos_of_ne_zero _ (by nlinarith)
+  · -- Numerator: -(positive) < 0.
+    -- Use `neg_lt_zero.mpr` and prove the inner product is positive.
+    rw [neg_lt_zero]
+    have h1 : (0:ℝ) < (q - 1)^2 := pow_pos (by linarith) 2
+    have h2 : (0:ℝ) < (q + 1)^2 := pow_pos (by linarith) 2
+    have h3 : (0:ℝ) < (q^2 + 1)^2 := pow_pos (by positivity) 2
+    exact mul_pos (mul_pos h1 h2) h3
   · -- Denominator: 4q⁴ > 0
     positivity
 
@@ -255,10 +263,11 @@ theorem neutron_more_negative (q : ℝ) (hq : q > 1) :
     trefoilDiff q < 0 := by
   unfold trefoilDiff
   apply div_neg_of_neg_of_pos
-  · apply neg_neg_of_neg
-    apply mul_pos
-    · exact mul_pos (pow_pos (by linarith) 4) (pow_pos (by linarith) 4)
-    · nlinarith [sq_nonneg (q ^ 2)]
+  · rw [neg_lt_zero]
+    have h1 : (0:ℝ) < (q - 1)^4 := pow_pos (by linarith) 4
+    have h2 : (0:ℝ) < (q + 1)^4 := pow_pos (by linarith) 4
+    have h3 : (0:ℝ) < q^4 + 1 := by nlinarith [sq_nonneg (q ^ 2)]
+    exact mul_pos (mul_pos h1 h2) h3
   · positivity
 
 end QOU.Interactions

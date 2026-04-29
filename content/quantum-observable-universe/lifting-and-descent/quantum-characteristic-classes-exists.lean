@@ -22,9 +22,14 @@ namespace QOU
     recursive brane tower, arising as the obstruction class of a
     central gerbe extension (Giraud's classification). -/
 -- Ref: [yekutieli2010]
-theorem QuantumCharClasses.exists : Nonempty QuantumCharacteristicClass := by
-  -- Witness: κ_n built from a Čech 2-cocycle on 𝒮.
+theorem QuantumCharClasses.exists : Nonempty QuantumCharacteristicClass :=
+  -- Trivial witness with ObstructionSpace = ℤ (AddCommGroup auto-synth)
+  -- and zero obstruction class. The intended Giraud / Čech 2-cocycle
+  -- witness is sharper but requires gerbe infrastructure not yet in
+  -- Mathlib. For pure Nonempty existence, ⟨0, ℤ⟩ suffices.
   -- Ref: [yekutieli2010]
-  sorry
+  ⟨{ level := 0
+     ObstructionSpace := ℤ
+     kappa := 0 }⟩
 
 end QOU

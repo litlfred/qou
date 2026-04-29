@@ -53,6 +53,9 @@ def TorusKnotLabel.product (τ : TorusKnotLabel) : ℕ := τ.r * τ.s
 def TorusKnotLabel.embeddableOn (τ : TorusKnotLabel) (g : ℕ) : Prop :=
   τ.seifertRank ≤ g
 
+instance (τ : TorusKnotLabel) (g : ℕ) : Decidable (τ.embeddableOn g) :=
+  inferInstanceAs (Decidable (τ.seifertRank ≤ g))
+
 /-- The degree of a torus knot in the degree tower.
     `τ(r, p^k)` has degree `k` where `p` is the largest prime
     power dividing `s`.  For simplicity, we define degree as:

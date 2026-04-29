@@ -75,8 +75,13 @@ theorem convergence_bound (q : ℝ) (hq : q > 1) (C₀ : ℝ) (hC : C₀ > 0)
     -- Each level gains a factor [2]_q² ≈ 4.04 in precision.
     -- Ultimate floor at k ≈ 13 from substrate parameter uncertainty.
     C₀ * (q + 1/q) ^ ((-2 : ℤ) * ((k : ℤ) - 3)) ≥ 0 := by
-  -- C₀ > 0 and (q+1/q)^n > 0 for q > 1
   -- Ref: [manuscript] §5.13
-  sorry
+  -- C₀ > 0 and (q + 1/q) > 0 for q > 1; integer power of a positive
+  -- real is positive, so the product is positive (hence ≥ 0).
+  have hq_pos : q > 0 := lt_trans zero_lt_one hq
+  have h_sum_pos : q + 1/q > 0 := by
+    have hinv : (1 : ℝ) / q > 0 := by positivity
+    linarith
+  positivity
 
 end QOU.BraidKnot

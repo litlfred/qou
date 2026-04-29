@@ -1,10 +1,9 @@
 {
-  "description": "Exact q-rational y_\u03bb via symbolic linear-system solve (sympy).  No interpolation, no Pad\u00e9 ambiguity \u2014 exact Markov-trace block weights as elements of Q(q^{1/2}).",
+  "description": "Exact q-rational y_λ via symbolic linear-system solve (sympy).  No interpolation, no Padé ambiguity — exact Markov-trace block weights as elements of Q(q^{1/2}).",
   "references": [
     "prop:alpha-k-derivation-procedure",
     "prop:explicit-alpha-k-h3"
   ],
-  "generated_at_utc": "2026-04-26T12:00:07.546462+00:00",
   "tables_by_n": {
     "2": {
       "n": 2,
@@ -102,5 +101,6 @@
         }
       ]
     }
-  }
+  },
+  "computedAt": "2026-04-26T12:00:07.546462+00:00"
 }

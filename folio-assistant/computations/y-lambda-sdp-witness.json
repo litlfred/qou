@@ -1,10 +1,9 @@
 {
-  "description": "LP feasibility cross-check for y_\u03bb: solves Ay=b with y\u22650 via cvxpy and compares to the linear-solve witness.  Certifies positivity of the Markov-trace block weights and provides a robust path at near-singular q.",
+  "description": "LP feasibility cross-check for y_λ: solves Ay=b with y≥0 via cvxpy and compares to the linear-solve witness.  Certifies positivity of the Markov-trace block weights and provides a robust path at near-singular q.",
   "references": [
     "prop:alpha-k-derivation-procedure",
     "prop:confinement-sdp"
   ],
-  "generated_at_utc": "2026-04-26T04:39:41.425651+00:00",
   "tables_by_n": {
     "2": {
       "n": 2,
@@ -142,5 +141,6 @@
         "all_within_1e-9": true
       }
     }
-  }
+  },
+  "computedAt": "2026-04-26T04:39:41.425651+00:00"
 }

@@ -446,7 +446,7 @@ def main() -> None:
 
     payload = {
         "schema": "sdp-q-algebraic-identifier/v1",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "q_0": float(Q0),
         "basis": {
             "size": B.size,
@@ -459,7 +459,7 @@ def main() -> None:
         "results": results,
     }
     out_path = Path(args.out)
-    out_path.write_text(json.dumps(payload, indent=2))
+    out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
     print(f"\n[witness] wrote {out_path}")
 
 

@@ -176,7 +176,7 @@ def main(ns: list[int]) -> None:
         "prop:spectral-sequence-h3-explicit",
         "prop:mass-tower-coefficient-stratification",
     ]
-    out["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+    out["computedAt"] = datetime.now(timezone.utc).isoformat()
     out.setdefault("tables_by_n", {})
     for n in ns:
         print(f"Solving y_λ at H_{n}(R, q) ({len(list(partitions_of(n)))} partitions)...")

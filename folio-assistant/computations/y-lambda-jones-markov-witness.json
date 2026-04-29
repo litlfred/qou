@@ -1,11 +1,10 @@
 {
-  "description": "Jones\u2013Markov block-weights y_\u03bb at H_n(R, q) for nuclear mass-tower \u03b1_k derivations.  Solves tr_M(w_\u03bc) = z^{n-len(\u03bc)} for cycle-type representatives w_\u03bc \u22a2 n.  Provides the per-n Markov-pairing weights used by sibling branches for structural \u03b1_k computation (no fitting).",
+  "description": "Jones–Markov block-weights y_λ at H_n(R, q) for nuclear mass-tower α_k derivations.  Solves tr_M(w_μ) = z^{n-len(μ)} for cycle-type representatives w_μ ⊢ n.  Provides the per-n Markov-pairing weights used by sibling branches for structural α_k computation (no fitting).",
   "references": [
     "prop:alpha-k-derivation-procedure",
     "prop:spectral-sequence-h3-explicit",
     "prop:mass-tower-coefficient-stratification"
   ],
-  "generated_at_utc": "2026-04-26T04:23:08.151948+00:00",
   "tables_by_n": {
     "10": {
       "n": 10,
@@ -4034,5 +4033,6 @@
         "linear_system_residual": 2.393918396847994e-16
       }
     }
-  }
+  },
+  "computedAt": "2026-04-26T04:23:08.151948+00:00"
 }
