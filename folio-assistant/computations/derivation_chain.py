@@ -62,6 +62,12 @@ TR_M_AT_Q0: dict[str, float] = {
 }
 
 
+# Pre-compiled module-level regex for SCRIPT_CITED `notes` validation
+# (per Gemini PR #484 review): tolerates leading whitespace after the
+# colon and is compiled once rather than rebuilt on every step check.
+_SCRIPT_NOTE_RE = re.compile(r"script:\s*", re.IGNORECASE)
+
+
 # ── First principles ────────────────────────────────────────────
 
 class FirstPrinciple(str, enum.Enum):
@@ -250,10 +256,8 @@ class DerivationChain:
             # SCRIPT_CITED steps should record the script path in notes.
             if step.trust_basis == TrustBasis.SCRIPT_CITED:
                 # Accept either `script:` or `Script:` (legacy chains)
-                # via case-insensitive regex match.
-                if step.notes is None or not re.search(
-                    r"script:", step.notes, re.IGNORECASE
-                ):
+                # via the module-level pre-compiled `_SCRIPT_NOTE_RE`.
+                if step.notes is None or not _SCRIPT_NOTE_RE.search(step.notes):
                     issues.append(
                         f"SCRIPT_CITED step {step.name!r} should record "
                         "the script path in `notes` (e.g. 'script: foo.py @ <sha>')"

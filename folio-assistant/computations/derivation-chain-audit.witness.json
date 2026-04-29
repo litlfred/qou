@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T21:10:01.811904+00:00",
-  "commitSha": "9f2f1ab79e94aa9e91bf006240334c8554c05959",
+  "computedAt": "2026-04-29T21:12:46.813730+00:00",
+  "commitSha": "8a0239d4216fa130fd210fdd11117186b5370940",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -386,7 +386,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
