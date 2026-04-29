@@ -73,8 +73,10 @@ Q0_MP = mp.mpf(repr(Q0_FLOAT))
 # ── Native-mpmath quantum dilogarithm ─────────────────────────
 
 def mp_Phi_q(z: mp.mpf, q: mp.mpf = Q0_MP, max_k: int = 5000) -> mp.mpf:
-    """Quantum dilogarithm `Φ_q(z) = Π_{k≥0} 1 / (1 − q^{-k} z)` at
-    mpmath precision.
+    """Quantum dilogarithm `Φ_q(z) = Π_{k≥1} 1 / (1 − q^{-k} z)` at
+    mpmath precision.  Matches the canonical definition used in
+    `_phi_q_util.phi_q` and `mass_endomorphism.Phi_q` (k starts at 1,
+    not 0 — the k=0 factor `1/(1-z)` is NOT included).
 
     Replaces `mass_endomorphism.Phi_q`, which uses Python `1.0`
     floats internally and caps the precision at f64.  Convergence
@@ -84,24 +86,24 @@ def mp_Phi_q(z: mp.mpf, q: mp.mpf = Q0_MP, max_k: int = 5000) -> mp.mpf:
     headroom.
 
     Returns +∞ (mp.mpf) when `|z| ≥ q` (formal-power-series radius
-    of convergence is `|q|`).
+    of convergence is `|q|`) or when any factor vanishes (pole hit).
     """
     z_mp = mp.mpf(z) if not isinstance(z, mp.mpf) else z
     if mp.fabs(z_mp) >= q:
         return mp.inf
     product = mp.mpf(1)
-    qi = mp.mpf(1) / q  # q^{-1}
-    qi_pow = mp.mpf(1)  # q^{-0} = 1
-    for k in range(max_k):
+    qi = mp.mpf(1) / q       # q^{-1}
+    qi_pow = qi              # k starts at 1 (canonical convention)
+    for _k in range(max_k):
         factor = 1 - qi_pow * z_mp
         if factor == 0:
-            return mp.inf  # hit a pole
+            return mp.inf    # hit a pole at z = q^k
         product /= factor
-        qi_pow *= qi
-        # Convergence break: when the contribution drops below
-        # the working precision, further k are noise.
+        # Convergence break: when the next contribution drops below
+        # working precision, further k are noise.
         if mp.fabs(qi_pow * z_mp) < mp.mpf(10) ** -(WORKING_DPS + 5):
             break
+        qi_pow *= qi
     return product
 
 
@@ -125,46 +127,100 @@ def term_1_descended_mp(Z: int, N: int) -> mp.mpf:
     return mp.fabs(tr)
 
 
+def _load_mpfr_native_volumes(Z: int, N: int) -> list[mp.mpf]:
+    """Load MPFR-native per-generator full-channel volumes from
+    `terms-2-3-atom-per-gen-mpfr-50dps.witness.json`.
+
+    Required because `hecke_core.atom_per_generator_volumes` is
+    f64-based (uses the global float `q0` and float accumulators),
+    so converting its outputs to `mp.mpf` cannot recover the lost
+    precision.  For 50-dps end-to-end Term 2/3, we must source the
+    volumes from an MPFR-native pipeline.
+
+    Raises FileNotFoundError if the witness is absent;
+    KeyError if no entry matches (Z, N).
+    """
+    path = Path(__file__).parent / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"MPFR-native Terms 2/3 volume witness missing at {path}; "
+            f"cannot meet 50-dps contract using f64-backed "
+            f"atom_per_generator_volumes. Run "
+            f"`terms_2_3_atom_per_gen_mpfr_50dps.py` to regenerate."
+        )
+    with path.open() as f:
+        data = json.load(f)
+    # Walk the witness JSON looking for an entry with matching Z, N
+    # and a `full_volumes` (or similar) field.  The schema may carry
+    # data under "results", "results_by_atom", "atoms", or in the
+    # data block itself; iterate flexibly.
+    def _iter(node):
+        if isinstance(node, dict):
+            yield node
+            for v in node.values():
+                yield from _iter(v)
+        elif isinstance(node, list):
+            for v in node:
+                yield from _iter(v)
+
+    for record in _iter(data):
+        if record.get("Z") != Z or record.get("N") != N:
+            continue
+        for key in ("full_volumes_mpfr", "full_volumes",
+                    "per_generator_full", "per_generator_volumes",
+                    "volumes"):
+            vols = record.get(key)
+            if not isinstance(vols, list):
+                continue
+            out: list[mp.mpf] = []
+            for entry in vols:
+                if isinstance(entry, dict):
+                    val = entry.get("full") or entry.get("volume") or entry.get("value")
+                    if val is None:
+                        out = []
+                        break
+                    out.append(mp.mpf(str(val)))
+                else:
+                    out.append(mp.mpf(str(entry)))
+            if out:
+                return out
+    raise KeyError(
+        f"No MPFR-native per-generator volumes found for Z={Z}, N={N} "
+        f"in {path.name}; check the witness layout or regenerate."
+    )
+
+
 def term_23_brane_tower_mp(Z: int, N: int) -> tuple[mp.mpf, mp.mpf]:
     """Terms 2 + 3: Σ_i Φ_q(|V̂_i|) + z² · Σ_{i<j} Φ_q(|V̂_i V̂_j|).
 
-    Per-generator volumes are returned by
-    `hecke_core.atom_per_generator_volumes` as a mix of sympy
-    rationals and Python floats (depending on the channel chosen).
-    We coerce each to `mp.mpf` via its `repr()` to preserve any
-    available precision before feeding into `mp_Phi_q`.
+    Per-generator volumes are loaded from the MPFR-native witness
+    `terms-2-3-atom-per-gen-mpfr-50dps.witness.json` (NOT from
+    `hecke_core.atom_per_generator_volumes`, which is f64-based).
+    Term 3 sums over **all pairs** i<j (not adjacent-only).
+    Divergent contributions (Φ_q = +∞) propagate to the result —
+    they signal real pole hits, not silent failures.
+
+    Returns (single, pair).  Either may be `mp.inf` if any
+    generator/pair magnitude reaches the Φ_q convergence boundary.
     """
-    vols_raw = atom_per_generator_volumes(Z, N, include_inter=True)
-    vols = [v['full'] if isinstance(v, dict) else v for v in vols_raw]
-
-    def _to_mp(x) -> mp.mpf:
-        if isinstance(x, mp.mpf):
-            return x
-        try:
-            return mp.mpf(repr(x))
-        except (TypeError, ValueError):
-            return mp.mpf(float(x))
-
-    vols_mp = [_to_mp(v) for v in vols]
+    vols_mp = _load_mpfr_native_volumes(Z, N)
     z_mp = mp.mpf(repr(z_mark))
 
     single = mp.mpf(0)
     for v in vols_mp:
-        try:
-            phi = mp_Phi_q(mp.fabs(v))
-            if phi != mp.inf:
-                single += phi
-        except (ValueError, ZeroDivisionError):
-            pass
+        phi = mp_Phi_q(mp.fabs(v))
+        if mp.isinf(phi):
+            return mp.inf, mp.mpf(0)
+        single += phi
 
     pair = mp.mpf(0)
-    for i in range(len(vols_mp) - 1):
-        try:
-            phi = mp_Phi_q(mp.fabs(vols_mp[i] * vols_mp[i + 1]))
-            if phi != mp.inf:
-                pair += phi
-        except (ValueError, ZeroDivisionError):
-            pass
+    n = len(vols_mp)
+    for i in range(n):
+        for j in range(i + 1, n):
+            phi = mp_Phi_q(mp.fabs(vols_mp[i] * vols_mp[j]))
+            if mp.isinf(phi):
+                return single, mp.inf
+            pair += phi
     pair *= z_mp ** 2
     return single, pair
 
