@@ -6,15 +6,14 @@ Companion to `build_markov_trace_assembly_chain.py` (proton).  Same
 structural pattern, specialised to the neutron's atomic-braid recipe.
 
 For the **neutron** (A=1, partitions of 3 = {(3), (2,1), (1,1,1)}):
-  - The σ-word T_w_n has 5 crossings on 3 strands, with mixed σ
-    and σ^{-1} types per `atomic-braid-recipe-n.derivation.json`.
-  - The character values χ^λ_q(T_w_n) depend on the n_+, n_- counts
-    of positive / negative crossings in T_w_n (recipe-determined,
-    SCRIPT_CITED until exact counts are extracted from the recipe
-    chain's output).
-  - Once the recipe-output characters are wired, all three weights
-    (w_(3), w_(2,1), w_(1,1,1)) reference the existing per-λ chains
-    (DERIVED), and the assembly is fully-trusted.
+  - The σ-word T_w_n has 5 crossings on 3 strands with mixed σ
+    and σ^{-1} types per `atomic-braid-recipe-n.derivation.json`:
+    n_+ = 3 positive σ, n_- = 2 negative σ^{-1}.
+  - The character values χ^λ_q(T_w_n) follow directly from these
+    counts via the per-λ Hoefsmit recipes (DERIVED).
+  - All three weights (w_(3), w_(2,1), w_(1,1,1)) reference the
+    existing per-λ chains (DERIVED), so the assembly is
+    **fully-trusted** with no SCRIPT_CITED steps.
 
 Output: `markov-trace-assembly-neutron.derivation.json`.
 """
@@ -176,14 +175,12 @@ def build() -> DerivationChain:
     steps.append(DerivationStep(
         name="Sign rep χ^(1,1,1)_q(T_w_n)",
         operation=(
-            "λ=(1,1,1) is 1-dimensional with σ_i ↦ −q^{-1}.  For "
-            "T_w_n's word with n_+ = 3, n_- = 2:\n"
-            "  χ^(1,1,1)_q(T_w_n) = (−q^{-1})^{n_+} · (q · (−1)^{-1})^{n_-}\n"
-            "Wait — σ^{-1} acts as the inverse of σ ↦ −q^{-1}, i.e. "
-            "as −q.  So σ-occurrences contribute (−q^{-1}) and σ^{-1}-"
-            "occurrences contribute (−q):\n"
-            "  χ^(1,1,1)_q(T_w_n) = (−q^{-1})^3 · (−q)^2 = "
-            "−q^{-3} · q^2 = −q^{-1}."
+            "λ=(1,1,1) is 1-dimensional with σ_i ↦ −q^{-1}; the inverse "
+            "σ_i^{-1} therefore acts as −q.  For T_w_n's word with "
+            "n_+ = 3 positive σ and n_- = 2 negative σ^{-1}:\n"
+            "  χ^(1,1,1)_q(T_w_n) = (−q^{-1})^{n_+} · (−q)^{n_-}\n"
+            "                     = (−q^{-1})^3 · (−q)^2\n"
+            "                     = −q^{-3} · q^2 = −q^{-1}."
         ),
         inputs=["partitions_of_3", "T_w_n",
                 FirstPrinciple.CATEGORICAL_ACTION.value],
@@ -231,8 +228,10 @@ def build() -> DerivationChain:
         gb_filtration_level=0,
         spectral_stratum="archimedean (q_0 ∈ ℝ_{>1})",
         notes=(
-            "Cross-checked at machine precision against the proton's "
-            "assembly (rel_diff ≤ 1e-12 across all paths)."
+            "Cross-checked at machine precision against the upstream "
+            "habiro_coefficients_atomic.py / habiro-coefficients-atomic "
+            "witness for the neutron (n=A=1, include_inter=False) — "
+            "rel_diff ≤ 1e-12 against that script's `tr_M_at_q0` field."
         ),
     ))
 

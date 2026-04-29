@@ -217,8 +217,9 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
     _atom_long = {"p": "proton", "n": "neutron"}.get(spec.short, "")
     step7_notes = (
         f"Derivation chain: markov-trace-assembly-{_atom_long}.derivation.json.  "
-        "Combines schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-"
-        "{sigma1,sigma2} + atomic-braid-recipe-{p,n} via finite-Jones."
+        f"Combines schur-weyl-weight-{{3,21,111}} + hoefsmit-rep-21-"
+        f"{{sigma1,sigma2}} + atomic-braid-recipe-{spec.short} "
+        f"via finite-Jones."
         if has_assembly_chain else
         "script: folio-assistant/computations/habiro_coefficients_atomic.py "
         "function `markov_trace_symbolic(Z, N, q, include_inter)`.  "
