@@ -59,7 +59,7 @@ product.*
 [`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/claude/brane-tower-regularization-xTt8V/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
 records a per-atom `max_grade` field labelled* $k_{\max}$. *This number
 is the maximal $k$ such that $T_w$ has nonzero $\lambda$-projection with
-$\dim_q V_\lambda \geq 2$, which is** distinct** from $k_\star(T_w)$
+$\dim_q V_\lambda \geq 2$, which is **distinct** from $k_\star(T_w)$
 defined above:*
 
 | Symbol | Definition | Source |
@@ -68,7 +68,7 @@ defined above:*
 | $k_\star(T_w)$ (this prop) | max GB-depth of $\lambda \in \mathrm{supp}(T_w)$ | curvature-rank stratification |
 
 *The two coincide whenever the GB-depth filtration is induced by the
-strand-size filtration on partitions, but they** can differ** when a
+strand-size filtration on partitions, but they **can differ** when a
 small-$k$ partition $\lambda$ sits at large GB-depth or vice versa.
 Tritium's anomalously high $k_{\max} = 9$ in the witness data is
 suspect under this distinction: the* $k_\star(T_w)$ *of T's actual

@@ -20,7 +20,10 @@ identity.
 -/
 
 import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Data.Finset.Basic
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 namespace QOU.WedderburnMass
 
@@ -77,9 +80,21 @@ theorem phi_q_categorical_truncation {R : Type*} [CommRing R]
     Finset.sum (Finset.range (collapse.k_star + 1)) mass_at_depth := by
   -- The vanishing of every j > k_star comes from `collapse.vanishing`
   -- (the spectral-sequence-collapse content), not as an extra
-  -- hypothesis. The remaining argument is the routine sum-splitting
-  -- on Finset.range (k + 1) = Finset.range (k_star + 1) ⊔ remainder.
+  -- hypothesis. The remaining argument is sum-splitting on
+  -- Finset.range (k + 1) = Finset.range (k_star + 1) ∪ [k_star + 1, k]
+  -- with the second piece vanishing termwise.
   -- Ref: [manuscript] prop:spectral-sequence-collapse
-  sorry
+  have hsub : Finset.range (collapse.k_star + 1) ⊆ Finset.range (k + 1) := by
+    intro j hj
+    simp only [Finset.mem_range] at *
+    omega
+  rw [← Finset.sum_sdiff hsub]
+  have htail : ∀ j ∈ Finset.range (k + 1) \ Finset.range (collapse.k_star + 1),
+      mass_at_depth j = 0 := by
+    intro j hj
+    simp only [Finset.mem_sdiff, Finset.mem_range] at hj
+    apply collapse.vanishing
+    omega
+  rw [Finset.sum_eq_zero htail, zero_add]
 
 end QOU.WedderburnMass

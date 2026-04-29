@@ -97,38 +97,48 @@ $E_\infty^{\geq 1, *} = 0$, this gives the corollary: any
 $k \geq k_\star(T_w)$ yields the same categorical brane-tower
 contribution. $\square$
 
-**Proof gaps (open).**
-The proof above is complete *modulo* two structural inputs that
-deserve their own verification:
+**Proof gap closure (partial).**
+The structural bridge for Step 4 — identifying the level-$k$ factor of
+$\Phi_q$ with the depth-$k$ centre stratum — is now provided by
+[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified).
+That proposition gives the depth-$k$ Frobenius-dual coefficients
+$\phi_q^{(k)}(z_i) \in Z^{(k)}(A)$ such that the partial product
+$\Phi_q^{[\leq k]}(z_i) = \sum_{j \leq k} \phi_q^{(j)}(z_i)$ on the
+nose, and the truncation identity
 
-1. **Step 4's identification**
-   $\mathfrak{m}^{(k)}_{q,\mathcal{K}}\big|_i = \Phi_q^{[\leq k]}(z_i) - \Phi_q^{[\leq k-1]}(z_i)$
-   is asserted via [cor:quantum-dilogarithm](#cor:quantum-dilogarithm)
-   but the latter states the level-$k$ archimedean torsion volume **is**
-   $\Phi_q(z_i)$ (analytic, infinite product), not the truncated
-   product. Bridging "infinite analytic $\Phi_q$" with "finite
-   curvature-rank-$k$ truncation" requires a refinement of
-   [cor:quantum-dilogarithm](#cor:quantum-dilogarithm) at the level of
-   the curvature-rank stratification — currently asserted, not
-   derived. This is the essential **categorical-versus-analytic gap**
-   of the brane tower.
+$$
+  \mathrm{tr}_M\!\bigl(\Phi_q(z_i) \cdot T_w\bigr)
+  \;=\;
+  \mathrm{tr}_M\!\bigl(\Phi_q^{[\leq k_\star(T_w)]}(z_i) \cdot T_w\bigr)
+$$
 
-2. **Step 5's truncation invariance** assumes that the analytic
-   factors $(1 - q^{-j}z)^{-1}$ for $j > k_\star(T_w)$ act trivially
-   on $\mathrm{proj}_{\mathrm{supp}(T_w)} Z(A)$. This is plausible
-   (they involve higher-depth centre strata with zero $T_w$-projection),
-   but requires a careful argument that the analytic product respects
-   the depth grading — which is non-obvious because the analytic
-   product mixes depths through the $z_i$-coordinate.
+holds as a Frobenius-paired equality, derived from depth-orthogonality
+under the Frobenius pairing on $Z(A)$.
 
-These gaps make the proposition a **conditional structural identity**
-rather than a fully proven theorem. The structural content — that the
-brane tower is centre-stratified and truncates at a finite depth
-$k_\star(T_w)$ structurally determined by NF support — survives the
-gaps. The open part is whether the analytic $\Phi_q$ product
-faithfully represents this finite centre-stratified sum at $|\hat{V}|\approx 1$
-or whether the analytic representation introduces spurious
-$E_\infty^{\geq 1, *}$-content that the categorical truncation discards.
+**Remaining gap (numerical, not structural).**
+The Frobenius-paired identity above is a **categorical equality**: the
+sums $\sum_k \langle \phi_q^{(k)}(z_i), T_w \rangle$ and the analytic
+$\mathrm{tr}_M(\Phi_q(z_i) \cdot T_w)$ agree as elements of $R$. To
+conclude that the *numerical* mass formula at $q = q_0$ with $\Phi_q$
+replaced by $\Phi_q^{[\leq k_\star(T_w)]}$ gives the same real-valued
+answer, one needs the depth-$k$ projections
+$\mathrm{proj}_{Z^{(k)}}(\Phi_q(z_i))$ to be uniformly bounded as
+$|z_i| \to q$. The analytic infinite product diverges in this limit;
+the Frobenius-paired identity says that whatever divergent content
+$\Phi_q(z_i)$ accumulates above depth $k_\star(T_w)$ pairs to zero
+with $T_w$, but the **uniform numerical bound** on the truncated
+remainder is the open part — the conjectural target of
+[$z$-Habiro completion](#conj:brane-tower-z-habiro).
+
+The structural content of the proposition — that the brane tower is
+centre-stratified, truncates categorically at a finite depth
+$k_\star(T_w)$ structurally determined by NF support, and the analytic
+$\Phi_q$ infinite product is a faithful Frobenius-pairing
+representation up to the depth-$k_\star$ truncation — is closed
+modulo the depth-stratified version of $\Phi_q$
+([prop:quantum-dilogarithm-stratified](#prop:quantum-dilogarithm-stratified)).
+The remaining gap is between the categorical equality and its
+real-valued numerical evaluation at $|\hat{V}|\approx 1$.
 
 The empirical $k=2$ subtractive sweet spot
 ([brane-tower in $z$-Habiro §"Empirical observation"](#conj:brane-tower-z-habiro))

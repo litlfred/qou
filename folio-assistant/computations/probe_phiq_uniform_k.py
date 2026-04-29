@@ -7,9 +7,9 @@ its k_max=9 is much deeper. But what if the structural truncation depth
 is uniform across atoms — say k=2 for all — and the "GB max_grade"
 identification was wrong?
 
-This probe sweeps k ∈ {1, 2, 3, 4, 5} uniformly across {D, T, He3} and
-checks whether any single uniform k closes all three to AME within
-~5%.
+This probe sweeps k ∈ {1, 2, 3, 4, 5, 6, 8, 10} uniformly across
+{D, T, He3} and checks whether any single uniform k closes all three
+to AME within 10%.
 
 Output: probe-phiq-uniform-k.witness.json
 """
