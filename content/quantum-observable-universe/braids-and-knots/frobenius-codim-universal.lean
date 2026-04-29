@@ -185,6 +185,94 @@ theorem hecke_n3_frobenius_codim (q : ℝ) :
   simp
   ring
 
+/-- The q-hook-length dimensions of the two partitions of n=2.
+    Indexed by `Fin 2`:
+      0 ↦ λ = (2)    (symmetric)    : dim_q = 1
+      1 ↦ λ = (1,1)  (alternating)  : dim_q = 1
+
+    Both partitions of 2 are self-conjugate-dual at the Frobenius
+    pairing level and have hook-product `[2]_q[1]_q = [2]_q`, so
+    `dim_q = [2]_q!/[2]_q = [1]_q = 1` for each. -/
+noncomputable def heckeH2DimQ (_q : ℝ) (_i : Fin 2) : ℝ := 1
+
+@[simp] theorem heckeH2DimQ_eq_one (q : ℝ) (i : Fin 2) :
+    heckeH2DimQ q i = 1 := rfl
+
+/-- **H_2 specialisation: τ(C_dim_q) = Σ_{λ⊢2} 1/dim_q(λ) = 2.**
+
+    The two partitions of 2 are `(2)` and `(1,1)`, both with
+    q-hook-length dimension `1`.  The sum is `1/1 + 1/1 = 2`,
+    saturating the self-dual lower bound `gb_filtration_self_dual_bound`.
+
+    This is the **base case** of the partition-sum identity used in
+    the unified mass formula.  At n=2 the formula is fully evaluated
+    in Lean — no opaque `frobeniusCoCasimirTrace q 2` axiom is
+    needed structurally; the bridge in `knot-mass-formula-unified`
+    just transports this proved value to the opaque side.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=2 base). -/
+theorem hecke_n2_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 2, 1 / heckeH2DimQ q i = 2 := by
+  rw [Fin.sum_univ_two]
+  simp
+
+/-- The q-hook-length dimensions of the five partitions of n=4.
+    Indexed by `Fin 5`:
+      0 ↦ λ = (4)        : dim_q = 1                     (symmetric)
+      1 ↦ λ = (3,1)      : dim_q = [3]_q = q²+1+q⁻²
+      2 ↦ λ = (2,2)      : dim_q = [4]_q/[2]_q = q²+q⁻²
+      3 ↦ λ = (2,1,1)    : dim_q = [3]_q                 (transpose of (3,1))
+      4 ↦ λ = (1,1,1,1)  : dim_q = 1                     (alternating)
+
+    Computed via the q-hook-length formula
+    `dim_q(λ) = [n]_q! / ∏_{x ∈ λ} [h_λ(x)]_q`:
+      H_q((4))     = [4]_q[3]_q[2]_q[1]_q   ⇒ dim_q = 1
+      H_q((3,1))   = [4]_q[2]_q[1]_q²        ⇒ dim_q = [3]_q
+      H_q((2,2))   = [3]_q[2]_q²[1]_q        ⇒ dim_q = [4]_q/[2]_q = q²+q⁻²
+      H_q((2,1,1)) = [4]_q[2]_q[1]_q²        ⇒ dim_q = [3]_q
+      H_q((1,1,1,1)) = [4]_q[3]_q[2]_q[1]_q  ⇒ dim_q = 1
+
+    The simplification `[4]_q/[2]_q = q²+q⁻²` uses the symmetric
+    q-number factorisation `[4]_q = q³+q+q⁻¹+q⁻³ = (q+q⁻¹)(q²+q⁻²)`. -/
+noncomputable def heckeH4DimQ (q : ℝ) (i : Fin 5) : ℝ :=
+  match i with
+  | ⟨0, _⟩ => 1
+  | ⟨1, _⟩ => q^2 + 1 + q⁻²
+  | ⟨2, _⟩ => q^2 + q⁻²
+  | ⟨3, _⟩ => q^2 + 1 + q⁻²
+  | ⟨4, _⟩ => 1
+  | ⟨n+5, h⟩ => absurd h (by omega)
+
+@[simp] theorem heckeH4DimQ_zero (q : ℝ) : heckeH4DimQ q 0 = 1 := rfl
+@[simp] theorem heckeH4DimQ_one  (q : ℝ) :
+    heckeH4DimQ q 1 = q^2 + 1 + q⁻² := rfl
+@[simp] theorem heckeH4DimQ_two  (q : ℝ) :
+    heckeH4DimQ q 2 = q^2 + q⁻² := rfl
+@[simp] theorem heckeH4DimQ_three (q : ℝ) :
+    heckeH4DimQ q 3 = q^2 + 1 + q⁻² := rfl
+@[simp] theorem heckeH4DimQ_four (q : ℝ) :
+    heckeH4DimQ q 4 = 1 := rfl
+
+/-- **H_4 specialisation: τ(C_dim_q) = Σ_{λ⊢4} 1/dim_q(λ) = 2 + 2/[3]_q + 1/(q²+q⁻²).**
+
+    The five partitions of 4 are `(4)`, `(3,1)`, `(2,2)`, `(2,1,1)`,
+    `(1,1,1,1)`, with q-hook-length dimensions `1`, `[3]_q`,
+    `[4]_q/[2]_q = q²+q⁻²`, `[3]_q`, `1`.  Summing `1/dim_q(λ)`:
+      `1 + 1/[3]_q + 1/(q²+q⁻²) + 1/[3]_q + 1
+        = 2 + 2/(q²+1+q⁻²) + 1/(q²+q⁻²)`.
+
+    The conjugate symmetry `(3,1) ↔ (2,1,1)` gives equal contributions
+    (both `1/[3]_q`), and the self-conjugate `(2,2)` contributes the
+    odd `1/(q²+q⁻²)` term.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=4 base). -/
+theorem hecke_n4_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 5, 1 / heckeH4DimQ q i
+      = 2 + 2 / (q^2 + 1 + q⁻²) + 1 / (q^2 + q⁻²) := by
+  rw [Fin.sum_univ_five]
+  simp
+  ring
+
 /-- **Self-dual lower bound on the Frobenius co-Casimir trace.**
 
     For any semisimple Frobenius algebra with at least two blocks

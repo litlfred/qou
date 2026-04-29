@@ -88,6 +88,81 @@ class UnifiedKnotMass where
 axiom frobenius_codim_trace_n3 (q : ℝ) :
     frobeniusCoCasimirTrace q 3 = 2 + 1 / (q + 1 / q)
 
+/-- **Companion bridge axiom (S3 at n = 2).**  The opaque
+    `frobeniusCoCasimirTrace q 2` agrees with the explicit
+    partition-sum value at n = 2:
+    `frobeniusCoCasimirTrace q 2 = Σ_{λ⊢2} 1/dim_q(λ) = 2`.
+
+    The right-hand side is proved as `hecke_n2_frobenius_codim` in
+    `frobenius-codim-universal.lean` (every partition of 2 has
+    `dim_q = 1` so the sum saturates the self-dual lower bound).
+
+    Like S3 at n = 3, this is a definitional bridge — the explicit
+    side is closed-form, only the opaque-to-explicit identification
+    is axiomatic.  No q-Wedderburn dependence (n = 2 has no
+    multiplicity-induced structure beyond the symmetric/alternating
+    decomposition, which is `Pℕ`-trivial).
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=2 base);
+    `frobenius-codim-universal.lean::hecke_n2_frobenius_codim`. -/
+axiom frobenius_codim_trace_n2 (q : ℝ) :
+    frobeniusCoCasimirTrace q 2 = 2
+
+/-- **Companion bridge axiom (S3 at n = 4).**  The opaque
+    `frobeniusCoCasimirTrace q 4` agrees with the explicit
+    partition-sum value at n = 4:
+    `frobeniusCoCasimirTrace q 4 = 2 + 2/[3]_q + 1/(q²+q⁻²)`.
+
+    The right-hand side is proved as `hecke_n4_frobenius_codim` in
+    `frobenius-codim-universal.lean` (five partitions of 4: `(4)`,
+    `(3,1)`, `(2,2)`, `(2,1,1)`, `(1ⁿ)` with q-hook dimensions
+    `1, [3]_q, [4]_q/[2]_q = q²+q⁻², [3]_q, 1`).
+
+    Like the n = 2 / n = 3 bridges, this is a definitional bridge:
+    the explicit partition sum is closed-form Lean, only the
+    opaque-to-explicit identification is axiomatic.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=4 base);
+    `frobenius-codim-universal.lean::hecke_n4_frobenius_codim`. -/
+axiom frobenius_codim_trace_n4 (q : ℝ) :
+    frobeniusCoCasimirTrace q 4
+      = 2 + 2 / (q^2 + 1 + q⁻²) + 1 / (q^2 + q⁻²)
+
+/-- **Bridge audit: tractability frontier.**  The explicit partition-
+    sum side is fully formal in Lean for `n ∈ {2, 3, 4}` (theorems
+    `hecke_n2_frobenius_codim`, `hecke_n3_frobenius_codim`,
+    `hecke_n4_frobenius_codim` in `frobenius-codim-universal.lean`).
+
+    For each such `n` the bridge from opaque `frobeniusCoCasimirTrace
+    q n` to the explicit value is one axiom (S3, S3@n=2, S3@n=4).
+    These are NOT blocked on Mathlib partition machinery — the
+    explicit side is a finite `Fin (p(n))` enumeration with
+    closed-form q-hook dimensions.
+
+    For `n ≥ 5` the explicit closed form requires either:
+      (a) a fresh Fin-enumeration of the `p(n)` partitions of n
+          (p(5) = 7, p(6) = 11, p(7) = 15, p(8) = 22, p(10) = 42 …),
+          each entry computed by the q-hook formula, OR
+      (b) the **Hecke recursion route**: leverage
+          `wedderburn_bratteli_recursion_holds` plus the existing
+          Markov-trace recursion (`markov_trace_product_recursion`)
+          to express `Σ_{λ⊢n+1} 1/dim_q(λ)` in terms of
+          `Σ_{λ⊢n} 1/dim_q(λ)` via Bratteli content factors.  This
+          route does NOT need Mathlib partitions; only the
+          constructive Markov-trace existence (currently `sorry` in
+          `wedderburn-bratteli-recursion.lean`).
+
+    The genuine **q-Wedderburn obstruction** therefore lives in:
+      (i)  proving the constructive Markov trace exists on
+           `H_n(q)` (Hoefsmit seminormal form), and
+      (ii) bundling the partition-sum recursion as a Lean
+           theorem (currently a `sorry`-blocked existence claim).
+
+    Both are downstream of the bona-fide axioms S1, S2, S3 — they
+    are *open Lean work*, not *open mathematical conjecture*. -/
+def s3_bridge_audit_status : String :=
+  "n=2 explicit; n=3 explicit; n=4 explicit; n≥5 via Bratteli recursion (sorry-blocked)"
+
 /-- Specialisation to single-nucleon (n = 3) trefoil.
     The Frobenius piece equals m_e · (2 + 1/[2]_q).
 
@@ -98,6 +173,24 @@ theorem single_nucleon_frobenius_correction
       frobeniusCoCasimirTrace U.q 3 = 2 + 1 / two_q := by
   refine ⟨U.q + 1 / U.q, rfl, ?_⟩
   exact frobenius_codim_trace_n3 U.q
+
+/-- Specialisation to n = 2: the Frobenius piece is exactly `2`.
+    Two strands → two partitions, both with `dim_q = 1`, so the
+    sum saturates the self-dual lower bound.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual`. -/
+theorem two_strand_frobenius_correction
+    (U : UnifiedKnotMass) (_hn : U.n = 2) :
+    frobeniusCoCasimirTrace U.q 2 = 2 :=
+  frobenius_codim_trace_n2 U.q
+
+/-- Specialisation to n = 4 (e.g. four-strand Borromean closure).
+    The Frobenius piece equals `2 + 2/[3]_q + 1/(q²+q⁻²)`. -/
+theorem four_strand_frobenius_correction
+    (U : UnifiedKnotMass) (_hn : U.n = 4) :
+    frobeniusCoCasimirTrace U.q 4
+      = 2 + 2 / (U.q^2 + 1 + U.q⁻²) + 1 / (U.q^2 + U.q⁻²) :=
+  frobenius_codim_trace_n4 U.q
 
 /-- **Trivial-vortex (identity braid) mass = Frobenius vacuum.**
 
