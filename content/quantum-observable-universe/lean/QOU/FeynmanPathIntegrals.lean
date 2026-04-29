@@ -94,11 +94,26 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     V^{⊗n} ≅ ⊕_{λ ⊢ n, ℓ(λ) ≤ 2} V_λ ⊗ S_λ, and the number of
     summands is ⌊n/2⌋ + 1, finite for every n.
 
+    DIAGNOSTIC: as written, the bound is **not** provable from the
+    `SchurWeylDecomposition` structure alone, because `partitions :
+    List YoungDiagram` is a free field — a user can pick any list
+    satisfying the per-element constraints (`partitions_size`,
+    `partitions_rank`), including duplicates. Without `Nodup`, the
+    length is unbounded.
+
+    To recover provability, sharpen the structure with
+    `partitions_nodup : partitions.Nodup` (then length ≤ count of
+    valid 2-row partitions of n, which is `n/2 + 1`). The
+    `complete` field already provides the surjectivity direction.
+    Sorry retained with this diagnosis.
+
     LaTeX: `\label{lem:feynman-eigenbasis-decomposition}` -/
 -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
 theorem eigenbasis_decomposition
     (decomp : PathIntegrals.SchurWeylDecomposition) :
     decomp.partitions.length ≤ decomp.n / 2 + 1 := by
+  -- See DIAGNOSTIC in docstring: structure needs `partitions_nodup`
+  -- to make this bound provable.
   sorry
 
 /-- **Trace collapse.**  Given the complete eigenbasis, the Feynman
