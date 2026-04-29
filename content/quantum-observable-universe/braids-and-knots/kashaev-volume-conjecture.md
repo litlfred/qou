@@ -27,7 +27,7 @@ recovers the hyperbolic volume; this is the content of the per-block
 [Kashaev as archimedean realization](#rem:kashaev-as-archimedean-realization)
 remark.
 
-### Lean axiomatisation (Workplan B)
+### Lean axiomatisation
 
 Per `CLAUDE.md` §3b ("Lean formalization of conjectures"), KVC is
 encoded in Lean as a **typeclass**

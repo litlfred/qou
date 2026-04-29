@@ -70,7 +70,7 @@ target, and explains the empirical 0.15% Φ$_q$ floor on $D$ as a
 relation — so the dilog form earns its keep as a *theoretical* tool
 while JSJ remains the numerical workhorse.
 
-### Workplan B: conditional Lean theorem
+### Conditional Lean theorem
 
 Per `CLAUDE.md` §3b, this conjecture is downstream of
 [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and
