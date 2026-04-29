@@ -359,6 +359,7 @@ export default chapter({
         "habiro-expansion-atomic",
         "z-habiro-ring",
         "brane-tower-z-habiro",
+        "qz-bicompletion",
         "quantum-dilogarithm-stratified",
         "quantum-dilogarithm-stratified-proof",
         "phi-q-categorical-truncation",
