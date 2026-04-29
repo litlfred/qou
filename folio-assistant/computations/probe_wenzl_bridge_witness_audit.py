@@ -82,7 +82,7 @@ def direct_tau_M(Z, N, include_inter=False):
     total = sp.Integer(0)
     for lam in partitions_of(3):
         chi = q_character_on_braid_word(lam, crossings, q)
-        chi_at_q0 = float(sp.simplify(chi).subs(q, q0).evalf(20))
+        chi_at_q0 = float(sp.cancel(chi).subs(q, q0).evalf(20))
         y = wenzl_y_lambda(lam)
         y_at_q0 = float(y.subs(q, q0).evalf(20))
         contrib = y * chi
@@ -93,7 +93,7 @@ def direct_tau_M(Z, N, include_inter=False):
             "contrib_at_q0": y_at_q0 * chi_at_q0,
         })
         total = total + contrib
-    val = float(sp.simplify(total).subs(q, q0).evalf(30))
+    val = float(sp.cancel(total).subs(q, q0).evalf(30))
     return val, max_idx, per_lambda
 
 
