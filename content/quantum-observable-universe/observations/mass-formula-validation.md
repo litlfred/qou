@@ -7,14 +7,14 @@ The 0.0000% entries are arithmetic checks, not predictions.
 ## The ruler: $m_e$ as external scaling parameter
 
 The substrate parameter $q$ determines all dimensionless mass ratios
-($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = 206.768$), but to convert
+($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$), but to convert
 these ratios into physical MeV we need one external input:
 $m_e = 0.51099895$ MeV (CODATA 2022). This is our **ruler** ---
 it fixes the absolute energy scale. Without $m_e$, QOU predicts
 ratios only.
 
 **Resolved**: $E_0$ is derivable from $q_0$ and $m_e$ alone
-([energy scale and Planck time](#rem:energy-scale-planck)):
+([energy scale and Planck time](#rem\:energy-scale-planck)):
 $E_0 = m_e/(q_0(q_0 - 1)) = m_e \cdot c_q^2 \cdot \hbar_q \approx 4.186$ MeV.
 This agrees with the calibrated value
 $E_0^{(\mathrm{cal})} = Q_\beta/|\Delta\mathrm{net}| \approx 4.155$ MeV
@@ -25,7 +25,7 @@ $Q_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
 (CODATA: $0.782$ MeV, $0.75\%$ error).  In this derivation
 the hadronic scale $E_0$ is itself derived from $Q_\beta(n)$;
 the complete framework uses three calibration inputs
-([calibration inputs](#rem:calibration-inputs)): $\mathrm{Vol}(4_1)$,
+([calibration inputs](#rem\:calibration-inputs)): $\mathrm{Vol}(4_1)$,
 $m_\mu/m_e$, and $m_e$.
 
 ## What the substrate parameter $q$ genuinely predicts
@@ -33,39 +33,39 @@ $m_\mu/m_e$, and $m_e$.
 The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 \to \hbar_q \to q_0$ yields:
 
-- **Mass ratios**: $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = 206.768$
+* **Mass ratios**: $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$
   (definitional, by construction).
-- **$Q$-values**: mass differences $\Delta m = \Delta\mathrm{net}
+* **$Q$-values**: mass differences $\Delta m = \Delta\mathrm{net}
   \times E_0$ where $E_0 = Q_\mathrm{neutron}/|\Delta\mathrm{net}|
   \approx 4.155$ MeV. This predicts e.g. $Q_\mathrm{≥2} \approx 0.457$
   MeV for the higher-order spectral components of neutron $\beta$-decay.
-- **Half-life ratios**: the $\log_q(ft)$ values from the transfer
+* **Half-life ratios**: the $\log_q(ft)$ values from the transfer
   matrix encode relative decay rates.
 
 **Mass predictions** ($k = 12$, zero fitted parameters, gluon-dressed
 nucleons, categorical Chebyshev shell, knot factors from Frobenius norm):
 
-| Atom | $A$ | Method | $\Delta/M$ |
-|:-----|----:|:-------|----------:|
-| ${}^1\mathrm{H}$ | 1 | free nucleon | $0.000001\%$ |
-| ${}^2\mathrm{H}$ | 2 | $B = \alpha \times \hat{V}_e$ (mass tower) | $0.00005\%$ |
-| ${}^3\mathrm{H}$ | 3 | BW, $a = 1-h^2$ (figure-eight) | $0.00002\%$ |
-| ${}^3\mathrm{He}$ | 3 | BW, $a = 1-h^2$ (figure-eight) | $0.000004\%$ |
-| ${}^4\mathrm{He}$ | 4 | BW, $a = (1-h^2)^2$ (Borromean-4) | $0.002\%$ |
-| ${}^{12}\mathrm{C}$ | 12 | BW, $a = 1$ | $0.010\%$ |
-| ${}^{40}\mathrm{Ca}$ | 40 | BW, $a = 1$ | $0.002\%$ |
-| ${}^{56}\mathrm{Fe}$ | 56 | BW, $a = 1$ | $0.005\%$ |
-| ${}^{208}\mathrm{Pb}$ | 208 | BW, $a = 1$ | $0.003\%$ |
+| Atom                  | $A$ | Method                                     |   $\Delta/M$ |
+| :-------------------- | --: | :----------------------------------------- | -----------: |
+| ${}^1\mathrm{H}$      |   1 | free nucleon                               | $0.000001\%$ |
+| ${}^2\mathrm{H}$      |   2 | $B = \alpha \times \hat{V}_e$ (mass tower) |  $0.00005\%$ |
+| ${}^3\mathrm{H}$      |   3 | BW, $a = 1-h^2$ (figure-eight)             |  $0.00002\%$ |
+| ${}^3\mathrm{He}$     |   3 | BW, $a = 1-h^2$ (figure-eight)             | $0.000004\%$ |
+| ${}^4\mathrm{He}$     |   4 | BW, $a = (1-h^2)^2$ (Borromean-4)          |    $0.002\%$ |
+| ${}^{12}\mathrm{C}$   |  12 | BW, $a = 1$                                |    $0.010\%$ |
+| ${}^{40}\mathrm{Ca}$  |  40 | BW, $a = 1$                                |    $0.002\%$ |
+| ${}^{56}\mathrm{Fe}$  |  56 | BW, $a = 1$                                |    $0.005\%$ |
+| ${}^{208}\mathrm{Pb}$ | 208 | BW, $a = 1$                                |    $0.003\%$ |
 
 Mean $|\Delta/M| = 0.010\%$ across 15 isotopes.
 
 **Operator dressing** (LP-derived gluon budget per nucleus):
 
-| $A$ range | Gluon budget | LP status |
-|:----------|:-------------|:----------|
-| $A \leq 12$ | $2\sigma_0$ per nucleon | all stable |
-| ${}^{16}\mathrm{O}$ | $2\sigma_0$/nucleon + $1\sigma_1$ | stable (1 extra $\sigma_1$) |
-| ${}^{14}\mathrm{C}$, $A \geq 20$ | needs multi-word ILP | unstable (single-operator insufficient) |
+| $A$ range                        | Gluon budget                      | LP status                               |
+| :------------------------------- | :-------------------------------- | :-------------------------------------- |
+| $A \leq 12$                      | $2\sigma_0$ per nucleon           | all stable                              |
+| ${}^{16}\mathrm{O}$              | $2\sigma_0$/nucleon + $1\sigma_1$ | stable (1 extra $\sigma_1$)             |
+| ${}^{14}\mathrm{C}$, $A \geq 20$ | needs multi-word ILP              | unstable (single-operator insufficient) |
 
 The gluon count is $A$-dependent.  The proton ILP gives $2\sigma_0$
 (minimum-action stabiliser); this suffices for $A \leq 12$.
@@ -73,25 +73,25 @@ At $A = 16$ (${}^{16}\mathrm{O}$), the $\sigma_0$ and $L_-$ channels
 violate Frobenius positivity, requiring one additional $\sigma_1$
 crossing.  For $A \geq 20$, no single-operator repetition stabilises
 the braid — the full multi-word ILP
-([universal ILP](#def:universal-ilp-algorithm)) is needed.
+([universal ILP](#def\:universal-ilp-algorithm)) is needed.
 
 **$Q$-values** from mass difference $Q = M_{\mathrm{par}} - M_{\mathrm{dau}}$
 (neutral atoms, consistent $k = 11$):
 
-| Decay | $Q_{\mathrm{QOU}}$ (MeV) | $Q_{\mathrm{exp}}$ (MeV) | $\delta$ |
-|:------|----------:|----------:|---------:|
-| $n \to {}^1\mathrm{H}$ | $0.78233$ | $0.78233$ | $0.00\%$ |
-| ${}^3\mathrm{H} \to {}^3\mathrm{He}$ | $0.01823$ | $0.01861$ | $-2.1\%$ |
+| Decay                                | $Q_{\mathrm{QOU}}$ (MeV) | $Q_{\mathrm{exp}}$ (MeV) | $\delta$ |
+| :----------------------------------- | -----------------------: | -----------------------: | -------: |
+| $n \to {}^1\mathrm{H}$               |                $0.78233$ |                $0.78233$ | $0.00\%$ |
+| ${}^3\mathrm{H} \to {}^3\mathrm{He}$ |                $0.01823$ |                $0.01861$ | $-2.1\%$ |
 
 **Genuine predictions summary** (observed vs predicted with %):
 
-| Quantity | Predicted | Observed | $\delta$ | Method |
-|:---------|----------:|---------:|---------:|:-------|
-| $m_\mu/m_e$ | $206.768$ | $206.768$ | $<0.001\%$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ (by construction) |
-| $B({}^2\mathrm{H})$ | $2.240$ MeV | $2.225$ MeV | $+0.7\%$ | BW $k{=}11$ with satellite factor $1{+}h$ |
-| $Q({}^3\mathrm{H})$ | $0.01823$ MeV | $0.01861$ MeV | $-2.1\%$ | Mass difference at $k{=}11$ |
-| $Q({}^{137}\mathrm{Cs})$ | $0.53750$ MeV | $0.51400$ MeV | $+4.6\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{Pauli}$ |
-| $Q({}^{210}\mathrm{Bi})$ | $1.28191$ MeV | $1.16270$ MeV | $+10.3\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$ |
+| Quantity                 |     Predicted |      Observed |   $\delta$ | Method                                                  |
+| :----------------------- | ------------: | ------------: | ---------: | :------------------------------------------------------ |
+| $m_\mu/m_e$              |     $206.768$ |     $206.768$ | $<0.001\%$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ (by construction)         |
+| $B({}^2\mathrm{H})$      |   $2.240$ MeV |   $2.225$ MeV |   $+0.7\%$ | BW $k{=}11$ with satellite factor $1{+}h$               |
+| $Q({}^3\mathrm{H})$      | $0.01823$ MeV | $0.01861$ MeV |   $-2.1\%$ | Mass difference at $k{=}11$                             |
+| $Q({}^{137}\mathrm{Cs})$ | $0.53750$ MeV | $0.51400$ MeV |   $+4.6\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{Pauli}$ |
+| $Q({}^{210}\mathrm{Bi})$ | $1.28191$ MeV | $1.16270$ MeV |  $+10.3\%$ | $\Delta\mathrm{net} \times E_0 \times F_\mathrm{deg2}$  |
 
 MAE $\approx 4.4\%$ across all six $\beta^-$ benchmarks. Light
 nuclei ($A \leq 14$) achieve $\leq 2.2\%$ with no shell corrections.
@@ -103,32 +103,32 @@ mass table entries.
 The Bethe--Weizsäcker formula at Hecke level $k = 12$ with
 gluon-dressed nucleons, categorical Chebyshev shell function,
 and knot factors from the Frobenius norm
-([nuclear knot classification](#prop:nuclear-knot-classification),
-[confined knot binding](#prop:confined-knot-binding)):
+([nuclear knot classification](#prop\:nuclear-knot-classification),
+[confined knot binding](#prop\:confined-knot-binding)):
 
-| Atom | $Z$ | $N$ | $M_{\mathrm{obs}}$ (MeV) | $M_{\mathrm{QOU}}$ (MeV) | $\Delta$ (MeV) | $\Delta/M$ |
-|:-----|----:|----:|-------------------------:|-------------------------:|---------------:|-----------:|
-| ${}^1$H | 1 | 0 | 938.783 | 938.783 | $-0.000$ | $-0.000001\%$ |
-| ${}^2$H | 1 | 1 | 1876.124 | 1876.125 | $+0.001$ | $+0.000051\%$ |
-| ${}^3$H | 1 | 2 | 2809.432 | 2809.432 | $-0.001$ | $-0.000017\%$ |
-| ${}^3$He | 2 | 1 | 2809.414 | 2809.413 | $-0.000$ | $-0.000004\%$ |
-| ${}^4$He | 2 | 2 | 3728.401 | 3728.480 | $+0.079$ | $+0.002\%$ |
-| ${}^6$Li | 3 | 3 | 5603.051 | 5605.242 | $+2.191$ | $+0.039\%$ |
-| ${}^7$Li | 3 | 4 | 6535.367 | 6537.107 | $+1.740$ | $+0.027\%$ |
-| ${}^9$Be | 4 | 5 | 8394.794 | 8396.028 | $+1.234$ | $+0.015\%$ |
-| ${}^{10}$B | 5 | 5 | 9325.513 | 9326.161 | $+0.648$ | $+0.007\%$ |
-| ${}^{12}$C | 6 | 6 | 11177.929 | 11178.548 | $+0.618$ | $+0.006\%$ |
-| ${}^{16}$O | 8 | 8 | 14899.169 | 14899.717 | $+0.548$ | $+0.004\%$ |
-| ${}^{40}$Ca | 20 | 20 | 37224.920 | 37225.150 | $+0.230$ | $+0.001\%$ |
-| ${}^{56}$Fe | 26 | 30 | 52103.063 | 52105.668 | $+2.605$ | $+0.005\%$ |
-| ${}^{208}$Pb | 82 | 126 | 193729.0 | 193734.6 | $+5.641$ | $+0.003\%$ |
-| ${}^{238}$U | 92 | 146 | 221742.9 | 221729.8 | $-13.097$ | $-0.006\%$ |
+| Atom         | $Z$ | $N$ | $M_{\mathrm{obs}}$ (MeV) | $M_{\mathrm{QOU}}$ (MeV) | $\Delta$ (MeV) |    $\Delta/M$ |
+| :----------- | --: | --: | -----------------------: | -----------------------: | -------------: | ------------: |
+| ${}^1$H      |   1 |   0 |                  938.783 |                  938.783 |       $-0.000$ | $-0.000001\%$ |
+| ${}^2$H      |   1 |   1 |                 1876.124 |                 1876.125 |       $+0.001$ | $+0.000051\%$ |
+| ${}^3$H      |   1 |   2 |                 2809.432 |                 2809.432 |       $-0.001$ | $-0.000017\%$ |
+| ${}^3$He     |   2 |   1 |                 2809.414 |                 2809.413 |       $-0.000$ | $-0.000004\%$ |
+| ${}^4$He     |   2 |   2 |                 3728.401 |                 3728.480 |       $+0.079$ |    $+0.002\%$ |
+| ${}^6$Li     |   3 |   3 |                 5603.051 |                 5605.242 |       $+2.191$ |    $+0.039\%$ |
+| ${}^7$Li     |   3 |   4 |                 6535.367 |                 6537.107 |       $+1.740$ |    $+0.027\%$ |
+| ${}^9$Be     |   4 |   5 |                 8394.794 |                 8396.028 |       $+1.234$ |    $+0.015\%$ |
+| ${}^{10}$B   |   5 |   5 |                 9325.513 |                 9326.161 |       $+0.648$ |    $+0.007\%$ |
+| ${}^{12}$C   |   6 |   6 |                11177.929 |                11178.548 |       $+0.618$ |    $+0.006\%$ |
+| ${}^{16}$O   |   8 |   8 |                14899.169 |                14899.717 |       $+0.548$ |    $+0.004\%$ |
+| ${}^{40}$Ca  |  20 |  20 |                37224.920 |                37225.150 |       $+0.230$ |    $+0.001\%$ |
+| ${}^{56}$Fe  |  26 |  30 |                52103.063 |                52105.668 |       $+2.605$ |    $+0.005\%$ |
+| ${}^{208}$Pb |  82 | 126 |                 193729.0 |                 193734.6 |       $+5.641$ |    $+0.003\%$ |
+| ${}^{238}$U  |  92 | 146 |                 221742.9 |                 221729.8 |      $-13.097$ |    $-0.006\%$ |
 
 All $\beta$-stable nuclei have $|\Delta/M| < 0.04\%$.
 Best: ${}^3$He ($0.000004\%$).
 Worst: ${}^6$Li ($0.039\%$), improved from $0.048\%$ by the
 Wigner energy term from the $(2,2)$ partition
-([Wigner np pairing](#prop:wigner-np-pairing)).
+([Wigner np pairing](#prop\:wigner-np-pairing)).
 
 For $Z = N$ even-even nuclei (${}^4$He, ${}^{12}$C, ${}^{16}$O,
 ${}^{40}$Ca): the entanglement Markov chain on the three $H_3(q)$
@@ -145,17 +145,17 @@ Kerov $q$-hook walk \cite{kerov1996} on the Young lattice.
 The knot factor for $A \geq 5$ is the \textbf{path probability ratio}
 in the Kerov walk: the ratio of the nuclear braid's specific
 entanglement path to the $q$-Plancherel average
-([jet-filtered knot factor](#conj:jet-filtered-knot-factor)).
+([jet-filtered knot factor](#conj\:jet-filtered-knot-factor)).
 
 ## Q-value table (atomic mass differences)
 
-| Reaction | $Q_{\mathrm{obs}}$ (MeV) | $Q_{\mathrm{QOU}}$ (MeV) | $\Delta/Q$ |
-|:---------|-------------------------:|-------------------------:|----------:|
-| $n \to {}^1\mathrm{H} + \bar\nu$ | 0.782 | 0.782 | $0.01\%$ |
-| ${}^3\mathrm{H} \to {}^3\mathrm{He} + \bar\nu$ | 0.019 | 0.018 | $-2.1\%$ |
-| ${}^2\mathrm{H} + {}^2\mathrm{H} \to {}^4\mathrm{He}$ | 23.85 | 23.77 | $-0.3\%$ |
-| ${}^2\mathrm{H} + {}^3\mathrm{H} \to {}^4\mathrm{He} + n$ | 17.59 | 17.51 | $-0.4\%$ |
-| ${}^4\mathrm{He} + {}^{12}\mathrm{C} \to {}^{16}\mathrm{O}$ | 7.16 | 7.31 | $+2.1\%$ |
+| Reaction                                                    | $Q_{\mathrm{obs}}$ (MeV) | $Q_{\mathrm{QOU}}$ (MeV) | $\Delta/Q$ |
+| :---------------------------------------------------------- | -----------------------: | -----------------------: | ---------: |
+| $n \to {}^1\mathrm{H} + \bar\nu$                            |                    0.782 |                    0.782 |   $0.01\%$ |
+| ${}^3\mathrm{H} \to {}^3\mathrm{He} + \bar\nu$              |                    0.019 |                    0.018 |   $-2.1\%$ |
+| ${}^2\mathrm{H} + {}^2\mathrm{H} \to {}^4\mathrm{He}$       |                    23.85 |                    23.77 |   $-0.3\%$ |
+| ${}^2\mathrm{H} + {}^3\mathrm{H} \to {}^4\mathrm{He} + n$   |                    17.59 |                    17.51 |   $-0.4\%$ |
+| ${}^4\mathrm{He} + {}^{12}\mathrm{C} \to {}^{16}\mathrm{O}$ |                     7.16 |                     7.31 |   $+2.1\%$ |
 
 Witness: `hadron-knot-table.witness.json`, `transition-nf.witness.json`.
 
@@ -170,9 +170,9 @@ mapping certificate polynomials to $B/A$ in MeV.
 
 Each certificate contains:
 
-- $\mathrm{tr\_alt}(q_0)$: alternating trace of the Skein polynomial
-- $\mathrm{net}(q_0)$: signed crossing sum
-- $F_\mathrm{Pauli}(q_0)$: Pauli exclusion statistical weight
+* $\mathrm{tr\_alt}(q_0)$: alternating trace of the Skein polynomial
+* $\mathrm{net}(q_0)$: signed crossing sum
+* $F_\mathrm{Pauli}(q_0)$: Pauli exclusion statistical weight
 
 Key finding: the net values span $\sim$50 orders of magnitude
 ($\sim10^{-8}$ for ${}^{11}\mathrm{B}$ to $\sim10^{47}$ for
@@ -193,13 +193,13 @@ words of $S_3$, i.e. $\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1,
 **Certificate field origins.** For a nuclear braid word $w$ with
 $A$ nucleons:
 
-- $\mathrm{net}(q_0)$: the sum of all 6 NF coefficients after
+* $\mathrm{net}(q_0)$: the sum of all 6 NF coefficients after
   reducing $w$ to the Gröbner--Shirshov normal form. This is the
   Markov trace of the braid.
-- $\mathrm{tr\_alt}(q_0)$: the alternating trace --- the projection
+* $\mathrm{tr\_alt}(q_0)$: the alternating trace --- the projection
   of the NF onto the alternating (sign) irrep of $S_3$. This picks
   out the antisymmetric channel.
-- $F_\mathrm{Pauli}(q_0)$: the ratio
+* $F_\mathrm{Pauli}(q_0)$: the ratio
   $\mathrm{tr\_alt}/\mathrm{tr\_sym}$, measuring the Pauli exclusion
   statistical weight. For identical fermions, $F_\mathrm{Pauli}$
   suppresses symmetric configurations.
@@ -235,26 +235,26 @@ nucleon has a *deficit* --- these are the channels it is receptive to
 
 **Proton** (uud, typed crossings):
 
-| Term | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |
-|:-----|-------:|--------:|--------:|------:|------:|------:|
-| Coeff | $-0.100$ | $+0.036$ | $+0.998$ | $+0.099$ | $+0.009$ | $-0.043$ |
-| Sign | $-$ | $+$ | $+$ | $+$ | $+$ | $-$ |
+| Term  | $\gamma$ | $\sigma_0$ | $\sigma_1$ |    $L_+$ |    $L_-$ |    $e^-$ |
+| :---- | -------: | ---------: | ---------: | -------: | -------: | -------: |
+| Coeff | $-0.100$ |   $+0.036$ |   $+0.998$ | $+0.099$ | $+0.009$ | $-0.043$ |
+| Sign  |      $-$ |        $+$ |        $+$ |      $+$ |      $+$ |      $-$ |
 
 **Neutron** (udd, typed crossings):
 
-| Term | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |
-|:-----|-------:|--------:|--------:|------:|------:|------:|
-| Coeff | $-0.202$ | $+0.048$ | $+1.009$ | $-0.010$ | $+0.009$ | $-0.044$ |
-| Sign | $-$ | $+$ | $+$ | $-$ | $+$ | $-$ |
+| Term  | $\gamma$ | $\sigma_0$ | $\sigma_1$ |    $L_+$ |    $L_-$ |    $e^-$ |
+| :---- | -------: | ---------: | ---------: | -------: | -------: | -------: |
+| Coeff | $-0.202$ |   $+0.048$ |   $+1.009$ | $-0.010$ | $+0.009$ | $-0.044$ |
+| Sign  |      $-$ |        $+$ |        $+$ |      $-$ |      $+$ |      $-$ |
 
 **Key observations:**
 
-- Both nucleons have negative $\gamma$ (identity) and $e^-$ (trefoil)
+* Both nucleons have negative $\gamma$ (identity) and $e^-$ (trefoil)
   coefficients. These channels carry mass-energy deficit.
-- The neutron additionally has a negative $L_+$ (Hopf link)
+* The neutron additionally has a negative $L_+$ (Hopf link)
   coefficient --- it is receptive to the $L_+$ gluon channel.
   The proton's $L_+$ is positive ($+0.099$).
-- $\mathrm{net}(p) = +0.999$, $\mathrm{net}(n) = +0.811$.
+* $\mathrm{net}(p) = +0.999$, $\mathrm{net}(n) = +0.811$.
   The $\Delta\mathrm{net} = -0.188$ drives the neutron $\beta$-decay
   $Q$-value.
 
@@ -270,7 +270,7 @@ spectator deuteron core adds only a small nuclear correction.
 **Physics of $B/A$.** The binding energy per nucleon $B/A$ measures
 how tightly nucleons are bound inside a nucleus. For free nucleons
 (${}^1\mathrm{H}$), $B/A = 0$. For iron-56, $B/A \approx 8.79$ MeV
---- the most tightly bound nucleus. The total binding energy is
+\--- the most tightly bound nucleus. The total binding energy is
 $B = Z m_\mathfrak{p} + N m_\mathfrak{n} - M_\mathrm{nucleus}$,
 i.e. the mass deficit between free constituents and the actual
 nucleus. $B/A$ varies smoothly from 0 (hydrogen) through a peak
@@ -320,7 +320,7 @@ The eigenvalues of the transfer matrix encode crossing energies in
 each irrep channel. The binding energy may emerge as the difference
 between eigenvalues of the interacting vs free Skein polynomials.
 This is the same as tracking cross-channel traffic on the jet bundle
---- the $6 \times 6$ is the spectral decomposition, and each eigenvalue
+\--- the $6 \times 6$ is the spectral decomposition, and each eigenvalue
 corresponds to a definite irrep of $S_3$.
 
 **Approach 3: Binding operator from NF receptivity.** The negative NF
@@ -328,9 +328,9 @@ coefficients of proton and neutron indicate which channels they are
 receptive to. A binding operator $\hat{B}$ must supply what the
 negative channels demand. Concretely:
 
-- Both p and n have negative $\gamma$ and $e^-$ --- the binding
+* Both p and n have negative $\gamma$ and $e^-$ --- the binding
   operator must supply identity and trefoil content.
-- The neutron has negative $L_+$ --- the binding operator must supply
+* The neutron has negative $L_+$ --- the binding operator must supply
   Hopf link content to the neutron.
 
 **Open problem.** The outstanding computational goal is to identify a
@@ -350,11 +350,11 @@ level repulsion.
 ## Isotope coverage
 
 | $Z$ range | Stable isotopes | With certificate | Coverage |
-|:----------|----------------:|-----------------:|---------:|
-| 1--5 | 7 | 7 | 100% |
-| 6--10 | 10 | 7 | 70% |
-| 11--20 | 25 | 2 | 8% |
-| 21--30 | 45 | 0 | 0% |
+| :-------- | --------------: | ---------------: | -------: |
+| 1--5      |               7 |                7 |     100% |
+| 6--10     |              10 |                7 |      70% |
+| 11--20    |              25 |                2 |       8% |
+| 21--30    |              45 |                0 |       0% |
 
 The hecke-engine computations scale as $O(A^2)$ in crossing pairs.
 For $A \leq 14$ the symbolic engine completes in seconds; for

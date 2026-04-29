@@ -7,10 +7,10 @@ semi-empirical scalings**.
 
 **Proposition.**
 *Let $\mathrm{NF}(\mathfrak{p})$ and $\mathrm{NF}(\mathfrak{n})$
-be the [proton](#def:categorical-proton) and
-[neutron](#def:categorical-neutron) normal forms in $H_3(q)$,
+be the [proton](#def\:categorical-proton) and
+[neutron](#def\:categorical-neutron) normal forms in $H_3(q)$,
 each constructed as $\mathcal{B}_3 \cdot \mathrm{crossings}(quarks)$
-([confinement selection](#prop:confinement-operator-selection)).
+([confinement selection](#prop\:confinement-operator-selection)).
 Let $T_{pn} = \frac{1}{2}(\sigma_0 + \sigma_0^{-1})$ be the
 time-reversal symmetric crossing operator.  Then the deuterium
 binding energy is*
@@ -27,7 +27,7 @@ $$
 
 Deuterium has exactly one inter-nucleon crossing site (the $p$-$n$
 pair).  The volume integral expansion
-([topological mass](#thm:topological-mass)) reduces to:
+([topological mass](#thm\:topological-mass)) reduces to:
 
 $$
   \mathrm{Vol}(K_d) = \mathrm{Vol}(K_p) + \mathrm{Vol}(K_n)
@@ -37,14 +37,12 @@ $$
 where $V_{pn}(q) = \mathrm{tr}_M(T_{pn} \cdot \mathrm{NF}(\mathfrak{n}))$
 is the Markov trace of the crossed neutron normal form.
 
-The crossing operator $T_{pn} = \frac{1}{2}(\sigma_0 + \sigma_0^{-1})
-= \sigma_0 - \frac{H_A}{2}$ is the unique time-reversal invariant
+The crossing operator $T_{pn} = \frac{1}{2}(\sigma_0 + \sigma_0^{-1}) = \sigma_0 - \frac{H_A}{2}$ is the unique time-reversal invariant
 crossing in $H_3(q)$ at generator $\sigma_0$.  It encodes the fact
 that the proton--neutron nuclear force does not distinguish which
 nucleon crosses over or under.
 
-The energy scale $\alpha = m_e \cdot \mathrm{Vol}(\mathcal{B}_3)
-= m_e \cdot 8G$ (where $G$ is Catalan's constant) is the
+The energy scale $\alpha = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) = m_e \cdot 8G$ (where $G$ is Catalan's constant) is the
 Borromean binding scale derived from the confinement operator.
 
 ## QED correction
@@ -81,26 +79,26 @@ correction.
 
 All inputs are derived from $q_0$ and quark content:
 
-| Quantity | Value |
-|:---|:---|
-| $q_0$ | $1.10998$ |
-| $H_A = q_0 - q_0^{-1}$ | $0.20906$ |
-| $z = 1/(\sqrt{q_0} + 1/\sqrt{q_0})$ | $0.49932$ |
-| $\mathrm{tr}_M(\mathfrak{p})$ | $0.43801$ |
-| $\mathrm{tr}_M(\mathfrak{n})$ | $0.32054$ |
-| $\mathrm{tr}_M(T_{pn} \cdot \mathfrak{n})$ | $0.16222$ |
-| $\Delta$ | $0.59632$ |
-| $\alpha = m_e \cdot 8G$ | $3.7445\;\text{MeV}$ |
-| $B_{\mathrm{strong}} = \Delta \times \alpha$ | $2.2329\;\text{MeV}$ |
-| $\alpha_{\mathrm{EM}}$ (Hecke, CS-corrected) | $1/137.04$ |
-| $B_{\mathrm{phys}} = B_{\mathrm{strong}} \times (1 - \alpha_{\mathrm{EM}}/2)$ | $2.2248\;\text{MeV}$ |
-| $B_{\mathrm{obs}}(d)$ (AME2020) | $2.2246\;\text{MeV}$ |
-| **Error** | **$+0.008\%$** ($+0.19$ keV) |
+| Quantity                                                                      | Value                        |
+| :---------------------------------------------------------------------------- | :--------------------------- |
+| $q_0$                                                                         | $1.10998$                    |
+| $H_A = q_0 - q_0^{-1}$                                                        | $0.20906$                    |
+| $z = 1/(\sqrt{q_0} + 1/\sqrt{q_0})$                                           | $0.49932$                    |
+| $\mathrm{tr}_M(\mathfrak{p})$                                                 | $0.43801$                    |
+| $\mathrm{tr}_M(\mathfrak{n})$                                                 | $0.32054$                    |
+| $\mathrm{tr}_M(T_{pn} \cdot \mathfrak{n})$                                    | $0.16222$                    |
+| $\Delta$                                                                      | $0.59632$                    |
+| $\alpha = m_e \cdot 8G$                                                       | $3.7445\;\text{MeV}$         |
+| $B_{\mathrm{strong}} = \Delta \times \alpha$                                  | $2.2329\;\text{MeV}$         |
+| $\alpha_{\mathrm{EM}}$ (Hecke, CS-corrected)                                  | $1/137.04$                   |
+| $B_{\mathrm{phys}} = B_{\mathrm{strong}} \times (1 - \alpha_{\mathrm{EM}}/2)$ | $2.2248\;\text{MeV}$         |
+| $B_{\mathrm{obs}}(d)$ (AME2020)                                               | $2.2246\;\text{MeV}$         |
+| **Error**                                                                     | **$+0.008\%$** ($+0.19$ keV) |
 
 The derivation chain:
 
 1. $\mathrm{Vol}(4_1) = 2.0299$ (SnapPy, hyperbolic volume)
-2. $m_\mu/m_e = 206.768$ (CODATA 2022, gives $q_0$)
+2. $m_\mu/m_e = :val[m_mu_over_e]{precision=6}$ (CODATA 2022, gives $q_0$)
 3. $m_e = 0.5110\;\text{MeV}$ (CODATA 2022, gives MeV scale)
 4. $G = 0.9160$ (Catalan's constant, computed)
 5. Quark content: $\mathfrak{p} = \mathfrak{u}\mathfrak{u}\mathfrak{d}$,

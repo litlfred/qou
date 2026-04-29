@@ -1,14 +1,14 @@
 The knot-particle generation framework
-([knot-particle generation](#def:knot-particle-generation)) reduces
+([knot-particle generation](#def\:knot-particle-generation)) reduces
 the entire mass spectrum to a computation on the seven $T_{m,n}$
-generators ([finiteness of generators](#prop:torus-knot-generators))
+generators ([finiteness of generators](#prop\:torus-knot-generators))
 and the two linking operations.  This remark traces the pipeline
 from generators through linking to CODATA-comparable masses.
 
 **Step 1: Bare generators have zero mass.**
 Every torus knot $T_{m,n}$ has zero hyperbolic volume (torus knots
 are non-hyperbolic), so the topological mass formula
-([topological mass formula](#prop:topological-mass-formula)) gives
+([topological mass formula](#prop\:topological-mass-formula)) gives
 
 $$
   \mathcal{M}_{\mathrm{bare}}(T_{m,n})
@@ -52,19 +52,19 @@ $$
 $$
 
 The figure-eight has hyperbolic volume
-$\mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3) \approx 2.02988$,
+$\mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3) \approx :val[Vol_4_1]{precision=6}$,
 so the muon-to-electron mass ratio is governed by the Higgs
 mechanism:
 
 $$
   \frac{m_\mu}{m_e}
   =  \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}
-   \approx  \frac{2.02988}{(1 - q^{-1})^2}
-  =  206.768\ldots
+   \approx  \frac{:val[Vol_4_1]{precision=6}}{(1 - q^{-1})^2}
+  =  :val[m_mu_over_e]{precision=6}\ldots
 $$
 
 matching CODATA to six significant figures
-([Skein mass relation](#rem:skein-mass-relation)).
+([Skein mass relation](#rem\:skein-mass-relation)).
 
 The muon ($T_{2,5}$, cinquefoil) lives **on the exceptional
 divisor** — its braid word carries a Hecke dressing
@@ -81,7 +81,7 @@ mechanism at Reeb degree $3$.
 **Step 4: Color-tube linking generates hadronic mass.**
 Baryons require three generators threaded through the coral tubes
 $(r, g, b)$
-([color tube coordinates](#def:color-tube-coordinates)).  The proton
+([color tube coordinates](#def\:color-tube-coordinates)).  The proton
 is:
 
 $$
@@ -103,19 +103,19 @@ where $Q_p(q) \in \mathbb{Z}[q^{\pm 1}]$ is the Skein polynomial
 of the three-component color-linked configuration, and
 $\Delta\mathcal{M}_{\mathrm{color}}$ encodes the cubic constraint
 from the color-tube fiber geometry.  The terminal resolution
-([terminal resolution](#prop:terminal-resolution)) evaluates this
+([terminal resolution](#prop\:terminal-resolution)) evaluates this
 to $938.272 \mathrm{MeV}$.
 
 **Step 5: The generative atomic chart.**
 Organizing by linking type and generator content, the mass spectrum
 arranges into a chart:
 
-| Sector | Linking | Generators | Mass source | Examples |
-|--------|---------|------------|-------------|----------|
-| Leptonic | Hopf ($\ell_H$) | $T_{2,2k+1}$ | Skein volume | $e, \mu, \tau$ |
-| Mesonic | Hopf ($\ell_H$) | $T_{m,n} \cup T_{m',n'}^{\sigma}$ | Pair annihilation polynomial | $\pi, K, D$ |
-| Baryonic | Color ($\ell_c$) + Hopf | $T_{m_i,n_i}^{\times 3}$ | Color-tube cubic + Skein | $p, n, \Lambda, \Sigma$ |
-| Nuclear | Iterated $\ell_H$ | Baryon composites | Multi-body Skein | $D, {}^4\mathrm{He}, \ldots$ |
+| Sector   | Linking                 | Generators                        | Mass source                  | Examples                     |
+| -------- | ----------------------- | --------------------------------- | ---------------------------- | ---------------------------- |
+| Leptonic | Hopf ($\ell_H$)         | $T_{2,2k+1}$                      | Skein volume                 | $e, \mu, \tau$               |
+| Mesonic  | Hopf ($\ell_H$)         | $T_{m,n} \cup T_{m',n'}^{\sigma}$ | Pair annihilation polynomial | $\pi, K, D$                  |
+| Baryonic | Color ($\ell_c$) + Hopf | $T_{m_i,n_i}^{\times 3}$          | Color-tube cubic + Skein     | $p, n, \Lambda, \Sigma$      |
+| Nuclear  | Iterated $\ell_H$       | Baryon composites                 | Multi-body Skein             | $D, {}^4\mathrm{He}, \ldots$ |
 
 **Rows** are indexed by the number of Hopf linkings (shell number).
 **Columns** separate colorless (leptonic) from colored (hadronic)

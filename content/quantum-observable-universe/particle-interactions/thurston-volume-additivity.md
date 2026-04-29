@@ -42,7 +42,7 @@ $$
 Torus knots have all crossings pressed onto a torus surface — every
 $z_c$ is real — so $V(T_{m,n}) = 0$.  This is the categorical
 explanation of why Seifert-fibered nucleons contribute zero hyperbolic
-volume in the [JSJ decomposition of the atomic braid](#prop:wedderburn-mass-formula).
+volume in the [JSJ decomposition of the atomic braid](#prop\:wedderburn-mass-formula).
 
 ## Extremality
 
@@ -57,7 +57,7 @@ $$
 
 the **Lobachevsky constant**.  The figure-eight knot $4_1$ has two
 ideal tetrahedra both of shape $e^{i\pi/3}$, giving
-$V(4_1) = 2 v_3 \approx 2.02988$ — the minimum volume among
+$V(4_1) = 2 v_3 \approx :val[Vol_4_1]{precision=6}$ — the minimum volume among
 hyperbolic knots.  This is the normalization used to pin the
 substrate parameter $q_0$ via
-[$\hbar_q^2 = V(4_1) / (m_\mu / m_e)$](#prop:local-substrate-q).
+[$\hbar_q^2 = V(4_1) / (m_\mu / m_e)$](#prop\:local-substrate-q).

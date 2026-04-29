@@ -1,6 +1,6 @@
 In any sufficiently small neighbourhood $U \subset M$ of the observable
 universe, the substrate parameter $q$
-([substrate parameter](#def:substrate-parameter)) satisfies
+([substrate parameter](#def\:substrate-parameter)) satisfies
 
 $$
   q\big|_U =  1.1097 \pm 0.001.
@@ -14,7 +14,6 @@ $$
   \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e},
 $$
 
-where $\mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3) \approx 2.02988$ is the
+where $\mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3) \approx :val[Vol_4_1]{precision=6}$ is the
 hyperbolic volume of the figure-eight knot and $m_\mu / m_e \approx 206.7682830$
 is the CODATA 2022 muon--electron mass ratio.
-

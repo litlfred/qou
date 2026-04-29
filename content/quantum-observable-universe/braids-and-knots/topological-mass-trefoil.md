@@ -1,5 +1,5 @@
 We compute the topological mass
-([mass formula](#prop:topological-mass-formula)) for two specific
+([mass formula](#prop\:topological-mass-formula)) for two specific
 knots: the trefoil $\tau(2,3)$ and the figure-eight knot $4_1$.
 
 **Trefoil knot $\tau(2,3)$ — the electron.**
@@ -17,7 +17,7 @@ $$
 
 where $\mathrm{Li}_2$ is the quantum dilogarithm and
 $\hbar_q = (q - 1)/q$ is the quantum Planck constant
-([mass identity](#def:mass-identity)).  The quantum dilogarithm
+([mass identity](#def\:mass-identity)).  The quantum dilogarithm
 interpolates between the classical volume (for hyperbolic knots)
 and the Chern--Simons invariant (for non-hyperbolic knots such as
 torus knots).  Evaluating at the substrate parameter
@@ -49,7 +49,7 @@ $$
 
 **Physical interpretation.**
 The figure-eight knot $4_1$ is the Higgs field
-([cohomological embedding](#prop:cohomological-embedding)).
+([cohomological embedding](#prop\:cohomological-embedding)).
 It is the unique amphichiral knot in $H^{0,1}(\Sigma_4)$, and
 its hyperbolic volume drives the mass mechanism.  The muon
 ($T_{2,5}$, cinquefoil) acquires its mass through the Higgs
@@ -64,7 +64,7 @@ $$
 $$
 
 which matches the muon-to-electron mass ratio
-$\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$
+$\mathfrak{m}_\mu / \mathfrak{m}_e \approx :val[m_mu_over_e]{precision=6}$ to within $0.2\%$
 (the electron mass $\mathfrak{m}_e = 1$ is the dimensionless unit).
 The correspondence
 

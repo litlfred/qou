@@ -22,11 +22,18 @@
  *      occurrence via `:val[name]{precision=N}`.
  *   4. `units` is rendered after the number as plain text (e.g.
  *      `MeV`, `\\text{MeV}`).  Use `null` for dimensionless values.
+ *   5. If the canonical witness is not yet identified, set
+ *      `needsReview: true` and provide a placeholder `witnessFile`
+ *      pointing at the closest existing witness.  The codemod skips
+ *      such entries and the validator emits a warning (not an error).
  *
  * All paths are repo-root relative.
  *
  * @module content/values/registry
  */
+
+/** Default rendering format for a witnessed value occurrence. */
+export type WitnessedValueFormat = "decimal" | "scientific" | "measured";
 
 /** A single registered witnessed value. */
 export interface WitnessedValueEntry {
@@ -62,6 +69,20 @@ export interface WitnessedValueEntry {
    * carries `format=measured`.
    */
   readonly errorEntry?: string;
+  /**
+   * Default rendering format when the directive does not specify one.
+   * Defaults to "decimal".
+   */
+  readonly format?: WitnessedValueFormat;
+  /**
+   * If true, this entry is a name reservation only — its
+   * `witnessFile`/`witnessPath` have not been confirmed by the repo
+   * owner.  The codemod skips entries with `needsReview: true`, and
+   * the validator downgrades resolution failures from error to
+   * warning.  Resolve by verifying the canonical witness and
+   * removing the flag.
+   */
+  readonly needsReview?: boolean;
 }
 
 /**
@@ -69,13 +90,19 @@ export interface WitnessedValueEntry {
  * by the renderer; `Object.freeze` keeps the table immutable at
  * runtime so accidental mutation in hot reload cannot corrupt the
  * source of truth.
+ *
+ * Entries are grouped by witness file for auditability — every
+ * entry whose `witnessFile` points at the same JSON tracks a
+ * coherent computation, so a single witness update propagates
+ * atomically to every value in its group.
  */
 export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
   Object.freeze({
-    // ── Substrate parameter q_0 ─────────────────────────────────
-    // Most-cited derived value in the paper (~30 .md files).
-    // Backed by the 50-digit pinning witness which records q to
-    // exactly 50 decimal digits via mpmath.
+    // ── q-pinning (50-digit, mpmath) ────────────────────────────
+    // The most-cited witness in the paper.  Every value below is
+    // backed by the same JSON file and was derived from Vol(4_1)
+    // and CODATA m_μ/m_e in a single mpmath run.
+
     q_0: Object.freeze({
       name: "q_0",
       description:
@@ -88,9 +115,17 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
     }),
 
-    // ── ℏ_q = q - q^{-1} ─────────────────────────────────────────
-    // The categorical Planck constant ℏ_q.  Same witness file,
-    // different path, so a single q update propagates atomically.
+    q_inv: Object.freeze({
+      name: "q_inv",
+      description: "Reciprocal substrate parameter q_0^{-1}.",
+      symbol: "q_0^{-1}",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.q_inv",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
     H_A: Object.freeze({
       name: "H_A",
       description: "Planck constant ℏ_q = q - q^{-1} at the substrate.",
@@ -102,16 +137,281 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
     }),
 
-    // ── q^{-1} ───────────────────────────────────────────────────
-    q_inv: Object.freeze({
-      name: "q_inv",
-      description: "Reciprocal substrate parameter q_0^{-1}.",
-      symbol: "q_0^{-1}",
+    hbar_q: Object.freeze({
+      name: "hbar_q",
+      description: "Categorical Planck constant ℏ_q = (q-1)/q.",
+      symbol: "\\hbar_q",
       witnessFile:
         "folio-assistant/computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q_inv",
+      witnessPath: "derived_50_digit.hbar_q",
       defaultPrecision: 4,
       units: null,
+    }),
+
+    hbar_q_sq: Object.freeze({
+      name: "hbar_q_sq",
+      description: "Squared Planck constant ℏ_q^2 — denominator of ξ(q).",
+      symbol: "\\hbar_q^{2}",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.hbar_q_sq",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    two_q: Object.freeze({
+      name: "two_q",
+      description: "Quantum integer [2]_q = q + q^{-1}.",
+      symbol: "[2]_q",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.two_q",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    qint_3: Object.freeze({
+      name: "qint_3",
+      description: "Quantum integer [3]_q.",
+      symbol: "[3]_q",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "quantum_integers.[3]_q",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    qint_4: Object.freeze({
+      name: "qint_4",
+      description: "Quantum integer [4]_q.",
+      symbol: "[4]_q",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "quantum_integers.[4]_q",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    qint_5: Object.freeze({
+      name: "qint_5",
+      description: "Quantum integer [5]_q.",
+      symbol: "[5]_q",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "quantum_integers.[5]_q",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    z_markov: Object.freeze({
+      name: "z_markov",
+      description: "Markov parameter z = 1/(q^{1/2} + q^{-1/2}).",
+      symbol: "z",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.z_markov",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    rho_q: Object.freeze({
+      name: "rho_q",
+      description: "Hecke trace density ρ_q.",
+      symbol: "\\rho_q",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.rho_q",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    s_skein: Object.freeze({
+      name: "s_skein",
+      description: "Skein normalisation s = z · (q - q^{-1}).",
+      symbol: "s",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.s_skein",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    codata_rel_unc: Object.freeze({
+      name: "codata_rel_unc",
+      description:
+        "CODATA relative uncertainty on m_μ/m_e — bounds physical anchoring of q_0.",
+      symbol: "\\sigma(q_0)/q_0",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "physical_anchoring_bound.codata_relative_uncertainty",
+      defaultPrecision: 3,
+      units: null,
+      format: "scientific",
+    }),
+
+    Vol_4_1: Object.freeze({
+      name: "Vol_4_1",
+      description: "Hyperbolic volume of the figure-eight knot 4_1.",
+      symbol: "\\mathrm{Vol}(4_1)",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "calibration_inputs.Vol_4_1_str",
+      defaultPrecision: 6,
+      units: null,
+    }),
+
+    m_mu_over_e: Object.freeze({
+      name: "m_mu_over_e",
+      description: "CODATA muon-electron mass ratio (calibration input).",
+      symbol: "m_\\mu/m_e",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "calibration_inputs.m_mu_over_e_str",
+      defaultPrecision: 7,
+      units: null,
+    }),
+
+    // ── Binding energies (canonical mass tables) ────────────────
+    // Verified against the canonical-mass-table and 4He pipelines.
+
+    B_4He_AME_MeV: Object.freeze({
+      name: "B_4He_AME_MeV",
+      description: "AME experimental binding energy of 4He (helium-4).",
+      symbol: "B_{\\mathrm{AME}}({}^4\\mathrm{He})",
+      witnessFile:
+        "folio-assistant/computations/4he-binding-full-pipeline.witness.json",
+      witnessPath: "B_AME_MeV",
+      defaultPrecision: 6,
+      units: "MeV",
+    }),
+
+    B_2H_AME_MeV: Object.freeze({
+      name: "B_2H_AME_MeV",
+      description: "AME experimental binding energy of deuterium (2H).",
+      symbol: "B_{\\mathrm{AME}}(\\mathrm{D})",
+      witnessFile:
+        "folio-assistant/computations/canonical-mass-table.witness.json",
+      witnessPath: "results.0.B_AME_MeV",
+      defaultPrecision: 5,
+      units: "MeV",
+    }),
+
+    // ── Pending entries (needsReview) ───────────────────────────
+    // Reserved names whose canonical witness has not been confirmed
+    // by the repo owner.  Codemod skips these; validator emits a
+    // warning if they appear in `.md` content.
+    //
+    // Resolve by:
+    //   1. Identifying the canonical witness file + dotted path
+    //   2. Verifying the value matches paper prose
+    //   3. Removing the `needsReview: true` flag
+    //
+    // The placeholder `witnessFile`/`witnessPath` point at the
+    // closest existing witness so resolution does not crash; do not
+    // rely on the placeholder values.
+
+    m_p_MeV: Object.freeze({
+      name: "m_p_MeV",
+      description:
+        "Proton rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+      symbol: "m_p",
+      witnessFile:
+        "folio-assistant/computations/canonical-mass-table.witness.json",
+      witnessPath: "parameters.q0",
+      defaultPrecision: 6,
+      units: "MeV",
+      needsReview: true,
+    }),
+
+    m_n_MeV: Object.freeze({
+      name: "m_n_MeV",
+      description:
+        "Neutron rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+      symbol: "m_n",
+      witnessFile:
+        "folio-assistant/computations/canonical-mass-table.witness.json",
+      witnessPath: "parameters.q0",
+      defaultPrecision: 6,
+      units: "MeV",
+      needsReview: true,
+    }),
+
+    m_e_MeV: Object.freeze({
+      name: "m_e_MeV",
+      description:
+        "Electron rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+      symbol: "m_e",
+      witnessFile:
+        "folio-assistant/computations/canonical-mass-table.witness.json",
+      witnessPath: "parameters.q0",
+      defaultPrecision: 6,
+      units: "MeV",
+      needsReview: true,
+    }),
+
+    inv_alpha: Object.freeze({
+      name: "inv_alpha",
+      description:
+        "Inverse fine-structure constant 1/α (CODATA).  Canonical witness pending.",
+      symbol: "\\alpha^{-1}",
+      witnessFile:
+        "folio-assistant/computations/alpha-high-precision.witness.json",
+      witnessPath: "computation",
+      defaultPrecision: 6,
+      units: null,
+      needsReview: true,
+    }),
+
+    c_q: Object.freeze({
+      name: "c_q",
+      description:
+        "Categorical speed of light c_q = 1/(q-1).  Canonical witness pending — derive from q-pinning.",
+      symbol: "c_q",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.q",
+      defaultPrecision: 4,
+      units: null,
+      needsReview: true,
+    }),
+
+    eta_q: Object.freeze({
+      name: "eta_q",
+      description:
+        "Operational entropy η_q = (2q-1)/q^3.  Canonical witness pending.",
+      symbol: "\\eta_q",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.q",
+      defaultPrecision: 4,
+      units: null,
+      needsReview: true,
+    }),
+
+    chi_q: Object.freeze({
+      name: "chi_q",
+      description:
+        "q-deformed Lyapunov exponent χ_q = 1/(2q-1).  Canonical witness pending.",
+      symbol: "\\chi_q",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.q",
+      defaultPrecision: 4,
+      units: null,
+      needsReview: true,
+    }),
+
+    d_H: Object.freeze({
+      name: "d_H",
+      description:
+        "Hausdorff dimension d_H(q) = (2q-1)^2/q^3.  Canonical witness pending.",
+      symbol: "d_H",
+      witnessFile:
+        "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      witnessPath: "derived_50_digit.q",
+      defaultPrecision: 4,
+      units: null,
+      needsReview: true,
     }),
   });
 
@@ -123,4 +423,17 @@ export function lookupValue(name: string): WitnessedValueEntry | undefined {
 /** Iterate over all registered names — useful for validation. */
 export function registeredNames(): readonly string[] {
   return Object.freeze(Object.keys(WITNESSED_VALUES));
+}
+
+/**
+ * Names of entries that are **fully verified** (no `needsReview` flag).
+ * The codemod uses this list to decide which literals to rewrite —
+ * pending entries are never auto-applied.
+ */
+export function verifiedNames(): readonly string[] {
+  return Object.freeze(
+    Object.values(WITNESSED_VALUES)
+      .filter(e => !e.needsReview)
+      .map(e => e.name),
+  );
 }
