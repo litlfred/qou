@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-04-29T18:21:23.461399+00:00",
-  "commitSha": "96129e9a310f5776e20df8164c21309fce7478f9",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-29T20:51:55.884598+00:00",
+  "commitSha": "15ee7082a8c2d36cb1a611eff65efd47f19dc199",
   "assertions": [
     {
       "name": "k=0 (electron) PLT vs GB — order-of-magnitude (A2.1+A2.2)",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 788,
+  "durationMs": 1811,
   "computation": "sw-period-thimble-equivalence",
   "scriptFile": "sw_period_thimble_equivalence.py",
   "scriptHash": "77ee95111bea",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "da70a3e2714055af54818f6b314ae3819c6d7952",
   "description": "Cross-validation of SW thimble periods Π^(k) (PLT path) against GB/jet real-axis closed-form integrands for k ∈ {0,1,2,3}.  Empirical certificate of A2.1+A2.2+A2.3+A2.5 of prop:sw-period-thimble-equivalence; A2.4 (real-axis = thimble sum at k = 1) is verified EMPIRICALLY only — per CLAUDE.md §3b the downstream proton-mass result remains a conjecture.",
   "contentBlock": "prop:sw-period-thimble-equivalence",
   "parameters": {
