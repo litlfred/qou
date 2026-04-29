@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:shell-correction-term-seven",
   title: "Shell-correction seventh term from GB-filtration level 5",
   lean: {
-    ref: "qou:QOU.WedderburnMass.shell_correction_term_seven",
+    ref: "qou:QOU.WedderburnMass.ShellCorrectionTermSeven",
     validation: "not_checked",
   },
   uses: [

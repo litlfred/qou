@@ -1,5 +1,5 @@
 /-!
-# QOU.WedderburnMass.shell_correction_term_seven
+# QOU.WedderburnMass.ShellCorrectionTermSeven
 
 Conjectural axiomatisation of the **seventh-term shell correction** to
 the unified knot-mass formula.  The unified six-term formula
@@ -39,9 +39,9 @@ import Mathlib.Data.Nat.Basic
 namespace QOU.WedderburnMass
 
 /-- A height-`h` partition of `n` represented as a list of part-sizes
-    (descending).  No further structure is needed at the
-    conjecture-statement level — concrete partition combinatorics
-    enter only through `shadow_price` and `scaling`. -/
+    of length `h` summing to `n`.  No sortedness constraint is
+    imposed at the conjecture-statement level — concrete partition
+    combinatorics enter only through `shadow_price` and `scaling`. -/
 structure HeightPartition (n h : ℕ) where
   parts : List ℕ
   parts_sum : parts.sum = n
@@ -49,13 +49,18 @@ structure HeightPartition (n h : ℕ) where
 
 /-- Atomic-braid Wedderburn datum: the inputs Term 7 needs at each
     nucleus `(Z, N, A)`.  `partitions` enumerates the height-`h`
-    partitions of `3A` carrying non-negative Plancherel weight. -/
+    partitions of `3A` carrying non-negative Plancherel weight;
+    `m_codata` is the experimentally measured mass; `m_other` is the
+    sum of the other six terms of the unified mass formula evaluated
+    on the same nucleus. -/
 structure AtomicWedderburnDatum (h : ℕ) where
   Z : ℕ
   N : ℕ
   A : ℕ
   mass_number : Z + N = A
   partitions : List (HeightPartition (3 * A) h)
+  m_codata : ℝ
+  m_other : ℝ
 
 /-- **Conjecture class.**  An instance asserts the existence of a
     height parameter `h_star`, a shadow-price coefficient
@@ -63,8 +68,12 @@ structure AtomicWedderburnDatum (h : ℕ) where
     Term-7 functional matching the Plancherel decomposition, and a
     sub-percent accuracy bound at `A ≥ 5`.
 
-    Only `sub_percent_accuracy` is `Prop`-valued; that field is the
-    conjecture and may be discharged by `sorry` in any instance. -/
+    Two fields are `Prop`-valued: `term_seven_decomposition` (an
+    equality fixing the closed-form expansion of `term_seven_value`)
+    and `sub_percent_accuracy` (the conjectural accuracy bound).  The
+    decomposition is provable in concrete instances by `rfl` once
+    `term_seven_value` is given by the fold expression; the accuracy
+    bound is the conjecture proper, and may be discharged by `sorry`. -/
 class ShellCorrectionTermSeven where
   /-- Height of the GB-filtration channel.  Empirically `h_star = 6`
       (level-5 GB-filtration; height-6 partitions). -/
@@ -89,15 +98,15 @@ class ShellCorrectionTermSeven where
             (fun acc λ =>
               acc + shadow_price λ q * scaling D.Z D.N D.A) 0)
   /-- **Conjectural accuracy bound.**  For every nucleus with
-      `A ≥ 5`, the extended formula matches CODATA mass to
-      sub-percent precision.  Provide `m_other` for the sum of the
-      other six terms; existence of a uniform `δ` with `|δ| ≤ 1%`
-      is the conjecture. -/
+      `A ≥ 5`, the extended formula matches the experimental mass to
+      sub-percent precision.  The datum `D` carries the target
+      `D.m_codata` and the sum of other terms `D.m_other`; existence
+      of a uniform `δ` with `|δ| ≤ 1%` is the conjecture. -/
   sub_percent_accuracy :
-    ∀ (D : AtomicWedderburnDatum h_star) (q m_e m_other m_codata : ℝ),
+    ∀ (D : AtomicWedderburnDatum h_star) (q m_e : ℝ),
       5 ≤ D.A →
       ∃ δ : ℝ, |δ| ≤ (1 : ℝ) / 100 ∧
-        m_codata = (1 + δ) * (term_seven_value D q m_e + m_other)
+        D.m_codata = (1 + δ) * (term_seven_value D q m_e + D.m_other)
 
 /-- **Downstream conditional theorem (A = 2 single-partition reduction).**
 
@@ -127,10 +136,10 @@ theorem term_seven_decomposition_apply
 theorem term_seven_sub_percent
     [inst : ShellCorrectionTermSeven]
     (D : AtomicWedderburnDatum inst.h_star)
-    (hA : 5 ≤ D.A) (q m_e m_other m_codata : ℝ) :
+    (hA : 5 ≤ D.A) (q m_e : ℝ) :
     ∃ δ : ℝ, |δ| ≤ (1 : ℝ) / 100 ∧
-      m_codata = (1 + δ) *
-        (inst.term_seven_value D q m_e + m_other) :=
-  inst.sub_percent_accuracy D q m_e m_other m_codata hA
+      D.m_codata = (1 + δ) *
+        (inst.term_seven_value D q m_e + D.m_other) :=
+  inst.sub_percent_accuracy D q m_e hA
 
 end QOU.WedderburnMass
