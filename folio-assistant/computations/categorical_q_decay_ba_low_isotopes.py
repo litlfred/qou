@@ -67,7 +67,27 @@ from q_parameter import Q as Q_0
 from q_parameter import Q_ERR as Q_0_ERR
 from witness_base import WitnessBuilder
 
+from functools import lru_cache
+
 HERE = Path(__file__).parent
+
+
+@lru_cache(maxsize=8)
+def _load_witness_cached(path_str: str) -> dict | None:
+    """Load and parse a witness JSON, caching by path string.
+
+    `load_canonical_b` is called once per isotope; without caching
+    each call would re-parse the same witness JSON.  Returns `None`
+    when the file is absent, preserving the previous "skip if missing"
+    semantics of each tier.  Cache is keyed by string (lru_cache keys
+    must be hashable — `Path` is hashable, but using `str` avoids any
+    ambiguity from path normalisation).
+    """
+    p = Path(path_str)
+    if not p.exists():
+        return None
+    with open(p) as f:
+        return json.load(f)
 
 # ─────────────────────────────────────────────────────────────────────
 # Source witnesses (canonical, 3-input scheme)
@@ -185,10 +205,9 @@ def load_canonical_b(sym: str):
 
     # Term 1+4 lives in mass-formula-6term.witness.json
     if "term-1-plus-4" in tier:
-        if not SIX_TERM_WITNESS.exists():
+        d = _load_witness_cached(str(SIX_TERM_WITNESS))
+        if d is None:
             return None
-        with open(SIX_TERM_WITNESS) as f:
-            d = json.load(f)
         rows = d.get("rows", {})
         if sym in rows:
             r = rows[sym]
@@ -218,10 +237,9 @@ def load_canonical_b(sym: str):
     # ud-half pn factor; works perfectly for D, not for A≥3.)
     if "kashaev-with-inter" in tier:
         kic_path = HERE / "d-inter-correction-test.witness.json"
-        if not kic_path.exists():
+        d = _load_witness_cached(str(kic_path))
+        if d is None:
             return None
-        with open(kic_path) as f:
-            d = json.load(f)
         for row in d.get("data", {}).get("atoms", []):
             if row.get("atom") == sym:
                 return {
@@ -238,10 +256,9 @@ def load_canonical_b(sym: str):
     # per-A heuristic that over-binds by ~20%.
     if "unified-per3A" in tier:
         unified_path = HERE / "unified-low-isotope-predictor.witness.json"
-        if not unified_path.exists():
+        d = _load_witness_cached(str(unified_path))
+        if d is None:
             return None
-        with open(unified_path) as f:
-            d = json.load(f)
         for row in d.get("data", {}).get("isotopes", []):
             if row.get("sym") == sym:
                 return {
@@ -253,10 +270,9 @@ def load_canonical_b(sym: str):
 
     # Term 5 lives in bw-chirality-isotopes.witness.json (rows is a list)
     if "term-5" in tier:
-        if not BW_WITNESS.exists():
+        d = _load_witness_cached(str(BW_WITNESS))
+        if d is None:
             return None
-        with open(BW_WITNESS) as f:
-            d = json.load(f)
         rows = d.get("rows", [])
         # row key is "isotope" not "sym" in this witness
         for row in rows:

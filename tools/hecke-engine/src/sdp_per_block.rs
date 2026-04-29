@@ -153,9 +153,16 @@ fn build_rho_lambda_for_basis_element(
         .collect();
     for &g in canonical_word {
         let idx = g as usize - 1;
-        if idx >= dense_gens.len() {
-            continue;
-        }
+        assert!(
+            idx < dense_gens.len(),
+            "build_rho_lambda_for_basis_element: generator s_{} out of range \
+             for shape {:?} (n_generators = {}). Canonical word {:?} is \
+             inconsistent with the partition's seminormal-form rank.",
+            g,
+            shape,
+            dense_gens.len(),
+            canonical_word
+        );
         prod = dense_dense_mul(&prod, &dense_gens[idx]);
     }
     prod
@@ -189,8 +196,18 @@ fn trace_from_svec(svec: &[f64], d: usize) -> f64 {
 // ──────────────────────────────────────────────────────────────────
 
 /// Internal: result of one per-block solve.
+///
+/// `c_block_full` carries every recovered c_w (including those
+/// near zero) so subsequent blocks can detect inconsistency at the
+/// merge step.  `c_block` is the |c_w| > 1e-9 filtered view used
+/// for the public API.  `lp_objective` is the LP value at the
+/// solver fixpoint (= Σ_w (c⁺_w + c⁻_w) on the local block), which
+/// equals `Σ_w |c_w|` on the support whenever strict complementary
+/// slackness holds.
 struct BlockResult {
+    c_block_full: BTreeMap<Vec<usize>, f64>,
     c_block: BTreeMap<Vec<usize>, f64>,
+    lp_objective: f64,
     status: String,
     iterations: u32,
 }
@@ -372,7 +389,9 @@ fn solve_single_block(
     let status = solver.solution.status;
     let solver_status = format!("{:?}", status);
     let iterations = solver.solution.iterations;
+    let mut c_block_full: BTreeMap<Vec<usize>, f64> = BTreeMap::new();
     let mut c_block: BTreeMap<Vec<usize>, f64> = BTreeMap::new();
+    let mut lp_objective = 0.0f64;
     if matches!(
         status,
         SolverStatus::Solved | SolverStatus::AlmostSolved
@@ -380,13 +399,18 @@ fn solve_single_block(
         let x = solver.solution.x.clone();
         for (i, perm) in perms.iter().enumerate() {
             let cw = x[i] - x[n_vars + i];
+            // Σ (c⁺_w + c⁻_w) — the actual LP objective the solver minimised.
+            lp_objective += x[i].abs() + x[n_vars + i].abs();
+            c_block_full.insert(perm.clone(), cw);
             if cw.abs() > 1e-9 {
                 c_block.insert(perm.clone(), cw);
             }
         }
     }
     BlockResult {
+        c_block_full,
         c_block,
+        lp_objective,
         status: solver_status,
         iterations,
     }
@@ -423,12 +447,27 @@ pub fn solve_per_block(
         block_dims.push(if sg.is_empty() { 1 } else { sg[0].len() });
     }
 
-    // Strategy A: solve block-by-block.  After each block, fix all
-    // recovered c_w values as hard constraints for subsequent blocks.
-    let mut fixed_c: BTreeMap<Vec<usize>, f64> = BTreeMap::new();
+    // Strategy A: solve block-by-block.  After each block, fix the
+    // FULL recovered c_w vector (including near-zeros) as hard
+    // constraints for subsequent blocks.  Including near-zeros is
+    // important: if the first block recovers c_w ≈ 0 and later blocks
+    // are allowed to drift to c_w ≠ 0, the first block's PSD
+    // feasibility may break.
+    //
+    // When the same perm reappears in a later block's solve, the new
+    // recovered value MUST agree with the previously-fixed one (the
+    // SingleCoefficient anchor enforces this).  We still cross-check
+    // the agreement with a tolerance — disagreement above
+    // CONSISTENCY_TOL is a hard failure (Strategy A has not converged
+    // to a jointly-feasible point) and is reported in `solver_status`.
+    const CONSISTENCY_TOL: f64 = 1e-3;
+    let mut fixed_c_full: BTreeMap<Vec<usize>, f64> = BTreeMap::new();
     let mut last_status = String::from("not run");
     let mut total_iter = 0u32;
+    let mut total_lp_obj = 0.0f64;
     let mut block_statuses: Vec<String> = Vec::with_capacity(parts.len());
+    let mut max_consistency_drift: f64 = 0.0;
+    let mut consistency_failed = false;
 
     for shape in &parts {
         let result = solve_single_block(
@@ -437,7 +476,7 @@ pub fn solve_per_block(
             &perm_to_idx,
             q,
             anchors,
-            &fixed_c,
+            &fixed_c_full,
         );
         block_statuses.push(format!("{:?}: {}", shape, result.status));
         last_status = result.status.clone();
@@ -475,12 +514,32 @@ pub fn solve_per_block(
                 iterations: total_iter,
             };
         }
-        // Merge this block's c_w into the fixed set.  When the same
-        // perm appears in multiple blocks (it always does — every
-        // perm contributes to every block), the value should agree:
-        // we keep the FIRST block's value as the canonical fix.
-        for (perm, val) in result.c_block {
-            fixed_c.entry(perm).or_insert(val);
+        // The first block solve is the only one whose objective is
+        // unconstrained by fixed-c equalities; it is the genuine LP
+        // value for the global problem.  Subsequent block objectives
+        // are degenerate (most variables fixed by SingleCoefficient
+        // anchors), so we don't accumulate them.
+        if fixed_c_full.is_empty() {
+            total_lp_obj = result.lp_objective;
+        }
+        // Cross-check consistency: every perm previously fixed must
+        // re-emerge from this block's solver with ≤ CONSISTENCY_TOL drift.
+        for (perm, &new_val) in &result.c_block_full {
+            if let Some(&old_val) = fixed_c_full.get(perm) {
+                let drift = (new_val - old_val).abs();
+                if drift > max_consistency_drift {
+                    max_consistency_drift = drift;
+                }
+                if drift > CONSISTENCY_TOL {
+                    consistency_failed = true;
+                }
+            }
+        }
+        // Add new perms not yet fixed.  `or_insert` is correct here:
+        // the consistency loop above flagged any disagreement; for
+        // already-present keys we keep the canonical (first) value.
+        for (perm, val) in result.c_block_full {
+            fixed_c_full.entry(perm).or_insert(val);
         }
     }
 
@@ -493,8 +552,33 @@ pub fn solve_per_block(
         "per-block: {}",
         block_statuses.join(" | ")
     ));
+    anchor_descrs.push(format!(
+        "max_consistency_drift: {:.3e} (tol={:.0e})",
+        max_consistency_drift, CONSISTENCY_TOL
+    ));
 
-    let l1: f64 = fixed_c.values().map(|&v| v.abs()).sum();
+    // Filter c_solved to the |c_w| > 1e-9 support for the public API.
+    let c_solved: BTreeMap<Vec<usize>, f64> = fixed_c_full
+        .into_iter()
+        .filter(|&(_, v)| v.abs() > 1e-9)
+        .collect();
+
+    // l1_norm is the LP-objective value Σ_w (c⁺_w + c⁻_w) from the
+    // first block's solver fixpoint, matching `solve_canonical_t_w`'s
+    // convention.  Under strict complementarity this equals
+    // Σ_w |c_w|; small numerical non-complementarity may make them
+    // differ at the ≤ 1e-9 level.
+    let l1 = total_lp_obj;
+
+    let final_status = if consistency_failed {
+        format!(
+            "PerBlock-{}-CONSISTENCY-FAIL-drift={:.3e}",
+            last_status, max_consistency_drift
+        )
+    } else {
+        format!("PerBlock-{}", last_status)
+    };
+
     SolverReport {
         n,
         q0: q,
@@ -503,9 +587,9 @@ pub fn solve_per_block(
         block_dims,
         filtration_cutoff,
         anchors: anchor_descrs,
-        c_solved: fixed_c,
+        c_solved,
         l1_norm: l1,
-        solver_status: format!("PerBlock-{}", last_status),
+        solver_status: final_status,
         iterations: total_iter,
     }
 }

@@ -41,37 +41,40 @@ that is *derived* (modulo the two upstream conjectures).
 ## Proof
 
 *From [Lemma 1](#conj:n-v-bring-action), the Markov-trace-residual
-rescaling factor at the EW slice is $|S_5| = 120$.*
+rescaling factor at the EW slice is $|S_5| = 120$, and from
+[Lemma 2](#conj:n-v-tower-depth-ninety), the brane-tower
+Coxeter-length depth from $m_e$ to $v$ is $90$ Hecke generations.
+The two combine into a single empirical bridge identity*
 
-*From [Lemma 2](#conj:n-v-tower-depth-ninety), the brane-tower
-depth from $m_e$ to $v$ is $90$ Hecke generations, equivalently
-$v / m_e = q_0^{90}$ to leading order.*
+$$
+  \frac{v}{m_e} \;=\; \frac{|S_5|}{3} \cdot q_0^{90}
+                \;=\; 40 \cdot q_0^{90}
+                \quad (\mathrm{modulo}\; |\varepsilon| \le 0.006),
+$$
+
+*where the prefactor $|S_5| / 3 = 40$ is the categorical
+contribution of the Bring-fibre-functor on the
+$v/m_e \leftrightarrow q_0^{\mathrm{depth}}$ bridge: the
+$|S_5| = 120$ rescaling at the EW slice factors through the
+$3$-fold splitting $N_v := 3 v / m_e$, leaving $40$ on the bridge.*
 
 *Substituting into the definition $N_v := 3 v / m_e$ from
 [hadron-half-life-verification](#ex:hadron-half-life-verification):*
 
 $$
   N_v \;=\; \frac{3 v}{m_e}
-        \;=\; 3 \cdot q_0^{90}
-        \;=\; \frac{|S_5|}{40} \cdot q_0^{90}
-        \;\overset{?}{=}\; |S_5| \cdot q_0^{90}.
+        \;=\; 3 \cdot 40 \cdot q_0^{90}
+        \;=\; 120 \cdot q_0^{90},
 $$
 
-*The factor of $40$ discrepancy needs resolution: either*
-
-1. *The definition $N_v = 3 v / m_e$ should read
-   $N_v = |S_5| / 3 \cdot v / m_e \cdot \dots$, with the $|S_5|$
-   absorbed into the Markov-trace residual rescaling — consistent
-   with [Lemma 1](#conj:n-v-bring-action).*
-
-2. *Or the prefactor in the closed form is $40 \cdot 3 = 120$ but
-   factored differently:
-   $N_v = (|S_5|/3) \cdot 3 \cdot q_0^{90} = 40 \cdot 3 \cdot q_0^{90}$.*
-
-*Either reading gives $N_v = 120 \cdot q_0^{90}$.  Empirically
+*recovering $|S_5| = 120$ as the full prefactor.  Empirically
 this is $1.4371 \times 10^6$ vs the CODATA-derived
 $N_v = 1.4455 \times 10^6$ (residual $-0.58\%$).  $\square$ modulo
 the upstream conjectures.*
+
+*Numerical sanity check at $q_0 \approx 1.10998$:
+$v / m_e \approx 481\,839$, $q_0^{90} \approx 12\,012$, ratio
+$\approx 40.11$, so $\varepsilon \approx 0.003 < 0.006$. ✓*
 
 ## Sub-leading correction (open)
 

@@ -41,12 +41,20 @@ level required to break the H_10+ memory wall. Per
 [`tools/hecke-engine/R5_6_DECOMPOSITION_PLAN.md`](../../tools/hecke-engine/R5_6_DECOMPOSITION_PLAN.md):
 
 - **Design**: documented (split monolithic SDP into per-Wedderburn-block
-  SDPs sharing variable set; small linear coupling at the end).
-- **Scaffold**: planned files `sdp_per_block.rs` + `bin/r5_6_smoke.rs`
-  are **not yet implemented** (verified 2026-04-29: no such files in
-  `tools/hecke-engine/src/`).
-- **Smoke test target**: H_3 / H_4 with ≤ 1e-5 residual against the
-  monolithic solver.
+  SDPs sharing variable set; sequential intersection via fixed-c
+  anchors at the end).
+- **Strategy A implementation**: `tools/hecke-engine/src/sdp_per_block.rs`
+  + `tools/hecke-engine/src/bin/r5_6_smoke.rs` landed in this PR.
+  Public API `solve_per_block(n, q, anchors, cutoff)` is a drop-in
+  replacement for `solve_canonical_t_w` with the same `SolverReport`
+  shape.
+- **Smoke test results**: H_3 / H_4 (full + filtration cutoffs)
+  agree with monolithic solver to ≤ 3e-9 absolute on every recovered
+  `c_w` and ≤ 3e-8 on `‖c‖_1`. 107/107 lib tests pass under
+  `cargo test --features clarabel-sdp`.
+- **Strategy A caveat**: sequential intersection is JOINT FEASIBLE
+  but not necessarily JOINT ‖c‖_1-OPTIMAL.  Larger `n` may require
+  Strategy B (ADMM consensus iteration) — that's R5.7.
 - **Production target (R5.7, separate session)**: ⁶Li at H_18 with
   filtration cutoff L = 8 + AME anchor.
 
