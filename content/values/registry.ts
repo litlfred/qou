@@ -255,6 +255,9 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       symbol: "\\mathrm{Vol}(4_1)",
       witnessFile:
         "folio-assistant/computations/q-pinning-50-digit.witness.json",
+      // The witness JSON exposes the 50-digit value as a string under
+      // `..._str`, with a parallel f64 mirror at `..._float`.  We
+      // dereference the string field to preserve full precision.
       witnessPath: "calibration_inputs.Vol_4_1_str",
       defaultPrecision: 6,
       units: null,

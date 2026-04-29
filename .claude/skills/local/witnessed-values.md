@@ -90,6 +90,23 @@ file regardless of the wrapping block kind.  The migration already
 applied for this PR rewrote propositions, proofs, examples, remarks,
 and prose without distinction.
 
+The "n/a" rows above (`simulator`, `diagram`) are not exceptions to
+the rule — they simply have no `.md` body for the codemod to scan.
+The rule still applies to any text those blocks emit through other
+channels.
+
+### Short literals below the match threshold
+
+The codemod only auto-migrates literals carrying at least
+`MATCH_PRECISION = 6` significant digits.  Literals like `0.09908`
+(4 sig digits) or `0.90092` (5 sig digits) are below the threshold
+and **must be migrated by hand** — either edit them in place to use
+`:val[name]`, or first extend the literal to the required precision
+and re-run the codemod.  This is by design: at lower precisions a
+literal may agree with several registry canonicals (e.g. `1.109`
+matches a tritium half-life *and* `q_0` to 4 digits), so the codemod
+refuses to guess.
+
 Concretely, the rule is:
 
 - **A statement of a proposition or theorem** that bounds, equates,

@@ -73,9 +73,9 @@ interface LiteralEntry {
   name: string;
   /** Full canonical decimal-string value. */
   canonical: string;
-  /** Pre-built regex matching this literal at the configured
-   *  significant-digit precision, with word boundaries on both sides. */
-  pattern: RegExp;
+  /** Sig-digit string (digits-only, leading zeros stripped from the
+   *  whole concatenated number).  Used for prefix agreement. */
+  sigDigits: string;
 }
 
 /**
@@ -85,38 +85,28 @@ interface LiteralEntry {
  * prefix.  At 6 digits, `q_0` requires the literal `1.10997` and
  * `B_4He_AME_MeV` requires `28.2956` — both specific enough to avoid
  * cross-contamination with other physics constants.
+ *
+ * Literals **shorter** than this threshold (e.g. `0.09908`, only 4 sig
+ * digits) cannot be auto-migrated and must be hand-edited; the
+ * codemod will not guess.
  */
 const MATCH_PRECISION = 6;
 
 /**
- * Truncate a decimal string to `n` significant digits (no rounding —
- * we want a substring match, not a numerical approximation).
+ * Extract the leading-zero-stripped digit sequence of a decimal
+ * literal (e.g. `"206.7682830"` → `"2067682830"`,
+ * `"0.0990817"` → `"990817"`).  Returns `null` for unparseable input.
  */
-function truncateSignificant(str: string, n: number): string | null {
-  const m = str.match(/^(-?)(\d+)(?:\.(\d+))?$/);
+function sigDigitString(str: string): string | null {
+  const m = str.match(/^-?(\d+)(?:\.(\d+))?$/);
   if (!m) return null;
-  const sign = m[1];
-  const intPart = m[2];
-  const fracPart = m[3] || "";
-  const allDigits = intPart + fracPart;
-  // Strip leading zeros from significant-digit count.
-  let firstSig = 0;
-  while (firstSig < allDigits.length - 1 && allDigits[firstSig] === "0") firstSig++;
-  if (firstSig + n > allDigits.length) return null;  // not enough precision
-  // Reconstruct with the truncated digit count.
-  const truncDigits = allDigits.slice(0, firstSig + n);
-  // Rebuild integer/fractional split.
-  if (truncDigits.length <= intPart.length) {
-    // Entire truncation falls in integer part; pad trailing zeros.
-    return sign + truncDigits + "0".repeat(intPart.length - truncDigits.length);
-  }
-  const newInt = truncDigits.slice(0, intPart.length);
-  const newFrac = truncDigits.slice(intPart.length);
-  return sign + newInt + "." + newFrac;
-}
-
-function escapeRegExp(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const intPart = m[1];
+  const fracPart = m[2] || "";
+  let digits = intPart + fracPart;
+  // Strip leading zeros (preserve at least one digit so "0" → "0").
+  let i = 0;
+  while (i < digits.length - 1 && digits[i] === "0") i++;
+  return digits.slice(i);
 }
 
 function loadWitnessOnce(file: string, cache: Map<string, unknown | null>): unknown | null {
@@ -158,17 +148,21 @@ export function buildLiteralIndex(): LiteralEntry[] {
       if (typeof o.value === "string") canonical = o.value;
     }
     if (!canonical) continue;
-    const truncated = truncateSignificant(canonical, MATCH_PRECISION);
-    if (!truncated) continue;
-    // Word boundaries: digits/letters on either side disqualify a match.
-    const pattern = new RegExp(`(?<![\\d.])${escapeRegExp(truncated)}(?![\\d])`, "g");
-    out.push({ name, canonical, pattern });
+    const sig = sigDigitString(canonical);
+    if (!sig || sig.length < MATCH_PRECISION) continue;
+    out.push({ name, canonical, sigDigits: sig });
   }
-  // Longest canonical first — ensures more-specific literals win
-  // when two registry entries share a leading prefix.
-  out.sort((a, b) => b.canonical.length - a.canonical.length);
   return out;
 }
+
+/**
+ * Decimal literal matcher used to scan math-node bytes for migration
+ * candidates.  Excludes neighbouring digits via lookbehind/lookahead
+ * but allows surrounding non-digits (operators, braces, whitespace).
+ * Trailing `.` is also disallowed before the literal so `2.5` inside
+ * `1.2.5` (unlikely but safe) cannot be misread.
+ */
+const DECIMAL_LITERAL = /(?<![\d.])(\d+(?:\.\d+)?)(?![\d])/g;
 
 // ── Per-math-node rewriting ──────────────────────────────────────
 
@@ -181,6 +175,20 @@ interface NodeRewrite {
 /**
  * Rewrite a single math-node value string.  Skips any region already
  * inside an existing `:val[…]` directive (idempotency).
+ *
+ * Match policy: each decimal literal in the source is compared to
+ * every verified registry canonical by leading significant-digit
+ * agreement.  An entry matches iff the literal's sig digits are a
+ * prefix of the canonical's sig digits (or vice-versa) and the
+ * agreement is ≥ `MATCH_PRECISION` digits.  Among matching entries
+ * the one with the longest canonical agreement wins, breaking ties
+ * by registry-insertion order.
+ *
+ * This handles literals at any precision ≥ MATCH_PRECISION:
+ * `206.768` (6), `206.7683` (7), and `206.7682830` (10) all migrate
+ * to `m_mu_over_e`.  Literals with fewer than MATCH_PRECISION sig
+ * digits (e.g. `0.09908` — 4 digits) are left untouched and must be
+ * migrated by hand.
  */
 export function rewriteMathString(value: string, index: LiteralEntry[]): NodeRewrite {
   const hits = new Map<string, number>();
@@ -198,28 +206,39 @@ export function rewriteMathString(value: string, index: LiteralEntry[]): NodeRew
   }
   if (last < value.length) guarded.push({ kind: "text", s: value.slice(last) });
 
-  // Apply each pattern to text segments.
+  // Replace decimal literals in text segments.
   const out: string[] = [];
   for (const seg of guarded) {
     if (seg.kind === "skip") {
       out.push(seg.s);
       continue;
     }
-    let s = seg.s;
-    for (const lit of index) {
-      lit.pattern.lastIndex = 0;
-      const before = s;
-      let count = 0;
-      s = s.replace(lit.pattern, () => {
-        count++;
-        return `:val[${lit.name}]{precision=${MATCH_PRECISION}}`;
-      });
-      if (count > 0) {
-        hits.set(lit.name, (hits.get(lit.name) ?? 0) + count);
-        changed = true;
+    DECIMAL_LITERAL.lastIndex = 0;
+    const replaced = seg.s.replace(DECIMAL_LITERAL, (lit) => {
+      const litSig = sigDigitString(lit);
+      if (!litSig || litSig.length < MATCH_PRECISION) return lit;
+      let bestName: string | null = null;
+      let bestAgree = MATCH_PRECISION - 1;
+      for (const entry of index) {
+        // Prefix agreement of the shorter against the longer.
+        const min = Math.min(litSig.length, entry.sigDigits.length);
+        let agree = 0;
+        while (agree < min && litSig[agree] === entry.sigDigits[agree]) agree++;
+        // Only accept when the shorter side is fully consumed by the
+        // agreement — otherwise the literal disagrees with the
+        // canonical at a digit within the literal's own precision.
+        if (agree < min) continue;
+        if (agree > bestAgree) {
+          bestAgree = agree;
+          bestName = entry.name;
+        }
       }
-    }
-    out.push(s);
+      if (bestName == null) return lit;
+      hits.set(bestName, (hits.get(bestName) ?? 0) + 1);
+      changed = true;
+      return `:val[${bestName}]{precision=${MATCH_PRECISION}}`;
+    });
+    out.push(replaced);
   }
 
   return { changed, newValue: out.join(""), hits };
