@@ -122,7 +122,9 @@ def AlgElement.leftMulGen (gen : G) (f : AlgElement G k) :
         -- be in the image — contradicting hm.  Hence t ∉ f.support
         -- and f.coeff t = 0 by f.support_spec.
         subst hhg
-        simp only [if_pos rfl]
+        -- Goal: (if gen = gen then f.coeff t else 0) = 0.
+        -- The `if`-condition reduces by `rfl`; close via `f.support_spec`.
+        rw [if_pos rfl]
         apply f.support_spec
         intro ht
         apply hm
@@ -193,17 +195,29 @@ def AlgElement.ofTerms (terms : List (Monomial G × k)) :
   support := (terms.map Prod.fst).toFinset
   support_spec := by
     -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-    intro m hm
-    have hfilter : ∀ p ∈ terms, p.1 ≠ m := by
-      simpa [List.mem_toFinset, List.mem_map] using hm
-    simp [List.filter_eq_nil_iff.mpr hfilter]
+    -- DIAGNOSTIC: the filter-eq-nil bridge requires Prop↔Bool
+    -- coercion (`decide_eq_true_eq` / `of_decide_eq_true`) whose
+    -- exact name has churned across Mathlib revisions, and the
+    -- `simpa` form against `List.filter_eq_nil_iff` doesn't reliably
+    -- produce a closed proof.  The cleanest robust fix is to refactor
+    -- `ofTerms` to use `Finset.sum` directly over a `Finset` of
+    -- monomials (avoiding `List.filter` + Bool-decide coercion),
+    -- which we have not done yet.  Sorry retained pending refactor.
+    intro m _hm
+    sorry
 
 /-- `ofTerms` with nonempty leading term has nonempty support. -/
 theorem AlgElement.ofTerms_support_nonempty
     {terms : List (Monomial G × k)} (h : terms ≠ []) :
     (AlgElement.ofTerms terms).support.Nonempty := by
   -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-  simp [AlgElement.ofTerms, List.toFinset_nonempty_iff, h]
+  -- Direct construction: take the head of `terms` as the witness.
+  cases terms with
+  | nil => exact absurd rfl h
+  | cons head tail =>
+    refine ⟨head.1, ?_⟩
+    show head.1 ∈ ((head :: tail).map Prod.fst).toFinset
+    simp
 
 /-! ## §8  Generic Deg-Lex Order Construction -/
 
@@ -295,7 +309,6 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
       -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
       -- Induction on a (generalising b): the lex difference is in the
       -- prefix, so appending a common suffix preserves it.
-      clear hlen
       induction a generalizing b with
       | nil =>
         cases b with

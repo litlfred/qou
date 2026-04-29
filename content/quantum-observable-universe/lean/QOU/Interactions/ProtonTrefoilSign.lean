@@ -227,12 +227,13 @@ theorem neutron_trefoil_neg (q : ℝ) (hq : q > 1) :
     neutronTrefoilCoeff q < 0 := by
   unfold neutronTrefoilCoeff
   apply div_neg_of_neg_of_pos
-  · -- Numerator: -(positive) < 0
-    apply neg_neg_of_neg
-    apply mul_pos
-    apply mul_pos
-    · exact mul_pos (sq_pos_of_ne_zero _ (by linarith)) (sq_pos_of_ne_zero _ (by linarith))
-    · exact sq_pos_of_ne_zero _ (by nlinarith)
+  · -- Numerator: -(positive) < 0.
+    -- Use `neg_lt_zero.mpr` and prove the inner product is positive.
+    rw [neg_lt_zero]
+    have h1 : (0:ℝ) < (q - 1)^2 := pow_pos (by linarith) 2
+    have h2 : (0:ℝ) < (q + 1)^2 := pow_pos (by linarith) 2
+    have h3 : (0:ℝ) < (q^2 + 1)^2 := pow_pos (by positivity) 2
+    exact mul_pos (mul_pos h1 h2) h3
   · -- Denominator: 4q⁴ > 0
     positivity
 
@@ -255,10 +256,11 @@ theorem neutron_more_negative (q : ℝ) (hq : q > 1) :
     trefoilDiff q < 0 := by
   unfold trefoilDiff
   apply div_neg_of_neg_of_pos
-  · apply neg_neg_of_neg
-    apply mul_pos
-    · exact mul_pos (pow_pos (by linarith) 4) (pow_pos (by linarith) 4)
-    · nlinarith [sq_nonneg (q ^ 2)]
+  · rw [neg_lt_zero]
+    have h1 : (0:ℝ) < (q - 1)^4 := pow_pos (by linarith) 4
+    have h2 : (0:ℝ) < (q + 1)^4 := pow_pos (by linarith) 4
+    have h3 : (0:ℝ) < q^4 + 1 := by nlinarith [sq_nonneg (q ^ 2)]
+    exact mul_pos (mul_pos h1 h2) h3
   · positivity
 
 end QOU.Interactions

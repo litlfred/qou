@@ -70,10 +70,18 @@ theorem surreal_squeeze_of_pow_lt
     (ε δ : F) (hε : 0 < ε) (hsq : ε^4 < δ^2) :
     δ^2 * ε⁻¹ > ε^3 := by
   -- Multiply both sides by ε > 0:
-  --   δ²·ε⁻¹ > ε³ ⟺ δ² > ε³·ε = ε⁴ ✓ (hsq).
-  rw [show δ^2 * ε⁻¹ = δ^2 / ε from div_eq_mul_inv _ _ |>.symm,
-      gt_iff_lt, lt_div_iff₀ hε,
-      show ε^3 * ε = ε^4 from by ring]
-  exact hsq
+  --   δ²·ε⁻¹ > ε³ ⟺ δ²·ε⁻¹·ε > ε³·ε ⟺ δ² > ε⁴ ✓ (hsq).
+  -- Avoid divison-tactic name churn by manipulating the inequality
+  -- directly: multiply both sides of `hsq : ε⁴ < δ²` by `ε⁻¹ > 0`.
+  have hε_inv : 0 < ε⁻¹ := inv_pos.mpr hε
+  have hε_ne : ε ≠ 0 := ne_of_gt hε
+  have key : ε^4 * ε⁻¹ < δ^2 * ε⁻¹ :=
+    (mul_lt_mul_right hε_inv).mpr hsq
+  -- Reduce ε^4 * ε⁻¹ = ε^3 by `pow_succ` + `mul_inv_cancel`.
+  have h_pow : ε^4 * ε⁻¹ = ε^3 := by
+    rw [show (4 : ℕ) = 3 + 1 from rfl, pow_succ, mul_assoc,
+        mul_inv_cancel₀ hε_ne, mul_one]
+  rw [h_pow] at key
+  exact key
 
 end QOU.AlgebraicSubstrate

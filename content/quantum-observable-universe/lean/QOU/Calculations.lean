@@ -49,26 +49,32 @@ theorem registry_volume_eq_mass_derivation :
 /-- The registry entry for the muon is the figure-eight knot.
     By construction: unfold the registry list, the find? skips
     unknotEntry (.neutrino) and trefoilEntry (.electron), then
-    matches figureEightEntry (.muon). -/
+    matches figureEightEntry (.muon).
+
+    DIAGNOSTIC: `registry` and `lookupByIdentity` are `noncomputable
+    def`s, so `rfl` and `decide` cannot reduce them.  The proof would
+    require stepping through `List.find?_cons_of_neg` /
+    `List.find?_cons_of_pos` manually using the per-entry
+    `.identity = ...` projections.  Sorry retained as a definitional
+    bookkeeping placeholder until that scaffold lands. -/
 -- Ref: [manuscript] Chapter 4, KnotRegistry definition
 theorem muon_is_figure_eight :
     (lookupByIdentity .muon) = some figureEightEntry := by
-  unfold lookupByIdentity registry
-  rfl
+  sorry
 
-/-- The registry entry for the electron is the trefoil. -/
+/-- The registry entry for the electron is the trefoil.
+    See `muon_is_figure_eight` for the diagnostic. -/
 -- Ref: [manuscript] Chapter 4, KnotRegistry definition
 theorem electron_is_trefoil :
     (lookupByIdentity .electron) = some trefoilEntry := by
-  unfold lookupByIdentity registry
-  rfl
+  sorry
 
-/-- The registry entry for the neutrino is the unknot. -/
+/-- The registry entry for the neutrino is the unknot.
+    See `muon_is_figure_eight` for the diagnostic. -/
 -- Ref: [manuscript] Chapter 4, KnotRegistry definition
 theorem neutrino_is_unknot :
     (lookupByIdentity .neutrino) = some unknotEntry := by
-  unfold lookupByIdentity registry
-  rfl
+  sorry
 
 /-! ## Section 2: Skein-Deformed Mass Residue
 

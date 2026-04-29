@@ -196,7 +196,9 @@ theorem massGapReal_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ 
     linarith
   have hf1_mono : q₁ - q₁⁻¹ ≤ q₂ - q₂⁻¹ := by
     have hinv : q₂⁻¹ ≤ q₁⁻¹ := by
-      exact inv_le_inv_of_le h1_pos hq₂
+      have : (1 : ℝ) / q₂ ≤ 1 / q₁ := by
+        rw [div_le_div_iff h2_pos h1_pos]; linarith
+      simpa using this
     linarith
   -- Factor 2: 1 - q⁻¹ is increasing for q > 0
   have hf2_1 : 0 < 1 - q₁⁻¹ := by
@@ -206,7 +208,10 @@ theorem massGapReal_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ 
     have : q₂⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq₂_gt
     linarith
   have hf2_mono : 1 - q₁⁻¹ ≤ 1 - q₂⁻¹ := by
-    have hinv : q₂⁻¹ ≤ q₁⁻¹ := inv_le_inv_of_le h1_pos hq₂
+    have hinv : q₂⁻¹ ≤ q₁⁻¹ := by
+      have : (1 : ℝ) / q₂ ≤ 1 / q₁ := by
+        rw [div_le_div_iff h2_pos h1_pos]; linarith
+      simpa using this
     linarith
   -- Product of positive increasing factors is increasing
   unfold massGapReal

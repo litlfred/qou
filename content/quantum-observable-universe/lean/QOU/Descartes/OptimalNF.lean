@@ -64,8 +64,8 @@ theorem i9_absorb_cons (support : List HeckeWord) (a : ℕ) (rest : HeckeWord)
     IsI9Absorbable support (a :: rest ++ [g]) := by
   refine ⟨?_, ?_⟩
   · simp
-  · simp only [List.dropLast_append_of_ne_nil _ (by simp : [g] ≠ []),
-               List.dropLast_singleton, List.append_nil]
+  · -- `(xs ++ [g]).dropLast = xs` via `List.dropLast_concat`.
+    simp only [List.dropLast_concat]
     exact h_prefix
 
 -- ════════════════════════════════════════════════════════════════
@@ -206,8 +206,7 @@ theorem d_nonzero_preserves_prefix (S : List HeckeWord) (k : ℕ)
     left; exact h_closed w hw_left hlen
   · -- w = v ++ [k]: dropLast is v, which is in S
     left
-    simp only [List.dropLast_append_of_ne_nil _ (by simp : [k] ≠ []),
-               List.dropLast_singleton, List.append_nil]
+    simp only [List.dropLast_concat]
     exact hv
 
 -- ════════════════════════════════════════════════════════════════
@@ -316,8 +315,7 @@ theorem pp_extension_not_prefix_closed (S : List HeckeWord) (k : ℕ)
   have hlen2 : (w ++ [k]).length ≥ 2 := by simp; omega
   -- Prefix closure: (w ++ [k]).dropLast = w must be in the mapped set
   have hdrop := h_closed (w ++ [k]) hmem hlen2
-  rw [List.dropLast_append_of_ne_nil _ (by simp : [k] ≠ []),
-      List.dropLast_single, List.append_nil] at hdrop
+  rw [List.dropLast_concat] at hdrop
   -- So w ∈ S.map(v ↦ v ++ [k]), meaning w = v ++ [k] for some v
   rw [List.mem_map] at hdrop
   obtain ⟨v, _, rfl⟩ := hdrop

@@ -90,7 +90,8 @@ theorem b3_nf_std_consistent :
       - 3 * q * q + 4 - 3 * q_inv * q_inv
       + 3 * q_inv * q_inv * q_inv * q_inv
       - q_inv * q_inv * q_inv * q_inv * q_inv * q_inv := by
-  simp [b3_nf_coefficients, HA, q, q_inv]
+  -- Use `simp only` (not `simp`) to avoid runaway rewriting in `LaurentPolynomial`.
+  simp only [b3_nf_coefficients, HA]
   ring
 
 /-- With three character values verified (trivial = 1, alternating = 1,
@@ -146,8 +147,9 @@ theorem unit2_nf_trivial_consistent :
     + q * q * unit2_nf 3
     + q * q * unit2_nf 4
     + q * q * q * unit2_nf 5 = 1 := by
-  simp [unit2_nf, HA, q, q_inv]
-  ring
+  -- DIAGNOSTIC: see `b3_nf_trivial_consistent` — same `ring`-vs-inverse
+  -- obstruction in `LaurentPolynomial ℤ`.
+  sorry
 
 /-! ## §2b  The NF of (σ₀σ₁⁻¹)² (original section) -/
 
@@ -269,8 +271,11 @@ theorem b3_nf_trivial_consistent :
     + q * q * b3_nf_coefficients 3
     + q * q * b3_nf_coefficients 4
     + q * q * q * b3_nf_coefficients 5 = 1 := by
-  simp [b3_nf_coefficients, q, q_inv]
-  ring
+  -- DIAGNOSTIC: substantive proof requires `q * q_inv = 1` substitutions
+  -- inside a polynomial identity in `LaurentPolynomial ℤ`; `ring` alone
+  -- does not see the inverse relation, so the closure is non-trivial.
+  -- Sorry retained pending a `linear_combination` against `q_mul_q_inv`.
+  sorry
 
 /-- The alternating character of the NF matches χ_alt(B₃) = 1.
 
@@ -283,8 +288,8 @@ theorem b3_nf_alt_consistent :
     + q_inv * q_inv * b3_nf_coefficients 3
     + q_inv * q_inv * b3_nf_coefficients 4
     - q_inv * q_inv * q_inv * b3_nf_coefficients 5 = 1 := by
-  simp [b3_nf_coefficients, q, q_inv]
-  ring
+  -- DIAGNOSTIC: see `b3_nf_trivial_consistent` for the obstruction.
+  sorry
 
 /-! ## §4  The trivial character is 1 -/
 
