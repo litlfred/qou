@@ -88,4 +88,68 @@ theorem spectral_sum_finite (S : GBResidueSpectralSum) :
   -- https://doi.org/10.1017/CBO9780511615443  (Kassel, quantum groups)
   sorry
 
+/-! ## Discharge skeleton for the opaque declarations (Phase D, SPECULATIVE)
+
+The following declarations are currently `noncomputable opaque` and
+block any concrete `GBResidueSpectralSum` instance from being
+verified end-to-end:
+
+  * `gradedMarkovTrace : ℕ → ℝ → ℝ`
+  * `residueAtRoot : ℕ → RootOfUnity → ℝ → ℝ`
+  * `GBResidueSpectralSum.spectral_decomposition` (axiom field)
+  * `spectral_sum_finite` (`sorry`)
+
+A complete discharge would require:
+
+  1. Formalising the Gröbner–Shirshov filtration `J^ℓ` of `H_n(q)` as
+     a Lean structure (currently axiomatised in
+     `QOU.BraidKnot.ConfinementLevel`).
+  2. Defining `gradedMarkovTrace` as the trace on the quotient
+     `J^ℓ / J^{ℓ+1}` (Lean has the algebraic infrastructure: see
+     `Mathlib.RingTheory.Ideal.Quotient` + `Module.Trace`).
+  3. Importing or building a quantum-dilogarithm `Φ_q` formalisation
+     and proving meromorphicity at primitive roots of unity (open in
+     Mathlib; needs `Mathlib.Analysis.Meromorphic.Basic` + a domain
+     restriction to `ℂ ∖ S¹`).
+  4. Defining `residueAtRoot` via Mathlib's residue infrastructure
+     (`Complex.residue` is partial; the one-pole residue at `q = ζ_ℓ`
+     is computable via a Laurent expansion).
+  5. Proving `spectral_decomposition` from (1)–(4) — the key analytic
+     identity equating the Habiro-cyclotomic tail with the residue
+     sum.  This is the open content of
+     `prop:habiro-residue-sum-equivalence`.
+
+The skeleton below provides the API pattern: a proposed
+`computeResidueAtRoot` definition that takes the trace, the level,
+and the root, and returns the Laurent-expansion residue.  Currently
+returns 0 to compile; replace with the Mathlib-backed definition
+once the analytic infrastructure lands.
+
+This is **Phase D** of the post-#473 1 ppb workplan; estimated effort
+multi-month (requires new Mathlib lemmas + their PR upstream). -/
+
+/-- Skeleton: residue at a primitive root of unity, computed via
+    Laurent expansion of the trace polynomial.  **Currently returns 0.**
+    Replace with the analytic definition once
+    `Mathlib.Analysis.Meromorphic.Basic` + complex-residue
+    infrastructure are imported. -/
+noncomputable def computeResidueAtRoot
+    (_trace : ℝ → ℝ) (_ℓ : ℕ) (_ζ : RootOfUnity) (_q : ℝ) : ℝ :=
+  0  -- placeholder; full def needs Mathlib residue API
+
+/-- Once `computeResidueAtRoot` is genuinely defined, this lemma
+    discharges the `residueAtRoot` opaque to its computable form.
+    The `sorry` here is the **specification gap**: the opaque
+    declaration is currently abstract, and equating it with a
+    computable function requires refining the abstraction. -/
+theorem residueAtRoot_eq_compute
+    (ℓ : ℕ) (ζ : RootOfUnity) (q : ℝ) (trace : ℝ → ℝ) :
+    residueAtRoot ℓ ζ q = computeResidueAtRoot trace ℓ ζ q := by
+  -- Ref: [manuscript] prop:habiro-residue-sum-equivalence
+  -- Open: requires either (a) refining the opaque to a
+  -- noncomputable def matching computeResidueAtRoot, or (b) adding
+  -- a Mathlib-backed `MeromorphicAt.residue` API and using it to
+  -- compute residueAtRoot directly.
+  sorry
+
 end QOU.BraidKnot

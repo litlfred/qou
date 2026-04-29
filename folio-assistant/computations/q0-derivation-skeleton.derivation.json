@@ -1,0 +1,78 @@
+{
+  "target": "q_0",
+  "target_value": 1.1099785955541805,
+  "target_tolerance": 1e-10,
+  "content_block": "def:substrate-parameter",
+  "description": "**Speculative skeleton chain** for the substrate parameter q_0 ≈ 1.110.  Phase B target of the post-#473 1 ppb workplan.  Three candidate derivation paths (α-FSC PSLQ / m_p/m_e inversion / brane-tower topology) recorded as SCRIPT_CITED steps; the COMPUTATIONAL leaf reads the empirical fit.  Trust profile {axiom: 1, mathlib-cited: 0, derived: 0, script-cited: 3, computational: 1} — **NOT fully-trusted**.  Closing any one of the three paths would discharge the chain to fully-trusted; closing all three would provide cross-validation independent of CODATA.  Highest-leverage Phase B item: every downstream prediction inherits q_0's fit uncertainty until this chain closes.",
+  "steps": [
+    {
+      "name": "q_0 := unique substrate parameter",
+      "operation": "By `def:substrate-parameter`, the QOU framework axiomatises a single real parameter q_0 ∈ ℝ_{>1} characterising the Hecke energy scale (q − q^{-1}).  Empirically q_0 ≈ 1.10997855... matches CODATA observables; the framework's claim of being **derivative** rather than empirical requires closing q_0 via a first-principles derivation.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "q_0_axiom",
+      "output_value": "q_0 ∈ ℝ_{>1} — substrate parameter",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:SubstrateParameter",
+      "citation": "manuscript:§Substrate-axiom"
+    },
+    {
+      "name": "Path A: q_0 from α-FSC via PSLQ",
+      "operation": "Per the alpha-em-pslq-uniqueness-2000dps protocol (PR #457 family), search for an integer linear relation between q_0 and the fine-structure constant α at 2000 dps.  The PSLQ algorithm returns a candidate relation if the rational coefficients have bounded norm.  As of this skeleton, **no definitive closed form has been established**; remains SCRIPT_CITED until PSLQ identifies an unambiguous relation.",
+      "inputs": [
+        "q_0_axiom"
+      ],
+      "output_name": "path_A_alpha",
+      "output_value": "q_0 = f(α) — f unspecified (PSLQ search ongoing)",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "citation": "manuscript:§alpha-em-pslq",
+      "notes": "script: folio-assistant/computations/alpha_em_pslq_uniqueness.py (2000 dps PSLQ search).  Currently SCRIPT_CITED — no stable rational relation found at 2000 dps within norm-bounded candidates.  Closing this step requires either a higher PSLQ precision or a theoretical insight constraining the form of f."
+    },
+    {
+      "name": "Path B: q_0 from m_p/m_e Hecke ratio",
+      "operation": "The dimensionless mass ratio m_p/m_e is a function of q_0 via the mass-endomorphism tower (per `m_p_breakdown_derived_vs_guessed.py`).  Inverting gives q_0 = g(m_p/m_e) for some analytic function g.  CODATA supplies m_p/m_e = 1836.15267343 to 12-digit precision; if g were known, q_0 would inherit that precision.  **g is unspecified** in the current pipeline — the tower formula is forward (q_0 → ratio) but not closed-form invertible.",
+      "inputs": [
+        "q_0_axiom",
+        "Schur"
+      ],
+      "output_name": "path_B_mp_me",
+      "output_value": "q_0 = g(m_p/m_e) — g unspecified",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "citation": "manuscript:§mass-endomorphism-tower-inversion",
+      "notes": "script: folio-assistant/computations/m_p_breakdown_derived_vs_guessed.py supplies the forward direction (q_0 → m_p/m_e); inversion requires solving a transcendental equation in q_0.  SCRIPT_CITED until a numerical-or-closed-form inverse ships."
+    },
+    {
+      "name": "Path C: q_0 from brane-tower topology (speculative)",
+      "operation": "Speculative: q_0 should arise as a transcendental invariant of a canonical knot K in the brane tower, e.g. via Vol(K) / 2π² or the Kashaev-Murakami-Murakami volume conjecture limit.  No concrete candidate K has been identified.  Tracked here as the highest-leverage Phase B target: a topological derivation would be both fully-trusted AND independent of CODATA observables.",
+      "inputs": [
+        "q_0_axiom",
+        "Cat.Action"
+      ],
+      "output_name": "path_C_topology",
+      "output_value": "q_0 = h(Vol(K_canonical)) — K, h unspecified",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "citation": "manuscript:§q_0-topology-conjecture",
+      "notes": "script: folio-assistant/computations/atom_colored_jones_volume.py (SnapPy/colored-Jones volumes for candidate knots).  SCRIPT_CITED — no canonical K identified; awaits theoretical input."
+    },
+    {
+      "name": "q_0 numerical value (empirical fit)",
+      "operation": "Until any of paths A/B/C closes, the canonical q_0 value is the empirical fit q_0 ≈ 1.1099785955541805 from CODATA-bounded observables (`q_parameter.py`).",
+      "inputs": [
+        "path_A_alpha",
+        "path_B_mp_me",
+        "path_C_topology"
+      ],
+      "output_name": "q_0_numerical",
+      "output_value": 1.1099785955541805,
+      "trust_basis": "computational",
+      "jet_order": 0,
+      "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
+      "notes": "Empirical fit; replaces with derivation when any of paths A/B/C closes.  Until then, every prediction inherits the fit's uncertainty."
+    }
+  ]
+}

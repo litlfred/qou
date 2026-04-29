@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T11:17:32.218662+00:00",
-  "commitSha": "3c166f6e1778fd11d1939ff70e285a3e1183c663",
+  "computedAt": "2026-04-29T12:54:03.146219+00:00",
+  "commitSha": "d506d196e0063c8fbe76ddeddfa85cd306f42343",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -82,6 +82,19 @@
       "tolerance": 2.1225825094527304e-09
     },
     {
+      "name": "chain_valid[q0-derivation-skeleton.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[q0-derivation-skeleton.derivation]",
+      "computed": 1.1099785955541805,
+      "expected": 1.1099785955541805,
+      "passed": true,
+      "tolerance": 1.1099785955541806e-10
+    },
+    {
       "name": "chain_valid[schur-weyl-weight-111.derivation]",
       "computed": true,
       "expected": true,
@@ -98,6 +111,19 @@
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "chain_valid[sigma-shell-alpha5-skeleton.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[sigma-shell-alpha5-skeleton.derivation]",
+      "computed": -420000.0,
+      "expected": -420000.0,
+      "passed": true,
+      "tolerance": 210000.0
     }
   ],
   "allPassed": true,
@@ -220,6 +246,21 @@
         "has_script_frontier": true
       },
       {
+        "chain": "q0-derivation-skeleton.derivation.json",
+        "target": "q_0",
+        "target_value": 1.1099785955541805,
+        "computed_value": 1.1099785955541805,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "script-cited": 3,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "schur-weyl-weight-111.derivation.json",
         "target": "w_(1,1,1)(q)",
         "target_value": "1 / ([3]_q · [2]_q · [1]_q)",
@@ -263,13 +304,32 @@
           "mathlib-cited": 2
         },
         "has_script_frontier": false
+      },
+      {
+        "chain": "sigma-shell-alpha5-skeleton.derivation.json",
+        "target": "α_5 (σ_shell outer scale, MeV)",
+        "target_value": -420000.0,
+        "computed_value": -420000.0,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 1,
+          "script-cited": 1,
+          "computational": 1
+        },
+        "has_script_frontier": true
       }
     ],
     "witness_trust": {
       "derivation-fully-trusted": [],
       "derivation-backed": [
+        "alpha-em-pslq-uniqueness.witness.json",
         "habiro-coefficients-atomic.witness.json",
         "hecke-character-symbolic.witness.json",
+        "higher-a-shell-diagnostic.witness.json",
+        "m-p-breakdown-derived-vs-guessed.witness.json",
         "schur-weyl-symbolic.witness.json"
       ],
       "computational-only": [
@@ -284,7 +344,6 @@
         "alpha-cs-kappa-verification.witness.json",
         "alpha-derivation-probe.witness.json",
         "alpha-em-pslq-uniqueness-2000dps.witness.json",
-        "alpha-em-pslq-uniqueness.witness.json",
         "alpha-em-q9-q10-derivation.witness.json",
         "alpha-high-precision.witness.json",
         "alpha-k-jones-markov-h3.witness.json",
@@ -443,7 +502,6 @@
         "hh-vertex-volume.witness.json",
         "higher-a-bigraded-stratification.witness.json",
         "higher-a-binding-refinement.witness.json",
-        "higher-a-shell-diagnostic.witness.json",
         "hochschild-h3.witness.json",
         "hyperbolic-knot-db-extended.witness.json",
         "integer-lp-gluon.witness.json",
@@ -484,7 +542,6 @@
         "low-isotope-mass-table-precision-audit.witness.json",
         "low-isotope-mass-table.witness.json",
         "lp-duality-check.witness.json",
-        "m-p-breakdown-derived-vs-guessed.witness.json",
         "markov-convention-parallel.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-invariant-unified-mass.witness.json",
