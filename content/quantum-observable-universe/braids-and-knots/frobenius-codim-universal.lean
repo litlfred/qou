@@ -381,4 +381,57 @@ theorem gb_filtration_self_dual_bound
     Finset.sum_nonneg (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
   linarith
 
+/-- **Strict lower bound on the Frobenius co-Casimir trace** (general).
+
+    Strengthens `gb_filtration_self_dual_bound` to a *strict* inequality
+    `2 < Σ_λ 1/dim_q(λ)` whenever there exists a *third* block `t`
+    distinct from the two dim_q=1 blocks `s, a`.
+
+    This applies to `H_n(q)` for all `n ≥ 3`: the symmetric `(n)` and
+    alternating `(1ⁿ)` partitions are always dim_q=1 (s, a), and any
+    `n ≥ 3` admits a non-trivial third partition (`(2,1)` for n=3,
+    `(3,1)`, `(2,2)`, `(2,1,1)` for n=4, …) — these always have
+    `dim_q > 0` for `q > 0` (positivity of q-hook products), giving
+    a strict positive contribution beyond the saturating `2`.
+
+    No partition machinery / Mathlib q-Wedderburn needed: this is
+    a pure linear-algebra identity on a `Fintype Λ` with a
+    `SemisimpleFrobeniusAlgebra` instance.
+
+    Proof: same split as the non-strict version, but the residual
+    sum over `(univ.erase s).erase a` is shown to be **strictly
+    positive** because `t` is in that set and `1/frobDimQ t > 0`.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (general
+    n ≥ 3 strict bound). -/
+theorem gb_filtration_strict_self_dual_bound
+    {Λ : Type*} [Fintype Λ] [SemisimpleFrobeniusAlgebra Λ]
+    (s a t : Λ) (hsa : s ≠ a) (hst : s ≠ t) (hat : a ≠ t)
+    (h_dim_s : frobDimQ s = 1) (h_dim_a : frobDimQ a = 1)
+    (h_pos : ∀ λ, 0 < frobDimQ λ) :
+    (2 : ℝ) < ∑ λ, 1 / frobDimQ λ := by
+  have h_two : (1 : ℝ) / frobDimQ s + 1 / frobDimQ a = 2 := by
+    rw [h_dim_s, h_dim_a]; norm_num
+  have ht_mem : t ∈ (Finset.univ.erase s).erase a :=
+    Finset.mem_erase.mpr ⟨hat.symm,
+      Finset.mem_erase.mpr ⟨hst.symm, Finset.mem_univ t⟩⟩
+  have hSplit :
+      ∑ λ, 1 / frobDimQ λ
+        = 1 / frobDimQ s + 1 / frobDimQ a
+          + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ := by
+    rw [show ∑ λ, 1 / frobDimQ λ
+          = 1 / frobDimQ s + ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ from
+        (Finset.sum_erase_add _ _ (Finset.mem_univ s)).symm]
+    rw [show ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ
+          = 1 / frobDimQ a + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ from
+        (Finset.sum_erase_add _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
+    ring
+  rw [hSplit, h_two]
+  -- Residual sum is strictly positive: it contains 1/frobDimQ t > 0.
+  have h_rest_pos : (0 : ℝ) <
+      ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ :=
+    Finset.sum_pos' (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
+      ⟨t, ht_mem, one_div_pos.mpr (h_pos t)⟩
+  linarith
+
 end QOU.BraidKnot
