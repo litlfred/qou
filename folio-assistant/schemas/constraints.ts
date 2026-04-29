@@ -198,7 +198,7 @@ const ComputationStatusSchema = z.enum([
 export const ComputationSchema = z.object({
   engine: ComputationEngineSchema,
   script: z.string().min(1, "Script path is required"),
-  witness: z.string().optional(),
+  witness: z.union([z.string(), z.array(z.string()).min(1)]).optional(),
   status: ComputationStatusSchema,
   requires: z.array(z.string()).optional(),
 });

@@ -124,13 +124,20 @@ export function validateValueDirectives(
     }
     if (referenced.size === 0) continue;
 
-    // If block declares a computation, warn when its witness is not
-    // among those referenced.  If the block declares no computation,
-    // warn so the author either attaches one or accepts the implicit
-    // dependency.  This is per decision 2a (implicit auto-link).
+    // If block declares a computation, warn when any referenced
+    // witness is not among those declared.  If the block declares no
+    // computation, warn so the author either attaches one or accepts
+    // the implicit dependency.  This is per decision 2a (implicit
+    // auto-link).
     const blockAny = block as any;
-    const compWitness: string | undefined = blockAny?.computation?.witness;
-    if (!compWitness) {
+    const compWitnessRaw: string | string[] | undefined =
+      blockAny?.computation?.witness;
+    const declared: string[] = compWitnessRaw === undefined
+      ? []
+      : Array.isArray(compWitnessRaw)
+        ? compWitnessRaw
+        : [compWitnessRaw];
+    if (declared.length === 0) {
       // Implicit dependency — informational warning so the author
       // sees what the renderer already does silently.
       const list = Array.from(referenced).join(", ");
@@ -140,16 +147,23 @@ export function validateValueDirectives(
         message: `[val-block-computation] block cites :val[…] but has no \`computation:\` field; implicit witness dep on ${list}`,
         file: `${name}.md`,
       });
-    } else if (!referenced.has(compWitness)) {
-      // Block declares a computation but its witness is not in the
-      // set of referenced witness files.  Likely a stale/mismatched link.
-      const list = Array.from(referenced).join(", ");
-      issues.push({
-        level: "warning",
-        block: name,
-        message: `[val-block-computation] block computation.witness is ${compWitness} but :val[…] references ${list}`,
-        file: `${name}.md`,
-      });
+    } else {
+      const declaredSet = new Set(declared);
+      const missing = Array.from(referenced).filter((w) => !declaredSet.has(w));
+      if (missing.length > 0) {
+        // Block declares a computation but some referenced witness
+        // files are not in the declared set.  Likely a stale or
+        // incomplete link — declare the missing witness(es) on the
+        // block's `computation.witness` (which accepts an array).
+        const declaredList = declared.join(", ");
+        const missingList = missing.join(", ");
+        issues.push({
+          level: "warning",
+          block: name,
+          message: `[val-block-computation] block computation.witness is ${declaredList} but :val[…] also references ${missingList}`,
+          file: `${name}.md`,
+        });
+      }
     }
   }
 
