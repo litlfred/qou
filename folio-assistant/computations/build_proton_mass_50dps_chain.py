@@ -146,7 +146,14 @@ def build() -> DerivationChain:
             "proton_mass_tower_derivation.py.  SCRIPT_CITED — "
             "the T1+T2+T3+T4 assembly itself awaits its own derivation "
             "chain.  Phase A item (50 dps lift) on PR #476 brings each "
-            "term individually to mpmath precision."
+            "term individually to mpmath precision.  "
+            "**Precision note**: the stored `output_value` "
+            f"({M_P_HECKE_PIPELINE}) is a 4-sig-fig rounded summary "
+            "of the upstream pipeline output, kept short for "
+            "readability in the chain JSON.  The full-precision 50 dps "
+            "values live in `mass-formula-6term-mpfr-50dps.witness.json`; "
+            "downstream code that needs >4 sig figs should read from "
+            "that witness rather than from this chain step."
         ),
     ))
 
@@ -166,7 +173,12 @@ def build() -> DerivationChain:
         notes=(
             "script: folio-assistant/computations/mass_endomorphism.py "
             "electron-tower path.  SCRIPT_CITED until an "
-            "electron-tr-M-q0 chain ships."
+            "electron-tr-M-q0 chain ships.  "
+            "**Precision note**: the stored `output_value` "
+            f"({M_E_HECKE_PIPELINE}) is a 4-sig-fig rounded summary "
+            "of the upstream pipeline output, kept short for "
+            "readability in the chain JSON.  Full-precision 50 dps "
+            "values live in `mass-formula-6term-mpfr-50dps.witness.json`."
         ),
     ))
 

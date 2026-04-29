@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T15:59:21.212227+00:00",
-  "commitSha": "c9a1b38138faac4877b1ff9215f1213f748ef9c5",
+  "computedAt": "2026-04-29T20:32:24.492830+00:00",
+  "commitSha": "1a82d7c3d2451b57d8749dce7dd0ecc673a0a613",
   "assertions": [
     {
       "name": "m_p_within_1_ppb",
@@ -22,8 +22,8 @@
   "durationMs": 2,
   "computation": "proton-mass-codata-50dps",
   "scriptFile": "build_proton_mass_50dps_chain.py",
-  "scriptHash": "19a9de397da4",
-  "scriptCommitSha": "c9a1b38138faac4877b1ff9215f1213f748ef9c5",
+  "scriptHash": "aa0d9ed79bbf",
+  "scriptCommitSha": "b264a65e5e30294f4ce56d774805b4aceb87ccb2",
   "description": "Cross-pipeline m_p prediction vs CODATA at the precision achievable by the current pipeline (currently f64-bounded via mass_endomorphism.py; will lift to 50 dps once the Phase A tower-lift PRs land).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {

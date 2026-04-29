@@ -46,7 +46,7 @@
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: folio-assistant/computations/mass_endomorphism.py + proton_mass_tower_derivation.py.  SCRIPT_CITED — the T1+T2+T3+T4 assembly itself awaits its own derivation chain.  Phase A item (50 dps lift) on PR #476 brings each term individually to mpmath precision."
+      "notes": "script: folio-assistant/computations/mass_endomorphism.py + proton_mass_tower_derivation.py.  SCRIPT_CITED — the T1+T2+T3+T4 assembly itself awaits its own derivation chain.  Phase A item (50 dps lift) on PR #476 brings each term individually to mpmath precision.  **Precision note**: the stored `output_value` (1.4283) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  The full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`; downstream code that needs >4 sig figs should read from that witness rather than from this chain step."
     },
     {
       "name": "m_e_Hecke (electron mass in cat units, 50 dps)",
@@ -59,7 +59,7 @@
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: folio-assistant/computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships."
+      "notes": "script: folio-assistant/computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (0.0007783) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
     },
     {
       "name": "Dimensionless mass ratio m_p/m_e at 50 dps",
