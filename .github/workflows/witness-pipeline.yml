@@ -39,6 +39,13 @@ on:
       - "folio-assistant/computations/habiro_*.py"
       - "folio-assistant/computations/markov_*.py"
       - "folio-assistant/computations/witness_base.py"
+      - "folio-assistant/computations/picard_lefschetz_thimble.py"
+      - "folio-assistant/computations/sw_period_baryon.py"
+      - "folio-assistant/computations/mobius_limit_from_thimble.py"
+      - "folio-assistant/computations/baryon_product_from_alt.py"
+      - "folio-assistant/computations/sw_period_thimble_equivalence.py"
+      - "folio-assistant/computations/jet_gb_pl_correspondence.py"
+      - "folio-assistant/computations/q_parameter.py"
       - "folio-assistant/computations/*.witness.json"
       - ".github/workflows/witness-pipeline.yml"
   push:
@@ -47,6 +54,13 @@ on:
       - "folio-assistant/computations/habiro_*.py"
       - "folio-assistant/computations/markov_*.py"
       - "folio-assistant/computations/witness_base.py"
+      - "folio-assistant/computations/picard_lefschetz_thimble.py"
+      - "folio-assistant/computations/sw_period_baryon.py"
+      - "folio-assistant/computations/mobius_limit_from_thimble.py"
+      - "folio-assistant/computations/baryon_product_from_alt.py"
+      - "folio-assistant/computations/sw_period_thimble_equivalence.py"
+      - "folio-assistant/computations/jet_gb_pl_correspondence.py"
+      - "folio-assistant/computations/q_parameter.py"
       - "folio-assistant/computations/*.witness.json"
       - ".github/workflows/witness-pipeline.yml"
   workflow_dispatch:
@@ -64,7 +78,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install sympy mpmath
+        run: pip install sympy mpmath numpy scipy
 
       - name: Run habiro_witness_validator
         run: python3 folio-assistant/computations/habiro_witness_validator.py
@@ -77,6 +91,35 @@ jobs:
 
       - name: Run habiro_interpolate_cross_validator
         run: python3 folio-assistant/computations/habiro_interpolate_cross_validator.py
+
+      # ── Picard–Lefschetz / SW thimble correctness chain ─────────
+      # Re-runs each PL-correctness witness script and asserts that the
+      # regenerated witness has `allPassed: true`.  Drift detection
+      # below catches any substantive numerical change.
+      - name: Run picard_lefschetz_thimble (root PLT witness)
+        run: |
+          python3 folio-assistant/computations/picard_lefschetz_thimble.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/picard-lefschetz-thimble.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run mobius_limit_from_thimble
+        run: |
+          python3 folio-assistant/computations/mobius_limit_from_thimble.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/mobius-limit-from-thimble.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run baryon_product_from_alt
+        run: |
+          python3 folio-assistant/computations/baryon_product_from_alt.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/baryon-product-from-alt.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run sw_period_thimble_equivalence
+        run: |
+          python3 folio-assistant/computations/sw_period_thimble_equivalence.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/sw-period-thimble-equivalence.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run jet_gb_pl_correspondence
+        run: |
+          python3 folio-assistant/computations/jet_gb_pl_correspondence.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/jet-gb-pl-correspondence.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
 
       - name: Detect drift in committed witnesses
         run: |

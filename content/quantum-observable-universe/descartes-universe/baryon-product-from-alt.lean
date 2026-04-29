@@ -14,6 +14,12 @@ LaTeX label: `prop:baryon-product-from-alt`
 - [fulton1991] Representation Theory: A First Course, §2 (Frobenius character formula).
 - [macdonald1995] Symmetric Functions and Hall Polynomials, §I.2.
 - [manuscript] §6/baryon-product-from-alt
+
+## Witness
+
+- [baryon-product-from-alt.witness.json](../../../folio-assistant/computations/baryon-product-from-alt.witness.json)
+  — pointwise + thimble-period numerical certificate of the Alt^3
+  isotype identification.
 -/
 
 import Mathlib.Data.Real.Basic

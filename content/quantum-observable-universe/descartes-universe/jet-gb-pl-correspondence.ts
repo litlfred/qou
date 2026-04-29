@@ -28,4 +28,11 @@ export default proposition({
     ref: "qou:QOU.Descartes.jetGBPLCorrespondence",
     validation: "not_checked",
   },
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/jet_gb_pl_correspondence.py",
+    witness: "folio-assistant/computations/jet-gb-pl-correspondence.witness.json",
+    status: "not_run",
+    requires: ["numpy"],
+  },
 });

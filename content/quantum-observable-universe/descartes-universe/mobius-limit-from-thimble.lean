@@ -18,6 +18,11 @@ LaTeX label: `prop:mobius-limit-from-thimble`
 
 - [witten2011] https://doi.org/10.1090/conm/560 (Picard–Lefschetz)
 - [manuscript] §6/mobius-limit-from-thimble
+
+## Witness
+
+- [mobius-limit-from-thimble.witness.json](../../../folio-assistant/computations/mobius-limit-from-thimble.witness.json)
+  — sympy closed-form `a(q) = (4 - q) / (4 q + 3)` evaluated at `q = q₀`.
 -/
 
 import Mathlib.Data.Real.Basic

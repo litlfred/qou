@@ -23,6 +23,12 @@ remains a `conjecture` per CLAUDE.md §3b.
 - [witten2011] https://doi.org/10.1090/conm/560
 - [yekutieli2015] https://doi.org/10.1090/memo/1119
 - [manuscript] §6/sw-period-thimble-equivalence
+
+## Witness
+
+- [sw-period-thimble-equivalence.witness.json](../../../folio-assistant/computations/sw-period-thimble-equivalence.witness.json)
+  — per-degree PLT vs GB/jet cross-validation for `k ∈ {0,1,2,3}`.
+  A2.4 (`k = 1`, proton word) is verified empirically only.
 -/
 
 import Mathlib.Data.Real.Basic

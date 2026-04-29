@@ -25,4 +25,11 @@ export default proposition({
     ref: "qou:QOU.Descartes.mobiusLimitFromThimble",
     validation: "not_checked",
   },
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/mobius_limit_from_thimble.py",
+    witness: "folio-assistant/computations/mobius-limit-from-thimble.witness.json",
+    status: "not_run",
+    requires: ["sympy", "mpmath"],
+  },
 });

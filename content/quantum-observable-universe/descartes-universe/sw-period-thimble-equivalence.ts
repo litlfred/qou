@@ -33,4 +33,12 @@ export default proposition({
     ref: "qou:QOU.Descartes.swPeriodThimbleEquivalence",
     validation: "not_checked",
   },
+  computation: {
+    engine: "scipy",
+    script: "folio-assistant/computations/sw_period_thimble_equivalence.py",
+    witness:
+      "folio-assistant/computations/sw-period-thimble-equivalence.witness.json",
+    status: "not_run",
+    requires: ["numpy", "scipy"],
+  },
 });
