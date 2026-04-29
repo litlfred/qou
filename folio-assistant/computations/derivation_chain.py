@@ -36,6 +36,7 @@ from __future__ import annotations
 
 import enum
 import json
+import re
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Any, Optional, Union
@@ -250,9 +251,8 @@ class DerivationChain:
             if step.trust_basis == TrustBasis.SCRIPT_CITED:
                 # Accept either `script:` or `Script:` (legacy chains)
                 # via case-insensitive regex match.
-                import re as _re
-                if step.notes is None or not _re.search(
-                    r"script:", step.notes, _re.IGNORECASE
+                if step.notes is None or not re.search(
+                    r"script:", step.notes, re.IGNORECASE
                 ):
                     issues.append(
                         f"SCRIPT_CITED step {step.name!r} should record "
