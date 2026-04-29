@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T00:04:13.771421+00:00",
-  "commitSha": "f661e3456e6c27258dfc64a6aebf703e6f3f296a",
+  "computedAt": "2026-04-29T12:43:24.018776+00:00",
+  "commitSha": "9b71de5d89bf83279fabc6fe532af06b6d9b916e",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -55,6 +55,25 @@
       "passed": true
     },
     {
+      "name": "chain_valid[hoefsmit-rep-21-sigma2.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[markov-trace-assembly-proton.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[markov-trace-assembly-proton.derivation]",
+      "computed": 2.12258250945273,
+      "expected": 2.12258250945273,
+      "passed": true,
+      "tolerance": 2.1225825094527304e-09
+    },
+    {
       "name": "chain_valid[n-tr-M-q0.derivation]",
       "computed": true,
       "expected": true,
@@ -94,6 +113,18 @@
       "tolerance": 9.377615319092895
     },
     {
+      "name": "chain_valid[schur-weyl-weight-111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-21.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
       "name": "chain_valid[schur-weyl-weight-3.derivation]",
       "computed": true,
       "expected": true,
@@ -114,7 +145,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 1,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3185120ad3c7",
@@ -212,6 +243,37 @@
         "has_script_frontier": false
       },
       {
+        "chain": "hoefsmit-rep-21-sigma2.derivation.json",
+        "target": "ρ^{(2,1)}(σ_2)",
+        "target_value": "ρ^{(2,1)}(σ_2) ∈ M_2(K(q)) — Hoefsmit matrix in the SYT basis {T_1=[1 2 / 3], T_2=[1 3 / 2]}; trace χ^(2,1)_q(σ_2) = q − q^{-1}",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "mathlib-cited": 1,
+          "derived": 3,
+          "axiom": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "markov-trace-assembly-proton.derivation.json",
+        "target": "tr_M(p, q_0)",
+        "target_value": 2.12258250945273,
+        "computed_value": 2.12258250945273,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 5,
+          "script-cited": 1,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "n-tr-M-q0.derivation.json",
         "target": "tr_M(n, q_0)",
         "target_value": 1.5893934459539052,
@@ -239,8 +301,8 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 4,
-          "derived": 1,
+          "script-cited": 3,
+          "derived": 2,
           "computational": 1
         },
         "has_script_frontier": true
@@ -259,6 +321,36 @@
           "computational": 1
         },
         "has_script_frontier": true
+      },
+      {
+        "chain": "schur-weyl-weight-111.derivation.json",
+        "target": "w_(1,1,1)(q)",
+        "target_value": "1 / ([3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-21.derivation.json",
+        "target": "w_(2,1)(q)",
+        "target_value": "(q − q^{-1}) / ([3]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
       },
       {
         "chain": "schur-weyl-weight-3.derivation.json",

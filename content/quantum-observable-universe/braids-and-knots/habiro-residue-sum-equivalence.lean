@@ -129,7 +129,7 @@ of `ℤ[u]` produced by `habiro_coefficients_atomic.py` for
        + 2u^30 + u^28 + 2u^26 + u^22 − u^20 − u^16 − u^12
        − 2u^8 − 2u^4 − 1.
 
-Below we give two discharge paths:
+Two discharge paths are provided:
 
   1. **`protonExampleSchematic`**: keep `protonHabiroTrace` as
      `noncomputable opaque`; supply `archimedean_agreement` as a
