@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T11:17:32.218662+00:00",
-  "commitSha": "3c166f6e1778fd11d1939ff70e285a3e1183c663",
+  "computedAt": "2026-04-29T12:49:36.692365+00:00",
+  "commitSha": "d506d196e0063c8fbe76ddeddfa85cd306f42343",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -41,6 +41,19 @@
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "chain_valid[markov-trace-assembly-neutron.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[markov-trace-assembly-neutron.derivation]",
+      "computed": 1.5893934459539052,
+      "expected": 1.5893934459539052,
+      "passed": true,
+      "tolerance": 1.5893934459539053e-09
     },
     {
       "name": "chain_valid[markov-trace-assembly-proton.derivation]",
@@ -101,7 +114,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 1,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3185120ad3c7",
@@ -171,6 +184,21 @@
         "has_script_frontier": false
       },
       {
+        "chain": "markov-trace-assembly-neutron.derivation.json",
+        "target": "tr_M(n, q_0)",
+        "target_value": 1.5893934459539052,
+        "computed_value": 1.5893934459539052,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 7,
+          "computational": 1
+        },
+        "has_script_frontier": false
+      },
+      {
         "chain": "markov-trace-assembly-proton.derivation.json",
         "target": "tr_M(p, q_0)",
         "target_value": 2.12258250945273,
@@ -180,11 +208,10 @@
         "issues": [],
         "trust_summary": {
           "axiom": 1,
-          "derived": 5,
-          "script-cited": 1,
+          "derived": 6,
           "computational": 1
         },
-        "has_script_frontier": true
+        "has_script_frontier": false
       },
       {
         "chain": "n-tr-M-q0.derivation.json",
@@ -197,7 +224,8 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 5,
+          "script-cited": 4,
+          "derived": 1,
           "computational": 1
         },
         "has_script_frontier": true

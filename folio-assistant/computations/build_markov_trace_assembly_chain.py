@@ -102,19 +102,17 @@ def build() -> DerivationChain:
         ),
     ))
 
-    # 3 — w_(2,1)(q) and w_(1,1,1)(q) — pending per-λ chains
+    # 3 — w_(2,1)(q) and w_(1,1,1)(q) — DERIVED via per-λ chains
     steps.append(DerivationStep(
-        name="Wedderburn weights w_(2,1)(q), w_(1,1,1)(q)",
+        name="Wedderburn weights w_(2,1)(q), w_(1,1,1)(q) — chain reference",
         operation=(
-            "Use the same Markov weight convention as "
-            "`schur-weyl-weight-3.derivation.json`: "
-            "w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏_x [h_x]_q^{-1}.  "
-            "For n=3 with hook-length sets {3, 1, 1} for (2,1) and "
-            "{3, 2, 1} for (1,1,1):\n"
-            "  w_(2,1)(q)   = (q − q^{-1})^1 / ([3]_q · [1]_q · [1]_q)\n"
-            "  w_(1,1,1)(q) = (q − q^{-1})^0 / ([3]_q · [2]_q · [1]_q)\n"
-            "Per-λ chains for these are not yet shipped; remains "
-            "SCRIPT_CITED until the chain set is complete."
+            "Reference the dedicated per-λ chains "
+            "`schur-weyl-weight-21.derivation.json` and "
+            "`schur-weyl-weight-111.derivation.json`.  Both use the "
+            "same Markov weight convention as `schur-weyl-weight-3` "
+            "(w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏_x [h_x]_q^{-1}) and "
+            "are themselves fully-trusted (zero SCRIPT_CITED).  Hook-"
+            "length data: [3, 1, 1] for (2,1), [3, 2, 1] for (1,1,1)."
         ),
         inputs=["partitions_of_3"],
         output_name="w_other",
@@ -122,19 +120,16 @@ def build() -> DerivationChain:
             "w_(2,1)":   "(q − q^{-1}) / ([3]_q · [1]_q · [1]_q)",
             "w_(1,1,1)": "1 / ([3]_q · [2]_q · [1]_q)",
         },
-        trust_basis=TrustBasis.SCRIPT_CITED,
+        trust_basis=TrustBasis.DERIVED,
         citation="kassel1995",
         jet_order=0,
         notes=(
-            "Normalization matches `schur-weyl-weight-3.derivation.json` "
-            "(w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏ [h_x]_q^{-1}).  "
-            "script: folio-assistant/computations/build_schur_weyl_weight_chain.py — "
-            "this is the BUILDER pattern that should be specialised "
-            "to λ=(2,1) and λ=(1,1,1) in follow-up PRs.  The existing "
-            "helper `schur_weyl_symbolic.py:schur_weyl_weight(lam, q)` "
-            "computes a different normalisation (s_λ(q,q^{-1}) / ∏ [h]_q, "
-            "returning 0 for partitions with >2 rows) and is "
-            "intentionally NOT the cited source for these weights."
+            "Derivation chains: "
+            "schur-weyl-weight-21.derivation.json + "
+            "schur-weyl-weight-111.derivation.json "
+            "(builder: build_schur_weyl_weight_extra.py).  Both fully-"
+            "trusted with profile {axiom: 1, mathlib-cited: 2, "
+            "derived: 1} — discharges this step's SCRIPT_CITED frontier."
         ),
     ))
 
@@ -273,12 +268,14 @@ def build() -> DerivationChain:
             "schur-weyl-weight-3 + hoefsmit-rep-21-sigma1 + "
             "atomic-braid-recipe-p chains via the finite-Jones axiom "
             "into tr_M(p, q_0) ≈ 2.1226.  Trust profile is "
-            "{axiom: 1, mathlib-cited: 0, derived: 5, script-cited: 1, "
-            "computational: 1} — closes 5 of 5 SCRIPT_CITED steps in "
-            "the proton atom-tr-M-q0 chain.  Remaining script-frontier "
-            "covers w_(2,1) and w_(1,1,1) Wedderburn weights, which "
-            "need their own per-λ chains (analogous to "
-            "schur-weyl-weight-3 but for partitions (2,1) and (1,1,1))."
+            "{axiom: 1, mathlib-cited: 0, derived: 6, script-cited: 0, "
+            "computational: 1} — fully-trusted (every Wedderburn weight "
+            "now references its own per-λ chain).  Closes 5 of 5 "
+            "SCRIPT_CITED steps in "
+            "the proton atom-tr-M-q0 chain.  Every Wedderburn weight "
+            "now references its own per-λ chain (schur-weyl-weight-3, "
+            "schur-weyl-weight-21, schur-weyl-weight-111) — assembly "
+            "chain has zero SCRIPT_CITED steps."
         ),
         steps=steps,
     )
