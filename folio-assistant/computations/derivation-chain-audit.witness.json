@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T21:12:46.813730+00:00",
-  "commitSha": "8a0239d4216fa130fd210fdd11117186b5370940",
+  "computedAt": "2026-04-29T21:37:13.152516+00:00",
+  "commitSha": "7c78ca6642903c2149a6f0162c87dd481be8cf93",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -390,7 +390,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
-  "scriptCommitSha": "5989c2577f43c9407591f8c918da1bbdc0de60cd",
+  "scriptCommitSha": "186782db9b2276c3dba313737a36be8faf6b730e",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "data": {
     "chain_results": [

@@ -37,6 +37,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import (  # noqa: E402
+    M_HECKE_PIPELINE_AT_Q0,
     Q_0,
     TR_M_AT_Q0,
     DerivationChain,
@@ -49,19 +50,15 @@ from derivation_chain import (  # noqa: E402
 HERE = Path(__file__).parent
 OUTPUT_CHAIN = HERE / "proton-mass-50dps.derivation.json"
 
-# Pinned values from current pipeline.  The Hecke-units numbers below
-# are SHORT SUMMARIES of the upstream `proton_mass_tower_derivation.py`
-# output — they round to 4 significant digits for readability in the
-# chain JSON.  Until the full-precision Hecke-units numbers are
-# captured by a 50 dps tower-derivation chain (Phase A item 3, see
-# `mass_endomorphism.py` precision lift), these summaries are the
-# intermediate steps' canonical values.  When the precision lift
-# lands, both the constants below and the chain JSON should be
-# regenerated from the full-precision tower output.
+# CODATA pinned values for the proton/electron mass comparison; the
+# Hecke-pipeline summary values live in
+# `derivation_chain.M_HECKE_PIPELINE_AT_Q0` (single source of truth
+# per Gemini PR #484 review — see that registry's docstring for the
+# precision-lift roadmap).
 M_E_MEV_CODATA       = 0.51099895
 M_P_MEV_CODATA       = 938.27208816
-M_E_HECKE_PIPELINE   = 0.0007783  # rounded summary; see note above
-M_P_HECKE_PIPELINE   = 1.4283     # rounded summary; see note above
+M_E_HECKE_PIPELINE   = M_HECKE_PIPELINE_AT_Q0["e"]
+M_P_HECKE_PIPELINE   = M_HECKE_PIPELINE_AT_Q0["p"]
 M_P_PRED_MEV         = (M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE) * M_E_MEV_CODATA
 GAP_REL              = abs(M_P_PRED_MEV - M_P_MEV_CODATA) / M_P_MEV_CODATA
 
