@@ -48,6 +48,7 @@ import sys
 from itertools import combinations
 from pathlib import Path
 
+import mpmath as mp
 import sympy as sp
 
 HERE = Path(__file__).parent
@@ -58,8 +59,13 @@ from atom_per_generator_volumes_sym import (  # noqa: E402
 )
 from q_parameter import Q as Q0_FLOAT  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
-m_e = M_E_MEV
+# τ_M (Wenzl-bridge) values are stored at 50 dps in the wenzl-bridge witness;
+# carry that precision through the assembly via mpmath. Final outputs are
+# float for printing/JSON only.
+mp.mp.dps = 50
+m_e = mp.mpf(str(M_E_MEV))
 
 
 def load_canonical_tau_M():
@@ -81,32 +87,35 @@ def load_canonical_tau_M():
         "electron":      "electron",
     }
     for r in w["results"]:
-        out[label_map[r["atom"]]] = float(r["tr_M_mixed_precision"])
+        out[label_map[r["atom"]]] = mp.mpf(r["tr_M_mixed_precision"])
     return out
 
 
 def load_tau_SW_registry():
     """τ_SW from the (mislabeled) `*-tr-M-q0.derivation.json` registry.
-    Loaded for side-by-side comparison only."""
+    Loaded for side-by-side comparison only. Values are kept as strings
+    (50-dp registry inputs) and converted to mpmath downstream."""
     out = {}
     for atom_short, label in [("p", "proton"), ("n", "neutron"), ("D", "deuteron")]:
         path = HERE / f"{atom_short}-tr-M-q0.derivation.json"
-        out[label] = float(json.loads(path.read_text())["target_value"])
+        out[label] = mp.mpf(str(json.loads(path.read_text())["target_value"]))
     return out
 
 
 def vol_q_tower_at_q0(Z, N, q0):
-    """Algebraic Vol_q^tower(β) at q_0 via symbolic Wedderburn port."""
+    """Algebraic Vol_q^tower(β) at q_0 via symbolic Wedderburn port.
+    Returns an mp.mpf at 50 dps, computed by evaluating the symbolic
+    Vol_q^tower expression (Laurent in q^{1/2}) at q_0 to dps."""
     vols = atom_per_generator_volumes_sym(Z, N, include_inter=True)
-    Vs = [float(vd["full"].subs(q, q0)) for vd in vols]
-    z0 = float(z_sym.subs(q, q0))
+    Vs = [mp.mpf(str(sp.N(vd["full"].subs(q, q0), 50))) for vd in vols]
+    z0 = mp.mpf(str(sp.N(z_sym.subs(q, q0), 50)))
     n = len(Vs)
-    prod = 1.0
+    prod = mp.mpf(1)
     for v in Vs:
         prod *= v
     single = z0 * sum(Vs)
     pair = z0**2 * sum(Vs[i]*Vs[j] for i, j in combinations(range(n), 2))
-    return abs(prod) + single + pair
+    return mp.fabs(prod) + single + pair
 
 
 def main() -> int:
@@ -115,7 +124,7 @@ def main() -> int:
     tau_SW = load_tau_SW_registry()
 
     inv_2q = 1 / (q0 + 1/q0)
-    T4_pervortex = m_e * (2 + float(inv_2q))
+    T4_pervortex = m_e * (mp.mpf(2) + mp.mpf(str(sp.N(inv_2q, 50))))
 
     w_6term = json.loads((HERE / "mass-formula-6term.witness.json").read_text())
     T5 = {label: w_6term["rows"][label]["term5_bw_chirality_binding"]
@@ -130,16 +139,18 @@ def main() -> int:
     print(f"  *-tr-M-q0.derivation.json is τ_SW (mislabeled as canonical).")
     print()
     print(f"  q_0 = {float(q0):.10f}")
-    print(f"  m_e = {m_e} MeV")
-    print(f"  T4 (Frobenius co-Casimir, n=3) = m_e·(2+1/[2]_q) = {T4_pervortex:.6f} MeV")
+    print(f"  m_e = {float(m_e):.10f} MeV")
+    print(f"  T4 (Frobenius co-Casimir, n=3) = m_e·(2+1/[2]_q) = {float(T4_pervortex):.6f} MeV")
     print()
     print(f"  Trace values side-by-side:")
     print(f"  {'atom':<10} {'τ_M (Wenzl-bridge)':<22} {'τ_SW (registry, wrong)':<22}")
     print(f"  " + "-" * 58)
     for label in ["deuteron", "tritium", "helium-3"]:
-        tau_M_v  = tau_M.get(label, float("nan"))
-        tau_SW_v = tau_SW.get(label, float("nan"))
-        print(f"  {label:<10} {tau_M_v:<22.6f} {tau_SW_v:<22}")
+        tau_M_v  = tau_M.get(label)
+        tau_SW_v = tau_SW.get(label)
+        m_str  = f"{float(tau_M_v):.6f}"  if tau_M_v  is not None else "n/a"
+        sw_str = f"{float(tau_SW_v):.6f}" if tau_SW_v is not None else "n/a"
+        print(f"  {label:<10} {m_str:<22} {sw_str:<22}")
     print()
 
     atoms = [
@@ -156,59 +167,63 @@ def main() -> int:
     results = []
     for short, full_name, Z, N, ame, rho in atoms:
         t_atom = tau_M[full_name]
-        T1 = m_e * rho * abs(t_atom)
+        T1 = m_e * rho * mp.fabs(t_atom)
         Vol_q = vol_q_tower_at_q0(Z, N, q0)
         T23 = m_e * Vol_q
         T4 = T4_pervortex
-        T5_val = T5[short]
-        T6 = 0.0
+        T5_val = mp.mpf(str(T5[short]))
+        T6 = mp.mpf(0)
 
         B_naive = T1 + T23 + T4 + T5_val + T6
-        err = (B_naive - ame) / ame * 100
+        err = float((B_naive - ame) / ame * 100)
 
         # Comparison: same assembly under τ_SW (only D has a registry entry)
         if full_name in tau_SW:
             t_atom_sw = tau_SW[full_name]
-            T1_sw = m_e * rho * abs(t_atom_sw)
+            T1_sw = m_e * rho * mp.fabs(t_atom_sw)
             B_sw = T1_sw + T23 + T4 + T5_val + T6
-            err_sw = (B_sw - ame) / ame * 100
+            err_sw = float((B_sw - ame) / ame * 100)
         else:
-            B_sw, err_sw = None, None
+            T1_sw, B_sw, err_sw = None, None, None
 
-        print(f"  {short:<4} {t_atom:<10.4f} {Vol_q:<8.3f} "
-              f"{T1:<9.4f} {T23:<9.4f} {T4:<7.4f} {T5_val:<+10.4f} "
-              f"{B_naive:<9.4f} {ame:<8.4f} {err:<+10.2f}")
+        print(f"  {short:<4} {float(t_atom):<10.4f} {float(Vol_q):<8.3f} "
+              f"{float(T1):<9.4f} {float(T23):<9.4f} {float(T4):<7.4f} "
+              f"{float(T5_val):<+10.4f} {float(B_naive):<9.4f} {ame:<8.4f} "
+              f"{err:<+10.2f}")
         results.append({
             "atom": full_name, "Z": Z, "N": N, "rho": rho,
-            "tau_M_canonical_wenzl_bridge": t_atom,
-            "tau_SW_registry_mislabeled": tau_SW.get(full_name),
-            "Vol_q_tower": Vol_q,
-            "T1_descended_MeV_under_tau_M": T1,
-            "T1_descended_MeV_under_tau_SW": (m_e * rho * abs(tau_SW[full_name])
-                                              if full_name in tau_SW else None),
-            "T2_T3_brane_MeV": T23,
-            "T4_frobenius_MeV": T4,
-            "T5_chirality_MeV": T5_val,
-            "T6_habiro_MeV": T6,
-            "B_naive_under_tau_M_MeV": B_naive,
-            "B_naive_under_tau_SW_MeV": B_sw,
+            "tau_M_canonical_wenzl_bridge": mp.nstr(t_atom, 30),
+            "tau_SW_registry_mislabeled": (mp.nstr(tau_SW[full_name], 30)
+                                           if full_name in tau_SW else None),
+            "Vol_q_tower": mp.nstr(Vol_q, 30),
+            "T1_descended_MeV_under_tau_M":  mp.nstr(T1, 30),
+            "T1_descended_MeV_under_tau_SW": (mp.nstr(T1_sw, 30)
+                                              if T1_sw is not None else None),
+            "T2_T3_brane_MeV":   mp.nstr(T23, 30),
+            "T4_frobenius_MeV":  mp.nstr(T4, 30),
+            "T5_chirality_MeV":  float(T5_val),
+            "T6_habiro_MeV":     float(T6),
+            "B_naive_under_tau_M_MeV":  mp.nstr(B_naive, 20),
+            "B_naive_under_tau_SW_MeV": (mp.nstr(B_sw, 20)
+                                         if B_sw is not None else None),
             "AME_binding_MeV": ame,
-            "err_pct_tau_M": err,
+            "err_pct_tau_M":  err,
             "err_pct_tau_SW": err_sw,
         })
     print()
     print("  Comparison vs. τ_SW assembly (PR #475's `multi-term-canonical-assembly.witness.json`):")
     for r in results:
         if r["B_naive_under_tau_SW_MeV"] is not None:
+            dT1 = float(mp.mpf(r["T1_descended_MeV_under_tau_M"])
+                       - mp.mpf(r["T1_descended_MeV_under_tau_SW"]))
             print(f"    {r['atom']:<10}: τ_M → {r['err_pct_tau_M']:+.2f}%   "
                   f"τ_SW → {r['err_pct_tau_SW']:+.2f}%   "
-                  f"(ΔT1 = {r['T1_descended_MeV_under_tau_M'] - r['T1_descended_MeV_under_tau_SW']:+.4f} MeV)")
+                  f"(ΔT1 = {dT1:+.4f} MeV)")
     print()
     print("  Note: T2+T3 (algebraic Vol_q^tower) is unchanged — it depends only on")
     print("        per-generator volumes, not on the trace functional. T1 is the only")
     print("        term that shifts under the τ_M-vs-τ_SW correction.")
 
-    from witness_base import WitnessBuilder
     w = (
         WitnessBuilder("multi-term-tau-M-corrected", engine="sympy+mpmath")
         .set_description(
