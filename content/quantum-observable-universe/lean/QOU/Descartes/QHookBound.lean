@@ -167,9 +167,35 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     -- The induction step reduces to `(q-1)·k + q^(-k) ≥ 1`, which is
     -- the substantive Bernoulli-driven content of the proof.
     have h_step : ((k : ℝ) + 1) ≤ q * (k : ℝ) + q ^ (-(k:ℤ)) := by
-      -- (q-1)·k + q^(-k) ≥ 1, i.e., q·k + q^(-k) ≥ k+1.
-      -- Substitute Bernoulli: q^(-k) ≥ 1 - k(q-1)/q.
-      sorry
+      -- Convert q^(-(k:ℤ)) to (1/q)^k for Bernoulli's lemma.
+      have h_pow_eq : q ^ (-(k:ℤ)) = ((1:ℝ)/q)^k := by
+        rw [zpow_neg, zpow_natCast, one_div, ← inv_pow]
+      rw [h_pow_eq]
+      -- Bernoulli: 1 + k·(1/q - 1) ≤ (1/q)^k, valid for 1/q - 1 ≥ -1 (i.e. 1/q ≥ 0).
+      have h_pos : (0 : ℝ) ≤ (1:ℝ)/q := by positivity
+      have h_inv_minus_one : (-2 : ℝ) ≤ (1:ℝ)/q - 1 := by linarith
+      have h_bern : 1 + (k : ℝ) * ((1:ℝ)/q - 1) ≤ ((1:ℝ)/q)^k :=
+        one_add_mul_le_pow h_inv_minus_one k
+      -- Goal: (k+1) ≤ q*k + (1/q)^k.
+      -- From h_bern: (1/q)^k ≥ 1 - k·(q-1)/q.  Hence
+      --   q*k + (1/q)^k ≥ q*k + 1 - k·(q-1)/q = 1 + k·(q²-q+1)/q.
+      -- Need (k+1) ≤ this; equivalently k·(q-1)²/q ≥ 0, true since q > 0.
+      have h_calc : 1 + (k : ℝ) * ((1:ℝ)/q - 1) = 1 - (k : ℝ) * (q - 1) / q := by
+        field_simp
+      rw [h_calc] at h_bern
+      -- h_bern: 1 - k·(q-1)/q ≤ (1/q)^k.
+      -- So q*k + (1/q)^k ≥ q*k + 1 - k·(q-1)/q.
+      -- We need (k+1) ≤ q*k + 1 - k·(q-1)/q, i.e., k ≤ q*k - k·(q-1)/q = k·(q-1) + k/q · ... hmm
+      -- Direct: q*k - k·(q-1)/q = k·(q² - q + 1)/q ≥ k (since (q-1)²≥0)
+      -- So q*k + 1 - k·(q-1)/q ≥ k + 1. ✓
+      have h_main : q * (k : ℝ) + 1 - (k : ℝ) * (q - 1) / q ≥ (k : ℝ) + 1 := by
+        have h_nn : 0 ≤ (k : ℝ) * (q - 1)^2 / q := by positivity
+        have : q * (k : ℝ) + 1 - (k : ℝ) * (q - 1) / q
+             = (k : ℝ) + 1 + (k : ℝ) * (q - 1)^2 / q := by
+          field_simp
+          ring
+        linarith
+      linarith
     push_cast
     linarith
 
