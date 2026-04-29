@@ -1,0 +1,192 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-29T20:27:54.638816+00:00",
+  "commitSha": "9814a35284e985b4d7eb259f211b72973e0199fc",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "wenzl-bridge-witness-audit",
+  "scriptFile": "probe_wenzl_bridge_witness_audit.py",
+  "scriptHash": "182c20efd99a",
+  "scriptCommitSha": "unknown",
+  "description": "Audit of `atomic-tr-m-wenzl-bridge.witness.json` per-atom braid input. Finding: proton, neutron, ³He entries all share bit-exact tr_M = 0.998366751 (and identical (1, 1.994, 1) per-block breakdown), indicating the witness-generation Rust binary used the same trivial/identity braid for all three. Direct re-computation via atomic_braid_to_crossings + Wenzl-bridge y_λ gives parity-distinguishing values: τ_M(p)=1.7339, τ_M(n)=1.4060. Deuteron, tritium witness values are correct (consistent with from-scratch chain). ³He value would require H_8 Wenzl y_λ, deferred.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "witness_audited": "atomic-tr-m-wenzl-bridge.witness.json"
+  },
+  "data": {
+    "audit": [
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "include_inter": false,
+        "max_gen_idx": 1,
+        "tau_M_direct_at_q0": 1.7338506712341113,
+        "tau_M_witness_at_q0": 0.9983666751080411,
+        "match_within_1e-4": false,
+        "per_lambda": [
+          {
+            "partition": [
+              3
+            ],
+            "y_lambda_at_q0": -0.15874185351530348,
+            "chi_at_q0": 1.3824945145464393,
+            "contrib_at_q0": -0.21945974171384147
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "y_lambda_at_q0": 0.8550672738297341,
+            "chi_at_q0": 1.8077033200981583,
+            "contrib_at_q0": 1.5457079498092914
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "y_lambda_at_q0": -0.5513926941441647,
+            "chi_at_q0": -0.7392235469701227,
+            "contrib_at_q0": 0.40760246313866144
+          }
+        ]
+      },
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "include_inter": true,
+        "max_gen_idx": 1,
+        "tau_M_direct_at_q0": 1.7338506712341113,
+        "tau_M_witness_at_q0": 0.9983666751080411,
+        "match_within_1e-4": false,
+        "per_lambda": [
+          {
+            "partition": [
+              3
+            ],
+            "y_lambda_at_q0": -0.15874185351530348,
+            "chi_at_q0": 1.3824945145464393,
+            "contrib_at_q0": -0.21945974171384147
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "y_lambda_at_q0": 0.8550672738297341,
+            "chi_at_q0": 1.8077033200981583,
+            "contrib_at_q0": 1.5457079498092914
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "y_lambda_at_q0": -0.5513926941441647,
+            "chi_at_q0": -0.7392235469701227,
+            "contrib_at_q0": 0.40760246313866144
+          }
+        ]
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "include_inter": false,
+        "max_gen_idx": 1,
+        "tau_M_direct_at_q0": 1.4059798582756502,
+        "tau_M_witness_at_q0": 0.9983666751080411,
+        "match_within_1e-4": false,
+        "per_lambda": [
+          {
+            "partition": [
+              3
+            ],
+            "y_lambda_at_q0": -0.15874185351530348,
+            "chi_at_q0": 1.1221068372363028,
+            "contrib_at_q0": -0.17812531918508567
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "y_lambda_at_q0": 0.8550672738297341,
+            "chi_at_q0": 1.265301086773935,
+            "contrib_at_q0": 1.0819175508415884
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "y_lambda_at_q0": -0.5513926941441647,
+            "chi_at_q0": -0.9107622062323655,
+            "contrib_at_q0": 0.5021876266191474
+          }
+        ]
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "include_inter": true,
+        "max_gen_idx": 1,
+        "tau_M_direct_at_q0": 1.4059798582756502,
+        "tau_M_witness_at_q0": 0.9983666751080411,
+        "match_within_1e-4": false,
+        "per_lambda": [
+          {
+            "partition": [
+              3
+            ],
+            "y_lambda_at_q0": -0.15874185351530348,
+            "chi_at_q0": 1.1221068372363028,
+            "contrib_at_q0": -0.17812531918508567
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "y_lambda_at_q0": 0.8550672738297341,
+            "chi_at_q0": 1.265301086773935,
+            "contrib_at_q0": 1.0819175508415884
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "y_lambda_at_q0": -0.5513926941441647,
+            "chi_at_q0": -0.9107622062323655,
+            "contrib_at_q0": 0.5021876266191474
+          }
+        ]
+      }
+    ],
+    "findings": {
+      "buggy_entries": [
+        "proton",
+        "neutron",
+        "helium3-3He"
+      ],
+      "verified_entries": [
+        "deuteron-2H",
+        "tritium-3H"
+      ],
+      "tau_M_p_direct": 1.733851,
+      "tau_M_n_direct": 1.40598,
+      "tau_M_He3_direct": "deferred (needs H_8)"
+    }
+  }
+}

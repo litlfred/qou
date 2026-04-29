@@ -71,6 +71,54 @@ requires.
    [`prop:mass-endomorphism-tower`](../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
    the algebraic form is the canonical statement.
 
+## Wenzl-bridge witness audit (PR #487 follow-up)
+
+Direct re-computation of τ_M for free p, n via the canonical
+[`atomic_braid_to_crossings`](../folio-assistant/computations/hecke_character_symbolic.py)
++ [`wenzl_y_lambda`](../folio-assistant/computations/from_scratch/wedderburn_markov.py)
+flagged a **witness-generation bug** in
+[`atomic-tr-m-wenzl-bridge.witness.json`](../folio-assistant/computations/atomic-tr-m-wenzl-bridge.witness.json):
+
+  Witness's proton, neutron, ³He entries all share bit-exact
+  $\tau_M = 0.998366751$. Per-block breakdown shows
+  $\mathrm{Tr}(\rho_\lambda) = (1, 1.994, 1)$ identically across the
+  three atoms — strongly suggesting the `dump-block-matrices` Rust
+  binary used the same trivial / single-nucleon braid for all three.
+
+[`probe_wenzl_bridge_witness_audit.py`](../folio-assistant/computations/probe_wenzl_bridge_witness_audit.py)
+documents the bug and computes corrected free-atom values:
+
+| atom | witness | direct τ_M (3-strand free) | match? |
+|------|--------:|---------------------------:|:------:|
+| proton | 0.998367 | **+1.733851** | ✗ |
+| neutron | 0.998367 | **+1.405980** | ✗ |
+| deuteron | 0.288326 | (needs H_5) — from-scratch chain agrees | ✓ |
+| tritium | 0.012889 | (needs H_8) — from-scratch chain agrees | ✓ |
+| ³He | 0.998367 | (needs H_8) — value unverified | ✗ pending |
+
+Round-6 trace-deficit hypothesis re-evaluated under the
+audit-corrected p, n values
+([`probe_round6_tau_M_canonical.py`](../folio-assistant/computations/probe_round6_tau_M_canonical.py)):
+
+| atom | deficit | $E_0 = m_p/\|\tau_M(p)\|$ | $E_0 = m_e$ |
+|------|--------:|---------------------------:|------------:|
+| D | 2.852 | 1543.09 MeV (+69266%) | **1.457 MeV (−34.5%)** |
+| T | 4.533 | 2452.99 MeV (+28821%) | 2.316 MeV (−72.7%) |
+| ³He | 3.875 | 2097.12 MeV (+27072%) | 1.980 MeV (−74.3%) |
+
+Under $E_0 = m_e$ with the audit-corrected p, n, the trace-deficit
+hypothesis gets D within **−34.5 %** of AME — substantially better
+than the −60 % seen under the buggy witness, but still not a
+canonical match. The proton-calibration prefactor ($\approx 540$
+MeV/τ-unit at the corrected p value) gives mass-scale errors
+(four orders of magnitude high) under either the buggy or
+corrected convention. The 938-MeV nucleon rest mass continues to
+require physics outside the categorical-binding chain.
+
+³He remains pending — needs H_8 Wenzl y_λ + 33-crossing character
+evaluation, deferred to a future PR alongside the other H_n>5
+extensions on PR #484.
+
 ## Open work carried forward
 
 - **Registry relabel**: rename `D-tr-M-q0.derivation.json` →

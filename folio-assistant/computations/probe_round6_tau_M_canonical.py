@@ -41,7 +41,22 @@ ZN = {"deuteron": (1, 1), "tritium": (1, 2), "helium-3": (2, 1)}
 
 def load_wenzl_bridge_tau_M():
     """Canonical τ_M values from atomic-tr-m-wenzl-bridge.witness.json
-    (Wenzl-bridge / Markov-axiom-derived, non-degenerate per pr-442)."""
+    (Wenzl-bridge / Markov-axiom-derived, non-degenerate per pr-442).
+
+    NOTE: per `probe_wenzl_bridge_witness_audit.py`, the witness's
+    proton, neutron, and ³He entries all share bit-exact 0.998366751
+    — a witness-generation bug (per-atom Tr(ρ_λ) shows the same
+    (1, 1.994, 1) breakdown for all three, suggesting the
+    dump-block-matrices Rust binary used a single-nucleon trivial
+    braid for all three atoms). The deuteron and tritium entries
+    are correct.
+
+    For the round-6 hypothesis (which needs τ_M(p), τ_M(n), τ_M(atom)),
+    we OVERRIDE the buggy proton/neutron entries with direct-
+    computation values from the audit:
+      τ_M(p free, 3-strand)  = +1.733851
+      τ_M(n free, 3-strand)  = +1.405980
+    """
     w = json.loads((HERE / "atomic-tr-m-wenzl-bridge.witness.json").read_text())
     label_map = {
         "proton": "proton",
@@ -54,6 +69,16 @@ def load_wenzl_bridge_tau_M():
     for r in w["results"]:
         if r["atom"] in label_map:
             out[label_map[r["atom"]]] = r["tr_M_mixed_precision"]
+
+    # Override buggy entries with audit-corrected values
+    audit_path = HERE / "wenzl-bridge-witness-audit.witness.json"
+    if audit_path.exists():
+        audit = json.loads(audit_path.read_text())
+        findings = audit.get("data", {}).get("findings", {})
+        if "tau_M_p_direct" in findings:
+            out["proton"]  = str(findings["tau_M_p_direct"])
+        if "tau_M_n_direct" in findings:
+            out["neutron"] = str(findings["tau_M_n_direct"])
     return out
 
 

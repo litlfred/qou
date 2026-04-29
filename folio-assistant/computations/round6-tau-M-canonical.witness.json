@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-04-29T16:14:08.487900+00:00",
-  "commitSha": "1a91da143f2348d5fc0b8fa5d3e5f80a960e64da",
+  "computedAt": "2026-04-29T20:28:45.188277+00:00",
+  "commitSha": "9814a35284e985b4d7eb259f211b72973e0199fc",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "round6-tau-M-canonical",
   "scriptFile": "probe_round6_tau_M_canonical.py",
-  "scriptHash": "9913623de6e6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "09031adb4db0",
+  "scriptCommitSha": "0413e0c263b9c24d30bbb427a15a491eb5107150",
   "description": "Round-6 trace-deficit hypothesis B = E_0·|Z·τ(p)+N·τ(n)−τ(atom)| evaluated under canonical τ_M (Wenzl-bridge / Markov-axiom) per pr-442's selection theorem. Predecessor `probe_neutron_gap_round6_canonical.py` used τ_SW from the mislabeled registry. Two prefactor variants: E_0 = m_p_AME/|τ_M(p)| (proton calibration) and E_0 = m_e (electron natural scale).",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -26,46 +26,46 @@
         "atom": "deuteron",
         "Z": 1,
         "N": 1,
-        "tau_M_p": "0.9983666751080410742729256440716118439789022368416",
-        "tau_M_n": "0.9983666751080410742729256440716118439789022368416",
+        "tau_M_p": "1.733851",
+        "tau_M_n": "1.40598",
         "tau_M_atom": "0.28832571469769612390058965047622232088645598254706",
-        "deficit_canonical": "1.70840763551838602464526163767",
-        "E0_proton_calibration_MeV": "939.807098487599489906930755447",
-        "B_pred_proton_calibration_MeV": "1605.5736229705947871",
-        "B_pred_electron_MeV": "0.87299450792187796429",
+        "deficit_canonical": "2.85150528530230387609941034952",
+        "E0_proton_calibration_MeV": "541.149203801249357643765237036",
+        "B_pred_proton_calibration_MeV": "1543.0898147763961348",
+        "B_pred_electron_MeV": "1.4571162067089277133",
         "B_AME_MeV": 2.22456612,
-        "err_pct_proton_calibration": 72074.68649439806,
-        "err_pct_electron": -60.75663923525555
+        "err_pct_proton_calibration": 69265.87772794078,
+        "err_pct_electron": -34.49885828932216
       },
       {
         "atom": "tritium",
         "Z": 1,
         "N": 2,
-        "tau_M_p": "0.9983666751080410742729256440716118439789022368416",
-        "tau_M_n": "0.9983666751080410742729256440716118439789022368416",
+        "tau_M_p": "1.733851",
+        "tau_M_n": "1.40598",
         "tau_M_atom": "0.012888940846003535850328644402100635982867344284295",
-        "deficit_canonical": "2.98221108447811968696844828781",
-        "E0_proton_calibration_MeV": "939.807098487599489906930755447",
-        "B_pred_proton_calibration_MeV": "2802.7031463809391111",
-        "B_pred_electron_MeV": "1.523906732846680458",
+        "deficit_canonical": "4.5329220591539964641496713556",
+        "E0_proton_calibration_MeV": "541.149203801249357643765237036",
+        "B_pred_proton_calibration_MeV": "2452.987163204304929",
+        "B_pred_electron_MeV": "2.3163184126595300815",
         "B_AME_MeV": 8.4817984,
-        "err_pct_proton_calibration": 32943.73688463214,
-        "err_pct_electron": -82.0332120503279
+        "err_pct_proton_calibration": 28820.60206482041,
+        "err_pct_electron": -72.69071600829925
       },
       {
         "atom": "helium-3",
         "Z": 2,
         "N": 1,
-        "tau_M_p": "0.9983666751080410742729256440716118439789022368416",
-        "tau_M_n": "0.9983666751080410742729256440716118439789022368416",
+        "tau_M_p": "1.733851",
+        "tau_M_n": "1.40598",
         "tau_M_atom": "0.9983666751080410742729256440716118439789022368416",
-        "deficit_canonical": "1.99673335021608214854585128814",
-        "E0_proton_calibration_MeV": "939.807098487599489906930755447",
-        "B_pred_proton_calibration_MeV": "1876.54417632",
-        "B_pred_electron_MeV": "1.020328645390400251",
+        "deficit_canonical": "3.87531532489195892572707435593",
+        "E0_proton_calibration_MeV": "541.149203801249357643765237036",
+        "B_pred_proton_calibration_MeV": "2097.1238025440635485",
+        "B_pred_electron_MeV": "1.9802820619386998745",
         "B_AME_MeV": 7.7180375,
-        "err_pct_proton_calibration": 24213.747844837497,
-        "err_pct_electron": -86.77994703458748
+        "err_pct_proton_calibration": 27071.72341471603,
+        "err_pct_electron": -74.34215547749412
       }
     ],
     "D_comparison_tau_SW": {
@@ -77,6 +77,6 @@
       "err_pct_SW": 70134.69147952463,
       "note": "τ_SW (registry) values were mislabeled as 'tr_M' — see prop:markov-trace-frobenius-selection. The QOU mass formula's Frobenius co-Casimir requires non-degeneracy, ruling out τ_SW."
     },
-    "verdict": "trace-deficit hypothesis FAILS at canonical τ_M (best residual 24214% — same scale as the τ_SW failure)"
+    "verdict": "trace-deficit hypothesis FAILS at canonical τ_M (best residual 27072% — same scale as the τ_SW failure)"
   }
 }
