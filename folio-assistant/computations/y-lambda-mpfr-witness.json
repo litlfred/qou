@@ -2099,11 +2099,11 @@
       }
     }
   },
-  "description": "High-precision (MPFR) Jones\u2013Markov y_\u03bb at H_n(R, q) via pyhecke_native.chi_lambda_braid_mpfr + mpmath linear solve.  Default 50 dps; arbitrary precision via the dps argument.  Cross-validates the f64 witness in y-lambda-jones-markov-witness.json and provides higher-precision values for ppb-class binding-energy computations.",
+  "description": "High-precision (MPFR) Jones–Markov y_λ at H_n(R, q) via pyhecke_native.chi_lambda_braid_mpfr + mpmath linear solve.  Default 50 dps; arbitrary precision via the dps argument.  Cross-validates the f64 witness in y-lambda-jones-markov-witness.json and provides higher-precision values for ppb-class binding-energy computations.",
   "references": [
     "prop:alpha-k-derivation-procedure",
     "tools/pyhecke-native (Rust kernel)"
   ],
-  "generated_at_utc": "2026-04-26T12:45:11.967084+00:00",
-  "dps": 50
+  "dps": 50,
+  "computedAt": "2026-04-26T12:45:11.967084+00:00"
 }

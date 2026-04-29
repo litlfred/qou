@@ -280,7 +280,7 @@ def build_witness() -> dict:
 
     return {
         "schema_version": "1.0.0",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "generator": "folio-assistant/computations/b_over_a_evaluator.py",
         "block": "prop:b-over-a-spectral-decomposition",
         "constants": {

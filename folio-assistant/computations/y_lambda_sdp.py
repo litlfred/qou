@@ -147,7 +147,7 @@ def main(ns: list[int]) -> None:
             "prop:alpha-k-derivation-procedure",
             "prop:confinement-sdp",
         ],
-        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "tables_by_n": {},
     }
     for n in ns:

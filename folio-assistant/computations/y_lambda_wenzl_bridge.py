@@ -362,7 +362,7 @@ def main(ns: list[int], dps: int = 100, do_symbolic: bool = True) -> None:
         "s_{λ, X}(Q) = Q^{n(λ)} ∏_x (1-X·Q^c)/(1-Q^h), Q=q², "
         "X = q·z/(1-Q+q·z)."
     )
-    out["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+    out["computedAt"] = datetime.now(timezone.utc).isoformat()
     out.setdefault("tables_by_n", {})
 
     for n in ns:

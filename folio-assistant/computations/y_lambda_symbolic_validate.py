@@ -380,7 +380,7 @@ def main(ns: list[int] | None = None) -> int:
             "markov": "1e-30",
             "plancherel": "1e-40",
         }
-        existing["generated_at_utc"] = datetime.now(timezone.utc).isoformat()
+        existing["computedAt"] = datetime.now(timezone.utc).isoformat()
         existing["summary_by_n"] = summary_by_n
         out_path.write_text(json.dumps(existing, indent=2))
 

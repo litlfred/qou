@@ -1,6 +1,5 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-04-26T17:20:32.997766+00:00",
   "generator": "folio-assistant/computations/b_over_a_evaluator.py",
   "block": "prop:b-over-a-spectral-decomposition",
   "constants": {
@@ -21,7 +20,7 @@
     "fitted_c_S": -509.0025335258031,
     "rationale": "Geometric derivation of c_S from non-abelian Stokes (referenced in prop:confined-knot-binding and prop:wigner-np-pairing) is not assembled into a closed formula at this commit. We fit c_S to 4He and report residuals on 12C and 40Ca."
   },
-  "free_braid_assumption": "Intra-nucleon 3-quark crossings: proton (uud) = (1 pp, 0 nn, 2 pn); neutron (udd) = (0 pp, 1 nn, 2 pn). Free-braid totals scale linearly with nucleon counts: Lambda_lambda^free = (Lambda_lambda^proton)^Z \u00b7 (Lambda_lambda^neutron)^N.",
+  "free_braid_assumption": "Intra-nucleon 3-quark crossings: proton (uud) = (1 pp, 0 nn, 2 pn); neutron (udd) = (0 pp, 1 nn, 2 pn). Free-braid totals scale linearly with nucleon counts: Lambda_lambda^free = (Lambda_lambda^proton)^Z · (Lambda_lambda^neutron)^N.",
   "nuclei": [
     {
       "Z": 2,
@@ -128,5 +127,6 @@
       "residual_MeV": -7.225508529281742,
       "residual_pct": -84.49599242292034
     }
-  ]
+  ],
+  "computedAt": "2026-04-26T17:20:32.997766+00:00"
 }
