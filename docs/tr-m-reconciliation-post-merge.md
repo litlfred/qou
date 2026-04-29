@@ -8,7 +8,7 @@ tr_M-normalization ambiguity:
 
 ## Update (pr-442): the registry value is τ_SW, not the canonical τ_M
 
-[`prop:markov-trace-frobenius-selection`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md) (proven on `claude/continue-pr-442-DJRWm`) shows the QOU mass formula's Frobenius co-Casimir construction
+[`prop:markov-trace-frobenius-selection`](https://github.com/litlfred/qou/blob/25a204efaf61ceba7c11f4f8861c533b6d37f0cf/content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md) (proven at commit [`25a204e`](https://github.com/litlfred/qou/commit/25a204efaf61ceba7c11f4f8861c533b6d37f0cf), pending merge as part of pr-442) shows the QOU mass formula's Frobenius co-Casimir construction
 $C_{\dim_q} = \sum_\lambda [\dim_q(\lambda)\cdot \tau(p_\lambda)]^{-1} p_\lambda$
 requires $\tau$ **non-degenerate on every Wedderburn block**. Two
 distinct Frobenius pairings on $H_n(q)$ compete:
