@@ -37,21 +37,26 @@ universe u
     positivity; this encodes "δ is standard-real and ε is infinitesimal"
     without committing to a specific surreal carrier.
 
-    Formal proof pending specialisation to `𝐍𝐨`; meanwhile the
-    statement is registered via `sorry` with bibliographic citation
-    per CLAUDE.md §1. -/
+    DIAGNOSTIC (false as stated): on the standard reals (e.g. F = ℝ),
+    take ε = 2, δ = 3 (both > 0, ε ≤ δ). Then δ²·ε⁻¹ = 9/2 = 4.5 and
+    ε³ = 8, so 4.5 > 8 fails. The intended hypothesis is "δ is a
+    *standard real* and ε is *archimedean-infinitesimal*", which the
+    current `LinearOrderedField` typeclass cannot express. Closing
+    requires either:
+    1. specialising F to a surreal/Hahn-completion model with explicit
+       infinitesimal classification, or
+    2. adding an `ε^4 < δ^2` hypothesis (which captures the substantive
+       size separation directly).
+
+    Sorry retained with this diagnosis rather than closed-as-stated
+    (which would be a false claim).
+    Ref: [conway1976] https://doi.org/10.1201/9781439864159
+    Ref: [gonshor1986] https://doi.org/10.1017/CBO9780511629143 -/
 theorem surreal_squeeze
     {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
     (ε δ : F) (hε : 0 < ε) (hδ : 0 < δ) (h_inf : ε ≤ δ) :
     δ^2 * ε⁻¹ > ε^3 := by
-  -- Multiplying by ε > 0 reduces to δ² > ε⁴.
-  -- Since ε ≤ δ and both are positive, ε⁴ ≤ δ⁴.
-  -- To conclude δ² > ε⁴ we need the strict-inequality step that
-  -- distinguishes "standard real" δ from "infinitesimal" ε, which
-  -- in `LinearOrderedField` alone is not available.
-  -- Specialise to `𝐍𝐨` or a Hahn completion in a downstream module.
-  -- Ref: [conway1976] https://doi.org/10.1201/9781439864159
-  -- Ref: [gonshor1986] https://doi.org/10.1017/CBO9780511629143
+  -- See docstring: false as stated on standard reals.
   sorry
 
 end QOU.AlgebraicSubstrate

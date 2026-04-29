@@ -110,12 +110,25 @@ theorem typed_crossing_square_pp (ρ : HeckeRep 3 2) (i : Fin 2) :
 theorem mixed_crossing_square_identity (ρ : HeckeRep 3 2) (i : Fin 2) :
     (2 • ρ.gen i - HA_t • 1) * (2 • ρ.gen i - HA_t • 1) =
     (4 + HA_t * HA_t) • (1 : TMatrix) := by
-  -- (2σ - HA)² = 4σ² - 4HA·σ + HA²·I = 4(HA·σ + I) - 4HA·σ + HA²·I = (4 + HA²)·I
-  -- A previous attempt used `module` (Mathlib tactic) but this file does
-  -- not import `Mathlib.Tactic.Module`.  The non-commutative matrix
-  -- algebra rewrite needs either an explicit import + tactic or a
-  -- careful manual expansion via smul_mul_assoc + mul_smul_comm.
-  -- Reverted to sorry-with-Ref pending that infrastructure.
+  -- Expand (2σ - HA·I)(2σ - HA·I):
+  --   = 4·σ² - 2·HA·σ - 2·σ·HA + HA²·I
+  --   = 4·(HA·σ + I) - 4·HA·σ + HA²·I  (Hecke relation, HA central scalar)
+  --   = 4·HA·σ + 4·I - 4·HA·σ + HA²·I
+  --   = 4·I + HA²·I
+  --   = (4 + HA²)·I.
+  -- Manual expansion via smul + mul rewrites.
+  have hecke := ρ.hecke_rel i
+  -- Rewrite each factor: 2 • g - HA • 1
+  rw [sub_mul, mul_sub, mul_sub]
+  -- Goal: 2•g·(2•g) − 2•g·(HA•1) − (HA•1)·(2•g) + (HA•1)·(HA•1) = (4 + HA²)•1
+  -- Simplify each term:
+  --   2•g·(2•g) = 4 • (g·g) = 4 • (HA•g + 1) = (4·HA) • g + 4 • 1
+  --   2•g·(HA•1) = 2·HA • g
+  --   (HA•1)·(2•g) = 2·HA • g  (HA scalar; (HA•1)·M = HA•M)
+  --   (HA•1)·(HA•1) = HA² • 1
+  -- Sum: (4·HA)•g + 4•1 - 2·HA•g - 2·HA•g + HA²•1 = 4•1 + HA²•1 = (4 + HA²)•1. ✓
+  -- The full Lean discharge needs careful smul_mul + mul_smul + smul_smul
+  -- + smul_one + add_smul rewrites. Sketched here for `lake build`.
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   sorry
 
