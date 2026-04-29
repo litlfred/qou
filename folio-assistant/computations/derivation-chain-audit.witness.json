@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T20:51:56.307996+00:00",
-  "commitSha": "15ee7082a8c2d36cb1a611eff65efd47f19dc199",
+  "computedAt": "2026-04-29T21:10:01.811904+00:00",
+  "commitSha": "9f2f1ab79e94aa9e91bf006240334c8554c05959",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -390,7 +390,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
-  "scriptCommitSha": "542ba2a1f71f1580740a15f97c5a62a83f5ec101",
+  "scriptCommitSha": "5989c2577f43c9407591f8c918da1bbdc0de60cd",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "data": {
     "chain_results": [
@@ -1358,6 +1358,7 @@
         "explicit-alpha-k-h3.witness.json",
         "explore-1ppb-items-1-and-2.witness.json",
         "f1-spectral-reconciliation.witness.json",
+        "family-4-motivic-probe.witness.json",
         "feynman-qou-comparison.witness.json",
         "final-formula-5-isotope.witness.json",
         "four-term-photon-to-atoms.witness.json",
@@ -1475,6 +1476,7 @@
         "multi-level-jet-sum.witness.json",
         "multi-level-sdp.witness.json",
         "multi-term-canonical-assembly.witness.json",
+        "multi-term-tau-M-corrected.witness.json",
         "neutron-alt-tower-shapes.witness.json",
         "neutron-from-photons.witness.json",
         "neutron-gap-probes-round2.witness.json",
@@ -1561,6 +1563,7 @@
         "rho-f-derived-vs-observed.witness.json",
         "ribbon-content-average.witness.json",
         "rosso-jones-qvalues.witness.json",
+        "round6-tau-M-canonical.witness.json",
         "sage-cgeom.witness.json",
         "schur-weyl-mn.witness.json",
         "schur-weyl-uq-sl2.witness.json",
@@ -1637,6 +1640,7 @@
         "wedderburn-inter-gen-direct.witness.json",
         "wedderburn-mass-3term.witness.json",
         "wedderburn-orthogonal-r-3-h4.witness.json",
+        "wenzl-bridge-witness-audit.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-simplified-small-n.witness.json",
         "z-power-scan.witness.json"
