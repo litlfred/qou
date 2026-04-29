@@ -2901,6 +2901,63 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1007/BF02392716",
   }),
 
+  // ── Bilson-Thompson 2005 ──────────────────────────────────────
+  ref({
+    id: "bilsonthompson2005",
+    type: "article",
+    title: "A topological model of composite preons",
+    author: [
+      { family: "Bilson-Thompson", given: "Sundance O." },
+    ],
+    issued: { "date-parts": [[2005]] },
+    note: "arXiv:hep-ph/0503213",
+    URL: "https://arxiv.org/abs/hep-ph/0503213",
+  }),
+
+  // ── Bilson-Thompson, Markopoulou, Smolin 2007 ─────────────────
+  ref({
+    id: "bilsonthompson2007",
+    type: "article-journal",
+    title:
+      "Quantum gravity and the standard model",
+    author: [
+      { family: "Bilson-Thompson", given: "Sundance O." },
+      { family: "Markopoulou", given: "Fotini" },
+      { family: "Smolin", given: "Lee" },
+    ],
+    "container-title": "Classical and Quantum Gravity",
+    issued: { "date-parts": [[2007]] },
+    volume: "24",
+    issue: "16",
+    page: "3975-3993",
+    DOI: "10.1088/0264-9381/24/16/002",
+    URL: "https://doi.org/10.1088/0264-9381/24/16/002",
+  }),
+
+  // ── Sugic et al. 2021 ─────────────────────────────────────────
+  ref({
+    id: "sugic2021",
+    type: "article-journal",
+    title:
+      "Particle-like topologies in light",
+    author: [
+      { family: "Sugic", given: "Danica" },
+      { family: "Droop", given: "Ramon" },
+      { family: "Otte", given: "Eileen" },
+      { family: "Ehrmanntraut", given: "Daniel" },
+      { family: "Nori", given: "Franco" },
+      { family: "Ruostekoski", given: "Janne" },
+      { family: "Denz", given: "Cornelia" },
+      { family: "Dennis", given: "Mark R." },
+    ],
+    "container-title": "Nature Communications",
+    issued: { "date-parts": [[2021]] },
+    volume: "12",
+    page: "6785",
+    DOI: "10.1038/s41467-021-26171-5",
+    URL: "https://www.nature.com/articles/s41467-021-26171-5",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
