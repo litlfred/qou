@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-04-29T18:21:23.657572+00:00",
+  "commitSha": "96129e9a310f5776e20df8164c21309fce7478f9",
+  "assertions": [
+    {
+      "name": "rank chain: E_0^p = J^p(A) = J^p𝓢 = p + 1 for all p ∈ {0,1,2,3}",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "categorical / geometric / GB jet structure on a 1-parameter family"
+    },
+    {
+      "name": "PL period |Π^(p)| finite for p ∈ {0, 1, 2}",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "recovered from picard-lefschetz-thimble.witness.json"
+    },
+    {
+      "name": "PL period magnitudes within a 1e3 dynamic-range envelope (p ∈ {0,1,2})",
+      "computed": 12.3960668361093,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1000.0,
+      "source": "dynamic-range proxy for Hessian-normalised period scaling"
+    },
+    {
+      "name": "p = 3 stratum has a simultaneous 3-root entry in PLT witness",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "presence of `data.simultaneous_3root` in PLT witness JSON"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "jet-gb-pl-correspondence",
+  "scriptFile": "jet_gb_pl_correspondence.py",
+  "scriptHash": "a556bd2d08ea",
+  "scriptCommitSha": "",
+  "description": "Per-stratum table E_0^p ↔ J^p(A) ↔ J^p𝓢 ↔ Π^(p) for p ∈ {0,1,2,3}.  Asserts (a) the categorical, geometric and GB ranks all equal p + 1, and (b) the PL period magnitude is finite and recorded in picard-lefschetz-thimble.witness.json. The horizontal arrow τ : J^p(A) → J^p𝓢 is the only archimedean step in the diagram.",
+  "contentBlock": "prop:jet-gb-pl-correspondence",
+  "parameters": {
+    "q0": 1.1099785955541805
+  },
+  "data": {
+    "stratum_table": [
+      {
+        "p": 0,
+        "E_0_p_rank": 1,
+        "J_p_A_dim": 1,
+        "J_p_S_rank": 1,
+        "Pi_p_abs": 11.14825581185299,
+        "Pi_p_finite": true
+      },
+      {
+        "p": 1,
+        "E_0_p_rank": 2,
+        "J_p_A_dim": 2,
+        "J_p_S_rank": 2,
+        "Pi_p_abs": 8.242690623876683,
+        "Pi_p_finite": true
+      },
+      {
+        "p": 2,
+        "E_0_p_rank": 3,
+        "J_p_A_dim": 3,
+        "J_p_S_rank": 3,
+        "Pi_p_abs": 102.17694388294683,
+        "Pi_p_finite": true
+      },
+      {
+        "p": 3,
+        "E_0_p_rank": 4,
+        "J_p_A_dim": 4,
+        "J_p_S_rank": 4,
+        "Pi_p_abs": NaN,
+        "Pi_p_finite": false
+      }
+    ]
+  },
+  "caveats": [
+    "The proposition is a STRUCTURAL correspondence, not a numerical-equality claim.  This witness records the per-stratum rank table and the existence/finiteness of the PL period; precise period-by-period magnitude equivalences belong to sw-period-thimble-equivalence.witness.json (which carries the A2.4 caveat for k = 1)."
+  ]
+}

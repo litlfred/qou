@@ -26,4 +26,11 @@ export default proposition({
     ref: "qou:QOU.Descartes.baryonProductFromAlt",
     validation: "not_checked",
   },
+  computation: {
+    engine: "scipy",
+    script: "folio-assistant/computations/baryon_product_from_alt.py",
+    witness: "folio-assistant/computations/baryon-product-from-alt.witness.json",
+    status: "not_run",
+    requires: ["numpy", "scipy"],
+  },
 });

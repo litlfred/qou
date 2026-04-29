@@ -14,6 +14,12 @@ LaTeX label: `def:picard-lefschetz-thimble`
 
 - [manuscript] §5/picard-lefschetz-thimble
 - [witten2011] https://doi.org/10.1090/conm/560
+
+## Witness
+
+- [picard-lefschetz-thimble.witness.json](../../../folio-assistant/computations/picard-lefschetz-thimble.witness.json)
+  — full numerical Hessian + thimble + period data on the 6
+  discriminant critical points of the color-tube cubic at `q = q₀`.
 -/
 
 import Mathlib.Data.Real.Basic
