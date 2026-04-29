@@ -18,6 +18,15 @@ peer-review practices and the methodology of
 - All equations, formulas, and numerical computations are correct.
 - Dimensional analysis and unit consistency hold.
 - Boundary conditions and edge cases are handled appropriately.
+- **Witnessed values must use `:val[name]`** in any block kind
+  (definitions, propositions, conjectures, theorems, lemmas,
+  corollaries, proofs, examples, remarks, prose, algorithms, equations).
+  Numerical literals derived from `q_0` or another substrate witness
+  must be cited via the witness registry — never hard-coded.  See
+  [`witnessed-values.md`](./witnessed-values.md) for the registry
+  contract, the directive syntax, and the codemod that rewrites
+  legacy literals.  Flag any new hard-coded numeral that has (or
+  could have) a registry entry as drift risk.
 
 ### 2. Scientific Rigor
 - Claims are supported by evidence or sound reasoning.

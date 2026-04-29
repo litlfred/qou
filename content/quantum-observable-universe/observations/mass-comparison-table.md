@@ -1,7 +1,7 @@
 The following table evaluates the topological knot formulas
-([knot formula table](#rem\:knot-formula-table)) at the substrate
+([knot formula table](#rem:knot-formula-table)) at the substrate
 parameter $q_0$ derived from the muon--electron mass
-ratio ([Skein mass relation](#rem\:skein-mass-relation)), and
+ratio ([Skein mass relation](#rem:skein-mass-relation)), and
 compares the results against CODATA 2022 recommended values and
 PDG 2024 averages.  All masses are in MeV/$c^2$.
 
@@ -17,11 +17,11 @@ $$
 
 *Leptons (from Skein volume).*
 
-| Particle | Knot formula                         | Mass formula                                            | QOU (MeV) | Observed (MeV)         | Source |
-| -------- | ------------------------------------ | ------------------------------------------------------- | --------- | ---------------------- | ------ |
-| $\nu$    | $T_{1,0}$                            | $\mathrm{Vol}(0_1)/\hbar_q^2 = 0$                       | $0$       | $< 0.8 \times 10^{-6}$ | KATRIN |
-| $e^-$    | $T_{2,3}$                            | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) / 3$ (input) | $0.511$   | $0.51100$              | CODATA |
-| $\mu^-$  | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $\mathrm{Vol}(4_1)/\hbar_q^2$                           | $105.658$ | $105.658$              | CODATA |
+| Particle | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
+|----------|-------------|-------------|-----------|----------------|--------|
+| $\nu$ | $T_{1,0}$ | $\mathrm{Vol}(0_1)/\hbar_q^2 = 0$ | $0$ | $< 0.8 \times 10^{-6}$ | KATRIN |
+| $e^-$ | $T_{2,3}$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) / 3$ (input) | $0.511$ | $0.51100$ | CODATA |
+| $\mu^-$ | $(T_{2,3} \bowtie T_{2,3})^{\sigma}$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ | $105.658$ | $105.658$ | CODATA |
 
 The electron mass is an input (it fixes $\mu_{\mathfrak{u}}$ through the pair
 Skein mass).  The muon mass is the first *prediction* — it equals
@@ -30,32 +30,32 @@ to six significant figures with $q = q_0$.
 
 *Hadrons (from pair Skein masses).*
 
-| Particle           | Knot formula                      | Mass formula                                                                       | QOU (MeV) | Observed (MeV) | Source |
-| ------------------ | --------------------------------- | ---------------------------------------------------------------------------------- | --------- | -------------- | ------ |
-| Proton             | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | $938.272$ | $938.272$      | CODATA |
-| Neutron            | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | $939.565$ | $939.565$      | CODATA |
-| $n$--$p$ splitting |                                   | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$  | $1.293$   | $1.293$        | CODATA |
-| $\pi^{\pm}$        | $u \bowtie d^{\sigma}$            | $\mathcal{S}_{ud^{\sigma}}(q)$                                                     | $139.570$ | $139.570$      | PDG    |
-| $K^{\pm}$          | $u \bowtie s^{\sigma}$            | $\mathcal{S}_{us^{\sigma}}(q)$                                                     | $493.677$ | $493.677$      | PDG    |
+| Particle | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
+|----------|-------------|-------------|-----------|----------------|--------|
+| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | $938.272$ | $938.272$ | CODATA |
+| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | $939.565$ | $939.565$ | CODATA |
+| $n$--$p$ splitting | | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$ | $1.293$ | $1.293$ | CODATA |
+| $\pi^{\pm}$ | $u \bowtie d^{\sigma}$ | $\mathcal{S}_{ud^{\sigma}}(q)$ | $139.570$ | $139.570$ | PDG |
+| $K^{\pm}$ | $u \bowtie s^{\sigma}$ | $\mathcal{S}_{us^{\sigma}}(q)$ | $493.677$ | $493.677$ | PDG |
 
 *Light nuclei (from multi-body Skein).*
 
-| Nucleus           | Knot formula                          | Mass formula                                           | QOU (MeV)  | Observed (MeV) | Source  |
-| ----------------- | ------------------------------------- | ------------------------------------------------------ | ---------- | -------------- | ------- |
-| Deuteron          | $\mathfrak{p} \bowtie \mathfrak{n}$   | $\mathcal{M}(L_6) - \Delta \mathbf{E}_{\mathrm{bind}}$ | $1875.613$ | $1875.613$     | CODATA  |
-| Binding ($D$)     |                                       | $\Delta\text{Skein}$                                   | $2.224$    | $2.225$        | CODATA  |
-| ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$  | $\mathcal{M}(L_9) - \Delta E$                          | $2808.39$  | $2808.39$      | AME2020 |
-| ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $\mathcal{M}(L_{12}) - \Delta E$                       | $3727.38$  | $3727.38$      | AME2020 |
+| Nucleus | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
+|---------|-------------|-------------|-----------|----------------|--------|
+| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_6) - \Delta \mathbf{E}_{\mathrm{bind}}$ | $1875.613$ | $1875.613$ | CODATA |
+| Binding ($D$) | | $\Delta\text{Skein}$ | $2.224$ | $2.225$ | CODATA |
+| ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_9) - \Delta E$ | $2808.39$ | $2808.39$ | AME2020 |
+| ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $\mathcal{M}(L_{12}) - \Delta E$ | $3727.38$ | $3727.38$ | AME2020 |
 
 **Notes.**  The substrate parameter $q$ is fixed by the
 muon--electron mass ratio (one free input).  Hadronic masses follow
 from the pair Skein formula
-([terminal resolution](#prop\:terminal-resolution)) — no QCD lattice
+([terminal resolution](#prop:terminal-resolution)) — no QCD lattice
 input — and nuclear binding from the Hopf-junction Skein change
 $\Delta E = \Delta\mathcal{S}$.  The table truncates at
 ${}^4\mathrm{He}$; the multi-body Skein polynomials beyond $A = 4$
 remain computable in principle ([embeddability
-closure](#thm\:embeddability-closure)) but have not yet been
+closure](#thm:embeddability-closure)) but have not yet been
 evaluated.
 
 **Sources & scope.**  Proton and neutron entries use CODATA 2022
@@ -79,15 +79,15 @@ available ("matched" = lookup succeeded, NOT a prediction test).
 The certificate fields encode crossing structure (combinatorial
 data), not mass directly:
 
-| Isotope             | $Z$ | $N$ | $A$ | $B/A$ (AME2020) | $F_{\mathrm{Pauli}}$ | $\ln\lvert P\rvert$ |
-| :------------------ | --: | --: | --: | --------------: | -------------------: | ------------------: |
-| ${}^2\mathrm{H}$    |   1 |   1 |   2 |          1.1121 |                1.005 |               0.051 |
-| ${}^3\mathrm{H}$    |   1 |   2 |   3 |          2.8273 |                0.900 |            $-0.684$ |
-| ${}^3\mathrm{He}$   |   2 |   1 |   3 |          2.5727 |                0.746 |            $-0.436$ |
-| ${}^4\mathrm{He}$   |   2 |   2 |   4 |          7.0739 |                1.114 |            $-0.574$ |
-| ${}^{12}\mathrm{C}$ |   6 |   6 |  12 |          7.6801 |                1.496 |            $-3.860$ |
-| ${}^{14}\mathrm{N}$ |   7 |   7 |  14 |          7.4756 |                0.849 |            $-5.343$ |
-| ${}^{16}\mathrm{O}$ |   8 |   8 |  16 |          7.9762 |                2.639 |            $-5.275$ |
+| Isotope | $Z$ | $N$ | $A$ | $B/A$ (AME2020) | $F_{\mathrm{Pauli}}$ | $\ln\lvert P\rvert$ |
+|:--------|----:|----:|----:|----------------:|---------------------:|--------------------:|
+| ${}^2\mathrm{H}$ | 1 | 1 | 2 | 1.1121 | 1.005 | 0.051 |
+| ${}^3\mathrm{H}$ | 1 | 2 | 3 | 2.8273 | 0.900 | $-0.684$ |
+| ${}^3\mathrm{He}$ | 2 | 1 | 3 | 2.5727 | 0.746 | $-0.436$ |
+| ${}^4\mathrm{He}$ | 2 | 2 | 4 | 7.0739 | 1.114 | $-0.574$ |
+| ${}^{12}\mathrm{C}$ | 6 | 6 | 12 | 7.6801 | 1.496 | $-3.860$ |
+| ${}^{14}\mathrm{N}$ | 7 | 7 | 14 | 7.4756 | 0.849 | $-5.343$ |
+| ${}^{16}\mathrm{O}$ | 8 | 8 | 16 | 7.9762 | 2.639 | $-5.275$ |
 
 The $F_{\mathrm{Pauli}}$ factor is $O(1)$ for all isotopes and
 encodes the Pauli exclusion statistical weight. The $\ln|P|$ column

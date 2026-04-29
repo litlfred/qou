@@ -1,6 +1,6 @@
 Independent audit of the tritium $\beta$-decay Q-value derivation
 ${}^3\mathrm{H} \to {}^3\mathrm{He} + e^- + \bar\nu_e$, verifying
-each step of [prop:tritium-qvalue-symbolic](#prop\:tritium-qvalue-symbolic)
+each step of [prop:tritium-qvalue-symbolic](#prop:tritium-qvalue-symbolic)
 for fitted parameters and hidden assumptions.  This block is
 purely audit; the canonical statement and proof of the closed-form
 Q-value formula live with the proposition.
@@ -21,10 +21,10 @@ The first fixes $q_0$; the second sets the energy scale.
 
 **Step 1: Typed crossing operator** (structural postulate).
 
-| Pair | Hecke element                                       | Justification                                  |
-| ---- | --------------------------------------------------- | ---------------------------------------------- |
-| $uu$ | $\sigma$                                            | Positive crossing                              |
-| $dd$ | $\sigma^{-1} = \sigma - h$                          | Negative crossing (Hecke relation)             |
+| Pair | Hecke element | Justification |
+|------|--------------|---------------|
+| $uu$ | $\sigma$ | Positive crossing |
+| $dd$ | $\sigma^{-1} = \sigma - h$ | Negative crossing (Hecke relation) |
 | $ud$ | $\tfrac{1}{2}(\sigma + \sigma^{-1}) = \sigma - h/2$ | Arithmetic mean (**isospin-invariant choice**) |
 
 The $\lambda = \tfrac{1}{2}$ coefficient is the unique value invariant
@@ -48,13 +48,13 @@ $$
 
 **Independently verified** using the repo's seminormal form implementation:
 
-| Channel            |  $G_P$ (proton)  | $G_N$ (neutron) |
-| ------------------ | :--------------: | :-------------: |
-| sym ($q^3$)        |     $+1.122$     |     $+0.911$    |
-| std$_1$ ($-q$)     |     $-1.174$     |     $-1.222$    |
-| std$_2$ ($q^{-1}$) |     $+0.858$     |     $+0.800$    |
-| alt ($-q^{-3}$)    |     $-0.911$     |     $-1.122$    |
-| **Sum**            | $-0.1045 = -h/2$ |    $-0.6340$    |
+| Channel | $G_P$ (proton) | $G_N$ (neutron) |
+|---------|:-:|:-:|
+| sym ($q^3$) | $+1.122$ | $+0.911$ |
+| std$_1$ ($-q$) | $-1.174$ | $-1.222$ |
+| std$_2$ ($q^{-1}$) | $+0.858$ | $+0.800$ |
+| alt ($-q^{-3}$) | $-0.911$ | $-1.122$ |
+| **Sum** | $-0.1045 = -h/2$ | $-0.6340$ |
 
 The channel sums are:
 
@@ -106,7 +106,7 @@ Experimental: $Q_{\mathrm{exp}} = 0.01861$ MeV.  Error: $-3.6\%$.
    natural unit via $Q = \sum_\lambda \chi_\lambda(\Delta) \times m_e$.
 
 3. **$\mathrm{Vol}(4_1)$ in mass ratio**: consumed as calibration
-   Input #1 to fix $q_0$.  The identification of $4_1$ with the
+   Input \#1 to fix $q_0$.  The identification of $4_1$ with the
    Higgs field (mass mechanism) is a postulate from the knot-particle
    dictionary; the coupling $m_\mu \propto \mathrm{Vol}(4_1)$ is
    not derived from first principles.
@@ -117,12 +117,12 @@ The branching factorization ($-3.6\%$) and the Gröbner--Shirshov
 $H_9$ verification ($-57\%$) are **not competing models**.  They
 compute different quantities at different levels of description:
 
-|                    | Branching               | Gröbner $H_9$                |           |    |                    |           |
-| ------------------ | ----------------------- | ---------------------------- | --------- | -- | ------------------ | --------- |
-| Algebra            | Per-nucleon $H_3(q)$    | Full quark-level $H_9(q)$    |           |    |                    |           |
-| Dimensionless part | \$                      | ab(a-b)                      | = 0.035\$ | \$ | \Delta\mathrm{net} | = 0.449\$ |
-| Energy scale       | $m_e \approx 0.511$ MeV | $\kappa_q \approx 0.018$ MeV |           |    |                    |           |
-| Inputs consumed    | 2 ($q_0$, $m_e$)        | 2 ($q_0$, $\kappa_q$)        |           |    |                    |           |
+| | Branching | Gröbner $H_9$ |
+|---|---|---|
+| Algebra | Per-nucleon $H_3(q)$ | Full quark-level $H_9(q)$ |
+| Dimensionless part | $|ab(a-b)| = 0.035$ | $|\Delta\mathrm{net}| = 0.449$ |
+| Energy scale | $m_e \approx 0.511$ MeV | $\kappa_q \approx 0.018$ MeV |
+| Inputs consumed | 2 ($q_0$, $m_e$) | 2 ($q_0$, $\kappa_q$) |
 
 The branching path uses the per-nucleon channel decomposition in
 $H_3(q)$; the Gröbner path uses the full 9-strand braid with

@@ -51,6 +51,28 @@ content/
   which are skipped — resolved at folio level)
 - **provable-lean-warning**: Theorems/lemmas without Lean get warnings
 
+### Level 5: Witnessed-value directive validation
+
+Five rules check `:val[name]` directive usage in every block kind
+(definitions, propositions, theorems, lemmas, conjectures, proofs,
+examples, remarks, prose, equations):
+
+| Rule                       | Level | What it checks |
+|---------------------------|-------|----------------|
+| `val-registered`          | error | name appears in `WITNESSED_VALUES` |
+| `val-resolves`            | error | witness file exists, dotted path resolves |
+| `val-precision-bounded`   | error | requested precision ≤ source precision |
+| `val-units-consistent`    | warn  | `units=plain` only when entry has units |
+| `val-pending`             | warn  | `needsReview: true` entry was cited |
+| `val-block-computation`   | warn  | block cites `:val[…]` but `computation:` is absent or refers to a different witness file |
+
+When you spot a hard-coded substrate-derived literal in **any** block
+kind (a numeric bound in a proposition, a constant in a conjecture, a
+calibration value in a definition, a quoted intermediate in a proof,
+etc.), flag it as drift risk and migrate it to `:val[name]`.  The
+`content/pipeline/codemod-val.ts` codemod handles bulk migration.
+See [`witnessed-values.md`](./witnessed-values.md) for full details.
+
 ### Level 3: LaTeX AST validation
 - Rendered LaTeX parses through unified-latex without errors
 - Environment balance (\begin matches \end)

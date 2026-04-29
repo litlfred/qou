@@ -543,6 +543,14 @@ For every provable block (theorem/lemma/proposition/corollary):
 5. **No TeX in `.lean` files**: Narrative proof content belongs
    exclusively in `.md` files. `.lean` files contain only code, brief
    docstrings, and `-- Ref:` citations.
+6. **Witnessed values**: any substrate-derived numerical literal in a
+   theorem statement, lemma statement, proposition, conjecture, proof
+   step, example, or remark **must** use `:val[name]` instead of a
+   hard-coded number.  The directive resolves at render time against
+   the canonical witness JSON, so the paper cannot drift away from
+   the computations.  See
+   [`witnessed-values.md`](./witnessed-values.md) for the registry,
+   directive syntax, validators, and codemod.
 
 ### Creating a narrative proof (`.md` block)
 

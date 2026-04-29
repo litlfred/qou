@@ -242,32 +242,64 @@ export function rewriteMarkdownFile(file: string, index: LiteralEntry[]): FileRe
   const md = readFileSync(file, "utf-8");
   const tree = proc.parse(md);
   const totalHits = new Map<string, number>();
-  let mutated = false;
-  let inSkipParent = 0;
 
-  visit(tree as any, (node: any, _index: number | null, parent: any) => {
+  interface Patch { start: number; end: number; replacement: string; }
+  const patches: Patch[] = [];
+
+  visit(tree as any, (node: any) => {
     // Skip subtree if we're inside a fenced ```tex block or a table.
     if (node.type === "code" && node.lang === "tex") return "skip" as any;
     if (node.type === "table") return "skip" as any;
     if (node.type !== "inlineMath" && node.type !== "math") return;
+    if (!node.position?.start || !node.position?.end) return;
 
-    const r = rewriteMathString(node.value as string, index);
-    if (r.changed) {
-      node.value = r.newValue;
-      mutated = true;
-      for (const [k, v] of r.hits) totalHits.set(k, (totalHits.get(k) ?? 0) + v);
-    }
+    // Patch the inner span of the math node, leaving the surrounding
+    // `$` / `$$` delimiters and every byte outside untouched.  This
+    // avoids any round-trip through `remark-stringify`, which would
+    // otherwise re-escape `:` in link URLs, leading `---`, normalise
+    // bullet markers, reformat tables, etc.
+    //
+    // We run the regex pass on the *raw source slice* between the
+    // delimiters rather than on `node.value`, because mdast trims
+    // surrounding whitespace from `value` for display math but the
+    // source bytes (including the leading/trailing newlines around a
+    // `$$ … $$` block) must be preserved verbatim.
+    const startOff = node.position.start.offset as number;
+    const endOff = node.position.end.offset as number;
+    const fullSpan = md.slice(startOff, endOff);
+
+    let leftDelim = 0;
+    while (leftDelim < fullSpan.length && fullSpan[leftDelim] === "$") leftDelim++;
+    let rightDelim = 0;
+    while (rightDelim < fullSpan.length && fullSpan[fullSpan.length - 1 - rightDelim] === "$") rightDelim++;
+    if (leftDelim === 0 || rightDelim === 0) return;
+
+    const innerStart = startOff + leftDelim;
+    const innerEnd = endOff - rightDelim;
+    const rawInner = md.slice(innerStart, innerEnd);
+    const rawRewrite = rewriteMathString(rawInner, index);
+    if (!rawRewrite.changed) return;
+
+    patches.push({
+      start: innerStart,
+      end: innerEnd,
+      replacement: rawRewrite.newValue,
+    });
+    for (const [k, v] of rawRewrite.hits) totalHits.set(k, (totalHits.get(k) ?? 0) + v);
   });
 
-  if (!mutated) {
+  if (patches.length === 0) {
     return { file, changed: false, hits: totalHits };
   }
-  return {
-    file,
-    changed: true,
-    newSource: String(proc.stringify(tree as any)),
-    hits: totalHits,
-  };
+
+  // Apply patches end-to-start so earlier offsets remain valid.
+  patches.sort((a, b) => b.start - a.start);
+  let out = md;
+  for (const p of patches) {
+    out = out.slice(0, p.start) + p.replacement + out.slice(p.end);
+  }
+
+  return { file, changed: true, newSource: out, hits: totalHits };
 }
 
 // ── Discovery ────────────────────────────────────────────────────

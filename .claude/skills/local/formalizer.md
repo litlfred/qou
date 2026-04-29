@@ -105,6 +105,16 @@ PYTHONPATH=.github/scripts python .github/scripts/formalizer.py generate-theorem
 Creates Lean theorem declarations with `sorry` bodies, using the glossary
 types for the statement signatures.
 
+**Witnessed values in narrative.**  Whenever the narrative statement
+of a theorem, lemma, proposition, conjecture, corollary, or its proof
+quotes a substrate-derived numerical literal (`q_0`, `\hbar_q`,
+`Vol(4_1)`, CODATA inputs, binding energies, etc.), the **`.md`
+narrative** must use the `:val[name]` directive — not a hard-coded
+number — so the rendered statement tracks the canonical witness JSON.
+The `.lean` file is unaffected (Lean uses its own numerical
+constants); the rule is about the LaTeX render of the narrative
+sibling.  See [`witnessed-values.md`](./witnessed-values.md).
+
 ### 3. Tactic translation
 
 The Formalizer maps narrative proof phrases to Lean tactics:
