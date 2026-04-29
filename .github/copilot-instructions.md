@@ -401,6 +401,7 @@ When **writing or editing manuscript content**, apply the following skills:
 | Bibliography QA dashboard | `local/bib-qa` |
 | Generating figures or plots | `claude-scientific-skills/scientific-visualization`, `claude-scientific-skills/matplotlib` |
 | Verifying equations or proofs | `local/scientific-accuracy`, `claude-scientific-skills/sympy` |
+| Citing substrate-derived numerical values | `local/witnessed-values`, `local/content-validation` |
 | Validating LaTeX syntax | `local/latex-validation` |
 | Brainstorming new research directions | `claude-scientific-skills/hypothesis-generation`, `claude-scientific-skills/scientific-brainstorming` |
 | Literature search | `claude-scientific-skills/literature-review`, `claude-scientific-skills/arxiv-database` |
