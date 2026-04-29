@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-28T22:39:21.990682+00:00",
-  "commitSha": "f7cbcf95f7d749fd67070b437d1ecbac2ecbf4b1",
+  "computedAt": "2026-04-29T10:30:33.178936+00:00",
+  "commitSha": "9fd18ac319d5d8616d679b75cc975a8da5eb6140",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -35,6 +35,19 @@
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "chain_valid[markov-trace-assembly-proton.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[markov-trace-assembly-proton.derivation]",
+      "computed": 2.12258250945273,
+      "expected": 2.12258250945273,
+      "passed": true,
+      "tolerance": 2.1225825094527304e-09
     },
     {
       "name": "chain_valid[n-tr-M-q0.derivation]",
@@ -70,11 +83,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3185120ad3c7",
-  "scriptCommitSha": "9bd76625e71bae8272fa36172dfd9bcc0ace746d",
+  "scriptCommitSha": "675c52321592322b6033bbaaed9674fee1345114",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "data": {
     "chain_results": [
@@ -125,6 +138,22 @@
         "has_script_frontier": false
       },
       {
+        "chain": "markov-trace-assembly-proton.derivation.json",
+        "target": "tr_M(p, q_0)",
+        "target_value": 2.12258250945273,
+        "computed_value": 2.12258250945273,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 5,
+          "script-cited": 1,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "n-tr-M-q0.derivation.json",
         "target": "tr_M(n, q_0)",
         "target_value": 1.5893934459539052,
@@ -151,7 +180,8 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 5,
+          "script-cited": 4,
+          "derived": 1,
           "computational": 1
         },
         "has_script_frontier": true
@@ -190,10 +220,12 @@
         "alpha-blend-tower.witness.json",
         "alpha-cs-kappa-verification.witness.json",
         "alpha-derivation-probe.witness.json",
+        "alpha-em-pslq-uniqueness-2000dps.witness.json",
         "alpha-em-pslq-uniqueness.witness.json",
         "alpha-em-q9-q10-derivation.witness.json",
         "alpha-high-precision.witness.json",
         "alpha-k-jones-markov-h3.witness.json",
+        "alpha-k-via-wenzl-bridge.witness.json",
         "alpha-lambda-mev-bridge-probe.witness.json",
         "alpha-per-transition-catalog.witness.json",
         "alpha-vol-chirality-correlation.witness.json",
@@ -334,6 +366,7 @@
         "h2-molecular-binding.witness.json",
         "h6-full-computation.witness.json",
         "habiro-coefficients-interpolate.witness.json",
+        "habiro-interpolate-cross-validation.witness.json",
         "habiro-interpolation-recovery-demo.witness.json",
         "habiro-residue-symbolic.witness.json",
         "habiro-tail-in-ideal-validation.witness.json",
@@ -422,6 +455,8 @@
         "neutron-gap-probes-round3.witness.json",
         "neutron-gap-probes-round4.witness.json",
         "neutron-gap-probes-round5.witness.json",
+        "neutron-gap-probes-round6.witness.json",
+        "neutron-gap-probes-round7.witness.json",
         "neutron-gap-probes.witness.json",
         "neutron-tower-fixes.witness.json",
         "next-partition-levels.witness.json",
@@ -455,6 +490,7 @@
         "positron-lifted-sdp.witness.json",
         "predictive-binding-from-braid.witness.json",
         "prefix-all-variants.witness.json",
+        "probe-canonical-multi-term-D.witness.json",
         "protium-deep-trace.witness.json",
         "proton-braid-sweep-gg.witness.json",
         "proton-mass-mpfr-50dps.witness.json",
@@ -471,6 +507,9 @@
         "r-k-h4-symbolic.witness.json",
         "r-k-h5-h6-adaptive.witness.json",
         "r-k-h5-h6-numeric.witness.json",
+        "r-k-h5-symbolic.witness.json",
+        "r-k-h6-symbolic.witness.json",
+        "r-k-h7-symbolic.witness.json",
         "recursive-alpha.witness.json",
         "recursive-three-calibration.witness.json",
         "residual-closed-form-search.witness.json",

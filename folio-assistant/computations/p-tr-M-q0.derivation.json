@@ -104,11 +104,11 @@
       ],
       "output_name": "tr_M_symbolic",
       "output_value": "symbolic Laurent polynomial in q (Markov trace)",
-      "trust_basis": "script-cited",
+      "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "jones1987",
-      "notes": "script: folio-assistant/computations/habiro_coefficients_atomic.py function `markov_trace_symbolic(Z, N, q, include_inter)`.  Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov trace in H_n(q); finite-Jones is existence + uniqueness."
+      "notes": "Derivation chain: markov-trace-assembly-proton.derivation.json (builder: build_markov_trace_assembly_chain.py).  Combines schur-weyl-weight-3 + hoefsmit-rep-21-sigma1 + atomic-braid-recipe-p via finite-Jones."
     },
     {
       "name": "Evaluate tr_M(p, q_0) at q_0 = 1.1099785955541805",

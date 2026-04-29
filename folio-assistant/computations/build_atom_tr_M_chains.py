@@ -208,6 +208,24 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
     ))
 
     # 7 — Markov trace via finite-Jones formula
+    # Proton has a dedicated assembly chain
+    # (markov-trace-assembly-proton.derivation.json); other atoms still
+    # delegate to the upstream script.
+    has_assembly_chain = spec.short == "p"
+    step7_trust = TrustBasis.DERIVED if has_assembly_chain else TrustBasis.SCRIPT_CITED
+    step7_notes = (
+        "Derivation chain: markov-trace-assembly-proton.derivation.json "
+        "(builder: build_markov_trace_assembly_chain.py).  Combines "
+        "schur-weyl-weight-3 + hoefsmit-rep-21-sigma1 + "
+        "atomic-braid-recipe-p via finite-Jones."
+        if has_assembly_chain else
+        "script: folio-assistant/computations/habiro_coefficients_atomic.py "
+        "function `markov_trace_symbolic(Z, N, q, include_inter)`.  "
+        "Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov "
+        "trace in H_n(q); finite-Jones is existence + uniqueness.  "
+        "Per-atom assembly chains for n, D pending (extend "
+        "build_markov_trace_assembly_chain.py)."
+    )
     steps.append(DerivationStep(
         name="Markov trace via finite-Jones formula",
         operation=(
@@ -217,16 +235,11 @@ def build_chain(spec: AtomSpec) -> DerivationChain:
         inputs=["schur_weights", "chi_lambda", FirstPrinciple.FINITE_JONES.value],
         output_name="tr_M_symbolic",
         output_value="symbolic Laurent polynomial in q (Markov trace)",
-        trust_basis=TrustBasis.SCRIPT_CITED,
+        trust_basis=step7_trust,
         citation="jones1987",
         jet_order=0,
         gb_filtration_level=0,
-        notes=(
-            "script: folio-assistant/computations/habiro_coefficients_atomic.py "
-            "function `markov_trace_symbolic(Z, N, q, include_inter)`.  "
-            "Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov "
-            "trace in H_n(q); finite-Jones is existence + uniqueness."
-        ),
+        notes=step7_notes,
     ))
 
     # 8 — Numerical eval at q_0 (COMPUTATIONAL leaf)
