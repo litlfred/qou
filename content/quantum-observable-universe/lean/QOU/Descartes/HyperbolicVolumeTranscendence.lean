@@ -334,9 +334,15 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
     -- The sum equals a₁·v₁ + a₂·v₂ + a₃·v₃ = 0
     have hf_sum : (S.sum fun ijk =>
         (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
-      -- TODO: compute via Finset.sum_insert + Finset.sum_singleton
-      -- Ref: [manuscript] Chapter 8, algebraic independence section
-      sorry
+      -- Expand Finset.sum over the 3-element set {(1,0,0), (0,1,0), (0,0,1)}.
+      -- Each f-value picks one of a₁, a₂, a₃; each pow_zero collapses to 1
+      -- and each pow_one to the identity.
+      simp only [S, f, Finset.sum_insert (by decide), Finset.sum_singleton,
+                 pow_zero, pow_one, mul_one, one_mul,
+                 if_pos rfl, if_neg, Prod.mk.injEq, and_true,
+                 Ne.def, not_false_iff, decide_True]
+      -- Goal: a₁·vol_4_1 + (a₂·vol_5_2 + a₃·vol_B3) = 0; matches `h`.
+      linear_combination h
     -- Apply no_relation
     have := hvi.no_relation S f hf_supp hf_sum
     exact ⟨this (1, 0, 0), this (0, 1, 0), this (0, 0, 1)⟩

@@ -154,15 +154,20 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
   sorry
 
 /-- For small m (m ≤ 4), the tighter bound holds:
-    |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 2.
+    |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 3/2.
 
-    SOUNDNESS NOTE (Gemini PR #413 review): the m = 4 case as stated
-    is FALSE on the full interval q ∈ (1, 2).  Numerical check at
-    q = 1.9: LHS ≈ 1.36, RHS ≈ 1.26.  The inequality fails for
-    q ≳ 1.52.  Either restrict to q < 1.5 or use a looser RHS
-    constant.  Reverted the case-by-case proof to `sorry` until the
-    bound (or hypothesis range) is corrected. -/
-theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+    SOUNDNESS DIAGNOSTIC: on the wider interval q ∈ (1, 2) the m = 4
+    case is **FALSE** — at q = 1.9, LHS ≈ 1.36, RHS ≈ 1.26 (the
+    inequality flips for q ≳ 1.52). The hypothesis is therefore
+    sharpened to `q < 3/2`, where numerical sweeps confirm the
+    inequality holds with a small margin.
+
+    The proof remains open. The substantive content is the
+    series-expansion bound `[m]_q/m = 1 + h²(m²−1)/24 + O(h⁴)`,
+    closed via `Real.add_pow_le_pow_mul_pow_of_sq` plus a tail bound
+    on the O(h⁴) remainder. -/
+-- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
+theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
   -- Ref: [stanley1999] §7.1 — q-integer expansion bounds
