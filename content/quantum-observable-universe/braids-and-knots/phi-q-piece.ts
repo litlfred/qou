@@ -10,8 +10,9 @@ export default definition({
   uses: [
     "thm:jones-markov-trace",
     "def:algebraic-quantum-volume",
+    "rem:quantum-bloch-group",
   ],
-  cites: ["kauffman1991"],
+  cites: ["kauffman1991", "faddeev1994"],
   tags: [
     "phi-q",
     "kashaev",

@@ -61,3 +61,18 @@ piece contributes zero hyperbolic volume by convention. The Φ$_q$-piece
 is the unit on which the archimedean realisation
 ([archimedean realization functor](#def:archimedean-realization-functor))
 acts when restricted to the per-block summands of the tower.
+
+### Motivic interpretation
+
+In motivic language, $\Phi_q$ is the **Faddeev–Kashaev quantum
+dilogarithm** [`faddeev1994`] — a $q$-deformation of the Bloch–Wigner
+dilogarithm $D_2$ whose pentagon five-term relation is the defining
+relation of the quantum Bloch group
+([quantum Bloch group](#rem:quantum-bloch-group)). The per-piece
+summand $\Phi_q(\lvert V_S\rvert)$ is a class in the quantum Bloch
+group $\mathcal{B}_q$, and the family $\{K_S\}_S$ is the geometric
+stratification along which the regulator $\mathcal{B}_q \to \mathbb{R}$
+decomposes. Recasting the Φ$_q$-piece as a quantum-dilog class fixes
+its motivic type and makes the bridge to hyperbolic volume
+([Φ$_q$–JSJ bridge](#conj:phi-q-tower-jsj-bridge)) a regulator
+statement rather than a coincidence of two evaluation schemes.

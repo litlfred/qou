@@ -15,8 +15,9 @@ export default conjecture({
     "prop:topological-mass-formula",
     "rem:kashaev-as-archimedean-realization",
     "cor:quantum-dilogarithm",
+    "rem:quantum-bloch-group",
   ],
-  cites: ["kashaev1997", "murakami-murakami2001", "thurston1978"],
+  cites: ["kashaev1997", "murakami-murakami2001", "thurston1978", "neumann-zagier1985", "zagier1986"],
   tags: [
     "phi-q",
     "kashaev",

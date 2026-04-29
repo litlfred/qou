@@ -73,3 +73,20 @@ Three reasons:
 
 The conjecture itself remains open at the level of $\pi_0$ —
 no claim of proof is made by introducing the class.
+
+### Motivic perspective
+
+KVC is, in motivic language, a **regulator statement**: the
+hyperbolic volume of $S^3 \setminus K$ is the image of a class in
+the Bloch group $\mathcal{B}(\mathbb{C})$ under the Borel/Beilinson
+regulator $r_\infty$, and the colored Jones polynomial at
+$q = \exp(2\pi i / N)$ is the $q$-deformed avatar of that class
+[`zagier1986`, `neumann-zagier1985`]. The QOU recasting frames
+$\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$ as the archimedean
+realisation functor on the algebraic data $\Phi_q(\lvert V_S\rvert)$
+— a class in the quantum Bloch group
+([quantum Bloch group](#rem:quantum-bloch-group)) — landing in
+$\mathbb{R}$ as the hyperbolic volume of the corresponding
+Φ$_q$-piece. KVC, in this presentation, is the assertion that the
+$q$-deformed regulator agrees with the classical one in the Kashaev
+limit.

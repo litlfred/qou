@@ -122,3 +122,26 @@ level; the third is a categorical statement
 ([descended-level-zero](#prop:descended-level-zero)); the fourth is
 a JSJ-theoretic identification, conjectural until each
 small-piece collapse is verified.
+
+### Motivic dictionary
+
+The bridge admits a clean motivic reading: the algebraic side
+$\Phi_q(\lvert V_S\rvert)$ is a class in the quantum Bloch group
+$\mathcal{B}_q$ ([quantum Bloch group](#rem:quantum-bloch-group)), the
+archimedean realisation $\tau_{\mathrm{arch}}$ is the $q$-deformed
+Borel/Beilinson regulator, and the right-hand side is the standard
+Neumann–Zagier decomposition of the volume of $S^3 \setminus K$ along
+its hyperbolic pieces [`neumann-zagier1985`, `zagier1986`]. In this
+language the conjecture is the statement that
+
+- the quantum Bloch class $[\Phi_q(\lvert V_S\rvert)]$ regulates
+  archimedeanly to the volume of the corresponding Φ$_q$-piece, and
+- the Φ$_q$ stratification $\{K_S\}_S$ realises the JSJ stratification
+  with regulator weights matching $\rho_F$.
+
+The $\rho_q$ prefactor on the right-hand side is the substrate-density
+normalisation that converts a regulator output (a real number) into a
+mass density on the brane. Phrased this way, the dilog form and the
+hyperbolic-volume form are not two competing engines but two
+presentations of the same regulator, evaluated through two
+convergence schemes.
