@@ -1,5 +1,5 @@
 {
-  "target": "w_(1, 1, 1)(q)",
+  "target": "w_(1,1,1)(q)",
   "target_value": "1 / ([3]_q · [2]_q · [1]_q)",
   "target_tolerance": 0.0,
   "content_block": "prop:full-pole-structure-mass-trace",
@@ -80,7 +80,7 @@
       "gb_filtration_level": 0,
       "lean_ref": "qou:STUB:MarkovWeight",
       "citation": "kassel1995",
-      "notes": "Pure algebra: substitute the hook lengths from step 2 and the exponent (n − l(λ)) from step 3 into the convention.  The (q − q^{-1})^(n − l(λ)) prefactor arises from Hoefsmit's normalisation of the simple reps of H_n(q); it ensures the Markov stabilisation tr_M(α σ_n) = z · tr_M(α) holds with the canonical stabilisation parameter z = 1/(q^{1/2} + q^{-1/2})."
+      "notes": "Pure algebra: substitute the hook lengths from step 2 and the exponent (n − l(λ)) from step 2 (hook-length data) into the convention.  The (q − q^{-1})^(n − l(λ)) prefactor arises from Hoefsmit's normalisation of the simple reps of H_n(q); it ensures the Markov stabilisation tr_M(α σ_n) = z · tr_M(α) holds with the canonical stabilisation parameter z = 1/(q^{1/2} + q^{-1/2})."
     }
   ]
 }

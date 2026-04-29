@@ -54,7 +54,8 @@ HERE = Path(__file__).parent
 @dataclass
 class PartitionSpec:
     short: str           # filename suffix, e.g. "21" or "111"
-    label: str           # printed name, e.g. "(2, 1)"
+    label: str           # display name w/ spaces, e.g. "(2, 1)"
+    compact: str         # symbolic identifier no spaces, e.g. "(2,1)"
     parts: tuple[int, ...]
     hook_lengths: tuple[int, ...]
     n: int               # = sum(parts)
@@ -71,6 +72,7 @@ SPECS = {
     "21": PartitionSpec(
         short="21",
         label="(2, 1)",
+        compact="(2,1)",
         parts=(2, 1),
         hook_lengths=(3, 1, 1),
         n=3,
@@ -81,6 +83,7 @@ SPECS = {
     "111": PartitionSpec(
         short="111",
         label="(1, 1, 1)",
+        compact="(1,1,1)",
         parts=(1, 1, 1),
         hook_lengths=(3, 2, 1),
         n=3,
@@ -179,7 +182,8 @@ def build(spec: PartitionSpec) -> DerivationChain:
         gb_filtration_level=0,
         notes=(
             "Pure algebra: substitute the hook lengths from step 2 and "
-            "the exponent (n − l(λ)) from step 3 into the convention.  "
+            "the exponent (n − l(λ)) from step 2 (hook-length data) "
+            "into the convention.  "
             "The (q − q^{-1})^(n − l(λ)) prefactor arises from "
             "Hoefsmit's normalisation of the simple reps of H_n(q); it "
             "ensures the Markov stabilisation tr_M(α σ_n) = z · tr_M(α) "
@@ -189,7 +193,11 @@ def build(spec: PartitionSpec) -> DerivationChain:
     ))
 
     return DerivationChain(
-        target=f"w_{spec.label}(q)",
+        # Compact identifier (no spaces) for grep / cross-reference
+        # consistency with other chains (e.g. `w_(3)(q)` in
+        # schur-weyl-weight-3 and the assembly chain).  Display label
+        # with spaces is used only in human-readable step text.
+        target=f"w_{spec.compact}(q)",
         target_value=spec.weight_formula,
         target_tolerance=0.0,
         content_block="prop:full-pole-structure-mass-trace",

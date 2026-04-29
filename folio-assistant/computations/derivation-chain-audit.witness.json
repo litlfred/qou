@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T11:06:30.225438+00:00",
-  "commitSha": "6982373a870c227865b9f13b2ab347a68c87b7f1",
+  "computedAt": "2026-04-29T11:17:32.218662+00:00",
+  "commitSha": "3c166f6e1778fd11d1939ff70e285a3e1183c663",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -101,7 +101,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3185120ad3c7",
@@ -165,7 +165,7 @@
         "issues": [],
         "trust_summary": {
           "mathlib-cited": 1,
-          "derived": 2,
+          "derived": 3,
           "axiom": 1
         },
         "has_script_frontier": false
@@ -221,7 +221,7 @@
       },
       {
         "chain": "schur-weyl-weight-111.derivation.json",
-        "target": "w_(1, 1, 1)(q)",
+        "target": "w_(1,1,1)(q)",
         "target_value": "1 / ([3]_q · [2]_q · [1]_q)",
         "computed_value": null,
         "structural_ok": true,
@@ -236,7 +236,7 @@
       },
       {
         "chain": "schur-weyl-weight-21.derivation.json",
-        "target": "w_(2, 1)(q)",
+        "target": "w_(2,1)(q)",
         "target_value": "(q − q^{-1}) / ([3]_q · [1]_q · [1]_q)",
         "computed_value": null,
         "structural_ok": true,
