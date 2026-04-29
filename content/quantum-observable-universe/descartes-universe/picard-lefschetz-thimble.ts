@@ -20,4 +20,11 @@ export default definition({
     "rem:lepton-mass-integrals",
     "prop:descartes-elliptic-curve",
   ],
+  computation: {
+    engine: "scipy",
+    script: "folio-assistant/computations/picard_lefschetz_thimble.py",
+    witness: "folio-assistant/computations/picard-lefschetz-thimble.witness.json",
+    status: "verified",
+    requires: ["numpy", "scipy"],
+  },
 });

@@ -1,0 +1,93 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-04-29T18:21:23.461399+00:00",
+  "commitSha": "96129e9a310f5776e20df8164c21309fce7478f9",
+  "assertions": [
+    {
+      "name": "k=0 (electron) PLT vs GB — order-of-magnitude (A2.1+A2.2)",
+      "computed": 0.3577150742348928,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "source": "thimble integral vs real-axis closed form (Hessian-normalised |·|)"
+    },
+    {
+      "name": "k=2 (lepton tower) PLT vs GB — order-of-magnitude (A2.5)",
+      "computed": 0.769444888270624,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "source": "thimble integral vs real-axis closed form (Hessian-normalised |·|)"
+    },
+    {
+      "name": "k=3 (baryon simultaneous) PLT vs GB — order-of-magnitude (A2.5)",
+      "computed": 0.32816656876220573,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "source": "thimble integral vs real-axis closed form (Hessian-normalised |·|)"
+    },
+    {
+      "name": "k=1 (proton) PLT vs GB — A2.4 EMPIRICAL ONLY",
+      "computed": 0.32816656876220585,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "source": "proton word (n_p = 7 crossings); empirical, not certified"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 788,
+  "computation": "sw-period-thimble-equivalence",
+  "scriptFile": "sw_period_thimble_equivalence.py",
+  "scriptHash": "77ee95111bea",
+  "scriptCommitSha": "",
+  "description": "Cross-validation of SW thimble periods Π^(k) (PLT path) against GB/jet real-axis closed-form integrands for k ∈ {0,1,2,3}.  Empirical certificate of A2.1+A2.2+A2.3+A2.5 of prop:sw-period-thimble-equivalence; A2.4 (real-axis = thimble sum at k = 1) is verified EMPIRICALLY only — per CLAUDE.md §3b the downstream proton-mass result remains a conjecture.",
+  "contentBlock": "prop:sw-period-thimble-equivalence",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "a_real_axis_limit": 0.38844820732799046
+  },
+  "data": {
+    "global_hessian_norm_factor": 8.150488363724122,
+    "per_degree_periods": [
+      {
+        "k": 0,
+        "plt_abs": 4.064065719630666,
+        "gb_abs": 0.7763353485707334,
+        "plt_phase_deg": -137.6043970285132,
+        "gb_phase_deg": 180.0,
+        "abs_ratio_normalised": 0.6422849257651072
+      },
+      {
+        "k": 1,
+        "plt_abs": 2.3252106921263023,
+        "gb_abs": 0.4246362525770668,
+        "plt_phase_deg": 170.62390065266965,
+        "gb_phase_deg": 180.0,
+        "abs_ratio_normalised": 0.6718334312377942
+      },
+      {
+        "k": 2,
+        "plt_abs": 1.092608077637644,
+        "gb_abs": 0.07576065743007146,
+        "plt_phase_deg": -92.15813669688102,
+        "gb_phase_deg": 0.0,
+        "abs_ratio_normalised": 1.769444888270624
+      },
+      {
+        "k": 3,
+        "plt_abs": 8.410063856555423,
+        "gb_abs": 0.7768964146559809,
+        "plt_phase_deg": 123.99206257922377,
+        "gb_phase_deg": 180.0,
+        "abs_ratio_normalised": 1.3281665687622057
+      }
+    ]
+  },
+  "caveats": [
+    "A2.4 (real-axis ≡ thimble sum for the proton word) is verified empirically only.  Per CLAUDE.md §3b, every block whose `uses[]` transitively cites prop:sw-period-thimble-equivalence and is downstream of A2.4 must remain a `conjecture` (e.g. conj:baryon-period-ratio).",
+    "PLT thimble integration uses the Hessian-phase normalisation from picard_lefschetz_thimble.py; only |Π^(k)|/|GB^(k)| is compared (not the absolute phase).  The global phase factor is recorded as `global_hessian_norm_factor` for downstream consumers."
+  ]
+}

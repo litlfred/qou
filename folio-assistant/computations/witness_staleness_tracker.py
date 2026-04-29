@@ -143,6 +143,45 @@ DEPS = {
         # Phases R1+R2+R6 of RUST_INTEGRATION.md.  Bit-for-bit match
         # with Python prototypes on H_3, H_5; 3,400x speedup.
     ],
+    # ── Picard–Lefschetz / SW thimble correctness chain ──────────
+    #
+    # Root: picard_lefschetz_thimble.py (numerical thimble + Hessian).
+    # Downstream witnesses each depend on the PLT witness JSON so that
+    # if the root script changes, every PL-correctness witness is
+    # flagged stale together.  See content blocks
+    #   def:picard-lefschetz-thimble
+    #   prop:mobius-limit-from-thimble
+    #   prop:baryon-product-from-alt
+    #   prop:sw-period-thimble-equivalence
+    #   prop:jet-gb-pl-correspondence
+    "picard-lefschetz-thimble": [
+        "picard_lefschetz_thimble.py",
+        "q_parameter.py",
+    ],
+    "mobius-limit-from-thimble": [
+        "mobius_limit_from_thimble.py",
+        "q_parameter.py",
+        # Algebraically independent of the PLT numerics; numerical
+        # cross-check (Hessian-residual) is informational only.
+    ],
+    "baryon-product-from-alt": [
+        "baryon_product_from_alt.py",
+        "picard_lefschetz_thimble.py",
+        "picard-lefschetz-thimble.witness.json",
+        "q_parameter.py",
+    ],
+    "sw-period-thimble-equivalence": [
+        "sw_period_thimble_equivalence.py",
+        "picard_lefschetz_thimble.py",
+        "sw_period_baryon.py",
+        "picard-lefschetz-thimble.witness.json",
+        "q_parameter.py",
+    ],
+    "jet-gb-pl-correspondence": [
+        "jet_gb_pl_correspondence.py",
+        "picard-lefschetz-thimble.witness.json",
+        "q_parameter.py",
+    ],
 }
 
 # Outputs produced by each artifact (for missing-output check)
@@ -160,6 +199,11 @@ OUTPUTS = {
     "joint-tower-sdp-h3": ["joint-tower-sdp-h3.witness.json"],
     "joint-tower-sdp-h6-h9": ["joint-tower-sdp-h6-h9.witness.json"],
     "joint-tower-sdp-rust": ["joint-tower-sdp-rust.witness.json"],
+    "picard-lefschetz-thimble": ["picard-lefschetz-thimble.witness.json"],
+    "mobius-limit-from-thimble": ["mobius-limit-from-thimble.witness.json"],
+    "baryon-product-from-alt": ["baryon-product-from-alt.witness.json"],
+    "sw-period-thimble-equivalence": ["sw-period-thimble-equivalence.witness.json"],
+    "jet-gb-pl-correspondence": ["jet-gb-pl-correspondence.witness.json"],
 }
 
 
