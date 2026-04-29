@@ -49,12 +49,19 @@ from derivation_chain import (  # noqa: E402
 HERE = Path(__file__).parent
 OUTPUT_CHAIN = HERE / "proton-mass-50dps.derivation.json"
 
-# Pinned values from current pipeline; matches the f64 chain
-# (build_proton_mass_assembly_chain.py).
+# Pinned values from current pipeline.  The Hecke-units numbers below
+# are SHORT SUMMARIES of the upstream `proton_mass_tower_derivation.py`
+# output — they round to 4 significant digits for readability in the
+# chain JSON.  Until the full-precision Hecke-units numbers are
+# captured by a 50 dps tower-derivation chain (Phase A item 3, see
+# `mass_endomorphism.py` precision lift), these summaries are the
+# intermediate steps' canonical values.  When the precision lift
+# lands, both the constants below and the chain JSON should be
+# regenerated from the full-precision tower output.
 M_E_MEV_CODATA       = 0.51099895
 M_P_MEV_CODATA       = 938.27208816
-M_E_HECKE_PIPELINE   = 0.0007783
-M_P_HECKE_PIPELINE   = 1.4283
+M_E_HECKE_PIPELINE   = 0.0007783  # rounded summary; see note above
+M_P_HECKE_PIPELINE   = 1.4283     # rounded summary; see note above
 M_P_PRED_MEV         = (M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE) * M_E_MEV_CODATA
 GAP_REL              = abs(M_P_PRED_MEV - M_P_MEV_CODATA) / M_P_MEV_CODATA
 

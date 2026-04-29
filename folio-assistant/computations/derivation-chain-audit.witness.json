@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T15:50:13.361361+00:00",
-  "commitSha": "69a449395591a5a529aa789f1f2db15600ca0ba3",
+  "computedAt": "2026-04-29T15:59:21.416252+00:00",
+  "commitSha": "c9a1b38138faac4877b1ff9215f1213f748ef9c5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -390,7 +390,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
-  "scriptCommitSha": "675c52321592322b6033bbaaed9674fee1345114",
+  "scriptCommitSha": "c9a1b38138faac4877b1ff9215f1213f748ef9c5",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "data": {
     "chain_results": [
@@ -1447,6 +1447,7 @@
         "markov-convention-parallel.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-invariant-unified-mass.witness.json",
+        "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
         "markov-weight-verification.witness.json",
         "mass-at-3A-proper.witness.json",
