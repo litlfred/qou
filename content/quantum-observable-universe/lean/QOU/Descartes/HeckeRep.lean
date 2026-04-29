@@ -99,9 +99,25 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 -- Ref: [iwahori1964]
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 := by
-  -- Ref: [iwahori1964]; pending Mathlib drift in `sub_mul`/`smul_mul_assoc`
-  -- pattern recognition for matrix-valued expressions.
-  sorry
+  unfold genInv
+  set σ := ρ.gen i with hσ
+  have hecke : σ * σ = HA_t • σ + 1 := ρ.hecke_rel i
+  -- LHS:
+  --   (σ − HA•1)(σ − HA•1)
+  -- = σ·σ − σ·(HA•1) − (HA•1)·σ + (HA•1)·(HA•1)
+  -- = σ·σ − HA•(σ·1) − HA•(1·σ) + (HA·HA)•(1·1)
+  -- = σ·σ − HA•σ − HA•σ + (HA·HA)•1
+  -- = (HA•σ + 1) − HA•σ − HA•σ + (HA·HA)•1               [Hecke]
+  -- = 1 − HA•σ + (HA·HA)•1
+  --
+  -- RHS:  -HA • (σ − HA•1) + 1 = -HA•σ + HA•(HA•1) + 1
+  --     = -HA•σ + (HA·HA)•1 + 1
+  --
+  -- Both reduce to: 1 − HA•σ + (HA·HA)•1, closing by `abel`.
+  rw [mul_sub, sub_mul, sub_mul, mul_smul_comm, smul_mul_assoc,
+      Matrix.one_mul, Matrix.mul_one, smul_mul_smul_comm, Matrix.one_mul,
+      hecke, smul_sub, smul_smul]
+  abel
 
 /-! ## §3  Braid word evaluation -/
 
@@ -158,6 +174,50 @@ noncomputable def HeckeRep.halfBorromeanConjMat (ρ : HeckeRep n d)
     (i j : Fin (n - 1)) : Matrix (Fin d) (Fin d) R_t :=
   ρ.genInv i * ρ.genInv j * ρ.gen i * ρ.gen j
 
+/-! ## §4b  Algebraic identities in R_t = ℤ[t, t⁻¹] -/
+
+/-- `t · t⁻¹ = 1` in `R_t = ℤ[t, t⁻¹]`. -/
+lemma t_mul_t_inv : t * t_inv = (1 : R_t) := by
+  unfold t t_inv
+  rw [← LaurentPolynomial.T_add]
+  simp [LaurentPolynomial.T_zero]
+
+/-- `t⁻¹ · t = 1` in `R_t`. -/
+lemma t_inv_mul_t : t_inv * t = (1 : R_t) := by
+  unfold t t_inv
+  rw [← LaurentPolynomial.T_add]
+  simp [LaurentPolynomial.T_zero]
+
+/-- `q · q⁻¹ = 1` in `R_t`. -/
+lemma q_mul_q_inv : q_from_t * q_inv_from_t = (1 : R_t) := by
+  unfold q_from_t q_inv_from_t
+  -- (t·t)·(t⁻¹·t⁻¹) = t·(t·t⁻¹)·t⁻¹ = t·1·t⁻¹ = t·t⁻¹ = 1
+  calc t * t * (t_inv * t_inv)
+      = t * (t * t_inv) * t_inv := by ring
+    _ = t * 1 * t_inv := by rw [t_mul_t_inv]
+    _ = t * t_inv := by rw [mul_one]
+    _ = 1 := t_mul_t_inv
+
+/-- The Hecke quadratic identity in R_t: `q² = HA · q + 1`. -/
+lemma q_squared_eq : q_from_t * q_from_t = HA_t * q_from_t + 1 := by
+  unfold HA_t
+  -- (q − q⁻¹)·q = q² − q⁻¹·q = q² − 1 (using q⁻¹ · q = 1)
+  have h := q_mul_q_inv
+  -- Rewrite q⁻¹ · q from q · q⁻¹ = 1 via commutativity
+  have h' : q_inv_from_t * q_from_t = (1 : R_t) := by
+    rw [mul_comm]; exact h
+  ring_nf
+  linear_combination -h'
+
+/-- The signed Hecke quadratic identity: `q⁻² = −HA · q⁻¹ + 1`. -/
+lemma q_inv_squared_eq :
+    q_inv_from_t * q_inv_from_t = (- HA_t) * q_inv_from_t + 1 := by
+  unfold HA_t
+  -- (-(q - q⁻¹))·q⁻¹ + 1 = (-q + q⁻¹)·q⁻¹ + 1 = -1 + q⁻² + 1 = q⁻²
+  have h := q_mul_q_inv
+  ring_nf
+  linear_combination -h
+
 /-! ## §5  Trivial (symmetric) representation -/
 
 /-- The trivial (symmetric) representation of H_n(q):
@@ -167,18 +227,13 @@ noncomputable def HeckeRep.halfBorromeanConjMat (ρ : HeckeRep n d)
     partition (n) of n. -/
 noncomputable def trivRep (n : ℕ) : HeckeRep n 1 where
   gen _ := q_from_t • 1
-  -- Hecke relation reduces to q² = HA·q + 1 in R_t.
-  -- Algebraic identity: HA·q + 1 = (q − q⁻¹)·q + 1 = q² − 1 + 1 = q².
+  -- Hecke relation: q² = HA·q + 1 (q_squared_eq).
   hecke_rel _ := by
     show (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t))
         * (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t))
       = HA_t • (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t)) + 1
-    rw [smul_mul_smul_comm, Matrix.one_mul, ← smul_assoc]
-    -- Reduce to (q_from_t * q_from_t) • 1 = (HA_t * q_from_t) • 1 + 1.
-    -- The ring identity: q² = HA·q + 1 with q · q⁻¹ = 1 in R_t.
-    -- Closing this requires the Laurent identity q_from_t·q_inv_from_t = 1
-    -- (LaurentPolynomial.T_add) plus matrix-smul + identity-matrix lemmas.
-    sorry
+    rw [smul_mul_smul_comm, Matrix.one_mul, ← smul_assoc, q_squared_eq, add_smul,
+        one_smul]
   -- braid_adj and braid_far close by reflexivity since `gen` is constant.
   braid_adj _ _ _ := rfl
   braid_far _ _ _ := rfl
@@ -190,14 +245,20 @@ noncomputable def trivRep (n : ℕ) : HeckeRep n 1 where
     partition (1, 1, …, 1) of n. -/
 noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
   gen _ := (-q_inv_from_t) • 1
-  -- Hecke relation: (−q⁻¹)² = q⁻² = HA·(−q⁻¹) + 1
-  --   = −HA·q⁻¹ + 1 = −(q − q⁻¹)·q⁻¹ + 1 = −1 + q⁻² + 1 = q⁻². ✓
+  -- Hecke relation: (−q⁻¹)² = q⁻² = −HA·q⁻¹ + 1 = HA·(−q⁻¹) + 1.
   hecke_rel _ := by
     show ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t))
         * ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t))
       = HA_t • ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t)) + 1
     rw [smul_mul_smul_comm, Matrix.one_mul, ← smul_assoc]
-    sorry  -- same Laurent + matrix-smul scaffold as trivRep
+    -- Goal: ((-q⁻¹) * (-q⁻¹)) • 1 = (HA · (-q⁻¹)) • 1 + 1
+    -- LHS scalar: (-q⁻¹)·(-q⁻¹) = q⁻² = q⁻¹ · q⁻¹
+    -- RHS scalar: HA · (-q⁻¹) = -HA·q⁻¹
+    -- So need: q⁻¹ · q⁻¹ = -HA · q⁻¹ + 1, which is q_inv_squared_eq.
+    have h : (-q_inv_from_t) * (-q_inv_from_t) = HA_t * (-q_inv_from_t) + 1 := by
+      have hi := q_inv_squared_eq
+      linear_combination hi
+    rw [h, add_smul, one_smul]
   braid_adj _ _ _ := rfl
   braid_far _ _ _ := rfl
 
@@ -214,8 +275,14 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
 theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =
     transferMatrix c d * transferMatrix a b := by
-  -- Ref: [leitner2026]; pending Mathlib drift in matrix product simp normal form.
-  sorry
+  -- Element-wise check: each of the 4 entries reduces to a
+  -- commutative-ring identity in R_t (LaurentPolynomial ℤ).
+  unfold transferMatrix
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [Matrix.mul_apply, Fin.sum_univ_two,
+          Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons] <;>
+    ring
 
 /-- Corollary: the product of any finite list of transfer matrices
     is independent of the order (for the same multiset of factors). -/
