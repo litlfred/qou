@@ -93,3 +93,26 @@ truncation.*
 residues vanish and the formula reduces to
 $\mathfrak{m} = |\int_A T_w|$ — the pure descended case
 ([categorical mass as Markov trace](#prop:categorical-mass-markov)).*
+
+**Convergent archimedean counterpart: PL thimble periods on $\mathcal{E}_q$.**
+*Strict archimedean split: this proposition is intrinsically an
+$R$-side statement — the residues live in the categorical base ring
+$R$, and the Cauchy-kernel form $1/(q_0 - \zeta_\ell)$ is symbolic.
+A **convergent** archimedean realisation does exist: under the
+fibre functor $\tau \colon R \hookrightarrow \mathbb{C}$, the
+filtration stratum $J^p/J^{p+1}$ maps to the geometric jet bundle
+$J^p\mathcal{S}$ on $\mathcal{E}_q(\mathbb{C})$ via
+([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence)),
+and the residues at $\zeta_\ell \in S^1$ are replaced by
+Picard–Lefschetz residues at the discriminant locus
+$\{z \in \mathbb{C} : \Delta(z) = 0\}$ of the color-tube cubic
+([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble)).
+Because the discriminant points lie strictly off $S^1$, the
+$\mathbb{C}$-side residues converge unconditionally and the sum
+$\sum_p n_p \cdot \Pi^{(p)}$ is a bona fide complex-analytic
+quantity — the **archimedean realisation** of the symbolic
+$R$-side spectral sum.  The agreement
+$\tau(\sum_\ell r_\ell) = \sum_p n_p \cdot \Pi^{(p)}$ is the
+content of
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence));
+the $R$-side and $\mathbb{C}$-side sums must not be conflated.*
