@@ -240,18 +240,15 @@ export default chapter({
         "hadron-half-life",
         "hadron-q-self-correction",
         "skein-coulomb-enhancement",
-        "nuclear-groebner-reduction",
-        "groebner-shirshov-energy",
-        "box-braid-irreducibility",
-        "generator-volume-decomposition",
-        "markov-trace-factorization",
-        "skein-polynomial-transfer-matrix",
-        "transfer-matrix-operator",
-        "beta-decay-transfer-matrix",
-        "beta-decay-interpretation",
-        "nucleon-nf-observability",
-        "beta-decay-energy-scale",
-        "beta-decay-braid-visualizer",
+        // NOTE: nuclear-groebner-reduction, groebner-shirshov-energy,
+        // box-braid-irreducibility, generator-volume-decomposition,
+        // markov-trace-factorization, skein-polynomial-transfer-matrix,
+        // transfer-matrix-operator, beta-decay-transfer-matrix,
+        // beta-decay-interpretation, nucleon-nf-observability,
+        // beta-decay-energy-scale, beta-decay-braid-visualizer
+        // are referenced from particle-interactions.ts (their canonical
+        // home). Listing them here too caused multiply-defined LaTeX
+        // labels.
         // NF computation and shell corrections
         "groebner-nf-computation",
         "nf-computation-strategy",

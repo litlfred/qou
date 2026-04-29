@@ -120,7 +120,10 @@ export default chapter({
       blocks: [
         "atomic-braid",
         "atomic-lp-stability",
-        "wedderburn-mass-formula",
+        // wedderburn-mass-formula is referenced from braids-and-knots.ts
+        // (its canonical home as thm:wedderburn-mass-formula). Listing
+        // it here too caused a multiply-defined label because the
+        // pipeline keys block records by rootName.
         "q-integer-mass-formula",
         "universal-ilp-algorithm",
         "neutron-proton-splitting",
