@@ -1,0 +1,109 @@
+{
+  "target": "ρ^{(2,1)}(σ_2)",
+  "target_value": "ρ^{(2,1)}(σ_2) ∈ M_2(K(q)) — Hoefsmit matrix in the SYT basis {T_1=[1 2 / 3], T_2=[1 3 / 2]}; trace χ^(2,1)_q(σ_2) = q − q^{-1}",
+  "target_tolerance": 0.0,
+  "content_block": "prop:full-pole-structure-mass-trace",
+  "description": "Frontier-paydown chain for the Hoefsmit-matrix image of the H_3(q) generator σ_2 in the λ = (2,1) block.  Companion to `hoefsmit-rep-21-sigma1.derivation.json`; together they cover both generators of B_3.  Trust profile is {axiom: 1, mathlib-cited: 1, derived: 2, script-cited: 0, computational: 0} — fully-trusted.  Discharges the SYT-relabelling-symmetry argument used in the proton Markov-trace assembly (step 5 of `markov-trace-assembly-proton.derivation.json`).",
+  "steps": [
+    {
+      "name": "Standard Young tableaux of shape (2, 1)",
+      "operation": "Same SYT enumeration as in `hoefsmit-rep-21-sigma1`: T_1 = [1 2 / 3], T_2 = [1 3 / 2].  f_(2,1) = 2.",
+      "inputs": [
+        "Schur",
+        "Wedderburn"
+      ],
+      "output_name": "syts_21",
+      "output_value": [
+        {
+          "name": "T_1",
+          "tableau": [
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        {
+          "name": "T_2",
+          "tableau": [
+            [
+              1,
+              3
+            ],
+            [
+              2
+            ]
+          ]
+        }
+      ],
+      "trust_basis": "mathlib-cited",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:SchurWeyl.SYT",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Content function c(i) := col(i) − row(i)",
+      "operation": "Identical to the σ_1 chain: T_1 has c(1)=0, c(2)=1, c(3)=−1; T_2 has c(1)=0, c(2)=−1, c(3)=1.  The σ_2 generator depends on c(3) − c(2) (axial distance between the cells containing i=2 and i+1=3).",
+      "inputs": [
+        "syts_21"
+      ],
+      "output_name": "contents",
+      "output_value": {
+        "T_1": {
+          "c(1)": 0,
+          "c(2)": 1,
+          "c(3)": -1
+        },
+        "T_2": {
+          "c(1)": 0,
+          "c(2)": -1,
+          "c(3)": 1
+        },
+        "axial_distance_for_sigma_2": {
+          "T_1": "c(3) − c(2) = −2",
+          "T_2": "c(3) − c(2) = +2"
+        }
+      },
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0
+    },
+    {
+      "name": "Hoefsmit recipe for ρ^(2,1)(σ_2)",
+      "operation": "Apply the same Hoefsmit recipe as for σ_1, but with the axial distance d := c(i+1) − c(i) computed for i=2 (d=±2 as recorded above; for σ_1 it was d=±1).  Both σ_1 and σ_2 act between T_1 and T_2 by 2x2 matrices whose entries are q-rational functions of d and the q-integers [|d|−1]_q, [|d|]_q, [|d|+1]_q.",
+      "inputs": [
+        "syts_21",
+        "contents",
+        "Cat.Action",
+        "Hecke.Energy"
+      ],
+      "output_name": "hoefsmit_recipe_sigma_2",
+      "output_value": "ρ^{(2,1)}(σ_2): 2x2 matrix in {T_1, T_2} basis; entries are rational in q with denominators in [2]_q.  See Kassel §III.4.",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:HoefsmitRep",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "χ^(2,1)_q(σ_2) — trace of ρ^(2,1)(σ_2)",
+      "operation": "Compute the trace.  Per the Wigner-2 self-conjugate identity (`prop:wigner-2-coefficient`), the trace of any single Hecke generator in the (2,1) block equals q − q^{-1} regardless of which i ∈ {1, …, n−1}.  Verifies:  χ^(2,1)_q(σ_2) = q − q^{-1} = χ^(2,1)_q(σ_1).",
+      "inputs": [
+        "hoefsmit_recipe_sigma_2",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "chi_21_sigma_2",
+      "output_value": "χ^{(2,1)}_q(σ_2) = q − q^{-1}",
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "lean_ref": "qou:STUB:Wigner2Coefficient",
+      "citation": "kassel1995",
+      "notes": "Trace value matches σ_1's by Wigner-2 self-conjugate identity; this discharges the SYT-relabelling-symmetry argument used in `markov-trace-assembly-proton.derivation.json` (step 5)."
+    }
+  ]
+}
