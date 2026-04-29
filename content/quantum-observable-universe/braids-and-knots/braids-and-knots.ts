@@ -191,6 +191,8 @@ export default chapter({
         "vertex-is-exceptional-divisor-proof",
         // Photon polarisation states as Hecke generators on the exceptional divisor
         "breit-wheeler-vertex",
+        // Literature alignment: Bilson--Thompson preons, Hecke parity, photonic hopfions
+        "breit-wheeler-vertex-literature",
         // Product factorization of the Markov trace
         "markov-trace-product",
         "markov-trace-product-interpretation",
