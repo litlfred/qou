@@ -1,0 +1,193 @@
+{
+  "engine": "python+numpy+cvxpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T01:49:39.983796+00:00",
+  "commitSha": "e834a08abf910082894ea8be89f6bcd24ff8dd9f",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 65,
+  "computation": "probe-gamma-gamma-h3-psd-scan",
+  "scriptFile": "probe_gamma_gamma_h3_psd_scan.py",
+  "scriptHash": "bd172fb8d8f6",
+  "scriptCommitSha": "",
+  "description": "Scan PSD-feasible γγ-style braid words at H_3 using the existing sdp_feasibility_h3 from joint_tower_sdp_solver_v2. 12 candidate braids ranging from simple σ_0 σ_1 products through B_3 cube to hand-built proton structures. Checks all three Wedderburn blocks (trivial, std, sign) at q_0.",
+  "contentBlock": "rem:photon-channel-wedderburn-chain",
+  "parameters": {
+    "q_0": 1.1097
+  },
+  "data": {
+    "candidates": [
+      {
+        "name": "σ_0",
+        "braid_word": [
+          1
+        ],
+        "trivial_3": 1.1097,
+        "sign_1_1_1": -0.901144453455889,
+        "standard_2_1_min_eig": -0.901144453455889,
+        "standard_2_1_max_eig": 1.1097,
+        "all_blocks_psd": false
+      },
+      {
+        "name": "σ_0 σ_1",
+        "braid_word": [
+          1,
+          2
+        ],
+        "trivial_3": 1.2314340899999998,
+        "sign_1_1_1": 0.8120613259943129,
+        "standard_2_1_min_eig": -0.7218550315796917,
+        "standard_2_1_max_eig": -0.2781449684203085,
+        "all_blocks_psd": false
+      },
+      {
+        "name": "σ_1 σ_0",
+        "braid_word": [
+          2,
+          1
+        ],
+        "trivial_3": 1.2314340899999998,
+        "sign_1_1_1": 0.8120613259943129,
+        "standard_2_1_min_eig": -0.5614364468726069,
+        "standard_2_1_max_eig": -0.43856355312739326,
+        "all_blocks_psd": false
+      },
+      {
+        "name": "σ_0 σ_1 σ_0 (trefoil candidate)",
+        "braid_word": [
+          1,
+          2,
+          1
+        ],
+        "trivial_3": 1.3665224096729998,
+        "sign_1_1_1": -0.7317845597858096,
+        "standard_2_1_min_eig": -1.0076163234660886,
+        "standard_2_1_max_eig": 1.0076163234660889,
+        "all_blocks_psd": false
+      },
+      {
+        "name": "σ_1 σ_0 σ_1 (Yang-Baxter mirror)",
+        "braid_word": [
+          2,
+          1,
+          2
+        ],
+        "trivial_3": 1.3665224096729998,
+        "sign_1_1_1": -0.7317845597858096,
+        "standard_2_1_min_eig": -1.0076163234660889,
+        "standard_2_1_max_eig": 1.0076163234660889,
+        "all_blocks_psd": false
+      },
+      {
+        "name": "σ_0 σ_1⁻¹ σ_0 σ_1⁻¹ σ_0 σ_1⁻¹ (B_3 cube)",
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "trivial_3": 1.0,
+        "sign_1_1_1": 1.0,
+        "standard_2_1_min_eig": 0.9733642289636801,
+        "standard_2_1_max_eig": 1.0208779305432776,
+        "all_blocks_psd": true
+      },
+      {
+        "name": "σ_0 σ_1⁻¹ σ_0 σ_1⁻¹ (B_3 squared)",
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "trivial_3": 1.0,
+        "sign_1_1_1": 1.0,
+        "standard_2_1_min_eig": -0.7344674852348547,
+        "standard_2_1_max_eig": -0.1766498315640016,
+        "all_blocks_psd": false
+      },
+      {
+        "name": "σ_0³ (electron-style 2-strand)",
+        "braid_word": [
+          1,
+          1,
+          1
+        ],
+        "trivial_3": 1.3665224096729998,
+        "sign_1_1_1": -0.7317845597858096,
+        "standard_2_1_min_eig": -0.7317845597858096,
+        "standard_2_1_max_eig": 1.3665224096729998,
+        "all_blocks_psd": false
+      },
+      {
+        "name": "σ_0 σ_1 σ_0 σ_1 (Hopf-double)",
+        "braid_word": [
+          1,
+          2,
+          1,
+          2
+        ],
+        "trivial_3": 1.5164299180141276,
+        "sign_1_1_1": 0.6594435971756417,
+        "standard_2_1_min_eig": -0.7218550315796917,
+        "standard_2_1_max_eig": -0.2781449684203085,
+        "all_blocks_psd": false
+      },
+      {
+        "name": "σ_0 σ_1 σ_0 σ_1 σ_0 σ_1 (B_3 with positive crossings)",
+        "braid_word": [
+          1,
+          2,
+          1,
+          2,
+          1,
+          2
+        ],
+        "trivial_3": 1.8673834961385014,
+        "sign_1_1_1": 0.5355086419409112,
+        "standard_2_1_min_eig": 1.0000000000000002,
+        "standard_2_1_max_eig": 1.0000000000000004,
+        "all_blocks_psd": true
+      },
+      {
+        "name": "σ_0² σ_1² (gluon-coupling variant)",
+        "braid_word": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "trivial_3": 1.5164299180141276,
+        "sign_1_1_1": 0.6594435971756417,
+        "standard_2_1_min_eig": 0.8023142483955042,
+        "standard_2_1_max_eig": 1.241181167598809,
+        "all_blocks_psd": true
+      },
+      {
+        "name": "σ_0³ σ_1 σ_0³ (hand-built proton with substrate)",
+        "braid_word": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1
+        ],
+        "trivial_3": 2.0722354656648947,
+        "sign_1_1_1": -0.4825706424627478,
+        "standard_2_1_min_eig": -1.2429933286942023,
+        "standard_2_1_max_eig": 0.8168110253511234,
+        "all_blocks_psd": false
+      }
+    ],
+    "psd_feasible_count": 3,
+    "total_candidates": 12
+  },
+  "caveats": [
+    "PSD-feasibility alone is NOT sufficient to uniquely select the canonical γγ → qq̄ T_w. A scalar objective is needed: minimal |tr_M|, maximal agreement with a target mass scale, or an LR cross-level consistency check from H_2 (γγ seed).",
+    "This probe uses the HOEFSMIT-MATRIX SDP-feasibility check (not a true SDP solve). To actually FIND a canonical T_w rather than CHECK a given one, use cvxpy with PSD constraints on each Wedderburn block — that's a follow-up project."
+  ]
+}

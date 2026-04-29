@@ -1,0 +1,37 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T02:10:12.126181+00:00",
+  "commitSha": "04443eeb98403fe973788e520331dd2771b1170a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "probe-d-term23-binding",
+  "scriptFile": "probe_d_term23_binding.py",
+  "scriptHash": "3750308439ce",
+  "scriptCommitSha": "",
+  "description": "Probe of D-error-budget source #2 (Term 2+3 inclusion). Computes B_Term23(D) = Term23(p) + Term23(n) − Term23(D atom) from entanglement-orders.witness.json and tests whether adding it to existing Term 1+4 closes the +2.10% residual.",
+  "contentBlock": "prop:atom-knot-mass-derivation",
+  "parameters": {
+    "calibration_MeV_per_cat": 0.0007958232816978121,
+    "m_e_MeV": 0.51099895
+  },
+  "data": {
+    "Term23_proton_cat": 1178994.5650411197,
+    "Term23_neutron_cat": 517435.6710652549,
+    "Term23_D_atom_cat": 1703518.6467422424,
+    "B_Term23_cat": -7088.410635867855,
+    "B_Term23_MeV": -5.641122214258031,
+    "B_term1_only_MeV": 0.9952558691106964,
+    "B_term1_plus_4_MeV": 2.271368715455014,
+    "B_term1_plus_4_plus_term23_MeV": -3.369753498803017,
+    "B_AME_MeV": 2.22456612,
+    "err_existing_pct": 2.1038977009599606,
+    "err_with_term23_pct": -251.47913422339707,
+    "verdict": "NOT IMPROVED"
+  },
+  "caveats": [
+    "The entanglement-orders calibration fits proton mass exactly but undershoots neutron mass by 56%. The neutron undershoot propagates into atom-level Term 2+3, biasing B_Term23 toward wrong sign for D.",
+    "Term 1 (descended Markov trace) already encodes the relevant internal-tower content for binding via free-vs-atom subtraction. Adding Term 2+3 separately double-counts."
+  ]
+}

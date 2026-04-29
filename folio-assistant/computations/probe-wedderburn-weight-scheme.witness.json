@@ -1,0 +1,178 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T01:35:01.632978+00:00",
+  "commitSha": "b3aa6de3aaae182e7671aee8089bd83ad8aceb28",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "probe-wedderburn-weight-scheme",
+  "scriptFile": "probe_wedderburn_weight_scheme.py",
+  "scriptHash": "dc9d08ccf16a",
+  "scriptCommitSha": "",
+  "description": "Wedderburn weight scheme audit: compares Plancherel weights (dim_q² / [n]_q!) used in mass_endomorphism.py / light_isotope_sweep.py against Wenzl-bridge y_λ used in y-lambda-wenzl-witness.json. If they disagree on χ_λ(T_w) for non-trivial T_w, one (or both) is wrong, and the +1.84% m_p/m_e residual may live in the WEIGHT CHOICE.",
+  "contentBlock": "prop:y-lambda-recipe-from-partition",
+  "parameters": {
+    "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
+    "mpmath_dps": 50
+  },
+  "data": {
+    "comparisons_by_n": [
+      {
+        "n": 2,
+        "rows": [
+          {
+            "partition": [
+              2
+            ],
+            "classical_dim": 1,
+            "q_dim_at_q_0": 1.0,
+            "scheme_A_plancherel": 0.4972905450085915,
+            "scheme_B_wenzl": 0.6963254203144307,
+            "ratio_B_over_A": 1.4002386075978994
+          },
+          {
+            "partition": [
+              1,
+              1
+            ],
+            "classical_dim": 1,
+            "q_dim_at_q_0": 1.0,
+            "scheme_A_plancherel": 0.4972905450085915,
+            "scheme_B_wenzl": 0.3036745796855693,
+            "ratio_B_over_A": 0.6106582615205822
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "rows": [
+          {
+            "partition": [
+              3
+            ],
+            "classical_dim": 1,
+            "q_dim_at_q_0": 1.0,
+            "scheme_A_plancherel": 0.1633832273397582,
+            "scheme_B_wenzl": 0.4153957863345666,
+            "ratio_B_over_A": 2.542462853122273
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "classical_dim": 2,
+            "q_dim_at_q_0": 2.010896869118482,
+            "scheme_A_plancherel": 0.6606737723483497,
+            "scheme_B_wenzl": 0.2809296339798641,
+            "ratio_B_over_A": 0.42521687062179897
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "classical_dim": 1,
+            "q_dim_at_q_0": 1.0,
+            "scheme_A_plancherel": 0.1633832273397582,
+            "scheme_B_wenzl": 0.022744945705705264,
+            "ratio_B_over_A": 0.13921224397414284
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "rows": [
+          {
+            "partition": [
+              5
+            ],
+            "classical_dim": 1,
+            "q_dim_at_q_0": 1.0,
+            "scheme_A_plancherel": 0.007615387159641046,
+            "scheme_B_wenzl": 0.1181483983336024,
+            "ratio_B_over_A": 15.514430961533852
+          },
+          {
+            "partition": [
+              4,
+              1
+            ],
+            "classical_dim": 4,
+            "q_dim_at_q_0": 4.109682435637709,
+            "scheme_A_plancherel": 0.1286200031602021,
+            "scheme_B_wenzl": 0.10937853185946189,
+            "ratio_B_over_A": 0.8504006310995492
+          },
+          {
+            "partition": [
+              3,
+              2
+            ],
+            "classical_dim": 5,
+            "q_dim_at_q_0": 5.220441324664574,
+            "scheme_A_plancherel": 0.20754220432343184,
+            "scheme_B_wenzl": 0.06172371532319623,
+            "ratio_B_over_A": 0.29740319818038824
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1
+            ],
+            "classical_dim": 6,
+            "q_dim_at_q_0": 6.220441324664574,
+            "scheme_A_plancherel": 0.2946689551460931,
+            "scheme_B_wenzl": 0.016766608958844187,
+            "ratio_B_over_A": 0.0568998147447583
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1
+            ],
+            "classical_dim": 5,
+            "q_dim_at_q_0": 5.220441324664574,
+            "scheme_A_plancherel": 0.20754220432343184,
+            "scheme_B_wenzl": 0.007749589318305704,
+            "ratio_B_over_A": 0.03733982369305867
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "classical_dim": 4,
+            "q_dim_at_q_0": 4.109682435637709,
+            "scheme_A_plancherel": 0.1286200031602021,
+            "scheme_B_wenzl": -0.0009287250802900655,
+            "ratio_B_over_A": -0.007220689297708195
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "classical_dim": 1,
+            "q_dim_at_q_0": 1.0,
+            "scheme_A_plancherel": 0.007615387159641046,
+            "scheme_B_wenzl": 8.619758913550236e-05,
+            "ratio_B_over_A": 0.01131887155945533
+          }
+        ]
+      }
+    ]
+  },
+  "caveats": [
+    "If scheme A and scheme B disagree, check which one is the STANDARD Markov trace per Wenzl's bridge for the chosen Markov parameter z = z_M = (q^{1/2}-q^{-1/2}) / (q-q^{-1})."
+  ]
+}

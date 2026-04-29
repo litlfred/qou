@@ -1,0 +1,187 @@
+{
+  "engine": "python+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T02:06:56.440127+00:00",
+  "commitSha": "22bb3ae3624c26aa1ca15c334430a15f49d4ffa7",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 31,
+  "computation": "probe-gamma-gamma-lr-embed-h6",
+  "scriptFile": "probe_gamma_gamma_lr_embed_h6.py",
+  "scriptHash": "8cd3d26d1964",
+  "scriptCommitSha": "",
+  "description": "Foreground γγ LR-embed test at H_6 (deuteron). Builds the deuteron atom braid via atomic_braid_to_crossings(Z=1, N=1) and checks PSD-feasibility on every Wedderburn block of H_6 via Hoefsmit seminormal matrices at q_0. Tests whether the B_3 cube's H_3 PSD-feasibility (per probe_gamma_gamma_h3_psd_scan.py) carries up to H_6 via LR-embedding.",
+  "contentBlock": "rem:photon-channel-wedderburn-chain",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "n_strands_H6": 6
+  },
+  "data": {
+    "rows": [
+      {
+        "shape": [
+          6
+        ],
+        "dim": 1,
+        "chi_lambda": 1.5597587394180774,
+        "eigvals_sym_min": 1.5597587394180774,
+        "eigvals_sym_max": 1.5597587394180774,
+        "eigvals_sym_count_negative": 0,
+        "psd_or_close": true,
+        "walltime_sec": 0.0005633831024169922
+      },
+      {
+        "shape": [
+          5,
+          1
+        ],
+        "dim": 5,
+        "chi_lambda": 2.673471840331177,
+        "eigvals_sym_min": -1.416175028399415,
+        "eigvals_sym_max": 2.599591955547221,
+        "eigvals_sym_count_negative": 3,
+        "psd_or_close": false,
+        "walltime_sec": 0.0003714561462402344
+      },
+      {
+        "shape": [
+          4,
+          2
+        ],
+        "dim": 9,
+        "chi_lambda": 1.583765638804527,
+        "eigvals_sym_min": -2.5330060974773256,
+        "eigvals_sym_max": 3.659797417658187,
+        "eigvals_sym_count_negative": 4,
+        "psd_or_close": false,
+        "walltime_sec": 0.00040793418884277344
+      },
+      {
+        "shape": [
+          4,
+          1,
+          1
+        ],
+        "dim": 10,
+        "chi_lambda": -0.6481636308453277,
+        "eigvals_sym_min": -2.3769641473094287,
+        "eigvals_sym_max": 3.475119094947088,
+        "eigvals_sym_count_negative": 6,
+        "psd_or_close": false,
+        "walltime_sec": 0.0004603862762451172
+      },
+      {
+        "shape": [
+          3,
+          3
+        ],
+        "dim": 5,
+        "chi_lambda": 3.2076863422892794,
+        "eigvals_sym_min": -1.0840530781496582,
+        "eigvals_sym_max": 4.184511975125082,
+        "eigvals_sym_count_negative": 2,
+        "psd_or_close": false,
+        "walltime_sec": 0.00033164024353027344
+      },
+      {
+        "shape": [
+          3,
+          2,
+          1
+        ],
+        "dim": 16,
+        "chi_lambda": -1.8845100728432118,
+        "eigvals_sym_min": -3.2587580254252067,
+        "eigvals_sym_max": 4.0697632598080755,
+        "eigvals_sym_count_negative": 8,
+        "psd_or_close": false,
+        "walltime_sec": 0.0004436969757080078
+      },
+      {
+        "shape": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "dim": 10,
+        "chi_lambda": 0.079473126470548,
+        "eigvals_sym_min": -2.870902983407669,
+        "eigvals_sym_max": 1.7676587783888251,
+        "eigvals_sym_count_negative": 4,
+        "psd_or_close": false,
+        "walltime_sec": 0.00035190582275390625
+      },
+      {
+        "shape": [
+          2,
+          2,
+          2
+        ],
+        "dim": 5,
+        "chi_lambda": -2.907191188292891,
+        "eigvals_sym_min": -3.3184632483473244,
+        "eigvals_sym_max": 0.6067835740075286,
+        "eigvals_sym_count_negative": 3,
+        "psd_or_close": false,
+        "walltime_sec": 0.0002722740173339844
+      },
+      {
+        "shape": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "dim": 9,
+        "chi_lambda": -0.6781155880379685,
+        "eigvals_sym_min": -2.710424053323224,
+        "eigvals_sym_max": 1.542832746836086,
+        "eigvals_sym_count_negative": 5,
+        "psd_or_close": false,
+        "walltime_sec": 0.00031757354736328125
+      },
+      {
+        "shape": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim": 5,
+        "chi_lambda": 2.010681783864115,
+        "eigvals_sym_min": -0.5761001857602063,
+        "eigvals_sym_max": 2.1187429641963296,
+        "eigvals_sym_count_negative": 2,
+        "psd_or_close": false,
+        "walltime_sec": 0.0002560615539550781
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim": 1,
+        "chi_lambda": -0.6769250645272102,
+        "eigvals_sym_min": -0.6769250645272102,
+        "eigvals_sym_max": -0.6769250645272102,
+        "eigvals_sym_count_negative": 1,
+        "psd_or_close": false,
+        "walltime_sec": 0.00018143653869628906
+      }
+    ],
+    "psd_count": 1,
+    "partitions_total": 11,
+    "full_psd": false
+  },
+  "caveats": [
+    "Uses chi_lambda_numeric (numpy/f64); not MPFR. The PSD test is on the SYMMETRIC PART of ρ_λ(β); full Hermitian test would require eigenvalues of (M + M*)/2 in complex.",
+    "PSD-feasibility is necessary but not sufficient for categorical canonicality; an ADDITIONAL constraint (e.g., minimal tr_M complement, or matching to physical mass scale) is needed to uniquely pick canonical T_w(D)."
+  ]
+}

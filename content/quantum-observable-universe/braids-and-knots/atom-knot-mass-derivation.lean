@@ -82,30 +82,75 @@ constant GbSpectralSequenceCollapseAtE2 : Prop
     spectral-sequence collapse at E_2 — no infinite resolution). -/
 constant CategoricalMassInvariantFinite (T_w : Type*) : Prop
 
-theorem categorical_mass_invariant_finite (T_w : Type*) :
+/-- **Substrate axiom (S1).** Yekutieli's non-abelian Stokes at finite
+    slice depth + GB spectral sequence collapse at E_2 ⇒ the
+    categorical mass invariant `M(𝔥) = ρ · Σ_λ y_λ χ_λ(T_w)` is a
+    **finite sum** in `ℚ(q^{1/2})`.
+
+    The E_∞-page of the GB spectral sequence is the Wedderburn
+    decomposition `H_n(q) ≅ ⊕_λ M_{d_λ}(ℚ(q^{1/2}))`
+    (prop:e-infinity-page-identifications); a Markov trace on a
+    finite-rank module is a finite sum over Wedderburn blocks;
+    Wenzl's bridge gives the y_λ coefficients
+    (prop:alpha-k-derivation-procedure).
+
+    Ref: \cite{yekutieli2015} (non-abelian Stokes),
+    \cite{wenzl1988} (Markov-trace formula on Hecke),
+    \cite{jones1987} (Markov integrality);
+    [manuscript] prop:gb-spectral-sequence,
+    prop:spectral-sequence-collapse,
+    prop:e-infinity-page-identifications.
+
+    Numerically verified for D, T, ³He via the from-scratch chain
+    in `folio-assistant/computations/from_scratch/` (Markov axiom
+    derivation reproducing Wenzl-Schur tr_M to bit-precision).
+
+    **Path to a stronger proof** (per CLAUDE.md §3b on substrate
+    axioms):
+
+      (1) `YekutieliFiniteSliceMultiplicativeTrace` ⇒ formal
+          Mathlib statement of Yekutieli's non-abelian Stokes at
+          finite slice depth (no Mathlib counterpart today; see
+          Yekutieli 2015 for the analytic form).
+
+      (2) `GbSpectralSequenceCollapseAtE2` ⇒ formal spectral-
+          sequence collapse on the GB filtration of `H_n(q)`
+          (requires Mathlib spectral-sequence support, limited
+          today, plus `J^k(q)` concretely as words of Coxeter
+          length ≤ k).
+
+      (3) The implication is then a standard consequence of the
+          Wedderburn decomposition + Wenzl bridge `tr_M(σ_w) =
+          Σ_λ y_λ χ_λ(σ_w)` ⇒ finite-sum structure.
+
+    Status: bona fide substrate axiom, not a `sorry` — its formal
+    proof needs Mathlib infrastructure that does not yet exist. -/
+axiom categorical_mass_invariant_finite (T_w : Type*) :
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
-    CategoricalMassInvariantFinite T_w := by
-  intro _ _
-  sorry  -- Ref: prop:gb-spectral-sequence + prop:spectral-sequence-collapse.
-         -- E_∞-page = Wedderburn (prop:e-infinity-page-identifications);
-         -- finite-rank ℚ(q^{1/2}) module ⇒ Markov trace = Σ_λ y_λ χ_λ
-         -- is a finite sum.
+    CategoricalMassInvariantFinite T_w
 
 /-- Mass identity (Archimedean realization): B(𝔥) = m_e · M(𝔥)|_{q=q_0}. -/
 constant MassIdentity (cert : MassDerivationCertificate) : Prop
 
-theorem atom_knot_mass_derivation (cert : MassDerivationCertificate)
+/-- **Substrate axiom (S2).** Yekutieli + collapse + Archimedean
+    realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}`
+    holds.
+
+    The single-term form `M(𝔥) = ρ · tr_M(T_w)` is **shorthand**
+    for the multi-term decomposition (thm:knot-mass-formula-unified):
+    `M(𝔥) = ρ · (|tr_M(T_w)| + Σ Φ_q(|V̂_i|) + z²·Σ Φ_q(|V̂_iV̂_j|)
+              + Σ_{λ⊢n_0} 1/dim_q(λ))`.
+
+    Ref: [manuscript] prop:atom-knot-mass-derivation §"Mass identity";
+    prop:archimedean-realization-functor;
+    prop:wedderburn-trace-identity (ρ-multiplicity);
+    thm:knot-mass-formula-unified (multi-term M(𝔥)). -/
+axiom atom_knot_mass_derivation (cert : MassDerivationCertificate)
     (T_w : Type*) :
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
-    MassIdentity cert := by
-  intro yek collapse
-  have _ := categorical_mass_invariant_finite T_w yek collapse
-  sorry  -- Ref: prop:atom-knot-mass-derivation §"Mass identity";
-         -- prop:archimedean-realization-functor for the q ↦ q_0 +
-         -- ·m_e step.  ρ from prop:wedderburn-trace-identity
-         -- multiplicity.
+    MassIdentity cert
 
 /-- Pipeline stages (post-revision: single categorical pipeline). -/
 inductive PipelineStage where

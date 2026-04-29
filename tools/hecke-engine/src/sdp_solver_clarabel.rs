@@ -281,6 +281,144 @@ pub fn solve_alpha_psd_clarabel(n: usize, braid_word: &[i32], q: f64) -> Clarabe
     }
 }
 
+/// §S5-final — MPFR-prep variant of [`solve_alpha_psd_clarabel`].
+///
+/// Identical to the f64 entry point except the per-block ρ_λ
+/// matrices are built at MPFR precision via
+/// [`crate::sdp_clarabel_mpfr_prep::build_rho_lambda_mpfr_to_f64`]
+/// and projected to f64 only at the Clarabel boundary.  Eliminates
+/// accumulated f64 rounding error proportional to `ℓ(braid_word)`
+/// in the matrix-arithmetic core.
+///
+/// Slower than the f64 path (MPFR ops at 50+ dps are ~10-30× per
+/// arithmetic op).  Recommended for callers where the answer
+/// hinges on PSD-edge sign accuracy at q_0 — i.e. H_18 (⁶Li) and
+/// up.  For routine H_3 / H_4 problems the existing f64 path is
+/// fine.
+///
+/// `q_str` — substrate parameter as a decimal string (avoids the
+/// f64 round-trip at the boundary).  `dps` — MPFR working
+/// precision in decimal digits; recommended ≥ 50 to match
+/// `seminormal_mpfr.rs`.
+pub fn solve_alpha_psd_clarabel_mpfr_prep(
+    n: usize,
+    braid_word: &[i32],
+    q_str: &str,
+    dps: u32,
+) -> ClarabelSdpReport {
+    use crate::sdp_clarabel_mpfr_prep::build_rho_lambda_mpfr_to_f64;
+
+    // Parse q_str to f64 once for the seminormal_matrices block-dim
+    // probe; the actual ρ_λ build uses the MPFR path.
+    let q: f64 = q_str
+        .parse()
+        .unwrap_or_else(|e| panic!("solve_alpha_psd_clarabel_mpfr_prep: invalid q_str {q_str:?}: {e}"));
+
+    let parts = partitions_of(n);
+    let block_dims: Vec<usize> = parts
+        .iter()
+        .map(|sh| {
+            let sg = seminormal_matrices(sh, q);
+            if sg.is_empty() {
+                1
+            } else {
+                sg[0].len()
+            }
+        })
+        .collect();
+
+    // Build per-block ρ matrices via the MPFR-prep path.
+    let rhos: Vec<Vec<Vec<f64>>> = parts
+        .iter()
+        .map(|sh| build_rho_lambda_mpfr_to_f64(sh, braid_word, q_str, dps))
+        .collect();
+
+    // Rest of the function is byte-identical to solve_alpha_psd_clarabel
+    // — just plug `rhos` into the existing constraint-assembly /
+    // solver-call machinery.
+
+    let p_dim = 1usize;
+    let p = CscMatrix::zeros((p_dim, p_dim));
+    let q_vec = vec![-1.0f64];
+
+    let mut a_rows: Vec<usize> = Vec::new();
+    let mut a_vals: Vec<f64> = Vec::new();
+    let mut b: Vec<f64> = Vec::new();
+    let mut cones: Vec<SupportedConeT<f64>> = Vec::new();
+    let mut row = 0usize;
+
+    a_rows.push(row);
+    a_vals.push(1.0);
+    b.push(1.0);
+    cones.push(SupportedConeT::NonnegativeConeT(1));
+    row += 1;
+
+    a_rows.push(row);
+    a_vals.push(-1.0);
+    b.push(0.0);
+    cones.push(SupportedConeT::NonnegativeConeT(1));
+    row += 1;
+
+    for (b_idx, _shape) in parts.iter().enumerate() {
+        let d = block_dims[b_idx];
+        let cone_dim = d * (d + 1) / 2;
+        let rho = &rhos[b_idx];
+        let mut rho_minus_i = vec![vec![0.0f64; d]; d];
+        let mut identity = vec![vec![0.0f64; d]; d];
+        for i in 0..d {
+            for j in 0..d {
+                rho_minus_i[i][j] = rho[i][j];
+                if i == j {
+                    rho_minus_i[i][j] -= 1.0;
+                    identity[i][j] = 1.0;
+                }
+            }
+        }
+        let svec_a = svec_pack(&rho_minus_i);
+        let svec_b = svec_pack(&identity);
+        for k in 0..cone_dim {
+            a_rows.push(row + k);
+            a_vals.push(-svec_a[k]);
+            b.push(svec_b[k]);
+        }
+        cones.push(SupportedConeT::PSDTriangleConeT(d));
+        row += cone_dim;
+    }
+
+    let m_rows = row;
+    let nnz = a_rows.len();
+    let a_indptr: Vec<usize> = vec![0, nnz];
+    let a_csc = CscMatrix::new(m_rows, p_dim, a_indptr, a_rows, a_vals);
+
+    let settings = DefaultSettingsBuilder::default()
+        .verbose(false)
+        .max_iter(200)
+        .build()
+        .unwrap();
+
+    let mut solver = DefaultSolver::new(&p, &q_vec, &a_csc, &b, &cones, settings).unwrap();
+    solver.solve();
+
+    let solver_status = solver.solution.status;
+    let iters = solver.solution.iterations;
+    let alpha_star = if matches!(solver_status, SolverStatus::Solved | SolverStatus::AlmostSolved) {
+        -solver.solution.obj_val
+    } else {
+        f64::NAN
+    };
+    let status = format!("{:?}", solver_status);
+
+    ClarabelSdpReport {
+        n,
+        q0: q,
+        alpha_star,
+        solver_status: status,
+        n_blocks: parts.len(),
+        block_dims,
+        iterations: iters,
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -316,6 +454,30 @@ mod tests {
             report.alpha_star,
             report.solver_status
         );
+    }
+
+    #[test]
+    fn alpha_psd_mpfr_prep_matches_f64_h3() {
+        // §S5-final cross-check: the MPFR-prep entry point should
+        // produce the same α* as the f64 path on H_3 (where f64
+        // hasn't yet accumulated meaningful rounding error).
+        let q_str = "1.10998";
+        let q_f64: f64 = q_str.parse().unwrap();
+        let braid = [1, -2, 1, -2, 1, -2]; // proton Borromean
+
+        let r_f64 = solve_alpha_psd_clarabel(3, &braid, q_f64);
+        let r_mpfr = solve_alpha_psd_clarabel_mpfr_prep(3, &braid, q_str, 50);
+
+        let diff = (r_f64.alpha_star - r_mpfr.alpha_star).abs();
+        assert!(
+            diff < 1e-6,
+            "MPFR-prep α*={} disagrees with f64 α*={} (Δ={:.2e})",
+            r_mpfr.alpha_star,
+            r_f64.alpha_star,
+            diff
+        );
+        // Both should give α* ≈ 1 on the proton Borromean.
+        assert!(r_mpfr.alpha_star > 0.999);
     }
 
     #[test]

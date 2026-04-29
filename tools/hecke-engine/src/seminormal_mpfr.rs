@@ -229,6 +229,84 @@ pub fn chi_lambda_braid_mpfr(
     trace.to_string_radix(10, Some(dps as usize))
 }
 
+// ──────────────────────────────────────────────────────────────────
+// §S1 — Materialised generator matrices at MPFR precision.
+//
+// `seminormal_matrices_mpfr` is the MPFR analogue of
+// `crate::seminormal::seminormal_matrices` (f64): it returns one
+// sparse matrix per Hecke generator σ_i (1-indexed), populated via
+// the same Hoefsmit block-form recursion that drives the character
+// path, but with `rug::Float` entries at the requested precision.
+//
+// Used by §S4-MPFR (`sdp_solver_clarabel_mpfr`) and §S5-MPFR (the
+// canonical-T_w solver siblings) to feed Wedderburn-block PSD
+// constraints into Clarabel-rs's MPFR backend without the
+// f64 round-trip that capped the existing `sdp_solver_clarabel.rs`
+// path at IEEE precision.
+// ──────────────────────────────────────────────────────────────────
+
+/// MPFR analogue of [`crate::seminormal::SparseMatrix`] — a sparse
+/// matrix as a vector of (column-index, entry) pairs per row.
+pub type SparseMatrixMpfr = Vec<Vec<(usize, Float)>>;
+
+/// MPFR analogue of [`crate::seminormal::seminormal_matrices`] —
+/// build the Hoefsmit seminormal generators ρ_λ(σ_i) as sparse
+/// matrices at MPFR precision.
+///
+/// `q_str` is the substrate parameter as a decimal string (avoids
+/// the f64 round-trip at the boundary).  Returns one
+/// `SparseMatrixMpfr` per generator σ_1, …, σ_{n-1}.
+pub fn seminormal_matrices_mpfr(
+    shape: &[usize],
+    q_str: &str,
+    dps: u32,
+) -> Vec<SparseMatrixMpfr> {
+    let prec = dps_to_bits(dps);
+    let q = Float::parse(q_str)
+        .map(|p| Float::with_val(prec, p))
+        .unwrap_or_else(|e| {
+            panic!(
+                "seminormal_matrices_mpfr: invalid q_str {:?}: {} \
+                 (a silent fallback to q=1 would trigger divide-by-zero \
+                 in the Hoefsmit coefficients via 1 - q^{{-2ρ}} = 0)",
+                q_str, e
+            )
+        });
+
+    let (dim, all_blocks) = build_blocks_mpfr(shape, &q, prec);
+    if dim == 0 {
+        return Vec::new();
+    }
+
+    all_blocks
+        .into_iter()
+        .map(|blocks| {
+            let mut rows: SparseMatrixMpfr = (0..dim).map(|_| Vec::new()).collect();
+            for block in blocks {
+                match block {
+                    BlockMpfr::One { i, a } => {
+                        rows[i].push((i, a));
+                    }
+                    BlockMpfr::Two { i, j, a, ap, b } => {
+                        // Mirror the f64 version's row layout:
+                        //   rows[i] gets (i, a), (j, b)
+                        //   rows[j] gets (i, b), (j, a')
+                        let b2 = Float::with_val(prec, &b);
+                        rows[i].push((i, a));
+                        rows[i].push((j, b));
+                        rows[j].push((i, b2));
+                        rows[j].push((j, ap));
+                    }
+                }
+            }
+            for row in &mut rows {
+                row.sort_by_key(|&(jj, _)| jj);
+            }
+            rows
+        })
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -256,5 +334,52 @@ mod tests {
         // 1/1.10998 ≈ 0.9009...
         assert!(chi.starts_with("0.9009") || chi.starts_with("9.009"),
                 "chi = {}", chi);
+    }
+
+    #[test]
+    fn seminormal_matrices_mpfr_trivial_rep_h2() {
+        // λ = [2], n = 2 ⇒ trivial rep, σ_1 acts as multiplication
+        // by q.  So the single 1×1 generator should have entry q.
+        let mats = seminormal_matrices_mpfr(&[2], "1.10998", 50);
+        assert_eq!(mats.len(), 1, "λ=[2] has one generator σ_1");
+        let m = &mats[0];
+        assert_eq!(m.len(), 1, "1-dim trivial rep: 1 row");
+        assert_eq!(m[0].len(), 1, "1-dim trivial rep: 1 entry");
+        let (col, ref entry) = m[0][0];
+        assert_eq!(col, 0);
+        let s = entry.to_string_radix(10, Some(8));
+        assert!(
+            s.starts_with("1.10998") || s.starts_with("1.1099"),
+            "expected entry ≈ q = 1.10998…, got {}",
+            s
+        );
+    }
+
+    #[test]
+    fn seminormal_matrices_mpfr_matches_f64_h3() {
+        // Cross-validate the MPFR matrix entries against the f64
+        // version on a reasonable q.  At λ=[3], n=3, dim=1 trivial.
+        // λ=[2,1], n=3, dim=2 — two distinct generators σ_1, σ_2.
+        let q_str = "1.10998";
+        let q_f64: f64 = q_str.parse().unwrap();
+        let mats_mpfr = seminormal_matrices_mpfr(&[2, 1], q_str, 50);
+        let mats_f64 = crate::seminormal::seminormal_matrices(&[2, 1], q_f64);
+        assert_eq!(mats_mpfr.len(), mats_f64.len(), "same generator count");
+        for (g_idx, (mm, mf)) in mats_mpfr.iter().zip(mats_f64.iter()).enumerate() {
+            assert_eq!(mm.len(), mf.len(), "generator {} dim", g_idx);
+            for (row_idx, (rm, rf)) in mm.iter().zip(mf.iter()).enumerate() {
+                assert_eq!(rm.len(), rf.len(), "generator {} row {} sparsity", g_idx, row_idx);
+                for (em, ef) in rm.iter().zip(rf.iter()) {
+                    assert_eq!(em.0, ef.0, "column index mismatch");
+                    let mpfr_as_f64: f64 = em.1.to_f64();
+                    assert!(
+                        (mpfr_as_f64 - ef.1).abs() < 1e-10,
+                        "entry mismatch: f64={} vs mpfr→f64={}",
+                        ef.1,
+                        mpfr_as_f64
+                    );
+                }
+            }
+        }
     }
 }

@@ -188,7 +188,7 @@ checksum = "c8d4a3bb8b1e0c1050499d1815f5ab16d04f0959b233085fb31653fbfc9d98f9"
 [[package]]
 name = "clarabel"
 version = "0.11.1"
-source = "git+https://github.com/litlfred/Clarabel.rs?rev=cf7b5f4#cf7b5f49af914360288d6d9184e3b4cd73ff46bf"
+source = "git+https://github.com/litlfred/Clarabel.rs?rev=9673209#967320920c41a056f0141c060377a447135ae37f"
 dependencies = [
  "amd",
  "blas",
@@ -202,7 +202,10 @@ dependencies = [
  "lapack-src",
  "lazy_static",
  "netlib-src",
+ "num-bigint",
+ "num-rational",
  "num-traits",
+ "rug",
  "serde",
  "serde-big-array",
  "serde_json",
@@ -545,6 +548,7 @@ checksum = "a5e44f723f1133c9deac646763579fdb3ac745e418f2a7af9cd0c431da1f20b9"
 dependencies = [
  "num-integer",
  "num-traits",
+ "serde",
 ]
 
 [[package]]
@@ -574,6 +578,7 @@ dependencies = [
  "num-bigint",
  "num-integer",
  "num-traits",
+ "serde",
 ]
 
 [[package]]

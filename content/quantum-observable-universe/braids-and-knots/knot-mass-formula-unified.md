@@ -91,13 +91,41 @@ $$
   + m_e \cdot \sum_{\lambda \,\vdash\, 3A} \frac{1}{\dim_q(\lambda)}.
 $$
 
-*Whether the $(3A)$-level Frobenius sum or the single-vortex $(n=3)$
-Frobenius sum is the right object for composite isotopes depends
-on whether the fibre functor $\tau$ acts per-vortex or per-atom.
-Current data (proton $n=3$, deuteron binding still matches
-$n=3$ value) favour the **per-vortex** interpretation — the
-correction is attached to the fibre-functor calibration and
-does not rescale with $A$.  Rigorous determination is open.*
+*The right object is the $(3A)$-level Frobenius sum
+$\tau\bigl(C_{\dim_q}^{H_{3A}(R, q)}\bigr) = \sum_{\lambda \vdash 3A} 1/\dim_q(\lambda)$,
+not $A$ copies of the single-vortex $(n=3)$ value.*
+
+*This is forced by the algebraic content of
+[Frobenius co-Casimir universal](#thm:frobenius-codim-universal):
+when the isotope's braid lives in $H_{3A}(R, q)$, the central
+idempotents $p_\lambda$ are indexed by partitions $\lambda \vdash 3A$,
+not by partitions of $3$.  The per-A heuristic
+$A \cdot \tau(C_{\dim_q}^{H_3})$ would correspond to a disconnected sum
+of $A$ independent $H_3$-blocks, which is**not** the algebra
+hosting an isotope braid.*
+
+*Numerical values per
+[`probe_term4_conventions.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_term4_conventions.py):*
+
+| atom | $A$ | per-vortex $1{\cdot}m_e\Sigma_3$ | per-A $A{\cdot}m_e\Sigma_3$ | **per-$3A$ $m_e\Sigma_{3A}$ (algebraic)** |
+|---|---:|---:|---:|---:|
+| D | 2 | 1.276 MeV | 2.552 MeV | **1.636 MeV** |
+| T, ³He | 3 | 1.276 MeV | 3.828 MeV | **1.300 MeV** |
+| ⁴He | 4 | 1.276 MeV | 5.105 MeV | **1.151 MeV** |
+
+*The per-$3A$ values are close to the per-vortex value ($\sim
+1.2$–$1.6$ MeV) because $\sum_{\lambda \vdash 3A} 1/\dim_q(\lambda)$
+is dominated by the two extreme blocks $((3A))$ and $((1^{3A}))$
+each contributing $1$, plus a $q$-dependent middle that grows
+slowly in $A$.  This explains why the per-vortex heuristic was
+empirically a good approximation, but it is not the rigorous
+statement.*
+
+*Compute side: scripts that use $A \cdot m_e \cdot (2 + 1/[2]_q)$
+([`mass_formula_6term.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/mass_formula_6term.py),
+[`unified_low_isotope_predictor.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/unified_low_isotope_predictor.py))
+are using the per-A heuristic and need to be migrated to the
+per-$3A$ algebraic form before any "best prediction" claim.*
 
 **Specialisations by knot type.**
 

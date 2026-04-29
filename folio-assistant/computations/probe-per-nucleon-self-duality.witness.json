@@ -1,0 +1,122 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-27T20:28:46.287865+00:00",
+  "commitSha": "948fedf5fe95fe0e3fe2cbac1388ec1092c4eef7",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "probe-per-nucleon-self-duality",
+  "scriptFile": "probe_per_nucleon_self_duality.py",
+  "scriptHash": "53b1e8696dce",
+  "scriptCommitSha": "",
+  "description": "Per-nucleon shell-self-duality probe at H_3. Tests whether proton (uud) and neutron (udd) intra braids satisfy χ_λ(β) = χ_{λ*}(β) on every Wedderburn pair of H_3. Sub-tower complement to probe-atom-shell-self-duality (which tested at H_{3A} and falsified the atom-level conjecture). If individual nucleons are self-dual at H_3, this gives the categorical magic condition at the sub-tower level.",
+  "contentBlock": "prop:shell-schur-weyl-self-duality",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895
+  },
+  "data": {
+    "nucleons": [
+      {
+        "name": "proton (uud)",
+        "summary": {
+          "n_strands": 3,
+          "n_pairs_examined": 2,
+          "self_conjugate_count": 1,
+          "pair_dual_count": 0,
+          "not_dual_count": 1,
+          "all_dual": false,
+          "tr_M_at_q0": 0.7022507726245337
+        },
+        "rows": [
+          {
+            "shape": [
+              3
+            ],
+            "shape_star": [
+              1,
+              1,
+              1
+            ],
+            "is_self_conjugate": false,
+            "dim": 1,
+            "chi_lambda": 1.382494514546446,
+            "chi_lambda_star": -0.7392235469701234,
+            "y_lambda": 0.16338322733975824,
+            "equal_within_1e-9": false,
+            "ratio_chi_to_chi_star": -1.8701981561774048
+          },
+          {
+            "shape": [
+              2,
+              1
+            ],
+            "shape_star": [
+              2,
+              1
+            ],
+            "is_self_conjugate": true,
+            "dim": 2,
+            "chi_lambda": 1.8077033200981636,
+            "chi_lambda_star": 1.8077033200981636,
+            "y_lambda": 0.6606737723483499,
+            "equal_within_1e-9": true,
+            "ratio_chi_to_chi_star": 1.0
+          }
+        ]
+      },
+      {
+        "name": "neutron (udd)",
+        "summary": {
+          "n_strands": 3,
+          "n_pairs_examined": 2,
+          "self_conjugate_count": 1,
+          "pair_dual_count": 0,
+          "not_dual_count": 1,
+          "all_dual": false,
+          "tr_M_at_q0": 0.5963964943611826
+        },
+        "rows": [
+          {
+            "shape": [
+              3
+            ],
+            "shape_star": [
+              1,
+              1,
+              1
+            ],
+            "is_self_conjugate": false,
+            "dim": 1,
+            "chi_lambda": 1.1221068372363079,
+            "chi_lambda_star": -0.910762206232366,
+            "y_lambda": 0.16338322733975824,
+            "equal_within_1e-9": false,
+            "ratio_chi_to_chi_star": -1.2320524825884362
+          },
+          {
+            "shape": [
+              2,
+              1
+            ],
+            "shape_star": [
+              2,
+              1
+            ],
+            "is_self_conjugate": true,
+            "dim": 2,
+            "chi_lambda": 1.7008888500891666,
+            "chi_lambda_star": 1.7008888500891666,
+            "y_lambda": 0.6606737723483499,
+            "equal_within_1e-9": true,
+            "ratio_chi_to_chi_star": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "caveats": [
+    "H_3 has only 3 partitions: (3), (2,1), (1,1,1). The self-conjugate one is (2,1); the extreme pair is ((3), (1,1,1)). Pass criterion: the extreme pair satisfies χ_(3) = χ_(1,1,1). Per the chi-sym-alt theorem their PRODUCT is closed-form, but EQUALITY is a stronger (non-theorem) condition tested empirically here."
+  ]
+}

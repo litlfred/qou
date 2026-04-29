@@ -1,17 +1,126 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-04-28T20:17:06.886100+00:00",
+  "commitSha": "f2abb5d69da81c84b8a4a04b435fc6bbbb8667ca",
+  "assertions": [
+    {
+      "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(2)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(3)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(5)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(7)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(11)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(13)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[n (neutron, A=1)/finite(2)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[n (neutron, A=1)/finite(3)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[n (neutron, A=1)/finite(5)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[n (neutron, A=1)/finite(7)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[n (neutron, A=1)/finite(11)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[n (neutron, A=1)/finite(13)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(2)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(3)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(5)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(7)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(11)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(13)]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
   "computation": "markov-substrate-realization",
-  "description": "Place-by-place realization of the Habiro Markov trace via the Lean MotivicSubstrate.realize map: Place.infty \u2192 \u211d (numerical at q_0), Place.finite(p) \u2192 \ud835\udd3d_p[u] (mod-p coefficient reduction).  Free consistency check: the tail_in_ideal axiom is re-verified in \ud835\udd3d_p[u].",
-  "reference_blocks": [
-    "def:motivic-substrate",
-    "def:adelic-substrate",
-    "prop:full-pole-structure-mass-trace"
-  ],
-  "lean_classes": [
-    "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
-    "qou:QOU.BraidKnot.HabiroCompletion"
-  ],
-  "input_witness": "habiro-coefficients-atomic.witness.json",
-  "computedAt": "2026-04-28T17:05:07.926485+00:00",
+  "scriptFile": "markov_substrate_realizer.py",
+  "scriptHash": "278202e90871",
+  "scriptCommitSha": "f8f3658778708b9bac0bf91b83f3bdc05cd7ba11",
+  "description": "Place-by-place realization of the Habiro Markov trace via the Lean MotivicSubstrate.realize map: Place.infty → ℝ (numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p coefficient reduction).  Free consistency check: the tail_in_ideal axiom is re-verified in 𝔽_p[u].",
+  "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
     "q_0": 1.1099785955541805,
     "finite_places": [
@@ -21,122 +130,189 @@
       7,
       11,
       13
-    ]
+    ],
+    "convention": "wenzl-schur"
   },
-  "engine": "sympy.Poly over ZZ and GF(p)",
-  "overall_pass": true,
-  "results": [
-    {
-      "atom": "p (proton, A=1)",
-      "Z": 1,
-      "N": 0,
-      "deg_p_u": 48,
-      "realizations": [
-        {
-          "place": "infty",
-          "target": "\u211d",
-          "u_0": 1.053555217135856,
-          "tr_M_at_q0": 2.12258250945273
-        },
-        {
-          "place": "finite(2)",
-          "target": "\ud835\udd3d_2[u]",
-          "p_in_u_mod_p": "u**48 + u**38 + u**36 + u**32 + u**28 + u**22 + u**20 + u**16 + u**12 + 1",
-          "deg": 48,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(3)",
-          "target": "\ud835\udd3d_3[u]",
-          "p_in_u_mod_p": "u**48 - u**44 - u**40 + u**38 + u**36 - u**34 + u**32 - u**30 + u**28 - u**26 + u**22 - u**20 - u**16 - u**12 + u**8 + u**4 - 1",
-          "deg": 48,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(5)",
-          "target": "\ud835\udd3d_5[u]",
-          "p_in_u_mod_p": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
-          "deg": 48,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(7)",
-          "target": "\ud835\udd3d_7[u]",
-          "p_in_u_mod_p": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
-          "deg": 48,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(11)",
-          "target": "\ud835\udd3d_11[u]",
-          "p_in_u_mod_p": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
-          "deg": 48,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(13)",
-          "target": "\ud835\udd3d_13[u]",
-          "p_in_u_mod_p": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
-          "deg": 48,
-          "tail_in_ideal_mod_p": true
-        }
-      ]
-    },
-    {
-      "atom": "n (neutron, A=1)",
-      "Z": 0,
-      "N": 1,
-      "deg_p_u": 40,
-      "realizations": [
-        {
-          "place": "infty",
-          "target": "\u211d",
-          "u_0": 1.053555217135856,
-          "tr_M_at_q0": 1.5893934459539047
-        },
-        {
-          "place": "finite(2)",
-          "target": "\ud835\udd3d_2[u]",
-          "p_in_u_mod_p": "u**40 + u**30 + u**28 + u**24 + u**16 + u**14 + u**12 + 1",
-          "deg": 40,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(3)",
-          "target": "\ud835\udd3d_3[u]",
-          "p_in_u_mod_p": "u**40 - u**36 - u**32 + u**30 + u**28 - u**26 + u**24 - u**22 - u**18 - u**16 + u**14 - u**12 + u**8 + u**4 - 1",
-          "deg": 40,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(5)",
-          "target": "\ud835\udd3d_5[u]",
-          "p_in_u_mod_p": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
-          "deg": 40,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(7)",
-          "target": "\ud835\udd3d_7[u]",
-          "p_in_u_mod_p": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
-          "deg": 40,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(11)",
-          "target": "\ud835\udd3d_11[u]",
-          "p_in_u_mod_p": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
-          "deg": 40,
-          "tail_in_ideal_mod_p": true
-        },
-        {
-          "place": "finite(13)",
-          "target": "\ud835\udd3d_13[u]",
-          "p_in_u_mod_p": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
-          "deg": 40,
-          "tail_in_ideal_mod_p": true
-        }
-      ]
-    }
-  ]
+  "data": {
+    "lean_classes": [
+      "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
+      "qou:QOU.BraidKnot.HabiroCompletion"
+    ],
+    "reference_blocks": [
+      "def:motivic-substrate",
+      "def:adelic-substrate",
+      "prop:full-pole-structure-mass-trace"
+    ],
+    "input_witness": "habiro-coefficients-atomic.witness.json",
+    "results": [
+      {
+        "atom": "p (proton, A=1)",
+        "Z": 1,
+        "N": 0,
+        "deg_p_u": 48,
+        "realizations": [
+          {
+            "place": "infty",
+            "target": "ℝ",
+            "u_0": 1.053555217135856,
+            "tr_M_at_q0": 2.12258250945273
+          },
+          {
+            "place": "finite(2)",
+            "target": "𝔽_2[u]",
+            "p_in_u_mod_p": "u**48 + u**38 + u**36 + u**32 + u**28 + u**22 + u**20 + u**16 + u**12 + 1",
+            "deg": 48,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(3)",
+            "target": "𝔽_3[u]",
+            "p_in_u_mod_p": "u**48 - u**44 - u**40 + u**38 + u**36 - u**34 + u**32 - u**30 + u**28 - u**26 + u**22 - u**20 - u**16 - u**12 + u**8 + u**4 - 1",
+            "deg": 48,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(5)",
+            "target": "𝔽_5[u]",
+            "p_in_u_mod_p": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
+            "deg": 48,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(7)",
+            "target": "𝔽_7[u]",
+            "p_in_u_mod_p": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
+            "deg": 48,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(11)",
+            "target": "𝔽_11[u]",
+            "p_in_u_mod_p": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
+            "deg": 48,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(13)",
+            "target": "𝔽_13[u]",
+            "p_in_u_mod_p": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
+            "deg": 48,
+            "tail_in_ideal_mod_p": true
+          }
+        ]
+      },
+      {
+        "atom": "n (neutron, A=1)",
+        "Z": 0,
+        "N": 1,
+        "deg_p_u": 40,
+        "realizations": [
+          {
+            "place": "infty",
+            "target": "ℝ",
+            "u_0": 1.053555217135856,
+            "tr_M_at_q0": 1.5893934459539047
+          },
+          {
+            "place": "finite(2)",
+            "target": "𝔽_2[u]",
+            "p_in_u_mod_p": "u**40 + u**30 + u**28 + u**24 + u**16 + u**14 + u**12 + 1",
+            "deg": 40,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(3)",
+            "target": "𝔽_3[u]",
+            "p_in_u_mod_p": "u**40 - u**36 - u**32 + u**30 + u**28 - u**26 + u**24 - u**22 - u**18 - u**16 + u**14 - u**12 + u**8 + u**4 - 1",
+            "deg": 40,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(5)",
+            "target": "𝔽_5[u]",
+            "p_in_u_mod_p": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
+            "deg": 40,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(7)",
+            "target": "𝔽_7[u]",
+            "p_in_u_mod_p": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
+            "deg": 40,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(11)",
+            "target": "𝔽_11[u]",
+            "p_in_u_mod_p": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
+            "deg": 40,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(13)",
+            "target": "𝔽_13[u]",
+            "p_in_u_mod_p": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
+            "deg": 40,
+            "tail_in_ideal_mod_p": true
+          }
+        ]
+      },
+      {
+        "atom": "D (deuteron, A=2)",
+        "Z": 1,
+        "N": 1,
+        "deg_p_u": 104,
+        "realizations": [
+          {
+            "place": "infty",
+            "target": "ℝ",
+            "u_0": 1.053555217135856,
+            "tr_M_at_q0": 0.17743692421543206
+          },
+          {
+            "place": "finite(2)",
+            "target": "𝔽_2[u]",
+            "p_in_u_mod_p": "u**104 + u**100 + u**92 + u**88 + u**84 + u**80 + u**68 + u**60 + u**52 + u**48 + u**28 + u**20 + u**16 + u**12 + u**4 + 1",
+            "deg": 104,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(3)",
+            "target": "𝔽_3[u]",
+            "p_in_u_mod_p": "u**104 - u**84 - u**80 - u**76 + u**72 + u**68 + u**60 + u**56 + u**52 + u**48 - u**44 + u**40 - u**36 + u**28 - u**24 - u**20 - u**16 + u**12 + 1",
+            "deg": 104,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(5)",
+            "target": "𝔽_5[u]",
+            "p_in_u_mod_p": "u**104 - 2*u**100 + u**96 - u**92 + u**88 + 2*u**80 - 2*u**68 - u**64 + 2*u**60 + 2*u**56 + u**48 - 2*u**44 - 2*u**40 - u**36 + u**32 - u**28 - 2*u**24 + u**20 + u**16 + 2*u**12 + u**8 - 2*u**4 + 1",
+            "deg": 104,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(7)",
+            "target": "𝔽_7[u]",
+            "p_in_u_mod_p": "u**104 + 3*u**100 - u**96 + 2*u**92 - 2*u**80 + u**76 + 3*u**68 - 2*u**64 - u**56 - 3*u**48 + 2*u**44 + u**40 + 3*u**36 - 3*u**32 + 3*u**28 + u**24 - 3*u**20 - 3*u**16 - u**8 + 3*u**4 + 1",
+            "deg": 104,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(11)",
+            "target": "𝔽_11[u]",
+            "p_in_u_mod_p": "u**104 + 3*u**100 - 5*u**96 - 2*u**92 - u**88 + 2*u**84 + 3*u**80 - 5*u**76 + 4*u**72 - 4*u**68 - u**64 - 4*u**60 + 3*u**56 - 2*u**52 - 4*u**48 - 5*u**44 + 4*u**40 - 2*u**36 - 2*u**32 - 3*u**24 - 4*u**12 - 5*u**8 + 3*u**4 + 1",
+            "deg": 104,
+            "tail_in_ideal_mod_p": true
+          },
+          {
+            "place": "finite(13)",
+            "target": "𝔽_13[u]",
+            "p_in_u_mod_p": "u**104 + 3*u**100 + 6*u**96 - 4*u**92 - 5*u**88 - 4*u**84 - 5*u**80 - 2*u**76 + 5*u**72 - 5*u**68 + 2*u**64 - 6*u**60 + 5*u**56 + 4*u**52 + 6*u**48 - 4*u**44 + 3*u**40 + 6*u**36 + 2*u**32 + 2*u**28 - 5*u**24 - 2*u**20 - 2*u**16 - 6*u**12 + 6*u**8 + 3*u**4 + 1",
+            "deg": 104,
+            "tail_in_ideal_mod_p": true
+          }
+        ]
+      }
+    ]
+  }
 }

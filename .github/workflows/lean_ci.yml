@@ -27,6 +27,17 @@ name: Lean CI
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        description: >
+          Branch, tag, or commit SHA to build from.
+          Leave blank to use the ref selected in the GitHub UI's
+          "Use workflow from" dropdown. Provide a value here when the
+          dropdown will not accept your branch name (e.g. very long
+          `copilot/...` or `claude/...` branch names).
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -54,6 +65,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
 
       - name: Install CI tools
         run: |
@@ -61,7 +74,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
             texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
+            latexdiff graphviz
           pip3 install --break-system-packages --no-cache-dir requests>=2.32
 
       - name: Install Lean via elan
@@ -171,6 +184,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
 
       - name: Install CI tools
         run: |
@@ -178,7 +193,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
             texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
+            latexdiff graphviz
           pip3 install --break-system-packages --no-cache-dir requests>=2.32
 
       - name: Configure Python path
@@ -238,6 +253,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
 
       - name: Install CI tools
         run: |
@@ -245,7 +262,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
             texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
+            latexdiff graphviz
           pip3 install --break-system-packages --no-cache-dir requests>=2.32
 
       - name: Install Lean via elan
@@ -416,6 +433,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
 
       - name: Install CI tools
         run: |
@@ -423,7 +442,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             texlive texlive-latex-extra texlive-fonts-extra texlive-bibtex-extra \
             texlive-science texlive-extra-utils biber \
-            pandoc latexdiff graphviz
+            latexdiff graphviz
           pip3 install --break-system-packages --no-cache-dir requests>=2.32
 
       - name: Configure Python path

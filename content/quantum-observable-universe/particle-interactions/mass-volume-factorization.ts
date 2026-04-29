@@ -19,5 +19,5 @@ export default conjecture({
     "rem:frobenius-packing-density",
     "prop:thurston-volume-additivity",
   ],
-  cites: ["thurston1978", "murakami2001"],
+  cites: ["thurston1978", "murakami-murakami2001"],
 });
