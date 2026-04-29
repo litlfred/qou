@@ -40,7 +40,9 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as _Q_CANONICAL
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import (
+    M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV,
+)
 
 Q0 = _Q_CANONICAL
 m_e = M_E_MEV
@@ -104,6 +106,14 @@ def term_23_brane_tower(Z, N, include_inter):
     vols_dict = atom_per_generator_volumes(Z, N, include_inter=include_inter)
     vols = [v["full"] if isinstance(v, dict) else v for v in vols_dict]
     abs_vols = [abs(float(v)) for v in vols]
+    # max_abs_V is the dominant generator volume (max over abs).
+    # By construction every multi-nucleon atom contains at least one
+    # proton or neutron, and the proton's σ_0 generator volume
+    # |V̂_full| ≈ 0.9890 dominates across D / T / ³He / ⁴He /
+    # heavier — so this scalar is structurally identical (to ~14 dp)
+    # across atoms whose generator structure shares the same
+    # proton/neutron building block.  Identical-across-atoms is
+    # therefore the EXPECTED behaviour, not a bug.
     max_abs = max(abs_vols) if abs_vols else 0.0
 
     if max_abs >= 1.05:
@@ -227,19 +237,25 @@ if __name__ == "__main__":
     print(f"Universal Frobenius (n=3) = {FROB_N3:.6f} MeV per vortex")
     print()
 
-    # A=1 β-decay calibration (same as light_isotope_sweep.py)
+    # A=1 β-decay calibration (same as light_isotope_sweep.py).
+    # Use the canonical CODATA-derived Q_NEUTRON_MEV (0.78233341 MeV)
+    # from experimental_constants.py rather than the truncated 0.782
+    # to keep precision consistent with categorical_q_decay_ba_low_isotopes.
     t1_p = term_1_descended(1, 0, include_inter=False)
     t1_n = term_1_descended(0, 1, include_inter=False)
     Q_cat = t1_n - t1_p
-    E_0 = 0.782 / abs(Q_cat)
+    E_0 = Q_NEUTRON_MEV / abs(Q_cat)
     print(f"[A=1 calibration]")
     print(f"  |tr_M(p)| @ q_0 = {t1_p:.6e}")
     print(f"  |tr_M(n)| @ q_0 = {t1_n:.6e}")
-    print(f"  E_0 = 0.782 / |Q_cat| = {E_0:.6f} MeV/cat.unit")
+    print(f"  E_0 = Q_β(n)={Q_NEUTRON_MEV:.6f} / |Q_cat| = {E_0:.6f} MeV/cat.unit")
     print()
 
     # Isotope sweep (skip ⁴He for speed; use light_isotope_sweep results)
-    B_AME = {"D": 2.22457, "T": 8.48180, "3He": 7.71806}
+    # Unified AME 2020 values (matches `B_AME_REFERENCE` in
+    # categorical_q_decay_ba_low_isotopes.py — fewer-digit truncations
+    # caused a 0.0002% discrepancy in err_pct previously).
+    B_AME = {"D": 2.22456612, "T": 8.4817984, "3He": 7.7180375}
     rows = {}
     for iso in ["D", "T", "3He"]:
         Z, N = {"D": (1, 1), "T": (1, 2), "3He": (2, 1)}[iso]
