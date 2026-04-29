@@ -106,18 +106,27 @@ theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
 
     Ref: [manuscript] `thm:frobenius-codim-universal`,
     `audit:plancherel-vs-wenzl-schur-markov-trace`. -/
+/-- Helper: `(1 / (a * b)) * b = 1 / a` when both are non-zero.
+    Used in `frobenius_codim_tau_invariant` to show the per-block
+    contribution telescopes to `1 / dim_q` independent of τ. -/
+private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (_ha : a ≠ 0) (hb : b ≠ 0) :
+    (1 / (a * b)) * b = 1 / a := by
+  rw [div_mul_eq_mul_div, one_mul, mul_div_assoc, div_self hb, mul_one]
+
 theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
     (dim_q : Λ → ℝ) (h_dim : ∀ λ, dim_q λ ≠ 0)
     (τ₁ τ₂ : Λ → ℝ) (hτ₁ : ∀ λ, τ₁ λ ≠ 0) (hτ₂ : ∀ λ, τ₂ λ ≠ 0) :
     -- Both Frobenius pairings give the same C_{dim_q} trace value.
     ∑ λ, (1 / (dim_q λ * τ₁ λ)) * τ₁ λ
       = ∑ λ, (1 / (dim_q λ * τ₂ λ)) * τ₂ λ := by
+  -- Per-block contribution telescopes to 1 / dim_q λ for both τ₁
+  -- and τ₂, independent of the τ choice.  Proved via explicit
+  -- lemma `one_div_mul_eq_div_of_ne` instead of `field_simp`
+  -- (which is fragile across Mathlib bumps).
   apply Finset.sum_congr rfl
   intro λ _
-  have h₁ : dim_q λ ≠ 0 := h_dim λ
-  have hτ₁_ne : τ₁ λ ≠ 0 := hτ₁ λ
-  have hτ₂_ne : τ₂ λ ≠ 0 := hτ₂ λ
-  field_simp
+  rw [one_div_mul_eq_div_of_ne (h_dim λ) (hτ₁ λ),
+      one_div_mul_eq_div_of_ne (h_dim λ) (hτ₂ λ)]
 
 /-- Specialisation to H_n(q): `Λ = partitions of n`, `A = H_n(q)`,
     `dim_q` = q-hook-length dimension, `τ` = Markov trace.

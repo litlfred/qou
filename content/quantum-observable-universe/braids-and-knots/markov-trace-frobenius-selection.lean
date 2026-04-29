@@ -28,7 +28,35 @@ structure MarkovTraceData (n : ℕ) where
     generic q for every λ ⊢ n.
 
     The Schur-Weyl form has τ_SW(p_λ) ∝ s_λ(q, q⁻¹) which VANISHES
-    for height(λ) > 2 (Schur-Weyl vanishing theorem). -/
+    for height(λ) > 2 (Schur-Weyl vanishing theorem).
+
+    **Why opaque, not computable.**  Each value is parametrised by
+    a partition INDEX `lambda_idx` (under some enumeration of
+    `Partition n`); committing to one enumeration here would force
+    the abstract selection theorem to depend on enumeration choice,
+    obscuring the structural content.  The opaques are therefore
+    abstract handles to the per-block trace functional.
+
+    **Path to a computable definition** (per Gemini review note):
+
+      (1) Pick an enumeration `enum_n : Fin (p n) ≃ Partition n`
+          (e.g. dominance order on the partition lattice).
+
+      (2) Concrete `tau_M`:
+            `tau_M_block_value n lambda_idx q :=`
+            `  let λ := enum_n ⟨lambda_idx, h⟩` (via decidable bound
+            check); `dim_q(λ) * d_λ / [n]_q!` evaluated at `q`.
+
+      (3) Concrete `tau_SW`:
+            `tau_SW_block_value n lambda_idx q :=`
+            `  schur_weyl_weight (enum_n ⟨lambda_idx, h⟩) q * d_λ`
+          using `schur_weyl_weight` from `schur-weyl-vanishing.lean`.
+
+    Both reduce to elementary q-arithmetic once the enumeration is
+    fixed.  The from-scratch chain
+    `folio-assistant/computations/from_scratch/wenzl_y_axiomatic.py`
+    implements this concretely (numerical at q_0); a Lean port
+    reuses the same logic. -/
 noncomputable opaque tau_M_block_value (n : ℕ) (lambda_idx : ℕ) (q : ℝ) : ℝ
 noncomputable opaque tau_SW_block_value (n : ℕ) (lambda_idx : ℕ) (q : ℝ) : ℝ
 

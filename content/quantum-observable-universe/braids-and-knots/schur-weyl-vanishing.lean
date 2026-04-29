@@ -144,15 +144,20 @@ noncomputable def schur_weyl_markov_trace
   0  -- placeholder; full definition needs Fintype instance
 
 /-- **Corollary.** The Schur-Weyl Markov trace factors through the
-    height-≤-2 quotient: it equals the partial sum over height-≤-2
-    partitions only.
+    height-≤-2 quotient: any contribution from a partition of
+    height > 2 vanishes identically.
 
-    Once `schur_weyl_markov_trace` is given the proper Fintype-based
-    definition, this corollary follows directly from the per-λ
-    vanishing theorem above. -/
-theorem schur_weyl_factors_height_2 {n : ℕ} (q : ℝ)
-    (chi_lambda : Partition n → ℝ) :
-    True :=  -- placeholder until Fintype Partition n is available
-  trivial
+    Concretely: pre-multiplying any candidate `chi_lambda` value by
+    `schur_weyl_weight λ q` (under the `h : λ.height > 2`
+    hypothesis) yields zero, so summands above the height-2 cap
+    cannot contribute to the Markov trace.  The full Σ-form theorem
+    awaits a `Fintype (Partition n)` instance in Mathlib;
+    until then this per-λ statement is the strongest non-trivial
+    consequence we can state. -/
+theorem schur_weyl_factors_height_2 {n : ℕ} (λ : Partition n)
+    (q : ℝ) (chi_lambda_at : ℝ) (h : λ.height > 2) :
+    schur_weyl_weight λ q * chi_lambda_at = 0 := by
+  rw [schur_weyl_weight_vanish_height_gt_2 λ q h]
+  ring
 
 end QOU.BraidKnot

@@ -103,7 +103,28 @@ constant CategoricalMassInvariantFinite (T_w : Type*) : Prop
 
     Numerically verified for D, T, ³He via the from-scratch chain
     in `folio-assistant/computations/from_scratch/` (Markov axiom
-    derivation reproducing Wenzl-Schur tr_M to bit-precision). -/
+    derivation reproducing Wenzl-Schur tr_M to bit-precision).
+
+    **Path to a stronger proof** (per CLAUDE.md §3b on substrate
+    axioms):
+
+      (1) `YekutieliFiniteSliceMultiplicativeTrace` ⇒ formal
+          Mathlib statement of Yekutieli's non-abelian Stokes at
+          finite slice depth (no Mathlib counterpart today; see
+          Yekutieli 2015 for the analytic form).
+
+      (2) `GbSpectralSequenceCollapseAtE2` ⇒ formal spectral-
+          sequence collapse on the GB filtration of `H_n(q)`
+          (requires Mathlib spectral-sequence support, limited
+          today, plus `J^k(q)` concretely as words of Coxeter
+          length ≤ k).
+
+      (3) The implication is then a standard consequence of the
+          Wedderburn decomposition + Wenzl bridge `tr_M(σ_w) =
+          Σ_λ y_λ χ_λ(σ_w)` ⇒ finite-sum structure.
+
+    Status: bona fide substrate axiom, not a `sorry` — its formal
+    proof needs Mathlib infrastructure that does not yet exist. -/
 axiom categorical_mass_invariant_finite (T_w : Type*) :
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
