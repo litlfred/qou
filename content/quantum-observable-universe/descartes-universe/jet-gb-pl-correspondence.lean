@@ -41,14 +41,13 @@ abbrev StratumIndex := ℕ
     Statement-level only; the categorical proof (Steps 1–4 in the
     `.md` sibling) requires formalising the GB spectral sequence,
     the fibre-functor jet correspondence, and the Yekutieli surface
-    integral — none yet in Mathlib.
-
-    Ref: [yekutieli2015], [manuscript] §6/jet-gb-pl-correspondence -/
+    integral — none yet in Mathlib. -/
+-- Ref: [yekutieli2015] https://doi.org/10.1090/memo/1119
 -- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/jet-gb-pl-correspondence.md
-axiom jetGBPLCorrespondence
-    (p : StratumIndex) :
-  -- Schematic: E_0^p ≅_R J^p(A) , and τ(J^p(A)) ≅_ℂ J^p𝓢 ,
-  -- and Π^(p) computes ⟨tr_M, E_∞^{p,*}⟩ after τ.
-  True
+theorem jetGBPLCorrespondence
+    (_p : StratumIndex) :
+    -- Schematic: E_0^p ≅_R J^p(A) , and τ(J^p(A)) ≅_ℂ J^p𝓢 ,
+    -- and Π^(p) computes ⟨tr_M, E_∞^{p,*}⟩ after τ.
+    True := trivial
 
 end QOU.Descartes

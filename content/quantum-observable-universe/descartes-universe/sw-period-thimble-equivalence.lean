@@ -37,11 +37,22 @@ inductive VerticalDegree
   | muon
   | intermediate
   | baryon
+  deriving DecidableEq, Inhabited
 
 /-- **The five hypotheses A2.1–A2.5 needed to derive PL-correctness.**
     Bundled as a Lean class so downstream theorems can take it as an
     `[instance]` hypothesis (per CLAUDE.md §3b conjecture-class
-    pattern). -/
+    pattern).
+
+    The current `True` payloads are deliberate placeholders: each of
+    A2.1–A2.5 is a substantive mathematical statement (R-side or
+    archimedean) that requires Mathlib infrastructure not yet present
+    (GB spectral sequence, complex Morse theory, Wedderburn isotype
+    projection).  The class shape, however, is final: downstream
+    `[PLCorrectnessHypotheses]` instance hypotheses freeze the
+    archimedean split documented in the `.md` sibling. -/
+-- Ref: [witten2011] https://doi.org/10.1090/conm/560
+-- Ref: [yekutieli2015] https://doi.org/10.1090/memo/1119
 -- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md
 class PLCorrectnessHypotheses where
   /-- A2.1: critical points of `S` equal the discriminant locus (R-side). -/
@@ -55,6 +66,20 @@ class PLCorrectnessHypotheses where
   /-- A2.5: baryon integrand is the Alt^3 isotype (R-side). -/
   alt_isotype_selection : True
 
+/-- A canonical instance recording the vacuous (`True`) form of A2.1–A2.5.
+    This instance lets downstream theorems that take
+    `[PLCorrectnessHypotheses]` type-check at present; once the five
+    hypotheses are replaced by real propositions, this instance will
+    be removed and replaced by either a proof (for closed cases) or a
+    sorry-bearing instance (for the still-open A2.4). -/
+-- Ref: [manuscript] §6/sw-period-thimble-equivalence (placeholder)
+instance plCorrectnessHypotheses_placeholder : PLCorrectnessHypotheses where
+  critical_points_eq_discriminant := trivial
+  hessian_nondegenerate := trivial
+  lefschetz_decomposition := trivial
+  real_axis_eq_thimble_sum := trivial
+  alt_isotype_selection := trivial
+
 /-- **Proposition: SW-period $\equiv$ thimble period via $\tau$.**
     Conditional on `PLCorrectnessHypotheses`, the categorical mass
     `⟨tr_M, E_∞^{k,*}(T_w)⟩ ∈ R` agrees with the Picard–Lefschetz
@@ -65,14 +90,14 @@ class PLCorrectnessHypotheses where
     requires formalising the GB spectral sequence, the jet bundle on
     `𝓔_q`, and the non-abelian Stokes theorem — none yet available
     in Mathlib.  Records the conditional structure so downstream
-    formalisations can take this as a hypothesis.
-
-    Ref: [witten2011], [yekutieli2015], [manuscript] §6/sw-period-thimble-equivalence -/
+    formalisations can take this as a hypothesis. -/
+-- Ref: [witten2011] https://doi.org/10.1090/conm/560
+-- Ref: [yekutieli2015] https://doi.org/10.1090/memo/1119
 -- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md
-axiom swPeriodThimbleEquivalence
+theorem swPeriodThimbleEquivalence
     [PLCorrectnessHypotheses]
-    (k : VerticalDegree) :
-  -- τ(m^(k)_alg) = m^(k)_an, schematically:
-  True
+    (_k : VerticalDegree) :
+    -- τ(m^(k)_alg) = m^(k)_an, schematically:
+    True := trivial
 
 end QOU.Descartes

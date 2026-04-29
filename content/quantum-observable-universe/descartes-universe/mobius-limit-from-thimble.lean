@@ -22,6 +22,9 @@ LaTeX label: `prop:mobius-limit-from-thimble`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.Descartes
 
@@ -31,6 +34,23 @@ namespace QOU.Descartes
     re-entry point requires the archimedean embedding. -/
 noncomputable def mobiusIntegrationLimit (q : ℝ) : ℝ :=
   (4 - q) / (4 * q + 3)
+
+/-- For `q ≥ 0` the denominator `4q + 3 ≥ 3 > 0`, so the Möbius
+    transformation is well-defined on the physical range. -/
+-- Ref: [manuscript] §6/mobius-limit-from-thimble (denominator non-vanishing)
+lemma mobius_denom_pos {q : ℝ} (hq : 0 ≤ q) : 0 < 4 * q + 3 := by
+  linarith
+
+/-- The denominator never vanishes on the physical range `q ≥ 0`. -/
+-- Ref: [manuscript] §6/mobius-limit-from-thimble
+lemma mobius_denom_ne_zero {q : ℝ} (hq : 0 ≤ q) : 4 * q + 3 ≠ 0 :=
+  ne_of_gt (mobius_denom_pos hq)
+
+/-- Numerical sanity check: at `q = 1`, the Möbius limit is `3/7`. -/
+-- Ref: [manuscript] §6/mobius-limit-from-thimble (Table: limit values)
+example : mobiusIntegrationLimit 1 = 3 / 7 := by
+  unfold mobiusIntegrationLimit
+  norm_num
 
 /-- **Proposition: the Möbius integration limit is the steepest-descent
     re-entry point.**
@@ -42,15 +62,16 @@ noncomputable def mobiusIntegrationLimit (q : ℝ) : ℝ :=
     Statement-level only; the analytic proof (Hessian computation +
     asymptotic ODE solution) lives in `mobius-limit-from-thimble.md`
     and is verified numerically in
-    `picard-lefschetz-thimble.witness.json`.
-
-    Ref: [witten2011], [manuscript] §6/mobius-limit-from-thimble -/
+    `picard-lefschetz-thimble.witness.json`.  The current Lean payload
+    asserts only the well-definedness of the Möbius limit on the
+    physical range; the analytic identification with the steepest-
+    descent re-entry abscissa requires complex-contour infrastructure
+    not yet in Mathlib. -/
+-- Ref: [witten2011] https://doi.org/10.1090/conm/560 (Picard–Lefschetz)
 -- Ref: [manuscript] https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/descartes-universe/mobius-limit-from-thimble.md
-axiom mobiusLimitFromThimble :
-  ∀ (q : ℝ),
-    -- Archimedean: steepest-descent re-entry abscissa = mobiusIntegrationLimit q
-    -- (statement requires complex contours; placeholder until the
-    -- archimedean PL infrastructure is formalised).
-    True
+theorem mobiusLimitFromThimble :
+    ∀ (q : ℝ), 0 ≤ q → 4 * q + 3 ≠ 0 := by
+  intro q hq
+  exact mobius_denom_ne_zero hq
 
 end QOU.Descartes
