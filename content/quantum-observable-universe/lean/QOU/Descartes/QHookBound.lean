@@ -121,37 +121,57 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
-  -- Mathematical content via induction on m + Bernoulli:
+  -- Strategy: prove `(m : ℝ) ≤ qIntReal q m` by induction on m using
+  -- the recurrence `qIntReal q (k+1) = q · qIntReal q k + q^(-k)`,
+  -- then divide by m to obtain the original goal.
   --
-  -- Claim: q^m - q^{-m} ≥ m·(q - q^{-1}) for q > 1, m ≥ 1.
-  -- Base m = 1: q^1 - q^{-1} = 1·(q - q^{-1}) ✓.
-  -- Step m → m+1:
-  --   q^{m+1} - q^{-(m+1)} = q·(q^m - q^{-m}) + q^{-m}·(q - q^{-1})
-  --                       ≥ q·m·(q - q^{-1}) + q^{-m}·(q - q^{-1})  [IH]
-  --                       = (q·m + q^{-m})·(q - q^{-1}).
-  -- So need (q·m + q^{-m}) ≥ m+1, i.e., (q-1)·m + q^{-m} ≥ 1.
-  -- By Bernoulli: q^{-m} = (1/q)^m ≥ 1 - m·(q-1)/q.
-  -- Therefore (q-1)·m + q^{-m} ≥ (q-1)·m + 1 - m·(q-1)/q
-  --                           = 1 + m·(q-1)²/q ≥ 1.
-  --
-  -- Setup: positivity + denominator manipulation.
+  -- The induction step reduces to the Bernoulli-like inequality
+  -- `(q-1)·k + q^(-k) ≥ 1`, which holds for q > 1, k ≥ 0 because
+  -- `q^(-k) ≥ 1 - k(q-1)/q` by Bernoulli, and rearrangement gives
+  -- `(q-1)·k + q^(-k) ≥ 1 + k(q-1)²/q ≥ 1`.
   have hq_pos : q > 0 := lt_trans zero_lt_one hq
+  have hq_ne_zero : q ≠ 0 := ne_of_gt hq_pos
   have hq_ne_one : q ≠ 1 := ne_of_gt hq
   have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
   have hq_inv_lt_one : q⁻¹ < 1 := by
     rw [inv_lt_one_iff_of_pos hq_pos]; exact hq
   have h_diff_pos : q - q⁻¹ > 0 := by linarith
-  have hm_pos : (0 : ℝ) < m := Nat.cast_pos.mpr hm
-  rw [ge_iff_le, le_div_iff₀ hm_pos, one_mul]
-  unfold qIntReal
-  rw [if_neg hq_ne_one]
-  rw [le_div_iff₀ h_diff_pos]
-  -- Goal: m * (q - q⁻¹) ≤ q^m - q^(-m).
-  -- This is the substantive inequality. Closing fully requires
-  -- the Bernoulli-driven induction sketched above. The setup above
-  -- normalises the goal; the induction step itself remains open.
-  -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
-  sorry
+  -- Reduce to (m : ℝ) ≤ qIntReal q m.
+  suffices h : (m : ℝ) ≤ qIntReal q m by
+    have hm_pos : (0 : ℝ) < m := Nat.cast_pos.mpr hm
+    rw [ge_iff_le, le_div_iff₀ hm_pos, one_mul]
+    exact h
+  -- Induction on m, dropping the hm hypothesis (the m=0 case handles itself).
+  clear hm
+  induction m with
+  | zero =>
+    -- qIntReal q 0 = (q^0 - q^0)/(q - q⁻¹) = 0; goal: 0 ≤ 0.
+    unfold qIntReal
+    rw [if_neg hq_ne_one]
+    simp
+  | succ k ih =>
+    -- Recurrence: qIntReal q (k+1) = q · qIntReal q k + q^(-k).
+    -- (q^(k+1) - q^(-(k+1)))/(q - q⁻¹) = q·(q^k - q^(-k))/(q - q⁻¹) + q^(-k)
+    -- via algebraic manipulation; verified by `field_simp; ring`.
+    have h_rec : qIntReal q (k+1) = q * qIntReal q k + q ^ (-(k:ℤ)) := by
+      unfold qIntReal
+      rw [if_neg hq_ne_one, if_neg hq_ne_one]
+      have hd : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+      field_simp
+      push_cast
+      ring
+    rw [h_rec]
+    -- Multiply IH by q (positive).
+    have h_qk : q * (k : ℝ) ≤ q * qIntReal q k :=
+      mul_le_mul_of_nonneg_left ih (le_of_lt hq_pos)
+    -- The induction step reduces to `(q-1)·k + q^(-k) ≥ 1`, which is
+    -- the substantive Bernoulli-driven content of the proof.
+    have h_step : ((k : ℝ) + 1) ≤ q * (k : ℝ) + q ^ (-(k:ℤ)) := by
+      -- (q-1)·k + q^(-k) ≥ 1, i.e., q·k + q^(-k) ≥ k+1.
+      -- Substitute Bernoulli: q^(-k) ≥ 1 - k(q-1)/q.
+      sorry
+    push_cast
+    linarith
 
 /-- For small m (m ≤ 4), the tighter bound holds:
     |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 3/2.
