@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T10:42:28.419178+00:00",
-  "commitSha": "b8dd8969acf33a88bf56feb84a54b48cdf58d32e",
+  "computedAt": "2026-04-29T11:17:32.218662+00:00",
+  "commitSha": "3c166f6e1778fd11d1939ff70e285a3e1183c663",
   "assertions": [
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -32,6 +32,12 @@
     },
     {
       "name": "chain_valid[hoefsmit-rep-21-sigma1.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[hoefsmit-rep-21-sigma2.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
@@ -76,6 +82,18 @@
       "tolerance": 2.1225825094527304e-09
     },
     {
+      "name": "chain_valid[schur-weyl-weight-111.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[schur-weyl-weight-21.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
       "name": "chain_valid[schur-weyl-weight-3.derivation]",
       "computed": true,
       "expected": true,
@@ -83,7 +101,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3185120ad3c7",
@@ -126,6 +144,21 @@
         "chain": "hoefsmit-rep-21-sigma1.derivation.json",
         "target": "ρ^{(2,1)}(σ_1)",
         "target_value": "ρ^{(2,1)}(σ_1) ∈ M_2(K(q)) — Hoefsmit matrix in the SYT basis {T_1=[1 2 / 3], T_2=[1 3 / 2]}",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "mathlib-cited": 1,
+          "derived": 3,
+          "axiom": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "hoefsmit-rep-21-sigma2.derivation.json",
+        "target": "ρ^{(2,1)}(σ_2)",
+        "target_value": "ρ^{(2,1)}(σ_2) ∈ M_2(K(q)) — Hoefsmit matrix in the SYT basis {T_1=[1 2 / 3], T_2=[1 3 / 2]}; trace χ^(2,1)_q(σ_2) = q − q^{-1}",
         "computed_value": null,
         "structural_ok": true,
         "leaf_matches": true,
@@ -185,6 +218,36 @@
           "computational": 1
         },
         "has_script_frontier": true
+      },
+      {
+        "chain": "schur-weyl-weight-111.derivation.json",
+        "target": "w_(1,1,1)(q)",
+        "target_value": "1 / ([3]_q · [2]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "schur-weyl-weight-21.derivation.json",
+        "target": "w_(2,1)(q)",
+        "target_value": "(q − q^{-1}) / ([3]_q · [1]_q · [1]_q)",
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "mathlib-cited": 2,
+          "derived": 1
+        },
+        "has_script_frontier": false
       },
       {
         "chain": "schur-weyl-weight-3.derivation.json",
