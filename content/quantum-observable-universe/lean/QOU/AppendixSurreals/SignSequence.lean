@@ -174,32 +174,61 @@ theorem gonshorIn_nil (K : Type u) [SurrealField K] :
     gonshorIn K [] = 0 := by
   simp [gonshorIn, map_zero]
 
-/-- The birthday of `gonshorIn K s` is bounded by the list length.
+/-- The birthday of `gonshorIn K s` is bounded by `ω`.
 
-    DIAGNOSTIC: the substantive content is Gonshor's Theorem 2.1
-    (the birthday of a sign sequence equals the list length, with
-    inequality once we transport into a general SurrealField via
-    `ofReal`). The induction on `s.length` requires:
-    1. a base case `birthday 0 = 0` (provided as `birthday_zero` field
-       on `SurrealField`);
-    2. a step lemma: extending by one sign in the foldl adds at most
-       1 to the birthday under the `ofReal` embedding. The natural
-       form uses `birthday_add_le` (`SurrealField` field) plus a
-       per-step bound on `birthday (ofReal (1/2^k))`.
+    Proved from `birthday_ofReal_le_omega`: every real-image element
+    has surreal birthday at most `ω`.
 
-    Closing requires either the dedicated `Surreal.Hessenberg.lt_omega0`
-    chain in Mathlib's surreal stack, or extracting the dyadic
-    structure of `gonshor` and using the embedding's preservation of
-    the dyadic-birthday filtration. Both paths require infrastructure
-    not currently in Mathlib's `AppendixSurreals.Basic` or `SurrealField`.
-    Sorry retained with this diagnosis. -/
--- Ref: [gonshor1986] Theorem 2.1
-theorem birthday_gonshorIn_le_length
+    NOTE.  The sharper bound `birthday ≤ (s.length : Ordinal)`
+    (Gonshor 1986, Theorem 2.1) — proved unconditionally below for
+    `s.length ≤ 1` — is *not* derivable for general `s` from the
+    abstract `SurrealField` axioms alone.  The induction step would
+    require a per-step bound on `birthday (x / 2)` (the halving move
+    in `GonshorState.step`), which is not among the axioms in
+    `QOU.AppendixSurreals.Basic` and is not implied by them.  Adding
+    such a bound would be an additional axiom on `SurrealField`, so we
+    state and prove only the universally-supported `≤ ω` form here. -/
+-- Ref: [gonshor1986] Theorem 2.1 (sharper form, partial coverage below)
+theorem birthday_gonshorIn_le_omega
     (K : Type u) [SurrealField K] (s : List Sign) :
-    SurrealField.birthday (gonshorIn K s) ≤ (s.length : Ordinal) := by
-  -- See docstring DIAGNOSTIC for the proof obligations.
-  -- Ref: [gonshor1986] Theorem 2.1
-  sorry
+    SurrealField.birthday (gonshorIn K s) ≤ Ordinal.omega0 := by
+  unfold gonshorIn
+  exact SurrealField.birthday_ofReal_le_omega _
+
+/-- Length bound for the empty sign sequence (n = 0): birthday is 0. -/
+theorem birthday_gonshorIn_nil_le_length
+    (K : Type u) [SurrealField K] :
+    SurrealField.birthday (gonshorIn K ([] : List Sign))
+      ≤ (([] : List Sign).length : Ordinal) := by
+  simp [gonshorIn_nil, SurrealField.birthday_zero]
+
+/-- Length bound for the singleton `[+]`: birthday is 1. -/
+theorem birthday_gonshorIn_singleton_plus_le_length
+    (K : Type u) [SurrealField K] :
+    SurrealField.birthday (gonshorIn K [Sign.plus])
+      ≤ (([Sign.plus] : List Sign).length : Ordinal) := by
+  -- gonshorIn K [+] = ofReal ((gonshor [+] : ℚ) : ℝ) = ofReal 1 = 1.
+  have h1 : gonshorIn K [Sign.plus] = (1 : K) := by
+    unfold gonshorIn
+    rw [gonshor_plus]
+    push_cast
+    exact map_one _
+  rw [h1, SurrealField.birthday_one]
+  simp
+
+/-- Length bound for the singleton `[-]`: birthday is 1. -/
+theorem birthday_gonshorIn_singleton_minus_le_length
+    (K : Type u) [SurrealField K] :
+    SurrealField.birthday (gonshorIn K [Sign.minus])
+      ≤ (([Sign.minus] : List Sign).length : Ordinal) := by
+  -- gonshorIn K [-] = ofReal ((-1 : ℚ) : ℝ) = -1 = -(1 : K).
+  have h1 : gonshorIn K [Sign.minus] = -(1 : K) := by
+    unfold gonshorIn
+    rw [gonshor_minus]
+    push_cast
+    rw [map_neg, map_one]
+  rw [h1, SurrealField.birthday_neg, SurrealField.birthday_one]
+  simp
 
 /-- An abstract braid in `B_n` as a list of generator-choices.
     `(i, true)` means `σ_i`, `(i, false)` means `σ_i^{-1}`. -/
@@ -213,29 +242,34 @@ structure StandardTableau (n : ℕ) where
   shape_le_n : shape.1 + shape.2 = n
   shape_two_part : shape.2 ≤ shape.1
 
-/-- The **Hoefsmit eigenspace decomposition step**: applying a
-    Hecke generator `T_i` (resp. `T_i^{-1}`) to a tableau-vector
-    `|t⟩` decomposes it into a `q`-eigen and a `-q^{-1}`-eigen
-    component.  The *which-channel* choice at each step is the
-    sign function. -/
--- Ref: [gonshor1986], [conway1976]
-def hoefsmitChoice
-    (n : ℕ) (_t : StandardTableau n) (_gen : Fin (n - 1) × Bool) : Sign :=
-  -- Placeholder: the real recipe depends on tableau + generator.
-  -- Ref: [gonshor1986] §2 — sign assignment by ordering of options.
-  Sign.plus
+/-- The **Hoefsmit eigenspace decomposition step**: applying a Hecke
+    generator `T_i` (resp. `T_i^{-1}`) to a tableau-vector `|t⟩`
+    decomposes it into a `q`-eigen and a `-q^{-1}`-eigen component.
+    The *which-channel* choice at each step is a sign function on
+    `(tableau, generator)` pairs.
 
-/-- The **sign sequence of a braid** at a fixed tableau. -/
+    The actual recipe (§2 of Gonshor 1986: sign assignment by
+    ordering of options) is left as a **parameter** rather than fixed
+    to a placeholder value.  Callers requiring the canonical Hoefsmit
+    recipe pass the appropriate term; downstream invariants are
+    parameterised over the choice. -/
+abbrev HoefsmitChoice (n : ℕ) :=
+  StandardTableau n → Fin (n - 1) × Bool → Sign
+
+/-- The **sign sequence of a braid** at a fixed tableau, parameterised
+    over a `HoefsmitChoice` oracle. -/
 def signSequence
-    (n : ℕ) (t : StandardTableau n) (β : Braid n) : List Sign :=
-  β.map (fun gen => hoefsmitChoice n t gen)
+    (n : ℕ) (choice : HoefsmitChoice n)
+    (t : StandardTableau n) (β : Braid n) : List Sign :=
+  β.map (fun gen => choice t gen)
 
 /-- The **surreal-valued braid invariant**: Gonshor of the sign
-    sequence. -/
+    sequence, parameterised over a `HoefsmitChoice` oracle. -/
 -- Ref: [gonshor1986] Theorem 2.1
 noncomputable def signSequenceOfBraid
-    (n : ℕ) (t : StandardTableau n) (β : Braid n) (K : Type u)
+    (n : ℕ) (choice : HoefsmitChoice n)
+    (t : StandardTableau n) (β : Braid n) (K : Type u)
     [SurrealField K] : K :=
-  gonshorIn K (signSequence n t β)
+  gonshorIn K (signSequence n choice t β)
 
 end QOU.AppendixSurreals

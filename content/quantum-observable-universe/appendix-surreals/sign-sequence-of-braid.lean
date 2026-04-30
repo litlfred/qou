@@ -11,4 +11,10 @@
 --     `QOU.AppendixSurreals.SignSequence`,
 --     `QOU.AppendixSurreals.gonshor`        (constructive ℚ-valued)
 --     `QOU.AppendixSurreals.gonshorIn`      (transported into K)
---     `QOU.AppendixSurreals.birthday_gonshorIn_le_length`.
+--     `QOU.AppendixSurreals.birthday_gonshorIn_le_omega` (universal
+--     `≤ ω` bound, proved from the `SurrealField` axioms),
+--     `QOU.AppendixSurreals.birthday_gonshorIn_nil_le_length`,
+--     `QOU.AppendixSurreals.birthday_gonshorIn_singleton_plus_le_length`,
+--     `QOU.AppendixSurreals.birthday_gonshorIn_singleton_minus_le_length`
+--       (sharper `≤ length` bounds, proved unconditionally for
+--        `s.length ≤ 1`).
