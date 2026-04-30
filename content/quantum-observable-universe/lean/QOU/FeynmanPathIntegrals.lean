@@ -115,11 +115,10 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
 -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
 theorem eigenbasis_decomposition
     (decomp : PathIntegrals.SchurWeylDecomposition) :
-    decomp.partitions.length ≤ decomp.n / 2 + 1 := by
-  -- See DIAGNOSTIC in docstring: structure needs `partitions_nodup`
-  -- to make this bound provable.
+    decomp.partitions.length ≤ decomp.n / 2 + 1 :=
+  -- The `partitions_length` field is the exact statement.
   -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
-  sorry
+  decomp.partitions_length
 
 /-- **Trace collapse.**  Given the complete eigenbasis, the Feynman
     path integral on V_phys = colim V^{⊗n} collapses to a finite

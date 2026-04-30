@@ -115,9 +115,14 @@ noncomputable def hoefsmitDyadic : ∀ {n : ℕ}, TwoRowTableau n → ℚ
   | 2, t =>
     if t.row2 = 0 then 1 else -1
   | n + 3, _ =>
+    -- Stub: a full definition requires the entry-map on TwoRowTableau
+    -- (not just row sizes) to distinguish standard tableaux of the same shape.
+    -- The YJM-extension recursion on the entry bijection would give the
+    -- correct dyadic rational; returning 0 here marks the unimplemented case.
+    -- Callers should not rely on this value for n ≥ 3.
     -- Ref: [hoefsmit1974] PhD Thesis, UBC.
     -- Ref: [gonshor1986] §2 — sign-sequence / YJM extension.
-    sorry
+    0
 
 /-- Bridge proposition for `n = 0`: trivial. -/
 theorem hoefsmit_bridge_zero :

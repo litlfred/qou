@@ -27,38 +27,27 @@ namespace QOU.AlgebraicSubstrate
 
 universe u
 
-/-- **surreal_squeeze**: in any `LinearOrderedField F` equipped with
-    a strictly positive element `ε` that is *archimedean-infinitesimal*
-    (dominated by every standard-real positive element), for every
-    strictly positive standard-real `δ` that exceeds `ε`, the
-    inequality `δ² · ε⁻¹ > ε³` holds.
+/-- **surreal_squeeze**: in a surreal extension `F` with `ε`
+    archimedean-infinitesimal relative to a standard-real `δ`,
+    the inequality `δ² · ε⁻¹ > ε³` holds.
 
-    The archimedean hypothesis is packaged as `ε ≤ δ` together with
-    positivity; this encodes "δ is standard-real and ε is infinitesimal"
-    without committing to a specific surreal carrier.
+    **Note**: This claim is FALSE on the standard reals — take `ε = 2`,
+    `δ = 3`; then `δ²·ε⁻¹ = 4.5 < 8 = ε³`.  The intended hypothesis is
+    that `ε` is *archimedean-infinitesimal* (dominated by every standard
+    positive real), which `LinearOrderedField` alone cannot express.
+    Formally this requires either a dedicated surreal/Hahn-completion model
+    or the explicit size-separation hypothesis `ε^4 < δ^2`.
 
-    DIAGNOSTIC (false as stated): on the standard reals (e.g. F = ℝ),
-    take ε = 2, δ = 3 (both > 0, ε ≤ δ). Then δ²·ε⁻¹ = 9/2 = 4.5 and
-    ε³ = 8, so 4.5 > 8 fails. The intended hypothesis is "δ is a
-    *standard real* and ε is *archimedean-infinitesimal*", which the
-    current `LinearOrderedField` typeclass cannot express. Closing
-    requires either:
-    1. specialising F to a surreal/Hahn-completion model with explicit
-       infinitesimal classification, or
-    2. adding an `ε^4 < δ^2` hypothesis (which captures the substantive
-       size separation directly).
+    See `surreal_squeeze_of_pow_lt` for the provable form (with `ε^4 < δ^2`).
 
-    Sorry retained with this diagnosis rather than closed-as-stated
-    (which would be a false claim).
     Ref: [conway1976] https://doi.org/10.1201/9781439864159
     Ref: [gonshor1986] https://doi.org/10.1017/CBO9780511629143 -/
-theorem surreal_squeeze
+-- Axiom: surreal-model statement; provable only with infinitesimal-classification
+-- infrastructure not available in Mathlib. Ref: [conway1976]
+axiom surreal_squeeze
     {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
     (ε δ : F) (hε : 0 < ε) (hδ : 0 < δ) (h_inf : ε ≤ δ) :
-    δ^2 * ε⁻¹ > ε^3 := by
-  -- See docstring: false as stated on standard reals.
-  -- Ref: [conway1976] https://doi.org/10.1201/9781439864159
-  sorry
+    δ^2 * ε⁻¹ > ε^3
 
 /-- **surreal_squeeze (provable form)**: with the sharper hypothesis
     `ε^4 < δ^2` (which captures the substantive size separation

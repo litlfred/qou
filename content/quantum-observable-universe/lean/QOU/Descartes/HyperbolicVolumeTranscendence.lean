@@ -271,20 +271,32 @@ class BorelZagierQOU where
       (a₁ : ℝ) * vol_4_1 + (a₂ : ℝ) * vol_5_2 + (a₃ : ℝ) * vol_B3 = 0 →
       a₁ = 0 ∧ a₂ = 0 ∧ a₃ = 0
 
-/-- ℚ-linear independence implies irrationality of each volume. -/
+/-- ℚ-linear independence implies irrationality of each volume.
+
+    NOTE: This implication requires more than `BorelZagierQOU` alone.
+    ℚ-linear independence of {vol_4_1, vol_5_2, vol_B3} does not imply
+    irrationality of each unless `1 ∉ ℚ-span{vol_4_1, vol_5_2, vol_B3}`
+    (i.e., the constant 1 is not itself a ℚ-linear combination of the volumes).
+    Counterexample: if vol_4_1 = 1 (rational) then {1, vol_5_2, vol_B3}
+    can still be ℚ-linearly independent.
+
+    Each `sorry` below represents the additional conjecture that the
+    volume is irrational; this is downstream of the Borel–Zagier conjecture
+    but requires the stronger statement that 1 is also ℚ-independent of
+    the volumes.  Retained per CLAUDE.md §3b conjectural propagation rules. -/
 theorem BorelZagierQOU.implies_irrational [bz : BorelZagierQOU] :
     SingleVolumeIrrational where
   vol_4_1_irrational := by
     -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
-    -- If vol_4_1 were rational r, then r·vol_4_1 - r² = 0 gives a non-trivial
-    -- relation. Full proof requires knowing 1 is independent of the volumes.
-    -- TODO: complete using irrational_iff_ne_rational API in current Mathlib.
+    -- Requires: 1 ∉ ℚ-span{vol_4_1, vol_5_2, vol_B3} (stronger than BorelZagierQOU).
     sorry
   vol_5_2_irrational := by
     -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
+    -- Requires: same as above for vol_5_2.
     sorry
   vol_B3_irrational := by
     -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
+    -- Requires: same as above for vol_B3.
     sorry
 
 /-! ## §8  Algebraic independence conjecture

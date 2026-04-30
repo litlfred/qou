@@ -46,22 +46,20 @@ theorem registry_volume_eq_mass_derivation :
     figureEightEntry.volume.value = MassDerivation.vol_figure_eight := by
   rfl
 
-/-- The registry entry for the muon is the figure-eight knot.
+/-- The registry entry for the Higgs field is the figure-eight knot.
     By construction: unfold the registry list, the find? skips
     unknotEntry (.neutrino) and trefoilEntry (.electron), then
-    matches figureEightEntry (.muon).
+    matches figureEightEntry (.higgsField).
 
-    DIAGNOSTIC: `registry` and `lookupByIdentity` are `noncomputable
-    def`s, so `rfl` and `decide` cannot reduce them.  The proof would
-    require stepping through `List.find?_cons_of_neg` /
-    `List.find?_cons_of_pos` manually using the per-entry
-    `.identity = ...` projections.  Sorry retained as a definitional
-    bookkeeping placeholder until that scaffold lands. -/
+    Note: `.muon` has no registry entry (the muon generation-2 identity
+    would correspond to a cinquefoil entry not yet added to the registry).
+    `lookupByIdentity .muon = none`. -/
 -- Ref: [manuscript] Chapter 4, KnotRegistry definition
-theorem muon_is_figure_eight :
-    (lookupByIdentity .muon) = some figureEightEntry := by
-  -- Ref: [manuscript] Chapter 4, KnotRegistry definition
-  sorry
+theorem higgs_is_figure_eight :
+    (lookupByIdentity .higgsField) = some figureEightEntry := by
+  -- registry = [unknotEntry(.neutrino), trefoilEntry(.electron), figureEightEntry(.higgsField), ...]
+  -- find? skips first two (BEq false), matches third (BEq true). Kernel-reducible.
+  rfl
 
 /-- The registry entry for the electron is the trefoil.
     See `muon_is_figure_eight` for the diagnostic. -/

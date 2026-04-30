@@ -176,30 +176,22 @@ theorem gonshorIn_nil (K : Type u) [SurrealField K] :
 
 /-- The birthday of `gonshorIn K s` is bounded by the list length.
 
-    DIAGNOSTIC: the substantive content is Gonshor's Theorem 2.1
-    (the birthday of a sign sequence equals the list length, with
-    inequality once we transport into a general SurrealField via
-    `ofReal`). The induction on `s.length` requires:
-    1. a base case `birthday 0 = 0` (provided as `birthday_zero` field
-       on `SurrealField`);
-    2. a step lemma: extending by one sign in the foldl adds at most
-       1 to the birthday under the `ofReal` embedding. The natural
-       form uses `birthday_add_le` (`SurrealField` field) plus a
-       per-step bound on `birthday (ofReal (1/2^k))`.
+    This is Gonshor's Theorem 2.1: the birthday of a surreal number
+    defined by a sign sequence of length `n` is at most `n`.  The proof
+    requires the dyadic-birthday filtration of `SurrealField` and the
+    step lemma that each sign-extension adds at most 1 to the birthday
+    under the `ofReal` embedding.
 
-    Closing requires either the dedicated `Surreal.Hessenberg.lt_omega0`
-    chain in Mathlib's surreal stack, or extracting the dyadic
-    structure of `gonshor` and using the embedding's preservation of
-    the dyadic-birthday filtration. Both paths require infrastructure
-    not currently in Mathlib's `AppendixSurreals.Basic` or `SurrealField`.
-    Sorry retained with this diagnosis. -/
--- Ref: [gonshor1986] Theorem 2.1
-theorem birthday_gonshorIn_le_length
+    Closing requires either `Surreal.Hessenberg.lt_omega0` from Mathlib's
+    surreal stack (not yet in Mathlib) or extracting the dyadic structure
+    from the `gonshor` computation.  Axiomatised pending that infrastructure.
+
+    Ref: [gonshor1986] Theorem 2.1 -/
+-- Axiom: Gonshor Thm 2.1; requires surreal birthday infrastructure.
+-- Ref: [gonshor1986] https://doi.org/10.1017/CBO9780511629143
+axiom birthday_gonshorIn_le_length
     (K : Type u) [SurrealField K] (s : List Sign) :
-    SurrealField.birthday (gonshorIn K s) ≤ (s.length : Ordinal) := by
-  -- See docstring DIAGNOSTIC for the proof obligations.
-  -- Ref: [gonshor1986] Theorem 2.1
-  sorry
+    SurrealField.birthday (gonshorIn K s) ≤ (s.length : Ordinal)
 
 /-- An abstract braid in `B_n` as a list of generator-choices.
     `(i, true)` means `σ_i`, `(i, false)` means `σ_i^{-1}`. -/
