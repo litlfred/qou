@@ -15,6 +15,7 @@
 -/
 
 import Mathlib.LinearAlgebra.Matrix.Trace
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 namespace QOU.BraidKnot
 
@@ -29,22 +30,7 @@ noncomputable def hoefsmitOffDiag (q : ℝ) (hq : q > 1) (rho : ℤ) : ℝ :=
   let a' := hoefsmitEntry q hq (-rho)
   Real.sqrt (a * a' + 1)
 
-/-- The 2×2 Hoefsmit block has determinant -1 (from the Hecke relation).
-    This is the product of eigenvalues: q · (-q⁻¹) = -1. -/
-theorem hoefsmit_block_det (q : ℝ) (hq : q > 1) (rho : ℤ) (hrho : rho ≠ 0) :
-    let a := hoefsmitEntry q hq rho
-    let a' := hoefsmitEntry q hq (-rho)
-    let b := hoefsmitOffDiag q hq rho
-    a * a' - b ^ 2 = -1 := by
-  simp only [hoefsmitOffDiag]
-  -- b² = a·a' + 1 requires showing 0 ≤ a·a' + 1, i.e., a·a' ≥ -1.
-  -- a·a' = -(q-1/q)² / (q^ρ - q^{-ρ})² and
-  -- (q^ρ - q^{-ρ})² ≥ (q - q^{-1})² for |ρ| ≥ 1 (zpow monotonicity).
-  -- That inequality requires Int.toNat conversion + pow monotonicity.
-  -- Ref: [hoefsmit1974]
-  sorry
-
--- Helper: q^n ≠ 1 for q > 1 and n : ℤ with n ≠ 0.
+/-- Helper: q^n ≠ 1 for q > 1 and n : ℤ with n ≠ 0. -/
 private theorem hoefsmit_zpow_ne_one {q : ℝ} (hq : q > 1) {n : ℤ} (hn : n ≠ 0) :
     q ^ n ≠ 1 := by
   intro h_eq
@@ -65,6 +51,141 @@ private theorem hoefsmit_zpow_ne_one {q : ℝ} (hq : q > 1) {n : ℤ} (hn : n �
     rw [hn_eq, zpow_natCast] at h_eq
     have hpow : 1 < q ^ n.toNat := one_lt_pow₀ hq (Nat.pos_iff_ne_zero.mp hpos)
     linarith [hpow, h_eq.le]
+
+/-- Helper: for `q > 1` and `n ≥ 1`, we have `q ≤ q^n`. -/
+private theorem hoefsmit_self_le_pow {q : ℝ} (hq : 1 < q) :
+    ∀ n : ℕ, 1 ≤ n → q ≤ q ^ n := by
+  intro n hn
+  have hq_pos : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  induction n with
+  | zero => omega
+  | succ k ih =>
+    rcases Nat.eq_or_gt_of_le hn with h_eq | h_gt
+    · -- n = 1, so k+1 = 1, k = 0
+      have : k = 0 := by omega
+      subst this; simp
+    · -- k ≥ 1, apply IH then multiply by q ≥ 1
+      have hk : 1 ≤ k := by omega
+      have ih' : q ≤ q ^ k := ih hk
+      have hqk_ge_one : (1 : ℝ) ≤ q ^ k := le_trans (le_of_lt hq) ih'
+      calc q = q * 1 := (mul_one q).symm
+        _ ≤ q * q ^ k := mul_le_mul_of_nonneg_left hqk_ge_one (le_of_lt hq_pos)
+        _ = q ^ (k + 1) := by ring
+
+/-- Helper: for `q > 1` and `ρ : ℤ` with `ρ ≠ 0`, the squared difference
+    `(q^ρ - q^{-ρ})²` dominates `(q - q⁻¹)²`. -/
+private theorem hoefsmit_zpow_diff_sq_ge {q : ℝ} (hq : q > 1) {ρ : ℤ} (hρ : ρ ≠ 0) :
+    (q - q⁻¹) ^ 2 ≤ (q ^ ρ - q ^ (-ρ)) ^ 2 := by
+  have hq_pos : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have hq0 : q ≠ 0 := ne_of_gt hq_pos
+  have hq_inv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
+  have h_h_pos : 0 < q - q⁻¹ := by linarith
+  -- Reduce to natural-number power: let n := |ρ| ≥ 1.
+  set n := ρ.natAbs with hn_def
+  have hn_pos : 0 < n := Int.natAbs_pos.mpr hρ
+  have hn_ge_one : 1 ≤ n := hn_pos
+  -- The squared difference is symmetric under ρ ↔ -ρ, and equals (q^n - q^(-n))²
+  have h_sq_eq : (q ^ ρ - q ^ (-ρ)) ^ 2 = (q ^ n - (q ^ n)⁻¹) ^ 2 := by
+    rcases Int.natAbs_eq ρ with h_pos | h_neg
+    · -- ρ = ↑n
+      rw [show ρ = (↑n : ℤ) from h_pos, zpow_natCast, zpow_neg, zpow_natCast]
+    · -- ρ = -↑n
+      rw [show ρ = -(↑n : ℤ) from h_neg, neg_neg, zpow_natCast, zpow_neg, zpow_natCast]
+      ring
+  rw [h_sq_eq]
+  -- Now: (q - q⁻¹)² ≤ (q^n - (q^n)⁻¹)² with n ≥ 1.
+  have hqn_ge : q ≤ q ^ n := hoefsmit_self_le_pow hq n hn_ge_one
+  have hqn_pos : (0 : ℝ) < q ^ n := pow_pos hq_pos n
+  have hqn_ge_one : (1 : ℝ) ≤ q ^ n := le_trans (le_of_lt hq) hqn_ge
+  -- Inverse direction: (q^n)⁻¹ ≤ q⁻¹  ⇔  q ≤ q^n  (both positive)
+  have hqn_inv_le : (q ^ n)⁻¹ ≤ q⁻¹ := by
+    rw [inv_le_inv₀ hqn_pos hq_pos]; exact hqn_ge
+  -- Both base differences are non-negative
+  have h_diff1_nn : 0 ≤ q - q⁻¹ := le_of_lt h_h_pos
+  have h_diff2_nn : 0 ≤ q ^ n - (q ^ n)⁻¹ := by linarith
+  -- Squares preserve order on non-negatives: x ≤ y → x² ≤ y² (both ≥ 0)
+  have h_diff_le : q - q⁻¹ ≤ q ^ n - (q ^ n)⁻¹ := by linarith
+  exact pow_le_pow_left h_diff1_nn h_diff_le 2
+
+/-- The 2×2 Hoefsmit block has determinant -1 (from the Hecke relation).
+    This is the product of eigenvalues: q · (-q⁻¹) = -1. -/
+theorem hoefsmit_block_det (q : ℝ) (hq : q > 1) (rho : ℤ) (hrho : rho ≠ 0) :
+    let a := hoefsmitEntry q hq rho
+    let a' := hoefsmitEntry q hq (-rho)
+    let b := hoefsmitOffDiag q hq rho
+    a * a' - b ^ 2 = -1 := by
+  -- The proof reduces to: b² = a*a' + 1, since b = √(a*a'+1) and a*a'+1 ≥ 0.
+  -- Then a*a' - b² = a*a' - (a*a'+1) = -1 by ring.
+  -- Non-negativity of a*a' + 1 reduces (by algebraic manipulation) to the
+  -- inequality (q^ρ - q^{-ρ})² ≥ (q - q⁻¹)², proved as
+  -- `hoefsmit_zpow_diff_sq_ge` above.
+  have hq_pos : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have hq0 : q ≠ 0 := ne_of_gt hq_pos
+  -- Side facts on denominators
+  have h2r : (2 * rho : ℤ) ≠ 0 := by intro h; exact hrho (by omega)
+  have h_den1 : (1 : ℝ) - q ^ (-2 * rho) ≠ 0 := by
+    have h_ne : q ^ (-2 * rho) ≠ 1 := by
+      have : (-2 * rho : ℤ) ≠ 0 := by intro h; exact h2r (by omega)
+      exact hoefsmit_zpow_ne_one hq this
+    intro h; exact h_ne (by linarith)
+  have h_den2 : (1 : ℝ) - q ^ (-2 * -rho) ≠ 0 := by
+    have h_ne : q ^ (-2 * -rho) ≠ 1 := by
+      have : (-2 * -rho : ℤ) ≠ 0 := by intro h; exact h2r (by omega)
+      exact hoefsmit_zpow_ne_one hq this
+    intro h; exact h_ne (by linarith)
+  -- Key inequality on q^ρ - q^{-ρ}
+  have h_zpow_diff_pos : (q ^ rho - q ^ (-rho)) ^ 2 > 0 := by
+    have h_ne : q ^ rho ≠ q ^ (-rho) := by
+      intro h_eq
+      -- q^rho = q^{-rho} ⇒ multiplying both sides by q^rho gives q^(2*rho) = 1
+      have hmul : q ^ rho * q ^ rho = q ^ (-rho) * q ^ rho := by rw [h_eq]
+      have h_lhs : q ^ rho * q ^ rho = q ^ (2 * rho) := by
+        rw [show (2 * rho : ℤ) = rho + rho from by ring, zpow_add₀ hq0]
+      have h_rhs : q ^ (-rho) * q ^ rho = (1 : ℝ) := by
+        rw [← zpow_add₀ hq0, neg_add_cancel, zpow_zero]
+      rw [h_lhs, h_rhs] at hmul
+      exact hoefsmit_zpow_ne_one hq h2r hmul
+    exact sq_pos_of_ne_zero _ (sub_ne_zero.mpr h_ne)
+  -- Compute a * a' + 1 explicitly:
+  --   a * a' = h² / [(1-q^{-2ρ})(1-q^{2ρ})] = -h² / (q^ρ - q^{-ρ})²
+  --   so a * a' + 1 = ((q^ρ - q^{-ρ})² - h²) / (q^ρ - q^{-ρ})²
+  have h_ineq : (q - q⁻¹) ^ 2 ≤ (q ^ rho - q ^ (-rho)) ^ 2 :=
+    hoefsmit_zpow_diff_sq_ge hq hrho
+  -- a * a' + 1 ≥ 0 via algebraic identity
+  have h_nn : 0 ≤ hoefsmitEntry q hq rho * hoefsmitEntry q hq (-rho) + 1 := by
+    simp only [hoefsmitEntry]
+    -- Express the product algebraically.  Key identity (over ℝ with denominators ≠ 0):
+    --   h/(1-q^{-2ρ}) · h/(1-q^{2ρ}) + 1
+    --     = ((q^ρ - q^{-ρ})² - (q-q⁻¹)²) / (q^ρ - q^{-ρ})²
+    have h_alg : (q - 1/q) / (1 - q ^ (-2 * rho)) * ((q - 1/q) / (1 - q ^ (-2 * -rho))) + 1
+        = ((q ^ rho - q ^ (-rho)) ^ 2 - (q - q⁻¹) ^ 2) / (q ^ rho - q ^ (-rho)) ^ 2 := by
+      have h_id1 : q ^ (-2 * rho) = (q ^ rho)⁻¹ * (q ^ rho)⁻¹ := by
+        rw [show (-2 * rho : ℤ) = -rho + -rho by ring, zpow_add₀ hq0, zpow_neg]
+      have h_id2 : q ^ (-2 * -rho) = q ^ rho * q ^ rho := by
+        rw [show (-2 * -rho : ℤ) = rho + rho by ring, zpow_add₀ hq0]
+      have h_id3 : q ^ (-rho) = (q ^ rho)⁻¹ := zpow_neg q rho
+      rw [h_id1, h_id2, h_id3]
+      have hqr0 : q ^ rho ≠ 0 := zpow_ne_zero _ hq0
+      have hdiff_ne : q ^ rho - (q ^ rho)⁻¹ ≠ 0 := by
+        rw [← h_id3]
+        intro h
+        have := h_zpow_diff_pos
+        rw [h] at this
+        simp at this
+      field_simp
+      ring
+    rw [h_alg]
+    apply div_nonneg
+    · linarith
+    · exact sq_nonneg _
+  -- Now finish: rewrite b² = a*a' + 1 via Real.sq_sqrt
+  show hoefsmitEntry q hq rho * hoefsmitEntry q hq (-rho) -
+       hoefsmitOffDiag q hq rho ^ 2 = -1
+  unfold hoefsmitOffDiag
+  rw [Real.sq_sqrt h_nn]
+  ring
+
+-- Helper `hoefsmit_zpow_ne_one` is defined above (before `hoefsmit_block_det`).
 
 /-- The trace of the 2×2 block equals h = q - q⁻¹.
     Proved: a_ρ + a_{-ρ} = h for all ρ ≠ 0. -/
