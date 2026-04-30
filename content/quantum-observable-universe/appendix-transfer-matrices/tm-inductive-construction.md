@@ -143,7 +143,7 @@ gains access to one higher jet order — one more layer of
 many-body correlation.
 
 **Beta decay as the 1-jet variation.**  Single beta decay
-changes one nucleon type.  The $\mathcal{Q}_q$-value is:
+changes one nucleon type.  The $Q$-value is:
 
 $$
   \delta E =  \sum_{i=0}^{p} (\hat{V}_i^{\mathrm{dau}} - \hat{V}_i^{\mathrm{par}})

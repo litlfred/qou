@@ -135,8 +135,8 @@ $$
   z \cdot (\Delta M_i)_{11} + (\Delta M_i)_{21}
 $$
 
-The $\mathcal{Q}_q$-value
-([transition energy](#def:q-value-transition)) in log form:
+The $Q$-value
+([transition energy](#def:Q-value-transition)) in log form:
 
 $$
   \ln \frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}

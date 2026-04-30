@@ -18,7 +18,7 @@ The transition NF captures ONLY the changed crossings:
 
 The transition element T lives in H₃(q) and its NF gives Q.
 
-Reference: def:q-value-transition
+Reference: def:Q-value-transition
 """
 
 import math

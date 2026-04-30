@@ -5,11 +5,11 @@ be the typed Garside element
 nucleus in $H_A(q)$, and let $G$ be the Gram matrix
 $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ restricted to the NF
 subspace spanned by $\mathcal{G}_{\mathrm{par}}$ and all conversion
-daughters.  Then the $\mathcal{Q}_q$-value for $\beta^-$ decay is:*
+daughters.  Then the $Q$-value for $\beta^-$ decay is:*
 
 ```tex
 \begin{equation}\label{eq:gram-weighted-qvalue}
-  \mathcal{Q}_q(Z, N)
+  Q(Z, N)
   \;=\;
   \biggl(
     \sum_{k=0}^{N-1}
@@ -72,7 +72,7 @@ mass $m_e$.  No other parameters.
 
 ## Structure of the formula
 
-The $\mathcal{Q}_q$-value has three factors:
+The $Q$-value has three factors:
 
 - **$\Delta_k$** (NF reduction cost): measures how much algebraic
   complexity the nucleus sheds when neutron $k$ converts.  The
@@ -88,7 +88,7 @@ The $\mathcal{Q}_q$-value has three factors:
 
 - **$N$** (neutron count): the coherent sum over all conversion
   channels.  Each of the $N$ neutrons can convert; the physical
-  $\mathcal{Q}_q$-value is the sum of all weighted contributions.
+  $Q$-value is the sum of all weighted contributions.
 
 ## Why the Gram weight is non-uniform
 
@@ -116,8 +116,8 @@ suppressing interior conversion channels and enhancing boundary ones.
 \begin{equation*}
 \begin{array}{lcccc}
   \text{Decay}
-    & N & \mathcal{Q}_q\;\text{(pred)}
-    & \mathcal{Q}_q\;\text{(exp)}
+    & N & Q\;\text{(pred)}
+    & Q\;\text{(exp)}
     & \text{error} \\
   \hline
   {}^6\mathrm{He} \to {}^6\mathrm{Li}

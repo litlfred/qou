@@ -28,7 +28,7 @@
 | §3 | Nucleon derivation from pair production | 4 |
 | §4 | Nuclear binding and magic numbers | 3 |
 | §5 | Derived atom examples | 6 |
-| §6 | Typed Garside element and Gram-weighted $\mathcal{Q}_q$-value | 3 |
+| §6 | Typed Garside element and Gram-weighted $Q$-value | 3 |
 | §7 | Transfer matrices and beta decay | 11 |
 | §8 | Atomic braid and Wedderburn mass formula | 20 |
 | §9 | Branching Q-value derivation | 11 |
