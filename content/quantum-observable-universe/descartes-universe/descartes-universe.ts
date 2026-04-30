@@ -336,6 +336,9 @@ export default chapter({
         // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
         "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",
+        // Algebraic-geometric duality of PL and SW theories
+        "denominator-zeros-as-sw-critical-points",
+        "pl-jsj-mass-integration-equivalence",
       ],
     }),
     // ── §5. Orbital symmetry and cohomological embedding ────────────
