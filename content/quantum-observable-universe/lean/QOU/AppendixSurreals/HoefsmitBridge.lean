@@ -195,8 +195,9 @@ theorem hoefsmit_bridge_two :
     The proved cases for the **current** partial definition are
     `hoefsmit_bridge_zero`, `hoefsmit_bridge_one`,
     `hoefsmit_bridge_two`.  The current partial `hoefsmitDyadic`
-    cannot satisfy general-`n` injectivity (size-3 tableaux of
-    shape (2,1) both map to `sorry`). -/
+    returns `0` for `n ≥ 3` (a stub — not the correct Gonshor value);
+    general-`n` injectivity fails for `n ≥ 3` until the entry-map
+    refactor is complete. -/
 -- Ref: [conway1976] §0, [gonshor1986] §2, [hoefsmit1974]
 class HoefsmitIsSurrealConstruction where
   /-- There exists an entry-aware refactored tableau type for
