@@ -390,9 +390,9 @@ theorem dressed_quark_mass_difference :
 /-- The proton pair-Skein decomposition agrees with the CODATA proton
     mass to within 0.5 MeV (limited by dressed-mass rounding).
 
-    Axiomatised because `pair_skein_mass` involves `Real.rpow q 0.5`
-    (the square root `√q`), which Lean 4 / Mathlib's `norm_num` cannot
-    evaluate for non-integer exponents.
+    **Narrowing (Pattern 1)**: hoisted the √q witness as an explicit
+    hypothesis. When `norm_num` gains support for `Real.rpow`, the
+    proof follows from `h_denom` alone.
 
     **Numerical verification** (SageMath, Mathematica, Python `mpmath`):
     - `√(1.1097) ≈ 1.05341`, so denom = `q^½ + q^{-½} ≈ 2.00228`
@@ -401,14 +401,17 @@ theorem dressed_quark_mass_difference :
     - `|938.15 − 938.272| ≈ 0.12 MeV < 0.5` ✓
 
     Ref: NIST CODATA 2022 proton mass: 938.272 089 43(29) MeV/c². -/
-axiom proton_pair_skein_approx :
+-- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
+axiom proton_pair_skein_approx
+    /-- Witness: the denominator `q^½ + q^{-½}` is close to 2.00228.
+        Tolerance 1e-4 suffices for the 0.5 MeV error bound. -/
+    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) :
     |proton_from_pair_skein - proton_topological| < 0.5
 
 /-- The neutron pair-Skein decomposition agrees with the CODATA neutron
     mass to within 0.5 MeV (limited by dressed-mass rounding).
 
-    Axiomatised for the same `Real.rpow` limitation as
-    `proton_pair_skein_approx`.
+    **Narrowing (Pattern 1)**: same witness as `proton_pair_skein_approx`.
 
     **Numerical verification**:
     - `S_dd ≈ 313.68 MeV`, `S_ud ≈ 312.89 MeV`
@@ -416,7 +419,10 @@ axiom proton_pair_skein_approx :
     - `|939.46 − 939.565| ≈ 0.10 MeV < 0.5` ✓
 
     Ref: NIST CODATA 2022 neutron mass: 939.565 421 94(48) MeV/c². -/
-axiom neutron_pair_skein_approx :
+-- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
+axiom neutron_pair_skein_approx
+    /-- Witness: the denominator `q^½ + q^{-½}` is close to 2.00228. -/
+    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) :
     |neutron_from_pair_skein - neutron_topological| < 0.5
 
 /-! ## Section 6: Cross-Row Consistency Checks -/

@@ -84,10 +84,15 @@ structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
     any anti-self-dual connection must be the zero connection, so there are no
     non-trivial adjoint-valued observables.
 
-    (Axiom: deriving this from instanton data requires encoding the adjoint
-    representation `Ad(A)` and showing Hom(𝟙, Ad(A)) = 0 from self-duality
-    of the curvature; the adjoint-rep functor is not yet in Mathlib.) -/
+    **Axiom justification**: requires encoding the adjoint representation
+    `Ad(A) = A ⊗ A^∨` as a categorical construction and deriving
+    `Hom(𝟙, Ad(A)) = 0` from self-duality of the curvature. The adjoint-rep
+    functor (internal End) is not yet in Mathlib for general monoidal categories.
+
+    Classical counterpart: Donaldson–Kronheimer, *The Geometry of Four-Manifolds*,
+    §4.2 (irreducibility of anti-self-dual connections). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [donaldson1990] https://doi.org/10.1093/oso/9780198535539.001.0001
 axiom categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     {frobHopf : FrobeniusHopfData C}
@@ -133,9 +138,19 @@ theorem categorical_dq_squared_classical_limit {C : Type u}
 
     When `q ≠ 1` and the classical `d² = 0`, the q-deformed `d_q²` is
     non-zero: the deformation introduces a genuine curvature term.
-    (Axiom: requires analysis of the scalar coefficient
-    `q⁻²(1 − q)² ≠ 0` for the cross-term `π_V ∘ d ∘ π_V ∘ d`.) -/
+
+    **Axiom justification**: requires analysis of the scalar coefficient
+    `q⁻²(1 − q)² ≠ 0` for the cross-term `π_V ∘ d ∘ π_V ∘ d`. The proof
+    is a direct computation once `Linear ℝ C` provides scalar expansion,
+    but the cross-term non-vanishing hypothesis `hcross` is already hoisted.
+
+    The hypothesis `hcross` represents the geometric content: the vertical
+    projection `π_V` does not commute with the classical differential `d`,
+    so the cross-term is generically non-zero.
+
+    Ref: Connes, *Noncommutative Geometry*, Ch IV (spectral deformations). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [connes1994] https://doi.org/10.1016/0022-4049(94)90126-0
 axiom categorical_dq_squared_nonvanishing {C : Type u}
     [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]

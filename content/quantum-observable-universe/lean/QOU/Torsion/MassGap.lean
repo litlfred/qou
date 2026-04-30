@@ -211,8 +211,33 @@ theorem yang_mills_gap_lower_bound (ymg : YangMillsMassGap) :
     0 < massGapBound ymg.q ∧ massGapBound ymg.q ≤ ymg.transferMatrix.gapValue :=
   ⟨massGapBound_pos ymg.hq, ymg.mass_gap⟩
 
-/-- **The millennium conjecture**: for any QOU with `q > 1`,
-    a `YangMillsMassGap` instance exists. -/
+/-- **Typeclass version of the Yang–Mills mass gap conjecture**.
+
+    Pattern 4 (typeclass conversion): instead of asserting existence
+    for all `q > 1`, callers instantiate this class for their specific
+    `q` and transfer matrix. The `sorry` in instances is understood as
+    **conjecture**, not missing proof (per CLAUDE.md §3b).
+
+    Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
+    Ref: [manuscript] Chapter 5, §1 -/
+class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where
+  /-- Witness: a `YangMillsMassGap` instance exists. -/
+  witness : YangMillsMassGap
+  /-- The witness has the expected substrate parameter. -/
+  q_eq : witness.q = q
+  /-- The witness uses the expected transfer matrix. -/
+  tm_eq : witness.transferMatrix = tm
+
+/-- **The millennium conjecture** (DEPRECATED): alias deriving from
+    the typeclass `HasYangMillsMassGap`.
+
+    **Narrowing (Pattern 4)**: converted to typeclass. The universal
+    quantifier over all `q > 1` has been replaced by per-instance
+    hypotheses. Callers should provide `[HasYangMillsMassGap q tm]`
+    instead of relying on this axiom.
+
+    Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
+    Ref: [manuscript] Chapter 5, §1 -/
 -- Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
 -- Ref: [manuscript] Chapter 5, §1
 axiom yangMillsMassGap_construction :

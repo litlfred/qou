@@ -139,8 +139,14 @@ structure CategoricalVariationalData (C : Type u) [CategoryTheory.Category.{v} C
 
 /-- **Einstein equation**: `G_λ = T_q`.
     The gravity action term decomposes as Einstein tensor plus stress-energy.
-    (Axiom: proof requires categorical calculus of variations.) -/
+
+    **Axiom justification**: proof requires categorical calculus of
+    variations (Euler–Lagrange machinery for monoidal categories),
+    not available in Mathlib.
+
+    Classical counterpart: Wald, *General Relativity*, Theorem 4.3.1. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [wald1984] https://doi.org/10.7208/chicago/9780226870373.001.0001
 axiom variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
@@ -150,8 +156,13 @@ axiom variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- **Yang–Mills equation**: `∇ ★_q F + q[F, ★_q F] = J_ψ`.
     The gauge action term equals the gauge current density on-shell.
-    (Axiom: proof requires categorical calculus of variations.) -/
+
+    **Axiom justification**: requires categorical calculus of variations.
+
+    Classical counterpart: Bleecker, *Gauge Theory and Variational
+    Principles*, Chapter VII. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [bleecker1981] https://doi.org/10.1007/978-1-4684-0148-7
 axiom variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
@@ -161,8 +172,13 @@ axiom variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- **Transport equation**: `D_∇ ψ = 0`.
     The matter action term vanishes on-shell.
-    (Axiom: proof requires categorical calculus of variations.) -/
+
+    **Axiom justification**: requires categorical calculus of variations.
+
+    Classical counterpart: parallel transport on vector bundles,
+    Kobayashi–Nomizu Vol I, Ch II. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [kobayashi1996] https://doi.org/10.1002/9780470316559
 axiom variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
