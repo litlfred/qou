@@ -271,33 +271,114 @@ class BorelZagierQOU where
       (a₁ : ℝ) * vol_4_1 + (a₂ : ℝ) * vol_5_2 + (a₃ : ℝ) * vol_B3 = 0 →
       a₁ = 0 ∧ a₂ = 0 ∧ a₃ = 0
 
-/-- ℚ-linear independence implies irrationality of each volume.
+/-- **Algebraic independence implies irrationality of each volume.**
 
-    NOTE: This implication requires more than `BorelZagierQOU` alone.
-    ℚ-linear independence of {vol_4_1, vol_5_2, vol_B3} does not imply
-    irrationality of each unless `1 ∉ ℚ-span{vol_4_1, vol_5_2, vol_B3}`
-    (i.e., the constant 1 is not itself a ℚ-linear combination of the volumes).
-    Counterexample: if vol_4_1 = 1 (rational) then {1, vol_5_2, vol_B3}
-    can still be ℚ-linearly independent.
+    The proof is a 2-monomial contradiction: if `vol_v = (r : ℝ)` for some
+    `r : ℚ`, then the polynomial `P(v) = v − r` (support `{(1,0,0),(0,0,0)}`
+    resp. the appropriate unit index) gives a nontrivial zero polynomial
+    relation, contradicting `HyperbolicVolumeIndependence.no_relation`.
 
-    Each `sorry` below represents the additional conjecture that the
-    volume is irrational; this is downstream of the Borel–Zagier conjecture
-    but requires the stronger statement that 1 is also ℚ-independent of
-    the volumes.  Retained per CLAUDE.md §3b conjectural propagation rules. -/
-theorem BorelZagierQOU.implies_irrational [bz : BorelZagierQOU] :
-    SingleVolumeIrrational where
+    Note: `BorelZagierQOU` alone is insufficient for this implication.
+    ℚ-linear independence of {vol_4_1, vol_5_2, vol_B3} does not exclude the
+    possibility that some volume equals a rational (counterexample: {1, π, e}
+    is ℚ-linearly independent yet 1 ∈ ℚ).  Algebraic independence is needed,
+    and is the correct hypothesis here.
+
+    Ref: [zagier1986] https://doi.org/10.1007/BFb0084581 -/
+theorem HyperbolicVolumeIndependence.implies_single_irrational
+    [hvi : HyperbolicVolumeIndependence] : SingleVolumeIrrational where
   vol_4_1_irrational := by
     -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
-    -- Requires: 1 ∉ ℚ-span{vol_4_1, vol_5_2, vol_B3} (stronger than BorelZagierQOU).
-    sorry
+    -- Suppose vol_4_1 = (r : ℝ).  Witness: S = {(1,0,0),(0,0,0)}, f = [1, -r].
+    -- Then S.sum f = vol_4_1 - r = 0. no_relation gives f = 0. But f(1,0,0) = 1. ↯
+    simp only [Irrational, Set.mem_range, not_exists]
+    intro r hr
+    -- hr : (↑r : ℝ) = vol_4_1
+    let S : Finset (ℕ × ℕ × ℕ) :=
+      {((1 : ℕ), (0 : ℕ), (0 : ℕ)), ((0 : ℕ), (0 : ℕ), (0 : ℕ))}
+    let f : ℕ × ℕ × ℕ → ℚ := fun ijk =>
+      if ijk = ((1 : ℕ), 0, 0) then 1
+      else if ijk = ((0 : ℕ), 0, 0) then -r
+      else 0
+    have hmem : ((1 : ℕ), (0 : ℕ), (0 : ℕ)) ∉
+        ({((0 : ℕ), (0 : ℕ), (0 : ℕ))} : Finset _) := by decide
+    have hsupp : ∀ ijk, ijk ∉ S → f ijk = 0 := by
+      intro ijk hijk
+      simp only [S, Finset.mem_insert, Finset.mem_singleton] at hijk
+      push_neg at hijk
+      simp only [f, if_neg hijk.1, if_neg hijk.2]
+    have hsum : S.sum (fun ijk =>
+        (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
+      simp only [S, Finset.sum_insert hmem, Finset.sum_singleton,
+                 f, if_pos rfl,
+                 if_neg (show ¬ ((0 : ℕ), (0 : ℕ), (0 : ℕ)) = ((1 : ℕ), 0, 0) from by decide),
+                 pow_zero, pow_one, mul_one, one_mul]
+      push_cast
+      linarith
+    have hall := hvi.no_relation S f hsupp hsum
+    have h1 := hall ((1 : ℕ), 0, 0)
+    simp only [f, if_pos rfl] at h1
+    exact absurd h1 one_ne_zero
   vol_5_2_irrational := by
     -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
-    -- Requires: same as above for vol_5_2.
-    sorry
+    -- Suppose vol_5_2 = (r : ℝ).  Witness: S = {(0,1,0),(0,0,0)}, f = [1, -r].
+    simp only [Irrational, Set.mem_range, not_exists]
+    intro r hr
+    let S : Finset (ℕ × ℕ × ℕ) :=
+      {((0 : ℕ), (1 : ℕ), (0 : ℕ)), ((0 : ℕ), (0 : ℕ), (0 : ℕ))}
+    let f : ℕ × ℕ × ℕ → ℚ := fun ijk =>
+      if ijk = ((0 : ℕ), 1, 0) then 1
+      else if ijk = ((0 : ℕ), 0, 0) then -r
+      else 0
+    have hmem : ((0 : ℕ), (1 : ℕ), (0 : ℕ)) ∉
+        ({((0 : ℕ), (0 : ℕ), (0 : ℕ))} : Finset _) := by decide
+    have hsupp : ∀ ijk, ijk ∉ S → f ijk = 0 := by
+      intro ijk hijk
+      simp only [S, Finset.mem_insert, Finset.mem_singleton] at hijk
+      push_neg at hijk
+      simp only [f, if_neg hijk.1, if_neg hijk.2]
+    have hsum : S.sum (fun ijk =>
+        (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
+      simp only [S, Finset.sum_insert hmem, Finset.sum_singleton,
+                 f, if_pos rfl,
+                 if_neg (show ¬ ((0 : ℕ), (0 : ℕ), (0 : ℕ)) = ((0 : ℕ), 1, 0) from by decide),
+                 pow_zero, pow_one, mul_one, one_mul]
+      push_cast
+      linarith
+    have hall := hvi.no_relation S f hsupp hsum
+    have h1 := hall ((0 : ℕ), 1, 0)
+    simp only [f, if_pos rfl] at h1
+    exact absurd h1 one_ne_zero
   vol_B3_irrational := by
     -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
-    -- Requires: same as above for vol_B3.
-    sorry
+    -- Suppose vol_B3 = (r : ℝ).  Witness: S = {(0,0,1),(0,0,0)}, f = [1, -r].
+    simp only [Irrational, Set.mem_range, not_exists]
+    intro r hr
+    let S : Finset (ℕ × ℕ × ℕ) :=
+      {((0 : ℕ), (0 : ℕ), (1 : ℕ)), ((0 : ℕ), (0 : ℕ), (0 : ℕ))}
+    let f : ℕ × ℕ × ℕ → ℚ := fun ijk =>
+      if ijk = ((0 : ℕ), 0, 1) then 1
+      else if ijk = ((0 : ℕ), 0, 0) then -r
+      else 0
+    have hmem : ((0 : ℕ), (0 : ℕ), (1 : ℕ)) ∉
+        ({((0 : ℕ), (0 : ℕ), (0 : ℕ))} : Finset _) := by decide
+    have hsupp : ∀ ijk, ijk ∉ S → f ijk = 0 := by
+      intro ijk hijk
+      simp only [S, Finset.mem_insert, Finset.mem_singleton] at hijk
+      push_neg at hijk
+      simp only [f, if_neg hijk.1, if_neg hijk.2]
+    have hsum : S.sum (fun ijk =>
+        (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) = 0 := by
+      simp only [S, Finset.sum_insert hmem, Finset.sum_singleton,
+                 f, if_pos rfl,
+                 if_neg (show ¬ ((0 : ℕ), (0 : ℕ), (0 : ℕ)) = ((0 : ℕ), 0, 1) from by decide),
+                 pow_zero, pow_one, mul_one, one_mul]
+      push_cast
+      linarith
+    have hall := hvi.no_relation S f hsupp hsum
+    have h1 := hall ((0 : ℕ), 0, 1)
+    simp only [f, if_pos rfl] at h1
+    exact absurd h1 one_ne_zero
 
 /-! ## §8  Algebraic independence conjecture
 
