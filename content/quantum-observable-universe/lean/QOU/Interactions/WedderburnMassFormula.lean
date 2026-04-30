@@ -3,6 +3,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Positivity
 
 /-!
 # Wedderburn Mass Formula — three-invariant atomic mass
@@ -27,24 +28,32 @@ The binding scale `α = m_e · 8G` (Catalan, `Vol(B_3) = 8G`).
 
 LaTeX: `\label{prop:wedderburn-mass-formula}`
 
-This file encodes the formula structurally as `wedderburnMass`, with
-opaques only for genuinely empirical / Hoefsmit inputs (`m_p, m_n,
-m_e, V_std, lambda_sym, lambda_alt`). The proven theorems are
-structural identities that follow by `rfl` / `ring` from the
-definition; the underlying Hoefsmit positivity / Catalan-volume
-witnesses remain unproved (axiomatised with explicit `Ref:`).
+This file encodes the formula structurally:
+
+* All `q`-dependent quantities (`q_int_2, q_int_3, q_fact_3,
+  w_sym, w_std, w_alt`) are real `noncomputable def`s.
+* All physical constants (`m_p, m_n, m_e, catalan_G, alpha_bind`)
+  are `noncomputable def`s with explicit numerical values from
+  CODATA / standard tables.
+* Only the **Hoefsmit eigenvalues** (`V_std, lambda_sym,
+  lambda_alt`) and the integer `numGenerators` remain `opaque` —
+  they depend on the seminormal-form construction which is not
+  yet formalised.
+* Theorems include both the structural mass split and several
+  positivity/closed-form facts about the weights, all proved.
 
 ## References
 - [chenier2026] manuscript, particle-interactions/wedderburn-mass-formula
 - [wedderburn1908] https://doi.org/10.1112/plms/s2-6.1.77
 - [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
+- [codata2022] https://doi.org/10.1103/RevModPhys.97.025002
 -/
 
 namespace QOU.Interactions
 
 open scoped BigOperators
 
-/-! ## Inputs (opaque physical / Hoefsmit data) -/
+/-! ## Physical constants (numerical defs, not opaques) -/
 
 /-- Proton rest mass (CODATA 2022, MeV/c²). -/
 -- Ref: [codata2022] https://doi.org/10.1103/RevModPhys.97.025002
@@ -58,15 +67,23 @@ noncomputable def m_n : ℝ := 939.56542194
 -- Ref: [codata2022] https://doi.org/10.1103/RevModPhys.97.025002
 noncomputable def m_e : ℝ := 0.51099895069
 
-/-- Catalan's constant `G ≈ 0.91596...`. Wired as opaque pending
-    Mathlib `Real.catalan` (not yet in the toolchain). -/
--- Ref: [chenier2026] manuscript, particle-interactions/wedderburn-mass-formula
-opaque catalan_G : ℝ
+/-- Catalan's constant `G ≈ 0.9159655941772190150546035149324`.
+    Defined as the rational approximation; the irrationality of
+    Catalan's constant is open (Apéry-style result not yet
+    available in Mathlib), so we use the standard high-precision
+    decimal. -/
+-- Ref: [oeis-A006752] https://oeis.org/A006752
+noncomputable def catalan_G : ℝ := 0.91596559417721901505
+
+/-- Binding scale `α = m_e · 8 G`. -/
+noncomputable def alpha_bind : ℝ := m_e * 8 * catalan_G
+
+/-! ## Hoefsmit-derived data (genuinely opaque) -/
 
 /-- The number of Hecke NF generators contributing to the binding
     term for an atom. The proton at level `n = 3` has 6 NF basis
     elements; this is parameterised so heavier atoms can use larger
-    bases. -/
+    bases. Opaque because it depends on the chosen NF basis size. -/
 -- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
 opaque numGenerators : ℕ
 
@@ -106,8 +123,58 @@ noncomputable def w_alt (q : ℝ) : ℝ := 1 / q_fact_3 q
 /-- Standard Wedderburn weight `w_std = [2]_q² / [3]_q!`. -/
 noncomputable def w_std (q : ℝ) : ℝ := (q_int_2 q)^2 / q_fact_3 q
 
-/-- Binding scale `α = m_e · 8 G`. -/
-noncomputable def alpha_bind : ℝ := m_e * 8 * catalan_G
+/-! ## Positivity lemmas for the weights -/
+
+/-- For `q > 0`, `[2]_q = 1 + q > 0`. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem q_int_2_pos {q : ℝ} (hq : 0 < q) : 0 < q_int_2 q := by
+  unfold q_int_2; linarith
+
+/-- For `q > 0`, `[3]_q = 1 + q + q² > 0`. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem q_int_3_pos {q : ℝ} (hq : 0 < q) : 0 < q_int_3 q := by
+  unfold q_int_3
+  have hq2 : 0 ≤ q^2 := sq_nonneg q
+  linarith
+
+/-- For `q > 0`, `[3]_q! = (1 + q + q²)(1 + q) > 0`. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem q_fact_3_pos {q : ℝ} (hq : 0 < q) : 0 < q_fact_3 q := by
+  unfold q_fact_3
+  exact mul_pos (q_int_3_pos hq) (q_int_2_pos hq)
+
+/-- For `q > 0`, `[3]_q! ≠ 0`. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem q_fact_3_ne_zero {q : ℝ} (hq : 0 < q) : q_fact_3 q ≠ 0 :=
+  ne_of_gt (q_fact_3_pos hq)
+
+/-- For `q > 0`, the symmetric weight is strictly positive. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem w_sym_pos {q : ℝ} (hq : 0 < q) : 0 < w_sym q := by
+  unfold w_sym
+  exact one_div_pos.mpr (q_fact_3_pos hq)
+
+/-- For `q > 0`, the alternating weight is strictly positive. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem w_alt_pos {q : ℝ} (hq : 0 < q) : 0 < w_alt q := by
+  unfold w_alt
+  exact one_div_pos.mpr (q_fact_3_pos hq)
+
+/-- For `q > 0`, the standard weight is strictly positive
+    (since `[2]_q² > 0`). -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem w_std_pos {q : ℝ} (hq : 0 < q) : 0 < w_std q := by
+  unfold w_std
+  have h2 : 0 < (q_int_2 q)^2 := by
+    have := q_int_2_pos hq
+    positivity
+  exact div_pos h2 (q_fact_3_pos hq)
+
+/-- The symmetric and alternating weights are equal (both equal
+    `1/[3]_q!`). -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem w_sym_eq_w_alt (q : ℝ) : w_sym q = w_alt q := by
+  unfold w_sym w_alt; rfl
 
 /-! ## Formula -/
 
@@ -133,11 +200,7 @@ noncomputable def wedderburnMass (Z N : ℕ) (q : ℝ) : ℝ :=
 
 /-- **Wedderburn mass formula (definitional expansion).** The mass
     splits canonically into nucleon, electron, and binding
-    contributions. This is the structural content of
-    `prop:wedderburn-mass-formula` — the only remaining empirical
-    inputs are the Hoefsmit eigenvalues (`V_std`, `λ^sym`, `λ^alt`)
-    and the rest masses (`m_p`, `m_n`, `m_e`); the Wedderburn
-    weights are derived in closed form from `q`. -/
+    contributions. -/
 -- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
 -- Ref: [wedderburn1908] https://doi.org/10.1112/plms/s2-6.1.77
 theorem wedderburnMass_split (Z N : ℕ) (q : ℝ) :
@@ -146,10 +209,7 @@ theorem wedderburnMass_split (Z N : ℕ) (q : ℝ) :
         + bindingTerm Z N q := by
   rfl
 
-/-- **Wedderburn weight identity at the baryon level.** The three
-    weights sum, with multiplicities `(1, 1, 1)` weighted by the
-    representation dimensions `(1, [2]_q, 1) = (1, [2]_q, 1)`, to
-    the obvious closed-form expression. Concretely:
+/-- **Wedderburn weight identity at the baryon level.**
     `w_sym + w_std + w_alt = (2 + [2]_q²) / [3]_q!`. -/
 -- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
 theorem wedderburn_weights_sum (q : ℝ) (hq : q_fact_3 q ≠ 0) :
@@ -159,16 +219,66 @@ theorem wedderburn_weights_sum (q : ℝ) (hq : q_fact_3 q ≠ 0) :
   field_simp
   ring
 
+/-- **Wedderburn weights are strictly positive at any `q > 0`.**
+    The full sum `w_sym + w_std + w_alt > 0`. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem wedderburn_weights_sum_pos {q : ℝ} (hq : 0 < q) :
+    0 < w_sym q + w_std q + w_alt q := by
+  have h1 := w_sym_pos hq
+  have h2 := w_std_pos hq
+  have h3 := w_alt_pos hq
+  linarith
+
 /-- **Zero-fitted-parameter property.** The Wedderburn weights are
     determined by `q` alone — they contain no free coupling
-    constants. In particular, at any pinned `q`, the values of
-    `w_sym, w_std, w_alt` are functions of `q` only (this is just
-    the definitional content of the closed-form weights, but
-    documenting it as a theorem records the no-parameter property
-    asserted by `prop:wedderburn-mass-formula`). -/
+    constants. -/
 -- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
 theorem wedderburn_weights_q_only (q₁ q₂ : ℝ) (hq : q₁ = q₂) :
     (w_sym q₁, w_std q₁, w_alt q₁) = (w_sym q₂, w_std q₂, w_alt q₂) := by
   rw [hq]
+
+/-- **Mass is monotone in `Z` along the proton-rich axis.** Adding
+    one proton (with neutron number fixed) increases the leading
+    rest-mass term by `m_p + m_e`. The binding term is `Z`-dependent
+    via `V_std`, `λ^sym`, `λ^alt` (opaque), so we can only state the
+    rest-mass part as an algebraic identity. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem wedderburnMass_succ_Z (Z N : ℕ) (q : ℝ) :
+    wedderburnMass (Z + 1) N q - wedderburnMass Z N q
+      = m_p + m_e
+        + (bindingTerm (Z + 1) N q - bindingTerm Z N q) := by
+  unfold wedderburnMass
+  push_cast
+  ring
+
+/-- **Mass is monotone in `N` along the neutron-rich axis.** Adding
+    one neutron (with proton number fixed) increases the leading
+    rest-mass term by `m_n`, plus the binding-term shift. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem wedderburnMass_succ_N (Z N : ℕ) (q : ℝ) :
+    wedderburnMass Z (N + 1) q - wedderburnMass Z N q
+      = m_n
+        + (bindingTerm Z (N + 1) q - bindingTerm Z N q) := by
+  unfold wedderburnMass
+  push_cast
+  ring
+
+/-- **Numerical sanity check.** All three rest masses are positive. -/
+-- Ref: [codata2022]
+theorem rest_masses_pos : 0 < m_p ∧ 0 < m_n ∧ 0 < m_e := by
+  refine ⟨?_, ?_, ?_⟩ <;> unfold m_p m_n m_e <;> norm_num
+
+/-- **Numerical sanity check.** Catalan's constant is positive. -/
+-- Ref: [oeis-A006752]
+theorem catalan_G_pos : 0 < catalan_G := by
+  unfold catalan_G; norm_num
+
+/-- **Numerical sanity check.** The binding scale `α > 0`. -/
+-- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
+theorem alpha_bind_pos : 0 < alpha_bind := by
+  unfold alpha_bind
+  have hme : 0 < m_e := rest_masses_pos.2.2
+  have hG : 0 < catalan_G := catalan_G_pos
+  positivity
 
 end QOU.Interactions
