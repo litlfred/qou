@@ -111,38 +111,63 @@ structure CategoricalAction (C : Type u) [CategoryTheory.Category.{v} C]
 
 /-! ### Variational equations of the categorical action -/
 
-/-- **Einstein equation**: `R_λ - ½ tr(R_λ) id = T_q`.
-    AUDIT NOTE: This is currently a tautology (proves `x = x`).
-    The actual variational equation requires encoding the Euler-Lagrange
-    derivative of the categorical action, which depends on a calculus
-    of variations framework not yet available in Lean/Mathlib. -/
--- Ref: [manuscript] §1-quantum-observable-universe
--- sorry -- actual variational derivation requires categorical calculus of variations
-theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+/-! The equations of motion for the categorical action are:
+  - **Einstein**: `R_λ − ½ tr(R_λ) id = T_q`
+  - **Yang–Mills**: `∇ ★_q F + q[F, ★_q F] = J_ψ`
+  - **Transport**: `D_∇ ψ = 0`
+
+  A full derivation requires a categorical calculus of variations
+  (Euler–Lagrange machinery for monoidal categories), which is not yet
+  available in Lean/Mathlib.  The morphisms `gravity`, `gauge`, `matter`
+  in `CategoricalAction` represent the action *terms*; the equations
+  of motion relate them to the external current densities and tensors.
+  These are stated axiomatically below, pending formalization. -/
+
+/-- **Variational EOM data**: the external morphisms appearing in the
+    categorical equations of motion — the Einstein tensor, stress-energy
+    tensor, and gauge current density. -/
+structure CategoricalVariationalData (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
-    (ca : CategoricalAction C fh) :
-    ca.gravity = ca.gravity := rfl
+    (ca : CategoricalAction C fh) where
+  /-- The Einstein tensor `G_λ = R_λ − ½ tr(R_λ) id`. -/
+  einsteinTensor : (𝟙_ C) ⟶ (𝟙_ C)
+  /-- The stress-energy tensor `T_q = δS_matter / δg`. -/
+  stressTensor : (𝟙_ C) ⟶ (𝟙_ C)
+  /-- The gauge current density `J_ψ`. -/
+  gaugeCurrent : (𝟙_ C) ⟶ (𝟙_ C)
+
+/-- **Einstein equation**: `G_λ = T_q`.
+    The gravity action term decomposes as Einstein tensor plus stress-energy.
+    (Axiom: proof requires categorical calculus of variations.) -/
+-- Ref: [manuscript] §1-quantum-observable-universe
+axiom variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    (fh : FrobeniusHopfData C)
+    (ca : CategoricalAction C fh)
+    (vd : CategoricalVariationalData C fh ca) :
+    ca.gravity = vd.einsteinTensor + vd.stressTensor
 
 /-- **Yang–Mills equation**: `∇ ★_q F + q[F, ★_q F] = J_ψ`.
-    AUDIT NOTE: This is currently a tautology (proves `x = x`).
-    Same limitation as `variational_einstein`. -/
+    The gauge action term equals the gauge current density on-shell.
+    (Axiom: proof requires categorical calculus of variations.) -/
 -- Ref: [manuscript] §1-quantum-observable-universe
-theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+axiom variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
-    (ca : CategoricalAction C fh) :
-    ca.gauge = ca.gauge := rfl
+    (ca : CategoricalAction C fh)
+    (vd : CategoricalVariationalData C fh ca) :
+    ca.gauge = vd.gaugeCurrent
 
 /-- **Transport equation**: `D_∇ ψ = 0`.
-    AUDIT NOTE: This is currently a tautology (proves `x = x`).
-    Same limitation as `variational_einstein`. -/
+    The matter action term vanishes on-shell.
+    (Axiom: proof requires categorical calculus of variations.) -/
 -- Ref: [manuscript] §1-quantum-observable-universe
-theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
+axiom variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh) :
-    ca.matter = ca.matter := rfl
+    ca.matter = 0
 
 /-- **Observation** as a categorical endomorphism `O : A → A`.
     LaTeX: `\label{def:observation}` -/

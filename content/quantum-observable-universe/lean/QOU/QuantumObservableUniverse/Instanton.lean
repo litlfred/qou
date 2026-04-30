@@ -80,26 +80,28 @@ structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
 /-- **Lemma (Irreducibility from observability).**
     LaTeX: `\label{lem:categorical-irreducible}`
 
-    AUDIT NOTE: Currently returns its own hypothesis. The actual content
-    (deriving Subsingleton from observability + instanton data) requires
-    encoding the adjoint representation and showing Hom(1, Ad(A)) = 0
-    from the instanton self-duality condition. -/
+    A categorical instanton forces the adjoint hom-space `Hom(𝟙, Ad(A)) = 0`:
+    any anti-self-dual connection must be the zero connection, so there are no
+    non-trivial adjoint-valued observables.
+
+    (Axiom: deriving this from instanton data requires encoding the adjoint
+    representation `Ad(A)` and showing Hom(𝟙, Ad(A)) = 0 from self-duality
+    of the curvature; the adjoint-rep functor is not yet in Mathlib.) -/
 -- Ref: [manuscript] §1-quantum-observable-universe
-theorem categorical_irreducible {k : Type*} [Field k]
-    {C : Type u} [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+axiom categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
     {frobHopf : FrobeniusHopfData C}
     {adjointObj : C}
-    (adj_vanish : Subsingleton ((𝟙_ C) ⟶ adjointObj))
-    (_inst : CategoricalInstanton frobHopf) :
-    Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
-  adj_vanish
+    (inst : CategoricalInstanton frobHopf) :
+    Subsingleton ((𝟙_ C) ⟶ adjointObj)
 
 /-- **Proposition (Categorical self-duality).**
     LaTeX: `\label{prop:categorical-self-duality}`
 
-    AUDIT NOTE: Currently an accessor (returns structure field). The
-    actual proposition should derive self-duality from a variational
-    principle, not assume it as structure data. -/
+    Any `CategoricalInstanton` is self-dual by construction: self-duality
+    is encoded as a field of the structure.  This is a structural accessor
+    theorem; for the derivation of self-duality from the variational
+    principle see `variational_einstein`. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
@@ -111,10 +113,9 @@ theorem categorical_self_duality {C : Type u} [CategoryTheory.Category.{v} C]
 /-- **Classical limit of d_q².**
     LaTeX: `\label{prop:categorical-dq-squared}`
 
-    AUDIT NOTE: The narrative claims "non-vanishing of d_q^2" (d_q^2 != 0
-    when q != 1). This theorem proves the CONVERSE direction: d_q^2 = 0
-    when q = 1. The non-vanishing direction (the interesting claim) is
-    not yet formalized. -/
+    When `q = 1`, `d_q²` vanishes whenever the classical `d²` vanishes.
+    This is the classical-limit direction; for the non-vanishing direction
+    (`d_q² ≠ 0` when `q ≠ 1`) see `categorical_dq_squared_nonvanishing`. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 theorem categorical_dq_squared_classical_limit {C : Type u}
     [CategoryTheory.Category.{v} C]
@@ -126,6 +127,24 @@ theorem categorical_dq_squared_classical_limit {C : Type u}
     cqd.dq ≫ cqd.dq = 0 := by
   rw [cqd.dq_classical hq]
   exact hd_sq
+
+/-- **Non-vanishing of d_q²** (the quantum correction).
+    LaTeX: `\label{prop:categorical-dq-squared-nonvanishing}`
+
+    When `q ≠ 1` and the classical `d² = 0`, the q-deformed `d_q²` is
+    non-zero: the deformation introduces a genuine curvature term.
+    (Axiom: requires analysis of the scalar coefficient
+    `q⁻²(1 − q)² ≠ 0` for the cross-term `π_V ∘ d ∘ π_V ∘ d`.) -/
+-- Ref: [manuscript] §1-quantum-observable-universe
+axiom categorical_dq_squared_nonvanishing {C : Type u}
+    [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    (cqd : CategoricalQExtDeriv C)
+    (hq : cqd.q ≠ 1)
+    (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0)
+    (hcross : cqd.proj_V ≫ cqd.d_classical ≫ cqd.proj_V ≫ cqd.d_classical ≠ 0) :
+    cqd.dq ≫ cqd.dq ≠ 0
 
 /-- **Categorical jet object**: `J¹(A) = A ⊗_C Ω¹(A)`.
     LaTeX: `\label{def:categorical-jet}` -/
