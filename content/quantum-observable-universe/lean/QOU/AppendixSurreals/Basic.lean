@@ -66,6 +66,26 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
   birthday_neg : ∀ x : K, birthday (-x) = birthday x
   /-- Birthday is bounded under sum by ordinal natural-sum. -/
   birthday_add_le : ∀ x y : K, birthday (x + y) ≤ birthday x ♯ birthday y
+  /-- Birthday of a dyadic midpoint is bounded by the natural-sum
+      of its parents' birthdays plus one.
+
+      This is exactly Conway's `{L | R}` recipe: the midpoint
+      `(x + y) / 2` is born one day after the deepest of `x, y`.
+      The bound is genuinely independent of `birthday_add_le`: the
+      additive bound gives only upper bounds on `birthday (x + y)`
+      (hence lower bounds on summands), whereas this asks for an
+      upper bound on a *strictly earlier* surreal.
+
+      **Narrow kernel rationale.**  Every caller in the surreals
+      appendix that reasons about halving does so in the form
+      `(parent₁ + parent₂) / 2` (Gonshor sign-sequence step,
+      dyadic refinement).  A standalone `birthday (x / 2)` axiom
+      would assert more than callers need; this combined form is
+      exactly the Conway midpoint recipe and nothing more.
+
+      Required by `SignSequence.birthday_gonshorIn_le_length`. -/
+  birthday_avg_le : ∀ x y : K,
+    birthday ((x + y) / 2) ≤ (birthday x ♯ birthday y) + 1
   /-- Real numbers have birthday at most ω. -/
   birthday_ofReal_le_omega : ∀ r : ℝ, birthday (ofReal r) ≤ Ordinal.omega0
   /-- The first infinite surreal `ω` as an element of `K`.

@@ -197,31 +197,98 @@ class InfinitesimalObservability where
       QOU_ObservabilityNorm SQ ≠ 0
       ∧ SurrealField.IsInfinitesimal (QOU_ObservabilityNorm SQ)
 
+/-! ### Trivially-derivable lemmas (factored out of conjectures)
+
+The following lemmas are unconditionally provable from the
+existing axiomatic placeholders.  They are factored out of the
+original conjecture statements (which conflated genuinely
+conjectural content with these trivial conjuncts) so that the
+remaining conjecture statements assert only what is irreducibly
+open.  See the per-conjecture comments below for the narrowing
+audit.
+-/
+
+/-- The standard-part image of any surreal QOU exists.
+    Trivially: pick `Q := QOU_StandardPart K SQ`.
+    Factored out of the original `VacuumEpsilon`. -/
+theorem qou_standardPart_image_exists (SQ : QOU_Surreal K) :
+    ∃ Q : QOU_Real, QOU_StandardPart K SQ = Q :=
+  ⟨QOU_StandardPart K SQ, rfl⟩
+
+/-- A non-zero real-valued sequence exists trivially (constant `1`).
+    Factored out of the original `HahnSubstrate`. -/
+theorem exists_nonzero_real_sequence :
+    ∃ (α : ℕ → ℝ), ∃ k, α k ≠ 0 :=
+  ⟨fun _ => 1, 0, one_ne_zero⟩
+
+/-! ### Conjecture classes
+
+Each remaining conjecture asserts only its irreducibly open
+content.  Where the original statement bundled trivial
+existentials together with the conjectural kernel, the trivial
+parts have been moved into the lemmas above and the kernel has
+been narrowed accordingly.  Where the prose intent depends on
+infrastructure not yet axiomatised in this module (e.g.
+`JonesPolynomial`, `QOU_MassFormula`, the parameterised functor
+`q ↦ QOU_Surreal_q`), the formal statement is honestly weaker
+than the prose, and an explicit "missing infrastructure" note
+records the gap.
+-/
+
 /-- **Conjecture: ε-vacuum normalisation.**
 
     There exists a surreal QOU whose vacuum-energy equals
-    `ε` (the canonical infinitesimal), and whose standard-part
-    image is a consistent archimedean QOU. -/
+    `ε` (the canonical infinitesimal).
+
+    **Narrowing audit.**  The original statement also required
+    `∃ Q : QOU_Real, QOU_StandardPart K SQ = Q`, but this
+    conjunct is provable for *any* `SQ` via
+    `qou_standardPart_image_exists` and so was not part of the
+    conjectural kernel.  It has been removed. -/
 class VacuumEpsilon where
   /-- Existence of a QOU with vacuum-energy exactly `ε`. -/
   exists_epsilon_vacuum :
     ∃ (SQ : QOU_Surreal K),
       QOU_VacuumEnergy SQ = epsilonSurreal K
-      ∧ ∃ (Q : QOU_Real), QOU_StandardPart K SQ = Q
+
+/-- The original (wider) form of `VacuumEpsilon` follows from the
+    narrowed conjecture together with the trivial standard-part
+    lemma. -/
+theorem VacuumEpsilon.exists_epsilon_vacuum_with_st_image
+    [VacuumEpsilon K] :
+    ∃ (SQ : QOU_Surreal K),
+      QOU_VacuumEnergy SQ = epsilonSurreal K
+      ∧ ∃ (Q : QOU_Real), QOU_StandardPart K SQ = Q := by
+  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon.exists_epsilon_vacuum (K := K)
+  exact ⟨SQ, hSQ, qou_standardPart_image_exists K SQ⟩
 
 /-- **Conjecture: Big Bang and heat-death as named-surreal evaluations.**
 
-    The parameterised functor `q ↦ QOU_Surreal_q` extends to
-    evaluation at `q = 1 + ε^ω` (Big Bang) and `q = ω` (heat death),
-    with meaningful standard-part images. -/
+    The parameterised functor `q ↦ QOU_Surreal_q` (informal) is
+    intended to extend to evaluation at `q = 1 + ε^ω` (Big Bang)
+    and `q = ω` (heat death), with meaningful standard-part images.
+
+    **Narrowing audit.**  The original statement
+    `∃ BigBang HeatDeath : QOU_Real, ∃ SQ_bb SQ_hd, st(SQ_bb) =
+    BigBang ∧ st(SQ_hd) = HeatDeath` did *not* constrain `BigBang`
+    or `HeatDeath` (they were freely existentially bound), so its
+    formal content reduced to `Nonempty (QOU_Surreal K)` taken
+    twice — none of the cosmological-endpoint content was
+    actually expressed.
+
+    **Missing infrastructure.**  Faithfully formalising the
+    intended conjecture requires axiomatising the parameterised
+    functor `QOU_Surreal_q : K → QOU_Surreal K` and the
+    distinguished surreals `1 + ε^ω` and `ω`.  Until that
+    infrastructure is added, the irreducible kernel is just the
+    inhabitation of `QOU_Surreal K` (the conjecture that QOUs
+    can be constructed at all), recorded here. -/
 class BigBangHeatDeath where
-  /-- Existence of QOUs at both named-surreal cosmological endpoints. -/
-  endpoints_well_defined :
-    ∃ (BigBang HeatDeath : QOU_Real),
-      (∃ (SQ_bb : QOU_Surreal K),
-        QOU_StandardPart K SQ_bb = BigBang)
-      ∧ (∃ (SQ_hd : QOU_Surreal K),
-        QOU_StandardPart K SQ_hd = HeatDeath)
+  /-- The conjectural kernel: `QOU_Surreal K` is inhabited.
+      The cosmological-endpoint content of the prose is not yet
+      formalisable in the current placeholder vocabulary; see the
+      missing-infrastructure note above. -/
+  qou_surreal_inhabited : Nonempty (QOU_Surreal K)
 
 /-- **Conjecture: surreal Kashaev volume identity.**
 
@@ -253,15 +320,30 @@ class KashaevSurreal where
 
     There exists a knot invariant `J̃_K` indexed by ordinals whose
     sum equals `J_K` but which separates knots not separated by
-    the Jones polynomial alone. -/
+    the Jones polynomial alone.
+
+    **Narrowing audit.**  The original statement bound `K₁`,
+    `K₂`, `J_K₁`, `J_K₂`, `Jt_K₁`, `Jt_K₂` all as free
+    existentials, with no requirement that `J_K₁` actually be the
+    Jones polynomial of `K₁`, nor that `Jt_K₁` refine `J_K₁`,
+    nor that `K₁ ≠ K₂`.  As a result the formal content reduced
+    to "two knots exist and two distinct ordinal-indexed
+    `K`-valued functions exist" — both trivially true given knot
+    inhabitation.
+
+    **Missing infrastructure.**  Faithfully formalising the
+    refinement claim requires axiomatising
+    `JonesPolynomial : Knot → ℕ → K` and a refinement predicate
+    relating `Jt` to `J`.  Until that infrastructure is added,
+    the irreducible kernel is just the inhabitation of `Knot`
+    (the conjecture that knots can be denoted at all in the
+    surreal-coefficient setting), recorded here. -/
 class JonesBirthday where
-  /-- Existence of a strict birthday refinement. -/
-  strict_refinement_exists :
-    ∃ (K₁ K₂ : Knot) (J_K₁ J_K₂ : ℕ → K) (Jt_K₁ Jt_K₂ : Ordinal → K),
-      -- Same Jones polynomial at every integer level:
-      (∀ n, J_K₁ n = J_K₂ n)
-      -- But distinct birthday refinements at some ordinal:
-      ∧ (∃ α : Ordinal, Jt_K₁ α ≠ Jt_K₂ α)
+  /-- The conjectural kernel: `Knot` is inhabited.
+      The strict-refinement content of the prose is not yet
+      formalisable in the current placeholder vocabulary; see the
+      missing-infrastructure note above. -/
+  knot_inhabited : Nonempty Knot
 
 /-- **Conjecture: Hahn-series substrate.**
 
@@ -269,15 +351,33 @@ class JonesBirthday where
     coefficients such that the substrate parameter
     `q = 1 + ε + α₂ ε² + …`, when plugged into the QOU mass
     formula, matches CODATA at orders higher than the archimedean
-    fit.  Non-triviality: at least one `α_k ≠ 0`.  -/
+    fit.
+
+    **Narrowing audit.**  The original statement bundled three
+    independent claims: (i) existence of `α : ℕ → ℝ` with some
+    `α k ≠ 0` — trivially provable by
+    `exists_nonzero_real_sequence` (take `α := const 1`); (ii)
+    existence of a surreal QOU — covered by
+    `BigBangHeatDeath.qou_surreal_inhabited` if assumed; (iii)
+    existence of a standard-part image of that QOU — provable
+    via `qou_standardPart_image_exists`.  None of (i)–(iii) is
+    the genuinely conjectural content (matching CODATA at higher
+    orders).
+
+    **Missing infrastructure.**  Faithfully formalising the
+    intended conjecture requires axiomatising a mass formula
+    `QOU_MassFormula : QOU_Real → ℕ → ℝ` and a CODATA reference
+    sequence; the matching predicate would then be
+    `∀ k, |MassFormula(Q) k - CODATA k| ≤ ε^{k+2}`.  Until that
+    infrastructure is added, the irreducible kernel is just the
+    inhabitation of `QOU_Surreal K`, recorded here.  -/
 -- Ref: [ehrlich2012]
 class HahnSubstrate where
-  /-- Existence of a non-trivial Hahn-series substrate correction. -/
-  exists_nontrivial_correction :
-    ∃ (α : ℕ → ℝ),
-      (∃ k, α k ≠ 0)
-      ∧ (∃ (Q : QOU_Real), ∃ (SQ : QOU_Surreal K),
-          QOU_StandardPart K SQ = Q)
+  /-- The conjectural kernel: `QOU_Surreal K` is inhabited.
+      The substrate-correction content of the prose is not yet
+      formalisable in the current placeholder vocabulary; see the
+      missing-infrastructure note above. -/
+  qou_surreal_inhabited : Nonempty (QOU_Surreal K)
 
 /-- **Conjecture: characteristic-`p` modular Hecke ↔ nimbers `On_p`.**
 
