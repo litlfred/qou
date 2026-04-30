@@ -3,6 +3,10 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:topological-decomposition-mass",
   title: "Conjectural Topological Decomposition of Mass",
+  lean: {
+    ref: "qou:QOU.TopologicalMass.TopologicalDecompositionMass",
+    validation: "not_checked",
+  },
   uses: [
     "def:mass-identity",
     "def:brane-boundary",
