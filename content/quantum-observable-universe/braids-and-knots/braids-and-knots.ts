@@ -501,6 +501,20 @@ export default chapter({
       ],
     }),
 
+    // ── Derivation audit and pre-Archimedean framework ────────────────
+    section({
+      title: "Pre-Archimedean Derivation Chain and Audit",
+      label: "sec:derivation-audit",
+      blocks: [
+        "pre-archimedean-derivation-chain",
+        "derivation-audit-report",
+        "conj-canonical-knot-id-sdp",
+        "conj-chirality-ribbon-frobenius",
+        "conj-brane-level-selection",
+        "conj-rho-prefactor-structural",
+      ],
+    }),
+
     // ── Varying Euler + mirror bundle (merged — 2+2 blocks + genus-2) ─
     section({
       title: "Varying Euler Characteristic and the Mirror Bundle",
