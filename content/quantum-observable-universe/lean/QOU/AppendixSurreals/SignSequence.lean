@@ -187,8 +187,9 @@ theorem gonshorIn_nil (K : Type u) [SurrealField K] :
     in `GonshorState.step`), which is not among the axioms in
     `QOU.AppendixSurreals.Basic` and is not implied by them.  Adding
     such a bound would be an additional axiom on `SurrealField`, so we
-    state and prove only the universally-supported `≤ ω` form here. -/
--- Ref: [gonshor1986] Theorem 2.1 (sharper form, partial coverage below)
+    state and prove only the universally-supported `≤ ω` form here.
+
+    Ref: [gonshor1986] Theorem 2.1 (sharper form, partial coverage below) -/
 theorem birthday_gonshorIn_le_omega
     (K : Type u) [SurrealField K] (s : List Sign) :
     SurrealField.birthday (gonshorIn K s) ≤ Ordinal.omega0 := by
