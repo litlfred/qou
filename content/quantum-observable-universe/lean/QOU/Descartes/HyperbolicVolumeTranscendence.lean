@@ -383,6 +383,7 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
       push_cast
       ring
     -- Apply the algebraic independence no_relation axiom
+    -- (witness S and f constructed above; hsupp and hsum ▸ h satisfy the hypotheses)
     have hall := _hvi.no_relation S f hsupp (hsum.trans h)
     refine ⟨?_, ?_, ?_⟩
     · have h1 := hall ((1 : ℕ), 0, 0)
