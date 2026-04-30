@@ -233,6 +233,20 @@ theorem spectral_decomposition_qvalue
 
 /-! ## §5  Interaction completeness -/
 
+/-- Two `TorusKnotLabel`s with equal `r` and `s` fields are equal.
+    The three Prop fields are equal by proof irrelevance. -/
+private lemma tklabel_ext {τ₁ τ₂ : TorusKnotLabel}
+    (hr : τ₁.r = τ₂.r) (hs : τ₁.s = τ₂.s) : τ₁ = τ₂ := by
+  obtain ⟨r₁, s₁, h1, h2, h3⟩ := τ₁
+  obtain ⟨r₂, s₂, h1', h2', h3'⟩ := τ₂
+  simp only at hr hs
+  subst hr; subst hs
+  have e1 : h1 = h1' := proof_irrel h1 h1'
+  have e2 : h2 = h2' := proof_irrel h2 h2'
+  have e3 : h3 = h3' := proof_irrel h3 h3'
+  subst e1; subst e2; subst e3
+  rfl
+
 /-- **Theorem (interaction completeness).**
     The 6 embeddable torus knots on Σ₄ exhaust the harmonic 1-forms
     on the fiber.  Every transfer matrix (= force operator) is a
@@ -245,17 +259,54 @@ theorem interaction_completeness :
     sigma4_knots.length = 6 ∧
     ∀ τ : TorusKnotLabel, τ.embeddableOn 4 → τ ∈ sigma4_knots := by
   refine ⟨by simp [sigma4_knots], ?_⟩
-  -- DIAGNOSTIC: the second conjunct requires an exhaustive case-bash
-  -- on `(r, s)` with `(r-1)(s-1)/2 ≤ 4` and `gcd(r,s) = 1`.  The
-  -- previous proof skeleton is sound but `omega` and `interval_cases`
-  -- + `simp_all [Nat.Coprime]` interactions have churned across
-  -- Mathlib revisions (the `Nat.gcd_comm` simp normal form changed,
-  -- and `interval_cases` no longer auto-closes via `simp_all`).
-  -- Sorry retained pending refactor that pre-computes the
-  -- coprimality discriminant as a `decide`-able predicate.
-  intro _τ _hτ
+  intro τ hτ
   -- Ref: [rosso-jones1993] https://doi.org/10.1016/0393-0440(93)90033-B
-  sorry
+  -- Unfold embeddability to get (r-1)(s-1)/2 ≤ 4
+  simp only [TorusKnotLabel.embeddableOn, TorusKnotLabel.seifertRank] at hτ
+  -- Extract r, s, and the three structural hypotheses
+  obtain ⟨r, s, hr2, hrs, hcop⟩ := τ
+  -- Bound (r-1)(s-1) ≤ 9 from (r-1)(s-1)/2 ≤ 4
+  have h9 : (r - 1) * (s - 1) ≤ 9 := by
+    have hdiv := Nat.div_add_mod ((r - 1) * (s - 1)) 2
+    have hmod := Nat.mod_lt ((r - 1) * (s - 1)) (by omega : 0 < 2)
+    omega
+  -- Bound r ≤ 4: if r ≥ 5, then (r-1)*r ≥ 4*5 = 20 > 9 ≥ (r-1)*(s-1)
+  have hr4 : r ≤ 4 := by
+    by_contra hgt
+    push_neg at hgt
+    have hmul1 : (r - 1) * r ≤ (r - 1) * (s - 1) :=
+      Nat.mul_le_mul_left _ (by omega)
+    have hmul2 : 4 * 5 ≤ (r - 1) * r :=
+      Nat.mul_le_mul (by omega) (by omega)
+    linarith [hmul1, hmul2, h9]
+  -- Helper: rewrite membership goal using equality of labels
+  have mem_eq : ∀ (lbl : TorusKnotLabel), lbl ∈ sigma4_knots →
+      r = lbl.r → s = lbl.s →
+      (⟨r, s, hr2, hrs, hcop⟩ : TorusKnotLabel) ∈ sigma4_knots :=
+    fun lbl hlbl hrr hss =>
+      (tklabel_ext hrr hss).symm ▸ hlbl
+  -- Exhaustive case bash on r ∈ {2, 3, 4}
+  interval_cases r
+  · -- r = 2: s ∈ {3, ..., 10}; odd s coprime to 2, even s not
+    have hs_lo : 3 ≤ s := by omega
+    have hs_hi : s ≤ 10 := by omega
+    interval_cases s
+    · exact mem_eq e_label (by simp [sigma4_knots]) rfl rfl
+    · exact absurd hcop (by decide)
+    · exact mem_eq gen2_label (by simp [sigma4_knots]) rfl rfl
+    · exact absurd hcop (by decide)
+    · exact mem_eq c_label (by simp [sigma4_knots]) rfl rfl
+    · exact absurd hcop (by decide)
+    · exact mem_eq strong_label (by simp [sigma4_knots]) rfl rfl
+    · exact absurd hcop (by decide)
+  · -- r = 3: s ∈ {4, 5}; both coprime to 3
+    have hs_lo : 4 ≤ s := by omega
+    have hs_hi : s ≤ 5 := by omega
+    interval_cases s
+    · exact mem_eq t_label (by simp [sigma4_knots]) rfl rfl
+    · exact mem_eq weak_label (by simp [sigma4_knots]) rfl rfl
+  · -- r = 4: (r-1)*(s-1) = 3*(s-1) ≤ 9 forces s ≤ 4, but s > 4; contradiction
+    omega
 
 /-! ## §6  Tower termination -/
 

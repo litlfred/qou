@@ -69,7 +69,9 @@ theorem muon_is_figure_eight :
 theorem electron_is_trefoil :
     (lookupByIdentity .electron) = some trefoilEntry := by
   -- Ref: [manuscript] Chapter 4, KnotRegistry definition
-  sorry
+  -- registry = [unknotEntry, trefoilEntry, ...]; unknotEntry.identity = .neutrino ≠ .electron;
+  -- trefoilEntry.identity = .electron.  All kernel-reducible ι-steps.
+  rfl
 
 /-- The registry entry for the neutrino is the unknot.
     See `muon_is_figure_eight` for the diagnostic. -/
@@ -77,7 +79,9 @@ theorem electron_is_trefoil :
 theorem neutrino_is_unknot :
     (lookupByIdentity .neutrino) = some unknotEntry := by
   -- Ref: [manuscript] Chapter 4, KnotRegistry definition
-  sorry
+  -- registry = [unknotEntry, ...]; unknotEntry.identity = .neutrino.
+  -- Kernel-reducible ι-step on the first registry element.
+  rfl
 
 /-! ## Section 2: Skein-Deformed Mass Residue
 

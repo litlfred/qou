@@ -173,13 +173,17 @@ noncomputable def baselineDecomposition
     -- support `{0}`, so it is summable as a member of `Finset.sum` →
     -- summable bridge.  Use `summable_of_finset_eq_zero` (the modern
     -- Mathlib name for the previously-named `summable_of_ne_finset_zero`).
-    -- Strategy: show `fun n => |...|` agrees with `Set.indicator {0}`
-    -- of a constant, which is summable.
-    -- DIAGNOSTIC: the lemma name `summable_of_ne_finset_zero` was
-    -- renamed in recent Mathlib; sorry retained pending an update of
-    -- the helper to the current Mathlib API.
+    -- Strategy: show |levelContribution n| = levelContribution n pointwise,
+    -- then use HasSum.summable on hasSum_ite_eq.
     -- Ref: [yekutieli2010] manuscript Chapter 5
-    sorry
+    have heq : (fun n => |if n = (0 : ℕ) then vol else (0 : ℝ)|) =
+        fun n => if n = 0 then vol else 0 := by
+      funext n
+      split_ifs with hn
+      · exact abs_of_pos hvol
+      · exact abs_zero
+    rw [heq]
+    exact (hasSum_ite_eq 0 vol).summable
   sum_eq := by
     apply hasSum_ite_eq
   baseline_dominant := by simp [hvol]
@@ -343,9 +347,56 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
     [_hvi : HyperbolicVolumeIndependence] :
     BorelZagierQOU where
   linear_independent := by
+    intro a₁ a₂ a₃ h
     -- Ref: [borel1986] manuscript Chapter 5 — Borel-Zagier
-    -- See docstring DIAGNOSTIC for the proof obligations.
-    sorry
+    -- Witness: 3-element finset S = {(1,0,0),(0,1,0),(0,0,1)} with
+    -- coefficient function f assigning a₁,a₂,a₃ to each triple.
+    let S : Finset (ℕ × ℕ × ℕ) :=
+      {((1 : ℕ), (0 : ℕ), (0 : ℕ)), ((0 : ℕ), (1 : ℕ), (0 : ℕ)),
+       ((0 : ℕ), (0 : ℕ), (1 : ℕ))}
+    let f : ℕ × ℕ × ℕ → ℚ := fun ijk =>
+      if ijk = ((1 : ℕ), 0, 0) then a₁
+      else if ijk = ((0 : ℕ), 1, 0) then a₂
+      else if ijk = ((0 : ℕ), 0, 1) then a₃
+      else 0
+    -- f vanishes outside S
+    have hsupp : ∀ ijk, ijk ∉ S → f ijk = 0 := by
+      intro ijk hijk
+      simp only [S, Finset.mem_insert, Finset.mem_singleton] at hijk
+      push_neg at hijk
+      simp only [f, if_neg hijk.1, if_neg hijk.2.1, if_neg hijk.2.2]
+    -- Expand S.sum and evaluate f at each point
+    have hmem1 : ((1 : ℕ), 0, 0) ∉
+        ({((0 : ℕ), (1 : ℕ), 0), ((0 : ℕ), 0, (1 : ℕ))} : Finset _) := by decide
+    have hmem2 : ((0 : ℕ), (1 : ℕ), (0 : ℕ)) ∉
+        ({((0 : ℕ), (0 : ℕ), (1 : ℕ))} : Finset _) := by decide
+    have hsum : S.sum (fun ijk =>
+          (f ijk : ℝ) * vol_4_1 ^ ijk.1 * vol_5_2 ^ ijk.2.1 * vol_B3 ^ ijk.2.2) =
+        (a₁ : ℝ) * vol_4_1 + (a₂ : ℝ) * vol_5_2 + (a₃ : ℝ) * vol_B3 := by
+      simp only [S, f, Finset.sum_insert hmem1, Finset.sum_insert hmem2,
+                 Finset.sum_singleton,
+                 if_pos rfl,
+                 if_neg (show ¬ ((0 : ℕ), (1 : ℕ), 0) = (1, 0, 0) from by decide),
+                 if_neg (show ¬ ((0 : ℕ), 0, (1 : ℕ)) = (1, 0, 0) from by decide),
+                 if_neg (show ¬ ((0 : ℕ), 0, (1 : ℕ)) = (0, 1, 0) from by decide)]
+      norm_num
+      push_cast
+      ring
+    -- Apply the algebraic independence no_relation axiom
+    have hall := _hvi.no_relation S f hsupp (hsum.trans h)
+    refine ⟨?_, ?_, ?_⟩
+    · have h1 := hall ((1 : ℕ), 0, 0)
+      simp only [f, if_pos rfl] at h1
+      exact h1
+    · have h2 := hall ((0 : ℕ), 1, 0)
+      simp only [f, if_neg (show ¬ ((0 : ℕ), 1, 0) = (1, 0, 0) from by decide),
+                 if_pos rfl] at h2
+      exact h2
+    · have h3 := hall ((0 : ℕ), 0, 1)
+      simp only [f, if_neg (show ¬ ((0 : ℕ), 0, 1) = (1, 0, 0) from by decide),
+                 if_neg (show ¬ ((0 : ℕ), 0, 1) = (0, 1, 0) from by decide),
+                 if_pos rfl] at h3
+      exact h3
 
 /-! ## §9  The full chain: tower → faithfulness → independence
 
