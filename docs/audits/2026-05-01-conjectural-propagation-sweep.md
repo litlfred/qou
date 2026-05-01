@@ -15,29 +15,31 @@ kinds. This report restricts to provable kinds.
 
 | Conjecture | Provable cone size | File |
 |------------|-------------------:|------|
-| `conj:q-integer-mass-formula` | 91 | `content/quantum-observable-universe/particle-interactions/q-integer-mass-formula.ts` |
-| `conj:palindromicity-orbital-type` | 91 | `content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.ts` |
-| `conj:shell-closure-nf-term-count` | 91 | `content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts` |
-| `conj:critical-exponent` | 85 | `content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts` |
-| `conj:blowup-yekutieli` | 85 | `content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli.ts` |
-| `conj:regularity-breakdown` | 85 | `content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts` |
-| `conj:ns-counterexample` | 84 | `content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts` |
-| `conj:q-aubin-lions` | 84 | `content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts` |
-| `conj:borromean-quark` | 80 | `content/quantum-observable-universe/observations/borromean-quark.ts` |
-| `conj:baryon-period-ratio` | 79 | `content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts` |
-| `conj:hyperbolic-volume-transcendence` | 79 | `content/quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.ts` |
-| `conj:classical-limit-stpart` | 77 | `content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts` |
-| `conj:levi-degeneracy` | 76 | `content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts` |
+| `conj:q-integer-mass-formula` | 94 | `content/quantum-observable-universe/particle-interactions/q-integer-mass-formula.ts` |
+| `conj:palindromicity-orbital-type` | 94 | `content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.ts` |
+| `conj:shell-closure-nf-term-count` | 94 | `content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts` |
+| `conj:critical-exponent` | 88 | `content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts` |
+| `conj:blowup-yekutieli` | 88 | `content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli.ts` |
+| `conj:regularity-breakdown` | 88 | `content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts` |
+| `conj:ns-counterexample` | 87 | `content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts` |
+| `conj:q-aubin-lions` | 87 | `content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts` |
+| `conj:borromean-quark` | 84 | `content/quantum-observable-universe/observations/borromean-quark.ts` |
+| `conj:baryon-period-ratio` | 82 | `content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts` |
+| `conj:hyperbolic-volume-transcendence` | 82 | `content/quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.ts` |
+| `conj:classical-limit-stpart` | 80 | `content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts` |
+| `conj:levi-degeneracy` | 79 | `content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts` |
 | `conj:shell-correction-term-seven` | 30 | `content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.ts` |
 | `conj:knot-factor-frobenius-pairing` | 22 | `content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.ts` |
 | `conj:complex-chirality-rotation` | 1 | `content/quantum-observable-universe/observations/complex-chirality-rotation.ts` |
 | `conj:phi-q-tower-jsj-bridge` | 0 | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.ts` |
 | `conj:kashaev-volume-conjecture` | 0 | `content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.ts` |
 | `conj:brane-tower-z-habiro` | 0 | `content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.ts` |
+| `conj:categorical-neutrality-saturated-shells` | 0 | `content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.ts` |
 | `conj:jet-convergence-classical-limit` | 0 | `content/quantum-observable-universe/braids-and-knots/jet-convergence-classical-limit.ts` |
 | `conj:mass-endomorphism` | 0 | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.ts` |
 | `conj:mass-element-nf` | 0 | `content/quantum-observable-universe/braids-and-knots/mass-element-nf.ts` |
 | `conj:jet-filtered-knot-factor` | 0 | `content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.ts` |
+| `conj:diagrammatic-double-magic-lr-fusion` | 0 | `content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.ts` |
 | `conj:higgs-t28` | 0 | `content/quantum-observable-universe/observations/higgs-t28.ts` |
 | `conj:cp-violation-spectral-form` | 0 | `content/quantum-observable-universe/observations/cp-violation-spectral-form.ts` |
 | `conj:n-v-leading-order-derivation` | 0 | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
@@ -71,6 +73,7 @@ kinds. This report restricts to provable kinds.
 | `conj:p-vs-np-qou` | 0 | `content/quantum-observable-universe/algebraic-substrate/p-vs-np-conjecture.ts` |
 | `conj:q-collatz` | 0 | `content/quantum-observable-universe/algebraic-substrate/q-collatz-conjecture.ts` |
 | `conj:topological-decomposition-mass` | 0 | `content/quantum-observable-universe/lifting-and-descent/topological-mass-conjecture.ts` |
+| `conj:homological-shell-condensation` | 0 | `content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.ts` |
 | `conj:q-gl-fiber-functor` | 0 | `content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.ts` |
 | `conj:q-gl-classical-limit` | 0 | `content/quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit.ts` |
 | `conj:q-oper-hecke` | 0 | `content/quantum-observable-universe/q-geometric-langlands/q-oper-hecke.ts` |
@@ -82,12 +85,12 @@ kinds. This report restricts to provable kinds.
 | `conj:crossing-graded-mass-expansion` | 0 | `content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.ts` |
 | `conj:lifted-crossing-locality` | 0 | `content/quantum-observable-universe/particle-interactions/lifted-crossing-locality.ts` |
 
-**Total provable blocks affected (unique):** 119.
-**Total (with multiplicity):** 1140.
+**Total provable blocks affected (unique):** 122.
+**Total (with multiplicity):** 1180.
 
 ## Per-conjecture cones
 
-### `conj:q-integer-mass-formula` — 91 downstream provable blocks
+### `conj:q-integer-mass-formula` — 94 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/particle-interactions/q-integer-mass-formula.ts`](../../content/quantum-observable-universe/particle-interactions/q-integer-mass-formula.ts)
 
@@ -128,6 +131,7 @@ Source: [`content/quantum-observable-universe/particle-interactions/q-integer-ma
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -155,11 +159,13 @@ Source: [`content/quantum-observable-universe/particle-interactions/q-integer-ma
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
 | proposition | `prop:sdp-regime-switch` | `content/quantum-observable-universe/observations/sdp-regime-switch.ts` |
@@ -185,7 +191,7 @@ Source: [`content/quantum-observable-universe/particle-interactions/q-integer-ma
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:palindromicity-orbital-type` — 91 downstream provable blocks
+### `conj:palindromicity-orbital-type` — 94 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.ts`](../../content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.ts)
 
@@ -226,6 +232,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/palindromic
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -253,11 +260,13 @@ Source: [`content/quantum-observable-universe/molecular-construction/palindromic
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
 | proposition | `prop:sdp-regime-switch` | `content/quantum-observable-universe/observations/sdp-regime-switch.ts` |
@@ -283,7 +292,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/palindromic
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:shell-closure-nf-term-count` — 91 downstream provable blocks
+### `conj:shell-closure-nf-term-count` — 94 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts`](../../content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts)
 
@@ -324,6 +333,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/shell-closu
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -351,11 +361,13 @@ Source: [`content/quantum-observable-universe/molecular-construction/shell-closu
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
 | proposition | `prop:sdp-regime-switch` | `content/quantum-observable-universe/observations/sdp-regime-switch.ts` |
@@ -381,7 +393,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/shell-closu
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:critical-exponent` — 85 downstream provable blocks
+### `conj:critical-exponent` — 88 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts`](../../content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts)
 
@@ -419,6 +431,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p2-critical-exponen
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -443,11 +456,13 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p2-critical-exponen
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:root-of-unity-truncation` | `content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
@@ -473,7 +488,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p2-critical-exponen
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:blowup-yekutieli` — 85 downstream provable blocks
+### `conj:blowup-yekutieli` — 88 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli.ts`](../../content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli.ts)
 
@@ -511,6 +526,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -535,11 +551,13 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:root-of-unity-truncation` | `content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
@@ -565,7 +583,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:regularity-breakdown` — 85 downstream provable blocks
+### `conj:regularity-breakdown` — 88 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts`](../../content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts)
 
@@ -603,6 +621,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/regularity-breakdow
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -627,11 +646,13 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/regularity-breakdow
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:root-of-unity-truncation` | `content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
@@ -657,7 +678,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/regularity-breakdow
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:ns-counterexample` — 84 downstream provable blocks
+### `conj:ns-counterexample` — 87 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts`](../../content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts)
 
@@ -695,6 +716,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p5-counterexample.t
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -719,11 +741,13 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p5-counterexample.t
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:root-of-unity-truncation` | `content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
@@ -748,7 +772,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p5-counterexample.t
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:q-aubin-lions` — 84 downstream provable blocks
+### `conj:q-aubin-lions` — 87 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts`](../../content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts)
 
@@ -786,6 +810,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts`](
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -810,11 +835,13 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts`](
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:root-of-unity-truncation` | `content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
@@ -839,7 +866,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts`](
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:borromean-quark` — 80 downstream provable blocks
+### `conj:borromean-quark` — 84 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/observations/borromean-quark.ts`](../../content/quantum-observable-universe/observations/borromean-quark.ts)
 
@@ -874,7 +901,9 @@ Source: [`content/quantum-observable-universe/observations/borromean-quark.ts`](
 | proposition | `prop:figure-eight-bw-coefficients` | `content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.ts` |
 | proposition | `prop:frobenius-s-classification` | `content/quantum-observable-universe/braids-and-knots/frobenius-s-classification.ts` |
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
+| proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -898,11 +927,13 @@ Source: [`content/quantum-observable-universe/observations/borromean-quark.ts`](
 | proposition | `prop:partition-sum-proton-residual` | `content/quantum-observable-universe/braids-and-knots/partition-sum-proton-residual.ts` |
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:reidemeister-mass-invariance` | `content/quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
 | proposition | `prop:sdp-regime-switch` | `content/quantum-observable-universe/observations/sdp-regime-switch.ts` |
@@ -926,7 +957,7 @@ Source: [`content/quantum-observable-universe/observations/borromean-quark.ts`](
 | theorem | `thm:knot-mass-formula-unified` | `content/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:baryon-period-ratio` — 79 downstream provable blocks
+### `conj:baryon-period-ratio` — 82 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts`](../../content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts)
 
@@ -962,6 +993,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/baryon-period-c
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
 | proposition | `prop:geom-universality` | `content/quantum-observable-universe/braids-and-knots/geom-universality.ts` |
 | proposition | `prop:geom-yekutieli-alignment` | `content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -986,11 +1018,13 @@ Source: [`content/quantum-observable-universe/descartes-universe/baryon-period-c
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
 | proposition | `prop:spectral-sequence-collapse` | `content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.ts` |
@@ -1012,7 +1046,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/baryon-period-c
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:hyperbolic-volume-transcendence` — 79 downstream provable blocks
+### `conj:hyperbolic-volume-transcendence` — 82 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.ts`](../../content/quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.ts)
 
@@ -1048,6 +1082,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/hyperbolic-volu
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
 | proposition | `prop:geom-universality` | `content/quantum-observable-universe/braids-and-knots/geom-universality.ts` |
 | proposition | `prop:geom-yekutieli-alignment` | `content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -1072,11 +1107,13 @@ Source: [`content/quantum-observable-universe/descartes-universe/hyperbolic-volu
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
 | proposition | `prop:spectral-sequence-collapse` | `content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.ts` |
@@ -1098,7 +1135,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/hyperbolic-volu
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:classical-limit-stpart` — 77 downstream provable blocks
+### `conj:classical-limit-stpart` — 80 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts`](../../content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts)
 
@@ -1133,6 +1170,7 @@ Source: [`content/quantum-observable-universe/appendix-surreals/classical-limit-
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -1156,11 +1194,13 @@ Source: [`content/quantum-observable-universe/appendix-surreals/classical-limit-
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
 | proposition | `prop:spectral-sequence-collapse` | `content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.ts` |
@@ -1182,7 +1222,7 @@ Source: [`content/quantum-observable-universe/appendix-surreals/classical-limit-
 | theorem | `thm:ns-singularity-descartes` | `content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts` |
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 
-### `conj:levi-degeneracy` — 76 downstream provable blocks
+### `conj:levi-degeneracy` — 79 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts`](../../content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts)
 
@@ -1216,6 +1256,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-con
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
+| proposition | `prop:graded-markov-trace-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts` |
 | proposition | `prop:graded-trace-residue-split` | `content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts` |
 | proposition | `prop:gram-determinant-plancherel-ratio` | `content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts` |
 | proposition | `prop:gravity-spectral-prefactor` | `content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts` |
@@ -1239,11 +1280,13 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-con
 | proposition | `prop:pauli-factor-wedderburn` | `content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts` |
 | proposition | `prop:phase-transition-boundary` | `content/quantum-observable-universe/information-theory/phase-transition-boundary.ts` |
 | proposition | `prop:phi-q-categorical-truncation` | `content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts` |
+| proposition | `prop:phi-q-tower-algebraic-stratification` | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts` |
 | proposition | `prop:plancherel-term-7-formulation` | `content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts` |
 | proposition | `prop:plancherel-weight-boundedness` | `content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts` |
 | proposition | `prop:qmn-recursive-memoized` | `content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts` |
 | proposition | `prop:quantum-dilogarithm-stratified` | `content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts` |
 | proposition | `prop:quantum-ideal-gas-law` | `content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts` |
+| proposition | `prop:residue-at-root-from-gs-filtration` | `content/quantum-observable-universe/braids-and-knots/residue-at-root-from-gs-filtration.ts` |
 | proposition | `prop:schur-weyl-mass-decomposition` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts` |
 | proposition | `prop:schur-weyl-vanishing` | `content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts` |
 | proposition | `prop:spectral-sequence-collapse` | `content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.ts` |
@@ -1344,10 +1387,12 @@ Source: [`content/quantum-observable-universe/observations/complex-chirality-rot
 - `conj:phi-q-tower-jsj-bridge`
 - `conj:kashaev-volume-conjecture`
 - `conj:brane-tower-z-habiro`
+- `conj:categorical-neutrality-saturated-shells`
 - `conj:jet-convergence-classical-limit`
 - `conj:mass-endomorphism`
 - `conj:mass-element-nf`
 - `conj:jet-filtered-knot-factor`
+- `conj:diagrammatic-double-magic-lr-fusion`
 - `conj:higgs-t28`
 - `conj:cp-violation-spectral-form`
 - `conj:n-v-leading-order-derivation`
@@ -1381,6 +1426,7 @@ Source: [`content/quantum-observable-universe/observations/complex-chirality-rot
 - `conj:p-vs-np-qou`
 - `conj:q-collatz`
 - `conj:topological-decomposition-mass`
+- `conj:homological-shell-condensation`
 - `conj:q-gl-fiber-functor`
 - `conj:q-gl-classical-limit`
 - `conj:q-oper-hecke`

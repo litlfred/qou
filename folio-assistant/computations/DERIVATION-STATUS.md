@@ -49,10 +49,10 @@ for each crossing.
 | 5 | Pairing | [3][7]m_e | ±1/√A | [3]+[1,1,1] descent | DERIVED |
 | 6 | Exchange | [3]/[2]m_e | -Z^{4/3}/A^{1/3} | [2,1] h³ boundary | DERIVED |
 | 7 | Shell | [2]²[3]m_e | +f_magic/A^{2/3} | [3,1] branching | DERIVED |
-| 8 | Hook | \|β₄\|·\|lnλ\|·m_e | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (coeff ad hoc) |
+| 8 | Hook | [3]·[2]²·m_e | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (q-hook product H_q((2,2)) = [3]·[2]² via prop:wigner-np-pairing; numerically equal to the previous |β₄|·|lnλ| ad-hoc form at q₀ ≈ 6.29 MeV) |
 | 9 | Wigner | [5]!·m_e | -T(T+1)/A | [3,1,1] Frob reciprocity | DERIVED |
 | 10 | Form factor | h[5]m_e | -Z²/A | [3,2]⊕[2,2,1] conj pair | DERIVED |
-| 11 | pn corr | 2[2][3]/[4]·[2]m_e | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (coeff approx) |
+| 11 | pn corr | (y_{(4,1)}+y_{(2,1,1,1)})·m_e via Wenzl-bridge n=5 | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (Wenzl-bridge symbolic in ℤ[q^{±1}] via prop:y-lambda-recipe-from-partition; previous "approx" tag obsolete — closed form available at n ≤ 12 per y_lambda_wenzl_bridge_extended.py) |
 
 ### Figure-eight modification (A=3 nuclei)
 

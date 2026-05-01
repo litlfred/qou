@@ -138,16 +138,28 @@ rather than a calibration. The paper's published position
 (three-calibration scheme with CAL-2 as input) remains correct
 either way.
 
-### §2·C — BW-formula coefficients flagged ad-hoc
+### §2·C — BW-formula coefficients (BW-8 + BW-11 RESOLVED)
 
 From [`DERIVATION-STATUS.md` lines 41–55](../../folio-assistant/computations/DERIVATION-STATUS.md):
 
-| ID | Term | Coefficient | Status in source |
-|----|------|-------------|------------------|
-| **BW-8** | Hook | $|\beta_4|\cdot|\ln\lambda|\cdot m_e$ | "DERIVED (coeff ad hoc)" |
-| **BW-11** | pn corr | $2[2][3]/[4]\cdot[2]\cdot m_e$ | "DERIVED (coeff approx)" |
+| ID | Term | Coefficient | Status |
+|----|------|-------------|--------|
+| **BW-8** | Hook | $[3]_q [2]_q^2 \cdot m_e$ (q-hook product $H_q((2,2))$) | 🟢 **RESOLVED** — derived via the q-hook formula in [`prop:wigner-np-pairing`](../../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md). Numerically equal to the previous "ad hoc" $|\beta_4|\cdot|\ln\lambda|$ form at $q_0$ (≈ 6.29 MeV); the q-integer form is the symbolic derivation. |
+| **BW-11** | pn corr | $(y_{(4,1)} + y_{(2,1,1,1)}) \cdot m_e$ via Wenzl-bridge at $n=5$ | 🟢 **RESOLVED** — closed form in $\mathbb{Z}[q^{\pm 1}]$ available via [`prop:y-lambda-recipe-from-partition`](../../content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md) and the extended Wenzl-bridge witness ([`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py), $n \leq 12$). Previous "approx" tag superseded. |
 
-🟠 **Action.** Reduce to either the Wenzl-bridge derivation
+🟢 **Status.** Both flags discharged by the cherry-picked Wenzl-bridge
+content (`y-lambda-recipe-from-partition`,
+`y-lambda-cyclotomic-factorization`, `y-lambda-closed-form-wenzl-bridge`,
+`wenzl-qmn-synergy`). Per
+[`2026-05-01-bw-pathway-comparison.md`](2026-05-01-bw-pathway-comparison.md),
+the ladder (A) ≡ Wenzl-bridge (B) equivalence is verified at
+$n = 3, 4$ and these closed forms extend the result to $n = 4, 5$.
+Equivalence with LP-shadow-price (C) for the conjugate-pair case
+remains a P3.6 follow-up but does not block the BW closure.
+
+(Original P1.2 / P1.3 action retained below for historical reference.)
+
+🟠 **Original action.** Reduce to either the Wenzl-bridge derivation
 (currently used for the other 9) or to LP-shadow-prices via
 [`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md). The ad-hoc / approx flags must
 disappear before the BW formula can claim *fully derived*.
@@ -381,7 +393,7 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
 | 🔴 Wall-risk blocks | 1 of 19 | link 8 (JSJ algebraic reformulation) |
 | 🟢 Approved calibrations (per §2·A corrected) | 3 | CAL-1 ($m_e$), CAL-2 ($m_\mu/m_e$ → $q_0$), CAL-3 ($Q_\beta(n)$ → $E_0$) |
-| Non-calibration empirical / fitting flags | 4 | BW-8, BW-11, MAG-1, ALPHA-2 — must be derived or removed. NU-1 resolved (neutrino = unknot = 0 mass by categorical definition). SHELL-1 resolved (file misnomer; AME usage is measurement, not fit; quarantined isotopes explicitly disclosed). |
+| Non-calibration empirical / fitting flags | 2 | MAG-1 (PR #500 cherry-picked: addresses via full-twist / BB-stratification / LR-fusion homological framework; awaiting numerical verification on {50, 82, 126}), ALPHA-2 (399 ppb residual). NU-1 resolved (neutrino = unknot). SHELL-1 resolved (no hidden fits). BW-8 resolved (q-hook product $[3]_q[2]_q^2$ via wigner-np-pairing). BW-11 resolved (Wenzl-bridge closed form via y-lambda-recipe-from-partition). |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 
@@ -406,13 +418,16 @@ prediction at level $A$ requires:
    ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
 8. ❌ Symbolic-in-$q$ throughout, $q_0$-substitution only at final
    step.
-9. ❌ Four non-calibration empirical/fitting flags (BW-8, BW-11,
-   MAG-1, ALPHA-2) eliminated. NU-1 resolved (neutrino = unknot
-   = 0 mass). SHELL-1 resolved (file misnomer; quarantined
-   entries explicitly disclosed in atlas; base cases pending
-   GB-NF derivation but not AME-fitted). The three approved
-   calibrations (CAL-1 / CAL-2 / CAL-3) named in a single
-   `prop:three-calibration-inputs` block; all numerical
+9. 🟢 Two non-calibration empirical/fitting flags remaining
+   (MAG-1, ALPHA-2). BW-8 + BW-11 resolved this branch
+   via cherry-picked Wenzl-bridge content (q-hook product on
+   $(2,2)$ for term 8; closed form for $(4,1)+(2,1,1,1)$ at $n=5$
+   for term 11). MAG-1 has a concrete homological framework
+   (PR #500 cherry-picked: full-twist / BB-stratification /
+   LR-fusion) awaiting numerical verification at $\{50, 82, 126\}$.
+   NU-1 resolved (neutrino = unknot = 0 mass). SHELL-1 resolved.
+   The three approved calibrations (CAL-1 / CAL-2 / CAL-3) named
+   in a single `prop:three-calibration-inputs` block; all numerical
    predictions cite it.
 10. ❌ Magic-number derivation from Bring (currently asserted but
     not derived).
