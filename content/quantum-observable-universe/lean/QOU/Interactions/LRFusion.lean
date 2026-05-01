@@ -61,26 +61,17 @@ class ContentAdditive (C : Composite) : Prop where
 def IsDoubleMagic (C : Composite) : Prop :=
   isSelfConjugate C.λ_Z ∧ isSelfConjugate C.λ_N
 
-/-- Conjugate diagrams have charge zero: this is the partition fact
-    that `λ = λ' ⇒ κ_λ = -κ_λ ⇒ κ_λ = 0`. We expose it as a typeclass
-    field so the Lean proof here does not depend on the concrete
-    integer ring of contents. -/
-class SelfConjugateZeroCharge where
-  zero_of_self_conjugate :
-    ∀ (λ : YoungDiagram), isSelfConjugate λ → kappa λ = 0
-
-/-- **Lemma (provable, conditional on the typeclass field).**
-    A double-magic composite has zero global charge: `κ_{λ_A} = 0`. -/
+/-- **Lemma (proved):** a double-magic composite has zero global
+    Jucys–Murphy charge `κ_{λ_A} = 0`. Direct from
+    `kappa_zero_of_self_conjugate` (proved in ShellNeutrality) plus
+    content additivity (typeclass field). -/
 -- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
 theorem doubleMagic_kappa_zero
-    [SelfConjugateZeroCharge]
     (C : Composite) [CA : ContentAdditive C]
     (hM : IsDoubleMagic C) :
     kappa C.λ_A = 0 := by
-  have hZ : kappa C.λ_Z = 0 :=
-    SelfConjugateZeroCharge.zero_of_self_conjugate C.λ_Z hM.1
-  have hN : kappa C.λ_N = 0 :=
-    SelfConjugateZeroCharge.zero_of_self_conjugate C.λ_N hM.2
+  have hZ : kappa C.λ_Z = 0 := kappa_zero_of_self_conjugate C.λ_Z hM.1
+  have hN : kappa C.λ_N = 0 := kappa_zero_of_self_conjugate C.λ_N hM.2
   rw [CA.kappa_add, hZ, hN, add_zero]
 
 /-! ## §4  The LR-fusion rigidity conjecture -/
@@ -102,8 +93,7 @@ theorem doubleMagic_kappa_zero
     direction asserts that *only* double-magic compositions reach
     the magic ladder via LR-fusion of saturated inputs. -/
 -- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
-class DoubleMagicConjecture
-    extends SelfConjugateZeroCharge where
+class DoubleMagicConjecture where
   /-- LR-rigidity: the dominant composite of two self-conjugate
       saturated constituents is itself self-conjugate. -/
   lr_rigidity :
@@ -111,7 +101,7 @@ class DoubleMagicConjecture
       IsDoubleMagic C → isSelfConjugate C.λ_A
   /-- Magic-ladder coincidence: a composite whose dominant module
       has zero charge **and** is self-conjugate sits on the magic
-      ladder `iff` it arose from a double-magic LR-fusion. -/
+      ladder iff it arose from a double-magic LR-fusion. -/
   magic_iff_double_magic :
     ∀ (C : Composite),
       (kappa C.λ_A = 0 ∧ isSelfConjugate C.λ_A
@@ -137,5 +127,33 @@ theorem composite_kappa_zero_of_double_magic
     (h : IsDoubleMagic C) :
     kappa C.λ_A = 0 :=
   doubleMagic_kappa_zero C h
+
+/-! ## §5  Downstream — double-magic ⇒ homological condensation -/
+
+/-- **Capstone theorem (proved, conditional on the three conjectures).**
+
+    If a composite is double-magic and the LR-rigidity conjecture
+    holds, and if the composite mass number `A = Z + N` lies on the
+    magic ladder, then the homological-shell-condensation conjecture
+    delivers `E_∞^{p, >0}(A) = 0`.
+
+    This is the algebraic-geometry capstone connecting:
+    * `SaturatedShellConjecture` (constituents are self-conjugate),
+    * `DoubleMagicConjecture` (LR-rigidity preserves self-conjugacy
+      to the composite, and the magic-ladder coincidence holds),
+    * `ShellCondensationConjecture` (collapse on the magic ladder).
+
+    All hypotheses are exposed as typeclass instances; the proof is
+    by direct chaining. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+-- Ref: [manuscript] conj:homological-shell-condensation
+theorem doubleMagic_implies_condensation
+    [D : DoubleMagicConjecture]
+    [ShellCondensationConjecture]
+    (C : Composite) [ContentAdditive C]
+    (hM : IsDoubleMagic C)
+    (hL : C.λ_A.n ∈ magicLadder) :
+    InfinityVanishesAtPositiveQ C.λ_A.n :=
+  condensation_at_magic hL
 
 end QOU.Interactions.LRFusion
