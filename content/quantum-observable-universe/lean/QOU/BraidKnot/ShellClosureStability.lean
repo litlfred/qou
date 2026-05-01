@@ -34,12 +34,19 @@ namespace QOU.BraidKnot
 
 open QOU.Descartes
 
-/-- Frobenius stability index
-    `σ_F(D, q) = n_target · y₀*(D, q)` — the optimal dual objective
-    of the confinement SDP at `(D, q)`. Equivalently, by strong
-    duality, the optimal primal `⟨T, Φ*⟩`. -/
+/-- Frobenius stability data — class-supplied evaluation of
+    `σ_F(D, q) = n_target · y₀*(D, q)` (the optimal dual objective
+    of the confinement SDP at `(D, q)`; equivalently, by strong
+    duality, the optimal primal `⟨T, Φ*⟩`). -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque frobeniusStability : DressedParticle → R_q → R_q
+class HasFrobeniusStability (D : DressedParticle) where
+  /-- The stability index `σ_F(D, q)`. -/
+  sigma : R_q → R_q
+
+/-- Frobenius stability accessor, backed by `HasFrobeniusStability`. -/
+def frobeniusStability (D : DressedParticle) [h : HasFrobeniusStability D]
+    (q : R_q) : R_q :=
+  h.sigma q
 
 /-- Is `D` a one-step dressing of `D_prev` (one extra electron)? -/
 -- Ref: [manuscript] braids-and-knots/dressed-particle
@@ -61,7 +68,9 @@ def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 class ShellClosureMonotone
-    (D_prev D : DressedParticle) (q : R_q)
+    (D_prev D : DressedParticle)
+    [HasFrobeniusStability D_prev] [HasFrobeniusStability D]
+    (q : R_q)
     (_h : isOneStepDressing D_prev D) : Prop where
   /-- Stability index does not decrease under the one-step dressing. -/
   monotone : frobeniusStability D_prev q ≤ frobeniusStability D q
@@ -71,7 +80,9 @@ class ShellClosureMonotone
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem shell_closure_monotone
-    (D_prev D : DressedParticle) (q : R_q)
+    (D_prev D : DressedParticle)
+    [HasFrobeniusStability D_prev] [HasFrobeniusStability D]
+    (q : R_q)
     (h : isOneStepDressing D_prev D)
     [hi : ShellClosureMonotone D_prev D q h] :
     frobeniusStability D_prev q ≤ frobeniusStability D q :=
@@ -84,7 +95,7 @@ theorem shell_closure_monotone
     `μ(S, q) ≥ 2`, giving the multi-operator regime. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 theorem shell_closure_noble_multiplicity
-    (D : DressedParticle) (q : R_q)
+    (D : DressedParticle) [HasBindingMultiplicity D.shell] (q : R_q)
     (h : D.shell.nElectrons ∈ nobleGasMagic)
     [NobleGasMultiOperator D.shell q h] :
     bindingMultiplicity D.shell q ≥ 2 :=
@@ -100,7 +111,10 @@ theorem shell_closure_noble_multiplicity
     exceed that of `D` in the generic locus. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 theorem shell_closure_terminality
-    (D D' : DressedParticle) (q : R_q)
+    (D D' : DressedParticle)
+    [HasFrobeniusStability D] [HasFrobeniusStability D']
+    [HasBindingMultiplicity D.shell]
+    (q : R_q)
     (h_noble : D.shell.nElectrons ∈ nobleGasMagic)
     (h_step : isOneStepDressing D D')
     [ShellClosureMonotone D D' q h_step]
@@ -118,7 +132,7 @@ theorem shell_closure_terminality
     stability. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 theorem ShellClosureStability
-    (D : DressedParticle) (q : R_q)
+    (D : DressedParticle) [HasBindingMultiplicity D.shell] (q : R_q)
     (h : D.shell.nElectrons ∈ nobleGasMagic)
     [NobleGasMultiOperator D.shell q h] :
     bindingMultiplicity D.shell q ≥ 2 :=

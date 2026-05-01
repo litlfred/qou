@@ -28,28 +28,50 @@ namespace QOU.BraidKnot
 
 open QOU.Descartes
 
-/-- Coercion from the ground ring `R_q = LaurentPolynomial ℤ` to ℝ
-    for the phase-stratification analysis on the real q-axis. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
-opaque rqToReal : R_q → ℝ
+/-! ### Real-axis stratification data (typeclass-supplied)
 
-/-- Confinement predicate specialised to the real q-axis. -/
+The phase-stratification analysis lives on the *real* q-axis,
+where the SDP constraint matrices are continuous in `q`. The
+underlying ground ring `R_q = LaurentPolynomial ℤ` is purely
+algebraic; the maps `confinedReal`, `muReal`, `sigmaFReal` are
+the analytic specialisations obtained by evaluating SDP-derived
+quantities at real `q`.
+
+These maps are not closed-form: they depend on the (numerical)
+SDP solution at each `q`. Rather than `opaque`-stubbing them, we
+package them as a typeclass `HasRealAxisData` so each particle's
+data is supplied by the caller (typically from a numerical SDP
+solver, e.g. CVXPY). -/
+
+/-- **Real-axis SDP data** — class-supplied evaluation maps. -/
+class HasRealAxisData (P : ConfinedParticle) where
+  /-- Confinement predicate at real `q`. -/
+  confined : ℝ → Prop
+  /-- Binding multiplicity `μ(P, q)` at real `q`. -/
+  mu : ℝ → ℕ
+  /-- Frobenius stability `σ_F(P, q)` at real `q`. -/
+  sigmaF : ℝ → ℝ
+
+/-- Confinement predicate at real `q`. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque confinedReal : ConfinedParticle → ℝ → Prop
+def confinedReal (P : ConfinedParticle) [h : HasRealAxisData P] (q : ℝ) : Prop :=
+  h.confined q
 
 /-- **Confinement locus** `Ω(P) ⊆ ℝ` — the set of real `q` at which
     `P` is confined. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
-def confinementLocus (P : ConfinedParticle) : Set ℝ :=
+def confinementLocus (P : ConfinedParticle) [HasRealAxisData P] : Set ℝ :=
   { q : ℝ | confinedReal P q }
 
 /-- Binding multiplicity `μ(P, q)` on the real q-axis. -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
-opaque muReal : ConfinedParticle → ℝ → ℕ
+def muReal (P : ConfinedParticle) [h : HasRealAxisData P] (q : ℝ) : ℕ :=
+  h.mu q
 
 /-- Frobenius stability index `σ_F(P, q)` on the real q-axis. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
-opaque sigmaFReal : ConfinedParticle → ℝ → ℝ
+def sigmaFReal (P : ConfinedParticle) [h : HasRealAxisData P] (q : ℝ) : ℝ :=
+  h.sigmaF q
 
 /-! ## §1  Openness of the confinement locus -/
 
@@ -70,7 +92,8 @@ three fields. Callers obtain the relevant claim by binding to a
     universal quantifier into per-instance evidence. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-class HasPhaseStratification (P : ConfinedParticle) : Prop where
+class HasPhaseStratification (P : ConfinedParticle)
+    [HasRealAxisData P] : Prop where
   /-- **Claim (1)** — openness of the confinement locus
       (Slater-strict feasibility is open). -/
   locus_open : IsOpen (confinementLocus P)
@@ -86,7 +109,7 @@ class HasPhaseStratification (P : ConfinedParticle) : Prop where
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem phase_locus_open (P : ConfinedParticle)
-    [h : HasPhaseStratification P] :
+    [HasRealAxisData P] [h : HasPhaseStratification P] :
     IsOpen (confinementLocus P) :=
   h.locus_open
 
@@ -97,7 +120,7 @@ theorem phase_locus_open (P : ConfinedParticle)
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem phase_mu_constant_on_components
-    (P : ConfinedParticle) [h : HasPhaseStratification P]
+    (P : ConfinedParticle) [HasRealAxisData P] [h : HasPhaseStratification P]
     (C : Set ℝ)
     (hC : IsConnected C) (hsub : C ⊆ confinementLocus P)
     (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
@@ -111,7 +134,7 @@ theorem phase_mu_constant_on_components
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem phase_sigmaF_continuous_on_locus
-    (P : ConfinedParticle) [h : HasPhaseStratification P] :
+    (P : ConfinedParticle) [HasRealAxisData P] [h : HasPhaseStratification P] :
     ContinuousOn (sigmaFReal P) (confinementLocus P) :=
   h.sigmaF_continuous
 
@@ -121,7 +144,7 @@ theorem phase_sigmaF_continuous_on_locus
     `Ω(P)` is open and μ is locally constant on components. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 theorem ConfinementPhaseStratification (P : ConfinedParticle)
-    [HasPhaseStratification P] :
+    [HasRealAxisData P] [HasPhaseStratification P] :
     IsOpen (confinementLocus P) :=
   phase_locus_open P
 

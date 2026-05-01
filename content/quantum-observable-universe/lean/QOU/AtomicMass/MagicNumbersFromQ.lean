@@ -49,11 +49,13 @@ open scoped BigOperators
 
 /-! ## Substrate parameter -/
 
-/-- Pinned substrate parameter `q₀ ≈ 1.10961...`. Wired as opaque
-    pending the unified `q-pinning` 50-digit witness import; the
-    only fact needed below is that it is a fixed real. -/
+/-- Pinned substrate parameter `q₀ ≈ 1.1097`. The 4-digit decimal
+    is the same value used throughout the manuscript
+    (`MassDerivation.substrate_q`); the unified 50-digit witness
+    lives in `q-pinning` and tightens this without changing the
+    `Phi_signal` tabulation, which branches only on `K` and `Z`. -/
 -- Ref: [manuscript] algebraic-substrate/q-pinning
-opaque q_zero : ℝ
+def q_zero : ℝ := (11097 : ℝ) / 10000
 
 /-! ## Hoefsmit character signal — concrete tabulation
 

@@ -52,11 +52,19 @@ structure ConfinedParticle where
       nucleon level). -/
   coarseStrands : ℕ
 
-/-- Confinement predicate on a particle at a parameter value in the
-    generic locus. `confined P q` holds iff the confinement SDP at
-    `P` is Slater-strictly feasible at `q`. -/
+/-- Confinement predicate on a particle at a parameter value. The
+    semantic content (`confined P q ↔ Slater-strict SDP feasibility
+    at (P, q)`) is supplied per-instance via `HasConfinementWitness`
+    below; the ambient predicate is just a typeclass accessor. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque confined : ConfinedParticle → R_q → Prop
+class HasConfinementWitness (P : ConfinedParticle) where
+  /-- The confinement predicate at parameter `q`. -/
+  confined : R_q → Prop
+
+/-- Confinement predicate accessor. -/
+def confined (P : ConfinedParticle) [h : HasConfinementWitness P] (q : R_q) :
+    Prop :=
+  h.confined q
 
 /-- **Coarse-strand correctness — typeclass (Pattern 4).**
 

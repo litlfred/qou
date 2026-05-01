@@ -30,18 +30,36 @@ open QOU.Descartes
 
 /-- Witnessed partition truncation `k_max(P, q)` of the confinement
     SDP at `(P, q)` — the largest Wedderburn block `λ ⊢ k` with
-    non-zero projection in the optimal `Φ*`. -/
--- Ref: [manuscript] braids-and-knots/confinement-level
-opaque kMax : ConfinedParticle → R_q → ℕ
+    non-zero projection in the optimal `Φ*`.
 
-/-- Markov trace of a confined particle at `(P, q)`. Placeholder —
-    the full definition routes through `HeckeRep.character` applied
-    to the Markov-class canonical representative, closed under the
-    Markov property of the trace tower. For `n = 3`, specialises to
-    `markovTraceNF` of `QOU.Interactions.ConfinementLP`. -/
+    **Coarse upper bound.** The full SDP-derived value is bounded
+    above by the Markov-class strand count: every Wedderburn block
+    that supports non-zero `Φ*` weight indexes a partition of size
+    `≤ strandCount`. The bound is tight when every block carries
+    weight; the slack is precisely the SDP active-support
+    multiplicity. We adopt the upper bound here so `kMax` is a
+    closed-form definition; per-instance refinements live in
+    `LevelSufficient` witnesses. -/
+-- Ref: [manuscript] braids-and-knots/confinement-level
+def kMax (P : ConfinedParticle) (_q : R_q) : ℕ :=
+  P.markovClass.strandCount
+
+/-- Markov trace of a confined particle at `(P, q)`. Bound by the
+    `HasMarkovTrace` typeclass: callers either build `markovTrace`
+    via `markovTraceNF` (the n=3 specialisation in `ConfinementLP`)
+    or via the full Hecke-character tower (Jones, n ≥ 4). Replacing
+    the previous `opaque` with a class makes the data choice
+    visible at every use site. -/
 -- Ref: [manuscript] braids-and-knots/wedderburn-mass-formula
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-opaque markovTrace : ConfinedParticle → R_q → R_q
+class HasMarkovTrace (P : ConfinedParticle) (q : R_q) where
+  /-- The Markov trace value at `(P, q)`. -/
+  value : R_q
+
+/-- Markov trace accessor, backed by `HasMarkovTrace`. -/
+noncomputable def markovTrace (P : ConfinedParticle) (q : R_q)
+    [h : HasMarkovTrace P q] : R_q :=
+  h.value
 
 /-- **Level sufficiency — typeclass (Pattern 4).**
 
@@ -55,6 +73,7 @@ opaque markovTrace : ConfinedParticle → R_q → R_q
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 class LevelSufficient
     (P P' : ConfinedParticle) (q : R_q)
+    [HasMarkovTrace P q] [HasMarkovTrace P' q]
     (_h_unfold : ConfMorphism P P')
     (_h_cover : kMax P q ≤ P.coarseStrands) : Prop where
   /-- Markov trace agrees on the coarse and unfolded reps. -/
@@ -66,6 +85,7 @@ class LevelSufficient
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem LevelSufficiency
     (P P' : ConfinedParticle) (q : R_q)
+    [HasMarkovTrace P q] [HasMarkovTrace P' q]
     (h_unfold : ConfMorphism P P')
     (h_cover : kMax P q ≤ P.coarseStrands)
     [hi : LevelSufficient P P' q h_unfold h_cover] :
@@ -78,8 +98,9 @@ theorem LevelSufficiency
 -- Ref: [manuscript] braids-and-knots/level-sufficiency
 theorem default_coarse_exact
     (P : ConfinedParticle) (q : R_q)
+    [HasMarkovTrace P q]
     (h_cover : kMax P q ≤ P.coarseStrands)
-    (P' : ConfinedParticle) (h : ConfMorphism P P')
+    (P' : ConfinedParticle) [HasMarkovTrace P' q] (h : ConfMorphism P P')
     [LevelSufficient P P' q h h_cover] :
     markovTrace P' q = markovTrace P q :=
   (LevelSufficiency P P' q h h_cover).symm

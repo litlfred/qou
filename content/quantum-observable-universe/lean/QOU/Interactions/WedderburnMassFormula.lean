@@ -78,29 +78,37 @@ noncomputable def catalan_G : ℝ := 0.91596559417721901505
 /-- Binding scale `α = m_e · 8 G`. -/
 noncomputable def alpha_bind : ℝ := m_e * 8 * catalan_G
 
-/-! ## Hoefsmit-derived data (genuinely opaque) -/
+/-! ## Hoefsmit-derived data (typeclass-supplied per `(Z, N)`)
 
-/-- The number of Hecke NF generators contributing to the binding
-    term for an atom. The proton at level `n = 3` has 6 NF basis
-    elements; this is parameterised so heavier atoms can use larger
-    bases. Opaque because it depends on the chosen NF basis size. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
-opaque numGenerators : ℕ
+The Hoefsmit seminormal form of `H_k(q)` is not yet formalised in
+Lean / Mathlib. Rather than `opaque`-stubbing the per-`(Z, N)`
+coefficients, we package them as a typeclass `HasHoefsmitData (Z N)`
+so each nucleus's data is supplied by the caller (typically from
+the Hoefsmit-tabulation Python pipeline; see
+`hoefsmit-seminormal.witness.json`). -/
 
-/-- Standard-representation traced volume `V̂ᵢ^std = z·aᵢ + bᵢ`
-    of generator `i` for the chosen braid representative of
-    `(Z, N)` at substrate `q`. Opaque because the integer
-    coefficients `aᵢ, bᵢ` come from the Hoefsmit seminormal form. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
-opaque V_std (Z N : ℕ) : ℕ → ℝ → ℝ
+/-- **Hoefsmit seminormal data — class-supplied per `(Z, N)`.** -/
+class HasHoefsmitData (Z N : ℕ) where
+  /-- Number of NF generators contributing to the binding term. -/
+  numGenerators : ℕ
+  /-- Standard-rep traced volume `V̂ᵢ^std = z·aᵢ + bᵢ`. -/
+  V_std : ℕ → ℝ → ℝ
+  /-- Symmetric eigenvalue product `λᵢ^sym = ∏ⱼ (cⱼ q + dⱼ)`. -/
+  lambda_sym : ℕ → ℝ → ℝ
+  /-- Alternating eigenvalue product `λᵢ^alt = ∏ⱼ (-cⱼ q⁻¹ + dⱼ)`. -/
+  lambda_alt : ℕ → ℝ → ℝ
 
-/-- Symmetric eigenvalue product `λᵢ^sym = ∏ⱼ (cⱼ q + dⱼ)`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
-opaque lambda_sym (Z N : ℕ) : ℕ → ℝ → ℝ
+/-- Number of NF generators (accessor). -/
+def numGenerators (Z N : ℕ) [h : HasHoefsmitData Z N] : ℕ := h.numGenerators
 
-/-- Alternating eigenvalue product `λᵢ^alt = ∏ⱼ (-cⱼ q⁻¹ + dⱼ)`. -/
--- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
-opaque lambda_alt (Z N : ℕ) : ℕ → ℝ → ℝ
+/-- Standard-rep traced volume (accessor). -/
+def V_std (Z N : ℕ) [h : HasHoefsmitData Z N] : ℕ → ℝ → ℝ := h.V_std
+
+/-- Symmetric eigenvalue product (accessor). -/
+def lambda_sym (Z N : ℕ) [h : HasHoefsmitData Z N] : ℕ → ℝ → ℝ := h.lambda_sym
+
+/-- Alternating eigenvalue product (accessor). -/
+def lambda_alt (Z N : ℕ) [h : HasHoefsmitData Z N] : ℕ → ℝ → ℝ := h.lambda_alt
 
 /-! ## Closed-form Wedderburn weights -/
 
@@ -180,20 +188,21 @@ theorem w_sym_eq_w_alt (q : ℝ) : w_sym q = w_alt q := by
 
 /-- Full Wedderburn-weighted traced volume per generator `i`:
     `V̂ᵢ^full = w_sym · λᵢ^sym + w_std · V̂ᵢ^std + w_alt · λᵢ^alt`. -/
-noncomputable def V_full (Z N : ℕ) (i : ℕ) (q : ℝ) : ℝ :=
+noncomputable def V_full (Z N : ℕ) [HasHoefsmitData Z N] (i : ℕ) (q : ℝ) : ℝ :=
   w_sym q * lambda_sym Z N i q
   + w_std q * V_std Z N i q
   + w_alt q * lambda_alt Z N i q
 
 /-- The three-invariant Wedderburn binding term
     `α · Σᵢ ln |V̂ᵢ^full|` summed over the chosen NF generators. -/
-noncomputable def bindingTerm (Z N : ℕ) (q : ℝ) : ℝ :=
-  alpha_bind * ∑ i ∈ Finset.range numGenerators, Real.log |V_full Z N i q|
+noncomputable def bindingTerm (Z N : ℕ) [HasHoefsmitData Z N] (q : ℝ) : ℝ :=
+  alpha_bind *
+    ∑ i ∈ Finset.range (numGenerators Z N), Real.log |V_full Z N i q|
 
 /-- **Wedderburn neutral-atom mass.**
     `M(Z, N) = Z · m_p + N · m_n + Z · m_e
               + α · Σᵢ ln |V̂ᵢ^full|`. -/
-noncomputable def wedderburnMass (Z N : ℕ) (q : ℝ) : ℝ :=
+noncomputable def wedderburnMass (Z N : ℕ) [HasHoefsmitData Z N] (q : ℝ) : ℝ :=
   (Z : ℝ) * m_p + (N : ℝ) * m_n + (Z : ℝ) * m_e + bindingTerm Z N q
 
 /-! ## Theorems -/
@@ -203,7 +212,7 @@ noncomputable def wedderburnMass (Z N : ℕ) (q : ℝ) : ℝ :=
     contributions. -/
 -- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
 -- Ref: [wedderburn1908] https://doi.org/10.1112/plms/s2-6.1.77
-theorem wedderburnMass_split (Z N : ℕ) (q : ℝ) :
+theorem wedderburnMass_split (Z N : ℕ) [HasHoefsmitData Z N] (q : ℝ) :
     wedderburnMass Z N q
       = (Z : ℝ) * m_p + (N : ℝ) * m_n + (Z : ℝ) * m_e
         + bindingTerm Z N q := by
@@ -243,7 +252,8 @@ theorem wedderburn_weights_q_only (q₁ q₂ : ℝ) (hq : q₁ = q₂) :
     via `V_std`, `λ^sym`, `λ^alt` (opaque), so we can only state the
     rest-mass part as an algebraic identity. -/
 -- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
-theorem wedderburnMass_succ_Z (Z N : ℕ) (q : ℝ) :
+theorem wedderburnMass_succ_Z (Z N : ℕ)
+    [HasHoefsmitData Z N] [HasHoefsmitData (Z + 1) N] (q : ℝ) :
     wedderburnMass (Z + 1) N q - wedderburnMass Z N q
       = m_p + m_e
         + (bindingTerm (Z + 1) N q - bindingTerm Z N q) := by
@@ -255,7 +265,8 @@ theorem wedderburnMass_succ_Z (Z N : ℕ) (q : ℝ) :
     one neutron (with proton number fixed) increases the leading
     rest-mass term by `m_n`, plus the binding-term shift. -/
 -- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
-theorem wedderburnMass_succ_N (Z N : ℕ) (q : ℝ) :
+theorem wedderburnMass_succ_N (Z N : ℕ)
+    [HasHoefsmitData Z N] [HasHoefsmitData Z (N + 1)] (q : ℝ) :
     wedderburnMass Z (N + 1) q - wedderburnMass Z N q
       = m_n
         + (bindingTerm Z (N + 1) q - bindingTerm Z N q) := by

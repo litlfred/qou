@@ -40,12 +40,20 @@ structure ElectronShell where
       cabled algebra. -/
   bindingWord : BraidWord nStrandsTotal
 
-/-- Binding multiplicity `μ(S, q)` — cardinality of the active dual
-    support of the confinement SDP at `q`. `μ = 1` is the
-    single-block regime; `μ ≥ 2` is the multi-operator regime that
-    obtains at noble-gas `Z ∈ {2, 10, 18, 36, 54, 86}`. -/
+/-- Binding multiplicity data — class-supplied evaluation of
+    `μ(S, q)` (cardinality of the active dual support of the
+    confinement SDP at `q`). `μ = 1` is the single-block regime;
+    `μ ≥ 2` is the multi-operator regime that obtains at noble-gas
+    `Z ∈ {2, 10, 18, 36, 54, 86}`. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque bindingMultiplicity : ElectronShell → R_q → ℕ
+class HasBindingMultiplicity (S : ElectronShell) where
+  /-- The multiplicity `μ(S, q)`. -/
+  mu : R_q → ℕ
+
+/-- Binding multiplicity accessor, backed by `HasBindingMultiplicity`. -/
+def bindingMultiplicity (S : ElectronShell) [h : HasBindingMultiplicity S]
+    (q : R_q) : ℕ :=
+  h.mu q
 
 /-- The set of noble-gas electron magic numbers. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
@@ -62,7 +70,7 @@ def nobleGasMagic : Finset ℕ := ({2, 10, 18, 36, 54, 86} : Finset ℕ)
 -- Ref: [manuscript] braids-and-knots/electron-shell
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 class NobleGasMultiOperator
-    (S : ElectronShell) (q : R_q)
+    (S : ElectronShell) [HasBindingMultiplicity S] (q : R_q)
     (_h : S.nElectrons ∈ nobleGasMagic) : Prop where
   /-- Binding multiplicity at noble-gas `Z` is at least 2. -/
   multi : bindingMultiplicity S q ≥ 2
@@ -72,7 +80,7 @@ class NobleGasMultiOperator
 -- Ref: [manuscript] braids-and-knots/electron-shell
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem noble_gas_multi_operator
-    (S : ElectronShell) (q : R_q)
+    (S : ElectronShell) [HasBindingMultiplicity S] (q : R_q)
     (h : S.nElectrons ∈ nobleGasMagic)
     [hi : NobleGasMultiOperator S q h] :
     bindingMultiplicity S q ≥ 2 :=
