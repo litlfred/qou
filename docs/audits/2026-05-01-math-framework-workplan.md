@@ -161,6 +161,32 @@ and the witness JSON.
 The three forms remain in the paper as alternative views; no
 schema or content changes required.
 
+### P1.3b — **Follow-up**: Consolidate to canonical $w_\lambda$ + three named scalings
+
+- **W**: User question after P1.3a closure: "implications? can we
+  reduce complexity? solidify on one approach?" Answer:
+  three forms are scalings of one canonical
+  $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$. Each context picks the
+  natural form, but the underlying mathematics is one object.
+- **D**: New block `prop:wedderburn-weight-canonical` (in
+  `braids-and-knots/`) that:
+  1. Defines $w_\lambda$ as the canonical Wedderburn-block weight.
+  2. States the three named scaling identities:
+     $\beta_\lambda := -\tfrac12 w_\lambda$ (BW),
+     $C_\lambda := w_\lambda \cdot h/2$ (shadow-price),
+     $y_\lambda := (-1)^{\kappa_\lambda} w_\lambda$ (Wenzl).
+  3. Cites the three existing derivation blocks
+     (`hook-weight-derivation`, `bw-coefficient-shadow-price`,
+     `y-lambda-closed-form-wenzl-bridge`) as proofs of each scaling.
+  4. Refers to
+     [`bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+     for symbolic verification.
+- **B**: nothing.
+- **S**: existing derivation blocks update their `uses[]` to point
+  at `prop:wedderburn-weight-canonical`; ~50–100 lines of redundant
+  exposition removed; reader sees one object instead of three.
+- **E**: 1 day.
+
 ### P1.3a-historical — Follow-up flag (now resolved by P1.3a above)
 
 - **W**: User flag — the BW-8 / BW-11 coefficients have **three
