@@ -668,6 +668,16 @@ class ConvergenceBound (k : ℕ) (_hk : k ≥ 4) (C_q : ℝ) (_hC : C_q > 0)
   /-- The Kerov–Vershik O(1/(k-3)) bound. -/
   bound : |f_k - f_inf| ≤ C_q / (k - 3 : ℝ)
 
+/-- **Self-convergence (reflexivity)**: when `f_k = f_inf`, the
+    bound holds with LHS = 0. -/
+instance convergenceBound_refl (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
+    (f : ℝ) : ConvergenceBound k hk C_q hC f f := by
+  refine ⟨?_⟩
+  simp
+  have hk_real : (3 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk
+  have : ((k : ℝ) - 3) ≥ 0 := by linarith
+  positivity
+
 /-- Per-instance form. -/
 theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
     (f_k f_inf : ℝ)
@@ -703,6 +713,17 @@ class KnotInvariantConvergence (k : ℕ) (_hk : k ≥ 4)
     (a_k a_inf : ℝ) (C : ℝ) (_hC : C > 0) : Prop where
   /-- Knot-invariant level-k → ∞ rate. -/
   bound : |a_k - a_inf| ≤ C / (k - 3 : ℝ)
+
+/-- **Self-convergence (reflexivity)**: when `a_k = a_inf`, the
+    bound holds with LHS = 0. -/
+instance knotInvariantConvergence_refl (k : ℕ) (hk : k ≥ 4)
+    (a : ℝ) (C : ℝ) (hC : C > 0) :
+    KnotInvariantConvergence k hk a a C hC := by
+  refine ⟨?_⟩
+  simp
+  have hk_real : (3 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk
+  have : ((k : ℝ) - 3) ≥ 0 := by linarith
+  positivity
 
 /-- Per-instance form. -/
 theorem knot_invariant_convergence
