@@ -376,19 +376,32 @@ cross-check, not the primary derivation.
   expected $k$-truncation error.
 - **E**: 2 weeks.
 
-### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution
+### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 surveyed; partial
 
 - **W**: §3·E. Currently many scripts substitute $q_0$ early,
   producing 50-digit floats that read as "fitted".
-- **D**: Refactor every `*_witness.py` script to:
-  1. Compute the polynomial / rational expression in $\mathbb{Z}[q^{\pm 1}]$ first;
-  2. Substitute $q_0$ only at the final reporting step;
-  3. Emit both the symbolic $\mathbb{Q}(q)$ expression *and* the
-     numerical value in the witness JSON.
-- **B**: blocked by nothing; can run in parallel with P2.1–P2.4.
-- **S**: every witness JSON exposes a `polynomial_q` field
-  alongside the numerical value.
-- **E**: 1 week paper-wide (mechanical refactor).
+- **Scope refined** (per
+  [`2026-05-01-p2-5-symbolic-in-q-survey.md`](2026-05-01-p2-5-symbolic-in-q-survey.md)):
+  605 scripts total; 122 sympy-capable; **0** currently emit a
+  `polynomial_q` field. Original "1 week" estimate was too low.
+  Three tiers:
+  - **Tier A** — live mass-tower scripts (`crt_markov.py`,
+    `hecke_core.py`, `hecke_characters.py`, `mass_endomorphism.py`,
+    `tower_binding_full.py`, `shell_closure_compute.py`). Currently
+    purely mpmath. Direct sympy refactor hits polynomial explosion
+    at $A=4$ (per `tower_binding_symbolic.py`). **Blocked on
+    P2.2** (CRT polynomial reconstruction).
+  - **Tier B** — ~110 already-sympy-capable scripts that don't yet
+    emit `polynomial_q`. Mechanical refactor; ~1 day.
+  - **Tier C** — 107 purely-numerical scripts. Document as
+    "evaluation harness", no refactor needed.
+- **B**: Tier A blocked on P2.2; Tier B independent.
+- **S**: every Tier A/B witness exposes `polynomial_q`.
+- **E**: Tier B 1 day; Tier A multi-week after P2.2 lands.
+
+Reference example for the canonical late-substitution pattern:
+[`bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+(written for P1.3a).
 
 ### P2.6 — GS-filtration narrative — ✅ already landed
 
@@ -539,6 +552,7 @@ cross-check, not the primary derivation.
 | 2 | **P3.2** Pentagon $uv = q\,vu$ derivation | ✅ already landed in `prop:pentagon-uv-commutation` (4-step proof: far-commutativity reduction, eigenvalue specialisation, braid-relation pair-swap, transient-block restriction). Open extensions (std-block direct check, $R_q$ sharpness) folded into P3.3. |
 | 3 | **P2.6** GS-filtration narrative blocks | ✅ already landed: `prop:graded-trace-residue-split` (canonical $\mathrm{tr}_M = \mathrm{tr}_{\mathrm{gr}} + \mathrm{Res}_{\mathrm{GB}}$ split via symbol map) + `prop:gb-residue-spectral-sum` (symbolic feeding lemma; $R$-side; cohomological interpretation; strict-wall convergent $\mathbb{C}$-side via PL thimbles). |
 | 4 | **P1.3a** BW vs Wenzl-bridge vs shadow-price equivalence | ✅ landed (symbolic verification): all three forms are the same $w_\lambda$ scaled by explicit factors of $h$. Ratios BW/shadow $=-1/h$, BW/Wenzl $=-1/2$, shadow/Wenzl $=h/2$. Verified for $\lambda=(2,2)$ and $\lambda=(3,2,1)$. |
+| 5 | **P2.5** Symbolic-in-$q$ survey | 🟡 surveyed: 605 scripts, 122 sympy-capable, 0 emit `polynomial_q`. Tier A (live mass tower) blocked on P2.2 (CRT reconstruction). Tier B (~110 already-symbolic scripts) tractable. Memo `2026-05-01-p2-5-symbolic-in-q-survey.md`. |
 | 2 | **P2.5** Symbolic-in-$q$ refactor | Mechanical; makes witness JSONs less "fitted-looking" |
 | 3 | **P2.6** GS-filtration narrative blocks | Closes the largest opaque-axiom surface |
 | 4 | **P2.2** $H_{3A}$ Wedderburn coverage | Unblocks P1.4 (magic numbers 50/82/126) and P2.1 |
