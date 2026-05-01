@@ -147,6 +147,21 @@ class ScalarLPProjection (n : ℕ) [HasSDPBindingMultiplicity n]
   /-- Primal optimum agrees with the scalar LP optimum. -/
   agrees : primalOpt n = nTarget n * y0Star n
 
+/-- **`ScalarLPProjection` follows from strong duality.**
+    The identity `primalOpt = nTarget · y0Star` is exactly the
+    strong-duality statement, so any
+    `[HasConfinementSDPStrongDuality n hSlater]` discharges the
+    `agrees` field directly. The `bindingMultiplicity = 1`
+    hypothesis is the qualitative scope marker (the LP-collapse
+    regime); the algebraic content is the same. -/
+theorem scalarLPProjection_of_strongDuality (n : ℕ)
+    [HasSDPBindingMultiplicity n] [HasConfinementSDPData n]
+    (hSlater : slaterStrict n)
+    [HasConfinementSDPStrongDuality n hSlater]
+    (h : bindingMultiplicity n = 1) :
+    ScalarLPProjection n h :=
+  ⟨HasConfinementSDPStrongDuality.strong_duality⟩
+
 /-- **Scalar-LP projection — per-instance form.** -/
 theorem sdp_lp_projection (n : ℕ)
     [HasSDPBindingMultiplicity n] [HasConfinementSDPData n]
