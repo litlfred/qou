@@ -50,6 +50,17 @@ variable {K : Type u} [SurrealField K]
 noncomputable def polySurrealEval (p : ℝ[X]) (x : K) : K :=
   p.eval₂ (SurrealField.ofReal (K := K)) x
 
+/-- **Bridge to Mathlib's `Polynomial.aeval`.**  Given the canonical
+    `Algebra ℝ K` instance from `SurrealField.toAlgebra`, our
+    surreal-evaluation map agrees with the standard Mathlib
+    `aeval`.  This means every theorem about `aeval` immediately
+    transfers to `polySurrealEval`. -/
+theorem polySurrealEval_eq_aeval (p : ℝ[X]) (x : K) :
+    polySurrealEval p x = Polynomial.aeval x p := by
+  unfold polySurrealEval
+  rw [Polynomial.aeval_def]
+  rfl
+
 /-- `polySurrealEval` of the constant polynomial. -/
 @[simp]
 theorem polySurrealEval_C (c : ℝ) (x : K) :
