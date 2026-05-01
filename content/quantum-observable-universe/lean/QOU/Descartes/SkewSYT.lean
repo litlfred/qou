@@ -273,6 +273,52 @@ theorem skewSYTCount_empty (λ : Partition) :
 theorem skewSYTCount_nonneg (λ μ : Partition) :
     0 ≤ skewSYTCount λ μ := Nat.zero_le _
 
+/-! ### Partition cells: cardinality (proved theorem)
+
+`λ.cells.card = λ.size` follows directly from the disjoint
+biUnion structure of the cells definition. -/
+
+/-- The image `(Finset.range n).image (fun j => ⟨i, j⟩)` has
+    cardinality `n` — the map `j ↦ ⟨i, j⟩` is injective. -/
+private theorem cells_row_card_eq (i n : ℕ) :
+    ((Finset.range n).image (fun j => (⟨i, j⟩ : Cell))).card = n := by
+  rw [Finset.card_image_of_injective _ ?_]
+  · exact Finset.card_range _
+  · intro a b h
+    have := Cell.mk.injEq.mp h
+    exact this.2
+
+/-- Different-row cell-images are disjoint as Finsets. -/
+private theorem cells_rows_disjoint_pair
+    (λ : Partition) (i j : ℕ) (hne : i ≠ j) :
+    Disjoint
+      ((Finset.range (λ.part i)).image (fun k => (⟨i, k⟩ : Cell)))
+      ((Finset.range (λ.part j)).image (fun k => (⟨j, k⟩ : Cell))) := by
+  rw [Finset.disjoint_left]
+  intro c hci hcj
+  obtain ⟨a, _, rfl⟩ := Finset.mem_image.mp hci
+  obtain ⟨b, _, hb⟩ := Finset.mem_image.mp hcj
+  -- ⟨i, a⟩ = ⟨j, b⟩ contradicts i ≠ j
+  apply hne
+  exact (Cell.mk.injEq.mp hb).1
+
+/-- **Partition cells-count = size** — proved theorem. -/
+theorem Partition.cells_card_eq_size_proved (λ : Partition) :
+    λ.cells.card = λ.size := by
+  unfold Partition.cells Partition.size Partition.length Partition.part
+  rw [Finset.card_biUnion]
+  · -- ∑ i ∈ range parts.length, (image ...).card = parts.sum
+    -- Each summand simplifies to parts.getD i 0
+    have h_each : ∀ i ∈ Finset.range λ.parts.length,
+        ((Finset.range (λ.parts.getD i 0)).image (fun k => (⟨i, k⟩ : Cell))).card
+          = λ.parts.getD i 0 := fun i _ => cells_row_card_eq i _
+    rw [Finset.sum_congr rfl h_each]
+    -- ∑ i ∈ range parts.length, parts.getD i 0 = parts.sum
+    exact (QOU.MathlibExt.List.sum_eq_finsetSum_getD λ.parts 0).symm
+  · -- Pairwise disjointness across rows
+    intro i _ j _ hne
+    exact cells_rows_disjoint_pair λ i j hne
+
 /-! ### Partition helpers — typeclass (Pattern 4)
 
 The three Mathlib gaps below are general partition / Young-diagram
