@@ -203,19 +203,21 @@ the Markov-trace pipeline — only from vacuum drag.
 
 ### §2·G — Compound-shell / shell-closure calibration
 
-`compound-beta-shell-calibration.md` (the file name contains
-*calibration*). Inspection needed — listed in the workplan §P1.4.
+`compound-beta-shell-calibration.md`. Audited in
+[2026-05-01-p1-5-compound-shell-audit.md](2026-05-01-p1-5-compound-shell-audit.md).
 
 | ID | Status |
 |----|--------|
-| **SHELL-1** | 🟠 Block name self-reports as a calibration. If shell coefficients in compound-β are fitted to AME mass differences, the AME data is being used as a derivation input — borderline empirical leak |
+| **SHELL-1** | 🟢 The "calibration" in the block name is the $H^2$ calibration $E_0 = Q_\beta = 0.782$ MeV — the third entry of [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). Shell binding values are *derived* from chain Q-values + level-3 shadow prices, not fitted. Block language updated to reference the three-calibration discipline; no fourth calibration introduced. |
 
-### §2·H — `compound-` / `recursive-atom-knot-atlas` parameters
+### §2·H — `recursive-atom-knot-atlas` parameters
 
-The atlas (`recursive-atom-knot-atlas.md`) claims compositional
-recursion across A. If the recursion's base cases are AME-fitted
-rather than algebraically derived, the recursion *propagates* a
-fit. To verify in §P1.5.
+🟢 Audited (P1.5). The atlas already self-quarantines volume-match
+identifications under a `deprecated-volume-match` tag and splits
+its table into `principled-derivation` / `principled-gb-nf` /
+`magic-A-formula` / `recursive-on-⁴He` / `manual-historical-volume-match`
+sections. **No action needed.** See
+[2026-05-01-p1-5-compound-shell-audit.md](2026-05-01-p1-5-compound-shell-audit.md).
 
 ---
 
@@ -370,7 +372,7 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 | 🟢 Proved / clean links in cat-action → Hecke-energy chain | 14 of 19 | links 1–5, 7, 9–13, 15–17, 19 |
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
 | 🔴 Wall-risk blocks | 1 of 19 | link 8 (JSJ algebraic reformulation) |
-| Empirical / fitting flags identified | 5 | BW-8, BW-11, MAG-1, ALPHA-2, SHELL-1 (CAL-0/1/2 are declared three-calibration inputs per §2·A; SUB-1 is the $H^1$ calibration; NU-1 withdrawn — neutrino = unknot, see §2·F) |
+| Empirical / fitting flags identified | 4 | BW-8, BW-11, MAG-1, ALPHA-2 (CAL-0/1/2 are declared three-calibration inputs per §2·A; SUB-1 is the $H^1$ calibration; NU-1 withdrawn — neutrino = unknot, see §2·F; SHELL-1 cleared by P1.5 audit) |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 

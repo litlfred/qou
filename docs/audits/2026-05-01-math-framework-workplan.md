@@ -138,19 +138,20 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 - **E**: 1 week (genuinely new content; may end up as a
   conjecture if the period-lattice path is too thin).
 
-### P1.5 — Compound-shell / atom-knot atlas — verify base cases are not AME-fitted
+### P1.5 — Compound-shell / atom-knot atlas — verify base cases are not AME-fitted — ✅ landed
 
 - **W**: SHELL-1, §2·H. The block name `compound-beta-shell-calibration`
   self-reports as a calibration; the recursive atlas's base cases
   must be derived, not fitted.
-- **D**: Per-block audit of `compound-beta-shell-calibration.md`,
-  `recursive-atom-knot-atlas.md`, `derived-mass-formula-light-isotopes.md`
-  to verify no base case is a least-squares fit to AME data.
-- **B**: blocked by nothing.
-- **S**: every base case is a $\mathbb{Q}(q)$-element from a
-  Wedderburn / Hecke / GS computation; no `curve_fit`,
-  `least_squares`, or "AME-anchored" parameter.
-- **E**: 1 day.
+- **D**: ✅ Per-block audit completed in
+  [`2026-05-01-p1-5-compound-shell-audit.md`](2026-05-01-p1-5-compound-shell-audit.md).
+  All three suspect blocks are structurally clean:
+  - `compound-beta-shell-calibration.md`: "calibration" is $E_0 = Q_\beta$, the $H^2$ entry of the three-calibration discipline; shell binding is derived from chain Q-values + level-3 shadow prices.
+  - `recursive-atom-knot-atlas.md`: already self-quarantines volume-match identifications under a strict 6-tag methodology classification.
+  - `derived-mass-formula-light-isotopes.md`: every term declared derived; the empirical scorecard is a *test*, not a fit.
+- **B**: nothing.
+- **S**: ✅ no base case is a least-squares fit; SHELL-1 cleared.
+- **E**: 1 day → done.
 
 ### P1.6 — Neutrino: unknot consistency sweep (was: "demote or fix")
 
