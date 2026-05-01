@@ -189,35 +189,23 @@ to specific Lean 4 / Mathlib `deriving` machinery in this paper-
 internal module.
 -/
 
-/-! ### Mathlib bridge contract (for future wiring) -/
+/-! ### Mathlib bridge — wired in `QOU.BraidKnot.MathlibBridge`
 
-/-- **Bridge specification (forward only — not yet wired).**
+Concrete bridge `fromMathlib : Mathlib.YoungDiagram → YoungDiagram`
+is supplied by the sibling module `QOU.BraidKnot.MathlibBridge`,
+which imports `Mathlib.Combinatorics.Young.YoungDiagram` and
+constructs the abstract Multiset of cell contents from the Mathlib
+cell set. With that bridge in place, the abstract proved theorems
+(`kappa_conjugate`, `kappa_zero_of_self_conjugate`,
+`kappa_unionDiagram`, …) lift to Mathlib Young diagrams, and the
+reverse direction `kappa = 0 → self-conjugate` becomes provable
+in the Young-lattice setting (recorded there as `ReverseBridge`,
+deferred to a Phase 3 follow-up).
 
-    Once `Mathlib.Combinatorics.Young.YoungDiagram` is added to the
-    QOU Lake build, a concrete bridge
-
-      `fromMathlib : Mathlib.YoungDiagram → QOU.YoungDiagram`
-
-    will be supplied. The construction is unambiguous: take the cell
-    set of the Mathlib diagram, map each cell `(i, j)` to its
-    Jucys–Murphy content `j - i : ℤ`, and assemble the resulting
-    multiset. The data field `n` is the cardinality of the cell set.
-
-    With this bridge in place, the reverse direction
-    `KappaZeroImpliesSelfConjugate` becomes provable for the image of
-    `fromMathlib`: the Frobenius-coordinate bijection between
-    self-conjugate partitions of `n` and partitions of `n` into
-    distinct odd parts forces `κ_λ = 0` to coincide with
-    self-conjugacy on Mathlib diagrams. The abstract Multiset model
-    used here cannot prove this — it would be false on general
-    multisets like `{1, 2, -3}` which sum to zero without being
-    multiset-self-symmetric.
-
-    The bridge is exposed as an opaque function `mathlibBridge` so
-    downstream consumers can refer to it; the concrete definition is
-    deferred. -/
-opaque mathlibBridge : Type
-  -- placeholder for `Mathlib.Combinatorics.Young.YoungDiagram → YoungDiagram`
+The abstract Multiset model alone cannot discharge the reverse
+direction: a counter-example is `{1, 2, -3}`, a multiset of integers
+summing to zero that is not multiset-symmetric.
+-/
 
 /-! ## §2  Saturation predicate (locality-free reading) -/
 

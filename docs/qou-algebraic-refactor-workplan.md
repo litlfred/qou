@@ -134,18 +134,37 @@ only when:
   $[3]_q/[2]_q$). The `rem:phi-n-global-section` block stands as
   the standalone global-section codification — no sweep needed.
 
+## Phase 2.5 — Mathlib bridge wired
+
+- ✅ Mathlib `YoungDiagram` is now wired into the QOU Lake build
+  via [`QOU/BraidKnot/MathlibBridge.lean`](../content/quantum-observable-universe/lean/QOU/BraidKnot/MathlibBridge.lean).
+  - `fromMathlib : Mathlib.YoungDiagram → QOU.YoungDiagram` is a
+    concrete definition (no axioms): take the multiset of cell
+    contents `j - i` from `Y.cells.val`.
+  - `fromMathlib_kappa_zero_of_transpose_eq` is **proved**
+    (conditional on `[TransposeBridge]`, a typeclass field
+    asserting `Y.transpose = Y → isSelfConjugate (fromMathlib Y)`).
+  - The `[TransposeBridge]` field is a small bridge fact
+    (Mathlib's `YoungDiagram.transpose_cells` lemma + `Multiset.map`
+    symmetry); kept as a typeclass field so the present paper does
+    not commit to a specific Mathlib API name pattern.
+  - The reverse-direction bridge (`ReverseBridge`) is the
+    Frobenius-coordinate bijection — kept as a typeclass field;
+    Phase 3 follow-up.
+
 ## Phase 3 — still deferred
 
-- Wire `Mathlib.Combinatorics.Young.YoungDiagram` into the QOU
-  Lake build to formalise content additivity from a concrete
-  Young-diagram model (rather than the abstract `Multiset ℤ`
-  shadow used here).
+- Discharge `TransposeBridge` directly inside `MathlibBridge.lean`
+  using Mathlib's `YoungDiagram.transpose_cells` lemma and
+  `Multiset` rewriting (small, ~5–10 lines once the lemma name is
+  confirmed against the pinned Mathlib commit).
+- Discharge `ReverseBridge` via the Frobenius-coordinate bijection
+  between self-conjugate partitions of $n$ and partitions of $n$
+  into distinct odd parts — finishes the
+  `KappaZeroImpliesSelfConjugate` story for Mathlib YoungDiagrams.
 - Numerical LR-coefficient verification at $k \leq 10$ to test
   dominance of the predicted self-conjugate $\lambda_A$ in
-  `double-magic-witnesses.json`.
-- Closed-form proof of `KappaZeroImpliesSelfConjugate` — likely via
-  the Frobenius-coordinate bijection between self-conjugate
-  partitions of $n$ and partitions of $n$ into distinct odd parts.
+  `double-magic-witnesses.json` (fills the `null` row vectors).
 
 ## Citations to register
 
