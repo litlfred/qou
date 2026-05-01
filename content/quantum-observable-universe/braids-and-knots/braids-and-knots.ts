@@ -427,6 +427,7 @@ export default chapter({
         "wigner-np-pairing",
         "unified-iterative-correction",
         "knot-factor-frobenius-pairing",
+        "wedderburn-weight-canonical",
         "hook-weight-derivation",
         "wigner-coefficient-derivation",
         "bw-coefficient-shadow-price",
