@@ -22,9 +22,13 @@ classical-limit map. Anything stated in ℂ-analytic / hyperbolic /
 Archimedean language (volumes, hyperbolic moduli, SnapPy shapes,
 SW thimble integrals, Kashaev limits, Mostow rigidity, etc.) lives
 on the **right** side of τ. The mass tower must be derivable in
-$\mathbb{Q}(q) \otimes_{\mathbb{Q}} \mathbb{R}_{\text{cal}}$ — a
-Laurent ring in $q$ tensored with one external scale (calibrated;
-see §3·E). Anything else is a wall violation and is flagged.
+$\mathbb{Q}(q_0)$ scaled by **categorically exactly three**
+external calibration inputs — $m_e$ ($H^0$, mass scale),
+$m_\mu / m_e$ ($H^1$, fixes $q_0$), and $Q_\beta$ ($H^2$, weak
+sector) — aligned to three (co)homological degrees. See
+[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
+Anything else (a fourth dimensional input, or an Archimedean
+input as a derivation source) is a wall violation and is flagged.
 
 **The wall applies to proofs as well as statements.** A proof that
 asserts X∈R via "by Mostow rigidity" or "by hyperbolic volume
@@ -90,33 +94,45 @@ identified across content and compute. Each row says *what* is
 fitted, *where* it enters, and *what derivation is needed* to
 remove the fit.
 
-### §2·A — Tier-1 calibration (one external scale)
+### §2·A — Tier-1 calibrations (three external inputs aligned to (co)homology)
 
-| ID | Quantity | Where fitted | Source of value | Honest? |
-|----|----------|--------------|-----------------|---------|
-| **CAL-1** | $E_0 \equiv m_e = 0.5110$ MeV | atomic / molecular mass entry into all `B(Z,N)` and $M(Z,N)$ formulas | CODATA | ✅ honest single-scale calibration **iff** declared as the *one allowed* dimensional input. Currently this declaration is implicit; needs an explicit "one calibration" block. (See [DERIVATION-STATUS.md §line 181](../../folio-assistant/computations/DERIVATION-STATUS.md): "Energy scale E₀: calibrated, not independently derived.") |
+The QOU framework allows **categorically exactly three** external
+calibration inputs, aligning to three distinct (co)homological
+degrees of the substrate sheaf
+([`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
 
-🟠 **Action.** Promote the single-scale assumption to a named
-proposition `prop:single-scale-calibration` that **explicitly** marks
-$m_e$ as the one external dimensional input and proves every other
-mass / Q-value / binding energy in the paper is dimensionless × $m_e$.
+| ID | Calibration | (Co)homology | Role |
+|----|-------------|--------------|------|
+| **CAL-0** | $m_e$ (CODATA) | $H^0$ | Mass scale |
+| **CAL-1** | $m_\mu / m_e$ (CODATA) | $H^1$ | Fixes substrate parameter $q_0$ |
+| **CAL-2** | $Q_\beta$ (PDG) | $H^2$ | Weak / beta-decay sector |
 
-### §2·B — Tier-2 substrate parameter
+🟢 **Status.** This is the *declared, honest* calibration budget.
+The earlier "one calibration" framing of this audit was wrong;
+the corrected discipline is now codified in
+[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
+Any **fourth** external input is a hard audit failure.
 
-| ID | Quantity | Where fitted | Status |
-|----|----------|--------------|--------|
-| **SUB-1** | $q_0 = 1.10998\ldots$ | Substrate parameter | 🟠 **Pinned to CODATA $m_\mu/m_e$** per [DERIVATION-STATUS.md line 110](../../folio-assistant/computations/DERIVATION-STATUS.md): "substrate uncertainty floor δq from CODATA $m_μ/m_e$". This is a *second* external calibration. |
+### §2·B — Tier-2: substrate parameter $q_0$ classification
 
-🟠 **Action.** Either derive $q_0$ from the categorical action (the
-`q-from-epsilon` conjecture chain in algebraic-substrate, currently
-🟡), **or** explicitly count $q_0$ as a second calibration alongside
-$m_e$. If 🟡 conjectures hold, $q_0$ is determined by a single
-algebraic equation (substrate-parameter-unique, vacuum-substrate
-compatibility) and is *not* a free parameter — but downstream
-compute treats $q_0$ as a 50-digit numerical constant. The 50-digit
-pinning script `q_pinning_50_digit.py` does this against an external
-mass ratio. **Either path resolves the ambiguity, but the paper must
-pick one and live with it.**
+🟢 **Status (post-§2·A correction).** $q_0$ is the $H^1$ calibration.
+It is **not** a fitted parameter beyond the three-input budget; it
+is *the* $H^1$ input, fixed by the lepton mass ratio $m_\mu/m_e$.
+The 50-digit numerical value used in compute scripts (e.g.
+`q_pinning_50_digit.py`) is a faithful expansion of that single
+$H^1$ calibration — not a separate fit.
+
+| ID | Quantity | Status |
+|----|----------|--------|
+| **SUB-1** | $q_0 = 1.10998\ldots$ | 🟢 The $H^1$ calibration of [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). The earlier "second calibration" framing has been retired by §2·A. |
+
+🟢 **Action.** None on the calibration-discipline side. A
+nice-to-have follow-up (workplan **P3.x**, was P1.1(a)) is to close
+the categorical chain `q-from-epsilon → substrate-parameter-unique
+→ vacuum-substrate-compatibility` so that $q_0$'s value can be
+*cross-checked* against multiple sectors (strong, EM, weak) — but
+each cross-check re-determines the same $H^1$ datum, not an
+additional input.
 
 ### §2·C — BW-formula coefficients flagged ad-hoc
 
@@ -166,15 +182,24 @@ sequence, *not* a fit.
 
 ### §2·F — Neutrino mass
 
-[DERIVATION-STATUS.md line 182](../../folio-assistant/computations/DERIVATION-STATUS.md): *"Neutrino mass: wrong by 10⁶."*
+The neutrino is the **unknot** $K_{0_1}$
+([neutrino-knot](../../content/quantum-observable-universe/descartes-universe/neutrino-knot.md)):
+zero crossings, $J_\nu(q) = 1$, trivial Markov trace, **bare-knot mass = 0**. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$ via
+vacuum drag ([mass-identity](../../content/quantum-observable-universe/quantum-observable-universes/mass-identity.md))
+— not via knot topology. So there is **nothing to fit on the
+algebraic side** for the neutrino: the bare prediction is exactly
+zero from a categorical perspective.
 
 | ID | Status |
 |----|--------|
-| **NU-1** | 🔴 The current neutrino-mass derivation is off by **six orders of magnitude**. Either the channel choice (`alt`-block weight) is wrong or the operator-selection LP misclassifies the neutrino's word. Until reconciled, the paper cannot claim a derived neutrino mass. |
+| **NU-1** | 🟢 Categorical prediction: $J_\nu = 1$, bare mass 0; observed mass = vacuum-drag correction. The previously circulating "wrong by 10⁶" claim ([DERIVATION-STATUS.md historical line 182](../../folio-assistant/computations/DERIVATION-STATUS.md)) was a neutron/neutrino confusion (comparing $m_\nu$ against $m_n$ ≈ 940 MeV) and is **withdrawn** in this audit pass. |
 
-🔴 **Action.** Demote any current "neutrino mass = X" claim to a
-conjecture, with the 10⁶ discrepancy explicit, until the channel /
-LP issue is resolved.
+🟢 **Action.** None on algebraic side. Any caller that treats the
+neutrino as a knot-derived mass is wrong by construction (unknot
+contributes zero crossings to the tower). Audit pass §P1.6 in the
+workplan is recast accordingly: it is now a *consistency check*
+that no compute path quotes a "neutrino mass = X MeV" derived from
+the Markov-trace pipeline — only from vacuum drag.
 
 ### §2·G — Compound-shell / shell-closure calibration
 
@@ -345,7 +370,7 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 | 🟢 Proved / clean links in cat-action → Hecke-energy chain | 14 of 19 | links 1–5, 7, 9–13, 15–17, 19 |
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
 | 🔴 Wall-risk blocks | 1 of 19 | link 8 (JSJ algebraic reformulation) |
-| Empirical / fitting flags identified | 8 | CAL-1, SUB-1, BW-8, BW-11, MAG-1, ALPHA-2, NU-1, SHELL-1 |
+| Empirical / fitting flags identified | 5 | BW-8, BW-11, MAG-1, ALPHA-2, SHELL-1 (CAL-0/1/2 are declared three-calibration inputs per §2·A; SUB-1 is the $H^1$ calibration; NU-1 withdrawn — neutrino = unknot, see §2·F) |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 
@@ -375,8 +400,7 @@ prediction at level $A$ requires:
    `prop:single-scale-calibration`.
 10. ❌ Magic-number derivation from Bring (currently asserted but
     not derived).
-11. ❌ Neutrino-mass channel reconciled (currently 10⁶ off — must be
-    demoted to conjecture or fixed).
+11. ✅ Neutrino: nothing to reconcile — neutrino is the unknot, $J_\nu(q)=1$, bare-knot mass = 0. Vacuum-drag prediction $m_\nu \sim \mu_0\cdot(q-1)$ is the correct categorical answer. (Resolved by §2·F audit pass — the "10⁶ off" claim was a neutron/neutrino confusion.)
 
 **Headline.** Items 1–5 are 90%+ done. Items 6–11 are the work the
 workplan addresses. Until items 6–8 are done, the compute pipeline

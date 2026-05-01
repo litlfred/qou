@@ -19,6 +19,7 @@ export default chapter({
       blocks: [
         "observations-intro",
         "substrate-consistency-window",
+        "three-calibration-discipline",
       ],
     }),
 
