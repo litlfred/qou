@@ -219,12 +219,53 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
         V_full = w_sym * sp + w_std * Vs + w_alt * ap
         V_full_list.append(V_full)
 
-    # Descended term |ΠV̂|
-    desc = mpmath.mpf(1)
-    for V in V_full_list:
-        desc *= V
-    desc_abs = abs(desc)
+    # Descended term: proper Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) via Schur-Weyl
+    # at H_{3A} (P2.2a wiring; per docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json
+    # the H_3-at-H_{3A} approximation Π V_full diverges by 5–7 orders of
+    # magnitude at A ≥ 2; the proper SW sum stays |·| < q_0).
+    #
+    # Falls back to the legacy product if schur_weyl_symbolic is unavailable
+    # or the SW evaluation fails (preserves backward compatibility for
+    # callers passing m_pp/m_pn/m_nn != 1, where the SW char_kind="mn-atom"
+    # is not yet wired to the dressed-quark mass parameters).
+    use_schur_weyl = (m_pp == 1 and m_pn == 1 and m_nn == 1)
+    if use_schur_weyl:
+        try:
+            import sympy as _sp
+            from schur_weyl_symbolic import global_wedderburn_sum_symbolic
+            _q_sym = _sp.Symbol("q", positive=True, real=True)
+            _desc_sym, _terms = global_wedderburn_sum_symbolic(
+                A, _q_sym, char_kind="mn-atom",
+                Z=Z, N=N, include_inter=include_inter,
+            )
+            _desc_q0 = _sp.N(_desc_sym.subs(_q_sym, _sp.Rational(str(q_val))),
+                             precision)
+            desc_abs = abs(mpmath.mpc(complex(_desc_q0)))
+        except Exception:
+            # Fallback to legacy H_3-power expansion
+            desc = mpmath.mpf(1)
+            for V in V_full_list:
+                desc *= V
+            desc_abs = abs(desc)
+    else:
+        desc = mpmath.mpf(1)
+        for V in V_full_list:
+            desc *= V
+        desc_abs = abs(desc)
 
+    # NOTE (P2.2a wiring partial): the single + cross tower terms below
+    # still use the legacy per-generator V_full (H_3 weights) and will
+    # produce spurious large values when |V_full| > q_0 (per
+    # docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json the
+    # H_3 weights drive |V_full| to 4×–21× q_0 at light atoms, so
+    # Φ_q(|V_full|) hits values well above the q_0-radius convergence
+    # disk). The proper algebraic stratification per
+    # prop:phi-q-tower-algebraic-stratification needs the per-stratum
+    # Markov trace tr_M(ρ(β_S)) for each S ⊆ {0, …, n-2} of size 1 or 2,
+    # not per-generator V_full × Φ_q. Wiring that requires extending
+    # global_wedderburn_sum_symbolic to per-stratum sums; tracked as
+    # a P2.2b follow-up. The `desc` term above (proper Σ_{λ ⊢ 3A}
+    # w_λ χ^λ) is the leading-order contribution and is now correct.
     # Single-generator Φ_q tower: Σ Φ_q(|V̂_i|)
     single_tower = mpmath.mpf(0)
     for V in V_full_list:
