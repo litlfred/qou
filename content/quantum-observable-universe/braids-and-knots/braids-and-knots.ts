@@ -438,6 +438,8 @@ export default chapter({
         "per-braid-mass-tower",
         "schur-weyl-mass-decomposition",
         "gb-residue-spectral-sum",
+        "graded-markov-trace-from-gs-filtration",
+        "residue-at-root-from-gs-filtration",
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",

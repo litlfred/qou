@@ -6,6 +6,8 @@ import QOU.BraidKnot.LevelSufficiency
 import QOU.BraidKnot.ShellClosureStability
 import QOU.BraidKnot.ConfinementPhaseStratification
 import QOU.BraidKnot.ThreeCalibrationInputs
+import QOU.BraidKnot.GradedMarkovTraceFromGSFiltration
+import QOU.BraidKnot.ResidueAtRootFromGSFiltration
 
 /-!
 # BraidKnot — Module Index
