@@ -3,6 +3,22 @@
 **Branch**: `claude/tier3-math-audit-B0wyO`
 **Parent**: `claude/audit-math-framework-FXlp2` (PR
 [#498](https://github.com/litlfred/qou/pull/498))
+
+**Related PR — to integrate**: [#500](https://github.com/litlfred/qou/pull/500)
+(`claude/qou-algebraic-refactor-1qVFc`) plans three conjecture
+triples that directly address audit **MAG-1** (magic numbers from
+Bring → BB filtration / homological condensation):
+`conj:categorical-neutrality-saturated-shells`,
+`conj:homological-shell-condensation`,
+`conj:diagrammatic-double-magic-lr-fusion`. When the content lands:
+- `rem:phi-n-global-section` and `rem:k12-barrier-bypass` should
+  carry `interprets:` to the relevant `conj:` / `prop:` but
+  **must not** list a `conj:*` in `uses[]` — else the bridge cleanup
+  performed on this branch is undone (re-introduces propagation
+  through interpretive remarks, inflating cones).
+- Audit MAG-1 can then be reclassified 🟠 → 🟡 (honest conjecture
+  with concrete homological framework, awaiting Phase 2 numerical
+  witnesses on $\{50, 82, 126\}$).
 **Workplan reference**:
 [`2026-05-01-math-framework-workplan.md`](2026-05-01-math-framework-workplan.md)
 §P3.
