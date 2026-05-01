@@ -202,71 +202,74 @@ def _build_alpha_k(k: int) -> DerivationChain:
         3: "Jet-prefix / chirality-knot stratum (e.g. 6_1)",
     }[k]
     rk_description = {
-        0: "r_0 = 1 (constant class function; depth-0 representative)",
-        1: "r_1 = σ_1 (rank-1 generator)",
-        2: "r_2 = σ_1·σ_2 + σ_2·σ_1 − (σ_1 + σ_2) (rank-2 commutator-like; depth-1 vanishing)",
-        3: ("r_3 = (a length-3 alternating word in σ_1, σ_2 chosen so χ_λ(r_3) = 0 "
-            "for the trivial and sign reps, leaving only the standard 2-dim rep contribution)"),
+        0: "r_0 = 1 (the unit; α_0 = tr_M(1) = 1 directly).",
+        1: ("r_1 = σ_1 − σ_2 (rank-1 antisymmetric combination; "
+            "tr_M(σ_1) = tr_M(σ_2) = z by Markov-trace cyclicity, so "
+            "tr_M(r_1) = 0 cleanly extracts the rank-1 residue α_1 = 0)."),
+        2: ("r_2 = (σ_1·σ_2 + σ_2·σ_1) / 2 (rank-2 symmetric pair; both "
+            "terms equal z² by Markov cyclicity, giving tr_M(r_2) = z² = α_2)."),
+        3: ("r_3 = σ_1·σ_2·σ_1 (the longest alternating word in B_3; "
+            "tr_M(r_3) = h·z² + z under the Markov-trace pairing, giving α_3)."),
     }[k]
     derivation_explanation = {
         0: (
-            "α_0 pairs y_λ against the constant 1 via χ_λ(1) = dim_q(λ).  "
-            "Markov normalisation tr_M(1) = 1 gives Σ_λ y_λ · dim_q(λ) = 1, "
-            "so α_0 = 1 by definition."
+            "α_0 is the Markov normalisation: tr_M(1) = 1 by axiom, and "
+            "with r_0 = 1 the Wedderburn pairing reduces to "
+            "Σ_λ y_λ·dim_q(λ) = 1, so α_0 = 1."
         ),
         1: (
-            "α_1 pairs y_λ against σ_1 in the rank-1 stratum.  The "
-            "Markov property gives tr_M(σ_1) = z·tr_M(1) = z, an "
-            "expected-value fully accounted for by the depth-0 piece "
-            "α_0·z·dim_q(λ).  Subtracting that depth-0 expectation from "
-            "tr_M(σ_1) leaves tr_M(σ_1) − z·tr_M(1) = 0, so the rank-1 "
-            "residue α_1 vanishes exactly."
+            "α_1 = tr_M(σ_1 − σ_2).  Markov-trace cyclicity makes σ_1 "
+            "and σ_2 conjugate via the braid relation, so "
+            "tr_M(σ_1) = tr_M(σ_2) = z.  Hence tr_M(r_1) = z − z = 0, "
+            "and the rank-1 residue α_1 vanishes exactly."
         ),
         2: (
-            "α_2 = tr_M(σ_1·σ_2) projected onto the rank-2 curvature stratum.  "
-            "By Markov stabilisation, tr_M(σ_1·σ_2) = z · tr_M(σ_1) = z² "
-            "(stabilising twice).  Subtracting the depth-≤1 contributions "
-            "(which vanish on r_2 by construction) leaves α_2 = z²."
+            "α_2 = ½·tr_M(σ_1·σ_2 + σ_2·σ_1).  By Markov stabilisation "
+            "(applied twice), tr_M(σ_1·σ_2) = z·tr_M(σ_2) = z²; the same "
+            "for σ_2·σ_1.  Averaging the two gives α_2 = z²."
         ),
         3: (
-            "α_3 = ⟨y_λ, χ_λ(r_3)⟩ on the depth-3 stratum.  Substituting the "
-            "explicit y_(2,1) and χ_(2,1)(r_3) and using h = q − q⁻¹ "
-            "(Hecke amplitude in the standard 2-dim rep) gives "
-            "α_3 = h·z² + z, an algebraic identity in the substrate constants."
+            "α_3 = tr_M(σ_1·σ_2·σ_1).  Decompose σ_1·σ_2·σ_1 in the "
+            "Hecke algebra: σ_1·σ_2·σ_1 = σ_2·σ_1·σ_2 (braid relation), "
+            "and using σ_i² = h·σ_i + 1 (Hecke quadratic, h = q − q⁻¹) "
+            "plus Markov stabilisation, the trace evaluates as "
+            "h·z² + z.  This is the depth-3 alternating-word stratum."
         ),
     }[k]
 
     steps: list[DerivationStep] = list(_common_axiom_steps())
 
-    # Step 5: define r_k
+    # Step 5: define r_k as a concrete word/combination in σ_1, σ_2
     steps.append(DerivationStep(
-        name=f"Wedderburn-orthogonal class function r_{k}",
+        name=f"Depth-{k} word representative r_{k}",
         operation=(
-            f"Choose r_{k} as a class function on H_3(R, q) such that "
-            f"χ_λ(r_{k}) = 0 for every irrep λ of depth < {k}.  "
-            f"Concrete representative: {rk_description}."
+            f"Choose r_{k} as a canonical word (or linear combination) "
+            "in the braid generators σ_1, σ_2 such that the Markov "
+            f"trace tr_M(r_{k}) directly extracts the depth-{k} "
+            f"prefactor α_{k}.  Concrete choice: {rk_description}"
         ),
         inputs=["irreps_h3"],
         output_name=f"r_{k}",
         output_value=rk_description,
         trust_basis=TrustBasis.DERIVED,
-        lean_ref=f"qou:STUB:WedderburnClassFunctionR{k}",
+        lean_ref=f"qou:STUB:DepthKWord.r_{k}_h3",
         jet_order=0,
         gb_filtration_level=k,
     ))
 
-    # Step 6: pairing α_k = Σ y_λ · χ_λ(r_k)
+    # Step 6: pairing α_k := tr_M(r_k) = Σ y_λ · χ_λ(r_k)
     steps.append(DerivationStep(
-        name=f"Pairing α_{k} := Σ y_λ · χ_λ(r_{k})",
+        name=f"Definition α_{k} := tr_M(r_{k})",
         operation=(
-            f"Define α_{k} as the Wedderburn pairing of the Jones–Markov "
-            f"weights against the depth-{k} representative r_{k}.  By the "
-            "uniqueness of y_λ (step 4) and the depth-< k vanishing of "
-            f"χ_λ(r_{k}) (step 5), the sum collapses onto the Λ_{k} stratum."
+            f"Define α_{k} as the Markov trace of r_{k}.  Expanded via "
+            "the Wedderburn block decomposition (step 3), this is "
+            f"α_{k} = Σ_{{λ ⊢ 3}} y_λ · χ_λ(r_{k}).  This is the "
+            f"algebraic definition; the depth-{k} interpretation comes "
+            "from the canonical word choice in step 5."
         ),
         inputs=["y_lambda", f"r_{k}"],
         output_name=f"alpha_{k}_def",
-        output_value=f"α_{k} = Σ_{{λ ∈ Λ_{k}}}  y_λ · χ_λ(r_{k})",
+        output_value=f"α_{k} = tr_M(r_{k}) = Σ_{{λ ⊢ 3}} y_λ · χ_λ(r_{k})",
         trust_basis=TrustBasis.DERIVED,
         lean_ref=f"qou:STUB:AlphaKPairingH3.alpha_{k}",
         jet_order=0,
