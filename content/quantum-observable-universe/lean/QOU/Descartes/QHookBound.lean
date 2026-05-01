@@ -308,6 +308,110 @@ instance qIntRatioBoundSmall_three (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
   rw [hcoerce]
   linarith
 
+/-- **Default instance for `m = 4`** — proved directly via the
+    `s = q + q⁻¹` substitution.
+
+    Setting `s := q + q⁻¹`, we have:
+    - `[4]_q = q³ + q + q⁻¹ + q⁻³ = s(s² − 2)`
+    - `(q − q⁻¹)² = s² − 4`
+    - `[4]_q/4 − 1 = (s³ − 2s − 4)/4 = (s − 2)(s² + 2s + 2)/4`
+
+    The bound `(s − 2)(s² + 2s + 2)/4 ≤ 4(s² − 4)/6` cross-
+    multiplies to `3(s − 2)(s² + 2s + 2) ≤ 8(s − 2)(s + 2)`, i.e.
+    `(s − 2)(3s² − 2s − 10) ≤ 0`. For `s ∈ (2, 13/6]` (the image
+    of `q ∈ (1, 3/2)`), `(s − 2) ≥ 0` and `3s² − 2s − 10 ≤ 0` (the
+    larger root of `3s² − 2s − 10` is `(1 + √31)/3 ≈ 2.19 > 13/6`),
+    so the product is non-positive. -/
+instance qIntRatioBoundSmall_four (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
+    (h1 : 1 ≤ 4) (h4 : 4 ≤ 4) :
+    QIntRatioBoundSmall q hq hq2 4 h1 h4 := by
+  refine ⟨?_⟩
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_pos : q > 0 := by linarith
+  have hq_ne : q ≠ 0 := ne_of_gt hq_pos
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+  -- [4]_q = q³ + q + q⁻¹ + q⁻³
+  have h_eq : qIntReal q 4 = q^3 + q + q⁻¹ + (q⁻¹)^3 := by
+    unfold qIntReal
+    rw [if_neg hq_ne_one]
+    field_simp
+    ring
+  rw [h_eq]
+  have hcoerce4 : ((4 : ℕ) : ℝ) = 4 := by norm_num
+  rw [hcoerce4]
+  -- For q > 1: (q + q⁻¹ - 2) ≥ 0 with equality iff q = 1
+  have h_amgm : q + q⁻¹ - 2 ≥ 0 := by
+    have : q + q⁻¹ - 2 = (q - 1)^2 / q := by field_simp; ring
+    rw [this]; positivity
+  -- Bounds on q⁻¹ for q ∈ (1, 3/2): q⁻¹ ∈ (2/3, 1)
+  have hq_inv_gt : q⁻¹ > 2/3 := by
+    rw [gt_iff_lt, lt_inv_comm₀ (by norm_num : (2:ℝ)/3 > 0) hq_pos]
+    linarith
+  -- LHS ≥ 0: q³ + q + q⁻¹ + q⁻³ ≥ 4
+  have h_lhs_nonneg : (q^3 + q + q⁻¹ + (q⁻¹)^3) / 4 - 1 ≥ 0 := by
+    have h_id : q^3 + q + q⁻¹ + (q⁻¹)^3 - 4
+               = (q + q⁻¹ - 2) * ((q + q⁻¹)^2 + 2 * (q + q⁻¹) + 2) := by
+      field_simp; ring
+    have h_factor_pos : (q + q⁻¹)^2 + 2 * (q + q⁻¹) + 2 > 0 := by positivity
+    nlinarith [h_amgm, h_factor_pos]
+  rw [abs_of_nonneg h_lhs_nonneg]
+  -- Goal: (q^3 + q + q⁻¹ + (q⁻¹)^3) / 4 - 1 ≤ (q - q⁻¹) ^ 2 * 4 / 6
+  -- Multiply both sides by 12·q³ to clear denominators (q³ > 0).
+  -- Use that q ∈ (1, 3/2) and the cubic factorisation.
+  have hq3_pos : q^3 > 0 := by positivity
+  have hq_inv_sq : (q⁻¹)^2 = 1 / q^2 := by field_simp
+  have hq_inv_cu : (q⁻¹)^3 = 1 / q^3 := by field_simp
+  -- Direct nlinarith with key hints (s-2)(13/6 - s) ≥ 0 and the factorisation.
+  -- (q + q⁻¹) ≤ 13/6 since q < 3/2 implies q + 1/q < 3/2 + 2/3 = 13/6.
+  have hs_upper : q + q⁻¹ ≤ 13 / 6 := by
+    have : q⁻¹ < 1 := hq_inv_lt
+    have hq_le : q ≤ 3/2 := le_of_lt hq2
+    have hq_inv_le : q⁻¹ ≤ 1 := le_of_lt hq_inv_lt
+    -- For q ∈ (1, 3/2): q + 1/q is increasing, max at q = 3/2 → 3/2 + 2/3 = 13/6
+    have hq_inv_eq_at : q⁻¹ = 1/q := by field_simp
+    rw [hq_inv_eq_at]
+    have : q + 1/q ≤ 3/2 + 1/(3/2) := by
+      have : 1/q ≤ 1 := by
+        rw [div_le_one hq_pos]; linarith
+      have h_inv_decr : 1/q ≥ 1/(3/2) := by
+        rw [ge_iff_le, div_le_div_iff (by norm_num : (3:ℝ)/2 > 0) hq_pos]
+        linarith
+      -- We have q ≤ 3/2 and 1/q ≥ 2/3, so q + 1/q ≤ 3/2 + 1/q ≤ 3/2 + 1
+      -- but that's not tight enough. The function q + 1/q on (1, 3/2) is
+      -- increasing, so its max is at q = 3/2. Use derivative: d/dq(q + 1/q) = 1 - 1/q² > 0.
+      -- For nlinarith: q ≤ 3/2 and (q - 3/2)(1 - 1/(q · 3/2)) ≥ 0 (since q ≤ 3/2 and q · 3/2 < (3/2)² so 1/(q · 3/2) > 4/9).
+      nlinarith [sq_nonneg (q - 3/2), hq_pos, sq_nonneg q, mul_pos hq_pos (show (0:ℝ) < 3/2 from by norm_num)]
+    linarith [show (1:ℝ)/(3/2) = 2/3 from by norm_num]
+  -- With s := q + q⁻¹ ∈ (2, 13/6], (s-2)(13/6 - s) ≥ 0 (both factors ≥ 0).
+  -- Also (q - q⁻¹)² = s² - 4 = (s-2)(s+2), so RHS = 4(s-2)(s+2)/6 = 2(s-2)(s+2)/3.
+  -- LHS - RHS factors as (s-2)(s² + 2s + 2)/4 - 2(s-2)(s+2)/3
+  --                    = (s-2)[3(s² + 2s + 2) - 8(s+2)]/12
+  --                    = (s-2)(3s² - 2s - 10)/12.
+  -- Need 3s² - 2s - 10 ≤ 0 on s ∈ [2, 13/6]. At s=2: -2. At s=13/6: 3·(169/36) - 26/6 - 10 = 169/12 - 26/6 - 10 = 169/12 - 52/12 - 120/12 = -3/12 = -1/4.
+  -- So 3s² - 2s - 10 ≤ -1/4 < 0 throughout the interval; in particular ≤ 0.
+  -- Thus (s-2)(3s² - 2s - 10) ≤ 0, giving the bound.
+  set s := q + q⁻¹ with hs_def
+  have hs_ge : s ≥ 2 := by linarith
+  have hs_le : s ≤ 13/6 := hs_upper
+  -- Algebraic decomposition of LHS - RHS in terms of s.
+  have h_diff_sq : (q - q⁻¹)^2 = s^2 - 4 := by
+    have : q * q⁻¹ = 1 := mul_inv_cancel₀ hq_ne
+    nlinarith [this]
+  have h_lhs_in_s : q^3 + q + q⁻¹ + (q⁻¹)^3 = s^3 - 2*s := by
+    have : q * q⁻¹ = 1 := mul_inv_cancel₀ hq_ne
+    nlinarith [this, sq_nonneg q, sq_nonneg q⁻¹]
+  rw [h_lhs_in_s, h_diff_sq]
+  -- Goal: (s^3 - 2*s) / 4 - 1 ≤ (s^2 - 4) * 4 / 6
+  -- equivalent to 3(s³ - 2s - 4) ≤ 8(s² - 4) for s ≥ 2 and s ≤ 13/6.
+  -- i.e. 3s³ - 8s² - 6s + 20 ≤ 0
+  -- factors as (s-2)(3s² - 2s - 10).
+  nlinarith [hs_ge, hs_le, sq_nonneg (s - 2), sq_nonneg (s - 13/6),
+             mul_nonneg (by linarith : s - 2 ≥ 0) (by linarith : (13/6 : ℝ) - s ≥ 0),
+             sq_nonneg s]
+
 /-- Per-instance form. -/
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4)
