@@ -474,11 +474,11 @@ cross-check, not the primary derivation.
 | 8 | **P1.2 / P1.3** BW-8 / BW-11 ad-hoc/approx tags | ✅ already derived (`derived-mass-formula-light-isotopes`); DERIVATION-STATUS updated |
 | 9 | **P1.7** 1/α residual | ✅ already at 6.7 ppb (within CODATA 21-ppb uncertainty); legacy "399 ppb" superseded |
 
-### Tier-3 (deferred to a later session per user)
+### Tier-3 (May 1 continuation — partial)
 
-| Order | Task | Why later |
-|------:|------|-----------|
-| 1 | **P3.1** Conjectural-propagation sweep | Cheap; no other dependencies — start of next session |
+| Order | Task | Result |
+|------:|------|--------|
+| 1 | **P3.1** Conjectural-propagation sweep | ✅ landed (audit only); witness `conjectural-propagation-audit.witness.json`; memo `2026-05-01-p3-1-conjectural-propagation-audit.md`. **Policy decision required (A / B / C)**: 260 provable blocks transitively touch a `conj:`; ~225 share a common cone of ~20 substrate-foundation conjectures. Recommend Option B (substrate-axiom classification). |
 | 2 | **P2.5** Symbolic-in-$q$ refactor | Mechanical; makes witness JSONs less "fitted-looking" |
 | 3 | **P2.6** GS-filtration narrative blocks | Closes the largest opaque-axiom surface |
 | 4 | **P2.2** $H_{3A}$ Wedderburn coverage | Unblocks P1.4 (magic numbers 50/82/126) and P2.1 |
