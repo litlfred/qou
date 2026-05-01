@@ -11,13 +11,13 @@ $$
 
 *equivalently $v / m_e = q_0^{90}$ to leading order in the
 sub-leading correction (see
-[N_v leading-order derivation](#prop:n-v-leading-order-derivation)).*
+[N_v leading-order derivation](#conj:n-v-leading-order-derivation)).*
 
 ## Status
 
 **Conjectural.**  This is the **second** of the two substrate
 axioms in the
-[N_v derivation](#prop:n-v-leading-order-derivation) chain.
+[N_v derivation](#conj:n-v-leading-order-derivation) chain.
 Combined with [the Bring action lemma](#conj:n-v-bring-action) it
 gives the leading-order closure $N_v = 120 \cdot q_0^{90}$
 (residual $-0.58\%$ vs CODATA Higgs VEV).

@@ -1,0 +1,243 @@
+# Tier 3 progress — open conjecture classification (CLAUDE.md §3b)
+
+**Branch**: `claude/tier3-math-audit-B0wyO`
+**Parent**: `claude/audit-math-framework-FXlp2` (PR
+[#498](https://github.com/litlfred/qou/pull/498))
+**Workplan reference**:
+[`2026-05-01-math-framework-workplan.md`](2026-05-01-math-framework-workplan.md)
+§P3.
+
+This branch executes **Tier 3** of the deep audit: resolving and
+classifying open conjectures per the CLAUDE.md §3b conjectural-
+propagation rule.
+
+## Summary
+
+| Task | Status | Deliverable |
+|------|--------|-------------|
+| **P3.1** Conjectural-propagation sweep | ✅ Sweep report delivered, 1 unambiguous demotion applied | [`2026-05-01-conjectural-propagation-sweep.md`](2026-05-01-conjectural-propagation-sweep.md) + script |
+| **P3.2** Pentagon $uv = q\,vu$ lemma | 🟡 Open — see §P3.2 below | Findings only |
+| **P3.3** Pair descent sharpness | 🟡 Open — depends on P3.2 | Findings only |
+| **P3.4** Uniform $\Delta_{\max}$ bound | 🟡 Open — compute prerequisite missing | Findings only |
+| **P3.5** `family-4` motivic instance | 🟡 Research-grade, scope only | Findings only |
+
+## P3.1 — Conjectural-propagation sweep ✅
+
+### Method
+
+A new pipeline tool walks every `conj:` block forward through the
+`uses[]` reverse graph and identifies provable kinds (theorem,
+proposition, lemma, corollary) in each cone:
+
+```
+content/pipeline/conjectural-propagation-sweep.ts
+```
+
+Output report:
+
+- [`2026-05-01-conjectural-propagation-sweep.md`](2026-05-01-conjectural-propagation-sweep.md)
+
+### Findings
+
+- **60** `conj:` blocks in the paper.
+- **259** unique provable blocks transitively reach at least one
+  conjecture via `uses[]`.
+- **20** core conjectures have cones of ≥ 224 hits — these all
+  converge through a small set of **bridge remarks**, most
+  prominently `rem:calibration-inputs` (`uses: ["conj:mass-endomorphism"]`).
+- **5** conjectures have small (1–4 hit) cones that are
+  individually tractable: `conj:q-collatz`,
+  `conj:quantum-computational-universality`,
+  `conj:n-v-tower-depth-ninety`, `conj:n-v-bring-action`,
+  `conj:classical-riemann-hypothesis`.
+- **35** conjectures have empty cones (no provable downstream).
+
+### Two remediation paths per cone hit
+
+The sweep cannot determine automatically which of the two valid
+remediation paths applies to each block:
+
+1. **Demote** the provable block to `conjecture` — when its proof
+   genuinely depends on the upstream conjecture.
+2. **Clean up `uses[]`** — drop the bridge remark when the proof
+   does not invoke the conjecture and the remark was cited only
+   for context.
+
+Path 2 is preferred wherever the proof is independent of the
+conjecture. Per-block determination is author work.
+
+### Action taken in this branch
+
+One unambiguous case applied: `prop:n-v-leading-order-derivation`
+self-describes in its `.md` as "Conditional theorem. Conditional on
+the two substrate axioms..." and lists two `conj:` blocks directly
+in `uses[]`. Demoted:
+
+- [`content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts)
+  — `proposition` → `conjecture`, label
+  `prop:n-v-leading-order-derivation` → `conj:n-v-leading-order-derivation`.
+- [`content/quantum-observable-universe/observations/n-v-leading-order-derivation.md`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.md)
+  — narrative banner updated; "Proposition" → "Conjecture",
+  "Conditional theorem" → "Conditional conjecture".
+- Two upstream cross-references in
+  [`n-v-bring-action.md`](../../content/quantum-observable-universe/observations/n-v-bring-action.md)
+  and
+  [`n-v-tower-depth-ninety.md`](../../content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md)
+  + the Lean stub in
+  [`n-v-leading-order-derivation.lean`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean)
+  updated to the new label.
+
+The remaining 258 candidate blocks remain for case-by-case author
+review, with the per-conjecture cone listings in the sweep report
+as the actionable inventory.
+
+## P3.2 — Pentagon $uv = q\,vu$ at traced-volume level 🟡
+
+### Workplan deliverable
+
+> Write a one-page derivation as a `lemma` block:
+> $\mathrm{tr}_M(\hat V_i \hat V_j) = q\, \mathrm{tr}_M(\hat V_j \hat V_i)$
+> for adjacent $i,j$ — most likely a direct application of the
+> Markov property.
+
+### Finding — formula tension
+
+The workplan formula does not survive a sanity check against the
+paper's existing
+[`prop:markov-pair-z2`](../../content/quantum-observable-universe/braids-and-knots/markov-pair-z2.md):
+
+- `markov-pair-z2` proves
+  $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$ for **all** $i < j$,
+  whether adjacent or not, by direct two-step Markov peel.
+- By Markov-trace cyclicity (which holds, by Jones–Ocneanu–Wenzl),
+  $\mathrm{tr}_M(\sigma_j\sigma_i) = \mathrm{tr}_M(\sigma_i\sigma_j) = z^2$.
+- Forcing $\mathrm{tr}_M(\hat V_i\hat V_j) = q\,\mathrm{tr}_M(\hat V_j\hat V_i)$
+  in this regime would require $z^2 = q\,z^2$, i.e., $q = 1$ —
+  contradicting the substrate at $q_0 \ne 1$.
+
+The audit's actual gap (audit GAP 17a, line 113 of
+[`derivation-audit-2026-04-20.md`](../derivation-audit-2026-04-20.md))
+calls for an **operator-level** identity $uv = q\,vu$ where
+$u, v$ are non-commutative. In
+[`algebraic-quantum-volume.md`](../../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md),
+the traced volumes $\hat V_i = z(q)\cdot a_i(q) + b_i(q)$ are
+**commutative scalars** in $\mathbb{Z}[q^{1/2}, q^{-1/2}]$, so
+they trivially commute. Pentagon ascension applied to commutative
+scalars collapses to $\Phi_q(uv) = 1$, which is the desired
+quadratic-closure outcome but says nothing new.
+
+### Recommended next step
+
+Locate the **operator-level** $\hat V_i$ used by the pentagon
+ascension argument in
+[`mass-endomorphism-jet-tower.md`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-jet-tower.md)
+§"Pentagon ascension" — likely the per-Wedderburn-channel matrix
+representative $\rho_\lambda(\sigma_i) \in M_{f_\lambda}(\mathbb{Q}(q))$
+**before** taking the Markov trace. Then verify $uv = q\,vu$ from
+the Hecke relation
+$\rho_\lambda(\sigma_i)^2 = (q-q^{-1})\,\rho_\lambda(\sigma_i) + 1$
+on adjacent generators in non-trivial irreps.
+
+This is genuinely new mathematics, not a clerical pull-through of
+an existing result; the workplan estimate of "1 day" assumed the
+operator-level identity was already implicit. The trace-level
+formula in the workplan is a typo or shorthand for the
+operator-level identity. **Recommend the author confirm the
+intended scope before a follow-up branch attempts the proof.**
+
+## P3.3 — Pair descent sharpness 🟡
+
+Depends on P3.2 (the pentagon-bound on pair contributions becomes
+sharp only when the operator-level $uv = q\,vu$ identity is
+established). Deferred behind P3.2.
+
+The empirical evidence in
+[`adjacent-vs-full-probe.witness.json`](../../folio-assistant/computations/adjacent-vs-full-probe.witness.json)
+already shows that the all-pairs set $\mathcal{P}_n = \{(i,j): i<j\}$
+empirically matches mass on light atoms with sub-1% error — i.e.,
+the bound is empirically sharp. A formal sharpness proof is
+the open piece.
+
+## P3.4 — Uniform $\Delta_{\max}$ bound 🟡
+
+### Workplan deliverable (path b — numerical evidence)
+
+> Measure $|\Delta^{(n)}|$ across $n=0..N$ in compute to confirm
+> geometric decay.
+
+### Finding — compute prerequisite missing
+
+The relevant compute module
+[`folio-assistant/computations/multi-level-jet-sum.witness.json`](../../folio-assistant/computations/multi-level-jet-sum.witness.json)
+self-reports:
+
+```json
+{
+  "description": "...CURRENT IMPL is a single-level flat sum...
+  A genuine multi-level version requires jet-lifted V̂ at each
+  level n; per-level lift not yet implemented...",
+  "parameters": {
+    "multi_level_implemented": false
+  }
+}
+```
+
+Per-level $\hat V^{(n)}$ does not exist as a computed quantity, so
+$\Delta^{(n)} = $ (level-$n$ tower contribution) cannot be measured.
+**P3.4 path (b) is blocked on building the multi-level jet sum**
+— which itself sits behind P2.1 ("Full Wedderburn channels in
+`crt_markov.py`") and P2.3 ("word-shortcut undo functions L4–L7")
+in the workplan ordering. This is a P2-level dependency that the
+workplan's own ordering already places ahead of P3.4.
+
+Path (a) (prove uniform $|\Delta^{(n)}| \leq \Delta_{\max}$ from
+the GS spectral sequence's $E_2$-collapse) is research-grade and
+depends on the followups branch landing. Both paths are deferred.
+
+## P3.5 — `family-4` motivic substrate `instance` at $q_0$ 🟡
+
+Workplan classifies as research-grade with open-ended effort. No
+action attempted.
+
+The relevant block is
+[`family-4-motivic-path.md`](../../content/quantum-observable-universe/lifting-and-descent/family-4-motivic-path.md)
+which itself flags "GAP 5b" — the missing concrete `MotivicGaloisCharacter`
+`instance` at the QOU substrate. Closing this requires deriving
+local Frobenius eigenvalues from the brane tower, not a one-PR
+task.
+
+## What this branch delivers
+
+1. **Sweep tool** — reusable pipeline script
+   ([`content/pipeline/conjectural-propagation-sweep.ts`](../../content/pipeline/conjectural-propagation-sweep.ts))
+   that any future branch can re-run after content changes to
+   regenerate the report.
+2. **Sweep report** — actionable per-conjecture inventory
+   ([`docs/audits/2026-05-01-conjectural-propagation-sweep.md`](2026-05-01-conjectural-propagation-sweep.md))
+   listing all 259 candidate provable blocks grouped by their
+   upstream conjecture.
+3. **One demotion** — `prop:n-v-leading-order-derivation` →
+   `conj:n-v-leading-order-derivation` (the only block whose
+   `.md` already self-described as a conditional theorem).
+4. **Honest findings on P3.2–P3.5** — explicit notes on why each
+   was not closed in this branch, with concrete next steps.
+
+## Recommended ordering for follow-up
+
+| Order | Task | Why |
+|------:|------|-----|
+| 1 | Per-block author review of the 5 small-cone conjectures (8 unique blocks: `lem:surreal-squeeze`, `prop:collatz-contact-boundary`, `prop:collatz-no-cycles`, `prop:surreal-rate-calculus`, `prop:incompleteness-implies-horizon`, `prop:p-bandwidth-bound`, `prop:n-v-leading-order-derivation` ✓ done, `thm:macroscopic-stability-equivalence`) | Smallest, most tractable cones — each block individually decided demote vs. `uses[]` cleanup |
+| 2 | Author confirms P3.2 scope (trace-level vs. operator-level $uv = q\,vu$) | Unblocks P3.2 and P3.3 |
+| 3 | Land P2.1 multi-level jet sum compute | Unblocks P3.4 path (b) |
+| 4 | Bridge-remark cleanup pass over `rem:calibration-inputs` and similar | Reduces the 224+ cone sizes by removing the implicit `uses[]` chains where they don't reflect logical dependency |
+
+## Files modified by this branch
+
+- ⚙️ Added: [`content/pipeline/conjectural-propagation-sweep.ts`](../../content/pipeline/conjectural-propagation-sweep.ts)
+- 📝 Added: [`docs/audits/2026-05-01-conjectural-propagation-sweep.md`](2026-05-01-conjectural-propagation-sweep.md)
+- 📝 Added: [`docs/audits/2026-05-01-tier3-progress.md`](2026-05-01-tier3-progress.md) (this file)
+- ✏️ Modified: [`content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts)
+- ✏️ Modified: [`content/quantum-observable-universe/observations/n-v-leading-order-derivation.md`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.md)
+- ✏️ Modified: [`content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean)
+- ✏️ Modified: [`content/quantum-observable-universe/observations/n-v-bring-action.md`](../../content/quantum-observable-universe/observations/n-v-bring-action.md)
+- ✏️ Modified: [`content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md`](../../content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md)

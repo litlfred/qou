@@ -1,4 +1,4 @@
-**Proposition (Leading-order $N_v$).**
+**Conjecture (Leading-order $N_v$, conditional on the two upstream substrate axioms).**
 *Combining
 [the Bring action lemma](#conj:n-v-bring-action) with
 [the tower-depth lemma](#conj:n-v-tower-depth-ninety), the
@@ -26,7 +26,7 @@ $v_{\mathrm{CODATA}} = 246.22$ GeV to within $-0.58\%$.*
 
 ## Status
 
-**Conditional theorem.**  Conditional on the two substrate axioms
+**Conditional conjecture.**  Conditional on the two substrate axioms
 [`conj:n-v-bring-action`](#conj:n-v-bring-action) and
 [`conj:n-v-tower-depth-ninety`](#conj:n-v-tower-depth-ninety),
 the leading-order closure follows by direct multiplication.  The
