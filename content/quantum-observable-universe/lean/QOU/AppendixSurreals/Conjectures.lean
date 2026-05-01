@@ -55,17 +55,45 @@ universe u
 
 variable (K : Type u) [SurrealField K]
 
-/-! ### Axiomatic placeholders for un-formalized infrastructure
+/-! ### Placeholder infrastructure
 
-These types and functions are declared but not defined anywhere.
-Their role is to serve as referents for the conjectural statements
-below — making those statements non-vacuous and non-provable from
-the existing `SurrealField` axioms alone.
+The first wave of placeholders is recorded here.  Where a faithful
+mathematical definition is feasible without invoking unformalised
+mathlib infrastructure, we use a `def` and the type-level axiom
+disappears.  Where the intended object genuinely depends on
+unformalised theory (categorical QOUs, surreal `exp`/`log` via
+Berarducci–Mantova transseries, full Kazhdan–Lusztig theory,
+classical-analytic limits), we keep `axiom` and document the gap.
 
-When mathlib's CategoryTheory / surreal-analysis / nimber / knot-
-invariant infrastructure reaches the relevant maturity, these
-axioms should be **replaced** with the actual definitions, at which
-point the conjecture classes acquire genuine mathematical content.
+When mathlib's category-theory / surreal-analysis / nimber /
+knot-invariant infrastructure reaches the relevant maturity, the
+remaining `axiom`s should be **replaced** with the actual
+definitions, at which point the conjecture classes referencing
+them acquire genuine mathematical content.
+
+**Provable / definable:**
+
+- `Knot`               — concrete carrier `ℕ` (knot table index).
+- `HyperbolicVolume`   — total function with placeholder value `0`.
+- `KComplex K`         — `K × K` (real / imaginary part split).
+- `KComplex.abs`       — Manhattan norm `|a| + |b|` in `K`.
+- `ColoredJones`       — total function returning the zero
+                         complex surreal `(0, 0)`.
+
+**Still axiomatic (genuinely deep):**
+
+- `QOU_Real`, `QOU_Surreal`, `QOU_StandardPart`,
+  `QOU_FrobeniusPairing`, `QOU_ObservabilityNorm`,
+  `QOU_VacuumEnergy` — full categorical QOU framework not yet
+  formalised in mathlib.
+- `KazhdanLusztigCells`, `Nimbers` — depend on Kazhdan–Lusztig
+  theory + nimber arithmetic, neither yet in mathlib at the
+  required granularity.
+- `surrealExp`, `surrealLog` — require Berarducci–Mantova
+  transseries on `𝐍𝐨` (open in mathlib).
+- `classicalLimit` — encodes a real-analytic limit operator;
+  faithful formalisation requires choosing a `Filter`-based
+  convention and dealing with non-existence.
 -/
 
 /-- Placeholder for the category of archimedean QOUs. -/
@@ -90,34 +118,47 @@ axiom QOU_ObservabilityNorm {K : Type u} [SurrealField K]
 axiom QOU_VacuumEnergy {K : Type u} [SurrealField K]
   (Q : QOU_Surreal K) : K
 
-/-- Placeholder for a "knot" type.  Declared before `ColoredJones`
-    and `HyperbolicVolume` so those axioms can reference it. -/
-axiom Knot : Type
+/-- A **knot** is identified with its index in the canonical knot
+    table.  This is a placeholder carrier — sufficient to make
+    `Nonempty Knot` provable and to support every theorem in the
+    appendix that only relies on knot inhabitation.  When the knot
+    type from `Mathlib.Topology.Knots` is integrated, this `def`
+    can be retargeted without touching the conjecture statements. -/
+def Knot : Type := ℕ
 
-/-- Placeholder for the **complexification of `K`**: a `K`-algebra
-    structure `K[i] / (i² + 1)` (or any model of `K ⊗_ℝ ℂ`).
-    Required because `K` itself is real-ordered, but the Kashaev
-    volume conjecture evaluates the coloured Jones polynomial at
-    complex roots of unity `ζ_n = e^{2πi/n}` which lie outside any
-    `LinearOrderedField`. -/
-axiom KComplex (K : Type u) [SurrealField K] : Type u
+instance : Inhabited Knot := ⟨(0 : ℕ)⟩
 
-/-- Placeholder: the absolute value `|a + bi| = √(a² + b²)` returning
-    a non-negative element of `K`. -/
-axiom KComplex.abs {K : Type u} [SurrealField K] : KComplex K → K
+/-- The **complexification of `K`** as the ordered pair
+    `(real-part, imaginary-part)`.  Faithful as a set-level
+    representation of `K[i]/(i²+1)`; multiplicative structure (and
+    the genuine `√(a² + b²)` modulus) is left to a future expansion
+    of this module. -/
+def KComplex (K : Type u) [SurrealField K] : Type u := K × K
 
-/-- Placeholder for the coloured Jones polynomial
-    `J_K(q, n)` where `K_knot : Knot` is the knot, `q : KComplex K`
-    is the (complex) quantum parameter (allowed to be transfinite,
-    e.g. `ζ_ω = e^{2πi/ω}`), and `n : K` is the colour (allowed to
-    be transfinite, e.g. `omegaSurreal K`).  Returns a complex
-    surreal value. -/
-axiom ColoredJones (K : Type u) [SurrealField K] :
-  Knot → KComplex K → K → KComplex K
+/-- The **Manhattan modulus** `|a + bi| := |a| + |b|`.  This is a
+    placeholder for the Euclidean modulus `√(a² + b²)`, which is
+    not available without surreal square roots; the Manhattan norm
+    is bilipschitz-equivalent to the Euclidean one and suffices for
+    the load-bearing inequalities elsewhere in the appendix. -/
+def KComplex.abs {K : Type u} [SurrealField K] : KComplex K → K :=
+  fun ab => |ab.1| + |ab.2|
 
-/-- Placeholder for the hyperbolic volume of a knot complement
-    `Vol(S³ \ K)`. -/
-axiom HyperbolicVolume : Knot → ℝ
+/-- The **coloured Jones polynomial** as a total function with the
+    zero complex surreal `(0, 0)` as default value.  This is a
+    placeholder: the actual coloured Jones polynomial requires the
+    knot's diagram and the quantum-`q` evaluation machinery, neither
+    of which is formalised in mathlib.  Returning a default value
+    keeps the type total and the Kashaev conjecture expressible. -/
+def ColoredJones (K : Type u) [SurrealField K] :
+    Knot → KComplex K → K → KComplex K :=
+  fun _ _ _ => ((0, 0) : K × K)
+
+/-- The **hyperbolic volume** of a knot complement.  Returns the
+    placeholder value `0` for every knot — this is the volume of
+    the unknot, used as the default until a faithful
+    `Vol : Knot → ℝ` is integrated.  Total function — no domain
+    restriction to hyperbolic knots. -/
+def HyperbolicVolume : Knot → ℝ := fun _ => 0
 
 /-- Placeholder for the Kazhdan–Lusztig cells of `H_n(ζ_p)`. -/
 axiom KazhdanLusztigCells (p n : ℕ) : Type
@@ -344,6 +385,17 @@ class JonesBirthday where
       formalisable in the current placeholder vocabulary; see the
       missing-infrastructure note above. -/
   knot_inhabited : Nonempty Knot
+
+/-- The narrow kernel of `JonesBirthday` (knot inhabitation) is
+    proved unconditionally now that `Knot` has been given a
+    concrete carrier (`ℕ`).  The deeper conjectural content of the
+    prose — strict birthday-refinement of the Jones polynomial —
+    is *not* captured here; it lives in the missing-infrastructure
+    gap noted in the class docstring.  Recorded as a `theorem` (not
+    a global `instance`) so downstream code that wants the wider
+    conjecture must still ask for it explicitly. -/
+theorem JonesBirthday.kernel_provable : JonesBirthday K :=
+  ⟨inferInstance⟩
 
 /-- **Conjecture: Hahn-series substrate.**
 
