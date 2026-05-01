@@ -383,6 +383,13 @@ theorem polynomialInEpsilon_apply (p : ℝ[X]) :
     polynomialInEpsilon (K := K) p
       = polySurrealEval p (epsilonSurreal K) := rfl
 
+/-- `polynomialInEpsilon p = Polynomial.aeval ε p` — Mathlib aeval
+    view of the polynomial-in-`ε` embedding. -/
+theorem polynomialInEpsilon_eq_aeval (p : ℝ[X]) :
+    polynomialInEpsilon (K := K) p
+      = Polynomial.aeval (epsilonSurreal K) p := by
+  rw [polynomialInEpsilon_apply, polySurrealEval_eq_aeval]
+
 /-- **Standard-part of `polynomialInEpsilon p` is the constant term**
     (`p.coeff 0`).  Algebraic content: in the Hahn-series view, the
     standard-part picks out the coefficient at exponent `0`. -/
