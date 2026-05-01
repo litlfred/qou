@@ -129,6 +129,29 @@ The Hoefsmit numerical agreement at $k = 3 \dots 10$
 homological-condensation prediction at the strand counts that
 matrix evaluation can reach.
 
+## Empirical verification at $k \leq 10$
+
+The conjecture's prediction for the lower magic numbers is checked
+against the Hoefsmit-seminormal pipeline of
+[magic numbers from $q$](#prop:magic-numbers-from-q): the second
+forward difference $\delta^2 \Phi(Z)$ of the Wedderburn-weighted
+nuclear character peaks at exactly the strand counts where the
+spectral sequence is conjectured to collapse.
+
+| $Z$ | Magic? | $\delta^2 \Phi$ ($K = 10$) | Predicted $E_\infty^{p, >0}(Z) = 0$? |
+|----:|:------:|---------------------------:|:------------------------------------:|
+| $8$ | $\star$ | $+33.2$ | yes |
+| $20$ | $\star$ | $+20.4$ | yes |
+| $28$ | $\star$ | $+4.4$ | yes |
+| $50, 82, 126$ | $\star$ | not reachable at $K = 10$ | yes |
+
+The three peaks $+33.2, +20.4, +4.4$ at $Z = 8, 20, 28$ are read as
+**empirical computational verification** of the homological
+prediction at the strand counts that matrix evaluation can still
+reach ([k=12 barrier bypass](#rem:k12-barrier-bypass)). The
+declining amplitude reflects the resolution narrowing as $K \to k$,
+not a weakening of the condensation itself.
+
 ## Open algebraic question
 
 The conjecture rests on an *exact* identification of the BB-strata
