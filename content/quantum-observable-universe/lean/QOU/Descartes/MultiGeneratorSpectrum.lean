@@ -203,12 +203,13 @@ theorem multi_pp_alt_eigenvalue (k : ℕ) :
     This asymmetry is why `g_A ≈ 1.277 < 5/3 ≈ 1.667`: the axial
     (standard) channel is suppressed relative to the vector (symmetric)
     channel by the Borromean topology. -/
-theorem channel_ratio_determines_gA :
-    -- The symmetric eigenvalue of a product depends only on crossing
-    -- coefficients (multiplicative, 1D representation).
-    -- The standard eigenvalue of a product depends on matrix structure
-    -- (non-commutative 2D representation).
-    -- Their ratio is the axial coupling suppression factor.
-    True := trivial
+/-- **Channel ratio determines `g_A` — typeclass.**
+    Per-instance witness that the standard/symmetric channel
+    eigenvalue ratio of a multi-generator product equals the axial
+    coupling suppression factor. Pending the categorical product
+    eigenvalue formula. -/
+class ChannelRatioDeterminesGA (stdEig symEig gA : ℝ) : Prop where
+  /-- The eigenvalue ratio agrees with `g_A`. -/
+  ratio_eq : stdEig / symEig = gA
 
 end QOU.Descartes

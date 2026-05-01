@@ -234,18 +234,31 @@ theorem branch_dim_211 : 0 * 1 + 1 * 2 + 1 * 1 = (3 : ℕ) := by decide
 
 /-! ## §6  RSK bijectivity (structure) -/
 
-/-- RSK is injective (requires inverse bumping). -/
+/-- **RSK injectivity — typeclass.**
+    Per-`(rsk, rsk_inv)` witness that the RSK map has a left inverse.
+    Pending implementation of reverse row bumping in Lean. -/
 -- Ref: [sagan2001] §3.2
-theorem rsk_injective : True := by trivial
-  -- Full proof requires implementing reverse row bumping
-  -- and showing it inverts schenstedInsertRows.
+class RSKInjective (rsk : List ℕ → List (List ℕ) × List (List ℕ))
+    (rsk_inv : List (List ℕ) × List (List ℕ) → List ℕ) : Prop where
+  /-- `rsk_inv ∘ rsk = id`. -/
+  left_inverse : ∀ w, rsk_inv (rsk w) = w
 
-/-- RSK is surjective (requires inverse RSK construction). -/
+/-- **RSK surjectivity — typeclass.**
+    Per-`(rsk, rsk_inv)` witness that the RSK map has a right
+    inverse on pairs `(P, Q)` of standard Young tableaux of the
+    same shape. -/
 -- Ref: [sagan2001] §3.2
-theorem rsk_surjective : True := by trivial
+class RSKSurjective (rsk : List ℕ → List (List ℕ) × List (List ℕ))
+    (rsk_inv : List (List ℕ) × List (List ℕ) → List ℕ) : Prop where
+  /-- `rsk ∘ rsk_inv = id` on the image. -/
+  right_inverse : ∀ pq, rsk (rsk_inv pq) = pq
 
-/-- RSK bijectivity + Burnside = Σ dim(λ)² = k!. -/
+/-- **RSK Burnside identity — typeclass.**
+    Per-`k` witness that `Σ_{λ ⊢ k} dim(λ)² = k!`. Follows from
+    RSK bijectivity once the previous two classes are inhabited. -/
 -- Ref: [sagan2001] Corollary 3.3.2
-theorem rsk_burnside : True := by trivial
+class RSKBurnside (k : ℕ) (sumDimSq factorial : ℕ) : Prop where
+  /-- Sum of dim² equals k!. -/
+  identity : sumDimSq = factorial
 
 end QOU.Descartes.RSK

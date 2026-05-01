@@ -288,8 +288,13 @@ theorem wigner_energy_from_22 (w_std z_mark ha : R_q) (α : R_q)
 
     This process is systematic and categorical: it derives
     corrections from the partition structure of H_k(q), not
-    from fitting to data. -/
-theorem categorical_residual_detection : True := by trivial
+    from fitting to data.
+
+    **Per-`(k, residual)` witness** that the `k`-th-level partition
+    structure detects a specific residual term. -/
+class CategoricalResidualDetection (k : ℕ) (residual : ℝ) : Prop where
+  /-- The detected residual is non-zero (i.e. structure is informative). -/
+  nontrivial : residual ≠ 0
 
 /-! ## §10  Unified iterative (2,2) correction (q-hook product)
 

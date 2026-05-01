@@ -192,9 +192,10 @@ theorem mi_sw_abelianisation
     (n : ℕ)  -- vertical degree (jet level)
     (sw_period : ℕ → ℝ)  -- |a_D^(n)| for each jet level
     (mi_integral : ℕ → ℝ)  -- ‖MI∫_{E_c}(∇_A q, L ∧ F⁺)‖_{Jⁿ}
-    -- The SU(2) bundle trivialises over CP¹ ≅ S²
-    (_bundle_trivial : True)
-    -- Fake-flatness forces abelianisation on the exceptional divisor
+    -- Fake-flatness forces abelianisation on the exceptional divisor.
+    -- The placeholder `_bundle_trivial : True` previously here is
+    -- redundant — the SU(2)-bundle triviality over CP¹ ≅ S² is
+    -- subsumed by the `fake_flat_abelian` hypothesis.
     (fake_flat_abelian : ∀ k, mi_integral k = sw_period k)
     : mi_integral n = sw_period n := by
   exact fake_flat_abelian n

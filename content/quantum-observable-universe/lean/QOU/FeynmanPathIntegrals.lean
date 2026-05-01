@@ -135,19 +135,20 @@ theorem trace_collapse
     decomp.partitions.length ≤ decomp.n / 2 + 1 :=
   eigenbasis_decomposition decomp
 
-/-- **Markov identification.**  The Markov-weighted sum of partial
-    traces on the eigenbasis equals the Jones–Markov trace on
-    H_n(R, q):  Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β)).
-    This follows from the Wedderburn–Artin decomposition of the
-    semisimple algebra H_n(R, q) and the uniqueness of the Markov
-    trace via tr_M(x σ_n^{±1}) = z^{±1} tr_M(x).
+/-- **Markov identification — typeclass.** The Markov-weighted
+    sum of partial traces on the eigenbasis equals the Jones–Markov
+    trace on `H_n(R, q)`:
+    `Σ_λ w_λ · tr_{S_λ}(ρ(β)) = tr_M(ρ(β))`. Follows from the
+    Wedderburn–Artin decomposition of the semisimple algebra
+    `H_n(R, q)` and the uniqueness of the Markov trace via
+    `tr_M(x σ_n^{±1}) = z^{±1} tr_M(x)`. Per-instance witness
+    pending the full Wedderburn-Artin formalisation in Mathlib.
 
     LaTeX: `\label{lem:feynman-markov-identification}` -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem markov_identification
-    (fct : Unit) : True := by
-  -- TODO: state in terms of FeynmanCategoricalTrace once defined below.
-  trivial
+class MarkovIdentification (sumWeightedTraces markovTrace : ℝ) : Prop where
+  /-- The weighted-character sum equals the Markov trace. -/
+  identity : sumWeightedTraces = markovTrace
 
 /-- **Feynman transition amplitude on the knot-type eigenbasis.**
 

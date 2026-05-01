@@ -350,13 +350,17 @@ theorem finite_k_convergence (k : ℕ) (hk : 4 ≤ k) (hK : k ≤ 12)
     have := hK; push_cast; omega
   linarith [abs_nonneg (f_k - f_4)]
 
-/-- The finite-k version is NUMERICALLY VERIFIED by the witness
-    jet-knot-invariants.witness.json. For all atoms tested:
-    |f_μ^{(k)} − f_μ^{(4)}| < 0.01 for k = 4, ..., 9.
-
-    This establishes the convergence computationally for the
-    levels used by the BW formula, independent of the asymptotic
-    proof. -/
-theorem finite_k_witness : True := by trivial
+/-- **Finite-k witness — numerical agreement class.**
+    Per-`(k, k', tol)` witness that the level-`k` and level-`k'`
+    branching fractions agree within tolerance `tol`. The `mpmath`
+    witness in `jet-knot-invariants.witness.json` records
+    `|f_μ^{(k)} − f_μ^{(4)}| < 0.01` for k = 4, …, 9 across all
+    atoms tested; instances of this class are the formal record of
+    that numerical agreement at specific `(k, k', tol)`. -/
+class FiniteKWitness (k k' : ℕ) (_hk : 4 ≤ k) (_hk' : 4 ≤ k')
+    (_hkbd : k ≤ 12) (_hkbd' : k' ≤ 12)
+    (f_k f_k' : ℝ) (tol : ℝ) (_htol : 0 ≤ tol) : Prop where
+  /-- Numerical agreement at `(k, k')`. -/
+  agreement : |f_k - f_k'| ≤ tol
 
 end QOU.Descartes.BranchingConvergence

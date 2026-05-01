@@ -228,11 +228,15 @@ theorem kahler_differentials_no_sym_component :
     This is why axial coupling (standard channel) depends on the
     specific braid word, while vector coupling (symmetric channel)
     depends only on the total number of crossings. -/
+/-- **Channel separation activation — typeclass.**
+    Per-`(n, has_separation)` witness that channel separation
+    activates exactly for multi-generator products (`n ≥ 2`).
+    Records the qualitative fact that the per-generator 6×6
+    eigenvalues coincide with the 2×2 eigenvalues, while
+    multi-generator products develop topology-dependent structure. -/
 -- Ref: [mathas1999]
-theorem per_generator_trivial_multi_generator_nontrivial :
-    -- The symmetric eigenvalue q appears in all three irreps of a single generator.
-    -- The per-generator 6×6 has the same eigenvalues as the 2×2.
-    -- Channel separation only activates for multi-generator products.
-    True := trivial
+class ChannelSeparationActivates (n : ℕ) (separates : Bool) : Prop where
+  /-- Activates iff multi-generator. -/
+  iff_multi : separates = true ↔ n ≥ 2
 
 end QOU

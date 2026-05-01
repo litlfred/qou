@@ -215,21 +215,23 @@ noncomputable def knotOperator (τ : TorusKnotLabel) (N : ℕ) (g : ℕ) : R_t :
     3. Shell cancellation: parent/daughter share inner chains
     4. Pauli projection: full shell → alternating irrep
     5. Tower termination: degree ≥ 3 needs genus > 4 -/
+/-- **Spectral decomposition Q-value — typeclass.**
+    Per-`op` witness that the Q-value of a β-decay operator
+    equals `Q_bare · ∏ (knot-operator product)`. Full proof requires:
+    (1) Rosso–Jones completeness (external),
+    (2) inductive chain construction (`TransferMatrix.lean`),
+    (3) shell cancellation,
+    (4) Pauli projection (Young symmetrizer),
+    (5) tower termination (embeddability bound).
+    Until those land, the equality is per-instance. -/
 -- Ref: [rosso-jones1993] https://doi.org/10.1016/0393-0440(93)90033-B
 -- Ref: [manuscript] §5/embeddability-closure
-theorem spectral_decomposition_qvalue
-    (g : ℕ) (hg : g = 4)
-    (op : BetaDecayOp) :
-    -- The Q-value equals Q_bare times the knot operator product
-    -- (statement over ℤ[t, t⁻¹]; evaluation at substrate q is Ch 7)
-    True := by
-  trivial
-  -- Full proof requires:
-  -- 1. Rosso–Jones completeness (external reference)
-  -- 2. Inductive chain construction (TransferMatrix.lean)
-  -- 3. Shell cancellation (combinatorial)
-  -- 4. Pauli projection (Young symmetrizer)
-  -- 5. Tower termination (embeddability bound)
+class SpectralDecompositionQValue
+    (g : ℕ) (_hg : g = 4)
+    (op : BetaDecayOp)
+    (qValue qBare knotProd : R_t) : Prop where
+  /-- `qValue = qBare · knotProd`. -/
+  factorisation : qValue = qBare * knotProd
 
 /-! ## §5  Interaction completeness -/
 

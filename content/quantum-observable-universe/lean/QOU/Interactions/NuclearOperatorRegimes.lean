@@ -93,26 +93,22 @@ theorem borromean3_not_nuclear_level :
 
 /-! ## §6  Regime transitions at magic numbers (statement) -/
 
-/-- At Z = 2 (first proton magic number), the demand-minimizing
-    operator transitions from T_{2,5} to L₊. -/
+/-- **Regime transition at Z = 2 — typeclass.**
+    Per-`(demandT25, demandLplus)` witness that the
+    demand-minimizing operator transitions from `T_{2,5}` to `L₊`
+    at the first proton magic number. Pending q₀-numeric demand
+    evaluation. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem regime_transition_Z2 :
-    -- The transition at Z=2 requires evaluating demand magnitudes
-    -- over ℝ (at q₀), not yet available in the formal chain.
-    -- We state the prerequisite: L₊ ≠ L₋ (regime distinction).
-    -- Ref: [jones1987] https://doi.org/10.2307/1971403
-    True :=
-  trivial
+class RegimeTransitionZ2 (demandT25 demandLplus : ℝ) : Prop where
+  /-- `L₊` strictly dominates `T_{2,5}` at `Z = 2`. -/
+  Lplus_dominates : demandLplus < demandT25
 
-/-- At doubly magic (Z = 2, N = 2) = He-4, L₊ achieves exact
-    demand closure (all NF coefficients nonnegative). -/
+/-- **He-4 demand closure — typeclass.**
+    Per-`(coeffs)` witness that at doubly magic `(Z = 2, N = 2)`
+    the `L₊`-derived NF has every coefficient nonneg. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem he4_demand_closure :
-    -- He-4 demand closure requires evaluating the L₊-derived NF
-    -- at q₀ and showing all coefficients nonneg — a numerical check
-    -- not yet formalised.
-    -- Ref: [jones1987] https://doi.org/10.2307/1971403
-    True :=
-  trivial
+class He4DemandClosure (coeffs : List ℝ) : Prop where
+  /-- All NF coefficients are nonneg. -/
+  all_nonneg : ∀ c ∈ coeffs, 0 ≤ c
 
 end QOU.Interactions
