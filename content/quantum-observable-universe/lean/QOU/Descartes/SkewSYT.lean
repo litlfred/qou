@@ -150,17 +150,19 @@ def skewCorners (λ μ : Partition) : Finset Cell :=
     (⟨c.row + 1, c.col⟩ : Cell) ∉ skewCells λ μ
 
 /-- Remove a corner cell from a partition.
-    Decrements the part at the given row by 1.
+    Decrements the part at the given row by 1, then re-sorts the
+    list to preserve the weakly-decreasing invariant.
 
-    SOUNDNESS NOTE: the sortedness obligation is genuinely conditional
-    on `row` being a corner.  Without that hypothesis the
-    Pairwise (· ≥ ·) need not hold (e.g. λ = [2,2], row = 0 yields
-    [1,2]).  Until the signature is refactored to take a corner
-    hypothesis, the obligation is left as `sorry` per CLAUDE.md §1. -/
+    Sorting after decrement is benign: when `row` *is* a corner,
+    the result is already sorted (the sort is the identity); when
+    `row` is *not* a corner, sorting moves the decremented entry
+    to the right place. The size (sum of parts) is invariant under
+    permutation, so size-decrease lemmas continue to hold without
+    a corner hypothesis. -/
+-- Ref: [sagan2001] corner removal preserves partition property
 def Partition.removeCorner (λ : Partition) (row : ℕ) : Partition :=
-  ⟨λ.parts.mapIdx fun i p => if i = row then p - 1 else p,
-   -- Ref: [sagan2001] corner removal preserves partition property
-   by sorry⟩
+  ⟨(λ.parts.mapIdx fun i p => if i = row then p - 1 else p).insertionSort (· ≥ ·),
+   List.sorted_insertionSort _ _⟩
 
 /-- The sum of parts after removing a corner at row `row` equals
     the original sum minus 1.
@@ -208,11 +210,19 @@ theorem removeCorner_sum (λ : Partition) (row : ℕ)
       · exact (List.eq_cons_of_length_pos (by simp [List.length_drop]; omega)).symm
   omega
 
+/-- Sorting a list (by any relation) preserves its sum.  Used to
+    relate `removeCorner` (which sorts the decremented list) back
+    to the raw `mapIdx` sum lemma `removeCorner_sum`. -/
+theorem sum_insertionSort_eq (xs : List ℕ) (r : ℕ → ℕ → Bool) :
+    (xs.insertionSort r).sum = xs.sum := by
+  exact (xs.perm_insertionSort r).symm.sum_eq
+
 /-- Removing a corner decreases the partition size by exactly 1. -/
 theorem removeCorner_size (λ : Partition) (row : ℕ)
     (h : row < λ.length) (hp : 0 < λ.part row) :
     (λ.removeCorner row).size = λ.size - 1 := by
   unfold Partition.removeCorner Partition.size
+  rw [sum_insertionSort_eq]
   exact removeCorner_sum λ row h hp
 
 /-- The termination measure for skewSYTCount decreases when
@@ -375,20 +385,22 @@ theorem branching_nonneg (λ μ : Partition) : 0 ≤ branchingMult λ μ :=
 /-! ## §6  The Young lattice -/
 
 /-- Adding a cell to a partition: λ ← c gives a new partition with
-    one more cell at the addable position.
+    one more cell at the chosen position.
 
-    SOUNDNESS NOTE: both sortedness obligations are genuinely
-    conditional on either an addability hypothesis (interior branch)
-    or last-part-positivity (append branch).  Without them, Pairwise
-    can fail (e.g. λ = [2,2], row = 1 yields [2,3]).  Left as `sorry`
-    per CLAUDE.md §1 until the signature is refactored. -/
+    The naive set/append can fail to preserve the weakly-decreasing
+    invariant (e.g. λ = [2,2], row = 1 → [2,3] is unsorted). Sorting
+    after the operation makes `addCell` total without needing an
+    addability hypothesis: when the cell *is* addable, sorting is
+    the identity; otherwise sorting moves the incremented part to
+    its proper place. The size (sum + 1) is preserved by the sort. -/
+-- Ref: [sagan2001] §2.3
 def Partition.addCell (λ : Partition) (row : ℕ) : Partition :=
-  if h : row < λ.parts.length then
-    -- Ref: [sagan2001] §2.3 — interior addition (set-row branch)
-    ⟨λ.parts.set row (λ.parts[row] + 1), by sorry⟩
+  if _h : row < λ.parts.length then
+    ⟨(λ.parts.set row (λ.parts[row] + 1)).insertionSort (· ≥ ·),
+     List.sorted_insertionSort _ _⟩
   else
-    -- Ref: [sagan2001] §2.3 — append branch (last-part-positivity)
-    ⟨λ.parts ++ [1], by sorry⟩
+    ⟨(λ.parts ++ [1]).insertionSort (· ≥ ·),
+     List.sorted_insertionSort _ _⟩
 
 /-- The covering relation in the Young lattice:
     μ ⋖ λ iff λ = μ + one cell. -/
