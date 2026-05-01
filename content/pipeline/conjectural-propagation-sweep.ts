@@ -1,17 +1,17 @@
 /**
  * Conjectural-propagation sweep (CLAUDE.md §3b enforcement).
  *
- * For every `conj:` block in the paper, BFS forward through the
- * `uses[]` reverse graph and report which provable kinds
+ * For every `conj:` block in the paper, walk forward (BFS) through
+ * the `uses[]` reverse graph and report which provable kinds
  * (theorem / proposition / lemma / corollary) live in each cone.
  *
- * Output: `docs/audits/2026-05-01-conjectural-propagation-sweep.md`
- *
  * Usage (from repo root):
- *   bun run content/pipeline/conjectural-propagation-sweep.ts
+ *   bun run content/pipeline/conjectural-propagation-sweep.ts [output-path]
+ *
+ * Default output: `docs/audits/2026-05-01-conjectural-propagation-sweep.md`
  */
-import { readdirSync, readFileSync, statSync, writeFileSync } from "fs";
-import { join, basename } from "path";
+import { readdirSync, readFileSync, statSync, writeFileSync, mkdirSync } from "fs";
+import { join, basename, dirname, relative } from "path";
 
 type Block = { kind: string; label: string; uses: string[]; file: string };
 const blocks = new Map<string, Block>();
@@ -33,7 +33,7 @@ function walk(dir: string) {
     const usesBlock = src.match(/uses\s*:\s*\[([^\]]*)\]/s);
     const uses: string[] = [];
     if (usesBlock) for (const u of usesBlock[1].matchAll(/["']([^"']+)["']/g)) uses.push(u[1]);
-    blocks.set(label, { kind, label, uses, file: p.replace(/^.*\/qou\//, "") });
+    blocks.set(label, { kind, label, uses, file: relative(process.cwd(), p) });
   }
 }
 
@@ -52,7 +52,9 @@ for (const b of blocks.values()) {
 
 const provable = new Set(["theorem", "proposition", "lemma", "corollary"]);
 
-// For each conjecture, BFS forward (reverseDeps) collecting downstream provable blocks
+// For each conjecture, BFS forward (reverseDeps) collecting downstream provable blocks.
+// (BFS via shift() — visit-order does not affect the final set, but keeps the
+// traversal layered for any future use that depends on dependency-chain order.)
 const reportLines: string[] = [];
 reportLines.push("# Conjectural-propagation sweep — per-conjecture cones");
 reportLines.push("");
@@ -74,15 +76,15 @@ const conjToProvable = new Map<string, Hit[]>();
 
 for (const c of conjectureLabels) {
   const visited = new Set<string>();
-  const stack = [c];
-  while (stack.length) {
-    const cur = stack.pop()!;
+  const queue: string[] = [c];
+  while (queue.length) {
+    const cur = queue.shift()!;
     const deps = reverseDeps.get(cur);
     if (!deps) continue;
     for (const d of deps) {
       if (visited.has(d)) continue;
       visited.add(d);
-      stack.push(d);
+      queue.push(d);
     }
   }
   const hits: Hit[] = [];
@@ -140,7 +142,9 @@ if (empty.length) {
   reportLines.push("");
 }
 
-writeFileSync("docs/audits/2026-05-01-conjectural-propagation-sweep.md", reportLines.join("\n"));
-console.log(`Wrote docs/audits/2026-05-01-conjectural-propagation-sweep.md`);
+const outputPath = process.argv[2] ?? "docs/audits/2026-05-01-conjectural-propagation-sweep.md";
+mkdirSync(dirname(outputPath), { recursive: true });
+writeFileSync(outputPath, reportLines.join("\n"));
+console.log(`Wrote ${outputPath}`);
 console.log(`Conjectures: ${conjectureLabels.size}`);
 console.log(`Unique provable blocks in any cone: ${uniqueAffected.size}`);
