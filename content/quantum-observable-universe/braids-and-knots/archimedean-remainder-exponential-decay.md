@@ -44,34 +44,25 @@ The expected route — to be formalised once each gap is closed:
 
 1. **Tail as $q$-Pochhammer residue.** The Markov-trace product
    ([Markov trace product](#thm:markov-trace-product)) at depth $n$
-   factors through a partial $q$-Pochhammer
-
-   $$
-     \Phi_n(x; q)
-     \;=\;
-     \prod_{k=0}^{n-1}\bigl(1 - x q^k\bigr).
-   $$
-
-   The full archimedean limit corresponds to $\Phi_\infty$. The
-   *multiplicative remainder* — the unreduced piece of the
+   factors through the partial product
+   $\Phi_n(x; q)$ of the
+   [$q$-Pochhammer partial product](#def:q-pochhammer-partial-product),
+   so the *multiplicative remainder* — the unreduced piece of the
    Gröbner--Shirshov ideal at depth $n$ — is
    $\Phi_\infty / \Phi_n = \prod_{k \ge n}(1 - x q^k)$.
 
-2. **Integral representation.** Setting $q = e^{\hbar}$ and taking
-   logarithms,
-
-   $$
-     \log \frac{\Phi_\infty}{\Phi_n}
-     \;=\;
-     \sum_{k \ge n}\log(1 - x e^{k\hbar})
-     \;\xrightarrow{\hbar \to 0}\;
-     \frac{1}{\hbar}\!\int_{n\hbar}^{\infty}\!\log(1 - x e^t)\,dt.
-   $$
-
-   The integrand is the kernel of the classical dilogarithm
-   $\mathrm{Li}_2$. The integral over the *full* contour gives
-   $\mathcal{V}_{\mathrm{hyp}}(K)$ via the standard regulator
-   identification.
+2. **Integral representation.** The
+   [Archimedean limit conjecture](#conj:dilogarithm-archimedean-limit)
+   asserts $(1 - q)\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under
+   Faddeev's joint scaling. The remainder $\log(\Phi_\infty/\Phi_n)$
+   inherits the dilogarithm's integral kernel
+   $\bigl.-\log(1 - t)/t\bigr.$, and the integral over the full contour
+   gives $\mathcal{V}_{\mathrm{hyp}}(K)$ via the standard regulator
+   identification. The
+   [shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)
+   pins the algebraic and geometric volumes to the *same* limit
+   (rather than a non-zero offset), without which the remainder might
+   converge to a constant rather than zero.
 
 3. **Picard--Lefschetz steepest descent.** Deform the integration
    contour to a Lefschetz thimble $J_{z_c}$ originating at the

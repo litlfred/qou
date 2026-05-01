@@ -11,7 +11,10 @@ export default conjecture({
   uses: [
     "def:archimedean-realization-functor",
     "def:algebraic-quantum-volume",
+    "def:q-pochhammer-partial-product",
     "conj:kashaev-volume-conjecture",
+    "conj:dilogarithm-archimedean-limit",
+    "conj:shared-denominator-cusp-holonomy",
     "thm:markov-trace-product",
   ],
   cites: [
