@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Topology.Order.Basic
 import QOU.AppendixSurreals.Basic
 import QOU.AppendixSurreals.StandardPart
 import QOU.AppendixSurreals.SignSequence
@@ -79,6 +80,10 @@ them acquire genuine mathematical content.
 - `KComplex.abs`       — Manhattan norm `|a| + |b|` in `K`.
 - `ColoredJones`       — total function returning the zero
                          complex surreal `(0, 0)`.
+- `classicalLimit`     — `Filter.Tendsto`-based classical limit
+                         (`0` if no limit exists).
+- `Nimbers p n`        — `Fin (p^n)` (cardinality of `p`-adic
+                         depth-`≤ n` nimbers).
 
 **Still axiomatic (genuinely deep):**
 
@@ -86,14 +91,10 @@ them acquire genuine mathematical content.
   `QOU_FrobeniusPairing`, `QOU_ObservabilityNorm`,
   `QOU_VacuumEnergy` — full categorical QOU framework not yet
   formalised in mathlib.
-- `KazhdanLusztigCells`, `Nimbers` — depend on Kazhdan–Lusztig
-  theory + nimber arithmetic, neither yet in mathlib at the
-  required granularity.
+- `KazhdanLusztigCells` — depends on Kazhdan–Lusztig theory at a
+  granularity not yet in mathlib.
 - `surrealExp`, `surrealLog` — require Berarducci–Mantova
   transseries on `𝐍𝐨` (open in mathlib).
-- `classicalLimit` — encodes a real-analytic limit operator;
-  faithful formalisation requires choosing a `Filter`-based
-  convention and dealing with non-existence.
 -/
 
 /-- Placeholder for the category of archimedean QOUs. -/
@@ -163,8 +164,20 @@ def HyperbolicVolume : Knot → ℝ := fun _ => 0
 /-- Placeholder for the Kazhdan–Lusztig cells of `H_n(ζ_p)`. -/
 axiom KazhdanLusztigCells (p n : ℕ) : Type
 
-/-- Placeholder for nimbers of `p`-adic depth `≤ n`. -/
-axiom Nimbers (p n : ℕ) : Type
+/-- The **`p`-adic depth-`≤ n` nimbers** as a finite type of
+    cardinality `p^n`.  This is the carrier shape predicted by
+    `OnPModularHecke`: depth-`n` nimbers in characteristic `p`
+    enumerate the subsets of an `n`-element bit-tree of `p`-ary
+    branching, giving `p^n` elements.
+
+    Concrete realisation as `Fin (p^n)` lets cardinality lemmas land
+    immediately; the `+` (nim-sum) and `×` (nim-product) operations
+    are not equipped here — they require `Mathlib.SetTheory.Game.Nim`-
+    level infrastructure that is independent of the conjecture. -/
+def Nimbers (p n : ℕ) : Type := Fin (p ^ n)
+
+instance Nimbers.instFintype (p n : ℕ) : Fintype (Nimbers p n) :=
+  inferInstanceAs (Fintype (Fin _))
 
 /-- Placeholder for the evaluation of `exp` on a surreal. -/
 axiom surrealExp {K : Type u} [SurrealField K] : K → K
@@ -172,8 +185,43 @@ axiom surrealExp {K : Type u} [SurrealField K] : K → K
 /-- Placeholder for the evaluation of `log` on a positive surreal. -/
 axiom surrealLog {K : Type u} [SurrealField K] : K → K
 
-/-- Placeholder for the real-analytic limit of a function at a point. -/
-axiom classicalLimit : (ℝ → ℝ) → ℝ → ℝ
+/-- The **real-analytic limit** of `f : ℝ → ℝ` at a point `x : ℝ`,
+    using mathlib's `Filter.Tendsto` machinery.
+
+    Returns the unique `L` such that `f(y) → L` as `y → x` with
+    `y ≠ x`, and `0` if no such `L` exists.  This is the classical
+    "punctured-neighbourhood" limit (so a removable singularity at
+    `x` does not influence the value).
+
+    Total — defined for every `(f, x)` even when no limit exists.
+    The conjecture `ClassicalLimitIsStandardPart` references this
+    operator to relate surreal-evaluation at `1 + ε` to classical
+    limits at `1`. -/
+noncomputable def classicalLimit (f : ℝ → ℝ) (x : ℝ) : ℝ :=
+  if h : ∃ L, Filter.Tendsto f (nhdsWithin x {x}ᶜ) (nhds L)
+    then Classical.choose h else 0
+
+/-- If `f` has a `Filter.Tendsto` limit `L` at `x` (in the punctured
+    neighbourhood), `classicalLimit f x = L`. -/
+theorem classicalLimit_of_tendsto {f : ℝ → ℝ} {x L : ℝ}
+    (h : Filter.Tendsto f (nhdsWithin x {x}ᶜ) (nhds L)) :
+    classicalLimit f x = L := by
+  unfold classicalLimit
+  rw [dif_pos ⟨L, h⟩]
+  -- ℝ is densely ordered without endpoints, so `nhdsWithin x {x}ᶜ`
+  -- is non-trivial; uniqueness of limits then pins the choice.
+  exact tendsto_nhds_unique (Classical.choose_spec ⟨L, h⟩) h
+
+/-- The classical limit of a constant function is the constant. -/
+theorem classicalLimit_const (c x : ℝ) :
+    classicalLimit (fun _ => c) x = c :=
+  classicalLimit_of_tendsto (tendsto_const_nhds (α := ℝ))
+
+/-- The classical limit of the identity at any point is the point. -/
+theorem classicalLimit_id (x : ℝ) :
+    classicalLimit (fun y => y) x = x :=
+  classicalLimit_of_tendsto <|
+    (continuous_id.tendsto x).mono_left nhdsWithin_le_nhds
 
 /-! ### Conjecture classes -/
 
