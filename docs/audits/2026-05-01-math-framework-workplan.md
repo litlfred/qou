@@ -61,43 +61,44 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   without 3-manifold language.
 - **E**: 1 day.
 
-### P0.4 — Single-scale-calibration block (audit CAL-1)
+### P0.4 — Three-calibration-discipline block (audit §2·A) — ✅ landed
 
-- **W**: §2·A. The paper has *one* allowed external scale ($m_e$).
-  Currently this is implicit and so easily becomes "two" (with
-  $q_0$ also fitted).
-- **D**: New `prop:single-scale-calibration` block in
-  `observations/`. States: (i) every mass / Q-value / binding
-  energy in the paper is a $\mathbb{Q}(q_0)$-element times $m_e$;
-  (ii) $q_0$ is determined by the substrate-uniqueness
-  conjectures, not fitted; (iii) the only numerical input from
-  CODATA is $m_e$.
-- **B**: optional follow-up — strengthen via the substrate-parameter
-  derivation chain (P1.1).
-- **S**: paper-wide sweep; every numeric mass prediction cites this
-  block.
-- **E**: 0.5 day.
+- **W**: §2·A. The paper categorically allows **exactly three**
+  external calibration inputs ($m_e$, $m_\mu/m_e$, $Q_\beta$),
+  aligning to (co)homology degrees $H^0$, $H^1$, $H^2$. The
+  discipline was implicit; making it explicit lets every audit
+  flag a fourth input as a hard failure.
+- **D**: ✅ **Landed** as
+  [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
+  (`.ts` + `.md` + `.lean`), wired into the observations chapter
+  manifest under `sec:substrate-consistency`.
+- **B**: blocked nothing.
+- **S**: ✅ block validates clean (`bun run validate`).
+- **E**: 0.5 day. ✅ done.
 
 ---
 
 ## P1 — Reduce all empirical / fitting flags to derivations
 
-### P1.1 — Substrate parameter $q_0$ derivation chain
+### P1.1 — Substrate parameter $q_0$ — recast as $H^1$ cross-check
 
-- **W**: SUB-1. $q_0 = 1.10998$ pinned to CODATA $m_\mu/m_e$ (per
-  [DERIVATION-STATUS.md line 110](../../folio-assistant/computations/DERIVATION-STATUS.md))
-  is a *second* external calibration. Either derive or count.
-- **D**: Either (a) close the chain
-  `q-from-epsilon → substrate-parameter-unique → vacuum-substrate-compatibility`
-  (currently 🟡 in algebraic-substrate) and prove $q_0$ is
-  algebraically determined; **or** (b) explicit "two-scale" block
-  acknowledging both $m_e$ and $q_0$ as inputs.
-- **B**: blocked by nothing; (a) is the harder path.
-- **S**: paper makes a single, internally-consistent claim (either
-  one calibration or two) and never pins $q_0$ to $m_\mu/m_e$ in
-  compute except as a *cross-check*, not as a definition.
-- **E**: (a) 1 week of theory; (b) 0.5 day of accounting. Recommend
-  (b) now and (a) as a P3 follow-up.
+- **W**: SUB-1, post-correction. $q_0$ is **the** $H^1$ calibration
+  per [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md);
+  the lepton ratio $m_\mu/m_e$ supplies its value. Within $H^1$,
+  the ratio is itself overdetermined by $\alpha_{\mathrm{EM}}^{-1}$
+  and tritium $t_{1/2}$ (consistency window).
+- **D**: (a) Close the chain `q-from-epsilon →
+  substrate-parameter-unique → vacuum-substrate-compatibility` so
+  that $q_0$ is shown to be algebraically determined (the
+  three-sector cross-checks become consistency proofs, not
+  independent fits). (b) In compute, ensure scripts treat
+  $q_0$ as the *single* $H^1$ input — not as a free 50-digit
+  number to fit.
+- **B**: nothing blocks (b); (a) is research-grade.
+- **S**: every compute script that uses $q_0$ derives its value
+  from a single declared $H^1$ input (e.g. CODATA $m_\mu/m_e$),
+  not from a separate fit-against-mass-tower step.
+- **E**: (a) 1 week; (b) 0.5 day.
 
 ### P1.2 — BW term 8 (Hook) coefficient — kill the "ad hoc" tag
 
@@ -151,18 +152,27 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   `least_squares`, or "AME-anchored" parameter.
 - **E**: 1 day.
 
-### P1.6 — Neutrino mass — demote or fix
+### P1.6 — Neutrino: unknot consistency sweep (was: "demote or fix")
 
-- **W**: NU-1. Wrong by 10⁶ — currently a hard claim.
-- **D**: Re-classify the neutrino-mass block to `conjecture` with
-  the 10⁶ discrepancy named explicitly. Then audit channel choice
-  (`alt`-block weight) and operator-selection LP for the neutrino's
-  word.
-- **B**: blocked by nothing for the demotion; the fix may take
-  weeks.
-- **S**: paper does not claim a derived neutrino mass while the
-  10⁶ gap stands.
-- **E**: 0.5 day for demotion; open-ended for the fix.
+- **W**: Re-audited per
+  [`audit §2·F`](2026-05-01-math-framework-deep-audit.md#§2·f-—-neutrino-mass)
+  — neutrino is the unknot, $J_\nu(q)=1$, bare-knot mass exactly
+  zero. The previously circulating "wrong by 10⁶" claim was a
+  neutron/neutrino comparison error. There is nothing to fix on
+  the algebraic side; the workplan task becomes a
+  **consistency sweep**.
+- **D**: Grep `folio-assistant/computations/` for any script that
+  emits a numerical $m_\nu$ from a knot-Markov-trace path (rather
+  than from the vacuum-drag formula
+  $m_\nu \sim \mu_0\cdot(q-1)$). Any such script is buggy by the
+  unknot identity and must be removed or renamed.
+- **B**: blocked by nothing.
+- **S**: zero compute scripts produce a knot-derived neutrino
+  mass; vacuum-drag predictions are clearly labelled as such; the
+  obsolete "10⁶ off" line in
+  [`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
+  is replaced (already done in this audit pass).
+- **E**: 0.5 day.
 
 ### P1.7 — 1/α 399-ppb residual — derive or honest-conjecture
 
@@ -375,7 +385,7 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 | 7 | **P2.6** GS-filtration narrative blocks | Closes the largest opaque-axiom surface |
 | 8 | **P2.2** $H_{3A}$ Wedderburn coverage | Unblocks the big compute fix (P2.1) |
 | 9 | **P2.1** Full Wedderburn channels in CRT | The single biggest fix for compute correctness (~99% of mass) |
-| 10 | **P1.6** Neutrino demote | Honesty fix; cheap |
+| 10 | **P1.6** Neutrino unknot consistency sweep | Cheap; ensure no compute path emits a knot-derived $m_\nu$ |
 | 11 | **P1.5** Compound-shell / atlas base-case audit | Removes the last "calibration" block names |
 | 12 | **P1.2 / P1.3** BW-8 / BW-11 derivation | Removes "ad hoc" / "approx" tags |
 | 13 | **P3.2** Pentagon $uv = q\,vu$ derivation | Closes a stale "expected" claim |

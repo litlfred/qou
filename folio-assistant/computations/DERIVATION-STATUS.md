@@ -179,4 +179,9 @@ different levels interact non-trivially.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
 5. **1/α remaining 399 ppb**: J³ correction (Massey products?).
 6. **Energy scale E₀**: calibrated, not independently derived.
-7. **Neutrino mass**: wrong by 10⁶.
+7. **Neutrino mass**: ν = unknot ($K_{0_1}$); $J_\nu(q)=1$; bare-knot
+   mass = 0. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$
+   (vacuum drag, not knot topology — see
+   `content/.../descartes-universe/neutrino-knot.md`). The earlier
+   "wrong by 10⁶" claim was a neutron/neutrino confusion (comparing
+   neutrino against neutron mass) and is **withdrawn**.
