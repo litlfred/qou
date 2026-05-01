@@ -115,6 +115,20 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   $\lambda = (2,2)$ self-conjugate at $H_{n\geq 4}$.
 - **S**: tag changes to "DERIVED" in DERIVATION-STATUS.md.
 - **E**: 2 days.
+- **Note (open question to dig into).** The three derivation
+  pathways for BW coefficients — (a) the **direct BW skein
+  ladder** at the partition level, (b) the **Wenzl bridge** via
+  the ladder-idempotent cabling, (c) the **LP shadow-price**
+  $u_\lambda$ from the Schrijver-style operator-selection LP
+  ([`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md))
+  — should each remain available as options *or* be proven
+  pairwise equivalent. Pick one as the canonical narrative path
+  only after explicit equivalence is established (or document
+  the regimes in which each is preferred). Keeping the **ladder**
+  too is a feature, not redundancy: it gives a direct
+  partition-by-partition derivation that the LP-dual version
+  does not. Track this as a P3.x sub-item separate from BW-8 /
+  BW-11 closure.
 
 ### P1.3 — BW term 11 (pn corr) coefficient — kill the "approx" tag
 
@@ -125,6 +139,11 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 - **B**: same as P1.2.
 - **S**: "DERIVED" tag.
 - **E**: 2 days.
+- **Note.** Same three-pathway-equivalence question as P1.2. The
+  pn-corr term is the natural test case for the Wenzl-bridge ↔
+  shadow-price ↔ ladder equivalence, since all three give a
+  symbolic answer; comparing them on this single term resolves
+  whether they coincide identically or only at $q_0$.
 
 ### P1.4 — Magic-number derivation from Bring's surface
 
@@ -344,6 +363,29 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 - **S**: an explicit `MotivicGaloisCharacter` `instance` exists
   (Lean) or is fully specified (narrative).
 - **E**: open-ended.
+
+### P3.6 — BW ladder vs Wenzl bridge vs LP shadow-price equivalence
+
+- **W**: P1.2 / P1.3 currently allow either the Wenzl bridge or
+  the LP-shadow-price as the BW-coefficient derivation pathway,
+  and the **direct BW skein ladder** is a third, partition-level
+  option used in some computations. Choosing one as canonical
+  without explicit equivalence loses information: the ladder
+  exposes per-partition structure the LP dual does not, and the
+  Wenzl bridge exposes the ladder-idempotent cabling that
+  neither of the others does.
+- **D**: Either (a) prove the three give pairwise-identical
+  symbolic outputs in $\mathbb{Z}[q^{\pm 1}]$ across all 11 BW
+  terms (a closed-form equivalence theorem), **or** (b) document
+  the regime in which each is preferred and keep all three as
+  parallel canonical pathways.
+- **B**: blocked by P1.2 / P1.3 closure (need a worked symbolic
+  comparison in hand).
+- **S**: every BW coefficient in
+  [DERIVATION-STATUS.md](../../folio-assistant/computations/DERIVATION-STATUS.md)
+  is annotated with which pathway(s) produced it; equivalence
+  status (proven / conjectural / open) is named.
+- **E**: 1 week (mostly bookkeeping after P1.2 / P1.3).
 
 ---
 

@@ -98,15 +98,40 @@ not represent logical dependencies:
 
 ```
 Conjectures: 61
-Unique provable blocks in any cone: 257
+Unique provable blocks in any cone: 125
 ```
 
-Down from 259 → 257 (the demoted `n-v-leading-order` is now a
-conjecture, not a provable; the 5 small-cone conjectures are
-empty). 20 large cones (≥ 224 hits) remain — these all converge
-through bridge remarks (`rem:calibration-inputs` etc.) and are
-left for case-by-case author review with the per-conjecture cone
-listings in the sweep report as the actionable inventory.
+Down from 259 → **125** in three passes:
+
+1. **Small-cone closures** (1 demotion + 3 `uses[]` cleanups) →
+   257 unique provables.
+2. **NU-1 resolution** (neutrino = unknot, no mass) → no further
+   cone change but eliminates one empirical flag.
+3. **Bridge-remark + bridge-example sweep** — drop `conj:*`
+   entries from `uses[]` of every `kind: remark` and `kind: example`
+   block (they are interpretive, not propagators); plus drop
+   spurious `conj:shell-threading-energy` from
+   `prop:nuclear-groebner-reduction` (both copies — its `.md` proof
+   never invokes the conjecture). 24 files edited mechanically.
+   → **125** unique provables.
+
+Top remaining cones after bridge cleanup (down from 244+):
+
+| Conjecture | Cone | Notes |
+|------------|----:|-------|
+| `conj:borromean-quark` | 101 | observations |
+| `conj:palindromicity-orbital-type` | 92 | molecular |
+| `conj:shell-closure-nf-term-count` | 92 | molecular |
+| `conj:regularity-breakdown` | 88 | fluid-dynamics |
+| `conj:ns-counterexample` | 85 | fluid-dynamics |
+| `conj:jet-filtered-knot-factor` | 80 | braids-and-knots |
+| `conj:baryon-period-ratio` | 79 | descartes-universe |
+| `conj:hyperbolic-volume-transcendence` | 79 | descartes-universe |
+
+These require per-conjecture investigation (each has a
+proposition or definition directly using the conjecture as a
+genuine logical input). Author review continues to be the right
+mode.
 
 ## P3.2 — Pentagon $uv = q\,vu$ at traced-volume level 🟡
 
