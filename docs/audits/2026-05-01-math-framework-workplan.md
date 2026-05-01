@@ -352,7 +352,7 @@ cross-check, not the primary derivation.
   nuclei ≤ 50 ppm without per-isotope fitting.
 - **E**: P2.1a 1 day; P2.1b multi-week.
 
-### P2.2 — Wedderburn coverage at $H_{3A}(q)$ via CRT polynomial reconstruction — **elevated**
+### P2.2 — Wedderburn coverage at $H_{3A}(q)$ — **elevated; split into 2.2a + 2.2b**
 
 **2026-05-01 elevation**: was tagged "approximation accuracy fix"; the
 P2.1a witness
@@ -363,6 +363,23 @@ radius ($|z| < q$); the tower formula becomes divergent, not just
 inaccurate. Per user confirmation: "probably H_3 weights are wrong
 at H_{3A}". P2.2 now both restores convergence AND improves
 accuracy.
+
+**Investigation** (2026-05-01,
+[`2026-05-01-h3-at-h3a-weight-derivation.md`](2026-05-01-h3-at-h3a-weight-derivation.md)):
+the H_3 weights are the canonical $w_\lambda$ at $n=3$ but applied
+per-generator at H_{3A}. The correct H_{3A} formulation already
+exists in
+[`schur_weyl_symbolic.py`](../../folio-assistant/computations/schur_weyl_symbolic.py)
+(per-partition weights via $w_\lambda = s_\lambda(q,q^{-1})/H_q(\lambda)$)
+but isn't wired into the live mass tower. So P2.2 splits:
+
+- **P2.2a — Wire `schur_weyl_symbolic` into the live mass tower.**
+  Small change; uses existing correct math; slow at $A \geq 4$.
+- **P2.2b — CRT polynomial reconstruction at H_{3A}.** Multi-week;
+  scales to high $A$ via mod-$p$ evaluations.
+
+Recommended hybrid: P2.2a for $A \leq 3$ (D, ³He, ⁴He) immediately;
+P2.2b for higher $A$.
 
 - **W**: §3·B of audit. Current code uses $H_3$ weights as an
   approximation.
