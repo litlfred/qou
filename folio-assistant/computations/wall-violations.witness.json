@@ -1,0 +1,192 @@
+{
+  "computation": "wall-violations-sweep",
+  "computedAt": "2026-05-01T19:32:28.937Z",
+  "description": "Audit P0.1 — strict-Archimedean-wall enforcement at the proof level. Greps proof bodies for Mostow / Vol(K) / Gromov / Thurston / Kashaev / Murakami / SnapPy / hyperbolic / cusp shape / SW thimble. Auto-triage buckets: 'citation' (cite-adjacent, OK), 'appendix-surreals' (whole chapter is post-Archimedean by design, OK), 'verification-witness' (auxiliary numerical check — SnapPy/Vol independently verifies an algebraically-derived value, OK), 'tau-side-label' (refers to a τ-image block, OK), 'candidate' (manual review required).",
+  "patternCount": 10,
+  "fileCount": 10,
+  "totalHits": 25,
+  "triage": {
+    "candidate": 12,
+    "tau-side-label": 2,
+    "verification-witness": 1,
+    "appendix-surreals": 7,
+    "citation": 3
+  },
+  "hits": [
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md",
+      "line": 122,
+      "pattern": "Thurston geometrization",
+      "text": "knot complement is determined by Thurston's geometrization and the",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md",
+      "line": 58,
+      "pattern": "Thurston geometrization",
+      "text": "**Part 2: Thurston geometrization selects the evaluation mode.**",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md",
+      "line": 59,
+      "pattern": "Thurston geometrization",
+      "text": "Thurston's geometrization theorem for knot complements classifies",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md",
+      "line": 65,
+      "pattern": "Vol(K) hyperbolic volume",
+      "text": "hyperbolic volume form.  The rigid dualizing complex evaluation",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md",
+      "line": 68,
+      "pattern": "Kashaev limit",
+      "text": "of the Kashaev--Murakami--Murakami Volume Conjecture: the Hecke",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md",
+      "line": 68,
+      "pattern": "Murakami volume",
+      "text": "of the Kashaev--Murakami--Murakami Volume Conjecture: the Hecke",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md",
+      "line": 72,
+      "pattern": "Vol(K) hyperbolic volume",
+      "text": "- *Torus $K = T_{m,n}$*: the hyperbolic volume vanishes.  The",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md",
+      "line": 124,
+      "pattern": "Vol(K) hyperbolic volume",
+      "text": "([hyperbolic volume transcendence](#conj:hyperbolic-volume-transcendence)).",
+      "triage": "tau-side-label"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-universality.md",
+      "line": 23,
+      "pattern": "Vol(K) hyperbolic volume",
+      "text": "that for a hyperbolic knot $K$, the hyperbolic volume $\\mathrm{Vol}(K)$",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md",
+      "line": 74,
+      "pattern": "Murakami volume",
+      "text": "\\cite{kashaev1997,murakami-murakami2001} the asymptotic",
+      "triage": "citation"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md",
+      "line": 78,
+      "pattern": "Mostow rigidity",
+      "text": "with Mostow rigidity \\cite{mostow1968} and Gromov's norm theorem",
+      "triage": "citation"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md",
+      "line": 78,
+      "pattern": "Gromov norm/volume",
+      "text": "with Mostow rigidity \\cite{mostow1968} and Gromov's norm theorem",
+      "triage": "citation"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md",
+      "line": 110,
+      "pattern": "SnapPy",
+      "text": "the post-Archimedean naming (volume from SnapPy) is substituted",
+      "triage": "tau-side-label"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/eos-borromean-cfl.md",
+      "line": 151,
+      "pattern": "Vol(K) hyperbolic volume",
+      "text": "$M_B = V_B / \\hbar_q^2$ is the hyperbolic volume contribution.",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/skein-mass-relation-proof.md",
+      "line": 6,
+      "pattern": "Hyperbolic moduli/structure",
+      "text": "complement carries a complete hyperbolic structure of volume",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/local-substrate-q-proof.md",
+      "line": 19,
+      "pattern": "SnapPy",
+      "text": "The numerical values are independently verified by the SnapPy witness",
+      "triage": "verification-witness"
+    },
+    {
+      "file": "content/quantum-observable-universe/observations/local-substrate-q-proof.md",
+      "line": 26,
+      "pattern": "SnapPy",
+      "text": "$2.2 \\times 10^{-8}$ on $m_\\mu / m_e$ and the SnapPy error bound of",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/descartes-universe/em-coupling-chern-simons.md",
+      "line": 57,
+      "pattern": "Vol(K) hyperbolic volume",
+      "text": "the hyperbolic volume:",
+      "triage": "candidate"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/spectral-normal-form.md",
+      "line": 136,
+      "pattern": "Kashaev limit",
+      "text": "7. Match against known asymptotic-volume formulas (Kashaev,",
+      "triage": "appendix-surreals"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+      "line": 140,
+      "pattern": "Kashaev limit",
+      "text": "1. Show: the classical Kashaev statement (limit form) and the",
+      "triage": "appendix-surreals"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+      "line": 141,
+      "pattern": "Kashaev limit",
+      "text": "surreal Kashaev statement (standard-part form) are",
+      "triage": "appendix-surreals"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+      "line": 155,
+      "pattern": "Murakami volume",
+      "text": "4. The figure-eight knot $4_1$ (Murakami–Murakami 2001",
+      "triage": "appendix-surreals"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+      "line": 156,
+      "pattern": "Murakami volume",
+      "text": "[@murakami-murakami2001]) and the trefoil $3_1$ have the volume",
+      "triage": "appendix-surreals"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+      "line": 166,
+      "pattern": "Kashaev limit",
+      "text": "6. The general Kashaev conjecture for hyperbolic knots is open",
+      "triage": "appendix-surreals"
+    },
+    {
+      "file": "content/quantum-observable-universe/appendix-surreals/kashaev-surreal.md",
+      "line": 178,
+      "pattern": "Kashaev limit",
+      "text": "**Falsification path**: identical to the classical Kashaev",
+      "triage": "appendix-surreals"
+    }
+  ]
+}
