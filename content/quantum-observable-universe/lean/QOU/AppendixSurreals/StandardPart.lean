@@ -383,4 +383,55 @@ theorem isClose_iff_standardPart_eq_of_finite {x y : K}
   rw [hzero, add_zero]
   exact hxsp.sub hysp
 
+/-! ### Algebraic closure properties of `IsClose`
+
+`IsClose` is preserved by negation, addition, and (under a
+finiteness assumption) multiplication.  These lemmas mirror the
+arithmetic of the *monad* in non-standard analysis. -/
+
+/-- `IsClose` is preserved by negation. -/
+theorem IsClose.neg' {x y : K} (h : IsClose x y) :
+    IsClose (-x) (-y) := by
+  unfold IsClose at *
+  have heq : -x - -y = -(x - y) := by ring
+  rw [heq]
+  exact h.neg
+
+/-- `IsClose` is additive: if `x ~ x'` and `y ~ y'` then
+    `x + y ~ x' + y'`. -/
+theorem IsClose.add' {x x' y y' : K}
+    (hx : IsClose x x') (hy : IsClose y y') :
+    IsClose (x + y) (x' + y') := by
+  unfold IsClose at *
+  have heq : (x + y) - (x' + y') = (x - x') + (y - y') := by ring
+  rw [heq]
+  exact hx.add hy
+
+/-- `IsClose` is preserved by subtraction. -/
+theorem IsClose.sub' {x x' y y' : K}
+    (hx : IsClose x x') (hy : IsClose y y') :
+    IsClose (x - y) (x' - y') := by
+  unfold IsClose at *
+  have heq : (x - y) - (x' - y') = (x - x') - (y - y') := by ring
+  rw [heq]
+  exact hx.sub hy
+
+/-- `IsClose` is multiplicative on the **finite** subset:
+    if `x` and `y'` are finite, `x ~ x'` and `y ~ y'` then
+    `x * y ~ x' * y'`.
+
+    The finiteness hypotheses are necessary: an infinite × infinitesimal
+    can have any standard part, breaking the implication. -/
+theorem IsClose.mul' {x x' y y' : K}
+    (hx_fin : SurrealField.IsFinite x)
+    (hy'_fin : SurrealField.IsFinite y')
+    (hx : IsClose x x') (hy : IsClose y y') :
+    IsClose (x * y) (x' * y') := by
+  unfold IsClose at *
+  -- xy - x'y' = (y - y')·x + (x - x')·y'
+  have heq : x * y - x' * y'
+              = (y - y') * x + (x - x') * y' := by ring
+  rw [heq]
+  exact (hy.mul_finite hx_fin).add (hx.mul_finite hy'_fin)
+
 end QOU.AppendixSurreals
