@@ -65,6 +65,10 @@ structure NonCommFourierData where
 class IsInverseFourier (D : NonCommFourierData) where
   /-- Existence of a finite indexing set on which the sum is taken. -/
   indexFin : List D.spectrum
+  /-- The indexing list contains no duplicates: the Peter–Weyl sum
+      ranges over the *set* of distinct irreducibles, so duplicate
+      entries would overcount. -/
+  nodup_indexFin : indexFin.Nodup
   /-- Decomposition: trace as a weighted sum of `χ_λ / d_λ`. -/
   decomposition :
     ∀ β, D.tr β =

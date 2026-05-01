@@ -117,10 +117,18 @@ The expected route — to be formalised once each gap is closed:
 ### Lean axiomatisation
 
 Per CLAUDE.md §3b, the conjecture is encoded in Lean as a typeclass
-`ArchimedeanRemainderDecay K`, with `decay_rate : ℝ` and
-`decay_holds : ∀ n, |R n| ≤ C * exp(-c * n)` as conjectural fields.
-Concrete instances are constructed by hand for specific knot families
-where a proof is in fact available (figure-eight, etc.).
+`DecayConjecture K`, with `C : ℝ`, `c : ℝ`, threshold `n₀ : ℕ`, and
+
+$$
+  \texttt{decay\_holds} \;:\;
+  \forall n,\;\; n_0 \le n \;\Longrightarrow\;
+  |\,\texttt{remainder}\;K\;n\,| \;\le\; C \cdot \exp(-c \cdot n)
+$$
+
+as the conjectural input field, alongside positivity constraints
+`C_pos`, `c_pos`. Concrete instances are constructed by hand for
+specific knot families where a proof is in fact available
+(figure-eight, etc.).
 
 ### Falsifiability
 
