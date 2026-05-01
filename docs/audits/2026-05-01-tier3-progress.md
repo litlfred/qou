@@ -66,30 +66,47 @@ remediation paths applies to each block:
 Path 2 is preferred wherever the proof is independent of the
 conjecture. Per-block determination is author work.
 
-### Action taken in this branch
+### Actions taken in this branch
 
-One unambiguous case applied: `prop:n-v-leading-order-derivation`
-self-describes in its `.md` as "Conditional theorem. Conditional on
-the two substrate axioms..." and lists two `conj:` blocks directly
-in `uses[]`. Demoted:
+**One demotion** — `prop:n-v-leading-order-derivation` →
+`conj:n-v-leading-order-derivation` (the only block whose `.md`
+self-described as a conditional theorem).
 
-- [`content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts)
-  — `proposition` → `conjecture`, label
-  `prop:n-v-leading-order-derivation` → `conj:n-v-leading-order-derivation`.
-- [`content/quantum-observable-universe/observations/n-v-leading-order-derivation.md`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.md)
-  — narrative banner updated; "Proposition" → "Conjecture",
-  "Conditional theorem" → "Conditional conjecture".
-- Two upstream cross-references in
-  [`n-v-bring-action.md`](../../content/quantum-observable-universe/observations/n-v-bring-action.md)
-  and
-  [`n-v-tower-depth-ninety.md`](../../content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md)
-  + the Lean stub in
-  [`n-v-leading-order-derivation.lean`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean)
-  updated to the new label.
+**Three `uses[]` cleanups** — closed the 5 small-cone conjectures
+to **empty cones** by removing interpretive bridge edges that did
+not represent logical dependencies:
 
-The remaining 258 candidate blocks remain for case-by-case author
-review, with the per-conjecture cone listings in the sweep report
-as the actionable inventory.
+- [`thm:macroscopic-stability-equivalence`](../../content/quantum-observable-universe/algebraic-substrate/macroscopic-stability-equivalence.ts)
+  — dropped `conj:classical-riemann-hypothesis` from `uses[]`. The
+  theorem states an equivalence (PNT + spectral mapping) which is
+  unconditional; RH is one of the equivalent statements, not a
+  premise. Resolves 1-block cone.
+- [`def:computational-horizon`](../../content/quantum-observable-universe/information-theory/computational-horizon.ts)
+  — dropped `rem:skein-turing-machine` from `uses[]`. The remark
+  interprets `conj:quantum-computational-universality`; the
+  definition does not depend on it. Resolves 2-block cone (frees
+  `prop:p-bandwidth-bound`, `prop:incompleteness-implies-horizon`).
+- [`prop:collatz-contact-boundary`](../../content/quantum-observable-universe/algebraic-substrate/collatz-contact-boundary.ts)
+  — dropped `conj:q-collatz` from `uses[]`. The proposition
+  defines structural objects ($[2]_q$-divisor, contact-order
+  valuation) and is unconditional; the conjecture is referenced
+  for context. Resolves 4-block cone (frees
+  `lem:surreal-squeeze`, `prop:collatz-contact-boundary`,
+  `prop:collatz-no-cycles`, `prop:surreal-rate-calculus`).
+
+**Post-cleanup count.** Re-running the sweep:
+
+```
+Conjectures: 61
+Unique provable blocks in any cone: 257
+```
+
+Down from 259 → 257 (the demoted `n-v-leading-order` is now a
+conjecture, not a provable; the 5 small-cone conjectures are
+empty). 20 large cones (≥ 224 hits) remain — these all converge
+through bridge remarks (`rem:calibration-inputs` etc.) and are
+left for case-by-case author review with the per-conjecture cone
+listings in the sweep report as the actionable inventory.
 
 ## P3.2 — Pentagon $uv = q\,vu$ at traced-volume level 🟡
 

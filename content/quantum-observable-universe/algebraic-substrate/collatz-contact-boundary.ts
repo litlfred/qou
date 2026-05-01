@@ -5,7 +5,6 @@ export default proposition({
   title:
     "The $[2]_q$-contact boundary on the Reeb bundle",
   uses: [
-    "conj:q-collatz",
     "prop:root-of-unity-truncation",
   ],
   tags: [

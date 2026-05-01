@@ -11,69 +11,37 @@ upstream conjecture.
 touch a conjecture are *not* automatic violations — only provable
 kinds. This report restricts to provable kinds.
 
-## Reading the cone sizes
-
-The 20 largest cones (≥ 224 hits) all converge through a small set of
-**bridge remarks** — most prominently `rem:calibration-inputs`
-(`uses: ["conj:mass-endomorphism"]`) and a handful of similar interpretive
-remarks. Many "downstream" propositions list one of these remarks in their
-`uses[]` to signal *interpretation* rather than *logical dependency*. Two
-remediation paths are available for each cone hit:
-
-1. **Demote the provable block to `conjecture`** (CLAUDE.md §3b strict
-   reading). Correct when the block's logical content genuinely depends
-   on the upstream conjecture.
-2. **Clean up `uses[]`** so it reflects the proposition's actual logical
-   inputs, dropping the bridge remark. Correct when the proposition is
-   provable from non-conjectural prerequisites and only *cites* the
-   remark for context. The proposition then exits the cone automatically
-   on the next sweep.
-
-Path (2) is preferred wherever the proposition's proof block does not
-invoke the conjecture. The author should choose per-block based on the
-actual proof. This sweep cannot make that determination automatically
-— it only enumerates the candidates.
-
-The four small-cone conjectures (`conj:q-collatz` (4),
-`conj:quantum-computational-universality` (2),
-`conj:n-v-tower-depth-ninety` (1), `conj:n-v-bring-action` (1),
-`conj:classical-riemann-hypothesis` (1)) are the most cleanly scoped and
-should be addressed first; their downstream blocks are listed below and
-are tractable in a single follow-up PR.
-
 ## Summary
 
 | Conjecture | Provable cone size | File |
 |------------|-------------------:|------|
-| `conj:electron-shells-hopf` | 254 | `content/quantum-observable-universe/descartes-universe/electron-shells-hopf.ts` |
-| `conj:shell-threading-energy` | 250 | `content/quantum-observable-universe/observations/shell-threading-conjecture.ts` |
-| `conj:skein-shell-correction` | 250 | `content/quantum-observable-universe/descartes-universe/skein-shell-correction.ts` |
-| `conj:elliptic-stability-locus` | 250 | `content/quantum-observable-universe/descartes-universe/elliptic-stability-locus.ts` |
-| `conj:baryon-period-ratio` | 228 | `content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts` |
-| `conj:hyperbolic-volume-transcendence` | 227 | `content/quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.ts` |
-| `conj:regularity-breakdown` | 225 | `content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts` |
-| `conj:shell-correction-term-seven` | 224 | `content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.ts` |
-| `conj:knot-factor-frobenius-pairing` | 224 | `content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.ts` |
-| `conj:brane-tower-z-habiro` | 224 | `content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.ts` |
-| `conj:mass-endomorphism` | 224 | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.ts` |
-| `conj:jet-filtered-knot-factor` | 224 | `content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.ts` |
-| `conj:higgs-t28` | 224 | `content/quantum-observable-universe/observations/higgs-t28.ts` |
-| `conj:borromean-quark` | 224 | `content/quantum-observable-universe/observations/borromean-quark.ts` |
-| `conj:complex-chirality-rotation` | 224 | `content/quantum-observable-universe/observations/complex-chirality-rotation.ts` |
-| `conj:classical-limit-stpart` | 224 | `content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts` |
-| `conj:ns-counterexample` | 224 | `content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts` |
-| `conj:levi-degeneracy` | 224 | `content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts` |
-| `conj:palindromicity-orbital-type` | 224 | `content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.ts` |
-| `conj:shell-closure-nf-term-count` | 224 | `content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts` |
-| `conj:q-collatz` | 4 | `content/quantum-observable-universe/algebraic-substrate/q-collatz-conjecture.ts` |
-| `conj:quantum-computational-universality` | 2 | `content/quantum-observable-universe/information-theory/quantum-computational-universality.ts` |
-| `conj:n-v-tower-depth-ninety` | 1 | `content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts` |
-| `conj:n-v-bring-action` | 1 | `content/quantum-observable-universe/observations/n-v-bring-action.ts` |
-| `conj:classical-riemann-hypothesis` | 1 | `content/quantum-observable-universe/algebraic-substrate/classical-riemann-hypothesis.ts` |
+| `conj:electron-shells-hopf` | 253 | `content/quantum-observable-universe/descartes-universe/electron-shells-hopf.ts` |
+| `conj:shell-threading-energy` | 249 | `content/quantum-observable-universe/observations/shell-threading-conjecture.ts` |
+| `conj:skein-shell-correction` | 249 | `content/quantum-observable-universe/descartes-universe/skein-shell-correction.ts` |
+| `conj:elliptic-stability-locus` | 249 | `content/quantum-observable-universe/descartes-universe/elliptic-stability-locus.ts` |
+| `conj:baryon-period-ratio` | 227 | `content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts` |
+| `conj:hyperbolic-volume-transcendence` | 226 | `content/quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.ts` |
+| `conj:regularity-breakdown` | 224 | `content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts` |
+| `conj:shell-correction-term-seven` | 223 | `content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.ts` |
+| `conj:knot-factor-frobenius-pairing` | 223 | `content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.ts` |
+| `conj:brane-tower-z-habiro` | 223 | `content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.ts` |
+| `conj:mass-endomorphism` | 223 | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.ts` |
+| `conj:jet-filtered-knot-factor` | 223 | `content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.ts` |
+| `conj:higgs-t28` | 223 | `content/quantum-observable-universe/observations/higgs-t28.ts` |
+| `conj:borromean-quark` | 223 | `content/quantum-observable-universe/observations/borromean-quark.ts` |
+| `conj:complex-chirality-rotation` | 223 | `content/quantum-observable-universe/observations/complex-chirality-rotation.ts` |
+| `conj:classical-limit-stpart` | 223 | `content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts` |
+| `conj:ns-counterexample` | 223 | `content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts` |
+| `conj:levi-degeneracy` | 223 | `content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts` |
+| `conj:palindromicity-orbital-type` | 223 | `content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.ts` |
+| `conj:shell-closure-nf-term-count` | 223 | `content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts` |
 | `conj:phi-q-tower-jsj-bridge` | 0 | `content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.ts` |
 | `conj:kashaev-volume-conjecture` | 0 | `content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.ts` |
 | `conj:mass-element-nf` | 0 | `content/quantum-observable-universe/braids-and-knots/mass-element-nf.ts` |
 | `conj:cp-violation-spectral-form` | 0 | `content/quantum-observable-universe/observations/cp-violation-spectral-form.ts` |
+| `conj:n-v-leading-order-derivation` | 0 | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
+| `conj:n-v-tower-depth-ninety` | 0 | `content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts` |
+| `conj:n-v-bring-action` | 0 | `content/quantum-observable-universe/observations/n-v-bring-action.ts` |
 | `conj:color-superconductivity-borromean` | 0 | `content/quantum-observable-universe/observations/color-superconductivity-borromean.ts` |
 | `conj:borel-zagier-qou-volumes` | 0 | `content/quantum-observable-universe/descartes-universe/borel-zagier-qou-volumes.ts` |
 | `conj:single-volume-irrationality` | 0 | `content/quantum-observable-universe/descartes-universe/single-volume-irrationality.ts` |
@@ -90,10 +58,13 @@ are tractable in a single follow-up PR.
 | `conj:spectral-normal-form` | 0 | `content/quantum-observable-universe/appendix-surreals/spectral-normal-form.ts` |
 | `conj:infinitesimal-observability` | 0 | `content/quantum-observable-universe/appendix-surreals/infinitesimal-observability.ts` |
 | `conj:aeon-boundary-generates-chart` | 0 | `content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts` |
+| `conj:quantum-computational-universality` | 0 | `content/quantum-observable-universe/information-theory/quantum-computational-universality.ts` |
 | `conj:qou-p-neq-np` | 0 | `content/quantum-observable-universe/information-theory/qou-p-neq-np.ts` |
 | `conj:p-vs-np-boundary` | 0 | `content/quantum-observable-universe/information-theory/p-vs-np-boundary.ts` |
+| `conj:classical-riemann-hypothesis` | 0 | `content/quantum-observable-universe/algebraic-substrate/classical-riemann-hypothesis.ts` |
 | `conj:q-birch-swinnerton-dyer` | 0 | `content/quantum-observable-universe/algebraic-substrate/q-birch-swinnerton-dyer.ts` |
 | `conj:p-vs-np-qou` | 0 | `content/quantum-observable-universe/algebraic-substrate/p-vs-np-conjecture.ts` |
+| `conj:q-collatz` | 0 | `content/quantum-observable-universe/algebraic-substrate/q-collatz-conjecture.ts` |
 | `conj:topological-decomposition-mass` | 0 | `content/quantum-observable-universe/lifting-and-descent/topological-mass-conjecture.ts` |
 | `conj:q-gl-fiber-functor` | 0 | `content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.ts` |
 | `conj:q-gl-classical-limit` | 0 | `content/quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit.ts` |
@@ -106,12 +77,12 @@ are tractable in a single follow-up PR.
 | `conj:crossing-graded-mass-expansion` | 0 | `content/quantum-observable-universe/particle-interactions/crossing-graded-mass-expansion.ts` |
 | `conj:lifted-crossing-locality` | 0 | `content/quantum-observable-universe/particle-interactions/lifted-crossing-locality.ts` |
 
-**Total provable blocks affected (unique):** 259.
-**Total (with multiplicity):** 4605.
+**Total provable blocks affected (unique):** 257.
+**Total (with multiplicity):** 4576.
 
 ## Per-conjecture cones
 
-### `conj:electron-shells-hopf` — 254 downstream provable blocks
+### `conj:electron-shells-hopf` — 253 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/descartes-universe/electron-shells-hopf.ts`](../../content/quantum-observable-universe/descartes-universe/electron-shells-hopf.ts)
 
@@ -248,7 +219,6 @@ Source: [`content/quantum-observable-universe/descartes-universe/electron-shells
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
 | proposition | `prop:metallic-character-knot` | `content/quantum-observable-universe/descartes-universe/metallic-character-knot.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -372,7 +342,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/electron-shells
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:shell-threading-energy` — 250 downstream provable blocks
+### `conj:shell-threading-energy` — 249 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/observations/shell-threading-conjecture.ts`](../../content/quantum-observable-universe/observations/shell-threading-conjecture.ts)
 
@@ -507,7 +477,6 @@ Source: [`content/quantum-observable-universe/observations/shell-threading-conje
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -629,7 +598,7 @@ Source: [`content/quantum-observable-universe/observations/shell-threading-conje
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:skein-shell-correction` — 250 downstream provable blocks
+### `conj:skein-shell-correction` — 249 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/descartes-universe/skein-shell-correction.ts`](../../content/quantum-observable-universe/descartes-universe/skein-shell-correction.ts)
 
@@ -764,7 +733,6 @@ Source: [`content/quantum-observable-universe/descartes-universe/skein-shell-cor
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -886,7 +854,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/skein-shell-cor
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:elliptic-stability-locus` — 250 downstream provable blocks
+### `conj:elliptic-stability-locus` — 249 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/descartes-universe/elliptic-stability-locus.ts`](../../content/quantum-observable-universe/descartes-universe/elliptic-stability-locus.ts)
 
@@ -1021,7 +989,6 @@ Source: [`content/quantum-observable-universe/descartes-universe/elliptic-stabil
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -1143,7 +1110,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/elliptic-stabil
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:baryon-period-ratio` — 228 downstream provable blocks
+### `conj:baryon-period-ratio` — 227 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts`](../../content/quantum-observable-universe/descartes-universe/baryon-period-conjecture.ts)
 
@@ -1268,7 +1235,6 @@ Source: [`content/quantum-observable-universe/descartes-universe/baryon-period-c
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
 | proposition | `prop:mobius-limit-from-thimble` | `content/quantum-observable-universe/descartes-universe/mobius-limit-from-thimble.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -1378,7 +1344,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/baryon-period-c
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:hyperbolic-volume-transcendence` — 227 downstream provable blocks
+### `conj:hyperbolic-volume-transcendence` — 226 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.ts`](../../content/quantum-observable-universe/descartes-universe/hyperbolic-volume-transcendence.ts)
 
@@ -1502,7 +1468,6 @@ Source: [`content/quantum-observable-universe/descartes-universe/hyperbolic-volu
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -1612,7 +1577,7 @@ Source: [`content/quantum-observable-universe/descartes-universe/hyperbolic-volu
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:regularity-breakdown` — 225 downstream provable blocks
+### `conj:regularity-breakdown` — 224 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts`](../../content/quantum-observable-universe/fluid-dynamics/regularity-breakdown.ts)
 
@@ -1734,7 +1699,6 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/regularity-breakdow
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -1844,7 +1808,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/regularity-breakdow
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:shell-correction-term-seven` — 224 downstream provable blocks
+### `conj:shell-correction-term-seven` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.ts`](../../content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.ts)
 
@@ -1965,7 +1929,6 @@ Source: [`content/quantum-observable-universe/braids-and-knots/shell-correction-
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -2075,7 +2038,7 @@ Source: [`content/quantum-observable-universe/braids-and-knots/shell-correction-
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:knot-factor-frobenius-pairing` — 224 downstream provable blocks
+### `conj:knot-factor-frobenius-pairing` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.ts`](../../content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.ts)
 
@@ -2196,7 +2159,6 @@ Source: [`content/quantum-observable-universe/braids-and-knots/knot-factor-frobe
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -2306,7 +2268,7 @@ Source: [`content/quantum-observable-universe/braids-and-knots/knot-factor-frobe
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:brane-tower-z-habiro` — 224 downstream provable blocks
+### `conj:brane-tower-z-habiro` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.ts`](../../content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.ts)
 
@@ -2427,7 +2389,6 @@ Source: [`content/quantum-observable-universe/braids-and-knots/brane-tower-z-hab
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -2537,7 +2498,7 @@ Source: [`content/quantum-observable-universe/braids-and-knots/brane-tower-z-hab
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:mass-endomorphism` — 224 downstream provable blocks
+### `conj:mass-endomorphism` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.ts`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.ts)
 
@@ -2658,7 +2619,6 @@ Source: [`content/quantum-observable-universe/braids-and-knots/mass-endomorphism
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -2768,7 +2728,7 @@ Source: [`content/quantum-observable-universe/braids-and-knots/mass-endomorphism
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:jet-filtered-knot-factor` — 224 downstream provable blocks
+### `conj:jet-filtered-knot-factor` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.ts`](../../content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.ts)
 
@@ -2889,7 +2849,6 @@ Source: [`content/quantum-observable-universe/braids-and-knots/jet-filtered-knot
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -2999,7 +2958,7 @@ Source: [`content/quantum-observable-universe/braids-and-knots/jet-filtered-knot
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:higgs-t28` — 224 downstream provable blocks
+### `conj:higgs-t28` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/observations/higgs-t28.ts`](../../content/quantum-observable-universe/observations/higgs-t28.ts)
 
@@ -3120,7 +3079,6 @@ Source: [`content/quantum-observable-universe/observations/higgs-t28.ts`](../../
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -3230,7 +3188,7 @@ Source: [`content/quantum-observable-universe/observations/higgs-t28.ts`](../../
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:borromean-quark` — 224 downstream provable blocks
+### `conj:borromean-quark` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/observations/borromean-quark.ts`](../../content/quantum-observable-universe/observations/borromean-quark.ts)
 
@@ -3351,7 +3309,6 @@ Source: [`content/quantum-observable-universe/observations/borromean-quark.ts`](
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -3461,7 +3418,7 @@ Source: [`content/quantum-observable-universe/observations/borromean-quark.ts`](
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:complex-chirality-rotation` — 224 downstream provable blocks
+### `conj:complex-chirality-rotation` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/observations/complex-chirality-rotation.ts`](../../content/quantum-observable-universe/observations/complex-chirality-rotation.ts)
 
@@ -3582,7 +3539,6 @@ Source: [`content/quantum-observable-universe/observations/complex-chirality-rot
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -3692,7 +3648,7 @@ Source: [`content/quantum-observable-universe/observations/complex-chirality-rot
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:classical-limit-stpart` — 224 downstream provable blocks
+### `conj:classical-limit-stpart` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts`](../../content/quantum-observable-universe/appendix-surreals/classical-limit-stpart.ts)
 
@@ -3813,7 +3769,6 @@ Source: [`content/quantum-observable-universe/appendix-surreals/classical-limit-
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -3923,7 +3878,7 @@ Source: [`content/quantum-observable-universe/appendix-surreals/classical-limit-
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:ns-counterexample` — 224 downstream provable blocks
+### `conj:ns-counterexample` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts`](../../content/quantum-observable-universe/fluid-dynamics/p5-counterexample.ts)
 
@@ -4044,7 +3999,6 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p5-counterexample.t
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -4154,7 +4108,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/p5-counterexample.t
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:levi-degeneracy` — 224 downstream provable blocks
+### `conj:levi-degeneracy` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts`](../../content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.ts)
 
@@ -4275,7 +4229,6 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-con
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -4385,7 +4338,7 @@ Source: [`content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-con
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:palindromicity-orbital-type` — 224 downstream provable blocks
+### `conj:palindromicity-orbital-type` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.ts`](../../content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.ts)
 
@@ -4506,7 +4459,6 @@ Source: [`content/quantum-observable-universe/molecular-construction/palindromic
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -4616,7 +4568,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/palindromic
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:shell-closure-nf-term-count` — 224 downstream provable blocks
+### `conj:shell-closure-nf-term-count` — 223 downstream provable blocks
 
 Source: [`content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts`](../../content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts)
 
@@ -4737,7 +4689,6 @@ Source: [`content/quantum-observable-universe/molecular-construction/shell-closu
 | proposition | `prop:mass-endomorphism-tower` | `content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts` |
 | proposition | `prop:mass-formula-regime-switching` | `content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts` |
 | proposition | `prop:mass-tower-coefficient-stratification` | `content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts` |
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
 | proposition | `prop:neutron-proton-mass-splitting` | `content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts` |
 | proposition | `prop:neutron-proton-splitting` | `content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts` |
 | proposition | `prop:neutron-qvalue-symbolic` | `content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts` |
@@ -4847,56 +4798,15 @@ Source: [`content/quantum-observable-universe/molecular-construction/shell-closu
 | theorem | `thm:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | theorem | `thm:wedderburn-mass-formula` | `content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts` |
 
-### `conj:q-collatz` — 4 downstream provable blocks
-
-Source: [`content/quantum-observable-universe/algebraic-substrate/q-collatz-conjecture.ts`](../../content/quantum-observable-universe/algebraic-substrate/q-collatz-conjecture.ts)
-
-| Kind | Label | File |
-|------|-------|------|
-| lemma | `lem:surreal-squeeze` | `content/quantum-observable-universe/algebraic-substrate/surreal-squeeze.ts` |
-| proposition | `prop:collatz-contact-boundary` | `content/quantum-observable-universe/algebraic-substrate/collatz-contact-boundary.ts` |
-| proposition | `prop:collatz-no-cycles` | `content/quantum-observable-universe/algebraic-substrate/collatz-no-cycles.ts` |
-| proposition | `prop:surreal-rate-calculus` | `content/quantum-observable-universe/algebraic-substrate/surreal-rate-calculus.ts` |
-
-### `conj:quantum-computational-universality` — 2 downstream provable blocks
-
-Source: [`content/quantum-observable-universe/information-theory/quantum-computational-universality.ts`](../../content/quantum-observable-universe/information-theory/quantum-computational-universality.ts)
-
-| Kind | Label | File |
-|------|-------|------|
-| proposition | `prop:incompleteness-implies-horizon` | `content/quantum-observable-universe/information-theory/incompleteness-implies-horizon.ts` |
-| proposition | `prop:p-bandwidth-bound` | `content/quantum-observable-universe/information-theory/p-bandwidth-bound.ts` |
-
-### `conj:n-v-tower-depth-ninety` — 1 downstream provable block
-
-Source: [`content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts`](../../content/quantum-observable-universe/observations/n-v-tower-depth-ninety.ts)
-
-| Kind | Label | File |
-|------|-------|------|
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
-
-### `conj:n-v-bring-action` — 1 downstream provable block
-
-Source: [`content/quantum-observable-universe/observations/n-v-bring-action.ts`](../../content/quantum-observable-universe/observations/n-v-bring-action.ts)
-
-| Kind | Label | File |
-|------|-------|------|
-| proposition | `prop:n-v-leading-order-derivation` | `content/quantum-observable-universe/observations/n-v-leading-order-derivation.ts` |
-
-### `conj:classical-riemann-hypothesis` — 1 downstream provable block
-
-Source: [`content/quantum-observable-universe/algebraic-substrate/classical-riemann-hypothesis.ts`](../../content/quantum-observable-universe/algebraic-substrate/classical-riemann-hypothesis.ts)
-
-| Kind | Label | File |
-|------|-------|------|
-| theorem | `thm:macroscopic-stability-equivalence` | `content/quantum-observable-universe/algebraic-substrate/macroscopic-stability-equivalence.ts` |
-
 ## Conjectures with no downstream provable blocks
 
 - `conj:phi-q-tower-jsj-bridge`
 - `conj:kashaev-volume-conjecture`
 - `conj:mass-element-nf`
 - `conj:cp-violation-spectral-form`
+- `conj:n-v-leading-order-derivation`
+- `conj:n-v-tower-depth-ninety`
+- `conj:n-v-bring-action`
 - `conj:color-superconductivity-borromean`
 - `conj:borel-zagier-qou-volumes`
 - `conj:single-volume-irrationality`
@@ -4913,10 +4823,13 @@ Source: [`content/quantum-observable-universe/algebraic-substrate/classical-riem
 - `conj:spectral-normal-form`
 - `conj:infinitesimal-observability`
 - `conj:aeon-boundary-generates-chart`
+- `conj:quantum-computational-universality`
 - `conj:qou-p-neq-np`
 - `conj:p-vs-np-boundary`
+- `conj:classical-riemann-hypothesis`
 - `conj:q-birch-swinnerton-dyer`
 - `conj:p-vs-np-qou`
+- `conj:q-collatz`
 - `conj:topological-decomposition-mass`
 - `conj:q-gl-fiber-functor`
 - `conj:q-gl-classical-limit`

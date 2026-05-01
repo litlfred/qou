@@ -22,13 +22,9 @@ classical-limit map. Anything stated in ℂ-analytic / hyperbolic /
 Archimedean language (volumes, hyperbolic moduli, SnapPy shapes,
 SW thimble integrals, Kashaev limits, Mostow rigidity, etc.) lives
 on the **right** side of τ. The mass tower must be derivable in
-$\mathbb{Q}(q_0)$ scaled by **categorically exactly three**
-external calibration inputs — $m_e$ ($H^0$, mass scale),
-$m_\mu / m_e$ ($H^1$, fixes $q_0$), and $Q_\beta$ ($H^2$, weak
-sector) — aligned to three (co)homological degrees. See
-[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
-Anything else (a fourth dimensional input, or an Archimedean
-input as a derivation source) is a wall violation and is flagged.
+$\mathbb{Q}(q) \otimes_{\mathbb{Q}} \mathbb{R}_{\text{cal}}$ — a
+Laurent ring in $q$ tensored with one external scale (calibrated;
+see §3·E). Anything else is a wall violation and is flagged.
 
 **The wall applies to proofs as well as statements.** A proof that
 asserts X∈R via "by Mostow rigidity" or "by hyperbolic volume
@@ -66,7 +62,7 @@ above**.
 | 5 | Cyclic / Reeb categorical action $\mathcal{S}_{\text{Reeb}}$ | [categorical-reeb-derivation](../../content/quantum-observable-universe/algebraic-substrate/categorical-reeb-derivation.md) | 🟢 derives | none |
 | 6 | Non-abelian Stokes / motivic-Galois descent (the "descent involution" $\hat\tau_n$) | [motivic-galois-character](../../content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.md), [descent-involution](../../content/quantum-observable-universe/lifting-and-descent/descent-involution.md) | 🟡 axiomatic class (per CLAUDE.md §3b) — `motivic-perpetual-obstruction` is the obstruction class | **GAP 6a** — concrete `instance` for the QOU substrate at $q_0$ is missing; `family-4-motivic-path.md` flags it as research-grade |
 | 7 | Cosimplicial crossed-groupoid / descent condition / global gluing | [cosimplicial-crossed-groupoid](../../content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.md), [descent-condition](../../content/quantum-observable-universe/lifting-and-descent/descent-condition.md), [global-gluing](../../content/quantum-observable-universe/lifting-and-descent/global-gluing.md) | 🟢 derived | none |
-| 8 | JSJ decomposition of confined hadron knots (algebraic statement) | [phi-q-tower-jsj-bridge](../../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md) | 🟡 conjecture (`conj:phi-q-tower-jsj-bridge`) | 🟢 (P0.3 closure) — the *algebraic JSJ* is now stated explicitly as the $J^\bullet$-graded stratification of $H_n(q)$ by depth, with no 3-manifold language used in the algebraic-side derivation. The geometric JSJ is identified under $\tau_{\mathrm{arch}}$ as the conjectural content. Dilog-branch sibling `pl-jsj-mass-integration-equivalence` will receive the same recast when that branch lands on `main`. |
+| 8 | JSJ decomposition of confined hadron knots (algebraic statement) | [phi-q-tower-jsj-bridge](../../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md) | 🟡 conjecture (`conj:phi-q-tower-jsj-bridge`) | **🔴 GAP 8a (wall risk)** — the JSJ statement reads as topological/3-manifold; the algebraic-side reformulation must be in terms of Hecke-tower filtration, not 3-manifold pieces |
 | 9 | Chern–Simons / Jones–Wenzl idempotents in $H_n(q)$ | [skein-generation](../../content/quantum-observable-universe/braids-and-knots/skein-generation.md) (Hecke-Skein dictionary), `wedderburn-mass-formula`, `markov-pair-z2` | 🟢 the JW idempotents themselves are 🟢; their use as block projectors in $H_n(q)$ is 🟢 | none — the CS-side statement (TQFT path-integral interpretation) lives at τ |
 | 10 | Wedderburn–Artin block decomposition $H_n(q) = \bigoplus_\lambda M_{f_\lambda}(\mathbb{Q}(q))$ | [wedderburn-mass-formula](../../content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.md), [wedderburn-bratteli-recursion](../../content/quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.md) | 🟢 mass formula, 🟡 recursion (2 sorries at higher levels per [derivation-chain-mass-tower](derivation-chain-mass-tower.md)) | none |
 | 11 | Schur–Weyl (Hecke ↔ $U_q(\mathfrak{sl}_2)$) — Hoefsmit seminormal form | [hoefsmit-scattering-pipeline](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md), [explicit-alpha-k-h3](../../content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h3.md) | 🟢 derived (compute backbone — `hecke_characters.py`, `hoefsmit_witness.json`) | none |
@@ -94,170 +90,127 @@ identified across content and compute. Each row says *what* is
 fitted, *where* it enters, and *what derivation is needed* to
 remove the fit.
 
-### §2·A — Tier-1 calibrations (three external inputs aligned to (co)homology)
+### §2·A — Calibration inputs (exactly three, aligned to Wedderburn / cohomology)
 
-The QOU framework allows **categorically exactly three** external
-calibration inputs, aligning to three distinct (co)homological
-degrees of the substrate sheaf
-([`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
+**Correction (per [`2026-05-01-calibration-inputs-addendum.md`](2026-05-01-calibration-inputs-addendum.md)).**
+The paper's
+[`rem:calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md)
+declares **exactly three** calibration inputs, aligned to the three
+Wedderburn channels of $H_3(R, q)$ (the three-parameter on-shell
+quotient per
+[`prop:three-parameters-wedderburn`](../../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md)).
+Beyond these three, **no fittings, no empirical** inputs are
+permitted.
 
-| ID | Calibration | (Co)homology | Role |
-|----|-------------|--------------|------|
-| **CAL-0** | $m_e$ (CODATA) | $H^0$ | Mass scale |
-| **CAL-1** | $m_\mu / m_e$ (CODATA) | $H^1$ | Fixes substrate parameter $q_0$ |
-| **CAL-2** | $Q_\beta$ (PDG) | $H^2$ | Weak / beta-decay sector |
+| ID | Quantity | What it fixes | Sector |
+|----|----------|--------------|--------|
+| **CAL-1** | $m_e = 0.51099895\ldots$ MeV | leptonic mass scale (MeV ↔ natural units) | leptonic size |
+| **CAL-2** | $m_\mu / m_e = 206.7682830$ | substrate parameter $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | dimensionless ratio (shape) |
+| **CAL-3** | $Q_\beta(n) = 0.78233341$ MeV | hadronic energy scale $E_0$ | hadronic interaction strength |
 
-🟢 **Status.** This is the *declared, honest* calibration budget.
-The earlier "one calibration" framing of this audit was wrong;
-the corrected discipline is now codified in
-[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
-Any **fourth** external input is a hard audit failure.
+🟢 **All three are approved calibrations.** No demotion required;
+no ambiguity. The earlier framing ("one external scale" with $q_0$
+flagged as a hidden second calibration) was an undercount: the
+paper has been correct on the count of three all along.
 
-### §2·B — Tier-2: substrate parameter $q_0$ classification
+🟠 **Action (clarification, not fix).** Promote the
+existing remark `rem:calibration-inputs` (or its content) to a
+named proposition `prop:three-calibration-inputs` that the paper-wide
+sweep cites for every numerical comparison. The proposition's
+content: every mass / Q-value / binding energy is a $\mathbb{Q}(q_0)$-element
+times a fixed combination of $m_e$ and $Q_\beta(n)$, with $q_0$
+itself fixed by $m_\mu/m_e$. No other numerical inputs.
 
-🟢 **Status (post-§2·A correction).** $q_0$ is the $H^1$ calibration.
-It is **not** a fitted parameter beyond the three-input budget; it
-is *the* $H^1$ input, fixed by the lepton mass ratio $m_\mu/m_e$.
-The 50-digit numerical value used in compute scripts (e.g.
-`q_pinning_50_digit.py`) is a faithful expansion of that single
-$H^1$ calibration — not a separate fit.
+### §2·B — Substrate parameter status (informational)
 
-| ID | Quantity | Status |
-|----|----------|--------|
-| **SUB-1** | $q_0 = 1.10998\ldots$ | 🟢 The $H^1$ calibration of [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). The earlier "second calibration" framing has been retired by §2·A. |
+$q_0 = 1.10998\ldots$ is fixed by **CAL-2** (the dimensionless
+calibration $m_\mu/m_e$). Per §2·A, this is one of the three
+authorised calibrations — not a hidden second calibration. The
+50-digit pinning script `q_pinning_50_digit.py` and the substrate
+uncertainty floor $\delta q$ from CODATA $m_\mu/m_e$ both implement
+CAL-2 numerically.
 
-🟢 **Action.** None on the calibration-discipline side. A
-nice-to-have follow-up (workplan **P3.x**, was P1.1(a)) is to close
-the categorical chain `q-from-epsilon → substrate-parameter-unique
-→ vacuum-substrate-compatibility` so that $q_0$'s value can be
-*cross-checked* against multiple sectors (strong, EM, weak) — but
-each cross-check re-determines the same $H^1$ datum, not an
-additional input.
+🟢 **Optional upgrade (not a fix).** If the
+`q-from-epsilon → substrate-parameter-unique → vacuum-substrate-compatibility`
+conjecture chain (currently 🟡 in algebraic-substrate) closes, $q_0$
+becomes determined algebraically and CAL-2 reduces to a *cross-check*
+rather than a calibration. The paper's published position
+(three-calibration scheme with CAL-2 as input) remains correct
+either way.
 
 ### §2·C — BW-formula coefficients flagged ad-hoc
 
-🟢 **Cleared after re-inspection.** The "ad hoc" / "approx" tags in
-[`DERIVATION-STATUS.md` lines 52, 55](../../folio-assistant/computations/DERIVATION-STATUS.md)
-were stale summaries from an older formulation. The live paper has
-fully-derived forms:
+From [`DERIVATION-STATUS.md` lines 41–55](../../folio-assistant/computations/DERIVATION-STATUS.md):
 
-| ID | Term | Live form | Source |
-|----|------|-----------|--------|
-| **BW-8** | Hook (Δ_W, Wigner T=0 pairing) | $-m_e \cdot H_q((2,2)) \cdot \min(Z,N)/A$, with $\beta_4 = -\tfrac12 w_{[2,2]}(4) = -\dim_q([2,2])^2/(2\,[4]_q!)$ | [hook-weight-derivation](../../content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.md), [derived-mass-formula-light-isotopes](../../content/quantum-observable-universe/braids-and-knots/derived-mass-formula-light-isotopes.md) |
-| **BW-11** | pn corr (Δ_T=1) | $-m_e \cdot H_q((2,2)) \cdot (n_{pp}+n_{nn})/A$, natural T=1 extension of BW-8 using same self-conjugate $(2,2)$ and $1/A$ normalisation; $n_{pp}=Z(Z{-}1)/2$, $n_{nn}=N(N{-}1)/2$ | [derived-mass-formula-light-isotopes](../../content/quantum-observable-universe/braids-and-knots/derived-mass-formula-light-isotopes.md) |
+| ID | Term | Coefficient | Status in source |
+|----|------|-------------|------------------|
+| **BW-8** | Hook | $|\beta_4|\cdot|\ln\lambda|\cdot m_e$ | "DERIVED (coeff ad hoc)" |
+| **BW-11** | pn corr | $2[2][3]/[4]\cdot[2]\cdot m_e$ | "DERIVED (coeff approx)" |
 
-🟢 **Status.** Both coefficients are now $\mathbb{Q}(q_0)$-rational
-expressions in $H_q((2,2))$ — the hook product at the
-self-conjugate partition $(2,2)\vdash 4$. No fits remain.
-[`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
-table updated in this audit pass.
+🟠 **Action.** Reduce to either the Wenzl-bridge derivation
+(currently used for the other 9) or to LP-shadow-prices via
+[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md). The ad-hoc / approx flags must
+disappear before the BW formula can claim *fully derived*.
 
 ### §2·D — Magic numbers
 
-The audit's earlier framing (a single 🟠 numerology flag) is too
-strict. Re-inspection of
-[`prop:magic-numbers-from-q`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md)
-shows that **4 of 7** magic numbers are already derived from $q_0$
-via Hoefsmit-character second differences:
-
-| Magic | Derivation status | $\delta^2\Phi$ at $K=10$ |
-|------:|-------------------|-------------------------:|
-| **2** | 🟢 derived (level $k=3$) | (peak) |
-| **8** | 🟢 derived (level $k=3$) | $+33.2$ |
-| **20** | 🟢 derived (level $k\geq 5$) | $+20.4$ |
-| **28** | 🟢 derived (level $k\geq 7$) | $+4.4$ |
-| **50** | 🟡 conjectured | requires $k\geq 12$ Wedderburn coverage |
-| **82** | 🟡 conjectured | requires $k\geq 12$ |
-| **126** | 🟡 conjectured | requires $k\geq 12$ |
+[DERIVATION-STATUS.md line 178](../../folio-assistant/computations/DERIVATION-STATUS.md):
+"Magic numbers `{2,8,20,28,50,82,126}` from Bring's surface — not derived."
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **MAG-1** | The seven nuclear magic numbers | 🟡 4/7 derived (`prop:magic-numbers-from-q`); 3/7 awaiting k≥12 Hoefsmit-character extension. The "Bring's surface" framing is superseded — the Hoefsmit-character path is the live derivation. |
+| **MAG-1** | The seven nuclear magic numbers | 🟠 numerology — appear as explicit constants in stability and shell-closure compute; their *origin* (Bring's surface periods) is asserted but not connected by a proved chain |
 
-🟡 **Action.** Two parallel paths:
-
-(a) **Compute path** — extend `shell_closure_compute.py` past
-$k=10$, gated by Hoefsmit-witness coverage at $k\geq 12$ (workplan
-**P2.2**).
-
-(b) **Homological path** —
-[PR #500](https://github.com/litlfred/qou/pull/500)
-(`claude/qou-algebraic-refactor-1qVFc`) proposes three new
-conjectures (categorical-neutrality / BB-spectral-sequence /
-LR-fusion) that bypass the matrix-evaluation barrier and derive
-$\{2,8,20,28,50,82,126\}$ as the locus where the BB-filtration
-spectral sequence on the Hecke category collapses. If accepted,
-this closes MAG-1 fully without requiring $k\geq 12$ compute.
-
-[DERIVATION-STATUS.md line 178](../../folio-assistant/computations/DERIVATION-STATUS.md)
-updated in this audit pass.
+🟠 **Action.** Either prove the link to Bring's surface period
+lattice (a bona-fide algebraic statement) or stop quoting them as
+derived. Current Bring blocks (`brings-coordinate-ring`,
+`bsd-surreal-bound`) reach the curve but do not extract the
+seven values.
 
 ### §2·E — Fine-structure 1/α
 
-🟢 **Cleared.** Re-inspection of
-[`alpha-em-categorical-trace`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md)
-shows the live closed form is
-
-$$
-  \tfrac{1}{\alpha_{EM}}
-  = 45 \cdot [3]_q \cdot (1 + \delta_{CS} + 8q\,\delta_{CS}^2),
-  \qquad
-  \delta_{CS} := \hbar_q^4 \cdot [5]_q,
-$$
-
-predicting $137.035998166$ vs CODATA $137.035999084$ — residue
-**~6.7 ppb**, well within CODATA uncertainty (21 ppb). The
-"399 ppb / Massey-product" framing was a *legacy* deprecated
-formulation $1/\alpha = q\cdot[9]\cdot[10]\cdot(1+c_1+c_1^2\kappa)$
-that has been superseded by the spectral-completeness program.
+[DERIVATION-STATUS.md line 84–87, 180](../../folio-assistant/computations/DERIVATION-STATUS.md):
+$1/\alpha = q\cdot[9]\cdot[10] \times (1+c_1+c_1^2\kappa) = 137.035944$,
+CODATA 137.035999, **399 ppb**.
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **ALPHA-1** | $1/\alpha$ closed form | 🟢 each factor forced by an upstream block: $45 = \binom{10}{2}$ from `exterior-square-borromean`; $[3]_q, [5]_q, [9]_q\cdot[10]_q$ from `force-carrier-bring-uniqueness`; $\delta_{CS}$ from `gram-determinant-plancherel-ratio`; $8q$ from genus-4 torus-knot enumeration. PSLQ uniqueness at 1000-dps over $\{q^k, [k]_q, \hbar_q^k\}_{k\leq 10}$ confirms no shorter rational combination matches. |
-| **ALPHA-2** | The 6.7-ppb residue | 🟢 within CODATA uncertainty. No fit, no Massey-product speculation needed. |
+| **ALPHA-1** | $1/\alpha$ closed form | 🟢 the $q[9][10]$ skeleton is derived (PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json), [`alpha-em-pslq-uniqueness-2000dps.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness-2000dps.witness.json)); 🟠 the multiplicative correction $(1+c_1+c_1^2\kappa)$ origin |
+| **ALPHA-2** | The 399-ppb residual | 🟠 [DERIVATION-STATUS line 180](../../folio-assistant/computations/DERIVATION-STATUS.md): *"J³ correction (Massey products?)"* — speculative. Still ~400 ppb above ambition |
 
-🟢 **Action.** None — the residual interpretation is fully resolved.
-[`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
-updated in this audit pass.
+🟠 **Action.** Decide whether the 399-ppb residual is (a) a finite-$k$
+truncation of the Hoefsmit ladder (needs k≥6 W-A coverage; see §3·B
+below) or (b) a genuine higher Massey-product correction. The latter
+is a real algebraic statement that can be derived from the GS spectral
+sequence, *not* a fit.
 
 ### §2·F — Neutrino mass
 
-The neutrino is the **unknot** $K_{0_1}$
-([neutrino-knot](../../content/quantum-observable-universe/descartes-universe/neutrino-knot.md)):
-zero crossings, $J_\nu(q) = 1$, trivial Markov trace, **bare-knot mass = 0**. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$ via
-vacuum drag ([mass-identity](../../content/quantum-observable-universe/quantum-observable-universes/mass-identity.md))
-— not via knot topology. So there is **nothing to fit on the
-algebraic side** for the neutrino: the bare prediction is exactly
-zero from a categorical perspective.
+[DERIVATION-STATUS.md line 182](../../folio-assistant/computations/DERIVATION-STATUS.md): *"Neutrino mass: wrong by 10⁶."*
 
 | ID | Status |
 |----|--------|
-| **NU-1** | 🟢 Categorical prediction: $J_\nu = 1$, bare mass 0; observed mass = vacuum-drag correction. The previously circulating "wrong by 10⁶" claim ([DERIVATION-STATUS.md historical line 182](../../folio-assistant/computations/DERIVATION-STATUS.md)) was a neutron/neutrino confusion (comparing $m_\nu$ against $m_n$ ≈ 940 MeV) and is **withdrawn** in this audit pass. |
+| **NU-1** | 🔴 The current neutrino-mass derivation is off by **six orders of magnitude**. Either the channel choice (`alt`-block weight) is wrong or the operator-selection LP misclassifies the neutrino's word. Until reconciled, the paper cannot claim a derived neutrino mass. |
 
-🟢 **Action.** None on algebraic side. Any caller that treats the
-neutrino as a knot-derived mass is wrong by construction (unknot
-contributes zero crossings to the tower). Audit pass §P1.6 in the
-workplan is recast accordingly: it is now a *consistency check*
-that no compute path quotes a "neutrino mass = X MeV" derived from
-the Markov-trace pipeline — only from vacuum drag.
+🔴 **Action.** Demote any current "neutrino mass = X" claim to a
+conjecture, with the 10⁶ discrepancy explicit, until the channel /
+LP issue is resolved.
 
 ### §2·G — Compound-shell / shell-closure calibration
 
-`compound-beta-shell-calibration.md`. Audited in
-[2026-05-01-p1-5-compound-shell-audit.md](2026-05-01-p1-5-compound-shell-audit.md).
+`compound-beta-shell-calibration.md` (the file name contains
+*calibration*). Inspection needed — listed in the workplan §P1.4.
 
 | ID | Status |
 |----|--------|
-| **SHELL-1** | 🟢 The "calibration" in the block name is the $H^2$ calibration $E_0 = Q_\beta = 0.782$ MeV — the third entry of [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). Shell binding values are *derived* from chain Q-values + level-3 shadow prices, not fitted. Block language updated to reference the three-calibration discipline; no fourth calibration introduced. |
+| **SHELL-1** | 🟠 Block name self-reports as a calibration. If shell coefficients in compound-β are fitted to AME mass differences, the AME data is being used as a derivation input — borderline empirical leak |
 
-### §2·H — `recursive-atom-knot-atlas` parameters
+### §2·H — `compound-` / `recursive-atom-knot-atlas` parameters
 
-🟢 Audited (P1.5). The atlas already self-quarantines volume-match
-identifications under a `deprecated-volume-match` tag and splits
-its table into `principled-derivation` / `principled-gb-nf` /
-`magic-A-formula` / `recursive-on-⁴He` / `manual-historical-volume-match`
-sections. **No action needed.** See
-[2026-05-01-p1-5-compound-shell-audit.md](2026-05-01-p1-5-compound-shell-audit.md).
+The atlas (`recursive-atom-knot-atlas.md`) claims compositional
+recursion across A. If the recursion's base cases are AME-fitted
+rather than algebraically derived, the recursion *propagates* a
+fit. To verify in §P1.5.
 
 ---
 
@@ -328,35 +281,22 @@ $\mathfrak{m}(\varrho) = |\prod \hat V_i^{\text{full}}| + \sum \Phi_q(|\hat V_i^
 is in $\mathbb{Q}(q)$ throughout. The $|\cdot|$ is the Frobenius
 norm on $A$, not Archimedean magnitude. **No leak.**
 
-### §4·A2 — Wall-sweep over proof blocks (P0.1)
-
-🟢 **Cleared.** Audited in
-[2026-05-01-p0-1-wall-sweep.md](2026-05-01-p0-1-wall-sweep.md):
-**0 hard violations** across 149 proof blocks; **2 soft risks**
-([local-substrate-q-proof](../../content/quantum-observable-universe/observations/local-substrate-q-proof.md),
-[skein-mass-relation-proof](../../content/quantum-observable-universe/observations/skein-mass-relation-proof.md))
-that use the topological mass formula in calibration steps —
-honest cross-domain comparisons under the three-calibration
-discipline ($H^1$ calibration via lepton ratio), but recommended
-for future recast to lead with the algebraic Markov-trace form.
-
 ### §4·B — `prop:topological-mass-formula` $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$
 
-🟢 **Cleared (P0.2).** Inspection of
-[`algebraic-quantum-volume-specialization.md`](../../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md)
-on `main` shows the recast is **already landed**: routes 1 (q→1
-classical limit) and 2 (roots-of-unity / volume conjecture) are
-explicitly tagged "post-Archimedean naming"; only route 3
-($q = q_0$ substrate evaluation) is "pre-Archimedean, exact" and
-the only one used in QOU-internal derivations. The
-$8G = \mathrm{Vol}(\mathcal{B}_3)$ scale is named via route 2 but
-not used as a derivation step.
+🔴 **Wall risk.** This formulation reads as Archimedean (uses
+$\mathrm{Vol}(K)$, the hyperbolic volume). On the algebraic side,
+$\mathrm{Vol}(K)$ must be replaced by the **algebraic-quantum
+volume** ([algebraic-quantum-volume](../../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md))
+— a $\mathbb{Q}(q)$-valued Markov-trace expression — *before* this
+identity can be used algebraically. Per
+[`recast-tightening-audit-2026-04-27.md` Part B](../recast-tightening-audit-2026-04-27.md), the
+recast to `algebraic-quantum-volume` is in flight on the followups
+branch but not yet on `main`.
 
-🟢 **Caller audit (P0.1).** 43 callers of
-`prop:topological-mass-formula` reviewed via the wall-sweep agent;
-the only `*-proof.md` blocks that use it as a derivation step are
-the two soft risks noted in §4·A2 (calibration steps, not
-violations).
+🔴 **Action.** Wherever a proof or computation cites
+`prop:topological-mass-formula`, replace with the algebraic recast.
+The cited identity must be the τ-pullback of the algebraic identity,
+not the other way round.
 
 ### §4·C — Dilog branch — q-Pochhammer + SnapPy seeding
 
@@ -424,8 +364,9 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 |----------|------:|-------|
 | 🟢 Proved / clean links in cat-action → Hecke-energy chain | 14 of 19 | links 1–5, 7, 9–13, 15–17, 19 |
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
-| 🔴 Wall-risk blocks | 0 of 19 | link 8 (JSJ) cleared by P0.3 — algebraic JSJ stated via $J^\bullet$-stratification on the Hecke side; geometric JSJ is the conjectural $\tau$-image |
-| Empirical / fitting flags identified | **0 hard** + 1 partial | All hard flags cleared in this audit pass. Partial: MAG-1 (4/7 magic numbers derived via Hoefsmit characters; 3/7 — 50, 82, 126 — await k≥12 Wedderburn coverage, tracked in P1.4 and P2.2). Cleared: CAL-0/1/2 (declared three-calibration inputs §2·A); SUB-1 (the $H^1$ calibration); BW-8 + BW-11 (already derived in `derived-mass-formula-light-isotopes`; DERIVATION-STATUS tags were stale, now updated); SHELL-1 (compound-shell is the $H^2$ calibration, P1.5 audit); NU-1 (neutrino = unknot, §2·F); ALPHA-2 (1/α residual is 6.7 ppb within CODATA, §2·E) |
+| 🔴 Wall-risk blocks | 1 of 19 | link 8 (JSJ algebraic reformulation) |
+| 🟢 Approved calibrations (per §2·A corrected) | 3 | CAL-1 ($m_e$), CAL-2 ($m_\mu/m_e$ → $q_0$), CAL-3 ($Q_\beta(n)$ → $E_0$) |
+| Non-calibration empirical / fitting flags | 6 | BW-8, BW-11, MAG-1, ALPHA-2, NU-1, SHELL-1 — must be derived or removed |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 
@@ -439,80 +380,31 @@ prediction at level $A$ requires:
 3. 🟡 Wedderburn–Bratteli recursion at all levels up to $H_{3A}$ —
    currently 2 sorries at higher levels (link 10).
 4. 🟡 GS-filtration formalization for `gradedMarkovTrace` /
-   `residueAtRoot` — currently `noncomputable opaque`. Narrative
-   form landed in [`prop:graded-trace-residue-split`](../../content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.md)
-   + [`prop:gb-residue-spectral-sum`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.md) (P2.6, ✅).
+   `residueAtRoot` — currently `noncomputable opaque`.
 5. ✅ Mass-tower formula (link 18) — formula clean; closed-form
-   conjectural; **per-braid form** [`prop:per-braid-mass-tower`](../../content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md)
-   supersedes the per-generator divergent form (P2.2a).
-6. ✅ **Schur–Weyl mass tower at $H_{3A}$ now implemented**
-   ([`folio-assistant/computations/schur_weyl_mpmath.py`](../../folio-assistant/computations/schur_weyl_mpmath.py))
-   — bypasses sympy's symbolic GCD via direct mpmath evaluation;
-   scales to $A = 40$ (⁴⁰Ca, 120-strand braid) in **0.25 s**.
-   Wired into `crt_markov.markov_trace_schur_weyl_eval`.
-   The per-generator H_3-at-H_{3A} divergence (the ~99%-of-mass
-   missing in CRT compute per `AUDIT-crt-k-level.md`) is
-   **structurally fixed**: V̂_full at H_3 weights was the wrong
-   object; the proper $H_{3A}$ Schur–Weyl sum gives convergent
-   sub-braid traces (max 0.67 < $q_0 = 1.11$).
+   conjectural.
+6. ❌ `crt_markov.py` covering **all** Wedderburn channels (sym +
+   std + alt), at $H_{3A}$, with full $\Phi_q$-tower contribution
+   beyond the descended term — currently std-only, descended-only
+   (~99% mass missing per [`AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md)).
 7. ❌ Word-shortcut undo functions for levels 4–7
    ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
-8. 🟡 Symbolic-in-$q$ throughout, $q_0$-substitution only at final
-   step. Helper landed
-   ([`witness_polynomial.py`](../../folio-assistant/computations/witness_polynomial.py));
-   3 exemplars migrated; ~78 scripts remain (Tier B mechanical).
-9. ✅ **Empirical/fitting flags reduced to 0 hard + 1 partial**
-   (MAG-1 4/7-derived; PR #500 homological path may close 3/7
-   remaining). All other hard flags cleared this audit pass.
-10. 🟡 Magic-number derivation: 4/7 derived via Hoefsmit characters
-    ([`prop:magic-numbers-from-q`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md));
-    3/7 (50, 82, 126) await k≥12 Wedderburn coverage OR PR #500
-    homological framework.
-11. ✅ Neutrino: ν = unknot, $J_\nu(q)=1$, bare-knot mass = 0
-    (§2·F).
-12. ✅ **Per-braid mass tower validated against AME** at q=1 MN
-    ([`per_braid_vs_ame.py`](../../folio-assistant/computations/per_braid_vs_ame.py),
-    [`witness JSON`](2026-05-01-per-braid-vs-ame.witness.json)):
-    per-braid total × $(0.987 \times m_e)$ ≈ AME atomic mass for
-    D / ³He / ³H / ⁴He / ¹²C / ¹⁶O / ⁴⁰Ca with **1.06% spread**.
-    The cal/$m_e$ ratio decreases monotonically with $A$
-    (0.992 → 0.981) — that's the binding-energy correction
-    emerging from the framework.
-13. ✅ **HYBRID per-braid (q-Hecke descended + q=1 MN tower) — validated across 10 atoms (A=2..40)**
-    ([`per_braid_tower_hybrid.py`](../../folio-assistant/computations/per_braid_tower_hybrid.py),
-    [`witness JSON`](2026-05-01-per-braid-hybrid-vs-ame.witness.json)):
-    Mean cal/$m_e$ = **0.987** with **1.06% spread** across
-    D / ³He / ³H / ⁴He / ⁶Li / ⁷Li / ⁹Be / ¹²C / ¹⁶O / **⁴⁰Ca** —
-    *better than q=1 alone* — AND splits ³He vs ³H by **0.53 MeV**
-    (matches AME physical splitting to ~1%). The q-Hecke
-    descended supplies the precise isobar distinction; the q=1
-    MN tower preserves linear-in-A scaling. **¹²C / ¹⁶O / ⁴⁰Ca
-    unlocked by the Rust `chi_q_atomic` kernel (P2.2c-12C ✅) —
-    ¹²C in 1.4 s, ¹⁶O in 6.9 s, ⁴⁰Ca in 1.3 s.** Cal/$m_e$
-    decreases monotonically with $A$ (0.992 → 0.981) — the
-    binding-energy correction emerges from the framework.
+8. ❌ Symbolic-in-$q$ throughout, $q_0$-substitution only at final
+   step.
+9. ❌ Six non-calibration empirical/fitting flags (BW-8, BW-11,
+   MAG-1, ALPHA-2, NU-1, SHELL-1) eliminated. The three approved
+   calibrations (CAL-1 / CAL-2 / CAL-3) named in a single
+   `prop:three-calibration-inputs` block; all numerical predictions
+   cite it.
+10. ❌ Magic-number derivation from Bring (currently asserted but
+    not derived).
+11. ❌ Neutrino-mass channel reconciled (currently 10⁶ off — must be
+    demoted to conjecture or fixed).
 
-14. ✅ **Existing compute optimisations surveyed + Rust kernel built**
-    ([2026-05-01-existing-compute-optimisations.md](2026-05-01-existing-compute-optimisations.md)).
-    The Rust `pyhecke_native` kernel was identified as the largest
-    unused asset; built via `maturin build --release`. Now
-    `chi_lambda_braid` runs in Rust at f64 (50–100× speedup) and
-    mpfr (arbitrary precision) — unlocks the Geck-Pfeiffer character
-    algorithm for high-A computations. **Limitation**: pyhecke_native
-    accepts only braid words `(sign, gen)`, not per-crossing
-    `(c, d)` Hecke elements; A=12+ q-Hecke compute requires a new
-    Rust extension `chi_q_atomic(shape, [(c, d, gen)], q)`
-    (P2.2c-12C).
-
-**Headline.** The framework now simultaneously: (a) predicts
-atomic mass to 0.65% across A=2..4 with the m_e-only calibration;
-(b) splits ³He vs ³H by 0.53 MeV (matches AME); (c) maintains
-strict τ-wall throughout. Items 1–5, 6, 9, 11, 12, 13, 14 are ✅;
-items 3, 4, 8, 10 are 🟡 partial; item 7 (word-shortcut) is the
-remaining ❌, and P2.2c-12C (q-Hecke at A=12+) is gated on a
-small Rust extension. The compute pipeline is now structurally
-aligned with the math framework AND empirically validated
-against AME.
+**Headline.** Items 1–5 are 90%+ done. Items 6–11 are the work the
+workplan addresses. Until items 6–8 are done, the compute pipeline
+is structurally below the math framework — the math says "tower",
+the compute says "just the descended term".
 
 See [`2026-05-01-math-framework-workplan.md`](2026-05-01-math-framework-workplan.md)
 for the prioritized fix plan.
