@@ -116,6 +116,22 @@ if __name__ == "__main__":
     print(f"  proton:  {chi_p_factored}")
     print(f"  neutron: {chi_n_factored}")
 
+    # P2.5 Tier B — expose polynomial forms alongside numerical
+    # evaluation. See witness_polynomial.py.
+    from witness_polynomial import expose_polynomial_dict
+    polynomial_forms = expose_polynomial_dict(
+        {
+            "chi_p_std": chi_p,
+            "chi_p_closed_form": chi_p_closed,
+            "chi_p_factored": chi_p_factored,
+            "chi_n_std": chi_n,
+            "chi_n_closed_form": chi_n_closed,
+            "chi_n_factored": chi_n_factored,
+        },
+        q,
+        q0=sp.Rational(str(q0)),
+    )
+
     witness = {
         "computation": "chi-std-pernucleon-closed-form",
         "description": (
@@ -127,6 +143,7 @@ if __name__ == "__main__":
             "neutron has an irreducible residual degree-12 factor."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        "polynomial_forms": polynomial_forms,
         "q_0": q0,
         "proton": {
             "chi_std_laurent": str(chi_p),

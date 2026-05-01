@@ -1,7 +1,39 @@
 {
   "computation": "chi-std-pernucleon-closed-form",
   "description": "Closed-form derivation of \u03c7_std(\u03b2_nuc) on 2-dim (2,1) irrep of H_3(q) via explicit 2\u00d72 Hoefsmit seminormal matrix trace.  Both proton and neutron characters take the form (H_A/4)\u00b7([m]+[m-2]+[m-4]+[m-8]) with m_p = 11, m_n = 9.  Proton factors as pure cyclotomic product; neutron has an irreducible residual degree-12 factor.",
-  "computedAt": "2026-04-24T04:59:46.177134+00:00",
+  "timestamp": "2026-05-01T21:15:43.525632+00:00",
+  "polynomial_forms": {
+    "chi_p_std": {
+      "polynomial_q": "(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1)/(4*q**11)",
+      "polynomial_q_latex": "\\frac{q^{22} + q^{20} + q^{18} + q^{14} - q^{8} - q^{4} - q^{2} - 1}{4 q^{11}}",
+      "value_at_q0": "1.8077033200981562755508486997010408170143672514322"
+    },
+    "chi_p_closed_form": {
+      "polynomial_q": "(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1)/(4*q**11)",
+      "polynomial_q_latex": "\\frac{q^{22} + q^{20} + q^{18} + q^{14} - q^{8} - q^{4} - q^{2} - 1}{4 q^{11}}",
+      "value_at_q0": "1.8077033200981562755508486997010408170143672514322"
+    },
+    "chi_p_factored": {
+      "polynomial_q": "(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1)/(4*q**11)",
+      "polynomial_q_latex": "\\frac{q^{22} + q^{20} + q^{18} + q^{14} - q^{8} - q^{4} - q^{2} - 1}{4 q^{11}}",
+      "value_at_q0": "1.8077033200981562755508486997010408170143672514322"
+    },
+    "chi_n_std": {
+      "polynomial_q": "(q**18 + q**16 + q**14 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**9)",
+      "polynomial_q_latex": "\\frac{q^{18} + q^{16} + q^{14} + q^{10} - q^{8} - q^{4} - q^{2} - 1}{4 q^{9}}",
+      "value_at_q0": "1.2653010867739336609872186916261281573123725459209"
+    },
+    "chi_n_closed_form": {
+      "polynomial_q": "(q**18 + q**16 + q**14 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**9)",
+      "polynomial_q_latex": "\\frac{q^{18} + q^{16} + q^{14} + q^{10} - q^{8} - q^{4} - q^{2} - 1}{4 q^{9}}",
+      "value_at_q0": "1.2653010867739336609872186916261281573123725459209"
+    },
+    "chi_n_factored": {
+      "polynomial_q": "(q**18 + q**16 + q**14 + q**10 - q**8 - q**4 - q**2 - 1)/(4*q**9)",
+      "polynomial_q_latex": "\\frac{q^{18} + q^{16} + q^{14} + q^{10} - q^{8} - q^{4} - q^{2} - 1}{4 q^{9}}",
+      "value_at_q0": "1.2653010867739336609872186916261281573123725459209"
+    }
+  },
   "q_0": 1.1099785955541805,
   "proton": {
     "chi_std_laurent": "(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1)/(4*q**11)",
@@ -33,7 +65,5 @@
   },
   "unified_form": "(H_A/4) \u00b7 ([m]_q + [m-2]_q + [m-4]_q + [m-8]_q)",
   "m_proton": 11,
-  "m_neutron": 9,
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "m_neutron": 9
 }
