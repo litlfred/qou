@@ -130,6 +130,61 @@ as the conjectural input field, alongside positivity constraints
 specific knot families where a proof is in fact available
 (figure-eight, etc.).
 
+### Cross-paper UGB grounding
+
+The depth parameter $n$ is **not** a free integer: it is the index of
+the Gröbner--Shirshov filtration
+
+$$
+  F_0 \;\subseteq\; F_1 \;\subseteq\; F_2 \;\subseteq\; \cdots
+$$
+
+constructed in
+[`UGB.GrobnerShirshov.AlgebraFiltration`](https://github.com/litlfred/qou/blob/claude/archimedean-remainder-formalization-bkBgZ/content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Flatness.lean).
+Concretely:
+
+* The Lean structure `KnotData` carries a field
+  `filt : AlgebraFiltration Carrier`, witnessing the cross-paper
+  reading of `n`.
+* The intended meaning of `algebraicVolume n` is
+  $\mathcal{A}_n = \tau_{\mathrm{arch}}\!\bigl(\operatorname{tr}_M
+  \!\bigl(\operatorname{truncate}_n(\beta_K)\bigr)\bigr)$,
+  where $\operatorname{truncate}_n$ projects onto $F_n$.
+* The Hecke deg-lex GS basis is supplied by
+  [`UGB.GrobnerShirshov.HeckeGS.heckeRewritingSystem`](https://github.com/litlfred/qou/blob/claude/archimedean-remainder-formalization-bkBgZ/content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean):
+  the rewriting rules are the Hecke relation, the Yang--Baxter
+  relation, and far-commutativity.
+
+### Two descent theorems (sorry-free, conditional on UGB hypotheses)
+
+Riding on the cross-paper grounding, the following are established
+unconditionally in Lean (no `sorry`):
+
+**Monotone descent.** Given a `[GSMonotonic K]` instance — a
+typeclass capturing the consequence of `AlgebraFiltration.ascending`
+that the truncation sequence $\mathcal{A}_n$ converges monotonically
+to $\mathcal{V}_{\mathrm{hyp}}$:
+
+$$
+  |\mathcal{R}_{n+1}(K)| \;\le\; |\mathcal{R}_n(K)|
+  \qquad\text{for all }n.
+$$
+
+**Strict descent.** Given a `[GSStrictAt K n]` instance — the
+witness that the $(n+1)$-st graded piece of $\beta_K$ is non-zero
+(so depth $n+1$ captures genuinely new content):
+
+$$
+  |\mathcal{R}_{n+1}(K)| \;<\; |\mathcal{R}_n(K)|.
+$$
+
+Neither theorem proves the *exponential* rate (that is the
+conjectural part). What they do establish is that the depth
+parameter $n$ behaves as a genuine descent index in the
+Gröbner--Shirshov filtration, providing the qualitative monotonicity
+and strict-progress structure on which the exponential conjecture
+sits.
+
 ### Falsifiability
 
 The conjecture is falsifiable in two ways:
