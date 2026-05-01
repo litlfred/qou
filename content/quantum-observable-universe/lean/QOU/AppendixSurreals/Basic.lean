@@ -1,3 +1,4 @@
+import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.SetTheory.Ordinal.Arithmetic
 import Mathlib.SetTheory.Ordinal.Family
@@ -104,6 +105,14 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
 /-- Coerce a real into the surreal field. -/
 instance (K : Type u) [SurrealField K] : Coe ℝ K :=
   ⟨SurrealField.ofReal⟩
+
+/-- Every `SurrealField K` is canonically an `Algebra ℝ K` via the
+    `ofReal` ring homomorphism.  This unlocks Mathlib's
+    `Polynomial.aeval`, `MvPolynomial.aeval`, and the full
+    `Algebra`-flavored API for free. -/
+noncomputable instance SurrealField.toAlgebra (K : Type u) [SurrealField K] :
+    Algebra ℝ K :=
+  RingHom.toAlgebra SurrealField.ofReal
 
 namespace SurrealField
 
