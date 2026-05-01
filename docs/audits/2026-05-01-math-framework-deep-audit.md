@@ -174,11 +174,23 @@ via Hoefsmit-character second differences:
 |----|----------|--------|
 | **MAG-1** | The seven nuclear magic numbers | 🟡 4/7 derived (`prop:magic-numbers-from-q`); 3/7 awaiting k≥12 Hoefsmit-character extension. The "Bring's surface" framing is superseded — the Hoefsmit-character path is the live derivation. |
 
-🟡 **Action.** (a) Extend `shell_closure_compute.py` past $k=10$ —
-gated by Hoefsmit-witness coverage at $k\geq 12$ (workplan **P2.2**
-covers this). (b) Update
+🟡 **Action.** Two parallel paths:
+
+(a) **Compute path** — extend `shell_closure_compute.py` past
+$k=10$, gated by Hoefsmit-witness coverage at $k\geq 12$ (workplan
+**P2.2**).
+
+(b) **Homological path** —
+[PR #500](https://github.com/litlfred/qou/pull/500)
+(`claude/qou-algebraic-refactor-1qVFc`) proposes three new
+conjectures (categorical-neutrality / BB-spectral-sequence /
+LR-fusion) that bypass the matrix-evaluation barrier and derive
+$\{2,8,20,28,50,82,126\}$ as the locus where the BB-filtration
+spectral sequence on the Hecke category collapses. If accepted,
+this closes MAG-1 fully without requiring $k\geq 12$ compute.
+
 [DERIVATION-STATUS.md line 178](../../folio-assistant/computations/DERIVATION-STATUS.md)
-to reflect the partial-derived state.
+updated in this audit pass.
 
 ### §2·E — Fine-structure 1/α
 

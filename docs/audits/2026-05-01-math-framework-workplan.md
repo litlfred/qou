@@ -183,16 +183,31 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   which already reproduces {2, 8, 20, 28} from $q_0$ at $K=10$. The
   remaining three (50, 82, 126) require $k\geq 12$ Wedderburn
   coverage.
-- **D**: (a) Extend `shell_closure_compute.py` past $k=10$ once
-  Hoefsmit-witness coverage at $k\geq 12$ lands (gated by **P2.2**
-  in the workplan: $H_{3A}$ Wedderburn coverage via CRT polynomial
-  reconstruction). (b) Verify $\delta^2\Phi$ peaks at $Z=50, 82, 126$.
-  (c) If verified, all seven magic numbers are derived.
-- **B**: P2.2 (CRT polynomial reconstruction at $k\geq 12$).
-- **S**: $\delta^2\Phi$ peaks observed at $Z=50, 82, 126$
-  with margins resolving the predictions.
-- **E**: 1 week of compute after P2.2 lands. May end up as
-  conjecture for $Z=126$ if compute remains infeasible.
+- **D**: Two parallel paths:
+  - **(a) Compute path** — extend `shell_closure_compute.py` past
+    $k=10$ once Hoefsmit-witness coverage at $k\geq 12$ lands
+    (gated by **P2.2**: $H_{3A}$ Wedderburn coverage via CRT
+    polynomial reconstruction).
+  - **(b) Homological path** —
+    [PR #500](https://github.com/litlfred/qou/pull/500)
+    (`claude/qou-algebraic-refactor-1qVFc`) bypasses the matrix-evaluation
+    barrier with three new conjectures:
+    - `conj:categorical-neutrality-saturated-shells` — full twist
+      $\theta_n \in Z(H_n(q))$ acts trivially on $V_\lambda$ iff
+      $\kappa_\lambda = \sum_{x \in \lambda} c(x) = 0$.
+    - `conj:homological-shell-condensation` — Białynicki–Birula
+      filtration of the Hecke category gives a spectral sequence
+      $E_r^{p,q}(n)$; $E_\infty^{p,>0} = 0$ exactly at the magic
+      ladder $\{2,8,20,28,50,82,126\}$.
+    - `conj:diagrammatic-double-magic-lr-fusion` — double-magic
+      stability is LR-fusion of two self-conjugate
+      $\kappa$-balanced Young diagrams.
+- **B**: (a) gated on P2.2; (b) gated on PR #500 landing on main.
+- **S**: All seven magic numbers either (a) reproduced numerically
+  via $\delta^2\Phi$ peaks at $Z = 50, 82, 126$, or (b) derived
+  homologically via the BB-filtration spectral sequence collapse.
+- **E**: (a) 1 week of compute after P2.2 lands. (b) Conditional on
+  the three conjectures of PR #500.
 
 The Bring-surface route is **no longer the live path** for this
 derivation; if reopened, it would be as an alternative
