@@ -242,4 +242,55 @@ theorem polySurrealEval_witness (f : ℝ[X])
   exact polySurrealEval_isInfinitesimal_diff f
     (ofReal_isFinite (K := K) 1) hδ
 
+/-- **General witness corollary.**  Generalises `polySurrealEval_witness`
+    to any real base point `r`: the surreal lift of a polynomial at
+    `ofReal r + δ` (any infinitesimal perturbation of any real) is
+    infinitesimally close to the classical value `ofReal (p.eval r)`. -/
+theorem polySurrealEval_witness_at (p : ℝ[X]) (r : ℝ)
+    {δ : K} (hδ : IsInfinitesimal δ) :
+    IsInfinitesimal
+      (polySurrealEval p (SurrealField.ofReal r + δ)
+        - SurrealField.ofReal (p.eval r)) := by
+  have hreal : polySurrealEval (K := K) p (SurrealField.ofReal r)
+                = SurrealField.ofReal (p.eval r) :=
+    polySurrealEval_ofReal p r
+  rw [← hreal]
+  exact polySurrealEval_isInfinitesimal_diff p
+    (ofReal_isFinite (K := K) r) hδ
+
+/-- **Standard-part of a polynomial-in-(real + infinitesimal).**
+    The standard-part of the surreal evaluation of a real polynomial
+    at any infinitesimal perturbation of a real argument equals the
+    classical real value.
+
+    This is the cleanest form of the substrate identity: every
+    polynomial substrate function is "stable under infinitesimal
+    perturbation" at every real base point. -/
+theorem standardPart_polySurrealEval (p : ℝ[X]) (r : ℝ)
+    {δ : K} (hδ : IsInfinitesimal δ) :
+    standardPart (polySurrealEval (K := K) p
+        (SurrealField.ofReal r + δ)) = p.eval r := by
+  -- The lift at the perturbed point is finite (it differs from ofReal
+  -- (p.eval r) by an infinitesimal, and ofReal is finite).
+  have hwitness :
+      IsInfinitesimal (polySurrealEval (K := K) p
+          (SurrealField.ofReal r + δ)
+        - SurrealField.ofReal (p.eval r)) :=
+    polySurrealEval_witness_at p r hδ
+  have hfin : IsFinite (polySurrealEval (K := K) p
+                (SurrealField.ofReal r + δ)) := by
+    have hfin_ofReal : IsFinite (SurrealField.ofReal (K := K) (p.eval r)) :=
+      ofReal_isFinite _
+    have hsum := hfin_ofReal.add hwitness.isFinite
+    have heq : SurrealField.ofReal (K := K) (p.eval r)
+                + (polySurrealEval (K := K) p
+                    (SurrealField.ofReal r + δ)
+                  - SurrealField.ofReal (p.eval r))
+              = polySurrealEval (K := K) p
+                  (SurrealField.ofReal r + δ) := by ring
+    rwa [heq] at hsum
+  -- Use uniqueness of standard-part decomposition.
+  have hspec := standardPart_spec hfin
+  exact (isFinite_decomposition hfin).unique hspec hwitness
+
 end QOU.AppendixSurreals
