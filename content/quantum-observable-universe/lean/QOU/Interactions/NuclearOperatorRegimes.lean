@@ -103,6 +103,16 @@ class RegimeTransitionZ2 (demandT25 demandLplus : ℝ) : Prop where
   /-- `L₊` strictly dominates `T_{2,5}` at `Z = 2`. -/
   Lplus_dominates : demandLplus < demandT25
 
+/-- **Default instance from a strict-positivity hypothesis on the
+    difference**. When `demandLplus + ε ≤ demandT25` for some
+    `ε > 0` (witnessed by `Fact (0 < demandT25 - demandLplus)`),
+    the strict inequality holds. -/
+instance regimeTransitionZ2_of_positive_gap
+    (demandT25 demandLplus : ℝ)
+    [hpos : Fact (0 < demandT25 - demandLplus)] :
+    RegimeTransitionZ2 demandT25 demandLplus :=
+  ⟨by linarith [hpos.out]⟩
+
 /-- **He-4 demand closure — typeclass.**
     Per-`(coeffs)` witness that at doubly magic `(Z = 2, N = 2)`
     the `L₊`-derived NF has every coefficient nonneg. -/
