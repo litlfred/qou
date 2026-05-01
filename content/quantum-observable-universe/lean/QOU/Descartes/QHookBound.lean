@@ -454,6 +454,31 @@ instance qFactRatioBound_zero (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
   unfold qFactReal
   simp
 
+/-- **Default instance for `k = 1`** — proved directly.
+    `qFactReal q 1 = [1]_q = 1` (the q-factorial of 1 has only the
+    `[1]_q = 1` factor), and `1! = 1`, so `|1/1 - 1| = 0`. The RHS
+    is `(q-q⁻¹)² · 1 · 2 · 3 / 36 = (q-q⁻¹)²/6`, which is non-
+    negative; bound holds. -/
+instance qFactRatioBound_one (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
+    QFactRatioBound q hq hq2 1 := by
+  refine ⟨?_⟩
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_pos : q > 0 := by linarith
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+  -- qFactReal q 1 = qIntReal q 1 = 1
+  have h_qfact : qFactReal q 1 = 1 := by
+    unfold qFactReal qIntReal
+    rw [if_neg hq_ne_one]
+    simp
+    field_simp
+  rw [h_qfact]
+  -- 1!  = 1
+  simp
+  -- Goal: 0 ≤ (q - q⁻¹)² * 1 * (1 + 1) * (2 * 1 + 1) / 36
+  positivity
+
 /-- Per-instance form. -/
 theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) [hi : QFactRatioBound q hq hq2 k] :
