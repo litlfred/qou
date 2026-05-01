@@ -441,4 +441,47 @@ theorem polySubstrateEval_isClose_ofReal (p : ℝ[X]) :
   exact polySurrealEval_witness_at p 1
     (epsilonSurreal_isInfinitesimal K)
 
+/-! ### Concrete substrate identities
+
+Useful unconditional identities for the substrate parameter `q := 1+ε`
+that the QOU paper uses repeatedly. -/
+
+/-- `substrateQ - 1 = ε`. -/
+@[simp]
+theorem substrateQ_sub_one : substrateQ (K := K) - 1 = epsilonSurreal K := by
+  unfold substrateQ
+  ring
+
+/-- `substrateQ` is a finite element with positive infinitesimal
+    perturbation away from `1`. -/
+theorem substrateQ_isInfinitesimal_sub_one :
+    SurrealField.IsInfinitesimal (substrateQ (K := K) - 1) := by
+  rw [substrateQ_sub_one]
+  exact epsilonSurreal_isInfinitesimal K
+
+/-- The standard-part of `substrateQ^n` is `1` for every `n`.  The
+    substrate parameter is "infinitesimally close to 1 to all orders". -/
+theorem standardPart_substrateQ_pow (n : ℕ) :
+    standardPart ((substrateQ (K := K))^n) = 1 := by
+  -- Apply standardPart_polySubstrateEval to p := X^n.
+  have heq : (substrateQ (K := K))^n
+              = polySubstrateEval (K := K) (Polynomial.X ^ n) := by
+    unfold polySubstrateEval polySurrealEval
+    rw [Polynomial.eval₂_pow, Polynomial.eval₂_X]
+  rw [heq, standardPart_polySubstrateEval]
+  simp
+
+/-- `substrateQ` is finite. -/
+theorem substrateQ_isFinite' : SurrealField.IsFinite (substrateQ (K := K)) :=
+  substrateQ_isFinite
+
+/-- `substrateQ ≠ 1`. -/
+theorem substrateQ_ne_one : substrateQ (K := K) ≠ 1 := by
+  intro h
+  have : epsilonSurreal K = 0 := by
+    have := substrateQ_sub_one (K := K)
+    rw [h] at this
+    linarith
+  exact epsilonSurreal_ne_zero K this
+
 end QOU.AppendixSurreals
