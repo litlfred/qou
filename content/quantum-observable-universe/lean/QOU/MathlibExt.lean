@@ -2,6 +2,7 @@ import Mathlib.Data.List.Basic
 import Mathlib.Data.List.Perm
 import Mathlib.Data.List.Sort
 import Mathlib.Algebra.BigOperators.Group.List
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
 /-!
@@ -16,6 +17,7 @@ until they land, callers in `QOU.*` use the local versions.
 - §1 List sort identities (sum / product preserved by `insertionSort`)
 - §2 Foldl-as-product for commutative monoids
 - §3 Permutation-invariance of foldl/foldr over commutative ops
+- §4 `Real.rpow` numerical helpers (sqrt bridge for half-powers)
 
 Each lemma has a `-- TODO upstream:` comment.
 -/
@@ -96,5 +98,36 @@ theorem List.prod_eq_of_perm {α : Type*} [CommMonoid α]
     {xs ys : List α} (h : xs.Perm ys) :
     xs.prod = ys.prod :=
   h.prod_eq
+
+/-! ## §4  `Real.rpow` numerical helpers
+
+The `Real.rpow` function is central to several QOU bounds (skein
+mass relation, pair-skein decomposition, q-Planck constant), but
+`norm_num` does not yet evaluate it on non-integer exponents. The
+lemmas below convert the most common QOU pattern
+`q^(1/2 : ℝ) + q^(-(1/2) : ℝ)` to `Real.sqrt q + 1 / Real.sqrt q`,
+where Mathlib's existing `Real.sqrt`-based numerics apply. -/
+
+/-- `x^(1/2 : ℝ) = Real.sqrt x` (for any real `x`; both sides
+    are zero on the negative reals via the rpow / sqrt
+    conventions).  Symmetric form of Mathlib's
+    `Real.sqrt_eq_rpow`.
+
+    TODO upstream: this is `Real.rpow_one_div_two` in some Mathlib
+    versions. -/
+theorem Real.rpow_half_eq_sqrt (x : ℝ) :
+    x ^ (1/2 : ℝ) = Real.sqrt x :=
+  (Real.sqrt_eq_rpow x).symm
+
+/-- For `x > 0`, `x^(-(1/2) : ℝ) = 1 / Real.sqrt x`. -/
+theorem Real.rpow_neg_half_eq (x : ℝ) (hx : 0 < x) :
+    x ^ (-(1/2 : ℝ)) = 1 / Real.sqrt x := by
+  rw [Real.rpow_neg hx.le, Real.rpow_half_eq_sqrt x, one_div]
+
+/-- The QOU "denominator" `q^(1/2) + q^(-1/2)` equals
+    `sqrt q + 1 / sqrt q`. -/
+theorem Real.q_half_denom (q : ℝ) (hq : 0 < q) :
+    q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)) = Real.sqrt q + 1 / Real.sqrt q := by
+  rw [Real.rpow_half_eq_sqrt q, Real.rpow_neg_half_eq q hq]
 
 end QOU.MathlibExt
