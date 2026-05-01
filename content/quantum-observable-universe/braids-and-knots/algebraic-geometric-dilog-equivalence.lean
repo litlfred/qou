@@ -22,6 +22,19 @@ import Mathlib.Tactic
 
 namespace QOU.QPochhammer
 
+/-- Local restatement of the q-Pochhammer denominator (mirrors the
+    sibling `q-pochhammer-partial-product.lean`; kept self-contained
+    so this file does not depend on cross-file elaboration). -/
+-- Ref: [manuscript] def:q-pochhammer-partial-product
+def denomPolyLocal (q x : ℝ) : ℕ → ℝ
+  | 0 => 1
+  | n + 1 => (1 - x * q ^ n) * denomPolyLocal q x n
+
+/-- Local restatement of the partial product `Φ_n(x; q) = 1 / (x; q)_n`. -/
+-- Ref: [manuscript] def:q-pochhammer-partial-product
+noncomputable def partialProductLocal (q x : ℝ) (n : ℕ) : ℝ :=
+  (denomPolyLocal q x n)⁻¹
+
 /-- Bloch-Wigner placeholder.  Like `LiTwo`, this stands in for the
     real-valued `Real.dilog`-derived Bloch-Wigner function `D(z)`
     until Mathlib provides a complete formalisation of the classical
@@ -57,7 +70,7 @@ class AlgebraicGeometricEquivalence
   asymptotic_volume :
     ∀ ε > (0 : ℝ),
       ∃ N : ℕ, ∀ m, N ≤ m →
-        ‖(1 - q) * Real.log ((QOU.QPochhammer.partialProductLocal q x m))
+        ‖(1 - q) * Real.log (partialProductLocal q x m)
           - BlochWignerD x‖ < ε
 
 /-- Stated equivalence theorem (conjecture instance form). -/
@@ -66,7 +79,7 @@ theorem algebraic_geometric_equivalence
     (q x : ℝ) (n : ℕ) [h : AlgebraicGeometricEquivalence q x n] :
     (∃ z : Fin n → ℝ, ∀ k : Fin n, z k = q ^ (-(k : ℤ))) ∧
     (∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
-      ‖(1 - q) * Real.log ((QOU.QPochhammer.partialProductLocal q x m))
+      ‖(1 - q) * Real.log (partialProductLocal q x m)
         - BlochWignerD x‖ < ε) :=
   ⟨h.pole_cusp_bijection, h.asymptotic_volume⟩
 

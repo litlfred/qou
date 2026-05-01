@@ -90,7 +90,7 @@ $$
 $$
 
 which is the recurrence Lean uses to define $\mathtt{qPochhammer}$
-([Lean implementation](https://github.com/litlfred/qou/blob/claude/quantum-dilogarithm-implementation-DJmlU/content/quantum-observable-universe/braids-and-knots/q-pochhammer-partial-product.lean)).
+([Lean implementation](./q-pochhammer-partial-product.lean)).
 The recurrence is the algebraic shadow of the inductive
 **filtration step** $N_{\leq k+1} = \mathrm{NF}(N_{\leq k} \cdot
 C(N_k, N_{k+1}) \cdot N_{k+1})$ that drives jet-stratified
@@ -123,5 +123,5 @@ passed across the WASM boundary to the SnapPy kernel as the
 Thurston gluing equations
 ([cusp-holonomy seeding](#conj:shared-denominator-cusp-holonomy)).
 The witness
-[q-pochhammer-seed.witness.json](https://github.com/litlfred/qou/blob/claude/quantum-dilogarithm-implementation-DJmlU/folio-assistant/computations/q-pochhammer-seed.witness.json)
+[q-pochhammer-seed.witness.json](../../../folio-assistant/computations/q-pochhammer-seed.witness.json)
 records the seed extraction for a sample nucleon word.

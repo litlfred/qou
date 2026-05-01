@@ -3,27 +3,24 @@ SnapPy-driven witness for the shared-denominator cusp-holonomy
 conjecture.
 
 For a small, well-known cusped hyperbolic 3-manifold (figure-eight
-knot complement m004, plus the Borromean rings L6a4 if importable),
-this script:
+knot complement m004, the figure-eight sister m003, and the Borromean
+rings L6a4), this script:
 
-1. Reads SnapPy's tetrahedral shape parameters {z_i}.
-2. Reads the gluing-equation matrix and target log values
-   (rectangular form: rows [a_i] [b_i] c with constraint
-   ∑ a_i log(z_i) + ∑ b_i log(1-z_i) = c·iπ).
-3. Computes the q-Pochhammer denominator zeros {q_0^{-k}} at the QOU
-   substrate q_0.
-4. Pairs each algebraic zero against SnapPy's shape parameters by
-   nearest |·| in ℂ.
-5. Evaluates the gluing-equation residuals starting from the
-   algebraic seeds, and from SnapPy's solution.
-6. Drives a Newton iteration on the gluing equations from the
-   algebraic seeds and reports convergence.
+1. Reads SnapPy's converged tetrahedral shape parameters {z_i}.
+2. Computes the q-Pochhammer denominator zeros {q_0^{-k}} at the QOU
+   substrate q_0 and lifts them to ℂ via a fixed imaginary
+   perturbation (IM_PERTURBATION, shared with `q_pochhammer_seed.py`).
+3. Pairs each algebraic seed against SnapPy's shape parameters by
+   nearest distance in ℂ and records the pairing distances.
 
 The output is a witness for `conj:shared-denominator-cusp-holonomy`
-and `conj:pl-jsj-mass-integration-equivalence`: it tests whether the
-algebraic q-Pochhammer poles act as good initial guesses for the
-true Thurston gluing system, not just the simpler color-tube
-discriminant.
+and `conj:pl-jsj-mass-integration-equivalence`: it measures how far
+the bare algebraic seeds sit from SnapPy's actual hyperbolic
+shape parameters, bounding the conjecture's strong "literal numerical
+identity" form. A genuine SnapPy-driven Newton-Raphson seeding test
+(feeding the algebraic seeds into SnapPy's internal solver and
+counting iterations to convergence) requires C-level access to the
+SnapPea kernel and is left to a future witness.
 
 Manuscript references:
   - conj:shared-denominator-cusp-holonomy
@@ -46,6 +43,7 @@ import snappy  # noqa: E402
 sys.path.insert(0, str(Path(__file__).parent))
 
 from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from q_pochhammer_seed import IM_PERTURBATION  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # Manifolds to probe.  m004 = figure-eight = 4_1.  m003 = figure-eight
@@ -72,7 +70,7 @@ def probe_manifold(name: str, q0: float) -> dict:
     # Algebraic seeds.  Use real-line roots q^{-k} of the q-Pochhammer
     # denominator, lifted to ℂ by a small imaginary kick.
     real_seeds = algebraic_seeds(q0, n)
-    seeds = [s + 0.1j for s in real_seeds]
+    seeds = [s + IM_PERTURBATION for s in real_seeds]
 
     # Pairing: for each seed find the closest SnapPy shape.  The
     # `shared-denominator-cusp-holonomy` conjecture asserts that under

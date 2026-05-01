@@ -32,13 +32,28 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q as Q0_FLOAT
-from witness_base import WitnessBuilder
+from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 # Maximum truncation depth probed in the witness.  Bumping this gives
 # more algebraic seed candidates per critical point, at the cost of
 # extra polynomial multiplications in `q_pochhammer_denom_poly`.
 MAX_DEPTH = 4
+
+# Imaginary perturbation applied to real algebraic seeds q^{-k} to
+# enter the complex plane for Newton-Raphson on Δ(z).  Shared with
+# `snappy_cusp_seeding.py` so both witnesses use the same convention.
+IM_PERTURBATION: complex = 0.1j
+
+# Coefficients of a, b, c, d in the color-tube cubic
+#   F(z, c) = c^3 + (4z+1) c^2 + (6z^2+3z+1) c + (4z^3+3z^2+2z+1)
+# expressed as polynomials in z (ascending powers).  Shared between
+# the discriminant root-finder and the pointwise discriminant
+# evaluator below.
+CUBIC_A: list[float] = [1.0]                    # 1
+CUBIC_B: list[float] = [1.0, 4.0]               # 1 + 4z
+CUBIC_C: list[float] = [1.0, 3.0, 6.0]          # 1 + 3z + 6z²
+CUBIC_D: list[float] = [1.0, 2.0, 3.0, 4.0]     # 1 + 2z + 3z² + 4z³
 
 
 # ── q-Pochhammer denominator polynomial ─────────────────────────
@@ -77,10 +92,10 @@ def color_tube_discriminant_roots() -> list[complex]:
     """
     from numpy.polynomial import polynomial as P
 
-    a_p = np.array([1.0])
-    b_p = np.array([1.0, 4.0])
-    c_p = np.array([1.0, 3.0, 6.0])
-    d_p = np.array([1.0, 2.0, 3.0, 4.0])
+    a_p = np.asarray(CUBIC_A)
+    b_p = np.asarray(CUBIC_B)
+    c_p = np.asarray(CUBIC_C)
+    d_p = np.asarray(CUBIC_D)
 
     t1 = 18 * P.polymul(P.polymul(P.polymul(a_p, b_p), c_p), d_p)
     t2 = -4 * P.polymul(P.polypow(b_p, 3), d_p)
@@ -132,12 +147,24 @@ def pair_seeds_to_critical_points(
 
 # ── Newton-Raphson driver from algebraic seeds ──────────────────
 
+def _eval_poly_at(coeffs: list[float], z: complex) -> complex:
+    """Evaluate a polynomial with `coeffs` (ascending powers) at z."""
+    out = complex(0)
+    for power, c in enumerate(coeffs):
+        out += c * z ** power
+    return out
+
+
 def discriminant_value(z: complex) -> complex:
-    """Evaluate Δ(z) — the color-tube cubic discriminant — at z."""
-    a = 1.0
-    b = 4 * z + 1
-    c = 6 * z * z + 3 * z + 1
-    d = 4 * z ** 3 + 3 * z * z + 2 * z + 1
+    """Evaluate Δ(z) — the color-tube cubic discriminant — at z.
+
+    Uses the shared CUBIC_A/B/C/D constants so the polynomial form
+    matches `color_tube_discriminant_roots` exactly.
+    """
+    a = _eval_poly_at(CUBIC_A, z)
+    b = _eval_poly_at(CUBIC_B, z)
+    c = _eval_poly_at(CUBIC_C, z)
+    d = _eval_poly_at(CUBIC_D, z)
     return (
         18 * a * b * c * d
         - 4 * b ** 3 * d
@@ -237,7 +264,7 @@ def main() -> None:
         # the Jacobian is invertible.
         newton_runs = []
         for k, seed in enumerate(seeds):
-            perturbed = seed + 0.1j  # tiny imaginary kick to enter ℂ
+            perturbed = seed + IM_PERTURBATION  # enter the complex plane
             run = newton_iterate_from_seed(perturbed)
             run["k"] = k
             newton_runs.append(run)
