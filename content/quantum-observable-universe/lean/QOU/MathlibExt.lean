@@ -149,6 +149,23 @@ theorem List.prod_reverse_eq {α : Type*} [CommMonoid α] (xs : List α) :
     xs.reverse.prod = xs.prod :=
   (xs.reverse_perm).prod_eq
 
+/-- A natural-number list's sum equals the indexed Finset sum
+    of its `getD ·  0` accessor. Mechanical induction on the list.
+
+    TODO upstream: `Mathlib.Algebra.BigOperators.Group.List` —
+    standard sum-is-finset-sum identity. -/
+theorem List.sum_eq_finsetSum_getD {α : Type*} [AddCommMonoid α]
+    (xs : List α) (z : α) :
+    xs.sum = ∑ i ∈ Finset.range xs.length, xs.getD i z := by
+  induction xs with
+  | nil => simp
+  | cons hd tl ih =>
+    rw [List.sum_cons, List.length_cons, Finset.sum_range_succ',
+        List.getD_cons_zero]
+    simp only [List.getD_cons_succ]
+    rw [← ih]
+    abel
+
 /-! ## §4  `Real.rpow` numerical helpers
 
 The `Real.rpow` function is central to several QOU bounds (skein
