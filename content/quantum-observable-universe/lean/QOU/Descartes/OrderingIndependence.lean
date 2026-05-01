@@ -64,6 +64,14 @@ class SkeinMultisetInvariant
   /-- Polynomials agree on configurations with the same nucleon multiset. -/
   invariance : skeinPolynomialSym config₁ = skeinPolynomialSym config₂
 
+/-- Reflexivity instance: when both configs are the same, the
+    polynomials are trivially equal. -/
+instance skeinMultisetInvariant_refl (config : NuclearConfig)
+    (h_same : config.length = config.length)
+    (h_perm : ∀ t : NucleonType, config.count t = config.count t) :
+    SkeinMultisetInvariant config config h_same h_perm :=
+  ⟨rfl⟩
+
 /-- Per-instance form: the deprecated free-function alias. -/
 theorem skein_multiset_invariance_axiom
     (config₁ config₂ : NuclearConfig)

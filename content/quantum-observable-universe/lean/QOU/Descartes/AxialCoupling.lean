@@ -149,6 +149,11 @@ class SymCharacterEqual (x y : TMatrix) : Prop where
   /-- Cleared traces agree. -/
   cleared_eq : tracedVolCleared x = tracedVolCleared y
 
+/-- Reflexivity instance: when `x = y` syntactically, the cleared
+    traces are equal by `rfl`. -/
+instance symCharacterEqual_refl (x : TMatrix) : SymCharacterEqual x x :=
+  ⟨rfl⟩
+
 /-- Per-instance form: ordering-independence on the symmetric
     channel, with the `InSymmetricIdempotent` hypotheses making the
     universal-quantifier defect of the earlier axiom explicit. -/
