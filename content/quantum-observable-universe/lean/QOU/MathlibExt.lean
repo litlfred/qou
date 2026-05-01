@@ -49,25 +49,24 @@ theorem List.prod_insertionSort_eq {α : Type*} [CommMonoid α]
 
 /-! ## §2  Foldl as initial · product (commutative monoids) -/
 
-/-- For a commutative monoid, `List.foldl (· * ·) init xs` equals
-    `init * xs.prod`.
-
-    Proof: induction on `xs`, using `mul_assoc` to associate the
-    accumulator forwards, and `mul_comm` to commute past `hd`.
+/-- For *any* monoid, `List.foldl (· * ·) init xs` equals
+    `init * xs.prod`. Holds for arbitrary `Monoid` — no
+    commutativity needed; the proof uses associativity only.
 
     TODO upstream: `Mathlib.Algebra.BigOperators.Group.List` —
     Mathlib has `List.foldl_assoc` for `init = 1`; this is the
     `init ≠ 1` generalisation. -/
-theorem List.foldl_mul_eq_prod_mul {α : Type*} [CommMonoid α]
+theorem List.foldl_mul_eq_mul_prod {α : Type*} [Monoid α]
     (xs : List α) (init : α) :
     xs.foldl (· * ·) init = init * xs.prod := by
   induction xs generalizing init with
   | nil => simp
   | cons hd tl ih =>
-    rw [List.foldl_cons, ih, List.prod_cons, mul_comm init hd, mul_assoc]
+    rw [List.foldl_cons, ih, List.prod_cons, mul_assoc]
 
-/-- Companion for `foldr`: `List.foldr (· * ·) init xs = xs.prod * init`. -/
-theorem List.foldr_mul_eq_prod_mul {α : Type*} [CommMonoid α]
+/-- Companion for `foldr`: `List.foldr (· * ·) init xs = xs.prod * init`.
+    Also `Monoid`-level — no commutativity required. -/
+theorem List.foldr_mul_eq_prod_mul {α : Type*} [Monoid α]
     (xs : List α) (init : α) :
     xs.foldr (· * ·) init = xs.prod * init := by
   induction xs with
@@ -75,21 +74,61 @@ theorem List.foldr_mul_eq_prod_mul {α : Type*} [CommMonoid α]
   | cons hd tl ih =>
     rw [List.foldr_cons, ih, List.prod_cons, mul_assoc]
 
-/-! ## §3  Foldl/foldr commutativity for commutative monoids -/
+/-- Backward-compatible alias matching the original CommMonoid
+    name (the statement and proof generalise to any Monoid). -/
+theorem List.foldl_mul_eq_prod_mul {α : Type*} [Monoid α]
+    (xs : List α) (init : α) :
+    xs.foldl (· * ·) init = init * xs.prod :=
+  List.foldl_mul_eq_mul_prod xs init
 
-/-- For a commutative monoid, foldl and foldr agree (regardless of
-    fold direction): both produce `init * xs.prod`.
+/-! ## §3  Foldl/foldr commutativity -/
 
-    This discharges `MatrixChainEqBuildChains` once the matrices
-    are known to commute (the matrices then form a commutative
-    submonoid of `Matrix _ _ R_q`).
-
-    TODO upstream: `Mathlib.Data.List.Basic` /
-    `Mathlib.Algebra.BigOperators.Group.List`. -/
+/-- For a *commutative* monoid, foldl and foldr agree: both
+    produce `init * xs.prod = xs.prod * init`. -/
 theorem List.foldl_eq_foldr_comm {α : Type*} [CommMonoid α]
     (xs : List α) (init : α) :
     xs.foldl (· * ·) init = xs.foldr (· * ·) init := by
-  rw [List.foldl_mul_eq_prod_mul, List.foldr_mul_eq_prod_mul, mul_comm]
+  rw [List.foldl_mul_eq_mul_prod, List.foldr_mul_eq_prod_mul, mul_comm]
+
+/-! ### §3a  `Pairwise Commute` foldl/foldr theorem
+
+This is the form needed for `MatrixChainEqBuildChains`: matrices
+are not a `CommMonoid`, but the *specific* transfer matrices in
+the chain pairwise commute (witnessed by `transferMatrix_comm`),
+and the chain initialiser commutes with each matrix in the chain.
+Under those hypotheses, foldl and foldr agree. -/
+
+/-- `Commute init xs.prod` follows from `init` commuting with
+    every element of `xs`. -/
+theorem List.commute_init_prod {α : Type*} [Monoid α]
+    (init : α) (xs : List α) (h : ∀ x ∈ xs, Commute init x) :
+    Commute init xs.prod := by
+  induction xs with
+  | nil => simp [List.prod_nil, Commute.one_right]
+  | cons hd tl ih =>
+    rw [List.prod_cons]
+    refine Commute.mul_right (h hd (List.mem_cons_self hd tl)) ?_
+    exact ih (fun x hx => h x (List.mem_cons_of_mem _ hx))
+
+/-- **Foldl/foldr equality from a Commute hypothesis on the
+    initial accumulator**: foldl and foldr produce the same
+    result over an arbitrary `Monoid` whenever the initial
+    accumulator commutes with every list element.
+
+    Note: pairwise commutativity *among* the list elements is not
+    needed for this form — the result is `init * xs.prod` either
+    way (foldl) or `xs.prod * init` (foldr), and these are equal
+    iff `init` commutes with `xs.prod`, which is exactly the
+    `Commute init x for all x` hypothesis (via `commute_init_prod`).
+
+    This discharges `MatrixChainEqBuildChains` (after some
+    rearrangement) since `transferMatrix_comm` gives the
+    pairwise-commute property. -/
+theorem List.foldl_eq_foldr_of_commute_init {α : Type*} [Monoid α]
+    (xs : List α) (init : α) (h : ∀ x ∈ xs, Commute init x) :
+    xs.foldl (· * ·) init = xs.foldr (· * ·) init := by
+  rw [List.foldl_mul_eq_mul_prod, List.foldr_mul_eq_prod_mul]
+  exact (List.commute_init_prod init xs h)
 
 /-- Permutation-invariance of products in a commutative monoid
     (specialisation of `List.Perm.prod_eq` for use as a lookup
