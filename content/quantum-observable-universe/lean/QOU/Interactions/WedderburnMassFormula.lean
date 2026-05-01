@@ -110,6 +110,20 @@ def lambda_sym (Z N : ℕ) [h : HasHoefsmitData Z N] : ℕ → ℝ → ℝ := h.
 /-- Alternating eigenvalue product (accessor). -/
 def lambda_alt (Z N : ℕ) [h : HasHoefsmitData Z N] : ℕ → ℝ → ℝ := h.lambda_alt
 
+/-- **Vacuum Hoefsmit data**: at `(Z, N) = (0, 0)` (no nucleons,
+    no Hecke generators), the seminormal data collapses to the
+    trivial identity:
+    - `numGenerators = 0` (empty set)
+    - `V_std = 0` (no generators contribute)
+    - `lambda_sym = lambda_alt = 1` (empty product)
+    The bindingTerm is then `α · Σ_{i ∈ ∅} … = 0`, so vacuum has
+    zero binding contribution. -/
+instance hasHoefsmitData_vacuum : HasHoefsmitData 0 0 where
+  numGenerators := 0
+  V_std := fun _ _ => 0
+  lambda_sym := fun _ _ => 1
+  lambda_alt := fun _ _ => 1
+
 /-! ## Closed-form Wedderburn weights -/
 
 /-- The `q`-integer `[2]_q = 1 + q`. -/
