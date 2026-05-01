@@ -483,6 +483,25 @@ theorem standardPart_substrateQ_pow (n : ℕ) :
   rw [heq, standardPart_polySubstrateEval]
   simp
 
+/-- `substrateQ^n - 1` is infinitesimal for every `n`.  Useful as an
+    "all higher-order corrections vanish at standard-part" identity. -/
+theorem substrateQ_pow_sub_one_isInfinitesimal (n : ℕ) :
+    SurrealField.IsInfinitesimal ((substrateQ (K := K))^n - 1) := by
+  -- Apply isClose_iff_standardPart_eq_of_finite + standardPart_substrateQ_pow.
+  have hfin : SurrealField.IsFinite ((substrateQ (K := K))^n) :=
+    substrateQ_isFinite.pow n
+  have hone : SurrealField.IsFinite (1 : K) := SurrealField.one_isFinite
+  have : standardPart ((substrateQ (K := K))^n) = standardPart (1 : K) := by
+    rw [standardPart_substrateQ_pow, standardPart_one]
+  exact (isClose_iff_standardPart_eq_of_finite hfin hone).mpr this
+
+/-- Standard-part of `substrateQ - 1` is `0` (the offset between
+    surreal substrate and archimedean unit). -/
+theorem standardPart_substrateQ_sub_one :
+    standardPart (substrateQ (K := K) - 1) = 0 := by
+  rw [substrateQ_sub_one]
+  exact standardPart_of_infinitesimal (epsilonSurreal_isInfinitesimal K)
+
 /-- `substrateQ` is finite. -/
 theorem substrateQ_isFinite' : SurrealField.IsFinite (substrateQ (K := K)) :=
   substrateQ_isFinite
