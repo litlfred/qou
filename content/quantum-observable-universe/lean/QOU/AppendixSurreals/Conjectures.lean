@@ -661,6 +661,39 @@ theorem OnPModularHecke.cells_equiv_nimbers
     ∃ φ : KazhdanLusztigCells p n → Nimbers p n, Function.Bijective φ :=
   OnPModularHecke.cells_bijective_to_nimbers n
 
+/-- **Unconditional cardinality equality.**  Both sides of the
+    `OnPModularHecke` bijection have cardinality `p^n` because both
+    are abbreviations for `Fin (p^n)`.  This holds **without** any
+    instance hypothesis — it is the part of the conjecture which is
+    visible at the type level.
+
+    The deep mathematical content (that the bijection respects KL/Nim
+    *structure*) is what `OnPModularHecke` actually asserts. -/
+theorem KazhdanLusztigCells.card_eq_pow (p n : ℕ) :
+    Fintype.card (KazhdanLusztigCells p n) = p ^ n :=
+  Fintype.card_fin _
+
+/-- **Unconditional cardinality equality.**  See
+    `KazhdanLusztigCells.card_eq_pow` for context. -/
+theorem Nimbers.card_eq_pow (p n : ℕ) :
+    Fintype.card (Nimbers p n) = p ^ n :=
+  Fintype.card_fin _
+
+/-- **Unconditional consequence: cardinalities of KL cells and nimbers
+    agree** at every `n` and prime `p`.  This is the easy half of the
+    `OnPModularHecke` conjecture, and is provable without any class
+    instance because both placeholder types are `Fin (p^n)`. -/
+theorem OnPModularHecke.card_cells_eq_card_nimbers (p n : ℕ) :
+    Fintype.card (KazhdanLusztigCells p n) = Fintype.card (Nimbers p n) := by
+  rw [KazhdanLusztigCells.card_eq_pow, Nimbers.card_eq_pow]
+
+/-- **Special case: `p = 2`.**  In the abelian case (Sprague–Grundy
+    nim arithmetic at `p = 2`, modular Hecke at `q = -1`), both sides
+    have cardinality `2^n`. -/
+theorem OnPModularHecke.card_eq_two_pow (n : ℕ) :
+    Fintype.card (KazhdanLusztigCells 2 n) = 2 ^ n := by
+  rw [KazhdanLusztigCells.card_eq_pow]
+
 /-! ### Provable implications and equivalences between conjectures
 
 The following theorems establish that several of the conjecture
