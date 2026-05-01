@@ -7,6 +7,7 @@ import QOU.AppendixSurreals.StandardPart
 import QOU.AppendixSurreals.SignSequence
 import QOU.AppendixSurreals.Blowup
 import QOU.AppendixSurreals.BirthdayGrading
+import QOU.AppendixSurreals.KComplex
 import QOU.AppendixSurreals.PolynomialEval
 
 /-!
@@ -160,21 +161,6 @@ def QOU_VacuumEnergy {K : Type u} [SurrealField K]
     type from `Mathlib.Topology.Knots` is integrated, this `abbrev`
     can be retargeted without touching the conjecture statements. -/
 abbrev Knot : Type := ℕ
-
-/-- The **complexification of `K`** as the ordered pair
-    `(real-part, imaginary-part)`.  Faithful as a set-level
-    representation of `K[i]/(i²+1)`; multiplicative structure (and
-    the genuine `√(a² + b²)` modulus) is left to a future expansion
-    of this module. -/
-abbrev KComplex (K : Type u) [SurrealField K] : Type u := K × K
-
-/-- The **Manhattan modulus** `|a + bi| := |a| + |b|`.  This is a
-    placeholder for the Euclidean modulus `√(a² + b²)`, which is
-    not available without surreal square roots; the Manhattan norm
-    is bilipschitz-equivalent to the Euclidean one and suffices for
-    the load-bearing inequalities elsewhere in the appendix. -/
-def KComplex.abs {K : Type u} [SurrealField K] : KComplex K → K :=
-  fun ab => |ab.1| + |ab.2|
 
 /-- The **coloured Jones polynomial** as a total function with the
     zero complex surreal `(0, 0)` as default value.  This is a
