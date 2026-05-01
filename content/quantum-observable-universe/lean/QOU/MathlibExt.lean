@@ -130,4 +130,20 @@ theorem Real.q_half_denom (q : ℝ) (hq : 0 < q) :
     q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)) = Real.sqrt q + 1 / Real.sqrt q := by
   rw [Real.rpow_half_eq_sqrt q, Real.rpow_neg_half_eq q hq]
 
+/-- For `x > 0`, the function `t ↦ t + 1/t` evaluated at
+    `t = Real.sqrt x` is non-negative and admits a clean
+    cross-multiplication identity:
+    `(Real.sqrt x) · ((Real.sqrt x) + 1 / (Real.sqrt x))
+       = x + 1`,
+    i.e. multiplying the QOU half-denominator by `sqrt x` clears
+    the inverse, yielding a closed-form polynomial in `x`. -/
+theorem Real.sqrt_mul_half_denom (x : ℝ) (hx : 0 < x) :
+    Real.sqrt x * (Real.sqrt x + 1 / Real.sqrt x) = x + 1 := by
+  have hsqrt_pos : 0 < Real.sqrt x := Real.sqrt_pos.mpr hx
+  have hsqrt_ne : Real.sqrt x ≠ 0 := ne_of_gt hsqrt_pos
+  have hsq : Real.sqrt x * Real.sqrt x = x :=
+    Real.mul_self_sqrt hx.le
+  field_simp
+  linarith [hsq]
+
 end QOU.MathlibExt
