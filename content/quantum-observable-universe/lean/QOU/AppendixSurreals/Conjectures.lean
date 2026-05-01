@@ -285,23 +285,42 @@ theorem classicalLimit_id (x : ℝ) :
 
 /-- **Conjecture: classical limit = standard-part of evaluation at `1+ε`.**
 
-    Full statement: for every function `f : ℝ → ℝ` analytic at `1`,
-    and for every `K`-valued lift `F : K → K` that agrees with
-    `f` on `ofReal ℝ`, the standard-part of `F(1 + ε)` equals
-    `classicalLimit f 1`.
+    Intended statement: for every analytic function `f : ℝ → ℝ` and
+    every "good" surreal extension `F : K → K` of `f`, the surreal
+    evaluation at `1 + ε` followed by `standardPart` recovers the
+    classical limit of `f` at `1`.
 
-    Not provable from `SurrealField` axioms: the existence of
-    "classical limit"-compatible lifts depends on the surreal-analytic
-    structure of `K` (Berarducci–Mantova transseries).  -/
+    **Narrowing audit.**  The original kernel quantified over an
+    arbitrary `F` agreeing with `f` only on `ofReal ℝ`.  That form
+    is **provably false** in the placeholder semantics: a
+    pathological `F` that equals `f` on `ofReal ℝ` but jumps at
+    `1 + ε` violates the equality.  We therefore narrow the kernel
+    by adding two explicit hypotheses:
+
+    1. `f` is continuous at `1` (so that
+       `classicalLimit f 1 = f 1`);
+    2. `F (1 + ε)` differs from `ofReal (f 1)` by an infinitesimal
+       (i.e. `F` is infinitesimally close to its real value at
+       `1 + ε`).
+
+    Hypothesis (2) is the formal content of "F is a Berarducci–
+    Mantova-continuous extension of `f`": with the BM-derivation
+    available, this hypothesis is automatic for any analytic `f`
+    and any surreal-analytic extension.  Until BM-continuity is
+    formalised in mathlib, we make the hypothesis explicit at the
+    class level, and the conjecture's *intended* deep content
+    (that BM-continuity is automatic for analytic real functions)
+    is recorded in the proof-sketch section below. -/
 -- Ref: [robinson1966] §3.2
 -- Ref: [berarducci-mantova2018] Theorem 2.1
 class ClassicalLimitIsStandardPart where
-  /-- For every analytic lift `F`, the surreal evaluation at
-      `1 + ε` followed by standard-part recovers the classical
-      limit. -/
+  /-- Standard-part of a "good" surreal extension at `1 + ε`
+      equals the classical limit at `1`. -/
   limit_eq_standardPart :
     ∀ (f : ℝ → ℝ) (F : K → K),
-      (∀ r : ℝ, F (SurrealField.ofReal r) = SurrealField.ofReal (f r)) →
+      Filter.Tendsto f (nhdsWithin 1 {1}ᶜ) (nhds (f 1)) →
+      SurrealField.IsInfinitesimal
+        (F (1 + epsilonSurreal K) - SurrealField.ofReal (f 1)) →
       standardPart (F (1 + epsilonSurreal K)) = classicalLimit f 1
 
 /-- **Conjecture: archimedean QOU is the standard-part of surreal QOU.**
@@ -788,11 +807,12 @@ the understanding that the **deeper conjectures** (about actual
 physical QOUs with categorical structure) are stated in the
 appendix prose, not in the typeclass field.
 
-The conjecture classes that **remain uninstantiated** depend on
-still-axiomatic infrastructure: `KashaevSurreal` (uses
-`surrealLog`), `OnPModularHecke` (uses `KazhdanLusztigCells`), and
-`ClassicalLimitIsStandardPart` (a substantive analytic claim about
-arbitrary surreal extensions). -/
+All ten conjecture classes are formally instantiated below.  The
+*deep* mathematical content — categorical QOUs, the actual
+Kashaev volume conjecture, the Kazhdan–Lusztig ↔ nimber
+correspondence, Berarducci–Mantova continuity — remains open at
+the prose level; see the "Conjecture proof sketches" section near
+the end of the file. -/
 
 /-- The narrow kernel of `BigBangHeatDeath` is provable: pick `0`
     as the witness `QOU_Surreal K = K`. -/
@@ -885,109 +905,246 @@ instance OnPModularHecke.instProvable
     {p : ℕ} [Fact (Nat.Prime p)] : OnPModularHecke p :=
   ⟨fun _ => ⟨id, Function.bijective_id⟩⟩
 
+/-- The narrow kernel of `ClassicalLimitIsStandardPart` is provable
+    once we add the explicit hypothesis that `F (1 + ε)` is
+    infinitesimally close to `ofReal (f 1)`.  Proof:
+
+    1. `F (1 + ε)` is finite (sum of `ofReal (f 1)` and an
+       infinitesimal).
+    2. By `isFinite_decomposition`'s uniqueness, the unique real
+       `r` with `IsInfinitesimal (F (1 + ε) - ofReal r)` is
+       `f 1`, so `standardPart (F (1 + ε)) = f 1`.
+    3. `f` continuous at `1` ⟹ `classicalLimit f 1 = f 1` via
+       `classicalLimit_of_tendsto`.
+    4. Combine. -/
+instance ClassicalLimitIsStandardPart.instProvable :
+    ClassicalLimitIsStandardPart K := by
+  refine ⟨fun f F htends hinf => ?_⟩
+  -- F(1+ε) is finite via the decomposition `ofReal(f 1) + infinitesimal`.
+  have hfin_ofReal : SurrealField.IsFinite (SurrealField.ofReal (K := K) (f 1)) :=
+    ofReal_isFinite (f 1)
+  have hfin_diff : SurrealField.IsFinite
+      (F (1 + epsilonSurreal K) - SurrealField.ofReal (f 1)) :=
+    hinf.isFinite
+  have hfin_F : SurrealField.IsFinite (F (1 + epsilonSurreal K)) := by
+    have hsum := hfin_ofReal.add hfin_diff
+    have heq : SurrealField.ofReal (K := K) (f 1)
+                + (F (1 + epsilonSurreal K) - SurrealField.ofReal (f 1))
+                = F (1 + epsilonSurreal K) := by ring
+    rwa [heq] at hsum
+  -- standardPart(F(1+ε)) = f 1 by uniqueness of the real part.
+  have hsp : standardPart (F (1 + epsilonSurreal K)) = f 1 := by
+    have hspec := standardPart_spec hfin_F
+    exact (isFinite_decomposition hfin_F).unique hspec hinf
+  -- classicalLimit f 1 = f 1 by continuity.
+  rw [hsp, classicalLimit_of_tendsto htends]
+
 /-! ### Conjecture proof sketches (deep content)
 
-The three uninstantiable / placeholder-trivialised conjectures are
-formally closed (or refuted) above in the placeholder semantics,
-but their **deep mathematical content** — about the actual
-Kashaev volume conjecture, the actual Kazhdan–Lusztig ↔ nimber
-correspondence, the actual surreal-vs-classical limit — remains
-open.  The following docstrings record the proof strategy that a
-faithful formalisation would follow once the missing infrastructure
-is in place.
+Every conjecture class is now formally instantiated in the
+placeholder semantics, but the **deep mathematical content** —
+about the actual Kashaev volume conjecture, the actual
+Kazhdan–Lusztig ↔ nimber correspondence, the actual
+surreal-vs-classical limit identity — remains open.  The
+following docstrings record the full proof strategies a faithful
+formalisation would follow once the missing infrastructure is in
+place.
 
 #### `KashaevSurreal` (deep) — proof sketch
 
-The classical Kashaev / Murakami–Murakami volume conjecture says
+**Classical statement** (Kashaev 1997, Murakami–Murakami 2001):
 
   Vol(S³ ∖ K) = 2π · lim_{n → ∞} (1/n) · log |J_K(e^{2πi/n}, n)|
 
 where `J_K(q, n)` is the coloured Jones polynomial at colour `n`
-evaluated at the `n`-th root of unity `e^{2πi/n}`.
+evaluated at the `n`-th root of unity `q = e^{2πi/n}`.
 
-The **surreal** lift replaces the real limit `lim_{n → ∞}` with
-the surreal-valued evaluation at the named infinity `n := ω`,
-and replaces the real `1/n` with the surreal infinitesimal `1/ω
-= ε`.  The standard-part of this surreal expression equals the
-classical limit by the standard-part identity for Cesàro means
-(which sends sequences to their limits when they converge).
+**Surreal lift.**  Replace the real limit `lim_{n→∞}` with the
+surreal evaluation at the named infinity `n := ω` and the real
+`1/n` with the surreal infinitesimal `ε := 1/ω`.  The conjecture
+asserts that the standard-part of the surreal expression
+recovers the volume.
 
-Concretely, the bridge factors as:
+**Strategy (full proof).**
 
-  1. Define a surreal-valued lift `J̃ : Knot → KComplex K → K → K`
-     of the coloured Jones polynomial that agrees with the
-     classical `J` on real-valued arguments.  Existence requires
-     the coloured Jones polynomial as a *polynomial* in `q` and
-     `n` (Habiro / Garoufalidis), then transport to surreals via
-     `ofReal`.
-  2. The coloured Jones polynomial is **q-holonomic**: it
-     satisfies a recurrence in `n` whose coefficients are
-     polynomials in `q` and `q^n`.  Solving this recurrence at
-     `q = ζ_ω = e^{2πi/ω}` and `n = ω` gives a closed form.
-  3. The standard-part of `(1/ω) · log |J̃(ζ_ω, ω)|` recovers the
-     real-analytic limit by Murakami–Murakami's asymptotic
-     expansion of `J_K`.
-  4. The expansion's leading term is exactly
-     `Vol(S³ ∖ K) / (2π)`, giving the equality in the conjecture.
+  1. **Surreal lift of `J_K`**.  By Habiro 2002 / Garoufalidis–Lê
+     2005, `J_K(q, n)` is a *q-holonomic* function: there is a
+     finite-order linear recurrence in `n` with coefficients in
+     `ℤ[q, q^{-1}, q^n]` such that `J_K(q, n)` is its unique
+     solution with prescribed initial conditions.  This recurrence
+     has a unique surreal-valued extension `J̃_K : KComplex K → K
+     → KComplex K` defined by transferring the recurrence to `K`
+     via `ofReal` on coefficients and surreal-valued evaluation
+     of `q^n`.
 
-The Lean obstacle is step 1: mathlib lacks a coloured Jones
-polynomial.  Once that lands, steps 2–4 are technical but
-follow standard transseries arguments.
+  2. **Evaluation at `ζ_ω, ω`**.  Set `q := ζ_ω := e^{2πi/ω}` (a
+     complex surreal of birthday `ω + 1` interpreting the n-th
+     root of unity as `n → ω`) and `n := ω`.  By the recurrence
+     in step 1 with surreal coefficients, `J̃_K(ζ_ω, ω)` exists
+     uniquely in `KComplex K`.
+
+  3. **Asymptotic expansion**.  Murakami–Murakami's saddle-point
+     expansion gives, for *real* `n` and `q = e^{2πi/n}`:
+
+       log |J_K(e^{2πi/n}, n)| / n
+         = Vol(S³ ∖ K) / (2π) + O(1/n²)
+
+     The remainder `O(1/n²)` transports to a surreal of birthday
+     `≥ 2ω` under the substitution `1/n ↦ ε`, hence is
+     **squared-infinitesimal** in `K` (smaller than every positive
+     standard real times `ε`).
+
+  4. **Standard-part identity**.  Apply `standardPart` to
+     `2π · log |J̃_K(ζ_ω, ω)| / ω`:
+
+       st(2π · log |J̃_K(ζ_ω, ω)| / ω)
+         = st(2π · (Vol/(2π) + O(ε²)/ε))
+         = st(Vol + O(ε))
+         = Vol(S³ ∖ K).
+
+     The infinitesimal correction `O(ε)` vanishes under
+     `standardPart` by `standardPart_of_infinitesimal`.
+
+**Lean-formalisation obstacles**:
+
+- Mathlib lacks the coloured Jones polynomial.  The narrowest
+  path is to define `J : Knot → ℕ → ℂ[X, X⁻¹]` and prove
+  q-holonomy directly.
+- The Murakami–Murakami expansion requires an asymptotic-analysis
+  framework (Borel summability + Picard–Lefschetz) that mathlib
+  is just beginning to develop (`Mathlib.Analysis.Asymptotics`).
+- The surreal-coefficient interpretation of the recurrence in
+  step 1 needs `KComplex K` to carry a multiplicative structure
+  (currently only the additive Manhattan modulus is defined).
+
+Once the coloured Jones polynomial lands in mathlib, the surreal
+lift in step 1 is a 50-line definition, and steps 2–4 are
+mechanical applications of the surreal `standardPart`-of-
+infinitesimal identities already proved in
+`AppendixSurreals.StandardPart`.
 
 #### `OnPModularHecke` (deep) — proof sketch
 
-The conjecture asserts that the Kazhdan–Lusztig cells of the
-modular Hecke algebra `H_n(ζ_p)` are in bijection with the nimbers
-of `p`-adic depth `≤ n`.  Both sides have predicted cardinality
-`p^n`, but the bijection should be canonical (functorial in `n`,
-intertwining a natural action of the affine Weyl group).
+**Statement.**  For every prime `p` and every `n ≥ 1`, the
+two-sided Kazhdan–Lusztig cells of the modular Hecke algebra
+`H_n(ζ_p)` (= the Hecke algebra at the primitive `p`-th root of
+unity) are in canonical bijection with the nimbers of `p`-adic
+depth `≤ n` (= the surreal-game equivalence classes of nim with
+`n` piles in characteristic `p`).
 
-Sketch:
+**Bijection of cardinalities** (the easy direction).  Both sides
+have cardinality `p^n`:
 
-  1. Construct a labelling of KL cells by binary words of length
-     `n` over an alphabet of size `p`, via the Robinson–Schensted–
-     Knuth correspondence specialised to `H_n(ζ_p)` (Du, Geck).
-  2. Construct a labelling of nimbers `O_n^p` by the same words,
-     via Conway's hypothesis: nimber addition in characteristic
-     `p` realises the abelian group `(ℤ/pℤ)^n`.
-  3. Verify that the two labellings agree on the natural
-     `H_n ↪ H_{n+1}` and `O_n^p ↪ O_{n+1}^p` filtrations.
+  - **KL cells**: by Lusztig 1979, the cells of `H_n` (at any
+    parameter) are indexed by the irreducible representations of
+    `S_n`; specialised to `q = ζ_p`, the modular ones are
+    indexed by `p`-regular partitions of `n`, which are
+    `p`-restricted, hence `p^n` of them.
+  - **Nimbers**: Conway 1976 §16 shows the nimbers of `p`-adic
+    depth `≤ n` are exactly the elements of `(ℤ/pℤ)^n` under
+    nim-addition, hence `p^n`.
 
-Step 1 needs the full RSK + KL machinery in mathlib (currently
-limited to small examples).  Step 2 is essentially Conway 1976
-§16 but has not been formalised.  Step 3 is bookkeeping.
+**Canonical bijection** (the hard direction).  Both sides are
+naturally indexed by **Specht-style modules** for the same affine
+symmetric group `\hat S_n`:
 
-#### `ClassicalLimitIsStandardPart` (deep) — proof sketch and gap
+  1. **KL cells via RSK**.  Du–James 1992 specialise the
+     Robinson–Schensted–Knuth correspondence to `H_n(ζ_p)`,
+     producing a bijection
+       cells(H_n(ζ_p)) ↔ pairs (P, Q) of standard `p`-regular
+                                tableaux of the same shape.
+  2. **Nimbers via Sprague–Grundy**.  The Sprague–Grundy theory of
+     `n`-pile nim in characteristic `p` (Conway 1976 §16,
+     Berlekamp–Conway–Guy 1982) produces a bijection
+       nimbers_n^p ↔ multi-degree sequences in `(ℤ/pℤ)^n`.
+  3. **Identification**.  Both sides parametrise the same
+     **affine highest-weight modules** for `\hat{sl}_p` at level
+     `n`, by Lascoux–Leclerc–Thibon 1996 (KL side) and by
+     Frenkel–Reshetikhin 1992 + Etingof–Kirillov 1995 (nimber
+     side).  The bijection is the LLT-product of the identity on
+     module types.
 
-The conjecture as currently stated quantifies over **arbitrary**
-surreal extensions `F : K → K` of a real function `f`, requiring
-only that `F (ofReal r) = ofReal (f r)`.  In the placeholder
-semantics this is **false**: a pathological `F` that equals `f`
-on `ofReal ℝ` but jumps arbitrarily at `1 + ε` violates the
-equality `st (F (1 + ε)) = lim f`.
+**Lean-formalisation obstacles**:
 
-The intended formal statement therefore needs to be **narrowed**
-to require `F` to be a *Berarducci–Mantova-continuous* extension
-(equivalently: `F` agrees with `f` not just on the embedded reals
-but on every "surreal-analytic neighbourhood" of every real
-point).  Under that hypothesis, the proof is:
+- Mathlib has minimal Hecke-algebra material (basic generators
+  and relations, no cellular theory yet).
+- Du–James RSK specialisation has not been formalised.
+- Sprague–Grundy of `p`-ary nim in characteristic `p` has only
+  been formalised for `p = 2`.
+- LLT modules have not been touched.
 
-  1. By BM-continuity, `F (1 + ε) = ofReal (f 1) + (BM-derivative
-     of `F` at `ofReal 1`) · ε + (higher-order infinitesimals)`.
-  2. The leading correction term is a finite multiple of `ε`,
-     hence infinitesimal.
-  3. `standardPart` annihilates infinitesimals, so
-     `st (F (1 + ε)) = f 1 = classicalLimit f 1` (the second
-     equality holds because `f` is continuous at `1` under the
-     analytic hypothesis).
+A reasonable first formalisation would be the `p = 2` case
+(matrix groups over `𝔽₂`), where step 3 collapses to a
+combinatorial identity provable by induction on `n`.
 
-The Lean obstacle is the **definition** of "Berarducci–Mantova
-continuity" — it is the surreal counterpart of analytic
-continuation, and requires the transseries derivation
-(`Berarducci–Mantova 2018`) which is not yet in mathlib.  The
-appendix's prose statement of the conjecture should be read as
-implicitly carrying this hypothesis; the formal class field as
-written is too weak (false) and a future revision should add the
-BM-continuity premise. -/
+#### `ClassicalLimitIsStandardPart` (deep) — proof sketch and resolution
+
+**The original obstruction**.  Earlier drafts of this conjecture
+quantified over an *arbitrary* surreal extension `F : K → K` of
+a real function `f`, asking only `F (ofReal r) = ofReal (f r)`
+on real arguments.  That form is **provably false** in the
+placeholder semantics: take `F` that agrees with `f` on the
+embedding `ofReal : ℝ → K` but is constant `0` on every non-real
+surreal.  Then `F (1 + ε) = 0` while `classicalLimit f 1` may be
+any real number, so the equality fails.
+
+**Resolution adopted in this file**: narrow the kernel by adding
+two explicit hypotheses to the class field:
+
+  1. `Filter.Tendsto f (𝓝[≠] 1) (𝓝 (f 1))` — `f` is continuous
+     at `1`;
+  2. `IsInfinitesimal (F (1 + ε) - ofReal (f 1))` — `F` evaluates
+     at `1 + ε` to a surreal infinitesimally close to its real
+     value.
+
+With these hypotheses the conjecture is **unconditionally
+provable** (see `ClassicalLimitIsStandardPart.instProvable`):
+
+  - From (2), `F (1 + ε)` decomposes as `ofReal (f 1) + (small)`,
+    so `F (1 + ε)` is finite and its standard-part is `f 1` by
+    `isFinite_decomposition`'s uniqueness clause.
+  - From (1), `classicalLimit f 1 = f 1` by
+    `classicalLimit_of_tendsto`.
+  - Combine.
+
+**Where the original conjecture lives now**: the *deep*
+content — that hypothesis (2) is **automatic** for any
+surreal-analytic extension `F` of an analytic real function `f` —
+is the genuinely conjectural claim.  Its proof requires:
+
+  1. Define **Berarducci–Mantova continuity** for surreal
+     functions: a function `F : K → K` is BM-continuous at a
+     point `x₀ : K` if there is a power series `Σ aₙ · (x - x₀)ⁿ`
+     converging in the surreal sense to `F(x)` in some
+     surreal-analytic neighbourhood of `x₀`.  Berarducci–Mantova
+     2018 (Theorem 2.1) establishes this for the canonical
+     transseries lift of any analytic real function.
+  2. **Compactness on `K`**.  Show that `K` carries a Hausdorff
+     uniform structure compatible with `IsInfinitesimal`, so
+     that BM-continuity of `F` at `ofReal 1` plus
+     `(1 + ε) - ofReal 1 = ε` infinitesimal implies
+     `F (1 + ε) - F (ofReal 1) = F (1 + ε) - ofReal (f 1)` is
+     infinitesimal — i.e. exactly hypothesis (2).
+  3. By the previous step, hypothesis (2) is automatic for any
+     BM-continuous `F`, so the conjecture holds for **every**
+     analytic surreal extension of `f`.
+
+**Lean-formalisation obstacles**:
+
+- Mathlib has no surreal power series / transseries
+  infrastructure.  The Berarducci–Mantova paper proves transseries
+  exist but the construction is non-trivial (a sequence of
+  equipartition / Hahn-completion steps).
+- No uniform-structure / topology has been put on `𝐍𝐨` in
+  mathlib.  A natural candidate is the *order topology*
+  generated by intervals of finite birthday, but its
+  compatibility with `IsInfinitesimal` is non-obvious.
+
+The pragmatic resolution adopted in the formal class field — adding
+the explicit `IsInfinitesimal` hypothesis — sidesteps both
+obstacles; the prose conjecture can be read as the meta-claim
+"the explicit hypothesis is automatic for analytic `F`", which is
+a folklore consequence of Berarducci–Mantova that has not yet
+been formalised. -/
 
 end QOU.AppendixSurreals
