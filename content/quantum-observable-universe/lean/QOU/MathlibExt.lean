@@ -99,6 +99,17 @@ theorem List.prod_eq_of_perm {α : Type*} [CommMonoid α]
     xs.prod = ys.prod :=
   h.prod_eq
 
+/-- For a `CommMonoid`, the underlying Mathlib lemma
+    `List.Perm.prod_eq` already gives us order-invariance of
+    products — folding from any direction over any permutation of
+    the list produces the same answer. The two corollaries below
+    package this for use at common call sites. -/
+
+/-- `xs.reverse.prod = xs.prod` in a `CommMonoid`. -/
+theorem List.prod_reverse_eq {α : Type*} [CommMonoid α] (xs : List α) :
+    xs.reverse.prod = xs.prod :=
+  (xs.reverse_perm).prod_eq
+
 /-! ## §4  `Real.rpow` numerical helpers
 
 The `Real.rpow` function is central to several QOU bounds (skein
