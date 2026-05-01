@@ -533,4 +533,14 @@ noncomputable def mvPolySubstrateEval {σ : Type v}
     (p : MvPolynomial σ ℝ) : K :=
   mvPolySurrealEval p mvSubstratePoint
 
+/-- **Multivariate aeval bridge.**  The multivariate surreal
+    evaluation agrees with Mathlib's canonical `MvPolynomial.aeval`,
+    via the `Algebra ℝ K` instance. -/
+theorem mvPolySurrealEval_eq_aeval {σ : Type v}
+    (p : MvPolynomial σ ℝ) (g : σ → K) :
+    mvPolySurrealEval p g = MvPolynomial.aeval g p := by
+  unfold mvPolySurrealEval mvPolySurrealEvalHom
+  rw [MvPolynomial.aeval_def]
+  rfl
+
 end QOU.AppendixSurreals
