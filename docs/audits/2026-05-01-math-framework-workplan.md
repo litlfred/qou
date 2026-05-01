@@ -289,20 +289,53 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 
 ## P3 — Resolve / classify open conjectures (CLAUDE.md §3b propagation)
 
-### P3.1 — Conjectural-propagation sweep
+### P3.1 — Conjectural-propagation sweep — ✅ landed (cones-driven pass)
 
 - **W**: §5 of audit. Many `conj:` blocks have downstream
   `theorem`/`proposition` cones; per CLAUDE.md §3b, downstream
   blocks must be `conjecture` not `theorem`.
-- **D**: Run `local/proof-gap-audit` skill (§I conjectural
-  propagation) over the paper. Demote any provable block whose
-  `uses[]` cone touches a `conj:` to `conjecture`. Promote
-  proof blocks downstream of conjectures to `remark` with
-  `interprets:`.
+- **D**: ✅ Cones-driven sweep using
+  [`docs/audits/conjecture-cones.md`](conjecture-cones.md).
+  Three case-(2) cleanups (re-edge wrong-direction `conj:`
+  citations from `uses[]` to prose-only) plus one genuine §3b
+  demotion (`prop:n-v-leading-order-derivation` →
+  `conj:n-v-leading-order-derivation`).
+- **Headline result** (regenerated cones doc):
+
+  | Metric | Before P3.1 | After P3.1 |
+  |---|---:|---:|
+  | Total blocks in any audit-cone | 504 | 17 |
+  | Total propagation violations | 210 | 0 |
+  | Conjectures propagation-clean | 8 / 10 | 10 / 10 |
+
+- **Files touched**:
+  - [`rem:calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md):
+    dropped `conj:mass-endomorphism` from `uses[]`; added the
+    actual upstream provable blocks. Cone of
+    `conj:mass-endomorphism`: 504 → 12.
+  - [`def:algebraic-quantum-volume`](../../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md):
+    dropped `conj:shared-denominator-cusp-holonomy` from `uses[]`.
+  - [`prop:algebraic-volume-specialization`](../../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md):
+    dropped both `conj:shared-denominator-cusp-holonomy` and
+    `conj:algebraic-geometric-dilog-equivalence` from `uses[]`.
+    Combined: cone of `conj:shared-denominator-cusp-holonomy`:
+    504 → 5.
+  - [`conj:n-v-leading-order-derivation`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.md):
+    demoted from `proposition` (was `prop:n-v-leading-order-derivation`).
+    Three cross-references updated (`n-v-bring-action.md`,
+    `n-v-tower-depth-ninety.md`, `n-v-leading-order-derivation.lean`).
+- **Pending P3.1 work** (out of scope for this pass):
+  - The remaining 17 cone members are all already typed
+    `conjecture` / `remark` / `definition` / `example`. No further
+    demotions needed at the audit-conjecture level.
+  - A document-wide sweep covering *every* open conjecture
+    (not just the §5 ten) would extend the cones doc's seed list
+    and re-run; if other open conjectures have provable cones, the
+    same case (1) / case (2) workflow applies. Estimated 0.5 day
+    once a sweep target list is decided.
 - **B**: blocked by nothing.
-- **S**: zero `theorem`/`proposition`/`lemma`/`corollary` blocks
-  have a transitively-conjectural `uses[]` cone.
-- **E**: 1–2 days for the sweep.
+- **S**: ✅ zero violations across the §5 audit conjectures.
+- **E**: 0.5 day actual (against the 1–2 day estimate).
 
 ### P3.2 — Pentagon $uv = q\,vu$ at traced-volume level (audit GAP 17a)
 
