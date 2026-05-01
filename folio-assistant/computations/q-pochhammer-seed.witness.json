@@ -1,15 +1,15 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-01T14:11:28.348944+00:00",
-  "commitSha": "4a63f1536f37fa3fe2916d983767b2c349abdcce",
+  "computedAt": "2026-05-01T14:42:21.218591+00:00",
+  "commitSha": "65c9b1a4ebb32f5e1592c53636142ca06d7726b0",
   "assertions": [],
   "allPassed": true,
   "durationMs": 8,
   "computation": "q-pochhammer-seed",
   "scriptFile": "q_pochhammer_seed.py",
-  "scriptHash": "b847696785e0",
-  "scriptCommitSha": "4a63f1536f37fa3fe2916d983767b2c349abdcce",
+  "scriptHash": "8446880b4d1b",
+  "scriptCommitSha": "65c9b1a4ebb32f5e1592c53636142ca06d7726b0",
   "description": "q-Pochhammer denominator zeros at substrate q_0, paired against Picard-Lefschetz discriminant roots of the color-tube cubic. Provides the candidate Newton-Raphson seed values for the Thurston gluing equations on the active JSJ piece.",
   "contentBlock": "conj:shared-denominator-cusp-holonomy",
   "parameters": {
@@ -70,6 +70,31 @@
             "matched_zc_index": 2
           }
         ],
+        "newton_runs": [
+          {
+            "seed_real": 1.0,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780325,
+            "final_imag": 0.22301272758464927,
+            "iterations": 9,
+            "converged_at": 9,
+            "initial_residual": 200.25576493680762,
+            "final_residual": 2.1328121164008897e-13,
+            "residual_trace": [
+              200.25576493680762,
+              73.8098368427115,
+              29.476115824130513,
+              13.792272568006977,
+              4.423412080156243,
+              1.282402948106316,
+              0.21744370930387727,
+              0.004108574902458882,
+              1.5295514462838458e-06,
+              2.1328121164008897e-13
+            ],
+            "k": 0
+          }
+        ],
         "denom_polynomial_coefficients": [
           1.0,
           -1.0
@@ -107,6 +132,56 @@
             "matched_zc_imag": -0.9371389378389038,
             "pairing_distance": 1.2289814521005493,
             "matched_zc_index": 2
+          }
+        ],
+        "newton_runs": [
+          {
+            "seed_real": 1.0,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780325,
+            "final_imag": 0.22301272758464927,
+            "iterations": 9,
+            "converged_at": 9,
+            "initial_residual": 200.25576493680762,
+            "final_residual": 2.1328121164008897e-13,
+            "residual_trace": [
+              200.25576493680762,
+              73.8098368427115,
+              29.476115824130513,
+              13.792272568006977,
+              4.423412080156243,
+              1.282402948106316,
+              0.21744370930387727,
+              0.004108574902458882,
+              1.5295514462838458e-06,
+              2.1328121164008897e-13
+            ],
+            "k": 0
+          },
+          {
+            "seed_real": 0.9009182735643011,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780368,
+            "final_imag": 0.22301272758464766,
+            "iterations": 11,
+            "converged_at": 11,
+            "initial_residual": 148.447597825296,
+            "final_residual": 1.2650853743966804e-13,
+            "residual_trace": [
+              148.447597825296,
+              55.71080659403417,
+              23.076347324978403,
+              11.456130399207156,
+              17.89336263453626,
+              5.848381191775706,
+              2.0064803572454037,
+              0.5984513625540336,
+              0.033727956022279154,
+              0.00010388615749262173,
+              9.796739383386577e-10,
+              1.2650853743966804e-13
+            ],
+            "k": 1
           }
         ],
         "denom_polynomial_coefficients": [
@@ -161,6 +236,80 @@
             "matched_zc_imag": -0.9371389378389038,
             "pairing_distance": 1.173208045815417,
             "matched_zc_index": 2
+          }
+        ],
+        "newton_runs": [
+          {
+            "seed_real": 1.0,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780325,
+            "final_imag": 0.22301272758464927,
+            "iterations": 9,
+            "converged_at": 9,
+            "initial_residual": 200.25576493680762,
+            "final_residual": 2.1328121164008897e-13,
+            "residual_trace": [
+              200.25576493680762,
+              73.8098368427115,
+              29.476115824130513,
+              13.792272568006977,
+              4.423412080156243,
+              1.282402948106316,
+              0.21744370930387727,
+              0.004108574902458882,
+              1.5295514462838458e-06,
+              2.1328121164008897e-13
+            ],
+            "k": 0
+          },
+          {
+            "seed_real": 0.9009182735643011,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780368,
+            "final_imag": 0.22301272758464766,
+            "iterations": 11,
+            "converged_at": 11,
+            "initial_residual": 148.447597825296,
+            "final_residual": 1.2650853743966804e-13,
+            "residual_trace": [
+              148.447597825296,
+              55.71080659403417,
+              23.076347324978403,
+              11.456130399207156,
+              17.89336263453626,
+              5.848381191775706,
+              2.0064803572454037,
+              0.5984513625540336,
+              0.033727956022279154,
+              0.00010388615749262173,
+              9.796739383386577e-10,
+              1.2650853743966804e-13
+            ],
+            "k": 1
+          },
+          {
+            "seed_real": 0.811653735642081,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780387,
+            "final_imag": -0.22301272758464272,
+            "iterations": 10,
+            "converged_at": 10,
+            "initial_residual": 113.32301265953319,
+            "final_residual": 9.237055564881302e-14,
+            "residual_trace": [
+              113.32301265953319,
+              43.38924176212417,
+              18.718579031727753,
+              9.641783214880515,
+              7.984309744881622,
+              2.5508239029124002,
+              0.7219670941033627,
+              0.05822206672154752,
+              0.0003029655589994453,
+              8.317445348659254e-09,
+              9.237055564881302e-14
+            ],
+            "k": 2
           }
         ],
         "denom_polynomial_coefficients": [
@@ -232,6 +381,110 @@
             "matched_zc_index": 2
           }
         ],
+        "newton_runs": [
+          {
+            "seed_real": 1.0,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780325,
+            "final_imag": 0.22301272758464927,
+            "iterations": 9,
+            "converged_at": 9,
+            "initial_residual": 200.25576493680762,
+            "final_residual": 2.1328121164008897e-13,
+            "residual_trace": [
+              200.25576493680762,
+              73.8098368427115,
+              29.476115824130513,
+              13.792272568006977,
+              4.423412080156243,
+              1.282402948106316,
+              0.21744370930387727,
+              0.004108574902458882,
+              1.5295514462838458e-06,
+              2.1328121164008897e-13
+            ],
+            "k": 0
+          },
+          {
+            "seed_real": 0.9009182735643011,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780368,
+            "final_imag": 0.22301272758464766,
+            "iterations": 11,
+            "converged_at": 11,
+            "initial_residual": 148.447597825296,
+            "final_residual": 1.2650853743966804e-13,
+            "residual_trace": [
+              148.447597825296,
+              55.71080659403417,
+              23.076347324978403,
+              11.456130399207156,
+              17.89336263453626,
+              5.848381191775706,
+              2.0064803572454037,
+              0.5984513625540336,
+              0.033727956022279154,
+              0.00010388615749262173,
+              9.796739383386577e-10,
+              1.2650853743966804e-13
+            ],
+            "k": 1
+          },
+          {
+            "seed_real": 0.811653735642081,
+            "seed_imag": 0.1,
+            "final_real": -0.9748155329780387,
+            "final_imag": -0.22301272758464272,
+            "iterations": 10,
+            "converged_at": 10,
+            "initial_residual": 113.32301265953319,
+            "final_residual": 9.237055564881302e-14,
+            "residual_trace": [
+              113.32301265953319,
+              43.38924176212417,
+              18.718579031727753,
+              9.641783214880515,
+              7.984309744881622,
+              2.5508239029124002,
+              0.7219670941033627,
+              0.05822206672154752,
+              0.0003029655589994453,
+              8.317445348659254e-09,
+              9.237055564881302e-14
+            ],
+            "k": 2
+          },
+          {
+            "seed_real": 0.7312336822466793,
+            "seed_imag": 0.1,
+            "final_real": -1.1600186170848812,
+            "final_imag": 0.2907830047876015,
+            "iterations": 16,
+            "converged_at": null,
+            "initial_residual": 89.0109715524387,
+            "final_residual": 11.937305358981456,
+            "residual_trace": [
+              89.0109715524387,
+              34.83187854318368,
+              15.693974447394972,
+              7.674440285672968,
+              3.561869307085944,
+              15975.974249176285,
+              5373.964798600005,
+              1814.8398058870544,
+              617.501312707478,
+              213.21513584926328,
+              75.90298178929513,
+              28.986256411898626,
+              13.446048585934978,
+              13.666883147734804,
+              3.570430649866597,
+              38.80719118513369,
+              11.937305358981456
+            ],
+            "k": 3
+          }
+        ],
         "denom_polynomial_coefficients": [
           1.0,
           -4.70958296241516,
@@ -244,10 +497,17 @@
     "pairing_summary": {
       "min_distance": 1.1266586316096234,
       "max_distance": 1.2952876583022306
+    },
+    "newton_summary": {
+      "total_runs": 10,
+      "converged": 9,
+      "max_iterations_to_converge": 11,
+      "min_initial_residual": 89.0109715524387,
+      "max_initial_residual": 200.25576493680762
     }
   },
   "caveats": [
     "Algebraic seeds q_0^{-k} are real; PL discriminant roots are complex (three conjugate pairs). The pairing distance is the complex-plane distance from a real seed to its closest PL critical point; under τ_arch the seed acquires an imaginary part matching the critical point. The Newton-Raphson solver uses the real seed as initial guess and converges to the complex SW critical point via a few gradient-flow steps.",
-    "This script is a static seeding witness. It does not yet drive a SnapPy Newton iteration to verify O(1)-step convergence; that integration is the next pipeline step (cf. conj:shared-denominator-cusp-holonomy §implication)."
+    "This script is a static seeding witness plus a Newton-Raphson driver on the color-tube discriminant Δ(z). It does not yet drive a SnapPy Newton iteration to verify O(1)-step convergence; that integration is the next pipeline step (cf. conj:shared-denominator-cusp-holonomy §implication)."
   ]
 }

@@ -77,38 +77,23 @@ theorem denomPoly_root_iff (q x : ℝ) (n : ℕ) (k : ℕ) (hk : k < n) :
     · subst heq
       rw [denomPoly_succ, hroot, zero_mul]
 
-/-- Cusp-completeness predicate: a Hecke normal-form word at GB-depth
-    `n` is cusp-complete at substrate `q` and shape `x` when the
-    denominator polynomial `(x; q)_n` vanishes. The geometric reading
-    is that parallel transport around the corresponding ideal-
-    tetrahedron cusp yields holonomy 1.
-
-    The bijection between roots of `denomPoly q x n` and the SW
-    critical points of the color-tube cubic is the content of
-    `conj:shared-denominator-cusp-holonomy`; the Lean statement here
-    just records the predicate. -/
+/-- Algebraic cusp-completeness predicate: a Hecke normal-form word
+    at GB-depth `n` is algebraically cusp-complete at substrate `q`
+    and shape `x` when the denominator polynomial `(x; q)_n` vanishes.
+    The geometric reading (parallel transport around the matched
+    ideal-tetrahedron cusp yields holonomy 1) is recorded as a
+    separate complex-valued `CuspComplete` structure in
+    `shared-denominator-cusp-holonomy.lean`; the present predicate is
+    the purely algebraic shadow. -/
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
-def CuspComplete (q x : ℝ) (n : ℕ) : Prop :=
+def AlgebraicCuspComplete (q x : ℝ) (n : ℕ) : Prop :=
   denomPoly q x n = 0
 
 /-- Asymptotic equivalence with the Bloch–Wigner / classical
-    dilogarithm `Li₂` is **stated, not proved**. Taking the strict
-    semi-classical limit of the discrete q-series requires complex-
-    analytic infrastructure not yet in Mathlib (Faddeev's saddle-
-    point analysis, asymptotic expansion of `q`-series with `q → 1`).
-
-    The statement: `(1 - q) · Real.log (partialProduct q x n)` tends
-    to `Li₂(x)` as `n → ∞` and `q → 1` jointly along Faddeev's
-    one-parameter scaling.  This is the algebraic-to-geometric
-    bridge under the Archimedean realization functor. -/
--- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
+    dilogarithm `Li₂` is **not stated here**. The genuine asymptotic
+    identity (Faddeev's saddle-point analysis) lives in the
+    `ArchimedeanLimit` typeclass of `dilogarithm-archimedean-limit.lean`,
+    where it is packaged as a class hypothesis (CLAUDE.md §3b). -/
 -- Ref: [manuscript] conj:dilogarithm-archimedean-limit
-theorem partialProduct_archimedean_limit
-    (x : ℝ) (hx : 0 < x ∧ x < 1) :
-    True := by
-  -- Stated only; the genuine asymptotic identity is a Mathlib gap.
-  -- Ref: [manuscript] conj:dilogarithm-archimedean-limit
-  trivial
 
 end QOU.QPochhammer

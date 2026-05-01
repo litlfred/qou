@@ -337,7 +337,9 @@ export default chapter({
         "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",
         // Algebraic-geometric duality of PL and SW theories
+        "gb-reduction-pl-thimble-bijection",
         "denominator-zeros-as-sw-critical-points",
+        "abelianisation-at-algebraic-poles",
         "pl-jsj-mass-integration-equivalence",
       ],
     }),

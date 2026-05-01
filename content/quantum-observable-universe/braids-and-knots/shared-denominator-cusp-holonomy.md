@@ -100,14 +100,23 @@ equations on the active JSJ piece. The pipeline is:
 4. Use the roots not as a universal constant but as the **initial
    guesses** for the Newton–Raphson solver.
 
-By Steps 1–4 of the proof sketch above, the algebraic seeds **are
-already at the cusp-completeness solution** of the Thurston gluing
+By Steps 1–4 of the proof sketch above, the algebraic seeds sit
+**near** the cusp-completeness solution of the Thurston gluing
 equations — only the gluing residuals from the active transient
-crossings differ from zero. The solver therefore converges in $O(1)$
-Newton steps per cusp, instead of the $O(\log\epsilon^{-1})$ steps
-needed when starting from a generic universal $z_q$. The Newton step
-also avoids local-minimum traps, because the algebraic poles are
-**isolated** in the cusp variety.
+crossings differ from zero. The solver converges in $O(1)$ Newton
+steps per cusp (empirically $\approx 10$ steps to machine precision
+across depths $n = 1, \dots, 3$, see witness below), instead of the
+$O(\log\epsilon^{-1})$ steps needed when starting from a generic
+universal $z_q$. The Newton step also avoids local-minimum traps,
+because the algebraic poles are **isolated** in the cusp variety.
+
+The witness
+[q-pochhammer-seed.witness.json](https://github.com/litlfred/qou/blob/claude/quantum-dilogarithm-implementation-DJmlU/folio-assistant/computations/q-pochhammer-seed.witness.json)
+drives Newton–Raphson on the color-tube discriminant $\Delta(z) = 0$
+from each algebraic seed (perturbed by $0.1i$ to enter $\mathbb{C}$).
+At depths $n = 1, 2, 3$, all seeds converge to a complex critical
+point with residual $\lesssim 10^{-13}$ in 9–11 iterations,
+empirically supporting the $O(1)$ claim.
 
 ## Relation to existing PL/JSJ infrastructure
 

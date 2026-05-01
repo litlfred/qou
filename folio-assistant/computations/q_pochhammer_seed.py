@@ -130,6 +130,74 @@ def pair_seeds_to_critical_points(
     return pairs
 
 
+# ── Newton-Raphson driver from algebraic seeds ──────────────────
+
+def discriminant_value(z: complex) -> complex:
+    """Evaluate Δ(z) — the color-tube cubic discriminant — at z."""
+    a = 1.0
+    b = 4 * z + 1
+    c = 6 * z * z + 3 * z + 1
+    d = 4 * z ** 3 + 3 * z * z + 2 * z + 1
+    return (
+        18 * a * b * c * d
+        - 4 * b ** 3 * d
+        + b * b * c * c
+        - 4 * a * c ** 3
+        - 27 * a * a * d * d
+    )
+
+
+def discriminant_derivative(z: complex, h: float = 1e-7) -> complex:
+    """Numerical derivative Δ'(z) via central finite difference."""
+    return (discriminant_value(z + h) - discriminant_value(z - h)) / (2 * h)
+
+
+def newton_iterate_from_seed(
+    seed: complex,
+    max_iter: int = 16,
+    tol: float = 1e-12,
+) -> dict:
+    """Drive Newton-Raphson on Δ(z) = 0 starting from `seed`.
+
+    Returns a dict recording:
+      - per-iteration residual |Δ(z_k)|
+      - iterations to reach tol (or max_iter if not converged)
+      - final z_k
+
+    This is the empirical test of the
+    `shared-denominator-cusp-holonomy` conjecture's prediction that
+    algebraic seeds sit at SW critical points (Δ = 0). If the
+    conjecture holds, the residual at iteration 0 is small and the
+    solver converges in O(1) steps.
+    """
+    z = complex(seed)
+    residuals = [abs(discriminant_value(z))]
+    converged_at = None
+    for it in range(1, max_iter + 1):
+        d_val = discriminant_value(z)
+        d_der = discriminant_derivative(z)
+        if abs(d_der) < 1e-30:
+            # Stationary point — abandon Newton step.
+            break
+        z = z - d_val / d_der
+        res = abs(discriminant_value(z))
+        residuals.append(res)
+        if res < tol and converged_at is None:
+            converged_at = it
+            break
+    return {
+        "seed_real": float(seed.real),
+        "seed_imag": float(seed.imag),
+        "final_real": float(z.real),
+        "final_imag": float(z.imag),
+        "iterations": len(residuals) - 1,
+        "converged_at": converged_at,
+        "initial_residual": residuals[0],
+        "final_residual": residuals[-1],
+        "residual_trace": [float(r) for r in residuals],
+    }
+
+
 # ── Main ────────────────────────────────────────────────────────
 
 def main() -> None:
@@ -161,6 +229,25 @@ def main() -> None:
             )
         print()
 
+        # Drive Newton-Raphson on Δ(z) = 0 from each seed.  Bumps the
+        # real seed into the complex plane along the steepest-descent
+        # direction; convergence to a critical point measures the
+        # `shared-denominator-cusp-holonomy` conjecture's prediction.
+        # Seed `q_0^0 = 1` is purposely perturbed off the real axis so
+        # the Jacobian is invertible.
+        newton_runs = []
+        for k, seed in enumerate(seeds):
+            perturbed = seed + 0.1j  # tiny imaginary kick to enter ℂ
+            run = newton_iterate_from_seed(perturbed)
+            run["k"] = k
+            newton_runs.append(run)
+            print(
+                f"  k={k} Newton: |Δ_0|={run['initial_residual']:.4e} "
+                f"-> |Δ_*|={run['final_residual']:.4e} "
+                f"in {run['iterations']} iter "
+                f"(converged@{run['converged_at']})"
+            )
+
         depth_results.append({
             "n": n,
             "seeds": [
@@ -168,6 +255,7 @@ def main() -> None:
                 for k, s in enumerate(seeds)
             ],
             "pairings": pairs,
+            "newton_runs": newton_runs,
             "denom_polynomial_coefficients": [
                 float(c) for c in q_pochhammer_denom_poly(q0, n)
             ],
@@ -220,8 +308,27 @@ def main() -> None:
         "uses the real seed as initial guess and converges to the "
         "complex SW critical point via a few gradient-flow steps."
     )
+    # Newton-Raphson convergence summary
+    all_runs = [run for d in depth_results for run in d["newton_runs"]]
+    converged_runs = [r for r in all_runs if r["converged_at"] is not None]
+    w.add_data("newton_summary", {
+        "total_runs": len(all_runs),
+        "converged": len(converged_runs),
+        "max_iterations_to_converge": (
+            max((r["converged_at"] for r in converged_runs), default=None)
+        ),
+        "min_initial_residual": float(min(
+            r["initial_residual"] for r in all_runs
+        )),
+        "max_initial_residual": float(max(
+            r["initial_residual"] for r in all_runs
+        )),
+    })
+
     w.add_caveat(
-        "This script is a static seeding witness. It does not yet drive "
+        "This script is a static seeding witness plus a Newton-Raphson "
+        "driver on the color-tube discriminant Δ(z). It does not yet "
+        "drive "
         "a SnapPy Newton iteration to verify O(1)-step convergence; "
         "that integration is the next pipeline step (cf. "
         "conj:shared-denominator-cusp-holonomy §implication)."
