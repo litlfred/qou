@@ -146,4 +146,24 @@ theorem Real.sqrt_mul_half_denom (x : ℝ) (hx : 0 < x) :
   field_simp
   linarith [hsq]
 
+/-- **Bracketing helper**: if `a > 0` and `a^2 < x`, then
+    `a < Real.sqrt x`. Lifted from `Real.sqrt_lt_sqrt` with the
+    `Real.sqrt_sq` simplification baked in. -/
+theorem Real.lt_sqrt_of_sq_lt (a x : ℝ) (ha : 0 ≤ a) (hsq : a^2 < x) :
+    a < Real.sqrt x := by
+  have hax : a = Real.sqrt (a^2) := by
+    rw [Real.sqrt_sq ha]
+  rw [hax]
+  exact Real.sqrt_lt_sqrt (by positivity) hsq
+
+/-- **Bracketing helper**: if `0 ≤ x` and `x < a^2`, then
+    `Real.sqrt x < a` (assuming `0 ≤ a`). -/
+theorem Real.sqrt_lt_of_lt_sq (a x : ℝ) (ha : 0 ≤ a) (hx : 0 ≤ x)
+    (hsq : x < a^2) :
+    Real.sqrt x < a := by
+  have hax : a = Real.sqrt (a^2) := by
+    rw [Real.sqrt_sq ha]
+  rw [hax]
+  exact Real.sqrt_lt_sqrt hx hsq
+
 end QOU.MathlibExt
