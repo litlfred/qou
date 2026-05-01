@@ -111,4 +111,16 @@ class He4DemandClosure (coeffs : List ℝ) : Prop where
   /-- All NF coefficients are nonneg. -/
   all_nonneg : ∀ c ∈ coeffs, 0 ≤ c
 
+/-- **Default instance for the empty list** — vacuously true. -/
+instance : He4DemandClosure [] :=
+  ⟨fun _ h => absurd h (List.not_mem_nil _)⟩
+
+/-- **Default instance for a singleton non-negative list**.
+    `He4DemandClosure [c]` follows from `0 ≤ c` directly. -/
+instance he4DemandClosure_singleton (c : ℝ) [hpos : Fact (0 ≤ c)] :
+    He4DemandClosure [c] :=
+  ⟨fun x hx => by
+    rcases List.mem_singleton.mp hx with rfl
+    exact hpos.out⟩
+
 end QOU.Interactions
