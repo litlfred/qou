@@ -161,7 +161,7 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 - **S**: ✅ no base case is a least-squares fit; SHELL-1 cleared.
 - **E**: 1 day → done.
 
-### P1.6 — Neutrino: unknot consistency sweep (was: "demote or fix")
+### P1.6 — Neutrino: unknot consistency sweep (was: "demote or fix") — ✅ landed
 
 - **W**: Re-audited per
   [`audit §2·F`](2026-05-01-math-framework-deep-audit.md#§2·f-—-neutrino-mass)
@@ -170,18 +170,31 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   neutron/neutrino comparison error. There is nothing to fix on
   the algebraic side; the workplan task becomes a
   **consistency sweep**.
-- **D**: Grep `folio-assistant/computations/` for any script that
-  emits a numerical $m_\nu$ from a knot-Markov-trace path (rather
-  than from the vacuum-drag formula
-  $m_\nu \sim \mu_0\cdot(q-1)$). Any such script is buggy by the
-  unknot identity and must be removed or renamed.
+- **D**: ✅ Grep over `folio-assistant/computations/`. Exactly one
+  script emitted a knot-derived numerical $m_\nu$:
+  [`tower-mass-neutrino.py`](../../folio-assistant/computations/tower-mass-neutrino.py).
+  Its Task 4 was framed as "Neutrino mass from L₋ channel" — buggy
+  by construction (the L₋ channel is not the neutrino sector; the
+  neutrino is the unknot). Reframed as a **diagnostic** of the
+  wrong-channel framing rather than a prediction:
+  - Header docstring updated to reference audit §2·F and P1.6.
+  - Task 4 section header renamed to "Neutrino consistency check".
+  - Variable `V_hat_nu` renamed to `V_hat_Lminus` (correct channel
+    label) plus an explicit `V_hat_nu_true = 1.0` for the unknot.
+  - Tower iteration output relabelled "L₋/e ratio" instead of
+    "m_ν/m_e"; the "would-be m_ν" appears with explicit
+    "diagnostic only, NOT a prediction" caption.
+  - Witness JSON neutrino sector restructured:
+    `categorical_bare_mass_MeV: 0.0`, plus separate
+    `L_minus_channel_diagnostic` and `vacuum_drag_prediction`
+    sub-sections with embedded warning string.
+  - Remaining vacuum-drag formulae preserved as the categorical
+    prediction.
 - **B**: blocked by nothing.
-- **S**: zero compute scripts produce a knot-derived neutrino
-  mass; vacuum-drag predictions are clearly labelled as such; the
-  obsolete "10⁶ off" line in
-  [`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
-  is replaced (already done in this audit pass).
-- **E**: 0.5 day.
+- **S**: ✅ no compute script now produces a knot-derived numerical
+  $m_\nu$ as a prediction. The `tower-mass-neutrino.py` diagnostic
+  is explicitly labelled as such in code, prose, and witness JSON.
+- **E**: 0.5 day → done.
 
 ### P1.7 — 1/α 399-ppb residual — derive or honest-conjecture
 
