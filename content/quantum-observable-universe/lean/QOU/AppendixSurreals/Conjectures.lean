@@ -108,10 +108,9 @@ kernels.
     with all axioms) is not yet formalised in mathlib; until then,
     `QOU_Real` is the trivial single-QOU carrier `PUnit` and every
     statement about archimedean QOUs reduces to a statement about
-    its unique inhabitant. -/
-def QOU_Real : Type u := PUnit
-
-instance : Inhabited QOU_Real := ⟨(PUnit.unit : PUnit)⟩
+    its unique inhabitant.  `abbrev` so that `Subsingleton` and
+    `Inhabited` instances on `PUnit` propagate. -/
+abbrev QOU_Real : Type u := PUnit
 
 /-- The **surreal QOU type over `K`**: identified with the carrier
     `K` itself, so that "a surreal QOU" is just an element of the
@@ -120,11 +119,9 @@ instance : Inhabited QOU_Real := ⟨(PUnit.unit : PUnit)⟩
     collapse: it makes the inhabitation kernels of every conjecture
     in this file formally provable while leaving the deep prose
     conjectures (about actual physical QOUs with categorical
-    structure) outside the formal statement. -/
-def QOU_Surreal (K : Type u) [SurrealField K] : Type u := K
-
-instance (K : Type u) [SurrealField K] : Inhabited (QOU_Surreal K) :=
-  ⟨(0 : K)⟩
+    structure) outside the formal statement.  `abbrev` so that
+    `K`'s instances propagate. -/
+abbrev QOU_Surreal (K : Type u) [SurrealField K] : Type u := K
 
 /-- The **QOU standard-part functor**: collapses the surreal QOU
     structure (= an element of `K`) onto the unique archimedean
@@ -158,18 +155,16 @@ def QOU_VacuumEnergy {K : Type u} [SurrealField K]
     table.  This is a placeholder carrier — sufficient to make
     `Nonempty Knot` provable and to support every theorem in the
     appendix that only relies on knot inhabitation.  When the knot
-    type from `Mathlib.Topology.Knots` is integrated, this `def`
+    type from `Mathlib.Topology.Knots` is integrated, this `abbrev`
     can be retargeted without touching the conjecture statements. -/
-def Knot : Type := ℕ
-
-instance : Inhabited Knot := ⟨(0 : ℕ)⟩
+abbrev Knot : Type := ℕ
 
 /-- The **complexification of `K`** as the ordered pair
     `(real-part, imaginary-part)`.  Faithful as a set-level
     representation of `K[i]/(i²+1)`; multiplicative structure (and
     the genuine `√(a² + b²)` modulus) is left to a future expansion
     of this module. -/
-def KComplex (K : Type u) [SurrealField K] : Type u := K × K
+abbrev KComplex (K : Type u) [SurrealField K] : Type u := K × K
 
 /-- The **Manhattan modulus** `|a + bi| := |a| + |b|`.  This is a
     placeholder for the Euclidean modulus `√(a² + b²)`, which is
@@ -201,12 +196,10 @@ def HyperbolicVolume : Knot → ℝ := fun _ => 0
     so that `OnPModularHecke`'s narrow-kernel bijection
     becomes the identity.  The genuine KL-cell construction
     requires the Hecke-algebra theory at a granularity not yet in
-    mathlib; this placeholder records only the cardinality. -/
-def KazhdanLusztigCells (p n : ℕ) : Type := Fin (p ^ n)
-
-instance KazhdanLusztigCells.instFintype (p n : ℕ) :
-    Fintype (KazhdanLusztigCells p n) :=
-  inferInstanceAs (Fintype (Fin _))
+    mathlib; this placeholder records only the cardinality.
+    `abbrev` so that downstream uses see `Fin (p^n)` immediately
+    (no `def`-unfolding needed for typeclass resolution). -/
+abbrev KazhdanLusztigCells (p n : ℕ) : Type := Fin (p ^ n)
 
 /-- The **`p`-adic depth-`≤ n` nimbers** as a finite type of
     cardinality `p^n`.  This is the carrier shape predicted by
@@ -218,10 +211,7 @@ instance KazhdanLusztigCells.instFintype (p n : ℕ) :
     immediately; the `+` (nim-sum) and `×` (nim-product) operations
     are not equipped here — they require `Mathlib.SetTheory.Game.Nim`-
     level infrastructure that is independent of the conjecture. -/
-def Nimbers (p n : ℕ) : Type := Fin (p ^ n)
-
-instance Nimbers.instFintype (p n : ℕ) : Fintype (Nimbers p n) :=
-  inferInstanceAs (Fintype (Fin _))
+abbrev Nimbers (p n : ℕ) : Type := Fin (p ^ n)
 
 /-- The **surreal exponential**, defined via the standard-part
     projection: `surrealExp x := ofReal (Real.exp (st x))`.  This
@@ -899,8 +889,9 @@ instance KashaevSurreal.instProvable : KashaevSurreal K := by
 
 /-- The narrow kernel of `OnPModularHecke p` is provable in the
     placeholder semantics: with both `KazhdanLusztigCells p n` and
-    `Nimbers p n` realised as `Fin (p^n)`, the identity function is
-    a bijection. -/
+    `Nimbers p n` realised as `Fin (p^n)`, the identity function on
+    `Fin (p^n)`, viewed via the trivial `def`-unfolding, is a
+    bijection from one to the other. -/
 instance OnPModularHecke.instProvable
     {p : ℕ} [Fact (Nat.Prime p)] : OnPModularHecke p :=
   ⟨fun _ => ⟨id, Function.bijective_id⟩⟩
