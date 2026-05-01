@@ -386,4 +386,59 @@ theorem standardPart_polynomialInEpsilon (p : ℝ[X]) :
   rw [standardPart_polySurrealEval p 0 (epsilonSurreal_isInfinitesimal K)]
   exact (Polynomial.coeff_zero_eq_eval_zero p).symm
 
+/-! ### `IsClose`-preservation: surreal evaluation is "continuous"
+
+The polynomial surreal lift sends `IsClose`-equivalent finite
+arguments to `IsClose`-equivalent values.  This is the proximity-
+relation form of `polySurrealEval_isInfinitesimal_diff` and is the
+cleanest "BM-continuous on monads" statement available without a
+full topology on `K`. -/
+
+/-- **`polySurrealEval` preserves `IsClose` on finite arguments.**
+    If `a` is finite and `IsClose a b`, then `IsClose (polySurrealEval p a)
+    (polySurrealEval p b)`.
+
+    Equivalently: every real polynomial extends to a function on `K`
+    that is constant on `IsClose`-equivalence classes (modulo the
+    finiteness restriction). -/
+theorem polySurrealEval_isClose (p : ℝ[X]) {a b : K}
+    (ha : IsFinite a) (hab : IsClose a b) :
+    IsClose (polySurrealEval p a) (polySurrealEval p b) := by
+  -- IsClose a b means a - b is infinitesimal.
+  -- Then -(a - b) = b - a is infinitesimal, and b = a + (b - a).
+  unfold IsClose at *
+  have hδ : IsInfinitesimal (-(a - b)) := hab.neg
+  have hb_eq : b = a + -(a - b) := by ring
+  rw [hb_eq]
+  -- polySurrealEval_isInfinitesimal_diff gives (a + δ) - a infinitesimal;
+  -- we want a - (a + δ) infinitesimal, which is the negation.
+  have hdiff :=
+    polySurrealEval_isInfinitesimal_diff p ha hδ
+  have hnegeq : polySurrealEval p a - polySurrealEval p (a + -(a - b))
+                = -(polySurrealEval p (a + -(a - b)) - polySurrealEval p a) := by
+    ring
+  rw [hnegeq]
+  exact hdiff.neg
+
+/-- **Substrate parameter `q := 1 + ε` is close to `1`.**  Direct
+    consequence of `epsilonSurreal_isInfinitesimal`. -/
+theorem substrateQ_isClose_one : IsClose (substrateQ (K := K)) 1 := by
+  unfold IsClose substrateQ
+  have heq : (1 : K) + epsilonSurreal K - 1 = epsilonSurreal K := by ring
+  rw [heq]
+  exact epsilonSurreal_isInfinitesimal K
+
+/-- **Polynomial substrate evaluation is close to its archimedean
+    value.**  For every real polynomial `p`,
+    `polySubstrateEval p` is `IsClose` to `ofReal (p.eval 1)`. -/
+theorem polySubstrateEval_isClose_ofReal (p : ℝ[X]) :
+    IsClose (polySubstrateEval (K := K) p)
+            (SurrealField.ofReal (p.eval 1)) := by
+  unfold polySubstrateEval substrateQ
+  have h1 : (1 : K) = SurrealField.ofReal (K := K) 1 := by rw [map_one]
+  rw [h1]
+  unfold IsClose
+  exact polySurrealEval_witness_at p 1
+    (epsilonSurreal_isInfinitesimal K)
+
 end QOU.AppendixSurreals
