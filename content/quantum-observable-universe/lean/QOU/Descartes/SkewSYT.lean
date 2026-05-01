@@ -595,9 +595,24 @@ noncomputable def branchingFraction
 --       Plancherel concentration / limit-shape argument being q-adapted
 -- Mathlib gap: q-Plancherel analysis (Kerov-Vershik q-analogue).
 -- Ref: [kerov1993] §2.4
-axiom convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
-    (f_k f_inf : ℝ) :
-    |f_k - f_inf| ≤ C_q / (k - 3 : ℝ)
+
+/-- **q-Plancherel convergence — typeclass (Pattern 4).**
+
+    The free-real bound `|f_k - f_inf| ≤ C_q / (k-3)` has no
+    a-priori semantic link to the actual branching fractions. Per
+    instance, the caller witnesses the bound for the specific
+    `(k, C_q, f_k, f_inf)` they use. -/
+class ConvergenceBound (k : ℕ) (_hk : k ≥ 4) (C_q : ℝ) (_hC : C_q > 0)
+    (f_k f_inf : ℝ) : Prop where
+  /-- The Kerov–Vershik O(1/(k-3)) bound. -/
+  bound : |f_k - f_inf| ≤ C_q / (k - 3 : ℝ)
+
+/-- Per-instance form. -/
+theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
+    (f_k f_inf : ℝ)
+    [hi : ConvergenceBound k hk C_q hC f_k f_inf] :
+    |f_k - f_inf| ≤ C_q / (k - 3 : ℝ) :=
+  hi.bound
 
 /-- **Per-level knot invariant** at jet level k.
 
@@ -615,10 +630,26 @@ axiom convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)
 -- fraction, then propagated through the linear combination defining
 -- a_k.  Mathlib gap: q-Plancherel CLT.
 -- Ref: [conj:jet-filtered-knot-factor]
-axiom knot_invariant_convergence
+
+/-- **Knot-invariant convergence — typeclass (Pattern 4).**
+
+    Per-instance witness for the rate at which the level-k knot
+    invariant approaches its limit. Like `ConvergenceBound`, the
+    free-real form has no a-priori link; the bound is propagated
+    from `convergence_bound` via the linear-combination definition
+    of `a_k`. -/
+class KnotInvariantConvergence (k : ℕ) (_hk : k ≥ 4)
+    (a_k a_inf : ℝ) (C : ℝ) (_hC : C > 0) : Prop where
+  /-- Knot-invariant level-k → ∞ rate. -/
+  bound : |a_k - a_inf| ≤ C / (k - 3 : ℝ)
+
+/-- Per-instance form. -/
+theorem knot_invariant_convergence
     (k : ℕ) (hk : k ≥ 4)
-    (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0) :
-    |a_k - a_inf| ≤ C / (k - 3 : ℝ)
+    (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0)
+    [hi : KnotInvariantConvergence k hk a_k a_inf C hC] :
+    |a_k - a_inf| ≤ C / (k - 3 : ℝ) :=
+  hi.bound
 
 /-- **Error estimate at physical levels**.
 

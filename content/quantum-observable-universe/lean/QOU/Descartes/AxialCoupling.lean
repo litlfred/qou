@@ -113,18 +113,33 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
     **Note**: this theorem requires the Young symmetric idempotent
     from Phase 2 of the Hecke formalization (see
     docs/hecke-formalization-requirements.md §B2). -/
-/-- STATEMENT-LEVEL DEFECT: as written, `x.trace = y.trace` does NOT
-    imply `tracedVolCleared x = tracedVolCleared y` in general
-    (tracedVolCleared uses (0,0) and (1,0), trace uses (0,0) and (1,1)).
-    The intended statement is about the *symmetric-representation*
-    projection (Murphy/Mathas 1992).  Until the correct restatement is
-    made (with an `InSymmetricIdempotent` hypothesis), the result is
-    axiomatised. -/
+/-- **Symmetric trace ordering-independence — typeclass (Pattern 4).**
+
+    STATEMENT-LEVEL DEFECT: the universal claim
+    `x.trace = y.trace ⇒ tracedVolCleared x = tracedVolCleared y`
+    is false as stated (different matrix entries). The intended
+    claim is about the *symmetric-representation* projection
+    (Murphy/Mathas 1992): if both `x` and `y` factor through the
+    symmetric Young idempotent and have equal σ-exponent sums, the
+    cleared traces agree.
+
+    Until an `InSymmetricIdempotent` hypothesis is added, the
+    relation is packaged as a per-pair typeclass so each call site
+    must witness the symmetric-projection condition explicitly. -/
 -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-axiom sym_trace_ordering_independent
+class SymTraceOrderingIndependent (x y : TMatrix)
+    (_h_same_exponent_sum : x.trace = y.trace) : Prop where
+  /-- Cleared traces agree on a symmetric-projected pair. -/
+  cleared_eq : tracedVolCleared x = tracedVolCleared y
+
+/-- Per-instance form. -/
+-- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+theorem sym_trace_ordering_independent
     (x y : TMatrix)
-    (h_same_exponent_sum : x.trace = y.trace) :
-    tracedVolCleared x = tracedVolCleared y
+    (h_same_exponent_sum : x.trace = y.trace)
+    [hi : SymTraceOrderingIndependent x y h_same_exponent_sum] :
+    tracedVolCleared x = tracedVolCleared y :=
+  hi.cleared_eq
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)

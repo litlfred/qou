@@ -137,53 +137,77 @@ structure CategoricalVariationalData (C : Type u) [CategoryTheory.Category.{v} C
   /-- The gauge current density `J_ψ`. -/
   gaugeCurrent : (𝟙_ C) ⟶ (𝟙_ C)
 
-/-- **Einstein equation**: `G_λ = T_q`.
-    The gravity action term decomposes as Einstein tensor plus stress-energy.
+/-! ### Variational equations as a typeclass (Pattern 4)
 
-    **Axiom justification**: proof requires categorical calculus of
-    variations (Euler–Lagrange machinery for monoidal categories),
-    not available in Mathlib.
+The three variational equations of motion (Einstein, Yang–Mills,
+transport) require a categorical calculus of variations not yet
+available in Mathlib. Rather than asserting them universally for
+*every* `(C, fh, ca, vd)`, we package them as a typeclass
+`HasCategoricalEOM`. Callers must supply an instance to use the
+identities, making the conjectural content visible at every use
+site.
 
-    Classical counterpart: Wald, *General Relativity*, Theorem 4.3.1. -/
+The classical (set-theoretic) versions of these equations follow
+from Wald, Bleecker, and Kobayashi–Nomizu; the typeclass instances
+will be discharged once the categorical Euler–Lagrange machinery
+is formalised. -/
+
+/-- **Categorical equations of motion — typeclass.**
+    Witnesses the three variational identities for a specific
+    `(C, fh, ca, vd)` choice, encoding the on-shell relations
+    between action terms and external currents/tensors. -/
+class HasCategoricalEOM {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
+    (fh : FrobeniusHopfData C)
+    (ca : CategoricalAction C fh)
+    (vd : CategoricalVariationalData C fh ca) : Prop where
+  /-- **Einstein**: `G_λ + T_q = gravity` (Wald, *General
+      Relativity*, Theorem 4.3.1). -/
+  einstein : ca.gravity = vd.einsteinTensor + vd.stressTensor
+  /-- **Yang–Mills**: `gauge = J_ψ` (Bleecker, *Gauge Theory and
+      Variational Principles*, Ch VII). -/
+  yang_mills : ca.gauge = vd.gaugeCurrent
+  /-- **Transport**: `matter = 0` (Kobayashi–Nomizu Vol I, Ch II,
+      parallel transport). -/
+  transport : ca.matter = 0
+
+/-- **Einstein equation** (per-instance form).
+    Use this lemma — backed by `HasCategoricalEOM` — instead of the
+    deprecated universal axiom. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 -- Ref: [wald1984] https://doi.org/10.7208/chicago/9780226870373.001.0001
-axiom variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
+theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
-    (vd : CategoricalVariationalData C fh ca) :
-    ca.gravity = vd.einsteinTensor + vd.stressTensor
+    (vd : CategoricalVariationalData C fh ca)
+    [HasCategoricalEOM fh ca vd] :
+    ca.gravity = vd.einsteinTensor + vd.stressTensor :=
+  HasCategoricalEOM.einstein
 
-/-- **Yang–Mills equation**: `∇ ★_q F + q[F, ★_q F] = J_ψ`.
-    The gauge action term equals the gauge current density on-shell.
-
-    **Axiom justification**: requires categorical calculus of variations.
-
-    Classical counterpart: Bleecker, *Gauge Theory and Variational
-    Principles*, Chapter VII. -/
+/-- **Yang–Mills equation** (per-instance form). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 -- Ref: [bleecker1981] https://doi.org/10.1007/978-1-4684-0148-7
-axiom variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
+theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
     (ca : CategoricalAction C fh)
-    (vd : CategoricalVariationalData C fh ca) :
-    ca.gauge = vd.gaugeCurrent
+    (vd : CategoricalVariationalData C fh ca)
+    [HasCategoricalEOM fh ca vd] :
+    ca.gauge = vd.gaugeCurrent :=
+  HasCategoricalEOM.yang_mills
 
-/-- **Transport equation**: `D_∇ ψ = 0`.
-    The matter action term vanishes on-shell.
-
-    **Axiom justification**: requires categorical calculus of variations.
-
-    Classical counterpart: parallel transport on vector bundles,
-    Kobayashi–Nomizu Vol I, Ch II. -/
+/-- **Transport equation** (per-instance form). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 -- Ref: [kobayashi1996] https://doi.org/10.1002/9780470316559
-axiom variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
+theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
-    (ca : CategoricalAction C fh) :
-    ca.matter = 0
+    (ca : CategoricalAction C fh)
+    (vd : CategoricalVariationalData C fh ca)
+    [HasCategoricalEOM fh ca vd] :
+    ca.matter = 0 :=
+  HasCategoricalEOM.transport
 
 /-- **Observation** as a categorical endomorphism `O : A → A`.
     LaTeX: `\label{def:observation}` -/

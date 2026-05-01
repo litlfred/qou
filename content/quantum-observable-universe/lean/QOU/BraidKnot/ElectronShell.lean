@@ -51,16 +51,31 @@ opaque bindingMultiplicity : ElectronShell → R_q → ℕ
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 def nobleGasMagic : Finset ℕ := ({2, 10, 18, 36, 54, 86} : Finset ℕ)
 
-/-- **Multi-operator regime at noble-gas `Z`.** For any shell `S`
-    with `nElectrons ∈ nobleGasMagic` and `q` in the generic locus,
-    the binding multiplicity satisfies `μ(S, q) ≥ 2`. This is the
-    computational content of `electron-shell-ilp` witnesses
-    (electrons alternate between `σ_0⁻¹` and `σ_1⁻¹`). -/
+/-- **Noble-gas multi-operator regime — typeclass (Pattern 4).**
+
+    Witnesses `μ(S, q) ≥ 2` for a *specific* shell `S` whose
+    electron count lies in `nobleGasMagic`. The computational
+    content is supplied by the `electron-shell-ilp` witnesses
+    (alternating-`σ_0⁻¹`/`σ_1⁻¹` packings); a class lets each
+    caller bind to the witness for the specific `(S, q)` it cares
+    about, rather than asserting a universal SDP property. -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-axiom noble_gas_multi_operator
+class NobleGasMultiOperator
     (S : ElectronShell) (q : R_q)
-    (h : S.nElectrons ∈ nobleGasMagic) :
-    bindingMultiplicity S q ≥ 2
+    (_h : S.nElectrons ∈ nobleGasMagic) : Prop where
+  /-- Binding multiplicity at noble-gas `Z` is at least 2. -/
+  multi : bindingMultiplicity S q ≥ 2
+
+/-- **Multi-operator regime at noble-gas `Z`** (per-instance form).
+    Backed by `NobleGasMultiOperator`. -/
+-- Ref: [manuscript] braids-and-knots/electron-shell
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+theorem noble_gas_multi_operator
+    (S : ElectronShell) (q : R_q)
+    (h : S.nElectrons ∈ nobleGasMagic)
+    [hi : NobleGasMultiOperator S q h] :
+    bindingMultiplicity S q ≥ 2 :=
+  hi.multi
 
 end QOU.BraidKnot

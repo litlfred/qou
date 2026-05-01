@@ -505,11 +505,27 @@ gives the Yekutieli bridge theorem. -/
 
     LaTeX: `\label{rem:yekutieli-transcendence-shadow}` -/
 -- Per CLAUDE.md §3b: a conjecture in the YekutieliLiftingCondition
--- class is itself the open question.  Axiomatised pending
--- Nesterenko-type results on Li₂ at algebraic arguments.
+-- class is itself the open question.  Pattern 4 narrowing:
+-- typeclass binding to a specific Yekutieli witness, rather than a
+-- universal axiom.
 -- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
-axiom tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutieliLiftingCondition) :
-    HyperbolicVolumeIndependence
+
+/-- **Tower-noncollapse → independence — typeclass.**
+
+    Conjectural Nesterenko-type bridge: any Yekutieli lifting
+    condition implies algebraic independence of hyperbolic volumes.
+    Bound to a specific Yekutieli witness so the conjectural
+    content is visible at the call site. -/
+class TowerNoncollapseImpliesIndependence
+    (_ylc : QOU.Torsion.YekutieliLiftingCondition) : Prop where
+  /-- The independence witness produced by the bridge. -/
+  independence : HyperbolicVolumeIndependence
+
+/-- Per-instance form. -/
+theorem tower_noncollapse_implies_independence
+    (ylc : QOU.Torsion.YekutieliLiftingCondition)
+    [hi : TowerNoncollapseImpliesIndependence ylc] :
+    HyperbolicVolumeIndependence :=
+  hi.independence
 
 end QOU.Descartes

@@ -314,9 +314,25 @@ noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
 -- Mathlib gap: q-Plancherel CLT + q-hook-walk mixing time.
 -- Ref: [kerov1996] q-hook walk
 -- Ref: [feray2010] q-Plancherel CLT Theorem 1.1
-axiom branching_convergence (k : ℕ) (hk : k ≥ 4)
-    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0) :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
+
+/-- **Branching convergence — typeclass (Pattern 4).**
+
+    The free-real statement `|f_k - f_inf| ≤ C_q / √(k-3)`
+    has no a-priori semantic link between `f_k`, `f_inf`, `C_q`,
+    and the actual q-Plancherel branching fractions. Until the
+    Mathlib q-Plancherel CLT lands, callers must witness the
+    bound for the specific `(k, f_k, f_inf, C_q)` they use. -/
+class BranchingConverges (k : ℕ) (_hk : k ≥ 4)
+    (f_k f_inf : ℝ) (C_q : ℝ) (_hC : C_q > 0) : Prop where
+  /-- The Féray–Méliot O(1/√k) bound. -/
+  bound : |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
+
+/-- Per-instance form. -/
+theorem branching_convergence (k : ℕ) (hk : k ≥ 4)
+    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0)
+    [hi : BranchingConverges k hk f_k f_inf C_q hC] :
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) :=
+  hi.bound
 
 /-- **Convergence at finite k** (the practically useful version).
 

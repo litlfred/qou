@@ -300,13 +300,28 @@ noncomputable def chainCrossings (config : NuclearConfig) (j : ℕ) : CrossingSe
     | .nn => (2 * w_plus_t v, 2 * w_zero_t v)
     | .pn => (w_plus_t v, w_zero_t v)
 
-/-- foldl/foldr bridge for the commutative matrix chain product —
-    axiomatised until `List.foldl_eq_foldr_of_comm` is located/added
-    in Mathlib. -/
-axiom matrixChain_eq_buildChains_axiom (config : NuclearConfig) (j : ℕ)
-    (hj : j + 1 < config.length) :
+/-- **foldl/foldr bridge — typeclass (Pattern 4).**
+
+    The universal claim
+    `matrixChain (chainCrossings config j) = (buildChains config).get! j`
+    holds because all transfer matrices commute (so `foldl` and
+    `foldr` agree). The Mathlib lemma
+    `List.foldl_eq_foldr_of_comm` is not yet available; until
+    then, callers witness the equality for the specific
+    `(config, j)` pair they use. -/
+class MatrixChainEqBuildChains (config : NuclearConfig) (j : ℕ)
+    (_hj : j + 1 < config.length) : Prop where
+  /-- foldl and foldr agree on the commutative chain product. -/
+  eq : matrixChain (chainCrossings config j) =
+       (buildChains config).get! j
+
+/-- Per-instance form. -/
+theorem matrixChain_eq_buildChains_axiom (config : NuclearConfig) (j : ℕ)
+    (hj : j + 1 < config.length)
+    [hi : MatrixChainEqBuildChains config j hj] :
     matrixChain (chainCrossings config j) =
-    (buildChains config).get! j
+    (buildChains config).get! j :=
+  hi.eq
 
 /-- The matrix chain from `chainCrossings` equals the corresponding
     entry in `buildChains`.

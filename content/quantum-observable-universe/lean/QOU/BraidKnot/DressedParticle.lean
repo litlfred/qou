@@ -43,14 +43,27 @@ noncomputable def dressMorphism (D : DressedParticle) :
     ConfMorphism D.bare D.composite :=
   ConfMorphism.dress D.bare D.composite D.shell.nucleus.name
 
-/-- **Dressing composition.** Dressings compose via shell
-    concatenation when the combined `Z` remains SDP-feasible.
-    Axiomatised until `DressedParticle` carries a `level_preserved`
-    field. -/
+/-- **Dressing composition — typeclass (Pattern 4).**
+
+    Witnesses level preservation under dressing concatenation, *for
+    a specific compatible pair*. The cleaner long-term fix adds a
+    `level_preserved` field to `DressedParticle`; until then the
+    obligation is per-instance, not universal. -/
 -- Ref: [manuscript] braids-and-knots/dressed-particle
-axiom dressing_composes
+class DressingComposes (D₁ D₂ : DressedParticle)
+    (_h_chain : D₁.composite = D₂.bare) : Prop where
+  /-- Level is preserved through the composition. -/
+  level_eq : D₂.composite.level = D₁.bare.level
+
+/-- **Dressing composition** (per-instance form).
+    Use this lemma — backed by `DressingComposes` — instead of the
+    deprecated universal axiom. -/
+-- Ref: [manuscript] braids-and-knots/dressed-particle
+theorem dressing_composes
     (D₁ D₂ : DressedParticle)
-    (h_chain : D₁.composite = D₂.bare) :
-    D₂.composite.level = D₁.bare.level
+    (h_chain : D₁.composite = D₂.bare)
+    [h : DressingComposes D₁ D₂ h_chain] :
+    D₂.composite.level = D₁.bare.level :=
+  h.level_eq
 
 end QOU.BraidKnot

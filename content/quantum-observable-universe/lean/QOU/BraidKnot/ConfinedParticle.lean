@@ -58,15 +58,28 @@ structure ConfinedParticle where
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 opaque confined : ConfinedParticle → R_q → Prop
 
-/-- **Coarse-strand correctness.** The coarse strand count of a
-    confined particle matches the strand count of its Markov-class
-    canonical representative. -/
-/-- `coarseStrands` and `markovClass.strandCount` are currently
-    independent ℕ fields.  A cleaner long-term fix adds a
+/-- **Coarse-strand correctness — typeclass (Pattern 4).**
+
+    Witnesses, *per particle `P`*, that the coarse strand count
+    matches the strand count of its Markov-class canonical
+    representative. The cleaner long-term fix adds a
     `coarseStrands_eq` field to `ConfinedParticle`, breaking
-    every existing instance constructor.  Axiomatised until then. -/
+    every existing instance constructor. Until then, the
+    well-formedness witness is a typeclass: callers must prove or
+    declare an instance for the specific particles they use,
+    rather than asserting the identity universally. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-axiom coarseStrands_eq_markov_strands (P : ConfinedParticle) :
-    P.coarseStrands = P.markovClass.strandCount
+class WellFormedConfinedParticle (P : ConfinedParticle) : Prop where
+  /-- Coarse strand count agrees with the Markov-class width. -/
+  coarseStrands_eq : P.coarseStrands = P.markovClass.strandCount
+
+/-- **Coarse-strand correctness** (per-instance form).
+    Use this lemma — backed by `WellFormedConfinedParticle` —
+    instead of the deprecated universal axiom. -/
+-- Ref: [manuscript] braids-and-knots/confined-particle
+theorem coarseStrands_eq_markov_strands (P : ConfinedParticle)
+    [h : WellFormedConfinedParticle P] :
+    P.coarseStrands = P.markovClass.strandCount :=
+  h.coarseStrands_eq
 
 end QOU.BraidKnot

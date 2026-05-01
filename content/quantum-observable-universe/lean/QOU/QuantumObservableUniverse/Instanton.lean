@@ -93,12 +93,33 @@ structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
     §4.2 (irreducibility of anti-self-dual connections). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 -- Ref: [donaldson1990] https://doi.org/10.1093/oso/9780198535539.001.0001
-axiom categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
+
+/-- **Categorical irreducibility — typeclass.**
+    Witnesses adjoint-rep vanishing for a specific
+    `(C, frobHopf, adjointObj, inst)` choice rather than asserting
+    it for *every* monoidal category. The conjectural content
+    (encoding `Ad(A) = A ⊗ A^∨` and deriving `Hom(𝟙, Ad(A)) = 0`
+    from self-duality) becomes a per-instance obligation visible
+    at every use site. -/
+class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    {frobHopf : FrobeniusHopfData C}
+    (adjointObj : C)
+    (_inst : CategoricalInstanton frobHopf) : Prop where
+  /-- Vanishing of adjoint-rep observables. -/
+  subsingleton : Subsingleton ((𝟙_ C) ⟶ adjointObj)
+
+/-- **Categorical irreducibility** (per-instance form).
+    Use this lemma — backed by `HasCategoricalIrreducibility` —
+    instead of the deprecated universal axiom. -/
+theorem categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     {frobHopf : FrobeniusHopfData C}
     {adjointObj : C}
-    (inst : CategoricalInstanton frobHopf) :
-    Subsingleton ((𝟙_ C) ⟶ adjointObj)
+    (inst : CategoricalInstanton frobHopf)
+    [h : HasCategoricalIrreducibility adjointObj inst] :
+    Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
+  h.subsingleton
 
 /-- **Proposition (Categorical self-duality).**
     LaTeX: `\label{prop:categorical-self-duality}`
@@ -151,15 +172,35 @@ theorem categorical_dq_squared_classical_limit {C : Type u}
     Ref: Connes, *Noncommutative Geometry*, Ch IV (spectral deformations). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
 -- Ref: [connes1994] https://doi.org/10.1016/0022-4049(94)90126-0
-axiom categorical_dq_squared_nonvanishing {C : Type u}
+
+/-- **`d_q²` non-vanishing — typeclass.**
+    Per-instance witness that the `q`-deformed curvature is
+    non-zero for a specific `(C, cqd)` choice with the
+    classical-vanishing and cross-term hypotheses already in
+    scope. Replaces the universal axiom over all monoidal `C`. -/
+class HasDqSquaredNonvanishing {C : Type u}
     [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
     (cqd : CategoricalQExtDeriv C)
     (hq : cqd.q ≠ 1)
     (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0)
-    (hcross : cqd.proj_V ≫ cqd.d_classical ≫ cqd.proj_V ≫ cqd.d_classical ≠ 0) :
-    cqd.dq ≫ cqd.dq ≠ 0
+    (hcross : cqd.proj_V ≫ cqd.d_classical ≫ cqd.proj_V ≫ cqd.d_classical ≠ 0) : Prop where
+  /-- The non-vanishing conclusion. -/
+  nonvanishing : cqd.dq ≫ cqd.dq ≠ 0
+
+/-- **`d_q²` non-vanishing** (per-instance form). -/
+theorem categorical_dq_squared_nonvanishing {C : Type u}
+    [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    (cqd : CategoricalQExtDeriv C)
+    (hq : cqd.q ≠ 1)
+    (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0)
+    (hcross : cqd.proj_V ≫ cqd.d_classical ≫ cqd.proj_V ≫ cqd.d_classical ≠ 0)
+    [h : HasDqSquaredNonvanishing cqd hq hd_sq hcross] :
+    cqd.dq ≫ cqd.dq ≠ 0 :=
+  h.nonvanishing
 
 /-- **Categorical jet object**: `J¹(A) = A ⊗_C Ω¹(A)`.
     LaTeX: `\label{def:categorical-jet}` -/

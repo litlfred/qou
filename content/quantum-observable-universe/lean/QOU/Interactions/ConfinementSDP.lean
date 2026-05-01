@@ -69,30 +69,50 @@ opaque y0Star (n : ℕ) : R_q
 
 /-! ## §2  The SDP primal–dual theorem -/
 
-/-- **Confinement SDP — primal–dual.**
-    At any strand count `n` where Slater-strict feasibility holds,
-    the primal SDP
-    `min ⟨T, Φ⟩ s.t. Φ ⪰ 0, ⟨π_λ, Φ⟩ ≥ 0, 2×2 pair-PSD, tr(Φ) = n_target`
-    admits a unique optimiser `Φ* ⪰ 0`; the dual SDP
-    `max n_target · y₀ s.t. y₀ I + Σ y_λ π_λ − T ⪯ 0, y_λ ≥ 0`
-    admits `(y₀*, y_λ*)` with strong duality
-    `⟨T, Φ*⟩ = n_target · y₀*`, and complementary slackness is the
-    matrix equation `Φ* · (y₀* I + Σ y_λ* π_λ − T) = 0`.
+/-! ### Strong duality as a typeclass (Pattern 4)
 
-    Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
-    projection recovered when every Wedderburn block decouples.
+The full SDP strong-duality result requires Mathlib SDP duality,
+which is not yet available. Rather than asserting strong duality
+universally as a top-level `axiom`, we package it as a typeclass
+`HasConfinementSDPStrongDuality`. Callers must supply an instance
+to use the primal–dual identity, making the conjectural content
+visible at every use site.
 
-    The headline form asserted here is **strong duality**: the
-    primal and dual optima agree,
-
-        ⟨T, Φ*⟩ = n_target · y₀*.
-
-    Full proof requires Mathlib SDP duality, which is not yet
-    available; body is `sorry`.
+A concrete construction would discharge `strong_duality` for the
+specific `n` of interest (e.g. `n = 4` for the proton/neutron
+Wedderburn blocks).
 -/
+
+/-- **Confinement SDP — strong-duality typeclass.**
+    Holds for `(n, h)` when the primal SDP
+    `min ⟨T, Φ⟩ s.t. Φ ⪰ 0, ⟨π_λ, Φ⟩ ≥ 0, 2×2 pair-PSD, tr(Φ) = n_target`
+    and its dual
+    `max n_target · y₀ s.t. y₀ I + Σ y_λ π_λ − T ⪯ 0, y_λ ≥ 0`
+    satisfy strong duality `⟨T, Φ*⟩ = n_target · y₀*`. By
+    Slater + Boyd–Vandenberghe Thm 5.5, this follows from the
+    Slater-strict hypothesis once Mathlib SDP duality lands. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-axiom ConfinementSDP (n : ℕ) (h : slaterStrict n) :
+class HasConfinementSDPStrongDuality (n : ℕ) (h : slaterStrict n) : Prop where
+  strong_duality : primalOpt n = nTarget * y0Star n
+
+/-- **Confinement SDP — primal–dual identity.**
+    Strong duality at `(n, h)` follows from a
+    `HasConfinementSDPStrongDuality` instance. Use this lemma —
+    not the original axiom — at call sites; supply or assume the
+    instance so the conjectural content is visible.
+
+    Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
+    projection recovered when every Wedderburn block decouples. -/
+-- Ref: [manuscript] particle-interactions/confinement-sdp
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+theorem ConfinementSDP (n : ℕ) (h : slaterStrict n)
+    [HasConfinementSDPStrongDuality n h] :
+    primalOpt n = nTarget * y0Star n :=
+  HasConfinementSDPStrongDuality.strong_duality
+
+@[deprecated ConfinementSDP (since := "2026-04-30")]
+axiom ConfinementSDP_axiom (n : ℕ) (h : slaterStrict n) :
     primalOpt n = nTarget * y0Star n
 
 /-! ## §3  Binding multiplicity and the scalar-LP projection -/

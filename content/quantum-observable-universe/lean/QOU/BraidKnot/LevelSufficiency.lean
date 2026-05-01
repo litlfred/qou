@@ -43,21 +43,34 @@ opaque kMax : ConfinedParticle → R_q → ℕ
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 opaque markovTrace : ConfinedParticle → R_q → R_q
 
-/-- **Level sufficiency (headline).** If the coarse representation
-    of a confined particle captures its full partition content
-    (`k_max(P, q) ≤ n₀`), then the Markov trace is preserved under
-    any unfolding morphism `P → P'` in the confinement category.
+/-- **Level sufficiency — typeclass (Pattern 4).**
 
-    Trace-class invariants `𝔉` that factor through `markovTrace`
-    (mass, binding, Jones polynomial) therefore agree on `P` and
-    `P'` whenever the hypothesis holds. -/
+    Witnesses Markov-trace invariance under an unfolding morphism
+    `P → P'` for a *specific* confined-particle pair satisfying the
+    coverage hypothesis. The headline result is the Markov tower
+    property (Jones), but its formalisation in Lean depends on the
+    full `HeckeRep.character` machinery; until then, callers supply
+    the witness for the pairs they actually use. -/
 -- Ref: [manuscript] braids-and-knots/level-sufficiency
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-axiom LevelSufficiency
+class LevelSufficient
+    (P P' : ConfinedParticle) (q : R_q)
+    (_h_unfold : ConfMorphism P P')
+    (_h_cover : kMax P q ≤ P.coarseStrands) : Prop where
+  /-- Markov trace agrees on the coarse and unfolded reps. -/
+  trace_eq : markovTrace P q = markovTrace P' q
+
+/-- **Level sufficiency (headline)** (per-instance form).
+    Backed by `LevelSufficient`. -/
+-- Ref: [manuscript] braids-and-knots/level-sufficiency
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+theorem LevelSufficiency
     (P P' : ConfinedParticle) (q : R_q)
     (h_unfold : ConfMorphism P P')
-    (h_cover : kMax P q ≤ P.coarseStrands) :
-    markovTrace P q = markovTrace P' q
+    (h_cover : kMax P q ≤ P.coarseStrands)
+    [hi : LevelSufficient P P' q h_unfold h_cover] :
+    markovTrace P q = markovTrace P' q :=
+  hi.trace_eq
 
 /-- **Default-coarse corollary.** The Markov trace at the coarsest
     level satisfying `k_max ≤ n` is exact; deeper unfolding
@@ -66,7 +79,8 @@ axiom LevelSufficiency
 theorem default_coarse_exact
     (P : ConfinedParticle) (q : R_q)
     (h_cover : kMax P q ≤ P.coarseStrands)
-    (P' : ConfinedParticle) (h : ConfMorphism P P') :
+    (P' : ConfinedParticle) (h : ConfMorphism P P')
+    [LevelSufficient P P' q h h_cover] :
     markovTrace P' q = markovTrace P q :=
   (LevelSufficiency P P' q h h_cover).symm
 

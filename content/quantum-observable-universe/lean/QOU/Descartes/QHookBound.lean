@@ -295,13 +295,20 @@ theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
 
     This means the q-Plancherel measure approximates the classical
     Plancherel measure within O(h²·k). -/
--- Free-real statement: w_q, w_cl have no semantic link to q, k.
 -- Real argument: w_q / w_cl = (d_q/dim)² × (k!/[k]!), bounded via
--- triangle inequality from qDim_ratio_bound and qFact_ratio_bound.
+-- triangle inequality from qDim_ratio_bound and qFact_ratio_bound;
+-- the latter requires `q < 2` for h²·k < 1 to hold throughout the
+-- relevant range. The hypothesis `h_link : w_q / w_cl = (d_q/dim)² × (k!/[k]!)`
+-- is the essential semantic link between `w_q`, `w_cl` and the
+-- q-perturbation factors — without it the statement is free-real.
 -- Ref: [mathas1999] §3.3
-axiom wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
+axiom wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
-    (w_q w_cl : ℝ) (hw : w_cl > 0) :
+    (w_q w_cl : ℝ) (hw : w_cl > 0)
+    (dq_ratio fact_ratio : ℝ)
+    (h_link : w_q / w_cl = dq_ratio ^ 2 * fact_ratio)
+    (h_dq : |dq_ratio - 1| ≤ h_sq * k / 6)
+    (h_fact : |fact_ratio - 1| ≤ h_sq * k / 6) :
     |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3
 
 /-! ## §5  Convergence rate -/
