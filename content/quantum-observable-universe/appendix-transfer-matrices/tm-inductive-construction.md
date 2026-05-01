@@ -257,7 +257,7 @@ and polynomial in the bit-size of intermediate Laurent coefficients.
 shell-closure signatures (i)--(iii) above identify the closed
 shell as a single Markov-equivalence class.  When the next nucleon
 is added, it is sufficient to interact it with the
-**collective torus-knot operator** $T_{2, 2k}$ (where $k$ is the
+**collective torus-knot operator** $T_{2, k}$ (where $k$ is the
 shell size) rather than with each of the $k$ internal nucleons
 separately.  The folded step costs
 
@@ -276,7 +276,7 @@ because the palindromic-histogram criterion (i) certifies that the
 closed shell is in the totally-antisymmetric (alternating)
 Wedderburn block, and the alternating block is rank-one over the
 relevant irreducible representation; the torus-knot generator
-$T_{2, 2k}$ is the unique non-trivial Hecke element in that block.
+$T_{2, k}$ is the unique non-trivial Hecke element in that block.
 The Skein polynomial of the $A+1$-nucleus computed with folding
 agrees identically with the unfolded $\binom{A+1}{2}$-step product,
 provided the fold is taken only at certified shell closures.

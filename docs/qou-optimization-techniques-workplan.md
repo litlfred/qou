@@ -46,8 +46,10 @@ path.
   entries in `M_2(\mathbb{Z}[q^{\pm 1/2}])` after `k` reductions, so
   TM has a *space* bound, not just a step count.
 - TM4. Lean: a `theorem` in `QOU/AtomicMass.lean` (or a new file
-  `QOU/TransferMatrix/Bounds.lean`) stating `mass = trace(prod_i T_i)`
-  for the inductive product, with `sorry` permitted only at the
+  `QOU/TransferMatrix/Bounds.lean`) stating
+  `P_N = ∏_{i=0}^{A-2} V_i` where each generator volume
+  `V_i = z · (M_i)_{11} + (M_i)_{21}` is read off the inductive
+  matrix product `M_i`, with `sorry` permitted only at the
   arithmetic identity.
 
 **Verification:**
@@ -158,7 +160,7 @@ without re-proving it per call site.
 explicit in the manuscript and in Lean. This is the composition
 
 ```text
-add nucleon → reduce to NF (TM) → if shell closes: fold to T_{2,2k} (DC) → reproject (BD)
+add nucleon → reduce to NF (TM) → if shell closes: fold to T_{2,k} (DC) → reproject (BD)
 ```
 
 and is the technique that keeps `A` up to ~250 tractable.
@@ -172,7 +174,7 @@ and is the technique that keeps `A` up to ~250 tractable.
 **Gaps to close — primary deliverables:**
 - MN1. New `proposition` block:
   `prop:magic-shell-folding` — "after a closed shell, the next
-  nucleon interacts with a single torus-knot operator `$T_{2,2k}$`
+  nucleon interacts with a single torus-knot operator `$T_{2,k}$`
   (where `$k$` is the shell size) instead of `k` individual
   generators". `.ts` + `.md` + `.lean` triple, under
   `appendix-knot-periodic-table/` or
