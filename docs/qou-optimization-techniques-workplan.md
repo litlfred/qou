@@ -157,7 +157,7 @@ without re-proving it per call site.
 **Goal:** make the inductive procedure described in the second message
 explicit in the manuscript and in Lean. This is the composition
 
-```
+```text
 add nucleon → reduce to NF (TM) → if shell closes: fold to T_{2,2k} (DC) → reproject (BD)
 ```
 
@@ -201,7 +201,7 @@ and is the technique that keeps `A` up to ~250 tractable.
 
 ## Phase order
 
-```
+```text
 L4 ──────────┐
              ↓
 TM ───→ MN  ←── BD

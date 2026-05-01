@@ -6,12 +6,16 @@ export default prose({
   uses: [
     "def:transfer-matrix-operator",
     "prop:shell-closure-normal-form",
+    "prop:shell-closure-stability",
     "rem:generator-volume-decomposition",
   ],
   tags: [
     "transfer-matrix",
     "inductive",
     "shell-closure",
+    "shell-folding",
+    "complexity",
+    "magic-numbers",
     "groebner",
     "appendix",
   ],
