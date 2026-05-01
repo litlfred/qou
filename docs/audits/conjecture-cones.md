@@ -38,9 +38,9 @@ cone counts are in the per-conjecture tables below the diagrams.
 ## Summary table
 | Conjecture | Cone size | Propagation violations | Failure consequence |
 |------------|----------:|-----------------------:|---------------------|
-| [`conj:mass-endomorphism`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.md) | 504 | 210 | The tower formula remains correct as an *infinite series*; the closed form is just a convenience. |
+| [`conj:mass-endomorphism`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.md) | 512 | 210 | The tower formula remains correct as an *infinite series*; the closed form is just a convenience. |
 | [`conj:phi-q-tower-jsj-bridge`](../../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md) | 1 | 0 | Algebraic-side mass tower remains correct but loses the JSJ-bounded thimble interpretation. |
-| [`conj:shared-denominator-cusp-holonomy`](../../content/quantum-observable-universe/braids-and-knots/shared-denominator-cusp-holonomy.md) | 504 | 210 | Thimble integration domain identification weakens; algebraic side unaffected. |
+| [`conj:shared-denominator-cusp-holonomy`](../../content/quantum-observable-universe/braids-and-knots/shared-denominator-cusp-holonomy.md) | 512 | 210 | Thimble integration domain identification weakens; algebraic side unaffected. |
 | [`conj:denominator-zeros-as-sw-critical-points`](../../content/quantum-observable-universe/descartes-universe/denominator-zeros-as-sw-critical-points.md) | 3 | 0 | τ-image identification for SW critical points loses precision; algebraic side unaffected. |
 | [`lem:motivic-perpetual-obstruction`](../../content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.md) (as `conj:motivic-perpetual-obstruction`) | 0 | 0 | Compute remains, formal-substrate identification weakens. |
 | `conj:hahn-substrate` | _(not authored)_ | — | Lower-order tower predictions unchanged. |
@@ -54,7 +54,7 @@ cone counts are in the per-conjecture tables below the diagrams.
 ## conj:mass-endomorphism
 **Source:** [`conj:mass-endomorphism`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-conjecture.md)  **Chapter:** `braids-and-knots`  **Short form:** mass tower as single $H_n(q)$ element  **Failure consequence:** The tower formula remains correct as an *infinite series*; the closed form is just a convenience.
 
-**Cone size:** 504 downstream blocks (**proposition** ×185, **remark** ×158, **definition** ×54, **conjecture** ×33, **proof** ×20, **prose** ×13, **theorem** ×13, **example** ×12, **corollary** ×7, **lemma** ×5, **simulator** ×4).
+**Cone size:** 512 downstream blocks (**proposition** ×185, **remark** ×160, **definition** ×54, **conjecture** ×36, **proof** ×20, **example** ×15, **prose** ×13, **theorem** ×13, **corollary** ×7, **lemma** ×5, **simulator** ×4).
 
 **🔴 Propagation violations (210)** — these provable blocks must be demoted to `conjecture` or refactored to drop the dependency:
 
@@ -94,44 +94,49 @@ cone counts are in the per-conjecture tables below the diagrams.
 
 ```mermaid
 graph TD
-    conj_jet_filtered_knot_factor["🟡 conj:jet-filtered-knot-factor"]:::conj
-    conj_archimedean_remainder_exponential_decay["🟡 conj:archimedean-remainder-exponential-decay"]:::conj
-    conj_phi_q_tower_jsj_bridge["🟡 conj:phi-q-tower-jsj-bridge"]:::conj
-    conj_brane_tower_z_habiro["🟡 conj:brane-tower-z-habiro"]:::conj
-    conj_mass_element_nf["🟡 conj:mass-element-nf"]:::conj
-    conj_knot_factor_frobenius_pairing["🟡 conj:knot-factor-frobenius-pairing"]:::conj
-    conj_complex_chirality_rotation["🟡 conj:complex-chirality-rotation"]:::conj
-    conj_denominator_zeros_as_sw_critical_points["🟡 conj:denominator-zeros-as-sw-critical-points"]:::conj
-    conj_aeon_boundary_generates_chart["🟡 conj:aeon-boundary-generates-chart"]:::conj
-    conj_n_v_bring_action["🟡 conj:n-v-bring-action"]:::conj
+    conj_categorical_neutrality_saturated_shells["🟡 conj:categorical-neutrality-saturated-shells"]:::conj
     conj_n_v_tower_depth_ninety["🟡 conj:n-v-tower-depth-ninety"]:::conj
-    conj_gb_reduction_pl_thimble_bijection["🟡 conj:gb-reduction-pl-thimble-bijection"]:::conj
+    conj_aeon_boundary_generates_chart["🟡 conj:aeon-boundary-generates-chart"]:::conj
     rem_calibration_inputs["📝 rem:calibration-inputs"]:::rem
-    conj_ns_counterexample["🟡 conj:ns-counterexample"]:::conj
-    conj_cp_violation_spectral_form["🟡 conj:cp-violation-spectral-form"]:::conj
-    conj_borromean_quark["🟡 conj:borromean-quark"]:::conj
-    conj_abelianisation_at_algebraic_poles["🟡 conj:abelianisation-at-algebraic-poles"]:::conj
-    conj_kashaev_volume_conjecture["🟡 conj:kashaev-volume-conjecture"]:::conj
-    conj_algebraic_geometric_dilog_equivalence["🟡 conj:algebraic-geometric-dilog-equivalence"]:::conj
-    conj_palindromicity_orbital_type["🟡 conj:palindromicity-orbital-type"]:::conj
+    conj_n_v_bring_action["🟡 conj:n-v-bring-action"]:::conj
+    conj_knot_factor_frobenius_pairing["🟡 conj:knot-factor-frobenius-pairing"]:::conj
+    conj_diagrammatic_double_magic_lr_fusion["🟡 conj:diagrammatic-double-magic-lr-fusion"]:::conj
     conj_dilogarithm_archimedean_limit["🟡 conj:dilogarithm-archimedean-limit"]:::conj
-    conj_periodic_table_demand["🟡 conj:periodic-table-demand"]:::conj
-    conj_p_vs_np_boundary["🟡 conj:p-vs-np-boundary"]:::conj
+    conj_denominator_zeros_as_sw_critical_points["🟡 conj:denominator-zeros-as-sw-critical-points"]:::conj
     conj_mass_endomorphism["⭐ conj:mass-endomorphism<br/>(conjecture)"]:::seed
+    conj_ns_counterexample["🟡 conj:ns-counterexample"]:::conj
+    conj_gb_reduction_pl_thimble_bijection["🟡 conj:gb-reduction-pl-thimble-bijection"]:::conj
+    rem_phi_n_global_section["📝 rem:phi-n-global-section"]:::rem
+    conj_borromean_quark["🟡 conj:borromean-quark"]:::conj
+    conj_archimedean_remainder_exponential_decay["🟡 conj:archimedean-remainder-exponential-decay"]:::conj
+    conj_jet_filtered_knot_factor["🟡 conj:jet-filtered-knot-factor"]:::conj
+    conj_homological_shell_condensation["🟡 conj:homological-shell-condensation"]:::conj
     conj_levi_degeneracy["🟡 conj:levi-degeneracy"]:::conj
+    conj_abelianisation_at_algebraic_poles["🟡 conj:abelianisation-at-algebraic-poles"]:::conj
+    conj_brane_tower_z_habiro["🟡 conj:brane-tower-z-habiro"]:::conj
+    conj_complex_chirality_rotation["🟡 conj:complex-chirality-rotation"]:::conj
+    conj_cp_violation_spectral_form["🟡 conj:cp-violation-spectral-form"]:::conj
+    conj_algebraic_geometric_dilog_equivalence["🟡 conj:algebraic-geometric-dilog-equivalence"]:::conj
+    conj_mass_element_nf["🟡 conj:mass-element-nf"]:::conj
+    conj_kashaev_volume_conjecture["🟡 conj:kashaev-volume-conjecture"]:::conj
     conj_abelianisation_at_algebraic_poles --> conj_denominator_zeros_as_sw_critical_points
     conj_algebraic_geometric_dilog_equivalence --> conj_dilogarithm_archimedean_limit
     conj_algebraic_geometric_dilog_equivalence --> conj_kashaev_volume_conjecture
     conj_archimedean_remainder_exponential_decay --> conj_dilogarithm_archimedean_limit
     conj_archimedean_remainder_exponential_decay --> conj_kashaev_volume_conjecture
+    conj_categorical_neutrality_saturated_shells --> conj_mass_endomorphism
+    conj_diagrammatic_double_magic_lr_fusion --> conj_categorical_neutrality_saturated_shells
+    conj_diagrammatic_double_magic_lr_fusion --> conj_homological_shell_condensation
     conj_dilogarithm_archimedean_limit --> conj_kashaev_volume_conjecture
     conj_gb_reduction_pl_thimble_bijection --> conj_denominator_zeros_as_sw_critical_points
+    conj_homological_shell_condensation --> conj_categorical_neutrality_saturated_shells
     conj_mass_element_nf --> conj_mass_endomorphism
     conj_mass_endomorphism --> conj_brane_tower_z_habiro
     conj_n_v_bring_action --> conj_mass_endomorphism
     conj_n_v_tower_depth_ninety --> conj_mass_endomorphism
-    conj_phi_q_tower_jsj_bridge --> conj_kashaev_volume_conjecture
     rem_calibration_inputs --> conj_mass_endomorphism
+    rem_phi_n_global_section --> conj_categorical_neutrality_saturated_shells
+    rem_phi_n_global_section --> conj_mass_endomorphism
     classDef seed fill:#fff3a8,stroke:#a06400,stroke-width:2px;
     classDef conj fill:#ffe9b3,stroke:#a06400;
     classDef prov fill:#cfe2f3,stroke:#1a4e8a;
@@ -139,7 +144,7 @@ graph TD
     classDef def fill:#d9ead3,stroke:#274e13;
 ```
 
-_(showing 25 of 504 downstream blocks; see table for full list)_
+_(showing 25 of 512 downstream blocks; see table for full list)_
 
 ### By chapter
 
@@ -153,7 +158,7 @@ _(showing 25 of 504 downstream blocks; see table for full list)_
 
 **`appendix-transfer-matrices`** — 7 blocks: [`tm-general-form`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-general-form.md), [`tm-heavy-atom-examples`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-heavy-atom-examples.md), [`tm-inductive-construction`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-inductive-construction.md), [`tm-interaction-completeness`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-interaction-completeness.md), [`tm-interactions`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-interactions.md), [`tm-knot-pairs`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-knot-pairs.md), [`tm-worked-examples`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-worked-examples.md)
 
-**`braids-and-knots`** — 158 blocks: [`conj:algebraic-geometric-dilog-equivalence`](../../content/quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.md), [`conj:archimedean-remainder-exponential-decay`](../../content/quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md), [`conj:brane-tower-z-habiro`](../../content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md), [`conj:dilogarithm-archimedean-limit`](../../content/quantum-observable-universe/braids-and-knots/dilogarithm-archimedean-limit.md), [`conj:jet-filtered-knot-factor`](../../content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.md), [`conj:kashaev-volume-conjecture`](../../content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md), [`conj:knot-factor-frobenius-pairing`](../../content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.md), [`conj:mass-element-nf`](../../content/quantum-observable-universe/braids-and-knots/mass-element-nf.md), … (+150)
+**`braids-and-knots`** — 160 blocks: [`conj:algebraic-geometric-dilog-equivalence`](../../content/quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.md), [`conj:archimedean-remainder-exponential-decay`](../../content/quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md), [`conj:brane-tower-z-habiro`](../../content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md), [`conj:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md), [`conj:dilogarithm-archimedean-limit`](../../content/quantum-observable-universe/braids-and-knots/dilogarithm-archimedean-limit.md), [`conj:jet-filtered-knot-factor`](../../content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.md), [`conj:kashaev-volume-conjecture`](../../content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md), [`conj:knot-factor-frobenius-pairing`](../../content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.md), … (+152)
 
 **`descartes-universe`** — 88 blocks: [`conj:abelianisation-at-algebraic-poles`](../../content/quantum-observable-universe/descartes-universe/abelianisation-at-algebraic-poles.md), [`conj:denominator-zeros-as-sw-critical-points`](../../content/quantum-observable-universe/descartes-universe/denominator-zeros-as-sw-critical-points.md), [`conj:gb-reduction-pl-thimble-bijection`](../../content/quantum-observable-universe/descartes-universe/gb-reduction-pl-thimble-bijection.md), [`conj:pl-jsj-mass-integration-equivalence`](../../content/quantum-observable-universe/descartes-universe/pl-jsj-mass-integration-equivalence.md), [`cor:gauge-coupling-uniqueness`](../../content/quantum-observable-universe/descartes-universe/gauge-coupling-uniqueness.md), [`cor:spectral-decomposition-qvalue`](../../content/quantum-observable-universe/descartes-universe/spectral-decomposition-qvalue.md), [`def:antineutrino-knot`](../../content/quantum-observable-universe/descartes-universe/antineutrino-knot.md), [`def:beta-decay-skein`](../../content/quantum-observable-universe/descartes-universe/beta-decay-skein.md), … (+80)
 
@@ -163,11 +168,13 @@ _(showing 25 of 504 downstream blocks; see table for full list)_
 
 **`information-theory`** — 45 blocks: [`conj:aeon-boundary-generates-chart`](../../content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.md), [`conj:p-vs-np-boundary`](../../content/quantum-observable-universe/information-theory/p-vs-np-boundary.md), [`conj:qou-p-neq-np`](../../content/quantum-observable-universe/information-theory/qou-p-neq-np.md), [`conj:quantum-computational-universality`](../../content/quantum-observable-universe/information-theory/quantum-computational-universality.md), [`def:big-bang-state`](../../content/quantum-observable-universe/information-theory/big-bang-state.md), [`def:cmb-functor`](../../content/quantum-observable-universe/information-theory/cmb-functor.md), [`def:computational-horizon`](../../content/quantum-observable-universe/information-theory/computational-horizon.md), [`def:horizon-functor`](../../content/quantum-observable-universe/information-theory/horizon-functor.md), … (+37)
 
+**`lifting-and-descent`** — 1 block: [`conj:homological-shell-condensation`](../../content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md)
+
 **`models-of-qous`** — 1 block: [`conj:yang-mills-mass-gap`](../../content/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md)
 
 **`molecular-construction`** — 24 blocks: [`conj:palindromicity-orbital-type`](../../content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md), [`conj:shell-closure-nf-term-count`](../../content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md), [`def:benzene-molecular-braid`](../../content/quantum-observable-universe/molecular-construction/benzene-molecular-braid.md), [`def:ch4-molecular-braid`](../../content/quantum-observable-universe/molecular-construction/ch4-molecular-braid.md), [`def:co-molecular-braid`](../../content/quantum-observable-universe/molecular-construction/co-molecular-braid.md), [`def:co2-molecular-braid`](../../content/quantum-observable-universe/molecular-construction/co2-molecular-braid.md), [`def:covalent-bond-shared-trefoil`](../../content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.md), [`def:electron-shell-braid-capacity`](../../content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.md), … (+16)
 
-**`observations`** — 43 blocks: [`conj:borromean-quark`](../../content/quantum-observable-universe/observations/borromean-quark.md), [`conj:complex-chirality-rotation`](../../content/quantum-observable-universe/observations/complex-chirality-rotation.md), [`conj:cp-violation-spectral-form`](../../content/quantum-observable-universe/observations/cp-violation-spectral-form.md), [`conj:n-v-bring-action`](../../content/quantum-observable-universe/observations/n-v-bring-action.md), [`conj:n-v-tower-depth-ninety`](../../content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md), [`ex:hydrogen-knot-structure`](../../content/quantum-observable-universe/observations/hydrogen-knot-structure.md), [`ex:nitrogen-14-threading`](../../content/quantum-observable-universe/observations/nitrogen-14-threading.md), [`ex:tritium-decay-knot-equation`](../../content/quantum-observable-universe/observations/tritium-decay-knot-equation.md), … (+35)
+**`observations`** — 48 blocks: [`conj:borromean-quark`](../../content/quantum-observable-universe/observations/borromean-quark.md), [`conj:complex-chirality-rotation`](../../content/quantum-observable-universe/observations/complex-chirality-rotation.md), [`conj:cp-violation-spectral-form`](../../content/quantum-observable-universe/observations/cp-violation-spectral-form.md), [`conj:diagrammatic-double-magic-lr-fusion`](../../content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md), [`conj:n-v-bring-action`](../../content/quantum-observable-universe/observations/n-v-bring-action.md), [`conj:n-v-tower-depth-ninety`](../../content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md), [`ex:double-magic-Ca40-diagram`](../../content/quantum-observable-universe/observations/double-magic-Ca40-diagram.md), [`ex:hydrogen-knot-structure`](../../content/quantum-observable-universe/observations/hydrogen-knot-structure.md), … (+40)
 
 **`particle-interactions`** — 53 blocks: [`conj:periodic-table-demand`](../../content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.md), [`def:atomic-braid`](../../content/quantum-observable-universe/particle-interactions/atomic-braid.md), [`def:derived-atom`](../../content/quantum-observable-universe/particle-interactions/derived-atom.md), [`def:transfer-matrix-operator`](../../content/quantum-observable-universe/particle-interactions/transfer-matrix-operator.md), [`def:universal-ilp-algorithm`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.md), [`ex:deuterium-derived-nf`](../../content/quantum-observable-universe/particle-interactions/deuterium-derived-nf.md), [`ex:helium4-derived-nf`](../../content/quantum-observable-universe/particle-interactions/helium4-derived-nf.md), [`ex:hydrogen-derived-nf`](../../content/quantum-observable-universe/particle-interactions/hydrogen-derived-nf.md), … (+45)
 
@@ -205,7 +212,7 @@ graph TD
 ## conj:shared-denominator-cusp-holonomy
 **Source:** [`conj:shared-denominator-cusp-holonomy`](../../content/quantum-observable-universe/braids-and-knots/shared-denominator-cusp-holonomy.md)  **Chapter:** `braids-and-knots`  **Short form:** shared cusp denominator (algebraic ↔ holonomy)  **Failure consequence:** Thimble integration domain identification weakens; algebraic side unaffected.
 
-**Cone size:** 504 downstream blocks (**proposition** ×185, **remark** ×158, **definition** ×54, **conjecture** ×33, **proof** ×20, **prose** ×13, **theorem** ×13, **example** ×12, **corollary** ×7, **lemma** ×5, **simulator** ×4).
+**Cone size:** 512 downstream blocks (**proposition** ×185, **remark** ×160, **definition** ×54, **conjecture** ×36, **proof** ×20, **example** ×15, **prose** ×13, **theorem** ×13, **corollary** ×7, **lemma** ×5, **simulator** ×4).
 
 **🔴 Propagation violations (210)** — these provable blocks must be demoted to `conjecture` or refactored to drop the dependency:
 
@@ -245,32 +252,32 @@ graph TD
 
 ```mermaid
 graph TD
-    conj_jet_filtered_knot_factor["🟡 conj:jet-filtered-knot-factor"]:::conj
-    def_algebraic_quantum_volume["📐 def:algebraic-quantum-volume"]:::def
-    conj_archimedean_remainder_exponential_decay["🟡 conj:archimedean-remainder-exponential-decay"]:::conj
-    conj_brane_tower_z_habiro["🟡 conj:brane-tower-z-habiro"]:::conj
-    conj_mass_element_nf["🟡 conj:mass-element-nf"]:::conj
-    conj_knot_factor_frobenius_pairing["🟡 conj:knot-factor-frobenius-pairing"]:::conj
-    conj_complex_chirality_rotation["🟡 conj:complex-chirality-rotation"]:::conj
-    conj_denominator_zeros_as_sw_critical_points["🟡 conj:denominator-zeros-as-sw-critical-points"]:::conj
-    conj_aeon_boundary_generates_chart["🟡 conj:aeon-boundary-generates-chart"]:::conj
-    conj_n_v_bring_action["🟡 conj:n-v-bring-action"]:::conj
+    conj_categorical_neutrality_saturated_shells["🟡 conj:categorical-neutrality-saturated-shells"]:::conj
     conj_n_v_tower_depth_ninety["🟡 conj:n-v-tower-depth-ninety"]:::conj
-    conj_gb_reduction_pl_thimble_bijection["🟡 conj:gb-reduction-pl-thimble-bijection"]:::conj
-    conj_ns_counterexample["🟡 conj:ns-counterexample"]:::conj
-    conj_cp_violation_spectral_form["🟡 conj:cp-violation-spectral-form"]:::conj
-    prop_algebraic_volume_specialization["🔷 prop:algebraic-volume-specialization"]:::prov
-    conj_borromean_quark["🟡 conj:borromean-quark"]:::conj
-    conj_abelianisation_at_algebraic_poles["🟡 conj:abelianisation-at-algebraic-poles"]:::conj
-    conj_kashaev_volume_conjecture["🟡 conj:kashaev-volume-conjecture"]:::conj
-    conj_algebraic_geometric_dilog_equivalence["🟡 conj:algebraic-geometric-dilog-equivalence"]:::conj
-    conj_shared_denominator_cusp_holonomy["⭐ conj:shared-denominator-cusp-holonomy<br/>(conjecture)"]:::seed
-    conj_palindromicity_orbital_type["🟡 conj:palindromicity-orbital-type"]:::conj
+    conj_aeon_boundary_generates_chart["🟡 conj:aeon-boundary-generates-chart"]:::conj
+    def_algebraic_quantum_volume["📐 def:algebraic-quantum-volume"]:::def
+    conj_n_v_bring_action["🟡 conj:n-v-bring-action"]:::conj
+    conj_knot_factor_frobenius_pairing["🟡 conj:knot-factor-frobenius-pairing"]:::conj
+    conj_diagrammatic_double_magic_lr_fusion["🟡 conj:diagrammatic-double-magic-lr-fusion"]:::conj
     conj_dilogarithm_archimedean_limit["🟡 conj:dilogarithm-archimedean-limit"]:::conj
-    conj_periodic_table_demand["🟡 conj:periodic-table-demand"]:::conj
-    conj_p_vs_np_boundary["🟡 conj:p-vs-np-boundary"]:::conj
+    conj_denominator_zeros_as_sw_critical_points["🟡 conj:denominator-zeros-as-sw-critical-points"]:::conj
     conj_mass_endomorphism["🟡 conj:mass-endomorphism"]:::conj
+    conj_ns_counterexample["🟡 conj:ns-counterexample"]:::conj
+    conj_gb_reduction_pl_thimble_bijection["🟡 conj:gb-reduction-pl-thimble-bijection"]:::conj
+    conj_borromean_quark["🟡 conj:borromean-quark"]:::conj
+    conj_archimedean_remainder_exponential_decay["🟡 conj:archimedean-remainder-exponential-decay"]:::conj
+    conj_jet_filtered_knot_factor["🟡 conj:jet-filtered-knot-factor"]:::conj
+    conj_homological_shell_condensation["🟡 conj:homological-shell-condensation"]:::conj
     conj_levi_degeneracy["🟡 conj:levi-degeneracy"]:::conj
+    prop_algebraic_volume_specialization["🔷 prop:algebraic-volume-specialization"]:::prov
+    conj_abelianisation_at_algebraic_poles["🟡 conj:abelianisation-at-algebraic-poles"]:::conj
+    conj_brane_tower_z_habiro["🟡 conj:brane-tower-z-habiro"]:::conj
+    conj_complex_chirality_rotation["🟡 conj:complex-chirality-rotation"]:::conj
+    conj_cp_violation_spectral_form["🟡 conj:cp-violation-spectral-form"]:::conj
+    conj_algebraic_geometric_dilog_equivalence["🟡 conj:algebraic-geometric-dilog-equivalence"]:::conj
+    conj_mass_element_nf["🟡 conj:mass-element-nf"]:::conj
+    conj_shared_denominator_cusp_holonomy["⭐ conj:shared-denominator-cusp-holonomy<br/>(conjecture)"]:::seed
+    conj_kashaev_volume_conjecture["🟡 conj:kashaev-volume-conjecture"]:::conj
     conj_abelianisation_at_algebraic_poles --> conj_denominator_zeros_as_sw_critical_points
     conj_algebraic_geometric_dilog_equivalence --> conj_dilogarithm_archimedean_limit
     conj_algebraic_geometric_dilog_equivalence --> conj_kashaev_volume_conjecture
@@ -279,9 +286,13 @@ graph TD
     conj_archimedean_remainder_exponential_decay --> conj_shared_denominator_cusp_holonomy
     conj_archimedean_remainder_exponential_decay --> def_algebraic_quantum_volume
     conj_brane_tower_z_habiro --> def_algebraic_quantum_volume
+    conj_categorical_neutrality_saturated_shells --> conj_mass_endomorphism
     conj_denominator_zeros_as_sw_critical_points --> conj_shared_denominator_cusp_holonomy
+    conj_diagrammatic_double_magic_lr_fusion --> conj_categorical_neutrality_saturated_shells
+    conj_diagrammatic_double_magic_lr_fusion --> conj_homological_shell_condensation
     conj_dilogarithm_archimedean_limit --> conj_kashaev_volume_conjecture
     conj_gb_reduction_pl_thimble_bijection --> conj_denominator_zeros_as_sw_critical_points
+    conj_homological_shell_condensation --> conj_categorical_neutrality_saturated_shells
     conj_kashaev_volume_conjecture --> def_algebraic_quantum_volume
     conj_mass_element_nf --> conj_mass_endomorphism
     conj_mass_endomorphism --> conj_brane_tower_z_habiro
@@ -301,7 +312,7 @@ graph TD
     classDef def fill:#d9ead3,stroke:#274e13;
 ```
 
-_(showing 25 of 504 downstream blocks; see table for full list)_
+_(showing 25 of 512 downstream blocks; see table for full list)_
 
 ### By chapter
 
@@ -315,7 +326,7 @@ _(showing 25 of 504 downstream blocks; see table for full list)_
 
 **`appendix-transfer-matrices`** — 7 blocks: [`tm-general-form`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-general-form.md), [`tm-heavy-atom-examples`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-heavy-atom-examples.md), [`tm-inductive-construction`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-inductive-construction.md), [`tm-interaction-completeness`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-interaction-completeness.md), [`tm-interactions`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-interactions.md), [`tm-knot-pairs`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-knot-pairs.md), [`tm-worked-examples`](../../content/quantum-observable-universe/appendix-transfer-matrices/tm-worked-examples.md)
 
-**`braids-and-knots`** — 158 blocks: [`conj:algebraic-geometric-dilog-equivalence`](../../content/quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.md), [`conj:archimedean-remainder-exponential-decay`](../../content/quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md), [`conj:brane-tower-z-habiro`](../../content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md), [`conj:dilogarithm-archimedean-limit`](../../content/quantum-observable-universe/braids-and-knots/dilogarithm-archimedean-limit.md), [`conj:jet-filtered-knot-factor`](../../content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.md), [`conj:kashaev-volume-conjecture`](../../content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md), [`conj:knot-factor-frobenius-pairing`](../../content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.md), [`conj:mass-element-nf`](../../content/quantum-observable-universe/braids-and-knots/mass-element-nf.md), … (+150)
+**`braids-and-knots`** — 160 blocks: [`conj:algebraic-geometric-dilog-equivalence`](../../content/quantum-observable-universe/braids-and-knots/algebraic-geometric-dilog-equivalence.md), [`conj:archimedean-remainder-exponential-decay`](../../content/quantum-observable-universe/braids-and-knots/archimedean-remainder-exponential-decay.md), [`conj:brane-tower-z-habiro`](../../content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md), [`conj:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md), [`conj:dilogarithm-archimedean-limit`](../../content/quantum-observable-universe/braids-and-knots/dilogarithm-archimedean-limit.md), [`conj:jet-filtered-knot-factor`](../../content/quantum-observable-universe/braids-and-knots/jet-filtered-knot-factor.md), [`conj:kashaev-volume-conjecture`](../../content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md), [`conj:knot-factor-frobenius-pairing`](../../content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.md), … (+152)
 
 **`descartes-universe`** — 88 blocks: [`conj:abelianisation-at-algebraic-poles`](../../content/quantum-observable-universe/descartes-universe/abelianisation-at-algebraic-poles.md), [`conj:denominator-zeros-as-sw-critical-points`](../../content/quantum-observable-universe/descartes-universe/denominator-zeros-as-sw-critical-points.md), [`conj:gb-reduction-pl-thimble-bijection`](../../content/quantum-observable-universe/descartes-universe/gb-reduction-pl-thimble-bijection.md), [`conj:pl-jsj-mass-integration-equivalence`](../../content/quantum-observable-universe/descartes-universe/pl-jsj-mass-integration-equivalence.md), [`cor:gauge-coupling-uniqueness`](../../content/quantum-observable-universe/descartes-universe/gauge-coupling-uniqueness.md), [`cor:spectral-decomposition-qvalue`](../../content/quantum-observable-universe/descartes-universe/spectral-decomposition-qvalue.md), [`def:antineutrino-knot`](../../content/quantum-observable-universe/descartes-universe/antineutrino-knot.md), [`def:beta-decay-skein`](../../content/quantum-observable-universe/descartes-universe/beta-decay-skein.md), … (+80)
 
@@ -325,11 +336,13 @@ _(showing 25 of 504 downstream blocks; see table for full list)_
 
 **`information-theory`** — 45 blocks: [`conj:aeon-boundary-generates-chart`](../../content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.md), [`conj:p-vs-np-boundary`](../../content/quantum-observable-universe/information-theory/p-vs-np-boundary.md), [`conj:qou-p-neq-np`](../../content/quantum-observable-universe/information-theory/qou-p-neq-np.md), [`conj:quantum-computational-universality`](../../content/quantum-observable-universe/information-theory/quantum-computational-universality.md), [`def:big-bang-state`](../../content/quantum-observable-universe/information-theory/big-bang-state.md), [`def:cmb-functor`](../../content/quantum-observable-universe/information-theory/cmb-functor.md), [`def:computational-horizon`](../../content/quantum-observable-universe/information-theory/computational-horizon.md), [`def:horizon-functor`](../../content/quantum-observable-universe/information-theory/horizon-functor.md), … (+37)
 
+**`lifting-and-descent`** — 1 block: [`conj:homological-shell-condensation`](../../content/quantum-observable-universe/lifting-and-descent/homological-shell-condensation.md)
+
 **`models-of-qous`** — 1 block: [`conj:yang-mills-mass-gap`](../../content/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md)
 
 **`molecular-construction`** — 24 blocks: [`conj:palindromicity-orbital-type`](../../content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.md), [`conj:shell-closure-nf-term-count`](../../content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md), [`def:benzene-molecular-braid`](../../content/quantum-observable-universe/molecular-construction/benzene-molecular-braid.md), [`def:ch4-molecular-braid`](../../content/quantum-observable-universe/molecular-construction/ch4-molecular-braid.md), [`def:co-molecular-braid`](../../content/quantum-observable-universe/molecular-construction/co-molecular-braid.md), [`def:co2-molecular-braid`](../../content/quantum-observable-universe/molecular-construction/co2-molecular-braid.md), [`def:covalent-bond-shared-trefoil`](../../content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.md), [`def:electron-shell-braid-capacity`](../../content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.md), … (+16)
 
-**`observations`** — 43 blocks: [`conj:borromean-quark`](../../content/quantum-observable-universe/observations/borromean-quark.md), [`conj:complex-chirality-rotation`](../../content/quantum-observable-universe/observations/complex-chirality-rotation.md), [`conj:cp-violation-spectral-form`](../../content/quantum-observable-universe/observations/cp-violation-spectral-form.md), [`conj:n-v-bring-action`](../../content/quantum-observable-universe/observations/n-v-bring-action.md), [`conj:n-v-tower-depth-ninety`](../../content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md), [`ex:hydrogen-knot-structure`](../../content/quantum-observable-universe/observations/hydrogen-knot-structure.md), [`ex:nitrogen-14-threading`](../../content/quantum-observable-universe/observations/nitrogen-14-threading.md), [`ex:tritium-decay-knot-equation`](../../content/quantum-observable-universe/observations/tritium-decay-knot-equation.md), … (+35)
+**`observations`** — 48 blocks: [`conj:borromean-quark`](../../content/quantum-observable-universe/observations/borromean-quark.md), [`conj:complex-chirality-rotation`](../../content/quantum-observable-universe/observations/complex-chirality-rotation.md), [`conj:cp-violation-spectral-form`](../../content/quantum-observable-universe/observations/cp-violation-spectral-form.md), [`conj:diagrammatic-double-magic-lr-fusion`](../../content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md), [`conj:n-v-bring-action`](../../content/quantum-observable-universe/observations/n-v-bring-action.md), [`conj:n-v-tower-depth-ninety`](../../content/quantum-observable-universe/observations/n-v-tower-depth-ninety.md), [`ex:double-magic-Ca40-diagram`](../../content/quantum-observable-universe/observations/double-magic-Ca40-diagram.md), [`ex:hydrogen-knot-structure`](../../content/quantum-observable-universe/observations/hydrogen-knot-structure.md), … (+40)
 
 **`particle-interactions`** — 53 blocks: [`conj:periodic-table-demand`](../../content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.md), [`def:atomic-braid`](../../content/quantum-observable-universe/particle-interactions/atomic-braid.md), [`def:derived-atom`](../../content/quantum-observable-universe/particle-interactions/derived-atom.md), [`def:transfer-matrix-operator`](../../content/quantum-observable-universe/particle-interactions/transfer-matrix-operator.md), [`def:universal-ilp-algorithm`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.md), [`ex:deuterium-derived-nf`](../../content/quantum-observable-universe/particle-interactions/deuterium-derived-nf.md), [`ex:helium4-derived-nf`](../../content/quantum-observable-universe/particle-interactions/helium4-derived-nf.md), [`ex:hydrogen-derived-nf`](../../content/quantum-observable-universe/particle-interactions/hydrogen-derived-nf.md), … (+45)
 
@@ -349,9 +362,9 @@ _(showing 25 of 504 downstream blocks; see table for full list)_
 ```mermaid
 graph TD
     conj_denominator_zeros_as_sw_critical_points["⭐ conj:denominator-zeros-as-sw-critical-points<br/>(conjecture)"]:::seed
-    conj_gb_reduction_pl_thimble_bijection["🟡 conj:gb-reduction-pl-thimble-bijection"]:::conj
-    conj_abelianisation_at_algebraic_poles["🟡 conj:abelianisation-at-algebraic-poles"]:::conj
     conj_pl_jsj_mass_integration_equivalence["🟡 conj:pl-jsj-mass-integration-equivalence"]:::conj
+    conj_abelianisation_at_algebraic_poles["🟡 conj:abelianisation-at-algebraic-poles"]:::conj
+    conj_gb_reduction_pl_thimble_bijection["🟡 conj:gb-reduction-pl-thimble-bijection"]:::conj
     conj_abelianisation_at_algebraic_poles --> conj_denominator_zeros_as_sw_critical_points
     conj_gb_reduction_pl_thimble_bijection --> conj_denominator_zeros_as_sw_critical_points
     conj_pl_jsj_mass_integration_equivalence --> conj_denominator_zeros_as_sw_critical_points
@@ -447,7 +460,7 @@ _If/when this conjecture is authored, re-run the cone build script to populate t
 
 ## Aggregate summary
 
-- **Total blocks under at least one open audit conjecture:** 504
+- **Total blocks under at least one open audit conjecture:** 512
 - **Total propagation violations across all 10 cones:** 210
 - **Conjectures with zero violations** (already propagation-clean): 8 / 10
 - **Conjectures with > 0 violations** (need P3.1 sweep action): 2 / 10
