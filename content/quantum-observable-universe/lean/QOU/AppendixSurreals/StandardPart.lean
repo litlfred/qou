@@ -305,4 +305,82 @@ noncomputable def standardPartRingHom :
   map_add' x y := standardPart_add x.property y.property
   map_mul' x y := standardPart_mul x.property y.property
 
+/-! ### Surreal proximity (`IsClose`)
+
+Two surreals are **close** if their difference is infinitesimal.
+This is an equivalence relation on `K`, and `standardPart` is
+constant on its equivalence classes (over the finite subset).
+
+This is a baby pre-uniformity layer: the `IsClose`-equivalence-class
+of `x` is precisely the *monad* of `x` (in non-standard-analysis
+parlance), and the standard-part map factors uniquely through the
+quotient. -/
+
+/-- Two surreals are **close** if their difference is infinitesimal. -/
+def IsClose (x y : K) : Prop := SurrealField.IsInfinitesimal (x - y)
+
+/-- `IsClose` is reflexive. -/
+theorem IsClose.refl (x : K) : IsClose x x := by
+  unfold IsClose
+  rw [sub_self]
+  exact SurrealField.zero_isInfinitesimal
+
+/-- `IsClose` is symmetric. -/
+theorem IsClose.symm {x y : K} (h : IsClose x y) : IsClose y x := by
+  unfold IsClose at *
+  have hneg : -(x - y) = y - x := by ring
+  rw [← hneg]
+  exact h.neg
+
+/-- `IsClose` is transitive. -/
+theorem IsClose.trans {x y z : K}
+    (hxy : IsClose x y) (hyz : IsClose y z) : IsClose x z := by
+  unfold IsClose at *
+  have heq : x - z = (x - y) + (y - z) := by ring
+  rw [heq]
+  exact hxy.add hyz
+
+/-- `IsClose` as an equivalence relation. -/
+def IsClose.setoid : Setoid K where
+  r := IsClose
+  iseqv := ⟨IsClose.refl, IsClose.symm, IsClose.trans⟩
+
+/-- **Standard-part is constant on `IsClose`-equivalence classes**
+    (for finite arguments). -/
+theorem standardPart_eq_of_isClose {x y : K}
+    (hx : SurrealField.IsFinite x) (_hy : SurrealField.IsFinite y)
+    (hxy : IsClose x y) : standardPart x = standardPart y := by
+  -- y = x + (y - x), and (y - x) is infinitesimal by hxy.symm
+  -- so standardPart y = standardPart x + standardPart (y - x)
+  --                    = standardPart x + 0 = standardPart x.
+  have hyx : SurrealField.IsInfinitesimal (y - x) := hxy.symm
+  have hyx_fin : SurrealField.IsFinite (y - x) := hyx.isFinite
+  have heq : y = x + (y - x) := by ring
+  rw [heq, standardPart_add hx hyx_fin,
+      standardPart_of_infinitesimal hyx, add_zero]
+
+/-- `IsClose x y ↔ standardPart x = standardPart y` when `x, y` are
+    both finite (forward + reverse direction). -/
+theorem isClose_iff_standardPart_eq_of_finite {x y : K}
+    (hx : SurrealField.IsFinite x) (hy : SurrealField.IsFinite y) :
+    IsClose x y ↔ standardPart x = standardPart y := by
+  refine ⟨standardPart_eq_of_isClose hx hy, fun h => ?_⟩
+  -- Reverse: standardPart x = standardPart y ⟹ IsClose x y.
+  have hxsp := standardPart_spec hx
+  have hysp := standardPart_spec hy
+  -- Decompose: x - y = (x - ofReal (st x)) - (y - ofReal (st y))
+  --                  + (ofReal (st x) - ofReal (st y)).
+  have heq : x - y = (x - SurrealField.ofReal (standardPart x))
+                    - (y - SurrealField.ofReal (standardPart y))
+                    + (SurrealField.ofReal (standardPart x)
+                       - SurrealField.ofReal (standardPart y)) := by ring
+  unfold IsClose
+  rw [heq]
+  -- The third term vanishes because st x = st y.
+  have hzero : SurrealField.ofReal (K := K) (standardPart x)
+                  - SurrealField.ofReal (standardPart y) = 0 := by
+    rw [h, sub_self]
+  rw [hzero, add_zero]
+  exact hxsp.sub hysp
+
 end QOU.AppendixSurreals
