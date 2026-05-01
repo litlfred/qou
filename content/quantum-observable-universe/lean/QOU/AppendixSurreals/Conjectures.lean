@@ -731,6 +731,63 @@ theorem KashaevSurreal.exists_kcomplex
   obtain ⟨ζ, _⟩ := KashaevSurreal.st_volume_eq_asymptotic (K := K) k
   exact ⟨ζ⟩
 
+/-! ### Stronger conditional theorems via `IsClose`
+
+The proximity relation `IsClose` (from `StandardPart`) gives a clean
+way to state the "infinitesimally close to a real reference value"
+half of each conjecture. -/
+
+/-- **Conditional consequence of `VacuumEpsilon`.** The vacuum energy
+    of the witnessing QOU is close to `0`. -/
+theorem VacuumEpsilon.vacuum_energy_isClose_zero [VacuumEpsilon K] :
+    ∃ (SQ : QOU_Surreal K),
+      IsClose (QOU_VacuumEnergy SQ) (0 : K) := by
+  obtain ⟨SQ, hinf⟩ := VacuumEpsilon.vacuum_energy_isInfinitesimal (K := K)
+  refine ⟨SQ, ?_⟩
+  unfold IsClose
+  rw [sub_zero]
+  exact hinf
+
+/-- **Conditional consequence of `InfinitesimalFrobenius`.** The
+    Frobenius pairing of the witnessing QOU is close to `1`. -/
+theorem InfinitesimalFrobenius.frobenius_isClose_one
+    [InfinitesimalFrobenius K] :
+    ∃ (SQ : QOU_Surreal K),
+      IsClose (QOU_FrobeniusPairing SQ) (1 : K) := by
+  obtain ⟨SQ, _, hinf⟩ :=
+    InfinitesimalFrobenius.exists_nontrivial_deviation (K := K)
+  refine ⟨SQ, ?_⟩
+  unfold IsClose
+  exact hinf
+
+/-- **Conditional consequence of `InfinitesimalObservability`.** The
+    observability norm of the witnessing QOU is close to `0`. -/
+theorem InfinitesimalObservability.observability_isClose_zero
+    [InfinitesimalObservability K] :
+    ∃ (SQ : QOU_Surreal K),
+      IsClose (QOU_ObservabilityNorm SQ) (0 : K) := by
+  obtain ⟨SQ, _, hinf⟩ :=
+    InfinitesimalObservability.exists_nontrivial_observability (K := K)
+  refine ⟨SQ, ?_⟩
+  unfold IsClose
+  rw [sub_zero]
+  exact hinf
+
+/-- **Conditional consequence of `KashaevSurreal`.**  Spelled-out
+    statement: there exists a complex-surreal `ζ_ω` such that the
+    standard-part of the colored-Jones evaluation expression equals
+    the hyperbolic volume of every knot. -/
+theorem KashaevSurreal.standardPart_eq_volume
+    [KashaevSurreal K] (k : Knot) :
+    ∃ (zeta_omega : KComplex K),
+      standardPart
+        (2 * SurrealField.ofReal (K := K) Real.pi
+          * surrealLog (KComplex.abs
+              (ColoredJones K k zeta_omega (omegaSurreal K)))
+          / omegaSurreal K)
+        = HyperbolicVolume k :=
+  KashaevSurreal.st_volume_eq_asymptotic (K := K) k
+
 /-! ### Unconditional consequences
 
 The following are *not* conditional on any conjecture: they hold
