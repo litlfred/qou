@@ -12,6 +12,7 @@
 -- import Fred2005
 
 import QOU.Basic
+import QOU.MathlibExt
 import QOU.Glossary
 import QOU.KnotTheory
 import QOU.KnotRegistry

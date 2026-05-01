@@ -273,6 +273,41 @@ instance qIntRatioBoundSmall_two (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
   rw [hcoerce]
   linarith
 
+/-- **Default instance for `m = 3`** — proved directly.
+
+    The identity `[3]_q = q² + 1 + q⁻²` plus the algebraic fact
+    `q² + q⁻² - 2 = (q - q⁻¹)²` give `[3]_q/3 - 1 = (q-q⁻¹)²/3`,
+    which equals `(q-q⁻¹)² · 3 / 9` and is bounded above by
+    `(q-q⁻¹)² · 3 / 6 = (q-q⁻¹)² / 2`. -/
+instance qIntRatioBoundSmall_three (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
+    (h1 : 1 ≤ 3) (h4 : 3 ≤ 4) :
+    QIntRatioBoundSmall q hq hq2 3 h1 h4 := by
+  refine ⟨?_⟩
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_pos : q > 0 := by linarith
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+  -- Step 1: [3]_q = q² + 1 + q⁻²
+  have h_eq : qIntReal q 3 = q^2 + 1 + (q⁻¹)^2 := by
+    unfold qIntReal
+    rw [if_neg hq_ne_one]
+    field_simp
+    ring
+  -- Step 2: [3]_q / 3 - 1 = (q² + q⁻² - 2)/3 = (q - q⁻¹)² / 3
+  have h_id : qIntReal q 3 / 3 - 1 = (q - q⁻¹)^2 / 3 := by
+    rw [h_eq]
+    have : (q^2 + 1 + (q⁻¹)^2) / 3 - 1 = (q^2 + (q⁻¹)^2 - 2) / 3 := by ring
+    rw [this]
+    have h_alg : q^2 + (q⁻¹)^2 - 2 = (q - q⁻¹)^2 := by ring
+    rw [h_alg]
+  rw [h_id, abs_of_nonneg (by positivity)]
+  have hsq : (q - q⁻¹)^2 ≥ 0 := sq_nonneg _
+  have hcoerce : ((3 : ℕ) : ℝ) = 3 := by norm_num
+  rw [hcoerce]
+  linarith
+
 /-- Per-instance form. -/
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4)

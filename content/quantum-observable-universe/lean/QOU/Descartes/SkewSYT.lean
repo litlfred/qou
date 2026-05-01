@@ -4,6 +4,7 @@ import Mathlib.Data.List.Basic
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Order.LocallyFiniteOrder
 import Mathlib.Tactic
+import QOU.MathlibExt
 
 /-!
 # Skew Standard Young Tableaux and the Young Lattice
@@ -210,12 +211,13 @@ theorem removeCorner_sum (λ : Partition) (row : ℕ)
       · exact (List.eq_cons_of_length_pos (by simp [List.length_drop]; omega)).symm
   omega
 
-/-- Sorting a list (by any relation) preserves its sum.  Used to
-    relate `removeCorner` (which sorts the decremented list) back
-    to the raw `mapIdx` sum lemma `removeCorner_sum`. -/
+/-- Sorting a list (by any relation) preserves its sum. Backed by
+    `QOU.MathlibExt.List.sum_insertionSort_eq` (a candidate Mathlib
+    upstream lemma); this alias preserves the local name used by
+    `removeCorner_size`. -/
 theorem sum_insertionSort_eq (xs : List ℕ) (r : ℕ → ℕ → Bool) :
-    (xs.insertionSort r).sum = xs.sum := by
-  exact (xs.perm_insertionSort r).symm.sum_eq
+    (xs.insertionSort r).sum = xs.sum :=
+  QOU.MathlibExt.List.sum_insertionSort_eq xs r
 
 /-- Removing a corner decreases the partition size by exactly 1. -/
 theorem removeCorner_size (λ : Partition) (row : ℕ)
