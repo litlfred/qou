@@ -29,13 +29,25 @@ propagation rule.
 
 ## Summary
 
+This branch grew from a Tier 3 (P3) sweep into a multi-phase
+audit-and-fix pass. As of the latest commit, the following workplan
+items have been completed or scoped:
+
 | Task | Status | Deliverable |
 |------|--------|-------------|
-| **P3.1** Conjectural-propagation sweep | ✅ Sweep report delivered, 1 unambiguous demotion applied | [`2026-05-01-conjectural-propagation-sweep.md`](2026-05-01-conjectural-propagation-sweep.md) + script |
-| **P3.2** Pentagon $uv = q\,vu$ lemma | 🟡 Open — see §P3.2 below | Findings only |
+| **P0.1** Wall-violation sweep over proof blocks | ✅ Done | [`2026-05-01-wall-violations-sweep.md`](2026-05-01-wall-violations-sweep.md), `wall-violations.witness.json`, `pipeline/wall-violations-sweep.ts` (4 real risks → all P0.2-discharged; 8 cosmetic / mis-classified) |
+| **P0.3** JSJ algebraic reformulation | ✅ Done | `prop:phi-q-tower-algebraic-stratification` triple — algebraic-side stratification of the Φ$_q$-tower in Hecke / GS-filtration language; JSJ stays as τ-image |
+| **P0.4** Three-calibration-inputs block | ✅ Done | `prop:three-calibration-inputs` triple (CAL-1 $m_e$ + CAL-2 $m_\mu/m_e$ + CAL-3 $Q_\beta(n)$, aligned to Wedderburn channels) |
+| **P1.5** Compound-shell / atlas base-case audit | ✅ Done | [`2026-05-01-base-cases-audit.md`](2026-05-01-base-cases-audit.md); SHELL-1 reclassified 🟠 → 🟡 (no hidden AME fits) |
+| **P1.6** Neutrino mass demote | ✅ Resolved | NU-1: neutrino = unknot = 0 mass by categorical definition |
+| **P2.6** GS-filtration narrative blocks | ✅ Done | `prop:graded-markov-trace-from-gs-filtration` + `prop:residue-at-root-from-gs-filtration` triples (replace `noncomputable opaque` axioms) |
+| **P3.1** Conjectural-propagation sweep | ✅ Done + cleanup | Sweep tool + report; 6 demotions + bridge cleanup; cones 259 → 119 unique provables |
+| **P3.6** BW pathway equivalence (scoping) | ✅ Scoped | [`2026-05-01-bw-pathway-comparison.md`](2026-05-01-bw-pathway-comparison.md) — three pathways tabulated; recommendation: keep all three |
+| **P3.2** Pentagon $uv = q\,vu$ lemma | 🟡 Open — needs author scope | See §P3.2 below |
 | **P3.3** Pair descent sharpness | 🟡 Open — depends on P3.2 | Findings only |
 | **P3.4** Uniform $\Delta_{\max}$ bound | 🟡 Open — compute prerequisite missing | Findings only |
 | **P3.5** `family-4` motivic instance | 🟡 Research-grade, scope only | Findings only |
+| Calibration-inputs addendum | ✅ Done | [`2026-05-01-calibration-inputs-addendum.md`](2026-05-01-calibration-inputs-addendum.md) — corrects deep audit's miscount; 5 → 4 non-calibration empirical flags after SHELL-1 + NU-1 resolutions |
 
 ## P3.1 — Conjectural-propagation sweep ✅
 
