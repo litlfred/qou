@@ -49,10 +49,10 @@ for each crossing.
 | 5 | Pairing | [3][7]m_e | ±1/√A | [3]+[1,1,1] descent | DERIVED |
 | 6 | Exchange | [3]/[2]m_e | -Z^{4/3}/A^{1/3} | [2,1] h³ boundary | DERIVED |
 | 7 | Shell | [2]²[3]m_e | +f_magic/A^{2/3} | [3,1] branching | DERIVED |
-| 8 | Hook | \|β₄\|·\|lnλ\|·m_e | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (coeff ad hoc) |
+| 8 | Hook (Δ_W, Wigner T=0 pairing) | -m_e·H_q((2,2))·min(Z,N)/A | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (`hook-weight-derivation`, `derived-mass-formula-light-isotopes`; β_4 = -½ w_{[2,2]}(4)) |
 | 9 | Wigner | [5]!·m_e | -T(T+1)/A | [3,1,1] Frob reciprocity | DERIVED |
 | 10 | Form factor | h[5]m_e | -Z²/A | [3,2]⊕[2,2,1] conj pair | DERIVED |
-| 11 | pn corr | 2[2][3]/[4]·[2]m_e | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (coeff approx) |
+| 11 | pn corr (Δ_T=1) | -m_e·H_q((2,2))·(n_pp+n_nn)/A | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (natural T=1 extension of term 8 using same self-conjugate (2,2) and 1/A normalisation; n_pp=Z(Z-1)/2, n_nn=N(N-1)/2) |
 
 ### Figure-eight modification (A=3 nuclei)
 
@@ -80,11 +80,28 @@ The content sum c(λ) = Σ(j-i) determines the BW scaling:
 
 ## Fine Structure Constant
 
+**Live form** (`alpha-em-categorical-trace.md`, after merging into the
+spectral-completeness program):
+
 ```
-1/α = q·[9]·[10] × (1 + c₁ + c₁²·κ) = 137.035944
-CODATA: 137.035999
-Error: 399 ppb
+1/α_EM = 45·[3]_q · (1 + δ_CS + 8q·δ_CS²)    where δ_CS := ℏ_q^4·[5]_q
+       = 137.035998166 (predicted, eval at q_0)
+CODATA   = 137.035999084 ± 2.1×10⁻⁸  (21 ppb uncertainty)
+Residue  ≈ 6.7 ppb  (within CODATA uncertainty)
 ```
+
+The factor $45 = \binom{10}{2}$ is the dimension of $\Lambda^2 V_{\text{nat}}^{10}$
+(`exterior-square-borromean`); $[3]_q$, $[5]_q$, $[9]_q\cdot[10]_q$ come from
+`force-carrier-bring-uniqueness`; $\delta_{CS}$ is the leading non-trivial term
+of the Plancherel-weighted character product (`gram-determinant-plancherel-ratio`);
+the $8q$ second-order coefficient follows from the same closed form via
+genus-4 torus-knot enumeration. PSLQ uniqueness over
+$\{q^k, [k]_q, \hbar_q^k\}_{k\leq 10}$ at 1000-dps confirms no shorter
+rational combination matches.
+
+The earlier "399 ppb residue" line (from a deprecated formulation
+$1/α = q\cdot[9]\cdot[10]\cdot(1 + c_1 + c_1^2\kappa)$) is **superseded**
+by the categorical-completeness derivation above.
 
 ## Current Results (k=5)
 
@@ -93,7 +110,7 @@ Mass MAE:      0.006% (45 isotopes, H through U)
 ³H mass:       0.00001% (figure-eight BW)
 ³He mass:      0.00000% (figure-eight BW)
 Q(³H→³He):     18.23 keV (exp 18.59, 2.0%)
-1/α:           137.035944 (399 ppb)
+1/α:           137.035998166 (~6.7 ppb residue, within CODATA 21-ppb uncertainty)
 H-H bond:      4.469 eV (0.2%)
 ```
 
@@ -175,9 +192,17 @@ different levels interact non-trivially.
    character polynomial in Z,N,A from the symbolic computation.
 2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.
    Needs k≥7 exact corrections.
-3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface — not derived.
+3. **Magic numbers**: {2,8,20,28} **derived** from $q_0$ via
+   Hoefsmit-character second differences
+   (`prop:magic-numbers-from-q`, `shell_closure_compute.py` at
+   $K=10$); {50,82,126} await $k\geq 12$ Wedderburn coverage. The
+   "Bring's surface" framing is superseded by the Hoefsmit path.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
-5. **1/α remaining 399 ppb**: J³ correction (Massey products?).
+5. **1/α residue ~6.7 ppb**: within CODATA uncertainty (21 ppb).
+   The categorical-completeness derivation
+   (`alpha-em-categorical-trace.md`,
+   `45·[3]_q·(1 + δ_CS + 8q·δ_CS²)`) is the live form. The legacy
+   "399 ppb / J³ Massey-product" speculation is superseded.
 6. **Energy scale E₀**: calibrated, not independently derived.
 7. **Neutrino mass**: ν = unknot ($K_{0_1}$); $J_\nu(q)=1$; bare-knot
    mass = 0. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$
