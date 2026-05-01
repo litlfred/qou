@@ -293,4 +293,61 @@ theorem standardPart_polySurrealEval (p : ℝ[X]) (r : ℝ)
   have hspec := standardPart_spec hfin
   exact (isFinite_decomposition hfin).unique hspec hwitness
 
+/-! ### Substrate-evaluation API (`q := 1 + ε`)
+
+Convenience layer wrapping `polySurrealEval` at the substrate
+parameter `q := 1 + ε`, which is the canonical perturbation of `1`
+used throughout the QOU paper. -/
+
+/-- The **substrate parameter** `q := 1 + ε` viewed as a surreal
+    in `K`.  Infinitesimally close to the real number `1`.
+
+    This is the canonical perturbation of `1` that the QOU paper's
+    formulas evaluate at; the surreal lift makes the perturbation
+    type-stable. -/
+noncomputable def substrateQ : K := 1 + epsilonSurreal K
+
+/-- Evaluate a real polynomial at the substrate parameter.  This is
+    the master "substrate evaluation" map used by the paper:
+
+      `polySubstrateEval p ≈ p.eval 1` (modulo infinitesimals). -/
+noncomputable def polySubstrateEval (p : ℝ[X]) : K :=
+  polySurrealEval p (substrateQ K)
+
+/-- The substrate parameter is finite: `1 + ε` differs from `1` by
+    an infinitesimal, hence is finite. -/
+theorem substrateQ_isFinite : IsFinite (substrateQ (K := K)) := by
+  unfold substrateQ
+  exact one_isFinite.add (epsilonSurreal_isInfinitesimal K).isFinite
+
+/-- The substrate parameter has standard part `1`. -/
+theorem standardPart_substrateQ :
+    standardPart (substrateQ (K := K)) = 1 := by
+  unfold substrateQ
+  -- 1 + ε - ofReal 1 = ε is infinitesimal
+  have h1 : (1 : K) = SurrealField.ofReal (K := K) 1 := by rw [map_one]
+  have hwit : IsInfinitesimal
+      (1 + epsilonSurreal K - SurrealField.ofReal (K := K) 1) := by
+    rw [← h1]
+    have heq : (1 : K) + epsilonSurreal K - 1 = epsilonSurreal K := by ring
+    rw [heq]
+    exact epsilonSurreal_isInfinitesimal K
+  have hfin : IsFinite (1 + epsilonSurreal K : K) :=
+    one_isFinite.add (epsilonSurreal_isInfinitesimal K).isFinite
+  exact (isFinite_decomposition hfin).unique
+    (standardPart_spec hfin) hwit
+
+/-- **Master substrate-evaluation identity.**  For any real polynomial
+    `p`, `standardPart (polySubstrateEval p) = p.eval 1`.
+
+    This is the core "every real prediction is the standard-part of a
+    surreal computation" theorem of the QOU framework. -/
+theorem standardPart_polySubstrateEval (p : ℝ[X]) :
+    standardPart (polySubstrateEval (K := K) p) = p.eval 1 := by
+  unfold polySubstrateEval substrateQ
+  -- Rewrite 1 = ofReal 1 to apply standardPart_polySurrealEval.
+  have h1 : (1 : K) = SurrealField.ofReal (K := K) 1 := by rw [map_one]
+  rw [h1]
+  exact standardPart_polySurrealEval p 1 (epsilonSurreal_isInfinitesimal K)
+
 end QOU.AppendixSurreals
