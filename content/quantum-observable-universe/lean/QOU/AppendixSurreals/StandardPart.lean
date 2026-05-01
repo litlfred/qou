@@ -1,4 +1,5 @@
 import QOU.AppendixSurreals.Basic
+import Mathlib.RingTheory.Subring.Basic
 
 /-!
 # QOU.AppendixSurreals.StandardPart — Robinson's standard-part map
@@ -266,5 +267,42 @@ theorem standardPart_le_of_le {x y : K} (hx : IsFinite x) (hy : IsFinite y)
     exact h2
   -- Contradiction: |(y-x)-ofReal d| < ofReal(-d/2) < -ofReal d ≤ |(y-x)-ofReal d|.
   linarith [hinf_bound, hofhalf, habs_ge]
+
+/-! ### `Subring` packaging of the finite surreals
+
+The set `{ x : K | IsFinite x }` is a `Subring K`, and the
+standard-part map is a ring homomorphism out of it.  This lets
+downstream development quote `standardPart` as a Mathlib
+`RingHom` without re-proving `_add`/`_mul` at every call site. -/
+
+/-- The **finite-surreal subring** of `K`.  Closure follows from
+    `zero_isFinite`, `one_isFinite`, `IsFinite.add`, `IsFinite.neg`,
+    `IsFinite.mul` (proved in `Basic.lean`). -/
+def SurrealField.finiteSubring : Subring K where
+  carrier := { x : K | SurrealField.IsFinite x }
+  zero_mem' := SurrealField.zero_isFinite
+  one_mem' := SurrealField.one_isFinite
+  add_mem' := fun ha hb => SurrealField.IsFinite.add ha hb
+  neg_mem' := fun h => SurrealField.IsFinite.neg h
+  mul_mem' := fun ha hb => SurrealField.IsFinite.mul ha hb
+
+/-- Membership in `finiteSubring` is exactly `IsFinite`. -/
+@[simp]
+theorem SurrealField.mem_finiteSubring {x : K} :
+    x ∈ (SurrealField.finiteSubring : Subring K) ↔ SurrealField.IsFinite x :=
+  Iff.rfl
+
+/-- Robinson's **standard-part map** as a `RingHom` from the
+    finite-surreal subring of `K` to `ℝ`.  Bundles
+    `standardPart_zero`, `standardPart_one`, `standardPart_add`, and
+    `standardPart_mul` into a single `RingHom` term. -/
+-- Ref: [robinson1966] §3.2
+noncomputable def standardPartRingHom :
+    (SurrealField.finiteSubring (K := K)) →+* ℝ where
+  toFun x := standardPart x.val
+  map_zero' := standardPart_zero
+  map_one' := standardPart_one
+  map_add' x y := standardPart_add x.property y.property
+  map_mul' x y := standardPart_mul x.property y.property
 
 end QOU.AppendixSurreals
