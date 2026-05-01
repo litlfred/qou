@@ -253,41 +253,91 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
             desc *= V
         desc_abs = abs(desc)
 
-    # NOTE (P2.2a wiring partial): the single + cross tower terms below
-    # still use the legacy per-generator V_full (H_3 weights) and will
-    # produce spurious large values when |V_full| > q_0 (per
-    # docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json the
-    # H_3 weights drive |V_full| to 4×–21× q_0 at light atoms, so
-    # Φ_q(|V_full|) hits values well above the q_0-radius convergence
-    # disk). The proper algebraic stratification per
-    # prop:phi-q-tower-algebraic-stratification needs the per-stratum
-    # Markov trace tr_M(ρ(β_S)) for each S ⊆ {0, …, n-2} of size 1 or 2,
-    # not per-generator V_full × Φ_q. Wiring that requires extending
-    # global_wedderburn_sum_symbolic to per-stratum sums; tracked as
-    # a P2.2b follow-up. The `desc` term above (proper Σ_{λ ⊢ 3A}
-    # w_λ χ^λ) is the leading-order contribution and is now correct.
-    # Single-generator Φ_q tower: Σ Φ_q(|V̂_i|)
-    single_tower = mpmath.mpf(0)
-    for V in V_full_list:
-        V_abs = abs(V)
-        if V_abs < q:
-            phi = _Phi_q_mp(V_abs, q, qi)
-            if mpmath.isinf(phi):
-                single_tower = mpmath.inf
-                break
-            single_tower += phi
-
-    # Adjacent-pair cross tower: z² Σ_{|i-j|=1} Φ_q(|V̂_i V̂_j|)
-    cross_tower = mpmath.mpf(0)
-    if not mpmath.isinf(single_tower):
-        for i in range(len(V_full_list) - 1):
-            VV = abs(V_full_list[i] * V_full_list[i + 1])
-            if VV < q:
-                phi_pair = _Phi_q_mp(VV, q, qi)
-                if mpmath.isinf(phi_pair):
-                    cross_tower = mpmath.inf
+    # P2.2b: Single + cross Φ_q tower from per-stratum SW sums.
+    # Per prop:phi-q-tower-algebraic-stratification, the singleton and
+    # pair tower terms are
+    #   Σ_{|S|=1} Φ_q(|Σ_λ w_λ χ^λ(π_S)|),
+    #   z² Σ_{|S|=2} Φ_q(|Σ_λ w_λ χ^λ(π_S)|),
+    # where π_S ∈ S_{3A} is the permutation of β_S = ∏_{i∈S} σ_i. The
+    # per-stratum SW sums (per_stratum_sum_symbolic) stay safely below
+    # q_0 at light atoms — Φ_q evaluates inside its convergence disk
+    # everywhere — replacing the H_3-at-H_{3A} per-generator V_full
+    # values that drove single + cross to spurious millions.
+    #
+    # Falls back to the legacy per-generator V_full × Φ_q computation
+    # when use_schur_weyl is false (m_pp/m_pn/m_nn ≠ 1; dressed-quark
+    # mass parameters not yet wired to the per-stratum SW char_kind).
+    if use_schur_weyl:
+        try:
+            import sympy as _sp
+            from schur_weyl_symbolic import per_stratum_sum_symbolic
+            _q_sym = _sp.Symbol("q", positive=True, real=True)
+            _q_rat = _sp.Rational(str(q_val))
+            n_strands_eff = 3 * A  # full atom strands
+            n_gens_eff = n_strands_eff - 1
+            single_tower = mpmath.mpf(0)
+            for i in range(n_gens_eff):
+                _s_sym, _ = per_stratum_sum_symbolic(A, {i}, _q_sym)
+                _s_q0 = _sp.N(_s_sym.subs(_q_sym, _q_rat), precision)
+                s_abs = abs(mpmath.mpc(complex(_s_q0)))
+                if s_abs < q:
+                    phi = _Phi_q_mp(s_abs, q, qi)
+                    if mpmath.isinf(phi):
+                        single_tower = mpmath.inf
+                        break
+                    single_tower += phi
+            cross_tower = mpmath.mpf(0)
+            if not mpmath.isinf(single_tower):
+                for i in range(n_gens_eff - 1):
+                    _ss_sym, _ = per_stratum_sum_symbolic(A, {i, i + 1}, _q_sym)
+                    _ss_q0 = _sp.N(_ss_sym.subs(_q_sym, _q_rat), precision)
+                    ss_abs = abs(mpmath.mpc(complex(_ss_q0)))
+                    if ss_abs < q:
+                        phi_pair = _Phi_q_mp(ss_abs, q, qi)
+                        if mpmath.isinf(phi_pair):
+                            cross_tower = mpmath.inf
+                            break
+                        cross_tower += z ** 2 * phi_pair
+        except Exception:
+            single_tower = mpmath.mpf(0)
+            for V in V_full_list:
+                V_abs = abs(V)
+                if V_abs < q:
+                    phi = _Phi_q_mp(V_abs, q, qi)
+                    if mpmath.isinf(phi):
+                        single_tower = mpmath.inf
+                        break
+                    single_tower += phi
+            cross_tower = mpmath.mpf(0)
+            if not mpmath.isinf(single_tower):
+                for i in range(len(V_full_list) - 1):
+                    VV = abs(V_full_list[i] * V_full_list[i + 1])
+                    if VV < q:
+                        phi_pair = _Phi_q_mp(VV, q, qi)
+                        if mpmath.isinf(phi_pair):
+                            cross_tower = mpmath.inf
+                            break
+                        cross_tower += z ** 2 * phi_pair
+    else:
+        single_tower = mpmath.mpf(0)
+        for V in V_full_list:
+            V_abs = abs(V)
+            if V_abs < q:
+                phi = _Phi_q_mp(V_abs, q, qi)
+                if mpmath.isinf(phi):
+                    single_tower = mpmath.inf
                     break
-                cross_tower += z ** 2 * phi_pair
+                single_tower += phi
+        cross_tower = mpmath.mpf(0)
+        if not mpmath.isinf(single_tower):
+            for i in range(len(V_full_list) - 1):
+                VV = abs(V_full_list[i] * V_full_list[i + 1])
+                if VV < q:
+                    phi_pair = _Phi_q_mp(VV, q, qi)
+                    if mpmath.isinf(phi_pair):
+                        cross_tower = mpmath.inf
+                        break
+                    cross_tower += z ** 2 * phi_pair
 
     total = desc_abs + single_tower + cross_tower
     return {

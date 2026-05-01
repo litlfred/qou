@@ -218,6 +218,77 @@ def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
     return sp.simplify(total), terms
 
 
+# ─── Per-stratum Schur-Weyl sums (P2.2b) ──────────────────────────────
+#
+# Per `prop:phi-q-tower-algebraic-stratification`, the mass formula sums
+# over algebraic strata indexed by subsets S ⊆ {0, …, n-2} of crossings:
+#
+#   𝔪 = Σ_{λ ⊢ 3A} w_λ χ^λ(π_atomic)            (descended carrier)
+#       + Σ_{|S|=1} Φ_q(|Σ_λ w_λ χ^λ(π_S)|)    (singleton tower)
+#       + z² Σ_{|S|=2} Φ_q(|Σ_λ w_λ χ^λ(π_S)|) (pair tower)
+#
+# where π_S ∈ S_{3A} is the permutation of β_S = ∏_{i∈S} σ_i (each σ_i
+# is the transposition (i, i+1) on 3A strands) and π_∅ = identity.
+#
+# The current `global_wedderburn_sum_symbolic` handles π_atomic via
+# Murnaghan-Nakayama on the atomic-braid cycle type. The functions
+# below extend this to the per-stratum permutations needed for the
+# Φ_q tower terms, replacing the H_3-at-H_{3A} per-generator V_full
+# approximation that drove |V̂_i| close to q_0 at light atoms.
+
+def stratum_permutation(A, S):
+    """Permutation π_S ∈ S_{3A} for the stratum braid β_S = ∏_{i∈S} σ_i.
+
+    Each generator σ_i acts as the transposition (i, i+1) on the
+    3A strands. Compose them in order of increasing i.
+    """
+    n = 3 * A
+    perm = list(range(n))
+    for i in sorted(S):
+        if i + 1 >= n:
+            raise ValueError(f"Generator {i} out of range for n=3A={n}")
+        perm[i], perm[i + 1] = perm[i + 1], perm[i]
+    return tuple(perm)
+
+
+def per_stratum_sum_symbolic(A, S, q):
+    """Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(π_S) where π_S is the stratum permutation.
+
+    Parameters
+    ----------
+    A : int        Number of nucleons (so 3A strands).
+    S : iterable   Subset of generator indices (each in {0, …, 3A-2}).
+    q : sympy.Symbol or rational
+
+    Returns
+    -------
+    (sympy_expr, terms_list)
+    """
+    from murnaghan_nakayama import (
+        cycle_type_of_permutation,
+        mn_character,
+    )
+    perm = stratum_permutation(A, S)
+    cyc = cycle_type_of_permutation(perm)
+    partitions = partitions_of(3 * A)
+    terms = []
+    total = Integer(0)
+    for lam in partitions:
+        w = schur_weyl_weight(lam, q)
+        chi = mn_character(lam, cyc)
+        if chi == 0:
+            continue
+        contrib = w * chi
+        total += contrib
+        terms.append({
+            "partition": lam,
+            "weight": sp.simplify(w),
+            "character": chi,
+            "contribution": sp.simplify(contrib),
+        })
+    return sp.simplify(total), terms
+
+
 def h3_additive_approximation_symbolic(A, q):
     """Additive-H_3 approximation: only partitions of shape (3), (2,1), (1,1,1).
 
