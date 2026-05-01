@@ -543,4 +543,27 @@ theorem mvPolySurrealEval_eq_aeval {σ : Type v}
   rw [MvPolynomial.aeval_def]
   rfl
 
+/-! ### Substrate-level proximity classification -/
+
+/-- The polynomial substrate evaluation is finite. -/
+theorem polySubstrateEval_isFinite (p : ℝ[X]) :
+    SurrealField.IsFinite (polySubstrateEval (K := K) p) := by
+  unfold polySubstrateEval
+  exact polySurrealEval_isFinite p substrateQ_isFinite
+
+/-- **Substrate-level proximity classification.**  Two polynomial
+    substrate-evaluations are `IsClose` iff their classical values at
+    `1` coincide.  This is the cleanest "two surreal predictions agree
+    at the standard-part level iff they agree on the archimedean
+    benchmark" statement. -/
+theorem polySubstrateEval_isClose_iff (p q : ℝ[X]) :
+    IsClose (polySubstrateEval (K := K) p)
+            (polySubstrateEval (K := K) q)
+      ↔ p.eval 1 = q.eval 1 := by
+  rw [isClose_iff_standardPart_eq_of_finite
+        (polySubstrateEval_isFinite p)
+        (polySubstrateEval_isFinite q),
+      standardPart_polySubstrateEval p,
+      standardPart_polySubstrateEval q]
+
 end QOU.AppendixSurreals
