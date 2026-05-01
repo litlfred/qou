@@ -83,7 +83,11 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
       would assert more than callers need; this combined form is
       exactly the Conway midpoint recipe and nothing more.
 
-      Required by `SignSequence.birthday_gonshorIn_le_length`. -/
+      Reserved for future induction proofs of the sharper
+      `birthday (gonshorIn K s) ≤ s.length` bound; the current
+      file proves the universally-supported `≤ ω` form (see
+      `SignSequence.birthday_gonshorIn_le_omega`) and the
+      `s.length ≤ 1` cases unconditionally. -/
   birthday_avg_le : ∀ x y : K,
     birthday ((x + y) / 2) ≤ (birthday x ♯ birthday y) + 1
   /-- Real numbers have birthday at most ω. -/

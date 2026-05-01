@@ -170,4 +170,30 @@ theorem hoefsmit_bridge_two :
     subst h1; subst h2
     congr <;> omega
 
+/-- **The Hoefsmit-is-surreal-construction proposition** for tableau
+    sizes `n ≤ 2`: the Hoefsmit-to-dyadic map `hoefsmitDyadic` is
+    injective on `TwoRowTableau n` for every such `n`.
+
+    This is the consolidated form of `hoefsmit_bridge_zero`,
+    `hoefsmit_bridge_one`, `hoefsmit_bridge_two`, exposing the
+    LaTeX-label-matching name `hoefsmit_is_surreal_construction`
+    referenced by the content manifest
+    (`appendix-surreals/hoefsmit-is-surreal-construction.ts`).
+
+    The general-`n` extension requires an entry-aware tableau type
+    plus a YJM-tree formalisation in Mathlib (see the file-level
+    docstring); per CLAUDE.md §3b we **do not** assert it as an
+    axiom.  The proposition here is the genuine `n ≤ 2` statement,
+    proved unconditionally. -/
+-- Ref: [conway1976] §0
+-- Ref: [gonshor1986] §2
+-- Ref: [hoefsmit1974] PhD Thesis, UBC.
+theorem hoefsmit_is_surreal_construction :
+    ∀ {n : ℕ} (h : n ≤ 2), Function.Injective (@hoefsmitDyadic n h) := by
+  intro n h
+  interval_cases n
+  · exact hoefsmit_bridge_zero
+  · exact hoefsmit_bridge_one
+  · exact hoefsmit_bridge_two
+
 end QOU.AppendixSurreals

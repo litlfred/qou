@@ -10,10 +10,13 @@
 --   QOU/AppendixSurreals/HoefsmitBridge.lean
 --
 -- See `QOU.AppendixSurreals.TwoRowTableau`,
---     `QOU.AppendixSurreals.hoefsmitDyadic`           — restricted to n ≤ 2
---     `QOU.AppendixSurreals.hoefsmit_bridge_zero`     — proved
---     `QOU.AppendixSurreals.hoefsmit_bridge_one`      — proved
---     `QOU.AppendixSurreals.hoefsmit_bridge_two`      — proved
+--     `QOU.AppendixSurreals.hoefsmitDyadic`                  — restricted to n ≤ 2
+--     `QOU.AppendixSurreals.hoefsmit_bridge_zero`            — proved
+--     `QOU.AppendixSurreals.hoefsmit_bridge_one`             — proved
+--     `QOU.AppendixSurreals.hoefsmit_bridge_two`             — proved
+--     `QOU.AppendixSurreals.hoefsmit_is_surreal_construction`
+--       (consolidated `n ≤ 2` injectivity, named to match the
+--        LaTeX label of this content block)               — proved
 --
 -- The bridge is proved in Lean for tableau sizes n ≤ 2 (the first
 -- non-trivial cases).  `hoefsmitDyadic` is restricted at the type
