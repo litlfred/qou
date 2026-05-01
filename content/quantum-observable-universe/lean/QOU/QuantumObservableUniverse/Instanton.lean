@@ -109,6 +109,20 @@ class HasCategoricalIrreducibility {C : Type u} [CategoryTheory.Category.{v} C]
   /-- Vanishing of adjoint-rep observables. -/
   subsingleton : Subsingleton ((𝟙_ C) ⟶ adjointObj)
 
+/-- **Default instance from a `Subsingleton` witness**.  When the
+    Hom-space `(𝟙_ C) ⟶ adjointObj` is already known to be a
+    `Subsingleton` (e.g. zero-object, terminal, or trivially
+    discrete category), the irreducibility witness is automatic. -/
+instance hasCategoricalIrreducibility_of_subsingleton
+    {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    {frobHopf : FrobeniusHopfData C}
+    (adjointObj : C)
+    (inst : CategoricalInstanton frobHopf)
+    [hsub : Subsingleton ((𝟙_ C) ⟶ adjointObj)] :
+    HasCategoricalIrreducibility adjointObj inst :=
+  ⟨hsub⟩
+
 /-- **Categorical irreducibility** (per-instance form).
     Use this lemma — backed by `HasCategoricalIrreducibility` —
     instead of the deprecated universal axiom. -/
