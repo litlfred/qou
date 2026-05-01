@@ -68,13 +68,21 @@ Each `conj:` block carries a Lean file under
 `content/quantum-observable-universe/lean/QOU/` declaring the
 conjecture as a typeclass with named structural fields. Downstream
 results (e.g. magic-number ladder) become conditional theorems
-parameterised on `[ShellCondensation n]`.
+parameterised on the relevant typeclass instance.
 
-| Lean ref | Module path |
-|---|---|
-| `qou:QOU.ShellNeutrality.SaturatedShellConjecture` | `QOU/ShellNeutrality.lean` |
-| `qou:QOU.ShellCondensation.HomologicalConjecture` | `QOU/ShellCondensation.lean` |
-| `qou:QOU.LRFusion.DoubleMagicConjecture` | `QOU/LRFusion.lean` |
+Per CLAUDE.md "Namespace = chapter module", each new module is
+nested under the existing chapter namespace it logically extends:
+
+| Lean ref | Module path | Chapter namespace |
+|---|---|---|
+| `qou:QOU.BraidKnot.ShellNeutrality.SaturatedShellConjecture` | `QOU/BraidKnot/ShellNeutrality.lean` | `BraidKnot` (Ch 5, braids-and-knots) |
+| `qou:QOU.LiftingDescent.HomologicalCondensation.ShellCondensationConjecture` | `QOU/LiftingDescent/HomologicalCondensation.lean` | `LiftingDescent` (Ch 4, lifting-and-descent) |
+| `qou:QOU.Interactions.LRFusion.DoubleMagicConjecture` | `QOU/Interactions/LRFusion.lean` | `Interactions` (sibling of `ConfinementSDP`, `NuclearOperatorRegimes`) |
+
+The LR-fusion content block lives in `observations/`, but the Lean
+module sits under `Interactions` because the existing repo has no
+`QOU.Observations` namespace and LR-fusion is a particle-interaction
+construction in the spirit of the other `Interactions/*` modules.
 
 ### Manifest wiring
 
@@ -112,14 +120,22 @@ only when:
 
 ## Citations to register
 
-The following CSL-JSON keys may be added to
-`content/schema/references.ts` if not already present:
+CSL-JSON keys follow the canonical `authorYEAR` (or
+`author1-author2YEAR`) lowercase ASCII format used elsewhere in
+`content/schema/references.ts`. The following may be added if not
+already present:
 
-- Białynicki-Birula 1973 (BB stratification)
-- Geck–Pfeiffer 2000 (Iwahori–Hecke characters)
-- Ariki 1996 (Specht modules at roots of unity)
-- Ram 1991 (Hecke trace / RSK)
+- `bialynicki-birula1973` — BB stratification
+- `geck-pfeiffer2000` — Iwahori–Hecke characters
+- `ariki1996` — Specht modules at roots of unity
+- `ram1991` — Hecke trace / RSK
 
-Existing keys reused: `hoefsmit1974`, `jucys1974`, `murphy1992`,
-`mathas1999`, `kassel1995`, `turaev2010`, `yekutieli2010`,
-`yekutieli2008`, `yekutieli2015`.
+Existing keys reused (already in `content/schema/references.ts`):
+`hoefsmit1974`, `jucys1974`, `murphy1992`, `mathas1999`,
+`kassel1995`, `turaev2010`, `yekutieli2010`, `yekutieli2008`,
+`yekutieli2015`.
+
+Citations are placed directly with the claim they support in the
+`.md` files; structural results internal to the framework are
+referenced via cross-block hyperlinks (`[text](#label)`), not via
+external citations.

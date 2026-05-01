@@ -332,6 +332,8 @@ export default chapter({
         "categorical-mass-markov",
         "markov-z-reconciliation",
         "mass-endomorphism-conjecture",
+        "phi-n-global-section",
+        "categorical-neutrality-saturated-shells",
       ],
     }),
 
