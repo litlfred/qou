@@ -233,6 +233,13 @@ class SpectralDecompositionQValue
   /-- `qValue = qBare · knotProd`. -/
   factorisation : qValue = qBare * knotProd
 
+/-- Default instance when `qValue` is *defined* as the product
+    `qBare * knotProd` (rather than asserted to equal it). -/
+instance spectralDecompositionQValue_def
+    (g : ℕ) (hg : g = 4) (op : BetaDecayOp) (qBare knotProd : R_t) :
+    SpectralDecompositionQValue g hg op (qBare * knotProd) qBare knotProd :=
+  ⟨rfl⟩
+
 /-! ## §5  Interaction completeness -/
 
 /-- Two `TorusKnotLabel`s with equal `r` and `s` fields are equal.

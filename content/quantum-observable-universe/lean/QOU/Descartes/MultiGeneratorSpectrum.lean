@@ -212,4 +212,10 @@ class ChannelRatioDeterminesGA (stdEig symEig gA : ℝ) : Prop where
   /-- The eigenvalue ratio agrees with `g_A`. -/
   ratio_eq : stdEig / symEig = gA
 
+/-- Default instance for the trivial coincidence
+    `gA = stdEig / symEig` (i.e. when `gA` is *defined* as the
+    ratio rather than asserted to equal it). -/
+instance channelRatioDeterminesGA_def (stdEig symEig : ℝ) :
+    ChannelRatioDeterminesGA stdEig symEig (stdEig / symEig) := ⟨rfl⟩
+
 end QOU.Descartes

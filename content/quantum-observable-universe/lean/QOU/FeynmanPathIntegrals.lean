@@ -150,6 +150,11 @@ class MarkovIdentification (sumWeightedTraces markovTrace : ℝ) : Prop where
   /-- The weighted-character sum equals the Markov trace. -/
   identity : sumWeightedTraces = markovTrace
 
+/-- Reflexivity instance: when both arguments are syntactically
+    the same value, the identity holds by `rfl`. -/
+instance markovIdentification_refl (x : ℝ) : MarkovIdentification x x :=
+  ⟨rfl⟩
+
 /-- **Feynman transition amplitude on the knot-type eigenbasis.**
 
     Given a q-Schur–Weyl decomposition V^{⊗n} ≅ ⊕_λ V_λ ⊗ S_λ
