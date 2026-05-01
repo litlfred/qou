@@ -2,6 +2,7 @@ import QOU.AppendixSurreals.Basic
 import QOU.AppendixSurreals.StandardPart
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Algebra.Polynomial.Induction
+import Mathlib.Algebra.MvPolynomial.CommRing
 
 /-!
 # QOU.AppendixSurreals.PolynomialEval — surreal evaluation of real polynomials
@@ -483,5 +484,42 @@ theorem substrateQ_ne_one : substrateQ (K := K) ≠ 1 := by
     rw [h] at this
     linarith
   exact epsilonSurreal_ne_zero K this
+
+/-! ### Multivariate polynomial substrate evaluator
+
+Lifts `MvPolynomial σ ℝ` to a `RingHom` evaluating at any
+`σ`-indexed family of surreal arguments.  Generalises
+`polySurrealEval` from one variable to many.
+
+The standard-part identity for multivariate polynomials parallels the
+single-variable case (each monomial is multilinear in its arguments
+and BM-continuity carries through), but the proof is non-trivial and
+left to a follow-up; the ring-hom packaging is provided here. -/
+
+/-- **Multivariate polynomial surreal evaluator** as a ring hom.
+    Sends `p : MvPolynomial σ ℝ` to its `K`-valuation at the surreal
+    point `g : σ → K`. -/
+noncomputable def mvPolySurrealEvalHom {σ : Type v} (g : σ → K) :
+    MvPolynomial σ ℝ →+* K :=
+  MvPolynomial.eval₂Hom (SurrealField.ofReal (K := K)) g
+
+/-- Convenience function form of `mvPolySurrealEvalHom`. -/
+noncomputable def mvPolySurrealEval {σ : Type v}
+    (p : MvPolynomial σ ℝ) (g : σ → K) : K :=
+  mvPolySurrealEvalHom g p
+
+/-- The **multivariate substrate point**: every coordinate is the
+    substrate parameter `q := 1 + ε`.  This is the canonical point at
+    which to evaluate substrate-physics formulas with multiple
+    fluctuation parameters. -/
+noncomputable def mvSubstratePoint {σ : Type v} : σ → K :=
+  fun _ => substrateQ K
+
+/-- **Multivariate substrate evaluator.**  Lifts a multivariate real
+    polynomial in the substrate fluctuation variables to a `K`-value
+    at the all-substrate point. -/
+noncomputable def mvPolySubstrateEval {σ : Type v}
+    (p : MvPolynomial σ ℝ) : K :=
+  mvPolySurrealEval p mvSubstratePoint
 
 end QOU.AppendixSurreals
