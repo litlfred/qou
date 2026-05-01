@@ -570,6 +570,13 @@ theorem polySubstrateEval_isFinite (p : ℝ[X]) :
   unfold polySubstrateEval
   exact polySurrealEval_isFinite p substrateQ_isFinite
 
+/-- Substrate evaluation as Mathlib's `aeval` at the substrate point. -/
+theorem polySubstrateEval_eq_aeval (p : ℝ[X]) :
+    polySubstrateEval (K := K) p
+      = Polynomial.aeval (substrateQ K) p := by
+  unfold polySubstrateEval
+  exact polySurrealEval_eq_aeval p (substrateQ K)
+
 /-- **Substrate-level proximity classification.**  Two polynomial
     substrate-evaluations are `IsClose` iff their classical values at
     `1` coincide.  This is the cleanest "two surreal predictions agree
