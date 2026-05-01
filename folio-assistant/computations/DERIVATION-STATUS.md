@@ -164,6 +164,24 @@ Computing this marginal requires the full spectral LP at H_6(q)
 (not just the branching rule), because the scaling functions at
 different levels interact non-trivially.
 
+## Calibration discipline (post-2026-05-01 audit)
+
+The framework has **categorically exactly three** external
+calibration inputs (per
+[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
+
+| ID | Calibration | (Co)homology | Role |
+|----|-------------|--------------|------|
+| **CAL-0** | $m_e$ (CODATA) | $H^0$ | Mass scale |
+| **CAL-1** | $m_\mu / m_e$ (CODATA) | $H^1$ | Fixes substrate parameter $q_0$ |
+| **CAL-2** | $Q_\beta$ (PDG) | $H^2$ | Weak / β-decay sector ($E_0$ above) |
+
+The substrate parameter $q_0$ is **not** a fitted parameter beyond
+this budget; it is the $H^1$ calibration. Any **fourth** external
+input is a hard audit failure. The earlier "Energy scale $E_0$:
+calibrated, not independently derived" entry is now correctly framed
+as the $H^2$ calibration — not an additional fit.
+
 ## Open questions (ranked)
 
 1. **k=6 scaling function**: coefficient DERIVED (C_{321}=w·h/2),
@@ -176,12 +194,39 @@ different levels interact non-trivially.
 2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.
    Needs k≥7 exact corrections.
 3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface — not derived.
+   Workplan task **P1.4** owns the derivation; pending.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
-5. **1/α remaining 399 ppb**: J³ correction (Massey products?).
-6. **Energy scale E₀**: calibrated, not independently derived.
+5. **1/α remaining 399 ppb**: J³ correction (Massey products?). Workplan
+   task **P1.7** — depends on $H_{3A}$ Wedderburn coverage (P2.2).
+6. **BW-8 / BW-11 ad-hoc / approx coefficients**: BW-8 (Hook,
+   $|\beta_4|\cdot|\ln\lambda|\cdot m_e$) flagged "ad hoc"; BW-11
+   (pn corr, $2[2][3]/[4]\cdot[2]\cdot m_e$) flagged "approx". Both
+   need either Wenzl-bridge derivation (currently used for the other 9)
+   or LP-shadow-price derivation. Workplan tasks **P1.2 / P1.3**.
 7. **Neutrino mass**: ν = unknot ($K_{0_1}$); $J_\nu(q)=1$; bare-knot
    mass = 0. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$
    (vacuum drag, not knot topology — see
    `content/.../descartes-universe/neutrino-knot.md`). The earlier
    "wrong by 10⁶" claim was a neutron/neutrino confusion (comparing
    neutrino against neutron mass) and is **withdrawn**.
+
+## Audit closures (2026-05-01)
+
+| ID | Status | Notes |
+|----|--------|-------|
+| **CAL-0/1/2** | 🟢 declared | Three-calibration discipline (P0.4 landed) |
+| **SUB-1** ($q_0$) | 🟢 = CAL-1 | $H^1$ calibration; not a separate fit |
+| **NU-1** | 🟢 withdrawn | Neutrino = unknot; bare mass = 0 (P1.6 audit) |
+| **SHELL-1** | 🟢 cleared | Compound-shell calibration *is* CAL-2 (P1.5 audit) |
+| **JSJ-link 8** | 🟢 algebraic recast landed | Hecke $J^\bullet$-stratification (P0.3) |
+| **BW-8** | 🟠 open | Workplan **P1.2** |
+| **BW-11** | 🟠 open | Workplan **P1.3** |
+| **MAG-1** | 🟠 open | Workplan **P1.4** |
+| **ALPHA-2** (399 ppb) | 🟠 open | Workplan **P1.7**, blocked by P2.2 |
+
+See [`docs/audits/2026-05-01-math-framework-deep-audit.md`](../../docs/audits/2026-05-01-math-framework-deep-audit.md)
+for the full audit and
+[`docs/audits/2026-05-01-math-framework-workplan.md`](../../docs/audits/2026-05-01-math-framework-workplan.md)
+for the priority queue.  Open conjectures and their downstream cones
+are tracked in
+[`docs/audits/conjecture-cones.md`](../../docs/audits/conjecture-cones.md).

@@ -367,16 +367,41 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   derivations close.
 - **E**: 0.25 day per refresh.
 
-### P4.2 — Conjecture cone diagram
+### P4.2 — Conjecture cone diagram — ✅ landed
 
-- **D**: Add a downstream-cone diagram for each open `conj:` block
-  to `audits/conjecture-cones.md`. Visualises §5 of audit.
-- **E**: 0.5 day.
+- **D**: ✅ [`conjecture-cones.md`](conjecture-cones.md) generated
+  mechanically from the `uses[]` / `interprets:` graph by
+  [`scripts/build-conjecture-cones.py`](scripts/build-conjecture-cones.py).
+  Each of the 10 audit conjectures gets a Mermaid downstream-cone
+  diagram, kind breakdown, propagation-violation list, and per-chapter
+  table.
+- **Headline findings**:
+  - 4 / 10 audit conjectures have non-zero cones (`conj:mass-endomorphism`,
+    `conj:phi-q-tower-jsj-bridge`, `conj:shared-denominator-cusp-holonomy`,
+    `conj:denominator-zeros-as-sw-critical-points`); 1 maps to a
+    `lem:` block (`lem:motivic-perpetual-obstruction`); 5 are
+    forward-looking labels not yet authored.
+  - 504 distinct blocks fall under at least one open audit conjecture
+    cone — but most propagate **through `rem:calibration-inputs`**, a
+    remark whose `uses[]` list cites `conj:mass-endomorphism` directly.
+    Methodology footnote in the doc flags this as a likely "case (2)"
+    cleanup for P3.1: move the conjecture citation from `uses[]` to
+    `interprets:` on the remark, which collapses ~210 spurious
+    propagation violations.
+- **E**: 0.5 day → done.
 
 ### P4.3 — One-voice / scholarly-voice review
 
 - **D**: After P1/P2 land, run `local/one-voice-audit` over the
   paper to remove status-leak comments, TODOs in prose, etc.
+- **Tier-4 pass note (2026-05-01)**: this task remains pending —
+  scope is `content/quantum-observable-universe/**/*.md` (the paper),
+  not the audit / workplan / DERIVATION-STATUS docs (those legitimately
+  use 🟢🟡🟠🔴 audit-scorecard markers).  A standalone
+  `local/one-voice-audit` invocation should run **after** P1.x / P2.x
+  closures land content edits, since prose changes can re-introduce
+  status leaks.  No content files were touched in the Tier-4 pass, so
+  no sweep is required at this point.
 - **E**: 0.5 day.
 
 ---
