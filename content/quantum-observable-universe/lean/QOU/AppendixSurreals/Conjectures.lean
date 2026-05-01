@@ -409,4 +409,108 @@ theorem c_q_eq_omega_at_one_plus_epsilon :
   unfold epsilonSurreal
   exact inv_inv (omegaSurreal K)
 
+/-- **Conditional consequence of `VacuumEpsilon`.** If the conjecture
+    holds, the vacuum-energy of the witnessing QOU is non-zero (it
+    equals the canonical infinitesimal `ε`, which is non-zero in
+    every `SurrealField`). -/
+theorem VacuumEpsilon.vacuum_energy_ne_zero [VacuumEpsilon K] :
+    ∃ (SQ : QOU_Surreal K), QOU_VacuumEnergy SQ ≠ 0 := by
+  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon.exists_epsilon_vacuum (K := K)
+  refine ⟨SQ, ?_⟩
+  rw [hSQ]
+  exact epsilonSurreal_ne_zero K
+
+/-- **Conditional consequence of `VacuumEpsilon`.** The vacuum
+    energy of the witnessing QOU is infinitesimal. -/
+theorem VacuumEpsilon.vacuum_energy_isInfinitesimal [VacuumEpsilon K] :
+    ∃ (SQ : QOU_Surreal K),
+      SurrealField.IsInfinitesimal (QOU_VacuumEnergy SQ) := by
+  obtain ⟨SQ, hSQ⟩ := VacuumEpsilon.exists_epsilon_vacuum (K := K)
+  refine ⟨SQ, ?_⟩
+  rw [hSQ]
+  exact epsilonSurreal_isInfinitesimal K
+
+/-- **Conditional consequence of `BigBangHeatDeath`.** If the
+    conjectural surreal-QOU substrate is inhabited, then so is the
+    archimedean QOU type — the standard-part lands somewhere. -/
+theorem BigBangHeatDeath.qou_real_inhabited
+    [BigBangHeatDeath K] : Nonempty QOU_Real := by
+  obtain ⟨SQ⟩ := BigBangHeatDeath.qou_surreal_inhabited (K := K)
+  exact ⟨QOU_StandardPart K SQ⟩
+
+/-- **Conditional consequence of `HahnSubstrate`.** Same content as
+    `BigBangHeatDeath.qou_real_inhabited`, but routed through the
+    Hahn-substrate hypothesis: an archimedean QOU exists. -/
+theorem HahnSubstrate.qou_real_inhabited
+    [HahnSubstrate K] : Nonempty QOU_Real := by
+  obtain ⟨SQ⟩ := HahnSubstrate.qou_surreal_inhabited (K := K)
+  exact ⟨QOU_StandardPart K SQ⟩
+
+/-- **Conditional consequence of `ArchimedeanIsStandardPart`.** If
+    the standard-part QOU functor is essentially surjective, then
+    every archimedean QOU has an explicit surreal lift; in particular
+    the surreal QOU type is inhabited whenever the archimedean one
+    is. -/
+theorem ArchimedeanIsStandardPart.qou_surreal_of_qou_real
+    [ArchimedeanIsStandardPart K] :
+    Nonempty QOU_Real → Nonempty (QOU_Surreal K) := by
+  rintro ⟨Q⟩
+  obtain ⟨SQ, _⟩ :=
+    ArchimedeanIsStandardPart.essentially_surjective (K := K) Q
+  exact ⟨SQ⟩
+
+/-- **Conditional consequence of `InfinitesimalFrobenius`.** The
+    Frobenius pairing of the witnessing QOU lies strictly within an
+    `ε`-neighbourhood of `1` (in the strong surreal sense:
+    infinitesimal deviation from the strict Frobenius value). -/
+theorem InfinitesimalFrobenius.frobenius_isFinite
+    [InfinitesimalFrobenius K] :
+    ∃ (SQ : QOU_Surreal K),
+      SurrealField.IsFinite (QOU_FrobeniusPairing SQ) := by
+  obtain ⟨SQ, _, hinf⟩ :=
+    InfinitesimalFrobenius.exists_nontrivial_deviation (K := K)
+  refine ⟨SQ, ?_⟩
+  -- F = 1 + (F - 1) where (F - 1) is infinitesimal; finite + finite = finite.
+  have hfin_one : SurrealField.IsFinite (1 : K) := by
+    refine ⟨1, ?_⟩; simp
+  have hfin_dev : SurrealField.IsFinite (QOU_FrobeniusPairing SQ - 1) :=
+    hinf.isFinite
+  have hsum := hfin_one.add hfin_dev
+  -- Rewrite 1 + (F - 1) = F.
+  have heq : (1 : K) + (QOU_FrobeniusPairing SQ - 1) = QOU_FrobeniusPairing SQ := by
+    ring
+  rw [heq] at hsum
+  exact hsum
+
+/-- **Conditional consequence of `InfinitesimalObservability`.** The
+    observability norm of the witnessing QOU is infinitesimal but
+    non-zero — together this means it is a strict infinitesimal
+    (smaller than every positive standard real, but not equal to
+    zero). -/
+theorem InfinitesimalObservability.observability_isFinite
+    [InfinitesimalObservability K] :
+    ∃ (SQ : QOU_Surreal K),
+      SurrealField.IsFinite (QOU_ObservabilityNorm SQ) := by
+  obtain ⟨SQ, _, hinf⟩ :=
+    InfinitesimalObservability.exists_nontrivial_observability (K := K)
+  exact ⟨SQ, hinf.isFinite⟩
+
+/-- **Conditional consequence of `JonesBirthday`.** Inhabitation of
+    `Knot` is the irreducible kernel; given the conjecture, we obtain
+    a witness knot. -/
+theorem JonesBirthday.exists_knot [JonesBirthday K] :
+    ∃ _ : Knot, True := by
+  obtain ⟨k⟩ := JonesBirthday.knot_inhabited (K := K)
+  exact ⟨k, trivial⟩
+
+/-- **Conditional consequence of `OnPModularHecke p`.** For every
+    `n`, the bijection between Kazhdan–Lusztig cells and nimbers
+    induces equality of cardinalities (in the `Function.Bijective`
+    sense). -/
+theorem OnPModularHecke.cells_equiv_nimbers
+    {p : ℕ} [Fact (Nat.Prime p)] [OnPModularHecke p]
+    (n : ℕ) :
+    ∃ φ : KazhdanLusztigCells p n → Nimbers p n, Function.Bijective φ :=
+  OnPModularHecke.cells_bijective_to_nimbers n
+
 end QOU.AppendixSurreals

@@ -1,4 +1,5 @@
 import QOU.AppendixSurreals.Basic
+import QOU.AppendixSurreals.StandardPart
 
 /-!
 # QOU.AppendixSurreals.Blowup — Named infinite/infinitesimal surreals
@@ -73,6 +74,11 @@ theorem omegaSurreal_mul_epsilonSurreal :
   unfold epsilonSurreal
   exact mul_inv_cancel₀ (omegaSurreal_ne_zero K)
 
+/-- `ε` is non-zero. -/
+theorem epsilonSurreal_ne_zero : epsilonSurreal K ≠ 0 := by
+  unfold epsilonSurreal
+  exact inv_ne_zero (omegaSurreal_ne_zero K)
+
 /-- `ε` is infinitesimal. -/
 theorem epsilonSurreal_isInfinitesimal :
     SurrealField.IsInfinitesimal (epsilonSurreal K) := by
@@ -114,5 +120,59 @@ theorem epsilonSurreal_isInfinitesimal :
   -- Goal: (epsilonSurreal K) < SurrealField.ofReal r
   show (omegaSurreal K)⁻¹ < SurrealField.ofReal r
   exact hinv_lt.trans hofmono
+
+/-! ## The blow-up calculus
+
+A small bundle exposing the named-surreal cutoff `ω`, the
+corresponding infinitesimal unit `ε = 1/ω`, and the renormalisation
+operator `renormalise X C := st (X - C)` that strips a counter-term
+and projects to the real numbers.  This is the Lean form of
+`def:surreal-blowup-calculus`. -/
+
+namespace BlowupCalculus
+
+variable {K}
+
+/-- The named cutoff: `Λ := ω ∈ K`. -/
+abbrev Lambda : K := omegaSurreal K
+
+/-- The named infinitesimal unit: `ε := 1/ω ∈ K`. -/
+noncomputable abbrev Epsilon : K := epsilonSurreal K
+
+/-- **Renormalisation**: subtract a counter-term `C` from a
+    surreal-valued divergent expression `X`, then project to ℝ via
+    `standardPart`.  The result is `0` whenever `X - C` is not
+    finite — i.e. when the counter-term failed to absorb the
+    divergence. -/
+-- Ref: [conway1976] §0
+-- Ref: [ehrlich2012] §3
+noncomputable def renormalise (X C : K) : ℝ :=
+  standardPart (X - C)
+
+/-- A counter-term that exactly cancels the divergence renormalises
+    to `0`. -/
+@[simp]
+theorem renormalise_self (X : K) : renormalise X X = 0 := by
+  unfold renormalise
+  rw [sub_self]
+  exact standardPart_zero
+
+/-- If the counter-term recovers `X` up to an infinitesimal, the
+    renormalised value is `0`. -/
+theorem renormalise_eq_zero_of_isInfinitesimal {X C : K}
+    (h : SurrealField.IsInfinitesimal (X - C)) :
+    renormalise X C = 0 :=
+  standardPart_of_infinitesimal h
+
+/-- A real counter-term subtracted from a real expression
+    renormalises to the real difference. -/
+theorem renormalise_ofReal (x c : ℝ) :
+    renormalise (SurrealField.ofReal (K := K) x)
+                (SurrealField.ofReal (K := K) c) = x - c := by
+  unfold renormalise
+  rw [← map_sub]
+  exact standardPart_ofReal _
+
+end BlowupCalculus
 
 end QOU.AppendixSurreals
