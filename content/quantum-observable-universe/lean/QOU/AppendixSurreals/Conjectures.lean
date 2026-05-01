@@ -1,11 +1,13 @@
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Topology.Algebra.Polynomial
 import Mathlib.Topology.Order.Basic
 import QOU.AppendixSurreals.Basic
 import QOU.AppendixSurreals.StandardPart
 import QOU.AppendixSurreals.SignSequence
 import QOU.AppendixSurreals.Blowup
 import QOU.AppendixSurreals.BirthdayGrading
+import QOU.AppendixSurreals.PolynomialEval
 
 /-!
 # QOU.AppendixSurreals.Conjectures — Open conjectures as classes
@@ -929,6 +931,31 @@ instance ClassicalLimitIsStandardPart.instProvable :
     exact (isFinite_decomposition hfin_F).unique hspec hinf
   -- classicalLimit f 1 = f 1 by continuity.
   rw [hsp, classicalLimit_of_tendsto htends]
+
+/-- **Polynomial corollary** of `ClassicalLimitIsStandardPart`.
+
+    For every real polynomial `p : ℝ[X]`, the standard-part of the
+    surreal lift `polySurrealEval p` evaluated at `1 + ε` equals the
+    classical limit of `p.eval` at `1`.  Both hypotheses of the
+    conjecture class are automatic:
+
+    - **Continuity** (hypothesis 1): every polynomial `ℝ → ℝ` is
+      continuous (`Polynomial.continuous`).
+    - **BM-continuity** (hypothesis 2): the surreal lift sends
+      infinitesimal perturbations of finite arguments to
+      infinitesimal perturbations of values
+      (`polySurrealEval_witness`, proved unconditionally).
+
+    Together, the polynomial conjecture holds **without** any
+    additional axiom — it is a fully provable special case of
+    `ClassicalLimitIsStandardPart`. -/
+theorem polySurrealEval_standardPart_eq_classicalLimit (p : ℝ[X]) :
+    standardPart (polySurrealEval (K := K) p (1 + epsilonSurreal K))
+      = classicalLimit (fun r => p.eval r) 1 :=
+  ClassicalLimitIsStandardPart.limit_eq_standardPart
+    (fun r => p.eval r) (polySurrealEval p)
+    ((p.continuous.tendsto 1).mono_left nhdsWithin_le_nhds)
+    (polySurrealEval_witness p (epsilonSurreal_isInfinitesimal K))
 
 /-! ### Conjecture proof sketches (deep content)
 
