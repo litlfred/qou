@@ -1,15 +1,16 @@
 **Conjecture (Archimedean limit of the partial product).**
-*Let $q \in (0, 1)$ be the substrate parameter, let $x \in (0, 1)$ be
-a state variable, and let $\Phi_n(x; q)$ be the
+*Let $q$ be the substrate parameter — the QOU substrate has
+$q_0 \approx 1.11$ — and let $x \in (0, 1)$ be a state variable so
+that $|x q^k| < 1$ along the truncation. Let $\Phi_n(x; q)$ be the
 $q$-Pochhammer partial product
 ([definition](#def:q-pochhammer-partial-product)).
-Under the joint Faddeev scaling $q \to 1$, $n \to \infty$, $n(1-q) \to
-\infty$, the rescaled logarithm of the partial product converges to
-the classical dilogarithm:*
+Under the joint Faddeev scaling $q \to 1$, $n \to \infty$,
+$n\lvert 1 - q\rvert \to \infty$, the rescaled logarithm of the
+partial product converges to the classical dilogarithm:*
 
 $$
   \boxed{\;
-  \lim_{\substack{q \to 1^- \\ n \to \infty \\ n(1-q) \to \infty}}
+  \lim_{\substack{q \to 1 \\ n \to \infty \\ n |1-q| \to \infty}}
   (1 - q) \cdot \log \Phi_n(x; q)
   \;=\;
   \mathrm{Li}_2(x)
@@ -18,11 +19,14 @@ $$
   \;}
 $$
 
-*Equivalently, the algebraic logarithmic singularity at $x = q^{-(n-1)}$
-of the rightmost denominator factor $(1 - x q^{n-1})$ converges, under
-the Archimedean realization $\tau_{\mathrm{arch}} = \pi_\infty \circ
-\tau$ ([archimedean realization functor](#def:archimedean-realization-functor)),
-to the logarithmic singularity at $x = 1$ of the integrand
+*The limit is taken from $q \to 1^-$ in the convergence regime
+$|q| < 1$ and is extended to $q \to 1^+$ (the QOU substrate side) by
+analytic continuation. Equivalently, the algebraic logarithmic
+singularities of the denominator factors $(1 - x q^k)$ at
+$x = q^{-k}$ converge, under the Archimedean realization
+$\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
+([archimedean realization functor](#def:archimedean-realization-functor)),
+to the logarithmic singularity at $t = 1$ of the integrand
 $-\log(1-t)/t$ in the classical $\mathrm{Li}_2$.*
 
 ## Saddle-point story

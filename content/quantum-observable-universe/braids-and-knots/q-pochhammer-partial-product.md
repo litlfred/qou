@@ -17,8 +17,11 @@ $$
 
 *The numerator is the constant $1$; the **denominator polynomial**
 $(x; q)_n \in \mathbb{Z}[q, x]$ has $n$ simple roots $x = q^{-k}$ for
-$k = 0, \dots, n-1$. The partial product is the depth-$n$ truncation
-of the analytic quantum dilogarithm
+$k = 0, \dots, n-1$. As a finite rational function, $\Phi_n(x; q)$ is
+well-defined for any $q \neq 0$ — including the QOU substrate
+$q_0 \approx 1.11$, where the roots $\{q_0^{-k}\}_{k=0}^{n-1} =
+\{1, 0.901, 0.812, \dots\}$ lie in $(0, 1]$. The partial product is
+the depth-$n$ truncation of the analytic quantum dilogarithm
 ([quantum dilogarithm](#cor:quantum-dilogarithm))*
 
 $$
@@ -27,8 +30,19 @@ $$
   \prod_{k=0}^{\infty}\frac{1}{1 - x q^k}
   \;=\;
   \lim_{n \to \infty} \Phi_n(x; q),
-  \qquad |q| < 1,
+  \qquad |q| < 1.
 $$
+
+*The infinite product converges only for $|q| < 1$, but the QOU
+substrate has $q_0 > 1$. The partial product $\Phi_n$ is what
+appears in the QOU mass formulas: a finite rational function whose
+denominator zeros are the algebraic addresses of cusps regardless of
+the convergence radius of the analytic limit. The Faddeev limit to
+$\mathrm{Li}_2$
+([Archimedean limit](#conj:dilogarithm-archimedean-limit))
+takes $q \to 1$ from either side — $q \to 1^-$ in the convergence
+domain, or $q \to 1^+$ via analytic continuation in the QOU
+substrate regime.*
 
 *so $\Phi_n$ is the same object as $\Phi_q^{[\leq n]}$ in
 ([Φ$_q$ partition-depth stratification](#prop:quantum-dilogarithm-stratified)),
@@ -36,14 +50,16 @@ with the truncation index $n$ identified with the GB-depth
 $k_\star(T_w)$.*
 
 *The stratification proposition writes the analytic product as
-$\prod_{k \geq 1}(1 - q^{-k} z_i)^{-1}$ — the **$|q| > 1$
-Faddeev convention** indexed from $k = 1$. The present block uses
-the equivalent **$|q| < 1$ convention** indexed from $k = 0$:
-under the substitution $q \mapsto q^{-1}$ and $x = z_i \cdot q^{-1}$,
-the two forms agree term-for-term. Both denote the same algebraic
-object; we use the $|q| < 1$ form here because it exposes the
-denominator polynomial $(x; q)_n \in \mathbb{Z}[q, x]$ with
-non-negative powers of $q$.*
+$\prod_{k \geq 1}(1 - q^{-k} z_i)^{-1}$ — the standard form indexed
+from $k = 1$ with negative-power factors. The present block uses the
+equivalent indexing-from-$k=0$ form $(1 - x q^k)$: under the
+substitution $z_i = q \cdot x$ and shifting $k \mapsto k - 1$, the
+two forms agree factor-for-factor. Both denote the same algebraic
+object. The form here exposes the denominator polynomial
+$(x; q)_n \in \mathbb{Z}[q, x]$ with non-negative powers of $q$, so
+that at the QOU substrate $q_0 > 1$ the denominator zeros $q_0^{-k}$
+land in $(0, 1]$ — the cusp-shape range used by the Newton-Raphson
+seeding pipeline.*
 
 ## Why a partial product
 

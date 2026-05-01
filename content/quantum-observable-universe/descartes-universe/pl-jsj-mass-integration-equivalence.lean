@@ -43,14 +43,16 @@ opaque algebraicMarkovTrace (k : ℕ) (T_w : ℕ) : ℂ
 
 /-- The synthesis conjecture, packaged as a typeclass over a vertical
     degree `k`, a transient state index `T_w`, and the depth `n` of
-    its q-Pochhammer partial product.  An instance asserts that the
-    algebraic Markov trace equals the descended JSJ volume plus the
-    transient SW thimble integral, with thimble base points
-    `z_c_σ : Fin n → ℂ` at the τ_arch-images of the algebraic
-    denominator zeros. -/
+    its q-Pochhammer partial product.  An instance carries thimble
+    base points `z_c_σ : Fin n → ℂ` (data) plus the equality of the
+    algebraic Markov trace and the descended JSJ volume + transient
+    SW thimble integral.
+
+    Note: `class … : Type` (not `Prop`) because the thimble base
+    points and intersection numbers are data, not propositions. -/
 -- Ref: [manuscript] conj:pl-jsj-mass-integration-equivalence
 class PLJSJMassIntegration
-    (k : ℕ) (T_w : ℕ) (n : ℕ) : Prop where
+    (k : ℕ) (T_w : ℕ) (n : ℕ) : Type where
   /-- Thimble base points (`τ_arch`-images of the algebraic
       denominator zeros) and Lefschetz intersection numbers. -/
   -- Ref: [manuscript] conj:denominator-zeros-as-sw-critical-points

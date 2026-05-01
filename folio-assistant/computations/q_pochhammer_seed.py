@@ -25,6 +25,7 @@ yet drive a SnapPy Newton iteration; that is the next pipeline step.
 from __future__ import annotations
 
 import sys
+from functools import reduce
 from pathlib import Path
 
 import numpy as np
@@ -33,6 +34,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from q_parameter import Q as Q0_FLOAT
 from witness_base import WitnessBuilder
+
+# Maximum truncation depth probed in the witness.  Bumping this gives
+# more algebraic seed candidates per critical point, at the cost of
+# extra polynomial multiplications in `q_pochhammer_denom_poly`.
+MAX_DEPTH = 4
 
 
 # ── q-Pochhammer denominator polynomial ─────────────────────────
@@ -77,21 +83,12 @@ def color_tube_discriminant_roots() -> list[complex]:
     d_p = np.array([1.0, 2.0, 3.0, 4.0])
 
     t1 = 18 * P.polymul(P.polymul(P.polymul(a_p, b_p), c_p), d_p)
-    b3 = P.polymul(P.polymul(b_p, b_p), b_p)
-    t2 = -4 * P.polymul(b3, d_p)
-    b2 = P.polymul(b_p, b_p)
-    c2 = P.polymul(c_p, c_p)
-    t3 = P.polymul(b2, c2)
-    c3 = P.polymul(P.polymul(c_p, c_p), c_p)
-    t4 = -4 * P.polymul(a_p, c3)
-    d2 = P.polymul(d_p, d_p)
-    t5 = -27 * P.polymul(P.polymul(a_p, a_p), d2)
+    t2 = -4 * P.polymul(P.polypow(b_p, 3), d_p)
+    t3 = P.polymul(P.polypow(b_p, 2), P.polypow(c_p, 2))
+    t4 = -4 * P.polymul(a_p, P.polypow(c_p, 3))
+    t5 = -27 * P.polymul(P.polypow(a_p, 2), P.polypow(d_p, 2))
 
-    max_len = max(len(t) for t in [t1, t2, t3, t4, t5])
-    delta_coeffs = np.zeros(max_len)
-    for t in [t1, t2, t3, t4, t5]:
-        delta_coeffs[:len(t)] += t
-
+    delta_coeffs = reduce(P.polyadd, [t1, t2, t3, t4, t5])
     roots = P.polyroots(delta_coeffs)
     return [complex(r) for r in roots]
 
@@ -114,11 +111,12 @@ def pair_seeds_to_critical_points(
     "Newton-Raphson seed-to-target distance" recorded in the
     witness.
     """
+    if not critical_points:
+        return []
+    cp_array = np.array(critical_points)
     pairs = []
     for k, seed in enumerate(seeds):
-        if not critical_points:
-            continue
-        dists = [abs(seed - z_c) for z_c in critical_points]
+        dists = np.abs(seed - cp_array)
         idx = int(np.argmin(dists))
         pairs.append({
             "k": k,
@@ -147,9 +145,10 @@ def main() -> None:
         print(f"  z_c[{i}] = {zc.real:+.8f} {sgn} {abs(zc.imag):.8f}i")
     print()
 
-    # Algebraic seeds at depths n = 1, 2, 3 (smallest non-trivial cases)
+    # Algebraic seeds at depths n = 1, ..., MAX_DEPTH (smallest non-
+    # trivial cases).
     depth_results = []
-    for n in (1, 2, 3, 4):
+    for n in range(1, MAX_DEPTH + 1):
         seeds = q_pochhammer_denom_roots(q0, n)
         pairs = pair_seeds_to_critical_points(seeds, crit_pts)
         print(f"depth n = {n}: {len(seeds)} algebraic seeds")
@@ -184,7 +183,7 @@ def main() -> None:
     )
     w.set_content_block("conj:shared-denominator-cusp-holonomy")
     w.add_parameter("q0", float(q0))
-    w.add_parameter("max_depth", 4)
+    w.add_parameter("max_depth", MAX_DEPTH)
 
     w.add_data("pl_discriminant_roots", [
         {"index": i, "z_c_real": float(zc.real), "z_c_imag": float(zc.imag)}
