@@ -216,13 +216,62 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
 -- Axiom: q-integer expansion bound; requires series-remainder infrastructure.
 -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
 
-/-- **q-integer ratio bound (small `m`) — typeclass (Pattern 4).**
+/-- **q-integer ratio bound (m = 1).** Trivially `[1]_q / 1 = 1`,
+    so the bound holds with LHS = 0. -/
+theorem qInt_ratio_bound_m1 (q : ℝ) (hq : q > 1) :
+    |qIntReal q 1 / 1 - 1| ≤ (q - q⁻¹) ^ 2 * 1 / 6 := by
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_pos : q > 0 := by linarith
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  unfold qIntReal
+  rw [if_neg hq_ne_one]
+  have : (q ^ 1 - q⁻¹ ^ 1) / (q - q⁻¹) = 1 := by field_simp
+  rw [this]
+  simp
+  positivity
+
+/-- **q-integer ratio bound (small `m`) — typeclass.**
     Series-remainder bound on `[m]_q/m`, restricted to `m ≤ 4` and
-    `q < 3/2` (the bound is false on the wider interval). -/
+    `q < 3/2` (the bound is false on the wider interval).
+    Cases `m = 1, 2` are *proved* directly via
+    `qInt_ratio_bound_m1` and `qInt_ratio_bound_m2`; cases
+    `m = 3, 4` are recorded per-instance pending the
+    full `sinh(mθ)/(m sinh θ)` series-remainder formalisation. -/
 class QIntRatioBoundSmall (q : ℝ) (_hq : q > 1) (_hq2 : q < 3/2)
     (m : ℕ) (_hm : 1 ≤ m) (_hm4 : m ≤ 4) : Prop where
   /-- The expansion bound. -/
   bound : |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6
+
+/-- **Default instance for `m = 1`** — proved from
+    `qInt_ratio_bound_m1`. -/
+instance qIntRatioBoundSmall_one (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
+    (h1 : 1 ≤ 1) (h4 : 1 ≤ 4) :
+    QIntRatioBoundSmall q hq hq2 1 h1 h4 :=
+  ⟨by exact_mod_cast qInt_ratio_bound_m1 q hq⟩
+
+/-- **Default instance for `m = 2`** — proved from
+    `qInt_ratio_bound_m2`. -/
+instance qIntRatioBoundSmall_two (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
+    (h1 : 1 ≤ 2) (h4 : 2 ≤ 4) :
+    QIntRatioBoundSmall q hq hq2 2 h1 h4 := by
+  refine ⟨?_⟩
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_pos : q > 0 := by linarith
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  have h_eq : qIntReal q 2 / 2 = (q + q⁻¹) / 2 := by
+    unfold qIntReal
+    rw [if_neg hq_ne_one]
+    have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+    field_simp
+    ring
+  rw [h_eq]
+  have hbound := qInt_ratio_bound_m2 q hq
+  -- Convert RHS: (q-q⁻¹)² * 2 / 6 = (q-q⁻¹)² / 3
+  have hcoerce : ((2 : ℕ) : ℝ) = 2 := by norm_num
+  rw [hcoerce]
+  linarith
 
 /-- Per-instance form. -/
 theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
