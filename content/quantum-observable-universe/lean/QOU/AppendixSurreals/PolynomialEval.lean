@@ -350,4 +350,40 @@ theorem standardPart_polySubstrateEval (p : ℝ[X]) :
   rw [h1]
   exact standardPart_polySurrealEval p 1 (epsilonSurreal_isInfinitesimal K)
 
+/-! ### `HahnSeries`-shaped: polynomial-in-`ε` (finite-support Hahn lift)
+
+The map `p ↦ Σ_n p.coeff n · ε^n`, viewed as the finite-support
+restriction of a Hahn-series embedding `HahnSeries ℕ ℝ → K`.
+
+This is a `RingHom` `ℝ[X] →+* K` packaged via `Polynomial.eval₂RingHom`,
+giving the canonical "polynomial-as-Hahn-series-in-ε" interpretation of
+the substrate. -/
+
+/-- The **polynomial-in-`ε` evaluator** as a ring homomorphism
+    `ℝ[X] →+* K`.  Sends `p` to `Σ_n p.coeff n · ε^n`, the canonical
+    finite-support Hahn-series presentation of `p` lifted to `K`. -/
+noncomputable def polynomialInEpsilon : ℝ[X] →+* K :=
+  Polynomial.eval₂RingHom (SurrealField.ofReal (K := K))
+    (epsilonSurreal K)
+
+/-- Unfolding: `polynomialInEpsilon p = p.eval₂ ofReal ε`. -/
+theorem polynomialInEpsilon_apply (p : ℝ[X]) :
+    polynomialInEpsilon (K := K) p
+      = polySurrealEval p (epsilonSurreal K) := rfl
+
+/-- **Standard-part of `polynomialInEpsilon p` is the constant term**
+    (`p.coeff 0`).  Algebraic content: in the Hahn-series view, the
+    standard-part picks out the coefficient at exponent `0`. -/
+theorem standardPart_polynomialInEpsilon (p : ℝ[X]) :
+    standardPart (polynomialInEpsilon (K := K) p) = p.coeff 0 := by
+  rw [polynomialInEpsilon_apply]
+  -- ε = ofReal 0 + ε
+  have hε : epsilonSurreal K =
+      SurrealField.ofReal (K := K) 0 + epsilonSurreal K := by
+    rw [map_zero, zero_add]
+  rw [hε]
+  -- standardPart (polySurrealEval p (ofReal 0 + ε)) = p.eval 0 = p.coeff 0
+  rw [standardPart_polySurrealEval p 0 (epsilonSurreal_isInfinitesimal K)]
+  exact (Polynomial.coeff_zero_eq_eval_zero p).symm
+
 end QOU.AppendixSurreals
