@@ -44,22 +44,30 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   caller goes through Vol(K).
 - **E**: 1–2 hours (mostly cherry-pick + caller fixup).
 
-### P0.3 — JSJ algebraic reformulation (audit gap 8a)
+### P0.3 — JSJ algebraic reformulation (audit gap 8a) — ✅ landed (main side)
 
-- **W**: §1 link 8. The JSJ statement currently reads as
-  3-manifold/topological. Its algebraic-side reformulation must be
-  in terms of the Hecke-tower descent filtration's "rigid pieces"
-  (those satisfying a strong descent invariance), not as
-  3-manifold pieces.
-- **D**: Recast `phi-q-tower-jsj-bridge.md` and
-  `pl-jsj-mass-integration-equivalence.md` so that the JSJ
-  decomposition is stated as a Wedderburn-block / descent-tower
-  partition on the algebraic side. ℂ-side JSJ remains as the
-  τ-image, identified via a (still 🟡) conjecture.
-- **B**: blocked by nothing.
-- **S**: every algebraic-side use of "JSJ piece" can be parsed
-  without 3-manifold language.
-- **E**: 1 day.
+- **W**: §1 link 8. The JSJ statement read as 3-manifold /
+  topological; the algebraic-side reformulation needed Hecke-tower
+  descent language.
+- **D**: ✅ `phi-q-tower-jsj-bridge.md` recast: a new
+  *Algebraic-side statement of the JSJ stratification* section
+  explicitly identifies the "algebraic JSJ" as the
+  $J^\bullet$-graded stratification of $H_n(q)$ by descent-filtration
+  depth (depth 0 = descended summand; depth 1 = single-generator
+  $\Phi_q$; depth 2 = adjacent-pair $z^2 \Phi_q$). This stratification
+  lives entirely in $H_n(q)$ and is $\mathbb{Q}(q)$-rational —
+  defined without reference to 3-manifolds, hyperbolic volume, or
+  any τ-image data. The conjecture below identifies it with the
+  geometric JSJ under $\tau_{\mathrm{arch}}$; only that
+  identification crosses the Archimedean wall.
+- **D (deferred)**: `pl-jsj-mass-integration-equivalence.md` lives
+  on `claude/quantum-dilogarithm-implementation-DJmlU` and has not
+  yet landed on `main`. When it does, apply the same recast there.
+- **B**: nothing.
+- **S**: ✅ every algebraic-side use of "JSJ piece" in
+  `phi-q-tower-jsj-bridge.md` can be parsed without 3-manifold
+  language. Validation clean.
+- **E**: 1 day → done (main side).
 
 ### P0.4 — Three-calibration-discipline block (audit §2·A) — ✅ landed
 
