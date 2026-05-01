@@ -1,0 +1,34 @@
+{
+  "audit": "P1.3a \u2014 BW vs Wenzl-bridge vs LP-shadow-price equivalence",
+  "generated": "2026-05-01T19:28:53.987785+00:00",
+  "claim": "For self-conjugate partitions, the three derivation paths produce coefficients that are rationally related by explicit factors of h = q-q^{-1}: BW form \u03b2_\u03bb = -w_\u03bb/2; shadow-price C_\u03bb = w_\u03bb \u00b7 h/2; Wenzl-bridge y_\u03bb = w_\u03bb for \u03ba_\u03bb = 0 (self-conjugate); ratios BW/shadow = -1/h, BW/Wenzl = -1/2, shadow/Wenzl = h/2.",
+  "tested_partitions": [
+    {
+      "lambda": [
+        2,
+        2
+      ],
+      "dim_q_squared_over_factorial": "(q**6 + q**2)/(q**8 + 3*q**6 + 4*q**4 + 3*q**2 + 1)",
+      "ratios": {
+        "bw_over_shadow": "-q/(q**2 - 1)",
+        "bw_over_wenzl": "-1/2",
+        "shadow_over_wenzl": "(q**2 - 1)/(2*q)"
+      },
+      "ratios_match_expected": {
+        "bw_over_shadow": true,
+        "bw_over_wenzl": true,
+        "shadow_over_wenzl": true
+      }
+    },
+    {
+      "lambda": [
+        3,
+        2,
+        1
+      ],
+      "C_explicit_minus_C_via_w": "0",
+      "self_consistent": true
+    }
+  ],
+  "conclusion": "The three forms are NOT independent results. They are the same Wedderburn-block invariant w_\u03bb scaled by explicit factors: BW supplies the unsigned mass coefficient (w_\u03bb/2); LP shadow-price multiplies by h to give the LP dual variable; Wenzl-bridge tracks y_\u03bb = \u00b1w_\u03bb with sign determined by the content sum \u03ba_\u03bb = \u03a3 c(x). For self-conjugate \u03bb (\u03ba_\u03bb = 0), y_\u03bb = w_\u03bb. No independent fits; all three are the same w_\u03bb."
+}

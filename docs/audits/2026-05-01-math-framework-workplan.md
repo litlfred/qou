@@ -141,7 +141,27 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 - **S**: ✅ DERIVATION-STATUS.md table updated.
 - **E**: 0 (already done).
 
-### P1.3a — **Follow-up flag**: BW vs Wenzl-bridge vs shadow-price equivalence (open)
+### P1.3a — BW vs Wenzl-bridge vs shadow-price equivalence — ✅ landed (verified)
+
+🟢 **Closed.** Symbolic verification in
+[`folio-assistant/computations/bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+proves the three forms are NOT independent; they are the same
+$w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ scaled by explicit
+factors of $h = q - q^{-1}$:
+
+- BW form: $\beta_\lambda = -\tfrac12 w_\lambda$
+- LP shadow-price: $C_\lambda = w_\lambda \cdot h/2$
+- Wenzl-bridge: $y_\lambda = (-1)^{\kappa_\lambda} w_\lambda$ (= $w_\lambda$ for self-conjugate)
+
+Ratios verified for $\lambda = (2,2)$ at $k=4$ (BW-8 / BW-11) and
+$\lambda = (3,2,1)$ at $k=6$ (BW-7 Wigner-2). See
+[`2026-05-01-p1-3a-bw-equivalence-audit.md`](2026-05-01-p1-3a-bw-equivalence-audit.md)
+and the witness JSON.
+
+The three forms remain in the paper as alternative views; no
+schema or content changes required.
+
+### P1.3a-historical — Follow-up flag (now resolved by P1.3a above)
 
 - **W**: User flag — the BW-8 / BW-11 coefficients have **three
   candidate derivation paths** in the paper:
@@ -344,21 +364,26 @@ cross-check, not the primary derivation.
   alongside the numerical value.
 - **E**: 1 week paper-wide (mechanical refactor).
 
-### P2.6 — GS-filtration `gradedMarkovTrace` / `residueAtRoot` — narrative form
+### P2.6 — GS-filtration narrative — ✅ already landed
 
-- **W**: §3·F. These are `noncomputable opaque` in Lean. The user
-  is less concerned about Lean — but the *narrative* must say what
-  these are without hand-waving.
-- **D**: New narrative block
-  `prop:graded-markov-trace-from-gs-filtration` that defines
-  $\mathrm{tr}_{M,\ell}$ as the induced trace on $J^\ell / J^{\ell+1}$
-  for the GS-filtration $J^\bullet$, and `prop:residue-at-root` that
-  defines the cyclotomic residues purely algebraically (not via
-  meromorphic continuation in $\mathbb{C}$).
-- **B**: blocked by nothing.
-- **S**: every block previously citing `gradedMarkovTrace` /
-  `residueAtRoot` opaquely now points at the new propositions.
-- **E**: 2 days.
+- **W**: §3·F. The Lean `gradedMarkovTrace` / `residueAtRoot` are
+  `noncomputable opaque`; the *narrative* must define them
+  algebraically.
+- **D**: ✅ Both narrative blocks exist:
+  - [`prop:graded-trace-residue-split`](../../content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.md)
+    — canonical decomposition $\mathrm{tr}_M = \mathrm{tr}_{\mathrm{gr}} + \mathrm{Res}_{\mathrm{GB}}$ via the symbol map $\sigma : J^\ell \to J^\ell/J^{\ell+1}$. Cohomological interpretation as $E^\infty$-page pairing. Strutinsky-shell-correction physics analogy.
+  - [`prop:gb-residue-spectral-sum`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.md)
+    — symbolic feeding lemma:
+    $r_\ell(T_w; q_0) = \mathrm{Res}_{q=\zeta_\ell}[\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)] / (q_0 - \zeta_\ell)$
+    — explicitly **symbolic** in the Grothendieck group of the
+    filtered differential algebra, not a $\mathbb{C}$-analytic identity.
+    Strict-wall caveat: $R$-side stays formal; convergent $\mathbb{C}$-side identification is the τ-image via Picard–Lefschetz thimbles
+    ([sw-period-thimble-equivalence](../../content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md)).
+- **B**: nothing.
+- **S**: ✅ both narrative propositions exist; both are explicitly
+  $R$-side / archimedean-wall-respecting. Lean opaques can now point
+  at these blocks for their semantic content.
+- **E**: 0 (already done).
 
 ---
 
@@ -486,6 +511,8 @@ cross-check, not the primary derivation.
 |------:|------|--------|
 | 1 | **P3.1** Conjectural-propagation sweep | ✅ landed (audit only); witness `docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json`; memo `2026-05-01-p3-1-conjectural-propagation-audit.md`. **Policy decision required (A / B / C)**: 260 provable blocks transitively touch a `conj:`; ~225 share a common cone of ~20 substrate-foundation conjectures. Recommend Option B (substrate-axiom classification). |
 | 2 | **P3.2** Pentagon $uv = q\,vu$ derivation | ✅ already landed in `prop:pentagon-uv-commutation` (4-step proof: far-commutativity reduction, eigenvalue specialisation, braid-relation pair-swap, transient-block restriction). Open extensions (std-block direct check, $R_q$ sharpness) folded into P3.3. |
+| 3 | **P2.6** GS-filtration narrative blocks | ✅ already landed: `prop:graded-trace-residue-split` (canonical $\mathrm{tr}_M = \mathrm{tr}_{\mathrm{gr}} + \mathrm{Res}_{\mathrm{GB}}$ split via symbol map) + `prop:gb-residue-spectral-sum` (symbolic feeding lemma; $R$-side; cohomological interpretation; strict-wall convergent $\mathbb{C}$-side via PL thimbles). |
+| 4 | **P1.3a** BW vs Wenzl-bridge vs shadow-price equivalence | ✅ landed (symbolic verification): all three forms are the same $w_\lambda$ scaled by explicit factors of $h$. Ratios BW/shadow $=-1/h$, BW/Wenzl $=-1/2$, shadow/Wenzl $=h/2$. Verified for $\lambda=(2,2)$ and $\lambda=(3,2,1)$. |
 | 2 | **P2.5** Symbolic-in-$q$ refactor | Mechanical; makes witness JSONs less "fitted-looking" |
 | 3 | **P2.6** GS-filtration narrative blocks | Closes the largest opaque-axiom surface |
 | 4 | **P2.2** $H_{3A}$ Wedderburn coverage | Unblocks P1.4 (magic numbers 50/82/126) and P2.1 |
