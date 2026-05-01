@@ -373,6 +373,7 @@ export default chapter({
         "kashaev-volume-density",
         "kashaev-as-archimedean-realization",
         "phi-q-piece",
+        "phi-q-tower-algebraic-stratification",
         "kashaev-volume-conjecture",
         "phi-q-tower-jsj-bridge",
         "quantum-bloch-group",

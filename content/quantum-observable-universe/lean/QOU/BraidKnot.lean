@@ -8,6 +8,7 @@ import QOU.BraidKnot.ConfinementPhaseStratification
 import QOU.BraidKnot.ThreeCalibrationInputs
 import QOU.BraidKnot.GradedMarkovTraceFromGSFiltration
 import QOU.BraidKnot.ResidueAtRootFromGSFiltration
+import QOU.BraidKnot.PhiQTowerAlgebraicStratification
 
 /-!
 # BraidKnot — Module Index
