@@ -177,6 +177,23 @@ theorem fromUnion_kappa_zero_of_double_magic
     kappa (Composite.fromUnion λ_Z λ_N).λ_A = 0 :=
   doubleMagic_kappa_zero (Composite.fromUnion λ_Z λ_N) ⟨hZ, hN⟩
 
+/-- **LR-rigidity proved for the trivial composite.** If both
+    constituents are self-conjugate, then the trivial union composite
+    is itself self-conjugate. This is `DoubleMagicConjecture.lr_rigidity`
+    proved without axioms in the trivial case — the disjoint multiset
+    union of two negation-symmetric multisets is negation-symmetric.
+
+    The honest LR fusion produces a *richer* composite via the
+    Littlewood–Richardson rule, but content additivity and
+    self-conjugacy preservation hold at the union level too, giving
+    a non-vacuous structural lower bound. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+theorem fromUnion_lr_rigidity
+    (λ_Z λ_N : YoungDiagram)
+    (h : IsDoubleMagic (Composite.fromUnion λ_Z λ_N)) :
+    isSelfConjugate (Composite.fromUnion λ_Z λ_N).λ_A :=
+  unionDiagram_isSelfConjugate h.1 h.2
+
 /-! ## §5  Downstream — double-magic ⇒ homological condensation -/
 
 /-- **Capstone theorem (proved, conditional on the three conjectures).**

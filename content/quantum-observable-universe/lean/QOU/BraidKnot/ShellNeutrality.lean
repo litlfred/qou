@@ -165,6 +165,31 @@ theorem kappa_unionDiagram_empty_right (λ : YoungDiagram) :
     kappa (unionDiagram λ emptyDiagram) = kappa λ := by
   simp [kappa_unionDiagram, kappa_emptyDiagram]
 
+/-- **Self-conjugacy is preserved under disjoint union.** If both
+    `λ` and `μ` are self-conjugate, so is `unionDiagram λ μ`. Pure
+    Multiset arithmetic — `Multiset.map_add` plus the constituent
+    self-conjugacies' contents equalities. No axioms.
+
+    This is the abstract analogue of the LR-rigidity claim for the
+    trivial union composite. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+theorem unionDiagram_isSelfConjugate
+    {λ μ : YoungDiagram}
+    (hλ : isSelfConjugate λ) (hμ : isSelfConjugate μ) :
+    isSelfConjugate (unionDiagram λ μ) := by
+  -- Extract contents equalities from constituent self-conjugacies.
+  have e_λ : λ.contents = λ.contents.map (fun c => -c) := by
+    have h := congr_arg YoungDiagram.contents hλ
+    simpa [conjugate] using h
+  have e_μ : μ.contents = μ.contents.map (fun c => -c) := by
+    have h := congr_arg YoungDiagram.contents hμ
+    simpa [conjugate] using h
+  -- Show union = conjugate union: same n by construction, contents equal.
+  show unionDiagram λ μ = conjugate (unionDiagram λ μ)
+  unfold conjugate unionDiagram
+  congr 1
+  rw [Multiset.map_add, ← e_λ, ← e_μ]
+
 /-! ### Singleton-box diagrams -/
 
 /-- The single-box Young diagram with content `c`. Used as the base
