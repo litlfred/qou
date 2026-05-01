@@ -215,9 +215,21 @@ theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     Ref: [stanley1999] §7.1 -/
 -- Axiom: q-integer expansion bound; requires series-remainder infrastructure.
 -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
-axiom qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
-    (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
-    |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6
+
+/-- **q-integer ratio bound (small `m`) — typeclass (Pattern 4).**
+    Series-remainder bound on `[m]_q/m`, restricted to `m ≤ 4` and
+    `q < 3/2` (the bound is false on the wider interval). -/
+class QIntRatioBoundSmall (q : ℝ) (_hq : q > 1) (_hq2 : q < 3/2)
+    (m : ℕ) (_hm : 1 ≤ m) (_hm4 : m ≤ 4) : Prop where
+  /-- The expansion bound. -/
+  bound : |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6
+
+/-- Per-instance form. -/
+theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
+    (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4)
+    [hi : QIntRatioBoundSmall q hq hq2 m hm hm4] :
+    |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 :=
+  hi.bound
 
 /-! ## §2  q-factorial perturbation -/
 
@@ -237,10 +249,19 @@ noncomputable def qFactReal (q : ℝ) (k : ℕ) : ℝ :=
 -- Mathlib gap; restriction k ≤ 4 (where qInt_ratio_bound_small covers
 -- each factor) or a looser RHS constant would discharge this.
 -- Ref: [mathas1999] §3.3
-axiom qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
-    (k : ℕ) :
-    |qFactReal q k / (k.factorial : ℝ) - 1| ≤
+
+/-- **q-factorial ratio bound — typeclass (Pattern 4).** -/
+class QFactRatioBound (q : ℝ) (_hq : q > 1) (_hq2 : q < 2) (k : ℕ) : Prop where
+  /-- Polynomial bound on the factorial perturbation. -/
+  bound : |qFactReal q k / (k.factorial : ℝ) - 1| ≤
     (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36
+
+/-- Per-instance form. -/
+theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+    (k : ℕ) [hi : QFactRatioBound q hq hq2 k] :
+    |qFactReal q k / (k.factorial : ℝ) - 1| ≤
+    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 :=
+  hi.bound
 
 /-! ## §3  q-hook formula perturbation -/
 
@@ -298,18 +319,36 @@ theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
 -- Real argument: w_q / w_cl = (d_q/dim)² × (k!/[k]!), bounded via
 -- triangle inequality from qDim_ratio_bound and qFact_ratio_bound;
 -- the latter requires `q < 2` for h²·k < 1 to hold throughout the
--- relevant range. The hypothesis `h_link : w_q / w_cl = (d_q/dim)² × (k!/[k]!)`
--- is the essential semantic link between `w_q`, `w_cl` and the
--- q-perturbation factors — without it the statement is free-real.
+-- relevant range. Pattern 4 typeclass form: per-instance witness
+-- with explicit semantic-link hypotheses (`h_link`, `h_dq`, `h_fact`).
 -- Ref: [mathas1999] §3.3
-axiom wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+
+/-- **Wedderburn-weight perturbation — typeclass (Pattern 1 + 4).**
+    Tight per-instance bound with the semantic link
+    `w_q / w_cl = (d_q/dim)² × (k!/[k]!)` made explicit. -/
+class WedderburnWeightPerturbation
+    (q : ℝ) (_hq : q > 1) (_hq2 : q < 2)
+    (k : ℕ) (h_sq : ℝ) (_hh : h_sq = (q - q⁻¹) ^ 2)
+    (w_q w_cl : ℝ) (_hw : w_cl > 0)
+    (dq_ratio fact_ratio : ℝ)
+    (_h_link : w_q / w_cl = dq_ratio ^ 2 * fact_ratio)
+    (_h_dq : |dq_ratio - 1| ≤ h_sq * k / 6)
+    (_h_fact : |fact_ratio - 1| ≤ h_sq * k / 6) : Prop where
+  /-- Triangle-inequality bound on the weight ratio. -/
+  bound : |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3
+
+/-- Per-instance form. -/
+theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
     (w_q w_cl : ℝ) (hw : w_cl > 0)
     (dq_ratio fact_ratio : ℝ)
     (h_link : w_q / w_cl = dq_ratio ^ 2 * fact_ratio)
     (h_dq : |dq_ratio - 1| ≤ h_sq * k / 6)
-    (h_fact : |fact_ratio - 1| ≤ h_sq * k / 6) :
-    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3
+    (h_fact : |fact_ratio - 1| ≤ h_sq * k / 6)
+    [hi : WedderburnWeightPerturbation q hq hq2 k h_sq hh
+      w_q w_cl hw dq_ratio fact_ratio h_link h_dq h_fact] :
+    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 :=
+  hi.bound
 
 /-! ## §5  Convergence rate -/
 
@@ -342,11 +381,24 @@ axiom wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)
 --   "Asymptotics of q-Plancherel measures",
 --   Prob. Theory Related Fields 152, 589-624, 2012.
 --   Theorem 1.1 (q-Plancherel CLT).
-axiom convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+
+/-- **q-Plancherel convergence rate — typeclass (Pattern 4).**
+    Per-instance witness for the Féray–Méliot O(1/√k) bound. -/
+class ConvergenceRate (q : ℝ) (_hq : q > 1) (_hq2 : q < 2)
+    (k : ℕ) (_hk : k ≥ 4)
+    (f_k f_inf : ℝ)
+    (C_q : ℝ) (_hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) : Prop where
+  /-- The Féray–Méliot rate. -/
+  bound : |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
+
+/-- Per-instance form. -/
+theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ)
-    (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
+    (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹))
+    [hi : ConvergenceRate q hq hq2 k hk f_k f_inf C_q hC] :
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) :=
+  hi.bound
 
 /-- The explicit constant C_q for our case (H₃(q) → H₃(q)). -/
 theorem convergence_constant_H3 (q : ℝ) (hq : q > 1) :

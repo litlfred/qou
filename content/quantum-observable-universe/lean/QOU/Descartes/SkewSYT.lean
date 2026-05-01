@@ -261,32 +261,60 @@ theorem skewSYTCount_empty (λ : Partition) :
 theorem skewSYTCount_nonneg (λ μ : Partition) :
     0 ≤ skewSYTCount λ μ := Nat.zero_le _
 
-/-- Partition's Young-diagram cells count equals its size.
-    Proof requires `Partition.cells` decomposition over rows;
-    axiomatised as a helper. -/
-axiom Partition.cells_card_eq_size (λ : Partition) : λ.cells.card = λ.size
+/-! ### Partition helpers — typeclass (Pattern 4)
 
-/-- Skew diagram with more cells in λ than μ has a (lex-maximal)
-    corner.  Axiomatised as a helper. -/
-axiom skewCorners_nonempty_axiom (λ μ : Partition) (h : λ.contains μ)
-    (hsize : μ.size < λ.size) : (skewCorners λ μ).Nonempty
+The three Mathlib gaps below are general partition / Young-diagram
+facts (cells-count, corner non-emptiness, removal preserves
+containment). Until Mathlib's `Partition` API exposes them, the
+axioms are packaged into a single typeclass `PartitionHelpers` so
+each call site binds to a witness, and the conjectural surface is
+visible. -/
 
-/-- Removing a corner cell of λ that lies outside μ still leaves a
-    partition containing μ.  Axiomatised (needs μ-part bookkeeping). -/
-axiom removeCorner_preserves_containment (λ μ : Partition) (row : ℕ)
-    (h : λ.contains μ) {c : Cell} (hc : c ∈ skewCells λ μ) :
+/-- **Partition combinatorics — typeclass.** Bundles three
+    Mathlib-gap helpers about Young diagrams. -/
+class PartitionHelpers : Prop where
+  /-- `λ.cells.card = λ.size`. -/
+  cells_card_eq_size : ∀ (λ : Partition), λ.cells.card = λ.size
+  /-- A strict size increase yields a non-empty corner set. -/
+  skewCorners_nonempty : ∀ (λ μ : Partition), λ.contains μ →
+    μ.size < λ.size → (skewCorners λ μ).Nonempty
+  /-- Removing an outside-of-μ corner preserves containment. -/
+  removeCorner_preserves_containment : ∀ (λ μ : Partition) (row : ℕ),
+    λ.contains μ → ∀ {c : Cell}, c ∈ skewCells λ μ →
     (λ.removeCorner row).contains μ
 
-/-- Nonempty skew shape has at least one corner.  Proof goes through
-    once Partition.cells_card_eq_size and lex-max-cell helpers are
-    formalised; for now it follows from the axiomatised version. -/
-theorem skewCorners_nonempty (λ μ : Partition) (h : λ.contains μ)
+/-- Partition's Young-diagram cells count equals its size. Backed
+    by `PartitionHelpers`. -/
+theorem Partition.cells_card_eq_size [h : PartitionHelpers]
+    (λ : Partition) : λ.cells.card = λ.size :=
+  h.cells_card_eq_size λ
+
+/-- Skew diagram with more cells in λ than μ has a (lex-maximal)
+    corner. Backed by `PartitionHelpers`. -/
+theorem skewCorners_nonempty_axiom [h : PartitionHelpers]
+    (λ μ : Partition) (hcontains : λ.contains μ)
+    (hsize : μ.size < λ.size) : (skewCorners λ μ).Nonempty :=
+  h.skewCorners_nonempty λ μ hcontains hsize
+
+/-- Removing a corner cell of λ that lies outside μ still leaves a
+    partition containing μ. Backed by `PartitionHelpers`. -/
+theorem removeCorner_preserves_containment [h : PartitionHelpers]
+    (λ μ : Partition) (row : ℕ) (hcontains : λ.contains μ)
+    {c : Cell} (hc : c ∈ skewCells λ μ) :
+    (λ.removeCorner row).contains μ :=
+  h.removeCorner_preserves_containment λ μ row hcontains hc
+
+/-- Nonempty skew shape has at least one corner. Backed by
+    `PartitionHelpers.skewCorners_nonempty`. -/
+theorem skewCorners_nonempty [PartitionHelpers]
+    (λ μ : Partition) (h : λ.contains μ)
     (hsize : μ.size < λ.size) : (skewCorners λ μ).Nonempty :=
   skewCorners_nonempty_axiom λ μ h hsize
 
 /-- SYT count is positive when λ ⊇ μ (there's always at least one SYT). -/
 -- Ref: [fulton1997] Proposition 3.1
-theorem skewSYTCount_pos (λ μ : Partition) (h : λ.contains μ) :
+theorem skewSYTCount_pos [PartitionHelpers]
+    (λ μ : Partition) (h : λ.contains μ) :
     0 < skewSYTCount λ μ := by
   -- Strong induction on `λ.size - μ.size`, with `λ` generalised.
   generalize hn : λ.size - μ.size = n

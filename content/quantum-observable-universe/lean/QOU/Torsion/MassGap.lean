@@ -228,21 +228,20 @@ class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where
   /-- The witness uses the expected transfer matrix. -/
   tm_eq : witness.transferMatrix = tm
 
-/-- **The millennium conjecture** (DEPRECATED): alias deriving from
-    the typeclass `HasYangMillsMassGap`.
-
-    **Narrowing (Pattern 4)**: converted to typeclass. The universal
-    quantifier over all `q > 1` has been replaced by per-instance
-    hypotheses. Callers should provide `[HasYangMillsMassGap q tm]`
-    instead of relying on this axiom.
+/-- **The millennium conjecture**: per-instance form derived from
+    `HasYangMillsMassGap`. The deprecated universal axiom
+    `yangMillsMassGap_construction` has been removed; callers must
+    bind `[HasYangMillsMassGap q tm]` to obtain a witness for the
+    specific `(q, tm)` they care about.
 
     Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
     Ref: [manuscript] Chapter 5, §1 -/
 -- Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
 -- Ref: [manuscript] Chapter 5, §1
-axiom yangMillsMassGap_construction :
-    ∀ (q : ℝ) (_ : 1 < q) (_tm : CategoricalTransferMatrix),
-    Nonempty YangMillsMassGap
+theorem yangMillsMassGap_construction (q : ℝ) (_ : 1 < q)
+    (tm : CategoricalTransferMatrix) [h : HasYangMillsMassGap q tm] :
+    Nonempty YangMillsMassGap :=
+  ⟨h.witness⟩
 
 /-! ## Confinement corollary -/
 

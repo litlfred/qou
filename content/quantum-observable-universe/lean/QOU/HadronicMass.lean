@@ -402,11 +402,27 @@ theorem dressed_quark_mass_difference :
 
     Ref: NIST CODATA 2022 proton mass: 938.272 089 43(29) MeV/c². -/
 -- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
-axiom proton_pair_skein_approx
-    /-- Witness: the denominator `q^½ + q^{-½}` is close to 2.00228.
-        Tolerance 1e-4 suffices for the 0.5 MeV error bound. -/
-    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) :
-    |proton_from_pair_skein - proton_topological| < 0.5
+
+/-- **Proton pair-Skein approximation — typeclass (Pattern 4).**
+
+    Witnesses the 0.5-MeV agreement of the pair-Skein decomposition
+    with the topological proton mass, given the
+    `q^½ + q^{-½} ≈ 2.00228` denominator approximation. The full
+    proof reduces to a numerical evaluation of `Real.rpow` at
+    `(substrate_q, 1/2)`, which `norm_num` cannot yet discharge.
+    Per-instance, the numerical witness is supplied by SageMath /
+    `mpmath` (see calculations.json). -/
+class ProtonPairSkeinApprox
+    (_h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) : Prop where
+  /-- 0.5-MeV agreement bound. -/
+  bound : |proton_from_pair_skein - proton_topological| < 0.5
+
+/-- Per-instance form. -/
+theorem proton_pair_skein_approx
+    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4)
+    [hi : ProtonPairSkeinApprox h_denom] :
+    |proton_from_pair_skein - proton_topological| < 0.5 :=
+  hi.bound
 
 /-- The neutron pair-Skein decomposition agrees with the CODATA neutron
     mass to within 0.5 MeV (limited by dressed-mass rounding).
@@ -420,10 +436,20 @@ axiom proton_pair_skein_approx
 
     Ref: NIST CODATA 2022 neutron mass: 939.565 421 94(48) MeV/c². -/
 -- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
-axiom neutron_pair_skein_approx
-    /-- Witness: the denominator `q^½ + q^{-½}` is close to 2.00228. -/
-    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) :
-    |neutron_from_pair_skein - neutron_topological| < 0.5
+
+/-- **Neutron pair-Skein approximation — typeclass (Pattern 4).**
+    Companion to `ProtonPairSkeinApprox`. -/
+class NeutronPairSkeinApprox
+    (_h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) : Prop where
+  /-- 0.5-MeV agreement bound. -/
+  bound : |neutron_from_pair_skein - neutron_topological| < 0.5
+
+/-- Per-instance form. -/
+theorem neutron_pair_skein_approx
+    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4)
+    [hi : NeutronPairSkeinApprox h_denom] :
+    |neutron_from_pair_skein - neutron_topological| < 0.5 :=
+  hi.bound
 
 /-! ## Section 6: Cross-Row Consistency Checks -/
 
@@ -548,13 +574,25 @@ into self-contained statements suitable for cross-referencing. -/
     - RHS: `(1.1097^0.5 − 1.1097^(−0.5)) × 1875.61294500 ≈ 192.83`
     - `|LHS − RHS| < 0.01` ✓
 
-    Axiomatised for the same reason as `proton_pair_skein_approx`.
+    Pattern 4: per-instance witness for the q-rpow numerical
+    identity, since `norm_num` cannot evaluate `Real.rpow` at
+    non-integer exponents. The numerical witness is supplied by
+    SageMath / `mpmath` (see calculations.json).
     Ref: [manuscript] §11-experimental-evidence -/
-axiom skein_mass_relation_holds :
-  substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
-    (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV
+class SkeinMassRelationHolds : Prop where
+  /-- The Skein mass identity at the substrate `q`. -/
+  identity :
+    substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
+      (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV
 
-noncomputable def skein_mass_relation_proton_neutron : SkeinMassRelation where
+/-- Per-instance form. -/
+theorem skein_mass_relation_holds [hi : SkeinMassRelationHolds] :
+  substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
+    (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV :=
+  hi.identity
+
+noncomputable def skein_mass_relation_proton_neutron
+    [SkeinMassRelationHolds] : SkeinMassRelation where
   q := substrate_q
   q_gt_one := by unfold substrate_q; norm_num
   m_plus := proton_mass_MeV

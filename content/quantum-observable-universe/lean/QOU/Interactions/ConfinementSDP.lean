@@ -111,9 +111,8 @@ theorem ConfinementSDP (n : ℕ) (h : slaterStrict n)
     primalOpt n = nTarget * y0Star n :=
   HasConfinementSDPStrongDuality.strong_duality
 
-@[deprecated ConfinementSDP (since := "2026-04-30")]
-axiom ConfinementSDP_axiom (n : ℕ) (h : slaterStrict n) :
-    primalOpt n = nTarget * y0Star n
+-- The deprecated universal axiom `ConfinementSDP_axiom` has been
+-- removed. Use `ConfinementSDP` (typeclass-backed) instead.
 
 /-! ## §3  Binding multiplicity and the scalar-LP projection -/
 
