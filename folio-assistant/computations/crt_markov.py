@@ -288,6 +288,64 @@ def tr_M_at_q0_via_crt(Z, N, include_inter, m_pp, m_pn, m_nn,
     return tr_M_q0
 
 
+def markov_trace_schur_weyl_eval(Z, N, include_inter, q_val, precision=50):
+    """Markov trace at q = q_val via the **proper H_{3A} Schur-Weyl sum**.
+
+    Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) — correct H_{3A} framing
+    per `prop:schur-weyl-mass-decomposition` and the audit memo
+    `docs/audits/2026-05-01-h3-at-h3a-weight-derivation.md`.
+
+    This wiring (P2.2a) replaces the per-generator H_3-weighted
+    `markov_trace_symbolic_eval` for the **descended** trace,
+    restoring Φ_q convergence (per the P2.2a witness:
+    `docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json`).
+
+    The tower terms (Σ Φ_q(|V̂_i|), z² Σ Φ_q(|V̂_i V̂_j|)) are
+    intrinsically per-generator and don't have an immediate
+    Schur-Weyl per-partition reformulation; they remain in
+    `tower_mass_symbolic_eval` flagged for re-derivation.
+
+    Caveat: schur_weyl_symbolic.specht_character_atomic uses
+    Murnaghan-Nakayama (q=1 limit of the Hecke character). The
+    full q-deformed Hecke character is a refinement; for now the
+    H_{3A} weights with q=1 characters already restore convergence
+    by 5-7 orders of magnitude vs H_3 approximation.
+
+    Args:
+        Z, N: proton/neutron count.
+        include_inter: include inter-nucleon crossings (always
+            True for the Murnaghan-Nakayama path; the `False`
+            branch of the legacy descended-only does not have a
+            direct Schur-Weyl analogue).
+        q_val: substrate parameter (mpmath.mpf or float).
+        precision: mpmath dps for final evaluation.
+
+    Returns:
+        mpmath.mpf — |tr_M(𝒜, q_val)| via the proper H_{3A} sum.
+
+    Ref: prop:schur-weyl-mass-decomposition
+    """
+    import sympy as sp
+    from schur_weyl_symbolic import global_wedderburn_sum_symbolic
+
+    A = Z + N
+    q_sym = sp.Symbol("q", positive=True, real=True)
+
+    # Proper H_{3A} sum (symbolic in q).
+    proper_sum, _terms = global_wedderburn_sum_symbolic(
+        A, q_sym, char_kind="mn-atom", Z=Z, N=N, include_inter=include_inter
+    )
+
+    # Substitute q_0 numerically.
+    mpmath.mp.dps = precision
+    q0_rational = sp.Rational(str(q_val))
+    value = sp.N(proper_sum.subs(q_sym, q0_rational), precision)
+
+    # Coerce to mpmath.mpf (real-valued; the SW sum is real for
+    # real q > 0).
+    return mpmath.mpf(str(value))
+
+
 def test_tower_binding():
     """Test FULL tower binding (descended + Φ_q terms) across atoms."""
     mpmath.mp.dps = 50
