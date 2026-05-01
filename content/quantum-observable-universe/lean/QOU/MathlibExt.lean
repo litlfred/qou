@@ -177,4 +177,30 @@ theorem Real.sqrt_lt_of_lt_sq (a x : ℝ) (ha : 0 ≤ a) (hx : 0 ≤ x)
   rw [hax]
   exact Real.sqrt_lt_sqrt hx hsq
 
+/-- **AM-GM for `t + 1/t`**: for `t > 0`, `t + 1/t ≥ 2`.
+
+    Proof: `(t - 1)² ≥ 0` expands to `t² - 2t + 1 ≥ 0`, dividing
+    by `t` gives `t - 2 + 1/t ≥ 0`, i.e. `t + 1/t ≥ 2`. -/
+theorem add_inv_ge_two (t : ℝ) (ht : 0 < t) : t + 1 / t ≥ 2 := by
+  have h_sq : (t - 1) ^ 2 ≥ 0 := sq_nonneg _
+  have h_t_ne : t ≠ 0 := ne_of_gt ht
+  have h_expand : (t - 1) ^ 2 = t^2 - 2*t + 1 := by ring
+  rw [h_expand] at h_sq
+  -- Divide through by t (positive)
+  have : t + 1/t - 2 ≥ 0 := by
+    rw [ge_iff_le, sub_nonneg, ← sub_le_iff_le_add']
+    have h_div : (t^2 - 2*t + 1) / t ≥ 0 := div_nonneg h_sq ht.le
+    have h_simp : (t^2 - 2*t + 1) / t = t - 2 + 1/t := by
+      field_simp
+    rw [h_simp] at h_div
+    linarith
+  linarith
+
+/-- **AM-GM for `√x + 1/√x`**: for `x > 0`, `√x + 1/√x ≥ 2`.
+
+    Direct corollary of `add_inv_ge_two` applied to `t := √x`. -/
+theorem Real.sqrt_add_inv_ge_two (x : ℝ) (hx : 0 < x) :
+    Real.sqrt x + 1 / Real.sqrt x ≥ 2 := by
+  exact add_inv_ge_two (Real.sqrt x) (Real.sqrt_pos.mpr hx)
+
 end QOU.MathlibExt
