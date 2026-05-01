@@ -1,0 +1,117 @@
+{
+  "audit": "Per-braid mass tower (P2.2a-deeper)",
+  "generated": "2026-05-01T21:39:48.723755+00:00",
+  "q_0": "1.1099785955541805",
+  "framework": "\ud835\udd2a(K) = |tr_M(W)| + \u03a3_{\u03be\u2208S_1} \u03a6_q(|tr_M(\u03be)|) + z\u00b2 \u03a3_{(\u03be,\u03be')\u2208S_2} \u03a6_q(|tr_M(\u03be \u03be')|). S_1 = per-nucleon sub-braids (A elements). S_2 = per-nucleon-pair sub-braids (A(A-1)/2 elements). Each tr_M computed via the proper H_{3A} Schur-Weyl path (markov_trace_schur_weyl_eval). The per-generator H_3 tower (divergent) is shown for comparison.",
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "descended": "0.01558575990731854310491886429068779849470612501598",
+      "single_tower": "3700.4729815664967971793366022772572280643175004496",
+      "cross_tower": "0.28743121412985524774130490646618889154699667770762",
+      "total_per_braid": "3700.7759985405339709701828260480141047543592032523",
+      "h3_per_generator_total": "1609226.2494327088946246503013424814444456770664374",
+      "level_1_traces": {
+        "proton": "0.67145317967600708547041636789628328951712820040545",
+        "neutron": "0.67145317967600708547041636789628328951712820040545"
+      },
+      "level_2_traces": {
+        "pp_pair": "0.0",
+        "nn_pair": "0.0",
+        "pn_pair": "0.01558575990731854310491886429068779849470612501598"
+      },
+      "level_2_multiplicities": {
+        "n_pp": 0,
+        "n_nn": 0,
+        "n_pn": 1
+      },
+      "phi_q_convergence_ok": true,
+      "max_sub_braid_trace": 0.671453179676007
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "descended": "0.00088286893298810744398132212123033136018211602445503",
+      "single_tower": "5550.7094723497451957690049034158858420964762506744",
+      "cross_tower": "0.86229364238956574322391471939856667464099003312285",
+      "total_per_braid": "5551.5726488610677496196727994574056391024774228235",
+      "h3_per_generator_total": "2788279.8552031394492781809607059075036837136570899",
+      "level_1_traces": {
+        "proton": "0.67145317967600708547041636789628328951712820040545",
+        "neutron": "0.67145317967600708547041636789628328951712820040545"
+      },
+      "level_2_traces": {
+        "pp_pair": "0.01558575990731854310491886429068779849470612501598",
+        "nn_pair": "0.0",
+        "pn_pair": "0.01558575990731854310491886429068779849470612501598"
+      },
+      "level_2_multiplicities": {
+        "n_pp": 1,
+        "n_nn": 0,
+        "n_pn": 2
+      },
+      "phi_q_convergence_ok": true,
+      "max_sub_braid_trace": 0.671453179676007
+    },
+    {
+      "atom": "3H_tritium",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "descended": "0.00088286893298810744398132212123033136018211602445503",
+      "single_tower": "5550.7094723497451957690049034158858420964762506744",
+      "cross_tower": "0.86229364238956574322391471939856667464099003312285",
+      "total_per_braid": "5551.5726488610677496196727994574056391024774228235",
+      "h3_per_generator_total": "2039446.3171209927112448041133560645867767412451555",
+      "level_1_traces": {
+        "proton": "0.67145317967600708547041636789628328951712820040545",
+        "neutron": "0.67145317967600708547041636789628328951712820040545"
+      },
+      "level_2_traces": {
+        "pp_pair": "0.0",
+        "nn_pair": "0.01558575990731854310491886429068779849470612501598",
+        "pn_pair": "0.01558575990731854310491886429068779849470612501598"
+      },
+      "level_2_multiplicities": {
+        "n_pp": 0,
+        "n_nn": 1,
+        "n_pn": 2
+      },
+      "phi_q_convergence_ok": true,
+      "max_sub_braid_trace": 0.671453179676007
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "descended": "0.0000044251910122715483525776306844557398699562049748614",
+      "single_tower": "7400.9459631329935943586732045545144561286350008992",
+      "cross_tower": "1.7245872847791314864478294387971333492819800662457",
+      "total_per_braid": "7402.6705548429637381166693865709422739336568509216",
+      "h3_per_generator_total": "3218500.0246002009997455033677428381744132085774585",
+      "level_1_traces": {
+        "proton": "0.67145317967600708547041636789628328951712820040545",
+        "neutron": "0.67145317967600708547041636789628328951712820040545"
+      },
+      "level_2_traces": {
+        "pp_pair": "0.01558575990731854310491886429068779849470612501598",
+        "nn_pair": "0.01558575990731854310491886429068779849470612501598",
+        "pn_pair": "0.01558575990731854310491886429068779849470612501598"
+      },
+      "level_2_multiplicities": {
+        "n_pp": 1,
+        "n_nn": 1,
+        "n_pn": 4
+      },
+      "phi_q_convergence_ok": true,
+      "max_sub_braid_trace": 0.671453179676007
+    }
+  ],
+  "interpretation": "Per-braid tower replaces the per-generator V\u0302_i^full (3A-1 terms per atom, divergent due to H_3-at-H_{3A} weight mismatch) with per-sub-braid Markov traces (A nucleons + A(A-1)/2 pairs, dramatically fewer terms). Each sub-braid trace is computed via proper H_{3A} Schur-Weyl, ensuring |tr_M(\u03be)| < q_0 and \u03a6_q convergence."
+}
