@@ -375,6 +375,42 @@ theorem isFinite_decomposition {x : K} (hx : IsFinite x) :
   obtain ⟨r, hr⟩ := isFinite_has_standardPart hx
   exact ⟨r, hr, fun s hs => standardPart_unique hs hr⟩
 
+/-! ### Closure of `IsFinite` under the field operations
+
+The finite surreals form a sub-(unital sub-)ring of `K`.  The
+following closure lemmas (`zero`, `one`, `neg`, `sub`, plus the
+already-proved `add`, `mul`) provide the predicate-level closure
+needed to bundle `{x | IsFinite x}` as a `Subring K`. -/
+
+/-- `0` is finite. -/
+theorem zero_isFinite : IsFinite (0 : K) := by
+  refine ⟨0, ?_⟩
+  simp
+
+/-- `1` is finite. -/
+theorem one_isFinite : IsFinite (1 : K) := by
+  refine ⟨1, ?_⟩
+  simp
+
+/-- Negation preserves finiteness (using the same bound). -/
+theorem IsFinite.neg {x : K} (hx : IsFinite x) : IsFinite (-x) := by
+  obtain ⟨n, hn⟩ := hx
+  refine ⟨n, ?_⟩
+  rwa [abs_neg]
+
+/-- Subtraction of finite surreals is finite. -/
+theorem IsFinite.sub {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+    IsFinite (x - y) := by
+  rw [sub_eq_add_neg]
+  exact hx.add hy.neg
+
+/-- Subtraction of infinitesimals is infinitesimal. -/
+theorem IsInfinitesimal.sub {x y : K}
+    (hx : IsInfinitesimal x) (hy : IsInfinitesimal y) :
+    IsInfinitesimal (x - y) := by
+  rw [sub_eq_add_neg]
+  exact hx.add hy.neg
+
 end SurrealField
 
 end QOU.AppendixSurreals
