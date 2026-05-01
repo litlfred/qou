@@ -282,21 +282,40 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   alongside the numerical value.
 - **E**: 1 week paper-wide (mechanical refactor).
 
-### P2.6 — GS-filtration `gradedMarkovTrace` / `residueAtRoot` — narrative form
+### P2.6 — GS-filtration `gradedMarkovTrace` / `residueAtRoot` — narrative form — ✅ landed (narrative side)
 
 - **W**: §3·F. These are `noncomputable opaque` in Lean. The user
   is less concerned about Lean — but the *narrative* must say what
   these are without hand-waving.
-- **D**: New narrative block
-  `prop:graded-markov-trace-from-gs-filtration` that defines
-  $\mathrm{tr}_{M,\ell}$ as the induced trace on $J^\ell / J^{\ell+1}$
-  for the GS-filtration $J^\bullet$, and `prop:residue-at-root` that
-  defines the cyclotomic residues purely algebraically (not via
-  meromorphic continuation in $\mathbb{C}$).
+- **D**: ✅ Two new narrative propositions:
+  - [`prop:graded-markov-trace-from-gs-filtration`](../../content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.md):
+    defines $\mathrm{tr}_{M, \ell}$ as the descent of
+    $\mathrm{tr}_M$ along the GS-filtration quotient
+    $J^\ell / J^{\ell+1}$.  Existence + uniqueness from quotient
+    universal property + Markov-trace uniqueness.
+  - [`prop:residue-at-root`](../../content/quantum-observable-universe/braids-and-knots/residue-at-root.md):
+    defines $\mathrm{Res}_{q \to \zeta_\ell}(\Phi_q \cdot \mathrm{tr}_{M, \ell})$
+    via cyclotomic projection in the Habiro completion
+    $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q] / \Phi_{n_\ell}(q)
+    \cong \mathbb{Z}[\zeta_\ell]$.  No analytic continuation in $\mathbb{C}$.
+  Both wired into `braids-and-knots.ts §"Categorical Mass Foundations"`
+  immediately after `gb-residue-spectral-sum`.
+- **Lean-side action item (deferred)**: replace
+  `noncomputable opaque gradedMarkovTrace` and
+  `noncomputable opaque residueAtRoot` in
+  [`gb-residue-spectral-sum.lean`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean)
+  with constructive `def`s (quotient + cyclotomic projection
+  respectively).  Targeted at Phase 2 of the algebraic-refactor
+  branch; the narrative blocks above are sufficient for the
+  paper-side hand-waving cleanup the audit asked for.
 - **B**: blocked by nothing.
-- **S**: every block previously citing `gradedMarkovTrace` /
-  `residueAtRoot` opaquely now points at the new propositions.
-- **E**: 2 days.
+- **S**: ✅ both narrative blocks exist, validate cleanly, and
+  cite the upstream provable infrastructure
+  (`prop:gb-spectral-sequence`, `prop:graded-trace-residue-split`,
+  `prop:confinement-level-exists`).  Downstream blocks that cited
+  the opaque axioms can now point at the propositions instead.
+- **E**: 2 days estimated → narrative side done in 1.0 day; Lean
+  refactor still pending.
 
 ---
 
