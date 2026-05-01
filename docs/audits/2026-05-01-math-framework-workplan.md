@@ -326,16 +326,31 @@ cross-check, not the primary derivation.
 
 - **W**: ~99% of the mass is missing from CRT compute because only
   the std (2-dim) channel is implemented at the descended level.
-- **D**: Extend `crt_markov.py` so that:
-  1. `V_full = w_sym · V_sym + w_std · V_std + w_alt · V_alt` is
-     accumulated symbolically, with the per-level Wedderburn
-     weights at $H_{3A}$ (not $H_3$).
-  2. Add the single-generator tower term $\sum_i \Phi_q(|V_i^{\text{full}}|)$.
-  3. Add the adjacent-pair term $z^2 \sum_{|i-j|=1} \Phi_q(|V_i^{\text{full}} V_j^{\text{full}}|)$ (the all-pairs $\mathcal{P}_n$ form per `thm:markov-trace-factorization`).
-- **B**: blocked by P2.2 (Wedderburn coverage at $H_{3A}$).
-- **S**: MAE on light-A nuclei $\leq 50$ ppm without per-isotope
-  fitting; the previously-missing 0.9% explained.
-- **E**: 1 week.
+- **2026-05-01 refresh** (per
+  [`AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md)):
+  `crt_markov.py` *already has* `tower_mass_symbolic_eval` which
+  computes V_full + full tower at **H_3 weights**. But **no caller
+  uses it** — the 5 callers (`canonical_isospin_pyhecke.py`,
+  `derived_only_extended_A12.py`, `deuteron_error.py`,
+  `gb_residue_tower.py`, `paper_six_term_isotope_sweep.py`) all
+  invoke the descended-only `markov_trace_symbolic_eval`. So the
+  gap is *practical* even though the code has caught up in principle.
+- **D** split into two phases:
+  - **P2.1a (small optimization, immediate)**: migrate appropriate
+    callers from `markov_trace_symbolic_eval` to
+    `tower_mass_symbolic_eval`. Per-caller decision (some may be
+    *intentionally* descended-only — e.g., `derived_only_extended_A12.py`).
+    Each migration is ~1-2 line.
+  - **P2.1b (CRT main task, multi-week)**: replace H_3 weights
+    with H_{3A} weights via CRT polynomial reconstruction. Gated
+    on P2.2.
+  - Originally-listed (3): `z²Σ Φ_q(|V_i^full V_j^full|)` adjacent-pair
+    term — **already in** `tower_mass_symbolic_eval` (line 240–249).
+- **B**: P2.1a blocks nothing; P2.1b blocked by P2.2.
+- **S**: P2.1a — every caller intentionally on descended-only is
+  documented; appropriate ones migrated. P2.1b — MAE on light-A
+  nuclei ≤ 50 ppm without per-isotope fitting.
+- **E**: P2.1a 1 day; P2.1b multi-week.
 
 ### P2.2 — Wedderburn coverage at $H_{3A}(q)$ via CRT polynomial reconstruction
 

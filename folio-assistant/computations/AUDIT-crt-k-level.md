@@ -1,8 +1,24 @@
 # CRT Markov-trace computation audit
 
+> **2026-05-01 refresh** — `crt_markov.py` was extended after this
+> audit was first written. The expanded function
+> `tower_mass_symbolic_eval` *does* compute V_full = w_sym·V_sym +
+> w_std·V_s + w_alt·V_alt at H_3 weights, plus the full Φ_q tower
+> (descended + single-gen + adjacent-pair cross), per
+> `prop:mass-endomorphism-tower`. **However**, the 5 callers that
+> import from `crt_markov` (`canonical_isospin_pyhecke.py`,
+> `derived_only_extended_A12.py`, `deuteron_error.py`,
+> `gb_residue_tower.py`, `paper_six_term_isotope_sweep.py`) **all
+> still use** the descended-only `markov_trace_symbolic_eval`. The
+> gap below is therefore real *in practice* even though the code
+> has caught up *in principle*. Two small-optimization wins remain:
+> (a) migrate appropriate callers to `tower_mass_symbolic_eval`;
+> (b) replace H_3 weights with H_{3A} weights (the larger CRT
+> reconstruction task, workplan P2.2).
+
 ## What we are computing (currently)
 
-Function: `crt_markov.markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn, q_val)`
+Function: `crt_markov.markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn, q_val)` (the **descended-only** legacy function — what callers actually use)
 
 Per generator $i$ of $H_{3A}(q)$:
 ```
