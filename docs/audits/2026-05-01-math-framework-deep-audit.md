@@ -218,7 +218,7 @@ to remove the "wrong by 10⁶" item (done in this branch).
 
 | ID | Status |
 |----|--------|
-| **SHELL-1** | 🟠 Block name self-reports as a calibration. If shell coefficients in compound-β are fitted to AME mass differences, the AME data is being used as a derivation input — borderline empirical leak |
+| **SHELL-1** | 🟡 **Resolved.** Block-name misnomer (file is `compound-beta-shell-calibration.md` but content is genuinely a derivation chain). AME data enters as Q-value measurements consumed by the CAL-3-anchored hadronic scale, not as fitted parameters. The recursive atom-knot atlas has explicit tag categories that mark provisional / quarantined entries (⁶Li, ⁷Li); base cases for ²H, ³H, ³He are GB-NF-pending but not AME-fitted. See [base-cases audit](2026-05-01-base-cases-audit.md). |
 
 ### §2·H — `compound-` / `recursive-atom-knot-atlas` parameters
 
@@ -381,7 +381,7 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
 | 🔴 Wall-risk blocks | 1 of 19 | link 8 (JSJ algebraic reformulation) |
 | 🟢 Approved calibrations (per §2·A corrected) | 3 | CAL-1 ($m_e$), CAL-2 ($m_\mu/m_e$ → $q_0$), CAL-3 ($Q_\beta(n)$ → $E_0$) |
-| Non-calibration empirical / fitting flags | 5 | BW-8, BW-11, MAG-1, ALPHA-2, SHELL-1 — must be derived or removed (NU-1 resolved: neutrino = unknot = 0 mass by categorical definition) |
+| Non-calibration empirical / fitting flags | 4 | BW-8, BW-11, MAG-1, ALPHA-2 — must be derived or removed. NU-1 resolved (neutrino = unknot = 0 mass by categorical definition). SHELL-1 resolved (file misnomer; AME usage is measurement, not fit; quarantined isotopes explicitly disclosed). |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 
@@ -406,12 +406,14 @@ prediction at level $A$ requires:
    ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
 8. ❌ Symbolic-in-$q$ throughout, $q_0$-substitution only at final
    step.
-9. ❌ Five non-calibration empirical/fitting flags (BW-8, BW-11,
-   MAG-1, ALPHA-2, SHELL-1) eliminated. NU-1 resolved
-   (neutrino = unknot = 0 mass). The three approved calibrations
-   (CAL-1 / CAL-2 / CAL-3) named in a single
-   `prop:three-calibration-inputs` block; all numerical predictions
-   cite it.
+9. ❌ Four non-calibration empirical/fitting flags (BW-8, BW-11,
+   MAG-1, ALPHA-2) eliminated. NU-1 resolved (neutrino = unknot
+   = 0 mass). SHELL-1 resolved (file misnomer; quarantined
+   entries explicitly disclosed in atlas; base cases pending
+   GB-NF derivation but not AME-fitted). The three approved
+   calibrations (CAL-1 / CAL-2 / CAL-3) named in a single
+   `prop:three-calibration-inputs` block; all numerical
+   predictions cite it.
 10. ❌ Magic-number derivation from Bring (currently asserted but
     not derived).
 11. ✅ Neutrino-mass channel — **resolved**: neutrino = unknot, so
