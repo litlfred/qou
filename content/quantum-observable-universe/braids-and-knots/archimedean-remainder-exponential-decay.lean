@@ -179,24 +179,4 @@ theorem decay_constants_pos (K : KnotData) [D : DecayConjecture K] :
     0 < D.C ∧ 0 < D.c :=
   ⟨D.C_pos, D.c_pos⟩
 
-/-- **Exponential decay implies monotone descent in the limit.**
-    Any knot with a decay-conjecture instance also satisfies the
-    much weaker monotone-descent bound *eventually* (above the
-    threshold `n₀`); the strict statement requires
-    `[GSMonotonic K]` separately, since exponential decay alone
-    does not preclude oscillation below the bound. We include this
-    as a sanity check of the typeclass interfaces. -/
--- Ref: [manuscript] conj:archimedean-remainder-exponential-decay
-theorem decay_implies_eventual_smallness
-    (K : KnotData) [D : DecayConjecture K]
-    (ε : ℝ) (hε : 0 < ε) :
-    ∃ N, ∀ n, N ≤ n → |remainder K n| < ε ∨
-                       |remainder K n| ≤ D.C * Real.exp (-(D.c * (n : ℝ))) := by
-  -- Trivial corollary: above the conjecture's threshold, the bound
-  -- holds; we leave the disjunction in the conclusion to avoid
-  -- analysis of the `Real.exp` decay rate (which is in Mathlib but
-  -- not needed for this re-export).
-  refine ⟨D.n₀, fun n hn => ?_⟩
-  exact Or.inr (D.decay_holds n hn)
-
 end QOU.ArchimedeanRemainder
