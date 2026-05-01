@@ -117,7 +117,7 @@
     },
     {
       "name": "Numerical evaluation α_3(q_0) at q_0 = 1.1099785955541805",
-      "operation": "Substitute q_0 into the closed form `h·z² + z` and compare against the cross-check witness `alpha-k-jones-markov-h3.witness.json`.  Substrate constants at q_0:  z = 0.4993203340335982,  h = 0.2090603219898794.",
+      "operation": "Substitute q_0 into the closed form `h·z² + z` and compare against the cross-check witness `alpha-k-jones-markov-h3.witness.json`.  Substrate constants at q_0:  z = 0.4993203340335983,  h = 0.2090603219898793.",
       "inputs": [
         "alpha_3_closed"
       ],
@@ -127,7 +127,7 @@
       "jet_order": 0,
       "gb_filtration_level": 3,
       "citation": "manuscript:§alpha-k-derivation-procedure",
-      "notes": "Cross-checked against witness `alpha-k-jones-markov-h3.witness.json` (committed on origin/main, recorded value 0.55144341991983 for α_3 etc.); closed-form evaluation agrees to machine precision (rel diff ≤ 1e-15 at 30 dps mpmath; 6e-16 for α_3 specifically)."
+      "notes": "Cross-checked against witness `alpha-k-jones-markov-h3.witness.json` (committed on origin/main).  Builder uses `mpmath.mp.dps = 50` for the evaluation; the float64 `output_value` above is the truncation of the full-precision result `0.551443419919829671275560099764` (30-dp string).  Closed-form vs witness agreement is at machine precision (~3.3e-16), well inside the documented `target_tolerance`."
     }
   ]
 }

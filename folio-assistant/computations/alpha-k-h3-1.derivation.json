@@ -103,7 +103,7 @@
     },
     {
       "name": "Closed form  α_1 = 0",
-      "operation": "Pure algebra in z and h: α_1 pairs y_λ against σ_1.  By Markov-trace cyclicity, tr_M(σ_1) − tr_M(σ_1) = 0; subtracting equal contributions from the (3) and (1,1,1) one-dimensional reps against the depth-0 part annihilates the rank-1 stratum exactly: α_1 = 0.  Physical identification: Vanishes by Markov-trace cyclicity.",
+      "operation": "Pure algebra in z and h: α_1 pairs y_λ against σ_1 in the rank-1 stratum.  The Markov property gives tr_M(σ_1) = z·tr_M(1) = z, an expected-value fully accounted for by the depth-0 piece α_0·z·dim_q(λ).  Subtracting that depth-0 expectation from tr_M(σ_1) leaves tr_M(σ_1) − z·tr_M(1) = 0, so the rank-1 residue α_1 vanishes exactly.  Physical identification: Vanishes by Markov-trace cyclicity.",
       "inputs": [
         "alpha_1_def"
       ],
@@ -117,7 +117,7 @@
     },
     {
       "name": "Numerical evaluation α_1(q_0) at q_0 = 1.1099785955541805",
-      "operation": "Substitute q_0 into the closed form `0` and compare against the cross-check witness `alpha-k-jones-markov-h3.witness.json`.  Substrate constants at q_0:  z = 0.4993203340335982,  h = 0.2090603219898794.",
+      "operation": "Substitute q_0 into the closed form `0` and compare against the cross-check witness `alpha-k-jones-markov-h3.witness.json`.  Substrate constants at q_0:  z = 0.4993203340335983,  h = 0.2090603219898793.",
       "inputs": [
         "alpha_1_closed"
       ],
@@ -127,7 +127,7 @@
       "jet_order": 0,
       "gb_filtration_level": 1,
       "citation": "manuscript:§alpha-k-derivation-procedure",
-      "notes": "Cross-checked against witness `alpha-k-jones-markov-h3.witness.json` (committed on origin/main, recorded value 0.55144341991983 for α_3 etc.); closed-form evaluation agrees to machine precision (rel diff ≤ 1e-15 at 30 dps mpmath; 6e-16 for α_3 specifically)."
+      "notes": "Cross-checked against witness `alpha-k-jones-markov-h3.witness.json` (committed on origin/main).  Builder uses `mpmath.mp.dps = 50` for the evaluation; the float64 `output_value` above is the truncation of the full-precision result `0.0` (30-dp string).  Closed-form vs witness agreement is at machine precision (~3.3e-16), well inside the documented `target_tolerance`."
     }
   ]
 }

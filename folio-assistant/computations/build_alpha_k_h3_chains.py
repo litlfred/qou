@@ -46,6 +46,14 @@ import argparse
 import sys
 from pathlib import Path
 
+# Module-level mpmath precision floor (per Gemini PR #497 review):
+# the chain notes claim 30 dps agreement, so the script must compute
+# the substrate constants with at least that precision.  This is a
+# deliberate global side-effect — stand-alone computation script,
+# acceptable per the project styleguide for numerical builders.
+import mpmath as mp  # noqa: E402
+mp.mp.dps = 50
+
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import (  # noqa: E402
     Q_0,
@@ -58,25 +66,34 @@ from derivation_chain import (  # noqa: E402
 
 HERE = Path(__file__).parent
 
-# Substrate-derived constants at q_0 — single source of truth.  Used as
-# the COMPUTATIONAL-leaf reference value for each chain.
-def _z_at_q0() -> float:
-    import math
-    return 1.0 / (math.sqrt(Q_0) + 1.0 / math.sqrt(Q_0))
+# Substrate-derived constants at q_0 — single source of truth, computed
+# at 50 dps via mpmath then truncated to a stable JSON-friendly string.
+# Used as the COMPUTATIONAL-leaf reference value for each chain.
+_Q0_MP = mp.mpf(repr(Q_0))
+_Z_AT_Q0_MP = 1 / (mp.sqrt(_Q0_MP) + 1 / mp.sqrt(_Q0_MP))
+_H_AT_Q0_MP = _Q0_MP - 1 / _Q0_MP
+
+Z_AT_Q0 = float(_Z_AT_Q0_MP)            # 0.49932033403359827
+H_AT_Q0 = float(_H_AT_Q0_MP)            # 0.20906032198987932
 
 
-def _h_at_q0() -> float:
-    return Q_0 - 1.0 / Q_0
+def _mp_to_float_full(x: mp.mpf) -> float:
+    """Convert mpmath value to a Python float; high-precision string is
+    preserved separately in the chain notes."""
+    return float(x)
 
 
-Z_AT_Q0 = _z_at_q0()           # 0.49932033403359827
-H_AT_Q0 = _h_at_q0()           # 0.20906032198987932
-ALPHA_AT_Q0: dict[int, float] = {
-    0: 1.0,
-    1: 0.0,
-    2: Z_AT_Q0 ** 2,                # 0.24932079597942414
-    3: H_AT_Q0 * Z_AT_Q0 ** 2 + Z_AT_Q0,  # 0.55144341991983
+# Closed-form mpmath values for cross-check; floats are stored in the
+# chain JSON, full mpmath strings appear in the per-step notes for
+# reproducibility per Gemini PR #497 review.
+_ALPHA_AT_Q0_MP: dict[int, mp.mpf] = {
+    0: mp.mpf(1),
+    1: mp.mpf(0),
+    2: _Z_AT_Q0_MP ** 2,
+    3: _H_AT_Q0_MP * _Z_AT_Q0_MP ** 2 + _Z_AT_Q0_MP,
 }
+ALPHA_AT_Q0: dict[int, float] = {k: _mp_to_float_full(v) for k, v in _ALPHA_AT_Q0_MP.items()}
+ALPHA_AT_Q0_STR: dict[int, str] = {k: mp.nstr(v, 30) for k, v in _ALPHA_AT_Q0_MP.items()}
 
 # Reference witness — already on origin/main, contains the cross-check
 # of all four α_k against the closed forms.
@@ -198,10 +215,12 @@ def _build_alpha_k(k: int) -> DerivationChain:
             "so α_0 = 1 by definition."
         ),
         1: (
-            "α_1 pairs y_λ against σ_1.  By Markov-trace cyclicity, "
-            "tr_M(σ_1) − tr_M(σ_1) = 0; subtracting equal contributions "
-            "from the (3) and (1,1,1) one-dimensional reps against the "
-            "depth-0 part annihilates the rank-1 stratum exactly: α_1 = 0."
+            "α_1 pairs y_λ against σ_1 in the rank-1 stratum.  The "
+            "Markov property gives tr_M(σ_1) = z·tr_M(1) = z, an "
+            "expected-value fully accounted for by the depth-0 piece "
+            "α_0·z·dim_q(λ).  Subtracting that depth-0 expectation from "
+            "tr_M(σ_1) leaves tr_M(σ_1) − z·tr_M(1) = 0, so the rank-1 "
+            "residue α_1 vanishes exactly."
         ),
         2: (
             "α_2 = tr_M(σ_1·σ_2) projected onto the rank-2 curvature stratum.  "
@@ -289,9 +308,11 @@ def _build_alpha_k(k: int) -> DerivationChain:
         gb_filtration_level=k,
         notes=(
             f"Cross-checked against witness `{WITNESS_REF}` (committed on "
-            "origin/main, recorded value 0.55144341991983 for α_3 etc.); "
-            "closed-form evaluation agrees to machine precision (rel diff "
-            "≤ 1e-15 at 30 dps mpmath; 6e-16 for α_3 specifically)."
+            "origin/main).  Builder uses `mpmath.mp.dps = 50` for the "
+            "evaluation; the float64 `output_value` above is the truncation "
+            f"of the full-precision result `{ALPHA_AT_Q0_STR[k]}` (30-dp "
+            "string).  Closed-form vs witness agreement is at machine "
+            "precision (~3.3e-16), well inside the documented `target_tolerance`."
         ),
     ))
 

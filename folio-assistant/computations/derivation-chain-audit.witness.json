@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-01T15:21:53.109973+00:00",
-  "commitSha": "fe5a05553351e5cad78c30073c272cdb7440644b",
+  "computedAt": "2026-05-01T15:29:08.725056+00:00",
+  "commitSha": "db4ad9b2e80b3577c7ccf72eee04287183ede9d1",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -64,8 +64,8 @@
     },
     {
       "name": "leaf_value[alpha-k-h3-2.derivation]",
-      "computed": 0.2493207959794241,
-      "expected": 0.2493207959794241,
+      "computed": 0.24932079597942414,
+      "expected": 0.24932079597942414,
       "passed": true,
       "tolerance": 2.493207959794241e-13
     },
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -513,8 +513,8 @@
       {
         "chain": "alpha-k-h3-2.derivation.json",
         "target": "α_2(q)  at H_3(R, q)",
-        "target_value": 0.2493207959794241,
-        "computed_value": 0.2493207959794241,
+        "target_value": 0.24932079597942414,
+        "computed_value": 0.24932079597942414,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
