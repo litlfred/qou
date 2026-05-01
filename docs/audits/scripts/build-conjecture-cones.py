@@ -21,7 +21,22 @@ if not Path(GRAPH_PATH).exists():
     )
     sys.exit(1)
 
-GRAPH = json.load(open(GRAPH_PATH))
+with open(GRAPH_PATH, "r", encoding="utf-8") as f:
+    GRAPH = json.load(f)
+
+# Validate the graph schema is the one this script understands. The
+# `content-graph-analysis.py` tool emits {chapters, blocks, edges,
+# chapter_edges, findings}; bail loudly on any other shape rather than
+# silently producing empty cones.
+_REQUIRED_KEYS = {"blocks", "edges"}
+if not isinstance(GRAPH, dict) or not _REQUIRED_KEYS.issubset(GRAPH.keys()):
+    sys.stderr.write(
+        f"error: {GRAPH_PATH} does not match the expected "
+        f"content-graph-analysis schema (need top-level keys "
+        f"{sorted(_REQUIRED_KEYS)}; got {sorted(GRAPH.keys()) if isinstance(GRAPH, dict) else type(GRAPH).__name__}).\n"
+        "Regenerate with: cd content && python3 pipeline/content-graph-analysis.py --json\n"
+    )
+    sys.exit(2)
 
 # Map label → block info
 LABEL_TO_BLOCK = {b["label"]: b for b in GRAPH["blocks"]}
