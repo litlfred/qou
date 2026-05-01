@@ -444,6 +444,16 @@ class QFactRatioBound (q : ℝ) (_hq : q > 1) (_hq2 : q < 2) (k : ℕ) : Prop wh
   bound : |qFactReal q k / (k.factorial : ℝ) - 1| ≤
     (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36
 
+/-- **Default instance for `k = 0`** — proved directly.
+    `qFactReal q 0` is the empty product `1`, and `0! = 1`, so
+    `|1/1 - 1| = 0`. The RHS at `k = 0` is also `0` (the `* k`
+    factor vanishes), so the bound `0 ≤ 0` holds by `le_refl`. -/
+instance qFactRatioBound_zero (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
+    QFactRatioBound q hq hq2 0 := by
+  refine ⟨?_⟩
+  unfold qFactReal
+  simp
+
 /-- Per-instance form. -/
 theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) [hi : QFactRatioBound q hq hq2 k] :
@@ -578,6 +588,27 @@ class ConvergenceRate (q : ℝ) (_hq : q > 1) (_hq2 : q < 2)
     (C_q : ℝ) (_hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) : Prop where
   /-- The Féray–Méliot rate. -/
   bound : |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
+
+/-- **Self-convergence (reflexivity)**: when `f_k = f_inf`, the
+    Féray–Méliot rate holds with LHS = 0. The RHS is non-negative
+    since `C_q = 3·h²·(q + q⁻¹)` with each factor positive for
+    `q > 1`. -/
+instance convergenceRate_refl (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+    (k : ℕ) (hk : k ≥ 4)
+    (f : ℝ)
+    (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) :
+    ConvergenceRate q hq hq2 k hk f f C_q hC := by
+  refine ⟨?_⟩
+  simp
+  have hq_pos : q > 0 := by linarith
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  rw [hC]
+  have h_diff_pos : (q - q⁻¹)^2 ≥ 0 := sq_nonneg _
+  have h_sum_pos : q + q⁻¹ > 0 := by positivity
+  have h_C_nonneg : 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹) ≥ 0 := by positivity
+  have hk_real : (3 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk
+  have h_sqrt_nonneg : Real.sqrt ((k : ℝ) - 3) ≥ 0 := Real.sqrt_nonneg _
+  positivity
 
 /-- Per-instance form. -/
 theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)

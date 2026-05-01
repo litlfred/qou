@@ -537,6 +537,15 @@ class QBranchingCorrection (λ : Partition) (k : ℕ) (_hk : k ≥ 4)
   /-- Per-cell `O(h²)` perturbation bound. -/
   bound : |qDim - classicalDim| ≤ h_sq * (k : ℝ)
 
+/-- **Self-correction (reflexivity)**: when `qDim = classicalDim`,
+    the bound holds with LHS = 0 (RHS non-negative when `h_sq ≥ 0`). -/
+instance qBranchingCorrection_refl (λ : Partition) (k : ℕ) (hk : k ≥ 4)
+    (x : ℝ) (h_sq : ℝ) [hsq_nn : Fact (0 ≤ h_sq)] :
+    QBranchingCorrection λ k hk x x h_sq := by
+  refine ⟨?_⟩
+  simp
+  exact mul_nonneg hsq_nn.out (Nat.cast_nonneg _)
+
 /-! ## §9  Explicit branching: H₄(q) → H₃(q) -/
 
 /-- The five partitions of 4. -/
@@ -760,6 +769,15 @@ class CumulativeErrorHarmonic (K : ℕ) (_hK : K ≥ 4)
     (C_q : ℝ) (cumError harmK_minus_3 : ℝ) : Prop where
   /-- `|cumError| ≤ H_{K-3} · C_q`. -/
   bound : |cumError| ≤ harmK_minus_3 * C_q
+
+/-- **Zero-error (reflexivity)**: when `cumError = 0`, the bound
+    holds with LHS = 0 (assuming the RHS is non-negative). -/
+instance cumulativeErrorHarmonic_zero (K : ℕ) (hK : K ≥ 4)
+    (C_q harmK_minus_3 : ℝ) [hpos : Fact (0 ≤ harmK_minus_3 * C_q)] :
+    CumulativeErrorHarmonic K hK C_q 0 harmK_minus_3 := by
+  refine ⟨?_⟩
+  simp
+  exact hpos.out
 
 /-! ## §12  The squared-to-linear transition -/
 
