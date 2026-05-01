@@ -157,11 +157,32 @@ print(f"  C_(3,2,1) [explicit] ≈ {sp.N(C_321_explicit.subs(q, q_0))}")
 print(f"  C_(3,2,1) [via w]    ≈ {sp.N(C_321_via_w.subs(q, q_0))}")
 
 # -----------------------------------------------------------------
+# P2.5 Tier B — expose polynomial form alongside numerical via the
+# witness_polynomial helper.
+# -----------------------------------------------------------------
+from witness_polynomial import expose_polynomial_dict
+
+polynomial_forms = expose_polynomial_dict(
+    {
+        "w_lambda_22": w22,
+        "beta_BW_22": beta_bw,
+        "C_shadow_22": C_shadow,
+        "y_Wenzl_22": y_wenzl,
+        "w_lambda_321": w321,
+        "C_shadow_321_explicit": C_321_explicit,
+        "C_shadow_321_via_w": C_321_via_w,
+    },
+    q,
+    q0=q_0,
+)
+
+# -----------------------------------------------------------------
 # Witness JSON
 # -----------------------------------------------------------------
 witness = {
     "audit": "P1.3a — BW vs Wenzl-bridge vs LP-shadow-price equivalence",
     "generated": datetime.now(timezone.utc).isoformat(),
+    "polynomial_forms": polynomial_forms,
     "claim": (
         "For self-conjugate partitions, the three derivation paths "
         "produce coefficients that are rationally related by explicit "

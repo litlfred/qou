@@ -352,7 +352,17 @@ cross-check, not the primary derivation.
   nuclei ≤ 50 ppm without per-isotope fitting.
 - **E**: P2.1a 1 day; P2.1b multi-week.
 
-### P2.2 — Wedderburn coverage at $H_{3A}(q)$ via CRT polynomial reconstruction
+### P2.2 — Wedderburn coverage at $H_{3A}(q)$ via CRT polynomial reconstruction — **elevated**
+
+**2026-05-01 elevation**: was tagged "approximation accuracy fix"; the
+P2.1a witness
+([`2026-05-01-p2-1a-tower-vs-descended.witness.json`](2026-05-01-p2-1a-tower-vs-descended.witness.json))
+shows it is actually a **structural-convergence fix**. Using H_3
+weights at H_{3A} pushes V̂_i values above the Φ_q convergence
+radius ($|z| < q$); the tower formula becomes divergent, not just
+inaccurate. Per user confirmation: "probably H_3 weights are wrong
+at H_{3A}". P2.2 now both restores convergence AND improves
+accuracy.
 
 - **W**: §3·B of audit. Current code uses $H_3$ weights as an
   approximation.
@@ -391,7 +401,14 @@ cross-check, not the primary derivation.
   expected $k$-truncation error.
 - **E**: 2 weeks.
 
-### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 surveyed; partial
+### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 surveyed; Tier B kickoff landed
+
+**Tier B kickoff (2026-05-01):** helper module
+[`witness_polynomial.py`](../../folio-assistant/computations/witness_polynomial.py)
++ first exemplar (`bw_wenzl_shadow_equivalence.py`) migrated. Per
+[`2026-05-01-p2-5-tier-b-kickoff.md`](2026-05-01-p2-5-tier-b-kickoff.md):
+re-survey corrects target count from 110 to **81** scripts; remaining
+80 are mechanical 3-line refactors against the helper.
 
 - **W**: §3·E. Currently many scripts substitute $q_0$ early,
   producing 50-digit floats that read as "fitted".

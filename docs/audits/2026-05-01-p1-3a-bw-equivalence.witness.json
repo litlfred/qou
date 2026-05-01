@@ -1,6 +1,43 @@
 {
   "audit": "P1.3a \u2014 BW vs Wenzl-bridge vs LP-shadow-price equivalence",
-  "generated": "2026-05-01T19:28:53.987785+00:00",
+  "generated": "2026-05-01T21:12:54.673981+00:00",
+  "polynomial_forms": {
+    "w_lambda_22": {
+      "polynomial_q": "(q**6 + q**2)/(q**8 + 3*q**6 + 4*q**4 + 3*q**2 + 1)",
+      "polynomial_q_latex": "\\frac{q^{6} + q^{2}}{q^{8} + 3 q^{6} + 4 q^{4} + 3 q^{2} + 1}",
+      "value_at_q0": "0.16604893669878468748425949920650745256028456072432"
+    },
+    "beta_BW_22": {
+      "polynomial_q": "(-q**6 - q**2)/(2*q**8 + 6*q**6 + 8*q**4 + 6*q**2 + 2)",
+      "polynomial_q_latex": "\\frac{- q^{6} - q^{2}}{2 q^{8} + 6 q^{6} + 8 q^{4} + 6 q^{2} + 2}",
+      "value_at_q0": "-0.083024468349392343742129749603253726280142280362158"
+    },
+    "C_shadow_22": {
+      "polynomial_q": "q*(q**2 - 1)*(q**4 + 1)/(2*(q**8 + 3*q**6 + 4*q**4 + 3*q**2 + 1))",
+      "polynomial_q_latex": "\\frac{q \\left(q^{2} - 1\\right) \\left(q^{4} + 1\\right)}{2 \\left(q^{8} + 3 q^{6} + 4 q^{4} + 3 q^{2} + 1\\right)}",
+      "value_at_q0": "0.017357333330969060075175320112871137538942751641350"
+    },
+    "y_Wenzl_22": {
+      "polynomial_q": "(q**6 + q**2)/(q**8 + 3*q**6 + 4*q**4 + 3*q**2 + 1)",
+      "polynomial_q_latex": "\\frac{q^{6} + q^{2}}{q^{8} + 3 q^{6} + 4 q^{4} + 3 q^{2} + 1}",
+      "value_at_q0": "0.16604893669878468748425949920650745256028456072432"
+    },
+    "w_lambda_321": {
+      "polynomial_q": "q*(q**2 - 1)*(q**4 - 1)*(q**8 - 1)*(q**12 - 1)/((q**6 - 1)**3*(q**10 - 1))",
+      "polynomial_q_latex": "\\frac{q \\left(q^{2} - 1\\right) \\left(q^{4} - 1\\right) \\left(q^{8} - 1\\right) \\left(q^{12} - 1\\right)}{\\left(q^{6} - 1\\right)^{3} \\left(q^{10} - 1\\right)}",
+      "value_at_q0": "0.35863571374298953801840540131638607870948145897907"
+    },
+    "C_shadow_321_explicit": {
+      "polynomial_q": "(q**2 - 1)**2*(q**4 - 1)*(q**8 - 1)*(q**12 - 1)/(2*(q**6 - 1)**3*(q**10 - 1))",
+      "polynomial_q_latex": "\\frac{\\left(q^{2} - 1\\right)^{2} \\left(q^{4} - 1\\right) \\left(q^{8} - 1\\right) \\left(q^{12} - 1\\right)}{2 \\left(q^{6} - 1\\right)^{3} \\left(q^{10} - 1\\right)}",
+      "value_at_q0": "0.037488705146719746543081718433249662990833338049359"
+    },
+    "C_shadow_321_via_w": {
+      "polynomial_q": "(q**2 - 1)**2*(q**4 - 1)*(q**8 - 1)*(q**12 - 1)/(2*(q**6 - 1)**3*(q**10 - 1))",
+      "polynomial_q_latex": "\\frac{\\left(q^{2} - 1\\right)^{2} \\left(q^{4} - 1\\right) \\left(q^{8} - 1\\right) \\left(q^{12} - 1\\right)}{2 \\left(q^{6} - 1\\right)^{3} \\left(q^{10} - 1\\right)}",
+      "value_at_q0": "0.037488705146719746543081718433249662990833338049359"
+    }
+  },
   "claim": "For self-conjugate partitions, the three derivation paths produce coefficients that are rationally related by explicit factors of h = q-q^{-1}: BW form \u03b2_\u03bb = -w_\u03bb/2; shadow-price C_\u03bb = w_\u03bb \u00b7 h/2; Wenzl-bridge y_\u03bb = w_\u03bb for \u03ba_\u03bb = 0 (self-conjugate); ratios BW/shadow = -1/h, BW/Wenzl = -1/2, shadow/Wenzl = h/2.",
   "tested_partitions": [
     {
