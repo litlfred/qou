@@ -513,4 +513,117 @@ theorem OnPModularHecke.cells_equiv_nimbers
     ∃ φ : KazhdanLusztigCells p n → Nimbers p n, Function.Bijective φ :=
   OnPModularHecke.cells_bijective_to_nimbers n
 
+/-! ### Provable implications and equivalences between conjectures
+
+The following theorems establish that several of the conjecture
+classes share their irreducible kernel: each class is, on the
+nose, at least as strong as `BigBangHeatDeath` (= inhabitation of
+`QOU_Surreal K`).  This makes the logical lattice of the
+appendix's conjectures explicit in Lean.
+
+Two of the conjectures (`BigBangHeatDeath`, `HahnSubstrate`) have
+*identical* kernels and are therefore mutually inter-derivable;
+the rest strengthen one or the other in different directions
+(non-trivial vacuum, observability obstruction, Frobenius
+deviation), each implying the kernel by witness extraction.
+-/
+
+/-- `HahnSubstrate K` and `BigBangHeatDeath K` have the same
+    irreducible kernel — `Nonempty (QOU_Surreal K)` — and are
+    therefore mutually derivable.  Forward direction. -/
+theorem BigBangHeatDeath.of_hahnSubstrate [HahnSubstrate K] :
+    BigBangHeatDeath K :=
+  ⟨HahnSubstrate.qou_surreal_inhabited (K := K)⟩
+
+/-- Reverse direction of the previous equivalence. -/
+theorem HahnSubstrate.of_bigBangHeatDeath [BigBangHeatDeath K] :
+    HahnSubstrate K :=
+  ⟨BigBangHeatDeath.qou_surreal_inhabited (K := K)⟩
+
+/-- `VacuumEpsilon K` strengthens `BigBangHeatDeath K`: a witness
+    of the vacuum-energy conjecture is, in particular, a witness of
+    the inhabitation conjecture. -/
+theorem BigBangHeatDeath.of_vacuumEpsilon [VacuumEpsilon K] :
+    BigBangHeatDeath K := by
+  obtain ⟨SQ, _⟩ := VacuumEpsilon.exists_epsilon_vacuum (K := K)
+  exact ⟨⟨SQ⟩⟩
+
+/-- `InfinitesimalObservability K` strengthens `BigBangHeatDeath K`. -/
+theorem BigBangHeatDeath.of_infinitesimalObservability
+    [InfinitesimalObservability K] : BigBangHeatDeath K := by
+  obtain ⟨SQ, _, _⟩ :=
+    InfinitesimalObservability.exists_nontrivial_observability (K := K)
+  exact ⟨⟨SQ⟩⟩
+
+/-- `InfinitesimalFrobenius K` strengthens `BigBangHeatDeath K`. -/
+theorem BigBangHeatDeath.of_infinitesimalFrobenius
+    [InfinitesimalFrobenius K] : BigBangHeatDeath K := by
+  obtain ⟨SQ, _, _⟩ :=
+    InfinitesimalFrobenius.exists_nontrivial_deviation (K := K)
+  exact ⟨⟨SQ⟩⟩
+
+/-- `ArchimedeanIsStandardPart K`, *combined with* the inhabitation
+    of `QOU_Real`, yields `BigBangHeatDeath K`.  The standalone
+    `ArchimedeanIsStandardPart` does not on its own imply
+    inhabitation of either type — it is a "transport" hypothesis. -/
+theorem BigBangHeatDeath.of_archimedeanIsStandardPart_and_qou_real
+    [ArchimedeanIsStandardPart K] (hQ : Nonempty QOU_Real) :
+    BigBangHeatDeath K :=
+  ⟨ArchimedeanIsStandardPart.qou_surreal_of_qou_real (K := K) hQ⟩
+
+/-- A `KashaevSurreal K` instance witnesses every knot's volume
+    asymptotic and therefore, in particular, exhibits a complex
+    surreal `ζ_ω` for the trivial knot — provided knots are
+    inhabited.  Together with `JonesBirthday K`, this strengthens
+    inhabitation of `Knot` to inhabitation of `KComplex K`. -/
+theorem KashaevSurreal.exists_kcomplex
+    [KashaevSurreal K] [JonesBirthday K] :
+    Nonempty (KComplex K) := by
+  obtain ⟨k⟩ := JonesBirthday.knot_inhabited (K := K)
+  obtain ⟨ζ, _⟩ := KashaevSurreal.st_volume_eq_asymptotic (K := K) k
+  exact ⟨ζ⟩
+
+/-! ### Unconditional consequences
+
+The following are *not* conditional on any conjecture: they hold
+in every `SurrealField`, and are recorded here because the prose
+in the appendix appeals to them when motivating the conjectures.
+-/
+
+/-- Negation of the canonical infinitesimal is itself infinitesimal,
+    and is the additive inverse — useful when stating "two-sided"
+    `±ε`-corrections. -/
+theorem neg_epsilonSurreal_isInfinitesimal :
+    SurrealField.IsInfinitesimal (-(epsilonSurreal K)) :=
+  (epsilonSurreal_isInfinitesimal K).neg
+
+/-- The sum of the canonical infinitesimal with itself is
+    infinitesimal: any finite multiple of `ε` is infinitesimal. -/
+theorem add_epsilonSurreal_isInfinitesimal :
+    SurrealField.IsInfinitesimal (epsilonSurreal K + epsilonSurreal K) :=
+  (epsilonSurreal_isInfinitesimal K).add (epsilonSurreal_isInfinitesimal K)
+
+/-- The standard-part of `1 + ε` is `1` — concrete instance of the
+    `q ↦ 1` classical limit motivating
+    `ClassicalLimitIsStandardPart`. -/
+theorem standardPart_one_plus_epsilon :
+    standardPart (1 + epsilonSurreal K) = 1 := by
+  -- 1 + ε differs from ofReal 1 by ε which is infinitesimal.
+  have h_eps : SurrealField.IsInfinitesimal (epsilonSurreal K) :=
+    epsilonSurreal_isInfinitesimal K
+  -- (1 + ε) - ofReal 1 = ε
+  have hdiff : (1 + epsilonSurreal K) - SurrealField.ofReal (1 : ℝ)
+                = epsilonSurreal K := by
+    rw [map_one]; ring
+  -- Apply uniqueness via standardPart_spec.
+  have hfin_one_plus : SurrealField.IsFinite (1 + epsilonSurreal K) := by
+    have hf1 : SurrealField.IsFinite (1 : K) := ⟨1, by simp⟩
+    exact hf1.add h_eps.isFinite
+  have hinf_diff : SurrealField.IsInfinitesimal
+      ((1 + epsilonSurreal K) - SurrealField.ofReal (1 : ℝ)) := by
+    rw [hdiff]; exact h_eps
+  have hspec := standardPart_spec hfin_one_plus
+  have huniq := (isFinite_decomposition hfin_one_plus).unique hspec hinf_diff
+  exact huniq
+
 end QOU.AppendixSurreals
