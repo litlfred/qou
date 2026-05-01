@@ -141,5 +141,32 @@ and
 ([Archimedean limit](#conj:dilogarithm-archimedean-limit)). The Lean
 formulation
 `QOU.QPochhammer.shared_denominator_cusp_holonomy` is therefore a
-class instance, not a closed theorem. Computational evidence is in
-[q-pochhammer-seed.witness.json](https://github.com/litlfred/qou/blob/claude/quantum-dilogarithm-implementation-DJmlU/folio-assistant/computations/q-pochhammer-seed.witness.json).
+class instance, not a closed theorem.
+
+### Empirical scope of the seeding pipeline
+
+Two computational witnesses bracket the conjecture's strong form:
+
+- **Color-tube cubic** (succeeds):
+  [q-pochhammer-seed.witness.json](https://github.com/litlfred/qou/blob/claude/quantum-dilogarithm-implementation-DJmlU/folio-assistant/computations/q-pochhammer-seed.witness.json)
+  drives Newton–Raphson on $\Delta(z) = 0$ from the algebraic seeds
+  $q_0^{-k} + 0.1i$. At depths $n \leq 3$, Newton converges to
+  machine-precision residual ($\lesssim 10^{-13}$) in 9–11 iterations,
+  empirically supporting the $O(1)$-steps-per-cusp prediction.
+
+- **SnapPy Thurston gluing system** (bounds the strong form):
+  [snappy-cusp-seeding.witness.json](https://github.com/litlfred/qou/blob/claude/quantum-dilogarithm-implementation-DJmlU/folio-assistant/computations/snappy-cusp-seeding.witness.json)
+  measures the distance between the bare algebraic seeds and SnapPy's
+  tetrahedral shape parameters for $\mathtt{m004}$, $\mathtt{m003}$,
+  and the Borromean rings $\mathtt{L6a4}$. The bare seeds sit at
+  distance $\sim 0.4$–$0.9$ from SnapPy's $z_k$, so the pole-to-cusp
+  bijection cannot be a literal numerical identity
+  $q_0^{-k} = z_k$. The conjecture must be interpreted as a bijection
+  of **labels** (algebraic-pole index $\leftrightarrow$ cusp index)
+  with the actual shape parameter being a non-trivial function
+  $\tau_{\mathrm{arch}}(q_0^{-k})$ of the algebraic seed; the shape
+  of that function is the subject of further work.
+
+The two witnesses together support the conjecture's *structural*
+content (algebraic poles label cusps) while bounding its *numerical*
+form (the bare $q_0^{-k}$ are not literally the cusp shapes).
