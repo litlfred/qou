@@ -5,6 +5,7 @@ import QOU.BraidKnot.DressedParticle
 import QOU.BraidKnot.LevelSufficiency
 import QOU.BraidKnot.ShellClosureStability
 import QOU.BraidKnot.ConfinementPhaseStratification
+import QOU.BraidKnot.ThreeCalibrationInputs
 
 /-!
 # BraidKnot — Module Index

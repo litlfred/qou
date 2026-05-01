@@ -342,6 +342,7 @@ export default chapter({
       blocks: [
         "mass-element-nf",
         "calibration-inputs",
+        "three-calibration-inputs",
         "three-parameters-wedderburn",
         "wedderburn-trace-identity",
         "binding-scale-catalan",
