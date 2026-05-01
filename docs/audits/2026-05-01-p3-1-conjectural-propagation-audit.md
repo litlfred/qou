@@ -8,7 +8,7 @@ walks every block manifest, builds the `uses[]` graph, and reports
 every `theorem`/`proposition`/`lemma`/`corollary` whose transitive
 cone touches a `conj:` label (per CLAUDE.md §3b STRICT propagation
 rule).
-**Witness**: [`folio-assistant/computations/conjectural-propagation-audit.witness.json`](../../folio-assistant/computations/conjectural-propagation-audit.witness.json).
+**Witness**: [`2026-05-01-p3-1-conjectural-propagation.witness.json`](2026-05-01-p3-1-conjectural-propagation.witness.json).
 
 ## Headline
 

@@ -125,9 +125,11 @@ for (const v of violators) {
   console.log(`    ${v.file}`);
 }
 
-// Also emit a witness JSON.
+// Also emit a witness JSON. Audit witnesses live in docs/audits/
+// (NOT folio-assistant/computations/, which triggers
+// witness-pipeline.yml CI re-running compute scripts).
 await Bun.write(
-  "/home/user/qou/folio-assistant/computations/conjectural-propagation-audit.witness.json",
+  "/home/user/qou/docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json",
   JSON.stringify(
     {
       audit: "conjectural-propagation (CLAUDE.md §3b STRICT)",

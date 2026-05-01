@@ -379,19 +379,25 @@ cross-check, not the primary derivation.
   have a transitively-conjectural `uses[]` cone.
 - **E**: 1–2 days for the sweep.
 
-### P3.2 — Pentagon $uv = q\,vu$ at traced-volume level (audit GAP 17a)
+### P3.2 — Pentagon $uv = q\,vu$ at traced-volume level — ✅ already landed
 
-- **W**: line 113 of [`derivation-audit-2026-04-20.md`](../derivation-audit-2026-04-20.md).
-  Pentagon ascension assumes a $q$-commutation identity at the
-  traced-volume level that is "expected but unwritten".
-- **D**: Write a one-page derivation as a `lemma` block:
-  $\mathrm{tr}_M(\hat V_i \hat V_j) = q\, \mathrm{tr}_M(\hat V_j \hat V_i)$
-  for adjacent $i,j$ — most likely a direct application of the
-  Markov property.
-- **B**: blocked by nothing.
-- **S**: pentagon-ascension proof in `mass-endomorphism-jet-tower`
-  no longer cites an "expected" identity.
-- **E**: 1 day.
+- **W**: line 113 of [`derivation-audit-2026-04-20.md`](../derivation-audit-2026-04-20.md)
+  flagged the pentagon $q$-commutation identity as "expected but
+  unwritten". Re-inspection shows it IS written.
+- **D**: ✅ `prop:pentagon-uv-commutation`
+  ([pentagon-uv-commutation.md](../../content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.md))
+  contains the full 4-step derivation:
+  1. Reduce to a two-generator commutator via far-commutativity.
+  2. Eigenvalue specialisation on the $q$-block (Hecke relation).
+  3. Pair-swap from the braid relation $\sigma_s\sigma_{s+1}\sigma_s = \sigma_{s+1}\sigma_s\sigma_{s+1}$.
+  4. Quantum-torus identity on the transient summand $B_\lambda^{\mathrm{trans}} = \ker\hat\tau_n \cap B_\lambda$.
+- **B**: nothing.
+- **S**: ✅ block exists with derivation; cited in
+  `phi-q-tower-jsj-bridge.md`.
+- **E**: 0 (already done).
+- **Open extensions** (folded into P3.3 sharpness audit):
+  - Direct check on the std (2×2) Wedderburn block.
+  - Sharpness of the descended residual $R_q$.
 
 ### P3.3 — Descent sharpness on pairs (audit GAP 17b)
 
@@ -478,7 +484,8 @@ cross-check, not the primary derivation.
 
 | Order | Task | Result |
 |------:|------|--------|
-| 1 | **P3.1** Conjectural-propagation sweep | ✅ landed (audit only); witness `conjectural-propagation-audit.witness.json`; memo `2026-05-01-p3-1-conjectural-propagation-audit.md`. **Policy decision required (A / B / C)**: 260 provable blocks transitively touch a `conj:`; ~225 share a common cone of ~20 substrate-foundation conjectures. Recommend Option B (substrate-axiom classification). |
+| 1 | **P3.1** Conjectural-propagation sweep | ✅ landed (audit only); witness `docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json`; memo `2026-05-01-p3-1-conjectural-propagation-audit.md`. **Policy decision required (A / B / C)**: 260 provable blocks transitively touch a `conj:`; ~225 share a common cone of ~20 substrate-foundation conjectures. Recommend Option B (substrate-axiom classification). |
+| 2 | **P3.2** Pentagon $uv = q\,vu$ derivation | ✅ already landed in `prop:pentagon-uv-commutation` (4-step proof: far-commutativity reduction, eigenvalue specialisation, braid-relation pair-swap, transient-block restriction). Open extensions (std-block direct check, $R_q$ sharpness) folded into P3.3. |
 | 2 | **P2.5** Symbolic-in-$q$ refactor | Mechanical; makes witness JSONs less "fitted-looking" |
 | 3 | **P2.6** GS-filtration narrative blocks | Closes the largest opaque-axiom surface |
 | 4 | **P2.2** $H_{3A}$ Wedderburn coverage | Unblocks P1.4 (magic numbers 50/82/126) and P2.1 |
