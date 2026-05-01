@@ -3,7 +3,7 @@ finite-time blow-up at every point where the enstrophy transfinite
 $\mathcal{Z}_q \asymp \varepsilon^{-4/3}$ outruns the mass-gap
 infinitesimal $\Delta_q \asymp \varepsilon^3$
 ([NS surreal bound](#rem:ns-surreal-bound),
-[blowup as Yekutieli lifting obstruction](#prop:blowup-yekutieli)).
+[blowup as Yekutieli lifting obstruction](#conj:blowup-yekutieli)).
 
 This remark records the physical signatures the framework predicts
 for such blow-up events, treating the mathematical "infinity" not as

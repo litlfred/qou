@@ -1,5 +1,5 @@
 This remark expresses the blowup mechanism of
-[blowup as Yekutieli lifting obstruction](#prop:blowup-yekutieli)
+[blowup as Yekutieli lifting obstruction](#conj:blowup-yekutieli)
 as a literal surreal inequality, matching the framing already
 registered for Navier--Stokes in
 [body asymptotics catalog](#rem:body-asymptotics-catalog).
@@ -43,7 +43,7 @@ mass-gap infinitesimal in the surreal ordering.  No cancellation is
 available in $\mathbb{R}(\varepsilon)$, so the classical-limit
 Navier--Stokes flow cannot absorb the vorticity cascade: the velocity
 field develops a finite-time blow-up.  This is the surreal content of
-[blowup as Yekutieli lifting obstruction](#prop:blowup-yekutieli).
+[blowup as Yekutieli lifting obstruction](#conj:blowup-yekutieli).
 
 **Relation to the $\ordw$-catalog entry.** The classical Biot--Savart
 scaling $|j^n v|_\Sigma \sim \Gamma / d^{n+1}$ used by

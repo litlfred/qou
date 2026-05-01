@@ -1,4 +1,4 @@
-**Proposition.**
+**Conjecture (BW q-integer mass formula, conditional on conj:palindromicity-orbital-type and conj:shell-closure-nf-term-count).**
 *All seven coefficients of the extended Bethe--Weizsäcker mass
 formula are products of quantum integers
 $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ evaluated at

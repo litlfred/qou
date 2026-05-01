@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:critical-exponent",
+export default conjecture({
+  label: "conj:critical-exponent",
   title: "Critical exponent of the enstrophy divergence at $q = 1$",
   uses: [
     "prop:q-ns-nonlinear-uniqueness",
