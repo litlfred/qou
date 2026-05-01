@@ -261,4 +261,8 @@ class RSKBurnside (k : ℕ) (sumDimSq factorial : ℕ) : Prop where
   /-- Sum of dim² equals k!. -/
   identity : sumDimSq = factorial
 
+/-- Reflexivity instance for `RSKBurnside`: when `sumDimSq` and
+    `factorial` are syntactically the same value, the class holds. -/
+instance rskBurnside_refl (k m : ℕ) : RSKBurnside k m m := ⟨rfl⟩
+
 end QOU.Descartes.RSK

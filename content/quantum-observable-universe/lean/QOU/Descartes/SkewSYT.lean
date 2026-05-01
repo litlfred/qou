@@ -509,6 +509,10 @@ class FominBranchingIdentity (k : ℕ) (μ : Partition)
   /-- The sum on the LHS equals the closed-form RHS at `(k, μ)`. -/
   identity : dimSum = lhsRhs
 
+/-- Reflexivity instance for `FominBranchingIdentity`. -/
+instance fominBranchingIdentity_refl (k : ℕ) (μ : Partition) (m : ℕ) :
+    FominBranchingIdentity k μ m m := ⟨rfl⟩
+
 /-! ## §8  q-deformed branching (the key gap) -/
 
 /-- **q-deformed branching failure**: the identity
@@ -747,6 +751,12 @@ class BranchingAtK3 (μ : Partition) (f_μ_3 W_μ : ℝ) : Prop where
   /-- f^{(3)}_μ = W_μ. -/
   equal : f_μ_3 = W_μ
 
+/-- Reflexivity instance: when both arguments are the same value,
+    the class is trivially inhabited. -/
+instance branchingAtK3_refl (μ : Partition) (x : ℝ) :
+    BranchingAtK3 μ x x :=
+  ⟨rfl⟩
+
 /-- At k → ∞: the branching fraction converges to the "linear" scaling:
     f_μ^∞ = d_q(μ) / Σ_ν d_q(ν)
 
@@ -772,5 +782,9 @@ class SquaredToLinearTransition (k : ℕ) (_hk : 4 ≤ k)
     (α_k effective_exp : ℝ) : Prop where
   /-- Effective exponent agreement at level `k`. -/
   exponent_eq : α_k = effective_exp
+
+/-- Reflexivity instance for `SquaredToLinearTransition`. -/
+instance squaredToLinearTransition_refl (k : ℕ) (hk : 4 ≤ k) (x : ℝ) :
+    SquaredToLinearTransition k hk x x := ⟨rfl⟩
 
 end QOU.Descartes.SkewSYT
