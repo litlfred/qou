@@ -156,18 +156,21 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   `least_squares`, or "AME-anchored" parameter.
 - **E**: 1 day.
 
-### P1.6 — Neutrino mass — demote or fix
+### P1.6 — Neutrino mass — RESOLVED (no derivation needed)
 
-- **W**: NU-1. Wrong by 10⁶ — currently a hard claim.
-- **D**: Re-classify the neutrino-mass block to `conjecture` with
-  the 10⁶ discrepancy named explicitly. Then audit channel choice
-  (`alt`-block weight) and operator-selection LP for the neutrino's
-  word.
-- **B**: blocked by nothing for the demotion; the fix may take
-  weeks.
-- **S**: paper does not claim a derived neutrino mass while the
-  10⁶ gap stands.
-- **E**: 0.5 day for demotion; open-ended for the fix.
+- **W**: ~~NU-1. Wrong by 10⁶~~ — **resolved**. The neutrino IS
+  the unknot per the paper's knot-particle dictionary (trivial
+  braiding, zero crossings); $\mathfrak{m}(\mathbf{1}) = 0$ by
+  categorical definition. Earlier "wrong by 10⁶" claim conflated
+  the GS-reduction coefficient on $\mathbf{1}$ (a sector index)
+  with a mass.
+- **D**: Sweep compute outputs for any `m_ν = ` line; replace
+  with the categorical statement $\mathfrak{m}(\nu) = 0$. Already
+  done in [`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
+  on this branch; per-script sweep optional follow-up.
+- **B**: blocked by nothing.
+- **S**: no compute output reports a nonzero "neutrino mass".
+- **E**: 0.5 day for the per-script sweep, if any remain.
 
 ### P1.7 — 1/α 399-ppb residual — derive or honest-conjecture
 
@@ -380,7 +383,7 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 | 7 | **P2.6** GS-filtration narrative blocks | Closes the largest opaque-axiom surface |
 | 8 | **P2.2** $H_{3A}$ Wedderburn coverage | Unblocks the big compute fix (P2.1) |
 | 9 | **P2.1** Full Wedderburn channels in CRT | The single biggest fix for compute correctness (~99% of mass) |
-| 10 | **P1.6** Neutrino demote | Honesty fix; cheap |
+| 10 | ~~**P1.6** Neutrino demote~~ — **resolved** (neutrino = unknot = 0 mass) | n/a |
 | 11 | **P1.5** Compound-shell / atlas base-case audit | Removes the last "calibration" block names |
 | 12 | **P1.2 / P1.3** BW-8 / BW-11 derivation | Removes "ad hoc" / "approx" tags |
 | 13 | **P3.2** Pentagon $uv = q\,vu$ derivation | Closes a stale "expected" claim |

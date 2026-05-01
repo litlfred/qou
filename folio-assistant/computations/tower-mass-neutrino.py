@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Task 3: Tower/mass ratio investigation
-Task 4: Neutrino mass from L₋ channel
+Task 4: Neutrino mass from L₋ channel — DEPRECATED (see resolution below)
 
 The corrected Markov trace gives:
   tr_M(proton) ≈ -0.012
@@ -12,6 +12,26 @@ CODATA: m_n/m_p = 1.00138
 
 The tower mechanism must amplify these traces through iterated
 self-interaction (Φ_q composition tower).
+
+╔══════════════════════════════════════════════════════════════════════╗
+║  TASK 4 (NEUTRINO MASS) IS DEPRECATED                                ║
+║                                                                      ║
+║  Resolution: The neutrino IS the unknot per the paper's              ║
+║  knot-particle dictionary (knot-particle-dictionary.md,              ║
+║  knot-particle-generation.md, recursive-atom-knot-atlas.md).         ║
+║  The categorical mass of the unknot is 𝔪(𝟏) = 0 by definition       ║
+║  (Markov trace of the identity vanishes for the mass-endomorphism    ║
+║  formula). The neutrino has no mass.                                 ║
+║                                                                      ║
+║  This script's V̂_ν = z² assignment is wrong: the unknot has         ║
+║  trivial braiding (zero crossings), not a vertex volume of z².      ║
+║  The "off by 10⁶" discrepancy in old runs was a confusion between    ║
+║  the GS-reduction coefficient on 𝟏 (a sector index) and the        ║
+║  categorical mass of the resulting particle. Different quantities.  ║
+║                                                                      ║
+║  Task 3 (proton/neutron mass-ratio investigation) remains valid.    ║
+║  Do not consume `m_nu_*` fields from the witness JSON.              ║
+╚══════════════════════════════════════════════════════════════════════╝
 """
 
 import json

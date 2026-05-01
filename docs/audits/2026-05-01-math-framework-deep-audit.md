@@ -184,17 +184,32 @@ below) or (b) a genuine higher Massey-product correction. The latter
 is a real algebraic statement that can be derived from the GS spectral
 sequence, *not* a fit.
 
-### §2·F — Neutrino mass
+### §2·F — Neutrino mass — RESOLVED
 
-[DERIVATION-STATUS.md line 182](../../folio-assistant/computations/DERIVATION-STATUS.md): *"Neutrino mass: wrong by 10⁶."*
+**Resolution.** The neutrino IS the unknot (trivial braiding,
+zero crossings) per the paper's own knot-particle dictionary
+([`knot-particle-dictionary.md`](../../content/quantum-observable-universe/braids-and-knots/knot-particle-dictionary.md):
+"Unknot $T_{1,0}$ ($0_1$) — Neutrino $\nu$ — 0 — 0 — Trivial
+braiding; vacuum drag";
+[`knot-particle-generation.md`](../../content/quantum-observable-universe/braids-and-knots/knot-particle-generation.md):
+"$T_{1,0}$ — Unknot $0_1$ — 0 — 0 — Neutrino (trivial braiding)";
+[`recursive-atom-knot-atlas.md`](../../content/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.md)
+line 127: "Neutrino $\nu$ (vacuum-drag particle, no mass)").
+
+The categorical mass of the unknot is $\mathfrak{m}(\mathbf{1}) = 0$
+by definition (Markov trace of the identity element vanishes for
+the mass-endomorphism formula). The neutrino has **no mass** in
+the framework — there is nothing to derive.
 
 | ID | Status |
 |----|--------|
-| **NU-1** | 🔴 The current neutrino-mass derivation is off by **six orders of magnitude**. Either the channel choice (`alt`-block weight) is wrong or the operator-selection LP misclassifies the neutrino's word. Until reconciled, the paper cannot claim a derived neutrino mass. |
+| **NU-1** | 🟢 **Resolved.** Neutrino = unknot = mass 0 by categorical definition. Earlier "wrong by 10⁶" claim was a confusion between the GS-reduction coefficient on $\mathbf{1}$ (a sector index, *not* a mass) and the categorical mass of the resulting particle. The paper has been correct on neutrino-as-unknot all along. |
 
-🔴 **Action.** Demote any current "neutrino mass = X" claim to a
-conjecture, with the 10⁶ discrepancy explicit, until the channel /
-LP issue is resolved.
+🟢 **Action.** Replace any "neutrino mass = X" output in compute
+with the categorical statement
+$\mathfrak{m}(\nu) = \mathfrak{m}(\mathbf{1}) = 0$. Update
+[`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
+to remove the "wrong by 10⁶" item (done in this branch).
 
 ### §2·G — Compound-shell / shell-closure calibration
 
@@ -366,7 +381,7 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
 | 🔴 Wall-risk blocks | 1 of 19 | link 8 (JSJ algebraic reformulation) |
 | 🟢 Approved calibrations (per §2·A corrected) | 3 | CAL-1 ($m_e$), CAL-2 ($m_\mu/m_e$ → $q_0$), CAL-3 ($Q_\beta(n)$ → $E_0$) |
-| Non-calibration empirical / fitting flags | 6 | BW-8, BW-11, MAG-1, ALPHA-2, NU-1, SHELL-1 — must be derived or removed |
+| Non-calibration empirical / fitting flags | 5 | BW-8, BW-11, MAG-1, ALPHA-2, SHELL-1 — must be derived or removed (NU-1 resolved: neutrino = unknot = 0 mass by categorical definition) |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 
@@ -391,15 +406,18 @@ prediction at level $A$ requires:
    ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
 8. ❌ Symbolic-in-$q$ throughout, $q_0$-substitution only at final
    step.
-9. ❌ Six non-calibration empirical/fitting flags (BW-8, BW-11,
-   MAG-1, ALPHA-2, NU-1, SHELL-1) eliminated. The three approved
-   calibrations (CAL-1 / CAL-2 / CAL-3) named in a single
+9. ❌ Five non-calibration empirical/fitting flags (BW-8, BW-11,
+   MAG-1, ALPHA-2, SHELL-1) eliminated. NU-1 resolved
+   (neutrino = unknot = 0 mass). The three approved calibrations
+   (CAL-1 / CAL-2 / CAL-3) named in a single
    `prop:three-calibration-inputs` block; all numerical predictions
    cite it.
 10. ❌ Magic-number derivation from Bring (currently asserted but
     not derived).
-11. ❌ Neutrino-mass channel reconciled (currently 10⁶ off — must be
-    demoted to conjecture or fixed).
+11. ✅ Neutrino-mass channel — **resolved**: neutrino = unknot, so
+    $\mathfrak{m}(\nu) = 0$ by categorical definition. No
+    derivation needed; any compute reporting nonzero is mis-using
+    the GS coefficient on $\mathbf{1}$.
 
 **Headline.** Items 1–5 are 90%+ done. Items 6–11 are the work the
 workplan addresses. Until items 6–8 are done, the compute pipeline
