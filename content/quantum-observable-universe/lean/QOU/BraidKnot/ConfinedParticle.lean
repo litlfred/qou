@@ -35,9 +35,13 @@ structure MarkovClass where
   gsNormalForm : BraidWord strandCount
 
 /-- **Confined particle.** A named tuple at a confinement level
-    with an underlying Markov class of closed braid and a coarse
-    strand count. Stability predicates layer on top; confinement at
-    `q ∈ R_q` is the SDP-feasibility predicate. -/
+    with an underlying Markov class of closed braid. Stability
+    predicates layer on top; confinement at `q ∈ R_q` is the
+    SDP-feasibility predicate.
+
+    Note: the coarse strand count is derived from the Markov class
+    rather than stored separately, so well-formedness
+    (`coarseStrands = markovClass.strandCount`) holds by definition. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
 structure ConfinedParticle where
   /-- Symbol from the particle-shortcut registry
@@ -48,9 +52,15 @@ structure ConfinedParticle where
   level : ℕ
   /-- Canonical Markov class of the underlying closed braid. -/
   markovClass : MarkovClass
-  /-- Coarse strand count `n₀` at level ℓ (e.g. A for an atom at
-      nucleon level). -/
-  coarseStrands : ℕ
+
+namespace ConfinedParticle
+
+/-- Coarse strand count `n₀` at level ℓ — derived from the Markov
+    class so well-formedness holds definitionally. -/
+def coarseStrands (P : ConfinedParticle) : ℕ :=
+  P.markovClass.strandCount
+
+end ConfinedParticle
 
 /-- Confinement predicate on a particle at a parameter value. The
     semantic content (`confined P q ↔ Slater-strict SDP feasibility
@@ -66,28 +76,12 @@ def confined (P : ConfinedParticle) [h : HasConfinementWitness P] (q : R_q) :
     Prop :=
   h.confined q
 
-/-- **Coarse-strand correctness — typeclass (Pattern 4).**
-
-    Witnesses, *per particle `P`*, that the coarse strand count
-    matches the strand count of its Markov-class canonical
-    representative. The cleaner long-term fix adds a
-    `coarseStrands_eq` field to `ConfinedParticle`, breaking
-    every existing instance constructor. Until then, the
-    well-formedness witness is a typeclass: callers must prove or
-    declare an instance for the specific particles they use,
-    rather than asserting the identity universally. -/
+/-- **Coarse-strand correctness** — proved by definition.
+    The earlier `WellFormedConfinedParticle` typeclass is no longer
+    needed: `coarseStrands` is now a derived projection through the
+    Markov class, so the equality holds by `rfl`. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-class WellFormedConfinedParticle (P : ConfinedParticle) : Prop where
-  /-- Coarse strand count agrees with the Markov-class width. -/
-  coarseStrands_eq : P.coarseStrands = P.markovClass.strandCount
-
-/-- **Coarse-strand correctness** (per-instance form).
-    Use this lemma — backed by `WellFormedConfinedParticle` —
-    instead of the deprecated universal axiom. -/
--- Ref: [manuscript] braids-and-knots/confined-particle
-theorem coarseStrands_eq_markov_strands (P : ConfinedParticle)
-    [h : WellFormedConfinedParticle P] :
-    P.coarseStrands = P.markovClass.strandCount :=
-  h.coarseStrands_eq
+theorem coarseStrands_eq_markov_strands (P : ConfinedParticle) :
+    P.coarseStrands = P.markovClass.strandCount := rfl
 
 end QOU.BraidKnot

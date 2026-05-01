@@ -35,6 +35,8 @@ structure DressedParticle where
   composite : ConfinedParticle
   /-- Consistency: the shell's nucleus is the bare particle. -/
   shell_on_bare : shell.nucleus = bare
+  /-- Level preservation: dressing does not change the level. -/
+  level_preserved : composite.level = bare.level
 
 /-- The dressing morphism `dress_S : P_bare → P_dressed` in
     the confinement category. -/
@@ -43,27 +45,15 @@ noncomputable def dressMorphism (D : DressedParticle) :
     ConfMorphism D.bare D.composite :=
   ConfMorphism.dress D.bare D.composite D.shell.nucleus.name
 
-/-- **Dressing composition — typeclass (Pattern 4).**
-
-    Witnesses level preservation under dressing concatenation, *for
-    a specific compatible pair*. The cleaner long-term fix adds a
-    `level_preserved` field to `DressedParticle`; until then the
-    obligation is per-instance, not universal. -/
--- Ref: [manuscript] braids-and-knots/dressed-particle
-class DressingComposes (D₁ D₂ : DressedParticle)
-    (_h_chain : D₁.composite = D₂.bare) : Prop where
-  /-- Level is preserved through the composition. -/
-  level_eq : D₂.composite.level = D₁.bare.level
-
-/-- **Dressing composition** (per-instance form).
-    Use this lemma — backed by `DressingComposes` — instead of the
-    deprecated universal axiom. -/
+/-- **Dressing composition** — proved from the structure fields.
+    Each `DressedParticle` carries `level_preserved`; chaining via
+    `D₁.composite = D₂.bare` then gives the equality by `rfl`/`rw`.
+    The earlier `DressingComposes` typeclass has been removed. -/
 -- Ref: [manuscript] braids-and-knots/dressed-particle
 theorem dressing_composes
     (D₁ D₂ : DressedParticle)
-    (h_chain : D₁.composite = D₂.bare)
-    [h : DressingComposes D₁ D₂ h_chain] :
-    D₂.composite.level = D₁.bare.level :=
-  h.level_eq
+    (h_chain : D₁.composite = D₂.bare) :
+    D₂.composite.level = D₁.bare.level := by
+  rw [D₂.level_preserved, ← h_chain, D₁.level_preserved]
 
 end QOU.BraidKnot
