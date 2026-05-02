@@ -47,7 +47,7 @@ theorem lower_bound_transfer
       have := (inv_lt_inv₀ hq ha).mpr hqa
       simpa using this
     have hPi : P q⁻¹ := h q⁻¹ hqi h1
-    exact (hP q hq).mp <| (hP q hq).mpr hPi |> (hP q hq).mp
+    exact (hP q hq).mpr hPi
 
 /-- A simpler form of the transfer lemma that avoids the iff:
     if P holds on (a, ∞) and P is bar-invariant, then P holds on

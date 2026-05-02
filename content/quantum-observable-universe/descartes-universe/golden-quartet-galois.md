@@ -108,8 +108,10 @@ roots-of-unity bookkeeping where it is not essential.
 The quartic $P(x) = x^4 - 3x^2 + 1$ is the **shadow on the maximal
 real subfield** of the resolvent that determines the chiral
 fibration of Bring's surface.  Its discriminant
-$\mathrm{disc}(P) = 2000 = 2^4 \cdot 5^3$
-encodes the depth of the $\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$-extension
+$\mathrm{disc}(P) = 400 = 2^4 \cdot 5^2$
+(via the depressed-quartic formula $16\,d\,(b^2 - 4d)^2$ at
+$b = -3,\,d = 1$) encodes the depth of the
+$\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$-extension
 that supports the $S_5$ symmetry restricted to $A_4 \subset S_5$.
 
 The four golden values are therefore not "four arbitrary algebraic
