@@ -13,6 +13,7 @@
 
 import QOU.Basic
 import QOU.MathlibExt
+import QOU.MathlibExt.SDP
 import QOU.Glossary
 import QOU.KnotTheory
 import QOU.KnotRegistry
