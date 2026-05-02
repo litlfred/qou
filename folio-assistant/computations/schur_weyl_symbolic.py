@@ -358,8 +358,11 @@ if __name__ == "__main__":
         # Numerical at q_0
         q0 = Rational(int(_Q_CANONICAL * 10 ** 16), 10 ** 16)
         tot_num = float(total.subs(q, q0).evalf(30))
+        tot_num_polynomial_q = expose_polynomial(total, q)
         h3_num = float(h3_approx.subs(q, q0).evalf(30))
+        h3_num_polynomial_q = expose_polynomial(h3_approx, q)
         err_num = float(diff.subs(q, q0).evalf(30))
+        err_num_polynomial_q = expose_polynomial(diff, q)
         err_rel = (err_num / tot_num * 100) if tot_num else 0.0
         print(f"  Global @ q₀ ≈ {q0!s:.<30}  = {tot_num:.12e}")
         print(f"  H_3 approx @ q₀ ≈ {q0!s:.<30}  = {h3_num:.12e}")
@@ -375,6 +378,7 @@ if __name__ == "__main__":
         print(f"  Top 5 partitions by |contribution @ q₀|:")
         for t in terms_sorted[:5]:
             v = float(t["contribution"].subs(q, q0).evalf(30))
+            v_polynomial_q = expose_polynomial(t["contribution"], q)
             print(f"    λ = {t['partition']!s:<24} w_λ(q₀) = {v:+.6e}")
 
     # Pole/hook structure

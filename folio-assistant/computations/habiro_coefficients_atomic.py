@@ -204,6 +204,7 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
     q0 = Rational(int(_Q_CANONICAL * 10 ** 16), 10 ** 16)
     u0 = sp.sqrt(q0)
     p_at_q0 = float(p_q.subs(q, q0).evalf(30))
+    p_at_q0_polynomial_q = expose_polynomial(p_q, q)
     p_u_at_u0 = float(p_u.subs(u, u0).evalf(30)) / float(
         u0 ** shift if shift else 1)
     print(f"  tr_M @ q_0 = {p_at_q0:+.6e}  "

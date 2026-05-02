@@ -166,6 +166,7 @@ if __name__ == "__main__":
                 "dim_q": str(sp.nsimplify(d_q)),
                 "inv_dim_q": str(sp.nsimplify(inv)),
                 "inv_at_q0": float(inv.subs(q, q0).evalf(30)),
+                "inv_at_q0_polynomial_q": expose_polynomial(inv, q),
                 "conjugate": conj,
                 "self_dual": self_dual,
             })
@@ -174,6 +175,7 @@ if __name__ == "__main__":
 
         total_simpl = sp.simplify(total_symbolic)
         total_q0 = float(total_simpl.subs(q, q0).evalf(30))
+        total_q0_polynomial_q = expose_polynomial(total_simpl, q)
 
         # Classical check (q → 1)
         classical_sum = sum(Fraction(1, dim_specht(lam)) for lam in parts)
@@ -185,6 +187,7 @@ if __name__ == "__main__":
         for level in sorted(by_level.keys()):
             level_sum = sp.simplify(level_totals[level])
             level_q0 = float(level_sum.subs(q, q0).evalf(30))
+            level_q0_polynomial_q = expose_polynomial(level_sum, q)
             print(f"    level {level}: Σ = {sp.nsimplify(level_sum)} "
                   f"(at q_0: {level_q0:.6f})")
             for entry in by_level[level]:

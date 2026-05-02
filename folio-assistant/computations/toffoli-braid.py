@@ -218,6 +218,7 @@ def main():
 
             val_f = factor(cancel(val))
             val_num = float(val_f.subs(q, q_phys))
+            val_num_polynomial_q = expose_polynomial(val_f, q)
 
             print(f"P_{{{i},{j}}}(q)  [{types_map[j]}→{types_map[i]}]  ({kind})")
             print(f"  = {val_f}")
@@ -242,6 +243,7 @@ def main():
             val = cancel(M[i][j])
             val_factored = factor(val)
             val_num = float(val.subs(q, q_phys))
+            val_num_polynomial_q = expose_polynomial(val, q)
             classical = sp.limit(val, q, 1)
             print(f"  P_{{{i},{j}}}(q) = {val_factored}")
             print(f"    q → 1: {classical}")
@@ -300,8 +302,11 @@ def main():
         qf = float(qv)
         tP = float(qv / (qv - 1))
         p76 = float(P76_sym.subs(q, qv))
+        p76_polynomial_q = expose_polynomial(P76_sym, q)
         p66 = float(P66_sym.subs(q, qv))
+        p66_polynomial_q = expose_polynomial(P66_sym, q)
         p77 = float(P77_sym.subs(q, qv))
+        p77_polynomial_q = expose_polynomial(P77_sym, q)
         print(f"  {label:>22} | {qf:>7.3f} | {tP:>9.4f} | {3*tP:>9.4f} | {p76:>12.6f} | {p66:>12.6f} | {p77:>12.6f}")
         planck_data.append({
             "epoch": label, "q": qf, "t_P": tP,

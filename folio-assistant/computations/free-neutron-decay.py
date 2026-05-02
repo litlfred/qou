@@ -286,6 +286,7 @@ print()
 sig1_inv = {(1,): sp.Integer(1), (): -HA}
 for w, c in sig1_inv.items():
     v = float(c.subs(q, q0))
+    v_polynomial_q = expose_polynomial(c, q)
     print(f"    {v:+.10f} · {ws(w)}")
 
 # ── Step 1: B₃ = (σ₀·σ₁⁻¹)³ ─────────────────────────────────
@@ -300,12 +301,14 @@ print("\n  Phase 1a: unit = σ₀ · σ₁⁻¹")
 unit = mul_terms(sig0, sig1_inv)
 for w, c in sorted(unit.items(), key=lambda x: (len(x[0]), x[0])):
     v = float(c.subs(q, q0))
+    v_polynomial_q = expose_polynomial(c, q)
     print(f"    {v:+.10f} · {ws(w)}")
 
 print("\n  Phase 1b: unit² = (σ₀·σ₁⁻¹)²  [unreduced]")
 unit2_raw = mul_terms(unit, unit)
 for w, c in sorted(unit2_raw.items(), key=lambda x: (len(x[0]), x[0])):
     v = float(c.subs(q, q0))
+    v_polynomial_q = expose_polynomial(c, q)
     print(f"    {v:+.10f} · {ws(w)}")
 
 print("\n  Phase 1c: Reduce unit²")
@@ -315,6 +318,7 @@ print("\n  Phase 1d: B₃ = unit² · unit  [unreduced]")
 b3_raw = mul_terms(unit2, unit)
 for w, c in sorted(b3_raw.items(), key=lambda x: (len(x[0]), x[0])):
     v = float(c.subs(q, q0))
+    v_polynomial_q = expose_polynomial(c, q)
     print(f"    {v:+.10f} · {ws(w)}")
 
 print("\n  Phase 1e: Reduce B₃")
@@ -350,6 +354,7 @@ print(f"NEUTRON NF(𝔫) = NF(B₃ · crossings(u,d,d)): {len(elem_n)} terms")
 print("=" * 80)
 for w, c in sorted(elem_n.items(), key=lambda x: (len(x[0]), x[0])):
     v = float(c.subs(q, q0))
+    v_polynomial_q = expose_polynomial(c, q)
     name = pn(w)
     tag = f"  [{name}]" if name else ""
     print(f"  {v:+.10f} · {ws(w):<15}{tag}")
@@ -386,6 +391,7 @@ print(f"PROTON NF(𝔭) = NF(B₃ · crossings(u,u,d)): {len(elem_p)} terms")
 print("=" * 80)
 for w, c in sorted(elem_p.items(), key=lambda x: (len(x[0]), x[0])):
     v = float(c.subs(q, q0))
+    v_polynomial_q = expose_polynomial(c, q)
     name = pn(w)
     tag = f"  [{name}]" if name else ""
     print(f"  {v:+.10f} · {ws(w):<15}{tag}")
@@ -443,6 +449,7 @@ def terms_to_list(terms):
     result = []
     for w, c in sorted(terms.items(), key=lambda x: (len(x[0]), x[0])):
         v = float(c.subs(q, q0))
+        v_polynomial_q = expose_polynomial(c, q)
         result.append({
             "word": list(w), "word_str": ws(w), "particle": pn(w),
             "knot": knot_name(w),

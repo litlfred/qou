@@ -287,6 +287,7 @@ if __name__ == "__main__":
         for lam in partitions_of(3):
             chi = q_character_on_braid_word(lam, crossings, q)
             chi_at_q0 = float(chi.subs(q, q0).evalf(30))
+            chi_at_q0_polynomial_q = expose_polynomial(chi, q)
             per_lambda[str(lam)] = {
                 "symbolic": str(sp.nsimplify(chi)),
                 "at_q0": chi_at_q0,
@@ -323,6 +324,7 @@ if __name__ == "__main__":
             total += w * chi
         total = sp.simplify(total)
         total_q0 = float(total.subs(q, q0).evalf(30))
+        total_q0_polynomial_q = expose_polynomial(total, q)
         print(f"  |tr_M({label})| @ q_0 = {abs(total_q0):+.6e}")
         results[f"{label}_total"] = {
             "symbolic": str(sp.nsimplify(total)),

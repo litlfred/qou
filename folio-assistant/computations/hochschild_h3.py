@@ -345,7 +345,9 @@ if __name__ == "__main__":
         "basis": BASIS,
         "hecke_relation_verified": True,
         "inner_derivation_pairing_at_q0": float(pairing.subs(q, q0).evalf(30)),
+        "inner_derivation_pairing_at_q0_polynomial_q": expose_polynomial(pairing, q),
         "cup_product_inner_pair_at_q0": float(cup_pairing_diag.subs(q, q0).evalf(30)),
+        "cup_product_inner_pair_at_q0_polynomial_q": expose_polynomial(cup_pairing_diag, q),
     }
     out = Path(__file__).parent / "hochschild-h3.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))

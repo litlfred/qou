@@ -74,15 +74,19 @@ def witness_atom(Z, N, include_inter=True):
 
     # Numerical evaluation at q_0
     total_mn_q0 = float(total_mn.subs(q, q0).evalf(30))
+    total_mn_q0_polynomial_q = expose_polynomial(total_mn, q)
     total_triv_q0 = float(total_triv.subs(q, q0).evalf(30))
+    total_triv_q0_polynomial_q = expose_polynomial(total_triv, q)
 
     # Top contributing partitions by |w_λ · χ^λ| at q_0
     contribs = []
     for t in terms_mn:
         val = float(t["contribution"].subs(q, q0).evalf(30))
+        val_polynomial_q = expose_polynomial(t["contribution"], q)
         contribs.append({
             "partition": t["partition"],
             "weight_at_q0": float(t["weight"].subs(q, q0).evalf(30)),
+            "weight_at_q0_polynomial_q": expose_polynomial(t["weight"], q),
             "character": int(t["character"]),
             "contribution_at_q0": val,
         })
