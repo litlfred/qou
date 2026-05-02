@@ -59,28 +59,92 @@ LP_SDP_HINTS = (
 )
 
 
+# Solver-import patterns that indicate a script ACTUALLY solves an LP/SDP.
+# A witness is only flagged if its sibling .py imports one of these.
+ACTUAL_SOLVER_IMPORTS = (
+    "from scipy.optimize import linprog",
+    "scipy.optimize.linprog",
+    "import cvxpy",
+    "from cvxpy",
+    "from lp_dual_solver import",
+    "import lp_dual_solver",
+    "linprog(",
+)
+
+
+def _sibling_script(witness_path: Path) -> Path | None:
+    """Find the .py script that emitted this witness.
+
+    Heuristic: same directory, filename obtained by stripping
+    .witness.json or -witness.json and adding .py. Try both
+    underscore and hyphen variants.
+    """
+    stem = witness_path.name.removesuffix(".witness.json").removesuffix(
+        "-witness.json")
+    for variant in (stem, stem.replace("-", "_"), stem.replace("_", "-")):
+        cand = witness_path.parent / f"{variant}.py"
+        if cand.exists():
+            return cand
+    return None
+
+
+def _script_imports_solver(script_path: Path) -> tuple[bool, str]:
+    try:
+        text = script_path.read_text()
+    except OSError:
+        return False, ""
+    for marker in ACTUAL_SOLVER_IMPORTS:
+        if marker in text:
+            return True, marker
+    return False, ""
+
+
 def is_lp_sdp_witness(path: Path) -> tuple[bool, str]:
     """Returns (is_lp_sdp, reason).
 
-    Heuristic: filename or top-level description / computation field
-    contains an LP/SDP/operator-selection hint.
+    A witness is flagged iff:
+    1. Its filename or description/computation field contains an
+       LP/SDP/operator-selection hint, AND
+    2. Its sibling .py script actually imports an LP/SDP solver
+       (linprog / cvxpy / lp_dual_solver). This eliminates the
+       false-positive case where a script's name or description
+       contains 'shadow'/'lp'/'dual' but the script doesn't solve
+       any optimization problem (e.g., precomputed shadow prices).
     """
+    # Step 1: name/description hint
     name = path.name.lower()
+    hint_match: tuple[str, str] | None = None
     for hint in LP_SDP_HINTS:
         if hint in name:
-            return True, f"filename matches '{hint}'"
-    try:
-        data = json.loads(path.read_text())
-    except (json.JSONDecodeError, OSError):
+            hint_match = ("filename", hint)
+            break
+    if hint_match is None:
+        try:
+            data = json.loads(path.read_text())
+        except (json.JSONDecodeError, OSError):
+            return False, ""
+        for field in ("description", "computation", "audit", "name"):
+            v = data.get(field)
+            if isinstance(v, str):
+                v_low = v.lower()
+                for hint in LP_SDP_HINTS:
+                    if hint in v_low:
+                        hint_match = (field, hint)
+                        break
+                if hint_match:
+                    break
+    if hint_match is None:
         return False, ""
-    for field in ("description", "computation", "audit", "name"):
-        v = data.get(field)
-        if isinstance(v, str):
-            v_low = v.lower()
-            for hint in LP_SDP_HINTS:
-                if hint in v_low:
-                    return True, f"{field} contains '{hint}'"
-    return False, ""
+
+    # Step 2: sibling script must import an actual LP/SDP solver
+    sibling = _sibling_script(path)
+    if sibling is None:
+        return False, ""  # no sibling — can't confirm; don't flag
+    has_solver, marker = _script_imports_solver(sibling)
+    if not has_solver:
+        return False, ""  # name match but no actual solver — false positive
+    field, hint = hint_match
+    return True, f"{field} matches '{hint}' + script imports '{marker}'"
 
 
 def main(argv: list[str]) -> int:

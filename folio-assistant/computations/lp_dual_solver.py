@@ -294,8 +294,11 @@ def solve_psd_operator_selection_sdp(
     x_star = np.asarray(x.value)
     primal_obj = float(prob.value)
 
-    # Dual variables (CVXPY exposes via .dual_value on each constraint)
-    y_eq = float(constraints[0].dual_value)
+    # Dual variables (CVXPY exposes via .dual_value on each constraint).
+    # CVXPY sign convention for `Minimize` + `==`: dual_value is the
+    # negative of scipy's marginal — flip to match the operator-
+    # selection LP's stated dual program (max n_target · y_0).
+    y_eq = -float(constraints[0].dual_value)
     y_ineq = np.asarray(constraints[1].dual_value)
     dual_obj = float(n_target * y_eq)
     duality_gap = abs(primal_obj - dual_obj)
