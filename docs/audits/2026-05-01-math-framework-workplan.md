@@ -13,23 +13,46 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 
 ## P0 — Strict Archimedean wall (must be clean before anything else)
 
-### P0.1 — Wall enforcement audit on every proof, not just statements
+### P0.1 — Wall enforcement audit on every proof, not just statements — ✅ landed (sweep + triage)
 
 - **W**: User directive: "strict archimedean wall **including in
   proofs**". A statement may be algebraic while its proof leaks via
   Mostow / hyperbolic volume.
-- **D**: A grep + manual sweep over every `proof` block in
-  `content/quantum-observable-universe/**/*.md`. Output: a
-  `wall-violations.witness.json` listing every proof block whose
-  text invokes Vol(K), hyperbolic, Mostow, Gromov, Thurston,
-  SnapPy, Kashaev, Murakami at the proof level (not as a τ-image).
-- **B**: blocked by nothing.
-- **S**: every flagged proof either (a) is recast to use
-  `algebraic-quantum-volume` instead of $\mathrm{Vol}(K)$, or (b)
-  is moved to a `remark` interpreting the algebraic statement.
-- **E**: 1 day for the sweep + recast. The recast template already
-  exists on the followups branch
-  ([`recast-tightening-audit-2026-04-27.md`](../recast-tightening-audit-2026-04-27.md)).
+- **D**: ✅ Sweep + triage delivered:
+  - New script
+    [`folio-assistant/computations/wall_violations_sweep.py`](../../folio-assistant/computations/wall_violations_sweep.py)
+    greps every `*-proof.md` under
+    `content/quantum-observable-universe/` for Mostow / Gromov /
+    Thurston / hyperbolic Vol(K) / SnapPy / Kashaev / Murakami /
+    volume-conjecture markers and heuristically triages each match
+    as `proof-input` (likely violation), `tau-image` (allowed), or
+    `context-only` (allowed).
+  - Witness JSON
+    [`wall-violations-sweep.witness.json`](../../folio-assistant/computations/wall-violations-sweep.witness.json)
+    records 24 hits across 6 of 149 proof files, with 5 triaged as
+    `proof-input`.
+  - Manual triage doc
+    [`docs/audits/2026-05-02-p0-1-wall-violation-sweep.md`](2026-05-02-p0-1-wall-violation-sweep.md)
+    inspects each `proof-input` hit:
+    - 3 hits in `atom-knot-mass-derivation-proof.md` are
+      **false positives** (already correctly framed as
+      "Post-Archimedean naming (borrowed, not part of derivation)").
+    - 2 real wall violations in `local-substrate-q-proof.md`
+      and `skein-mass-relation-proof.md`: both use
+      $\mathrm{Vol}(4_1) \approx 2.0299$ as a numerical derivation
+      input for the $m_\mu / m_e$ ratio, requiring P0.2 recast to
+      replace with $\mathrm{Vol}_q(4_1)$ + late
+      $\tau_{\mathrm{arch}}$ specialisation.
+- **Headline result**: out of 149 proof blocks, **2 real
+  violations** identified, both **blocked on workplan P0.2** (the
+  recast lands the substitution machinery; the proof edits become
+  mechanical once the recast is on `main`).
+- **B**: real-violation fixes blocked on **P0.2** (the recast).
+- **S**: ✅ every proof block has been swept; the 2 flagged
+  violations are individually documented and pending P0.2 for
+  fix-up.
+- **E**: 1 day budgeted, sweep + triage done in 0.5 day. The
+  follow-up recast pass (post-P0.2) is the remaining 0.5 day.
 
 ### P0.2 — Land the `algebraic-quantum-volume` recast on `main`
 

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T01:23:36.702727+00:00",
-  "commitSha": "f3415bbbac45c7484db5f823aa92c87f0280461e",
+  "computedAt": "2026-05-02T01:36:09.627114+00:00",
+  "commitSha": "9695a16e8c58e0f553e3ee274fc65ed12ffda79f",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1752,6 +1752,7 @@
         "v-hat-gram-projection-probe.witness.json",
         "v-hat-pair-ratio.witness.json",
         "validate-isotope-nf-stability.witness.json",
+        "wall-violations-sweep.witness.json",
         "wedderburn-3term-avg-baseline.witness.json",
         "wedderburn-3term-inter-only.witness.json",
         "wedderburn-inter-gen-direct.witness.json",
