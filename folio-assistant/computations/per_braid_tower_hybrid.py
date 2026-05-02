@@ -73,7 +73,11 @@ def per_braid_mass_hybrid(Z, N):
     A = Z + N
 
     # Level 0: q-Hecke descended (splits isobars)
-    desc_q_hecke, _ = markov_trace_q_hecke_atomic(Z, N, include_inter=True)
+    # dim_cap: skip partitions with dim_λ > 5000 to keep compute
+    # tractable in Python. Truncation drops very-high-dim
+    # contributions; per witness analysis these contribute much
+    # less than the smaller partitions.
+    desc_q_hecke, _ = markov_trace_q_hecke_atomic(Z, N, include_inter=True, dim_cap=5000)
     desc = abs(desc_q_hecke)
 
     # Level 1: per-nucleon traces via q=1 MN
