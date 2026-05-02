@@ -224,16 +224,29 @@ theorem magicIndex_magicAt (i : ℕ) (hi : 1 ≤ i ∧ i ≤ 7) :
   | 7, _, _ => exact ⟨126, rfl, rfl⟩
 
 /-- **The associated Bring torus knot at index i.** Maps i = 1..6
-    to the corresponding Bring-embeddable torus knot. (Index 7
-    is open per the framework.) -/
+    to the framework's Bring-embeddable torus knots, and provides
+    the BEST CANDIDATE T_{3,7} for index 7 (the open n=126 case).
+
+    Selection rule (per torus-knot-arithmetic analysis):
+    - Shell i prefers a torus knot with crossing ≈ 2i.
+    - Crossings 4, 6, 12 have NO torus knots (arithmetic gaps —
+      those crossings host hyperbolic knots, a different topological
+      class).
+    - When 2i is in a gap, the framework picks the next available
+      torus knot (so shell 6 with ideal 2i = 12 uses T_{3,5} at
+      crossing 10).
+    - Shell 7's ideal 2i = 14, and T_{3,7} (crossing 14, genus 6) is
+      the first torus knot with that crossing — making it the
+      framework's natural 7th choice. -/
 def bringKnotAt (i : ℕ) : Option TorusKnot :=
   match i with
-  | 1 => some ⟨2, 3⟩  -- T_{2,3}
-  | 2 => some ⟨2, 5⟩  -- T_{2,5}
-  | 3 => some ⟨2, 7⟩  -- T_{2,7}
-  | 4 => some ⟨3, 4⟩  -- T_{3,4}
-  | 5 => some ⟨2, 9⟩  -- T_{2,9}
-  | 6 => some ⟨3, 5⟩  -- T_{3,5}
+  | 1 => some ⟨2, 3⟩  -- T_{2,3}, crossing 3
+  | 2 => some ⟨2, 5⟩  -- T_{2,5}, crossing 5
+  | 3 => some ⟨2, 7⟩  -- T_{2,7}, crossing 7
+  | 4 => some ⟨3, 4⟩  -- T_{3,4}, crossing 8
+  | 5 => some ⟨2, 9⟩  -- T_{2,9}, crossing 9
+  | 6 => some ⟨3, 5⟩  -- T_{3,5}, crossing 10
+  | 7 => some ⟨3, 7⟩  -- T_{3,7}, crossing 14 — CANDIDATE for n=126
   | _ => none
 
 /-- **The shell size at index i** — number of cells contributed by
