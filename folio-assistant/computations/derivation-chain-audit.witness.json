@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T22:17:14.474839+00:00",
-  "commitSha": "12fd2b1a0558e74e1d65be8ba3e5ddf834f72b09",
+  "computedAt": "2026-05-02T22:42:40.343101+00:00",
+  "commitSha": "7eacc86edc22ac78024080a723db63cd66a2c37b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1503,6 +1503,7 @@
         "h2-integer-lp.witness.json",
         "h2-molecular-binding.witness.json",
         "h6-full-computation.witness.json",
+        "habiro-coefficients-atomic-fast.witness.json",
         "habiro-coefficients-interpolate.witness.json",
         "habiro-exact-mass-endomorphism.witness.json",
         "habiro-interpolate-cross-validation.witness.json",
