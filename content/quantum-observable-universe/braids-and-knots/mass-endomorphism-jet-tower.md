@@ -123,16 +123,21 @@ cubic terms at level $n$
 
 ## Remaining open subconjectures
 
-1. **Jet-level sum convergence**: a geometric-series tail bound
+1. **Jet-level sum convergence** — 🟡 path-(b) closure via
+   [`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max)
+   (workplan **P3.4** path (b)). A geometric-series tail bound
    has been proved conditional on uniform boundedness of
    $\Delta^{(n)}$
    ([brane-tower tail bound](#prop:jet-tower-convergence)):
    if $|\Delta^{(n)}| \leq \Delta_{\max}$ for all $n$, then the
    $N$-term truncation error is
    $\leq \Delta_{\max} \hbar_q^{2(N+1)} / (1 - \hbar_q^{2})$.
-   The remaining open piece is to prove the uniform bound on
-   $\Delta^{(n)}$ itself; empirically it holds (and is roughly
-   constant) on light atoms.
+   The uniform bound is now an explicit conjecture with empirical
+   support: the
+   [`jet_tower_delta_max.py`](../../../folio-assistant/computations/jet_tower_delta_max.py)
+   measurement script confirms `uniform_bound_pass = true` for
+   D, T, ³He across $n = 1, \dots, 7$. The path-(a) proof from
+   GS spectral-sequence $E_2$-collapse remains open.
 2. **Pentagon $\to$ uv-commutation** — ✅ resolved by
    [`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace).
    The traced volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$

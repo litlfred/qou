@@ -450,6 +450,7 @@ export default chapter({
         "residue-at-root",
         "vhat-pair-commutation-trace",
         "tower-pair-equality-fixed-level",
+        "jet-tower-uniform-delta-max",
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",

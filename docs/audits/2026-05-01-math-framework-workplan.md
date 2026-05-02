@@ -458,20 +458,44 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   P3.2: the question dissolves once the pentagon-framing is
   recognised as non-applicable).
 
-### P3.4 — Jet-level uniform $\Delta_{\max}$ (audit GAP 14a)
+### P3.4 — Jet-level uniform $\Delta_{\max}$ (audit GAP 14a) — ✅ landed (path (b))
 
 - **W**: line 112 of prior audit. Convergence of the jet-tower sum
   is conditional on a uniform per-level descent residue bound;
   uniform proof open.
-- **D**: Either (a) prove uniform $|\Delta^{(n)}| \leq \Delta_{\max}$
-  from the GS spectral sequence's $E_2$-collapse (which lives on the
-  followups branch), or (b) state the bound as a conjecture and
-  measure $|\Delta^{(n)}|$ across $n=0..N$ in compute to confirm
-  geometric decay.
-- **B**: depends on followups-branch landing for path (a).
-- **S**: jet-tower sum convergence is established (proved or
-  conjectured-with-numerical-evidence).
-- **E**: (a) 1–2 weeks; (b) 2 days.
+- **D**: ✅ Path (b) deliverable — conjecture-with-numerical-evidence:
+  - New conjecture block
+    [`conj:jet-tower-uniform-delta-max`](../../content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md)
+    (`.ts` + `.md` + `.lean` triple). Lean stub axiomatises the
+    bound as a typeclass per CLAUDE.md §3b; the conditional
+    geometric-tail bound becomes provable from the class instance.
+  - New measurement script
+    [`folio-assistant/computations/jet_tower_delta_max.py`](../../folio-assistant/computations/jet_tower_delta_max.py)
+    that runs `unified_lift.binding_unified` for D, T, ³He across
+    $n = 1, \dots, N_{\max}$ (default 8) and reports max
+    $|\Delta^{(n)}|$, geometric-decay ratios, and a
+    `uniform_bound_pass` flag.
+  - Witness JSON
+    [`jet-tower-delta-max.witness.json`](../../folio-assistant/computations/jet-tower-delta-max.witness.json)
+    confirms `aggregate_uniform_bound_pass = true` for all three
+    atoms across $n = 1, \dots, 7$ (the default jet cap).
+  - `prop:jet-tower-convergence` updated to reference the
+    conjecture and the witness.
+  - `mass-endomorphism-jet-tower.md` open-subconjecture #1 marked
+    🟡 path-(b) closure with the resolution narrative.
+- **Path (a) still open**: the GS spectral-sequence $E_2$-collapse
+  proof (which would unconditionally prove $\Delta_{\max}$) requires
+  the followups-branch GS infrastructure landing on `main`. Tracked
+  as a Lean-side action item; estimated 1–2 weeks once the GS
+  formalisation is available.
+- **B**: blocked by nothing for path (b); path (a) blocked by
+  followups-branch landing.
+- **S**: ✅ jet-tower sum convergence is established
+  (conjectured-with-numerical-evidence). The empirical pass at
+  $n = 1, \dots, 7$ with margin gives strong support, sufficient
+  to unblock downstream blocks that quote
+  `prop:jet-tower-convergence`.
+- **E**: (a) 1–2 weeks; (b) 2 days → done in 1 day.
 
 ### P3.5 — `family-4` motivic-substrate `instance` at $q_0$
 
