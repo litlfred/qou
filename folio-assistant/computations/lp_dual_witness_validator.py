@@ -34,22 +34,28 @@ from lp_dual_solver import verify_dual_present
 
 
 # Witness file name patterns or (description / computation) field
-# substrings that indicate an LP / SDP / operator-selection compute.
+# substrings that indicate a NUMERICAL LP / SDP solve where the
+# binding-energy / shadow-price interpretation applies.
+#
+# Tightened (2026-05-02 post-refactor-framework audit): excluded
+# overly-broad terms ("confinement-", "sdp" alone, "knot-operator")
+# that match SYMBOLIC certificate witnesses or knot-particle
+# feasibility probes — these don't compute LP duals (they emit
+# filtration certificates or feasibility status, a separate notion).
+#
+# Only true operator-selection / shadow-price / LP-dual witnesses
+# need the primal+dual extraction.
 LP_SDP_HINTS = (
-    "lp-",
-    "lp_",
-    "operator-selection",
-    "operator_selection",
-    "confinement-",
-    "confinement_",
-    "shadow",
-    "duality",
-    "knot-operator",
-    "knot_operator",
-    "sdp",
-    "sdp-",
+    "lp-dual",
+    "lp_dual",
+    "operator-selection-lp",
+    "operator_selection_lp",
+    "shadow-price",
+    "shadow_price",
     "primal-dual",
     "primal_dual",
+    "lp-duality",
+    "lp_duality",
 )
 
 
