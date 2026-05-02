@@ -1,4 +1,5 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Data.Matrix.Basic
 import Mathlib.Tactic
 
 /-!

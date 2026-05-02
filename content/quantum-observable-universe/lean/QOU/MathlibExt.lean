@@ -1,7 +1,5 @@
 import Mathlib.Data.List.Basic
-import Mathlib.Data.List.Perm
 import Mathlib.Data.List.Sort
-import Mathlib.Algebra.BigOperators.Group.List
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
