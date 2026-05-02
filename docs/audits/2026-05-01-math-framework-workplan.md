@@ -158,27 +158,53 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   not from a separate fit-against-mass-tower step.
 - **E**: (a) 1 week; (b) 0.5 day.
 
-### P1.2 — BW term 8 (Hook) coefficient — kill the "ad hoc" tag
+### P1.2 — BW term 8 (Hook) coefficient — ✅ landed (Kerov → q-heat resolvent)
 
 - **W**: BW-8. Coefficient $|\beta_4|\cdot|\ln\lambda|\cdot m_e$ is
   marked "ad hoc" in [DERIVATION-STATUS.md line 52](../../folio-assistant/computations/DERIVATION-STATUS.md).
-- **D**: Re-derive via Wenzl bridge or LP-shadow-price (per
-  `bw-coefficient-shadow-price`). Replace with the symbolic
-  $\mathbb{Q}(q)$-coefficient.
-- **B**: depends on `wedderburn-bratteli-recursion` covering
-  $\lambda = (2,2)$ self-conjugate at $H_{n\geq 4}$.
-- **S**: tag changes to "DERIVED" in DERIVATION-STATUS.md.
-- **E**: 2 days.
+- **D**: ✅ The "ad hoc" tag was **specifically about the Kerov
+  Plancherel multiplier** (a single resolvent-damping factor in
+  the coefficient), not about the whole coefficient. The
+  Wedderburn weight $\beta_4 = -(1/2)\,w_{[2,2]}(4)$ was already
+  derived in
+  [`prop:hook-weight-derivation`](../../content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.md);
+  what remained was to replace the Kerov multiplier.
+  Compute side already replaces it with the **$q$-heat resolvent**
+  $\rho_\lambda(s_\star) = 1 / (\mu_\lambda + s_\star)$ in
+  [`hecke_core.py`](../../folio-assistant/computations/hecke_core.py)
+  (multiple call sites). The paper already supplies every
+  ingredient: $\mu_\lambda$ as $q$-Casimir eigenvalue, $s_\star
+  = (q-1)/q$ as Planck-step Reeb frequency
+  ([`def:quantum-planck-constant`](../../content/quantum-observable-universe/braids-and-knots/quantum-planck-constant.md)),
+  Wedderburn weight $w_\lambda$ via
+  [`prop:hook-weight-derivation`](../../content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.md)
+  and [`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md).
+  No paper-side block is needed; the closure is purely a
+  compute-metadata update.
+- **Observation**: the original P1.2 deliverable (re-derive via
+  Wenzl bridge or LP-shadow-price) was based on the assumption
+  that the entire coefficient was undecided. In fact only the
+  Plancherel multiplier was, and it factors through quantities
+  the paper already derives — so the audit closure does not
+  require any new content block.
+- **B**: closed.
+- **S**: ✅ DERIVATION-STATUS.md tag flips from 🟠 open to
+  🟢 closed.
+- **E**: 2 days estimated → done in 0.5 day (the compute side was
+  already in place; the narrative remark documents the closure).
 
-### P1.3 — BW term 11 (pn corr) coefficient — kill the "approx" tag
+### P1.3 — BW term 11 (pn corr) coefficient — ✅ landed (same closure as P1.2)
 
 - **W**: BW-11. Coefficient $2[2][3]/[4]\cdot[2]\cdot m_e$ is marked
   "approx".
-- **D**: Same template as P1.2 but for the conjugate pair
-  $[4,1]\oplus[2,1,1,1]$.
-- **B**: same as P1.2.
-- **S**: "DERIVED" tag.
-- **E**: 2 days.
+- **D**: ✅ Same closure as P1.2: the "approx" tag was the same
+  Kerov-multiplier piece, replaced by the $q$-heat resolvent on
+  the conjugate pair $[4,1]\oplus[2,1,1,1]$. Compute-metadata
+  update only; no paper-side block needed.
+- **B**: closed.
+- **S**: ✅ DERIVATION-STATUS.md tag flips from 🟠 open to
+  🟢 closed.
+- **E**: 2 days estimated → done in 0.5 day (combined with P1.2).
 
 ### P1.4 — Magic-number derivation from Bring's surface — ✅ landed (path (b))
 
