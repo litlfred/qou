@@ -170,21 +170,25 @@ def specht_character_placeholder(partition, braid_word=None):
     return Integer(1)
 
 
-def specht_character_atomic(partition, Z, N, include_inter=True):
+def specht_character_atomic(partition, Z, N, include_inter=True,
+                             m_pp=1, m_pn=1, m_nn=1):
     """Classical χ^λ(π(𝒜)) — S_{3A} character evaluated on the
     permutation underlying the atomic braid word.  Uses
     Murnaghan–Nakayama.  Returns an integer (symbolic in no variables).
+
+    P2.1 wiring: threads m_pp/m_pn/m_nn through.
     """
     from murnaghan_nakayama import character_on_atomic_braid
     chi, _cycle_type = character_on_atomic_braid(
-        partition, Z, N, include_inter)
+        partition, Z, N, include_inter, m_pp, m_pn, m_nn)
     return Integer(chi)
 
 
 # ─── Assembly ─────────────────────────────────────────────────────────
 
 def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
-                                     Z=None, N=None, include_inter=True):
+                                     Z=None, N=None, include_inter=True,
+                                     m_pp=1, m_pn=1, m_nn=1):
     """Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) as a sympy expression.
 
     Enumerates all p(3A) partitions of 3A.
@@ -192,7 +196,15 @@ def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
     char_kind:
       "trivial"   — χ^λ = 1 (legacy path; partition of unity)
       "mn-atom"   — Murnaghan–Nakayama χ^λ(π(𝒜)) on the atomic-braid
-                    permutation, parameterised by (Z, N).
+                    permutation, parameterised by (Z, N) and the
+                    dressed-quark mass multiplicities (m_pp, m_pn, m_nn).
+
+    P2.1 wiring: threads m_pp/m_pn/m_nn through to specht_character_atomic
+    and atomic_braid_word so that dressed-quark mass differentiation
+    reaches the SW character at A ≥ 2 (where inter-nucleon structure
+    differs by proton/neutron pairing). The q=1 limit of the Hecke
+    character is still implicit; full q-deformation is a separate
+    refinement (q-ribbon-tableau weights).
 
     Returns (sympy_expr, partitions_with_weights_list).
     """
@@ -208,7 +220,8 @@ def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
     for lam in partitions:
         w = schur_weyl_weight(lam, q)
         if char_kind == "mn-atom":
-            chi = specht_character_atomic(lam, Z, N, include_inter)
+            chi = specht_character_atomic(lam, Z, N, include_inter,
+                                          m_pp, m_pn, m_nn)
         else:
             chi = specht_character_placeholder(lam)
         if chi == 0:

@@ -228,21 +228,20 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     # or the SW evaluation fails (preserves backward compatibility for
     # callers passing m_pp/m_pn/m_nn != 1, where the SW char_kind="mn-atom"
     # is not yet wired to the dressed-quark mass parameters).
-    use_schur_weyl = (m_pp == 1 and m_pn == 1 and m_nn == 1)
+    # P2.1 wiring: SW path now accepts m_pp/m_pn/m_nn (threaded through
+    # global_wedderburn_sum_symbolic → specht_character_atomic →
+    # character_on_atomic_braid → atomic_braid_word). Always preferred
+    # when SW is available.
+    use_schur_weyl = True
     if use_schur_weyl:
         try:
             import sympy as _sp
-
-# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
-import sys as _p25_sys
-from pathlib import Path as _P25Path
-_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
-from witness_polynomial import expose_polynomial  # noqa: F401
             from schur_weyl_symbolic import global_wedderburn_sum_symbolic
             _q_sym = _sp.Symbol("q", positive=True, real=True)
             _desc_sym, _terms = global_wedderburn_sum_symbolic(
                 A, _q_sym, char_kind="mn-atom",
                 Z=Z, N=N, include_inter=include_inter,
+                m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
             )
             _desc_q0 = _sp.N(_desc_sym.subs(_q_sym, _sp.Rational(str(q_val))),
                              precision)
