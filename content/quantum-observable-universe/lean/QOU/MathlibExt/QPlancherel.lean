@@ -96,6 +96,16 @@ theorem measure_eq_zero_of_dq_zero (λ : Λ) (k : ℕ)
   rw [hdq]
   simp
 
+/-- **Measure scales as `d_q²`**: the q-Plancherel measure is
+    `d_q(λ)²` divided by the partition function. Specifically,
+    `Z_q(k) · measure λ k = d_q(λ)²`. -/
+theorem measure_mul_partitionFunction (λ : Λ) (k : ℕ) :
+    HasPartitionFunction.Z (Λ := Λ) k * measure (R := R) (Λ := Λ) λ k
+      = (QDimension.dq λ : R) ^ 2 := by
+  unfold measure
+  rw [mul_div_cancel₀]
+  exact ne_of_gt (HasPartitionFunction.Z_pos k)
+
 /-! ## §2  Féray-Méliot q-Plancherel CLT
 
 The headline asymptotic result: as `k → ∞`, the character

@@ -79,6 +79,16 @@ theorem SDPPrimal.feasible_of_strictlyFeasible
   obtain ⟨Φ, hPD, hConstr⟩ := h
   exact ⟨Φ, hPD.posSemidef, hConstr⟩
 
+/-- **Empty-constraint feasibility** — proved theorem. With no
+    equality constraints, every PSD matrix is feasible. -/
+theorem SDPPrimal.isFeasible_of_emptyConstraints
+    (sdp : SDPPrimal n R Empty)
+    (Φ : Matrix (Fin n) (Fin n) R) (h : Φ.PosSemidef) :
+    sdp.IsFeasible Φ := by
+  refine ⟨h, ?_⟩
+  intro i
+  exact i.elim
+
 /-- **Primal-feasible objective value** at a given feasible point. -/
 def SDPPrimal.objAt (sdp : SDPPrimal n R ι) (Φ : Matrix (Fin n) (Fin n) R) : R :=
   Matrix.trace (sdp.cost * Φ)
