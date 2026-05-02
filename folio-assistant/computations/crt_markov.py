@@ -300,50 +300,41 @@ def markov_trace_schur_weyl_eval(Z, N, include_inter, q_val, precision=50):
     restoring Φ_q convergence (per the P2.2a witness:
     `docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json`).
 
+    Implementation (P2.2b-MN, 2026-05-01): direct mpmath path via
+    `schur_weyl_mpmath.markov_trace_mpmath`. Iterates only
+    length-≤-2 partitions (Schur s_λ(q,q⁻¹) vanishes for length
+    > 2), evaluates each weight w_λ(q_0) and character χ^λ(𝒜) at
+    q_0 directly in mpmath, sums. Bypasses sympy's symbolic GCD
+    bottleneck. Scales to A=40 (⁴⁰Ca, 120 strands) in ~0.2s; the
+    earlier sympy path got stuck at A=12 (>5 min).
+
     The tower terms (Σ Φ_q(|V̂_i|), z² Σ Φ_q(|V̂_i V̂_j|)) are
     intrinsically per-generator and don't have an immediate
     Schur-Weyl per-partition reformulation; they remain in
-    `tower_mass_symbolic_eval` flagged for re-derivation.
+    `tower_mass_symbolic_eval` flagged for re-derivation. The
+    per-braid tower (`prop:per-braid-mass-tower`) replaces them.
 
-    Caveat: schur_weyl_symbolic.specht_character_atomic uses
-    Murnaghan-Nakayama (q=1 limit of the Hecke character). The
-    full q-deformed Hecke character is a refinement; for now the
-    H_{3A} weights with q=1 characters already restore convergence
-    by 5-7 orders of magnitude vs H_3 approximation.
+    Caveat: the underlying `mn_character` is the q=1 limit of the
+    Hecke character (Murnaghan-Nakayama). The full q-deformed
+    Hecke character is a refinement; for now MN already restores
+    convergence.
 
     Args:
         Z, N: proton/neutron count.
-        include_inter: include inter-nucleon crossings (always
-            True for the Murnaghan-Nakayama path; the `False`
-            branch of the legacy descended-only does not have a
-            direct Schur-Weyl analogue).
+        include_inter: include inter-nucleon crossings.
         q_val: substrate parameter (mpmath.mpf or float).
-        precision: mpmath dps for final evaluation.
+        precision: mpmath dps.
 
     Returns:
         mpmath.mpf — |tr_M(𝒜, q_val)| via the proper H_{3A} sum.
 
     Ref: prop:schur-weyl-mass-decomposition
     """
-    import sympy as sp
-    from schur_weyl_symbolic import global_wedderburn_sum_symbolic
-
-    A = Z + N
-    q_sym = sp.Symbol("q", positive=True, real=True)
-
-    # Proper H_{3A} sum (symbolic in q).
-    proper_sum, _terms = global_wedderburn_sum_symbolic(
-        A, q_sym, char_kind="mn-atom", Z=Z, N=N, include_inter=include_inter
+    from schur_weyl_mpmath import markov_trace_mpmath
+    total, _parts, _cyc = markov_trace_mpmath(
+        Z, N, q_val=q_val, precision=precision, include_inter=include_inter
     )
-
-    # Substitute q_0 numerically.
-    mpmath.mp.dps = precision
-    q0_rational = sp.Rational(str(q_val))
-    value = sp.N(proper_sum.subs(q_sym, q0_rational), precision)
-
-    # Coerce to mpmath.mpf (real-valued; the SW sum is real for
-    # real q > 0).
-    return mpmath.mpf(str(value))
+    return total
 
 
 def test_tower_binding():
