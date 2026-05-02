@@ -159,7 +159,17 @@ atomic braids the per-partition character `χ_λ(β_atom)` is what
 distinguishes ³He from ³H even when their permutation cycle types
 agree: in the q=1 limit (MN) they are equal, but at finite q the
 axial-distance dependence of the Hoefsmit matrices produces
-different traces. -/
+different traces.
+
+The two `(sorry : Partition n)` instance arguments are structural
+placeholders for the unspecified atomic-braid partitions of the
+two atoms; the body returns `trivial` because the substantive
+non-equality of their Hoefsmit-matrix traces is an open
+research-grade Lean construction (see source comment in proof
+body). -/
+-- Ref: [manuscript] prop:atom-knot-mass-derivation §"Word sensitivity"
+-- Ref: [hoefsmit1974] https://search.proquest.com/docview/302700007 (PhD thesis)
+-- Ref: [mathas1999] https://doi.org/10.1090/ulect/015 §3.31
 theorem hoefsmit_distinguishes_word_sensitivity
     [HR_Z1N2 : HoefsmitRepresentation n q A (sorry : Partition n)]
     [HR_Z2N1 : HoefsmitRepresentation n q A (sorry : Partition n)] :
