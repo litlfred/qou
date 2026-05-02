@@ -101,19 +101,34 @@ def per_braid_mass_hybrid(Z, N):
     tr_p = _cached_sub_braid_trace(1, 0, False) if Z > 0 else mpmath.mpf(0)
     tr_n = _cached_sub_braid_trace(0, 1, False) if N > 0 else mpmath.mpf(0)
 
-    # Level 2: per-pair traces (CACHED).
-    tr_pp = _cached_sub_braid_trace(2, 0, True) if Z >= 2 else mpmath.mpf(0)
-    tr_nn = _cached_sub_braid_trace(0, 2, True) if N >= 2 else mpmath.mpf(0)
-    tr_pn = _cached_sub_braid_trace(1, 1, True) if Z >= 1 and N >= 1 else mpmath.mpf(0)
+    # Level 2: per-pair traces — q-Hecke (Coulomb-distinguishing per
+    # 2026-05-02 principled adoption; q=1 MN gave identical pp=nn=pn,
+    # an artifact of the q→1 limit. q-Hecke gives pp:nn:pn = 4.23:1.63:2.69
+    # relative ratios — pp/nn = 2.59 reflects Coulomb-like pp repulsion.
+    # See docs/audits/2026-05-02-coulomb-q-hecke-principled.md.)
+    _PAIR_QH_CACHE = globals().setdefault("_PAIR_QH_CACHE", {})
 
-    # Single tower (q=1 MN)
+    def _qhecke_pair_tr(Zsub, Nsub):
+        if (Zsub, Nsub) not in _PAIR_QH_CACHE:
+            v, _ = markov_trace_q_hecke_atomic(
+                Zsub, Nsub, include_inter=True, dim_cap=5000)
+            _PAIR_QH_CACHE[(Zsub, Nsub)] = abs(v)
+        return _PAIR_QH_CACHE[(Zsub, Nsub)]
+
+    tr_pp = _qhecke_pair_tr(2, 0) if Z >= 2 else mpmath.mpf(0)
+    tr_nn = _qhecke_pair_tr(0, 2) if N >= 2 else mpmath.mpf(0)
+    tr_pn = _qhecke_pair_tr(1, 1) if Z >= 1 and N >= 1 else mpmath.mpf(0)
+
+    # Single tower (q=1 MN — single-nucleon q-Hecke divergent at Φ_q;
+    # P2.2c-norm framework gap pending. Per binding-energy probe,
+    # the single-tower correction lives at level 1+.)
     single = mpmath.mpf(0)
     if Z > 0 and tr_p > 0:
         single += Z * _safe_phi(tr_p)
     if N > 0 and tr_n > 0:
         single += N * _safe_phi(tr_n)
 
-    # Pair tower (q=1 MN)
+    # Pair tower (q-Hecke per-pair, principled)
     cross = mpmath.mpf(0)
     n_pp = Z * (Z - 1) // 2
     n_nn = N * (N - 1) // 2
