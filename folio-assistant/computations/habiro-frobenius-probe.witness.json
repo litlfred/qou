@@ -1,6 +1,6 @@
 {
   "computation": "habiro-frobenius-probe",
-  "computedAt": "2026-05-02T20:28:16.908145+00:00",
+  "computedAt": "2026-05-02T20:49:03.623310+00:00",
   "description": "R6 step-1 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. This makes the Habiro → Frob_p map explicit and tabulated, which is the first concrete step toward the Habiro → MotivicGaloisCharacter instance (audit GAP 5b).",
   "reference_blocks": [
     "def:motivic-galois-character",

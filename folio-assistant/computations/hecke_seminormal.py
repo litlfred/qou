@@ -19,11 +19,15 @@ formulas:
           ρ(σ_i)|T⟩       = α_d |T⟩ + β_d |s_i T⟩
           ρ(σ_i)|s_i T⟩   = γ_d |T⟩ + δ_d |s_i T⟩
       where (using [d]_q = (q^d - q^{-d})/(q - q^{-1})):
-          α_d = (q - q^{-1}) / (1 - q^{-2 d})
-              = q · ([d-1]_q / [d]_q)        if d > 0
-          β_d = √( (1 - α_d)(α_d + q^{-1})/q )  (or 1 in normalized form)
-          for the rational form (no square roots), use:
-              β_d β'_d = (1 - α_d)(α_d + q^{-1})
+          α_d = (q - q^{-1}) / (1 - q^{-2 d})        (diagonal)
+          which evaluates to q at d = 1 and -q^{-1} at d = -1, so
+          the same-row / same-column special cases are recovered as
+          the |d| = 1 limits of the generic formula.
+      In the asymmetric (non-square-root) rational form used here:
+          β_d (T → T', d > 0) = 1
+          β_d (T' → T, d < 0) = (1 − α_{|d|})(α_{|d|} + q^{-1})
+      The constraint ρ(σ_i)² = (q − q^{-1}) ρ(σ_i) + 1 fixes the
+      product β_d · β_{-d}.
               with β_d = 1 and β'_d = (1 - α_d)(α_d + q^{-1})
 
 The simplest presentation (rational Hoefsmit):
@@ -175,7 +179,18 @@ def hecke_generator_action(partition, i, q):
             #               (1 - α_d)(α_d + q^{-1}) (for s_i T → T)
             alpha = (q - 1 / q) / (1 - q ** (-2 * d))
             mat[k, k] = alpha
-            # Off-diagonal will be filled when we visit s_i T
+            # Off-diagonal: ρ(σ_i)|T⟩ has a |T'⟩ component. In the
+            # asymmetric (non-square-root) Hoefsmit presentation:
+            #   d > 0:  β_d = 1            (T → T' direction)
+            #   d < 0:  β_d = (1 - α_{|d|})(α_{|d|} + q⁻¹)
+            #                              (T' → T direction)
+            # The product β_d · β_{-d} equals 1 − α_d² + α_d(q − q⁻¹),
+            # which is the constraint from ρ(σ_i)² = (q − q⁻¹)ρ(σ_i) + 1.
+            if d > 0:
+                mat[l, k] = 1
+            else:
+                alpha_pos = (q - 1 / q) / (1 - q ** (2 * d))
+                mat[l, k] = (1 - alpha_pos) * (alpha_pos + 1 / q)
     return basis, mat
 
 
@@ -203,7 +218,7 @@ def hecke_braid_matrix(partition, braid_word, q):
 def hecke_trace(partition, braid_word, q):
     """tr(ρ_λ(T_w)) — the word-sensitive Hecke character."""
     M = hecke_braid_matrix(partition, braid_word, q)
-    return sp.simplify(M.trace())
+    return sp.cancel(M.trace())
 
 
 # ─── Self-test ───────────────────────────────────────────────────────

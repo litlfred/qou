@@ -198,9 +198,9 @@ the map explicit.
    volumes $\hat V_\ell$ are scalar Laurent polynomials in
    $\mathbb{Z}[q^{\pm 1/2}, z]$ and commute trivially — no
    q-factor. Proved by `lem:vhat-pair-commutation-trace` (PR #501)
-   and the Lean theorem
-   `QOU.QuantumBloch.pentagon_uv_commutation_level_internal`
-   (this branch).
+   via the Lean theorem `QOU.BraidKnot.VhatPairCommutationTrace`
+   (the scalar identity in the commutative coefficient ring `R`,
+   not in the non-commutative Hecke algebra `A` itself).
 2. **Inter-level operator lift** ($n \to n+1$): the q-graded
    identity $uv = q\,vu$ applies to the operator lift
    $\widetilde U_i : B_\lambda^{(n)}_{\mathrm{trans}} \to
@@ -236,7 +236,7 @@ position.)
 | 2 | R3 L4–L7 SDP cvxpy refactor | ✅ done | — | per-level binding-energy predictions |
 | 3 | R4 P2.5 codemod completion | ✅ done — bulk triage complete (21 exposed + 69 marked `polynomial_q_not_applicable`); sole non-marked file is `habiro_frobenius_probe.py` which is itself the R6 step-1 substantive symbolic-q probe | — | symbolic-in-q paper-wide |
 | 4 | R2 MAG-1 Z=126 (gen.fn. + sample) | ✅ done | — | seventh magic number |
-| 5 | R7 Pentagon (after scope) | ✅ scope clarified by audit memo `2026-05-02-r7-pentagon-trace-vs-operator.md`; level-internal identity is plain commutativity (proved via `lem:vhat-pair-commutation-trace` + Lean theorem `pentagon_uv_commutation_level_internal`). The q-graded inter-level lift is a forward declaration awaiting `QOU.LiftingDescent.JetProlongation`. | — | descent sharpness |
+| 5 | R7 Pentagon (after scope) | ✅ scope clarified by audit memo `2026-05-02-r7-pentagon-trace-vs-operator.md`; level-internal identity is plain commutativity in the scalar trace ring (proved by `QOU.BraidKnot.VhatPairCommutationTrace`). The q-graded inter-level lift is a forward declaration (`pentagon_uv_commutation_inter_level_placeholder`) awaiting `QOU.LiftingDescent.JetProlongation`. | — | descent sharpness |
 | 6 | R8 Δ_max numerical | 🟡 queued | 2–3 days | jet-tower convergence |
 | 7 | R6 Habiro → MotivicGaloisCharacter map | ✅ step 1 (Frob extraction), step 2 (Galois-norm integrality verified at all (atom, prime) pairs where Pochhammer truncates inside data range — 3/3 atoms compatible), step 3 (Lean axiom-class instance) all closed; archimedean Weil/Deligne piece + deeper-m Habiro coefficients for primes ≥ 11 remain | — | family-4 motivic instance |
 

@@ -56,40 +56,36 @@ The original `prop:pentagon-uv-commutation` claim was that the
 quantum-torus relation `u · v = q · v · u` holds on the
 q-eigenblock `B_λ^trans` for `u = V̂_i V̂_j`, `v = V̂_k`. After PR
 #501 landed `lem:vhat-pair-commutation-trace` we now know the
-traced volumes `V̂_ℓ` are **scalar Laurent polynomials** in
-`ℤ[q^{±1/2}, z]` (commutative ring); within a single jet level
+**traced volumes** `V̂_ℓ` are scalar Laurent polynomials in
+`ℤ[q^{±1/2}, z]` (a commutative ring); within a single jet level
 they commute trivially with no q-factor. The q-factor `uv = q vu`
 applies only to an **operator lift between adjacent jet levels**
 `n, n+1`, which lives in `QOU.LiftingDescent.JetProlongation`
 (not yet formalised in the repo).
 
-The corrected level-internal statement is plain commutativity:
+The corrected level-internal claim is therefore stated about the
+**scalar Markov-trace targets** in the commutative coefficient
+ring `R`, not about the Hecke-algebra elements themselves. The
+formal Lean lemma is `QOU.BraidKnot.VhatPairCommutationTrace` in
+[`vhat-pair-commutation-trace.lean`](../../../braids-and-knots/vhat-pair-commutation-trace.lean):
 
-  `V̂_i · V̂_j · V̂_k = V̂_k · V̂_j · V̂_i`
+```
+theorem VhatPairCommutationTrace
+    {R : Type*} [CommRing R] (V_i V_j : R) :
+    V_i * V_j = V_j * V_i := mul_comm V_i V_j
+```
 
-at fixed jet level `n`. This follows directly from
-`mul_comm` once we know the underlying ring is commutative.
+There is **no level-internal identity to prove inside the Hecke
+algebra `A` itself** because `A` is non-commutative in general
+(unless trivial), so a `[CommRing A]` hypothesis would be
+logically inconsistent with `[HeckeAlgebra R n q A]`. We do not
+re-state the trivial scalar lemma here; downstream callers should
+import `QOU.BraidKnot.VhatPairCommutationTrace` directly.
 
 For the q-deformed inter-level operator lift, see the audit memo
-[2026-05-02-r7-pentagon-trace-vs-operator.md] and the corrected
-narrative `prop:pentagon-uv-commutation` block (which now defers
-to `lem:vhat-pair-commutation-trace`).
-
-The theorem below states the level-internal identity. It assumes
-`A` is commutative (as the traced-volume ring `ℤ[q^{±1/2}, z]`
-is); this is **not** generally true for the full Hecke algebra
-`H_n(q)`, only for the scalar-reduction quotient that the
-brane-tower mass formula uses. -/
-theorem pentagon_uv_commutation_level_internal
-    {R : Type u} {n : ℕ} (q : R) {A : Type u}
-    [CommRing R] [Inv R] [CommRing A] [Algebra R A]
-    [HA : HeckeAlgebra R n q A]
-    (i j k : Generator n) :
-    hatV i * hatV j * hatV k = hatV k * hatV j * hatV i := by
-  -- Ref: [lem:vhat-pair-commutation-trace] — traced volumes commute
-  -- as scalar Laurent polynomials in ℤ[q^{±1/2}, z].
-  -- Ref: docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md
-  ring
+[`2026-05-02-r7-pentagon-trace-vs-operator.md`](../../../../docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md)
+and the corrected narrative `prop:pentagon-uv-commutation` block
+(which now defers to `lem:vhat-pair-commutation-trace`). -/
 
 /-- Inter-level pentagon ascension (q-graded). Stated as a
 forward-declaration of the form the inter-level identity should
@@ -121,8 +117,9 @@ theorem pentagon_uv_commutation_inter_level_placeholder
   --   - Operator lift Ũ between adjacent jet levels
   --   - Restriction to the transient kernel ker τ̂_n
   -- None of these are in the current QOU Lean infrastructure.
-  -- The corrected level-internal identity (plain commutativity)
-  -- is `pentagon_uv_commutation_level_internal` above.
+  -- The corrected level-internal identity is plain commutativity
+  -- in the scalar trace ring; see
+  -- `QOU.BraidKnot.VhatPairCommutationTrace`.
   Or.inr trivial
 
 end QOU.QuantumBloch

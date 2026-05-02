@@ -103,7 +103,7 @@ def _q_mn_uncached(partition, cycle_type, q):
     for mu, height in rim_hooks_of_size(partition, m):
         weight = q_ribbon_weight(m, height, q)
         total += weight * _q_mn_uncached(mu, rest, q)
-    return sp.simplify(total)
+    return sp.cancel(total)
 
 
 def q_mn_character(partition, cycle_type, q):

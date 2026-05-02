@@ -63,6 +63,30 @@ def cyclotomic_pochhammer_numeric(u_val: complex, m: int) -> complex:
     return result
 
 
+def _parse_habiro_coeffs(coeffs: list[dict], u: sp.Symbol
+                         ) -> list[tuple[int, list[int]]]:
+    """Pre-sympify and integer-Poly-extract every Habiro coefficient
+    once. Returns a list of (m, integer_coefficient_list) pairs that
+    can be reused across all primes / Galois-orbit evaluations.
+
+    Empty `int_coeffs` signals a non-integer-polynomial coefficient
+    (which never happens in practice for Habiro expansions but is
+    handled by a fallback in `evaluate_at`).
+    """
+    parsed: list[tuple[int, list[int]]] = []
+    for c in coeffs:
+        m = int(c["m"])
+        a_m_str = str(c["a_m"])
+        a_m_expr = sp.sympify(a_m_str)
+        try:
+            poly = sp.Poly(a_m_expr, u)
+            int_coeffs = [int(coef) for coef in poly.all_coeffs()]
+        except (sp.PolynomialError, ValueError):
+            int_coeffs = []  # signal fallback
+        parsed.append((m, int_coeffs))
+    return parsed
+
+
 def evaluate_at_root(record_data: dict, p: int, *,
                      digits: int = 15) -> dict[str, Any]:
     """Evaluate one atom's Habiro expansion at u = ζ_{2p} numerically.
@@ -84,20 +108,20 @@ def evaluate_at_root(record_data: dict, p: int, *,
     u = sp.symbols("u")
     coeffs = record_data["habiro_coefficients"]
 
-    # Pre-parse all a_m coefficients into integer lists once.
-    a_m_int_lists: list[tuple[int, list[int]]] = []
-    for c in coeffs:
-        m = int(c["m"])
-        if m >= 2 * p:
-            break
-        a_m_str = str(c["a_m"])
-        a_m_expr = sp.sympify(a_m_str)
-        try:
-            poly = sp.Poly(a_m_expr, u)
-            int_coeffs = [int(coef) for coef in poly.all_coeffs()]
-        except (sp.PolynomialError, ValueError):
-            int_coeffs = []  # signal fallback
-        a_m_int_lists.append((m, int_coeffs))
+    # Reuse the per-atom pre-sympified coefficient list when the
+    # caller has prepared it (see `_parse_habiro_coeffs` below);
+    # otherwise fall back to per-(atom, prime) sympify. Reading the
+    # cached list across the {2,3,5,7,11,13} prime sweep saves ~6×
+    # sp.sympify cost per coefficient.
+    if "_parsed_coeffs" in record_data:
+        all_parsed = record_data["_parsed_coeffs"]
+    else:
+        all_parsed = _parse_habiro_coeffs(coeffs, u)
+
+    # Truncate to m < 2*p for this prime.
+    a_m_int_lists: list[tuple[int, list[int]]] = [
+        (m, ic) for (m, ic) in all_parsed if m < 2 * p
+    ]
 
     truncate_at: int | None = (
         2 * p if 2 * p <= len(coeffs) else None
@@ -200,9 +224,15 @@ def main() -> int:
     print()
 
     atoms_out: list[dict[str, Any]] = []
+    u_sym = sp.symbols("u")
     for record in witness_in.records:
         label = record.atom_label
         record_data = raw[label]
+        # Pre-sympify Habiro coefficients ONCE per atom, then reuse
+        # across the prime sweep (saves len(PRIMES)× sp.sympify cost).
+        record_data["_parsed_coeffs"] = _parse_habiro_coeffs(
+            record_data["habiro_coefficients"], u_sym
+        )
         n_coeffs = len(record_data["habiro_coefficients"])
         print(f"  {label}  (n_coeffs = {n_coeffs})")
         per_prime: list[dict[str, Any]] = []
