@@ -125,35 +125,17 @@ AUDIT_CONJECTURES = [
      "τ-image identification for SW critical points loses precision; algebraic side unaffected.",
      None),
     ("conj:motivic-perpetual-obstruction",
-     "lem:motivic-perpetual-obstruction",
+     "conj:motivic-perpetual-obstruction",
      "no concrete `instance` at $q_0$",
      "Compute remains, formal-substrate identification weakens.",
-     "**Block-kind drift:** the audit lists this as `conj:` but content currently exposes it as `lem:motivic-perpetual-obstruction`. The lemma's `sorry` is the conjectural content — the cone below uses the lemma label."),
-    ("conj:hahn-substrate",
-     None,
-     "algebraic-substrate appendix surreals",
-     "Lower-order tower predictions unchanged.",
-     "**Forward-looking:** label not yet authored. Audit anticipates a Hahn-series substrate axiomatisation; the appendix currently treats Hahn / surreal substrate as informal motivation (`rem:` / prose)."),
-    ("conj:vacuum-epsilon",
-     None,
-     "vacuum-energy normalisation",
-     "Cosmological-endpoint blocks lose interpretation.",
-     "**Forward-looking:** label not yet authored."),
-    ("conj:bigbang-heatdeath",
-     None,
-     "cosmological endpoints",
-     "Cosmological endpoints reframed as remarks.",
-     "**Forward-looking:** label not yet authored."),
-    ("conj:jones-birthday",
-     None,
-     "birthday-refinement of Jones",
-     "Pure refinement; baseline Jones unchanged.",
-     "**Forward-looking:** label not yet authored."),
-    ("conj:kashaev-surreal",
-     None,
-     "volume conjecture in surreal coefficients",
-     "Bridge to ℂ-side weakens.",
-     "**Forward-looking:** label not yet authored. Closest existing conjecture is `conj:kashaev-volume-conjecture` (proper Archimedean form, not surreal-coefficient)."),
+     "Block-kind: post-rename 2026-05-02, this is now `conj:motivic-perpetual-obstruction` (was `lem:` — the Lean file's `sorry` was always the conjectural content)."),
+    # Forward-looking labels (`conj:hahn-substrate`,
+    # `conj:vacuum-epsilon`, `conj:bigbang-heatdeath`,
+    # `conj:jones-birthday`, `conj:kashaev-surreal`) were dropped
+    # from audit §5 in the 2026-05-02 cleanup pass — none had
+    # been authored as content blocks, none had a concrete
+    # failure-consequence in the §1 derivation chain. Re-add to
+    # this seed list if and when corresponding content lands.
 ]
 
 
@@ -400,7 +382,7 @@ total_viol = set().union(*[set(v) for v in violations.values()])
 
 out.append("## Aggregate summary\n\n")
 out.append(f"- **Total blocks under at least one open audit conjecture:** {len(total_cone)}\n")
-out.append(f"- **Total propagation violations across all 10 cones:** {len(total_viol)}\n")
+out.append(f"- **Total propagation violations across all {len(AUDIT_CONJECTURES)} cones:** {len(total_viol)}\n")
 out.append(f"- **Conjectures with zero violations** (already propagation-clean): "
            f"{sum(1 for v in violations.values() if not v)} / {len(AUDIT_CONJECTURES)}\n")
 out.append(f"- **Conjectures with > 0 violations** (need P3.1 sweep action): "

@@ -1,7 +1,14 @@
-import { lemma } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default lemma({
-  label: "lem:motivic-perpetual-obstruction",
+// Block-kind rename 2026-05-02: was `lemma`, demoted to
+// `conjecture` per the cones-doc audit finding
+// (docs/audits/conjecture-cones.md "Methodology" footnote).
+// The Lean file's `sorry` was always the conjectural content;
+// the `lem:` label was block-kind drift. The conjecture's
+// downstream cone is then handled correctly under CLAUDE.md §3b
+// propagation.
+export default conjecture({
+  label: "conj:motivic-perpetual-obstruction",
   title:
     "Motivic perpetual obstruction: $\\chi^{\\mathrm{mot}}_A$ is non-trivial at almost every finite place when $\\chi(A) \\neq 0$",
   tags: [

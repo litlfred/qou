@@ -100,7 +100,7 @@ At each step:
   rational coefficients in $z$ — all in $\mathbb{Q}(q)$.
 - **Beta-decay sector.** Q-values enter via the descent
   obstruction class
-  ([motivic-perpetual-obstruction](#lem:motivic-perpetual-obstruction))
+  ([motivic-perpetual-obstruction](#conj:motivic-perpetual-obstruction))
   whose normalisation supplies the single $H^2$ scale.
 
 The dimensional factors $m_e$ and $Q_\beta$ enter only at the final
@@ -113,7 +113,7 @@ $Q_X \in \mathbb{Q}(q_0)$ and $a, c \in \mathbb{Z}_{\geq 0}$.
 
 The proposition is **conditional** on the chain being realised.
 Open conjectures along the chain
-([motivic-perpetual-obstruction](#lem:motivic-perpetual-obstruction),
+([motivic-perpetual-obstruction](#conj:motivic-perpetual-obstruction),
 [mass-endomorphism](#conj:mass-endomorphism),
 [phi-q-tower-jsj-bridge](#conj:phi-q-tower-jsj-bridge))
 do not affect the dimensional-discipline statement: every step

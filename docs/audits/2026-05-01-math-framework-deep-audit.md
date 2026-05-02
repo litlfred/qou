@@ -351,11 +351,20 @@ is provable. The audit value: list each open conjecture and its
 | `conj:shared-denominator-cusp-holonomy` | thimble integration domain identification | Same as above |
 | `conj:denominator-zeros-as-sw-critical-points` | τ-image identification for SW critical points | τ-image picture loses precision; algebraic side unaffected |
 | `conj:motivic-perpetual-obstruction` (no concrete `instance` at $q_0$) | Hecke-tower descent, GB filtration finiteness | Compute remains, formal-substrate identification weakens |
-| `conj:hahn-substrate` (algebraic-substrate appendix surreals) | Correction terms beyond archimedean fit | Lower-order tower predictions unchanged |
-| `conj:vacuum-epsilon` | Vacuum-energy normalization | Cosmological-endpoint blocks lose interpretation |
-| `conj:bigbang-heatdeath` | Cosmological endpoints | Same |
-| `conj:jones-birthday` | Birthday-refinement of knot invariants | Pure refinement; baseline Jones unchanged |
-| `conj:kashaev-surreal` | Volume conjecture in surreal coefficients | Bridge to ℂ-side weakens |
+
+**Forward-looking labels removed (2026-05-02 cleanup).** The
+original §5 listed five additional conjectures —
+`conj:hahn-substrate`, `conj:vacuum-epsilon`,
+`conj:bigbang-heatdeath`, `conj:jones-birthday`, and
+`conj:kashaev-surreal` — that anticipated future content but were
+never authored as content blocks. Each was a placeholder for "if
+we ever need this, it would be conjectural" rather than a load-
+bearing dependency in the algebraic-side derivation chain. With
+none of them present in the codebase
+([cones-doc audit](conjecture-cones.md) reports cone-size 0 for
+each) and no concrete failure-consequence in the §1 derivation
+chain, they are dropped from §5. They can be re-added if and
+when the corresponding content is authored.
 
 🟠 **Action.** Every block that depends transitively on these
 conjectures must be a `conjecture` per CLAUDE.md §3b conjectural
