@@ -69,7 +69,7 @@ function classify(file: string, line: string): Hit["triage"] {
     return "verification-witness";
   }
   if (/#(conj:hyperbolic-volume-transcendence|conj:kashaev-volume-conjecture|conj:knot-factor-frobenius-pairing|conj:single-volume-irrationality|conj:kashaev-surreal|prop:vol-through-tau|def:archimedean-realization-functor|rem:kashaev-as-archimedean-realization|prop:topological-mass-formula|rem:body-asymptotics-catalog|prf:knot-volumes-verification)/.test(line)) return "tau-side-label";
-  if (/post[\s-]?archimedean|τ[\s-]?image|tau[\s-]?image|ℂ[\s-]?side|right[\s-]?of[\s-]?τ|right[\s-]?of[\s-]?tau|archimedean[\s-]?(limit|realization|shadow|side)|classical[\s-]?(limit|kashaev)|τ-pullback|non[\s-]?hyperbolic/i.test(line)) return "tau-side-label";
+  if (/post[\s-]?archimedean|τ[\s-]?image|tau[\s-]?image|ℂ[\s-]?side|right[\s-]?of[\s-]?τ|right[\s-]?of[\s-]?tau|archimedean[\s-]?(limit|realization|shadow|side)|classical[\s-]?(limit|kashaev)|τ-pullback|non[\s-]?hyperbolic|geometric.*side|τ.*side|tau.*side|no.+(thurston|geometrization).+(input|required|needed)|geometrization.+(input|required|needed).+(no|not)|disclaim|side.+(geometric|τ-image)/i.test(line)) return "tau-side-label";
   return "candidate";
 }
 
