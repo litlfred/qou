@@ -36,20 +36,14 @@ def sc_partition_count(n):
 
     Computed by polynomial multiplication mod q^{n+1}.
     """
-    # Coefficients of (1 + q + q^2 + ... + q^n)
     coeffs = [0] * (n + 1)
     coeffs[0] = 1
-    k = 0
-    while True:
+    for k in range((n + 1) // 2):
         odd = 2 * k + 1
-        if odd > n:
-            break
-        # Multiply current poly by (1 + q^odd)
-        new_coeffs = list(coeffs)
-        for i in range(n + 1 - odd):
-            new_coeffs[i + odd] += coeffs[i]
-        coeffs = new_coeffs
-        k += 1
+        # Multiply current poly by (1 + q^odd) in-place
+        # (iterate downward so each coeffs[i-odd] is the pre-update value)
+        for i in range(n, odd - 1, -1):
+            coeffs[i] += coeffs[i - odd]
     return coeffs[n]
 
 
@@ -64,17 +58,13 @@ def sample_sc_partition(n, max_attempts=10000):
         arms = []
         max_a = (n - 1) // 2
         while remaining > 0 and max_a >= 0:
-            # Sample a_i uniformly from [0, max_a]
-            choices = []
-            for a in range(max_a, -1, -1):
-                cost = 2 * a + 1
-                if cost <= remaining:
-                    choices.append(a)
-                if len(choices) > 50:  # cap branching
-                    break
-            if not choices:
+            # Sample a_i uniformly from all valid choices [0, upper_a]
+            # where upper_a = min(max_a, (remaining - 1) // 2). No
+            # branching cap — full sample space (avoid top-K bias).
+            upper_a = min(max_a, (remaining - 1) // 2)
+            if upper_a < 0:
                 break
-            a = random.choice(choices)
+            a = random.randint(0, upper_a)
             cost = 2 * a + 1
             arms.append(a)
             remaining -= cost
@@ -101,7 +91,9 @@ def reconstruct_partition_from_arms(arms):
 
 
 def kappa(lam):
-    return sum(j - i for i, row in enumerate(lam, 1) for j in range(1, row + 1))
+    """O(len(λ)) closed-form: Σ_i (row*(row+1)/2 - i*row) for row = λ_i.
+    Each row contributes Σ_{j=1..row} (j - i) = row(row+1)/2 - i*row."""
+    return sum(row * (row + 1) // 2 - i * row for i, row in enumerate(lam, 1))
 
 
 def main():
@@ -125,7 +117,10 @@ def main():
     samples = []
     kappa_values = set()
     t0 = time.time()
-    for _ in range(sample_size):
+    # Use a while loop so we collect exactly sample_size valid partitions
+    # (some sample_sc_partition / reconstruction calls may fail; retry
+    # until the target is met)
+    while len(samples) < sample_size:
         arms = sample_sc_partition(n)
         if arms is None:
             continue
