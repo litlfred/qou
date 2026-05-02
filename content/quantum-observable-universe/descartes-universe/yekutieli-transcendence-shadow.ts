@@ -13,6 +13,6 @@ export default remark({
     "brane-tower",
     "algebraic-independence",
   ],
-  uses: ["prop:cosimplicial-crossed-groupoid"prop:cosimplicial-crossed-groupoid"prop:cosimplicial-crossed-groupoid"],
+  uses: ["prop:cosimplicial-crossed-groupoid"],
   cites: ["yekutieli2010"],
 });

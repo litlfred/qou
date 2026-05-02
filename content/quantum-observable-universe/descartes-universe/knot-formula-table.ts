@@ -16,5 +16,5 @@ export default remark({
     "boson",
     "torus-link",
   ],
-  uses: ["thm:embeddability-closure"thm:embeddability-closure"thm:embeddability-closure"],
+  uses: ["thm:embeddability-closure"],
 });

@@ -14,5 +14,5 @@ export default remark({
     "time-reversal",
     "exceptional-divisor",
   ],
-  uses: ["prop:antiparticle-crossing-reversal"prop:antiparticle-crossing-reversal"prop:antiparticle-crossing-reversal"],
+  uses: ["prop:antiparticle-crossing-reversal"],
 });
