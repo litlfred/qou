@@ -171,6 +171,25 @@ class HasCategoricalEOM {C : Type u} [CategoryTheory.Category.{v} C]
       parallel transport). -/
   transport : ca.matter = 0
 
+/-- **Default instance from a Fact-bundled witness**: when each of
+    the three variational identities is bundled into a `Fact`
+    triple in scope (typically from a per-`(C, fh, ca, vd)`
+    construction), the `HasCategoricalEOM` instance follows
+    immediately. -/
+instance hasCategoricalEOM_of_facts {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    (fh : FrobeniusHopfData C)
+    (ca : CategoricalAction C fh)
+    (vd : CategoricalVariationalData C fh ca)
+    [hE : Fact (ca.gravity = vd.einsteinTensor + vd.stressTensor)]
+    [hYM : Fact (ca.gauge = vd.gaugeCurrent)]
+    [hT : Fact (ca.matter = 0)] :
+    HasCategoricalEOM fh ca vd where
+  einstein := hE.out
+  yang_mills := hYM.out
+  transport := hT.out
+
 /-- **Einstein equation** (per-instance form).
     Use this lemma — backed by `HasCategoricalEOM` — instead of the
     deprecated universal axiom. -/

@@ -203,6 +203,22 @@ class HasDqSquaredNonvanishing {C : Type u}
   /-- The non-vanishing conclusion. -/
   nonvanishing : cqd.dq ≫ cqd.dq ≠ 0
 
+/-- **Default instance from a `Fact` witness on the non-vanishing**.
+    When `Fact (cqd.dq ≫ cqd.dq ≠ 0)` is in scope (e.g. supplied
+    by the geometric proof at the specific `cqd`), the
+    `HasDqSquaredNonvanishing` instance follows. -/
+instance hasDqSquaredNonvanishing_of_fact {C : Type u}
+    [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
+    (cqd : CategoricalQExtDeriv C)
+    (hq : cqd.q ≠ 1)
+    (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0)
+    (hcross : cqd.proj_V ≫ cqd.d_classical ≫ cqd.proj_V ≫ cqd.d_classical ≠ 0)
+    [hf : Fact (cqd.dq ≫ cqd.dq ≠ 0)] :
+    HasDqSquaredNonvanishing cqd hq hd_sq hcross :=
+  ⟨hf.out⟩
+
 /-- **`d_q²` non-vanishing** (per-instance form). -/
 theorem categorical_dq_squared_nonvanishing {C : Type u}
     [CategoryTheory.Category.{v} C]
