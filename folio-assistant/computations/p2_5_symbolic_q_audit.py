@@ -45,7 +45,12 @@ SUBS_AT_END = re.compile(
     re.IGNORECASE,
 )
 EMITS_SYMBOLIC = re.compile(
-    r'"(?:polynomial_q|polynomial|symbolic|.*_symbolic|.*_polynomial_q|q_polynomial)":'
+    # Broadened 2026-05-02: catches more symbolic-emit conventions
+    # (e.g. `schur_element`, `*_expression`, `*_form`, `*_eq`, etc.)
+    # in addition to the original `*_symbolic` / `*_polynomial_q`.
+    r'"(?:polynomial_q|polynomial|symbolic'
+    r'|.*_symbolic|.*_polynomial_q|q_polynomial'
+    r'|.*_element|.*_expression|.*_eq|.*_form|.*_polynomial)":'
 )
 
 # A script is MPMATH-ONLY if it imports/uses mpmath at canonical

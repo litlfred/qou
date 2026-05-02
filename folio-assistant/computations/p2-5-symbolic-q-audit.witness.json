@@ -2,15 +2,15 @@
   "computation": "p2-5-symbolic-q-audit",
   "purpose": "P2.5 audit: triage every Python script in folio-assistant/computations/ as compliant / mpmath-only / partial / early-substitution / no-q-dependence. Emits the prioritised refactor target list (top-20 by witness-JSON visibility).",
   "narrative_block": "audit \u00a73\u00b7E + workplan P2.5",
-  "computedAt": "2026-05-02T02:56:56.210821+00:00",
+  "computedAt": "2026-05-02T06:08:27.540143+00:00",
   "n_files_total": 610,
   "category_counts": {
-    "mpmath-only": 170,
+    "mpmath-only": 169,
     "uncategorised": 307,
-    "compliant": 40,
+    "compliant": 44,
     "early-substitution": 41,
     "no-q-dependence": 33,
-    "partial": 19
+    "partial": 16
   },
   "top_refactor_targets": [
     {
@@ -2095,9 +2095,11 @@
       "path": "folio-assistant/computations/fresh_derivation_pn_AB.py",
       "size_lines": 355,
       "emits_witness": true,
-      "category": "mpmath-only",
+      "category": "compliant",
       "details": {
-        "mpmath_canonical_q": true
+        "symbolic_q": true,
+        "subs_at_end": false,
+        "emits_symbolic_field": true
       }
     },
     {
@@ -2198,12 +2200,13 @@
     },
     {
       "path": "folio-assistant/computations/full-tower-mass.py",
-      "size_lines": 109,
+      "size_lines": 147,
       "emits_witness": true,
-      "category": "partial",
+      "category": "compliant",
       "details": {
         "symbolic_q": true,
-        "missing_subs_or_emit": true
+        "subs_at_end": false,
+        "emits_symbolic_field": true
       }
     },
     {
@@ -3765,7 +3768,7 @@
     },
     {
       "path": "folio-assistant/computations/p2_5_symbolic_q_audit.py",
-      "size_lines": 164,
+      "size_lines": 169,
       "emits_witness": true,
       "category": "mpmath-only",
       "details": {
@@ -4276,12 +4279,13 @@
     },
     {
       "path": "folio-assistant/computations/probe_term4_conventions.py",
-      "size_lines": 145,
+      "size_lines": 157,
       "emits_witness": true,
-      "category": "partial",
+      "category": "compliant",
       "details": {
         "symbolic_q": true,
-        "missing_subs_or_emit": true
+        "subs_at_end": true,
+        "emits_symbolic_field": true
       }
     },
     {
@@ -4729,10 +4733,11 @@
       "path": "folio-assistant/computations/schur_element_symmetrising.py",
       "size_lines": 126,
       "emits_witness": false,
-      "category": "partial",
+      "category": "compliant",
       "details": {
         "symbolic_q": true,
-        "missing_subs_or_emit": true
+        "subs_at_end": false,
+        "emits_symbolic_field": true
       }
     },
     {
@@ -5251,7 +5256,7 @@
       "details": {
         "symbolic_q": true,
         "subs_at_end": true,
-        "emits_symbolic_field": false
+        "emits_symbolic_field": true
       }
     },
     {
