@@ -259,7 +259,7 @@ def _check_3he_vs_3h_at_q():
         "word_n": word_n,
         "tr_p_at_q": str(sp.simplify(tr_p))[:120],
         "tr_n_at_q": str(sp.simplify(tr_n))[:120],
-        "differ_at_symbolic_q": sp.simplify(tr_p - tr_n) != 0,
+        "differ_at_symbolic_q": not sp.cancel(tr_p - tr_n).equals(0),
     }
 
 

@@ -45,7 +45,7 @@ restrict to specific blocks via the Wedderburn decomposition. -/
 @[reducible]
 def hatV
     {R : Type u} {n : ℕ} {q : R} {A : Type u}
-    [CommRing R] [Ring A] [Algebra R A] [HA : HeckeAlgebra R n q A]
+    [CommRing R] [Inv R] [Ring A] [Algebra R A] [HA : HeckeAlgebra R n q A]
     (i : Generator n) : A :=
   HA.embed i
 
@@ -61,7 +61,7 @@ Adjacency hypothesis `j_adj_i` and `k_adj_j` forces (i, j) and
 separately (commute trivially). -/
 theorem pentagon_uv_commutation
     {R : Type u} {n : ℕ} (q : R) {A : Type u}
-    [CommRing R] [Ring A] [Algebra R A]
+    [CommRing R] [Inv R] [Ring A] [Algebra R A]
     [HA : HeckeAlgebra R n q A]
     (i j k : Generator n)
     (i_lt_j : i.idx.val < j.idx.val)

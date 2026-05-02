@@ -1,5 +1,10 @@
 import QOU.Hecke.Algebra
 import QOU.Hecke.MarkovTrace
+import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.List.Sort
+
+open BigOperators
 
 /-!
 # Wedderburn–Artin decomposition of `H_n(q)`
@@ -65,7 +70,7 @@ abstractly via a representation `rho_lambda`.
 -/
 class WedderburnDecomp
     {R : Type u} (n : ℕ) (q : R) (A : Type u)
-    [CommRing R] [Ring A] [Algebra R A]
+    [CommRing R] [Inv R] [Ring A] [Algebra R A]
     [HeckeAlgebra R n q A] [MarkovTrace n q A] where
   /-- Central idempotent for partition λ. -/
   pi_lambda : Partition n → A
@@ -82,7 +87,7 @@ class WedderburnDecomp
 namespace WedderburnDecomp
 
 variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
-  [CommRing R] [Ring A] [Algebra R A]
+  [CommRing R] [Inv R] [Ring A] [Algebra R A]
   [HA : HeckeAlgebra R n q A]
   [MT : MarkovTrace n q A]
   [WD : WedderburnDecomp n q A]

@@ -1,5 +1,6 @@
 import QOU.Hecke.Generators
 import Mathlib.Algebra.Algebra.Defs
+import Mathlib.Algebra.Algebra.Subalgebra.Basic
 
 /-!
 # Hecke algebra `H_n(q)` — class-based formulation
@@ -8,14 +9,13 @@ The Iwahori–Hecke algebra of type `A_{n-1}` is presented as a
 typeclass over a commutative ring `R` and parameter `q : R`:
 
   ```
-  class HeckeAlgebra (R : Type u) (n : ℕ) (q : R) (A : Type u) where
-    toRing       : Ring A
-    toAlgebra    : Algebra R A
-    embed        : Generator n → A
-    quadratic    : HeckeQuadratic q embed
-    braid        : BraidRelation embed
-    farCommute   : FarCommutativity embed
-    spans        : ∀ a : A, ∃ word : List (Generator n), ...  -- spanning property
+  class HeckeAlgebra (R : Type u) (n : ℕ) (q : R) (A : Type u)
+      [CommRing R] [Inv R] [Ring A] [Algebra R A] where
+    embed      : Generator n → A
+    quadratic  : HeckeQuadratic q embed
+    braid      : BraidRelation embed
+    farCommute : FarCommutativity embed
+    spans      : Algebra.adjoin R (Set.range embed) = ⊤
   ```
 
 Provability of statements about H_n(q) takes the algebra as an
@@ -44,7 +44,7 @@ of monomials in the generators). Stated existentially to keep the
 class lightweight.
 -/
 class HeckeAlgebra (R : Type u) (n : ℕ) (q : R) (A : Type u)
-    [CommRing R] [Ring A] [Algebra R A] where
+    [CommRing R] [Inv R] [Ring A] [Algebra R A] where
   /-- The generator embedding σ_i ↦ embed i. -/
   embed : Generator n → A
   /-- Hecke quadratic relation: σ_i² = (q - q⁻¹)σ_i + 1. -/
@@ -53,11 +53,17 @@ class HeckeAlgebra (R : Type u) (n : ℕ) (q : R) (A : Type u)
   braid : BraidRelation embed
   /-- Far-commutativity: σ_i σ_j = σ_j σ_i for |i - j| ≥ 2. -/
   farCommute : FarCommutativity embed
+  /-- Spanning property: `A` is generated as an `R`-algebra by the
+  image of `embed`. Captured via `Algebra.adjoin` for compatibility
+  with Mathlib's subalgebra API. Without this field the typeclass
+  would admit any algebra containing the generators rather than the
+  Hecke quotient itself. -/
+  spans : Algebra.adjoin R (Set.range embed) = ⊤
 
 namespace HeckeAlgebra
 
 variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
-  [CommRing R] [Ring A] [Algebra R A] [HA : HeckeAlgebra R n q A]
+  [CommRing R] [Inv R] [Ring A] [Algebra R A] [HA : HeckeAlgebra R n q A]
 
 /-- The image of generator `i` in the algebra. Convenience alias for
 `HeckeAlgebra.embed i`. -/

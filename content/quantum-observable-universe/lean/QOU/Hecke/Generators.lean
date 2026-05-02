@@ -48,9 +48,14 @@ end Generator
 
 /-- Hecke relation predicate (H1):
     σ_i² = (q - q⁻¹) σ_i + 1
-in any algebra `A` over `R` with σ_i interpreted via `embed`. -/
+in any algebra `A` over `R` with σ_i interpreted via `embed`.
+
+We require `[Inv R]` so that `q⁻¹` elaborates; mathematical
+well-posedness additionally needs `q` to be a unit, which
+downstream `HeckeAlgebra` instances enforce by working over a
+field or by providing a unit witness. -/
 def HeckeQuadratic
-    {R : Type u} {n : ℕ} (q : R) [Ring R]
+    {R : Type u} {n : ℕ} (q : R) [Ring R] [Inv R]
     {A : Type u} [Ring A] [Algebra R A]
     (embed : Generator n → A) : Prop :=
   ∀ i : Generator n,

@@ -157,8 +157,8 @@ def _check_dressed_quark_differentiation(verbose=False):
     for lam in partitions_of(9):  # 3·A=9 partitions
         chi_3he, _ = q_character_on_atomic_braid(lam, 2, 1, q)
         chi_3h, _ = q_character_on_atomic_braid(lam, 1, 2, q)
-        diff = sp.simplify(chi_3he - chi_3h)
-        if diff != 0:
+        diff = sp.cancel(chi_3he - chi_3h)
+        if not diff.equals(0):
             differences.append((lam, str(diff)[:80]))
     return differences
 

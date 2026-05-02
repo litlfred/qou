@@ -1,4 +1,5 @@
 import QOU.Hecke.Algebra
+import Mathlib.Algebra.Module.LinearMap.Defs
 
 /-!
 # Markov trace on `H_n(q)`
@@ -36,7 +37,7 @@ traces and a coherence condition.
 -/
 class MarkovTrace
     {R : Type u} (n : ℕ) (q : R) (A : Type u)
-    [CommRing R] [Ring A] [Algebra R A] [HeckeAlgebra R n q A] where
+    [CommRing R] [Inv R] [Ring A] [Algebra R A] [HeckeAlgebra R n q A] where
   /-- The trace as an R-linear map A → R. -/
   trace : A →ₗ[R] R
   /-- (M1) Normalisation: tr_M(1) = 1. -/
@@ -51,7 +52,7 @@ class MarkovTrace
 namespace MarkovTrace
 
 variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
-  [CommRing R] [Ring A] [Algebra R A]
+  [CommRing R] [Inv R] [Ring A] [Algebra R A]
   [HA : HeckeAlgebra R n q A]
   [MT : MarkovTrace n q A]
 
