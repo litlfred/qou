@@ -112,6 +112,7 @@ export default chapter({
         "shell-threading-conjecture",
         "magic-numbers-from-q",
         "diagrammatic-double-magic-lr-fusion",
+        "double-magic-delta-i-bound",
         "single-magic-O18-diagram",
         "double-magic-Ca40-diagram",
         "non-magic-Li6-diagram",

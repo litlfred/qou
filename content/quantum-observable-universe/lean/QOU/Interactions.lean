@@ -15,6 +15,7 @@ import QOU.Interactions.AlgebraicPrimality
 import QOU.Interactions.HeckeEnergyPositivity
 import QOU.Interactions.MagicLadderEquivalences
 import QOU.Interactions.BringShellBinding
+import QOU.Interactions.DoubleMagicDeltaI
 import QOU.Interactions.ProtonTrefoilSign
 import QOU.Interactions.TrefoilVanishing
 

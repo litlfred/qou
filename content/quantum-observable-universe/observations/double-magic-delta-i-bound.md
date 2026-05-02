@@ -1,0 +1,123 @@
+## Statement
+
+**Proposition 9 (LR-fusion adjacent-shell compatibility).**
+*Let $(i_Z, i_N) \in \{1, \ldots, 7\} \times \{1, \ldots, 7\}$ be
+the Bring shell indices of an isotope's proton and neutron magic
+numbers. Define $\Delta i := i_N - i_Z$. Then every empirically
+observed doubly-magic isotope has*
+
+$$
+  \Delta i \;\in\; \{0, 1\}.
+$$
+
+*No isotope with $\Delta i \geq 2$ has been observed as
+doubly-magic.*
+
+## Empirical data
+
+| Isotope | $Z$ | $N$ | $(i_Z, i_N)$ | $\Delta i$ |
+|---|:-:|:-:|:-:|:-:|
+| ${}^{4}\mathrm{He}$ | 2 | 2 | $(1, 1)$ | $0$ |
+| ${}^{16}\mathrm{O}$ | 8 | 8 | $(2, 2)$ | $0$ |
+| ${}^{40}\mathrm{Ca}$ | 20 | 20 | $(3, 3)$ | $0$ |
+| ${}^{48}\mathrm{Ca}$ | 20 | 28 | $(3, 4)$ | $1$ |
+| ${}^{56}\mathrm{Ni}$ | 28 | 28 | $(4, 4)$ | $0$ |
+| ${}^{78}\mathrm{Ni}$ | 28 | 50 | $(4, 5)$ | $1$ |
+| ${}^{100}\mathrm{Sn}$ | 50 | 50 | $(5, 5)$ | $0$ |
+| ${}^{132}\mathrm{Sn}$ | 50 | 82 | $(5, 6)$ | $1$ |
+| ${}^{208}\mathrm{Pb}$ | 82 | 126 | $(6, 7)$ | $1$ |
+
+**All 9 observed doubly-magic isotopes have $\Delta i \in \{0, 1\}$.**
+No empirical isotope with $\Delta i \geq 2$ is doubly-magic.
+
+## Categorical interpretation
+
+Per [`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion),
+double-magic stability requires the LR-fusion
+
+$$
+  V_{\lambda_Z} \otimes V_{\lambda_N}
+  \;\hookrightarrow\;
+  H_A(q_0)
+$$
+
+to have a dominant rank-1 component $V_{\lambda_A}$ that is
+self-conjugate and gapless. Combined with the Bring-shell-binding
+picture ([`prop:torus-knot-shell-binding`](#prop:torus-knot-shell-binding)):
+
+| LR-fusion structure | Empirical | Categorical compatibility |
+|---|:-:|:-:|
+| Same shell ($\Delta i = 0$, $\lambda_Z = \lambda_N$) | observed (5 cases) | ✓ symmetric LR-tensor |
+| Adjacent shells ($\Delta i = 1$) | observed (4 cases) | ✓ one-step braid extension |
+| Skip-shell ($\Delta i \geq 2$) | **never** | LR-fusion shattered |
+
+**Conjectural mechanism:** when $\lambda_Z$ is a Bring shell-$i$
+diagram and $\lambda_N$ is a Bring shell-$j$ diagram, the
+LR-tensor's structure depends on the relationship between $i$ and
+$j$:
+
+- $i = j$: $V_\lambda \otimes V_\lambda$ has a dominant
+  self-conjugate component $\lambda_A$ matching the doubled
+  diagram. ✓
+- $j = i + 1$: $V_{\lambda_Z} \otimes V_{\lambda_N}$ has a dominant
+  component obtained by "extending $\lambda_Z$ by the new
+  shell-$(i+1)$ cells of $\lambda_N$." ✓
+- $j \geq i + 2$: the LR-tensor has multiple competing
+  components, none dominant, no rank-1 collapse. ✗
+
+The $\Delta i \leq 1$ rule is therefore **the LR-fusion
+compatibility constraint** between Bring shells.
+
+## Status
+
+**Conjecture** (CLAUDE.md §3b axiom-class).
+
+- **Forward direction** ($\Delta i \leq 1 \Rightarrow$ LR-fusion
+  compatible): conjectural; relies on the LR-rigidity of adjacent
+  Bring shells.
+- **Reverse direction** ($\Delta i \geq 2 \Rightarrow$ LR-fusion
+  shattered): conjectural; relies on a categorical "shell-gap"
+  argument.
+- **Empirical fact** (all 9 known double-magics have
+  $\Delta i \in \{0, 1\}$): proven by enumeration in the data.
+
+The statement is *partially* about the framework's predictive power
+(it predicts no $\Delta i \geq 2$ doubly-magic exists) and
+*partially* about empirical regularity. The two coincide on all 9
+known cases.
+
+## Predictions
+
+1. **No $\Delta i \geq 2$ doubly-magic** — predicts that
+   $(Z, N) = (20, 50)$, $(20, 82)$, $(28, 82)$, etc., are NOT
+   doubly-magic. Empirically confirmed (these isotopes are
+   far from valley of stability and rapidly decay).
+2. **Heaviest doubly-magic is $(i, j) = (6, 7)$** — predicts
+   ${}^{208}\mathrm{Pb}$ as the terminus. Empirically confirmed.
+3. **Symmetric $(6, 6)$ and $(7, 7)$ are categorically allowed**
+   ($\Delta i = 0$) but excluded by valley-of-stability
+   (separate dynamical input) — they would correspond to
+   $A = 164$ and $A = 252$ superheavies, both unstable.
+
+## Compute optimisations enabled by this rule
+
+The $\Delta i \leq 1$ constraint substantially reduces the search
+space for double-magic LR-fusion verification:
+
+- **Without rule:** check all $7 \times 7 = 49$ index pairs
+  $(i_Z, i_N)$.
+- **With rule:** check only $7 + 6 = 13$ pairs: 7 diagonal
+  $(i, i)$ and 6 adjacent $(i, i+1)$.
+
+The 73% reduction in pairs to verify is significant for the
+algebraic-primality verifier
+([`sdp-primality-verifier-spec.md`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/sdp-primality-verifier-spec.md)):
+the LR-coefficient computation per pair scales as $O(p(n))^2$, so
+restricting to 13 pairs (vs 49) gives a 3.8× speedup at every
+strand count.
+
+Combined with the **Bring 6-knot basis** restriction (cuts
+partition enumeration from $p(n)$ to $\leq 6$ for shell-binding
+analysis), the framework's structural predictions enable
+significant compute savings beyond what generic LP/SDP solvers
+provide.

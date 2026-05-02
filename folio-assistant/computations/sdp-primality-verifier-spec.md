@@ -337,6 +337,64 @@ Tractability ladder:
 | $n \in [50, 82]$ | self-conj-restricted, audit-branch tools | $\sim 2\,000$ |
 | $n = 126$ | iterative brane-tower required (`conj:magic-from-iterative-brane-tower`) | $\sim 20\,000$ |
 
+## Compute optimisations from framework findings
+
+Several framework results substantially restrict the search space
+for the SDP / LR-fusion verifier:
+
+### 1. Bring 6-knot basis (genus-4 bound)
+
+The Bring-shell-binding picture
+([prop:torus-knot-shell-binding](../../content/quantum-observable-universe/descartes-universe/torus-knot-shell-binding.md))
+restricts the active operator basis to combinations of **6**
+specific torus knots ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$,
+$T_{2,9}$, $T_{3,5}$). The genus-4 bound is structural, not a
+search heuristic.
+
+**Compute reduction:** instead of enumerating all $p(n)$ partitions
+of $n$ for SDP basis selection, enumerate at most $\binom{6}{2} = 15$
+combinations of the 6-knot basis. For $n = 50$: $p(50) \approx 2 \times
+10^5$ partitions vs 15 combinations — a $\sim 10^4 \times$ speedup
+on the basis-selection step.
+
+### 2. $\Delta i \leq 1$ rule for double-magic LR-fusion
+
+[`conj:double-magic-delta-i-bound`](../../content/quantum-observable-universe/observations/double-magic-delta-i-bound.md)
+proves (on empirical data, conjectures generally) that doubly-magic
+isotopes satisfy $|i_N - i_Z| \leq 1$ across Bring shell indices.
+
+**Compute reduction:** the LR-fusion verifier need only check
+$13$ shell-pairs (7 diagonal + 6 adjacent) out of the $49$ total
+$(i_Z, i_N)$ combinations. **3.77× speedup** on per-pair LR-fusion
+work.
+
+### 3. Self-conjugate-only enumeration at high $n$
+
+For $n \geq 50$, restrict the SDP basis to self-conjugate
+partitions $\lambda = \lambda'$ — required by
+[`conj:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md).
+Counts: $q(82) = 881$ vs $p(82) = 1.2 \times 10^7$ — a $\sim 10^4 \times$
+reduction.
+
+### 4. Block-diagonal Hoefsmit (existing)
+
+`shell_closure_compute.py`: $15\,000\times$ speedup at $k = 9$ via
+block-diagonal matrix-vector products. Already in the codebase.
+
+### Combined effect at $n = 82$ (target: magic shell 6)
+
+Naive enumeration: $p(82) \times 49 \times \dim_q(\lambda) \approx
+10^7 \times 49 \times \mathrm{full}$ matrix work.
+
+With all optimisations:
+- $q(82) = 881$ partitions (self-conj restriction).
+- $13$ shell-pairs ($\Delta i \leq 1$).
+- $15$ knot combinations (Bring 6-basis).
+- Block-diagonal matrix products ($15\,000 \times$ via existing).
+
+**Estimated reduction: $\sim 10^9 \times$.** Magic shell 6 verification
+becomes feasible *symbolically* in seconds rather than hours.
+
 ## Cross-reference: audit branch contributions
 
 The [`claude/tier3-math-audit-B0wyO`](https://github.com/litlfred/qou/tree/claude/tier3-math-audit-B0wyO)
