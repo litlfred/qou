@@ -104,6 +104,20 @@ class HasPhaseStratification (P : ConfinedParticle)
   /-- **Claim (3)** — σ_F is continuous on the locus. -/
   sigmaF_continuous : ContinuousOn (sigmaFReal P) (confinementLocus P)
 
+/-- **Default instance from a Fact-bundled triple**: when each of
+    the three stratification claims is in scope as a `Fact`, the
+    `HasPhaseStratification` instance follows. -/
+instance hasPhaseStratification_of_facts (P : ConfinedParticle)
+    [HasRealAxisData P]
+    [hOpen : Fact (IsOpen (confinementLocus P))]
+    [hMu : Fact (∀ (C : Set ℝ), IsConnected C → C ⊆ confinementLocus P →
+              ∀ (q₁ q₂ : ℝ), q₁ ∈ C → q₂ ∈ C → muReal P q₁ = muReal P q₂)]
+    [hSigma : Fact (ContinuousOn (sigmaFReal P) (confinementLocus P))] :
+    HasPhaseStratification P where
+  locus_open := hOpen.out
+  mu_constant := hMu.out
+  sigmaF_continuous := hSigma.out
+
 /-- **Claim (1) — Openness** (per-instance form).
     Backed by `HasPhaseStratification.locus_open`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
