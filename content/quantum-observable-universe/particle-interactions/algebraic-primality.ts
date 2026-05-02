@@ -11,7 +11,6 @@ export default definition({
   uses: [
     "prop:confinement-sdp",
     "prop:operator-selection-lp",
-    "conj:sdp-rank-collapse-magic-shell",
   ],
   cites: [
     "mathas1999",

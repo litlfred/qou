@@ -7,7 +7,6 @@ export default remark({
   interprets: "prop:knot-operator-selection",
   uses: [
     "prop:knot-operator-selection",
-    "conj:magic-requires-higher-cohomology",
     "prop:torus-knot-shell-binding",
     "def:brings-surface",
   ],

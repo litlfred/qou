@@ -120,8 +120,6 @@ export default chapter({
         "mass-identity-unique-proof",
         "mass-identity-su2",
         "homological-shell-condensation",
-        "magic-from-iterative-brane-tower",
-        "magic-requires-higher-cohomology",
       ],
     }),
 

@@ -79,10 +79,8 @@ canonical state" — concrete, finite-search-space at fixed $n$.
 ## Falsification path
 
 For each $n \in \{2, 3, 4, \ldots, 130\}$, compute $\psi_n(q_0)$
-via the iterative brane-tower construction at $q_0$ (using the
-existing compute tricks
-[recorded for `conj:magic-from-iterative-brane-tower`](#conj:magic-from-iterative-brane-tower)),
-then check tensor-product irreducibility against all decompositions
+via the iterative brane-tower construction at $q_0$, then check
+tensor-product irreducibility against all decompositions
 $n = \sum n_i$ with $n_i \in \{1, 2, 8, 20, 28, 50, 82, 126\}$.
 
 The conjecture predicts the alg-prime set is exactly $\{1, 2, 8,
@@ -94,10 +92,6 @@ fails alg-primality at $q_0$, the framework is also refuted.
 
 The conjecture is conjecturally equivalent to:
 
-- [conj:sdp-rank-collapse-magic-shell](#conj:sdp-rank-collapse-magic-shell)
-  — same set characterised via SDP rank-1 collapse;
-- [conj:magic-from-iterative-brane-tower](#conj:magic-from-iterative-brane-tower)
-  — same set characterised via brane-tower threshold crossing;
 - [conj:homological-shell-condensation](#conj:homological-shell-condensation)
   — same set characterised via spectral-sequence collapse;
 - The empirical proposition

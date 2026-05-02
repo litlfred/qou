@@ -11,8 +11,6 @@ export default conjecture({
   uses: [
     "def:algebraic-primality",
     "prop:n-equals-1-vacuous-magic",
-    "conj:sdp-rank-collapse-magic-shell",
-    "conj:magic-from-iterative-brane-tower",
     "conj:homological-shell-condensation",
     "prop:magic-numbers-from-q",
   ],

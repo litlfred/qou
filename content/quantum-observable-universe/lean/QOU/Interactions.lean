@@ -10,7 +10,6 @@ import QOU.Interactions.HeckeEngine
 import QOU.Interactions.LRFusion
 import QOU.Interactions.NuclearOperatorRegimes
 import QOU.Interactions.NucleonNFWitness
-import QOU.Interactions.SDPRankCollapse
 import QOU.Interactions.AlgebraicPrimality
 import QOU.Interactions.HeckeEnergyPositivity
 import QOU.Interactions.MagicLadderEquivalences

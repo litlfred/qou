@@ -18,12 +18,11 @@ component of the SDP optimum
 ([prop:knot-operator-selection](#prop:knot-operator-selection)).
 
 **Non-magic shells use the Hopf link.**
-The companion conjecture
-[`conj:magic-requires-higher-cohomology`](#conj:magic-requires-higher-cohomology)
-asserts: at non-magic $n$ at substrate $q_0$, the SDP optimum
+At non-magic $n$ at substrate $q_0$, the SDP optimum
 $T^*(n, q_0)$ is **Hopf-decomposable** — expressible as a tensor
 product of Hopf links and trivial ribbons. It lives entirely in
-$E_\infty^{0, *}$.
+$E_\infty^{0, *}$ (the descended Markov-trace piece per
+[`conj:mass-endomorphism`](#conj:mass-endomorphism)).
 
 **Magic shells require higher-cohomology operators.**
 At magic $n$, the SDP optimum requires non-trivial contribution

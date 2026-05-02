@@ -66,17 +66,6 @@ follows from the rationality structure of the SDP cost in $q$
 
 ## Connection to existing framework conjectures
 
-- **Closed-form characterisation** at $q_0$:
-  [conj:sdp-rank-collapse-magic-shell](#conj:sdp-rank-collapse-magic-shell)
-  asserts that the rank-1 SDP optimum locus selects exactly the
-  empirical magic ladder. Under algebraic primality, this becomes:
-  rank-1 ↔ no nontrivial tensor decomposition reaches the canonical
-  state.
-- **Iterative emergence**:
-  [conj:magic-from-iterative-brane-tower](#conj:magic-from-iterative-brane-tower)
-  builds magic from below via Yekutieli jet prolongations. Each new
-  magic $n$ is the strand count where the brane-tower construction
-  *fails* to factor through smaller magic states.
 - **Homological condensation**:
   [conj:homological-shell-condensation](#conj:homological-shell-condensation)
   characterises magic via spectral-sequence collapse. Tensor
