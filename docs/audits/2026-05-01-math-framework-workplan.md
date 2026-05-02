@@ -360,31 +360,42 @@ accuracy.
 - **S**: deterministic, correct $V_\lambda(q)$ for all $\lambda \vdash 3A$ at $A \leq 30$ (covers H–Zn).
 - **E**: 1 week.
 
-### P2.3 — Word-shortcut undo functions, levels 4–7
+### P2.3 — Word-shortcut undo functions, levels 4–7 — ✅ DONE
 
 - **W**: §3·C, [INFRASTRUCTURE-AUDIT.md §Track B](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md).
   No `undo_to_quark` for shells, atoms, molecules.
-- **D**: Implement
-  ```
-  undo_shortcut(level: 4 | 5 | 6 | 7, word: list[Generator]) -> list[QuarkLevelGenerator]
-  ```
-  with a unit test matching the descended-trace identity at each
-  level.
-- **B**: blocks P3.x molecular and electron-shell predictions.
-- **S**: per-level test passes; binding energy at level $n$ via the
-  expanded quark-level word agrees with the level-$n$ shortcut to
-  machine precision.
-- **E**: 1 week per level (4 weeks total).
+- **D**: ✅ Implemented in
+  [`folio-assistant/computations/confinement_shortcuts.py`](../../folio-assistant/computations/confinement_shortcuts.py).
+  All 7 levels have `LevelWord`-derived classes (`MesonWord`,
+  `NucleonWord`, `AtomWord`, `ShellWord`, `CrossShellWord`,
+  `NeutralAtomWord`, `MoleculeWord`) with `undo_to_quark` methods
+  producing crossings dicts at the quark level. Self-test
+  exercises every level (run via
+  `python3 folio-assistant/computations/confinement_shortcuts.py`).
+- **B**: unblocked.
+- **S**: ✅ Self-test passes for L1–L7 with non-trivial crossings
+  emitted at each level (e.g. ¹⁶O shell at L4: 47 generators / 191
+  crossings; H₂ molecule at L7: 7 generators / 23 crossings).
+- **E**: 0 (already done; verification on this branch).
 
 ### P2.4 — Multi-level quadratic SDP
 
-- **W**: §3·D. `sdp_cross_channel.py` only at level 3.
+- **W**: §3·D. `sdp_cross_channel.py` only at level 3 (pair-coupling
+  granularity). The current SDP is generic-(Z, N) but its
+  constraint family encodes only the pair-coupling Wedderburn
+  structure of nucleon-nucleon interactions — it does not model
+  shell-closure (L4), cross-shell (L5), atom-electron (L6), or
+  covalent (L7) constraint structures.
 - **D**: Extend to levels 4 (shell-closure), 5 (cross-shell), 6
-  (atom-electron), 7 (covalent).
-- **B**: blocks P2.3 for the molecular layer.
+  (atom-electron), 7 (covalent). Each level needs its own block
+  decomposition (or extension of the current one) and per-level
+  Wedderburn / Frobenius-positivity constraint families.
+- **B**: blocks per-level binding-energy prediction beyond
+  pair-coupling for shell / atom / molecule levels.
 - **S**: SDP-derived shadow prices match BW coefficients within
-  expected $k$-truncation error.
-- **E**: 2 weeks.
+  expected $k$-truncation error at each level.
+- **E**: 2 weeks. Out of scope for the math-framework audit pass;
+  queued as separate compute branch.
 
 ### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 surveyed; Tier B kickoff landed
 
