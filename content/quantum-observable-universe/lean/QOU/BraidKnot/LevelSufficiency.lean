@@ -79,6 +79,15 @@ class LevelSufficient
   /-- Markov trace agrees on the coarse and unfolded reps. -/
   trace_eq : markovTrace P q = markovTrace P' q
 
+/-- **Reflexivity instance**: when `P = P'` syntactically, the
+    Markov trace is trivially equal to itself. -/
+instance levelSufficient_refl
+    (P : ConfinedParticle) (q : R_q) [HasMarkovTrace P q]
+    (h_unfold : ConfMorphism P P)
+    (h_cover : kMax P q ≤ P.coarseStrands) :
+    LevelSufficient P P q h_unfold h_cover :=
+  ⟨rfl⟩
+
 /-- **Level sufficiency (headline)** (per-instance form).
     Backed by `LevelSufficient`. -/
 -- Ref: [manuscript] braids-and-knots/level-sufficiency

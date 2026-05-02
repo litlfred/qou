@@ -75,6 +75,14 @@ class ShellClosureMonotone
   /-- Stability index does not decrease under the one-step dressing. -/
   monotone : frobeniusStability D_prev q ≤ frobeniusStability D q
 
+/-- **Reflexivity instance**: when `D_prev = D` syntactically, the
+    monotonicity is `≤` reflexivity. -/
+instance shellClosureMonotone_refl
+    (D : DressedParticle) [HasFrobeniusStability D]
+    (q : R_q) (h : isOneStepDressing D D) :
+    ShellClosureMonotone D D q h :=
+  ⟨le_refl _⟩
+
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
     Per-instance form backed by `ShellClosureMonotone`. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
