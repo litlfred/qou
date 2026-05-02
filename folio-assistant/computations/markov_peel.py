@@ -131,11 +131,54 @@ def word_to_element(word) -> SymbolicHeckeElement:
     """Turn a `[(c, d, gen_idx), …]` list (the production
     `atom_braid_word_3A` shape) into a single `SymbolicHeckeElement`
     by left-to-right multiplication.
+
+    Builds the **unreduced** product `Π (c·σ + d·𝟏)`; the term count
+    grows like `2^k` for a length-`k` word.  For atomic braids of
+    length ≥ 30, prefer `incremental_reduced_element` which interleaves
+    reduction with multiplication and keeps the term count bounded.
     """
     from hecke_core import h as _h_num  # numerical q − q⁻¹
     elem = SymbolicHeckeElement.identity()
     for c, d, gen in word:
         elem = elem * crossing_from_cd(gen, c, d, h_num=float(_h_num))
+    return elem
+
+
+def incremental_reduced_element(
+    word,
+    *,
+    div: "SymbolicHeckeDivision | None" = None,
+    max_iterations_per_step: int = 5000,
+) -> SymbolicHeckeElement:
+    """Multiply factors of `word` one at a time, reducing after each.
+
+    The naive `word_to_element` builds the full unreduced product
+    before any reduction, producing `2^k` terms for a length-`k` word.
+    For atomic braids with `A ≥ 3` (word length ≥ 30), this explodes
+    to thousands of terms before reduction can collapse them, and the
+    subsequent fixpoint reduction loop chokes on the cross-term
+    interactions.
+
+    Interleaving reduction with multiplication keeps the intermediate
+    term count bounded by the rank of `H_n(q)` (small).  The same
+    pattern is used by the `__main__` demo in `hecke_symbolic.py` —
+    promoting it here makes it the production path for atomic
+    `tr_M(β)` evaluation.
+
+    `word` matches the `atom_braid_word_3A` shape: list of
+    `(c, d, gen_idx)` triples with numeric `(c, d)`.
+    """
+    from hecke_core import h as _h_num
+    if div is None:
+        div = SymbolicHeckeDivision()
+    elem = SymbolicHeckeElement.identity()
+    h_num = float(_h_num)
+    for c, d, gen in word:
+        factor = crossing_from_cd(gen, c, d, h_num=h_num)
+        elem = elem * factor
+        elem, _stats = div.reduce(
+            elem, max_iterations=max_iterations_per_step
+        )
     return elem
 
 
@@ -189,11 +232,18 @@ def tr_M_atomic(
     n_strands = 3 * A
 
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
-    elem = word_to_element(word)
 
     if reduce_first:
-        div = SymbolicHeckeDivision()
-        elem, _stats = div.reduce(elem, max_iterations=max_iterations)
+        # Interleave reduction with multiplication.  Building the full
+        # unreduced product first explodes to ~9000 terms at A=3 and
+        # the fixpoint reducer chokes on the cross-term interactions
+        # (timing out > 9 minutes on tritium).  The incremental path
+        # keeps the intermediate term count bounded.
+        elem = incremental_reduced_element(
+            word, max_iterations_per_step=max_iterations
+        )
+    else:
+        elem = word_to_element(word)
 
     return tr_M_element(elem, n_strands)
 
