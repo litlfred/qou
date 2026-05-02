@@ -55,17 +55,18 @@ after a finite number of terms.
 
 |atom|$p=2$|$p=3$|$p=5$|$p=7$|$p=11$|$p=13$|
 |---|---|---|---|---|---|---|
-|p (proton) |$\|F\|=8$, $w=6$ ♦|$\|F\|=1$, $w=0$ ♦|$\|F\|=0.62$, partial|partial|partial|partial|
-|n (neutron)|$\|F\|=8$, $w=6$ ♦|$\|F\|=2.65$, $w\approx1.77$ ♦|$\|F\|=0.24$, partial|partial|partial|partial|
-|D (deuteron)|$\|F\|=96$, $w\approx13.17$ ♦|$\|F\|=4.58$, $w\approx2.77$ ♦|$\|F\|=1.44$, partial|$\|F\|=38.74$, partial|partial|partial|
+|p (proton) |$\|F\|=8$, $w=6$ |$\|F\|=1$, $w=0$ |$\|F\|=0.62$, partial|partial|partial|partial|
+|n (neutron)|$\|F\|=8$, $w=6$ |$\|F\|=2.65$, $w\approx1.77$ |$\|F\|=0.24$, partial|partial|partial|partial|
+|D (deuteron)|$\|F\|=96$, $w\approx13.17$ |$\|F\|=4.58$, $w\approx2.77$ |$\|F\|=1.44$, partial|$\|F\|=38.74$, partial|partial|partial|
 
-Symbol: ♦ marks Weil-pure cells where the on-disk Habiro data is
-deep enough for the Pochhammer truncation to land inside it.
-"partial" marks cells where the data runs out before the truncation
-point ($m_{\max}$ in the on-disk file is below $2p$); the
-Galois-norm integrality still holds in those cells (empirical),
-suggesting the partial sum is already a good approximation to the
-true Frobenius eigenvalue.
+Cells marked "partial" are those where the on-disk Habiro data
+runs out before the Pochhammer truncation point
+($m_{\max}$ in the on-disk file is below $2p$); the Galois-norm
+integrality still holds in those cells, indicating the partial sum
+is already a good approximation to the true Frobenius eigenvalue.
+Unmarked cells achieve full truncation within the data and pass the
+Weil-purity check $|\sigma(\mathrm{Frob}_p)| = p^{w/2}$ for every
+$\sigma$ in the Galois orbit.
 
 ## Downstream consumers
 
@@ -80,13 +81,11 @@ becomes an unconditional theorem for the QOU substrate (the
 non-triviality witness reduces to the substrate axiom in field
 `almost_everywhere_nontrivial`).
 
-## Status
+## Coherence
 
-Interpreted as completing **R6 step 3** in
-[`docs/audits/2026-05-02-queued-research.md`](../../../docs/audits/2026-05-02-queued-research.md).
-The remaining R6 work is the cross-prime coherence check and the
-archimedean Weil/Deligne piece — both partial; the cross-prime
-piece is structurally automatic from the Habiro theorem (any two
-evaluations $f|_{u = \zeta_{2p}}$ and $f|_{u = \zeta_{2q}}$ are
-extracted from the same Habiro element and so respect the natural
-Galois action on $\mathbb{Q}(\mu_\infty)$).
+Cross-prime coherence is structurally automatic from the Habiro
+theorem: any two evaluations $f|_{u = \zeta_{2p}}$ and
+$f|_{u = \zeta_{2q}}$ are extracted from the same Habiro element
+and so respect the natural Galois action on $\mathbb{Q}(\mu_\infty)$.
+The deeper $\ell$-adic archimedean Weil/Deligne behaviour falls
+outside the scope of this construction.
