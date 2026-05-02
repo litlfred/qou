@@ -8,7 +8,7 @@ namespace QOU.Descartes.PauliWitness
     Denominator: 2^1. -/
 -- Ref: [leitner2026] §7/descartes-universe (Pauli witness computation)
 noncomputable def tr_alt_2h : LaurentPolynomial ℤ :=
-  -LaurentPolynomial.T -2 + LaurentPolynomial.T 1 - LaurentPolynomial.T 2 - LaurentPolynomial.T 3
+  -LaurentPolynomial.T (-2) + LaurentPolynomial.T 1 - LaurentPolynomial.T 2 - LaurentPolynomial.T 3
 
 noncomputable def net_2h : LaurentPolynomial ℤ :=
   1 + LaurentPolynomial.T 1 - LaurentPolynomial.T 3 + LaurentPolynomial.T 4

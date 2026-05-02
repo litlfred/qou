@@ -8,22 +8,22 @@ namespace QOU.Descartes.PauliWitness
     Denominator: 2^2. -/
 -- Ref: [leitner2026] §7/descartes-universe (Pauli witness computation)
 noncomputable def tr_alt_3he : LaurentPolynomial ℤ :=
-  -LaurentPolynomial.T -6 + 2 • LaurentPolynomial.T -3 - 2 • LaurentPolynomial.T -2 - 2 • LaurentPolynomial.T -1 - 1 + 2 • LaurentPolynomial.T 1 + LaurentPolynomial.T 2 - 2 • LaurentPolynomial.T 3 - LaurentPolynomial.T 4
+  -LaurentPolynomial.T (-6) + 2 • LaurentPolynomial.T (-3) - 2 • LaurentPolynomial.T (-2) - 2 • LaurentPolynomial.T (-1) - 1 + 2 • LaurentPolynomial.T 1 + LaurentPolynomial.T 2 - 2 • LaurentPolynomial.T 3 - LaurentPolynomial.T 4
 
 noncomputable def net_3he : LaurentPolynomial ℤ :=
-  -LaurentPolynomial.T -2 - LaurentPolynomial.T -1 + 1 + 3 • LaurentPolynomial.T 1 - 2 • LaurentPolynomial.T 3 + 2 • LaurentPolynomial.T 5 + 2 • LaurentPolynomial.T 6 - LaurentPolynomial.T 7 + LaurentPolynomial.T 8 - LaurentPolynomial.T 9 + LaurentPolynomial.T 10
+  -LaurentPolynomial.T (-2) - LaurentPolynomial.T (-1) + 1 + 3 • LaurentPolynomial.T 1 - 2 • LaurentPolynomial.T 3 + 2 • LaurentPolynomial.T 5 + 2 • LaurentPolynomial.T 6 - LaurentPolynomial.T 7 + LaurentPolynomial.T 8 - LaurentPolynomial.T 9 + LaurentPolynomial.T 10
 
 noncomputable def F_Pauli_3he_denom : ℕ := 4
 
 /-- Observable amplitude: net(0) + net(1) — the optimal basis.
     Degree 0 + 1 content of the Gröbner NF. -/
 noncomputable def observable_3he : LaurentPolynomial ℤ :=
-  -LaurentPolynomial.T -1 + 1 + 2 • LaurentPolynomial.T 1 + LaurentPolynomial.T 2 - LaurentPolynomial.T 3 + LaurentPolynomial.T 5 + LaurentPolynomial.T 6 + LaurentPolynomial.T 8 - LaurentPolynomial.T 9
+  -LaurentPolynomial.T (-1) + 1 + 2 • LaurentPolynomial.T 1 + LaurentPolynomial.T 2 - LaurentPolynomial.T 3 + LaurentPolynomial.T 5 + LaurentPolynomial.T 6 + LaurentPolynomial.T 8 - LaurentPolynomial.T 9
 
 /-- Coral content: Σ_{ℓ≥2} net(ℓ) — the degree ≥ 1 interaction content.
     This is the "M" in the CMB analogy — the multi-body correlations
     that the transfer matrix cannot capture per-generator. -/
 noncomputable def coral_3he : LaurentPolynomial ℤ :=
-  -LaurentPolynomial.T -2 + LaurentPolynomial.T 1 - LaurentPolynomial.T 2 - LaurentPolynomial.T 3 + LaurentPolynomial.T 5 + LaurentPolynomial.T 6 - LaurentPolynomial.T 7 + LaurentPolynomial.T 10
+  -LaurentPolynomial.T (-2) + LaurentPolynomial.T 1 - LaurentPolynomial.T 2 - LaurentPolynomial.T 3 + LaurentPolynomial.T 5 + LaurentPolynomial.T 6 - LaurentPolynomial.T 7 + LaurentPolynomial.T 10
 
 end QOU.Descartes.PauliWitness
