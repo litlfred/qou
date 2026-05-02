@@ -63,6 +63,21 @@ structure Cell where
   col : ℕ
   deriving DecidableEq, Repr
 
+namespace Cell
+
+/-- Embedding `Cell → ℕ × ℕ`. -/
+def toProd (c : Cell) : ℕ × ℕ := (c.row, c.col)
+
+/-- `toProd` is injective: two cells with the same row and col are equal. -/
+theorem toProd_injective : Function.Injective toProd := by
+  intro a b h
+  obtain ⟨ar, ac⟩ := a
+  obtain ⟨br, bc⟩ := b
+  simp only [toProd, Prod.mk.injEq] at h
+  exact Cell.mk.injEq.mpr h
+
+end Cell
+
 /-- The set of cells in a partition's Young diagram:
     {(i, j) : i < λ.length ∧ j < λ.part i}. -/
 def Partition.cells (λ : Partition) : Finset Cell :=
