@@ -1,0 +1,130 @@
+{
+  "title": "Mod-p Mandelbrot / Julia visualisations for z -> z^2 + c",
+  "computedAt": "2026-05-02T22:51:09.280445+00:00",
+  "primes": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31,
+    37
+  ],
+  "per_prime": {
+    "2": {
+      "max_period": 2,
+      "mean_period": 1.5,
+      "max_tail": 1,
+      "fixed_point_count": 2,
+      "preperiodic_zero_count": 2
+    },
+    "3": {
+      "max_period": 3,
+      "mean_period": 1.7777777777777777,
+      "max_tail": 4,
+      "fixed_point_count": 4,
+      "preperiodic_zero_count": 7
+    },
+    "5": {
+      "max_period": 6,
+      "mean_period": 2.68,
+      "max_tail": 2,
+      "fixed_point_count": 4,
+      "preperiodic_zero_count": 16
+    },
+    "7": {
+      "max_period": 12,
+      "mean_period": 3.7346938775510203,
+      "max_tail": 15,
+      "fixed_point_count": 14,
+      "preperiodic_zero_count": 40
+    },
+    "11": {
+      "max_period": 22,
+      "mean_period": 7.768595041322314,
+      "max_tail": 22,
+      "fixed_point_count": 8,
+      "preperiodic_zero_count": 109
+    },
+    "13": {
+      "max_period": 30,
+      "mean_period": 4.34319526627219,
+      "max_tail": 5,
+      "fixed_point_count": 25,
+      "preperiodic_zero_count": 144
+    },
+    "17": {
+      "max_period": 30,
+      "mean_period": 4.913494809688581,
+      "max_tail": 6,
+      "fixed_point_count": 9,
+      "preperiodic_zero_count": 280
+    },
+    "19": {
+      "max_period": 43,
+      "mean_period": 11.565096952908588,
+      "max_tail": 41,
+      "fixed_point_count": 28,
+      "preperiodic_zero_count": 336
+    },
+    "23": {
+      "max_period": 59,
+      "mean_period": 13.854442344045369,
+      "max_tail": 64,
+      "fixed_point_count": 24,
+      "preperiodic_zero_count": 507
+    },
+    "29": {
+      "max_period": 77,
+      "mean_period": 11.971462544589775,
+      "max_tail": 9,
+      "fixed_point_count": 36,
+      "preperiodic_zero_count": 777
+    },
+    "31": {
+      "max_period": 73,
+      "mean_period": 19.417273673257025,
+      "max_tail": 86,
+      "fixed_point_count": 33,
+      "preperiodic_zero_count": 927
+    },
+    "37": {
+      "max_period": 72,
+      "mean_period": 10.779401022644265,
+      "max_tail": 11,
+      "fixed_point_count": 25,
+      "preperiodic_zero_count": 1320
+    }
+  },
+  "outputs": {
+    "per_prime_pngs": [
+      "p_adic_mandelbrot/p=2.png",
+      "p_adic_mandelbrot/p=3.png",
+      "p_adic_mandelbrot/p=5.png",
+      "p_adic_mandelbrot/p=7.png",
+      "p_adic_mandelbrot/p=11.png",
+      "p_adic_mandelbrot/p=13.png",
+      "p_adic_mandelbrot/p=17.png",
+      "p_adic_mandelbrot/p=19.png",
+      "p_adic_mandelbrot/p=23.png",
+      "p_adic_mandelbrot/p=29.png",
+      "p_adic_mandelbrot/p=31.png",
+      "p_adic_mandelbrot/p=37.png"
+    ],
+    "grid_mandelbrot": "p_adic_mandelbrot/grid-mandelbrot.png",
+    "grid_julia_basilica": "p_adic_mandelbrot/grid-julia-c-1.png",
+    "classical_reference": "p_adic_mandelbrot/classical-mandelbrot.png",
+    "readme": "p_adic_mandelbrot/README.md"
+  },
+  "method": "For each prime p in PRIMES, enumerate every Gaussian residue c in Z[i]/(p) and run the iteration z_{k+1} = z_k^2 + c starting from z_0 = 0 until the orbit revisits a state. Record (preperiod tau, period rho). Render the rho-field as a p x p heatmap (viridis, sqrt-norm). Julia variant fixes c and varies the starting state. Classical Mandelbrot rendered via standard escape time over C for visual comparison.",
+  "notes": [
+    "Z[i]/(p) is F_{p^2} when p = 3 (mod 4); F_p x F_p when p = 1 (mod 4); F_4 when p = 2.",
+    "The naive C_p-Mandelbrot for z^2+c is the closed unit disk (|c|_p <= 1) and carries no fractal boundary; the genuinely fractal non-archimedean structure lives on the Berkovich tree.",
+    "The mod-p period heatmap is NOT a coarse approximation of the classical Mandelbrot set. The equidistribution theorem (Baker-Rumely / Favre-Rivera-Letelier) applies to roots of Misiurewicz polynomials Phi_n - Phi_m, lifted to algebraic numbers, not to the raw period field."
+  ]
+}
