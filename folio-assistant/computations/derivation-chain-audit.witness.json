@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T21:42:34.109416+00:00",
-  "commitSha": "fd195b631854c8e941f6a3d272b5b122ef6bcc2c",
+  "computedAt": "2026-05-02T21:47:19.962957+00:00",
+  "commitSha": "7f8beb11b550537f70da264956b5f4e71f3cb26a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1432,6 +1432,7 @@
         "correlated-channel-mass.witness.json",
         "coulomb-subtracted-binding.witness.json",
         "crt-markov-v2-multichannel.witness.json",
+        "crt-markov-v3-h3a.witness.json",
         "crt-markov.witness.json",
         "cup-product-tower.witness.json",
         "curvature-rank-mass.witness.json",

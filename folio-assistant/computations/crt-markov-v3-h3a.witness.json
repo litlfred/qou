@@ -1,0 +1,365 @@
+{
+  "computation": "crt-markov-v3-h3a",
+  "computedAt": "2026-05-02T21:46:29.823207+00:00",
+  "description": "Full H_{3A} Wedderburn coverage via Hoefsmit-character summation over all partitions of k = 3A. Compares against v2's H_3-weights extrapolation (audit §3·B). For atoms with A ≥ 2 the routes diverge — the magnitude of the difference IS the §3·B audit gap. v2 and v3 use different normalizations (v2 is dimensionless tower; v3 is mass in MeV via hecke_characters.compute_mass_at_level), so direct equality is not expected; the value is in seeing the per-partition breakdown of v3 to identify which partitions dominate.",
+  "q_0_dps": 50,
+  "rows": [
+    {
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "k": 3,
+      "v2_total_full": 1178995.5163427393,
+      "v2_elapsed_s": 0.036328792572021484,
+      "v3_M_predicted": 938.78308711,
+      "v3_markov_trace": 1.0,
+      "v3_n_partitions": 0,
+      "v3_elapsed_s": 8.821487426757812e-06,
+      "ratio_v2_over_v3": 1255.8763920345243,
+      "relative_error_v2_vs_v3": 1254.8763920345243,
+      "v3_top_partitions": []
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "k": 6,
+      "v2_total_full": 1609895.9898401855,
+      "v2_elapsed_s": 0.08445167541503906,
+      "v3_M_predicted": 1878.3485076299999,
+      "v3_markov_trace": 1.3010426069826053e-17,
+      "v3_n_partitions": 11,
+      "v3_elapsed_s": 0.13396573066711426,
+      "ratio_v2_over_v3": 857.0805594918413,
+      "relative_error_v2_vs_v3": 856.0805594918414,
+      "v3_top_partitions": [
+        {
+          "shape": [
+            6
+          ],
+          "w_lambda": 0.0,
+          "chi": 1.0054484345592414,
+          "contribution": 0.0011986185351458927
+        },
+        {
+          "shape": [
+            5,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 3.0163453036777237,
+          "contribution": 0.019599576046150244
+        },
+        {
+          "shape": [
+            4,
+            2
+          ],
+          "w_lambda": 0.0,
+          "chi": 3.0163453036777237,
+          "contribution": 0.0373531474838183
+        },
+        {
+          "shape": [
+            4,
+            1,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 2.0108968691184828,
+          "contribution": 0.02728741244772659
+        },
+        {
+          "shape": [
+            3,
+            3
+          ],
+          "w_lambda": 0.0,
+          "chi": 1.0054484345592412,
+          "contribution": 0.0071167541696439875
+        },
+        {
+          "shape": [
+            3,
+            2,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 0.0,
+          "contribution": 0.0
+        },
+        {
+          "shape": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": -2.010896869118482,
+          "contribution": -0.02728741244772659
+        },
+        {
+          "shape": [
+            2,
+            2,
+            2
+          ],
+          "w_lambda": 0.0,
+          "chi": -1.0054484345592412,
+          "contribution": -0.0071167541696439875
+        },
+        {
+          "shape": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": -3.016345303677723,
+          "contribution": -0.03735314748381829
+        },
+        {
+          "shape": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": -3.016345303677723,
+          "contribution": -0.019599576046150237
+        }
+      ]
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "k": 9,
+      "v2_total_full": 2040796.5505813793,
+      "v2_elapsed_s": 0.1408557891845703,
+      "v3_M_predicted": 2817.91392815,
+      "v3_markov_trace": 0.0008231763114077706,
+      "v3_n_partitions": 30,
+      "v3_elapsed_s": 0.15465235710144043,
+      "ratio_v2_over_v3": 724.2224576820878,
+      "relative_error_v2_vs_v3": 723.2224576820878,
+      "v3_top_partitions": [
+        {
+          "shape": [
+            9
+          ],
+          "w_lambda": 0.0,
+          "chi": 0.9107622062323669,
+          "contribution": 1.5358393927682707e-06
+        },
+        {
+          "shape": [
+            8,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 3.5165464895843415,
+          "contribution": 5.9319143299710144e-05
+        },
+        {
+          "shape": [
+            7,
+            2
+          ],
+          "w_lambda": 0.0,
+          "chi": 4.028113824445201,
+          "contribution": 0.00027268119025637824
+        },
+        {
+          "shape": [
+            7,
+            1,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 4.960848205027755,
+          "contribution": 0.0003437996886676084
+        },
+        {
+          "shape": [
+            6,
+            3
+          ],
+          "w_lambda": 0.0,
+          "chi": -0.8377654734152707,
+          "contribution": -0.00011405007835787796
+        },
+        {
+          "shape": [
+            6,
+            2,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 3.2017698961002172,
+          "contribution": 0.0009446777193907596
+        },
+        {
+          "shape": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 2.8106140622701883,
+          "contribution": 0.00042899961014876897
+        },
+        {
+          "shape": [
+            5,
+            4
+          ],
+          "w_lambda": 0.0,
+          "chi": -4.247497492990615,
+          "contribution": -0.00054470758263434
+        },
+        {
+          "shape": [
+            5,
+            3,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": -6.498346448380367,
+          "contribution": -0.00321826412600579
+        },
+        {
+          "shape": [
+            5,
+            2,
+            2
+          ],
+          "w_lambda": 0.0,
+          "chi": -0.17403556322071134,
+          "contribution": -6.387133098158074e-05
+        }
+      ]
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "k": 9,
+      "v2_total_full": 2870906.6874612663,
+      "v2_elapsed_s": 0.13865137100219727,
+      "v3_M_predicted": 2817.13159474,
+      "v3_markov_trace": 2.6713409832560922e-06,
+      "v3_n_partitions": 30,
+      "v3_elapsed_s": 0.12070107460021973,
+      "ratio_v2_over_v3": 1019.0885980696366,
+      "relative_error_v2_vs_v3": 1018.0885980696368,
+      "v3_top_partitions": [
+        {
+          "shape": [
+            9
+          ],
+          "w_lambda": 0.0,
+          "chi": 1.1221068372363043,
+          "contribution": 1.8922347367172564e-06
+        },
+        {
+          "shape": [
+            8,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 4.466455174595031,
+          "contribution": 7.534275327463433e-05
+        },
+        {
+          "shape": [
+            7,
+            2
+          ],
+          "w_lambda": 0.0,
+          "chi": 5.7120179454345275,
+          "contribution": 0.00038667225406456936
+        },
+        {
+          "shape": [
+            7,
+            1,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 6.433407695013144,
+          "contribution": 0.0004458518929032501
+        },
+        {
+          "shape": [
+            6,
+            3
+          ],
+          "w_lambda": 0.0,
+          "chi": 0.6256567805138868,
+          "contribution": 8.517443975323149e-05
+        },
+        {
+          "shape": [
+            6,
+            2,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 5.2809515709287265,
+          "contribution": 0.0015581373578140002
+        },
+        {
+          "shape": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": 3.533187953178535,
+          "contribution": 0.00053929007003958
+        },
+        {
+          "shape": [
+            5,
+            4
+          ],
+          "w_lambda": 0.0,
+          "chi": -3.6294537630772057,
+          "contribution": -0.00046544841729310044
+        },
+        {
+          "shape": [
+            5,
+            3,
+            1
+          ],
+          "w_lambda": 0.0,
+          "chi": -5.925988898748112,
+          "contribution": -0.002934807744622929
+        },
+        {
+          "shape": [
+            5,
+            2,
+            2
+          ],
+          "w_lambda": 0.0,
+          "chi": -0.21972174350186457,
+          "contribution": -8.063823245861426e-05
+        }
+      ]
+    }
+  ],
+  "follow_up_open": [
+    "True CRT polynomial reconstruction over multiple q_i ∈ ℚ — audit §3·E / Track A. Currently both v2 and v3 evaluate at fixed q_0 (mpmath 50dps); polynomial reconstruction would give exact integer coefficients in q^{1/2}.",
+    "Pad v2 with the missing tower terms to make v2 ↔ v3 directly comparable (currently v2 is dimensionless, v3 is in MeV).",
+    "A = 4..7 atoms (k = 12..21) — each k=3A requires p(k) partitions: p(12)=77, p(15)=176, p(18)=385, p(21)=792. Tractable but minutes per atom at higher A."
+  ]
+}
