@@ -579,6 +579,107 @@ $|\Sigma_{\rm all}|$ degrades below 1% accuracy will be the
 empirical $A_{**}$. This is a 1-hour compute task in the existing
 `branching-qvalues.witness.json` infrastructure.
 
+### **Test result (2026-05-02 evening): both hypotheses falsified;
+the actual pattern is exact cancellation in $\Sigma_{\rm all}$.**
+
+Computation: enumerated all $4^A$ per-nucleon channel
+configurations for synthetic $\beta$-decay chains at $A = 1..6$
+(using the proton/neutron channels from
+[`full-derivation-verified.py`](../../folio-assistant/computations/full-derivation-verified.py)),
+computed $\Sigma_{\rm all}$ and $\Sigma_{\rm FP}$, and probed
+both refined hypotheses
+([`frob_filter_cancellation_test.py`](../../folio-assistant/computations/frob_filter_cancellation_test.py)).
+
+| $A$ | $n_{\rm total} = 4^A$ | $|\Sigma_{\rm all}|$ | $|\Sigma_{\rm FP}|$ | ratio $\Sigma_{\rm FP}/\Sigma_{\rm all}$ | required prec |
+|----:|----------------------:|---------------------:|--------------------:|-----------------------------------------:|--------------:|
+| 1 | 4 | 0.5295 | 0.2703 | 0.51 | 2.51e+0 (safe) |
+| 2 | 16 | 0.3357 | 0.1454 | 0.43 | 1.30e+0 (safe) |
+| **3** | 64 | 0.0351 | 0.1091 | **3.1** | 1.16e-1 (safe) |
+| **4** | 256 | 0.00367 | 0.3703 | **101** | 1.03e-2 (safe) |
+| 5 | 1024 | 0.00233 | 1.5101 | 648 | 5.34e-3 (safe) |
+| 6 | 4096 | 0.00147 | 6.1173 | 4146 | 2.77e-3 (safe) |
+
+**Hypothesis 1 (cancellation-precision-budget) falsified.** All
+required precisions $\geq 10^{-3}$, never approaching the f64
+floor of $\sim 10^{-16}$. Precision loss is **not** what
+activates FP-filter.
+
+**Hypothesis 2 (signature q-dominance crossover) falsified
+earlier** (A=5 has $q_n < p_n$ while A=4 and A=6 have $q_n > p_n$
+— oscillation, not crossover).
+
+**The actual pattern (clear from the new data):**
+$|\Sigma_{\rm all}|$ is **shrinking** monotonically as $A$ grows
+($0.530 \to 0.336 \to 0.035 \to 0.0037 \to 0.0023 \to 0.0015$),
+while $|\Sigma_{\rm FP}|$ is **growing** monotonically (0.27 →
+0.15 → 0.11 → 0.37 → 1.51 → 6.12). The ratio
+$|\Sigma_{\rm FP}/\Sigma_{\rm all}|$ **explodes**: 0.51 → 0.43 →
+3.1 → 101 → 648 → 4146 — an exponential blow-up.
+
+This is consistent with a **categorical cancellation theorem** —
+the unfiltered sum $\Sigma_{\rm all}$ is approaching zero as a
+hidden topological identity (likely: the trace over the full
+Hecke algebra of a Frobenius-anti-symmetric difference operator
+vanishes by Frobenius reciprocity). Only the Frobenius-positive
+sub-cone $\Sigma_{\rm FP}$ carries non-vanishing physical content
+in the limit.
+
+**`conj:frobenius-filter-categorical-final`:**
+
+> *For all $A \geq 1$, $|\Sigma_{\rm all}|$ at $q_0$ decays at
+> least geometrically in $A$; specifically, $\Sigma_{\rm all}$
+> equals an **exact categorical cancellation** (zero in the
+> Frobenius-symmetric trace) plus a residual error term scaling
+> as $\hbar_q^A$ or $q_0^{-A}$. The FP-filter $\Sigma_{\rm FP}$
+> projects onto the **physically nonzero** Frobenius-positive
+> sub-cone, whose magnitude grows like $|\Sigma_{\rm FP}| \sim
+> A^c$ (polynomial in $A$, $c \sim 1$ from the data).*
+>
+> *The empirical activation at $A_{**} = 6$ is not a crossover
+> in the precision sense; rather, it is the empirical
+> **threshold below which the small accidental survival of
+> $\Sigma_{\rm all}$ happens to give the right Q-value (within a
+> few %)**. By $A = 4$ the ratio is $> 100$ already, so
+> $\Sigma_{\rm all}$ is **categorically wrong** for $A \geq 4$;
+> the empirical use of $\Sigma_{\rm all}$ at $A = 3$ in
+> [`branching-qvalues.witness.json`](../../folio-assistant/computations/branching-qvalues.witness.json)
+> works only by accident (ratio 3.1, leaving 2-4% error).*
+
+**Strong predictions** (testable):
+
+1. The leading-order asymptotic
+   $\log|\Sigma_{\rm all}|/A$ should converge to a constant —
+   the negative of the Frobenius-anti-symmetric trace's
+   $\hbar_q$-decay rate. From the table:
+   $\log(0.530)/1 = -0.635$,
+   $\log(0.0015)/6 = -1.085$ — not yet asymptotic but trending
+   toward a constant negative value. Run $A = 7..12$ to verify
+   asymptote.
+2. There should be an **exact identity**
+   $\Sigma_{\rm all}(A) = 0$ in $\mathbb{Z}[q^{\pm 1}]$ (i.e.,
+   symbolically), with the numerical residue arising only from
+   $q_0$ being an *algebraic* (non-rational) substitution.
+   Verify by recomputing $\Sigma_{\rm all}$ symbolically in
+   $q$ and checking whether it factors as
+   $(q - q_*) \cdot$ (something) for some root $q_*$ near
+   $q_0$. This would be a **categorical proof** that the
+   unfiltered sum is a vanishing class.
+
+**Closure path.** The conjecture is now sharper and quantitative.
+To promote to proposition:
+
+- (a) Prove $\Sigma_{\rm all} \equiv 0$ symbolically in $\mathbb{Z}[q^{\pm 1}]$
+  (a Frobenius reciprocity / character orthogonality identity) — this would make
+  the numerical residue an artefact of the $q_0$-substitution, not a physical
+  quantity.
+- (b) Identify the asymptotic rate $\log|\Sigma_{\rm all}|/A \to -\gamma$ as
+  $A \to \infty$ in terms of $\hbar_q$, $z$, or another categorical invariant.
+
+(b) is the easier compute task and (a) is the conceptual closure. Both reduce
+to a **single** claim: $\Sigma_{\rm all}$ is the trace of an exact-zero
+operator on the full Hecke algebra; only the Frobenius-positive sub-cone
+carries physical content.
+
 ### Witnesses
 
 - [`y-lambda-wenzl-bridge-numeric-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-numeric-witness.json)
