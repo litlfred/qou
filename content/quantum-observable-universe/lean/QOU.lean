@@ -51,4 +51,5 @@ import QOU.LiftingDescent
 import QOU.LiftingDescent.HomologicalCondensation
 import QOU.LiftingDescent.IterativeBraneTower
 import QOU.LiftingDescent.HigherCohomology
+import QOU.LiftingDescent.BBStratification
 import QOU.MotivesArchimedean
