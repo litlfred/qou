@@ -1,0 +1,252 @@
+{
+  "computation": "habiro-frobenius-probe",
+  "computedAt": "2026-05-02T15:18:24.340420+00:00",
+  "description": "R6 step-1 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. This makes the Habiro → Frob_p map explicit and tabulated, which is the first concrete step toward the Habiro → MotivicGaloisCharacter instance (audit GAP 5b).",
+  "reference_blocks": [
+    "def:motivic-galois-character",
+    "def:motivic-substrate",
+    "prop:motivic-perpetual-obstruction"
+  ],
+  "input_witness": "habiro-coefficients-atomic.witness.json",
+  "primes": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13
+  ],
+  "atoms": [
+    {
+      "atom_label": "p (proton, A=1)",
+      "Z": 1,
+      "N": 0,
+      "n_habiro_coefficients": 10,
+      "frobenius": [
+        {
+          "prime": 2,
+          "u_root": "zeta_4",
+          "frob_p_complex": {
+            "real": -8.000000000000455,
+            "imag": -2.7284841053187847e-12
+          },
+          "abs_frob_p": 8.000000000000455,
+          "pochhammer_truncates_at_m": 4,
+          "n_contributions": 4
+        },
+        {
+          "prime": 3,
+          "u_root": "zeta_6",
+          "frob_p_complex": {
+            "real": -1.000000000001819,
+            "imag": -1.4551915228366852e-11
+          },
+          "abs_frob_p": 1.000000000001819,
+          "pochhammer_truncates_at_m": 6,
+          "n_contributions": 6
+        },
+        {
+          "prime": 5,
+          "u_root": "zeta_10",
+          "frob_p_complex": {
+            "real": -0.6180339887441164,
+            "imag": -1.312372432948905e-11
+          },
+          "abs_frob_p": 0.6180339887441164,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 10
+        },
+        {
+          "prime": 7,
+          "u_root": "zeta_14",
+          "frob_p_complex": {
+            "real": 1.9390010753481448,
+            "imag": -1.0820883461315915
+          },
+          "abs_frob_p": 2.2205045280375053,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 10
+        },
+        {
+          "prime": 11,
+          "u_root": "zeta_22",
+          "frob_p_complex": {
+            "real": -0.3111700132732045,
+            "imag": -0.13491931037256855
+          },
+          "abs_frob_p": 0.3391607251316929,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 10
+        },
+        {
+          "prime": 13,
+          "u_root": "zeta_26",
+          "frob_p_complex": {
+            "real": 0.3704921101781524,
+            "imag": -0.21824530901148442
+          },
+          "abs_frob_p": 0.4299946727690688,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 10
+        }
+      ]
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "Z": 0,
+      "N": 1,
+      "n_habiro_coefficients": 9,
+      "frobenius": [
+        {
+          "prime": 2,
+          "u_root": "zeta_4",
+          "frob_p_complex": {
+            "real": -8.000000000000227,
+            "imag": -4.547473508864641e-13
+          },
+          "abs_frob_p": 8.000000000000227,
+          "pochhammer_truncates_at_m": 4,
+          "n_contributions": 4
+        },
+        {
+          "prime": 3,
+          "u_root": "zeta_6",
+          "frob_p_complex": {
+            "real": 2.000000000001819,
+            "imag": 1.7320508075690668
+          },
+          "abs_frob_p": 2.6457513110660895,
+          "pochhammer_truncates_at_m": 6,
+          "n_contributions": 6
+        },
+        {
+          "prime": 5,
+          "u_root": "zeta_10",
+          "frob_p_complex": {
+            "real": -0.19098300562814075,
+            "imag": 0.13875727571213758
+          },
+          "abs_frob_p": 0.23606797750184713,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 9
+        },
+        {
+          "prime": 7,
+          "u_root": "zeta_14",
+          "frob_p_complex": {
+            "real": -0.22252093395459838,
+            "imag": -1.4565025309893258
+          },
+          "abs_frob_p": 1.4734025888487976,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 9
+        },
+        {
+          "prime": 11,
+          "u_root": "zeta_22",
+          "frob_p_complex": {
+            "real": 0.818284130331941,
+            "imag": -2.3864129117389936
+          },
+          "abs_frob_p": 2.522807068181727,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 9
+        },
+        {
+          "prime": 13,
+          "u_root": "zeta_26",
+          "frob_p_complex": {
+            "real": 1.8605975929511414,
+            "imag": -2.95217783836688
+          },
+          "abs_frob_p": 3.4895812631661305,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 9
+        }
+      ]
+    },
+    {
+      "atom_label": "D (deuteron, A=2)",
+      "Z": 1,
+      "N": 1,
+      "n_habiro_coefficients": 14,
+      "frobenius": [
+        {
+          "prime": 2,
+          "u_root": "zeta_4",
+          "frob_p_complex": {
+            "real": 96.0000000000291,
+            "imag": -1.7462298274040222e-10
+          },
+          "abs_frob_p": 96.0000000000291,
+          "pochhammer_truncates_at_m": 4,
+          "n_contributions": 4
+        },
+        {
+          "prime": 3,
+          "u_root": "zeta_6",
+          "frob_p_complex": {
+            "real": -4.499999977648258,
+            "imag": -0.8660254329442978
+          },
+          "abs_frob_p": 4.582575678517561,
+          "pochhammer_truncates_at_m": 6,
+          "n_contributions": 6
+        },
+        {
+          "prime": 5,
+          "u_root": "zeta_10",
+          "frob_p_complex": {
+            "real": -1.2745750360190868,
+            "imag": 0.6735419258475304
+          },
+          "abs_frob_p": 1.4415964235240932,
+          "pochhammer_truncates_at_m": 10,
+          "n_contributions": 10
+        },
+        {
+          "prime": 7,
+          "u_root": "zeta_14",
+          "frob_p_complex": {
+            "real": 3.7774790967832814,
+            "imag": -38.55203022495425
+          },
+          "abs_frob_p": 38.73665425398044,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 14
+        },
+        {
+          "prime": 11,
+          "u_root": "zeta_22",
+          "frob_p_complex": {
+            "real": 8.52288034079902,
+            "imag": 18.67406242787729
+          },
+          "abs_frob_p": 20.52705767673089,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 14
+        },
+        {
+          "prime": 13,
+          "u_root": "zeta_26",
+          "frob_p_complex": {
+            "real": -2.9192693517361477,
+            "imag": 0.47670776839186146
+          },
+          "abs_frob_p": 2.957935740416133,
+          "pochhammer_truncates_at_m": null,
+          "n_contributions": 14
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "n_atoms": 3,
+    "n_primes": 6,
+    "atoms_with_full_truncation": 0
+  },
+  "next_steps": [
+    "Step 2: verify Frobenius commutes with norms (finite-place reciprocity) and satisfies Weil/Deligne at archimedean place.",
+    "Step 3: construct the explicit MotivicGaloisCharacter instance, discharging the axiom class for the QOU substrate."
+  ]
+}
