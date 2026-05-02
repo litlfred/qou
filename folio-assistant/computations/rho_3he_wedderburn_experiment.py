@@ -32,6 +32,14 @@ from pathlib import Path
 import mpmath as mp
 import numpy as np
 
+# Module-level constants (single source of truth) per CLAUDE.md guidance
+Q_0 = 1.1099785955541805     # substrate parameter at f64 precision
+M_E = 0.51099895             # electron mass in MeV (CODATA)
+B_AME_3HE = 7.718            # ³He AME 2020 binding energy in MeV
+# 2·m_p + m_n − B + 2·m_e ≈ ³He total mass in MeV
+M_AME_3HE = 2809.41336
+G_CATALAN = float(mp.catalan)  # Catalan's constant — same source everywhere
+
 
 def hoefsmit_h3_at_q(q: float):
     """Return (T_1, T_2, T_2_inv) in the Hoefsmit standard (2,1)
@@ -106,22 +114,20 @@ def markov_y_lambda_h3(q: float):
     These are the Jones-Markov "y_λ at H_3" satisfying
     Σ_λ y_λ d_λ = 1 (closure normalisation).
     """
-    Q_0 = 1.1099785955541805
     if abs(q - Q_0) < 1e-9:
         return markov_y_lambda_h3_from_witness()
     # Provisional fallback (NOT exact); use witness when possible.
+    # The split z² + z(1-z) + (1-z)² = 1 already, so dividing by
+    # (1 + z + z²) would BREAK the closure Σ d_λ y_λ = 1 with d_λ = (1, 2, 1).
     z = 1.0 / (np.sqrt(q) + 1.0 / np.sqrt(q))
-    denom = 1.0 + z + z * z
-    return {"(3)": z * z / denom, "(2,1)": z * (1.0 - z) / denom,
-            "(1,1,1)": (1.0 - z) ** 2 / denom}
+    return {"(3)": z * z, "(2,1)": z * (1.0 - z),
+            "(1,1,1)": (1.0 - z) ** 2}
 
 
 def main():
     base = Path(__file__).parent
-    Q_0 = 1.1099785955541805  # from low-isotope-mass-table witness
-    M_E = 0.51099895
-    B_AME_3HE = 7.718
-    M_AME_3HE = 2809.41336  # 2·m_p + m_n + 2·m_e − B = 938.272·2 + 939.565 + 2·0.511 − 7.718
+    # Constants pulled from module-level (Q_0, M_E, B_AME_3HE, M_AME_3HE,
+    # G_CATALAN — single source of truth per CLAUDE.md guidance).
 
     print("══════════════════════════════════════════════════════════════════════")
     print("  Plan H — ρ(Z, N) Wedderburn-multiplicity experiment for ³He")
@@ -149,9 +155,9 @@ def main():
     print(f"\n──── 3. tr_M((σ_1 σ_2^{{-1}})^3)|_{{q=q_0}} = {tr_M:.10f}")
 
     # ─── 4. Hand-pick: B = ρ · m_e · Vol_hyp(K), ρ = 2, Vol = 8G ─
-    # 8G ≈ 7.327724753417...
-    G = 0.91596559417721901505
-    vol_hyp = 8 * G
+    # 8G ≈ 7.327724753417...  G_CATALAN sourced from mp.catalan
+    # (module level) so all G usages stay in lock-step.
+    vol_hyp = 8 * G_CATALAN
     rho_handpick = 2
     B_handpick = rho_handpick * M_E * vol_hyp
     err_handpick = (B_handpick - B_AME_3HE) / B_AME_3HE * 100
@@ -235,17 +241,26 @@ def main():
         "hand_pick": {"rho": 2, "B_pred_MeV": B_handpick,
                       "err_pct": err_handpick, "M_err_ppm": M_err_ppm_handpick},
         "candidates": [
-            {"label": label, "rho": rho,
-             "B_pred_MeV": rho * M_E * (tr_M if "tr_M" in label else vol_hyp),
-             "err_pct": ((rho * M_E * (tr_M if "tr_M" in label else vol_hyp))
-                         - B_AME_3HE) / B_AME_3HE * 100,
-             "M_err_ppm": ((rho * M_E * (tr_M if "tr_M" in label else vol_hyp))
-                           - B_AME_3HE) / M_AME_3HE * 1e6}
+            {
+                "label": label,
+                "rho": float(rho),
+                "B_pred_MeV": float(
+                    rho * M_E * (tr_M if "tr_M" in label else vol_hyp)
+                ),
+                "err_pct": float(
+                    ((rho * M_E * (tr_M if "tr_M" in label else vol_hyp))
+                     - B_AME_3HE) / B_AME_3HE * 100
+                ),
+                "M_err_ppm": float(
+                    ((rho * M_E * (tr_M if "tr_M" in label else vol_hyp))
+                     - B_AME_3HE) / M_AME_3HE * 1e6
+                ),
+            }
             for label, rho in candidates
         ],
     }
     with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2, default=str)
+        json.dump(witness, f, indent=2)
     print(f"\n→ wrote {out_path}")
 
 
