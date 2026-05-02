@@ -98,36 +98,63 @@ def chi_lambda_atomic(shape, Z, N, q_val=None, *,
         m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, q_val=q_val,
     )
 
-    # Multiply Π (c·σ_g + d·I)
+    # P2.2c-12C: avoid densifying the matrix product.
+    # For dim ≤ ~500, dense matrix product is fast.
+    # For dim > 500, use the sparse-trace iterative approach
+    # (per-basis-vector application, never forms full product).
     from scipy import sparse as sp_sparse
     is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
-    if is_sparse:
-        product = sp_sparse.eye(dim, format='csr')
-        I = sp_sparse.eye(dim, format='csr')
-    else:
-        product = np.eye(dim)
-        I = np.eye(dim)
 
+    # Build the per-crossing matrices c·σ_g + d·I lazily — but
+    # for dense path keep the old behaviour.
+    if not is_sparse:
+        # Small-dim path: dense matrix product is fastest
+        I = np.eye(dim)
+        product = np.eye(dim)
+        for c, d, g in crossings:
+            if g >= len(sigmas):
+                continue
+            M = c * sigmas[g] + d * I
+            product = product @ M
+        return float(np.trace(product))
+
+    # Large-dim path: sparse trace via iterative vector products
+    from sparse_trace_of_product import sparse_trace_of_product
+    I_sp = sp_sparse.eye(dim, format='csr')
+    factors = []
     for c, d, g in crossings:
         if g >= len(sigmas):
-            # Out of range — should not happen if shape ⊢ n_strands
             continue
-        M = c * sigmas[g] + d * I
-        product = product @ M
-
-    if is_sparse:
-        return float(product.diagonal().sum())
-    return float(np.trace(product))
+        # M = c · σ_g + d · I  (preserve sparsity via scipy)
+        if d == 0.0:
+            M = c * sigmas[g]
+        elif c == 0.0:
+            M = d * I_sp
+        else:
+            M = (c * sigmas[g]) + (d * I_sp)
+        # Convert to CSR for fast matrix-vector multiplication
+        if not sp_sparse.isspmatrix_csr(M):
+            M = M.tocsr()
+        factors.append(M)
+    return sparse_trace_of_product(factors, dim)
 
 
 def markov_trace_q_hecke_atomic(Z, N, *, q_val=None, precision=50,
-                                 include_inter=True):
+                                 include_inter=True, dim_cap=None):
     """tr_M(W_atomic) at q = q_val via Schur-Weyl × q-Hecke character.
 
-    Σ_{λ ⊢ 3A, len(λ) ≤ 2} w_λ(q) · χ^λ_q(W_atomic) / dim(λ)
+    Σ_{λ ⊢ 3A, len(λ) ≤ 2, dim(λ) ≤ dim_cap} w_λ(q) · χ^λ_q(W_atomic) / dim(λ)
 
     Note: divides by dim(λ) per the Markov-trace normalisation
     (matches `compute_mass_at_level`).
+
+    Args:
+        dim_cap: skip partitions with dim_λ > dim_cap (truncation).
+            None = no cap (default; appropriate for A ≤ 4). At A=12+,
+            length-≤-2 partition dims grow to >1e6; pass dim_cap=10000
+            for tractable computation. Truncation is acceptable
+            because the per-braid framework needs only a handful of
+            light-partition contributions for splitting.
     """
     if q_val is None:
         q_val = Q0_FLOAT
@@ -140,7 +167,14 @@ def markov_trace_q_hecke_atomic(Z, N, *, q_val=None, precision=50,
 
     total = mpmath.mpf(0)
     partitions_used = []
+    skipped = []
+    from murnaghan_nakayama import dim_specht
     for lam in length_le_2_partitions_of(n_strands):
+        # Dim cap (truncation for large A)
+        d_classical = dim_specht(lam)
+        if dim_cap is not None and d_classical > dim_cap:
+            skipped.append({"partition": list(lam), "dim": d_classical, "reason": "dim_cap"})
+            continue
         # Build w_λ = dim_q(λ)² / [n]_q!
         d_q = dim_q(lam)
         w_f = d_q ** 2 / nfac
@@ -151,9 +185,6 @@ def markov_trace_q_hecke_atomic(Z, N, *, q_val=None, precision=50,
                                  include_inter=include_inter)
         if chi == 0:
             continue
-        # Get classical dim for normalisation
-        from murnaghan_nakayama import dim_specht
-        d_classical = dim_specht(lam)
         contrib = mpmath.mpf(w_f) * mpmath.mpf(chi) / mpmath.mpf(d_classical)
         total += contrib
         partitions_used.append({
