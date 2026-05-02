@@ -327,6 +327,16 @@ class BranchingConverges (k : ℕ) (_hk : k ≥ 4)
   /-- The Féray–Méliot O(1/√k) bound. -/
   bound : |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
 
+/-- **Default instance from a `Fact` witness on the bound**.
+    When `Fact (|f_k - f_inf| ≤ C_q / √(k-3))` is in scope (e.g.
+    from a numerical witness at the specific `(k, f_k, f_inf)`),
+    the typeclass instance follows. -/
+instance branchingConverges_of_fact (k : ℕ) (hk : k ≥ 4)
+    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0)
+    [hf : Fact (|f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ))] :
+    BranchingConverges k hk f_k f_inf C_q hC :=
+  ⟨hf.out⟩
+
 /-- **Self-convergence (reflexivity)**: when `f_k = f_inf`, the
     bound holds trivially with LHS = 0. -/
 instance branchingConverges_refl (k : ℕ) (hk : k ≥ 4)

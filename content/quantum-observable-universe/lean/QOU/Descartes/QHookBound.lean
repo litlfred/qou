@@ -642,6 +642,15 @@ class ConvergenceRate (q : ℝ) (_hq : q > 1) (_hq2 : q < 2)
   /-- The Féray–Méliot rate. -/
   bound : |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
 
+/-- **Default instance from a Fact witness on the rate bound**. -/
+instance convergenceRate_of_fact (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+    (k : ℕ) (hk : k ≥ 4)
+    (f_k f_inf : ℝ)
+    (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹))
+    [hf : Fact (|f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ))] :
+    ConvergenceRate q hq hq2 k hk f_k f_inf C_q hC :=
+  ⟨hf.out⟩
+
 /-- **Self-convergence (reflexivity)**: when `f_k = f_inf`, the
     Féray–Méliot rate holds with LHS = 0. The RHS is non-negative
     since `C_q = 3·h²·(q + q⁻¹)` with each factor positive for

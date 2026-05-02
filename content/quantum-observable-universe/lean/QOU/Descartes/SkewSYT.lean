@@ -769,6 +769,13 @@ class KnotInvariantConvergence (k : ℕ) (_hk : k ≥ 4)
   /-- Knot-invariant level-k → ∞ rate. -/
   bound : |a_k - a_inf| ≤ C / (k - 3 : ℝ)
 
+/-- **Default instance from a `Fact` witness on the rate bound**. -/
+instance knotInvariantConvergence_of_fact (k : ℕ) (hk : k ≥ 4)
+    (a_k a_inf : ℝ) (C : ℝ) (hC : C > 0)
+    [hf : Fact (|a_k - a_inf| ≤ C / (k - 3 : ℝ))] :
+    KnotInvariantConvergence k hk a_k a_inf C hC :=
+  ⟨hf.out⟩
+
 /-- **Self-convergence (reflexivity)**: when `a_k = a_inf`, the
     bound holds with LHS = 0. -/
 instance knotInvariantConvergence_refl (k : ℕ) (hk : k ≥ 4)
