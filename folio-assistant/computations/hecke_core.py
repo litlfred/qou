@@ -1412,7 +1412,7 @@ def _load_categorical_shell():
     Recurrence: c_{n+1} = d_n, d_{n+1} = c_n - d_n·h, h = q−q⁻¹.
     All symbolic in q. No Gaussian, no empirical magic numbers.
 
-    Reference: prop:q-integer-mass-formula, conj:shell-closure-nf-term-count
+    Reference: conj:q-integer-mass-formula, conj:shell-closure-nf-term-count
     """
     _h = q0 - qi
     c, d = 0.0, 1.0
@@ -1438,7 +1438,7 @@ def magic_proximity(x, sigma=None):
     Fully categorical: γ(Z) from the Hecke recurrence in q.
     No Gaussian, no empirical magic numbers.
 
-    Reference: prop:q-integer-mass-formula
+    Reference: conj:q-integer-mass-formula
     """
     Z = int(round(x))
     if Z in _CATEGORICAL_SHELL:

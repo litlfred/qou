@@ -9,13 +9,12 @@ export default conjecture({
   },
   uses: [
     "prop:nuclear-knot-classification",
-    "prop:fibre-functor-rigidity",
+    "rem:fibre-functor-rigidity",
     "prop:bw-coefficient-shadow-price",
     "def:q-casimir",
-    "def:adjoint-trace",
+    "rem:adjoint-trace",
     "def:q-heat-equation",
-    "rem:yekutieli-stokes-remark",
-  ],
+      ],
   cites: ["yekutieli2015", "kassel1995"],
   tags: [
     "frobenius-pairing",

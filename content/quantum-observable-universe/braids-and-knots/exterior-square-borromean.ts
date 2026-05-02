@@ -8,7 +8,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:borromean-baryon-interpretation",
+    "rem:borromean-baryon-interpretation",
     "prop:spectral-sequence-collapse",
   ],
 });

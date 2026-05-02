@@ -14,8 +14,5 @@ export default remark({
     "time-reversal",
     "exceptional-divisor",
   ],
-  uses: [
-    "prop:antiparticle-crossing-reversal",
-    "conj:electron-shells-hopf",
-  ],
+  uses: ["prop:antiparticle-crossing-reversal"],
 });

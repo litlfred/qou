@@ -48,4 +48,5 @@ import QOU.QGeometricLanglands
 import QOU.AppendixSurreals
 import QOU.AlgebraicSubstrate
 import QOU.LiftingDescent
+import QOU.LiftingDescent.HomologicalCondensation
 import QOU.MotivesArchimedean

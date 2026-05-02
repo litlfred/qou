@@ -57,5 +57,5 @@ $$
 $$
 
 *where $\alpha = m_e \times 8G$ is the same binding scale as in
-the [atomic mass formula](#prop:wedderburn-mass-formula).  Positive
+the [atomic mass formula](#thm:wedderburn-mass-formula).  Positive
 $\mathbf{E}_{\mathrm{bind}}$ means the molecule is bound.*

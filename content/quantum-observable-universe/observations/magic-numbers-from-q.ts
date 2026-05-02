@@ -13,7 +13,7 @@ export default proposition({
     "block-diagonal",
   ],
   uses: [
-    "prop:shell-closure-nf-term-count",
+    "conj:shell-closure-nf-term-count",
     "prop:nuclear-knot-classification",
     "prop:bw-coefficient-shadow-price",
   ],

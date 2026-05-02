@@ -1,7 +1,7 @@
 The Bethe--Weizsäcker semi-empirical mass formula (SEMF) decomposes
 nuclear binding into five independent physical effects, each with a
 fitted coefficient.  The QOU three-channel Wedderburn formula
-([three-invariant mass formula](#prop:wedderburn-mass-formula))
+([three-invariant mass formula](#thm:wedderburn-mass-formula))
 produces binding from the Hecke algebra trace alone, with zero
 fitted parameters.
 

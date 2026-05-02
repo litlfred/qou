@@ -1,4 +1,4 @@
-**Proposition (exact at $k = 3$, convergence conjectural).**
+**Conjecture (exact at $k = 3$, convergence at $k > 3$ conditional on conj:jet-filtered-knot-factor).**
 
 **Part A (Proved).** *At $k = 3$, the jet-filtered knot invariant
 is exact:*

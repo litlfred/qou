@@ -42,7 +42,7 @@ $$
 Torus knots have all crossings pressed onto a torus surface — every
 $z_c$ is real — so $V(T_{m,n}) = 0$.  This is the categorical
 explanation of why Seifert-fibered nucleons contribute zero hyperbolic
-volume in the [JSJ decomposition of the atomic braid](#prop:wedderburn-mass-formula).
+volume in the [JSJ decomposition of the atomic braid](#thm:wedderburn-mass-formula).
 
 ## Extremality
 

@@ -29,7 +29,7 @@ dim(λ)²/k! by a factor of (1 + O(h²/k))².
 
 ## References
 
-- [prop:jet-convergence-classical-limit]
+- [conj:jet-convergence-classical-limit]
 - [mathas1999] §3.3: q-Schur algebras and q-hook formula
 -/
 

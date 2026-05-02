@@ -13,5 +13,5 @@ export default remark({
     "cpt-saturation",
     "chirality",
   ],
-  uses: ["conj:mass-volume-factorization"],
+  uses: [],
 });

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-01T15:58:27.941604+00:00",
-  "commitSha": "6296103b8d33cd0f6a3ba8e15aa91cc408df3608",
+  "computedAt": "2026-05-02T06:55:18.668487+00:00",
+  "commitSha": "a9ed72110801061f6324b84572e0ea94a9d7566d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1675,6 +1675,7 @@
         "residual-probe-pn.witness.json",
         "rho-f-complexity-sweep.witness.json",
         "rho-f-derived-vs-observed.witness.json",
+        "rho-z-n-scan.witness.json",
         "ribbon-content-average.witness.json",
         "rosso-jones-qvalues.witness.json",
         "round6-tau-M-canonical.witness.json",
@@ -1749,6 +1750,7 @@
         "v-hat-gram-projection-probe.witness.json",
         "v-hat-pair-ratio.witness.json",
         "validate-isotope-nf-stability.witness.json",
+        "wall-violations.witness.json",
         "wedderburn-3term-avg-baseline.witness.json",
         "wedderburn-3term-inter-only.witness.json",
         "wedderburn-inter-gen-direct.witness.json",

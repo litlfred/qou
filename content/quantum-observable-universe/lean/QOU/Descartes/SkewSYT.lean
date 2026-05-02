@@ -570,7 +570,7 @@ noncomputable def branchingFraction
     (partitions_k.sum fun ν => mult λ ν))
   if den ≠ 0 then num / den else 0
 
-/-- **Convergence bound** (prop:jet-convergence-classical-limit).
+/-- **Convergence bound** (conj:jet-convergence-classical-limit).
 
     For the branching H_k(q) → H_3(q), the fraction f_μ^{(k)}
     converges to its limit with rate O(1/k).
@@ -636,7 +636,7 @@ axiom knot_invariant_convergence
     For K = 12: H_9 ≈ 2.83, so cumulative error ≤ 2.83 × C_q.
     At q₀: 2.83 × 0.088 ≈ 0.25 MeV — consistent with the
     observed mass table residuals of 0.05-2.7 MeV. -/
--- Ref: [prop:jet-convergence-classical-limit]
+-- Ref: [conj:jet-convergence-classical-limit]
 theorem cumulative_error_harmonic (K : ℕ) (hK : K ≥ 4) (C_q : ℝ) :
     True := by  -- placeholder for the harmonic sum bound
   trivial
@@ -662,7 +662,7 @@ theorem branching_at_k3 : True := by trivial  -- proved in ConfinedKnotBinding.l
 
     (This "effective exponent" description is heuristic.
     The rigorous statement is the O(1/(k-3)) convergence bound above.) -/
--- Ref: [prop:jet-convergence-classical-limit]
+-- Ref: [conj:jet-convergence-classical-limit]
 theorem squared_to_linear_transition : True := by trivial
 
 end QOU.Descartes.SkewSYT

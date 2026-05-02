@@ -8,7 +8,6 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
-    "conj:classical-riemann-hypothesis",
     "cor:spectral-half-line",
     "thm:quantum-gap-collapse",
   ],

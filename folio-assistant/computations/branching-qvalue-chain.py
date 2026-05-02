@@ -19,6 +19,12 @@ from pathlib import Path
 
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 DIR = Path(__file__).parent
 WITNESS_PATH = DIR / "branching-qvalue-chain.witness.json"
 
@@ -60,7 +66,9 @@ a_sym = -h / 2
 b_sym = -3 * (q**2 - 1) * (q**2 + 1)**2 / (4 * q**3)
 
 a_num = float(a_sym.subs(q, q0))
+a_num_polynomial_q = expose_polynomial(a_sym, q)
 b_num = float(b_sym.subs(q, q0))
+b_num_polynomial_q = expose_polynomial(b_sym, q)
 
 # Error propagation: da/dq, db/dq
 da_dq = float(sp.diff(a_sym, q).subs(q, q0))
@@ -127,7 +135,9 @@ def qvalue_odd(Z, N, name, Q_obs, Q_obs_err):
     # Error propagation (numerical derivative)
     dq_step = Q_ERR
     a_plus = float(a_sym.subs(q, q0 + dq_step))
+    a_plus_polynomial_q = expose_polynomial(a_sym, q)
     b_plus = float(b_sym.subs(q, q0 + dq_step))
+    b_plus_polynomial_q = expose_polynomial(b_sym, q)
     S_plus = a_plus**Z * b_plus**(N-1) if N > 1 else a_plus**Z
     d_plus = a_plus - b_plus
     raw_plus = S_plus * d_plus
