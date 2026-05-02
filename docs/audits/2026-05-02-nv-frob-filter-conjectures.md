@@ -315,7 +315,7 @@ off the Wedderburn block dimensions:
 - $H_1$: trivial — 1 dim, signature (1, 0)
 - $H_2$: 2 dims (sym + alt), signature (1, 1) — half positive, half negative
 - $H_3$: 6 dims = 1 + 4 + 1 (sym + std + alt), 64 = 2⁶ closed configs
-- $H_4$: 14 = 1+9+3+...
+- $H_4$: 24 = 1+9+4+9+1
 - $H_n$: $\sum_\lambda f_\lambda^2 = n!$
 
 The **Frobenius signature** of $H_n$ depends on which Wedderburn

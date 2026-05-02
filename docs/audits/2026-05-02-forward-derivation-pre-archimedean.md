@@ -357,7 +357,7 @@ $\tau$-image identification).
 - **Notation collision warning** (CLAUDE.md §7aa): $y_\lambda$ here
   is the Jones–Markov central coefficient (sign-indefinite at
   $n\geq 4$); do **not** confuse with $u_\lambda$ (LP shadow
-  price, non-negative by LP duality, used at Step 19'). The two
+  price, non-negative by LP duality, used at Step 19). The two
   have collided in older drafts.
 
 ### Step 13 — Gröbner–Shirshov filtration $J^\bullet$
