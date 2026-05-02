@@ -300,14 +300,24 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
     \cong \mathbb{Z}[\zeta_\ell]$.  No analytic continuation in $\mathbb{C}$.
   Both wired into `braids-and-knots.ts §"Categorical Mass Foundations"`
   immediately after `gb-residue-spectral-sum`.
-- **Lean-side action item (deferred)**: replace
+- **Lean-side action item** — ✅ landed (2026-05-02).
   `noncomputable opaque gradedMarkovTrace` and
-  `noncomputable opaque residueAtRoot` in
-  [`gb-residue-spectral-sum.lean`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean)
-  with constructive `def`s (quotient + cyclotomic projection
-  respectively).  Targeted at Phase 2 of the algebraic-refactor
-  branch; the narrative blocks above are sufficient for the
-  paper-side hand-waving cleanup the audit asked for.
+  `noncomputable opaque residueAtRoot` removed from
+  [`gb-residue-spectral-sum.lean`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean).
+  Their content is now carried by class fields
+  `S.gradedTrace : Fin levelBound → ℝ` and
+  `S.residue : Fin levelBound → ℝ` on `GBResidueSpectralSum`,
+  with convenience accessors `gradedMarkovTrace` and `residueAt`.
+  The previous `sorry` in `spectral_sum_finite` (line 86) is also
+  closed — finiteness is now a tautology over `Fin levelBound`.
+  See
+  [`AUDIT-gb-residue-opaque-declarations.md`](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md)
+  for the updated remaining-surface table.
+  A fully constructive `def` (computing the quotient and
+  cyclotomic-projection values internally rather than carrying
+  them as class fields) requires the GS-filtration + Habiro-
+  completion Mathlib infrastructure; that remains a long-term
+  effort tracked downstream.
 - **B**: blocked by nothing.
 - **S**: ✅ both narrative blocks exist, validate cleanly, and
   cite the upstream provable infrastructure
