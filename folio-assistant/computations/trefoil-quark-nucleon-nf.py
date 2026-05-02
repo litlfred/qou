@@ -638,6 +638,27 @@ witness = {
         "m_p_MeV": M_P_MEV,
         "m_n_MeV": M_N_MEV,
     },
+    # P2.5: this script declares q_sym = sp.Symbol('q', positive=True)
+    # and computes per-NF coefficients symbolically; the .subs(q_sym, q0)
+    # substitution lands at the per-coefficient evaluation step. The
+    # algebraic-side discipline is preserved internally; the witness
+    # JSON's numerical results are evaluations of the symbolic forms
+    # at q = q_0. See docs/audits/2026-05-02-p2-5-symbolic-q-audit.md
+    # 'sympy-as-coefficient-stepping-stone' pattern.
+    "symbolic_q_form": {
+        "engine": "sympy",
+        "q_symbol": "q (sp.Symbol('q', positive=True))",
+        "h_symbol_definition": "HA = q - 1/q",
+        "z_symbol_definition": "z = 1 / (sqrt(q) + 1/sqrt(q))",
+        "pattern": "sympy-symbolic-coefficients-evaluated-at-q0",
+        "note": (
+            "Per-NF coefficient polynomials in q are constructed "
+            "symbolically (q_sym ∈ sp.Symbol). The numerical results "
+            "below come from .subs(q_sym, q_0) evaluation; the same "
+            "sympy expressions can be re-evaluated at any q without "
+            "re-running the symbolic construction."
+        ),
+    },
     "results": results,
 }
 

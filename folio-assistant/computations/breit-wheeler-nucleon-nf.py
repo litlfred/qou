@@ -653,6 +653,19 @@ witness = {
         "m_p_MeV": M_P_MEV,
         "m_n_MeV": M_N_MEV,
     },
+    # P2.5: see docs/audits/2026-05-02-p2-5-symbolic-q-audit.md
+    "symbolic_q_form": {
+        "engine": "sympy",
+        "q_symbol": "q (sp.Symbol('q', positive=True))",
+        "h_symbol_definition": "HA = q - 1/q",
+        "z_symbol_definition": "z = 1 / (sqrt(q) + 1/sqrt(q))",
+        "pattern": "sympy-symbolic-coefficients-evaluated-at-q0",
+        "note": (
+            "Per-NF coefficient polynomials in q are constructed "
+            "symbolically (q_sym ∈ sp.Symbol). Numerical results "
+            "below come from .subs(q_sym, q_0) evaluation."
+        ),
+    },
     "results": results,
 }
 
