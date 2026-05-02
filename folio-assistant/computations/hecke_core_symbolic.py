@@ -475,9 +475,11 @@ def evalf_at_q0(expr: sp.Expr, dps: int = 50) -> mp.mpf:
         return mp.mpf(sp.Float(expr, dps))
     with mp.workdps(dps + 5):
         q0_mp = q_at(dps + 5)
-        # sympy → mpmath: substitute and use sympy's evalf in the same
-        # precision context.  We swap q for the mpmath value via subs.
-        out = expr.subs(q, sp.Float(q0_mp, dps + 5)).evalf(dps + 5)
+        # sympy → mpmath at the requested precision.  Use
+        # expr.evalf(dps, subs={...}) — fused substitution + evaluation
+        # avoids materialising the full symbolic tree under .subs() first
+        # (per Gemini review on PR #511).
+        out = expr.evalf(dps + 5, subs={q: sp.Float(q0_mp, dps + 5)})
         if not out.is_real:
             raise ValueError(f"evalf_at_q0: expected real, got {out}")
         return mp.mpf(str(out))
