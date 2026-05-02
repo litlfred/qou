@@ -42,6 +42,25 @@ from matplotlib import colors as mcolors
 PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
 
 
+def _trace_orbit(p: int, za: int, zb: int, ca: int, cb: int,
+                 seen: np.ndarray) -> tuple[int, int]:
+    """Iterate z |-> z^2 + c starting from (za, zb) with c = (ca, cb)
+    in Z[i]/(p), using a pre-allocated p x p int32 array `seen` for
+    state tracking (caller must reset to -1). Returns (tau, rho).
+    """
+    seen.fill(-1)
+    step = 0
+    while True:
+        prev = seen[za, zb]
+        if prev != -1:
+            return int(prev), step - int(prev)
+        seen[za, zb] = step
+        new_a = (za * za - zb * zb + ca) % p
+        new_b = (2 * za * zb + cb) % p
+        za, zb = new_a, new_b
+        step += 1
+
+
 def orbit_period_grid(p: int, c0_real: int = 0, c0_imag: int = 0) -> np.ndarray:
     """For every c = a + b*i in Z[i]/(p), compute (preperiod tau, period rho)
     of the orbit of 0 under z |-> z^2 + c.
@@ -50,27 +69,14 @@ def orbit_period_grid(p: int, c0_real: int = 0, c0_imag: int = 0) -> np.ndarray:
     [tau, rho] for c = (a + b*i) mod p.
 
     Note: Z[i]/(p) is F_{p^2} when p == 3 (mod 4) and F_p x F_p otherwise;
-    the cycle-detection logic below treats it uniformly as a finite ring.
+    the cycle-detection logic treats it uniformly as a finite ring.
     """
     out = np.zeros((p, p, 2), dtype=np.int32)
+    seen = np.full((p, p), -1, dtype=np.int32)
+    z0a, z0b = c0_real % p, c0_imag % p
     for a in range(p):
         for b in range(p):
-            ca, cb = a, b
-            seen: dict[tuple[int, int], int] = {}
-            za, zb = c0_real % p, c0_imag % p
-            step = 0
-            while True:
-                key = (za, zb)
-                if key in seen:
-                    tau = seen[key]
-                    rho = step - tau
-                    break
-                seen[key] = step
-                # z = z^2 + c
-                new_a = (za * za - zb * zb + ca) % p
-                new_b = (2 * za * zb + cb) % p
-                za, zb = new_a, new_b
-                step += 1
+            tau, rho = _trace_orbit(p, z0a, z0b, a, b, seen)
             out[a, b, 0] = tau
             out[a, b, 1] = rho
     return out
@@ -81,23 +87,11 @@ def julia_period_grid(p: int, ca: int, cb: int) -> np.ndarray:
     of the orbit under z |-> z^2 + c with c = ca + cb*i.
     """
     out = np.zeros((p, p, 2), dtype=np.int32)
+    seen = np.full((p, p), -1, dtype=np.int32)
     ca, cb = ca % p, cb % p
     for a in range(p):
         for b in range(p):
-            seen: dict[tuple[int, int], int] = {}
-            za, zb = a, b
-            step = 0
-            while True:
-                key = (za, zb)
-                if key in seen:
-                    tau = seen[key]
-                    rho = step - tau
-                    break
-                seen[key] = step
-                new_a = (za * za - zb * zb + ca) % p
-                new_b = (2 * za * zb + cb) % p
-                za, zb = new_a, new_b
-                step += 1
+            tau, rho = _trace_orbit(p, a, b, ca, cb, seen)
             out[a, b, 0] = tau
             out[a, b, 1] = rho
     return out
@@ -147,8 +141,14 @@ def plot_period_grid(grid: np.ndarray, p: int, title: str, ax) -> None:
 def render_per_prime_panels(out_dir: Path) -> dict:
     """Render one PNG per prime, plus the multi-panel grid."""
     summary: dict = {}
-    fig_grid, axes = plt.subplots(3, 4, figsize=(14, 11))
+    n_primes = len(PRIMES)
+    ncols = 4
+    nrows = (n_primes + ncols - 1) // ncols
+    fig_grid, axes = plt.subplots(nrows, ncols, figsize=(14, 3.7 * nrows),
+                                   squeeze=False)
     axes_flat = axes.flatten()
+    for ax in axes_flat[n_primes:]:
+        ax.axis("off")
 
     for idx, p in enumerate(PRIMES):
         grid = orbit_period_grid(p)
@@ -187,8 +187,14 @@ def render_per_prime_panels(out_dir: Path) -> dict:
 
 def render_julia_panels(out_dir: Path, ca: int = -1, cb: int = 0) -> None:
     """Render Julia (in z-plane) at fixed c, for a grid of primes."""
-    fig, axes = plt.subplots(3, 4, figsize=(14, 11))
+    n_primes = len(PRIMES)
+    ncols = 4
+    nrows = (n_primes + ncols - 1) // ncols
+    fig, axes = plt.subplots(nrows, ncols, figsize=(14, 3.7 * nrows),
+                              squeeze=False)
     axes_flat = axes.flatten()
+    for ax in axes_flat[n_primes:]:
+        ax.axis("off")
     for idx, p in enumerate(PRIMES):
         grid = julia_period_grid(p, ca, cb)
         plot_period_grid(grid, p, f"p = {p}", axes_flat[idx])
