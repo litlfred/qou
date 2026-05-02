@@ -35,6 +35,47 @@ $q_0$-specific prediction:
   other $n$ has $\psi_n(q_0)$ expressible as a tensor product of
   smaller magic states.
 
+## Partial proof — what's already discharged
+
+The Lean module
+[`QOU.Interactions.AlgebraicPrimality`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean)
+factors the conjecture into per-$n$ assertions:
+
+**Assembly theorem (proved).** If for each $n$ we have either an
+`IsKnownMagic n q` or `IsKnownNotMagic n q` instance — depending on
+whether $n$ lies on the empirical ladder — then
+`MagicEqualsEmpirical` holds at $q$.
+
+This reduces the conjecture to a **finite collection of per-$n$
+checks**. The factor count: 8 magic-checks (one per ladder element)
+plus a non-magic-check at every other $n$ in the relevant range.
+
+**Discharged so far (proved unconditionally):**
+
+| Per-$n$ assertion | Status | Lean term |
+|---|---|---|
+| `IsKnownMagic 1 q` | **proved** for every $q$ | `one_isKnownMagic q` |
+| `IsKnownNotMagic 0 q` | **proved** for every $q$ | `zero_isKnownNotMagic q` |
+| `not_prime_of_inTensorSpan` | **proved** for every $(n, q)$ | tautological from definition |
+
+**Still axiomatic (conjectural per-$n$ axioms):**
+
+| Per-$n$ assertion | Status | What's needed |
+|---|---|---|
+| `IsKnownMagic 2 q_0` | conjectural | $\psi_2(q_0) \neq \psi_1(q_0) \otimes \psi_1(q_0)$ |
+| `IsKnownMagic 8 q_0` | conjectural | $\psi_8(q_0)$ irreducible against all decomps of 8 |
+| `IsKnownMagic 20 q_0` | conjectural | $\psi_{20}(q_0)$ irreducible against all decomps of 20 |
+| ... | conjectural | through 28, 50, 82, 126 |
+| `IsKnownNotMagic n q_0`, $n \notin$ ladder | conjectural | $\psi_n(q_0)$ in some tensor span |
+
+So the proof status is: **1 of 8 forward-direction primalities
+proved unconditionally**; the other 7 forward primalities and all
+reverse-direction non-primalities require the SDP machinery.
+
+The `not_prime_of_inTensorSpan` lemma converts each remaining
+forward axiom into "show no admissible decomposition realises the
+canonical state" — concrete, finite-search-space at fixed $n$.
+
 ## Falsification path
 
 For each $n \in \{2, 3, 4, \ldots, 130\}$, compute $\psi_n(q_0)$

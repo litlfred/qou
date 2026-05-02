@@ -119,7 +119,58 @@ theorem one_isAlgebraicallyPrime (q : ℝ) :
   -- But sum = 1. Contradiction.
   omega
 
-/-! ## §6  Empirical-match conjecture at q_0 -/
+/-! ## §6  Tautological consequences of the definition -/
+
+/-- **Lemma (decomposability negates primality).** If for some
+    non-trivial decomposition `decomp` of `n`, the canonical state
+    `canonicalState n q` lies in the indicated tensor span, then
+    `n` is *not* algebraically prime at `q`. Direct unfolding of the
+    definition. -/
+-- Ref: [manuscript] def:algebraic-primality
+theorem not_prime_of_inTensorSpan
+    {n : ℕ} {q : ℝ}
+    {decomp : List ℕ}
+    (h_dec : NonTrivialDecomposition n decomp)
+    (h_in : InTensorSpan n q (canonicalState n q) decomp) :
+    ¬ IsAlgebraicallyPrime n q := by
+  intro ⟨_, h_prime⟩
+  exact h_prime decomp h_dec h_in
+
+/-- **Lemma (decomposability of n = 0).** Zero is *not* algebraically
+    prime: it fails the `n ≥ 1` clause of the definition. -/
+-- Ref: [manuscript] def:algebraic-primality
+theorem zero_not_isAlgebraicallyPrime (q : ℝ) :
+    ¬ IsAlgebraicallyPrime 0 q := by
+  intro ⟨h, _⟩
+  exact absurd h (by decide)
+
+/-! ## §7  Per-n typeclass machinery — incremental factorisation -/
+
+/-- Per-n assertion that `n` is *known* to be magic at `q`.
+    Used to factorise the empirical-match conjecture into per-n
+    propositions, each of which can be discharged independently. -/
+class IsKnownMagic (n : ℕ) (q : ℝ) : Prop where
+  is_prime : IsAlgebraicallyPrime n q
+
+/-- Per-n assertion that `n` is *known* to be non-magic at `q`. -/
+class IsKnownNotMagic (n : ℕ) (q : ℝ) : Prop where
+  not_prime : ¬ IsAlgebraicallyPrime n q
+
+/-- **Proved instance.** For every `q : ℝ`, `n = 1` is known to be
+    magic at `q` — discharged by `one_isAlgebraicallyPrime`.
+    No additional axioms required; the proof is structural
+    (vacuous primality). -/
+-- Ref: [manuscript] prop:n-equals-1-vacuous-magic
+instance one_isKnownMagic (q : ℝ) : IsKnownMagic 1 q where
+  is_prime := one_isAlgebraicallyPrime q
+
+/-- **Proved instance.** For every `q`, `n = 0` is known to be
+    non-magic — by the `n ≥ 1` clause of the definition. -/
+-- Ref: [manuscript] def:algebraic-primality
+instance zero_isKnownNotMagic (q : ℝ) : IsKnownNotMagic 0 q where
+  not_prime := zero_not_isAlgebraicallyPrime q
+
+/-! ## §8  Empirical-match conjecture at q_0 -/
 
 /-- The empirical magic ladder `{1, 2, 8, 20, 28, 50, 82, 126}`. -/
 def empiricalMagicLadder : Set ℕ :=
@@ -158,5 +209,46 @@ theorem empirical_of_prime
     {n : ℕ} (hp : IsAlgebraicallyPrime n E.q_0_value) :
     n ∈ empiricalMagicLadder :=
   (E.prime_iff_in_ladder n).mp hp
+
+/-! ## §9  Partial proof — assembling the conjecture from per-n facts -/
+
+/-- **Theorem (assembly).** Suppose we have, at substrate `q`:
+    - For every `n ∈ empiricalMagicLadder`, an `IsKnownMagic n q`
+      instance.
+    - For every `n ∉ empiricalMagicLadder`, an `IsKnownNotMagic n q`
+      instance.
+
+    Then the conjecture `MagicEqualsEmpirical` holds at `q`.
+
+    This is the *structural* conjecture: it factors the iff into
+    per-n axioms. The `n = 1` axiom is **discharged** by the
+    proved `one_isKnownMagic` instance; the others (n in {2, 8, 20,
+    28, 50, 82, 126} and n outside the ladder) remain conjectural,
+    waiting for the SDP machinery.
+-/
+-- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+theorem magicEqualsEmpirical_of_perNAxioms
+    {q : ℝ} (h_q : 1 < q)
+    (h_in : ∀ n ∈ empiricalMagicLadder, IsKnownMagic n q)
+    (h_out : ∀ n ∉ empiricalMagicLadder, IsKnownNotMagic n q) :
+    MagicEqualsEmpirical where
+  q_0_value := q
+  q_0_pos := h_q
+  prime_iff_in_ladder n := by
+    constructor
+    · intro hp
+      by_contra h_not
+      have := (h_out n h_not).not_prime
+      exact this hp
+    · intro hin
+      exact (h_in n hin).is_prime
+
+/-- **Corollary.** The `n = 1` constraint of the conjecture
+    `MagicEqualsEmpirical` is automatically satisfied — it is not a
+    free axiom. -/
+-- Ref: [manuscript] prop:n-equals-1-vacuous-magic
+theorem one_in_ladder_is_known (q : ℝ) :
+    IsKnownMagic 1 q :=
+  one_isKnownMagic q
 
 end QOU.Interactions.AlgebraicPrimality
