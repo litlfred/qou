@@ -232,6 +232,12 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     if use_schur_weyl:
         try:
             import sympy as _sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
             from schur_weyl_symbolic import global_wedderburn_sum_symbolic
             _q_sym = _sp.Symbol("q", positive=True, real=True)
             _desc_sym, _terms = global_wedderburn_sum_symbolic(

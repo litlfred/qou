@@ -23,6 +23,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 q = sp.Symbol('q', positive=True)
 
 # ── Iwahori--Hecke algebra constants ───────────────────────────────────
