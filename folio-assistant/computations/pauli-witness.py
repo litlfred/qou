@@ -27,6 +27,7 @@ from hecke_symbolic import (
     SymbolicHeckeDivision, SymbolicHeckeElement,
     q, q_inv, HA, C_PP, C_NN, C_MIX, D_MIX, D_NN,
 )
+from witness_polynomial import expose_polynomial
 
 div = SymbolicHeckeDivision()
 LN_Q = sp.log(q)
@@ -131,7 +132,9 @@ if __name__ == '__main__':
             'palindromic': pal,
             'histogram': counts,
             'tr_alt_symbolic': str(tr_alt_factored),
+            'tr_alt_polynomial': expose_polynomial(p['tr_alt'], q),
             'net_symbolic': str(net_factored),
+            'net_polynomial': expose_polynomial(p['net'], q),
             'tr_alt_at_q0': tr_alt_val,
             'net_at_q0': net_val,
             'F_Pauli_at_q0': F_val,
