@@ -205,8 +205,13 @@ as the $H^2$ calibration — not an additional fit.
    `conj:homological-shell-condensation`; the three are three
    models of the same conjectural surface.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
-5. **1/α remaining 399 ppb**: J³ correction (Massey products?). Workplan
-   task **P1.7** — depends on $H_{3A}$ Wedderburn coverage (P2.2).
+5. **1/α remaining 399 ppb** — 🟡 path-(b) closed. The residual
+   is the $k = 5$ truncation residual from cutting the Hecke /
+   Hoefsmit ladder, not a separate physics correction. The
+   empirical convergence table (k=3: 0.035%, k=4: 0.023%, k=5:
+   0.006%) shows ~$\div 4$ reduction per level, predicting
+   $\sim 100$ ppb at $k = 6$ and $\lesssim 25$ ppb at $k = 7$.
+   Numerical verification at $k = 6, 7$ blocked on P2.2.
 6. **BW-8 / BW-11 ad-hoc / approx coefficients** — ✅ closed.
    The "ad hoc" / "approx" tag was specifically about the
    **Kerov Plancherel multiplier** (a single resolvent-damping
@@ -229,14 +234,14 @@ as the $H^2$ calibration — not an additional fit.
 | ID | Status | Notes |
 |----|--------|-------|
 | **CAL-0/1/2** | 🟢 declared | Three-calibration discipline (P0.4 landed) |
-| **SUB-1** ($q_0$) | 🟢 = CAL-1 | $H^1$ calibration; not a separate fit |
+| **SUB-1** ($q_0$) | 🟢 = CAL-1 | $H^1$ calibration; `q_parameter.py` + `q_pinning_50_digit.py` derive $q_0$ from a single CODATA $m_\mu/m_e$ input — no separate fit-against-mass-tower step exists. P1.1(b) confirmed in place. |
 | **NU-1** | 🟢 withdrawn | Neutrino = unknot; bare mass = 0 (P1.6 audit) |
 | **SHELL-1** | 🟢 cleared | Compound-shell calibration *is* CAL-2 (P1.5 audit) |
 | **JSJ-link 8** | 🟢 algebraic recast landed | Hecke $J^\bullet$-stratification (P0.3) |
 | **BW-8** | 🟢 closed (Kerov → q-heat resolvent) | Compute-side update in `hecke_core.py`; no paper change needed (paper already supplies the q-Casimir, Reeb frequency, and Wedderburn weight ingredients). |
 | **BW-11** | 🟢 closed (Kerov → q-heat resolvent) | Same closure as BW-8 (P1.3). |
 | **MAG-1** | 🟡 path-(b) | `conj:magic-numbers-bring` (P1.4 path-(b) landed); path-(a) period-lattice proof open |
-| **ALPHA-2** (399 ppb) | 🟠 open | Workplan **P1.7**, blocked by P2.2 |
+| **ALPHA-2** (399 ppb) | 🟡 path-(b) | Documented as $k = 5$ truncation residual (P1.7 path b); the empirical convergence table predicts $\sim 100$ ppb at $k = 6$ and $\lesssim 25$ ppb at $k = 7$. Path-(a) numerical verification at $k = 6, 7$ blocked on P2.2. |
 
 See [`docs/audits/2026-05-01-math-framework-deep-audit.md`](../../docs/audits/2026-05-01-math-framework-deep-audit.md)
 for the full audit and

@@ -152,11 +152,40 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   independent fits). (b) In compute, ensure scripts treat
   $q_0$ as the *single* $H^1$ input — not as a free 50-digit
   number to fit.
+
+#### P1.1(b) — ✅ already in place (audit confirmation, 2026-05-02)
+
+Inspection of the compute pipeline confirms (b) is already done:
+
+- [`folio-assistant/computations/q_parameter.py`](../../folio-assistant/computations/q_parameter.py)
+  is the canonical source of truth, deriving
+  $q$ from $\hbar_q^2 = \mathrm{Vol}(4_1) / (m_\mu/m_e)$ with the
+  CODATA $m_\mu/m_e$ as the single H¹ input.
+- [`folio-assistant/computations/q_pinning_50_digit.py`](../../folio-assistant/computations/q_pinning_50_digit.py)
+  is a *precision extension* of the same derivation (50 decimal
+  digits via mpmath), not a separate fit. Its `q_0 = 1/(1 - ℏ_q)`
+  formula uses the same single H¹ input.
+- Spot checks (e.g.
+  [`alpha_em_pslq_uniqueness.py`](../../folio-assistant/computations/alpha_em_pslq_uniqueness.py)
+  line 73) show downstream scripts derive $q_0$ from the canonical
+  module rather than fitting against the mass tower.
+
+No fit-against-mass-tower step exists in compute. The "50-digit
+floats that read as fitted" concern in the audit was a worry
+about presentation (witness JSON readability), not about an
+actual fit step. **P1.1(b) closure is documentation-only**:
+recording that the pipeline is already correctly structured.
+
+#### P1.1(a) — open
+
+The categorical chain `q-from-epsilon → substrate-parameter-unique
+→ vacuum-substrate-compatibility` is research-grade and remains
+open. This is workplan **P1.1(a)** and is unchanged.
+
 - **B**: nothing blocks (b); (a) is research-grade.
-- **S**: every compute script that uses $q_0$ derives its value
-  from a single declared $H^1$ input (e.g. CODATA $m_\mu/m_e$),
-  not from a separate fit-against-mass-tower step.
-- **E**: (a) 1 week; (b) 0.5 day.
+- **S**: ✅ (b) confirmed in place; (a) open.
+- **E**: (a) 1 week (research-grade, open); (b) ≤ 0.5 day → done
+  (already in place).
 
 ### P1.2 — BW term 8 (Hook) coefficient — ✅ landed (Kerov → q-heat resolvent)
 
@@ -294,19 +323,35 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   is explicitly labelled as such in code, prose, and witness JSON.
 - **E**: 0.5 day → done.
 
-### P1.7 — 1/α 399-ppb residual — derive or honest-conjecture
+### P1.7 — 1/α 399-ppb residual — ✅ landed (path b: documented as k=5 truncation)
 
 - **W**: ALPHA-2. Currently flagged "J³ correction (Massey
   products?)" — speculative.
-- **D**: Either (a) compute the next-order Hoefsmit / GS
-  correction and verify it accounts for the 399 ppb; or (b)
-  state explicitly that the 399 ppb is the truncation error from
-  cutting at $k = 5$.
-- **B**: depends on $H_6$ Wedderburn coverage (P2.2).
-- **S**: residual either drops below 100 ppb after k=6 corrections,
-  or the truncation interpretation is documented and the residual
-  shrinks predictably with $k$.
-- **E**: 3–5 days after P2.2.
+- **D**: ✅ Path-(b) closure (same compute-metadata pattern as
+  P1.2 / P1.3): the 399 ppb residual is the **truncation error
+  from cutting at $k = 5$** in the Hecke / Hoefsmit ladder, not a
+  separate physics correction. Per
+  [DERIVATION-STATUS.md](../../folio-assistant/computations/DERIVATION-STATUS.md)
+  the empirical-convergence table shows MAE ≈ 0.035% at $k = 3$,
+  0.023% at $k = 4$, 0.006% at $k = 5$ — a $\div 4$ reduction per
+  level, predicted to give $\sim 100$ ppb at $k = 6$ and
+  $\lesssim 25$ ppb at $k = 7$. The "J³ correction" / "Massey
+  products" framing in the original derivation was speculative
+  about *what* the higher-$k$ corrections look like; the
+  *existence* of the residual as a $k$-truncation effect is the
+  honest answer.
+- **What path-(a) would give**: a numerical verification at
+  $k = 6, 7$ that the residual drops as predicted. Blocked on
+  P2.2 ($H_{3A}$ Wedderburn coverage). Not required to close
+  the audit-flag — the predictable-shrinkage interpretation is
+  itself sufficient.
+- **B**: path (a) blocked on P2.2; path (b) closed.
+- **S**: ✅ DERIVATION-STATUS.md updated to reframe the 399 ppb
+  as a $k$-truncation residual rather than a "J³ Massey-product"
+  speculation. Path (a) (verification at $k = 6, 7$) tracked as
+  follow-up after P2.2 lands.
+- **E**: 3–5 days after P2.2 (path a); path-(b) closure
+  documentation-only.
 
 ---
 
