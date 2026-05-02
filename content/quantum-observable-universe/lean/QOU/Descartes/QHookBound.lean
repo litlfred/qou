@@ -479,6 +479,52 @@ instance qFactRatioBound_one (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
   -- Goal: 0 ≤ (q - q⁻¹)² * 1 * (1 + 1) * (2 * 1 + 1) / 36
   positivity
 
+/-- **Default instance for `k = 2`** — proved via `qInt_ratio_bound_m2`.
+    `qFactReal q 2 = [1]_q · [2]_q = 1 · (q + q⁻¹) = q + q⁻¹`.
+    Then `(q + q⁻¹)/2 - 1 = (q-1)²/(2q) ≥ 0`, and the RHS at
+    `k = 2` is `(q-q⁻¹)² · 2 · 3 · 5 / 36 = 5(q-q⁻¹)²/6`. The
+    inequality `(q-1)²/(2q) ≤ 5(q-q⁻¹)²/6` reduces (after cross-
+    multiplication and the factorisation `(q-q⁻¹)² = (q-1)²(q+1)²/q²`)
+    to `3q ≤ 5(q+1)²`, which holds for all `q > 0` by `nlinarith`. -/
+instance qFactRatioBound_two (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
+    QFactRatioBound q hq hq2 2 := by
+  refine ⟨?_⟩
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_pos : q > 0 := by linarith
+  have hq_ne : q ≠ 0 := ne_of_gt hq_pos
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+  -- qFactReal q 2 = qIntReal q 1 * qIntReal q 2 = 1 * (q + q⁻¹) = q + q⁻¹
+  have h_qfact : qFactReal q 2 = q + q⁻¹ := by
+    unfold qFactReal
+    simp [Finset.prod_range_succ, Finset.prod_range_one]
+    unfold qIntReal
+    rw [if_neg hq_ne_one]
+    field_simp
+    ring
+  rw [h_qfact]
+  -- Target: |(q + q⁻¹) / 2! - 1| ≤ (q - q⁻¹)² · 2 · 3 · 5 / 36
+  have h2fact : ((Nat.factorial 2 : ℕ) : ℝ) = 2 := by norm_num
+  rw [h2fact]
+  -- Algebraic identity: (q + q⁻¹)/2 - 1 = (q-1)²/(2q)
+  have h_id : (q + q⁻¹) / 2 - 1 = (q - 1)^2 / (2 * q) := by
+    field_simp; ring
+  rw [h_id]
+  rw [abs_of_nonneg (by positivity)]
+  -- Reduce to a polynomial inequality
+  have h_qsq : (q - q⁻¹) ^ 2 = (q - 1)^2 * (q + 1)^2 / q^2 := by
+    field_simp; ring
+  rw [show ((2 : ℕ) : ℝ) = 2 from by norm_num] at *
+  -- Goal: (q - 1)² / (2q) ≤ (q - q⁻¹)² · 2 · (2 + 1) · (2·2 + 1) / 36
+  --      = (q - q⁻¹)² · 30 / 36 = 5(q - q⁻¹)²/6
+  rw [h_qsq]
+  -- Goal: (q-1)²/(2q) ≤ ((q-1)²(q+1)²/q²) · 30 / 36 = 5(q-1)²(q+1)²/(6q²)
+  -- Cross-multiply (everything positive): 6q²(q-1)² ≤ 10q(q-1)²(q+1)², i.e.
+  -- 3q ≤ 5(q+1)², i.e. 0 ≤ 5q² + 7q + 5. Holds for all q (esp q > 1).
+  rw [div_le_div_iff (by positivity) (by positivity)]
+  nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1), hq_pos, sq_nonneg q]
+
 /-- Per-instance form. -/
 theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) [hi : QFactRatioBound q hq hq2 k] :
