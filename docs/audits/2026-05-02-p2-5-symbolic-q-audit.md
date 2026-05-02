@@ -109,11 +109,57 @@ Roughly half of the 41 early-substitution scripts (those using
 numpy block-matrix algebra) likely need this lighter refactor;
 the other half can go fully symbolic.
 
+## Heuristic caveat (added after sampling 4 partial scripts, 2026-05-02)
+
+The "partial" classification is based on a regex looking for
+`*_polynomial_q` / `*_symbolic` field-name conventions in the
+witness JSON. Sampling 4 of the 19 scripts revealed two
+patterns the heuristic miscategorises:
+
+- **False positives**: scripts that already emit symbolic forms
+  under different field names (e.g.,
+  [`schur_element_symmetrising.py`](../../folio-assistant/computations/schur_element_symmetrising.py)
+  emits `schur_element` strings — fully symbolic, no q-substitution
+  needed). **Audit fix would be to broaden the heuristic; no code
+  change needed.**
+- **Sympy-as-matrix-stepping-stone**: scripts like
+  [`std_matrix_trace_closed_form.py`](../../folio-assistant/computations/std_matrix_trace_closed_form.py)
+  and [`wedderburn_per_isotope.py`](../../folio-assistant/computations/wedderburn_per_isotope.py)
+  use `sympy.Symbol('q')` to *build* Hoefsmit seminormal matrices
+  via `build_seminormal_matrices`, then immediately substitute
+  $q_0$ to get numpy arrays for matrix-product trace. The
+  algebraic side of these computations IS symbolic (the
+  per-irrep matrices); the per-trace output is numerical only
+  because sympy doesn't scale for large block-matrix products.
+  **These need lighter-touch refactor**: add a metadata note in
+  the witness JSON declaring "Hoefsmit matrices symbolic-in-q
+  via `build_seminormal_matrices`; per-trace output is numpy
+  evaluation at $q_0$".
+
+After sampling, the 19 partial scripts split roughly as:
+
+- ~3–5 fully-symbolic-already (false positives — heuristic
+  refinement only).
+- ~5–8 add-`polynomial_q`-field straightforward (the
+  `full-tower-mass.py` and `probe_term4_conventions.py` pattern).
+- ~6–10 sympy-as-matrix-stepping-stone (lighter-touch metadata
+  refactor).
+
 ## Recommended ordering
 
-1. **The 19 `partial` scripts** first (1 day): they already use
-   `sympy.Symbol('q')`, just need the `polynomial_q` field added
-   to the witness JSON. Lowest-effort highest-visibility wins.
+1. **First-batch refactors** (1 day): execute the
+   add-`polynomial_q`-field pattern on the ~5–8 cleanly-typed
+   partial scripts. **Two demonstration commits already in this
+   branch**:
+   - `95f9d396` — `full-tower-mass.py` (refactored, witness JSON
+     gains `symbolic_q_form` with V̂ polynomials per generator).
+   - This commit — `probe_term4_conventions.py` (refactored,
+     witness JSON gains `sigma_inv_dim_q_polynomial_q` for n=3,
+     6, 9, 12).
+2. **Heuristic refinement** (0.25 day): broaden the audit's
+   `EMITS_SYMBOLIC` regex to recognise field names like
+   `*_element`, `*_expression`, `*_form`, etc., reducing false
+   positives.
 2. **The light-refactor early-substitution scripts** (1 day):
    ~20 scripts where adding `q = sp.Symbol('q')` + late
    substitution is mechanical.
