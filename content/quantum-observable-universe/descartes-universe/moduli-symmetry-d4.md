@@ -76,11 +76,15 @@ the action is simply transitive on $G_8$, and the stabilizer of
 each element is trivial.
 
 For the polynomial: $P(z/i) = P(-iz) = (-iz)^4 - 3(-iz)^2 + 1
-= z^4 + 3z^2 + 1$.  The product
-$(z^4 - 3z^2 + 1)(z^4 + 3z^2 + 1) = z^8 - 9z^4 + 1 + (\text{cross
-term})$.  Direct expansion: $(a - b)(a + b) = a^2 - b^2$ with
-$a = z^4 + 1$, $b = 3z^2$, gives $(z^4 + 1)^2 - 9z^4
-= z^8 + 2z^4 + 1 - 9z^4 = z^8 - 7z^4 + 1$. $\square$
+= z^4 + 3z^2 + 1$.  The product is a difference of squares with
+$a = z^4 + 1$ and $b = 3z^2$:
+
+$$
+  (z^4 - 3z^2 + 1)(z^4 + 3z^2 + 1)
+   =  (z^4 + 1)^2 - (3z^2)^2
+   =  z^8 + 2z^4 + 1 - 9z^4
+   =  z^8 - 7z^4 + 1.  \quad\square
+$$
 
 **Real subgroup and the golden quartet.**
 

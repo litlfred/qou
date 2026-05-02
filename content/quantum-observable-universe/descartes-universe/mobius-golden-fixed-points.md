@@ -126,26 +126,26 @@ $\mathrm{GL}_2(\mathbb{Z}[i])$ — and $\mathbb{Z}[i]$ is the
 
 **Gaussian-integer factorisation of the entries.**
 
-In $\mathbb{Z}[i]$, the off-diagonal entries factor as
+In $\mathbb{Z}[i]$, the prime $(1+i)$ above the rational prime $2$
+satisfies $(1+i)^2 = 2i$ and $(1+i)^4 = (2i)^2 = -4$.  Hence the
+off-diagonal entries factor as
 
 $$
-  4  =  -i\,(1 + i)^4,
+  4   =  -(1+i)^4,
   \qquad
-  4i  =  (1 + i)^4.
+  -4   =  (1+i)^4,
+  \qquad
+  4i  =  -i\,(1+i)^4,
+  \qquad
+  -4i  =  i\,(1+i)^4.
 $$
-
-(Check: $(1+i)^2 = 2i$, so $(1+i)^4 = (2i)^2 = -4$, hence
-$-(-4) \cdot i^{-1} = 4 \cdot (-i) = -4i$… let me recheck:
-$-i \cdot (1+i)^4 = -i \cdot (-4) = 4i$.  Corrected:
-$4i = -i\,(1+i)^4$ and $4 = (1+i)^4 \cdot (-1)$ — actually
-$(1+i)^4 = -4$, so $4 = -(1+i)^4$, and $4i = i \cdot 4 = -i\,(1+i)^4$.)
 
 The Gaussian prime factorisation is therefore
 
 $$
-  \pm 4  =  \pm 1 \cdot (1+i)^4,
+  \pm 4  =  \pm(1+i)^4 \cdot (\text{unit}),
   \qquad
-  \pm 4i  =  \pm i \cdot (1+i)^4,
+  \pm 4i  =  \pm i\,(1+i)^4 \cdot (\text{unit}),
 $$
 
 with $(1+i)$ the Gaussian prime above the rational prime $2$.  The
