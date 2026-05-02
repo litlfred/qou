@@ -90,4 +90,48 @@ theorem descended_at_nonmagic
     OptimumPurelyDescended n C.q_0_value :=
   (C.nonmagic_iff_descended n).mp hn
 
+/-! ## §3  Per-n typeclass decomposition + structural reduction -/
+
+/-- Per-n assertion: `n` is *known* to have a higher-cohomology
+    SDP-optimum contribution at `q`. -/
+class IsKnownHigherCohom (n : ℕ) (q : ℝ) : Prop where
+  has_higher : OptimumHasHigherCohomologyContribution n q
+
+/-- Per-n assertion: `n` is *known* to have a purely-descended
+    SDP optimum at `q`. -/
+class IsKnownPurelyDescended (n : ℕ) (q : ℝ) : Prop where
+  is_descended : OptimumPurelyDescended n q
+
+/-- **Assembly theorem.** If at substrate `q` (with `q > 1`) we have
+    per-n axioms
+
+      IsKnownHigherCohom n q  for every n ∈ magicLadder,
+      IsKnownPurelyDescended n q  for every n ≥ 2 with n ∉ magicLadder,
+
+    plus a *partition* axiom (no n satisfies both), then the
+    `MagicRequiresHigherCohomology` conjecture holds at `q`.
+
+    The `n ≥ 2` restriction handles n = 0 (vacuum, no operator) and
+    n = 1 (single strand, trivially descended). -/
+-- Ref: [manuscript] conj:magic-requires-higher-cohomology
+theorem magicRequiresHigherCohom_iff_perN_axioms_at
+    {q : ℝ} (h_q : 1 < q)
+    (h_in : ∀ n, n ∈ magicLadder → IsKnownHigherCohom n q)
+    (h_out : ∀ n, 2 ≤ n → n ∉ magicLadder → IsKnownPurelyDescended n q)
+    -- Partition axiom: no n is simultaneously higher-cohom and purely descended.
+    (h_partition :
+      ∀ n,
+        ¬ (OptimumHasHigherCohomologyContribution n q
+          ∧ OptimumPurelyDescended n q)) :
+    ∀ n, 2 ≤ n →
+      (n ∈ magicLadder ↔ OptimumHasHigherCohomologyContribution n q) := by
+  intro n hn
+  constructor
+  · intro h_in_ladder
+    exact (h_in n h_in_ladder).has_higher
+  · intro h_higher
+    by_contra h_not_in
+    have h_desc := (h_out n hn h_not_in).is_descended
+    exact h_partition n ⟨h_higher, h_desc⟩
+
 end QOU.LiftingDescent.HigherCohomology

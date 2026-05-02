@@ -124,6 +124,45 @@ theorem condensation_at_28 [ShellCondensationConjecture] :
     InfinityVanishesAtPositiveQ 28 :=
   condensation_at_magic twentyeight_mem_magicLadder
 
+/-! ## §5  Per-n typeclass decomposition + structural reduction -/
+
+/-- Per-n assertion: `n` is *known* to be condensed (E_∞^{p, q>0}(n) = 0). -/
+class IsKnownCondensed (n : ℕ) : Prop where
+  is_condensed : InfinityVanishesAtPositiveQ n
+
+/-- Per-n assertion: `n` is *known* to be non-condensed
+    (E_∞^{p, q>0}(n) ≠ 0). -/
+class IsKnownNotCondensed (n : ℕ) : Prop where
+  not_condensed : ¬ InfinityVanishesAtPositiveQ n
+
+/-- **Assembly theorem.** If for every `n ≥ 2` we have either
+    `IsKnownCondensed n` (when `n ∈ magicLadder`) or
+    `IsKnownNotCondensed n` (when `n ∉ magicLadder`), then the
+    `ShellCondensationConjecture` holds for `n ≥ 2`.
+
+    The `n ≥ 2` restriction handles the edge cases:
+    - `n = 0` (vacuum): no jet prolongations, so condensation holds
+      trivially — but `0 ∉ magicLadder`, so the iff form fails.
+    - `n = 1` (single strand): similarly, no inter-strand jets, so
+      condensation holds trivially.
+
+    Both edge cases are *vacuously condensed* without being magic;
+    the conjecture is only meaningful for `n ≥ 2`. -/
+-- Ref: [manuscript] conj:homological-shell-condensation
+theorem shellCondensation_iff_perN_axioms_at
+    (h_in : ∀ n, n ∈ magicLadder → IsKnownCondensed n)
+    (h_out : ∀ n, 2 ≤ n → n ∉ magicLadder → IsKnownNotCondensed n) :
+    ∀ n, 2 ≤ n →
+      (InfinityVanishesAtPositiveQ n ↔ n ∈ magicLadder) := by
+  intro n hn
+  constructor
+  · intro h_inf
+    by_contra h_not_in
+    have := (h_out n hn h_not_in).not_condensed
+    exact this h_inf
+  · intro h_in_ladder
+    exact (h_in n h_in_ladder).is_condensed
+
 /-- At `n = 82` (Lead-82 shell, beyond the `k = 10` Hoefsmit limit),
     the same vanishing holds purely from the conjectural
     homological condensation. This is the algebraic-geometry bypass
