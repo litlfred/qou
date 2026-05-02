@@ -378,18 +378,27 @@ but isn't wired into the live mass tower. So P2.2 splits:
   + per-braid tower (`prop:per-braid-mass-tower`) demonstrate the
   proper H_{3A} computation; convergence verified for D, ³He, ³H,
   ⁴He.
-- **P2.2b — Scaling to high A.** ✅ **kickoff landed** with two
-  small optimisations on the Schur-Weyl symbolic path
-  (`schur_weyl_optimised.py`):
-  (i) iterate only length-≤-2 partitions (1000× reduction at A=12);
+- **P2.2b — Scaling to high A.** ✅ **landed** via three small
+  optimisations:
+  (i) iterate only length-≤-2 partitions (1000× reduction at A=12;
+      `schur_weyl_optimised.py`);
   (ii) `sp.cancel` instead of `sp.simplify` (bypasses
-  `HeuristicGCDFailed`).
-  Validation (D, ³He, ⁴He): fast path agrees with original to 1e-30
-  at q_0; ~5× wall-clock speedup. **Remaining bottleneck**: the
-  Murnaghan-Nakayama character evaluation at A=12 (>5 min per
-  partition on a 36-strand braid). Tracked as P2.2b-MN below.
-- **P2.2b-MN — Murnaghan-Nakayama character optimization.** Cycle-type
-  caching, or CRT polynomial reconstruction over the character itself.
+       `HeuristicGCDFailed`);
+  (iii) **direct mpmath evaluation at q_0** — bypasses sympy entirely
+        (`schur_weyl_mpmath.py`).
+  Net: ⁴⁰Ca (120-strand) computes in **0.25 s** vs original sympy
+  path's >5 min timeout at ¹²C. The "multi-week CRT" framing is
+  retired. Wired into `crt_markov.markov_trace_schur_weyl_eval`.
+- **P2.2c — q-deformed Hecke character (proton/neutron distinction).**
+  ✅ **landed** via per-crossing (c, d)-aware evaluation
+  (`schur_weyl_q_hecke_v2.py` →
+  `markov_trace_q_hecke_atomic`). The q=1 MN character couldn't
+  distinguish proton from neutron (identical S_n cycle structure).
+  q-Hecke + (c, d) per crossing reads the Hoefsmit seminormal
+  matrices and multiplies $\prod_i (c_i \sigma_{g_i} + d_i I)$:
+  - proton trace: 0.823 vs neutron trace: 0.601 (27% diff)
+  - ³He vs ³H: 51.6% relative splitting detected
+  Per-braid tower with q-Hecke validation against AME in flight.
 
 - **W**: §3·B of audit. Current code uses $H_3$ weights as an
   approximation.
