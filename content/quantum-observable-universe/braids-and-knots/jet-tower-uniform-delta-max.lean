@@ -21,6 +21,7 @@ class instance plus standard real analysis.
 
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.GeomSum
+import Mathlib.Tactic.Linarith
 
 namespace QOU.BraidKnot
 

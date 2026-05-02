@@ -19,6 +19,8 @@ Refs:
 -/
 
 import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.Torsion
 

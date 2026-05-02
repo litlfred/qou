@@ -48,14 +48,6 @@ than a single self-conjugate diagram.
 A representative non-self-conjugate partition is
 
 $$
-  \mu = (4, 3, 2, 1)
-$$
-
-(arms $> $ legs by $4$ at the corner, $c(\mu) = 4 - 0 = +4$ in
-total). Both this and its conjugate $(4, 3, 2, 1)' = (4, 3, 2, 1)$ —
-wait, $(4,3,2,1)$ is in fact self-conjugate. Picking instead
-
-$$
   \mu = (5, 3, 2) \quad\text{vs.}\quad \mu' = (3, 3, 2, 1, 1),
 $$
 
