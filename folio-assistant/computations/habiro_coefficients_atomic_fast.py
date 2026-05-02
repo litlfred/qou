@@ -121,20 +121,41 @@ def _hoefsmit_disk_cached(lam: tuple, n_strands: int) -> tuple:
     return matrices, dim, content_lookup
 
 
+_TERM_CACHE_DIR = HERE / ".term_cache"
+
+
+def _term_cache_path(Z: int, N: int, include_inter: bool,
+                      lam: tuple) -> Path:
+    _TERM_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    key = "_".join(str(p) for p in lam)
+    return _TERM_CACHE_DIR / (
+        f"Z{Z}_N{N}_inter{int(include_inter)}_lam{key}.txt"
+    )
+
+
 def _trace_per_partition(args: tuple) -> tuple[tuple, str]:
     """Worker: compute w_λ(q) · χ^λ_q(T_w) for one partition λ.
 
-    Returns (lam, str(term)) — sympy Expr cannot be pickled cleanly
-    across process boundaries on all platforms, so we serialise to
-    str and parse back in the main process. Cost of (de)serialisation
-    is negligible compared to the per-partition matrix multiplication.
+    Returns (lam, str(term)). Uses TWO disk caches:
 
-    Uses `_hoefsmit_disk_cached` for the Hoefsmit matrix build. First
-    run at a given (n, λ) writes a cache file; subsequent runs at the
-    same (n, λ) — including different atoms at the same n, e.g.
-    T / ³He at n=9 — load directly from disk.
+      1. **Hoefsmit-matrix cache** at .hoefsmit_cache/n<n>_lam<λ>.pkl
+         — atom-independent, reused across atoms at same n.
+      2. **Term cache** at .term_cache/Z<Z>_N<N>_inter<i>_lam<λ>.txt
+         — per (atom, λ); turns the worker into an idempotent
+         checkpoint. On a partial-run restart (e.g. after a timeout
+         kill), workers that already completed their (atom, λ) write
+         a file; on the second run they skip the matrix product
+         entirely and read the term from disk.
+
+    Sympy Expr cannot be pickled cleanly across process boundaries
+    on all platforms, so we serialise to str and parse back in the
+    main process.
     """
     lam, Z, N, include_inter = args
+    cache_path = _term_cache_path(Z, N, include_inter, lam)
+    if cache_path.exists():
+        return (lam, cache_path.read_text())
+
     # Re-import inside worker (Linux fork inherits, but be explicit
     # for multiprocessing-spawn on macOS / Windows).
     import sympy as sp
@@ -146,9 +167,11 @@ def _trace_per_partition(args: tuple) -> tuple[tuple, str]:
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
     matrices, dim, _ = _hoefsmit_disk_cached(lam, n_strands)
     if dim == 0:
+        cache_path.write_text("0")
         return (lam, "0")
     w = schur_weyl_weight(lam, q)
     if w == 0:
+        cache_path.write_text("0")
         return (lam, "0")
     h = q - q ** (-1)
     M = sp.eye(dim)
@@ -161,11 +184,15 @@ def _trace_per_partition(args: tuple) -> tuple[tuple, str]:
         M = M.applyfunc(sp.cancel)
     chi = sp.cancel(M.trace())
     if chi == 0:
+        cache_path.write_text("0")
         return (lam, "0")
     term = sp.cancel(w * chi)
     if term.has(sp.nan) or term.has(sp.zoo):
+        cache_path.write_text("NAN")
         return (lam, "NAN")
-    return (lam, str(term))
+    term_str = str(term)
+    cache_path.write_text(term_str)
+    return (lam, term_str)
 
 
 def markov_trace_parallel(Z: int, N: int, q: sp.Symbol, *,
