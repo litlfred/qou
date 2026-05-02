@@ -145,10 +145,10 @@ Per-braid tower values (at $q_0 \approx 1.11$):
 
 | Atom | descended $|\mathrm{tr}_M(W)|$ | single $\sum\Phi_q$ | pair $z^2\sum\Phi_q$ | total | max sub-trace | $\Phi_q$ conv |
 |------|------------------------------:|--------------------:|---------------------:|------:|--------------:|:-------------:|
-| D    | $1.56 \times 10^{-2}$ | $3.70 \times 10^{3}$ | $2.87 \times 10^{-1}$ | $3.70 \times 10^{3}$ | $0.67$ | ✅ |
-| ³He  | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | ✅ |
-| ³H   | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | ✅ |
-| ⁴He  | $4.43 \times 10^{-6}$ | $7.40 \times 10^{3}$ | $1.72$               | $7.40 \times 10^{3}$ | $0.67$ | ✅ |
+| D    | $1.56 \times 10^{-2}$ | $3.70 \times 10^{3}$ | $2.87 \times 10^{-1}$ | $3.70 \times 10^{3}$ | $0.67$ | yes |
+| ³He  | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
+| ³H   | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
+| ⁴He  | $4.43 \times 10^{-6}$ | $7.40 \times 10^{3}$ | $1.72$               | $7.40 \times 10^{3}$ | $0.67$ | yes |
 
 For comparison, the per-generator H_3 tower at the same atoms
 gives totals $\sim 10^{6}$ — reflecting the H_3-at-H_{3A}
