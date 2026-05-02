@@ -142,25 +142,57 @@ def test_tr_M_atomic_deuteron_matches_witness():
 
 # ── Test 4: production atoms — ³He, tritium, ⁴He ────────────────────
 
-# These are Phase-2 targets; mark xfail until the Gröbner–Shirshov
-# reduction is complete for n > 6.  Removing the xfail marker is the
-# definition of "Phase 2 done" for #508.
-
 import pytest  # noqa: E402
 
 
-@pytest.mark.xfail(reason="Phase 2 of #508 — GS reduction incomplete for n=9")
+@pytest.mark.slow
 def test_tr_M_atomic_tritium_matches_witness():
+    """Z=1 N=2: A=3, n_strands=9, word length 35.
+
+    Phase-2 part 1 (#508 commit 80eafe8b) unblocked this via
+    incremental Gröbner–Shirshov reduction — the unreduced product
+    used to explode to ~9000 terms before reduction; interleaving
+    keeps the intermediate count bounded (~256 terms).  Trace
+    recursion takes ~2 minutes; marked `slow` for selective skip.
+    """
     expected = _load_witness_tr_m("tritium")
     got_sym = tr_M_atomic(Z=1, N=2)
+    got = _eval_at_q0(got_sym)
+    assert abs(got - expected) < 1e-10, (
+        f"tritium tr_M mismatch: peel={got!r} witness={expected!r}"
+    )
+
+
+@pytest.mark.xfail(
+    reason="Phase 2 part 2 of #508 — trace recursion bottleneck "
+           "(reduction succeeds in ~5s, trace exceeds 30 min)"
+)
+@pytest.mark.slow
+def test_tr_M_atomic_helium3_matches_witness():
+    expected = _load_witness_tr_m("helium-3")
+    got_sym = tr_M_atomic(Z=2, N=1)
     got = _eval_at_q0(got_sym)
     assert abs(got - expected) < 1e-10
 
 
-@pytest.mark.xfail(reason="Phase 2 of #508 — GS reduction incomplete for n=9")
-def test_tr_M_atomic_helium3_matches_witness():
-    expected = _load_witness_tr_m("helium-3")
-    got_sym = tr_M_atomic(Z=2, N=1)
+@pytest.mark.xfail(
+    reason="Phase 2 part 2 of #508 — trace recursion bottleneck "
+           "(A=4 not yet attempted)"
+)
+@pytest.mark.slow
+def test_tr_M_atomic_helium4_matches_witness():
+    """Z=2 N=2 — the headline target of #508 (A=4, n_strands=12)."""
+    # Witness file currently has only proton/neutron/deuteron/tritium/³He;
+    # ⁴He is the production target this rewrite enables.  Until the
+    # trace recursion is optimised (Phase 2 part 2), this is xfail.
+    import pytest as _pt
+    if "helium-4" not in {
+        e["atom"] for e in
+        __import__("json").loads(WITNESS.read_text())["results"]
+    }:
+        _pt.skip("⁴He not in atomic-tr-m-mpfr-50dps.witness.json yet")
+    expected = _load_witness_tr_m("helium-4")
+    got_sym = tr_M_atomic(Z=2, N=2)
     got = _eval_at_q0(got_sym)
     assert abs(got - expected) < 1e-10
 
