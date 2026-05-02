@@ -125,6 +125,18 @@ fixing $q_0$ is correct as-is.
 $\widehat{\mathbb{Z}[q]}$ (cyclotomic completion); the substrate
 data is symbolic-in-$q$ throughout, not a per-prime guess.
 
+**Step 1 — landed (`habiro_frobenius_probe.py`).** Frob_p extracted
+for atoms {p, n, D} at primes {2, 3, 5, 7, 11, 13} by evaluating
+the Habiro cyclotomic expansion at $u = \zeta_{2p}$. Witness:
+`habiro-frobenius-probe.witness.json`.
+
+**Step 2 — partial (Galois-norm integrality landed).** First
+finite-place compatibility check verifies $N(\mathrm{Frob}_p) \in
+\mathbb{Z}$ for every $(p, \text{atom})$ pair (residual $< 10^{-7}$).
+Remaining: cross-prime coherence ($\mathrm{Frob}_p$ restricted to
+subfields agrees with $\mathrm{Frob}_q$ for $q \mid p-1$) and
+Weil/Deligne archimedean behaviour.
+
 **Missing piece.** The explicit map
 
 $$
@@ -196,7 +208,7 @@ position.)
 | 4 | R2 MAG-1 Z=126 (gen.fn. + sample) | ✅ done | — | seventh magic number |
 | 5 | R7 Pentagon (after scope) | 🟡 Lean stub landed | 2–5 days | descent sharpness |
 | 6 | R8 Δ_max numerical | 🟡 queued | 2–3 days | jet-tower convergence |
-| 7 | R6 Habiro → MotivicGaloisCharacter map | 🟡 reformulated tractable | ~1 month | family-4 motivic instance |
+| 7 | R6 Habiro → MotivicGaloisCharacter map | 🟡 step 1 done; step 2 partial (Galois-norm integrality verified); steps 2.cross-prime + 2.archimedean + 3 (Lean instance) remain | ~3 weeks | family-4 motivic instance |
 
 R6 is now substantially more tractable than originally scoped —
 the Habiro ring carries the symbolic q-data and the missing
