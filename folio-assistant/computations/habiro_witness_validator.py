@@ -163,6 +163,11 @@ def main() -> int:
         "input_witness": INPUT_WITNESS.name,
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "engine": "sympy.div over ZZ[u]",
+        # P2.5 marker — validator emits boolean divisibility / exact-
+        # reconstruction checks, not a polynomial-in-q form.
+        # The symbolic Habiro polynomials live in
+        # habiro-coefficients-atomic.witness.json (validated input).
+        "polynomial_q_not_applicable": True,
         "overall_pass": overall_pass,
         "results": per_atom_results,
     }

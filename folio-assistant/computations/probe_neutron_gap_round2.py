@@ -168,6 +168,11 @@ def main() -> int:
         .add_parameter("m_n_codata_MeV", M_N_MEV)
         .add_parameter("precision_dps", _DPS)
         .add_parameter("threshold_ppb", THRESHOLD_PPB)
+        # P2.5 marker — script substitutes q_0 numerically before
+        # producing output; the symbolic q form is read directly
+        # from habiro-coefficients-atomic.witness.json (the upstream
+        # symbolic witness). Polynomial exposure does not apply here.
+        .add_data("polynomial_q_not_applicable", True)
         .add_data("h4_full_tr_M", {
             "tr_M_proton": mp.nstr(tr_p, _DPS),
             "tr_M_neutron": mp.nstr(tr_n, _DPS),
