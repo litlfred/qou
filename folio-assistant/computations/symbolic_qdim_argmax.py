@@ -32,7 +32,7 @@ import sympy as sp
 from sympy import Symbol, Rational, simplify, Poly, expand, sympify
 
 sys.path.insert(0, ".")
-from enumerate_self_conjugate_partitions import (
+from enumerate_self_conjugate_partitions import (  # noqa: E402
     conjugate_partition,
     content_sum,
 )
@@ -124,7 +124,7 @@ def argmax_at(q_value: float, dims: dict) -> Tuple[List[int], float]:
 def find_critical_q(d1, d2, q_min: float = 0.001, q_max: float = 10.0) -> List[float]:
     """Find positive real q where d1(q) = d2(q), in (q_min, q_max).
     Equivalent to finding roots of (d1 - d2)."""
-    diff = sp.simplify(d1 - d2)
+    diff = sp.cancel(d1 - d2)
     try:
         roots = sp.solve(diff, q)
         out = []

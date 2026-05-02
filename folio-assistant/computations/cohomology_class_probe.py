@@ -39,7 +39,7 @@ import sys
 from typing import List, Tuple, Optional
 
 sys.path.insert(0, ".")
-from enumerate_self_conjugate_partitions import (
+from enumerate_self_conjugate_partitions import (  # noqa: E402
     canonical_self_conjugate,
     conjugate_partition,
 )

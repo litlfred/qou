@@ -24,7 +24,7 @@ import time
 from typing import List, Tuple, Iterator, Optional
 
 sys.path.insert(0, ".")
-from enumerate_self_conjugate_partitions import (
+from enumerate_self_conjugate_partitions import (  # noqa: E402
     canonical_self_conjugate,
     conjugate_partition,
     content_sum,
@@ -86,8 +86,7 @@ def count_lr_tableaux(nu: List[int], lam: List[int], mu: List[int]) -> int:
     # Backtracking
     count = [0]
 
-    def backtrack(idx: int, filling: dict, used_per_letter: List[int],
-                  reading_word: List[int]) -> None:
+    def backtrack(idx: int, filling: dict, used_per_letter: List[int]) -> None:
         if idx == len(cells_sorted):
             # Verify weight matches mu
             if used_per_letter == list(mu):
@@ -115,25 +114,23 @@ def count_lr_tableaux(nu: List[int], lam: List[int], mu: List[int]) -> int:
                 above_letter = filling.get((i - 1, j))
                 if above_letter is not None and above_letter >= letter:
                     continue
-            # Yamanouchi: appending `letter` to reading word; every
-            # prefix must have #k >= #(k+1).
-            new_reading = reading_word + [letter]
-            ok = True
-            for k in range(1, n_letters):
-                # Check prefix counts after this letter is added.
-                if new_reading.count(k) < new_reading.count(k + 1):
-                    ok = False
-                    break
-            if not ok:
+            # Yamanouchi: every prefix must have #k >= #(k+1).
+            # Since we fill cells in reading order, used_per_letter
+            # already tracks prefix counts. Adding `letter` would
+            # bring its count to used_per_letter[letter-1] + 1; that
+            # must not exceed used_per_letter[letter-2] (the count
+            # of the preceding letter in the alphabet). For
+            # letter == 1 the constraint is vacuous.
+            if letter > 1 and used_per_letter[letter - 1] + 1 > used_per_letter[letter - 2]:
                 continue
             # Recurse
             filling[(i, j)] = letter
             used_per_letter[letter - 1] += 1
-            backtrack(idx + 1, filling, used_per_letter, new_reading)
+            backtrack(idx + 1, filling, used_per_letter)
             del filling[(i, j)]
             used_per_letter[letter - 1] -= 1
 
-    backtrack(0, {}, [0] * n_letters, [])
+    backtrack(0, {}, [0] * n_letters)
     return count[0]
 
 

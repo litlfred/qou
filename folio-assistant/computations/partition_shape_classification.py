@@ -25,7 +25,7 @@ import json
 from typing import Dict, List, Optional, Tuple
 
 sys.path.insert(0, ".")
-from enumerate_self_conjugate_partitions import (
+from enumerate_self_conjugate_partitions import (  # noqa: E402
     canonical_self_conjugate,
     conjugate_partition,
 )

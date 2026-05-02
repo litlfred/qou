@@ -25,7 +25,7 @@ import sys
 from typing import List, Tuple
 
 sys.path.insert(0, ".")
-from enumerate_self_conjugate_partitions import (
+from enumerate_self_conjugate_partitions import (  # noqa: E402
     all_self_conjugate_partitions,
     distinct_odd_partitions,
     canonical_self_conjugate,

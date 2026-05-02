@@ -29,7 +29,7 @@ from typing import List, Tuple, Optional
 import sympy as sp
 
 sys.path.insert(0, ".")
-from enumerate_self_conjugate_partitions import (
+from enumerate_self_conjugate_partitions import (  # noqa: E402
     all_self_conjugate_partitions,
     conjugate_partition,
     content_sum,
