@@ -139,17 +139,34 @@ def parse_int_poly(a_m_str: str, u: sp.Symbol) -> list[int]:
         return []
 
 
-def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol
+def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
+                     expansion_terminated_clean: bool = False
                      ) -> dict[str, Any]:
     """Evaluate one atom's Habiro expansion at u = ζ_{2p}, computing
     both the principal value Frob_p and the Galois-norm sum
     `N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k)`.
 
+    `expansion_terminated_clean` flags that the Habiro cyclotomic
+    division produced a zero remainder at the last m — i.e. the
+    Habiro element is FINITE and `a_m = 0` for all m beyond the
+    listed range. When true, the Frob_p evaluation is exact for
+    every prime regardless of whether 2p exceeds the data window.
+
     Returns a dict with the principal value, integrality residual,
     and step-2 compatibility-passed flag.
     """
     n_data = len(habiro_coeffs)
-    truncate_at = 2 * p if 2 * p <= n_data else None
+    pochhammer_truncates = 2 * p <= n_data
+    # Two ways the Frob_p value is exact:
+    #   (1) The cyclotomic Pochhammer (u; u)_m hits zero at some
+    #       m ≤ n_data (Pochhammer truncation INSIDE data window).
+    #   (2) The Habiro expansion terminated cleanly — a_m = 0 for
+    #       all m ≥ n_data, so missing high-m contributions are
+    #       mathematically zero.
+    is_exact = pochhammer_truncates or expansion_terminated_clean
+    truncate_at = 2 * p if pochhammer_truncates else (
+        n_data if expansion_terminated_clean else None
+    )
 
     # Pre-parse coefficients to integer-Horner form (once).
     parsed: list[tuple[int, list[int]]] = []
@@ -162,10 +179,16 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol
 
     def evaluate_in_ring() -> sp.Poly:
         """Frob_p as an element of Z[ζ_{2p}] = Z[u]/Φ_{2p}(u),
-        represented by its Z[u] polynomial of degree < φ(2p)."""
+        represented by its Z[u] polynomial of degree < φ(2p).
+
+        When the Habiro expansion terminated cleanly, ALL on-disk
+        coefficients contribute (the missing high-m a_m's are zero).
+        Otherwise, only m < 2p contribute (the Pochhammer hits zero
+        at m = 2p so subsequent terms vanish in the ring).
+        """
         total = sp.Poly(0, u)
         for m, int_coeffs in parsed:
-            if m >= n_2p:
+            if not expansion_terminated_clean and m >= n_2p:
                 break
             # a_m(u) as Z[u].
             if int_coeffs:
@@ -216,16 +239,23 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol
         },
         "abs_frob_p": abs(frob_p_num),
         "pochhammer_truncates_at_m": truncate_at,
+        "frob_p_is_exact": is_exact,
+        "exact_via": (
+            "pochhammer_truncates_inside_data" if pochhammer_truncates
+            else "habiro_expansion_terminated_cleanly" if expansion_terminated_clean
+            else "neither"
+        ),
         "galois_orbit_size": len(galois_ks),
         "galois_norm_int": galois_norm_int,
         "galois_norm_is_exact_integer": galois_norm_is_exact_integer,
         "galois_norm_residue_str": str(galois_norm_rep.as_expr()),
         # Step-2 compatibility: the Galois norm is **exactly** an
         # integer (no tolerance — algebraic). Pass iff the
-        # cyclotomic-Pochhammer truncates inside the data range AND
-        # the norm reduced to a degree-0 integer polynomial.
+        # Frob_p evaluation is exact (Pochhammer truncation OR
+        # Habiro expansion terminated cleanly) AND the norm
+        # reduced to a degree-0 integer polynomial.
         "step2_compatibility_passed": bool(
-            truncate_at is not None and galois_norm_is_exact_integer
+            is_exact and galois_norm_is_exact_integer
         ),
     }
 
@@ -269,7 +299,17 @@ def main() -> int:
         print(f"  {label}  (n_coeffs = {n_coeffs}, Z={Z}, N={N})")
         per_prime: list[dict[str, Any]] = []
         for p in PRIMES:
-            row = evaluate_at_root(habiro_coeffs, p, u)
+            # Both witness formats encode "Habiro expansion is finite":
+            #   - fast-path:    `expansion_terminated_clean: True`
+            #   - symbolic-q:   `reconstruction_matches: True`
+            terminated_clean = bool(
+                record.get("expansion_terminated_clean")
+                or record.get("reconstruction_matches")
+            )
+            row = evaluate_at_root(
+                habiro_coeffs, p, u,
+                expansion_terminated_clean=terminated_clean,
+            )
             integrality = "✓" if row["step2_compatibility_passed"] else " "
             n_disp = (str(row["galois_norm_int"])
                       if row["galois_norm_int"] is not None else "—")

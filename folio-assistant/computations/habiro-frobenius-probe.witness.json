@@ -1,6 +1,6 @@
 {
   "computation": "habiro-frobenius-probe",
-  "computedAt": "2026-05-02T22:57:33.181345+00:00",
+  "computedAt": "2026-05-02T23:08:56.405315+00:00",
   "description": "R6 step-1 + step-2 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. The Galois norm N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k) is verified to be a rational integer (residual < 1e-6) on every (atom, prime) where the truncation lands inside the on-disk Habiro data — finite-place reciprocity check.",
   "reference_blocks": [
     "def:motivic-galois-character",
@@ -33,6 +33,8 @@
           },
           "abs_frob_p": 8.0,
           "pochhammer_truncates_at_m": 4,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
           "galois_norm_int": -16,
           "galois_norm_is_exact_integer": true,
@@ -49,6 +51,8 @@
           },
           "abs_frob_p": 1.0,
           "pochhammer_truncates_at_m": 6,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
           "galois_norm_int": -2,
           "galois_norm_is_exact_integer": true,
@@ -65,6 +69,8 @@
           },
           "abs_frob_p": 0.6180339887498949,
           "pochhammer_truncates_at_m": 10,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 4,
           "galois_norm_int": 2,
           "galois_norm_is_exact_integer": true,
@@ -80,12 +86,14 @@
             "imag": -1.0820883461285309
           },
           "abs_frob_p": 2.2205045280355056,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 10,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 6,
           "galois_norm_int": -8,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "-8",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         },
         {
           "prime": 11,
@@ -96,12 +104,14 @@
             "imag": -0.13491931037224633
           },
           "abs_frob_p": 0.3391607251314568,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 10,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
           "galois_norm_int": 14,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "14",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         },
         {
           "prime": 13,
@@ -112,17 +122,19 @@
             "imag": -0.21824530901179104
           },
           "abs_frob_p": 0.4299946727693914,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 10,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
           "galois_norm_int": 5,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "5",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         }
       ],
       "step2_summary": {
-        "n_primes_truncated": 3,
-        "n_primes_data_exhausted": 3,
+        "n_primes_truncated": 6,
+        "n_primes_data_exhausted": 0,
         "all_truncated_primes_compatible": true,
         "primes_failing_compatibility": []
       }
@@ -143,6 +155,8 @@
           },
           "abs_frob_p": 96.0,
           "pochhammer_truncates_at_m": 4,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
           "galois_norm_int": 192,
           "galois_norm_is_exact_integer": true,
@@ -159,6 +173,8 @@
           },
           "abs_frob_p": 4.58257569495584,
           "pochhammer_truncates_at_m": 6,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
           "galois_norm_int": -9,
           "galois_norm_is_exact_integer": true,
@@ -175,6 +191,8 @@
           },
           "abs_frob_p": 1.4415965342434378,
           "pochhammer_truncates_at_m": 10,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 4,
           "galois_norm_int": -61,
           "galois_norm_is_exact_integer": true,
@@ -191,6 +209,8 @@
           },
           "abs_frob_p": 38.73665428089682,
           "pochhammer_truncates_at_m": 14,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 6,
           "galois_norm_int": 23,
           "galois_norm_is_exact_integer": true,
@@ -206,12 +226,14 @@
             "imag": 18.674062427128618
           },
           "abs_frob_p": 20.527057672183417,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 14,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
           "galois_norm_int": -756,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "-756",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         },
         {
           "prime": 13,
@@ -222,17 +244,19 @@
             "imag": 0.4767077682866163
           },
           "abs_frob_p": 2.9579357421722285,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 14,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
           "galois_norm_int": -525,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "-525",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         }
       ],
       "step2_summary": {
-        "n_primes_truncated": 4,
-        "n_primes_data_exhausted": 2,
+        "n_primes_truncated": 6,
+        "n_primes_data_exhausted": 0,
         "all_truncated_primes_compatible": true,
         "primes_failing_compatibility": []
       }
@@ -253,6 +277,8 @@
           },
           "abs_frob_p": 29312.0,
           "pochhammer_truncates_at_m": 4,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
           "galois_norm_int": 58624,
           "galois_norm_is_exact_integer": true,
@@ -269,6 +295,8 @@
           },
           "abs_frob_p": 68.02205524680947,
           "pochhammer_truncates_at_m": 6,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
           "galois_norm_int": -109,
           "galois_norm_is_exact_integer": true,
@@ -285,6 +313,8 @@
           },
           "abs_frob_p": 16.0404220912278,
           "pochhammer_truncates_at_m": 10,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 4,
           "galois_norm_int": -75,
           "galois_norm_is_exact_integer": true,
@@ -301,6 +331,8 @@
           },
           "abs_frob_p": 93.97101062291487,
           "pochhammer_truncates_at_m": 14,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 6,
           "galois_norm_int": -394,
           "galois_norm_is_exact_integer": true,
@@ -316,12 +348,14 @@
             "imag": -54.29624788707583
           },
           "abs_frob_p": 73.50721619267622,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 19,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
           "galois_norm_int": 378,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "378",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         },
         {
           "prime": 13,
@@ -332,17 +366,19 @@
             "imag": -70.10885145002746
           },
           "abs_frob_p": 70.22033337211576,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 19,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
           "galois_norm_int": 583,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "583",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         }
       ],
       "step2_summary": {
-        "n_primes_truncated": 4,
-        "n_primes_data_exhausted": 2,
+        "n_primes_truncated": 6,
+        "n_primes_data_exhausted": 0,
         "all_truncated_primes_compatible": true,
         "primes_failing_compatibility": []
       }
@@ -363,6 +399,8 @@
           },
           "abs_frob_p": 29312.0,
           "pochhammer_truncates_at_m": 4,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
           "galois_norm_int": -58624,
           "galois_norm_is_exact_integer": true,
@@ -379,6 +417,8 @@
           },
           "abs_frob_p": 42.2965719651132,
           "pochhammer_truncates_at_m": 6,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
           "galois_norm_int": -82,
           "galois_norm_is_exact_integer": true,
@@ -395,6 +435,8 @@
           },
           "abs_frob_p": 4.541229277208077,
           "pochhammer_truncates_at_m": 10,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 4,
           "galois_norm_int": 520,
           "galois_norm_is_exact_integer": true,
@@ -411,6 +453,8 @@
           },
           "abs_frob_p": 104.25756260399145,
           "pochhammer_truncates_at_m": 14,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 6,
           "galois_norm_int": -226,
           "galois_norm_is_exact_integer": true,
@@ -426,12 +470,14 @@
             "imag": 45.71232630108247
           },
           "abs_frob_p": 86.65428520557344,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 20,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
           "galois_norm_int": -645,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "-645",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         },
         {
           "prime": 13,
@@ -442,26 +488,150 @@
             "imag": 5.840462860233661
           },
           "abs_frob_p": 21.583580328080856,
-          "pochhammer_truncates_at_m": null,
+          "pochhammer_truncates_at_m": 20,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
           "galois_norm_int": -1861,
           "galois_norm_is_exact_integer": true,
           "galois_norm_residue_str": "-1861",
-          "step2_compatibility_passed": false
+          "step2_compatibility_passed": true
         }
       ],
       "step2_summary": {
-        "n_primes_truncated": 4,
-        "n_primes_data_exhausted": 2,
+        "n_primes_truncated": 6,
+        "n_primes_data_exhausted": 0,
+        "all_truncated_primes_compatible": true,
+        "primes_failing_compatibility": []
+      }
+    },
+    {
+      "atom_label": "n (neutron, A=1)",
+      "Z": 0,
+      "N": 1,
+      "n_habiro_coefficients": 9,
+      "frobenius": [
+        {
+          "prime": 2,
+          "u_root": "zeta_4",
+          "frob_p_in_Z_zeta_str": "-8",
+          "frob_p_complex": {
+            "real": -8.0,
+            "imag": 0.0
+          },
+          "abs_frob_p": 8.0,
+          "pochhammer_truncates_at_m": 4,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
+          "galois_orbit_size": 2,
+          "galois_norm_int": -16,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-16",
+          "step2_compatibility_passed": true
+        },
+        {
+          "prime": 3,
+          "u_root": "zeta_6",
+          "frob_p_in_Z_zeta_str": "2*u + 1",
+          "frob_p_complex": {
+            "real": 2.0,
+            "imag": 1.7320508075688772
+          },
+          "abs_frob_p": 2.6457513110645907,
+          "pochhammer_truncates_at_m": 6,
+          "frob_p_is_exact": true,
+          "exact_via": "pochhammer_truncates_inside_data",
+          "galois_orbit_size": 2,
+          "galois_norm_int": 4,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "4",
+          "step2_compatibility_passed": true
+        },
+        {
+          "prime": 5,
+          "u_root": "zeta_10",
+          "frob_p_in_Z_zeta_str": "-u**3 + 3*u**2 - 3*u + 1",
+          "frob_p_complex": {
+            "real": -0.19098300562505258,
+            "imag": 0.13875727571288776
+          },
+          "abs_frob_p": 0.2360679774997897,
+          "pochhammer_truncates_at_m": 9,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
+          "galois_orbit_size": 4,
+          "galois_norm_int": -3,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-3",
+          "step2_compatibility_passed": true
+        },
+        {
+          "prime": 7,
+          "u_root": "zeta_14",
+          "frob_p_in_Z_zeta_str": "-2*u**5 + 2*u**4 - u**3 - 2*u + 1",
+          "frob_p_complex": {
+            "real": -0.2225209339563144,
+            "imag": -1.4565025309893522
+          },
+          "abs_frob_p": 1.473402588849083,
+          "pochhammer_truncates_at_m": 9,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
+          "galois_orbit_size": 6,
+          "galois_norm_int": -1,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-1",
+          "step2_compatibility_passed": true
+        },
+        {
+          "prime": 11,
+          "u_root": "zeta_22",
+          "frob_p_in_Z_zeta_str": "2*u**9 - 3*u**8 - u**7 - u**6 + 3*u**5 - 2*u**4 - u**3 - u**2 + 3*u - 1",
+          "frob_p_complex": {
+            "real": 0.8182841303317729,
+            "imag": -2.386412911738836
+          },
+          "abs_frob_p": 2.522807068181524,
+          "pochhammer_truncates_at_m": 9,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
+          "galois_orbit_size": 10,
+          "galois_norm_int": 3,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "3",
+          "step2_compatibility_passed": true
+        },
+        {
+          "prime": 13,
+          "u_root": "zeta_26",
+          "frob_p_in_Z_zeta_str": "-2*u**11 + 3*u**10 - 3*u**9 - u**8 - u**7 + 3*u**6 - 3*u**5 + 2*u**2 - 3*u + 2",
+          "frob_p_complex": {
+            "real": 1.8605975929510685,
+            "imag": -2.9521778383668082
+          },
+          "abs_frob_p": 3.4895812631660306,
+          "pochhammer_truncates_at_m": 9,
+          "frob_p_is_exact": true,
+          "exact_via": "habiro_expansion_terminated_cleanly",
+          "galois_orbit_size": 12,
+          "galois_norm_int": 5,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "5",
+          "step2_compatibility_passed": true
+        }
+      ],
+      "step2_summary": {
+        "n_primes_truncated": 6,
+        "n_primes_data_exhausted": 0,
         "all_truncated_primes_compatible": true,
         "primes_failing_compatibility": []
       }
     }
   ],
   "summary": {
-    "n_atoms": 4,
+    "n_atoms": 5,
     "n_primes": 6,
     "step2_all_atoms_compatible": true,
-    "n_atoms_step2_passed": 4
+    "n_atoms_step2_passed": 5
   }
 }

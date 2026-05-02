@@ -93,9 +93,9 @@
       ],
       "all_integral": true,
       "expansion_terminated_clean": true,
-      "elapsed_sec": 0.45239686965942383,
+      "elapsed_sec": 0.10774970054626465,
       "workers_used": 4,
-      "max_m_used": 12
+      "max_m_used": 30
     },
     "D (deuteron, A=2)": {
       "atom_label": "D (deuteron, A=2)",
@@ -524,7 +524,89 @@
       "elapsed_sec": 294.91939091682434,
       "workers_used": 4,
       "max_m_used": 30
+    },
+    "n (neutron, A=1)": {
+      "atom_label": "n (neutron, A=1)",
+      "Z": 0,
+      "N": 1,
+      "include_inter": false,
+      "tr_M_in_q": "(q**20 + 2*q**18 + 2*q**16 + q**15 + q**14 + 2*q**13 + q**12 + 2*q**11 + 2*q**9 - q**8 + q**7 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**12 + 4*q**10 + 4*q**8)",
+      "shift": 0,
+      "denom_in_u": "4*u**24 + 4*u**20 + 4*u**16",
+      "p_in_u": "u**40 + 2*u**36 + 2*u**32 + u**30 + u**28 + 2*u**26 + u**24 + 2*u**22 + 2*u**18 - u**16 + u**14 - u**12 - 2*u**8 - 2*u**4 - 1",
+      "deg_p_u": 40,
+      "tr_M_at_q0": 1.5893934459539043,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "8",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-176*u - 176",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "809*u**2 + 867*u + 924",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-1589*u**3 - 1790*u**2 - 1965*u - 2197",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "1559*u**4 + 1802*u**3 + 2095*u**2 + 2402*u + 2766",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-756*u**5 - 910*u**4 - 1125*u**3 - 1341*u**2 - 1631*u - 1928",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "156*u**6 + 212*u**5 + 271*u**4 + 357*u**3 + 450*u**2 + 580*u + 722",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-9*u**7 - 15*u**6 - 21*u**5 - 34*u**4 - 45*u**3 - 67*u**2 - 89*u - 127",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "u**4 + u**3 + 2*u**2 + 3*u + 7",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "expansion_terminated_clean": true,
+      "elapsed_sec": 0.4339027404785156,
+      "workers_used": 4,
+      "max_m_used": 30
     }
   },
-  "computedAt": "2026-05-02T22:10:12.658672+00:00"
+  "computedAt": "2026-05-02T23:08:42.340320+00:00"
 }
