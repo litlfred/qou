@@ -11,6 +11,12 @@ from pathlib import Path
 import mpmath
 
 sys.path.insert(0, str(Path(__file__).parent))
+# P2.1 migration assessment: this script REQUIRES the legacy
+# markov_trace_symbolic_eval path because the analysis differentiates
+# proton (m_pp=1, m_pn=variable, m_nn=1) from neutron (Z=0, N=1)
+# via the dressed-quark mass parameters, which the SW char_kind=
+# "mn-atom" doesn't yet wire. Migration is blocked on extending
+# the SW path to accept m_pp/m_pn/m_nn (a separate compute task).
 from crt_markov import markov_trace_symbolic_eval
 from mass_endomorphism import q0 as q0_f
 
@@ -21,12 +27,13 @@ E_0_MeV = mpmath.mpf('0.782')
 
 
 def tr_M_D(m_pn, include_inter=True):
-    """|tr_M(W_D)| with variable pn multiplicity."""
+    """|tr_M(W_D)| with variable pn multiplicity (legacy path)."""
     return abs(markov_trace_symbolic_eval(
         1, 1, include_inter, 1, m_pn, 1, q0, precision=50))
 
 
-# Get baseline |tr_M| values
+# Baseline |tr_M| values (legacy path: differentiates p vs n via
+# dressed-quark mass parameters; SW path doesn't yet)
 tr_p = abs(markov_trace_symbolic_eval(1, 0, False, 1, 1, 1, q0, 50))
 tr_n = abs(markov_trace_symbolic_eval(0, 1, False, 1, 1, 1, q0, 50))
 Q_cat = tr_n - tr_p
