@@ -19,15 +19,14 @@ become conditional on `[ShellCondensation n]` instances.
 
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Data.Finset.Basic
+import QOU.Common.MagicNumbers
 
 namespace QOU.ShellCondensation
 
-/-- The seven observed magic numbers (mirrors
-    `QOU.ShellNeutrality.magicSet`). -/
-def magicSet : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
-
-/-- A saturated level. -/
-def Saturated (n : ℕ) : Prop := n ∈ magicSet
+-- Single source of truth: QOU.Common.magicSet (see PR #501
+-- review). Re-exported as abbreviations for local ergonomics.
+abbrev magicSet : Finset ℕ := QOU.Common.magicSet
+abbrev Saturated (n : ℕ) : Prop := QOU.Common.Saturated n
 
 /-- The data of a Białynicki-Birula bigraded `E_∞` page at level
     `n`. The conjecture below asks whether this page vanishes above

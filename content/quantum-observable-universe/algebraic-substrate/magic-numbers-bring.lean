@@ -19,13 +19,14 @@ as hypotheses.
 
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Data.Finset.Basic
+import QOU.Common.MagicNumbers
 
 namespace QOU.AlgebraicSubstrate
 
-/-- The seven observed magic numbers (mirrors the same set used in
-    `QOU.ShellNeutrality.magicSet` and
-    `QOU.ShellCondensation.magicSet`). -/
-def magicSet : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
+-- Single source of truth: QOU.Common.magicSet (see PR #501
+-- review — gemini-code-assist[bot] flagged the cross-file
+-- duplication). Re-exported here for local ergonomics.
+abbrev magicSet : Finset ℕ := QOU.Common.magicSet
 
 /-- Abstract data of an S₅-stable, τ̂-stable period sub-lattice. -/
 structure BringPeriodSublattice where

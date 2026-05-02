@@ -18,11 +18,13 @@ conditional on `[DoubleMagicConjecture Z N]` instances.
 
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Data.Finset.Basic
+import QOU.Common.MagicNumbers
 
 namespace QOU.LRFusion
 
-/-- The seven observed magic numbers. -/
-def magicSet : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
+-- Single source of truth: QOU.Common.magicSet (see PR #501
+-- review). Re-exported here for local ergonomics.
+abbrev magicSet : Finset ℕ := QOU.Common.magicSet
 
 /-- Both `Z` and `N` are saturated. -/
 def DoubleMagic (Z N : ℕ) : Prop := Z ∈ magicSet ∧ N ∈ magicSet

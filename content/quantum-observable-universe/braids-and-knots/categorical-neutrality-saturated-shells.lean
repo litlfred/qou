@@ -20,15 +20,15 @@ become conditional theorems parameterised on
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Data.Set.Finite
+import QOU.Common.MagicNumbers
 
 namespace QOU.ShellNeutrality
 
-/-- The seven observed magic numbers. -/
-def magicSet : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
-
-/-- A saturated shell is a level `n` whose nucleon count is one of
-    the magic numbers. -/
-def Saturated (n : ℕ) : Prop := n ∈ magicSet
+-- The seven magic numbers + Saturated predicate are defined once
+-- in `QOU.Common.MagicNumbers` (single source of truth — see PR
+-- #501 review). Re-exported here for ergonomic local access.
+abbrev magicSet : Finset ℕ := QOU.Common.magicSet
+abbrev Saturated (n : ℕ) : Prop := QOU.Common.Saturated n
 
 /-- The mass-endomorphism module at level `n`, abstracted: any type
     with a designated full-twist action and a designated mass
