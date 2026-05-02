@@ -1,0 +1,62 @@
+{
+  "audit": "Per-braid HYBRID with FULL-Plancherel descended (Phase A.1)",
+  "generated": "2026-05-02T06:39:49.734032+00:00",
+  "q_0": "1.1099785955541805",
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "descended_full_plancherel": "0.0051265414130566064663149994189592974485465220262891",
+      "single_tower_q1": "3700.4729815664967971793366022772572280643175004501",
+      "cross_tower_q1": "0.28743121412985524774130490646618889154699667770762",
+      "total": 3700.76553932204,
+      "ame_mass_mev": 1875.61294257,
+      "cal_over_me": 0.9918172142658076,
+      "time_seconds": 0.01982593536376953
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "descended_full_plancherel": "0.00037683897942726386359325881305672117951263196735737",
+      "single_tower_q1": "5550.7094723497451957690049034158858420964762506752",
+      "cross_tower_q1": "0.86229364238956574322391471939856667464099003312286",
+      "total": 5551.572142831114,
+      "ame_mass_mev": 2808.39148127,
+      "cal_over_me": 0.9899691279822114,
+      "time_seconds": 0.049420833587646484
+    },
+    {
+      "atom": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "descended_full_plancherel": "0.00030975402666632226146794867558339182558611676632362",
+      "single_tower_q1": "5550.7094723497451957690049034158858420964762506752",
+      "cross_tower_q1": "0.86229364238956574322391471939856667464099003312286",
+      "total": 5551.572075746161,
+      "ame_mass_mev": 2808.92113298,
+      "cal_over_me": 0.9901558442742181,
+      "time_seconds": 0.0497126579284668
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "descended_full_plancherel": "0.000027725932551948972197174714531858201934708560678983",
+      "single_tower_q1": "7400.9459631329935943586732045545144561286350009002",
+      "cross_tower_q1": "1.7245872847791314864478294387971333492819800662457",
+      "total": 7402.670578143705,
+      "ame_mass_mev": 3727.37909409,
+      "cal_over_me": 0.98536046589585,
+      "time_seconds": 30.409932136535645
+    }
+  ],
+  "mean_cal_over_me": 0.9893256631045217,
+  "spread_percent": 0.6526413506444566,
+  "interpretation": "Hybrid per-braid mass tower with the descended trace computed via FULL Plancherel weight \u00d7 q-Hecke character (Phase A.1) instead of length-\u2264-2 2-variable Schur. Tower terms (level 1/2) still use q=1 MN."
+}
