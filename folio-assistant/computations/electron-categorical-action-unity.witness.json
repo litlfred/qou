@@ -1,90 +1,91 @@
 {
   "computation": "electron-categorical-action-unity",
-  "computedAt": "2026-05-02T22:37:13.040444+00:00",
+  "computedAt": "2026-05-02T22:47:39.677318+00:00",
   "description": "Numerical witness for prop:electron-categorical-action-unity. Demonstrates that the +1 added to Σ_all in the n→p Q-value formula is the categorical action S(T_{2,3})/m_e of the emitted electron (left trefoil), forced by CAL-0. At higher A the FP filter absorbs the +1 by selecting trefoil-positive configurations.",
   "q_0": "1.10997859555418051695830018898879867637876138498395",
-  "m_e_MeV": 0.51099895069,
-  "J_trefoil_at_q0": 0.9733701692292354,
+  "precision_dps": 50,
+  "m_e_MeV": "0.51099895069",
+  "J_trefoil_at_q0": "0.973370169229235369649690910396",
   "np_decay": {
-    "sigma_all": 0.5295037320168716,
-    "plus_one_categorical": 1.0,
+    "sigma_all": "0.529503732016871474248830146677",
+    "plus_one_categorical": 1,
     "plus_one_origin": "S(T_{2,3})/m_e = 1 by CAL-0 (electron mass = H^0 calibration unit)",
-    "Q_calc_MeV": 0.7815748021370603,
-    "Q_exp_PDG_MeV": 0.782333,
-    "rel_error": -0.0009691497903573376
+    "Q_calc_MeV": "0.781574802137060280717745560912",
+    "Q_exp_PDG_MeV": "0.782333",
+    "rel_error": "-0.000969149790357456"
   },
   "fp_filter_absorption_table": [
     {
       "A": 1,
       "n_total": 4,
       "n_fp": 2,
-      "sigma_all": 0.5295037320168716,
-      "sigma_fp": 0.27030428091250003,
+      "sigma_all": "0.529503732016871474248830146677",
+      "sigma_fp": "0.270304280912500015003481671276",
       "fp_retention": 0.5,
       "par": "n",
       "dau": "p",
-      "ratio_fp_over_all": 0.5104860732197584
+      "ratio_fp_over_all": "0.510486073219758463127825689438"
     },
     {
       "A": 2,
       "n_total": 16,
       "n_fp": 8,
-      "sigma_all": -0.3357233125749399,
-      "sigma_fp": -0.14534865016007126,
+      "sigma_all": "-0.335723312574939811545547731834",
+      "sigma_fp": "-0.145348650160071005578584965852",
       "fp_retention": 0.5,
       "par": "nn",
       "dau": "pn",
-      "ratio_fp_over_all": 0.43294178484440704
+      "ratio_fp_over_all": "0.432941784844406447979843739612"
     },
     {
       "A": 3,
       "n_total": 64,
       "n_fp": 32,
-      "sigma_all": 0.035093211913212574,
-      "sigma_fp": 0.10907859242022444,
+      "sigma_all": "0.0350932119132129149076265804398",
+      "sigma_fp": "0.109078592420225790473990312681",
       "fp_retention": 0.5,
       "par": "pnn",
       "dau": "ppn",
-      "ratio_fp_over_all": 3.108253319473343
+      "ratio_fp_over_all": "3.10825331947335102297778188916"
     },
     {
       "A": 4,
       "n_total": 256,
       "n_fp": 128,
-      "sigma_all": -0.022250285767622113,
-      "sigma_fp": 0.36000349352267613,
+      "sigma_all": "-0.0222502857676228538357414497219",
+      "sigma_fp": "0.360003493522679976816867970468",
       "fp_retention": 0.5,
       "par": "pnnn",
       "dau": "ppnn",
-      "ratio_fp_over_all": 16.179724489046404
+      "ratio_fp_over_all": "16.1797244890460365006253080776"
     },
     {
       "A": 5,
       "n_total": 1024,
       "n_fp": 512,
-      "sigma_all": 0.002325825953469862,
-      "sigma_fp": 1.5100747451677075,
+      "sigma_all": "0.00232582595347303188192319873395",
+      "sigma_fp": "1.5100747451677271122257518851",
       "fp_retention": 0.5,
       "par": "ppnnn",
       "dau": "pppnn",
-      "ratio_fp_over_all": 649.2638638393605
+      "ratio_fp_over_all": "649.263863838484136499575072344"
     },
     {
       "A": 6,
       "n_total": 4096,
       "n_fp": 2048,
-      "sigma_all": -0.001474652483764216,
-      "sigma_fp": 6.1173467706354,
+      "sigma_all": "-0.00147465248374841395839839565753",
+      "sigma_fp": "6.11734677063548243544786382993",
       "fp_retention": 0.5,
       "par": "ppnnnn",
       "dau": "pppnnn",
-      "ratio_fp_over_all": 4148.3311071501985
+      "ratio_fp_over_all": "4148.33110719470678893847150987"
     }
   ],
   "three_h_cross_check": {
-    "Q_exp_MeV": 0.01861,
-    "Q_via_sigma_all_MeV": 0.017932594463993434,
-    "Q_via_sigma_fp_MeV": 0.05573904626947688
+    "Q_exp_MeV": "0.01861",
+    "Q_via_sigma_all_MeV": "0.0179325944639936068643534408831",
+    "Q_via_sigma_fp_MeV": "0.0557390462694775664650848475173"
   },
   "closes_audit_flag": "ELECTRON-1",
   "references": [
