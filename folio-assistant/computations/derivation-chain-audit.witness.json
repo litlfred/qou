@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T06:55:18.668487+00:00",
-  "commitSha": "a9ed72110801061f6324b84572e0ea94a9d7566d",
+  "computedAt": "2026-05-02T07:21:14.096558+00:00",
+  "commitSha": "a1cc2d7931679264658d44e0dd2934f0d04204b4",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1660,6 +1660,7 @@
         "q-beta-path-a-extended.witness.json",
         "q-dirac-cell-scanner.witness.json",
         "q-pinning-50-digit.witness.json",
+        "q-pochhammer-seed.witness.json",
         "q-variant-partition-sum.witness.json",
         "qvalue-representation-theory.witness.json",
         "r-k-h4-symbolic.witness.json",
@@ -1696,6 +1697,7 @@
         "shell-level-qvalues.witness.json",
         "sigma-shell-characterization.witness.json",
         "six-term-mass-pred.witness.json",
+        "snappy-cusp-seeding.witness.json",
         "spectral-predictor-no-fit.witness.json",
         "spectral-sequence-unified-h3.witness.json",
         "std-matrix-trace-closed-form.witness.json",
