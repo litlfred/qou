@@ -416,15 +416,24 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
     demoted from `proposition` (was `prop:n-v-leading-order-derivation`).
     Three cross-references updated (`n-v-bring-action.md`,
     `n-v-tower-depth-ninety.md`, `n-v-leading-order-derivation.lean`).
-- **Pending P3.1 work** (out of scope for this pass):
-  - The remaining 17 cone members are all already typed
-    `conjecture` / `remark` / `definition` / `example`. No further
-    demotions needed at the audit-conjecture level.
-  - A document-wide sweep covering *every* open conjecture
-    (not just the §5 ten) would extend the cones doc's seed list
-    and re-run; if other open conjectures have provable cones, the
-    same case (1) / case (2) workflow applies. Estimated 0.5 day
-    once a sweep target list is decided.
+- **Extended P3.1 sweep** (2026-05-02 follow-up): extended the
+  cones analysis from the §5 ten to all **59 conjectures** in
+  `content/quantum-observable-universe/`. Findings recorded in
+  [`docs/audits/2026-05-02-p3-1-extended-sweep-findings.md`](2026-05-02-p3-1-extended-sweep-findings.md):
+  - 1 case-(2) cleanup found and fixed: `rem:knot-formula-table`
+    citing `conj:higgs-t28` in `uses[]`. Edge dropped; conjecture
+    citation moved to prose only.
+  - 18 conjectures retain non-zero violation cones via case-(3)
+    legitimate dependencies (definitions / remarks where the
+    conjecture is structurally essential to the named construction
+    or interpretation). Per CLAUDE.md §3b clarification, these are
+    **not** propagation bugs — definitions can depend on
+    conjectures with narrative flagging.
+  - Recommended follow-up (out of scope for this pass): per-block
+    acknowledgement audit over the ~3000 transitive provable
+    blocks in the 18 case-(3) cones, confirming each prose body
+    explicitly notes the conjectural upstream dependency.
+    Estimated 1–2 days.
 - **B**: blocked by nothing.
 - **S**: ✅ zero violations across the §5 audit conjectures.
 - **E**: 0.5 day actual (against the 1–2 day estimate).
