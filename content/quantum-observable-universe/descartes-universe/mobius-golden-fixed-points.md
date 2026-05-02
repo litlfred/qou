@@ -131,21 +131,17 @@ satisfies $(1+i)^2 = 2i$ and $(1+i)^4 = (2i)^2 = -4$.  Hence the
 off-diagonal entries factor as
 
 $$
-  4   =  -(1+i)^4,
+  4  =  -(1 + i)^4,
   \qquad
-  -4   =  (1+i)^4,
-  \qquad
-  4i  =  -i\,(1+i)^4,
-  \qquad
-  -4i  =  i\,(1+i)^4.
+  4i  =  -i\,(1 + i)^4.
 $$
 
-The Gaussian prime factorisation is therefore
+Sign-flipping yields the full Gaussian prime factorisation
 
 $$
-  \pm 4  =  \pm(1+i)^4 \cdot (\text{unit}),
+  \pm 4  =  \mp\,(1+i)^4,
   \qquad
-  \pm 4i  =  \pm i\,(1+i)^4 \cdot (\text{unit}),
+  \pm 4i  =  \mp i\,(1+i)^4,
 $$
 
 with $(1+i)$ the Gaussian prime above the rational prime $2$.  The
