@@ -145,6 +145,18 @@ if __name__ == "__main__":
             "n=9":  sigma_table[3][1],
             "n=12": sigma_table[4][1],
         },
+        # P2.5: symbolic-q forms of the σ_n3A sums above.  Each
+        # entry is a string ℚ(q)-Laurent expression for
+        # Σ_{λ ⊢ n} 1/dim_q(λ).  The numerical *_at_q0* values
+        # above are obtained by .subs(q, q_0).evalf(30) on these
+        # symbolic forms; the symbolic form is the algebraic
+        # truth and the numerical value is its specialisation.
+        "sigma_inv_dim_q_polynomial_q": {
+            "n=3":  str(sp.simplify(sigma_table[1][0])),
+            "n=6":  str(sp.simplify(sigma_table[2][0])),
+            "n=9":  str(sp.simplify(sigma_table[3][0])),
+            "n=12": str(sp.simplify(sigma_table[4][0])),
+        },
         "rows": rows,
     }
     out_path = Path(__file__).parent / "probe-term4-conventions.witness.json"

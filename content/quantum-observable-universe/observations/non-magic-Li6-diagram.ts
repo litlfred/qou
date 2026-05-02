@@ -3,19 +3,19 @@ import { example } from "../../schema/builders";
 export default example({
   label: "ex:non-magic-Li6-diagram",
   title:
-    "Non-magic ${}^{6}\\mathrm{Li}$ — unbalanced arms and topological flux",
+    "Non-magic illustration: $^{6}\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)",
   interprets: "conj:diagrammatic-double-magic-lr-fusion",
   uses: [
-    "conj:categorical-neutrality-saturated-shells",
     "conj:diagrammatic-double-magic-lr-fusion",
-    "conj:homological-shell-condensation",
+    "conj:categorical-neutrality-saturated-shells",
+    "prop:magic-numbers-from-q",
   ],
   tags: [
-    "young-diagram",
     "magic-numbers",
-    "lithium-6",
     "non-magic",
-    "topological-flux",
-    "illustration",
+    "lithium-6",
+    "frayed-blocks",
+    "full-twist-flux",
+    "diagram",
   ],
 });

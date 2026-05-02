@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T07:21:14.096558+00:00",
-  "commitSha": "a1cc2d7931679264658d44e0dd2934f0d04204b4",
+  "computedAt": "2026-05-02T11:33:13.146718+00:00",
+  "commitSha": "cd64342306f1b49bd20dfde857d9b7d9044f1cb1",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1416,6 +1416,7 @@
         "chi-sym-alt-closed-form.witness.json",
         "chirality-convergence-bound.witness.json",
         "chirality-variants-probe.witness.json",
+        "colored-pair-energy-alignment.witness.json",
         "combined-tower-isotope-sweep.witness.json",
         "comparison-table.witness.json",
         "compound-beta-shell.witness.json",
@@ -1533,6 +1534,7 @@
         "jet-level-geometric-series.witness.json",
         "jet-lifted-hecke.witness.json",
         "jet-stratified-benchmark.witness.json",
+        "jet-tower-delta-max.witness.json",
         "jet-tower-proton-explore.witness.json",
         "joint-tower-sdp-h3.witness.json",
         "joint-tower-sdp-h6-h9.witness.json",
@@ -1615,6 +1617,7 @@
         "odd-a-census-search.witness.json",
         "odd-a-decomposition-search.witness.json",
         "p-n-error-isolate.witness.json",
+        "p2-5-symbolic-q-audit.witness.json",
         "pair-factorisation-probe.witness.json",
         "pair-production-nf.witness.json",
         "pair-production.witness.json",
@@ -1752,6 +1755,7 @@
         "v-hat-gram-projection-probe.witness.json",
         "v-hat-pair-ratio.witness.json",
         "validate-isotope-nf-stability.witness.json",
+        "wall-violations-sweep.witness.json",
         "wall-violations.witness.json",
         "wedderburn-3term-avg-baseline.witness.json",
         "wedderburn-3term-inter-only.witness.json",

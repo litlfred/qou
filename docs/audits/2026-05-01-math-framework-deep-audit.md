@@ -22,9 +22,13 @@ classical-limit map. Anything stated in ℂ-analytic / hyperbolic /
 Archimedean language (volumes, hyperbolic moduli, SnapPy shapes,
 SW thimble integrals, Kashaev limits, Mostow rigidity, etc.) lives
 on the **right** side of τ. The mass tower must be derivable in
-$\mathbb{Q}(q) \otimes_{\mathbb{Q}} \mathbb{R}_{\text{cal}}$ — a
-Laurent ring in $q$ tensored with one external scale (calibrated;
-see §3·E). Anything else is a wall violation and is flagged.
+$\mathbb{Q}(q_0)$ scaled by **categorically exactly three**
+external calibration inputs — $m_e$ ($H^0$, mass scale),
+$m_\mu / m_e$ ($H^1$, fixes $q_0$), and $Q_\beta$ ($H^2$, weak
+sector) — aligned to three (co)homological degrees. See
+[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
+Anything else (a fourth dimensional input, or an Archimedean
+input as a derivation source) is a wall violation and is flagged.
 
 **The wall applies to proofs as well as statements.** A proof that
 asserts X∈R via "by Mostow rigidity" or "by hyperbolic volume
@@ -62,7 +66,7 @@ above**.
 | 5 | Cyclic / Reeb categorical action $\mathcal{S}_{\text{Reeb}}$ | [categorical-reeb-derivation](../../content/quantum-observable-universe/algebraic-substrate/categorical-reeb-derivation.md) | 🟢 derives | none |
 | 6 | Non-abelian Stokes / motivic-Galois descent (the "descent involution" $\hat\tau_n$) | [motivic-galois-character](../../content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.md), [descent-involution](../../content/quantum-observable-universe/lifting-and-descent/descent-involution.md) | 🟡 axiomatic class (per CLAUDE.md §3b) — `motivic-perpetual-obstruction` is the obstruction class | **GAP 6a** — concrete `instance` for the QOU substrate at $q_0$ is missing; `family-4-motivic-path.md` flags it as research-grade |
 | 7 | Cosimplicial crossed-groupoid / descent condition / global gluing | [cosimplicial-crossed-groupoid](../../content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.md), [descent-condition](../../content/quantum-observable-universe/lifting-and-descent/descent-condition.md), [global-gluing](../../content/quantum-observable-universe/lifting-and-descent/global-gluing.md) | 🟢 derived | none |
-| 8 | JSJ decomposition of confined hadron knots (algebraic statement) | [phi-q-tower-jsj-bridge](../../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md) | 🟡 conjecture (`conj:phi-q-tower-jsj-bridge`) | **🔴 GAP 8a (wall risk)** — the JSJ statement reads as topological/3-manifold; the algebraic-side reformulation must be in terms of Hecke-tower filtration, not 3-manifold pieces |
+| 8 | JSJ decomposition of confined hadron knots (algebraic statement) | [phi-q-tower-jsj-bridge](../../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.md) | 🟡 conjecture (`conj:phi-q-tower-jsj-bridge`) | 🟢 (P0.3 closure) — the *algebraic JSJ* is now stated explicitly as the $J^\bullet$-graded stratification of $H_n(q)$ by depth, with no 3-manifold language used in the algebraic-side derivation. The geometric JSJ is identified under $\tau_{\mathrm{arch}}$ as the conjectural content. Dilog-branch sibling `pl-jsj-mass-integration-equivalence` will receive the same recast when that branch lands on `main`. |
 | 9 | Chern–Simons / Jones–Wenzl idempotents in $H_n(q)$ | [skein-generation](../../content/quantum-observable-universe/braids-and-knots/skein-generation.md) (Hecke-Skein dictionary), `wedderburn-mass-formula`, `markov-pair-z2` | 🟢 the JW idempotents themselves are 🟢; their use as block projectors in $H_n(q)$ is 🟢 | none — the CS-side statement (TQFT path-integral interpretation) lives at τ |
 | 10 | Wedderburn–Artin block decomposition $H_n(q) = \bigoplus_\lambda M_{f_\lambda}(\mathbb{Q}(q))$ | [wedderburn-mass-formula](../../content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.md), [wedderburn-bratteli-recursion](../../content/quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.md) | 🟢 mass formula, 🟡 recursion (2 sorries at higher levels per [derivation-chain-mass-tower](derivation-chain-mass-tower.md)) | none |
 | 11 | Schur–Weyl (Hecke ↔ $U_q(\mathfrak{sl}_2)$) — Hoefsmit seminormal form | [hoefsmit-scattering-pipeline](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md), [explicit-alpha-k-h3](../../content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h3.md) | 🟢 derived (compute backbone — `hecke_characters.py`, `hoefsmit_witness.json`) | none |
@@ -90,53 +94,45 @@ identified across content and compute. Each row says *what* is
 fitted, *where* it enters, and *what derivation is needed* to
 remove the fit.
 
-### §2·A — Calibration inputs (exactly three, aligned to Wedderburn / cohomology)
+### §2·A — Tier-1 calibrations (three external inputs aligned to (co)homology)
 
-**Correction (per [`2026-05-01-calibration-inputs-addendum.md`](2026-05-01-calibration-inputs-addendum.md)).**
-The paper's
-[`rem:calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md)
-declares **exactly three** calibration inputs, aligned to the three
-Wedderburn channels of $H_3(R, q)$ (the three-parameter on-shell
-quotient per
-[`prop:three-parameters-wedderburn`](../../content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.md)).
-Beyond these three, **no fittings, no empirical** inputs are
-permitted.
+The QOU framework allows **categorically exactly three** external
+calibration inputs, aligning to three distinct (co)homological
+degrees of the substrate sheaf
+([`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
 
-| ID | Quantity | What it fixes | Sector |
-|----|----------|--------------|--------|
-| **CAL-1** | $m_e = 0.51099895\ldots$ MeV | leptonic mass scale (MeV ↔ natural units) | leptonic size |
-| **CAL-2** | $m_\mu / m_e = 206.7682830$ | substrate parameter $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | dimensionless ratio (shape) |
-| **CAL-3** | $Q_\beta(n) = 0.78233341$ MeV | hadronic energy scale $E_0$ | hadronic interaction strength |
+| ID | Calibration | (Co)homology | Role |
+|----|-------------|--------------|------|
+| **CAL-0** | $m_e$ (CODATA) | $H^0$ | Mass scale |
+| **CAL-1** | $m_\mu / m_e$ (CODATA) | $H^1$ | Fixes substrate parameter $q_0$ |
+| **CAL-2** | $Q_\beta$ (PDG) | $H^2$ | Weak / beta-decay sector |
 
-🟢 **All three are approved calibrations.** No demotion required;
-no ambiguity. The earlier framing ("one external scale" with $q_0$
-flagged as a hidden second calibration) was an undercount: the
-paper has been correct on the count of three all along.
+🟢 **Status.** This is the *declared, honest* calibration budget.
+The earlier "one calibration" framing of this audit was wrong;
+the corrected discipline is now codified in
+[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
+Any **fourth** external input is a hard audit failure.
 
-🟠 **Action (clarification, not fix).** Promote the
-existing remark `rem:calibration-inputs` (or its content) to a
-named proposition `prop:three-calibration-inputs` that the paper-wide
-sweep cites for every numerical comparison. The proposition's
-content: every mass / Q-value / binding energy is a $\mathbb{Q}(q_0)$-element
-times a fixed combination of $m_e$ and $Q_\beta(n)$, with $q_0$
-itself fixed by $m_\mu/m_e$. No other numerical inputs.
+### §2·B — Tier-2: substrate parameter $q_0$ classification
 
-### §2·B — Substrate parameter status (informational)
+🟢 **Status (post-§2·A correction).** $q_0$ is the $H^1$ calibration.
+It is **not** a fitted parameter beyond the three-input budget; it
+is *the* $H^1$ input, fixed by the lepton mass ratio $m_\mu/m_e$.
+The 50-digit numerical value used in compute scripts (e.g.
+`q_pinning_50_digit.py`) is a faithful expansion of that single
+$H^1$ calibration — not a separate fit.
 
-$q_0 = 1.10998\ldots$ is fixed by **CAL-2** (the dimensionless
-calibration $m_\mu/m_e$). Per §2·A, this is one of the three
-authorised calibrations — not a hidden second calibration. The
-50-digit pinning script `q_pinning_50_digit.py` and the substrate
-uncertainty floor $\delta q$ from CODATA $m_\mu/m_e$ both implement
-CAL-2 numerically.
+| ID | Quantity | Status |
+|----|----------|--------|
+| **SUB-1** | $q_0 = 1.10998\ldots$ | 🟢 The $H^1$ calibration of [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). The earlier "second calibration" framing has been retired by §2·A. |
 
-🟢 **Optional upgrade (not a fix).** If the
-`q-from-epsilon → substrate-parameter-unique → vacuum-substrate-compatibility`
-conjecture chain (currently 🟡 in algebraic-substrate) closes, $q_0$
-becomes determined algebraically and CAL-2 reduces to a *cross-check*
-rather than a calibration. The paper's published position
-(three-calibration scheme with CAL-2 as input) remains correct
-either way.
+🟢 **Action.** None on the calibration-discipline side. A
+nice-to-have follow-up (workplan **P3.x**, was P1.1(a)) is to close
+the categorical chain `q-from-epsilon → substrate-parameter-unique
+→ vacuum-substrate-compatibility` so that $q_0$'s value can be
+*cross-checked* against multiple sectors (strong, EM, weak) — but
+each cross-check re-determines the same $H^1$ datum, not an
+additional input.
 
 ### §2·C — BW-formula coefficients (BW-8 + BW-11 RESOLVED)
 
@@ -245,48 +241,44 @@ below) or (b) a genuine higher Massey-product correction. The latter
 is a real algebraic statement that can be derived from the GS spectral
 sequence, *not* a fit.
 
-### §2·F — Neutrino mass — RESOLVED
+### §2·F — Neutrino mass
 
-**Resolution.** The neutrino IS the unknot (trivial braiding,
-zero crossings) per the paper's own knot-particle dictionary
-([`knot-particle-dictionary.md`](../../content/quantum-observable-universe/braids-and-knots/knot-particle-dictionary.md):
-"Unknot $T_{1,0}$ ($0_1$) — Neutrino $\nu$ — 0 — 0 — Trivial
-braiding; vacuum drag";
-[`knot-particle-generation.md`](../../content/quantum-observable-universe/braids-and-knots/knot-particle-generation.md):
-"$T_{1,0}$ — Unknot $0_1$ — 0 — 0 — Neutrino (trivial braiding)";
-[`recursive-atom-knot-atlas.md`](../../content/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.md)
-line 127: "Neutrino $\nu$ (vacuum-drag particle, no mass)").
-
-The categorical mass of the unknot is $\mathfrak{m}(\mathbf{1}) = 0$
-by definition (Markov trace of the identity element vanishes for
-the mass-endomorphism formula). The neutrino has **no mass** in
-the framework — there is nothing to derive.
+The neutrino is the **unknot** $K_{0_1}$
+([neutrino-knot](../../content/quantum-observable-universe/descartes-universe/neutrino-knot.md)):
+zero crossings, $J_\nu(q) = 1$, trivial Markov trace, **bare-knot mass = 0**. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$ via
+vacuum drag ([mass-identity](../../content/quantum-observable-universe/quantum-observable-universes/mass-identity.md))
+— not via knot topology. So there is **nothing to fit on the
+algebraic side** for the neutrino: the bare prediction is exactly
+zero from a categorical perspective.
 
 | ID | Status |
 |----|--------|
-| **NU-1** | 🟢 **Resolved.** Neutrino = unknot = mass 0 by categorical definition. Earlier "wrong by 10⁶" claim was a confusion between the GS-reduction coefficient on $\mathbf{1}$ (a sector index, *not* a mass) and the categorical mass of the resulting particle. The paper has been correct on neutrino-as-unknot all along. |
+| **NU-1** | 🟢 Categorical prediction: $J_\nu = 1$, bare mass 0; observed mass = vacuum-drag correction. The previously circulating "wrong by 10⁶" claim ([DERIVATION-STATUS.md historical line 182](../../folio-assistant/computations/DERIVATION-STATUS.md)) was a neutron/neutrino confusion (comparing $m_\nu$ against $m_n$ ≈ 940 MeV) and is **withdrawn** in this audit pass. |
 
-🟢 **Action.** Replace any "neutrino mass = X" output in compute
-with the categorical statement
-$\mathfrak{m}(\nu) = \mathfrak{m}(\mathbf{1}) = 0$. Update
-[`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
-to remove the "wrong by 10⁶" item (done in this branch).
+🟢 **Action.** None on algebraic side. Any caller that treats the
+neutrino as a knot-derived mass is wrong by construction (unknot
+contributes zero crossings to the tower). Audit pass §P1.6 in the
+workplan is recast accordingly: it is now a *consistency check*
+that no compute path quotes a "neutrino mass = X MeV" derived from
+the Markov-trace pipeline — only from vacuum drag.
 
 ### §2·G — Compound-shell / shell-closure calibration
 
-`compound-beta-shell-calibration.md` (the file name contains
-*calibration*). Inspection needed — listed in the workplan §P1.4.
+`compound-beta-shell-calibration.md`. Audited in
+[2026-05-01-p1-5-compound-shell-audit.md](2026-05-01-p1-5-compound-shell-audit.md).
 
 | ID | Status |
 |----|--------|
-| **SHELL-1** | 🟡 **Resolved.** Block-name misnomer (file is `compound-beta-shell-calibration.md` but content is genuinely a derivation chain). AME data enters as Q-value measurements consumed by the CAL-3-anchored hadronic scale, not as fitted parameters. The recursive atom-knot atlas has explicit tag categories that mark provisional / quarantined entries (⁶Li, ⁷Li); base cases for ²H, ³H, ³He are GB-NF-pending but not AME-fitted. See [base-cases audit](2026-05-01-base-cases-audit.md). |
+| **SHELL-1** | 🟢 The "calibration" in the block name is the $H^2$ calibration $E_0 = Q_\beta = 0.782$ MeV — the third entry of [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). Shell binding values are *derived* from chain Q-values + level-3 shadow prices, not fitted. Block language updated to reference the three-calibration discipline; no fourth calibration introduced. |
 
-### §2·H — `compound-` / `recursive-atom-knot-atlas` parameters
+### §2·H — `recursive-atom-knot-atlas` parameters
 
-The atlas (`recursive-atom-knot-atlas.md`) claims compositional
-recursion across A. If the recursion's base cases are AME-fitted
-rather than algebraically derived, the recursion *propagates* a
-fit. To verify in §P1.5.
+🟢 Audited (P1.5). The atlas already self-quarantines volume-match
+identifications under a `deprecated-volume-match` tag and splits
+its table into `principled-derivation` / `principled-gb-nf` /
+`magic-A-formula` / `recursive-on-⁴He` / `manual-historical-volume-match`
+sections. **No action needed.** See
+[2026-05-01-p1-5-compound-shell-audit.md](2026-05-01-p1-5-compound-shell-audit.md).
 
 ---
 
@@ -420,11 +412,20 @@ is provable. The audit value: list each open conjecture and its
 | `conj:shared-denominator-cusp-holonomy` | thimble integration domain identification | Same as above |
 | `conj:denominator-zeros-as-sw-critical-points` | τ-image identification for SW critical points | τ-image picture loses precision; algebraic side unaffected |
 | `conj:motivic-perpetual-obstruction` (no concrete `instance` at $q_0$) | Hecke-tower descent, GB filtration finiteness | Compute remains, formal-substrate identification weakens |
-| `conj:hahn-substrate` (algebraic-substrate appendix surreals) | Correction terms beyond archimedean fit | Lower-order tower predictions unchanged |
-| `conj:vacuum-epsilon` | Vacuum-energy normalization | Cosmological-endpoint blocks lose interpretation |
-| `conj:bigbang-heatdeath` | Cosmological endpoints | Same |
-| `conj:jones-birthday` | Birthday-refinement of knot invariants | Pure refinement; baseline Jones unchanged |
-| `conj:kashaev-surreal` | Volume conjecture in surreal coefficients | Bridge to ℂ-side weakens |
+
+**Forward-looking labels removed (2026-05-02 cleanup).** The
+original §5 listed five additional conjectures —
+`conj:hahn-substrate`, `conj:vacuum-epsilon`,
+`conj:bigbang-heatdeath`, `conj:jones-birthday`, and
+`conj:kashaev-surreal` — that anticipated future content but were
+never authored as content blocks. Each was a placeholder for "if
+we ever need this, it would be conjectural" rather than a load-
+bearing dependency in the algebraic-side derivation chain. With
+none of them present in the codebase
+([cones-doc audit](conjecture-cones.md) reports cone-size 0 for
+each) and no concrete failure-consequence in the §1 derivation
+chain, they are dropped from §5. They can be re-added if and
+when the corresponding content is authored.
 
 🟠 **Action.** Every block that depends transitively on these
 conjectures must be a `conjecture` per CLAUDE.md §3b conjectural
@@ -470,17 +471,16 @@ prediction at level $A$ requires:
 9. 🟢 **All non-calibration empirical/fitting flags resolved.**
    MAG-1 closed via PR #500 framework + numerical verification at
    $\{2, 8, 20, 28\}$ (every self-conjugate partition of $3Z$ has
-   $\kappa_\lambda = 0$); the upper $\{50, 82, 126\}$ verification
-   is a queued compute follow-up (partition enumeration at
-   $n = 150, 246, 378$ — same script extends with longer runtime).
-   The conjectural piece (BB-collapse → magic ladder, not just
-   κ-zero) is `conj:homological-shell-condensation`.
+   $\kappa_\lambda = 0$); PR #499 extends the verification to
+   $\{50, 82\}$. Only $Z = 126$ ($n = 378$ enumeration) is queued
+   compute follow-up. The conjectural piece (BB-collapse → magic
+   ladder, not just κ-zero) is `conj:homological-shell-condensation`.
    ALPHA-2 resolved (live $1/\alpha = 45[3]_q(1+\delta_{CS}+8q\delta_{CS}^2)$
    at 6.7 ppb, well within CODATA 21 ppb). BW-8 + BW-11 resolved
    via cherry-picked Wenzl-bridge content. NU-1 resolved (neutrino
    = unknot = 0 mass). SHELL-1 resolved. The three approved
-   calibrations (CAL-1 / CAL-2 / CAL-3) named in a single
-   `prop:three-calibration-inputs` block; all numerical
+   calibrations (CAL-0 / CAL-1 / CAL-2) named in
+   `prop:three-calibration-discipline`; all numerical
    predictions cite it.
 10. ❌ Magic-number derivation from Bring (currently asserted but
     not derived).

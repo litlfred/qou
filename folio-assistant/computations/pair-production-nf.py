@@ -308,6 +308,24 @@ def nf_to_json(nf_dict, net):
     out["_net"] = net
     return out
 
+
+def nf_to_symbolic_q_form(nf_dict):
+    """Capture symbolic ℚ(q) coefficients of NF terms (P2.5).
+
+    Each Gröbner--Shirshov NF term carries a sympy expression in
+    q_sym; this returns the simplified algebraic-side polynomials
+    in q alongside the numerical at-q_0 values exposed elsewhere.
+    """
+    out = {}
+    for w, c in sorted(nf_dict.items(), key=lambda x: (len(x[0]), x[0])):
+        key = "identity" if not w else "".join(f"s{g}" for g in w)
+        out[key] = {
+            "word": ws(w),
+            "particle": pn(w),
+            "coefficient_polynomial_q": str(sp.simplify(c)),
+        }
+    return out
+
 witness = {
     "name": "pair-production-nf",
     "description": (
@@ -335,6 +353,33 @@ witness = {
     "nf_gamma2": nf_to_json(nf_gamma2,   net_gamma2),
     "nf_eminus": nf_to_json(nf_eminus,   net_eminus),
     "nf_eplus":  nf_to_json(nf_eplus,    net_eplus),
+    # P2.5: symbolic ℚ(q) forms of the Gröbner--Shirshov NF
+    # coefficients.  Each NF term is a sympy expression in
+    # q_sym = sp.Symbol('q', positive=True); the at_q0 values
+    # above are obtained by .subs(q, q_0) on these symbolic
+    # forms.  The symbolic form is the algebraic truth; the
+    # numerical value is its specialisation.  Sample particle
+    # is e⁻ (trefoil σ₀σ₁σ₀) — the same reduce_verbose path
+    # generates the symbolic NF for γ, γγ, e⁺ as well.
+    "symbolic_q_form": {
+        "engine": "sympy",
+        "q_symbol": "q (sp.Symbol('q', positive=True))",
+        "h_symbol_definition": "h = q - 1/q  (Hecke parameter)",
+        "sample_particle": "e_plus",
+        "nf_eplus_polynomials_q": nf_to_symbolic_q_form(nf_eplus),
+        "nf_gamma2_polynomials_q": nf_to_symbolic_q_form(nf_gamma2),
+        "note": (
+            "Symbolic ℚ(q) NF coefficients after Gröbner--Shirshov "
+            "reduction.  e⁺ = σ₀⁻¹σ₁⁻¹σ₀⁻¹ (mirror trefoil) and "
+            "γγ = σ₀² are exposed because their NFs carry "
+            "non-trivial Laurent polynomial coefficients in q "
+            "(via σᵢ⁻¹ → σᵢ − (q−q⁻¹) and σᵢ² → (q−q⁻¹)σᵢ + 1).  "
+            "e⁻ = σ₀σ₁σ₀ is already in NF (coefficient 1) and is "
+            "available numerically in nf_eminus.  Numerical values "
+            "at q_0 for every term are in nf_gamma / nf_gamma2 / "
+            "nf_eminus / nf_eplus above."
+        ),
+    },
     "energy_budget": {
         "net_eminus":          net_eminus,
         "net_eplus":           net_eplus,

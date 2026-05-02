@@ -232,6 +232,28 @@ if __name__ == "__main__":
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "q_0": float(Q0),
         "alpha_MeV": ALPHA_MEV,
+        # P2.5: sympy-as-matrix-stepping-stone pattern.  This script
+        # uses sp.Symbol('q') only inside chi_matrix_trace to build
+        # Hoefsmit seminormal matrices ρ_λ(σ_i) ∈ Mat(ℚ(q)); each
+        # matrix is then immediately specialised at q = q_0 and the
+        # downstream products / traces run in numpy.  Per-trace
+        # χ_λ(β_atom) values are numerical specialisations, not
+        # Laurent polynomials in q, because sympy doesn't scale for
+        # the block-matrix products on partitions of n up to 9.
+        "symbolic_q_form": {
+            "engine": "sympy (matrix construction only) + numpy",
+            "q_symbol": "q (sp.Symbol('q'))",
+            "pattern_note": (
+                "sympy-as-matrix-stepping-stone: ρ_λ(σ_i) ∈ "
+                "Mat_{d_λ × d_λ}(ℚ(q)) is symbolic in chi_matrix_trace; "
+                "the per-element subs(q, q_val) step eagerly converts "
+                "to numpy before computing products.  Per-trace "
+                "χ_λ(β_atom) values reported here are numerical "
+                "specialisations at q = q_0, not Laurent polynomials in q."
+            ),
+            "symbolic_source": "hecke_characters.build_seminormal_matrices",
+            "specialisation_point": "q = q_0",
+        },
         "atoms": all_results,
     }
     out = Path(__file__).parent / "std-matrix-trace-closed-form.witness.json"

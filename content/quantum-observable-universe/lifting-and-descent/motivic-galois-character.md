@@ -43,7 +43,7 @@ $H^2(\mathcal{S}, \mathbb{G}_m)$.*
 $\kappa_n$ at every level $n$) means the perpetual obstruction
 phenomenon ([Kummer tower](#rem:kummer-tower)) becomes a single
 non-vanishing statement about the character — see
-[motivic perpetual obstruction](#lem:motivic-perpetual-obstruction)
+[motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
 — rather than a per-level Čech-cocycle non-vanishing argument.
 The Čech-cocycle / Hochschild presentations of $\kappa_n$ become
 **realizations** of $\chi^{\mathrm{mot}}_A$ at the archimedean place

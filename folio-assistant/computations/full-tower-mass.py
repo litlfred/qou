@@ -87,14 +87,31 @@ print()
 
 results = []
 errs = []
+# Capture symbolic V̂ expressions for the first isotope (H) — these
+# document the algebraic form before substituting q = q_0. Per
+# P2.5 audit: every witness JSON should expose both the symbolic
+# polynomial-in-q form and the numerical value at q_0.
+symbolic_vhat_H: list[dict] | None = None
 for Z, N, sym, M_obs in isotopes:
     A = Z + N
     ordering = ground_state(Z, N)
     M_free = Z*M_P_MEV + N*M_N_MEV + Z*M_E_MEV
     B_obs = M_free - M_obs
     B_s = B_d = B_a = 0.0
+    if sym == "D":
+        symbolic_vhat_H = []
     for i in range(A-1):
         vs, vd, va = per_gen_volumes(i, ordering)
+        if symbolic_vhat_H is not None and sym == "D":
+            symbolic_vhat_H.append({
+                "generator_idx": i,
+                "V_sym_polynomial_q": str(sp.simplify(vs)),
+                "V_std_polynomial_q": str(sp.simplify(vd)),
+                "V_alt_polynomial_q": str(sp.simplify(va)),
+                "V_sym_at_q0": float(vs.subs(q_sym, q0)),
+                "V_std_at_q0": float(vd.subs(q_sym, q0)),
+                "V_alt_at_q0": float(va.subs(q_sym, q0)),
+            })
         B_s += ln_Phi_q(abs(float(vs.subs(q_sym, q0))))
         B_d += ln_Phi_q(abs(float(vd.subs(q_sym, q0))))
         B_a += ln_Phi_q(abs(float(va.subs(q_sym, q0))))
@@ -111,5 +128,26 @@ print(f"\nMean |err|: {np.mean(errs):.3f}%  Max: {max(errs):.3f}%")
 w = {"computation":"3-channel-tower","timestamp":datetime.now(timezone.utc).isoformat(),
      "q0":q0,"w_sym":w_sym,"w_std":w_std,"w_alt":w_alt,"derived":True,
      "formula":"B = Σ_λ w_λ m_e Σ_i ln|Φ_q(V̂_i^λ)|",
+     # P2.5: symbolic V̂_i polynomials in q, evaluated at q_0 only
+     # at the final reporting step (per docs/audits/2026-05-02-
+     # p2-5-symbolic-q-audit.md). Sample isotope H is sufficient
+     # to expose the algebraic structure; the same per_gen_volumes
+     # function generates the symbolic form for every isotope.
+     "symbolic_q_form": {
+         "engine": "sympy",
+         "q_symbol": "q (sp.Symbol('q', positive=True))",
+         "z_symbol_definition": "z = 1 / (sqrt(q) + 1/sqrt(q))",
+         "h_symbol_definition": "h = q - 1/q",
+         "sample_isotope": "D",
+         "vhat_polynomials": symbolic_vhat_H,
+         "note": (
+             "Per-generator V̂ polynomials in q for the first "
+             "non-trivial isotope (D, A = 2 with 1 generator). "
+             "The same per_gen_volumes function generates the "
+             "symbolic form for every isotope; only D is exposed "
+             "here to keep the witness JSON compact. Numerical "
+             "values at q_0 are below in `results`."
+         ),
+     },
      "results":results,"mean_err":float(np.mean(errs)),"max_err":float(max(errs))}
 json.dump(w, open("full-tower-mass.witness.json","w"), indent=2, default=str)

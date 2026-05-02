@@ -3,17 +3,18 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:phi-n-global-section",
   title:
-    "$\\Phi_n$ as a global section of the categorical mass endomorphism (locality dropped)",
+    "$\\Phi_n$ as the global section of the categorical mass functor",
   interprets: "conj:mass-endomorphism",
   uses: [
     "conj:mass-endomorphism",
     "conj:categorical-neutrality-saturated-shells",
+    "def:hecke-mass-element",
   ],
   tags: [
+    "categorical-mass",
     "global-section",
-    "locality",
-    "rigid-monoidal",
-    "ribbon-operator",
-    "topological-flux",
+    "ribbon-flux",
+    "framing",
+    "interpretation",
   ],
 });

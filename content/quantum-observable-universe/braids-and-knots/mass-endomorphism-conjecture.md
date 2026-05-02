@@ -22,6 +22,54 @@ problem** is computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly
 $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific
 braid words.
 
+## Scope: convenience target, not load-bearing
+
+A note on what this conjecture **is** and **is not** about, added
+2026-05-02 after the P3.1 conjectural-propagation audit:
+
+- **Load-bearing claim** (already proved, *not* part of this
+  conjecture): the categorical mass equals the infinite-series sum
+
+  $$
+    \mathfrak{m}(\varrho)
+    \;=\;
+    \bigl|\mathrm{tr}_M(\rho(\beta))\bigr|
+    \;+\; \sum_{n \ge 0}\!\Bigl(
+      \textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|)
+      + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)
+    \Bigr).
+  $$
+
+  This is
+  [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) +
+  [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower);
+  it does **not** depend on the closed-form conjecture below.
+  Every algebraic-side downstream block whose actual derivation
+  uses the mass tower can route through the infinite series.
+
+- **Convenience target** (the conjectural content of THIS block):
+  the existence of a *single* element
+  $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ — a finite-rank Hecke
+  element — whose Markov trace gives the full categorical mass.
+  This would make the infinite series collapse to a closed-form
+  evaluation. Useful for symbolic computation; not required for
+  the structure of any paper-side derivation.
+
+If this conjecture **fails** (no closed-form $\Phi_{\mathrm{mass}}$
+exists in finite-rank $H_n(R, q)$), the algebraic-side mass formula
+remains valid as the infinite series. Compute scripts that try to
+materialise $\Phi_{\mathrm{mass}}$ as a single element would have
+to truncate explicitly; those that only ever evaluate the infinite
+sum at $q_0$ (the dominant case) are unaffected.
+
+The failure consequence column in
+[`docs/audits/conjecture-cones.md`](../../../docs/audits/conjecture-cones.md)
+already records this scope correctly: "tower formula remains
+correct as an *infinite series*; the closed form is just a
+convenience". This section spells out the distinction in the
+conjecture's own prose, in line with the user's clarifying
+question (2026-05-02).
+
 ## Statement
 
 **Conjecture (explicit mass endomorphism).**

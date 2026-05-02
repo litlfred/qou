@@ -1,66 +1,103 @@
-**Non-magic case**: ${}^{6}\mathrm{Li}$ has $Z = N = 3$, neither on
-the magic ladder. Both diagrams have Frobenius arms strictly longer
-than their legs (or vice versa), so neither is self-conjugate. The
-LR fusion fails the rigidity hypothesis and the dominant composite
-$\lambda_A$ inherits substantial $\kappa$-imbalance, producing
-non-zero topological flux that is not annihilated algebraically and
-must be absorbed by higher-jet-order corrections from the Yekutieli
-brane tower.
+$^{6}\mathrm{Li}$ ($Z = N = 3$, $A = 6$) is the canonical
+**non-magic** test case: neither proton nor neutron count lies in
+$\mathfrak{M}$. This example illustrates the partition-level
+diagrammatic content of the double-magic LR-fusion conjecture
+([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
+in the regime where *both* blocks are frayed, the categorical
+mass at each level spreads over multiple non-self-conjugate
+partitions, and the LR fusion produces non-zero **full-twist flux
+vectors** in both the $Z$ and $N$ tensor factors.
 
-```tex
-\begin{tikzpicture}[scale=0.5, every node/.style={font=\footnotesize}]
-  % Proton block: 3 boxes, partition (2,1) — arms longer than legs
-  \begin{scope}[shift={(0,0)}]
-    \draw[thick, fill=blue!10] (0,1) rectangle (1,2);
-    \draw[thick, fill=blue!10] (1,1) rectangle (2,2);
-    \draw[thick, fill=blue!10] (0,0) rectangle (1,1);
-    % flux vector from the asymmetric arm
-    \draw[->, very thick, red!70!black] (2.1,1.5) -- (3.4,2.0)
-      node[right]{flux};
-    \node at (1,-0.7) {$\lambda_Z\,\;(Z=3)$};
-  \end{scope}
+## $Z$-block (frayed)
 
-  % Neutron block: 3 boxes, identical (2,1) shape
-  \begin{scope}[shift={(5,0)}]
-    \draw[thick, fill=red!10] (0,1) rectangle (1,2);
-    \draw[thick, fill=red!10] (1,1) rectangle (2,2);
-    \draw[thick, fill=red!10] (0,0) rectangle (1,1);
-    \draw[->, very thick, red!70!black] (2.1,1.5) -- (3.4,2.0)
-      node[right]{flux};
-    \node at (1,-0.7) {$\lambda_N\,\;(N=3)$};
-  \end{scope}
+The proton count $Z = 3$ is not magic. The categorical mass at
+level $3$ is *not* concentrated on a single self-conjugate
+partition; instead the Wedderburn support spans
 
-  % LR-fusion arrow
-  \draw[->, thick] (10,1) -- (11.5,1) node[midway, above]{LR fusion};
+$$
+  \lambda \in \{(3),\, (2, 1),\, (1, 1, 1)\} \;\vdash\; 3,
+$$
 
-  % Composite: shattered into asymmetric skew components, prominent flux
-  \begin{scope}[shift={(12.5,-0.5)}]
-    \draw[thick, fill=violet!10] (0,2) rectangle (1,3);
-    \draw[thick, fill=violet!10] (1,2) rectangle (2,3);
-    \draw[thick, fill=violet!10] (0,1) rectangle (1,2);
-    \draw[thick, fill=violet!10] (1,1) rectangle (2,2);
-    \draw[thick, fill=violet!10] (0,0) rectangle (1,1);
-    \draw[thick, fill=violet!40, dashed] (2,1) rectangle (3,2);
-    % large flux vector — non-zero kappa
-    \draw[->, ultra thick, red!70!black] (3.2,2.0) -- (5.0,2.8)
-      node[right]{$\kappa_{\lambda_A}\neq 0$};
-    \draw[->, ultra thick, red!70!black] (3.2,1.0) -- (5.0,0.4)
-      node[right]{jet leakage};
-    \node at (1.5,-0.9) {$\lambda_A\,\;(A=6)$};
-  \end{scope}
-\end{tikzpicture}
-```
+with content sums $c((3)) = +3$, $c((2,1)) = 0$, $c((1,1,1)) = -3$.
+Of the three, only $(2, 1)$ is self-conjugate (and lies on the main
+diagonal of Young's lattice); the symmetric and antisymmetric
+partitions $(3)$ and $(1, 1, 1)$ are conjugates of each other and
+contribute opposite-sign full-twist eigenvalues
+$q^{+3}$ vs. $q^{-3}$.
 
-The asymmetric skew structure of $\lambda_A$ forces
-$\kappa_{\lambda_A} \neq 0$, so the
-[full-twist criterion](#conj:categorical-neutrality-saturated-shells)
-fails:
-the ribbon operator $\theta_6$ acts non-trivially on $V_{\lambda_A}$
-and topological flux propagates through the brane tower. The
-spectral sequence of
-[homological condensation](#conj:homological-shell-condensation)
-does **not** collapse at $E_2$; obstruction classes persist into
-$E_\infty^{p, q}$ with $q > 0$, demanding higher-jet-order
-corrections from the Yekutieli tower. Empirically ${}^{6}\mathrm{Li}$
-is loosely bound (separation energy $\approx 1.5\,\mathrm{MeV}$),
-in line with this non-confined diagnosis.
+Frobenius arms exceed legs in $(3)$ (three arms, no legs);
+legs exceed arms in $(1, 1, 1)$. Neither alone is balanced.
+
+## $N$-block (also frayed)
+
+By symmetry the same three partitions $\{(3), (2, 1), (1, 1, 1)\}$
+contribute on the $N$ side, with the same content-sum imbalances.
+
+## LR fusion at $A = 6$
+
+The LR product
+$V_\lambda(Z=3) \otimes V_\mu(N=3)$ on each pair of frayed blocks
+spreads over many $\nu \vdash 6$:
+
+$$
+  V_\lambda \otimes V_\mu
+  \;=\;
+  \bigoplus_{\nu \vdash 6}
+    c^\nu_{\lambda, \mu} \, V_\nu,
+\qquad
+  \lambda, \mu \in \{(3), (2,1), (1,1,1)\}.
+$$
+
+The combined Wedderburn support of $\Phi_6$ at $^{6}\mathrm{Li}$ is a
+weighted sum of all such fusions, with weights determined by the
+relative strengths of the three frayed components. The resulting
+$\Phi_6$ has *non-zero off-diagonal full-twist flux vectors* — it is
+not a fixed point of $\Delta_6^2$.
+
+## What the diagram shows
+
+The diagrammatic illustration in this example block is, schematically:
+
+- **Left**: a *fragment of Young's lattice* between $(3)$, $(2,1)$,
+  $(1,1,1)$ — a triangle with $(2,1)$ at the centre — marked
+  "frayed, full-twist flux $\pm q^3$".
+- **Right**: an identical copy on the $N$ side (since $Z = N = 3$).
+- **Centre**: an LR-fusion *spread* — a wide arrow producing
+  multiple $\nu \vdash 6$, with $c^\nu_{\lambda, \mu}$ printed at
+  each target — marked "**non-rigid: multiple non-zero LR
+  coefficients**".
+
+Where the $^{40}\mathrm{Ca}$ diagram has a single arrow to a single
+$\nu$, the $^{6}\mathrm{Li}$ diagram has a fan of arrows producing
+the full Wedderburn spread.
+
+## Why $^{6}\mathrm{Li}$ is loosely bound
+
+The empirical $^{6}\mathrm{Li}$ binding energy is $31.99$ MeV
+($5.33$ MeV/nucleon) — far below the $8.55$ MeV/nucleon of
+$^{40}\mathrm{Ca}$. The algebraic content: there are *many* off-
+diagonal Wedderburn channels at $A = 6$ through which crossing
+energy can leak, and the LR fusion of two frayed blocks produces a
+spread of full-twist flux vectors that the deuteron-like topology
+of $^{6}\mathrm{Li}$ cannot absorb without breakup.
+
+Phenomenologically: $^{6}\mathrm{Li}$ has many available
+binding-energy channels, all of them with non-zero capacity and
+none of them shell-closed. The empirical loose binding is the
+algebraic non-rigidity.
+
+## Empirical contrast with the magic ladder
+
+| Nuclide | $(Z, N)$ | Magic regime | $\Phi_n$ structure |
+|--------:|:---------|:-------------|:-------------------|
+| $^{6}\mathrm{Li}$  | $(3, 3)$    | non-magic both sides   | frayed both sides; LR spread |
+| $^{16}\mathrm{O}$  | $(8, 8)$    | double-magic           | rigid both sides; single $\nu$ |
+| $^{18}\mathrm{O}$  | $(8, 10)$   | single-magic ($Z$ only) | $Z$ rigid, $N$ frayed; $\kappa$-leakage |
+| $^{40}\mathrm{Ca}$ | $(20, 20)$  | double-magic           | rigid both sides; single $\nu$ |
+
+Reading the table top-to-bottom: as the regime moves from
+non-magic to single-magic to double-magic, the LR-fusion
+spread compresses to a single rigid $\nu_{ZN}$ — and the
+binding-per-nucleon climbs from $5.3$ to $7.6$ to $8.6$ MeV. The
+diagrammatic content of the LR-fusion conjecture is the algebraic
+mechanism behind the magic-number step pattern in nuclear binding.

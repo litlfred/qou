@@ -1,142 +1,141 @@
+A nuclide is **double-magic** when both its proton and neutron counts
+lie in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ — the
+canonical examples being $^4\mathrm{He}$, $^{16}\mathrm{O}$,
+$^{40}\mathrm{Ca}$, $^{48}\mathrm{Ca}$, $^{56}\mathrm{Ni}$,
+$^{132}\mathrm{Sn}$, $^{208}\mathrm{Pb}$. The empirical signature is
+exceptional binding-energy stability — these nuclei sit at sharp
+local maxima of the binding-per-nucleon curve. This block names the
+algebraic content of double-magicity directly: the LR-fusion of the
+two saturated $Z$- and $N$-blocks is *rigid* — a single
+self-conjugate Specht module on the diagonal — with no off-diagonal
+flux.
+
+## Setup
+
+Let $Z, N \in \mathbb{N}$ with $A = Z + N$. The atomic-knot framework
+([prop:recursive-atom-knot-atlas](../braids-and-knots/recursive-atom-knot-atlas.md))
+constructs the nuclide knot $\mathfrak{H}(Z, N)$ as a fused product
+of the $Z$-block (proton braid word at level $Z$) and the $N$-block
+(neutron braid word at level $N$). On the Hecke side, fusion is the
+Littlewood–Richardson product
+
+$$
+  V_\lambda(Z) \otimes V_\mu(N)
+  \;\cong\;
+  \bigoplus_{\nu \vdash A} c^\nu_{\lambda, \mu} V_\nu(A),
+$$
+
+with LR coefficients $c^\nu_{\lambda, \mu} \in \mathbb{Z}_{\geq 0}$
+\cite{ariki1996, ram1991}. The Wedderburn-decomposition support of
+the categorical mass at level $A$ is determined by which partitions
+$\nu$ enter the fusion with non-zero coefficient.
+
+The **content sum** is additive: $c(\nu) = c(\lambda) + c(\mu)$
+along the LR fusion, so the full-twist eigenvalue at level $A$
+is $q^{c(\lambda) + c(\mu)}$. When both $\lambda$ and $\mu$ are
+self-conjugate ($\lambda = \lambda'$, $\mu = \mu'$, both with content
+sum zero), the full-twist eigenvalue at the fused level $A$ is
+$q^0 = 1$ — and the LR fusion is constrained to self-conjugate
+$\nu = \nu'$.
+
 ## Statement
 
-**Proposition 3 (Diagrammatic Double Magic and LR-Fusion Rigidity).**
-*A composite nuclear configuration of mass $A = Z + N$ is "double
-magic" — i.e. maximally confined and homologically pure under the
-shell-condensation criterion
-([homological condensation](#conj:homological-shell-condensation))
-— if and only if the Littlewood–Richardson fusion of the proton
-representation $V_{\lambda_Z}$ and the neutron representation
-$V_{\lambda_N}$,*
+**Proposition (Conjecture — diagrammatic double-magic LR-fusion
+rigidity).**
+*Let $Z, N \in \mathfrak{M}$. By
+[`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+the categorical mass at level $Z$ is supported on a single
+self-conjugate partition $\lambda_Z \vdash Z$, and similarly $\Phi_N$
+is supported on $\mu_N \vdash N$ with $\mu_N = \mu_N'$. Then the
+LR-fusion at level $A = Z + N$ is **rigid**:*
 
 $$
-  V_{\lambda_Z} \otimes V_{\lambda_N}
-  \;\hookrightarrow\;
-  H_A(q),
-  \qquad
-  V_{\lambda_Z} \otimes V_{\lambda_N}
-  \;=\;
-  \bigoplus_{\mu \,\vdash\, A}
-  c^{\mu}_{\lambda_Z, \lambda_N} \,
-  V_\mu,
+  V_{\lambda_Z} \otimes V_{\mu_N}
+  \;\cong\;
+  V_{\nu_{ZN}}(A)
 $$
 
-*has a dominant composite module $V_{\lambda_A}$ whose Jucys–Murphy
-multiset is strictly gapless and globally neutral*
+*for a uniquely determined self-conjugate $\nu_{ZN} \vdash A$ with
+$\nu_{ZN} = \nu_{ZN}'$ and $c(\nu_{ZN}) = 0$. In particular, the
+LR multiplicity is one:* $c^{\nu_{ZN}}_{\lambda_Z, \mu_N} = 1$
+*and all other LR coefficients vanish.*
 
-$$
-  \kappa_{\lambda_A}
-  \;=\;
-  \sum_{x \in \lambda_A} c(x)
-  \;=\;
-  0.
-$$
+*Equivalently, $\sum_{x \in \nu_{ZN}} c(x) = 0$, and the categorical
+mass at the double-magic level $A$ is supported on the single
+self-conjugate Specht module $V_{\nu_{ZN}}$ — there is no off-
+diagonal Wedderburn capacity to absorb crossing energy beyond the
+Coulomb / Casimir / pairing terms already present at $\lambda_Z$
+and $\mu_N$.*
+
+## Why "rigidity"
+
+The classical LR rule \cite{ariki1996} typically produces a sum
+over many $\nu$, with multiplicities counting LR tableaux. The
+conjecture says that at double-magic levels the sum collapses to a
+single term with multiplicity one. Self-conjugacy
+($\lambda = \lambda'$, $\mu = \mu'$) constrains the LR product to
+$\nu = \nu'$, and the saturated-shell content-sum-zero condition
+($c(\lambda) = c(\mu) = 0$) constrains $c(\nu) = 0$. The rigidity
+asserts that these two constraints combined leave at most one
+$\nu$ admissible.
+
+The empirical content is direct: there is **no Wedderburn block** at
+the double-magic level capable of absorbing further binding energy
+through Hecke channels. The exceptional double-magic stability is
+the algebraic absence of decomposition channels, not a fitted
+shell-correction term.
+
+## Examples
+
+The illustration blocks
+[`ex:single-magic-O18-diagram`](single-magic-O18-diagram.md),
+[`ex:double-magic-Ca40-diagram`](double-magic-Ca40-diagram.md), and
+[`ex:non-magic-Li6-diagram`](non-magic-Li6-diagram.md) show the
+diagrammatic content of LR-fusion on the partition level for one
+representative case from each regime:
+
+- $^{40}\mathrm{Ca}$ ($Z = N = 20$): both blocks self-conjugate, LR
+  fuses to a single $\nu = \nu'$ with content sum zero —
+  **rigid**.
+- $^{18}\mathrm{O}$ ($Z = 8$, $N = 10$): the $Z$-block is
+  self-conjugate (saturated), but $N = 10 \notin \mathfrak{M}$ —
+  the fusion is non-rigid, and $\kappa$-leakage from the $N$ side
+  is the algebraic source of the $^{18}\mathrm{O}$ binding tail
+  beyond the saturated $Z = 8$ contribution.
+- $^{6}\mathrm{Li}$ ($Z = N = 3$): neither block is saturated;
+  Frobenius "arms" exceed Frobenius "legs" in both partitions, so
+  the fusion produces non-zero full-twist flux vectors and the
+  binding curve is far from a magic peak.
+
+## Predictions for the higher-magic ladder
+
+The combinatorial barrier at $k \geq 12$ blocks Hoefsmit
+matrix-evaluation for $\{50, 82, 126\}$, but the LR-rigidity
+conjecture predicts a uniquely determined $\nu_{ZN}$ at each
+double-magic candidate independent of matrices. The predicted
+double-magic targets in the higher-magic ladder include
+$^{132}\mathrm{Sn}$ ($Z = 50, N = 82$) and $^{208}\mathrm{Pb}$
+($Z = 82, N = 126$); for each the LR fusion is conjecturally rigid
+and the algebraic prediction of the binding-per-nucleon peak is a
+**zero-parameter** statement.
 
 ## Status
 
-Conjecture (CLAUDE.md §3b axiom-class pattern). The propagation rule
-applies: the present claim is downstream of
-[homological shell condensation](#conj:homological-shell-condensation)
-and inherits its conjectural status. The provable Hecke ingredient
-— that the Littlewood–Richardson coefficients
-$c^\mu_{\lambda_Z, \lambda_N}$ govern the decomposition into
-irreducible Hecke modules — is standard \cite{mathas1999}.
+🟡 **Conjectural** under CLAUDE.md §3b. The conjecture is
+*conditional* on
+[`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
+and
+[`conj:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md).
+A proof would proceed in two steps: (1) the upstream conjectures
+force self-conjugate support of $\Phi_Z$ and $\Phi_N$; (2) a
+self-conjugacy + content-sum LR rigidity lemma (provable Hecke
+fragment) collapses the LR product to a single $\nu$.
 
-## Proof sketch (conjectural)
+Step 2 is plausibly provable in pure Hecke combinatorics; this is
+deferred to Phase 2 of the algebraic refactor (see workplan in the
+sibling branch).
 
-**Step 1 — Tensor induction of the global state.**
-The composite total state lives in the induction
-
-$$
-  V_{\lambda_Z} \otimes V_{\lambda_N}
-  \;\hookrightarrow\;
-  \mathrm{Ind}^{H_A(q)}_{H_Z(q) \otimes H_N(q)}
-  \bigl(V_{\lambda_Z} \boxtimes V_{\lambda_N}\bigr).
-$$
-
-By Frobenius reciprocity in the Hecke setting, this induction
-decomposes via the LR rule into a direct sum of irreducibles
-$V_\mu$ for $\mu \vdash A$, with multiplicities
-$c^\mu_{\lambda_Z, \lambda_N}$.
-
-**Step 2 — Asymmetric leakage in non-magic states.**
-If either constituent diagram contains unpaired Frobenius arms or
-legs (i.e. fails self-conjugacy
-[categorical neutrality](#conj:categorical-neutrality-saturated-shells)),
-the LR rule forces the tensor product to shatter into a massive
-superposition of asymmetric skew diagrams. The dominant component
-$V_{\lambda_A}$ then has
-
-$$
-  \kappa_{\lambda_A}
-  \;=\;
-  \kappa_{\lambda_Z} + \kappa_{\lambda_N}
-  \;\neq\; 0,
-$$
-
-so the composite fails the global-neutrality test and topological
-flux leaks into the jet tower
-([non-magic Li-6](#ex:non-magic-Li6-diagram)).
-
-**Step 3 — The double-magic lock.**
-When **both** $\lambda_Z$ and $\lambda_N$ are saturated, self-conjugate,
-$\kappa$-balanced blocks
-([categorical neutrality](#conj:categorical-neutrality-saturated-shells)),
-the LR coefficients are sharply constrained. Two algebraic facts
-combine:
-
-1. **LR rigidity.** For saturated self-conjugate constituents, the
-   LR expansion is dominated by a single composite $\mu = \lambda_A$
-   whose Young diagram is the "interlock" of $\lambda_Z$ and
-   $\lambda_N$ — gapless, with no asymmetric overhang.
-
-2. **Content additivity.** The Jucys–Murphy multiset of $V_{\lambda_A}$
-   is the (signed) sum of the multisets of $V_{\lambda_Z}$ and
-   $V_{\lambda_N}$. Saturation + self-conjugacy of the
-   constituents force
-
-   $$
-     \kappa_{\lambda_A}
-     \;=\;
-     \kappa_{\lambda_Z} + \kappa_{\lambda_N}
-     \;=\;
-     0 + 0
-     \;=\; 0.
-   $$
-
-Together, these yield a strictly gapless, zero-defect Jucys–Murphy
-spectrum on $V_{\lambda_A}$, in turn forcing $E_\infty^{p, >0}(A) = 0$
-([homological condensation](#conj:homological-shell-condensation)).
-
-## Empirical signature
-
-The proposition predicts that *exactly* the double-magic isotopes
-$(Z, N) \in \{(2, 2), (8, 8), (20, 20), (28, 28), (50, 50), (82, 82),
-(82, 126), (126, 126)\}$ realise the LR rigidity condition. Each
-corresponds to a Young-diagram pair where both $\lambda_Z$ and
-$\lambda_N$ are simultaneously self-conjugate; the predicted set
-matches the observed double-magic isotopes
-$\{{}^{4}\mathrm{He}, {}^{16}\mathrm{O}, {}^{40}\mathrm{Ca},
-{}^{56}\mathrm{Ni}, {}^{100}\mathrm{Sn}, {}^{208}\mathrm{Pb}\}$
-(adjusted for proton/neutron asymmetry where $Z \neq N$ via the
-LR-shadow rule on conjugate diagrams).
-
-Three illustrative cases are pictured separately:
-
-- [Single magic ${}^{18}\mathrm{O}$](#ex:single-magic-O18-diagram):
-  $\lambda_Z$ saturated, $\lambda_N$ frayed → $\kappa_{\lambda_A} \neq 0$.
-- [Double magic ${}^{40}\mathrm{Ca}$](#ex:double-magic-Ca40-diagram):
-  $\lambda_Z = \lambda_N$ saturated and self-conjugate →
-  $\kappa_{\lambda_A} = 0$, gapless.
-- [Non-magic ${}^{6}\mathrm{Li}$](#ex:non-magic-Li6-diagram):
-  both arms unbalanced → topological flux leakage.
-
-## Open algebraic question
-
-The proposition asserts **rigidity** of the LR fusion at saturated
-self-conjugate inputs: a single composite $\mu$ dominates and
-saturates the bound. A precise Lean-formalisable form of this
-rigidity — in terms of $q$-deformed Littlewood–Richardson coefficients
-$c^\mu_{\lambda_Z, \lambda_N}(q)$ vanishing for $\mu \neq \lambda_A$
-on the saturated locus — is the open question this conjecture
-isolates.
+The downstream cone is the double-magic prediction set — every
+binding-energy claim at $\{^{132}\mathrm{Sn},
+^{208}\mathrm{Pb}, \ldots\}$ derived by the conjecture is itself
+conjectural until one of the upstream conjectures is closed.

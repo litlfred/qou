@@ -22,7 +22,7 @@ But the cosimplicial structure theorem guarantees that the tower is
 genuinely infinite: the obstruction classes $\kappa_n$ never
 simultaneously vanish, and the crossed groupoid does not degenerate.
 This is precisely
-[motivic perpetual obstruction](#lem:motivic-perpetual-obstruction):
+[motivic perpetual obstruction](#conj:motivic-perpetual-obstruction):
 the motivic Galois character of the substrate is non-trivial at
 every finite place $p \nmid \chi(A)$, so $\kappa_n$ — which is the
 HKR image of that character at level $n$

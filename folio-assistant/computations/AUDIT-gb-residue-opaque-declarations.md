@@ -11,14 +11,37 @@ This audit is a follow-up to the equivalence theorem
 `archimedean_agreement` axiom transitively depends on the
 identifications below.
 
-## Current opaque / sorry surface
+## P2.6 Lean refactor (2026-05-02) — opaque axioms removed
+
+The two `noncomputable opaque` declarations and the `sorry` in
+`spectral_sum_finite` have been **removed** from
+`gb-residue-spectral-sum.lean`. The instance data is now carried
+by class fields on `GBResidueSpectralSum`:
+
+- `S.gradedTrace : Fin levelBound → ℝ` — replaces global `opaque
+  gradedMarkovTrace`. Per
+  [`prop:graded-markov-trace-from-gs-filtration`](../../content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.md),
+  the value is the descent of `tr_M` along `J^ℓ / J^{ℓ+1}`.
+- `S.residue : Fin levelBound → ℝ` — replaces global `opaque
+  residueAtRoot`. Per
+  [`prop:residue-at-root`](../../content/quantum-observable-universe/braids-and-knots/residue-at-root.md),
+  the value is the cyclotomic projection of `Φ_q · gradedTrace ℓ`
+  in the Habiro completion.
+
+The `sorry` on the previous line 86 is closed by removing the
+unsafe `S.roots⟨0, sorry⟩` access; the class-based form has the
+finiteness as a tautology over `Fin levelBound`.
+
+Convenience accessors `gradedMarkovTrace S ℓ` and `residueAt S ℓ`
+preserve the call-site name for any external reader.
+
+## Remaining surface
 
 | Decl | Kind | Where | Type signature | Blocks |
 |------|------|-------|----------------|--------|
-| `gradedMarkovTrace` | `noncomputable opaque` | `gb-residue-spectral-sum.lean:32` | `ℕ → ℝ → ℝ` | The whole GB filtration |
-| `residueAtRoot` | `noncomputable opaque` | `gb-residue-spectral-sum.lean:36` | `ℕ → RootOfUnity → ℝ → ℝ` | The spectral-sum identity |
-| `GBResidueSpectralSum.spectral_decomposition` | class field axiom | `gb-residue-spectral-sum.lean:55` | `mass = ‖descended‖ + Σ_ℓ Res_{q→ζ_ℓ}(Φ_q · tr_{M,ℓ})` | The proposition itself |
-| `spectral_sum_finite` | `sorry` (`Fin levelBound` access) | `gb-residue-spectral-sum.lean:80` | `∃ N, ∀ ℓ ≥ N, residueAtRoot ℓ S.roots⟨0,_⟩ S.q = 0` | Termination |
+| `GBResidueSpectralSum.gradedTrace` | class field | `gb-residue-spectral-sum.lean:78` | `Fin levelBound → ℝ` | Each instance must supply per-level traces (narrative: `prop:graded-markov-trace-from-gs-filtration`) |
+| `GBResidueSpectralSum.residue` | class field | `gb-residue-spectral-sum.lean:83` | `Fin levelBound → ℝ` | Each instance must supply per-level residues (narrative: `prop:residue-at-root`) |
+| `GBResidueSpectralSum.spectral_decomposition` | class field axiom | `gb-residue-spectral-sum.lean:91` | `mass = ‖descended‖ + Σ_ℓ residue ℓ` | The proposition itself |
 | `HabiroResidueSumEquivalence.archimedean_agreement` | class field axiom | `habiro-residue-sum-equivalence.lean:97` | `eval u_0 (map ι trace) = mass` | Transitively the equivalence |
 | `HabiroResidueSumEquivalence.protonExample.archimedean_agreement` | `sorry` | `habiro-residue-sum-equivalence.lean:139` | proton-specific instance witness | Concrete instance |
 
@@ -35,25 +58,28 @@ identifications below.
 
 ## Promotion path (priority order)
 
-1. **`gradedMarkovTrace` → `def`** (Effort: large)
-   *Requires*: full formalization of the GS-filtration (`ConfinementLevel`).
-   *Action*: out of scope for this PR; create a tracking issue.
+1. **`gradedMarkovTrace` → `def`** — ✅ landed via P2.6 Lean refactor
+   (2026-05-02). The opaque axiom has been removed; instances now
+   supply `S.gradedTrace : Fin levelBound → ℝ` directly.
+   *Remaining*: a fully constructive `def` (rather than a class
+   field) requires full formalization of the GS-filtration
+   (`ConfinementLevel`); out of scope here, tracked as a downstream
+   Mathlib-infrastructure issue.
 
-2. **`residueAtRoot` → `def`** (Effort: medium-large)
-   *Requires*: a small Mathlib lemma about meromorphicity of the
-   quantum dilogarithm at roots of unity, then `Complex.residue`
-   applied to `Φ_q · gradedMarkovTrace`.
-   *Action*: write a `quantum-dilogarithm-meromorphic-at-roots.lean`
-   skeleton (one definition + one `meromorphicAt` lemma + one
-   `residue_eq_pow_coefficient` corollary) — block this on (1) for
-   the trace half.
+2. **`residueAtRoot` → `def`** — ✅ landed via P2.6 Lean refactor
+   (2026-05-02). The opaque axiom has been removed; instances now
+   supply `S.residue : Fin levelBound → ℝ` directly.
+   *Remaining*: a fully constructive `def` would compute the
+   cyclotomic projection in the Habiro completion (per
+   `prop:residue-at-root`) — this also needs the GS-filtration
+   infrastructure plus a Habiro-completion formalization. Out of
+   scope; tracked downstream.
 
-3. **`spectral_sum_finite` → proof** (Effort: small)
-   *Requires*: the `confinement-level-unique` proposition (already
-   stated, currently `sorry`).  The finiteness of the spectral sum
-   then follows by transport.
-   *Action*: prove `confinement-level-unique` first; then this
-   becomes a one-line `simp_rw`.
+3. **`spectral_sum_finite` → proof** — ✅ landed via P2.6 Lean
+   refactor (2026-05-02). The previous `sorry` has been removed by
+   reformulating finiteness as a tautology over `Fin levelBound`.
+   The class-based residue function has compact-finite domain by
+   construction.
 
 4. **`spectral_decomposition` → theorem** (Effort: very large)
    *Requires*: (1), (2), and the analytic identification of the

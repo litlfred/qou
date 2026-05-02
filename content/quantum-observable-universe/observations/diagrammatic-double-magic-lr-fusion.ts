@@ -3,32 +3,31 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:diagrammatic-double-magic-lr-fusion",
   title:
-    "Proposition 3. Diagrammatic double-magic and LR-fusion rigidity",
+    "Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \\in \\mathfrak{M}$",
   lean: {
-    ref: "qou:QOU.Interactions.LRFusion.DoubleMagicConjecture",
+    ref: "qou:QOU.LRFusion.DoubleMagicConjecture",
     validation: "not_checked",
   },
   uses: [
     "conj:categorical-neutrality-saturated-shells",
     "conj:homological-shell-condensation",
     "prop:magic-numbers-from-q",
-    "conj:mass-endomorphism",
+    "prop:hoefsmit-seminormal-form",
+    "thm:wedderburn-mass-formula",
   ],
   cites: [
-    "mathas1999",
+    "ariki1996",
+    "ram1991",
+    "geckpfeiffer2000",
     "kassel1995",
-    "turaev2010",
-    "jucys1974",
-    "murphy1992",
   ],
   tags: [
-    "littlewood-richardson",
-    "fusion",
+    "magic-numbers",
     "double-magic",
-    "self-conjugate",
-    "jucys-murphy",
+    "LR-fusion",
     "shell-closure",
+    "self-conjugate-partitions",
+    "littlewood-richardson",
     "open-problem",
-    "axiom-class",
   ],
 });

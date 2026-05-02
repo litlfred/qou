@@ -2935,6 +2935,92 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1088/0264-9381/24/16/002",
   }),
 
+  // ── Białynicki-Birula 1973 ────────────────────────────────────
+  ref({
+    id: "bialynicki1973",
+    type: "article-journal",
+    title:
+      "Some theorems on actions of algebraic groups",
+    author: [
+      { family: "Białynicki-Birula", given: "Andrzej" },
+    ],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1973]] },
+    volume: "98",
+    issue: "3",
+    page: "480-497",
+    DOI: "10.2307/1970915",
+    URL: "https://doi.org/10.2307/1970915",
+  }),
+
+  // ── Geck & Pfeiffer 2000 ──────────────────────────────────────
+  ref({
+    id: "geckpfeiffer2000",
+    type: "book",
+    title:
+      "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras",
+    author: [
+      { family: "Geck", given: "Meinolf" },
+      { family: "Pfeiffer", given: "Götz" },
+    ],
+    publisher: "Oxford University Press",
+    issued: { "date-parts": [[2000]] },
+    "collection-title": "London Mathematical Society Monographs (New Series)",
+    "collection-number": 21,
+    DOI: "10.1093/oso/9780198502500.001.0001",
+    URL: "https://doi.org/10.1093/oso/9780198502500.001.0001",
+  }),
+
+  // ── Ariki 1996 ────────────────────────────────────────────────
+  ref({
+    id: "ariki1996",
+    type: "article-journal",
+    title:
+      "On the decomposition numbers of the Hecke algebra of $G(m, 1, n)$",
+    author: [
+      { family: "Ariki", given: "Susumu" },
+    ],
+    "container-title": "Journal of the Mathematical Society of Japan",
+    issued: { "date-parts": [[1996]] },
+    volume: "48",
+    issue: "4",
+    page: "789-808",
+    DOI: "10.2969/jmsj/04840789",
+    URL: "https://doi.org/10.2969/jmsj/04840789",
+  }),
+
+  // ── Ram 1991 ──────────────────────────────────────────────────
+  ref({
+    id: "ram1991",
+    type: "article-journal",
+    title:
+      "A Frobenius formula for the characters of the Hecke algebras",
+    author: [
+      { family: "Ram", given: "Arun" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[1991]] },
+    volume: "106",
+    issue: "1",
+    page: "461-488",
+    DOI: "10.1007/BF01243922",
+    URL: "https://doi.org/10.1007/BF01243922",
+  }),
+
+  // ── Klein 1888 (icosahedron / Bring's curve) ──────────────────
+  ref({
+    id: "klein1888",
+    type: "book",
+    title:
+      "Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade",
+    author: [
+      { family: "Klein", given: "Felix" },
+    ],
+    publisher: "Teubner",
+    issued: { "date-parts": [[1888]] },
+    URL: "https://archive.org/details/vorlesungenber00kleiuoft",
+  }),
+
   // ── Sugic et al. 2021 ─────────────────────────────────────────
   ref({
     id: "sugic2021",

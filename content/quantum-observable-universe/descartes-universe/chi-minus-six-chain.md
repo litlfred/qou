@@ -25,7 +25,7 @@ the value of the substrate's motivic $L$-function at the boundary
 of analytic continuation, and the Yekutieli non-vanishing
 $\kappa_n \neq 0$ at every level becomes the non-vanishing of the
 Frobenius character at every finite place $p \nmid 6$ — the
-content of [motivic perpetual obstruction](#lem:motivic-perpetual-obstruction)
+content of [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
 applied with $\chi(A) = -6$
 ([Kummer tower](#rem:kummer-tower) §motivic-Galois). The "$g \geq 1$"
 condition (Step 4) is the cyclotomic-place criterion

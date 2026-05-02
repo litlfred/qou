@@ -13,7 +13,7 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 3. *Yekutieli lifting.*  The brane tower satisfies the Yekutieli
    lifting condition ([Yekutieli lifting](#prop:yekutieli-lifting));
    the obstruction classes $\kappa_n \neq 0$ persist at every level
-   by [motivic perpetual obstruction](#lem:motivic-perpetual-obstruction)
+   by [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
    applied with $\chi(A) = -6$.
 4. *Euler characteristic.*  By [QU-to-QOU lifting](#thm:qu-to-qou),
    $\chi(A) = \mathrm{tr}(\mathrm{id}_A) = 2 - 2g = -6$.

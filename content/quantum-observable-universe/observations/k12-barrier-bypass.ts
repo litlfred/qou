@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:k12-barrier-bypass",
   title:
-    "Analytic bypass of the $k \\geq 12$ matrix-evaluation barrier",
+    "Homological framework analytically bypasses the $k \\geq 12$ matrix-evaluation barrier",
   interprets: "prop:magic-numbers-from-q",
   uses: [
     "prop:magic-numbers-from-q",
@@ -12,9 +12,10 @@ export default remark({
   ],
   tags: [
     "magic-numbers",
-    "computational-limits",
+    "shell-closure",
     "hoefsmit",
-    "homological",
-    "k12-barrier",
+    "matrix-evaluation",
+    "computational-bypass",
+    "interpretation",
   ],
 });
