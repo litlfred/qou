@@ -1,0 +1,65 @@
+/-!
+# Magic numbers as ranks of S₅-stable Bring period sub-lattices
+
+The conjecture states a bijection between the seven nuclear magic
+numbers `{2, 8, 20, 28, 50, 82, 126}` and seven distinguished
+S₅-stable, τ̂-stable period sub-lattices of the brane-tower
+cohomology.
+
+Per CLAUDE.md §3b, this is a `class` axiomatization of the
+conjecture; downstream conditional theorems would take instances
+as hypotheses.
+
+-- Ref: [manuscript] conj:magic-numbers-bring
+-- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [manuscript] conj:homological-shell-condensation
+-- Ref: [klein1888] (no DOI)
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+-/
+
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Data.Finset.Basic
+
+namespace QOU.AlgebraicSubstrate
+
+/-- The seven observed magic numbers (mirrors the same set used in
+    `QOU.ShellNeutrality.magicSet` and
+    `QOU.ShellCondensation.magicSet`). -/
+def magicSet : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
+
+/-- Abstract data of an S₅-stable, τ̂-stable period sub-lattice. -/
+structure BringPeriodSublattice where
+  /-- The rank of the sub-lattice over ℤ. -/
+  rank : ℕ
+  /-- The S₅-action is part of the structure (abstracted here as
+      a flag; concrete instances supply the explicit rep-theory
+      data). -/
+  s5_stable : Prop
+  /-- The descent involution τ̂ stabilises the lattice. -/
+  tau_stable : Prop
+
+/-- The conjecture, encoded as a class.
+
+    A `MagicNumbersBring` instance asserts the existence of seven
+    distinguished sub-lattices, indexed by the magic numbers, each
+    S₅-stable, τ̂-stable, and of rank equal to its index. -/
+-- Ref: [manuscript] conj:magic-numbers-bring
+class MagicNumbersBring where
+  /-- The sub-lattice indexed by a magic number. -/
+  L : ∀ n : ℕ, n ∈ magicSet → BringPeriodSublattice
+  /-- Rank-correctness: each sub-lattice's rank matches its index. -/
+  rank_eq : ∀ {n : ℕ} (h : n ∈ magicSet), (L n h).rank = n
+  /-- S₅-stability of every indexed sub-lattice. -/
+  s5_stable_all : ∀ {n : ℕ} (h : n ∈ magicSet), (L n h).s5_stable
+  /-- τ̂-stability of every indexed sub-lattice. -/
+  tau_stable_all : ∀ {n : ℕ} (h : n ∈ magicSet), (L n h).tau_stable
+
+/-- Conditional theorem: under `MagicNumbersBring`, the seven
+    sub-lattices have the seven magic ranks. -/
+-- Ref: [manuscript] conj:magic-numbers-bring §"Statement"
+theorem ranks_match_magic_set
+    [c : MagicNumbersBring] :
+    ∀ n ∈ magicSet, ∃ L : BringPeriodSublattice, L.rank = n :=
+  fun n h => ⟨c.L n h, c.rank_eq h⟩
+
+end QOU.AlgebraicSubstrate

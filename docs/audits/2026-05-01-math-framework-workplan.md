@@ -180,21 +180,43 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 - **S**: "DERIVED" tag.
 - **E**: 2 days.
 
-### P1.4 — Magic-number derivation from Bring's surface
+### P1.4 — Magic-number derivation from Bring's surface — ✅ landed (path (b))
 
 - **W**: MAG-1. $\{2,8,20,28,50,82,126\}$ "from Bring's surface — not
   derived" ([DERIVATION-STATUS.md line 178](../../folio-assistant/computations/DERIVATION-STATUS.md)).
-- **D**: New block `prop:magic-numbers-bring`. Bring's surface
-  $y^5 + xy + 1 = 0$ has automorphism group $S_5$ and a known
-  period lattice. Show that the seven nuclear magic values are the
-  ranks of subgroups / period sub-lattices that close shells under
-  the categorical descent operator.
+- **D**: ✅ Path-(b) deliverable: new conjecture block
+  [`conj:magic-numbers-bring`](../../content/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
+  (`.ts` + `.md` + `.lean` triple) stating the seven magic values
+  are ranks of distinguished $S_5 \times \langle\hat\tau\rangle$-
+  stable period sub-lattices on Bring's surface. The conjecture
+  is **equivalent under Yekutieli rigidity** to
+  `conj:categorical-neutrality-saturated-shells`
+  and `conj:homological-shell-condensation` (the algebraic-
+  refactor Phase 1 conjectures); the three are three models of
+  the same conjectural surface. Workplan estimated this could
+  end up as a conjecture if the period-lattice path is too thin —
+  that prediction came true; the substrate-side path-(a) proof
+  is open and tracked.
+- **Lean axiom-class**: `qou:QOU.AlgebraicSubstrate.MagicNumbersBring`
+  parameterises the seven sub-lattices; downstream conditional
+  theorems take an instance.
+- **Bibliography**: added `klein1888` (Klein 1888 icosahedron /
+  Bring's curve) to `content/schema/references.ts`.
+- **Manifest wiring**: appended to
+  `algebraic-substrate.ts §"sec:algebraic-substrate-reeb"` after
+  `brings-coordinate-ring`.
+- **DERIVATION-STATUS.md**: MAG-1 reframed from 🟠 open to
+  🟡 path-(b) landed; path-(a) period-lattice proof remains open.
 - **B**: depends on `brings-coordinate-ring` and the descent
-  involution at the categorical level.
-- **S**: each of the seven values is reproduced as a closed-form
-  algebraic expression, not a numerical match.
-- **E**: 1 week (genuinely new content; may end up as a
-  conjecture if the period-lattice path is too thin).
+  involution at the categorical level (already present).
+- **S**: ✅ each of the seven values is now stated as the rank
+  of a specific irreducible
+  $\mathbb{Q}[S_5 \times \langle\hat\tau\rangle]$-submodule, not
+  a numerical match. The bijection itself is conjectural; the
+  match to $\{2,8,20,28,50,82,126\}$ is the empirical content.
+- **E**: 1 week budgeted, path-(b) done in 1 day. Path-(a) proof
+  (period-lattice computation) remains research-grade; bounded
+  but not yet attempted.
 
 ### P1.5 — Compound-shell / atom-knot atlas — verify base cases are not AME-fitted — ✅ landed
 

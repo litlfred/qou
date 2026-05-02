@@ -193,8 +193,17 @@ as the $H^2$ calibration — not an additional fit.
    character polynomial in Z,N,A from the symbolic computation.
 2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.
    Needs k≥7 exact corrections.
-3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface — not derived.
-   Workplan task **P1.4** owns the derivation; pending.
+3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface
+   — algebraic claim now stated as
+   [`conj:magic-numbers-bring`](../../content/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
+   (P1.4 path-(b)): the seven values are conjectured to be the
+   ranks of distinguished $S_5 \times \langle\hat\tau\rangle$-stable
+   period sub-lattices on Bring's surface. Path-(a) proof
+   (concrete period-lattice construction + bijection) remains
+   open. Equivalent under Yekutieli rigidity to
+   `conj:categorical-neutrality-saturated-shells` and
+   `conj:homological-shell-condensation`; the three are three
+   models of the same conjectural surface.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
 5. **1/α remaining 399 ppb**: J³ correction (Massey products?). Workplan
    task **P1.7** — depends on $H_{3A}$ Wedderburn coverage (P2.2).
@@ -221,7 +230,7 @@ as the $H^2$ calibration — not an additional fit.
 | **JSJ-link 8** | 🟢 algebraic recast landed | Hecke $J^\bullet$-stratification (P0.3) |
 | **BW-8** | 🟠 open | Workplan **P1.2** |
 | **BW-11** | 🟠 open | Workplan **P1.3** |
-| **MAG-1** | 🟠 open | Workplan **P1.4** |
+| **MAG-1** | 🟡 path-(b) | `conj:magic-numbers-bring` (P1.4 path-(b) landed); path-(a) period-lattice proof open |
 | **ALPHA-2** (399 ppb) | 🟠 open | Workplan **P1.7**, blocked by P2.2 |
 
 See [`docs/audits/2026-05-01-math-framework-deep-audit.md`](../../docs/audits/2026-05-01-math-framework-deep-audit.md)

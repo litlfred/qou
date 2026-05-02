@@ -3007,6 +3007,20 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1007/BF01243922",
   }),
 
+  // ── Klein 1888 (icosahedron / Bring's curve) ──────────────────
+  ref({
+    id: "klein1888",
+    type: "book",
+    title:
+      "Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade",
+    author: [
+      { family: "Klein", given: "Felix" },
+    ],
+    publisher: "Teubner",
+    issued: { "date-parts": [[1888]] },
+    URL: "https://archive.org/details/vorlesungenber00kleiuoft",
+  }),
+
   // ── Sugic et al. 2021 ─────────────────────────────────────────
   ref({
     id: "sugic2021",
