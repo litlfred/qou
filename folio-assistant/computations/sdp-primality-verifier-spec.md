@@ -138,6 +138,163 @@ each magic $n$ is a **threshold-crossing** event in the
 energy-reduction iteration, where the ILP fails to factor the
 ground state into smaller magic atoms.
 
+## B'. The dual — shadow prices, complementary slackness, ILP
+
+**Cost vector $c$** is the **Hecke energy**: per-Wedderburn-block
+
+$$
+  c_\lambda \;=\; w_\lambda(q) \;=\; \frac{\dim_q(V_\lambda)^2}{[n]_q!}
+$$
+
+(or the related Markov-trace functional, depending on the specific
+SDP variant). Already computable in the existing infrastructure
+([`symbolic_qdim_argmax.py`](symbolic_qdim_argmax.py) for symbolic
+$q$, `shell_closure_compute.py` for numeric).
+
+**The dual problem** is
+
+$$
+  \max_y \;\langle b, y \rangle
+  \qquad
+  \text{s.t.}\quad A^\top y \preceq c.
+$$
+
+The shadow-price vector $y = u^*(n, q)$ is indexed by the
+Wedderburn blocks of $H_n(q)$.
+
+### Complementary slackness — the magic predicate as a dual fact
+
+By complementary slackness at the optimum,
+
+$$
+  u^*_\lambda > 0
+  \;\Longleftrightarrow\;
+  \text{block-}\lambda\text{ constraint is tight (active) in primal}.
+$$
+
+So $\operatorname{supp}(u^*)$ tells us *which* Wedderburn blocks the
+SDP optimum activates. The dual-side magic predicate:
+
+$$
+  n \text{ magic at } q
+  \;\Longleftrightarrow\;
+  |\operatorname{supp}(u^*(n, q))| = 1.
+$$
+
+This is the **dual-side certificate** of
+[`conj:sdp-rank-collapse-magic-shell`](../../content/quantum-observable-universe/particle-interactions/sdp-rank-collapse-magic-shell.md):
+read off a single integer from solver output instead of computing
+matrix rank of the primal optimum.
+
+### What's missing computationally for the dual
+
+| Need | Status | Action |
+|---|---|---|
+| Cost $c_\lambda = w_\lambda(q)$ | ✓ already in `symbolic_qdim_argmax.py` | reuse |
+| Demand $b_\lambda$ at each $n$ | ✗ implicit | extract per-$n$ formula from existing confinement-SDP definition |
+| Numerical dual extraction | ready | cvxpy `constraint.dual_value` after `Problem.solve()` |
+| Complementary-slackness reader | ✗ tooling | `[lam for lam, u in zip(blocks, u_star) if u > eps]` |
+| Symbolic dual at $q$ generic | open | parametric KKT for tiny $n$ only |
+
+### ILP integrality-gap conjecture
+
+Discrete knot operators force ILP, not LP. Strong duality fails
+for ILP in general:
+
+- LP-relaxation dual: lower bound on ILP optimum.
+- ILP optimum $\geq$ LP optimum, with gap = "integrality gap."
+- Magic-shell-specific claim:
+
+**Conjecture (dual integrality gap):** *At magic $n$ and substrate
+$q_0$, the ILP optimum coincides with the LP-relaxation optimum:*
+
+$$
+  \mathrm{ILP}^*(n, q_0)
+  \;=\;
+  \mathrm{LP}^*(n, q_0)
+  \quad\text{for}\quad
+  n \in \{1, 2, 8, 20, 28, 50, 82, 126\}.
+$$
+
+*At non-magic $n$, the integrality gap is strictly positive.*
+
+**Interpretation:** at magic $n$, the iteratively-reachable ground
+state via discrete knot operators *coincides* with the SDP / LP
+relaxation optimum — no inefficiency from quantisation. At
+non-magic $n$, the iterative stable state lies *strictly above* the
+SDP optimum, indicating the discrete process can't reach the
+continuous-relaxation ground state.
+
+This is conjecturally equivalent to
+[`def:algebraic-primality`](../../content/quantum-observable-universe/particle-interactions/algebraic-primality.md):
+zero-gap ⇔ no decomposition of $\psi_n$ into smaller-$n$ tensor
+products ⇔ algebraically prime.
+
+### cvxpy snippet for the numerical case
+
+```python
+import cvxpy as cp
+import numpy as np
+
+def magic_via_dual(n: int, q_value: float,
+                   cost_block_weights: dict,
+                   demand_block_weights: dict,
+                   constraint_matrix: dict,
+                   eps: float = 1e-8) -> dict:
+    """Solve the Wedderburn-block SDP at (n, q) and read off
+    |supp(u*)| from dual values.
+
+    cost_block_weights[lam]: c_lam = w_lam(q_value)
+    demand_block_weights[lam]: b_lam at strand count n
+    constraint_matrix[lam]: A_lam (PSD-block coefficient)
+
+    Returns: {is_magic: bool, supp_size: int, dual_values: dict}
+    """
+    blocks = list(cost_block_weights.keys())
+    T = {lam: cp.Variable(PSD=True) for lam in blocks}
+    cost = sum(cost_block_weights[lam] * cp.trace(T[lam])
+               for lam in blocks)
+    constraints = [
+        sum(constraint_matrix[lam] @ T[lam] for lam in blocks)
+        == demand_block_weights_vector
+    ]
+    prob = cp.Problem(cp.Minimize(cost), constraints)
+    prob.solve()
+    # Dual: shadow prices per block.
+    u_star = {lam: float(c.dual_value) for lam, c in
+              zip(blocks, prob.constraints)}
+    supp = [lam for lam, u in u_star.items() if u > eps]
+    return {
+        "is_magic": len(supp) == 1,
+        "supp_size": len(supp),
+        "dual_values": u_star,
+        "primal_value": prob.value,
+    }
+```
+
+### Symbolic-q form
+
+For $q$ symbolic (rational function), the dual is solvable
+parametrically over a fixed magic-vs-non-magic candidate set. The
+KKT system at the optimum has the form:
+
+$$
+  A^\top y_\lambda \;=\; c_\lambda
+  \quad \text{for } \lambda \in \mathrm{supp}(u^*),
+  \qquad
+  A^\top y_\mu \;<\; c_\mu
+  \quad \text{for } \mu \notin \mathrm{supp}(u^*).
+$$
+
+Solving symbolically: pick a candidate active basis $S \subseteq
+\{\lambda \vdash n\}$, solve the equality system $A_S^\top y = c_S$,
+then verify $A_\mu^\top y < c_\mu$ for $\mu \notin S$. The
+"$|S| = 1$" cases are the magic candidates; check whether the
+KKT system is satisfiable for $q$ in a neighbourhood of $q_0$.
+
+For small $n$ (≤ 8) this is doable by hand. For $n \in \{20, 28\}$
+we'd want SymPy automation.
+
 ## C. SDP solver — what's needed concretely
 
 For the algebraic-primality verifier:
