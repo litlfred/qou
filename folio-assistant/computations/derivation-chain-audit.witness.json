@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T23:47:22.011782+00:00",
-  "commitSha": "14be9a9e82486b009715c7a192dd6b4fc9263dbf",
+  "computedAt": "2026-05-02T23:53:25.731808+00:00",
+  "commitSha": "d5783902e6ae37540c988ecc375b2db660eb2c91",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1598,6 +1598,7 @@
         "multi-level-sdp.witness.json",
         "multi-term-canonical-assembly.witness.json",
         "multi-term-tau-M-corrected.witness.json",
+        "n-sym-numerical-anchor.witness.json",
         "neutron-alt-tower-shapes.witness.json",
         "neutron-from-photons.witness.json",
         "neutron-gap-probes-round2.witness.json",
