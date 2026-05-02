@@ -85,4 +85,37 @@ theorem strict_positive_subsingleton
   refine ⟨fun x y => ?_⟩
   exact strict_positive_collapse_unique n p q hq x y
 
+/-- Conditional theorem: the strict-positive part of the `E_∞`
+    page contains exactly one element (the zero of the additive
+    group), at a saturated level. Combines `Subsingleton` with
+    the existence of `EInftyZero`. -/
+-- Ref: [manuscript] conj:homological-shell-condensation §"Statement"
+theorem strict_positive_eq_zero
+    (n : ℕ) [c : HomologicalConjecture n]
+    (p q : ℕ) (hq : 0 < q) (x : c.EInfty p q) :
+    x = c.EInftyZero p q :=
+  c.collapse p q hq x
+
+/-- Conditional corollary: at a saturated level, every additive
+    operation in the strict-positive part of `E_∞` is trivial.
+    `x + y = 0` for any `x, y` in the strict-positive page. -/
+-- Ref: [manuscript] conj:homological-shell-condensation §"Statement"
+theorem strict_positive_add_zero
+    (n : ℕ) [c : HomologicalConjecture n]
+    (p q : ℕ) (hq : 0 < q) (x y : c.EInfty p q) :
+    x + y = c.EInftyZero p q + c.EInftyZero p q := by
+  rw [c.collapse p q hq x, c.collapse p q hq y]
+
+/-- Conditional theorem: at a saturated level, every diagonal
+    entry `E_∞^{p, p}` for `p ≥ 1` is also trivial — the BB
+    spectral sequence collapses on the entire upper-triangular
+    region above the `q = 0` line, not just the strictly off-
+    diagonal part. -/
+-- Ref: [manuscript] conj:homological-shell-condensation §"Statement"
+theorem strict_diagonal_collapse
+    (n : ℕ) [c : HomologicalConjecture n]
+    (p : ℕ) (hp : 0 < p) (x : c.EInfty p p) :
+    x = c.EInftyZero p p :=
+  c.collapse p p hp x
+
 end QOU.ShellCondensation

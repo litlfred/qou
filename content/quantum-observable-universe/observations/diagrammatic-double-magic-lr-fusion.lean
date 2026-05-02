@@ -96,4 +96,38 @@ theorem nu_unique
   by_contra h
   exact hν (c.lr_vanishes_off ν h)
 
+/-- Biconditional characterisation of `ν_{ZN}`: under the
+    conjecture, `ν` equals the fused partition iff the LR
+    coefficient is non-zero (equivalently, equal to 1). -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+theorem nu_iff_lr_nonzero
+    (Z N : ℕ) [c : DoubleMagicConjecture Z N]
+    (ν : c.Partition (Z + N)) :
+    ν = c.nuZN ↔ c.lr c.lambdaZ c.muN ν ≠ 0 := by
+  refine ⟨?_, nu_unique Z N ν⟩
+  intro h
+  rw [h, c.lr_unique_at_nu]
+  exact one_ne_zero
+
+/-- Stronger biconditional: under the conjecture, the LR
+    coefficient at any `ν` is exactly `1` if `ν = ν_{ZN}` and `0`
+    otherwise. The two cases together fully characterise the LR
+    product as a Kronecker delta. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+theorem lr_kronecker
+    (Z N : ℕ) [c : DoubleMagicConjecture Z N]
+    (ν : c.Partition (Z + N)) :
+    c.lr c.lambdaZ c.muN ν = if ν = c.nuZN then 1 else 0 :=
+  lr_concentrated Z N ν
+
+/-- Self-conjugacy is preserved by the LR rigidity: under the
+    conjecture, the unique fused partition is self-conjugate. This
+    is one of the conditions of the conjecture itself, lifted to a
+    callable theorem for downstream use. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion §"Statement"
+theorem nu_selfConjugate
+    (Z N : ℕ) [c : DoubleMagicConjecture Z N] :
+    c.SelfConjugate c.nuZN :=
+  c.nuZN_selfConj
+
 end QOU.LRFusion
