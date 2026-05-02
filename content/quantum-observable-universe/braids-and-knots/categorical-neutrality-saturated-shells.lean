@@ -91,4 +91,39 @@ theorem fullTwist_iter_neutral
       rw [pow_succ, mul_assoc, c.neutrality_left]
       exact ih
 
+/-- Right-iteration analogue of `fullTwist_iter_neutral`:
+    `Φ_n · fullTwist^k = Φ_n` for any `k : ℕ`. Proves directly by
+    induction using `neutrality_right`, mirroring the left-side
+    proof. -/
+-- Ref: [manuscript] conj:categorical-neutrality-saturated-shells §"Statement"
+theorem fullTwist_iter_neutral_right
+    (n : ℕ) [c : SaturatedShellConjecture n] (k : ℕ) :
+    c.phi * c.fullTwist ^ k = c.phi := by
+  induction k with
+  | zero => simp
+  | succ k ih =>
+      -- pow_succ: fullTwist^{k+1} = fullTwist^k * fullTwist
+      rw [pow_succ, ← mul_assoc]
+      -- now: (phi * fullTwist^k) * fullTwist = phi
+      rw [ih, c.neutrality_right]
+
+/-- Two-sided iteration: `fullTwist^a · Φ_n · fullTwist^b = Φ_n`
+    for any `a, b : ℕ` at a saturated level. The full-twist's
+    discrete `ℕ × ℕ`-monoid action on `Φ_n` factors through the
+    trivial representation under the saturated-shell conjecture. -/
+-- Ref: [manuscript] conj:categorical-neutrality-saturated-shells §"Statement"
+theorem fullTwist_iter_two_sided_neutral
+    (n : ℕ) [c : SaturatedShellConjecture n] (a b : ℕ) :
+    c.fullTwist ^ a * c.phi * c.fullTwist ^ b = c.phi := by
+  -- Collapse via composition of left- and right-iteration:
+  -- `(fullTwist^a · phi) · fullTwist^b
+  --    = phi · fullTwist^b           (by left-iter)
+  --    = phi                          (by right-iter)
+  have hL : c.fullTwist ^ a * c.phi = c.phi := fullTwist_iter_neutral n a
+  have hR : c.phi * c.fullTwist ^ b = c.phi := fullTwist_iter_neutral_right n b
+  calc
+    c.fullTwist ^ a * c.phi * c.fullTwist ^ b
+        = c.phi * c.fullTwist ^ b := by rw [hL]
+    _ = c.phi := hR
+
 end QOU.ShellNeutrality
