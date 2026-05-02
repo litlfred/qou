@@ -115,7 +115,7 @@ const witness = {
   hits: unique,
 };
 
-const outputPath = "folio-assistant/computations/wall-violations.witness.json";
+const outputPath = process.argv[2] ?? "folio-assistant/computations/wall-violations.witness.json";
 mkdirSync(dirname(outputPath), { recursive: true });
 writeFileSync(outputPath, JSON.stringify(witness, null, 2) + "\n");
 console.log(`Wrote ${outputPath}`);

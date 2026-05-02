@@ -16,9 +16,16 @@
  * carries an explicit narrative note instead of being demoted.
  */
 import { readdir, readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = "/home/user/qou/content/quantum-observable-universe";
+// Resolve repo root from this script's location:
+// content/pipeline/conjectural-propagation-audit.ts → repo root.
+const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = resolve(SCRIPT_DIR, "..", "..");
+const ROOT = join(REPO_ROOT, "content/quantum-observable-universe");
+const WITNESS_OUT = process.argv[2] ??
+  join(REPO_ROOT, "docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json");
 
 interface Block {
   label: string;
@@ -113,7 +120,7 @@ for (const [label, block] of blocks) {
       label,
       kind: block.kind,
       conj: [...conjAncestors],
-      file: block.file.replace("/home/user/qou/", ""),
+      file: block.file.replace(REPO_ROOT + "/", ""),
     });
   }
 }
@@ -129,7 +136,7 @@ for (const v of violators) {
 // (NOT folio-assistant/computations/, which triggers
 // witness-pipeline.yml CI re-running compute scripts).
 await Bun.write(
-  "/home/user/qou/docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json",
+  WITNESS_OUT,
   JSON.stringify(
     {
       audit: "conjectural-propagation (CLAUDE.md §3b STRICT)",
@@ -142,4 +149,4 @@ await Bun.write(
     2,
   ),
 );
-console.log("\nWitness: folio-assistant/computations/conjectural-propagation-audit.witness.json");
+console.log(`\nWitness: ${WITNESS_OUT.replace(REPO_ROOT + "/", "")}`);
