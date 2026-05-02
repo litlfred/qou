@@ -13,6 +13,7 @@ import QOU.Interactions.NucleonNFWitness
 import QOU.Interactions.SDPRankCollapse
 import QOU.Interactions.AlgebraicPrimality
 import QOU.Interactions.HeckeEnergyPositivity
+import QOU.Interactions.MagicLadderEquivalences
 import QOU.Interactions.ProtonTrefoilSign
 import QOU.Interactions.TrefoilVanishing
 

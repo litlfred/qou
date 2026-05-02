@@ -46,6 +46,7 @@ import Mathlib.Algebra.Homology.HomologicalComplex
 import Mathlib.Data.Set.Basic
 import Mathlib.Order.Bounds.Basic
 import Mathlib.Tactic
+import QOU.LiftingDescent.HomologicalCondensation
 
 namespace QOU.LiftingDescent.BBStratification
 
@@ -154,12 +155,16 @@ class BBSpectralSequenceProvider where
       parameter `q`. -/
   bbSeq : ∀ (n : ℕ) (q : ℝ), BBSpectralSequence n
   /-- Bridge: the framework's condensation predicate aligns with
-      the spectral sequence's positive-q-vanishing predicate. -/
+      the spectral sequence's positive-q-vanishing predicate.
+
+      Formally: at each `(n, q)`, the spectral sequence built from
+      the BB-stratification vanishes in positive q-degree iff the
+      framework predicate `InfinityVanishesAtPositiveQ n` holds.
+      Concrete instances supply the equivalence. -/
   bridge :
     ∀ (n : ℕ) (q : ℝ),
       (bbSeq n q).spectralSequence.vanishesInPositiveQ
-      ↔ True  -- placeholder; concrete instance ties to the
-              -- framework's InfinityVanishesAtPositiveQ
+      ↔ QOU.LiftingDescent.HomologicalCondensation.InfinityVanishesAtPositiveQ n
 
 /-! ## §5  Provable consequences -/
 
@@ -201,5 +206,20 @@ theorem vanishesAt_of_vanishesInPositiveQ
     {p q : ℕ} (hq : 0 < q) :
     S.vanishesAt p q :=
   h p q hq
+
+/-- **Bridge corollary.** Given a `BBSpectralSequenceProvider`, the
+    framework's `InfinityVanishesAtPositiveQ n` follows from the
+    BB-stratification at `n` having all strata complete-intersection.
+
+    This is the structural form of `condensation_at_magic`: instead
+    of asserting the predicate axiomatically per-n, we derive it from
+    the BB-stratum complete-intersection property. -/
+-- Ref: [manuscript] conj:homological-shell-condensation
+theorem framework_condensation_of_all_complete
+    [P : BBSpectralSequenceProvider]
+    {n : ℕ} {q : ℝ}
+    (h : ∀ λ, (P.bbSeq n q).stratification.is_complete_intersection λ) :
+    QOU.LiftingDescent.HomologicalCondensation.InfinityVanishesAtPositiveQ n :=
+  (P.bridge n q).mp ((P.bbSeq n q).collapse_when_all_complete h)
 
 end QOU.LiftingDescent.BBStratification
