@@ -421,16 +421,42 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   no longer cites an "expected" identity.
 - **E**: 1 day → done in 0.5 day.
 
-### P3.3 — Descent sharpness on pairs (audit GAP 17b)
+### P3.3 — Descent sharpness on pairs (audit GAP 17b) — ✅ landed
 
 - **W**: line 114 of prior audit. Pentagon gives an upper bound on
   pair contributions; sharpness (i.e., is the bound tight?) is open.
-- **D**: Derive sharpness or replace pentagon-bound with an
-  inequality flag in the tower formula.
+- **D**: ✅ One-page lemma block
+  [`lem:tower-pair-equality-fixed-level`](../../content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.md)
+  with `.ts` + `.md` + `.lean` triple. The pentagon-bound framing
+  was vacuous (per [P3.2](#p3-2-pentagon-uv-q-vu-at-traced-volume-level-audit-gap-17a-landed)
+  the operator pentagon doesn't apply to scalar $\hat V$'s); the
+  Markov-pair identity
+  ([`prop:markov-pair-z2`](../../content/quantum-observable-universe/braids-and-knots/markov-pair-z2.md))
+  is itself an *equality* ($\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$
+  for adjacent and non-adjacent generators). Lifting via the
+  algebraic-quantum-volume factorization plus pair commutativity
+  ([`lem:vhat-pair-commutation-trace`](../../content/quantum-observable-universe/braids-and-knots/vhat-pair-commutation-trace.md))
+  preserves the equality at every jet level $n$.
+- **Headline**: the level-$n$ pair contribution
+  $z^2 \sum_{(i,j) \in \mathcal{P}_n} \Phi_q(|\hat V_i^{(n)}
+  \hat V_j^{(n)}|)$ is an **exact equality**, not an upper bound.
+  Empirical residual to CODATA at light atoms ($\sim 0.5$–$0.9\%$)
+  reflects level $\ge 1$ contributions of the brane tower
+  truncation, not a sharpness gap in the level-$n$ formula.
+- **Files touched**:
+  - New: `tower-pair-equality-fixed-level.{ts,md,lean}` triple.
+  - Wired into `braids-and-knots.ts §"Categorical Mass
+    Foundations"` after `vhat-pair-commutation-trace`.
+  - `mass-endomorphism-jet-tower.md` open-subconjecture #3 marked
+    ✅ with the resolution.
 - **B**: blocked by nothing.
-- **S**: the tower formula is either an *equality* (sharpness
-  proved) or an *inequality* with a named gap term.
-- **E**: 3–5 days.
+- **S**: ✅ tower formula is an *equality* (sharpness proved) at
+  fixed jet level. Truncation error to CODATA is the level $\ge
+  N+1$ contribution, bounded by `prop:jet-tower-convergence`
+  conditional on uniform $\Delta_{\max}$ (workplan **P3.4**).
+- **E**: 3–5 days estimated → done in 0.5 day (same pattern as
+  P3.2: the question dissolves once the pentagon-framing is
+  recognised as non-applicable).
 
 ### P3.4 — Jet-level uniform $\Delta_{\max}$ (audit GAP 14a)
 

@@ -449,6 +449,7 @@ export default chapter({
         "graded-markov-trace-from-gs-filtration",
         "residue-at-root",
         "vhat-pair-commutation-trace",
+        "tower-pair-equality-fixed-level",
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",

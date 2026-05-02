@@ -145,7 +145,19 @@ cubic terms at level $n$
    adjacent levels — which is where the operator pentagon $uv =
    q\,vu$ does apply (on inter-level lifts $\widehat U_i$,
    $\widehat V_j$).
-3. **Descent involution on pairs**: does $\hat\tau_n$ map some
-   level-$(n+1)$ pairs back to level-$n$ singletons (or trivial)?
-   The pentagon ascension gives an upper bound on the level-$n+1$
-   support; sharpness is open.
+3. **Descent involution on pairs / pair-formula sharpness** — ✅
+   resolved by
+   [`lem:tower-pair-equality-fixed-level`](#lem:tower-pair-equality-fixed-level).
+   The level-$n$ pair contribution $z^2 \sum_{(i, j) \in
+   \mathcal{P}_n} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)$ is an
+   **exact equality**, not an upper bound — the pentagon-bound
+   framing was vacuous (per item 2 above the pentagon doesn't apply
+   to scalar $\hat V$'s), and the Markov-pair identity
+   ([prop:markov-pair-z2](#prop:markov-pair-z2)) is itself an
+   equality. The empirical residual to CODATA at light atoms
+   ($\sim 0.5$–$0.9\%$) reflects incomplete tower truncation
+   (level $\ge 1$ contributions), not a sharpness gap in the
+   level-$n$ formula. The remaining open piece is the uniform
+   $\Delta_{\max}$ bound for the truncation-error formula
+   ([prop:jet-tower-convergence](#prop:jet-tower-convergence)),
+   tracked as workplan **P3.4** (item 1 above).
