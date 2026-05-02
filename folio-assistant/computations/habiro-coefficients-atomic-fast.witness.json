@@ -1,0 +1,219 @@
+{
+  "computation": "habiro-coefficients-atomic-fast",
+  "description": "Habiro coefficients for atomic braids via parallel symbolic-q (per-partition multiprocessing) + Poly-based cyclotomic expansion. Mathematical output identical to habiro_coefficients_atomic.py; speedup is purely from parallelism + skipping Expr-level simplification in the cyclotomic-division loop.",
+  "reference_blocks": [
+    "def:habiro-ring",
+    "prop:habiro-expansion-atomic",
+    "prop:full-pole-structure-mass-trace"
+  ],
+  "engine": "sympy + ProcessPoolExecutor + sp.Poly",
+  "results": {
+    "p (proton, A=1)": {
+      "atom_label": "p (proton, A=1)",
+      "Z": 1,
+      "N": 0,
+      "include_inter": false,
+      "tr_M_in_q": "(q**24 + 2*q**22 + 2*q**20 + q**19 + q**18 + 2*q**17 + q**16 + 2*q**15 + q**14 + 2*q**13 + q**11 - q**10 - q**8 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**14 + 4*q**12 + 4*q**10)",
+      "shift": 0,
+      "denom_in_u": "4*u**28 + 4*u**24 + 4*u**20",
+      "p_in_u": "u**48 + 2*u**44 + 2*u**40 + u**38 + u**36 + 2*u**34 + u**32 + 2*u**30 + u**28 + 2*u**26 + u**22 - u**20 - u**16 - u**12 - 2*u**8 - 2*u**4 - 1",
+      "deg_p_u": 48,
+      "tr_M_at_q0": 2.1225825094527297,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "8",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-240*u - 240",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "1417*u**2 + 1497*u + 1574",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-3603*u**3 - 3956*u**2 - 4273*u - 4667",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "4701*u**4 + 5288*u**3 + 5959*u**2 + 6665*u + 7465",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-3245*u**5 - 3776*u**4 - 4443*u**3 - 5134*u**2 - 5986*u - 6870",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "1123*u**6 + 1398*u**5 + 1701*u**4 + 2087*u**3 + 2516*u**2 + 3050*u + 3642",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-165*u**7 - 227*u**6 - 292*u**5 - 391*u**4 - 495*u**3 - 647*u**2 - 811*u - 1040",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "7*u**8 + 9*u**7 + 15*u**6 + 21*u**5 + 34*u**4 + 46*u**3 + 68*u**2 + 91*u + 130",
+          "deg_a_m": 8,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 9,
+          "a_m": "-u**3 - u**2 - 2*u - 3",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "expansion_terminated_clean": true,
+      "elapsed_sec": 0.5020747184753418,
+      "workers_used": 4,
+      "max_m_used": 12
+    },
+    "D (deuteron, A=2)": {
+      "atom_label": "D (deuteron, A=2)",
+      "Z": 1,
+      "N": 1,
+      "include_inter": true,
+      "tr_M_in_q": "(q**52 + 3*q**50 + 6*q**48 + 9*q**46 + 21*q**44 + 35*q**42 + 47*q**40 + 50*q**38 + 70*q**36 + 73*q**34 + 54*q**32 + 7*q**30 - 8*q**28 - 35*q**26 - 59*q**24 - 82*q**22 - 62*q**20 - 46*q**18 - 24*q**16 - 11*q**14 + 8*q**12 + 11*q**10 + 11*q**8 + 7*q**6 + 6*q**4 + 3*q**2 + 1)/(32*q**38 + 128*q**36 + 288*q**34 + 480*q**32 + 672*q**30 + 832*q**28 + 896*q**26 + 832*q**24 + 672*q**22 + 480*q**20 + 288*q**18 + 128*q**16 + 32*q**14)",
+      "shift": 0,
+      "denom_in_u": "32*u**76 + 128*u**72 + 288*u**68 + 480*u**64 + 672*u**60 + 832*u**56 + 896*u**52 + 832*u**48 + 672*u**44 + 480*u**40 + 288*u**36 + 128*u**32 + 32*u**28",
+      "p_in_u": "u**104 + 3*u**100 + 6*u**96 + 9*u**92 + 21*u**88 + 35*u**84 + 47*u**80 + 50*u**76 + 70*u**72 + 73*u**68 + 54*u**64 + 7*u**60 - 8*u**56 - 35*u**52 - 59*u**48 - 82*u**44 - 62*u**40 - 46*u**36 - 24*u**32 - 11*u**28 + 8*u**24 + 11*u**20 + 11*u**16 + 7*u**12 + 6*u**8 + 3*u**4 + 1",
+      "deg_p_u": 104,
+      "tr_M_at_q0": 0.17743692421543195,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "96",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-7424*u - 7424",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "122155*u**2 + 124630*u + 127071",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-817852*u**3 - 848399*u**2 - 877709*u - 909460",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "2846460*u**4 + 2998068*u**3 + 3156264*u**2 + 3319350*u + 3489257",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-5774643*u**5 - 6185101*u**4 - 6625244*u**3 - 7082526*u**2 - 7571603*u - 8079354",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "7227252*u**6 + 7889065*u**5 + 8597546*u**4 + 9361835*u**3 + 10178601*u**2 + 11057517*u + 11995209",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-5708800*u**7 - 6358825*u**6 - 7063778*u**5 - 7844582*u**4 - 8689732*u**3 - 9622453*u**2 - 10630661*u - 11739570",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "2833923*u**8 + 3224016*u**7 + 3664745*u**6 + 4154755*u**5 + 4706145*u**4 + 5317619*u**3 + 6002902*u**2 + 6761189*u + 7607986",
+          "deg_a_m": 8,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 9,
+          "a_m": "-854685*u**9 - 997054*u**8 - 1164176*u**7 - 1352454*u**6 - 1572007*u**5 - 1818962*u**4 - 2105286*u**3 - 2426682*u**2 - 2797208*u - 3212367",
+          "deg_a_m": 9,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 10,
+          "a_m": "145232*u**10 + 175881*u**9 + 211247*u**8 + 254200*u**7 + 303790*u**6 + 363463*u**5 + 432181*u**4 + 514241*u**3 + 608619*u**2 + 720478*u + 848795",
+          "deg_a_m": 10,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 11,
+          "a_m": "-12001*u**11 - 15356*u**10 - 19157*u**9 - 24194*u**8 - 30034*u**7 - 37669*u**6 - 46397*u**5 - 57608*u**4 - 70609*u**3 - 87094*u**2 - 106047*u - 129770",
+          "deg_a_m": 11,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 12,
+          "a_m": "344*u**12 + 459*u**11 + 656*u**10 + 857*u**9 + 1168*u**8 + 1527*u**7 + 2078*u**6 + 2675*u**5 + 3537*u**4 + 4539*u**3 + 5966*u**2 + 7575*u + 9774",
+          "deg_a_m": 12,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 13,
+          "a_m": "-u**13 - u**12 - 2*u**11 - 3*u**10 - 8*u**9 - 10*u**8 - 17*u**7 - 24*u**6 - 43*u**5 - 57*u**4 - 87*u**3 - 119*u**2 - 182*u - 242",
+          "deg_a_m": 13,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "expansion_terminated_clean": true,
+      "elapsed_sec": 7.790334701538086,
+      "workers_used": 4,
+      "max_m_used": 24
+    }
+  },
+  "computedAt": "2026-05-02T21:13:42.919492+00:00"
+}
