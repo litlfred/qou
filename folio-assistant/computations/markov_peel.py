@@ -245,7 +245,14 @@ def tr_M_atomic(
     else:
         elem = word_to_element(word)
 
-    return tr_M_element(elem, n_strands)
+    # `simplify=False`: skip the `sp.simplify` aggregation step.  At
+    # A=3 the aggregated total has ~5000-12000 sympy ops; calling
+    # `simplify` on it exceeds 30 minutes (³He) while the recursion
+    # itself runs in under a second.  Numerical evaluation at q=q₀
+    # is unaffected by simplification.  Callers that want a tidied
+    # symbolic form can `sp.cancel` or `sp.together` the result
+    # themselves (still much faster than `simplify`).
+    return tr_M_element(elem, n_strands, simplify=False)
 
 
 # ── Quick smoke test (deuteron cross-check) ─────────────────────────

@@ -182,7 +182,8 @@ def _tr_M_word_impl(word: tuple, n: int, z, h, *,
 
 
 def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
-                  ocneanu_fallback: bool = True):
+                  ocneanu_fallback: bool = True,
+                  simplify: bool = True):
     """Canonical Markov trace of a SymbolicHeckeElement.
 
     Uses the recursive Markov-axiom reduction tr_M_word.  For braid
@@ -193,6 +194,16 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
     computes the same canonical trace via ω-weighted seminormal
     character sum.  Set ``ocneanu_fallback=False`` to keep the
     original NotImplementedError behaviour.
+
+    ``simplify`` (default True for back-compat): apply ``sp.simplify``
+    to the aggregated total before returning.  For elements with
+    many terms this dominates the runtime — at A=3 (³He, 128 reduced
+    terms, ~5000 sympy ops) the simplify step exceeds 30 minutes
+    while the aggregation itself takes 60 ms.  Pass ``simplify=False``
+    to return the unsimplified total; numerical evaluation
+    (``.subs(q, q₀).evalf(...)``) is unaffected by simplification.
+    The Markov-peel production path
+    (`markov_peel.tr_M_atomic`) opts out of simplification.
     """
     total = sp.Integer(0)
     fallback_terms = {}
@@ -230,8 +241,9 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
             num = canonical_markov_trace_via_ocneanu(sub_elem, n,
                                                         q_val=float(_Q0))
             total += num
-    return sp.simplify(total) if isinstance(total, sp.Basic) \
-            else total
+    if simplify and isinstance(total, sp.Basic):
+        return sp.simplify(total)
+    return total
 
 
 # ── Prop table sanity ───────────────────────────────────────────
