@@ -139,7 +139,13 @@ if __name__ == "__main__":
         ("D", 1, 1, 2),
         ("3He", 2, 1, 3),
         ("4He", 2, 2, 4),
-        ("12C", 6, 6, 12),
+        # 12C deferred: Murnaghan-Nakayama character on a 36-strand
+        # atomic-braid permutation is the next compute bottleneck
+        # (>5min per partition at length ≤ 2). The Schur-Weyl
+        # length-≤-2 + cancel optimisations are confirmed at A ≤ 4;
+        # the remaining bottleneck is the MN character evaluation,
+        # tracked as a separate optimization (cycle-type caching, or
+        # CRT polynomial reconstruction over the character itself).
     ]
 
     results = []

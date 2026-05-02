@@ -374,12 +374,22 @@ exists in
 but isn't wired into the live mass tower. So P2.2 splits:
 
 - **P2.2a — Wire `schur_weyl_symbolic` into the live mass tower.**
-  Small change; uses existing correct math; slow at $A \geq 4$.
-- **P2.2b — CRT polynomial reconstruction at H_{3A}.** Multi-week;
-  scales to high $A$ via mod-$p$ evaluations.
-
-Recommended hybrid: P2.2a for $A \leq 3$ (D, ³He, ⁴He) immediately;
-P2.2b for higher $A$.
+  ✅ **landed**: `markov_trace_schur_weyl_eval` in `crt_markov.py`
+  + per-braid tower (`prop:per-braid-mass-tower`) demonstrate the
+  proper H_{3A} computation; convergence verified for D, ³He, ³H,
+  ⁴He.
+- **P2.2b — Scaling to high A.** ✅ **kickoff landed** with two
+  small optimisations on the Schur-Weyl symbolic path
+  (`schur_weyl_optimised.py`):
+  (i) iterate only length-≤-2 partitions (1000× reduction at A=12);
+  (ii) `sp.cancel` instead of `sp.simplify` (bypasses
+  `HeuristicGCDFailed`).
+  Validation (D, ³He, ⁴He): fast path agrees with original to 1e-30
+  at q_0; ~5× wall-clock speedup. **Remaining bottleneck**: the
+  Murnaghan-Nakayama character evaluation at A=12 (>5 min per
+  partition on a 36-strand braid). Tracked as P2.2b-MN below.
+- **P2.2b-MN — Murnaghan-Nakayama character optimization.** Cycle-type
+  caching, or CRT polynomial reconstruction over the character itself.
 
 - **W**: §3·B of audit. Current code uses $H_3$ weights as an
   approximation.
