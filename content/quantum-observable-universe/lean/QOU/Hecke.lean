@@ -2,6 +2,7 @@ import QOU.Hecke.Generators
 import QOU.Hecke.Algebra
 import QOU.Hecke.MarkovTrace
 import QOU.Hecke.Wedderburn
+import QOU.Hecke.Hoefsmit
 
 /-!
 # Hecke algebra infrastructure — module index
@@ -16,6 +17,10 @@ Provides:
   axiom and normalisation.
 - `WedderburnDecomp` — Wedderburn-Artin decomposition by partitions
   λ ⊢ n into matrix algebras.
+- `HoefsmitRepresentation` — explicit seminormal-form matrix
+  representation `ρ_λ : H_n(q) → Mat_{f^λ}(R)` per partition `λ`,
+  word-sensitive (distinguishes braids whose permutation cycle
+  types coincide).
 
 Status: structural framework laid out as classes (per CLAUDE.md §3b
 axiom-class pattern). Substantive proofs are left as `sorry` with

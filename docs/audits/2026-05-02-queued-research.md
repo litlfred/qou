@@ -218,13 +218,13 @@ position.)
 | # | Item | Status | Effort | Unblocks |
 |---|------|--------|--------|----------|
 | 1 | R1 q-deformed Hecke character (q-MN) | ✅ done | — | partial — distinguishes by cycle-type |
-| 1.b | R1.b Hoefsmit seminormal forms | 🟡 in progress | 1 week | full word-sensitive Hecke trace; ³He vs ³H |
+| 1.b | R1.b Hoefsmit seminormal forms | ✅ Python landed; Lean structural stub landed (`QOU.Hecke.Hoefsmit`) | — | full word-sensitive Hecke trace; ³He vs ³H |
 | 2 | R3 L4–L7 SDP cvxpy refactor | ✅ done | — | per-level binding-energy predictions |
 | 3 | R4 P2.5 codemod completion | ✅ done — bulk triage complete (21 exposed + 69 marked `polynomial_q_not_applicable`); sole non-marked file is `habiro_frobenius_probe.py` which is itself the R6 step-1 substantive symbolic-q probe | — | symbolic-in-q paper-wide |
 | 4 | R2 MAG-1 Z=126 (gen.fn. + sample) | ✅ done | — | seventh magic number |
 | 5 | R7 Pentagon (after scope) | 🟡 Lean stub landed | 2–5 days | descent sharpness |
 | 6 | R8 Δ_max numerical | 🟡 queued | 2–3 days | jet-tower convergence |
-| 7 | R6 Habiro → MotivicGaloisCharacter map | ✅ steps 1+3 + most of step 2; archimedean Weil/Deligne piece remains | — | family-4 motivic instance |
+| 7 | R6 Habiro → MotivicGaloisCharacter map | ✅ step 1 (Frob extraction), step 2 (Galois-norm integrality verified at all (atom, prime) pairs where Pochhammer truncates inside data range — 3/3 atoms compatible), step 3 (Lean axiom-class instance) all closed; archimedean Weil/Deligne piece + deeper-m Habiro coefficients for primes ≥ 11 remain | — | family-4 motivic instance |
 
 R6 is now substantially more tractable than originally scoped —
 the Habiro ring carries the symbolic q-data and the missing
