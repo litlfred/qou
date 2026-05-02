@@ -13,6 +13,5 @@ export default remark({
   uses: [
     "def:quantum-planck-constant",
     "def:information-speed-of-light",
-    "prop:hausdorff-dimension",
-  ],
+      ],
 });

@@ -98,9 +98,9 @@ qualitative prediction to a concrete observational handle:
 
 | Signature | QOU data row | Quantitative anchor |
 |---|---|---|
-| Intermittency exponent deviations | [CMB $q$-torsion data](#rem:cmb-torsion-data) | Structure-function scaling $\langle (\delta u_r)^p \rangle \asymp r^{\zeta_p}$ with $\zeta_p$ a surreal-order sequence |
+| Intermittency exponent deviations | [CMB $q$-torsion data](#sec:cmb-torsion-data) | Structure-function scaling $\langle (\delta u_r)^p \rangle \asymp r^{\zeta_p}$ with $\zeta_p$ a surreal-order sequence |
 | GRB hadron/lepton yield | [BEC vortex data](#rem:bec-vortex-data) | Ratio set by $q$-Hecke branching of [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding) |
-| CMB non-Gaussianity patches | [CMB $q$-torsion data](#rem:cmb-torsion-data) | Angular cross-correlation with $\chi = -6$ topology; low-$\ell$ quadrupole/octupole anomalies |
+| CMB non-Gaussianity patches | [CMB $q$-torsion data](#sec:cmb-torsion-data) | Angular cross-correlation with $\chi = -6$ topology; low-$\ell$ quadrupole/octupole anomalies |
 | BEC vortex reconnection signature | [BEC vortex data](#rem:bec-vortex-data) | Transient helicity-conservation violation at reconnection events |
 
 Each row is falsifiable under the QOU framework: a null result on

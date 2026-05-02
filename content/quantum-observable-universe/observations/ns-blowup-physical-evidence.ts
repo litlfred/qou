@@ -6,7 +6,7 @@ export default remark({
     "Physical signatures of the Navier--Stokes blow-up: intermittency, GRBs, CMB anomalies",
   interprets: "conj:blowup-yekutieli",
   uses: [
-    "rem:cmb-torsion-data",
+    "sec:cmb-torsion-data",
     "rem:bec-vortex-data",
     "prop:leray-profile",
   ],

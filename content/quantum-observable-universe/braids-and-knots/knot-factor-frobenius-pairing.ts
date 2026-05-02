@@ -14,8 +14,7 @@ export default conjecture({
     "def:q-casimir",
     "rem:adjoint-trace",
     "def:q-heat-equation",
-    "rem:yekutieli-stokes-remark",
-  ],
+      ],
   cites: ["yekutieli2015", "kassel1995"],
   tags: [
     "frobenius-pairing",

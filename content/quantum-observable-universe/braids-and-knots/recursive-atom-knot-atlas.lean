@@ -42,7 +42,7 @@
 
   Refs: prop:recursive-atom-knot-atlas (this block),
         def:confined-particle (GB-NF source of truth),
-        def:knot-particle-dictionary,
+        rem:knot-particle-dictionary,
         prop:confinement-sdp.
 -/
 
