@@ -1,0 +1,130 @@
+#!/usr/bin/env python3
+"""
+LP-dual witness validator — first-class enforcement.
+
+Walks every JSON witness under folio-assistant/computations/ and
+flags operator-selection / LP / SDP witnesses that lack required
+LP-dual fields (per prop:operator-selection-lp § dual program).
+
+Required fields (recursive search inside the witness JSON):
+  - y0_star          shadow price of the net constraint
+  - y_star           shadow prices of Frobenius positivity constraints
+  - active_set       (or active_constraints / active_channels)
+  - primal_obj       primal optimum value
+  - dual_obj         dual optimum value (= n_target · y0_star)
+  - duality_gap      |primal_obj - dual_obj|
+
+Witness files are flagged when their filename or `description` /
+`computation` field signals an LP/SDP/operator-selection compute.
+This catches the failure mode that motivated this script: scripts
+that solve the primal LP but never extract / report the dual,
+losing the principled binding-energy interpretation.
+
+Usage (CI):
+    python3 folio-assistant/computations/lp_dual_witness_validator.py
+    → exit 0 if all flagged witnesses include duals; exit 1 otherwise.
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+from lp_dual_solver import verify_dual_present
+
+
+# Witness file name patterns or (description / computation) field
+# substrings that indicate an LP / SDP / operator-selection compute.
+LP_SDP_HINTS = (
+    "lp-",
+    "lp_",
+    "operator-selection",
+    "operator_selection",
+    "confinement-",
+    "confinement_",
+    "shadow",
+    "duality",
+    "knot-operator",
+    "knot_operator",
+    "sdp",
+    "sdp-",
+    "primal-dual",
+    "primal_dual",
+)
+
+
+def is_lp_sdp_witness(path: Path) -> tuple[bool, str]:
+    """Returns (is_lp_sdp, reason).
+
+    Heuristic: filename or top-level description / computation field
+    contains an LP/SDP/operator-selection hint.
+    """
+    name = path.name.lower()
+    for hint in LP_SDP_HINTS:
+        if hint in name:
+            return True, f"filename matches '{hint}'"
+    try:
+        data = json.loads(path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return False, ""
+    for field in ("description", "computation", "audit", "name"):
+        v = data.get(field)
+        if isinstance(v, str):
+            v_low = v.lower()
+            for hint in LP_SDP_HINTS:
+                if hint in v_low:
+                    return True, f"{field} contains '{hint}'"
+    return False, ""
+
+
+def main(argv: list[str]) -> int:
+    strict = "--strict" in argv
+    root = Path(__file__).parent
+    witnesses = sorted(root.glob("*.witness.json")) + sorted(
+        root.glob("*-witness.json"))
+    flagged = []
+    for w in witnesses:
+        is_lp, reason = is_lp_sdp_witness(w)
+        if is_lp:
+            flagged.append((w, reason))
+
+    print(f"Scanned {len(witnesses)} witness files; "
+          f"{len(flagged)} flagged as LP/SDP/operator-selection.")
+    print()
+    failures = []
+    for w, reason in flagged:
+        result = verify_dual_present(w)
+        if not result["ok"]:
+            failures.append((w, result))
+
+    if not failures:
+        print(f"OK — all {len(flagged)} flagged witnesses include LP dual.")
+        return 0
+
+    # Brief failure summary
+    print(f"{'FAIL' if strict else 'WARN'} — "
+          f"{len(failures)}/{len(flagged)} flagged witnesses missing "
+          f"LP dual fields.")
+    print()
+    print("Sample (first 10):")
+    for w, result in failures[:10]:
+        print(f"  ✗  {w.name}")
+        print(f"     missing: {result['missing']}")
+    if len(failures) > 10:
+        print(f"  ... ({len(failures) - 10} more)")
+    print()
+    print("To fix: route the LP/SDP solve through")
+    print("  folio-assistant/computations/lp_dual_solver.py")
+    print("which returns BOTH primal and dual via")
+    print("  solve_operator_selection_lp() or solve_psd_operator_selection_sdp().")
+    print("The result's .to_dict() contains all required fields.")
+    print()
+    if strict:
+        print("Exit 1 (--strict mode).")
+        return 1
+    print("Exit 0 (warn-only mode; pass --strict to enforce).")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

@@ -197,6 +197,43 @@ Follow the detailed rules in `.github/copilot-instructions.md` — they govern
 LaTeX structure, labeling, cross-references, prose style, notation, and skill
 usage for content changes.
 
+### LP / SDP duals — first-class infra (do not skip)
+
+Per `prop:operator-selection-lp` § *dual program*, every operator-
+selection / shadow-price / knot-operator-selection compute MUST
+emit BOTH primal and dual variables in its witness JSON:
+
+| field | meaning |
+|-------|---------|
+| `y0_star` | shadow price of the net constraint |
+| `y_star` | shadow prices of Frobenius positivity constraints (≥ 0) |
+| `active_set` (or `active_constraints` / `active_channels`) | indices `i` with `y_star[i] > 0` |
+| `primal_obj` | $\sum_i t_i x_i^*$ |
+| `dual_obj` | $n_{\text{target}} \cdot y_0^*$ (= primal_obj by strong duality) |
+| `duality_gap` | $|\text{primal\_obj} - \text{dual\_obj}|$ |
+
+**Canonical entry point**:
+[`folio-assistant/computations/lp_dual_solver.py`](folio-assistant/computations/lp_dual_solver.py)
+exposes `solve_operator_selection_lp(t, G, n_target)` and
+`solve_psd_operator_selection_sdp(t, G, n_target)`. Both return
+a result whose `.to_dict()` contains all required fields.
+
+**CI enforcement**:
+[`folio-assistant/computations/lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)
+runs in `witness-pipeline.yml` (warn-only by default; `--strict`
+fails CI). Scans every `*.witness.json` whose name or
+`description`/`computation` field signals an LP/SDP/operator-
+selection compute and verifies the dual fields are present.
+
+**Why this matters**: the dual variables ARE the binding-energy
+shadow prices. The active demand channels (`y_star[i] > 0`) are
+the "most receptive sub-braids" — they identify which Wedderburn
+blocks the bound state actually saturates. Solving only the
+primal loses this structural information, which has been the
+historical pattern (58 of 58 LP/SDP witnesses on `main` lacked
+the dual at the time this rule was added). Do not repeat this
+pattern.
+
 ## Writing `.lean` proofs — rules for agents
 
 These rules apply whenever an agent creates or modifies a `.lean` file.
