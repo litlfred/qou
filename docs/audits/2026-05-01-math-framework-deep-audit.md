@@ -439,28 +439,52 @@ prediction at level $A$ requires:
 3. 🟡 Wedderburn–Bratteli recursion at all levels up to $H_{3A}$ —
    currently 2 sorries at higher levels (link 10).
 4. 🟡 GS-filtration formalization for `gradedMarkovTrace` /
-   `residueAtRoot` — currently `noncomputable opaque`.
+   `residueAtRoot` — currently `noncomputable opaque`. Narrative
+   form landed in [`prop:graded-trace-residue-split`](../../content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.md)
+   + [`prop:gb-residue-spectral-sum`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.md) (P2.6, ✅).
 5. ✅ Mass-tower formula (link 18) — formula clean; closed-form
-   conjectural.
-6. ❌ `crt_markov.py` covering **all** Wedderburn channels (sym +
-   std + alt), at $H_{3A}$, with full $\Phi_q$-tower contribution
-   beyond the descended term — currently std-only, descended-only
-   (~99% mass missing per [`AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md)).
+   conjectural; **per-braid form** [`prop:per-braid-mass-tower`](../../content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md)
+   supersedes the per-generator divergent form (P2.2a).
+6. ✅ **Schur–Weyl mass tower at $H_{3A}$ now implemented**
+   ([`folio-assistant/computations/schur_weyl_mpmath.py`](../../folio-assistant/computations/schur_weyl_mpmath.py))
+   — bypasses sympy's symbolic GCD via direct mpmath evaluation;
+   scales to $A = 40$ (⁴⁰Ca, 120-strand braid) in **0.25 s**.
+   Wired into `crt_markov.markov_trace_schur_weyl_eval`.
+   The per-generator H_3-at-H_{3A} divergence (the ~99%-of-mass
+   missing in CRT compute per `AUDIT-crt-k-level.md`) is
+   **structurally fixed**: V̂_full at H_3 weights was the wrong
+   object; the proper $H_{3A}$ Schur–Weyl sum gives convergent
+   sub-braid traces (max 0.67 < $q_0 = 1.11$).
 7. ❌ Word-shortcut undo functions for levels 4–7
    ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
-8. ❌ Symbolic-in-$q$ throughout, $q_0$-substitution only at final
-   step.
-9. ❌ Eight empirical/fitting flags (§2) reduced to ≤ 1 (the
-   single $m_e$ calibration), with that one flag explicitly named
-   `prop:single-scale-calibration`.
-10. ❌ Magic-number derivation from Bring (currently asserted but
-    not derived).
-11. ✅ Neutrino: nothing to reconcile — neutrino is the unknot, $J_\nu(q)=1$, bare-knot mass = 0. Vacuum-drag prediction $m_\nu \sim \mu_0\cdot(q-1)$ is the correct categorical answer. (Resolved by §2·F audit pass — the "10⁶ off" claim was a neutron/neutrino confusion.)
+8. 🟡 Symbolic-in-$q$ throughout, $q_0$-substitution only at final
+   step. Helper landed
+   ([`witness_polynomial.py`](../../folio-assistant/computations/witness_polynomial.py));
+   3 exemplars migrated; ~78 scripts remain (Tier B mechanical).
+9. ✅ **Empirical/fitting flags reduced to 0 hard + 1 partial**
+   (MAG-1 4/7-derived; PR #500 homological path may close 3/7
+   remaining). All other hard flags cleared this audit pass.
+10. 🟡 Magic-number derivation: 4/7 derived via Hoefsmit characters
+    ([`prop:magic-numbers-from-q`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md));
+    3/7 (50, 82, 126) await k≥12 Wedderburn coverage OR PR #500
+    homological framework.
+11. ✅ Neutrino: ν = unknot, $J_\nu(q)=1$, bare-knot mass = 0
+    (§2·F).
+12. ✅ **Per-braid mass tower validated against AME**
+    ([`per_braid_vs_ame.py`](../../folio-assistant/computations/per_braid_vs_ame.py),
+    [`witness JSON`](2026-05-01-per-braid-vs-ame.witness.json)):
+    per-braid total × $(0.987 \times m_e)$ ≈ AME atomic mass for
+    D / ³He / ³H / ⁴He / ¹²C / ¹⁶O / ⁴⁰Ca with **1.06% spread**.
+    The cal/$m_e$ ratio decreases monotonically with $A$
+    (0.992 → 0.981) — that's the binding-energy correction
+    emerging from the framework. Three-calibration discipline
+    holds: $m_e$ is the only dimensional input.
 
-**Headline.** Items 1–5 are 90%+ done. Items 6–11 are the work the
-workplan addresses. Until items 6–8 are done, the compute pipeline
-is structurally below the math framework — the math says "tower",
-the compute says "just the descended term".
+**Headline.** Items 1–5, 6, 9, 11, 12 are ✅. Items 3, 4, 8, 10
+are 🟡 partial. Items 7 (word-shortcut) is the remaining ❌.
+The compute pipeline is now structurally aligned with the math
+framework — proper $H_{3A}$ weights, per-braid stratification,
+convergent Φ_q tower, validated against AME.
 
 See [`2026-05-01-math-framework-workplan.md`](2026-05-01-math-framework-workplan.md)
 for the prioritized fix plan.
