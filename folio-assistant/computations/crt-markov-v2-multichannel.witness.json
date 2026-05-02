@@ -1,0 +1,224 @@
+{
+  "computation": "crt-markov-v2-multichannel",
+  "audit_id": "\u00a73\u00b7A from docs/audits/2026-05-01-math-framework-deep-audit.md",
+  "design_doc": "docs/audits/2026-05-02-crt-markov-multichannel-design.md",
+  "description": "Per-channel (sym + std + alt) breakdown of the mass tower at H_3 Wedderburn weights for the 3-strand single-particle registry (proton, neutron, deuteron-no-inter, electron). Backward-compatibility cross-check vs crt_markov.tower_mass_symbolic_eval at relative tolerance 1e-30 is run as part of the in-process tests. DOES NOT solve \u00a73\u00b7B (H_{3A} Wedderburn coverage).",
+  "timestamp": "2026-05-02T21:34:19.864070+00:00",
+  "parameters": {
+    "q_0": "1.1099785955541805",
+    "mpmath_dps": 50,
+    "tests_passed": true
+  },
+  "research_grade_flagged": [
+    "H_{3A} Wedderburn weights (audit \u00a73\u00b7B) \u2014 needs CRT polynomial reconstruction over partitions of 3A; not addressed here",
+    "Per-channel \u00d7 per-stratum SW: requires per-\u03bb stratum sums in schur_weyl_symbolic.per_stratum_sum_symbolic",
+    "Symbolic-in-q throughout (audit \u00a73\u00b7E) \u2014 currently mpmath"
+  ],
+  "entries": [
+    {
+      "label": "proton",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "include_inter": false,
+      "n_gens_evaluated": 2,
+      "weights": {
+        "w_sym": "0.16546138476810044737",
+        "w_std": "0.66907723046379910525",
+        "w_alt": "0.16546138476810044737"
+      },
+      "desc_per_channel": {
+        "sym": "1.3824945145464383187",
+        "std": "1.0653062285923885918",
+        "alt": "0.73922354697012322411",
+        "full": "0.96039549118814987041"
+      },
+      "single_per_channel": {
+        "sym": "inf",
+        "std": "inf",
+        "alt": "inf",
+        "full": "1096978.3877014413913"
+      },
+      "cross_per_channel": {
+        "sym": "inf",
+        "std": "2007066.4302472305223",
+        "alt": "1276.3727356776699303",
+        "full": "82016.168245806647685"
+      },
+      "total_full": "1178995.5163427392271",
+      "per_generator_abs": [
+        {
+          "gen_index": 0,
+          "n_crossings": 7,
+          "abs_V_sym": "1.8803878084441420438",
+          "abs_V_std": "1.1461015210575872915",
+          "abs_V_alt": "0.53761599071102365938",
+          "abs_V_full": "0.9890073159292591799"
+        },
+        {
+          "gen_index": 1,
+          "n_crossings": 4,
+          "abs_V_sym": "0.73521776111191271864",
+          "abs_V_std": "0.92950424462342281453",
+          "abs_V_alt": "1.3750029012203740994",
+          "abs_V_full": "0.97107015865274364644"
+        }
+      ]
+    },
+    {
+      "label": "neutron",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "include_inter": false,
+      "n_gens_evaluated": 2,
+      "weights": {
+        "w_sym": "0.16546138476810044737",
+        "w_std": "0.66907723046379910525",
+        "w_alt": "0.16546138476810044737"
+      },
+      "desc_per_channel": {
+        "sym": "1.1221068372363018104",
+        "std": "0.80086378625532906062",
+        "alt": "0.91076220623236605988",
+        "full": "0.69860079680904349612"
+      },
+      "single_per_channel": {
+        "sym": "inf",
+        "std": "204416.80521113471176",
+        "alt": "inf",
+        "full": "429527.01458499246636"
+      },
+      "cross_per_channel": {
+        "sym": "inf",
+        "std": "3485.2038626600583886",
+        "alt": "27270.850577793703724",
+        "full": "686.87418744480181028"
+      },
+      "total_full": "430214.58737323407721",
+      "per_generator_abs": [
+        {
+          "gen_index": 0,
+          "n_crossings": 7,
+          "abs_V_sym": "1.5262237891795135195",
+          "abs_V_std": "0.86160315123659187841",
+          "abs_V_alt": "0.66237111603475563992",
+          "abs_V_full": "0.71941330972241763508"
+        },
+        {
+          "gen_index": 1,
+          "n_crossings": 4,
+          "abs_V_sym": "0.73521776111191271864",
+          "abs_V_std": "0.92950424462342281453",
+          "abs_V_alt": "1.3750029012203740994",
+          "abs_V_full": "0.97107015865274364644"
+        }
+      ]
+    },
+    {
+      "label": "deuteron-no-inter",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "include_inter": false,
+      "n_gens_evaluated": 4,
+      "weights": {
+        "w_sym": "0.16546138476810044737",
+        "w_std": "0.66907723046379910525",
+        "w_alt": "0.16546138476810044737"
+      },
+      "desc_per_channel": {
+        "sym": "1.5513065472142403481",
+        "std": "0.85316517975188541706",
+        "alt": "0.67325686853742450666",
+        "full": "0.67093305539585421109"
+      },
+      "single_per_channel": {
+        "sym": "inf",
+        "std": "inf",
+        "alt": "inf",
+        "full": "1526505.4022864338577"
+      },
+      "cross_per_channel": {
+        "sym": "inf",
+        "std": "2014036.8379725506391",
+        "alt": "55818.073891265077379",
+        "full": "83389.916620696251305"
+      },
+      "total_full": "1609895.9898401855048",
+      "per_generator_abs": [
+        {
+          "gen_index": 0,
+          "n_crossings": 7,
+          "abs_V_sym": "1.8803878084441420438",
+          "abs_V_std": "1.1461015210575872915",
+          "abs_V_alt": "0.53761599071102365938",
+          "abs_V_full": "0.9890073159292591799"
+        },
+        {
+          "gen_index": 1,
+          "n_crossings": 4,
+          "abs_V_sym": "0.73521776111191271864",
+          "abs_V_std": "0.92950424462342281453",
+          "abs_V_alt": "1.3750029012203740994",
+          "abs_V_full": "0.97107015865274364644"
+        },
+        {
+          "gen_index": 3,
+          "n_crossings": 7,
+          "abs_V_sym": "1.5262237891795135195",
+          "abs_V_std": "0.86160315123659187841",
+          "abs_V_alt": "0.66237111603475563992",
+          "abs_V_full": "0.71941330972241763508"
+        },
+        {
+          "gen_index": 4,
+          "n_crossings": 4,
+          "abs_V_sym": "0.73521776111191271864",
+          "abs_V_std": "0.92950424462342281453",
+          "abs_V_alt": "1.3750029012203740994",
+          "abs_V_full": "0.97107015865274364644"
+        }
+      ]
+    },
+    {
+      "label": "electron-trefoil",
+      "n_strands": 2,
+      "n_gens_evaluated": 1,
+      "weights": {
+        "w_sym": "0.16546138476810044737",
+        "w_std": "0.66907723046379910525",
+        "w_alt": "0.16546138476810044737"
+      },
+      "desc_per_channel": {
+        "sym": "1.3675518842725480775",
+        "std": "0.73020405950968217929",
+        "alt": "0.7312336822466793265",
+        "full": "0.59384900067050944314"
+      },
+      "single_per_channel": {
+        "sym": "inf",
+        "std": "4449.584504113378735",
+        "alt": "4521.025219137955353",
+        "full": "629.93541615324156673"
+      },
+      "cross_per_channel": {
+        "sym": "0.0",
+        "std": "0.0",
+        "alt": "0.0",
+        "full": "0.0"
+      },
+      "total_full": "630.52926515391207617",
+      "per_generator_abs": [
+        {
+          "gen_index": 0,
+          "n_crossings": 3,
+          "abs_V_sym": "1.3675518842725480775",
+          "abs_V_std": "0.73020405950968217929",
+          "abs_V_alt": "0.7312336822466793265",
+          "abs_V_full": "0.59384900067050944314"
+        }
+      ]
+    }
+  ]
+}

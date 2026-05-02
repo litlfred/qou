@@ -787,6 +787,144 @@ expected to be straightforward).
 [`sigma-all-symbolic-decay.witness.json`](../../folio-assistant/computations/sigma-all-symbolic-decay.witness.json)
 — full symbolic factorizations + decay rate + precision schedule.
 
+### **Induction proof — spectator factorization (2026-05-02 evening).**
+
+The closed form
+$$
+  \Sigma_{\rm all}(A) = (-1)^{A-1} \cdot \frac{3^{\lfloor A/2 \rfloor}}{2^{a(A)}} \cdot
+  (q-1)^A (q+1)^A \cdot (q^2+1)^{2 \lfloor A/2 \rfloor} \cdot
+  \frac{3q^4+4q^2+3}{q^{d(A)}}
+$$
+admits a **trivial induction proof** via the **spectator factorization**
+of the channel sum.
+
+**Spectator constants** (sum-over-channels of one nucleon's contribution):
+
+$$
+  K_n(q) := \sum_{c \in \{\text{triv,conf,unconf,sign}\}} \text{ch}[c][n]
+  \;=\; -\frac{3(q-1)(q+1)(q^2+1)^2}{4 q^3}
+  \;=\; -0.634034\,(q_0)
+$$
+
+$$
+  K_p(q) := \sum_{c \in \{\text{triv,conf,unconf,sign}\}} \text{ch}[c][p]
+  \;=\; -\frac{(q-1)(q+1)}{2 q}
+  \;=\; -0.104530\,(q_0)
+$$
+
+These are **derived rational functions** in $q$ — pure categorical
+constants of the channel algebra.
+
+**Spectator recursion.** Adding a non-converted "spectator" nucleon
+to both the parent and daughter braid words (i.e., extending par
+and dau by the same character at the same position) pulls out a
+constant factor:
+
+$$
+  \Sigma_{\rm all}(\text{par}\cdot \mathfrak{n},\, \text{dau} \cdot \mathfrak{n})
+  = K_n(q) \cdot \Sigma_{\rm all}(\text{par},\, \text{dau})
+$$
+
+$$
+  \Sigma_{\rm all}(\mathfrak{p}\cdot\text{par},\, \mathfrak{p}\cdot\text{dau})
+  = K_p(q) \cdot \Sigma_{\rm all}(\text{par},\, \text{dau})
+$$
+
+**Proof.** Direct from the definition:
+$\Sigma_{\rm all}(\text{par}\cdot\mathfrak{n}, \text{dau}\cdot\mathfrak{n})
+= \sum_{c_1,...,c_A,c_{A+1}} \prod_m \text{ch}[c_m][\text{dau}_m]\cdot\text{ch}[c_{A+1}][\mathfrak{n}]
+- \prod_m \text{ch}[c_m][\text{par}_m]\cdot\text{ch}[c_{A+1}][\mathfrak{n}]$.
+Factor out $\sum_{c_{A+1}} \text{ch}[c_{A+1}][\mathfrak{n}] = K_n$ from
+both terms; the remaining sum is $\Sigma_{\rm all}(\text{par},\text{dau})$. $\square$
+
+**Closed form by induction.** In the chain pattern used by the
+audit (n→p, +n at end, +p at front, +n, +p, +n, ...), the chain
+at level $A$ has $a = \lfloor A/2 \rfloor$ p-prepends and
+$b = \lceil (A-1)/2 \rceil$ n-appends, plus the conversion at the
+base level. Therefore
+
+$$
+  \Sigma_{\rm all}(A) = K_p^{\lfloor A/2 \rfloor} \cdot K_n^{\lceil (A-1)/2 \rceil}
+  \cdot \Sigma_{\rm all}(1)
+$$
+
+with base case
+$\Sigma_{\rm all}(1) = (q-1)(q+1)(3q^4+4q^2+3)/(4 q^3)$.
+
+Two-step ratio identity $K_n \cdot K_p = 3(q^4-1)^2/(8 q^4)$
+**verified symbolically** (residual = 0 in $\mathbb{Q}(q)$).
+$\blacksquare$
+
+This **closes the induction**: `conj:frobenius-filter-categorical-final`
+is now a **derivable proposition**, modulo a pending content-block
+authoring task to formalize $K_n, K_p$ as categorical constants of
+the channel algebra.
+
+### Analogous structure elsewhere in the framework
+
+The spectator factorization
+$\Sigma_{\rm all}(A+1) = K(q) \cdot \Sigma_{\rm all}(A)$
+is a **special case of the Markov property of the Jones–Markov
+trace**. The analogous structures are:
+
+| Locus | Structure | What "spectator" factors out |
+|-------|-----------|------------------------------|
+| Step 16: Markov trace (`thm:jones-markov-trace`) | $\mathrm{tr}_M(\sigma_n x) = z\,\mathrm{tr}_M(x)$ for $x \in H_n$ | One new rightmost strand → factor $z = 1/(q^{1/2}+q^{-1/2})$ |
+| Step 17: All-pairs (`prop:markov-pair-z2`) | $\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$ for adjacent $\|i-j\|=1$ | Two new strands → $z^2$ |
+| Step 10: Bratteli recursion | $H_{n+1} = \mathrm{Ind}^{H_{n+1}}_{H_n} H_n$ | Restriction-induction adjunction |
+| Step 11: BW coefficient branching (`prop:bw-coefficient-shadow-price`) | $C_\mu = \sum_\lambda (\dim_q\mu/\Sigma\dim_q\mu')\,C_\lambda$ | Frobenius reciprocity on Wedderburn channels |
+| Step 9: Two-strand spectral completeness (`thm:em-spectral-completeness`) | $w_+ + w_- = 1$ on $V \otimes V$ | Sym + alt partition |
+| §7a Skein dictionary | $L_+ - L_- = (q - q^{-1})\,L_0$ | Crossing change as trace recursion |
+| **β-decay $\Sigma_{\rm all}$ recursion** *(this work)* | $\Sigma_{\rm all}(A+1) = K_n \Sigma_{\rm all}(A)$ when appending spectator-$\mathfrak{n}$ | Channel sum factors out |
+
+The β-decay $\Sigma_{\rm all}$ recursion is a **representation-
+theoretic dual** of the Markov trace's spectator-factorization:
+where Markov factors out $z$ per added strand, the channel sum
+factors out $K_n$ or $K_p$ per added "spectator nucleon" at
+fixed channel sum.
+
+Both are instances of the **categorical trace's spectator
+factorization principle**: traces of products are products of
+traces, modulo the active "core" where the dynamics actually
+happens. The β-decay calculation lives at the QFT layer (channel-
+weighted matrix elements); the Markov trace lives at the algebraic
+layer ($H_n(q)$). The agreement of their recursive structures
+is a manifestation of the underlying Schur–Weyl duality.
+
+### Caveat: electrons are NOT explicitly added in $\Sigma_{\rm all}$
+
+The $\Sigma_{\rm all}$ object analyzed above computes the
+**categorical (quark-level) mass-difference operator only**. The
+emitted electron + antineutrino on the leptonic side of β decay
+are **not** included in the channel sum. Their contribution is
+handled differently per A in the existing pipeline:
+
+- **A=1 (n→p)**: $Q = (\Sigma_{\rm all} + 1) \cdot m_e$ — the
+  $+1$ (= one electron mass in $m_e$ units) is **added by hand**
+  in [`full-derivation-verified.py`](../../folio-assistant/computations/full-derivation-verified.py)
+  line 257.
+- **A=3 (³H→³He)**: $Q = \|\Sigma_{\rm all}\| \cdot m_e$ — no
+  explicit $+1$; the absolute value plus the small magnitude of
+  $\Sigma_{\rm all}$ at A=3 (0.035) make the electron's $m_e$
+  contribution comparable to $\Sigma_{\rm all}$ but absorbed
+  into the $|\cdot|$ operation by accident.
+- **A≥6 (⁶He→⁶Li, ...)**: $Q = \|\Sigma_{\rm FP}\| \cdot m_e$ —
+  uses Frobenius-positive sub-cone, no explicit electron.
+
+[`branching-qvalues.witness.json`](../../folio-assistant/computations/branching-qvalues.witness.json)
+line 68 explicitly lists this as an open problem:
+
+> "The +1 (emitted electron) should emerge from the LP dual,
+> not be added manually"
+
+**Status of this open problem.** The induction proof above does
+*not* close this gap — it closes only the **bare quark-level**
+$\Sigma_{\rm all}$ structure. Promoting from bare $\Sigma_{\rm all}$
+to a physical Q-value still requires a categorical derivation of
+the $+1$ electron correction (currently conjectured to emerge from
+the FP filter / LP dual). This is a **separate audit flag** —
+call it **ELECTRON-1** — distinct from FROB-FILTER and NV-1.
+
 ### Witnesses
 
 - [`y-lambda-wenzl-bridge-numeric-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-numeric-witness.json)

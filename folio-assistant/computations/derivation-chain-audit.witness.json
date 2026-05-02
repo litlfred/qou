@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T20:44:15.525695+00:00",
-  "commitSha": "5a792c99f0f96008fc14682b8776c47dde66949c",
+  "computedAt": "2026-05-02T21:34:41.127391+00:00",
+  "commitSha": "cec5d39fa8432d1ffa710481968e24cdd182ab39",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1431,6 +1431,7 @@
         "content-weighted-pair-probe.witness.json",
         "correlated-channel-mass.witness.json",
         "coulomb-subtracted-binding.witness.json",
+        "crt-markov-v2-multichannel.witness.json",
         "crt-markov.witness.json",
         "cup-product-tower.witness.json",
         "curvature-rank-mass.witness.json",
