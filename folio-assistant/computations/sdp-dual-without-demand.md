@@ -240,3 +240,48 @@ the framework. The empirical match at $q_0$ selects.
 existing `prop:confinement-sdp` formulation (paper-internal), or
 (ii) commit to one of the four candidates and verify empirically
 which produces the magic ladder at $q_0$.
+
+## Part IV — Empirical refutation of candidate (B)
+
+The simplest candidate — option (B), self-conjugate-block indicator
+demand — has been **empirically tested** via
+[`algebraic_primality_probe.py`](algebraic_primality_probe.py).
+Result: it does **not** produce the magic ladder at $q_0$.
+
+Probe summary at $q_0 \approx 1.10974$ (candidate-B demand: LP
+optimum = argmax-Wedderburn-weight self-conjugate $\lambda$):
+
+| $n$ | empirical magic | candidate-B predicts | agrees? |
+|---:|:---:|:---:|:---:|
+| 1 | yes | yes | ✓ |
+| 2 | yes | no (q(2)=0, no self-conj) | ✗ |
+| 3 | no | yes (one SC: [2,1]) | ✗ |
+| 4 | no | yes ([2,2]) | ✗ |
+| 5–7 | no | yes (each has single SC) | ✗ |
+| 8 | yes | yes ([4,2,1,1]) | ✓ |
+| 9–16 | no | yes (multiple SC, but unique argmax) | ✗ |
+
+Agreements: **2 of 13** $n$-values. Most non-magic $n$ have a
+unique-argmax self-conj block, so candidate-B incorrectly flags
+them as magic. The $n = 2$ degenerate case (zero self-conj) flags
+as non-magic, contradicting empirical magic-2.
+
+So **candidate (B) is rejected**. This adds to our growing list of
+negative results:
+
+1. Partition statistics (count, Durfee, hook spread) — fail.
+2. LR self-fusion self-conjugacy — fail.
+3. q-dim argmax — fail (regime change at n=14, no magic alignment).
+4. **Candidate-B demand** — fail (this section).
+
+The demand vector must be richer than the self-conjugate
+indicator. Likely candidates remaining:
+
+- (A) Markov trace pairing — needs specification of "vacuum braid"
+  at each $n$.
+- (C) Markov restricted to self-conjugate — combination.
+- (D) BB-stratum boundary — abstract, hardest to compute.
+
+The numerical cvxpy probe is **blocked** until one of these is
+specified concretely. Either route requires extracting the demand
+from the existing `prop:confinement-sdp` formulation.
