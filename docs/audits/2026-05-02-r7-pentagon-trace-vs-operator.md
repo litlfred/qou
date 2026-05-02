@@ -85,3 +85,34 @@ current per-braid result (which is trace-level throughout). It
 should be reframed in the workplan as a deeper-than-needed
 extension, alongside the std-block direct check and $R_q$
 sharpness already listed in the block's "Limitation" section.
+
+## Update (2026-05-02 post-merge with main)
+
+PR #501 landed
+[`prop:vhat-pair-commutation-trace`](../../content/quantum-observable-universe/braids-and-knots/vhat-pair-commutation-trace.md)
+which **resolves the same question more crisply**:
+
+- The traced volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$ are
+  **scalar Laurent polynomials**; they commute *trivially*
+  ($\hat V_i \hat V_j = \hat V_j \hat V_i$, no q-factor).
+- The pentagon identity's $uv = q\,vu$ requirement applies only
+  to an **operator lift** $\widehat U_i, \widehat V_j$ at adjacent
+  jet levels $n, n+1$, not to scalars within a single jet level.
+- The pentagon ascension's rigorous content is
+  Markov-trace factorization + brane-tower q-graded inter-level
+  ascension, **not** a non-commutative operator identity on the
+  scalar $\hat V$'s.
+
+This means my `prop:pentagon-uv-commutation`'s headline claim
+($uv = q\,vu$ on the transient block at single jet level $n$)
+matches the formulation main retired in PR #501. The proof's
+Step 2 (scalar reduction) made the conclusion vacuous: scalars
+commute, so any q-factor must be 1. The pentagon's q-factor
+lives in the operator lift between levels, not at scalar level.
+
+**Action.** The per-braid mass tower's `uses[]` should cite
+`prop:vhat-pair-commutation-trace` (the correct level-internal
+identity) and `rem:mass-endomorphism-jet-tower`'s ascension
+content (the inter-level q-grading). My
+`prop:pentagon-uv-commutation` block has been updated to defer to
+`prop:vhat-pair-commutation-trace` as the corrected resolution.

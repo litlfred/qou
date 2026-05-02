@@ -1,3 +1,19 @@
+> **Note (2026-05-02, post-merge with `origin/main` PR #501).**
+> The corrected resolution of the "pentagon → uv-commutation"
+> question lives in
+> [`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace),
+> which establishes that **the traced volumes $\hat V_i$ are
+> scalar Laurent polynomials in $\mathbb{Z}[q^{\pm 1/2}, z]$ and
+> commute trivially** ($\hat V_i \hat V_j = \hat V_j \hat V_i$,
+> *no q-factor*). The pentagon's $uv = q\,vu$ requirement applies
+> only to an **operator lift between adjacent jet levels**, not
+> to scalars within a single jet level. This block's "$uv = q\,vu$
+> on the transient block" formulation matches the wording PR #501
+> retired; the correct level-internal identity is plain
+> commutativity. The Step-2 scalar reduction below makes the
+> conclusion vacuous: scalars commute, so any q-factor is 1.
+> See [audit memo](../../../docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md).
+
 The pentagon identity of the quantum dilogarithm
 ([quantum Bloch group](#rem:quantum-bloch-group)) applies to a
 pair of operators $u, v$ satisfying the **quantum-torus

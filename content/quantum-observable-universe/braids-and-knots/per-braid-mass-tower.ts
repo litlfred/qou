@@ -22,6 +22,7 @@ export default proposition({
     "prop:schur-weyl-mass-decomposition",
     "prop:jet-tower-convergence",
     "prop:pentagon-uv-commutation",
+    "lem:vhat-pair-commutation-trace",
     "prop:descent-eigenspaces",
     "prop:descended-level-zero",
     "thm:jones-markov-trace",
