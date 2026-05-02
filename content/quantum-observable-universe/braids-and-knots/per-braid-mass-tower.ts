@@ -27,6 +27,8 @@ export default proposition({
     "thm:jones-markov-trace",
     "thm:markov-trace-factorization",
     "rem:markov-moves-brane-tower",
+    "prop:pieri-photon-shift",
+    "conj:archimedean-remainder-exponential-decay",
   ],
   cites: ["jones1985", "wenzl1988", "kassel1995"],
   lean: { ref: "qou:QOU.BraidKnot.perBraidMassTower" },

@@ -112,19 +112,31 @@ pairs.
 **Unblocks.** Deep audit §3·E "Symbolic-in-q throughout"
 scorecard item flips ❌ → ✅.
 
-## R5. P1.1(a) — derive $q_0$ algebraically
+## R5. P1.1(a) — derive $q_0$ algebraically (cross-check on $H^1$)
 
-**Status.** $q_0$ is currently fixed by CAL-2 ($m_\mu/m_e$ via
-$\mathrm{Vol}(4_1)/\hbar_q^2$). Closing the conjecture chain
+**Note (post-correction, 2026-05-02).** The original framing of
+this item ("reduce CAL-2 to a cross-check", "two-calibrations
+interpretation") is **superseded**. The three-calibration
+discipline is **categorical**: exactly three inputs aligned to
+$H^0$ ($m_e$), $H^1$ ($q_0$ via $m_\mu/m_e$), $H^2$ ($Q_\beta$).
+$q_0$ cannot be "removed" as a calibration — it is the $H^1$
+calibration. An algebraic derivation is a **consistency cross-
+check** across strong / EM / weak sectors, not a way to drop a
+calibration.
+
+**Status.** $q_0$ is the $H^1$ calibration, fixed by $m_\mu/m_e$
+via $\mathrm{Vol}(4_1)/\hbar_q^2$. Closing the conjecture chain
 `q-from-epsilon → substrate-parameter-unique → vacuum-substrate-
-compatibility` would derive $q_0$ from the categorical action,
-reducing CAL-2 to a cross-check rather than an input.
+compatibility` would derive $q_0$ algebraically from the
+categorical action, providing an independent cross-check that
+the $H^1$ value is consistent with the $H^0$ and $H^2$ inputs.
 
 **Effort**: 1–2 weeks of theory work. Substantive new algebraic
 content; not a mechanical refactor.
 
-**Unblocks.** "Two calibrations" interpretation of the framework
-($m_e + Q_\beta(n)$, with $q_0$ derived).
+**Unblocks.** Independent algebraic cross-check on the $H^1$
+calibration (does the categorical derivation reproduce the
+CODATA $m_\mu/m_e$ value to within its uncertainty?).
 
 ## R6. P3.5 — `family-4` motivic-substrate `instance` at $q_0$
 
@@ -161,7 +173,7 @@ sum compute (`multi-level-jet-sum.witness.json` reports
 | 2 | R3 L4–L7 SDP cvxpy refactor | 4 weeks (L5/L6/L7 each ~1 week + L4 done) | per-level binding-energy predictions |
 | 3 | R4 P2.5 codemod completion | 3–4 weeks | symbolic-in-q paper-wide |
 | 4 | R2 MAG-1 Z=126 (cron) | 1 day | seventh magic number |
-| 5 | R5 P1.1(a) algebraic q₀ | 1–2 weeks | two-calibrations interpretation |
+| 5 | R5 P1.1(a) algebraic q₀ | 1–2 weeks | independent algebraic cross-check on $H^1$ calibration |
 | 6 | R7 Pentagon (after scope) | 2–5 days | descent sharpness |
 | 7 | R8 Δ_max numerical | 2–3 days | jet-tower convergence |
 | 8 | R6 family-4 motivic instance | open-ended | research-grade |

@@ -16,6 +16,7 @@ export default proposition({
   uses: [
     "thm:wedderburn-mass-formula",
     "thm:jones-markov-trace",
+    "prop:wedderburn-as-noncomm-fourier",
   ],
   cites: ["jones1985", "wenzl1988", "kassel1995"],
   lean: { ref: "qou:QOU.BraidKnot.wedderburnWeightCanonical" },

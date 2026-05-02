@@ -139,8 +139,17 @@ the two halves of the pentagon:
   $uv = qvu$ and admits the pentagon ascension.  Contributes
   a pair or singleton at level $n{+}1$.
 
-This is the operator-level justification of the quadratic
-closure of the mass tower per jet level.
+This is the **trace-level** justification of the quadratic
+closure of the mass tower per jet level. The operator-level
+identity on Wedderburn-rep matrices (before the scalar
+reduction in Step 2) remains open and is listed in the
+Limitation section below; it is the deeper "operator-level R7"
+question raised in
+[`2026-05-02-r7-pentagon-trace-vs-operator.md`](../../../docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md).
+The per-braid mass tower
+([`prop:per-braid-mass-tower`](#prop:per-braid-mass-tower))
+only needs the trace-level identity, so the open operator-level
+gap does not block the mass-tower pipeline.
 
 ## Limitation — what this proposition does *not* prove
 
@@ -166,3 +175,16 @@ points are deferred:
    open piece of the jet-tower decomposition
    ([jet-tower remark](#rem:mass-endomorphism-jet-tower),
    subconjecture 3).
+
+3. **Operator-level identity (PR #499 R7).**  Step 2 reduces
+   $\hat V_s$ to a scalar on the $q$-eigenblock, so the
+   identity $uv = qvu$ in Step 4 holds **between block-diagonal
+   scalars**, not between the full Wedderburn matrices.  The
+   operator-level identity in $\mathrm{End}(B_\lambda^{\mathrm{trans}})$
+   — performed **without** first specialising eigenvalues — is
+   the deeper open question.  The per-braid mass tower
+   ([`prop:per-braid-mass-tower`](#prop:per-braid-mass-tower))
+   uses traces of $\xi, \xi\xi'$, so the trace-level identity
+   established here is sufficient for the mass-tower pipeline.
+   Cross-reference:
+   [`2026-05-02-r7-pentagon-trace-vs-operator.md`](../../../docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md).

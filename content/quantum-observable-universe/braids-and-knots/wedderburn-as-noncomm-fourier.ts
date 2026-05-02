@@ -12,6 +12,7 @@ export default proposition({
     "thm:wedderburn-mass-formula",
     "thm:jones-markov-trace",
     "thm:markov-trace-product",
+    "prop:wedderburn-weight-canonical",
   ],
   cites: ["jones1987", "kassel1995", "fulton1997"],
   tags: [
