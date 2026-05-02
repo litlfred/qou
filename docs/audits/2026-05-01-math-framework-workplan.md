@@ -411,19 +411,47 @@ open. This is workplan **P1.1(a)** and is unchanged.
   expected $k$-truncation error.
 - **E**: 2 weeks.
 
-### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution
+### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 audit-scoped
 
 - **W**: §3·E. Currently many scripts substitute $q_0$ early,
   producing 50-digit floats that read as "fitted".
-- **D**: Refactor every `*_witness.py` script to:
-  1. Compute the polynomial / rational expression in $\mathbb{Z}[q^{\pm 1}]$ first;
-  2. Substitute $q_0$ only at the final reporting step;
-  3. Emit both the symbolic $\mathbb{Q}(q)$ expression *and* the
-     numerical value in the witness JSON.
+- **Audit deliverable** (2026-05-02): the
+  [P2.5 audit](2026-05-02-p2-5-symbolic-q-audit.md) classifies
+  every Python file under `folio-assistant/computations/` (610
+  total). Real refactor scope is **~60 scripts**, not the 449
+  the workplan assumed:
+  - 40 already **compliant** (sympy.Symbol-based, late
+    substitution, emits symbolic field);
+  - 170 **mpmath-only** (canonical `Q_MP`, no fit — functionally
+    compliant);
+  - 41 **early-substitution** (real refactor target);
+  - 19 **partial** (already symbolic, missing witness-JSON
+    polynomial field — easy wins);
+  - 33 **no-q-dependence** + 307 **uncategorised** (out of scope).
+- **Reference pattern**: [`schur_weyl_mn_witness.py`](../../folio-assistant/computations/schur_weyl_mn_witness.py).
+  Two key invariants: (1) `q = sp.Symbol('q')` declared at
+  function start; (2) witness JSON emits both `*_symbolic` and
+  `*_at_q0` fields.
+- **Refactor ordering** (per audit doc):
+  1. The 19 `partial` scripts (1 day, lowest-effort highest-
+     visibility wins).
+  2. ~20 light-refactor early-substitution scripts (1 day).
+  3. ~21 heavy-refactor numpy/large-matrix scripts (3+ days,
+     stays mpmath-internal but exposes symbolic structure as
+     string in witness JSON).
+  4. Validation: rerun all updated witnesses; confirm `*_symbolic`
+     populated and no numerical drift in `*_at_q0` (0.5 day).
+- **D**: original literal deliverable was "refactor every
+  `*_witness.py` script". The audit shows only 5 scripts are
+  literally `*_witness.py` and all 5 are already compliant; the
+  refactor target is the broader ~60 scripts identified above.
 - **B**: blocked by nothing; can run in parallel with P2.1–P2.4.
-- **S**: every witness JSON exposes a `polynomial_q` field
-  alongside the numerical value.
-- **E**: 1 week paper-wide (mechanical refactor).
+- **S**: ✅ scope audit landed (this commit); execution remains.
+  Every witness JSON in the 60-script refactor set will expose a
+  `polynomial_q` (or equivalent) field alongside the numerical
+  value.
+- **E**: 1 week paper-wide → revised to **~5 days mechanical**
+  per the audit (60 scripts × ~10 min average + validation).
 
 ### P2.6 — GS-filtration `gradedMarkovTrace` / `residueAtRoot` — narrative form — ✅ landed (narrative side)
 

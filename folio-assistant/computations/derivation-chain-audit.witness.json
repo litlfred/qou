@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T02:31:49.257127+00:00",
-  "commitSha": "53c999e126cddbaa12ab48db64b8e97ee5c191fc",
+  "computedAt": "2026-05-02T02:59:01.715758+00:00",
+  "commitSha": "edf6b8dc61cfca925ad7e999d6a2ad862b7cae3a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1616,6 +1616,7 @@
         "odd-a-census-search.witness.json",
         "odd-a-decomposition-search.witness.json",
         "p-n-error-isolate.witness.json",
+        "p2-5-symbolic-q-audit.witness.json",
         "pair-factorisation-probe.witness.json",
         "pair-production-nf.witness.json",
         "pair-production.witness.json",
