@@ -112,39 +112,55 @@ pairs.
 **Unblocks.** Deep audit §3·E "Symbolic-in-q throughout"
 scorecard item flips ❌ → ✅.
 
-## R5. P1.1(a) — derive $q_0$ algebraically (cross-check on $H^1$)
+## ~~R5~~ — DROPPED
 
-**Note (post-correction, 2026-05-02).** The original framing of
-this item ("reduce CAL-2 to a cross-check", "two-calibrations
-interpretation") is **superseded**. The three-calibration
-discipline is **categorical**: exactly three inputs aligned to
-$H^0$ ($m_e$), $H^1$ ($q_0$ via $m_\mu/m_e$), $H^2$ ($Q_\beta$).
-$q_0$ cannot be "removed" as a calibration — it is the $H^1$
-calibration. An algebraic derivation is a **consistency cross-
-check** across strong / EM / weak sectors, not a way to drop a
-calibration.
+Per repo-owner directive: deriving $q_0$ algebraically is not a
+goal. The paper's three-calibration scheme (CAL-1 $m_e$ + CAL-2
+$m_\mu/m_e$ + CAL-3 $Q_\beta(n)$) is the published position; CAL-2
+fixing $q_0$ is correct as-is.
 
-**Status.** $q_0$ is the $H^1$ calibration, fixed by $m_\mu/m_e$
-via $\mathrm{Vol}(4_1)/\hbar_q^2$. Closing the conjecture chain
-`q-from-epsilon → substrate-parameter-unique → vacuum-substrate-
-compatibility` would derive $q_0$ algebraically from the
-categorical action, providing an independent cross-check that
-the $H^1$ value is consistent with the $H^0$ and $H^2$ inputs.
+## R6. P3.5 — Habiro → MotivicGaloisCharacter map (reformulated)
 
-**Effort**: 1–2 weeks of theory work. Substantive new algebraic
-content; not a mechanical refactor.
+**Status.** The framework is symbolic-in-$q$ via the **Habiro ring**
+$\widehat{\mathbb{Z}[q]}$ (cyclotomic completion); the substrate
+data is symbolic-in-$q$ throughout, not a per-prime guess.
 
-**Unblocks.** Independent algebraic cross-check on the $H^1$
-calibration (does the categorical derivation reproduce the
-CODATA $m_\mu/m_e$ value to within its uncertainty?).
+**Missing piece.** The explicit map
 
-## R6. P3.5 — `family-4` motivic-substrate `instance` at $q_0$
+$$
+  \text{Habiro substrate data} \;\longrightarrow\; \text{MotivicGaloisCharacter}
+$$
 
-**Status.** Concrete `instance` of `MotivicGaloisCharacter` at the
-QOU substrate is missing (audit GAP 5b). Requires deriving local
-Frobenius eigenvalues from the brane tower.
+derives the local Frobenius eigenvalue $\mathrm{Frob}_p(q) \in
+\widehat{\mathbb{Z}[q]}$ at each rational prime $p$ from the
+brane-tower's Habiro-symbolic data (already in place for
+`habiro-residue-sum-equivalence`), then verifies the Galois-
+compatibility relations (Frobenius commutes with norms; satisfies
+Weil/Deligne reciprocity at every place).
 
-**Effort**: open-ended. Research-grade.
+The "instance" is **fully determined** by the Habiro structure
+once the map is written. The open work is:
+
+1. Extract `Frob_p(q) ∈ Habiro` from the brane tower at each $p$
+   (the Habiro ring already supports this via root-of-unity
+   evaluation).
+2. Write the compatibility verification — finite-place reciprocity
+   + the archimedean behaviour under $\tau_{\mathrm{arch}}$.
+3. Discharge the `MotivicGaloisCharacter` axiom-class by
+   constructing the explicit instance.
+
+**Effort.** Step 1: 1 week (script + witness). Step 2: 2–3 weeks
+(theory + verification). Step 3: 1 week (Lean). Total ~1 month.
+
+**Unblocks.** Closes audit GAP 5b in `family-4-motivic-path.md`;
+discharges the `motivic-perpetual-obstruction` instance for the
+QOU substrate; downstream provable theorems no longer take the
+class as `[instance]` hypothesis but use the explicit instance.
+
+This is **substantially more tractable** than the prior "derive
+local Frobenius eigenvalues" framing suggested — the framework
+already carries the symbolic data; the missing piece is making
+the map explicit.
 
 ## R7. P3.2 / P3.3 — Pentagon $uv = q\,vu$ + pair descent sharpness
 
@@ -167,16 +183,22 @@ sum compute (`multi-level-jet-sum.witness.json` reports
 
 ## Priority queue for follow-up branches
 
-| # | Item | Effort | Unblocks |
-|---|------|--------|----------|
-| 1 | R1 q-deformed Hecke character | 2–4 weeks | P2.1 full migration; ³He / ³H differentiation |
-| 2 | R3 L4–L7 SDP cvxpy refactor | 4 weeks (L5/L6/L7 each ~1 week + L4 done) | per-level binding-energy predictions |
-| 3 | R4 P2.5 codemod completion | 3–4 weeks | symbolic-in-q paper-wide |
-| 4 | R2 MAG-1 Z=126 (cron) | 1 day | seventh magic number |
-| 5 | R5 P1.1(a) algebraic q₀ | 1–2 weeks | independent algebraic cross-check on $H^1$ calibration |
-| 6 | R7 Pentagon (after scope) | 2–5 days | descent sharpness |
-| 7 | R8 Δ_max numerical | 2–3 days | jet-tower convergence |
-| 8 | R6 family-4 motivic instance | open-ended | research-grade |
+(R5 dropped per repo-owner directive — deriving $q_0$ algebraically
+is not a goal; the three-calibration scheme is the published
+position.)
 
-The first 4 items can complete in **8–10 weeks** of focused work.
-Items 5–8 are longer-tail / research-grade.
+| # | Item | Status | Effort | Unblocks |
+|---|------|--------|--------|----------|
+| 1 | R1 q-deformed Hecke character (q-MN) | ✅ done | — | partial — distinguishes by cycle-type |
+| 1.b | R1.b Hoefsmit seminormal forms | 🟡 in progress | 1 week | full word-sensitive Hecke trace; ³He vs ³H |
+| 2 | R3 L4–L7 SDP cvxpy refactor | ✅ done | — | per-level binding-energy predictions |
+| 3 | R4 P2.5 codemod completion | 🟡 70 scripts remaining | 3–4 weeks | symbolic-in-q paper-wide |
+| 4 | R2 MAG-1 Z=126 (gen.fn. + sample) | ✅ done | — | seventh magic number |
+| 5 | R7 Pentagon (after scope) | 🟡 Lean stub landed | 2–5 days | descent sharpness |
+| 6 | R8 Δ_max numerical | 🟡 queued | 2–3 days | jet-tower convergence |
+| 7 | R6 Habiro → MotivicGaloisCharacter map | 🟡 reformulated tractable | ~1 month | family-4 motivic instance |
+
+R6 is now substantially more tractable than originally scoped —
+the Habiro ring carries the symbolic q-data and the missing
+piece is just making the Habiro → motivic map explicit, not
+deriving local Frobenius eigenvalues from scratch.
