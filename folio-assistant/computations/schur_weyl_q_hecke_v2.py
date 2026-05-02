@@ -174,23 +174,27 @@ def markov_trace_q_hecke_atomic(Z, N, *, q_val=None, precision=50,
     partitions_used = []
     skipped = []
     from murnaghan_nakayama import dim_specht
+    # Use mpmath-based dim_q / qfac to avoid float64 overflow at A ≥ ~16
+    from schur_weyl_mpmath import q_factorial_mp, schur_weyl_weight_mp
+    q_mp = mpmath.mpf(str(q_val))
+    nfac_mp = q_factorial_mp(n_strands, q_mp)
     for lam in length_le_2_partitions_of(n_strands):
         # Dim cap (truncation for large A)
         d_classical = dim_specht(lam)
         if dim_cap is not None and d_classical > dim_cap:
             skipped.append({"partition": list(lam), "dim": d_classical, "reason": "dim_cap"})
             continue
-        # Build w_λ = dim_q(λ)² / [n]_q!
-        d_q = dim_q(lam)
-        w_f = d_q ** 2 / nfac
-        if w_f == 0:
+        # Build w_λ via mpmath (overflow-safe at high A)
+        w_mp = schur_weyl_weight_mp(lam, q_mp)
+        if w_mp == 0:
             continue
+        w_f = w_mp  # mpmath, used in contrib below
         # χ^λ_q on the atomic braid
         chi = chi_lambda_atomic(lam, Z, N, q_val=float(q_val),
                                  include_inter=include_inter)
         if chi == 0:
             continue
-        contrib = mpmath.mpf(w_f) * mpmath.mpf(chi) / mpmath.mpf(d_classical)
+        contrib = w_f * mpmath.mpf(chi) / mpmath.mpf(d_classical)
         total += contrib
         partitions_used.append({
             "partition": list(lam),

@@ -139,6 +139,7 @@ ATOMS = [
     ("9Be", 4, 5),
     ("12C", 6, 6),
     ("16O", 8, 8),
+    ("40Ca", 20, 20),
 ]
 # AME values for the new atoms
 AME_MASS_MEV.update({
