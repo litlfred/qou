@@ -45,6 +45,9 @@ export default chapter({
         "confinement-nucleon-unit",
         "lp-dual-stability",
         "sdp-rank-collapse-magic-shell",
+        "algebraic-primality",
+        "n-equals-1-vacuous-magic",
+        "algebraic-primality-equals-empirical-at-q0",
       ],
     }),
 
