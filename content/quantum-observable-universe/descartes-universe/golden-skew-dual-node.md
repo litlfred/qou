@@ -46,10 +46,12 @@ giving a **two-sided stability margin**:
 | sub-classical | $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$ | $q_0 - 1/\varphi^2 \approx 0.728$ |
 | super-classical | $q^{*}_{\mathrm{gold}} = \varphi^2 \approx 2.618$ | $\varphi^2 - q_0 \approx 1.508$ |
 
-The asymmetry — roughly $0.728 : 1.508 \approx 1 : 2.07$ — is
-itself controlled by $\varphi$, since
-$(\varphi^2 - q_0)/(q_0 - 1/\varphi^2) \approx \varphi$ at our
-substrate.
+The asymmetry — roughly $0.728 : 1.508 \approx 1 : 2.07$ — places
+$q_0$ closer to the sub-classical node than to the super-classical
+one.  The ratio $(\varphi^2 - q_0)/(q_0 - 1/\varphi^2) \approx 2.07$
+has no closed form in $\varphi$ alone; it varies smoothly with
+$q_0$ and equals $1$ exactly at the arithmetic midpoint
+$q = (1/\varphi^2 + \varphi^2)/2 = 3/2$.
 
 **Why $\varphi^2$ on the physical side?**
 The Descartes elliptic curve $\mathcal{E}_q$ does not itself acquire
