@@ -1,26 +1,53 @@
-**Proposition (per-braid mass tower).**
+**Proposition (per-braid mass tower — full jet-level form).**
 *Let $W \in B_{3A}$ be the atomic braid of a nucleus $(Z, N)$,
 $\mathrm{tr}_M$ the Markov trace on $H_{3A}(q)$
 ([Jones–Markov trace](#thm:jones-markov-trace)), $\Phi_q$ the
-quantum dilogarithm, and $z = 1/(q^{1/2} + q^{-1/2})$ the Markov
-weight. The mass functional decomposes as*
+quantum dilogarithm, $z = 1/(q^{1/2} + q^{-1/2})$ the Markov
+weight, and $\mathcal{S}^{(n)}_\ell$ the depth-$\ell$ stratum of
+$W$ at jet level $n$ in the recursive brane tower
+$A_{n+1} = A_n \otimes \Omega^1(A_n)$
+([recursive brane tower](#def:recursive-brane-tower)). The mass
+functional decomposes as*
 
 $$
   \mathfrak{m}(W)
   \;=\;
-  \underbrace{\bigl|\mathrm{tr}_M(W)\bigr|}_{\text{descended (level 0)}}
-  \;+\;
-  \underbrace{\sum_{\xi \in \mathcal{S}_1}
-    \Phi_q\!\bigl(|\mathrm{tr}_M(\xi)|\bigr)}_{\text{single sub-braid (level 1)}}
-  \;+\;
-  z^{2}\!\!\!\underbrace{\sum_{(\xi,\xi') \in \mathcal{S}_2}\!\!\!
-    \Phi_q\!\bigl(|\mathrm{tr}_M(\xi\,\xi')|\bigr)}_{\text{sub-braid pair (level 2)}}
+  \underbrace{\bigl|\mathrm{tr}_M(W)\bigr|}_{\substack{\text{descended} \\ \text{(level 0 only)}}}
+  +\,
+  \sum_{n=0}^{N}\!
+    \left(\,
+      \underbrace{\sum_{\xi \in \mathcal{S}^{(n)}_1}\!\!
+        \Phi_q\!\bigl(|\mathrm{tr}_M(\xi)|\bigr)}_{\text{singletons at jet level } n}
+      +\,
+      z^{2}\!\!\!\underbrace{\sum_{(\xi,\xi') \in \mathcal{S}^{(n)}_2}\!\!\!\!
+        \Phi_q\!\bigl(|\mathrm{tr}_M(\xi\,\xi')|\bigr)}_{\text{pairs at jet level } n}
+    \right)
+  +\, R_N
 $$
 
-*where $\mathcal{S}_\ell$ is the depth-$\ell$ summand of the
-$J^\bullet$-graded stratification of $H_{3A}(q)$
-([graded-trace-residue-split](#prop:graded-trace-residue-split),
-realised as sub-braids of $W$). For an atom built from $A$ nucleons:*
+*where $R_N$ is the geometric-series tail bound from
+([brane-tower tail bound](#prop:jet-tower-convergence)):
+$|R_N| \leq \Delta_{\max}\,\hbar_q^{2(N+1)}/(1 - \hbar_q^{2})$,
+per the [jet-tower remark](#rem:mass-endomorphism-jet-tower).
+Triple-or-higher interactions at level $n$ ascend via the
+pentagon identity to pairs/singletons at level $n+1$
+([pentagon UV commutation](#prop:pentagon-uv-commutation)) and
+are already captured by the level-$(n+1)$ sum.*
+
+**Three structural features:**
+
+- The **descended** term appears **only at $n = 0$** —
+  $\mathcal{A}^{\mathrm{desc}}_n = \mathrm{im}\,\hat\tau_n$ is the
+  image of the descent involution; including a separate descended
+  product at every jet level would double-count
+  ([descent eigenspaces](#prop:descent-eigenspaces)).
+- Each level $n$ contributes **only singletons and pairs**
+  (quadratic closure per level via the pentagon identity).
+- $\mathcal{S}^{(n)}_2 = \{(\xi, \xi') : \xi \neq \xi'\}$ is
+  the **full set of unordered pairs** at every jet level (per
+  `thm:markov-trace-factorization` lifted to all $n$).
+
+*For an atom built from $A$ nucleons at level $n = 0$:*
 
 | Level $\ell$ | Stratum $\mathcal{S}_\ell$ | Cardinality | Identification |
 |-------------:|---------------------------|------------:|----------------|
