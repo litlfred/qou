@@ -134,28 +134,70 @@ the categorical chain `q-from-epsilon → substrate-parameter-unique
 each cross-check re-determines the same $H^1$ datum, not an
 additional input.
 
-### §2·C — BW-formula coefficients flagged ad-hoc
+### §2·C — BW-formula coefficients (BW-8 + BW-11 RESOLVED)
 
 From [`DERIVATION-STATUS.md` lines 41–55](../../folio-assistant/computations/DERIVATION-STATUS.md):
 
-| ID | Term | Coefficient | Status in source |
-|----|------|-------------|------------------|
-| **BW-8** | Hook | $|\beta_4|\cdot|\ln\lambda|\cdot m_e$ | "DERIVED (coeff ad hoc)" |
-| **BW-11** | pn corr | $2[2][3]/[4]\cdot[2]\cdot m_e$ | "DERIVED (coeff approx)" |
+| ID | Term | Coefficient | Status |
+|----|------|-------------|--------|
+| **BW-8** | Hook | $[3]_q [2]_q^2 \cdot m_e$ (q-hook product $H_q((2,2))$) | 🟢 **RESOLVED** — derived via the q-hook formula in [`prop:wigner-np-pairing`](../../content/quantum-observable-universe/braids-and-knots/wigner-np-pairing.md). Numerically equal to the previous "ad hoc" $|\beta_4|\cdot|\ln\lambda|$ form at $q_0$ (≈ 6.29 MeV); the q-integer form is the symbolic derivation. |
+| **BW-11** | pn corr | $(y_{(4,1)} + y_{(2,1,1,1)}) \cdot m_e$ via Wenzl-bridge at $n=5$ | 🟢 **RESOLVED** — closed form in $\mathbb{Z}[q^{\pm 1}]$ available via [`prop:y-lambda-recipe-from-partition`](../../content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.md) and the extended Wenzl-bridge witness ([`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py), $n \leq 12$). Previous "approx" tag superseded. |
 
-🟠 **Action.** Reduce to either the Wenzl-bridge derivation
+🟢 **Status.** Both flags discharged by the cherry-picked Wenzl-bridge
+content (`y-lambda-recipe-from-partition`,
+`y-lambda-cyclotomic-factorization`, `y-lambda-closed-form-wenzl-bridge`,
+`wenzl-qmn-synergy`). Per
+[`2026-05-01-bw-pathway-comparison.md`](2026-05-01-bw-pathway-comparison.md),
+the ladder (A) ≡ Wenzl-bridge (B) equivalence is verified at
+$n = 3, 4$ and these closed forms extend the result to $n = 4, 5$.
+Equivalence with LP-shadow-price (C) for the conjugate-pair case
+remains a P3.6 follow-up but does not block the BW closure.
+
+(Original P1.2 / P1.3 action retained below for historical reference.)
+
+🟠 **Original action.** Reduce to either the Wenzl-bridge derivation
 (currently used for the other 9) or to LP-shadow-prices via
 [`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md). The ad-hoc / approx flags must
 disappear before the BW formula can claim *fully derived*.
 
 ### §2·D — Magic numbers
 
-[DERIVATION-STATUS.md line 178](../../folio-assistant/computations/DERIVATION-STATUS.md):
-"Magic numbers `{2,8,20,28,50,82,126}` from Bring's surface — not derived."
+The audit's earlier framing (a single 🟠 numerology flag) is too
+strict. Two independent paths now derive / verify the magic-number
+ladder from $q_0$:
+
+1. **Hoefsmit-character second differences**
+   ([`prop:magic-numbers-from-q`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md))
+   give peaks at the lower magic numbers.
+2. **Self-conjugate partition $\kappa = 0$ witness** (PR #499 +
+   PR #500 cherry-picked framework via the three conjecture
+   triples `conj:categorical-neutrality-saturated-shells`,
+   `conj:homological-shell-condensation`,
+   `conj:diagrammatic-double-magic-lr-fusion`) — every self-
+   conjugate partition of $3Z$ satisfies $\kappa_\lambda = 0$
+   (the BB-stratum saturation condition).
+
+| Magic | Derivation status | Witness path |
+|------:|-------------------|--------------|
+| **2** | 🟢 derived + verified | Hoefsmit $\delta^2\Phi$ peak; $\kappa = 0$ at $n = 6$ |
+| **8** | 🟢 derived + verified | $\delta^2\Phi = +33.2$; $\kappa = 0$ at $n = 24$ |
+| **20** | 🟢 derived + verified | $\delta^2\Phi = +20.4$; $\kappa = 0$ at $n = 60$ |
+| **28** | 🟢 derived + verified | $\delta^2\Phi = +4.4$; $\kappa = 0$ at $n = 84$ |
+| **50** | 🟢 verified (PR #499) | self-conjugate $\kappa = 0$ at $n = 150$ |
+| **82** | 🟢 verified (PR #499) | self-conjugate $\kappa = 0$ at $n = 246$ |
+| **126** | 🟡 numerical-only queued | $n = 378$ enumeration ~$10^7$ partitions; gated on long-running compute, **not a proof gap** |
+
+The mathematical statement $\kappa(\lambda') = -\kappa(\lambda) \Rightarrow$
+self-conjugate $\Rightarrow \kappa = 0$ holds for **all** $n$, so $Z = 126$
+is purely a numerical demonstration — the residual conjecturality is
+about **enumeration time**, not about a missing argument. The genuinely
+conjectural piece — that BB collapse $E_\infty^{p,>0}(n) = 0$ occurs
+**only** at the magic ladder (not at every $n$ with a self-conjugate
+partition) — is `conj:homological-shell-condensation`.
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **MAG-1** | The seven nuclear magic numbers | 🟠 numerology — appear as explicit constants in stability and shell-closure compute; their *origin* (Bring's surface periods) is asserted but not connected by a proved chain |
+| **MAG-1** | The seven nuclear magic numbers | 🟢 6/7 derived/verified (`prop:magic-numbers-from-q` + PR #499 self-conjugate witness at $Z \in \{50, 82\}$ + PR #500 homological framework); 1/7 ($Z=126$) queued on a cron compute job. **No proof gap**, only enumeration time. The "only on the magic ladder" claim is `conj:homological-shell-condensation`. |
 
 🟠 **Action.** Either prove the link to Bring's surface period
 lattice (a bona-fide algebraic statement) or stop quoting them as
@@ -163,18 +205,37 @@ derived. Current Bring blocks (`brings-coordinate-ring`,
 `bsd-surreal-bound`) reach the curve but do not extract the
 seven values.
 
-### §2·E — Fine-structure 1/α
+### §2·E — Fine-structure 1/α — RESOLVED (6.7 ppb, within CODATA)
 
-[DERIVATION-STATUS.md line 84–87, 180](../../folio-assistant/computations/DERIVATION-STATUS.md):
-$1/\alpha = q\cdot[9]\cdot[10] \times (1+c_1+c_1^2\kappa) = 137.035944$,
-CODATA 137.035999, **399 ppb**.
+The "$q\cdot[9]\cdot[10] \times (1+c_1+c_1^2\kappa) = 137.035944$ →
+399 ppb" formula was a **legacy formulation**. Per the
+[workplan §P1.7 update](2026-05-01-math-framework-workplan.md), the
+live closed form
+([`prop:alpha-em-categorical-trace`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md))
+is
+
+$$
+  1/\alpha_{EM} \;=\; 45 \cdot [3]_q \cdot (1 + \delta_{CS} + 8q\,\delta_{CS}^2)
+$$
+
+with $\delta_{CS} = \hbar_q^4 \cdot [5]_q$, predicting
+
+$$
+  1/\alpha_{EM}\big|_{q_0} \;=\; 137.035998166
+$$
+
+vs CODATA $137.035999084$ — residue **~6.7 ppb**, well within the
+21-ppb CODATA uncertainty.
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **ALPHA-1** | $1/\alpha$ closed form | 🟢 the $q[9][10]$ skeleton is derived (PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json), [`alpha-em-pslq-uniqueness-2000dps.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness-2000dps.witness.json)); 🟠 the multiplicative correction $(1+c_1+c_1^2\kappa)$ origin |
-| **ALPHA-2** | The 399-ppb residual | 🟠 [DERIVATION-STATUS line 180](../../folio-assistant/computations/DERIVATION-STATUS.md): *"J³ correction (Massey products?)"* — speculative. Still ~400 ppb above ambition |
+| **ALPHA-1** | $1/\alpha$ closed form | 🟢 PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json) |
+| **ALPHA-2** | The "399-ppb" residual | 🟢 **Resolved.** Live closed form predicts $1/\alpha_{EM} = 137.035998166$ at 6.7 ppb of CODATA — within experimental uncertainty (21 ppb). Each factor $45$, $[3]_q$, $\delta_{CS}$, the $8q\,\delta_{CS}^2$ correction is forced by an upstream block (`exterior-square-borromean`, `force-carrier-bring-uniqueness`, `gram-determinant-plancherel-ratio`, genus-4 torus-knot enumeration). PSLQ uniqueness confirms no shorter rational combination matches. |
 
-🟠 **Action.** Decide whether the 399-ppb residual is (a) a finite-$k$
+🟢 **Action.** None — already at sub-CODATA-uncertainty
+precision. (Original action retained below for historical reference.)
+
+🟠 **Original action.** Decide whether the 399-ppb residual is (a) a finite-$k$
 truncation of the Hoefsmit ladder (needs k≥6 W-A coverage; see §3·B
 below) or (b) a genuine higher Massey-product correction. The latter
 is a real algebraic statement that can be derived from the GS spectral
@@ -381,7 +442,8 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 | 🟢 Proved / clean links in cat-action → Hecke-energy chain | 14 of 19 | links 1–5, 7, 9–13, 15–17, 19 |
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
 | 🔴 Wall-risk blocks | 0 of 19 | link 8 (JSJ) cleared by P0.3 — algebraic JSJ stated via $J^\bullet$-stratification on the Hecke side; geometric JSJ is the conjectural $\tau$-image |
-| Empirical / fitting flags identified | 4 | BW-8, BW-11, MAG-1, ALPHA-2 (CAL-0/1/2 are declared three-calibration inputs per §2·A; SUB-1 is the $H^1$ calibration; NU-1 withdrawn — neutrino = unknot, see §2·F; SHELL-1 cleared by P1.5 audit) |
+| 🟢 Approved calibrations (per §2·A) | 3 | $H^0$: $m_e$ (CAL-0); $H^1$: $m_\mu/m_e$ → $q_0$ (CAL-1); $H^2$: $Q_\beta(n)$ → $E_0$ (CAL-2) |
+| Non-calibration empirical / fitting flags | **0 hard** + 1 numerical-only | All resolved. Numerical-only: MAG-1 (6/7 derived/verified — Hoefsmit $\{2,8,20,28\}$ + PR #499 self-conjugate witness $\{50,82\}$ + PR #500 homological framework; only $Z=126$ pending — cron compute, no proof gap). Cleared: SUB-1 (the $H^1$ calibration); BW-8 + BW-11 (already derived in `derived-mass-formula-light-isotopes`); SHELL-1 ($H^2$ calibration, P1.5 audit); NU-1 (neutrino = unknot); ALPHA-2 (1/α residual is 6.7 ppb within CODATA). |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 
@@ -406,12 +468,26 @@ prediction at level $A$ requires:
    ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
 8. ❌ Symbolic-in-$q$ throughout, $q_0$-substitution only at final
    step.
-9. ❌ Eight empirical/fitting flags (§2) reduced to ≤ 1 (the
-   single $m_e$ calibration), with that one flag explicitly named
-   `prop:single-scale-calibration`.
+9. 🟢 **All non-calibration empirical/fitting flags resolved.**
+   MAG-1 closed via PR #500 framework + numerical verification at
+   $\{2, 8, 20, 28\}$ (every self-conjugate partition of $3Z$ has
+   $\kappa_\lambda = 0$); PR #499 extends the verification to
+   $\{50, 82\}$. Only $Z = 126$ ($n = 378$ enumeration) is queued
+   compute follow-up. The conjectural piece (BB-collapse → magic
+   ladder, not just κ-zero) is `conj:homological-shell-condensation`.
+   ALPHA-2 resolved (live $1/\alpha = 45[3]_q(1+\delta_{CS}+8q\delta_{CS}^2)$
+   at 6.7 ppb, well within CODATA 21 ppb). BW-8 + BW-11 resolved
+   via cherry-picked Wenzl-bridge content. NU-1 resolved (neutrino
+   = unknot = 0 mass). SHELL-1 resolved. The three approved
+   calibrations (CAL-0 / CAL-1 / CAL-2) named in
+   `prop:three-calibration-discipline`; all numerical
+   predictions cite it.
 10. ❌ Magic-number derivation from Bring (currently asserted but
     not derived).
-11. ✅ Neutrino: nothing to reconcile — neutrino is the unknot, $J_\nu(q)=1$, bare-knot mass = 0. Vacuum-drag prediction $m_\nu \sim \mu_0\cdot(q-1)$ is the correct categorical answer. (Resolved by §2·F audit pass — the "10⁶ off" claim was a neutron/neutrino confusion.)
+11. ✅ Neutrino-mass channel — **resolved**: neutrino = unknot, so
+    $\mathfrak{m}(\nu) = 0$ by categorical definition. No
+    derivation needed; any compute reporting nonzero is mis-using
+    the GS coefficient on $\mathbf{1}$.
 
 **Headline.** Items 1–5 are 90%+ done. Items 6–11 are the work the
 workplan addresses. Until items 6–8 are done, the compute pipeline

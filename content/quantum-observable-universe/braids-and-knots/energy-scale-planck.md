@@ -71,16 +71,18 @@ This is analogous to measuring the speed of light by timing
 the simplest electromagnetic process: you need one clean
 measurement to set the scale, and every other speed follows.
 
-## The two calibration inputs in Planck units
+## The three calibration inputs in Planck units
 
 Using the three $q$-constants $c_q$, $\hbar_q$, $t_P$
-(all determined by $q_0$ alone), the two calibration inputs
-([calibration inputs](#rem:calibration-inputs)) become:
+(all determined by $q_0$ alone), the categorical
+three-calibration inputs
+([three-calibration discipline](#prop:three-calibration-discipline)) become:
 
-| Input | What it fixes | In $q$-Planck units |
-|-------|--------------|---------------------|
-| $m_\mu/m_e$ | $q_0$ | The shape (dimensionless) |
-| $m_n$ | $E_0$ | The size ($\approx m_e c_q^2 \hbar_q$) |
+| Input | $H^k$ degree | What it fixes | In $q$-Planck units |
+|-------|:-----------:|--------------|---------------------|
+| $m_e$ | $H^0$ | The mass unit | $E_0/(c_q^2 \hbar_q)$ (the size) |
+| $m_\mu/m_e$ | $H^1$ | $q_0$ | The shape (dimensionless) |
+| $Q_\beta(n)$ | $H^2$ | The $\beta$-decay scale | $E_0$ in MeV |
 
 Once $q_0$ is fixed, $c_q$, $\hbar_q$, $t_P$, and $G(q)$ are
 all determined.  The mass scale $E_0$ then sets the

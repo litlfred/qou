@@ -34,6 +34,12 @@ from datetime import datetime, timezone
 
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0_FLOAT
 
@@ -339,7 +345,9 @@ if __name__ == "__main__":
         "basis": BASIS,
         "hecke_relation_verified": True,
         "inner_derivation_pairing_at_q0": float(pairing.subs(q, q0).evalf(30)),
+        "inner_derivation_pairing_at_q0_polynomial_q": expose_polynomial(pairing, q),
         "cup_product_inner_pair_at_q0": float(cup_pairing_diag.subs(q, q0).evalf(30)),
+        "cup_product_inner_pair_at_q0_polynomial_q": expose_polynomial(cup_pairing_diag, q),
     }
     out = Path(__file__).parent / "hochschild-h3.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))

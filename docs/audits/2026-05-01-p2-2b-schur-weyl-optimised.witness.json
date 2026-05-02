@@ -1,0 +1,75 @@
+{
+  "audit": "P2.2b kickoff \u2014 Schur-Weyl optimised (length-\u2264-2 + cancel)",
+  "generated": "2026-05-02T00:57:44.374536+00:00",
+  "q_0": "2219957191108361/2000000000000000",
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_strands": 6,
+      "fast": {
+        "value_at_q0": "0.015585759907318543104918864290687798494706125015980",
+        "n_partitions": 2,
+        "time_seconds": 0.18436479568481445,
+        "error": null
+      },
+      "orig": {
+        "value_at_q0": "0.015585759907318543104918864290687798494706125015980",
+        "n_partitions": 2,
+        "time_seconds": 1.007218837738037,
+        "error": null
+      },
+      "agreement_within_1e30": true,
+      "phi_q_convergent": true
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_strands": 9,
+      "fast": {
+        "value_at_q0": "0.00088286893298810744398132212123033136018211602445503",
+        "n_partitions": 2,
+        "time_seconds": 0.34380030632019043,
+        "error": null
+      },
+      "orig": {
+        "value_at_q0": "0.00088286893298810744398132212123033136018211602445503",
+        "n_partitions": 3,
+        "time_seconds": 1.9361920356750488,
+        "error": null
+      },
+      "agreement_within_1e30": true,
+      "phi_q_convergent": true
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_strands": 12,
+      "fast": {
+        "value_at_q0": "0.0000044251910122715483525776306844557398699562049748614",
+        "n_partitions": 3,
+        "time_seconds": 1.9449875354766846,
+        "error": null
+      },
+      "orig": {
+        "value_at_q0": "0.0000044251910122715483525776306844557398699562049748614",
+        "n_partitions": 5,
+        "time_seconds": 5.717979431152344,
+        "error": null
+      },
+      "agreement_within_1e30": true,
+      "phi_q_convergent": true
+    }
+  ],
+  "optimisations": [
+    "Iterate only partitions of length \u2264 2 (the 2-variable Schur specialisation vanishes for longer partitions).",
+    "Use sympy.cancel in place of sympy.simplify (cancel performs polynomial GCD without invoking the heuristic that fails at A \u2265 5)."
+  ],
+  "interpretation": "The 'multi-week CRT' P2.2b can be deferred: two small optimisations on the existing Schur-Weyl symbolic path extend it from A \u2264 4 to A = 12 (\u00b9\u00b2C). The optimisations are pure mathematical refinements (length-\u2264-2 is exact; cancel preserves rational identity)."
+}

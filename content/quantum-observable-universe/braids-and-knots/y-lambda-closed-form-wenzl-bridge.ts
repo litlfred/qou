@@ -11,6 +11,7 @@ export default proposition({
   uses: [
     "prop:explicit-alpha-k-h3",
     "prop:alpha-k-derivation-procedure",
+    "prop:wedderburn-weight-canonical",
   ],
   cites: ["wenzl1988", "orellana1998", "chlouveraki2016"],
   tags: [

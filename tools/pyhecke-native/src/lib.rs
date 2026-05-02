@@ -155,6 +155,28 @@ fn chi_lambda_braid(shape: Vec<usize>, word: Vec<(i32, u32)>, q: f64) -> f64 {
     seminormal::chi_lambda_braid(&shape, &word, q)
 }
 
+/// **F3.2.ζ — q-character on a sequence of Hecke factors `c·σ + d·I`.**
+///
+/// `chi_q_atomic(shape, factors, q)` returns
+/// `χ_λ(Π_i (c_i · σ_{g_i} + d_i · I))` for partition `λ ⊢ n` at
+/// substrate parameter `q`.
+///
+/// `factors`: list of `(c, d, gen_1based)` triples, applied
+/// **left-to-right** (factor at position 0 is rightmost in the
+/// matrix product).
+///
+/// Use case: QOU atomic-braid Hecke characters with proton/neutron
+/// `(c, d)` per crossing — what `chi_lambda_braid` (which only
+/// takes `(sign, gen)` braid words) cannot handle. Unlocks A=12+
+/// q-Hecke per-braid evaluation (P2.2c-12C).
+///
+/// Per-basis-vector iterative trace; O(dim²·k) per partition;
+/// ≪ 1 s in release-optimised Rust for typical atomic braids.
+#[pyfunction]
+fn chi_q_atomic(shape: Vec<usize>, factors: Vec<(f64, f64, u32)>, q: f64) -> f64 {
+    seminormal::chi_q_atomic(&shape, &factors, q)
+}
+
 /// Enumerate all partitions of `n` as a list of lists.
 #[pyfunction]
 fn partitions_of(n: usize) -> Vec<Vec<usize>> {
@@ -485,6 +507,7 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_atomic, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;

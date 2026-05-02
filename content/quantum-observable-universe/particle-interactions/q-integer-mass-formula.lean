@@ -16,7 +16,7 @@
   exceptional divisors (s-orbital pairing enhancement).  See
   conj:shell-closure-nf-term-count and conj:palindromicity-orbital-type.
 
-  Ref: [manuscript] Ch 11 §8, prop:q-integer-mass-formula
+  Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Real

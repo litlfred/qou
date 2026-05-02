@@ -13,9 +13,6 @@ export default remark({
     "brane-tower",
     "algebraic-independence",
   ],
-  uses: [
-    "conj:hyperbolic-volume-transcendence",
-    "prop:cosimplicial-crossed-groupoid",
-  ],
+  uses: ["prop:cosimplicial-crossed-groupoid"],
   cites: ["yekutieli2010"],
 });

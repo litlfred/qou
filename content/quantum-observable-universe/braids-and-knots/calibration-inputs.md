@@ -119,7 +119,7 @@ No further parameters exist because:
   orthogonality
   ([RJ canonical inner product](#prop:rj-canonical-inner-product)).
 
-## What is predicted (given the two inputs)
+## What is predicted (given the three inputs)
 
 **From $q_0$ alone (dimensionless):**
 - Lepton mass ratios: $m_\tau/m_e$, $m_\tau/m_\mu$
@@ -163,7 +163,7 @@ mass/energy scales), deriving the rest from the topology of
 the Bring surface $\Sigma_4$ and the Iwahori--Hecke algebra
 $H_n(R, q)$.
 
-The reduction from 19 to 2 is possible because:
+The reduction from 19 to 3 is possible because:
 - **Particle content** is topological (from $\chi = -6$), not a
   free choice
 - **Mass ratios** are knot invariants (from Vol and $\mathrm{tr}_M$),

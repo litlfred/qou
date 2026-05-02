@@ -230,7 +230,7 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
   $\{1+h, 1-h^2, (1-h^2)^2\}$ per
   ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
   or knot-factor Frobenius pairings per
-  ([knot-factor Frobenius pairing](#prop:knot-factor-frobenius-pairing))
+  ([knot-factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
   — are separate structural terms beyond $\tau(C_{\dim_q})$.*
 
 *The unified mass formula

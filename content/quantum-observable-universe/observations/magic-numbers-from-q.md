@@ -88,3 +88,16 @@ for $q \neq 1$.
 `shell-closure.witness.json` records $\delta^2 \Phi(Z)$ for
 $Z = 1\ldots 30$ at $K = 10$.  The block-diagonal optimised
 computation is in `shell_closure_compute.py`.  $\square$
+
+## Cross-link: homological route past the $K = 12$ barrier
+
+The Hoefsmit-seminormal pipeline above terminates at $K = 10$. The
+[homological shell-condensation conjecture](#conj:homological-shell-condensation)
+provides a $K$-independent algebraic-geometry route: the magic
+ladder $\{2, 8, 20, 28, 50, 82, 126\}$ is read off the collapse of
+a Białynicki–Birula spectral sequence at $E_2$, with no matrix
+evaluation required. The numerical agreement at $Z = 8, 20, 28$
+above is then the
+[empirical computational verification](#rem:k12-barrier-bypass) of
+the homological prediction at the strand counts where Hoefsmit
+matrices are still tractable.

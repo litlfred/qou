@@ -102,9 +102,13 @@ if __name__ == "__main__":
     print("\n--- Numerical verification at q_0 ---")
     q0 = float(Q0)
     chi_p_num = float(chi_p.subs(q, q0))
+    chi_p_num_polynomial_q = expose_polynomial(chi_p, q)
     chi_p_closed_num = float(chi_p_closed.subs(q, q0))
+    chi_p_closed_num_polynomial_q = expose_polynomial(chi_p_closed, q)
     chi_n_num = float(chi_n.subs(q, q0))
+    chi_n_num_polynomial_q = expose_polynomial(chi_n, q)
     chi_n_closed_num = float(chi_n_closed.subs(q, q0))
+    chi_n_closed_num_polynomial_q = expose_polynomial(chi_n_closed, q)
     print(f"  proton  (matrix trace):   {chi_p_num:.16f}")
     print(f"  proton  (closed-form Σ):  {chi_p_closed_num:.16f}")
     print(f"  neutron (matrix trace):   {chi_n_num:.16f}")
@@ -115,6 +119,22 @@ if __name__ == "__main__":
     chi_n_factored = sp.factor(chi_n)
     print(f"  proton:  {chi_p_factored}")
     print(f"  neutron: {chi_n_factored}")
+
+    # P2.5 Tier B — expose polynomial forms alongside numerical
+    # evaluation. See witness_polynomial.py.
+    from witness_polynomial import expose_polynomial_dict
+    polynomial_forms = expose_polynomial_dict(
+        {
+            "chi_p_std": chi_p,
+            "chi_p_closed_form": chi_p_closed,
+            "chi_p_factored": chi_p_factored,
+            "chi_n_std": chi_n,
+            "chi_n_closed_form": chi_n_closed,
+            "chi_n_factored": chi_n_factored,
+        },
+        q,
+        q0=sp.Rational(str(q0)),
+    )
 
     witness = {
         "computation": "chi-std-pernucleon-closed-form",
@@ -127,6 +147,7 @@ if __name__ == "__main__":
             "neutron has an irreducible residual degree-12 factor."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        "polynomial_forms": polynomial_forms,
         "q_0": q0,
         "proton": {
             "chi_std_laurent": str(chi_p),

@@ -1,9 +1,12 @@
 The electron is identified with the trefoil $3_1$, a torus knot with
-$\mathrm{Vol}(3_1) = 0$, sitting at the base of the topological tower
-as the unit against which all other masses are measured.  The Higgs
-field is identified with the figure-eight knot $4_1$
+$\mathrm{Vol}_q(\beta_{3_1}) = 0$ in $\mathbb{Z}[q^{\pm 1/2}]$
+(see [algebraic quantum volume](#def:algebraic-quantum-volume)),
+sitting at the base of the topological tower as the unit against
+which all other masses are measured.  The Higgs field is identified
+with the figure-eight knot $4_1$
 ([cohomological embedding](#prop:cohomological-embedding)), whose
-complement carries a complete hyperbolic structure of volume
+algebraic quantum volume $\mathrm{Vol}_q(\beta_{4_1})$ τ-realises
+to the hyperbolic-volume constant
 $\mathrm{Vol}(4_1) \approx :val[Vol_4_1]{precision=6}$.
 
 Applying the **algebraic** topological mass formula

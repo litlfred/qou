@@ -8,8 +8,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:hecke-algebra",
-    "prop:figure-eight-bw-coefficients",
+        "prop:figure-eight-bw-coefficients",
   ],
   cites: ["hoefsmit1974", "wenzl1988"],
   tags: [

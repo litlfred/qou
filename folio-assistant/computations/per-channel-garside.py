@@ -22,6 +22,12 @@ from pathlib import Path
 
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 DIR = Path(__file__).parent
 
 from q_parameter import Q as q0, Q_INV as qi0, HA as HA0, Q_ERR
@@ -114,6 +120,7 @@ print("=" * 70)
 # Product: q × (q - h/2) × (q - h/2) = q × (q - (q-q⁻¹)/2)² = q × ((q+q⁻¹)/2)²
 GP_triv = q * ((q + 1/q)/2)**2
 GP_triv_val = float(GP_triv.subs(q, q0))
+GP_triv_val_polynomial_q = expose_polynomial(GP_triv, q)
 
 # Neutron (udd):
 # 3 pairs: (1,2)=ud→σ-h/2, (1,3)=ud→σ-h/2, (2,3)=dd→σ-h=q⁻¹...
@@ -121,6 +128,7 @@ GP_triv_val = float(GP_triv.subs(q, q0))
 # Product: (q - h/2) × (q - h/2) × (q - h) = ((q+q⁻¹)/2)² × q⁻¹
 GN_triv = ((q + 1/q)/2)**2 * (1/q)
 GN_triv_val = float(GN_triv.subs(q, q0))
+GN_triv_val_polynomial_q = expose_polynomial(GN_triv, q)
 
 # For the SIGN irrep (dim 1): T_i → -q⁻¹ for all i
 # Proton (uud):
@@ -129,6 +137,7 @@ GN_triv_val = float(GN_triv.subs(q, q0))
 # (2,3)=ud→σ-h/2: → -(q+q⁻¹)/2
 GP_sign = (-1/q) * (-(q + 1/q)/2)**2
 GP_sign_val = float(GP_sign.subs(q, q0))
+GP_sign_val_polynomial_q = expose_polynomial(GP_sign, q)
 
 # Neutron (udd):
 # (1,2)=ud→σ-h/2: → -(q+q⁻¹)/2
@@ -136,6 +145,7 @@ GP_sign_val = float(GP_sign.subs(q, q0))
 # (2,3)=dd→σ-h: in sign: -q⁻¹ - h = -q⁻¹ - q + q⁻¹ = -q
 GN_sign = (-(q + 1/q)/2)**2 * (-q)
 GN_sign_val = float(GN_sign.subs(q, q0))
+GN_sign_val_polynomial_q = expose_polynomial(GN_sign, q)
 
 # For the STANDARD irrep (dim 2): need the 2×2 matrices
 # The standard irrep of H₃(q) in Young's seminormal form:
@@ -192,7 +202,9 @@ GP_std_sum = sp.simplify(a_sym - GP_triv - GP_sign)
 GN_std_sum = sp.simplify(b_sym - GN_triv - GN_sign)
 
 GP_std_sum_val = float(GP_std_sum.subs(q, q0))
+GP_std_sum_val_polynomial_q = expose_polynomial(GP_std_sum, q)
 GN_std_sum_val = float(GN_std_sum.subs(q, q0))
+GN_std_sum_val_polynomial_q = expose_polynomial(GN_std_sum, q)
 
 print("\n─── Per-nucleon channel values (symbolic) ───")
 print(f"  GP(triv)  = {sp.simplify(GP_triv)} = {GP_triv_val:.10f}")
@@ -209,7 +221,9 @@ print(f"  GN(total) = {GN_triv_val + GN_sign_val + GN_std_sum_val:.10f}  (should
 a_check = GP_triv_val + GP_sign_val + GP_std_sum_val
 b_check = GN_triv_val + GN_sign_val + GN_std_sum_val
 a_expected = float(a_sym.subs(q, q0))
+a_expected_polynomial_q = expose_polynomial(a_sym, q)
 b_expected = float(b_sym.subs(q, q0))
+b_expected_polynomial_q = expose_polynomial(b_sym, q)
 print(f"\n  ✓ GP sum check: {abs(a_check - a_expected):.2e}")
 print(f"  ✓ GN sum check: {abs(b_check - b_expected):.2e}")
 

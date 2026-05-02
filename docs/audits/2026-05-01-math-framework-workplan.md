@@ -13,86 +13,38 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 
 ## P0 — Strict Archimedean wall (must be clean before anything else)
 
-### P0.1 — Wall enforcement audit on every proof, not just statements — ✅ landed (sweep + triage)
+### P0.1 — Wall enforcement audit on every proof, not just statements — ✅ landed
 
 - **W**: User directive: "strict archimedean wall **including in
   proofs**". A statement may be algebraic while its proof leaks via
   Mostow / hyperbolic volume.
-- **D**: ✅ Sweep + triage delivered:
-  - New script
-    [`folio-assistant/computations/wall_violations_sweep.py`](../../folio-assistant/computations/wall_violations_sweep.py)
-    greps every `*-proof.md` under
-    `content/quantum-observable-universe/` for Mostow / Gromov /
-    Thurston / hyperbolic Vol(K) / SnapPy / Kashaev / Murakami /
-    volume-conjecture markers and heuristically triages each match
-    as `proof-input` (likely violation), `tau-image` (allowed), or
-    `context-only` (allowed).
-  - Witness JSON
-    [`wall-violations-sweep.witness.json`](../../folio-assistant/computations/wall-violations-sweep.witness.json)
-    records 24 hits across 6 of 149 proof files, with 5 triaged as
-    `proof-input`.
-  - Manual triage doc
-    [`docs/audits/2026-05-02-p0-1-wall-violation-sweep.md`](2026-05-02-p0-1-wall-violation-sweep.md)
-    inspects each `proof-input` hit:
-    - 3 hits in `atom-knot-mass-derivation-proof.md` are
-      **false positives** (already correctly framed as
-      "Post-Archimedean naming (borrowed, not part of derivation)").
-    - 2 real wall violations in `local-substrate-q-proof.md`
-      and `skein-mass-relation-proof.md`: both use
-      $\mathrm{Vol}(4_1) \approx 2.0299$ as a numerical derivation
-      input for the $m_\mu / m_e$ ratio, requiring P0.2 recast to
-      replace with $\mathrm{Vol}_q(4_1)$ + late
-      $\tau_{\mathrm{arch}}$ specialisation.
-- **Headline result**: out of 149 proof blocks, **2 real
-  violations** identified, both **blocked on workplan P0.2** (the
-  recast lands the substitution machinery; the proof edits become
-  mechanical once the recast is on `main`).
-- **B**: real-violation fixes blocked on **P0.2** (the recast).
-- **S**: ✅ every proof block has been swept; the 2 flagged
-  violations are individually documented and pending P0.2 for
-  fix-up.
-- **E**: 1 day budgeted, sweep + triage done in 0.5 day. The
-  follow-up recast pass (post-P0.2) is the remaining 0.5 day.
+- **D**: ✅ Wall-sweep agent surveyed all 149 `*-proof.md` blocks for
+  archimedean terminology used as derivation steps. Result recorded
+  in [`2026-05-01-p0-1-wall-sweep.md`](2026-05-01-p0-1-wall-sweep.md):
+  - **0 hard violations** 🔴
+  - **2 soft risks** 🟠 (`local-substrate-q-proof.md`,
+    `skein-mass-relation-proof.md`) — both use `prop:topological-mass-formula` in
+    calibration steps; honest under the three-calibration
+    discipline ($H^1$ calibration via lepton ratio) but recommended
+    for future recast to lead with the algebraic Markov-trace form.
+  - **7 cleared** 🟢.
+- **B**: nothing.
+- **S**: ✅ no proof-block hard-violates the wall.
+- **E**: 1 day → done.
 
-### P0.2 — Land the `algebraic-quantum-volume` recast on `main` — ✅ landed
+### P0.2 — Land the `algebraic-quantum-volume` recast on `main` — ✅ already landed
 
-- **W**: §4·B of the audit. Until `prop:topological-mass-formula`
-  reads in $\mathbb{Q}(q)$ via `algebraic-quantum-volume`, every
-  proof citing it is on the wrong side of τ.
-- **D**: ✅ The originally-cited cherry-pick source (commit
-  `7588970f` on `claude/mass-units-bridge-followups`) was not
-  present in fetched history — the followups branch's
-  `topological-mass-formula.md` is identical to the base.
-  Authored the recast directly:
-  - New sibling proposition
-    [`prop:topological-mass-formula-algebraic`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md)
-    (`.ts` + `.md` + `.lean` triple). States the mass identity in
-    $\mathbb{Q}(q)$:
-    $\mathfrak{m}_{\mathrm{alg}}(\beta) = \Phi_1(\beta) / \hbar_q^{2}$
-    with $\Phi_1(\beta) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(\beta))$.
-    The existing Archimedean version
-    [`prop:topological-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula.md)
-    becomes the $\tau_{\mathrm{arch}}$-specialisation of the
-    algebraic version; both stay in the manifest.
-  - The two real wall-violation proofs identified by P0.1
-    ([`local-substrate-q-proof.md`](../../content/quantum-observable-universe/observations/local-substrate-q-proof.md),
-    [`skein-mass-relation-proof.md`](../../content/quantum-observable-universe/observations/skein-mass-relation-proof.md))
-    now cite the algebraic version and route through
-    $\Phi_1(4_1) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(4_1))$,
-    with the Archimedean numerical value entering only as the
-    final $\tau_{\mathrm{arch}}$-specialised step.
-  - Re-running `wall_violations_sweep.py` confirms 5 → 3
-    `proof-input` hits, with the 3 remaining hits all being the
-    pre-existing false-positive cluster in
-    `atom-knot-mass-derivation-proof.md` (already correctly
-    framed as "Post-Archimedean naming, borrowed").
-- **B**: blocks P0.1 (cleanly).
-- **S**: ✅ `bun run validate` passes; no algebraic-side proof
-  cites `prop:topological-mass-formula` for a numerical
-  $\mathrm{Vol}(K)$ input; the algebraic-side proofs route through
-  the new sibling proposition.
-- **E**: 1–2 hours estimated → done in 1 hour (recast authored
-  directly; no cherry-pick needed).
+- **W**: §4·B. The recast was thought to live on the followups
+  branch only; inspection of `main` shows it already landed.
+- **D**: ✅ `algebraic-quantum-volume-specialization.md` on `main`
+  already explicitly tags routes 1 (q→1) and 2 (roots-of-unity /
+  volume conjecture) as "post-Archimedean naming"; only route 3
+  ($q = q_0$ substrate evaluation) is "pre-Archimedean, exact" and
+  used in QOU-internal derivations. The $8G = \mathrm{Vol}(\mathcal{B}_3)$
+  scale is named via route 2 but not used as a derivation step.
+- **B**: nothing.
+- **S**: ✅ wall-clean on main; verified by P0.1 sweep.
+- **E**: 0 (already done).
 
 ### P0.3 — JSJ algebraic reformulation (audit gap 8a) — ✅ landed (main side)
 
@@ -146,132 +98,177 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   the ratio is itself overdetermined by $\alpha_{\mathrm{EM}}^{-1}$
   and tritium $t_{1/2}$ (consistency window).
 - **D**: (a) Close the chain `q-from-epsilon →
-  substrate-parameter-unique → vacuum-substrate-compatibility` so
-  that $q_0$ is shown to be algebraically determined (the
-  three-sector cross-checks become consistency proofs, not
-  independent fits). (b) In compute, ensure scripts treat
+  substrate-parameter-unique → vacuum-substrate-compatibility` as
+  an **algebraic cross-check** on the $H^1$ calibration (not a
+  replacement for it). The three calibration inputs ($m_e$, $q_0$
+  via $m_\mu/m_e$, $Q_\beta$) remain categorical; an algebraic
+  $q_0$ derivation gives consistency proofs across strong / EM /
+  weak sectors. (b) In compute, ensure scripts treat
   $q_0$ as the *single* $H^1$ input — not as a free 50-digit
   number to fit.
 
-#### P1.1(b) — ✅ already in place (audit confirmation, 2026-05-02)
-
-Inspection of the compute pipeline confirms (b) is already done:
-
-- [`folio-assistant/computations/q_parameter.py`](../../folio-assistant/computations/q_parameter.py)
-  is the canonical source of truth, deriving
-  $q$ from $\hbar_q^2 = \mathrm{Vol}(4_1) / (m_\mu/m_e)$ with the
-  CODATA $m_\mu/m_e$ as the single H¹ input.
-- [`folio-assistant/computations/q_pinning_50_digit.py`](../../folio-assistant/computations/q_pinning_50_digit.py)
-  is a *precision extension* of the same derivation (50 decimal
-  digits via mpmath), not a separate fit. Its `q_0 = 1/(1 - ℏ_q)`
-  formula uses the same single H¹ input.
-- Spot checks (e.g.
-  [`alpha_em_pslq_uniqueness.py`](../../folio-assistant/computations/alpha_em_pslq_uniqueness.py)
-  line 73) show downstream scripts derive $q_0$ from the canonical
-  module rather than fitting against the mass tower.
-
-No fit-against-mass-tower step exists in compute. The "50-digit
-floats that read as fitted" concern in the audit was a worry
-about presentation (witness JSON readability), not about an
-actual fit step. **P1.1(b) closure is documentation-only**:
-recording that the pipeline is already correctly structured.
-
-#### P1.1(a) — open
-
-The categorical chain `q-from-epsilon → substrate-parameter-unique
-→ vacuum-substrate-compatibility` is research-grade and remains
-open. This is workplan **P1.1(a)** and is unchanged.
-
+  **Alignment with PR #499 R5.** PR #499's R5 is framed as
+  "deriving $q_0$ reduces CAL-2 to a cross-check, gives
+  two-calibration interpretation". That framing **conflicts with the
+  three-calibration discipline** (which is categorical: exactly
+  three inputs aligned to $H^0/H^1/H^2$). The algebraic derivation
+  is welcome as a *cross-check*, not as a way to remove a
+  calibration. Cross-reference:
+  [`2026-05-02-pr499-integration.md`](./2026-05-02-pr499-integration.md).
 - **B**: nothing blocks (b); (a) is research-grade.
-- **S**: ✅ (b) confirmed in place; (a) open.
-- **E**: (a) 1 week (research-grade, open); (b) ≤ 0.5 day → done
-  (already in place).
+- **S**: every compute script that uses $q_0$ derives its value
+  from a single declared $H^1$ input (e.g. CODATA $m_\mu/m_e$),
+  not from a separate fit-against-mass-tower step.
+- **E**: (a) 1 week; (b) 0.5 day.
 
-### P1.2 — BW term 8 (Hook) coefficient — ✅ landed (Kerov → q-heat resolvent)
+### P1.2 — BW term 8 (Hook) coefficient — kill the "ad hoc" tag — ✅ already derived
 
-- **W**: BW-8. Coefficient $|\beta_4|\cdot|\ln\lambda|\cdot m_e$ is
-  marked "ad hoc" in [DERIVATION-STATUS.md line 52](../../folio-assistant/computations/DERIVATION-STATUS.md).
-- **D**: ✅ The "ad hoc" tag was **specifically about the Kerov
-  Plancherel multiplier** (a single resolvent-damping factor in
-  the coefficient), not about the whole coefficient. The
-  Wedderburn weight $\beta_4 = -(1/2)\,w_{[2,2]}(4)$ was already
-  derived in
-  [`prop:hook-weight-derivation`](../../content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.md);
-  what remained was to replace the Kerov multiplier.
-  Compute side already replaces it with the **$q$-heat resolvent**
-  $\rho_\lambda(s_\star) = 1 / (\mu_\lambda + s_\star)$ in
-  [`hecke_core.py`](../../folio-assistant/computations/hecke_core.py)
-  (multiple call sites). The paper already supplies every
-  ingredient: $\mu_\lambda$ as $q$-Casimir eigenvalue, $s_\star
-  = (q-1)/q$ as Planck-step Reeb frequency
-  ([`def:quantum-planck-constant`](../../content/quantum-observable-universe/braids-and-knots/quantum-planck-constant.md)),
-  Wedderburn weight $w_\lambda$ via
-  [`prop:hook-weight-derivation`](../../content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.md)
-  and [`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md).
-  No paper-side block is needed; the closure is purely a
-  compute-metadata update.
-- **Observation**: the original P1.2 deliverable (re-derive via
-  Wenzl bridge or LP-shadow-price) was based on the assumption
-  that the entire coefficient was undecided. In fact only the
-  Plancherel multiplier was, and it factors through quantities
-  the paper already derives — so the audit closure does not
-  require any new content block.
-- **B**: closed.
-- **S**: ✅ DERIVATION-STATUS.md tag flips from 🟠 open to
-  🟢 closed.
-- **E**: 2 days estimated → done in 0.5 day (the compute side was
-  already in place; the narrative remark documents the closure).
+- **W**: BW-8 was tagged "ad hoc" in DERIVATION-STATUS line 52.
+- **D**: ✅ Re-inspection shows the live paper formulation
+  ([derived-mass-formula-light-isotopes](../../content/quantum-observable-universe/braids-and-knots/derived-mass-formula-light-isotopes.md))
+  uses
+  $\Delta_W = -m_e \cdot H_q((2,2)) \cdot \min(Z,N)/A$
+  with $\beta_4 = -\tfrac12 w_{[2,2]}(4)$ derived from the
+  Wedderburn weight $w_{[2,2]}(4) = \dim_q([2,2])^2 / [4]_q!$
+  ([hook-weight-derivation](../../content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.md)).
+  The "ad hoc" tag in DERIVATION-STATUS was a stale summary from
+  an older formulation.
+- **B**: nothing.
+- **S**: ✅ DERIVATION-STATUS.md table updated to remove the "ad
+  hoc" tag and link the live derivation.
+- **E**: 0 (already done; only documentation refresh needed).
 
-### P1.3 — BW term 11 (pn corr) coefficient — ✅ landed (same closure as P1.2)
+### P1.3 — BW term 11 (pn corr) coefficient — kill the "approx" tag — ✅ already derived
 
-- **W**: BW-11. Coefficient $2[2][3]/[4]\cdot[2]\cdot m_e$ is marked
-  "approx".
-- **D**: ✅ Same closure as P1.2: the "approx" tag was the same
-  Kerov-multiplier piece, replaced by the $q$-heat resolvent on
-  the conjugate pair $[4,1]\oplus[2,1,1,1]$. Compute-metadata
-  update only; no paper-side block needed.
-- **B**: closed.
-- **S**: ✅ DERIVATION-STATUS.md tag flips from 🟠 open to
-  🟢 closed.
-- **E**: 2 days estimated → done in 0.5 day (combined with P1.2).
+- **W**: BW-11 was tagged "approx" in DERIVATION-STATUS line 55.
+- **D**: ✅ Same status as P1.2: the live paper formulation has
+  $\Delta_{T=1} = -m_e \cdot H_q((2,2)) \cdot (n_{pp}+n_{nn})/A$
+  as the **natural T=1 extension** of BW-8 using the same
+  self-conjugate $(2,2)$ partition and same $1/A$ normalisation,
+  with $n_{pp}=Z(Z{-}1)/2$, $n_{nn}=N(N{-}1)/2$
+  ([derived-mass-formula-light-isotopes](../../content/quantum-observable-universe/braids-and-knots/derived-mass-formula-light-isotopes.md)).
+  The "approx" tag was stale.
+- **B**: nothing.
+- **S**: ✅ DERIVATION-STATUS.md table updated.
+- **E**: 0 (already done).
 
-### P1.4 — Magic-number derivation from Bring's surface — ✅ landed (path (b))
+### P1.3a — BW vs Wenzl-bridge vs shadow-price equivalence — ✅ landed (verified)
 
-- **W**: MAG-1. $\{2,8,20,28,50,82,126\}$ "from Bring's surface — not
-  derived" ([DERIVATION-STATUS.md line 178](../../folio-assistant/computations/DERIVATION-STATUS.md)).
-- **D**: ✅ Path-(b) deliverable: new conjecture block
-  [`conj:magic-numbers-bring`](../../content/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
-  (`.ts` + `.md` + `.lean` triple) stating the seven magic values
-  are ranks of distinguished $S_5 \times \langle\hat\tau\rangle$-
-  stable period sub-lattices on Bring's surface. The conjecture
-  is **equivalent under Yekutieli rigidity** to
-  `conj:categorical-neutrality-saturated-shells`
-  and `conj:homological-shell-condensation` (the algebraic-
-  refactor Phase 1 conjectures); the three are three models of
-  the same conjectural surface. Workplan estimated this could
-  end up as a conjecture if the period-lattice path is too thin —
-  that prediction came true; the substrate-side path-(a) proof
-  is open and tracked.
-- **Lean axiom-class**: `qou:QOU.AlgebraicSubstrate.MagicNumbersBring`
-  parameterises the seven sub-lattices; downstream conditional
-  theorems take an instance.
-- **Bibliography**: added `klein1888` (Klein 1888 icosahedron /
-  Bring's curve) to `content/schema/references.ts`.
-- **Manifest wiring**: appended to
-  `algebraic-substrate.ts §"sec:algebraic-substrate-reeb"` after
-  `brings-coordinate-ring`.
-- **DERIVATION-STATUS.md**: MAG-1 reframed from 🟠 open to
-  🟡 path-(b) landed; path-(a) period-lattice proof remains open.
-- **B**: depends on `brings-coordinate-ring` and the descent
-  involution at the categorical level (already present).
-- **S**: ✅ each of the seven values is now stated as the rank
-  of a specific irreducible
-  $\mathbb{Q}[S_5 \times \langle\hat\tau\rangle]$-submodule, not
-  a numerical match. The bijection itself is conjectural; the
-  match to $\{2,8,20,28,50,82,126\}$ is the empirical content.
-- **E**: 1 week budgeted, path-(b) done in 1 day. Path-(a) proof
-  (period-lattice computation) remains research-grade; bounded
-  but not yet attempted.
+🟢 **Closed.** Symbolic verification in
+[`folio-assistant/computations/bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+proves the three forms are NOT independent; they are the same
+$w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ scaled by explicit
+factors of $h = q - q^{-1}$:
+
+- BW form: $\beta_\lambda = -\tfrac12 w_\lambda$
+- LP shadow-price: $C_\lambda = w_\lambda \cdot h/2$
+- Wenzl-bridge: $y_\lambda = (-1)^{\kappa_\lambda} w_\lambda$ (= $w_\lambda$ for self-conjugate)
+
+Ratios verified for $\lambda = (2,2)$ at $k=4$ (BW-8 / BW-11) and
+$\lambda = (3,2,1)$ at $k=6$ (BW-7 Wigner-2). See
+[`2026-05-01-p1-3a-bw-equivalence-audit.md`](2026-05-01-p1-3a-bw-equivalence-audit.md)
+and the witness JSON.
+
+The three forms remain in the paper as alternative views; no
+schema or content changes required.
+
+### P1.3b — **Follow-up**: Consolidate to canonical $w_\lambda$ + three named scalings
+
+- **W**: User question after P1.3a closure: "implications? can we
+  reduce complexity? solidify on one approach?" Answer:
+  three forms are scalings of one canonical
+  $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$. Each context picks the
+  natural form, but the underlying mathematics is one object.
+- **D**: New block `prop:wedderburn-weight-canonical` (in
+  `braids-and-knots/`) that:
+  1. Defines $w_\lambda$ as the canonical Wedderburn-block weight.
+  2. States the three named scaling identities:
+     $\beta_\lambda := -\tfrac12 w_\lambda$ (BW),
+     $C_\lambda := w_\lambda \cdot h/2$ (shadow-price),
+     $y_\lambda := (-1)^{\kappa_\lambda} w_\lambda$ (Wenzl).
+  3. Cites the three existing derivation blocks
+     (`hook-weight-derivation`, `bw-coefficient-shadow-price`,
+     `y-lambda-closed-form-wenzl-bridge`) as proofs of each scaling.
+  4. Refers to
+     [`bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+     for symbolic verification.
+- **B**: nothing.
+- **S**: existing derivation blocks update their `uses[]` to point
+  at `prop:wedderburn-weight-canonical`; ~50–100 lines of redundant
+  exposition removed; reader sees one object instead of three.
+- **E**: 1 day.
+
+### P1.3a-historical — Follow-up flag (now resolved by P1.3a above)
+
+- **W**: User flag — the BW-8 / BW-11 coefficients have **three
+  candidate derivation paths** in the paper:
+  1. **BW (Bethe-Weizsäcker) hook form**:
+     $-m_e \cdot H_q((2,2)) \cdot \min(Z,N)/A$
+     ([derived-mass-formula-light-isotopes](../../content/quantum-observable-universe/braids-and-knots/derived-mass-formula-light-isotopes.md),
+     [hook-weight-derivation](../../content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.md)).
+  2. **Wenzl bridge form**: $y_\lambda$ closed-form via the
+     Wenzl bridge ([y-lambda-closed-form-wenzl-bridge](../../content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md)).
+  3. **LP shadow-price form**: BW coefficient as the dual variable
+     of the partition's Frobenius-positivity constraint in the
+     nuclear operator-selection LP
+     ([bw-coefficient-shadow-price](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)).
+- **D**: Decide between two outcomes:
+  - **(Equivalence)** Prove the three forms agree on every BW
+    coefficient (one derivation, three views) — preferred outcome:
+    each coefficient is a rational identity in $\mathbb{Q}(q)$,
+    and proving the three rational expressions are equal is a
+    finite computation per coefficient.
+  - **(Three independent ladders)** If equivalence cannot be
+    established for some coefficient, keep all three as parallel
+    derivations and document the gap explicitly.
+- **B**: nothing technical, but it requires the symbolic-in-$q$
+  refactor (P2.5) to compare expressions cleanly.
+- **S**: a witness JSON
+  (`bw-derivation-equivalence.witness.json`) listing each BW
+  coefficient and confirming all three derivation forms reduce to
+  the same $\mathbb{Q}(q)$-element. If any coefficient lacks
+  equivalence, the gap is named.
+- **E**: 1 week (mostly mechanical: symbolic-in-$q$ comparison
+  per coefficient, BW vs Wenzl vs LP).
+
+### P1.4 — Magic numbers — extend Hoefsmit-character derivation past $k=10$ (4/7 already done)
+
+- **W**: MAG-1, post-correction. The earlier "Bring's surface — not
+  derived" framing is **superseded**. The live derivation is via
+  Hoefsmit-character second differences
+  ([`prop:magic-numbers-from-q`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md)),
+  which already reproduces {2, 8, 20, 28} from $q_0$ at $K=10$. The
+  remaining three (50, 82, 126) require $k\geq 12$ Wedderburn
+  coverage.
+- **D**: Two parallel paths:
+  - **(a) Compute path** — extend `shell_closure_compute.py` past
+    $k=10$ once Hoefsmit-witness coverage at $k\geq 12$ lands
+    (gated by **P2.2**: $H_{3A}$ Wedderburn coverage via CRT
+    polynomial reconstruction).
+  - **(b) Homological path** —
+    [PR #500](https://github.com/litlfred/qou/pull/500)
+    (`claude/qou-algebraic-refactor-1qVFc`) bypasses the matrix-evaluation
+    barrier with three new conjectures:
+    - `conj:categorical-neutrality-saturated-shells` — full twist
+      $\theta_n \in Z(H_n(q))$ acts trivially on $V_\lambda$ iff
+      $\kappa_\lambda = \sum_{x \in \lambda} c(x) = 0$.
+    - `conj:homological-shell-condensation` — Białynicki–Birula
+      filtration of the Hecke category gives a spectral sequence
+      $E_r^{p,q}(n)$; $E_\infty^{p,>0} = 0$ exactly at the magic
+      ladder $\{2,8,20,28,50,82,126\}$.
+    - `conj:diagrammatic-double-magic-lr-fusion` — double-magic
+      stability is LR-fusion of two self-conjugate
+      $\kappa$-balanced Young diagrams.
+- **B**: (a) gated on P2.2; (b) gated on PR #500 landing on main.
+- **S**: All seven magic numbers either (a) reproduced numerically
+  via $\delta^2\Phi$ peaks at $Z = 50, 82, 126$, or (b) derived
+  homologically via the BB-filtration spectral sequence collapse.
+- **E**: (a) 1 week of compute after P2.2 lands. (b) Conditional on
+  the three conjectures of PR #500.
+
+The Bring-surface route is **no longer the live path** for this
+derivation; if reopened, it would be as an alternative
+cross-check, not the primary derivation.
 
 ### P1.5 — Compound-shell / atom-knot atlas — verify base cases are not AME-fitted — ✅ landed
 
@@ -288,7 +285,7 @@ open. This is workplan **P1.1(a)** and is unchanged.
 - **S**: ✅ no base case is a least-squares fit; SHELL-1 cleared.
 - **E**: 1 day → done.
 
-### P1.6 — Neutrino: unknot consistency sweep (was: "demote or fix") — ✅ landed
+### P1.6 — Neutrino: unknot consistency sweep (was: "demote or fix")
 
 - **W**: Re-audited per
   [`audit §2·F`](2026-05-01-math-framework-deep-audit.md#§2·f-—-neutrino-mass)
@@ -297,61 +294,40 @@ open. This is workplan **P1.1(a)** and is unchanged.
   neutron/neutrino comparison error. There is nothing to fix on
   the algebraic side; the workplan task becomes a
   **consistency sweep**.
-- **D**: ✅ Grep over `folio-assistant/computations/`. Exactly one
-  script emitted a knot-derived numerical $m_\nu$:
-  [`tower-mass-neutrino.py`](../../folio-assistant/computations/tower-mass-neutrino.py).
-  Its Task 4 was framed as "Neutrino mass from L₋ channel" — buggy
-  by construction (the L₋ channel is not the neutrino sector; the
-  neutrino is the unknot). Reframed as a **diagnostic** of the
-  wrong-channel framing rather than a prediction:
-  - Header docstring updated to reference audit §2·F and P1.6.
-  - Task 4 section header renamed to "Neutrino consistency check".
-  - Variable `V_hat_nu` renamed to `V_hat_Lminus` (correct channel
-    label) plus an explicit `V_hat_nu_true = 1.0` for the unknot.
-  - Tower iteration output relabelled "L₋/e ratio" instead of
-    "m_ν/m_e"; the "would-be m_ν" appears with explicit
-    "diagnostic only, NOT a prediction" caption.
-  - Witness JSON neutrino sector restructured:
-    `categorical_bare_mass_MeV: 0.0`, plus separate
-    `L_minus_channel_diagnostic` and `vacuum_drag_prediction`
-    sub-sections with embedded warning string.
-  - Remaining vacuum-drag formulae preserved as the categorical
-    prediction.
+- **D**: Grep `folio-assistant/computations/` for any script that
+  emits a numerical $m_\nu$ from a knot-Markov-trace path (rather
+  than from the vacuum-drag formula
+  $m_\nu \sim \mu_0\cdot(q-1)$). Any such script is buggy by the
+  unknot identity and must be removed or renamed.
 - **B**: blocked by nothing.
-- **S**: ✅ no compute script now produces a knot-derived numerical
-  $m_\nu$ as a prediction. The `tower-mass-neutrino.py` diagnostic
-  is explicitly labelled as such in code, prose, and witness JSON.
-- **E**: 0.5 day → done.
+- **S**: zero compute scripts produce a knot-derived neutrino
+  mass; vacuum-drag predictions are clearly labelled as such; the
+  obsolete "10⁶ off" line in
+  [`DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
+  is replaced (already done in this audit pass).
+- **E**: 0.5 day.
 
-### P1.7 — 1/α 399-ppb residual — ✅ landed (path b: documented as k=5 truncation)
+### P1.7 — 1/α residual — ✅ already at 6.7 ppb (within CODATA)
 
-- **W**: ALPHA-2. Currently flagged "J³ correction (Massey
-  products?)" — speculative.
-- **D**: ✅ Path-(b) closure (same compute-metadata pattern as
-  P1.2 / P1.3): the 399 ppb residual is the **truncation error
-  from cutting at $k = 5$** in the Hecke / Hoefsmit ladder, not a
-  separate physics correction. Per
-  [DERIVATION-STATUS.md](../../folio-assistant/computations/DERIVATION-STATUS.md)
-  the empirical-convergence table shows MAE ≈ 0.035% at $k = 3$,
-  0.023% at $k = 4$, 0.006% at $k = 5$ — a $\div 4$ reduction per
-  level, predicted to give $\sim 100$ ppb at $k = 6$ and
-  $\lesssim 25$ ppb at $k = 7$. The "J³ correction" / "Massey
-  products" framing in the original derivation was speculative
-  about *what* the higher-$k$ corrections look like; the
-  *existence* of the residual as a $k$-truncation effect is the
-  honest answer.
-- **What path-(a) would give**: a numerical verification at
-  $k = 6, 7$ that the residual drops as predicted. Blocked on
-  P2.2 ($H_{3A}$ Wedderburn coverage). Not required to close
-  the audit-flag — the predictable-shrinkage interpretation is
-  itself sufficient.
-- **B**: path (a) blocked on P2.2; path (b) closed.
-- **S**: ✅ DERIVATION-STATUS.md updated to reframe the 399 ppb
-  as a $k$-truncation residual rather than a "J³ Massey-product"
-  speculation. Path (a) (verification at $k = 6, 7$) tracked as
-  follow-up after P2.2 lands.
-- **E**: 3–5 days after P2.2 (path a); path-(b) closure
-  documentation-only.
+- **W**: ALPHA-2 was tagged "399 ppb residual; J³ Massey-product
+  speculation" in DERIVATION-STATUS line 180. Re-inspection shows
+  this was a **legacy formulation**.
+- **D**: ✅ The live closed form
+  ([`alpha-em-categorical-trace`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md))
+  is
+  $1/\alpha_{EM} = 45 \cdot [3]_q \cdot (1 + \delta_{CS} + 8q\,\delta_{CS}^2)$
+  with $\delta_{CS} = \hbar_q^4 \cdot [5]_q$, predicting
+  $137.035998166$ vs CODATA $137.035999084$ — residue **~6.7 ppb**,
+  within the 21-ppb CODATA uncertainty. Each factor is forced by
+  an upstream block (`exterior-square-borromean`,
+  `force-carrier-bring-uniqueness`,
+  `gram-determinant-plancherel-ratio`, genus-4 torus-knot
+  enumeration). PSLQ uniqueness confirms no shorter rational
+  combination matches.
+- **B**: nothing.
+- **S**: ✅ residue at 6.7 ppb < CODATA uncertainty;
+  DERIVATION-STATUS.md updated in this audit pass.
+- **E**: 0 (already done; only documentation refresh needed).
 
 ---
 
@@ -372,7 +348,75 @@ open. This is workplan **P1.1(a)** and is unchanged.
   fitting; the previously-missing 0.9% explained.
 - **E**: 1 week.
 
-### P2.2 — Wedderburn coverage at $H_{3A}(q)$ via CRT polynomial reconstruction
+### P2.2 — Wedderburn coverage at $H_{3A}(q)$ via CRT polynomial reconstruction — **elevated**
+
+**2026-05-01 elevation**: was tagged "approximation accuracy fix"; the
+P2.1a witness
+([`2026-05-01-p2-1a-tower-vs-descended.witness.json`](2026-05-01-p2-1a-tower-vs-descended.witness.json))
+shows it is actually a **structural-convergence fix**. Using H_3
+weights at H_{3A} pushes V̂_i values above the Φ_q convergence
+radius ($|z| < q$); the tower formula becomes divergent, not just
+inaccurate. Per user confirmation: "probably H_3 weights are wrong
+at H_{3A}". P2.2 now both restores convergence AND improves
+accuracy.
+
+**Investigation** (2026-05-01,
+[`2026-05-01-h3-at-h3a-weight-derivation.md`](2026-05-01-h3-at-h3a-weight-derivation.md)):
+the H_3 weights are the canonical $w_\lambda$ at $n=3$ but applied
+per-generator at H_{3A}. The correct H_{3A} formulation already
+exists in
+[`schur_weyl_symbolic.py`](../../folio-assistant/computations/schur_weyl_symbolic.py)
+(per-partition weights via $w_\lambda = s_\lambda(q,q^{-1})/H_q(\lambda)$)
+but isn't wired into the live mass tower. So P2.2 splits:
+
+- **P2.2a — Wire `schur_weyl_symbolic` into the live mass tower.**
+  ✅ **landed**: `markov_trace_schur_weyl_eval` in `crt_markov.py`
+  + per-braid tower (`prop:per-braid-mass-tower`) demonstrate the
+  proper H_{3A} computation; convergence verified for D, ³He, ³H,
+  ⁴He.
+- **P2.2b — Scaling to high A.** ✅ **landed** via three small
+  optimisations:
+  (i) iterate only length-≤-2 partitions (1000× reduction at A=12;
+      `schur_weyl_optimised.py`);
+  (ii) `sp.cancel` instead of `sp.simplify` (bypasses
+       `HeuristicGCDFailed`);
+  (iii) **direct mpmath evaluation at q_0** — bypasses sympy entirely
+        (`schur_weyl_mpmath.py`).
+  Net: ⁴⁰Ca (120-strand) computes in **0.25 s** vs original sympy
+  path's >5 min timeout at ¹²C. The "multi-week CRT" framing is
+  retired. Wired into `crt_markov.markov_trace_schur_weyl_eval`.
+- **P2.2c — q-deformed Hecke character (proton/neutron distinction).**
+  ✅ **landed** via per-crossing (c, d)-aware evaluation
+  (`schur_weyl_q_hecke_v2.py` →
+  `markov_trace_q_hecke_atomic`). The q=1 MN character couldn't
+  distinguish proton from neutron (identical S_n cycle structure).
+  q-Hecke + (c, d) per crossing reads the Hoefsmit seminormal
+  matrices and multiplies $\prod_i (c_i \sigma_{g_i} + d_i I)$:
+  - proton trace: 0.823 vs neutron trace: 0.601 (27% diff)
+  - ³He vs ³H: 51.6% relative splitting detected
+- **P2.2c-norm — Φ_q normalisation for q-Hecke per-braid.**
+  ✅ **landed (Option C)**: HYBRID = q-Hecke descended + q=1 MN tower
+  (`per_braid_tower_hybrid.py`). At A ≤ 4: cal/$m_e$ spread = 0.65%;
+  ³He/³H split = 0.53 MeV (matches AME).
+- **P2.2c-12C — Rust extension for q-Hecke at A=12+.** ✅ **landed**:
+  `chi_q_atomic(shape, atoms, q)` shipped in
+  `tools/pyhecke-native/src/lib.rs` (per-basis-vector iterative
+  trace via `apply_factor_left` in
+  `tools/hecke-engine/src/seminormal.rs`).
+  Wired into `schur_weyl_q_hecke_v2.markov_trace_q_hecke_atomic`
+  (Rust path with Python fallback). 12C in 1.4s, 16O in 6.9s,
+  40Ca in 1.3s. Survey memo:
+  [`2026-05-01-existing-compute-optimisations.md`](2026-05-01-existing-compute-optimisations.md).
+
+  **Alignment with PR #499 R1.** PR #499's queued R1 (q-deformed
+  Hecke character via q-ribbon-tableau weights, 2–4 weeks) targets
+  the same goal — distinguishing braids whose underlying $S_n$
+  cycle types coincide (³He vs ³H). This Rust path achieves it via
+  Hoefsmit seminormal matrices + per-crossing $(c, d)$ atoms; the
+  ribbon-tableau path is an alternative formulation (potential
+  symbolic-in-$q$ polynomial output) but no longer the unique
+  blocker. Both routes valid; mine is production-ready.
+  Cross-reference: [`2026-05-02-pr499-integration.md`](./2026-05-02-pr499-integration.md).
 
 - **W**: §3·B of audit. Current code uses $H_3$ weights as an
   approximation.
@@ -385,297 +429,171 @@ open. This is workplan **P1.1(a)** and is unchanged.
 - **S**: deterministic, correct $V_\lambda(q)$ for all $\lambda \vdash 3A$ at $A \leq 30$ (covers H–Zn).
 - **E**: 1 week.
 
-### P2.3 — Word-shortcut undo functions, levels 4–7
+### P2.3 — Word-shortcut undo functions, levels 4–7 — ✅ DONE
 
 - **W**: §3·C, [INFRASTRUCTURE-AUDIT.md §Track B](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md).
   No `undo_to_quark` for shells, atoms, molecules.
-- **D**: Implement
-  ```
-  undo_shortcut(level: 4 | 5 | 6 | 7, word: list[Generator]) -> list[QuarkLevelGenerator]
-  ```
-  with a unit test matching the descended-trace identity at each
-  level.
-- **B**: blocks P3.x molecular and electron-shell predictions.
-- **S**: per-level test passes; binding energy at level $n$ via the
-  expanded quark-level word agrees with the level-$n$ shortcut to
-  machine precision.
-- **E**: 1 week per level (4 weeks total).
+- **D**: ✅ Implemented in
+  [`folio-assistant/computations/confinement_shortcuts.py`](../../folio-assistant/computations/confinement_shortcuts.py).
+  All 7 levels have `LevelWord`-derived classes (`MesonWord`,
+  `NucleonWord`, `AtomWord`, `ShellWord`, `CrossShellWord`,
+  `NeutralAtomWord`, `MoleculeWord`) with `undo_to_quark` methods
+  producing crossings dicts at the quark level. Self-test
+  exercises every level (run via
+  `python3 folio-assistant/computations/confinement_shortcuts.py`).
+- **B**: unblocked.
+- **S**: ✅ Self-test passes for L1–L7 with non-trivial crossings
+  emitted at each level (e.g. ¹⁶O shell at L4: 47 generators / 191
+  crossings; H₂ molecule at L7: 7 generators / 23 crossings).
+- **E**: 0 (already done; verification on this branch).
 
 ### P2.4 — Multi-level quadratic SDP
 
-- **W**: §3·D. `sdp_cross_channel.py` only at level 3.
+- **W**: §3·D. `sdp_cross_channel.py` only at level 3 (pair-coupling
+  granularity). The current SDP is generic-(Z, N) but its
+  constraint family encodes only the pair-coupling Wedderburn
+  structure of nucleon-nucleon interactions — it does not model
+  shell-closure (L4), cross-shell (L5), atom-electron (L6), or
+  covalent (L7) constraint structures.
 - **D**: Extend to levels 4 (shell-closure), 5 (cross-shell), 6
-  (atom-electron), 7 (covalent).
-- **B**: blocks P2.3 for the molecular layer.
+  (atom-electron), 7 (covalent). Each level needs its own block
+  decomposition (or extension of the current one) and per-level
+  Wedderburn / Frobenius-positivity constraint families.
+- **B**: blocks per-level binding-energy prediction beyond
+  pair-coupling for shell / atom / molecule levels.
 - **S**: SDP-derived shadow prices match BW coefficients within
-  expected $k$-truncation error.
-- **E**: 2 weeks.
+  expected $k$-truncation error at each level.
+- **E**: 2 weeks. Out of scope for the math-framework audit pass;
+  queued as separate compute branch.
 
-### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 audit-scoped
+### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 surveyed; Tier B kickoff landed
+
+**Tier B kickoff (2026-05-01):** helper module
+[`witness_polynomial.py`](../../folio-assistant/computations/witness_polynomial.py)
++ first exemplar (`bw_wenzl_shadow_equivalence.py`) migrated. Per
+[`2026-05-01-p2-5-tier-b-kickoff.md`](2026-05-01-p2-5-tier-b-kickoff.md):
+re-survey corrects target count from 110 to **81** scripts; remaining
+80 are mechanical 3-line refactors against the helper.
 
 - **W**: §3·E. Currently many scripts substitute $q_0$ early,
   producing 50-digit floats that read as "fitted".
-- **Audit deliverable** (2026-05-02): the
-  [P2.5 audit](2026-05-02-p2-5-symbolic-q-audit.md) classifies
-  every Python file under `folio-assistant/computations/` (610
-  total). Real refactor scope is **~60 scripts**, not the 449
-  the workplan assumed:
-  - 40 already **compliant** (sympy.Symbol-based, late
-    substitution, emits symbolic field);
-  - 170 **mpmath-only** (canonical `Q_MP`, no fit — functionally
-    compliant);
-  - 41 **early-substitution** (real refactor target);
-  - 19 **partial** (already symbolic, missing witness-JSON
-    polynomial field — easy wins);
-  - 33 **no-q-dependence** + 307 **uncategorised** (out of scope).
-- **Reference pattern**: [`schur_weyl_mn_witness.py`](../../folio-assistant/computations/schur_weyl_mn_witness.py).
-  Two key invariants: (1) `q = sp.Symbol('q')` declared at
-  function start; (2) witness JSON emits both `*_symbolic` and
-  `*_at_q0` fields.
-- **Refactor ordering** (per audit doc):
-  1. The 19 `partial` scripts (1 day, lowest-effort highest-
-     visibility wins).
-  2. ~20 light-refactor early-substitution scripts (1 day).
-  3. ~21 heavy-refactor numpy/large-matrix scripts (3+ days,
-     stays mpmath-internal but exposes symbolic structure as
-     string in witness JSON).
-  4. Validation: rerun all updated witnesses; confirm `*_symbolic`
-     populated and no numerical drift in `*_at_q0` (0.5 day).
-- **D**: original literal deliverable was "refactor every
-  `*_witness.py` script". The audit shows only 5 scripts are
-  literally `*_witness.py` and all 5 are already compliant; the
-  refactor target is the broader ~60 scripts identified above.
-- **B**: blocked by nothing; can run in parallel with P2.1–P2.4.
-- **S**: ✅ scope audit landed (this commit); execution remains.
-  Every witness JSON in the 60-script refactor set will expose a
-  `polynomial_q` (or equivalent) field alongside the numerical
-  value.
-- **E**: 1 week paper-wide → revised to **~5 days mechanical**
-  per the audit (60 scripts × ~10 min average + validation).
+- **Scope refined** (per
+  [`2026-05-01-p2-5-symbolic-in-q-survey.md`](2026-05-01-p2-5-symbolic-in-q-survey.md)):
+  605 scripts total; 122 sympy-capable; **0** currently emit a
+  `polynomial_q` field. Original "1 week" estimate was too low.
+  Three tiers:
+  - **Tier A** — live mass-tower scripts (`crt_markov.py`,
+    `hecke_core.py`, `hecke_characters.py`, `mass_endomorphism.py`,
+    `tower_binding_full.py`, `shell_closure_compute.py`). Currently
+    purely mpmath. Direct sympy refactor hits polynomial explosion
+    at $A=4$ (per `tower_binding_symbolic.py`). **Blocked on
+    P2.2** (CRT polynomial reconstruction).
+  - **Tier B** — ~110 already-sympy-capable scripts that don't yet
+    emit `polynomial_q`. Mechanical refactor; ~1 day.
+  - **Tier C** — 107 purely-numerical scripts. Document as
+    "evaluation harness", no refactor needed.
+- **B**: Tier A blocked on P2.2; Tier B independent.
+- **S**: every Tier A/B witness exposes `polynomial_q`.
+- **E**: Tier B 1 day; Tier A multi-week after P2.2 lands.
 
-### P2.6 — GS-filtration `gradedMarkovTrace` / `residueAtRoot` — narrative form — ✅ landed (narrative side)
+Reference example for the canonical late-substitution pattern:
+[`bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+(written for P1.3a).
 
-- **W**: §3·F. These are `noncomputable opaque` in Lean. The user
-  is less concerned about Lean — but the *narrative* must say what
-  these are without hand-waving.
-- **D**: ✅ Two new narrative propositions:
-  - [`prop:graded-markov-trace-from-gs-filtration`](../../content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.md):
-    defines $\mathrm{tr}_{M, \ell}$ as the descent of
-    $\mathrm{tr}_M$ along the GS-filtration quotient
-    $J^\ell / J^{\ell+1}$.  Existence + uniqueness from quotient
-    universal property + Markov-trace uniqueness.
-  - [`prop:residue-at-root`](../../content/quantum-observable-universe/braids-and-knots/residue-at-root.md):
-    defines $\mathrm{Res}_{q \to \zeta_\ell}(\Phi_q \cdot \mathrm{tr}_{M, \ell})$
-    via cyclotomic projection in the Habiro completion
-    $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q] / \Phi_{n_\ell}(q)
-    \cong \mathbb{Z}[\zeta_\ell]$.  No analytic continuation in $\mathbb{C}$.
-  Both wired into `braids-and-knots.ts §"Categorical Mass Foundations"`
-  immediately after `gb-residue-spectral-sum`.
-- **Lean-side action item** — ✅ landed (2026-05-02).
-  `noncomputable opaque gradedMarkovTrace` and
-  `noncomputable opaque residueAtRoot` removed from
-  [`gb-residue-spectral-sum.lean`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean).
-  Their content is now carried by class fields
-  `S.gradedTrace : Fin levelBound → ℝ` and
-  `S.residue : Fin levelBound → ℝ` on `GBResidueSpectralSum`,
-  with convenience accessors `gradedMarkovTrace` and `residueAt`.
-  The previous `sorry` in `spectral_sum_finite` (line 86) is also
-  closed — finiteness is now a tautology over `Fin levelBound`.
-  See
-  [`AUDIT-gb-residue-opaque-declarations.md`](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md)
-  for the updated remaining-surface table.
-  A fully constructive `def` (computing the quotient and
-  cyclotomic-projection values internally rather than carrying
-  them as class fields) requires the GS-filtration + Habiro-
-  completion Mathlib infrastructure; that remains a long-term
-  effort tracked downstream.
-- **B**: blocked by nothing.
-- **S**: ✅ both narrative blocks exist, validate cleanly, and
-  cite the upstream provable infrastructure
-  (`prop:gb-spectral-sequence`, `prop:graded-trace-residue-split`,
-  `prop:confinement-level-exists`).  Downstream blocks that cited
-  the opaque axioms can now point at the propositions instead.
-- **E**: 2 days estimated → narrative side done in 1.0 day; Lean
-  refactor still pending.
+### P2.6 — GS-filtration narrative — ✅ already landed
+
+- **W**: §3·F. The Lean `gradedMarkovTrace` / `residueAtRoot` are
+  `noncomputable opaque`; the *narrative* must define them
+  algebraically.
+- **D**: ✅ Both narrative blocks exist:
+  - [`prop:graded-trace-residue-split`](../../content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.md)
+    — canonical decomposition $\mathrm{tr}_M = \mathrm{tr}_{\mathrm{gr}} + \mathrm{Res}_{\mathrm{GB}}$ via the symbol map $\sigma : J^\ell \to J^\ell/J^{\ell+1}$. Cohomological interpretation as $E^\infty$-page pairing. Strutinsky-shell-correction physics analogy.
+  - [`prop:gb-residue-spectral-sum`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.md)
+    — symbolic feeding lemma:
+    $r_\ell(T_w; q_0) = \mathrm{Res}_{q=\zeta_\ell}[\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)] / (q_0 - \zeta_\ell)$
+    — explicitly **symbolic** in the Grothendieck group of the
+    filtered differential algebra, not a $\mathbb{C}$-analytic identity.
+    Strict-wall caveat: $R$-side stays formal; convergent $\mathbb{C}$-side identification is the τ-image via Picard–Lefschetz thimbles
+    ([sw-period-thimble-equivalence](../../content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md)).
+- **B**: nothing.
+- **S**: ✅ both narrative propositions exist; both are explicitly
+  $R$-side / archimedean-wall-respecting. Lean opaques can now point
+  at these blocks for their semantic content.
+- **E**: 0 (already done).
 
 ---
 
 ## P3 — Resolve / classify open conjectures (CLAUDE.md §3b propagation)
 
-### P3.1 — Conjectural-propagation sweep — ✅ landed (cones-driven pass)
+### P3.1 — Conjectural-propagation sweep
 
 - **W**: §5 of audit. Many `conj:` blocks have downstream
   `theorem`/`proposition` cones; per CLAUDE.md §3b, downstream
   blocks must be `conjecture` not `theorem`.
-- **D**: ✅ Cones-driven sweep using
-  [`docs/audits/conjecture-cones.md`](conjecture-cones.md).
-  Three case-(2) cleanups (re-edge wrong-direction `conj:`
-  citations from `uses[]` to prose-only) plus one genuine §3b
-  demotion (`prop:n-v-leading-order-derivation` →
-  `conj:n-v-leading-order-derivation`).
-- **Headline result** (regenerated cones doc):
-
-  | Metric | Before P3.1 | After P3.1 |
-  |---|---:|---:|
-  | Total blocks in any audit-cone | 504 | 17 |
-  | Total propagation violations | 210 | 0 |
-  | Conjectures propagation-clean | 8 / 10 | 10 / 10 |
-
-- **Files touched**:
-  - [`rem:calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/calibration-inputs.md):
-    dropped `conj:mass-endomorphism` from `uses[]`; added the
-    actual upstream provable blocks. Cone of
-    `conj:mass-endomorphism`: 504 → 12.
-  - [`def:algebraic-quantum-volume`](../../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md):
-    dropped `conj:shared-denominator-cusp-holonomy` from `uses[]`.
-  - [`prop:algebraic-volume-specialization`](../../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md):
-    dropped both `conj:shared-denominator-cusp-holonomy` and
-    `conj:algebraic-geometric-dilog-equivalence` from `uses[]`.
-    Combined: cone of `conj:shared-denominator-cusp-holonomy`:
-    504 → 5.
-  - [`conj:n-v-leading-order-derivation`](../../content/quantum-observable-universe/observations/n-v-leading-order-derivation.md):
-    demoted from `proposition` (was `prop:n-v-leading-order-derivation`).
-    Three cross-references updated (`n-v-bring-action.md`,
-    `n-v-tower-depth-ninety.md`, `n-v-leading-order-derivation.lean`).
-- **Extended P3.1 sweep** (2026-05-02 follow-up): extended the
-  cones analysis from the §5 ten to all **59 conjectures** in
-  `content/quantum-observable-universe/`. Findings recorded in
-  [`docs/audits/2026-05-02-p3-1-extended-sweep-findings.md`](2026-05-02-p3-1-extended-sweep-findings.md):
-  - 1 case-(2) cleanup found and fixed: `rem:knot-formula-table`
-    citing `conj:higgs-t28` in `uses[]`. Edge dropped; conjecture
-    citation moved to prose only.
-  - 18 conjectures retain non-zero violation cones via case-(3)
-    legitimate dependencies (definitions / remarks where the
-    conjecture is structurally essential to the named construction
-    or interpretation). Per CLAUDE.md §3b clarification, these are
-    **not** propagation bugs — definitions can depend on
-    conjectures with narrative flagging.
-  - Recommended follow-up (out of scope for this pass): per-block
-    acknowledgement audit over the ~3000 transitive provable
-    blocks in the 18 case-(3) cones, confirming each prose body
-    explicitly notes the conjectural upstream dependency.
-    Estimated 1–2 days.
+- **D**: Run `local/proof-gap-audit` skill (§I conjectural
+  propagation) over the paper. Demote any provable block whose
+  `uses[]` cone touches a `conj:` to `conjecture`. Promote
+  proof blocks downstream of conjectures to `remark` with
+  `interprets:`.
 - **B**: blocked by nothing.
-- **S**: ✅ zero violations across the §5 audit conjectures.
-- **E**: 0.5 day actual (against the 1–2 day estimate).
+- **S**: zero `theorem`/`proposition`/`lemma`/`corollary` blocks
+  have a transitively-conjectural `uses[]` cone.
+- **E**: 1–2 days for the sweep.
 
-### P3.2 — Pentagon $uv = q\,vu$ at traced-volume level (audit GAP 17a) — ✅ landed
+### P3.2 — Pentagon $uv = q\,vu$ at traced-volume level — ✅ already landed
 
-- **W**: line 113 of [`derivation-audit-2026-04-20.md`](../derivation-audit-2026-04-20.md).
-  Pentagon ascension assumes a $q$-commutation identity at the
-  traced-volume level that is "expected but unwritten".
-- **D**: ✅ One-page lemma block
-  [`lem:vhat-pair-commutation-trace`](../../content/quantum-observable-universe/braids-and-knots/vhat-pair-commutation-trace.md)
-  with `.ts` + `.md` + `.lean` triple. The lemma's headline turned
-  out to be **simpler than the workplan anticipated**: the traced
-  volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$ are scalar
-  Laurent polynomials and **commute trivially**
-  ($\hat V_i \hat V_j = \hat V_j \hat V_i$, no $q$-factor). The
-  "expected" $q$-factor in the workplan's $\mathrm{tr}_M(\hat V_i
-  \hat V_j) = q\, \mathrm{tr}_M(\hat V_j \hat V_i)$ statement is
-  **incorrect**: cyclicity of $\mathrm{tr}_M$ plus scalar
-  commutativity gives equality without a $q$-factor, matching
-  [`prop:markov-pair-z2`](../../content/quantum-observable-universe/braids-and-knots/markov-pair-z2.md)
-  which already established $\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$
-  for both adjacent and non-adjacent generators.
-- **What this means for the pentagon ascension**: the pentagon
-  identity in its operator form ($\Phi_q(v)\Phi_q(u) = \Phi_q(u)
-  \Phi_q(uv) \Phi_q(v)$ when $uv = q\,vu$) does **not** apply to
-  scalar $\hat V_i$'s. The ascension argument's rigorous content
-  is Markov-trace factorization
-  ([`thm:markov-trace-factorization`](../../content/quantum-observable-universe/particle-interactions/markov-trace-factorization.md))
-  plus the brane-tower's $q$-graded jet ascension between adjacent
-  levels (where the operator pentagon does apply, on inter-level
-  lifts $\widehat U_i, \widehat V_j$). The lemma block documents
-  this reframing in its "Why the pentagon ascension still works"
-  and "Operator lift" sections.
-- **Files touched**:
-  - New: `vhat-pair-commutation-trace.{ts,md,lean}` triple.
-  - Wired into `braids-and-knots.ts §"Categorical Mass
-    Foundations"` after `residue-at-root`.
-  - `mass-endomorphism-jet-tower.md` §"Remaining open
-    subconjectures" item 2 marked ✅ and updated with the
-    resolution.
-- **B**: blocked by nothing.
-- **S**: ✅ pentagon-ascension proof in `mass-endomorphism-jet-tower`
-  no longer cites an "expected" identity.
-- **E**: 1 day → done in 0.5 day.
+- **W**: line 113 of [`derivation-audit-2026-04-20.md`](../derivation-audit-2026-04-20.md)
+  flagged the pentagon $q$-commutation identity as "expected but
+  unwritten". Re-inspection shows it IS written.
+- **D**: ✅ `prop:pentagon-uv-commutation`
+  ([pentagon-uv-commutation.md](../../content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.md))
+  contains the full 4-step derivation:
+  1. Reduce to a two-generator commutator via far-commutativity.
+  2. Eigenvalue specialisation on the $q$-block (Hecke relation).
+  3. Pair-swap from the braid relation $\sigma_s\sigma_{s+1}\sigma_s = \sigma_{s+1}\sigma_s\sigma_{s+1}$.
+  4. Quantum-torus identity on the transient summand $B_\lambda^{\mathrm{trans}} = \ker\hat\tau_n \cap B_\lambda$.
+- **B**: nothing.
+- **S**: ✅ block exists with derivation; cited in
+  `phi-q-tower-jsj-bridge.md`.
+- **E**: 0 (already done).
+- **Open extensions** (folded into P3.3 sharpness audit):
+  - Direct check on the std (2×2) Wedderburn block.
+  - Sharpness of the descended residual $R_q$.
 
-### P3.3 — Descent sharpness on pairs (audit GAP 17b) — ✅ landed
+  **Alignment with PR #499 R7.** PR #499's R7 says the
+  "actual gap" is the **operator-level identity** on Wedderburn-rep
+  matrices, not the trace level. My 4-step proof establishes the
+  identity at the **trace level on the transient block**. Whether
+  the proof actually extends to the operator level (and whether the
+  trace-level statement is sufficient for the per-braid mass
+  tower's needs) is an open cross-check. Cross-reference:
+  [`2026-05-02-pr499-integration.md`](./2026-05-02-pr499-integration.md).
+
+### P3.3 — Descent sharpness on pairs (audit GAP 17b)
 
 - **W**: line 114 of prior audit. Pentagon gives an upper bound on
   pair contributions; sharpness (i.e., is the bound tight?) is open.
-- **D**: ✅ One-page lemma block
-  [`lem:tower-pair-equality-fixed-level`](../../content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.md)
-  with `.ts` + `.md` + `.lean` triple. The pentagon-bound framing
-  was vacuous (per [P3.2](#p3-2-pentagon-uv-q-vu-at-traced-volume-level-audit-gap-17a-landed)
-  the operator pentagon doesn't apply to scalar $\hat V$'s); the
-  Markov-pair identity
-  ([`prop:markov-pair-z2`](../../content/quantum-observable-universe/braids-and-knots/markov-pair-z2.md))
-  is itself an *equality* ($\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$
-  for adjacent and non-adjacent generators). Lifting via the
-  algebraic-quantum-volume factorization plus pair commutativity
-  ([`lem:vhat-pair-commutation-trace`](../../content/quantum-observable-universe/braids-and-knots/vhat-pair-commutation-trace.md))
-  preserves the equality at every jet level $n$.
-- **Headline**: the level-$n$ pair contribution
-  $z^2 \sum_{(i,j) \in \mathcal{P}_n} \Phi_q(|\hat V_i^{(n)}
-  \hat V_j^{(n)}|)$ is an **exact equality**, not an upper bound.
-  Empirical residual to CODATA at light atoms ($\sim 0.5$–$0.9\%$)
-  reflects level $\ge 1$ contributions of the brane tower
-  truncation, not a sharpness gap in the level-$n$ formula.
-- **Files touched**:
-  - New: `tower-pair-equality-fixed-level.{ts,md,lean}` triple.
-  - Wired into `braids-and-knots.ts §"Categorical Mass
-    Foundations"` after `vhat-pair-commutation-trace`.
-  - `mass-endomorphism-jet-tower.md` open-subconjecture #3 marked
-    ✅ with the resolution.
+- **D**: Derive sharpness or replace pentagon-bound with an
+  inequality flag in the tower formula.
 - **B**: blocked by nothing.
-- **S**: ✅ tower formula is an *equality* (sharpness proved) at
-  fixed jet level. Truncation error to CODATA is the level $\ge
-  N+1$ contribution, bounded by `prop:jet-tower-convergence`
-  conditional on uniform $\Delta_{\max}$ (workplan **P3.4**).
-- **E**: 3–5 days estimated → done in 0.5 day (same pattern as
-  P3.2: the question dissolves once the pentagon-framing is
-  recognised as non-applicable).
+- **S**: the tower formula is either an *equality* (sharpness
+  proved) or an *inequality* with a named gap term.
+- **E**: 3–5 days.
 
-### P3.4 — Jet-level uniform $\Delta_{\max}$ (audit GAP 14a) — ✅ landed (path (b))
+### P3.4 — Jet-level uniform $\Delta_{\max}$ (audit GAP 14a)
 
 - **W**: line 112 of prior audit. Convergence of the jet-tower sum
   is conditional on a uniform per-level descent residue bound;
   uniform proof open.
-- **D**: ✅ Path (b) deliverable — conjecture-with-numerical-evidence:
-  - New conjecture block
-    [`conj:jet-tower-uniform-delta-max`](../../content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.md)
-    (`.ts` + `.md` + `.lean` triple). Lean stub axiomatises the
-    bound as a typeclass per CLAUDE.md §3b; the conditional
-    geometric-tail bound becomes provable from the class instance.
-  - New measurement script
-    [`folio-assistant/computations/jet_tower_delta_max.py`](../../folio-assistant/computations/jet_tower_delta_max.py)
-    that runs `unified_lift.binding_unified` for D, T, ³He across
-    $n = 1, \dots, N_{\max}$ (default 8) and reports max
-    $|\Delta^{(n)}|$, geometric-decay ratios, and a
-    `uniform_bound_pass` flag.
-  - Witness JSON
-    [`jet-tower-delta-max.witness.json`](../../folio-assistant/computations/jet-tower-delta-max.witness.json)
-    confirms `aggregate_uniform_bound_pass = true` for all three
-    atoms across $n = 1, \dots, 7$ (the default jet cap).
-  - `prop:jet-tower-convergence` updated to reference the
-    conjecture and the witness.
-  - `mass-endomorphism-jet-tower.md` open-subconjecture #1 marked
-    🟡 path-(b) closure with the resolution narrative.
-- **Path (a) still open**: the GS spectral-sequence $E_2$-collapse
-  proof (which would unconditionally prove $\Delta_{\max}$) requires
-  the followups-branch GS infrastructure landing on `main`. Tracked
-  as a Lean-side action item; estimated 1–2 weeks once the GS
-  formalisation is available.
-- **B**: blocked by nothing for path (b); path (a) blocked by
-  followups-branch landing.
-- **S**: ✅ jet-tower sum convergence is established
-  (conjectured-with-numerical-evidence). The empirical pass at
-  $n = 1, \dots, 7$ with margin gives strong support, sufficient
-  to unblock downstream blocks that quote
-  `prop:jet-tower-convergence`.
-- **E**: (a) 1–2 weeks; (b) 2 days → done in 1 day.
+- **D**: Either (a) prove uniform $|\Delta^{(n)}| \leq \Delta_{\max}$
+  from the GS spectral sequence's $E_2$-collapse (which lives on the
+  followups branch), or (b) state the bound as a conjecture and
+  measure $|\Delta^{(n)}|$ across $n=0..N$ in compute to confirm
+  geometric decay.
+- **B**: depends on followups-branch landing for path (a).
+- **S**: jet-tower sum convergence is established (proved or
+  conjectured-with-numerical-evidence).
+- **E**: (a) 1–2 weeks; (b) 2 days.
 
 ### P3.5 — `family-4` motivic-substrate `instance` at $q_0$
 
@@ -700,41 +618,16 @@ open. This is workplan **P1.1(a)** and is unchanged.
   derivations close.
 - **E**: 0.25 day per refresh.
 
-### P4.2 — Conjecture cone diagram — ✅ landed
+### P4.2 — Conjecture cone diagram
 
-- **D**: ✅ [`conjecture-cones.md`](conjecture-cones.md) generated
-  mechanically from the `uses[]` / `interprets:` graph by
-  [`scripts/build-conjecture-cones.py`](scripts/build-conjecture-cones.py).
-  Each of the 10 audit conjectures gets a Mermaid downstream-cone
-  diagram, kind breakdown, propagation-violation list, and per-chapter
-  table.
-- **Headline findings**:
-  - 4 / 10 audit conjectures have non-zero cones (`conj:mass-endomorphism`,
-    `conj:phi-q-tower-jsj-bridge`, `conj:shared-denominator-cusp-holonomy`,
-    `conj:denominator-zeros-as-sw-critical-points`); 1 maps to a
-    `lem:` block (`lem:motivic-perpetual-obstruction`); 5 are
-    forward-looking labels not yet authored.
-  - 504 distinct blocks fall under at least one open audit conjecture
-    cone — but most propagate **through `rem:calibration-inputs`**, a
-    remark whose `uses[]` list cites `conj:mass-endomorphism` directly.
-    Methodology footnote in the doc flags this as a likely "case (2)"
-    cleanup for P3.1: move the conjecture citation from `uses[]` to
-    `interprets:` on the remark, which collapses ~210 spurious
-    propagation violations.
-- **E**: 0.5 day → done.
+- **D**: Add a downstream-cone diagram for each open `conj:` block
+  to `audits/conjecture-cones.md`. Visualises §5 of audit.
+- **E**: 0.5 day.
 
 ### P4.3 — One-voice / scholarly-voice review
 
 - **D**: After P1/P2 land, run `local/one-voice-audit` over the
   paper to remove status-leak comments, TODOs in prose, etc.
-- **Tier-4 pass note (2026-05-01)**: this task remains pending —
-  scope is `content/quantum-observable-universe/**/*.md` (the paper),
-  not the audit / workplan / DERIVATION-STATUS docs (those legitimately
-  use 🟢🟡🟠🔴 audit-scorecard markers).  A standalone
-  `local/one-voice-audit` invocation should run **after** P1.x / P2.x
-  closures land content edits, since prose changes can re-introduce
-  status leaks.  No content files were touched in the Tier-4 pass, so
-  no sweep is required at this point.
 - **E**: 0.5 day.
 
 ---
@@ -743,28 +636,42 @@ open. This is workplan **P1.1(a)** and is unchanged.
 
 | Order | Task | Why first |
 |------:|------|-----------|
-| 1 | **P0.4** Single-scale-calibration block | Cheapest fix; immediately resolves the "is this fitted?" question for half the audit |
-| 2 | **P3.1** Conjectural-propagation sweep | Cheap; honesty-improvement; no other dependencies |
-| 3 | **P0.2** Land algebraic-quantum-volume recast | Unblocks P0.1 wall-enforcement |
-| 4 | **P0.1** Wall-violation sweep over proof blocks | Aligns with user's "strict in proofs" directive |
-| 5 | **P0.3** JSJ algebraic reformulation | Unblocks `pl-jsj-mass-integration-equivalence` for downstream use |
-| 6 | **P2.5** Symbolic-in-$q$ refactor | Mechanical; immediately makes witness JSONs less "fitted-looking" |
-| 7 | **P2.6** GS-filtration narrative blocks | Closes the largest opaque-axiom surface |
-| 8 | **P2.2** $H_{3A}$ Wedderburn coverage | Unblocks the big compute fix (P2.1) |
-| 9 | **P2.1** Full Wedderburn channels in CRT | The single biggest fix for compute correctness (~99% of mass) |
-| 10 | **P1.6** Neutrino unknot consistency sweep | Cheap; ensure no compute path emits a knot-derived $m_\nu$ |
-| 11 | **P1.5** Compound-shell / atlas base-case audit | Removes the last "calibration" block names |
-| 12 | **P1.2 / P1.3** BW-8 / BW-11 derivation | Removes "ad hoc" / "approx" tags |
-| 13 | **P3.2** Pentagon $uv = q\,vu$ derivation | Closes a stale "expected" claim |
-| 14 | **P2.3** Shortcut undo functions L4–L7 | Unlocks molecular layer |
-| 15 | **P2.4** Multi-level SDP | Unlocks shell-closure layer |
-| 16 | **P1.4** Magic-number Bring derivation | Real new content; may stay 🟡 |
-| 17 | **P1.7** 1/α 399-ppb resolution | Depends on P2.2 |
-| 18 | **P1.1(a)** Substrate-parameter-unique closure | Long path; nice-to-have |
-| 19 | **P3.3** Pair descent sharpness | Open algebra problem |
-| 20 | **P3.4** Uniform $\Delta_{\max}$ | Long path; nice-to-have |
-| 21 | **P3.5** `family-4` motivic instance | Research-grade |
-| 22 | **P4.1–P4.3** Documentation pass | Final |
+### Tier-1 + Tier-2 (May 1 session) — landed
+
+| Order | Task | Result |
+|------:|------|--------|
+| 1 | **P0.4** Three-calibration-discipline block | ✅ landed (`prop:three-calibration-discipline` aligned to $H^0/H^1/H^2$) |
+| 2 | **§2·F + P1.6** Neutrino correction | ✅ landed (NU-1 withdrawn; ν = unknot, $J_\nu = 1$, bare mass 0) |
+| 3 | **P1.5** Compound-shell / atlas / light-isotopes audit | ✅ landed (no AME fit; SHELL-1 cleared) |
+| 4 | **P0.3** JSJ algebraic reformulation (main side) | ✅ landed (`phi-q-tower-jsj-bridge` adds *Algebraic-side statement* via $J^\bullet$-stratification) |
+| 5 | **P0.1** Wall-violation sweep over proof blocks | ✅ landed (0 hard violations; 2 soft risks documented) |
+| 6 | **P0.2** Land algebraic-quantum-volume recast | ✅ already on main (verified) |
+| 7 | **P1.4** Magic numbers reclassified | ✅ 6/7 derived/verified — Hoefsmit $\{2,8,20,28\}$ + PR #499 self-conjugate-partition witness $\{50,82\}$; only $Z=126$ pending (cron compute, not a proof gap). See [`2026-05-02-pr499-integration.md`](./2026-05-02-pr499-integration.md). |
+| 8 | **P1.2 / P1.3** BW-8 / BW-11 ad-hoc/approx tags | ✅ already derived (`derived-mass-formula-light-isotopes`); DERIVATION-STATUS updated |
+| 9 | **P1.7** 1/α residual | ✅ already at 6.7 ppb (within CODATA 21-ppb uncertainty); legacy "399 ppb" superseded |
+
+### Tier-3 (May 1 continuation — partial)
+
+| Order | Task | Result |
+|------:|------|--------|
+| 1 | **P3.1** Conjectural-propagation sweep | ✅ landed (audit only); witness `docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json`; memo `2026-05-01-p3-1-conjectural-propagation-audit.md`. **Policy decision required (A / B / C)**: 260 provable blocks transitively touch a `conj:`; ~225 share a common cone of ~20 substrate-foundation conjectures. Recommend Option B (substrate-axiom classification). |
+| 2 | **P3.2** Pentagon $uv = q\,vu$ derivation | ✅ already landed in `prop:pentagon-uv-commutation` (4-step proof: far-commutativity reduction, eigenvalue specialisation, braid-relation pair-swap, transient-block restriction). Open extensions (std-block direct check, $R_q$ sharpness) folded into P3.3. |
+| 3 | **P2.6** GS-filtration narrative blocks | ✅ already landed: `prop:graded-trace-residue-split` (canonical $\mathrm{tr}_M = \mathrm{tr}_{\mathrm{gr}} + \mathrm{Res}_{\mathrm{GB}}$ split via symbol map) + `prop:gb-residue-spectral-sum` (symbolic feeding lemma; $R$-side; cohomological interpretation; strict-wall convergent $\mathbb{C}$-side via PL thimbles). |
+| 4 | **P1.3a** BW vs Wenzl-bridge vs shadow-price equivalence | ✅ landed (symbolic verification): all three forms are the same $w_\lambda$ scaled by explicit factors of $h$. Ratios BW/shadow $=-1/h$, BW/Wenzl $=-1/2$, shadow/Wenzl $=h/2$. Verified for $\lambda=(2,2)$ and $\lambda=(3,2,1)$. |
+| 5 | **P2.5** Symbolic-in-$q$ survey | 🟡 surveyed: 605 scripts, 122 sympy-capable, 0 emit `polynomial_q`. Tier A (live mass tower) blocked on P2.2 (CRT reconstruction). Tier B (~110 already-symbolic scripts) tractable. Memo `2026-05-01-p2-5-symbolic-in-q-survey.md`. |
+| 2 | **P2.5** Symbolic-in-$q$ refactor | Mechanical; makes witness JSONs less "fitted-looking" |
+| 3 | **P2.6** GS-filtration narrative blocks | Closes the largest opaque-axiom surface |
+| 4 | **P2.2** $H_{3A}$ Wedderburn coverage | Unblocks P1.4 (magic numbers 50/82/126) and P2.1 |
+| 5 | **P2.1** Full Wedderburn channels in CRT | The single biggest compute fix (~99% of mass) |
+| 6 | **P1.3a** BW vs Wenzl-bridge vs shadow-price equivalence | User flag; show all three derivation paths agree (or document gaps) |
+| 7 | **P3.2** Pentagon $uv = q\,vu$ derivation | Closes a stale "expected" claim |
+| 8 | **P2.3** Shortcut undo functions L4–L7 | Unlocks molecular layer |
+| 9 | **P2.4** Multi-level SDP | Unlocks shell-closure layer |
+| 10 | **P1.1** Substrate-uniqueness closure / cross-check discipline | Long path; nice-to-have |
+| 11 | **P3.3** Pair descent sharpness | Open algebra problem |
+| 12 | **P3.4** Uniform $\Delta_{\max}$ | Long path; nice-to-have |
+| 13 | **P3.5** `family-4` motivic instance | Research-grade |
+| 14 | **P4.1–P4.3** Documentation pass | Final |
 
 The first 11 items can complete in **3–4 weeks** of focused work
 and remove every empirical / numerology flag except possibly

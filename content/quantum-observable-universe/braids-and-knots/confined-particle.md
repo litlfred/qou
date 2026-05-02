@@ -62,7 +62,7 @@ $\mathrm{GS}(P_1) = \mathrm{GS}(P_2)$.*
   the Reeb-bundle holonomy
   ([breit-wheeler-vertex](#prop:breit-wheeler-vertex));
   see notation discussion in
-  [knot-particle-dictionary](#def:knot-particle-dictionary)
+  [knot-particle-dictionary](#rem:knot-particle-dictionary)
   Table 3.*
 - *`proton`: $\ell = 1$, $n_0 = 3$,
   $[K]_M = [B_3(\mathrm{uud})]$ with crossing types $(pp, pn, pn)$.*

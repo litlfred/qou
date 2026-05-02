@@ -38,7 +38,7 @@ $e_\lambda$ has GB-depth $\mathrm{depth}(\lambda)$, so the centre
 splits as $Z = \bigoplus_{k} Z_k$ with $Z_k$ the depth-$k$ direct
 summand.  The block-restricted Frobenius integral
 $\int_{A_\lambda} = \int_A \circ\, e_\lambda$
-([Markov–Frobenius pairing](#prop:knot-factor-frobenius-pairing))
+([Markov–Frobenius pairing](#conj:knot-factor-frobenius-pairing))
 extracts the $\lambda$-component.  Plancherel-weighted logarithms of
 those components, binned by depth, give the $\mathfrak{m}^{(k)}$
 functionals.  $\square$

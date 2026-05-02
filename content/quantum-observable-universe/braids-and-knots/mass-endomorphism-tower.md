@@ -3,7 +3,7 @@ substrate parameter $q$
 ([quantum observable universe](#def:quantum-observable-universe)).
 Let $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
-([three-invariant mass formula](#prop:atomic-braid-mass)).
+([three-invariant mass formula](#sec:atomic-braid-mass)).
 
 ### Algebraic form
 

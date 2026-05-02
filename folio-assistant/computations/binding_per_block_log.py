@@ -43,6 +43,10 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 from mass_endomorphism import (additive_wedderburn_volumes,
                                   HA, qi0, z_mark,
                                   w_sym, w_std, w_alt)

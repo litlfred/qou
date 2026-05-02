@@ -16,6 +16,5 @@ export default example({
   uses: [
     "prop:nuclear-operator-regimes",
     "prop:inductive-gb-reduction",
-    "conj:periodic-table-demand",
   ],
 });

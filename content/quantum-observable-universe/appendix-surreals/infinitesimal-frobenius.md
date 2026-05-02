@@ -92,7 +92,7 @@ algebra is gauge-equivalent to a strict one) would refute it.
 
 The matter is delicate because the $\mathrm{Rep}(\mathrm{SU}_q(2))$
 category has rigid Frobenius structure
-([fibre functor rigidity](#prop:fibre-functor-rigidity)) — every
+([fibre functor rigidity](#rem:fibre-functor-rigidity)) — every
 small deformation is trivial. So the candidate examples must lie
 *outside* this rigid regime, in larger or non-rigid Frobenius
 algebras.

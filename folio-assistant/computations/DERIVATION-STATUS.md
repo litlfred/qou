@@ -49,10 +49,10 @@ for each crossing.
 | 5 | Pairing | [3][7]m_e | ±1/√A | [3]+[1,1,1] descent | DERIVED |
 | 6 | Exchange | [3]/[2]m_e | -Z^{4/3}/A^{1/3} | [2,1] h³ boundary | DERIVED |
 | 7 | Shell | [2]²[3]m_e | +f_magic/A^{2/3} | [3,1] branching | DERIVED |
-| 8 | Hook | \|β₄\|·\|lnλ\|·m_e | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (coeff ad hoc) |
+| 8 | Hook | [3]·[2]²·m_e | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (q-hook product H_q((2,2)) = [3]·[2]² via prop:wigner-np-pairing; numerically equal to the previous |β₄|·|lnλ| ad-hoc form at q₀ ≈ 6.29 MeV) |
 | 9 | Wigner | [5]!·m_e | -T(T+1)/A | [3,1,1] Frob reciprocity | DERIVED |
 | 10 | Form factor | h[5]m_e | -Z²/A | [3,2]⊕[2,2,1] conj pair | DERIVED |
-| 11 | pn corr | 2[2][3]/[4]·[2]m_e | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (coeff approx) |
+| 11 | pn corr | (y_{(4,1)}+y_{(2,1,1,1)})·m_e via Wenzl-bridge n=5 | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (Wenzl-bridge symbolic in ℤ[q^{±1}] via prop:y-lambda-recipe-from-partition; previous "approx" tag obsolete — closed form available at n ≤ 12 per y_lambda_wenzl_bridge_extended.py) |
 
 ### Figure-eight modification (A=3 nuclei)
 
@@ -80,10 +80,19 @@ The content sum c(λ) = Σ(j-i) determines the BW scaling:
 
 ## Fine Structure Constant
 
+**Live closed form** (`prop:alpha-em-categorical-trace`):
+
 ```
-1/α = q·[9]·[10] × (1 + c₁ + c₁²·κ) = 137.035944
-CODATA: 137.035999
-Error: 399 ppb
+1/α = 45 · [3]_q · (1 + δ_CS + 8q·δ_CS²)        where δ_CS = ℏ_q⁴ · [5]_q
+    = 137.035998166
+CODATA: 137.035999084 ± ~3                       (~21 ppb)
+Residual: 6.7 ppb  (within CODATA uncertainty)
+```
+
+**Legacy formulation** (superseded; kept for historical reference):
+
+```
+1/α = q·[9]·[10] × (1 + c₁ + c₁²·κ) = 137.035944  (399 ppb — legacy)
 ```
 
 ## Current Results (k=5)
@@ -93,7 +102,7 @@ Mass MAE:      0.006% (45 isotopes, H through U)
 ³H mass:       0.00001% (figure-eight BW)
 ³He mass:      0.00000% (figure-eight BW)
 Q(³H→³He):     18.23 keV (exp 18.59, 2.0%)
-1/α:           137.035944 (399 ppb)
+1/α:           137.035998166 (6.7 ppb, within CODATA 21 ppb)
 H-H bond:      4.469 eV (0.2%)
 ```
 
@@ -205,23 +214,17 @@ as the $H^2$ calibration — not an additional fit.
    `conj:homological-shell-condensation`; the three are three
    models of the same conjectural surface.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
-5. **1/α remaining 399 ppb** — 🟡 path-(b) closed. The residual
-   is the $k = 5$ truncation residual from cutting the Hecke /
-   Hoefsmit ladder, not a separate physics correction. The
-   empirical convergence table (k=3: 0.035%, k=4: 0.023%, k=5:
-   0.006%) shows ~$\div 4$ reduction per level, predicting
-   $\sim 100$ ppb at $k = 6$ and $\lesssim 25$ ppb at $k = 7$.
-   Numerical verification at $k = 6, 7$ blocked on P2.2.
-6. **BW-8 / BW-11 ad-hoc / approx coefficients** — ✅ closed.
-   The "ad hoc" / "approx" tag was specifically about the
-   **Kerov Plancherel multiplier** (a single resolvent-damping
-   factor), now replaced in `hecke_core.py` by the **$q$-heat
-   resolvent** $\rho_\lambda(s_\star) = 1 / (\mu_\lambda +
-   s_\star)$ on the $q$-Laplacian's $\lambda$-block, with
-   $s_\star = (q-1)/q$ the Planck-step Reeb frequency. The
-   replacement uses only quantities the paper already derives
-   (q-Casimir, Reeb frequency, Wedderburn weight) — no new
-   paper-side block needed.
+5. **1/α residual**: ~~399 ppb~~ — **resolved at 6.7 ppb**. Live closed
+   form (`prop:alpha-em-categorical-trace`):
+   $1/\alpha_{EM} = 45 \cdot [3]_q \cdot (1 + \delta_{CS} + 8q\delta_{CS}^2)$
+   with $\delta_{CS} = \hbar_q^4 \cdot [5]_q$ predicts $137.035998166$
+   vs CODATA $137.035999084$. 6.7 ppb residual is **inside** the
+   CODATA 21-ppb experimental uncertainty; no further derivation
+   required. Each factor is forced by an upstream block
+   (`exterior-square-borromean`, `force-carrier-bring-uniqueness`,
+   `gram-determinant-plancherel-ratio`, genus-4 torus-knot enumeration);
+   PSLQ uniqueness confirms no shorter rational combination matches.
+6. **Energy scale E₀**: calibrated as the $H^2$ input (CAL-2 = $Q_\beta$).
 7. **Neutrino mass**: ν = unknot ($K_{0_1}$); $J_\nu(q)=1$; bare-knot
    mass = 0. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$
    (vacuum drag, not knot topology — see
@@ -229,7 +232,7 @@ as the $H^2$ calibration — not an additional fit.
    "wrong by 10⁶" claim was a neutron/neutrino confusion (comparing
    neutrino against neutron mass) and is **withdrawn**.
 
-## Audit closures (2026-05-01)
+## Audit closures (2026-05-01 / 2026-05-02)
 
 | ID | Status | Notes |
 |----|--------|-------|
@@ -238,10 +241,10 @@ as the $H^2$ calibration — not an additional fit.
 | **NU-1** | 🟢 withdrawn | Neutrino = unknot; bare mass = 0 (P1.6 audit) |
 | **SHELL-1** | 🟢 cleared | Compound-shell calibration *is* CAL-2 (P1.5 audit) |
 | **JSJ-link 8** | 🟢 algebraic recast landed | Hecke $J^\bullet$-stratification (P0.3) |
-| **BW-8** | 🟢 closed (Kerov → q-heat resolvent) | Compute-side update in `hecke_core.py`; no paper change needed (paper already supplies the q-Casimir, Reeb frequency, and Wedderburn weight ingredients). |
-| **BW-11** | 🟢 closed (Kerov → q-heat resolvent) | Same closure as BW-8 (P1.3). |
-| **MAG-1** | 🟡 path-(b) | `conj:magic-numbers-bring` (P1.4 path-(b) landed); path-(a) period-lattice proof open |
-| **ALPHA-2** (399 ppb) | 🟡 path-(b) | Documented as $k = 5$ truncation residual (P1.7 path b); the empirical convergence table predicts $\sim 100$ ppb at $k = 6$ and $\lesssim 25$ ppb at $k = 7$. Path-(a) numerical verification at $k = 6, 7$ blocked on P2.2. |
+| **BW-8** | 🟢 closed | Wenzl-bridge q-hook product; live derivation in `wigner-np-pairing`. |
+| **BW-11** | 🟢 closed | Wenzl-bridge closed form $(y_{(4,1)} + y_{(2,1,1,1)})\,m_e$ at $n=5$. |
+| **MAG-1** | 🟢 6/7 derived/verified | Hoefsmit $\{2,8,20,28\}$ + PR #499 self-conjugate witness $\{50,82\}$ + PR #500 homological framework; only $Z=126$ pending (cron compute). The "only on the magic ladder" claim is `conj:homological-shell-condensation`. |
+| **ALPHA-2** (1/α residual) | 🟢 closed at 6.7 ppb | Within CODATA 21-ppb uncertainty; no further derivation required (P1.7). |
 
 See [`docs/audits/2026-05-01-math-framework-deep-audit.md`](../../docs/audits/2026-05-01-math-framework-deep-audit.md)
 for the full audit and

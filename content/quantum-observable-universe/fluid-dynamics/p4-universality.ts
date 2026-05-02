@@ -5,8 +5,8 @@ export default proposition({
   title:
     "Universality of the critical exponent: dependence on $\\chi(A)$ alone",
   uses: [
-    "prop:critical-exponent",
-    "prop:blowup-yekutieli",
+    "conj:critical-exponent",
+    "conj:blowup-yekutieli",
   ],
   tags: [
     "universality",

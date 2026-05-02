@@ -27,6 +27,12 @@ import sys, json, time
 from pathlib import Path
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 sys.path.insert(0, str(Path(__file__).parent))
 from murnaghan_nakayama import partitions_of, dim_specht, hook_lengths
 from q_parameter import Q as Q0_FLOAT
@@ -74,6 +80,7 @@ if __name__ == "__main__":
         t0 = time.time()
         s_sym = sigma_inv_dim_q(n)
         s_q0 = float(s_sym.subs(q, sp.Rational(int(Q0_FLOAT*10**16), 10**16)).evalf(30))
+        s_q0_polynomial_q = expose_polynomial(s_sym, q)
         dt = time.time() - t0
         sigma_table[A] = (s_sym, s_q0)
         print(f"  Σ_{{λ⊢{n}}} 1/dim_q(λ) = {sp.nsimplify(s_sym)}")

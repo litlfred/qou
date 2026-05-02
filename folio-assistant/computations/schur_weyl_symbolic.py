@@ -41,6 +41,12 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 from sympy import Rational, Symbol, Integer, latex
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -164,21 +170,25 @@ def specht_character_placeholder(partition, braid_word=None):
     return Integer(1)
 
 
-def specht_character_atomic(partition, Z, N, include_inter=True):
+def specht_character_atomic(partition, Z, N, include_inter=True,
+                             m_pp=1, m_pn=1, m_nn=1):
     """Classical χ^λ(π(𝒜)) — S_{3A} character evaluated on the
     permutation underlying the atomic braid word.  Uses
     Murnaghan–Nakayama.  Returns an integer (symbolic in no variables).
+
+    P2.1 wiring: threads m_pp/m_pn/m_nn through.
     """
     from murnaghan_nakayama import character_on_atomic_braid
     chi, _cycle_type = character_on_atomic_braid(
-        partition, Z, N, include_inter)
+        partition, Z, N, include_inter, m_pp, m_pn, m_nn)
     return Integer(chi)
 
 
 # ─── Assembly ─────────────────────────────────────────────────────────
 
 def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
-                                     Z=None, N=None, include_inter=True):
+                                     Z=None, N=None, include_inter=True,
+                                     m_pp=1, m_pn=1, m_nn=1):
     """Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) as a sympy expression.
 
     Enumerates all p(3A) partitions of 3A.
@@ -186,7 +196,15 @@ def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
     char_kind:
       "trivial"   — χ^λ = 1 (legacy path; partition of unity)
       "mn-atom"   — Murnaghan–Nakayama χ^λ(π(𝒜)) on the atomic-braid
-                    permutation, parameterised by (Z, N).
+                    permutation, parameterised by (Z, N) and the
+                    dressed-quark mass multiplicities (m_pp, m_pn, m_nn).
+
+    P2.1 wiring: threads m_pp/m_pn/m_nn through to specht_character_atomic
+    and atomic_braid_word so that dressed-quark mass differentiation
+    reaches the SW character at A ≥ 2 (where inter-nucleon structure
+    differs by proton/neutron pairing). The q=1 limit of the Hecke
+    character is still implicit; full q-deformation is a separate
+    refinement (q-ribbon-tableau weights).
 
     Returns (sympy_expr, partitions_with_weights_list).
     """
@@ -202,11 +220,83 @@ def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
     for lam in partitions:
         w = schur_weyl_weight(lam, q)
         if char_kind == "mn-atom":
-            chi = specht_character_atomic(lam, Z, N, include_inter)
+            chi = specht_character_atomic(lam, Z, N, include_inter,
+                                          m_pp, m_pn, m_nn)
         else:
             chi = specht_character_placeholder(lam)
         if chi == 0:
             continue  # skip zero-character partitions entirely
+        contrib = w * chi
+        total += contrib
+        terms.append({
+            "partition": lam,
+            "weight": sp.simplify(w),
+            "character": chi,
+            "contribution": sp.simplify(contrib),
+        })
+    return sp.simplify(total), terms
+
+
+# ─── Per-stratum Schur-Weyl sums (P2.2b) ──────────────────────────────
+#
+# Per `prop:phi-q-tower-algebraic-stratification`, the mass formula sums
+# over algebraic strata indexed by subsets S ⊆ {0, …, n-2} of crossings:
+#
+#   𝔪 = Σ_{λ ⊢ 3A} w_λ χ^λ(π_atomic)            (descended carrier)
+#       + Σ_{|S|=1} Φ_q(|Σ_λ w_λ χ^λ(π_S)|)    (singleton tower)
+#       + z² Σ_{|S|=2} Φ_q(|Σ_λ w_λ χ^λ(π_S)|) (pair tower)
+#
+# where π_S ∈ S_{3A} is the permutation of β_S = ∏_{i∈S} σ_i (each σ_i
+# is the transposition (i, i+1) on 3A strands) and π_∅ = identity.
+#
+# The current `global_wedderburn_sum_symbolic` handles π_atomic via
+# Murnaghan-Nakayama on the atomic-braid cycle type. The functions
+# below extend this to the per-stratum permutations needed for the
+# Φ_q tower terms, replacing the H_3-at-H_{3A} per-generator V_full
+# approximation that drove |V̂_i| close to q_0 at light atoms.
+
+def stratum_permutation(A, S):
+    """Permutation π_S ∈ S_{3A} for the stratum braid β_S = ∏_{i∈S} σ_i.
+
+    Each generator σ_i acts as the transposition (i, i+1) on the
+    3A strands. Compose them in order of increasing i.
+    """
+    n = 3 * A
+    perm = list(range(n))
+    for i in sorted(S):
+        if i + 1 >= n:
+            raise ValueError(f"Generator {i} out of range for n=3A={n}")
+        perm[i], perm[i + 1] = perm[i + 1], perm[i]
+    return tuple(perm)
+
+
+def per_stratum_sum_symbolic(A, S, q):
+    """Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(π_S) where π_S is the stratum permutation.
+
+    Parameters
+    ----------
+    A : int        Number of nucleons (so 3A strands).
+    S : iterable   Subset of generator indices (each in {0, …, 3A-2}).
+    q : sympy.Symbol or rational
+
+    Returns
+    -------
+    (sympy_expr, terms_list)
+    """
+    from murnaghan_nakayama import (
+        cycle_type_of_permutation,
+        mn_character,
+    )
+    perm = stratum_permutation(A, S)
+    cyc = cycle_type_of_permutation(perm)
+    partitions = partitions_of(3 * A)
+    terms = []
+    total = Integer(0)
+    for lam in partitions:
+        w = schur_weyl_weight(lam, q)
+        chi = mn_character(lam, cyc)
+        if chi == 0:
+            continue
         contrib = w * chi
         total += contrib
         terms.append({
@@ -281,8 +371,11 @@ if __name__ == "__main__":
         # Numerical at q_0
         q0 = Rational(int(_Q_CANONICAL * 10 ** 16), 10 ** 16)
         tot_num = float(total.subs(q, q0).evalf(30))
+        tot_num_polynomial_q = expose_polynomial(total, q)
         h3_num = float(h3_approx.subs(q, q0).evalf(30))
+        h3_num_polynomial_q = expose_polynomial(h3_approx, q)
         err_num = float(diff.subs(q, q0).evalf(30))
+        err_num_polynomial_q = expose_polynomial(diff, q)
         err_rel = (err_num / tot_num * 100) if tot_num else 0.0
         print(f"  Global @ q₀ ≈ {q0!s:.<30}  = {tot_num:.12e}")
         print(f"  H_3 approx @ q₀ ≈ {q0!s:.<30}  = {h3_num:.12e}")
@@ -298,6 +391,7 @@ if __name__ == "__main__":
         print(f"  Top 5 partitions by |contribution @ q₀|:")
         for t in terms_sorted[:5]:
             v = float(t["contribution"].subs(q, q0).evalf(30))
+            v_polynomial_q = expose_polynomial(t["contribution"], q)
             print(f"    λ = {t['partition']!s:<24} w_λ(q₀) = {v:+.6e}")
 
     # Pole/hook structure

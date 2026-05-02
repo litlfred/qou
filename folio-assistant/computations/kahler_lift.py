@@ -40,6 +40,12 @@ from functools import lru_cache
 
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0
 from hecke_characters import partitions_of, standard_young_tableaux
@@ -195,12 +201,14 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
     results = {"V0": [], "V1": [], "V2": []}
     for V_i in V_hat_sym:
         V0_val = float(V_i.subs(q, Q0))
+        V0_val_polynomial_q = expose_polynomial(V_i, q)
         results["V0"].append(V0_val)
         if order >= 1:
             dV_dq = sp.diff(V_i, q)
             qdV = q * dV_dq
             V1_add = hbar_sym * qdV
             V1_val = float((V_i + V1_add).subs(q, Q0))
+            V1_val_polynomial_q = expose_polynomial((V_i + V1_add), q)
             results["V1"].append(V1_val)
         if order >= 2:
             d2V_dq2 = sp.diff(V_i, q, 2)
@@ -208,6 +216,7 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
             second = q * q * d2V_dq2 + q * sp.diff(V_i, q)
             V2_add = (hbar_sym ** 2 / 2) * second
             V2_val = float((V_i + V1_add + V2_add).subs(q, Q0))
+            V2_val_polynomial_q = expose_polynomial((V_i + V1_add + V2_add), q)
             results["V2"].append(V2_val)
     return results
 

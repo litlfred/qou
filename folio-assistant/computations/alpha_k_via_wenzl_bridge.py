@@ -29,6 +29,12 @@ from pathlib import Path
 
 import sympy as sp
 
+# P2.5 migration: emit polynomial_q alongside numerical evaluation
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).parent))
+from witness_polynomial import expose_polynomial
+
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
@@ -69,12 +75,16 @@ def main() -> int:
             except Exception as e:
                 expr = None
                 val_num = None
-            rows.append({
+            row_entry = {
                 "partition": list(part),
                 "alpha_lambda_symbolic": sym_str if expr is not None else None,
                 "alpha_lambda_at_q0": val_num,
                 "depth": len(part) - 1,
-            })
+            }
+            # P2.5: dual symbolic + numeric exposure
+            if expr is not None:
+                row_entry["alpha_lambda_polynomial_q"] = expose_polynomial(expr, q)
+            rows.append(row_entry)
             part_str = str(part)
             num_str = f"{val_num:+.10e}" if val_num is not None else "--"
             print(f"  {part_str:>20}  α_λ = {num_str}")

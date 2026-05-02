@@ -1,7 +1,9 @@
 The $Q$-value of free neutron $\beta^-$-decay
 $n \to p + e^- + \bar\nu_e$ is derived symbolically from
-the two calibration inputs ($m_e$ and $q_0$) alone
-([calibration inputs](#rem:calibration-inputs)).
+the categorical three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$,
+fixed by $m_\mu/m_e$) — $Q_\beta(n)$ ($H^2$) is the
+$\beta$-decay datum being predicted, not used as input
+([three-calibration discipline](#prop:three-calibration-discipline)).
 
 ## Single-wrap NF computation
 
