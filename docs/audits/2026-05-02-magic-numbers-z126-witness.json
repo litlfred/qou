@@ -1,0 +1,44 @@
+{
+  "computation": "magic-numbers-z126-witness",
+  "computedAt": "2026-05-02T06:59:16.997501+00:00",
+  "description": "MAG-1 Z=126 verification: count self-conjugate partitions of 3Z=378 via generating function (OEIS A000700) + sample 100 random SC partitions and verify \u03ba_\u03bb=0 on each. (Full enumeration of SC partitions of 378 is hours-scale; this script uses the exact-count + random-sample approach to demonstrate the framework on the seventh magic number.)",
+  "Z": 126,
+  "n_3Z": 378,
+  "self_conjugate_count": 174972341,
+  "sample_size": 100,
+  "all_sampled_kappa_zero": true,
+  "distinct_kappa_values": [
+    0
+  ],
+  "kappa_zero_count": 100,
+  "first_3_samples": [
+    {
+      "arms": [
+        174,
+        12,
+        1,
+        0
+      ],
+      "kappa": 0
+    },
+    {
+      "arms": [
+        184,
+        2,
+        1,
+        0
+      ],
+      "kappa": 0
+    },
+    {
+      "arms": [
+        177,
+        11
+      ],
+      "kappa": 0
+    }
+  ],
+  "elapsed_count_seconds": 0.001984119415283203,
+  "elapsed_sample_seconds": 0.011785745620727539,
+  "note": "Full enumeration would visit all 174,972,341 self-conjugate partitions; sampling 100 + verifying \u03ba=0 on each is the practical numerical demonstration. The mathematical proof (\u03ba(\u03bb')=-\u03ba(\u03bb) \u21d2 self-conj \u21d2 \u03ba=0) holds for all n; this witness verifies the framework code path on a representative sample of Z=126."
+}
