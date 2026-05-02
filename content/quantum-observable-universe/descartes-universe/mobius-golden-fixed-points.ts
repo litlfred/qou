@@ -21,5 +21,6 @@ export default proposition({
     "def:picard-lefschetz-thimble",
     "rem:color-tube-cubic",
     "prop:golden-skew-dual-node",
+    "prop:moduli-symmetry-d4",
   ],
 });

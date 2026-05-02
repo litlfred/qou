@@ -337,6 +337,7 @@ export default chapter({
         "bar-t-duality-substrate",
         "bar-apply-transfer",
         "golden-quartet-galois",
+        "moduli-symmetry-d4",
         "mobius-limit-from-thimble",
         // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
         "sw-period-thimble-equivalence",
