@@ -1,0 +1,169 @@
+{
+  "audit": "Per-braid + Coulomb + Wigner asymmetry + Pairing probe",
+  "generated": "2026-05-02T20:48:36.068356+00:00",
+  "q_0": "1.1099785955541805",
+  "m_e_mev": 0.51099895,
+  "wigner_unit_mev": 6.289300348688733,
+  "pairing_unit_mev": 1.0275661886778316,
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "pred_hecke": 3700.881188004611,
+      "delta_wigner_mev": -3.1446501743443664,
+      "delta_asymmetry_mev": 0.0,
+      "delta_pairing_mev": 0.7265990201321101,
+      "cal_over_me_bare": 0.9917862210108626,
+      "cal_over_me_W": 0.9934381372292721,
+      "cal_over_me_WA": 0.9934381372292721,
+      "cal_over_me_full": 0.9930559588302047
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "pred_hecke": 5551.901126042718,
+      "delta_wigner_mev": -2.096433449562911,
+      "delta_asymmetry_mev": 1.4076569056881558,
+      "delta_pairing_mev": 0.0,
+      "cal_over_me_bare": 0.9899104664146299,
+      "cal_over_me_W": 0.990642508938008,
+      "cal_over_me_WA": 0.9901508572938216,
+      "cal_over_me_full": 0.9901508572938216
+    },
+    {
+      "atom": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "pred_hecke": 5551.757028228671,
+      "delta_wigner_mev": -2.096433449562911,
+      "delta_asymmetry_mev": 1.4076569056881558,
+      "delta_pairing_mev": 0.0,
+      "cal_over_me_bare": 0.9901228579996859,
+      "cal_over_me_W": 0.9908550766059954,
+      "cal_over_me_WA": 0.9903633066985538,
+      "cal_over_me_full": 0.9903633066985538
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "pred_hecke": 7403.184589935232,
+      "delta_wigner_mev": -3.1446501743443664,
+      "delta_asymmetry_mev": 0.0,
+      "delta_pairing_mev": -0.5137830943389158,
+      "cal_over_me_bare": 0.9852920511626738,
+      "cal_over_me_W": 0.9861117605183668,
+      "cal_over_me_WA": 0.9861117605183668,
+      "cal_over_me_full": 0.9862458169198991
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "pred_hecke": 11107.035877877373,
+      "delta_wigner_mev": -3.1446501743443664,
+      "delta_asymmetry_mev": 0.0,
+      "delta_pairing_mev": 0.41950213986619206,
+      "cal_over_me_bare": 0.9872029775767593,
+      "cal_over_me_W": 0.9877502471511137,
+      "cal_over_me_WA": 0.9877502471511137,
+      "cal_over_me_full": 0.9876772053087239
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "pred_hecke": 12959.315506434821,
+      "delta_wigner_mev": -2.695414435152314,
+      "delta_asymmetry_mev": 0.6032815310092097,
+      "delta_pairing_mev": 0.0,
+      "cal_over_me_bare": 0.9868879026801364,
+      "cal_over_me_W": 0.9872897565083263,
+      "cal_over_me_WA": 0.9871997860739727,
+      "cal_over_me_full": 0.9871997860739727
+    },
+    {
+      "atom": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "pred_hecke": 16665.353836838054,
+      "delta_wigner_mev": -2.795244599417215,
+      "delta_asymmetry_mev": 0.4692189685627186,
+      "delta_pairing_mev": 0.0,
+      "cal_over_me_bare": 0.9855296493851996,
+      "cal_over_me_W": 0.9858532412083987,
+      "cal_over_me_WA": 0.9857989071781338,
+      "cal_over_me_full": 0.9857989071781338
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "pred_hecke": 22227.62571909194,
+      "delta_wigner_mev": -3.1446501743443664,
+      "delta_asymmetry_mev": 0.0,
+      "delta_pairing_mev": -0.2966328078216519,
+      "cal_over_me_bare": 0.9841204838577066,
+      "cal_over_me_W": 0.9843930223086226,
+      "cal_over_me_WA": 0.9843930223086226,
+      "cal_over_me_full": 0.9844187384749902
+    },
+    {
+      "atom": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "pred_hecke": 29648.88225953342,
+      "delta_wigner_mev": -3.1446501743443664,
+      "delta_asymmetry_mev": 0.0,
+      "delta_pairing_mev": -0.2568915471694579,
+      "cal_over_me_bare": 0.9834078986305869,
+      "cal_over_me_W": 0.9836120573110574,
+      "cal_over_me_WA": 0.9836120573110574,
+      "cal_over_me_full": 0.9836287391084416
+    },
+    {
+      "atom": "40Ca",
+      "Z": 20,
+      "N": 20,
+      "A": 40,
+      "pred_hecke": 74302.9251599961,
+      "delta_wigner_mev": -3.1446501743443664,
+      "delta_asymmetry_mev": 0.0,
+      "delta_pairing_mev": -0.16247248014001364,
+      "cal_over_me_bare": 0.9804102797625308,
+      "cal_over_me_W": 0.9804914861605272,
+      "cal_over_me_WA": 0.9804914861605272,
+      "cal_over_me_full": 0.9804956821611795
+    }
+  ],
+  "stats": {
+    "bare": {
+      "mean": 0.986467078848077,
+      "spread_pct": 1.1532002934771755
+    },
+    "wigner": {
+      "mean": 0.9870437293939689,
+      "spread_pct": 1.311659319966907
+    },
+    "wigner_asymmetry": {
+      "mean": 0.9869309567923441,
+      "spread_pct": 1.31180919796287
+    },
+    "full_W_A_P": {
+      "mean": 0.9869034998047921,
+      "spread_pct": 1.2726955240820963
+    }
+  },
+  "interpretation": "Wigner uses prop:wigner-np-pairing formula: \u0394B = -m_e \u00b7 H_q((2,2)) \u00b7 min(Z,N)/A \u2248 -6.29 MeV \u00b7 min/A (binding). Pairing uses \u00b1m_e \u00b7 [2]_q / \u221aA with sign from Z/N parity."
+}
