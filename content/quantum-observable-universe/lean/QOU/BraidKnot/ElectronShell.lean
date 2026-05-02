@@ -75,6 +75,17 @@ class NobleGasMultiOperator
   /-- Binding multiplicity at noble-gas `Z` is at least 2. -/
   multi : bindingMultiplicity S q ≥ 2
 
+/-- **Default instance from a `Fact` witness on the multiplicity**.
+    When `Fact (bindingMultiplicity S q ≥ 2)` is in scope (e.g. from
+    a numerical SDP solver providing the integer witness), the
+    NobleGasMultiOperator instance follows directly. -/
+instance nobleGasMultiOperator_of_fact
+    (S : ElectronShell) [HasBindingMultiplicity S] (q : R_q)
+    (h : S.nElectrons ∈ nobleGasMagic)
+    [hf : Fact (bindingMultiplicity S q ≥ 2)] :
+    NobleGasMultiOperator S q h :=
+  ⟨hf.out⟩
+
 /-- **Multi-operator regime at noble-gas `Z`** (per-instance form).
     Backed by `NobleGasMultiOperator`. -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
