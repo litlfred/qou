@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
-"""Test whether the Higgs gets a per-particle correction that closes
-the −11.4% m_H/m_W deficit found in `ew_higgs_mass_ratios_probe`.
+"""NEGATIVE-RESULT probe: sweep candidate per-particle q-scalar
+corrections that might close the −11.4% m_H/m_W deficit found in
+`ew_higgs_mass_ratios_probe` (PR #513).
 
-Hypothesis (option (b) from PR #513): scalars (Higgs) and vectors
-(W, Z) have different categorical mass formulas.  The simplest
-correction candidates are powers of the Markov parameter
-z = 1/(q^{1/2}+q^{-1/2}) and the q-integers [n]_q, since these
-are the structural scalars that appear naturally for spin-0 vs
-spin-1 objects.
+This is a hypothesis-fishing probe, not a derivation.  Run it to
+quantify what kind of correction *would* be needed; then decide
+whether any candidate is structural enough to keep, or whether the
+underlying torus-link triplet conjecture (#513) should be retracted.
 
-For each candidate factor f(q_0), test whether
-   m_H_corrected / m_W = (f · tr_M(σ_1^8)) / tr_M(σ_1^4) = PDG 1.558
-holds.
+Headline result (interpret as falsification, not fit):
+  - needed factor = 1.128 (3sf)
+  - closest single-q candidate = q itself, residual still −1.6%
+  - no candidate hits PDG within experimental error
+  - sweeping ~18 candidates and picking the best is a
+    multiple-comparisons fishing exercise; the apparent "f = q"
+    match is not statistically meaningful with 3 EW masses
+  - conclusion: conj:electroweak-higgs-torus-link-triplet is
+    falsified as stated.  A per-particle correction is fitting,
+    not derivation.  Do not treat any "best match" here as a
+    prediction.
 
 Refs:
   - PR #513 EW/Higgs probe finding
@@ -133,11 +140,17 @@ def main():
         "computation": "ew-higgs-scalar-correction-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
-            "Tests whether the Higgs needs a per-particle correction f(q_0) "
-            "that closes the −11.4% m_H/m_W deficit from PR #513.  Sweeps "
-            "structural q-scalars (z, [n]_q, q^{1/2}+q^{-1/2}) and reports "
-            "the factor needed and the closest match."
+            "NEGATIVE result: hypothesis-fishing sweep of ~18 candidate "
+            "q-scalar corrections that might close the −11.4% m_H/m_W "
+            "deficit from PR #513.  No candidate hits PDG within "
+            "experimental error; closest (f = q) leaves −1.6% residual. "
+            "Multiple-comparisons sweep with 3 EW masses ⇒ any 'best "
+            "match' is fitting, not derivation.  Treated as falsification "
+            "evidence against conj:electroweak-higgs-torus-link-triplet "
+            "as stated, not as a positive prediction."
         ),
+        "result_classification": "negative",
+        "interpretation": "falsification-of-PR-513-conjecture",
         "q_0": float(q),
         "needed_factor": float(needed_factor),
         "candidates": [
@@ -148,11 +161,17 @@ def main():
         ],
         "best_match": {"label": best[1], "err_pct": best[0]},
         "notes": [
-            "The needed factor is 1.128, which doesn't match any simple "
-            "single-q expression in the candidate list.",
-            "Closest single-expression candidate: see 'best_match' above.",
-            "Cross-check: m_Z/m_W baseline already +2.7% off PDG; the "
-            "Higgs correction is per-particle, not a global rescaling.",
+            "Needed factor is 1.128; no candidate matches within PDG error.",
+            "Closest match (f = q) leaves −1.6% residual — not a clean hit.",
+            "Sweeping 18 candidates against 3 data points (W, Z, H) is a "
+            "multiple-comparisons fishing exercise; do not interpret "
+            "'best_match' as a structural prediction.",
+            "m_Z/m_W baseline is already +2.7% off PDG; even a perfect "
+            "Higgs correction would not rescue the W/Z ratio.",
+            "Recommendation: retract conj:electroweak-higgs-torus-link-triplet "
+            "as currently stated.  Any future scalar/vector distinction must "
+            "be derived from the Markov-trace structure on H_2 (different "
+            "y_λ split per spin), not fit from a candidate basket.",
         ],
     }
     with open(out_path, "w") as f_out:

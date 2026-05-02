@@ -1,7 +1,9 @@
 {
   "computation": "ew-higgs-scalar-correction-probe",
-  "computedAt": "2026-05-02T23:35:23.374631+00:00",
-  "description": "Tests whether the Higgs needs a per-particle correction f(q_0) that closes the \u221211.4% m_H/m_W deficit from PR #513.  Sweeps structural q-scalars (z, [n]_q, q^{1/2}+q^{-1/2}) and reports the factor needed and the closest match.",
+  "computedAt": "2026-05-02T23:44:01.990229+00:00",
+  "description": "NEGATIVE result: hypothesis-fishing sweep of ~18 candidate q-scalar corrections that might close the \u221211.4% m_H/m_W deficit from PR #513.  No candidate hits PDG within experimental error; closest (f = q) leaves \u22121.6% residual. Multiple-comparisons sweep with 3 EW masses \u21d2 any 'best match' is fitting, not derivation.  Treated as falsification evidence against conj:electroweak-higgs-torus-link-triplet as stated, not as a positive prediction.",
+  "result_classification": "negative",
+  "interpretation": "falsification-of-PR-513-conjecture",
   "q_0": 1.1099785955541805,
   "needed_factor": 1.1281653388785537,
   "candidates": [
@@ -119,8 +121,10 @@
     "err_pct": -1.6120636486183546
   },
   "notes": [
-    "The needed factor is 1.128, which doesn't match any simple single-q expression in the candidate list.",
-    "Closest single-expression candidate: see 'best_match' above.",
-    "Cross-check: m_Z/m_W baseline already +2.7% off PDG; the Higgs correction is per-particle, not a global rescaling."
+    "Needed factor is 1.128; no candidate matches within PDG error.",
+    "Closest match (f = q) leaves \u22121.6% residual \u2014 not a clean hit.",
+    "Sweeping 18 candidates against 3 data points (W, Z, H) is a multiple-comparisons fishing exercise; do not interpret 'best_match' as a structural prediction.",
+    "m_Z/m_W baseline is already +2.7% off PDG; even a perfect Higgs correction would not rescue the W/Z ratio.",
+    "Recommendation: retract conj:electroweak-higgs-torus-link-triplet as currently stated.  Any future scalar/vector distinction must be derived from the Markov-trace structure on H_2 (different y_\u03bb split per spin), not fit from a candidate basket."
   ]
 }
