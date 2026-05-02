@@ -176,8 +176,14 @@ nuclear-shell sequential number).
 
 /-- **The natural enumeration of the magic ladder.**
 
-    `magicAt i` returns the i-th magic number (i = 1 to 7), or `none`
-    for invalid indices. -/
+    `magicAt i` returns the i-th *empirical* magic number (i = 1
+    to 7), or `none` for invalid indices.
+
+    NOTE: the framework's Bring-shell-binding derivation only
+    produces six entries (i = 1..6, n = 2..82); the 7th
+    empirical magic n=126 is currently OUTSIDE the framework's
+    Bring-surface scope (no torus knot with genus ≤ 4 remains).
+    See `bringKnotAt 7 = none` and the open-question discussion. -/
 def magicAt (i : ℕ) : Option ℕ :=
   match i with
   | 1 => some 2
@@ -186,7 +192,7 @@ def magicAt (i : ℕ) : Option ℕ :=
   | 4 => some 28
   | 5 => some 50
   | 6 => some 82
-  | 7 => some 126
+  | 7 => some 126  -- empirical only; framework-derivation TBD
   | _ => none
 
 /-- Inverse: `magicIndex n` returns the index of `n` in the magic
@@ -224,42 +230,60 @@ theorem magicIndex_magicAt (i : ℕ) (hi : 1 ≤ i ∧ i ≤ 7) :
   | 7, _, _ => exact ⟨126, rfl, rfl⟩
 
 /-- **The associated Bring torus knot at index i.** Maps i = 1..6
-    to the framework's Bring-embeddable torus knots, and provides
-    the BEST CANDIDATE T_{3,7} for index 7 (the open n=126 case).
+    to the framework's Bring-embeddable torus knots. **Index 7 is
+    structurally OUT OF REACH on Bring's surface** — see selection
+    rule below.
 
-    Selection rule (per torus-knot-arithmetic analysis):
-    - Shell i prefers a torus knot with crossing ≈ 2i.
-    - Crossings 4, 6, 12 have NO torus knots (arithmetic gaps —
-      those crossings host hyperbolic knots, a different topological
-      class).
-    - When 2i is in a gap, the framework picks the next available
-      torus knot (so shell 6 with ideal 2i = 12 uses T_{3,5} at
-      crossing 10).
-    - Shell 7's ideal 2i = 14, and T_{3,7} (crossing 14, genus 6) is
-      the first torus knot with that crossing — making it the
-      framework's natural 7th choice. -/
+    **Selection rule (genus-4 bound).** A torus knot `T_{p, q}`
+    (gcd(p,q) = 1) embeds on Bring's surface (genus 4) iff its
+    own genus `(p-1)(q-1)/2 ≤ 4`. The complete list of such
+    torus knots is exactly six:
+
+      T_{2,3} (g=1), T_{2,5} (g=2), T_{2,7} (g=3),
+      T_{3,4} (g=3), T_{2,9} (g=4), T_{3,5} (g=4).
+
+    These are precisely the six embeddable torus knots used by the
+    framework. There is NO seventh torus knot with genus ≤ 4.
+
+    **Why T_{3,5} for shell 6** (and not T_{2,11} or T_{2,13}):
+    NOT by SDP, but by the genus-4 bound. T_{2,11} has genus 5,
+    T_{2,13} has genus 6 — both fail to embed on Bring.
+
+    **Shell 7 status (open):** the n=126 magic shell cannot be
+    realised by a torus knot on Bring's surface. The framework
+    requires either:
+      (a) a higher-genus surface (e.g., Macbeath surface, g=7,
+          which admits T_{3,7} (g=6) and T_{2,13} (g=6));
+      (b) a non-torus knot class (hyperbolic, link, etc.);
+      (c) a structurally different mechanism beyond Bring.
+-/
 def bringKnotAt (i : ℕ) : Option TorusKnot :=
   match i with
-  | 1 => some ⟨2, 3⟩  -- T_{2,3}, crossing 3
-  | 2 => some ⟨2, 5⟩  -- T_{2,5}, crossing 5
-  | 3 => some ⟨2, 7⟩  -- T_{2,7}, crossing 7
-  | 4 => some ⟨3, 4⟩  -- T_{3,4}, crossing 8
-  | 5 => some ⟨2, 9⟩  -- T_{2,9}, crossing 9
-  | 6 => some ⟨3, 5⟩  -- T_{3,5}, crossing 10
-  | 7 => some ⟨3, 7⟩  -- T_{3,7}, crossing 14 — CANDIDATE for n=126
+  | 1 => some ⟨2, 3⟩  -- T_{2,3}, crossing 3, genus 1
+  | 2 => some ⟨2, 5⟩  -- T_{2,5}, crossing 5, genus 2
+  | 3 => some ⟨2, 7⟩  -- T_{2,7}, crossing 7, genus 3
+  | 4 => some ⟨3, 4⟩  -- T_{3,4}, crossing 8, genus 3
+  | 5 => some ⟨2, 9⟩  -- T_{2,9}, crossing 9, genus 4
+  | 6 => some ⟨3, 5⟩  -- T_{3,5}, crossing 10, genus 4
+  -- index 7: NO torus knot with genus ≤ 4 remains.
+  -- Bring's surface structurally terminates at shell 6.
   | _ => none
 
 /-- **The shell size at index i** — number of cells contributed by
-    the i-th Bring torus knot. -/
+    the i-th Bring torus knot.
+
+    Indices 1..6: derived from the six Bring-embeddable torus knots
+    (genus ≤ 4). Index 7: empirical only (44 = 126 - 82); no
+    framework derivation yet. -/
 def shellSizeAt (i : ℕ) : Option ℕ :=
   match i with
-  | 1 => some 2   -- 1s shell
-  | 2 => some 6   -- 1p shell
-  | 3 => some 12  -- 1d2s
-  | 4 => some 8   -- 1f7/2 (spin-orbit-shifted)
-  | 5 => some 22
-  | 6 => some 32
-  | 7 => some 44  -- conjectural, would extend to n=126
+  | 1 => some 2   -- T_{2,3} contribution
+  | 2 => some 6   -- T_{2,5} contribution
+  | 3 => some 12  -- T_{2,7} contribution
+  | 4 => some 8   -- T_{3,4} contribution (spin-orbit-shifted)
+  | 5 => some 22  -- T_{2,9} contribution
+  | 6 => some 32  -- T_{3,5} contribution
+  | 7 => some 44  -- empirical (= 126 - 82); NOT framework-derived
   | _ => none
 
 /-- **Cumulative shell sizes match the magic numbers.** -/
