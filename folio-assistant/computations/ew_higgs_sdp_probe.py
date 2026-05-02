@@ -161,7 +161,7 @@ def solve_ew_entry(entry: dict) -> dict:
         import numpy as np
         q = q_0_NUMERIC
         k = sum(1 if w > 0 else -1 for w in word)
-        sym_eig = q ** k if k > 0 else q ** k  # sym: q^k for any k
+        sym_eig = q ** k  # sym: q^k for any k
         alt_eig = (-q ** (-1)) ** k if k != 0 else 1.0
         # For generic k, alt_eig may be negative (depends on parity).
         cert["sdp_feasibility"] = {

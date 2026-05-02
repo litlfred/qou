@@ -125,7 +125,8 @@ def main():
             yl = s_values[lam] / Z
             f = f_lambda(lam)
             yl_float = float(yl)
-            sign = '+' if yl_float > 1e-30 else ('-' if yl_float < -1e-30 else '0')
+            # Sign-of mpmath: precision-adaptive, no hardcoded threshold.
+            sign = '+' if yl > 0 else ('-' if yl < 0 else '0')
             weights.append({
                 "partition": list(lam),
                 "y_lambda_numeric": mpmath.nstr(yl, 30),
@@ -133,8 +134,10 @@ def main():
                 "f_lambda": f,
                 "sign": sign,
             })
-            if yl_float > 1e-30: pos_f2 += f*f; pos += 1
-            elif yl_float < -1e-30: neg_f2 += f*f; neg += 1
+            if yl > 0:
+                pos_f2 += f*f; pos += 1
+            elif yl < 0:
+                neg_f2 += f*f; neg += 1
         elapsed = time.time() - t0
         n_parts = len(s_values)
         pct_neg = 100 * neg_f2 / (pos_f2 + neg_f2) if (pos_f2 + neg_f2) > 0 else 0

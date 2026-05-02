@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Extend symbolic y_λ to n = 2, ..., 12 via Wenzl-bridge formula.
+"""Extend symbolic y_λ to n = 13, ..., 18 via Wenzl-bridge formula.
+
+Range n = 13..18 picks up where y_lambda_wenzl_bridge_extended.py leaves
+off (that script covers n = 2..12). Used to nail the FROB-FILTER A_**
+threshold per docs/audits/2026-05-02-nv-frob-filter-conjectures.md.
 
 Uses: y_λ = s_{λ, r}(Q) / (Σ_µ d_µ s_{µ, r}(Q))
 
@@ -7,10 +11,9 @@ with Q = q² and r solved from q · z = Q^r (1 - Q) / (1 - Q^r).
 
 Avoids the O(p(n)³) linear-system solve (which times out at n=5 for
 sympy and at n=12 for MPFR seminormal matmul) — Schur principal-
-specialization is O(p(n) · max_hooks), tractable through n=12.
-
-Verified: at n = 3, 4, the Wenzl-bridge values agree with the
-y-lambda-symbolic-witness.json values to floating-point precision.
+specialization is O(p(n) · max_hooks), tractable through n ≥ 12 with
+sympy and through n=18 with the numeric mpmath path of
+y_lambda_wenzl_bridge_numeric.py (faster than this sympy variant).
 """
 from __future__ import annotations
 import json, sys, time

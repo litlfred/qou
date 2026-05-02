@@ -46,11 +46,17 @@ ch = {
 N = list(ch)
 
 
+# Module-level sympy constants reused per call (avoid re-init in hot loop).
+_ZERO = sp.Integer(0)
+_ONE = sp.Integer(1)
+
+
 def sig_all_symbolic(par: str, dau: str) -> sp.Expr:
     A = len(par)
-    s = sp.Integer(0)
+    s = _ZERO
     for c in cartesian(N, repeat=A):
-        p_me = sp.Integer(1); d_me = sp.Integer(1)
+        p_me = _ONE
+        d_me = _ONE
         for m in range(A):
             p_me *= ch[c[m]][par[m]]
             d_me *= ch[c[m]][dau[m]]
