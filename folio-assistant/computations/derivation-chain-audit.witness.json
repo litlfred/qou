@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T06:09:00.001746+00:00",
-  "commitSha": "6559991535f86afbc885f022c42d28819cda13a6",
+  "computedAt": "2026-05-02T06:27:34.031713+00:00",
+  "commitSha": "ee6c063f1f5cc3b5cd26590e80cfbc956acf326b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1416,6 +1416,7 @@
         "chi-sym-alt-closed-form.witness.json",
         "chirality-convergence-bound.witness.json",
         "chirality-variants-probe.witness.json",
+        "colored-pair-energy-alignment.witness.json",
         "combined-tower-isotope-sweep.witness.json",
         "comparison-table.witness.json",
         "compound-beta-shell.witness.json",

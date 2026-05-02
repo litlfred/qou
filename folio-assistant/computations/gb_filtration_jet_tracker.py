@@ -325,6 +325,40 @@ def main():
         expected={3: 1},  # all ascending → single grade-3 term
     ))
 
+    # P2.5 symbolic-q exposure: pick the smallest non-trivial test
+    # case (σ_1^3 in H_2 — the "electron" body braid) and expose the
+    # algebraic-side normal form as polynomials-in-q strings, so that
+    # the witness JSON makes the polynomial-in-q structure visible
+    # alongside any later numerical evaluation.  No numerical change.
+    sample_case = cases[0]
+    symbolic_q_form = {
+        "engine": "sympy",
+        "q_symbol": "q (sp.Symbol('q', positive=True))",
+        "h_symbol_definition": "h = q - 1/q  (Hecke quantum integer [2]_q)",
+        "sample_case": sample_case["name"],
+        "sample_word": sample_case["word"],
+        "filtration_polynomials_in_q": {
+            grade: [
+                {
+                    "perm": entry["perm"],
+                    "canonical_word": entry["canonical_word"],
+                    "coefficient_polynomial_q": entry["coefficient_in_q"],
+                }
+                for entry in entries
+            ]
+            for grade, entries in sample_case["filtration_certificate"].items()
+        },
+        "note": (
+            "Per-grade Hecke-NF coefficients in q for the smallest "
+            "non-trivial test case (σ_1^3 in H_2).  Each coefficient "
+            "is a Laurent polynomial in q ∈ ℚ(q); the full reducer "
+            "produces analogous polynomials for every test case "
+            "above (see `filtration_certificate` of each entry in "
+            "`test_cases`).  Numerical specialisation at q = q_0 "
+            "is downstream and does not appear in this witness."
+        ),
+    }
+
     witness = {
         "computation": "gb-filtration-jet-order",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -336,6 +370,7 @@ def main():
             "Coxeter relation fired).  Verified on σ_1^3 (electron) and "
             "(σ_1 σ_2^{-1})^3 (proton/neutron body)."
         ),
+        "symbolic_q_form": symbolic_q_form,
         "framework": {
             "algebra": "Iwahori-Hecke H_n(q) over ℚ(q)",
             "generators": "T_1, ..., T_{n-1}",

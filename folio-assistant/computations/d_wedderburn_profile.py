@@ -230,6 +230,27 @@ def main() -> int:
             "Z": Z, "N": N, "A": A, "n_strands": n,
             "q_0": Q0,
         },
+        # P2.5: sympy-as-matrix-stepping-stone pattern.  This script
+        # uses sp.Symbol('q') only inside _numeric_sigmas_for_shape
+        # to build Hoefsmit seminormal matrices ρ_λ(σ_i) ∈ Mat(ℚ(q));
+        # each matrix is then immediately lambdified at q = q_0 and
+        # the downstream products / traces run in numpy.  Per-trace
+        # χ_λ(β_D) values are numerical specialisations, not Laurent
+        # polynomials in q.
+        "symbolic_q_form": {
+            "engine": "sympy (matrix construction only) + numpy",
+            "q_symbol": "q (sp.Symbol('q'))",
+            "pattern_note": (
+                "sympy-as-matrix-stepping-stone: ρ_λ(σ_i) ∈ "
+                "Mat_{d_λ × d_λ}(ℚ(q)) is symbolic in "
+                "_numeric_sigmas_for_shape; the lambdify-at-q_0 step "
+                "eagerly converts to numpy before computing products.  "
+                "Per-trace χ_λ(β_D) values reported here are numerical "
+                "specialisations at q = q_0, not Laurent polynomials in q."
+            ),
+            "symbolic_source": "hecke_characters.build_seminormal_matrices",
+            "specialisation_point": "q = q_0",
+        },
         "partitions": results,
         "markov_trace_total": str(markov_total),
         "alt_chi_abs": str(abs(alt_chi)),
