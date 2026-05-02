@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: library / no own witness output; sympy used internally by callers.
 """
 Hecke seminormal-form representation ρ_λ : H_n(q) → M_{f^λ}(R)
 + word-sensitive Hecke trace tr(T_w · ρ_λ).
