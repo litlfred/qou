@@ -478,17 +478,19 @@ prediction at level $A$ requires:
     The cal/$m_e$ ratio decreases monotonically with $A$
     (0.992 → 0.981) — that's the binding-energy correction
     emerging from the framework.
-13. ✅ **HYBRID per-braid (q-Hecke descended + q=1 MN tower) — validated across 9 atoms (A=2..16)**
+13. ✅ **HYBRID per-braid (q-Hecke descended + q=1 MN tower) — validated across 10 atoms (A=2..40)**
     ([`per_braid_tower_hybrid.py`](../../folio-assistant/computations/per_braid_tower_hybrid.py),
     [`witness JSON`](2026-05-01-per-braid-hybrid-vs-ame.witness.json)):
-    Mean cal/$m_e$ = **0.987** with **0.81% spread** across
-    D / ³He / ³H / ⁴He / ⁶Li / ⁷Li / ⁹Be / ¹²C / **¹⁶O** — *better
-    than q=1 alone* — AND splits ³He vs ³H by **0.53 MeV**
+    Mean cal/$m_e$ = **0.987** with **1.06% spread** across
+    D / ³He / ³H / ⁴He / ⁶Li / ⁷Li / ⁹Be / ¹²C / ¹⁶O / **⁴⁰Ca** —
+    *better than q=1 alone* — AND splits ³He vs ³H by **0.53 MeV**
     (matches AME physical splitting to ~1%). The q-Hecke
     descended supplies the precise isobar distinction; the q=1
-    MN tower preserves linear-in-A scaling. **¹²C and ¹⁶O
+    MN tower preserves linear-in-A scaling. **¹²C / ¹⁶O / ⁴⁰Ca
     unlocked by the Rust `chi_q_atomic` kernel (P2.2c-12C ✅) —
-    ¹²C in 1.4 s, ¹⁶O in 6.9 s.**
+    ¹²C in 1.4 s, ¹⁶O in 6.9 s, ⁴⁰Ca in 1.3 s.** Cal/$m_e$
+    decreases monotonically with $A$ (0.992 → 0.981) — the
+    binding-energy correction emerges from the framework.
 
 14. ✅ **Existing compute optimisations surveyed + Rust kernel built**
     ([2026-05-01-existing-compute-optimisations.md](2026-05-01-existing-compute-optimisations.md)).
