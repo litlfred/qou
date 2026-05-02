@@ -1,0 +1,93 @@
+{
+  "computation": "ew-higgs-mass-ratios-probe",
+  "computedAt": "2026-05-02T23:09:06.046259+00:00",
+  "description": "Quantitative test of conj:electroweak-higgs-torus-link-triplet: compute mass ratios m_Z/m_W and m_H/m_W under the assumption m \u221d tr_M(\u03c3_1^{2k}) at q_0, compare to PDG.  Finds m_Z/m_W agrees to within 3% but m_H/m_W is too low by 12% \u2014 a real constraint on the conjecture.",
+  "q_0": 1.1099785955541805,
+  "table": [
+    {
+      "k": 1,
+      "crossings": 2,
+      "genus": 0,
+      "chi_sym": 1.232052482588431,
+      "chi_alt": 0.811653735642081,
+      "tr_M": 1.1043880698091582,
+      "role": "Hopf link L_H (binding)"
+    },
+    {
+      "k": 2,
+      "crossings": 4,
+      "genus": 1,
+      "chi_sym": 1.517953319852316,
+      "chi_alt": 0.6587817865817451,
+      "tr_M": 1.2570447656085693,
+      "role": "W^\u00b1 (conj)"
+    },
+    {
+      "k": 3,
+      "crossings": 6,
+      "genus": 2,
+      "chi_sym": 1.8701981561773968,
+      "chi_alt": 0.5347026980520376,
+      "tr_M": 1.4646421342591915,
+      "role": "Z (conj)"
+    },
+    {
+      "k": 4,
+      "crossings": 8,
+      "genus": 3,
+      "chi_sym": 2.304182281250668,
+      "chi_alt": 0.43399344233183595,
+      "tr_M": 1.7362534716593487,
+      "role": "H (conj)"
+    },
+    {
+      "k": 5,
+      "crossings": 10,
+      "genus": 4,
+      "chi_sym": 2.8388734999511596,
+      "chi_alt": 0.35225239871280073,
+      "tr_M": 2.0837498821953333,
+      "role": ""
+    },
+    {
+      "k": 6,
+      "crossings": 12,
+      "genus": 5,
+      "chi_sym": 3.4976411433693344,
+      "chi_alt": 0.2859069753041285,
+      "tr_M": 2.5223191198203514,
+      "role": ""
+    },
+    {
+      "k": 7,
+      "crossings": 14,
+      "genus": 6,
+      "chi_sym": 4.309277453891627,
+      "chi_alt": 0.23205746455172407,
+      "tr_M": 3.0711293873432304,
+      "role": ""
+    }
+  ],
+  "predictions": {
+    "m_Z_over_m_W": {
+      "predicted": 1.1651471565136493,
+      "PDG": 1.1344704462608393,
+      "err_pct": 2.704055478388098
+    },
+    "m_H_over_m_W": {
+      "predicted": 1.381218488920545,
+      "PDG": 1.5582428246183704,
+      "err_pct": -11.360510242758899
+    },
+    "m_H_over_m_Z": {
+      "predicted": 1.1854455303769729,
+      "PDG": 1.3735420166777061,
+      "err_pct": -13.694265192971457
+    }
+  },
+  "open_questions": [
+    "Higgs identification with T(2,8) gives m_H 12% too LIGHT vs PDG. Either (a) H \u2194 T(2,10) fits the ratio (1.65 vs PDG 1.56) but breaks U5's monotonic mapping; (b) Higgs needs a per-particle correction; (c) the categorical mass formula includes a Seifert-genus-dependent factor specific to even-twist 2-component torus links that we haven't accounted for.",
+    "\u03c1 for force-carriers is open: per the conjecture, only ratios are constrained until \u03c1_W is structurally derived."
+  ],
+  "constraint_on_conjecture": "The 12% m_H deficit at T(2,8) is the largest single quantitative test of the conjecture available today.  It does not falsify the framework (the conjecture only asserts monotonic mapping for the ratio U5, which still holds: tr_M increases with k strictly), but it does indicate that the simple proportionality m \u221d tr_M needs at least one structural correction at the Higgs."
+}
