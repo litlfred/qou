@@ -422,6 +422,53 @@ def main() -> int:
           f"{len(weight_table)} (atom, prime) pairs")
     print()
 
+    # Test 5: L-function Frobenius-trace extraction from the
+    # isobaric-asymmetry motive M_iso = M_T − M_³He.
+    print("─── Test 5: L-function Frobenius-trace candidate (M_iso) ───")
+    from sympy import factorint, sqrt
+    iso_gap_norms = {}
+    for r in relations:
+        if r.get("kind") == "isobaric_gap_norm":
+            p = r["prime"]
+            n = r.get("gap_galois_norm")
+            if n is not None:
+                iso_gap_norms[p] = n
+    weight_candidates = []
+    print("  p     gap_norm        v_p  a_p (= norm/p^v_p)   Weil-bound check")
+    print("  ──────────────────────────────────────────────────────────────────")
+    for p in sorted(iso_gap_norms):
+        n = iso_gap_norms[p]
+        fac = factorint(abs(n))
+        vp = fac.get(p, 0)
+        a_p = n // (p ** vp)
+        # Weil bound: |a_p| ≤ 2·p^{w/2} for weight w (rank-2 motive).
+        # Find the smallest weight w (even integer) consistent with this.
+        # For rank-1 motives the trace IS the eigenvalue: |a_p| = p^{w/2}.
+        weight_for_w = []
+        for w in [0, 1, 2, 3, 4, 5, 6]:
+            # Rank-2 Weil bound:
+            bound = 2 * (p ** (w / 2))
+            ok = abs(a_p) <= bound
+            weight_for_w.append((w, ok))
+        min_consistent_w = next(
+            (w for w, ok in weight_for_w if ok), None
+        )
+        weight_candidates.append({
+            "prime": p,
+            "gap_norm": n,
+            "v_p": vp,
+            "a_p_candidate": a_p,
+            "min_weight_consistent": min_consistent_w,
+            "weil_bound_at_min_w": (
+                2 * (p ** (min_consistent_w / 2))
+                if min_consistent_w is not None else None
+            ),
+        })
+        weight_str = (f"w ≥ {min_consistent_w}"
+                      if min_consistent_w is not None else "w → ∞")
+        print(f"  {p:>2}    {n:>+10d}   {vp:>2}   {a_p:>+10d}            {weight_str}")
+    print()
+
     # Test 4: p-adic divisibility analysis of residue norms.
     # If the residues encode motivic L-function local factors, we
     # expect the norm at prime p to be divisible by p^k for some
@@ -495,6 +542,7 @@ def main() -> int:
         "relations": relations,
         "weight_signature": weight_table,
         "p_adic_signature": pdic_table,
+        "lfunction_frobenius_trace_candidate": weight_candidates,
         "summary": {
             "n_relations": len(relations),
             "n_multiplicative_matches": sum(
