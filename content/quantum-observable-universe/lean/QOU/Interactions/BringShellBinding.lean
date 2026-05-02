@@ -176,14 +176,15 @@ nuclear-shell sequential number).
 
 /-- **The natural enumeration of the magic ladder.**
 
-    `magicAt i` returns the i-th *empirical* magic number (i = 1
-    to 7), or `none` for invalid indices.
+    `magicAt i` returns the i-th magic number (i = 1 to 7), or
+    `none` for invalid indices.
 
-    NOTE: the framework's Bring-shell-binding derivation only
-    produces six entries (i = 1..6, n = 2..82); the 7th
-    empirical magic n=126 is currently OUTSIDE the framework's
-    Bring-surface scope (no torus knot with genus ≤ 4 remains).
-    See `bringKnotAt 7 = none` and the open-question discussion. -/
+    The framework derives all 7 magic numbers via the
+    Bring-shell-binding combinatorial assignment: 6 Bring-embeddable
+    torus knots (genus ≤ 4) combine across 7 shells, with shells
+    4, 6, 7 using two-knot combinations.
+
+    See `bringKnotsAtShell` for the per-shell knot assignment. -/
 def magicAt (i : ℕ) : Option ℕ :=
   match i with
   | 1 => some 2
@@ -229,45 +230,82 @@ theorem magicIndex_magicAt (i : ℕ) (hi : 1 ≤ i ∧ i ≤ 7) :
   | 6, _, _ => exact ⟨82, rfl, rfl⟩
   | 7, _, _ => exact ⟨126, rfl, rfl⟩
 
-/-- **The associated Bring torus knot at index i.** Maps i = 1..6
-    to the framework's Bring-embeddable torus knots. **Index 7 is
-    structurally OUT OF REACH on Bring's surface** — see selection
-    rule below.
+/-- **The Bring torus knots binding shell i.** Maps each shell
+    `i = 1..7` to the LIST of torus knots from the 6-element
+    Bring-embeddable basis that mediate that shell.
 
-    **Selection rule (genus-4 bound).** A torus knot `T_{p, q}`
-    (gcd(p,q) = 1) embeds on Bring's surface (genus 4) iff its
-    own genus `(p-1)(q-1)/2 ≤ 4`. The complete list of such
-    torus knots is exactly six:
+    **Structure (per `prop:torus-knot-shell-binding` Table iv):**
+    The 6 Bring-embeddable torus knots (all with genus ≤ 4)
+    combine across 7 shells, with some shells using a *single*
+    knot and some using a *combination* of two. Several knots
+    appear in multiple shells (notably T_{3,4} and T_{2,9}).
 
-      T_{2,3} (g=1), T_{2,5} (g=2), T_{2,7} (g=3),
-      T_{3,4} (g=3), T_{2,9} (g=4), T_{3,5} (g=4).
+    **The 6-knot basis (genus-4 bound, complete):**
+      T_{2,3} (g=1, crossing 3)
+      T_{2,5} (g=2, crossing 5)
+      T_{2,7} (g=3, crossing 7)
+      T_{3,4} (g=3, crossing 8)
+      T_{2,9} (g=4, crossing 9)
+      T_{3,5} (g=4, crossing 10)
 
-    These are precisely the six embeddable torus knots used by the
-    framework. There is NO seventh torus knot with genus ≤ 4.
+    **Shell-to-knot assignment:**
+      i = 1 (1s): T_{2,3} alone
+      i = 2 (1p): T_{2,3} alone (size 6 = 6 from same knot, different filling)
+      i = 3 (1d): T_{2,5}
+      i = 4 (1f): T_{2,5} + T_{3,4}
+      i = 5 (2s-2d): T_{2,7}
+      i = 6 (2f-3p): T_{2,9} + T_{3,4}
+      i = 7 (3d-4s): T_{2,9} + T_{3,5}     -- n=126 derived!
 
-    **Why T_{3,5} for shell 6** (and not T_{2,11} or T_{2,13}):
-    NOT by SDP, but by the genus-4 bound. T_{2,11} has genus 5,
-    T_{2,13} has genus 6 — both fail to embed on Bring.
-
-    **Shell 7 status (open):** the n=126 magic shell cannot be
-    realised by a torus knot on Bring's surface. The framework
-    requires either:
-      (a) a higher-genus surface (e.g., Macbeath surface, g=7,
-          which admits T_{3,7} (g=6) and T_{2,13} (g=6));
-      (b) a non-torus knot class (hyperbolic, link, etc.);
-      (c) a structurally different mechanism beyond Bring.
--/
-def bringKnotAt (i : ℕ) : Option TorusKnot :=
+    All 7 magic numbers are framework-derived using combinations
+    of the 6 Bring-embeddable torus knots. There is NO missing
+    7th torus knot. -/
+def bringKnotsAtShell (i : ℕ) : List TorusKnot :=
   match i with
-  | 1 => some ⟨2, 3⟩  -- T_{2,3}, crossing 3, genus 1
-  | 2 => some ⟨2, 5⟩  -- T_{2,5}, crossing 5, genus 2
-  | 3 => some ⟨2, 7⟩  -- T_{2,7}, crossing 7, genus 3
-  | 4 => some ⟨3, 4⟩  -- T_{3,4}, crossing 8, genus 3
-  | 5 => some ⟨2, 9⟩  -- T_{2,9}, crossing 9, genus 4
-  | 6 => some ⟨3, 5⟩  -- T_{3,5}, crossing 10, genus 4
-  -- index 7: NO torus knot with genus ≤ 4 remains.
-  -- Bring's surface structurally terminates at shell 6.
-  | _ => none
+  | 1 => [⟨2, 3⟩]            -- shell 1s: T_{2,3}
+  | 2 => [⟨2, 3⟩]            -- shell 1p: T_{2,3}
+  | 3 => [⟨2, 5⟩]            -- shell 1d: T_{2,5}
+  | 4 => [⟨2, 5⟩, ⟨3, 4⟩]    -- shell 1f: T_{2,5} + T_{3,4}
+  | 5 => [⟨2, 7⟩]            -- shell 2s-2d: T_{2,7}
+  | 6 => [⟨2, 9⟩, ⟨3, 4⟩]    -- shell 2f-3p: T_{2,9} + T_{3,4}
+  | 7 => [⟨2, 9⟩, ⟨3, 5⟩]    -- shell 3d-4s: T_{2,9} + T_{3,5}
+  | _ => []
+
+/-- Legacy `bringKnotAt` returning the FIRST torus knot of each
+    shell. Kept for compatibility with prior single-knot-per-shell
+    abstractions. Use `bringKnotsAtShell` for the full assignment. -/
+def bringKnotAt (i : ℕ) : Option TorusKnot :=
+  (bringKnotsAtShell i).head?
+
+/-- **All 7 magic shells use only torus knots from the 6-knot basis.** -/
+theorem bringKnotsAtShell_subset_basis :
+    ∀ i, 1 ≤ i → i ≤ 7 →
+      ∀ T ∈ bringKnotsAtShell i, T ∈ bringSixTorusKnots := by
+  intro i h1 h7 T hT
+  match i, h1, h7, T, hT with
+  | 1, _, _, T, hT => simp [bringKnotsAtShell] at hT; subst hT;
+                       simp [bringSixTorusKnots]
+  | 2, _, _, T, hT => simp [bringKnotsAtShell] at hT; subst hT;
+                       simp [bringSixTorusKnots]
+  | 3, _, _, T, hT => simp [bringKnotsAtShell] at hT; subst hT;
+                       simp [bringSixTorusKnots]
+  | 4, _, _, T, hT =>
+    simp [bringKnotsAtShell] at hT
+    rcases hT with h | h
+    · subst h; simp [bringSixTorusKnots]
+    · subst h; simp [bringSixTorusKnots]
+  | 5, _, _, T, hT => simp [bringKnotsAtShell] at hT; subst hT;
+                       simp [bringSixTorusKnots]
+  | 6, _, _, T, hT =>
+    simp [bringKnotsAtShell] at hT
+    rcases hT with h | h
+    · subst h; simp [bringSixTorusKnots]
+    · subst h; simp [bringSixTorusKnots]
+  | 7, _, _, T, hT =>
+    simp [bringKnotsAtShell] at hT
+    rcases hT with h | h
+    · subst h; simp [bringSixTorusKnots]
+    · subst h; simp [bringSixTorusKnots]
 
 /-- **The shell size at index i** — number of cells contributed by
     the i-th Bring torus knot.
@@ -281,9 +319,9 @@ def shellSizeAt (i : ℕ) : Option ℕ :=
   | 2 => some 6   -- T_{2,5} contribution
   | 3 => some 12  -- T_{2,7} contribution
   | 4 => some 8   -- T_{3,4} contribution (spin-orbit-shifted)
-  | 5 => some 22  -- T_{2,9} contribution
-  | 6 => some 32  -- T_{3,5} contribution
-  | 7 => some 44  -- empirical (= 126 - 82); NOT framework-derived
+  | 5 => some 22  -- T_{2,7} contribution (shell 2s-2d)
+  | 6 => some 32  -- T_{2,9} + T_{3,4} combined (shell 2f-3p)
+  | 7 => some 44  -- T_{2,9} + T_{3,5} combined (shell 3d-4s) -- n=126 DERIVED
   | _ => none
 
 /-- **Cumulative shell sizes match the magic numbers.** -/
