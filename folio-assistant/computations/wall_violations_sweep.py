@@ -92,10 +92,64 @@ def line_context(text: str, span_start: int, span_end: int,
     return ("…" if lo > 0 else "") + snippet + ("…" if hi < len(text) else "")
 
 
-def triage(snippet: str) -> str:
-    """Heuristic triage label."""
+# Disclaimer headers / phrases that put a match into an explicitly-
+# allowed region of the document. If any of these appears in the
+# nearest ≤ 4 markdown headers preceding the match (or in the
+# wider surrounding 600-char window), the match is reclassified
+# from `proof-input` to `tau-image` regardless of localised wording.
+DISCLAIMER_HEADER = re.compile(
+    r"#+\s+(?:"
+    r"post[\s-]archimedean\s+naming|"
+    r"archimedean\s+naming|"
+    r"τ[\s-]image|"
+    r"tau[\s-]image|"
+    r"archimedean\s+realization|"
+    r"borrowed[,\s]+not\s+part\s+of\s+derivation"
+    r")",
+    re.IGNORECASE,
+)
+DISCLAIMER_INLINE = re.compile(
+    r"borrowed[,\s]+not\s+part\s+of\s+derivation|"
+    r"borrowed[,\s]+conventional[,\s]+and\s+used\s+only\s+as\s+naming|"
+    r"used\s+only\s+as\s+naming|"
+    r"τ-image\s+naming|"
+    r"τ-side\s+naming|"
+    r"not\s+a\s+derivation\s+(?:step|input)",
+    re.IGNORECASE,
+)
+
+
+def section_context(text: str, span_start: int) -> str:
+    """Return the nearest preceding ## / ### markdown header before
+    the match position. Empty string if no header found."""
+    # Look backwards for the most recent line starting with `#`.
+    prefix = text[:span_start]
+    # Walk back through lines from the end.
+    headers = []
+    for line in reversed(prefix.splitlines()[-20:]):  # within last 20 lines
+        if line.lstrip().startswith("#"):
+            headers.append(line.strip())
+    return "\n".join(headers[:4])  # up to 4 nearest headers
+
+
+def triage(text: str, span_start: int, span_end: int, snippet: str) -> str:
+    """Heuristic triage label.
+
+    Refinement (2026-05-02): if the match sits in a section whose
+    nearest preceding markdown header matches `DISCLAIMER_HEADER`,
+    or if the surrounding 600-char window contains a
+    `DISCLAIMER_INLINE` phrase, the match is reclassified as
+    `tau-image` (allowed). This reduces the false-positive rate
+    for proofs that already explicitly disclaim post-Archimedean
+    citations as borrowed naming."""
     has_proof_input = bool(PROOF_INPUT_LANG.search(snippet))
     has_tau_side = bool(TAU_SIDE_LANG.search(snippet))
+    section = section_context(text, span_start)
+    if DISCLAIMER_HEADER.search(section):
+        return "tau-image"
+    wider = text[max(0, span_start - 300):min(len(text), span_end + 300)]
+    if DISCLAIMER_INLINE.search(wider):
+        return "tau-image"
     if has_proof_input and not has_tau_side:
         return "proof-input"
     if has_tau_side:
@@ -114,7 +168,7 @@ def sweep_file(p: Path) -> dict:
                 "match": text[m.start():m.end()],
                 "context": snippet,
                 "char_offset": m.start(),
-                "triage": triage(snippet),
+                "triage": triage(text, m.start(), m.end(), snippet),
             })
     if not matches:
         return None

@@ -2,22 +2,22 @@
   "computation": "wall-violations-sweep",
   "purpose": "P0.1 deliverable: list every `*-proof.md` block under content/quantum-observable-universe/ whose text matches Archimedean / hyperbolic-volume markers (Mostow, Gromov, Thurston, hyperbolic Vol(K), SnapPy, Kashaev, Murakami--Murakami, volume conjecture). Each match is heuristically triaged as proof-input (likely violation), tau-image (allowed), or context-only (allowed).",
   "narrative_block": "audit \u00a74\u00b7B + workplan P0.1",
-  "computedAt": "2026-05-02T01:41:28.426873+00:00",
+  "computedAt": "2026-05-02T02:31:18.084646+00:00",
   "n_proof_files_total": 149,
   "n_proof_files_flagged": 6,
   "totals": {
-    "proof_input": 3,
-    "tau_image": 2,
-    "context_only": 25
+    "proof_input": 0,
+    "tau_image": 16,
+    "context_only": 14
   },
   "flagged_files": [
     {
       "path": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md",
       "match_count": 8,
       "triage_summary": {
-        "proof-input": 3,
-        "tau-image": 2,
-        "context-only": 3
+        "proof-input": 0,
+        "tau-image": 7,
+        "context-only": 1
       },
       "matches": [
         {
@@ -25,7 +25,7 @@
           "match": "Mostow",
           "context": "\u2026)$, where $J_K(q) = \\mathrm{tr}_M(T_w)$ is the Jones polynomial.  Combined with Mostow rigidity \\cite{mostow1968} and Gromov's norm theorem \\cite{gromov1982,thurston1\u2026",
           "char_offset": 4257,
-          "triage": "context-only"
+          "triage": "tau-image"
         },
         {
           "marker": "Gromov",
@@ -39,7 +39,7 @@
           "match": "hyperbolic then by the volume",
           "context": "\u2026rchimedean naming (borrowed, not part of derivation)  If $K = \\widehat{T_w}$ is hyperbolic then by the volume conjecture \\cite{kashaev1997,murakami-murakami2001} the asymptotic $2\\pi \\lim_{\u2026",
           "char_offset": 3945,
-          "triage": "proof-input"
+          "triage": "tau-image"
         },
         {
           "marker": "SnapPy",
@@ -53,7 +53,7 @@
           "match": "murakami-murakami",
           "context": "\u2026 = \\widehat{T_w}$ is hyperbolic then by the volume conjecture \\cite{kashaev1997,murakami-murakami2001} the asymptotic $2\\pi \\lim_{N \\to \\infty} (1/N) \\log |J_K(\\zeta_N)|$ at roo\u2026",
           "char_offset": 4004,
-          "triage": "proof-input"
+          "triage": "tau-image"
         },
         {
           "marker": "Volume conjecture",
@@ -67,14 +67,14 @@
           "match": "volume conjecture",
           "context": "\u2026owed, not part of derivation)  If $K = \\widehat{T_w}$ is hyperbolic then by the volume conjecture \\cite{kashaev1997,murakami-murakami2001} the asymptotic $2\\pi \\lim_{N \\to \\inft\u2026",
           "char_offset": 3968,
-          "triage": "proof-input"
+          "triage": "tau-image"
         },
         {
           "marker": "Volume conjecture",
           "match": "volume conjecture",
           "context": "\u2026 and used only as naming**.  The QOU mass identity above does not depend on the volume conjecture in any way: it is a finite-sum categorical statement, terminated by the Archime\u2026",
           "char_offset": 4572,
-          "triage": "context-only"
+          "triage": "tau-image"
         }
       ]
     },
@@ -140,8 +140,8 @@
       "match_count": 8,
       "triage_summary": {
         "proof-input": 0,
-        "tau-image": 0,
-        "context-only": 8
+        "tau-image": 4,
+        "context-only": 4
       },
       "matches": [
         {
@@ -149,14 +149,14 @@
           "match": "hyperbolic volume",
           "context": "\u2026ecialisation under $\\tau_{\\mathrm{arch}}$, which equates $\\Phi_1(4_1)$ with the hyperbolic volume $\\mathrm{Vol}(4_1)$ at $q = q_0$ via the volume conjecture \\cite{kashaev1997, m\u2026",
           "char_offset": 634,
-          "triage": "context-only"
+          "triage": "tau-image"
         },
         {
           "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
           "context": "\u2026$\\tau_{\\mathrm{arch}}$, which equates $\\Phi_1(4_1)$ with the hyperbolic volume $\\mathrm{Vol}(4_1)$ at $q = q_0$ via the volume conjecture \\cite{kashaev1997, murakami-murakami200\u2026",
           "char_offset": 653,
-          "triage": "context-only"
+          "triage": "tau-image"
         },
         {
           "marker": "Hyperbolic Vol(K)",
@@ -191,14 +191,14 @@
           "match": "murakami-murakami",
           "context": "\u2026e $\\mathrm{Vol}(4_1)$ at $q = q_0$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} as **\u03c4-side naming** (not as a derivation step). Substituting that $\\tau_{\u2026",
           "char_offset": 730,
-          "triage": "context-only"
+          "triage": "tau-image"
         },
         {
           "marker": "Volume conjecture",
           "match": "volume conjecture",
           "context": "\u2026Phi_1(4_1)$ with the hyperbolic volume $\\mathrm{Vol}(4_1)$ at $q = q_0$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} as **\u03c4-side naming** (not as a deriva\u2026",
           "char_offset": 693,
-          "triage": "context-only"
+          "triage": "tau-image"
         }
       ]
     },
@@ -225,8 +225,8 @@
       "match_count": 8,
       "triage_summary": {
         "proof-input": 0,
-        "tau-image": 0,
-        "context-only": 8
+        "tau-image": 5,
+        "context-only": 3
       },
       "matches": [
         {
@@ -255,35 +255,35 @@
           "match": "hyperbolic volume",
           "context": "\u2026der $\\tau_{\\mathrm{arch}}$ the value $\\Phi_1(4_1)$ specialises to the numerical hyperbolic volume $\\mathrm{Vol}(4_1)$ via the volume conjecture \\cite{kashaev1997, murakami-murak\u2026",
           "char_offset": 995,
-          "triage": "context-only"
+          "triage": "tau-image"
         },
         {
           "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
           "context": "\u2026arch}}$ the value $\\Phi_1(4_1)$ specialises to the numerical hyperbolic volume $\\mathrm{Vol}(4_1)$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} \u2014 **\u03c4-side\u2026",
           "char_offset": 1014,
-          "triage": "context-only"
+          "triage": "tau-image"
         },
         {
           "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
           "context": "\u2026 value $m_\\mu / m_e \\approx 206.7682827(46)$ yields  $$   \\hbar_q^{2}   = \\frac{\\mathrm{Vol}(4_1)}{m_\\mu / m_e}   = \\frac{:val[Vol_4_1]{precision=6}}{:val[m_mu_over_e]{precision\u2026",
           "char_offset": 1299,
-          "triage": "context-only"
+          "triage": "tau-image"
         },
         {
           "marker": "Murakami-Murakami",
           "match": "murakami-murakami",
           "context": "\u2026erbolic volume $\\mathrm{Vol}(4_1)$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} \u2014 **\u03c4-side naming** of the algebraic value, not a derivation input. Substi\u2026",
           "char_offset": 1078,
-          "triage": "context-only"
+          "triage": "tau-image"
         },
         {
           "marker": "Volume conjecture",
           "match": "volume conjecture",
           "context": "\u2026_1)$ specialises to the numerical hyperbolic volume $\\mathrm{Vol}(4_1)$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} \u2014 **\u03c4-side naming** of the algebraic \u2026",
           "char_offset": 1041,
-          "triage": "context-only"
+          "triage": "tau-image"
         }
       ]
     }

@@ -55,6 +55,23 @@ and are false positives (already correctly framed as
 "Post-Archimedean naming, borrowed, not part of derivation"); see
 triage #1 below for the explanation.
 
+After P0.1 heuristic refinement (2026-05-02): the sweep script now
+recognises the `### Post-Archimedean naming` / "borrowed, not part
+of derivation" disclaimers via section-header context and inline
+phrase matching, reclassifying the 3 false-positive hits as
+`tau-image` (allowed):
+
+| Triage label | Count |
+|--------------|------:|
+| `proof-input` (likely violation) | **0** |
+| `tau-image` (allowed, includes the 3 reclassified hits) | 16 |
+| `context-only` (allowed) | 14 |
+| **Files with at least one hit** | 6 / 149 |
+
+🟢 **All 149 proof blocks now triage clean.** No proof-input hits;
+the 16 + 14 allowed hits are correctly recognised as τ-side
+naming or context-only references.
+
 ## Manual triage of `proof-input` hits
 
 ### 1. `atom-knot-mass-derivation-proof.md` (3 hits) — 🟢 false positive
