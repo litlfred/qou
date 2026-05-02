@@ -19,6 +19,7 @@ def main_He3() -> int:
     import json, time, sympy as sp, mpmath as mp
     from datetime import datetime, timezone
     from witness_base import WitnessBuilder
+    from witness_polynomial import expose_polynomial
     print("=" * 100)
     print("PHASE 3 — Symbolic Hecke NF of ³He atom braid")
     print("  Pipeline: atom Hecke element → GS NF → Markov trace → Jones")
@@ -66,6 +67,10 @@ def main_He3() -> int:
         .add_parameter("n_strands", 3 * (Z + N))
         .add_data("stats", stats)
         .add_data("markov_trace_symbolic", str(tr_simp))
+        .add_data(
+            "markov_trace_polynomial",
+            expose_polynomial(tr_simp, q_sym, simplify=False),
+        )
         .add_data("at_q0", {"tr_M_He3": str(tr_val)})
         .add_data("trace_elapsed_sec", elapsed_trace)
     )
