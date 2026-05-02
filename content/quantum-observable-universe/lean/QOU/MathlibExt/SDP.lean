@@ -70,6 +70,15 @@ def SDPPrimal.IsStrictlyFeasible (sdp : SDPPrimal n R ι) : Prop :=
   ∃ Φ : Matrix (Fin n) (Fin n) R,
     Φ.PosDef ∧ ∀ i : ι, Matrix.trace (sdp.constraint i * Φ) = sdp.rhs i
 
+/-- **Strictly feasible implies feasible** — proved theorem.
+    A positive-definite matrix is positive-semidefinite, so any
+    Slater-witness is automatically a feasible point. -/
+theorem SDPPrimal.feasible_of_strictlyFeasible
+    (sdp : SDPPrimal n R ι) (h : sdp.IsStrictlyFeasible) :
+    ∃ Φ, sdp.IsFeasible Φ := by
+  obtain ⟨Φ, hPD, hConstr⟩ := h
+  exact ⟨Φ, hPD.posSemidef, hConstr⟩
+
 /-- **Primal-feasible objective value** at a given feasible point. -/
 def SDPPrimal.objAt (sdp : SDPPrimal n R ι) (Φ : Matrix (Fin n) (Fin n) R) : R :=
   Matrix.trace (sdp.cost * Φ)

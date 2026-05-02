@@ -87,6 +87,15 @@ theorem measure_nonneg (λ : Λ) (k : ℕ) :
   unfold measure
   exact div_nonneg (sq_nonneg _) (le_of_lt (HasPartitionFunction.Z_pos k))
 
+/-- **Vanishing on null partitions**: if `d_q(λ) = 0`, then
+    `measure λ k = 0`. -/
+theorem measure_eq_zero_of_dq_zero (λ : Λ) (k : ℕ)
+    (hdq : (QDimension.dq λ : R) = 0) :
+    measure (R := R) (Λ := Λ) λ k = 0 := by
+  unfold measure
+  rw [hdq]
+  simp
+
 /-! ## §2  Féray-Méliot q-Plancherel CLT
 
 The headline asymptotic result: as `k → ∞`, the character
