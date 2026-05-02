@@ -12,3 +12,14 @@
 --     `QOU.AppendixSurreals.epsilonSurreal`,
 --     `QOU.AppendixSurreals.epsilonSurreal_mul_omegaSurreal`,
 --     `QOU.AppendixSurreals.epsilonSurreal_isInfinitesimal`.
+--
+-- The `BlowupCalculus` namespace bundles the named cutoff `Λ := ω`,
+-- the infinitesimal unit `Epsilon := ε`, and the renormalisation
+-- operator `renormalise X C := st (X - C)`:
+--
+--     `QOU.AppendixSurreals.BlowupCalculus.Lambda`
+--     `QOU.AppendixSurreals.BlowupCalculus.Epsilon`
+--     `QOU.AppendixSurreals.BlowupCalculus.renormalise`
+--     `QOU.AppendixSurreals.BlowupCalculus.renormalise_self`
+--     `QOU.AppendixSurreals.BlowupCalculus.renormalise_ofReal`
+--     `QOU.AppendixSurreals.BlowupCalculus.renormalise_eq_zero_of_isInfinitesimal`.
