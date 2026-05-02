@@ -1,0 +1,66 @@
+{
+  "computation": "nv-pslq-uniqueness-probe",
+  "computedAt": "2026-05-02T22:39:29.817202+00:00",
+  "description": "PSLQ uniqueness probe for N_v on the path-α extended basis {q, [k]_q for k=2..10, small primes}. Tests at four tolerances spanning 1e-100 down to 1e-7 (CODATA G_F floor).",
+  "q_0": "1.109978595554180516958300188988798676378761384984",
+  "N_v_target": 1445519.4491452207,
+  "codata_G_F_relative_precision": "5e-7",
+  "basis": [
+    "log(N_v)",
+    "log(q)",
+    "log[2]_q",
+    "log[3]_q",
+    "log[4]_q",
+    "log[5]_q",
+    "log[6]_q",
+    "log[7]_q",
+    "log[8]_q",
+    "log[9]_q",
+    "log[10]_q",
+    "log(2)",
+    "log(3)"
+  ],
+  "pslq_results": [
+    {
+      "tol": "1e-100",
+      "maxcoeff": 1000000,
+      "relation": null,
+      "residual": null,
+      "elapsed_s": 0.06544637680053711
+    },
+    {
+      "tol": "1e-50",
+      "maxcoeff": 100000000,
+      "relation": null,
+      "residual": null,
+      "elapsed_s": 0.06502676010131836
+    },
+    {
+      "tol": "1e-12",
+      "maxcoeff": 10000000000,
+      "relation": null,
+      "residual": null,
+      "elapsed_s": 0.06497383117675781
+    },
+    {
+      "tol": "1e-7",
+      "maxcoeff": 1000000000000,
+      "relation": {
+        "log[4]_q": 21,
+        "log[5]_q": -1,
+        "log[6]_q": -1,
+        "log[7]_q": -21,
+        "log[8]_q": 1,
+        "log[9]_q": -9,
+        "log[10]_q": 10,
+        "log(2)": 1,
+        "log(3)": 9
+      },
+      "residual_str": "-5.3324592e-7",
+      "has_N_v": false,
+      "elapsed_s": 0.02897477149963379
+    }
+  ],
+  "conclusion": "Inconclusive. PSLQ at tol < 1e-7 finds no relation involving log(N_v); at tol = 1e-7 (CODATA noise floor) only spurious noise-fits with large coefficients are returned. The path-α structural identification (W=T(2,4), Z=T(2,6), H=T(2,8)) is verified PSD-feasible (ew_higgs_sdp_probe.witness.json) but does not yield a clean q-arithmetic closed form for N_v in this basis. Closure requires authoring prop:weak-spectral-completeness with explicit Plancherel weights, OR higher-precision CODATA G_F (not currently available).",
+  "audit_flag_status": "NV-1: open (inconclusive after PSLQ probe)"
+}
