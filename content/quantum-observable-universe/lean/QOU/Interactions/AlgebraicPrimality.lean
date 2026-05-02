@@ -251,4 +251,78 @@ theorem one_in_ladder_is_known (q : ℝ) :
     IsKnownMagic 1 q :=
   one_isKnownMagic q
 
+/-! ## §10  n = 2 reduction — first non-trivial magic shell -/
+
+/-- **Lemma (decomposition of 2).** The only non-trivial decomposition
+    of `n = 2` (length ≥ 2, all entries ≥ 1) is `[1, 1]`. Provable
+    by elementary arithmetic via `sum_ge_length_of_all_pos`. -/
+-- Ref: [manuscript] def:algebraic-primality
+lemma decomp_two_eq_oneOne (d : List ℕ)
+    (h : NonTrivialDecomposition 2 d) :
+    d = [1, 1] := by
+  obtain ⟨h_len, h_pos, h_sum⟩ := h
+  have h_bound : d.length ≤ d.sum := sum_ge_length_of_all_pos h_pos
+  -- length ≥ 2 (from h_len) and length ≤ sum = 2 (from h_bound + h_sum)
+  -- forces length = 2.
+  have h_len_eq : d.length = 2 := by omega
+  -- Case-split on d to extract [a, b].
+  match d, h_len_eq with
+  | [], _ => simp at h_len_eq
+  | [_], _ => simp at h_len_eq
+  | [a, b], _ =>
+    simp only [List.sum_cons, List.sum_nil, Nat.add_zero] at h_sum
+    have ha : 1 ≤ a := h_pos a (List.mem_cons_self a [b])
+    have hb : 1 ≤ b := h_pos b (by
+      show b ∈ [a, b]
+      exact List.mem_cons_of_mem a (List.mem_singleton.mpr rfl))
+    have : a = 1 ∧ b = 1 := by omega
+    obtain ⟨ha1, hb1⟩ := this
+    rw [ha1, hb1]
+  | _ :: _ :: _ :: _, _ =>
+    simp [List.length] at h_len_eq
+
+/-- **Typeclass (n = 2 binding axiom).** The single non-trivial axiom
+    needed to discharge `IsKnownMagic 2 q`: at substrate `q`, the
+    canonical state `ψ_2(q)` is **not** in the closed tensor span of
+    `ψ_1 ⊗ ψ_1` (the unique non-trivial decomposition of 2).
+
+    This is the minimal axiom — by `decomp_two_eq_oneOne`, proving
+    primality at n = 2 reduces to this single check.
+
+    In framework language: the SDP at n = 2 produces a *non-trivial
+    bound state*, distinct from two free single-strands. Empirically
+    expected at any reasonable substrate `q > 1`. -/
+class NonTrivialBindingAtTwo (q : ℝ) : Prop where
+  /-- ψ_2(q) is not in the tensor span via decomposition [1, 1]. -/
+  not_in_oneOne_span :
+    ¬ InTensorSpan 2 q (canonicalState 2 q) [1, 1]
+
+/-- **Theorem.** Under `NonTrivialBindingAtTwo q`, `n = 2` is
+    algebraically prime at `q`. The proof:
+
+    1. Any non-trivial decomposition of 2 is `[1, 1]` (proved
+       arithmetic, `decomp_two_eq_oneOne`).
+    2. `ψ_2(q) ∉ tensor-span([1, 1])` is the typeclass axiom.
+
+    Combining: the universal-quantifier in `IsAlgebraicallyPrime 2 q`
+    reduces to a single check, which the typeclass provides. -/
+-- Ref: [manuscript] def:algebraic-primality
+-- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+theorem two_isAlgebraicallyPrime
+    (q : ℝ) [N : NonTrivialBindingAtTwo q] :
+    IsAlgebraicallyPrime 2 q := by
+  refine ⟨by decide, ?_⟩
+  intro decomp h_decomp h_in
+  have h_eq : decomp = [1, 1] := decomp_two_eq_oneOne decomp h_decomp
+  rw [h_eq] at h_in
+  exact N.not_in_oneOne_span h_in
+
+/-- **Instance.** `NonTrivialBindingAtTwo` discharges the n = 2 case
+    of the per-n axiom collection for `MagicEqualsEmpirical`. -/
+-- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+instance two_isKnownMagic_of_nonTrivialBinding
+    (q : ℝ) [NonTrivialBindingAtTwo q] :
+    IsKnownMagic 2 q where
+  is_prime := two_isAlgebraicallyPrime q
+
 end QOU.Interactions.AlgebraicPrimality
