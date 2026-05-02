@@ -6,7 +6,14 @@ in the framework's knot-operator basis:
 - Hyperbolic volume $0$ (Seifert-fibered, **not** hyperbolic).
 - Complement $S^3 \setminus \mathrm{Hopf} \simeq T^2$ — cohomology
   rank $\leq 2$ in every degree.
-- Alexander polynomial $\Delta(t) = t - 1$ — the simplest non-trivial.
+- Multivariable Alexander polynomial $\Delta(t_1, t_2) = 1$
+  (the standard convention for 2-component links is the
+  multivariable form; the single-variable $\Delta(t) = 0$ for the
+  Hopf link in the literature should not be confused with this).
+  In the QOU framework's reading the Hopf link is the
+  *trivially-non-trivial* link — its Alexander structure carries
+  no signed information, which is the link-theoretic fact behind
+  its $E^{0, *}$-only cohomological location.
 - Fundamental group: $\mathbb{Z} \oplus \mathbb{Z}$ — abelian.
 
 **Cohomological location in the framework.**

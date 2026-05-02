@@ -66,12 +66,10 @@ def bringSixTorusKnots : List TorusKnot := [
     the empirical nuclear magic numbers. -/
 def bringShellSizes : List ℕ := [2, 6, 12, 8, 22, 32]
 
-/-- Cumulative shell sizes — should equal the magic ladder. -/
+/-- Cumulative shell sizes — should equal the magic ladder.
+    Uses `List.scanl` for O(n) (was O(n²) via foldl + ++). -/
 def bringCumulativeShells : List ℕ :=
-  bringShellSizes.foldl
-    (fun acc k =>
-      acc ++ [(acc.getLast?.getD 0) + k])
-    []
+  (bringShellSizes.scanl (· + ·) 0).tail
 
 /-! ## §2  Cumulative shell sizes match the magic ladder -/
 
@@ -315,13 +313,13 @@ theorem bringKnotsAtShell_subset_basis :
     framework derivation yet. -/
 def shellSizeAt (i : ℕ) : Option ℕ :=
   match i with
-  | 1 => some 2   -- T_{2,3} contribution
-  | 2 => some 6   -- T_{2,5} contribution
-  | 3 => some 12  -- T_{2,7} contribution
-  | 4 => some 8   -- T_{3,4} contribution (spin-orbit-shifted)
+  | 1 => some 2   -- T_{2,3} contribution (shell 1s)
+  | 2 => some 6   -- T_{2,3} contribution (shell 1p)
+  | 3 => some 12  -- T_{2,5} contribution (shell 1d)
+  | 4 => some 8   -- T_{2,5} + T_{3,4} combined (shell 1f, spin-orbit-shifted)
   | 5 => some 22  -- T_{2,7} contribution (shell 2s-2d)
   | 6 => some 32  -- T_{2,9} + T_{3,4} combined (shell 2f-3p)
-  | 7 => some 44  -- T_{2,9} + T_{3,5} combined (shell 3d-4s) -- n=126 DERIVED
+  | 7 => some 44  -- T_{2,9} + T_{3,5} combined (shell 3d-4s)  -- n=126 DERIVED
   | _ => none
 
 /-- **Cumulative shell sizes match the magic numbers.** -/

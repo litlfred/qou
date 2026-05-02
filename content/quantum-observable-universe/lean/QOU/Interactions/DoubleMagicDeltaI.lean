@@ -106,8 +106,8 @@ class DeltaIBoundConjecture where
 
 /-- The set of all (iZ, iN) pairs in the 7×7 grid. -/
 def allShellPairs : List (ℕ × ℕ) :=
-  ((List.range 7).map (· + 1)).flatMap fun iZ =>
-    ((List.range 7).map (· + 1)).map fun iN => (iZ, iN)
+  let idx := (List.range 7).map (· + 1)
+  idx.product idx
 
 /-- The set of (iZ, iN) pairs with |Δi| ≤ 1 — the
     LR-fusion-compatible band. -/

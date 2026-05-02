@@ -261,25 +261,18 @@ lemma decomp_two_eq_oneOne (d : List ℕ)
     (h : NonTrivialDecomposition 2 d) :
     d = [1, 1] := by
   obtain ⟨h_len, h_pos, h_sum⟩ := h
-  have h_bound : d.length ≤ d.sum := sum_ge_length_of_all_pos h_pos
-  -- length ≥ 2 (from h_len) and length ≤ sum = 2 (from h_bound + h_sum)
-  -- forces length = 2.
-  have h_len_eq : d.length = 2 := by omega
-  -- Case-split on d to extract [a, b].
-  match d, h_len_eq with
-  | [], _ => simp at h_len_eq
-  | [_], _ => simp at h_len_eq
-  | [a, b], _ =>
-    simp only [List.sum_cons, List.sum_nil, Nat.add_zero] at h_sum
-    have ha : 1 ≤ a := h_pos a (List.mem_cons_self a [b])
-    have hb : 1 ≤ b := h_pos b (by
-      show b ∈ [a, b]
-      exact List.mem_cons_of_mem a (List.mem_singleton.mpr rfl))
-    have : a = 1 ∧ b = 1 := by omega
-    obtain ⟨ha1, hb1⟩ := this
-    rw [ha1, hb1]
-  | _ :: _ :: _ :: _, _ =>
-    simp [List.length] at h_len_eq
+  -- length ≥ 2 + length ≤ sum = 2 forces length = 2.
+  have h_len_eq : d.length = 2 := by
+    have h_bound : d.length ≤ d.sum := sum_ge_length_of_all_pos h_pos
+    omega
+  -- Extract [a, b] via the length-2 destructor.
+  rcases List.length_eq_two.mp h_len_eq with ⟨a, b, rfl⟩
+  -- a, b ≥ 1 and a + b = 2 ⇒ a = b = 1.
+  have ha : 1 ≤ a := h_pos a (by simp)
+  have hb : 1 ≤ b := h_pos b (by simp)
+  simp only [List.sum_cons, List.sum_nil, Nat.add_zero] at h_sum
+  have : a = 1 ∧ b = 1 := by omega
+  rw [this.1, this.2]
 
 /-- **Typeclass (n = 2 binding axiom).** The single non-trivial axiom
     needed to discharge `IsKnownMagic 2 q`: at substrate `q`, the

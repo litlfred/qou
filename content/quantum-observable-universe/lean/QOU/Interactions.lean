@@ -1,20 +1,20 @@
+import QOU.Interactions.AlgebraicPrimality
 import QOU.Interactions.BetaReceptivity
 import QOU.Interactions.BorromeanUnique
+import QOU.Interactions.BringShellBinding
 import QOU.Interactions.CentralElement
 import QOU.Interactions.ConfinementLP
 import QOU.Interactions.ConfinementSDP
 import QOU.Interactions.DemandStability
 import QOU.Interactions.DerivedAtom
+import QOU.Interactions.DoubleMagicDeltaI
 import QOU.Interactions.GramIndefinite
+import QOU.Interactions.HeckeEnergyPositivity
 import QOU.Interactions.HeckeEngine
 import QOU.Interactions.LRFusion
+import QOU.Interactions.MagicLadderEquivalences
 import QOU.Interactions.NuclearOperatorRegimes
 import QOU.Interactions.NucleonNFWitness
-import QOU.Interactions.AlgebraicPrimality
-import QOU.Interactions.HeckeEnergyPositivity
-import QOU.Interactions.MagicLadderEquivalences
-import QOU.Interactions.BringShellBinding
-import QOU.Interactions.DoubleMagicDeltaI
 import QOU.Interactions.ProtonTrefoilSign
 import QOU.Interactions.TrefoilVanishing
 
