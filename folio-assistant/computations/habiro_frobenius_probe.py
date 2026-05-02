@@ -73,54 +73,85 @@ def evaluate_at_root(record_data: dict, p: int, *,
     and its complex value is exact up to machine epsilon).
 
     Uses 2p (not p) because u = q^{1/2}; q = ζ_p ⇒ u = ζ_{2p}.
+
+    Step-2 compatibility: also compute the **Galois norm**
+    N(Frob_p) = Σ_{k coprime to 2p} Frob_p evaluated at ζ_{2p}^k.
+    For Frob_p ∈ Z[ζ_{2p}] this norm is a rational integer; the
+    `galois_norm_integrality_residual` field measures how close the
+    computed sum is to the nearest integer (a necessary condition
+    for Frob_p to be a true cyclotomic-integer Frobenius value).
     """
     u = sp.symbols("u")
-    zeta_2p = primitive_root_of_unity_numeric(2 * p)
     coeffs = record_data["habiro_coefficients"]
 
-    # Truncation: (zeta_{2p}; zeta_{2p})_m = 0 once 2p divides some i ≤ m,
-    # i.e. m ≥ 2p. (More precisely the product hits zero whenever
-    # zeta_{2p}^i = 1, i.e. i is a multiple of 2p.) So m_max = 2p - 1.
-    truncate_at: int | None = None
-    total: complex = 0 + 0j
-    n_nonzero = 0
-
+    # Pre-parse all a_m coefficients into integer lists once.
+    a_m_int_lists: list[tuple[int, list[int]]] = []
     for c in coeffs:
         m = int(c["m"])
         if m >= 2 * p:
-            if truncate_at is None:
-                truncate_at = m
             break
-        # Evaluate a_m(zeta_{2p}) numerically.
         a_m_str = str(c["a_m"])
         a_m_expr = sp.sympify(a_m_str)
-        # a_m is a polynomial in u with integer coefficients; substitute
-        # numerically using sp.Poly to avoid sp.simplify on each term.
         try:
             poly = sp.Poly(a_m_expr, u)
             int_coeffs = [int(coef) for coef in poly.all_coeffs()]
-            # Horner's method
-            a_m_val: complex = 0 + 0j
-            for k in int_coeffs:
-                a_m_val = a_m_val * zeta_2p + k
         except (sp.PolynomialError, ValueError):
-            a_m_val = complex(sp.N(a_m_expr.subs(u, zeta_2p), digits))
-        poch = cyclotomic_pochhammer_numeric(zeta_2p, m)
-        contrib = a_m_val * poch
-        total += contrib
-        if abs(contrib) > 1e-12:
-            n_nonzero += 1
+            int_coeffs = []  # signal fallback
+        a_m_int_lists.append((m, int_coeffs))
+
+    truncate_at: int | None = (
+        2 * p if 2 * p <= len(coeffs) else None
+    )
+
+    def evaluate_at(u_val: complex) -> complex:
+        total: complex = 0 + 0j
+        for m, int_coeffs in a_m_int_lists:
+            if int_coeffs:
+                a_m_val: complex = 0 + 0j
+                for k in int_coeffs:
+                    a_m_val = a_m_val * u_val + k
+            else:
+                a_m_val = complex(
+                    sp.N(sp.sympify(coeffs[m]["a_m"]).subs(u, u_val), digits)
+                )
+            total += a_m_val * cyclotomic_pochhammer_numeric(u_val, m)
+        return total
+
+    zeta_2p = primitive_root_of_unity_numeric(2 * p)
+    frob_p_main = evaluate_at(zeta_2p)
+
+    # Galois orbit: {ζ_{2p}^k : gcd(k, 2p) = 1}, |orbit| = φ(2p).
+    from math import gcd
+    galois_orbit_ks = [k for k in range(1, 2 * p) if gcd(k, 2 * p) == 1]
+    galois_norm: complex = 0 + 0j
+    for k in galois_orbit_ks:
+        galois_norm += evaluate_at(zeta_2p ** k)
+
+    nearest_int = round(galois_norm.real)
+    integrality_residual = abs(galois_norm.real - nearest_int)
+    imag_residual = abs(galois_norm.imag)
+
+    n_nonzero = len(a_m_int_lists)
 
     return {
         "prime": p,
         "u_root": f"zeta_{2*p}",
         "frob_p_complex": {
-            "real": total.real,
-            "imag": total.imag,
+            "real": frob_p_main.real,
+            "imag": frob_p_main.imag,
         },
-        "abs_frob_p": abs(total),
+        "abs_frob_p": abs(frob_p_main),
         "pochhammer_truncates_at_m": truncate_at,
         "n_contributions": n_nonzero,
+        "galois_orbit_size": len(galois_orbit_ks),
+        "galois_norm_real": galois_norm.real,
+        "galois_norm_nearest_int": nearest_int,
+        "galois_norm_integrality_residual": integrality_residual,
+        "galois_norm_imag_residual": imag_residual,
+        "is_integral": (
+            integrality_residual < 1e-6 and imag_residual < 1e-6
+            and truncate_at is not None
+        ),
     }
 
 
@@ -149,9 +180,12 @@ def main() -> int:
         per_prime: list[dict[str, Any]] = []
         for p in PRIMES:
             row = evaluate_at_root(record_data, p)
+            integrality = "✓" if row["is_integral"] else " "
             print(f"    p = {p:>3}  m_trunc = "
                   f"{row['pochhammer_truncates_at_m']}  "
-                  f"|Frob| = {row['abs_frob_p']:.6f}")
+                  f"|Frob| = {row['abs_frob_p']:>8.4f}  "
+                  f"N(Frob) ≈ {row['galois_norm_nearest_int']:>+6d}  "
+                  f"residual = {row['galois_norm_integrality_residual']:.2e} {integrality}")
             per_prime.append(row)
         atoms_out.append({
             "atom_label": label,
@@ -192,8 +226,14 @@ def main() -> int:
             ),
         },
         "next_steps": [
-            "Step 2: verify Frobenius commutes with norms (finite-place "
-            "reciprocity) and satisfies Weil/Deligne at archimedean place.",
+            "Step 2 (in progress): Galois-norm integrality is the first "
+            "finite-place reciprocity check; this witness records "
+            "N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k). For "
+            "Frob_p ∈ Z[ζ_{2p}] this norm is a rational integer; the "
+            "`galois_norm_integrality_residual` field flags any deviation. "
+            "Remaining step-2 work: cross-prime compatibility "
+            "(Frob_p restricted to subfields agrees with Frob_q for "
+            "q | p−1) and Weil/Deligne archimedean behaviour.",
             "Step 3: construct the explicit MotivicGaloisCharacter "
             "instance, discharging the axiom class for the QOU substrate.",
         ],

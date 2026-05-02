@@ -1,6 +1,6 @@
 {
   "computation": "habiro-frobenius-probe",
-  "computedAt": "2026-05-02T15:18:24.340420+00:00",
+  "computedAt": "2026-05-02T17:43:12.923175+00:00",
   "description": "R6 step-1 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. This makes the Habiro → Frob_p map explicit and tabulated, which is the first concrete step toward the Habiro → MotivicGaloisCharacter instance (audit GAP 5b).",
   "reference_blocks": [
     "def:motivic-galois-character",
@@ -32,7 +32,13 @@
           },
           "abs_frob_p": 8.000000000000455,
           "pochhammer_truncates_at_m": 4,
-          "n_contributions": 4
+          "n_contributions": 4,
+          "galois_orbit_size": 2,
+          "galois_norm_real": -16.000000000003638,
+          "galois_norm_nearest_int": -16,
+          "galois_norm_integrality_residual": 3.637978807091713e-12,
+          "galois_norm_imag_residual": 8.640199666842818e-12,
+          "is_integral": true
         },
         {
           "prime": 3,
@@ -43,7 +49,13 @@
           },
           "abs_frob_p": 1.000000000001819,
           "pochhammer_truncates_at_m": 6,
-          "n_contributions": 6
+          "n_contributions": 6,
+          "galois_orbit_size": 2,
+          "galois_norm_real": -2.0000000000436557,
+          "galois_norm_nearest_int": -2,
+          "galois_norm_integrality_residual": 4.3655745685100555e-11,
+          "galois_norm_imag_residual": 8.731149137020111e-11,
+          "is_integral": true
         },
         {
           "prime": 5,
@@ -53,8 +65,14 @@
             "imag": -1.312372432948905e-11
           },
           "abs_frob_p": 0.6180339887441164,
-          "pochhammer_truncates_at_m": null,
-          "n_contributions": 10
+          "pochhammer_truncates_at_m": 10,
+          "n_contributions": 10,
+          "galois_orbit_size": 4,
+          "galois_norm_real": 1.9999999999977263,
+          "galois_norm_nearest_int": 2,
+          "galois_norm_integrality_residual": 2.2737367544323206e-12,
+          "galois_norm_imag_residual": 3.524291969370097e-12,
+          "is_integral": true
         },
         {
           "prime": 7,
@@ -65,7 +83,13 @@
           },
           "abs_frob_p": 2.2205045280375053,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 10
+          "n_contributions": 10,
+          "galois_orbit_size": 6,
+          "galois_norm_real": -7.999999999997497,
+          "galois_norm_nearest_int": -8,
+          "galois_norm_integrality_residual": 2.502886786714953e-12,
+          "galois_norm_imag_residual": 7.474909580196254e-12,
+          "is_integral": false
         },
         {
           "prime": 11,
@@ -76,7 +100,13 @@
           },
           "abs_frob_p": 0.3391607251316929,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 10
+          "n_contributions": 10,
+          "galois_orbit_size": 10,
+          "galois_norm_real": 13.999999999960684,
+          "galois_norm_nearest_int": 14,
+          "galois_norm_integrality_residual": 3.9316105926445744e-11,
+          "galois_norm_imag_residual": 1.0910383707596338e-11,
+          "is_integral": false
         },
         {
           "prime": 13,
@@ -87,7 +117,13 @@
           },
           "abs_frob_p": 0.4299946727690688,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 10
+          "n_contributions": 10,
+          "galois_orbit_size": 12,
+          "galois_norm_real": 4.99999999999318,
+          "galois_norm_nearest_int": 5,
+          "galois_norm_integrality_residual": 6.820322084877262e-12,
+          "galois_norm_imag_residual": 2.2940760402434535e-11,
+          "is_integral": false
         }
       ]
     },
@@ -106,7 +142,13 @@
           },
           "abs_frob_p": 8.000000000000227,
           "pochhammer_truncates_at_m": 4,
-          "n_contributions": 4
+          "n_contributions": 4,
+          "galois_orbit_size": 2,
+          "galois_norm_real": -16.00000000000159,
+          "galois_norm_nearest_int": -16,
+          "galois_norm_integrality_residual": 1.5916157281026244e-12,
+          "galois_norm_imag_residual": 2.5011104298755527e-12,
+          "is_integral": true
         },
         {
           "prime": 3,
@@ -117,7 +159,13 @@
           },
           "abs_frob_p": 2.6457513110660895,
           "pochhammer_truncates_at_m": 6,
-          "n_contributions": 6
+          "n_contributions": 6,
+          "galois_orbit_size": 2,
+          "galois_norm_real": 3.9999999999918145,
+          "galois_norm_nearest_int": 4,
+          "galois_norm_integrality_residual": 8.185452315956354e-12,
+          "galois_norm_imag_residual": 1.8189894035458565e-11,
+          "is_integral": true
         },
         {
           "prime": 5,
@@ -128,7 +176,13 @@
           },
           "abs_frob_p": 0.23606797750184713,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 9
+          "n_contributions": 9,
+          "galois_orbit_size": 4,
+          "galois_norm_real": -3.000000000001016,
+          "galois_norm_nearest_int": -3,
+          "galois_norm_integrality_residual": 1.0160761121369433e-12,
+          "galois_norm_imag_residual": 7.030820370346191e-12,
+          "is_integral": false
         },
         {
           "prime": 7,
@@ -139,7 +193,13 @@
           },
           "abs_frob_p": 1.4734025888487976,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 9
+          "n_contributions": 9,
+          "galois_orbit_size": 6,
+          "galois_norm_real": -0.9999999999989733,
+          "galois_norm_nearest_int": -1,
+          "galois_norm_integrality_residual": 1.0267342531733448e-12,
+          "galois_norm_imag_residual": 4.481748305806832e-12,
+          "is_integral": false
         },
         {
           "prime": 11,
@@ -150,7 +210,13 @@
           },
           "abs_frob_p": 2.522807068181727,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 9
+          "n_contributions": 9,
+          "galois_orbit_size": 10,
+          "galois_norm_real": 3.0000000000034612,
+          "galois_norm_nearest_int": 3,
+          "galois_norm_integrality_residual": 3.461231301571388e-12,
+          "galois_norm_imag_residual": 7.368328169832239e-12,
+          "is_integral": false
         },
         {
           "prime": 13,
@@ -161,7 +227,13 @@
           },
           "abs_frob_p": 3.4895812631661305,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 9
+          "n_contributions": 9,
+          "galois_orbit_size": 12,
+          "galois_norm_real": 5.0000000000050004,
+          "galois_norm_nearest_int": 5,
+          "galois_norm_integrality_residual": 5.000444502911705e-12,
+          "galois_norm_imag_residual": 1.3604672943756668e-11,
+          "is_integral": false
         }
       ]
     },
@@ -180,7 +252,13 @@
           },
           "abs_frob_p": 96.0000000000291,
           "pochhammer_truncates_at_m": 4,
-          "n_contributions": 4
+          "n_contributions": 4,
+          "galois_orbit_size": 2,
+          "galois_norm_real": 191.99999999906868,
+          "galois_norm_nearest_int": 192,
+          "galois_norm_integrality_residual": 9.313225746154785e-10,
+          "galois_norm_imag_residual": 1.2223608791828156e-09,
+          "is_integral": true
         },
         {
           "prime": 3,
@@ -191,7 +269,13 @@
           },
           "abs_frob_p": 4.582575678517561,
           "pochhammer_truncates_at_m": 6,
-          "n_contributions": 6
+          "n_contributions": 6,
+          "galois_orbit_size": 2,
+          "galois_norm_real": -9.000000074505806,
+          "galois_norm_nearest_int": -9,
+          "galois_norm_integrality_residual": 7.450580596923828e-08,
+          "galois_norm_imag_residual": 1.3224780559539795e-07,
+          "is_integral": true
         },
         {
           "prime": 5,
@@ -202,7 +286,13 @@
           },
           "abs_frob_p": 1.4415964235240932,
           "pochhammer_truncates_at_m": 10,
-          "n_contributions": 10
+          "n_contributions": 10,
+          "galois_orbit_size": 4,
+          "galois_norm_real": -60.999999875202775,
+          "galois_norm_nearest_int": -61,
+          "galois_norm_integrality_residual": 1.2479722499847412e-07,
+          "galois_norm_imag_residual": 1.341104507446289e-07,
+          "is_integral": true
         },
         {
           "prime": 7,
@@ -212,8 +302,14 @@
             "imag": -38.55203022495425
           },
           "abs_frob_p": 38.73665425398044,
-          "pochhammer_truncates_at_m": null,
-          "n_contributions": 14
+          "pochhammer_truncates_at_m": 14,
+          "n_contributions": 14,
+          "galois_orbit_size": 6,
+          "galois_norm_real": 22.999999996981842,
+          "galois_norm_nearest_int": 23,
+          "galois_norm_integrality_residual": 3.0181581678334624e-09,
+          "galois_norm_imag_residual": 4.381001872388879e-08,
+          "is_integral": true
         },
         {
           "prime": 11,
@@ -224,7 +320,13 @@
           },
           "abs_frob_p": 20.52705767673089,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 14
+          "n_contributions": 14,
+          "galois_orbit_size": 10,
+          "galois_norm_real": -756.0000000412335,
+          "galois_norm_nearest_int": -756,
+          "galois_norm_integrality_residual": 4.1233533920603804e-08,
+          "galois_norm_imag_residual": 3.278483973190305e-08,
+          "is_integral": false
         },
         {
           "prime": 13,
@@ -235,7 +337,13 @@
           },
           "abs_frob_p": 2.957935740416133,
           "pochhammer_truncates_at_m": null,
-          "n_contributions": 14
+          "n_contributions": 14,
+          "galois_orbit_size": 12,
+          "galois_norm_real": -525.0000000050389,
+          "galois_norm_nearest_int": -525,
+          "galois_norm_integrality_residual": 5.038941708335187e-09,
+          "galois_norm_imag_residual": 6.731954727001721e-08,
+          "is_integral": false
         }
       ]
     }
@@ -246,7 +354,7 @@
     "atoms_with_full_truncation": 0
   },
   "next_steps": [
-    "Step 2: verify Frobenius commutes with norms (finite-place reciprocity) and satisfies Weil/Deligne at archimedean place.",
+    "Step 2 (in progress): Galois-norm integrality is the first finite-place reciprocity check; this witness records N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k). For Frob_p ∈ Z[ζ_{2p}] this norm is a rational integer; the `galois_norm_integrality_residual` field flags any deviation. Remaining step-2 work: cross-prime compatibility (Frob_p restricted to subfields agrees with Frob_q for q | p−1) and Weil/Deligne archimedean behaviour.",
     "Step 3: construct the explicit MotivicGaloisCharacter instance, discharging the axiom class for the QOU substrate."
   ]
 }
