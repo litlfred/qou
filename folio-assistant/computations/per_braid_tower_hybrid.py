@@ -149,107 +149,108 @@ def per_braid_mass_hybrid(Z, N):
     }
 
 
-print("=" * 88)
-print("Per-braid HYBRID (q-Hecke descended + q=1 MN tower) vs AME")
-print("=" * 88)
-print(f"q_0 = {q0}")
-print(f"m_e = {M_E_MEV} MeV")
-print()
-
-ATOMS = [
-    ("D", 1, 1),
-    ("3He", 2, 1),
-    ("3H", 1, 2),
-    ("4He", 2, 2),
-    ("6Li", 3, 3),
-    ("7Li", 3, 4),
-    ("9Be", 4, 5),
-    ("12C", 6, 6),
-    ("16O", 8, 8),
-    ("40Ca", 20, 20),
-]
-# AME values for the new atoms
-AME_MASS_MEV.update({
-    "6Li":  5603.05182,
-    "7Li":  6535.36573,
-    "9Be":  8392.74912,
-})
-# 12C/16O/40Ca deferred — q-Hecke descended at A=12+ requires
-# matrix products through partition dims ~6500+; needs Rust
-# extension chi_q_atomic (P2.2c-12C).
-
-print(f"  {'Atom':>5} {'A':>3} {'desc(q-Hecke)':>14} {'tower (q=1)':>12} {'total':>14} {'AME (MeV)':>12} {'cal/m_e':>12}")
-print("  " + "-" * 90)
-
-results = []
-ratios = []
-for name, Z, N in ATOMS:
-    t0 = time.time()
-    out = per_braid_mass_hybrid(Z, N)
-    t = time.time() - t0
-    total_f = float(out["total"])
-    ame = AME_MASS_MEV[name]
-    cal_constant = ame / total_f
-    cal_over_me = cal_constant / M_E_MEV
-    ratios.append(cal_over_me)
-    print(
-        f"  {name:>5} {Z+N:>3} {float(out['desc_q_hecke']):>14.6e} "
-        f"{float(out['single'] + out['cross']):>12.4e} "
-        f"{total_f:>14.4e} {ame:>12.4f} {cal_over_me:>12.8f}  ({t:.1f}s)"
-    )
-    results.append({
-        "atom": name, "Z": Z, "N": N, "A": Z + N,
-        "descended_q_hecke": str(out["desc_q_hecke"]),
-        "single_tower_q1": str(out["single"]) if not mpmath.isinf(out["single"]) else "inf",
-        "cross_tower_q1": str(out["cross"]) if not mpmath.isinf(out["cross"]) else "inf",
-        "total": total_f,
-        "ame_mass_mev": ame,
-        "cal_over_me": cal_over_me,
-        "time_seconds": t,
-    })
-
-mean_ratio = sum(ratios) / len(ratios)
-spread = (max(ratios) - min(ratios)) / mean_ratio * 100
-print()
-print(f"  Mean cal/m_e = {mean_ratio:.6f} (spread {spread:.4f}%)")
-
-he3 = next((r for r in results if r["atom"] == "3He"), None)
-h3 = next((r for r in results if r["atom"] == "3H"), None)
-splitting_info = None
-if he3 and h3:
-    diff = abs(he3["total"] - h3["total"])
-    rel = diff / max(he3["total"], h3["total"])
-    physical_diff = abs(he3["ame_mass_mev"] - h3["ame_mass_mev"])
-    cal_diff = abs(he3["cal_over_me"] - h3["cal_over_me"])
+if __name__ == "__main__":
+    print("=" * 88)
+    print("Per-braid HYBRID (q-Hecke descended + q=1 MN tower) vs AME")
+    print("=" * 88)
+    print(f"q_0 = {q0}")
+    print(f"m_e = {M_E_MEV} MeV")
     print()
-    print(f"  3He vs 3H per-braid totals:")
-    print(f"    3He: {he3['total']:.4f}")
-    print(f"    3H : {h3['total']:.4f}")
-    print(f"    diff: {diff:.6e}  ({rel*100:.6e}% relative)")
-    print(f"    physical 3H - 3He = {physical_diff:.4f} MeV (AME)")
-    print(f"    cal/m_e diff: {cal_diff:.6e}")
-    splitting_info = {
-        "diff": diff, "rel": rel, "physical_mev": physical_diff,
-        "cal_diff": cal_diff,
-    }
 
-witness = {
-    "audit": "Per-braid HYBRID (q-Hecke descended + q=1 MN tower) vs AME",
-    "generated": datetime.now(timezone.utc).isoformat(),
-    "q_0": str(q0),
-    "m_e_mev": M_E_MEV,
-    "atoms": results,
-    "mean_cal_over_me": mean_ratio,
-    "spread_percent": spread,
-    "splitting": splitting_info,
-    "interpretation": (
-        "Hybrid per-braid tower: q-Hecke (with per-crossing (c, d)) "
-        "for the descended level-0 trace; q=1 MN for the level-1/2 "
-        "Φ_q tower terms. Goal: combine isobar splitting (q-Hecke "
-        "descended) with linear-in-A scaling (q=1 MN tower)."
-    ),
-}
-out_path = Path(__file__).parent.parent.parent / "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json"
-out_path.write_text(json.dumps(witness, indent=2, default=str))
-print()
-print(f"Witness: {out_path.relative_to(Path(__file__).parent.parent.parent)}")
+    ATOMS = [
+        ("D", 1, 1),
+        ("3He", 2, 1),
+        ("3H", 1, 2),
+        ("4He", 2, 2),
+        ("6Li", 3, 3),
+        ("7Li", 3, 4),
+        ("9Be", 4, 5),
+        ("12C", 6, 6),
+        ("16O", 8, 8),
+        ("40Ca", 20, 20),
+    ]
+    # AME values for the new atoms
+    AME_MASS_MEV.update({
+        "6Li":  5603.05182,
+        "7Li":  6535.36573,
+        "9Be":  8392.74912,
+    })
+    # 12C/16O/40Ca deferred — q-Hecke descended at A=12+ requires
+    # matrix products through partition dims ~6500+; needs Rust
+    # extension chi_q_atomic (P2.2c-12C).
+
+    print(f"  {'Atom':>5} {'A':>3} {'desc(q-Hecke)':>14} {'tower (q=1)':>12} {'total':>14} {'AME (MeV)':>12} {'cal/m_e':>12}")
+    print("  " + "-" * 90)
+
+    results = []
+    ratios = []
+    for name, Z, N in ATOMS:
+        t0 = time.time()
+        out = per_braid_mass_hybrid(Z, N)
+        t = time.time() - t0
+        total_f = float(out["total"])
+        ame = AME_MASS_MEV[name]
+        cal_constant = ame / total_f
+        cal_over_me = cal_constant / M_E_MEV
+        ratios.append(cal_over_me)
+        print(
+            f"  {name:>5} {Z+N:>3} {float(out['desc_q_hecke']):>14.6e} "
+            f"{float(out['single'] + out['cross']):>12.4e} "
+            f"{total_f:>14.4e} {ame:>12.4f} {cal_over_me:>12.8f}  ({t:.1f}s)"
+        )
+        results.append({
+            "atom": name, "Z": Z, "N": N, "A": Z + N,
+            "descended_q_hecke": str(out["desc_q_hecke"]),
+            "single_tower_q1": str(out["single"]) if not mpmath.isinf(out["single"]) else "inf",
+            "cross_tower_q1": str(out["cross"]) if not mpmath.isinf(out["cross"]) else "inf",
+            "total": total_f,
+            "ame_mass_mev": ame,
+            "cal_over_me": cal_over_me,
+            "time_seconds": t,
+        })
+
+    mean_ratio = sum(ratios) / len(ratios)
+    spread = (max(ratios) - min(ratios)) / mean_ratio * 100
+    print()
+    print(f"  Mean cal/m_e = {mean_ratio:.6f} (spread {spread:.4f}%)")
+
+    he3 = next((r for r in results if r["atom"] == "3He"), None)
+    h3 = next((r for r in results if r["atom"] == "3H"), None)
+    splitting_info = None
+    if he3 and h3:
+        diff = abs(he3["total"] - h3["total"])
+        rel = diff / max(he3["total"], h3["total"])
+        physical_diff = abs(he3["ame_mass_mev"] - h3["ame_mass_mev"])
+        cal_diff = abs(he3["cal_over_me"] - h3["cal_over_me"])
+        print()
+        print(f"  3He vs 3H per-braid totals:")
+        print(f"    3He: {he3['total']:.4f}")
+        print(f"    3H : {h3['total']:.4f}")
+        print(f"    diff: {diff:.6e}  ({rel*100:.6e}% relative)")
+        print(f"    physical 3H - 3He = {physical_diff:.4f} MeV (AME)")
+        print(f"    cal/m_e diff: {cal_diff:.6e}")
+        splitting_info = {
+            "diff": diff, "rel": rel, "physical_mev": physical_diff,
+            "cal_diff": cal_diff,
+        }
+
+    witness = {
+        "audit": "Per-braid HYBRID (q-Hecke descended + q=1 MN tower) vs AME",
+        "generated": datetime.now(timezone.utc).isoformat(),
+        "q_0": str(q0),
+        "m_e_mev": M_E_MEV,
+        "atoms": results,
+        "mean_cal_over_me": mean_ratio,
+        "spread_percent": spread,
+        "splitting": splitting_info,
+        "interpretation": (
+            "Hybrid per-braid tower: q-Hecke (with per-crossing (c, d)) "
+            "for the descended level-0 trace; q=1 MN for the level-1/2 "
+            "Φ_q tower terms. Goal: combine isobar splitting (q-Hecke "
+            "descended) with linear-in-A scaling (q=1 MN tower)."
+        ),
+    }
+    out_path = Path(__file__).parent.parent.parent / "docs/audits/2026-05-01-per-braid-hybrid-vs-ame.witness.json"
+    out_path.write_text(json.dumps(witness, indent=2, default=str))
+    print()
+    print(f"Witness: {out_path.relative_to(Path(__file__).parent.parent.parent)}")
