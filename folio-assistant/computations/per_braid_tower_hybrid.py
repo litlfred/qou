@@ -64,6 +64,27 @@ def _safe_phi(z, q=q0, qi=qi0, max_k=200):
     return product
 
 
+# P2.5/B.2 — Cache the 5 sub-braid traces (proton, neutron, pp, nn, pn).
+# These are atom-independent: the same five traces recur across every
+# atom. Computing once saves time across the per-atom loop.
+_SUB_BRAID_CACHE = {}
+
+
+def _cached_sub_braid_trace(Z_sub, N_sub, include_inter):
+    """Return |tr_M(sub-braid)| for a (Z_sub, N_sub) sub-braid via q=1 MN.
+    Cached across calls."""
+    key = (Z_sub, N_sub, include_inter)
+    if key in _SUB_BRAID_CACHE:
+        return _SUB_BRAID_CACHE[key]
+    if Z_sub + N_sub == 0:
+        v = mpmath.mpf(0)
+    else:
+        tr, _, _ = markov_trace_mpmath(Z_sub, N_sub, include_inter=include_inter)
+        v = abs(tr)
+    _SUB_BRAID_CACHE[key] = v
+    return v
+
+
 def per_braid_mass_hybrid(Z, N):
     """Hybrid per-braid mass tower.
 
@@ -72,27 +93,18 @@ def per_braid_mass_hybrid(Z, N):
     """
     A = Z + N
 
-    # Level 0: q-Hecke descended (splits isobars)
-    # dim_cap: skip partitions with dim_λ > 5000 to keep compute
-    # tractable in Python. Truncation drops very-high-dim
-    # contributions; per witness analysis these contribute much
-    # less than the smaller partitions.
+    # Level 0: q-Hecke descended (splits isobars).
     desc_q_hecke, _ = markov_trace_q_hecke_atomic(Z, N, include_inter=True, dim_cap=5000)
     desc = abs(desc_q_hecke)
 
-    # Level 1: per-nucleon traces via q=1 MN
-    tr_p_mn, _, _ = markov_trace_mpmath(1, 0, include_inter=False) if Z > 0 else (mpmath.mpf(0), [], ())
-    tr_n_mn, _, _ = markov_trace_mpmath(0, 1, include_inter=False) if N > 0 else (mpmath.mpf(0), [], ())
-    tr_p = abs(tr_p_mn)
-    tr_n = abs(tr_n_mn)
+    # Level 1: per-nucleon traces (CACHED).
+    tr_p = _cached_sub_braid_trace(1, 0, False) if Z > 0 else mpmath.mpf(0)
+    tr_n = _cached_sub_braid_trace(0, 1, False) if N > 0 else mpmath.mpf(0)
 
-    # Level 2: per-pair traces via q=1 MN
-    tr_pp_mn, _, _ = markov_trace_mpmath(2, 0, include_inter=True) if Z >= 2 else (mpmath.mpf(0), [], ())
-    tr_nn_mn, _, _ = markov_trace_mpmath(0, 2, include_inter=True) if N >= 2 else (mpmath.mpf(0), [], ())
-    tr_pn_mn, _, _ = markov_trace_mpmath(1, 1, include_inter=True) if Z >= 1 and N >= 1 else (mpmath.mpf(0), [], ())
-    tr_pp = abs(tr_pp_mn)
-    tr_nn = abs(tr_nn_mn)
-    tr_pn = abs(tr_pn_mn)
+    # Level 2: per-pair traces (CACHED).
+    tr_pp = _cached_sub_braid_trace(2, 0, True) if Z >= 2 else mpmath.mpf(0)
+    tr_nn = _cached_sub_braid_trace(0, 2, True) if N >= 2 else mpmath.mpf(0)
+    tr_pn = _cached_sub_braid_trace(1, 1, True) if Z >= 1 and N >= 1 else mpmath.mpf(0)
 
     # Single tower (q=1 MN)
     single = mpmath.mpf(0)
