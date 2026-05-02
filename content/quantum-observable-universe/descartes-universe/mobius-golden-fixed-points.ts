@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mobius-golden-fixed-points",
   title:
-    "Fixed points of the baryon integration-limit transformation are $1/\\varphi$ and $-\\varphi$",
+    "Fixed-point quartet of the baryon integration-limit Möbius pair: $\\{1/\\varphi, -\\varphi, \\varphi, -1/\\varphi\\}$",
   tags: [
     "mobius-transformation",
     "golden-ratio",
@@ -11,6 +11,8 @@ export default proposition({
     "color-tube",
     "binomial",
     "fixed-point",
+    "bar-involution",
+    "skew-symmetry",
   ],
   lean: { ref: "qou:QOU.Descartes.mobius_golden_fixed_points",
     validation: "not_checked",

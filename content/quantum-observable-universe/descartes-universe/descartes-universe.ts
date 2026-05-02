@@ -332,6 +332,7 @@ export default chapter({
         "baryon-period-conjecture",
         "baryon-integration-limit",
         "mobius-golden-fixed-points",
+        "golden-skew-dual-node",
         "mobius-limit-from-thimble",
         // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
         "sw-period-thimble-equivalence",
