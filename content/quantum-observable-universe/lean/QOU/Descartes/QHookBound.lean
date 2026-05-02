@@ -525,6 +525,81 @@ instance qFactRatioBound_two (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
   rw [div_le_div_iff (by positivity) (by positivity)]
   nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1), hq_pos, sq_nonneg q]
 
+/-- **Default instance for `k = 3`** — proved via direct nlinarith.
+
+    Setting `s := q + q⁻¹`, the q-factorial expansion gives:
+    - `qFactReal q 3 = q³ + 2q + 2q⁻¹ + q⁻³ = s³ - s` (using
+      `q³ + q⁻³ = s³ - 3s` and adding `2s`).
+    - LHS: `|qFactReal q 3 / 6 - 1| = (s³ - s - 6) / 6` (non-neg since
+      `s ≥ 2` by AM-GM and `s³ - s - 6 = (s-2)(s² + 2s + 3) ≥ 0`).
+    - RHS: `(q - q⁻¹)² · 3 · 4 · 7 / 36 = 7(s² - 4) / 3`
+      (using `(q - q⁻¹)² = s² - 4`).
+    - The cubic inequality `(s - 2)(s² + 2s + 3) / 6 ≤ 7(s² - 4) / 3`
+      cross-multiplies to `s³ - 14s² - s + 50 ≤ 0`, which factors as
+      `(s - 2)(s² - 12s - 25)`. For `s ∈ [2, 13/6]` (the image of
+      `q ∈ (1, 3/2)` under `q ↦ q + 1/q`), `(s - 2) ≥ 0` and
+      `s² - 12s - 25 ≤ 0` (the larger root `6 + √61 ≈ 13.81`
+      lies far above `13/6 ≈ 2.17`).
+
+    The bracket `s ≤ 13/6` follows from
+    `(q - 3/2)(q - 2/3) ≤ 0 ⟹ 6q² - 13q + 6 ≤ 0 ⟹ q + 1/q ≤ 13/6`. -/
+instance qFactRatioBound_three (q : ℝ) (hq : q > 1) (hq2 : q < 2) :
+    QFactRatioBound q hq hq2 3 := by
+  refine ⟨?_⟩
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_pos : q > 0 := by linarith
+  have hq_ne : q ≠ 0 := ne_of_gt hq_pos
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hq_inv_lt : q⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos hq_pos]
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  have h_diff_ne : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+  have h_qq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq_ne
+  -- qFactReal q 3 = [1]_q · [2]_q · [3]_q expands to q³ + 2q + 2q⁻¹ + q⁻³
+  have h_qfact : qFactReal q 3 = q^3 + 2*q + 2*q⁻¹ + (q⁻¹)^3 := by
+    unfold qFactReal
+    simp [Finset.prod_range_succ]
+    unfold qIntReal
+    rw [if_neg hq_ne_one]
+    field_simp
+    ring
+  rw [h_qfact]
+  have h3fact : ((Nat.factorial 3 : ℕ) : ℝ) = 6 := by norm_num
+  rw [h3fact]
+  -- AM-GM: q + q⁻¹ ≥ 2
+  have h_amgm : q + q⁻¹ ≥ 2 := by
+    have h_id : q + q⁻¹ - 2 = (q - 1)^2 / q := by field_simp; ring
+    nlinarith [sq_nonneg (q - 1), hq_pos, h_id]
+  -- LHS ≥ 0
+  have h_lhs_nonneg : (q^3 + 2*q + 2*q⁻¹ + (q⁻¹)^3) / 6 - 1 ≥ 0 := by
+    nlinarith [h_amgm, h_qq, sq_nonneg (q - q⁻¹), sq_nonneg (q + q⁻¹ - 2),
+               sq_nonneg (q*q - 1), sq_nonneg (q⁻¹ * q⁻¹ - 1),
+               hq_pos, hq_inv_pos]
+  rw [abs_of_nonneg h_lhs_nonneg]
+  -- Bracket on q + q⁻¹: ≤ 13/6 for q ∈ (1, 3/2)
+  have h_sum_le : q + q⁻¹ ≤ 13/6 := by
+    have h_step : (q - 3/2) * (q - 2/3) ≤ 0 := by
+      have h1 : q ≤ 3/2 := le_of_lt hq2
+      have h2 : q ≥ 2/3 := by linarith
+      nlinarith
+    have h_inv_eq : q + q⁻¹ = (q^2 + 1) / q := by field_simp; ring
+    rw [h_inv_eq]
+    rw [div_le_iff hq_pos]
+    nlinarith [h_step, hq_pos]
+  -- Cast (3 : ℕ) → (3 : ℝ)
+  have hcoerce3 : ((3 : ℕ) : ℝ) = 3 := by norm_num
+  rw [hcoerce3]
+  -- Final cubic inequality: (q³ + 2q + 2q⁻¹ + q⁻³)/6 - 1 ≤ (q-q⁻¹)² · 3 · 4 · 7 / 36
+  -- Setting s = q + q⁻¹: (s³ - s)/6 - 1 ≤ 7(s² - 4)/3
+  -- i.e. s³ - 14s² - s + 50 ≤ 0 = (s-2)(s² - 12s - 25)
+  -- with (s - 2) ≥ 0 and (s² - 12s - 25) ≤ 0 on s ∈ [2, 13/6].
+  -- Hint product (s - 2)(13/6 - s) ≥ 0 captures the bracketing.
+  nlinarith [h_amgm, h_sum_le, h_qq,
+             sq_nonneg (q + q⁻¹ - 2), sq_nonneg (q + q⁻¹ - 13/6),
+             mul_nonneg (by linarith : q + q⁻¹ - 2 ≥ 0)
+                        (by linarith : (13/6 : ℝ) - (q + q⁻¹) ≥ 0),
+             sq_nonneg (q + q⁻¹), sq_nonneg (q - q⁻¹),
+             hq_pos, hq_inv_pos]
+
 /-- Per-instance form. -/
 theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) [hi : QFactRatioBound q hq hq2 k] :
