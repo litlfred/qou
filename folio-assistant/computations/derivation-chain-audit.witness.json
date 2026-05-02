@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T11:33:13.146718+00:00",
-  "commitSha": "cd64342306f1b49bd20dfde857d9b7d9044f1cb1",
+  "computedAt": "2026-05-02T20:01:04.190032+00:00",
+  "commitSha": "713e990ef9f13307b3702a9f9e634ea190dfff5a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1467,6 +1467,7 @@
         "electron-proton-skein-weight.witness.json",
         "end-to-end-halflife.witness.json",
         "entanglement-orders.witness.json",
+        "ew-higgs-sdp-probe.witness.json",
         "exact-binding-per-operation.witness.json",
         "explicit-alpha-k-h3.witness.json",
         "explore-1ppb-items-1-and-2.witness.json",
