@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Habiro interpolate cross-validator — atomic-poly vs. interpolated
 numerical agreement at q_0.

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Paper 6+1-term mass formula via SHADOW-PRICE DECOMPOSITION.
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 R8 — Numerical evidence for the uniform Δ_max bound on the jet tower.
 

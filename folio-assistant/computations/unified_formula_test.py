@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Test the paper's UNIFIED mass formula (knot-mass-formula-unified.md)
 on light isotopes D, T, ³He, ⁴He with all three Frobenius

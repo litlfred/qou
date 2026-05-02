@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """Audit `atomic-tr-m-wenzl-bridge.witness.json` for per-atom braid bug.
 
 The wenzl-bridge witness on main records τ_M values for electron,

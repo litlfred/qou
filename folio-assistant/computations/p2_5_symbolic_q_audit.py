@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 P2.5 audit: scan every witness-emitting Python script under
 `folio-assistant/computations/` and triage each as
