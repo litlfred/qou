@@ -47,9 +47,9 @@ picture ([`prop:torus-knot-shell-binding`](#prop:torus-knot-shell-binding)):
 
 | LR-fusion structure | Empirical | Categorical compatibility |
 |---|:-:|:-:|
-| Same shell ($\Delta i = 0$, $\lambda_Z = \lambda_N$) | observed (5 cases) | ✓ symmetric LR-tensor |
-| Adjacent shells ($\Delta i = 1$) | observed (4 cases) | ✓ one-step braid extension |
-| Skip-shell ($\Delta i \geq 2$) | **never** | LR-fusion shattered |
+| Same shell ($\Delta i = 0$, $\lambda_Z = \lambda_N$) | observed (5 cases) | yes — symmetric LR-tensor |
+| Adjacent shells ($\Delta i = 1$) | observed (4 cases) | yes — one-step braid extension |
+| Skip-shell ($\Delta i \geq 2$) | **never** | no — LR-fusion shattered |
 
 **Conjectural mechanism:** when $\lambda_Z$ is a Bring shell-$i$
 diagram and $\lambda_N$ is a Bring shell-$j$ diagram, the
@@ -58,12 +58,12 @@ $j$:
 
 - $i = j$: $V_\lambda \otimes V_\lambda$ has a dominant
   self-conjugate component $\lambda_A$ matching the doubled
-  diagram. ✓
+  diagram (compatible).
 - $j = i + 1$: $V_{\lambda_Z} \otimes V_{\lambda_N}$ has a dominant
-  component obtained by "extending $\lambda_Z$ by the new
-  shell-$(i+1)$ cells of $\lambda_N$." ✓
+  component obtained by extending $\lambda_Z$ by the new
+  shell-$(i+1)$ cells of $\lambda_N$ (compatible).
 - $j \geq i + 2$: the LR-tensor has multiple competing
-  components, none dominant, no rank-1 collapse. ✗
+  components, none dominant, no rank-1 collapse (incompatible).
 
 The $\Delta i \leq 1$ rule is therefore **the LR-fusion
 compatibility constraint** between Bring shells.

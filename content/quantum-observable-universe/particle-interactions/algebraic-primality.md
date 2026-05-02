@@ -21,7 +21,7 @@ $$
   \qquad k \geq 2,\;\; n_i \geq 1,
 $$
 
-*we have*
+*the kernel obstruction*
 
 $$
   \psi_n(q) \;\notin\;

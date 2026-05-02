@@ -30,10 +30,10 @@ $Z \in \{2, 8, 20, 28\}$:
 
 | $Z$ | $n = 3Z$ | self-conjugate partitions of $n$ | $\kappa_\lambda = 0$ ? |
 |---:|---:|---:|:---:|
-| 2 | 6 | 1 ($[3,2,1]$) | ✓ |
-| 8 | 24 | 11 | ✓ all |
-| 20 | 60 | 209 | ✓ all |
-| 28 | 84 | 1004 | ✓ all |
+| 2 | 6 | 1 ($[3,2,1]$) | yes |
+| 8 | 24 | 11 | all |
+| 20 | 60 | 209 | all |
+| 28 | 84 | 1004 | all |
 
 They also verified my **third negative result** independently:
 non-magic $Z \in \{3, 5, 9, 15, 25\}$ also have all-self-conjugate
@@ -190,10 +190,10 @@ matrix rank of the primal optimum.
 
 | Need | Status | Action |
 |---|---|---|
-| Cost $c_\lambda = w_\lambda(q)$ | ✓ already in `symbolic_qdim_argmax.py` | reuse |
-| Demand $b_\lambda$ at each $n$ | ✗ implicit | extract per-$n$ formula from existing confinement-SDP definition |
+| Cost $c_\lambda = w_\lambda(q)$ | already in `symbolic_qdim_argmax.py` | reuse |
+| Demand $b_\lambda$ at each $n$ | implicit | extract per-$n$ formula from existing confinement-SDP definition |
 | Numerical dual extraction | ready | cvxpy `constraint.dual_value` after `Problem.solve()` |
-| Complementary-slackness reader | ✗ tooling | `[lam for lam, u in zip(blocks, u_star) if u > eps]` |
+| Complementary-slackness reader | tooling | `[lam for lam, u in zip(blocks, u_star) if u > eps]` |
 | Symbolic dual at $q$ generic | open | parametric KKT for tiny $n$ only |
 
 ### ILP integrality-gap conjecture

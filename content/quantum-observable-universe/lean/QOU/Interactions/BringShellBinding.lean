@@ -88,7 +88,7 @@ theorem bringCumulativeShells_subset_magicLadder :
     ∀ x ∈ bringCumulativeShells, x ∈ magicLadder := by
   intro x hx
   rw [bringCumulativeShells_eq] at hx
-  unfold magicLadder
+  unfold magicLadder QOU.Common.magicSet
   -- x ∈ {2, 8, 20, 28, 50, 82} ⇒ x ∈ {2, 8, 20, 28, 50, 82, 126}
   rcases hx with h | h | h | h | h | h
   all_goals (subst h; simp)
@@ -382,7 +382,7 @@ theorem shellSizes_cumulative_match_magic :
 theorem bring_partial_subsumes_magic :
     ∀ n ∈ ({2, 8, 20, 28, 50, 82} : Set ℕ), n ∈ magicLadder := by
   intro n hn
-  unfold magicLadder
+  unfold magicLadder QOU.Common.magicSet
   rcases hn with h | h | h | h | h | h
   all_goals (subst h; simp)
 

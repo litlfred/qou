@@ -128,7 +128,7 @@ not self-conjugacy of the dominant component.*
 
 ## Status
 
-🟡 **Conjectural** under CLAUDE.md §3b. The conjecture is
+**Conjectural** under CLAUDE.md §3b. The conjecture is
 *conditional* on
 [`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
 and

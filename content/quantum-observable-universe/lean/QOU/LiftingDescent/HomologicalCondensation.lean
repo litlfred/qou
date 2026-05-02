@@ -30,35 +30,42 @@ LaTeX label: `conj:homological-shell-condensation`
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Basic
+import QOU.Common.MagicNumbers
 
 namespace QOU.LiftingDescent.HomologicalCondensation
 
-/-! ## §1  The magic ladder -/
+/-! ## §1  The magic ladder
 
-/-- The seven nuclear magic numbers
-    `{2, 8, 20, 28, 50, 82, 126}`. -/
-def magicLadder : Set ℕ := {2, 8, 20, 28, 50, 82, 126}
+    Single source of truth for the seven nuclear magic numbers
+    `{2, 8, 20, 28, 50, 82, 126}` lives in `QOU.Common.MagicNumbers`
+    (added on `main` per PR #501 Gemini review). We expose a
+    `Set ℕ` projection here for set-theoretic proofs while
+    preserving definitional equality with the canonical Finset. -/
+
+/-- The seven nuclear magic numbers, via coercion of the canonical
+    `QOU.Common.magicSet : Finset ℕ`. -/
+def magicLadder : Set ℕ := (QOU.Common.magicSet : Set ℕ)
 
 theorem two_mem_magicLadder : 2 ∈ magicLadder := by
-  unfold magicLadder; simp
+  unfold magicLadder QOU.Common.magicSet; simp
 
 theorem eight_mem_magicLadder : 8 ∈ magicLadder := by
-  unfold magicLadder; simp
+  unfold magicLadder QOU.Common.magicSet; simp
 
 theorem twenty_mem_magicLadder : 20 ∈ magicLadder := by
-  unfold magicLadder; simp
+  unfold magicLadder QOU.Common.magicSet; simp
 
 theorem twentyeight_mem_magicLadder : 28 ∈ magicLadder := by
-  unfold magicLadder; simp
+  unfold magicLadder QOU.Common.magicSet; simp
 
 theorem fifty_mem_magicLadder : 50 ∈ magicLadder := by
-  unfold magicLadder; simp
+  unfold magicLadder QOU.Common.magicSet; simp
 
 theorem eightytwo_mem_magicLadder : 82 ∈ magicLadder := by
-  unfold magicLadder; simp
+  unfold magicLadder QOU.Common.magicSet; simp
 
 theorem onetwentysix_mem_magicLadder : 126 ∈ magicLadder := by
-  unfold magicLadder; simp
+  unfold magicLadder QOU.Common.magicSet; simp
 
 /-! ## §2  Spectral-sequence skeleton -/
 

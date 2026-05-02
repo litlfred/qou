@@ -253,13 +253,13 @@ optimum = argmax-Wedderburn-weight self-conjugate $\lambda$):
 
 | $n$ | empirical magic | candidate-B predicts | agrees? |
 |---:|:---:|:---:|:---:|
-| 1 | yes | yes | ✓ |
-| 2 | yes | no (q(2)=0, no self-conj) | ✗ |
-| 3 | no | yes (one SC: [2,1]) | ✗ |
-| 4 | no | yes ([2,2]) | ✗ |
-| 5–7 | no | yes (each has single SC) | ✗ |
-| 8 | yes | yes ([4,2,1,1]) | ✓ |
-| 9–16 | no | yes (multiple SC, but unique argmax) | ✗ |
+| 1 | yes | yes | yes |
+| 2 | yes | no (q(2)=0, no self-conj) | no |
+| 3 | no | yes (one SC: [2,1]) | no |
+| 4 | no | yes ([2,2]) | no |
+| 5–7 | no | yes (each has single SC) | no |
+| 8 | yes | yes ([4,2,1,1]) | yes |
+| 9–16 | no | yes (multiple SC, but unique argmax) | no |
 
 Agreements: **2 of 13** $n$-values. Most non-magic $n$ have a
 unique-argmax self-conj block, so candidate-B incorrectly flags

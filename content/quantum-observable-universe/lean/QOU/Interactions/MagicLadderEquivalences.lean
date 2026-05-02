@@ -68,7 +68,7 @@ theorem primality_iff_condensation_for_n_ge_2
   rw [A.prime_iff_in_ladder n, C.collapse_iff_magic n]
   -- Goal: n ∈ empiricalMagicLadder ↔ n ∈ magicLadder
   -- For n ≥ 2 these coincide (empiricalMagicLadder = {1} ∪ magicLadder).
-  unfold empiricalMagicLadder magicLadder
+  unfold empiricalMagicLadder magicLadder QOU.Common.magicSet
   constructor
   · intro h
     rcases h with h1 | h_rest
