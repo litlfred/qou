@@ -1,6 +1,6 @@
 {
   "computation": "habiro-frobenius-probe",
-  "computedAt": "2026-05-02T22:54:06.375272+00:00",
+  "computedAt": "2026-05-02T22:57:33.181345+00:00",
   "description": "R6 step-1 + step-2 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. The Galois norm N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k) is verified to be a rational integer (residual < 1e-6) on every (atom, prime) where the truncation lands inside the on-disk Habiro data — finite-place reciprocity check.",
   "reference_blocks": [
     "def:motivic-galois-character",
@@ -26,86 +26,87 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
+          "frob_p_in_Z_zeta_str": "-8",
           "frob_p_complex": {
             "real": -8.0,
-            "imag": -1.9117102933589427e-57
+            "imag": 0.0
           },
           "abs_frob_p": 8.0,
           "pochhammer_truncates_at_m": 4,
           "galois_orbit_size": 2,
-          "galois_norm_real": -16.0,
-          "galois_norm_nearest_int": -16,
-          "galois_norm_integrality_residual": 2.2303286755854332e-57,
-          "galois_norm_imag_residual": 6.6909860267563e-57,
+          "galois_norm_int": -16,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-16",
           "step2_compatibility_passed": true
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
+          "frob_p_in_Z_zeta_str": "-1",
           "frob_p_complex": {
             "real": -1.0,
-            "imag": -7.646841173435771e-57
+            "imag": 0.0
           },
           "abs_frob_p": 1.0,
           "pochhammer_truncates_at_m": 6,
           "galois_orbit_size": 2,
-          "galois_norm_real": -2.0,
-          "galois_norm_nearest_int": -2,
-          "galois_norm_integrality_residual": 1.6568155875777504e-56,
-          "galois_norm_imag_residual": 3.0587364693743084e-56,
+          "galois_norm_int": -2,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-2",
           "step2_compatibility_passed": true
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
+          "frob_p_in_Z_zeta_str": "u**3 - u**2",
           "frob_p_complex": {
             "real": -0.6180339887498949,
-            "imag": 7.35560405843187e-57
+            "imag": -1.6940658945086007e-21
           },
           "abs_frob_p": 0.6180339887498949,
           "pochhammer_truncates_at_m": 10,
           "galois_orbit_size": 4,
-          "galois_norm_real": 2.0,
-          "galois_norm_nearest_int": 2,
-          "galois_norm_integrality_residual": 4.5054630611714666e-57,
-          "galois_norm_imag_residual": 9.526191787349836e-57,
+          "galois_norm_int": 2,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "2",
           "step2_compatibility_passed": true
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
+          "frob_p_in_Z_zeta_str": "-u**5 - 3*u**4 + u**3 + u**2 + 2*u - 2",
           "frob_p_complex": {
             "real": 1.9390010753475628,
             "imag": -1.0820883461285309
           },
-          "abs_frob_p": 2.220504528035506,
+          "abs_frob_p": 2.2205045280355056,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 6,
-          "galois_norm_real": -8.0,
-          "galois_norm_nearest_int": -8,
-          "galois_norm_integrality_residual": 1.7051061861339528e-57,
-          "galois_norm_imag_residual": 7.49002118843367e-57,
+          "galois_norm_int": -8,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-8",
           "step2_compatibility_passed": false
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
+          "frob_p_in_Z_zeta_str": "2*u**9 - u**8 - u**7 + u**5 - u**2 + 1",
           "frob_p_complex": {
             "real": -0.31117001327308685,
             "imag": -0.13491931037224633
           },
-          "abs_frob_p": 0.33916072513145684,
+          "abs_frob_p": 0.3391607251314568,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 10,
-          "galois_norm_real": 14.0,
-          "galois_norm_nearest_int": 14,
-          "galois_norm_integrality_residual": 1.2518217532945473e-56,
-          "galois_norm_imag_residual": 4.1775101560281844e-57,
+          "galois_norm_int": 14,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "14",
           "step2_compatibility_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
+          "frob_p_in_Z_zeta_str": "u**10 - 2*u**9 + u**7 + u**6 - 2*u**5 + u**3 + u**2 - 2*u + 1",
           "frob_p_complex": {
             "real": 0.3704921101783462,
             "imag": -0.21824530901179104
@@ -113,10 +114,9 @@
           "abs_frob_p": 0.4299946727693914,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 12,
-          "galois_norm_real": 5.0,
-          "galois_norm_nearest_int": 5,
-          "galois_norm_integrality_residual": 6.1732311556382526e-58,
-          "galois_norm_imag_residual": 1.0630465848406295e-56,
+          "galois_norm_int": 5,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "5",
           "step2_compatibility_passed": false
         }
       ],
@@ -136,22 +136,23 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
+          "frob_p_in_Z_zeta_str": "96",
           "frob_p_complex": {
             "real": 96.0,
-            "imag": -5.097894115623847e-55
+            "imag": 0.0
           },
           "abs_frob_p": 96.0,
           "pochhammer_truncates_at_m": 4,
           "galois_orbit_size": 2,
-          "galois_norm_real": 192.0,
-          "galois_norm_nearest_int": 192,
-          "galois_norm_integrality_residual": 6.117472938748617e-55,
-          "galois_norm_imag_residual": 1.733283999312108e-54,
+          "galois_norm_int": 192,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "192",
           "step2_compatibility_passed": true
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
+          "frob_p_in_Z_zeta_str": "-u - 4",
           "frob_p_complex": {
             "real": -4.5,
             "imag": -0.8660254037844386
@@ -159,15 +160,15 @@
           "abs_frob_p": 4.58257569495584,
           "pochhammer_truncates_at_m": 6,
           "galois_orbit_size": 2,
-          "galois_norm_real": -9.0,
-          "galois_norm_nearest_int": -9,
-          "galois_norm_integrality_residual": 5.089737485038849e-53,
-          "galois_norm_imag_residual": 6.394798378638554e-53,
+          "galois_norm_int": -9,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-9",
           "step2_compatibility_passed": true
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
+          "frob_p_in_Z_zeta_str": "-11*u**3 + 8*u**2 + 6*u - 12",
           "frob_p_complex": {
             "real": -1.2745751406263144,
             "imag": 0.673541964869378
@@ -175,15 +176,15 @@
           "abs_frob_p": 1.4415965342434378,
           "pochhammer_truncates_at_m": 10,
           "galois_orbit_size": 4,
-          "galois_norm_real": -61.0,
-          "galois_norm_nearest_int": -61,
-          "galois_norm_integrality_residual": 4.176194859519056e-53,
-          "galois_norm_imag_residual": 3.9151826807991147e-53,
+          "galois_norm_int": -61,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-61",
           "step2_compatibility_passed": true
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
+          "frob_p_in_Z_zeta_str": "-21*u**5 + 4*u**4 - 17*u**3 - u**2 - 20*u + 14",
           "frob_p_complex": {
             "real": 3.7774790660436857,
             "imag": -38.55203025501152
@@ -191,31 +192,31 @@
           "abs_frob_p": 38.73665428089682,
           "pochhammer_truncates_at_m": 14,
           "galois_orbit_size": 6,
-          "galois_norm_real": 23.0,
-          "galois_norm_nearest_int": 23,
-          "galois_norm_integrality_residual": 1.0619072752035587e-53,
-          "galois_norm_imag_residual": 4.792339087068643e-54,
+          "galois_norm_int": 23,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "23",
           "step2_compatibility_passed": true
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
+          "frob_p_in_Z_zeta_str": "-39*u**9 - 49*u**8 + 53*u**7 + 33*u**6 + 7*u**5 - 73*u**4 + 25*u**3 + 55*u**2 + 24*u - 86",
           "frob_p_complex": {
             "real": 8.52288033148696,
             "imag": 18.674062427128618
           },
-          "abs_frob_p": 20.527057672183414,
+          "abs_frob_p": 20.527057672183417,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 10,
-          "galois_norm_real": -756.0,
-          "galois_norm_nearest_int": -756,
-          "galois_norm_integrality_residual": 2.7049346522904577e-53,
-          "galois_norm_imag_residual": 1.4811692389158418e-53,
+          "galois_norm_int": -756,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-756",
           "step2_compatibility_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
+          "frob_p_in_Z_zeta_str": "3*u**11 - 86*u**10 + 117*u**9 - 48*u**8 - 20*u**7 - 50*u**6 + 137*u**5 - 66*u**4 - 23*u**3 - 25*u**2 + 114*u - 94",
           "frob_p_complex": {
             "real": -2.9192693535326892,
             "imag": 0.4767077682866163
@@ -223,10 +224,9 @@
           "abs_frob_p": 2.9579357421722285,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 12,
-          "galois_norm_real": -525.0,
-          "galois_norm_nearest_int": -525,
-          "galois_norm_integrality_residual": 4.329649437858889e-53,
-          "galois_norm_imag_residual": 2.190899650784905e-55,
+          "galois_norm_int": -525,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-525",
           "step2_compatibility_passed": false
         }
       ],
@@ -246,22 +246,23 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
+          "frob_p_in_Z_zeta_str": "29312",
           "frob_p_complex": {
             "real": 29312.0,
-            "imag": -7.3083410041583475e-53
+            "imag": 0.0
           },
           "abs_frob_p": 29312.0,
           "pochhammer_truncates_at_m": 4,
           "galois_orbit_size": 2,
-          "galois_norm_real": 58624.0,
-          "galois_norm_nearest_int": 58624,
-          "galois_norm_integrality_residual": 3.236551016127268e-52,
-          "galois_norm_imag_residual": 4.750421652702926e-52,
+          "galois_norm_int": 58624,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "58624",
           "step2_compatibility_passed": true
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
+          "frob_p_in_Z_zeta_str": "47*u - 78",
           "frob_p_complex": {
             "real": -54.5,
             "imag": 40.703193977868615
@@ -269,15 +270,15 @@
           "abs_frob_p": 68.02205524680947,
           "pochhammer_truncates_at_m": 6,
           "galois_orbit_size": 2,
-          "galois_norm_real": -109.0,
-          "galois_norm_nearest_int": -109,
-          "galois_norm_integrality_residual": 8.151932365781197e-50,
-          "galois_norm_imag_residual": 1.0691058840368783e-49,
+          "galois_norm_int": -109,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-109",
           "step2_compatibility_passed": true
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
+          "frob_p_in_Z_zeta_str": "-14*u**3 - 59*u**2 + 100*u - 55",
           "frob_p_complex": {
             "real": 11.995934690622109,
             "imag": -10.648600460298898
@@ -285,15 +286,15 @@
           "abs_frob_p": 16.0404220912278,
           "pochhammer_truncates_at_m": 10,
           "galois_orbit_size": 4,
-          "galois_norm_real": -75.0,
-          "galois_norm_nearest_int": -75,
-          "galois_norm_integrality_residual": 1.0263416486754031e-48,
-          "galois_norm_imag_residual": 1.0904880017176158e-48,
+          "galois_norm_int": -75,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-75",
           "step2_compatibility_passed": true
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
+          "frob_p_in_Z_zeta_str": "103*u**5 - 131*u**4 + 60*u**3 - 37*u**2 + 103*u - 138",
           "frob_p_complex": {
             "real": -89.98728048061747,
             "imag": 27.07102120708898
@@ -301,31 +302,31 @@
           "abs_frob_p": 93.97101062291487,
           "pochhammer_truncates_at_m": 14,
           "galois_orbit_size": 6,
-          "galois_norm_real": -394.0,
-          "galois_norm_nearest_int": -394,
-          "galois_norm_integrality_residual": 1.3978559433782183e-48,
-          "galois_norm_imag_residual": 1.257535796098378e-48,
+          "galois_norm_int": -394,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-394",
           "step2_compatibility_passed": true
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
+          "frob_p_in_Z_zeta_str": "-97*u**9 + 204*u**8 - 146*u**7 + 18*u**6 - 123*u**5 + 159*u**4 - 79*u**3 + 86*u**2 - 180*u + 147",
           "frob_p_complex": {
             "real": 49.550260320023106,
             "imag": -54.29624788707583
           },
-          "abs_frob_p": 73.50721619267624,
+          "abs_frob_p": 73.50721619267622,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 10,
-          "galois_norm_real": 378.0,
-          "galois_norm_nearest_int": 378,
-          "galois_norm_integrality_residual": 2.0005420047929857e-49,
-          "galois_norm_imag_residual": 3.2117940484133417e-49,
+          "galois_norm_int": 378,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "378",
           "step2_compatibility_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
+          "frob_p_in_Z_zeta_str": "84*u**11 - 91*u**10 + 9*u**9 - 2*u**8 + 59*u**7 - 122*u**6 + 12*u**5 - 12*u**4 + 39*u**3 - 79*u**2 + 74*u",
           "frob_p_complex": {
             "real": -3.955270818674466,
             "imag": -70.10885145002746
@@ -333,10 +334,9 @@
           "abs_frob_p": 70.22033337211576,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 12,
-          "galois_norm_real": 583.0,
-          "galois_norm_nearest_int": 583,
-          "galois_norm_integrality_residual": 1.1632967136464892e-49,
-          "galois_norm_imag_residual": 8.554519542997678e-50,
+          "galois_norm_int": 583,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "583",
           "step2_compatibility_passed": false
         }
       ],
@@ -356,22 +356,23 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
+          "frob_p_in_Z_zeta_str": "-29312",
           "frob_p_complex": {
             "real": -29312.0,
-            "imag": -2.7145266586873862e-52
+            "imag": 0.0
           },
           "abs_frob_p": 29312.0,
           "pochhammer_truncates_at_m": 4,
           "galois_orbit_size": 2,
-          "galois_norm_real": -58624.0,
-          "galois_norm_nearest_int": -58624,
-          "galois_norm_integrality_residual": 3.3409558876152446e-52,
-          "galois_norm_imag_residual": 9.187628690941923e-52,
+          "galois_norm_int": -58624,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-58624",
           "step2_compatibility_passed": true
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
+          "frob_p_in_Z_zeta_str": "12*u - 47",
           "frob_p_complex": {
             "real": -41.0,
             "imag": 10.392304845413264
@@ -379,15 +380,15 @@
           "abs_frob_p": 42.2965719651132,
           "pochhammer_truncates_at_m": 6,
           "galois_orbit_size": 2,
-          "galois_norm_real": -82.0,
-          "galois_norm_nearest_int": -82,
-          "galois_norm_integrality_residual": 1.256199413743332e-49,
-          "galois_norm_imag_residual": 1.5368397083030125e-49,
+          "galois_norm_int": -82,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-82",
           "step2_compatibility_passed": true
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
+          "frob_p_in_Z_zeta_str": "118*u**3 - 112*u**2 - 2*u + 73",
           "frob_p_complex": {
             "real": 0.30805730501219764,
             "imag": 4.530768593185975
@@ -395,15 +396,15 @@
           "abs_frob_p": 4.541229277208077,
           "pochhammer_truncates_at_m": 10,
           "galois_orbit_size": 4,
-          "galois_norm_real": 520.0,
-          "galois_norm_nearest_int": 520,
-          "galois_norm_integrality_residual": 2.266504474158182e-48,
-          "galois_norm_imag_residual": 2.993496475303259e-48,
+          "galois_norm_int": 520,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "520",
           "step2_compatibility_passed": true
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
+          "frob_p_in_Z_zeta_str": "-123*u**5 + 2*u**4 - 12*u**3 + 62*u**2 - 75*u + 8",
           "frob_p_complex": {
             "real": 52.65765517579587,
             "imag": -89.98227998618492
@@ -411,15 +412,15 @@
           "abs_frob_p": 104.25756260399145,
           "pochhammer_truncates_at_m": 14,
           "galois_orbit_size": 6,
-          "galois_norm_real": -226.0,
-          "galois_norm_nearest_int": -226,
-          "galois_norm_integrality_residual": 2.961423298782153e-48,
-          "galois_norm_imag_residual": 5.372257067285313e-49,
+          "galois_norm_int": -226,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-226",
           "step2_compatibility_passed": true
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
+          "frob_p_in_Z_zeta_str": "125*u**9 - 286*u**8 + 90*u**7 - 19*u**6 + 286*u**5 - 248*u**4 - 7*u**3 - 30*u**2 + 338*u - 206",
           "frob_p_complex": {
             "real": 73.61622354231592,
             "imag": 45.71232630108247
@@ -427,15 +428,15 @@
           "abs_frob_p": 86.65428520557344,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 10,
-          "galois_norm_real": -645.0,
-          "galois_norm_nearest_int": -645,
-          "galois_norm_integrality_residual": 5.2325412880976155e-49,
-          "galois_norm_imag_residual": 6.473676448028248e-49,
+          "galois_norm_int": -645,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-645",
           "step2_compatibility_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
+          "frob_p_in_Z_zeta_str": "-55*u**11 - 276*u**10 + 348*u**9 - 54*u**8 - 74*u**7 - 163*u**6 + 361*u**5 - 156*u**4 - 59*u**3 - 66*u**2 + 311*u - 284",
           "frob_p_complex": {
             "real": 20.77835251787182,
             "imag": 5.840462860233661
@@ -443,10 +444,9 @@
           "abs_frob_p": 21.583580328080856,
           "pochhammer_truncates_at_m": null,
           "galois_orbit_size": 12,
-          "galois_norm_real": -1861.0,
-          "galois_norm_nearest_int": -1861,
-          "galois_norm_integrality_residual": 9.990929770415247e-50,
-          "galois_norm_imag_residual": 7.806534526914333e-49,
+          "galois_norm_int": -1861,
+          "galois_norm_is_exact_integer": true,
+          "galois_norm_residue_str": "-1861",
           "step2_compatibility_passed": false
         }
       ],

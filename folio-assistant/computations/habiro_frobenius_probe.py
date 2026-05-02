@@ -46,14 +46,14 @@ from math import gcd
 from pathlib import Path
 from typing import Any
 
-import mpmath
 import sympy as sp
 
-# Use 60-digit mpmath for the Galois-orbit sums; T/³He Habiro
-# coefficients reach magnitudes ~10⁵, and float64 cumulative
-# roundoff floor is ~10⁻³ on the orbit norm — too coarse to
-# distinguish the true rational-integer Galois norm from noise.
-mpmath.mp.dps = 60
+# Frobenius evaluation runs in **exact algebraic arithmetic** in
+# Z[ζ_{2p}] = Z[u] / Φ_{2p}(u), the cyclotomic integer ring. Every
+# step (a_m(ζ_{2p}), the Pochhammer (ζ_{2p}; ζ_{2p})_m, the Galois-
+# orbit sum) is a polynomial-in-u reduction modulo Φ_{2p}(u). The
+# Galois norm Σ_{k coprime to 2p} σ_k(Frob_p) lands in ℤ exactly —
+# no float / mpmath approximation, no roundoff residual.
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
@@ -67,17 +67,60 @@ WITNESS_OUT = HERE / "habiro-frobenius-probe.witness.json"
 PRIMES = [2, 3, 5, 7, 11, 13]
 
 
-def primitive_root_of_unity(n: int) -> mpmath.mpc:
-    """ζ_n = exp(2πi / n) as a high-precision mpmath complex."""
-    return mpmath.exp(2j * mpmath.pi / n)
+def reduce_mod_cyclotomic(p_in_u: sp.Expr, n: int, u: sp.Symbol) -> sp.Poly:
+    """Reduce a polynomial `p(u) ∈ Z[u]` modulo `Φ_n(u)` (the n-th
+    cyclotomic polynomial), giving a representative in
+    Z[u] / Φ_n(u) ≅ Z[ζ_n] of degree < φ(n).
+    """
+    phi_n = sp.Poly(sp.cyclotomic_poly(n, u), u)
+    p_poly = sp.Poly(sp.expand(p_in_u), u)
+    if p_poly.is_zero:
+        return sp.Poly(0, u)
+    _, rem = p_poly.div(phi_n)
+    return rem
 
 
-def cyclotomic_pochhammer(u_val: mpmath.mpc, m: int) -> mpmath.mpc:
-    """(u; u)_m = ∏_{i=1}^{m} (1 - u^i). Returns 1 for m = 0."""
-    result = mpmath.mpc(1, 0)
+def cyclotomic_pochhammer_in_ring(n: int, m: int,
+                                    u: sp.Symbol) -> sp.Poly:
+    """(ζ_n; ζ_n)_m = ∏_{i=1}^{m} (1 − ζ_n^i) in Z[ζ_n] = Z[u]/Φ_n(u).
+
+    Returns the cyclotomic-reduced polynomial form. For m = 0
+    returns the constant polynomial 1.
+    """
+    result = sp.Poly(1, u)
+    phi_n = sp.Poly(sp.cyclotomic_poly(n, u), u)
     for i in range(1, m + 1):
-        result *= (1 - u_val ** i)
+        # (1 − u^i) reduced mod Φ_n(u)
+        factor = sp.Poly(1, u) - sp.Poly(u ** i, u)
+        result = result * factor
+        _, result = result.div(phi_n)
     return result
+
+
+def apply_galois_substitution(rep: sp.Poly, k: int, n: int,
+                                u: sp.Symbol) -> sp.Poly:
+    """Apply the Galois automorphism σ_k : ζ_n ↦ ζ_n^k to an element
+    of Z[ζ_n] = Z[u]/Φ_n(u) given as a polynomial-representative.
+
+    Implementation: for `rep = Σ c_i u^i`, σ_k(rep) = Σ c_i u^{i·k},
+    then reduce mod Φ_n(u).
+    """
+    expr = rep.as_expr().subs(u, u ** k)
+    return reduce_mod_cyclotomic(expr, n, u)
+
+
+def poly_to_constant_int(rep: sp.Poly) -> int | None:
+    """If `rep` is a constant polynomial (degree 0), return its
+    integer value; else return None.
+    """
+    if rep.is_zero:
+        return 0
+    if rep.degree() != 0:
+        return None
+    c = rep.all_coeffs()[0]
+    if c.is_Integer:
+        return int(c)
+    return None
 
 
 def parse_int_poly(a_m_str: str, u: sp.Symbol) -> list[int]:
@@ -114,60 +157,76 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol
         m = int(c["m"])
         parsed.append((m, parse_int_poly(str(c["a_m"]), u)))
 
-    def evaluate_at(u_val: mpmath.mpc) -> mpmath.mpc:
-        total = mpmath.mpc(0, 0)
+    n_2p = 2 * p
+    phi_2p = sp.Poly(sp.cyclotomic_poly(n_2p, u), u)
+
+    def evaluate_in_ring() -> sp.Poly:
+        """Frob_p as an element of Z[ζ_{2p}] = Z[u]/Φ_{2p}(u),
+        represented by its Z[u] polynomial of degree < φ(2p)."""
+        total = sp.Poly(0, u)
         for m, int_coeffs in parsed:
-            if m >= 2 * p:
+            if m >= n_2p:
                 break
+            # a_m(u) as Z[u].
             if int_coeffs:
-                a_m_val = mpmath.mpc(0, 0)
-                for k in int_coeffs:
-                    a_m_val = a_m_val * u_val + k
+                a_m_poly = sp.Poly(int_coeffs, u)
             else:
-                a_m_val = mpmath.mpc(0, 0)
-            total += a_m_val * cyclotomic_pochhammer(u_val, m)
+                a_m_poly = sp.Poly(0, u)
+            poch = cyclotomic_pochhammer_in_ring(n_2p, m, u)
+            term = a_m_poly * poch
+            _, term = term.div(phi_2p)
+            total = total + term
+            _, total = total.div(phi_2p)
         return total
 
-    zeta_2p = primitive_root_of_unity(2 * p)
-    frob_p_main = evaluate_at(zeta_2p)
+    frob_p_rep = evaluate_in_ring()
 
     # Galois orbit: {ζ_{2p}^k : gcd(k, 2p) = 1}. |orbit| = φ(2p).
-    galois_ks = [k for k in range(1, 2 * p) if gcd(k, 2 * p) == 1]
-    galois_norm = mpmath.mpc(0, 0)
-    galois_orbit_abs: list[float] = []
+    galois_ks = [k for k in range(1, n_2p) if gcd(k, n_2p) == 1]
+    galois_norm_rep = sp.Poly(0, u)
     for k in galois_ks:
-        v = evaluate_at(zeta_2p ** k)
-        galois_norm += v
-        galois_orbit_abs.append(float(abs(v)))
+        sigma_k_frob = apply_galois_substitution(frob_p_rep, k, n_2p, u)
+        galois_norm_rep = galois_norm_rep + sigma_k_frob
+        _, galois_norm_rep = galois_norm_rep.div(phi_2p)
 
-    nearest_int = int(mpmath.nint(galois_norm.real))
-    integrality_residual = float(abs(galois_norm.real - nearest_int))
-    imag_residual = float(abs(galois_norm.imag))
+    # The Galois norm is mathematically an element of ℤ ⊂ Z[ζ_{2p}],
+    # so its representative MUST be a degree-0 polynomial whose
+    # constant is an integer.
+    galois_norm_int = poly_to_constant_int(galois_norm_rep)
+    galois_norm_is_exact_integer = galois_norm_int is not None
 
-    # Step-2 compatibility: integrality on truncated primes. With
-    # 60-digit mpmath the residual on a true algebraic integer is
-    # well below 1e-40; using 1e-20 as a generous tolerance.
-    step2_passed = bool(
-        truncate_at is not None
-        and integrality_residual < 1e-20
-        and imag_residual < 1e-20
-    )
+    # For display: also evaluate Frob_p numerically (one mpmath
+    # complex-double computation per atom-prime, just for the table
+    # output — the *truth* is the exact ring element above).
+    import mpmath as _mp
+    _mp.mp.dps = 30
+    zeta_2p_num = _mp.exp(2j * _mp.pi / n_2p)
+    frob_p_num = complex(frob_p_rep.as_expr().subs(u, zeta_2p_num))
 
     return {
         "prime": p,
-        "u_root": f"zeta_{2*p}",
+        "u_root": f"zeta_{n_2p}",
+        # The exact algebraic representative — a polynomial in u
+        # of degree < φ(2p) with integer coefficients.
+        "frob_p_in_Z_zeta_str": str(frob_p_rep.as_expr()),
+        # Numeric value (display-only).
         "frob_p_complex": {
-            "real": float(frob_p_main.real),
-            "imag": float(frob_p_main.imag),
+            "real": frob_p_num.real,
+            "imag": frob_p_num.imag,
         },
-        "abs_frob_p": float(abs(frob_p_main)),
+        "abs_frob_p": abs(frob_p_num),
         "pochhammer_truncates_at_m": truncate_at,
         "galois_orbit_size": len(galois_ks),
-        "galois_norm_real": float(galois_norm.real),
-        "galois_norm_nearest_int": nearest_int,
-        "galois_norm_integrality_residual": integrality_residual,
-        "galois_norm_imag_residual": imag_residual,
-        "step2_compatibility_passed": step2_passed,
+        "galois_norm_int": galois_norm_int,
+        "galois_norm_is_exact_integer": galois_norm_is_exact_integer,
+        "galois_norm_residue_str": str(galois_norm_rep.as_expr()),
+        # Step-2 compatibility: the Galois norm is **exactly** an
+        # integer (no tolerance — algebraic). Pass iff the
+        # cyclotomic-Pochhammer truncates inside the data range AND
+        # the norm reduced to a degree-0 integer polynomial.
+        "step2_compatibility_passed": bool(
+            truncate_at is not None and galois_norm_is_exact_integer
+        ),
     }
 
 
@@ -212,10 +271,12 @@ def main() -> int:
         for p in PRIMES:
             row = evaluate_at_root(habiro_coeffs, p, u)
             integrality = "✓" if row["step2_compatibility_passed"] else " "
+            n_disp = (str(row["galois_norm_int"])
+                      if row["galois_norm_int"] is not None else "—")
             print(f"    p = {p:>3}  m_trunc = "
                   f"{row['pochhammer_truncates_at_m']!s:>5}  "
-                  f"|Frob| = {row['abs_frob_p']:>7.4f}  "
-                  f"N≈{row['galois_norm_nearest_int']:>+5d} {integrality}")
+                  f"|Frob| = {row['abs_frob_p']:>9.4f}  "
+                  f"N = {n_disp:>8} {integrality}")
             per_prime.append(row)
         truncated = [r for r in per_prime
                      if r["pochhammer_truncates_at_m"] is not None]
