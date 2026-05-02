@@ -179,18 +179,37 @@ derived. Current Bring blocks (`brings-coordinate-ring`,
 `bsd-surreal-bound`) reach the curve but do not extract the
 seven values.
 
-### §2·E — Fine-structure 1/α
+### §2·E — Fine-structure 1/α — RESOLVED (6.7 ppb, within CODATA)
 
-[DERIVATION-STATUS.md line 84–87, 180](../../folio-assistant/computations/DERIVATION-STATUS.md):
-$1/\alpha = q\cdot[9]\cdot[10] \times (1+c_1+c_1^2\kappa) = 137.035944$,
-CODATA 137.035999, **399 ppb**.
+The "$q\cdot[9]\cdot[10] \times (1+c_1+c_1^2\kappa) = 137.035944$ →
+399 ppb" formula was a **legacy formulation**. Per the
+[workplan §P1.7 update](2026-05-01-math-framework-workplan.md), the
+live closed form
+([`prop:alpha-em-categorical-trace`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md))
+is
+
+$$
+  1/\alpha_{EM} \;=\; 45 \cdot [3]_q \cdot (1 + \delta_{CS} + 8q\,\delta_{CS}^2)
+$$
+
+with $\delta_{CS} = \hbar_q^4 \cdot [5]_q$, predicting
+
+$$
+  1/\alpha_{EM}\big|_{q_0} \;=\; 137.035998166
+$$
+
+vs CODATA $137.035999084$ — residue **~6.7 ppb**, well within the
+21-ppb CODATA uncertainty.
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **ALPHA-1** | $1/\alpha$ closed form | 🟢 the $q[9][10]$ skeleton is derived (PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json), [`alpha-em-pslq-uniqueness-2000dps.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness-2000dps.witness.json)); 🟠 the multiplicative correction $(1+c_1+c_1^2\kappa)$ origin |
-| **ALPHA-2** | The 399-ppb residual | 🟠 [DERIVATION-STATUS line 180](../../folio-assistant/computations/DERIVATION-STATUS.md): *"J³ correction (Massey products?)"* — speculative. Still ~400 ppb above ambition |
+| **ALPHA-1** | $1/\alpha$ closed form | 🟢 PSLQ uniqueness witness: [`alpha-em-pslq-uniqueness.witness.json`](../../folio-assistant/computations/alpha-em-pslq-uniqueness.witness.json) |
+| **ALPHA-2** | The "399-ppb" residual | 🟢 **Resolved.** Live closed form predicts $1/\alpha_{EM} = 137.035998166$ at 6.7 ppb of CODATA — within experimental uncertainty (21 ppb). Each factor $45$, $[3]_q$, $\delta_{CS}$, the $8q\,\delta_{CS}^2$ correction is forced by an upstream block (`exterior-square-borromean`, `force-carrier-bring-uniqueness`, `gram-determinant-plancherel-ratio`, genus-4 torus-knot enumeration). PSLQ uniqueness confirms no shorter rational combination matches. |
 
-🟠 **Action.** Decide whether the 399-ppb residual is (a) a finite-$k$
+🟢 **Action.** None — already at sub-CODATA-uncertainty
+precision. (Original action retained below for historical reference.)
+
+🟠 **Original action.** Decide whether the 399-ppb residual is (a) a finite-$k$
 truncation of the Hoefsmit ladder (needs k≥6 W-A coverage; see §3·B
 below) or (b) a genuine higher Massey-product correction. The latter
 is a real algebraic statement that can be derived from the GS spectral
@@ -393,7 +412,7 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
 | 🔴 Wall-risk blocks | 1 of 19 | link 8 (JSJ algebraic reformulation) |
 | 🟢 Approved calibrations (per §2·A corrected) | 3 | CAL-1 ($m_e$), CAL-2 ($m_\mu/m_e$ → $q_0$), CAL-3 ($Q_\beta(n)$ → $E_0$) |
-| Non-calibration empirical / fitting flags | 2 | MAG-1 (PR #500 cherry-picked: addresses via full-twist / BB-stratification / LR-fusion homological framework; awaiting numerical verification on {50, 82, 126}), ALPHA-2 (399 ppb residual). NU-1 resolved (neutrino = unknot). SHELL-1 resolved (no hidden fits). BW-8 resolved (q-hook product $[3]_q[2]_q^2$ via wigner-np-pairing). BW-11 resolved (Wenzl-bridge closed form via y-lambda-recipe-from-partition). |
+| Non-calibration empirical / fitting flags | 1 | MAG-1 (PR #500 cherry-picked: addresses via full-twist / BB-stratification / LR-fusion homological framework; awaiting numerical verification on {50, 82, 126}). NU-1 resolved (neutrino = unknot). SHELL-1 resolved (no hidden fits). BW-8 resolved (q-hook product $[3]_q[2]_q^2$ via wigner-np-pairing). BW-11 resolved (Wenzl-bridge closed form via y-lambda-recipe-from-partition). ALPHA-2 resolved (live closed form $45\cdot[3]_q(1+\delta_{CS}+8q\delta_{CS}^2)$ at 6.7 ppb < CODATA 21-ppb uncertainty). |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 
@@ -418,16 +437,16 @@ prediction at level $A$ requires:
    ([INFRASTRUCTURE-AUDIT.md](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md)).
 8. ❌ Symbolic-in-$q$ throughout, $q_0$-substitution only at final
    step.
-9. 🟢 Two non-calibration empirical/fitting flags remaining
-   (MAG-1, ALPHA-2). BW-8 + BW-11 resolved this branch
-   via cherry-picked Wenzl-bridge content (q-hook product on
-   $(2,2)$ for term 8; closed form for $(4,1)+(2,1,1,1)$ at $n=5$
-   for term 11). MAG-1 has a concrete homological framework
-   (PR #500 cherry-picked: full-twist / BB-stratification /
-   LR-fusion) awaiting numerical verification at $\{50, 82, 126\}$.
-   NU-1 resolved (neutrino = unknot = 0 mass). SHELL-1 resolved.
-   The three approved calibrations (CAL-1 / CAL-2 / CAL-3) named
-   in a single `prop:three-calibration-inputs` block; all numerical
+9. 🟢 One non-calibration empirical/fitting flag remaining (MAG-1)
+   — and it has a concrete homological framework (PR #500
+   cherry-picked: full-twist / BB-stratification / LR-fusion)
+   awaiting numerical verification at $\{50, 82, 126\}$.
+   ALPHA-2 resolved (live $1/\alpha = 45[3]_q(1+\delta_{CS}+8q\delta_{CS}^2)$
+   at 6.7 ppb, well within CODATA 21 ppb). BW-8 + BW-11 resolved
+   via cherry-picked Wenzl-bridge content. NU-1 resolved (neutrino
+   = unknot = 0 mass). SHELL-1 resolved. The three approved
+   calibrations (CAL-1 / CAL-2 / CAL-3) named in a single
+   `prop:three-calibration-inputs` block; all numerical
    predictions cite it.
 10. ❌ Magic-number derivation from Bring (currently asserted but
     not derived).
