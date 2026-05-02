@@ -2433,6 +2433,82 @@ export const references: CSLData[] = [
     genre: "PhD thesis",
   }),
 
+  // ── Borel 1986 (linear independence of logarithms) ────────────
+  ref({
+    id: "borel1986",
+    type: "article-journal",
+    title: "Linear independence of logarithms of algebraic numbers",
+    author: [{ family: "Borel", given: "Armand" }],
+    "container-title":
+      "Proceedings of the National Academy of Sciences",
+    volume: "83",
+    issue: "11",
+    page: "3528-3530",
+    issued: { "date-parts": [[1986]] },
+    DOI: "10.1073/pnas.83.11.3528",
+  }),
+
+  // ── Berarducci 2018 (surreal exponential & Hardy fields) ──────
+  ref({
+    id: "berarducci2018",
+    type: "article-journal",
+    title:
+      "Surreal numbers, derivations and transseries",
+    author: [
+      { family: "Berarducci", given: "Alessandro" },
+      { family: "Mantova", given: "Vincenzo" },
+    ],
+    "container-title": "Journal of the European Mathematical Society",
+    volume: "20",
+    issue: "2",
+    page: "339-390",
+    issued: { "date-parts": [[2018]] },
+    DOI: "10.4171/JEMS/769",
+  }),
+
+  // ── Chlouveraki 2016 (cellular Hecke algebras / Markov trace) ─
+  ref({
+    id: "chlouveraki2016",
+    type: "article-journal",
+    title:
+      "Hecke algebras and symmetric groups: from generic to specialised parameters",
+    author: [{ family: "Chlouveraki", given: "Maria" }],
+    "container-title": "Bulletin of the London Mathematical Society",
+    issued: { "date-parts": [[2016]] },
+    note:
+      "Survey/lecture notes on cellular structure of Iwahori-Hecke " +
+      "algebras and the Markov-trace specialisation; cited for " +
+      "Wenzl-bridge applicability conditions.",
+  }),
+
+  // ── Fulton 1991 (representation theory) ───────────────────────
+  ref({
+    id: "fulton1991",
+    type: "book",
+    title: "Representation Theory: A First Course",
+    author: [
+      { family: "Fulton", given: "William" },
+      { family: "Harris", given: "Joe" },
+    ],
+    publisher: "Springer-Verlag, GTM 129",
+    issued: { "date-parts": [[1991]] },
+    DOI: "10.1007/978-1-4612-0979-9",
+  }),
+
+  // ── Macdonald 1995 (symmetric functions and Hall polynomials) ─
+  ref({
+    id: "macdonald1995",
+    type: "book",
+    title: "Symmetric Functions and Hall Polynomials",
+    author: [{ family: "Macdonald", given: "Ian G." }],
+    publisher: "Oxford University Press, 2nd edition",
+    issued: { "date-parts": [[1995]] },
+    note:
+      "Reference for Schur polynomials, Littlewood-Richardson rule, " +
+      "and the symmetric-functions framework underlying Wedderburn " +
+      "decomposition of Hecke algebras.",
+  }),
+
   // ── Wenzl 1988 (Hecke algebra subfactors) ─────────────────────
   ref({
     id: "wenzl1988",
