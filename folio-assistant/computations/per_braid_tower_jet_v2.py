@@ -128,11 +128,16 @@ def qhecke_pair_tr(Zsub, Nsub):
 
 
 def per_braid_mass_jet(Z: int, N: int, *, N_jet: int = 1,
-                         lift: str = "qplancherel") -> dict:
-    """Sum jet levels 0..N_jet of the per-braid mass tower.
+                         lift: str = "qplancherel",
+                         include_tail: bool = True) -> dict:
+    """Sum jet levels 0..N_jet of the per-braid mass tower + tail R_N.
 
     Per framework: m^(n) is the level-n contribution with sub-braid
     traces lifted by the chosen prolongation rule.
+
+    Tail bound from prop:jet-tower-convergence:
+      |R_N| ≤ Δ_max · ℏ_q^{2(N+1)} / (1 - ℏ_q²)
+    where ℏ_q = (q-1)/q. We estimate Δ_max = level-0 mass.
 
     lift options:
       - 'qplancherel': V^(n) = T_q(strands)^n · V^(0)
@@ -202,12 +207,20 @@ def per_braid_mass_jet(Z: int, N: int, *, N_jet: int = 1,
         levels.append({"n": n, "single": float(single_n),
                        "cross": float(cross_n), "m_n": float(m_n)})
 
-    total = desc + single0 + cross0 + total_jet
+    # Tail bound R_N per prop:jet-tower-convergence
+    hbar_q_sq = ((q0 - 1) / q0) ** 2  # ≈ 0.0098
+    tail = mpmath.mpf(0)
+    if include_tail:
+        delta_max = abs(single0 + cross0)  # estimate Δ_max as level-0 magnitude
+        tail = delta_max * (hbar_q_sq ** (N_jet + 1)) / (1 - hbar_q_sq)
+
+    total = desc + single0 + cross0 + total_jet + tail
 
     return {
         "Z": Z, "N": N, "A": A, "lift": lift, "N_jet": N_jet,
         "level_0_total": float(single0 + cross0),
         "jet_total": float(total_jet),
+        "tail_R_N": float(tail),
         "total": float(total),
         "levels": levels,
     }
@@ -235,11 +248,11 @@ if __name__ == "__main__":
         print("─" * 100)
         print(f"Lift: {lift_name}")
         print("─" * 100)
-        for N_jet in [1, 2]:
+        for N_jet in [0, 1, 2, 5, 10]:
             print()
             print(f"  N_jet = {N_jet}")
             print(f"  {'atom':>5} {'A':>3} {'level0':>12} {'jet':>12} "
-                  f"{'total':>14} {'AME':>12} {'cal/m_e':>10}")
+                  f"{'tail R_N':>10} {'total':>14} {'AME':>12} {'cal/m_e':>10}")
             ratios = []
             for name, Z, N in ATOMS:
                 out = per_braid_mass_jet(Z, N, N_jet=N_jet, lift=lift_name)
@@ -248,8 +261,8 @@ if __name__ == "__main__":
                 cal = (ame / total) / M_E_MEV
                 ratios.append(cal)
                 print(f"  {name:>5} {Z+N:>3} {out['level_0_total']:>12.4e} "
-                      f"{out['jet_total']:>12.4e} {total:>14.4e} {ame:>12.4f} "
-                      f"{cal:>10.6f}")
+                      f"{out['jet_total']:>12.4e} {out['tail_R_N']:>10.4e} "
+                      f"{total:>14.4e} {ame:>12.4f} {cal:>10.6f}")
             mean = sum(ratios) / len(ratios)
             spread = (max(ratios) - min(ratios)) / mean * 100
             print(f"    mean cal/m_e = {mean:.6f}, spread = {spread:.4f}%")
