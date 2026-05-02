@@ -70,6 +70,85 @@ class LpDualResult:
         }
 
 
+def solve_frobenius_dual_lp(
+    t: np.ndarray,
+    G: np.ndarray,
+    n_target: float,
+    u_demand: np.ndarray,
+    *,
+    M_bound: float = 1e6,
+    dual_tol: float = 1e-9,
+) -> LpDualResult:
+    """Frobenius-dual minimum-action LP — TIGHTER than the basic
+    Gx ≥ 0 inequality formulation.
+
+    Problem:
+        min t · x
+        s.t. 1ᵀ x = n_target
+             G x = u_demand          (equality, not inequality)
+
+    The equality on G x = u_demand selects the unique x whose
+    Frobenius pairing with the basis matches a target "demand
+    vector" u_demand (typically the demand profile at the magic
+    shell). This is the closed-form Frobenius-dual minimum-action
+    formulation per `confinement-operator-selection.py`.
+
+    Dual:
+        max n_target · y_0 + u_demand · y
+        s.t. y_0 · 1 + Gᵀ y = t      (no positivity on y here)
+
+    Both y_0 and the y vector are returned; strong duality verified.
+    """
+    from scipy.optimize import linprog
+
+    t = np.asarray(t, dtype=float)
+    G = np.asarray(G, dtype=float)
+    u = np.asarray(u_demand, dtype=float)
+    d = len(t)
+
+    c = t.copy()
+    # Combined equalities: net + Frobenius-dual demand
+    A_eq = np.vstack([np.ones((1, d)), G])
+    b_eq = np.concatenate([[n_target], u])
+    res = linprog(
+        c=c, A_eq=A_eq, b_eq=b_eq,
+        bounds=[(-M_bound, None)] * d,
+        method="highs",
+    )
+    if not res.success:
+        return LpDualResult(
+            x_star=[float("nan")] * d,
+            y0_star=float("nan"),
+            y_star=[float("nan")] * d,
+            active_set=[],
+            primal_obj=float("nan"),
+            dual_obj=float("nan"),
+            duality_gap=float("nan"),
+            feasible=False,
+        )
+
+    x_star = np.asarray(res.x)
+    primal_obj = float(c @ x_star)
+    # eq.marginals: first is y_0, remaining d are y_i
+    eq_marginals = np.asarray(res.eqlin.marginals)
+    y0_star = float(eq_marginals[0])
+    y_star = eq_marginals[1:].tolist()
+    active_set = [i for i, y in enumerate(y_star) if abs(y) > dual_tol]
+    dual_obj = float(n_target * y0_star + u @ np.asarray(y_star))
+    duality_gap = abs(primal_obj - dual_obj)
+
+    return LpDualResult(
+        x_star=list(x_star),
+        y0_star=y0_star,
+        y_star=y_star,
+        active_set=active_set,
+        primal_obj=primal_obj,
+        dual_obj=dual_obj,
+        duality_gap=duality_gap,
+        feasible=True,
+    )
+
+
 def solve_operator_selection_lp(
     t: np.ndarray,
     G: np.ndarray,
