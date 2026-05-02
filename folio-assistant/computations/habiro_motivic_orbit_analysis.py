@@ -101,15 +101,36 @@ def in_galois_orbit(target: sp.Expr, candidate: sp.Expr,
 def check_multiplicative(frob_a: sp.Expr, frob_b: sp.Expr,
                           frob_ab: sp.Expr,
                           n: int, u: sp.Symbol) -> dict[str, Any]:
-    """Test whether Frob_p(ab) = Frob_p(a) · Frob_p(b) in Z[ζ_n]."""
+    """Test whether Frob_p(ab) = Frob_p(a) · Frob_p(b) in Z[ζ_n].
+
+    Also returns the **residue** `ε = Frob(ab) − Frob(a)·Frob(b)`,
+    its Galois norm (rational integer if ε ∈ Z[ζ_n]), and the
+    residue's degree.
+    """
     product = reduce_in_ring(frob_a * frob_b, n, u)
     target = reduce_in_ring(frob_ab, n, u)
     diff = reduce_in_ring((product - target).as_expr(), n, u)
+    # Compute the Galois norm of the residue: Σ_{k coprime to n} σ_k(ε).
+    diff_expr = diff.as_expr()
+    galois_norm = reduce_in_ring(
+        sum(diff_expr.subs(u, u ** k)
+            for k in range(1, n) if gcd(k, n) == 1),
+        n, u,
+    )
+    norm_int = (
+        int(galois_norm.all_coeffs()[0]) if galois_norm.degree() == 0
+        and galois_norm.all_coeffs()
+        and galois_norm.all_coeffs()[0].is_Integer
+        else None
+    )
     return {
         "exact_match": diff.is_zero,
         "product_str": str(product.as_expr()),
         "target_str": str(target.as_expr()),
-        "diff_str": str(diff.as_expr()),
+        "residue_str": str(diff.as_expr()),
+        "residue_degree": int(diff.degree()) if not diff.is_zero else 0,
+        "residue_galois_norm_int": norm_int,
+        "residue_is_galois_stable": norm_int is not None,
     }
 
 
@@ -157,15 +178,165 @@ def main() -> int:
                 continue
             test = check_multiplicative(f_p, f_n, f_D, n_2p, u)
             mark = "✓" if test["exact_match"] else "·"
-            print(f"  p={p}: {mark}  Frob(D) - Frob(p)·Frob(n) = "
-                  f"{test['diff_str'][:60]}")
+            stable_mark = ("[stable, N=" + str(test["residue_galois_norm_int"]) + "]"
+                           if test["residue_is_galois_stable"] else "[non-stable]")
+            print(f"  p={p}: {mark}  ε_p(D) = "
+                  f"{test['residue_str'][:60]}  {stable_mark}")
             relations.append({
                 "kind": "multiplicative",
                 "atom": D_lbl,
                 "factors": [proton_lbl, neutron_lbl or "(no n)"],
                 "prime": p,
                 "exact_match": test["exact_match"],
-                "diff": test["diff_str"],
+                "residue": test["residue_str"],
+                "residue_galois_norm": test["residue_galois_norm_int"],
+                "residue_is_galois_stable": test["residue_is_galois_stable"],
+            })
+        print()
+
+    # Test 1b: T = D ⊗ n  (composition of deuteron + neutron).
+    if D_lbl and neutron_lbl and T_lbl:
+        print("─── Test 1b: Frob_p(T) =? Frob_p(D) · Frob_p(neutron) ───")
+        for p in primes:
+            n_2p = 2 * p
+            f_D = frobs.get(D_lbl, {}).get(p)
+            f_n = frobs.get(neutron_lbl, {}).get(p)
+            f_T = frobs.get(T_lbl, {}).get(p)
+            if f_D is None or f_n is None or f_T is None:
+                continue
+            test = check_multiplicative(f_D, f_n, f_T, n_2p, u)
+            mark = "✓" if test["exact_match"] else "·"
+            stable_mark = ("[stable, N=" + str(test["residue_galois_norm_int"]) + "]"
+                           if test["residue_is_galois_stable"] else "[non-stable]")
+            print(f"  p={p}: {mark}  ε_p(T) = "
+                  f"{test['residue_str'][:60]}  {stable_mark}")
+            relations.append({
+                "kind": "multiplicative",
+                "atom": T_lbl,
+                "factors": [D_lbl, neutron_lbl],
+                "prime": p,
+                "exact_match": test["exact_match"],
+                "residue": test["residue_str"],
+                "residue_galois_norm": test["residue_galois_norm_int"],
+                "residue_is_galois_stable": test["residue_is_galois_stable"],
+            })
+        print()
+
+    # Test 1c: ³He = D ⊗ p.
+    if D_lbl and proton_lbl and He3_lbl:
+        print("─── Test 1c: Frob_p(³He) =? Frob_p(D) · Frob_p(proton) ───")
+        for p in primes:
+            n_2p = 2 * p
+            f_D = frobs.get(D_lbl, {}).get(p)
+            f_p = frobs.get(proton_lbl, {}).get(p)
+            f_He = frobs.get(He3_lbl, {}).get(p)
+            if f_D is None or f_p is None or f_He is None:
+                continue
+            test = check_multiplicative(f_D, f_p, f_He, n_2p, u)
+            mark = "✓" if test["exact_match"] else "·"
+            stable_mark = ("[stable, N=" + str(test["residue_galois_norm_int"]) + "]"
+                           if test["residue_is_galois_stable"] else "[non-stable]")
+            print(f"  p={p}: {mark}  ε_p(³He) = "
+                  f"{test['residue_str'][:60]}  {stable_mark}")
+            relations.append({
+                "kind": "multiplicative",
+                "atom": He3_lbl,
+                "factors": [D_lbl, proton_lbl],
+                "prime": p,
+                "exact_match": test["exact_match"],
+                "residue": test["residue_str"],
+                "residue_galois_norm": test["residue_galois_norm_int"],
+                "residue_is_galois_stable": test["residue_is_galois_stable"],
+            })
+        print()
+
+    # Test 1d: residue comparison T vs ³He.
+    if T_lbl and He3_lbl and D_lbl:
+        print("─── Test 1d: ε_p(T) − ε_p(³He) — isobaric mirror residue gap ───")
+        for p in primes:
+            n_2p = 2 * p
+            f_D = frobs.get(D_lbl, {}).get(p)
+            f_p = frobs.get(proton_lbl, {}).get(p) if proton_lbl else None
+            f_n = frobs.get(neutron_lbl, {}).get(p) if neutron_lbl else None
+            f_T = frobs.get(T_lbl, {}).get(p)
+            f_He = frobs.get(He3_lbl, {}).get(p)
+            if not all([f_D, f_p, f_n, f_T, f_He]):
+                continue
+            eps_T = reduce_in_ring(f_T - f_D * f_n, n_2p, u).as_expr()
+            eps_He = reduce_in_ring(f_He - f_D * f_p, n_2p, u).as_expr()
+            gap = reduce_in_ring(eps_T - eps_He, n_2p, u)
+            print(f"  p={p}: ε_T - ε_³He = {str(gap.as_expr())[:60]}")
+            relations.append({
+                "kind": "isobaric_mirror_residue_gap",
+                "prime": p,
+                "epsilon_T": str(eps_T),
+                "epsilon_He3": str(eps_He),
+                "gap": str(gap.as_expr()),
+                "gap_is_zero": gap.is_zero,
+            })
+        print()
+
+    # Test 1e: 3-fold multiplicative — T = p · n · n; ³He = p · p · n.
+    # If perfectly multiplicative, Frob_p(T) = Frob(p) · Frob(n)^2 etc.
+    if proton_lbl and neutron_lbl and T_lbl and He3_lbl:
+        print("─── Test 1e: 3-fold T = p · n²; ³He = p² · n ───")
+        for p in primes:
+            n_2p = 2 * p
+            f_p = frobs.get(proton_lbl, {}).get(p)
+            f_n = frobs.get(neutron_lbl, {}).get(p)
+            f_T = frobs.get(T_lbl, {}).get(p)
+            f_He = frobs.get(He3_lbl, {}).get(p)
+            if not all([f_p, f_n, f_T, f_He]):
+                continue
+            test_T = check_multiplicative(f_p, f_n * f_n, f_T, n_2p, u)
+            test_He = check_multiplicative(f_p * f_p, f_n, f_He, n_2p, u)
+            print(f"  p={p}: T-residue norm = {test_T['residue_galois_norm_int']}, "
+                  f"³He-residue norm = {test_He['residue_galois_norm_int']}")
+            relations.append({
+                "kind": "three_fold_multiplicative",
+                "prime": p,
+                "T_residue_norm": test_T["residue_galois_norm_int"],
+                "He3_residue_norm": test_He["residue_galois_norm_int"],
+                "T_residue": test_T["residue_str"],
+                "He3_residue": test_He["residue_str"],
+            })
+        print()
+
+    # Test 1f: Galois-norm symmetry — does the binding-norm depend
+    # only on A (mass number) or on (Z, N) separately?
+    if proton_lbl and neutron_lbl and T_lbl and He3_lbl:
+        print("─── Test 1f: ε(T) - ε(³He) Galois norm — isobaric asymmetry ───")
+        for p in primes:
+            n_2p = 2 * p
+            f_p = frobs.get(proton_lbl, {}).get(p)
+            f_n = frobs.get(neutron_lbl, {}).get(p)
+            f_D = frobs.get(D_lbl, {}).get(p)
+            f_T = frobs.get(T_lbl, {}).get(p)
+            f_He = frobs.get(He3_lbl, {}).get(p)
+            if not all([f_p, f_n, f_D, f_T, f_He]):
+                continue
+            eps_T = reduce_in_ring(f_T - f_D * f_n, n_2p, u).as_expr()
+            eps_He = reduce_in_ring(f_He - f_D * f_p, n_2p, u).as_expr()
+            gap = reduce_in_ring(eps_T - eps_He, n_2p, u)
+            gap_expr = gap.as_expr()
+            gap_norm = reduce_in_ring(
+                sum(gap_expr.subs(u, u ** k)
+                    for k in range(1, n_2p) if gcd(k, n_2p) == 1),
+                n_2p, u,
+            )
+            norm_int = (
+                int(gap_norm.all_coeffs()[0]) if gap_norm.degree() == 0
+                and gap_norm.all_coeffs()
+                and gap_norm.all_coeffs()[0].is_Integer
+                else None
+            )
+            print(f"  p={p}: gap-norm = {norm_int}  "
+                  f"(eps_T-norm − eps_He-norm = "
+                  f"{(test_T['residue_galois_norm_int'] if False else '—')})")
+            relations.append({
+                "kind": "isobaric_gap_norm",
+                "prime": p,
+                "gap_galois_norm": norm_int,
             })
         print()
 
@@ -251,6 +422,58 @@ def main() -> int:
           f"{len(weight_table)} (atom, prime) pairs")
     print()
 
+    # Test 4: p-adic divisibility analysis of residue norms.
+    # If the residues encode motivic L-function local factors, we
+    # expect the norm at prime p to be divisible by p^k for some
+    # k ≥ 0 related to the motive's weight at p.
+    print("─── Test 4: p-adic divisibility of residue Galois norms ───")
+    pdic_table: list[dict[str, Any]] = []
+    for r in relations:
+        if r.get("kind") not in {"multiplicative", "isobaric_gap_norm",
+                                  "three_fold_multiplicative"}:
+            continue
+        p = r["prime"]
+        norms = []
+        if r["kind"] == "multiplicative":
+            n = r.get("residue_galois_norm")
+            label = f"{r['atom']} = {' · '.join(r['factors'])}"
+            if n is not None:
+                norms.append((label, n))
+        elif r["kind"] == "isobaric_gap_norm":
+            n = r.get("gap_galois_norm")
+            if n is not None:
+                norms.append(("ε(T) - ε(³He)", n))
+        elif r["kind"] == "three_fold_multiplicative":
+            for k in ["T_residue_norm", "He3_residue_norm"]:
+                n = r.get(k)
+                if n is not None:
+                    norms.append((f"3fold-{k}", n))
+        for label, n in norms:
+            if n == 0:
+                pval = "∞ (zero)"
+            else:
+                # p-adic valuation of |n|.
+                from sympy import factorint
+                fac = factorint(abs(n))
+                pval = fac.get(p, 0)
+            pdic_table.append({
+                "prime": p,
+                "residue_label": label,
+                "norm": n,
+                "p_adic_valuation": pval,
+                "factorization": dict(factorint(abs(n))) if n else {},
+            })
+    # Print a focused table of "high p-adic valuation" hits.
+    print("  Residues with p-adic valuation ≥ 1 (motivic-Euler-factor signature):")
+    hits = sorted([r for r in pdic_table if isinstance(r["p_adic_valuation"], int)
+                   and r["p_adic_valuation"] >= 1], key=lambda r: -r["p_adic_valuation"])
+    for r in hits[:20]:
+        fac_str = " · ".join(f"{p}^{e}" for p, e in r["factorization"].items())
+        print(f"  p={r['prime']:>2}: {r['residue_label']:<35} "
+              f"norm = {r['norm']:>+10d}  v_{r['prime']} = {r['p_adic_valuation']}  "
+              f"= ±{fac_str}")
+    print()
+
     out = {
         "computation": "habiro-motivic-orbit-relations",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -271,6 +494,7 @@ def main() -> int:
         "primes": primes,
         "relations": relations,
         "weight_signature": weight_table,
+        "p_adic_signature": pdic_table,
         "summary": {
             "n_relations": len(relations),
             "n_multiplicative_matches": sum(
