@@ -80,6 +80,7 @@ if __name__ == "__main__":
         t0 = time.time()
         s_sym = sigma_inv_dim_q(n)
         s_q0 = float(s_sym.subs(q, sp.Rational(int(Q0_FLOAT*10**16), 10**16)).evalf(30))
+        s_q0_polynomial_q = expose_polynomial(s_sym, q)
         dt = time.time() - t0
         sigma_table[A] = (s_sym, s_q0)
         print(f"  Σ_{{λ⊢{n}}} 1/dim_q(λ) = {sp.nsimplify(s_sym)}")
