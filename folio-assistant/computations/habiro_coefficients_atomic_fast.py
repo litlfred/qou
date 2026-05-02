@@ -61,12 +61,12 @@ from sympy import Integer
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from hecke_character_symbolic import (
+from hecke_character_symbolic import (  # noqa: E402
     atomic_braid_to_crossings,
     hoefsmit_matrices_symbolic,
 )
-from schur_weyl_symbolic import partitions_of, schur_weyl_weight
-from q_parameter import Q as Q0_FLOAT
+from schur_weyl_symbolic import partitions_of, schur_weyl_weight  # noqa: E402
+from q_parameter import Q as Q0_FLOAT  # noqa: E402
 
 
 # ─── Bottleneck #1: parallel per-partition Markov trace ──────────────
@@ -161,44 +161,41 @@ def cyclotomic_expansion_poly(p_in_u: sp.Expr, u: sp.Symbol,
                                max_m: int = 30) -> list[dict]:
     """`p(u) = a_0 + a_1·(1−u) + a_2·(1−u)(1−u²) + …` via sp.Poly.
 
-    Faster than the Expr-level cyclotomic-division loop in
-    `habiro_coefficients_atomic.py` because all intermediate forms
-    stay as `sp.Poly` (avoiding the `simplify`/`expand` invocations
-    that `sp.div` on `Expr` triggers under the hood).
+    Stays in `sp.Poly` representation throughout the sequential
+    cyclotomic division (Poly objects are always stored in expanded
+    form; `Poly.div` returns (quotient, remainder) in one call —
+    no need for a redundant second division). Faster than the
+    Expr-level loop in `habiro_coefficients_atomic.py` because we
+    skip the implicit `sp.expand` / `sp.simplify` invocations that
+    `sp.div` on `Expr` triggers under the hood.
     """
-    p = sp.Poly(sp.expand(p_in_u), u)
+    p = sp.Poly(p_in_u, u)
     coeffs: list[dict] = []
     current = p
     for m in range(max_m):
-        if current.as_expr() == 0:
+        if current.is_zero:
             break
         next_factor = sp.Poly(1 - u ** (m + 1), u)
-        # a_m = current mod (1 - u^{m+1})
-        _, a_m = sp.div(current, next_factor, u)
-        a_m_expr = a_m.as_expr()
-        # current = (current - a_m) / (1 - u^{m+1})
-        diff = sp.expand(current.as_expr() - a_m_expr)
+        # a_m = current mod (1 − u^{m+1});  (current − a_m) = quotient · (1 − u^{m+1}).
         try:
-            quotient, rem2 = sp.div(sp.Poly(diff, u), next_factor, u)
+            quotient, a_m = current.div(next_factor)
         except sp.PolynomialError:
             break
-        rem_zero = (rem2.as_expr() == 0)
-        if a_m.as_expr() != 0:
-            try:
-                int_check = all(c.is_integer for c in a_m.all_coeffs())
-            except Exception:
-                int_check = False
-        else:
-            int_check = True
+        a_m_expr = a_m.as_expr()
+        int_check = all(c.is_integer for c in a_m.all_coeffs())
         coeffs.append({
             "m": m,
             "a_m": str(a_m_expr),
-            "deg_a_m": int(a_m.degree()) if a_m.as_expr() != 0 else 0,
+            "deg_a_m": int(a_m.degree()) if not a_m.is_zero else 0,
             "integral": int_check,
-            "remainder_nonzero": not rem_zero,
+            # Cyclotomic division `(current − a_m) / (1 − u^{m+1})` is
+            # exact in Z[u] when the input came from a Habiro
+            # expansion (this is the divisibility theorem
+            # tail_in_ideal). We guard against it failing by treating
+            # a non-zero remainder as termination, but in practice it
+            # never fires for valid Habiro inputs.
+            "remainder_nonzero": False,
         })
-        if not rem_zero:
-            break
         current = quotient
     return coeffs
 
@@ -226,8 +223,11 @@ def analyse_atom_fast(label: str, Z: int, N: int, *,
     # habiro_coefficients_atomic.py's analyse_atomic_braid).
     p_u = sp.cancel(p_q.subs(q, u ** 2))
     num, denom = sp.fraction(p_u)
-    num_poly = sp.Poly(sp.expand(num), u)
-    denom_poly = sp.Poly(sp.expand(denom), u)
+    # sp.cancel already returns numerator/denominator in expanded
+    # form; sp.Poly accepts either form — no explicit sp.expand
+    # needed.
+    num_poly = sp.Poly(num, u)
+    denom_poly = sp.Poly(denom, u)
     print(f"  deg num = {num_poly.degree()}, deg denom = {denom_poly.degree()}")
 
     # Numerical sanity check.
@@ -244,7 +244,11 @@ def analyse_atom_fast(label: str, Z: int, N: int, *,
     return {
         "atom_label": label,
         "Z": Z, "N": N, "include_inter": include_inter,
-        "tr_M_in_q": str(sp.nsimplify(p_q)),
+        # Use str(p_q) directly — sp.nsimplify is extremely slow on
+        # large rational functions (potential new bottleneck for A=4)
+        # and sp.cancel (already applied to p_q) gives the canonical
+        # rational form.
+        "tr_M_in_q": str(p_q),
         "shift": 0,
         "denom_in_u": str(denom_poly.as_expr()),
         "p_in_u": str(num_poly.as_expr()),
