@@ -119,6 +119,7 @@ export default chapter({
         "mass-identity-unique",
         "mass-identity-unique-proof",
         "mass-identity-su2",
+        "homological-shell-condensation",
       ],
     }),
 

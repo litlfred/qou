@@ -16,8 +16,5 @@ export default remark({
     "boson",
     "torus-link",
   ],
-  uses: [
-    "thm:embeddability-closure",
-    "conj:higgs-t28",
-  ],
+  uses: ["thm:embeddability-closure"],
 });

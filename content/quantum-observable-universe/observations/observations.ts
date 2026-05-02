@@ -111,6 +111,11 @@ export default chapter({
         "trace-ratio-interpretation",
         "shell-threading-conjecture",
         "magic-numbers-from-q",
+        "k12-barrier-bypass",
+        "diagrammatic-double-magic-lr-fusion",
+        "single-magic-O18-diagram",
+        "double-magic-Ca40-diagram",
+        "non-magic-Li6-diagram",
       ],
     }),
 

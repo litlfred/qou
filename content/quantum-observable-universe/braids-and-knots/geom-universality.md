@@ -18,10 +18,10 @@ complements satisfying:*
 *Proof.*
 The argument proceeds in three steps.
 
-**Step 1: Existence (Neumann--Zagier).**
-The Neumann--Zagier theorem \cite{neumann-zagier1985} establishes
-that for a hyperbolic knot $K$, the hyperbolic volume $\mathrm{Vol}(K)$
-and Chern--Simons invariant $\mathrm{CS}(K)$ are related by:
+**Step 1: Existence (Neumann--Zagier, τ-image side).**
+On the τ-image (geometric) side, the Neumann--Zagier theorem
+\cite{neumann-zagier1985} establishes that for a hyperbolic knot
+$K$, $\mathrm{Vol}(K)$ and $\mathrm{CS}(K)$ are related by:
 
 $$
   \mathrm{Vol}(K) + i\,\mathrm{CS}(K)

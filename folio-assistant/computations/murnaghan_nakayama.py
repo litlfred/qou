@@ -219,12 +219,22 @@ def atomic_braid_word(Z, N, include_inter=True,
     return word
 
 
-def character_on_atomic_braid(partition, Z, N, include_inter=True):
+def character_on_atomic_braid(partition, Z, N, include_inter=True,
+                                m_pp=1, m_pn=1, m_nn=1):
     """χ^λ(π(𝒜)) — classical S_{3A} character on the atomic-braid
     permutation.
+
+    P2.1 wiring: threads m_pp/m_pn/m_nn through to atomic_braid_word
+    so that dressed-quark mass differentiation reaches the SW
+    character. Note: at A=1 (single nucleon) the multiplicities have
+    no effect (no inter-nucleon pairs); at A≥2 they differentiate
+    proton-rich vs neutron-rich atoms via the inter-nucleon crossing
+    structure. The q=1 limit of the Hecke character is still implicit
+    (full q-deformed Hecke character requires q-ribbon-tableau
+    weights — separate module).
     """
     n_strands = 3 * (Z + N)
-    word = atomic_braid_word(Z, N, include_inter)
+    word = atomic_braid_word(Z, N, include_inter, m_pp, m_pn, m_nn)
     perm = permutation_from_braid_word(word, n_strands)
     cyc = cycle_type_of_permutation(perm)
     return mn_character(partition, cyc), cyc

@@ -43,6 +43,12 @@ from pathlib import Path
 
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 # ── Symbolic coefficient ring R = Q(q) ──────────────────────────
 
 q = sp.Symbol('q', positive=True)
@@ -146,6 +152,7 @@ class HeckeElement:
         result = {}
         for w, c in self.terms.items():
             val = complex(c.subs(q, q_val))
+            val_polynomial_q = expose_polynomial(c, q)
             if abs(val) > 1e-15:
                 result[w] = val
         return result
@@ -324,6 +331,7 @@ def compute_nucleus(name, p, n, q_val=1.110, max_terms=50000, verbose=True):
         print(f"  Computing Markov trace...")
         tr_sym = markov_trace_symbolic(elem, A)
         tr_num = complex(tr_sym.subs(q, q_val))
+        tr_num_polynomial_q = expose_polynomial(tr_sym, q)
         print(f"  tr(N̄) = {tr_num:.8e}")
         result['markov_trace_symbolic'] = str(tr_sym)
         result['markov_trace_numerical'] = float(tr_num.real)

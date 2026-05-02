@@ -6,6 +6,6 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:color-pairing-binding",
   title: "Degree-2 color pairing as binding energy",
-  interprets: "prop:wedderburn-mass-formula",
+  interprets: "thm:wedderburn-mass-formula",
   uses: ["def:color-tube-coordinates"],
 });

@@ -13,5 +13,5 @@ export default remark({
     "cooling",
     "falsifiability",
   ],
-  uses: ["conj:color-superconductivity-borromean"],
+  uses: [],
 });

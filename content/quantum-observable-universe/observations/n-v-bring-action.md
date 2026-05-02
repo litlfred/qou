@@ -31,7 +31,7 @@ of [`CLAUDE.md` §3b](../../../CLAUDE.md#3b-conjectural-propagation):
 the categorical $S_5$-action on $H_n(R, q)$ at the EW slice is
 asserted but not formally constructed.  It is the **first** of the
 two lemmas in the
-[N_v derivation](#prop:n-v-leading-order-derivation) chain;
+[N_v derivation](#conj:n-v-leading-order-derivation) chain;
 combining it with
 [the EW-slice depth lemma](#conj:n-v-tower-depth-ninety) gives the
 leading-order closure $N_v = 120 \cdot q_0^{90}$ (residual $-0.58\%$

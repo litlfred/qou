@@ -11,7 +11,7 @@ export default theorem({
   uses: [
     "thm:frobenius-codim-universal",
     "prop:partition-sum-proton-residual",
-    "prop:knot-factor-frobenius-pairing",
+    "conj:knot-factor-frobenius-pairing",
   ],
   cites: ["kassel1995"],
   tags: [

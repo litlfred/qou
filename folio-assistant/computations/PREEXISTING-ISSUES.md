@@ -85,10 +85,10 @@
   ⚠ [ns-singularity-descartes]: thm:ns-singularity-descartes: no Lean declaration yet
   ⚠ [root-of-unity-truncation]: prop:root-of-unity-truncation: no Lean declaration yet
   ⚠ [root-of-unity-truncation]: Undefined cross-reference(s) in .md: rem:levi-form-defect
-  ⚠ [p2-critical-exponent]: prop:critical-exponent: no Lean declaration yet
-  ⚠ [p3-blowup-yekutieli]: prop:blowup-yekutieli: no Lean declaration yet
+  ⚠ [p2-critical-exponent]: conj:critical-exponent: no Lean declaration yet
+  ⚠ [p3-blowup-yekutieli]: conj:blowup-yekutieli: no Lean declaration yet
   ⚠ [p4-universality]: prop:universality: no Lean declaration yet
-  ⚠ [q-aubin-lions]: thm:q-aubin-lions: no Lean declaration yet
+  ⚠ [q-aubin-lions]: conj:q-aubin-lions: no Lean declaration yet
   ⚠ [q-bkm-criterion]: thm:q-bkm: no Lean declaration yet
   ⚠ [vorticity-lower-bound]: prop:vorticity-lower-bound: no Lean declaration yet
   ⚠ [levi-degeneracy-conjecture]: Undefined cross-reference(s) in .md: rem:levi-form-defect
@@ -130,7 +130,7 @@
   ⚠ [neutron-qvalue-symbolic]: prop:neutron-qvalue-symbolic: no Lean declaration yet
   ✗ [atomic-braid]: Definition "def:atomic-braid" requires Lean formalization. Expected: /home/user/qou/content/quantum-observable-universe/particle-interactions/atomic-braid.lean or lean.file
   ⚠ [atomic-lp-stability]: prop:atomic-lp-stability: no Lean declaration yet
-  ⚠ [q-integer-mass-formula]: prop:q-integer-mass-formula: no Lean declaration yet
+  ⚠ [q-integer-mass-formula]: conj:q-integer-mass-formula: no Lean declaration yet
   ⚠ [q-integer-mass-formula]: Undefined cross-reference(s) in .md: rem:per-nucleon-channel-decomposition
   ⚠ [neutron-proton-splitting]: prop:neutron-proton-splitting: no Lean declaration yet
   ⚠ [atomic-nf-witness]: prop:atomic-nf-witness: no Lean declaration yet

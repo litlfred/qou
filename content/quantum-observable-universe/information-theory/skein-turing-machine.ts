@@ -13,5 +13,5 @@ export default remark({
     "information-theory",
     "planck-computation",
   ],
-  uses: ["conj:quantum-computational-universality"],
+  uses: [],
 });

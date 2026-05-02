@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:n-v-leading-order-derivation",
+export default conjecture({
+  label: "conj:n-v-leading-order-derivation",
   title: "Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90)",
   cites: [],
   uses: [

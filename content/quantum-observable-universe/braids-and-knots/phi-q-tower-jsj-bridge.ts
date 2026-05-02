@@ -10,6 +10,7 @@ export default conjecture({
   },
   uses: [
     "def:phi-q-piece",
+    "prop:phi-q-tower-algebraic-stratification",
     "conj:kashaev-volume-conjecture",
     "prop:mass-endomorphism-tower",
     "prop:topological-mass-formula",

@@ -15,6 +15,6 @@ export default proposition({
   lean: { ref: "qou:QOU.ParticleInteractions.thurstonVolumeAdditivity",
     validation: "not_checked",
   },
-  uses: ["prop:wedderburn-mass-formula"],
+  uses: ["thm:wedderburn-mass-formula"],
   cites: ["thurston1978"],
 });

@@ -27,7 +27,7 @@ $$
 *is the $Z$-dependent (Coulomb + exchange) part, with all
 coefficients $\lambda_V, \lambda_S, \ldots$ unchanged from the
 Borromean formula
-([q-integer mass formula](#prop:q-integer-mass-formula)).*
+([q-integer mass formula](#conj:q-integer-mass-formula)).*
 
 *The two scaling factors are:*
 

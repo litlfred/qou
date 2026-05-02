@@ -26,6 +26,12 @@ from fractions import Fraction
 
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0_FLOAT
 
@@ -90,6 +96,7 @@ if __name__ == "__main__":
         tr = markov_trace_sigma_0_power(k)
         tr_simpl = sp.simplify(tr)
         tr_q0 = float(tr.subs(q, q0).evalf(30))
+        tr_q0_polynomial_q = expose_polynomial(tr, q)
         print(f"{k:>3}  {str(tr_simpl)[:48]:<50}  {tr_q0:>14.6f}")
         results.append({
             "k": k,
@@ -103,6 +110,7 @@ if __name__ == "__main__":
         pq = q_pochhammer(k)
         coeff = sp.Rational(1) if k == 0 else 1 / pq
         coeff_q0 = float(coeff.subs(q, q0).evalf(30))
+        coeff_q0_polynomial_q = expose_polynomial(coeff, q)
         print(f"  k={k}:  1/(q;q)_{k} = {str(sp.simplify(coeff))[:40]:<40}  "
               f"@ q_0 = {coeff_q0:.6f}")
         if k > 0 and results[k-1]['k'] == k:

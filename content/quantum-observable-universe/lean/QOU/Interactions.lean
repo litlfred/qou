@@ -7,6 +7,7 @@ import QOU.Interactions.DemandStability
 import QOU.Interactions.DerivedAtom
 import QOU.Interactions.GramIndefinite
 import QOU.Interactions.HeckeEngine
+import QOU.Interactions.LRFusion
 import QOU.Interactions.NuclearOperatorRegimes
 import QOU.Interactions.NucleonNFWitness
 import QOU.Interactions.ProtonTrefoilSign
@@ -28,6 +29,7 @@ Re-exports all particle interaction formalization modules.
 - DerivedAtom: derived atom construction from typed crossings
 - GramIndefinite: Gram matrix indefiniteness (fully proved)
 - HeckeEngine: 6-basis NF computation engine
+- LRFusion: LR-fusion rigidity for double-magic compositions
 - NuclearOperatorRegimes: operator selection rules by Z
 - NucleonNFWitness: proton/neutron NF coefficient verification
 - ProtonTrefoilSign: sign analysis of trefoil coefficient

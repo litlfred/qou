@@ -208,7 +208,7 @@
 | [thm:observability-q-independent](#thm:observability-q-independent) | Observability is a base property: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is independent of the substrate section | Ch 7 | — |
 | [thm:parity-regime-selection](#thm:parity-regime-selection) | Parity regime selection for Q-values | Ch 10 | `QOU.ParticleInteractions.parity_regime_selection` |
 | [thm:markov-trace-product](#thm:markov-trace-product) | Product factorization of the Markov trace | Ch 4 | `QOU.markov_trace_product` |
-| [thm:q-aubin-lions](#thm:q-aubin-lions) | q-deformed Aubin--Lions lemma: compactness of the solution family as $q \to 1$ | Ch 7 | — |
+| [conj:q-aubin-lions](#conj:q-aubin-lions) | q-deformed Aubin--Lions lemma: compactness of the solution family as $q \to 1$ | Ch 7 | — |
 | [thm:topological-charge-quantization](#thm:topological-charge-quantization) | Quantization of topological charge | Ch 6 | `QOU.AlgebraicSubstrate.topological_charge_quantization` |
 | [thm:quantum-peter-weyl](#thm:quantum-peter-weyl) | Quantum Peter--Weyl theorem: completeness of the $\mathrm{SU}_q(2)$ eigenbasis | Ch 7 | — |
 | [thm:qu-to-qou](#thm:qu-to-qou) | Quantum universe with observability and categorical lifting is a QOU | Ch 3 | `QOU.QuToQou` |
@@ -232,13 +232,13 @@
 | [prop:acoustic-horizon-conditions](#prop:acoustic-horizon-conditions) | Acoustic horizon formation and gravitational emergence | Ch 7 | — |
 | [prop:antiparticle-crossing-reversal](#prop:antiparticle-crossing-reversal) | Antiparticles from crossing reversal | Ch 9 | — |
 | [prop:atomic-nf-witness](#prop:atomic-nf-witness) | Atomic braid normal form witness | Ch 10 | — |
-| [prop:q-integer-mass-formula](#prop:q-integer-mass-formula) | Atomic mass formula with $q$-integer Bethe--Weizs\"acker coefficients | Ch 10 | — |
+| [conj:q-integer-mass-formula](#conj:q-integer-mass-formula) | Atomic mass formula with $q$-integer Bethe--Weizs\"acker coefficients | Ch 10 | — |
 | [prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix) | Beta decay as a universal matrix-valued polynomial in $q$ | Ch 9 | `QOU.Descartes.beta_decay_transfer_matrix` |
 | [prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix) | Beta decay as a universal matrix-valued polynomial in $q$ | Ch 10 | `QOU.Descartes.beta_decay_transfer_matrix` |
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 4 | `QOU.Braiding.beta_stability` |
 | [prop:bw-categorical-descent](#prop:bw-categorical-descent) | Bethe-Weizsäcker formula as descent decomposition of the mass endomorphism | Ch 10 | `QOU.ParticleInteractions.bw_categorical_descent` |
 | [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 4 | `QOU.BindingScale.bindingScale_value` |
-| [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as Yekutieli lifting obstruction in the brane tower | Ch 7 | — |
+| [conj:blowup-yekutieli](#conj:blowup-yekutieli) | Blowup mechanism as Yekutieli lifting obstruction in the brane tower | Ch 7 | — |
 | [prop:boltzmann-constant](#prop:boltzmann-constant) | Boltzmann constant is unity in QOU natural units | Ch 8 | `QOU.Information.thermalEnergy` |
 | [prop:braid-action-tensor](#prop:braid-action-tensor) | Braid-group action on tensor powers | Ch 4 | `QOU.Braiding.braid_action_tensor` |
 | [prop:brings-is-qou](#prop:brings-is-qou) | Bring's surface is a quantum observable universe | Ch 9 | `QOU.Brings.brings_is_qou` |
@@ -274,7 +274,7 @@
 | [prop:corrected-markov-trace](#prop:corrected-markov-trace) | Corrected Markov trace of the trefoil braid | Ch 10 | `QOU.ParticleInteractions.corrected_markov_trace` |
 | [prop:cosimplicial-crossed-groupoid](#prop:cosimplicial-crossed-groupoid) | Cosimplicial crossed groupoid | Ch 3 | `QOU.cosimplicial_crossed_groupoid_exists` |
 | [prop:skein-coulomb-enhancement](#prop:skein-coulomb-enhancement) | Coulomb enhancement from electron-proton Skein crossings | Ch 9 | `QOU.Descartes.skein_coulomb_enhancement` |
-| [prop:critical-exponent](#prop:critical-exponent) | Critical exponent of the enstrophy divergence at $q = 1$ | Ch 7 | — |
+| [conj:critical-exponent](#conj:critical-exponent) | Critical exponent of the enstrophy divergence at $q = 1$ | Ch 7 | — |
 | [prop:skein-crossing-asymmetry](#prop:skein-crossing-asymmetry) | Crossing asymmetry and per-crossing Coulomb correction | Ch 4 | `QOU.Braiding.skein_crossing_asymmetry` |
 | [prop:crossing-energy-decomposition](#prop:crossing-energy-decomposition) | Crossing energy decomposes into strong and Coulomb channels | Ch 11 | — |
 | [prop:strangelet-crossing-energy](#prop:strangelet-crossing-energy) | Crossing energy of strange quark matter is purely strong | Ch 11 | — |
@@ -351,7 +351,7 @@
 | [prop:q-jacobiator](#prop:q-jacobiator) | Jacobiator of the q-Lie bracket | Ch 2 | `QOU.q_jacobiator` |
 | [prop:categorical-jet-prolongation](#prop:categorical-jet-prolongation) | Jet prolongation | Ch 3 | `QOU.categorical_jet_prolongation` |
 | [prop:jet-prolongation](#prop:jet-prolongation) | Jet Prolongation | Ch 3 | `QOU.JetProlongation` |
-| [prop:jet-convergence-classical-limit](#prop:jet-convergence-classical-limit) | Jet-filtered knot invariant converges to classical dimension-weighted average | Ch 4 | `QOU.BraidKnot.jet_convergence_classical_limit` |
+| [conj:jet-convergence-classical-limit](#conj:jet-convergence-classical-limit) | Jet-filtered knot invariant converges to classical dimension-weighted average | Ch 4 | `QOU.BraidKnot.jet_convergence_classical_limit` |
 | [prop:kelvin-dispersion-derivation](#prop:kelvin-dispersion-derivation) | Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem | Ch 7 | — |
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio (conjectural — inherits from `conj:mass-endomorphism`) | Ch 4 | `QOU.BraidKnot.KnotFactorFrobeniusPairing` |
 | [prop:operator-selection-lp](#prop:operator-selection-lp) | Knot operator selection as linear program with LP duality | Ch 10 | — |
@@ -446,7 +446,7 @@
 | [prop:benzene-threading-emergence](#prop:benzene-threading-emergence) | Threading link $T(2,6)$ emerges as the LP-optimal $\pi$ configuration | Ch 12 | — |
 | [prop:three-parameters-wedderburn](#prop:three-parameters-wedderburn) | Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$ | Ch 4 | — |
 | [prop:nuclear-operator-regimes](#prop:nuclear-operator-regimes) | Three operator regimes for nuclear binding | Ch 10 | `QOU.Interactions.nuclearOperatorRegimes` |
-| [prop:wedderburn-mass-formula](#prop:wedderburn-mass-formula) | Three-invariant mass formula | Ch 10 | — |
+| [thm:wedderburn-mass-formula](#thm:wedderburn-mass-formula) | Three-invariant mass formula | Ch 10 | — |
 | [prop:topological-mass-formula](#prop:topological-mass-formula) | Topological mass formula (Archimedean) | Ch 4 | `QOU.Torsion.ArchimedeanMassFormula` |
 | [prop:torus-hopf-stability](#prop:torus-hopf-stability) | Torus knot composites on Bring's surface are stable hadrons | Ch 9 | `QOU.Descartes.torus_hopf_stability` |
 | [prop:volume-tower-decomposition](#prop:volume-tower-decomposition) | Tower-level decomposition of hyperbolic volume | Ch 9 | `QOU.Descartes.VolumeTowerDecomposition` |

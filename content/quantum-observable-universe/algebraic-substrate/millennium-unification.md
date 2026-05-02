@@ -51,7 +51,7 @@ $\delta^2 \cdot \varepsilon^{-1} > \varepsilon^3$.
 The first three rows are *unconditional* surreal translations of
 existing QOU propositions
 ([collapse of the quantum gap](#thm:quantum-gap-collapse),
-[blowup as Yekutieli lifting obstruction](#prop:blowup-yekutieli),
+[blowup as Yekutieli lifting obstruction](#conj:blowup-yekutieli),
 [$q$-Collatz](#conj:q-collatz)).  The fourth row is *conditional*
 on [P vs NP in the QOU](#conj:p-vs-np-qou).  The fifth row is
 *conditional* on [$q$-BSD](#conj:q-birch-swinnerton-dyer); the

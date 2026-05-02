@@ -44,7 +44,7 @@ Total dimension: $9 + 36 = 45 = \binom{10}{2}$.  $\square$
 counts unordered pairs of the $10$ strands in $V_{\mathrm{nat}}$.
 This is the **dimension of the strand-pair coupling representation**
 — precisely the algebraic shadow of the Borromean linking
-([borromean-baryon-interpretation](#prop:borromean-baryon-interpretation))
+([borromean-baryon-interpretation](#rem:borromean-baryon-interpretation))
 where each pair of three strands forms a Borromean cycle.*
 
 **Connection to Hecke / quantum dimension.**

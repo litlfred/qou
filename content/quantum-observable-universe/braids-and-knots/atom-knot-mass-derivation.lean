@@ -17,7 +17,7 @@
 
   Refs: prop:atom-knot-mass-derivation, prf:atom-knot-mass-derivation,
         def:quantum-observable-universe, def:rigid-monoidal-category,
-        def:adjoint-trace, def:confined-particle, prop:confinement-sdp,
+        rem:adjoint-trace, def:confined-particle, prop:confinement-sdp,
         prop:wedderburn-trace-identity, thm:jones-markov-trace,
         prop:alpha-k-derivation-procedure,
         prop:archimedean-realization-functor,

@@ -45,6 +45,12 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 from sympy import Symbol, Rational, Integer, Matrix, simplify, sqrt, together
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -281,6 +287,7 @@ if __name__ == "__main__":
         for lam in partitions_of(3):
             chi = q_character_on_braid_word(lam, crossings, q)
             chi_at_q0 = float(chi.subs(q, q0).evalf(30))
+            chi_at_q0_polynomial_q = expose_polynomial(chi, q)
             per_lambda[str(lam)] = {
                 "symbolic": str(sp.nsimplify(chi)),
                 "at_q0": chi_at_q0,
@@ -317,6 +324,7 @@ if __name__ == "__main__":
             total += w * chi
         total = sp.simplify(total)
         total_q0 = float(total.subs(q, q0).evalf(30))
+        total_q0_polynomial_q = expose_polynomial(total, q)
         print(f"  |tr_M({label})| @ q_0 = {abs(total_q0):+.6e}")
         results[f"{label}_total"] = {
             "symbolic": str(sp.nsimplify(total)),

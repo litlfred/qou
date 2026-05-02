@@ -237,7 +237,7 @@ collision ($d_{\min} \geq \ell_q > 0$), so $v_q$ is smooth.
 But the limit $v^*$ has no quantum pressure, and the collision
 proceeds to completion.
 
-**Theorem (q-Aubin--Lions).**
+**Conjecture (q-Aubin--Lions, conditional on conj:ns-counterexample).**
 Under the hypotheses above, there exists a subsequence
 $q_n \to 1$ such that:
 

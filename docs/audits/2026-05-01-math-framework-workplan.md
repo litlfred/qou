@@ -326,33 +326,18 @@ cross-check, not the primary derivation.
 
 - **W**: ~99% of the mass is missing from CRT compute because only
   the std (2-dim) channel is implemented at the descended level.
-- **2026-05-01 refresh** (per
-  [`AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md)):
-  `crt_markov.py` *already has* `tower_mass_symbolic_eval` which
-  computes V_full + full tower at **H_3 weights**. But **no caller
-  uses it** — the 5 callers (`canonical_isospin_pyhecke.py`,
-  `derived_only_extended_A12.py`, `deuteron_error.py`,
-  `gb_residue_tower.py`, `paper_six_term_isotope_sweep.py`) all
-  invoke the descended-only `markov_trace_symbolic_eval`. So the
-  gap is *practical* even though the code has caught up in principle.
-- **D** split into two phases:
-  - **P2.1a (small optimization, immediate)**: migrate appropriate
-    callers from `markov_trace_symbolic_eval` to
-    `tower_mass_symbolic_eval`. Per-caller decision (some may be
-    *intentionally* descended-only — e.g., `derived_only_extended_A12.py`).
-    Each migration is ~1-2 line.
-  - **P2.1b (CRT main task, multi-week)**: replace H_3 weights
-    with H_{3A} weights via CRT polynomial reconstruction. Gated
-    on P2.2.
-  - Originally-listed (3): `z²Σ Φ_q(|V_i^full V_j^full|)` adjacent-pair
-    term — **already in** `tower_mass_symbolic_eval` (line 240–249).
-- **B**: P2.1a blocks nothing; P2.1b blocked by P2.2.
-- **S**: P2.1a — every caller intentionally on descended-only is
-  documented; appropriate ones migrated. P2.1b — MAE on light-A
-  nuclei ≤ 50 ppm without per-isotope fitting.
-- **E**: P2.1a 1 day; P2.1b multi-week.
+- **D**: Extend `crt_markov.py` so that:
+  1. `V_full = w_sym · V_sym + w_std · V_std + w_alt · V_alt` is
+     accumulated symbolically, with the per-level Wedderburn
+     weights at $H_{3A}$ (not $H_3$).
+  2. Add the single-generator tower term $\sum_i \Phi_q(|V_i^{\text{full}}|)$.
+  3. Add the adjacent-pair term $z^2 \sum_{|i-j|=1} \Phi_q(|V_i^{\text{full}} V_j^{\text{full}}|)$ (the all-pairs $\mathcal{P}_n$ form per `thm:markov-trace-factorization`).
+- **B**: blocked by P2.2 (Wedderburn coverage at $H_{3A}$).
+- **S**: MAE on light-A nuclei $\leq 50$ ppm without per-isotope
+  fitting; the previously-missing 0.9% explained.
+- **E**: 1 week.
 
-### P2.2 — Wedderburn coverage at $H_{3A}(q)$ — **elevated; split into 2.2a + 2.2b**
+### P2.2 — Wedderburn coverage at $H_{3A}(q)$ via CRT polynomial reconstruction — **elevated**
 
 **2026-05-01 elevation**: was tagged "approximation accuracy fix"; the
 P2.1a witness
@@ -363,52 +348,6 @@ radius ($|z| < q$); the tower formula becomes divergent, not just
 inaccurate. Per user confirmation: "probably H_3 weights are wrong
 at H_{3A}". P2.2 now both restores convergence AND improves
 accuracy.
-
-**Investigation** (2026-05-01,
-[`2026-05-01-h3-at-h3a-weight-derivation.md`](2026-05-01-h3-at-h3a-weight-derivation.md)):
-the H_3 weights are the canonical $w_\lambda$ at $n=3$ but applied
-per-generator at H_{3A}. The correct H_{3A} formulation already
-exists in
-[`schur_weyl_symbolic.py`](../../folio-assistant/computations/schur_weyl_symbolic.py)
-(per-partition weights via $w_\lambda = s_\lambda(q,q^{-1})/H_q(\lambda)$)
-but isn't wired into the live mass tower. So P2.2 splits:
-
-- **P2.2a — Wire `schur_weyl_symbolic` into the live mass tower.**
-  ✅ **landed**: `markov_trace_schur_weyl_eval` in `crt_markov.py`
-  + per-braid tower (`prop:per-braid-mass-tower`) demonstrate the
-  proper H_{3A} computation; convergence verified for D, ³He, ³H,
-  ⁴He.
-- **P2.2b — Scaling to high A.** ✅ **landed** via three small
-  optimisations:
-  (i) iterate only length-≤-2 partitions (1000× reduction at A=12;
-      `schur_weyl_optimised.py`);
-  (ii) `sp.cancel` instead of `sp.simplify` (bypasses
-       `HeuristicGCDFailed`);
-  (iii) **direct mpmath evaluation at q_0** — bypasses sympy entirely
-        (`schur_weyl_mpmath.py`).
-  Net: ⁴⁰Ca (120-strand) computes in **0.25 s** vs original sympy
-  path's >5 min timeout at ¹²C. The "multi-week CRT" framing is
-  retired. Wired into `crt_markov.markov_trace_schur_weyl_eval`.
-- **P2.2c — q-deformed Hecke character (proton/neutron distinction).**
-  ✅ **landed** via per-crossing (c, d)-aware evaluation
-  (`schur_weyl_q_hecke_v2.py` →
-  `markov_trace_q_hecke_atomic`). The q=1 MN character couldn't
-  distinguish proton from neutron (identical S_n cycle structure).
-  q-Hecke + (c, d) per crossing reads the Hoefsmit seminormal
-  matrices and multiplies $\prod_i (c_i \sigma_{g_i} + d_i I)$:
-  - proton trace: 0.823 vs neutron trace: 0.601 (27% diff)
-  - ³He vs ³H: 51.6% relative splitting detected
-- **P2.2c-norm — Φ_q normalisation for q-Hecke per-braid.**
-  ✅ **landed (Option C)**: HYBRID = q-Hecke descended + q=1 MN tower
-  (`per_braid_tower_hybrid.py`). At A ≤ 4: cal/$m_e$ spread = 0.65%;
-  ³He/³H split = 0.53 MeV (matches AME).
-- **P2.2c-12C — Rust extension for q-Hecke at A=12+.** 🟡 **partial**:
-  pyhecke_native built (`maturin build --release` in
-  `tools/pyhecke-native/`); Rust kernel functions accessible but
-  accept only braid words `(sign, gen)`, not per-crossing
-  `(c, d)`. Closing this requires a new Rust function
-  `chi_q_atomic(shape, [(c, d, gen)], q)`. Survey memo:
-  [`2026-05-01-existing-compute-optimisations.md`](2026-05-01-existing-compute-optimisations.md).
 
 - **W**: §3·B of audit. Current code uses $H_3$ weights as an
   approximation.
@@ -421,31 +360,42 @@ but isn't wired into the live mass tower. So P2.2 splits:
 - **S**: deterministic, correct $V_\lambda(q)$ for all $\lambda \vdash 3A$ at $A \leq 30$ (covers H–Zn).
 - **E**: 1 week.
 
-### P2.3 — Word-shortcut undo functions, levels 4–7
+### P2.3 — Word-shortcut undo functions, levels 4–7 — ✅ DONE
 
 - **W**: §3·C, [INFRASTRUCTURE-AUDIT.md §Track B](../../folio-assistant/computations/INFRASTRUCTURE-AUDIT.md).
   No `undo_to_quark` for shells, atoms, molecules.
-- **D**: Implement
-  ```
-  undo_shortcut(level: 4 | 5 | 6 | 7, word: list[Generator]) -> list[QuarkLevelGenerator]
-  ```
-  with a unit test matching the descended-trace identity at each
-  level.
-- **B**: blocks P3.x molecular and electron-shell predictions.
-- **S**: per-level test passes; binding energy at level $n$ via the
-  expanded quark-level word agrees with the level-$n$ shortcut to
-  machine precision.
-- **E**: 1 week per level (4 weeks total).
+- **D**: ✅ Implemented in
+  [`folio-assistant/computations/confinement_shortcuts.py`](../../folio-assistant/computations/confinement_shortcuts.py).
+  All 7 levels have `LevelWord`-derived classes (`MesonWord`,
+  `NucleonWord`, `AtomWord`, `ShellWord`, `CrossShellWord`,
+  `NeutralAtomWord`, `MoleculeWord`) with `undo_to_quark` methods
+  producing crossings dicts at the quark level. Self-test
+  exercises every level (run via
+  `python3 folio-assistant/computations/confinement_shortcuts.py`).
+- **B**: unblocked.
+- **S**: ✅ Self-test passes for L1–L7 with non-trivial crossings
+  emitted at each level (e.g. ¹⁶O shell at L4: 47 generators / 191
+  crossings; H₂ molecule at L7: 7 generators / 23 crossings).
+- **E**: 0 (already done; verification on this branch).
 
 ### P2.4 — Multi-level quadratic SDP
 
-- **W**: §3·D. `sdp_cross_channel.py` only at level 3.
+- **W**: §3·D. `sdp_cross_channel.py` only at level 3 (pair-coupling
+  granularity). The current SDP is generic-(Z, N) but its
+  constraint family encodes only the pair-coupling Wedderburn
+  structure of nucleon-nucleon interactions — it does not model
+  shell-closure (L4), cross-shell (L5), atom-electron (L6), or
+  covalent (L7) constraint structures.
 - **D**: Extend to levels 4 (shell-closure), 5 (cross-shell), 6
-  (atom-electron), 7 (covalent).
-- **B**: blocks P2.3 for the molecular layer.
+  (atom-electron), 7 (covalent). Each level needs its own block
+  decomposition (or extension of the current one) and per-level
+  Wedderburn / Frobenius-positivity constraint families.
+- **B**: blocks per-level binding-energy prediction beyond
+  pair-coupling for shell / atom / molecule levels.
 - **S**: SDP-derived shadow prices match BW coefficients within
-  expected $k$-truncation error.
-- **E**: 2 weeks.
+  expected $k$-truncation error at each level.
+- **E**: 2 weeks. Out of scope for the math-framework audit pass;
+  queued as separate compute branch.
 
 ### P2.5 — Symbolic-in-$q$ everywhere, late $q_0$-substitution — 🟡 surveyed; Tier B kickoff landed
 

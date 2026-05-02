@@ -4,7 +4,7 @@ export default remark({
   label: "rem:calibration-inputs",
   title: "Calibration inputs and predictive content",
   interprets: "def:mass-identity",
-  uses: ["conj:mass-endomorphism"],
+  uses: [],
   tags: [
     "calibration",
     "mass",

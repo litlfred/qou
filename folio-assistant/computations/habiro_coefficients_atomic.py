@@ -35,6 +35,12 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 from sympy import Symbol, Rational, Integer, simplify, together, nsimplify
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -198,6 +204,7 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
     q0 = Rational(int(_Q_CANONICAL * 10 ** 16), 10 ** 16)
     u0 = sp.sqrt(q0)
     p_at_q0 = float(p_q.subs(q, q0).evalf(30))
+    p_at_q0_polynomial_q = expose_polynomial(p_q, q)
     p_u_at_u0 = float(p_u.subs(u, u0).evalf(30)) / float(
         u0 ** shift if shift else 1)
     print(f"  tr_M @ q_0 = {p_at_q0:+.6e}  "

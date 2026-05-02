@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:blowup-yekutieli",
+export default conjecture({
+  label: "conj:blowup-yekutieli",
   title:
     "Blowup mechanism as Yekutieli lifting obstruction in the brane tower",
   uses: [

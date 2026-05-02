@@ -118,12 +118,16 @@ $x \in H_k(R, q)$.
 
 **Stage 3** is [Geom(K) alignment](#prop:geom-yekutieli-alignment).
 The observation frame $\tau$ is the fibre functor of the
-Tannakian category $(\mathbf{C}, A, \tau)$.  Its evaluation on the
-knot complement is determined by Thurston's geometrization and the
-Yekutieli rigid dualizing complex: the UNIQUE non-degenerate pairing
+Tannakian category $(\mathbf{C}, A, \tau)$.  On the τ-image
+(geometric) side, its evaluation on the knot complement is determined
+by τ-image Thurston geometrization and the Yekutieli rigid
+dualizing complex: the UNIQUE non-degenerate pairing
 $\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$
 yields $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic $K$ and
-$\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$.  The universality
+$\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$. On the algebraic
+side this is just the [algebraic-quantum-volume](#def:algebraic-quantum-volume)
+pairing in $\mathbb{Z}[q^{\pm 1/2}]$; the geometric reading
+appears only after applying $\tau_{\mathrm{arch}}$.  The universality
 follows from the rigidity of $\omega_A^\bullet$ (Yekutieli): the
 pairing is unique up to the scalar $\hbar_q^2$, and the scalar is
 fixed by requiring that $\mathrm{Geom}(\bigcirc) = 0$ (vacuum
