@@ -446,7 +446,7 @@
 | [prop:benzene-threading-emergence](#prop:benzene-threading-emergence) | Threading link $T(2,6)$ emerges as the LP-optimal $\pi$ configuration | Ch 12 | — |
 | [prop:three-parameters-wedderburn](#prop:three-parameters-wedderburn) | Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$ | Ch 4 | — |
 | [prop:nuclear-operator-regimes](#prop:nuclear-operator-regimes) | Three operator regimes for nuclear binding | Ch 10 | `QOU.Interactions.nuclearOperatorRegimes` |
-| [prop:wedderburn-mass-formula](#prop:wedderburn-mass-formula) | Three-invariant mass formula | Ch 10 | — |
+| [thm:wedderburn-mass-formula](#thm:wedderburn-mass-formula) | Three-invariant mass formula | Ch 10 | — |
 | [prop:topological-mass-formula](#prop:topological-mass-formula) | Topological mass formula (Archimedean) | Ch 4 | `QOU.Torsion.ArchimedeanMassFormula` |
 | [prop:torus-hopf-stability](#prop:torus-hopf-stability) | Torus knot composites on Bring's surface are stable hadrons | Ch 9 | `QOU.Descartes.torus_hopf_stability` |
 | [prop:volume-tower-decomposition](#prop:volume-tower-decomposition) | Tower-level decomposition of hyperbolic volume | Ch 9 | `QOU.Descartes.VolumeTowerDecomposition` |

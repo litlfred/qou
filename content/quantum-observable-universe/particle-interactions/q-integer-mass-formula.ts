@@ -14,7 +14,7 @@ export default conjecture({
   label: "conj:q-integer-mass-formula",
   title: "Atomic mass formula with $q$-integer Bethe--Weizs\\\"acker coefficients",
   uses: [
-    "prop:wedderburn-mass-formula",
+    "thm:wedderburn-mass-formula",
     "prop:operator-selection-lp",
     "conj:palindromicity-orbital-type",
   ],

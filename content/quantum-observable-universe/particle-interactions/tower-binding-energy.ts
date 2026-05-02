@@ -18,7 +18,7 @@ export default proposition({
   },
   uses: [
     "prop:mass-endomorphism-tower",
-    "prop:atomic-braid-mass",
+    "sec:atomic-braid-mass",
     "rem:hecke-charge-mass-duality",
   ],
 });
