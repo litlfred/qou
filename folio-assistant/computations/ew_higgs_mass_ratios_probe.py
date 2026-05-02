@@ -41,6 +41,13 @@ from pathlib import Path
 
 import mpmath as mp
 
+# Module-level precision floor: deliberate, documented side-effect.
+# All q_0-evaluations and 8G / Catalan-constant computations downstream
+# must run at ≥ 50 dps to keep the predicted m_Z/m_W and m_H/m_W
+# ratios stable against q_0 truncation noise.  Setting at import time
+# (not inside main) ensures any reuser also gets the floor.
+mp.mp.dps = 50
+
 
 def tr_M_h2_torus(k: int, q: mp.mpf) -> mp.mpf:
     """tr_M(σ_1^{2k}) at H_2 with q ∈ ℝ_{>0}."""
@@ -56,7 +63,7 @@ def tr_M_h2_torus(k: int, q: mp.mpf) -> mp.mpf:
 
 def main():
     base = Path(__file__).parent
-    mp.mp.dps = 50
+    # mp.mp.dps already set at module level (50)
     q_0 = mp.mpf('1.1099785955541805')
 
     # PDG / CODATA values
