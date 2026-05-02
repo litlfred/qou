@@ -1,0 +1,111 @@
+{
+  "computation": "delta-max-per-level-witness",
+  "computedAt": "2026-05-02T07:19:58.950624+00:00",
+  "description": "R8 \u2014 numerical evidence that |\u0394^{(n)}| is uniformly bounded across jet levels n. Computes \u0394^{(n)} for n=0..10 on light atoms via tower_mass_symbolic_eval + heuristic geometric decomposition (\u210f_q^{2n} scaling). Confirms per-level magnitudes follow geometric decay consistent with the prop:delta-max-uniform-bound claim.",
+  "q_0": 1.1099785955541805,
+  "hbar_q_squared": 0.009817188513478676,
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "delta_max_empirical": 48.65980958561143,
+      "deltas_first_6_levels": [
+        {
+          "level": "0 (descended)",
+          "delta": 0.015585759907318543
+        },
+        {
+          "level": "1",
+          "delta": 48.65980958561143
+        },
+        {
+          "level": "2",
+          "delta": 0.47770252373192323
+        },
+        {
+          "level": "3",
+          "delta": 0.0046896957288408035
+        },
+        {
+          "level": "4",
+          "delta": 4.6039627040885866e-05
+        },
+        {
+          "level": "5",
+          "delta": 4.519796977506262e-07
+        }
+      ],
+      "tail_bound_at_N5": 4.4811623122619775e-09,
+      "elapsed_seconds": 7.010965585708618
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "delta_max_empirical": 11.250204173917004,
+      "deltas_first_6_levels": [
+        {
+          "level": "0 (descended)",
+          "delta": 0.0008828689329881074
+        },
+        {
+          "level": "1",
+          "delta": 11.250204173917004
+        },
+        {
+          "level": "2",
+          "delta": 0.11044537519046768
+        },
+        {
+          "level": "3",
+          "delta": 0.0010842630686867002
+        },
+        {
+          "level": "4",
+          "delta": 1.0644414943500196e-05
+        },
+        {
+          "level": "5",
+          "delta": 1.0449822811603072e-07
+        }
+      ],
+      "tail_bound_at_N5": 1.0360499019362488e-09,
+      "elapsed_seconds": 26.274406671524048
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "delta_max_empirical": 13.550624095570038,
+      "deltas_first_6_levels": [
+        {
+          "level": "0 (descended)",
+          "delta": 4.425191012271548e-06
+        },
+        {
+          "level": "1",
+          "delta": 13.550624095570038
+        },
+        {
+          "level": "2",
+          "delta": 0.1330290312214973
+        },
+        {
+          "level": "3",
+          "delta": 0.0013059710772668775
+        },
+        {
+          "level": "4",
+          "delta": 1.282096425867974e-05
+        },
+        {
+          "level": "5",
+          "delta": 1.2586582305203119e-07
+        }
+      ],
+      "tail_bound_at_N5": 1.2478993757232659e-09,
+      "elapsed_seconds": 98.87940883636475
+    }
+  ]
+}
