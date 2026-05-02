@@ -133,11 +133,18 @@ cubic terms at level $n$
    The remaining open piece is to prove the uniform bound on
    $\Delta^{(n)}$ itself; empirically it holds (and is roughly
    constant) on light atoms.
-2. **Pentagon $\to$ uv-commutation**: the pentagon identity as
-   stated requires $uv = q\,vu$; verifying this relation for
-   traced volumes $\hat V$ at generic jet level needs explicit
-   check (expected to follow from the Hecke braid/commutation
-   on generators, but not written out).
+2. **Pentagon $\to$ uv-commutation** — ✅ resolved by
+   [`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace).
+   The traced volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$
+   are scalar polynomials and commute trivially; the pentagon
+   identity in its operator form does not apply to scalars. The
+   ascension argument's rigorous content is Markov-trace
+   factorization
+   ([thm:markov-trace-factorization](#thm:markov-trace-factorization))
+   plus the brane-tower's $q$-graded jet ascension between
+   adjacent levels — which is where the operator pentagon $uv =
+   q\,vu$ does apply (on inter-level lifts $\widehat U_i$,
+   $\widehat V_j$).
 3. **Descent involution on pairs**: does $\hat\tau_n$ map some
    level-$(n+1)$ pairs back to level-$n$ singletons (or trivial)?
    The pentagon ascension gives an upper bound on the level-$n+1$

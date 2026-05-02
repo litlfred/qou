@@ -448,6 +448,7 @@ export default chapter({
         "gb-residue-spectral-sum",
         "graded-markov-trace-from-gs-filtration",
         "residue-at-root",
+        "vhat-pair-commutation-trace",
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",

@@ -369,19 +369,47 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 - **S**: ✅ zero violations across the §5 audit conjectures.
 - **E**: 0.5 day actual (against the 1–2 day estimate).
 
-### P3.2 — Pentagon $uv = q\,vu$ at traced-volume level (audit GAP 17a)
+### P3.2 — Pentagon $uv = q\,vu$ at traced-volume level (audit GAP 17a) — ✅ landed
 
 - **W**: line 113 of [`derivation-audit-2026-04-20.md`](../derivation-audit-2026-04-20.md).
   Pentagon ascension assumes a $q$-commutation identity at the
   traced-volume level that is "expected but unwritten".
-- **D**: Write a one-page derivation as a `lemma` block:
-  $\mathrm{tr}_M(\hat V_i \hat V_j) = q\, \mathrm{tr}_M(\hat V_j \hat V_i)$
-  for adjacent $i,j$ — most likely a direct application of the
-  Markov property.
+- **D**: ✅ One-page lemma block
+  [`lem:vhat-pair-commutation-trace`](../../content/quantum-observable-universe/braids-and-knots/vhat-pair-commutation-trace.md)
+  with `.ts` + `.md` + `.lean` triple. The lemma's headline turned
+  out to be **simpler than the workplan anticipated**: the traced
+  volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$ are scalar
+  Laurent polynomials and **commute trivially**
+  ($\hat V_i \hat V_j = \hat V_j \hat V_i$, no $q$-factor). The
+  "expected" $q$-factor in the workplan's $\mathrm{tr}_M(\hat V_i
+  \hat V_j) = q\, \mathrm{tr}_M(\hat V_j \hat V_i)$ statement is
+  **incorrect**: cyclicity of $\mathrm{tr}_M$ plus scalar
+  commutativity gives equality without a $q$-factor, matching
+  [`prop:markov-pair-z2`](../../content/quantum-observable-universe/braids-and-knots/markov-pair-z2.md)
+  which already established $\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$
+  for both adjacent and non-adjacent generators.
+- **What this means for the pentagon ascension**: the pentagon
+  identity in its operator form ($\Phi_q(v)\Phi_q(u) = \Phi_q(u)
+  \Phi_q(uv) \Phi_q(v)$ when $uv = q\,vu$) does **not** apply to
+  scalar $\hat V_i$'s. The ascension argument's rigorous content
+  is Markov-trace factorization
+  ([`thm:markov-trace-factorization`](../../content/quantum-observable-universe/particle-interactions/markov-trace-factorization.md))
+  plus the brane-tower's $q$-graded jet ascension between adjacent
+  levels (where the operator pentagon does apply, on inter-level
+  lifts $\widehat U_i, \widehat V_j$). The lemma block documents
+  this reframing in its "Why the pentagon ascension still works"
+  and "Operator lift" sections.
+- **Files touched**:
+  - New: `vhat-pair-commutation-trace.{ts,md,lean}` triple.
+  - Wired into `braids-and-knots.ts §"Categorical Mass
+    Foundations"` after `residue-at-root`.
+  - `mass-endomorphism-jet-tower.md` §"Remaining open
+    subconjectures" item 2 marked ✅ and updated with the
+    resolution.
 - **B**: blocked by nothing.
-- **S**: pentagon-ascension proof in `mass-endomorphism-jet-tower`
+- **S**: ✅ pentagon-ascension proof in `mass-endomorphism-jet-tower`
   no longer cites an "expected" identity.
-- **E**: 1 day.
+- **E**: 1 day → done in 0.5 day.
 
 ### P3.3 — Descent sharpness on pairs (audit GAP 17b)
 
