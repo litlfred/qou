@@ -560,6 +560,34 @@ class WedderburnWeightPerturbation
   /-- Triangle-inequality bound on the weight ratio. -/
   bound : |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3
 
+/-- **Default instance for `k = 0`** — proved directly.
+    At `k = 0`, the perturbation hypotheses force
+    `dq_ratio = fact_ratio = 1` (since `|x - 1| ≤ 0` forces `x = 1`).
+    Then `h_link` gives `w_q / w_cl = 1² · 1 = 1`, so the LHS
+    `|1 - 1| = 0` and the RHS `3 * h_sq * 0 / 3 = 0` agree. -/
+instance wedderburnWeightPerturbation_zero
+    (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+    (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
+    (w_q w_cl : ℝ) (hw : w_cl > 0)
+    (dq_ratio fact_ratio : ℝ)
+    (h_link : w_q / w_cl = dq_ratio ^ 2 * fact_ratio)
+    (h_dq : |dq_ratio - 1| ≤ h_sq * 0 / 6)
+    (h_fact : |fact_ratio - 1| ≤ h_sq * 0 / 6) :
+    WedderburnWeightPerturbation q hq hq2 0 h_sq hh
+      w_q w_cl hw dq_ratio fact_ratio h_link h_dq h_fact := by
+  refine ⟨?_⟩
+  -- |dq_ratio - 1| ≤ 0 forces dq_ratio = 1 (over ℝ)
+  have h_dq_eq : dq_ratio = 1 := by
+    have hbound : |dq_ratio - 1| ≤ 0 := by simpa using h_dq
+    have h_eq : dq_ratio - 1 = 0 := abs_eq_zero.mp (le_antisymm hbound (abs_nonneg _))
+    linarith
+  have h_fact_eq : fact_ratio = 1 := by
+    have hbound : |fact_ratio - 1| ≤ 0 := by simpa using h_fact
+    have h_eq : fact_ratio - 1 = 0 := abs_eq_zero.mp (le_antisymm hbound (abs_nonneg _))
+    linarith
+  rw [h_link, h_dq_eq, h_fact_eq]
+  simp
+
 /-- Per-instance form. -/
 theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
