@@ -90,32 +90,18 @@ def shell_constraint_partitions(A, magic_only=True):
 
 
 def _enumerate_self_conjugate(n):
-    """Enumerate self-conjugate partitions of n via Frobenius coords.
+    """Enumerate self-conjugate partitions of n.
 
-    Inlined from magic-numbers-numerical-witness.py to avoid the
-    hyphenated module name (Python imports prefer underscores).
+    Delegates to the canonical implementation in
+    `enumerate_self_conjugate_partitions.all_self_conjugate_partitions`
+    (single source of truth — see Gemini review on PR #500).
+    Returns tuples for backward compatibility with this module's
+    consumers; the canonical function returns lists.
     """
-    out = []
-
-    def search(remaining, max_a, partial):
-        if remaining == 0:
-            arms = sorted(partial, reverse=True)
-            k = len(arms)
-            lam_dict = {}
-            for i, a in enumerate(arms, start=1):
-                lam_dict[i] = max(lam_dict.get(i, 0), i + a)
-                for off in range(1, a + 1):
-                    lam_dict[i + off] = max(lam_dict.get(i + off, 0), i)
-            lam = tuple(sorted(lam_dict.values(), reverse=True))
-            out.append(lam)
-            return
-        for a in range(min(max_a, (remaining - 1) // 2), -1, -1):
-            cost = 2 * a + 1
-            if cost <= remaining:
-                search(remaining - cost, a - 1, partial + [a])
-
-    search(n, n, [])
-    return out
+    from enumerate_self_conjugate_partitions import (
+        all_self_conjugate_partitions,
+    )
+    return [tuple(p) for p in all_self_conjugate_partitions(n)]
 
 
 def sdp_with_shell_closure(Z, N, partition_entries, pair_couplings,

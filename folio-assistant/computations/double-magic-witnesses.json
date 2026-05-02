@@ -1,7 +1,7 @@
 {
   "computation": "double-magic-witnesses",
   "computedAt": "2026-05-01T00:00:00+00:00",
-  "description": "Falsifiable predictions of the diagrammatic-double-magic / LR-fusion-rigidity conjecture for the seven double-magic isotopes on the magic ladder {2, 8, 20, 28, 50, 82, 126}. Records what the conjecture *predicts* (kappa_A = 0, dominant lambda_A self-conjugate, A on the magic ladder) without committing to specific Young-diagram row vectors — those are produced by a separate enumeration script (TBD).",
+  "description": "Falsifiable predictions of the diagrammatic-double-magic / LR-fusion-rigidity conjecture for the seven double-magic isotopes on the magic ladder {2, 8, 20, 28, 50, 82, 126}. Records what the conjecture *predicts* (kappa_A = 0, dominant lambda_A self-conjugate, A on the magic ladder). Row vectors are filled in for n in {8, 20, 28, 50, 82, 126} from enumerate_self_conjugate_partitions.py (canonical = most-square-like self-conjugate partition); n=2 has no self-conjugate partition (the conjecture is degenerate at this strand count and the empirical magic-2 shell of He-4 must be interpreted via a separate mechanism — open question recorded in the conjecture .md).",
   "framework": {
     "shell_neutrality_conjecture": "qou:QOU.BraidKnot.ShellNeutrality.SaturatedShellConjecture",
     "shell_condensation_conjecture": "qou:QOU.LiftingDescent.HomologicalCondensation.ShellCondensationConjecture",
@@ -29,13 +29,14 @@
       "N": 2,
       "A": 4,
       "kappa_A_predicted": 0,
-      "lambda_A_predicted_self_conjugate": true,
+      "lambda_A_predicted_self_conjugate": "DEGENERATE — see notes",
       "magic_ladder_member": true,
       "matrix_evaluation_tractable": true,
       "k_required_for_hoefsmit": 2,
+      "self_conjugate_count_at_n2": 0,
       "lambda_Z_row_vector": null,
       "lambda_N_row_vector": null,
-      "notes": "Alpha-particle. Within Hoefsmit reach (k = 2). Empirically the most stable light nucleus."
+      "notes": "DEGENERATE: there is no self-conjugate partition of 2 (distinct odd parts summing to 2 is empty). The empirical magic-2 shell of He-4 cannot be the strict-self-conjugacy case of the conjecture; an alternative mechanism (perhaps direct vacuum-state stability, or Saturated-spectrum-trivial degeneracy) is required. Open question — recorded in the conj:categorical-neutrality-saturated-shells .md."
     },
     {
       "name": "O-16",
@@ -47,9 +48,11 @@
       "magic_ladder_member": true,
       "matrix_evaluation_tractable": true,
       "k_required_for_hoefsmit": 4,
-      "lambda_Z_row_vector": null,
-      "lambda_N_row_vector": null,
-      "notes": "Doubly-magic O-16. Within Hoefsmit reach. Self-conjugate partitions of 8 include [4, 2, 1, 1]."
+      "self_conjugate_count_at_n8": 2,
+      "lambda_Z_row_vector": [3, 3, 2],
+      "lambda_N_row_vector": [3, 3, 2],
+      "lambda_Z_alternatives": [[3, 3, 2], [4, 2, 1, 1]],
+      "notes": "Doubly-magic O-16. 2 self-conjugate partitions of 8 exist; canonical (most square-like) is [3, 3, 2]. Hoefsmit verifiable at k=4."
     },
     {
       "name": "Ca-40",
@@ -61,9 +64,10 @@
       "magic_ladder_member": true,
       "matrix_evaluation_tractable": true,
       "k_required_for_hoefsmit": 10,
-      "lambda_Z_row_vector": null,
-      "lambda_N_row_vector": null,
-      "notes": "Doubly-magic Ca-40. At the edge of Hoefsmit tractability (k = 10 boundary). delta^2 Phi peak +20.4 in shell-closure.witness.json corroborates."
+      "self_conjugate_count_at_n20": 7,
+      "lambda_Z_row_vector": [5, 5, 4, 4, 2],
+      "lambda_N_row_vector": [5, 5, 4, 4, 2],
+      "notes": "Doubly-magic Ca-40. 7 self-conjugate partitions of 20 exist; canonical is [5, 5, 4, 4, 2]. At the edge of Hoefsmit tractability (k=10). delta^2 Phi peak +20.4 in shell-closure.witness.json corroborates."
     },
     {
       "name": "Ni-56",
@@ -75,9 +79,10 @@
       "magic_ladder_member": true,
       "matrix_evaluation_tractable": false,
       "k_required_for_hoefsmit": 14,
-      "lambda_Z_row_vector": null,
-      "lambda_N_row_vector": null,
-      "notes": "Doubly-magic Ni-56. Beyond Hoefsmit horizon (k = 14 > 10). The conjecture supplies the prediction; no matrix evaluation can verify."
+      "self_conjugate_count_at_n28": 16,
+      "lambda_Z_row_vector": [6, 6, 5, 5, 4, 2],
+      "lambda_N_row_vector": [6, 6, 5, 5, 4, 2],
+      "notes": "Doubly-magic Ni-56. 16 self-conjugate partitions of 28 exist; canonical is [6, 6, 5, 5, 4, 2]. Beyond Hoefsmit horizon (k=14 > 10) — the conjecture supplies the prediction, no matrix evaluation can verify."
     },
     {
       "name": "Sn-100",
@@ -89,9 +94,10 @@
       "magic_ladder_member": true,
       "matrix_evaluation_tractable": false,
       "k_required_for_hoefsmit": 25,
-      "lambda_Z_row_vector": null,
-      "lambda_N_row_vector": null,
-      "notes": "Doubly-magic Sn-100. Far beyond Hoefsmit horizon. Empirically observed; this is a structural pre-prediction of the homological framework."
+      "self_conjugate_count_at_n50": 98,
+      "lambda_Z_row_vector": [8, 7, 7, 7, 7, 7, 6, 1],
+      "lambda_N_row_vector": [8, 7, 7, 7, 7, 7, 6, 1],
+      "notes": "Doubly-magic Sn-100. 98 self-conjugate partitions of 50 exist; canonical is [8, 7, 7, 7, 7, 7, 6, 1]. Far beyond Hoefsmit horizon. Empirically observed; this is a structural pre-prediction of the homological framework."
     },
     {
       "name": "Pb-208",
@@ -104,9 +110,11 @@
       "magic_ladder_member_N": true,
       "matrix_evaluation_tractable": false,
       "k_required_for_hoefsmit": 52,
-      "lambda_Z_row_vector": null,
-      "lambda_N_row_vector": null,
-      "notes": "Doubly-magic Pb-208 (heaviest known stable doubly-magic). Both Z=82 and N=126 lie on the magic ladder; cross-shell LR-fusion. Way beyond matrix evaluation."
+      "self_conjugate_count_at_n82": 881,
+      "self_conjugate_count_at_n126": 10422,
+      "lambda_Z_row_vector": [10, 9, 9, 9, 9, 9, 9, 9, 8, 1],
+      "lambda_N_row_vector": [12, 12, 12, 11, 11, 11, 11, 11, 11, 11, 10, 3],
+      "notes": "Doubly-magic Pb-208 (heaviest known stable doubly-magic). 881 self-conj of 82, 10422 self-conj of 126. Canonicals listed. Cross-shell LR-fusion; way beyond matrix evaluation."
     },
     {
       "name": "magic-126-symmetric",
@@ -118,9 +126,10 @@
       "magic_ladder_member": true,
       "matrix_evaluation_tractable": false,
       "k_required_for_hoefsmit": 63,
-      "lambda_Z_row_vector": null,
-      "lambda_N_row_vector": null,
-      "notes": "Hypothetical Z=N=126 isotope (A=252 superheavy regime, not observed). Included only as a structural test: if the framework is correct, the heaviest magic number should still produce a kappa = 0, self-conjugate composite under LR-fusion."
+      "self_conjugate_count_at_n126": 10422,
+      "lambda_Z_row_vector": [12, 12, 12, 11, 11, 11, 11, 11, 11, 11, 10, 3],
+      "lambda_N_row_vector": [12, 12, 12, 11, 11, 11, 11, 11, 11, 11, 10, 3],
+      "notes": "Hypothetical Z=N=126 isotope (A=252 superheavy regime, not observed). 10422 self-conj of 126; canonical listed. Structural test of LR-rigidity at the heaviest magic number."
     }
   ],
   "validation_notes": {

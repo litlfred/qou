@@ -48,11 +48,48 @@ structure Composite where
 /-! ## §2  Provable algebraic ingredient — content additivity -/
 
 /-- **Content additivity** (provable from the LR rule, axiomatised
-    here): the Jucys–Murphy charge of the dominant composite equals
-    the sum of the constituent charges. This is the standard fact
-    that contents add under tensor induction. -/
+    here at the abstract framework level): the Jucys–Murphy charge
+    of the dominant composite equals the sum of the constituent
+    charges. This is the standard fact that contents add under
+    tensor induction.
+
+    A concrete *non-vacuous* instance is the disjoint-union
+    composite `Composite.fromUnion`, where `λ_A := λ_Z ⊔ λ_N`
+    is the multiset disjoint union; in that case content additivity
+    is *proved* directly from `kappa_unionDiagram`
+    (see instance `contentAdditive_fromUnion`). The full LR-fusion
+    `λ_A` is conjecturally also content-additive but requires the
+    LR rule to verify. -/
 class ContentAdditive (C : Composite) : Prop where
   kappa_add : kappa C.λ_A = kappa C.λ_Z + kappa C.λ_N
+
+/-- The **trivial composite** built from the disjoint multiset union
+    of constituents. This is *not* the LR-fusion composite — it is a
+    structural lower bound: any well-defined composite must agree
+    with this one on the level of content sums.
+
+    Existence of this composite, together with the proved instance
+    `contentAdditive_fromUnion`, shows that `ContentAdditive` is a
+    consistent typeclass (non-vacuous). -/
+def Composite.fromUnion (λ_Z λ_N : YoungDiagram) : Composite where
+  λ_Z := λ_Z
+  λ_N := λ_N
+  λ_A := unionDiagram λ_Z λ_N
+  mass_eq := rfl
+
+/-- The trivial union composite is content-additive *by direct
+    proof* (no axiom). Provides a concrete instance of
+    `ContentAdditive` against which downstream theorems can be
+    smoke-tested. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+instance contentAdditive_fromUnion (λ_Z λ_N : YoungDiagram) :
+    ContentAdditive (Composite.fromUnion λ_Z λ_N) where
+  kappa_add := by
+    -- goal: kappa (Composite.fromUnion λ_Z λ_N).λ_A
+    --       = kappa (Composite.fromUnion λ_Z λ_N).λ_Z
+    --         + kappa (Composite.fromUnion λ_Z λ_N).λ_N
+    show kappa (unionDiagram λ_Z λ_N) = kappa λ_Z + kappa λ_N
+    exact kappa_unionDiagram λ_Z λ_N
 
 /-! ## §3  Double-magic predicate -/
 
@@ -127,6 +164,35 @@ theorem composite_kappa_zero_of_double_magic
     (h : IsDoubleMagic C) :
     kappa C.λ_A = 0 :=
   doubleMagic_kappa_zero C h
+
+/-- **Concrete special case (fully proved, no axioms):** for the
+    trivial union composite, double-magic constituents force
+    `κ_{λ_A} = 0`. This is `doubleMagic_kappa_zero` specialised to
+    `Composite.fromUnion`, where `ContentAdditive` is a real
+    instance rather than an axiomatic typeclass field. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+theorem fromUnion_kappa_zero_of_double_magic
+    (λ_Z λ_N : YoungDiagram)
+    (hZ : isSelfConjugate λ_Z) (hN : isSelfConjugate λ_N) :
+    kappa (Composite.fromUnion λ_Z λ_N).λ_A = 0 :=
+  doubleMagic_kappa_zero (Composite.fromUnion λ_Z λ_N) ⟨hZ, hN⟩
+
+/-- **LR-rigidity proved for the trivial composite.** If both
+    constituents are self-conjugate, then the trivial union composite
+    is itself self-conjugate. This is `DoubleMagicConjecture.lr_rigidity`
+    proved without axioms in the trivial case — the disjoint multiset
+    union of two negation-symmetric multisets is negation-symmetric.
+
+    The honest LR fusion produces a *richer* composite via the
+    Littlewood–Richardson rule, but content additivity and
+    self-conjugacy preservation hold at the union level too, giving
+    a non-vacuous structural lower bound. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+theorem fromUnion_lr_rigidity
+    (λ_Z λ_N : YoungDiagram)
+    (h : IsDoubleMagic (Composite.fromUnion λ_Z λ_N)) :
+    isSelfConjugate (Composite.fromUnion λ_Z λ_N).λ_A :=
+  unionDiagram_isSelfConjugate h.1 h.2
 
 /-! ## §5  Downstream — double-magic ⇒ homological condensation -/
 

@@ -134,6 +134,104 @@ theorem emptyDiagram_isSelfConjugate : isSelfConjugate emptyDiagram := by
   congr 1
   simp
 
+/-! ### Disjoint union and content additivity -/
+
+/-- Disjoint union of two Young diagrams (multiset union of their
+    contents). The corresponding combinatorial operation is
+    "horizontal concatenation" of partition contents — useful when
+    splitting a composite analysis along constituent shells. -/
+def unionDiagram (λ μ : YoungDiagram) : YoungDiagram where
+  n := λ.n + μ.n
+  contents := λ.contents + μ.contents
+  card_eq := by simp [Multiset.card_add, λ.card_eq, μ.card_eq]
+
+/-- **Additivity of Jucys–Murphy charge.** Charge is linear over
+    multiset disjoint union: `κ(λ ⊔ μ) = κ(λ) + κ(μ)`. This is the
+    abstract version of the LR content-additivity claim used in
+    `LRFusion.ContentAdditive`. Provable directly from
+    `Multiset.sum_add`. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+theorem kappa_unionDiagram (λ μ : YoungDiagram) :
+    kappa (unionDiagram λ μ) = kappa λ + kappa μ := by
+  simp [kappa, unionDiagram, Multiset.sum_add]
+
+/-- The empty diagram is a left/right identity for `unionDiagram` at
+    the level of contents and charge. -/
+theorem kappa_unionDiagram_empty_left (λ : YoungDiagram) :
+    kappa (unionDiagram emptyDiagram λ) = kappa λ := by
+  simp [kappa_unionDiagram, kappa_emptyDiagram]
+
+theorem kappa_unionDiagram_empty_right (λ : YoungDiagram) :
+    kappa (unionDiagram λ emptyDiagram) = kappa λ := by
+  simp [kappa_unionDiagram, kappa_emptyDiagram]
+
+/-- **Self-conjugacy is preserved under disjoint union.** If both
+    `λ` and `μ` are self-conjugate, so is `unionDiagram λ μ`. Pure
+    Multiset arithmetic — `Multiset.map_add` plus the constituent
+    self-conjugacies' contents equalities. No axioms.
+
+    This is the abstract analogue of the LR-rigidity claim for the
+    trivial union composite. -/
+-- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
+theorem unionDiagram_isSelfConjugate
+    {λ μ : YoungDiagram}
+    (hλ : isSelfConjugate λ) (hμ : isSelfConjugate μ) :
+    isSelfConjugate (unionDiagram λ μ) := by
+  -- Extract contents equalities from constituent self-conjugacies.
+  have e_λ : λ.contents = λ.contents.map (fun c => -c) := by
+    have h := congr_arg YoungDiagram.contents hλ
+    simpa [conjugate] using h
+  have e_μ : μ.contents = μ.contents.map (fun c => -c) := by
+    have h := congr_arg YoungDiagram.contents hμ
+    simpa [conjugate] using h
+  -- Show union = conjugate union: same n by construction, contents equal.
+  show unionDiagram λ μ = conjugate (unionDiagram λ μ)
+  unfold conjugate unionDiagram
+  congr 1
+  rw [Multiset.map_add, ← e_λ, ← e_μ]
+
+/-! ### Singleton-box diagrams -/
+
+/-- The single-box Young diagram with content `c`. Used as the base
+    case for inductive arguments on shape complexity. -/
+def singletonDiagram (c : ℤ) : YoungDiagram where
+  n := 1
+  contents := {c}
+  card_eq := by simp
+
+/-- Charge of a singleton diagram is its content. -/
+theorem kappa_singletonDiagram (c : ℤ) :
+    kappa (singletonDiagram c) = c := by
+  simp [kappa, singletonDiagram]
+
+/-! ### Decidability — see Mathlib bridge below
+
+The abstract `YoungDiagram` (a `Multiset ℤ` with a cardinality
+witness) inherits `DecidableEq` from `DecidableEq (Multiset ℤ)`.
+A `Decidable (isSelfConjugate λ)` instance follows. Both are
+deferred to the Mathlib bridge file (future) to avoid coupling
+to specific Lean 4 / Mathlib `deriving` machinery in this paper-
+internal module.
+-/
+
+/-! ### Mathlib bridge — wired in `QOU.BraidKnot.MathlibBridge`
+
+Concrete bridge `fromMathlib : Mathlib.YoungDiagram → YoungDiagram`
+is supplied by the sibling module `QOU.BraidKnot.MathlibBridge`,
+which imports `Mathlib.Combinatorics.Young.YoungDiagram` and
+constructs the abstract Multiset of cell contents from the Mathlib
+cell set. With that bridge in place, the abstract proved theorems
+(`kappa_conjugate`, `kappa_zero_of_self_conjugate`,
+`kappa_unionDiagram`, …) lift to Mathlib Young diagrams, and the
+reverse direction `kappa = 0 → self-conjugate` becomes provable
+in the Young-lattice setting (recorded there as `ReverseBridge`,
+deferred to a Phase 3 follow-up).
+
+The abstract Multiset model alone cannot discharge the reverse
+direction: a counter-example is `{1, 2, -3}`, a multiset of integers
+summing to zero that is not multiset-symmetric.
+-/
+
 /-! ## §2  Saturation predicate (locality-free reading) -/
 
 /-- A **saturated spectrum** is one in which every box of `λ`

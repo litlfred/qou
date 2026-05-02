@@ -119,9 +119,16 @@ $^{132}\mathrm{Sn}$ ($Z = 50, N = 82$) and $^{208}\mathrm{Pb}$
 and the algebraic prediction of the binding-per-nucleon peak is a
 **zero-parameter** statement.
 
+*The dominant component $V_{\lambda_A}$ in the LR decomposition need
+**not** itself be self-conjugate — empirical Yamanouchi enumeration
+([`lr_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/lr_fusion_self_conj_test.py))
+finds the dominant $\nu$ is non-self-conjugate at every tested
+$(Z, N)$. The criterion is **content additivity** on the LR-fusion,
+not self-conjugacy of the dominant component.*
+
 ## Status
 
-🟡 **Conjectural** under CLAUDE.md §3b. The conjecture is
+**Conjectural** under CLAUDE.md §3b. The conjecture is
 *conditional* on
 [`conj:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
 and
