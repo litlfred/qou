@@ -1,0 +1,112 @@
+{
+  "computation": "v4-mass-pipeline",
+  "computedAt": "2026-05-02T23:45:41.180202+00:00",
+  "description": "v4 mass pipeline integration test — wires crt_markov_v4 depth-1 + depth-2 tower terms into the v3 mass prediction via simple ALPHA-binding-scale rescaling. Reports per-atom v3 vs v4 error against PDG, plus Q-value comparisons.",
+  "binding_scale_alpha_MeV": 3.7444596599416102,
+  "reference_masses_pdg": {
+    "proton": 938.27208816,
+    "deuteron": 1875.61294257,
+    "tritium": 2808.92113298,
+    "he3": 2808.39160743
+  },
+  "predictions": [
+    {
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "k": 3,
+      "M_v3_MeV": 938.78308711,
+      "markov_v3": 1.0,
+      "binding_v3_dimless": 0.0,
+      "markov_v4_total": 1.0,
+      "tower_delta_dimless": 0.0,
+      "v4_correction_MeV": 0.0,
+      "M_v4_MeV": 938.78308711,
+      "elapsed_v3_s": 4.5299530029296875e-06,
+      "elapsed_v4_s": 0.022741079330444336,
+      "name": "proton",
+      "M_pdg": 938.27208816,
+      "err_v3_pct": 0.05446170214891133,
+      "err_v4_pct": 0.05446170214891133,
+      "delta_v4_v3": 0.0,
+      "verdict": "~ same"
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "k": 6,
+      "M_v3_MeV": 1878.3485076299999,
+      "markov_v3": 1.3010426069826053e-17,
+      "binding_v3_dimless": 1.0,
+      "markov_v4_total": 1.3010426069826053e-17,
+      "tower_delta_dimless": 0.0,
+      "v4_correction_MeV": 0.0,
+      "M_v4_MeV": 1878.3485076299999,
+      "elapsed_v3_s": 0.0015714168548583984,
+      "elapsed_v4_s": 0.06781792640686035,
+      "name": "deuteron",
+      "M_pdg": 1875.61294257,
+      "err_v3_pct": 0.14584912472674905,
+      "err_v4_pct": 0.14584912472674905,
+      "delta_v4_v3": 0.0,
+      "verdict": "~ same"
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "k": 9,
+      "M_v3_MeV": 2817.91392815,
+      "markov_v3": 0.0008231763114077706,
+      "binding_v3_dimless": 0.9991768236885922,
+      "markov_v4_total": 0.0008231763114077706,
+      "tower_delta_dimless": 0.0,
+      "v4_correction_MeV": 0.0,
+      "M_v4_MeV": 2817.91392815,
+      "elapsed_v3_s": 0.1622021198272705,
+      "elapsed_v4_s": 0.4554932117462158,
+      "name": "tritium",
+      "M_pdg": 2808.92113298,
+      "err_v3_pct": 0.32015121622370746,
+      "err_v4_pct": 0.32015121622370746,
+      "delta_v4_v3": 0.0,
+      "verdict": "~ same"
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "k": 9,
+      "M_v3_MeV": 2817.13159474,
+      "markov_v3": 2.6713409832560922e-06,
+      "binding_v3_dimless": 0.9999973286590167,
+      "markov_v4_total": 2.6713409832560922e-06,
+      "tower_delta_dimless": 0.0,
+      "v4_correction_MeV": 0.0,
+      "M_v4_MeV": 2817.13159474,
+      "elapsed_v3_s": 0.1670396327972412,
+      "elapsed_v4_s": 0.4355146884918213,
+      "name": "he3",
+      "M_pdg": 2808.39160743,
+      "err_v3_pct": 0.3112097076090503,
+      "err_v4_pct": 0.3112097076090503,
+      "delta_v4_v3": 0.0,
+      "verdict": "~ same"
+    }
+  ],
+  "q_values": [
+    {
+      "decay": "³H→³He",
+      "Q_pdg": 0.018526599310016656,
+      "Q_v3": 0.2713344593103194,
+      "Q_v4": 0.2713344593103194
+    }
+  ],
+  "summary": {
+    "v3_closer_count": 0,
+    "v4_closer_count": 0,
+    "tied_count": 4,
+    "verdict": "v4 ~neutral"
+  }
+}
