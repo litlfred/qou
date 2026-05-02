@@ -48,6 +48,10 @@ function classify(file: string, line: string): Hit["triage"] {
   }
   if (/#(conj:hyperbolic-volume-transcendence|conj:kashaev-volume-conjecture|conj:knot-factor-frobenius-pairing|conj:single-volume-irrationality|conj:kashaev-surreal|prop:vol-through-tau|def:archimedean-realization-functor|rem:kashaev-as-archimedean-realization|prop:topological-mass-formula|rem:body-asymptotics-catalog|prf:knot-volumes-verification)/.test(line)) return "tau-side-label";
   if (/post[\s-]?archimedean|τ[\s-]?image|tau[\s-]?image|ℂ[\s-]?side|right[\s-]?of[\s-]?τ|right[\s-]?of[\s-]?tau|archimedean[\s-]?(limit|realization|shadow|side)|classical[\s-]?(limit|kashaev)|τ-pullback|non[\s-]?hyperbolic|geometric.*side|τ.*side|tau.*side|no.+(thurston|geometrization).+(input|required|needed)|geometrization.+(input|required|needed).+(no|not)|disclaim|side.+(geometric|τ-image)/i.test(line)) return "tau-side-label";
+  // Meta-discussion: sentences enumerating forbidden patterns (e.g.
+  // "(Vol(K), hyperbolic, Mostow, …)") in the audit-tool's own
+  // narrative are not violations themselves.
+  if (/sweep[s]?\s+(the\s+)?(paper|proof|content|file)|forbid[s]?|forbidden|violation[s]?|examples?\s+of|such\s+(as|inputs)|(?:Vol\(K\),\s*hyperbolic|hyperbolic,\s*Mostow|Mostow,\s*Gromov|Kashaev,\s*Murakami)/i.test(line)) return "tau-side-label";
   return "candidate";
 }
 
@@ -69,7 +73,12 @@ function processFile(p: string, results: Hit[]) {
     if (isDedicatedProof) { inProof = true; }
     else {
       if (/^(##+\s+|>\s*)?(\*\*)?(\\?textbf\{)?proof\b/i.test(ln) || /^\*Proof\.\*/.test(ln) || /^\*\*Proof\.\*\*/.test(ln)) { inProof = true; continue; }
-      if (inProof && /^##\s|^\$\\square\$|^\\square|\bQ\.E\.D\.|\bQED\b/.test(ln)) { inProof = false; continue; }
+      // End-of-proof markers: explicit ✑ / Q.E.D. only — `^##\s`
+      // (any level-2 heading) is too broad and would terminate scans
+      // on subheadings inside a proof, missing later violations.
+      // Audit tools prefer false positives (scanning too much) over
+      // false negatives (missing violations).
+      if (inProof && /^\$\\square\$|^\\square|\bQ\.E\.D\.|\bQED\b/.test(ln)) { inProof = false; continue; }
     }
     if (!inProof) continue;
     const hits = checkLine(p, ln);
