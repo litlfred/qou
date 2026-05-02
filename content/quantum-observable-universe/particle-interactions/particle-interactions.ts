@@ -44,6 +44,7 @@ export default chapter({
         "confinement-topological",
         "confinement-nucleon-unit",
         "lp-dual-stability",
+        "sdp-rank-collapse-magic-shell",
       ],
     }),
 

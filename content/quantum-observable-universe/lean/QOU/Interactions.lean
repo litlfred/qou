@@ -10,6 +10,7 @@ import QOU.Interactions.HeckeEngine
 import QOU.Interactions.LRFusion
 import QOU.Interactions.NuclearOperatorRegimes
 import QOU.Interactions.NucleonNFWitness
+import QOU.Interactions.SDPRankCollapse
 import QOU.Interactions.ProtonTrefoilSign
 import QOU.Interactions.TrefoilVanishing
 
