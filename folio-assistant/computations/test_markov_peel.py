@@ -163,38 +163,44 @@ def test_tr_M_atomic_tritium_matches_witness():
     )
 
 
-@pytest.mark.xfail(
-    reason="Phase 2 part 2 of #508 — trace recursion bottleneck "
-           "(reduction succeeds in ~5s, trace exceeds 30 min)"
-)
 @pytest.mark.slow
 def test_tr_M_atomic_helium3_matches_witness():
+    """Z=2 N=1: A=3, n_strands=9, word length 35.
+
+    Phase-2 part 2 (#508 commit 2834792d) unblocked this by skipping
+    the `sp.simplify` step in `tr_M_element` — aggregation is 60 ms
+    but the simplify on the ~5000-op total exceeded 30 min.  Total
+    runtime now ~5 s (reduce 4.8s + agg 0.06s + evalf 0.06s).
+    """
     expected = _load_witness_tr_m("helium-3")
     got_sym = tr_M_atomic(Z=2, N=1)
     got = _eval_at_q0(got_sym)
-    assert abs(got - expected) < 1e-10
+    assert abs(got - expected) < 1e-10, (
+        f"helium-3 tr_M mismatch: peel={got!r} witness={expected!r}"
+    )
 
 
-@pytest.mark.xfail(
-    reason="Phase 2 part 2 of #508 — trace recursion bottleneck "
-           "(A=4 not yet attempted)"
-)
 @pytest.mark.slow
-def test_tr_M_atomic_helium4_matches_witness():
-    """Z=2 N=2 — the headline target of #508 (A=4, n_strands=12)."""
-    # Witness file currently has only proton/neutron/deuteron/tritium/³He;
-    # ⁴He is the production target this rewrite enables.  Until the
-    # trace recursion is optimised (Phase 2 part 2), this is xfail.
-    import pytest as _pt
-    if "helium-4" not in {
-        e["atom"] for e in
-        __import__("json").loads(WITNESS.read_text())["results"]
-    }:
-        _pt.skip("⁴He not in atomic-tr-m-mpfr-50dps.witness.json yet")
-    expected = _load_witness_tr_m("helium-4")
+def test_tr_M_atomic_helium4_smoke():
+    """Z=2 N=2 — the headline target of #508 (A=4, n_strands=12).
+
+    The Hoefsmit + Wenzl-bridge witness file currently has no ⁴He
+    entry (the historical compute path times out at A=4); this test
+    is a *smoke* check that the recursive-ascent path completes and
+    returns a deterministic value.  Once ⁴He lands in
+    `atomic-tr-m-mpfr-50dps.witness.json`, promote this to a
+    matches-witness test like the others.
+    """
     got_sym = tr_M_atomic(Z=2, N=2)
     got = _eval_at_q0(got_sym)
-    assert abs(got - expected) < 1e-10
+    # Phase-2 part 2 (commit 2834792d) recorded this value as the
+    # first ⁴He tr_M(q₀) computed via Markov-axiom recursive ascent.
+    # Allow a wide tolerance until an independent witness pins it.
+    expected_smoke = 5.5348345876697992e-02
+    assert abs(got - expected_smoke) < 1e-12, (
+        f"helium-4 smoke value drifted: got={got!r} "
+        f"prior={expected_smoke!r}"
+    )
 
 
 # ── Manual run ──────────────────────────────────────────────────────
