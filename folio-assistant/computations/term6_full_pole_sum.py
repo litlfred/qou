@@ -45,6 +45,7 @@ import sympy as sp
 from experimental_constants import M_E_MEV
 from q_parameter import Q as Q_0
 from witness_base import WitnessBuilder
+from witness_polynomial import expose_polynomial
 
 HERE = Path(__file__).parent
 HABIRO_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
@@ -193,10 +194,22 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
     # Record term6_in_MeV as None when status is incomplete to avoid
     # consumers treating a partial sum as the full Term-6 contribution.
     term6_value = None if higher_order_detected else total * M_E_MEV
+    # Expose tr_M(T_w, q) symbolically so downstream consumers can
+    # re-evaluate at any q without re-running the script.
+    try:
+        tr_M_polynomial = expose_polynomial(tr_M_expr, q, simplify=False)
+    except Exception as e:  # pragma: no cover
+        tr_M_polynomial = {
+            "polynomial_q": None,
+            "polynomial_q_latex": None,
+            "value_at_q0": str(tr_M_at_q0_check),
+            "expose_error": f"{type(e).__name__}: {str(e)[:120]}",
+        }
     return {
         "atom": atom_label,
         "n_max": n_max,
         "tr_M_at_q0_polynomial": tr_M_at_q0_check,
+        "tr_M_polynomial": tr_M_polynomial,
         "term6_simple_residue_partial": total,
         "term6_in_MeV": term6_value,
         "status": status,

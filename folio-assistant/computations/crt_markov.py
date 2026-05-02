@@ -583,6 +583,11 @@ if __name__ == "__main__":
             "β-decay calibration: E_0 = 0.782 / (|tr_M(n)| - |tr_M(p)|)."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        # P2.5 marker — mpmath-only numerical path; polynomial-in-q
+        # exposure does not apply. Symbolic q form lives in
+        # mass-from-q-symbolic.py (proton/neutron) and the per-atom
+        # symbolic Markov trace witnesses.
+        "polynomial_q_not_applicable": True,
         "parameters": {"q_0": str(q0), "mpmath_dps": 50,
                        "E_0_cat_MeV": str(E_0_cat)},
         "results": final_results,
