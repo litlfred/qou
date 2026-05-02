@@ -209,3 +209,21 @@ This proposition is the **even-twist parity selection rule**.
 Together with the structural input that force-carrier links are
 2-component torus links of $H_1(\Sigma_{\text{host}}, \mathbb{Z})$,
 it *forces* the parity to be even.
+
+**Remark (categorical origin via bar self-duality).** *The
+even-twist parity rule is the topological face of the substrate's
+**bar self-duality** ([bar-self-dual confinement band](#prop:bar-self-dual-confinement-band),
+[bar T-duality of the substrate](#prop:bar-t-duality-substrate)).
+Under the bar involution $\iota \colon q \mapsto q^{-1}$, the
+sym and alt Hecke eigenvalues swap (up to sign):*
+$\iota(\sigma_i|_{\rm sym}) = \iota(q) = q^{-1}$,
+$\iota(\sigma_i|_{\rm alt}) = \iota(-q^{-1}) = -q$.
+*An even-twist link $T(2, 2k)$ has braid $\sigma_1^{2k}$ with
+eigenvalues $(q^{2k}, q^{-2k})$ — a $\iota$-conjugate pair, so
+the link is $\iota$-self-dual at the eigenvalue level. Odd-twist
+links $T(2, 2k+1)$ have eigenvalues $(q^{2k+1}, -q^{-(2k+1)})$
+which differ in sign under $\iota$, breaking the self-duality.
+Hence the parity selection rule is equivalent to "force-carrier
+links must be bar-self-dual" — connecting U1 to the substrate's
+$\mathbb{Z}/2 \times \mathbb{Z}/2$ duality structure on the
+Descartes-family moduli.*
