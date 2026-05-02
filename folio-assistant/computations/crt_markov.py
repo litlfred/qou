@@ -140,14 +140,43 @@ def _Phi_q_mp(z_val, q, qi, max_k=200):
 
 
 def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
-                                q_val, precision=30):
+                                q_val, precision=30, *, legacy_h3=False):
     """Evaluate Markov trace (descended |ΠV_s|) at specific q.
 
-    Returns only the DESCENDED term Π V_s.  For the full tower mass,
-    use tower_mass_symbolic_eval instead.
+    P2.2a (2026-05-02): the legacy H_3-per-generator product
+    diverges at A ≥ 2 per the audit witness
+    `docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json`.
+    The default path now uses the proper $H_{3A}$ Schur-Weyl sum
+    via `global_wedderburn_sum_symbolic` (descended channel only),
+    threading m_pp/m_pn/m_nn through char_kind="mn-atom".
+
+    Set ``legacy_h3=True`` to recover the original H_3-per-generator
+    product (kept for backward compatibility / comparison witnesses).
+
+    Returns a single mpmath value (descended trace |ΠV_s|).
+    For the full tower mass, use tower_mass_symbolic_eval.
     """
     mpmath.mp.dps = precision
     q = mpmath.mpf(str(q_val))
+
+    if not legacy_h3:
+        try:
+            import sympy as _sp
+            from schur_weyl_symbolic import global_wedderburn_sum_symbolic
+            _q_sym = _sp.Symbol("q", positive=True, real=True)
+            A = Z + N
+            _desc_sym, _ = global_wedderburn_sum_symbolic(
+                A, _q_sym, char_kind="mn-atom",
+                Z=Z, N=N, include_inter=include_inter,
+                m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+            )
+            _desc_q0 = _sp.N(
+                _desc_sym.subs(_q_sym, _sp.Rational(str(q_val))), precision)
+            return abs(mpmath.mpc(complex(_desc_q0)))
+        except (ImportError, ModuleNotFoundError, ValueError):
+            # Specific exceptions only; fall through to legacy.
+            pass
+
     qi = 1 / q
     h = q - qi
     z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
