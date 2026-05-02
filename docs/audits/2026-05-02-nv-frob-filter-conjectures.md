@@ -520,6 +520,72 @@ have $y_\lambda < 0$, totalling 51% by Plancherel weight).
   signature compute, blocked on extending Wenzl-bridge witness
   beyond n=11. Would close this conjecture quantitatively.
 
+### **Bottleneck-fix update (2026-05-02 evening): full data + falsification**
+
+The compute bottleneck (sympy `simplify` recursion-error past
+n=12, MPFR Hoefsmit matmul timeout past n=11 in
+[`y_lambda_mpfr_witness.py`](../../folio-assistant/computations/y_lambda_mpfr_witness.py))
+is **fixed** by bypassing both: evaluate the Wenzl-bridge Schur
+principal-specialization formula numerically in mpmath at $q = q_0$
+without any symbolic simplification or matrix multiplication.
+[`y_lambda_wenzl_bridge_numeric.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_numeric.py)
+runs $n = 2..18$ in **0.07 s** at 50 dps —
+versus the sympy version timing out / OOM'ing at $n \geq 14$ and
+the MPFR version not completing $n = 12$ in 45 min.
+
+The full FROB-FILTER signature table:
+
+| A | n | partitions | $p_n$ | $q_n$ | %neg | q dominant? |
+|--:|--:|-----------:|------:|------:|-----:|-------------|
+| 1 | 3 | 3 | 6 | 0 | 0.00% | no |
+| 2 | 6 | 11 | 538 | 182 | 25.28% | no |
+| **3** | 9 | 30 | 178902 | 183978 | 50.70% | **YES** |
+| 4 | 12 | 77 | 2.34×10⁸ | 2.45×10⁸ | 51.23% | YES |
+| **5** | 15 | 176 | 6.56×10¹¹ | 6.51×10¹¹ | 49.81% | **NO** |
+| **6** | 18 | 385 | 3.20×10¹⁵ | 3.20×10¹⁵ | 50.03% | YES |
+
+**The simple "q > p" criterion is falsified at A=5.** The
+signature **oscillates** around 50% for A ≥ 3 — A=3 above, A=5
+below, A=6 marginally above. The empirical FROB-FILTER activation
+at A=6 does *not* correspond to the smallest A with $q_n > p_n$
+(that's A=3). So `conj:frobenius-filter-categorical-refined`
+needs further refinement.
+
+**Three refined hypotheses** for the activation criterion:
+
+1. **Cancellation-magnitude criterion.** As $n$ grows, $p_n$ and
+   $q_n$ approach each other; their difference $|p_n - q_n|$
+   relative to $\sqrt{p_n + q_n}$ is the relevant precision budget
+   for floating-point arithmetic. The FP-filter activates when
+   double-precision $\sim 2^{-53} \approx 10^{-16}$ becomes
+   insufficient. From the table, $(p_n - q_n)/(p_n + q_n)$ at
+   $n=18$ is $\approx 6\times 10^{-4}$ — needing ~17 digits of
+   relative precision, which is the f64 boundary. **This is the
+   most likely correct criterion**: filter activation tracks
+   numerical precision loss, not the sign-balance per se.
+2. **Configuration-count criterion.** Empirical activation
+   at A=6 uses 2048 of 4096 ≈ 50% of FP-positive configurations.
+   This matches the %neg ≈ 50% asymptote but does not predict the
+   precise A.
+3. **Fixed-precision-budget criterion.** For a target precision
+   of 0.1% on Q-values, the cancellation budget is 3 digits;
+   activation is at the smallest A where this budget is
+   exceeded.
+
+**Recommended next test.** Compute Q(A=4), Q(A=5), Q(A=6) using
+both $|\Sigma_{\rm all}|$ and $|\Sigma_{\rm FP}|$ at f64, and
+report relative error vs experiment. The crossover point where
+$|\Sigma_{\rm all}|$ degrades below 1% accuracy will be the
+empirical $A_{**}$. This is a 1-hour compute task in the existing
+`branching-qvalues.witness.json` infrastructure.
+
+### Witnesses
+
+- [`y-lambda-wenzl-bridge-numeric-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-numeric-witness.json)
+  — full $n=2..18$ data, $0.07$ s runtime, 50 dps precision.
+- [`y_lambda_wenzl_bridge_numeric.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_numeric.py)
+  — the bottleneck-fixed driver script.
+
 **Reduction to existing framework.** The conjecture is now a
 **corollary** of `prop:bw-coefficient-shadow-price` (which
 identifies BW coefficients with LP dual variables on the
