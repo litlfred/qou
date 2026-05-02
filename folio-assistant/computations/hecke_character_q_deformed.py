@@ -85,29 +85,30 @@ def q_ribbon_weight(m, h, q):
 
 @lru_cache(maxsize=None)
 def _q_mn_cached(partition, cycle_type, q_str):
-    """Cache key uses str(q) so sympy expressions hash."""
-    q = sp.sympify(q_str)
-    return _q_mn_uncached(partition, cycle_type, q)
+    """Single memoized recursion: cache key uses str(q) for hashability.
 
-
-def _q_mn_uncached(partition, cycle_type, q):
+    All recursive calls re-enter through this function so each
+    (partition, cycle_type, q) tuple is computed at most once —
+    avoiding the exponential redundancy of an uncached recursion.
+    """
     cycle_type = tuple(sorted(cycle_type, reverse=True))
     if sum(partition) != sum(cycle_type):
         return sp.Integer(0)
     n = sum(partition)
     if cycle_type == (1,) * n:
         return sp.Integer(dim_specht(partition))
+    q = sp.sympify(q_str)
     m = cycle_type[0]
     rest = cycle_type[1:]
     total = sp.Integer(0)
     for mu, height in rim_hooks_of_size(partition, m):
         weight = q_ribbon_weight(m, height, q)
-        total += weight * _q_mn_uncached(mu, rest, q)
+        total += weight * _q_mn_cached(mu, rest, q_str)
     return sp.cancel(total)
 
 
 def q_mn_character(partition, cycle_type, q):
-    """χ^λ_q(σ) via q-Murnaghan–Nakayama recursion.
+    """χ^λ_q(σ) via q-Murnaghan–Nakayama recursion (memoized).
 
     `q` may be a sympy Symbol (symbolic) or a Rational (numeric).
     Returns a sympy expression.

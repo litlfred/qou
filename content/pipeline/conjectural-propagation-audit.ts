@@ -131,11 +131,15 @@ const blocks = await loadAll();
 console.log(`Loaded ${blocks.size} blocks.`);
 
 // Build set of class-axiomatised conjectures (per §3b-cond).
+// Parallelize file I/O — sequential await would scale poorly with
+// the number of conjectures.
 const classAxiomatised = new Set<string>();
-for (const [label, block] of blocks) {
-  if (block.kind !== "conjecture") continue;
-  if (await isClassAxiomatised(block)) classAxiomatised.add(label);
-}
+await Promise.all(
+  [...blocks].filter(([_, block]) => block.kind === "conjecture")
+    .map(async ([label, block]) => {
+      if (await isClassAxiomatised(block)) classAxiomatised.add(label);
+    })
+);
 console.log(`Class-axiomatised conjectures (§3b-cond eligible): ${classAxiomatised.size}`);
 for (const c of [...classAxiomatised].sort()) console.log(`  ${c}`);
 
