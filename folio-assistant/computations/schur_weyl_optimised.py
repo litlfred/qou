@@ -41,6 +41,7 @@ from schur_weyl_symbolic import (
     specht_character_placeholder,
 )
 from q_parameter import Q as Q0_FLOAT
+from witness_polynomial import expose_polynomial
 
 
 def length_le_2_partitions_of(n):
@@ -217,12 +218,32 @@ if __name__ == "__main__":
         else:
             phi_q_convergent = None
 
+        # Expose the polynomial form of the fast SW sum (when it
+        # succeeded). The value_at_q0 is preserved by both the
+        # legacy `fast.value_at_q0` field (for back-compat) and
+        # the canonical `fast.polynomial.value_at_q0` triple.
+        if fast_error is None:
+            try:
+                fast_polynomial = expose_polynomial(
+                    fast_sum, q, simplify=False
+                )
+            except Exception as e:  # pragma: no cover — unlikely path
+                fast_polynomial = {
+                    "polynomial_q": None,
+                    "polynomial_q_latex": None,
+                    "value_at_q0": fast_value_str,
+                    "expose_error": f"{type(e).__name__}: {str(e)[:120]}",
+                }
+        else:
+            fast_polynomial = None
+
         results.append({
             "atom": name,
             "Z": Z, "N": N, "A": A,
             "n_strands": 3 * A,
             "fast": {
                 "value_at_q0": fast_value_str,
+                "polynomial": fast_polynomial,
                 "n_partitions": fast_n_terms,
                 "time_seconds": fast_time,
                 "error": fast_error,
