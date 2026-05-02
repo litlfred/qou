@@ -400,9 +400,112 @@ def sdp_with_cross_shell(Z, N, extra_Z, extra_N, partition_entries,
         "extra_Z": extra_Z, "extra_N": extra_N,
         "lr_decomposition_count": len(lr_decomposition),
         "lr_decomposition_sample": lr_decomposition[:5],
-        "note": "LR-fusion constraint family enumerated. cvxpy SDP refactor"
-                " wires c^μ into cross-block coupling matrix; that's the"
-                " mechanical follow-up step.",
+        **_sdp_with_lr_constraints(partition_entries, pair_couplings,
+                                    lr_decomposition, n_target),
+    }
+
+
+def _sdp_with_lr_constraints(partition_entries, pair_couplings,
+                              lr_decomposition, n_target):
+    """Full cvxpy SDP solve with LR-fusion cross-block coupling.
+
+    For each LR-decomposition entry (σ, ex, μ, c^μ), if σ and μ both
+    appear in partition_entries, add a cross-block PSD constraint:
+
+      [[μ_σ - y₀ - y_σ,  c^μ * coupling_σμ],
+       [c^μ * coupling_σμ,  μ_μ - y₀ - y_μ]] ⪰ 0
+
+    The c^μ coefficient enters as the off-diagonal term, scaling
+    the coupling.
+    """
+    if not _HAVE_CVXPY:
+        return {"sdp_status": "cvxpy-unavailable",
+                "lr_constraints_added": 0}
+
+    n = len(partition_entries)
+    if n == 0:
+        return {"sdp_status": "empty-partition_entries",
+                "lr_constraints_added": 0}
+
+    # Build a partition → index lookup
+    part_idx = {tuple(e["partition"]): i
+                for i, e in enumerate(partition_entries)}
+
+    # Find LR couplings whose σ and μ both have entries in partition_entries
+    lr_couplings = []
+    for entry in lr_decomposition:
+        sigma_t = tuple(entry["sigma"])
+        mu_t = tuple(entry["mu"])
+        if sigma_t in part_idx and mu_t in part_idx:
+            lr_couplings.append({
+                "sigma_idx": part_idx[sigma_t],
+                "mu_idx": part_idx[mu_t],
+                "c_coef": entry["lr_coefficient"],
+            })
+
+    if not lr_couplings:
+        return {"sdp_status": "no-applicable-lr-couplings",
+                "lr_constraints_added": 0}
+
+    y0 = cp.Variable(name="y0_lr")
+    y_lambda = cp.Variable(n, nonneg=True, name="y_lambda_lr")
+    c_lr = {}
+    for ent in lr_couplings:
+        key = (ent["sigma_idx"], ent["mu_idx"])
+        if key not in c_lr:
+            c_lr[key] = cp.Variable(name=f"c_lr_{key[0]}_{key[1]}")
+
+    constraints = []
+    for i, entry in enumerate(partition_entries):
+        mu = entry["q_laplacian_eigenvalue"]
+        constraints.append(y0 + y_lambda[i] <= mu)
+
+    # Pair-coupling 2x2 PSD constraints (preserved)
+    for (i, j, _h_coup) in pair_couplings:
+        key = (min(i, j), max(i, j))
+        mu_i = partition_entries[i]["q_laplacian_eigenvalue"]
+        mu_j = partition_entries[j]["q_laplacian_eigenvalue"]
+        c_var = c_lr.get(key) or cp.Variable(name=f"c_pair_{key[0]}_{key[1]}")
+        if key not in c_lr:
+            c_lr[key] = c_var
+        M = cp.bmat([
+            [mu_i - y0 - y_lambda[i], c_var],
+            [c_var, mu_j - y0 - y_lambda[j]],
+        ])
+        constraints.append(M >> 0)
+
+    # LR cross-block coupling PSD constraints
+    for ent in lr_couplings:
+        i, j = ent["sigma_idx"], ent["mu_idx"]
+        if i == j:
+            continue  # self-fusion: no off-diagonal coupling
+        key = (min(i, j), max(i, j))
+        mu_i = partition_entries[i]["q_laplacian_eigenvalue"]
+        mu_j = partition_entries[j]["q_laplacian_eigenvalue"]
+        c_var = c_lr[key]
+        M = cp.bmat([
+            [mu_i - y0 - y_lambda[i], ent["c_coef"] * c_var],
+            [ent["c_coef"] * c_var, mu_j - y0 - y_lambda[j]],
+        ])
+        constraints.append(M >> 0)
+
+    objective = cp.Maximize(y0 * float(n_target))
+    prob = cp.Problem(objective, constraints)
+    try:
+        prob.solve(solver=cp.SCS, verbose=False)
+    except Exception as _e:
+        return {"sdp_status": f"solver-error:{_e}",
+                "lr_constraints_added": len(lr_couplings)}
+
+    if prob.status not in ("optimal", "optimal_inaccurate"):
+        return {"sdp_status": prob.status,
+                "lr_constraints_added": len(lr_couplings)}
+
+    return {
+        "sdp_status": prob.status,
+        "lr_constraints_added": len(lr_couplings),
+        "y0_lr": float(y0.value) if y0.value is not None else 0.0,
+        "objective_value_lr": float(prob.value),
     }
 
 
@@ -449,6 +552,14 @@ def sdp_with_atom_electron(Z, N, electron_strands, partition_entries,
         for k in range(electron_block_count)
     ]
 
+    # Wire electron pair couplings into a cvxpy SDP solve, layered on
+    # the L4 shell-closure solution. Each electron-nucleon coupling
+    # becomes a 2x2 PSD constraint linking the electron block (idx
+    # offset) to its target nucleon block.
+    sdp_l6 = _sdp_with_electron_couplings(
+        partition_entries, pair_couplings, electron_pair_couplings,
+        electron_block_count, n_target)
+
     return {
         **shell,
         "level": 6,
@@ -457,13 +568,82 @@ def sdp_with_atom_electron(Z, N, electron_strands, partition_entries,
         "electron_pair_couplings_count": len(electron_pair_couplings),
         "electron_pair_couplings_sample": electron_pair_couplings[:5],
         "n_target_total": n_target,
-        "note": "L4 shell solution + electron-shell coupling enumeration. "
-                "Full L6 SDP (re-solve with all electron-nucleon "
-                "constraints linked into the cvxpy block-PSD matrix) is "
-                "a P2.4.c.cvxpy follow-up — the constraint family is "
-                "enumerated here and pair-coupling SDP can ingest it "
-                "by passing electron_pair_couplings as additional "
-                "pair_couplings entries with adjusted partition_entries.",
+        **sdp_l6,
+    }
+
+
+def _sdp_with_electron_couplings(partition_entries, pair_couplings,
+                                  electron_pair_couplings,
+                                  electron_block_count, n_target):
+    """Cvxpy SDP solve with electron-nucleon coupling constraints
+    layered on top of the pair-coupling SDP."""
+    if not _HAVE_CVXPY or not partition_entries:
+        return {"sdp_l6_status": "cvxpy-unavailable-or-empty",
+                "l6_constraints_added": 0}
+
+    n_p = len(partition_entries)
+    n_e = electron_block_count
+
+    y0 = cp.Variable(name="y0_l6")
+    y_p = cp.Variable(n_p, nonneg=True, name="y_p_l6")  # nucleon-block duals
+    y_e = cp.Variable(n_e, nonneg=True, name="y_e_l6")  # electron-block duals
+    c_pair = {}
+    for (i, j, _h) in pair_couplings:
+        key = (min(i, j), max(i, j))
+        c_pair[key] = cp.Variable(name=f"c_pair_l6_{key[0]}_{key[1]}")
+    c_en = {}
+    for ent in electron_pair_couplings:
+        key = (ent["electron_idx"], ent["nucleon_target"])
+        c_en[key] = cp.Variable(name=f"c_en_l6_{key[0]}_{key[1]}")
+
+    constraints = []
+    # Nucleon block dual constraints
+    for i, entry in enumerate(partition_entries):
+        constraints.append(y0 + y_p[i] <= entry["q_laplacian_eigenvalue"])
+    # Electron block dual constraints (use a uniform mu for electron blocks
+    # since electrons all have the same H_3 Wedderburn structure)
+    mu_electron = float(partition_entries[0]["q_laplacian_eigenvalue"]) if partition_entries else 1.0
+    for k in range(n_e):
+        constraints.append(y0 + y_e[k] <= mu_electron)
+
+    # Pair-coupling 2x2 PSD (nucleon-nucleon)
+    for (i, j, _h) in pair_couplings:
+        key = (min(i, j), max(i, j))
+        mu_i = partition_entries[i]["q_laplacian_eigenvalue"]
+        mu_j = partition_entries[j]["q_laplacian_eigenvalue"]
+        M = cp.bmat([[mu_i - y0 - y_p[i], c_pair[key]],
+                     [c_pair[key], mu_j - y0 - y_p[j]]])
+        constraints.append(M >> 0)
+
+    # Electron-nucleon 2x2 PSD coupling
+    for ent in electron_pair_couplings:
+        e_idx = ent["electron_idx"]
+        n_idx = ent["nucleon_target"]
+        if n_idx >= n_p:
+            continue
+        key = (e_idx, n_idx)
+        mu_n = partition_entries[n_idx]["q_laplacian_eigenvalue"]
+        M = cp.bmat([[mu_electron - y0 - y_e[e_idx], ent["h_coupling"] * c_en[key]],
+                     [ent["h_coupling"] * c_en[key], mu_n - y0 - y_p[n_idx]]])
+        constraints.append(M >> 0)
+
+    objective = cp.Maximize(y0 * float(n_target))
+    prob = cp.Problem(objective, constraints)
+    try:
+        prob.solve(solver=cp.SCS, verbose=False)
+    except Exception as _e:
+        return {"sdp_l6_status": f"solver-error:{_e}",
+                "l6_constraints_added": len(electron_pair_couplings)}
+
+    if prob.status not in ("optimal", "optimal_inaccurate"):
+        return {"sdp_l6_status": prob.status,
+                "l6_constraints_added": len(electron_pair_couplings)}
+
+    return {
+        "sdp_l6_status": prob.status,
+        "l6_constraints_added": len(electron_pair_couplings),
+        "y0_l6": float(y0.value) if y0.value is not None else 0.0,
+        "objective_value_l6": float(prob.value),
     }
 
 
@@ -518,6 +698,9 @@ def sdp_with_covalent(atoms, bonds, partition_entries, pair_couplings,
             "h_coupling": 1.0,  # unit coupling per bond order
         })
 
+    sdp_l7 = _sdp_with_bond_constraints(
+        per_atom, bond_constraints, partition_entries, n_atoms)
+
     return {
         "level": 7,
         "n_atoms": n_atoms,
@@ -526,10 +709,71 @@ def sdp_with_covalent(atoms, bonds, partition_entries, pair_couplings,
         "per_atom_solutions": per_atom,
         "bond_constraints_count": len(bond_constraints),
         "bond_constraints_sample": bond_constraints[:5],
-        "note": "Per-atom L6 solutions + covalent bond constraint "
-                "enumeration. Full L7 SDP (re-solve with shared-strand "
-                "PSD coupling between atom blocks) is a P2.4.d.cvxpy "
-                "follow-up; constraint family is enumerated here.",
+        **sdp_l7,
+    }
+
+
+def _sdp_with_bond_constraints(per_atom, bond_constraints,
+                                partition_entries, n_atoms):
+    """Cvxpy SDP solve with inter-atom shared-strand bond couplings.
+
+    Each bond contributes a 2x2 PSD constraint linking the first
+    Wedderburn block of one atom to the first block of the bonded
+    atom; the off-diagonal coupling is scaled by the
+    shared_strand_count of the bond (3 for single, 6 for double,
+    9 for triple).
+    """
+    if not _HAVE_CVXPY or n_atoms == 0:
+        return {"sdp_l7_status": "cvxpy-unavailable-or-empty",
+                "l7_bond_constraints_added": 0}
+
+    # One dual variable per atom (representing the first block's y_λ)
+    y0 = cp.Variable(name="y0_l7")
+    y_atom = cp.Variable(n_atoms, nonneg=True, name="y_atom_l7")
+    c_bond = {}
+    for ent in bond_constraints:
+        key = (ent["atom_i"], ent["atom_j"])
+        c_bond[key] = cp.Variable(name=f"c_bond_{key[0]}_{key[1]}")
+
+    # Use the first partition's q_laplacian_eigenvalue as a uniform
+    # bound for each atom's first block
+    mu_atom = (float(partition_entries[0]["q_laplacian_eigenvalue"])
+               if partition_entries else 1.0)
+
+    constraints = []
+    for k in range(n_atoms):
+        constraints.append(y0 + y_atom[k] <= mu_atom)
+
+    for ent in bond_constraints:
+        i, j = ent["atom_i"], ent["atom_j"]
+        if i >= n_atoms or j >= n_atoms:
+            continue
+        key = (i, j)
+        # Bond strength scales with shared_strand_count and h_coupling
+        scale = float(ent["shared_strand_count"]) * float(ent["h_coupling"])
+        # Normalize by 3 (single-bond strand count) so single-bond → 1.0
+        coupling = scale / 3.0
+        M = cp.bmat([[mu_atom - y0 - y_atom[i], coupling * c_bond[key]],
+                     [coupling * c_bond[key], mu_atom - y0 - y_atom[j]]])
+        constraints.append(M >> 0)
+
+    n_target = float(n_atoms)
+    prob = cp.Problem(cp.Maximize(y0 * n_target), constraints)
+    try:
+        prob.solve(solver=cp.SCS, verbose=False)
+    except Exception as _e:
+        return {"sdp_l7_status": f"solver-error:{_e}",
+                "l7_bond_constraints_added": len(bond_constraints)}
+
+    if prob.status not in ("optimal", "optimal_inaccurate"):
+        return {"sdp_l7_status": prob.status,
+                "l7_bond_constraints_added": len(bond_constraints)}
+
+    return {
+        "sdp_l7_status": prob.status,
+        "l7_bond_constraints_added": len(bond_constraints),
+        "y0_l7": float(y0.value) if y0.value is not None else 0.0,
+        "objective_value_l7": float(prob.value),
     }
 
 
