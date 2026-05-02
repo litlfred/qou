@@ -42,14 +42,38 @@ const PROVABLE = new Set(["theorem", "proposition", "lemma", "corollary"]);
 
 /**
  * Detect whether a conjecture has been class-axiomatised per
- * CLAUDE.md §3b-cond. Returns true iff its `.lean` sibling
- * contains a `class` declaration.
+ * CLAUDE.md §3b-cond. Returns true iff EITHER:
+ *   (a) the `.lean` sibling contains a `class` declaration, OR
+ *   (b) the lean.ref-resolved file under `<paper>/lean/<Decl/Path>.lean`
+ *       contains a `class` declaration.
+ *
+ * The fallback (b) is needed because not every block keeps its
+ * Lean implementation as a direct sibling — many live under the
+ * Lake-package directory structure (qou:QOU.X.Y → lean/QOU/X/Y.lean).
  */
 async function isClassAxiomatised(conjBlock: Block): Promise<boolean> {
-  const leanPath = conjBlock.file.replace(/\.ts$/, ".lean");
+  const checkText = (text: string) => /\bclass\s+\w+/.test(text);
+
+  // (a) sibling .lean
+  const sibling = conjBlock.file.replace(/\.ts$/, ".lean");
   try {
-    const text = await readFile(leanPath, "utf8");
-    return /\bclass\s+\w+/.test(text);
+    const text = await readFile(sibling, "utf8");
+    if (checkText(text)) return true;
+  } catch { /* sibling absent — try (b) */ }
+
+  // (b) lean.ref path: parse the .ts for `ref: "qou:QOU.X.Y"` and
+  // look up <paper>/lean/QOU/X/Y.lean.
+  try {
+    const tsText = await readFile(conjBlock.file, "utf8");
+    const refMatch = tsText.match(/ref:\s*"([^:"]+):([^"]+)"/);
+    if (!refMatch) return false;
+    const declPath = refMatch[2];           // e.g. "QOU.Descartes.Foo"
+    const paperDir = conjBlock.file.split("/")
+      .slice(0, conjBlock.file.split("/").indexOf("content") + 2)
+      .join("/");                           // .../<paper>
+    const leanFile = join(paperDir, "lean", declPath.replace(/\./g, "/") + ".lean");
+    const text = await readFile(leanFile, "utf8");
+    return checkText(text);
   } catch {
     return false;
   }

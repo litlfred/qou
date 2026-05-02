@@ -17,4 +17,8 @@ export default conjecture({
     "def:substrate-parameter",
   ],
   cites: ["robinson1966", "berarducci-mantova2018"],
+  lean: {
+    ref: "qou:QOU.AppendixSurreals.ClassicalLimitStpart",
+    validation: "not_checked",
+  },
 });
