@@ -1,6 +1,6 @@
 {
   "computation": "habiro-motivic-orbit-relations",
-  "computedAt": "2026-05-02T23:40:24.539219+00:00",
+  "computedAt": "2026-05-02T23:50:02.974775+00:00",
   "description": "Motivic-orbit relation analysis on the exact-algebraic Frobenius eigenvalues from habiro-frobenius-probe. Tests (a) multiplicative factoring D = p ⊗ n, (b) Galois conjugacy ³He ~ σ(³H), (c) per-(atom, prime) Weil-purity signature. All relations are checked in exact ring arithmetic in Z[ζ_{2p}] = Z[u]/Φ_{2p}(u).",
   "reference_blocks": [
     "def:motivic-galois-character",
@@ -20,7 +20,10 @@
     5,
     7,
     11,
-    13
+    13,
+    17,
+    19,
+    23
   ],
   "relations": [
     {
@@ -103,6 +106,45 @@
     },
     {
       "kind": "multiplicative",
+      "atom": "D (deuteron, A=2)",
+      "factors": [
+        "p (proton, A=1)",
+        "n (neutron, A=1)"
+      ],
+      "prime": 17,
+      "exact_match": false,
+      "residue": "-64*u**15 + 80*u**14 + 36*u**13 - 13*u**12 - 57*u**11 + 100*u**10 - 14*u**9 - 24*u**8 - 38*u**7 + 84*u**6 - 32*u**5 - 51*u**4 - 19*u**3 + 77*u**2 - 60*u - 57",
+      "residue_galois_norm": -1413,
+      "residue_is_galois_stable": true
+    },
+    {
+      "kind": "multiplicative",
+      "atom": "D (deuteron, A=2)",
+      "factors": [
+        "p (proton, A=1)",
+        "n (neutron, A=1)"
+      ],
+      "prime": 19,
+      "exact_match": false,
+      "residue": "-33*u**17 - 6*u**16 + 91*u**15 + 26*u**14 - 24*u**13 - 22*u**12 + 92*u**11 + 44*u**10 - 23*u**9 - 43*u**8 + 68*u**7 + 61*u**6 - 10*u**5 - 61*u**4 + 17*u**3 + 41*u**2 - 4*u - 69",
+      "residue_galois_norm": -1108,
+      "residue_is_galois_stable": true
+    },
+    {
+      "kind": "multiplicative",
+      "atom": "D (deuteron, A=2)",
+      "factors": [
+        "p (proton, A=1)",
+        "n (neutron, A=1)"
+      ],
+      "prime": 23,
+      "exact_match": false,
+      "residue": "-142*u**21 + 92*u**20 - 38*u**19 + 24*u**18 - 120*u**17 + 95*u**16 - 21*u**15 + 72*u**14 - 106*u**13 + 95*u**12 - 11*u**11 + 85*u**10 - 91*u**9 + 84*u**8 - 12*u**7 + 108*u**6 - 91*u**5 + 71*u**4 + 3*u**3 + 125*u**2 - 86*u + 58",
+      "residue_galois_norm": -290,
+      "residue_is_galois_stable": true
+    },
+    {
+      "kind": "multiplicative",
       "atom": "T (tritium, A=3)",
       "factors": [
         "D (deuteron, A=2)",
@@ -177,6 +219,45 @@
       "exact_match": false,
       "residue": "1093*u**11 - 1137*u**10 + 81*u**9 + 235*u**8 + 761*u**7 - 1271*u**6 + 492*u**5 + 313*u**4 + 342*u**3 - 1295*u**2 + 848*u + 206",
       "residue_galois_norm": 9244,
+      "residue_is_galois_stable": true
+    },
+    {
+      "kind": "multiplicative",
+      "atom": "T (tritium, A=3)",
+      "factors": [
+        "D (deuteron, A=2)",
+        "n (neutron, A=1)"
+      ],
+      "prime": 17,
+      "exact_match": false,
+      "residue": "-302*u**15 + 1002*u**14 - 701*u**13 - 32*u**12 - 192*u**11 + 817*u**10 - 935*u**9 + 66*u**8 - 102*u**7 + 576*u**6 - 1036*u**5 + 190*u**4 - 10*u**3 + 402*u**2 - 1083*u + 457",
+      "residue_galois_norm": -70,
+      "residue_is_galois_stable": true
+    },
+    {
+      "kind": "multiplicative",
+      "atom": "T (tritium, A=3)",
+      "factors": [
+        "D (deuteron, A=2)",
+        "n (neutron, A=1)"
+      ],
+      "prime": 19,
+      "exact_match": false,
+      "residue": "996*u**17 - 894*u**16 + 1026*u**15 - 36*u**14 + 1084*u**13 - 921*u**12 + 821*u**11 - 121*u**10 + 1089*u**9 - 1090*u**8 + 462*u**7 - 376*u**6 + 1069*u**5 - 1181*u**4 + 163*u**3 - 709*u**2 + 978*u - 1154",
+      "residue_galois_norm": -7756,
+      "residue_is_galois_stable": true
+    },
+    {
+      "kind": "multiplicative",
+      "atom": "T (tritium, A=3)",
+      "factors": [
+        "D (deuteron, A=2)",
+        "n (neutron, A=1)"
+      ],
+      "prime": 23,
+      "exact_match": false,
+      "residue": "-1875*u**21 - 586*u**20 - 758*u**19 + 458*u**18 - 1459*u**17 - 371*u**16 - 470*u**15 + 969*u**14 - 858*u**13 + 37*u**12 - 105*u**11 + 1520*u**10 - 242*u**9 + 528*u**8 + 209*u**7 + 1918*u**6 + 317*u**5 + 855*u**4 + 230*u**3 + 2085*u**2 + 576*u + 889",
+      "residue_galois_norm": 7710,
       "residue_is_galois_stable": true
     },
     {
@@ -258,6 +339,45 @@
       "residue_is_galois_stable": true
     },
     {
+      "kind": "multiplicative",
+      "atom": "3He (helium-3, A=3)",
+      "factors": [
+        "D (deuteron, A=2)",
+        "p (proton, A=1)"
+      ],
+      "prime": 17,
+      "exact_match": false,
+      "residue": "-411*u**15 + 1376*u**14 - 1284*u**13 + 89*u**12 - 250*u**11 + 1196*u**10 - 1407*u**9 + 181*u**8 - 43*u**7 + 914*u**6 - 1483*u**5 + 538*u**4 + 9*u**3 + 649*u**2 - 1475*u + 955",
+      "residue_galois_norm": 3993,
+      "residue_is_galois_stable": true
+    },
+    {
+      "kind": "multiplicative",
+      "atom": "3He (helium-3, A=3)",
+      "factors": [
+        "D (deuteron, A=2)",
+        "p (proton, A=1)"
+      ],
+      "prime": 19,
+      "exact_match": false,
+      "residue": "751*u**17 - 1466*u**16 + 1278*u**15 - 74*u**14 + 874*u**13 - 1630*u**12 + 853*u**11 - 284*u**10 + 918*u**9 - 1775*u**8 + 427*u**7 - 457*u**6 + 1052*u**5 - 1770*u**4 + 122*u**3 - 626*u**2 + 1224*u - 1629",
+      "residue_galois_norm": -13741,
+      "residue_is_galois_stable": true
+    },
+    {
+      "kind": "multiplicative",
+      "atom": "3He (helium-3, A=3)",
+      "factors": [
+        "D (deuteron, A=2)",
+        "p (proton, A=1)"
+      ],
+      "prime": 23,
+      "exact_match": false,
+      "residue": "-1320*u**21 + 802*u**20 - 15*u**19 + 674*u**18 - 755*u**17 + 1207*u**16 + 526*u**15 + 1362*u**14 - 253*u**13 + 1479*u**12 + 836*u**11 + 1877*u**10 + 27*u**9 + 1450*u**8 + 878*u**7 + 1982*u**6 - 35*u**5 + 1170*u**4 + 530*u**3 + 1751*u**2 - 321*u + 599",
+      "residue_galois_norm": -478,
+      "residue_is_galois_stable": true
+    },
+    {
       "kind": "isobaric_mirror_residue_gap",
       "prime": 2,
       "epsilon_T": "30080",
@@ -303,6 +423,30 @@
       "epsilon_T": "-1093*u**11 + 1137*u**10 - 81*u**9 - 235*u**8 - 761*u**7 + 1271*u**6 - 492*u**5 - 313*u**4 - 342*u**3 + 1295*u**2 - 848*u - 206",
       "epsilon_He3": "-807*u**11 + 970*u**10 - 240*u**9 - 92*u**8 - 560*u**7 + 1034*u**6 - 500*u**5 - 59*u**4 - 264*u**3 + 932*u**2 - 803*u + 35",
       "gap": "-286*u**11 + 167*u**10 + 159*u**9 - 143*u**8 - 201*u**7 + 237*u**6 + 8*u**5 - 254*u**4 - 78*u**3 + 363*u**2 - 45*u - 241",
+      "gap_is_zero": false
+    },
+    {
+      "kind": "isobaric_mirror_residue_gap",
+      "prime": 17,
+      "epsilon_T": "302*u**15 - 1002*u**14 + 701*u**13 + 32*u**12 + 192*u**11 - 817*u**10 + 935*u**9 - 66*u**8 + 102*u**7 - 576*u**6 + 1036*u**5 - 190*u**4 + 10*u**3 - 402*u**2 + 1083*u - 457",
+      "epsilon_He3": "411*u**15 - 1376*u**14 + 1284*u**13 - 89*u**12 + 250*u**11 - 1196*u**10 + 1407*u**9 - 181*u**8 + 43*u**7 - 914*u**6 + 1483*u**5 - 538*u**4 - 9*u**3 - 649*u**2 + 1475*u - 955",
+      "gap": "-109*u**15 + 374*u**14 - 583*u**13 + 121*u**12 - 58*u**11 + 379*u**10 - 472*u**9 + 115*u**8 + 59*u**7 + 338*u**6 - 447*u**5 + 348*u**4 + 19*u**3 + 247*u**2 - 392*u + 498",
+      "gap_is_zero": false
+    },
+    {
+      "kind": "isobaric_mirror_residue_gap",
+      "prime": 19,
+      "epsilon_T": "-996*u**17 + 894*u**16 - 1026*u**15 + 36*u**14 - 1084*u**13 + 921*u**12 - 821*u**11 + 121*u**10 - 1089*u**9 + 1090*u**8 - 462*u**7 + 376*u**6 - 1069*u**5 + 1181*u**4 - 163*u**3 + 709*u**2 - 978*u + 1154",
+      "epsilon_He3": "-751*u**17 + 1466*u**16 - 1278*u**15 + 74*u**14 - 874*u**13 + 1630*u**12 - 853*u**11 + 284*u**10 - 918*u**9 + 1775*u**8 - 427*u**7 + 457*u**6 - 1052*u**5 + 1770*u**4 - 122*u**3 + 626*u**2 - 1224*u + 1629",
+      "gap": "-245*u**17 - 572*u**16 + 252*u**15 - 38*u**14 - 210*u**13 - 709*u**12 + 32*u**11 - 163*u**10 - 171*u**9 - 685*u**8 - 35*u**7 - 81*u**6 - 17*u**5 - 589*u**4 - 41*u**3 + 83*u**2 + 246*u - 475",
+      "gap_is_zero": false
+    },
+    {
+      "kind": "isobaric_mirror_residue_gap",
+      "prime": 23,
+      "epsilon_T": "1875*u**21 + 586*u**20 + 758*u**19 - 458*u**18 + 1459*u**17 + 371*u**16 + 470*u**15 - 969*u**14 + 858*u**13 - 37*u**12 + 105*u**11 - 1520*u**10 + 242*u**9 - 528*u**8 - 209*u**7 - 1918*u**6 - 317*u**5 - 855*u**4 - 230*u**3 - 2085*u**2 - 576*u - 889",
+      "epsilon_He3": "1320*u**21 - 802*u**20 + 15*u**19 - 674*u**18 + 755*u**17 - 1207*u**16 - 526*u**15 - 1362*u**14 + 253*u**13 - 1479*u**12 - 836*u**11 - 1877*u**10 - 27*u**9 - 1450*u**8 - 878*u**7 - 1982*u**6 + 35*u**5 - 1170*u**4 - 530*u**3 - 1751*u**2 + 321*u - 599",
+      "gap": "555*u**21 + 1388*u**20 + 743*u**19 + 216*u**18 + 704*u**17 + 1578*u**16 + 996*u**15 + 393*u**14 + 605*u**13 + 1442*u**12 + 941*u**11 + 357*u**10 + 269*u**9 + 922*u**8 + 669*u**7 + 64*u**6 - 352*u**5 + 315*u**4 + 300*u**3 - 334*u**2 - 897*u - 290",
       "gap_is_zero": false
     },
     {
@@ -354,6 +498,30 @@
       "He3_residue": "53*u**11 + 102*u**10 - 127*u**9 + u**8 + 39*u**7 + 47*u**6 - 123*u**5 + 41*u**4 + 26*u**3 + 12*u**2 - 92*u + 109"
     },
     {
+      "kind": "three_fold_multiplicative",
+      "prime": 17,
+      "T_residue_norm": 3620,
+      "He3_residue_norm": 1291,
+      "T_residue": "575*u**15 - 579*u**14 + 309*u**13 + 30*u**12 + 442*u**11 - 598*u**10 + 428*u**9 + 49*u**8 + 293*u**7 - 669*u**6 + 545*u**5 - 49*u**4 + 170*u**3 - 689*u**2 + 577*u - 139",
+      "He3_residue": "227*u**15 - 6*u**14 - 9*u**13 - 10*u**12 + 174*u**11 - 71*u**10 + 41*u**9 - 85*u**8 + 134*u**7 - 154*u**6 - 4*u**5 - 16*u**4 + 21*u**3 - 198*u**2 - 25*u + 12"
+    },
+    {
+      "kind": "three_fold_multiplicative",
+      "prime": 19,
+      "T_residue_norm": 8042,
+      "He3_residue_norm": -3073,
+      "T_residue": "563*u**17 + 221*u**16 - 286*u**15 - 121*u**14 + 579*u**13 + 437*u**12 - 133*u**11 - 150*u**10 + 519*u**9 + 478*u**8 - 95*u**7 - 255*u**6 + 363*u**5 + 460*u**4 - 53*u**3 - 402*u**2 + 89*u + 398",
+      "He3_residue": "360*u**17 - 119*u**16 + 314*u**15 - 45*u**14 + 378*u**13 - 89*u**12 + 288*u**11 - 137*u**10 + 258*u**9 - 213*u**8 + 205*u**7 - 179*u**6 + 198*u**5 - 326*u**4 + 78*u**3 - 271*u**2 + 147*u - 371"
+    },
+    {
+      "kind": "three_fold_multiplicative",
+      "prime": 23,
+      "T_residue_norm": 17051,
+      "He3_residue_norm": 17051,
+      "T_residue": "-1040*u**21 - 924*u**20 - 1185*u**19 + 78*u**18 - 799*u**17 - 752*u**16 - 1104*u**15 + 296*u**14 - 354*u**13 - 357*u**12 - 809*u**11 + 662*u**10 + 144*u**9 + 237*u**8 - 404*u**7 + 956*u**6 + 647*u**5 + 767*u**4 - 136*u**3 + 1133*u**2 + 889*u + 1059",
+      "He3_residue": "-1035*u**21 + 583*u**20 - 1071*u**19 + 360*u**18 - 651*u**17 + 1046*u**16 - 524*u**15 + 852*u**14 - 239*u**13 + 1514*u**12 - 53*u**11 + 1281*u**10 + 19*u**9 + 1742*u**8 + 217*u**7 + 1388*u**6 + u**5 + 1739*u**4 + 169*u**3 + 1275*u**2 - 188*u + 1463"
+    },
+    {
       "kind": "isobaric_gap_norm",
       "prime": 2,
       "gap_galois_norm": 117248
@@ -384,6 +552,21 @@
       "gap_galois_norm": -3705
     },
     {
+      "kind": "isobaric_gap_norm",
+      "prime": 17,
+      "gap_galois_norm": 4063
+    },
+    {
+      "kind": "isobaric_gap_norm",
+      "prime": 19,
+      "gap_galois_norm": -5985
+    },
+    {
+      "kind": "isobaric_gap_norm",
+      "prime": 23,
+      "gap_galois_norm": -8188
+    },
+    {
       "kind": "galois_conjugacy",
       "atom": "3He (helium-3, A=3)",
       "conjugate_of": "T (tritium, A=3)",
@@ -428,6 +611,30 @@
       "atom": "3He (helium-3, A=3)",
       "conjugate_of": "T (tritium, A=3)",
       "prime": 13,
+      "in_orbit": false,
+      "galois_index_k": null
+    },
+    {
+      "kind": "galois_conjugacy",
+      "atom": "3He (helium-3, A=3)",
+      "conjugate_of": "T (tritium, A=3)",
+      "prime": 17,
+      "in_orbit": false,
+      "galois_index_k": null
+    },
+    {
+      "kind": "galois_conjugacy",
+      "atom": "3He (helium-3, A=3)",
+      "conjugate_of": "T (tritium, A=3)",
+      "prime": 19,
+      "in_orbit": false,
+      "galois_index_k": null
+    },
+    {
+      "kind": "galois_conjugacy",
+      "atom": "3He (helium-3, A=3)",
+      "conjugate_of": "T (tritium, A=3)",
+      "prime": 23,
       "in_orbit": false,
       "galois_index_k": null
     },
@@ -476,6 +683,30 @@
       "atom": "3He (helium-3, A=3)",
       "conjugate_of": "T (tritium, A=3)",
       "prime": 13,
+      "in_orbit": false,
+      "galois_index_k": null
+    },
+    {
+      "kind": "sign_galois_conjugacy",
+      "atom": "3He (helium-3, A=3)",
+      "conjugate_of": "T (tritium, A=3)",
+      "prime": 17,
+      "in_orbit": false,
+      "galois_index_k": null
+    },
+    {
+      "kind": "sign_galois_conjugacy",
+      "atom": "3He (helium-3, A=3)",
+      "conjugate_of": "T (tritium, A=3)",
+      "prime": 19,
+      "in_orbit": false,
+      "galois_index_k": null
+    },
+    {
+      "kind": "sign_galois_conjugacy",
+      "atom": "3He (helium-3, A=3)",
+      "conjugate_of": "T (tritium, A=3)",
+      "prime": 23,
       "in_orbit": false,
       "galois_index_k": null
     }
@@ -536,6 +767,33 @@
       "is_pure_motive": false
     },
     {
+      "atom": "p (proton, A=1)",
+      "prime": 17,
+      "orbit_max_abs": 11.298405644861212,
+      "orbit_min_abs": 0.5310840869285409,
+      "orbit_spread": 0.9529947761107258,
+      "inferred_weight": 1.711598335843829,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "p (proton, A=1)",
+      "prime": 19,
+      "orbit_max_abs": 11.698745703073447,
+      "orbit_min_abs": 0.29102697829985413,
+      "orbit_spread": 0.9751232323800836,
+      "inferred_weight": 1.670594397502244,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "p (proton, A=1)",
+      "prime": 23,
+      "orbit_max_abs": 14.683030713356585,
+      "orbit_min_abs": 0.29190611056354804,
+      "orbit_spread": 0.9801194919317295,
+      "inferred_weight": 1.7137282155345892,
+      "is_pure_motive": false
+    },
+    {
       "atom": "D (deuteron, A=2)",
       "prime": 2,
       "orbit_max_abs": 96.0,
@@ -587,6 +845,33 @@
       "orbit_min_abs": 1.3227822381339305,
       "orbit_spread": 0.997205307314588,
       "inferred_weight": 4.803034716152957,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "D (deuteron, A=2)",
+      "prime": 17,
+      "orbit_max_abs": 571.0228474563553,
+      "orbit_min_abs": 1.437791710686814,
+      "orbit_spread": 0.9974820767380999,
+      "inferred_weight": 4.480728029345311,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "D (deuteron, A=2)",
+      "prime": 19,
+      "orbit_max_abs": 569.812506565279,
+      "orbit_min_abs": 1.3256407500843461,
+      "orbit_spread": 0.9976735492204708,
+      "inferred_weight": 4.310028100947963,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "D (deuteron, A=2)",
+      "prime": 23,
+      "orbit_max_abs": 531.4472592601943,
+      "orbit_min_abs": 1.385523311734116,
+      "orbit_spread": 0.9973929241564575,
+      "inferred_weight": 4.002944053276455,
       "is_pure_motive": false
     },
     {
@@ -644,6 +929,33 @@
       "is_pure_motive": false
     },
     {
+      "atom": "T (tritium, A=3)",
+      "prime": 17,
+      "orbit_max_abs": 2558.755115913836,
+      "orbit_min_abs": 8.08790711812691,
+      "orbit_spread": 0.9968391242023024,
+      "inferred_weight": 5.539488335967613,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "T (tritium, A=3)",
+      "prime": 19,
+      "orbit_max_abs": 3147.717703177284,
+      "orbit_min_abs": 9.912021169766708,
+      "orbit_spread": 0.9968510450731456,
+      "inferred_weight": 5.470945730259952,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "T (tritium, A=3)",
+      "prime": 23,
+      "orbit_max_abs": 6387.450891262812,
+      "orbit_min_abs": 9.348836785974699,
+      "orbit_spread": 0.9985363743776469,
+      "inferred_weight": 5.588969357182884,
+      "is_pure_motive": false
+    },
+    {
       "atom": "3He (helium-3, A=3)",
       "prime": 2,
       "orbit_max_abs": 29312.0,
@@ -698,6 +1010,33 @@
       "is_pure_motive": false
     },
     {
+      "atom": "3He (helium-3, A=3)",
+      "prime": 17,
+      "orbit_max_abs": 934.953011475072,
+      "orbit_min_abs": 3.2480798716762647,
+      "orbit_spread": 0.9965259431952074,
+      "inferred_weight": 4.828790099601658,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "3He (helium-3, A=3)",
+      "prime": 19,
+      "orbit_max_abs": 1649.1416970923983,
+      "orbit_min_abs": 3.0617124875839066,
+      "orbit_spread": 0.9981434509278481,
+      "inferred_weight": 5.031865357297386,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "3He (helium-3, A=3)",
+      "prime": 23,
+      "orbit_max_abs": 7184.203211495251,
+      "orbit_min_abs": 4.278380679354711,
+      "orbit_spread": 0.9994044738778395,
+      "inferred_weight": 5.663949147888137,
+      "is_pure_motive": false
+    },
+    {
       "atom": "n (neutron, A=1)",
       "prime": 2,
       "orbit_max_abs": 8.0,
@@ -749,6 +1088,33 @@
       "orbit_min_abs": 0.6678788100948763,
       "orbit_spread": 0.9440177970826789,
       "inferred_weight": 1.933038477095634,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "n (neutron, A=1)",
+      "prime": 17,
+      "orbit_max_abs": 12.446172702312492,
+      "orbit_min_abs": 0.5677073803402327,
+      "orbit_spread": 0.9543869915741445,
+      "inferred_weight": 1.779896432769734,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "n (neutron, A=1)",
+      "prime": 19,
+      "orbit_max_abs": 12.265771120147742,
+      "orbit_min_abs": 0.4309655343688844,
+      "orbit_spread": 0.9648643750036245,
+      "inferred_weight": 1.702743758705195,
+      "is_pure_motive": false
+    },
+    {
+      "atom": "n (neutron, A=1)",
+      "prime": 23,
+      "orbit_max_abs": 13.982338670336024,
+      "orbit_min_abs": 0.5470131683327034,
+      "orbit_spread": 0.9608782778596824,
+      "inferred_weight": 1.6825385907436534,
       "is_pure_motive": false
     }
   ],
@@ -810,6 +1176,37 @@
         "2": 1,
         "3": 1,
         "53": 1
+      }
+    },
+    {
+      "prime": 17,
+      "residue_label": "D (deuteron, A=2) = p (proton, A=1) · n (neutron, A=1)",
+      "norm": -1413,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "3": 2,
+        "157": 1
+      }
+    },
+    {
+      "prime": 19,
+      "residue_label": "D (deuteron, A=2) = p (proton, A=1) · n (neutron, A=1)",
+      "norm": -1108,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "2": 2,
+        "277": 1
+      }
+    },
+    {
+      "prime": 23,
+      "residue_label": "D (deuteron, A=2) = p (proton, A=1) · n (neutron, A=1)",
+      "norm": -290,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "2": 1,
+        "5": 1,
+        "29": 1
       }
     },
     {
@@ -875,6 +1272,40 @@
       }
     },
     {
+      "prime": 17,
+      "residue_label": "T (tritium, A=3) = D (deuteron, A=2) · n (neutron, A=1)",
+      "norm": -70,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "2": 1,
+        "5": 1,
+        "7": 1
+      }
+    },
+    {
+      "prime": 19,
+      "residue_label": "T (tritium, A=3) = D (deuteron, A=2) · n (neutron, A=1)",
+      "norm": -7756,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "2": 2,
+        "7": 1,
+        "277": 1
+      }
+    },
+    {
+      "prime": 23,
+      "residue_label": "T (tritium, A=3) = D (deuteron, A=2) · n (neutron, A=1)",
+      "norm": 7710,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "2": 1,
+        "3": 1,
+        "5": 1,
+        "257": 1
+      }
+    },
+    {
       "prime": 2,
       "residue_label": "3He (helium-3, A=3) = D (deuteron, A=2) · p (proton, A=1)",
       "norm": 57088,
@@ -931,6 +1362,37 @@
       "factorization": {
         "29": 1,
         "191": 1
+      }
+    },
+    {
+      "prime": 17,
+      "residue_label": "3He (helium-3, A=3) = D (deuteron, A=2) · p (proton, A=1)",
+      "norm": 3993,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "3": 1,
+        "11": 3
+      }
+    },
+    {
+      "prime": 19,
+      "residue_label": "3He (helium-3, A=3) = D (deuteron, A=2) · p (proton, A=1)",
+      "norm": -13741,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "7": 1,
+        "13": 1,
+        "151": 1
+      }
+    },
+    {
+      "prime": 23,
+      "residue_label": "3He (helium-3, A=3) = D (deuteron, A=2) · p (proton, A=1)",
+      "norm": -478,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "2": 1,
+        "239": 1
       }
     },
     {
@@ -1054,6 +1516,66 @@
       }
     },
     {
+      "prime": 17,
+      "residue_label": "3fold-T_residue_norm",
+      "norm": 3620,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "2": 2,
+        "5": 1,
+        "181": 1
+      }
+    },
+    {
+      "prime": 17,
+      "residue_label": "3fold-He3_residue_norm",
+      "norm": 1291,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "1291": 1
+      }
+    },
+    {
+      "prime": 19,
+      "residue_label": "3fold-T_residue_norm",
+      "norm": 8042,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "2": 1,
+        "4021": 1
+      }
+    },
+    {
+      "prime": 19,
+      "residue_label": "3fold-He3_residue_norm",
+      "norm": -3073,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "7": 1,
+        "439": 1
+      }
+    },
+    {
+      "prime": 23,
+      "residue_label": "3fold-T_residue_norm",
+      "norm": 17051,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "17": 2,
+        "59": 1
+      }
+    },
+    {
+      "prime": 23,
+      "residue_label": "3fold-He3_residue_norm",
+      "norm": 17051,
+      "p_adic_valuation": 0,
+      "factorization": {
+        "17": 2,
+        "59": 1
+      }
+    },
+    {
       "prime": 2,
       "residue_label": "ε(T) - ε(³He)",
       "norm": 117248,
@@ -1115,6 +1637,39 @@
         "13": 1,
         "19": 1
       }
+    },
+    {
+      "prime": 17,
+      "residue_label": "ε(T) - ε(³He)",
+      "norm": 4063,
+      "p_adic_valuation": 1,
+      "factorization": {
+        "17": 1,
+        "239": 1
+      }
+    },
+    {
+      "prime": 19,
+      "residue_label": "ε(T) - ε(³He)",
+      "norm": -5985,
+      "p_adic_valuation": 1,
+      "factorization": {
+        "3": 2,
+        "5": 1,
+        "7": 1,
+        "19": 1
+      }
+    },
+    {
+      "prime": 23,
+      "residue_label": "ε(T) - ε(³He)",
+      "norm": -8188,
+      "p_adic_valuation": 1,
+      "factorization": {
+        "2": 2,
+        "23": 1,
+        "89": 1
+      }
     }
   ],
   "lfunction_frobenius_trace_candidate": [
@@ -1165,10 +1720,34 @@
       "a_p_candidate": -285,
       "min_weight_consistent": 4,
       "weil_bound_at_min_w": 338.0
+    },
+    {
+      "prime": 17,
+      "gap_norm": 4063,
+      "v_p": 1,
+      "a_p_candidate": 239,
+      "min_weight_consistent": 4,
+      "weil_bound_at_min_w": 578.0
+    },
+    {
+      "prime": 19,
+      "gap_norm": -5985,
+      "v_p": 1,
+      "a_p_candidate": -315,
+      "min_weight_consistent": 4,
+      "weil_bound_at_min_w": 722.0
+    },
+    {
+      "prime": 23,
+      "gap_norm": -8188,
+      "v_p": 1,
+      "a_p_candidate": -356,
+      "min_weight_consistent": 4,
+      "weil_bound_at_min_w": 1058.0
     }
   ],
   "summary": {
-    "n_relations": 48,
+    "n_relations": 72,
     "n_multiplicative_matches": 0,
     "n_galois_conjugacy_matches": 0,
     "n_sign_conjugacy_matches": 1,

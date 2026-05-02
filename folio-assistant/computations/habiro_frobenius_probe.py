@@ -64,7 +64,7 @@ WITNESS_FAST = HERE / "habiro-coefficients-atomic-fast.witness.json"
 WITNESS_SYMBOLIC = HERE / "habiro-coefficients-atomic.witness.json"
 WITNESS_OUT = HERE / "habiro-frobenius-probe.witness.json"
 
-PRIMES = [2, 3, 5, 7, 11, 13]
+PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23]
 
 
 def reduce_mod_cyclotomic(p_in_u: sp.Expr, n: int, u: sp.Symbol) -> sp.Poly:
