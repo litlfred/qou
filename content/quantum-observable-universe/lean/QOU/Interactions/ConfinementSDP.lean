@@ -102,6 +102,18 @@ class HasConfinementSDPStrongDuality (n : ℕ) [HasConfinementSDPData n]
     (h : slaterStrict n) : Prop where
   strong_duality : primalOpt n = nTarget n * y0Star n
 
+/-- **Default instance from a `Fact` witness on the strong-duality
+    identity**. When `Fact (primalOpt n = nTarget n * y0Star n)` is
+    in scope (e.g. from a numerical SDP solver verifying strong
+    duality at the specific `n`), the `HasConfinementSDPStrongDuality`
+    instance follows. Boyd-Vandenberghe Thm 5.5 lifts this to all
+    Slater-strict `n` once Mathlib SDP duality lands. -/
+instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
+    [HasConfinementSDPData n] (h : slaterStrict n)
+    [hf : Fact (primalOpt n = nTarget n * y0Star n)] :
+    HasConfinementSDPStrongDuality n h :=
+  ⟨hf.out⟩
+
 /-- **Confinement SDP — primal–dual identity.**
     Strong duality at `(n, h)` follows from a
     `HasConfinementSDPStrongDuality` instance. Use this lemma —
