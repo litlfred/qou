@@ -48,4 +48,4 @@ particular:*
 - [`ex:chi-minus-six-derivation`](#ex:chi-minus-six-derivation) Step 8
 - [`rem:hochschild-kummer-connection`](#rem:hochschild-kummer-connection) "Motivic-Galois interpretation"
 
-*all reduce to corollaries of [motivic perpetual obstruction](#lem:motivic-perpetual-obstruction).*
+*all reduce to corollaries of [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction).*

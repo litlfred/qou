@@ -213,6 +213,31 @@ def main() -> int:
             "specific Wedderburn characters."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        # P2.5: sympy-as-matrix-stepping-stone pattern.  This script
+        # uses sp.Symbol('q') only inside _sigmas_to_numeric to build
+        # Hoefsmit seminormal matrices ρ_λ(σ_i) ∈ Mat(ℚ(q)); each
+        # matrix is then immediately lambdified at q = q_0 and the
+        # downstream products / traces run in numpy.  The algebraic
+        # truth IS symbolic at the per-irrep matrix level, but the
+        # per-trace output is numerical because sympy doesn't scale
+        # for the block-matrix products on partitions of n = 3A up to
+        # 12.  The symbolic seminormal matrices are produced by
+        # build_seminormal_matrices in hecke_characters.py — see
+        # that module for the algebraic source.
+        "symbolic_q_form": {
+            "engine": "sympy (matrix construction only)",
+            "q_symbol": "q (sp.Symbol('q'))",
+            "pattern_note": (
+                "sympy-as-matrix-stepping-stone: ρ_λ(σ_i) ∈ "
+                "Mat_{d_λ × d_λ}(ℚ(q)) is symbolic in _sigmas_to_numeric; "
+                "the lambdify-at-q_0 step eagerly converts to numpy "
+                "before computing products.  Per-trace χ_λ(β_atom) "
+                "values reported here are numerical specialisations, "
+                "not Laurent polynomials in q."
+            ),
+            "symbolic_source": "hecke_characters.build_seminormal_matrices",
+            "specialisation_point": "q = q_0",
+        },
         "atoms": atoms_data,
         "profiles": profiles,
     }

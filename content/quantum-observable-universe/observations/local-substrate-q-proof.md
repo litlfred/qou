@@ -1,10 +1,20 @@
 
-The topological mass formula
-([topological mass formula](#prop:topological-mass-formula)) gives
-$m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{2}$ with
-$\hbar_q = 1 - q^{-1}$ (see the proof of
-[skein mass relation](#rem:skein-mass-relation)). Rearranging yields
-the equation above. Substituting the numerical values,
+The **algebraic** topological mass formula
+([algebraic topological mass](#prop:topological-mass-formula-algebraic))
+gives the mass ratio at the level of $\mathbb{Q}(q)$ as
+$m_\mu / m_e = \Phi_1(4_1) / \hbar_q^{2}$, where
+$\Phi_1(4_1) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(4_1))$ is the
+$\tau_{\mathrm{arch}}$-image of the algebraic quantum volume
+([`def:algebraic-quantum-volume`](#def:algebraic-quantum-volume))
+and $\hbar_q = 1 - q^{-1}$. The Archimedean form of the same
+identity ([topological mass formula](#prop:topological-mass-formula))
+is the specialisation under $\tau_{\mathrm{arch}}$, which equates
+$\Phi_1(4_1)$ with the hyperbolic volume $\mathrm{Vol}(4_1)$ at
+$q = q_0$ via the volume conjecture
+\cite{kashaev1997, murakami-murakami2001} as **τ-side naming**
+(not as a derivation step). Substituting that
+$\tau_{\mathrm{arch}}$-specialised numerical value here is the
+final step:
 
 $$
   (1 - q^{-1})^{2}

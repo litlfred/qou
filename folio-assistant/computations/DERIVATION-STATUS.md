@@ -164,6 +164,24 @@ Computing this marginal requires the full spectral LP at H_6(q)
 (not just the branching rule), because the scaling functions at
 different levels interact non-trivially.
 
+## Calibration discipline (post-2026-05-01 audit)
+
+The framework has **categorically exactly three** external
+calibration inputs (per
+[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
+
+| ID | Calibration | (Co)homology | Role |
+|----|-------------|--------------|------|
+| **CAL-0** | $m_e$ (CODATA) | $H^0$ | Mass scale |
+| **CAL-1** | $m_\mu / m_e$ (CODATA) | $H^1$ | Fixes substrate parameter $q_0$ |
+| **CAL-2** | $Q_\beta$ (PDG) | $H^2$ | Weak / β-decay sector ($E_0$ above) |
+
+The substrate parameter $q_0$ is **not** a fitted parameter beyond
+this budget; it is the $H^1$ calibration. Any **fourth** external
+input is a hard audit failure. The earlier "Energy scale $E_0$:
+calibrated, not independently derived" entry is now correctly framed
+as the $H^2$ calibration — not an additional fit.
+
 ## Open questions (ranked)
 
 1. **k=6 scaling function**: coefficient DERIVED (C_{321}=w·h/2),
@@ -175,8 +193,59 @@ different levels interact non-trivially.
    character polynomial in Z,N,A from the symbolic computation.
 2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.
    Needs k≥7 exact corrections.
-3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface — not derived.
+3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface
+   — algebraic claim now stated as
+   [`conj:magic-numbers-bring`](../../content/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
+   (P1.4 path-(b)): the seven values are conjectured to be the
+   ranks of distinguished $S_5 \times \langle\hat\tau\rangle$-stable
+   period sub-lattices on Bring's surface. Path-(a) proof
+   (concrete period-lattice construction + bijection) remains
+   open. Equivalent under Yekutieli rigidity to
+   `conj:categorical-neutrality-saturated-shells` and
+   `conj:homological-shell-condensation`; the three are three
+   models of the same conjectural surface.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
-5. **1/α remaining 399 ppb**: J³ correction (Massey products?).
-6. **Energy scale E₀**: calibrated, not independently derived.
-7. **Neutrino mass**: wrong by 10⁶.
+5. **1/α remaining 399 ppb** — 🟡 path-(b) closed. The residual
+   is the $k = 5$ truncation residual from cutting the Hecke /
+   Hoefsmit ladder, not a separate physics correction. The
+   empirical convergence table (k=3: 0.035%, k=4: 0.023%, k=5:
+   0.006%) shows ~$\div 4$ reduction per level, predicting
+   $\sim 100$ ppb at $k = 6$ and $\lesssim 25$ ppb at $k = 7$.
+   Numerical verification at $k = 6, 7$ blocked on P2.2.
+6. **BW-8 / BW-11 ad-hoc / approx coefficients** — ✅ closed.
+   The "ad hoc" / "approx" tag was specifically about the
+   **Kerov Plancherel multiplier** (a single resolvent-damping
+   factor), now replaced in `hecke_core.py` by the **$q$-heat
+   resolvent** $\rho_\lambda(s_\star) = 1 / (\mu_\lambda +
+   s_\star)$ on the $q$-Laplacian's $\lambda$-block, with
+   $s_\star = (q-1)/q$ the Planck-step Reeb frequency. The
+   replacement uses only quantities the paper already derives
+   (q-Casimir, Reeb frequency, Wedderburn weight) — no new
+   paper-side block needed.
+7. **Neutrino mass**: ν = unknot ($K_{0_1}$); $J_\nu(q)=1$; bare-knot
+   mass = 0. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$
+   (vacuum drag, not knot topology — see
+   `content/.../descartes-universe/neutrino-knot.md`). The earlier
+   "wrong by 10⁶" claim was a neutron/neutrino confusion (comparing
+   neutrino against neutron mass) and is **withdrawn**.
+
+## Audit closures (2026-05-01)
+
+| ID | Status | Notes |
+|----|--------|-------|
+| **CAL-0/1/2** | 🟢 declared | Three-calibration discipline (P0.4 landed) |
+| **SUB-1** ($q_0$) | 🟢 = CAL-1 | $H^1$ calibration; `q_parameter.py` + `q_pinning_50_digit.py` derive $q_0$ from a single CODATA $m_\mu/m_e$ input — no separate fit-against-mass-tower step exists. P1.1(b) confirmed in place. |
+| **NU-1** | 🟢 withdrawn | Neutrino = unknot; bare mass = 0 (P1.6 audit) |
+| **SHELL-1** | 🟢 cleared | Compound-shell calibration *is* CAL-2 (P1.5 audit) |
+| **JSJ-link 8** | 🟢 algebraic recast landed | Hecke $J^\bullet$-stratification (P0.3) |
+| **BW-8** | 🟢 closed (Kerov → q-heat resolvent) | Compute-side update in `hecke_core.py`; no paper change needed (paper already supplies the q-Casimir, Reeb frequency, and Wedderburn weight ingredients). |
+| **BW-11** | 🟢 closed (Kerov → q-heat resolvent) | Same closure as BW-8 (P1.3). |
+| **MAG-1** | 🟡 path-(b) | `conj:magic-numbers-bring` (P1.4 path-(b) landed); path-(a) period-lattice proof open |
+| **ALPHA-2** (399 ppb) | 🟡 path-(b) | Documented as $k = 5$ truncation residual (P1.7 path b); the empirical convergence table predicts $\sim 100$ ppb at $k = 6$ and $\lesssim 25$ ppb at $k = 7$. Path-(a) numerical verification at $k = 6, 7$ blocked on P2.2. |
+
+See [`docs/audits/2026-05-01-math-framework-deep-audit.md`](../../docs/audits/2026-05-01-math-framework-deep-audit.md)
+for the full audit and
+[`docs/audits/2026-05-01-math-framework-workplan.md`](../../docs/audits/2026-05-01-math-framework-workplan.md)
+for the priority queue.  Open conjectures and their downstream cones
+are tracked in
+[`docs/audits/conjecture-cones.md`](../../docs/audits/conjecture-cones.md).

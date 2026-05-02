@@ -111,7 +111,7 @@ in $H^2(\mathcal{S}, \mathbb{G}_m) / nH^2(\mathcal{S}, \mathbb{G}_m)$
 iff $n$ divides the trace $\chi(A)$. Equivalently, the motivic
 Galois character $\chi^{\mathrm{mot}}_A$ is non-trivial at every
 finite place $p \nmid \chi(A)$
-([motivic perpetual obstruction](#lem:motivic-perpetual-obstruction)). $\square$
+([motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)). $\square$
 
 **The obstruction as a function on $\mathbb{P}^1$.**
 

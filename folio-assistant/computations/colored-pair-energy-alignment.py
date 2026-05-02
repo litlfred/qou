@@ -348,6 +348,64 @@ for t_test in [0.0, 0.01, 0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5, 0.7, 1.0]:
 # WITNESS
 # ══════════════════════════════════════════════════════════════
 
+# ══════════════════════════════════════════════════════════════
+# P2.5 — SYMBOLIC POLYNOMIAL-IN-q FORM
+# ══════════════════════════════════════════════════════════════
+#
+# The energy alignment above evaluates with HA = q₀ - 1/q₀ as a
+# numerical constant, but the NF coefficients are themselves
+# polynomials in (q, q⁻¹) once the symbolic h is replaced by
+# h(q) = q - 1/q.  Capture the symmetric one-parameter family
+# (φ₀ = φ₁ = ψ₀ = ψ₁ = t) — the smallest non-trivial case — as
+# polynomials in q for the witness JSON, alongside the symbolic
+# NF coefficients with formal color weights.
+
+h_q = q_sym - 1 / q_sym
+
+# Per-coefficient polynomials in q (symbolic colors substituted with the
+# symmetric t parameter; t kept symbolic):
+t_sym = sp.Symbol('t', positive=True)
+sym_subs = {phi0: t_sym, phi1: t_sym, psi0: t_sym, psi1: t_sym, h: h_q}
+c_id_q   = sp.simplify(c_id.subs(sym_subs))
+c_s0_q   = sp.simplify(c_s0.subs(sym_subs))
+c_s1_q   = sp.simplify(c_s1.subs(sym_subs))
+c_Lp_q   = sp.simplify(c_Lp.subs(sym_subs))
+c_Lm_q   = sp.simplify(c_Lm.subs(sym_subs))
+net_q    = sp.simplify(net_factored.subs(sym_subs))
+
+symbolic_q_form = {
+    "engine": "sympy",
+    "q_symbol": "q (sp.Symbol('q', positive=True))",
+    "h_symbol_definition": "h = q - 1/q  (HA = [2]_q in Kashiwara normalisation)",
+    "color_parametrization": (
+        "symmetric one-parameter family φ₀ = φ₁ = ψ₀ = ψ₁ = t "
+        "(smallest non-trivial colored case)"
+    ),
+    "nf_coefficients_polynomial_q": {
+        "c_identity":   str(c_id_q),
+        "c_sigma0":     str(c_s0_q),
+        "c_sigma1":     str(c_s1_q),
+        "C_plus":       str(c_Lp_q),
+        "C_minus":      str(c_Lm_q),
+        "net":          str(net_q),
+    },
+    "nf_coefficients_general_symbolic": {
+        "c_identity": "1 + φ₀ψ₀ + φ₁ψ₁",
+        "c_sigma0":   "φ₀ + ψ₀ + φ₀ψ₀·h",
+        "c_sigma1":   "φ₁ + ψ₁ + φ₁ψ₁·h",
+        "C_plus":     "φ₀·ψ₁",
+        "C_minus":    "φ₁·ψ₀",
+        "net":        "(1 + φ₀ + φ₁)(1 + ψ₀ + ψ₁) + (φ₀ψ₀ + φ₁ψ₁)·h",
+    },
+    "note": (
+        "NF(γ₁·γ₂) coefficients in the symmetric symbolic family, "
+        "expressed as Laurent polynomials in q ∈ ℚ(q).  The "
+        "specialisation h ↦ q₀ - 1/q₀ recovers the numerical HA used "
+        "in the energy budget; this section exposes the algebraic "
+        "form that lives upstream of the q = q₀ specialisation."
+    ),
+}
+
 witness = {
     "name": "colored-pair-energy-alignment",
     "description": (
@@ -356,6 +414,7 @@ witness = {
         "formal color weights. Checks whether energy budget "
         "Δ(pair)×E₀ = 2mₑ is achievable."
     ),
+    "symbolic_q_form": symbolic_q_form,
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "git_sha": SHA,
     "parameters": {

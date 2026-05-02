@@ -157,7 +157,7 @@ and the obstruction persists iff $\kappa_n$ is **not** divisible
 by $n$ in $H^2(\mathcal{S}, \mathbb{G}_m)$ for any $n$.
 
 For the Descartes universe with $\chi(A) = -6$, this is a special
-case of [motivic perpetual obstruction](#lem:motivic-perpetual-obstruction):
+case of [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction):
 $\kappa_0$ is non-trivial at every finite place $p \nmid 6$, so the
 specialisation $\kappa_0|_{q = \zeta_n}$ at every primitive $n$-th
 root of unity with $\gcd(n, 6) = 1$ is non-zero in

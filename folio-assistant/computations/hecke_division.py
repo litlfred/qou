@@ -921,6 +921,19 @@ if __name__ == '__main__':
             'σ_iσ_{i+1}σ_i - σ_{i+1}σ_iσ_{i+1}  (Yang-Baxter, energy-preserving)',
             'σ_iσ_j - σ_jσ_i for |i-j|≥2  (far commutativity, energy-preserving)',
         ],
+        # P2.5: see docs/audits/2026-05-02-p2-5-symbolic-q-audit.md
+        'symbolic_q_form': {
+            'engine': 'sympy',
+            'q_symbol': "q (sp.Symbol('q'))",
+            'h_symbol_definition': 'h = q - 1/q',
+            'pattern': 'sympy-symbolic-Hecke-NF-with-q_val-evaluation',
+            'note': (
+                'Hecke normal-form expressions are symbolic in q '
+                '(sp.Symbol). The witness below is evaluated at '
+                'q = q_val (passed as parameter); the same '
+                'symbolic NF can be re-evaluated at any q.'
+            ),
+        },
         'results': all_results,
     }
 

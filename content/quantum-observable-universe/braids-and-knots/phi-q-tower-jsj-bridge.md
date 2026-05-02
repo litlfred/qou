@@ -11,6 +11,36 @@ $V_S := \prod_{i \in S}\hat{V}_i^{\mathrm{full}}$ be the per-block
 spectral coordinate
 ([mass endomorphism tower](#prop:mass-endomorphism-tower)).
 
+#### Algebraic-side statement of the JSJ stratification
+
+Before invoking 3-manifold language, the "JSJ" structure on the
+**algebraic side** is the stratification of the mass-tower formula
+by $|S|$ — equivalently, by **filtration depth** in the
+Gröbner–Shirshov (GS) confinement filtration $J^\bullet$
+([gb-spectral-sequence](#prop:gb-spectral-sequence),
+[graded-trace-residue-split](#prop:graded-trace-residue-split)).
+Concretely: the family $\{V_S\}_{|S|\leq 2}$ partitions the
+descended Markov trace into
+
+- $|S| = 0$ (depth 0): the descended summand
+  $|\prod_i \hat V_i^{\mathrm{full}}|$ in
+  $J^0/J^1$;
+- $|S| = 1$ (depth 1): per-generator summands
+  $\Phi_q(|\hat V_i^{\mathrm{full}}|)$ in $J^1/J^2$;
+- $|S| = 2$ (depth 2): adjacent-pair summands
+  $z^2 \, \Phi_q(|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|)$
+  in $J^2/J^3$
+  ([markov-pair-z2](#prop:markov-pair-z2)).
+
+These three strata live entirely in $H_n(q)$ and are
+$\mathbb{Q}(q)$-rational. They constitute an **algebraic JSJ**: a
+stratification of the mass-functional by descent-filtration
+depth, defined without reference to 3-manifolds, hyperbolic
+volume, or any $\tau$-image data. The conjecture below identifies
+this algebraic stratification with the geometric JSJ under
+$\tau_{\mathrm{arch}}$; that identification — and only that
+identification — crosses the Archimedean wall.
+
 **Conjecture (Φ$_q$–JSJ archimedean bridge).** Under the archimedean
 realisation $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
 ([Kashaev as archimedean realization](#rem:kashaev-as-archimedean-realization))
@@ -114,8 +144,13 @@ the conjecture above.
 4. **JSJ identification.** Modulo collapse of Seifert-fibered small
    pieces, the family $\{K_S\}$ realises $\mathrm{JSJ}(K)$ with
    weights matching $\rho_F$ on the JSJ side. This step is the
-   formal bridge between the algebraic stratification and the
-   geometric decomposition.
+   formal bridge between the **algebraic JSJ** (the
+   $J^\bullet$-graded stratification of $H_n(q)$ described in the
+   *Algebraic-side statement* above) and the geometric JSJ
+   decomposition of $S^3 \setminus \widehat\beta$. The
+   algebraic JSJ is intrinsic to the Hecke side and is not
+   derived from the geometric JSJ; the conjecture is precisely
+   that $\tau_{\mathrm{arch}}$ pushes one to the other.
 
 The first two ingredients are conditional on KVC at the per-piece
 level; the third is a categorical statement

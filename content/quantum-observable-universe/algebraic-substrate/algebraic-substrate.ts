@@ -24,6 +24,7 @@ export default chapter({
         "categorical-reeb-derivation",
         "reeb-flow-bridge",
         "brings-coordinate-ring",
+        "magic-numbers-bring",
         "rigid-dualizing-complex",
         "rigid-dualizing-brings",
         "substrate-self-duality",
