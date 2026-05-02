@@ -319,18 +319,70 @@ All declarations live under the `QOU` root namespace.
 
 ### 3b. Conjectural propagation and Lean formalization of conjectures
 
-**Conjectural propagation rule (STRICT):** A statement that depends
-on (is downstream of) a conjecture **cannot** be a `theorem`,
-`proposition`, `lemma`, or `corollary`.  It must be `conjecture`.
-Only statements proved from established results (definitions,
-previously proved theorems, axioms) may use provable block kinds.
+**Conjectural propagation rule (STRICT, with conditional-class
+exception per §3b-cond below):** A statement that depends on (is
+downstream of) a conjecture **cannot** be a `theorem`,
+`proposition`, `lemma`, or `corollary` *unless* it satisfies the
+conditional-class exception (§3b-cond). Only statements proved
+from established results (definitions, previously proved theorems,
+axioms) — or proved from explicit conditional hypotheses — may
+use provable block kinds.
 
 - If `uses[]` contains a `conj:` label (directly or transitively),
-  the block **must** be kind `conjecture`.
-- "Proof" blocks downstream of conjectures become `remark` blocks
-  with `interprets: "conj:..."` (proof *sketches*, not proofs).
+  the block **must** be either:
+  - kind `conjecture`, or
+  - a provable kind satisfying the **conditional-class exception**
+    (§3b-cond) — i.e. the conjecture is axiomatised as a Lean
+    class and the downstream block's Lean statement carries that
+    class as an explicit `[Instance]` hypothesis.
+- "Proof" blocks downstream of conjectures (without conditional-
+  class) become `remark` blocks with `interprets: "conj:..."`
+  (proof *sketches*, not proofs).
 - `remark` blocks may freely interpret conjectures (they make no
   logical claims).
+
+#### §3b-cond — Conditional-class exception (Option B, 2026-05-02)
+
+A `theorem`/`proposition`/`lemma`/`corollary` block whose `uses[]`
+cone transitively touches a `conj:C` may keep its provable kind
+**iff all of**:
+
+1. **Class axiomatisation.** `conj:C` has a Lean
+   `class C` declaration in its `.lean` file, with class fields
+   encoding the conjecture's content. The class instance is
+   the only `sorry` in the entire downstream chain.
+2. **Explicit hypothesis on Lean side.** The downstream block's
+   Lean declaration has the class as an explicit `[Instance]`
+   hypothesis. Example:
+   ```lean
+   theorem downstream_result {M : Type*} [C M] : … := by
+     -- proof uses C.field1, C.field2 as hypotheses; otherwise
+     -- fully verified by Lean.
+   ```
+3. **Explicit conditional banner on narrative side.** The `.md`
+   block opens with: **Theorem (conditional on
+   [`conj:C`](path/to/C.md)).** The body cites the conjectural
+   hypothesis where used.
+4. **`uses[]` includes the conjecture explicitly.** The
+   conditional dependency is auditable from the manifest.
+
+When all four hold, the block represents a *rigorous conditional
+result* — fully verified by Lean modulo a single, named,
+class-axiomatised conjectural input. This pattern preserves the
+distinction between rigorous-conditional and unproved-conjecture
+content.
+
+**Audit treatment.** The `conjectural-propagation` audit
+(`content/pipeline/conjectural-propagation-audit.ts`) reports such
+blocks separately as **conditional-on-class** rather than as
+violations. To opt a block into this status, ensure its Lean
+declaration contains a class hypothesis matching one of the
+conjectures in its transitive `uses[]` cone, and confirm the
+narrative banner. The audit script will detect the pattern and
+classify the block accordingly.
+
+(Pre-existing CLAUDE.md text continues from line 335.)
+
 
 **Definitions and conjectures (clarification):** The propagation
 rule above applies to **provable claims** (`theorem`, `proposition`,

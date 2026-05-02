@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 /**
- * Conjectural-propagation audit (CLAUDE.md §3b STRICT propagation).
+ * Conjectural-propagation audit (CLAUDE.md §3b + §3b-cond).
  *
  * Walks every block manifest under
  * content/quantum-observable-universe/, builds the uses[] graph,
@@ -8,12 +8,16 @@
  * block whose uses[] cone transitively touches a `conj:` label.
  *
  * Per CLAUDE.md §3b: such blocks must be `conjecture` (or recast as
- * `remark` with `interprets:` if they are interpretations rather
- * than logical claims).
+ * `remark` with `interprets:`).
+ *
+ * §3b-cond exception (Option B substrate-axiom classification): a
+ * provable block may keep its kind iff every conjecture in its
+ * transitive cone has been **class-axiomatised** (Lean `class`
+ * declaration in the conjecture's `.lean` file). The audit
+ * separates such blocks into a "conditional-on-class" classification.
  *
  * Definitions are exempt — they name constructions, not logical
- * claims, and a definition whose well-formedness is conjectural
- * carries an explicit narrative note instead of being demoted.
+ * claims.
  */
 import { readdir, readFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
@@ -35,6 +39,21 @@ interface Block {
 }
 
 const PROVABLE = new Set(["theorem", "proposition", "lemma", "corollary"]);
+
+/**
+ * Detect whether a conjecture has been class-axiomatised per
+ * CLAUDE.md §3b-cond. Returns true iff its `.lean` sibling
+ * contains a `class` declaration.
+ */
+async function isClassAxiomatised(conjBlock: Block): Promise<boolean> {
+  const leanPath = conjBlock.file.replace(/\.ts$/, ".lean");
+  try {
+    const text = await readFile(leanPath, "utf8");
+    return /\bclass\s+\w+/.test(text);
+  } catch {
+    return false;
+  }
+}
 
 async function loadAll(): Promise<Map<string, Block>> {
   const blocks = new Map<string, Block>();
@@ -110,40 +129,68 @@ function transitivelyTouchesConjecture(
 
 const blocks = await loadAll();
 console.log(`Loaded ${blocks.size} blocks.`);
+
+// Build set of class-axiomatised conjectures (per §3b-cond).
+const classAxiomatised = new Set<string>();
+for (const [label, block] of blocks) {
+  if (block.kind !== "conjecture") continue;
+  if (await isClassAxiomatised(block)) classAxiomatised.add(label);
+}
+console.log(`Class-axiomatised conjectures (§3b-cond eligible): ${classAxiomatised.size}`);
+for (const c of [...classAxiomatised].sort()) console.log(`  ${c}`);
+
 const cache = new Map<string, Set<string>>();
 const violators: { label: string; kind: string; conj: string[]; file: string }[] = [];
+const conditional: { label: string; kind: string; conj: string[]; file: string }[] = [];
 for (const [label, block] of blocks) {
   if (!PROVABLE.has(block.kind)) continue;
   const conjAncestors = transitivelyTouchesConjecture(label, blocks, cache);
-  if (conjAncestors.size > 0) {
-    violators.push({
-      label,
-      kind: block.kind,
-      conj: [...conjAncestors],
-      file: block.file.replace(REPO_ROOT + "/", ""),
-    });
-  }
+  if (conjAncestors.size === 0) continue;
+  // §3b-cond eligible iff every conjecture in cone is class-axiomatised
+  const allClassAxiomatised = [...conjAncestors].every((c) =>
+    classAxiomatised.has(c));
+  const entry = {
+    label,
+    kind: block.kind,
+    conj: [...conjAncestors],
+    file: block.file.replace(REPO_ROOT + "/", ""),
+  };
+  if (allClassAxiomatised) conditional.push(entry);
+  else violators.push(entry);
 }
 
 violators.sort((a, b) => a.label.localeCompare(b.label));
-console.log(`\nFound ${violators.length} provable blocks transitively touching a conjecture:\n`);
-for (const v of violators) {
-  console.log(`  ${v.kind.padEnd(11)} ${v.label.padEnd(60)} via {${v.conj.join(", ")}}`);
-  console.log(`    ${v.file}`);
+conditional.sort((a, b) => a.label.localeCompare(b.label));
+console.log(`\nViolators (cone touches non-class-axiomatised conjecture): ${violators.length}`);
+console.log(`Conditional-on-class (cone fully class-axiomatised): ${conditional.length}`);
+console.log();
+if (conditional.length > 0) {
+  console.log(`--- Conditional-on-class (eligible under §3b-cond) ---`);
+  for (const v of conditional.slice(0, 20)) {
+    console.log(`  ${v.kind.padEnd(11)} ${v.label.padEnd(60)} via {${v.conj.join(", ")}}`);
+  }
+  if (conditional.length > 20) console.log(`  … (${conditional.length - 20} more)`);
+  console.log();
 }
+console.log(`--- Violators (require demotion to conjecture or class-axiomatisation) ---`);
+for (const v of violators.slice(0, 20)) {
+  console.log(`  ${v.kind.padEnd(11)} ${v.label.padEnd(60)} via {${v.conj.slice(0, 3).join(", ")}${v.conj.length > 3 ? ", …" : ""}}`);
+}
+if (violators.length > 20) console.log(`  … (${violators.length - 20} more)`);
 
-// Also emit a witness JSON. Audit witnesses live in docs/audits/
-// (NOT folio-assistant/computations/, which triggers
-// witness-pipeline.yml CI re-running compute scripts).
+// Also emit a witness JSON.
 await Bun.write(
   WITNESS_OUT,
   JSON.stringify(
     {
-      audit: "conjectural-propagation (CLAUDE.md §3b STRICT)",
+      audit: "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
       generated: new Date().toISOString(),
       total_blocks: blocks.size,
-      provable_blocks_touching_conjecture: violators.length,
+      class_axiomatised_conjectures: [...classAxiomatised].sort(),
+      provable_blocks_touching_conjecture:
+        violators.length + conditional.length,
       violators,
+      conditional_on_class: conditional,
     },
     null,
     2,

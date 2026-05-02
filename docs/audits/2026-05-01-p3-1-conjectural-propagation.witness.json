@@ -1,8 +1,36 @@
 {
-  "audit": "conjectural-propagation (CLAUDE.md §3b STRICT)",
-  "generated": "2026-05-02T15:15:05.677Z",
-  "total_blocks": 1365,
-  "provable_blocks_touching_conjecture": 233,
+  "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
+  "generated": "2026-05-02T20:19:06.057Z",
+  "total_blocks": 1370,
+  "class_axiomatised_conjectures": [
+    "conj:abelianisation-at-algebraic-poles",
+    "conj:algebraic-geometric-dilog-equivalence",
+    "conj:archimedean-remainder-exponential-decay",
+    "conj:baryon-period-ratio",
+    "conj:categorical-neutrality-saturated-shells",
+    "conj:cp-violation-spectral-form",
+    "conj:crossing-graded-mass-expansion",
+    "conj:denominator-zeros-as-sw-critical-points",
+    "conj:diagrammatic-double-magic-lr-fusion",
+    "conj:dilogarithm-archimedean-limit",
+    "conj:gb-reduction-pl-thimble-bijection",
+    "conj:homological-shell-condensation",
+    "conj:jet-tower-uniform-delta-max",
+    "conj:kashaev-volume-conjecture",
+    "conj:lifted-crossing-locality",
+    "conj:magic-numbers-bring",
+    "conj:mass-endomorphism",
+    "conj:mass-volume-factorization",
+    "conj:n-v-bring-action",
+    "conj:p-vs-np-boundary",
+    "conj:palindromicity-orbital-type",
+    "conj:phi-q-tower-jsj-bridge",
+    "conj:pl-jsj-mass-integration-equivalence",
+    "conj:q-geometric-langlands",
+    "conj:shared-denominator-cusp-holonomy",
+    "conj:shell-correction-term-seven"
+  ],
+  "provable_blocks_touching_conjecture": 234,
   "violators": [
     {
       "label": "cor:commutative-chirality-vanishes",
@@ -1894,6 +1922,22 @@
       "file": "content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts"
     },
     {
+      "label": "prop:n-equals-1-vacuous-magic",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/n-equals-1-vacuous-magic.ts"
+    },
+    {
       "label": "prop:neutron-proton-mass-splitting",
       "kind": "proposition",
       "conj": [
@@ -3702,5 +3746,6 @@
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts"
     }
-  ]
+  ],
+  "conditional_on_class": []
 }
