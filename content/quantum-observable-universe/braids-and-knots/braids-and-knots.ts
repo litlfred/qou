@@ -461,6 +461,13 @@ export default chapter({
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",
         "habiro-residue-sum-equivalence",
+        // GAP 13a — explicit conjectures backing GS noncomputable opaque axioms
+        "gs-graded-markov-trace-existence",
+        "gs-residue-at-root-existence",
+        "gs-spectral-decomposition-existence",
+        "gs-spectral-sum-finite",
+        "gs-archimedean-agreement-trace",
+        "gs-archimedean-agreement-residue",
         "mn-classical-parity-blind",
         "q-character-closes-parity-gap",
         "frobenius-codim-universal",

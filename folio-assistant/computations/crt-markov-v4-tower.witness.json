@@ -1,0 +1,1034 @@
+{
+  "computation": "crt-markov-v4-tower",
+  "computedAt": "2026-05-02T22:57:28.420953+00:00",
+  "description": "H_{3A} extension of the v2 tower terms (single + cross) at full Wedderburn coverage. Each partition λ ⊢ 3A contributes desc_λ + single_A_λ + cross_A_λ to the categorical Markov tower. Interpretation A (channel-restricted) reduces to v2 for proton at H_3 by construction; B (literal-with-cyclicity) documents the trivial trace-cyclic case.",
+  "api_gap": "The literal v2 → v4 lift is χ_λ(σ_i^{-1} braid σ_i). By trace cyclicity this equals χ_λ(braid), making the literal single_λ = (n_gens) Φ_q(|χ_λ(braid)|) — trivial. Interpretation A computes χ_λ on the per-generator windings of the nuclear braid (σ_g^{n_g}), which is the natural H_{3A} analog of v2's per-generator volume V̂_i.",
+  "q_0": 1.1099785955541805,
+  "M_P_MeV": 938.27208816,
+  "M_N_MeV": 939.56542052,
+  "M_E_MeV": 0.51099895,
+  "rows": [
+    {
+      "Z": 1,
+      "N": 0,
+      "v3": {
+        "A": 1,
+        "k": 3,
+        "Z": 1,
+        "N": 0,
+        "M_predicted": 938.78308711,
+        "markov_trace": 1.0,
+        "binding_dimensionless": 0.0,
+        "n_partitions": 0,
+        "top_partitions": []
+      },
+      "v4": {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "k": 3,
+        "n_gens": 2,
+        "n_partitions": 3,
+        "Mfree_MeV": 938.78308711,
+        "winding_per_generator": [
+          0,
+          0
+        ],
+        "markov_trace_desc": 0.9874402270278664,
+        "markov_trace_single_A": 0.0,
+        "markov_trace_cross_A": 0.0,
+        "markov_trace_total_A": 0.9874402270278664,
+        "markov_trace_single_B_literal": 1780132.4736165514,
+        "markov_trace_cross_B_literal": 221912.02263544992,
+        "per_partition": [
+          {
+            "shape": [
+              3
+            ],
+            "dim": 1,
+            "w_lambda": 0.16338322733975824,
+            "chi_braid": 1.0,
+            "desc": 0.16338322733975824,
+            "single_A": 0.0,
+            "cross_A": 0.0,
+            "single_B_literal_with_cyclicity": 294543.1841552586,
+            "cross_B_literal_with_cyclicity": 36717.87056195159
+          },
+          {
+            "shape": [
+              2,
+              1
+            ],
+            "dim": 2,
+            "w_lambda": 0.6606737723483499,
+            "chi_braid": 2.0,
+            "desc": 0.6606737723483499,
+            "single_A": 0.0,
+            "cross_A": 0.0,
+            "single_B_literal_with_cyclicity": 1191046.1053060342,
+            "cross_B_literal_with_cyclicity": 148476.28151154672
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "w_lambda": 0.16338322733975824,
+            "chi_braid": 1.0,
+            "desc": 0.16338322733975824,
+            "single_A": 0.0,
+            "cross_A": 0.0,
+            "single_B_literal_with_cyclicity": 294543.1841552586,
+            "cross_B_literal_with_cyclicity": 36717.87056195159
+          }
+        ]
+      },
+      "t_v3_s": 9.5367431640625e-06,
+      "t_v4_s": 0.0001842975616455078
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "v3": {
+        "A": 2,
+        "k": 6,
+        "Z": 1,
+        "N": 1,
+        "M_predicted": 1878.3485076299999,
+        "markov_trace": 1.3010426069826053e-17,
+        "binding_dimensionless": 1.0,
+        "n_partitions": 11,
+        "top_partitions": [
+          {
+            "shape": [
+              6
+            ],
+            "w_lambda": 0.0,
+            "chi": 1.0054484345592414,
+            "contribution": 0.0011986185351458927
+          },
+          {
+            "shape": [
+              5,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": 3.0163453036777237,
+            "contribution": 0.019599576046150244
+          },
+          {
+            "shape": [
+              4,
+              2
+            ],
+            "w_lambda": 0.0,
+            "chi": 3.0163453036777237,
+            "contribution": 0.0373531474838183
+          },
+          {
+            "shape": [
+              4,
+              1,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": 2.0108968691184828,
+            "contribution": 0.02728741244772659
+          },
+          {
+            "shape": [
+              3,
+              3
+            ],
+            "w_lambda": 0.0,
+            "chi": 1.0054484345592412,
+            "contribution": 0.0071167541696439875
+          },
+          {
+            "shape": [
+              3,
+              2,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": 0.0,
+            "contribution": 0.0
+          },
+          {
+            "shape": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": -2.010896869118482,
+            "contribution": -0.02728741244772659
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "w_lambda": 0.0,
+            "chi": -1.0054484345592412,
+            "contribution": -0.0071167541696439875
+          },
+          {
+            "shape": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": -3.016345303677723,
+            "contribution": -0.03735314748381829
+          },
+          {
+            "shape": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": -3.016345303677723,
+            "contribution": -0.019599576046150237
+          }
+        ]
+      },
+      "v4": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "k": 6,
+        "n_gens": 5,
+        "n_partitions": 11,
+        "Mfree_MeV": 1878.3485076299999,
+        "winding_per_generator": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "markov_trace_desc": 1.3010426069826053e-17,
+        "markov_trace_single_A": 231.31289755325852,
+        "markov_trace_cross_A": 115.34223147657079,
+        "markov_trace_total_A": 346.6551290298293,
+        "markov_trace_single_B_literal": 12778.196689609653,
+        "markov_trace_cross_B_literal": 2548.6961358680965,
+        "per_partition": [
+          {
+            "shape": [
+              6
+            ],
+            "dim": 1,
+            "w_lambda": 0.0011921233292002005,
+            "chi_braid": 1.0054484345592414,
+            "desc": 0.0011986185351458927,
+            "single_A": 0.0,
+            "cross_A": 0.0,
+            "single_B_literal_with_cyclicity": 6250.634283222948,
+            "cross_B_literal_with_cyclicity": 1246.7304918955379
+          },
+          {
+            "shape": [
+              5,
+              1
+            ],
+            "dim": 5,
+            "w_lambda": 0.03248894617975795,
+            "chi_braid": 3.0163453036777237,
+            "desc": 0.019599576046150244,
+            "single_A": 102.71917271830111,
+            "cross_A": 51.22005180894955,
+            "single_B_literal_with_cyclicity": 116.12157952563282,
+            "cross_B_literal_with_cyclicity": 23.16121971017502
+          },
+          {
+            "shape": [
+              4,
+              2
+            ],
+            "dim": 9,
+            "w_lambda": 0.11145220242008576,
+            "chi_braid": 3.0163453036777237,
+            "desc": 0.0373531474838183,
+            "single_A": 10.19780903357614,
+            "cross_A": 5.08505173099473,
+            "single_B_literal_with_cyclicity": 15.588456761856474,
+            "cross_B_literal_with_cyclicity": 3.109221158365514
+          },
+          {
+            "shape": [
+              4,
+              1,
+              1
+            ],
+            "dim": 10,
+            "w_lambda": 0.13569772208004172,
+            "chi_braid": 2.0108968691184828,
+            "desc": 0.02728741244772659,
+            "single_A": 2.7563547567168567,
+            "cross_A": 1.374433123892637,
+            "single_B_literal_with_cyclicity": 4.645782556854852,
+            "cross_B_literal_with_cyclicity": 0.9266321640179005
+          },
+          {
+            "shape": [
+              3,
+              3
+            ],
+            "dim": 5,
+            "w_lambda": 0.03539094559714424,
+            "chi_braid": 1.0054484345592412,
+            "desc": 0.0071167541696439875,
+            "single_A": 0.7188772202370188,
+            "cross_A": 0.3584620815219386,
+            "single_B_literal_with_cyclicity": 1.2116536313618353,
+            "cross_B_literal_with_cyclicity": 0.241672358257994
+          },
+          {
+            "shape": [
+              3,
+              2,
+              1
+            ],
+            "dim": 16,
+            "w_lambda": 0.3586356424845347,
+            "chi_braid": 0.0,
+            "desc": 0.0,
+            "single_A": 0.9508979318695101,
+            "cross_A": 0.4741572585377889,
+            "single_B_literal_with_cyclicity": 1.7931782124226736,
+            "cross_B_literal_with_cyclicity": 0.35766129540334546
+          },
+          {
+            "shape": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim": 10,
+            "w_lambda": 0.13569772208004177,
+            "chi_braid": -2.010896869118482,
+            "desc": -0.02728741244772659,
+            "single_A": 0.33340743773422704,
+            "cross_A": 0.16625081552271553,
+            "single_B_literal_with_cyclicity": 4.645782556854852,
+            "cross_B_literal_with_cyclicity": 0.9266321640179006
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dim": 5,
+            "w_lambda": 0.03539094559714424,
+            "chi_braid": -1.0054484345592412,
+            "desc": -0.0071167541696439875,
+            "single_A": 0.08695506681810954,
+            "cross_A": 0.04335941294707016,
+            "single_B_literal_with_cyclicity": 1.2116536313618353,
+            "cross_B_literal_with_cyclicity": 0.241672358257994
+          },
+          {
+            "shape": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim": 9,
+            "w_lambda": 0.11145220242008576,
+            "chi_braid": -3.016345303677723,
+            "desc": -0.03735314748381829,
+            "single_A": 1.0305566842426357,
+            "cross_A": 0.51387842563458,
+            "single_B_literal_with_cyclicity": 15.588456761856474,
+            "cross_B_literal_with_cyclicity": 3.109221158365514
+          },
+          {
+            "shape": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 5,
+            "w_lambda": 0.03248894617975795,
+            "chi_braid": -3.016345303677723,
+            "desc": -0.019599576046150237,
+            "single_A": 6.049109459651173,
+            "cross_A": 3.0163375708937887,
+            "single_B_literal_with_cyclicity": 116.12157952563251,
+            "cross_B_literal_with_cyclicity": 23.161219710174954
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "w_lambda": 0.0011921233292002005,
+            "chi_braid": -1.005448434559241,
+            "desc": -0.0011986185351458923,
+            "single_A": 106.46975724411175,
+            "cross_A": 53.09024924767599,
+            "single_B_literal_with_cyclicity": 6250.634283222869,
+            "cross_B_literal_with_cyclicity": 1246.7304918955222
+          }
+        ]
+      },
+      "t_v3_s": 0.0014052391052246094,
+      "t_v4_s": 0.003361940383911133
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "v3": {
+        "A": 3,
+        "k": 9,
+        "Z": 1,
+        "N": 2,
+        "M_predicted": 2817.91392815,
+        "markov_trace": 0.0008231763114077706,
+        "binding_dimensionless": 0.9991768236885922,
+        "n_partitions": 30,
+        "top_partitions": [
+          {
+            "shape": [
+              9
+            ],
+            "w_lambda": 0.0,
+            "chi": 0.9107622062323669,
+            "contribution": 1.5358393927682707e-06
+          },
+          {
+            "shape": [
+              8,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": 3.5165464895843415,
+            "contribution": 5.9319143299710144e-05
+          },
+          {
+            "shape": [
+              7,
+              2
+            ],
+            "w_lambda": 0.0,
+            "chi": 4.028113824445201,
+            "contribution": 0.00027268119025637824
+          },
+          {
+            "shape": [
+              7,
+              1,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": 4.960848205027755,
+            "contribution": 0.0003437996886676084
+          },
+          {
+            "shape": [
+              6,
+              3
+            ],
+            "w_lambda": 0.0,
+            "chi": -0.8377654734152707,
+            "contribution": -0.00011405007835787796
+          },
+          {
+            "shape": [
+              6,
+              2,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": 3.2017698961002172,
+            "contribution": 0.0009446777193907596
+          },
+          {
+            "shape": [
+              6,
+              1,
+              1,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": 2.8106140622701883,
+            "contribution": 0.00042899961014876897
+          },
+          {
+            "shape": [
+              5,
+              4
+            ],
+            "w_lambda": 0.0,
+            "chi": -4.247497492990615,
+            "contribution": -0.00054470758263434
+          },
+          {
+            "shape": [
+              5,
+              3,
+              1
+            ],
+            "w_lambda": 0.0,
+            "chi": -6.498346448380367,
+            "contribution": -0.00321826412600579
+          },
+          {
+            "shape": [
+              5,
+              2,
+              2
+            ],
+            "w_lambda": 0.0,
+            "chi": -0.17403556322071134,
+            "contribution": -6.387133098158074e-05
+          }
+        ]
+      },
+      "v4": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "k": 9,
+        "n_gens": 8,
+        "n_partitions": 30,
+        "Mfree_MeV": 2817.91392815,
+        "winding_per_generator": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "markov_trace_desc": 0.0008231763114077706,
+        "markov_trace_single_A": 66.13937476449246,
+        "markov_trace_cross_A": 13.321453776976316,
+        "markov_trace_total_A": 79.46165171778019,
+        "markov_trace_single_B_literal": 13.786593938185423,
+        "markov_trace_cross_B_literal": 3.007624002699307,
+        "per_partition": [
+          {
+            "shape": [
+              9
+            ],
+            "dim": 1,
+            "w_lambda": 1.6863231502783998e-06,
+            "chi_braid": 0.9107622062323669,
+            "desc": 1.5358393927682707e-06,
+            "single_A": 0.0,
+            "cross_A": 0.0,
+            "single_B_literal_with_cyclicity": 1.475607888269767,
+            "cross_B_literal_with_cyclicity": 0.3219122665998185
+          },
+          {
+            "shape": [
+              8,
+              1
+            ],
+            "dim": 8,
+            "w_lambda": 0.00013494863434999652,
+            "chi_braid": 3.5165464895843415,
+            "desc": 5.9319143299710144e-05,
+            "single_A": 15.843255267157806,
+            "cross_A": 3.5453010092070243,
+            "single_B_literal_with_cyclicity": 0.09865249312690798,
+            "cross_B_literal_with_cyclicity": 0.02152160334778594
+          },
+          {
+            "shape": [
+              7,
+              2
+            ],
+            "dim": 27,
+            "w_lambda": 0.0018277517611946445,
+            "chi_braid": 4.028113824445201,
+            "desc": 0.00027268119025637824,
+            "single_A": 8.998580181416004,
+            "cross_A": 1.6046812030511894,
+            "single_B_literal_with_cyclicity": 0.05975732579032716,
+            "cross_B_literal_with_cyclicity": 0.013036401027690369
+          },
+          {
+            "shape": [
+              7,
+              1,
+              1
+            ],
+            "dim": 28,
+            "w_lambda": 0.0019404728556170724,
+            "chi_braid": 4.960848205027755,
+            "desc": 0.0003437996886676084,
+            "single_A": 4.3915216133730945,
+            "cross_A": 0.8643712069327264,
+            "single_B_literal_with_cyclicity": 0.0836436114165414,
+            "cross_B_literal_with_cyclicity": 0.018247330304845034
+          },
+          {
+            "shape": [
+              6,
+              3
+            ],
+            "dim": 48,
+            "w_lambda": 0.0065345301697155795,
+            "chi_braid": -0.8377654734152707,
+            "desc": -0.00011405007835787796,
+            "single_A": 4.96376790418786,
+            "cross_A": 0.8525446461811359,
+            "single_B_literal_with_cyclicity": 0.06130747695143554,
+            "cross_B_literal_with_cyclicity": 0.013374575333894344
+          },
+          {
+            "shape": [
+              6,
+              2,
+              1
+            ],
+            "dim": 105,
+            "w_lambda": 0.030980102804028933,
+            "chi_braid": 3.2017698961002172,
+            "desc": 0.0009446777193907596,
+            "single_A": 8.503981941386227,
+            "cross_A": 1.5446472863800598,
+            "single_B_literal_with_cyclicity": 0.3276938478556876,
+            "cross_B_literal_with_cyclicity": 0.0714882796118228
+          },
+          {
+            "shape": [
+              6,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "w_lambda": 0.008547590539316672,
+            "chi_braid": 2.8106140622701883,
+            "desc": 0.00042899961014876897,
+            "single_A": 0.9014426160145891,
+            "cross_A": 0.20276183327229674,
+            "single_B_literal_with_cyclicity": 0.10852643004855463,
+            "cross_B_literal_with_cyclicity": 0.023675658933947064
+          },
+          {
+            "shape": [
+              5,
+              4
+            ],
+            "dim": 42,
+            "w_lambda": 0.005386164090360497,
+            "chi_braid": -4.247497492990615,
+            "desc": -0.00054470758263434,
+            "single_A": 1.478492258321747,
+            "cross_A": 0.2512452155468777,
+            "single_B_literal_with_cyclicity": 0.11059274046874618,
+            "cross_B_literal_with_cyclicity": 0.024126436322811955
+          },
+          {
+            "shape": [
+              5,
+              3,
+              1
+            ],
+            "dim": 162,
+            "w_lambda": 0.08022945414719775,
+            "chi_braid": -6.498346448380367,
+            "desc": -0.00321826412600579,
+            "single_A": 6.224927403002052,
+            "cross_A": 1.1004557119681155,
+            "single_B_literal_with_cyclicity": 0.9275957171687158,
+            "cross_B_literal_with_cyclicity": 0.20236028973265785
+          },
+          {
+            "shape": [
+              5,
+              2,
+              2
+            ],
+            "dim": 120,
+            "w_lambda": 0.04404019256724856,
+            "chi_braid": -0.17403556322071134,
+            "desc": -6.387133098158074e-05,
+            "single_A": 1.879688698505482,
+            "cross_A": 0.34482338110475685,
+            "single_B_literal_with_cyclicity": 0.35700002053364543,
+            "cross_B_literal_with_cyclicity": 0.07788158812360432
+          },
+          {
+            "shape": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "dim": 189,
+            "w_lambda": 0.10627616758037381,
+            "chi_braid": -0.08580879086351642,
+            "desc": -4.8250949405715985e-05,
+            "single_A": 2.54544503289892,
+            "cross_A": 0.5332513280998932,
+            "single_B_literal_with_cyclicity": 0.8537268174768202,
+            "cross_B_literal_with_cyclicity": 0.18624536847201367
+          },
+          {
+            "shape": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 70,
+            "w_lambda": 0.01379245637223561,
+            "chi_braid": -1.0338800648791082,
+            "desc": -0.00020371065269956032,
+            "single_A": 0.10970927051952054,
+            "cross_A": 0.04719125171194023,
+            "single_B_literal_with_cyclicity": 0.12625865153620344,
+            "cross_B_literal_with_cyclicity": 0.027544044062758108
+          },
+          {
+            "shape": [
+              4,
+              4,
+              1
+            ],
+            "dim": 84,
+            "w_lambda": 0.02249658064522316,
+            "chi_braid": -5.650030345685199,
+            "desc": -0.0015131709919007756,
+            "single_A": 0.9601812782555919,
+            "cross_A": 0.17438081570101155,
+            "single_B_literal_with_cyclicity": 0.33510152697920115,
+            "cross_B_literal_with_cyclicity": 0.07310430701032804
+          },
+          {
+            "shape": [
+              4,
+              3,
+              2
+            ],
+            "dim": 168,
+            "w_lambda": 0.09096956304401312,
+            "chi_braid": -2.608731498630733,
+            "desc": -0.0014125902650570909,
+            "single_A": 1.6435327795800485,
+            "cross_A": 0.35647524662907104,
+            "single_B_literal_with_cyclicity": 0.8385566067184868,
+            "cross_B_literal_with_cyclicity": 0.18293590057825077
+          },
+          {
+            "shape": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "dim": 216,
+            "w_lambda": 0.14626651129310397,
+            "chi_braid": -3.138886531143394,
+            "desc": -0.0021255276956261906,
+            "single_A": 1.5231359392671264,
+            "cross_A": 0.3484131813482112,
+            "single_B_literal_with_cyclicity": 1.3360375647966687,
+            "cross_B_literal_with_cyclicity": 0.2914642054743273
+          },
+          {
+            "shape": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "dim": 216,
+            "w_lambda": 0.14626651129310397,
+            "chi_braid": 5.212311386233148,
+            "desc": 0.003529567602952061,
+            "single_A": 0.8921367345867214,
+            "cross_A": 0.25439325588481104,
+            "single_B_literal_with_cyclicity": 1.45907155369384,
+            "cross_B_literal_with_cyclicity": 0.3183047710131478
+          },
+          {
+            "shape": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 189,
+            "w_lambda": 0.10627616758037377,
+            "chi_braid": -1.6792343473284577,
+            "desc": -0.0009442465127163955,
+            "single_A": 0.3403954280730148,
+            "cross_A": 0.12778659666748574,
+            "single_B_literal_with_cyclicity": 0.9219032708601329,
+            "cross_B_literal_with_cyclicity": 0.2011184501435226
+          },
+          {
+            "shape": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "w_lambda": 0.008547590539316674,
+            "chi_braid": -5.101140368102627,
+            "desc": -0.0007786153419664354,
+            "single_A": 0.10240432393483141,
+            "cross_A": 0.03528645373692971,
+            "single_B_literal_with_cyclicity": 0.15948645146691903,
+            "cross_B_literal_with_cyclicity": 0.034792877899207784
+          },
+          {
+            "shape": [
+              3,
+              3,
+              3
+            ],
+            "dim": 42,
+            "w_lambda": 0.005867270647824394,
+            "chi_braid": 0.652308365124272,
+            "desc": 9.112546961961806e-05,
+            "single_A": 0.04667000317718408,
+            "cross_A": 0.018439079324735937,
+            "single_B_literal_with_cyclicity": 0.05408592788784334,
+            "cross_B_literal_with_cyclicity": 0.011799153268247481
+          },
+          {
+            "shape": [
+              3,
+              3,
+              2,
+              1
+            ],
+            "dim": 168,
+            "w_lambda": 0.09096956304401312,
+            "chi_braid": 5.918243813547302,
+            "desc": 0.003204643176823404,
+            "single_A": 0.32986387365582126,
+            "cross_A": 0.17090489067953513,
+            "single_B_literal_with_cyclicity": 1.0052529487671937,
+            "cross_B_literal_with_cyclicity": 0.2193016571788875
+          },
+          {
+            "shape": [
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim": 120,
+            "w_lambda": 0.04404019256724857,
+            "chi_braid": 0.26540792378301803,
+            "desc": 9.740513393564788e-05,
+            "single_A": 0.2364550852602563,
+            "cross_A": 0.06761239982226766,
+            "single_B_literal_with_cyclicity": 0.3594824471416275,
+            "cross_B_literal_with_cyclicity": 0.0784231436292341
+          },
+          {
+            "shape": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "dim": 84,
+            "w_lambda": 0.02249658064522316,
+            "chi_braid": 6.98662740213055,
+            "desc": 0.0018711336522637604,
+            "single_A": 0.1207858227778591,
+            "cross_A": 0.04861756777034554,
+            "single_B_literal_with_cyclicity": 0.38937101830114856,
+            "cross_B_literal_with_cyclicity": 0.08494350568739112
+          },
+          {
+            "shape": [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim": 162,
+            "w_lambda": 0.08022945414719775,
+            "chi_braid": 6.621699135139481,
+            "desc": 0.0032793537477729135,
+            "single_A": 0.732702209511371,
+            "cross_A": 0.17923569987391896,
+            "single_B_literal_with_cyclicity": 0.9341675903973282,
+            "cross_B_literal_with_cyclicity": 0.2037939813140372
+          },
+          {
+            "shape": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 105,
+            "w_lambda": 0.030980102804028947,
+            "chi_braid": -6.303410090737537,
+            "desc": -0.0018598123107333555,
+            "single_A": 0.8593841484498718,
+            "cross_A": 0.17594270038430032,
+            "single_B_literal_with_cyclicity": 0.4312166717187849,
+            "cross_B_literal_with_cyclicity": 0.0940723733534598
+          },
+          {
+            "shape": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 28,
+            "w_lambda": 0.0019404728556170708,
+            "chi_braid": -7.060588660982773,
+            "desc": -0.0004893171657612412,
+            "single_A": 0.3293812538150338,
+            "cross_A": 0.06746223408222908,
+            "single_B_literal_with_cyclicity": 0.1793031563161665,
+            "cross_B_literal_with_cyclicity": 0.03911600494757352
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "dim": 42,
+            "w_lambda": 0.005386164090360496,
+            "chi_braid": 4.279477819187421,
+            "desc": 0.0005488088036952746,
+            "single_A": 0.14941151323757912,
+            "cross_A": 0.029629142661907484,
+            "single_B_literal_with_cyclicity": 0.1114007488672417,
+            "cross_B_literal_with_cyclicity": 0.02430270795774905
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 48,
+            "w_lambda": 0.0065345301697155795,
+            "chi_braid": -0.3983219864115415,
+            "desc": -5.422597994723452e-05,
+            "single_A": 0.4377038981424343,
+            "cross_A": 0.07775028201655769,
+            "single_B_literal_with_cyclicity": 0.056381739753409085,
+            "cross_B_literal_with_cyclicity": 0.012299997704771606
+          },
+          {
+            "shape": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 27,
+            "w_lambda": 0.0018277517611946451,
+            "chi_braid": -5.916509649396283,
+            "desc": -0.0004005152196966359,
+            "single_A": 0.5946555473369316,
+            "cross_A": 0.10710277377278267,
+            "single_B_literal_with_cyclicity": 0.12021698475296205,
+            "cross_B_literal_with_cyclicity": 0.02622602003774794
+          },
+          {
+            "shape": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 8,
+            "w_lambda": 0.00013494863434999652,
+            "chi_braid": -4.570985335589964,
+            "desc": -7.710602858396578e-05,
+            "single_A": 0.5479409882106566,
+            "cross_A": 0.10150372073365353,
+            "single_B_literal_with_cyclicity": 0.5051947091231193,
+            "cross_B_literal_with_cyclicity": 0.11021110362777349
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "w_lambda": 1.6863231502783998e-06,
+            "chi_braid": -1.1221068372363028,
+            "desc": -1.8922347367172536e-06,
+            "single_A": 0.4518217504368175,
+            "cross_A": 0.08924366243054395,
+            "single_B_literal_with_cyclicity": "inf",
+            "cross_B_literal_with_cyclicity": "inf"
+          }
+        ]
+      },
+      "t_v3_s": 0.1369473934173584,
+      "t_v4_s": 0.16919469833374023
+    }
+  ],
+  "open_followups": [
+    "Calibrate single_A and cross_A to MeV (currently dimensionless markov-trace contributions). The v3 path uses E_0 = 0.782 MeV (β-decay Q) for its descended part; the tower terms need their own calibration or to be absorbed into a combined-tower mass-identity prescription.",
+    "Symbolic-in-q evaluation of the per-generator restricted characters χ_λ(σ_g^{n_g}). Currently uses f64 seminormal matrices; mpfr_50dps requires routing through the Rust kernel `pyhecke_native.chi_lambda_braid_mpfr` (which supports arbitrary words but needs build).",
+    "Higher-A atoms (³He, ⁴He, ⁶Li): k=9, 12, 18 — partition counts p(9)=30, p(12)=77, p(18)=385. Tractable but minutes per atom at full coverage.",
+    "Cross-channel mixing inside the absolute value: at H_3 v2 noted that the .full row is the canonical aggregate; v4 inherits this by computing χ_λ on the braid (not per-channel sums). Interpretation-A may over- or under-count channel mixing; quantify by comparing total_A against an independent benchmark (TBD)."
+  ]
+}
