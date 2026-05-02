@@ -26,7 +26,7 @@ export default proposition({
     "prop:descended-level-zero",
     "thm:jones-markov-trace",
     "thm:markov-trace-factorization",
-    "rem:recursive-brane-tower",
+    "rem:markov-moves-brane-tower",
   ],
   cites: ["jones1985", "wenzl1988", "kassel1995"],
   lean: { ref: "qou:QOU.BraidKnot.perBraidMassTower" },
