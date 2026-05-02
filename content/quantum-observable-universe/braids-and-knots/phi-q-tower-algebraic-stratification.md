@@ -110,7 +110,7 @@ the mass-endomorphism formula
    plus a residual that ascends to level $(n+1)$ as a new singleton
    or pair. Iteration covers all higher orders.
 
-4. **Each summand is in $\mathbb{Z}[q^{\pm 1}]$.** $\hat V_S$ is a
+4. **Each summand is in $\mathbb{Z}[q^{\pm 1/2}]$.** $\hat V_S$ is a
    Laurent polynomial in $q^{1/2}$ with integer coefficients
    ([algebraic quantum volume](#def:algebraic-quantum-volume)); the
    quantum dilogarithm $\Phi_q$ is given as a formal product

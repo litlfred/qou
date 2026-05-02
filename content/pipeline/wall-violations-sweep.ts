@@ -20,28 +20,6 @@
  *
  * Pair: docs/audits/2026-05-01-wall-violations-sweep.md
  */
-/**
- * Wall-violations sweep (audit P0.1).
- *
- * Greps proof-body markdown for Archimedean / hyperbolic / Mostow /
- * Kashaev / SnapPy / Thurston / Murakami / Gromov references at the
- * derivation level (proof body, not statement / citation / cross-ref).
- *
- * Each hit is auto-triaged into one of five buckets:
- *   citation, appendix-surreals, verification-witness,
- *   tau-side-label, candidate.
- *
- * Only `candidate` requires manual review. Citations and τ-image
- * labels are correct usage; appendix-surreals is post-Archimedean by
- * design.
- *
- * Output: folio-assistant/computations/wall-violations.witness.json
- *
- * Usage (from repo root):
- *   bun run content/pipeline/wall-violations-sweep.ts
- *
- * Pair: docs/audits/2026-05-01-wall-violations-sweep.md
- */
 import { readdirSync, readFileSync, statSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname, basename, relative } from "path";
 
