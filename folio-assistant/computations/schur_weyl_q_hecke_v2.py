@@ -98,15 +98,22 @@ def chi_lambda_atomic(shape, Z, N, q_val=None, *,
         m_pp=m_pp, m_pn=m_pn, m_nn=m_nn, q_val=q_val,
     )
 
-    # P2.2c-12C: avoid densifying the matrix product.
-    # For dim ≤ ~500, dense matrix product is fast.
-    # For dim > 500, use the sparse-trace iterative approach
-    # (per-basis-vector application, never forms full product).
+    # P2.2c-12C: prefer the Rust kernel pyhecke_native.chi_q_atomic
+    # when available — it's MUCH faster than the Python paths for
+    # large partition dimensions.
+    try:
+        import pyhecke_native
+        # Convert crossings (c, d, gen_0based) → (c, d, gen_1based) for Rust
+        factors = [(float(c), float(d), int(g) + 1) for c, d, g in crossings]
+        return float(pyhecke_native.chi_q_atomic(list(shape), factors, float(q_val)))
+    except (ImportError, AttributeError):
+        # Fallback to Python paths if pyhecke_native unavailable
+        pass
+
+    # ── Python fallbacks (only when pyhecke_native isn't installed) ──
     from scipy import sparse as sp_sparse
     is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
 
-    # Build the per-crossing matrices c·σ_g + d·I lazily — but
-    # for dense path keep the old behaviour.
     if not is_sparse:
         # Small-dim path: dense matrix product is fastest
         I = np.eye(dim)
@@ -125,14 +132,12 @@ def chi_lambda_atomic(shape, Z, N, q_val=None, *,
     for c, d, g in crossings:
         if g >= len(sigmas):
             continue
-        # M = c · σ_g + d · I  (preserve sparsity via scipy)
         if d == 0.0:
             M = c * sigmas[g]
         elif c == 0.0:
             M = d * I_sp
         else:
             M = (c * sigmas[g]) + (d * I_sp)
-        # Convert to CSR for fast matrix-vector multiplication
         if not sp_sparse.isspmatrix_csr(M):
             M = M.tocsr()
         factors.append(M)

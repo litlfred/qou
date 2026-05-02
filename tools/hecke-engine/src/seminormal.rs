@@ -389,6 +389,154 @@ pub fn chi_lambda_braid(shape: &[usize], word: &[(i32, u32)], q: f64) -> f64 {
     trace
 }
 
+/// Apply `v ← (c · σ + d · I) · v` in-place.
+///
+/// Equivalent to `c * apply_sigma_left(v) + d * v`, computed without
+/// the temporary buffer.
+fn apply_factor_left(v: &mut [f64], blocks: &[Block], c: f64, d: f64) {
+    if c == 0.0 {
+        // Pure identity scaling
+        if d != 1.0 {
+            for x in v.iter_mut() {
+                *x *= d;
+            }
+        }
+        return;
+    }
+    if d == 0.0 {
+        // Pure σ scaling
+        if c != 1.0 {
+            for x in v.iter_mut() {
+                *x *= c;
+            }
+        }
+        apply_sigma_left(v, blocks);
+        return;
+    }
+    // General case: v ← c·σ(v) + d·v.
+    // Iterate blocks; for each, update v in-place using c and d.
+    // Block::One { i, a }: σ acts on v[i] by scalar a, so
+    //   new v[i] = c · a · v[i] + d · v[i] = (c·a + d) · v[i]
+    // Block::Two { i, j, a, ap, b }: σ on (v[i], v[j]) is
+    //   (a·v[i] + b·v[j], b·v[i] + ap·v[j]); adding d·(v[i], v[j])
+    //   gives ((c·a + d)·v[i] + c·b·v[j], c·b·v[i] + (c·ap + d)·v[j]).
+    // Indices NOT covered by any block are identity for σ; result
+    // = c · v[k] + d · v[k] = (c + d) · v[k]. Track which are
+    // covered to apply the identity scaling to the rest.
+    let n = v.len();
+    let mut covered = vec![false; n];
+    for block in blocks {
+        match *block {
+            Block::One { i, a } => {
+                v[i] *= c * a + d;
+                covered[i] = true;
+            }
+            Block::Two { i, j, a, ap, b } => {
+                let vi = v[i];
+                let vj = v[j];
+                v[i] = (c * a + d) * vi + (c * b) * vj;
+                v[j] = (c * b) * vi + (c * ap + d) * vj;
+                covered[i] = true;
+                covered[j] = true;
+            }
+        }
+    }
+    // Identity action on uncovered indices: σ acts as I → c + d
+    let scale = c + d;
+    if (scale - 1.0).abs() > f64::EPSILON {
+        for k in 0..n {
+            if !covered[k] {
+                v[k] *= scale;
+            }
+        }
+    }
+}
+
+/// **F3.2.ζ — q-character on a sequence of Hecke factors `c·σ + d·I`.**
+///
+/// Computes `χ_λ(Π_i (c_i · σ_{g_i} + d_i · I))` for a partition
+/// `shape ⊢ n` at substrate parameter `q`, where each factor is a
+/// linear combination of a Hecke generator and the identity.
+///
+/// `factors`: list of `(c, d, gen_1based)` triples, applied
+/// **left-to-right** (i.e., factor at position 0 is the
+/// rightmost in the matrix product).
+///
+/// Returns `χ_λ(Π) ∈ ℝ`.
+///
+/// # When to use
+///
+/// - For QOU atomic-braid characters where each crossing is a
+///   `c·σ + d·I` Hecke element (see `mass_endomorphism.proton_cross`
+///   / `neutron_cross`).
+/// - For per-crossing-coefficient evaluations that the simpler
+///   `chi_lambda_braid` (which only takes braid letters
+///   `(sign, gen)`) cannot handle.
+///
+/// # Performance
+///
+/// Per-basis-vector iterative trace, same complexity as
+/// `chi_lambda_braid`: O(dim²·k) per partition where k is the
+/// number of factors.  For dim ≤ a few thousand and k ≤ a few
+/// hundred, runs in ≪ 1 s in release-optimised Rust.
+///
+/// # Numerical
+///
+/// f64 throughout. For arbitrary precision use the `_mpfr` variant
+/// (TODO).
+pub fn chi_q_atomic(shape: &[usize], factors: &[(f64, f64, u32)], q: f64) -> f64 {
+    let n: usize = shape.iter().sum();
+    if n == 0 {
+        return 1.0;
+    }
+    let (dim, all_blocks) = seminormal_block_generators(shape, q);
+    if dim == 0 {
+        return 0.0;
+    }
+
+    // Pre-marshal factors. Validate generator indices.
+    let resolved: Vec<(f64, f64, &[Block])> = factors
+        .iter()
+        .map(|&(c, d, gen)| {
+            assert!(
+                gen != 0 && (gen as usize) <= all_blocks.len() || all_blocks.is_empty(),
+                "chi_q_atomic: invalid generator index {} for n = {} \
+                 (valid range: 1..={})",
+                gen,
+                n,
+                all_blocks.len()
+            );
+            // For shapes with no generators (n = 1), any factor with
+            // nontrivial gen would crash above; return placeholder.
+            let blocks: &[Block] = if all_blocks.is_empty() {
+                &[]
+            } else {
+                let idx = gen as usize - 1;
+                all_blocks[idx].as_slice()
+            };
+            (c, d, blocks)
+        })
+        .collect();
+
+    // Trace via per-basis-vector iteration.
+    let mut v = vec![0.0_f64; dim];
+    let mut trace = 0.0;
+    for i in 0..dim {
+        for k in 0..dim {
+            v[k] = 0.0;
+        }
+        v[i] = 1.0;
+        // Apply factors right-to-left:
+        //   v ← (c_1·σ + d_1·I) (c_2·σ + d_2·I) ... (c_k·σ + d_k·I) e_i
+        // means we apply factor k first to e_i, then factor k-1, etc.
+        for &(c, d, blocks) in resolved.iter().rev() {
+            apply_factor_left(&mut v, blocks, c, d);
+        }
+        trace += v[i];
+    }
+    trace
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
