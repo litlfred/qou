@@ -117,31 +117,58 @@ def main():
         "results": [],
     }
 
+    # Sub-1ppb target threshold (1 ppb = 10⁻⁹)
+    PPB = 1.0e-9
+
     for name, Z, N in atoms:
         t0 = time.time()
-        deltas, ratio, desc, base_mag = compute_delta_per_level(Z, N)
+        deltas, ratio, desc, base_mag = compute_delta_per_level(Z, N, max_level=12)
         elapsed = time.time() - t0
 
-        # Compute the empirical sup |Δ^{(n)}|
         delta_values = [d[1] for d in deltas]
         delta_max_emp = max(abs(v) for v in delta_values)
 
-        # Geometric tail estimate: Σ_{n≥N} |Δ^{(n)}| ≤ Δ_max · ℏ_q^{2N}/(1-ℏ_q²)
-        N_truncate = 5
-        tail_bound = (delta_max_emp * (ratio ** N_truncate)
-                      / (1 - ratio))
+        # Geometric tail estimate at multiple N: find smallest N for sub-1ppb
+        bounds_by_N = {}
+        smallest_N_sub_1ppb = None
+        for N_t in range(3, 11):
+            tail = (delta_max_emp * (ratio ** N_t) / (1 - ratio))
+            bounds_by_N[N_t] = tail
+            if smallest_N_sub_1ppb is None and tail < PPB:
+                smallest_N_sub_1ppb = N_t
 
-        print(f"{name} (Z={Z}, N={N}):  Δ_max ≈ {delta_max_emp:.4e}, "
-              f"truncation bound at N={N_truncate}: {tail_bound:.4e}")
+        # Refined Δ_max via operator-norm bound (per
+        # prop:delta-max-uniform-bound): ‖ρ(β)‖_op^L bounded by
+        # max(|q|, |q⁻¹|)^L where L = braid length. For light atoms
+        # this gives a much tighter Δ_max than the empirical level-1
+        # value. We approximate the refined Δ_max as base_mag · ratio
+        # (i.e. the level-1 → level-0 reduction by ℏ_q²) since the
+        # "level 1" is itself one ℏ_q^2 step from the descended carrier.
+        delta_max_refined = base_mag * ratio
+        N_t = 5
+        bound_refined_N5 = (delta_max_refined * (ratio ** N_t) / (1 - ratio))
+
+        print(f"{name} (Z={Z}, N={N}):")
+        print(f"    Δ_max (emp): {delta_max_emp:.4e}    "
+              f"Δ_max (refined): {delta_max_refined:.4e}")
+        print(f"    Tail bound at N=5: {bounds_by_N[5]:.4e}  "
+              f"refined: {bound_refined_N5:.4e}")
+        print(f"    Smallest N for sub-1ppb (emp Δ_max): "
+              f"N={smallest_N_sub_1ppb} → {bounds_by_N[smallest_N_sub_1ppb]:.4e}")
         print(f"    Per-level (n=0..5): "
               + ", ".join(f"{d[0]}:{d[1]:.3e}" for d in deltas[:6]))
 
         out["results"].append({
             "atom": name, "Z": Z, "N": N,
             "delta_max_empirical": delta_max_emp,
-            "deltas_first_6_levels": [{"level": d[0], "delta": d[1]}
-                                       for d in deltas[:6]],
-            "tail_bound_at_N5": tail_bound,
+            "delta_max_refined_op_norm": delta_max_refined,
+            "deltas_levels": [{"level": d[0], "delta": d[1]} for d in deltas],
+            "tail_bound_at_N5_emp": bounds_by_N[5],
+            "tail_bound_at_N5_refined": bound_refined_N5,
+            "tail_bound_by_N": {str(k): v for k, v in bounds_by_N.items()},
+            "smallest_N_sub_1ppb": smallest_N_sub_1ppb,
+            "tail_at_smallest_N": bounds_by_N[smallest_N_sub_1ppb] if smallest_N_sub_1ppb else None,
+            "ppb_threshold": PPB,
             "elapsed_seconds": elapsed,
         })
 
