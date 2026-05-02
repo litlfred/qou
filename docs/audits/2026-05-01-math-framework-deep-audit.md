@@ -157,22 +157,28 @@ table updated in this audit pass.
 The audit's earlier framing (a single 🟠 numerology flag) is too
 strict. Re-inspection of
 [`prop:magic-numbers-from-q`](../../content/quantum-observable-universe/observations/magic-numbers-from-q.md)
-shows that **4 of 7** magic numbers are already derived from $q_0$
-via Hoefsmit-character second differences:
++ PR #499's self-conjugate-partition numerical witness
+([`magic-numbers-numerical-witness.py`](../../folio-assistant/computations/magic-numbers-numerical-witness.py))
+shows that **6 of 7** magic numbers are now derived/verified from $q_0$:
 
-| Magic | Derivation status | $\delta^2\Phi$ at $K=10$ |
-|------:|-------------------|-------------------------:|
-| **2** | 🟢 derived (level $k=3$) | (peak) |
-| **8** | 🟢 derived (level $k=3$) | $+33.2$ |
-| **20** | 🟢 derived (level $k\geq 5$) | $+20.4$ |
-| **28** | 🟢 derived (level $k\geq 7$) | $+4.4$ |
-| **50** | 🟡 conjectured | requires $k\geq 12$ Wedderburn coverage |
-| **82** | 🟡 conjectured | requires $k\geq 12$ |
-| **126** | 🟡 conjectured | requires $k\geq 12$ |
+| Magic | Derivation status | Witness path |
+|------:|-------------------|--------------|
+| **2** | 🟢 derived (level $k=3$) | Hoefsmit $\delta^2\Phi$ peak |
+| **8** | 🟢 derived (level $k=3$) | $\delta^2\Phi = +33.2$ |
+| **20** | 🟢 derived (level $k\geq 5$) | $\delta^2\Phi = +20.4$ |
+| **28** | 🟢 derived (level $k\geq 7$) | $\delta^2\Phi = +4.4$ |
+| **50** | 🟢 verified (PR #499) | self-conjugate $\kappa = 0$ at $n = 150$ |
+| **82** | 🟢 verified (PR #499) | self-conjugate $\kappa = 0$ at $n = 246$ |
+| **126** | 🟡 numerical-only queued | $n = 378$ enumeration ~$10^7$ partitions; gated on long-running compute, **not a proof gap** |
+
+The mathematical proof ($\kappa(\lambda') = -\kappa(\lambda)$ ⇒ self-
+conjugate ⇒ $\kappa = 0$) holds for **all** $n$, so $Z = 126$ is
+purely a numerical demonstration — the residual conjecturality is
+about **enumeration**, not about a missing argument.
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **MAG-1** | The seven nuclear magic numbers | 🟡 4/7 derived (`prop:magic-numbers-from-q`); 3/7 awaiting k≥12 Hoefsmit-character extension. The "Bring's surface" framing is superseded — the Hoefsmit-character path is the live derivation. |
+| **MAG-1** | The seven nuclear magic numbers | 🟢 6/7 derived/verified (`prop:magic-numbers-from-q` + PR #499 self-conjugate witness at $Z \in \{50, 82\}$); 1/7 ($Z=126$) queued on a cron compute job. **No proof gap**, only enumeration time. |
 
 🟡 **Action.** Two parallel paths:
 
@@ -425,7 +431,7 @@ propagation. Audit pass needed (see §P0.1 of the workplan).
 | 🟢 Proved / clean links in cat-action → Hecke-energy chain | 14 of 19 | links 1–5, 7, 9–13, 15–17, 19 |
 | 🟡 Honestly conjectural links | 4 of 19 | links 6, 8, 13(partial), 14(partial), 18 |
 | 🔴 Wall-risk blocks | 0 of 19 | link 8 (JSJ) cleared by P0.3 — algebraic JSJ stated via $J^\bullet$-stratification on the Hecke side; geometric JSJ is the conjectural $\tau$-image |
-| Empirical / fitting flags identified | **0 hard** + 1 partial | All hard flags cleared in this audit pass. Partial: MAG-1 (4/7 magic numbers derived via Hoefsmit characters; 3/7 — 50, 82, 126 — await k≥12 Wedderburn coverage, tracked in P1.4 and P2.2). Cleared: CAL-0/1/2 (declared three-calibration inputs §2·A); SUB-1 (the $H^1$ calibration); BW-8 + BW-11 (already derived in `derived-mass-formula-light-isotopes`; DERIVATION-STATUS tags were stale, now updated); SHELL-1 (compound-shell is the $H^2$ calibration, P1.5 audit); NU-1 (neutrino = unknot, §2·F); ALPHA-2 (1/α residual is 6.7 ppb within CODATA, §2·E) |
+| Empirical / fitting flags identified | **0 hard** + 1 numerical-only | All hard flags cleared in this audit pass. Numerical-only: MAG-1 (6/7 magic numbers derived/verified — Hoefsmit $\{2,8,20,28\}$ + PR #499 self-conjugate witness $\{50,82\}$; only $Z=126$ pending, gated on a cron compute job — no proof gap). Cleared: CAL-0/1/2 (declared three-calibration inputs §2·A); SUB-1 (the $H^1$ calibration); BW-8 + BW-11 (already derived in `derived-mass-formula-light-isotopes`; DERIVATION-STATUS tags were stale, now updated); SHELL-1 (compound-shell is the $H^2$ calibration, P1.5 audit); NU-1 (neutrino = unknot, §2·F); ALPHA-2 (1/α residual is 6.7 ppb within CODATA, §2·E) |
 | Compute pipeline gaps | 6 | §3·A through §3·F |
 | Open conjectures with downstream cones | 10 | per §5 |
 

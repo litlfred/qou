@@ -98,12 +98,23 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   the ratio is itself overdetermined by $\alpha_{\mathrm{EM}}^{-1}$
   and tritium $t_{1/2}$ (consistency window).
 - **D**: (a) Close the chain `q-from-epsilon →
-  substrate-parameter-unique → vacuum-substrate-compatibility` so
-  that $q_0$ is shown to be algebraically determined (the
-  three-sector cross-checks become consistency proofs, not
-  independent fits). (b) In compute, ensure scripts treat
+  substrate-parameter-unique → vacuum-substrate-compatibility` as
+  an **algebraic cross-check** on the $H^1$ calibration (not a
+  replacement for it). The three calibration inputs ($m_e$, $q_0$
+  via $m_\mu/m_e$, $Q_\beta$) remain categorical; an algebraic
+  $q_0$ derivation gives consistency proofs across strong / EM /
+  weak sectors. (b) In compute, ensure scripts treat
   $q_0$ as the *single* $H^1$ input — not as a free 50-digit
   number to fit.
+
+  **Alignment with PR #499 R5.** PR #499's R5 is framed as
+  "deriving $q_0$ reduces CAL-2 to a cross-check, gives
+  two-calibration interpretation". That framing **conflicts with the
+  three-calibration discipline** (which is categorical: exactly
+  three inputs aligned to $H^0/H^1/H^2$). The algebraic derivation
+  is welcome as a *cross-check*, not as a way to remove a
+  calibration. Cross-reference:
+  [`2026-05-02-pr499-integration.md`](./2026-05-02-pr499-integration.md).
 - **B**: nothing blocks (b); (a) is research-grade.
 - **S**: every compute script that uses $q_0$ derives its value
   from a single declared $H^1$ input (e.g. CODATA $m_\mu/m_e$),
@@ -402,13 +413,25 @@ but isn't wired into the live mass tower. So P2.2 splits:
   ✅ **landed (Option C)**: HYBRID = q-Hecke descended + q=1 MN tower
   (`per_braid_tower_hybrid.py`). At A ≤ 4: cal/$m_e$ spread = 0.65%;
   ³He/³H split = 0.53 MeV (matches AME).
-- **P2.2c-12C — Rust extension for q-Hecke at A=12+.** 🟡 **partial**:
-  pyhecke_native built (`maturin build --release` in
-  `tools/pyhecke-native/`); Rust kernel functions accessible but
-  accept only braid words `(sign, gen)`, not per-crossing
-  `(c, d)`. Closing this requires a new Rust function
-  `chi_q_atomic(shape, [(c, d, gen)], q)`. Survey memo:
+- **P2.2c-12C — Rust extension for q-Hecke at A=12+.** ✅ **landed**:
+  `chi_q_atomic(shape, atoms, q)` shipped in
+  `tools/pyhecke-native/src/lib.rs` (per-basis-vector iterative
+  trace via `apply_factor_left` in
+  `tools/hecke-engine/src/seminormal.rs`).
+  Wired into `schur_weyl_q_hecke_v2.markov_trace_q_hecke_atomic`
+  (Rust path with Python fallback). 12C in 1.4s, 16O in 6.9s,
+  40Ca in 1.3s. Survey memo:
   [`2026-05-01-existing-compute-optimisations.md`](2026-05-01-existing-compute-optimisations.md).
+
+  **Alignment with PR #499 R1.** PR #499's queued R1 (q-deformed
+  Hecke character via q-ribbon-tableau weights, 2–4 weeks) targets
+  the same goal — distinguishing braids whose underlying $S_n$
+  cycle types coincide (³He vs ³H). This Rust path achieves it via
+  Hoefsmit seminormal matrices + per-crossing $(c, d)$ atoms; the
+  ribbon-tableau path is an alternative formulation (potential
+  symbolic-in-$q$ polynomial output) but no longer the unique
+  blocker. Both routes valid; mine is production-ready.
+  Cross-reference: [`2026-05-02-pr499-integration.md`](./2026-05-02-pr499-integration.md).
 
 - **W**: §3·B of audit. Current code uses $H_3$ weights as an
   approximation.
@@ -541,6 +564,15 @@ Reference example for the canonical late-substitution pattern:
   - Direct check on the std (2×2) Wedderburn block.
   - Sharpness of the descended residual $R_q$.
 
+  **Alignment with PR #499 R7.** PR #499's R7 says the
+  "actual gap" is the **operator-level identity** on Wedderburn-rep
+  matrices, not the trace level. My 4-step proof establishes the
+  identity at the **trace level on the transient block**. Whether
+  the proof actually extends to the operator level (and whether the
+  trace-level statement is sufficient for the per-braid mass
+  tower's needs) is an open cross-check. Cross-reference:
+  [`2026-05-02-pr499-integration.md`](./2026-05-02-pr499-integration.md).
+
 ### P3.3 — Descent sharpness on pairs (audit GAP 17b)
 
 - **W**: line 114 of prior audit. Pentagon gives an upper bound on
@@ -618,7 +650,7 @@ Reference example for the canonical late-substitution pattern:
 | 4 | **P0.3** JSJ algebraic reformulation (main side) | ✅ landed (`phi-q-tower-jsj-bridge` adds *Algebraic-side statement* via $J^\bullet$-stratification) |
 | 5 | **P0.1** Wall-violation sweep over proof blocks | ✅ landed (0 hard violations; 2 soft risks documented) |
 | 6 | **P0.2** Land algebraic-quantum-volume recast | ✅ already on main (verified) |
-| 7 | **P1.4** Magic numbers reclassified | ✅ 4/7 derived via Hoefsmit (`prop:magic-numbers-from-q`); 3/7 await k≥12 (P2.2 dependency) |
+| 7 | **P1.4** Magic numbers reclassified | ✅ 6/7 derived/verified — Hoefsmit $\{2,8,20,28\}$ + PR #499 self-conjugate-partition witness $\{50,82\}$; only $Z=126$ pending (cron compute, not a proof gap). See [`2026-05-02-pr499-integration.md`](./2026-05-02-pr499-integration.md). |
 | 8 | **P1.2 / P1.3** BW-8 / BW-11 ad-hoc/approx tags | ✅ already derived (`derived-mass-formula-light-isotopes`); DERIVATION-STATUS updated |
 | 9 | **P1.7** 1/α residual | ✅ already at 6.7 ppb (within CODATA 21-ppb uncertainty); legacy "399 ppb" superseded |
 
