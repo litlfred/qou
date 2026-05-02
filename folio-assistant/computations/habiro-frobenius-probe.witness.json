@@ -1,6 +1,6 @@
 {
   "computation": "habiro-frobenius-probe",
-  "computedAt": "2026-05-02T17:43:12.923175+00:00",
+  "computedAt": "2026-05-02T17:47:03.433715+00:00",
   "description": "R6 step-1 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. This makes the Habiro → Frob_p map explicit and tabulated, which is the first concrete step toward the Habiro → MotivicGaloisCharacter instance (audit GAP 5b).",
   "reference_blocks": [
     "def:motivic-galois-character",
@@ -38,7 +38,12 @@
           "galois_norm_nearest_int": -16,
           "galois_norm_integrality_residual": 3.637978807091713e-12,
           "galois_norm_imag_residual": 8.640199666842818e-12,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 8.000000000003183,
+          "weil_orbit_abs_min": 8.000000000000455,
+          "weil_orbit_spread": 3.410605131647124e-13,
+          "weil_inferred_weight": 6.0000000000011475,
+          "weil_pure_at_p": true
         },
         {
           "prime": 3,
@@ -55,7 +60,12 @@
           "galois_norm_nearest_int": -2,
           "galois_norm_integrality_residual": 4.3655745685100555e-11,
           "galois_norm_imag_residual": 8.731149137020111e-11,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 1.0000000000418368,
+          "weil_orbit_abs_min": 1.000000000001819,
+          "weil_orbit_spread": 4.001776687633463e-11,
+          "weil_inferred_weight": 7.616291336300245e-11,
+          "weil_pure_at_p": true
         },
         {
           "prime": 5,
@@ -72,7 +82,12 @@
           "galois_norm_nearest_int": 2,
           "galois_norm_integrality_residual": 2.2737367544323206e-12,
           "galois_norm_imag_residual": 3.524291969370097e-12,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 1.6180339887501987,
+          "weil_orbit_abs_min": 0.6180339887441164,
+          "weil_orbit_spread": 0.6180339887535379,
+          "weil_inferred_weight": 0.5979874356656735,
+          "weil_pure_at_p": false
         },
         {
           "prime": 7,
@@ -89,7 +104,12 @@
           "galois_norm_nearest_int": -8,
           "galois_norm_integrality_residual": 2.502886786714953e-12,
           "galois_norm_imag_residual": 7.474909580196254e-12,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 6.824757826859315,
+          "weil_orbit_abs_min": 0.7014558045429425,
+          "weil_orbit_spread": 0.8972189457357279,
+          "weil_inferred_weight": 1.9739419706812262,
+          "weil_pure_at_p": false
         },
         {
           "prime": 11,
@@ -106,7 +126,12 @@
           "galois_norm_nearest_int": 14,
           "galois_norm_integrality_residual": 3.9316105926445744e-11,
           "galois_norm_imag_residual": 1.0910383707596338e-11,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 5.548186445050981,
+          "weil_orbit_abs_min": 0.3391607251316929,
+          "weil_orbit_spread": 0.9388699841847913,
+          "weil_inferred_weight": 1.429145907361805,
+          "weil_pure_at_p": false
         },
         {
           "prime": 13,
@@ -123,7 +148,12 @@
           "galois_norm_nearest_int": 5,
           "galois_norm_integrality_residual": 6.820322084877262e-12,
           "galois_norm_imag_residual": 2.2940760402434535e-11,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 8.60448988913375,
+          "weil_orbit_abs_min": 0.4299946727690688,
+          "weil_orbit_spread": 0.9500267095075454,
+          "weil_inferred_weight": 1.6782274011717224,
+          "weil_pure_at_p": false
         }
       ]
     },
@@ -148,7 +178,12 @@
           "galois_norm_nearest_int": -16,
           "galois_norm_integrality_residual": 1.5916157281026244e-12,
           "galois_norm_imag_residual": 2.5011104298755527e-12,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 8.000000000001364,
+          "weil_orbit_abs_min": 8.000000000000227,
+          "weil_orbit_spread": 1.421085471519958e-13,
+          "weil_inferred_weight": 6.000000000000492,
+          "weil_pure_at_p": true
         },
         {
           "prime": 3,
@@ -165,7 +200,12 @@
           "galois_norm_nearest_int": 4,
           "galois_norm_integrality_residual": 8.185452315956354e-12,
           "galois_norm_imag_residual": 1.8189894035458565e-11,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 2.64575131106906,
+          "weil_orbit_abs_min": 2.6457513110660895,
+          "weil_orbit_spread": 1.122748276551655e-12,
+          "weil_inferred_weight": 1.7712437491644974,
+          "weil_pure_at_p": true
         },
         {
           "prime": 5,
@@ -182,7 +222,12 @@
           "galois_norm_nearest_int": -3,
           "galois_norm_integrality_residual": 1.0160761121369433e-12,
           "galois_norm_imag_residual": 7.030820370346191e-12,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 4.236067977499374,
+          "weil_orbit_abs_min": 0.2360679774964371,
+          "weil_orbit_spread": 0.9442719099999448,
+          "weil_inferred_weight": 1.7939623069961985,
+          "weil_pure_at_p": false
         },
         {
           "prime": 7,
@@ -199,7 +244,12 @@
           "galois_norm_nearest_int": -1,
           "galois_norm_integrality_residual": 1.0267342531733448e-12,
           "galois_norm_imag_residual": 4.481748305806832e-12,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 3.653055472171896,
+          "weil_orbit_abs_min": 1.218306418111371,
+          "weil_orbit_spread": 0.6664966006149815,
+          "weil_inferred_weight": 1.331576315279505,
+          "weil_pure_at_p": false
         },
         {
           "prime": 11,
@@ -216,7 +266,12 @@
           "galois_norm_nearest_int": 3,
           "galois_norm_integrality_residual": 3.461231301571388e-12,
           "galois_norm_imag_residual": 7.368328169832239e-12,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 10.53774459191386,
+          "weil_orbit_abs_min": 0.4163482524159535,
+          "weil_orbit_spread": 0.9604898136613181,
+          "weil_inferred_weight": 1.9641921491257162,
+          "weil_pure_at_p": false
         },
         {
           "prime": 13,
@@ -233,7 +288,12 @@
           "galois_norm_nearest_int": 5,
           "galois_norm_integrality_residual": 5.000444502911705e-12,
           "galois_norm_imag_residual": 1.3604672943756668e-11,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 11.930198800523382,
+          "weil_orbit_abs_min": 0.6678788100922046,
+          "weil_orbit_spread": 0.9440177970829032,
+          "weil_inferred_weight": 1.93303847709564,
+          "weil_pure_at_p": false
         }
       ]
     },
@@ -258,7 +318,12 @@
           "galois_norm_nearest_int": 192,
           "galois_norm_integrality_residual": 9.313225746154785e-10,
           "galois_norm_imag_residual": 1.2223608791828156e-09,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 96.0000000000291,
+          "weil_orbit_abs_min": 95.99999999903957,
+          "weil_orbit_spread": 1.0307606620090061e-11,
+          "weil_inferred_weight": 13.169925001443186,
+          "weil_pure_at_p": true
         },
         {
           "prime": 3,
@@ -275,7 +340,12 @@
           "galois_norm_nearest_int": -9,
           "galois_norm_integrality_residual": 7.450580596923828e-08,
           "galois_norm_imag_residual": 1.3224780559539795e-07,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 4.582575770586275,
+          "weil_orbit_abs_min": 4.582575678517561,
+          "weil_orbit_spread": 2.0091040288101555e-08,
+          "weil_inferred_weight": 2.7712437792064417,
+          "weil_pure_at_p": true
         },
         {
           "prime": 5,
@@ -292,7 +362,12 @@
           "galois_norm_nearest_int": -61,
           "galois_norm_integrality_residual": 1.2479722499847412e-07,
           "galois_norm_imag_residual": 1.341104507446289e-07,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 30.164910064172584,
+          "weil_orbit_abs_min": 1.4415964235240932,
+          "weil_orbit_spread": 0.9522094904159418,
+          "weil_inferred_weight": 4.233377757670912,
+          "weil_pure_at_p": false
         },
         {
           "prime": 7,
@@ -309,7 +384,12 @@
           "galois_norm_nearest_int": 23,
           "galois_norm_integrality_residual": 3.0181581678334624e-09,
           "galois_norm_imag_residual": 4.381001872388879e-08,
-          "is_integral": true
+          "is_integral": true,
+          "weil_orbit_abs_max": 38.73665425991884,
+          "weil_orbit_abs_min": 3.1037616129066907,
+          "weil_orbit_spread": 0.9198753306860016,
+          "weil_inferred_weight": 3.758432825952986,
+          "weil_pure_at_p": false
         },
         {
           "prime": 11,
@@ -326,7 +406,12 @@
           "galois_norm_nearest_int": -756,
           "galois_norm_integrality_residual": 4.1233533920603804e-08,
           "galois_norm_imag_residual": 3.278483973190305e-08,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 339.0215118222707,
+          "weil_orbit_abs_min": 1.4198049207918881,
+          "weil_orbit_spread": 0.9958120506478769,
+          "weil_inferred_weight": 4.859314439759449,
+          "weil_pure_at_p": false
         },
         {
           "prime": 13,
@@ -343,7 +428,12 @@
           "galois_norm_nearest_int": -525,
           "galois_norm_integrality_residual": 5.038941708335187e-09,
           "galois_norm_imag_residual": 6.731954727001721e-08,
-          "is_integral": false
+          "is_integral": false,
+          "weil_orbit_abs_max": 473.3193903762044,
+          "weil_orbit_abs_min": 1.3227822350087761,
+          "weil_orbit_spread": 0.9972053073212205,
+          "weil_inferred_weight": 4.80303471616127,
+          "weil_pure_at_p": false
         }
       ]
     }

@@ -121,11 +121,31 @@ def evaluate_at_root(record_data: dict, p: int, *,
     frob_p_main = evaluate_at(zeta_2p)
 
     # Galois orbit: {ζ_{2p}^k : gcd(k, 2p) = 1}, |orbit| = φ(2p).
-    from math import gcd
+    from math import gcd, log
     galois_orbit_ks = [k for k in range(1, 2 * p) if gcd(k, 2 * p) == 1]
+    galois_orbit_abs: list[float] = []
     galois_norm: complex = 0 + 0j
     for k in galois_orbit_ks:
-        galois_norm += evaluate_at(zeta_2p ** k)
+        v = evaluate_at(zeta_2p ** k)
+        galois_norm += v
+        galois_orbit_abs.append(abs(v))
+
+    # Weil bound: for a pure motive of weight w at prime p,
+    # |σ(Frob_p)| = p^{w/2} for ALL σ in the Galois orbit.
+    # Compute the spread of |σ(Frob_p)| values; if it's narrow,
+    # the motive is "pure" at that prime and the inferred weight
+    # is w = 2 · log_p(|Frob_p|).
+    if galois_orbit_abs:
+        max_abs = max(galois_orbit_abs)
+        min_abs = min(galois_orbit_abs)
+        spread = (max_abs - min_abs) / max_abs if max_abs > 1e-10 else 0.0
+        if max_abs > 1e-10:
+            inferred_weight = 2 * log(max_abs) / log(p)
+        else:
+            inferred_weight = None
+    else:
+        spread = None
+        inferred_weight = None
 
     nearest_int = round(galois_norm.real)
     integrality_residual = abs(galois_norm.real - nearest_int)
@@ -150,6 +170,14 @@ def evaluate_at_root(record_data: dict, p: int, *,
         "galois_norm_imag_residual": imag_residual,
         "is_integral": (
             integrality_residual < 1e-6 and imag_residual < 1e-6
+            and truncate_at is not None
+        ),
+        "weil_orbit_abs_max": max(galois_orbit_abs) if galois_orbit_abs else None,
+        "weil_orbit_abs_min": min(galois_orbit_abs) if galois_orbit_abs else None,
+        "weil_orbit_spread": spread,
+        "weil_inferred_weight": inferred_weight,
+        "weil_pure_at_p": (
+            spread is not None and spread < 1e-3
             and truncate_at is not None
         ),
     }
@@ -181,11 +209,14 @@ def main() -> int:
         for p in PRIMES:
             row = evaluate_at_root(record_data, p)
             integrality = "✓" if row["is_integral"] else " "
+            pure = "♦" if row["weil_pure_at_p"] else " "
+            wt = (f"w≈{row['weil_inferred_weight']:.2f}"
+                  if row["weil_inferred_weight"] is not None else "w=?")
             print(f"    p = {p:>3}  m_trunc = "
                   f"{row['pochhammer_truncates_at_m']}  "
                   f"|Frob| = {row['abs_frob_p']:>8.4f}  "
-                  f"N(Frob) ≈ {row['galois_norm_nearest_int']:>+6d}  "
-                  f"residual = {row['galois_norm_integrality_residual']:.2e} {integrality}")
+                  f"N≈{row['galois_norm_nearest_int']:>+6d} {integrality}  "
+                  f"spread={row['weil_orbit_spread']:.2e} {pure} {wt}")
             per_prime.append(row)
         atoms_out.append({
             "atom_label": label,
