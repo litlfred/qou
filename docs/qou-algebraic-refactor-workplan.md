@@ -108,12 +108,12 @@ only when:
 
 ## Phase 2 — landed in this same PR
 
-- ✅ Cross-linked `magic-numbers-from-q.md` to the homological route
+- Cross-linked `magic-numbers-from-q.md` to the homological route
   past the $K = 12$ barrier.
-- ✅ Empirical-verification table (Hoefsmit $\delta^2 \Phi$ peaks
+- Empirical-verification table (Hoefsmit $\delta^2 \Phi$ peaks
   $+33.2, +20.4, +4.4$ at $Z = 8, 20, 28$) added inside
   `conj:homological-shell-condensation`.
-- ✅ Concrete Lean proofs for the provable forward fragments:
+- Concrete Lean proofs for the provable forward fragments:
   `kappa_conjugate`, `kappa_zero_of_self_conjugate`,
   `conjugate_involution`, `kappa_emptyDiagram`,
   `emptyDiagram_isSelfConjugate`, and the capstone
@@ -122,30 +122,49 @@ only when:
   by the proved theorem (forward) plus
   `KappaZeroImpliesSelfConjugate` (reverse, axiomatic — needs
   Young-lattice structure).
-- ✅ Numerical-witness file
+- Numerical-witness file
   [`folio-assistant/computations/double-magic-witnesses.json`](../folio-assistant/computations/double-magic-witnesses.json)
   records falsifiable predictions ($\kappa_A = 0$, $\lambda_A$
   self-conjugate) for all seven double-magic isotopes including
   the matrix-evaluation-intractable $\{50, 82, 126\}$ shells.
-- ✅ Locality-language sweep: the existing manuscript has no "local
+- Locality-language sweep: the existing manuscript has no "local
   $\Phi_n$" prose; the four `local trivialisation` / `screening`
   matches in the codebase are in unrelated contexts (sheaf
   trivialisations in Yekutieli descent; nucleon-screening *ratio*
   $[3]_q/[2]_q$). The `rem:phi-n-global-section` block stands as
   the standalone global-section codification — no sweep needed.
 
+## Phase 2.5 — Mathlib bridge wired
+
+- Mathlib `YoungDiagram` is now wired into the QOU Lake build
+  via [`QOU/BraidKnot/MathlibBridge.lean`](../content/quantum-observable-universe/lean/QOU/BraidKnot/MathlibBridge.lean).
+  - `fromMathlib : Mathlib.YoungDiagram → QOU.YoungDiagram` is a
+    concrete definition (no axioms): take the multiset of cell
+    contents `j - i` from `Y.cells.val`.
+  - `fromMathlib_kappa_zero_of_transpose_eq` is **proved**
+    (conditional on `[TransposeBridge]`, a typeclass field
+    asserting `Y.transpose = Y → isSelfConjugate (fromMathlib Y)`).
+  - The `[TransposeBridge]` field is a small bridge fact
+    (Mathlib's `YoungDiagram.transpose_cells` lemma + `Multiset.map`
+    symmetry); kept as a typeclass field so the present paper does
+    not commit to a specific Mathlib API name pattern.
+  - The reverse-direction bridge (`ReverseBridge`) is the
+    Frobenius-coordinate bijection — kept as a typeclass field;
+    Phase 3 follow-up.
+
 ## Phase 3 — still deferred
 
-- Wire `Mathlib.Combinatorics.Young.YoungDiagram` into the QOU
-  Lake build to formalise content additivity from a concrete
-  Young-diagram model (rather than the abstract `Multiset ℤ`
-  shadow used here).
+- Discharge `TransposeBridge` directly inside `MathlibBridge.lean`
+  using Mathlib's `YoungDiagram.transpose_cells` lemma and
+  `Multiset` rewriting (small, ~5–10 lines once the lemma name is
+  confirmed against the pinned Mathlib commit).
+- Discharge `ReverseBridge` via the Frobenius-coordinate bijection
+  between self-conjugate partitions of $n$ and partitions of $n$
+  into distinct odd parts — finishes the
+  `KappaZeroImpliesSelfConjugate` story for Mathlib YoungDiagrams.
 - Numerical LR-coefficient verification at $k \leq 10$ to test
   dominance of the predicted self-conjugate $\lambda_A$ in
-  `double-magic-witnesses.json`.
-- Closed-form proof of `KappaZeroImpliesSelfConjugate` — likely via
-  the Frobenius-coordinate bijection between self-conjugate
-  partitions of $n$ and partitions of $n$ into distinct odd parts.
+  `double-magic-witnesses.json` (fills the `null` row vectors).
 
 ## Citations to register
 

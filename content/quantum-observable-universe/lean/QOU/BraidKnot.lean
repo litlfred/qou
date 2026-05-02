@@ -5,6 +5,7 @@ import QOU.BraidKnot.DressedParticle
 import QOU.BraidKnot.LevelSufficiency
 import QOU.BraidKnot.ShellClosureStability
 import QOU.BraidKnot.ShellNeutrality
+import QOU.BraidKnot.MathlibBridge
 import QOU.BraidKnot.ConfinementPhaseStratification
 import QOU.BraidKnot.ThreeCalibrationInputs
 import QOU.BraidKnot.GradedMarkovTraceFromGSFiltration
@@ -28,5 +29,6 @@ and phase stratification.
 - LevelSufficiency: Markov-trace preservation under unfolding
 - ShellClosureStability: σ_F monotone, noble-gas terminality
 - ShellNeutrality: full-twist θ_n = 1 ↔ κ_λ = 0 ↔ self-conjugate λ
+- MathlibBridge: fromMathlib bridge to Mathlib.Combinatorics.Young.YoungDiagram
 - ConfinementPhaseStratification: Ω(P) open, local μ constancy
 -/
