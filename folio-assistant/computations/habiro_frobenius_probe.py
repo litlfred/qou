@@ -64,16 +64,18 @@ def cyclotomic_pochhammer_numeric(u_val: complex, m: int) -> complex:
 
 
 def _parse_habiro_coeffs(coeffs: list[dict], u: sp.Symbol
-                         ) -> list[tuple[int, list[int]]]:
+                         ) -> list[tuple[int, list[int], sp.Expr]]:
     """Pre-sympify and integer-Poly-extract every Habiro coefficient
-    once. Returns a list of (m, integer_coefficient_list) pairs that
+    once. Returns a list of (m, int_coeffs, sympy_expr) triples that
     can be reused across all primes / Galois-orbit evaluations.
 
-    Empty `int_coeffs` signals a non-integer-polynomial coefficient
-    (which never happens in practice for Habiro expansions but is
-    handled by a fallback in `evaluate_at`).
+    `int_coeffs` is the Horner-friendly integer list when the
+    coefficient is a polynomial in u with integer coefficients
+    (the typical case). It is empty when the coefficient is non-
+    integer-polynomial; callers fall back to the cached `sympy_expr`
+    in that case (avoids re-sympifying inside the inner loop).
     """
-    parsed: list[tuple[int, list[int]]] = []
+    parsed: list[tuple[int, list[int], sp.Expr]] = []
     for c in coeffs:
         m = int(c["m"])
         a_m_str = str(c["a_m"])
@@ -83,7 +85,7 @@ def _parse_habiro_coeffs(coeffs: list[dict], u: sp.Symbol
             int_coeffs = [int(coef) for coef in poly.all_coeffs()]
         except (sp.PolynomialError, ValueError):
             int_coeffs = []  # signal fallback
-        parsed.append((m, int_coeffs))
+        parsed.append((m, int_coeffs, a_m_expr))
     return parsed
 
 
@@ -119,8 +121,8 @@ def evaluate_at_root(record_data: dict, p: int, *,
         all_parsed = _parse_habiro_coeffs(coeffs, u)
 
     # Truncate to m < 2*p for this prime.
-    a_m_int_lists: list[tuple[int, list[int]]] = [
-        (m, ic) for (m, ic) in all_parsed if m < 2 * p
+    a_m_int_lists: list[tuple[int, list[int], sp.Expr]] = [
+        (m, ic, expr) for (m, ic, expr) in all_parsed if m < 2 * p
     ]
 
     truncate_at: int | None = (
@@ -129,15 +131,15 @@ def evaluate_at_root(record_data: dict, p: int, *,
 
     def evaluate_at(u_val: complex) -> complex:
         total: complex = 0 + 0j
-        for m, int_coeffs in a_m_int_lists:
+        for m, int_coeffs, expr in a_m_int_lists:
             if int_coeffs:
                 a_m_val: complex = 0 + 0j
                 for k in int_coeffs:
                     a_m_val = a_m_val * u_val + k
             else:
-                a_m_val = complex(
-                    sp.N(sp.sympify(coeffs[m]["a_m"]).subs(u, u_val), digits)
-                )
+                # Fallback for non-integer-polynomial coefficients
+                # (rare; cached sympy expression already parsed).
+                a_m_val = complex(sp.N(expr.subs(u, u_val), digits))
             total += a_m_val * cyclotomic_pochhammer_numeric(u_val, m)
         return total
 
