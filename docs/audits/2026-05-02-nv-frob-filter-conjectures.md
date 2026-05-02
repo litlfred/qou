@@ -265,6 +265,79 @@ table; (b) (Bring-period rank) gains plausibility because the EM
 force-carriers already live on Bring genus-4, so a unified
 EW-on-Bring-surface picture is geometrically natural.
 
+### Bring-surface inventory (research finding, 2026-05-02)
+
+A parallel research investigation of the Bring genus-4 inventory
+(post-PR #500) returns a **definitive negative finding** on one
+candidate path: there are **no unidentified torus knots embeddable
+on Bring's surface** at genus ≤ 4 with the saturating-generator
+constraint of `prop:force-carrier-bring-uniqueness`.
+
+| Knot | $(p,q)$ | Genus | Crossings | Current assignment |
+|------|--------|------:|----------:|--------------------|
+| $T_{2,3}$ | trefoil | 1 | 3 | $e^-, u$; 1s shell |
+| $T_{2,5}$ | cinquefoil | 2 | 5 | $\mu, b$; 1d shell |
+| $T_{2,7}$ | — | 3 | 7 | $\tau, c$; 2s–2d |
+| $T_{3,4}$ | — | 3 | 8 | color binding (sub-shell) |
+| $T_{2,9}$ | — | **4** | 9 | strong/EM force; 2f–3p |
+| $T_{3,5}$ | — | **4** | 10 | EM force / *flavor change candidate* |
+
+**Genus-4 capacity bound** (`prop:torus-knot-genus-four-unique`):
+$(p-1)(q-1) = 8$ with $\gcd(p,q) = 1$ has exactly two primitive
+solutions, $(2,9)$ and $(3,5)$. **Both occupied** by the EM force-
+carrier sector. There is **no room** on Bring for additional
+genus-4 torus knots.
+
+**Implication for NV-1.** Three viable paths remain for $W^\pm, Z$:
+
+- **Path α — non-Bring genus-2 torus knots.**
+  [`knot-particle-generation.md`](../../content/quantum-observable-universe/braids-and-knots/knot-particle-generation.md)
+  tentatively lists $T(2,6) \to Z$, $T(2,8) \to H$ (Higgs) at
+  genus 2, on a **different algebraic curve**, not Bring. Authoring
+  effort: identify the host curve, give the analog of
+  `prop:force-carrier-bring-uniqueness` there.
+- **Path β — $T_{3,5}$ as unified weak/EM mediator.**
+  [`unmapped-torus-knots.md`](../../content/quantum-observable-universe/braids-and-knots/unmapped-torus-knots.md)
+  lines 104–111 already speculate that $T_{3,5}$ encodes flavor
+  change ($u\leftrightarrow d$ via $W^\pm$), since its $(p,q) =
+  (3,5)$ structure cross-links the quark-family count $3$ with
+  the second-generation lepton winding $5$. Authoring effort:
+  promote this remark to `prop:t35-flavor-change-mediator` with
+  a representation-theoretic decomposition of $T_{3,5}$ into
+  three weak generators ($W^+, W^-, Z$).
+- **Path γ — $W^\pm, Z$ as non-torus knots on Bring.** Like the
+  Higgs candidate $4_1$ (figure-eight) in
+  `topological-mass-trefoil.md`. Authoring effort: identify the
+  three non-torus knots and prove genus / homology compatibility
+  with Bring.
+
+**Strongest path (paper-internal evidence):** **β** — $T_{3,5}$
+double duty. The paper already has the speculation block
+(`unmapped-torus-knots.md`) plus the dictionary entry
+(`knot-particle-dictionary.md` lists $T_{3,5}$ as "weak force ($\beta$-decay)"
+on the same row as $10_{124}$). Closing path β requires deriving
+the SU(2) sub-decomposition of $T_{3,5}$'s representation —
+likely via Schur–Weyl on $V^{\otimes 5}$ ↔ Hecke $H_5(q)$.
+
+**Updated recommended action sequence:**
+
+1. **Author `prop:t35-as-weak-mediator`** — claim that $T_{3,5}$
+   carries the weak interaction; cite the cross-link argument
+   already in `unmapped-torus-knots.md`.
+2. **Author `prop:weak-spectral-completeness`** — the SU(2)
+   idempotent decomposition of $T_{3,5}$'s Wedderburn presentation,
+   analog of `thm:em-spectral-completeness`.
+3. **Build closed-form ansatz** for $N_v$ in
+   $\{q^k, [k]_q, \hbar_q^k\}$ using the 10 crossings of $T_{3,5}$
+   + Plancherel weights at level $n=10$ (= $T_{3,5}$ crossing
+   count).
+4. **PSLQ uniqueness** at 1000-dps over the $T_{3,5}$ basis.
+
+If the analog $1/\alpha$ form is the right shape, the prediction
+would be roughly $N_v \sim [10]_q \cdot [n]_q \cdot (\text{small
+correction})$ for some level $n$. PSLQ at high precision will
+either confirm or kill it.
+
 ---
 
 ## Part II — FROB-FILTER: the Frobenius-positivity filter
@@ -389,6 +462,76 @@ flags.**
 3. If they match, author `conj:frobenius-filter-categorical` as a
    P2-priority block. Author the "+1 from LP dual" remark in the
    same block (companion line 68 of the witness).
+
+### **Test result (2026-05-02): the conjecture lands at A=2.**
+
+Computation: evaluated the Wenzl-bridge $y_\lambda(q_0)$ values
+from
+[`y-lambda-wenzl-bridge-symbolic-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json)
+at $q_0$ to 25 dps; weighted by Plancherel $f_\lambda^2$; tabulated
+$(p_n, q_n)$ as a symmetric-bilinear-form signature.
+
+| $A$ | $n=3A$ | $p_n$ ($f^2$ on $y_\lambda > 0$) | $q_n$ ($f^2$ on $y_\lambda < 0$) | first neg? | dominance |
+|----|------:|-------:|-------:|---|---|
+| 1 | 3 | 6 | **0** | no | 100% pos |
+| 2 | 6 | 538 | **182** | **first appearance** | 75% pos / 25% neg |
+| 3 | 9 | 178902 | **183978** | (from A=2) | 49% pos / 51% neg — *balanced* |
+
+**At $n=6$** the negative directions first appear: 3 partitions
+have $y_\lambda(q_0) < 0$ — namely $(3,1,1,1)$ ($c=-3$, $y \approx
+-6.85\times 10^{-4}$), $(2,2,1,1)$ ($c=-5$, $y \approx -3.42\times 10^{-4}$),
+and $(1,1,1,1,1,1)$ ($c=-15$, $y \approx -1.24\times 10^{-5}$). At
+$n=9$ the signature is **nearly balanced** (10 of 30 partitions
+have $y_\lambda < 0$, totalling 51% by Plancherel weight).
+
+**Match against empirical FROB-FILTER activation:**
+
+- **A=1 (n→p, n=3)**: witness uses $\Sigma_{\rm all} + 1$ — *no
+  filtering*. **Signature confirms:** pure positive ($q_n = 0$),
+  so summing all 64 H₃ closed configs is unconditional.
+- **A=3 (³H→³He, n=9)**: witness uses $|\Sigma_{\rm all}|$ over
+  64 configs. **Signature shows:** *nearly balanced* (51%
+  negative). Cancellation is severe but the absolute value of the
+  full sum still gives the right Q-value (3.6% error, consistent
+  with the empirical witness).
+- **A=6 (⁶He→⁶Li, n=18)**: witness switches to $|\Sigma_{\rm FP}|$
+  over 2048 of 4096 *Frobenius-positive* configs. Signature for
+  $n=18$ not yet computed (witness only covers $n \leq 11$);
+  expected to show $q_n > p_n$ (negative dominance).
+
+**Refined conjecture (post-test):**
+
+> **`conj:frobenius-filter-categorical-refined`** — the FROB-FILTER
+> activation rule is: at $A_* \geq 2$, the Frobenius signature on
+> $H_{3A}(q_0)$ first acquires a negative direction; for
+> $A < A_*$, $\Sigma_{\rm all}$ is **unconditional** (positive
+> definite). For $A_* \leq A < A_{**}$, $\Sigma_{\rm all}$ remains
+> usable but with cancellation; for $A \geq A_{**}$, where
+> negative directions become dominant ($q_{3A} > p_{3A}$), the
+> $\Sigma_{\rm FP}$ filter is **required** for numerical stability
+> + categorical positivity. The threshold $A_{**}$ is determined
+> by the *signature crossover* — the smallest $A$ with $q_{3A} >
+> p_{3A}$.
+
+**Empirical fit:**
+
+- $A_* = 2$ (first negative appears at n=6) ✓
+- $A_{**}$ probably 4 or 5 (n=12 or n=15) — needs n=12, 15, 18
+  signature compute, blocked on extending Wenzl-bridge witness
+  beyond n=11. Would close this conjecture quantitatively.
+
+**Reduction to existing framework.** The conjecture is now a
+**corollary** of `prop:bw-coefficient-shadow-price` (which
+identifies BW coefficients with LP dual variables on the
+Frobenius positivity cone) + `prop:y-lambda-recipe-from-partition`
+(which gives $y_\lambda \in \mathbb{Z}[q^{\pm 1/2}]$ closed forms).
+**No new framework needed** — author the conjecture block citing
+both upstream props + the signature compute.
+
+**Action:** extend
+[`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py)
+to $n=12, 15, 18$ (estimated 1–4 hours each level via Schur
+principal-specialisation), then compute $A_{**}$.
 
 ---
 
