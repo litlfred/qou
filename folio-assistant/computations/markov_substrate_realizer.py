@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Markov substrate realizer — `Place → realize` map for the Habiro
 completion of the Markov trace.

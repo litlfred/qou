@@ -21,6 +21,9 @@ from pathlib import Path
 
 import sympy as sp
 
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: E402
+
 
 # --- Step 1: Partition data ------------------------------------------------
 
@@ -132,6 +135,7 @@ def y_lambda(lam):
         "y_in_t_factored_den": str(den_f),
         "y_in_q_num": str(num_q),
         "y_in_q_den": str(den_q),
+        "y_polynomial": expose_polynomial(y, q, simplify=False),
     }
 
 

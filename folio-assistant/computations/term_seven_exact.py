@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 A.1 — Exact Term-7 (shell-correction) probe with pyhecke Hoefsmit τ_λ.
 

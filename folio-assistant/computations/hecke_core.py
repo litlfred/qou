@@ -1,3 +1,4 @@
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Canonical Hecke algebra infrastructure for H₃(q).
 

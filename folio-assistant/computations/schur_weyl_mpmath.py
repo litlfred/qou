@@ -194,6 +194,10 @@ if __name__ == "__main__":
         "audit": "P2.2b-MN — direct mpmath Schur-Weyl path",
         "generated": datetime.now(timezone.utc).isoformat(),
         "q_0": str(Q0_FLOAT),
+        # P2.5 marker — pure mpmath numerical path (no symbolic q),
+        # so polynomial exposure does not apply. The sibling
+        # schur_weyl_optimised.py is the symbolic-q path.
+        "polynomial_q_not_applicable": True,
         "atoms": results,
         "interpretation": (
             "Bypasses sympy's symbolic GCD path entirely by computing "
