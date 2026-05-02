@@ -46,6 +46,7 @@ from hecke_symbolic import (
 from mass_at_3A_proper import atom_braid_word_3A
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV
+from witness_polynomial import expose_polynomial
 
 B_D_AME = 2.22456612
 TARGET_VOL = B_D_AME / M_E_MEV
@@ -157,6 +158,7 @@ def main() -> int:
             "basis": list(basis),
             "c_w_q0": coeff_val,
             "c_w_symbolic": str(sp.factor(coeff)),
+            "c_w_polynomial": expose_polynomial(coeff, q_sym),
             "V_hyp_float": v,
             "V_hyp_hp": vol_info.get("hp"),
             "is_hyperbolic": vol_info["is_hyperbolic"],
