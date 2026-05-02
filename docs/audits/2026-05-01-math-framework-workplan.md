@@ -398,7 +398,17 @@ but isn't wired into the live mass tower. So P2.2 splits:
   matrices and multiplies $\prod_i (c_i \sigma_{g_i} + d_i I)$:
   - proton trace: 0.823 vs neutron trace: 0.601 (27% diff)
   - ³He vs ³H: 51.6% relative splitting detected
-  Per-braid tower with q-Hecke validation against AME in flight.
+- **P2.2c-norm — Φ_q normalisation for q-Hecke per-braid.**
+  ✅ **landed (Option C)**: HYBRID = q-Hecke descended + q=1 MN tower
+  (`per_braid_tower_hybrid.py`). At A ≤ 4: cal/$m_e$ spread = 0.65%;
+  ³He/³H split = 0.53 MeV (matches AME).
+- **P2.2c-12C — Rust extension for q-Hecke at A=12+.** 🟡 **partial**:
+  pyhecke_native built (`maturin build --release` in
+  `tools/pyhecke-native/`); Rust kernel functions accessible but
+  accept only braid words `(sign, gen)`, not per-crossing
+  `(c, d)`. Closing this requires a new Rust function
+  `chi_q_atomic(shape, [(c, d, gen)], q)`. Survey memo:
+  [`2026-05-01-existing-compute-optimisations.md`](2026-05-01-existing-compute-optimisations.md).
 
 - **W**: §3·B of audit. Current code uses $H_3$ weights as an
   approximation.

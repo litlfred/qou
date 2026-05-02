@@ -490,13 +490,27 @@ prediction at level $A$ requires:
     to P2.2c-12C — needs sparse-matrix optimisation for q-Hecke
     matrix products at partition dim ~6500+.)
 
+14. ✅ **Existing compute optimisations surveyed + Rust kernel built**
+    ([2026-05-01-existing-compute-optimisations.md](2026-05-01-existing-compute-optimisations.md)).
+    The Rust `pyhecke_native` kernel was identified as the largest
+    unused asset; built via `maturin build --release`. Now
+    `chi_lambda_braid` runs in Rust at f64 (50–100× speedup) and
+    mpfr (arbitrary precision) — unlocks the Geck-Pfeiffer character
+    algorithm for high-A computations. **Limitation**: pyhecke_native
+    accepts only braid words `(sign, gen)`, not per-crossing
+    `(c, d)` Hecke elements; A=12+ q-Hecke compute requires a new
+    Rust extension `chi_q_atomic(shape, [(c, d, gen)], q)`
+    (P2.2c-12C).
+
 **Headline.** The framework now simultaneously: (a) predicts
 atomic mass to 0.65% across A=2..4 with the m_e-only calibration;
 (b) splits ³He vs ³H by 0.53 MeV (matches AME); (c) maintains
-strict τ-wall throughout. Items 1–5, 6, 9, 11, 12, 13 are ✅;
+strict τ-wall throughout. Items 1–5, 6, 9, 11, 12, 13, 14 are ✅;
 items 3, 4, 8, 10 are 🟡 partial; item 7 (word-shortcut) is the
-remaining ❌. The compute pipeline is now structurally aligned
-with the math framework AND empirically validated against AME.
+remaining ❌, and P2.2c-12C (q-Hecke at A=12+) is gated on a
+small Rust extension. The compute pipeline is now structurally
+aligned with the math framework AND empirically validated
+against AME.
 
 See [`2026-05-01-math-framework-workplan.md`](2026-05-01-math-framework-workplan.md)
 for the prioritized fix plan.

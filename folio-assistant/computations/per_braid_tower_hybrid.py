@@ -125,10 +125,24 @@ print(f"q_0 = {q0}")
 print(f"m_e = {M_E_MEV} MeV")
 print()
 
-ATOMS = [("D", 1, 1), ("3He", 2, 1), ("3H", 1, 2), ("4He", 2, 2)]
+ATOMS = [
+    ("D", 1, 1),
+    ("3He", 2, 1),
+    ("3H", 1, 2),
+    ("4He", 2, 2),
+    ("6Li", 3, 3),
+    ("7Li", 3, 4),
+    ("9Be", 4, 5),
+]
+# AME values for the new atoms
+AME_MASS_MEV.update({
+    "6Li":  5603.05182,
+    "7Li":  6535.36573,
+    "9Be":  8392.74912,
+})
 # 12C/16O/40Ca deferred — q-Hecke descended at A=12+ requires
-# matrix products through partition dims ~6500+; needs sparse
-# optimization (P2.2c-12C).
+# matrix products through partition dims ~6500+; needs Rust
+# extension chi_q_atomic (P2.2c-12C).
 
 print(f"  {'Atom':>5} {'A':>3} {'desc(q-Hecke)':>14} {'tower (q=1)':>12} {'total':>14} {'AME (MeV)':>12} {'cal/m_e':>12}")
 print("  " + "-" * 90)
