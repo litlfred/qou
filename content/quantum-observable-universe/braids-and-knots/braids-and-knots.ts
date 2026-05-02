@@ -148,6 +148,7 @@ export default chapter({
         "coulomb-charge",
         "skein-crossing-asymmetry-prop",
         "skein-crossing-asymmetry",
+        "skein-bar-antisymmetry",
       ],
     }),
 
