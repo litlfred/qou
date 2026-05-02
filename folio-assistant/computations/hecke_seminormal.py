@@ -182,15 +182,18 @@ def hecke_generator_action(partition, i, q):
             # Off-diagonal: ρ(σ_i)|T⟩ has a |T'⟩ component. In the
             # asymmetric (non-square-root) Hoefsmit presentation:
             #   d > 0:  β_d = 1            (T → T' direction)
-            #   d < 0:  β_d = (1 - α_{|d|})(α_{|d|} + q⁻¹)
+            #   d < 0:  β_d = (q − α_{|d|})(α_{|d|} + q⁻¹)
             #                              (T' → T direction)
-            # The product β_d · β_{-d} equals 1 − α_d² + α_d(q − q⁻¹),
-            # which is the constraint from ρ(σ_i)² = (q − q⁻¹)ρ(σ_i) + 1.
+            # Derivation: ρ(σ_i)² = (q − q⁻¹) ρ(σ_i) + 1 yields
+            # β_d · β_{−d} = 1 − α_d² + (q − q⁻¹) α_d
+            #              = (q − α_d)(α_d + q⁻¹).
+            # Setting β_d = 1 (forward direction) forces
+            # β_{−d} = (q − α_d)(α_d + q⁻¹).
             if d > 0:
                 mat[l, k] = 1
             else:
                 alpha_pos = (q - 1 / q) / (1 - q ** (2 * d))
-                mat[l, k] = (1 - alpha_pos) * (alpha_pos + 1 / q)
+                mat[l, k] = (q - alpha_pos) * (alpha_pos + 1 / q)
     return basis, mat
 
 
