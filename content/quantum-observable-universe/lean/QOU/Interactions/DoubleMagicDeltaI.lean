@@ -119,17 +119,34 @@ def lrCompatiblePairs : List (ℕ × ℕ) :=
 theorem allShellPairs_card : allShellPairs.length = 49 := by
   decide
 
-/-- **Theorem (compute speedup).** The LR-compatible band has only
-    13 pairs out of 49 — a 73% reduction. -/
+/-- **Theorem (compute speedup).** The LR-compatible band has 19
+    ordered pairs out of 49 — both orderings (iZ, iN) and (iN, iZ)
+    are included since the LR-fusion is non-commutative. -/
 -- Ref: [manuscript] conj:double-magic-delta-i-bound §compute-optimisations
-theorem lrCompatiblePairs_card : lrCompatiblePairs.length = 13 := by
+theorem lrCompatiblePairs_card : lrCompatiblePairs.length = 19 := by
   decide
 
-/-- **Compute speedup factor.** Replacing exhaustive 7×7 grid search
-    with the LR-compatible band reduces the work by a factor of
-    49/13 ≈ 3.77. -/
+/-- **Compute speedup factor (ordered pairs).** Replacing exhaustive
+    7×7 grid search with the LR-compatible band reduces the work
+    by a factor of 49/19 ≈ 2.58. -/
 -- Ref: [manuscript] conj:double-magic-delta-i-bound §compute-optimisations
-theorem speedup_factor :
+theorem speedup_factor_ordered :
+    (49 : ℚ) / 19 > (2 : ℚ) ∧ (49 : ℚ) / 19 < (3 : ℚ) := by
+  constructor <;> norm_num
+
+/-- **Restricted pairs** with iZ ≤ iN (physical convention: N ≥ Z
+    for stable nuclei). Count: 13. -/
+def lrCompatiblePairsOrdered : List (ℕ × ℕ) :=
+  lrCompatiblePairs.filter (fun ⟨iZ, iN⟩ => decide (iZ ≤ iN))
+
+theorem lrCompatiblePairsOrdered_card :
+    lrCompatiblePairsOrdered.length = 13 := by
+  decide
+
+/-- **Restricted-pair speedup** (assuming iZ ≤ iN convention):
+    49/13 ≈ 3.77 reduction factor. -/
+-- Ref: [manuscript] conj:double-magic-delta-i-bound
+theorem speedup_factor_restricted :
     (49 : ℚ) / 13 > (3 : ℚ) ∧ (49 : ℚ) / 13 < (4 : ℚ) := by
   constructor <;> norm_num
 

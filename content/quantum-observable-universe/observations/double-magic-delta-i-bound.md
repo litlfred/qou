@@ -106,15 +106,22 @@ space for double-magic LR-fusion verification:
 
 - **Without rule:** check all $7 \times 7 = 49$ index pairs
   $(i_Z, i_N)$.
-- **With rule:** check only $7 + 6 = 13$ pairs: 7 diagonal
-  $(i, i)$ and 6 adjacent $(i, i+1)$.
+- **With rule (ordered, both orderings):** $19$ pairs ($7$ diagonal
+  + $12$ off-diagonal). $61\%$ fewer.
+- **With rule + physical convention $i_Z \leq i_N$ (since $N \geq Z$
+  for stable nuclei):** $13$ pairs ($7$ diagonal + $6$ above).
+  $73\%$ fewer.
 
-The 73% reduction in pairs to verify is significant for the
+Either restriction is significant for the
 algebraic-primality verifier
 ([`sdp-primality-verifier-spec.md`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/sdp-primality-verifier-spec.md)):
-the LR-coefficient computation per pair scales as $O(p(n))^2$, so
-restricting to 13 pairs (vs 49) gives a 3.8× speedup at every
-strand count.
+the LR-coefficient computation per pair scales as $O(p(n))^2$.
+
+**Empirical speedup confirmed** on small-$n$ pairs via
+[`optimised_magic_verifier.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/optimised_magic_verifier.py)
+— actual measured speedup factor $\approx 16\times$ on the tractable
+subset (caveat: per-pair variance is large; e.g. $(2, 3)$ took
+$28\,\text{s}$ vs $(3, 2)$ in $0.02\,\text{s}$).
 
 Combined with the **Bring 6-knot basis** restriction (cuts
 partition enumeration from $p(n)$ to $\leq 6$ for shell-binding
