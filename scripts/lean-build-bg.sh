@@ -121,6 +121,18 @@ if [ ! -d "$LEAN_DIR" ]; then
     exit 0
 fi
 
+# If `lean`/`lake` are elan shims but no toolchain is actually installed,
+# every invocation will try to fetch from release.lean-lang.org. In
+# restricted-egress sandboxes (e.g. host_not_allowed) this fails on every
+# resume. Probe once and bail out cleanly instead of looping.
+elan_toolchain_dir="${ELAN_HOME:-$HOME/.elan}/toolchains"
+if [ ! -d "$elan_toolchain_dir" ] || [ -z "$(ls -A "$elan_toolchain_dir" 2>/dev/null)" ]; then
+    if ! curl -sfI --max-time 5 https://release.lean-lang.org > /dev/null 2>&1; then
+        write_status "unavailable" "No Lean toolchain installed and release.lean-lang.org unreachable (sandbox egress?)" "check" 0
+        exit 0
+    fi
+fi
+
 cd "$LEAN_DIR"
 
 # ── Step 0: local mathlib redirect (if configured) ──────────────

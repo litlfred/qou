@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T21:37:13.152516+00:00",
-  "commitSha": "7c78ca6642903c2149a6f0162c87dd481be8cf93",
+  "computedAt": "2026-05-01T15:58:27.941604+00:00",
+  "commitSha": "6296103b8d33cd0f6a3ba8e15aa91cc408df3608",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -29,6 +29,58 @@
       "expected": 0.17743692421543206,
       "passed": true,
       "tolerance": 1.7743692421543207e-10
+    },
+    {
+      "name": "chain_valid[alpha-k-h3-0.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[alpha-k-h3-0.derivation]",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "chain_valid[alpha-k-h3-1.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[alpha-k-h3-1.derivation]",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "chain_valid[alpha-k-h3-2.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[alpha-k-h3-2.derivation]",
+      "computed": 0.24932079597942414,
+      "expected": 0.24932079597942414,
+      "passed": true,
+      "tolerance": 2.493207959794241e-13
+    },
+    {
+      "name": "chain_valid[alpha-k-h3-3.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[alpha-k-h3-3.derivation]",
+      "computed": 0.5514434199198297,
+      "expected": 0.5514434199198297,
+      "passed": true,
+      "tolerance": 5.514434199198297e-13
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
@@ -427,6 +479,66 @@
           "computational": 1
         },
         "has_script_frontier": true
+      },
+      {
+        "chain": "alpha-k-h3-0.derivation.json",
+        "target": "α_0(q)  at H_3(R, q)",
+        "target_value": 1.0,
+        "computed_value": 1.0,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 4,
+          "derived": 3,
+          "computational": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "alpha-k-h3-1.derivation.json",
+        "target": "α_1(q)  at H_3(R, q)",
+        "target_value": 0.0,
+        "computed_value": 0.0,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 4,
+          "derived": 3,
+          "computational": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "alpha-k-h3-2.derivation.json",
+        "target": "α_2(q)  at H_3(R, q)",
+        "target_value": 0.24932079597942414,
+        "computed_value": 0.24932079597942414,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 4,
+          "derived": 3,
+          "computational": 1
+        },
+        "has_script_frontier": false
+      },
+      {
+        "chain": "alpha-k-h3-3.derivation.json",
+        "target": "α_3(q)  at H_3(R, q)",
+        "target_value": 0.5514434199198297,
+        "computed_value": 0.5514434199198297,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 4,
+          "derived": 3,
+          "computational": 1
+        },
+        "has_script_frontier": false
       },
       {
         "chain": "c-q-q0.derivation.json",
@@ -1527,12 +1639,14 @@
         "probe-gamma-gamma-h3-psd-scan.witness.json",
         "probe-gamma-gamma-lr-embed-h6.witness.json",
         "probe-per-nucleon-self-duality.witness.json",
+        "probe-phiq-uniform-k.witness.json",
         "probe-phiq-yekutieli-truncation.witness.json",
         "probe-proton-crossing-budget.witness.json",
         "probe-proton-mass-scale.witness.json",
         "probe-proton-with-wenzl-weights.witness.json",
         "probe-sdp-canonical-paper-formula.witness.json",
         "probe-term4-conventions.witness.json",
+        "probe-tritium-k-star.witness.json",
         "probe-wedderburn-weight-scheme.witness.json",
         "protium-deep-trace.witness.json",
         "proton-braid-sweep-gg.witness.json",

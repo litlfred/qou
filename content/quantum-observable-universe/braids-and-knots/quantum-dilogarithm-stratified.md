@@ -40,6 +40,12 @@ $$
 captures exactly the $\bigoplus_{j \leq k} Z^{(j)}(A)$-content of
 $\Phi_q(z_i)$.*
 
+*The truncation $\Phi_q^{[\leq k]}(z_i)$ is the $|q| > 1$ Faddeev
+form of the same partial product written in the $|q| < 1$ convention
+in ([q-Pochhammer partial product](#def:q-pochhammer-partial-product));
+the conventions agree under $q \mapsto q^{-1}$ and the explicit
+denominator polynomial $(x; q)_n$ is recorded there.*
+
 **Corollary (truncation = projection onto NF-support depth).**
 *For $T_w$ with NF support depth*
 $k_\star(T_w) = \max_{\lambda \in \mathrm{supp}(T_w)} \mathrm{depth}_{\mathrm{GB}}(\lambda)$,

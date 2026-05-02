@@ -7,5 +7,9 @@ export default definition({
     ref: "qou:QOU.BraidKnot.AlgebraicQuantumVolume",
     validation: "not_checked",
   },
-  uses: ["thm:wedderburn-mass-formula"],
+  uses: [
+    "thm:wedderburn-mass-formula",
+    "def:q-pochhammer-partial-product",
+    "conj:shared-denominator-cusp-holonomy",
+  ],
 });
