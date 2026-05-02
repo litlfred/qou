@@ -341,6 +341,31 @@ class PartitionHelpers : Prop where
     λ.contains μ → ∀ {c : Cell}, c ∈ skewCells λ μ →
     (λ.removeCorner row).contains μ
 
+/-- **Default `PartitionHelpers` instance**: the first field is
+    proved (`Partition.cells_card_eq_size_proved`); the other two
+    are class-supplied via `Fact` hypotheses. This makes
+    `PartitionHelpers` inferrable as soon as the per-claim facts
+    are in scope.
+
+    The `cells_card_eq_size` field is now a *theorem*, not a
+    conjecture — proved earlier in this file. The remaining two
+    fields are the genuine Mathlib gaps (corner-non-emptiness
+    requires lex-order on `Cell`, and the
+    `removeCorner_preserves_containment` field has a known
+    statement-level scope issue: it's only true when `row` is the
+    row of the witnessed cell `c`, but the field universally
+    quantifies). -/
+instance partitionHelpers_default
+    [hCorners : Fact (∀ (λ μ : Partition), λ.contains μ →
+        μ.size < λ.size → (skewCorners λ μ).Nonempty)]
+    [hRem : Fact (∀ (λ μ : Partition) (row : ℕ),
+        λ.contains μ → ∀ {c : Cell}, c ∈ skewCells λ μ →
+        (λ.removeCorner row).contains μ)] :
+    PartitionHelpers where
+  cells_card_eq_size := Partition.cells_card_eq_size_proved
+  skewCorners_nonempty := hCorners.out
+  removeCorner_preserves_containment := hRem.out
+
 /-- Partition's Young-diagram cells count equals its size. Backed
     by `PartitionHelpers`. -/
 theorem Partition.cells_card_eq_size [h : PartitionHelpers]
