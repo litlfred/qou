@@ -54,18 +54,45 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 - **E**: 1 day budgeted, sweep + triage done in 0.5 day. The
   follow-up recast pass (post-P0.2) is the remaining 0.5 day.
 
-### P0.2 — Land the `algebraic-quantum-volume` recast on `main`
+### P0.2 — Land the `algebraic-quantum-volume` recast on `main` — ✅ landed
 
 - **W**: §4·B of the audit. Until `prop:topological-mass-formula`
   reads in $\mathbb{Q}(q)$ via `algebraic-quantum-volume`, every
   proof citing it is on the wrong side of τ.
-- **D**: Cherry-pick / merge the recast already on
-  `claude/mass-units-bridge-followups` (commit `7588970f`) into
-  `main`. Update all callers.
+- **D**: ✅ The originally-cited cherry-pick source (commit
+  `7588970f` on `claude/mass-units-bridge-followups`) was not
+  present in fetched history — the followups branch's
+  `topological-mass-formula.md` is identical to the base.
+  Authored the recast directly:
+  - New sibling proposition
+    [`prop:topological-mass-formula-algebraic`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md)
+    (`.ts` + `.md` + `.lean` triple). States the mass identity in
+    $\mathbb{Q}(q)$:
+    $\mathfrak{m}_{\mathrm{alg}}(\beta) = \Phi_1(\beta) / \hbar_q^{2}$
+    with $\Phi_1(\beta) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(\beta))$.
+    The existing Archimedean version
+    [`prop:topological-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula.md)
+    becomes the $\tau_{\mathrm{arch}}$-specialisation of the
+    algebraic version; both stay in the manifest.
+  - The two real wall-violation proofs identified by P0.1
+    ([`local-substrate-q-proof.md`](../../content/quantum-observable-universe/observations/local-substrate-q-proof.md),
+    [`skein-mass-relation-proof.md`](../../content/quantum-observable-universe/observations/skein-mass-relation-proof.md))
+    now cite the algebraic version and route through
+    $\Phi_1(4_1) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(4_1))$,
+    with the Archimedean numerical value entering only as the
+    final $\tau_{\mathrm{arch}}$-specialised step.
+  - Re-running `wall_violations_sweep.py` confirms 5 → 3
+    `proof-input` hits, with the 3 remaining hits all being the
+    pre-existing false-positive cluster in
+    `atom-knot-mass-derivation-proof.md` (already correctly
+    framed as "Post-Archimedean naming, borrowed").
 - **B**: blocks P0.1 (cleanly).
-- **S**: `bun run validate` passes; no `prop:topological-mass-formula`
-  caller goes through Vol(K).
-- **E**: 1–2 hours (mostly cherry-pick + caller fixup).
+- **S**: ✅ `bun run validate` passes; no algebraic-side proof
+  cites `prop:topological-mass-formula` for a numerical
+  $\mathrm{Vol}(K)$ input; the algebraic-side proofs route through
+  the new sibling proposition.
+- **E**: 1–2 hours estimated → done in 1 hour (recast authored
+  directly; no cherry-pick needed).
 
 ### P0.3 — JSJ algebraic reformulation (audit gap 8a) — ✅ landed (main side)
 

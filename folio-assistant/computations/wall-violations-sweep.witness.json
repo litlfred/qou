@@ -2,13 +2,13 @@
   "computation": "wall-violations-sweep",
   "purpose": "P0.1 deliverable: list every `*-proof.md` block under content/quantum-observable-universe/ whose text matches Archimedean / hyperbolic-volume markers (Mostow, Gromov, Thurston, hyperbolic Vol(K), SnapPy, Kashaev, Murakami--Murakami, volume conjecture). Each match is heuristically triaged as proof-input (likely violation), tau-image (allowed), or context-only (allowed).",
   "narrative_block": "audit \u00a74\u00b7B + workplan P0.1",
-  "computedAt": "2026-05-02T01:34:05.958695+00:00",
+  "computedAt": "2026-05-02T01:41:28.426873+00:00",
   "n_proof_files_total": 149,
   "n_proof_files_flagged": 6,
   "totals": {
-    "proof_input": 5,
+    "proof_input": 3,
     "tau_image": 2,
-    "context_only": 17
+    "context_only": 25
   },
   "flagged_files": [
     {
@@ -137,46 +137,67 @@
     },
     {
       "path": "content/quantum-observable-universe/observations/local-substrate-q-proof.md",
-      "match_count": 5,
+      "match_count": 8,
       "triage_summary": {
-        "proof-input": 1,
+        "proof-input": 0,
         "tau-image": 0,
-        "context-only": 4
+        "context-only": 8
       },
       "matches": [
         {
           "marker": "Hyperbolic Vol(K)",
+          "match": "hyperbolic volume",
+          "context": "\u2026ecialisation under $\\tau_{\\mathrm{arch}}$, which equates $\\Phi_1(4_1)$ with the hyperbolic volume $\\mathrm{Vol}(4_1)$ at $q = q_0$ via the volume conjecture \\cite{kashaev1997, m\u2026",
+          "char_offset": 634,
+          "triage": "context-only"
+        },
+        {
+          "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
-          "context": "\u2026topological mass formula](#prop:topological-mass-formula)) gives $m_\\mu / m_e = \\mathrm{Vol}(4_1) / \\hbar_q^{2}$ with $\\hbar_q = 1 - q^{-1}$ (see the proof of [skein mass relati\u2026",
-          "char_offset": 112,
-          "triage": "proof-input"
+          "context": "\u2026$\\tau_{\\mathrm{arch}}$, which equates $\\Phi_1(4_1)$ with the hyperbolic volume $\\mathrm{Vol}(4_1)$ at $q = q_0$ via the volume conjecture \\cite{kashaev1997, murakami-murakami200\u2026",
+          "char_offset": 653,
+          "triage": "context-only"
         },
         {
           "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
           "context": "\u2026ion](#prf:knot-volumes-verification)), which computes $q \\approx 1.10998$ from $\\mathrm{Vol}(4_1) \\approx 2.02988321281931$ and $m_\\mu/m_e \\approx :val[m_mu_over_e]{precision=6}\u2026",
-          "char_offset": 675,
+          "char_offset": 1255,
           "triage": "context-only"
         },
         {
           "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
           "context": "\u20262 \\times 10^{-8}$ on $m_\\mu / m_e$ and the SnapPy error bound of $10^{-14}$ on $\\mathrm{Vol}(4_1)$; the dominant contribution is the finite decimal truncation of $q$. This value\u2026",
-          "char_offset": 1076,
+          "char_offset": 1656,
           "triage": "context-only"
         },
         {
           "marker": "SnapPy",
           "match": "SnapPy",
           "context": "\u2026  q \\approx 1.10998. $$  The numerical values are independently verified by the SnapPy witness ([knot volumes verification](#prf:knot-volumes-verification)), which co\u2026",
-          "char_offset": 556,
+          "char_offset": 1136,
           "triage": "context-only"
         },
         {
           "marker": "SnapPy",
           "match": "SnapPy",
           "context": "\u2026he CODATA relative uncertainty of $2.2 \\times 10^{-8}$ on $m_\\mu / m_e$ and the SnapPy error bound of $10^{-14}$ on $\\mathrm{Vol}(4_1)$; the dominant contribution is \u2026",
-          "char_offset": 1039,
+          "char_offset": 1619,
+          "triage": "context-only"
+        },
+        {
+          "marker": "Murakami-Murakami",
+          "match": "murakami-murakami",
+          "context": "\u2026e $\\mathrm{Vol}(4_1)$ at $q = q_0$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} as **\u03c4-side naming** (not as a derivation step). Substituting that $\\tau_{\u2026",
+          "char_offset": 730,
+          "triage": "context-only"
+        },
+        {
+          "marker": "Volume conjecture",
+          "match": "volume conjecture",
+          "context": "\u2026Phi_1(4_1)$ with the hyperbolic volume $\\mathrm{Vol}(4_1)$ at $q = q_0$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} as **\u03c4-side naming** (not as a deriva\u2026",
+          "char_offset": 693,
           "triage": "context-only"
         }
       ]
@@ -201,11 +222,11 @@
     },
     {
       "path": "content/quantum-observable-universe/observations/skein-mass-relation-proof.md",
-      "match_count": 5,
+      "match_count": 8,
       "triage_summary": {
-        "proof-input": 1,
+        "proof-input": 0,
         "tau-image": 0,
-        "context-only": 4
+        "context-only": 8
       },
       "matches": [
         {
@@ -218,29 +239,50 @@
         {
           "marker": "Hyperbolic Vol(K)",
           "match": "hyperbolic structure of volume",
-          "context": "\u2026embedding](#prop:cohomological-embedding)), whose complement carries a complete hyperbolic structure of volume $\\mathrm{Vol}(4_1) \\approx :val[Vol_4_1]{precision=6}$.  Applying the [topologi\u2026",
+          "context": "\u2026embedding](#prop:cohomological-embedding)), whose complement carries a complete hyperbolic structure of volume $\\mathrm{Vol}(4_1) \\approx :val[Vol_4_1]{precision=6}$.  Applying the **algebra\u2026",
           "char_offset": 356,
           "triage": "context-only"
         },
         {
           "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
-          "context": "\u2026mbedding)), whose complement carries a complete hyperbolic structure of volume $\\mathrm{Vol}(4_1) \\approx :val[Vol_4_1]{precision=6}$.  Applying the [topological mass theorem](#\u2026",
+          "context": "\u2026mbedding)), whose complement carries a complete hyperbolic structure of volume $\\mathrm{Vol}(4_1) \\approx :val[Vol_4_1]{precision=6}$.  Applying the **algebraic** topological ma\u2026",
           "char_offset": 388,
           "triage": "context-only"
         },
         {
           "marker": "Hyperbolic Vol(K)",
+          "match": "hyperbolic volume",
+          "context": "\u2026der $\\tau_{\\mathrm{arch}}$ the value $\\Phi_1(4_1)$ specialises to the numerical hyperbolic volume $\\mathrm{Vol}(4_1)$ via the volume conjecture \\cite{kashaev1997, murakami-murak\u2026",
+          "char_offset": 995,
+          "triage": "context-only"
+        },
+        {
+          "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
-          "context": "\u2026on--electron *ratio* eliminates the overall mass scale and gives $m_\\mu / m_e = \\mathrm{Vol}(4_1) / \\hbar_q^{2}$.  Substituting $\\hbar_q = 1 - q^{-1}$ and the CODATA value $m_\\m\u2026",
-          "char_offset": 596,
-          "triage": "proof-input"
+          "context": "\u2026arch}}$ the value $\\Phi_1(4_1)$ specialises to the numerical hyperbolic volume $\\mathrm{Vol}(4_1)$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} \u2014 **\u03c4-side\u2026",
+          "char_offset": 1014,
+          "triage": "context-only"
         },
         {
           "marker": "Hyperbolic Vol(K)",
           "match": "\\mathrm{Vol}(4_1)",
           "context": "\u2026 value $m_\\mu / m_e \\approx 206.7682827(46)$ yields  $$   \\hbar_q^{2}   = \\frac{\\mathrm{Vol}(4_1)}{m_\\mu / m_e}   = \\frac{:val[Vol_4_1]{precision=6}}{:val[m_mu_over_e]{precision\u2026",
-          "char_offset": 761,
+          "char_offset": 1299,
+          "triage": "context-only"
+        },
+        {
+          "marker": "Murakami-Murakami",
+          "match": "murakami-murakami",
+          "context": "\u2026erbolic volume $\\mathrm{Vol}(4_1)$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} \u2014 **\u03c4-side naming** of the algebraic value, not a derivation input. Substi\u2026",
+          "char_offset": 1078,
+          "triage": "context-only"
+        },
+        {
+          "marker": "Volume conjecture",
+          "match": "volume conjecture",
+          "context": "\u2026_1)$ specialises to the numerical hyperbolic volume $\\mathrm{Vol}(4_1)$ via the volume conjecture \\cite{kashaev1997, murakami-murakami2001} \u2014 **\u03c4-side naming** of the algebraic \u2026",
+          "char_offset": 1041,
           "triage": "context-only"
         }
       ]

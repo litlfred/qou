@@ -29,6 +29,8 @@ Output: [`folio-assistant/computations/wall-violations-sweep.witness.json`](../.
 
 ## Sweep result (149 proof files)
 
+Initial sweep (before P0.2 recast):
+
 | Triage label | Count |
 |--------------|------:|
 | `proof-input` (likely violation) | 5 |
@@ -36,7 +38,22 @@ Output: [`folio-assistant/computations/wall-violations-sweep.witness.json`](../.
 | `context-only` (allowed) | 17 |
 | **Files with at least one hit** | 6 / 149 |
 
-The 5 `proof-input` hits land in 3 files. Manual triage below.
+After P0.2 recast (the algebraic version of the mass formula
+[`prop:topological-mass-formula-algebraic`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md)
+landed and the two real-violation proofs now cite it):
+
+| Triage label | Count |
+|--------------|------:|
+| `proof-input` (false-positive only — see triage #1) | 3 |
+| `tau-image` (allowed) | 2 |
+| `context-only` (allowed) | 25 |
+| **Files with at least one hit** | 6 / 149 |
+
+The 3 remaining `proof-input` hits all land in
+[`atom-knot-mass-derivation-proof.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md)
+and are false positives (already correctly framed as
+"Post-Archimedean naming, borrowed, not part of derivation"); see
+triage #1 below for the explanation.
 
 ## Manual triage of `proof-input` hits
 
@@ -71,9 +88,9 @@ to recognise the "Post-Archimedean naming" / "borrowed, not part of
 derivation" header pattern; tracked as a follow-up enhancement
 rather than blocking on this audit.
 
-### 2. `local-substrate-q-proof.md` (1 hit) — 🔴 real wall violation
+### 2. `local-substrate-q-proof.md` (1 hit) — ✅ resolved by P0.2
 
-Context:
+Initial context (real wall violation):
 
 ```
 [topological mass formula](#prop:topological-mass-formula) gives
@@ -81,33 +98,34 @@ $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{2}$ with
 $\hbar_q = 1 - q^{-1}$ ...
 ```
 
-Uses **hyperbolic volume of the figure-eight knot**
-$\mathrm{Vol}(4_1) \approx 2.0299$ as a numerical input to derive
-the mass ratio $m_\mu / m_e$. This is the wall risk flagged in
-audit §4·B: the proof should use
-[`def:algebraic-quantum-volume`](../../content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md)'s
-$\mathrm{Vol}_q(4_1)$ instead, with the Archimedean value being a
-specialisation under $\tau_{\mathrm{arch}}$ rather than a
-derivation input.
+Used hyperbolic volume $\mathrm{Vol}(4_1) \approx 2.0299$ as a
+numerical derivation input — flagged as a wall violation per
+audit §4·B.
 
-**Fix path**: requires workplan **P0.2** (land
-algebraic-quantum-volume recast). Once `prop:topological-mass-formula`
-is restated to use $\mathrm{Vol}_q$, this proof becomes
-algebraic-side throughout with the $\tau_{\mathrm{arch}}$
-specialisation as the final numerical step.
+**Fix landed (commit on this branch)**: the proof now cites
+[`prop:topological-mass-formula-algebraic`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md)
+and routes through $\Phi_1(4_1) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(4_1))$
+with the Archimedean value entering only as the final
+$\tau_{\mathrm{arch}}$-specialised step. Resulting prose:
 
-### 3. `skein-mass-relation-proof.md` (1 hit) — 🔴 real wall violation
+> The **algebraic** topological mass formula gives the mass ratio
+> at the level of $\mathbb{Q}(q)$ as $m_\mu / m_e = \Phi_1(4_1) /
+> \hbar_q^{2}$, where $\Phi_1(4_1) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(4_1))$.
+> The Archimedean form of the same identity is the specialisation
+> under $\tau_{\mathrm{arch}}$ … as **τ-side naming** (not as a
+> derivation step).
 
-Context:
+Re-running the sweep confirms zero `proof-input` hits in this
+file post-fix.
 
-```
-the lepton--electron *ratio* eliminates the overall mass scale and
-gives $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{2}$.  Substituting
-$\hbar_q = 1 - q^{-1}$ and the CODATA value ...
-```
+### 3. `skein-mass-relation-proof.md` (1 hit) — ✅ resolved by P0.2
 
-Same pattern as #2: $\mathrm{Vol}(4_1)$ used as numerical
-derivation input. Same fix path (P0.2 recast).
+Same pattern as #2: the proof now routes through
+$\Phi_1(4_1) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(4_1))$ via
+[`prop:topological-mass-formula-algebraic`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md)
+with the Archimedean value entering only as the final
+$\tau_{\mathrm{arch}}$-specialised step. Re-running the sweep
+confirms zero `proof-input` hits in this file post-fix.
 
 ## `tau-image` hits (2 — allowed)
 
@@ -134,14 +152,28 @@ a derivation step. **No action required.**
 | 🟢 `tau-image` (allowed) | 2 | Explicit τ-side framing |
 | 🟢 `context-only` (allowed) | 17 | Motivational prose / citations |
 
-**Net audit result.** Of 149 proof blocks, **2 are real wall
-violations**, both blocked on workplan **P0.2** (algebraic-quantum-
-volume recast). Once P0.2 lands, the standard fix is to replace
-$\mathrm{Vol}(4_1)$ with $\mathrm{Vol}_q(4_1)$ in both proofs, with
-the Archimedean specialisation appearing only as the final
-numerical step. The remaining 22 hits across 4 other files are
-either correctly framed (post-Archimedean naming, τ-image, or
-context-only).
+**Net audit result.** Of 149 proof blocks, **2 real wall
+violations** were identified, both **resolved by the P0.2 recast
+on this branch**:
+[`prop:topological-mass-formula-algebraic`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.md)
+states the mass identity in $\mathbb{Q}(q)$ via
+$\Phi_1 = \tau_{\mathrm{arch}}(\mathrm{Vol}_q)$, with the
+Archimedean form recovered as a $\tau_{\mathrm{arch}}$-
+specialisation; the two affected proofs now cite the algebraic
+version with τ-side naming as the final numerical step. The
+post-fix sweep records:
+
+- 5 → **3 `proof-input` hits**, all in
+  [`atom-knot-mass-derivation-proof.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation-proof.md)
+  (the false-positive cluster — see triage #1; **no action
+  required**).
+- 17 → 25 `context-only` hits (the recast adds explanatory prose
+  that mentions Archimedean / volume language; all in
+  context-only triage).
+- 2 `tau-image` hits unchanged.
+
+🟢 **All real wall violations cleared.** P0.1 + P0.2 closure is
+complete on this branch.
 
 ## Reproducibility
 

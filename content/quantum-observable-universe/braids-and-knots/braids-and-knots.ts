@@ -451,6 +451,7 @@ export default chapter({
         "vhat-pair-commutation-trace",
         "tower-pair-equality-fixed-level",
         "jet-tower-uniform-delta-max",
+        "topological-mass-formula-algebraic",
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
         "full-pole-structure-mass-trace",
