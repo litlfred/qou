@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T20:01:04.190032+00:00",
-  "commitSha": "713e990ef9f13307b3702a9f9e634ea190dfff5a",
+  "computedAt": "2026-05-02T20:44:15.525695+00:00",
+  "commitSha": "5a792c99f0f96008fc14682b8776c47dde66949c",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1699,6 +1699,7 @@
         "shell-closure.witness.json",
         "shell-correction-lambda.witness.json",
         "shell-level-qvalues.witness.json",
+        "sigma-all-symbolic-decay.witness.json",
         "sigma-shell-characterization.witness.json",
         "six-term-mass-pred.witness.json",
         "snappy-cusp-seeding.witness.json",
