@@ -71,6 +71,56 @@ from q_parameter import Q as Q0_FLOAT  # noqa: E402
 
 # ─── Bottleneck #1: parallel per-partition Markov trace ──────────────
 
+_CACHE_DIR = HERE / ".hoefsmit_cache"
+
+
+def _hoefsmit_disk_cached(lam: tuple, n_strands: int) -> tuple:
+    """Disk-cached Hoefsmit-matrix loader for a single partition λ.
+
+    Stores per-(n, λ) matrices on disk under .hoefsmit_cache/. Each
+    cache file is `<n>_<lam-tuple>.pkl` storing
+    `(matrix_strs, dim, content_lookup)` where matrix_strs is a list
+    of nested str-of-Expr lists (sympy Matrix is reconstructed on
+    load). Storing as strings avoids the sympy-Symbol-identity
+    pickling issue (each unpickled Symbol is fresh; we re-bind).
+
+    First call per (n, λ) builds + writes cache; subsequent calls
+    load + reconstruct in O(matrix-size) time.
+    """
+    import pickle
+    import sympy as sp
+    from hecke_character_symbolic import hoefsmit_matrices_symbolic
+    _CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    key = "_".join(str(p) for p in lam)
+    fp = _CACHE_DIR / f"n{n_strands}_lam{key}.pkl"
+    q_local = sp.Symbol("q", positive=True, real=True)
+    if fp.exists():
+        with fp.open("rb") as fh:
+            data = pickle.load(fh)
+        # Reconstruct matrices from str list with the local q symbol.
+        mats: list = []
+        for mat_rows in data["matrix_strs"]:
+            rows = [
+                [sp.sympify(s, locals={"q": q_local}) for s in row]
+                for row in mat_rows
+            ]
+            mats.append(sp.Matrix(rows))
+        return mats, data["dim"], data.get("content_lookup")
+    # Cache miss — build, then write.
+    matrices, dim, content_lookup = hoefsmit_matrices_symbolic(lam, q_local)
+    matrix_strs = [
+        [[str(matrices[k][i, j]) for j in range(dim)] for i in range(dim)]
+        for k in range(len(matrices))
+    ]
+    with fp.open("wb") as fh:
+        pickle.dump({
+            "matrix_strs": matrix_strs,
+            "dim": dim,
+            "content_lookup": content_lookup,
+        }, fh)
+    return matrices, dim, content_lookup
+
+
 def _trace_per_partition(args: tuple) -> tuple[tuple, str]:
     """Worker: compute w_λ(q) · χ^λ_q(T_w) for one partition λ.
 
@@ -78,19 +128,23 @@ def _trace_per_partition(args: tuple) -> tuple[tuple, str]:
     across process boundaries on all platforms, so we serialise to
     str and parse back in the main process. Cost of (de)serialisation
     is negligible compared to the per-partition matrix multiplication.
+
+    Uses `_hoefsmit_disk_cached` for the Hoefsmit matrix build. First
+    run at a given (n, λ) writes a cache file; subsequent runs at the
+    same (n, λ) — including different atoms at the same n, e.g.
+    T / ³He at n=9 — load directly from disk.
     """
     lam, Z, N, include_inter = args
     # Re-import inside worker (Linux fork inherits, but be explicit
     # for multiprocessing-spawn on macOS / Windows).
     import sympy as sp
-    from hecke_character_symbolic import (
-        atomic_braid_to_crossings, hoefsmit_matrices_symbolic,
-    )
+    from hecke_character_symbolic import atomic_braid_to_crossings
     from schur_weyl_symbolic import schur_weyl_weight
 
     q = sp.Symbol("q", positive=True, real=True)
+    n_strands = 3 * (Z + N)
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
-    matrices, dim, _ = hoefsmit_matrices_symbolic(lam, q)
+    matrices, dim, _ = _hoefsmit_disk_cached(lam, n_strands)
     if dim == 0:
         return (lam, "0")
     w = schur_weyl_weight(lam, q)
