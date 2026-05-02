@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T22:17:14.474839+00:00",
-  "commitSha": "12fd2b1a0558e74e1d65be8ba3e5ddf834f72b09",
+  "computedAt": "2026-05-02T23:26:47.602810+00:00",
+  "commitSha": "1e2121f38819bbdaf0400bf3aa51a18d5b8f567b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1681,6 +1681,7 @@
         "residual-closed-form-search.witness.json",
         "residual-partition-sum.witness.json",
         "residual-probe-pn.witness.json",
+        "rho-3he-wedderburn-experiment.witness.json",
         "rho-f-complexity-sweep.witness.json",
         "rho-f-derived-vs-observed.witness.json",
         "rho-z-n-scan.witness.json",
