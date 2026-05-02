@@ -333,6 +333,10 @@ export default chapter({
         "baryon-integration-limit",
         "mobius-golden-fixed-points",
         "golden-skew-dual-node",
+        "bar-self-dual-confinement-band",
+        "bar-t-duality-substrate",
+        "bar-apply-transfer",
+        "golden-quartet-galois",
         "mobius-limit-from-thimble",
         // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
         "sw-period-thimble-equivalence",
