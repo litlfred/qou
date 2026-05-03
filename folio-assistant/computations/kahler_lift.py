@@ -40,6 +40,15 @@ from functools import lru_cache
 
 import sympy as sp
 
+# `kahler_lift_analytic` calls `sp.diff(V_i, q, 2)` on the symbolic
+# per-generator volumes V_i(q).  For atoms with A ≥ 3 these are deeply
+# nested rational expressions; sympy's recursive differentiation can
+# overrun Python's default recursion limit (1000), raising
+# `RecursionError` and breaking `binding_full_pipeline`.  Bump the
+# limit before any sp.diff call lands.  10000 covers ⁴He empirically;
+# the cost is just stack address space, not compute.
+sys.setrecursionlimit(max(sys.getrecursionlimit(), 10000))
+
 # P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
 import sys as _p25_sys
 from pathlib import Path as _P25Path
@@ -204,6 +213,13 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
         V0_val_polynomial_q = expose_polynomial(V_i, q)
         results["V0"].append(V0_val)
         if order >= 1:
+            # The module-level `sys.setrecursionlimit(10000)` keeps
+            # this `sp.diff` from overflowing on A ≥ 3 atoms.  We
+            # deliberately do NOT pre-cancel the rational form: on
+            # ³He with 8 generators × order-2 derivative, `cancel`
+            # before diff inflates wall time from ~5 s to >4 min
+            # (the unflattened expression diff is faster than the
+            # flattened-then-diff sequence).
             dV_dq = sp.diff(V_i, q)
             qdV = q * dV_dq
             V1_add = hbar_sym * qdV
@@ -212,7 +228,6 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
             results["V1"].append(V1_val)
         if order >= 2:
             d2V_dq2 = sp.diff(V_i, q, 2)
-            # q² d²V/dq² + q dV/dq
             second = q * q * d2V_dq2 + q * sp.diff(V_i, q)
             V2_add = (hbar_sym ** 2 / 2) * second
             V2_val = float((V_i + V1_add + V2_add).subs(q, Q0))

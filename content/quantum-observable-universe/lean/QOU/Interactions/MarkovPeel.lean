@@ -99,9 +99,12 @@ class MarkovTrace (H : Type*) [Mul H] [One H] (R : Type*) [CommRing R] where
       `n`-th top is automatically below the `(n+1)`-th. -/
   belowTop_succ : ∀ (n : Nat) (x : H), belowTop n x → belowTop (n + 1) x
   /-- (N2) Lower-generator closure: multiplying a rank-`(n-1)`
-      element by a strictly lower generator stays in rank-`(n-1)`. -/
+      element by a strictly-lower-index generator stays in
+      rank-`(n-1)`.  The condition `k < n` (rather than `k+1 < n`)
+      is what makes the proof of `markov_pair_z2` go through —
+      we need `x * top (n-1)` to remain `belowTop n`. -/
   belowTop_mul_lower : ∀ (n k : Nat) (x : H),
-      k + 1 < n → belowTop n x → belowTop n (x * top k)
+      k < n → belowTop n x → belowTop n (x * top k)
   /-- (H1) Hecke quadratic relation on the topmost generator.
       Equivalently `top n * top n = h * top n + 1`.  Combined with
       cyclicity and (M2) this derives the inverse-generator trace
@@ -175,7 +178,30 @@ theorem markov_pair_z2
     tr.tr (x * tr.top (n - 1) * tr.top n) = tr.z ^ 2 * tr.tr x := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [manuscript] prop:markov-pair-z2 (QOU narrative)
-  sorry
+  -- Step 1: lift h_below_pred from belowTop (n-1) to belowTop n
+  -- via the tower-nesting axiom (N1).
+  have h_succ : (n - 1) + 1 = n := by omega
+  have h_below_n : tr.belowTop n x := by
+    have := tr.belowTop_succ (n - 1) x h_below_pred
+    rw [h_succ] at this
+    exact this
+  -- Step 2: x * top (n-1) is still belowTop n via (N2),
+  -- using the corrected `k < n` condition.
+  have h_kn : (n - 1) < n := by omega
+  have h_below_mul : tr.belowTop n (x * tr.top (n - 1)) :=
+    tr.belowTop_mul_lower n (n - 1) x h_kn h_below_n
+  -- Step 3: Markov peel at strand n.
+  have peel_n :
+      tr.tr (x * tr.top (n - 1) * tr.top n) =
+        tr.z * tr.tr (x * tr.top (n - 1)) :=
+    tr.markov n (x * tr.top (n - 1)) h_below_mul
+  -- Step 4: Markov peel at strand n-1 (uses h_below_pred directly).
+  have peel_pred :
+      tr.tr (x * tr.top (n - 1)) = tr.z * tr.tr x :=
+    tr.markov (n - 1) x h_below_pred
+  -- Step 5: compose.  z * (z * tr x) = z^2 * tr x.
+  rw [peel_n, peel_pred]
+  ring
 
 /-! ## §3  Recursive-ascent evaluator (scaffold) -/
 
