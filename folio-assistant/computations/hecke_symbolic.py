@@ -167,12 +167,19 @@ class SymbolicHeckeDivision:
 
     # ── Quotient ideal: formal atom variables ────────────────────
 
-    def register_quotient(self, atom_id, nf_element, name=""):
+    def register_quotient(self, atom_id, nf_element, name="",
+                            n_strands=None, tr_M_value=None):
         """Register a normal form as a quotient relation (whole-atom).
 
         atom_id: negative integer (e.g. -1 for ℵ₁)
         nf_element: SymbolicHeckeElement whose terms define the NF
         name: human-readable name
+        n_strands: (optional) algebra level where the NF lives (H_n).
+            Required by `fold()` for multi-term sub-word matching to
+            translate the NF's generator indices into a larger algebra.
+        tr_M_value: (optional) precomputed Markov trace tr_M(NF) as a
+            sympy expression in z, h. Used by `markov_trace_through_atoms()`
+            to short-circuit recursion on already-reduced sub-atoms.
 
         When ALL terms of the NF appear proportionally in an element,
         they are collapsed to the single formal variable ℵ_k.
@@ -191,6 +198,8 @@ class SymbolicHeckeDivision:
             'nf_words': set(nf_element.terms.keys()),
             'n_components': len(nf_element.terms),
             'trace': nf_trace,  # Markov trace of the NF
+            'n_strands': n_strands,    # algebra level of the NF (optional)
+            'tr_M_value': tr_M_value,  # precomputed tr_M(NF) (optional)
         }
 
     def _try_whole_atom_quotient(self, elem):
@@ -292,6 +301,112 @@ class SymbolicHeckeDivision:
                         return SymbolicHeckeElement(new_terms), True
 
         return elem, False
+
+    # ── Fold / unfold API ─────────────────────────────────────────
+    #
+    # Conceptual pattern: callers register registered atom NFs via
+    # `register_quotient(...)`, then `fold` an element to compress
+    # registered sub-patterns into formal-variable tokens (ℵ_k),
+    # work with the smaller representation through reduce / markov-
+    # trace, and `unfold` if they need the full Hecke-element form
+    # back (e.g., for Markov-trace recursion that doesn't have
+    # tr_M(ℵ_k) cached).
+    #
+    # Status:
+    #   - Single-term NFs: fold via `_try_subword_quotient` works.
+    #   - Multi-term NFs: matching is non-trivial because
+    #     non-commutativity of H_n means the multi-term sub-pattern
+    #     can be scrambled by Hecke / far-comm / Yang-Baxter rules.
+    #     A correct implementation needs to either (a) match BEFORE
+    #     reduction touches the sub-atom, or (b) re-canonicalize
+    #     during matching. Both add substantial complexity. Marked
+    #     here as a documented extension point.
+
+    def fold(self, elem, atom_ids=None):
+        """Compress registered sub-pattern NFs into formal variables.
+
+        Currently supports single-term NFs only (delegates to
+        `_try_subword_quotient`). Multi-term NFs raise
+        `NotImplementedError` — see class docstring for the design
+        constraints.
+
+        atom_ids: optional iterable of registered atom_ids to fold;
+        None means "fold any registered atom whose NF is single-term".
+
+        Returns the (possibly modified) element.
+        """
+        if not self._quotient_relations:
+            return elem
+        # Filter to single-term NFs only.
+        for aid in (atom_ids or self._quotient_relations.keys()):
+            info = self._quotient_relations.get(aid)
+            if info is None:
+                continue
+            n_terms = sum(1 for c in info['nf_terms'].values() if c != 0)
+            if n_terms > 1:
+                raise NotImplementedError(
+                    f"fold: multi-term NF for atom {aid} "
+                    f"({info.get('name')}) not yet implemented. "
+                    f"Multi-term sub-word matching is non-trivial under "
+                    f"Hecke non-commutativity; deferred to follow-up "
+                    f"PR (fold/unfold API design)."
+                )
+        # Single-term NFs: iterate sub-word quotient until fixed point.
+        changed = True
+        while changed:
+            elem, changed = self._try_subword_quotient(elem)
+        return elem
+
+    def unfold(self, elem):
+        """Expand formal-variable tokens back to their NFs.
+
+        For each `(atom_id,)` token in elem.terms, replace it with
+        the registered NF (a SymbolicHeckeElement).  Multi-term NFs
+        require a tensor-product expansion across the formal variable
+        and the surrounding word — the conservative implementation
+        below handles the common case where the formal-variable
+        token is a single-element word (i.e., elem.terms has keys
+        like `(atom_id,)` with no surrounding generators).
+
+        Mixed words (e.g., `(σ_5, atom_id, σ_7)`) raise
+        `NotImplementedError` in the multi-term case because the
+        surrounding generators may not commute with the sub-atom's
+        NF in the Hecke algebra.
+        """
+        if not self._quotient_relations:
+            return elem
+        new_terms: dict = {}
+        for word, coeff in elem.terms.items():
+            atom_positions = [(i, w) for i, w in enumerate(word) if w < 0]
+            if not atom_positions:
+                new_terms[word] = (
+                    new_terms.get(word, sp.Integer(0)) + coeff
+                )
+                continue
+            # Word contains at least one formal token.
+            if len(atom_positions) == 1 and len(word) == 1:
+                # Pure formal-token word: expand via the NF.
+                aid = word[0]
+                info = self._quotient_relations.get(aid)
+                if info is None:
+                    new_terms[word] = (
+                        new_terms.get(word, sp.Integer(0)) + coeff
+                    )
+                    continue
+                for nf_word, nf_coeff in info['nf_terms'].items():
+                    new_terms[nf_word] = (
+                        new_terms.get(nf_word, sp.Integer(0))
+                        + sp.expand(coeff * nf_coeff)
+                    )
+                continue
+            # Mixed word with surrounding generators — multi-term
+            # tensor-expansion needed; see fold/unfold design.
+            raise NotImplementedError(
+                f"unfold: mixed word {word} with formal token + "
+                f"surrounding generators — tensor-product expansion "
+                f"not yet implemented. Deferred to follow-up PR."
+            )
+        return SymbolicHeckeElement(new_terms)
 
     def collapse_formal_powers(self, elem):
         """Collapse consecutive runs of the same formal variable.
