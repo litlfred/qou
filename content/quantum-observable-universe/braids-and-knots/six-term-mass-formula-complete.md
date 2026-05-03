@@ -129,14 +129,24 @@ non-invariance as Term 2.*
 
 ### Term 5: chirality factor $a_K \cdot \mathcal{C}_K$
 
-*Status: **DERIVED** via per-crossing symmetric-channel duality
-([chirality dual-space derivation](#prop:chirality-dual-space-derivation)).*
+*Status: **TRACE (Markov pairing on $\beta \cdot \beta^{*\,-1}$)**.*
 
-- *Source: [chirality dual-space derivation](#prop:chirality-dual-space-derivation)
+- *Production form: $a_K \cdot \mathcal{C}_K = \mathrm{tr}_M(\beta
+  \cdot \beta^{*\,-1})$ is a Markov pairing of the braid $\beta$
+  with its mirror inverse.  This factors through the Markov trace
+  directly, satisfying the trace-invariance directive.*
+- *Closed-form ([chirality dual-space derivation](#prop:chirality-dual-space-derivation)):
   derives $a_K = \prod_{pn}(1 + \mathrm{sign}\cdot h)$ from the
   Wedderburn-symmetric-channel deviation
   $\tau_{\mathrm{sym}}(\sigma) - \tau_{\mathrm{sym}}(\sigma^{-1}) = h$.
-  Reproduces paper's $\{1+h, 1-h^2, (1-h^2)^2\}$ exactly.*
+  Reproduces paper's $\{1+h, 1-h^2, (1-h^2)^2\}$ exactly on standard
+  test braids.*
+- *Audit (PR #526, `term5_aK_audit.py`): the closed-form vs the
+  Gram-matrix definition $\mathrm{tr}_M(\beta \cdot \beta^{*\,-1})$
+  agree to within $2.2\%$ on the proton.  The discrepancy is being
+  reconciled across four candidate $\beta^*$ conventions (V1
+  reverse+invert; V2 invert each, keep order = mirror knot $K^*$;
+  V3 reverse only; V4 V2 with explicit averaged-crossing notation).*
 - *Earlier blocks (now superseded):*
   - *[figure-eight BW coefficients](#prop:figure-eight-bw-coefficients)
     derived the amphichiral $a_{4_1} = 1 - h^2$ via Fricke identity.*
@@ -186,9 +196,14 @@ conjecture (earlier framing) is now **superseded**.*
 
 **Trace-invariance directive (2026-05-03).**
 Every term in the formula must be a Markov-invariant trace.  Terms 1,
-4, 5, 6 satisfy this directly.  Terms 2 and 3 satisfy it only in the
-R-side algebraic form (each $\mathrm{Vol}_q^{(S)}$ is a Markov trace
-over the chain supported on $S$); the archimedean Kashaev specialisation
+4, 6 satisfy this directly.  Term 5 also satisfies this in production
+form: $a_K \cdot \mathcal{C}_K = \mathrm{tr}_M(\beta \cdot \beta^{*\,-1})$
+is a Markov pairing of $\beta$ with its mirror inverse (this matches
+the closed-form $a_K = \prod_{pn}(1+\mathrm{sign}\cdot h)$ in
+production within $2.2\%$ on the proton; see PR #526
+`term5_aK_audit.py`).  Terms 2 and 3 satisfy it only in the R-side
+algebraic form (each $\mathrm{Vol}_q^{(S)}$ is a Markov trace over
+the chain supported on $S$); the archimedean Kashaev specialisation
 $\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q(|\hat V_i^{\mathrm{full}}|)$
 breaks Markov-invariance because $|\hat V_i|$ is per-generator (basis-
 dependent).  Numerical evaluation at $q_0$ amplifies this by $\sim 10^5$
@@ -196,16 +211,29 @@ via $\Phi_q$'s divergence near $1$, producing
 $\mathfrak{m}(\mathrm{T}) - \mathfrak{m}({}^3\mathrm{He}) \approx -737$
 MeV against CODATA $+0.019$ MeV.
 
-**Open derivation question.**  Either
-([a](#prop:mass-endomorphism-tower)) the archimedean form needs a
-regulator/symmetrisation that restores trace-invariance (e.g.
-Frobenius-antipode-symmetrised volumes
-$\hat V_i \to \tfrac{1}{2}(\hat V_i + S(\hat V_i))$), or
-(b) Terms 2/3 should be expressed directly in the R-side trace form
-$\sum_{S} z^{|S|} \mathrm{Vol}_q^{(S)}(\beta)$ without the
-$\Phi_q$ specialisation.  See
-`brane-tower-isospin-diagnosis.witness.json` (PR #524) and the
-T5/T6 trace audit in PR #526 for ongoing work.
+**T2/T3 reformulation as traces.**  $\Phi_q(z) = \prod_{k\geq 1}
+(1-q^{-k}z)^{-1}$ admits two trace expansions that restore Markov-
+invariance:
+
+1. *Plancherel-weighted infinite series.*  Expand
+   $\Phi_q(z) = \sum_{n\geq 0} z^n / (q; q)_n$ (the $q$-Pochhammer
+   denominator).  Substituting $z = |\hat V_i|$ and recognising
+   $|\hat V_i|^n$ as the $n$-th power evaluation of the per-generator
+   Wedderburn channels gives an expansion as a Plancherel-weighted
+   sum of $\mathrm{tr}_M(\sigma_i^n)$ — each term a trace.
+
+2. *Kähler-differential derivative.*  The expansion flow
+   $\ln_q(1+t)/t$ in `prop:mass-endomorphism-tower`'s proof
+   identifies $\Phi_q$ with $\partial/\partial q$ applied to a base
+   Markov trace; the Kähler lift of the per-generator volume is
+   itself a Markov trace.  See `kahler_lift.py` (PR #526's recursion
+   fix).
+
+Both expansions express T2/T3 as Markov traces — ongoing work on PR
+#526.  The current `paper_six_term_isotope_sweep.py` evaluates the
+literal $\Phi_q(|\hat V_i|)$ form, which is the **closed numerical
+limit** of the Plancherel series but NOT term-by-term Markov-
+invariant; that's the source of the isospin pathology at $q_0$.
 
 **Master conclusion (revised).**
 *Terms 1, 4, 5, 6 are derived as Markov-invariant traces.  Terms 2
