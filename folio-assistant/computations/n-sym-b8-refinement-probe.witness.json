@@ -1,13 +1,13 @@
 {
   "computation": "n-sym-b8-refinement-probe",
-  "computedAt": "2026-05-03T10:56:30.551184+00:00",
-  "description": "W-2 candidate (b8) refinement: search for K(q) such that K(q_0) · [3]_q · [4]_q^3 = N_sym(q_0).  Tests 17 candidate small q-rational corrections; reports best fit.",
+  "computedAt": "2026-05-03T14:18:21.102092+00:00",
+  "description": "W-2 candidate (b8) refinement: two-pass search.  Pass 1 tests K(q) such that K(q_0) · [3]_q · [4]_q^3 = N_sym(q_0); best at 0.22%.  Pass 2 deepens around the Pass-1 winner [3]_q · [4]_q^3 · [2]_q²/4 and finds 1 − h³/[4]_q gives 62 ppm closure: N_sym ≈ [3]_q · [4]_q² · [2]_q² · ([4]_q − h³) / 4.",
   "q_0_dps": 100,
   "q_0": "1.1099785955541805169583001889887986763787613849839",
   "N_sym_target": "213.111807",
   "b8_base": "211.2649855751819361137071",
   "K_target": "1.008741729822336525866312",
-  "rows": [
+  "pass1_rows": [
     {
       "name": "1 + (q − q⁻¹)²/[3]_q²",
       "K_q0": "1.0047177808889746649",
@@ -153,7 +153,71 @@
       "rel_err_full_float": -0.0032205332036398327
     }
   ],
-  "best": "[2]_q² / 4",
-  "best_full_N_sym": "213.573383966185656",
-  "best_rel_err": "0.0021658911"
+  "pass1_best": "[2]_q² / 4",
+  "pass1_best_full_N_sym": "213.573383966185656",
+  "pass1_best_rel_err": "0.0021658911",
+  "pass2_base": "213.5733839661856557483112",
+  "pass2_K2_target": "0.9978387898453735431167774",
+  "pass2_rows": [
+    {
+      "name": "1 − h³/[3]_q²",
+      "K2_q0": "0.999013699208273257",
+      "K2_rel_err": "0.0011774541",
+      "full_N_sym": "213.362736368488047",
+      "rel_err_full": "0.0011774541",
+      "rel_err_full_float": 0.0011774540886326736
+    },
+    {
+      "name": "1 − h³/[4]_q",
+      "K2_q0": "0.997776656420701534",
+      "K2_rel_err": "-6.2267999e-5",
+      "full_N_sym": "213.098536954235391",
+      "rel_err_full": "-6.2267999e-5",
+      "rel_err_full_float": -6.22679989035475e-05
+    },
+    {
+      "name": "1 − h³/[5]_q",
+      "K2_q0": "0.998249719614113684",
+      "K2_rel_err": "0.0004118198",
+      "full_N_sym": "213.199570661282274",
+      "rel_err_full": "0.0004118198",
+      "rel_err_full_float": 0.0004118197978691718
+    },
+    {
+      "name": "1 − h³/[6]_q",
+      "K2_q0": "0.998569644321595413",
+      "K2_rel_err": "0.00073243743",
+      "full_N_sym": "213.267898063673539",
+      "rel_err_full": "0.00073243743",
+      "rel_err_full_float": 0.0007324374274276555
+    },
+    {
+      "name": "1 − h⁴/[2]_q",
+      "K2_q0": "0.999050058935717309",
+      "K2_rel_err": "0.0012138926",
+      "full_N_sym": "213.370501838518361",
+      "rel_err_full": "0.0012138926",
+      "rel_err_full_float": 0.0012138925672868113
+    },
+    {
+      "name": "q^(-1/[5]_q²)",
+      "K2_q0": "0.996178724611077406",
+      "K2_rel_err": "-0.0016636608",
+      "full_N_sym": "212.757261250306755",
+      "rel_err_full": "-0.0016636608",
+      "rel_err_full_float": -0.0016636607548132928
+    },
+    {
+      "name": "q^(-h)",
+      "K2_q0": "0.978422687021787085",
+      "K2_rel_err": "-0.019458156",
+      "full_N_sym": "208.965044216531228",
+      "rel_err_full": "-0.019458156",
+      "rel_err_full_float": -0.019458155987897807
+    }
+  ],
+  "pass2_best": "1 − h³/[4]_q",
+  "pass2_best_full_N_sym": "213.098536954235391",
+  "pass2_best_rel_err": "-6.2267999e-5",
+  "closed_form_ansatz": "N_sym(q_0) ≈ [3]_q · [4]_q² · [2]_q² · ([4]_q − h³) / 4  (equivalently [3]_q · [4]_q^3 · [2]_q²/4 · (1 − h³/[4]_q)); h := q − q⁻¹.  Closes W-2 to 62 ppm at q = q_0."
 }
