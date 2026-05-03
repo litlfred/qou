@@ -627,5 +627,134 @@ are explicitly Archimedean and labeled as such.
 
 ---
 
-**End of audit.** Close-out: 17 wall breaches fixed; bridge block
+**Close-out (Pass 1):** 17 wall breaches fixed; bridge block
 unchanged (🟡 by design); audit doc updated in the same commit.
+
+---
+
+## §7 — Sharp bridge audit (2026-05-03 follow-up)
+
+A deeper look at the bridge / algebraic-stratification pair after
+the headline migration.
+
+### Findings
+
+**F1 (resolved). Algebraic-stratification Lean was vacuous.** The
+formal-chain stub
+[`QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean)
+declared `def phi_q_tower_algebraic_stratification : True := trivial`
+— the proposition's Lean side was a placeholder with no formal
+content.  Upgraded in this commit to a **typeclass-axiomatised
+statement**: `class PhiQTowerAlgebraicStratification R [CommRing R]`
+with explicit fields for the four GS-filtration levels
+(`level0`, `level1`, `level2_adj`, `level2_non_adj`), a Frobenius
+norm field, the `mass_sum` axiom, and a `pentagon_ascension`
+witness. The accompanying theorem
+`phi_q_tower_algebraic_stratification` extracts the level-sum
+identity from any instance.  The statement is **unconditional**
+(no `[VolumeConjecture q]` hypothesis), as it should be on the
+algebraic side of the wall.
+
+**F2 (resolved). Bridge block re-stated the algebraic content.**
+Lines 14–42 of `phi-q-tower-jsj-bridge.md` recapped the
+algebraic-side stratification — the same content already in
+`phi-q-tower-algebraic-stratification.md`.  The bridge's `uses[]`
+already cited `prop:phi-q-tower-algebraic-stratification` (line 13
+of the `.ts`), so the recap was redundant and risked a "wall
+re-statement" reading.  Replaced by a 7-line "Algebraic-side
+prerequisite" section that hands the algebraic claim off via
+hyperref + cites the Frobenius norm convention.  The bridge now
+states *only* the τ_arch identification; the algebraic side is
+a genuine prerequisite.
+
+**F3 (resolved). `|·|` notation in algebraic stratification was
+ambiguous.** The mass formula in
+`phi-q-tower-algebraic-stratification.md` used absolute-value bars
+`|·|` on quantities living in $\mathbb{Z}[q^{\pm 1/2}]$.  Per
+Step 4 of the forward-derivation doc this is the **Frobenius
+norm** valued in $R$, not the Archimedean magnitude — but the
+ASCII-bar notation reads as the latter.  Replaced by `‖·‖_F`
+throughout the formula and the level table (now
+`Z[q^{\pm 1/2}]`-class column); added an explicit sentence
+defining $\|x\|_F^2 := \langle x, x\rangle_F$ and noting that
+$q \mapsto q_0 \in \mathbb{R}$ is post-$\tau$.
+
+**F4 (documented; not auto-fixed). Bridge `.lean` stub imports do
+not resolve.**
+[`phi-q-tower-jsj-bridge.lean`](../../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.lean)
+opens with
+
+```
+import QOU.PhiQPiece
+import QOU.Kashaev
+```
+
+Neither module exists in the formal Lake package
+([`content/quantum-observable-universe/lean/QOU/`](../../content/quantum-observable-universe/lean/QOU/));
+the `QOU.PhiQPiece` and `QOU.Kashaev` namespaces live in
+co-located stubs (`phi-q-piece.lean`, `kashaev-volume-conjecture.lean`)
+that are explicitly **not compiled** by `lake build` (per
+`QOU/GroundRingAnnotations.lean`).  Hence the bridge `.md`'s claim
+*"the Lean theorem is fully verified by Lean modulo the
+typeclass instance"* is **not** witnessed — the file does not even
+type-check, since its imports do not resolve.
+
+This is documentation-tier (not a wall breach), but the bridge's
+narrative over-promises.  Two clean resolutions:
+
+1. **Promote** `pieceVolume` / `VolumeConjecture` from co-located
+   stubs into the formal Lake package
+   (`lean/QOU/Kashaev.lean`, `lean/QOU/PhiQPiece.lean`); then the
+   bridge `.lean` can be ported into the formal chain too.
+2. **Annotate** the bridge `.lean` stub explicitly as a
+   "co-located documentation stub; imports refer to namespace
+   names only", and the `.md` paragraph "fully verified by Lean
+   modulo …" should be softened to "would be fully verified by
+   Lean once the supporting modules are in the formal chain".
+
+Resolution (2) is the documentation-only path; (1) is the formal
+fix.  Decision left for follow-up — the wall is unaffected either
+way.
+
+### Positive findings
+
+**P1. Bridge title and `uses[]` are correct.** Title: *"Φ$_q$
+tower equals $\rho_q \cdot \sum_S \mathrm{Vol}(K_S)$
+(archimedean bridge)"* — bridge role is in the title.  `uses[]`
+cleanly partitions algebraic prerequisites
+(`mass-endomorphism-tower`, `gb-spectral-sequence`,
+`graded-trace-residue-split`, `markov-pair-z2`,
+`phi-q-tower-algebraic-stratification`) and Archimedean
+ingredients (`kashaev-volume-conjecture`,
+`kashaev-as-archimedean-realization`, `cor:quantum-dilogarithm`).
+
+**P2. Bridge `.lean` is conditional per CLAUDE.md §3b.**
+The Lean stub uses two typeclass instances — `[VolumeConjecture q]`
+(the Kashaev axiom) and `[PerPieceBridge q]` (the per-piece
+identification) — and the master `theorem bridge` is `:=
+inst.bridge_per_piece β S`, so there is no `sorry`.  The
+conjectural content is fully concentrated in the typeclass
+instance (Option B / conditional-class pattern).
+
+**P3. `q : ℝ` in the bridge `.lean` is correct.**  Unlike the §1
+breaches, the bridge lives explicitly on the Archimedean side; it
+is the τ_arch image of the algebraic statement.  `q : ℝ` is the
+right ground type here.
+
+### Net status
+
+After the §6 + §7 fixes, the bridge / algebraic-stratification
+pair partitions cleanly:
+
+| Block | Side | Wall status |
+|-------|------|-------------|
+| `prop:phi-q-tower-algebraic-stratification` | Algebraic (pre-Arch) | 🟢 — unconditional, $R$-valued, Frobenius norm, GS-filtration |
+| `conj:phi-q-tower-jsj-bridge` | Archimedean (bridge) | 🟡 — by design, conditional on `[VolumeConjecture q]` + `[PerPieceBridge q]` |
+
+The only outstanding item is **F4**: the bridge `.lean` is a
+co-located stub whose imports are namespace-only references.
+This is a documentation-tier inconsistency, not a wall breach.
+
+---
+
+**End of audit.**

@@ -11,35 +11,22 @@ $V_S := \prod_{i \in S}\hat{V}_i^{\mathrm{full}}$ be the per-block
 spectral coordinate
 ([mass endomorphism tower](#prop:mass-endomorphism-tower)).
 
-#### Algebraic-side statement of the JSJ stratification
+#### Algebraic-side prerequisite
 
-Before invoking 3-manifold language, the "JSJ" structure on the
-**algebraic side** is the stratification of the mass-tower formula
-by $|S|$ — equivalently, by **filtration depth** in the
-Gröbner–Shirshov (GS) confinement filtration $J^\bullet$
-([gb-spectral-sequence](#prop:gb-spectral-sequence),
-[graded-trace-residue-split](#prop:graded-trace-residue-split)).
-Concretely: the family $\{V_S\}_{|S|\leq 2}$ partitions the
-descended Markov trace into
+The **algebraic** content of "JSJ stratification" — a partition of
+the mass-tower formula into level-$|S|$ summands in
+$J^{|S|}/J^{|S|+1}$ of the GS confinement filtration — is stated
+in full generality by
+[`prop:phi-q-tower-algebraic-stratification`](#prop:phi-q-tower-algebraic-stratification).
+That proposition is **unconditional**: it lives entirely in
+$H_n(R, q)$ over $\mathbb{Q}(q^{1/2})$, makes no reference to
+$\tau$, hyperbolic volume, or 3-manifold pieces, and uses the
+**Frobenius norm** $\|\cdot\|_F$ valued in the ground ring (not
+the Archimedean absolute value).
 
-- $|S| = 0$ (depth 0): the descended summand
-  $|\prod_i \hat V_i^{\mathrm{full}}|$ in
-  $J^0/J^1$;
-- $|S| = 1$ (depth 1): per-generator summands
-  $\Phi_q(|\hat V_i^{\mathrm{full}}|)$ in $J^1/J^2$;
-- $|S| = 2$ (depth 2): adjacent-pair summands
-  $z^2 \, \Phi_q(|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|)$
-  in $J^2/J^3$
-  ([markov-pair-z2](#prop:markov-pair-z2)).
-
-These three strata live entirely in $H_n(q)$ and are
-$\mathbb{Q}(q)$-rational. They constitute an **algebraic JSJ**: a
-stratification of the mass-functional by descent-filtration
-depth, defined without reference to 3-manifolds, hyperbolic
-volume, or any $\tau$-image data. The conjecture below identifies
-this algebraic stratification with the geometric JSJ under
-$\tau_{\mathrm{arch}}$; that identification — and only that
-identification — crosses the Archimedean wall.
+The conjecture below — and *only* the conjecture — crosses the
+Archimedean wall by identifying that algebraic stratification
+with the geometric JSJ under $\tau_{\mathrm{arch}}$.
 
 **Conjecture (Φ$_q$–JSJ archimedean bridge).** Under the archimedean
 realisation $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
