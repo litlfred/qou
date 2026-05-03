@@ -1203,4 +1203,137 @@ should be split into 14a-rank1 (closed by
 
 ---
 
+**End of Step-14 audit.**
+
+---
+
+## §11 — Sharp Step-17 audit (pentagon UV / Markov-pair cluster)
+
+The Step-17 cluster from §A of the forward-derivation document
+(GAP 17a — *pentagon $uv = q\,vu$ verification at the traced-volume
+level*; GAP 17b — *descent sharpness on pairs*).  Cluster:
+`prop:markov-pair-z2`, `thm:markov-trace-product`,
+`prop:pentagon-uv-commutation`.
+
+### Findings
+
+**E1 (resolved). `prop:markov-pair-z2` had no Lean file at all.**
+Block kind `proposition` (CLAUDE.md §3 expects Lean).  `lean.ref =
+"qou:QOU.Hecke.markov_pair_z2"` resolved to nothing.
+
+**Fixed**: created
+[`lean/QOU/Hecke/MarkovPairZ2.lean`](../../content/quantum-observable-universe/lean/QOU/Hecke/MarkovPairZ2.lean)
+with `theorem markov_pair_z2` conditional on a `[MarkovTraceAxioms z]`
+instance — two cons-applications of the Markov property give
+`tr_M([c₁, c₂]) = z²` for trivial generator chains (the depth-2
+cap of the all-pairs jet-tower formula).  Closed with `simp` after
+unfolding `vertexVolume` on the `(a = 1, b = 0)` case.
+
+**E2 (resolved). `thm:markov-trace-product` had a stale `lean.ref`.**
+The `.ts` carried `lean.ref = "qou:QOU.markov_trace_product"`, but
+the co-located stub declared `theorem QOU.Braiding.markov_trace_product`
+(under `namespace QOU.Braiding`).  Lookup of the unqualified
+`QOU.markov_trace_product` would fail.
+
+**Fixed**: ported to
+[`lean/QOU/Hecke/MarkovTraceProduct.lean`](../../content/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceProduct.lean)
+under the established `namespace QOU.Hecke`, with the same
+`MarkovTraceAxioms` typeclass + `MarkovTraceProduct` structure +
+`theorem markov_trace_product` (existence form) +
+`theorem markov_trace_product_recursion` (cons-induction strong form).
+Updated `markov-trace-product.ts`'s `lean.ref` to
+`qou:QOU.Hecke.markov_trace_product`.  Registered in
+`lean/QOU/Hecke.lean`.
+
+The pre-Arch discipline carries through: `R_q := LaurentPolynomial ℤ`,
+`vertexVolume z gc := z * gc.a + gc.b`; the previous Archimedean
+hypotheses (`n ≥ 2`, `q > 1`) are commented out and noted as
+"archimedean; not meaningful over R_q".
+
+**E3 (no fix needed). `prop:pentagon-uv-commutation` is already
+in the formal chain.** [`lean/QOU/QuantumBloch/PentagonUvCommutation.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumBloch/PentagonUvCommutation.lean)
+exists ✓.  No co-located stub is required.  The pentagon
+commutation `u·v = q·v·u` is precisely the GAP 17a content
+("pentagon $uv = q\,vu$ verification") and is structurally encoded
+in the formal chain.
+
+### Net status of the Step-17 cluster
+
+| Block | Kind | Lean home | Wall status |
+|-------|------|-----------|-------------|
+| `prop:markov-pair-z2` | proposition | new `lean/QOU/Hecke/MarkovPairZ2.lean` | 🟢 conditional on `[MarkovTraceAxioms z]`, `R_q`-valued |
+| `thm:markov-trace-product` | theorem | new `lean/QOU/Hecke/MarkovTraceProduct.lean` | 🟢 `R_q := LaurentPolynomial ℤ` ground ring; pre-Arch |
+| `prop:pentagon-uv-commutation` | proposition | existing `lean/QOU/QuantumBloch/PentagonUvCommutation.lean` | 🟢 (GAP 17a content) |
+
+GAP 17a is **structurally addressed** at the Lean level: the
+pentagon UV-commutation theorem statement is in the formal chain,
+the Markov-trace product factorization (which fuels the pair
+identity) is in the formal chain, and the all-pairs identity
+`markov_pair_z2` extracts the depth-2 cap.  GAP 17b (descent
+sharpness on pairs) remains residual — the bound "Pairs are the
+largest |S| at which Markov property preserves closure" is now
+witnessed by the absence of a triple-form theorem; sharpening
+requires a separate negative result.
+
+---
+
+## §12 — Sharp Step-18 audit (mass endomorphism cluster)
+
+The Step-18 cluster from §A of the forward-derivation document
+(GAP 18a — *`conj:mass-endomorphism` closed form*).  Cluster:
+`prop:mass-endomorphism-tower`, `def:hecke-mass-element`,
+`conj:mass-endomorphism`, `rem:mass-endomorphism-jet-tower`.
+
+The pre-Arch wall in `prop:mass-endomorphism-tower` and
+`def:hecke-mass-element` was already closed in §1 (Pass 13/Pass 11
+two-tier `Pre`/`Arch` namespace splits) and `prop:delta-max-uniform-bound`
+was closed in §10.  This audit examines the conjecture itself.
+
+### Findings
+
+**F1 (resolved). `conj:mass-endomorphism` had only a co-located
+Lean stub.** The co-located file at
+`braids-and-knots/mass-endomorphism-conjecture.lean` already
+implements the §3b conditional-class pattern textbook-clean:
+`class MassEndomorphism (R) [CommRing R] (β)` with fields `q`, `N`,
+`z`, `tr_transient`, `tr_descended`, `vol_identity`, and the
+asserted `vol_eq` equality; `theorem fullMass_eq_volume` extracts
+the volume identity from any instance.
+
+**Fixed**: ported to
+[`lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean)
+under `namespace QOU.MassEndomorphism` (matching the existing
+`QOU.MassEndomorphism` aggregator from §10).  Updated the
+`mass-endomorphism-conjecture.ts` `lean.ref` from
+`qou:QOU.WedderburnMass.MassEndomorphism` to
+`qou:QOU.MassEndomorphism.MassEndomorphism` for consistency with
+the new namespace (the legacy `WedderburnMass` namespace was a
+holdover from before the `MassEndomorphism` aggregator existed).
+
+Registered in `lean/QOU/MassEndomorphism.lean`.
+
+**F2 (no fix needed). `rem:mass-endomorphism-jet-tower` is correct.**
+A `remark` block (no Lean expected) interpreting
+`prop:mass-endomorphism-tower`.  Its `interprets:` field is set
+correctly; CLAUDE.md §3a discipline holds.
+
+### Net status of the Step-18 cluster
+
+| Block | Kind | Lean home | Wall status |
+|-------|------|-----------|-------------|
+| `def:hecke-mass-element` | definition | co-located (§1 Pass 11 + §10 follow-up) | 🟢 abstract `[CommRing R]` (no `NormedCommRing` in pre-Arch) |
+| `prop:mass-endomorphism-tower` | proposition | co-located (§1 Pass 13 two-tier `Pre`/`Arch`) | 🟢 pre-Arch tier, post-Arch tier explicitly partitioned |
+| `conj:mass-endomorphism` | conjecture | new `lean/QOU/MassEndomorphism/MassEndomorphismConjecture.lean` | 🟡 by design (closed-form open); class-axiomatised per §3b |
+| `rem:mass-endomorphism-jet-tower` | remark | (no Lean — remark) | 🟢 `interprets:` discipline holds |
+
+GAP 18a status: `conj:mass-endomorphism`'s closed-form claim is
+**fully concentrated in the class field `vol_eq`**.  Any concrete
+instance of `MassEndomorphism R β` discharges the conjecture for
+that pair `(R, β)`; the conditional `fullMass_eq_volume` theorem
+is fully verified by Lean (no `sorry`).  The Lean infrastructure
+is in place; the open content is the **mathematical** task of
+proving an instance for the QOU substrate at $q_0$.
+
+---
+
 **End of audit.**

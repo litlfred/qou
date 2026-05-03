@@ -1,4 +1,5 @@
 import QOU.MassEndomorphism.DeltaMaxUniformBound
+import QOU.MassEndomorphism.MassEndomorphismConjecture
 
 /-!
 # QOU.MassEndomorphism — Mass-endomorphism tower aggregator
