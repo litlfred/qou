@@ -1,0 +1,84 @@
+{
+  "schema": "audit-witness/v1",
+  "computation": "phase-a3-mass-tower-audit",
+  "description": "Audit-only finding: the per-braid mass tower implementation truncates at jet level n=0 only. Levels n=1, 2, ... are entirely unimplemented. The level-shift operator tau_hat_n that would generate level-(n+1) sub-braids from level-n is referenced in pentagon-uv-commutation.md but not yet realised in code.",
+  "date": "2026-05-03",
+  "branch": "claude/phase-a3-mass-tower-audit",
+  "verdict": "infrastructure-missing",
+  "verdict_detail": "Current truncation N_implemented = 0. The mass-tower formula in pentagon-uv-commutation.md (lines 86-106) calls for sum over n=0..N, but no jet-level iteration exists in per_braid_tower_hybrid.py. Adding levels n>=1 requires first constructing the level-shift operator tau_hat_n, which is currently deferred per pentagon-uv-commutation.md:117.",
+  "current_truncation": {
+    "N_implemented": 0,
+    "site": "folio-assistant/computations/per_braid_tower_hybrid.py:90-155",
+    "method": "single jet level n=0 with singletons (per-nucleon traces) and pairs (per-pair traces)",
+    "missing": "all n >= 1 jet levels; tail bound R_N"
+  },
+  "label_clarification": {
+    "code_label_Level_1": "per-nucleon traces (singletons) at jet level n=0",
+    "code_label_Level_2": "per-pair traces (pairs) at jet level n=0",
+    "note": "The 'Level 1/2' labels in per_braid_tower_hybrid.py:90-94 refer to STRAND ARITY (1-strand vs 2-strand sub-braids), NOT the jet-level index n in the pentagon-uv-commutation formula. This is a confusing naming overlap."
+  },
+  "mass_tower_formula": {
+    "source": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.md:86-106",
+    "expression": "m = |tr_M(W)| + sum_{n=0..N} ( sum_{xi in S_1^(n)} Phi_q(|tr_M(xi)|) + z^2 * sum_{(xi, xi') in S_2^(n)} Phi_q(|tr_M(xi*xi')|) ) + R_N",
+    "key_property": "Pentagon q-factor identity ensures no triples appear at any level; every triple absorbs to (pair + singleton) at level n plus residual at level n+1."
+  },
+  "modules_audited": [
+    {
+      "path": "folio-assistant/computations/per_braid_tower_hybrid.py",
+      "key_function": "per_braid_mass_hybrid",
+      "line": 90,
+      "iterates_jet_levels": false,
+      "note": "Computes desc + single + cross at level n=0 only. No outer loop over n."
+    },
+    {
+      "path": "folio-assistant/computations/mass_endomorphism.py",
+      "key_function": "(delegates)",
+      "iterates_jet_levels": false,
+      "note": "Delegates to canonical pipeline (binding-canonical, markov-peel) for trace computation. No jet-level iteration."
+    },
+    {
+      "path": "folio-assistant/computations/binding_canonical.py",
+      "key_function": "binding_canonical",
+      "iterates_jet_levels": false,
+      "note": "Canonical Jones-Markov trace for the atom braid; no jet-tower expansion."
+    }
+  ],
+  "missing_infrastructure": {
+    "tau_hat_n": {
+      "description": "Level-shift operator that generates level-(n+1) sub-braids from level-n",
+      "reference": "pentagon-uv-commutation.md:117 — 'deferred to the descent involution's quantization, where tau_hat_n is realized as a level-shift operator on A_{n+1} = A_n tensor Omega^1(A_n)'",
+      "status": "not implemented",
+      "blocks": "any level n >= 1 contribution"
+    },
+    "level_n_sub_braids": {
+      "description": "Explicit braid words for jet-prolonged sub-braids xi at level n",
+      "status": "unspecified pending tau_hat_n",
+      "blocks": "Phi_q evaluation at higher levels"
+    }
+  },
+  "estimated_level_1_size": {
+    "method": "Geometric tail bound from prop:jet-tower-convergence (not numerically pinned at q_0 in this audit)",
+    "rough_factor": "~0.066 of level-0 (per analogy with Sigma_all decay rate 0.2575^A from 2026-05-02-nv-frob-filter-conjectures.md)",
+    "expected_size_at_proton": "~few hundred ppm of base mass (comparable to current ~500 ppm proton residual)",
+    "note": "Estimate is order-of-magnitude only; exact size requires actual level-1 computation, which requires tau_hat_n."
+  },
+  "current_per_atom_residuals": {
+    "source": "9b66f7571 audit (crt_markov_v3 + Hoefsmit at q_0)",
+    "p": "500 ppm",
+    "D": "1500 ppm",
+    "T": "3200 ppm",
+    "He3": "3100 ppm"
+  },
+  "recommendation": {
+    "next_step": "Open a separate issue/branch to construct tau_hat_n (the level-shift operator referenced in pentagon-uv-commutation.md:117). Even a proton-scale realisation would unblock level-1 Phi_q evaluation.",
+    "after_tau_hat_lands": "Add a level-1 sum block to per_braid_tower_hybrid.py:90-141 (~5-line patch). Compare new per-atom residuals against current to confirm gap closes.",
+    "alternative": "Phenomenological proxy: derivative-prolongation of level-0 sub-braids in an explicit jet bundle. Less rigorous; faster to test."
+  },
+  "cross_references": {
+    "workplan_issue": "https://github.com/litlfred/qou/issues/522",
+    "audit_handoff": "docs/audits/2026-05-02-path-to-1ppb.md",
+    "mass_tower_formula": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.md:86-106",
+    "tau_hat_n_deferred": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.md:117",
+    "phase_a1_audit": "docs/audits/2026-05-03-phase-a1-schur-weyl-audit.md (sibling audit on Phase A.1)"
+  }
+}
