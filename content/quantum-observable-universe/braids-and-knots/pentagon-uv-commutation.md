@@ -107,7 +107,7 @@ controls $R_N$.
 
 ## Status
 
-🟢 **Provable.** The level-internal half (scalars commute) is
+**Provable.** The level-internal half (scalars commute) is
 [`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace).
 The inter-level half (operator lift, $\widehat U \widehat V =
 q\,\widehat V \widehat U$) is the operator content of the

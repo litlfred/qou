@@ -141,7 +141,7 @@ Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/2026-05-02-Te
 
 ## Status
 
-🟡 **Structurally-shaped, empirically-calibrated.** The two
+**Structurally-shaped, empirically-calibrated.** The two
 calibration parameters $(\alpha, \beta)$ improve on the
 five-parameter Bethe–Weizsäcker SEMF, with $R^2 = 0.84$ across
 $A = 2$–$58$. A genuine categorical derivation of $\alpha$ and
