@@ -1,0 +1,12 @@
+{
+  "computation": "tau-hat-n-lean-scaffold-audit",
+  "date": "2026-05-03",
+  "verdict": "setup-only",
+  "scope": [
+    "content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower.lean",
+    "content/quantum-observable-universe/lifting-and-descent/descent-involution.lean",
+    "content/quantum-observable-universe/lifting-and-descent/jet-prolongation.lean"
+  ],
+  "description": "Audit of the Lean scaffold for the descent involution tau_hat_n, jet prolongation J^1, and recursive brane tower. Setup-only stub; full audit in follow-up commit.",
+  "notes": "No LP/SDP/operator-selection compute — duality fields N/A."
+}
