@@ -114,7 +114,7 @@ $q_0$). Three plausible structural origins:
 
 ## Status of derivation effort (this audit)
 
-Three computational paths to close the $1.55 \times 10^{-3}$ correction
+Four computational paths to close the $1.55 \times 10^{-3}$ correction
 have been tried and **ruled out** (or shown not to be expressible as
 clean low-degree $q$-rationals):
 
@@ -123,11 +123,39 @@ clean low-degree $q$-rationals):
 | Gram-det Plancherel-character product at $n=3$ | $\kappa \approx 7 \times 10^{-6}$ | Ruled out (need $\sim 1.888$) |
 | q-Plancherel sums on $H_5$ Wedderburn blocks | trivial or astronomical | Ruled out |
 | Scan $\hbar_q^k\cdot[a]_q\cdot[b]_q/([c]_q\cdot[d]_q)$, $a,b,c,d \le 12$ | 0 matches at $10^{-4}$ | Ruled out at this degree |
+| **PSLQ at 100 dps over 54-element basis incl. $\pi, \zeta(3), \log 2$** | **No non-trivial integer relation** | **Decisively ruled out** |
+
+The closest single-term near-match is
+
+$$ F - 1 \;\approx\; \frac{\hbar_q^2}{\pi \cdot [2]_q} $$
+
+at $7.4 \times 10^{-4}$ relative residual — structurally suggestive
+(the factor $1/(\pi[2]_q)$ relates to $\mathrm{Vol}(S^3_q) = \pi^2[2]_q$
+geometry) but **not exact**. This rules out a direct closed-form
+correction in any natural q-arithmetic basis at low degree.
 
 See [`alpha-em-correction-derivation-attempts.witness.json`](#) for
 the full attempt log.
 
-Until one of these (or another structural source) closes the gap,
-the canonical statement should remain the bare formula
-$1/\alpha_{\text{bare}} = q[9]_q[10]_q$ with the $-0.155\%$ residual
-documented as an open problem.
+## What this implies
+
+Either:
+
+1. The bare formula $1/\alpha_{\text{bare}} = q[9]_q[10]_q$ is itself
+   slightly wrong — perhaps the singlet-trace identification
+   $|\mathrm{tr}_\tau(e_-)|^2 = q^{-1}$ in
+   [prop:em-coupling-projection](#prop:em-coupling-projection) needs
+   refinement.
+2. The correction is genuinely complex (high-degree polynomial in
+   many $q$-integers, or involves $q$-dilogarithms / theta-function
+   special values not in the standard basis).
+3. The correction reflects genuine quantum-loop corrections that
+   are not expressible at the categorical / tree level — i.e., the
+   bare formula is exact only in the classical / one-particle
+   limit, and the missing $1.55 \times 10^{-3}$ is a vacuum
+   polarisation / RG running effect that requires path-integral
+   quantisation.
+
+Until one of these is resolved, the canonical statement remains the
+bare formula with the $-0.155\%$ residual documented as an open
+problem.

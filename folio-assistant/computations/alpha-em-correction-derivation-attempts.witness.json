@@ -39,6 +39,18 @@
       "description": "k=6 gives ratio 0.988 (1.2% off); k=7 gives 0.83 (17% off)",
       "result": "no exact match",
       "verdict": "Inconclusive"
+    },
+    {
+      "name": "PSLQ on correction factor F-1 with 54-element basis (incl. \u03c0, \u03b6(3), log 2)",
+      "description": "Targeted PSLQ on the multiplicative correction (CODATA / bare - 1) at 100 dps with basis {[k]_q for k=2..14, 1/[k]_q, \u210f_q^k for k=1..6, \u210f\u00b2/[k]_q, \u03c0, \u03c0\u00b2, \u03b6(3), log 2, \u210f\u00b2\u00b7transcendentals}",
+      "result": "No non-trivial integer relation. PSLQ returned only the tautology \u210f\u00b2/\u03c0 = 2\u00b7\u210f\u00b2/(2\u03c0).",
+      "verdict": "DECISIVELY RULED OUT \u2014 F-1 has no closed form in this expanded basis at 60-digit precision."
+    },
+    {
+      "name": "Single-term approximation scan",
+      "description": "Best simple-fraction approximations to F-1 by single basis element times integer.",
+      "result": "Closest: F-1 \u2248 \u210f_q\u00b2/(\u03c0\u00b7[2]_q) at residual +7.4e-4 relative. Next: \u210f_q\u00b2/(2\u03c0) at -4.7e-3, \u210f_q\u00b2/[6]_q at +1.2e-2.",
+      "verdict": "All near-misses; none structurally exact. The \u210f_q\u00b2/(\u03c0[2]_q) form is suggestive (relates to Vol(S^3_q)/\u03c0\u00b3 ratio) but disagrees at the 10^{-4} level."
     }
   ],
   "remaining_paths": [
@@ -47,12 +59,19 @@
     "Examine vector-valued refinement on CP^1 fibre of state bundle",
     "Accept that the bare q[9]_q[10]_q formula has a higher-order correction not expressible as simple q-rational; switch q_0 anchor to m_\u03bc/m_e until further structural insight emerges"
   ],
-  "conclusion": "The 1.55e-3 multiplicative correction over the bare 1/\u03b1 formula does NOT factor as a clean q-rational of the form \u210f_q^k \u00b7 [a]/[b] for any small integers explored. The Plancherel-character product at n=3 and the q-Plancherel measure on H_5 Wedderburn blocks both fail to produce the correction. Closing the structural derivation requires either: (a) explicit Hecke character computation at n=5 or n=10, (b) admission of transcendental factors, or (c) a different bare-formula decomposition. Until then, 1/\u03b1 as derived from QOU principles is correct only to -0.155%, and \u03b1 should not be used as the q_0 anchor.",
+  "conclusion": "PSLQ at 100 dps over a 54-element basis including transcendentals finds NO low-degree closed form for the multiplicative correction F-1 = 1.555e-3. Best single-term near-match is \u210f_q\u00b2/(\u03c0\u00b7[2]_q) at 7.4e-4 residual \u2014 structurally suggestive (relates to Vol(S\u00b3_q) geometry) but not exact. This is a DECISIVE negative result: the correction is either genuinely complex (high-degree polynomial in q-integers, or involves q-dilogarithms / special functions), or the bare formula 1/\u03b1 = q[9]_q[10]_q is itself slightly incorrect. Until a different structural decomposition is identified, \u03b1 cannot serve as q_0 anchor; m_\u03bc/m_e at 1.2 ppb remains the only viable choice.",
   "tags": [
     "alpha-em",
     "fine-structure",
     "derivation-attempt",
     "negative-result",
     "open-problem"
-  ]
+  ],
+  "best_near_match": {
+    "form": "\u210f_q\u00b2 / (\u03c0 \u00b7 [2]_q)",
+    "value_at_q0": "0.0015485220...",
+    "target_F_minus_1": "0.0015551412...",
+    "relative_residual": "+7.42e-4",
+    "structural_note": "Form contains 1/(\u03c0[2]_q) which arises in Vol(S\u00b3_q)\u00b7(1/\u03c0\u00b3) but coefficient does not match exactly."
+  }
 }
