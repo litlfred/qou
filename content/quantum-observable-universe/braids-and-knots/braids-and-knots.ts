@@ -448,6 +448,7 @@ export default chapter({
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
+        "phi-q-resums-trace-series",
         "per-braid-mass-tower",
         "schur-weyl-mass-decomposition",
         "gb-residue-spectral-sum",
