@@ -7,8 +7,8 @@ export default remark({
   interprets: "conj:em-coupling-bring-zero-mode",
   uses: [
     "conj:em-coupling-bring-zero-mode",
-    "prop:reeb-bundle",
-    "prop:q-chromaticity",
+    "def:reeb-bundle",
+    "rem:q-chromaticity",
     "prop:spectral-sequence-collapse",
     "prop:gb-spectral-sequence",
     "prop:curvature-rank-gb-stratification",

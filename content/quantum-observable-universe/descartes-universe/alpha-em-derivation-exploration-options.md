@@ -15,7 +15,7 @@ derivation; the missing step is connecting it to the coupling side.
 
 ### 1. Hopf fibration $S^3 \to S^2$ as the substrate geometry
 
-The [Reeb bundle](#prop:reeb-bundle) at a brane point $p$ is
+The [Reeb bundle](#def:reeb-bundle) at a brane point $p$ is
 
 $$
   \mathcal{R}_p \;=\; \bigl( S^3 \xrightarrow{\pi_H} \mathcal{S}_p \cong S^2,\; \xi_q \bigr),
@@ -31,7 +31,7 @@ total space" is $S^3$.
 
 ### 2. Three coral tubes / chromaticity primaries on Bring's surface
 
-[`prop:q-chromaticity`](#prop:q-chromaticity) identifies three
+[`rem:q-chromaticity`](#rem:q-chromaticity) identifies three
 colour primaries on Bring's surface (the three coral tubes /
 three $S_3$ subgroups of the Bring automorphism group). This is
 the **natural source of the "$/3$" denominator** in $2/(3\pi)$:
@@ -194,9 +194,9 @@ A practical attack would:
 
 | Ingredient | Natural QOU source | Block reference |
 |------------|-------------------|-----------------|
-| $S^3$ (total space) | Hopf-fibration total = arena for braid words | [Reeb bundle](#prop:reeb-bundle) |
+| $S^3$ (total space) | Hopf-fibration total = arena for braid words | [Reeb bundle](#def:reeb-bundle) |
 | $S^2 = \mathcal{S}_p$ (base) | exceptional divisor / colour space | [exceptional divisor](#def:exceptional-divisor) |
-| $/3$ | three coral tubes / chromaticity primaries on Bring | [q-chromaticity](#prop:q-chromaticity) |
+| $/3$ | three coral tubes / chromaticity primaries on Bring | [q-chromaticity](#rem:q-chromaticity) |
 | $g = 4$ in $2g/(4\pi(g{-}1))$ | Bring's surface genus | [force-carrier-bring-uniqueness](#prop:force-carrier-bring-uniqueness) |
 | Spectral sequence collapse | $\mathrm{HH}^k = 0$ for $k \ge 1$ | [spectral sequence collapse](#prop:spectral-sequence-collapse) |
 | Stratum prefactors | depth-$k$ Plancherel-weighted Markov pairings | [unified mass formula](#prop:unified-curvature-rank-mass-formula) |
