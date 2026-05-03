@@ -1,15 +1,15 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T21:31:44.156851+00:00",
-  "commitSha": "7f74e1458b4e5ebe5860dfa3f7a7a616312b968e",
+  "computedAt": "2026-05-03T15:40:56.076114+00:00",
+  "commitSha": "600d04f68fed9e8b5b6b0f9d6a97ee8b81aff73f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 24,
   "computation": "term6-full-pole-sum",
   "scriptFile": "term6_full_pole_sum.py",
-  "scriptHash": "361d8473c2b2",
-  "scriptCommitSha": "d403037286699f562f88ee42e507eb9cb56250b0",
+  "scriptHash": "f5e4002a0f6b",
+  "scriptCommitSha": "90ca491951fbfca1001c23efe1737e22d20b6945",
   "description": "Term 6 Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using symbolic Habiro residues + 1/(q_0 − ζ) kernel up to cutoff n_max=6. Upstream Habiro witness has proton, neutron, and deuteron; T, ³He, ⁴He+ pending — extension via habiro_coefficients_interpolate.py is the next step for A≥5 5–20% error assessment. Higher-order poles (e.g. deuteron at ζ_4) are currently flagged but not contributed; Laurent-expansion handling is a follow-up.",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
@@ -23,6 +23,11 @@
         "atom": "p (proton, A=1)",
         "n_max": 6,
         "tr_M_at_q0_polynomial": 2.12258250945273,
+        "tr_M_polynomial": {
+          "polynomial_q": "(q**24 + 2*q**22 + 2*q**20 + q**19 + q**18 + 2*q**17 + q**16 + 2*q**15 + q**14 + 2*q**13 + q**11 - q**10 - q**8 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**14 + 4*q**12 + 4*q**10)",
+          "polynomial_q_latex": "\\frac{q^{24} + 2 q^{22} + 2 q^{20} + q^{19} + q^{18} + 2 q^{17} + q^{16} + 2 q^{15} + q^{14} + 2 q^{13} + q^{11} - q^{10} - q^{8} - q^{6} - 2 q^{4} - 2 q^{2} - 1}{4 q^{14} + 4 q^{12} + 4 q^{10}}",
+          "value_at_q0": "2.1225825094527295505663838358689389853458325219767"
+        },
         "term6_simple_residue_partial": 0.0,
         "term6_in_MeV": 0.0,
         "status": "complete-simple-poles-only",
@@ -130,6 +135,11 @@
         "atom": "n (neutron, A=1)",
         "n_max": 6,
         "tr_M_at_q0_polynomial": 1.5893934459539052,
+        "tr_M_polynomial": {
+          "polynomial_q": "(q**20 + 2*q**18 + 2*q**16 + q**15 + q**14 + 2*q**13 + q**12 + 2*q**11 + 2*q**9 - q**8 + q**7 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**12 + 4*q**10 + 4*q**8)",
+          "polynomial_q_latex": "\\frac{q^{20} + 2 q^{18} + 2 q^{16} + q^{15} + q^{14} + 2 q^{13} + q^{12} + 2 q^{11} + 2 q^{9} - q^{8} + q^{7} - q^{6} - 2 q^{4} - 2 q^{2} - 1}{4 q^{12} + 4 q^{10} + 4 q^{8}}",
+          "value_at_q0": "1.5893934459539044137415087693689928372969565522957"
+        },
         "term6_simple_residue_partial": 0.0,
         "term6_in_MeV": 0.0,
         "status": "complete-simple-poles-only",
@@ -237,6 +247,11 @@
         "atom": "D (deuteron, A=2)",
         "n_max": 6,
         "tr_M_at_q0_polynomial": 0.17743692421543206,
+        "tr_M_polynomial": {
+          "polynomial_q": "(q**52 + 3*q**50 + 6*q**48 + 9*q**46 + 21*q**44 + 35*q**42 + 47*q**40 + 50*q**38 + 70*q**36 + 73*q**34 + 54*q**32 + 7*q**30 - 8*q**28 - 35*q**26 - 59*q**24 - 82*q**22 - 62*q**20 - 46*q**18 - 24*q**16 - 11*q**14 + 8*q**12 + 11*q**10 + 11*q**8 + 7*q**6 + 6*q**4 + 3*q**2 + 1)/(32*q**38 + 128*q**36 + 288*q**34 + 480*q**32 + 672*q**30 + 832*q**28 + 896*q**26 + 832*q**24 + 672*q**22 + 480*q**20 + 288*q**18 + 128*q**16 + 32*q**14)",
+          "polynomial_q_latex": "\\frac{q^{52} + 3 q^{50} + 6 q^{48} + 9 q^{46} + 21 q^{44} + 35 q^{42} + 47 q^{40} + 50 q^{38} + 70 q^{36} + 73 q^{34} + 54 q^{32} + 7 q^{30} - 8 q^{28} - 35 q^{26} - 59 q^{24} - 82 q^{22} - 62 q^{20} - 46 q^{18} - 24 q^{16} - 11 q^{14} + 8 q^{12} + 11 q^{10} + 11 q^{8} + 7 q^{6} + 6 q^{4} + 3 q^{2} + 1}{32 q^{38} + 128 q^{36} + 288 q^{34} + 480 q^{32} + 672 q^{30} + 832 q^{28} + 896 q^{26} + 832 q^{24} + 672 q^{22} + 480 q^{20} + 288 q^{18} + 128 q^{16} + 32 q^{14}}",
+          "value_at_q0": "0.17743692421543195973343227177271915339983307423175"
+        },
         "term6_simple_residue_partial": 0.0,
         "term6_in_MeV": null,
         "status": "incomplete-higher-order-pole-detected",
