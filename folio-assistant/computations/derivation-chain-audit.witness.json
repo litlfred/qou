@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T11:06:35.855477+00:00",
-  "commitSha": "c97006b27fa9a94efb88ce71ed528ff3779de982",
+  "computedAt": "2026-05-03T14:55:19.924419+00:00",
+  "commitSha": "40876063bd1286192daa479bd218890ceefd7a9a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1651,6 +1651,7 @@
         "per-atom-lp-binding.witness.json",
         "per-block-phi-q.witness.json",
         "per-channel-garside.witness.json",
+        "phase-a1-schur-weyl-audit.witness.json",
         "photon-operator-table.witness.json",
         "picard-lefschetz-thimble.witness.json",
         "plancherel-term-7.witness.json",
