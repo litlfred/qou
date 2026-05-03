@@ -153,6 +153,14 @@ class SymbolicHeckeDivision:
         # Quotient relations: atom_id → {name, nf_terms, n_components}
         self._quotient_relations = {}
 
+        # Reduce cache: maps a frozenset(elem.terms.items()) hash to
+        # the reduced element + stats. Since reduction is idempotent
+        # (applying it twice gives the same NF), the same input
+        # element always yields the same output. Keyed on a hashable
+        # snapshot of the input. Cache is stored per-instance
+        # because quotient registrations affect the result.
+        self._reduce_cache: dict = {}
+
         # Structural ideal generators I₁-I₇
         # Each is a function that identifies and collapses structural patterns
         self._structural_ideals = []
@@ -701,7 +709,8 @@ class SymbolicHeckeDivision:
             # Fallback: Hopf link
             return SymbolicHeckeElement({(gen,): C_HOPF})
 
-    def reduce(self, elem, max_iterations=10000, use_quotient=True):
+    def reduce(self, elem, max_iterations=10000, use_quotient=True,
+                use_cache=False):
         """Gröbner--Shirshov reduction with symbolic coefficients.
 
         Applies rules in order:
@@ -711,7 +720,29 @@ class SymbolicHeckeDivision:
           R4: Quotient — whole-atom NF → ℵ_k (if enabled)
 
         Returns (reduced_element, step_count_dict).
+
+        `use_cache` (default False): cache reductions keyed on a
+        hashable snapshot of `elem.terms`. Useful when the SAME
+        element object is reduced repeatedly (e.g., across multi-PR
+        regression suites). NOT useful for `incremental_reduced_element`
+        in markov_peel — each intermediate element is unique, so the
+        cache only adds key-construction overhead. Default off.
         """
+        # Cache lookup (opt-in).
+        cache_key = None
+        if use_cache:
+            try:
+                cache_key = (
+                    frozenset((w, str(c)) for w, c in elem.terms.items()),
+                    max_iterations, use_quotient,
+                    len(self._quotient_relations),
+                )
+                cached = self._reduce_cache.get(cache_key)
+                if cached is not None:
+                    return cached
+            except (TypeError, ValueError):
+                cache_key = None
+
         hecke_steps = 0
         yb_steps = 0
         fc_steps = 0
@@ -817,8 +848,11 @@ class SymbolicHeckeDivision:
                         quotient_steps += 1
                         changed = True
 
-        return elem, {'hecke': hecke_steps, 'yb': yb_steps, 'fc': fc_steps,
-                      'quotient': quotient_steps}
+        result = (elem, {'hecke': hecke_steps, 'yb': yb_steps,
+                         'fc': fc_steps, 'quotient': quotient_steps})
+        if cache_key is not None:
+            self._reduce_cache[cache_key] = result
+        return result
 
     # ── Markov trace ─────────────────────────────────────────────
 

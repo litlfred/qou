@@ -38,6 +38,7 @@ Witness: `markov-peel.witness.json` (cross-check against
 """
 from __future__ import annotations
 
+import functools
 import sys
 from pathlib import Path
 
@@ -57,6 +58,11 @@ from markov_trace_canonical import tr_M_element  # noqa: E402
 # Numerical h from `hecke_core` (used by `atom_braid_word_3A` to build
 # the (c, d) triples).  Imported lazily inside the builders.
 _H_NUM_TOL = 1e-9
+
+# Cache for crossing_from_cd: per (gen_idx, c-rounded, d-rounded)
+# the resulting SymbolicHeckeElement is uniquely determined. Keying
+# on rounded floats avoids identity-comparison issues.
+_CROSSING_CACHE: dict = {}
 
 
 # ── Crossing → Hecke element ────────────────────────────────────────
@@ -81,30 +87,42 @@ def crossing_from_cd(
 
     Any unrecognised `(c, d)` raises — Phase-1 deliberately keeps the
     domain narrow so we get loud failures on convention drift.
+
+    Cached on (gen_idx, c-rounded, d-rounded, h_num-rounded). For
+    atomic-braid words at A=4 the same crossing template gets
+    instantiated O(2A) times per atom; caching the conversion shaves
+    sympy-construction overhead in the hot path.
     """
     cf, df = float(c), float(d)
+    cache_key = (gen_idx, round(cf, 12), round(df, 12), round(h_num, 12))
+    cached = _CROSSING_CACHE.get(cache_key)
+    if cached is not None:
+        return cached
     if abs(cf - 1.0) < _H_NUM_TOL and abs(df) < _H_NUM_TOL:
         # σ
-        return SymbolicHeckeElement({(gen_idx,): sp.Integer(1)})
-    if abs(cf - 1.0) < _H_NUM_TOL and abs(df + h_num) < _H_NUM_TOL:
+        result = SymbolicHeckeElement({(gen_idx,): sp.Integer(1)})
+    elif abs(cf - 1.0) < _H_NUM_TOL and abs(df + h_num) < _H_NUM_TOL:
         # σ − h·𝟏
-        return SymbolicHeckeElement({
+        result = SymbolicHeckeElement({
             (gen_idx,): sp.Integer(1),
             (): -HA,
         })
-    if abs(cf - 1.0) < _H_NUM_TOL and abs(df + h_num / 2) < _H_NUM_TOL:
+    elif abs(cf - 1.0) < _H_NUM_TOL and abs(df + h_num / 2) < _H_NUM_TOL:
         # σ − (h/2)·𝟏
-        return SymbolicHeckeElement({
+        result = SymbolicHeckeElement({
             (gen_idx,): sp.Integer(1),
             (): -HA / 2,
         })
-    if abs(cf) < _H_NUM_TOL and abs(df - 1.0) < _H_NUM_TOL:
+    elif abs(cf) < _H_NUM_TOL and abs(df - 1.0) < _H_NUM_TOL:
         # identity (no crossing)
-        return SymbolicHeckeElement.identity()
-    raise ValueError(
-        f"unknown (c, d) crossing: c={cf!r}, d={df!r} at gen={gen_idx} "
-        f"(h={h_num!r})"
-    )
+        result = SymbolicHeckeElement.identity()
+    else:
+        raise ValueError(
+            f"unknown (c, d) crossing: c={cf!r}, d={df!r} at gen={gen_idx} "
+            f"(h={h_num!r})"
+        )
+    _CROSSING_CACHE[cache_key] = result
+    return result
 
 
 def crossing_element(gen_idx: int, cross_type: str) -> SymbolicHeckeElement:
