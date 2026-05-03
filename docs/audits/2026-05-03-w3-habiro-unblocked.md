@@ -198,8 +198,34 @@ The leading Habiro coefficient at m = 0 is also clean:
 | T    | 3 | 1024    | 2^10 ✓         |
 | ³He  | 3 | 1024    | 2^10 ✓         |
 | ⁴He  | 4 | 8192    | 2^13 ✓         |
+| ⁵Li  | 5 | 65536   | 2^16 ✓         |
+| ⁶Li  | 6 | 524288  | 2^19 ✓         |
 
-Hence **a_0 = 2^(3A + 1)** across all A = 2, 3, 4 atoms tested.
+Hence **a_0 = 2^(3A + 1)** across all A = 2..6 atoms tested.
+
+### Cross-validation with `claude/categorical-mass-divergence-audit`
+
+The audit branch's commit
+[`a9d7a3811`](https://github.com/litlfred/qou/commit/a9d7a3811)
+("Path A: tr_M(T_w; q→1) = (1/2)^(2A−1) — clean closed form") is
+**mathematically equivalent** to our `a_0 = 2^(3A + 1)` finding.
+
+> p(u) = D(u) · tr_M(q = u²)  ⇒  p(1) = D(1) · tr_M(q = 1)
+> p(1) = a_0(1) = a_0    (since (u; u)_m vanishes at u = 1 for m ≥ 1)
+> D(1) = 2^(2A + 1) · 1 · 2^(3A − 1) = 2^(5A)
+> ∴  tr_M(q = 1) = a_0 / D(1) = 2^(3A + 1) / 2^(5A) = (1/2)^(2A − 1)
+
+So either form implies the other.  Two independent paths converge on
+the same structural identity, providing strong cross-validation of
+the closed-form result.  The audit branch covers A = 1..4 from the
+q → 1 limit; this branch extends to A = 5, 6 via the symbolic-q
+markov_peel pipeline.
+
+**Note on conventions.**  The audit branch's commit
+[`b44ed76ee`](https://github.com/litlfred/qou/commit/b44ed76ee)
+fixed a (q; q)_m vs (u; u)_m ambiguity in its reconstruction; our
+`cyclotomic_expansion` already uses `(1 − u^(m+1))` factors (the
+(u; u)_m Pochhammer convention), so no fix is needed on our side.
 
 ## Implications
 
