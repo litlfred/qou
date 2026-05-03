@@ -1,0 +1,44 @@
+{
+  "computation": "l1-total-host-count-probe",
+  "computedAt": "2026-05-03T10:35:39.745490+00:00",
+  "description": "L-1 investigation: probes whether the Z=N q-correction supports the 'intrinsic q-deformed coefficient' interpretation (ρ + A − [A]_q) vs. the 'integer Kashaev + additive q-correction' interpretation. Numerically equivalent; the categorical interpretation matters for L-1.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895
+  },
+  "rows": [
+    {
+      "atom": "2H",
+      "A": 2,
+      "rho_struct": 1,
+      "Vol_eff": 4.400832516123046,
+      "B_AME_MeV": 2.22456612,
+      "qA_at_q0": 2.010896869118482,
+      "A_minus_qA": -0.010896869118481867,
+      "coef_intrinsic": 0.9891031308815181,
+      "B_kashaev_MeV": 2.2488207948647343,
+      "delta_q_MeV": -0.02450510587256137,
+      "delta_q_pct": -1.1015678811363616,
+      "B_pred_corr_MeV": 2.224315688992173,
+      "err_kashaev_pct": 1.0903103596999093,
+      "err_corr_pct": -0.011257521436452863
+    },
+    {
+      "atom": "4He",
+      "A": 4,
+      "rho_struct": 2,
+      "Vol_eff": 29.31089901367101,
+      "B_AME_MeV": 28.2956912,
+      "qA_at_q0": 4.109682435637708,
+      "A_minus_qA": -0.10968243563770841,
+      "coef_intrinsic": 1.8903175643622916,
+      "B_kashaev_MeV": 29.95567723908384,
+      "delta_q_MeV": -1.64280582037989,
+      "delta_q_pct": -5.805851529719444,
+      "B_pred_corr_MeV": 28.31287141870395,
+      "err_kashaev_pct": 5.866568260696314,
+      "err_corr_pct": 0.060716730976866626
+    }
+  ],
+  "verdict": "interpretation (B) [intrinsic q-deformed Kashaev coefficient] is supported; specific Markov-trace identity for [A]_q remains open."
+}
