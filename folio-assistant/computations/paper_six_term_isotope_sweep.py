@@ -43,6 +43,7 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 from itertools import combinations
+import warnings
 
 import numpy as np  # noqa: F401  (kept for downstream consumers)
 import mpmath as mp
@@ -69,8 +70,16 @@ def abs_mpf(v):
 
 
 # ── Canonical Term 1 from Hoefsmit+Wenzl bridge witness ────────────
+_T1_CACHE: dict | None = None
+
+
 def _load_canonical_t1() -> dict:
-    """Atom name → |tr_M(W)| at q_0 from the canonical bridge witness."""
+    """Atom name → |tr_M(W)| at q_0 from the canonical bridge witness.
+    Result is cached at module level so multi-isotope sweeps pay one disk read.
+    """
+    global _T1_CACHE
+    if _T1_CACHE is not None:
+        return _T1_CACHE
     path = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
     if not path.exists():
         raise FileNotFoundError(f"missing canonical T1 witness: {path}")
@@ -78,7 +87,8 @@ def _load_canonical_t1() -> dict:
     out: dict[str, mp.mpf] = {}
     for r in d.get("results", []):
         out[r["atom"]] = abs(mp.mpf(r["tr_M_at_q0_50dps"]))
-    return out
+    _T1_CACHE = out
+    return _T1_CACHE
 
 
 # Markov-peel inline values for atoms not in the bridge witness (e.g. ⁴He
@@ -141,11 +151,26 @@ def li2_q_sym(z: mp.mpf, max_n: int = 300) -> mp.mpf:
 
 
 # ── Canonical Term 6 from Habiro residue witness ────────────────────
+_T6_CACHE: dict | None = None
+
+
 def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
-    """A → Term 6 (cyclotomic residue tail) in MeV from Habiro witness."""
+    """A → Term 6 (cyclotomic residue tail) in MeV from Habiro witness.
+    Result is cached at module level.  Missing witness emits a warning and
+    returns {} (all T6 contributions silently set to zero).
+    """
+    global _T6_CACHE
+    if _T6_CACHE is not None:
+        return _T6_CACHE
     path = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
     if not path.exists():
-        return {}
+        warnings.warn(
+            f"T6 witness missing ({path}); Term 6 contributions set to 0 MeV. "
+            "Run term6_residues_at_roots.py to regenerate.",
+            stacklevel=2,
+        )
+        _T6_CACHE = {}
+        return _T6_CACHE
     d = json.loads(path.read_text())
     out: dict[int, mp.mpf] = {}
     for r in d.get("results_by_atom", []):
@@ -154,7 +179,8 @@ def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
             out[A] = mp.mpf(r["term6_b_pred_mev_50dps"])
         except (KeyError, IndexError, ValueError):
             continue
-    return out
+    _T6_CACHE = out
+    return _T6_CACHE
 
 
 def term1_descended(vols):
@@ -468,7 +494,7 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True)
 
 
 if __name__ == "__main__":
-    print("PAPER 6-TERM FORMULA — three-mode comparison sweep")
+    print("PAPER 6-TERM FORMULA — five-mode comparison sweep")
     print("=" * 80)
     print(f"q_0 = {float(Q0):.6f}")
 
@@ -493,7 +519,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 80)
     print("Side-by-side comparison (% error vs CODATA)")
     print("=" * 80)
-    print(f"  {'iso':>5} {'A':>3} | {'brane':>10} {'drop':>10} {'q1-base':>10}")
+    print(f"  {'iso':>5} {'A':>3} | {'brane':>10} {'drop':>10} {'q1-base':>10} {'r-side':>10} {'li2q':>10}")
     print("  " + "-" * 50)
     for iso, Z, N, _, M_cod in ISOTOPES:
         line = f"  {iso:>5} {Z+N:>3} |"
@@ -526,9 +552,12 @@ if __name__ == "__main__":
             delta = T_row["M_predicted"] - He_row["M_predicted"]
             print(f"  {mode:<10} {delta:>+14.4f}  {0.019:>10.4f}")
 
-    # Use brane mode rows as the primary witness output (back-compat)
-    rows = sweep_results["brane"]["rows"]
-    E_0 = sweep_results["brane"]["E_0"]
+    # Use li2q mode rows as the primary witness output (canonical corrected form).
+    # Back-compat consumers that need the legacy brane form can read
+    # all_modes["brane"]["rows"].
+    CANONICAL_MODE = "li2q"
+    rows = sweep_results[CANONICAL_MODE]["rows"]
+    E_0 = sweep_results[CANONICAL_MODE]["E_0"]
 
     witness = {
         "computation": "paper-six-term-isotope-sweep",
@@ -546,9 +575,11 @@ if __name__ == "__main__":
             "prop:chirality-dual-space-derivation",
             "thm:frobenius-codim-universal",
         ],
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": float(Q0_FLOAT),
+            "canonical_mode": CANONICAL_MODE,
+            "E_0_MeV": sweep_results[CANONICAL_MODE]["E_0"],
             "E_0_MeV_brane": sweep_results["brane"]["E_0"],
         },
         "rows": rows,
