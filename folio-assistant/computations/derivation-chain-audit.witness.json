@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T11:06:35.855477+00:00",
-  "commitSha": "c97006b27fa9a94efb88ce71ed528ff3779de982",
+  "computedAt": "2026-05-03T11:17:21.713659+00:00",
+  "commitSha": "aa68402eb3bd2d3b96d30736a834686d9f7d16a8",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1575,6 +1575,7 @@
         "low-isotope-mass-table-precision-audit.witness.json",
         "low-isotope-mass-table.witness.json",
         "lp-duality-check.witness.json",
+        "m-iso-lmfdb-lookup.witness.json",
         "m-p-breakdown-derived-vs-guessed.witness.json",
         "magic-126-optimized.witness.json",
         "magic-A-formula.witness.json",
