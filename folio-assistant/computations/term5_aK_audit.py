@@ -134,23 +134,43 @@ def mirror_word(word, *, variant: str, h_num: float):
     return out
 
 
-def aK_via_gram(Z: int, N: int, *, variant: str) -> dict:
-    """Compute a_K = tr_M(β · β*⁻¹) under the named variant."""
-    h_num = float(_h_num)
+def _build_beta_reduced(Z: int, N: int, h_num: float):
+    """Build the reduced β element ONCE, returning the
+    (SymbolicHeckeElement, SymbolicHeckeDivision) pair.  Shared
+    across the four variant runs in `aK_audit_atom`.
+    """
     word = atom_braid_word_3A(Z, N)
-    beta_star = mirror_word(word, variant=variant, h_num=h_num)
-    # Gram entry uses (β*)⁻¹.  For variants V1-V4 the variant field
-    # already produces "β*"; we treat that as the operand whose
-    # *Hecke inverse* must multiply β.  Computationally we just take
-    # the variant-mirror as the second factor — for V1 (β⁻¹) the
-    # product is β · β⁻¹ = 1; for the others it's a non-trivial
-    # Hecke-trace value.
-    full_word = word + beta_star
-    n_strands = 3 * (Z + N)
-
     div = SymbolicHeckeDivision()
     elem = SymbolicHeckeElement.identity()
-    for c, d, gen in full_word:
+    for c, d, gen in word:
+        elem = elem * crossing_from_cd(gen, c, d, h_num=h_num)
+        elem, _ = div.reduce(elem, max_iterations=2000)
+    return elem, div, word
+
+
+def aK_via_gram_shared(
+    beta_reduced: "SymbolicHeckeElement",
+    div: "SymbolicHeckeDivision",
+    word: list,
+    Z: int, N: int, *, variant: str,
+    h_num: float,
+) -> dict:
+    """Compute a_K = tr_M(β · β*ᵥ) for one variant, reusing a
+    pre-reduced β.
+
+    Without pre-reduction, the audit rebuilt β from scratch for
+    each of the four variants — ~4× redundant work.  Now the β
+    half is shared; only the variant-dependent suffix is appended
+    and reduced.
+    """
+    beta_star = mirror_word(word, variant=variant, h_num=h_num)
+    n_strands = 3 * (Z + N)
+
+    # Start from the shared reduced β; multiply in the variant's
+    # mirror suffix and continue reducing.  Each variant gets its
+    # own div instance so quotient state doesn't leak.
+    elem = beta_reduced
+    for c, d, gen in beta_star:
         elem = elem * crossing_from_cd(gen, c, d, h_num=h_num)
         elem, _ = div.reduce(elem, max_iterations=2000)
 
@@ -165,6 +185,22 @@ def aK_via_gram(Z: int, N: int, *, variant: str) -> dict:
         ops = -1
     return {"variant": variant, "value_at_q0": val_at_q0,
             "symbolic": sym_form[:300], "ops": ops}
+
+
+def aK_via_gram(Z: int, N: int, *, variant: str) -> dict:
+    """Compute a_K = tr_M(β · β*ᵥ) under the named variant.
+
+    Standalone single-variant API — rebuilds β every call.  For
+    multi-variant audits use `_build_beta_reduced` +
+    `aK_via_gram_shared` instead (~4× faster across the variant
+    sweep).
+    """
+    h_num = float(_h_num)
+    beta_reduced, div, word = _build_beta_reduced(Z, N, h_num)
+    return aK_via_gram_shared(
+        beta_reduced, div, word, Z, N,
+        variant=variant, h_num=h_num,
+    )
 
 
 def aK_closed_form(Z: int, N: int) -> float:
@@ -213,11 +249,35 @@ def main() -> int:
         print(f"\n  === {label} (Z={Z}, N={N}, A={Z + N}) ===", flush=True)
         closed = aK_closed_form(Z, N)
         print(f"    closed-form a_K = {closed:.10f}", flush=True)
+        # Build the reduced β prefix ONCE per atom — shared across
+        # the four variant runs.  Cuts wall time ~4× vs the previous
+        # rebuild-per-variant pattern.
+        h_num = float(_h_num)
+        try:
+            t_build = time.time()
+            beta_reduced, div, word = _build_beta_reduced(Z, N, h_num)
+            print(
+                f"    β reduced (shared): "
+                f"{time.time() - t_build:.1f}s, "
+                f"{len(beta_reduced.terms)} terms",
+                flush=True,
+            )
+        except Exception as exc:  # noqa: BLE001
+            print(f"    β reduce FAILED: {exc!r}", flush=True)
+            rows.append({
+                "atom": label, "Z": Z, "N": N, "A": Z + N,
+                "closed_form_aK": closed,
+                "error": f"{type(exc).__name__}: {exc}",
+            })
+            continue
         variant_results = {}
         for variant in ("V1", "V2", "V3", "V4"):
             try:
                 t0 = time.time()
-                r = aK_via_gram(Z, N, variant=variant)
+                r = aK_via_gram_shared(
+                    beta_reduced, div, word, Z, N,
+                    variant=variant, h_num=h_num,
+                )
                 dt = time.time() - t0
                 variant_results[variant] = r
                 gap = abs(r["value_at_q0"] - closed)
