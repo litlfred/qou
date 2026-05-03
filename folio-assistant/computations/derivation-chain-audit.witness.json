@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T21:10:41.553922+00:00",
-  "commitSha": "ac5053f75e815e6f0493aa28af2fd797c2019d41",
+  "computedAt": "2026-05-03T21:15:52.761053+00:00",
+  "commitSha": "034df3b9aae2ddc993c1ec74d8a63579a116b399",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1398,6 +1398,7 @@
         "brane-tower-plancherel-scaffold.witness.json",
         "brane-tower-prefactor-sweep.witness.json",
         "brane-tower-symbolic-D.witness.json",
+        "brane-tower-two-avenues-probe.witness.json",
         "breit-wheeler-nucleon-nf.witness.json",
         "bw-chirality-isotopes.witness.json",
         "bw-lagrangian-prefactor-attempt.witness.json",
