@@ -22,6 +22,14 @@ formula in `prop:mass-endomorphism-tower` — pairs are the largest
 ground ring `R_q = ℤ[q^±1]`.  Conditional on a `MarkovTraceAxioms`
 instance.
 
+**Parallel formalisations.** This chain-list version coexists with
+the algebra-level version in `Hecke/MarkovTrace.lean`
+(`theorem QOU.Hecke.MarkovTrace.trace_pair`, currently a `sorry`)
+and the heavier `Interactions/MarkovPeel.lean` (`class MarkovTrace`
+with peeling axioms).  The chain-list version is the lightweight
+form used by the audit's downstream consumers; the algebra-level
+version is the full-Hecke-algebra statement.
+
 LaTeX label: `prop:markov-pair-z2`
 
 ## References
