@@ -95,9 +95,15 @@ def residues_at_roots(
     def _alarm(_signum, _frame):
         raise _Timeout()
 
-    # Factor tr_sym = N(q) / D(q) ONCE.  Subsequent l'Hôpital
-    # evaluations are pointwise — no per-ℓ simplification needed.
-    tr_canonical = sp.cancel(tr_sym)
+    # Bring tr_sym to a single fraction WITHOUT canceling factors.
+    # `sp.together` combines `a/b + c/d` to `(ad + bc)/(bd)`; on
+    # the proton's 138-op `tr_M(q)` it's effectively instant.  The
+    # alternative `sp.cancel` would additionally try to cancel
+    # common polynomial factors, which is the dominant cost on
+    # tritium / ³He / ⁴He (~tens of seconds to minutes).  For
+    # l'Hôpital at a simple pole we don't need a cancelled form —
+    # just N(ζ_ℓ) and D'(ζ_ℓ) at the pole.
+    tr_canonical = sp.together(tr_sym)
     num, den = sp.fraction(tr_canonical)
     den_prime = sp.diff(den, q_sym)
 
@@ -210,13 +216,16 @@ def compute_atom(
     tr_sym = tr_M_atomic(Z, N)
     t_peel = time.time() - t0
 
-    t0 = time.time()
-    tr_simp = sp.cancel(tr_sym)
-    t_cancel = time.time() - t0
+    # `residues_at_roots` calls `sp.together` internally to bring
+    # tr_sym to a single fraction; we no longer pre-cancel here, since
+    # `sp.cancel` is the dominant cost on tritium / ³He / ⁴He
+    # (~tens of seconds to minutes) and is unnecessary for the
+    # l'Hôpital pole evaluation.
+    t_cancel = 0.0
 
     t0 = time.time()
     rows = residues_at_roots(
-        tr_simp, max_ell=max_ell,
+        tr_sym, max_ell=max_ell,
         per_ell_timeout_sec=per_ell_timeout_sec,
     )
     t_res = time.time() - t0
@@ -227,7 +236,7 @@ def compute_atom(
         "N": N,
         "A": A,
         "max_ell": max_ell,
-        "tr_M_symbolic_ops": int(sp.count_ops(tr_simp)),
+        "tr_M_symbolic_ops": int(sp.count_ops(tr_sym)),
         "elapsed_peel_sec": round(t_peel, 3),
         "elapsed_cancel_sec": round(t_cancel, 3),
         "elapsed_residues_sec": round(t_res, 3),
