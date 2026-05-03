@@ -942,4 +942,156 @@ downstream block via the typeclass-instance lookup.
 
 ---
 
+**End of Step-6 audit.**
+
+---
+
+## §9 — Sharp Step-13 audit (GS-residue / spectral-sequence cluster)
+
+The Step-13 cluster: `prop:gb-spectral-sequence`,
+`prop:graded-trace-residue-split`, `prop:graded-markov-trace-from-gs-filtration`,
+`prop:residue-at-root`, `prop:gb-residue-spectral-sum`,
+`prop:confinement-level-exists`.  This is **GAP 13a** in the
+forward-derivation document — six declarations originally written
+as `noncomputable opaque`, with a long-standing question of how
+to translate them to the `§3b conditional-class` pattern.
+
+### Findings
+
+**S1 (resolved). `prop:gb-spectral-sequence` had no Lean file at
+all.** Block kind is `proposition` — CLAUDE.md §3 says Lean is
+expected (warning if missing).  The block's `lean.ref` was
+`qou:QOU.BraidKnot.gb_spectral_sequence`; no co-located stub, no
+formal-chain file.  Pipeline fell back to the grep heuristic and
+silently failed to verify.
+
+**Fixed**: created
+[`lean/QOU/BraidKnot/GBSpectralSequence.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/GBSpectralSequence.lean)
+with `class GBSpectralSequence (R : Type u) [CommRing R]` carrying
+`graded`, `differential`, `d_squared_zero`, and an
+`e_infty_converges` witness; theorem `gb_spectral_sequence`
+extracts `d² = 0` from the class instance.
+
+**S2 (resolved). `prop:residue-at-root` had no Lean file at all.**
+Same situation as S1.  The narrative defines the residue as the
+cyclotomic projection `ℤ̂[q] → ℤ[q]/Φ_n(q) ≅ ℤ[ζ_n]` — purely
+algebraic, no analytic continuation.
+
+**Fixed**: created
+[`lean/QOU/BraidKnot/ResidueAtRoot.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/ResidueAtRoot.lean)
+with `class ResidueAtRoot (R : Type u) [CommRing R]` carrying
+the per-`n` target ring `target n`, the cyclotomic projection
+`project n : R →+* target n`, and a residue accessor.
+
+**S3 (resolved). `prop:graded-markov-trace-from-gs-filtration`
+formal-chain Lean was vacuous (`: True := trivial`).**
+
+Same anti-pattern as `phi-q-tower-algebraic-stratification` (fixed
+in §7).
+
+**Fixed**: replaced the placeholder body of
+[`lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean)
+with a `class GradedMarkovTraceFromGSFiltration (R : Type u) [Field R]`
+encoding the descent relation `gradedTrace 0 = markovValue` (the
+minimal level-0 identity that any instance must satisfy); theorem
+`graded_markov_trace_from_gs_filtration` extracts it.
+
+**S4 (resolved). `prop:gb-residue-spectral-sum` had only a
+co-located stub.** The co-located stub already had a well-formed
+`class GBResidueSpectralSum` (per the "P2.6 Lean refactor 2026-05-02"
+note in its docstring: previous opaques `gradedMarkovTrace` and
+`residueAtRoot` were already promoted to class fields).  The
+remaining gap was that the class lived only in the documentation
+tier — the formal chain had no compiled version.
+
+**Fixed**: ported to
+[`lean/QOU/BraidKnot/GBResidueSpectralSum.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean)
+with the same `class GBResidueSpectralSum` (descended, levelBound,
+roots, gradedTrace, residue, mass, spectral_decomposition);
+theorem `gb_residue_spectral_sum` extracts the spectral
+decomposition.  The `RootOfUnity` structure carries `value : ℝ` —
+this is genuinely Archimedean (a complex root of unity, real part
+recorded), so `ℝ` is correct here.
+
+**S5 (resolved). `prop:graded-trace-residue-split` had only a
+co-located stub.** I migrated this in §1 (Pass 10) to be polymorphic
+in `[Field R]`, but the co-located file was not compiled.
+
+**Fixed**: ported to
+[`lean/QOU/BraidKnot/GradedTraceResidueSplit.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean)
+with the same `class GradedTraceResidueSplit (R : Type u) [Field R]`
+(symbolMap, gradedTrace, gbResidue, markovTrace as opaques + the
+class with split_identity).  The opaque names are
+`GradedTraceResidueSplit.gradedTrace` etc. (qualified) to avoid
+shadowing the formal-chain `GradedMarkovTraceFromGSFiltration`'s
+class field with the same root name.  Theorem
+`graded_trace_residue_split` extracts the split identity.
+
+**S6 (resolved). `prop:confinement-level-exists` had only a
+co-located stub; the parent type `ConfinementLevel` itself was also
+co-located.**
+
+**Fixed**: ported the entire
+[`ConfinementLevel`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean)
+structure + `ConfinementLevel.exists` theorem to the formal chain.
+The `confinement-level.md` block is a `definition` (not in the
+audit's primary cluster), but its Lean home was previously co-only;
+moving it to the formal chain unblocks downstream consumers.
+
+**S7 (broken-import side-fix). `lean/QOU/BraidKnot.lean` imported a
+non-existent module.** The pre-existing aggregator imported
+`QOU.BraidKnot.ResidueAtRootFromGSFiltration`, but no such file
+exists in the formal chain.
+
+**Fixed**: replaced the dead import with the new
+`QOU.BraidKnot.ResidueAtRoot`, and added the five other new
+imports (`ConfinementLevel`, `GBSpectralSequence`,
+`GradedTraceResidueSplit`, `GBResidueSpectralSum`).  This closes a
+latent CI failure that would have surfaced on the next `lake build`.
+
+### Net status of the Step-13 cluster
+
+| Block | Kind | Lean home | Wall status |
+|-------|------|-----------|-------------|
+| `def:confinement-level` | definition | `lean/QOU/BraidKnot/ConfinementLevel.lean` | 🟢 polymorphic in `[CommRing R]` |
+| `prop:confinement-level-exists` | proposition | same | 🟢 trivial existence witness |
+| `prop:gb-spectral-sequence` | proposition | new `GBSpectralSequence.lean` | 🟡 conditional-class (substrate axiom: spectral-sequence existence) |
+| `prop:graded-markov-trace-from-gs-filtration` | proposition | upgraded `GradedMarkovTraceFromGSFiltration.lean` (from `: True := trivial` to class) | 🟡 conditional-class (descent map existence) |
+| `prop:residue-at-root` | proposition | new `ResidueAtRoot.lean` | 🟡 conditional-class (Habiro-completion projection) |
+| `prop:graded-trace-residue-split` | proposition | new `GradedTraceResidueSplit.lean` (formal-chain version of co-located stub) | 🟡 conditional-class (split identity); pre-Arch by `[Field R]` |
+| `prop:gb-residue-spectral-sum` | proposition | new `GBResidueSpectralSum.lean` | 🟡 conditional-class (graded trace + residue values) |
+
+The forward-derivation §C.1 GAP 13a originally listed **six
+`noncomputable opaque` declarations**:
+`gradedMarkovTrace`, `residueAtRoot`, `spectral_decomposition`,
+`spectral_sum_finite`, two `archimedean_agreement`.  After this
+audit:
+
+- `gradedMarkovTrace`: now a class field of
+  `GBResidueSpectralSum` (and a class field of
+  `GradedMarkovTraceFromGSFiltration`).
+- `residueAtRoot`: now class fields of `GBResidueSpectralSum`
+  and `ResidueAtRoot`.
+- `spectral_decomposition`: now a class field of
+  `GBResidueSpectralSum`.
+- `spectral_sum_finite`: encoded in the finite-type domain
+  `Fin levelBound` — automatic.
+- The two `archimedean_agreement` declarations were not in the
+  audit cluster but were always `Arch`-tier; they live downstream
+  of `[GBSpectralSequence R]` + the τ_arch realisation.
+
+GAP 13a is therefore **discharged at the Lean structural level**:
+no `opaque` declarations remain in the cluster's primary
+`prop:` blocks, every conjectural input is concentrated in named
+class fields, and the formal-chain modules are now compiled.
+
+The mathematical content (proving the existence of the spectral
+sequence, the Habiro completion, etc.) remains research-grade —
+the conditional-class pattern *isolates* the conjectural input
+without claiming to prove it.  Concrete `instance` declarations
+for the QOU substrate at $q_0$ would discharge each downstream
+theorem automatically via typeclass resolution.
+
+---
+
 **End of audit.**
