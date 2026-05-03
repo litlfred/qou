@@ -55,8 +55,8 @@ $$
   \;=\; \frac{z + q^{-1}}{[2]_q}.
 $$
 
-At $q_0 = 1.10998$: $z + q^{-1} = 0.4993 + 0.9009 = 1.4002$, $[2]_q
-= 2.011$, so $\mathrm{tr}_M(e_{\rm sym}) = 0.6964$.
+At $q_0 = 1.10998$: $z + q^{-1} \approx 0.4993 + 0.9009 \approx 1.4002$,
+$[2]_q \approx 2.011$, so $\mathrm{tr}_M(e_{\rm sym}) \approx 0.6964$.
 
 **Note**: this is k-independent — the sym idempotent on $H_2$ doesn't
 depend on $k$ (the projector is on the $\sigma_1$-eigenvalue, not on

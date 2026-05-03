@@ -35,7 +35,11 @@ Usage:
     python3 shell7_bb_stratum_test.py
 """
 from __future__ import annotations
-import sys, json, math, time, warnings
+import sys
+import json
+import math
+import time
+import warnings
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -421,7 +425,7 @@ def main():
     }
 
     out = Path(__file__).parent / "shell7-bb-stratum.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out.write_text(json.dumps(witness, indent=2, default=str), encoding='utf-8')
     print(f"\nWitness: {out}")
     return 0
 

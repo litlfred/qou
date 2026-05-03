@@ -16,7 +16,9 @@ basis-internal coincidence.
 Output: nv-pslq-extended-basis.witness.json
 """
 from __future__ import annotations
-import json, math, time
+import json
+import math
+import time
 from pathlib import Path
 from datetime import datetime, timezone
 import mpmath as mp
@@ -230,7 +232,7 @@ def main():
     }
 
     out_path = Path(__file__).parent / "nv-pslq-extended-basis.witness.json"
-    with open(out_path, "w") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2)
     print()
     print(f"Conclusion: {conclusion}")

@@ -223,7 +223,7 @@ def main():
         },
     }
     out_path = Path(__file__).parent / 'v4-mass-pipeline.witness.json'
-    with open(out_path, 'w') as f:
+    with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(out, f, indent=2, ensure_ascii=False, default=str)
     print(f"→ wrote {out_path}")
 

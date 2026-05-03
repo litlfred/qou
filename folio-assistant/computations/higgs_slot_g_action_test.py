@@ -14,7 +14,8 @@ the G-action q-dim form gives a better answer.
 This is a HONEST test — no fitting. Each formula is parameter-free.
 """
 from __future__ import annotations
-import json, sys
+import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 import mpmath
@@ -169,6 +170,6 @@ out = {
     ),
 }
 out_path = Path(__file__).parent / 'higgs-slot-g-action-test.witness.json'
-with open(out_path, 'w') as f:
+with open(out_path, 'w', encoding='utf-8') as f:
     json.dump(out, f, indent=2, ensure_ascii=False, default=str)
 print(f"\n→ wrote {out_path}")

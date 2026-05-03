@@ -252,6 +252,6 @@ out = {
     ),
 }
 out_path = Path(__file__).parent / 'n-sym-gram-determinant-probe.witness.json'
-with open(out_path, 'w') as f:
+with open(out_path, 'w', encoding='utf-8') as f:
     json.dump(out, f, indent=2, ensure_ascii=False, default=str)
 print(f"\n→ wrote {out_path}")

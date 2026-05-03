@@ -27,7 +27,6 @@ import mpmath
 mpmath.mp.dps = 200
 
 # Centralized constants (per Gemini review on PR #515).
-_sys.path.insert(0, str(Path(__file__).parent)) if False else None  # path already set below
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).parent))
 from q_parameter import Q_50_DIGIT_STR
@@ -204,7 +203,7 @@ def main():
         ),
     }
     out_path = Path(__file__).parent / 'n-sym-numerical-anchor.witness.json'
-    with open(out_path, 'w') as f:
+    with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(out, f, indent=2, ensure_ascii=False, default=str)
     print(f"\n→ wrote {out_path}")
 
