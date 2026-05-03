@@ -302,22 +302,32 @@ if __name__ == "__main__":
     for label, Z, N, inter in cases:
         results[label] = run_validation(Z, N, inter, label)
 
-    # A = 3 demo: triton-like (Z=1, N=2) — symbolic intractable.
-    print("\n── DEMO: A = 3 (triton Z=1, N=2) — tr_M @ q_0 numerically ──")
-    try:
-        t0 = time.time()
-        tr_T = markov_trace_numerical(1, 2, float(_Q_CANONICAL),
-                                       include_inter=True)
-        dt = time.time() - t0
-        print(f"  tr_M(T, q_0) = {mp.nstr(tr_T.real, 18)}  ({dt:.2f}s)")
-        results["T (triton, A=3)"] = {
-            "Z": 1, "N": 2, "include_inter": True,
-            "tr_M_q0_numerical_60dps": str(tr_T.real),
-            "walltime_sec": dt,
-        }
-    except Exception as exc:
-        print(f"  ERROR: {type(exc).__name__}: {exc}")
-        results["T (triton, A=3)"] = {"error": str(exc)}
+    # A = 3 demo: triton (Z=1, N=2) and ³He (Z=2, N=1) — symbolic intractable.
+    a3_cases = [
+        ("T (triton, A=3)",   1, 2, True),
+        ("³He (helion, A=3)", 2, 1, True),
+    ]
+    for label, Z, N, inter in a3_cases:
+        print(f"\n── DEMO: A=3 ({label}) — tr_M @ q_0 numerically ──")
+        try:
+            t0 = time.time()
+            tr_val = markov_trace_numerical(Z, N, float(_Q_CANONICAL),
+                                             include_inter=inter)
+            dt = time.time() - t0
+            print(f"  tr_M = {mp.nstr(tr_val.real, 18)}  ({dt:.2f}s)")
+            results[label] = {
+                "Z": Z, "N": N, "include_inter": inter,
+                "tr_M_q0_numerical_60dps": str(tr_val.real),
+                "walltime_sec": dt,
+            }
+        except Exception as exc:
+            print(f"  ERROR: {type(exc).__name__}: {exc}")
+            results[label] = {"error": str(exc)}
+
+    # A = 4 (⁴He) is intractable at this precision: max seminormal
+    # dimension f^λ ≈ 462 (for λ ⊢ 12) and 12 crossings → mpmath dense
+    # matrix multiplications exceed 600s wallclock at 60 dps.  Sparse
+    # block structure or symbolic char-table evaluation needed for A ≥ 4.
 
     witness = {
         "computation": "habiro-coefficients-interpolate",
@@ -325,12 +335,31 @@ if __name__ == "__main__":
             "Numerical-pointwise validation of tr_M at q_0 for atomic "
             "braids via mpmath Hoefsmit at 60-digit precision.  Agrees "
             "with symbolic path (habiro_coefficients_atomic.py) for "
-            "A = 1, 2 to the precision of both pipelines.  For A = 3 "
-            "the symbolic pipeline is intractable; this path remains "
-            "viable.  Full Lagrange recovery of p(u) ∈ ℤ[u, u⁻¹] is "
-            "scaffolded (recover_polynomial_from_samples, "
-            "coeffs_to_poly, cyclotomic_expansion) and ready to run "
-            "once the Markov denominator D(u) is cleared analytically."
+            "A = 1, 2 to the precision of both pipelines.  Extended to "
+            "A = 3 atoms (triton, ³He) where the symbolic-q pipeline is "
+            "intractable; this numerical path remains viable.  Full "
+            "Lagrange recovery of p(u) ∈ ℤ[u, u⁻¹] is scaffolded "
+            "(recover_polynomial_from_samples, coeffs_to_poly, "
+            "cyclotomic_expansion) and ready to run once the Markov "
+            "denominator D(u) is cleared analytically — see the W-3 "
+            "blocker note below.  A = 4 (⁴He, n=12) is currently "
+            "intractable in dense mpmath: max f^λ ≈ 462 with ~12 "
+            "crossings exceeds 600s wallclock at 60 dps; sparse-block "
+            "or character-table approach needed for A ≥ 4."
+        ),
+        "blocker_W3_term6_extension": (
+            "Extending Term-6 simple-pole sum to A ≥ 3 atoms requires "
+            "the cyclotomic Habiro coefficients a_m(u) of tr_M, not "
+            "just pointwise tr_M(q_0) values.  Recovery of a_m(u) "
+            "needs the analytical Markov-normalisation denominator "
+            "D(u) such that p(u) := D(u) · tr_M(u²) is a polynomial "
+            "in ℤ[u, u⁻¹].  Currently D(u) is extracted by "
+            "sympy `together()` of the symbolic-q expression "
+            "(habiro_coefficients_atomic.py:to_u_polynomial) — "
+            "intractable for partitions of 3A with A ≥ 3.  A "
+            "first-principles derivation from Schur–Weyl hook "
+            "denominators + Hoefsmit character denominators "
+            "(both LCMs over partitions of 3A) is the next step."
         ),
         "reference_blocks": [
             "def:habiro-ring",

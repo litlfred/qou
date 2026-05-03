@@ -1,5 +1,4 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Algebra.Field.Basic
 
 /-!
 # QOU.BraidKnot.wedderburnWeightCanonical
@@ -24,11 +23,12 @@ are:
   β / y = -1/2  (for self-conjugate λ)
   C / y = h/2   (for self-conjugate λ)
 
-This Lean stub records the canonical weight and the three
-scaling identities as a class. Closing the identities as Lean
-theorems requires `dim_q` / `q_factorial` formalisations in
-Mathlib that are not yet available; we state them as class
-fields supplied by an instance.
+**Pre-Archimedean stub.** Polymorphic in the ground field `R`.
+The previous version typed every coefficient to `ℝ`; the
+canonical Wedderburn weight is `q`-rational (a Laurent
+polynomial / element of `ℚ(q)`), not a real number.  The
+Archimedean specialisation `q ↦ q₀ ∈ ℝ` is downstream
+(`QOU.Calculations`).
 
 Ref: [jones1985] https://doi.org/10.2307/1971403
 Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
@@ -46,55 +46,51 @@ structure Partition where
   parts : List ℕ
   -- Could add: parts.Sorted (· ≥ ·), parts.all (· > 0)
 
-/-- The canonical Wedderburn-block weight discipline.
+/-- The canonical Wedderburn-block weight discipline, polymorphic in
+    the ground field `R`.
 
-    An instance asserts that the three named coefficient forms
-    used in the paper (BW, shadow-price, Wenzl-bridge) reduce to
-    the canonical `w_λ = dim_q(λ)² / [n]_q!` via the three
-    explicit scaling identities.
-
-    The class is left abstract (`w` is supplied by the instance);
-    its purpose is to record the *discipline* that no fourth
-    derivation form is admitted.
+    An instance asserts that the three named coefficient forms used
+    in the paper (BW, shadow-price, Wenzl-bridge) reduce to the
+    canonical `w_λ = dim_q(λ)² / [n]_q!` via the three explicit
+    scaling identities.
 
     For self-conjugate partitions, the Wenzl-bridge sign vanishes
     (`κ_λ = 0`) and `y = w`. -/
-class WedderburnWeightCanonical where
-  /-- The Hecke-generator scalar `h = q - q⁻¹`. -/
-  h : ℝ
-  /-- The canonical Wedderburn weight `w_λ` ∈ ℚ(q). -/
-  w : Partition → ℝ
+class WedderburnWeightCanonical (R : Type u) [Field R] where
+  /-- The Hecke-generator scalar `h = q - q⁻¹` in `R`. -/
+  h : R
+  /-- The canonical Wedderburn weight `w_λ ∈ R` (Laurent in `q`). -/
+  w : Partition → R
   /-- Content sum `κ_λ`. -/
   kappa : Partition → ℤ
   /-- BW mass coefficient `β_λ = -½ w_λ`. -/
-  beta : Partition → ℝ
+  beta : Partition → R
   /-- LP shadow-price `C_λ = w_λ · h/2`. -/
-  C : Partition → ℝ
-  /-- Wenzl-bridge sign-tracked coefficient
-      `y_λ = (-1)^κ_λ · w_λ`. -/
-  y : Partition → ℝ
+  C : Partition → R
+  /-- Wenzl-bridge sign-tracked coefficient `y_λ = (-1)^κ_λ · w_λ`. -/
+  y : Partition → R
   /-- BW scaling identity. -/
-  beta_eq : ∀ λ, beta λ = -((1 : ℝ) / 2) * w λ
+  beta_eq : ∀ λ, beta λ = -(1 / 2 : R) * w λ
   /-- LP shadow-price scaling identity. -/
   C_eq : ∀ λ, C λ = w λ * (h / 2)
-  /-- Wenzl-bridge scaling identity. The `(-1)^κ_λ` is realised
+  /-- Wenzl-bridge scaling identity.  The `(-1)^κ_λ` is realised
       as `1` for `κ_λ` even and `-1` for `κ_λ` odd; `Int.toNat`
       gives the absolute value. -/
-  y_eq : ∀ λ, y λ = ((-1 : ℝ) ^ (kappa λ).toNat) * w λ
+  y_eq : ∀ λ, y λ = ((-1 : R) ^ (kappa λ).toNat) * w λ
 
 /-- For self-conjugate partitions (κ = 0), the Wenzl-bridge form
     reduces to `w` exactly. -/
 theorem WedderburnWeightCanonical.y_self_conjugate
-    [c : WedderburnWeightCanonical] (λ : Partition)
-    (h_self : c.kappa λ = 0) :
+    {R : Type u} [Field R] [c : WedderburnWeightCanonical R]
+    (λ : Partition) (h_self : c.kappa λ = 0) :
     c.y λ = c.w λ := by
   rw [c.y_eq, h_self]
   simp
 
-/-- Cross-ratio: BW / shadow-price = -1/h (when `C ≠ 0`). -/
+/-- Cross-ratio: `β / C = -1/h` (when `C ≠ 0`). -/
 theorem WedderburnWeightCanonical.beta_over_C
-    [c : WedderburnWeightCanonical] (λ : Partition)
-    (hC : c.C λ ≠ 0) (hh : c.h ≠ 0) :
+    {R : Type u} [Field R] [c : WedderburnWeightCanonical R]
+    (λ : Partition) (hC : c.C λ ≠ 0) (hh : c.h ≠ 0) :
     c.beta λ / c.C λ = -(1 / c.h) := by
   rw [c.beta_eq, c.C_eq]
   -- β/C = (-½ w) / (w · h/2) = -1/h, provided w ≠ 0 (which

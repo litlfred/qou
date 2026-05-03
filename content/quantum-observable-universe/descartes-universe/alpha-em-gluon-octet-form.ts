@@ -1,13 +1,9 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:alpha-em-gluon-octet-form",
+export default conjecture({
+  label: "conj:alpha-em-gluon-octet-form",
   title:
-    "Closed form $1/\\alpha_{EM} = 45 \\cdot [3]_q \\cdot (1 + \\delta_{CS} + 8q \\cdot \\delta_{CS}^2)$ from spectral completeness, gauge uniqueness, and Gram--Plancherel structure",
-  lean: {
-    ref: "qou:QOU.DescartesUniverse.alpha_em_gluon_octet_form",
-    validation: "not_checked",
-  },
+    "Conjectured closed form $1/\\alpha_{EM} = 45 \\cdot [3]_q \\cdot (1 + \\delta_{CS} + 8q \\cdot \\delta_{CS}^2)$ (PSLQ-empirical, derivation incomplete)",
   uses: [
     "thm:em-spectral-completeness",
     "cor:gauge-coupling-uniqueness",
@@ -19,9 +15,8 @@ export default proposition({
   tags: [
     "alpha-em",
     "fine-structure",
-    "gluon-octet",
-    "closed-form",
-    "structural",
-    "no-fitting",
+    "conjecture",
+    "pslq-empirical",
+    "derivation-open",
   ],
 });

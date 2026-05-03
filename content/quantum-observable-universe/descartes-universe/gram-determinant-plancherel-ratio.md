@@ -21,7 +21,7 @@ $$
 $$
 
 *appearing in the Chern-Simons descent
-([CS coupling](#prop:em-coupling-chern-simons)) is given by the
+([CS coupling](#conj:em-coupling-chern-simons)) is given by the
 Plancherel-weighted character product*
 
 $$

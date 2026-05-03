@@ -47,8 +47,6 @@ import sympy as sp
 # `RecursionError` and breaking `binding_full_pipeline`.  Bump the
 # limit before any sp.diff call lands.  10000 covers ⁴He empirically;
 # the cost is just stack address space, not compute.
-# (Cherry-picked from PR #526 c416c0877 — independent fix needed for
-# T2/T3 trace-form experiments via Kähler-derivative.)
 sys.setrecursionlimit(max(sys.getrecursionlimit(), 10000))
 
 # P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
@@ -121,9 +119,10 @@ def d_cl_cached(shape: tuple[int, ...]) -> int:
     return fact // prod
 
 
+@lru_cache(maxsize=128)
 def build_V_hat_symbolic(Z: int, N: int, *, include_inter: bool = True,
                             m_pp: int = 1, m_pn: int = 1,
-                            m_nn: int = 1) -> list[sp.Expr]:
+                            m_nn: int = 1) -> tuple[sp.Expr, ...]:
     """V̂_i(q) as a sympy expression per generator, for the atom braid.
 
     Uses eigenvalue-factored Hoefsmit trace:
@@ -131,8 +130,14 @@ def build_V_hat_symbolic(Z: int, N: int, *, include_inter: bool = True,
         V̂_i^λ(q) = [m_+(λ,i) · Π_k (c_k q + d_k)
                     + m_-(λ,i) · Π_k (−c_k q⁻¹ + d_k)] / d_λ(classical)
 
-    Returns list of sympy expressions (not yet simplified — can be large
-    for heavy atoms).
+    Returns a tuple of sympy expressions (not yet simplified — can be
+    large for heavy atoms).  Tuple rather than list so the result is
+    hashable / safe for `lru_cache` reuse — `binding_full_pipeline`
+    invokes this with identical args (Z, N, include_inter ∈ {True, False})
+    twice per atom (atom + free), and downstream tests / sweeps repeat
+    the call across `kahler_order ∈ {0, 1, 2}`.  Caching collapses
+    those into a single per-(Z, N, include_inter) build, which is the
+    dominant cost at A ≥ 3 (≥ 20 s on ³He).
     """
     A = Z + N
     if A < 1:
@@ -192,10 +197,28 @@ def build_V_hat_symbolic(Z: int, N: int, *, include_inter: bool = True,
                 V_i_lam = tr_lam / dc
             V_i += w_lam * V_i_lam
         V_hat_list.append(sp.simplify(V_i))
-    return V_hat_list
+    # Return tuple so the result is hashable/safe under @lru_cache.
+    return tuple(V_hat_list)
 
 
-def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
+@lru_cache(maxsize=64)
+def _kahler_lift_analytic_cached(
+    V_hat_sym: tuple, order: int
+) -> dict:
+    """Cached worker for `kahler_lift_analytic`.  See public wrapper
+    below for documentation.
+
+    Cached by `(V_hat_sym, order)` since `binding_full` typically
+    invokes the same `(Z, N)`-derived `V_hat_sym` for orders 0, 1, 2
+    in sequence (per `binding_full_pipeline.binding_full`'s
+    sweep) and the order-2 derivative dominates wall time.
+    """
+    return _kahler_lift_analytic_impl(V_hat_sym, order)
+
+
+def kahler_lift_analytic(
+    V_hat_sym: list[sp.Expr] | tuple[sp.Expr, ...], order: int = 2
+) -> dict:
     """Analytic Kähler lift with up to ``order`` q-derivatives.
 
     Returns per-generator {"V0": V, "V1": V + ℏ_q·q·dV/dq, "V2": +2nd-order}
@@ -207,7 +230,24 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
     order=2: V̂^{(1)} = V̂^{(0)} + ℏ_q · q · dV̂/dq
                        + (ℏ_q²/2) · [q² d²V̂/dq² + q dV̂/dq]
                                             ε = O(ℏ_q³)
+
+    Cached via `_kahler_lift_analytic_cached` when the input is a
+    tuple of sympy expressions (the new `build_V_hat_symbolic` return
+    type).  When given a list — for back-compat — falls through to the
+    uncached impl.
     """
+    if isinstance(V_hat_sym, tuple):
+        # Return a deep-ish copy of the cached dict (shallow dict +
+        # copied lists) so callers cannot mutate state shared across
+        # cache hits — sympy expressions are immutable, so list-level
+        # copy is sufficient.
+        cached = _kahler_lift_analytic_cached(V_hat_sym, order)
+        return {k: list(v) for k, v in cached.items()}
+    return _kahler_lift_analytic_impl(V_hat_sym, order)
+
+
+def _kahler_lift_analytic_impl(V_hat_sym, order: int) -> dict:
+    """Uncached implementation — see `kahler_lift_analytic` docstring."""
     hbar_sym = HBAR_Q_SYM
     results = {"V0": [], "V1": [], "V2": []}
     for V_i in V_hat_sym:
@@ -215,6 +255,13 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
         V0_val_polynomial_q = expose_polynomial(V_i, q)
         results["V0"].append(V0_val)
         if order >= 1:
+            # The module-level `sys.setrecursionlimit(10000)` keeps
+            # this `sp.diff` from overflowing on A ≥ 3 atoms.  We
+            # deliberately do NOT pre-cancel the rational form: on
+            # ³He with 8 generators × order-2 derivative, `cancel`
+            # before diff inflates wall time from ~5 s to >4 min
+            # (the unflattened expression diff is faster than the
+            # flattened-then-diff sequence).
             dV_dq = sp.diff(V_i, q)
             qdV = q * dV_dq
             V1_add = hbar_sym * qdV
@@ -223,8 +270,9 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
             results["V1"].append(V1_val)
         if order >= 2:
             d2V_dq2 = sp.diff(V_i, q, 2)
-            # q² d²V/dq² + q dV/dq
-            second = q * q * d2V_dq2 + q * sp.diff(V_i, q)
+            # `dV_dq` was already computed in the order=1 branch
+            # above; reuse it instead of recomputing `sp.diff(V_i, q)`.
+            second = q * q * d2V_dq2 + q * dV_dq
             V2_add = (hbar_sym ** 2 / 2) * second
             V2_val = float((V_i + V1_add + V2_add).subs(q, Q0))
             V2_val_polynomial_q = expose_polynomial((V_i + V1_add + V2_add), q)

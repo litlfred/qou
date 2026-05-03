@@ -1,4 +1,8 @@
 import Mathlib.Data.Real.Basic
+import QOU.LiftingDescent.MotivicGaloisCharacter
+import QOU.LiftingDescent.MotivicPerpetualObstruction
+import QOU.LiftingDescent.DirectLimitAlgebra
+import QOU.LiftingDescent.CosimplicialCrossedGroupoid
 
 /-!
 # QOU.LiftingDescent — Arc spaces of the brane tower

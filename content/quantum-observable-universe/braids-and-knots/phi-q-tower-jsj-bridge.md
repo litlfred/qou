@@ -11,35 +11,22 @@ $V_S := \prod_{i \in S}\hat{V}_i^{\mathrm{full}}$ be the per-block
 spectral coordinate
 ([mass endomorphism tower](#prop:mass-endomorphism-tower)).
 
-#### Algebraic-side statement of the JSJ stratification
+#### Algebraic-side prerequisite
 
-Before invoking 3-manifold language, the "JSJ" structure on the
-**algebraic side** is the stratification of the mass-tower formula
-by $|S|$ — equivalently, by **filtration depth** in the
-Gröbner–Shirshov (GS) confinement filtration $J^\bullet$
-([gb-spectral-sequence](#prop:gb-spectral-sequence),
-[graded-trace-residue-split](#prop:graded-trace-residue-split)).
-Concretely: the family $\{V_S\}_{|S|\leq 2}$ partitions the
-descended Markov trace into
+The **algebraic** content of "JSJ stratification" — a partition of
+the mass-tower formula into level-$|S|$ summands in
+$J^{|S|}/J^{|S|+1}$ of the GS confinement filtration — is stated
+in full generality by
+[`prop:phi-q-tower-algebraic-stratification`](#prop:phi-q-tower-algebraic-stratification).
+That proposition is **unconditional**: it lives entirely in
+$H_n(R, q)$ over $\mathbb{Q}(q^{1/2})$, makes no reference to
+$\tau$, hyperbolic volume, or 3-manifold pieces, and uses the
+**Frobenius norm** $\|\cdot\|_F$ valued in the ground ring (not
+the Archimedean absolute value).
 
-- $|S| = 0$ (depth 0): the descended summand
-  $|\prod_i \hat V_i^{\mathrm{full}}|$ in
-  $J^0/J^1$;
-- $|S| = 1$ (depth 1): per-generator summands
-  $\Phi_q(|\hat V_i^{\mathrm{full}}|)$ in $J^1/J^2$;
-- $|S| = 2$ (depth 2): adjacent-pair summands
-  $z^2 \, \Phi_q(|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|)$
-  in $J^2/J^3$
-  ([markov-pair-z2](#prop:markov-pair-z2)).
-
-These three strata live entirely in $H_n(q)$ and are
-$\mathbb{Q}(q)$-rational. They constitute an **algebraic JSJ**: a
-stratification of the mass-functional by descent-filtration
-depth, defined without reference to 3-manifolds, hyperbolic
-volume, or any $\tau$-image data. The conjecture below identifies
-this algebraic stratification with the geometric JSJ under
-$\tau_{\mathrm{arch}}$; that identification — and only that
-identification — crosses the Archimedean wall.
+The conjecture below — and *only* the conjecture — crosses the
+Archimedean wall by identifying that algebraic stratification
+with the geometric JSJ under $\tau_{\mathrm{arch}}$.
 
 **Conjecture (Φ$_q$–JSJ archimedean bridge).** Under the archimedean
 realisation $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
@@ -48,7 +35,7 @@ each summand of the dilogarithm form of the tower equals $\rho_q$ times
 the hyperbolic volume of the corresponding Φ$_q$-piece,
 
 $$
-  \tau_{\mathrm{arch}}\!\bigl(z^{\lvert S\rvert} \cdot \Phi_q(\lvert V_S\rvert)\bigr)
+  \tau_{\mathrm{arch}}\!\bigl(z^{\lvert S\rvert} \cdot \Phi_q(\|V_S\|_F)\bigr)
   \;=\;
   \rho_q \cdot
   \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S),
@@ -56,7 +43,11 @@ $$
   1 \leq \lvert S \rvert \leq 2,
 $$
 
-and the descended summand $\bigl\lvert\prod_i \hat{V}_i\bigr\rvert$
+(where $\|\cdot\|_F$ is the **Frobenius norm** valued in
+$\mathbb{Z}[q^{\pm 1/2}]$, evaluated on the algebraic side *before*
+applying $\tau_{\mathrm{arch}}$; the right-hand side is a real number
+because $\tau_{\mathrm{arch}}$ supplies the Archimedean projection).
+The descended summand $\bigl\| \prod_i \hat{V}_i \bigr\|_F$
 realises archimedeanly to the holonomy term
 $\rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_\emptyset)$.
 Summing over $S$ yields
@@ -87,7 +78,7 @@ different convergence schemes.
   $\mathrm{Vol}_{\mathrm{hyp}}(P)$ numerically with SnapPy. Fast on
   finished hyperbolic atoms; opaque internally.
 - **Φ$_q$ pipeline.** For each $S$, evaluate
-  $\Phi_q(\lvert V_S \rvert)$ as a Laurent polynomial in $q^{1/2}$.
+  $\Phi_q(\|V_S\|_F)$ as a Laurent polynomial in $q^{1/2}$.
   Slower convergence (the Kashaev limit is logarithmic), but yields a
   closed-form, $q$-differentiable expression per generator and per
   pair.
@@ -104,41 +95,58 @@ while JSJ remains the numerical workhorse.
 
 Per `CLAUDE.md` §3b, this conjecture is downstream of
 [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and
-therefore cannot be a `theorem`/`proposition` block. The
-sibling `.lean` file states it as a Lean theorem **conditional on a
-typeclass instance**:
+therefore cannot be a `theorem`/`proposition` block.  The Lean
+formalisation lives in the formal Lake package at
+`QOU.PhiQJSJ` (see
+[`lean/QOU/PhiQJSJ.lean`](../../lean/QOU/PhiQJSJ.lean)) and states
+the bridge as a Lean theorem **conditional on two typeclass
+instances**:
 
 ```
-theorem bridge {q : ℝ} [Kashaev.VolumeConjecture q]
-    (β : Braid) :
-    -- archimedean realisation of the dilog form
-    -- equals ρ_q · Σ_S Vol(K_S)
-    ...
+theorem bridge {q : ℝ}
+    [Kashaev.VolumeConjecture q]
+    [PhiQJSJ.TowerSummandRealization q]
+    [PhiQJSJ.PerPieceBridge q]
+    (β : Braid) (S : Finset (Fin (β.n - 1))) :
+    TowerSummandRealization.realisation β S =
+      rho q * pieceVolume q β S :=
+  inst.bridge_per_piece β S
 ```
 
-The Lean theorem is fully verified modulo the `VolumeConjecture`
-typeclass instance, so the only mathematical input that remains
-unproved is KVC itself — exactly the same mathematical content as
-the conjecture above.
+`bridge` contains **no `sorry`**: every step is either definitional
+or supplied by a typeclass field.  The conjectural content is fully
+concentrated in `[VolumeConjecture q]` (Kashaev's axiom) and
+`[PerPieceBridge q]` (the per-piece identification asserted by the
+conjecture).  Modulo those typeclass instances, the bridge theorem
+is fully verified by Lean.
+
+The supporting modules `QOU.PhiQPiece` and `QOU.Kashaev` also live
+in the formal chain (`lean/QOU/PhiQPiece.lean`,
+`lean/QOU/Kashaev.lean`); see
+[`pieceVolume`](../../lean/QOU/Kashaev.lean) for the volume
+predicate.  Per
+[`QOU.GroundRingAnnotations`](../../lean/QOU/GroundRingAnnotations.lean),
+`QOU.PhiQJSJ` is the Archimedean tier — it is **not** part of the
+formal pre-Arch chain but is the explicit τ_arch bridge.
 
 ### Required ingredients (to be filled in incrementally)
 
 1. **Single-crossing case** ($\lvert S \rvert = 1$). The Kashaev limit
    of a single-crossing piece is a one-bridge knot complement; its
-   hyperbolic volume realises $\Phi_q(\lvert\hat{V}_i\rvert)$. The
+   hyperbolic volume realises $\Phi_q(\|\hat{V}_i\|_F)$. The
    single-crossing identity is the smallest non-trivial instance of
    KVC and is the base case of the bridge.
 
 2. **Adjacent-pair case** ($\lvert S \rvert = 2$). The pair piece
    $K_{\{i, i+1\}}$ is a two-bridge knot whose hyperbolic volume
-   realises $z^2 \cdot \Phi_q(\lvert\hat{V}_i \hat{V}_{i+1}\rvert)$.
+   realises $z^2 \cdot \Phi_q(\|\hat{V}_i \hat{V}_{i+1}\|_F)$.
    The Markov weight $z^2$ on the algebraic side reproduces the
    gluing weight on the JSJ side, governed by the
    [pentagon UV commutation](#prop:pentagon-uv-commutation) relation.
 
 3. **Descended (level-zero) carrier.** The empty piece $K_\emptyset$
    carries the descended summand
-   $\bigl\lvert\prod_i \hat{V}_i\bigr\rvert$
+   $\bigl\| \prod_i \hat{V}_i \bigr\|_F$
    ([descended-level-zero](#prop:descended-level-zero)).
 
 4. **JSJ identification.** Modulo collapse of Seifert-fibered small
@@ -161,7 +169,7 @@ small-piece collapse is verified.
 ### Motivic dictionary
 
 The bridge admits a clean motivic reading: the algebraic side
-$\Phi_q(\lvert V_S\rvert)$ is a class in the quantum Bloch group
+$\Phi_q(\|V_S\|_F)$ is a class in the quantum Bloch group
 $\mathcal{B}_q$ ([quantum Bloch group](#rem:quantum-bloch-group)), the
 archimedean realisation $\tau_{\mathrm{arch}}$ is the $q$-deformed
 Borel/Beilinson regulator, and the right-hand side is the standard

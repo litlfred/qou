@@ -52,9 +52,10 @@ deformation duality of [Hochschild–Kummer](#rem:hochschild-kummer-connection)
 is the dual of two such realizations.*
 
 **Lean axiomatization.**
-*The class
-[`MotivicGaloisCharacter`](https://github.com/litlfred/qou/blob/claude/audit-pole-structure-eqbHE/content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.lean)
-takes a `MotivicSubstrate` instance as a hypothesis and exposes the
-character $\chi^{\mathrm{mot}}_A$ + its compatibility with each local
-realization $\rho_p$. Per CLAUDE.md §3b, `sorry` in any concrete
-instance is a substrate axiom, not a missing proof.*
+*The formal-chain class
+[`MotivicGaloisCharacter`](../../lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean)
+takes a `MotivicSubstrate K0 Mhat Target` instance as an explicit
+hypothesis and exposes the character $\chi^{\mathrm{mot}}_A$ + its
+compatibility with each local realization $\rho_p$. Per CLAUDE.md §3b,
+`sorry` in any concrete instance is a substrate axiom, not a missing
+proof.*

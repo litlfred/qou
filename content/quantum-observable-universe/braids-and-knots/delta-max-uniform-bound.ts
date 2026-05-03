@@ -16,5 +16,11 @@ export default proposition({
     ref: "qou:QOU.MassEndomorphism.delta_max_uniform_bound",
     validation: "not_checked",
   },
+  uses: [
+    "prop:jet-tower-convergence",
+    "thm:markov-trace-factorization",
+    "prop:descent-eigenspaces",
+    "def:recursive-brane-tower",
+  ],
   cites: ["kassel1995", "leitner2026"],
 });
