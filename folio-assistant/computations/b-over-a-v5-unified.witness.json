@@ -1,6 +1,6 @@
 {
   "computation": "b-over-a-v5-unified",
-  "computedAt": "2026-05-03T10:37:31.496081+00:00",
+  "computedAt": "2026-05-03T10:39:21.652181+00:00",
   "description": "B/A v5 unified evaluator — dispatches by formula family per the watched-branch's methodology audit (methodology-deprecation.witness.json).  Families: 1 (D, T, ³He principled), 2 (⁴He magic-A), 3 (⁸Be–⁴⁰Ca recursive-on-4He), 4 (⁶Li, ⁷Li, … OPEN, GAPS 4, 5).",
   "constants": {
     "m_e_MeV": 0.51099895069,
@@ -67,7 +67,13 @@
       "B_AME_MeV": 2.22452,
       "err_MeV": 0.02430079790130879,
       "err_pct": 1.092406357385359,
-      "tr_M_at_q0_markov_peel": "+3.8828647154771295e-01"
+      "tr_M_at_q0_markov_peel": "+3.8828647154771295e-01",
+      "plan_h_diagnostic": {
+        "true_rho": 0.9892212296139793,
+        "delta_rho": -0.010778770386020708,
+        "rho_handpick": 1,
+        "M_err_ppm_predicted": 12.91999309667161
+      }
     },
     {
       "Z": 1,
@@ -86,7 +92,13 @@
       "B_AME_MeV": 8.48181,
       "err_MeV": -0.013210305574872905,
       "err_pct": -0.15574866184072628,
-      "tr_M_at_q0_markov_peel": "+1.0405211867552604e-01"
+      "tr_M_at_q0_markov_peel": "+1.0405211867552604e-01",
+      "plan_h_diagnostic": {
+        "true_rho": 2.003119428154665,
+        "delta_rho": 0.003119428154664927,
+        "rho_handpick": 2,
+        "M_err_ppm_predicted": -4.701513064206532
+      }
     },
     {
       "Z": 2,
@@ -105,7 +117,13 @@
       "B_AME_MeV": 7.71804,
       "err_MeV": -0.2291206805349315,
       "err_pct": -2.9686381585860078,
-      "tr_M_at_q0_markov_peel": "+2.0654085856226245e-01"
+      "tr_M_at_q0_markov_peel": "+2.0654085856226245e-01",
+      "plan_h_diagnostic": {
+        "true_rho": 2.061178570833352,
+        "delta_rho": 0.0611785708333521,
+        "rho_handpick": 2,
+        "M_err_ppm_predicted": -81.5404108363704
+      }
     },
     {
       "Z": 2,
@@ -122,7 +140,13 @@
       "B_AME_MeV": 28.295674,
       "err_MeV": 1.66000327953288,
       "err_pct": 5.866632756416688,
-      "tr_M_at_q0_markov_peel": "+5.5348345876697992e-02"
+      "tr_M_at_q0_markov_peel": "+5.5348345876697992e-02",
+      "plan_h_diagnostic": {
+        "true_rho": 1.8891684387012972,
+        "delta_rho": -0.11083156129870275,
+        "rho_handpick": 2,
+        "M_err_ppm_predicted": 445.35778065064994
+      }
     },
     {
       "Z": 4,

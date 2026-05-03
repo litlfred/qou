@@ -54,6 +54,29 @@ from alpha_cluster_recursion import (  # noqa: E402
 )
 
 
+# ── Plan-H δρ diagnostic (PR #512) ────────────────────────────────
+# Empirical "true_ρ" = B_AME / (m_e · Vol_hyp(K)) per atom — the ρ that
+# would have to apply for `B = ρ · m_e · Vol_hyp(K)` to match AME exactly.
+# Plan H's universal-formula hypothesis was FALSIFIED (signs and
+# magnitudes don't fit a single closed-form ρ_F(q)); these per-atom
+# values document the structural gap for closure of GAP-A in the
+# 1-ppb workplan (docs/audits/2026-05-03-next-session-plan-to-1ppb.md).
+_PLAN_H_DELTA_RHO: dict[tuple[int, int], dict] = {}
+try:
+    _ph_path = HERE / "rho-census-wedderburn-experiment.witness.json"
+    if _ph_path.exists():
+        _ph_data = json.loads(_ph_path.read_text())
+        for _r in _ph_data.get("rows", []):
+            _PLAN_H_DELTA_RHO[(_r["Z"], _r["N"])] = {
+                "true_rho": _r.get("true_rho"),
+                "delta_rho": _r.get("delta_rho"),
+                "rho_handpick": _r.get("rho_handpick"),
+                "M_err_ppm_predicted": _r.get("M_err_ppm_predicted"),
+            }
+except Exception:
+    pass
+
+
 # ── Markov-peel tr_M cross-validation (PR #520) ──────────────────
 # Loads pre-computed tr_M(T_w) at q_0 from markov-peel-atomic-tr-m.witness.json.
 # Available for: p, n, D, T, ³He, ⁴He, ⁵Li, ⁶Li (as of #520).
@@ -211,6 +234,11 @@ def evaluate(Z: int, N: int) -> dict:
     # production runs — independent path to the Family-1 Hoefsmit-bridge.
     if (Z, N) in _MARKOV_PEEL_TR_M:
         base["tr_M_at_q0_markov_peel"] = _MARKOV_PEEL_TR_M[(Z, N)]
+    # Plan-H δρ diagnostic: per-atom empirical "true_ρ" exposing GAP-A.
+    # NOT a closed-form correction (universal hypothesis falsified) —
+    # documents the structural gap for the 1-ppb workplan W-1.
+    if (Z, N) in _PLAN_H_DELTA_RHO:
+        base["plan_h_diagnostic"] = _PLAN_H_DELTA_RHO[(Z, N)]
     return base
 
 
@@ -268,6 +296,22 @@ def main() -> int:
         }[f]
         print(f"  {f:>6} {family_counts[f]:>5}  {mae_str}  {notes}")
     print()
+    # Plan-H δρ diagnostic — what ρ_F would need to be for Family-1 closure
+    plan_h_rows = [r for r in rows if r.get("plan_h_diagnostic")]
+    if plan_h_rows:
+        print("Plan-H δρ diagnostic (W-1 from 1-ppb workplan; per-atom empirical):")
+        print(f"  {'atom':>5} {'ρ_handpick':>12} {'true_ρ':>10} {'δρ':>10} {'err_ppm':>10}")
+        print("  " + "-" * 55)
+        for r in plan_h_rows:
+            ph = r["plan_h_diagnostic"]
+            print(f"  {r['symbol']:>5} {ph['rho_handpick']:>12.3f} "
+                  f"{ph['true_rho']:>10.6f} "
+                  f"{ph['delta_rho']:>+10.6f} "
+                  f"{ph['M_err_ppm_predicted']:>+10.4f}")
+        print(f"  Hypothesis: universal δρ(q) — FALSIFIED (PR #512 commit 57a9ea9fd)")
+        print(f"  Closure of W-1 (³He from -2.97% to ≤0.5%) requires per-atom ρ_F derivation")
+        print(f"  (NOT yet available; circular if applied as a fitted correction).")
+        print()
     out_path = HERE / "b-over-a-v5-unified.witness.json"
     out_path.write_text(json.dumps({
         "computation": "b-over-a-v5-unified",
