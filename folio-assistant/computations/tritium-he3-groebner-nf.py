@@ -60,6 +60,7 @@ from q_parameter import Q as q0, E_CROSS, HBAR_Q, Q_INV as q0_inv
 from experimental_constants import (
     M_E_MEV, Q_TRITIUM_MEV, Q_TRITIUM_MEV_ERR, KAPPA,
 )
+from witness_polynomial import expose_polynomial
 
 
 # ════════════════════════════════════════════════════════════════
@@ -1030,6 +1031,7 @@ witness = {
         "nf": terms_to_dict(tritium, q0),
         "markov_trace": {
             "symbolic": str(sp.simplify(tr_3H)),
+            "polynomial": expose_polynomial(tr_3H, q),
             "at_q0": tr_3H_num,
             "ln_abs": math.log(abs(tr_3H_num)),
         },
@@ -1042,6 +1044,7 @@ witness = {
         "nf": terms_to_dict(helium3, q0),
         "markov_trace": {
             "symbolic": str(sp.simplify(tr_He3)),
+            "polynomial": expose_polynomial(tr_He3, q),
             "at_q0": tr_He3_num,
             "ln_abs": math.log(abs(tr_He3_num)),
         },
@@ -1055,6 +1058,7 @@ witness = {
         "nf": terms_to_dict(T35, q0),
         "markov_trace": {
             "symbolic": str(sp.simplify(tr_T35)),
+            "polynomial": expose_polynomial(tr_T35, q),
             "at_q0": tr_T35_num,
         },
     },
@@ -1066,6 +1070,7 @@ witness = {
         "nf": terms_to_dict(electron, q0),
         "markov_trace": {
             "symbolic": str(sp.simplify(tr_e)),
+            "polynomial": expose_polynomial(tr_e, q),
             "at_q0": tr_e_num,
         },
     },
@@ -1116,6 +1121,7 @@ witness = {
             "nf": terms_to_dict(neutron, q0),
             "markov_trace": {
                 "symbolic": str(sp.simplify(tr_n)),
+                "polynomial": expose_polynomial(tr_n, q),
                 "at_q0": tr_n_num,
                 "ln_abs": math.log(abs(tr_n_num)),
             },
@@ -1127,6 +1133,7 @@ witness = {
             "nf": terms_to_dict(proton, q0),
             "markov_trace": {
                 "symbolic": str(sp.simplify(tr_p)),
+                "polynomial": expose_polynomial(tr_p, q),
                 "at_q0": tr_p_num,
                 "ln_abs": math.log(abs(tr_p_num)),
             },

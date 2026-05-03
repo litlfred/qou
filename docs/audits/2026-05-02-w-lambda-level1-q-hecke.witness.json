@@ -1,0 +1,123 @@
+{
+  "computation": "volume-shell-w-lambda-level1-q-hecke-probe",
+  "computedAt": "2026-05-02T22:52:13.288821+00:00",
+  "q0": 1.1099785955541805,
+  "ansatz": "w_\u03bb^(1) = (d_q(\u03bb)\u00b2 / [n]_q!) \u00b7 \u03b4(c(\u03bb)=0); character = q-deformed Hecke chi^\u03bb_q (vs q=1 MN)",
+  "atoms": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_strands": 6,
+      "n_self_conj_partitions": 1,
+      "total_level1_q": 0.0,
+      "abs_level1_q": 0.0,
+      "top_contributions": [],
+      "atom": "D",
+      "binding_per_nucleon_AME": 0.4655287150000049,
+      "time_s": 0.0013115406036376953
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_strands": 9,
+      "n_self_conj_partitions": 2,
+      "total_level1_q": 0.009885739050559303,
+      "abs_level1_q": 0.009885739050559303,
+      "top_contributions": [
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "weight": 0.00586727064782439,
+          "character_q": 1.6848956940864797,
+          "contribution": 0.009885739050559303
+        }
+      ],
+      "atom": "3He",
+      "binding_per_nucleon_AME": 2.141506243333424,
+      "time_s": 0.0027647018432617188
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_strands": 9,
+      "n_self_conj_partitions": 2,
+      "total_level1_q": 0.009885739050559303,
+      "abs_level1_q": 0.009885739050559303,
+      "top_contributions": [
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "weight": 0.00586727064782439,
+          "character_q": 1.6848956940864797,
+          "contribution": 0.009885739050559303
+        }
+      ],
+      "atom": "3H",
+      "binding_per_nucleon_AME": 1.9649556733334066,
+      "time_s": 0.00043702125549316406
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_strands": 12,
+      "n_self_conj_partitions": 3,
+      "total_level1_q": 0.0,
+      "abs_level1_q": 0.0,
+      "top_contributions": [],
+      "atom": "4He",
+      "binding_per_nucleon_AME": 6.427226477500085,
+      "time_s": 0.0017955303192138672
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_strands": 18,
+      "n_self_conj_partitions": 5,
+      "total_level1_q": 0.0,
+      "abs_level1_q": 0.0,
+      "top_contributions": [],
+      "atom": "6Li",
+      "binding_per_nucleon_AME": 4.430030000000102,
+      "time_s": 0.004587888717651367
+    },
+    {
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "n_strands": 27,
+      "n_self_conj_partitions": 14,
+      "total_level1_q": 10.492271866951537,
+      "abs_level1_q": 10.492271866951537,
+      "top_contributions": [
+        {
+          "partition": [
+            6,
+            6,
+            6,
+            3,
+            3,
+            3
+          ],
+          "weight": 0.037091980976394615,
+          "character_q": 282.87170409228975,
+          "contribution": 10.492271866951537
+        }
+      ],
+      "atom": "9Be",
+      "binding_per_nucleon_AME": 5.744320000000016,
+      "time_s": 0.018533706665039062
+    }
+  ],
+  "interpretation": "Path (a) of the corrective options from the q=1 MN probe's negative result. Tests whether q-deformation breaks the self-conjugate character cancellations seen at q=1."
+}

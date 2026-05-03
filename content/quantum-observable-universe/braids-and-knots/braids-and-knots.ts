@@ -459,6 +459,7 @@ export default chapter({
         "topological-mass-formula-algebraic",
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
+        "term6-binding-density",
         "full-pole-structure-mass-trace",
         "habiro-residue-sum-equivalence",
         // GAP 13a — explicit conjectures backing GS noncomputable opaque axioms

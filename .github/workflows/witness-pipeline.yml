@@ -128,6 +128,15 @@ jobs:
         # per-chain results + the global witness-trust audit.
         run: python3 folio-assistant/computations/derivation_chain_validator.py
 
+      - name: Run lp_dual_witness_validator (warn-only)
+        # Per prop:operator-selection-lp § dual program: every
+        # operator-selection / LP / SDP witness should include the LP
+        # dual variables (y_0_star, y_star, active_set, primal_obj,
+        # dual_obj, duality_gap). Currently warn-only (~58 legacy
+        # witnesses are missing the dual). To enforce: pass --strict.
+        # Migration target: route LP solves through lp_dual_solver.py.
+        run: python3 folio-assistant/computations/lp_dual_witness_validator.py
+
       - name: Detect drift in committed witnesses
         run: |
           # The validators rewrite their output witnesses on every run.

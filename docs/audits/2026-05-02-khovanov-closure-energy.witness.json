@@ -1,0 +1,112 @@
+{
+  "computation": "khovanov-closure-energy-probe",
+  "computedAt": "2026-05-02T23:38:17.876832+00:00",
+  "q0": 1.1099785955541805,
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "knot": "unknot",
+      "kh1_total_dim": 2,
+      "kh2_q_graded": 2.010896869118482,
+      "kh3_hom_weighted": 2.010896869118482,
+      "binding_per_nucleon": 0.4655287150000049
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "knot": "trefoil_3_1",
+      "kh1_total_dim": 4,
+      "kh2_q_graded": 6.720019186356654,
+      "kh3_hom_weighted": 3.678560630966417,
+      "binding_per_nucleon": 2.141506243333424
+    },
+    {
+      "atom": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "knot": "trefoil_3_1",
+      "kh1_total_dim": 4,
+      "kh2_q_graded": 6.720019186356654,
+      "kh3_hom_weighted": 3.678560630966417,
+      "binding_per_nucleon": 1.9649556733334066
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "knot": "trefoil_3_1",
+      "kh1_total_dim": 4,
+      "kh2_q_graded": 6.720019186356654,
+      "kh3_hom_weighted": 3.678560630966417,
+      "binding_per_nucleon": 6.427226477500085
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "knot": "figure_eight_4_1",
+      "kh1_total_dim": 6,
+      "kh2_q_graded": 6.300197982146274,
+      "kh3_hom_weighted": 3.775813384980826,
+      "binding_per_nucleon": 4.430030000000102
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "knot": "cinquefoil_5_1",
+      "kh1_total_dim": 6,
+      "kh2_q_graded": 14.719316138105663,
+      "kh3_hom_weighted": 6.003617681674389,
+      "binding_per_nucleon": 4.648324285714239
+    },
+    {
+      "atom": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "knot": "cinquefoil_5_1",
+      "kh1_total_dim": 6,
+      "kh2_q_graded": 14.719316138105663,
+      "kh3_hom_weighted": 6.003617681674389,
+      "binding_per_nucleon": 5.744320000000016
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "knot": "T_2_6_solomon",
+      "kh1_total_dim": 7,
+      "kh2_q_graded": 12.84790620315453,
+      "kh3_hom_weighted": 5.773776992262168,
+      "binding_per_nucleon": 6.777900000000045
+    },
+    {
+      "atom": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "knot": "T_2_6_solomon",
+      "kh1_total_dim": 7,
+      "kh2_q_graded": 12.84790620315453,
+      "kh3_hom_weighted": 5.773776992262168,
+      "binding_per_nucleon": 7.0739825000000565
+    }
+  ],
+  "correlations": {
+    "kh1_total_dim": 0.813337061182116,
+    "kh2_q_graded": 0.715264088012553,
+    "kh3_hom_weighted": 0.7603633618561366
+  },
+  "interpretation": "Tests Khovanov homology as alternative closure-energy invariant after the Jones polynomial gave -0.61. Three Kh-derived invariants probed: total dim, q-graded sum, homology-weighted sum. Correlations should be compared with prior probes."
+}

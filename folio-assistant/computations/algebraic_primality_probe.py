@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: library / no own witness output; sympy used internally by callers.
 """Symbolic algebraic-primality probe — uses candidate-B demand
 (self-conjugate-block indicator) and a Wedderburn-block scalar
 LP relaxation to decide whether n is "magic" at symbolic q.

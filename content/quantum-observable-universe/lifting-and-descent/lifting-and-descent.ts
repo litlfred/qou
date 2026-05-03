@@ -83,6 +83,7 @@ export default chapter({
         "kummer-tower",
         "hochschild-kummer-connection",
         "motivic-galois-character",
+        "qou-motivic-galois-instance",
         "motivic-perpetual-obstruction",
       ],
     }),

@@ -37,6 +37,7 @@ from hecke_symbolic import (
 )
 from q_parameter import Q as q0, E_CROSS, HBAR_Q, Q_INV as q0_inv
 from experimental_constants import M_E_MEV, KAPPA
+from witness_polynomial import expose_polynomial
 
 
 # ════════════════════════════════════════════════════════════════
@@ -818,6 +819,7 @@ witness = {
         "nf": terms_to_dict(proton, q0),
         "markov_trace": {
             "symbolic": str(sp.simplify(tr_p)),
+            "polynomial": expose_polynomial(tr_p, q),
             "at_q0": tr_p_num,
             "ln_abs": math.log(abs(tr_p_num)),
         },
@@ -831,6 +833,7 @@ witness = {
         "nf": terms_to_dict(electron, q0),
         "markov_trace": {
             "symbolic": str(sp.simplify(tr_e)),
+            "polynomial": expose_polynomial(tr_e, q),
             "at_q0": tr_e_num,
         },
     },
@@ -843,6 +846,7 @@ witness = {
         "nf": terms_to_dict(T35, q0),
         "markov_trace": {
             "symbolic": str(sp.simplify(tr_T35)),
+            "polynomial": expose_polynomial(tr_T35, q),
             "at_q0": tr_T35_num,
         },
     },
@@ -875,6 +879,7 @@ witness = {
         "nf": terms_to_dict(reduced_peT, q0),
         "markov_trace": {
             "symbolic": str(sp.simplify(tr_peT)),
+            "polynomial": expose_polynomial(tr_peT, q),
             "at_q0": tr_peT_num,
             "ln_abs": math.log(abs(tr_peT_num)),
         },

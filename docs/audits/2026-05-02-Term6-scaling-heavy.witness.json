@@ -1,0 +1,204 @@
+{
+  "computation": "Term6-scaling-heavy-nuclei",
+  "computedAt": "2026-05-03T00:15:00.864751+00:00",
+  "panel_atoms": [
+    "D",
+    "3He",
+    "3H",
+    "4He",
+    "6Li",
+    "7Li",
+    "9Be",
+    "12C",
+    "16O",
+    "20Ne",
+    "24Mg",
+    "28Si",
+    "32S",
+    "40Ca",
+    "48Ca",
+    "56Ni",
+    "58Ni"
+  ],
+  "n_atoms_in_fit": 16,
+  "fit": {
+    "alpha_MeV": 339.432636462974,
+    "beta_MeV": 1.1434269935580894,
+    "R_sq": 0.8413343495117948,
+    "residual_std_MeV": 0.7589794749796208,
+    "max_abs_resid_MeV": 2.621490469127784
+  },
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "term6": 0.0,
+      "term6_over_A3": 0.0,
+      "binding_per_nucleon": 0.4655287150000049,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "term6": 0.12549454489970338,
+      "term6_over_A3": 0.004647946107396422,
+      "binding_per_nucleon": 2.141506243333424,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "term6": 0.12549454489970338,
+      "term6_over_A3": 0.004647946107396422,
+      "binding_per_nucleon": 1.9649556733334066,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "term6": 0.5019781795988135,
+      "term6_over_A3": 0.007843409056231461,
+      "binding_per_nucleon": 6.427226477500085,
+      "is_magic_pair": 1
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "term6": 2.5098908979940675,
+      "term6_over_A3": 0.011619865268491054,
+      "binding_per_nucleon": 4.430030000000102,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "term6": 4.392309071489619,
+      "term6_over_A3": 0.012805565806092182,
+      "binding_per_nucleon": 4.648324285714239,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "term6": 10.541541771575083,
+      "term6_over_A3": 0.014460276778566645,
+      "binding_per_nucleon": 5.744320000000016,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "term6": 27.608799877934743,
+      "term6_over_A3": 0.0159773147441752,
+      "binding_per_nucleon": 6.77789666666672,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "term6": 70.2769451438339,
+      "term6_over_A3": 0.017157457310506323,
+      "binding_per_nucleon": 7.0739825000000565,
+      "is_magic_pair": 1
+    },
+    {
+      "atom": "20Ne",
+      "Z": 10,
+      "N": 10,
+      "A": 20,
+      "term6": 143.06378118566187,
+      "term6_over_A3": 0.017882972648207734,
+      "binding_per_nucleon": 7.385570000000143,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "24Mg",
+      "Z": 12,
+      "N": 12,
+      "A": 24,
+      "term6": 254.00095887699965,
+      "term6_over_A3": 0.01837391195580148,
+      "binding_per_nucleon": 7.614012499999944,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "28Si",
+      "Z": 14,
+      "N": 14,
+      "A": 28,
+      "term6": 411.1201290914283,
+      "term6_over_A3": 0.018728139991409817,
+      "binding_per_nucleon": 7.545567857142828,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "32S",
+      "Z": 16,
+      "N": 16,
+      "A": 32,
+      "term6": 622.4529427025287,
+      "term6_over_A3": 0.01899575630806057,
+      "binding_per_nucleon": 7.595987500000092,
+      "is_magic_pair": 0
+    },
+    {
+      "atom": "40Ca",
+      "Z": 20,
+      "N": 20,
+      "A": 40,
+      "term6": 1239.8861036090693,
+      "term6_over_A3": 0.01937322036889171,
+      "binding_per_nucleon": 7.6489950000000135,
+      "is_magic_pair": 1
+    },
+    {
+      "atom": "48Ca",
+      "Z": 20,
+      "N": 28,
+      "A": 48,
+      "term6": 2170.5536485852695,
+      "term6_over_A3": 0.01962667868006067,
+      "binding_per_nucleon": 7.911995833333322,
+      "is_magic_pair": 1
+    },
+    {
+      "atom": "56Ni",
+      "Z": 28,
+      "N": 28,
+      "A": 56,
+      "term6": 3478.708784619778,
+      "term6_over_A3": 0.019808609606298846,
+      "binding_per_nucleon": 7.744467857142922,
+      "is_magic_pair": 1
+    },
+    {
+      "atom": "58Ni",
+      "Z": 28,
+      "N": 30,
+      "A": 58,
+      "term6": 3872.2596774252474,
+      "term6_over_A3": 0.019846343010297918,
+      "binding_per_nucleon": 7.713248275862156,
+      "is_magic_pair": 0
+    }
+  ],
+  "interpretation": "Tests Term6/A\u00b3 binding formula scaling beyond A=16. The panel includes doubly-magic 40Ca, 56Ni and the larger stable nuclei 20Ne/24Mg/28Si/32S. Whether \u03b1 stays near 342.5 MeV or drifts indicates whether the formula is structurally consistent at heavy nuclei or only holds for the light-atom test panel."
+}

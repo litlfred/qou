@@ -40,6 +40,7 @@ import sympy as sp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
 from witness_base import WitnessBuilder
+from witness_polynomial import expose_polynomial
 
 
 def build_witness() -> WitnessBuilder:
@@ -96,6 +97,7 @@ def build_witness() -> WitnessBuilder:
     )
 
     w.add_data("a_q_closed_form", str(a))
+    w.add_data("a_q_polynomial", expose_polynomial(a, q))
     w.add_data("a_q0_numeric", a_at_q0)
 
     # Möbius matrix M = (-1, 4; 4, 3) — referenced in

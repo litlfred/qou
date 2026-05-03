@@ -194,6 +194,14 @@ print_nf("B₃ (reference)", b3_vec)
 #  THE LINEAR PROGRAM
 # ══════════════════════════════════════════════════════════════
 
+# Collect per-nucleon LP duals for the witness (per CLAUDE.md
+# §"LP / SDP duals — first-class infra"). Routed through
+# lp_dual_solver.solve_operator_selection_lp for the canonical
+# y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap
+# fields that lp_dual_witness_validator enforces.
+from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+lp_duals_per_nucleon = {}
+
 for nucleon_name, quark_types, target_net in [
     ("PROTON (u,u,d)", ['u', 'u', 'd'], None),
     ("NEUTRON (u,d,d)", ['u', 'd', 'd'], None),
@@ -236,6 +244,12 @@ for nucleon_name, quark_types, target_net in [
 
     result = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq,
                      bounds=bounds, method='highs')
+
+    # Canonical LP-dual extraction via lp_dual_solver (records primal +
+    # dual + strong-duality-gap in standardized format).
+    lp_duals_per_nucleon[nucleon_name] = solve_operator_selection_lp(
+        TR_M_BASIS, G, target_net,
+    ).to_dict()
 
     if result.success:
         x_opt = result.x
@@ -549,6 +563,12 @@ witness = {
     "markov_traces": TR_M_BASIS.tolist(),
     "b3_nf": b3_vec.tolist(),
     "sdp_lift": sdp_reports,
+    # LP-dual record per nucleon (CLAUDE.md §"LP / SDP duals — first-
+    # class infra"; lp_dual_witness_validator enforces).
+    "lp_dual_per_nucleon": lp_duals_per_nucleon,
+    # Promote the proton's dual to top-level for the validator's
+    # recursive-key search (so y0_star, y_star, etc. are reachable).
+    **lp_duals_per_nucleon.get("PROTON (u,u,d)", {}),
 }
 
 out_path = Path(__file__).parent / "confinement-lp.witness.json"
