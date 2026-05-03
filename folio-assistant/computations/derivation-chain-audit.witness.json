@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T20:45:14.010792+00:00",
-  "commitSha": "c437fd32a0a637f2d2f82d59ad330b7e5ae55fcf",
+  "computedAt": "2026-05-03T20:45:14.740319+00:00",
+  "commitSha": "8e92671e068b8d1616895c4cf0953b3f2083ec7f",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1617,6 +1617,7 @@
         "multi-level-sdp.witness.json",
         "multi-term-canonical-assembly.witness.json",
         "multi-term-tau-M-corrected.witness.json",
+        "n-sym-b8-refinement-probe.witness.json",
         "n-sym-goldstone-phase-space-probe.witness.json",
         "n-sym-gram-determinant-probe.witness.json",
         "n-sym-numerical-anchor.witness.json",
