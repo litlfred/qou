@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T10:20:31.636914+00:00",
-  "commitSha": "c4e7ab96dd5009ca3902a3aba37a345f8c305229",
+  "computedAt": "2026-05-03T10:34:41.513159+00:00",
+  "commitSha": "ca8e190d0b3ed1cbdbcf93f6ef5c5c4f572f8905",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1576,6 +1576,7 @@
         "markov-convention-parallel.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-invariant-mass-full-census.witness.json",
+        "markov-invariant-mass-sw-corrected.witness.json",
         "markov-invariant-unified-mass.witness.json",
         "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
