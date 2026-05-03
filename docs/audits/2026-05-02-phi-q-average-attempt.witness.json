@@ -1,0 +1,18 @@
+{
+  "computation": "phi-q-average-derivation-attempt",
+  "computedAt": "2026-05-03T00:27:23.697047+00:00",
+  "q_0": 1.1099785955541805,
+  "z": 0.49932033403359827,
+  "c_universal_triple_trace": 0.00088287,
+  "phi_q_c_full": 1.0080616546277128,
+  "phi_q_c_1st_order": 1.0080276529769383,
+  "phi_q_c_2nd_order": 1.008061654005292,
+  "term6_over_A3_asymptotic": 0.020915757686293453,
+  "alpha_prediction_modulo_B_sat": "\u03b1 = (B/A_\u221e - \u03b2) / (z\u00b3/6 \u00b7 \u03a6_q(c))",
+  "framework_gaps": [
+    "B/A_\u221e saturation density (empirically ~8.5 MeV)",
+    "\u03b2 intercept (empirically ~1.14 MeV)",
+    "c universal triple-type Markov trace at q=1 MN"
+  ],
+  "interpretation": "Reduces the \u03b1 derivation to three framework-side quantities, all currently empirical. Closes the structural reduction (\u03b1 IS analytically expressible in terms of c, B/A_\u221e, \u03b2); the quantitative derivation awaits framework derivations of these three inputs."
+}
