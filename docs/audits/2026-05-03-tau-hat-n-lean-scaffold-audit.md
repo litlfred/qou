@@ -80,10 +80,10 @@ explicit Lean instance.
 
 The most actionable next steps are:
 
-1. (parallel sibling task) **τ̂_0 proton-scale numerical realisation**
+1. (parallel task) **τ̂_0 proton-scale numerical realisation**
    in Python — building H_3(q₀) ⊗ Ω¹(H_3(q₀)), computing τ̂_0 as a
    matrix, verifying idempotence, splitting End(A_1) into
-   eigenspaces. (Currently in a sibling worktree.)
+   eigenspaces. (Currently in progress.)
 2. (later) **Lean instance discharge** — once the Python realisation
    confirms the structure works numerically, formalise the H_3(q₀)
    instance of `RecursiveBraneTower`. Builds on Mathlib's
@@ -101,5 +101,5 @@ The most actionable next steps are:
 ## Status
 
 **Audit-complete-no-sorrys.** The Lean scaffold is in good shape; the
-real Phase A.3 work is the concrete Python instance (sibling task in
+real Phase A.3 work is the concrete Python instance (currently in
 progress).
