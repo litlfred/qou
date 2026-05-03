@@ -137,8 +137,13 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
     t0 = time.time()
     try:
-        tr_atom_sym = tr_M_element(atom_elem, n_strands)
-        tr_free_sym = tr_M_element(free_elem, n_strands)
+        # `simplify=False`: skip the `sp.simplify` step in tr_M_element.
+        # At A=3 the aggregated total has ~5000-12000 sympy ops; calling
+        # `simplify` exceeds 30 minutes (³He) while the recursion itself
+        # runs in seconds.  Numerical evaluation at q=q₀ (below) is
+        # unaffected.  See #508 Phase 2 part 2.
+        tr_atom_sym = tr_M_element(atom_elem, n_strands, simplify=False)
+        tr_free_sym = tr_M_element(free_elem, n_strands, simplify=False)
     except (NotImplementedError, RecursionError) as e:
         return {"status": "trace_error", "error": str(e),
                 "Z": Z, "N": N, "A": A,
