@@ -5,11 +5,11 @@ Wires the four formula families established by the watched-branch's
 methodology audit (`methodology-deprecation.witness.json`) into a single
 dispatch:
 
-    Family 1 — Principled (knot-explicit):  B = ρ · m_e · |tr_M(T_w)|
+    Family 1 — Principled (knot-explicit):  B = ρ_F · m_e · Vol_hyp(K)
         atoms: D, T, ³He
-        modules: binding_canonical.binding_canonical(Z, N)
-                 atomic_tr_m_mpfr_50dps (50-dps cross-validation)
-                 markov_peel (independent recursive path)
+        module: family_1_kashaev.family_1_binding (Kashaev law on
+                historical knot ID).  Cross-validates against
+                atomic_tr_m_mpfr_50dps and markov_peel where present.
 
     Family 2 — Magic-A shell-closure:  B = ρ_F · m_e · A · 8G
         atoms: ⁴He
@@ -41,16 +41,23 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-# Family-1, Family-2, Family-3 callables (all zero-parameter, fast)
+# Family-1, Family-2, Family-3 callables (all zero-parameter, fast).
+# AME values + family registries imported from the modules to avoid
+# duplicating magic constants here.
 from family_1_kashaev import (  # noqa: E402
     family_1_binding as _family_1_kashaev_binding,
-    KNOT_VOL,
+    FAMILY_1_REGISTRY,
+    AME_BA_MEV as _FAMILY_1_AME,
 )
 from magic_A_formula import (  # noqa: E402
     M_E_MEV, VOL_BORROMEAN, magic_A_binding,
+    AME_BA_MEV as _FAMILY_2_AME,
+    is_magic_A_atom,
 )
 from alpha_cluster_recursion import (  # noqa: E402
     C_ALPHA_ALPHA_MEV, VOL_7_2_1, alpha_cluster_binding,
+    AME_BA_MEV as _FAMILY_3_AME,
+    is_alpha_chain,
 )
 
 
@@ -94,27 +101,21 @@ except Exception:
 
 
 # ── AME 2020 reference values ─────────────────────────────────────
-AME_BA_MEV = {
-    # Family 1
-    (1, 1):  2.22452,        # ²H deuteron
-    (1, 2):  8.48181,        # ³H tritium
-    (2, 1):  7.71804,        # ³He
-    # Family 2
-    (2, 2): 28.295674,       # ⁴He doubly magic
-    # Family 3 (α-chain)
-    (4, 4): 56.49951,        # ⁸Be
-    (6, 6): 92.16175,        # ¹²C
-    (8, 8): 127.61929,       # ¹⁶O
-    (10, 10): 160.64486,     # ²⁰Ne
-    (12, 12): 198.2569,      # ²⁴Mg
-    (20, 20): 342.05212,     # ⁴⁰Ca
-    # Family 4 (open)
+# Families 1, 2, 3 imported from their module's AME_BA_MEV; only
+# Family 4 (open atoms with no callable yet) defined locally.
+_FAMILY_4_AME = {
     (3, 3):  31.99405,       # ⁶Li
     (3, 4):  39.24452,       # ⁷Li
     (4, 5):  58.16498,       # ⁹Be
     (5, 6):  76.20548,       # ¹¹B
     (7, 7): 104.65877,       # ¹⁴N
     (9, 10): 147.80137,      # ¹⁹F
+}
+AME_BA_MEV = {
+    **_FAMILY_1_AME,
+    **_FAMILY_2_AME,
+    **_FAMILY_3_AME,
+    **_FAMILY_4_AME,
 }
 
 ATOM_SYMBOL = {
@@ -127,48 +128,23 @@ ATOM_SYMBOL = {
 }
 
 
-# ── Family classification ──────────────────────────────────────────
-FAMILY_1 = {(1, 1), (1, 2), (2, 1)}      # D, T, ³He
-FAMILY_2 = {(2, 2)}                       # ⁴He
-FAMILY_3 = {(4, 4), (6, 6), (8, 8), (10, 10), (12, 12), (20, 20)}
-# Family 4 = AME_BA_MEV.keys() − (1 ∪ 2 ∪ 3)
-
-
+# ── Family classification (derived from module registries) ────────
+# Membership is sourced from each family module's authoritative
+# registry/predicate so adding an atom to a module auto-updates the
+# dispatcher.
 def classify_family(Z: int, N: int) -> int:
     """Return the formula family (1, 2, 3, or 4) for (Z, N)."""
-    if (Z, N) in FAMILY_1:
+    if (Z, N) in FAMILY_1_REGISTRY:
         return 1
-    if (Z, N) in FAMILY_2:
+    if is_magic_A_atom(Z, N):
         return 2
-    if (Z, N) in FAMILY_3:
+    if is_alpha_chain(Z, N) and (Z, N) in _FAMILY_3_AME:
         return 3
     return 4
 
 
-# ── Family-1 callable (Kashaev law via historical knot ID) ────────
-def family_1_binding(Z: int, N: int) -> dict:
-    """Family-1 atoms via Kashaev law B = ρ_F · m_e · Vol_hyp(K).
-
-    Uses the historical knot identifications (6_2 for D, 8_11 for T,
-    L6a4 for ³He) per binding_ladder_catalog.  This is the
-    post-Archimedean naming of B = m_e · ρ · tr_M(T_w) at q = q_0
-    (volume conjecture identifies tr_M = Vol_hyp for hyperbolic
-    closures).  Achieves <3% residuals.
-    """
-    r = _family_1_kashaev_binding(Z, N)
-    if not r.get("applicable"):
-        return r
-    return {
-        "applicable": True,
-        "Z": Z, "N": N, "A": r["A"],
-        "B_pred_MeV": r["B_pred_MeV"],
-        "knot": r["knot"],
-        "rho_F": r["rho_F"],
-        "Vol_hyp": r["Vol_hyp"],
-        "formula": r["formula"],
-        "module": "family_1_kashaev.family_1_binding",
-        "method": "principled-derivation (Kashaev law via historical knot ID)",
-    }
+# Family-1 dispatch is inlined in `evaluate` for symmetry with family
+# 2/3 (matches the pattern Gemini flagged in review — no wrapper).
 
 
 # ── Unified evaluator ──────────────────────────────────────────────
@@ -187,11 +163,23 @@ def evaluate(Z: int, N: int) -> dict:
     base = {"Z": Z, "N": N, "A": Z + N, "symbol": sym, "family": family}
 
     if family == 1:
-        r = family_1_binding(Z, N)
+        f1 = _family_1_kashaev_binding(Z, N)
+        r = {
+            "applicable": f1.get("applicable", False),
+            "reason": f1.get("reason"),
+            "B_pred_MeV": f1.get("B_pred_MeV"),
+            "knot": f1.get("knot"),
+            "rho_F": f1.get("rho_F"),
+            "Vol_hyp": f1.get("Vol_hyp"),
+            "formula": f1.get("formula"),
+            "module": "family_1_kashaev.family_1_binding",
+            "method": "principled-derivation (Kashaev law via historical knot ID)",
+        }
     elif family == 2:
         m = magic_A_binding(Z, N)
         r = {
             "applicable": m.get("applicable", False),
+            "reason": m.get("reason"),
             "B_pred_MeV": m.get("B_pred_MeV"),
             "rho_F": m.get("rho_F"),
             "formula": m.get("formula"),
@@ -202,6 +190,7 @@ def evaluate(Z: int, N: int) -> dict:
         a = alpha_cluster_binding(Z, N)
         r = {
             "applicable": a.get("applicable", False),
+            "reason": a.get("reason"),
             "B_pred_MeV": a.get("B_pred_MeV"),
             "n_alpha": a.get("n_alpha"),
             "n_pairs": a.get("n_pairs"),

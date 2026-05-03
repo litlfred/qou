@@ -28,16 +28,21 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-# CODATA 2022
-M_E_MEV: float = 0.51099895069
+# Import M_E_MEV + VOL_BORROMEAN (= 8G) from the canonical source to
+# avoid duplicated magic values.  The L6a4 = 8G identity is exact
+# hyperbolic-geometry; sharing the constant guarantees consistency.
+if str(Path(__file__).parent) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).parent))
+from magic_A_formula import M_E_MEV, VOL_BORROMEAN  # noqa: E402
 
 
 # Knot hyperbolic volumes (from SnapPy census; values in
 # binding_ladder_catalog.py:48 + d_inter_correction_test.py:57).
+# L6a4 (Borromean rings) shared with magic_A_formula via VOL_BORROMEAN.
 KNOT_VOL = {
     "6_2":  4.4008325161230461,
     "8_11": 8.28631808635811,
-    "L6a4": 7.32772475300860,   # = 8G (Borromean rings)
+    "L6a4": VOL_BORROMEAN,        # = 8G (Borromean rings)
 }
 
 
