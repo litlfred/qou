@@ -29,6 +29,9 @@ LaTeX label: `conj:z-eq-n-rho-correction`
 - [manuscript] docs/audits/2026-05-03-l2-selective-q-deformation-proof.md
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.GroupPower.Basic
+
 namespace QOU.BraidKnot
 
 /-- A canonical knot / link assignment for an `A`-host atom.
@@ -84,8 +87,8 @@ class ZeqNRhoCorrection (A : ℕ) (K : KnotAssignment A) where
     parameter `q`, lifted from the typeclass. -/
 -- Ref: [manuscript] docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md
 noncomputable def zeqNBindingEnergy (A : ℕ) (K : KnotAssignment A)
-    [ZeqNRhoCorrection A K] (q : ℝ) : ℝ :=
-  ZeqNRhoCorrection.bindingEnergy (K := K) q
+    [inst : ZeqNRhoCorrection A K] (q : ℝ) : ℝ :=
+  inst.bindingEnergy q
 
 /-- The dimensional anomaly `A − [A]_q` of the natural
     `U_q(sl_2)`-representation `V^(A-1)` controls the magnitude of
@@ -93,21 +96,47 @@ noncomputable def zeqNBindingEnergy (A : ℕ) (K : KnotAssignment A)
 noncomputable def dimensionalAnomaly (q : ℝ) (A : ℕ) : ℝ :=
   (A : ℝ) - qInt q A
 
+/-- `qInt 1 n = (n : ℝ)` by definition (the `if q = 1` branch). -/
+@[simp] theorem qInt_one (n : ℕ) : qInt 1 n = (n : ℝ) := by
+  unfold qInt; simp
+
 /-- At `q = 1`, the dimensional anomaly vanishes — the q-deformation
     correction has no effect, and the Kashaev law is exact. -/
 theorem dimensionalAnomaly_at_one (A : ℕ) :
     dimensionalAnomaly 1 A = 0 := by
-  unfold dimensionalAnomaly qInt
-  simp
+  unfold dimensionalAnomaly
+  rw [qInt_one]
+  ring
 
 /-- At `q = 1`, the conjectural binding energy reduces to the
-    integer Kashaev law.  Verified directly from
-    `classical_limit` + `q_correction` consistency. -/
+    integer Kashaev law.  Direct consequence of the
+    `classical_limit` field of the typeclass. -/
 theorem zeqN_at_one_eq_classical (A : ℕ) (K : KnotAssignment A)
     [inst : ZeqNRhoCorrection A K] :
     zeqNBindingEnergy A K 1
-      = (K.rho_struct : ℝ) * inst.m_e * K.vol_hyp := by
-  unfold zeqNBindingEnergy
-  exact inst.classical_limit
+      = (K.rho_struct : ℝ) * inst.m_e * K.vol_hyp :=
+  inst.classical_limit
+
+/-- The conjectural finite-q form: `B(q) = m_e · Vol · (ρ + A − [A]_q)`.
+    Direct consequence of the `q_correction` field of the typeclass.
+    This is the formula whose empirical match at `10⁻³` precision on
+    `²H, ⁴He, ¹²C, ¹⁶O` is documented in the audit. -/
+theorem zeqN_finite_q_form (A : ℕ) (K : KnotAssignment A)
+    [inst : ZeqNRhoCorrection A K] (q : ℝ) :
+    zeqNBindingEnergy A K q
+      = inst.m_e * K.vol_hyp
+        * ((K.rho_struct : ℝ) + (A : ℝ) - qInt q A) :=
+  inst.q_correction q
+
+/-- The finite-q form reduces to the integer Kashaev law at `q = 1`.
+    Combines `zeqN_finite_q_form` with `qInt_one` and a small
+    algebraic rearrangement.  Independently of the `classical_limit`
+    field, this confirms the two class fields are consistent. -/
+theorem zeqN_at_one_via_q_correction (A : ℕ) (K : KnotAssignment A)
+    [inst : ZeqNRhoCorrection A K] :
+    zeqNBindingEnergy A K 1
+      = inst.m_e * K.vol_hyp * (K.rho_struct : ℝ) := by
+  rw [zeqN_finite_q_form, qInt_one]
+  ring
 
 end QOU.BraidKnot
