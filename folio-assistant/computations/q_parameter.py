@@ -79,6 +79,15 @@ def q_int_err(n):
 Q_RAT_NUM = 11099786
 Q_RAT_DEN = 10000000
 
+# ── Centralized high-precision string for q_0 (for mpmath callers) ─
+# Derived from CAL-1 (m_μ/m_e) per the three-calibration discipline; this
+# is the canonical 50-digit pin used by witness scripts that need
+# arbitrary-precision evaluation. Imported by callers to avoid hardcoding
+# the literal in many places (per Gemini review on PR #515).
+Q_50_DIGIT_STR = (
+    "1.10997859555418051695830018898879867637876138498395"
+)
+
 # ── High-precision (mpmath) parallel API ─────────────────────────
 # The f64 globals above are bit-identical to what every existing
 # witness script reads via `from q_parameter import Q, HBAR_Q, ...`.
