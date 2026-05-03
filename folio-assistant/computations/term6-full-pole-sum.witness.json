@@ -1,15 +1,15 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T21:31:17.256443+00:00",
-  "commitSha": "04522f76f8c969445d9eca094240d97b1c92b7fe",
+  "computedAt": "2026-05-03T22:43:09.412469+00:00",
+  "commitSha": "7a7d39d9817c2c2e447a15ac02ddace60f552d32",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 18,
   "computation": "term6-full-pole-sum",
   "scriptFile": "term6_full_pole_sum.py",
-  "scriptHash": "17456e21163b",
-  "scriptCommitSha": "90ca491951fbfca1001c23efe1737e22d20b6945",
+  "scriptHash": "65aa9994b574",
+  "scriptCommitSha": "7a7d39d9817c2c2e447a15ac02ddace60f552d32",
   "description": "Term 6 Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using symbolic Habiro residues + 1/(q_0 − ζ) kernel up to cutoff n_max=6. Upstream Habiro witness has proton, neutron, and deuteron; T, ³He, ⁴He+ pending — extension via habiro_coefficients_interpolate.py is the next step for A≥5 5–20% error assessment. Higher-order poles (e.g. deuteron at ζ_4 = ±i, where (u²+1)² appears in the u = sqrt(q) denominator) are now recovered via a chain-rule contour integral in u-space (_higher_order_q_residue_via_sqrt_sub); the deuteron Term-6 contribution that was previously emitted as 'incomplete' now resolves to ≈ 0.057 MeV.",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
@@ -381,6 +381,7 @@
     ]
   },
   "caveats": [
+    "CONVENTION: this script reads habiro-coefficients-atomic.witness.json, populated by markov_trace_symbolic in habiro_coefficients_atomic.py via schur_weyl_weight = s_λ(q,q⁻¹) / H_q(λ). That is NOT the canonical Markov trace tr_M = Σ_λ y_λ · χ^λ specified in y-lambda-closed-form-wenzl-bridge.md; the canonical y_λ is the Wenzl-bridge central coefficient. At q_0 = 1.10998 the deuteron split is canonical 0.388 (markov_peel ≡ Hoefsmit) vs Schur-Weyl-weighted 0.177 (this script's input). The canonical Term 6 path is term6_residues_at_roots.py (PR #526), which reads markov_peel.tr_M_atomic directly. Treat term6_in_MeV here as the Schur-Weyl-weighted contribution, not the canonical Term 6.",
     "Primitive roots of unity are dense in S¹, so this is NOT a complex-analytic Mittag-Leffler in the ordinary sense. tr_M is a Habiro-ring element; convergence is q-adic. Truncation at n_max=6 captures the dominant Cauchy-kernel weighted residues (smaller n → closer to q_0 = 1.11 → larger 1/|q_0 − ζ| kernel).",
     "Extend habiro-coefficients-atomic.witness.json to T, ³He, ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹²C, ¹⁶O before this script can answer 'does Term 6 close the A≥5 5-20% errors?' — A≥4 is blocked on symbolic Hoefsmit at H_9+, the numerical-interpolation route in habiro_coefficients_interpolate.py documents A=4 as intractable at 60 dps.",
     "Higher-order pole resolution: when l'Hôpital returns sp.oo, we run a Cauchy contour ∮_{|u-u₀|=0.05} 2u·U(u) du in u-space at u₀ = sqrt(ζ) (principal branch). Radius 0.05 is conservative for ℓ ≤ 12 (nearest neighbour at ≥ 2sin(π/ℓ²) ≥ 0.05). Pole order is detected automatically by the contour identity — no per-pole-order branching."

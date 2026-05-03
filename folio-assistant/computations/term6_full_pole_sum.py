@@ -1,6 +1,44 @@
 #!/usr/bin/env python3
 """Term 6 — Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace.
 
+⚠ CONVENTION CAVEAT (added 2026-05-03 in PR #537 follow-up).
+
+This script reads `habiro-coefficients-atomic.witness.json`, which is
+populated by `habiro_coefficients_atomic.py::markov_trace_symbolic`
+using `schur_weyl_weight(λ, q) = s_λ(q, q⁻¹) / H_q(λ)` (Schur function
+at two variables / q-hook product).  That is NOT the canonical Markov
+trace specified in the paper.
+
+Per `content/.../y-lambda-closed-form-wenzl-bridge.md:1-32` and
+`notation-register.md:28`, the Markov trace decomposition is
+
+    tr_M = Σ_λ y_λ · χ^λ
+    y_λ  = s_λ(1, Q, …, Q^{r-1}) / Σ_μ d_μ s_μ(1, Q, …, Q^{r-1}),
+           Q = q²
+
+i.e. the **Wenzl-bridge central coefficient**, NOT s_λ(q, q⁻¹) / H_q(λ).
+At q_0 = 1.10998 the deuteron split is:
+
+    canonical Markov tr_M (markov_peel ≡ Hoefsmit, 1ppb cross-check)  =  0.388
+    Schur-Weyl-weighted trace consumed by THIS script                  =  0.177
+
+The canonical Term-6 path is `term6_residues_at_roots.py` (PR #526),
+which consumes `markov_peel.tr_M_atomic` directly.  This script is
+retained for two reasons:
+
+1. The Habiro-witness rational-in-u form is the only readily available
+   symbolic representation that exposes higher-order pole structure
+   in u-space, so the sqrt-sub fallback infrastructure here is
+   independently useful (it can be ported to the canonical script).
+2. Its numerical agreement with `markov_peel` for proton/neutron at
+   q_0 (both 0.51 / 0.92 respectively when normalized) suggests the
+   two traces share regular-locus behaviour even though their
+   pole structures differ.
+
+Treat `term6_in_MeV` from THIS script as the **Schur-Weyl-weighted
+contribution**, NOT as the canonical Term 6.  Cross-comparison with
+`term6_residues_at_roots.py` is a follow-up.
+
 Per content/.../full-pole-structure-mass-trace.md:
 
   tr_M(T_w, q_0) = tr_M^entire(T_w, q_0)
@@ -397,6 +435,21 @@ def main():
         .add_parameter("m_e_MeV", M_E_MEV)
         .add_parameter("n_max_cutoff", n_max)
         .add_data("atoms", out_atoms)
+        .add_caveat(
+            "CONVENTION: this script reads habiro-coefficients-atomic."
+            "witness.json, populated by markov_trace_symbolic in "
+            "habiro_coefficients_atomic.py via schur_weyl_weight = "
+            "s_λ(q,q⁻¹) / H_q(λ). That is NOT the canonical Markov "
+            "trace tr_M = Σ_λ y_λ · χ^λ specified in "
+            "y-lambda-closed-form-wenzl-bridge.md; the canonical y_λ "
+            "is the Wenzl-bridge central coefficient. At q_0 = 1.10998 "
+            "the deuteron split is canonical 0.388 (markov_peel ≡ "
+            "Hoefsmit) vs Schur-Weyl-weighted 0.177 (this script's "
+            "input). The canonical Term 6 path is term6_residues_at_"
+            "roots.py (PR #526), which reads markov_peel.tr_M_atomic "
+            "directly. Treat term6_in_MeV here as the Schur-Weyl-"
+            "weighted contribution, not the canonical Term 6."
+        )
         .add_caveat(
             "Primitive roots of unity are dense in S¹, so this is NOT "
             "a complex-analytic Mittag-Leffler in the ordinary sense. "
