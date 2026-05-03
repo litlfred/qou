@@ -112,6 +112,34 @@ def canonical_t1(isotope_label: str) -> mp.mpf:
     )
 
 
+# ── Symmetric q-dilogarithm (Hecke convention) ──
+# Used by tower_mode="li2q" — the corrected Kashaev limit per
+# `prop:mass-endomorphism-tower` (proof: kashaev-integration-identity
+# .witness.json + a43d7f1fa).
+def _q_int(n: int) -> mp.mpf:
+    """[n]_q = (q^n - q^{-n}) / (q - q^{-1}), symmetric q-integer."""
+    if n == 0:
+        return mp.mpf(0)
+    return (Q0 ** n - Q0 ** (-n)) / (Q0 - 1 / Q0)
+
+
+def li2_q_sym(z: mp.mpf, max_n: int = 300) -> mp.mpf:
+    """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
+
+    Identity: ∫_0^V (ln_q(1+t)/t) dt = -Li_2^q(-V).
+    """
+    total = mp.mpf(0)
+    for n in range(1, max_n + 1):
+        nq = _q_int(n)
+        if abs(nq) < mp.mpf("1e-300"):
+            continue
+        term = z ** n / (n * nq)
+        total += term
+        if abs(term) < mp.mpf("1e-50"):
+            break
+    return total
+
+
 # ── Canonical Term 6 from Habiro residue witness ────────────────────
 def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
     """A → Term 6 (cyclotomic residue tail) in MeV from Habiro witness."""
@@ -310,6 +338,25 @@ def paper_six_term_mass(Z, N, include_inter=True,
         z4 = Z_MARK ** 4
         t2 = n_gens_total * z2
         t3 = mp.mpf(n_gens_total * (n_gens_total - 1) // 2) * z4
+    elif tower_mode == "li2q":
+        # CORRECTED Kashaev limit per `prop:mass-endomorphism-tower`
+        # (proof: a43d7f1fa).  T2 = -Σ Li_2^q(-|V_i|),
+        # T3 = -z² · Σ Li_2^q(-|V_i V_j|) (symmetric q-dilogarithm).
+        t2 = mp.mpf(0)
+        for v in vols:
+            arg = -abs_mpf(v)
+            try:
+                t2 -= li2_q_sym(arg)  # -Li_2^q(-|V|)
+            except Exception:
+                pass
+        t3 = mp.mpf(0)
+        z2 = Z_MARK ** 2
+        for i, j in combinations(range(len(vols)), 2):
+            arg = -(abs_mpf(vols[i]) * abs_mpf(vols[j]))
+            try:
+                t3 -= z2 * li2_q_sym(arg)
+            except Exception:
+                pass
     else:
         raise ValueError(f"unknown tower_mode {tower_mode!r}")
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
@@ -425,7 +472,7 @@ if __name__ == "__main__":
         ("7Li", 3, 4, True,  6535.366),
     ]
 
-    modes = ["brane", "drop", "q1-base", "r-side-bare"]
+    modes = ["brane", "drop", "q1-base", "r-side-bare", "li2q"]
     sweep_results = {}
     for mode in modes:
         E_0, rows = run_sweep_for_mode(mode, ISOTOPES)
