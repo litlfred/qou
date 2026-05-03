@@ -209,13 +209,20 @@ def split_polar_at_u0(tr_u_expr, u, u0_sp) -> dict:
     quot, rem = sp.div(num_p, den_p, u)
     entire_at_u0 = complex(sp.N(quot.as_expr().subs(u, u0_sp), 30))
 
-    # 2) Factor u^k out of the denominator
-    den_expr = den_p.as_expr()
+    # 2) Factor u^k out of the denominator.  Read the multiplicity
+    #    directly from the trailing-zero count of the dense coefficient
+    #    list rather than the previous subs(u, 0) + cancel loop, which
+    #    re-substituted and re-cancelled the whole symbolic expression
+    #    each step (per Gemini review on PR #536).
+    coeffs_desc = den_p.all_coeffs()  # highest power first
     k = 0
-    while den_expr.subs(u, 0) == 0:
-        den_expr = sp.cancel(den_expr / u)
+    while k < len(coeffs_desc) and coeffs_desc[-1 - k].equals(0):
         k += 1
-    Dprime = sp.Poly(den_expr, u)
+    if k > 0:
+        Dprime_coeffs_desc = coeffs_desc[:-k]
+    else:
+        Dprime_coeffs_desc = coeffs_desc
+    Dprime = sp.Poly(Dprime_coeffs_desc, u)
 
     if k == 0:
         # No u = 0 pole; the proper rational is entirely Term 6.

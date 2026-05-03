@@ -46,6 +46,26 @@ from binding_canonical import build_atom_symbolic
 from hecke_symbolic import SymbolicHeckeDivision
 
 
+# Module-level cache for Term 6 results, keyed by (Z, N).  The CLI
+# loops over kahler_order ∈ {0, 1, 2} for each atom, so without this
+# cache `binding_full` would recompute T6 three times per atom even
+# though it depends only on (Z, N).  Per-(Z, N) symbolic peel +
+# polar split is the dominant cost on A ≥ 3 atoms (~20s on tritium,
+# ~17s on ⁴He), so this cache saves ~40s on tritium and ~34s on ⁴He
+# across a full three-row table.  Keyed on (Z, N) only — Term 6 has
+# no kahler / pair-mode dependence.
+_TERM6_CACHE: dict[tuple[int, int], dict] = {}
+
+
+def _term6_for_atom(Z: int, N: int) -> dict:
+    """Cached lookup for Term 6 of atom (Z, N)."""
+    key = (Z, N)
+    if key not in _TERM6_CACHE:
+        from term6_residues_at_roots import compute_atom as _t6_compute
+        _TERM6_CACHE[key] = _t6_compute(Z, N)
+    return _TERM6_CACHE[key]
+
+
 @lru_cache(maxsize=256)
 def canonical_via_ocneanu(Z: int, N: int, include_inter: bool = True,
                            reduce_first: bool = True) -> complex:
@@ -159,8 +179,7 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
     # symbolic peel cost on repeat calls.
     t_t6 = time.time()
     try:
-        from term6_residues_at_roots import compute_atom as _t6_compute
-        _t6 = _t6_compute(Z, N)
+        _t6 = _term6_for_atom(Z, N)  # cached per (Z, N)
         out["term6_pp_at_roots"]    = _t6["term6_at_q0_real"]
         out["term6_pp_at_zero"]     = float(complex(_t6["pp_at_zero_at_u0"]).real)
         out["term6_entire_at_u0"]   = float(complex(_t6["entire_at_u0"]).real)
