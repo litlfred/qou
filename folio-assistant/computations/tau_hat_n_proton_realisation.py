@@ -158,12 +158,18 @@ def build_multiplication_matrix(q) -> mp.matrix:
 # ---------------------------------------------------------------------------
 # Kernel via mpmath SVD (column-space approach)
 # ---------------------------------------------------------------------------
-def kernel_basis(M: mp.matrix, *, tol: mp.mpf | float = 1e-40) -> mp.matrix:
+def kernel_basis(M: mp.matrix, *, tol: mp.mpf | float | None = None) -> mp.matrix:
     """Returns a (cols x nullity) matrix whose columns span ker(M).
 
     Strategy: row-reduce M to find its right-nullspace.  We use a manual
     Gaussian elimination since mpmath has no .nullspace().
+
+    The default tolerance scales with `mp.dps` so the same routine
+    behaves correctly at 50 dps (default) and at higher precisions.
     """
+    if tol is None:
+        # 10 digits of headroom below the working precision floor.
+        tol = mp.mpf(10) ** (-(mp.mp.dps - 10))
     rows = M.rows
     cols = M.cols
     A = mp.matrix(rows, cols)
@@ -200,7 +206,7 @@ def kernel_basis(M: mp.matrix, *, tol: mp.mpf | float = 1e-40) -> mp.matrix:
             if k == r:
                 continue
             factor = A[k, c]
-            if factor == 0:
+            if abs(factor) < tol:
                 continue
             for jj in range(cols):
                 A[k, jj] = A[k, jj] - factor * A[r, jj]

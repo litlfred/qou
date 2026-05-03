@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Basic
+import Mathlib.LinearAlgebra.FiniteDimensional
 import Mathlib.Data.Real.Basic
 
 /-!
@@ -121,15 +122,27 @@ theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
   -- Ref: [manuscript] §3, descent-involution.md lines 21-30 (idempotence calculation)
   sorry
 
-/-- Dimensional facts at the proton scale (per the Python realisation
-    in PR #533): `dim A_0 = 6`, `dim Ω¹ = 30`, `dim A_1 = 180`.
+/-- `dim A_0 = 6` per the Python realisation in PR #533.
 
-    Stated as a `Prop`, not proven.  In Lean these are syntactic
-    consequences of the `Fin n → ℝ` definitions but the proof needs
-    the right `finrank_pi` lemma name + `Fintype` instances; deferred
-    along with the rest of the linear-algebra discharge. -/
-def dim_A0_eq_6 : Prop := True   -- shape: Module.finrank ℝ A0 = 6
-def dim_Omega1_eq_30 : Prop := True   -- shape: Module.finrank ℝ Omega1 = 30
-def dim_A1_eq_180 : Prop := True  -- shape: Module.finrank ℝ A1 = 180
+    Syntactic consequence of `A_0 = Fin 6 → ℝ`; the discharge uses
+    `Module.finrank_pi` once the right `Fintype` instance unfolding is
+    set up.  Deferred along with the rest of the linear-algebra
+    discharge. -/
+-- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+theorem dim_A0_eq_6 : Module.finrank ℝ A0 = 6 := by
+  -- Ref: PR #533 Python realisation; discharge via Module.finrank_pi.
+  sorry
+
+/-- `dim Ω¹(A_0) = 30` per the Python realisation in PR #533. -/
+-- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+theorem dim_Omega1_eq_30 : Module.finrank ℝ Omega1 = 30 := by
+  -- Ref: PR #533 Python realisation; discharge via Module.finrank_pi.
+  sorry
+
+/-- `dim A_1 = 180` per the Python realisation in PR #533. -/
+-- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+theorem dim_A1_eq_180 : Module.finrank ℝ A1 = 180 := by
+  -- Ref: PR #533 Python realisation; discharge via Module.finrank_pi.
+  sorry
 
 end QOU.LiftingDescent.H3BraneTowerScaffold
