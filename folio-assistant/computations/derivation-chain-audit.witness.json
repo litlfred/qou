@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T23:08:49.697847+00:00",
-  "commitSha": "9b97ca1ca3989ab5f9e8a1d2a43277c15136254f",
+  "computedAt": "2026-05-03T23:08:50.157222+00:00",
+  "commitSha": "d027fa0b017c15910b7b876ffb114f2f46420554",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1455,6 +1455,7 @@
         "d-nf-knot-identification.witness.json",
         "d-nf-weighted-vol.witness.json",
         "d-phi-q-series.witness.json",
+        "d-u-closed-form-proof.witness.json",
         "d-wedderburn-mass.witness.json",
         "d-wedderburn-profile.witness.json",
         "deformation-cohomology-s3.witness.json",
