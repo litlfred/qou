@@ -36,15 +36,22 @@ Why u-plane, why partial-fraction split:
      extraction is needed (the prior `sp.residue` path scaled
      polynomially in atom size and timed out at deuteron).
 
-Performance vs. the previous per-pole `sp.residue` path:
+Performance vs. the previous per-pole `sp.residue` path, then with
+the LaurentQ-coefficient Markov-peel fast path:
 
-  | atom    | sp.residue | partial-fraction split |
-  |---------|-----------:|------------------------:|
-  | proton  |       30 s |                  0.42 s |
-  | neutron |       30 s |                  0.31 s |
-  | deuteron|     >30min |                   8.1 s |
+  | atom    | sp.residue | partial-fraction split | + LaurentQ fast peel |
+  |---------|-----------:|-----------------------:|---------------------:|
+  | proton  |       30 s |                 0.42 s |                0.1 s |
+  | neutron |       30 s |                 0.31 s |                0.1 s |
+  | deuteron|    > 30min |                  8.1 s |                0.6 s |
+  | tritium |    > 30min |                 12.0 s |                3.7 s |
+  | helium-3|    > 30min |                  5.6 s |                2.1 s |
+  | helium-4|    > 30min |                 50.5 s |               17.0 s |
 
-That's a ~100× speedup at A = 1 and unlocks A ≥ 2 entirely.
+That's a ~100× speedup at A = 1, unlocks A ≥ 2 entirely, and a
+further 3-8× from routing the symbolic Markov peel through
+`hecke_laurent_fast.tr_M_atomic_fast` (LaurentQ coefficients
+instead of generic sympy `Expr`).
 
 Witness:  term6-residues-at-roots.witness.json
 Reference: thm:six-term-mass-formula-complete (Term 6),
@@ -73,7 +80,7 @@ sys.setrecursionlimit(20000)
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from markov_peel import tr_M_atomic                      # noqa: E402
+from hecke_laurent_fast import tr_M_atomic_fast as tr_M_atomic  # noqa: E402
 from hecke_symbolic import q as q_sym                     # noqa: E402
 from q_parameter import Q as Q0                           # noqa: E402
 from witness_base import WitnessBuilder                   # noqa: E402
