@@ -40,6 +40,17 @@ from functools import lru_cache
 
 import sympy as sp
 
+# `kahler_lift_analytic` calls `sp.diff(V_i, q, 2)` on the symbolic
+# per-generator volumes V_i(q).  For atoms with A ≥ 3 these are deeply
+# nested rational expressions; sympy's recursive differentiation can
+# overrun Python's default recursion limit (1000), raising
+# `RecursionError` and breaking `binding_full_pipeline`.  Bump the
+# limit before any sp.diff call lands.  10000 covers ⁴He empirically;
+# the cost is just stack address space, not compute.
+# (Cherry-picked from PR #526 c416c0877 — independent fix needed for
+# T2/T3 trace-form experiments via Kähler-derivative.)
+sys.setrecursionlimit(max(sys.getrecursionlimit(), 10000))
+
 # P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
 import sys as _p25_sys
 from pathlib import Path as _P25Path

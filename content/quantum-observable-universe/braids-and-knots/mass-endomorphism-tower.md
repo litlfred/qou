@@ -53,6 +53,39 @@ Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
 ([quantum Bloch group](#def:quantum-bloch-group)).
 
+**Trace-vs-evaluation note (added 2026-05-03).**
+The R-side algebraic form of the tower above expresses each
+$\mathrm{Vol}_q^{(S)}(\beta)$ as a Markov trace over the chain on $S$
+— each term is therefore Markov-invariant.  The archimedean
+specialisation $\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q$ below
+replaces this trace with $\Phi_q(|\hat V_i^{\mathrm{full}}|)$, which
+evaluates the dilogarithm on a per-generator amplitude.  Per-generator
+amplitudes are **not** Markov-invariant — different reduced words for
+the same braid give different per-generator amplitudes — so the
+literal $\Phi_q(|\hat V_i|)$ form is a basis-dependent expansion, not
+itself a trace.  At $q_0 \approx 1.11$ the divergence of $\Phi_q$
+near $|\hat V_i| \to 1$ amplifies tiny p/n asymmetries into hundreds
+of MeV (mirror nuclei T = 1p+2n vs $^3$He = 2p+1n predict T − $^3$He
+$\approx -737$ MeV against CODATA $+0.019$ MeV; see
+`brane-tower-isospin-diagnosis.witness.json`).
+
+**Trace reformulation (Plancherel series).**
+The Heine identity recovers Markov-invariance term-by-term:
+
+$$
+  \Phi_q(z) \;=\; (1 - z) \cdot \sum_{n \geq 0} \frac{z^n}{(q^{-1}; q^{-1})_n},
+  \qquad (q^{-1}; q^{-1})_n = \prod_{k=1}^{n}(1 - q^{-k}).
+$$
+
+With $z = |\hat V_i^{\mathrm{full}}|$ and the standard recognition of
+$|\hat V_i|^n$ as the $n$-th power evaluation of the per-generator
+transfer-matrix chain, each $z^n$ summand factors through
+$\mathrm{tr}_M(\sigma_i^n)$ — which IS Markov-invariant.  See
+`brane_tower_plancherel_scaffold.py` for a numerical scaffold; the
+production wiring depends on PR #526's term-trace infrastructure.
+An equivalent Kähler-derivative reformulation is available via
+`kahler_lift.py` (recursion fix landed in PR #526).
+
 **Proposition.**
 *The mass of a vortex $\varrho$ with braid representative
 $\beta \in B_n$ and $n - 1$ generators is*
