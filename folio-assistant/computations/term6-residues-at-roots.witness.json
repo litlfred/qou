@@ -1,20 +1,20 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-03T11:13:57.447278+00:00",
-  "commitSha": "ef1979b582752c5d857082221f7224f77ab9e51e",
+  "computedAt": "2026-05-03T11:24:36.534689+00:00",
+  "commitSha": "1923961ef7cc10c3d047beaf2c86fd14b6ea4c97",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 24,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
-  "scriptHash": "558bf002d9ac",
-  "scriptCommitSha": "ef1979b582752c5d857082221f7224f77ab9e51e",
-  "description": "Term 6 of thm:six-term-mass-formula-complete via Markov-peel symbolic tr_M(q): Σ_{ℓ≥2} Res_{q=ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ), with ℓ truncated at 4.  This evaluation is enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q; the Hoefsmit per-block path could not produce the symbolic form needed for residue extraction at A ≥ 4.",
+  "scriptHash": "00c0edb676a7",
+  "scriptCommitSha": "aed08e67dcdc27225e6745b10835acc479a902b9",
+  "description": "Term 6 of thm:six-term-mass-formula-complete via Markov-peel symbolic tr_M(q): Σ_{ℓ≥2} Res_{q=ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ), with ℓ truncated at 6.  This evaluation is enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q; the Hoefsmit per-block path could not produce the symbolic form needed for residue extraction at A ≥ 4.",
   "contentBlock": "thm:six-term-mass-formula-complete",
   "parameters": {
     "q0": "1.1099785955541805",
-    "max_ell": 4
+    "max_ell": 6
   },
   "data": {
     "results": [
@@ -22,11 +22,11 @@
         "Z": 1,
         "N": 0,
         "A": 1,
-        "max_ell": 4,
+        "max_ell": 6,
         "tr_M_symbolic_ops": 138,
-        "elapsed_peel_sec": 2.46,
-        "elapsed_cancel_sec": 0.051,
-        "elapsed_residues_sec": 5.816,
+        "elapsed_peel_sec": 0.115,
+        "elapsed_cancel_sec": 0.047,
+        "elapsed_residues_sec": 2.2,
         "residues": [
           {
             "ell": 2,
@@ -39,14 +39,28 @@
             "ell": 3,
             "zeta_symbolic": "exp(2*I*pi/3)",
             "residue_symbolic": "0",
-            "residue_value": "0j",
+            "residue_value": "0",
             "residue_abs": "0.000000e+00"
           },
           {
             "ell": 4,
             "zeta_symbolic": "I",
             "residue_symbolic": "0",
-            "residue_value": "0j",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          },
+          {
+            "ell": 5,
+            "zeta_symbolic": "exp(2*I*pi/5)",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          },
+          {
+            "ell": 6,
+            "zeta_symbolic": "exp(I*pi/3)",
+            "residue_symbolic": "0",
+            "residue_value": "0",
             "residue_abs": "0.000000e+00"
           }
         ],
