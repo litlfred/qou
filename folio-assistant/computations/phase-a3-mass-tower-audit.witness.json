@@ -57,10 +57,8 @@
     }
   },
   "estimated_level_1_size": {
-    "method": "Geometric tail bound from prop:jet-tower-convergence (not numerically pinned at q_0 in this audit)",
-    "rough_factor": "~0.066 of level-0 (per analogy with Sigma_all decay rate 0.2575^A from 2026-05-02-nv-frob-filter-conjectures.md)",
-    "expected_size_at_proton": "~few hundred ppm of base mass (comparable to current ~500 ppm proton residual)",
-    "note": "Estimate is order-of-magnitude only; exact size requires actual level-1 computation, which requires tau_hat_n."
+    "method": "unknown",
+    "note": "An earlier draft of this witness cited '~0.066 of level-0 (per analogy with Sigma_all decay rate)' giving '~few hundred ppm at proton'. Gemini PR #531 review (discussion_r3178287233 / r3178287235) correctly flagged that as internally inconsistent: 0.066 x 938 MeV = ~62 MeV, ~10^5x the stated 'few hundred ppm' (~0.5 MeV) target. The Sigma_all decay rate is a different convergence rate (beta-decay character sum), not the jet-tower convergence rate. The actual jet-tower tail bound from prop:jet-tower-convergence has not been numerically pinned at q_0 in this audit. The size of the level-1 contribution is unknown until it is computed, which requires tau_hat_n. No quantitative estimate is offered."
   },
   "current_per_atom_residuals": {
     "source": "9b66f7571 audit (crt_markov_v3 + Hoefsmit at q_0)",

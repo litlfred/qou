@@ -106,11 +106,22 @@ Both are research-grade sub-tasks; neither is currently implemented.
 
 ## Recommendation
 
-**Phase A.3 is the largest concrete precision opportunity in
-issue #522.** The level-1 contribution is currently 100% missing,
-not approximated. Expected size: per the geometric tail bound, ~0.066×
-of level-0 (i.e. ~7% of the level-0 contribution), which at the proton
-is on the order of a few hundred ppm — comparable to the residual.
+**Phase A.3 is the largest unimplemented piece of issue #522's
+mass-tower track.** The level-1 contribution is currently 100%
+missing, not approximated.
+
+The size of the level-1 contribution is **unknown** without first
+computing it. An earlier draft of this memo cited a "geometric
+tail bound ~0.066× of level-0" estimate by analogy with the
+`Σ_all` decay rate from `2026-05-02-nv-frob-filter-conjectures.md`,
+but that analogy is wrong (Σ_all decay is a different convergence
+rate; applied naively at level-0 ~ proton mass it would predict a
+~62 MeV correction, ~10⁵× the observed proton residual; Gemini PR
+#531 review caught this inconsistency). The jet-tower geometric
+tail bound from `prop:jet-tower-convergence` hasn't been
+numerically pinned at q₀; whether the level-1 contribution is
+comparable to the per-atom residual or much smaller is an open
+empirical question — answerable only after `τ̂_n` is realised.
 
 But step 1 is a real sub-project: defining what the level-1 sub-braids
 ARE. Without `τ̂_n` realised in code, level-1 Φ_q can't be computed.
