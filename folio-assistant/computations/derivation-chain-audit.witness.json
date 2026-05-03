@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T10:47:45.209299+00:00",
-  "commitSha": "0b80c174669c0e10fed04fda602a0e8cddb6dc3b",
+  "computedAt": "2026-05-03T10:53:36.526782+00:00",
+  "commitSha": "3159d6847b84ca8bea02c805d60d160623a9db84",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1406,6 +1406,7 @@
         "canonical-mass-table.witness.json",
         "canonical-plus-multibrane.witness.json",
         "canonical-script-input-audit.witness.json",
+        "canonical-tr-m-three-path-comparison.witness.json",
         "canonical-with-proper-tower.witness.json",
         "catalan-binding.witness.json",
         "categorical-bypass-volmatch-demo.witness.json",
