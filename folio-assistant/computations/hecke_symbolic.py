@@ -471,53 +471,66 @@ class SymbolicHeckeDivision:
     def unfold(self, elem):
         """Expand formal-variable tokens back to their NFs.
 
-        For each `(atom_id,)` token in elem.terms, replace it with
-        the registered NF (a SymbolicHeckeElement).  Multi-term NFs
-        require a tensor-product expansion across the formal variable
-        and the surrounding word — the conservative implementation
-        below handles the common case where the formal-variable
-        token is a single-element word (i.e., elem.terms has keys
-        like `(atom_id,)` with no surrounding generators).
+        For each formal token `aid` (negative index) in any word of
+        `elem.terms`, substitute the registered NF in place and
+        distribute the surrounding generators across the NF's basis
+        words. This is purely textual substitution: the word
+        ``(g_1, ..., g_k, aid, h_1, ..., h_m)`` with NF
+        ``Σ_i c_i · w_i`` becomes
+        ``Σ_i c_i · (g_1, ..., g_k, *w_i, h_1, ..., h_m)``.
 
-        Mixed words (e.g., `(σ_5, atom_id, σ_7)`) raise
-        `NotImplementedError` in the multi-term case because the
-        surrounding generators may not commute with the sub-atom's
-        NF in the Hecke algebra.
+        Correctness contract: the registered NF for `aid` must already
+        encode any necessary generator-offset (so it lives on the
+        correct strands relative to the surrounding word). The
+        production path in `markov_peel.tr_M_atomic` registers a
+        distinct `atom_id` per nucleon position, with the NF pre-
+        shifted to that position's strands — substitution is then
+        the correct unfolding.
+
+        Multiple formal tokens per word are handled left-to-right
+        (formal token in expanded position is a generator only if
+        the NF includes one, in which case it is recursively
+        unfolded on the next pass).
         """
         if not self._quotient_relations:
             return elem
-        new_terms: dict = {}
-        for word, coeff in elem.terms.items():
-            atom_positions = [(i, w) for i, w in enumerate(word) if w < 0]
-            if not atom_positions:
-                new_terms[word] = (
-                    new_terms.get(word, sp.Integer(0)) + coeff
+        # Iterate to a fixed point: each pass expands the leftmost
+        # formal token in every word; re-running picks up tokens
+        # introduced by NFs (degenerate case, expected to terminate).
+        for _ in range(64):  # bounded for safety
+            any_formal = False
+            new_terms: dict = {}
+            for word, coeff in elem.terms.items():
+                # Find leftmost formal token.
+                pos = next(
+                    (i for i, g in enumerate(word) if g < 0), -1
                 )
-                continue
-            # Word contains at least one formal token.
-            if len(atom_positions) == 1 and len(word) == 1:
-                # Pure formal-token word: expand via the NF.
-                aid = word[0]
-                info = self._quotient_relations.get(aid)
-                if info is None:
+                if pos == -1:
                     new_terms[word] = (
                         new_terms.get(word, sp.Integer(0)) + coeff
                     )
                     continue
-                for nf_word, nf_coeff in info['nf_terms'].items():
-                    new_terms[nf_word] = (
-                        new_terms.get(nf_word, sp.Integer(0))
-                        + sp.expand(coeff * nf_coeff)
+                any_formal = True
+                aid = word[pos]
+                info = self._quotient_relations.get(aid)
+                if info is None:
+                    # Unknown formal token — leave as-is.
+                    new_terms[word] = (
+                        new_terms.get(word, sp.Integer(0)) + coeff
                     )
-                continue
-            # Mixed word with surrounding generators — multi-term
-            # tensor-expansion needed; see fold/unfold design.
-            raise NotImplementedError(
-                f"unfold: mixed word {word} with formal token + "
-                f"surrounding generators — tensor-product expansion "
-                f"not yet implemented. Deferred to follow-up PR."
-            )
-        return SymbolicHeckeElement(new_terms)
+                    continue
+                prefix = word[:pos]
+                suffix = word[pos + 1:]
+                for nf_word, nf_coeff in info['nf_terms'].items():
+                    expanded = prefix + tuple(nf_word) + suffix
+                    new_terms[expanded] = sp.expand(
+                        new_terms.get(expanded, sp.Integer(0))
+                        + coeff * nf_coeff
+                    )
+            elem = SymbolicHeckeElement(new_terms)
+            if not any_formal:
+                break
+        return elem
 
     def collapse_formal_powers(self, elem):
         """Collapse consecutive runs of the same formal variable.
@@ -1075,46 +1088,19 @@ class SymbolicHeckeDivision:
                         changed = True
 
                 # Then try multi-term sub-word quotient (prefix-match
-                # case for multi-term NFs). For each registered atom
-                # with a known n_strands, try every nucleon-aligned
-                # generator offset δ ∈ {0, n_strands, 2·n_strands, ...}
-                # up to the max generator in elem. Cheaper than whole-
-                # atom quotient because it only inspects elem.terms.
-                if elem.terms:
-                    max_gen = max(
-                        (max((g for g in w if g >= 0), default=0)
-                         for w in elem.terms),
-                        default=0,
-                    )
-                else:
-                    max_gen = 0
+                # case for multi-term NFs at offset 0). Callers that
+                # need multi-position folds register a distinct
+                # atom_id per offset with the NF pre-shifted (see
+                # markov_peel.tr_M_atomic). Cheaper than whole-atom
+                # quotient because it only inspects elem.terms.
                 q_changed = True
                 while q_changed:
-                    q_changed = False
-                    for atom_id, info in (
-                        list(self._quotient_relations.items())
-                    ):
-                        nf_n = info.get('n_strands') or 0
-                        # Try offset 0 plus nucleon-aligned shifts
-                        offsets = [0]
-                        if nf_n:
-                            δ = nf_n
-                            while δ <= max_gen:
-                                offsets.append(δ)
-                                δ += nf_n
-                        for δ in offsets:
-                            elem, did = (
-                                self._try_multi_term_subword_quotient(
-                                    elem, offset=δ
-                                )
-                            )
-                            if did:
-                                quotient_steps += 1
-                                changed = True
-                                q_changed = True
-                                break
-                        if q_changed:
-                            break
+                    elem, q_changed = (
+                        self._try_multi_term_subword_quotient(elem)
+                    )
+                    if q_changed:
+                        quotient_steps += 1
+                        changed = True
 
         result = (elem, {'hecke': hecke_steps, 'yb': yb_steps,
                          'fc': fc_steps, 'quotient': quotient_steps})

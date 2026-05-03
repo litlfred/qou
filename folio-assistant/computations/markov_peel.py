@@ -229,7 +229,7 @@ def tr_M_atomic(
     include_inter: bool = True,
     reduce_first: bool = True,
     max_iterations: int = 10000,
-    pre_register_nucleons: bool = False,
+    pre_register_nucleons: bool = True,
 ):
     """Symbolic Markov trace `tr_M(β)` of the atomic braid for (Z, N).
 
@@ -273,31 +273,54 @@ def tr_M_atomic(
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
 
     # Pre-registration of proton/neutron NFs (opt-in, default OFF).
-    # The reduce() Rule 4 multi-term sub-word matcher collapses
-    # occurrences of these NFs at nucleon-aligned offsets δ ∈
-    # {0, 3, …, 3(A-1)} into formal-variable tokens — but
-    # `markov_trace_canonical.tr_M_element` skips words containing
-    # formal indices (drops them silently → trace 0). Until
-    # tr_M_element is taught to look up the registered tr_M_value
-    # for a formal token (or this path unfolds before tracing),
-    # enabling pre-registration causes silent regressions. Tracked
-    # as a follow-up; see comment in markov_trace_canonical.tr_M_element.
+    # For each nucleon position k ∈ [0, A), register the proton (or
+    # neutron) NF pre-shifted by δ=3k as a distinct atom_id. The
+    # reduce() Rule 4 multi-term matcher then folds occurrences at
+    # offset 0 (against each pre-shifted NF), keeping intermediate
+    # term counts bounded during incremental reduction. Before
+    # tracing, `unfold` distributes the formal tokens back into
+    # generator words; the surrounding inter-nucleon crossings are
+    # preserved as a literal suffix, so the unfolded element is the
+    # algebraically-equivalent reduced form.
+    #
+    # atom_id encoding: `-(100 * (k + 1) + species)`, species
+    # ∈ {1: proton, 2: neutron}. So nucleon-0 proton = -101,
+    # nucleon-1 proton = -201, nucleon-2 neutron = -302, etc.
     div: SymbolicHeckeDivision | None = None
     if pre_register_nucleons and A >= 2:
         div = SymbolicHeckeDivision()
-        # atom_id = -101 for proton, -102 for neutron (any negative
-        # works; chosen to avoid clashing with the test atom_id -1)
-        if Z >= 1:
+
+        def _shift_nf(nf: SymbolicHeckeElement, δ: int) -> (
+            SymbolicHeckeElement
+        ):
+            shifted_terms: dict = {}
+            for w, c in nf.terms.items():
+                w_shifted = tuple(g + δ for g in w)
+                shifted_terms[w_shifted] = c
+            return SymbolicHeckeElement(shifted_terms)
+
+        # Order: build the per-nucleon registration in the same
+        # left-to-right order as atom_braid_word_3A — protons first
+        # (positions 0..Z-1), then neutrons (positions Z..A-1).
+        for k in range(Z):
+            δ = 3 * k
             p_nf, p_tr = _nucleon_nf_and_trace(1, 0, max_iterations)
             div.register_quotient(
-                -101, p_nf, name='proton',
-                n_strands=3, tr_M_value=p_tr,
+                -(100 * (k + 1) + 1),
+                _shift_nf(p_nf, δ),
+                name=f"proton@{δ}",
+                n_strands=3,
+                tr_M_value=p_tr,
             )
-        if N >= 1:
+        for k in range(N):
+            δ = 3 * (Z + k)
             n_nf, n_tr = _nucleon_nf_and_trace(0, 1, max_iterations)
             div.register_quotient(
-                -102, n_nf, name='neutron',
-                n_strands=3, tr_M_value=n_tr,
+                -(100 * (Z + k + 1) + 2),
+                _shift_nf(n_nf, δ),
+                name=f"neutron@{δ}",
+                n_strands=3,
+                tr_M_value=n_tr,
             )
 
     if reduce_first:
@@ -312,6 +335,15 @@ def tr_M_atomic(
         )
     else:
         elem = word_to_element(word)
+
+    # If folding was active, unfold formal tokens into the
+    # full reduced word before tracing. tr_M_element only
+    # understands non-negative generator indices; unfold restores
+    # the algebraically-equivalent generator-only representation.
+    if div is not None and any(
+        any(g < 0 for g in w) for w in elem.terms
+    ):
+        elem = div.unfold(elem)
 
     # `simplify=False`: skip the `sp.simplify` aggregation step.  At
     # A=3 the aggregated total has ~5000-12000 sympy ops; calling
