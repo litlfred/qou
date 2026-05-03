@@ -37,11 +37,12 @@ Plancherel-weighted code path:
 
 - `folio-assistant/computations/hecke_core.py:452` —
   `K_PARTITION_MAX = 11` (the cap on partition jet depth `k(λ)`).
-- `folio-assistant/computations/hecke_core.py:2614–2673` —
+- `folio-assistant/computations/hecke_core.py:2614–2681` —
   `atom_markov_trace(Z, N, k_cap=None, include_inter=True)`. Iterates
   over partitions filtered by `k_cap`. **DEPRECATED.**
-- `folio-assistant/computations/hecke_core.py:2453–2602` —
-  `binding_3A` / similar functions also gated by `k_cap`.
+- `folio-assistant/computations/hecke_core.py:2450–2611` —
+  `unified_iterative_correction_jet` / similar functions also gated
+  by `k_cap`.
 
 Truncation by jet depth (not by partition count) is a research-grade
 choice — partitions are streamed up to a fixed `k(λ) ≤ 11` ceiling.

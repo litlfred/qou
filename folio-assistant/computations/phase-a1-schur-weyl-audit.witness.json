@@ -10,7 +10,7 @@
     {
       "path": "folio-assistant/computations/markov_trace_canonical.py",
       "key_function": "tr_M_element",
-      "line": 1,
+      "line": 185,
       "uses_partitions": false,
       "method": "axiomatic recursion (Markov axioms M1, M2, M3)",
       "note": "Top docstring explicitly says: 'Differs from the Plancherel-weighted trace ... used in hecke_core.atom_markov_trace and binding_3A — these do NOT satisfy (M2) with the canonical z and give different values.'"
@@ -18,7 +18,7 @@
     {
       "path": "folio-assistant/computations/binding_canonical.py",
       "key_function": "binding_canonical",
-      "line": 118,
+      "line": 112,
       "uses_partitions": false,
       "method": "calls markov_trace_canonical.tr_M_element on each atom-braid generator",
       "note": "Imports tr_M_element from markov_trace_canonical at line 37. No partition argument anywhere."
