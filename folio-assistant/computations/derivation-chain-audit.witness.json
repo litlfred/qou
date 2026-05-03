@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-02T23:44:16.841783+00:00",
-  "commitSha": "57a9ea9fd6589bdb5197507f1be2575cd9827277",
+  "computedAt": "2026-05-03T09:26:02.896496+00:00",
+  "commitSha": "6d909167e1d6e1a49af4213c59430d82729050c8",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1399,6 +1399,7 @@
         "bw-lagrangian-prefactor-attempt.witness.json",
         "c-alpha-from-Q-beta-trace.witness.json",
         "c-alpha-via-knot-operators.witness.json",
+        "canonical-isospin-pyhecke-full-census.witness.json",
         "canonical-isospin-pyhecke.witness.json",
         "canonical-isospin-test.witness.json",
         "canonical-mass-table.witness.json",
@@ -1513,6 +1514,7 @@
         "hadron-knot-table.witness.json",
         "halflife-from-transfer-matrix.witness.json",
         "hbar-vs-q-parametrization.witness.json",
+        "he3-categorical-gap-analysis.witness.json",
         "heavy-atom-opts.witness.json",
         "hecke-division.witness.json",
         "hecke-knot-ideal-tracker.witness.json",
@@ -1568,6 +1570,7 @@
         "magic-126-optimized.witness.json",
         "markov-convention-parallel.witness.json",
         "markov-free-energy-qvalues.witness.json",
+        "markov-invariant-mass-full-census.witness.json",
         "markov-invariant-unified-mass.witness.json",
         "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",

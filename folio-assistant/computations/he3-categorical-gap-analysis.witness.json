@@ -1,0 +1,148 @@
+{
+  "computation": "he3-categorical-gap-analysis",
+  "description": "Diagnosis of the \u221230% \u00b3He gap in the Markov-invariant unified mass formula.  Sweeps inter-nucleon multiplicities and quantifies what each contributes to the log|tr_M| term.  Conclusion: gap = 2.28 MeV originates entirely in the M-term (\u00b3He |tr_M| is 2.29\u00d7 T's at default (1,1,1)).  Suggested follow-up: triple-linking / Brunnian-aware correction term.",
+  "computedAt": "2026-05-03T09:25:44.868377+00:00",
+  "diagnosis": {
+    "gap_origin": "M-term shortfall (not \u03a3_n, not Term 7)",
+    "B_AME_3He_MeV": 7.718058,
+    "B_pred_30a_MeV": 5.434918,
+    "gap_MeV": 2.2831400000000004,
+    "ratio_tr_M_3He_over_T": 2.288,
+    "alpha_M_calibrated_MeV": -3.728574,
+    "borromean_brunnian_note": "\u00b3He atomic braid closure is Brunnian; pairwise invariants vanish.  Markov trace at q \u2260 1 doesn't structurally encode Brunnian-ness.  Triple-linking / v_3 / Massey product is the natural categorical home for the missing term."
+  },
+  "multiplicity_sweep": [
+    {
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_T_abs": 0.078297035873325,
+      "tr_M_3He_abs": 0.1791650003435875,
+      "ratio_3He_over_T": 2.288273091633437,
+      "log_abs_tr_M_T": -2.5472455327258836,
+      "log_abs_tr_M_3He": -1.7194481080995616,
+      "alpha_M_gap_MeV": -3.086503954728664
+    },
+    {
+      "m_pp": 1,
+      "m_pn": 1,
+      "m_nn": 2,
+      "tr_M_T_abs": 0.2533791211733792,
+      "tr_M_3He_abs": 0.1791650003435875,
+      "ratio_3He_over_T": 0.7071024617730467,
+      "log_abs_tr_M_T": -1.3728684092277772,
+      "log_abs_tr_M_3He": -1.7194481080995616,
+      "alpha_M_gap_MeV": 1.2922480541411647
+    },
+    {
+      "m_pp": 1,
+      "m_pn": 2,
+      "m_nn": 1,
+      "tr_M_T_abs": 0.20049271261811444,
+      "tr_M_3He_abs": 0.4587820793526268,
+      "ratio_3He_over_T": 2.2882730916334366,
+      "log_abs_tr_M_T": -1.6069773789403636,
+      "log_abs_tr_M_3He": -0.7791799543140421,
+      "alpha_M_gap_MeV": -3.0865039547286623
+    },
+    {
+      "m_pp": 1,
+      "m_pn": 2,
+      "m_nn": 2,
+      "tr_M_T_abs": 0.64881980215744,
+      "tr_M_3He_abs": 0.4587820793526268,
+      "ratio_3He_over_T": 0.7071024617730466,
+      "log_abs_tr_M_T": -0.4326002554422575,
+      "log_abs_tr_M_3He": -0.7791799543140421,
+      "alpha_M_gap_MeV": 1.2922480541411654
+    },
+    {
+      "m_pp": 2,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_T_abs": 0.078297035873325,
+      "tr_M_3He_abs": 0.39627404577819103,
+      "ratio_3He_over_T": 5.0611628059498175,
+      "log_abs_tr_M_T": -2.5472455327258836,
+      "log_abs_tr_M_3He": -0.9256492722799051,
+      "alpha_M_gap_MeV": -6.046241655196104
+    },
+    {
+      "m_pp": 2,
+      "m_pn": 1,
+      "m_nn": 2,
+      "tr_M_T_abs": 0.2533791211733792,
+      "tr_M_3He_abs": 0.39627404577819103,
+      "ratio_3He_over_T": 1.5639569824975177,
+      "log_abs_tr_M_T": -1.3728684092277772,
+      "log_abs_tr_M_3He": -0.9256492722799051,
+      "alpha_M_gap_MeV": -1.6674896463262752
+    },
+    {
+      "m_pp": 2,
+      "m_pn": 2,
+      "m_nn": 1,
+      "tr_M_T_abs": 0.20049271261811444,
+      "tr_M_3He_abs": 1.0147262599667863,
+      "ratio_3He_over_T": 5.061162805949817,
+      "log_abs_tr_M_T": -1.6069773789403636,
+      "log_abs_tr_M_3He": 0.014618881505614549,
+      "alpha_M_gap_MeV": -6.046241655196103
+    },
+    {
+      "m_pp": 2,
+      "m_pn": 2,
+      "m_nn": 2,
+      "tr_M_T_abs": 0.64881980215744,
+      "tr_M_3He_abs": 1.0147262599667863,
+      "ratio_3He_over_T": 1.563956982497518,
+      "log_abs_tr_M_T": -0.4326002554422575,
+      "log_abs_tr_M_3He": 0.014618881505614549,
+      "alpha_M_gap_MeV": -1.667489646326275
+    },
+    {
+      "m_pp": 3,
+      "m_pn": 1,
+      "m_nn": 1,
+      "tr_M_T_abs": 0.078297035873325,
+      "tr_M_3He_abs": 0.2620101799502083,
+      "ratio_3He_over_T": 3.346361417488507,
+      "log_abs_tr_M_T": -2.5472455327258836,
+      "log_abs_tr_M_3He": -1.3393719212040798,
+      "alpha_M_gap_MeV": -4.503646143206298
+    },
+    {
+      "m_pp": 3,
+      "m_pn": 1,
+      "m_nn": 2,
+      "tr_M_T_abs": 0.2533791211733792,
+      "tr_M_3He_abs": 0.2620101799502083,
+      "ratio_3He_over_T": 1.0340638121122978,
+      "log_abs_tr_M_T": -1.3728684092277772,
+      "log_abs_tr_M_3He": -1.3393719212040798,
+      "alpha_M_gap_MeV": -0.1248941343364696
+    },
+    {
+      "m_pp": 3,
+      "m_pn": 2,
+      "m_nn": 1,
+      "tr_M_T_abs": 0.20049271261811444,
+      "tr_M_3He_abs": 0.6709210779928692,
+      "ratio_3He_over_T": 3.3463614174885064,
+      "log_abs_tr_M_T": -1.6069773789403636,
+      "log_abs_tr_M_3He": -0.3991037674185603,
+      "alpha_M_gap_MeV": -4.503646143206296
+    },
+    {
+      "m_pp": 3,
+      "m_pn": 2,
+      "m_nn": 2,
+      "tr_M_T_abs": 0.64881980215744,
+      "tr_M_3He_abs": 0.6709210779928692,
+      "ratio_3He_over_T": 1.0340638121122978,
+      "log_abs_tr_M_T": -0.4326002554422575,
+      "log_abs_tr_M_3He": -0.3991037674185603,
+      "alpha_M_gap_MeV": -0.12489413433646877
+    }
+  ]
+}

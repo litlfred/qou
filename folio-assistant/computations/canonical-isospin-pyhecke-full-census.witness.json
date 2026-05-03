@@ -1,0 +1,247 @@
+{
+  "computation": "canonical-isospin-pyhecke-full-census",
+  "description": "Full-census canonical Markov trace tr_M(q_0) for all 23 stable isotopes with Z \u2264 10 in the low_isotope_mass_table.py census. Extends canonical_isospin_pyhecke.py (6 atoms) to the full set by simply iterating the existing pyhecke entry point \u2014 no new infrastructure needed.  Removes the 'no canonical tr_M for Z \u2265 3' bottleneck identified in PR #514 follow-up.",
+  "reference_blocks": [
+    "prop:categorical-mass-markov",
+    "thm:jones-markov-trace",
+    "rem:commutative-crossing-energy"
+  ],
+  "computedAt": "2026-05-03T09:16:18.288241+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "precision": 30,
+    "n_atoms": 23
+  },
+  "results": {
+    "1H": {
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "n_strands": 3,
+      "include_inter": false,
+      "tr_M_q0": 1.0653062285923887,
+      "log_abs_tr_M_q0": 0.06326229641449488,
+      "walltime_sec": 0.009008407592773438
+    },
+    "2H": {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_strands": 6,
+      "include_inter": true,
+      "tr_M_q0": 0.3368212289448051,
+      "log_abs_tr_M_q0": -1.0882029672915512,
+      "walltime_sec": 0.00048160552978515625
+    },
+    "3H": {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_strands": 9,
+      "include_inter": true,
+      "tr_M_q0": 0.078297035873325,
+      "log_abs_tr_M_q0": -2.5472455327258836,
+      "walltime_sec": 0.0005443096160888672
+    },
+    "3He": {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_strands": 9,
+      "include_inter": true,
+      "tr_M_q0": 0.1791650003435875,
+      "log_abs_tr_M_q0": -1.7194481080995616,
+      "walltime_sec": 0.0005373954772949219
+    },
+    "4He": {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_strands": 12,
+      "include_inter": true,
+      "tr_M_q0": 0.041648468842339324,
+      "log_abs_tr_M_q0": -3.178490673533894,
+      "walltime_sec": 0.0006499290466308594
+    },
+    "6Li": {
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_strands": 18,
+      "include_inter": true,
+      "tr_M_q0": 0.00514989795134189,
+      "log_abs_tr_M_q0": -5.268778379776236,
+      "walltime_sec": 0.0010228157043457031
+    },
+    "7Li": {
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "n_strands": 21,
+      "include_inter": true,
+      "tr_M_q0": 0.001197138748954137,
+      "log_abs_tr_M_q0": -6.727820945210569,
+      "walltime_sec": 0.0012979507446289062
+    },
+    "8Be": {
+      "Z": 4,
+      "N": 4,
+      "A": 8,
+      "n_strands": 24,
+      "include_inter": true,
+      "tr_M_q0": 0.0006367928917058776,
+      "log_abs_tr_M_q0": -7.359066086018579,
+      "walltime_sec": 0.002002239227294922
+    },
+    "9Be": {
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "n_strands": 27,
+      "include_inter": true,
+      "tr_M_q0": 0.00014802806830784365,
+      "log_abs_tr_M_q0": -8.818108651452912,
+      "walltime_sec": 0.002111673355102539
+    },
+    "10Be": {
+      "Z": 4,
+      "N": 6,
+      "A": 10,
+      "n_strands": 30,
+      "include_inter": true,
+      "tr_M_q0": 3.441041709534739e-05,
+      "log_abs_tr_M_q0": -10.277151216887244,
+      "walltime_sec": 0.0015869140625
+    },
+    "10B": {
+      "Z": 5,
+      "N": 5,
+      "A": 10,
+      "n_strands": 30,
+      "include_inter": true,
+      "tr_M_q0": 7.874043151116664e-05,
+      "log_abs_tr_M_q0": -9.449353792260922,
+      "walltime_sec": 0.001562356948852539
+    },
+    "11B": {
+      "Z": 5,
+      "N": 6,
+      "A": 11,
+      "n_strands": 33,
+      "include_inter": true,
+      "tr_M_q0": 1.8303900885419504e-05,
+      "log_abs_tr_M_q0": -10.908396357695255,
+      "walltime_sec": 0.0023250579833984375
+    },
+    "12C": {
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "n_strands": 36,
+      "include_inter": true,
+      "tr_M_q0": 9.736376827253295e-06,
+      "log_abs_tr_M_q0": -11.539641498503265,
+      "walltime_sec": 0.0020706653594970703
+    },
+    "13C": {
+      "Z": 6,
+      "N": 7,
+      "A": 13,
+      "n_strands": 39,
+      "include_inter": true,
+      "tr_M_q0": 2.263305813911701e-06,
+      "log_abs_tr_M_q0": -12.998684063937597,
+      "walltime_sec": 0.0018742084503173828
+    },
+    "14N": {
+      "Z": 7,
+      "N": 7,
+      "A": 14,
+      "n_strands": 42,
+      "include_inter": true,
+      "tr_M_q0": 1.203918138406839e-06,
+      "log_abs_tr_M_q0": -13.629929204745608,
+      "walltime_sec": 0.002185821533203125
+    },
+    "15N": {
+      "Z": 7,
+      "N": 8,
+      "A": 15,
+      "n_strands": 45,
+      "include_inter": true,
+      "tr_M_q0": 2.798612841794299e-07,
+      "log_abs_tr_M_q0": -15.08897177017994,
+      "walltime_sec": 0.003595590591430664
+    },
+    "16O": {
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "n_strands": 48,
+      "include_inter": true,
+      "tr_M_q0": 1.4886635035816304e-07,
+      "log_abs_tr_M_q0": -15.72021691098795,
+      "walltime_sec": 0.003669261932373047
+    },
+    "17O": {
+      "Z": 8,
+      "N": 9,
+      "A": 17,
+      "n_strands": 51,
+      "include_inter": true,
+      "tr_M_q0": 3.460528307802741e-08,
+      "log_abs_tr_M_q0": -17.17925947642228,
+      "walltime_sec": 0.0029115676879882812
+    },
+    "18O": {
+      "Z": 8,
+      "N": 10,
+      "A": 18,
+      "n_strands": 54,
+      "include_inter": true,
+      "tr_M_q0": 8.044300233257813e-09,
+      "log_abs_tr_M_q0": -18.638302041856615,
+      "walltime_sec": 0.003278493881225586
+    },
+    "19F": {
+      "Z": 9,
+      "N": 10,
+      "A": 19,
+      "n_strands": 57,
+      "include_inter": true,
+      "tr_M_q0": 4.278997076789764e-09,
+      "log_abs_tr_M_q0": -19.269547182664624,
+      "walltime_sec": 0.0028574466705322266
+    },
+    "20Ne": {
+      "Z": 10,
+      "N": 10,
+      "A": 20,
+      "n_strands": 60,
+      "include_inter": true,
+      "tr_M_q0": 2.27612290096738e-09,
+      "log_abs_tr_M_q0": -19.900792323472636,
+      "walltime_sec": 0.002881765365600586
+    },
+    "21Ne": {
+      "Z": 10,
+      "N": 11,
+      "A": 21,
+      "n_strands": 63,
+      "include_inter": true,
+      "tr_M_q0": 5.291046439900717e-10,
+      "log_abs_tr_M_q0": -21.359834888906967,
+      "walltime_sec": 0.003073453903198242
+    },
+    "22Ne": {
+      "Z": 10,
+      "N": 12,
+      "A": 22,
+      "n_strands": 66,
+      "include_inter": true,
+      "tr_M_q0": 1.2299499476626575e-10,
+      "log_abs_tr_M_q0": -22.8188774543413,
+      "walltime_sec": 0.0035028457641601562
+    }
+  }
+}
