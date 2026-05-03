@@ -214,6 +214,7 @@ export default chapter({
         "chern-simons-as-knot-invariant",
         "alpha-em-gluon-octet-form",
         "alpha-em-derivation-open-problems",
+        "em-coupling-bring-zero-mode",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
