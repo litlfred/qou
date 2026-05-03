@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T01:04:01.097258+00:00",
-  "commitSha": "41d55c61648f224e4596c7be974349b01f9acaac",
+  "computedAt": "2026-05-03T01:09:15.577241+00:00",
+  "commitSha": "a458ec46e49052ede1a85d5e26e8a30cc1bbd227",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1707,6 +1707,7 @@
         "self-conjugate-partition-corrections.witness.json",
         "sequential-nucleus-builder.witness.json",
         "shadow-price-c-321-q0.witness.json",
+        "shared-residual-test.witness.json",
         "shell-aware-halflife.witness.json",
         "shell-closure.witness.json",
         "shell-correction-lambda.witness.json",
