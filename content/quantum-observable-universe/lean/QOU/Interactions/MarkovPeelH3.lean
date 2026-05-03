@@ -45,7 +45,6 @@ requires a generic family `HeckeNF (n : Nat) := Fin (Nat.factorial n) → R`
 
 ## Open items (`#508` Phase 6 follow-up)
 
-  - Prove the H₃-specific Markov axioms (currently `sorry` + Ref).
   - Build `MarkovTraceH3 → MarkovTrace HeckeNF R_q` for n = 3 only,
     routing arbitrary-`n` calls through dummy values for n ≠ 3.
   - Cross-check via `decide` / `native_decide` against the Python
