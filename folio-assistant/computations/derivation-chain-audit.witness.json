@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T10:03:36.815536+00:00",
-  "commitSha": "f7218f46fdac48a4bad2ed9f4857c24e5098c300",
+  "computedAt": "2026-05-03T10:30:09.470229+00:00",
+  "commitSha": "183baf1b48db58c8a2739ed67149d8698591011a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1582,6 +1582,7 @@
         "markov-free-energy-qvalues.witness.json",
         "markov-invariant-mass-full-census.witness.json",
         "markov-invariant-unified-mass.witness.json",
+        "markov-peel-atomic-tr-m.witness.json",
         "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
         "markov-weight-verification.witness.json",
