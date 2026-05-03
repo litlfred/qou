@@ -71,6 +71,7 @@ def count_averaged_crossings(Z: int, N: int) -> dict:
         "two_power_predicted": 2 ** (n_avg_intra + n_avg_inter),
         "two_power_predicted_exponent": n_avg_intra + n_avg_inter,
         "one_plus_u2_power_predicted": 3 * A - 1,
+        "u_shift_predicted": 18 * Z + 21 * N + 1,
     }
 
 
@@ -149,6 +150,26 @@ def main() -> int:
     print()
     print("  z^(n_strands − 1) = u^(3A−1) / (1 + u²)^(3A−1)")
     print("  ∴ (1 + u²)^(3A−1) is the Markov-trace denominator factor")
+    print()
+    print("  u^shift = u^(18Z + 21N + 1)   — EMPIRICAL CONJECTURE (numerology)")
+    print("           NOT categorically proved.  Linear-in-(Z, N) ansatz")
+    print("           fitted to 6 atoms with zero residual.  Derivation from")
+    print("           Hecke seminormal-form denominators is open.")
+    print()
+
+    # Cross-check the shift formula against empirical witness.
+    print("u-shift cross-check:")
+    print(f"  {'atom':>5} {'18Z+21N+1':>11} {'empirical':>10} {'match?':>7}")
+    print("  " + "-" * 40)
+    for r in rows:
+        emp = r["empirical"]
+        if emp is None:
+            continue
+        Z, N = r["Z"], r["N"]
+        pred = 18 * Z + 21 * N + 1
+        actual = emp["u_shift"]
+        ok = "✓" if pred == actual else "✗"
+        print(f"  {r['symbol']:>5} {pred:>11} {actual:>10} {ok:>7}")
     print()
     print(f"All cross-checks against the symbolic-q witness pass: {all_match}")
 
