@@ -1,0 +1,58 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-03T21:31:26.980134+00:00",
+  "commitSha": "cfdd01c0de39dbf90c29a8a0cdf39ed3c6d2672b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "term6-residues-at-roots",
+  "scriptFile": "term6_residues_at_roots.py",
+  "scriptHash": "ab96cb5b68aa",
+  "scriptCommitSha": "unknown",
+  "description": "Term 6 of thm:six-term-mass-formula-complete via Markov-peel symbolic tr_M(q): Σ_{ℓ≥2} Res_{q=ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ), with ℓ truncated at 4.  This evaluation is enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q; the Hoefsmit per-block path could not produce the symbolic form needed for residue extraction at A ≥ 4.",
+  "contentBlock": "thm:six-term-mass-formula-complete",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "max_ell": 4
+  },
+  "data": {
+    "results": [
+      {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "max_ell": 4,
+        "tr_M_symbolic_ops": 75,
+        "elapsed_peel_sec": 0.096,
+        "elapsed_cancel_sec": 0.0,
+        "elapsed_residues_sec": 0.603,
+        "residues": [
+          {
+            "ell": 2,
+            "zeta_symbolic": "-1",
+            "residue_symbolic": "3 + I",
+            "residue_value": "(3+1j)",
+            "residue_abs": "3.162278e+00"
+          },
+          {
+            "ell": 3,
+            "zeta_symbolic": "exp(2*I*pi/3)",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          },
+          {
+            "ell": 4,
+            "zeta_symbolic": "I",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          }
+        ],
+        "term6_at_q0": "(1.42181537117065286944153194478 + 0.473938457056884289813843981592j)",
+        "atom": "proton"
+      }
+    ]
+  }
+}
