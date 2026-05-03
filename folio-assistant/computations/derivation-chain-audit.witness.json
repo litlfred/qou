@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T11:04:28.463010+00:00",
-  "commitSha": "5147e16e177377f7d809c9601559ab3455212eb7",
+  "computedAt": "2026-05-03T11:04:28.887531+00:00",
+  "commitSha": "8bbf0aede4ab9836d3e0538042d4be925ab13d69",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1562,6 +1562,8 @@
         "knot-ideals-gb-jet-locations.witness.json",
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",
+        "l1-markov-trace-for-qA.witness.json",
+        "l1-total-host-count-probe.witness.json",
         "lambda-descartes-q0.witness.json",
         "level-k-binding.witness.json",
         "level-k-branching.witness.json",

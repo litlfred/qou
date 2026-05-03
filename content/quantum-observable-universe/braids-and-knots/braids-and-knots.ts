@@ -380,6 +380,7 @@ export default chapter({
         "phi-q-piece",
         "phi-q-tower-algebraic-stratification",
         "kashaev-volume-conjecture",
+        "z-eq-n-rho-correction",
         "archimedean-remainder-exponential-decay",
         "wedderburn-as-noncomm-fourier",
         "degree-one-braid-trivial-volume",

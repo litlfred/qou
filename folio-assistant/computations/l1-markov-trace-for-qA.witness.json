@@ -1,0 +1,66 @@
+{
+  "computation": "l1-markov-trace-for-qA",
+  "computedAt": "2026-05-03T10:54:46.675959+00:00",
+  "description": "Searches for an H_A(q) element with ordinary Jones–Markov trace equal to [A]_q at q_0, for A=2..4. Reports negative result for natural candidates and confirms the U_q(sl_A) qdim identification as the primary categorical home.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "z_markov": 0.4993203340335982,
+    "qA_targets": {
+      "2": 2.010896869118482,
+      "3": 3.0437062182305117,
+      "4": 4.109682435637708,
+      "5": 5.220441324664572
+    }
+  },
+  "candidates": [
+    {
+      "algebra": "H_2(q)",
+      "element": "1_2",
+      "tr_M": 1.0,
+      "rationale": "identity, normalised tr_M(1) = 1"
+    },
+    {
+      "algebra": "H_2(q)",
+      "element": "σ_1",
+      "tr_M": 0.4993203340335982,
+      "rationale": "Markov property tr_M(σ_n · w) = z · tr_M(w)"
+    },
+    {
+      "algebra": "H_3(q)",
+      "element": "σ_1 σ_2 (long crossing in H_3)",
+      "tr_M": 0.2493207959794241,
+      "rationale": "chain Markov: tr_M(σ_1 σ_2) = z·tr_M(σ_1) = z²"
+    },
+    {
+      "algebra": "H_4(q)",
+      "element": "σ_1 σ_2 σ_3 (long crossing in H_4)",
+      "tr_M": 0.12449094312996863,
+      "rationale": "chain Markov: z³"
+    },
+    {
+      "algebra": "H_2(q)",
+      "element": "1_2 (unnormalized: [2]_q · tr_M)",
+      "tr_M": 2.010896869118482,
+      "rationale": "unnormalized convention: tr_M_un(1) = [n]_q"
+    },
+    {
+      "algebra": "U_q(sl_A)",
+      "element": "id_{V_A} (1-strand qtr in sl_A)",
+      "tr_M": 2.010896869118482,
+      "rationale": "qdim_q(V_A) = [A]_q (Reshetikhin–Turaev clean form)"
+    }
+  ],
+  "matches": [
+    {
+      "algebra": "H_2(q)",
+      "element": "1_2 (unnormalized: [2]_q · tr_M)",
+      "A": 2
+    },
+    {
+      "algebra": "U_q(sl_A)",
+      "element": "id_{V_A} (1-strand qtr in sl_A)",
+      "A": 2
+    }
+  ],
+  "verdict": "[A]_q is identified as qdim_q(V_A) in U_q(sl_A) via Schur–Weyl duality. A natural element-level Markov-trace identity in H_A(q) directly does NOT yield [A]_q under standard Jones–Markov normalisation; the U_q(sl_A) qdim is the clean categorical home."
+}
