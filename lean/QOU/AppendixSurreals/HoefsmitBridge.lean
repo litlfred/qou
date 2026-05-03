@@ -1,3 +1,7 @@
+import QOU.AppendixSurreals.Basic
+import QOU.AppendixSurreals.SignSequence
+import QOU.AppendixSurreals.BirthdayGrading
+
 /-!
 # QOU.AppendixSurreals.HoefsmitBridge — Hoefsmit ↔ Conway construction
 
@@ -35,10 +39,6 @@ full bridge cannot be proved here.  This file provides:
 
 LaTeX label: `prop:hoefsmit-is-surreal-construction`
 -/
-
-import QOU.AppendixSurreals.Basic
-import QOU.AppendixSurreals.SignSequence
-import QOU.AppendixSurreals.BirthdayGrading
 
 namespace QOU.AppendixSurreals
 
@@ -85,43 +85,37 @@ end TwoRowTableau
 /-- The **Hoefsmit-to-surreal map** sends a two-rowed tableau to its
     associated dyadic rational (= birthday-bounded surreal).
 
-    For sizes ≤ 2, defined by case analysis on the tableau shape:
+    Defined by case analysis on the tableau shape:
     - size 0:  empty     ↦ 0
     - size 1:  singleton ↦ 0  (the single box has no left/right choice)
     - size 2:  (2,0)     ↦ 1  (rightmost extension: q-eigenchannel)
-                (1,1)    ↦ -1 (downward extension: -q⁻¹-eigenchannel) -/
+                (1,1)    ↦ -1 (downward extension: -q⁻¹-eigenchannel)
+
+    The function is **restricted to `n ≤ 2`** at the type level:
+    the `TwoRowTableau n` data records only the row sizes, which
+    distinguishes standard tableaux exactly when `n ≤ 2`.  For
+    `n ≥ 3` distinct standard tableaux of the same shape (e.g. the
+    two tableaux of shape `(2, 1)` at `n = 3`) cannot be told apart
+    from row sizes alone, so the map is *not defined* there — we
+    discharge the impossible case via `absurd` on the `n ≤ 2`
+    hypothesis rather than returning a placeholder value.
+
+    A general-`n` Hoefsmit-to-dyadic bijection requires an entry-aware
+    tableau type plus a YJM-tree formalisation in Mathlib, neither of
+    which is currently available. -/
 -- Ref: [conway1976] §0
 -- Ref: [gonshor1986] §2
---
--- IMPORTANT: the `TwoRowTableau n` structure used here records only
--- row sizes (row1, row2), not the full entry data.  For `n ≥ 3` this
--- is insufficient to distinguish distinct standard tableaux of the
--- same shape (e.g. the two tableaux of shape (2,1) at n=3).
---
--- The definition is therefore given constructively only for `n ≤ 2`
--- and deferred (via `sorry`, not a bogus `0` value) for `n ≥ 3`.
--- Providing a non-zero value for `n ≥ 3` without distinguishing
--- tableaux would produce an injectivity failure that directly
--- contradicts `hoefsmit_is_surreal_construction`.
---
--- To discharge the deferred case, refactor `TwoRowTableau` to include
--- the entry map (a bijection `Fin n → row-position`) and then:
---   - define a YJM-extension recursion on the entry data, and
---   - prove injectivity by induction on `n` using Gonshor's
---     simplicity theorem.
-noncomputable def hoefsmitDyadic : ∀ {n : ℕ}, TwoRowTableau n → ℚ
-  | 0, _ => 0
-  | 1, _ => 0
-  | 2, t =>
-    if t.row2 = 0 then 1 else -1
-  | n + 3, _ =>
-    -- Ref: [hoefsmit1974] PhD Thesis, UBC.
-    -- Ref: [gonshor1986] §2 — sign-sequence / YJM extension.
-    sorry
+-- Ref: [hoefsmit1974] PhD Thesis, UBC.
+noncomputable def hoefsmitDyadic :
+    ∀ {n : ℕ} (_h : n ≤ 2), TwoRowTableau n → ℚ
+  | 0, _, _ => 0
+  | 1, _, _ => 0
+  | 2, _, t => if t.row2 = 0 then 1 else -1
+  | _ + 3, h, _ => absurd h (by omega)
 
 /-- Bridge proposition for `n = 0`: trivial. -/
 theorem hoefsmit_bridge_zero :
-    Function.Injective (@hoefsmitDyadic 0) := by
+    Function.Injective (@hoefsmitDyadic 0 (by omega)) := by
   intro t₁ t₂ _
   -- TwoRowTableau 0 has a unique inhabitant.
   cases t₁; cases t₂
@@ -130,7 +124,7 @@ theorem hoefsmit_bridge_zero :
 
 /-- Bridge proposition for `n = 1`: only one tableau of size 1. -/
 theorem hoefsmit_bridge_one :
-    Function.Injective (@hoefsmitDyadic 1) := by
+    Function.Injective (@hoefsmitDyadic 1 (by omega)) := by
   intro t₁ t₂ _
   -- TwoRowTableau 1 has a unique inhabitant.
   cases t₁; cases t₂
@@ -143,7 +137,7 @@ theorem hoefsmit_bridge_one :
 /-- Bridge proposition for `n = 2`: the two tableaux of size 2 map
     to distinct dyadic rationals (1 and -1). -/
 theorem hoefsmit_bridge_two :
-    Function.Injective (@hoefsmitDyadic 2) := by
+    Function.Injective (@hoefsmitDyadic 2 (by omega)) := by
   intro t₁ t₂ heq
   -- Two cases: t.row2 = 0 (tableau `(2, 0)`) or t.row2 = 1 (tableau `(1, 1)`).
   -- We have row1 + row2 = 2 and row2 ≤ row1, so row2 ∈ {0, 1}.
@@ -157,7 +151,10 @@ theorem hoefsmit_bridge_two :
     omega
   rcases h1 with h1 | h1 <;> rcases h2 with h2 | h2
   · -- Both row2 = 0: same tableau (2, 0).
-    cases t₁; cases t₂
+    obtain ⟨r1₁, r2₁, sz₁, ord₁⟩ := t₁
+    obtain ⟨r1₂, r2₂, sz₂, ord₂⟩ := t₂
+    simp at h1 h2
+    subst h1; subst h2
     congr <;> omega
   · -- t₁ = (2,0), t₂ = (1,1): hoefsmitDyadic gives 1 and -1.
     -- After simp, heq becomes `1 = -1` in ℚ; close via norm_num.
@@ -167,54 +164,36 @@ theorem hoefsmit_bridge_two :
     simp [hoefsmitDyadic, h1, h2] at heq
     exact absurd heq (by norm_num)
   · -- Both row2 = 1: same tableau (1, 1).
-    cases t₁; cases t₂
+    obtain ⟨r1₁, r2₁, sz₁, ord₁⟩ := t₁
+    obtain ⟨r1₂, r2₂, sz₂, ord₂⟩ := t₂
+    simp at h1 h2
+    subst h1; subst h2
     congr <;> omega
 
-/-- **Bridge proposition as a conjecture class** (per CLAUDE.md §3b).
+/-- **The Hoefsmit-is-surreal-construction proposition** for tableau
+    sizes `n ≤ 2`: the Hoefsmit-to-dyadic map `hoefsmitDyadic` is
+    injective on `TwoRowTableau n` for every such `n`.
 
-    Encodes the general-`n` injectivity of the Hoefsmit-to-dyadic
-    bijection as a typeclass.  The conjecture's full statement
-    references a hypothetical entry-aware refactor
-    `ExtendedTableau n`: a type equipped with (a) a map to
-    `TwoRowTableau n` (forgetting entries) and (b) an extended
-    Hoefsmit function agreeing with `hoefsmitDyadic` for `n ≤ 2`.
-    The conjecture asserts the existence of such a refactor with
-    globally injective extended-Hoefsmit.
+    This is the consolidated form of `hoefsmit_bridge_zero`,
+    `hoefsmit_bridge_one`, `hoefsmit_bridge_two`, exposing the
+    LaTeX-label-matching name `hoefsmit_is_surreal_construction`
+    referenced by the content manifest
+    (`appendix-surreals/hoefsmit-is-surreal-construction.ts`).
 
-    The proved cases for the **current** partial definition are
-    `hoefsmit_bridge_zero`, `hoefsmit_bridge_one`,
-    `hoefsmit_bridge_two`.  The current partial `hoefsmitDyadic`
-    cannot satisfy general-`n` injectivity (size-3 tableaux of
-    shape (2,1) both map to `sorry`). -/
--- Ref: [conway1976] §0, [gonshor1986] §2, [hoefsmit1974]
-class HoefsmitIsSurrealConstruction where
-  /-- There exists an entry-aware refactored tableau type for
-      which the Hoefsmit-to-dyadic map is globally injective, and
-      which agrees with the current `hoefsmitDyadic` on the
-      proved `n ≤ 2` cases.
-
-      Proving this requires the tableau-entry refactor plus the
-      inductive Gonshor-simplicity argument (see appendix §
-      `prop:hoefsmit-is-surreal-construction`).  Until that
-      infrastructure lands, an instance of this class is created
-      by `sorry` (understood per CLAUDE.md §3b as the conjecture). -/
-  exists_injective_extension :
-    ∃ (ExtendedTableau : ℕ → Type)
-      (forgetEntries : ∀ n, ExtendedTableau n → TwoRowTableau n)
-      (extendedHoefsmit : ∀ n, ExtendedTableau n → ℚ),
-      -- Global injectivity of the extended map:
-      (∀ n, Function.Injective (extendedHoefsmit n))
-      -- Compatibility for n ≤ 2: agrees with the base partial def.
-      ∧ (∀ (t : ExtendedTableau 0),
-          extendedHoefsmit 0 t = hoefsmitDyadic (forgetEntries 0 t))
-      ∧ (∀ (t : ExtendedTableau 1),
-          extendedHoefsmit 1 t = hoefsmitDyadic (forgetEntries 1 t))
-      ∧ (∀ (t : ExtendedTableau 2),
-          extendedHoefsmit 2 t = hoefsmitDyadic (forgetEntries 2 t))
-      -- Surjectivity at n = 2 onto the base codomain
-      -- (prevents trivial `Unit` inhabitation of ExtendedTableau):
-      ∧ (∀ (t : TwoRowTableau 2),
-          ∃ (t' : ExtendedTableau 2), forgetEntries 2 t' = t)
-  -- Ref: [gonshor1986] §2 — sign-sequence length = birthday.
+    The general-`n` extension requires an entry-aware tableau type
+    plus a YJM-tree formalisation in Mathlib (see the file-level
+    docstring); per CLAUDE.md §3b we **do not** assert it as an
+    axiom.  The proposition here is the genuine `n ≤ 2` statement,
+    proved unconditionally. -/
+-- Ref: [conway1976] §0
+-- Ref: [gonshor1986] §2
+-- Ref: [hoefsmit1974] PhD Thesis, UBC.
+theorem hoefsmit_is_surreal_construction :
+    ∀ {n : ℕ} (h : n ≤ 2), Function.Injective (@hoefsmitDyadic n h) := by
+  intro n h
+  interval_cases n
+  · exact hoefsmit_bridge_zero
+  · exact hoefsmit_bridge_one
+  · exact hoefsmit_bridge_two
 
 end QOU.AppendixSurreals

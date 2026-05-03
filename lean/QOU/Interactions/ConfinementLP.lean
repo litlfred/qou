@@ -1,3 +1,8 @@
+import QOU.Descartes.HeckeH3
+import QOU.Descartes.GroundRing
+import QOU.Interactions.BorromeanUnique
+import QOU.Interactions.GramIndefinite
+
 /-!
 # Confinement LP: the Gram matrix has a negative eigenvalue
 
@@ -12,11 +17,6 @@ for confinement. The topological (Borromean) constraint is independent.
 - [prop:confinement-lp]
 - [prop:frobenius-gram-matrix]
 -/
-
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.GroundRing
-import QOU.Interactions.BorromeanUnique
-import QOU.Interactions.GramIndefinite
 
 namespace QOU.Interactions
 

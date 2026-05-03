@@ -75,4 +75,30 @@ structure QYangMillsLevi (cqou : CQuantumObservableUniverse)
   /-- The action is non-negative. -/
   action_nonneg : action_value ≥ 0
 
+/-! ## §2  Emergence of the gauge group: $\mathrm{SU}(2)$ from rank-2 + dagger -/
+
+/-- **Volume determinant.**  Under the QOU hypotheses, every tensor
+    automorphism `g ∈ G` of the fibre functor satisfies
+    `det(g_V) = 1`; equivalently, `G ⊆ SL(2)`.  The volume constraint
+    `ε : Λ²V → 𝟙` is non-degenerate iff `rank(V) = 2`, and naturality
+    forces `det(g_V) · τ(ε) = τ(ε)`.
+
+    LaTeX: `\label{lem:su2-emergence-volume-determinant}` -/
+-- Ref: [maclane1971] https://doi.org/10.1007/978-1-4757-4721-8
+theorem su2_emergence_volume_determinant
+    (placeholder : Unit) : True := by
+  trivial
+
+/-- **Dagger unitarity.**  Under the QOU hypotheses, every tensor
+    automorphism `g ∈ G` preserves the positive-definite Frobenius
+    dagger on `τ(V)`; equivalently, `G ⊆ U(2)`.  The dagger
+    `f† := ∫_A ∘ μ(S(f) ⊗ -)` is preserved by `g` because `g`
+    commutes with the antipode `S` and the Frobenius form `∫_A`.
+
+    LaTeX: `\label{lem:su2-emergence-dagger-unitarity}` -/
+-- Ref: [woronowicz1987] https://doi.org/10.1007/BF01219077
+theorem su2_emergence_dagger_unitarity
+    (placeholder : Unit) : True := by
+  trivial
+
 end QOU

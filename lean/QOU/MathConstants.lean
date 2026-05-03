@@ -103,6 +103,9 @@ private lemma planck_identity (q : ℝ) (hq_gt : q > 1) :
   -- Clear all denominators and verify polynomial identity
   simp only []
   field_simp
+  ring_nf
+  have h2q1_ne' : -1 + q * 2 ≠ 0 := by linarith
+  field_simp [h2q1_ne']
   ring
 
 /-- In Planck units, G_Planck = G(q) · (ℏ_q / c_q)^2 = 1 for all q > 1.

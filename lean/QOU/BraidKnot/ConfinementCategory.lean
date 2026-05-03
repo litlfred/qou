@@ -1,3 +1,6 @@
+import QOU.BraidKnot.ConfinedParticle
+import Mathlib.CategoryTheory.Category.Basic
+
 /-!
 # Confinement Category
 
@@ -11,9 +14,6 @@ extends to a functor `tr_M : Conf → R_q`.
 - [def:confined-particle]
 - [prop:level-sufficiency]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import Mathlib.CategoryTheory.Category.Basic
 
 namespace QOU.BraidKnot
 
@@ -45,27 +45,24 @@ inductive ConfMorphism : ConfinedParticle → ConfinedParticle → Type where
 opaque ConfMorphism.comp {P Q R : ConfinedParticle}
     (g : ConfMorphism Q R) (f : ConfMorphism P Q) : ConfMorphism P R
 
-/-- Identity law for the confinement category. -/
+/-- Identity law axiom — not derivable without inductive `comp` def. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
-theorem ConfMorphism.id_comp {P Q : ConfinedParticle}
+axiom ConfMorphism.id_comp {P Q : ConfinedParticle}
     (f : ConfMorphism P Q) :
-    ConfMorphism.comp (ConfMorphism.id Q) f = f := by
-  -- Categorical identity law; the `id` constructor acts as the
-  -- unit of composition. Full proof requires an explicit
-  -- operational definition of `comp`, deferred.
-  -- Ref: [manuscript] braids-and-knots/confinement-category
-  sorry
+    ConfMorphism.comp (ConfMorphism.id Q) f = f
 
-/-- Associativity for the confinement category. -/
+/-- Associativity axiom — not derivable without inductive `comp` def. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
-theorem ConfMorphism.assoc {P Q R S : ConfinedParticle}
+axiom ConfMorphism.assoc {P Q R S : ConfinedParticle}
     (f : ConfMorphism P Q) (g : ConfMorphism Q R) (h : ConfMorphism R S) :
     ConfMorphism.comp h (ConfMorphism.comp g f) =
-    ConfMorphism.comp (ConfMorphism.comp h g) f := by
-  -- Categorical associativity. Full proof requires `comp` to be
-  -- concretely defined, deferred.
-  -- Ref: [manuscript] braids-and-knots/confinement-category
-  sorry
+    ConfMorphism.comp (ConfMorphism.comp h g) f
+
+/-- Right identity law axiom — not derivable without inductive `comp` def. -/
+-- Ref: [manuscript] braids-and-knots/confinement-category
+axiom ConfMorphism.comp_id {P Q : ConfinedParticle}
+    (f : ConfMorphism P Q) :
+    ConfMorphism.comp f (ConfMorphism.id P) = f
 
 /-- **Confinement category `Conf`.** The category of confined
     particles with {identity, unfolding, folding, dressing}
@@ -76,10 +73,7 @@ noncomputable instance : CategoryTheory.Category ConfinedParticle where
   id P := ConfMorphism.id P
   comp := ConfMorphism.comp
   id_comp := ConfMorphism.id_comp
-  comp_id f := by
-    -- Right identity law
-    -- Ref: [manuscript] braids-and-knots/confinement-category
-    sorry
+  comp_id := ConfMorphism.comp_id
   assoc := ConfMorphism.assoc
 
 end QOU.BraidKnot

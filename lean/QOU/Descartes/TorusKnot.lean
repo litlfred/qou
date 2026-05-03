@@ -53,6 +53,9 @@ def TorusKnotLabel.product (τ : TorusKnotLabel) : ℕ := τ.r * τ.s
 def TorusKnotLabel.embeddableOn (τ : TorusKnotLabel) (g : ℕ) : Prop :=
   τ.seifertRank ≤ g
 
+instance (τ : TorusKnotLabel) (g : ℕ) : Decidable (τ.embeddableOn g) :=
+  inferInstanceAs (Decidable (τ.seifertRank ≤ g))
+
 /-- The degree of a torus knot in the degree tower.
     `τ(r, p^k)` has degree `k` where `p` is the largest prime
     power dividing `s`.  For simplicity, we define degree as:
@@ -66,13 +69,7 @@ def TorusKnotLabel.degree (τ : TorusKnotLabel) : ℕ :=
 
 /-! ## §3  The 6 embeddable torus knots on Σ₄ -/
 
-/-- The set of embeddable torus knots on a genus-`g` surface. -/
-def embeddableKnots (g : ℕ) : List TorusKnotLabel :=
-  -- For g = 4, return the 6 knots with (r-1)(s-1)/2 ≤ 4
-  -- For other g, would need enumeration
-  if g = 4 then sigma4_knots else []
-
-/-- **Particle labels** — torus knot labels for fundamental fermions. -/
+/-! ### Particle labels — torus knot labels for fundamental fermions. -/
 
 /-- Electron / up quark: `e = τ(2,3)` (trefoil). -/
 def e_label : TorusKnotLabel := ⟨2, 3, by omega, by omega, by decide⟩
@@ -96,13 +93,20 @@ def strong_label : TorusKnotLabel := ⟨2, 9, by omega, by omega, by decide⟩
 def sigma4_knots : List TorusKnotLabel :=
   [e_label, gen2_label, c_label, t_label, weak_label, strong_label]
 
+/-- The set of embeddable torus knots on a genus-`g` surface. -/
+def embeddableKnots (g : ℕ) : List TorusKnotLabel :=
+  -- For g = 4, return the 6 knots with (r-1)(s-1)/2 ≤ 4
+  -- For other g, would need enumeration
+  if g = 4 then sigma4_knots else []
+
 /-- All 6 knots are embeddable on Σ₄. -/
 theorem sigma4_knots_embeddable :
     ∀ τ ∈ sigma4_knots, τ.embeddableOn 4 := by
   intro τ hτ
   simp [sigma4_knots] at hτ
   rcases hτ with rfl | rfl | rfl | rfl | rfl | rfl <;>
-    simp [TorusKnotLabel.embeddableOn, TorusKnotLabel.seifertRank]
+    simp [TorusKnotLabel.embeddableOn, TorusKnotLabel.seifertRank,
+          e_label, gen2_label, c_label, t_label, weak_label, strong_label]
 
 /-- No torus knot `τ(2,11)` is embeddable on Σ₄ (needs genus 5). -/
 theorem tau_2_11_not_embeddable :

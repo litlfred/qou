@@ -1,3 +1,8 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.ElectronShell
+import QOU.BraidKnot.DressedParticle
+import QOU.Interactions.ConfinementSDP
+
 /-!
 # Shell-Closure Stability
 
@@ -24,11 +29,6 @@ principal-submatrix relationship.
 - [prop:confinement-sdp]
 - [boyd-vandenberghe-2004]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.ElectronShell
-import QOU.BraidKnot.DressedParticle
-import QOU.Interactions.ConfinementSDP
 
 namespace QOU.BraidKnot
 
@@ -58,22 +58,10 @@ def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
     enlarged feasible set is ≥ the old max. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-theorem shell_closure_monotone
+axiom shell_closure_monotone
     (D_prev D : DressedParticle) (q : R_q)
     (h : isOneStepDressing D_prev D) :
-    frobeniusStability D_prev q ≤ frobeniusStability D q := by
-  -- SDP-relaxation monotonicity (Boyd-Vandenberghe §5.4.1):
-  --   (a) primal lift Φ ↦ ι_* Φ ⊕ 0 preserves feasibility and
-  --       objective;
-  --   (b) dual lift by adjoining new y_λ ≥ 0 preserves feasibility
-  --       and objective;
-  --   (c) cost compatibility T^(Z) = ι_* T^(Z−1) ⊕ T_new lets the
-  --       new y_λ dominate T_new in the matrix inequality.
-  -- The enlarged dual is a relaxation, so its max ≥ old max.
-  -- Full formalisation requires Mathlib SDP relaxation lemmas
-  -- which are not yet available.
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
+    frobeniusStability D_prev q ≤ frobeniusStability D q
 
 /-! ## §2  Claim (2) — Local maxima at noble-gas Z -/
 

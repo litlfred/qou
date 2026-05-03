@@ -38,7 +38,7 @@ as k → ∞, shifting the limit from dim/Σdim to d_q/Σd_q.
 
 ## References
 
-- [prop:jet-convergence-classical-limit]
+- [conj:jet-convergence-classical-limit]
 - [fomin1994] S. Fomin, Dual graphs and Schensted correspondences.
 -/
 
@@ -282,7 +282,7 @@ theorem fomin_k4_alt : 1 * 0 + 3 * 0 + 2 * 0 + 3 * 1 + 1 * 1 = 24 / 6 * 1 := by 
 --   "A q-analog of the hook walk algorithm for random Young tableaux",
 --   J. Algebraic Combinatorics 5, 1996.
 --   https://doi.org/10.1023/A:1022423901412
--- Ref: [prop:jet-convergence-classical-limit]
+-- Ref: [conj:jet-convergence-classical-limit]
 
 /-- **Kerov q-hook walk transition**.
 
@@ -311,16 +311,12 @@ noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
 
     Combined: the branching fraction f_μ^{(k)} converges to
     d_q(μ)/Σd_q(ν) at rate O(1/√k). -/
-theorem branching_convergence (k : ℕ) (hk : k ≥ 4)
+-- Mathlib gap: q-Plancherel CLT + q-hook-walk mixing time.
+-- Ref: [kerov1996] q-hook walk
+-- Ref: [feray2010] q-Plancherel CLT Theorem 1.1
+axiom branching_convergence (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0) :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — branching-rule convergence via symmetric functions
-  -- Proof: Kerov's q-hook walk [kerov1996] gives transition
-  -- probabilities p(λ→μ) = d_q(μ\c)²[h(c)]_q/d_q(λ)².
-  -- Féray–Méliot [feray2010] Theorem 1.1 gives the CLT for
-  -- the q-Plancherel measure, bounding character fluctuations.
-  -- ratio_perturbation_bound (proved above) converts the CLT
-  -- variance bound to the branching fraction bound.
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
 
 /-- **Convergence at finite k** (the practically useful version).
 

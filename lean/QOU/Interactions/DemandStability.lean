@@ -1,3 +1,6 @@
+import QOU.Interactions.DerivedAtom
+import QOU.Descartes.GroundRing
+
 /-!
 # Demand stability: the demand profile determines nuclear stability
 
@@ -10,9 +13,6 @@ demand magnitude at fixed mass number A.
 - [prop:demand-stability]
 - [conj:periodic-table-demand]
 -/
-
-import QOU.Interactions.DerivedAtom
-import QOU.Descartes.GroundRing
 
 namespace QOU.Interactions
 
@@ -110,9 +110,37 @@ theorem typed_crossing_square_pp (ρ : HeckeRep 3 2) (i : Fin 2) :
 theorem mixed_crossing_square_identity (ρ : HeckeRep 3 2) (i : Fin 2) :
     (2 • ρ.gen i - HA_t • 1) * (2 • ρ.gen i - HA_t • 1) =
     (4 + HA_t * HA_t) • (1 : TMatrix) := by
-  -- (2σ - HA)² = 4σ² - 4HA·σ + HA²·I = 4(HA·σ + I) - 4HA·σ + HA²·I = (4 + HA²)·I
-  have hk := ρ.hecke_rel i
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry  -- Needs lake build: noncommutative matrix ring rewriting
+  set σ := ρ.gen i with hσ
+  have hecke : σ * σ = HA_t • σ + 1 := ρ.hecke_rel i
+  -- Rewrite `(2 : ℕ) • σ` as `σ + σ` to expose only ring + R_t-smul ops.
+  rw [show (2 : ℕ) • σ = σ + σ from two_smul _ σ]
+  -- Goal: (σ + σ - HA•1) * (σ + σ - HA•1) = (4 + HA*HA) • 1
+  -- Expand the product:
+  --   (σ+σ)(σ+σ) - (σ+σ)(HA•1) - (HA•1)(σ+σ) + (HA•1)(HA•1)
+  -- = (σσ + σσ + σσ + σσ) - HA•(σ+σ) - HA•(σ+σ) + (HA·HA)•1
+  -- = 4·(σσ) - 2·HA•(σ+σ) + (HA·HA)•1
+  -- = 4·(HA•σ + 1) - 4·HA•σ + (HA·HA)•1   [Hecke; 2·HA•(σ+σ) = 4·HA•σ via 2σ=σ+σ ↪ 2HA•σ via add_smul]
+  -- = 4·1 + (HA·HA)•1
+  -- = (4 + HA·HA)•1.
+  --
+  -- Discharge via mul_add / add_mul / mul_smul_comm / smul_mul_assoc /
+  -- smul_mul_smul_comm, then `hecke` substitution, then abel.
+  rw [add_mul, mul_add, mul_add, sub_mul, mul_sub, mul_sub, mul_sub, mul_sub,
+      mul_smul_comm, mul_smul_comm, smul_mul_assoc, smul_mul_assoc,
+      smul_mul_smul_comm, Matrix.one_mul, Matrix.mul_one, Matrix.one_mul,
+      Matrix.mul_one, hecke]
+  -- After rewrites, LHS expands as a sum of σσ, HA•σ, and (HA·HA)•1
+  -- terms with arithmetic on ℤ-coefficients of TMatrix as additive group.
+  -- RHS: (4 + HA*HA) • 1. Convert (4 : R_t) • 1 to integer-multiple form
+  -- via `add_smul` (so that `4 • 1 = 1 + 1 + 1 + 1`).
+  rw [show ((4 : R_t) + HA_t * HA_t) • (1 : TMatrix)
+        = (4 : R_t) • (1 : TMatrix) + (HA_t * HA_t) • (1 : TMatrix)
+        from add_smul _ _ _]
+  rw [show ((4 : R_t) • (1 : TMatrix)) = (1 : TMatrix) + 1 + 1 + 1 from by
+    rw [show (4 : R_t) = 1 + 1 + 1 + 1 from by norm_num,
+        add_smul, add_smul, add_smul, one_smul]]
+  -- Now both sides are sums of identity-matrix terms + HA•σ + (HA·HA)•1
+  -- modulo addition. Close by abel.
+  abel
 
 end QOU.Interactions

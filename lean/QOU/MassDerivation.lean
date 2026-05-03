@@ -126,7 +126,7 @@ lemma quantum_planck_approx :
 
 /-- Algebraic identity: from the mass equation we can express `q` in terms
     of `h_q = quantum_planck q = 1 - 1/q`, yielding `q = 1 / (1 - h_q)`. -/
-lemma quantum_planck_inv (q : ℝ) (hq : q > 1) :
+lemma quantum_planck_inv (q : ℝ) (_hq : q > 1) :
     quantum_planck q = 1 - 1 / q := by
   unfold quantum_planck
   ring
@@ -239,7 +239,7 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   constructor <;> linarith
 
 /-- The quantum Planck constant squared determines the mass ratio. -/
-lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
+lemma mass_ratio_from_volume (q : ℝ) (_hq : q > 1) :
     let h_q := quantum_planck q
     h_q ≠ 0 →
     vol_figure_eight / h_q ^ 2 = experimental_mu_e_ratio →

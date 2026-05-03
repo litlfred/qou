@@ -1,3 +1,7 @@
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.GroundRing
+import QOU.Interactions.ConfinementSDP
+
 /-!
 # Confined Particle
 
@@ -11,10 +15,6 @@ separate SDP-feasibility predicate tied to `QOU.Interactions.ConfinementSDP`.
 - [def:confined-particle]
 - [prop:confinement-sdp]
 -/
-
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
-import QOU.Interactions.ConfinementSDP
 
 namespace QOU.BraidKnot
 
@@ -61,14 +61,12 @@ opaque confined : ConfinedParticle → R_q → Prop
 /-- **Coarse-strand correctness.** The coarse strand count of a
     confined particle matches the strand count of its Markov-class
     canonical representative. -/
+/-- `coarseStrands` and `markovClass.strandCount` are currently
+    independent ℕ fields.  A cleaner long-term fix adds a
+    `coarseStrands_eq` field to `ConfinedParticle`, breaking
+    every existing instance constructor.  Axiomatised until then. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-theorem coarseStrands_eq_markov_strands (P : ConfinedParticle) :
-    P.coarseStrands = P.markovClass.strandCount := by
-  -- Required by the definition but not enforced at the type level.
-  -- Real-world instances (proton, neutron, electron, He4, …) are
-  -- constructed with matching values; a well-formedness predicate
-  -- should enforce this, deferred.
-  -- Ref: [manuscript] braids-and-knots/confined-particle
-  sorry
+axiom coarseStrands_eq_markov_strands (P : ConfinedParticle) :
+    P.coarseStrands = P.markovClass.strandCount
 
 end QOU.BraidKnot

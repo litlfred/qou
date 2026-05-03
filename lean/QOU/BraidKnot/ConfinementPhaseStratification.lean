@@ -1,3 +1,7 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.DressedParticle
+import Mathlib.Topology.Basic
+
 /-!
 # Confinement Phase Stratification
 
@@ -19,10 +23,6 @@ deconfinement or regime switches.
 - [prop:parity-regime-selection]
 - [boyd-vandenberghe-2004]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.DressedParticle
-import Mathlib.Topology.Basic
 
 namespace QOU.BraidKnot
 
@@ -60,45 +60,30 @@ opaque sigmaFReal : ConfinedParticle → ℝ → ℝ
     of the SDP constraint matrices in `q`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-theorem phase_locus_open (P : ConfinedParticle) :
-    IsOpen (confinementLocus P) := by
-  -- Full proof: Slater-strictness is an open condition on the SDP
-  -- data; the SDP constraint matrices are polynomial in q (via
-  -- q-integer factors in R_q); neighbourhood stability then gives
-  -- openness in ℝ. Requires a formal link between SDP feasibility
-  -- and topology on ℝ, deferred.
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
+axiom phase_locus_open (P : ConfinedParticle) :
+    IsOpen (confinementLocus P)
 
 /-! ## §2  Local constancy of μ on components -/
 
 /-- **Claim (3) — local constancy of μ.** On each connected
     component of `Ω(P)`, binding multiplicity is constant. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
-theorem phase_mu_constant_on_components
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+axiom phase_mu_constant_on_components
     (P : ConfinedParticle) (C : Set ℝ)
     (hC : IsConnected C) (hsub : C ⊆ confinementLocus P)
     (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
-    muReal P q₁ = muReal P q₂ := by
-  -- `μ` is integer-valued and (by continuity of the SDP optimiser
-  -- under Slater strictness) locally constant on open strata of
-  -- Ω(P); constancy on a connected subset follows.
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
+    muReal P q₁ = muReal P q₂
 
 /-! ## §3  Continuity of σ_F -/
 
 /-- **Claim (3) — continuity of σ_F.** `σ_F` is continuous on each
     connected component of `Ω(P)`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
-theorem phase_sigmaF_continuous_on_locus
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+axiom phase_sigmaF_continuous_on_locus
     (P : ConfinedParticle) :
-    ContinuousOn (sigmaFReal P) (confinementLocus P) := by
-  -- Continuity of the SDP optimal value under Slater regularity;
-  -- a standard SDP-theory result. Full Lean formalisation requires
-  -- Mathlib SDP duality, deferred.
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
+    ContinuousOn (sigmaFReal P) (confinementLocus P)
 
 /-! ## §4  Headline theorem -/
 

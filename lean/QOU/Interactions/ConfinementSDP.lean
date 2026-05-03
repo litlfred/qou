@@ -1,3 +1,11 @@
+import QOU.Descartes.HeckeH3
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.GroundRing
+import QOU.Interactions.ConfinementLP
+import QOU.Interactions.BorromeanUnique
+import QOU.Interactions.GramIndefinite
+import Mathlib.LinearAlgebra.Matrix.PosDef
+
 /-!
 # Confinement SDP: matrix Frobenius positivity
 
@@ -18,14 +26,6 @@ is structural, not exceptional.
 - [prop:frobenius-gram-matrix]
 - [boyd-vandenberghe-2004]
 -/
-
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
-import QOU.Interactions.ConfinementLP
-import QOU.Interactions.BorromeanUnique
-import QOU.Interactions.GramIndefinite
-import Mathlib.LinearAlgebra.Matrix.PosDef
 
 namespace QOU.Interactions
 
@@ -92,13 +92,8 @@ opaque y0Star (n : ℕ) : R_q
 -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-theorem ConfinementSDP (n : ℕ) (h : slaterStrict n) :
-    primalOpt n = nTarget * y0Star n := by
-  -- Strong duality under Slater regularity (Boyd-Vandenberghe
-  -- §5.4.1, §5.5.3). Deferred to Mathlib SDP duality lemmas not
-  -- yet available.
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
+axiom ConfinementSDP (n : ℕ) (h : slaterStrict n) :
+    primalOpt n = nTarget * y0Star n
 
 /-! ## §3  Binding multiplicity and the scalar-LP projection -/
 

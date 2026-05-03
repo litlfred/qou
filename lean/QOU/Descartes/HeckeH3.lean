@@ -180,7 +180,7 @@ theorem halfBorromean_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
     (trivRep n).halfBorromeanMat i j = 1 := by
   simp [HeckeRep.halfBorromeanMat, HeckeRep.genInv, trivRep]
   -- After unfolding: (q•1 - HA•1) * (q•1) * (q•1) * (q•1 - HA•1) = 1
-  simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm]
+  simp [smul_mul_assoc, mul_smul_comm]
   rw [show (q_from_t - HA_t) * q_from_t * q_from_t * (q_from_t - HA_t) = (1 : R_t) from by
     unfold HA_t q_from_t q_inv_from_t t t_inv
     ring]
@@ -193,7 +193,7 @@ theorem halfBorromean_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
 theorem halfBorromeanConj_trivial_eval (n : ℕ) (i j : Fin (n - 1)) :
     (trivRep n).halfBorromeanConjMat i j = 1 := by
   simp [HeckeRep.halfBorromeanConjMat, HeckeRep.genInv, trivRep]
-  simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm]
+  simp [smul_mul_assoc, mul_smul_comm]
   rw [show (q_from_t - HA_t) * (q_from_t - HA_t) * q_from_t * q_from_t = (1 : R_t) from by
     unfold HA_t q_from_t q_inv_from_t t t_inv
     ring]

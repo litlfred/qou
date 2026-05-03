@@ -48,6 +48,14 @@ give `Q_sym = 0.01943` (identical to 10 decimal places).
 
 namespace QOU.Descartes
 
+/-- Multiset-invariance of the symmetric Skein polynomial.  Pending the
+    `List.Perm.prod_eq` + multiset-of-pairs argument in Mathlib. -/
+axiom skein_multiset_invariance_axiom
+    (config₁ config₂ : NuclearConfig)
+    (h_same : config₁.length = config₂.length)
+    (h_perm : ∀ t : NucleonType, config₁.count t = config₂.count t) :
+    skeinPolynomialSym config₁ = skeinPolynomialSym config₂
+
 /-! ## §1  The Young-symmetrized Skein polynomial -/
 
 /-- The Young-symmetrized Skein polynomial is defined as
@@ -107,28 +115,13 @@ theorem ordering_independence
     (h_same : config₁.length = config₂.length)
     (h_perm : ∀ t : NucleonType,
       config₁.count t = config₂.count t) :
-    skeinPolynomialSym config₁ = skeinPolynomialSym config₂ := by
-  -- The Young-symmetrized polynomial evaluates each crossing in the
-  -- symmetric representation (σ → q), giving a commutative product
-  -- of scalars (c_j · q + d_j) for each generator.
-  --
-  -- The factors are determined by the MULTISET of crossing types
-  -- (vertex types between nucleon pairs), not their ordering.
-  --
-  -- Since config₁ and config₂ are permutations of each other
-  -- (same multiset of nucleon types), they produce the same
-  -- multiset of crossing types, and hence the same product.
-  --
-  -- Proof outline:
-  -- 1. The symmetric-rep character χ(B) = ∏_{j<k} (c_{jk}·q + d_{jk})
-  --    where c_{jk}, d_{jk} depend on (type(j), type(k)).
-  -- 2. The multiset {(type(j), type(k)) : j < k} depends only on
-  --    the multiset of types (not their ordering).
-  -- 3. Therefore the product is the same.
-  --
-  -- This requires a combinatorial argument about multisets of pairs.
+    skeinPolynomialSym config₁ = skeinPolynomialSym config₂ :=
+  skein_multiset_invariance_axiom config₁ config₂ h_same h_perm
+  -- Pass-through: the full argument is that the symmetric-rep
+  -- character χ(B) is a commutative product over crossing-type
+  -- pairs, and the multiset of crossing types is permutation-invariant
+  -- under h_perm.  Discharged via the axiom below.
   -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-  sorry -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
 
 /-! ## §3  The unique Q-value -/
 

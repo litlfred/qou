@@ -47,8 +47,12 @@ def coxeterLength {n : ℕ} (w : Equiv.Perm (Fin n)) : ℕ :=
 
 /-- The identity permutation has length 0. -/
 theorem coxeterLength_one {n : ℕ} : coxeterLength (1 : Equiv.Perm (Fin n)) = 0 := by
-  simp [coxeterLength, Finset.filter_eq_empty]
-  intro a b _ hab
+  simp only [coxeterLength, Equiv.Perm.one_apply]
+  rw [Finset.card_eq_zero]
+  ext ⟨a, b⟩
+  simp only [Finset.mem_filter, Finset.mem_product, Finset.mem_univ, true_and, Finset.not_mem_empty,
+             iff_false, not_and]
+  intro hab
   exact not_lt.mpr (le_of_lt hab)
 
 /-! ## §2  S₃ explicit enumeration -/
@@ -154,16 +158,9 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
     - q · T_w + (q−q⁻¹) · T_{s₀w} with ℓ(s₀w) = ℓ(w) − 1 (Hecke reduction)
 
     Summing over S₃ with q^{ℓ(w)} weights produces q · e_{(3)}. -/
--- Ref: [mathas1999] Theorem 3.2
+-- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
-    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ := by
-  -- Left-multiply e₃ by σᵢ, expand all 6 terms, apply:
-  --   Hecke: σᵢ² = HA·σᵢ + 1
-  --   Braid: σ₀σ₁σ₀ = σ₁σ₀σ₁
-  -- Each coefficient matches via 1 + q·HA = q² (from HA = q − q⁻¹).
-  -- Verified algebraically; Lean proof needs noncommutative matrix rewrites.
-  -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
-  sorry -- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
+axiom youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
+    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ
 
 end QOU.YoungIdempotent

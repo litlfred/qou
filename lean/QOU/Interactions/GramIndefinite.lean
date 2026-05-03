@@ -1,3 +1,7 @@
+import QOU.Descartes.HeckeH3
+import QOU.Descartes.GroundRing
+import QOU.Interactions.BorromeanUnique
+
 /-!
 # The Gram matrix of H₃(q) is indefinite
 
@@ -120,10 +124,6 @@ All variables are symbolic: q appears only through z and HA.
 - [jones1987] https://doi.org/10.2307/1971403
 - [prop:confinement-topological]
 -/
-
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.GroundRing
-import QOU.Interactions.BorromeanUnique
 
 namespace QOU.Interactions
 

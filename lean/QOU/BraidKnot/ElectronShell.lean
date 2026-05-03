@@ -1,3 +1,5 @@
+import QOU.BraidKnot.ConfinedParticle
+
 /-!
 # Electron Shell
 
@@ -13,8 +15,6 @@ multi-operator regime.
 - [def:electron-shell]
 - [prop:confinement-sdp]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
 
 namespace QOU.BraidKnot
 
@@ -57,15 +57,10 @@ def nobleGasMagic : Finset ℕ := ({2, 10, 18, 36, 54, 86} : Finset ℕ)
     computational content of `electron-shell-ilp` witnesses
     (electrons alternate between `σ_0⁻¹` and `σ_1⁻¹`). -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
-theorem noble_gas_multi_operator
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+axiom noble_gas_multi_operator
     (S : ElectronShell) (q : R_q)
     (h : S.nElectrons ∈ nobleGasMagic) :
-    bindingMultiplicity S q ≥ 2 := by
-  -- Follows from the confinement-SDP active-support analysis at
-  -- full-shell closure. Full proof requires an explicit model of
-  -- the SDP active support; deferred.
-  -- Ref: [manuscript] particle-interactions/confinement-sdp
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  sorry
+    bindingMultiplicity S q ≥ 2
 
 end QOU.BraidKnot

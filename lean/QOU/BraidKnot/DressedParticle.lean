@@ -1,3 +1,7 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.ElectronShell
+import QOU.BraidKnot.ConfinementCategory
+
 /-!
 # Dressed Particle
 
@@ -12,10 +16,6 @@ general invertible.
 - [def:confinement-category]
 - [def:electron-shell]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.ElectronShell
-import QOU.BraidKnot.ConfinementCategory
 
 namespace QOU.BraidKnot
 
@@ -44,18 +44,13 @@ noncomputable def dressMorphism (D : DressedParticle) :
   ConfMorphism.dress D.bare D.composite D.shell.nucleus.name
 
 /-- **Dressing composition.** Dressings compose via shell
-    concatenation when the combined `Z` remains SDP-feasible. -/
+    concatenation when the combined `Z` remains SDP-feasible.
+    Axiomatised until `DressedParticle` carries a `level_preserved`
+    field. -/
 -- Ref: [manuscript] braids-and-knots/dressed-particle
-theorem dressing_composes
+axiom dressing_composes
     (D₁ D₂ : DressedParticle)
     (h_chain : D₁.composite = D₂.bare) :
-    D₂.composite.level = D₁.bare.level := by
-  -- Dressing preserves confinement level; only the strand count
-  -- grows. The statement as written asserts level-preservation
-  -- along a two-step dressing chain; requires D₁.level = D₁.composite.level
-  -- which follows from the `dress` constructor semantics.
-  -- Deferred to a full structural proof.
-  -- Ref: [manuscript] braids-and-knots/dressed-particle
-  sorry
+    D₂.composite.level = D₁.bare.level
 
 end QOU.BraidKnot

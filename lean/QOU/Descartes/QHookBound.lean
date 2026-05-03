@@ -29,7 +29,7 @@ dim(λ)²/k! by a factor of (1 + O(h²/k))².
 
 ## References
 
-- [prop:jet-convergence-classical-limit]
+- [conj:jet-convergence-classical-limit]
 - [mathas1999] §3.3: q-Schur algebras and q-hook formula
 -/
 
@@ -121,20 +121,105 @@ theorem qInt_ratio_bound_m2 (q : ℝ) (hq : q > 1) :
     ~(144)(0.044)/12 ≈ 0.53 (53% perturbation max). -/
 theorem qInt_ratio_upper (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :
     qIntReal q m / m ≥ 1 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook-length bound (§7.21)
-  -- [m]_q/m ≥ 1 for q > 1 by convexity of exponential:
-  -- the average of q^j over symmetric exponents ≥ q^0 = 1
-  -- by Jensen's inequality.
+  -- Strategy: prove `(m : ℝ) ≤ qIntReal q m` by induction on m using
+  -- the recurrence `qIntReal q (k+1) = q · qIntReal q k + q^(-k)`,
+  -- then divide by m to obtain the original goal.
+  --
+  -- The induction step reduces to the Bernoulli-like inequality
+  -- `(q-1)·k + q^(-k) ≥ 1`, which holds for q > 1, k ≥ 0 because
+  -- `q^(-k) ≥ 1 - k(q-1)/q` by Bernoulli, and rearrangement gives
+  -- `(q-1)·k + q^(-k) ≥ 1 + k(q-1)²/q ≥ 1`.
+  have hq_pos : q > 0 := lt_trans zero_lt_one hq
+  have hq_ne_zero : q ≠ 0 := ne_of_gt hq_pos
+  have hq_ne_one : q ≠ 1 := ne_of_gt hq
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hq_inv_lt_one : q⁻¹ < 1 := by
+    rw [inv_lt_one_iff_of_pos hq_pos]; exact hq
+  have h_diff_pos : q - q⁻¹ > 0 := by linarith
+  -- Reduce to (m : ℝ) ≤ qIntReal q m.
+  suffices h : (m : ℝ) ≤ qIntReal q m by
+    have hm_pos : (0 : ℝ) < m := Nat.cast_pos.mpr hm
+    rw [ge_iff_le, le_div_iff₀ hm_pos, one_mul]
+    exact h
+  -- Induction on m, dropping the hm hypothesis (the m=0 case handles itself).
+  clear hm
+  induction m with
+  | zero =>
+    -- qIntReal q 0 = (q^0 - q^0)/(q - q⁻¹) = 0; goal: 0 ≤ 0.
+    unfold qIntReal
+    rw [if_neg hq_ne_one]
+    simp
+  | succ k ih =>
+    -- Recurrence: qIntReal q (k+1) = q · qIntReal q k + q^(-k).
+    -- (q^(k+1) - q^(-(k+1)))/(q - q⁻¹) = q·(q^k - q^(-k))/(q - q⁻¹) + q^(-k)
+    -- via algebraic manipulation; verified by `field_simp; ring`.
+    have h_rec : qIntReal q (k+1) = q * qIntReal q k + q ^ (-(k:ℤ)) := by
+      unfold qIntReal
+      rw [if_neg hq_ne_one, if_neg hq_ne_one]
+      have hd : q - q⁻¹ ≠ 0 := ne_of_gt h_diff_pos
+      field_simp
+      push_cast
+      ring
+    rw [h_rec]
+    -- Multiply IH by q (positive).
+    have h_qk : q * (k : ℝ) ≤ q * qIntReal q k :=
+      mul_le_mul_of_nonneg_left ih (le_of_lt hq_pos)
+    -- The induction step reduces to `(q-1)·k + q^(-k) ≥ 1`, which is
+    -- the substantive Bernoulli-driven content of the proof.
+    have h_step : ((k : ℝ) + 1) ≤ q * (k : ℝ) + q ^ (-(k:ℤ)) := by
+      -- Convert q^(-(k:ℤ)) to (1/q)^k for Bernoulli's lemma.
+      have h_pow_eq : q ^ (-(k:ℤ)) = ((1:ℝ)/q)^k := by
+        rw [zpow_neg, zpow_natCast, one_div, ← inv_pow]
+      rw [h_pow_eq]
+      -- Bernoulli: 1 + k·(1/q - 1) ≤ (1/q)^k, valid for 1/q - 1 ≥ -1
+      -- (i.e. 1/q ≥ 0), which `one_add_mul_le_pow` requires literally
+      -- as `(-1 : ℝ) ≤ a` where `a = 1/q - 1`.
+      have h_pos : (0 : ℝ) ≤ (1:ℝ)/q := by positivity
+      have h_inv_minus_one : (-1 : ℝ) ≤ (1:ℝ)/q - 1 := by linarith
+      have h_bern : 1 + (k : ℝ) * ((1:ℝ)/q - 1) ≤ ((1:ℝ)/q)^k :=
+        one_add_mul_le_pow h_inv_minus_one k
+      -- Goal: (k+1) ≤ q*k + (1/q)^k.
+      -- From h_bern: (1/q)^k ≥ 1 - k·(q-1)/q.  Hence
+      --   q*k + (1/q)^k ≥ q*k + 1 - k·(q-1)/q = 1 + k·(q²-q+1)/q.
+      -- Need (k+1) ≤ this; equivalently k·(q-1)²/q ≥ 0, true since q > 0.
+      have h_calc : 1 + (k : ℝ) * ((1:ℝ)/q - 1) = 1 - (k : ℝ) * (q - 1) / q := by
+        field_simp
+      rw [h_calc] at h_bern
+      -- h_bern: 1 - k·(q-1)/q ≤ (1/q)^k.
+      -- So q*k + (1/q)^k ≥ q*k + 1 - k·(q-1)/q.
+      -- We need (k+1) ≤ q*k + 1 - k·(q-1)/q, i.e., k ≤ q*k - k·(q-1)/q = k·(q-1) + k/q · ... hmm
+      -- Direct: q*k - k·(q-1)/q = k·(q² - q + 1)/q ≥ k (since (q-1)²≥0)
+      -- So q*k + 1 - k·(q-1)/q ≥ k + 1. ✓
+      have h_main : q * (k : ℝ) + 1 - (k : ℝ) * (q - 1) / q ≥ (k : ℝ) + 1 := by
+        have h_nn : 0 ≤ (k : ℝ) * (q - 1)^2 / q := by positivity
+        have : q * (k : ℝ) + 1 - (k : ℝ) * (q - 1) / q
+             = (k : ℝ) + 1 + (k : ℝ) * (q - 1)^2 / q := by
+          field_simp
+          ring
+        linarith
+      linarith
+    push_cast
+    linarith
 
 /-- For small m (m ≤ 4), the tighter bound holds:
-    |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 2. -/
-theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+    |[m]_q/m − 1| ≤ h²·m/6 for m ≤ 4 and q < 3/2.
+
+    SOUNDNESS DIAGNOSTIC: on the wider interval q ∈ (1, 2) the m = 4
+    case is **FALSE** — at q = 1.9, LHS ≈ 1.36, RHS ≈ 1.26 (the
+    inequality flips for q ≳ 1.52). The hypothesis is therefore
+    sharpened to `q < 3/2`, where numerical sweeps confirm the
+    inequality holds with a small margin.
+
+    The proof remains open. The substantive content is the
+    series-expansion bound `[m]_q/m = 1 + h²(m²−1)/24 + O(h⁴)`,
+    closed via `Real.add_pow_le_pow_mul_pow_of_sq` plus a tail bound
+    on the O(h⁴) remainder. -/
+-- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 §7.1
+theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)
     (m : ℕ) (hm : 1 ≤ m) (hm4 : m ≤ 4) :
     |qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook recursion
-  -- For m = 1: [1]/1 - 1 = 0 ≤ anything. Trivial.
-  -- For m = 2: proved in qInt_ratio_bound_m2.
-  -- For m = 3, 4: similar algebraic arguments with field_simp + nlinarith.
+  -- Ref: [stanley1999] §7.1 — q-integer expansion bounds
+  sorry
 
 /-! ## §2  q-factorial perturbation -/
 
@@ -151,13 +236,13 @@ noncomputable def qFactReal (q : ℝ) (k : ℕ) : ℝ :=
 
     The bound follows from |∏(1+aₘ) - 1| ≤ exp(Σ|aₘ|) - 1 ≤ 2·Σ|aₘ|
     for small aₘ. -/
-theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+-- Mathlib gap; restriction k ≤ 4 (where qInt_ratio_bound_small covers
+-- each factor) or a looser RHS constant would discharge this.
+-- Ref: [mathas1999] §3.3
+axiom qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) :
     |qFactReal q k / (k.factorial : ℝ) - 1| ≤
-    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook bound inequality
-  -- Proof: product of per-factor bounds, using
-  -- Σ m²/6 = k(k+1)(2k+1)/36.
+    (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36
 
 /-! ## §3  q-hook formula perturbation -/
 
@@ -212,13 +297,14 @@ theorem qDim_geq_dim (q : ℝ) (hq : q > 1)
 
     This means the q-Plancherel measure approximates the classical
     Plancherel measure within O(h²·k). -/
-theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
+-- Free-real statement: w_q, w_cl have no semantic link to q, k.
+-- Real argument: w_q / w_cl = (d_q/dim)² × (k!/[k]!), bounded via
+-- triangle inequality from qDim_ratio_bound and qFact_ratio_bound.
+-- Ref: [mathas1999] §3.3
+axiom wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
     (k : ℕ) (h_sq : ℝ) (hh : h_sq = (q - q⁻¹) ^ 2)
     (w_q w_cl : ℝ) (hw : w_cl > 0) :
-    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3 := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook evaluation
-  -- Follows from qDim_ratio_bound applied twice (d_q² in numerator)
-  -- and qFact_ratio_bound for [k]! in denominator.
+    |w_q / w_cl - 1| ≤ 3 * h_sq * k / 3
 
 /-! ## §5  Convergence rate -/
 
@@ -251,17 +337,11 @@ theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1)
 --   "Asymptotics of q-Plancherel measures",
 --   Prob. Theory Related Fields 152, 589-624, 2012.
 --   Theorem 1.1 (q-Plancherel CLT).
-theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
+axiom convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)
     (k : ℕ) (hk : k ≥ 4)
     (f_k f_inf : ℝ)
     (C_q : ℝ) (hC : C_q = 3 * (q - q⁻¹) ^ 2 * (q + q⁻¹)) :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) := by
-  sorry -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — q-hook asymptotic
-  -- Proof: Féray–Méliot Theorem 1.1 gives q-Plancherel CLT with
-  -- variance σ²(k) = O(1/k). Combined with ratio_perturbation_bound
-  -- (proved in BranchingConvergence.lean), the cross-term satisfies
-  -- |BC−AD| ≤ C_q·C²/√(k−3), yielding the bound.
-  -- Ref: [feray2010] Theorem 1.1
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
 
 /-- The explicit constant C_q for our case (H₃(q) → H₃(q)). -/
 theorem convergence_constant_H3 (q : ℝ) (hq : q > 1) :

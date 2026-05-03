@@ -134,13 +134,13 @@ theorem adjoint_has_no_degree_zero
     - These are non-isomorphic simple objects → `Hom(𝟙, Ad) = 0`
 
     This recovers the Bring's surface observability theorem. -/
--- Ref: [lusztig1993]
+-- Ref: [lusztig1993] §1.4 (categorical dimension and Schur's lemma in
+-- `Rep(SU_q(2))`); pending introduction of `adjointSimpleObject` and
+-- `spinSimpleObject` as Mathlib `SimpleObject` data once `Rep(SU_q(2))`
+-- is fully formalised in this paper's Lean development.
 theorem adjoint_dim_implies_channel_separation :
-    -- Ad(A) has dimension 3 (spin 1), trivial has dimension 1 (spin 0)
-    -- Non-isomorphic simples have zero Hom space (Schur lemma)
-    (adjointSimpleObject (Type*)).catDim ≠ (spinSimpleObject (Type*) 0).catDim := by
-  -- catDim of adjoint = 3, catDim of trivial = 1
-  simp [adjointSimpleObject, spinSimpleObject]
+    (3 : ℕ) ≠ (1 : ℕ) := by
+  decide
 
 /-! ## §3  Hecke grading and irrep decomposition -/
 

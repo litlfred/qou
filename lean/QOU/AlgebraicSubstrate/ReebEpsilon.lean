@@ -1,3 +1,6 @@
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Category.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.ReebEpsilon — The Reeb infinitesimal `ε`
 
@@ -24,9 +27,6 @@ LaTeX label: `def:reeb-epsilon`.
 - [conway1976] Conway, *On Numbers and Games*, Academic Press.
 - [manuscript] Chapter 8 §5 (Classical Limit and Macroscopic Continuum).
 -/
-
-import Mathlib.CategoryTheory.Monoidal.Basic
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 
@@ -67,14 +67,18 @@ structure ReebEpsilon (C : Type u) [Category.{v} C] [MonoidalCategory C]
     `ArchimedeanInfinitesimal` instance.
 
     The connection to the surreal `1/ω` is made in
-    `QOU.AppendixSurreals.StandardPart`. -/
+    `QOU.AppendixSurreals.StandardPart`.
+
+    Encoded as an empty marker `Prop` class per CLAUDE.md §3b: the
+    archimedean-smallness statement `n · ε < λ · 𝟙` requires the
+    Frobenius-pairing operator order on `End(A)`, which lives at a
+    different layer of the formalisation.  Downstream theorems
+    that assume this class hypothesis prove conditional results
+    whose only unproved input is the (eventual) archimedean
+    witness.  An instance is the conjecture. -/
 -- Ref: [conway1976] On Numbers and Games §0 (Archimedean property)
 class ArchimedeanInfinitesimal
     {C : Type u} [Category.{v} C] [MonoidalCategory C]
-    (R : ReebEpsilon C) : Prop where
-  /-- Abstract witness; concrete content is the Frobenius-pairing
-      order on `End(A)`.  Left as a conjecture class per CLAUDE.md
-      §3b.  A downstream Hahn-embedding witness will discharge this. -/
-  isArchimedeanInfinitesimal : True
+    (R : ReebEpsilon C) : Prop
 
 end QOU.AlgebraicSubstrate

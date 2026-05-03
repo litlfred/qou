@@ -15,6 +15,7 @@
 -/
 
 import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 namespace QOU.NuclearNormalForms
 

@@ -1,3 +1,9 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.ConfinementCategory
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.HeckeH3
+import QOU.Interactions.ConfinementLP
+
 /-!
 # Level Sufficiency
 
@@ -17,12 +23,6 @@ deeper level (quark-level) only when `k_max > n` forces it
 - [def:confinement-category]
 - [jones1987]
 -/
-
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.ConfinementCategory
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.HeckeH3
-import QOU.Interactions.ConfinementLP
 
 namespace QOU.BraidKnot
 
@@ -53,19 +53,11 @@ opaque markovTrace : ConfinedParticle → R_q → R_q
     `P'` whenever the hypothesis holds. -/
 -- Ref: [manuscript] braids-and-knots/level-sufficiency
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem LevelSufficiency
+axiom LevelSufficiency
     (P P' : ConfinedParticle) (q : R_q)
     (h_unfold : ConfMorphism P P')
     (h_cover : kMax P q ≤ P.coarseStrands) :
-    markovTrace P q = markovTrace P' q := by
-  -- Proof: compatibility of the Markov trace along the Hecke
-  -- inclusion ι : H_{n₀}(q) ↪ H_{n₁}(q), combined with the
-  -- hypothesis that all non-zero Wedderburn projections of P live
-  -- at k ≤ n₀ so no new-block contributions arise. Requires a
-  -- formal Markov-property statement for the Jones 1987 trace
-  -- compatibility — not yet available in Mathlib.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+    markovTrace P q = markovTrace P' q
 
 /-- **Default-coarse corollary.** The Markov trace at the coarsest
     level satisfying `k_max ≤ n` is exact; deeper unfolding
