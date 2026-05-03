@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T11:06:35.855477+00:00",
-  "commitSha": "c97006b27fa9a94efb88ce71ed528ff3779de982",
+  "computedAt": "2026-05-03T15:53:59.313562+00:00",
+  "commitSha": "3d174bef5755dde250ecdbc88dc6465fdfaa8326",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1746,6 +1746,7 @@
         "t35-generator-volumes.witness.json",
         "t35-transfer-matrix.witness.json",
         "t35-weak-vertex.witness.json",
+        "tau-hat-n-lean-scaffold-audit.witness.json",
         "tau-lepton-nf.witness.json",
         "tau-leptonic-decay.witness.json",
         "term-7-shell-correction-test.witness.json",
