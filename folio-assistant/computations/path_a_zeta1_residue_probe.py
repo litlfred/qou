@@ -39,70 +39,75 @@ from q_parameter import Q as Q0_FLOAT                 # noqa: E402
 
 
 def extract_zeta1_residue(Z: int, N: int, *, label: str = "") -> dict:
-    """Compute Res_{q=1}[tr_M(T_w)] for atom (Z, N)."""
+    """Compute Res_{q=1}[tr_M(T_w)] for atom (Z, N) numerically.
+
+    Uses lim_{q→1} (q - 1) · tr_M(q) as a Richardson extrapolation
+    over progressively smaller eps.  This avoids sp.residue's
+    symbolic explosion at q = 1 (the rational form has large
+    numerator/denominator and full residue extraction is hours).
+
+    If tr_M is regular at q = 1, the limit is 0.  If a simple pole
+    is present, the limit is the residue.
+    """
     print(f"\n  === {label or f'(Z={Z}, N={N})'} ===")
     t0 = time.time()
     tr_sym = tr_M_atomic(Z, N)
     t_peel = time.time() - t0
+    print(f"    peel = {t_peel:.1f}s")
 
-    # Try to put into rational form (numerator/denominator).
+    # Numerical evaluation at q values approaching 1.
+    # If tr_M has a simple pole at q = 1: lim (q-1)·tr_M = residue (finite).
+    # If tr_M is regular: lim (q-1)·tr_M = 0.
+    eps_values = [
+        mp.mpf("0.01"), mp.mpf("0.001"), mp.mpf("0.0001"),
+        mp.mpf("1e-5"), mp.mpf("1e-6"),
+    ]
+    samples = []
     t0 = time.time()
-    tr_canonical = sp.cancel(tr_sym)
-    t_cancel = time.time() - t0
-
-    # Extract residue at q = 1.  For atomic braids tr_M is regular at q = 1
-    # in the Habiro (cyclotomic) sense, but the rational form may have a
-    # pole there.  sp.residue handles both cases:
-    #   - if regular: returns 0
-    #   - if simple pole: returns the standard residue
-    #   - if higher-order pole: returns the Laurent coefficient (q-1)^(-1)
-    t0 = time.time()
-    try:
-        res_at_q1 = sp.residue(tr_canonical, q_sym, 1)
-        res_at_q1 = sp.cancel(sp.expand(res_at_q1))
-    except Exception as exc:
-        print(f"    residue extraction failed: {type(exc).__name__}: {exc}")
-        res_at_q1 = None
-    t_res = time.time() - t0
-
-    # Numerical value at q_0 (for the Mittag-Leffler contribution
-    # T2+T3 = Res / (q_0 - 1))
-    res_at_q0 = None
-    contribution = None
-    if res_at_q1 is not None:
+    for eps in eps_values:
+        q_eval = sp.Float(str(1 + eps), 50)
         try:
-            q0 = sp.Float(str(Q0_FLOAT), 50)
-            # Residue might have its own q-dependence (unusual but possible
-            # if the form is multi-variable); evaluate at q_0 just in case.
-            res_at_q0_val = res_at_q1.subs(q_sym, q0).evalf(30)
-            res_at_q0 = complex(res_at_q0_val)
-            contribution = res_at_q0 / (Q0_FLOAT - 1)
+            tr_val = tr_sym.subs(q_sym, q_eval).evalf(30)
+            tr_val_c = complex(tr_val)
+            qm1_times_tr = complex(eps) * tr_val_c
+            samples.append({
+                "eps": float(eps),
+                "tr_M": tr_val_c,
+                "qm1_tr_M": qm1_times_tr,
+            })
         except Exception as exc:
-            print(f"    numerical eval of residue failed: {type(exc).__name__}: {exc}")
+            print(f"    eps={float(eps):.1e}: FAILED ({type(exc).__name__})")
+    t_eval = time.time() - t0
+    print(f"    evaluation sweep = {t_eval:.1f}s")
 
-    # Also evaluate tr_canonical at q_0 to confirm it matches markov_peel's value
-    tr_at_q0 = None
-    try:
-        tr_at_q0_val = tr_canonical.subs(q_sym, sp.Float(str(Q0_FLOAT), 50)).evalf(30)
-        tr_at_q0 = complex(tr_at_q0_val)
-    except Exception:
-        pass
+    # Print the limit behaviour
+    print(f"    {'eps':>10}  {'tr_M(1+eps)':>18}  {'(q-1)·tr_M':>18}")
+    for s in samples:
+        print(f"    {s['eps']:>10.1e}  {s['tr_M']!r:>18}  {s['qm1_tr_M']!r:>18}")
 
-    print(f"    peel={t_peel:.1f}s  cancel={t_cancel:.2f}s  residue={t_res:.2f}s")
-    print(f"    tr_M(q_0)             = {tr_at_q0}")
-    print(f"    Res_{{q=1}}[tr_M]      = {res_at_q1}")
-    print(f"    Res_{{q=1}}[tr_M]@q_0  = {res_at_q0}")
-    print(f"    T2+T3 = Res / (q_0-1) = {contribution}")
+    # If (q-1)·tr_M → 0 as eps → 0, residue = 0 (regular at q=1).
+    # If (q-1)·tr_M → finite nonzero, residue = that finite value.
+    # If tr_M itself stays bounded as eps → 0, residue = 0 (no pole).
+    last_q1tr = samples[-1]["qm1_tr_M"] if samples else None
+    last_tr = samples[-1]["tr_M"] if samples else None
+    is_regular = bool(last_q1tr is not None and abs(last_q1tr) < 1e-10)
+
+    # Mittag-Leffler contribution (Path A's T2+T3 = Res / (q_0-1))
+    contribution = (last_q1tr / (Q0_FLOAT - 1)) if last_q1tr else None
 
     return {
         "atom": label,
         "Z": Z, "N": N, "A": Z + N,
-        "tr_M_at_q0": str(tr_at_q0) if tr_at_q0 is not None else None,
-        "residue_at_q1_symbolic": str(res_at_q1) if res_at_q1 is not None else None,
-        "residue_at_q1_numerical": str(res_at_q0) if res_at_q0 is not None else None,
-        "T2_plus_T3_contribution_at_q0": str(contribution) if contribution is not None else None,
+        "tr_M_at_q_close_to_1": str(last_tr),
+        "q_minus_1_times_tr_M_limit": str(last_q1tr),
+        "is_regular_at_q1": is_regular,
+        "T2_plus_T3_contribution_at_q0": str(contribution),
+        "samples": [
+            {"eps": s["eps"], "tr_M": str(s["tr_M"]), "qm1_tr_M": str(s["qm1_tr_M"])}
+            for s in samples
+        ],
         "elapsed_peel_sec": t_peel,
-        "elapsed_residue_sec": t_res,
+        "elapsed_eval_sec": t_eval,
     }
 
 

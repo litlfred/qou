@@ -1,0 +1,126 @@
+{
+  "computation": "path-a-zeta1-residue-probe",
+  "description": "Path A from docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md.  Identifies zeta_1 = 1 explicitly per terms-2-6-higher-operations.md and extracts T2+T3 (combined) as Res_{q=1}[tr_M(T_w)] / (q_0 - 1) using markov_peel + sympy.residue.  The result is Markov-invariant by construction (residue of an invariant function).  Filtration-level split into T2 (level 1) vs T3 (level 2) is finer Hochschild work; this probe extracts the combined sum.",
+  "computedAt": "2026-05-03T22:27:31.643454+00:00",
+  "zeta_1_identified_as": "1 (the trivial root of unity)",
+  "source_for_zeta_1_definition": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md",
+  "rows": [
+    {
+      "atom": "proton",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "tr_M_at_q_close_to_1": "(0.5000042500033125+0j)",
+      "q_minus_1_times_tr_M_limit": "(5.000042500033125e-07+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(4.546377842741111e-06+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.5428735940364613+0j)",
+          "qm1_tr_M": "(0.005428735940364613+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.504253354870624+0j)",
+          "qm1_tr_M": "(0.000504253354870624+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.5004250331673745+0j)",
+          "qm1_tr_M": "(5.0042503316737456e-05+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.5000425003312924+0j)",
+          "qm1_tr_M": "(5.000425003312924e-06+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.5000042500033125+0j)",
+          "qm1_tr_M": "(5.000042500033125e-07+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 0.11164569854736328,
+      "elapsed_eval_sec": 0.022208452224731445
+    },
+    {
+      "atom": "neutron",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "tr_M_at_q_close_to_1": "(0.5000030000029375+0j)",
+      "q_minus_1_times_tr_M_limit": "(5.000030000029375e-07+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(4.546366476889704e-06+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.5303360330727842+0j)",
+          "qm1_tr_M": "(0.005303360330727842+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.5030029798082799+0j)",
+          "qm1_tr_M": "(0.0005030029798082799+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.5003000294173121+0j)",
+          "qm1_tr_M": "(5.0030002941731216e-05+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.5000300002937923+0j)",
+          "qm1_tr_M": "(5.000300002937923e-06+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.5000030000029375+0j)",
+          "qm1_tr_M": "(5.000030000029375e-07+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 0.03826308250427246,
+      "elapsed_eval_sec": 0.007573366165161133
+    },
+    {
+      "atom": "deuteron",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "tr_M_at_q_close_to_1": "(0.1250015625044219+0j)",
+      "q_minus_1_times_tr_M_limit": "(1.250015625044219e-07+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(1.1365990070571537e-06+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.14108613106147105+0j)",
+          "qm1_tr_M": "(0.0014108613106147106+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.12656693995610188+0j)",
+          "qm1_tr_M": "(0.00012656693995610188+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.12515629423674407+0j)",
+          "qm1_tr_M": "(1.2515629423674408e-05+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.12501562544220549+0j)",
+          "qm1_tr_M": "(1.250156254422055e-06+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.1250015625044219+0j)",
+          "qm1_tr_M": "(1.250015625044219e-07+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 1.9591472148895264,
+      "elapsed_eval_sec": 0.19487428665161133
+    }
+  ]
+}
