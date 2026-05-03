@@ -458,6 +458,7 @@ export default chapter({
         "topological-mass-formula-algebraic",
         "residue-as-braid-holonomy",
         "graded-trace-residue-split",
+        "term6-binding-density",
         "full-pole-structure-mass-trace",
         "habiro-residue-sum-equivalence",
         "mn-classical-parity-blind",

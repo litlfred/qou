@@ -1,7 +1,7 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-05-02T22:20:51.363Z",
-  "total_blocks": 1371,
+  "generated": "2026-05-03T00:23:00.207Z",
+  "total_blocks": 1372,
   "class_axiomatised_conjectures": [
     "conj:abelianisation-at-algebraic-poles",
     "conj:algebraic-geometric-dilog-equivalence",
@@ -37,7 +37,7 @@
     "conj:shell-closure-nf-term-count",
     "conj:shell-correction-term-seven"
   ],
-  "provable_blocks_touching_conjecture": 234,
+  "provable_blocks_touching_conjecture": 235,
   "violators": [
     {
       "label": "lem:surreal-squeeze",
@@ -188,6 +188,25 @@
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/algebraic-substrate/surreal-rate-calculus.ts"
+    },
+    {
+      "label": "prop:term6-binding-density",
+      "kind": "proposition",
+      "conj": [
+        "conj:categorical-neutrality-saturated-shells",
+        "conj:mass-endomorphism",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:brane-tower-z-habiro"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/term6-binding-density.ts"
     },
     {
       "label": "prop:universality",
