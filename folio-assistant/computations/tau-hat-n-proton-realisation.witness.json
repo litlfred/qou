@@ -1,0 +1,26 @@
+{
+  "computation": "tau-hat-n-proton-realisation",
+  "description": "Numerical realisation of the descent involution tau_hat_0 = ell_0 . d_1 acting on End_C(A_1) at A=1 (proton scale). A_0 = H_3(q_0); Omega^1(A_0) = ker(m: A_0 tensor A_0 -> A_0); A_1 = J^1(A_0) = A_0 tensor Omega^1(A_0). Phase A.3 of issue #522.",
+  "phase": "A.3",
+  "blocks_audited": [
+    "lifting-and-descent/descent-involution",
+    "lifting-and-descent/descent-lemma",
+    "lifting-and-descent/jet-prolongation-proof"
+  ],
+  "verdict": "setup-only",
+  "stage": "setup-stub",
+  "next_steps": [
+    "Build regular representation of H_3(q_0) (6-dim).",
+    "Compute multiplication tensor m as a 6 x 36 matrix.",
+    "Compute Omega^1 = ker(m) basis via mpmath SVD.",
+    "Build A_1 = H_3 tensor Omega^1 (180-dim).",
+    "Compute ell_0, d_1 via unit/counit sections.",
+    "Compute tau_hat_0 = ell_0 . d_1 on End(A_1); verify idempotence.",
+    "Eigenspace split: dim(im) (descended) + dim(ker) (transient)."
+  ],
+  "scope": {
+    "level": "n=0 -> n=1 (proton, A=1)",
+    "precision": "mpmath dps=50 (target)",
+    "restrictions": "End(A_1) materialised as 180^2 = 32400 entries if memory permits; otherwise restricted to a principal sub-block."
+  }
+}
