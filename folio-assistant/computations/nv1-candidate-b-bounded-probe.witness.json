@@ -1,0 +1,21 @@
+{
+  "name": "nv1-candidate-b-bounded-probe",
+  "description": "Bounded probe of NV-1 candidate (b) conj:nv-as-bring-period-rank. Verifies primality of N_v=1,445,519 and computes minimum-irrep-multiplicity-decomposition counts in three S_5-relevant dim sets. Closed-form arithmetic only; not a substitute for the Bring period-lattice machinery.",
+  "computation": "candidate-b-min-coin-decomposition",
+  "target": 1445519,
+  "primality": {
+    "method": "sympy.isprime + sympy.factorint",
+    "is_prime": true,
+    "factorization": {"1445519": 1},
+    "small_residues": {
+      "mod_4": 3,
+      "mod_5": 4,
+      "mod_6": 5
+    }
+  },
+  "decompositions": null,
+  "verdict": "partial-probe (step 1 only: primality)",
+  "caveat": "This is a probe, not a closure. The full Bring-period-lattice machinery (Riemann period integration on y^2 = x^5 - 1) is research-grade open work and is not addressed here.",
+  "handoff": "Bring-surface period-lattice computation remains open; see docs/audits/conjecture-cones.md and the candidate-(b) entry of docs/audits/2026-05-02-nv-frob-filter-conjectures.md.",
+  "scope_note": "STRICT scope: closed-form arithmetic only, no DP arrays of size > 10^4."
+}
