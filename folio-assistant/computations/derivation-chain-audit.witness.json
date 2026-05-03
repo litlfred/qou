@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T09:54:12.554195+00:00",
-  "commitSha": "5555112fcd132678887aff907e35fef1924158ca",
+  "computedAt": "2026-05-03T10:20:31.636914+00:00",
+  "commitSha": "c4e7ab96dd5009ca3902a3aba37a345f8c305229",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1674,6 +1674,7 @@
         "proton-vol-over-hbarq-squared.witness.json",
         "pure-hecke-binding-prefix.witness.json",
         "pure-hecke-binding.witness.json",
+        "pyhecke-legacy-vs-sw-regression-audit.witness.json",
         "q-beta-path-a-extended.witness.json",
         "q-dirac-cell-scanner.witness.json",
         "q-pinning-50-digit.witness.json",
