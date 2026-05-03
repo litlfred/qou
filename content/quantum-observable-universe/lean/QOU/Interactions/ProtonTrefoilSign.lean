@@ -209,7 +209,9 @@ theorem proton_trefoil_neg_on_interval (q : ℝ) (hq1 : 1 < q) (hq2 : q ≤ 3/2)
   -- Denominator: 4q⁶ > 0
   -- Result: negative / positive < 0
   apply div_neg_of_neg_of_pos
-  · nlinarith [sq_nonneg (q - 1), sq_nonneg (q + 1)]
+  · have h1 : (0:ℝ) < (q - 1) ^ 2 := pow_pos (by linarith) 2
+    have h2 : (0:ℝ) < (q + 1) ^ 2 := pow_pos (by linarith) 2
+    exact mul_neg_of_pos_of_neg (mul_pos h1 h2) hp
   · positivity
 
 /-! ## §5  The neutron e⁻ coefficient -/
