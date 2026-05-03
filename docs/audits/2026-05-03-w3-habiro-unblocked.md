@@ -174,6 +174,25 @@ adjacent contents within a nucleon vs across the inter-nucleon
 strand) is the next concrete step toward a categorical proof of the
 shift formula.
 
+**Negative result.**  The same intra-nucleon profile (1, 4, 0) does
+**not** extend to the single-nucleon (`include_inter=False`)
+calculation.  Empirically, isolated proton has shift 20 and isolated
+neutron has shift 16 (both with the same 11 intra-nucleon
+generators), giving the system
+
+> 6α<sub>σ</sub> + 3α<sub>σ⁻¹</sub> + 2α<sub>avg</sub> = 20
+> 5α<sub>σ</sub> + 4α<sub>σ⁻¹</sub> + 2α<sub>avg</sub> = 16
+
+which forces α<sub>σ</sub> − α<sub>σ⁻¹</sub> = 4 and consequently
+9·α<sub>σ⁻¹</sub> + 2·α<sub>avg</sub> = −4 — no non-negative integer
+solution.  The per-crossing shift contribution is therefore
+**genuinely strand-topology dependent** (which other strands the
+crossing acts on, not merely the operator type), and the
+include_inter=True / False distinction is not just a "+1 base"
+correction.  This narrows the categorical proof problem to
+analysing how the seminormal denominators reshuffle when the
+inter-nucleon coupling is added to the braid.
+
 | Atom | (Z, N) | predicted shift | empirical | match |
 |------|--------|-----------------|-----------|-------|
 | D    | (1, 1) | 18·1 + 21·1 + 1 = 40  | 40  | ✓ |
