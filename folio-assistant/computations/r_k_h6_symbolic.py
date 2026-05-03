@@ -17,6 +17,7 @@ from q_parameter import Q as Q0_FLOAT  # noqa: E402
 import sympy as sp
 
 from sympy import simplify, together
+from witness_polynomial import expose_polynomial
 
 q = sp.symbols('q', positive=True)
 
@@ -256,6 +257,7 @@ def main():
             "gauge_idx": gauge_idx,
             "closed_form_c": [str(ci) for ci in c_simplified],
             "tr_M_symbolic": str(tr_M_simp)[:1000],
+            "tr_M_polynomial": expose_polynomial(tr_M_simp, q, simplify=False),
             "tr_M_at_q0_numerical": val_num,
             "solve_time_s": t_solve,
         }

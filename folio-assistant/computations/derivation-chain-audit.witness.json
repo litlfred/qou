@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T09:38:47.154006+00:00",
-  "commitSha": "711d81229715db61f58b1016dbbd69b77651bba5",
+  "computedAt": "2026-05-03T09:42:08.655471+00:00",
+  "commitSha": "e33f593969542e9cc0b66ef94fc091bc92229bb4",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1505,10 +1505,13 @@
         "h2-integer-lp.witness.json",
         "h2-molecular-binding.witness.json",
         "h6-full-computation.witness.json",
+        "habiro-coefficients-atomic-fast.witness.json",
         "habiro-coefficients-interpolate.witness.json",
         "habiro-exact-mass-endomorphism.witness.json",
+        "habiro-frobenius-probe.witness.json",
         "habiro-interpolate-cross-validation.witness.json",
         "habiro-interpolation-recovery-demo.witness.json",
+        "habiro-motivic-orbit-relations.witness.json",
         "habiro-residue-symbolic.witness.json",
         "habiro-tail-in-ideal-validation.witness.json",
         "hadron-knot-table.witness.json",
@@ -1632,6 +1635,7 @@
         "paper-six-term-isotope-sweep.witness.json",
         "paper-six-term-shadow-price-sweep.witness.json",
         "path-a-extended-light-isotopes.witness.json",
+        "per-atom-lp-binding.witness.json",
         "per-block-phi-q.witness.json",
         "per-channel-garside.witness.json",
         "photon-operator-table.witness.json",

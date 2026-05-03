@@ -1,0 +1,126 @@
+{
+  "computation": "alpha-categorical-probe",
+  "computedAt": "2026-05-02T23:49:04.442133+00:00",
+  "alpha_fit_MeV": 342.5,
+  "fit_uncertainty_pct": "~5-10",
+  "constants": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "m_mu_over_m_e": 206.768283,
+    "E_0_MeV": 4.18
+  },
+  "q_integers": {
+    "[2]_q": 2.010896869118482,
+    "[3]_q": 3.043706218230512,
+    "[4]_q": 4.109682435637709,
+    "[5]_q": 5.220441324664574,
+    "[6]_q": 6.388086679547021,
+    "[7]_q": 7.625342178894008,
+    "[8]_q": 8.94569003394804,
+    "[9]_q": 10.363517902476511,
+    "[10]_q": 11.894275669195311
+  },
+  "candidates": [
+    {
+      "name": "E_0 \u00b7 82 (Pb shell)",
+      "value": 342.76,
+      "err_pct": 0.07591240875912143
+    },
+    {
+      "name": "2 \u00b7 m_e \u00b7 [3]_q \u00b7 [4]_q \u00b7 [5]_q\u00b2",
+      "value": 348.3978264798628,
+      "err_pct": 1.721993132806649
+    },
+    {
+      "name": "E_0 \u00b7 80",
+      "value": 334.4,
+      "err_pct": -2.3649635036496415
+    },
+    {
+      "name": "E_0 \u00b7 4 \u00b7 20 (Z\u00b7N at 4\u00d720)",
+      "value": 334.4,
+      "err_pct": -2.3649635036496415
+    },
+    {
+      "name": "m_e \u00b7 m_\u03bc/m_e \u00b7 [3]_q",
+      "value": 321.5930545366684,
+      "err_pct": -6.104217653527481
+    },
+    {
+      "name": "m_e \u00b7 [3]_q\u00b2 \u00b7 [4]_q\u00b2 \u00b7 [5]_q",
+      "value": 417.3968990422323,
+      "err_pct": 21.86770774955687
+    },
+    {
+      "name": "V_Bor \u00b7 m_e \u00b7 m_\u03bc/m_e / [3]_q",
+      "value": 254.37244459655977,
+      "err_pct": -25.730673110493495
+    },
+    {
+      "name": "m_e \u00b7 [3]_q \u00b7 [4]_q \u00b7 [5]_q \u00b7 [6]_q",
+      "value": 213.16162524459997,
+      "err_pct": -37.76302912566425
+    },
+    {
+      "name": "[10]_q \u00b7 [9]_q \u00b7 [4]_q",
+      "value": 506.5863295508053,
+      "err_pct": 47.90841738709644
+    },
+    {
+      "name": "m_e \u00b7 [3]_q \u00b7 [4]_q \u00b7 [5]_q \u00b7 [5]_q",
+      "value": 174.1989132399314,
+      "err_pct": -49.13900343359667
+    },
+    {
+      "name": "m_e \u00b7 m_\u03bc/m_e \u00b7 [3]_q / 2",
+      "value": 160.7965272683342,
+      "err_pct": -53.05210882676374
+    },
+    {
+      "name": "m_e \u00b7 [4]_q \u00b7 [5]_q \u00b7 [6]_q \u00b7 [7]_q",
+      "value": 534.0299672036697,
+      "err_pct": 55.92115830764078
+    },
+    {
+      "name": "m_e \u00b7 m_\u03bc/m_e",
+      "value": 105.65837550630283,
+      "err_pct": -69.15083926823274
+    },
+    {
+      "name": "m_e \u00b7 [5]_q!",
+      "value": 67.10084980421219,
+      "err_pct": -80.40851100606943
+    },
+    {
+      "name": "V_Bor\u00b2 \u00b7 m_e \u00b7 2",
+      "value": 54.87666820665596,
+      "err_pct": -83.97761512214424
+    },
+    {
+      "name": "m_e \u00b7 [4]_q! \u00b7 [4]_q",
+      "value": 52.82373016125286,
+      "err_pct": -84.577013091605
+    },
+    {
+      "name": "m_e \u00b7 [4]_q! \u00b7 [3]_q",
+      "value": 39.1222237922107,
+      "err_pct": -88.57745290738373
+    },
+    {
+      "name": "E_0 \u00b7 [82]_q^(1/2)",
+      "value": 659.0816702387939,
+      "err_pct": 92.43260444928289
+    },
+    {
+      "name": "[7]_q \u00b7 [8]_q \u00b7 [9]_q (\u00b71 MeV implicit)",
+      "value": 706.9364664793875,
+      "err_pct": 106.40480773120802
+    },
+    {
+      "name": "m_e \u00b7 [3]_q \u00b7 [4]_q \u00b7 [5]_q \u00b7 [6]_q \u00b7 [7]_q / [2]_q",
+      "value": 808.3111356236716,
+      "err_pct": 136.0032512769844
+    }
+  ],
+  "interpretation": "Probe enumerates candidate categorical expressions for the fitted slope \u03b1 \u2248 342.5 MeV in the Term6/A\u00b3 binding-energy formula. Ranks by % error. None below 1% is strong evidence that \u03b1 has not yet been derived from first principles; candidates within ~5-10% are within fit uncertainty."
+}

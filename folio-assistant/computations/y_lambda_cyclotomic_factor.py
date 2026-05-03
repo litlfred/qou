@@ -20,6 +20,9 @@ from pathlib import Path
 
 import sympy as sp
 
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: E402
+
 
 # Use t = q^{1/2} as the underlying variable so all expressions are
 # polynomial in t (no sqrt's).
@@ -136,9 +139,17 @@ for n in [2, 3, 4]:
         print(f"  y_{lam}:")
         print(f"    num: {num_str}")
         print(f"    den: {den_str}")
+        # Polynomial form in t = q^{1/2}; reuse the default q_0
+        # for q's value but pass sqrt(q_0) for the t-substitution
+        # (this script's symbolic variable is t, not q).
+        from witness_polynomial import _default_q0
+        t_at_q0 = sp.sqrt(_default_q0())
         n_results[str(lam)] = {
             "numerator_factored": str(y_num_f),
             "denominator_factored": str(y_den_f),
+            "y_polynomial": expose_polynomial(
+                y_cancel, t, q0=t_at_q0, simplify=False
+            ),
         }
     results[str(n)] = n_results
     print()

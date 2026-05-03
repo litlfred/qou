@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Pure-Hecke binding formula from knot-factor-frobenius-pairing.md.
 

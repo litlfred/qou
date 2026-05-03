@@ -1,8 +1,8 @@
 {
   "name": "confinement-operator-selection",
   "description": "Derives confinement operator from Frobenius dual minimum-action principle",
-  "computedAt": "2026-04-13T01:12:01.857288+00:00",
-  "git_sha": "e85964cd735dcf8a0ca1972d063b180bae0e874f",
+  "timestamp": "2026-05-02T21:27:11.744738+00:00",
+  "git_sha": "de376c88e50e704165515387b3a6df2ff5cb4ec3",
   "parameters": {
     "q0": 1.1099785955541805,
     "HA": 0.20906032198987945,
@@ -367,7 +367,5 @@
         "demand_magnitude": 0.6432709675763166
       }
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

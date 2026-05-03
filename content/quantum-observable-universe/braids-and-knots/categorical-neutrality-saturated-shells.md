@@ -100,6 +100,29 @@ non-trivial full-twist action would propagate unbounded ribbon /
 framing flux through the brane tower; finite observable mass forces
 **global topological neutrality** at saturation.
 
+## Operator-level support vs character sum (clarification)
+
+The phrase *"$\Phi_n$ is supported on self-conjugate partitions"*
+in this block means **operator-level**: the categorical mass
+operator $\Phi_n$ has zero matrix entries on every
+non-self-conjugate isotypical component of the Wedderburn
+decomposition $H_n(q) = \bigoplus_\lambda \mathrm{End}(V_\lambda)$.
+It does **not** mean the Plancherel-weighted character sum
+
+$$
+\sum_{\lambda = \lambda'} w_\lambda \cdot \chi^\lambda(\beta_{\mathrm{atom}}).
+$$
+
+The character sum vanishes identically at certain atomic-braid
+cycle types (a representation-theoretic identity, invariant under
+any per-$\lambda$ positive Plancherel weight). The binding-energy
+enhancement at magic shells is the *non-vanishing* of $\Phi_n$ on
+the self-conjugate isotypical operator blocks — not the
+character sum. Empirically, the magic-shell signal is captured
+by the GS-filtration Term 6 plus an `is_magic_pair`
+operator-correction with correlation $+0.74$ to the AME residual
+([reframing memo](../../../docs/audits/2026-05-02-self-conj-support-reframing.md)).
+
 ## Status
 
 🟡 **Conjectural** under CLAUDE.md §3b. Numerical witnesses at

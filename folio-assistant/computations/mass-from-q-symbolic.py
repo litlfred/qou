@@ -55,6 +55,7 @@ from sympy import sqrt, Rational, simplify, expand, factor, Matrix, latex
 
 # ── Import numerical values from canonical sources ───────────────
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from witness_polynomial import expose_polynomial  # noqa: E402
 
 from q_parameter import (
     VOL_FIGURE_EIGHT, VOL_FIGURE_EIGHT_ERR,
@@ -528,6 +529,7 @@ w.add_data("proton", {
     ],
     "P(q₀)": P_p_num,
     "P_error": P_p_err,
+    "P_polynomial": expose_polynomial(P_proton, q, simplify=False),
 })
 
 w.add_data("neutron", {
@@ -538,6 +540,7 @@ w.add_data("neutron", {
     ],
     "P(q₀)": P_n_num,
     "P_error": P_n_err,
+    "P_polynomial": expose_polynomial(P_neutron, q, simplify=False),
 })
 
 w.add_data("topological_mass", {

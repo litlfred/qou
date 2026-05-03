@@ -15,6 +15,7 @@ from pathlib import Path
 
 import sympy as sp
 from sympy import Rational, sqrt, simplify, factor, together
+from witness_polynomial import expose_polynomial
 
 # Symbolic q
 q = sp.symbols('q', positive=True)
@@ -196,6 +197,7 @@ def main():
         results[str(target)] = {
             "closed_form_c": [str(ci) for ci in c_simplified],
             "tr_M_symbolic": str(tr_M_simp)[:500],
+            "tr_M_polynomial": expose_polynomial(tr_M_simp, q, simplify=False),
             "tr_M_at_q0_numerical": val_num,
         }
 

@@ -280,4 +280,53 @@ theorem helium_palindromic_histogram :
    ⟨helium_slot1_zero, helium_slot2_nonzero⟩,
    ⟨helium_slot3_nonzero, helium_slot4_zero, helium_slot5_zero⟩⟩
 
+-- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+
+/-- The seven nuclear magic numbers {2, 8, 20, 28, 50, 82, 126}. -/
+def magic_numbers : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
+
+/-- **Conjecture class.** An instance asserts that the quotient-atom
+    NF term count `nf_term_count : ℕ → ℕ` (electrons → number of
+    nonzero NF basis coefficients) is **constant** on each magic-
+    number plateau:
+
+      n(Z+1) = n(Z) for Z, Z+1 ∈ same shell
+
+    or equivalently, n changes only when Z crosses a magic number.
+
+    The Z=2 (helium) case is proved unconditionally as
+    `helium_shell_closure` above (n(2) = n(1) = 2). The general
+    case for Z ∈ {8, 20, 28, 50, 82, 126} requires Hecke-tower
+    computations at H_{Z+1} which are intractable beyond Z ≈ 8;
+    the conjecture asserts the pattern persists.
+
+    `sorry` in any concrete instance is understood as **conjecture**,
+    not missing proof. Downstream blocks may take
+    `[ShellClosureNFTermCount]` as an explicit hypothesis to remain
+    `theorem`/`proposition` per CLAUDE.md §3b-cond.
+
+    Ref: [manuscript] §Shell closure NF term count, conj:shell-closure-nf-term-count -/
+class ShellClosureNFTermCount where
+  /-- The NF term count after Z electrons (in H_{Z+1}(q)). -/
+  nf_term_count : ℕ → ℕ
+  /-- Helium base case (proved unconditionally above): n(2) = n(1) = 2. -/
+  helium_base : nf_term_count 2 = nf_term_count 1
+  /-- **Conjectural shell-closure rule.** For every magic number m
+      and every Z, Z+1 in the same shell (between consecutive magic
+      numbers), the term count is constant. Equivalently: term count
+      changes ONLY at Z transitions across magic numbers. -/
+  shell_constant_between_magics :
+    ∀ Z : ℕ, (Z + 1 ∉ magic_numbers ∧ Z ∉ magic_numbers) →
+      nf_term_count (Z + 1) = nf_term_count Z
+
+/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+    Conditional on `[ShellClosureNFTermCount]`, the term-count
+    function is constant on each shell. Fully verified by Lean
+    once an instance is fixed. -/
+theorem term_count_constant_in_shell
+    [inst : ShellClosureNFTermCount]
+    (Z : ℕ) (hZ : Z + 1 ∉ magic_numbers) (hZ' : Z ∉ magic_numbers) :
+    inst.nf_term_count (Z + 1) = inst.nf_term_count Z :=
+  inst.shell_constant_between_magics Z ⟨hZ, hZ'⟩
+
 end QOU.Molecular

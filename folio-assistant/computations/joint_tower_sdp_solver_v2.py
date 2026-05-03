@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """Joint mass-tower SDP — Phase 3b.
 
 Extends Phase 3a (H_1, H_2, H_3 with known canonical T_w) to the

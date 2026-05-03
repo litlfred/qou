@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Compute C_{[3,2,1]} at q_0 — the BW shadow-price coefficient for
 the self-conjugate partition (3,2,1) at k = 6.

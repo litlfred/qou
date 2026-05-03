@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: library / no own witness output; sympy used internally by callers.
 """PSLQ rationalisation of y_λ values from MPFR witness.
 
 For each y_λ at 50 dps, run mpmath.pslq against the basis

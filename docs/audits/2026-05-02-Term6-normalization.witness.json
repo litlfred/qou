@@ -1,0 +1,78 @@
+{
+  "computation": "gs-filtration-Term6-normalization",
+  "computedAt": "2026-05-02T23:22:29.281543+00:00",
+  "normalizations": [
+    "raw_T6",
+    "T6_over_A",
+    "T6_over_C(A,3)",
+    "T6_over_A23",
+    "T6_over_A2",
+    "T6_over_A3"
+  ],
+  "fits": [
+    {
+      "name": "raw_T6",
+      "slope": 0.051589908966458584,
+      "intercept": 4.113976640456028,
+      "R": 0.6224146086988348,
+      "R_sq": 0.38739994512172365,
+      "residual_std": 1.557894027581499,
+      "max_abs_resid": 2.287352828455406
+    },
+    {
+      "name": "T6_over_A",
+      "slope": 0.9021785698643032,
+      "intercept": 3.842686162223527,
+      "R": 0.6820462751522758,
+      "R_sq": 0.4651871214490939,
+      "residual_std": 1.455627745670432,
+      "max_abs_resid": 2.4713218262331718
+    },
+    {
+      "name": "T6_over_C(A,3)",
+      "slope": 19.670701862998907,
+      "intercept": 2.4685657781547943,
+      "R": NaN,
+      "R_sq": NaN,
+      "residual_std": 1.9904414024077437,
+      "max_abs_resid": 2.972175882976183
+    },
+    {
+      "name": "T6_over_A23",
+      "slope": 0.3470078322912529,
+      "intercept": 3.953034320212076,
+      "R": 0.660598730042445,
+      "R_sq": 0.4363906821336911,
+      "residual_std": 1.4943023482425957,
+      "max_abs_resid": 2.4050646671271663
+    },
+    {
+      "name": "T6_over_A2",
+      "slope": 16.225289865507417,
+      "intercept": 3.255797276302497,
+      "R": 0.7554802964390083,
+      "R_sq": 0.5707504783075719,
+      "residual_std": 1.3040802169121446,
+      "max_abs_resid": 2.662382859313182
+    },
+    {
+      "name": "T6_over_A3",
+      "slope": 342.4876667190505,
+      "intercept": 1.2013634038550725,
+      "R": 0.8370256687690515,
+      "R_sq": 0.7006119701782779,
+      "residual_std": 1.0890971281779698,
+      "max_abs_resid": 2.5395922068532295
+    }
+  ],
+  "best_fit": {
+    "name": "T6_over_A3",
+    "slope": 342.4876667190505,
+    "intercept": 1.2013634038550725,
+    "R": 0.8370256687690515,
+    "R_sq": 0.7006119701782779,
+    "residual_std": 1.0890971281779698,
+    "max_abs_resid": 2.5395922068532295
+  },
+  "interpretation": "Tests several normalizations of the GS Term 6 against AME binding/nucleon. The best R\u00b2 indicates which functional form of the level-3 stratum captures the binding-energy structure. Term 6 / A^k for various k separates the combinatorial growth from the per-nucleon density."
+}

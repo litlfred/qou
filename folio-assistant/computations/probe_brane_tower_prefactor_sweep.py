@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """Brane-tower prefactor investigation — testing the ρ_q factor across atoms.
 
 prop:mass-endomorphism-tower states:
