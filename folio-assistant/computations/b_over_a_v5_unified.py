@@ -69,19 +69,21 @@ from alpha_cluster_recursion import (  # noqa: E402
 # values document the structural gap for closure of GAP-A in the
 # 1-ppb workplan (docs/audits/2026-05-03-next-session-plan-to-1ppb.md).
 _PLAN_H_DELTA_RHO: dict[tuple[int, int], dict] = {}
-try:
-    _ph_path = HERE / "rho-census-wedderburn-experiment.witness.json"
-    if _ph_path.exists():
+_ph_path = HERE / "rho-census-wedderburn-experiment.witness.json"
+if _ph_path.exists():
+    try:
         _ph_data = json.loads(_ph_path.read_text())
-        for _r in _ph_data.get("rows", []):
-            _PLAN_H_DELTA_RHO[(_r["Z"], _r["N"])] = {
-                "true_rho": _r.get("true_rho"),
-                "delta_rho": _r.get("delta_rho"),
-                "rho_handpick": _r.get("rho_handpick"),
-                "M_err_ppm_predicted": _r.get("M_err_ppm_predicted"),
-            }
-except Exception:
-    pass
+    except (json.JSONDecodeError, OSError):
+        _ph_data = {}
+    for _r in _ph_data.get("rows", []):
+        if "Z" not in _r or "N" not in _r:
+            continue
+        _PLAN_H_DELTA_RHO[(_r["Z"], _r["N"])] = {
+            "true_rho": _r.get("true_rho"),
+            "delta_rho": _r.get("delta_rho"),
+            "rho_handpick": _r.get("rho_handpick"),
+            "M_err_ppm_predicted": _r.get("M_err_ppm_predicted"),
+        }
 
 
 # ── Markov-peel tr_M cross-validation (PR #520) ──────────────────
@@ -90,14 +92,16 @@ except Exception:
 # These are the canonical-input values; B_pred closure for Family 4
 # still needs the ρ_F + Vol_hyp(K) derivation (GAP 4, 5).
 _MARKOV_PEEL_TR_M: dict[tuple[int, int], str] = {}
-try:
-    _peel_path = HERE / "markov-peel-atomic-tr-m.witness.json"
-    if _peel_path.exists():
+_peel_path = HERE / "markov-peel-atomic-tr-m.witness.json"
+if _peel_path.exists():
+    try:
         _peel_data = json.loads(_peel_path.read_text())
-        for _r in _peel_data.get("data", {}).get("results", []):
-            _MARKOV_PEEL_TR_M[(_r["Z"], _r["N"])] = _r["tr_M_at_q0"]
-except Exception:
-    pass
+    except (json.JSONDecodeError, OSError):
+        _peel_data = {}
+    for _r in _peel_data.get("data", {}).get("results", []):
+        if "Z" not in _r or "N" not in _r or "tr_M_at_q0" not in _r:
+            continue
+        _MARKOV_PEEL_TR_M[(_r["Z"], _r["N"])] = _r["tr_M_at_q0"]
 
 
 # ── AME 2020 reference values ─────────────────────────────────────

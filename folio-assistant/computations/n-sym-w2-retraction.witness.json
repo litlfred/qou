@@ -1,77 +1,99 @@
 {
   "computation": "n-sym-w2-retraction",
-  "computedAt": "2026-05-03T14:59:18.822777+00:00",
-  "description": "Retraction of the 62 ppm 'W-2 closure' claim from n_sym_b8_refinement_probe.py.  Multi-q verification shows the previous ansatz [3]_q·[4]_q²·[2]_q²·([4]_q-h³)/4 is point-fit numerology: q-asymmetric (h³ flips sign under q→q⁻¹) and 30-70% off at q ≠ q_0.  N_sym(q) already has an exact closed form by its recipe: N_sym(q) = N_v · [2]_q³ / ([4]_q² · [6]_q² · [8]_q²) where N_v = 3·v_weak/m_e is q-independent.  W-2's open question is whether N_v (currently CODATA G_F input) admits a categorical derivation.",
-  "verdict": "previous ansatz is point-fit numerology; W-2 not closed",
+  "computedAt": "2026-05-03T16:06:45.884442+00:00",
+  "description": "Retraction of the 62 ppm 'W-2 closure' claim from n_sym_b8_refinement_probe.py.  Multi-q verification shows the previous ansatz [3]_q·[4]_q²·[2]_q²·([4]_q-h³)/4 is point-fit numerology: q-asymmetric (h³ flips sign under q→q⁻¹) and 30-70% off at q ≠ q_0.  Also covers the q^(1/12) candidate revealed after the operator-precedence bug fix in the b8 refinement probe — at q_0 it matches N_sym to 8.7 ppm but is also q-asymmetric and fails the multi-q test the same way.  N_sym(q) already has an exact closed form by its recipe: N_sym(q) = N_v · [2]_q³ / ([4]_q² · [6]_q² · [8]_q²) where N_v = 3·v_weak/m_e is q-independent.  W-2's open question is whether N_v (currently CODATA G_F input) admits a categorical derivation.",
+  "verdict": "all probed ansätze are point-fit numerology; W-2 not closed",
   "N_v_const": "1445519.449145220729668372",
   "N_sym_recipe_form": "N_v · [2]_q^3 / ([4]_q^2 · [6]_q^2 · [8]_q^2)",
   "previous_ansatz_form": "[3]_q · [4]_q^2 · [2]_q^2 · ([4]_q - h^3) / 4",
   "previous_ansatz_q0_match_rel_err": "6.2e-5",
   "previous_ansatz_q_q_inv_asymmetry": 0.004456595702036584,
   "previous_ansatz_max_off_q0_rel_err": 2.9885149792178396,
+  "q_one_twelfth_ansatz_form": "[3]_q · [4]_q^3 · q^(1/12)",
+  "q_one_twelfth_q0_match_rel_err": "8.7e-6",
+  "q_one_twelfth_q_q_inv_asymmetry": -0.01723978651654574,
+  "q_one_twelfth_max_off_q0_rel_err": 2.9527688962432457,
   "multi_q_test": [
     {
       "q_label": "0.90 q_0",
       "q": "0.998980735998762489908946",
       "N_sym": "313.685998611879937",
       "ansatz": "192.001963858883223",
-      "rel_err": -0.3879166915051091
+      "rel_err": -0.3879166915051091,
+      "ansatz_q_one_twelfth": "191.985447780141214",
+      "rel_err_q_one_twelfth": -0.387969343133856
     },
     {
       "q_label": "0.95 q_0",
       "q": "1.054479665776471441817433",
       "N_sym": "283.48120701886437",
       "ansatz": "197.320903663896224",
-      "rel_err": -0.30393656165445415
+      "rel_err": -0.30393656165445415,
+      "ansatz_q_one_twelfth": "197.697125435798356",
+      "rel_err_q_one_twelfth": -0.30260941275503134
     },
     {
       "q_label": "0.99 q_0",
       "q": "1.098878809598638701930127",
       "N_sym": "228.531197064868624",
       "ansatz": "209.116342564629081",
-      "rel_err": -0.08495494159919284
+      "rel_err": -0.08495494159919284,
+      "ansatz_q_one_twelfth": "209.247834050941883",
+      "rel_err_q_one_twelfth": -0.08437956507291718
     },
     {
       "q_label": "q_0",
       "q": "1.1099785955541805169583",
       "N_sym": "213.111807242783667",
       "ansatz": "213.098536954235391",
-      "rel_err": -6.226913806403123e-05
+      "rel_err": -6.226913806403123e-05,
+      "ansatz_q_one_twelfth": "213.109956954748136",
+      "rel_err_q_one_twelfth": -8.68224083625191e-06
     },
     {
       "q_label": "1.01 q_0",
       "q": "1.121078381509722331986474",
       "N_sym": "197.591028170348432",
       "ansatz": "217.502366241516566",
-      "rel_err": 0.10077045630838079
+      "rel_err": 0.10077045630838079,
+      "ansatz_q_one_twelfth": "217.372756352588828",
+      "rel_err_q_one_twelfth": 0.10011450603509207
     },
     {
       "q_label": "1.05 q_0",
       "q": "1.165477525331889592099167",
       "N_sym": "138.674113690129762",
       "ansatz": "239.506810374813939",
-      "rel_err": 0.7271198207186452
+      "rel_err": 0.7271198207186452,
+      "ansatz_q_one_twelfth": "238.618505830780815",
+      "rel_err_q_one_twelfth": 0.7207141223485942
     },
     {
       "q_label": "1.10 q_0",
       "q": "1.220976455109598667240034",
       "N_sym": "80.9768205653413352",
       "ansatz": "277.87629742445946",
-      "rel_err": 2.4315535666189456
+      "rel_err": 2.4315535666189456,
+      "ansatz_q_one_twelfth": "275.628210944029272",
+      "rel_err_q_one_twelfth": 2.4037914679747274
     },
     {
       "q_label": "1/q_0",
       "q": "0.900918273564301161518305",
       "N_sym": "213.111807242783667",
       "ansatz": "214.048230978135921",
-      "rel_err": 0.0043940490555994865
+      "rel_err": 0.0043940490555994865,
+      "ansatz_q_one_twelfth": "209.435986792298026",
+      "rel_err_q_one_twelfth": -0.01724831907740349
     },
     {
       "q_label": "q_0²",
       "q": "1.232052482588431048486611",
       "N_sym": "71.9953018494832671",
       "ansatz": "287.154339859973845",
-      "rel_err": 2.9885149792178396
+      "rel_err": 2.9885149792178396,
+      "ansatz_q_one_twelfth": "284.580789826281281",
+      "rel_err_q_one_twelfth": 2.9527688962432457
     }
   ],
   "open_question": "Derive N_v from categorical pipeline (currently CODATA G_F input)"

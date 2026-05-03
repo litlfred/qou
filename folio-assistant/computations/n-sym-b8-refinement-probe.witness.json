@@ -1,6 +1,6 @@
 {
   "computation": "n-sym-b8-refinement-probe",
-  "computedAt": "2026-05-03T14:18:21.102092+00:00",
+  "computedAt": "2026-05-03T16:05:11.183586+00:00",
   "description": "W-2 candidate (b8) refinement: two-pass search.  Pass 1 tests K(q) such that K(q_0) · [3]_q · [4]_q^3 = N_sym(q_0); best at 0.22%.  Pass 2 deepens around the Pass-1 winner [3]_q · [4]_q^3 · [2]_q²/4 and finds 1 − h³/[4]_q gives 62 ppm closure: N_sym ≈ [3]_q · [4]_q² · [2]_q² · ([4]_q − h³) / 4.",
   "q_0_dps": 100,
   "q_0": "1.1099785955541805169583001889887986763787613849839",
@@ -127,12 +127,12 @@
     },
     {
       "name": "q^(1/12)",
-      "K_q0": "0.092498216296181709747",
-      "rel_err": "-0.90830337",
-      "rel_err_float": -0.9083033708613673,
-      "full_N_sym": "19.5416343315428876",
-      "rel_err_full": "-0.90830337",
-      "rel_err_full_float": -0.9083033708613673
+      "K_q0": "1.0087329728328769294",
+      "rel_err": "-8.6811016e-6",
+      "rel_err_float": -8.68110161472031e-06,
+      "full_N_sym": "213.109956954748136",
+      "rel_err_full": "-8.6811016e-6",
+      "rel_err_full_float": -8.681101614720331e-06
     },
     {
       "name": "(1 + q⁻²)/2",
@@ -153,9 +153,9 @@
       "rel_err_full_float": -0.0032205332036398327
     }
   ],
-  "pass1_best": "[2]_q² / 4",
-  "pass1_best_full_N_sym": "213.573383966185656",
-  "pass1_best_rel_err": "0.0021658911",
+  "pass1_best": "q^(1/12)",
+  "pass1_best_full_N_sym": "213.109956954748136",
+  "pass1_best_rel_err": "-8.6811016e-6",
   "pass2_base": "213.5733839661856557483112",
   "pass2_K2_target": "0.9978387898453735431167774",
   "pass2_rows": [

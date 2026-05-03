@@ -95,6 +95,20 @@ def previous_ansatz(q):
     ) / 4
 
 
+def q_one_twelfth_ansatz(q):
+    """Closed-form alternative: [3]_q · [4]_q^3 · q^(1/12).
+
+    After fixing the operator-precedence bug (commit 3520a4c72) in
+    n_sym_b8_refinement_probe.py, this candidate hits N_sym(q_0) at
+    8.7 ppm — strictly better than the previous 62 ppm candidate.
+    But q^(1/12) is also q-asymmetric (q^(1/12) ≠ q^(-1/12)), and
+    the multi-q test below shows the same point-fit signature: 30 %
+    off at 0.95 q_0 and 72 % off at 1.05 q_0.  Same retraction
+    applies — point-fit numerology, not derivation.
+    """
+    return qint(q, 3) * qint(q, 4) ** 3 * q ** (mpmath.mpf(1) / 12)
+
+
 def base_q_symmetric(q):
     """The q-symmetric base [3]_q · [4]_q^3 · [2]_q^2 / 4
     (= previous ansatz minus its q-asymmetric h³ tail)."""
@@ -132,13 +146,17 @@ def main() -> int:
     for label, q in points:
         n = N_sym_recipe(q)
         a = previous_ansatz(q)
+        a2 = q_one_twelfth_ansatz(q)
         err = float((a - n) / n)
+        err2 = float((a2 - n) / n)
         rows.append({
             "q_label": label,
             "q": mpmath.nstr(q, 25),
             "N_sym": mpmath.nstr(n, 18),
             "ansatz": mpmath.nstr(a, 18),
             "rel_err": err,
+            "ansatz_q_one_twelfth": mpmath.nstr(a2, 18),
+            "rel_err_q_one_twelfth": err2,
         })
         print(f"  {label:>10}  {mpmath.nstr(n, 14):>20}  "
               f"{mpmath.nstr(a, 14):>20}  {err:>+14.4e}")
@@ -148,8 +166,13 @@ def main() -> int:
     rev_err = float(
         (previous_ansatz(1 / q0) - previous_ansatz(q0)) / previous_ansatz(q0)
     )
-    print(f"q → q⁻¹ asymmetry (ansatz only): {rev_err:+.4e}")
-    print(f"  N_sym is q-symmetric (h-free); ansatz contains h³ — broken symmetry.")
+    rev_err_q12 = float(
+        (q_one_twelfth_ansatz(1 / q0) - q_one_twelfth_ansatz(q0))
+        / q_one_twelfth_ansatz(q0)
+    )
+    print(f"q → q⁻¹ asymmetry (h³ ansatz):       {rev_err:+.4e}")
+    print(f"q → q⁻¹ asymmetry (q^(1/12) ansatz): {rev_err_q12:+.4e}")
+    print(f"  N_sym is q-symmetric (h-free); both ansätze break this symmetry.")
     print()
 
     # Structural-derivation attempt: R(q) = N_sym(q) − base_q_sym(q)
@@ -177,6 +200,9 @@ def main() -> int:
     print("VERDICT: previous ansatz is point-fit numerology.")
     print("  Match at q_0 is a curve-crossing coincidence; the polynomial base")
     print("  and N_sym(q) are structurally different functions of q.")
+    print("  Same verdict applies to the q^(1/12) candidate (corrected after")
+    print("  the n_sym_b8_refinement_probe operator-precedence bug fix): it")
+    print("  hits q_0 at 8.7 ppm but is q-asymmetric and >70% off at 1.05 q_0.")
     print()
     out = {
         "computation": "n-sym-w2-retraction",
@@ -187,18 +213,28 @@ def main() -> int:
             "previous ansatz "
             "[3]_q·[4]_q²·[2]_q²·([4]_q-h³)/4 is point-fit numerology: q-asymmetric "
             "(h³ flips sign under q→q⁻¹) and 30-70% off at q ≠ q_0.  "
+            "Also covers the q^(1/12) candidate revealed after the "
+            "operator-precedence bug fix in the b8 refinement probe — at "
+            "q_0 it matches N_sym to 8.7 ppm but is also q-asymmetric and "
+            "fails the multi-q test the same way.  "
             "N_sym(q) already has an exact closed form by its recipe: "
             "N_sym(q) = N_v · [2]_q³ / ([4]_q² · [6]_q² · [8]_q²) where "
             "N_v = 3·v_weak/m_e is q-independent.  W-2's open question is "
             "whether N_v (currently CODATA G_F input) admits a categorical derivation."
         ),
-        "verdict": "previous ansatz is point-fit numerology; W-2 not closed",
+        "verdict": "all probed ansätze are point-fit numerology; W-2 not closed",
         "N_v_const": mpmath.nstr(N_v_const, 25),
         "N_sym_recipe_form": "N_v · [2]_q^3 / ([4]_q^2 · [6]_q^2 · [8]_q^2)",
         "previous_ansatz_form": "[3]_q · [4]_q^2 · [2]_q^2 · ([4]_q - h^3) / 4",
         "previous_ansatz_q0_match_rel_err": "6.2e-5",
         "previous_ansatz_q_q_inv_asymmetry": rev_err,
         "previous_ansatz_max_off_q0_rel_err": max(abs(r["rel_err"]) for r in rows),
+        "q_one_twelfth_ansatz_form": "[3]_q · [4]_q^3 · q^(1/12)",
+        "q_one_twelfth_q0_match_rel_err": "8.7e-6",
+        "q_one_twelfth_q_q_inv_asymmetry": rev_err_q12,
+        "q_one_twelfth_max_off_q0_rel_err": max(
+            abs(r["rel_err_q_one_twelfth"]) for r in rows
+        ),
         "multi_q_test": rows,
         "open_question": "Derive N_v from categorical pipeline (currently CODATA G_F input)",
     }
