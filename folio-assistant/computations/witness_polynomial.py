@@ -101,3 +101,45 @@ def expose_polynomial_dict(
         name: expose_polynomial(expr, q, q0=q0, digits=digits, simplify=simplify)
         for name, expr in exprs.items()
     }
+
+
+def evaluate_with_polynomial(
+    expr: sp.Expr,
+    q: sp.Symbol,
+    *,
+    q0: sp.Rational | None = None,
+    digits: int = 30,
+    return_type: str = "float",
+):
+    """Drop-in replacement for `float(expr.subs(q, q0).evalf(digits))`
+    that ALSO returns the polynomial form alongside the numerical value.
+
+    Usage:
+        # Before:
+        h_val = float(h_sym.subs(q, q0).evalf(30))
+        # After:
+        h_val, h_poly = evaluate_with_polynomial(h_sym, q)
+        witness["h_poly"] = h_poly  # add to witness JSON
+
+    `return_type`: "float" | "complex" | "mpf" | "rational" — type of
+    the first return value. Second is always the expose_polynomial dict.
+    """
+    if q0 is None:
+        q0 = _default_q0()
+    poly = expose_polynomial(expr, q, q0=q0, digits=digits)
+    val = sp.N(expr.subs(q, q0), digits)
+    if return_type == "float":
+        try:
+            num = float(val)
+        except TypeError:
+            num = complex(val)
+    elif return_type == "complex":
+        num = complex(val)
+    elif return_type == "mpf":
+        import mpmath
+        num = mpmath.mpf(str(val))
+    elif return_type == "rational":
+        num = sp.Rational(val)
+    else:
+        raise ValueError(f"Unknown return_type: {return_type}")
+    return num, poly

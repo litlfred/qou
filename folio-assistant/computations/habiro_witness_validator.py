@@ -166,6 +166,13 @@ def main() -> int:
         "overall_pass": overall_pass,
         "results": per_atom_results,
     }
+    # polynomial_q_not_applicable: validator emits boolean divisibility /
+    # exact-reconstruction checks over ZZ[u], not a polynomial-in-q form.
+    # The symbolic Habiro polynomials live in
+    # habiro-coefficients-atomic.witness.json (validated input).
+    # The NA marker therefore belongs in the source comment, not in
+    # the witness JSON itself (which is bit-checked by CI drift
+    # detection in .github/workflows/witness-pipeline.yml).
 
     with OUTPUT_WITNESS.open("w") as f:
         json.dump(output, f, indent=2)

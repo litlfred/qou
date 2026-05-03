@@ -233,6 +233,7 @@ def main() -> int:
     print(f"    err              = {(B_pred - 2.22456612) / 2.22456612 * 100:+.2f}%")
 
     from witness_base import WitnessBuilder
+    from witness_polynomial import expose_polynomial
     w = (
         WitnessBuilder("brane-tower-symbolic-D", engine="sympy")
         .set_description(
@@ -247,8 +248,16 @@ def main() -> int:
         .add_parameter("N", N)
         .add_parameter("n_generators", len(vols))
         .add_data("vols_full_symbolic", [str(vd["full"]) for vd in vols])
+        .add_data(
+            "vols_full_polynomial",
+            [expose_polynomial(vd["full"], q, simplify=False) for vd in vols],
+        )
         .add_data("vols_full_at_q0", [float(vd["full"].subs(q, q0_rat)) for vd in vols])
         .add_data("Vol_q_tower_symbolic", str(vol_alg)[:5000])
+        .add_data(
+            "Vol_q_tower_polynomial",
+            expose_polynomial(vol_alg, q, simplify=False),
+        )
         .add_data("Vol_q_tower_at_q0", vol_at_q0)
         .add_data("rho_q", rho_q_val)
         .add_data("m_invariant_at_q0", m_inv)

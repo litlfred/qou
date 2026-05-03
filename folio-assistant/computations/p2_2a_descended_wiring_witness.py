@@ -56,7 +56,8 @@ def compare(name, Z, N):
     print(f"\n=== {name} (Z={Z}, N={N}, A={Z+N}) ===")
 
     # Path 1: H_3 std-channel-only
-    h3_std = abs(markov_trace_symbolic_eval(Z, N, True, 1, 1, 1, q0, 50))
+    h3_std = abs(markov_trace_symbolic_eval(
+        Z, N, True, 1, 1, 1, q0, 50, legacy_h3=True))
     print(f"  (1) H_3 std-only:      |tr_M| = {float(h3_std):.6e}")
 
     # Path 2: H_3 three-channel (descended part of tower)

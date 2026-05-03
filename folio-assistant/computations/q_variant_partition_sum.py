@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 q-variants of Σ_{λ⊢3} 1/d_λ tested against deuteron binding gap.
 

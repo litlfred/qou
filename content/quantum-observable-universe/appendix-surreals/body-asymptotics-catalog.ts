@@ -10,7 +10,6 @@ export default remark({
     "prop:hoefsmit-scattering-pipeline",
     "prop:jet-tower-convergence",
     "prop:unified-iterative-correction",
-    "prop:ns-obstruction-computation",
     "prop:feynman-classical-limit",
     "prf:mobius-energy",
   ],

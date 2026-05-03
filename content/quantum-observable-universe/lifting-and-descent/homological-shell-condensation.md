@@ -105,6 +105,20 @@ barrier by replacing per-partition matrix computation with
 spectral-sequence arithmetic
 ([rem:k12-barrier-bypass](../observations/k12-barrier-bypass.md)).
 
+## Operator-level support (clarification)
+
+The "Wedderburn support of $\Phi_n$ onto self-conjugate
+partitions" in §"Conditional content" above is **operator-level**:
+$\Phi_n$ has zero matrix entries on non-self-conjugate isotypical
+components, but the operator on the self-conjugate components is
+generically non-trivial. It is **not** the Plancherel-weighted
+character sum $\sum_{\lambda = \lambda'} w_\lambda \chi^\lambda$,
+which vanishes identically at certain atomic-braid cycle types
+(see [reframing memo](../../../docs/audits/2026-05-02-self-conj-support-reframing.md)).
+The $E_\infty^{p, >0}(n) = 0$ collapse condition stated above is
+precisely operator-level (page collapse on the associated graded
+algebra), and is consistent with this reading.
+
 ## Status
 
 🟡 **Conjectural** under CLAUDE.md §3b. The supporting evidence is:

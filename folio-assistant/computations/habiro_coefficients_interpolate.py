@@ -339,6 +339,10 @@ if __name__ == "__main__":
             "thm:knot-mass-formula-unified",
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        # P2.5 marker — mpmath-only numerical path; the symbolic q
+        # form lives in habiro_coefficients_atomic.py. Polynomial
+        # exposure does not apply to this witness.
+        "polynomial_q_not_applicable": True,
         "parameters": {
             "q_0": float(_Q_CANONICAL),
             "engine": "mpmath 60-digit; Hoefsmit numerical",

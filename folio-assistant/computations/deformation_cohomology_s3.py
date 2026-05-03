@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Deformation cohomology: does HH^*(R[S_3]) give Term 2's Cauchy kernel?
 

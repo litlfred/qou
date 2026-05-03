@@ -1,0 +1,109 @@
+{
+  "computation": "closure-energy-knot-operator-probe",
+  "computedAt": "2026-05-02T22:37:35.935644+00:00",
+  "q0": 1.1099785955541805,
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "knot_name": "\u03c3 (single crossing)",
+      "jones_at_q0": 1.053555217135856,
+      "abs_jones": 1.053555217135856,
+      "binding_per_nucleon_MeV": 0.4655287150000049
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "knot_name": "Hopf link",
+      "jones_at_q0": -2.3515905379520805,
+      "abs_jones": 2.3515905379520805,
+      "binding_per_nucleon_MeV": 2.141506243333424
+    },
+    {
+      "atom": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "knot_name": "Hopf link",
+      "jones_at_q0": -2.3515905379520805,
+      "abs_jones": 2.3515905379520805,
+      "binding_per_nucleon_MeV": 1.9649556733334066
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "knot_name": "trefoil T(2,3)",
+      "jones_at_q0": 0.9733701692292354,
+      "abs_jones": 0.9733701692292354,
+      "binding_per_nucleon_MeV": 6.427226477500085
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "knot_name": "T(2,5) Cinquefoil",
+      "jones_at_q0": 0.9299062388538165,
+      "abs_jones": 0.9299062388538165,
+      "binding_per_nucleon_MeV": 4.430030000000102
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "knot_name": "T(2,5) (+1)",
+      "jones_at_q0": 0.9299062388538165,
+      "abs_jones": 0.9299062388538165,
+      "binding_per_nucleon_MeV": 4.648324285714239
+    },
+    {
+      "atom": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "knot_name": "T(2,5) (+3)",
+      "jones_at_q0": 0.9299062388538165,
+      "abs_jones": 0.9299062388538165,
+      "binding_per_nucleon_MeV": 5.744320000000016
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "knot_name": "T(2,5) (+6)",
+      "jones_at_q0": 0.9299062388538165,
+      "abs_jones": 0.9299062388538165,
+      "binding_per_nucleon_MeV": 6.777900000000045
+    },
+    {
+      "atom": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "knot_name": "T(2,6) extended",
+      "jones_at_q0": -0.9758226714855797,
+      "abs_jones": 0.9758226714855797,
+      "binding_per_nucleon_MeV": 7.0739825000000565
+    },
+    {
+      "atom": "40Ca",
+      "Z": 20,
+      "N": 20,
+      "A": 40,
+      "knot_name": "T(2,5) (very extended)",
+      "jones_at_q0": 0.9299062388538165,
+      "abs_jones": 0.9299062388538165,
+      "binding_per_nucleon_MeV": 7.6489950000000135
+    }
+  ],
+  "correlation_jones_vs_binding": -0.6086255225625864,
+  "interpretation": "Per prop:knot-operator-transition, each A \u2192 A+1 transition adds a definite knot type whose closure may carry a binding energy. This probe correlates |J_K(q_0)| with the AME per-nucleon binding to test the hypothesis that closure energy ~ binding enhancement at knot completion."
+}

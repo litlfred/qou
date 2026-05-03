@@ -280,6 +280,12 @@ def main():
     w.add_data("symbolic_q_form", {
         "engine": "sympy (matrix construction only) + numpy",
         "q_symbol": "q (sp.Symbol('q'))",
+        # P2.5 marker — script does NOT emit polynomial-in-q output,
+        # because the symbolic ρ_λ(σ_i) is lambdified at q_0 before
+        # the matrix products. Falls into the
+        # `polynomial_q_not_applicable` bucket per
+        # docs/audits/2026-05-02-queued-research.md §R4.
+        "polynomial_q_not_applicable": True,
         "pattern_note": (
             "sympy-as-matrix-stepping-stone: ρ_λ(σ_i) ∈ "
             "Mat_{d_λ × d_λ}(ℚ(q)) is symbolic in sigmas_to_numeric; "

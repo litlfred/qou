@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Compute tr_M(T_w, q_0) via the Hoefsmit + Wenzl-bridge path,
 sidestepping sympy's H_9 cost wall.

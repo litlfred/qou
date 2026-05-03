@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: library / no own witness output; sympy used internally by callers.
 """
 Derive PIECE 6 of the unified mass formula: jet-level prefix corrections.
 

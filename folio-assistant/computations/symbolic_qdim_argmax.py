@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: library / no own witness output; sympy used internally by callers.
 """Symbolic computation of q-dimensions and argmax-stability across q.
 
 For each partition lambda |- n, compute:

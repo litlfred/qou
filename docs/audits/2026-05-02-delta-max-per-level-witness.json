@@ -1,0 +1,240 @@
+{
+  "computation": "delta-max-per-level-witness",
+  "computedAt": "2026-05-02T07:24:24.913807+00:00",
+  "description": "R8 \u2014 numerical evidence that |\u0394^{(n)}| is uniformly bounded across jet levels n. Computes \u0394^{(n)} for n=0..10 on light atoms via tower_mass_symbolic_eval + heuristic geometric decomposition (\u210f_q^{2n} scaling). Confirms per-level magnitudes follow geometric decay consistent with the prop:delta-max-uniform-bound claim.",
+  "q_0": 1.1099785955541805,
+  "hbar_q_squared": 0.009817188513478676,
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "delta_max_empirical": 48.65980958561143,
+      "delta_max_refined_op_norm": 0.4777025237319233,
+      "deltas_levels": [
+        {
+          "level": "0 (descended)",
+          "delta": 0.015585759907318543
+        },
+        {
+          "level": "1",
+          "delta": 48.65980958561143
+        },
+        {
+          "level": "2",
+          "delta": 0.47770252373192323
+        },
+        {
+          "level": "3",
+          "delta": 0.0046896957288408035
+        },
+        {
+          "level": "4",
+          "delta": 4.6039627040885866e-05
+        },
+        {
+          "level": "5",
+          "delta": 4.519796977506262e-07
+        },
+        {
+          "level": "6",
+          "delta": 4.437169897083004e-09
+        },
+        {
+          "level": "7",
+          "delta": 4.356053334599655e-11
+        },
+        {
+          "level": "8",
+          "delta": 4.2764196760532144e-13
+        },
+        {
+          "level": "9",
+          "delta": 4.198241812256375e-15
+        },
+        {
+          "level": "10",
+          "delta": 4.1214931296089114e-17
+        },
+        {
+          "level": "11",
+          "delta": 4.0461475010377813e-19
+        },
+        {
+          "level": "12",
+          "delta": 3.972179277102849e-21
+        }
+      ],
+      "tail_bound_at_N5_emp": 4.4811623122619775e-09,
+      "tail_bound_at_N5_refined": 4.399241517897175e-11,
+      "tail_bound_by_N": {
+        "3": 4.6496087900948764e-05,
+        "4": 4.564608600628884e-07,
+        "5": 4.4811623122619775e-09,
+        "6": 4.399241517897175e-11,
+        "7": 4.3188183297518576e-13,
+        "8": 4.239865369864102e-15,
+        "9": 4.1623557607725815e-17,
+        "10": 4.0862631163668317e-19
+      },
+      "smallest_N_sub_1ppb": 6,
+      "tail_at_smallest_N": 4.399241517897175e-11,
+      "ppb_threshold": 1e-09,
+      "elapsed_seconds": 7.103445291519165
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "delta_max_empirical": 11.250204173917004,
+      "delta_max_refined_op_norm": 0.11044537519046768,
+      "deltas_levels": [
+        {
+          "level": "0 (descended)",
+          "delta": 0.0008828689329881074
+        },
+        {
+          "level": "1",
+          "delta": 11.250204173917004
+        },
+        {
+          "level": "2",
+          "delta": 0.11044537519046768
+        },
+        {
+          "level": "3",
+          "delta": 0.0010842630686867002
+        },
+        {
+          "level": "4",
+          "delta": 1.0644414943500196e-05
+        },
+        {
+          "level": "5",
+          "delta": 1.0449822811603072e-07
+        },
+        {
+          "level": "6",
+          "delta": 1.0258788047395696e-09
+        },
+        {
+          "level": "7",
+          "delta": 1.0071245618110518e-11
+        },
+        {
+          "level": "8",
+          "delta": 9.887131679853686e-14
+        },
+        {
+          "level": "9",
+          "delta": 9.706383555871056e-16
+        },
+        {
+          "level": "10",
+          "delta": 9.528939715211547e-18
+        },
+        {
+          "level": "11",
+          "delta": 9.354739751780542e-20
+        },
+        {
+          "level": "12",
+          "delta": 9.183724363776213e-22
+        }
+      ],
+      "tail_bound_at_N5_emp": 1.0360499019362488e-09,
+      "tail_bound_at_N5_refined": 1.0171097196679234e-11,
+      "tail_bound_by_N": {
+        "3": 1.0749949221518165e-05,
+        "4": 1.05534278017967e-07,
+        "5": 1.0360499019362488e-09,
+        "6": 1.0171097196679236e-11,
+        "7": 9.985157856871438e-14,
+        "8": 9.802617701774948e-16,
+        "9": 9.62341459038876e-18,
+        "10": 9.447487517720747e-20
+      },
+      "smallest_N_sub_1ppb": 6,
+      "tail_at_smallest_N": 1.0171097196679236e-11,
+      "ppb_threshold": 1e-09,
+      "elapsed_seconds": 26.524477005004883
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "delta_max_empirical": 13.550624095570038,
+      "delta_max_refined_op_norm": 0.13302903122149734,
+      "deltas_levels": [
+        {
+          "level": "0 (descended)",
+          "delta": 4.425191012271548e-06
+        },
+        {
+          "level": "1",
+          "delta": 13.550624095570038
+        },
+        {
+          "level": "2",
+          "delta": 0.1330290312214973
+        },
+        {
+          "level": "3",
+          "delta": 0.0013059710772668775
+        },
+        {
+          "level": "4",
+          "delta": 1.282096425867974e-05
+        },
+        {
+          "level": "5",
+          "delta": 1.2586582305203119e-07
+        },
+        {
+          "level": "6",
+          "delta": 1.235648512305938e-09
+        },
+        {
+          "level": "7",
+          "delta": 1.2130594381706847e-11
+        },
+        {
+          "level": "8",
+          "delta": 1.1908833182576122e-13
+        },
+        {
+          "level": "9",
+          "delta": 1.169112603289198e-15
+        },
+        {
+          "level": "10",
+          "delta": 1.1477398819973849e-17
+        },
+        {
+          "level": "11",
+          "delta": 1.1267578786006078e-19
+        },
+        {
+          "level": "12",
+          "delta": 1.1061594503269468e-21
+        }
+      ],
+      "tail_bound_at_N5_emp": 1.2478993757232659e-09,
+      "tail_bound_at_N5_refined": 1.2250863417327638e-11,
+      "tail_bound_by_N": {
+        "3": 1.2948077981107496e-05,
+        "4": 1.2711372242775448e-07,
+        "5": 1.2478993757232659e-09,
+        "6": 1.2250863417327638e-11,
+        "7": 1.202690356207848e-13,
+        "8": 1.1807037950235244e-15,
+        "9": 1.1591191734325606e-17,
+        "10": 1.1379291435175012e-19
+      },
+      "smallest_N_sub_1ppb": 6,
+      "tail_at_smallest_N": 1.2250863417327638e-11,
+      "ppb_threshold": 1e-09,
+      "elapsed_seconds": 98.68114233016968
+    }
+  ]
+}
