@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T09:19:30.264685+00:00",
-  "commitSha": "2964000a9eb45af45179e91771a9143d458dc93e",
+  "computedAt": "2026-05-03T09:56:21.199656+00:00",
+  "commitSha": "c3609c3aa2e5d00cd98d0a51739bcc6b7de73cc3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1344,6 +1344,7 @@
         "all-subsets-tower.witness.json",
         "alpha-blend-isotopes.witness.json",
         "alpha-blend-tower.witness.json",
+        "alpha-cluster-recursion.witness.json",
         "alpha-cs-kappa-verification.witness.json",
         "alpha-derivation-probe.witness.json",
         "alpha-em-pslq-uniqueness-2000dps.witness.json",
@@ -1573,6 +1574,7 @@
         "lp-duality-check.witness.json",
         "m-p-breakdown-derived-vs-guessed.witness.json",
         "magic-126-optimized.witness.json",
+        "magic-A-formula.witness.json",
         "markov-convention-parallel.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-invariant-unified-mass.witness.json",
