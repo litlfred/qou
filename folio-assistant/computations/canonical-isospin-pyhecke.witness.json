@@ -6,7 +6,7 @@
     "thm:jones-markov-trace",
     "rem:commutative-crossing-energy"
   ],
-  "computedAt": "2026-04-25T17:05:30.632142+00:00",
+  "timestamp": "2026-05-03T10:12:17.116361+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "precision": 30
@@ -16,45 +16,43 @@
       "Z": 1,
       "N": 0,
       "include_inter": false,
-      "tr_M_q0": 1.0653062285923887,
-      "walltime_sec": 0.007312774658203125
+      "tr_M_q0": 0.671453179676007,
+      "walltime_sec": 0.4386022090911865
     },
     "n   (Z=0, N=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
-      "tr_M_q0": 0.8008637862553291,
-      "walltime_sec": 0.00023221969604492188
+      "tr_M_q0": 0.671453179676007,
+      "walltime_sec": 0.06585192680358887
     },
     "D   (Z=1, N=1)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
-      "tr_M_q0": 0.3368212289448051,
-      "walltime_sec": 0.00034427642822265625
+      "tr_M_q0": 0.015585759907318543,
+      "walltime_sec": 0.7098584175109863
     },
     "T   (Z=1, N=2)": {
       "Z": 1,
       "N": 2,
       "include_inter": true,
-      "tr_M_q0": 0.078297035873325,
-      "walltime_sec": 0.0005784034729003906
+      "tr_M_q0": 0.0008828689329881074,
+      "walltime_sec": 1.6734895706176758
     },
     "\u00b3He (Z=2, N=1)": {
       "Z": 2,
       "N": 1,
       "include_inter": true,
-      "tr_M_q0": 0.1791650003435875,
-      "walltime_sec": 0.0004420280456542969
+      "tr_M_q0": 0.0008828689329881074,
+      "walltime_sec": 1.0864646434783936
     },
     "\u2074He (Z=2, N=2)": {
       "Z": 2,
       "N": 2,
       "include_inter": true,
-      "tr_M_q0": 0.041648468842339324,
-      "walltime_sec": 0.0006129741668701172
+      "tr_M_q0": 4.425191012271548e-06,
+      "walltime_sec": 4.827529430389404
     }
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }
