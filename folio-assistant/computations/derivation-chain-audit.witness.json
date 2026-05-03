@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T00:52:28.789962+00:00",
-  "commitSha": "d8fb1b5f4f298a768023c446066cddcda05639d4",
+  "computedAt": "2026-05-03T01:02:03.710149+00:00",
+  "commitSha": "a1c8ebfd28cb3b5e629c4007a7c13e617757110b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1520,6 +1520,7 @@
         "hecke-knot-ideal-tracker.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
+        "higgs-slot-g-action-test.witness.json",
         "higher-a-bigraded-stratification.witness.json",
         "higher-a-binding-refinement.witness.json",
         "higher-a-shell-diagnostic.witness.json",
