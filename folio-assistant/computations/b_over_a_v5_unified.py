@@ -54,6 +54,22 @@ from alpha_cluster_recursion import (  # noqa: E402
 )
 
 
+# ── Markov-peel tr_M cross-validation (PR #520) ──────────────────
+# Loads pre-computed tr_M(T_w) at q_0 from markov-peel-atomic-tr-m.witness.json.
+# Available for: p, n, D, T, ³He, ⁴He, ⁵Li, ⁶Li (as of #520).
+# These are the canonical-input values; B_pred closure for Family 4
+# still needs the ρ_F + Vol_hyp(K) derivation (GAP 4, 5).
+_MARKOV_PEEL_TR_M: dict[tuple[int, int], str] = {}
+try:
+    _peel_path = HERE / "markov-peel-atomic-tr-m.witness.json"
+    if _peel_path.exists():
+        _peel_data = json.loads(_peel_path.read_text())
+        for _r in _peel_data.get("data", {}).get("results", []):
+            _MARKOV_PEEL_TR_M[(_r["Z"], _r["N"])] = _r["tr_M_at_q0"]
+except Exception:
+    pass
+
+
 # ── AME 2020 reference values ─────────────────────────────────────
 AME_BA_MEV = {
     # Family 1
@@ -191,6 +207,10 @@ def evaluate(Z: int, N: int) -> dict:
         if base.get("B_pred_MeV") is not None:
             base["err_MeV"] = base["B_pred_MeV"] - B_AME
             base["err_pct"] = 100.0 * base["err_MeV"] / B_AME
+    # Canonical-input tr_M cross-validation from PR #520's markov_peel
+    # production runs — independent path to the Family-1 Hoefsmit-bridge.
+    if (Z, N) in _MARKOV_PEEL_TR_M:
+        base["tr_M_at_q0_markov_peel"] = _MARKOV_PEEL_TR_M[(Z, N)]
     return base
 
 

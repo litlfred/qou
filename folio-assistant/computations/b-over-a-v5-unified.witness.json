@@ -1,6 +1,6 @@
 {
   "computation": "b-over-a-v5-unified",
-  "computedAt": "2026-05-03T10:03:13.671337+00:00",
+  "computedAt": "2026-05-03T10:37:31.496081+00:00",
   "description": "B/A v5 unified evaluator — dispatches by formula family per the watched-branch's methodology audit (methodology-deprecation.witness.json).  Families: 1 (D, T, ³He principled), 2 (⁴He magic-A), 3 (⁸Be–⁴⁰Ca recursive-on-4He), 4 (⁶Li, ⁷Li, … OPEN, GAPS 4, 5).",
   "constants": {
     "m_e_MeV": 0.51099895069,
@@ -66,7 +66,8 @@
       "method": "principled-derivation (Kashaev law via historical knot ID)",
       "B_AME_MeV": 2.22452,
       "err_MeV": 0.02430079790130879,
-      "err_pct": 1.092406357385359
+      "err_pct": 1.092406357385359,
+      "tr_M_at_q0_markov_peel": "+3.8828647154771295e-01"
     },
     {
       "Z": 1,
@@ -84,7 +85,8 @@
       "method": "principled-derivation (Kashaev law via historical knot ID)",
       "B_AME_MeV": 8.48181,
       "err_MeV": -0.013210305574872905,
-      "err_pct": -0.15574866184072628
+      "err_pct": -0.15574866184072628,
+      "tr_M_at_q0_markov_peel": "+1.0405211867552604e-01"
     },
     {
       "Z": 2,
@@ -102,7 +104,8 @@
       "method": "principled-derivation (Kashaev law via historical knot ID)",
       "B_AME_MeV": 7.71804,
       "err_MeV": -0.2291206805349315,
-      "err_pct": -2.9686381585860078
+      "err_pct": -2.9686381585860078,
+      "tr_M_at_q0_markov_peel": "+2.0654085856226245e-01"
     },
     {
       "Z": 2,
@@ -118,7 +121,8 @@
       "method": "magic-A-formula (shell-closure)",
       "B_AME_MeV": 28.295674,
       "err_MeV": 1.66000327953288,
-      "err_pct": 5.866632756416688
+      "err_pct": 5.866632756416688,
+      "tr_M_at_q0_markov_peel": "+5.5348345876697992e-02"
     },
     {
       "Z": 4,
@@ -244,7 +248,8 @@
       "reason": "Family 4 (open): T_w not yet derived (GAP 4, 5).  Plausible α + (light cluster) ansatz pending H_18/H_21 SDP via the joint-tower Rust kernel.",
       "module": null,
       "method": "open (deprecated-volume-match quarantined)",
-      "B_AME_MeV": 31.99405
+      "B_AME_MeV": 31.99405,
+      "tr_M_at_q0_markov_peel": "+7.8896372028493221e-03"
     },
     {
       "Z": 3,
