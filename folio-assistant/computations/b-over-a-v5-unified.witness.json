@@ -1,6 +1,6 @@
 {
   "computation": "b-over-a-v5-unified",
-  "computedAt": "2026-05-03T10:49:54.098693+00:00",
+  "computedAt": "2026-05-03T20:39:26.758252+00:00",
   "description": "B/A v5 unified evaluator — dispatches by formula family per the watched-branch's methodology audit (methodology-deprecation.witness.json).  Families: 1 (D, T, ³He principled), 2 (⁴He magic-A), 3 (⁸Be–⁴⁰Ca recursive-on-4He), 4 (⁶Li, ⁷Li, … OPEN, GAPS 4, 5).",
   "constants": {
     "m_e_MeV": 0.51099895069,
@@ -68,7 +68,7 @@
       "B_AME_MeV": 2.22452,
       "err_MeV": 0.02430079790130879,
       "err_pct": 1.092406357385359,
-      "tr_M_at_q0_markov_peel": "+3.8828647154771295e-01",
+      "tr_M_at_q0_markov_peel": "0.38828647154771295246789009070198517292737960815430",
       "plan_h_diagnostic": {
         "true_rho": 0.9892212296139793,
         "delta_rho": -0.010778770386020708,
@@ -94,7 +94,7 @@
       "B_AME_MeV": 8.48181,
       "err_MeV": -0.013210305574872905,
       "err_pct": -0.15574866184072628,
-      "tr_M_at_q0_markov_peel": "+1.0405211867552604e-01",
+      "tr_M_at_q0_markov_peel": "0.10405211867552603688391599234819295816123485565186",
       "plan_h_diagnostic": {
         "true_rho": 2.003119428154665,
         "delta_rho": 0.003119428154664927,
@@ -120,7 +120,7 @@
       "B_AME_MeV": 7.71804,
       "err_MeV": -0.22912068011677977,
       "err_pct": -2.968638153168159,
-      "tr_M_at_q0_markov_peel": "+2.0654085856226245e-01",
+      "tr_M_at_q0_markov_peel": "0.20654085856226245265787611060659401118755340576172",
       "plan_h_diagnostic": {
         "true_rho": 2.061178570833352,
         "delta_rho": 0.0611785708333521,
@@ -144,7 +144,7 @@
       "B_AME_MeV": 28.295674,
       "err_MeV": 1.66000327953288,
       "err_pct": 5.866632756416688,
-      "tr_M_at_q0_markov_peel": "+5.5348345876697992e-02",
+      "tr_M_at_q0_markov_peel": "0.055348345876697992162807082650033407844603061676025",
       "plan_h_diagnostic": {
         "true_rho": 1.8891684387012972,
         "delta_rho": -0.11083156129870275,
@@ -282,8 +282,7 @@
       "reason": "Family 4 (open): T_w not yet derived (GAP 4, 5).  Plausible α + (light cluster) ansatz pending H_18/H_21 SDP via the joint-tower Rust kernel.",
       "module": null,
       "method": "open (deprecated-volume-match quarantined)",
-      "B_AME_MeV": 31.99405,
-      "tr_M_at_q0_markov_peel": "+7.8896372028493221e-03"
+      "B_AME_MeV": 31.99405
     },
     {
       "Z": 3,
