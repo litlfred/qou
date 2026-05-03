@@ -15,14 +15,22 @@ $$
     \mathfrak{m}(\varrho)
     \;=\;
     \underbrace{\bigl|\mathrm{tr}_M(T_w)\bigr|}_{\text{descended}}
-    \;+\;
-    \underbrace{\sum_{i=0}^{n-2} \Phi_q\bigl(|\hat V_i^{\mathrm{full}}|\bigr)
-               + z^2 \sum_{0 \leq i < j \leq n-2}
-                  \Phi_q\bigl(|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|\bigr)}_{\text{brane tower}}
+    \;-\;
+    \underbrace{\sum_{i=0}^{n-2} \mathrm{Li}_2^q\bigl(-|\hat V_i^{\mathrm{full}}|\bigr)
+               - z^2 \sum_{0 \leq i < j \leq n-2}
+                  \mathrm{Li}_2^q\bigl(-|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|\bigr)}_{\text{brane tower}}
     \;+\;
     \underbrace{m_e \cdot \mathrm{tr}_M\bigl(C_{\dim_q}^{H_n(R, q)}\bigr)}_{\text{Frobenius co-Casimir}}
   }
 $$
+
+*where $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$
+is the symmetric q-dilogarithm with
+$[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  Per
+([mass endomorphism tower proof](#prop:mass-endomorphism-tower)), this
+is the closed-form result of integrating the Briggs–Klein
+expansion flow $\int_0^V (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$
+over each resolved defect $E_i \cong \mathbb{P}^1(\mathbb{C})$.*
 
 **Brane-tower-evaluation note (added 2026-05-03).**
 *The boxed brane-tower form $\sum_i \Phi_q(|\hat V_i|) + z^2 \sum_{i<j}
