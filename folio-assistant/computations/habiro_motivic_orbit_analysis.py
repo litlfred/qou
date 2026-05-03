@@ -66,6 +66,18 @@ def reduce_in_ring(expr: sp.Expr, n: int, u: sp.Symbol) -> sp.Poly:
     return rem
 
 
+def cyclotomic_pochhammer_in_ring(n: int, m: int,
+                                    u: sp.Symbol) -> sp.Poly:
+    """(ζ_n; ζ_n)_m = ∏_{i=1}^{m} (1 − ζ_n^i) in Z[ζ_n] = Z[u]/Φ_n(u)."""
+    result = sp.Poly(1, u)
+    phi_n = sp.Poly(sp.cyclotomic_poly(n, u), u)
+    for i in range(1, m + 1):
+        factor = sp.Poly(1, u) - sp.Poly(u ** i, u)
+        result = result * factor
+        _, result = result.div(phi_n)
+    return result
+
+
 def galois_orbit(expr: sp.Expr, n: int, u: sp.Symbol) -> list[sp.Expr]:
     """Return the Galois orbit of `expr ∈ Z[ζ_n]` under
     Gal(Q(ζ_n)/Q) ≅ (Z/nZ)*.
@@ -520,6 +532,141 @@ def main() -> int:
               f"norm = {r['norm']:>+10d}  v_{r['prime']} = {r['p_adic_valuation']}  "
               f"= ±{fac_str}")
     print()
+
+    # Test 6: Hecke multiplicativity test — a_{pq} =? a_p · a_q
+    # for distinct primes p, q.
+    #
+    # Method: evaluate the gap residue ε(T) − ε(³He) at u = ζ_{2pq}
+    # (the cyclotomic level covering both primes), take its Galois
+    # norm under Gal(Q(ζ_{2pq})/Q) — this gives a candidate "a_{pq}".
+    # Compare to a_p · a_q predicted from the individual probes.
+    #
+    # If multiplicative, M_iso is consistent with a classical
+    # GL_2 modular form (or Hecke-eigenform). If not, the motive
+    # is non-modular.
+    print("─── Test 6: Hecke multiplicativity a_{pq} =? a_p · a_q ───")
+
+    def evaluate_gap_in_ring(habiro_coeffs_T: list[dict],
+                              habiro_coeffs_He: list[dict],
+                              N: int, u_sym: sp.Symbol,
+                              terminated_T: bool,
+                              terminated_He: bool) -> sp.Poly:
+        """Evaluate ε(T) - ε(³He) - ε(D)·... at u = ζ_N (so ζ_N's
+        order divides N). Returns the polynomial representative."""
+        # We evaluate Frob_N for T, ³He, and the gap analogously
+        # to evaluate_at_root but with cyclotomic conductor N.
+        phi_N = sp.Poly(sp.cyclotomic_poly(N, u_sym), u_sym)
+
+        def frob_at_N(coeffs: list[dict], terminated: bool) -> sp.Poly:
+            total = sp.Poly(0, u_sym)
+            parsed_local = []
+            for c in coeffs:
+                m = int(c["m"])
+                expr = sp.sympify(str(c["a_m"]), locals={"u": u_sym})
+                try:
+                    poly = sp.Poly(expr, u_sym)
+                    ic = [int(co) for co in poly.all_coeffs()]
+                except (sp.PolynomialError, ValueError):
+                    ic = []
+                parsed_local.append((m, ic))
+            for m, ic in parsed_local:
+                if not terminated and m >= N:
+                    break
+                a_m_poly = sp.Poly(ic, u_sym) if ic else sp.Poly(0, u_sym)
+                poch = cyclotomic_pochhammer_in_ring(N, m, u_sym)
+                term = a_m_poly * poch
+                _, term = term.div(phi_N)
+                total = total + term
+                _, total = total.div(phi_N)
+            return total
+
+        # Gap residues: T - D·n  vs  ³He - D·p needs D, p, n at this N.
+        # For the Hecke multiplicativity we want Frob_N(T) - Frob_N(³He)
+        # directly (which is the gap, simpler).
+        f_T = frob_at_N(habiro_coeffs_T, terminated_T)
+        f_He = frob_at_N(habiro_coeffs_He, terminated_He)
+        return reduce_in_ring((f_T - f_He).as_expr(), N, u_sym)
+
+    # Need access to the original Habiro records.
+    fast_witness = HERE / "habiro-coefficients-atomic-fast.witness.json"
+    if fast_witness.exists():
+        fast_data = json.loads(fast_witness.read_text())["results"]
+        T_record = fast_data.get("T (tritium, A=3)")
+        He_record = fast_data.get("3He (helium-3, A=3)")
+    else:
+        T_record = He_record = None
+
+    if T_record and He_record:
+        T_terminated = bool(T_record.get("expansion_terminated_clean"))
+        He_terminated = bool(He_record.get("expansion_terminated_clean"))
+        T_coeffs = T_record["habiro_coefficients"]
+        He_coeffs = He_record["habiro_coefficients"]
+
+        # Test: pq pairs from primes ∈ {3, 7, 11}. Skip larger ones
+        # because deg(Φ_{2pq}) = (p-1)(q-1) gets expensive fast.
+        pq_pairs = [(3, 7), (3, 11), (7, 11)]
+        # Predicted a_p values (already extracted in Test 5):
+        a_p_table = {
+            wc["prime"]: wc["a_p_candidate"]
+            for wc in weight_candidates
+        }
+        for p, q in pq_pairs:
+            N = 2 * p * q
+            print(f"  (p, q) = ({p}, {q})  → N = 2pq = {N}, "
+                  f"φ(N) = {sp.totient(N)}")
+            t0 = sp.Symbol  # placeholder, just to use sp
+            try:
+                gap_at_N = evaluate_gap_in_ring(
+                    T_coeffs, He_coeffs, N, u,
+                    T_terminated, He_terminated,
+                )
+                # Galois norm of the gap residue at level N.
+                gap_expr = gap_at_N.as_expr()
+                norm_at_N = reduce_in_ring(
+                    sum(gap_expr.subs(u, u ** k)
+                        for k in range(1, N) if gcd(k, N) == 1),
+                    N, u,
+                )
+                norm_int = (
+                    int(norm_at_N.all_coeffs()[0])
+                    if norm_at_N.degree() == 0
+                    and norm_at_N.all_coeffs()
+                    and norm_at_N.all_coeffs()[0].is_Integer
+                    else None
+                )
+                # Strip p-factor and q-factor: norm should equal
+                # something ~ p^? · q^? · a_{pq} after dividing out
+                # the bad-reduction multiplicities.
+                a_pq_predicted = a_p_table.get(p, 0) * a_p_table.get(q, 0)
+                # Strip primes p and q from norm.
+                from sympy import factorint
+                if norm_int is not None and norm_int != 0:
+                    fac = factorint(abs(norm_int))
+                    vp = fac.get(p, 0)
+                    vq = fac.get(q, 0)
+                    a_pq_observed = norm_int // (p ** vp * q ** vq)
+                else:
+                    a_pq_observed = norm_int
+                print(f"    gap-norm at N={N}: {norm_int}")
+                print(f"    a_{p}·a_{q} predicted: "
+                      f"{a_p_table.get(p)} · {a_p_table.get(q)} = {a_pq_predicted}")
+                print(f"    observed (norm / p^v_p / q^v_q): {a_pq_observed}")
+                relations.append({
+                    "kind": "hecke_multiplicativity",
+                    "primes": [p, q],
+                    "N": N,
+                    "gap_norm_at_N": norm_int,
+                    "a_pq_predicted": a_pq_predicted,
+                    "a_pq_observed": a_pq_observed,
+                    "ratio_observed_predicted": (
+                        a_pq_observed / a_pq_predicted
+                        if a_pq_predicted != 0 and a_pq_observed is not None
+                        else None
+                    ),
+                })
+            except Exception as e:
+                print(f"    ERROR: {type(e).__name__}: {str(e)[:120]}")
+        print()
 
     out = {
         "computation": "habiro-motivic-orbit-relations",

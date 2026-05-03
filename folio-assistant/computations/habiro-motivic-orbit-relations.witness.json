@@ -1,6 +1,6 @@
 {
   "computation": "habiro-motivic-orbit-relations",
-  "computedAt": "2026-05-02T23:50:02.974775+00:00",
+  "computedAt": "2026-05-03T00:18:55.550856+00:00",
   "description": "Motivic-orbit relation analysis on the exact-algebraic Frobenius eigenvalues from habiro-frobenius-probe. Tests (a) multiplicative factoring D = p ⊗ n, (b) Galois conjugacy ³He ~ σ(³H), (c) per-(atom, prime) Weil-purity signature. All relations are checked in exact ring arithmetic in Z[ζ_{2p}] = Z[u]/Φ_{2p}(u).",
   "reference_blocks": [
     "def:motivic-galois-character",
@@ -709,6 +709,42 @@
       "prime": 23,
       "in_orbit": false,
       "galois_index_k": null
+    },
+    {
+      "kind": "hecke_multiplicativity",
+      "primes": [
+        3,
+        7
+      ],
+      "N": 42,
+      "gap_norm_at_N": -13980,
+      "a_pq_predicted": -13,
+      "a_pq_observed": -4660,
+      "ratio_observed_predicted": 358.46153846153845
+    },
+    {
+      "kind": "hecke_multiplicativity",
+      "primes": [
+        3,
+        11
+      ],
+      "N": 66,
+      "gap_norm_at_N": -24129,
+      "a_pq_predicted": -63,
+      "a_pq_observed": -2681,
+      "ratio_observed_predicted": 42.55555555555556
+    },
+    {
+      "kind": "hecke_multiplicativity",
+      "primes": [
+        7,
+        11
+      ],
+      "N": 154,
+      "gap_norm_at_N": -66151,
+      "a_pq_predicted": 819,
+      "a_pq_observed": -66151,
+      "ratio_observed_predicted": -80.77045177045177
     }
   ],
   "weight_signature": [
@@ -1747,7 +1783,7 @@
     }
   ],
   "summary": {
-    "n_relations": 72,
+    "n_relations": 75,
     "n_multiplicative_matches": 0,
     "n_galois_conjugacy_matches": 0,
     "n_sign_conjugacy_matches": 1,
