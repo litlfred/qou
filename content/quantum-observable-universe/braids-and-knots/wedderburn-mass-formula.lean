@@ -5,43 +5,73 @@ The atomic mass is determined by three Wedderburn invariants
 of the transfer matrix chain. These are complete: no fourth
 invariant exists.
 
+**Pre-Archimedean stub.** The formal statement lives over an
+abstract commutative ring `R ⊇ ℤ[q, q⁻¹]`.  Real-valued
+specialisation (substitution `q ↦ q₀`, mass scale via `m_e`) is
+the Archimedean realisation and is performed downstream in
+`QOU.ArchimedeanMassFormula` (per
+`QOU.GroundRingAnnotations`).  See audit
+`docs/audits/2026-05-03-pre-archimedean-proof-audit.md` §1
+(Step 9) for the wall-discipline rationale.
+
 -- Ref: [manuscript] thm:wedderburn-mass-formula
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.WedderburnMass
 
+universe u
+
 /-- The three Wedderburn invariants of a transfer matrix chain.
     These correspond to the three extremal irreps of H_n(q):
-    symmetric (dim 1), standard (dim n-1), alternating (dim 1). -/
-structure ThreeInvariants where
-  Φ₁ : ℝ  -- standard trace: Σ ln|V̂_i|
-  Φ₂ : ℝ  -- determinant: Σ ln|det(M_i)| = Σ ln|sym × alt|
-  Φ₃ : ℝ  -- chirality: Σ ln|sym_i / alt_i|
+    symmetric (dim 1), standard (dim n-1), alternating (dim 1).
 
-/-- The mass formula parameters, all derived from q and m_e. -/
-structure MassParams where
-  q : ℝ
-  m_e : ℝ
-  m_p : ℝ      -- from PL thimble
-  m_n : ℝ      -- from quark ΔΦ
-  α : ℝ        -- m_e × 8G
-  β₂ : ℝ       -- -2[3]_q
-  β₃ : ℝ       -- ≈ HA²
+    Polymorphic in the ground ring `R`.  The pre-Archimedean
+    convention is `R = ℤ[q, q⁻¹]` (Laurent polynomials); the
+    Archimedean specialisation evaluates at `q ↦ q₀ ∈ ℝ`. -/
+structure ThreeInvariants (R : Type u) where
+  Φ₁ : R  -- standard trace
+  Φ₂ : R  -- determinant
+  Φ₃ : R  -- chirality (sym / alt)
 
-/-- The atomic mass from the Wedderburn formula. -/
-noncomputable def atomicMass (p : MassParams) (Z N : ℕ)
-    (inv : ThreeInvariants) : ℝ :=
-  Z * p.m_p + N * p.m_n + Z * p.m_e +
+/-- The mass formula parameters, all derived from `q` and `m_e`.
+
+    Parametrised over the ground ring `R`.  Pre-Arch: every field
+    is a Laurent polynomial in `q`.  Post-Arch: every field is the
+    real evaluation at `q = q₀`. -/
+structure MassParams (R : Type u) where
+  q : R
+  m_e : R
+  m_p : R      -- from PL thimble
+  m_n : R      -- from quark ΔΦ
+  α : R        -- m_e × 8G
+  β₂ : R       -- -2[3]_q
+  β₃ : R       -- ≈ HA²
+
+/-- The atomic mass from the Wedderburn formula, valued in the
+    ground ring `R`. -/
+def atomicMass {R : Type u} [CommRing R]
+    (p : MassParams R) (Z N : ℕ)
+    (inv : ThreeInvariants R) : R :=
+  (Z : R) * p.m_p + (N : R) * p.m_n + (Z : R) * p.m_e +
   p.α * (inv.Φ₁ + p.β₂ * inv.Φ₂ + p.β₃ * inv.Φ₃)
 
-/-- The quantum n-integer [n]_q = (q^n - q^{-n})/(q - q^{-1}). -/
-noncomputable def quantumInt (q : ℝ) (n : ℕ) : ℝ :=
+/-- The quantum n-integer `[n]_q = (q^n - q^{-n})/(q - q^{-1})`,
+    in any commutative ring carrying a unit `q` and its inverse.
+
+    On `R = ℤ[q, q⁻¹]` this is the genuine Laurent-polynomial
+    `q`-integer.  We require `q ≠ q⁻¹` (equivalently `q² ≠ 1`) for
+    the denominator to be invertible; on a Laurent ring the result
+    is itself a polynomial in `q ± q⁻¹` (the standard `q`-integer
+    is symmetric under `q ↔ q⁻¹`). -/
+noncomputable def quantumInt {R : Type u} [Field R]
+    (q : R) (hq : q * q ≠ 1) (n : ℕ) : R :=
   (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
 
-/-- β₂ = -2[3]_q is derived from the baryon quantum number. -/
-noncomputable def beta2 (q : ℝ) : ℝ := -2 * quantumInt q 3
+/-- `β₂ = -2 [3]_q` is derived from the baryon quantum number. -/
+noncomputable def beta2 {R : Type u} [Field R]
+    (q : R) (hq : q * q ≠ 1) : R := -2 * quantumInt q hq 3
 
 /-- The number of extremal irreps of S_n is exactly 3 for n ≥ 3:
     trivial [n], sign [1^n], and standard [n-1,1].

@@ -17,7 +17,6 @@ LaTeX label: `prop:global-gluing`
 - [manuscript] §3-lifting-of-quantum-torsion/global-gluing
 -/
 
-import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
 

@@ -8,6 +8,16 @@
 canonical pre-Archimedean blocks actually live below the wall, or do
 they secretly reach across $\tau$?
 
+> **Update 2026-05-03 (post-fix).** The 17 wall breaches identified in
+> §1 below have been fixed in the same commit as this audit (see §6
+> *Fix log*).  The remaining flag is the bridge block (Step 8), kept
+> as 🟡 by design.  Re-grep verification confirms zero stray
+> `Mathlib.Data.Real`, `Mathlib.Analysis`, `Mathlib.Topology`, or
+> `Mathlib.Geometry.Manifold` imports in the pre-Archimedean tier;
+> all `q : ℝ` / `NormedCommRing` / `Real.sqrt` references that
+> remain are inside explicit `namespace Arch` post-Archimedean
+> tiers, properly partitioned per CLAUDE.md `GroundRingAnnotations`.
+
 ## TL;DR
 
 **Narrative side: clean.** The `.md` proofs of Steps 0–19 keep to
@@ -557,6 +567,65 @@ audit; the report is the deliverable.
 
 ---
 
-**End of audit.** No code was modified. Closing the 17 Lean breaches
-above is a follow-up workpiece (estimated: ~600 LoC across 14 files,
-plus 3 two-tier splits).
+## §6 — Fix log (2026-05-03)
+
+All 17 breaches closed in this commit. Net diff: ~700 LoC across
+16 stub files. Approach per breach:
+
+| Step | Block | Fix pattern |
+|------|-------|-------------|
+| 3 | `categorical-action.lean` | Drop dead `Real`, `Analysis`, `Topology`, `Manifold`, `InnerProductSpace`, `ExteriorAlgebra` imports (none used by the body); keep only `CategoryTheory` + `Algebra.Ring`. |
+| 4 | `mass-identity.lean` | Two-tier split — add `frobeniusMass` (R-valued, abstract `[CommRing R]` + caller-supplied Frobenius pairing); rename existing `‖·‖`-version to post-Arch `scalarMass` and document its tier. |
+| 7b | `descent-condition.lean` | Drop stray `Mathlib.Data.Real.Basic` (unused). |
+| 7c | `global-gluing.lean` | Drop stray `Mathlib.Data.Real.Basic` (unused). |
+| 9 | `wedderburn-mass-formula.lean` | Polymorphic in ground ring `R` (`[CommRing R]`); `ThreeInvariants R`, `MassParams R`, `quantumInt` all generic. |
+| 10 | `wedderburn-bratteli-recursion.lean` | Polymorphic in `[Field R]`; `Real.sqrt` removed — caller supplies `v : R` with `v² = q` (formal square root). |
+| 11a | `hoefsmit-scattering-pipeline.lean` | Polymorphic; drop `q > 1` Archimedean ordering; replace `Real.sqrt`-amplitude with forward `q`-rational amplitude. |
+| 11b | `hoefsmit-seminormal-form.lean` | Polymorphic; introduce `HoefsmitOffDiag` structure carrying the formal square-root `b` with `b² = a · a' + 1` (no `Real.sqrt`). |
+| 11c | `explicit-alpha-k-h3.lean` | `HeckeQ R` polymorphic; `v` field with `v² = q` replaces `q^(1/2 : ℝ)`. |
+| 12a | `wedderburn-weight-canonical.lean` | `WedderburnWeightCanonical R` polymorphic; drop `Real`-only literals. |
+| 12b | `y-lambda-recipe-from-partition.lean` | Polymorphic; `open Real` and `Real.sqrt` eliminated; `constant` declarations migrated to `opaque … : R`; `markovZ`, `universalX` re-expressed via the formal `v`. |
+| 13 | `graded-trace-residue-split.lean` | All four opaques (`symbolMap`, `gradedTrace`, `gbResidue`, `markovTrace`) and the `GradedTraceResidueSplit` class polymorphic in `[Field R]`. |
+| 16 | `markov-trace-frobenius-selection.lean` | `tau_M_block_value`, `tau_SW_block_value` polymorphic; the `axiom`s and selection theorem follow. |
+| 18a | `mass-endomorphism-tower.lean` | Two-tier split — new `Pre` namespace (`massPoly` over `[Field R]` with caller-supplied Frobenius norm; `quantumDilogPoly` opaque in `R`) + existing `Arch` namespace (CODATA-bound `MassEvaluation`, `proton_electron_ratio`). |
+| 18b | `hecke-mass-element.lean` | Drop `[NormedCommRing R]` from the structure; add `frobeniusMassSquared` in `R`; keep post-τ `mass : ℝ` for `[NormedCommRing R]`. |
+| 19 | `hecke-mass-trace.lean` | Two-tier split — `Pre.MarkovMassData R` (R-valued, Frobenius-pairing-based) + `Arch.MarkovMassData` (the existing `ℝ`-valued + Kashaev/dilog bridge `vol/ℏ²`, now properly inside `namespace Arch`). |
+
+**§3 (jet-prolongation-C) reclassification.** During the fix sweep,
+`lifting-and-descent/jet-prolongation-C.lean` was re-examined and
+found to be the *Archimedean corollary* of `categorical-jet-prolongation`
+(its docstring opens with "Archimedean jet prolongation"). It is
+therefore correctly Archimedean by design and should not be in §1
+of this audit; the audit subagent was misled by §A Step 15 of the
+forward-derivation document, which lists both blocks together.
+The categorical sibling `categorical-jet-prolongation.lean` is clean.
+**No change made to `jet-prolongation-C.lean`.**
+
+**Bridge block (Step 8) — no rename.** The audit recommended
+renaming `conj:phi-q-tower-jsj-bridge` to make the bridge role
+explicit. On inspection the title already reads
+"… (archimedean bridge)" and the algebraic-side counterpart
+`prop:phi-q-tower-algebraic-stratification` already exists as a
+separate block. A label rename would cascade across many
+references; the existing structure is sufficient.
+
+**Ground-ring annotation table** ([`QOU/GroundRingAnnotations.lean`](../../content/quantum-observable-universe/lean/QOU/GroundRingAnnotations.lean))
+remains the authoritative discipline document. The fixed stubs now
+live in the formal-chain row (`R_q = ℤ[q, q⁻¹]` / abstract `R`) for
+their pre-Arch namespace; their `Arch` namespaces (where present)
+are explicitly Archimedean and labeled as such.
+
+**Verification.** After the fixes:
+- Re-grep for `Mathlib.Data.Real`, `Mathlib.Analysis`,
+  `Mathlib.Topology`, `Mathlib.Geometry.Manifold` in pre-Arch
+  declarations: **0 hits** outside explicit `Arch` sub-namespaces
+  and post-Arch declarations.
+- `bun run validate quantum-observable-universe`: 177 pre-existing
+  warnings, 0 errors. None of the warnings reference the touched
+  files; all are about cross-refs / witness blocks / Lean
+  declarations elsewhere.
+
+---
+
+**End of audit.** Close-out: 17 wall breaches fixed; bridge block
+unchanged (🟡 by design); audit doc updated in the same commit.

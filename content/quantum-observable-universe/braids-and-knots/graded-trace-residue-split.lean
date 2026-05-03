@@ -13,29 +13,45 @@ where `σ` is the symbol map to the associated graded algebra and
 poles.  This is the filtered-algebra analogue of Strutinsky's
 smooth-plus-oscillating nuclear-energy decomposition.
 
+**Pre-Archimedean stub.** The opaque trace declarations were
+previously typed `q : ℝ` and `... : ℝ`; both are wall breaches
+since the Markov trace and GB residue both live in the Laurent
+ring `ℤ[q^±1]` (or, generically, in the field of fractions
+`ℚ(q)`).  We declare them polymorphic in an abstract field
+`R ⊇ ℚ(q)`.  The Archimedean evaluation `R = ℝ` at `q = q₀`
+remains downstream (per `QOU.GroundRingAnnotations`).
+
 Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `prop:graded-trace-residue-split`
 -/
 
 namespace QOU.BraidKnot
 
+universe u
+
 /-- The symbol map `σ: J^ℓ → J^ℓ/J^{ℓ+1}` on the confinement
-    filtration.  Axiomatized; full construction is downstream of
+    filtration.  Polymorphic in the ground field `R`.  Axiomatised;
+    full construction is downstream of
     `QOU.BraidKnot.ConfinementLevel`. -/
-noncomputable opaque symbolMap (ℓ : ℕ) (q : ℝ) : Unit → Unit  -- placeholder
+noncomputable opaque symbolMap {R : Type u} [Field R]
+    (ℓ : ℕ) (q : R) : Unit → Unit  -- placeholder
 
 /-- The Markov trace on the associated graded algebra `gr H_n(q)`.
-    This is the "smooth" / macroscopic piece of the trace split. -/
-noncomputable opaque gradedTrace (q : ℝ) (x : Unit) : ℝ
+    This is the "smooth" / macroscopic piece of the trace split.
+    Valued in `R`. -/
+noncomputable opaque gradedTrace {R : Type u} [Field R]
+    (q : R) (x : Unit) : R
 
 /-- The total residue contribution from GB rewriting defects at
     root-of-unity poles — the "oscillating" / shell piece of the
     trace split.  Equals the Mittag-Leffler sum in
-    `prop:gb-residue-spectral-sum`. -/
-noncomputable opaque gbResidue (q : ℝ) (x : Unit) : ℝ
+    `prop:gb-residue-spectral-sum`.  Valued in `R`. -/
+noncomputable opaque gbResidue {R : Type u} [Field R]
+    (q : R) (x : Unit) : R
 
-/-- The full Markov trace on `H_n(q)`. -/
-noncomputable opaque markovTrace (q : ℝ) (x : Unit) : ℝ
+/-- The full Markov trace on `H_n(q)`, valued in `R`. -/
+noncomputable opaque markovTrace {R : Type u} [Field R]
+    (q : R) (x : Unit) : R
 
 /-- **Graded-trace residue split.**
 
@@ -48,13 +64,15 @@ noncomputable opaque markovTrace (q : ℝ) (x : Unit) : ℝ
     is the sum of residues at root-of-unity poles (oscillating,
     Strutinsky-shell analogue).
 
+    Polymorphic in the ground field `R`.
+
     Ref: [manuscript] `conj:mass-endomorphism`. -/
-class GradedTraceResidueSplit where
-  q : ℝ
+class GradedTraceResidueSplit (R : Type u) [Field R] where
+  q : R
   element : Unit
-  smooth : ℝ  -- tr_gr(σ(element), q)
-  oscillating : ℝ  -- Res_GB(element, q)
-  total : ℝ  -- tr_M(element, q)
+  smooth : R       -- tr_gr(σ(element), q)
+  oscillating : R  -- Res_GB(element, q)
+  total : R        -- tr_M(element, q)
   split_identity :
     total = smooth + oscillating
   smooth_is_graded :
@@ -68,8 +86,8 @@ class GradedTraceResidueSplit where
     the graded trace.  This recovers the pure-descended regime.
 
     Ref: [manuscript] `prop:categorical-mass-markov`. -/
-theorem level_zero_pure_descended (S : GradedTraceResidueSplit)
-    (h : S.oscillating = 0) :
+theorem level_zero_pure_descended {R : Type u} [Field R]
+    (S : GradedTraceResidueSplit R) (h : S.oscillating = 0) :
     S.total = S.smooth := by
   rw [S.split_identity, h, add_zero]
 
@@ -80,7 +98,8 @@ theorem level_zero_pure_descended (S : GradedTraceResidueSplit)
     `rem:strutinsky-from-graded-trace`.
 
     Ref: [manuscript] §Nuclear Binding and Beta Stability. -/
-theorem strutinsky_analogue (S : GradedTraceResidueSplit) :
+theorem strutinsky_analogue {R : Type u} [Field R]
+    (S : GradedTraceResidueSplit R) :
     -- The split exists and is canonical; the physics interpretation
     -- is developed in the Physical Observations chapter.
     S.total = S.smooth + S.oscillating :=

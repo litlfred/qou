@@ -1,13 +1,26 @@
 /-!
 # QOU.Braiding.hecke_mass_trace — Mass via the Markov trace
 
-The categorical mass equals the norm of the Markov trace of the
-Hecke mass element:
+The categorical mass equals the Frobenius norm of the Markov trace
+of the Hecke mass element:
 
-  m(ϱ_β) = |tr_M(Φ_mass(β))|
+  m(ϱ_β) = ‖tr_M(Φ_mass(β))‖_F
 
 Moreover, the topological decomposition (descended + transient)
 descends to H_n(q) via the linearity of tr_M.
+
+**Two-tier split.** Per the audit
+[`docs/audits/2026-05-03-pre-archimedean-proof-audit.md`](../../../docs/audits/2026-05-03-pre-archimedean-proof-audit.md)
+§1 Step 19, the previous version typed every trace component as
+`ℝ` and used the Archimedean `|·|`.  But `tr_M : H_n(R, q) → R`
+maps into the Laurent ring; the Frobenius norm is `R`-valued, not
+`ℝ`-valued.  We split into:
+
+  - `Pre`  — formal Markov trace data over an abstract field `R`,
+    Frobenius norm `‖·‖_F` valued in `R`.
+  - `Arch` — the Archimedean realisation `R = ℝ` with `|·|`, the
+    Kashaev/dilog bridge `Vol(K)/ℏ²`, and the explicit positivity
+    hypotheses on `vol, ℏ`.
 
 LaTeX label: `prop:hecke-mass-trace`
 
@@ -18,10 +31,53 @@ LaTeX label: `prop:hecke-mass-trace`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Analysis.Normed.Group.Basic
 
 namespace QOU.Braiding
+
+/-! ## §1.  Pre-Archimedean tier (formal `R`-valued trace) -/
+
+namespace Pre
+
+universe u
+
+/-- Pre-Arch data for the Markov trace computation of mass.
+
+    Polymorphic in the ground field `R`.  Encodes the fibre-functor
+    image: the categorical trace becomes the Markov trace, and the
+    mass integrand becomes the Hecke mass element.  The Frobenius
+    norm of `tr_M(Φ_mass)` (computed in `R`, not `ℝ`) equals the
+    categorical mass. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+structure MarkovMassData (R : Type u) [Field R] where
+  /-- The Markov trace of the mass element: `tr_M(Φ_mass(β))`. -/
+  markovTrace : R
+  /-- The Markov trace of the descended component: `tr_M(Φ^desc)`. -/
+  descendedTrace : R
+  /-- The Markov trace of the transient component: `tr_M(Φ^trans)`. -/
+  transientTrace : R
+  /-- Linearity of `tr_M`:
+      `tr_M(Φ_mass) = tr_M(Φ^desc) + tr_M(Φ^trans)`. -/
+  trace_decomposition :
+    markovTrace = descendedTrace + transientTrace
+
+/-- **Pre-Arch mass via the Markov trace.**
+
+    The categorical mass-squared equals the Frobenius pairing of
+    `tr_M(Φ_mass)` with itself, valued in `R`.  Caller supplies
+    the Frobenius pairing. -/
+-- Ref: [manuscript] §4/hecke-mass-trace
+def categoricalMassSquaredFromMarkov {R : Type u} [Field R]
+    (frobeniusPairing : R → R → R)
+    (d : MarkovMassData R) : R :=
+  frobeniusPairing d.markovTrace d.markovTrace
+
+end Pre
+
+/-! ## §2.  Archimedean tier (post-τ realisation) -/
+
+namespace Arch
 
 /-! ## Mass via the Markov trace of the Hecke mass element -/
 
@@ -29,7 +85,10 @@ namespace QOU.Braiding
 
     Encodes the fibre-functor image: the categorical trace becomes
     the Markov trace, and the mass integrand becomes the Hecke mass
-    element.  The norm of tr_M(Φ_mass) equals the categorical mass. -/
+    element.  The norm of tr_M(Φ_mass) equals the categorical mass.
+
+    Per `QOU.GroundRingAnnotations`, this is the Archimedean
+    realisation; the pre-Arch declaration lives in `Pre` above. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 structure MarkovMassData where
   /-- The Markov trace of the mass element: tr_M(Φ_mass(β)). -/
@@ -86,7 +145,11 @@ theorem mass_markov_exact (d : MarkovMassData)
 /-- Compatibility with the archimedean mass formula:
     |tr_M(Φ_mass)| = Vol(K) / ℏ_q² when the Markov trace evaluates
     to the hyperbolic volume divided by the quantum Planck constant
-    squared. -/
+    squared.
+
+    This is the Kashaev/dilogarithm bridge: it explicitly applies
+    the fibre functor τ and so lives strictly in the Archimedean
+    tier (`conj:phi-q-tower-jsj-bridge`). -/
 -- Ref: [manuscript] §4/hecke-mass-trace
 theorem mass_markov_archimedean
     (d : MarkovMassData)
@@ -96,5 +159,7 @@ theorem mass_markov_archimedean
     categoricalMassFromMarkov d = vol / ℏ ^ 2 := by
   unfold categoricalMassFromMarkov
   rw [h_eval, abs_of_pos (div_pos hvol (pow_pos hℏ 2))]
+
+end Arch
 
 end QOU.Braiding

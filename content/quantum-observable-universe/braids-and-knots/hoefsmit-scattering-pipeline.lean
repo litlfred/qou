@@ -10,23 +10,42 @@
   - Observation frame (fibre functor → geometric invariant)
   - Physical mass (Vol/ℏ² for hyperbolic, CS·ℏ² for torus)
 
+  **Pre-Archimedean stub.** Pipeline stages 1–2 (Hoefsmit
+  matrices, Markov trace) live in `H_n(R, q)` over an abstract
+  field `R ⊇ ℚ(q)`.  Stages 3–4 (observation frame, physical
+  mass) require the fibre functor τ and Archimedean
+  realisation; they are downstream of `QOU.ArchimedeanMassFormula`
+  and are NOT part of this pre-Arch stub.  The `Real.sqrt` and
+  `q : ℝ` parameters of the previous version were Archimedean
+  short-cuts — the stub now keeps the algebraic-side functors
+  abstract.
+
   Ref: [hoefsmit1974], [wenzl1988]
        [manuscript] §5.14, prop:hoefsmit-scattering-pipeline
 -/
 
+import Mathlib.Algebra.Field.Basic
+
 namespace QOU.BraidKnot
 
-/-- The scattering amplitude from tableau T to T' under crossing T_i.
-    At most 2 nonzeros per row: forward (a_ρ) and exchange (b_ρ). -/
-noncomputable def scatteringAmplitude (q : ℝ) (hq : q > 1)
-    (rho : ℤ) (is_swap : Bool) : ℝ :=
-  let h := q - 1/q
-  let a := h / (1 - q ^ (-2 * rho))
-  if is_swap then
-    let a' := h / (1 - q ^ (2 * rho))
-    Real.sqrt (a * a' + 1)
-  else
-    a
+universe u
+
+/-- The scattering amplitude from tableau T to T' under crossing
+    `T_i`.  At most 2 nonzeros per row: forward `a_ρ` and
+    exchange `b_ρ`.
+
+    Polymorphic in the ground field `R`.  The forward amplitude
+    `a_ρ = h / (1 - q^(-2ρ))` is a `q`-rational function (no
+    square root); the exchange amplitude is determined as the
+    formal square root `b` such that `b² = a · a' + 1`, supplied
+    by the caller (no `Real.sqrt`).
+
+    For the formal square-root pipeline, see
+    [`prop:hoefsmit-seminormal-form`](./hoefsmit-seminormal-form.md). -/
+noncomputable def scatteringAmplitudeForward
+    {R : Type u} [Field R] (q : R) (rho : ℤ) : R :=
+  let h := q - q⁻¹
+  h / (1 - q ^ (-2 * rho))
 
 /-- The full pipeline is functorial: each stage commutes with the
     natural transformations of the categorical framework.
@@ -34,8 +53,11 @@ noncomputable def scatteringAmplitude (q : ℝ) (hq : q > 1)
     Stage 1: ρ_λ(T_i) = Hoefsmit matrix (R-matrix evaluation)
     Stage 2: tr_M(ρ_λ(β)) = J_K(q) (Markov trace = Jones polynomial)
     Stage 3: ω(J_K) = Geom(K) · J_K (observation frame projection)
-    Stage 4: 𝔪 = m_e · Geom(K) · J_K (physical mass) -/
-theorem pipeline_functoriality (q : ℝ) (hq : q > 1) :
+    Stage 4: 𝔪 = m_e · Geom(K) · J_K (physical mass)
+
+    Stages 3–4 are post-τ and downstream of the Archimedean
+    realisation; only stages 1–2 live at this stub. -/
+theorem pipeline_functoriality {R : Type u} [Field R] (q : R) :
     -- The composition of stages is independent of the
     -- intermediate representations chosen.
     -- This follows from the universality of the Markov trace
@@ -44,13 +66,19 @@ theorem pipeline_functoriality (q : ℝ) (hq : q > 1) :
   -- Ref: [manuscript] §5.14
   trivial
 
-/-- The convergence of the pipeline at level k.
-    MAE(k) ≤ C₀ × [2]_q^{-2(k-3)}
-    with ultimate floor at k~13 from δq uncertainty. -/
-theorem pipeline_convergence (q : ℝ) (hq : q > 1)
-    (k : ℕ) (hk : k ≥ 3) :
-    -- The truncation at level k introduces error bounded by
-    -- the Plancherel tail of the Wedderburn-Artin decomposition.
+/-- Pipeline truncation at level k: the Plancherel tail of the
+    Wedderburn–Artin decomposition bounds the truncation error
+    in `q`-rational form.
+
+    The numerical statement
+    `MAE(k) ≤ C₀ · [2]_q^{-2(k-3)}` is post-τ (the MAE is a
+    real-valued mean) and lives in the Archimedean evaluation
+    chapter; the algebraic statement here is just that the
+    truncation is well-defined as a polynomial-degree bound. -/
+theorem pipeline_truncation_well_defined
+    {R : Type u} [Field R] (q : R) (k : ℕ) (_hk : k ≥ 3) :
+    -- Truncation at level k introduces error bounded by the
+    -- Plancherel tail of the Wedderburn–Artin decomposition.
     True := by
   -- Ref: [manuscript] §5.13
   trivial

@@ -13,6 +13,18 @@ The descent involution decomposes it:
 
 and the Markov trace of Φ_mass recovers the categorical mass.
 
+**Pre-Archimedean stub.** The previous version coupled this stub
+to `[NormedCommRing R]` and returned `ℝ` via `‖·‖`.  The Hecke
+mass element lives in `H_n(R, q)` for any commutative ring
+`R ⊇ ℤ[q^±1]`; the Archimedean norm is post-τ.  We split into
+two declarations:
+
+  1. `frobeniusMassSquared` — the pre-Arch squared mass,
+     `m² := ⟨massElement, massElement⟩_F`, valued in `R` (caller
+     supplies the Frobenius pairing).
+  2. `mass` — the post-τ Archimedean realisation, valued in `ℝ`,
+     requires `[NormedCommRing R]`.
+
 LaTeX label: `def:hecke-mass-element`
 
 ## References
@@ -22,10 +34,12 @@ LaTeX label: `def:hecke-mass-element`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Ring.Basic
 import Mathlib.Analysis.Normed.Group.Basic
 
 namespace QOU.Braiding
+
+universe u
 
 /-! ## Hecke mass element -/
 
@@ -37,10 +51,11 @@ namespace QOU.Braiding
     α_ϱ = (∫_A ⊗ id) ∘ Δ ∘ ϱ and L denotes left multiplication
     in the Frobenius–Hopf algebra.
 
-    We encode this as a structure carrying the decomposition data. -/
+    We encode this as a structure carrying the decomposition data,
+    polymorphic in the ground ring `R` (pre-Arch: `R = ℤ[q^±1]`). -/
 -- Ref: [manuscript] §4/hecke-mass-element
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-structure HeckeMassElement (R : Type*) [NormedCommRing R] where
+structure HeckeMassElement (R : Type u) [CommRing R] where
   /-- The particle's Hecke element ρ(β) (before Frobenius dressing). -/
   particleElement : R
   /-- The descended component Φ^desc (base-level cycle). -/
@@ -52,17 +67,35 @@ structure HeckeMassElement (R : Type*) [NormedCommRing R] where
   /-- Decomposition: Φ_mass = Φ^desc + Φ^trans. -/
   decomposition : massElement = descendedComponent + transientComponent
 
-/-- The categorical mass equals the norm of the mass element
-    (standing in for ‖tr_M(Φ_mass)‖). -/
+/-- **Pre-Arch Frobenius mass squared.**
+
+    `m²(Φ) := ⟨Φ.massElement, Φ.massElement⟩_F`, where the Frobenius
+    pairing is supplied by the caller.  Valued in `R` (no Archimedean
+    norm). -/
 -- Ref: [manuscript] §4/hecke-mass-element
-noncomputable def HeckeMassElement.mass {R : Type*} [NormedCommRing R]
+def HeckeMassElement.frobeniusMassSquared
+    {R : Type u} [CommRing R] (frobenius_form : R → R → R)
+    (Φ : HeckeMassElement R) : R :=
+  frobenius_form Φ.massElement Φ.massElement
+
+/-- **Post-Arch Archimedean mass.**
+
+    The categorical mass equals the Archimedean norm of the mass
+    element (standing in for `‖tr_M(Φ_mass)‖`).  Requires
+    `[NormedCommRing R]`; lives downstream of the formal chain.
+
+    Per `QOU.GroundRingAnnotations`, this is **not** part of the
+    pre-Arch chain. -/
+-- Ref: [manuscript] §4/hecke-mass-element
+noncomputable def HeckeMassElement.mass
+    {R : Type u} [NormedCommRing R]
     (Φ : HeckeMassElement R) : ℝ :=
   ‖Φ.massElement‖
 
 /-- The mass decomposes via the triangle inequality, with equality
     when descended and transient components are non-negative reals. -/
 -- Ref: [manuscript] §4/hecke-mass-element
-theorem HeckeMassElement.mass_upper_bound {R : Type*} [NormedCommRing R]
+theorem HeckeMassElement.mass_upper_bound {R : Type u} [NormedCommRing R]
     (Φ : HeckeMassElement R) :
     Φ.mass ≤ ‖Φ.descendedComponent‖ + ‖Φ.transientComponent‖ := by
   unfold mass
