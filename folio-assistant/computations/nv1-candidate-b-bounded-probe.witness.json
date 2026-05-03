@@ -1,6 +1,6 @@
 {
   "name": "nv1-candidate-b-bounded-probe",
-  "description": "Bounded probe of NV-1 candidate (b) conj:nv-as-bring-period-rank. Verifies primality of N_v=1,445,519 and computes minimum-irrep-multiplicity-decomposition counts in three S_5-relevant dim sets. Closed-form arithmetic only; not a substitute for the Bring period-lattice machinery.",
+  "description": "Bounded probe of NV-1 candidate (b) conj:nv-as-bring-period-rank. Verifies primality of N_v=1,445,519 and computes minimum-irrep-multiplicity decompositions in three S_5-relevant dim sets. Closed-form arithmetic only; not a substitute for the Bring period-lattice machinery.",
   "computation": "candidate-b-min-coin-decomposition",
   "target": 1445519,
   "primality": {
@@ -13,9 +13,42 @@
       "mod_6": 5
     }
   },
-  "decompositions": null,
-  "verdict": "partial-probe (step 1 only: primality)",
-  "caveat": "This is a probe, not a closure. The full Bring-period-lattice machinery (Riemann period integration on y^2 = x^5 - 1) is research-grade open work and is not addressed here.",
-  "handoff": "Bring-surface period-lattice computation remains open; see docs/audits/conjecture-cones.md and the candidate-(b) entry of docs/audits/2026-05-02-nv-frob-filter-conjectures.md.",
-  "scope_note": "STRICT scope: closed-form arithmetic only, no DP arrays of size > 10^4."
+  "decompositions": {
+    "method": "Closed-form modular arithmetic. For S = {4, 5, 6}: minimise a+b+c over 4a+5b+6c = N. Substitute a = (N - 5b - 6c)/4 and observe total = (N - 2c - b)/4, so minimising count is equivalent to maximising 2c + b subject to feasibility and divisibility (b + 2c ≡ N mod 4 = 3). Push c to N//6 then adjust b in O(200) range; verified globally optimal.",
+    "S_5_dims_4_5_6_only": {
+      "dims_used": [4, 5, 6],
+      "min_count": 240920,
+      "decomposition": {"a_coeff_of_4": 0, "b_coeff_of_5": 1, "c_coeff_of_6": 240919},
+      "check": "4*0 + 5*1 + 6*240919 = 1445519",
+      "note": "S_5 has 7 irreps with dims {1,1,4,4,5,5,6} (Klein 1888). Restricting to dims >= 4 (i.e. ignoring the two trivial-dim channels) gives the same integer cone as {4, 5, 6} since duplicate dims add no new sums."
+    },
+    "S_5_x_Z2_dims_4_5_6_only": {
+      "dims_used": [4, 5, 6],
+      "min_count": 240920,
+      "decomposition": {"a_coeff_of_4": 0, "b_coeff_of_5": 1, "c_coeff_of_6": 240919},
+      "check": "4*0 + 5*1 + 6*240919 = 1445519",
+      "note": "S_5 × Z/2 has dims {1,1,1,1,4,4,4,4,5,5,5,5,6,6}. Same min-count as plain S_5 when restricting to dims >= 4."
+    },
+    "no_trivial_4_5_6": {
+      "dims_used": [4, 5, 6],
+      "min_count": 240920,
+      "decomposition": {"a_coeff_of_4": 0, "b_coeff_of_5": 1, "c_coeff_of_6": 240919},
+      "check": "4*0 + 5*1 + 6*240919 = 1445519",
+      "lower_bound": "N // 6 = 240919; min count exceeds this by exactly 1 because N mod 6 = 5, so we must replace one dim-6 with one dim-5 (cost +1, fills 5 units)."
+    },
+    "trivial_dim_lower_bound": {
+      "note": "If dim-1 channels are allowed without penalty (i.e. counting only dim->=4 multiplicities), the absolute bound is N // 6 = 240919, attained by 4a+5b+6c+e = N with e arbitrary in dim-1; but the dim-1 channel is then carrying e = 5 trivial-rep copies, which would itself be a multiplicity of 5 — and that resurfaces in any natural rank reading."
+    }
+  },
+  "verdict": "falsification-leaning probe (NOT a closure)",
+  "verdict_rationale": [
+    "N_v is prime, ruling out any non-trivial multiplicative factorisation across irrep dims.",
+    "The minimum count using {4, 5, 6} alone is 240,920 — nearly 10^6 magnitude, dominated by ~240,919 copies of the dim-6 irrep plus a single dim-5 copy, with zero dim-4 copies.",
+    "This decomposition is highly degenerate: it concentrates almost entirely on a single irrep channel.",
+    "For candidate (b) to hold, the Bring period sub-lattice would have to land on this exact unnatural multiplicity profile (one dominant channel) at the weak-place projection. While not strictly impossible, it requires fine-tuning and would itself need a structural explanation.",
+    "Threshold rule: min count > 1000 => falsification-leaning (per probe spec); 240,920 >> 1000."
+  ],
+  "caveat": "This is a probe, not a closure. 'Natural' is fuzzy — a Bring-period rank could in principle realise any specific positive integer, prime or composite, without an irrep-decomposition reading at all. The probe only weakens the candidate as an *intuitively appealing* path; it does not refute the rank-equality numerical claim itself.",
+  "handoff": "Full Bring-period-lattice machinery (Riemann period integration on y^2 = x^5 - 1) remains research-grade open work. See docs/audits/conjecture-cones.md and the candidate-(b) entry of docs/audits/2026-05-02-nv-frob-filter-conjectures.md.",
+  "scope_note": "STRICT scope: closed-form arithmetic only, no DP arrays of size > 10^4. Optimisation completed in O(200) iterations rather than O(N) DP."
 }
