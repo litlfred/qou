@@ -114,36 +114,63 @@ def residue_via_sqrt_substitution(
         if d_at_u0 != 0:
             return mpmath.mpc(0), 0
     u0 = mpmath.exp(mpmath.mpc(0, mpmath.pi) / ell)
-    # Pole-order detection: lambdify f(u) = N(u)/D(u), then walk p
-    # upward until `(u − u₀)^p · f(u)` is finite + nonzero at a tiny
-    # offset from u₀.
-    f_lam = sp.lambdify(u_sym, n_sym / d_sym, modules='mpmath')
-    eps = mpmath.mpf('1e-15')
-    u_test = u0 + eps
-    f_test = f_lam(u_test)
-    p = 1
-    for trial in range(1, max_pole_order + 1):
-        scaled = (u_test - u0) ** trial * f_test
-        # Heuristic: scaled value is "well-scaled" if magnitude is in
-        # [eps^trial · 10⁻⁵, eps^trial · 10²⁰] times the local order.
-        # Simpler: take p = first trial where |(u−u₀)^trial · f| does
-        # not blow up at eps offset.  At eps = 1e-15 a pole of order p
-        # gives |f| ~ 1/eps^p = 10^{15p}; multiplying by eps^trial
-        # gives 10^{15(p−trial)}.  When trial ≥ p this is ≤ 1.
-        if abs(scaled) < mpmath.mpf('1e10'):
-            p = trial
-            break
-    else:
-        return mpmath.mpc(0), -1
-    # Build symbolic f(u) = (u − u₀)^p · N(u) / D(u) and take the
-    # (p − 1)-th numerical derivative at u₀.
-    u0_sym = sp.exp(sp.I * sp.pi / ell)
-    f_sym = (u_sym - u0_sym) ** p * n_sym / d_sym
-    f_lam2 = sp.lambdify(u_sym, f_sym, modules='mpmath')
-    df = mpmath.diff(f_lam2, u0, p - 1)
-    res_u = df / mpmath.factorial(p - 1)
-    res_q = 2 * u0 * res_u
-    return res_q, p
+    # Cauchy contour integral in u — U(u) is *rational* (no branch
+    # cuts in u-space, unlike the original q-space), so a direct
+    # circular contour at u₀ recovers the residue exactly:
+    #
+    #     Res_{u=u₀}[U]  =  (1/2πi) ∮_{|u−u₀|=r} U(u) du
+    #                    ≈  (r/N) · Σ_k U(u₀ + r·e^{2πik/N}) · e^{2πik/N}
+    #
+    # Pole order is detected as the smallest p for which
+    # `(u-u_0)^p · U` evaluates to a finite + nonzero limit at a
+    # tiny offset, but the residue is computed via the contour
+    # average regardless of p.  We bump `mp.dps` locally so the
+    # numerical derivative survives high-pole-order Taylor coefficient
+    # extraction without precision loss.
+    # Use the chain-rule integrand `2u · U(u)` so the contour
+    # integral evaluates `(1/2πi) ∮_u 2u·U du = Res_q[tr_M]` directly.
+    # The naïve `2u₀ · Res_u[U]` shortcut is only correct for simple
+    # poles; for `p ≥ 2` the (u + u₀) factor in `q − ζ = (u−u₀)(u+u₀)`
+    # contributes lower-order Laurent terms that this formulation
+    # captures automatically.
+    integrand_sym = 2 * u_sym * (n_sym / d_sym)
+    f_lam = sp.lambdify(u_sym, integrand_sym, modules='mpmath')
+    # Work at extra precision so high-order poles don't lose digits.
+    saved_dps = mpmath.mp.dps
+    mpmath.mp.dps = max(saved_dps, 150)
+    try:
+        u0_hp = mpmath.exp(mpmath.mpc(0, mpmath.pi) / ell)
+        # Pole-order detection via |U| growth near u₀.
+        eps = mpmath.mpf('1e-20')
+        u_near = u0_hp + eps
+        f_near = abs(f_lam(u_near))
+        if f_near == 0:
+            mpmath.mp.dps = saved_dps
+            return mpmath.mpc(0), 0
+        # |U| ~ |c|/|u−u₀|^p ⇒ p ≈ log(|U|) / log(1/eps)
+        import math
+        log_eps = float(mpmath.log10(1 / eps))
+        log_f = float(mpmath.log10(f_near))
+        p_est = round(log_f / log_eps)
+        p = max(1, p_est)
+        # Cauchy contour in u-space — choose radius far from any
+        # other pole.  The other poles of U(u) are at u = 0
+        # (factor u^a) and u = ±sqrt(ζ_ℓ') for ℓ' ≠ ℓ.  Conservative
+        # radius 0.05 (closest neighbour for ℓ ≤ 12 is at distance
+        # ≥ 2 sin(π/ℓ²) ≥ 0.05 for ℓ ≤ 14).
+        r = mpmath.mpf('0.05')
+        n_samples = max(64, 16 * p)
+        total = mpmath.mpc(0)
+        for k in range(n_samples):
+            theta = 2 * mpmath.pi * k / n_samples
+            e_i_theta = mpmath.exp(mpmath.mpc(0, 1) * theta)
+            u_pt = u0_hp + r * e_i_theta
+            total += f_lam(u_pt) * e_i_theta
+        # Direct q-residue: ∮ 2u·U du = 2πi · Res_q[tr_M].
+        res_q = total * r / n_samples
+    finally:
+        mpmath.mp.dps = saved_dps
+    return mpmath.mpc(res_q), p
 
 
 def residue_via_contour(
