@@ -1,20 +1,20 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-03T11:24:36.534689+00:00",
-  "commitSha": "1923961ef7cc10c3d047beaf2c86fd14b6ea4c97",
+  "computedAt": "2026-05-03T14:09:38.440653+00:00",
+  "commitSha": "0731d87d80caddf9eea6a48dad509af06550f397",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 18,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
-  "scriptHash": "00c0edb676a7",
-  "scriptCommitSha": "aed08e67dcdc27225e6745b10835acc479a902b9",
-  "description": "Term 6 of thm:six-term-mass-formula-complete via Markov-peel symbolic tr_M(q): Σ_{ℓ≥2} Res_{q=ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ), with ℓ truncated at 6.  This evaluation is enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q; the Hoefsmit per-block path could not produce the symbolic form needed for residue extraction at A ≥ 4.",
+  "scriptHash": "1a8a2dd751a3",
+  "scriptCommitSha": "0731d87d80caddf9eea6a48dad509af06550f397",
+  "description": "Term 6 of thm:six-term-mass-formula-complete via Markov-peel symbolic tr_M(q): Σ_{ℓ≥2} Res_{q=ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ), with ℓ truncated at 4.  This evaluation is enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q; the Hoefsmit per-block path could not produce the symbolic form needed for residue extraction at A ≥ 4.",
   "contentBlock": "thm:six-term-mass-formula-complete",
   "parameters": {
     "q0": "1.1099785955541805",
-    "max_ell": 6
+    "max_ell": 4
   },
   "data": {
     "results": [
@@ -22,11 +22,11 @@
         "Z": 1,
         "N": 0,
         "A": 1,
-        "max_ell": 6,
-        "tr_M_symbolic_ops": 138,
-        "elapsed_peel_sec": 0.115,
-        "elapsed_cancel_sec": 0.047,
-        "elapsed_residues_sec": 2.2,
+        "max_ell": 4,
+        "tr_M_symbolic_ops": 75,
+        "elapsed_peel_sec": 0.086,
+        "elapsed_cancel_sec": 0.0,
+        "elapsed_residues_sec": 0.478,
         "residues": [
           {
             "ell": 2,
@@ -48,24 +48,151 @@
             "residue_symbolic": "0",
             "residue_value": "0",
             "residue_abs": "0.000000e+00"
+          }
+        ],
+        "term6_at_q0": "(1.42181537117065286944153194478 + 0.473938457056884289813843981592j)",
+        "atom": "proton"
+      },
+      {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "max_ell": 4,
+        "tr_M_symbolic_ops": 63,
+        "elapsed_peel_sec": 0.036,
+        "elapsed_cancel_sec": 0.0,
+        "elapsed_residues_sec": 0.287,
+        "residues": [
+          {
+            "ell": 2,
+            "zeta_symbolic": "-1",
+            "residue_symbolic": "4 + I",
+            "residue_value": "(4+1j)",
+            "residue_abs": "4.123106e+00"
           },
           {
-            "ell": 5,
-            "zeta_symbolic": "exp(2*I*pi/5)",
+            "ell": 3,
+            "zeta_symbolic": "exp(2*I*pi/3)",
             "residue_symbolic": "0",
             "residue_value": "0",
             "residue_abs": "0.000000e+00"
           },
           {
-            "ell": 6,
-            "zeta_symbolic": "exp(I*pi/3)",
+            "ell": 4,
+            "zeta_symbolic": "I",
             "residue_symbolic": "0",
             "residue_value": "0",
             "residue_abs": "0.000000e+00"
           }
         ],
-        "term6_at_q0": "(1.42181537117065286944153194478 + 0.473938457056884289813843981592j)",
-        "atom": "proton"
+        "term6_at_q0": "(1.89575382822753715925537592637 + 0.473938457056884289813843981592j)",
+        "atom": "neutron"
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "max_ell": 4,
+        "tr_M_symbolic_ops": 1449,
+        "elapsed_peel_sec": 0.62,
+        "elapsed_cancel_sec": 0.0,
+        "elapsed_residues_sec": 18.47,
+        "residues": [
+          {
+            "ell": 2,
+            "zeta_symbolic": "-1",
+            "residue_symbolic": "-425/2 + 3393*I/8",
+            "residue_value": "(-212.5+424.125j)",
+            "residue_abs": "4.743820e+02"
+          },
+          {
+            "ell": 3,
+            "zeta_symbolic": "exp(2*I*pi/3)",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          },
+          {
+            "ell": 4,
+            "zeta_symbolic": "I",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          }
+        ],
+        "term6_at_q0": "(-100.711922124587911585441846088 + 201.009148099251049417296578693j)",
+        "atom": "deuteron"
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "max_ell": 4,
+        "tr_M_symbolic_ops": 12164,
+        "elapsed_peel_sec": 8.788,
+        "elapsed_cancel_sec": 0.0,
+        "elapsed_residues_sec": 180.558,
+        "residues": [
+          {
+            "ell": 2,
+            "zeta_symbolic": "-1",
+            "residue_symbolic": null,
+            "residue_value": null,
+            "residue_abs": null,
+            "error": "timeout > 180s"
+          },
+          {
+            "ell": 3,
+            "zeta_symbolic": "exp(2*I*pi/3)",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          },
+          {
+            "ell": 4,
+            "zeta_symbolic": "I",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          }
+        ],
+        "term6_at_q0": "(0.0 + 0.0j)",
+        "atom": "tritium"
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "max_ell": 4,
+        "tr_M_symbolic_ops": 5420,
+        "elapsed_peel_sec": 3.765,
+        "elapsed_cancel_sec": 0.0,
+        "elapsed_residues_sec": 117.487,
+        "residues": [
+          {
+            "ell": 2,
+            "zeta_symbolic": "-1",
+            "residue_symbolic": "-164385/4 - 1186811*I/32",
+            "residue_value": "(-41096.25-37087.84375j)",
+            "residue_abs": "5.535711e+04"
+          },
+          {
+            "ell": 3,
+            "zeta_symbolic": "exp(2*I*pi/3)",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          },
+          {
+            "ell": 4,
+            "zeta_symbolic": "I",
+            "residue_symbolic": "0",
+            "residue_value": "0",
+            "residue_abs": "0.000000e+00"
+          }
+        ],
+        "term6_at_q0": "(-19477.0933158239809952621857285 - 17577.3554424418094024455621762j)",
+        "atom": "helium-3"
       }
     ]
   }
