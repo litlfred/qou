@@ -133,23 +133,27 @@ PHI_Q_MAX_K = max(200, 4 * mpmath.mp.dps)
 markov_trace_h3a = v3.markov_trace_h3a
 
 
-# Hadronic / nuclear PDG reference masses (MeV) for report only.
-# Sources: PDG 2024 / CODATA 2022.  ²H, ³H, ³He are atomic masses
-# (i.e. include electron rest mass + atomic-electron binding); the
-# distinction is < 1 keV at this precision.
-# Centralized via experimental_constants per Gemini review on PR #515:
-# proton/neutron come from there; the light-nucleus atomic masses are
-# kept here because experimental_constants doesn't yet expose them
-# (TODO: fold these into experimental_constants in a separate PR).
+# Hadronic / NUCLEAR PDG reference masses (MeV) for report only.
+# Sources: PDG 2024 / CODATA 2022.
+# CORRECTED per Gemini review on PR #515 (was mis-labelled "atomic"):
+# the values below are NUCLEAR masses (no electron clouds). Atomic
+# masses would be higher by Z·m_e (less Z-dependent electronic
+# binding, ~tens of eV — negligible at the keV level).
+# Centralized via experimental_constants for proton/neutron; the
+# light-nucleus nuclear masses are kept here because
+# experimental_constants doesn't yet expose them (TODO: fold these
+# into experimental_constants in a separate PR).
 from experimental_constants import M_P_MEV as _M_P_MEV, M_N_MEV as _M_N_MEV
-_PDG_MASS_MEV: Dict[Tuple[int, int], float] = {
-    (1, 0): _M_P_MEV,
-    (0, 1): _M_N_MEV,
-    (1, 1): 1875.612946,   # ²H deuteron (m_D)        — TODO: → experimental_constants
-    (1, 2): 2808.921136,   # ³H tritium nuclear mass  — TODO: → experimental_constants
-    (2, 1): 2808.391607,   # ³He                       — TODO: → experimental_constants
-    (2, 2): 3727.379378,   # ⁴He alpha                 — TODO: → experimental_constants
+_PDG_NUCLEAR_MASS_MEV: Dict[Tuple[int, int], float] = {
+    (1, 0): _M_P_MEV,        # bare proton
+    (0, 1): _M_N_MEV,        # free neutron
+    (1, 1): 1875.612946,     # ²H NUCLEUS (deuteron m_D)
+    (1, 2): 2808.921136,     # ³H NUCLEUS (tritium nuclear mass)
+    (2, 1): 2808.391607,     # ³He NUCLEUS
+    (2, 2): 3727.379378,     # ⁴He NUCLEUS (α particle)
 }
+# Backwards-compat alias for any earlier callers
+_PDG_MASS_MEV = _PDG_NUCLEAR_MASS_MEV
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -279,7 +283,7 @@ def tower_single_at_h3a(
 
     for i, v in enumerate(single_volumes):
         # Promote f64 → mpmath at 50 dps for Φ_q evaluation
-        v_mp = mpmath.mpf(repr(float(v)))
+        v_mp = mpmath.mpf(str(v))
         v_abs = abs(v_mp)
         if v_abs >= q_mp:
             phi = mpmath.inf
@@ -338,7 +342,7 @@ def tower_pair_at_h3a(
     diverged = False
 
     for i, vv in enumerate(pair_volumes):
-        vv_mp = mpmath.mpf(repr(float(vv)))
+        vv_mp = mpmath.mpf(str(vv))
         vv_abs = abs(vv_mp)
         if vv_abs >= q_mp:
             phi = mpmath.inf

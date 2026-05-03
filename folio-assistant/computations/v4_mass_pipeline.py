@@ -33,10 +33,10 @@ import mpmath
 mpmath.mp.dps = 50
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0
-from experimental_constants import M_E_MEV, CATALAN
-from hecke_characters import compute_mass_at_level
-import crt_markov_v4 as v4
+from q_parameter import Q as Q0  # noqa: E402
+from experimental_constants import M_E_MEV, CATALAN  # noqa: E402
+from hecke_characters import compute_mass_at_level  # noqa: E402
+import crt_markov_v4 as v4  # noqa: E402
 
 # Catalan binding-scale per prop:binding-scale-catalan; ALPHA in the
 # original hecke_core is m_e · 8·G with G = Catalan's constant.
@@ -45,13 +45,20 @@ import crt_markov_v4 as v4
 ALPHA_BIND = M_E_MEV * 8 * CATALAN  # ≈ 3.7445 MeV per categorical unit
 
 
-# Reference masses (PDG 2022 / AME)
-REFERENCE_MASSES_MEV = {
-    'proton':   (1, 0, 938.27208816),
-    'deuteron': (1, 1, 1875.61294257),  # ²H atom
-    'tritium':  (1, 2, 2808.92113298),
-    'he3':      (2, 1, 2808.39160743),
+# Reference NUCLEAR masses (PDG 2022 / AME). Per Gemini review on PR
+# #515: these are NUCLEAR masses, NOT atomic. Atomic masses would be
+# higher by Z·m_e (less the Z-dependent electronic binding ~ tens of eV).
+# Predicted masses from compute_mass_at_level are ATOMIC (Mfree includes
+# Z·m_e); compare ATOMIC vs ATOMIC by adding Z·m_e to these PDG nuclear
+# values, OR subtract Z·m_e from predicted values.
+REFERENCE_NUCLEAR_MASSES_MEV = {
+    'proton':   (1, 0, 938.27208816),       # bare proton (no electrons)
+    'deuteron': (1, 1, 1875.61294257),      # ²H nucleus
+    'tritium':  (1, 2, 2808.92113298),      # ³H nucleus
+    'he3':      (2, 1, 2808.39160743),      # ³He nucleus
 }
+# Backwards-compat alias for any earlier reader of the old name
+REFERENCE_MASSES_MEV = REFERENCE_NUCLEAR_MASSES_MEV
 
 
 def predict(Z: int, N: int) -> dict:
@@ -119,11 +126,17 @@ def main():
     print("-" * 130)
     rows = []
     v3_better = 0; v4_better = 0; tied = 0
-    for name, (Z, N, M_pdg) in REFERENCE_MASSES_MEV.items():
+    for name, (Z, N, M_pdg_nuclear) in REFERENCE_NUCLEAR_MASSES_MEV.items():
         r = predict(Z, N)
         if 'error' in r:
             print(f"{name:>10}  ERROR: {r['error']}")
             continue
+        # Convert PDG NUCLEAR → ATOMIC (add Z electrons; ignore ~eV
+        # electronic binding) so we compare predicted ATOMIC masses
+        # against atomic PDG values consistently. Per Gemini review on
+        # PR #515: predict() returns atomic, so add Z·m_e to the nuclear
+        # PDG before comparison.
+        M_pdg = M_pdg_nuclear + Z * M_E_MEV
         M_v3 = r['M_v3_MeV']
         M_v4 = r['M_v4_MeV']
         err_v3 = (M_v3 / M_pdg - 1) * 100
@@ -149,6 +162,12 @@ def main():
     print()
 
     # Q-value comparisons under both
+    # Per Gemini high-priority review on PR #515: predicted masses are ATOMIC
+    # (compute_mass_at_level adds Z·m_e to free-nucleon sum); PDG reference
+    # values are NUCLEAR. Use the right Q formula for each:
+    #   - PDG nuclear: Q = M_n_parent - M_n_daughter - m_e (electron emitted)
+    #   - Predicted atomic: Q = M_a_parent - M_a_daughter (electron is on
+    #     daughter's atom by convention; no extra m_e subtraction)
     print("Q-value comparisons (β-decay):")
     print(f"{'decay':>14} {'Q_PDG MeV':>14} {'Q_v3':>14} {'Q_v4':>14}")
     decays = [
@@ -160,11 +179,11 @@ def main():
         parent = next((r for r in rows if r['name'] == parent_name), None)
         daughter = next((r for r in rows if r['name'] == daughter_name), None)
         if parent and daughter:
-            Q_pdg_parent = REFERENCE_MASSES_MEV[parent_name][2]
-            Q_pdg_daughter = REFERENCE_MASSES_MEV[daughter_name][2]
-            Q_pdg = Q_pdg_parent - Q_pdg_daughter - M_E_MEV  # rough Q
-            Q_v3 = parent['M_v3_MeV'] - daughter['M_v3_MeV'] - M_E_MEV
-            Q_v4 = parent['M_v4_MeV'] - daughter['M_v4_MeV'] - M_E_MEV
+            Q_pdg_parent_nuc = REFERENCE_NUCLEAR_MASSES_MEV[parent_name][2]
+            Q_pdg_daughter_nuc = REFERENCE_NUCLEAR_MASSES_MEV[daughter_name][2]
+            Q_pdg = Q_pdg_parent_nuc - Q_pdg_daughter_nuc - M_E_MEV  # nuclear Q
+            Q_v3 = parent['M_v3_MeV'] - daughter['M_v3_MeV']          # atomic Q
+            Q_v4 = parent['M_v4_MeV'] - daughter['M_v4_MeV']          # atomic Q
             print(f"{label:>14} {Q_pdg:>14.4f} {Q_v3:>14.4f} {Q_v4:>14.4f}")
             Q_rows.append({'decay': label, 'Q_pdg': Q_pdg, 'Q_v3': Q_v3, 'Q_v4': Q_v4})
 
