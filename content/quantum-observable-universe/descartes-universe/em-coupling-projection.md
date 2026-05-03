@@ -185,7 +185,7 @@ $\lambda_V \cdot A$ in the mass formula.
 The full coupling receives an **exceptional divisor correction**
 from the Chern-Simons invariants of the force-carrier torus knots
 $T_{2,9}$ and $T_{3,5}$
-([EM coupling Chern-Simons](#prop:em-coupling-chern-simons)):
+([EM coupling Chern-Simons](#conj:em-coupling-chern-simons)):
 
 $$
   \frac{1}{\alpha_{\mathrm{EM}}}
@@ -212,7 +212,7 @@ capturing self-dual damping at the second jet level.  Both
 $\delta_{\mathrm{CS}}$ and $\kappa$ are **derived** from the
 Chern–Simons invariants and the Bring-surface Gram matrix — no
 free parameters are introduced
-([EM coupling Chern-Simons](#prop:em-coupling-chern-simons)).
+([EM coupling Chern-Simons](#conj:em-coupling-chern-simons)).
 
 The Chern-Simons invariants of torus knots
 $T_{m,n}$ are given by the universal formula

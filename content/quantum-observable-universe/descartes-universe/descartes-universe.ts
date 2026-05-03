@@ -213,6 +213,7 @@ export default chapter({
         "gram-kappa-spectral-interpretation",
         "chern-simons-as-knot-invariant",
         "alpha-em-gluon-octet-form",
+        "alpha-em-derivation-open-problems",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",

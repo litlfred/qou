@@ -325,7 +325,7 @@
 | [prop:feynman-categorical-trace](#prop:feynman-categorical-trace) | Feynman transition amplitude as categorical trace | Ch 4 | `QOU.FeynmanPathIntegrals.FeynmanCategoricalTrace` |
 | [prop:fiber-adjoint-involution](#prop:fiber-adjoint-involution) | Fiber--adjoint-fiber involution | Ch 2 | `QOU.FiberAdjointInvolution` |
 | [prop:fibre-functor-atlas](#prop:fibre-functor-atlas) | Fibre functors as an affine atlas with $G$-torsor transitions | Ch 2 | — |
-| [prop:em-coupling-chern-simons](#prop:em-coupling-chern-simons) | Fine structure constant with Chern-Simons correction on Bring's surface | Ch 9 | `QOU.DescartesUniverse.em_coupling_chern_simons` |
+| [conj:em-coupling-chern-simons](#conj:em-coupling-chern-simons) | Fine structure constant with Chern-Simons correction on Bring's surface | Ch 9 | `QOU.DescartesUniverse.em_coupling_chern_simons` |
 | [prop:torus-knot-generators](#prop:torus-knot-generators) | Finiteness of the $T_{m,n}$ generator set | Ch 9 | `QOU.Torsion.torus_knot_generators_finite` |
 | [prop:skein-finiteness-bound](#prop:skein-finiteness-bound) | Finiteness of the nuclear chart: the Skein polynomial zero as stability boundary | Ch 9 | `QOU.Descartes.skein_finiteness_bound` |
 | [prop:mobius-golden-fixed-points](#prop:mobius-golden-fixed-points) | Fixed points of the baryon integration-limit transformation are $1/\varphi$ and $-\varphi$ | Ch 9 | `QOU.Descartes.mobius_golden_fixed_points` |
