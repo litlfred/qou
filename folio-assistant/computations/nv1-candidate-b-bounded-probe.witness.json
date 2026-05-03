@@ -50,6 +50,6 @@
     "Threshold rule: min count > 1000 => falsification-leaning (per probe spec); 240,920 >> 1000."
   ],
   "caveat": "This is a probe, not a closure. 'Natural' is fuzzy — a Bring-period rank could in principle realise any specific positive integer, prime or composite, without an irrep-decomposition reading at all. The probe only weakens the candidate as an *intuitively appealing* path; it does not refute the rank-equality numerical claim itself.",
-  "handoff": "Full Bring-period-lattice machinery (Riemann period integration on y^2 = x^5 - 1) remains research-grade open work. See docs/audits/conjecture-cones.md and the candidate-(b) entry of docs/audits/2026-05-02-nv-frob-filter-conjectures.md.",
+  "handoff": "Full Bring-period-lattice machinery (Riemann period integration on Bring's curve — the genus-4 non-hyperelliptic curve with S_5 automorphism group, cut out by sum(x_i) = sum(x_i^2) = sum(x_i^3) = 0 in P^4) remains research-grade open work. Note: Bring's curve is NOT the genus-2 hyperelliptic Wiman curve y^2 = x^5 - 1 — those are distinct curves; only Bring's curve carries the S_5 symmetry the conjecture refers to. See docs/audits/conjecture-cones.md and the candidate-(b) entry of docs/audits/2026-05-02-nv-frob-filter-conjectures.md.",
   "scope_note": "STRICT scope: closed-form arithmetic only, no DP arrays of size > 10^4. Optimisation completed in O(200) iterations rather than O(N) DP."
 }

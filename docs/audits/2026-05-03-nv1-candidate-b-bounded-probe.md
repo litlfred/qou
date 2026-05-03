@@ -13,7 +13,8 @@
 This is a STRICT bounded probe — closed-form arithmetic only, no
 DP arrays of size $> 10^4$.  It is **not** a closure of candidate
 (b).  The full Bring-period-lattice machinery (Riemann period
-integration on $y^2 = x^5 - 1$) is research-grade open work and
+integration on Bring's curve — the genus-4 non-hyperelliptic curve
+with $S_5$ automorphism group) is research-grade open work and
 is not addressed here.
 
 The probe is sharply diagnostic: if $N_v$ is prime, then any
@@ -111,12 +112,26 @@ period-lattice machinery described in the next section.
 
 ## Handoff
 
-Full Bring-period-lattice machinery on $y^2 = x^5 - 1$ remains
-research-grade open work.  Specifically, what is needed is:
+Full Bring-period-lattice machinery on **Bring's curve** (the
+genus-4 non-hyperelliptic curve cut out by
+$\sum_{i=1}^{5} x_i = \sum_{i=1}^{5} x_i^2 = \sum_{i=1}^{5} x_i^3 = 0$
+in $\mathbb{P}^4$, whose automorphism group is $S_5$) remains
+research-grade open work.
 
-- Riemann period integration on the genus-2 hyperelliptic
-  curve $y^2 = x^5 - 1$ to extract the $S_5 \times
-  \langle\hat\tau\rangle$-stable period sub-lattice;
+Note: an earlier draft of this memo and the handoff field of the
+witness conflated Bring's curve with the genus-2 hyperelliptic
+Wiman curve $y^2 = x^5 - 1$ (Gemini PR #528 review,
+discussion_r3178224401 / r3178224403). Those are distinct: only
+Bring's curve carries the $S_5$ symmetry the conjecture refers to.
+The fix preserves the candidate's mathematical content; no probe
+result depends on the curve identity (the probe operates only on
+$S_5$-irrep dimensions, which are correct).
+
+Specifically, what is needed is:
+
+- Riemann period integration on **Bring's curve** (genus 4,
+  $S_5$-symmetric, non-hyperelliptic) to extract the
+  $S_5 \times \langle\hat\tau\rangle$-stable period sub-lattice;
 - the rank computation of the projection
   $\rho_{\rm weak}\colon \widehat{\mathcal{M}} \to
   \mathbb{Z}[q] / \Phi_{p_w^{k_w}}(q)$ at $k_w = 9$;
