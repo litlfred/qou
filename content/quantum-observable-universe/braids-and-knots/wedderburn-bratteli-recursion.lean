@@ -1,8 +1,9 @@
 /-
   Wedderburn–Bratteli recursion for Jones–Markov weights y_λ at H_n(R, q).
 
-  Statement: with z = 1/(q^(1/2) + q^(-1/2)) the Markov parameter, the
-  Jones–Markov weights satisfy a multiplicative recursion of the form
+  Statement: with z = 1/(v + v⁻¹) the Markov parameter (where v
+  is the formal square root of q, so v² = q), the Jones–Markov
+  weights satisfy a multiplicative recursion of the form
 
     y_λ^(n+1) = z · F_q(λ, μ) · y_μ^(n)
 
@@ -22,29 +23,42 @@
   so the recursion is well-defined and reproduces the y_λ tower from
   H_2 base data.
 
+  **Pre-Archimedean stub.** The recursion is stated over an
+  abstract field `R` carrying `q : R` and `v : R` with `v² = q`
+  (the formal square root of `q`).  On `R = ℚ(v)` (a Laurent
+  field over the formal `v`) every quantity is rational in `v`;
+  the Archimedean specialisation `R = ℝ` evaluating at `v = √q₀`
+  is the post-τ realisation and lives downstream
+  (`QOU.Calculations`).  Real.sqrt was removed; the formal square
+  root `v` is now an explicit parameter.
+
   Refs: prop:wedderburn-bratteli-recursion,
         prop:y-lambda-closed-form-wenzl-bridge,
         prop:hoefsmit-seminormal-form,
         thm:jones-markov-trace
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Algebra.Field.Basic
 
 namespace QOU.BraidsAndKnots
 
+universe u
+
 /-- Symmetric q-integer for ℤ exponents:
     `qIntZ q k = [k]_q = (q^k - q^(-k)) / (q - q^(-1))`.
-    Named `qIntZ` to disambiguate from existing `qInt : ℝ → ℕ → ℝ`
-    in other files; uses `zpow` for ℤ exponents to preserve algebraic
-    identities. Requires `q ≠ 0` and `q ≠ ±1` implicitly via the
-    denominator. -/
-noncomputable def qIntZ (q : ℝ) (k : ℤ) : ℝ :=
-  (q ^ k - q ^ (-k)) / (q - 1/q)
 
-/-- Markov parameter z = 1/(q^(1/2) + q^(-1/2)). -/
-noncomputable def markovZ' (q : ℝ) : ℝ :=
-  1 / (Real.sqrt q + 1 / Real.sqrt q)
+    Polymorphic in the ground field `R`.  The denominator
+    `q - q⁻¹` is required to be invertible (`q² ≠ 1`); on the
+    Laurent field `ℚ(q)` this holds as long as we work generically
+    (away from roots of unity). -/
+noncomputable def qIntZ {R : Type u} [Field R] (q : R) (k : ℤ) : R :=
+  (q ^ k - q ^ (-k)) / (q - q⁻¹)
+
+/-- Markov parameter `z = 1/(v + v⁻¹)` in terms of the formal
+    square root `v` of `q` (so `v² = q`).  No `Real.sqrt` is
+    used — `v` is supplied externally. -/
+noncomputable def markovZ' {R : Type u} [Field R] (v : R) : R :=
+  1 / (v + v⁻¹)
 
 /-- A partition (skeleton). The recursion statement below does not
     depend on internal partition structure; it carries the q-content
@@ -68,24 +82,26 @@ structure BratteliEdge where
   /-- q-content `c(λ, μ) = j - i` of the unique box in `λ \ μ`. -/
   content : ℤ
 
-/-- The Bratteli content factor F_q(c, h) = [c+1]_q / [c+h]_q in the
-    recursion `y_λ^(n+1) = z · F_q · y_μ^(n)`. -/
-noncomputable def bratteliFactor (q : ℝ) (c h : ℤ) : ℝ :=
+/-- The Bratteli content factor `F_q(c, h) = [c+1]_q / [c+h]_q` in
+    the recursion `y_λ^(n+1) = z · F_q · y_μ^(n)`. -/
+noncomputable def bratteliFactor {R : Type u} [Field R]
+    (q : R) (c h : ℤ) : R :=
   qIntZ q (c + 1) / qIntZ q (c + h)
 
-/-- A weight function `y : Partition → ℝ` satisfies the Wedderburn–
-    Bratteli recursion at parameter `q` if for every Bratteli edge
-    `e : BratteliEdge`, the next-level weight `y e.lam` equals
-    `z · F_q(c, height(λ)) · y e.mu`. -/
-def SatisfiesWedderburnBratteliRecursion
-    (q : ℝ) (y : Partition → ℝ) : Prop :=
+/-- A weight function `y : Partition → R` satisfies the Wedderburn–
+    Bratteli recursion at parameter `(q, v)` (with `v² = q`) if for
+    every Bratteli edge `e : BratteliEdge`, the next-level weight
+    `y e.lam` equals `z · F_q(c, height(λ)) · y e.mu`. -/
+def SatisfiesWedderburnBratteliRecursion {R : Type u} [Field R]
+    (q v : R) (y : Partition → R) : Prop :=
   ∀ e : BratteliEdge,
-    y e.lam = (markovZ' q) *
+    y e.lam = (markovZ' v) *
               bratteliFactor q e.content (e.lam.height : ℤ) *
               y e.mu
 
-/-- Existence: a function `y : Partition → ℝ` satisfying the
-    Wedderburn–Bratteli recursion exists at any generic q.
+/-- Existence: a function `y : Partition → R` satisfying the
+    Wedderburn–Bratteli recursion exists at any generic `q` (with
+    formal `v` such that `v² = q`).
 
     Closed with the trivial witness `y ≡ 0`: the recursion
     `y e.lam = z · F · y e.mu` is satisfied vacuously since both
@@ -103,52 +119,53 @@ def SatisfiesWedderburnBratteliRecursion
 -- Ref: prop:wedderburn-bratteli-recursion proof, [hoefsmit1974];
 -- Hoefsmit seminormal eigenvalue on per-cell idempotent + Markov property.
 theorem wedderburn_bratteli_recursion_holds
-    (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
-    ∃ y : Partition → ℝ, SatisfiesWedderburnBratteliRecursion q y :=
+    {R : Type u} [Field R] (q v : R) :
+    ∃ y : Partition → R, SatisfiesWedderburnBratteliRecursion q v y :=
   ⟨fun _ => 0, by
     intro e
-    show (0 : ℝ) = _ * _ * 0
+    show (0 : R) = _ * _ * 0
     ring⟩
 
 /-- Application: given any `y` known to satisfy the recursion, the
     edge equation follows. -/
 theorem wedderburn_bratteli_apply
-    (q : ℝ) (y : Partition → ℝ)
-    (hrec : SatisfiesWedderburnBratteliRecursion q y)
+    {R : Type u} [Field R] (q v : R) (y : Partition → R)
+    (hrec : SatisfiesWedderburnBratteliRecursion q v y)
     (e : BratteliEdge) :
-    y e.lam = (markovZ' q) *
+    y e.lam = (markovZ' v) *
               bratteliFactor q e.content (e.lam.height : ℤ) *
               y e.mu :=
   hrec e
 
 /-- Base case at H_1: the weight on the single partition `(1)` is 1.
     This anchors the recursion via tr_M(1_1) = 1. -/
-theorem y_base_case_singleton (y : Partition → ℝ)
-    (hbase : y ⟨[1]⟩ = 1) :
-    y ⟨[1]⟩ = 1 :=
+theorem y_base_case_singleton {R : Type u} [Field R] (y : Partition → R)
+    (hbase : y ⟨[1]⟩ = (1 : R)) :
+    y ⟨[1]⟩ = (1 : R) :=
   hbase
   -- Ref: [manuscript] thm:jones-markov-trace base case;
   -- H_1(R, q) = R, tr_M = identity character on V_(1).
 
-/-- Plancherel completeness at every level: Σ y_λ · d_λ = 1 where
-    d_λ = dim V_λ (hook-length formula), summed over all partitions
-    of n.  The Markov-trace normalisation tr_M(1_n) = 1 transported
+/-- Plancherel completeness at every level: `Σ y_λ · d_λ = 1` where
+    `d_λ = dim V_λ` (hook-length formula), summed over all partitions
+    of n.  The Markov-trace normalisation `tr_M(1_n) = 1` transported
     through Wedderburn, valid for any `y` arising from a Markov trace.
 
     The `parts_complete` hypothesis ensures the list `parts` contains
     every partition of `n` exactly once — without it, the partial sum
     is not guaranteed to equal 1. -/
 theorem plancherel_completeness
-    (q : ℝ) (hq : q > 0) (n : ℕ)
+    {R : Type u} [Field R] (q v : R) (n : ℕ)
     (parts : List Partition)
-    (parts_complete : ∀ λ : Partition, λ.parts.sum = n → λ ∈ parts)
-    (parts_nodup : parts.Nodup)
-    (y : Partition → ℝ) (d : Partition → ℕ)
-    (hrec : SatisfiesWedderburnBratteliRecursion q y) :
-    (parts.map (fun λ => y λ * (d λ : ℝ))).sum = 1 := by
-  sorry  -- Ref: prop:plancherel-weight-boundedness; follows from
-         -- tr_M(1_n) = 1 and Wedderburn block decomposition.
-         -- Verified empirically to <1e-15 for n=2..12 in
-         -- y-lambda-jones-markov-witness.json.
+    (_parts_complete : ∀ λ : Partition, λ.parts.sum = n → λ ∈ parts)
+    (_parts_nodup : parts.Nodup)
+    (y : Partition → R) (d : Partition → ℕ)
+    (_hrec : SatisfiesWedderburnBratteliRecursion q v y) :
+    (parts.map (fun λ => y λ * (d λ : R))).sum = (1 : R) := by
+  -- Ref: [manuscript] prop:plancherel-weight-boundedness
+  -- Follows from tr_M(1_n) = 1 and Wedderburn block decomposition.
+  -- Verified empirically to <1e-15 for n=2..12 in
+  -- y-lambda-jones-markov-witness.json.
+  sorry
 
 end QOU.BraidsAndKnots

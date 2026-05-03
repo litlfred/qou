@@ -13,15 +13,18 @@ admits a purely algebraic stratification by $|S|$:*
 $$
   \mathfrak{m}(\varrho)
   \;=\;
-  \underbrace{\bigl\lvert \mathrm{tr}_M(\rho(\beta_\emptyset))\bigr\rvert}_{\text{descended carrier}}
+  \underbrace{\bigl\| \mathrm{tr}_M(\rho(\beta_\emptyset))\bigr\|_F}_{\text{descended carrier}}
   \;+\;
-  \sum_{|S| = 1} \Phi_q\bigl(\lvert\hat V_S\rvert\bigr)
+  \sum_{|S| = 1} \Phi_q\bigl(\|\hat V_S\|_F\bigr)
   \;+\;
-  \sum_{|S| = 2} z^{2} \Phi_q\bigl(\lvert\hat V_S\rvert\bigr)
+  \sum_{|S| = 2} z^{2} \Phi_q\bigl(\|\hat V_S\|_F\bigr)
 $$
 
-*where each summand is an element of $\mathbb{Z}[q^{\pm 1/2}]$
-computed entirely within the Hecke algebra. The stratification is
+*where $\|\cdot\|_F$ denotes the **categorical Frobenius norm**
+valued in $\mathbb{Z}[q^{\pm 1/2}]$ — **not** the Archimedean
+absolute value — and each summand is an element of
+$\mathbb{Z}[q^{\pm 1/2}]$ computed entirely within the Hecke
+algebra. The stratification is
 indexed by Hecke-tower descent levels — singletons (level 1),
 adjacent and non-adjacent pairs (level 2) — not by 3-manifold pieces.
 Pentagon ascension ([mass endomorphism jet tower](#rem:mass-endomorphism-jet-tower))
@@ -36,6 +39,11 @@ GAP 8a calls for: every object on the right-hand side lives in
 $\mathbb{Z}[q^{\pm 1/2}]$, and every step of the construction is a
 Hecke-algebra operation (skein smoothing of a braid word, Markov
 trace of an element of $H_n(R, q)$, Laurent expansion in $q^{1/2}$).
+The norm $\|\cdot\|_F$ in the formula is the **Frobenius norm**
+$\|x\|_F^2 := \langle x, x\rangle_F$, valued in the ground ring;
+it is **not** the Archimedean absolute value.  Substitutions like
+$q \mapsto q_0 \in \mathbb{R}$ are post-$\tau$ and not used in any
+step of this proof.
 Three-manifold language ($S^3$, knot complement, hyperbolic volume,
 JSJ decomposition) does **not** appear on the algebraic side; it
 enters only as the τ-image of the algebraic structure under
