@@ -253,6 +253,20 @@ def evaluate(Z: int, N: int) -> dict:
     # production runs — independent path to the Family-1 Hoefsmit-bridge.
     if (Z, N) in _MARKOV_PEEL_TR_M:
         base["tr_M_at_q0_markov_peel"] = _MARKOV_PEEL_TR_M[(Z, N)]
+        # Categorical-mass-identity diagnostic for atoms with both AME
+        # and tr_M:  if  B = m_e · ρ_t · tr_M(T_w)  is the unifying
+        # closed form (post-Archimedean naming of the Family-1 Kashaev
+        # law via the volume conjecture), the implied ρ_t = B / (m_e ·
+        # tr_M) is a research input for closing GAP 4, 5.  Not a
+        # closed-form correction; published as an open observation per
+        # the 1-ppb workplan W-1 / GAP-A discussion.
+        if B_AME is not None:
+            try:
+                tr_M_float = float(_MARKOV_PEEL_TR_M[(Z, N)])
+                if tr_M_float > 0:
+                    base["rho_t_implied"] = B_AME / (M_E_MEV * tr_M_float)
+            except (TypeError, ValueError):
+                pass
     # Plan-H δρ diagnostic: per-atom empirical "true_ρ" exposing GAP-A.
     # NOT a closed-form correction (universal hypothesis falsified) —
     # documents the structural gap for the 1-ppb workplan W-1.
@@ -330,6 +344,22 @@ def main() -> int:
         print(f"  Hypothesis: universal δρ(q) — FALSIFIED (PR #512 commit 57a9ea9fd)")
         print(f"  Closure of W-1 (³He from -2.97% to ≤0.5%) requires per-atom ρ_F derivation")
         print(f"  (NOT yet available; circular if applied as a fitted correction).")
+        print()
+    rho_t_rows = [r for r in rows if r.get("rho_t_implied") is not None]
+    if rho_t_rows:
+        print("Categorical-mass-identity diagnostic (ρ_t = B / (m_e · tr_M(T_w))):")
+        print(f"  {'atom':>5} {'A':>2} {'tr_M(q_0)':>14} {'ρ_t (implied)':>16}  notes")
+        print("  " + "-" * 70)
+        for r in rho_t_rows:
+            sym = r["symbol"]
+            A = r["A"]
+            try:
+                tr_str = f"{float(r['tr_M_at_q0_markov_peel']):>14.6e}"
+            except (KeyError, TypeError, ValueError):
+                tr_str = f"{'?':>14}"
+            note = "" if r["family"] == 4 else "(family 1/2/3 anchor)"
+            print(f"  {sym:>5} {A:>2} {tr_str} {r['rho_t_implied']:>16.4f}  {note}")
+        print(f"  No closed-form ρ_t(Z, N) yet — research input for Family-4 closure (GAP 4, 5).")
         print()
     out_path = HERE / "b-over-a-v5-unified.witness.json"
     out_path.write_text(json.dumps({

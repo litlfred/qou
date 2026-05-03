@@ -1,0 +1,557 @@
+{
+  "computation": "habiro-coefficients-extended",
+  "computedAt": "2026-05-03T22:30:14.100661+00:00",
+  "description": "Cyclotomic Habiro coefficients a_m(u) of tr_M(T_w, q) for atomic braids A = 2..6 via the markov_peel symbolic-q pipeline (vs the original habiro_coefficients_atomic.py Hoefsmit-symbolic pipeline which was intractable for A ≥ 3). Each row contains the full integer expansion p(u) = Σ_m a_m(u) · (u; u)_m together with D(u) (the Markov-normalisation denominator, factored) and verification that every a_m has integer coefficients (the cyclotomic integrality witness).  Resolves the D(u) blocker noted in habiro-coefficients-interpolate.witness.json.",
+  "reference_blocks": [
+    "def:habiro-ring",
+    "prop:habiro-expansion-atomic",
+    "prop:full-pole-structure-mass-trace",
+    "thm:knot-mass-formula-unified"
+  ],
+  "engine": "python+sympy+markov_peel",
+  "results": {
+    "D (deuteron, A=2)": {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "deg_p_u": 90,
+      "shift": 0,
+      "denom_in_u": "32*u**50 + 160*u**48 + 320*u**46 + 320*u**44 + 160*u**42 + 32*u**40",
+      "denom_factored": "32*u**40*(u**2 + 1)**5",
+      "p_in_u_degree": 90,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "128",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-4416*u - 4544",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "46260*u**2 + 47700*u + 49208",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-217980*u**3 - 228864*u**2 - 240388*u - 251980",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "560123*u**4 + 599499*u**3 + 640823*u**2 + 684393*u + 730050",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-861307*u**5 - 939222*u**4 - 1022956*u**3 - 1112640*u**2 - 1208789*u - 1311566",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "821995*u**6 + 914831*u**5 + 1016472*u**4 + 1127717*u**3 + 1249171*u**2 + 1381760*u + 1526141",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-483622*u**7 - 551474*u**6 - 627219*u**5 - 712238*u**4 - 806865*u**3 - 912656*u**2 - 1030066*u - 1160859",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "165477*u**8 + 194773*u**7 + 228635*u**6 + 267476*u**5 + 312156*u**4 + 363152*u**3 + 421522*u**2 + 487885*u + 563484",
+          "deg_a_m": 8,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 9,
+          "a_m": "-27637*u**9 - 34369*u**8 - 42485*u**7 - 52182*u**6 - 63770*u**5 - 77520*u**4 - 93827*u**3 - 113026*u**2 - 135667*u - 162118",
+          "deg_a_m": 9,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 10,
+          "a_m": "787*u**10 + 1329*u**9 + 2058*u**8 + 3015*u**7 + 4257*u**6 + 5849*u**5 + 7873*u**4 + 10420*u**3 + 13604*u**2 + 17566*u + 22438",
+          "deg_a_m": 10,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 11,
+          "a_m": "216*u**11 + 260*u**10 + 294*u**9 + 333*u**8 + 355*u**7 + 382*u**6 + 374*u**5 + 367*u**4 + 298*u**3 + 221*u**2 + 36*u - 194",
+          "deg_a_m": 11,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 12,
+          "a_m": "-u**12 - 3*u**11 - 8*u**10 - 15*u**9 - 22*u**8 - 34*u**7 - 41*u**6 - 58*u**5 - 73*u**4 - 91*u**3 - 123*u**2 - 143*u - 187",
+          "deg_a_m": 12,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "timings_sec": {
+        "symbolic_trace": 2.22,
+        "together": 0.1,
+        "to_u_poly": 0.26,
+        "cyclotomic": 0.39,
+        "reconstruction_check": 0.5
+      },
+      "sympy_ops_raw": 1449
+    },
+    "T (triton, A=3)": {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "deg_p_u": 138,
+      "shift": 0,
+      "denom_in_u": "128*u**77 + 1024*u**75 + 3584*u**73 + 7168*u**71 + 8960*u**69 + 7168*u**67 + 3584*u**65 + 1024*u**63 + 128*u**61",
+      "denom_factored": "128*u**61*(u**2 + 1)**8",
+      "p_in_u_degree": 138,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "1024",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-50176*u - 50176",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "750240*u**2 + 766912*u + 783264",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-5190400*u**3 - 5374240*u**2 - 5557344*u - 5749376",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "19686902*u**4 + 20652846*u**3 + 21656310*u**2 + 22692468*u + 23767506",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-44808838*u**5 - 47702156*u**4 - 50745162*u**3 - 53938224*u**2 - 57292628*u - 60806822",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "63934334*u**6 + 69177776*u**5 + 74773982*u**4 + 80743311*u**3 + 87103373*u**2 + 93877022*u + 101081642",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-57309475*u**7 - 63230943*u**6 - 69669149*u**5 - 76652697*u**4 - 84227834*u**3 - 92427275*u**2 - 101302087*u - 110889135",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "30302728*u**8 + 34403785*u**7 + 38958868*u**6 + 44015048*u**5 + 49613208*u**4 + 55806140*u**3 + 62642841*u**2 + 70183099*u + 78483278",
+          "deg_a_m": 8,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 9,
+          "a_m": "-6907668*u**9 - 8450066*u**8 - 10228055*u**7 - 12275969*u**6 - 14619922*u**5 - 17302045*u**4 - 20353450*u**3 - 23824557*u**2 - 27753884*u - 32199975",
+          "deg_a_m": 9,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 10,
+          "a_m": "-1517376*u**10 - 1391340*u**9 - 1207560*u**8 - 957073*u**7 - 625289*u**6 - 200266*u**5 + 336229*u**4 + 1000226*u**3 + 1813882*u**2 + 2798630*u + 3981693",
+          "deg_a_m": 10,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 11,
+          "a_m": "1433032*u**11 + 1568619*u**10 + 1710675*u**9 + 1856562*u**8 + 2006355*u**7 + 2156671*u**6 + 2306182*u**5 + 2450950*u**4 + 2587905*u**3 + 2712146*u**2 + 2818360*u + 2900504",
+          "deg_a_m": 11,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 12,
+          "a_m": "-355694*u**12 - 410510*u**11 - 472400*u**10 - 541841*u**9 - 619274*u**8 - 705821*u**7 - 801527*u**6 - 907751*u**5 - 1024363*u**4 - 1152836*u**3 - 1292700*u**2 - 1445514*u - 1610301",
+          "deg_a_m": 12,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 13,
+          "a_m": "31311*u**13 + 38872*u**12 + 47674*u**11 + 58206*u**10 + 70689*u**9 + 85441*u**8 + 102678*u**7 + 123095*u**6 + 146548*u**5 + 174117*u**4 + 205636*u**3 + 242265*u**2 + 284112*u + 332203",
+          "deg_a_m": 13,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 14,
+          "a_m": "134*u**14 - 66*u**13 - 355*u**12 - 723*u**11 - 1206*u**10 - 1896*u**9 - 2614*u**8 - 3838*u**7 - 5066*u**6 - 7022*u**5 - 9201*u**4 - 12020*u**3 - 15639*u**2 - 19657*u - 25125",
+          "deg_a_m": 14,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 15,
+          "a_m": "-30*u**15 - 54*u**14 - 88*u**13 - 113*u**12 - 144*u**11 - 161*u**10 - 171*u**9 - 209*u**8 - 202*u**7 - 271*u**6 - 276*u**5 - 308*u**4 - 354*u**3 - 288*u**2 - 343*u - 216",
+          "deg_a_m": 15,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 16,
+          "a_m": "u**2 + 4*u + 13",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "timings_sec": {
+        "symbolic_trace": 3.84,
+        "together": 0.75,
+        "to_u_poly": 1.79,
+        "cyclotomic": 0.74,
+        "reconstruction_check": 1.36
+      },
+      "sympy_ops_raw": 12164
+    },
+    "³He (helion, A=3)": {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "deg_p_u": 132,
+      "shift": 0,
+      "denom_in_u": "128*u**74 + 1024*u**72 + 3584*u**70 + 7168*u**68 + 8960*u**66 + 7168*u**64 + 3584*u**62 + 1024*u**60 + 128*u**58",
+      "denom_factored": "128*u**58*(u**2 + 1)**8",
+      "p_in_u_degree": 132,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "1024",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-54784*u - 55808",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "917260*u**2 + 935204*u + 953808",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-7090156*u**3 - 7311352*u**2 - 7539740*u - 7769836",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "30369016*u**4 + 31700284*u**3 + 33073081*u**2 + 34490712*u + 35951563",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-79448087*u**5 - 83975061*u**4 - 88707770*u**3 - 93650392*u**2 - 98812194*u - 104198198",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "134194690*u**6 + 143719212*u**5 + 153805848*u**4 + 164482872*u**3 + 175775603*u**2 + 187714222*u + 200326061",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-150677606*u**7 - 163647628*u**6 - 177574715*u**5 - 192526623*u**4 - 208557189*u**3 - 225740489*u**2 - 244136020*u - 263824784",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "113414535*u**8 + 125080237*u**7 + 137803941*u**6 + 151665109*u**5 + 166755011*u**4 + 183163505*u**3 + 200994024*u**2 + 220348234*u + 241342744",
+          "deg_a_m": 8,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 9,
+          "a_m": "-56542775*u**9 - 63466408*u**8 - 71147023*u**7 - 79656817*u**6 - 89075571*u**5 - 99487616*u**4 - 110986537*u**3 - 123670392*u**2 - 137648727*u - 153035210",
+          "deg_a_m": 9,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 10,
+          "a_m": "17972206*u**10 + 20611832*u**9 + 23599966*u**8 + 26977267*u**7 + 30789187*u**6 + 35085301*u**5 + 39920649*u**4 + 45355515*u**3 + 51456025*u**2 + 58295157*u + 65952253",
+          "deg_a_m": 10,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 11,
+          "a_m": "-3346869*u**11 - 3952564*u**10 - 4657058*u**9 - 5473305*u**8 - 6418816*u**7 - 7510096*u**6 - 8769151*u**5 - 10217157*u**4 - 11881433*u**3 - 13789037*u**2 - 15973771*u - 18469909",
+          "deg_a_m": 11,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 12,
+          "a_m": "295720*u**12 + 367759*u**11 + 454751*u**10 + 559950*u**9 + 686093*u**8 + 837506*u**7 + 1018037*u**6 + 1233240*u**5 + 1488540*u**4 + 1790990*u**3 + 2147990*u**2 + 2568736*u + 3062903",
+          "deg_a_m": 12,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 13,
+          "a_m": "-3377*u**13 - 5848*u**12 - 9360*u**11 - 13917*u**10 - 20052*u**9 - 27986*u**8 - 38234*u**7 - 51399*u**6 - 68011*u**5 - 89029*u**4 - 115254*u**3 - 147936*u**2 - 188334*u - 238115",
+          "deg_a_m": 13,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 14,
+          "a_m": "-594*u**14 - 706*u**13 - 864*u**12 - 984*u**11 - 1171*u**10 - 1320*u**9 - 1492*u**8 - 1622*u**7 - 1724*u**6 - 1720*u**5 - 1658*u**4 - 1358*u**3 - 935*u**2 - 100*u + 1017",
+          "deg_a_m": 14,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 15,
+          "a_m": "u**12 + 4*u**11 + 12*u**10 + 27*u**9 + 47*u**8 + 77*u**7 + 106*u**6 + 145*u**5 + 191*u**4 + 236*u**3 + 316*u**2 + 379*u + 488",
+          "deg_a_m": 12,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "timings_sec": {
+        "symbolic_trace": 3.1,
+        "together": 0.36,
+        "to_u_poly": 1.09,
+        "cyclotomic": 0.64,
+        "reconstruction_check": 1.34
+      },
+      "sympy_ops_raw": 5420
+    },
+    "⁴He (alpha, A=4)": {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "deg_p_u": 180,
+      "shift": 0,
+      "denom_in_u": "512*u**101 + 5632*u**99 + 28160*u**97 + 84480*u**95 + 168960*u**93 + 236544*u**91 + 236544*u**89 + 168960*u**87 + 84480*u**85 + 28160*u**83 + 5632*u**81 + 512*u**79",
+      "denom_factored": "512*u**79*(u**2 + 1)**11",
+      "p_in_u_degree": 180,
+      "habiro_coefficients": [
+        {
+          "m": 0,
+          "a_m": "8192",
+          "deg_a_m": 0,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 1,
+          "a_m": "-557056*u - 557056",
+          "deg_a_m": 1,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 2,
+          "a_m": "11831584*u**2 + 12017280*u + 12200032",
+          "deg_a_m": 2,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 3,
+          "a_m": "-118415296*u**3 - 121325792*u**2 - 124239712*u - 127242176",
+          "deg_a_m": 3,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 4,
+          "a_m": "662944828*u**4 + 685482234*u**3 + 708599744*u**2 + 732265398*u + 756529972",
+          "deg_a_m": 4,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 5,
+          "a_m": "-2284291724*u**5 - 2385644600*u**4 - 2490552018*u**3 - 2599049842*u**2 - 2711289592*u - 2827294556",
+          "deg_a_m": 5,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 6,
+          "a_m": "5123335616*u**6 + 5408214581*u**5 + 5706104263*u**4 + 6017488719*u**3 + 6342827105*u**2 + 6682633409*u + 7037384797",
+          "deg_a_m": 6,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 7,
+          "a_m": "-7712012735*u**7 - 8236154295*u**6 - 8790566516*u**5 - 9376571237*u**4 - 9995760996*u**3 - 10649567275*u**2 - 11339690916*u - 12067680569",
+          "deg_a_m": 7,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 8,
+          "a_m": "7869440632*u**8 + 8515193522*u**7 + 9206767510*u**6 + 9946982800*u**5 + 10738677371*u**4 + 11584944160*u**3 + 12488916858*u**2 + 13453984548*u + 14483591886",
+          "deg_a_m": 8,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 9,
+          "a_m": "-5372329815*u**9 - 5905256611*u**8 - 6484302905*u**7 - 7112998137*u**6 - 7794932037*u**5 - 8534096987*u**4 - 9334540236*u**3 - 10200764232*u**2 - 11137326702*u - 12149287349",
+          "deg_a_m": 9,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 10,
+          "a_m": "2325330571*u**10 + 2611568373*u**9 + 2928309923*u**8 + 3278345449*u**7 + 3664750663*u**6 + 4090775610*u**5 + 4559994618*u**4 + 5076185220*u**3 + 5643482951*u**2 + 6266265944*u + 6949307369",
+          "deg_a_m": 10,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 11,
+          "a_m": "-531623828*u**11 - 622680024*u**10 - 726261275*u**9 - 843858085*u**8 - 977052810*u**7 - 1127637241*u**6 - 1297532651*u**5 - 1488882599*u**4 - 1704005156*u**3 - 1945460215*u**2 - 2216027017*u - 2518753260",
+          "deg_a_m": 11,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 12,
+          "a_m": "-520913*u**12 + 10730035*u**11 + 24666994*u**10 + 41721762*u**9 + 62397584*u**8 + 87248321*u**7 + 116911147*u**6 + 152092233*u**5 + 193593440*u**4 + 242303412*u**3 + 299230139*u**2 + 365480145*u + 442314206",
+          "deg_a_m": 12,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 13,
+          "a_m": "34589821*u**13 + 37150899*u**12 + 39693488*u**11 + 42175784*u**10 + 44526868*u**9 + 46684362*u**8 + 48544574*u**7 + 50015902*u**6 + 50954052*u**5 + 51225725*u**4 + 50637243*u**3 + 48997581*u**2 + 46052279*u + 41534279",
+          "deg_a_m": 13,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 14,
+          "a_m": "-8489726*u**14 - 9647022*u**13 - 10933544*u**12 - 12358606*u**11 - 13932111*u**10 - 15664544*u**9 - 17563803*u**8 - 19640398*u**7 - 21899497*u**6 - 24350324*u**5 - 26993712*u**4 - 29835793*u**3 - 32871096*u**2 - 36098745*u - 39506374",
+          "deg_a_m": 14,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 15,
+          "a_m": "768310*u**15 + 919857*u**14 + 1095463*u**13 + 1301766*u**12 + 1539922*u**11 + 1817256*u**10 + 2136416*u**9 + 2505369*u**8 + 2928390*u**7 + 3413752*u**6 + 3968364*u**5 + 4599840*u**4 + 5318781*u**3 + 6132318*u**2 + 7053409*u + 8091154",
+          "deg_a_m": 15,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 16,
+          "a_m": "-14076*u**16 - 19780*u**15 - 26407*u**14 - 35764*u**13 - 46314*u**12 - 60704*u**11 - 77506*u**10 - 98795*u**9 - 124893*u**8 - 156038*u**7 - 195038*u**6 - 240594*u**5 - 296975*u**4 - 363091*u**3 - 443229*u**2 - 537491*u - 650398",
+          "deg_a_m": 16,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 17,
+          "a_m": "-606*u**17 - 624*u**16 - 723*u**15 - 804*u**14 - 858*u**13 - 1046*u**12 - 954*u**11 - 1109*u**10 - 966*u**9 - 849*u**8 - 795*u**7 - 269*u**6 - 22*u**5 + 941*u**4 + 2028*u**3 + 3705*u**2 + 6155*u + 9327",
+          "deg_a_m": 17,
+          "integral": true,
+          "remainder_nonzero": false
+        },
+        {
+          "m": 18,
+          "a_m": "u**9 + 5*u**8 + 18*u**7 + 48*u**6 + 100*u**5 + 182*u**4 + 275*u**3 + 378*u**2 + 469*u + 525",
+          "deg_a_m": 9,
+          "integral": true,
+          "remainder_nonzero": false
+        }
+      ],
+      "all_integral": true,
+      "reconstruction_matches": true,
+      "timings_sec": {
+        "symbolic_trace": 20.19,
+        "together": 2.19,
+        "to_u_poly": 5.66,
+        "cyclotomic": 1.14,
+        "reconstruction_check": 2.45
+      },
+      "sympy_ops_raw": 38840
+    }
+  }
+}
