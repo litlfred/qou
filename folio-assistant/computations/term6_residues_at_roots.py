@@ -4,25 +4,54 @@ Term 6 of the six-term mass formula via Markov-peel symbolic `tr_M(q)`.
 
 `thm:six-term-mass-formula-complete` defines
 
-    Term 6  =  Σ_{ℓ ≥ 2}  Res_{q = ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ)
+    Term 6  =  Σ_{ζ ≠ 0, root of unity}  PP_ζ[tr_M(T_w)] (q₀)
 
-where ζ_ℓ = exp(2πi / ℓ) is a primitive ℓ-th root of unity and the
-sum runs over the simple poles of `tr_M(T_w)` in q (per
-`prop:full-pole-structure-mass-trace`, the Markov trace of any atomic
-braid is meromorphic in q with simple poles at every primitive root
-of unity).
+i.e. the sum of all principal-part contributions of the meromorphic
+function `tr_M(T_w, q)` at non-zero roots of unity, evaluated at
+q₀.  This module computes Term 6 by **partial-fraction split** on
+the u-plane lift `tr_M(u²)`, separating
 
-This module is the production evaluator for Term 6.  It hangs off
-`markov_peel.tr_M_atomic`, which returns the symbolic tr_M(q) as a
-sympy expression — `sympy.residue` then extracts each pole residue
-exactly, with zero numerical drift.
+    tr_M(u²) = entire(u) + PP_0(u) + PP_roots(u)
 
-Pre-recursive-ascent (i.e. with the Hoefsmit + Wenzl path) Term 6
-was effectively unreachable: building tr_M(q) symbolically required
-multiplying dim-462 sympy matrices through the braid, which is the
-bottleneck that motivated #508.  The recursive-ascent path returns
-a symbolic rational function in q in seconds–minutes per atom,
-making Term 6 a one-line residue extraction.
+at u = u₀ = √q₀.  The Term 6 value is `PP_roots(u₀)`.
+
+Why u-plane, why partial-fraction split:
+
+  1. **u-plane** removes the q-plane branch ambiguity at q = ±1.
+     Markov traces of atomic braids carry (q^{1/2} + q^{-1/2})
+     factors, so they are single-valued in u (where u² = q) but
+     only sheet-valued in q.  A naive q-plane residue at q = -1
+     returns 3 + I (proton; sheet-dependent) instead of the real
+     Mittag-Leffler residue.
+
+  2. **PP split** isolates the "Term 6" part from two confounders:
+       - The polynomial part `entire(u)` — has no poles.
+       - The principal part `PP_0` at u = 0 — physical pole at
+         q = 0 from the (q^{n}, q^{-n}) Hecke generators, but
+         **not** part of the Term 6 root-of-unity sum.
+
+     The split is computed in O(deg(N) + deg(D)) sympy ops via
+     polynomial long division and one power-series inversion of
+     the non-zero-pole denominator factor.  No per-pole residue
+     extraction is needed (the prior `sp.residue` path scaled
+     polynomially in atom size and timed out at deuteron).
+
+Performance vs. the previous per-pole `sp.residue` path, then with
+the LaurentQ-coefficient Markov-peel fast path:
+
+  | atom    | sp.residue | partial-fraction split | + LaurentQ fast peel |
+  |---------|-----------:|-----------------------:|---------------------:|
+  | proton  |       30 s |                 0.42 s |                0.1 s |
+  | neutron |       30 s |                 0.31 s |                0.1 s |
+  | deuteron|    > 30min |                  8.1 s |                0.6 s |
+  | tritium |    > 30min |                 12.0 s |                3.7 s |
+  | helium-3|    > 30min |                  5.6 s |                2.1 s |
+  | helium-4|    > 30min |                 50.5 s |               17.0 s |
+
+That's a ~100× speedup at A = 1, unlocks A ≥ 2 entirely, and a
+further 3-8× from routing the symbolic Markov peel through
+`hecke_laurent_fast.tr_M_atomic_fast` (LaurentQ coefficients
+instead of generic sympy `Expr`).
 
 Witness:  term6-residues-at-roots.witness.json
 Reference: thm:six-term-mass-formula-complete (Term 6),
@@ -30,12 +59,12 @@ Reference: thm:six-term-mass-formula-complete (Term 6),
 
 Usage:
     python folio-assistant/computations/term6_residues_at_roots.py
-    python folio-assistant/computations/term6_residues_at_roots.py --max-ell 12
+    python folio-assistant/computations/term6_residues_at_roots.py \
+        --atoms proton,neutron,deuteron,tritium,helium-3,helium-4
 """
 from __future__ import annotations
 
 import argparse
-import signal
 import sys
 import time
 from pathlib import Path
@@ -43,10 +72,15 @@ from pathlib import Path
 import sympy as sp
 import mpmath
 
+# Power-series inversion via sp.series can blow Python's default
+# recursion ceiling on the larger u-plane rationals; the bump matches
+# the kahler_lift fix in this same series.
+sys.setrecursionlimit(20000)
+
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from markov_peel import tr_M_atomic                      # noqa: E402
+from hecke_laurent_fast import tr_M_atomic_fast as tr_M_atomic  # noqa: E402
 from hecke_symbolic import q as q_sym                     # noqa: E402
 from q_parameter import Q as Q0                           # noqa: E402
 from witness_base import WitnessBuilder                   # noqa: E402
@@ -55,9 +89,6 @@ from witness_base import WitnessBuilder                   # noqa: E402
 mpmath.mp.dps = 50
 
 
-# Atom spectrum.  Beyond ⁴He the symbolic tr_M(q) has thousands of
-# polynomial terms, and `sp.residue` slows; default is the cheap
-# spectrum.  --include-li adds ⁵Li (and could be extended).
 ATOMS_DEFAULT = [
     ("proton",   1, 0),
     ("neutron",  0, 1),
@@ -65,424 +96,247 @@ ATOMS_DEFAULT = [
     ("tritium",  1, 2),
     ("helium-3", 2, 1),
     ("helium-4", 2, 2),
+    ("lithium-5", 3, 2),
+    ("lithium-6", 3, 3),
 ]
 
 
-def residue_via_sqrt_substitution(
-    tr_sym, ell: int, *, max_pole_order: int = 20
-) -> tuple[mpmath.mpc, int]:
-    """Residue of `tr_M(q)` at `q = ζ_ℓ` via `u = sqrt(q)` substitution.
+u_sym = sp.Symbol("u")
 
-    Substituting `q = u²`, the Markov trace becomes a *rational*
-    function `U(u) = N(u)/D(u)` in `u` (no nested `sqrt(q)` /
-    `1/sqrt(q)` factors).  Empirically the denominator factors as
 
-        D(u)  =  c · u^a · (u² + 1)^b        (proton: a=11, b=2;
-                                              tritium: a=61, b=8;
-                                              ⁴He: a=…)
+def lift_q_to_u(tr_sym, q, u):
+    """Replace q^(k/2) with u^k everywhere in `tr_sym`.
 
-    so the *only* pole is at `u = ±i ⇔ q = ζ_2 = −1`; for `ℓ ≥ 3`
-    the residue is identically zero.  This routine short-circuits
-    `ℓ ≥ 3` and computes the `ℓ = 2` residue via Taylor expansion
-    of `f(u) := (u − u₀)^p · U(u)` at `u₀ = i`, where `p` is the
-    pole order in `u` (= numerator-zero-order at `u₀` minus
-    `b`).  Detection uses successive numerical samples; the
-    formula
+    Avoids `sp.powdenest(force=True)` which is the wall here:
+    powdenest scans every Pow node in the (10 000+-op) Markov-trace
+    expression and rewrites the half-integer-q-power patterns, taking
+    72 s on tritium and ~290 s on ⁴He.  Direct replacement of q^(k/2)
+    via two `Expr.replace` calls runs in <1 s on the same inputs.
 
-        Res_{u=u₀}[U]  =  (1/(p−1)!) · d^{p−1} f / du^{p−1}  |_{u=u₀}
+    Steps:
+      1. `tr.replace(sqrt(q), u)` — catches the `q^(1/2)` Pow nodes
+         that come from the (q^{1/2} + q^{-1/2}) Markov-trace
+         denominators directly.
+      2. `tr.replace(<any Pow with base q>, ...)` — lifts the
+         remaining integer powers `q^k → u^(2k)` and any leftover
+         half-integer powers `q^(p/2) → u^p`.
+      3. Final `subs(q, u**2)` — covers any bare-q occurrences (rare
+         after step 2 but cheap).
 
-    follows from Cauchy's higher-pole residue formula.  Finally,
-
-        Res_{q=ζ_ℓ}[tr_M]  =  2 u₀ · Res_{u=u₀}[U]
-
-    by the chain rule (`q − ζ_ℓ = (u − u₀)(u + u₀)` near `u = u₀`).
-
-    On tritium this evaluates `ζ_2` in ~3 s where the in-`q`
-    `sp.cancel(N(ζ)/D'(ζ))` path didn't terminate at 600 s.
-
-    Returns `(residue, pole_order)`.  For `ℓ ≥ 3` returns
-    `(mpc(0), 0)` after a fast denominator check.
+    The branch implicitly chosen is `√q = u` on the principal sheet
+    of u₀ = +√q₀, matching `compute_atom`.
     """
-    u_sym = sp.Symbol('u', positive=True)
-    U = tr_sym.subs(sp.sqrt(q_sym), u_sym).subs(q_sym, u_sym ** 2)
-    Ut = sp.together(U)
-    n_sym, d_sym = sp.fraction(Ut)
-    # Short-circuit for ℓ ≥ 3: the empirical D(u) = c · u^a · (u² + 1)^b
-    # has no zero at u₀ = exp(iπ/ℓ) unless u₀² = −1 ⇔ ℓ = 2.
-    if ell != 2:
-        u0_sym = sp.exp(sp.I * sp.pi / ell)
-        d_at_u0 = sp.simplify(d_sym.subs(u_sym, u0_sym))
-        if d_at_u0 != 0:
-            return mpmath.mpc(0), 0
-    u0 = mpmath.exp(mpmath.mpc(0, mpmath.pi) / ell)
-    # Cauchy contour integral in u — U(u) is *rational* (no branch
-    # cuts in u-space, unlike the original q-space), so a direct
-    # circular contour at u₀ recovers the residue exactly:
-    #
-    #     Res_{u=u₀}[U]  =  (1/2πi) ∮_{|u−u₀|=r} U(u) du
-    #                    ≈  (r/N) · Σ_k U(u₀ + r·e^{2πik/N}) · e^{2πik/N}
-    #
-    # Pole order is detected as the smallest p for which
-    # `(u-u_0)^p · U` evaluates to a finite + nonzero limit at a
-    # tiny offset, but the residue is computed via the contour
-    # average regardless of p.  We bump `mp.dps` locally so the
-    # numerical derivative survives high-pole-order Taylor coefficient
-    # extraction without precision loss.
-    # Use the chain-rule integrand `2u · U(u)` so the contour
-    # integral evaluates `(1/2πi) ∮_u 2u·U du = Res_q[tr_M]` directly.
-    # The naïve `2u₀ · Res_u[U]` shortcut is only correct for simple
-    # poles; for `p ≥ 2` the (u + u₀) factor in `q − ζ = (u−u₀)(u+u₀)`
-    # contributes lower-order Laurent terms that this formulation
-    # captures automatically.
-    integrand_sym = 2 * u_sym * (n_sym / d_sym)
-    f_lam = sp.lambdify(u_sym, integrand_sym, modules='mpmath')
-    # Work at extra precision so high-order poles don't lose digits.
-    saved_dps = mpmath.mp.dps
-    mpmath.mp.dps = max(saved_dps, 150)
-    try:
-        u0_hp = mpmath.exp(mpmath.mpc(0, mpmath.pi) / ell)
-        # Pole-order detection via |U| growth near u₀.
-        eps = mpmath.mpf('1e-20')
-        u_near = u0_hp + eps
-        f_near = abs(f_lam(u_near))
-        if f_near == 0:
-            mpmath.mp.dps = saved_dps
-            return mpmath.mpc(0), 0
-        # |U| ~ |c|/|u−u₀|^p ⇒ p ≈ log(|U|) / log(1/eps)
-        log_eps = float(mpmath.log10(1 / eps))
-        log_f = float(mpmath.log10(f_near))
-        p_est = round(log_f / log_eps)
-        p = max(1, p_est)
-        # Cauchy contour in u-space — choose radius far from any
-        # other pole.  The other poles of U(u) are at u = 0
-        # (factor u^a) and u = ±sqrt(ζ_ℓ') for ℓ' ≠ ℓ.  Conservative
-        # radius 0.05 (closest neighbour for ℓ ≤ 12 is at distance
-        # ≥ 2 sin(π/ℓ²) ≥ 0.05 for ℓ ≤ 14).
-        r = mpmath.mpf('0.05')
-        n_samples = max(64, 16 * p)
-        total = mpmath.mpc(0)
-        for k in range(n_samples):
-            theta = 2 * mpmath.pi * k / n_samples
-            e_i_theta = mpmath.exp(mpmath.mpc(0, 1) * theta)
-            u_pt = u0_hp + r * e_i_theta
-            total += f_lam(u_pt) * e_i_theta
-        # Direct q-residue: ∮ 2u·U du = 2πi · Res_q[tr_M].
-        res_q = total * r / n_samples
-    finally:
-        mpmath.mp.dps = saved_dps
-    return mpmath.mpc(res_q), p
+    out = tr_sym.replace(sp.sqrt(q), u)
+
+    def is_q_pow(node):
+        return isinstance(node, sp.Pow) and node.base == q
+
+    def transform(node):
+        e = node.exp
+        if e.is_Rational:
+            if e.q == 1:           # q^k       → u^(2k)
+                return u ** (2 * e.p)
+            if e.q == 2:           # q^(p/2)   → u^p
+                return u ** e.p
+        return node
+
+    out = out.replace(is_q_pow, transform)
+    out = out.subs(q, u**2)
+    return out
 
 
-def residue_via_contour(
-    tr_sym, ell: int, *, radius: float = 0.05, n_samples: int = 64
-) -> mpmath.mpc:
-    """Numerical residue via Cauchy contour integral.
+def power_series_invert(D_poly, u, k):
+    """Return polynomial `I` of degree < k with `D · I ≡ 1 (mod u^k)`.
 
-    **Caveat — branch cuts:**  the Markov trace `tr_M(q)` produced
-    by `markov_peel.tr_M_atomic` contains factors of `sqrt(q)` (the
-    Hecke-algebra parameter is technically the square root of `q`).
-    A naïve circular contour at `q = ζ_ℓ` crosses the principal
-    branch cut of `sqrt(q)` whenever `Re(ζ_ℓ) < 0` — most
-    significantly at ζ_2 = −1.  For such cases the contour result
-    is *not* the residue but a branch-cut-distorted average; use
-    the symbolic l'Hôpital path inside `residues_at_roots` instead,
-    which evaluates `sqrt` on the principal branch consistently
-    via SymPy.  This function is provided for high-A atoms where
-    the symbolic path times out *and* the relevant ζ_ℓ has
-    `Re(ζ_ℓ) > 0` (ℓ ∈ {3, 4, 5, 6, ...} \ {2}); for ζ_2 the
-    correct fallback is to substitute `u = sqrt(q)` and compute
-    the residue at `u = i` (out of scope here).
+    Pure linear-recurrence inversion: given D = d_0 + d_1 u + ...,
+    solve `D · I = 1` coefficient-by-coefficient up to degree k-1.
+    O(k · deg(D)) ops vs `sp.series`'s general-purpose recursive
+    Taylor expansion which scales worse.  On tritium (k = 61):
+    direct invert = 0.20 s vs sp.series = 21.0 s (105× speedup).
+    Output has been spot-checked to agree with `sp.series` exactly.
 
-    Uses Cauchy's residue theorem at a simple pole:
-
-        Res_{q=ζ}[f(q)]  =  (1 / 2πi) ∮_{|q−ζ|=r} f(q) dq
-                         ≈  (r / N) Σ_{k=0}^{N-1}
-                                f(ζ + r e^{2πik/N}) e^{2πik/N}
-
-    The radius `r` should be small enough that no other pole lies
-    in the disk, but large enough to avoid catastrophic cancellation
-    near the pole itself.  `r = 0.05` works for ℓ ≤ 12 (nearest
-    neighbouring root is at distance ~|ζ_ℓ − ζ_ℓ'| ≥ 2 sin(π/ℓ²)).
+    `D_poly` must be `sp.Poly` and have non-zero constant term.
     """
-    f = sp.lambdify(q_sym, tr_sym, modules='mpmath')
-    zeta = mpmath.exp(2 * mpmath.pi * mpmath.mpc(0, 1) / ell)
-    r = mpmath.mpf(str(radius))
-    total = mpmath.mpc(0)
-    for k in range(n_samples):
-        theta = 2 * mpmath.pi * k / n_samples
-        e_i_theta = mpmath.exp(mpmath.mpc(0, 1) * theta)
-        q_pt = zeta + r * e_i_theta
-        total += f(q_pt) * e_i_theta
-    # Discrete Cauchy residue: integrand sum * (r / N).
-    return total * r / n_samples
+    d_coeffs = D_poly.all_coeffs()[::-1]  # ascending [d_0, d_1, ...]
+    d_0 = d_coeffs[0]
+    if d_0 == 0:
+        raise ValueError("D(0) = 0; cannot invert mod u^k")
+    I = [sp.Rational(0)] * k
+    I[0] = sp.Rational(1) / d_0
+    deg_D = len(d_coeffs)
+    for n in range(1, k):
+        s = sp.Rational(0)
+        # I[n] determined by D · I = 1 ⇒ Σ_{j=0..n} d_j · I_{n-j} = 0
+        upper = min(n + 1, deg_D)
+        for j in range(1, upper):
+            s += d_coeffs[j] * I[n - j]
+        I[n] = -s / d_0
+    return sum(c * u**i for i, c in enumerate(I) if c != 0)
 
 
-def residues_at_roots(
-    tr_sym, *, max_ell: int = 4, per_ell_timeout_sec: int = 60,
-    contour_fallback: bool = False,
-) -> list[dict]:
-    """Compute Res_{q = ζ_ℓ}[tr_sym(q)] for ℓ = 2, ..., max_ell.
+def split_polar_at_u0(tr_u_expr, u, u0_sp) -> dict:
+    """Partial-fraction split of `tr_u_expr` at u = u0_sp.
 
-    Uses l'Hôpital at simple poles: factor `tr_sym = N(q) / D(q)` once
-    via `sp.cancel`, then `Res_{q=ζ_ℓ} = N(ζ_ℓ) / D'(ζ_ℓ)` is a
-    *pointwise* numerical evaluation — no per-ℓ symbolic
-    simplification, no `sp.residue` / `sp.simplify` / `sp.cancel`
-    inside the loop.  Empirically ~100× faster than the naïve
-    `sp.residue + sp.cancel` path; the proton's ζ_5 case dropped from
-    22 s to <0.1 s.
+    Decomposes the rational function `tr_u(u) = N(u)/D(u)` as
 
-    Per-ℓ SIGALRM kept as a safety net for atoms whose factored
-    `D(q)` itself is heavy.
+        tr_u(u) = entire(u) + A(u)/u^k + B(u)/Dprime(u)
 
-    Returns one row per ℓ with the residue as a sympy expression and
-    its numerical magnitude; rows with vanishing residue (D(ζ_ℓ) ≠ 0,
-    i.e. no pole at that root) are kept with `residue_value = "0"`.
+    where:
+      - `entire(u) = quot(u)` is the polynomial part of long-division
+        N // D (zero unless deg(N) ≥ deg(D));
+      - `D(u) = u^k · Dprime(u)` with `Dprime(0) ≠ 0` (factor out the
+        u = 0 multiplicity);
+      - `A(u)` of degree < k is the principal part at u = 0
+        (negative-power Laurent coefficients), computed as
+        `R(u) · Dprime(u)^{-1}` MOD u^k via `sp.series` (one power-
+        series inversion);
+      - `B(u)` of degree < deg(Dprime) is the principal part at the
+        non-zero poles, computed as `(R(u) − A(u)·Dprime(u)) / u^k`
+        as an exact polynomial division.
+
+    Returns a dict with the four numeric values at u = u0:
+      - `entire`      : quot(u0)
+      - `pp_at_zero`  : A(u0) / u0^k
+      - `pp_at_roots` : B(u0) / Dprime(u0)        ← **Term 6**
+      - `pole_order_at_zero`: k
+
+    Failure modes raise — caller wraps with try/except for the
+    per-atom main loop.
     """
+    num, den = sp.fraction(tr_u_expr)
+    num_p = sp.Poly(num, u)
+    den_p = sp.Poly(den, u)
 
-    class _Timeout(Exception):
-        pass
+    # 1) Polynomial division: separate the entire (polynomial) part
+    quot, rem = sp.div(num_p, den_p, u)
+    entire_at_u0 = complex(sp.N(quot.as_expr().subs(u, u0_sp), 30))
 
-    def _alarm(_signum, _frame):
-        raise _Timeout()
+    # 2) Factor u^k out of the denominator.  Read the multiplicity
+    #    directly from the trailing-zero count of the dense coefficient
+    #    list rather than the previous subs(u, 0) + cancel loop, which
+    #    re-substituted and re-cancelled the whole symbolic expression
+    #    each step (per Gemini review on PR #536).
+    coeffs_desc = den_p.all_coeffs()  # highest power first
+    k = 0
+    while k < len(coeffs_desc) and coeffs_desc[-1 - k].equals(0):
+        k += 1
+    if k > 0:
+        Dprime_coeffs_desc = coeffs_desc[:-k]
+    else:
+        Dprime_coeffs_desc = coeffs_desc
+    Dprime = sp.Poly(Dprime_coeffs_desc, u)
 
-    # Bring tr_sym to a single fraction WITHOUT canceling factors.
-    # `sp.together` combines `a/b + c/d` to `(ad + bc)/(bd)`; on
-    # the proton's 138-op `tr_M(q)` it's effectively instant.  The
-    # alternative `sp.cancel` would additionally try to cancel
-    # common polynomial factors, which is the dominant cost on
-    # tritium / ³He / ⁴He (~tens of seconds to minutes).  For
-    # l'Hôpital at a simple pole we don't need a cancelled form —
-    # just N(ζ_ℓ) and D'(ζ_ℓ) at the pole.
-    tr_canonical = sp.together(tr_sym)
-    num, den = sp.fraction(tr_canonical)
-    den_prime = sp.diff(den, q_sym)
+    if k == 0:
+        # No u = 0 pole; the proper rational is entirely Term 6.
+        full = complex(sp.N(
+            (rem.as_expr() / den_p.as_expr()).subs(u, u0_sp), 30
+        ))
+        return {
+            "entire": entire_at_u0,
+            "pp_at_zero": 0.0 + 0j,
+            "pp_at_roots": full,
+            "pole_order_at_zero": 0,
+            "denom_factor_no_zero": str(sp.factor(Dprime.as_expr())),
+        }
 
-    rows = []
-    for ell in range(2, max_ell + 1):
-        zeta = sp.exp(2 * sp.pi * sp.I / ell)
-        signal.signal(signal.SIGALRM, _alarm)
-        signal.alarm(per_ell_timeout_sec)
-        try:
-            # First check: is ζ_ℓ actually a pole of tr_sym?
-            # If D(ζ_ℓ) ≠ 0 there's no pole and the residue is 0.
-            den_at_zeta = sp.simplify(den.subs(q_sym, zeta))
-            if den_at_zeta != 0:
-                signal.alarm(0)
-                rows.append({
-                    "ell": ell,
-                    "zeta_symbolic": str(zeta),
-                    "residue_symbolic": "0",
-                    "residue_value": "0",
-                    "residue_abs": "0.000000e+00",
-                })
-                continue
-            # ζ_ℓ is a pole.  Apply l'Hôpital: Res = N(ζ_ℓ) / D'(ζ_ℓ).
-            num_at_zeta = num.subs(q_sym, zeta)
-            den_prime_at_zeta = den_prime.subs(q_sym, zeta)
-            if den_prime_at_zeta == 0:
-                # Higher-order pole — fall back to sp.residue.
-                res = sp.residue(tr_canonical, q_sym, zeta)
-                res_simp = sp.cancel(res)
-            else:
-                res_simp = sp.cancel(num_at_zeta / den_prime_at_zeta)
-            signal.alarm(0)
-        except _Timeout:
-            signal.alarm(0)
-            # Primary fallback: u = sqrt(q) substitution + Taylor
-            # coefficient extraction (handles branch cuts correctly,
-            # works on tritium ζ_2 in ~3 s where the in-q symbolic
-            # path didn't terminate at 600 s).
-            try:
-                res_mp, pole_p = residue_via_sqrt_substitution(
-                    tr_sym, ell,
-                )
-                res_num = complex(res_mp.real, res_mp.imag)
-                res_abs = abs(res_num)
-                rows.append({
-                    "ell": ell,
-                    "zeta_symbolic": str(zeta),
-                    "residue_symbolic": (
-                        f"sqrt-sub (pole order {pole_p}): "
-                        f"{mpmath.nstr(res_mp, 20)}"
-                    ),
-                    "residue_value": str(res_num),
-                    "residue_abs": f"{res_abs:.6e}",
-                    "method": "sqrt_substitution",
-                    "pole_order_in_u": pole_p,
-                })
-                continue
-            except Exception as sqrt_exc:  # noqa: BLE001
-                pass
-            if contour_fallback:
-                # Secondary fallback: numerical contour integral
-                # (caveat: branch cut for ζ_ℓ with Re < 0).
-                try:
-                    res_mp = residue_via_contour(tr_sym, ell)
-                    res_num = complex(res_mp.real, res_mp.imag)
-                    res_abs = abs(res_num)
-                    rows.append({
-                        "ell": ell,
-                        "zeta_symbolic": str(zeta),
-                        "residue_symbolic": (
-                            f"contour: {mpmath.nstr(res_mp, 20)}"
-                        ),
-                        "residue_value": str(res_num),
-                        "residue_abs": f"{res_abs:.6e}",
-                        "method": "contour_integral",
-                    })
-                    continue
-                except Exception as exc:  # noqa: BLE001
-                    rows.append({
-                        "ell": ell,
-                        "zeta_symbolic": str(zeta),
-                        "residue_symbolic": None,
-                        "residue_value": None,
-                        "residue_abs": None,
-                        "error": (
-                            f"timeout > {per_ell_timeout_sec}s; "
-                            f"sqrt-sub + contour fallbacks both failed: "
-                            f"{sqrt_exc!r} / {exc!r}"
-                        ),
-                    })
-                    continue
-            rows.append({
-                "ell": ell,
-                "zeta_symbolic": str(zeta),
-                "residue_symbolic": None,
-                "residue_value": None,
-                "residue_abs": None,
-                "error": (
-                    f"timeout > {per_ell_timeout_sec}s; "
-                    f"sqrt-sub fallback failed: {sqrt_exc!r}"
-                ),
-            })
-            continue
-        except (NotImplementedError, RecursionError) as exc:
-            signal.alarm(0)
-            rows.append({
-                "ell": ell,
-                "zeta_symbolic": str(zeta),
-                "residue_symbolic": None,
-                "residue_value": None,
-                "residue_abs": None,
-                "error": f"{type(exc).__name__}: {exc}",
-            })
-            continue
+    # 3) Power-series inversion: A(u) = R(u) · Dprime(u)^{-1} MOD u^k.
+    #    Direct linear-recurrence inversion (see `power_series_invert`)
+    #    is ~100× faster than `sp.series(R/Dprime, u, 0, k)` on the
+    #    larger atoms (tritium k = 61: 0.20 s vs 21 s).
+    rem_expr = rem.as_expr()
+    I_poly = power_series_invert(Dprime, u, k)
+    A_full = sp.expand(rem_expr * I_poly)
+    # Truncate the product to degree < k (everything ≥ k is the
+    # higher-order Taylor of R/Dprime, which is the regular part at
+    # u = 0 and not part of the principal A(u)).
+    A_p = sp.Poly(A_full, u)
+    A_coeffs = A_p.all_coeffs()[::-1]  # ascending
+    A_series = sum(A_coeffs[i] * u**i for i in range(min(k, len(A_coeffs))))
 
-        try:
-            res_num = complex(sp.N(res_simp, 30))
-            res_abs = abs(res_num)
-        except Exception:  # noqa: BLE001
-            res_num = None
-            res_abs = None
-        rows.append({
-            "ell": ell,
-            "zeta_symbolic": str(zeta),
-            "residue_symbolic": str(res_simp),
-            "residue_value": str(res_num) if res_num is not None else None,
-            "residue_abs": (
-                f"{res_abs:.6e}" if res_abs is not None else None
-            ),
-        })
-    return rows
+    # 4) B(u) = (R(u) − A(u)·Dprime(u)) / u^k as exact polynomial.
+    #    `(diff) / u^k` is an exact polynomial division (the construction
+    #    of A guarantees u^k | diff); use sp.div on Poly objects rather
+    #    than sp.cancel — same result but skips the GCD step that walls
+    #    on big inputs.
+    diff = sp.expand(rem_expr - A_series * Dprime.as_expr())
+    B_p, B_rem = sp.div(sp.Poly(diff, u), sp.Poly(u**k, u), u)
+    if not B_rem.is_zero:
+        raise ValueError("u^k does not divide diff exactly — check A_series")
+    B = B_p.as_expr()
+
+    pp_at_zero = complex(sp.N((A_series / u**k).subs(u, u0_sp), 30))
+    pp_at_roots = complex(sp.N((B / Dprime.as_expr()).subs(u, u0_sp), 30))
+    return {
+        "entire": entire_at_u0,
+        "pp_at_zero": pp_at_zero,
+        "pp_at_roots": pp_at_roots,
+        "pole_order_at_zero": k,
+        "denom_factor_no_zero": str(sp.factor(Dprime.as_expr())),
+    }
 
 
-def term6_contribution_at_q0(rows) -> str:
-    """Sum Σ_{ℓ ≥ 2} Res_{q=ζ_ℓ} / (q₀ − ζ_ℓ) for the residue rows
-    that successfully evaluated.  Returns the mpmath-string form.
-
-    Magnitudes only — for any individual atom many residues vanish
-    (cf. proton: only ζ_2 has a non-zero residue out of {2,3,4,6}).
-    """
-    total = mpmath.mpc(0)
-    q0_mp = mpmath.mpf(str(Q0))
-    for row in rows:
-        if row.get("residue_value") in (None, "None"):
-            continue
-        ell = row["ell"]
-        zeta = mpmath.exp(2 * mpmath.pi * mpmath.mpc(0, 1) / ell)
-        try:
-            res = mpmath.mpmathify(row["residue_value"])
-        except Exception:  # noqa: BLE001
-            continue
-        denom = q0_mp - zeta
-        # Tolerance scales with the current precision floor — at 50 dps
-        # the smallest representable magnitude is ~10^-50; we treat
-        # anything within ~10 digits of that as "effectively zero" and
-        # skip to avoid spurious divisions.  Per Gemini policy
-        # (PR #526), the bound tracks `mp.dps` rather than a hardcode.
-        if abs(denom) < mpmath.power(10, -mpmath.mp.dps + 10):
-            continue
-        total += res / denom
-    return mpmath.nstr(total, 30)
-
-
-def compute_atom(
-    Z: int, N: int, *, max_ell: int, per_ell_timeout_sec: int = 60
-) -> dict:
-    """Run Term 6 for atom (Z, N) at the given pole-truncation order."""
+def compute_atom(Z: int, N: int) -> dict:
+    """Run Term 6 for atom (Z, N) via the partial-fraction split."""
     A = Z + N
+
     t0 = time.time()
     tr_sym = tr_M_atomic(Z, N)
     t_peel = time.time() - t0
 
-    # `residues_at_roots` calls `sp.together` internally to bring
-    # tr_sym to a single fraction; we no longer pre-cancel here, since
-    # `sp.cancel` is the dominant cost on tritium / ³He / ⁴He
-    # (~tens of seconds to minutes) and is unnecessary for the
-    # l'Hôpital pole evaluation.
-    t_cancel = 0.0
+    t0 = time.time()
+    # Lift to u = √q via direct sqrt-replacement (see `lift_q_to_u`),
+    # then `together` to get a single-rational form.  This pair was
+    # previously `subs(q, u**2)` + `powdenest(force=True)` + `cancel`,
+    # whose powdenest scan was the wall (~70 s tritium, ~290 s ⁴He).
+    # The direct replacement runs in <1 s on the same inputs.
+    tr_u = sp.together(lift_q_to_u(tr_sym, q_sym, u_sym))
+    t_subs = time.time() - t0
+
+    q0_mp = mpmath.mpf(str(Q0))
+    u0_mp = mpmath.sqrt(q0_mp)
+    u0_sp = sp.Float(str(u0_mp), 30)
 
     t0 = time.time()
-    rows = residues_at_roots(
-        tr_sym, max_ell=max_ell,
-        per_ell_timeout_sec=per_ell_timeout_sec,
-    )
-    t_res = time.time() - t0
+    split = split_polar_at_u0(tr_u, u_sym, u0_sp)
+    t_split = time.time() - t0
 
-    contribution = term6_contribution_at_q0(rows)
+    pp_roots = split["pp_at_roots"]
     return {
-        "Z": Z,
-        "N": N,
-        "A": A,
-        "max_ell": max_ell,
-        "tr_M_symbolic_ops": int(sp.count_ops(tr_sym)),
-        "elapsed_peel_sec": round(t_peel, 3),
-        "elapsed_cancel_sec": round(t_cancel, 3),
-        "elapsed_residues_sec": round(t_res, 3),
-        "residues": rows,
-        "term6_at_q0": contribution,
+        "Z": Z, "N": N, "A": A,
+        "tr_M_u_symbolic_ops": int(sp.count_ops(tr_u)),
+        "denom_pole_order_at_zero": split["pole_order_at_zero"],
+        "denom_factor_no_zero": split["denom_factor_no_zero"],
+        "elapsed_peel_sec":  round(t_peel,  3),
+        "elapsed_subs_sec":  round(t_subs,  3),
+        "elapsed_split_sec": round(t_split, 3),
+        # Numeric components at u₀ — kept as Python complex strings so
+        # the witness round-trips through json.dumps reliably.
+        "entire_at_u0":      str(split["entire"]),
+        "pp_at_zero_at_u0":  str(split["pp_at_zero"]),
+        "pp_at_roots_at_u0": str(pp_roots),
+        "term6_at_q0":       str(pp_roots),  # alias for downstream consumers
+        "term6_at_q0_real":  float(pp_roots.real),
+        "term6_at_q0_imag":  float(pp_roots.imag),
     }
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--max-ell", type=int, default=4,
+        "--atoms", type=str,
+        default="proton,neutron,deuteron,tritium,helium-3,helium-4",
         help=(
-            "Pole-truncation order: include residues at ζ_ℓ for ℓ ≤ this. "
-            "Default 4 (small enough for proton+neutron+D in <2 min); "
-            "increase for finer truncation at higher CPU cost."
-        ),
-    )
-    parser.add_argument(
-        "--per-ell-timeout", type=int, default=60,
-        help="SIGALRM cap (seconds) per ℓ for sp.simplify of the residue.",
-    )
-    parser.add_argument(
-        "--atoms", type=str, default="proton,neutron,deuteron",
-        help=(
-            "Comma-separated atom labels to run.  Default: lightest 3 "
-            "(witness for fuller spectrum requires a longer run "
-            "budget — sp.residue scales with the symbolic ops in tr_M)."
+            "Comma-separated atom labels to run.  Default: full A ≤ 4 "
+            "spectrum (the partial-fraction split scales well; deuteron "
+            "is ~8 s, helium-4 a few minutes)."
         ),
     )
     args = parser.parse_args()
     selected = set(args.atoms.split(","))
 
     print(
-        f"Term 6 residues at primitive roots ζ_ℓ "
-        f"(ℓ = 2..{args.max_ell}) — Markov-peel symbolic tr_M(q)",
+        "Term 6 — partial-fraction polar split on u-plane lift "
+        "tr_M(u²); Term 6 = PP_at_roots(u₀)",
         flush=True,
     )
     print("=" * 72, flush=True)
@@ -493,31 +347,34 @@ def main() -> int:
             continue
         print(f"\n=== {label} (Z={Z}, N={N}, A={Z + N}) ===", flush=True)
         try:
-            row = compute_atom(
-                Z, N, max_ell=args.max_ell,
-                per_ell_timeout_sec=args.per_ell_timeout,
-            )
+            row = compute_atom(Z, N)
             row["atom"] = label
             print(
-                f"  peel={row['elapsed_peel_sec']:.1f}s  "
-                f"cancel={row['elapsed_cancel_sec']:.2f}s  "
-                f"residues={row['elapsed_residues_sec']:.2f}s  "
-                f"ops={row['tr_M_symbolic_ops']}",
+                f"  peel={row['elapsed_peel_sec']:.2f}s  "
+                f"subs={row['elapsed_subs_sec']:.2f}s  "
+                f"split={row['elapsed_split_sec']:.2f}s  "
+                f"ops={row['tr_M_u_symbolic_ops']}  "
+                f"k₀={row['denom_pole_order_at_zero']}",
                 flush=True,
             )
-            for r in row["residues"]:
-                if r.get("residue_value") in (None, "None"):
-                    print(
-                        f"    ζ_{r['ell']}: residue = ZERO or unevaluable",
-                        flush=True,
-                    )
-                else:
-                    print(
-                        f"    ζ_{r['ell']}: residue = {r['residue_symbolic']}",
-                        flush=True,
-                    )
-            print(f"  Σ Res/(q₀−ζ_ℓ) = {row['term6_at_q0']}", flush=True)
-            rows.append(row)
+            print(f"  Dprime (non-zero-pole denom) = "
+                  f"{row['denom_factor_no_zero']}", flush=True)
+            print(f"  entire(u₀)         = {row['entire_at_u0']}",
+                  flush=True)
+            print(f"  PP_0(u₀)           = {row['pp_at_zero_at_u0']}",
+                  flush=True)
+            print(f"  PP_roots(u₀) [T6]  = {row['pp_at_roots_at_u0']}",
+                  flush=True)
+            # Drop fluctuating per-row timings before adding to the
+            # witness payload — they cause the witness-pipeline drift
+            # detection to flag every regeneration as a substantive
+            # change.  Console print above retains them for the run
+            # log.
+            row_for_witness = {
+                k: v for k, v in row.items()
+                if not k.startswith("elapsed_")
+            }
+            rows.append(row_for_witness)
         except Exception as exc:  # noqa: BLE001
             print(f"  FAILED: {type(exc).__name__}: {exc}", flush=True)
             rows.append({
@@ -527,17 +384,21 @@ def main() -> int:
 
     w = WitnessBuilder("term6-residues-at-roots", engine="sympy")
     w.set_description(
-        f"Term 6 of thm:six-term-mass-formula-complete via Markov-peel "
-        f"symbolic tr_M(q): Σ_{{ℓ≥2}} Res_{{q=ζ_ℓ}}[tr_M(T_w)] / (q₀ − ζ_ℓ), "
-        f"with ℓ truncated at {args.max_ell}.  This evaluation is enabled "
-        f"by the Markov-axiom recursive ascent (#508 / PR #516) returning "
-        f"tr_M as a symbolic rational function in q; the Hoefsmit per-block "
-        f"path could not produce the symbolic form needed for residue "
-        f"extraction at A ≥ 4."
+        "Term 6 of thm:six-term-mass-formula-complete via partial-"
+        "fraction polar split on the u-plane lift tr_M(u²): "
+        "tr_M(u²) = entire(u) + A(u)/u^k + B(u)/Dprime(u), with "
+        "Term 6 = B(u₀)/Dprime(u₀) the principal-part contribution at "
+        "non-zero poles only.  This split avoids per-pole residue "
+        "extraction; sp.div + one sp.series-based power-series inversion "
+        "deliver the answer in seconds where sp.residue scaled "
+        "polynomially in atom size and timed out at deuteron.  "
+        "Evaluation enabled by the Markov-axiom recursive ascent "
+        "(#508 / PR #516) returning tr_M as a symbolic rational function "
+        "in q^{1/2}."
     )
     w.set_content_block("thm:six-term-mass-formula-complete")
     w.add_parameter("q0", str(Q0))
-    w.add_parameter("max_ell", args.max_ell)
+    w.add_parameter("method", "partial_fraction_split_u_plane")
     w.add_data("results", rows)
     out_path = w.save()
     print(f"\n  → wrote {out_path}", flush=True)
