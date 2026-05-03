@@ -1,0 +1,84 @@
+{
+  "schema": "lmfdb-lookup-witness/v1",
+  "computation": "m-iso-lmfdb-lookup",
+  "description": "LMFDB modular-form-database query attempt to identify the QOU substrate M_iso motive by matching its Frobenius coefficients against weight-5 rational newforms (Path A from docs/audits/2026-05-02-m-iso-l-function-handoff.md).",
+  "date": "2026-05-03",
+  "branch": "claude/m-iso-lmfdb-lookup",
+  "verdict": "query-error",
+  "verdict_detail": "Sandbox egress proxy denies all connections to lmfdb.org with HTTP 403 at the TLS-inspection layer. WebFetch and curl probes both fail. Other hosts (api.github.com) reach successfully, confirming the block is host-specific to LMFDB. Lookup must be rerun from an environment with allowlisted egress to www.lmfdb.org.",
+  "target": {
+    "motive": "M_iso = T ↔ ³He isobaric asymmetry motive",
+    "weight_lower_bound": 4,
+    "expected_search_weight": 5,
+    "hecke_field": "Q (rational eigenform; all a_p ∈ Z verified in exact ring arithmetic)",
+    "good_primes": [3, 7, 11, 13, 17, 19, 23],
+    "bad_primes": [2, 5],
+    "frobenius_coefficients": {
+      "a_3": -1,
+      "a_7": 13,
+      "a_11": 63,
+      "a_13": -285,
+      "a_17": 239,
+      "a_19": -315,
+      "a_23": -356
+    },
+    "expected_conductor_form": "2^a · 5^b with a ∈ {1..6}, b ∈ {0,1,2}",
+    "candidate_conductors": [10, 20, 40, 50, 80, 100, 160, 200, 250, 400],
+    "sato_tate_angles_deg": {
+      "p_3": 93.2,
+      "p_7": 82.4,
+      "p_11": 74.9,
+      "p_13": 147.5,
+      "p_17": 65.6,
+      "p_19": 115.9,
+      "p_23": 109.7
+    }
+  },
+  "method": {
+    "tool": "WebFetch + curl",
+    "endpoints_attempted": [
+      "https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=10",
+      "https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=20",
+      "https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=40",
+      "https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=50",
+      "https://www.lmfdb.org/ModularForm/GL2/Q/holomorphic/?level=10&weight=5&dim=1",
+      "https://www.lmfdb.org/ModularForm/GL2/Q/holomorphic/?level=20&weight=5&dim=1",
+      "https://www.lmfdb.org/ModularForm/GL2/Q/holomorphic/?level=40&weight=5&dim=1",
+      "https://www.lmfdb.org/ModularForm/GL2/Q/holomorphic/?level=50&weight=5&dim=1",
+      "https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=10&_format=json",
+      "https://beta.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=10",
+      "https://www.lmfdb.org/robots.txt",
+      "http://www.lmfdb.org/",
+      "https://www.lmfdb.org/"
+    ],
+    "control_probes": [
+      {"url": "https://api.github.com/", "http_code": 200, "interpretation": "control: non-LMFDB host reachable"},
+      {"url": "https://www.lmfdb.org/", "http_code": 403, "interpretation": "TLS handshake completes (cert from 'sandbox-egress-production TLS Inspection CA'); proxy returns 403 before request reaches LMFDB origin"}
+    ],
+    "raw_observation": "All lmfdb.org subpaths and both lmfdb.org / beta.lmfdb.org hosts return HTTP 403 with 21-byte body, regardless of UA, protocol (http/https), or accept header. Egress proxy certificate identifies as 'Anthropic sandbox-egress-production TLS Inspection CA', confirming the 403 originates at the sandbox boundary, not at LMFDB."
+  },
+  "candidates_queried": [],
+  "matches": [],
+  "near_matches": [],
+  "next_actions": [
+    {
+      "id": "rerun-from-allowlisted-env",
+      "description": "Rerun this lookup from a session where egress to lmfdb.org is permitted (host workstation with Claude Code CLI, or a CI job with explicit network policy). Programmatic API: GET https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=N for N ∈ [10,20,40,50,80,100,160,200,250,400]; for each label fetch /api/mf_newforms/{label}/?qexpansion=true and read traces / a_p."
+    },
+    {
+      "id": "alternative-data-source",
+      "description": "If LMFDB egress remains blocked, use Sage/Pari (`Newforms(N, k, names='a')`) on the same host. Both ship with sufficient newform databases through level 1000 weight 8 to cover the candidate-conductor list."
+    },
+    {
+      "id": "escalate-path-b",
+      "description": "If no LMFDB match exists once the lookup runs, escalate to Path B (direct Hecke-operator T_p computation in QOU.Hecke + WedderburnDecomp; 2-3 weeks substantive Lean + Python) or Path C (recursive-ascent extension to A ≥ 4 atoms)."
+    }
+  ],
+  "cross_references": {
+    "audit_handoff": "docs/audits/2026-05-02-m-iso-l-function-handoff.md (lines 53-63)",
+    "audit_memo": "docs/audits/2026-05-03-m-iso-lmfdb-result.md",
+    "frobenius_probe": "folio-assistant/computations/habiro_frobenius_probe.py",
+    "frobenius_witness": "folio-assistant/computations/habiro-frobenius-probe.witness.json",
+    "motivic_orbit_witness": "folio-assistant/computations/habiro-motivic-orbit-relations.witness.json"
+  }
+}
