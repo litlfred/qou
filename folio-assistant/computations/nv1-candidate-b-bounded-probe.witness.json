@@ -41,6 +41,7 @@
     }
   },
   "verdict": "falsification-leaning probe (NOT a closure)",
+  "verdict_status": "final (all three probe steps complete)",
   "verdict_rationale": [
     "N_v is prime, ruling out any non-trivial multiplicative factorisation across irrep dims.",
     "The minimum count using {4, 5, 6} alone is 240,920 — nearly 10^6 magnitude, dominated by ~240,919 copies of the dim-6 irrep plus a single dim-5 copy, with zero dim-4 copies.",
