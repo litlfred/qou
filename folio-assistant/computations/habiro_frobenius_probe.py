@@ -57,7 +57,15 @@ from math import gcd
 from pathlib import Path
 from typing import Any
 
+import mpmath
 import sympy as sp
+
+# Standalone scientific-computation script — set mpmath precision
+# at module level (deliberate global side effect). 30dps is more
+# than enough for the display-only complex-value evaluation; the
+# *truth* is the exact algebraic Z[ζ_{2p}] representative computed
+# via sp.Poly arithmetic.
+mpmath.mp.dps = 30
 
 # Frobenius evaluation runs in **exact algebraic arithmetic** in
 # Z[ζ_{2p}] = Z[u] / Φ_{2p}(u), the cyclotomic integer ring. Every
@@ -193,16 +201,27 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
     phi_2p = sp.Poly(sp.cyclotomic_poly(n_2p, u), u)
 
     def evaluate_num_in_ring() -> sp.Poly:
-        """Numerator evaluated at u = ζ_{2p} — element of `Z[ζ_{2p}]`."""
+        """Numerator evaluated at u = ζ_{2p} — element of `Z[ζ_{2p}]`.
+
+        Iterative Pochhammer update: (u;u)_m = (u;u)_{m-1} · (1 - u^m).
+        Since coefficients are processed in increasing order of m, each
+        step costs one polynomial multiplication + one cyclotomic
+        reduction, vs O(m) re-multiplications if we rebuild the
+        Pochhammer from scratch every time.
+        """
         total = sp.Poly(0, u)
+        poch = sp.Poly(1, u)  # (u;u)_0 = 1
+        last_m = 0
         for m, int_coeffs in parsed:
             if not expansion_terminated_clean and m >= n_2p:
                 break
-            if int_coeffs:
-                a_m_poly = sp.Poly(int_coeffs, u)
-            else:
-                a_m_poly = sp.Poly(0, u)
-            poch = cyclotomic_pochhammer_in_ring(n_2p, m, u)
+            # Bring poch up to (u;u)_m via missing (1 - u^i) factors.
+            for i in range(last_m + 1, m + 1):
+                factor = sp.Poly(1, u) - sp.Poly(u ** i, u)
+                poch = poch * factor
+                _, poch = poch.div(phi_2p)
+            last_m = m
+            a_m_poly = sp.Poly(int_coeffs, u) if int_coeffs else sp.Poly(0, u)
             term = a_m_poly * poch
             _, term = term.div(phi_2p)
             total = total + term
@@ -281,10 +300,9 @@ def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
         full_trace_residue_str = None
 
     # For display: numeric Frobenius value of (full tr_M when
-    # denom-folded, else numerator).
-    import mpmath as _mp
-    _mp.mp.dps = 30
-    zeta_2p_num = _mp.exp(2j * _mp.pi / n_2p)
+    # denom-folded, else numerator). Module-level mpmath.mp.dps
+    # already set to 30dps; no need to set per-call.
+    zeta_2p_num = mpmath.exp(2j * mpmath.pi / n_2p)
     display_rep = frob_full_rep if frob_full_rep is not None else num_rep
     frob_num_complex = complex(display_rep.as_expr().subs(u, zeta_2p_num))
 

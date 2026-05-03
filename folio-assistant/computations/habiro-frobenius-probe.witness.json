@@ -1,6 +1,6 @@
 {
   "computation": "habiro-frobenius-probe",
-  "computedAt": "2026-05-03T00:37:02.640196+00:00",
+  "computedAt": "2026-05-03T00:57:30.314926+00:00",
   "description": "R6 step-1 + step-2 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. The Galois norm N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k) is verified to be a rational integer (residual < 1e-6) on every (atom, prime) where the truncation lands inside the on-disk Habiro data — finite-place reciprocity check.",
   "reference_blocks": [
     "def:motivic-galois-character",
@@ -29,199 +29,235 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
-          "frob_p_in_Z_zeta_str": "-2/3",
+          "frob_num_in_Z_zeta_str": "-8",
+          "frob_full_in_Z_zeta_str": "-2/3",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.6666666666666666,
             "imag": 0.0
           },
-          "abs_frob_p": 0.6666666666666666,
+          "abs_frob": 0.6666666666666666,
           "pochhammer_truncates_at_m": 4,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-4/3",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -16,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-16",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-4/3",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
-          "frob_p_in_Z_zeta_str": "-1",
+          "frob_num_in_Z_zeta_str": "-1",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -1.0,
             "imag": 0.0
           },
-          "abs_frob_p": 1.0,
+          "abs_frob": 1.0,
           "pochhammer_truncates_at_m": 6,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": -2,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "-2",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -2,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-2",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
-          "frob_p_in_Z_zeta_str": "-u/4",
+          "frob_num_in_Z_zeta_str": "u**3 - u**2",
+          "frob_full_in_Z_zeta_str": "-u/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.20225424859373686,
             "imag": -0.14694631307311828
           },
-          "abs_frob_p": 0.25,
+          "abs_frob": 0.25,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 4,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-1/4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 2,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "2",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-1/4",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
-          "frob_p_in_Z_zeta_str": "u**5/2 - u**4/4 + u**3/2 + 3*u/4 - 1/4",
+          "frob_num_in_Z_zeta_str": "-u**5 - 3*u**4 + u**3 + u**2 + 2*u - 2",
+          "frob_full_in_Z_zeta_str": "u**5/2 - u**4/4 + u**3/2 + 3*u/4 - 1/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.2808724504646834,
             "imag": 0.9600605236176394
           },
-          "abs_frob_p": 1.0003027253981727,
+          "abs_frob": 1.0003027253981727,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 6,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "1/2",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -8,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-8",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "1/2",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
-          "frob_p_in_Z_zeta_str": "-u**9/4 + u**7/4 - u**5/4 + u**4/4 - u**2/4 + u/4 - 1/4",
+          "frob_num_in_Z_zeta_str": "2*u**9 - u**8 - u**7 + u**5 - u**2 + 1",
+          "frob_full_in_Z_zeta_str": "-u**9/4 + u**7/4 - u**5/4 + u**4/4 - u**2/4 + u/4 - 1/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.04570546616469694,
             "imag": 0.007473367689584636
           },
-          "abs_frob_p": 0.04631242664723998,
+          "abs_frob": 0.04631242664723998,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-5/2",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 14,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "14",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-5/2",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
-          "frob_p_in_Z_zeta_str": "-u**10/4 + u**9/2 - u**8/4 - u**6/4 + u**5/4",
+          "frob_num_in_Z_zeta_str": "u**10 - 2*u**9 + u**7 + u**6 - 2*u**5 + u**3 + u**2 - 2*u + 1",
+          "frob_full_in_Z_zeta_str": "-u**10/4 + u**9/2 - u**8/4 - u**6/4 + u**5/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.05026358713463442,
             "imag": -0.0024659501378841014
           },
-          "abs_frob_p": 0.05032404099159285,
+          "abs_frob": 0.05032404099159285,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "3/2",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 5,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "5",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "3/2",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 17,
           "u_root": "zeta_34",
-          "frob_p_in_Z_zeta_str": "u**15/4 - u**14/2 + u**13/2 - u**12/2 + u**11/4 - u**10/4 + u**9/4 - u**8/4 + u**7/2 + u**5/2 - u**2/4 + u/2 - 1/2",
+          "frob_num_in_Z_zeta_str": "-2*u**15 + 2*u**14 - 3*u**13 - 2*u**11 + 3*u**10 - 3*u**9 - u**8 - u**7 + 3*u**6 - 2*u**5 + 2*u**2 - u + 2",
+          "frob_full_in_Z_zeta_str": "u**15/4 - u**14/2 + u**13/2 - u**12/2 + u**11/4 - u**10/4 + u**9/4 - u**8/4 + u**7/2 + u**5/2 - u**2/4 + u/2 - 1/2",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.2311676546517835,
             "imag": 0.6297537329248563
           },
-          "abs_frob_p": 0.6708414482498808,
+          "abs_frob": 0.6708414482498808,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 16,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-7/2",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 9,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "9",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-7/2",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 19,
           "u_root": "zeta_38",
-          "frob_p_in_Z_zeta_str": "-u**17/2 + u**16/2 + u**14/2 - u**13/4 + u**12/2 - u**11/4 + u**10/2 - u**9/4 + u**8/4 - u**7/2 + u**6/2 - u**5/2 + u**4/2 + u**2/2 - u/2 + 1/2",
+          "frob_num_in_Z_zeta_str": "-u**17 - u**16 - 2*u**15 - u**13 - u**12 - 2*u**11 + u**10 - u**9 - 2*u**8 - 2*u**7 + 2*u**6 - 2*u**4 - u**3 + 2*u**2 + u",
+          "frob_full_in_Z_zeta_str": "-u**17/2 + u**16/2 + u**14/2 - u**13/4 + u**12/2 - u**11/4 + u**10/2 - u**9/4 + u**8/4 - u**7/2 + u**6/2 - u**5/2 + u**4/2 + u**2/2 - u/2 + 1/2",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.2995123258734857,
             "imag": 0.9212205005403034
           },
-          "abs_frob_p": 0.9686871754936535,
+          "abs_frob": 0.9686871754936535,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 18,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "5/2",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -8,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-8",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "5/2",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 23,
           "u_root": "zeta_46",
-          "frob_p_in_Z_zeta_str": "-u**21/4 + u**20/2 + u**18/4 - u**17/4 + u**16/2 - u**15/4 + u**14/4 + u**10/4 - u**9/4 + u**8/4 + u**6/2 - u**5/4 + u**4/2 + u**2/4",
+          "frob_num_in_Z_zeta_str": "-u**21 - 2*u**20 + u**19 - u**18 - u**17 - 2*u**16 - u**14 - 2*u**12 - u**11 - u**10 - 3*u**8 - u**7 - u**6 - 3*u**4 - u**3 + u - 2",
+          "frob_full_in_Z_zeta_str": "-u**21/4 + u**20/2 + u**18/4 - u**17/4 + u**16/2 - u**15/4 + u**14/4 + u**10/4 - u**9/4 + u**8/4 + u**6/2 - u**5/4 + u**4/2 + u**2/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.39923846224200593,
             "imag": 1.2949574794361702
           },
-          "abs_frob_p": 1.3551037684550364,
+          "abs_frob": 1.3551037684550364,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 22,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-9/2",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -31,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-31",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-9/2",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         }
       ],
       "step2_summary": {
+        "step2_full_trace_compatible": false,
         "n_primes_truncated": 9,
         "n_primes_data_exhausted": 0,
-        "all_truncated_primes_compatible": false,
-        "primes_failing_compatibility": [
-          2,
-          3,
-          5,
-          7,
-          11,
-          13,
-          17,
-          19,
-          23
-        ]
+        "all_truncated_primes_compatible": true,
+        "primes_failing_compatibility": []
       }
     },
     {
@@ -233,199 +269,235 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
-          "frob_p_in_Z_zeta_str": "1/60",
+          "frob_num_in_Z_zeta_str": "96",
+          "frob_full_in_Z_zeta_str": "1/60",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.016666666666666666,
             "imag": 0.0
           },
-          "abs_frob_p": 0.016666666666666666,
+          "abs_frob": 0.016666666666666666,
           "pochhammer_truncates_at_m": 4,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "1/30",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 192,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "192",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "1/30",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
-          "frob_p_in_Z_zeta_str": "-u - 4",
+          "frob_num_in_Z_zeta_str": "-u - 4",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -4.5,
             "imag": -0.8660254037844386
           },
-          "abs_frob_p": 4.58257569495584,
+          "abs_frob": 4.58257569495584,
           "pochhammer_truncates_at_m": 6,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": -9,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "-9",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -9,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-9",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
-          "frob_p_in_Z_zeta_str": "-11*u**3 + 8*u**2 + 6*u - 12",
+          "frob_num_in_Z_zeta_str": "-11*u**3 + 8*u**2 + 6*u - 12",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -1.2745751406263144,
             "imag": 0.673541964869378
           },
-          "abs_frob_p": 1.4415965342434378,
+          "abs_frob": 1.4415965342434378,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 4,
-          "galois_trace_int": -61,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "-61",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -61,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-61",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
-          "frob_p_in_Z_zeta_str": "-5*u**5/16 + u**4/8 + 3*u**3/32 + 5*u**2/8 - u/32 + 25/32",
+          "frob_num_in_Z_zeta_str": "-21*u**5 + 4*u**4 - 17*u**3 - u**2 - 20*u + 14",
+          "frob_full_in_Z_zeta_str": "-5*u**5/16 + u**4/8 + 3*u**3/32 + 5*u**2/8 - u/32 + 25/32",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 1.3306626329344773,
             "imag": 0.44402895221360955
           },
-          "abs_frob_p": 1.402791771109323,
+          "abs_frob": 1.402791771109323,
           "pochhammer_truncates_at_m": 14,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 6,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "59/16",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 23,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "23",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "59/16",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
-          "frob_p_in_Z_zeta_str": "5*u**9/32 + 19*u**8/32 + 3*u**7/4 + 21*u**6/32 - 9*u**5/16 - 5*u**4/16 - u**3/2 + u**2/16 + u/16 + 33/32",
+          "frob_num_in_Z_zeta_str": "-39*u**9 - 49*u**8 + 53*u**7 + 33*u**6 + 7*u**5 - 73*u**4 + 25*u**3 + 55*u**2 + 24*u - 86",
+          "frob_full_in_Z_zeta_str": "5*u**9/32 + 19*u**8/32 + 3*u**7/4 + 21*u**6/32 - 9*u**5/16 - 5*u**4/16 - u**3/2 + u**2/16 + u/16 + 33/32",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.3187277960647433,
             "imag": 0.6974847443606522
           },
-          "abs_frob_p": 0.7668587722652281,
+          "abs_frob": 0.7668587722652281,
           "pochhammer_truncates_at_m": 14,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "295/32",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -756,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-756",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "295/32",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
-          "frob_p_in_Z_zeta_str": "-u**11/2 + 27*u**10/32 + 25*u**9/32 + 21*u**8/32 + 3*u**7/16 + u**6/32 - 33*u**5/32 - 3*u**4/8 - 41*u**3/32 + 11*u**2/16 + u/32 + 7/4",
+          "frob_num_in_Z_zeta_str": "3*u**11 - 86*u**10 + 117*u**9 - 48*u**8 - 20*u**7 - 50*u**6 + 137*u**5 - 66*u**4 - 23*u**3 - 25*u**2 + 114*u - 94",
+          "frob_full_in_Z_zeta_str": "-u**11/2 + 27*u**10/32 + 25*u**9/32 + 21*u**8/32 + 3*u**7/16 + u**6/32 - 33*u**5/32 - 3*u**4/8 - 41*u**3/32 + 11*u**2/16 + u/32 + 7/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.03281884418791095,
             "imag": 0.005359217008061544
           },
-          "abs_frob_p": 0.0332535372670318,
+          "abs_frob": 0.0332535372670318,
           "pochhammer_truncates_at_m": 14,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "555/32",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -525,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-525",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "555/32",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 17,
           "u_root": "zeta_34",
-          "frob_p_in_Z_zeta_str": "9*u**15/8 - 65*u**14/32 + 93*u**13/32 - 73*u**12/32 + 23*u**11/16 - 11*u**10/16 + u**9/4 - 7*u**8/32 + 11*u**7/16 - 57*u**6/32 + 69*u**5/32 - 41*u**4/16 + 19*u**3/8 - 17*u**2/16 + u/4 + 7/16",
+          "frob_num_in_Z_zeta_str": "67*u**15 - 105*u**14 - 8*u**13 + 8*u**12 + 51*u**11 - 128*u**10 + 39*u**9 + 10*u**8 + 29*u**7 - 108*u**6 + 54*u**5 + 27*u**4 + 14*u**3 - 91*u**2 + 81*u + 28",
+          "frob_full_in_Z_zeta_str": "9*u**15/8 - 65*u**14/32 + 93*u**13/32 - 73*u**12/32 + 23*u**11/16 - 11*u**10/16 + u**9/4 - 7*u**8/32 + 11*u**7/16 - 57*u**6/32 + 69*u**5/32 - 41*u**4/16 + 19*u**3/8 - 17*u**2/16 + u/4 + 7/16",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.07921880451501126,
             "imag": 0.10471107527932196
           },
-          "abs_frob_p": 0.13130128816938316,
+          "abs_frob": 0.13130128816938316,
           "pochhammer_truncates_at_m": 14,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 16,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "461/16",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 1162,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "1162",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "461/16",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 19,
           "u_root": "zeta_38",
-          "frob_p_in_Z_zeta_str": "-33*u**17/32 + 91*u**16/32 + 27*u**15/32 + 9*u**14/4 - 39*u**13/32 - u**12/8 - 19*u**11/8 + u**10/4 - 5*u**9/8 + 31*u**8/16 + 3*u**7/32 + 19*u**6/16 - 59*u**5/32 - 17*u**4/32 - 33*u**3/16 + 19*u**2/16 + 11*u/32 + 13/4",
+          "frob_num_in_Z_zeta_str": "38*u**17 + 28*u**16 - 78*u**15 - 27*u**14 + 16*u**13 + 36*u**12 - 81*u**11 - 51*u**10 + 2*u**9 + 49*u**8 - 62*u**7 - 74*u**6 - 19*u**5 + 58*u**4 - 15*u**3 - 54*u**2 - 25*u + 59",
+          "frob_full_in_Z_zeta_str": "-33*u**17/32 + 91*u**16/32 + 27*u**15/32 + 9*u**14/4 - 39*u**13/32 - u**12/8 - 19*u**11/8 + u**10/4 - 5*u**9/8 + 31*u**8/16 + 3*u**7/32 + 19*u**6/16 - 59*u**5/32 - 17*u**4/32 - 33*u**3/16 + 19*u**2/16 + 11*u/32 + 13/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.09464990742045444,
             "imag": 0.11736572457929588
           },
-          "abs_frob_p": 0.15077572178810397,
+          "abs_frob": 0.15077572178810397,
           "pochhammer_truncates_at_m": 14,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 18,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "333/8",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 873,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "873",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "333/8",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 23,
           "u_root": "zeta_46",
-          "frob_p_in_Z_zeta_str": "25*u**21/16 - 13*u**20/4 + 31*u**19/8 - 83*u**18/32 + 17*u**17/16 + 21*u**16/32 - 9*u**15/16 - 17*u**14/32 + 15*u**13/8 - 47*u**12/16 + 99*u**11/32 - 15*u**10/8 + 7*u**9/16 + 3*u**8/16 - 11*u**7/32 - 27*u**6/32 + 77*u**5/32 - 107*u**4/32 + 89*u**3/32 - 3*u**2/2 - u/16 + 39/32",
+          "frob_num_in_Z_zeta_str": "155*u**21 - 62*u**20 + 52*u**19 - 19*u**18 + 135*u**17 - 62*u**16 + 38*u**15 - 66*u**14 + 119*u**13 - 65*u**12 + 26*u**11 - 81*u**10 + 97*u**9 - 64*u**8 + 23*u**7 - 108*u**6 + 84*u**5 - 64*u**4 + 3*u**3 - 132*u**2 + 65*u - 63",
+          "frob_full_in_Z_zeta_str": "25*u**21/16 - 13*u**20/4 + 31*u**19/8 - 83*u**18/32 + 17*u**17/16 + 21*u**16/32 - 9*u**15/16 - 17*u**14/32 + 15*u**13/8 - 47*u**12/16 + 99*u**11/32 - 15*u**10/8 + 7*u**9/16 + 3*u**8/16 - 11*u**7/32 - 27*u**6/32 + 77*u**5/32 - 107*u**4/32 + 89*u**3/32 - 3*u**2/2 - u/16 + 39/32",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.10916186710113215,
             "imag": 0.1290666412466565
           },
-          "abs_frob_p": 0.16903996897686172,
+          "abs_frob": 0.16903996897686172,
           "pochhammer_truncates_at_m": 14,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 22,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "1887/32",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 134,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "134",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "1887/32",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         }
       ],
       "step2_summary": {
+        "step2_full_trace_compatible": false,
         "n_primes_truncated": 9,
         "n_primes_data_exhausted": 0,
-        "all_truncated_primes_compatible": false,
-        "primes_failing_compatibility": [
-          2,
-          3,
-          5,
-          7,
-          11,
-          13,
-          17,
-          19,
-          23
-        ]
+        "all_truncated_primes_compatible": true,
+        "primes_failing_compatibility": []
       }
     },
     {
@@ -437,199 +509,235 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
-          "frob_p_in_Z_zeta_str": "-229/181440",
+          "frob_num_in_Z_zeta_str": "29312",
+          "frob_full_in_Z_zeta_str": "-229/181440",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.0012621252204585538,
             "imag": 0.0
           },
-          "abs_frob_p": 0.0012621252204585538,
+          "abs_frob": 0.0012621252204585538,
           "pochhammer_truncates_at_m": 4,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-229/90720",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 58624,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "58624",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-229/90720",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
-          "frob_p_in_Z_zeta_str": "47*u - 78",
+          "frob_num_in_Z_zeta_str": "47*u - 78",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -54.5,
             "imag": 40.703193977868615
           },
-          "abs_frob_p": 68.02205524680947,
+          "abs_frob": 68.02205524680947,
           "pochhammer_truncates_at_m": 6,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": -109,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "-109",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -109,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-109",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
-          "frob_p_in_Z_zeta_str": "-14*u**3 - 59*u**2 + 100*u - 55",
+          "frob_num_in_Z_zeta_str": "-14*u**3 - 59*u**2 + 100*u - 55",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 11.995934690622109,
             "imag": -10.648600460298898
           },
-          "abs_frob_p": 16.0404220912278,
+          "abs_frob": 16.0404220912278,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 4,
-          "galois_trace_int": -75,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "-75",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -75,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-75",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
-          "frob_p_in_Z_zeta_str": "103*u**5 - 131*u**4 + 60*u**3 - 37*u**2 + 103*u - 138",
+          "frob_num_in_Z_zeta_str": "103*u**5 - 131*u**4 + 60*u**3 - 37*u**2 + 103*u - 138",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -89.98728048061747,
             "imag": 27.07102120708898
           },
-          "abs_frob_p": 93.97101062291487,
+          "abs_frob": 93.97101062291487,
           "pochhammer_truncates_at_m": 14,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 6,
-          "galois_trace_int": -394,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "-394",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -394,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-394",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
-          "frob_p_in_Z_zeta_str": "-111*u**9/64 + 315*u**8/128 - 93*u**7/32 + 115*u**6/128 + 9*u**5/16 + 139*u**4/128 - 265*u**3/128 + 167*u**2/64 - 2*u - 73/128",
+          "frob_num_in_Z_zeta_str": "-97*u**9 + 204*u**8 - 146*u**7 + 18*u**6 - 123*u**5 + 159*u**4 - 79*u**3 + 86*u**2 - 180*u + 147",
+          "frob_full_in_Z_zeta_str": "-111*u**9/64 + 315*u**8/128 - 93*u**7/32 + 115*u**6/128 + 9*u**5/16 + 139*u**4/128 - 265*u**3/128 + 167*u**2/64 - 2*u - 73/128",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.19183538344708778,
             "imag": -0.004936949722925929
           },
-          "abs_frob_p": 0.19189889998344936,
+          "abs_frob": 0.19189889998344936,
           "pochhammer_truncates_at_m": 19,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-669/32",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 378,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "378",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-669/32",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
-          "frob_p_in_Z_zeta_str": "11*u**11/16 + 21*u**10/128 + 253*u**9/128 + 7*u**8/32 + 27*u**7/32 - 109*u**6/64 - 211*u**5/128 - 49*u**4/32 + 91*u**3/128 + 17*u**2/16 + 211*u/128 + 65/128",
+          "frob_num_in_Z_zeta_str": "84*u**11 - 91*u**10 + 9*u**9 - 2*u**8 + 59*u**7 - 122*u**6 + 12*u**5 - 12*u**4 + 39*u**3 - 79*u**2 + 74*u",
+          "frob_full_in_Z_zeta_str": "11*u**11/16 + 21*u**10/128 + 253*u**9/128 + 7*u**8/32 + 27*u**7/32 - 109*u**6/64 - 211*u**5/128 - 49*u**4/32 + 91*u**3/128 + 17*u**2/16 + 211*u/128 + 65/128",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.1120330622536106,
             "imag": -0.03541042797523853
           },
-          "abs_frob_p": 0.1174959805581065,
+          "abs_frob": 0.1174959805581065,
           "pochhammer_truncates_at_m": 19,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "1549/128",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 583,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "583",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "1549/128",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 17,
           "u_root": "zeta_34",
-          "frob_p_in_Z_zeta_str": "u**15 + 33*u**14/128 - 29*u**13/32 + 97*u**12/128 - 381*u**11/128 + 405*u**10/128 - 245*u**9/64 + 129*u**8/32 - 55*u**7/64 - 3*u**6/8 + 11*u**5/8 - 57*u**4/64 - 211*u**3/128 + 327*u**2/128 - 129*u/64 + 61/64",
+          "frob_num_in_Z_zeta_str": "-238*u**15 + 576*u**14 - 400*u**13 + 33*u**12 - 133*u**11 + 514*u**10 - 504*u**9 + 50*u**8 - 78*u**7 + 474*u**6 - 602*u**5 + 158*u**4 - 73*u**3 + 397*u**2 - 613*u + 241",
+          "frob_full_in_Z_zeta_str": "u**15 + 33*u**14/128 - 29*u**13/32 + 97*u**12/128 - 381*u**11/128 + 405*u**10/128 - 245*u**9/64 + 129*u**8/32 - 55*u**7/64 - 3*u**6/8 + 11*u**5/8 - 57*u**4/64 - 211*u**3/128 + 327*u**2/128 - 129*u/64 + 61/64",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.03199617867231842,
             "imag": 0.09190596768311037
           },
-          "abs_frob_p": 0.0973163005122978,
+          "abs_frob": 0.0973163005122978,
           "pochhammer_truncates_at_m": 19,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 16,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-263/64",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -987,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-987",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-263/64",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 19,
           "u_root": "zeta_38",
-          "frob_p_in_Z_zeta_str": "-23*u**17/16 - 197*u**16/64 - 59*u**15/64 + 213*u**14/64 + 45*u**13/16 + 165*u**12/64 - 2*u**11 - 67*u**10/16 - 33*u**9/64 - 7*u**8/128 + 283*u**7/128 + 139*u**6/128 - 225*u**5/128 + u**4/4 + 9*u**3/128 + 23*u**2/32 - 13*u/128 - 243/128",
+          "frob_num_in_Z_zeta_str": "-270*u**17 - 360*u**16 + 307*u**15 + 142*u**14 - 179*u**13 - 443*u**12 + 190*u**11 + 159*u**10 - 75*u**9 - 409*u**8 + 153*u**7 + 203*u**6 + 40*u**5 - 385*u**4 + 86*u**3 + 240*u**2 + 199*u - 364",
+          "frob_full_in_Z_zeta_str": "-23*u**17/16 - 197*u**16/64 - 59*u**15/64 + 213*u**14/64 + 45*u**13/16 + 165*u**12/64 - 2*u**11 - 67*u**10/16 - 33*u**9/64 - 7*u**8/128 + 283*u**7/128 + 139*u**6/128 - 225*u**5/128 + u**4/4 + 9*u**3/128 + 23*u**2/32 - 13*u/128 - 243/128",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.021136659775267554,
             "imag": 0.031448224646305534
           },
-          "abs_frob_p": 0.03789128158112249,
+          "abs_frob": 0.03789128158112249,
           "pochhammer_truncates_at_m": 19,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 18,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-2333/64",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -5248,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-5248",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-2333/64",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 23,
           "u_root": "zeta_46",
-          "frob_p_in_Z_zeta_str": "-165*u**21/128 + 83*u**20/128 + 37*u**19/128 - 229*u**18/64 + 329*u**17/128 - 87*u**16/16 - 5*u**15/2 - 111*u**14/128 - 233*u**13/128 - 15*u**12/64 + 709*u**11/128 - 177*u**10/128 + 395*u**9/64 + 135*u**8/64 + 31*u**7/32 + 191*u**6/128 - 47*u**5/32 - 441*u**4/128 + 37*u**3/128 - 181*u**2/32 + 99*u/64 - 27/8",
+          "frob_num_in_Z_zeta_str": "703*u**21 + 675*u**20 + 767*u**19 - 75*u**18 + 536*u**17 + 562*u**16 + 713*u**15 - 225*u**14 + 218*u**13 + 291*u**12 + 507*u**11 - 488*u**10 - 127*u**9 - 143*u**8 + 220*u**7 - 679*u**6 - 493*u**5 - 517*u**4 + 66*u**3 - 792*u**2 - 653*u - 692",
+          "frob_full_in_Z_zeta_str": "-165*u**21/128 + 83*u**20/128 + 37*u**19/128 - 229*u**18/64 + 329*u**17/128 - 87*u**16/16 - 5*u**15/2 - 111*u**14/128 - 233*u**13/128 - 15*u**12/64 + 709*u**11/128 - 177*u**10/128 + 395*u**9/64 + 135*u**8/64 + 31*u**7/32 + 191*u**6/128 - 47*u**5/32 - 441*u**4/128 + 37*u**3/128 - 181*u**2/32 + 99*u/64 - 27/8",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.012515466090710334,
             "imag": 0.01130090661641989
           },
-          "abs_frob_p": 0.01686260305589748,
+          "abs_frob": 0.01686260305589748,
           "pochhammer_truncates_at_m": 19,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 22,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-6093/128",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -11376,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-11376",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-6093/128",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         }
       ],
       "step2_summary": {
+        "step2_full_trace_compatible": false,
         "n_primes_truncated": 9,
         "n_primes_data_exhausted": 0,
-        "all_truncated_primes_compatible": false,
-        "primes_failing_compatibility": [
-          2,
-          3,
-          5,
-          7,
-          11,
-          13,
-          17,
-          19,
-          23
-        ]
+        "all_truncated_primes_compatible": true,
+        "primes_failing_compatibility": []
       }
     },
     {
@@ -641,199 +749,235 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
-          "frob_p_in_Z_zeta_str": "-229/181440",
+          "frob_num_in_Z_zeta_str": "-29312",
+          "frob_full_in_Z_zeta_str": "-229/181440",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.0012621252204585538,
             "imag": 0.0
           },
-          "abs_frob_p": 0.0012621252204585538,
+          "abs_frob": 0.0012621252204585538,
           "pochhammer_truncates_at_m": 4,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-229/90720",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -58624,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-58624",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-229/90720",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
-          "frob_p_in_Z_zeta_str": "12*u - 47",
+          "frob_num_in_Z_zeta_str": "12*u - 47",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -41.0,
             "imag": 10.392304845413264
           },
-          "abs_frob_p": 42.2965719651132,
+          "abs_frob": 42.2965719651132,
           "pochhammer_truncates_at_m": 6,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": -82,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "-82",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -82,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-82",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
-          "frob_p_in_Z_zeta_str": "118*u**3 - 112*u**2 - 2*u + 73",
+          "frob_num_in_Z_zeta_str": "118*u**3 - 112*u**2 - 2*u + 73",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.30805730501219764,
             "imag": 4.530768593185975
           },
-          "abs_frob_p": 4.541229277208077,
+          "abs_frob": 4.541229277208077,
           "pochhammer_truncates_at_m": 10,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 4,
-          "galois_trace_int": 520,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "520",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 520,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "520",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
-          "frob_p_in_Z_zeta_str": "-123*u**5 + 2*u**4 - 12*u**3 + 62*u**2 - 75*u + 8",
+          "frob_num_in_Z_zeta_str": "-123*u**5 + 2*u**4 - 12*u**3 + 62*u**2 - 75*u + 8",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 52.65765517579587,
             "imag": -89.98227998618492
           },
-          "abs_frob_p": 104.25756260399145,
+          "abs_frob": 104.25756260399145,
           "pochhammer_truncates_at_m": 14,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 6,
-          "galois_trace_int": -226,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "-226",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -226,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-226",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
-          "frob_p_in_Z_zeta_str": "289*u**9/128 - 501*u**8/128 + 343*u**7/128 - 137*u**6/128 - 21*u**5/128 - 125*u**4/128 + 435*u**3/128 - 439*u**2/128 + 111*u/64 - 3/16",
+          "frob_num_in_Z_zeta_str": "125*u**9 - 286*u**8 + 90*u**7 - 19*u**6 + 286*u**5 - 248*u**4 - 7*u**3 - 30*u**2 + 338*u - 206",
+          "frob_full_in_Z_zeta_str": "289*u**9/128 - 501*u**8/128 + 343*u**7/128 - 137*u**6/128 - 21*u**5/128 - 125*u**4/128 + 435*u**3/128 - 439*u**2/128 + 111*u/64 - 3/16",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.09077195600721547,
             "imag": -0.20721077919395045
           },
-          "abs_frob_p": 0.22622081029724023,
+          "abs_frob": 0.22622081029724023,
           "pochhammer_truncates_at_m": 20,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "1115/64",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -645,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-645",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "1115/64",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
-          "frob_p_in_Z_zeta_str": "-27*u**11/16 + 13*u**10/8 - 201*u**9/128 + 57*u**8/32 - 19*u**7/128 + 167*u**6/64 - 81*u**5/128 - 3*u**4/16 - 419*u**3/128 - 25*u**2/128 - 63*u/128 + 83/32",
+          "frob_num_in_Z_zeta_str": "-55*u**11 - 276*u**10 + 348*u**9 - 54*u**8 - 74*u**7 - 163*u**6 + 361*u**5 - 156*u**4 - 59*u**3 - 66*u**2 + 311*u - 284",
+          "frob_full_in_Z_zeta_str": "-27*u**11/16 + 13*u**10/8 - 201*u**9/128 + 57*u**8/32 - 19*u**7/128 + 167*u**6/64 - 81*u**5/128 - 3*u**4/16 - 419*u**3/128 - 25*u**2/128 - 63*u/128 + 83/32",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.032504105500324454,
             "imag": -0.01574014853048319
           },
-          "abs_frob_p": 0.03611466669011213,
+          "abs_frob": 0.03611466669011213,
           "pochhammer_truncates_at_m": 20,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "283/16",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -1861,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-1861",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "283/16",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 17,
           "u_root": "zeta_34",
-          "frob_p_in_Z_zeta_str": "21*u**15/32 - 87*u**14/32 + 639*u**13/128 - 691*u**12/128 + 701*u**11/128 - 327*u**10/64 + 619*u**9/128 - 307*u**8/64 + 247*u**7/64 - 479*u**6/128 + 509*u**5/128 - 627*u**4/128 + 783*u**3/128 - 719*u**2/128 + 7*u/2 - 63/64",
+          "frob_num_in_Z_zeta_str": "62*u**15 - 110*u**14 - 41*u**13 + 53*u**12 + 33*u**11 - 146*u**10 - 74*u**9 + 156*u**8 - 16*u**7 - 141*u**6 - 10*u**5 + 94*u**4 + 30*u**3 - 125*u**2 + 56*u + 56",
+          "frob_full_in_Z_zeta_str": "21*u**15/32 - 87*u**14/32 + 639*u**13/128 - 691*u**12/128 + 701*u**11/128 - 327*u**10/64 + 619*u**9/128 - 307*u**8/64 + 247*u**7/64 - 479*u**6/128 + 509*u**5/128 - 627*u**4/128 + 783*u**3/128 - 719*u**2/128 + 7*u/2 - 63/64",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.08440961735295524,
             "imag": -0.04228634517160771
           },
-          "abs_frob_p": 0.09440931357469279,
+          "abs_frob": 0.09440931357469279,
           "pochhammer_truncates_at_m": 20,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 16,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "6393/128",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 1155,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "1155",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "6393/128",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 19,
           "u_root": "zeta_38",
-          "frob_p_in_Z_zeta_str": "237*u**17/128 + 501*u**16/128 - 21*u**15/64 - 21*u**14/8 - 611*u**13/128 + 3*u**12/16 + 265*u**11/128 + 597*u**10/128 - 5*u**9/64 - 143*u**8/128 - 333*u**7/128 + 73*u**6/128 + 91*u**5/128 + 23*u**4/32 - 155*u**3/64 + 7*u**2/64 + 25*u/128 + 105/32",
+          "frob_num_in_Z_zeta_str": "59*u**17 + 81*u**16 - 254*u**15 + 32*u**14 + 71*u**13 + 89*u**12 - 232*u**11 + 61*u**10 + 136*u**9 + 210*u**8 - 168*u**7 - 11*u**6 + 74*u**5 + 302*u**4 - 64*u**3 - 49*u**2 - 12*u + 324",
+          "frob_full_in_Z_zeta_str": "237*u**17/128 + 501*u**16/128 - 21*u**15/64 - 21*u**14/8 - 611*u**13/128 + 3*u**12/16 + 265*u**11/128 + 597*u**10/128 - 5*u**9/64 - 143*u**8/128 - 333*u**7/128 + 73*u**6/128 + 91*u**5/128 + 23*u**4/32 - 155*u**3/64 + 7*u**2/64 + 25*u/128 + 105/32",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.0323736960925767,
             "imag": -0.024444783477332165
           },
-          "abs_frob_p": 0.04056604045193673,
+          "abs_frob": 0.04056604045193673,
           "pochhammer_truncates_at_m": 20,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 18,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "3025/64",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 4727,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "4727",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "3025/64",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 23,
           "u_root": "zeta_46",
-          "frob_p_in_Z_zeta_str": "-191*u**21/64 + 21*u**20/32 - 321*u**19/128 + 903*u**18/128 - 97*u**17/32 + 311*u**16/32 + 7*u**15/64 + 193*u**14/64 - 51*u**13/128 + 257*u**12/128 - 417*u**11/64 + 265*u**10/64 - 1091*u**9/128 + 57*u**8/128 - 495*u**7/128 - 15*u**6/128 - 177*u**5/64 + 487*u**4/128 - 255*u**3/64 + 979*u**2/128 - 257*u/128 + 951/128",
+          "frob_num_in_Z_zeta_str": "810*u**21 - 810*u**20 + 743*u**19 - 273*u**18 + 561*u**17 - 1126*u**16 + 309*u**15 - 659*u**14 + 305*u**13 - 1417*u**12 - 38*u**11 - 995*u**10 + 187*u**9 - 1483*u**8 - 213*u**7 - 1055*u**6 + 293*u**5 - 1373*u**4 - 132*u**3 - 963*u**2 + 492*u - 1074",
+          "frob_full_in_Z_zeta_str": "-191*u**21/64 + 21*u**20/32 - 321*u**19/128 + 903*u**18/128 - 97*u**17/32 + 311*u**16/32 + 7*u**15/64 + 193*u**14/64 - 51*u**13/128 + 257*u**12/128 - 417*u**11/64 + 265*u**10/64 - 1091*u**9/128 + 57*u**8/128 - 495*u**7/128 - 15*u**6/128 - 177*u**5/64 + 487*u**4/128 - 255*u**3/64 + 979*u**2/128 - 257*u/128 + 951/128",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.01508800293510153,
             "imag": -0.01149178687638281
           },
-          "abs_frob_p": 0.018965995839444777,
+          "abs_frob": 0.018965995839444777,
           "pochhammer_truncates_at_m": 20,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 22,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "11341/128",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -10157,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-10157",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "11341/128",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         }
       ],
       "step2_summary": {
+        "step2_full_trace_compatible": false,
         "n_primes_truncated": 9,
         "n_primes_data_exhausted": 0,
-        "all_truncated_primes_compatible": false,
-        "primes_failing_compatibility": [
-          2,
-          3,
-          5,
-          7,
-          11,
-          13,
-          17,
-          19,
-          23
-        ]
+        "all_truncated_primes_compatible": true,
+        "primes_failing_compatibility": []
       }
     },
     {
@@ -845,206 +989,242 @@
         {
           "prime": 2,
           "u_root": "zeta_4",
-          "frob_p_in_Z_zeta_str": "-2/3",
+          "frob_num_in_Z_zeta_str": "-8",
+          "frob_full_in_Z_zeta_str": "-2/3",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.6666666666666666,
             "imag": 0.0
           },
-          "abs_frob_p": 0.6666666666666666,
+          "abs_frob": 0.6666666666666666,
           "pochhammer_truncates_at_m": 4,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-4/3",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -16,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-16",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-4/3",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 3,
           "u_root": "zeta_6",
-          "frob_p_in_Z_zeta_str": "2*u + 1",
+          "frob_num_in_Z_zeta_str": "2*u + 1",
+          "frob_full_in_Z_zeta_str": null,
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 2.0,
             "imag": 1.7320508075688772
           },
-          "abs_frob_p": 2.6457513110645907,
+          "abs_frob": 2.6457513110645907,
           "pochhammer_truncates_at_m": 6,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
           "galois_orbit_size": 2,
-          "galois_trace_int": 4,
-          "galois_trace_is_exact_integer": true,
-          "galois_trace_residue_str": "4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 4,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "4",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": null,
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 5,
           "u_root": "zeta_10",
-          "frob_p_in_Z_zeta_str": "-u**3/4 + u**2/2 - u/2 + 1/4",
+          "frob_num_in_Z_zeta_str": "-u**3 + 3*u**2 - 3*u + 1",
+          "frob_full_in_Z_zeta_str": "-u**3/4 + u**2/2 - u/2 + 1/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.07725424859373686,
             "imag": -0.05612849707244817
           },
-          "abs_frob_p": 0.09549150281252629,
+          "abs_frob": 0.09549150281252629,
           "pochhammer_truncates_at_m": 9,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 4,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-1/4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -3,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-3",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-1/4",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 7,
           "u_root": "zeta_14",
-          "frob_p_in_Z_zeta_str": "u**5/4 + u**3/4 + u**2/4 - 1/4",
+          "frob_num_in_Z_zeta_str": "-2*u**5 + 2*u**4 - u**3 - 2*u + 1",
+          "frob_full_in_Z_zeta_str": "u**5/4 + u**3/4 + u**2/4 - 1/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": -0.1943697665109214,
             "imag": 0.6346477192794708
           },
-          "abs_frob_p": 0.6637449312199258,
+          "abs_frob": 0.6637449312199258,
           "pochhammer_truncates_at_m": 9,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 6,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-5/4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -1,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-1",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-5/4",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 11,
           "u_root": "zeta_22",
-          "frob_p_in_Z_zeta_str": "-u**9/4 + u**7/4 - u**6/4 - u**5/4 + u**3/4",
+          "frob_num_in_Z_zeta_str": "2*u**9 - 3*u**8 - u**7 - u**6 + 3*u**5 - 2*u**4 - u**3 - u**2 + 3*u - 1",
+          "frob_full_in_Z_zeta_str": "-u**9/4 + u**7/4 - u**6/4 - u**5/4 + u**3/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.27017481344364497,
             "imag": -0.2137255328771716
           },
-          "abs_frob_p": 0.3444895255634623,
+          "abs_frob": 0.3444895255634623,
           "pochhammer_truncates_at_m": 9,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 10,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "1/4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 3,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "3",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "1/4",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 13,
           "u_root": "zeta_26",
-          "frob_p_in_Z_zeta_str": "-u**10/4 + u**8/4 - u**7/4 + u**6/4 + u**4/4 - u**3/2 + u**2/2",
+          "frob_num_in_Z_zeta_str": "-2*u**11 + 3*u**10 - 3*u**9 - u**8 - u**7 + 3*u**6 - 3*u**5 + 2*u**2 - 3*u + 2",
+          "frob_full_in_Z_zeta_str": "-u**10/4 + u**8/4 - u**7/4 + u**6/4 + u**4/4 - u**3/2 + u**2/2",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.36923363083364624,
             "imag": 0.17451961948605568
           },
-          "abs_frob_p": 0.4084000143537645,
+          "abs_frob": 0.4084000143537645,
           "pochhammer_truncates_at_m": 9,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 12,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-7/4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": 5,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "5",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-7/4",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 17,
           "u_root": "zeta_34",
-          "frob_p_in_Z_zeta_str": "-u**14/2 + u**13/2 - u**12/4 + u**11/4 + u**9/2 - u**8/4 + u**7/2 - u**6/4 + u**5/4 - u**4/4 + u**3/4 - u**2/4 + 3*u/4 - 1/4",
+          "frob_num_in_Z_zeta_str": "-3*u**15 + 2*u**14 - 2*u**13 - 2*u**11 + u**10 - 3*u**9 - u**8 - 2*u**7 + 2*u**6 - 3*u**5 - u**4 - u**3 + 3*u**2 - 3*u",
+          "frob_full_in_Z_zeta_str": "-u**14/2 + u**13/2 - u**12/4 + u**11/4 + u**9/2 - u**8/4 + u**7/2 - u**6/4 + u**5/4 - u**4/4 + u**3/4 - u**2/4 + 3*u/4 - 1/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.4835962970334777,
             "imag": 0.814163957668108
           },
-          "abs_frob_p": 0.9469574058373947,
+          "abs_frob": 0.9469574058373947,
           "pochhammer_truncates_at_m": 9,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 16,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "3/4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -25,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-25",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "3/4",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 19,
           "u_root": "zeta_38",
-          "frob_p_in_Z_zeta_str": "u**16/2 + u**14/4 - u**13/4 - u**9/4 + u**8/4 + u**6/4 + u**5/4 + u**4/4 + u**3/4 + u**2/2 - u/4",
+          "frob_num_in_Z_zeta_str": "-3*u**16 + 2*u**15 - u**14 - 3*u**12 + u**11 - 2*u**10 + u**9 - 4*u**8 - 2*u**6 + u**5 - 4*u**4 - u**2 + 2*u - 3",
+          "frob_full_in_Z_zeta_str": "u**16/2 + u**14/4 - u**13/4 - u**9/4 + u**8/4 + u**6/4 + u**5/4 + u**4/4 + u**3/4 + u**2/2 - u/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.5179355990254431,
             "imag": 0.9927807085521113
           },
-          "abs_frob_p": 1.1197637340131519,
+          "abs_frob": 1.1197637340131519,
           "pochhammer_truncates_at_m": 9,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 18,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "-9/4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -27,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-27",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "-9/4",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         },
         {
           "prime": 23,
           "u_root": "zeta_46",
-          "frob_p_in_Z_zeta_str": "-u**20/4 + u**19/2 - u**18/2 + u**17/4 + u**15/2 - u**14/2 + u**13/2 - u**12/4 + u**11/4 + u**9/4 - u**8/4 + 3*u**7/4 - u**6/4 + u**5/4 - u**4/4 + u**3/2 - u**2/4 + u/2 - 1/4",
+          "frob_num_in_Z_zeta_str": "2*u**21 - 2*u**20 + 2*u**19 + u**17 - 3*u**16 + 2*u**15 - u**14 - 3*u**12 + 2*u**11 - 2*u**10 - 4*u**8 + u**7 - 2*u**6 + u**5 - 4*u**4 - 2*u**2 + u - 3",
+          "frob_full_in_Z_zeta_str": "-u**20/4 + u**19/2 - u**18/2 + u**17/4 + u**15/2 - u**14/2 + u**13/2 - u**12/4 + u**11/4 + u**9/4 - u**8/4 + 3*u**7/4 - u**6/4 + u**5/4 - u**4/4 + u**3/2 - u**2/4 + u/2 - 1/4",
           "denom_folded": true,
           "denom_inversion_error": null,
-          "frob_p_complex": {
+          "frob_complex": {
             "real": 0.5632288428914711,
             "imag": 1.1610339433176544
           },
-          "abs_frob_p": 1.2904365722501079,
+          "abs_frob": 1.2904365722501079,
           "pochhammer_truncates_at_m": 9,
           "frob_p_is_exact": true,
           "exact_via": "habiro_expansion_terminated_cleanly",
           "galois_orbit_size": 22,
-          "galois_trace_int": null,
-          "galois_trace_is_exact_integer": false,
-          "galois_trace_residue_str": "5/4",
-          "step2_compatibility_passed": false
+          "galois_trace_num_int": -31,
+          "galois_trace_num_is_integer": true,
+          "galois_trace_num_residue_str": "-31",
+          "galois_trace_full_int": null,
+          "galois_trace_full_is_integer": false,
+          "galois_trace_full_residue_str": "5/4",
+          "step2_compatibility_passed": true,
+          "step2_full_trace_passed": false
         }
       ],
       "step2_summary": {
+        "step2_full_trace_compatible": false,
         "n_primes_truncated": 9,
         "n_primes_data_exhausted": 0,
-        "all_truncated_primes_compatible": false,
-        "primes_failing_compatibility": [
-          2,
-          3,
-          5,
-          7,
-          11,
-          13,
-          17,
-          19,
-          23
-        ]
+        "all_truncated_primes_compatible": true,
+        "primes_failing_compatibility": []
       }
     }
   ],
   "summary": {
     "n_atoms": 5,
     "n_primes": 9,
-    "step2_all_atoms_compatible": false,
-    "n_atoms_step2_passed": 0
+    "step2_all_atoms_compatible": true,
+    "n_atoms_step2_passed": 5
   }
 }

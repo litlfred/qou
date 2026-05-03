@@ -132,13 +132,13 @@ def check_multiplicative(frob_a: sp.Expr, frob_b: sp.Expr,
     diff = reduce_in_ring((product - target).as_expr(), n, u)
     # Compute the Galois TRACE of the residue:
     #   Tr(ε) = Σ_{k coprime to n} σ_k(ε)
-    # (sum of conjugates, NOT product = norm).
+    # (sum of conjugates, NOT product = norm). Use `galois_orbit`
+    # for per-term reduction modulo Φ_n (avoids expression
+    # explosion — for higher conductors n, the un-reduced sum can
+    # grow combinatorially before final reduction).
     diff_expr = diff.as_expr()
-    galois_norm = reduce_in_ring(
-        sum(diff_expr.subs(u, u ** k)
-            for k in range(1, n) if gcd(k, n) == 1),
-        n, u,
-    )
+    orbit_terms = galois_orbit(diff_expr, n, u)
+    galois_norm = reduce_in_ring(sum(orbit_terms), n, u)
     norm_int = (
         int(galois_norm.all_coeffs()[0]) if galois_norm.degree() == 0
         and galois_norm.all_coeffs()
@@ -341,10 +341,10 @@ def main() -> int:
             eps_He = reduce_in_ring(f_He - f_D * f_p, n_2p, u).as_expr()
             gap = reduce_in_ring(eps_T - eps_He, n_2p, u)
             gap_expr = gap.as_expr()
+            # Per-term reduction via `galois_orbit` to avoid
+            # expression explosion before final reduction.
             gap_norm = reduce_in_ring(
-                sum(gap_expr.subs(u, u ** k)
-                    for k in range(1, n_2p) if gcd(k, n_2p) == 1),
-                n_2p, u,
+                sum(galois_orbit(gap_expr, n_2p, u)), n_2p, u,
             )
             norm_int = (
                 int(gap_norm.all_coeffs()[0]) if gap_norm.degree() == 0
@@ -556,45 +556,59 @@ def main() -> int:
     # is non-modular.
     print("─── Test 6: Hecke multiplicativity a_{pq} =? a_p · a_q ───")
 
-    def evaluate_gap_in_ring(habiro_coeffs_T: list[dict],
-                              habiro_coeffs_He: list[dict],
+    def parse_int_coeffs(coeffs: list[dict],
+                         u_sym: sp.Symbol
+                         ) -> list[tuple[int, list[int]]]:
+        """Parse Habiro coefficients (m, a_m_str) → integer-coefficient
+        Horner lists once, for reuse across multiple cyclotomic
+        conductors."""
+        out = []
+        for c in coeffs:
+            m = int(c["m"])
+            expr = sp.sympify(str(c["a_m"]), locals={"u": u_sym})
+            try:
+                poly = sp.Poly(expr, u_sym)
+                ic = [int(co) for co in poly.all_coeffs()]
+            except (sp.PolynomialError, ValueError):
+                ic = []
+            out.append((m, ic))
+        return out
+
+    def evaluate_gap_in_ring(parsed_T: list[tuple[int, list[int]]],
+                              parsed_He: list[tuple[int, list[int]]],
                               N: int, u_sym: sp.Symbol,
                               terminated_T: bool,
                               terminated_He: bool) -> sp.Poly:
-        """Evaluate ε(T) - ε(³He) - ε(D)·... at u = ζ_N (so ζ_N's
-        order divides N). Returns the polynomial representative."""
-        # We evaluate Frob_N for T, ³He, and the gap analogously
-        # to evaluate_at_root but with cyclotomic conductor N.
+        """Evaluate Frob_N(T) - Frob_N(³He) at u = ζ_N. Reuses
+        pre-parsed integer-coefficient lists across cyclotomic
+        conductors.
+
+        Iterative Pochhammer update: (u;u)_m = (u;u)_{m-1} · (1-u^m).
+        """
         phi_N = sp.Poly(sp.cyclotomic_poly(N, u_sym), u_sym)
 
-        def frob_at_N(coeffs: list[dict], terminated: bool) -> sp.Poly:
+        def frob_at_N(parsed: list[tuple[int, list[int]]],
+                      terminated: bool) -> sp.Poly:
             total = sp.Poly(0, u_sym)
-            parsed_local = []
-            for c in coeffs:
-                m = int(c["m"])
-                expr = sp.sympify(str(c["a_m"]), locals={"u": u_sym})
-                try:
-                    poly = sp.Poly(expr, u_sym)
-                    ic = [int(co) for co in poly.all_coeffs()]
-                except (sp.PolynomialError, ValueError):
-                    ic = []
-                parsed_local.append((m, ic))
-            for m, ic in parsed_local:
+            poch = sp.Poly(1, u_sym)
+            last_m = 0
+            for m, ic in parsed:
                 if not terminated and m >= N:
                     break
+                for i in range(last_m + 1, m + 1):
+                    factor = sp.Poly(1, u_sym) - sp.Poly(u_sym ** i, u_sym)
+                    poch = poch * factor
+                    _, poch = poch.div(phi_N)
+                last_m = m
                 a_m_poly = sp.Poly(ic, u_sym) if ic else sp.Poly(0, u_sym)
-                poch = cyclotomic_pochhammer_in_ring(N, m, u_sym)
                 term = a_m_poly * poch
                 _, term = term.div(phi_N)
                 total = total + term
                 _, total = total.div(phi_N)
             return total
 
-        # Gap residues: T - D·n  vs  ³He - D·p needs D, p, n at this N.
-        # For the Hecke multiplicativity we want Frob_N(T) - Frob_N(³He)
-        # directly (which is the gap, simpler).
-        f_T = frob_at_N(habiro_coeffs_T, terminated_T)
-        f_He = frob_at_N(habiro_coeffs_He, terminated_He)
+        f_T = frob_at_N(parsed_T, terminated_T)
+        f_He = frob_at_N(parsed_He, terminated_He)
         return reduce_in_ring((f_T - f_He).as_expr(), N, u_sym)
 
     # Need access to the original Habiro records.
@@ -612,6 +626,12 @@ def main() -> int:
         T_coeffs = T_record["habiro_coefficients"]
         He_coeffs = He_record["habiro_coefficients"]
 
+        # Pre-parse Habiro coefficients ONCE here — independent of N
+        # (since they're integer-coefficient polynomials in u). Reused
+        # across the (p, q) loop below to avoid redundant sp.sympify.
+        parsed_T = parse_int_coeffs(T_coeffs, u)
+        parsed_He = parse_int_coeffs(He_coeffs, u)
+
         # Test: pq pairs from primes ∈ {3, 7, 11}. Skip larger ones
         # because deg(Φ_{2pq}) = (p-1)(q-1) gets expensive fast.
         pq_pairs = [(3, 7), (3, 11), (7, 11)]
@@ -626,15 +646,14 @@ def main() -> int:
                   f"φ(N) = {sp.totient(N)}")
             try:
                 gap_at_N = evaluate_gap_in_ring(
-                    T_coeffs, He_coeffs, N, u,
+                    parsed_T, parsed_He, N, u,
                     T_terminated, He_terminated,
                 )
-                # Galois trace of the gap residue at level N.
+                # Galois trace of the gap residue at level N
+                # (per-term reduction via `galois_orbit`).
                 gap_expr = gap_at_N.as_expr()
                 norm_at_N = reduce_in_ring(
-                    sum(gap_expr.subs(u, u ** k)
-                        for k in range(1, N) if gcd(k, N) == 1),
-                    N, u,
+                    sum(galois_orbit(gap_expr, N, u)), N, u,
                 )
                 norm_int = (
                     int(norm_at_N.all_coeffs()[0])
