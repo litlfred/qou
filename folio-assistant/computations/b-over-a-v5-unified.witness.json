@@ -1,6 +1,6 @@
 {
   "computation": "b-over-a-v5-unified",
-  "computedAt": "2026-05-03T22:22:39.462418+00:00",
+  "computedAt": "2026-05-03T23:05:13.676376+00:00",
   "description": "B/A v5 unified evaluator — dispatches by formula family per the watched-branch's methodology audit (methodology-deprecation.witness.json).  Families: 1 (D, T, ³He principled), 2 (⁴He magic-A), 3 (⁸Be–⁴⁰Ca recursive-on-4He), 4 (⁶Li, ⁷Li, … OPEN, GAPS 4, 5).",
   "constants": {
     "m_e_MeV": 0.51099895069,
@@ -286,7 +286,9 @@
       "reason": "Family 4 (open): T_w not yet derived (GAP 4, 5).  Plausible α + (light cluster) ansatz pending H_18/H_21 SDP via the joint-tower Rust kernel.",
       "module": null,
       "method": "open (deprecated-volume-match quarantined)",
-      "B_AME_MeV": 31.99405
+      "B_AME_MeV": 31.99405,
+      "tr_M_at_q0_markov_peel": "0.0078896372028493221006950619766939780674874782562256",
+      "rho_t_implied": 7935.826745898638
     },
     {
       "Z": 3,
