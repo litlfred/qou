@@ -448,7 +448,7 @@ e.g. ⁶Li ≈ α + D, ⁷Li ≈ α + T) remains testable but untested.
 | Family-4 (⁶Li, ⁷Li) | No T_w derivation method; H_18/H_21 SDP not yet instantiated |
 
 Three concrete v5 deliverables would unblock the rest:
-1. **`magic_A_formula.py`** — exposes the `B = ρ · m_e · A · 8G` rule as a callable for ⁴He, ¹⁶O, ⁴⁰Ca (doubly-magic)
+1. **`magic_A_formula.py`** — exposes the `B = ρ · m_e · A · 8G` rule as a callable for ⁴He (doubly-magic Z=N=2; the watched-branch's `methodology-deprecation.witness.json` lists magic-A only for ⁴He at the light-A end. Heavier doubly-magic atoms ¹⁶O and ⁴⁰Ca use the recursive-on-4He methodology — see deliverable 2)
 2. **`alpha_cluster_recursion.py`** — composes T_w(⁴He) recursively for ⁸Be (= 2α), ¹²C (= 3α), etc., using R5min edges
 3. **Family-4 derivation** (the actual research gap) — derive T_w for ⁶Li, ⁷Li from cluster ansatz + SDP feasibility
 
