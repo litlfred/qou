@@ -33,7 +33,11 @@ compares cleanly:
 
 ```bash
 git fetch origin <BRANCH> 2>/dev/null
-git rev-parse origin/<BRANCH> > /tmp/_watch_baseline_<BRANCH>.sha
+# Sanitize branch name for use in a file path: replace `/` with `_`
+# (e.g. `feature/foo` → `feature_foo`).  Without this, branches with
+# slashes silently land in non-existent directory trees.
+SAFE_BRANCH=$(printf '%s' "<BRANCH>" | tr '/' '_')
+git rev-parse "origin/<BRANCH>" > "/tmp/_watch_baseline_${SAFE_BRANCH}.sha"
 ```
 
 For PR mode, instead capture the latest PR head SHA:
@@ -94,11 +98,24 @@ For every notification (branch commit or PR event), run through these
 
 ### Q2 — Does it conflict?
 
-- Try a dry rebase in a worktree:
-  `git worktree add /tmp/rebase-probe HEAD && cd /tmp/rebase-probe && git rebase origin/<BRANCH>; cd - && git worktree remove --force /tmp/rebase-probe`.
-- Conflicts → flag the user with the file list and a brief description
-  of the conflicting hunks.  Do **not** auto-resolve unless trivial
-  (whitespace, unrelated import-section reflow).
+- Try a dry rebase in a fresh worktree.  Use `mktemp -d` so the
+  path is unique (avoids collisions with previous failed runs and
+  with parallel `/watch` invocations) and clean up unconditionally
+  via `trap`:
+
+  ```bash
+  PROBE=$(mktemp -d /tmp/rebase-probe.XXXXXX)
+  trap 'git worktree remove --force "$PROBE" 2>/dev/null; rm -rf "$PROBE"' EXIT
+  git worktree add "$PROBE" HEAD >/dev/null
+  ( cd "$PROBE" && git rebase "origin/<BRANCH>" )
+  status=$?
+  # trap fires on EXIT
+  ```
+
+- Conflicts (`status != 0`) → flag the user with the file list and
+  a brief description of the conflicting hunks.  Do **not**
+  auto-resolve unless trivial (whitespace, unrelated import-section
+  reflow).
 
 ### Q3 — Can we reuse?
 

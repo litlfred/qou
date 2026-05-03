@@ -4,18 +4,25 @@ $T_w \in H_n(q)$ in Gröbner–Shirshov normal form, the *recursive
 ascent* algorithm evaluates the canonical Jones–Markov trace
 $\mathrm{tr}_M^{(n)}(T_w) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ by
 
-1. **Peel the top generator.** Express
-   $T_w = T_{w'} \cdot \sigma_{n-1}^{\pm 1}$ with
+1. **Eliminate inverse generators.** Whenever an
+   $\sigma_i^{-1}$ factor appears, expand
+   $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$
+   (the Hecke-relation identity for the inverse), so that the
+   reduced word contains only positive generators.
+2. **Peel the top generator.** Express
+   $T_w = T_{w'} \cdot \sigma_{n-1}$ with
    $T_{w'} \in H_{n-1}(q)$ via Garside / Gröbner–Shirshov
-   normalisation; apply
+   normalisation; the
    ([Markov pair identity](#prop:markov-pair-z2))
-   to get
-   $\mathrm{tr}_M^{(n)}(T_w) = z^{\pm 1} \cdot \mathrm{tr}_M^{(n-1)}(T_{w'})$.
-2. **Branch on the Hecke quadratic.** Whenever a $\sigma_i^2$
+   gives
+   $\mathrm{tr}_M^{(n)}(T_w) = z \cdot \mathrm{tr}_M^{(n-1)}(T_{w'})$
+   where $z = 1 / (q^{1/2} + q^{-1/2})$.  (No inverse factor
+   is ever peeled; inverses were eliminated in step 1.)
+3. **Branch on the Hecke quadratic.** Whenever a $\sigma_i^2$
    factor appears, expand
    $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$
    into two recursive sub-traces and combine.
-3. **Recurse** on $T_{w'}$ at level $n - 1$ until the chain
+4. **Recurse** on $T_{w'}$ at level $n - 1$ until the chain
    $H_n \supset H_{n-1} \supset \cdots \supset H_1$ terminates
    at the base case $\mathrm{tr}_M^{(1)}(\mathbf{1}) = 1$.
 

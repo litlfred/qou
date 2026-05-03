@@ -36,6 +36,7 @@ import time
 from pathlib import Path
 
 import sympy as sp
+import mpmath
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
@@ -46,6 +47,12 @@ from markov_trace_canonical import tr_M_element       # noqa: E402
 from hecke_symbolic import q as q_sym                  # noqa: E402
 from q_parameter import Q as Q0                        # noqa: E402
 from witness_base import WitnessBuilder                # noqa: E402
+
+# Per CLAUDE.md / Gemini-flagged precision policy: pin a high-precision
+# floor at the module level so all symbolic→numeric casts respect it.
+# 50 dps matches the Hoefsmit + Wenzl bridge witness this script
+# cross-checks against (`atomic-tr-m-mpfr-50dps.witness.json`).
+mpmath.mp.dps = 50
 
 
 # Atom spectrum.  Beyond ⁴He is gated by `--include-li` since GS reduce
@@ -90,7 +97,13 @@ def compute_atom(Z: int, N: int) -> dict:
     t_trace = time.time() - t0
 
     t0 = time.time()
-    tr_at_q0 = float(tr_sym.subs(q_sym, Q0).evalf(30))
+    # Evaluate at the current mpmath precision floor (50 dps), then
+    # convert to mpf so the full precision survives.  Casting to a
+    # Python float here would silently truncate to ~15-17 digits and
+    # defeat the high-precision evaluation.
+    tr_at_q0_mpf = mpmath.mpf(
+        str(tr_sym.subs(q_sym, Q0).evalf(mpmath.mp.dps))
+    )
     t_eval = time.time() - t0
 
     try:
@@ -98,6 +111,9 @@ def compute_atom(Z: int, N: int) -> dict:
     except Exception:  # noqa: BLE001
         ops = -1
 
+    # Format the witness value at full mpmath precision so downstream
+    # cross-checks against `atomic-tr-m-mpfr-50dps.witness.json`
+    # (Hoefsmit + Wenzl bridge) compare apples-to-apples.
     return {
         "Z": Z,
         "N": N,
@@ -106,7 +122,9 @@ def compute_atom(Z: int, N: int) -> dict:
         "word_length": len(word),
         "reduced_term_count": len(elem.terms),
         "trace_sympy_ops": int(ops),
-        "tr_M_at_q0": f"{tr_at_q0:+.16e}",
+        "tr_M_at_q0": mpmath.nstr(
+            tr_at_q0_mpf, mpmath.mp.dps, strip_zeros=False
+        ),
         "elapsed_reduce_sec": round(t_reduce, 3),
         "elapsed_trace_sec": round(t_trace, 3),
         "elapsed_evalf_sec": round(t_eval, 3),
@@ -154,12 +172,17 @@ def main() -> int:
             )
             print(f"    tr_M(q₀) = {row['tr_M_at_q0']}", flush=True)
             if label in bridge:
-                bridge_val = float(bridge[label])
-                got = float(row["tr_M_at_q0"])
+                # Compare at full mpmath precision — strings round-trip
+                # losslessly through `mpf(str(...))`.
+                bridge_val = mpmath.mpf(bridge[label])
+                got = mpmath.mpf(row["tr_M_at_q0"])
                 diff = abs(got - bridge_val)
                 row["bridge_witness_value"] = bridge[label]
-                row["abs_diff_vs_bridge"] = f"{diff:.6e}"
-                tag = "OK" if diff < 1e-12 else "MISMATCH"
+                row["abs_diff_vs_bridge"] = mpmath.nstr(diff, 6)
+                # Tolerance scales with the precision floor — at 50 dps
+                # we expect agreement to ~10^{-(dps − 5)}.
+                tol = mpmath.mpf(10) ** -(mpmath.mp.dps - 5)
+                tag = "OK" if diff < tol else "MISMATCH"
                 print(
                     f"    bridge = {bridge[label]}  "
                     f"|diff| = {diff:.2e}  {tag}",
