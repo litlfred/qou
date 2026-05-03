@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-03T14:09:38.440653+00:00",
-  "commitSha": "0731d87d80caddf9eea6a48dad509af06550f397",
+  "computedAt": "2026-05-03T16:11:03.304090+00:00",
+  "commitSha": "207143d7324c5fd4e91772532d382d6028530d45",
   "assertions": [],
   "allPassed": true,
   "durationMs": 18,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
-  "scriptHash": "1a8a2dd751a3",
-  "scriptCommitSha": "0731d87d80caddf9eea6a48dad509af06550f397",
+  "scriptHash": "ab96cb5b68aa",
+  "scriptCommitSha": "207143d7324c5fd4e91772532d382d6028530d45",
   "description": "Term 6 of thm:six-term-mass-formula-complete via Markov-peel symbolic tr_M(q): Σ_{ℓ≥2} Res_{q=ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ), with ℓ truncated at 4.  This evaluation is enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q; the Hoefsmit per-block path could not produce the symbolic form needed for residue extraction at A ≥ 4.",
   "contentBlock": "thm:six-term-mass-formula-complete",
   "parameters": {
@@ -24,9 +24,9 @@
         "A": 1,
         "max_ell": 4,
         "tr_M_symbolic_ops": 75,
-        "elapsed_peel_sec": 0.086,
+        "elapsed_peel_sec": 0.09,
         "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 0.478,
+        "elapsed_residues_sec": 0.479,
         "residues": [
           {
             "ell": 2,
@@ -61,7 +61,7 @@
         "tr_M_symbolic_ops": 63,
         "elapsed_peel_sec": 0.036,
         "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 0.287,
+        "elapsed_residues_sec": 0.294,
         "residues": [
           {
             "ell": 2,
@@ -94,9 +94,9 @@
         "A": 2,
         "max_ell": 4,
         "tr_M_symbolic_ops": 1449,
-        "elapsed_peel_sec": 0.62,
+        "elapsed_peel_sec": 0.698,
         "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 18.47,
+        "elapsed_residues_sec": 20.028,
         "residues": [
           {
             "ell": 2,
@@ -129,17 +129,18 @@
         "A": 3,
         "max_ell": 4,
         "tr_M_symbolic_ops": 12164,
-        "elapsed_peel_sec": 8.788,
+        "elapsed_peel_sec": 10.013,
         "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 180.558,
+        "elapsed_residues_sec": 51.425,
         "residues": [
           {
             "ell": 2,
             "zeta_symbolic": "-1",
-            "residue_symbolic": null,
-            "residue_value": null,
-            "residue_abs": null,
-            "error": "timeout > 180s"
+            "residue_symbolic": "sqrt-sub (pole order 5): (-44141.0 - 43989.4765625j)",
+            "residue_value": "(-44141-43989.4765625j)",
+            "residue_abs": "6.231775e+04",
+            "method": "sqrt_substitution",
+            "pole_order_in_u": 5
           },
           {
             "ell": 3,
@@ -156,7 +157,7 @@
             "residue_abs": "0.000000e+00"
           }
         ],
-        "term6_at_q0": "(0.0 + 0.0j)",
+        "term6_at_q0": "(-20920.1174329479294366728871915 - 20848.3046487712241960405473163j)",
         "atom": "tritium"
       },
       {
@@ -165,16 +166,18 @@
         "A": 3,
         "max_ell": 4,
         "tr_M_symbolic_ops": 5420,
-        "elapsed_peel_sec": 3.765,
+        "elapsed_peel_sec": 4.191,
         "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 117.487,
+        "elapsed_residues_sec": 42.262,
         "residues": [
           {
             "ell": 2,
             "zeta_symbolic": "-1",
-            "residue_symbolic": "-164385/4 - 1186811*I/32",
+            "residue_symbolic": "sqrt-sub (pole order 5): (-41096.25 - 37087.84375j)",
             "residue_value": "(-41096.25-37087.84375j)",
-            "residue_abs": "5.535711e+04"
+            "residue_abs": "5.535711e+04",
+            "method": "sqrt_substitution",
+            "pole_order_in_u": 5
           },
           {
             "ell": 3,
