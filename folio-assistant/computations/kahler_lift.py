@@ -204,7 +204,7 @@ def build_V_hat_symbolic(Z: int, N: int, *, include_inter: bool = True,
 @lru_cache(maxsize=64)
 def _kahler_lift_analytic_cached(
     V_hat_sym: tuple, order: int
-) -> tuple:
+) -> dict:
     """Cached worker for `kahler_lift_analytic`.  See public wrapper
     below for documentation.
 
@@ -216,7 +216,9 @@ def _kahler_lift_analytic_cached(
     return _kahler_lift_analytic_impl(V_hat_sym, order)
 
 
-def kahler_lift_analytic(V_hat_sym, order: int = 2) -> dict:
+def kahler_lift_analytic(
+    V_hat_sym: list[sp.Expr] | tuple[sp.Expr, ...], order: int = 2
+) -> dict:
     """Analytic Kähler lift with up to ``order`` q-derivatives.
 
     Returns per-generator {"V0": V, "V1": V + ℏ_q·q·dV/dq, "V2": +2nd-order}
@@ -235,10 +237,12 @@ def kahler_lift_analytic(V_hat_sym, order: int = 2) -> dict:
     uncached impl.
     """
     if isinstance(V_hat_sym, tuple):
-        # Hashable input: route through the cache.  The returned dict
-        # is shared across cache hits — callers must treat it as
-        # read-only (this matches `binding_full_pipeline`'s usage).
-        return _kahler_lift_analytic_cached(V_hat_sym, order)
+        # Return a deep-ish copy of the cached dict (shallow dict +
+        # copied lists) so callers cannot mutate state shared across
+        # cache hits — sympy expressions are immutable, so list-level
+        # copy is sufficient.
+        cached = _kahler_lift_analytic_cached(V_hat_sym, order)
+        return {k: list(v) for k, v in cached.items()}
     return _kahler_lift_analytic_impl(V_hat_sym, order)
 
 

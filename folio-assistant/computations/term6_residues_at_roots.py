@@ -35,6 +35,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import signal
 import sys
 import time
 from pathlib import Path
@@ -148,7 +149,6 @@ def residue_via_sqrt_substitution(
             mpmath.mp.dps = saved_dps
             return mpmath.mpc(0), 0
         # |U| ~ |c|/|u−u₀|^p ⇒ p ≈ log(|U|) / log(1/eps)
-        import math
         log_eps = float(mpmath.log10(1 / eps))
         log_f = float(mpmath.log10(f_near))
         p_est = round(log_f / log_eps)
@@ -238,7 +238,6 @@ def residues_at_roots(
     its numerical magnitude; rows with vanishing residue (D(ζ_ℓ) ≠ 0,
     i.e. no pole at that root) are kept with `residue_value = "0"`.
     """
-    import signal
 
     class _Timeout(Exception):
         pass

@@ -74,7 +74,7 @@ from markov_peel import crossing_from_cd                  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A          # noqa: E402
 from hecke_symbolic import (                                # noqa: E402
     SymbolicHeckeDivision, SymbolicHeckeElement,
-    q as q_sym, HA,
+    q as q_sym,
 )
 from markov_trace_canonical import tr_M_element            # noqa: E402
 from hecke_core import h as _h_num                         # noqa: E402
