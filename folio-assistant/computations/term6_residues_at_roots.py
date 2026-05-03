@@ -99,7 +99,13 @@ def residues_at_roots(
         signal.alarm(per_ell_timeout_sec)
         try:
             res = sp.residue(tr_sym, q_sym, zeta)
-            res_simp = sp.simplify(res)
+            # `sp.cancel` is significantly faster than `sp.simplify`
+            # for rational expressions and is sufficient here — the
+            # residues are rational functions of q with roots-of-unity
+            # algebraic-number coefficients.  Using `simplify` was a
+            # 22 s bottleneck on the proton's ζ_5 case (see PR #526
+            # discussion).
+            res_simp = sp.cancel(res)
             signal.alarm(0)
         except _Timeout:
             signal.alarm(0)
@@ -162,10 +168,11 @@ def term6_contribution_at_q0(rows) -> str:
             continue
         denom = q0_mp - zeta
         # Tolerance scales with the current precision floor — at 50 dps
-        # we expect representable magnitudes down to ~10^-25 (half the
-        # precision); a hardcoded `1e-30` would be inconsistent if the
-        # caller bumps `mp.dps` higher.
-        if abs(denom) < mpmath.mpf(10) ** (-mpmath.mp.dps // 2):
+        # the smallest representable magnitude is ~10^-50; we treat
+        # anything within ~10 digits of that as "effectively zero" and
+        # skip to avoid spurious divisions.  Per Gemini policy
+        # (PR #526), the bound tracks `mp.dps` rather than a hardcode.
+        if abs(denom) < mpmath.power(10, -mpmath.mp.dps + 10):
             continue
         total += res / denom
     return mpmath.nstr(total, 30)

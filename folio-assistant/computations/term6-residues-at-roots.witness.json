@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-03T10:51:10.627374+00:00",
-  "commitSha": "afcfc858c3e09527d82b73f5a2fc8f9dc0f82bc9",
+  "computedAt": "2026-05-03T11:13:57.447278+00:00",
+  "commitSha": "ef1979b582752c5d857082221f7224f77ab9e51e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 27,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
-  "scriptHash": "d65241b87cd2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "558bf002d9ac",
+  "scriptCommitSha": "ef1979b582752c5d857082221f7224f77ab9e51e",
   "description": "Term 6 of thm:six-term-mass-formula-complete via Markov-peel symbolic tr_M(q): Σ_{ℓ≥2} Res_{q=ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ), with ℓ truncated at 4.  This evaluation is enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q; the Hoefsmit per-block path could not produce the symbolic form needed for residue extraction at A ≥ 4.",
   "contentBlock": "thm:six-term-mass-formula-complete",
   "parameters": {
@@ -24,9 +24,9 @@
         "A": 1,
         "max_ell": 4,
         "tr_M_symbolic_ops": 138,
-        "elapsed_peel_sec": 0.108,
-        "elapsed_cancel_sec": 0.045,
-        "elapsed_residues_sec": 5.544,
+        "elapsed_peel_sec": 2.46,
+        "elapsed_cancel_sec": 0.051,
+        "elapsed_residues_sec": 5.816,
         "residues": [
           {
             "ell": 2,
