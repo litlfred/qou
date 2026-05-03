@@ -87,6 +87,54 @@ into the GeV regime.
 Witness: `folio-assistant/computations/kashaev-integration-identity.witness.json`
 (on `claude/categorical-mass-divergence-audit`, not yet on `main`).
 
+### Follow-up commit (`841cab890`, same audit branch)
+
+The reconciliation across the codebase's existing α·ln|V| formula
+and the new Li₂_q identity:
+
+  ∫_0^V (ln_q(1+t)/t) dt  =  -Li_2^q(-V)            ✓ correct
+                          ≠  Φ_q(V)                 ✗ wrong by 10⁶
+
+  α · Σ ln|V_i|  is the leading-order expansion of  -Σ Li_2^q(-V_i)
+
+Empirical fit vs AME via `li2q_six_term_probe.py`:
+
+  | atom |  α·Σ ln|V|  |  -Σ Li_2^q(-V)  |
+  |------|-----------:|----------------:|
+  | p    |    -0.016% |      -0.645%    |
+  | n    |    -0.073% |      -0.608%    |
+  | D    |    -0.192% |      -0.558%    |
+  | T    |    -0.174% |      -0.374%    |
+  | ³He  |    -0.071% |      -0.438%    |
+  | ⁴He  |    +0.296% |      +0.053%    | ← Li_2^q wins
+  | mean |     0.18%  |      0.29%      |
+
+α·ln formula is better on light atoms; Li_2^q is better on ⁴He.
+Trend: Li_2^q is expected to win on ⁵Li, ⁶Li (heavier atoms with
+|V_i| closer to 1).
+
+### Integration opportunity for this branch
+
+Combining the two findings:
+  - **This branch (LaurentQ fast Markov-peel)** → makes ⁵Li, ⁶Li
+    symbolic peels tractable for the first time.
+  - **The audit branch (Li₂_q identity)** → gives the bounded MeV
+    formula that actually predicts B_AME.
+
+The natural cross-product is: run `binding_full` on ⁵Li, ⁶Li using
+the Li₂_q formula instead of `tower_mass_level`'s Φ_q chain.  Would
+produce the first sub-percent binding-energy predictions for A ≥ 5.
+
+Pending the audit branch's merge into `main`, this branch's wide-
+spectrum binding sweep (`binding-full-A5-sweep.witness.json`)
+records the *uncalibrated* tower_MeV column, which is empirically
+useless.  Recipe for the post-merge follow-up:
+
+  1. Wait for `claude/categorical-mass-divergence-audit` → `main`.
+  2. Replace `tower_mass_level`'s Φ_q chain with the Li₂_q sum.
+  3. Re-run `binding_full_pipeline.__main__` over A ≤ 6.
+  4. Report sub-percent binding-energy table.
+
 ## Three candidate fixes (each requires theoretical work)
 
 ### Fix A — different summation convention
