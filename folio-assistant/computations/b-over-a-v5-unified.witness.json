@@ -1,6 +1,6 @@
 {
   "computation": "b-over-a-v5-unified",
-  "computedAt": "2026-05-03T20:51:31.334722+00:00",
+  "computedAt": "2026-05-03T22:22:39.462418+00:00",
   "description": "B/A v5 unified evaluator — dispatches by formula family per the watched-branch's methodology audit (methodology-deprecation.witness.json).  Families: 1 (D, T, ³He principled), 2 (⁴He magic-A), 3 (⁸Be–⁴⁰Ca recursive-on-4He), 4 (⁶Li, ⁷Li, … OPEN, GAPS 4, 5).",
   "constants": {
     "m_e_MeV": 0.51099895069,
@@ -69,6 +69,7 @@
       "err_MeV": 0.02430079790130879,
       "err_pct": 1.092406357385359,
       "tr_M_at_q0_markov_peel": "0.38828647154771295246789009070198517292737960815430",
+      "rho_t_implied": 11.211508409295499,
       "plan_h_diagnostic": {
         "true_rho": 0.9892212296139793,
         "delta_rho": -0.010778770386020708,
@@ -95,6 +96,7 @@
       "err_MeV": -0.013210305574872905,
       "err_pct": -0.15574866184072628,
       "tr_M_at_q0_markov_peel": "0.10405211867552603688391599234819295816123485565186",
+      "rho_t_implied": 159.52090459178078,
       "plan_h_diagnostic": {
         "true_rho": 2.003119428154665,
         "delta_rho": 0.003119428154664927,
@@ -121,6 +123,7 @@
       "err_MeV": -0.22912068011677977,
       "err_pct": -2.968638153168159,
       "tr_M_at_q0_markov_peel": "0.20654085856226245265787611060659401118755340576172",
+      "rho_t_implied": 73.12755256998884,
       "plan_h_diagnostic": {
         "true_rho": 2.061178570833352,
         "delta_rho": 0.0611785708333521,
@@ -145,6 +148,7 @@
       "err_MeV": 1.66000327953288,
       "err_pct": 5.866632756416688,
       "tr_M_at_q0_markov_peel": "0.055348345876697992162807082650033407844603061676025",
+      "rho_t_implied": 1000.4500003033878,
       "plan_h_diagnostic": {
         "true_rho": 1.8891684387012972,
         "delta_rho": -0.11083156129870275,
