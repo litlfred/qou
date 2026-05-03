@@ -224,7 +224,20 @@ def paper_six_term_mass(Z, N, include_inter=True,
                           chirality_signs=None,
                           m_e_hecke: float = 1.0,
                           term5_mode: str = "multiplicative_on_t1",
-                          isotope_label: str | None = None):
+                          isotope_label: str | None = None,
+                          tower_mode: str = "brane"):
+    """6-term mass formula.
+
+    `tower_mode` controls T2 + T3 evaluation:
+        "brane" (default):  legacy archimedean Φ_q(|V̂_i|) form.
+                            Markov-invariance-broken at q_0 (PR #524).
+        "drop":             T2 = T3 = 0.  Simplest Path B / C variant.
+        "q1-base":          T2 + T3 = (1/2)^(2A-1) (closed-form base
+                            point at q→1 per the Path A probe; see
+                            `path-a-zeta1-residue-probe.witness.json`).
+                            Captures the spectral-sequence base trace
+                            without the per-generator Φ_q amplification.
+    """
     """Six-term mass formula in Hecke units.
 
     Per `thm:knot-mass-formula-unified` the formula assembles as:
@@ -266,8 +279,25 @@ def paper_six_term_mass(Z, N, include_inter=True,
             t1 = term1_descended(vols)
     else:
         t1 = term1_descended(vols)
-    t2 = term2_single_gen_tower(vols)
-    t3 = term3_pair_gen_tower(vols)
+
+    # T2, T3 evaluation per `tower_mode`:
+    if tower_mode == "brane":
+        t2 = term2_single_gen_tower(vols)
+        t3 = term3_pair_gen_tower(vols)
+    elif tower_mode == "drop":
+        t2 = mp.mpf(0)
+        t3 = mp.mpf(0)
+    elif tower_mode == "q1-base":
+        # Path A closed form: tr_M(T_w; q→1) = (1/2)^(2A-1).  Distribute
+        # this base value between T2 (single-gen) and T3 (pair-gen)
+        # in proportion to spectral-sequence page weights — not derived
+        # yet, so allocate the entire base to T2 and set T3 = 0.
+        # The combined T2 + T3 contribution at q→1 = (1/2)^(2A-1).
+        A = Z + N
+        t2 = mp.mpf(1) / mp.mpf(2) ** (2 * A - 1)
+        t3 = mp.mpf(0)
+    else:
+        raise ValueError(f"unknown tower_mode {tower_mode!r}")
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
     t4 = mp.mpf(str(m_e_hecke)) * t4_raw
     if chirality_signs is None:
@@ -299,6 +329,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
         "term5_additive_contribution": float(t5),
         "term6_cyclotomic_tail_MeV": float(t6_MeV),
         "term5_mode": term5_mode,
+        "tower_mode": tower_mode,
         "m_e_hecke": float(m_e_hecke),
         "total_hecke": total,
     }
@@ -320,32 +351,54 @@ def chirality_signs_for_isotope(iso):
     return patterns.get(iso, [])
 
 
-if __name__ == "__main__":
-    print("PAPER 6-TERM FORMULA — MARKOV-INVARIANT isotope sweep")
-    print("=" * 80)
-    print(f"q_0 = {float(Q0):.6f}")
+def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True):
+    """Run the proton-calibrated 6-term sweep for one tower_mode."""
+    M_P_CODATA = 938.27208816
 
-    # Proton calibration
+    # Proton calibration under this tower_mode
     p_terms = paper_six_term_mass(
         1, 0, include_inter=False,
         chirality_signs=chirality_signs_for_isotope("p"),
-        isotope_label="p")
+        isotope_label="p", tower_mode=tower_mode)
     m_p_hecke = p_terms["total_hecke"]
     p_t6_MeV = p_terms["term6_cyclotomic_tail_MeV"]
-    M_P_CODATA = 938.27208816
-    # Solve for E_0 such that E_0 · m_p_hecke + p_t6_MeV = M_P_CODATA
     E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke
-    print(f"\nProton calibration:")
-    print(f"  m_p_hecke   = {m_p_hecke:.6e}")
-    print(f"  T6 (proton) = {p_t6_MeV:.4f} MeV  (cyclotomic tail, post-cal)")
-    print(f"  E_0         = {E_0:.6e} MeV/Hecke-unit")
-    print(f"  p terms:    t1={p_terms['term1_canonical_tr_M']:.3e} "
-          f"t2={p_terms['term2_single_gen_tower']:.3e} "
-          f"t3={p_terms['term3_pair_gen_tower']:.3e}")
-    print(f"             t4={p_terms['term4_frobenius_codim_scaled']:.3e} "
-          f"t5={p_terms['term5_additive_contribution']:.3e} "
-          f"t6={p_terms['term6_cyclotomic_tail_MeV']:.4f} MeV")
-    print()
+
+    if verbose:
+        print(f"\nMode: {tower_mode}")
+        print(f"  Proton: t1={p_terms['term1_canonical_tr_M']:.4e} "
+              f"t2={p_terms['term2_single_gen_tower']:.4e} "
+              f"t3={p_terms['term3_pair_gen_tower']:.4e} "
+              f"t4={p_terms['term4_frobenius_codim_scaled']:.4e} "
+              f"t6={p_terms['term6_cyclotomic_tail_MeV']:.4f} MeV")
+        print(f"  E_0 = {E_0:.6e} MeV/Hecke-unit")
+
+    rows = []
+    for iso, Z, N, inter, M_codata in isotopes:
+        try:
+            terms = paper_six_term_mass(
+                Z, N, include_inter=inter,
+                chirality_signs=chirality_signs_for_isotope(iso),
+                isotope_label=iso, tower_mode=tower_mode)
+        except Exception as exc:
+            rows.append({"isotope": iso, "Z": Z, "N": N, "A": Z + N,
+                         "M_codata": M_codata,
+                         "error": f"{type(exc).__name__}: {exc}"})
+            continue
+        M_pred = E_0 * terms["total_hecke"] + terms["term6_cyclotomic_tail_MeV"]
+        err_pct = (M_pred - M_codata) / M_codata * 100 if M_codata else 0.0
+        rows.append({
+            "isotope": iso, "Z": Z, "N": N, "A": Z + N,
+            "M_codata": M_codata, "M_predicted": M_pred, "err_pct": err_pct,
+            **terms,
+        })
+    return E_0, rows
+
+
+if __name__ == "__main__":
+    print("PAPER 6-TERM FORMULA — three-mode comparison sweep")
+    print("=" * 80)
+    print(f"q_0 = {float(Q0):.6f}")
 
     ISOTOPES = [
         ("p",   1, 0, False,  938.272),
@@ -358,49 +411,52 @@ if __name__ == "__main__":
         ("7Li", 3, 4, True,  6535.366),
     ]
 
-    print(f"{'iso':>5} {'A':>3} {'total':>11} {'M_pred':>10} "
-          f"{'M_CODATA':>10} {'err%':>8}")
-    print('-' * 60)
+    modes = ["brane", "drop", "q1-base"]
+    sweep_results = {}
+    for mode in modes:
+        E_0, rows = run_sweep_for_mode(mode, ISOTOPES)
+        sweep_results[mode] = {"E_0": E_0, "rows": rows}
 
-    rows = []
-    for iso, Z, N, inter, M_codata in ISOTOPES:
-        try:
-            terms = paper_six_term_mass(
-                Z, N, include_inter=inter,
-                chirality_signs=chirality_signs_for_isotope(iso),
-                isotope_label=iso)
-        except Exception as exc:
-            print(f"  {iso}: ERROR {type(exc).__name__}: {exc}")
-            continue
-        M_pred = E_0 * terms["total_hecke"] + terms["term6_cyclotomic_tail_MeV"]
-        err = (M_pred - M_codata) / M_codata * 100
-        print(f"{iso:>5} {Z+N:>3} {terms['total_hecke']:>11.3e} "
-              f"{M_pred:>10.2f} {M_codata:>10.3f} {err:>+7.2f}%")
-        rows.append({
-            "isotope": iso, "Z": Z, "N": N, "A": Z + N,
-            "M_codata": M_codata,
-            "M_predicted": M_pred,
-            "err_pct": err,
-            **terms,
-        })
+    # Side-by-side comparison
+    print("\n" + "=" * 80)
+    print("Side-by-side comparison (% error vs CODATA)")
+    print("=" * 80)
+    print(f"  {'iso':>5} {'A':>3} | {'brane':>10} {'drop':>10} {'q1-base':>10}")
+    print("  " + "-" * 50)
+    for iso, Z, N, _, M_cod in ISOTOPES:
+        line = f"  {iso:>5} {Z+N:>3} |"
+        for mode in modes:
+            row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == iso), None)
+            if row is None or "error" in row:
+                line += f" {'ERR':>10}"
+            else:
+                line += f" {row['err_pct']:>+9.3f}%"
+        print(line)
 
+    # Mean and max abs errors per mode (excluding proton calibration anchor)
     print()
-    heavy = [r for r in rows if r['A'] >= 3]
-    if heavy:
-        mean_err = sum(abs(r['err_pct']) for r in heavy) / len(heavy)
-        print(f"Mean |err| for A≥3: {mean_err:.2f}%")
+    for mode in modes:
+        rows = sweep_results[mode]["rows"]
+        non_p_errs = [abs(r["err_pct"]) for r in rows
+                       if r["isotope"] != "p" and "err_pct" in r]
+        if non_p_errs:
+            mean_e = sum(non_p_errs) / len(non_p_errs)
+            max_e = max(non_p_errs)
+            print(f"  {mode:<8}: mean |err| = {mean_e:>7.3f}%, max |err| = {max_e:>7.3f}%")
 
-    # Isospin-symmetry check: T vs 3He
-    T_row = next((r for r in rows if r['isotope'] == 'T'), None)
-    He3_row = next((r for r in rows if r['isotope'] == '3He'), None)
-    if T_row and He3_row:
-        T_minus_3He_pred = T_row['M_predicted'] - He3_row['M_predicted']
-        T_minus_3He_codata = T_row['M_codata'] - He3_row['M_codata']
-        print(f"\nIsospin-symmetry check:")
-        print(f"  T − ³He predicted     = {T_minus_3He_pred:+.3f} MeV")
-        print(f"  T − ³He CODATA        = {T_minus_3He_codata:+.3f} MeV")
-        print(f"  (isospin-symmetric formula should give ≈ 0 MeV;")
-        print(f"   the 0.019 MeV CODATA split is Coulomb + m_n − m_p)")
+    # Isospin (T vs 3He) per mode
+    print(f"\n  Isospin check (T - ³He, MeV):")
+    print(f"  {'mode':<10} {'pred':>14}  {'CODATA':>10}")
+    for mode in modes:
+        T_row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == "T"), None)
+        He_row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == "3He"), None)
+        if T_row and He_row and "M_predicted" in T_row and "M_predicted" in He_row:
+            delta = T_row["M_predicted"] - He_row["M_predicted"]
+            print(f"  {mode:<10} {delta:>+14.4f}  {0.019:>10.4f}")
+
+    # Use brane mode rows as the primary witness output (back-compat)
+    rows = sweep_results["brane"]["rows"]
+    E_0 = sweep_results["brane"]["E_0"]
 
     witness = {
         "computation": "paper-six-term-isotope-sweep",
@@ -421,10 +477,14 @@ if __name__ == "__main__":
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": float(Q0_FLOAT),
-            "E_0_MeV": E_0,
-            "m_p_hecke": m_p_hecke,
+            "E_0_MeV_brane": sweep_results["brane"]["E_0"],
         },
         "rows": rows,
+        "all_modes": {
+            mode: {"E_0": sweep_results[mode]["E_0"],
+                   "rows": sweep_results[mode]["rows"]}
+            for mode in modes
+        },
     }
     out = Path(__file__).parent / "paper-six-term-isotope-sweep.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))

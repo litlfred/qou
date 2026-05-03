@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T21:32:35.867159+00:00",
-  "commitSha": "cfdd01c0de39dbf90c29a8a0cdf39ed3c6d2672b",
+  "computedAt": "2026-05-03T22:43:57.809927+00:00",
+  "commitSha": "a9d7a381104469a9ed92c0ca59a8f145fec176d4",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1650,6 +1650,7 @@
         "paper-six-term-isotope-sweep.witness.json",
         "paper-six-term-shadow-price-sweep.witness.json",
         "path-a-extended-light-isotopes.witness.json",
+        "path-a-zeta1-residue-probe.witness.json",
         "path-b-habiro-mass-probe.witness.json",
         "per-atom-lp-binding.witness.json",
         "per-block-phi-q.witness.json",
