@@ -68,31 +68,66 @@ structurally consistent and not coincidental — it is what one expects
 from a categorical-Lagrangian QFT whose UV completion lives on
 Bring's curve.
 
-## Status: conjectural — not yet proved
+## Status: conjectural — naive interpretations fail
 
-The structural identification above is **plausibility-strong** but
-**not yet a derivation**. To upgrade to a proof, the following are
-required:
+The structural identification $2/(3\pi) = 2g/(4\pi(g-1)) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$
+at $g = 4$ is an **exact algebraic identity**, but the *physical origin*
+in the QOU framework is **not yet established**. A first-pass derivation
+attempt (May 2026 audit) ruled out the simplest mechanism:
 
-1. **Path-integral quantisation of the categorical Lagrangian**
-   ([categorical-lagrangian-exists](#prop:categorical-lagrangian-exists))
-   in a form that exposes the photon zero-mode contribution to the
-   1PI vacuum-polarisation graph at zero external momentum.
-2. **Identification of the underlying 3-manifold** carrying the
-   photon propagator (likely $S^3$ via a Hopf-fibred
-   $S^1 \to S^3 \to S^2$ structure with Bring's surface as a
-   spectral cover).
-3. **Computation of the zero-mode coefficient** end-to-end,
-   verifying it equals exactly $2g/(4\pi(g-1))$ at $g = 4$.
-4. **UV finiteness verification** via Reshetikhin-Turaev shadow-world
-   regularisation (force-carrier complexity $[9]_q[10]_q$ replaces
-   continuum momentum integration; no log divergence expected).
-5. **Next-loop computation**: derive the exact $\mathcal{O}(\alpha)$
-   coefficient (currently fit at $1/(4\pi)$ to within $1.4\%$).
+**Failed: harmonic 1-form zero-mode on $M_{\text{Bring}} \times S^1$.**
+For $M^3 = M_{\text{Bring}} \times S^1$ (unit $S^1$):
+$$
+  \frac{b_1(M^3)}{\mathrm{Vol}(M^3)}
+  = \frac{2g+1}{4\pi(g-1)\cdot 2\pi}
+  = \frac{9}{24\pi^2}
+  \approx 0.038,
+$$
+which is $\sim 5.6\times$ smaller than the required $2/(3\pi) \approx 0.212$.
+So the naive 3-manifold zero-mode picture does not directly yield the
+constant.
+
+**The exact form $\mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3)) = 4\pi/(3\cdot 2\pi^2)$
+suggests** a different mechanism — perhaps:
+
+1. A Hopf-fibration $S^1 \to S^3 \to S^2$ in which the photon flux is
+   a 2-form on $S^2$ (the base) and the gauge connection lives on $S^3$
+   (the total space), with the factor $1/3$ reflecting Lie-algebra
+   trace normalisation $\mathrm{Tr}(T_a T_b) = \delta_{ab}/2$ combined
+   with a 3-fold gauge-sector copy.
+2. A Chern-Simons partition-function ratio at level $k$ where the
+   quantum dimension formula gives
+   $\dim_q V \cdot Z(S^3)^{-1}$-type expressions reducing to
+   $\mathrm{Vol}(S^2)/\mathrm{Vol}(S^3)$ in the classical limit.
+3. A BV-BRST cohomological mechanism where the $(2-form, 3-form)$
+   pair represents a global anomaly cancelled by the categorical
+   Wess-Zumino term.
+
+To upgrade this conjecture to a proof, the following are required:
+
+1. **Identify the precise 3-manifold** $M^3$ and gauge structure
+   (Hopf-fibration $S^3$ vs $T^*M_{\text{Bring}}$ vs other) that
+   produces $1/(3 \cdot \mathrm{Vol}(M^3))$ as the photon zero-mode
+   contribution at zero external momentum, with a $1/3$ factor
+   from Lie-algebra normalisation or geometric multiplicity.
+2. **Compute the photon zero-mode coefficient** end-to-end from
+   the categorical Lagrangian, verifying it equals exactly
+   $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g = 4$.
+3. **Verify UV finiteness.** Reshetikhin-Turaev shadow-world
+   regularisation should produce a finite answer — force-carrier
+   complexity $[9]_q[10]_q$ regularises the categorical sum,
+   replacing continuum momentum integration. This is plausible but
+   not proved.
+4. **Compute the next-order self-energy** as a 2-loop graph;
+   verify the coefficient is exactly $1/(4\pi)$ or identifies as
+   $1/(2\pi[2]_q)$ or $1/(4\pi)\cdot(1-\hbar_q^2)$ (best fits at
+   $\sim 0.4\%$). The simplest fits are all near-misses; an exact
+   form requires the explicit 2-loop calculation.
 
 The numerical match at $4.2 \times 10^{-6}$ with one term and
 $5.7 \times 10^{-8}$ with two is far too precise to be coincidence;
-the structural derivation almost certainly exists.
+the structural derivation almost certainly exists, but it is
+**non-trivial** — the naive geometric mechanisms fail.
 
 ## Comparison with prior conjectures
 
