@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T22:54:38.474815+00:00",
-  "commitSha": "b042ad8dd5015a1723b1da295fd910ae544802ab",
+  "computedAt": "2026-05-03T23:15:21.949551+00:00",
+  "commitSha": "f781a302d3e224449d0a547162e8c38fdb6bfa34",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1370,6 +1370,7 @@
         "atom-sdp-gluon-search.witness.json",
         "atom-wedderburn-blend.witness.json",
         "atomic-braid-b3-band-scanner.witness.json",
+        "atomic-braid-mass-paper-formula.witness.json",
         "atomic-chirality-residue.witness.json",
         "atomic-tr-m-mpfr-50dps.witness.json",
         "atomic-tr-m-wenzl-bridge.witness.json",
@@ -1561,6 +1562,7 @@
         "jsj-alpha-clustering.witness.json",
         "jsj-atom-volume.witness.json",
         "jsj-verification.witness.json",
+        "kashaev-integration-identity.witness.json",
         "kerov-knot-factor.witness.json",
         "kerov-walk-verify.witness.json",
         "knot-ideals-gb-jet-locations.witness.json",
@@ -1651,6 +1653,7 @@
         "paper-six-term-shadow-price-sweep.witness.json",
         "path-a-extended-light-isotopes.witness.json",
         "path-a-zeta1-residue-probe.witness.json",
+        "path-b-defect-binding-probe.witness.json",
         "path-b-habiro-mass-probe.witness.json",
         "per-atom-lp-binding.witness.json",
         "per-block-phi-q.witness.json",

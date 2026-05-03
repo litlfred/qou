@@ -53,6 +53,48 @@ Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
 ([quantum Bloch group](#def:quantum-bloch-group)).
 
+**Kashaev-integration-identity audit (added 2026-05-03).**
+*The proof step claims*
+
+$$
+  \Phi_q(z_p) \;=\; \int_0^{z_p} \frac{\ln_q(1+t)}{t}\,dt
+              \;=\; \prod_{k\geq 1}(1 - q^{-k} z_p)^{-1}.
+$$
+
+*Numerical probe (`kashaev-integration-identity.witness.json`): the
+left integral at $q_0 \approx 1.110$ for $V \in (0, 1)$ is bounded
+in $[0.1, 0.82]$, while the right-hand product $\Phi_q(V)$ grows
+unboundedly (e.g. $\Phi_q(0.989) \approx 6.7 \times 10^5$).  The
+two sides differ by 6 orders of magnitude at $V = 0.989$ — the
+identity does NOT hold numerically.*
+
+*The integral is a $q$-deformed dilogarithm $-\mathrm{Li}_2^q(-V)$,
+not the quantum dilogarithm $\Phi_q$.  These are distinct functions
+($\mathrm{Li}_2^q$ is regular on $(-1, 1)$; $\Phi_q$ has a pole
+structure tied to the q-Pochhammer denominators).  The proof step
+appears to conflate them.*
+
+*Implication: the boxed theorem's specialisation
+$\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q(|\hat V_i|)$ is not
+the Kashaev limit of the R-side algebraic form.  Its empirical
+consequence is the $-737$ MeV mirror-nucleus pathology
+(`brane-tower-isospin-diagnosis.witness.json`).*
+
+*The paper's `prop:atomic-braid-mass` uses the alternative form
+$\alpha \cdot \sum_i \ln|\hat V_i^{\mathrm{full}}|$ (with $\alpha = m_e \cdot 8G$,
+the Borromean binding scale `prop:binding-scale-catalan`), which gives
+0.19% mean atomic-mass error across $Z = 1$..$10$ with zero fitted
+parameters — but the integration probe shows the
+$\int (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$ identity doesn't
+reduce to $\alpha \cdot \ln|V|$ either.*
+
+*Open: the correct Kashaev limit of $\mathrm{Vol}_q^{(S)}$ at $q_0$
+needs derivation.  Two candidates the integral does NOT support:
+($\Phi_q(|V|)$) blows up; ($\alpha\cdot\ln|V|$) is empirically close
+but not the literal integration evaluation.  The dilogarithm form
+$-\mathrm{Li}_2^q(-|V|)$ is the actual integration result and may be
+the correct specialisation; this needs paper-side verification.*
+
 **Trace-vs-evaluation note (added 2026-05-03).**
 The R-side algebraic form of the tower above expresses each
 $\mathrm{Vol}_q^{(S)}(\beta)$ as a Markov trace over the chain on $S$
