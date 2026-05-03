@@ -32,8 +32,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 from magic_A_formula import M_E_MEV, VOL_BORROMEAN, magic_A_binding  # noqa: E402
 
 # Whitehead-link hyperbolic volume from SnapPy census; sourced via
-# c_alpha_via_knot_operators.py and low_isotope_binding_sweep.py.
-VOL_7_2_1: float = 4.7495
+# c_alpha_via_knot_operators.py.  Use the precise SnapPy value rather
+# than the rounded 4.7495 used in low_isotope_binding_sweep.py.
+VOL_7_2_1: float = 4.749499981874439
 C_ALPHA_ALPHA_MEV: float = M_E_MEV * VOL_7_2_1  # ≈ 2.4269 MeV
 
 # AME2020 reference values (full atomic binding energies, MeV)
