@@ -144,7 +144,7 @@ succeeding):
 
 ### Status
 
-🟡 **Open**. Numerical value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is fixed by consistency; closed form requires:
+🟡 **Open**. Numerical value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is fixed by consistency. **Closed form requires categorical derivation, not ansatz-fitting** (per the methodological correction in PR #515 follow-up):
 
 1. Discharging
    [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
@@ -152,10 +152,49 @@ succeeding):
 2. Discharging
    [`conj:electroweak-mass-eigenstate-count`](#conj:electroweak-mass-eigenstate-count)
    (U4 from PR #511) — the broken-Wedderburn split
-3. Computing the Gram determinant (candidate a) or Goldstone phase
-   space (candidate b) from the resulting structure
+3. Compute the symmetric-channel Frobenius trace
+   $\mathrm{tr}_F\bigl(e_{\rm sym}^{\rm EW}\bigr)$ where
+   $e_{\rm sym}^{\rm EW} = \otimes_{k=2,3,4} e_{\rm sym}^{(T(2,2k))}$
+   from the resulting Higgs-mechanism structure — this *is*
+   $\mathcal{N}_{\rm sym}(q)$ by construction.
 
-**Recommended next-test**: candidate (a) is the most concrete — write a Gram-determinant-of-EW-Wedderburn-block computation and check whether $\mathcal{N}_{\rm sym}^{(a)}(q_0)$ matches 213.11 to better than 1%. If yes, this becomes the EW analog of `prop:gram-determinant-plancherel-ratio` and authoring proceeds.
+### Empirical anchors recorded (NOT ansatz-fits)
+
+Two zero-free-parameter q-arithmetic forms have been **probed numerically**
+([`n-sym-goldstone-phase-space-probe.witness.json`](../../folio-assistant/computations/n-sym-goldstone-phase-space-probe.witness.json)):
+
+| Structural form | Match to $\mathcal{N}_{\rm sym}(q_0)$ |
+|-----------------|-----:|
+| $[3]_q \cdot [4]_q^3$ | 0.87% off |
+| $[3]_q \cdot [4]_q^3 \cdot (1 + \hbar_q^2)$ | 0.107% off |
+
+**Caveat**: these matches are recorded as *empirical anchors* for guiding the
+forthcoming categorical derivation — NOT as conjectured closed forms.
+Searching for next-order $\delta_2$ correction terms (e.g. $\hbar_q^4 \cdot
+[k]_q$ for various $k$) was attempted and explicitly stopped as a fishing
+expedition. Promotion of either form to a `proposition` requires the
+categorical derivation pipeline above, not further empirical sweeping.
+
+### Falsified candidates
+
+Candidate (a) Gram determinant of the EW Wedderburn block: probed in 9
+forms ([`n-sym-gram-determinant-probe.witness.json`](../../folio-assistant/computations/n-sym-gram-determinant-probe.witness.json));
+best fit (3×3 Cartan with diag $[2k]_q$) is 6.16% off — falsified.
+
+### Required next step (single-target)
+
+Author **`prop:categorical-higgs-idempotent`** — the explicit construction
+of $e_H : A \to A$ projecting onto the unbroken $\mathrm{U}(1)_{em}$
+direction in $\mathbf{Rep}(\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y)$.
+This single artifact unlocks:
+
+- $\mathcal{N}_{\rm sym}$ closed form via the trace formula above
+- U2 + U4 from `conj:electroweak-higgs-torus-link-triplet`
+- The Higgs slot question raised by PR #513 / #514 (the scalar's
+  categorical placement)
+
+Until that derivation exists, `conj:n-sym-symmetric-channel-normalization`
+remains 🟡 — the numerical value is pinned, the closed form is not.
 
 ### Witness
 

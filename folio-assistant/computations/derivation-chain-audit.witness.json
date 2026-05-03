@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T00:16:11.941936+00:00",
-  "commitSha": "238b02f6b1f1aeee6eeafac46a4c88ab45713941",
+  "computedAt": "2026-05-03T00:41:06.070807+00:00",
+  "commitSha": "d40528a9142e992f248c73e78b54b9f04c570283",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1598,6 +1598,7 @@
         "multi-level-sdp.witness.json",
         "multi-term-canonical-assembly.witness.json",
         "multi-term-tau-M-corrected.witness.json",
+        "n-sym-goldstone-phase-space-probe.witness.json",
         "n-sym-gram-determinant-probe.witness.json",
         "n-sym-numerical-anchor.witness.json",
         "neutron-alt-tower-shapes.witness.json",
