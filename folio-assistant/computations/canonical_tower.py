@@ -101,6 +101,7 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0, Q_INV as QI, HA as H0
+from experimental_constants import M_P_MEV
 from mass_endomorphism import Phi_q, z_mark
 from hecke_characters import (partitions_of, dim_q, qfac,
                                 standard_young_tableaux)
@@ -450,7 +451,10 @@ def calibrate_E0_tower(pair_mode: str = "full") -> float:
     m_p = canonical_tower_mass(V_p, pair_mode=pair_mode)
     if m_p["total"] <= 0 or not math.isfinite(m_p["total"]):
         return 1.0
-    E0 = 938.272 / m_p["total"]
+    # NOTE: alt-calibration (diagnostic). CAL-3 canonical E_0 is
+    # `hecke_core.E_0_CALIBRATION_MEV` = Q_β(n). This proton-tower-
+    # anchored variant is retained for per-block comparison only.
+    E0 = float(M_P_MEV) / m_p["total"]
     _E0_TOWER_CACHE[key] = E0
     return E0
 
@@ -516,7 +520,9 @@ def _calibrate_E0_per_irrep(pair_mode: str = "full") -> float:
     m_p = r["m_free_per_irrep_total"]  # A=1 has no atom (no inter)
     if m_p <= 0 or not math.isfinite(m_p):
         return 1.0
-    E_0 = 938.272 / m_p
+    # NOTE: alt-calibration (diagnostic per-irrep variant). CAL-3
+    # canonical E_0 is `hecke_core.E_0_CALIBRATION_MEV` = Q_β(n).
+    E_0 = float(M_P_MEV) / m_p
     _E0_PI_CACHE[pair_mode] = E_0
     return E_0
 
@@ -585,7 +591,7 @@ if __name__ == "__main__":
                 A = Z + N
                 try:
                     r = binder_fn(Z, N, pair_mode=pair_mode)
-                    dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
+                    dm = (abs(r["B_MeV"] - B_AME) / (A * float(M_P_MEV)) * 100
                            if math.isfinite(r["B_MeV"]) else float("nan"))
                     print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "
                           f"{r['B_MeV']:>+10.4f} {dm:>9.4f}%")

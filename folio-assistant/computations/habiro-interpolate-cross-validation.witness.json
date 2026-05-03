@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-04-29T15:53:47.807380+00:00",
-  "commitSha": "c9a1b38138faac4877b1ff9215f1213f748ef9c5",
+  "computedAt": "2026-05-03T14:29:34.549766+00:00",
+  "commitSha": "50d39a1dfe5217f9c1e3709c51fb6c8a485fa79d",
   "assertions": [
     {
       "name": "tr_M_q0_atomic_vs_interpolate[D (deuteron, A=2)]",
@@ -30,8 +30,8 @@
   "durationMs": 4,
   "computation": "habiro-interpolate-cross-validation",
   "scriptFile": "habiro_interpolate_cross_validator.py",
-  "scriptHash": "3333004ac729",
-  "scriptCommitSha": "dd4436dc0decabd08e078f9c92e6c99f53f82e1a",
+  "scriptHash": "87fb556f407d",
+  "scriptCommitSha": "90ca491951fbfca1001c23efe1737e22d20b6945",
   "description": "Verifies tr_M(q_0) agreement between the atomic-polynomial path (habiro_coefficients_atomic.py) and the Vandermonde-interpolation path (habiro_coefficients_interpolate.py).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {

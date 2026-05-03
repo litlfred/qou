@@ -23,7 +23,8 @@ from mass_endomorphism import q0 as q0_f
 mpmath.mp.dps = 50
 q0 = mpmath.mpf(str(q0_f))
 B_AME_D = 2.22  # MeV
-E_0_MeV = mpmath.mpf('0.782')
+from experimental_constants import Q_NEUTRON_MEV
+E_0_MeV = mpmath.mpf(str(Q_NEUTRON_MEV))  # 0.78233341 MeV
 
 
 def tr_M_D(m_pn, include_inter=True):

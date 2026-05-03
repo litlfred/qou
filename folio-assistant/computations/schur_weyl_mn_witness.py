@@ -148,11 +148,13 @@ if __name__ == "__main__":
     p_free = results["p"]["total_mn_at_q0"]
     n_free = results["n"]["total_mn_at_q0"]
     Q_cat = n_free - p_free
-    E_0 = 0.782 / abs(Q_cat) if abs(Q_cat) > 0 else 0.0
+    from experimental_constants import Q_NEUTRON_MEV
+    E_0 = float(Q_NEUTRON_MEV) / abs(Q_cat) if abs(Q_cat) > 0 else 0.0
     print(f"  |tr_M(p)| @ q_0  = {p_free:+.6e}")
     print(f"  |tr_M(n)| @ q_0  = {n_free:+.6e}")
     print(f"  Q_cat            = {Q_cat:+.6e}")
-    print(f"  E_0 = 0.782 MeV / Q_cat = {E_0:.6e} MeV/cat.unit\n")
+    print(f"  E_0 = Q_β(n) / Q_cat = {E_0:.6e} MeV/cat.unit "
+          f"(Q_β = {float(Q_NEUTRON_MEV):.8f} MeV)\n")
 
     print(f"  {'Atom':>5} {'A':>3} "
           f"{'|tr_M(free)|':>15} {'|tr_M(atom)|':>15} "

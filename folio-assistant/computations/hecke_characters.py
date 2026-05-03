@@ -41,7 +41,8 @@ z = 1.0 / (q0**0.5 + qi0**0.5)
 # categorical mass to MeV.  The former ALPHA = m_e · 8 · Catalan
 # convention (hyperbolic-volume heuristic) is removed — it was
 # not derivable from the mass-identity prescription.
-E_0_BETA_DECAY_Q_MEV = 0.782
+from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+E_0_BETA_DECAY_Q_MEV = Q_NEUTRON_MEV  # CODATA: 0.78233341 ± 6.1e-7 MeV
 
 
 # ══════════════════════════════════════════════════════════════

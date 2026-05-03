@@ -32,8 +32,9 @@ COMPOUND_BETA_DECAYS = [
     (126, "209Pb → 209Bi", 0.64400, "²⁰⁹Pb β⁻ (crosses N=126 anchor)"),
 ]
 
-E_0_BETA_MeV = 0.782
-m_p_MeV = 938.272
+from experimental_constants import Q_NEUTRON_MEV, M_P_MEV
+E_0_BETA_MeV = float(Q_NEUTRON_MEV)  # 0.78233341 MeV (CODATA-derived)
+m_p_MeV = float(M_P_MEV)              # 938.27208816 MeV
 
 
 def y_target(A_magic, Q_beta_MeV):
