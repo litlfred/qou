@@ -215,6 +215,7 @@ export default chapter({
         "alpha-em-gluon-octet-form",
         "alpha-em-derivation-open-problems",
         "em-coupling-bring-zero-mode",
+        "alpha-em-derivation-exploration-options",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
