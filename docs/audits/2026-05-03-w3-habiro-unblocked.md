@@ -131,6 +131,17 @@ formula
 
 > **shift = 18Z + 21N + 1 = 3 · (6Z + 7N) + 1**  (conjecture)
 
+Equivalently, in (A, N) coordinates:
+
+> **shift = 18A + 3N + 1**  (conjecture)
+
+The (A, N) decomposition has a slightly cleaner structural reading:
+**+18 per nucleon (independent of type) + 3 per neutron (type-specific
+penalty: each neutron replaces one σ with one σ⁻¹ at gen_idx 0
+relative to a proton) + 1 base (the inter-nucleon averaged
+interface)**.  The categorical origin of the coefficients (18, 3, 1)
+is the residual research question.
+
 | Atom | (Z, N) | predicted shift | empirical | match |
 |------|--------|-----------------|-----------|-------|
 | D    | (1, 1) | 18·1 + 21·1 + 1 = 40  | 40  | ✓ |
