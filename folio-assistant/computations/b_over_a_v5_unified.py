@@ -52,13 +52,20 @@ from family_1_kashaev import (  # noqa: E402
 from magic_A_formula import (  # noqa: E402
     M_E_MEV, VOL_BORROMEAN, magic_A_binding,
     AME_BA_MEV as _FAMILY_2_AME,
+    ATOM_SYMBOL as _FAMILY_2_SYMBOL,
     is_magic_A_atom,
 )
 from alpha_cluster_recursion import (  # noqa: E402
     C_ALPHA_ALPHA_MEV, VOL_7_2_1, alpha_cluster_binding,
     AME_BA_MEV as _FAMILY_3_AME,
+    ATOM_SYMBOL as _FAMILY_3_SYMBOL,
     is_alpha_chain,
 )
+
+# Family-1 symbols sourced from FAMILY_1_REGISTRY (single source of truth).
+_FAMILY_1_SYMBOL: dict[tuple[int, int], str] = {
+    k: v["symbol"] for k, v in FAMILY_1_REGISTRY.items()
+}
 
 
 # ── Plan-H δρ diagnostic (PR #512) ────────────────────────────────
@@ -68,6 +75,19 @@ from alpha_cluster_recursion import (  # noqa: E402
 # magnitudes don't fit a single closed-form ρ_F(q)); these per-atom
 # values document the structural gap for closure of GAP-A in the
 # 1-ppb workplan (docs/audits/2026-05-03-next-session-plan-to-1ppb.md).
+def _witness_results(witness: dict) -> list:
+    """Yield the result rows from a witness, supporting both the legacy
+    `rows` schema and the modern `data.results` schema (per repo guideline:
+    older files may use legacy schemas — verify per-file)."""
+    rows = witness.get("rows")
+    if isinstance(rows, list):
+        return rows
+    nested = witness.get("data", {})
+    if isinstance(nested, dict):
+        return nested.get("results", []) or []
+    return []
+
+
 _PLAN_H_DELTA_RHO: dict[tuple[int, int], dict] = {}
 _ph_path = HERE / "rho-census-wedderburn-experiment.witness.json"
 if _ph_path.exists():
@@ -75,7 +95,7 @@ if _ph_path.exists():
         _ph_data = json.loads(_ph_path.read_text())
     except (json.JSONDecodeError, OSError):
         _ph_data = {}
-    for _r in _ph_data.get("rows", []):
+    for _r in _witness_results(_ph_data):
         if "Z" not in _r or "N" not in _r:
             continue
         _PLAN_H_DELTA_RHO[(_r["Z"], _r["N"])] = {
@@ -98,7 +118,7 @@ if _peel_path.exists():
         _peel_data = json.loads(_peel_path.read_text())
     except (json.JSONDecodeError, OSError):
         _peel_data = {}
-    for _r in _peel_data.get("data", {}).get("results", []):
+    for _r in _witness_results(_peel_data):
         if "Z" not in _r or "N" not in _r or "tr_M_at_q0" not in _r:
             continue
         _MARKOV_PEEL_TR_M[(_r["Z"], _r["N"])] = _r["tr_M_at_q0"]
@@ -122,13 +142,19 @@ AME_BA_MEV = {
     **_FAMILY_4_AME,
 }
 
-ATOM_SYMBOL = {
-    (1, 1): "²H",   (1, 2): "³H",   (2, 1): "³He",
-    (2, 2): "⁴He",
-    (4, 4): "⁸Be", (6, 6): "¹²C", (8, 8): "¹⁶O",
-    (10, 10): "²⁰Ne", (12, 12): "²⁴Mg", (20, 20): "⁴⁰Ca",
+# Atom symbols sourced from each family module's ATOM_SYMBOL (single
+# source of truth); only Family 4 (open atoms with no callable yet) is
+# defined locally.  Adding an atom to a module's ATOM_SYMBOL auto-wires
+# its display name through the unified evaluator.
+_FAMILY_4_SYMBOL: dict[tuple[int, int], str] = {
     (3, 3): "⁶Li", (3, 4): "⁷Li", (4, 5): "⁹Be",
     (5, 6): "¹¹B", (7, 7): "¹⁴N", (9, 10): "¹⁹F",
+}
+ATOM_SYMBOL = {
+    **_FAMILY_1_SYMBOL,
+    **_FAMILY_2_SYMBOL,
+    **_FAMILY_3_SYMBOL,
+    **_FAMILY_4_SYMBOL,
 }
 
 
