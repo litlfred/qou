@@ -1,6 +1,6 @@
 {
   "computation": "sigma-all-evaluator",
-  "computedAt": "2026-05-03T10:13:57.521615+00:00",
+  "computedAt": "2026-05-03T10:30:54.364049+00:00",
   "description": "Reference table + precision schedule for the Σ_all closed-form evaluator (sigma_all_evaluator.py). Replaces raw 4^A configuration-sum routes in the β-decay / binding-energy pipeline with a constant-time, cancellation-free evaluator. Closed form verified for A=1..6 in sigma_all_symbolic_decay.py and documented in docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769.",
   "q_parameter": {
     "q_at_q0": "1.1099785955541805752815940796095093779932822799587",
@@ -33,7 +33,7 @@
       "ratio_to_A1": "1.00000000000000000000000000000",
       "ratio_to_A1_f64": 1.0,
       "log10_abs": -0.27613097457704017,
-      "precision_digits_required_for_raw_sum": 2
+      "precision_digits_required_for_raw_sum": 1
     },
     {
       "A": 2,
@@ -44,7 +44,7 @@
       "ratio_to_A1": "-0.634033893011811479344323924155",
       "ratio_to_A1_f64": -0.6340338930118115,
       "log10_abs": -0.47401850036317406,
-      "precision_digits_required_for_raw_sum": 3
+      "precision_digits_required_for_raw_sum": 2
     },
     {
       "A": 3,
@@ -55,7 +55,7 @@
       "ratio_to_A1": "0.0662756649127730464989480132356",
       "ratio_to_A1_f64": 0.06627566491277305,
       "log10_abs": -1.4547768810764774,
-      "precision_digits_required_for_raw_sum": 3
+      "precision_digits_required_for_raw_sum": 2
     },
     {
       "A": 4,
@@ -66,7 +66,7 @@
       "ratio_to_A1": "-0.0420210178365918137443465819256",
       "ratio_to_A1_f64": -0.04202101783659181,
       "log10_abs": -1.6526644068626113,
-      "precision_digits_required_for_raw_sum": 4
+      "precision_digits_required_for_raw_sum": 3
     },
     {
       "A": 5,
@@ -77,7 +77,7 @@
       "ratio_to_A1": "0.00439246375963017630919594417231",
       "ratio_to_A1_f64": 0.0043924637596301766,
       "log10_abs": -2.6334227875759146,
-      "precision_digits_required_for_raw_sum": 4
+      "precision_digits_required_for_raw_sum": 3
     },
     {
       "A": 6,
@@ -88,7 +88,7 @@
       "ratio_to_A1": "-0.00278497089743161842056343941704",
       "ratio_to_A1_f64": -0.0027849708974316185,
       "log10_abs": -2.8313103133620485,
-      "precision_digits_required_for_raw_sum": 5
+      "precision_digits_required_for_raw_sum": 4
     },
     {
       "A": 7,
@@ -99,7 +99,7 @@
       "ratio_to_A1": "0.000291113456274748856842889435465",
       "ratio_to_A1_f64": 0.00029111345627474885,
       "log10_abs": -3.812068694075352,
-      "precision_digits_required_for_raw_sum": 6
+      "precision_digits_required_for_raw_sum": 5
     },
     {
       "A": 8,
@@ -110,7 +110,7 @@
       "ratio_to_A1": "-0.000184575797990002775877040820128",
       "ratio_to_A1_f64": -0.00018457579799000277,
       "log10_abs": -4.009956219861485,
-      "precision_digits_required_for_raw_sum": 6
+      "precision_digits_required_for_raw_sum": 5
     },
     {
       "A": 9,
@@ -121,7 +121,7 @@
       "ratio_to_A1": "0.0000192937378796644632812442485940",
       "ratio_to_A1_f64": 1.9293737879664464e-05,
       "log10_abs": -4.990714600574789,
-      "precision_digits_required_for_raw_sum": 7
+      "precision_digits_required_for_raw_sum": 6
     },
     {
       "A": 10,
@@ -132,7 +132,7 @@
       "ratio_to_A1": "-0.0000122328837385931127744033016933",
       "ratio_to_A1_f64": -1.2232883738593112e-05,
       "log10_abs": -5.188602126360923,
-      "precision_digits_required_for_raw_sum": 7
+      "precision_digits_required_for_raw_sum": 6
     }
   ],
   "precision_schedule_for_raw_config_sum": [
@@ -199,7 +199,7 @@
   "tests": {
     "test_file": "folio-assistant/computations/test_sigma_all_evaluator.py",
     "test_count": 11,
-    "all_passing_as_of": "2026-05-03T10:13:57.524119+00:00"
+    "all_passing_as_of": "2026-05-03T10:30:54.366398+00:00"
   },
   "evaluator_module": "folio-assistant/computations/sigma_all_evaluator.py",
   "audit_doc_reference": "docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769 (closed form + precision schedule)",

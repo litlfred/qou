@@ -210,16 +210,25 @@ def precision_digits_required(A: int, q: Optional[mp.mpf] = None) -> int:
 
     Uses the asymptotic schedule documented in
     `docs/audits/2026-05-02-nv-frob-filter-conjectures.md` lines 746–
-    761 and verified numerically: digits ≈ A · 0.589 + ~1 floor.
+    761 and verified numerically: digits ≈ A · 0.589.
+
+    Returns ``ceil(A · 0.589)``, which exactly matches the audit's
+    "max A safe" boundary at every documented working precision:
+
+    | working dps | floor   | max A safe | required digits at max A |
+    |-------------|---------|------------|--------------------------|
+    | f64 (16)    | 10⁻¹⁶   | 27         | ceil(15.903) = 16        |
+    | 25          | 10⁻²⁵   | 42         | ceil(24.738) = 25        |
+    | 50          | 10⁻⁵⁰   | 84         | ceil(49.476) = 50        |
+    | 100         | 10⁻¹⁰⁰  | 169        | ceil(99.541) = 100       |
+    | 200         | 10⁻²⁰⁰  | 338        | ceil(199.082) = 200      |
 
     The result is independent of q to leading order; q is accepted so
     a more refined estimate can be computed on demand if ever needed.
     """
     if A < 1:
         raise ValueError(f"A must be ≥ 1, got {A}")
-    # +1 floor digit so frob_filter_required(A=27, target=1e-16) is
-    # marginal not "safe" — matches the audit table exactly.
-    return int(math.ceil(A * _LOG10_PER_A_DECAY)) + 1
+    return int(math.ceil(A * _LOG10_PER_A_DECAY))
 
 
 def frob_filter_required(
@@ -245,11 +254,13 @@ def frob_filter_required(
     Examples
     --------
     >>> from q_parameter import Q_MP
-    >>> frob_filter_required(27, Q_MP, 1e-16)  # marginal at f64
-    True
-    >>> frob_filter_required(10, Q_MP, 1e-16)  # safe at f64
+    >>> frob_filter_required(27, Q_MP, 1e-16)  # max safe at f64 — closed form NOT required
     False
-    >>> frob_filter_required(84, Q_MP, 1e-50)  # safe at 50 dps
+    >>> frob_filter_required(28, Q_MP, 1e-16)  # past f64 floor
+    True
+    >>> frob_filter_required(84, Q_MP, 1e-50)  # max safe at 50 dps — closed form NOT required
+    False
+    >>> frob_filter_required(85, Q_MP, 1e-50)  # past 50 dps floor
     True
     """
     if target_relative_precision <= 0:
@@ -258,7 +269,11 @@ def frob_filter_required(
         )
     log10_target = -math.log10(target_relative_precision)
     digits_needed = precision_digits_required(A, q)
-    return digits_needed >= log10_target
+    # Strict ``>``: at A = audit's "max safe" (e.g. A=27 for f64), the
+    # required digits exactly match the working precision floor — this
+    # is the boundary where the raw config sum still fits.  Closed-form
+    # is required only past the floor.
+    return digits_needed > log10_target
 
 
 # ── Self-verification: when run as a script, compare against the

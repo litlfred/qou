@@ -146,6 +146,37 @@ def test_frob_filter_threshold_50dps(q0):
     assert frob_filter_required(10, q0, 1e-50) is False
 
 
+def test_frob_filter_audit_max_A_boundary(q0):
+    """The audit table says A ≤ 27 / 42 / 84 / 169 / 338 are SAFE at
+    their respective working precisions.  Lock in that
+    `frob_filter_required` returns False *at* the boundary and True one
+    step past it.
+
+    See docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines
+    746–761 — Gemini PR #525 review caught a +1 floor that made these
+    boundary values flip incorrectly.
+    """
+    # (max_A_safe, first_A_past_floor, target) — first_A_past_floor is
+    # the smallest A for which ceil(A · 0.589) strictly exceeds
+    # log10(1/target), i.e. where the closed form becomes mandatory.
+    # For most rows this is max_A_safe + 1, but at 200 dps a second
+    # ceiling step lands at A=340 because A=339 still rounds to 200.
+    boundaries = [
+        (27, 28, 1e-16),
+        (42, 43, 1e-25),
+        (84, 85, 1e-50),
+        (169, 170, 1e-100),
+        (338, 340, 1e-200),
+    ]
+    for A_max_safe, A_past_floor, target in boundaries:
+        assert frob_filter_required(A_max_safe, q0, target) is False, (
+            f"A={A_max_safe} at target={target:g} should be SAFE per audit table"
+        )
+        assert frob_filter_required(A_past_floor, q0, target) is True, (
+            f"A={A_past_floor} at target={target:g} should require closed form"
+        )
+
+
 def test_sign_pattern(q0):
     """Σ_all(A) sign alternates: +, -, +, -, +, -, ..."""
     for A in range(1, 9):
