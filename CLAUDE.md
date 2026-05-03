@@ -124,6 +124,7 @@ When a user request arrives, route to the right skill(s):
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
 | "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
 | "diff / changes / what changed / undo" | `local/diff` | reader |
+| "watch / watch main / watch upstream / watch this PR / watch branch X / what's landing" | `local/watch` | reader |
 | "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
 | "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
 | "dangling remarks / audit remarks / remark backing" | `local/remark-audit` | reader |
@@ -171,7 +172,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit |
 | `owner` | All collaborator skills + deployment-auth |
 
