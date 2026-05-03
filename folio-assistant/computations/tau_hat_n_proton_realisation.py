@@ -32,9 +32,13 @@ from pathlib import Path
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0
+# Use the 50-digit string form of q_0 (not the float64 Q) so mp.mpf
+# below carries the full 50 decimal digits — passing the f64 Q would
+# cap precision at ~15 digits (Gemini PR #533 review, r3178376577).
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 mp.mp.dps = 50
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 DIM_A0 = 6  # |S_3| = 6
 
@@ -63,7 +67,7 @@ def reduce_word(word: tuple[int, ...], q):
 
     # Each "term" is (coefficient_mp, word_tuple).
     terms = [(mp.mpf(1), tuple(word))]
-    out: dict[int, "mp.mpc"] = {i: mp.mpf(0) for i in range(DIM_A0)}
+    out: dict[int, "mp.mpf"] = {i: mp.mpf(0) for i in range(DIM_A0)}
 
     # Repeatedly normalise terms until all reduce to one of RED_WORDS.
     pending = list(terms)
@@ -157,9 +161,8 @@ def build_multiplication_matrix(q) -> mp.matrix:
 def kernel_basis(M: mp.matrix, *, tol: mp.mpf | float = 1e-40) -> mp.matrix:
     """Returns a (cols x nullity) matrix whose columns span ker(M).
 
-    Strategy: row-reduce M^T to find left-nullspace of M^T which equals
-    right-nullspace of M.  We use a manual Gaussian elimination since
-    mpmath has no .nullspace().
+    Strategy: row-reduce M to find its right-nullspace.  We use a manual
+    Gaussian elimination since mpmath has no .nullspace().
     """
     rows = M.rows
     cols = M.cols
@@ -234,7 +237,7 @@ def universal_derivation_d1(q):
     return D
 
 
-def express_in_basis(K: mp.matrix, V: mp.matrix, *, tol=1e-30) -> mp.matrix:
+def express_in_basis(K: mp.matrix, V: mp.matrix) -> mp.matrix:
     """Given basis K (cols x dim) of a subspace W <= V_amb and vectors V (cols
     x k) lying in W, return coords (dim x k).  Uses least-squares via normal
     eqn since we're working in mpmath.
