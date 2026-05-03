@@ -151,6 +151,24 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
     out["eps_modeling_MeV"] = eps
     out["eps_order"] = f"O(ℏ_q^{eps_order})"
 
+    # ── Term 6 (Mittag-Leffler polar sum at non-zero poles) ──
+    # Pulls from term6_residues_at_roots.compute_atom (partial-fraction
+    # split on the u-plane lift tr_M(u²)).  Reported for diagnostic /
+    # calibration use — the unit conversion T6 → MeV is open, so this
+    # is NOT yet folded into B_MeV.  Cached per (Z, N) to avoid the
+    # symbolic peel cost on repeat calls.
+    t_t6 = time.time()
+    try:
+        from term6_residues_at_roots import compute_atom as _t6_compute
+        _t6 = _t6_compute(Z, N)
+        out["term6_pp_at_roots"]    = _t6["term6_at_q0_real"]
+        out["term6_pp_at_zero"]     = float(complex(_t6["pp_at_zero_at_u0"]).real)
+        out["term6_entire_at_u0"]   = float(complex(_t6["entire_at_u0"]).real)
+        out["term6_pole_order_zero"] = _t6["denom_pole_order_at_zero"]
+    except Exception as exc:  # noqa: BLE001
+        out["term6_error"] = f"{type(exc).__name__}: {exc}"
+    out["term6_time_sec"] = time.time() - t_t6
+
     B = canonical_MeV + tower_MeV
     out["B_MeV"] = B
     return out
@@ -181,8 +199,8 @@ if __name__ == "__main__":
         print("=" * 80)
         print(f"  {'Atom':>6} {'A':>3} {'B_AME':>8} {'B_canon':>10} "
               f"{'B_tower':>10} {'B_total':>10} {'|Δm/m|%':>9} "
-              f"{'ε_MeV':>10} {'time':>8}")
-        print("  " + "-" * 98)
+              f"{'ε_MeV':>10} {'T6_PP':>14} {'time':>8}")
+        print("  " + "-" * 113)
         for name, Z, N, B_AME in ATOMS:
             A = Z + N
             t0 = time.time()
@@ -193,12 +211,16 @@ if __name__ == "__main__":
                 dt = time.time() - t0
                 dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
                        if math.isfinite(r["B_MeV"]) else float("nan"))
+                t6_str = (f"{r['term6_pp_at_roots']:+14.4e}"
+                           if "term6_pp_at_roots" in r
+                           else f"{'(err)':>14}")
                 print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "
                       f"{r['canonical_MeV']:>+10.4f} "
                       f"{r['tower_MeV']:>+10.4f} "
                       f"{r['B_MeV']:>+10.4f} "
                       f"{dm:>8.4f}% "
                       f"{r['eps_modeling_MeV']:>10.4e} "
+                      f"{t6_str} "
                       f"{dt:>7.1f}s")
                 results.append({**r, "atom": name, "B_AME_MeV": B_AME,
                                  "delta_m_over_m_pct": dm})

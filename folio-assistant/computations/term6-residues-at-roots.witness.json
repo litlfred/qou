@@ -1,20 +1,20 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-03T16:11:03.304090+00:00",
-  "commitSha": "207143d7324c5fd4e91772532d382d6028530d45",
+  "computedAt": "2026-05-03T20:15:59.259264+00:00",
+  "commitSha": "8c9c8048ebc5000438ec6362551ce6e62efdedba",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 17,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
-  "scriptHash": "ab96cb5b68aa",
-  "scriptCommitSha": "207143d7324c5fd4e91772532d382d6028530d45",
-  "description": "Term 6 of thm:six-term-mass-formula-complete via Markov-peel symbolic tr_M(q): Σ_{ℓ≥2} Res_{q=ζ_ℓ}[tr_M(T_w)] / (q₀ − ζ_ℓ), with ℓ truncated at 4.  This evaluation is enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q; the Hoefsmit per-block path could not produce the symbolic form needed for residue extraction at A ≥ 4.",
+  "scriptHash": "a39c7b52612d",
+  "scriptCommitSha": "cac2ae07520d034d5e6205f99fc14896bc16257b",
+  "description": "Term 6 of thm:six-term-mass-formula-complete via partial-fraction polar split on the u-plane lift tr_M(u²): tr_M(u²) = entire(u) + A(u)/u^k + B(u)/Dprime(u), with Term 6 = B(u₀)/Dprime(u₀) the principal-part contribution at non-zero poles only.  This split avoids per-pole residue extraction; sp.div + one sp.series-based power-series inversion deliver the answer in seconds where sp.residue scaled polynomially in atom size and timed out at deuteron.  Evaluation enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q^{1/2}.",
   "contentBlock": "thm:six-term-mass-formula-complete",
   "parameters": {
     "q0": "1.1099785955541805",
-    "max_ell": 4
+    "method": "partial_fraction_split_u_plane"
   },
   "data": {
     "results": [
@@ -22,180 +22,109 @@
         "Z": 1,
         "N": 0,
         "A": 1,
-        "max_ell": 4,
-        "tr_M_symbolic_ops": 75,
-        "elapsed_peel_sec": 0.09,
-        "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 0.479,
-        "residues": [
-          {
-            "ell": 2,
-            "zeta_symbolic": "-1",
-            "residue_symbolic": "3 + I",
-            "residue_value": "(3+1j)",
-            "residue_abs": "3.162278e+00"
-          },
-          {
-            "ell": 3,
-            "zeta_symbolic": "exp(2*I*pi/3)",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          },
-          {
-            "ell": 4,
-            "zeta_symbolic": "I",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          }
-        ],
-        "term6_at_q0": "(1.42181537117065286944153194478 + 0.473938457056884289813843981592j)",
+        "tr_M_u_symbolic_ops": 60,
+        "denom_pole_order_at_zero": 19,
+        "denom_factor_no_zero": "4*(u**2 + 1)**2",
+        "elapsed_peel_sec": 0.083,
+        "elapsed_subs_sec": 0.01,
+        "elapsed_split_sec": 0.074,
+        "entire_at_u0": "(0.25648952712440565+0j)",
+        "pp_at_zero_at_u0": "(-1.112319003736268+0j)",
+        "pp_at_roots_at_u0": "(1.921135705204251+0j)",
+        "term6_at_q0": "(1.921135705204251+0j)",
+        "term6_at_q0_real": 1.921135705204251,
+        "term6_at_q0_imag": 0.0,
         "atom": "proton"
       },
       {
         "Z": 0,
         "N": 1,
         "A": 1,
-        "max_ell": 4,
-        "tr_M_symbolic_ops": 63,
-        "elapsed_peel_sec": 0.036,
-        "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 0.294,
-        "residues": [
-          {
-            "ell": 2,
-            "zeta_symbolic": "-1",
-            "residue_symbolic": "4 + I",
-            "residue_value": "(4+1j)",
-            "residue_abs": "4.123106e+00"
-          },
-          {
-            "ell": 3,
-            "zeta_symbolic": "exp(2*I*pi/3)",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          },
-          {
-            "ell": 4,
-            "zeta_symbolic": "I",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          }
-        ],
-        "term6_at_q0": "(1.89575382822753715925537592637 + 0.473938457056884289813843981592j)",
+        "tr_M_u_symbolic_ops": 58,
+        "denom_pole_order_at_zero": 19,
+        "denom_factor_no_zero": "4*(u**2 + 1)**2",
+        "elapsed_peel_sec": 0.033,
+        "elapsed_subs_sec": 0.007,
+        "elapsed_split_sec": 0.061,
+        "entire_at_u0": "(-0.6094578550823926+0j)",
+        "pp_at_zero_at_u0": "(-0.8623830100091595+0j)",
+        "pp_at_roots_at_u0": "(2.3950741622611353+0j)",
+        "term6_at_q0": "(2.3950741622611353+0j)",
+        "term6_at_q0_real": 2.3950741622611353,
+        "term6_at_q0_imag": 0.0,
         "atom": "neutron"
       },
       {
         "Z": 1,
         "N": 1,
         "A": 2,
-        "max_ell": 4,
-        "tr_M_symbolic_ops": 1449,
-        "elapsed_peel_sec": 0.698,
-        "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 20.028,
-        "residues": [
-          {
-            "ell": 2,
-            "zeta_symbolic": "-1",
-            "residue_symbolic": "-425/2 + 3393*I/8",
-            "residue_value": "(-212.5+424.125j)",
-            "residue_abs": "4.743820e+02"
-          },
-          {
-            "ell": 3,
-            "zeta_symbolic": "exp(2*I*pi/3)",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          },
-          {
-            "ell": 4,
-            "zeta_symbolic": "I",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          }
-        ],
-        "term6_at_q0": "(-100.711922124587911585441846088 + 201.009148099251049417296578693j)",
+        "tr_M_u_symbolic_ops": 946,
+        "denom_pole_order_at_zero": 40,
+        "denom_factor_no_zero": "32*(u**2 + 1)**5",
+        "elapsed_peel_sec": 0.622,
+        "elapsed_subs_sec": 0.115,
+        "elapsed_split_sec": 0.352,
+        "entire_at_u0": "(-48.90738970393885+0j)",
+        "pp_at_zero_at_u0": "(-59.950842426889025+0j)",
+        "pp_at_roots_at_u0": "(109.24651860237559+0j)",
+        "term6_at_q0": "(109.24651860237559+0j)",
+        "term6_at_q0_real": 109.24651860237559,
+        "term6_at_q0_imag": 0.0,
         "atom": "deuteron"
       },
       {
         "Z": 1,
         "N": 2,
         "A": 3,
-        "max_ell": 4,
-        "tr_M_symbolic_ops": 12164,
-        "elapsed_peel_sec": 10.013,
-        "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 51.425,
-        "residues": [
-          {
-            "ell": 2,
-            "zeta_symbolic": "-1",
-            "residue_symbolic": "sqrt-sub (pole order 5): (-44141.0 - 43989.4765625j)",
-            "residue_value": "(-44141-43989.4765625j)",
-            "residue_abs": "6.231775e+04",
-            "method": "sqrt_substitution",
-            "pole_order_in_u": 5
-          },
-          {
-            "ell": 3,
-            "zeta_symbolic": "exp(2*I*pi/3)",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          },
-          {
-            "ell": 4,
-            "zeta_symbolic": "I",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          }
-        ],
-        "term6_at_q0": "(-20920.1174329479294366728871915 - 20848.3046487712241960405473163j)",
+        "tr_M_u_symbolic_ops": 6682,
+        "denom_pole_order_at_zero": 61,
+        "denom_factor_no_zero": "128*(u**2 + 1)**8",
+        "elapsed_peel_sec": 7.819,
+        "elapsed_subs_sec": 0.759,
+        "elapsed_split_sec": 1.381,
+        "entire_at_u0": "(22257.449210141884+0j)",
+        "pp_at_zero_at_u0": "(19573.433765025653+0j)",
+        "pp_at_roots_at_u0": "(-41830.77892304886+0j)",
+        "term6_at_q0": "(-41830.77892304886+0j)",
+        "term6_at_q0_real": -41830.77892304886,
+        "term6_at_q0_imag": 0.0,
         "atom": "tritium"
       },
       {
         "Z": 2,
         "N": 1,
         "A": 3,
-        "max_ell": 4,
-        "tr_M_symbolic_ops": 5420,
-        "elapsed_peel_sec": 4.191,
-        "elapsed_cancel_sec": 0.0,
-        "elapsed_residues_sec": 42.262,
-        "residues": [
-          {
-            "ell": 2,
-            "zeta_symbolic": "-1",
-            "residue_symbolic": "sqrt-sub (pole order 5): (-41096.25 - 37087.84375j)",
-            "residue_value": "(-41096.25-37087.84375j)",
-            "residue_abs": "5.535711e+04",
-            "method": "sqrt_substitution",
-            "pole_order_in_u": 5
-          },
-          {
-            "ell": 3,
-            "zeta_symbolic": "exp(2*I*pi/3)",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          },
-          {
-            "ell": 4,
-            "zeta_symbolic": "I",
-            "residue_symbolic": "0",
-            "residue_value": "0",
-            "residue_abs": "0.000000e+00"
-          }
-        ],
-        "term6_at_q0": "(-19477.0933158239809952621857285 - 17577.3554424418094024455621762j)",
+        "tr_M_u_symbolic_ops": 3811,
+        "denom_pole_order_at_zero": 58,
+        "denom_factor_no_zero": "128*(u**2 + 1)**8",
+        "elapsed_peel_sec": 3.43,
+        "elapsed_subs_sec": 0.347,
+        "elapsed_split_sec": 0.922,
+        "entire_at_u0": "(19730.732835811938+0j)",
+        "pp_at_zero_at_u0": "(17379.440790631917+0j)",
+        "pp_at_roots_at_u0": "(-37109.96708558529+0j)",
+        "term6_at_q0": "(-37109.96708558529+0j)",
+        "term6_at_q0_real": -37109.96708558529,
+        "term6_at_q0_imag": 0.0,
         "atom": "helium-3"
+      },
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "tr_M_u_symbolic_ops": 21523,
+        "denom_pole_order_at_zero": 79,
+        "denom_factor_no_zero": "512*(u**2 + 1)**11",
+        "elapsed_peel_sec": 42.211,
+        "elapsed_subs_sec": 2.509,
+        "elapsed_split_sec": 3.855,
+        "entire_at_u0": "(-862042.6274496998+0j)",
+        "pp_at_zero_at_u0": "(-494042.1338224001+0j)",
+        "pp_at_roots_at_u0": "(1356084.8166204458+0j)",
+        "term6_at_q0": "(1356084.8166204458+0j)",
+        "term6_at_q0_real": 1356084.8166204458,
+        "term6_at_q0_imag": 0.0,
+        "atom": "helium-4"
       }
     ]
   }
