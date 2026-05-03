@@ -15,7 +15,8 @@ in `em-coupling-chern-simons.lean`. This file does not redefine
 it; it states the structural-assembly theorem as a one-line
 consequence and exposes the dependency chain in Lean.
 
-LaTeX label: `prop:alpha-em-gluon-octet-form`
+LaTeX label: `conj:alpha-em-gluon-octet-form` (demoted to conjecture
+after audit; only `45 = dim Λ²V_nat^{10}` has a complete derivation).
 
 ## References
 - [manuscript] §5/alpha-em-gluon-octet-form
@@ -27,21 +28,16 @@ import QOU.DescartesUniverse.EmCouplingChernSimons
 
 namespace QOU.DescartesUniverse
 
-/-- **Theorem (gluon-octet structural assembly).**
+/-- **Definitional restatement of `alphaEmInvCorrected`.**
 
-    `alphaEmInvCorrected` is the assembled consequence of:
-    - `prop:exterior-square-borromean` — the integer `45 = dim Λ²V_nat^{10}`
-    - `thm:em-spectral-completeness` + `cor:gauge-coupling-uniqueness` —
-      the singlet quantum trace `[3]_q`
-    - `prop:gram-determinant-plancherel-ratio` —
-      `δ_CS = ℏ_q^4 · [5]_q`
-    - `prop:force-carrier-bring-uniqueness` —
-      the genus-4 torus-knot enumeration `8q`
+    Trivial `rfl` lemma showing the formula in its written form.
+    Does NOT prove the formula matches CODATA; that is the content
+    of the conjectural class `AlphaEmGluonOctetConjecture`
+    (see `em-coupling-chern-simons.lean`).
 
-    No factor is empirical. The structural-assembly content of this
-    proposition is captured by `rfl`: the definition of
-    `alphaEmInvCorrected` already encodes each factor in the form
-    forced by the upstream propositions. -/
+    Audit (May 2026) showed only the factor `45 = dim Λ²V_nat^{10}`
+    has a complete structural derivation; `[3]_q`, `ℏ_q^4 · [5]_q`,
+    and `8q` are unproved or post-hoc identifications. -/
 -- Ref: [manuscript] §5/alpha-em-gluon-octet-form
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
