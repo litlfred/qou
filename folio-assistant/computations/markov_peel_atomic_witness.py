@@ -185,7 +185,7 @@ def main() -> int:
                 tag = "OK" if diff < tol else "MISMATCH"
                 print(
                     f"    bridge = {bridge[label]}  "
-                    f"|diff| = {diff:.2e}  {tag}",
+                    f"|diff| = {mpmath.nstr(diff, 3)}  {tag}",
                     flush=True,
                 )
             else:
