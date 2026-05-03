@@ -1,0 +1,33 @@
+{
+  "computation": "shared-residual-test",
+  "computedAt": "2026-05-03T01:09:15.400557+00:00",
+  "description": "Test of the hypothesis that N_sym (1.81%) and g_A (0.40%) residuals share a categorical multiplicative correction. FALSIFIED: opposite signs (δ_NS Anchor-II < 0, δ_g > 0); cannot be the same (1 + δ) factor. Different sources.",
+  "targets": {
+    "N_sym_target": "213.11180724278366708",
+    "g_A_target": "1.2754"
+  },
+  "leading_forms": {
+    "Anchor_I_N_sym": "[3]_q · [4]_q^3",
+    "Anchor_II_N_sym": "[2]_q · [4]_q² · [6]_q",
+    "g_A": "[5]_q / [4]_q"
+  },
+  "residuals": [
+    {
+      "comparison": "Anchor I  vs g_A",
+      "delta_NS": "0.008741730971526801848639572",
+      "delta_g": "0.004031776709819309418290293",
+      "ratio": "2.16820811287",
+      "abs_ratio": "2.16820811287",
+      "same_sign": true
+    },
+    {
+      "comparison": "Anchor II vs g_A",
+      "delta_NS": "-0.01773111981412461061354091",
+      "delta_g": "0.004031776709819309418290293",
+      "ratio": "-4.39784271062",
+      "abs_ratio": "4.39784271062",
+      "same_sign": false
+    }
+  ],
+  "verdict": "shared-correction hypothesis FALSIFIED — N_sym (Anchor II, physical) and g_A residuals have opposite signs. Different categorical sources required."
+}
