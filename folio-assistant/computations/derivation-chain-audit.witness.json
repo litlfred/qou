@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T10:53:36.526782+00:00",
-  "commitSha": "3159d6847b84ca8bea02c805d60d160623a9db84",
+  "computedAt": "2026-05-03T10:56:11.897032+00:00",
+  "commitSha": "95a2afabe2585990ece02d6db6c1973277ce17fc",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1646,6 +1646,7 @@
         "pair-factorisation-probe.witness.json",
         "pair-production-nf.witness.json",
         "pair-production.witness.json",
+        "paper-six-term-canonical-t1.witness.json",
         "paper-six-term-isotope-sweep.witness.json",
         "paper-six-term-shadow-price-sweep.witness.json",
         "path-a-extended-light-isotopes.witness.json",
