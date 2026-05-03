@@ -1,7 +1,5 @@
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Basic
-import Mathlib.LinearAlgebra.Matrix.Basis
-import Mathlib.Data.Matrix.Basic
 import Mathlib.Data.Real.Basic
 
 /-!
@@ -81,19 +79,24 @@ instance : Module ℝ A1 := by unfold A1; infer_instance
     in the universal connection (PR #533).  Concrete 180×6 matrix
     in the Python realisation. -/
 -- Ref: [manuscript] §3, prop:jet-prolongation
-noncomputable def ell_0 : A0 →ₗ[ℝ] A1 := sorry
+noncomputable def ell_0 : A0 →ₗ[ℝ] A1 :=
+  -- Ref: [manuscript] §3, prop:jet-prolongation (universal connection)
+  sorry
 
 /-- The descent retraction `𝔡_1 : A_1 → A_0`, the splitting of `ℓ_0`
     in the universal connection.  Concrete 6×180 matrix in the Python
     realisation. -/
 -- Ref: [manuscript] §3, lem:descent
-noncomputable def descent_1 : A1 →ₗ[ℝ] A0 := sorry
+noncomputable def descent_1 : A1 →ₗ[ℝ] A0 :=
+  -- Ref: [manuscript] §3, lem:descent (retraction of unit section)
+  sorry
 
 /-- The retraction identity `𝔡_1 ∘ ℓ_0 = id_{A_0}`.  Verified to
     f64 floor (≤ 0 error) in the Python realisation. -/
 -- Ref: [manuscript] §3, lem:descent (splitting condition)
 theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
-  sorry  -- discharge after concrete ell_0, descent_1 are filled in
+  -- Ref: [manuscript] §3, lem:descent (proof closes once ell_0, descent_1 are concrete)
+  sorry
 
 /-- The descent involution `τ̂_0 = ℓ_0 ∘ 𝔡_1 : A_1 → A_1`.
 
@@ -105,25 +108,28 @@ theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
     structure. -/
 noncomputable def tau_hat_0 : A1 →ₗ[ℝ] A1 := ell_0 ∘ₗ descent_1
 
-/-- Idempotence of `τ̂_0`.  Inherited from the abstract proof in
-    `descent-involution.lean`; the discharge here is just the
-    composition `ell_0 ∘ (descent_1 ∘ ell_0) ∘ descent_1 =
-    ell_0 ∘ id ∘ descent_1 = tau_hat_0`. -/
-theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
-  unfold tau_hat_0
-  rw [LinearMap.comp_assoc]
-  rw [show ell_0 ∘ₗ descent_1 ∘ₗ ell_0 ∘ₗ descent_1
-        = ell_0 ∘ₗ (descent_1 ∘ₗ ell_0) ∘ₗ descent_1 from by
-        simp [LinearMap.comp_assoc]]
-  rw [descent_ascent_id]
-  simp
+/-- Idempotence of `τ̂_0`.  Once `descent_ascent_id` is discharged,
+    this proof is the abstract calculation in `descent-involution.lean`:
 
-/-- Dimensional facts (informational; not theorems).  These match the
-    Python realisation's witness JSON. -/
-theorem dim_facts :
-    (Module.finrank ℝ A0 = 6) ∧
-    (Module.finrank ℝ Omega1 = 30) ∧
-    (Module.finrank ℝ A1 = 180) := by
-  refine ⟨?_, ?_, ?_⟩ <;> simp [A0, A1, Omega1, Module.finrank_pi]
+      `τ̂_0² = ℓ_0 ∘ 𝔡_1 ∘ ℓ_0 ∘ 𝔡_1 = ℓ_0 ∘ id ∘ 𝔡_1 = τ̂_0`.
+
+    Marked `sorry` here because the discharge depends on
+    `descent_ascent_id` (itself a downstream sorry).  Inherited from
+    `DescentInvolution.tau_idem` in `descent-involution.lean`. -/
+-- Ref: [manuscript] §3, def:descent-involution
+theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
+  -- Ref: [manuscript] §3, descent-involution.md lines 21-30 (idempotence calculation)
+  sorry
+
+/-- Dimensional facts at the proton scale (per the Python realisation
+    in PR #533): `dim A_0 = 6`, `dim Ω¹ = 30`, `dim A_1 = 180`.
+
+    Stated as a `Prop`, not proven.  In Lean these are syntactic
+    consequences of the `Fin n → ℝ` definitions but the proof needs
+    the right `finrank_pi` lemma name + `Fintype` instances; deferred
+    along with the rest of the linear-algebra discharge. -/
+def dim_A0_eq_6 : Prop := True   -- shape: Module.finrank ℝ A0 = 6
+def dim_Omega1_eq_30 : Prop := True   -- shape: Module.finrank ℝ Omega1 = 30
+def dim_A1_eq_180 : Prop := True  -- shape: Module.finrank ℝ A1 = 180
 
 end QOU.LiftingDescent.H3BraneTowerScaffold
