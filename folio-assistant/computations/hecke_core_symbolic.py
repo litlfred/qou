@@ -449,10 +449,11 @@ def compute_phi1_full_sym(Z: int, N: int, dps: int = 50) -> mp.mpf:
         # V_e = w_sym q^3 + w_std (z·M00+M10) + w_alt (-q^{-1})^3
         # but we route through _chain_V_full_sym for the std block.
         V_e_sym = _chain_V_full_sym(chain)
-        # Catalan + Borromean scale (numerical at the end)
-        from experimental_constants import M_E_MEV  # type: ignore
-        CATALAN_G = mp.mpf("0.915965594177219015054603514932")
-        alpha = mp.mpf(M_E_MEV) * 8 * CATALAN_G
+        # Catalan + Borromean scale (numerical at the end). Both M_E_MEV
+        # and CATALAN imported from experimental_constants per Gemini review
+        # on PR #515 (centralized-constants rule).
+        from experimental_constants import M_E_MEV, CATALAN  # type: ignore
+        alpha = mp.mpf(M_E_MEV) * 8 * mp.mpf(CATALAN)
         V_num = evalf_at_q0(V_e_sym, dps=dps)
         return alpha * abs(V_num)
 

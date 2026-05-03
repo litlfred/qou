@@ -1,9 +1,9 @@
 {
   "computation": "n-sym-numerical-anchor",
-  "computedAt": "2026-05-02T23:51:44.320997+00:00",
+  "computedAt": "2026-05-03T00:02:16.264185+00:00",
   "description": "Numerical anchor for conj:n-sym-symmetric-channel-normalization. Computes N_sym(q_0) = N_v / ∏_{k=2,3,4} [2k]_q²/[2]_q ≈ 213.11 and tests 25+ q-arithmetic ansatze plus PSLQ. No clean closed form found; candidate (a) Gram determinant naive = [4]_q[6]_q[8]_q evaluated for comparison.",
   "q_0_dps": 200,
-  "q_0": "1.109978595554180516958300188988798676378761384984",
+  "q_0": "1.1099785955541805169583001889887986763787613849839",
   "N_v": "1445519.449145220729668372",
   "prod_factor": "6782.915821733141012608994",
   "N_sym_target": "213.1118072427836670785458",

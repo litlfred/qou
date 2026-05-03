@@ -22,10 +22,18 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 import time
+import sys as _sys
 import mpmath
 mpmath.mp.dps = 200
 
-q = mpmath.mpf('1.10997859555418051695830018898879867637876138498395179841988295164028537619178823641989')
+# Centralized constants (per Gemini review on PR #515).
+_sys.path.insert(0, str(Path(__file__).parent)) if False else None  # path already set below
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).parent))
+from q_parameter import Q_50_DIGIT_STR
+from experimental_constants import M_E_MEV, G_F_MEV
+
+q = mpmath.mpf(Q_50_DIGIT_STR)
 
 
 def q_int(n):
@@ -41,9 +49,9 @@ def q_factorial(n):
     return p
 
 
-# CODATA-derived N_v
-G_F = mpmath.mpf('1.1663788e-11')
-m_e = mpmath.mpf('0.5109989500')
+# CODATA-derived N_v (from centralized experimental_constants)
+G_F = mpmath.mpf(str(G_F_MEV))
+m_e = mpmath.mpf(str(M_E_MEV))
 v_weak = 1 / mpmath.sqrt(mpmath.sqrt(2) * G_F)
 E_cross = (q - 1 / q) / 2
 mu_0 = m_e / (3 * E_cross)

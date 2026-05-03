@@ -141,6 +141,12 @@ LOGFT_BI210_ERR = 0.02
 SEC_PER_YR  = 3.15576e7           # Julian year (365.25 × 86400), exact by convention
 SEC_PER_DAY = 86400.0             # exact
 
+# ── Mathematical constants (exact / high-precision) ─────────────
+
+# Catalan's constant G = sum_{n=0}^∞ (-1)^n / (2n+1)^2 — used in the
+# binding-scale calibration α_bind = m_e · 8·G per prop:binding-scale-catalan.
+CATALAN     = 0.91596559417721901505460351493238411077  # OEIS A006752, ≥30 dp
+
 # ── Error propagation helpers ────────────────────────────────────
 
 def rel_err(val, err):

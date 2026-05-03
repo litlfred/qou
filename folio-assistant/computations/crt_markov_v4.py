@@ -122,13 +122,18 @@ markov_trace_h3a = v3.markov_trace_h3a
 # Sources: PDG 2024 / CODATA 2022.  ²H, ³H, ³He are atomic masses
 # (i.e. include electron rest mass + atomic-electron binding); the
 # distinction is < 1 keV at this precision.
+# Centralized via experimental_constants per Gemini review on PR #515:
+# proton/neutron come from there; the light-nucleus atomic masses are
+# kept here because experimental_constants doesn't yet expose them
+# (TODO: fold these into experimental_constants in a separate PR).
+from experimental_constants import M_P_MEV as _M_P_MEV, M_N_MEV as _M_N_MEV
 _PDG_MASS_MEV: Dict[Tuple[int, int], float] = {
-    (1, 0): 938.272088,    # proton
-    (0, 1): 939.565421,    # neutron
-    (1, 1): 1875.612946,   # ²H deuteron (m_D)
-    (1, 2): 2808.921136,   # ³H tritium nuclear mass
-    (2, 1): 2808.391607,   # ³He
-    (2, 2): 3727.379378,   # ⁴He alpha
+    (1, 0): _M_P_MEV,
+    (0, 1): _M_N_MEV,
+    (1, 1): 1875.612946,   # ²H deuteron (m_D)        — TODO: → experimental_constants
+    (1, 2): 2808.921136,   # ³H tritium nuclear mass  — TODO: → experimental_constants
+    (2, 1): 2808.391607,   # ³He                       — TODO: → experimental_constants
+    (2, 2): 3727.379378,   # ⁴He alpha                 — TODO: → experimental_constants
 }
 
 

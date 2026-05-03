@@ -24,10 +24,15 @@ from pathlib import Path
 
 import mpmath as mp
 from q_parameter import q_at
+# Centralized PDG inputs (Gemini review on PR #515): pull g_A + uncertainty
+# from experimental_constants rather than hardcoding here.
+from experimental_constants import G_A_PDG, G_A_PDG_ERR
 
 DPS = 1000
-PDG_G_A_STR = "1.27510"
-PDG_G_A_ERR = mp.mpf("0.00013")
+# Format with up to 5 decimal places to match the original 5-figure literal,
+# strip trailing zeros to keep the witness JSON readable.
+PDG_G_A_STR = (f"{G_A_PDG:.6f}").rstrip("0").rstrip(".")
+PDG_G_A_ERR = mp.mpf(str(G_A_PDG_ERR))
 
 
 def main() -> None:

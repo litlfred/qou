@@ -42,9 +42,12 @@ def main():
     #   mu_0 = m_e/(3 E_x)             [MeV per Skein unit]
     #   v = 1/(sqrt(2) G_F)^(1/2)       [MeV, weak vev]
     #   N_v = v / (E_x · mu_0)
-    G_F        = mp.mpf("1.1663788e-11")     # MeV^-2, CODATA 2022
-    G_F_err    = mp.mpf("0.0000006e-11")
-    m_e        = mp.mpf("0.51099895000")     # MeV
+    # Centralized CODATA inputs (Gemini review on PR #515): pull from
+    # experimental_constants instead of hardcoding the literals.
+    from experimental_constants import G_F_MEV, G_F_MEV_ERR, M_E_MEV
+    G_F        = mp.mpf(str(G_F_MEV))         # MeV^-2, CODATA 2022
+    G_F_err    = mp.mpf(str(G_F_MEV_ERR))
+    m_e        = mp.mpf(str(M_E_MEV))         # MeV
     E_cross    = (q - 1/q) / 2
     mu_0       = m_e / (3 * E_cross)
     v_weak     = 1 / mp.sqrt(mp.sqrt(2) * G_F)

@@ -34,14 +34,14 @@ mpmath.mp.dps = 50
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0
+from experimental_constants import M_E_MEV, CATALAN
 from hecke_characters import compute_mass_at_level
 import crt_markov_v4 as v4
 
-# Calibration constants (per `prop:three-calibration-discipline`)
-M_E_MEV = 0.51099895069  # CAL-0
 # Catalan binding-scale per prop:binding-scale-catalan; ALPHA in the
-# original hecke_core is m_e * 8 * G where G is Catalan's constant.
-CATALAN = 0.91596559417721901505460351493238411077
+# original hecke_core is m_e · 8·G with G = Catalan's constant.
+# Both M_E_MEV (CAL-0) and CATALAN are imported from experimental_constants
+# per Gemini review on PR #515 (centralized-constants rule).
 ALPHA_BIND = M_E_MEV * 8 * CATALAN  # ≈ 3.7445 MeV per categorical unit
 
 
@@ -72,15 +72,21 @@ def predict(Z: int, N: int) -> dict:
     t0 = time.time()
     try:
         v4_data = v4.total_mass_h3a(Z, N)
-        markov_total_A = float(v4_data.get('markov_total_A', markov_v3))
-        markov_desc = float(v4_data.get('markov_desc', markov_v3))
+        # Per Gemini high-priority review on PR #515: keys returned by
+        # crt_markov_v4.total_mass_h3a are 'tower_total_dimless' and
+        # 'depth0_markov_trace' — NOT 'markov_total_A' / 'markov_desc'.
+        # The earlier wrong keys made both default to markov_v3 → tower
+        # delta was always 0 (silent bug; no MeV correction).
+        markov_total = float(v4_data.get('tower_total_dimless', markov_v3))
+        markov_desc = float(v4_data.get('depth0_markov_trace', markov_v3))
         # Tower DELTA = total - desc (the "missing 99%" claim)
-        tower_delta = markov_total_A - markov_desc
+        tower_delta = markov_total - markov_desc
         # Apply same binding-scale calibration to the tower delta:
         v4_correction_MeV = ALPHA_BIND * tower_delta
     except Exception as e:
         v4_data = {'error': str(e)}
-        markov_total_A = markov_v3
+        markov_total = markov_v3
+        markov_desc = markov_v3
         tower_delta = 0.0
         v4_correction_MeV = 0.0
     elapsed_v4 = time.time() - t0
@@ -92,7 +98,7 @@ def predict(Z: int, N: int) -> dict:
         'M_v3_MeV': float(M_v3),
         'markov_v3': markov_v3,
         'binding_v3_dimless': binding_v3,
-        'markov_v4_total': markov_total_A,
+        'markov_v4_total': markov_total,
         'tower_delta_dimless': tower_delta,
         'v4_correction_MeV': v4_correction_MeV,
         'M_v4_MeV': M_v4,
