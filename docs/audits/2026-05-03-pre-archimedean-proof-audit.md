@@ -679,8 +679,9 @@ throughout the formula and the level table (now
 defining $\|x\|_F^2 := \langle x, x\rangle_F$ and noting that
 $q \mapsto q_0 \in \mathbb{R}$ is post-$\tau$.
 
-**F4 (documented; not auto-fixed). Bridge `.lean` stub imports do
-not resolve.**
+**F4 (resolved 2026-05-03 follow-up). Bridge `.lean` stub imports do
+not resolve — fixed by promoting `Kashaev`, `PhiQPiece`, `PhiQJSJ` into
+the formal Lake package.**
 [`phi-q-tower-jsj-bridge.lean`](../../content/quantum-observable-universe/braids-and-knots/phi-q-tower-jsj-bridge.lean)
 opens with
 
@@ -713,8 +714,41 @@ narrative over-promises.  Two clean resolutions:
    Lean once the supporting modules are in the formal chain".
 
 Resolution (2) is the documentation-only path; (1) is the formal
-fix.  Decision left for follow-up — the wall is unaffected either
-way.
+fix.
+
+**Follow-up commit (this commit) implements resolution (1):**
+
+- Created [`lean/QOU/PhiQPiece.lean`](../../content/quantum-observable-universe/lean/QOU/PhiQPiece.lean)
+  with the `Braid` and `SubLink` types and the `subLink` constructor,
+  matching the co-located stub.
+- Created [`lean/QOU/Kashaev.lean`](../../content/quantum-observable-universe/lean/QOU/Kashaev.lean)
+  with `class VolumeConjecture (q : ℝ)`, `noncomputable def pieceVolume`,
+  and `theorem pieceVolume_nonneg`, importing `QOU.PhiQPiece`.
+- Created [`lean/QOU/PhiQJSJ.lean`](../../content/quantum-observable-universe/lean/QOU/PhiQJSJ.lean)
+  with `noncomputable def rho`, `class TowerSummandRealization`,
+  `class PerPieceBridge`, and the master `theorem bridge` (no `sorry`,
+  conditional on the two typeclasses).
+- Registered all three in
+  [`lean/QOU.lean`](../../content/quantum-observable-universe/lean/QOU.lean)
+  so they participate in `lake build`.
+- Updated the bridge `.md` "Conditional Lean theorem" section: the
+  Lean code snippet now matches the formal-chain signature
+  (`bridge : … := inst.bridge_per_piece β S`, no `sorry`), and the
+  paragraph explicitly states that the supporting modules also live
+  in the formal chain.
+
+The co-located documentation stubs at
+`braids-and-knots/{phi-q-piece,kashaev-volume-conjecture,phi-q-tower-jsj-bridge}.lean`
+remain in place as siblings of their `.md` blocks, mirroring the
+formal-chain content; they are not compiled by `lake build` and are
+documentation-tier per `QOU.GroundRingAnnotations`.
+
+**Additionally** (per the same follow-up): F3 was extended to
+`phi-q-tower-jsj-bridge.md` — the ambiguous `\lvert V_S \rvert`
+notation in the conjecture statement, the "Why this matters"
+section, the "Required ingredients" list, and the motivic
+dictionary all now use `\|V_S\|_F` consistently with the
+algebraic-stratification block.
 
 ### Positive findings
 
