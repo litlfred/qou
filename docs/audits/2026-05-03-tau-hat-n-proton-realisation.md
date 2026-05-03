@@ -134,18 +134,18 @@ realisation is new infrastructure.
 
 ## Plan (executed)
 
-1. **Step 1**: stub witness committed (commit `ab48bf3c2`). ✓
+1. **Step 1**: stub witness committed (commit `ab48bf3c2`).
 2. **Step 2**: built H_3(q_0) regular representation via Coxeter-reduced
-   words and the Hecke + braid relations. ✓
+   words and the Hecke + braid relations.
 3. **Step 3**: built m: A_0 ⊗ A_0 → A_0 as a 6 × 36 matrix; ker computed
-   via mpmath Gaussian elimination (RREF). ✓
-4. **Step 4**: Ω^1 basis (30-dim) confirmed. ✓
+   via mpmath Gaussian elimination (RREF).
+4. **Step 4**: Ω^1 basis (30-dim) confirmed.
 5. **Step 5**: ℓ_0 := a ↦ a ⊗ d(σ_1); r_1 := a ⊗ ω ↦ φ_0(ω) · a where
    φ_0 ∈ (Ω^1)^* is dual to d(σ_1) normalised by ⟨φ_0, d(σ_1)⟩ = 1.
-   Splitting condition R_1 L_0 = I_6 verified to 0 error. ✓
+   Splitting condition R_1 L_0 = I_6 verified to 0 error.
 6. **Step 6**: τ̂_0(φ) = P φ P with P := L_0 R_1 (180×180 rank-6).
-   P^2 − P = 0; idempotence on End(A_1) verified on samples. ✓
-7. **Step 7**: dim(descended) = 36, dim(transient) = 32 364 reported. ✓
+   P^2 − P = 0; idempotence on End(A_1) verified on samples.
+7. **Step 7**: dim(descended) = 36, dim(transient) = 32 364 reported.
 
 ## Implementation note — H_3 reduction algorithm
 
