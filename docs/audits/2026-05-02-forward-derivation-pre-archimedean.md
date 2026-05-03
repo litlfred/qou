@@ -775,3 +775,61 @@ derived" and (backward) "where every numerical input enters". The
 three sector audits (mass / β-decay / binding) are produced as
 separate parallel reports and will be cross-linked here when they
 land.
+
+---
+
+## §F. 2026-05-03 audit refresh
+
+The pre-Archimedean proof + Lean audit
+[`2026-05-03-pre-archimedean-proof-audit.md`](2026-05-03-pre-archimedean-proof-audit.md)
+re-audits Steps 0–19 cluster-by-cluster against this forward
+derivation, fixes the Lean-encoding gaps it finds, and promotes
+the cluster modules into the formal Lake package.  The aggregate
+result is a substantial reduction in residual gaps:
+
+### Updated GAP scoreboard
+
+| Gap | 2026-05-02 status | 2026-05-03 status (post-audit) | Mechanism |
+|-----|-------------------|--------------------------------|-----------|
+| §1 wall breaches (17 Lean files) | n/a (introduced by this audit) | **0** (16 fixed; 1 reclassified as Archimedean-by-design) | §1 |
+| **6a** — motivic conjecture | 🟡 | 🟡 (formal-chain conditional class ready; instance still open math) | §8 |
+| **8** — Φq–JSJ bridge | 🟡 | 🟢 algebraic-stratification side / 🟡 bridge by design (formal Lean, no `sorry`) | §7 + F4 follow-up |
+| **13a** — GS-residue opaques (six declarations) | 🟡 | **🟢 0 opaques remain in cluster's `prop:` blocks**; conjectural inputs concentrated in named class fields | §9 |
+| **14a** — uniform Δ_max bound | 🟡 | **🟢-rank1** (formally closed via `OperatorNormBound.toJetTowerUniformDeltaMax`) / 🟡-multi-rank (residual conjecture) | §10 |
+| **17a** — pentagon UV verification | 🟡 | 🟢 structurally addressed (formal-chain `pentagon_uv_commutation` theorem) | §11 |
+| **17b** — descent sharpness on pairs | 🟡 | 🟡 residual; depth-2 cap witnessed by the absence of triple-form theorem | §11 |
+| **18a** — `conj:mass-endomorphism` closed form | 🟡 | 🟡 (closed-form open math; class-axiomatised `vol_eq` field, `fullMass_eq_volume` no-`sorry`) | §12 |
+
+### Cluster-by-cluster audit links
+
+| Cluster | Audit § | Files moved/created in formal chain (`lean/QOU/`) |
+|---------|---------|---------------------------------------------------|
+| §1 — wall breaches | [§1](2026-05-03-pre-archimedean-proof-audit.md#§1-—-lean-wall-breaches) | (Pre/Arch namespace splits across 16 stub files) |
+| §7 — bridge sharpening | [§7](2026-05-03-pre-archimedean-proof-audit.md#§7-—-sharp-bridge-audit-2026-05-03-follow-up) | `BraidKnot/PhiQTowerAlgebraicStratification.lean` (upgraded from `: True := trivial`) |
+| §8 — motivic descent layer | [§8](2026-05-03-pre-archimedean-proof-audit.md#§8-—-sharp-step-6-audit-motivic-descent-layer) | `AlgebraicSubstrate/MotivicSubstrate.lean`, `LiftingDescent/MotivicGaloisCharacter.lean`, `LiftingDescent/MotivicPerpetualObstruction.lean` |
+| §9 — GS-residue cluster | [§9](2026-05-03-pre-archimedean-proof-audit.md#§9-—-sharp-step-13-audit-gs-residue--spectral-sequence-cluster) | `BraidKnot/{ConfinementLevel,GBSpectralSequence,GBResidueSpectralSum,GradedTraceResidueSplit,ResidueAtRoot}.lean`; upgraded `GradedMarkovTraceFromGSFiltration.lean` |
+| §10 — DB filtration | [§10](2026-05-03-pre-archimedean-proof-audit.md#§10-—-sharp-step-14-audit-db-filtration--δ_max-cluster) | `MassEndomorphism/DeltaMaxUniformBound.lean`, `LiftingDescent/DirectLimitAlgebra.lean`, `BraidKnot/JetTowerUniformDeltaMax.lean` |
+| §11 — pentagon UV / Markov-pair | [§11](2026-05-03-pre-archimedean-proof-audit.md#§11-—-sharp-step-17-audit-pentagon-uv--markov-pair-cluster) | `Hecke/MarkovTraceProduct.lean`, `Hecke/MarkovPairZ2.lean` |
+| §12 — mass endomorphism conjecture | [§12](2026-05-03-pre-archimedean-proof-audit.md#§12-—-sharp-step-18-audit-mass-endomorphism-cluster) | `MassEndomorphism/MassEndomorphismConjecture.lean` |
+| §13 — cosimplicial gluing | [§13](2026-05-03-pre-archimedean-proof-audit.md#§13-—-sharp-step-7-audit-cosimplicial-gluing-cluster) | `LiftingDescent/CosimplicialCrossedGroupoid.lean`, `Torsion/DescentCondition.lean`, `Torsion/GlobalGluing.lean` |
+
+### Headline change
+
+Of the **6 named gaps** in §C (6a, 13a, 14a, 17a/b, 18a), three
+are now reduced to **mathematical-instance** problems whose Lean
+infrastructure is in place (6a, 14a-multi-rank, 18a), three are
+**structurally addressed** in the formal chain (13a, 14a-rank1,
+17a), and one is **residual** without load-bearing impact (17b).
+The `noncomputable opaque` count in pre-Arch cluster `prop:` blocks
+is **0** after the audit (down from 6).  `bun run validate
+quantum-observable-universe` passes on the audit branch.
+
+The mathematical content of each remaining 🟡 gap is unchanged —
+these are honest open problems about the QOU substrate, the multi-
+rank SDP, the closed-form mass-endomorphism, etc.  The audit's
+contribution is **cleanly separating the conjectural inputs from
+the conditional theorems**: each open conjecture is now an
+explicit class field, each downstream theorem is conditional on
+the right typeclass instance, and any concrete instance proof
+will discharge every downstream consequence automatically via
+typeclass resolution.

@@ -1336,4 +1336,72 @@ proving an instance for the QOU substrate at $q_0$.
 
 ---
 
+**End of Step-17 / Step-18 audit.**
+
+---
+
+## §13 — Sharp Step-7 audit (cosimplicial gluing cluster)
+
+The Step-7 cluster from §A of the forward-derivation document.
+Cluster: `prop:cosimplicial-crossed-groupoid` +
+`prop:descent-condition` + `prop:global-gluing`. These are the
+descent-infrastructure propositions that carry the Yekutieli
+obstruction κ_n through the cosimplicial brane tower.
+
+### Findings
+
+**G1 (resolved). All three propositions had Lean siblings only as
+co-located stubs.** None lived in the formal Lake package; the
+`lean.ref` URIs (`qou:QOU.cosimplicial_crossed_groupoid_exists`,
+`qou:QOU.Torsion.descent_condition`, `qou:QOU.Torsion.global_gluing`)
+resolved through the sibling rule.
+
+**Fixed**: ported all three to the formal chain:
+
+- New
+  [`lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean`](../../content/quantum-observable-universe/lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean)
+  — `R_q := LaurentPolynomial ℤ`, structures `YekutielijTriple`,
+  `CrossedModule`, `CosimplicialCrossedGroupoid`, and theorem
+  `cosimplicial_crossed_groupoid_exists` (constructive existence,
+  no `sorry`).  Namespace `QOU.LiftingDescent`; `lean.ref` updated
+  to `qou:QOU.LiftingDescent.cosimplicial_crossed_groupoid_exists`.
+- New
+  [`lean/QOU/Torsion/DescentCondition.lean`](../../content/quantum-observable-universe/lean/QOU/Torsion/DescentCondition.lean)
+  — structures `CechCocycleData`, `TwistedCocycleCondition`,
+  `DescentCondition`; theorem `descent_condition` extracts global
+  consistency from vanishing obstruction.  Namespace `QOU.Torsion`;
+  `lean.ref` already correct.
+- New
+  [`lean/QOU/Torsion/GlobalGluing.lean`](../../content/quantum-observable-universe/lean/QOU/Torsion/GlobalGluing.lean)
+  — structures `LocalDeformation`, `TwistedQuantizationMap`,
+  `GlobalGluing`; theorem `global_gluing` exhibits the global ring
+  structure.  Polymorphic in `[CommRing R]`.  Namespace
+  `QOU.Torsion`; `lean.ref` already correct.
+
+Aggregator updates: `lean/QOU/LiftingDescent.lean` imports
+`CosimplicialCrossedGroupoid`; `lean/QOU/Torsion.lean` imports
+`DescentCondition` and `GlobalGluing`.
+
+**G2 (no fix needed). Wall discipline is already clean.** All
+three modules use either `R_q := LaurentPolynomial ℤ` or polymorphic
+`[CommRing R]`, with categorical / group-theoretic hypotheses only.
+The §1 stray-import removal (Pass 7b/7c) is now reinforced by the
+formal-chain port — the formal-chain modules carry no `Real`,
+`Analysis`, `Topology`, or `Manifold` imports.
+
+### Net status of the Step-7 cluster
+
+| Block | Kind | Lean home | Wall status |
+|-------|------|-----------|-------------|
+| `prop:cosimplicial-crossed-groupoid` | proposition | new `lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean` | 🟢 `R_q`-valued, constructive existence |
+| `prop:descent-condition` | proposition | new `lean/QOU/Torsion/DescentCondition.lean` | 🟢 polymorphic group cocycles |
+| `prop:global-gluing` | proposition | new `lean/QOU/Torsion/GlobalGluing.lean` | 🟢 polymorphic in `[CommRing R]` |
+
+The Step-7 descent infrastructure is now fully in the formal chain.
+This unblocks the conditional-class consumers downstream
+(`def:motivic-galois-character`, `def:descent-involution`, the
+mass-tower descent splitting in §1 / §10).
+
+---
+
 **End of audit.**

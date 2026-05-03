@@ -9,5 +9,7 @@ import QOU.Torsion.MassIdentity
 import QOU.Torsion.YekutielijTriple  -- AUDIT: typo variant; YekutieliTriple.lean is the canonical spelling
 import QOU.Torsion.YekutieliTriple
 import QOU.Torsion.Descent
+import QOU.Torsion.DescentCondition
+import QOU.Torsion.GlobalGluing
 import QOU.Torsion.TopologicalMass
 import QOU.Torsion.MassGap
