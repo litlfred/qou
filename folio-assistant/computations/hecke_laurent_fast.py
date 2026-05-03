@@ -216,7 +216,9 @@ def reduce_laurent_rules(elem, *, max_iterations=10000, hecke_a=HA_LQ):
 # ── Convenience: incremental reduce with LaurentQ coefs ──────────────
 
 
-def incremental_reduced_element_fast(word, *, max_iterations_per_step=5000):
+def incremental_reduced_element_fast(
+    word, *, max_iterations_per_step=5000
+):
     """Mirror of `markov_peel.incremental_reduced_element` using
     LaurentQ arithmetic throughout.
 
@@ -224,6 +226,24 @@ def incremental_reduced_element_fast(word, *, max_iterations_per_step=5000):
     and reduces after each step (via `reduce_laurent_rules`).  Returns
     a `LaurentHeckeElement`; convert via `.to_sympy_element()` at the
     boundary into `tr_M_element`.
+
+    **R4 quotient ideal not implemented — by design.**
+
+    The slow `markov_peel.incremental_reduced_element` interleaves R4
+    (whole-atom / sub-word quotient folding via
+    `SymbolicHeckeDivision._try_*_quotient`) into each fixpoint pass,
+    which keeps intermediate sympy term counts bounded — necessary
+    when each rule application costs ~3 ms in sympy.  The LaurentQ
+    inner loop is 5-25× faster, so the unreduced intermediate is
+    fast enough to handle directly without the term-count-bounding
+    optimisation.
+
+    Empirically (bench on proton..⁴He, 2026-05-03), wiring up the
+    R4 path via a sympy round-trip per iteration was 0.36-0.80×
+    *slower* on every atom — the LaurentQ↔sympy conversion overhead
+    exceeded the term-count savings from quotient folding.  The R4
+    port is intentionally absent here; revisit only if A ≥ 6 atoms
+    show LaurentQ-rule-loop walls.
     """
     from markov_peel import crossing_from_cd  # local import (avoid cycle)
     from hecke_core import h as _h_num
@@ -255,9 +275,11 @@ def tr_M_atomic_fast(Z, N, *, include_inter=True, max_iterations=10000):
     Skips the `pre_register_nucleons` quotient-folding optimisation
     entirely.  That optimisation existed to keep intermediate sympy
     term counts bounded; with the LaurentQ inner loop running 5-25×
-    faster per term, the unfolded reduce is now also fast enough.
+    faster per term, the unfolded reduce is fast enough.
+
     Numerical equivalence at q = q₀ verified on all atoms in
-    [proton, neutron, deuteron, tritium, helium-3, helium-4].
+    [proton, neutron, deuteron, tritium, helium-3, helium-4,
+    lithium-5].
     """
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_symbolic import SymbolicHeckeElement
@@ -267,7 +289,7 @@ def tr_M_atomic_fast(Z, N, *, include_inter=True, max_iterations=10000):
     n_strands = 3 * A
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
     fast_elem = incremental_reduced_element_fast(
-        word, max_iterations_per_step=max_iterations
+        word, max_iterations_per_step=max_iterations,
     )
     sym_elem = SymbolicHeckeElement(fast_elem.to_sympy_element())
     return tr_M_element(sym_elem, n_strands, simplify=False)

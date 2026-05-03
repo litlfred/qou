@@ -96,6 +96,8 @@ ATOMS_DEFAULT = [
     ("tritium",  1, 2),
     ("helium-3", 2, 1),
     ("helium-4", 2, 2),
+    ("lithium-5", 3, 2),
+    ("lithium-6", 3, 3),
 ]
 
 
