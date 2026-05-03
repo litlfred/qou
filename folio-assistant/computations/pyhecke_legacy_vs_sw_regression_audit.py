@@ -75,18 +75,26 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "../../tools/pyhecke/python"))
-import pyhecke
+import pyhecke  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0
+from q_parameter import Q as Q0  # noqa: E402
+
+# ── Module-level constants ──────────────────────────────────────────
+PRECISION = 20  # mpmath dps for both legacy and SW path comparisons
+TIMEOUT_HINT_SEC = 60  # informational only — actual run-time guarded externally
 
 
-def trace_with_timeout(Z, N, *, legacy_h3, timeout_sec=60):
-    """Best-effort timed trace.  Returns (tr_M_or_None, walltime, err_or_None)."""
+def timed_trace(Z, N, *, legacy_h3, precision=PRECISION):
+    """Run a single Markov-trace evaluation; return (tr_M_or_None, walltime, err_or_None).
+
+    Note: actual hard timeout is enforced by the caller / shell wrapper —
+    pyhecke calls do not honor a Python-level timeout.
+    """
     t0 = time.time()
     try:
         tr = pyhecke.trace.markov_trace_symbolic_eval(
-            Z, N, True, 1, 1, 1, float(Q0), precision=20, legacy_h3=legacy_h3,
+            Z, N, True, 1, 1, 1, float(Q0), precision=precision, legacy_h3=legacy_h3,
         )
         return float(tr), time.time() - t0, None
     except Exception as exc:
@@ -111,7 +119,7 @@ def main() -> int:
         n = 3 * A
         for legacy in (True, False):
             path = "legacy" if legacy else "SW(H_3A)"
-            tr, dt, err = trace_with_timeout(Z, N, legacy_h3=legacy, timeout_sec=60)
+            tr, dt, err = timed_trace(Z, N, legacy_h3=legacy)
             if err:
                 print(f"  {label:<6} {A:>3} {n:>3}  {path:<10}  ERROR  {err[:30]}  {dt:>6.1f}")
                 rows.append({
@@ -140,7 +148,11 @@ def main() -> int:
         by_atom.setdefault(r["atom"], {})[r["path"]] = r
     for atom, paths in by_atom.items():
         if "legacy" in paths and "SW(H_3A)" in paths:
-            ratio = paths["legacy"]["abs_tr_M"] / paths["SW(H_3A)"]["abs_tr_M"]
+            sw_abs = paths["SW(H_3A)"]["abs_tr_M"]
+            if sw_abs == 0:
+                print(f"    {atom:<5}  SW trace is zero — ratio undefined")
+                continue
+            ratio = paths["legacy"]["abs_tr_M"] / sw_abs
             print(f"    {atom:<5}  legacy / SW = {ratio:>14.4e}  "
                   f"(orders: {math.log10(ratio):>+6.2f})")
     if "T" in by_atom and "3He" in by_atom:
@@ -148,10 +160,14 @@ def main() -> int:
             if path in by_atom["T"] and path in by_atom["3He"]:
                 tT = by_atom["T"][path]["abs_tr_M"]
                 t3 = by_atom["3He"][path]["abs_tr_M"]
+                if tT == 0:
+                    print(f"    Isospin on {path:<10}: |tr_T|=0 — ratio undefined")
+                    continue
+                ratio_t3_tT = t3 / tT
                 print(f"    Isospin (T = ³He?) on {path:<10}: "
                       f"|tr_T|={tT:.4e}  |tr_3He|={t3:.4e}  "
-                      f"ratio={t3/tT:.6f}  "
-                      f"({'EQUAL' if abs(t3/tT - 1) < 1e-3 else 'DIFFERENT'})")
+                      f"ratio={ratio_t3_tT:.6f}  "
+                      f"({'EQUAL' if abs(ratio_t3_tT - 1) < 1e-3 else 'DIFFERENT'})")
 
     witness = {
         "computation": "pyhecke-legacy-vs-sw-regression-audit",
