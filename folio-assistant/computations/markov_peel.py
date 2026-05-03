@@ -40,7 +40,6 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Tuple, List
 
 import sympy as sp
 
@@ -52,7 +51,6 @@ from hecke_symbolic import (  # noqa: E402
     SymbolicHeckeDivision,
     HA,           # h = q − q⁻¹
     q as q_sym,   # the symbolic substrate parameter
-    z_markov,
 )
 from markov_trace_canonical import tr_M_element  # noqa: E402
 

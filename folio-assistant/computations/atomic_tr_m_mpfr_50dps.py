@@ -156,7 +156,7 @@ def main(also_symbolic: bool = False) -> int:
             free = list(tr_peel_sym.free_symbols) if hasattr(
                 tr_peel_sym, "free_symbols") else [q_peel_sym]
             tr_peel_at_q0 = sp.N(
-                sp.sympify(tr_peel_sym).subs(
+                tr_peel_sym.subs(
                     {s: q60 for s in free} if free else
                     {q_peel_sym: q60}),
                 50)

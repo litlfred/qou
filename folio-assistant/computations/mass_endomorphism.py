@@ -228,9 +228,9 @@ def tr_M_atomic_at_q0(Z: int, N: int) -> float:
     sym = tr_M_atomic(Z, N)
     # `subs(...).evalf(30)` evaluates symbolically at 30-digit precision
     # before truncating to IEEE double — sufficient for all downstream
-    # mass computations.
-    import sympy as sp
-    return float(sp.sympify(sym).subs(q_sym, q0).evalf(30))
+    # mass computations.  `tr_M_atomic` always returns a sympy expression,
+    # so no `sp.sympify` shim is needed.
+    return float(sym.subs(q_sym, q0).evalf(30))
 
 
 if __name__ == "__main__":
