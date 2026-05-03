@@ -1,6 +1,21 @@
 #!/usr/bin/env python3
 """crt_markov_v4 — full Φ_q tower at H_{3A} (closes audit §3·A).
 
+NOTE on faster Markov-trace path (PR #516, available on main):
+  `markov_peel.tr_M_atomic(Z, N)` provides an O(braid-length) recursive
+  ascent that bypasses the Hoefsmit per-Wedderburn-block sum. It returns
+  the SAME Markov trace as `compute_mass_at_level`, just by the
+  Markov-axiom recursion `tr_M^{(n)}(x · σ_{n−1}) = z · tr_M^{(n−1)}(x)`
+  rather than `Σ_λ y_λ · χ_λ(β)`. v4 can be retrofitted to use
+  markov_peel for the depth-0 baseline (descended Markov trace);
+  the depth-1 and depth-2 tower terms still require the per-partition
+  Hoefsmit sum since they're not bare Markov traces.
+
+  Refactor scope: v4 → markov_peel for depth-0 only. Deferred to a
+  separate PR; current v4 stays on `compute_mass_at_level` for
+  consistency with the v3 baseline.
+
+
 Audit §3·A from `docs/audits/2026-05-01-math-framework-deep-audit.md`
 flagged the single largest compute gap in the multichannel Markov-trace
 pipeline:
