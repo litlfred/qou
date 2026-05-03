@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T09:26:02.896496+00:00",
-  "commitSha": "6d909167e1d6e1a49af4213c59430d82729050c8",
+  "computedAt": "2026-05-03T09:32:49.142982+00:00",
+  "commitSha": "f3c477a74ce57ef4acbed63fcc8e016625ab1f2f",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1692,6 +1692,7 @@
         "ribbon-content-average.witness.json",
         "rosso-jones-qvalues.witness.json",
         "round6-tau-M-canonical.witness.json",
+        "rust-canonical-bridge-analysis.witness.json",
         "sage-cgeom.witness.json",
         "schur-weyl-mn.witness.json",
         "schur-weyl-uq-sl2.witness.json",
