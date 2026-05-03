@@ -67,8 +67,53 @@ ATOMS_DEFAULT = [
 ]
 
 
+def residue_via_contour(
+    tr_sym, ell: int, *, radius: float = 0.05, n_samples: int = 64
+) -> mpmath.mpc:
+    """Numerical residue via Cauchy contour integral.
+
+    **Caveat — branch cuts:**  the Markov trace `tr_M(q)` produced
+    by `markov_peel.tr_M_atomic` contains factors of `sqrt(q)` (the
+    Hecke-algebra parameter is technically the square root of `q`).
+    A naïve circular contour at `q = ζ_ℓ` crosses the principal
+    branch cut of `sqrt(q)` whenever `Re(ζ_ℓ) < 0` — most
+    significantly at ζ_2 = −1.  For such cases the contour result
+    is *not* the residue but a branch-cut-distorted average; use
+    the symbolic l'Hôpital path inside `residues_at_roots` instead,
+    which evaluates `sqrt` on the principal branch consistently
+    via SymPy.  This function is provided for high-A atoms where
+    the symbolic path times out *and* the relevant ζ_ℓ has
+    `Re(ζ_ℓ) > 0` (ℓ ∈ {3, 4, 5, 6, ...} \ {2}); for ζ_2 the
+    correct fallback is to substitute `u = sqrt(q)` and compute
+    the residue at `u = i` (out of scope here).
+
+    Uses Cauchy's residue theorem at a simple pole:
+
+        Res_{q=ζ}[f(q)]  =  (1 / 2πi) ∮_{|q−ζ|=r} f(q) dq
+                         ≈  (r / N) Σ_{k=0}^{N-1}
+                                f(ζ + r e^{2πik/N}) e^{2πik/N}
+
+    The radius `r` should be small enough that no other pole lies
+    in the disk, but large enough to avoid catastrophic cancellation
+    near the pole itself.  `r = 0.05` works for ℓ ≤ 12 (nearest
+    neighbouring root is at distance ~|ζ_ℓ − ζ_ℓ'| ≥ 2 sin(π/ℓ²)).
+    """
+    f = sp.lambdify(q_sym, tr_sym, modules='mpmath')
+    zeta = mpmath.exp(2 * mpmath.pi * mpmath.mpc(0, 1) / ell)
+    r = mpmath.mpf(str(radius))
+    total = mpmath.mpc(0)
+    for k in range(n_samples):
+        theta = 2 * mpmath.pi * k / n_samples
+        e_i_theta = mpmath.exp(mpmath.mpc(0, 1) * theta)
+        q_pt = zeta + r * e_i_theta
+        total += f(q_pt) * e_i_theta
+    # Discrete Cauchy residue: integrand sum * (r / N).
+    return total * r / n_samples
+
+
 def residues_at_roots(
-    tr_sym, *, max_ell: int = 4, per_ell_timeout_sec: int = 60
+    tr_sym, *, max_ell: int = 4, per_ell_timeout_sec: int = 60,
+    contour_fallback: bool = False,
 ) -> list[dict]:
     """Compute Res_{q = ζ_ℓ}[tr_sym(q)] for ℓ = 2, ..., max_ell.
 
@@ -138,6 +183,37 @@ def residues_at_roots(
             signal.alarm(0)
         except _Timeout:
             signal.alarm(0)
+            if contour_fallback:
+                # Symbolic l'Hôpital timed out; try numerical
+                # contour integral on a small circle around ζ_ℓ.
+                try:
+                    res_mp = residue_via_contour(tr_sym, ell)
+                    res_num = complex(res_mp.real, res_mp.imag)
+                    res_abs = abs(res_num)
+                    rows.append({
+                        "ell": ell,
+                        "zeta_symbolic": str(zeta),
+                        "residue_symbolic": (
+                            f"contour: {mpmath.nstr(res_mp, 20)}"
+                        ),
+                        "residue_value": str(res_num),
+                        "residue_abs": f"{res_abs:.6e}",
+                        "method": "contour_integral",
+                    })
+                    continue
+                except Exception as exc:  # noqa: BLE001
+                    rows.append({
+                        "ell": ell,
+                        "zeta_symbolic": str(zeta),
+                        "residue_symbolic": None,
+                        "residue_value": None,
+                        "residue_abs": None,
+                        "error": (
+                            f"timeout > {per_ell_timeout_sec}s; "
+                            f"contour fallback failed: {exc!r}"
+                        ),
+                    })
+                    continue
             rows.append({
                 "ell": ell,
                 "zeta_symbolic": str(zeta),

@@ -100,54 +100,73 @@ structure MarkovTraceH3 (R : Type*) [CommRing R] where
     All Python production witnesses cross-check this formula at
     `q = q₀` to ≤ 4·10⁻¹⁶ vs the Hoefsmit + Wenzl bridge.
 
-    Note: `z` is treated as an external scalar in `R`; the typical
-    instantiation has `R = R_q[z, z⁻¹] / (z⁻¹ − q^{1/2} − q^{-1/2})`
-    or a numerical evaluation at q = q₀. -/
+    The signature takes an explicit ring hom `φ : R_q →+* R`
+    (the "lift" of the algebra coefficients into the trace ring)
+    so the canonical instance with `R = R_q` and `φ = RingHom.id`
+    drops out trivially, while the symbolic instance with
+    `R = R_q[z, z⁻¹] / (z⁻¹ − q^{1/2} − q^{-1/2})` is also
+    expressible via the inclusion hom. -/
 noncomputable def trH3
-    {R : Type*} [CommRing R] [Module R (HeckeNF)]
-    (z h : R) (a : HeckeNF) : R :=
-  -- Note: lifting `R_q`-valued coefficients `a i` into `R` requires
-  -- a chosen embedding `R_q → R`.  In the canonical instance this
-  -- is an algebra map; here we leave the lift abstract via the
-  -- caller-supplied `Module R HeckeNF` instance.
-  sorry
+    {R : Type*} [CommRing R]
+    (φ : R_q →+* R) (z h : R) (a : HeckeNF) : R :=
+  φ (a 0)
+  + φ (a 1) * z
+  + φ (a 2) * z
+  + φ (a 3) * z^2
+  + φ (a 4) * z^2
+  + φ (a 5) * (h * z^2 + z)
 
 /-- Reference: tr_M(γ) = 1.  Direct from the (M3) unit axiom. -/
 theorem trH3_unit
-    {R : Type*} [CommRing R] [Module R HeckeNF]
-    (z h : R) :
-    trH3 z h (fun i => if i = 0 then (1 : R_q) else 0) = 1 := by
+    {R : Type*} [CommRing R]
+    (φ : R_q →+* R) (z h : R) :
+    trH3 φ z h (fun i => if i = 0 then (1 : R_q) else 0) = 1 := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [manuscript] markov-axiom-recursive-ascent (QOU narrative)
-  sorry
+  simp [trH3]
 
 /-- Reference: tr_M(σ_0) = z.  Single Markov peel from the unit. -/
 theorem trH3_sigma0
-    {R : Type*} [CommRing R] [Module R HeckeNF]
-    (z h : R) :
-    trH3 z h (fun i => if i = 1 then (1 : R_q) else 0) = z := by
+    {R : Type*} [CommRing R]
+    (φ : R_q →+* R) (z h : R) :
+    trH3 φ z h (fun i => if i = 1 then (1 : R_q) else 0) = z := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+  simp [trH3]
 
 /-- Reference: tr_M(σ_0 σ_1) = z².  Two consecutive Markov peels.
     This is the H₃ instance of `prop:markov-pair-z2` from the
     abstract typeclass; see `MarkovPeel.markov_pair_z2`. -/
 theorem trH3_L_plus
-    {R : Type*} [CommRing R] [Module R HeckeNF]
-    (z h : R) :
-    trH3 z h (fun i => if i = 3 then (1 : R_q) else 0) = z * z := by
+    {R : Type*} [CommRing R]
+    (φ : R_q →+* R) (z h : R) :
+    trH3 φ z h (fun i => if i = 3 then (1 : R_q) else 0) = z * z := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Ref: [manuscript] prop:markov-pair-z2 (QOU narrative)
-  sorry
+  simp [trH3, sq]
 
 /-- Reference: tr_M(σ_0 σ_1 σ_0) = h·z² + z.  Hecke quadratic +
     Markov peel; the only basis element whose trace involves the
     Hecke parameter `h`. -/
 theorem trH3_e_minus
-    {R : Type*} [CommRing R] [Module R HeckeNF]
-    (z h : R) :
-    trH3 z h (fun i => if i = 5 then (1 : R_q) else 0) = h * z * z + z := by
+    {R : Type*} [CommRing R]
+    (φ : R_q →+* R) (z h : R) :
+    trH3 φ z h (fun i => if i = 5 then (1 : R_q) else 0)
+      = h * z * z + z := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+  simp [trH3, sq]
+  ring
+
+/-- Canonical instance: take `R = R_q` and embed via `RingHom.id`.
+    Provides the full `MarkovTraceH3` record on the H₃ NF basis,
+    parameterised by a chosen `z` and `h = q − q⁻¹` in `R_q`.
+
+    The `tr` field is `trH3` applied with the identity ring hom;
+    no proofs are bundled into the structure (the four reference
+    identities above suffice for the basis evaluations).  See
+    `markov-peel-atomic-tr-m.witness.json` for cross-checks. -/
+noncomputable def canonicalMarkovTraceH3 (z h : R_q) : MarkovTraceH3 R_q where
+  z := z
+  h := h
+  tr := trH3 (RingHom.id R_q) z h
 
 end QOU.Interactions
