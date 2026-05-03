@@ -116,18 +116,77 @@ Counting averaged crossings:
 Total averaged crossings: 2A + 1 ⇒ D(u) carries the prefactor
 **2<sup>2A + 1</sup>**.  ∎
 
+### `u^shift` — empirical formula (NOT yet categorically proved)
+
+> **CAVEAT.** Unlike the two factors above, the shift formula below
+> is **empirical numerology**: a linear-in-(Z, N) ansatz fitted to 6
+> data points with zero residual. It is **not a categorical proof**
+> from the atomic-braid structure / Hecke seminormal form. A
+> first-principles derivation of the coefficients `(6, 7, 1)` is
+> the residual research question. Treat this section as a
+> conjecture, not a theorem.
+
+The empirical u-shift across A = 2..6 fits the linear-in-(Z, N)
+formula
+
+> **shift = 18Z + 21N + 1 = 3 · (6Z + 7N) + 1**  (conjecture)
+
+| Atom | (Z, N) | predicted shift | empirical | match |
+|------|--------|-----------------|-----------|-------|
+| D    | (1, 1) | 18·1 + 21·1 + 1 = 40  | 40  | ✓ |
+| T    | (1, 2) | 18·1 + 21·2 + 1 = 61  | 61  | ✓ |
+| ³He  | (2, 1) | 18·2 + 21·1 + 1 = 58  | 58  | ✓ |
+| ⁴He  | (2, 2) | 18·2 + 21·2 + 1 = 79  | 79  | ✓ |
+| ⁵Li  | (3, 2) | 18·3 + 21·2 + 1 = 97  | 97  | ✓ |
+| ⁶Li  | (3, 3) | 18·3 + 21·3 + 1 = 118 | 118 | ✓ |
+
+This is **inductive** in Z and N: adding a proton to the canonical
+pppnnn braid increases the shift by 18, adding a neutron by 21,
+independent of starting (Z, N). Hence the closed form generalises
+**without needing to compute the full Hecke normal form per atom** —
+the per-nucleon increments are universal because each new nucleon
+contributes the same set of intra-nucleon generators (cf. the
+fixed `proton_cross` / `neutron_cross` dictionaries in
+[`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py))
+and the canonical pppnnn ordering keeps the inter-nucleon coupling
+structure invariant (exactly one mixed (p, n) interface).
+
+A first-principles derivation of `(6, 7, 1)` from the per-nucleon
+generator counts (proton: 6 σ + 3 σ⁻¹ + 2 averaged; neutron: 5 σ +
+4 σ⁻¹ + 2 averaged) requires walking the Markov/Ocneanu trace
+recursion through the seminormal-form denominators ([h]_q for hook
+lengths in the partitions of 3A) and tracking the lowest u-power
+contribution. Empirically the linear coefficients (18, 21) are
+exactly 3× the per-nucleon (6, 7) signature; we conjecture that
+`6Z + 7N` counts a structural quantity in the unreduced trace
+expansion and the factor of 3 enters via a triple-cover of the
+seminormal hook denominators. **Status:** verified at A = 2..6 (6
+atoms incl two A = 3 isospin partners); structural derivation of
+the (6, 7) coefficients is the residual research question.
+
+### Final closed form (A ≥ 2, canonical pppnnn ordering)
+
+> **D(u) = 2^(2A + 1) · u^shift · (1 + u²)^(3A − 1)**, with
+> shift conjecturally `= 18Z + 21N + 1`.
+
+with the first factor **categorically proved** (averaged-crossing
+combinatorics on the canonical braid), the third factor
+**categorically proved** (Markov-trace normalisation
+`z^(n−1) = u^(3A−1) / (1+u²)^(3A−1)` at q = u²), and the middle
+shift factor **empirically verified at A = 2..6 but not categorically
+proved** — its derivation from the Hecke seminormal-form denominator
+structure is open.
+
 ### Predictions (forward-looking)
 
-| Atom | A | predicted 2^(2A+1) | predicted (1+u²)^(3A−1) |
-|------|---|---------------------|--------------------------|
-| ⁶Li  | 6 | 2^13 = 8192         | (1+u²)^17               |
-| ⁷Li  | 7 | 2^15 = 32768        | (1+u²)^20               |
-| ⁸Be  | 8 | 2^17 = 131072       | (1+u²)^23               |
+| Atom | (Z, N) | predicted 2^(2A+1) | predicted u-shift | predicted (1+u²)^(3A−1) |
+|------|--------|---------------------|-------------------|--------------------------|
+| ⁷Li  | (3, 4) | 2^15 = 32768  | u^(54+84+1) = u^139 | (1+u²)^20 |
+| ⁸Be  | (4, 4) | 2^17 = 131072 | u^(72+84+1) = u^157 | (1+u²)^23 |
+| ¹²C  | (6, 6) | 2^25          | u^(108+126+1) = u^235 | (1+u²)^35 |
 
-These predictions are verified by `d_u_closed_form_proof.py` against
-the structural braid-crossing count.  Numerical confirmation against
-markov_peel symbolic awaits the corresponding witness rows for
-A ≥ 6.
+These extrapolate the closed form purely structurally — no Hecke NF
+computation required.
 
 ## Closed-form structure of a_0
 
