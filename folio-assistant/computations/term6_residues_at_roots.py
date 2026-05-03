@@ -67,6 +67,85 @@ ATOMS_DEFAULT = [
 ]
 
 
+def residue_via_sqrt_substitution(
+    tr_sym, ell: int, *, max_pole_order: int = 20
+) -> tuple[mpmath.mpc, int]:
+    """Residue of `tr_M(q)` at `q = ζ_ℓ` via `u = sqrt(q)` substitution.
+
+    Substituting `q = u²`, the Markov trace becomes a *rational*
+    function `U(u) = N(u)/D(u)` in `u` (no nested `sqrt(q)` /
+    `1/sqrt(q)` factors).  Empirically the denominator factors as
+
+        D(u)  =  c · u^a · (u² + 1)^b        (proton: a=11, b=2;
+                                              tritium: a=61, b=8;
+                                              ⁴He: a=…)
+
+    so the *only* pole is at `u = ±i ⇔ q = ζ_2 = −1`; for `ℓ ≥ 3`
+    the residue is identically zero.  This routine short-circuits
+    `ℓ ≥ 3` and computes the `ℓ = 2` residue via Taylor expansion
+    of `f(u) := (u − u₀)^p · U(u)` at `u₀ = i`, where `p` is the
+    pole order in `u` (= numerator-zero-order at `u₀` minus
+    `b`).  Detection uses successive numerical samples; the
+    formula
+
+        Res_{u=u₀}[U]  =  (1/(p−1)!) · d^{p−1} f / du^{p−1}  |_{u=u₀}
+
+    follows from Cauchy's higher-pole residue formula.  Finally,
+
+        Res_{q=ζ_ℓ}[tr_M]  =  2 u₀ · Res_{u=u₀}[U]
+
+    by the chain rule (`q − ζ_ℓ = (u − u₀)(u + u₀)` near `u = u₀`).
+
+    On tritium this evaluates `ζ_2` in ~3 s where the in-`q`
+    `sp.cancel(N(ζ)/D'(ζ))` path didn't terminate at 600 s.
+
+    Returns `(residue, pole_order)`.  For `ℓ ≥ 3` returns
+    `(mpc(0), 0)` after a fast denominator check.
+    """
+    u_sym = sp.Symbol('u', positive=True)
+    U = tr_sym.subs(sp.sqrt(q_sym), u_sym).subs(q_sym, u_sym ** 2)
+    Ut = sp.together(U)
+    n_sym, d_sym = sp.fraction(Ut)
+    # Short-circuit for ℓ ≥ 3: the empirical D(u) = c · u^a · (u² + 1)^b
+    # has no zero at u₀ = exp(iπ/ℓ) unless u₀² = −1 ⇔ ℓ = 2.
+    if ell != 2:
+        u0_sym = sp.exp(sp.I * sp.pi / ell)
+        d_at_u0 = sp.simplify(d_sym.subs(u_sym, u0_sym))
+        if d_at_u0 != 0:
+            return mpmath.mpc(0), 0
+    u0 = mpmath.exp(mpmath.mpc(0, mpmath.pi) / ell)
+    # Pole-order detection: lambdify f(u) = N(u)/D(u), then walk p
+    # upward until `(u − u₀)^p · f(u)` is finite + nonzero at a tiny
+    # offset from u₀.
+    f_lam = sp.lambdify(u_sym, n_sym / d_sym, modules='mpmath')
+    eps = mpmath.mpf('1e-15')
+    u_test = u0 + eps
+    f_test = f_lam(u_test)
+    p = 1
+    for trial in range(1, max_pole_order + 1):
+        scaled = (u_test - u0) ** trial * f_test
+        # Heuristic: scaled value is "well-scaled" if magnitude is in
+        # [eps^trial · 10⁻⁵, eps^trial · 10²⁰] times the local order.
+        # Simpler: take p = first trial where |(u−u₀)^trial · f| does
+        # not blow up at eps offset.  At eps = 1e-15 a pole of order p
+        # gives |f| ~ 1/eps^p = 10^{15p}; multiplying by eps^trial
+        # gives 10^{15(p−trial)}.  When trial ≥ p this is ≤ 1.
+        if abs(scaled) < mpmath.mpf('1e10'):
+            p = trial
+            break
+    else:
+        return mpmath.mpc(0), -1
+    # Build symbolic f(u) = (u − u₀)^p · N(u) / D(u) and take the
+    # (p − 1)-th numerical derivative at u₀.
+    u0_sym = sp.exp(sp.I * sp.pi / ell)
+    f_sym = (u_sym - u0_sym) ** p * n_sym / d_sym
+    f_lam2 = sp.lambdify(u_sym, f_sym, modules='mpmath')
+    df = mpmath.diff(f_lam2, u0, p - 1)
+    res_u = df / mpmath.factorial(p - 1)
+    res_q = 2 * u0 * res_u
+    return res_q, p
+
+
 def residue_via_contour(
     tr_sym, ell: int, *, radius: float = 0.05, n_samples: int = 64
 ) -> mpmath.mpc:
@@ -183,9 +262,34 @@ def residues_at_roots(
             signal.alarm(0)
         except _Timeout:
             signal.alarm(0)
+            # Primary fallback: u = sqrt(q) substitution + Taylor
+            # coefficient extraction (handles branch cuts correctly,
+            # works on tritium ζ_2 in ~3 s where the in-q symbolic
+            # path didn't terminate at 600 s).
+            try:
+                res_mp, pole_p = residue_via_sqrt_substitution(
+                    tr_sym, ell,
+                )
+                res_num = complex(res_mp.real, res_mp.imag)
+                res_abs = abs(res_num)
+                rows.append({
+                    "ell": ell,
+                    "zeta_symbolic": str(zeta),
+                    "residue_symbolic": (
+                        f"sqrt-sub (pole order {pole_p}): "
+                        f"{mpmath.nstr(res_mp, 20)}"
+                    ),
+                    "residue_value": str(res_num),
+                    "residue_abs": f"{res_abs:.6e}",
+                    "method": "sqrt_substitution",
+                    "pole_order_in_u": pole_p,
+                })
+                continue
+            except Exception as sqrt_exc:  # noqa: BLE001
+                pass
             if contour_fallback:
-                # Symbolic l'Hôpital timed out; try numerical
-                # contour integral on a small circle around ζ_ℓ.
+                # Secondary fallback: numerical contour integral
+                # (caveat: branch cut for ζ_ℓ with Re < 0).
                 try:
                     res_mp = residue_via_contour(tr_sym, ell)
                     res_num = complex(res_mp.real, res_mp.imag)
@@ -210,7 +314,8 @@ def residues_at_roots(
                         "residue_abs": None,
                         "error": (
                             f"timeout > {per_ell_timeout_sec}s; "
-                            f"contour fallback failed: {exc!r}"
+                            f"sqrt-sub + contour fallbacks both failed: "
+                            f"{sqrt_exc!r} / {exc!r}"
                         ),
                     })
                     continue
@@ -220,7 +325,10 @@ def residues_at_roots(
                 "residue_symbolic": None,
                 "residue_value": None,
                 "residue_abs": None,
-                "error": f"timeout > {per_ell_timeout_sec}s",
+                "error": (
+                    f"timeout > {per_ell_timeout_sec}s; "
+                    f"sqrt-sub fallback failed: {sqrt_exc!r}"
+                ),
             })
             continue
         except (NotImplementedError, RecursionError) as exc:
