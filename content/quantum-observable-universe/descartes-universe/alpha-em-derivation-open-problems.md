@@ -60,8 +60,8 @@ $q_0$). Three plausible structural origins:
    $c_\lambda^{(s)} = \chi_\lambda(T_{2,9})$ and $c_\lambda^{(w)} = \chi_\lambda(T_{3,5})$
    in a fixed ambient algebra (e.g. $H_5$ or $H_{10}$ via Markov
    stabilization) and evaluate
-   $\kappa = \prod_\lambda [\dim/\dim_q \cdot [n]_q!/n!]^{c^{(s)}_\lambda c^{(w)}_\lambda}$
-   end-to-end.
+   $\kappa = \prod_\lambda [\dim V_\lambda / \dim_q V_\lambda \cdot [n]_q!/n!]^{c^{(s)}_\lambda c^{(w)}_\lambda}$
+   end-to-end (see [prop:gram-determinant-plancherel-ratio](#prop:gram-determinant-plancherel-ratio) for the structural source).
 
    **Result of first attempt (this audit, $n=3$).** Stabilising
    $T_{2,9}$ as $\sigma_1^9 \in B_3$ and using $T_{3,5} = (\sigma_1\sigma_2)^5 \in B_3$,
