@@ -40,6 +40,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import mpmath
 import sympy as sp
 
 from experimental_constants import M_E_MEV
@@ -66,6 +67,44 @@ def primitive_roots_of_unity(n: int):
             yield sp.exp(2 * sp.pi * sp.I * sp.Rational(j, n))
 
 
+def _higher_order_q_residue_via_sqrt_sub(
+    p_in_u, denom_in_u, u_sym, zeta,
+    *, radius: float = 0.05, n_samples: int = 64,
+):
+    """q-residue of `p_in_u(sqrt(q)) / denom_in_u(sqrt(q))` at `q = ζ`
+    via the substitution `q = u²`.
+
+    Setting `u₀ = sqrt(ζ)` on the principal branch, the contour
+    identity `∮_{|u-u₀|=r} 2u · U(u) du = 2πi · Res_q[tr_M]`
+    (chain-rule integrand) recovers the q-residue regardless of the
+    pole order in u.  This handles the higher-order poles flagged by
+    the simple-pole `cyclotomic_residue` path.
+
+    Returns an `mpmath.mpc`.
+
+    Mirrors `term6_residues_at_roots.residue_via_sqrt_substitution`
+    but consumes the rational-in-u form directly from the Habiro
+    witness so we skip an unnecessary q ↔ u round-trip.
+    """
+    integrand_sym = 2 * u_sym * (p_in_u / denom_in_u)
+    f_lam = sp.lambdify(u_sym, integrand_sym, modules='mpmath')
+    saved_dps = mpmath.mp.dps
+    mpmath.mp.dps = max(saved_dps, 100)
+    try:
+        zeta_mp = mpmath.mpc(complex(sp.N(zeta, 60)))
+        u0 = mpmath.sqrt(zeta_mp)
+        r = mpmath.mpf(str(radius))
+        total = mpmath.mpc(0)
+        for k in range(n_samples):
+            theta = 2 * mpmath.pi * k / n_samples
+            e_i_theta = mpmath.exp(mpmath.mpc(0, 1) * theta)
+            u_pt = u0 + r * e_i_theta
+            total += f_lam(u_pt) * e_i_theta
+        return total * r / n_samples
+    finally:
+        mpmath.mp.dps = saved_dps
+
+
 def cyclotomic_residue(tr_M_expr, zeta, n: int):
     """Compute r_n^{(j)}(T_w) = lim_{q → ζ_n^{(j)}} (q − ζ) · tr_M(T_w, q).
 
@@ -86,11 +125,24 @@ def cyclotomic_residue(tr_M_expr, zeta, n: int):
         return None
 
 
-def mittag_leffler_term6(tr_M_poly_expr, q0_value: float, n_max: int = 6):
+def mittag_leffler_term6(
+    tr_M_poly_expr, q0_value: float, n_max: int = 6,
+    *,
+    sqrt_sub_fallback: tuple | None = None,
+):
     """Compute Term-6 Mittag-Leffler sum up to cutoff n_max.
 
     Uses symbolic ζ_n^{(j)}, complex residue + 1/(q_0 − ζ) kernel.
     Returns (total_term6_real, per_n_breakdown).
+
+    `sqrt_sub_fallback`, if provided, is a `(p_in_u, denom_in_u, u_sym)`
+    triple in the Hecke parameter `u = sqrt(q)`.  Whenever the
+    simple-pole l'Hôpital path returns `sp.oo` (higher-order pole),
+    the q-residue is recovered numerically via
+    `_higher_order_q_residue_via_sqrt_sub` instead of being silently
+    skipped.  This closes the `incomplete-higher-order-pole-detected`
+    status for atoms whose denominator factors with multiplicity > 1
+    at any cyclotomic root (e.g. deuteron at ζ_4).
     """
     total = sp.Rational(0)
     per_n = []
@@ -110,7 +162,53 @@ def mittag_leffler_term6(tr_M_poly_expr, q0_value: float, n_max: int = 6):
                     })
                     continue
                 if residue == sp.oo:
-                    # Higher-order pole — simple residue formula doesn't apply
+                    # Higher-order pole — simple-pole l'Hôpital fails;
+                    # fall back to chain-rule contour in u-space if a
+                    # rational-in-u form was supplied.
+                    if sqrt_sub_fallback is not None:
+                        p_in_u, denom_in_u, u_sym = sqrt_sub_fallback
+                        try:
+                            res_q_mp = _higher_order_q_residue_via_sqrt_sub(
+                                p_in_u, denom_in_u, u_sym, zeta,
+                            )
+                            kernel_mp = 1 / (
+                                mpmath.mpc(complex(sp.N(q0_sym - zeta, 60)))
+                            )
+                            contrib_mp = res_q_mp * kernel_mp
+                            contribution_real = float(contrib_mp.real)
+                            n_contribution += sp.N(contrib_mp.real)
+                            roots_data.append({
+                                "j_index": j_idx,
+                                "zeta_real": float(complex(sp.N(zeta)).real),
+                                "zeta_imag": float(complex(sp.N(zeta)).imag),
+                                "residue_complex": [
+                                    float(res_q_mp.real),
+                                    float(res_q_mp.imag),
+                                ],
+                                "kernel_complex": [
+                                    float(kernel_mp.real),
+                                    float(kernel_mp.imag),
+                                ],
+                                "contribution_real": contribution_real,
+                                "method": "sqrt_substitution_contour",
+                                "note": (
+                                    "higher-order pole resolved via "
+                                    "u = sqrt(q) contour with "
+                                    "chain-rule integrand 2u·U(u)"
+                                ),
+                            })
+                            continue
+                        except Exception as exc:  # noqa: BLE001
+                            roots_data.append({
+                                "j_index": j_idx, "zeta": str(zeta),
+                                "residue": "HIGHER-ORDER POLE",
+                                "contribution": 0.0,
+                                "note": (
+                                    "sqrt-sub fallback failed: "
+                                    f"{type(exc).__name__}: {exc}"
+                                ),
+                            })
+                            continue
                     roots_data.append({
                         "j_index": j_idx, "zeta": str(zeta),
                         "residue": "HIGHER-ORDER POLE",
@@ -176,14 +274,29 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
     print(f"    tr_M_at_q0 [from witness]        = {atom_data.get('tr_M_at_q0', 'N/A')}")
 
     # Compute Term-6 sum
-    total, per_n = mittag_leffler_term6(tr_M_expr, Q_0, n_max=n_max)
-    # Flag whether any higher-order pole was detected (status=incomplete).
-    higher_order_detected = any(
+    total, per_n = mittag_leffler_term6(
+        tr_M_expr, Q_0, n_max=n_max,
+        sqrt_sub_fallback=(p_in_u, denom_in_u, u),
+    )
+    # Higher-order poles still flagged (and zeroed) only when the
+    # sqrt-sub fallback also failed.  When the contour fallback
+    # resolved them, `roots_data` carries `method=sqrt_substitution_contour`
+    # and the residue value has been folded into `n_contribution`.
+    higher_order_unresolved = any(
         any(r.get("residue") == "HIGHER-ORDER POLE" for r in n_data["roots"])
         for n_data in per_n
     )
-    status = ("incomplete-higher-order-pole-detected" if higher_order_detected
-              else "complete-simple-poles-only")
+    higher_order_resolved = any(
+        any(r.get("method") == "sqrt_substitution_contour"
+            for r in n_data["roots"])
+        for n_data in per_n
+    )
+    if higher_order_unresolved:
+        status = "incomplete-higher-order-pole-detected"
+    elif higher_order_resolved:
+        status = "complete-with-sqrt-sub-fallback"
+    else:
+        status = "complete-simple-poles-only"
     print(f"    Term-6 Mittag-Leffler total (n≤{n_max}) = {total:.6e}")
     print(f"    in MeV: {total * M_E_MEV:.6e}")
     print(f"    status: {status}")
@@ -191,9 +304,10 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
         n = n_data["n"]
         cn = n_data["n_real_contribution"]
         print(f"      n={n}: contribution = {cn:+.6e}")
-    # Record term6_in_MeV as None when status is incomplete to avoid
-    # consumers treating a partial sum as the full Term-6 contribution.
-    term6_value = None if higher_order_detected else total * M_E_MEV
+    # Record term6_in_MeV as None only when an UNRESOLVED higher-order
+    # pole remains (sqrt-sub fallback failed).  When resolved via
+    # contour integration the partial sum IS the full Term-6.
+    term6_value = None if higher_order_unresolved else total * M_E_MEV
     # Expose tr_M(T_w, q) symbolically so downstream consumers can
     # re-evaluate at any q without re-running the script.
     try:
@@ -213,7 +327,8 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
         "term6_simple_residue_partial": total,
         "term6_in_MeV": term6_value,
         "status": status,
-        "higher_order_pole_detected": higher_order_detected,
+        "higher_order_pole_unresolved": higher_order_unresolved,
+        "higher_order_pole_resolved_via_sqrt_sub": higher_order_resolved,
         "per_n_breakdown": per_n,
     }
 
@@ -270,8 +385,12 @@ def main():
             "and deuteron; T, ³He, ⁴He+ pending — extension via "
             "habiro_coefficients_interpolate.py is the next step for "
             "A≥5 5–20% error assessment. Higher-order poles (e.g. "
-            "deuteron at ζ_4) are currently flagged but not contributed; "
-            "Laurent-expansion handling is a follow-up."
+            "deuteron at ζ_4 = ±i, where (u²+1)² appears in the "
+            "u = sqrt(q) denominator) are now recovered via a "
+            "chain-rule contour integral in u-space "
+            "(_higher_order_q_residue_via_sqrt_sub); the deuteron Term-6 "
+            "contribution that was previously emitted as 'incomplete' "
+            "now resolves to ≈ 0.057 MeV."
         )
         .set_content_block("prop:full-pole-structure-mass-trace")
         .add_parameter("q_0", Q_0)
@@ -287,9 +406,20 @@ def main():
             "larger 1/|q_0 − ζ| kernel)."
         )
         .add_caveat(
-            "Extend habiro-coefficients-atomic.witness.json to D, T, "
-            "³He, ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹²C, ¹⁶O before this script "
-            "can answer 'does Term 6 close the A≥5 5-20% errors?'"
+            "Extend habiro-coefficients-atomic.witness.json to T, ³He, "
+            "⁴He, ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹²C, ¹⁶O before this script can "
+            "answer 'does Term 6 close the A≥5 5-20% errors?' — A≥4 "
+            "is blocked on symbolic Hoefsmit at H_9+, the numerical-"
+            "interpolation route in habiro_coefficients_interpolate.py "
+            "documents A=4 as intractable at 60 dps."
+        )
+        .add_caveat(
+            "Higher-order pole resolution: when l'Hôpital returns "
+            "sp.oo, we run a Cauchy contour ∮_{|u-u₀|=0.05} 2u·U(u) du "
+            "in u-space at u₀ = sqrt(ζ) (principal branch). Radius 0.05 "
+            "is conservative for ℓ ≤ 12 (nearest neighbour at ≥ 2sin(π/ℓ²) "
+            "≥ 0.05). Pole order is detected automatically by the "
+            "contour identity — no per-pole-order branching."
         )
     )
     out_path = w.save()

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T21:10:27.475087+00:00",
-  "commitSha": "aaae53592b2cabe26eda084bf9841f58a9906407",
+  "computedAt": "2026-05-03T21:31:26.939510+00:00",
+  "commitSha": "04522f76f8c969445d9eca094240d97b1c92b7fe",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1347,6 +1347,7 @@
         "alpha-cluster-recursion.witness.json",
         "alpha-cs-kappa-verification.witness.json",
         "alpha-derivation-probe.witness.json",
+        "alpha-em-correction-derivation-attempts.witness.json",
         "alpha-em-pslq-uniqueness-2000dps.witness.json",
         "alpha-em-pslq-uniqueness.witness.json",
         "alpha-em-q9-q10-derivation.witness.json",
