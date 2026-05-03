@@ -228,7 +228,9 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
             results["V1"].append(V1_val)
         if order >= 2:
             d2V_dq2 = sp.diff(V_i, q, 2)
-            second = q * q * d2V_dq2 + q * sp.diff(V_i, q)
+            # `dV_dq` was already computed in the order=1 branch
+            # above; reuse it instead of recomputing `sp.diff(V_i, q)`.
+            second = q * q * d2V_dq2 + q * dV_dq
             V2_add = (hbar_sym ** 2 / 2) * second
             V2_val = float((V_i + V1_add + V2_add).subs(q, Q0))
             V2_val_polynomial_q = expose_polynomial((V_i + V1_add + V2_add), q)

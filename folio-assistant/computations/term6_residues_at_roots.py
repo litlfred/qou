@@ -161,7 +161,11 @@ def term6_contribution_at_q0(rows) -> str:
         except Exception:  # noqa: BLE001
             continue
         denom = q0_mp - zeta
-        if abs(denom) < mpmath.mpf("1e-30"):
+        # Tolerance scales with the current precision floor — at 50 dps
+        # we expect representable magnitudes down to ~10^-25 (half the
+        # precision); a hardcoded `1e-30` would be inconsistent if the
+        # caller bumps `mp.dps` higher.
+        if abs(denom) < mpmath.mpf(10) ** (-mpmath.mp.dps // 2):
             continue
         total += res / denom
     return mpmath.nstr(total, 30)
