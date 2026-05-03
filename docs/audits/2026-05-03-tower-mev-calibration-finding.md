@@ -53,6 +53,40 @@ The docstring at `canonical_plus_multibrane.py:243` says
 "tower_1 ≈ 141 MeV (D)" — this expected magnitude is the calibration
 target, but the formula as implemented produces 200× more.
 
+## ⚡ Convergent finding from `claude/categorical-mass-divergence-audit`
+
+While this audit was being written, the parallel branch
+`claude/categorical-mass-divergence-audit` (commit `49fe17928`,
+"Kashaev integration probe: identity NOT Φ_q AND NOT α·ln|V| — it's
+q-dilogarithm") landed a numerical probe that **directly identifies
+the wrong function**:
+
+The integration identity claimed in `prop:mass-endomorphism-tower`
+(line 117-130) was
+
+  ∫_0^V (ln_q(1+t)/t) dt  ?=  Φ_q(V)
+
+The probe at q₀ = 1.10998, V ∈ (0.1, 0.989), shows:
+
+  V       integral    Φ_q(V)        ratio
+  0.10    +0.098      2.54          0.038
+  0.50    +0.449      189           0.002
+  0.85    +0.717      33 347        2 × 10⁻⁵
+  0.989   +0.815      671 093       1 × 10⁻⁶
+
+The integral is **bounded** in [0.1, 0.82] for V ∈ (0, 1) (it's a
+q-dilogarithm `Li₂_q(V)`).  Φ_q(V) is unbounded as V → 1.  The
+identity is **off by ~10⁶** at the high end and the relationship
+isn't even monotonic.
+
+This independently confirms — and pinpoints — Fix C below: the
+tower formula's `Φ_q` is the wrong analytic function.  The right
+function is `Li₂_q`, which is bounded and so won't drive tower_MeV
+into the GeV regime.
+
+Witness: `folio-assistant/computations/kashaev-integration-identity.witness.json`
+(on `claude/categorical-mass-divergence-audit`, not yet on `main`).
+
 ## Three candidate fixes (each requires theoretical work)
 
 ### Fix A — different summation convention
