@@ -22,6 +22,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { leanPackageByName } from "../../folio-assistant/schemas/lean-packages.ts";
 
 // Resolve repo root from this script's location:
 // content/pipeline/conjectural-propagation-audit.ts → repo root.
@@ -61,17 +62,22 @@ async function isClassAxiomatised(conjBlock: Block): Promise<boolean> {
     if (checkText(text)) return true;
   } catch { /* sibling absent — try (b) */ }
 
-  // (b) lean.ref path: parse the .ts for `ref: "qou:QOU.X.Y"` and
-  // look up <paper>/lean/QOU/X/Y.lean.
+  // (b) lean.ref path: parse the .ts for `ref: "<pkg>:<Decl.Path>"`
+  // and resolve <pkg> via the LEAN_PACKAGES registry to get the
+  // Lake-root directory (e.g. "content/quantum-observable-universe/lean").
   try {
     const tsText = await readFile(conjBlock.file, "utf8");
     const refMatch = tsText.match(/ref:\s*"([^:"]+):([^"]+)"/);
     if (!refMatch) return false;
+    const pkgName = refMatch[1];
     const declPath = refMatch[2];           // e.g. "QOU.Descartes.Foo"
-    const paperDir = conjBlock.file.split("/")
-      .slice(0, conjBlock.file.split("/").indexOf("content") + 2)
-      .join("/");                           // .../<paper>
-    const leanFile = join(paperDir, "lean", declPath.replace(/\./g, "/") + ".lean");
+    const pkg = leanPackageByName(pkgName);
+    if (!pkg) return false;
+    const leanFile = join(
+      REPO_ROOT,
+      pkg.lakeRoot,
+      declPath.replace(/\./g, "/") + ".lean",
+    );
     const text = await readFile(leanFile, "utf8");
     return checkText(text);
   } catch {

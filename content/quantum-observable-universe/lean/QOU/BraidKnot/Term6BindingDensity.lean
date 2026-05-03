@@ -33,6 +33,7 @@ LaTeX label: `prop:term6-binding-density`
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Finset.Basic
 
 namespace QOU.BraidKnot
 

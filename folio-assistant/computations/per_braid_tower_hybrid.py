@@ -24,11 +24,12 @@ from pathlib import Path
 import mpmath
 
 sys.path.insert(0, str(Path(__file__).parent))
+# Imports below depend on the sys.path mutation above; suppress E402.
 # q-Hecke (proper proton/neutron-distinguishing) for descended
-from schur_weyl_q_hecke_v2 import markov_trace_q_hecke_atomic
+from schur_weyl_q_hecke_v2 import markov_trace_q_hecke_atomic  # noqa: E402
 # q=1 MN (linear-in-A scaling) for tower terms
-from schur_weyl_mpmath import markov_trace_mpmath
-from q_parameter import Q as Q0_FLOAT
+from schur_weyl_mpmath import markov_trace_mpmath  # noqa: E402
+from q_parameter import Q as Q0_FLOAT  # noqa: E402
 
 mpmath.mp.dps = 50
 q0 = mpmath.mpf(str(Q0_FLOAT))

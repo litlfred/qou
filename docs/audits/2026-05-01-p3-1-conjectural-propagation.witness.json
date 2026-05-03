@@ -1,7 +1,7 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-05-03T00:23:00.207Z",
-  "total_blocks": 1372,
+  "generated": "2026-05-03T01:01:35.717Z",
+  "total_blocks": 1382,
   "class_axiomatised_conjectures": [
     "conj:abelianisation-at-algebraic-poles",
     "conj:algebraic-geometric-dilog-equivalence",
@@ -37,7 +37,7 @@
     "conj:shell-closure-nf-term-count",
     "conj:shell-correction-term-seven"
   ],
-  "provable_blocks_touching_conjecture": 235,
+  "provable_blocks_touching_conjecture": 243,
   "violators": [
     {
       "label": "lem:surreal-squeeze",
@@ -466,6 +466,7 @@
       "label": "prop:algebraic-volume-specialization",
       "kind": "proposition",
       "conj": [
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
@@ -473,7 +474,6 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.ts"
@@ -573,6 +573,54 @@
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/atomic-nf-witness.ts"
+    },
+    {
+      "label": "prop:bar-apply-transfer",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/bar-apply-transfer.ts"
+    },
+    {
+      "label": "prop:bar-self-dual-confinement-band",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/bar-self-dual-confinement-band.ts"
+    },
+    {
+      "label": "prop:bar-t-duality-substrate",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/bar-t-duality-substrate.ts"
     },
     {
       "label": "prop:baryon-product-from-alt",
@@ -1537,6 +1585,38 @@
       "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts"
     },
     {
+      "label": "prop:golden-quartet-galois",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/golden-quartet-galois.ts"
+    },
+    {
+      "label": "prop:golden-skew-dual-node",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/golden-skew-dual-node.ts"
+    },
+    {
       "label": "prop:graded-markov-trace-from-gs-filtration",
       "kind": "proposition",
       "conj": [
@@ -1805,6 +1885,7 @@
       "label": "prop:jet-gb-pl-correspondence",
       "kind": "proposition",
       "conj": [
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
@@ -1812,7 +1893,6 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/jet-gb-pl-correspondence.ts"
@@ -2072,6 +2152,54 @@
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts"
+    },
+    {
+      "label": "prop:mobius-golden-fixed-points",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/mobius-golden-fixed-points.ts"
+    },
+    {
+      "label": "prop:mobius-limit-from-thimble",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/mobius-limit-from-thimble.ts"
+    },
+    {
+      "label": "prop:moduli-symmetry-d4",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/moduli-symmetry-d4.ts"
     },
     {
       "label": "prop:n-equals-1-vacuous-magic",
@@ -3010,6 +3138,7 @@
       "label": "prop:sw-period-thimble-equivalence",
       "kind": "proposition",
       "conj": [
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
@@ -3017,7 +3146,6 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.ts"
