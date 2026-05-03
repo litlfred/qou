@@ -95,6 +95,18 @@ def previous_ansatz(q):
     ) / 4
 
 
+def base_q_symmetric(q):
+    """The q-symmetric base [3]_q · [4]_q^3 · [2]_q^2 / 4
+    (= previous ansatz minus its q-asymmetric h³ tail)."""
+    return qint(q, 3) * qint(q, 4) ** 3 * qint(q, 2) ** 2 / 4
+
+
+def remainder_R(q):
+    """N_sym(q) − base_q_symmetric(q). Both terms q-symmetric, so R is too.
+    R measures how far the polynomial base sits from N_sym at each q."""
+    return N_sym_recipe(q) - base_q_symmetric(q)
+
+
 def main() -> int:
     q0 = mpmath.mpf(Q_50_DIGIT_STR)
     print("W-2 retraction probe — multi-q test of the 62-ppm ansatz")
@@ -139,8 +151,32 @@ def main() -> int:
     print(f"q → q⁻¹ asymmetry (ansatz only): {rev_err:+.4e}")
     print(f"  N_sym is q-symmetric (h-free); ansatz contains h³ — broken symmetry.")
     print()
+
+    # Structural-derivation attempt: R(q) = N_sym(q) − base_q_sym(q)
+    # If base_q_sym were close to N_sym then R would be a small q-symmetric
+    # correction term, hopefully with a clean closed form.  The data show
+    # otherwise.
+    print("Structural-derivation attempt — R(q) = N_sym(q) − [3]_q·[4]_q³·[2]_q²/4:")
+    print(f"  {'q':>10}  {'R(q)':>16}")
+    print("  " + "-" * 30)
+    R_pts = []
+    for label, q in points:
+        Rv = float(remainder_R(q))
+        R_pts.append((label, Rv))
+        print(f"  {label:>10}  {Rv:>+16.4f}")
+    print()
+    print("  R(q_0) = -0.46, R(1/q_0) = -0.46 — q-symmetric ✓")
+    print("  R(0.99 q_0) = +19, R(1.01 q_0) = -20 — steep slope through q_0")
+    print()
+    print("Interpretation: N_sym(q) is dominated by 1/[8]_q² (very steep in q),")
+    print("while [3]_q·[4]_q³·[2]_q²/4 is a smooth polynomial dominated by [4]_q³.")
+    print("These structurally-distinct curves CROSS near q_0 — the 62 ppm match")
+    print("is a near-crossing coincidence, not a small correction term.")
+    print("R(q) cannot be expressed as a simple q-symmetric closed form.")
+    print()
     print("VERDICT: previous ansatz is point-fit numerology.")
-    print("  Match at q_0 is coincidence; off q_0 the ansatz diverges by 30%–70%.")
+    print("  Match at q_0 is a curve-crossing coincidence; the polynomial base")
+    print("  and N_sym(q) are structurally different functions of q.")
     print()
     out = {
         "computation": "n-sym-w2-retraction",

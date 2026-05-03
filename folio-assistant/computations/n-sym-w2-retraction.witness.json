@@ -1,6 +1,6 @@
 {
   "computation": "n-sym-w2-retraction",
-  "computedAt": "2026-05-03T14:53:24.009303+00:00",
+  "computedAt": "2026-05-03T14:59:18.822777+00:00",
   "description": "Retraction of the 62 ppm 'W-2 closure' claim from n_sym_b8_refinement_probe.py.  Multi-q verification shows the previous ansatz [3]_q·[4]_q²·[2]_q²·([4]_q-h³)/4 is point-fit numerology: q-asymmetric (h³ flips sign under q→q⁻¹) and 30-70% off at q ≠ q_0.  N_sym(q) already has an exact closed form by its recipe: N_sym(q) = N_v · [2]_q³ / ([4]_q² · [6]_q² · [8]_q²) where N_v = 3·v_weak/m_e is q-independent.  W-2's open question is whether N_v (currently CODATA G_F input) admits a categorical derivation.",
   "verdict": "previous ansatz is point-fit numerology; W-2 not closed",
   "N_v_const": "1445519.449145220729668372",
