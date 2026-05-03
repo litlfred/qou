@@ -44,8 +44,29 @@ $$
 
 ### Term 2: single-generator brane tower $\sum_i \Phi_q(|\hat V_i^{\mathrm{full}}|)$
 
-*Status: **DERIVED**.*
+*Status: **DERIVED in R-side algebraic form; PATHOLOGICAL in
+archimedean specialisation at $q_0$**.*
 
+- *R-side algebraic form: $\sum_i z \cdot \mathrm{Vol}_q^{(\{i\})}(\beta)$
+  with each $\mathrm{Vol}_q^{(S)}$ a Markov trace over the
+  transfer-matrix chain supported on $S$
+  ([mass endomorphism tower](#prop:mass-endomorphism-tower) §Algebraic
+  form).  In this form Term 2 IS a Markov-invariant trace.*
+- *Archimedean specialisation: $\mathrm{Vol}_q^{(S)} \rightsquigarrow
+  \Phi_q(|\hat V_i^{\mathrm{full}}|)$ via the Kashaev limit.  This
+  specialisation evaluates the quantum dilogarithm on a per-generator
+  amplitude $|\hat V_i|$ which is **not** Markov-invariant — different
+  reduced words for the same braid give different per-generator
+  amplitudes but the same Markov trace.  The specialisation is
+  therefore a basis-dependent expansion, not itself a trace.*
+- *Numerical pathology at $q_0$ (documented PR #524):
+  $\Phi_q(0.99) \approx 6.7 \times 10^5$.  Per-generator amplitudes
+  $|\hat V_i^{\mathrm{full}}|$ for atomic braids are typically
+  0.85–0.99, so each summand contributes $\sim 10^5$ Hecke units.
+  Tiny p/n asymmetries between mirror nuclei (T = 1p+2n vs ³He = 2p+1n)
+  amplify by $\sim 10^5 \times$, predicting T − ³He $\approx -737$ MeV
+  versus CODATA $+0.019$ MeV.  See
+  `brane-tower-isospin-diagnosis.witness.json`.*
 - *Source: [mass endomorphism tower](#prop:mass-endomorphism-tower).*
 - *Wedderburn weights inside $\hat V_i^{\mathrm{full}}$: from
   [three-parameters Wedderburn](#prop:three-parameters-wedderburn)
@@ -68,7 +89,13 @@ $$
 
 ### Term 3: pair-generator brane tower $z^2 \sum_{i<j} \Phi_q(|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|)$
 
-*Status: **DERIVED**.*
+*Status: **DERIVED in R-side algebraic form; PATHOLOGICAL in
+archimedean specialisation at $q_0$** (same trace-vs-evaluation
+distinction as Term 2; see Term 2 status note above).  The $z^2$
+prefactor is itself trace-invariant via $\mathrm{tr}_M(\sigma_i\sigma_j)
+= z^2$ ([Markov pair $z^2$](#prop:markov-pair-z2)) — but the
+$\Phi_q$ specialisation inherits the same per-generator-amplitude
+non-invariance as Term 2.*
 
 - *Source: same as Term 2
   ([mass endomorphism tower](#prop:mass-endomorphism-tower)).*
@@ -150,18 +177,43 @@ conjecture (earlier framing) is now **superseded**.*
 
 | term | derivation source(s) | computation script | status |
 |---|---|---|---|
-| 1 | categorical-mass-markov, Jones-Markov | crt_markov.py, light_isotope_sweep.py | DERIVED |
-| 2 | mass-endomorphism-tower, three-parameters-wedderburn, Habiro | tower formulas + Wedderburn | DERIVED |
-| 3 | mass-endomorphism-tower, Markov factorisation | same as Term 2 | DERIVED |
-| 4 | Frobenius co-Casimir (Lean-proved) | frobenius_partition_sum.py | DERIVED |
-| 5 | dual-space symmetric-channel per-crossing | ribbon_content_average.py, chirality_variants_probe.py | DERIVED |
-| 6 | GB residue spectral sum, Habiro | gb_residue_tower.py, habiro_residue_symbolic.py | DERIVED |
+| 1 | categorical-mass-markov, Jones-Markov | markov_peel.py + atomic-tr-m-mpfr-50dps.witness.json | TRACE (canonical Markov-invariant) |
+| 2 | mass-endomorphism-tower, three-parameters-wedderburn, Habiro | tower formulas + Wedderburn | TRACE in R-side; PATHOLOGICAL at $q_0$ archimedean |
+| 3 | mass-endomorphism-tower, Markov factorisation | same as Term 2 | TRACE in R-side; PATHOLOGICAL at $q_0$ archimedean |
+| 4 | Frobenius co-Casimir (Lean-proved) | frobenius_partition_sum.py | TRACE (Markov-invariant) |
+| 5 | dual-space symmetric-channel per-crossing | ribbon_content_average.py, chirality_variants_probe.py | TRACE (Markov-invariant within sign list) |
+| 6 | GB residue spectral sum, Habiro | term6-habiro-residue-mpfr-50dps.witness.json | TRACE (cohomological pairing) |
 
-**Master conclusion.**
-*All six terms are algebraically derived using paper's existing
-machinery (Wedderburn weights, Frobenius co-Casimir, Hecke mass
-trace, Habiro/colored-Jones, GB residue spectral sum, and the
-new per-crossing symmetric-channel duality).*
+**Trace-invariance directive (2026-05-03).**
+Every term in the formula must be a Markov-invariant trace.  Terms 1,
+4, 5, 6 satisfy this directly.  Terms 2 and 3 satisfy it only in the
+R-side algebraic form (each $\mathrm{Vol}_q^{(S)}$ is a Markov trace
+over the chain supported on $S$); the archimedean Kashaev specialisation
+$\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q(|\hat V_i^{\mathrm{full}}|)$
+breaks Markov-invariance because $|\hat V_i|$ is per-generator (basis-
+dependent).  Numerical evaluation at $q_0$ amplifies this by $\sim 10^5$
+via $\Phi_q$'s divergence near $1$, producing
+$\mathfrak{m}(\mathrm{T}) - \mathfrak{m}({}^3\mathrm{He}) \approx -737$
+MeV against CODATA $+0.019$ MeV.
+
+**Open derivation question.**  Either
+([a](#prop:mass-endomorphism-tower)) the archimedean form needs a
+regulator/symmetrisation that restores trace-invariance (e.g.
+Frobenius-antipode-symmetrised volumes
+$\hat V_i \to \tfrac{1}{2}(\hat V_i + S(\hat V_i))$), or
+(b) Terms 2/3 should be expressed directly in the R-side trace form
+$\sum_{S} z^{|S|} \mathrm{Vol}_q^{(S)}(\beta)$ without the
+$\Phi_q$ specialisation.  See
+`brane-tower-isospin-diagnosis.witness.json` (PR #524) and the
+T5/T6 trace audit in PR #526 for ongoing work.
+
+**Master conclusion (revised).**
+*Terms 1, 4, 5, 6 are derived as Markov-invariant traces.  Terms 2
+and 3 are derived in the R-side algebraic form as Markov-invariant
+traces, but their archimedean $\Phi_q$ specialisation as currently
+implemented is not a trace and exhibits a structural pathology at
+$q_0$ that produces 700 MeV mirror-nucleus errors.  Restoring
+trace-invariance for T2/T3 at $q_0$ is an open derivation question.*
 
 *All computation scripts are present with witness JSON files
 in `folio-assistant/computations/`.  **Paper-side completeness
