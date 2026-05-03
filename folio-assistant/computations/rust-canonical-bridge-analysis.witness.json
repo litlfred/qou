@@ -1,0 +1,95 @@
+{
+  "computation": "rust-canonical-bridge-analysis",
+  "description": "Investigates whether the 51 existing Rust hecke-engine certificates need a converter to canonical tr_M for use in the categorical mass formula.  CONCLUSION: bridge is unnecessary.  Pyhecke's markov_trace_symbolic_eval scales linearly via the V_s transfer-matrix recursion and computes canonical tr_M for \u00b2\u2070\u2078Pb (n=624) in ~40 ms.  The Rust engine's polynomial-basis enumeration is the wrong algorithm for this task; its f_pauli output is a structurally distinct Wedderburn PSD diagnostic, useful for other purposes.",
+  "computedAt": "2026-05-03T09:32:31.221594+00:00",
+  "verdict": "no-bridge-needed",
+  "rationale": [
+    "pyhecke.markov_trace_symbolic_eval is O(n) via V_s recursion",
+    "Rust v9 has compute_tr_markov_f64 (same formula) but doesn't store it",
+    "Rust v11_modular doesn't compute tr_M at all (only f_pauli/tr_alt/net)",
+    "Rust f_pauli is a different operator (Pauli-accumulator quotient)",
+    "Bottleneck for Z > 10 is content (which braids), not compute"
+  ],
+  "heavy_atom_benchmarks": [
+    {
+      "label": "4He",
+      "Z": 2,
+      "N": 2,
+      "n_strands": 12,
+      "tr_M_q0": 0.041648468842339324,
+      "wallclock_ms": 66.12825393676758
+    },
+    {
+      "label": "12C",
+      "Z": 6,
+      "N": 6,
+      "n_strands": 36,
+      "tr_M_q0": 9.736376827253295e-06,
+      "wallclock_ms": 2.002716064453125
+    },
+    {
+      "label": "16O",
+      "Z": 8,
+      "N": 8,
+      "n_strands": 48,
+      "tr_M_q0": 1.4886635035816304e-07,
+      "wallclock_ms": 2.7532577514648438
+    },
+    {
+      "label": "27Al",
+      "Z": 13,
+      "N": 14,
+      "n_strands": 81,
+      "tr_M_q0": 1.000323160499659e-12,
+      "wallclock_ms": 5.951166152954102
+    },
+    {
+      "label": "40Ca",
+      "Z": 20,
+      "N": 20,
+      "n_strands": 120,
+      "tr_M_q0": 1.901916929821616e-18,
+      "wallclock_ms": 6.145715713500977
+    },
+    {
+      "label": "56Fe",
+      "Z": 26,
+      "N": 30,
+      "n_strands": 168,
+      "tr_M_q0": 1.9850548237149643e-26,
+      "wallclock_ms": 8.917570114135742
+    },
+    {
+      "label": "60Co",
+      "Z": 27,
+      "N": 33,
+      "n_strands": 180,
+      "tr_M_q0": 1.3263673394414505e-28,
+      "wallclock_ms": 10.474443435668945
+    },
+    {
+      "label": "100Mo",
+      "Z": 42,
+      "N": 58,
+      "n_strands": 300,
+      "tr_M_q0": 1.476101504111916e-48,
+      "wallclock_ms": 15.261650085449219
+    },
+    {
+      "label": "208Pb",
+      "Z": 82,
+      "N": 126,
+      "n_strands": 624,
+      "tr_M_q0": 1.3025181553032609e-102,
+      "wallclock_ms": 31.981706619262695
+    },
+    {
+      "label": "238U",
+      "Z": 92,
+      "N": 146,
+      "n_strands": 714,
+      "tr_M_q0": 5.0146228013563435e-118,
+      "wallclock_ms": 37.04023361206055
+    }
+  ]
+}
