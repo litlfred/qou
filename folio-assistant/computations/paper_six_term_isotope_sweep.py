@@ -288,14 +288,28 @@ def paper_six_term_mass(Z, N, include_inter=True,
         t2 = mp.mpf(0)
         t3 = mp.mpf(0)
     elif tower_mode == "q1-base":
-        # Path A closed form: tr_M(T_w; q→1) = (1/2)^(2A-1).  Distribute
-        # this base value between T2 (single-gen) and T3 (pair-gen)
-        # in proportion to spectral-sequence page weights — not derived
-        # yet, so allocate the entire base to T2 and set T3 = 0.
-        # The combined T2 + T3 contribution at q→1 = (1/2)^(2A-1).
+        # Path A closed form: tr_M(T_w; q→1) = (1/2)^(2A-1).  Allocate
+        # to T2; set T3 = 0.  Captures the spectral-sequence base
+        # trace value at q→1 without per-generator amplification.
         A = Z + N
         t2 = mp.mpf(1) / mp.mpf(2) ** (2 * A - 1)
         t3 = mp.mpf(0)
+    elif tower_mode == "r-side-bare":
+        # R-side algebraic form per `prop:mass-endomorphism-tower`:
+        #   T2 = z · Σ_i tr_M(σ_i)    = n_gens · z² (Markov axiom)
+        #   T3 = z² · Σ_{i<j} tr_M(σ_i σ_j) = C(n_gens, 2) · z⁴ (Markov pair-z²)
+        # By the Markov axiom (Markov 1, Markov pair-z²), each single
+        # generator contributes z and each generator-pair contributes z²
+        # to the Markov trace, REGARDLESS of which braid β you're in.
+        # This evaluation is manifestly Markov-invariant (uses only the
+        # universal Markov axiom values, no per-braid-word data) and
+        # depends only on n_gens = number of Hecke generators in the
+        # ambient algebra.
+        n_gens_total = (3 * (Z + N) - 1) if include_inter else (2 * (Z + N))
+        z2 = Z_MARK ** 2
+        z4 = Z_MARK ** 4
+        t2 = n_gens_total * z2
+        t3 = mp.mpf(n_gens_total * (n_gens_total - 1) // 2) * z4
     else:
         raise ValueError(f"unknown tower_mode {tower_mode!r}")
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
@@ -411,7 +425,7 @@ if __name__ == "__main__":
         ("7Li", 3, 4, True,  6535.366),
     ]
 
-    modes = ["brane", "drop", "q1-base"]
+    modes = ["brane", "drop", "q1-base", "r-side-bare"]
     sweep_results = {}
     for mode in modes:
         E_0, rows = run_sweep_for_mode(mode, ISOTOPES)
