@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T00:37:35.492095+00:00",
-  "commitSha": "6b75e557351536720e3bf7552c423456d7fe36ec",
+  "computedAt": "2026-05-03T09:06:08.637187+00:00",
+  "commitSha": "a4c44829843ed9c4949de8d272153830385a2ce2",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1503,11 +1503,13 @@
         "h2-integer-lp.witness.json",
         "h2-molecular-binding.witness.json",
         "h6-full-computation.witness.json",
+        "habiro-coefficients-atomic-fast.witness.json",
         "habiro-coefficients-interpolate.witness.json",
         "habiro-exact-mass-endomorphism.witness.json",
         "habiro-frobenius-probe.witness.json",
         "habiro-interpolate-cross-validation.witness.json",
         "habiro-interpolation-recovery-demo.witness.json",
+        "habiro-motivic-orbit-relations.witness.json",
         "habiro-residue-symbolic.witness.json",
         "habiro-tail-in-ideal-validation.witness.json",
         "hadron-knot-table.witness.json",

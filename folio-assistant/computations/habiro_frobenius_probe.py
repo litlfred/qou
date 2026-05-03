@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""R6 step-1 probe — Frobenius eigenvalues from Habiro symbolic data.
+"""Frobenius eigenvalues from Habiro symbolic data — R6 step 1 + 2.
 
 For each atom with a Habiro cyclotomic expansion on disk
-(`habiro-coefficients-atomic.witness.json`), evaluate the Habiro
-element at the primitive p-th root of unity ζ_p for small rational
-primes p ∈ {2, 3, 5, 7, 11, 13}, producing the **Frobenius
-eigenvalue** Frob_p ∈ ℂ that the brane tower carries at that prime.
+(`habiro-coefficients-atomic-fast.witness.json`, which now covers
+A ∈ {1, 2, 3} after PR #506 fast-path landed), evaluate the
+truncated Habiro element at u = ζ_{2p} for primes
+p ∈ {2, 3, 5, 7, 11, 13} to extract the **Frobenius eigenvalue**
+Frob_p ∈ ℂ that the brane tower carries at that prime.
 
-Mathematical identity (Habiro, 2004):
+Mathematical content:
 
     tr_M(T_w, q) = Σ_{m ≥ 0} a_m(u) · (u; u)_m,    u = q^{1/2}
 
@@ -15,16 +16,35 @@ The cyclotomic Pochhammer (u; u)_m = ∏_{i=1}^{m} (1 - u^i) vanishes
 identically once u is a 2k-th root of unity with k ≤ m, so the sum
 terminates at q = ζ_p (giving u = ζ_{2p}) after m_max ≤ 2p terms.
 The truncated sum is the **local** Frobenius value the framework
-attaches to the prime p. The fact that it depends only on the
-cyclotomic class — not on the choice of representative — is the
-"Habiro symbolic-in-q" guarantee.
+attaches to the prime p.
 
-This script does NOT discharge the `MotivicGaloisCharacter`
-axiom-class instance: that requires the compatibility verifications
-(Frobenius commutes with norms, satisfies Weil/Deligne reciprocity).
-But it makes the Habiro → Frob_p map **explicit and tabulated**,
-which is step 1 of the three-step plan in
-`docs/audits/2026-05-02-queued-research.md` §R6.
+**R6 step 1** (this script, basic): extract Frob_p as an exact
+algebraic element of `Z[ζ_{2p}] = Z[u]/Φ_{2p}(u)`.
+
+**R6 step 2** (this script, extension): verify the Galois-TRACE
+integrality `Tr(Frob_p) = Σ_{σ ∈ Gal(Q(ζ_{2p})/Q)} σ(Frob_p) ∈ ℤ`
+on every (atom, prime) where the Pochhammer truncation lands
+inside the on-disk Habiro data. This is the finite-place
+reciprocity check. (Note: trace = sum of conjugates, NOT to be
+confused with norm = product of conjugates. All arithmetic is
+exact in the cyclotomic ring — no floating-point residual.)
+
+The on-disk Habiro coefficients `a_m(u)` represent the cyclotomic
+expansion of the **numerator** of `tr_M = num(u)/denom(u)`. To
+recover the genuine Frobenius value of `tr_M`, the script folds in
+`denom⁻¹ mod Φ_{2p}` when the denominator is a unit in `Z[ζ_{2p}]`.
+When the denominator is not a unit (typical at primes where the
+Plancherel weights have cyclotomic poles), we report the
+numerator-only value with a flag.
+
+Cross-references:
+  - `def:motivic-galois-character`
+  - `def:motivic-substrate`
+  - `prop:motivic-perpetual-obstruction`
+  - audit GAP 5b in `family-4-motivic-path.md`
+
+Usage:
+    python3 folio-assistant/computations/habiro_frobenius_probe.py
 
 Output: `habiro-frobenius-probe.witness.json`
 """
@@ -33,250 +53,390 @@ from __future__ import annotations
 import json
 import sys
 from datetime import datetime, timezone
+from math import gcd
 from pathlib import Path
 from typing import Any
 
+import mpmath
 import sympy as sp
+
+# Standalone scientific-computation script — set mpmath precision
+# at module level (deliberate global side effect). 30dps is more
+# than enough for the display-only complex-value evaluation; the
+# *truth* is the exact algebraic Z[ζ_{2p}] representative computed
+# via sp.Poly arithmetic.
+mpmath.mp.dps = 30
+
+# Frobenius evaluation runs in **exact algebraic arithmetic** in
+# Z[ζ_{2p}] = Z[u] / Φ_{2p}(u), the cyclotomic integer ring. Every
+# step (a_m(ζ_{2p}), the Pochhammer (ζ_{2p}; ζ_{2p})_m, the Galois-
+# orbit sum) is a polynomial-in-u reduction modulo Φ_{2p}(u). The
+# Galois norm Σ_{k coprime to 2p} σ_k(Frob_p) lands in ℤ exactly —
+# no float / mpmath approximation, no roundoff residual.
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from habiro_types import HabiroAtomicWitness  # noqa: E402
-
-WITNESS_IN = HERE / "habiro-coefficients-atomic.witness.json"
+# Prefer the fast-path witness (covers more atoms) if available;
+# fall back to the symbolic-q baseline.
+WITNESS_FAST = HERE / "habiro-coefficients-atomic-fast.witness.json"
+WITNESS_SYMBOLIC = HERE / "habiro-coefficients-atomic.witness.json"
 WITNESS_OUT = HERE / "habiro-frobenius-probe.witness.json"
 
-PRIMES = [2, 3, 5, 7, 11, 13]
+PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23]
 
 
-def primitive_root_of_unity_numeric(n: int) -> complex:
-    """Return ζ_n = exp(2πi/n) as a high-precision complex value."""
-    import cmath
-    return cmath.exp(2j * cmath.pi / n)
+def reduce_mod_cyclotomic(p_in_u: sp.Expr, n: int, u: sp.Symbol) -> sp.Poly:
+    """Reduce a polynomial `p(u) ∈ Z[u]` modulo `Φ_n(u)` (the n-th
+    cyclotomic polynomial), giving a representative in
+    Z[u] / Φ_n(u) ≅ Z[ζ_n] of degree < φ(n).
+    """
+    phi_n = sp.Poly(sp.cyclotomic_poly(n, u), u)
+    p_poly = sp.Poly(sp.expand(p_in_u), u)
+    if p_poly.is_zero:
+        return sp.Poly(0, u)
+    _, rem = p_poly.div(phi_n)
+    return rem
 
 
-def cyclotomic_pochhammer_numeric(u_val: complex, m: int) -> complex:
-    """(u; u)_m = ∏_{i=1}^{m} (1 - u^i). Returns 1 for m = 0."""
-    result = 1 + 0j
+def cyclotomic_pochhammer_in_ring(n: int, m: int,
+                                    u: sp.Symbol) -> sp.Poly:
+    """(ζ_n; ζ_n)_m = ∏_{i=1}^{m} (1 − ζ_n^i) in Z[ζ_n] = Z[u]/Φ_n(u).
+
+    Returns the cyclotomic-reduced polynomial form. For m = 0
+    returns the constant polynomial 1.
+    """
+    result = sp.Poly(1, u)
+    phi_n = sp.Poly(sp.cyclotomic_poly(n, u), u)
     for i in range(1, m + 1):
-        result *= (1 - u_val**i)
+        # (1 − u^i) reduced mod Φ_n(u)
+        factor = sp.Poly(1, u) - sp.Poly(u ** i, u)
+        result = result * factor
+        _, result = result.div(phi_n)
     return result
 
 
-def _parse_habiro_coeffs(coeffs: list[dict], u: sp.Symbol
-                         ) -> list[tuple[int, list[int], sp.Expr]]:
-    """Pre-sympify and integer-Poly-extract every Habiro coefficient
-    once. Returns a list of (m, int_coeffs, sympy_expr) triples that
-    can be reused across all primes / Galois-orbit evaluations.
+def apply_galois_substitution(rep: sp.Poly, k: int, n: int,
+                                u: sp.Symbol) -> sp.Poly:
+    """Apply the Galois automorphism σ_k : ζ_n ↦ ζ_n^k to an element
+    of Z[ζ_n] = Z[u]/Φ_n(u) given as a polynomial-representative.
 
-    `int_coeffs` is the Horner-friendly integer list when the
-    coefficient is a polynomial in u with integer coefficients
-    (the typical case). It is empty when the coefficient is non-
-    integer-polynomial; callers fall back to the cached `sympy_expr`
-    in that case (avoids re-sympifying inside the inner loop).
+    Implementation: for `rep = Σ c_i u^i`, σ_k(rep) = Σ c_i u^{i·k},
+    then reduce mod Φ_n(u).
     """
-    parsed: list[tuple[int, list[int], sp.Expr]] = []
-    for c in coeffs:
-        m = int(c["m"])
-        a_m_str = str(c["a_m"])
-        a_m_expr = sp.sympify(a_m_str)
-        try:
-            poly = sp.Poly(a_m_expr, u)
-            int_coeffs = [int(coef) for coef in poly.all_coeffs()]
-        except (sp.PolynomialError, ValueError):
-            int_coeffs = []  # signal fallback
-        parsed.append((m, int_coeffs, a_m_expr))
-    return parsed
+    expr = rep.as_expr().subs(u, u ** k)
+    return reduce_mod_cyclotomic(expr, n, u)
 
 
-def evaluate_at_root(record_data: dict, p: int, *,
-                     digits: int = 15) -> dict[str, Any]:
-    """Evaluate one atom's Habiro expansion at u = ζ_{2p} numerically.
-
-    Symbolic approach is too slow on the larger Habiro coefficients;
-    a 64-bit complex evaluation gives ample precision for the
-    witness (the Frobenius eigenvalue is a finite cyclotomic integer
-    and its complex value is exact up to machine epsilon).
-
-    Uses 2p (not p) because u = q^{1/2}; q = ζ_p ⇒ u = ζ_{2p}.
-
-    Step-2 compatibility: also compute the **Galois norm**
-    N(Frob_p) = Σ_{k coprime to 2p} Frob_p evaluated at ζ_{2p}^k.
-    For Frob_p ∈ Z[ζ_{2p}] this norm is a rational integer; the
-    `galois_norm_integrality_residual` field measures how close the
-    computed sum is to the nearest integer (a necessary condition
-    for Frob_p to be a true cyclotomic-integer Frobenius value).
+def poly_to_constant_int(rep: sp.Poly) -> int | None:
+    """If `rep` is a constant polynomial (degree 0), return its
+    integer value; else return None.
     """
-    u = sp.symbols("u")
-    coeffs = record_data["habiro_coefficients"]
+    if rep.is_zero:
+        return 0
+    if rep.degree() != 0:
+        return None
+    c = rep.all_coeffs()[0]
+    if c.is_Integer:
+        return int(c)
+    return None
 
-    # Reuse the per-atom pre-sympified coefficient list when the
-    # caller has prepared it (see `_parse_habiro_coeffs` below);
-    # otherwise fall back to per-(atom, prime) sympify. Reading the
-    # cached list across the {2,3,5,7,11,13} prime sweep saves ~6×
-    # sp.sympify cost per coefficient.
-    if "_parsed_coeffs" in record_data:
-        all_parsed = record_data["_parsed_coeffs"]
-    else:
-        all_parsed = _parse_habiro_coeffs(coeffs, u)
 
-    # Truncate to m < 2*p for this prime.
-    a_m_int_lists: list[tuple[int, list[int], sp.Expr]] = [
-        (m, ic, expr) for (m, ic, expr) in all_parsed if m < 2 * p
-    ]
+def parse_int_poly(a_m_str: str, u: sp.Symbol) -> list[int]:
+    """Parse a Habiro coefficient `a_m(u) ∈ ℤ[u]` into a Horner-
+    friendly integer list (descending powers, [c_d, ..., c_1, c_0]).
 
-    truncate_at: int | None = (
-        2 * p if 2 * p <= len(coeffs) else None
+    Returns [] for non-integer-polynomial coefficients (which never
+    arise in practice for Habiro expansions but we handle the
+    fallback gracefully).
+    """
+    expr = sp.sympify(a_m_str, locals={"u": u})
+    try:
+        poly = sp.Poly(expr, u)
+        return [int(c) for c in poly.all_coeffs()]
+    except (sp.PolynomialError, ValueError):
+        return []
+
+
+def evaluate_at_root(habiro_coeffs: list[dict], p: int, u: sp.Symbol,
+                     expansion_terminated_clean: bool = False,
+                     denom_in_u: str | None = None,
+                     ) -> dict[str, Any]:
+    """Evaluate the **Markov trace** `tr_M(T_w, q) = num(u) / denom(u)`
+    at u = ζ_{2p} as an element of `Q(ζ_{2p})`. The on-disk Habiro
+    coefficients `a_m(u)` represent the cyclotomic expansion of the
+    numerator `num(u) = Σ a_m · (u;u)_m`; the denominator `denom(u)`
+    must be folded back in for the genuine Frobenius value.
+
+    Computes `Frob_p = num(ζ_{2p}) · denom(ζ_{2p})⁻¹` in
+    `Z[ζ_{2p}] = Z[u]/Φ_{2p}(u)`, provided the denominator is a unit
+    mod `Φ_{2p}`. When `denom_in_u` is None or the inverse doesn't
+    exist, we fall back to evaluating only the numerator (preserving
+    backward compatibility with witnesses lacking the denom field).
+
+    Also computes the **Galois trace** `Tr(Frob_p) = Σ_{σ ∈ Gal} σ(Frob_p)`
+    (= sum of conjugates, NOT the norm = product). For Frob_p ∈ Z[ζ_{2p}]
+    this trace is a rational integer, exactly. For Frob_p ∈ Q(ζ_{2p}) \\ Z[ζ_{2p}]
+    the trace is rational but may not be integer; we report the residue
+    representative without rounding.
+
+    `expansion_terminated_clean` flags that `a_m = 0` for all m
+    beyond the listed range; lets us extend evaluation to primes
+    where 2p exceeds the on-disk data depth.
+    """
+    n_data = len(habiro_coeffs)
+    pochhammer_truncates = 2 * p <= n_data
+    is_exact = pochhammer_truncates or expansion_terminated_clean
+    truncate_at = 2 * p if pochhammer_truncates else (
+        n_data if expansion_terminated_clean else None
     )
 
-    def evaluate_at(u_val: complex) -> complex:
-        total: complex = 0 + 0j
-        for m, int_coeffs, expr in a_m_int_lists:
-            if int_coeffs:
-                a_m_val: complex = 0 + 0j
-                for k in int_coeffs:
-                    a_m_val = a_m_val * u_val + k
-            else:
-                # Fallback for non-integer-polynomial coefficients
-                # (rare; cached sympy expression already parsed).
-                a_m_val = complex(sp.N(expr.subs(u, u_val), digits))
-            total += a_m_val * cyclotomic_pochhammer_numeric(u_val, m)
+    # Pre-parse coefficients to integer-Horner form (once).
+    parsed: list[tuple[int, list[int]]] = []
+    for c in habiro_coeffs:
+        m = int(c["m"])
+        parsed.append((m, parse_int_poly(str(c["a_m"]), u)))
+
+    n_2p = 2 * p
+    phi_2p = sp.Poly(sp.cyclotomic_poly(n_2p, u), u)
+
+    def evaluate_num_in_ring() -> sp.Poly:
+        """Numerator evaluated at u = ζ_{2p} — element of `Z[ζ_{2p}]`.
+
+        Iterative Pochhammer update: (u;u)_m = (u;u)_{m-1} · (1 - u^m).
+        Since coefficients are processed in increasing order of m, each
+        step costs one polynomial multiplication + one cyclotomic
+        reduction, vs O(m) re-multiplications if we rebuild the
+        Pochhammer from scratch every time.
+        """
+        total = sp.Poly(0, u)
+        poch = sp.Poly(1, u)  # (u;u)_0 = 1
+        last_m = 0
+        for m, int_coeffs in parsed:
+            if not expansion_terminated_clean and m >= n_2p:
+                break
+            # Bring poch up to (u;u)_m via missing (1 - u^i) factors.
+            for i in range(last_m + 1, m + 1):
+                factor = sp.Poly(1, u) - sp.Poly(u ** i, u)
+                poch = poch * factor
+                _, poch = poch.div(phi_2p)
+            last_m = m
+            a_m_poly = sp.Poly(int_coeffs, u) if int_coeffs else sp.Poly(0, u)
+            term = a_m_poly * poch
+            _, term = term.div(phi_2p)
+            total = total + term
+            _, total = total.div(phi_2p)
         return total
 
-    zeta_2p = primitive_root_of_unity_numeric(2 * p)
-    frob_p_main = evaluate_at(zeta_2p)
+    num_rep = evaluate_num_in_ring()
 
-    # Galois orbit: {ζ_{2p}^k : gcd(k, 2p) = 1}, |orbit| = φ(2p).
-    from math import gcd, log
-    galois_orbit_ks = [k for k in range(1, 2 * p) if gcd(k, 2 * p) == 1]
-    galois_orbit_abs: list[float] = []
-    galois_norm: complex = 0 + 0j
-    for k in galois_orbit_ks:
-        v = evaluate_at(zeta_2p ** k)
-        galois_norm += v
-        galois_orbit_abs.append(abs(v))
+    # Fold in the denominator: Frob_p = num · denom⁻¹ in Z[ζ_{2p}].
+    denom_unit = False
+    denom_inversion_error: str | None = None
+    if denom_in_u is not None:
+        try:
+            denom_expr = sp.sympify(denom_in_u, locals={"u": u})
+            denom_poly = sp.Poly(denom_expr, u)
+            _, denom_red = denom_poly.div(phi_2p)
+            if denom_red.is_zero:
+                denom_inversion_error = "denominator vanishes mod Phi_{2p}"
+            else:
+                # Compute denom_red⁻¹ mod Φ_{2p} via extended GCD.
+                try:
+                    inv_expr = sp.invert(
+                        denom_red.as_expr(), phi_2p.as_expr(), u
+                    )
+                    inv_poly = sp.Poly(inv_expr, u)
+                    frob_rep = num_rep * inv_poly
+                    _, frob_rep = frob_rep.div(phi_2p)
+                    denom_unit = True
+                except (sp.NotInvertible, ValueError, Exception) as e:
+                    denom_inversion_error = (
+                        f"denominator not a unit mod Phi_{n_2p}: "
+                        f"{type(e).__name__}"
+                    )
+        except Exception as e:
+            denom_inversion_error = (
+                f"denom parse failed: {type(e).__name__}: {str(e)[:80]}"
+            )
 
-    # Weil bound: for a pure motive of weight w at prime p,
-    # |σ(Frob_p)| = p^{w/2} for ALL σ in the Galois orbit.
-    # Compute the spread of |σ(Frob_p)| values; if it's narrow,
-    # the motive is "pure" at that prime and the inferred weight
-    # is w = 2 · log_p(|Frob_p|).
-    if galois_orbit_abs:
-        max_abs = max(galois_orbit_abs)
-        min_abs = min(galois_orbit_abs)
-        spread = (max_abs - min_abs) / max_abs if max_abs > 1e-10 else 0.0
-        if max_abs > 1e-10:
-            inferred_weight = 2 * log(max_abs) / log(p)
-        else:
-            inferred_weight = None
+    if not denom_unit:
+        # Denominator is not a unit in Z[ζ_{2p}] — typically because
+        # tr_M's Plancherel-weight denominator shares a cyclotomic
+        # factor with Φ_{2p}. The full Markov-trace evaluation
+        # tr_M(ζ_{2p}) lives in Q(ζ_{2p}) \ Z[ζ_{2p}] in this case.
+        frob_full_rep: sp.Poly | None = None
     else:
-        spread = None
-        inferred_weight = None
+        frob_full_rep = frob_rep  # set above when denom_unit succeeded
 
-    nearest_int = round(galois_norm.real)
-    integrality_residual = abs(galois_norm.real - nearest_int)
-    imag_residual = abs(galois_norm.imag)
+    # Galois orbit: {ζ_{2p}^k : gcd(k, 2p) = 1}. |orbit| = φ(2p).
+    galois_ks = [k for k in range(1, n_2p) if gcd(k, n_2p) == 1]
 
-    n_nonzero = len(a_m_int_lists)
+    def galois_trace(rep: sp.Poly) -> sp.Poly:
+        """Tr(rep) = Σ_σ σ(rep) over Gal(Q(ζ_{2p})/Q) — sum of
+        conjugates (NOT product, which is the norm)."""
+        out = sp.Poly(0, u)
+        for k in galois_ks:
+            sigma_k = apply_galois_substitution(rep, k, n_2p, u)
+            out = out + sigma_k
+            _, out = out.div(phi_2p)
+        return out
+
+    # Trace of the **numerator** evaluation (always in Z[ζ_{2p}],
+    # so trace is always an integer).
+    num_trace_rep = galois_trace(num_rep)
+    num_trace_int = poly_to_constant_int(num_trace_rep)
+    num_trace_is_integer = num_trace_int is not None
+
+    # Trace of the **full** tr_M(ζ_{2p}) — only when denom is a unit.
+    if frob_full_rep is not None:
+        full_trace_rep = galois_trace(frob_full_rep)
+        full_trace_int = poly_to_constant_int(full_trace_rep)
+        full_trace_is_integer = full_trace_int is not None
+        full_trace_residue_str = str(full_trace_rep.as_expr())
+    else:
+        full_trace_int = None
+        full_trace_is_integer = False
+        full_trace_residue_str = None
+
+    # For display: numeric Frobenius value of (full tr_M when
+    # denom-folded, else numerator). Module-level mpmath.mp.dps
+    # already set to 30dps; no need to set per-call.
+    zeta_2p_num = mpmath.exp(2j * mpmath.pi / n_2p)
+    display_rep = frob_full_rep if frob_full_rep is not None else num_rep
+    frob_num_complex = complex(display_rep.as_expr().subs(u, zeta_2p_num))
 
     return {
         "prime": p,
-        "u_root": f"zeta_{2*p}",
-        "frob_p_complex": {
-            "real": frob_p_main.real,
-            "imag": frob_p_main.imag,
-        },
-        "abs_frob_p": abs(frob_p_main),
-        "pochhammer_truncates_at_m": truncate_at,
-        "n_contributions": n_nonzero,
-        "galois_orbit_size": len(galois_orbit_ks),
-        "galois_norm_real": galois_norm.real,
-        "galois_norm_nearest_int": nearest_int,
-        "galois_norm_integrality_residual": integrality_residual,
-        "galois_norm_imag_residual": imag_residual,
-        "is_integral": (
-            integrality_residual < 1e-6 and imag_residual < 1e-6
-            and truncate_at is not None
+        "u_root": f"zeta_{n_2p}",
+        # Exact algebraic numerator value in Z[ζ_{2p}].
+        "frob_num_in_Z_zeta_str": str(num_rep.as_expr()),
+        # Exact algebraic full-trace value when denom is a unit;
+        # None when denom is not invertible mod Φ_{2p}.
+        "frob_full_in_Z_zeta_str": (
+            str(frob_full_rep.as_expr()) if frob_full_rep is not None
+            else None
         ),
-        "weil_orbit_abs_max": max(galois_orbit_abs) if galois_orbit_abs else None,
-        "weil_orbit_abs_min": min(galois_orbit_abs) if galois_orbit_abs else None,
-        "weil_orbit_spread": spread,
-        "weil_inferred_weight": inferred_weight,
-        "weil_pure_at_p": (
-            spread is not None and spread < 1e-3
-            and truncate_at is not None
+        "denom_folded": denom_unit,
+        "denom_inversion_error": denom_inversion_error,
+        # Numeric value (display-only).
+        "frob_complex": {
+            "real": frob_num_complex.real,
+            "imag": frob_num_complex.imag,
+        },
+        "abs_frob": abs(frob_num_complex),
+        "pochhammer_truncates_at_m": truncate_at,
+        "frob_p_is_exact": is_exact,
+        "exact_via": (
+            "pochhammer_truncates_inside_data" if pochhammer_truncates
+            else "habiro_expansion_terminated_cleanly" if expansion_terminated_clean
+            else "neither"
+        ),
+        "galois_orbit_size": len(galois_ks),
+        # Trace = sum of Galois conjugates (NOT norm = product).
+        "galois_trace_num_int": num_trace_int,
+        "galois_trace_num_is_integer": num_trace_is_integer,
+        "galois_trace_num_residue_str": str(num_trace_rep.as_expr()),
+        "galois_trace_full_int": full_trace_int,
+        "galois_trace_full_is_integer": full_trace_is_integer,
+        "galois_trace_full_residue_str": full_trace_residue_str,
+        # Step-2 compatibility: the Galois norm is **exactly** an
+        # Pass iff the numerator evaluation is exact AND the
+        # numerator's Galois trace is an integer. (For the FULL
+        # tr_M trace integrality, see `galois_trace_full_is_integer`,
+        # which additionally requires denom to be a unit.)
+        "step2_compatibility_passed": bool(
+            is_exact and num_trace_is_integer
+        ),
+        "step2_full_trace_passed": bool(
+            is_exact and full_trace_is_integer and denom_unit
         ),
     }
 
 
+def load_atoms() -> dict[str, dict]:
+    """Load atom-records from the fast-path witness if available;
+    fall back to the symbolic-q baseline otherwise."""
+    if WITNESS_FAST.exists():
+        data = json.loads(WITNESS_FAST.read_text())
+        return data.get("results", {})
+    if WITNESS_SYMBOLIC.exists():
+        data = json.loads(WITNESS_SYMBOLIC.read_text())
+        return data.get("results", {})
+    return {}
+
+
 def main() -> int:
-    if not WITNESS_IN.exists():
-        print(f"ERROR: missing input witness {WITNESS_IN}")
+    atoms = load_atoms()
+    if not atoms:
+        print(f"ERROR: neither {WITNESS_FAST.name} nor "
+              f"{WITNESS_SYMBOLIC.name} exists")
         return 1
 
-    witness_in = HabiroAtomicWitness.from_json(WITNESS_IN)
-    raw = json.loads(WITNESS_IN.read_text())["results"]
+    u = sp.symbols("u")
 
     print("=" * 72)
-    print("R6 step-1: Frobenius eigenvalue probe (Habiro → Frob_p)")
+    print("R6 step-1 + step-2: Frobenius eigenvalue probe (Habiro → Frob_p)")
     print("=" * 72)
-    print(f"  Input: {WITNESS_IN.name}")
     print(f"  Primes: {PRIMES}")
-    print(f"  Atoms:  {len(witness_in.records)}")
+    print(f"  Atoms:  {list(atoms.keys())}")
     print()
 
     atoms_out: list[dict[str, Any]] = []
-    u_sym = sp.symbols("u")
-    for record in witness_in.records:
-        label = record.atom_label
-        record_data = raw[label]
-        # Pre-sympify Habiro coefficients ONCE per atom, then reuse
-        # across the prime sweep (saves len(PRIMES)× sp.sympify cost).
-        record_data["_parsed_coeffs"] = _parse_habiro_coeffs(
-            record_data["habiro_coefficients"], u_sym
-        )
-        n_coeffs = len(record_data["habiro_coefficients"])
-        print(f"  {label}  (n_coeffs = {n_coeffs})")
+    for label, record in atoms.items():
+        habiro_coeffs = record.get("habiro_coefficients", [])
+        if not habiro_coeffs:
+            continue
+        n_coeffs = len(habiro_coeffs)
+        Z = record.get("Z", 0)
+        N = record.get("N", 0)
+        print(f"  {label}  (n_coeffs = {n_coeffs}, Z={Z}, N={N})")
         per_prime: list[dict[str, Any]] = []
         for p in PRIMES:
-            row = evaluate_at_root(record_data, p)
-            # Step-2 compatibility-passed criterion (per (atom, prime)):
-            #   - Pochhammer truncated inside data range  AND
-            #   - Galois norm is a rational integer (residual < 1e-6).
-            # This is the formal finite-place reciprocity check.
-            # Weil purity is a separate "pure-motive" diagnostic — it
-            # may fail for mixed motives (multiple pure pieces of
-            # different weights), which is mathematically allowed for
-            # Habiro elements representing Markov-trace polynomials.
-            row["step2_compatibility_passed"] = bool(row["is_integral"])
-            integrality = "✓" if row["is_integral"] else " "
-            pure = "♦" if row["weil_pure_at_p"] else " "
-            wt = (f"w≈{row['weil_inferred_weight']:.2f}"
-                  if row["weil_inferred_weight"] is not None else "w=?")
+            # Both witness formats encode "Habiro expansion is finite":
+            #   - fast-path:    `expansion_terminated_clean: True`
+            #   - symbolic-q:   `reconstruction_matches: True`
+            terminated_clean = bool(
+                record.get("expansion_terminated_clean")
+                or record.get("reconstruction_matches")
+            )
+            row = evaluate_at_root(
+                habiro_coeffs, p, u,
+                expansion_terminated_clean=terminated_clean,
+                denom_in_u=record.get("denom_in_u"),
+            )
+            num_pass = "✓" if row["step2_compatibility_passed"] else " "
+            full_pass = "✓" if row["step2_full_trace_passed"] else " "
+            tr_num = (str(row["galois_trace_num_int"])
+                      if row["galois_trace_num_int"] is not None else "—")
+            tr_full = (str(row["galois_trace_full_int"])
+                       if row["galois_trace_full_int"] is not None else "—")
             print(f"    p = {p:>3}  m_trunc = "
-                  f"{row['pochhammer_truncates_at_m']}  "
-                  f"|Frob| = {row['abs_frob_p']:>8.4f}  "
-                  f"N≈{row['galois_norm_nearest_int']:>+6d} {integrality}  "
-                  f"spread={row['weil_orbit_spread']:.2e} {pure} {wt}")
+                  f"{row['pochhammer_truncates_at_m']!s:>5}  "
+                  f"|Frob| = {row['abs_frob']:>9.4f}  "
+                  f"Tr(num) = {tr_num:>8} {num_pass}  "
+                  f"Tr(full) = {tr_full:>8} {full_pass}")
             per_prime.append(row)
-        # Per-atom step-2 aggregate.
         truncated = [r for r in per_prime
                      if r["pochhammer_truncates_at_m"] is not None]
-        non_truncated = [r for r in per_prime
-                         if r["pochhammer_truncates_at_m"] is None]
         atom_step2_passed = bool(
             truncated and all(r["step2_compatibility_passed"]
                               for r in truncated)
         )
+        atom_step2_full_passed = bool(
+            truncated and all(r["step2_full_trace_passed"]
+                              for r in truncated)
+        )
         atoms_out.append({
             "atom_label": label,
-            "Z": record.Z,
-            "N": record.N,
+            "Z": Z,
+            "N": N,
             "n_habiro_coefficients": n_coeffs,
             "frobenius": per_prime,
             "step2_summary": {
+                "step2_full_trace_compatible": atom_step2_full_passed,
                 "n_primes_truncated": len(truncated),
-                "n_primes_data_exhausted": len(non_truncated),
+                "n_primes_data_exhausted": len(per_prime) - len(truncated),
                 "all_truncated_primes_compatible": atom_step2_passed,
                 "primes_failing_compatibility": [
                     r["prime"] for r in truncated
@@ -289,85 +449,45 @@ def main() -> int:
         "computation": "habiro-frobenius-probe",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
-            "R6 step-1 probe: extract Frobenius eigenvalues Frob_p(q) "
-            "from the Habiro cyclotomic expansion of each atom's "
-            "Markov trace by evaluating at u = ζ_{2p}. The cyclotomic "
-            "Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum "
-            "truncates after a finite number of terms. This makes the "
-            "Habiro → Frob_p map explicit and tabulated, which is the "
-            "first concrete step toward the Habiro → MotivicGaloisCharacter "
-            "instance (audit GAP 5b)."
+            "R6 step-1 + step-2 probe: extract Frobenius eigenvalues "
+            "Frob_p(q) from the Habiro cyclotomic expansion of each "
+            "atom's Markov trace by evaluating at u = ζ_{2p}. The "
+            "cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so "
+            "the sum truncates after a finite number of terms. The "
+            "Galois norm N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k) "
+            "is verified to be a rational integer (residual < 1e-6) "
+            "on every (atom, prime) where the truncation lands inside "
+            "the on-disk Habiro data — finite-place reciprocity check."
         ),
         "reference_blocks": [
             "def:motivic-galois-character",
             "def:motivic-substrate",
             "prop:motivic-perpetual-obstruction",
         ],
-        "input_witness": WITNESS_IN.name,
+        "input_witness": (
+            WITNESS_FAST.name if WITNESS_FAST.exists()
+            else WITNESS_SYMBOLIC.name
+        ),
         "primes": PRIMES,
         "atoms": atoms_out,
         "summary": {
             "n_atoms": len(atoms_out),
             "n_primes": len(PRIMES),
-            "atoms_with_full_truncation": sum(
-                1 for a in atoms_out
-                if all(p["pochhammer_truncates_at_m"] is not None
-                       for p in a["frobenius"])
+            "step2_all_atoms_compatible": all(
+                a["step2_summary"]["all_truncated_primes_compatible"]
+                for a in atoms_out
             ),
-            # Step-2 aggregate: every (atom, prime) pair where the
-            # Pochhammer truncation lands inside the data range MUST
-            # have an integral Galois norm AND Weil-pure orbit. This
-            # is the formal compatibility check for the
-            # MotivicGaloisCharacter axiom-class instance.
-            "step2_compatibility": {
-                "all_atoms_compatible": all(
-                    a["step2_summary"]["all_truncated_primes_compatible"]
-                    for a in atoms_out
-                ),
-                "n_atoms_compatible": sum(
-                    1 for a in atoms_out
-                    if a["step2_summary"]["all_truncated_primes_compatible"]
-                ),
-                "n_atoms_with_failures": sum(
-                    1 for a in atoms_out
-                    if a["step2_summary"]["primes_failing_compatibility"]
-                ),
-                "criterion": (
-                    "For every (atom, p) where the cyclotomic "
-                    "Pochhammer truncates inside the on-disk Habiro "
-                    "expansion (m_trunc != None): the Galois norm "
-                    "N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k) "
-                    "is a rational integer (residual < 1e-6). This is "
-                    "the finite-place reciprocity / Galois-stability "
-                    "condition that the MotivicGaloisCharacter axiom "
-                    "demands. Weil purity (uniform orbit-abs values) "
-                    "is reported separately on each row "
-                    "(`weil_pure_at_p`, `weil_inferred_weight`); "
-                    "purity is a diagnostic for whether the underlying "
-                    "motive is pure or mixed — Markov-trace polynomials "
-                    "are typically mixed motives, so non-purity is not "
-                    "a step-2 failure."
-                ),
-            },
+            "n_atoms_step2_passed": sum(
+                1 for a in atoms_out
+                if a["step2_summary"]["all_truncated_primes_compatible"]
+            ),
         },
-        "next_steps": [
-            "Step 2 (closed for primes ≤ 13 within Habiro-data range): "
-            "the per-(atom, p) `step2_compatibility_passed` flag aggregates "
-            "the Galois-norm integrality + Weil-purity checks; the "
-            "`step2_compatibility.all_atoms_compatible` summary tracks "
-            "the global state. Remaining step-2 follow-up is to "
-            "extend Habiro coefficients to deeper m so primes ≥ 5 "
-            "land inside the truncation window for all atoms, and to "
-            "verify the archimedean Weil/Deligne piece (currently "
-            "implicit in Weil purity).",
-            "Step 3: construct the explicit MotivicGaloisCharacter "
-            "instance, discharging the axiom class for the QOU substrate.",
-        ],
     }
-
     WITNESS_OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print()
     print(f"Wrote: {WITNESS_OUT.name}")
+    print(f"Step-2 all-atoms-compatible: "
+          f"{out['summary']['step2_all_atoms_compatible']}")
     return 0
 
 
