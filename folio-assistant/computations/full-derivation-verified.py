@@ -24,6 +24,13 @@ from sympy import cancel, factor, sqrt, Rational
 import math
 from itertools import product as cartesian
 
+# Σ_all closed-form evaluator (replaces raw config-sum routes for any A;
+# essential for A ≥ 27 where f64 cancellation eats precision, but used
+# uniformly here for all A so the pipeline path is identical).
+# See docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769.
+import mpmath as mp
+from sigma_all_evaluator import sigma_all_closed
+
 # ══════════════════════════════════════════════════════════════
 #  STEP 0: INPUTS (3 observed values)
 # ══════════════════════════════════════════════════════════════
@@ -252,9 +259,15 @@ ch_names = list(ch_data.keys())
 
 # === FREE NEUTRON ===
 print(f"\n  ── FREE NEUTRON (A=1) ──")
-char_sum_n = sum_p - sum_n  # = 0.5295
+# Σ_all(A=1) = sum over channels of (G_p - G_n).
+# Both routes agree to f64 floor; the closed form is the canonical
+# evaluator (consistent with A=3, A=6 paths below).
+char_sum_n = float(sigma_all_closed(1, mp.mpf(q0)))  # closed form
+char_sum_n_legacy = sum_p - sum_n                    # legacy sum-over-4-channels
+assert abs(char_sum_n - char_sum_n_legacy) < 1e-12, \
+    f"Σ_all(1) closed-form {char_sum_n} disagrees with channel-sum {char_sum_n_legacy}"
 Q_neutron = (char_sum_n + 1) * M_E
-print(f"  Σ Δme = {char_sum_n:.10f}")
+print(f"  Σ Δme (closed-form) = {char_sum_n:.10f}")
 print(f"  Q = (Σ Δme + 1) × m_e = ({char_sum_n:.4f} + 1) × {M_E}")
 print(f"    = {Q_neutron:.6f} MeV")
 print(f"  Q_exp = 0.782333 MeV, error = {(Q_neutron/0.782333-1)*100:+.2f}%")
@@ -262,20 +275,13 @@ print(f"  The +1 = emitted electron (categorical action cost)")
 
 # === TRITIUM ===
 print(f"\n  ── TRITIUM ³H→³He (A=3) ──")
-par3 = ['p','n','n']
-dau3 = ['p','p','n']
-total_3h = 0.0
-for config in cartesian(ch_names, repeat=3):
-    me_p = 1.0; me_d = 1.0
-    for m in range(3):
-        tp = 'p' if par3[m]=='p' else 'n'
-        td = 'p' if dau3[m]=='p' else 'n'
-        me_p *= float(ch_data[config[m]][tp].subs(q, q0))
-        me_d *= float(ch_data[config[m]][td].subs(q, q0))
-    total_3h += me_d - me_p
+# Σ_all(A=3) via closed-form evaluator (cancellation-free path).
+# The raw 4³ = 64-config sum is mathematically equivalent but loses
+# precision via catastrophic cancellation; the closed form is exact.
+total_3h = float(sigma_all_closed(3, mp.mpf(q0)))
 
 Q_3h = abs(total_3h) * M_E
-print(f"  64 configs, Σ Δme = {total_3h:+.10f}")
+print(f"  Σ_all(3) closed-form, Σ Δme = {total_3h:+.10f}")
 print(f"  Q = |Σ Δme| × m_e = {Q_3h:.6f} MeV")
 print(f"  Q_exp = 0.018610 MeV, error = {(Q_3h/0.018610-1)*100:+.2f}%")
 
@@ -284,10 +290,14 @@ print(f"\n  ── ⁶He→⁶Li (A=6, FROBENIUS-FILTERED) ──")
 par6 = ['p','p','n','n','n','n']
 dau6 = ['p','p','p','n','n','n']
 
-total_6he_all = 0.0
+# Σ_all(A=6): closed-form evaluator (no cancellation).
+total_6he_all = float(sigma_all_closed(6, mp.mpf(q0)))
+
+# Σ_FP (Frobenius-positivity filtered): genuinely different — only the
+# subset of 4^A configs with both me_par ≥ 0 AND me_dau ≥ 0 contributes.
+# This is *not* yet covered by a closed form, so we still enumerate.
 total_6he_fp = 0.0
 n_fp = 0
-
 for config in cartesian(ch_names, repeat=6):
     me_p = 1.0; me_d = 1.0
     for m in range(6):
@@ -296,7 +306,6 @@ for config in cartesian(ch_names, repeat=6):
         me_p *= float(ch_data[config[m]][tp].subs(q, q0))
         me_d *= float(ch_data[config[m]][td].subs(q, q0))
     dme = me_d - me_p
-    total_6he_all += dme
     if me_p >= 0 and me_d >= 0:  # Frobenius positivity
         total_6he_fp += dme
         n_fp += 1
@@ -305,8 +314,8 @@ Q_6he_all = abs(total_6he_all) * M_E
 Q_6he_fp = abs(total_6he_fp) * M_E
 
 print(f"  4096 configs, {n_fp} Frobenius-positive")
-print(f"  Σ Δme (all) = {total_6he_all:+.10f} → Q = {Q_6he_all:.6f} MeV")
-print(f"  Σ Δme (FP)  = {total_6he_fp:+.10f} → Q = {Q_6he_fp:.6f} MeV")
+print(f"  Σ Δme (all, closed-form) = {total_6he_all:+.10f} → Q = {Q_6he_all:.6f} MeV")
+print(f"  Σ Δme (FP, enumerated)   = {total_6he_fp:+.10f} → Q = {Q_6he_fp:.6f} MeV")
 print(f"  Q_exp = 3.508000 MeV, error(FP) = {(Q_6he_fp/3.508-1)*100:+.2f}%")
 
 # ══════════════════════════════════════════════════════════════

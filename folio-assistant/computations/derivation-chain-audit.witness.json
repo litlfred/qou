@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T10:30:09.470229+00:00",
-  "commitSha": "183baf1b48db58c8a2739ed67149d8698591011a",
+  "computedAt": "2026-05-03T11:06:35.855477+00:00",
+  "commitSha": "c97006b27fa9a94efb88ce71ed528ff3779de982",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1637,6 +1637,7 @@
         "nuclear-markov-trace.witness.json",
         "nucleon-with-gluons-nf.witness.json",
         "nv-pslq-extended-basis.witness.json",
+        "nv1_candidate_a_doubleprime.witness.json",
         "odd-a-census-search.witness.json",
         "odd-a-decomposition-search.witness.json",
         "p-n-error-isolate.witness.json",
@@ -1726,6 +1727,7 @@
         "shell-correction-lambda.witness.json",
         "shell-level-qvalues.witness.json",
         "shell7-bb-stratum.witness.json",
+        "sigma-all-evaluator.witness.json",
         "sigma-all-symbolic-decay.witness.json",
         "sigma-shell-characterization.witness.json",
         "six-term-mass-pred.witness.json",
