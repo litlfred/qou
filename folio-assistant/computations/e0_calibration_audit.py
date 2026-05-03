@@ -80,6 +80,24 @@ CANONICAL_REFS = {
 }
 
 
+def _classify_line(line: str) -> str:
+    """Classify a line as 'active' (code) or 'doc' (comment / string).
+
+    Heuristic: ignore lines starting with `#`, or inside a triple-
+    quoted block. Lines that are pure print-format strings are also
+    treated as 'doc' for drift detection.
+    """
+    s = line.strip()
+    if s.startswith("#"):
+        return "doc"
+    # Crude: print/string lines where the literal is inside quotes
+    if (s.startswith(("print(", "print ", "raise ", "msg =",
+                       'f"', "f'", '"', "'", "_msg")) or
+            "f\"" in s and "0.782" in s and "{" not in s.split("0.782")[1][:5]):
+        return "doc"
+    return "active"
+
+
 def scan() -> dict:
     py_files = sorted(
         (HERE).glob("*.py")
@@ -89,17 +107,30 @@ def scan() -> dict:
         if f.name in CANONICAL_REFS:
             continue
         text = f.read_text(encoding="utf-8", errors="replace")
+        # Pre-compute docstring blocks (lines inside triple-quoted
+        # blocks at module / function scope).
+        in_doc = False
+        doc_lines: set[int] = set()
+        for ln, raw in enumerate(text.splitlines(), 1):
+            tcount = raw.count(chr(34)*3) + raw.count(chr(39)*3)
+            if in_doc:
+                doc_lines.add(ln)
+            if tcount % 2 == 1:
+                in_doc = not in_doc
+                if in_doc:
+                    doc_lines.add(ln)
         for label, pat in PATTERNS.items():
             for m in pat.finditer(text):
-                # Get the line for context
                 line_no = text[:m.start()].count("\n") + 1
                 line = text.splitlines()[line_no - 1]
+                kind = "doc" if line_no in doc_lines else _classify_line(line)
                 findings.append({
                     "file": str(f.relative_to(ROOT)),
                     "line": line_no,
                     "pattern": label,
                     "match": m.group(),
                     "context": line.strip()[:160],
+                    "kind": kind,
                 })
     return findings
 
@@ -117,10 +148,16 @@ def main() -> int:
     for f in findings:
         by_pattern.setdefault(f["pattern"], []).append(f)
 
-    # Identify the inconsistencies
-    has_low_precision = bool(by_pattern.get("literal_0_782"))
-    has_high_precision = bool(by_pattern.get("literal_0_78233341"))
-    has_proton_anchor = bool(by_pattern.get("proton_mass_anchor"))
+    # Inconsistencies are based on ACTIVE-code findings only;
+    # docstring / comment / print-string mentions are documentary
+    # and don't affect numerical results.
+    def _active(label: str) -> list:
+        return [f for f in by_pattern.get(label, [])
+                if f.get("kind") == "active"]
+
+    has_low_precision = bool(_active("literal_0_782"))
+    has_high_precision = bool(_active("literal_0_78233341"))
+    has_proton_anchor = bool(_active("proton_mass_anchor"))
 
     inconsistencies: list[str] = []
     if has_low_precision and has_high_precision:
@@ -155,7 +192,8 @@ def main() -> int:
     print()
     for label in PATTERNS:
         hits = by_pattern.get(label, [])
-        print(f"  {label:<30} {len(hits):>3} occurrences")
+        active = [h for h in hits if h.get("kind") == "active"]
+        print(f"  {label:<30} {len(hits):>3} total ({len(active)} active)")
     print()
 
     if inconsistencies:

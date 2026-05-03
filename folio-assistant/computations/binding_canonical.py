@@ -39,6 +39,7 @@ from hecke_symbolic import (
     SymbolicHeckeDivision, SymbolicHeckeElement, HA as H_SYMB, q as q_sym,
 )
 from mass_at_3A_proper import atom_braid_word_3A
+from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
 from q_parameter import Q as Q0_NUM, HA as H0_NUM  # central source of truth
 
 
@@ -110,7 +111,7 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 
 
 def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
-                        E_0: float = 0.782,
+                        E_0: float = float(_Q_BETA_N),
                         reduce_before_trace: bool = True,
                         verbose: bool = False) -> dict:
     """Binding via canonical Markov trace.

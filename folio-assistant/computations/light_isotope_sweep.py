@@ -193,7 +193,8 @@ if __name__ == "__main__":
     tr_p, _, dt_p = tr_M_at_q0(1, 0, include_inter=False, convention=CONV)
     tr_n, _, dt_n = tr_M_at_q0(0, 1, include_inter=False, convention=CONV)
     Q_cat = tr_n - tr_p
-    E_0 = 0.782 / abs(Q_cat)
+    from experimental_constants import Q_NEUTRON_MEV
+    E_0 = float(Q_NEUTRON_MEV) / abs(Q_cat)
     print(f"  |tr_M(p)| = {abs(tr_p):.6e}  (walltime: {dt_p:.2f}s)")
     print(f"  |tr_M(n)| = {abs(tr_n):.6e}  (walltime: {dt_n:.2f}s)")
     print(f"  Q_cat     = {Q_cat:+.6e}")

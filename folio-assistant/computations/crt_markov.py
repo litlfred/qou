@@ -541,7 +541,9 @@ if __name__ == "__main__":
     tr_p = tr_M_at_q0_via_crt(1, 0, False, 1, 1, 1, q0)
     tr_n = tr_M_at_q0_via_crt(0, 1, False, 1, 1, 1, q0)
     Q_beta_cat = abs(tr_n) - abs(tr_p)
-    E_0_cat = mpmath.mpf('0.782') / abs(Q_beta_cat) if abs(Q_beta_cat) > 0 else 0
+    from experimental_constants import Q_NEUTRON_MEV
+    E_0_cat = (mpmath.mpf(str(Q_NEUTRON_MEV)) / abs(Q_beta_cat)
+               if abs(Q_beta_cat) > 0 else 0)
     print()
     print(f"  Calibration (β-decay):")
     print(f"    |tr_M(p)|  = {abs(tr_p)!s}")

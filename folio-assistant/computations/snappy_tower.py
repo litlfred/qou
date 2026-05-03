@@ -325,7 +325,10 @@ def average_volume(Z: int, N: int, *, include_inter: bool = True,
     }
 
 
-def binding_snappy(Z: int, N: int, *, E_0: float = 0.782,
+from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N  # noqa: E402
+
+
+def binding_snappy(Z: int, N: int, *, E_0: float = float(_Q_BETA_N),
                      include_canonical: bool = True,
                      max_resolutions: int = 1024) -> dict:
     """Binding via SnapPy hyperbolic-volume non-perturbative tower.
@@ -390,7 +393,8 @@ if __name__ == "__main__":
     ]
     print("=" * 110)
     print("SNAPPY NON-PERTURBATIVE TOWER: Vol(K)/ℏ_q² + canonical tr_M")
-    print(f"q₀ = {Q0}, ℏ_q² = {HBAR_Q_SQ:.6f}, E_0 = 0.782 MeV")
+    print(f"q₀ = {Q0}, ℏ_q² = {HBAR_Q_SQ:.6f}, "
+          f"E_0 = {float(_Q_BETA_N):.8f} MeV (Q_β(n))")
     print("=" * 110)
     print(f"\n  {'Atom':>4} {'A':>3} {'M':>4} {'ΔVol_hyp':>10} "
           f"{'ΔVol_reg':>10} {'B_canon':>9} {'B_tower_hyp':>12} "
@@ -443,7 +447,7 @@ if __name__ == "__main__":
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {"q0": Q0, "hbar_q_sq": HBAR_Q_SQ,
-                        "E_0_MeV": 0.782},
+                        "E_0_MeV": float(_Q_BETA_N)},
         "results": results,
     }
     out = Path(__file__).parent / "snappy-tower.witness.json"
