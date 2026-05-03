@@ -104,37 +104,46 @@ Going further requires:
 These are **research-grade content-authoring tasks**. Not derivable
 in a single computational session.
 
-## Structural interpretation of the numerical anchor
+## Two competing path-α-coherent structural anchors (both UNPROVEN)
 
-The empirical structural form $\mathcal{N}_{\rm sym}(q) \approx
-[3]_q \cdot [4]_q^3$ (matching at 0.87% per
-[`n-sym-goldstone-phase-space-probe.witness.json`](../../folio-assistant/computations/n-sym-goldstone-phase-space-probe.witness.json))
-admits a categorically natural — though unproven — interpretation:
+Two structural forms admit categorical justification — each factor has
+a categorical reason — but neither is a derivation:
 
-- $[3]_q$ = q-dim of the **adjoint of** $\mathrm{SU}(2)_L$
-  (which has 3 generators); the unbroken $T_3 + Y$ direction's
-  residual symmetry algebra contributes this factor.
-- $[4]_q^3$ = **three Goldstone q-dim factors** of $[4]_q$ each,
-  where $[4]_q$ is the natural q-dim scale of the W-host (the
-  smallest broken-gauge host at genus 1, $T(2,4)$).
-- The 0.87% deviation is the **Higgs-scalar residual contribution**
-  — the 1 surviving real scalar in the Higgs doublet after the 3
-  Goldstones are eaten, contributing a small $q_0$-deformation
-  correction.
+### Anchor I: $\mathcal{N}_{\rm sym} \approx [3]_q \cdot [4]_q^3$ (0.87% off)
 
-**This is interpretation, not derivation.** The interpretation is
-*consistent* with the categorical Higgs mechanism (3 broken generators
-+ 1 residual scalar; $\mathrm{SU}(2)_L$ adjoint structure), but it
-does not constitute a proof. The interpretation predicts:
+- $[3]_q$ = q-dim of $\mathrm{SU}(2)_L$ **adjoint** (3 broken
+  generators)
+- $[4]_q^3$ = three Goldstones at the W-host scale (assumes uniform
+  $g$-coupling for all 3 broken directions, **contradicting** the
+  $W^3$-$B$ mixing that gives Z a different coupling)
 
-$$
-  \mathcal{N}_{\rm sym}(q) \;=\; [3]_q \cdot [4]_q^3 \cdot
-  \bigl(1 + \text{Higgs-scalar correction}\bigr),
-$$
+### Anchor II: $\mathcal{N}_{\rm sym} \approx [2]_q \cdot [4]_q^2 \cdot [6]_q$ (1.81% off)
 
-with the 0.87% correction reflecting the categorical $q_0$-deformation
-of the residual scalar — a quantity that **would** be calculable from
-$e_H$ once $\langle\Phi\rangle$ is concretely identified.
+- $[2]_q$ = q-dim of $\mathrm{SU}(2)_L$ **fundamental** (Higgs doublet)
+- $[4]_q^2$ = two $W^\pm$ Goldstones at the W-host scale (genus 1,
+  $T(2,4)$); identical because $W^\pm$ are mass-degenerate by isospin
+- $[6]_q$ = the $Z$ Goldstone at the Z-host scale (genus 2, $T(2,6)$);
+  different from W± because Z has the mixed $T_3$-$Y$ coupling
+
+Anchor II is **physically more coherent** — it accounts for
+$W^3$-$B$ mixing — but lands at 1.81% off vs Anchor I's 0.87%.
+
+### Cannot select between them without derivation
+
+Both anchors are **path-α structural ansatze**, not derivations. The
+user's "no ansatz" rule means we cannot promote either to a closed
+form by numerical preference alone; the categorical
+$\mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ computation is the
+arbiter.
+
+The 0.87% gap on Anchor I and the 1.81% gap on Anchor II are
+**different categorical phenomena**:
+- Anchor I's gap could be the residual Higgs scalar
+- Anchor II's gap could be a Plancherel reweighting / vacuum-volume
+  factor
+
+Without the explicit $G$-action on the substrate (above), we cannot
+distinguish.
 
 ## Cannot fit further without categorical input
 
