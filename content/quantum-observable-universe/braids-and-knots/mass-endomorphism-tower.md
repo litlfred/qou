@@ -136,17 +136,33 @@ $$
   \mathfrak{m}(\varrho)
   =
   \Bigl\lvert \prod_{i=0}^{n-2} \hat{V}_i^{\mathrm{full}} \Bigr\rvert
-  +
+  -
   \sum_{i=0}^{n-2}
-    \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}\rvert\bigr)
-  +
+    \mathrm{Li}_2^q\!\bigl(-\lvert\hat{V}_i^{\mathrm{full}}\rvert\bigr)
+  -
   \sum_{0 \leq i < j \leq n-2}
-    z^2 \cdot \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}
+    z^2 \cdot \mathrm{Li}_2^q\!\bigl(-\lvert\hat{V}_i^{\mathrm{full}}
       \cdot \hat{V}_j^{\mathrm{full}}\rvert\bigr),
 $$
 
 *where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter
-([Jones--Markov trace](#thm:jones-markov-trace)).*
+([Jones--Markov trace](#thm:jones-markov-trace)) and
+$\mathrm{Li}_2^q$ is the symmetric q-dilogarithm
+$\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$ with
+$[n]_q = (q^n - q^{-n})/(q - q^{-1})$.*
+
+**Note (2026-05-03).**
+*The previous version of this proposition wrote
+$\Phi_q(\lvert\hat V_i\rvert)$ (Faddeev quantum dilogarithm) where this
+revision uses $-\mathrm{Li}_2^q(-\lvert\hat V_i\rvert)$ (symmetric
+q-dilogarithm).  Both are q-deformations of the classical dilogarithm
+but use different q-integer conventions
+(asymmetric $(q^n - 1)$ vs symmetric $[n]_q$).  Numerical probe
+`kashaev-integration-identity.witness.json` shows the literal Briggs–Klein
+integration evaluates to $-\mathrm{Li}_2^q(-z_p)$ in the symmetric
+convention (see proof below).  The Faddeev $\Phi_q$ form is empirically
+incompatible with isospin symmetry at $q_0$
+(`brane-tower-isospin-diagnosis.witness.json`).*
 
 *The three sums correspond to the three types of blow-up centre
 in the brane tower
@@ -195,16 +211,53 @@ transient trace localises to blow-up centres $p$ in the brane tower
 $q$-deformed expansion flow $\ln_q(1+t)/t$ along the radial
 coordinate of the Briggs--Klein chart
 ([Briggs--Klein chart](#def:briggs-klein-chart)) over each resolved
-defect $E_i \cong \mathbb{P}^1(\mathbb{C})$ yields the quantum
-dilogarithm
-([quantum dilogarithm as localised torsion volume](#cor:quantum-dilogarithm)):
+defect $E_i \cong \mathbb{P}^1(\mathbb{C})$ yields the symmetric
+q-dilogarithm:
 
 $$
-  \Phi_q(z_p) \;=\; \int_0^{z_p} \frac{\ln_q(1+t)}{t}\,dt
-             \;=\; \prod_{k\geq 1}(1 - q^{-k} z_p)^{-1},
+  \int_0^{V} \frac{\ln_q(1+t)}{t}\,dt
+  \;=\; -\mathrm{Li}_2^q(-V),
+  \qquad
+  \mathrm{Li}_2^q(z) := \sum_{n \geq 1} \frac{z^n}{n \cdot [n]_q},
 $$
 
-where $z_p$ is the spectral coordinate of the blow-up centre.
+*where $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ is the symmetric
+q-integer.*
+
+*Subproof.*  The q-deformed natural log has Taylor series
+$\ln_q(1-z) = -\sum_{n\geq 1} z^n/[n]_q$ ([definition of q-log]).
+Termwise differentiation of $\mathrm{Li}_2^q$ gives*
+
+$$
+  \frac{d}{dz}\mathrm{Li}_2^q(z)
+  = \sum_{n \geq 1} \frac{z^{n-1}}{[n]_q}
+  = -\frac{\ln_q(1-z)}{z}.
+$$
+
+*Integrating from $0$ to $z$ (with $\mathrm{Li}_2^q(0) = 0$):
+$\mathrm{Li}_2^q(z) = -\int_0^z (\ln_q(1-u)/u)\,du$.  Substituting
+$u = -t$, $z = -V$:*
+
+$$
+  \mathrm{Li}_2^q(-V)
+  = -\int_0^{-V}\!\frac{\ln_q(1-u)}{u}du
+  = -\int_0^{V}\!\frac{\ln_q(1+t)}{t}dt
+$$
+
+*so $\int_0^V (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$.  $\square_{\text{sub}}$*
+
+*Numerical verification: the integration value matches
+$-\mathrm{Li}_2^q(-V)$ to all displayed digits at $q_0 \approx 1.110$
+for $V \in \{0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 0.989\}$
+(`kashaev-integration-identity.witness.json`).*
+
+*Earlier versions of this proof identified the integral with the
+Faddeev quantum dilogarithm $\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$,
+whose logarithm uses asymmetric q-integers $(q^n - 1)$.  Both
+$\mathrm{Li}_2^q$ and $\log\Phi_q$ are q-deformations of the
+classical dilogarithm, but they use different q-integer conventions;
+the Hecke setting requires the symmetric form $[n]_q$, so
+$\mathrm{Li}_2^q$ is the correct identification.*
 
 The NF basis of $H_n(R, q)$ decomposes by generator content.  Each
 subset $S \subseteq \{0,\dots,n-2\}$ contributes a blow-up centre

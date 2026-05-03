@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T23:15:21.949551+00:00",
-  "commitSha": "f781a302d3e224449d0a547162e8c38fdb6bfa34",
+  "computedAt": "2026-05-03T23:33:37.482453+00:00",
+  "commitSha": "841cab890bb2398795fff488e23d410b058b5b77",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1575,6 +1575,7 @@
         "level1-qvalues.witness.json",
         "level1-vhat-brane-tower.witness.json",
         "li-atom-knot-search.witness.json",
+        "li2q-six-term-probe.witness.json",
         "light-isotope-sweep.wenzl-schur.witness.json",
         "light-isotope-sweep.witness.json",
         "low-isotope-binding-sweep.witness.json",

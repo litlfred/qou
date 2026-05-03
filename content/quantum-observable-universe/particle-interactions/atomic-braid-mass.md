@@ -123,8 +123,10 @@ $\ln|0.14| \approx -1.9$.*
 *The single-level formula above computes the traced volume at
 brane level $n = 0$.  The full tower
 ([mass endomorphism tower](#prop:mass-endomorphism-tower))
-adds per-generator $\Phi_q(\lvert\hat{V}_i\rvert)$ terms and
-adjacent cross-terms $z^2 \cdot \Phi_q(\lvert\hat{V}_i\hat{V}_j\rvert)$.
+adds per-generator $-\mathrm{Li}_2^q(-\lvert\hat{V}_i\rvert)$ terms
+and adjacent cross-terms $z^2 \cdot (-\mathrm{Li}_2^q(-\lvert\hat{V}_i\hat{V}_j\rvert))$,
+where $\mathrm{Li}_2^q(z) = \sum_{n\geq 1} z^n/(n[n]_q)$ is the
+symmetric q-dilogarithm.
 In the log-separated approximation, this is equivalent to
 multiplying the base product by
 $\mathrm{Li}_2(q^{-2}) \approx 1.098$ (adding
@@ -134,8 +136,30 @@ brane level $n$ contributes $q^{-2n}/n^2$ to the dilogarithm
 series, independent of the crossing pattern.  Level~1
 captures $73.9\%$ of the tower; levels $1$--$3$ capture
 $94.3\%$; levels $1$--$10$ capture $99.75\%$.  The tower
-correction is $< 1\%$ of $\Phi$ and does not materially
-change the accuracy.*
+correction is $< 1\%$ of the leading $\alpha\sum\ln|\hat V_i|$
+term and does not materially change the accuracy.*
+
+**Note on the additive formula vs the brane-tower correction (2026-05-03).**
+*The leading additive form $\alpha\sum_i \ln|\hat V_i^{\mathrm{full}}|$
+is **not** the q-dilogarithm $-\mathrm{Li}_2^q(-|\hat V_i|)$ of
+the corrected mass-endomorphism-tower proposition: at $V \to 1$
+the two functions disagree (one $\to 0$, the other bounded
+$\to -\mathrm{Li}_2^q(-1)$).  Empirical comparison
+(`li2q-six-term-probe.witness.json`):*
+
+| atom | $\alpha\sum\ln\|V\|$ | $-\alpha\sum\mathrm{Li}_2^q(-\|V\|)$ |
+|---|---|---|
+| H ($Z=1$) | $-0.016\%$ | $-0.645\%$ |
+| ⁴He | $+0.296\%$ | $+0.053\%$ |
+
+*The additive formula above is the **leading-order** of the
+proper $\mathrm{Li}_2^q$ form for $V$ in a specific range, with
+the discrepancy growing as $V \to 1$ (heavy atoms).  The corrected
+$-\mathrm{Li}_2^q(-V)$ form per
+[mass endomorphism tower](#prop:mass-endomorphism-tower) is the
+canonical Kashaev-limit specialisation; the $\alpha\sum\ln|V|$
+form here is the practical leading-order approximation that gives
+zero-fit predictions to $0.18\%$ mean across $Z = 1$..$20$.*
 
 **Log-separated approximation.**
 *The additive formula can be approximated by separating the
