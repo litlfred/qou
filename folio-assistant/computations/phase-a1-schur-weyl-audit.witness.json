@@ -1,0 +1,81 @@
+{
+  "schema": "audit-witness/v1",
+  "computation": "phase-a1-schur-weyl-audit",
+  "description": "Audit-only finding: the binding-canonical pipeline does NOT use single-K Plancherel averaging. The original Phase A.1 framing in issue #522 is a misnomer; the canonical pipeline uses the axiomatic Markov trace (M1+M2+M3 recursion via markov_trace_canonical.tr_M_element), not any partition sum. The k_cap = K_PARTITION_MAX = 11 truncation lives in the DEPRECATED Plancherel-weighted code path (hecke_core.atom_markov_trace), which is not on the canonical pipeline's call path.",
+  "date": "2026-05-03",
+  "branch": "claude/phase-a1-schur-weyl-audit",
+  "verdict": "gap-misattributed",
+  "verdict_detail": "The 10^6 ppb gap claimed in workplan A.1 is NOT due to single-K averaging of the Markov trace. The canonical pipeline already routes through the axiomatic recursion. The actual gap likely comes from (a) Phi_q exactness (workplan A.2) or (b) higher tower levels (workplan A.3, separate audit).",
+  "modules_audited": [
+    {
+      "path": "folio-assistant/computations/markov_trace_canonical.py",
+      "key_function": "tr_M_element",
+      "line": 1,
+      "uses_partitions": false,
+      "method": "axiomatic recursion (Markov axioms M1, M2, M3)",
+      "note": "Top docstring explicitly says: 'Differs from the Plancherel-weighted trace ... used in hecke_core.atom_markov_trace and binding_3A — these do NOT satisfy (M2) with the canonical z and give different values.'"
+    },
+    {
+      "path": "folio-assistant/computations/binding_canonical.py",
+      "key_function": "binding_canonical",
+      "line": 118,
+      "uses_partitions": false,
+      "method": "calls markov_trace_canonical.tr_M_element on each atom-braid generator",
+      "note": "Imports tr_M_element from markov_trace_canonical at line 37. No partition argument anywhere."
+    },
+    {
+      "path": "folio-assistant/computations/hecke_core.py",
+      "key_function": "atom_markov_trace",
+      "line": 2614,
+      "uses_partitions": true,
+      "method": "Plancherel-weighted sum Sigma_lambda w_lambda * chi_lambda(W) / d_lambda over partitions filtered by k_cap = K_PARTITION_MAX (= 11)",
+      "note": "DEPRECATED. Docstring explicitly: 'At q != 1 this is NOT the canonical Jones-Markov trace ... Use markov_trace_canonical.tr_M_element for the canonical axiomatic Markov trace'. The Plancherel form gives ~0.104 at q_0 vs canonical ~0.499 for tr_M(sigma_0) — ~5x error per term."
+    }
+  ],
+  "k_cap_constant": {
+    "name": "K_PARTITION_MAX",
+    "value": 11,
+    "file": "folio-assistant/computations/hecke_core.py",
+    "line": 452,
+    "scope": "deprecated Plancherel-weighted path only"
+  },
+  "single_K_site": null,
+  "single_K_site_note": "There is no single-K averaging in the canonical pipeline. The k_cap = 11 is a multi-K (multi-jet-depth) cap on the deprecated Plancherel sum. No code in binding_canonical / markov_trace_canonical takes a partition argument.",
+  "existing_partition_infrastructure": [
+    {
+      "function": "partitions_of",
+      "file": "folio-assistant/computations/hecke_core.py",
+      "line": 241,
+      "purpose": "Enumerate partitions of n as decreasing tuples"
+    },
+    {
+      "function": "partition_dimension",
+      "file": "folio-assistant/computations/hecke_core.py",
+      "line": 256,
+      "purpose": "Specht-module dimension f_lambda via classical hook formula"
+    },
+    {
+      "function": "q_dimension",
+      "file": "folio-assistant/computations/hecke_core.py",
+      "line": 320,
+      "purpose": "Quantum dimension d_q(lambda) = [n]_q! / H_q(lambda)"
+    },
+    {
+      "function": "q_hook_product",
+      "file": "folio-assistant/computations/hecke_core.py",
+      "line": 209,
+      "purpose": "q-hook product H_q(lambda)"
+    }
+  ],
+  "recommended_re_scope": {
+    "A.1_prime": "Audit Phi_q exactness in the binding contribution (workplan A.2 territory) — Phi_q(|tr_M|) may need exact rather than truncated evaluation.",
+    "A.1_double_prime": "Find any caller in the canonical pipeline that still routes through the deprecated atom_markov_trace (~5x per-term error) and migrate to tr_M_element.",
+    "A.3": "Mass-tower truncation level N — separate audit (claude/phase-a3-mass-tower-audit branch)."
+  },
+  "cross_references": {
+    "workplan_issue": "https://github.com/litlfred/qou/issues/522",
+    "audit_handoff": "docs/audits/2026-05-02-path-to-1ppb.md",
+    "deprecated_function_docstring": "folio-assistant/computations/hecke_core.py:2614-2628",
+    "canonical_function_docstring": "folio-assistant/computations/markov_trace_canonical.py:1-35"
+  }
+}
