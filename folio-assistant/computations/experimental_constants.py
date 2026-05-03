@@ -76,6 +76,22 @@ VOL_THREE_TWIST_ERR  = 1e-12
 VOL_BORROMEAN        = 7.327724753846269  # ± 1e-12
 VOL_BORROMEAN_ERR    = 1e-12
 
+# ── 50-dp / mass-table light-atom knot volumes (SnapPy HP) ──────
+# These appear in mass_table_ppb / b_over_a_v5_unified / c_alpha_*
+# and are duplicated across compute scripts.  Centralised here so
+# every consumer uses the same string.
+
+VOL_6_2_50DP   = 4.4008325161230461014412038656409280339834854185165
+VOL_8_11_50DP  = 8.2863168178065925881
+VOL_L6A4_50DP  = 7.3277247538462690000000000000000000000000000000000  # Borromean
+VOL_7_SQ_1_50DP = 4.7494999818744385084980865556375718851941577840553  # Whitehead-pair / α-α coupling knot
+
+# ── Catalan constant 8G (regular ideal octahedron volume) ──────
+# Distinct from VOL_BORROMEAN at the 10⁻⁹ level: 8G ≈ 7.32772475341
+# vs VOL_L6A4 ≈ 7.32772475384.  At 1 ppb both must be tracked
+# separately; legacy scripts conflated them via 8·CATALAN.
+EIGHT_G_50DP   = 8.0 * 0.91596559417721901505460351493238411077  # ≈ 7.327724753417752
+
 # ── Observed half-lives (NNDC/ENSDF) ────────────────────────────
 
 HALFLIFE_TRITIUM_YR     = 12.32    # ± 0.02 yr

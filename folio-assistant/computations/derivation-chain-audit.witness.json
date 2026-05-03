@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T10:30:09.470229+00:00",
-  "commitSha": "183baf1b48db58c8a2739ed67149d8698591011a",
+  "computedAt": "2026-05-03T11:04:28.463010+00:00",
+  "commitSha": "5147e16e177377f7d809c9601559ab3455212eb7",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1648,6 +1648,7 @@
         "paper-six-term-shadow-price-sweep.witness.json",
         "path-a-extended-light-isotopes.witness.json",
         "per-atom-lp-binding.witness.json",
+        "per-atom-rho-deviation.witness.json",
         "per-block-phi-q.witness.json",
         "per-channel-garside.witness.json",
         "photon-operator-table.witness.json",

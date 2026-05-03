@@ -30,16 +30,27 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q as Q0  # noqa: E402
-from experimental_constants import M_E_MEV  # noqa: E402
+from q_parameter import Q as Q0, q_int  # noqa: E402
+from experimental_constants import (  # noqa: E402
+    M_E_MEV,
+    VOL_6_2_50DP,
+    VOL_8_11_50DP,
+    VOL_L6A4_50DP,
+    VOL_7_SQ_1_50DP,
+    EIGHT_G_50DP,
+)
 
-# Canonical hyperbolic volumes (50-dp from SnapPy, see mass_table_ppb.py)
-CATALAN_G = 0.915965594177219015054603514932
-VOL_BORROMEAN = 8.0 * CATALAN_G
+# For backwards-comparison with the existing mass-table-ppb pipeline,
+# we keep the 8·G ("Catalan") form for the magic-A volume input —
+# legacy mass_table_ppb.py uses 8·CATALAN_G ≈ 7.327724753417752,
+# which differs from the SnapPy VOL_L6A4 = 7.327724753846269 at the
+# 10⁻⁹ level. At 1 ppb this matters; both forms are exposed below.
+VOL_BORROMEAN_EIGHT_G = EIGHT_G_50DP        # legacy magic-A input (8·G)
+VOL_BORROMEAN_SNAPPY  = VOL_L6A4_50DP       # SnapPy actual link volume
 KNOT_VOL = {
-    "6_2":  4.4008325161230461014412038656409280339834854185165,
-    "8_11": 8.2863168178065925881,
-    "L6a4": VOL_BORROMEAN,
+    "6_2":  VOL_6_2_50DP,
+    "8_11": VOL_8_11_50DP,
+    "L6a4": VOL_BORROMEAN_EIGHT_G,           # match mass_table_ppb baseline
 }
 
 # AME2020 light-atom data
@@ -54,9 +65,18 @@ AME = {
 
 
 def qn(q: float, n: int) -> float:
-    """q-integer [n]_q = (q^n − q^{−n})/(q − q^{−1})."""
+    """
+    Local q-integer evaluator [n]_q = (q^n − q^{−n})/(q − q^{−1}) at
+    arbitrary q. q_parameter.q_int is module-level (q = q_0 only); we
+    need it here at the same q_0 only, so we forward to it when
+    q == Q0 and otherwise compute the float form. This avoids
+    duplicating the formula while keeping the function usable at
+    arbitrary q for downstream sensitivity probes.
+    """
     if n == 0:
         return 0.0
+    if q == Q0:
+        return q_int(n)
     return (q ** n - q ** (-n)) / (q - 1 / q)
 
 
@@ -151,7 +171,7 @@ def main() -> int:
     rows = []
     for sym, (knot, rho_struct, A, b_ame) in AME.items():
         if knot == "L6a4_x4":
-            vol_eff = 4.0 * VOL_BORROMEAN
+            vol_eff = 4.0 * VOL_BORROMEAN_EIGHT_G
             knot_label = "4·L6a4 (magic-A)"
         else:
             vol_eff = KNOT_VOL[knot]
@@ -214,9 +234,8 @@ def main() -> int:
 
     q4_minus_4 = qn(Q0, 4) - 4
     correction_4He = 1.0 - q4_minus_4 / 2.0          # = ρ_true / 2
-    B_4He_corr = 2 * M_E_MEV * 4 * VOL_BORROMEAN * correction_4He
-    VOL_7_SQ_1 = 4.7494999818744385084980865556375718851941577840553
-    C_ALPHA = M_E_MEV * VOL_7_SQ_1                    # 2.4270 MeV
+    B_4He_corr = 2 * M_E_MEV * 4 * VOL_BORROMEAN_EIGHT_G * correction_4He
+    C_ALPHA = M_E_MEV * VOL_7_SQ_1_50DP               # 2.4270 MeV (= m_e·Vol(7²_1))
 
     ALPHA_CHAIN = [
         # (sym, n_alpha, n_pairs, B_AME_MeV)
@@ -235,7 +254,7 @@ def main() -> int:
           f"{'pred(corr)':>11}  err%(corr)")
     print("  " + "-" * 100)
     for sym, n_a, n_p, B_AME in ALPHA_CHAIN:
-        B_orig = n_a * (2 * M_E_MEV * 4 * VOL_BORROMEAN) + n_p * C_ALPHA
+        B_orig = n_a * (2 * M_E_MEV * 4 * VOL_BORROMEAN_EIGHT_G) + n_p * C_ALPHA
         B_corr = n_a * B_4He_corr + n_p * C_ALPHA
         err_o = (B_orig - B_AME) / B_AME * 100
         err_c = (B_corr - B_AME) / B_AME * 100
@@ -273,8 +292,10 @@ def main() -> int:
         "parameters": {
             "q_0": Q0,
             "m_e_MeV": M_E_MEV,
-            "VOL_BORROMEAN": VOL_BORROMEAN,
+            "VOL_BORROMEAN_EIGHT_G": VOL_BORROMEAN_EIGHT_G,
+            "VOL_BORROMEAN_SNAPPY":  VOL_BORROMEAN_SNAPPY,
             "KNOT_VOL": KNOT_VOL,
+            "VOL_7_SQ_1": VOL_7_SQ_1_50DP,
         },
         "rows":          rows,
         "z_eq_n_propagation": {
