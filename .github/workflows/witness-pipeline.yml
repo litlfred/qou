@@ -128,6 +128,14 @@ jobs:
         # per-chain results + the global witness-trust audit.
         run: python3 folio-assistant/computations/derivation_chain_validator.py
 
+      - name: Cross-check tr_M @ q_0 — Hoefsmit vs markov_peel (1ppb)
+        # Independent-path consistency gate for the canonical Markov
+        # trace at the calibrated substrate parameter q_0. Both paths
+        # store full 50-dps decimal strings; the script reports
+        # relative |Δ| via mpmath. Strict mode fails CI on any > 1ppb.
+        run: |
+          python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
+
       - name: Run lp_dual_witness_validator (warn-only)
         # Per prop:operator-selection-lp § dual program: every
         # operator-selection / LP / SDP witness should include the LP
