@@ -95,6 +95,28 @@ _PEEL_INLINE = {
 }
 
 
+# ── Canonical Term 6 from Habiro residue witness ────────────────────
+def load_canonical_term6_MeV() -> dict[int, mp.mpf]:
+    """Map mass number A → Term 6 contribution in MeV.
+
+    The Habiro residue is per-A (depends only on strand count n=3A),
+    so T and ³He share a value.
+    """
+    path = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
+    if not path.exists():
+        return {}
+    d = json.loads(path.read_text())
+    out: dict[int, mp.mpf] = {}
+    for r in d.get("results_by_atom", []):
+        # entries keyed "A=1", "A=2", ...
+        try:
+            A = int(r["atom"].split("=")[1])
+            out[A] = mp.mpf(r["term6_b_pred_mev_50dps"])
+        except (KeyError, IndexError, ValueError):
+            continue
+    return out
+
+
 # ── Terms 2-6 reuse from paper_six_term_isotope_sweep ───────────────
 def term2_single_gen_tower(vols):
     total = mp.mpf(0)
@@ -188,11 +210,24 @@ def six_term_mass_canonical(
     else:
         raise ValueError(term5_mode)
 
-    # Term 6 deferred (cyclotomic residue series; treated as 0 here per
-    # the existing paper_six_term_isotope_sweep convention)
-    t6 = mp.mpf(0)
+    # Term 6: cyclotomic residue series, loaded from the canonical
+    # Habiro residue witness.  Per-A only (T and ³He share the value).
+    # NOTE: t6 from the witness is in MeV directly (term6_b_pred_mev),
+    # not in Hecke units.  We convert back to Hecke units by dividing
+    # by m_e_MeV (since the witness scales by m_e), then multiply by
+    # m_e_hecke at assembly time — a clean conversion in Hecke units
+    # would need a more careful audit.  For now: report the raw MeV
+    # value in the witness so downstream readers see the contribution
+    # directly, and add 0 to the Hecke-unit total below to keep the
+    # calibration unchanged (Term 6 affects the prediction additively
+    # in MeV, post-calibration).
+    t6_per_A_MeV = load_canonical_term6_MeV()
+    A_atom = Z + N
+    t6_MeV = t6_per_A_MeV.get(A_atom, mp.mpf(0))
 
-    total = float(t1_with) + float(t2) + float(t3) + float(t4) + float(t6)
+    # Hecke-unit assembly (calibration target): t1+t2+t3+t4 (Term 5
+    # absorbed into t1_with above; Term 6 added as MeV at output)
+    total = float(t1_with) + float(t2) + float(t3) + float(t4)
     return {
         "term1_canonical": float(t1),
         "term2_single_gen_tower": float(t2),
@@ -200,7 +235,7 @@ def six_term_mass_canonical(
         "term4_frobenius_codim_scaled": float(t4),
         "term5_additive_contribution": float(t5),
         "term5_chirality_factor_a_K": float(t5_factor),
-        "term6_higher_residues": float(t6),
+        "term6_higher_residues_MeV": float(t6_MeV),
         "term5_mode": term5_mode,
         "m_e_hecke": float(m_e_hecke),
         "total_hecke": total,
@@ -262,14 +297,23 @@ def main() -> int:
                 include_inter=(Z + N >= 2),
                 chirality_signs=chirality_signs_for_isotope(atom),
             )
-            M_pred = t["total_hecke"] * E_0
+            M_pred_no_t6 = t["total_hecke"] * E_0
+            t6_MeV = t["term6_higher_residues_MeV"]
+            M_pred = M_pred_no_t6 + t6_MeV
             err = (M_pred - M_codata) / M_codata * 100
+            err_no_t6 = (M_pred_no_t6 - M_codata) / M_codata * 100
             print(f"  {atom:<10} {Z+N:>3} {t['total_hecke']:>12.4e} "
-                  f"{M_pred:>10.3f} {M_codata:>10.3f} {err:>+8.3f}%")
+                  f"{M_pred:>10.3f} {M_codata:>10.3f} {err:>+8.3f}% "
+                  f"(t6={t6_MeV:>+7.4f}, no-t6 err={err_no_t6:+.3f}%)")
             rows.append({
                 "atom": atom, "Z": Z, "N": N, "A": Z + N,
-                "M_pred_MeV": M_pred, "M_codata_MeV": M_codata,
-                "err_pct": err, **t,
+                "M_pred_MeV_no_t6": M_pred_no_t6,
+                "M_pred_MeV": M_pred,
+                "term6_MeV": t6_MeV,
+                "M_codata_MeV": M_codata,
+                "err_pct": err,
+                "err_pct_no_t6": err_no_t6,
+                **t,
             })
         except Exception as e:
             print(f"  {atom:<10} ERROR: {e}")

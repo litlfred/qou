@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T10:56:11.897032+00:00",
-  "commitSha": "95a2afabe2585990ece02d6db6c1973277ce17fc",
+  "computedAt": "2026-05-03T11:23:44.080620+00:00",
+  "commitSha": "15dd630a2ee018241d149a4dc490547e10501067",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1393,6 +1393,7 @@
         "branching-qvalues.witness.json",
         "brane-tower-distance-weighted.witness.json",
         "brane-tower-finite-laurent.witness.json",
+        "brane-tower-isospin-diagnosis.witness.json",
         "brane-tower-prefactor-sweep.witness.json",
         "brane-tower-symbolic-D.witness.json",
         "breit-wheeler-nucleon-nf.witness.json",
