@@ -97,3 +97,30 @@ The candidate $82 \cdot E_0$ is the closest in the search; it
 might or might not have categorical meaning. The framework
 needs to **predict 82** from its own structure before the
 match is significant.
+
+## Update 2026-05-03 — superseded compute removed
+
+The two probe scripts that produced this retraction
+(`alpha_analytic_attempt.py` and `alpha_categorical_derivation.py`)
+have been removed from `folio-assistant/computations/`. They were
+both **null-result candidate searches** (closest fit
+$m_e \cdot [7]_q [8]_q [9]_q = 361.2$ MeV, off by +6.4%; α/E₀ ratio
+falsified at 81.27 not 82). Their results stand recorded in the
+witness JSONs under `docs/audits/`:
+
+- `2026-05-02-alpha-analytic-attempt.witness.json`
+- `2026-05-02-alpha-categorical-derivation.witness.json`
+- `2026-05-02-alpha-categorical-probe.witness.json`
+
+The downstream **canonical α/binding pipeline** is now the
+magic-A formula (`folio-assistant/computations/magic_A_formula.py`,
+landed via PR #519) which exposes
+$$
+B \;=\; \rho_F \cdot m_e \cdot A \cdot 8G
+$$
+as the doubly-magic shell-closure formula at ⁴He (+5.87% vs AME).
+Either of the deleted attempts was strictly coarser, and the
+attempts contained no infrastructure that magic-A doesn't already
+supply. The retraction memo and witnesses preserve the search
+record; the compute scripts themselves no longer carry their
+weight.
