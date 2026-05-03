@@ -125,6 +125,9 @@ def main() -> int:
         ("proton",   1, 0),
         ("neutron",  0, 1),
         ("deuteron", 1, 1),
+        ("tritium",  1, 2),
+        ("helium-3", 2, 1),
+        ("helium-4", 2, 2),
     ]
 
     rows = []
