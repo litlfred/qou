@@ -1075,16 +1075,46 @@ class SymbolicHeckeDivision:
                         changed = True
 
                 # Then try multi-term sub-word quotient (prefix-match
-                # case for multi-term NFs). Cheaper than whole-atom
-                # quotient because it only inspects elem.terms.
+                # case for multi-term NFs). For each registered atom
+                # with a known n_strands, try every nucleon-aligned
+                # generator offset δ ∈ {0, n_strands, 2·n_strands, ...}
+                # up to the max generator in elem. Cheaper than whole-
+                # atom quotient because it only inspects elem.terms.
+                if elem.terms:
+                    max_gen = max(
+                        (max((g for g in w if g >= 0), default=0)
+                         for w in elem.terms),
+                        default=0,
+                    )
+                else:
+                    max_gen = 0
                 q_changed = True
                 while q_changed:
-                    elem, q_changed = (
-                        self._try_multi_term_subword_quotient(elem)
-                    )
-                    if q_changed:
-                        quotient_steps += 1
-                        changed = True
+                    q_changed = False
+                    for atom_id, info in (
+                        list(self._quotient_relations.items())
+                    ):
+                        nf_n = info.get('n_strands') or 0
+                        # Try offset 0 plus nucleon-aligned shifts
+                        offsets = [0]
+                        if nf_n:
+                            δ = nf_n
+                            while δ <= max_gen:
+                                offsets.append(δ)
+                                δ += nf_n
+                        for δ in offsets:
+                            elem, did = (
+                                self._try_multi_term_subword_quotient(
+                                    elem, offset=δ
+                                )
+                            )
+                            if did:
+                                quotient_steps += 1
+                                changed = True
+                                q_changed = True
+                                break
+                        if q_changed:
+                            break
 
         result = (elem, {'hecke': hecke_steps, 'yb': yb_steps,
                          'fc': fc_steps, 'quotient': quotient_steps})

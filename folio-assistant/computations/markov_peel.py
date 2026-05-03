@@ -200,6 +200,28 @@ def incremental_reduced_element(
 
 # ── Top-level production API ────────────────────────────────────────
 
+@functools.lru_cache(maxsize=4)
+def _nucleon_nf_and_trace(
+    Z: int, N: int, max_iterations: int
+) -> tuple[SymbolicHeckeElement, sp.Expr]:
+    """Pre-compute the reduced NF and Markov trace of a single nucleon
+    (proton (1,0) or neutron (0,1)) in H_3(q). Cached for the session.
+
+    Returns (nf_element, tr_M_value). The NF is in H_3(q) so the only
+    generators present are σ_1, σ_2 (i.e. word indices 1, 2).
+    """
+    from mass_at_3A_proper import atom_braid_word_3A
+    from markov_trace_canonical import tr_M_element
+
+    word = atom_braid_word_3A(Z, N, include_inter=True)
+    div = SymbolicHeckeDivision()
+    nf = incremental_reduced_element(
+        word, div=div, max_iterations_per_step=max_iterations
+    )
+    tr = tr_M_element(nf, 3, simplify=False)
+    return nf, tr
+
+
 def tr_M_atomic(
     Z: int,
     N: int,
@@ -207,6 +229,7 @@ def tr_M_atomic(
     include_inter: bool = True,
     reduce_first: bool = True,
     max_iterations: int = 10000,
+    pre_register_nucleons: bool = False,
 ):
     """Symbolic Markov trace `tr_M(β)` of the atomic braid for (Z, N).
 
@@ -249,6 +272,34 @@ def tr_M_atomic(
 
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
 
+    # Pre-registration of proton/neutron NFs (opt-in, default OFF).
+    # The reduce() Rule 4 multi-term sub-word matcher collapses
+    # occurrences of these NFs at nucleon-aligned offsets δ ∈
+    # {0, 3, …, 3(A-1)} into formal-variable tokens — but
+    # `markov_trace_canonical.tr_M_element` skips words containing
+    # formal indices (drops them silently → trace 0). Until
+    # tr_M_element is taught to look up the registered tr_M_value
+    # for a formal token (or this path unfolds before tracing),
+    # enabling pre-registration causes silent regressions. Tracked
+    # as a follow-up; see comment in markov_trace_canonical.tr_M_element.
+    div: SymbolicHeckeDivision | None = None
+    if pre_register_nucleons and A >= 2:
+        div = SymbolicHeckeDivision()
+        # atom_id = -101 for proton, -102 for neutron (any negative
+        # works; chosen to avoid clashing with the test atom_id -1)
+        if Z >= 1:
+            p_nf, p_tr = _nucleon_nf_and_trace(1, 0, max_iterations)
+            div.register_quotient(
+                -101, p_nf, name='proton',
+                n_strands=3, tr_M_value=p_tr,
+            )
+        if N >= 1:
+            n_nf, n_tr = _nucleon_nf_and_trace(0, 1, max_iterations)
+            div.register_quotient(
+                -102, n_nf, name='neutron',
+                n_strands=3, tr_M_value=n_tr,
+            )
+
     if reduce_first:
         # Interleave reduction with multiplication.  Building the full
         # unreduced product first explodes to ~9000 terms at A=3 and
@@ -256,7 +307,8 @@ def tr_M_atomic(
         # (timing out > 9 minutes on tritium).  The incremental path
         # keeps the intermediate term count bounded.
         elem = incremental_reduced_element(
-            word, max_iterations_per_step=max_iterations
+            word, div=div,
+            max_iterations_per_step=max_iterations,
         )
     else:
         elem = word_to_element(word)
