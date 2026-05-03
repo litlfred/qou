@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T20:51:56.126103+00:00",
-  "commitSha": "15ee7082a8c2d36cb1a611eff65efd47f19dc199",
+  "computedAt": "2026-05-03T14:29:35.204928+00:00",
+  "commitSha": "50d39a1dfe5217f9c1e3709c51fb6c8a485fa79d",
   "assertions": [
     {
       "name": "rank chain: E_0^p = J^p(A) = J^p𝓢 = p + 1 for all p ∈ {0,1,2,3}",
@@ -35,7 +35,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "jet-gb-pl-correspondence",
   "scriptFile": "jet_gb_pl_correspondence.py",
   "scriptHash": "a556bd2d08ea",

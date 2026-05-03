@@ -38,6 +38,7 @@ Witness: `markov-peel.witness.json` (cross-check against
 """
 from __future__ import annotations
 
+import functools
 import sys
 from pathlib import Path
 
@@ -57,6 +58,11 @@ from markov_trace_canonical import tr_M_element  # noqa: E402
 # Numerical h from `hecke_core` (used by `atom_braid_word_3A` to build
 # the (c, d) triples).  Imported lazily inside the builders.
 _H_NUM_TOL = 1e-9
+
+# Cache for crossing_from_cd: per (gen_idx, c-rounded, d-rounded)
+# the resulting SymbolicHeckeElement is uniquely determined. Keying
+# on rounded floats avoids identity-comparison issues.
+_CROSSING_CACHE: dict = {}
 
 
 # ── Crossing → Hecke element ────────────────────────────────────────
@@ -81,30 +87,42 @@ def crossing_from_cd(
 
     Any unrecognised `(c, d)` raises — Phase-1 deliberately keeps the
     domain narrow so we get loud failures on convention drift.
+
+    Cached on (gen_idx, c-rounded, d-rounded, h_num-rounded). For
+    atomic-braid words at A=4 the same crossing template gets
+    instantiated O(2A) times per atom; caching the conversion shaves
+    sympy-construction overhead in the hot path.
     """
     cf, df = float(c), float(d)
+    cache_key = (gen_idx, round(cf, 12), round(df, 12), round(h_num, 12))
+    cached = _CROSSING_CACHE.get(cache_key)
+    if cached is not None:
+        return cached
     if abs(cf - 1.0) < _H_NUM_TOL and abs(df) < _H_NUM_TOL:
         # σ
-        return SymbolicHeckeElement({(gen_idx,): sp.Integer(1)})
-    if abs(cf - 1.0) < _H_NUM_TOL and abs(df + h_num) < _H_NUM_TOL:
+        result = SymbolicHeckeElement({(gen_idx,): sp.Integer(1)})
+    elif abs(cf - 1.0) < _H_NUM_TOL and abs(df + h_num) < _H_NUM_TOL:
         # σ − h·𝟏
-        return SymbolicHeckeElement({
+        result = SymbolicHeckeElement({
             (gen_idx,): sp.Integer(1),
             (): -HA,
         })
-    if abs(cf - 1.0) < _H_NUM_TOL and abs(df + h_num / 2) < _H_NUM_TOL:
+    elif abs(cf - 1.0) < _H_NUM_TOL and abs(df + h_num / 2) < _H_NUM_TOL:
         # σ − (h/2)·𝟏
-        return SymbolicHeckeElement({
+        result = SymbolicHeckeElement({
             (gen_idx,): sp.Integer(1),
             (): -HA / 2,
         })
-    if abs(cf) < _H_NUM_TOL and abs(df - 1.0) < _H_NUM_TOL:
+    elif abs(cf) < _H_NUM_TOL and abs(df - 1.0) < _H_NUM_TOL:
         # identity (no crossing)
-        return SymbolicHeckeElement.identity()
-    raise ValueError(
-        f"unknown (c, d) crossing: c={cf!r}, d={df!r} at gen={gen_idx} "
-        f"(h={h_num!r})"
-    )
+        result = SymbolicHeckeElement.identity()
+    else:
+        raise ValueError(
+            f"unknown (c, d) crossing: c={cf!r}, d={df!r} at gen={gen_idx} "
+            f"(h={h_num!r})"
+        )
+    _CROSSING_CACHE[cache_key] = result
+    return result
 
 
 def crossing_element(gen_idx: int, cross_type: str) -> SymbolicHeckeElement:
@@ -182,6 +200,28 @@ def incremental_reduced_element(
 
 # ── Top-level production API ────────────────────────────────────────
 
+@functools.lru_cache(maxsize=4)
+def _nucleon_nf_and_trace(
+    Z: int, N: int, max_iterations: int
+) -> tuple[SymbolicHeckeElement, sp.Expr]:
+    """Pre-compute the reduced NF and Markov trace of a single nucleon
+    (proton (1,0) or neutron (0,1)) in H_3(q). Cached for the session.
+
+    Returns (nf_element, tr_M_value). The NF is in H_3(q) so the only
+    generators present are σ_1, σ_2 (i.e. word indices 1, 2).
+    """
+    from mass_at_3A_proper import atom_braid_word_3A
+    from markov_trace_canonical import tr_M_element
+
+    word = atom_braid_word_3A(Z, N, include_inter=True)
+    div = SymbolicHeckeDivision()
+    nf = incremental_reduced_element(
+        word, div=div, max_iterations_per_step=max_iterations
+    )
+    tr = tr_M_element(nf, 3, simplify=False)
+    return nf, tr
+
+
 def tr_M_atomic(
     Z: int,
     N: int,
@@ -189,6 +229,7 @@ def tr_M_atomic(
     include_inter: bool = True,
     reduce_first: bool = True,
     max_iterations: int = 10000,
+    pre_register_nucleons: bool = True,
 ):
     """Symbolic Markov trace `tr_M(β)` of the atomic braid for (Z, N).
 
@@ -231,6 +272,58 @@ def tr_M_atomic(
 
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
 
+    # Pre-registration of proton/neutron NFs (default ON; opt-out
+    # by passing `pre_register_nucleons=False`).
+    # For each nucleon position k ∈ [0, A), register the proton (or
+    # neutron) NF pre-shifted by δ=3k as a distinct atom_id. The
+    # reduce() Rule 4 multi-term matcher then folds occurrences at
+    # offset 0 (against each pre-shifted NF), keeping intermediate
+    # term counts bounded during incremental reduction. Before
+    # tracing, `unfold` distributes the formal tokens back into
+    # generator words; the surrounding inter-nucleon crossings are
+    # preserved as a literal suffix, so the unfolded element is the
+    # algebraically-equivalent reduced form.
+    #
+    # atom_id encoding: `-(100 * (k + 1) + species)`, species
+    # ∈ {1: proton, 2: neutron}. So nucleon-0 proton = -101,
+    # nucleon-1 proton = -201, nucleon-2 neutron = -302, etc.
+    div: SymbolicHeckeDivision | None = None
+    if pre_register_nucleons and A >= 2:
+        div = SymbolicHeckeDivision()
+
+        def _shift_nf(nf: SymbolicHeckeElement, δ: int) -> (
+            SymbolicHeckeElement
+        ):
+            shifted_terms: dict = {}
+            for w, c in nf.terms.items():
+                w_shifted = tuple(g + δ for g in w)
+                shifted_terms[w_shifted] = c
+            return SymbolicHeckeElement(shifted_terms)
+
+        # Order: build the per-nucleon registration in the same
+        # left-to-right order as atom_braid_word_3A — protons first
+        # (positions 0..Z-1), then neutrons (positions Z..A-1).
+        for k in range(Z):
+            δ = 3 * k
+            p_nf, p_tr = _nucleon_nf_and_trace(1, 0, max_iterations)
+            div.register_quotient(
+                -(100 * (k + 1) + 1),
+                _shift_nf(p_nf, δ),
+                name=f"proton@{δ}",
+                n_strands=3,
+                tr_M_value=p_tr,
+            )
+        for k in range(N):
+            δ = 3 * (Z + k)
+            n_nf, n_tr = _nucleon_nf_and_trace(0, 1, max_iterations)
+            div.register_quotient(
+                -(100 * (Z + k + 1) + 2),
+                _shift_nf(n_nf, δ),
+                name=f"neutron@{δ}",
+                n_strands=3,
+                tr_M_value=n_tr,
+            )
+
     if reduce_first:
         # Interleave reduction with multiplication.  Building the full
         # unreduced product first explodes to ~9000 terms at A=3 and
@@ -238,10 +331,20 @@ def tr_M_atomic(
         # (timing out > 9 minutes on tritium).  The incremental path
         # keeps the intermediate term count bounded.
         elem = incremental_reduced_element(
-            word, max_iterations_per_step=max_iterations
+            word, div=div,
+            max_iterations_per_step=max_iterations,
         )
     else:
         elem = word_to_element(word)
+
+    # If folding was active, unfold formal tokens into the
+    # full reduced word before tracing. tr_M_element only
+    # understands non-negative generator indices; unfold restores
+    # the algebraically-equivalent generator-only representation.
+    if div is not None and any(
+        any(g < 0 for g in w) for w in elem.terms
+    ):
+        elem = div.unfold(elem)
 
     # `simplify=False`: skip the `sp.simplify` aggregation step.  At
     # A=3 the aggregated total has ~5000-12000 sympy ops; calling

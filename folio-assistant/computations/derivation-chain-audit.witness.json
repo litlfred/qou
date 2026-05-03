@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T11:06:35.855477+00:00",
-  "commitSha": "c97006b27fa9a94efb88ce71ed528ff3779de982",
+  "computedAt": "2026-05-03T14:29:31.780401+00:00",
+  "commitSha": "50d39a1dfe5217f9c1e3709c51fb6c8a485fa79d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1433,6 +1433,7 @@
         "content-weighted-pair-probe.witness.json",
         "correlated-channel-mass.witness.json",
         "coulomb-subtracted-binding.witness.json",
+        "cross-check-trM-1ppb.witness.json",
         "crt-markov-v2-multichannel.witness.json",
         "crt-markov-v3-h3a.witness.json",
         "crt-markov-v4-tower.witness.json",
@@ -1468,6 +1469,7 @@
         "deuteron-first-principles.witness.json",
         "deuteron-residual-probe.witness.json",
         "diagnose-4he-blowup.witness.json",
+        "e0-calibration-audit.witness.json",
         "electron-chiral-probe.witness.json",
         "electron-proton-skein-weight.witness.json",
         "end-to-end-halflife.witness.json",

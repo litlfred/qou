@@ -132,6 +132,16 @@ class SymbolicHeckeElement:
             print(f"    ({c_str}) · {ws}")
 
 
+def _translate_word(w: tuple, d: int) -> tuple:
+    """Shift every non-negative generator index in `w` by `d`.
+
+    Negative indices are formal-token IDs (registered atoms) and
+    are left unchanged. Used by the multi-term sub-word matcher to
+    register an NF at a chosen generator-offset δ.
+    """
+    return tuple(g + d if g >= 0 else g for g in w)
+
+
 class SymbolicHeckeDivision:
     """Gröbner--Shirshov division in H_n(q) with symbolic coefficients.
 
@@ -153,18 +163,33 @@ class SymbolicHeckeDivision:
         # Quotient relations: atom_id → {name, nf_terms, n_components}
         self._quotient_relations = {}
 
+        # Reduce cache: maps a frozenset(elem.terms.items()) hash to
+        # the reduced element + stats. Since reduction is idempotent
+        # (applying it twice gives the same NF), the same input
+        # element always yields the same output. Keyed on a hashable
+        # snapshot of the input. Cache is stored per-instance
+        # because quotient registrations affect the result.
+        self._reduce_cache: dict = {}
+
         # Structural ideal generators I₁-I₇
         # Each is a function that identifies and collapses structural patterns
         self._structural_ideals = []
 
     # ── Quotient ideal: formal atom variables ────────────────────
 
-    def register_quotient(self, atom_id, nf_element, name=""):
+    def register_quotient(self, atom_id, nf_element, name="",
+                            n_strands=None, tr_M_value=None):
         """Register a normal form as a quotient relation (whole-atom).
 
         atom_id: negative integer (e.g. -1 for ℵ₁)
         nf_element: SymbolicHeckeElement whose terms define the NF
         name: human-readable name
+        n_strands: (optional) algebra level where the NF lives (H_n).
+            Required by `fold()` for multi-term sub-word matching to
+            translate the NF's generator indices into a larger algebra.
+        tr_M_value: (optional) precomputed Markov trace tr_M(NF) as a
+            sympy expression in z, h. Used by `markov_trace_through_atoms()`
+            to short-circuit recursion on already-reduced sub-atoms.
 
         When ALL terms of the NF appear proportionally in an element,
         they are collapsed to the single formal variable ℵ_k.
@@ -183,6 +208,8 @@ class SymbolicHeckeDivision:
             'nf_words': set(nf_element.terms.keys()),
             'n_components': len(nf_element.terms),
             'trace': nf_trace,  # Markov trace of the NF
+            'n_strands': n_strands,    # algebra level of the NF (optional)
+            'tr_M_value': tr_M_value,  # precomputed tr_M(NF) (optional)
         }
 
     def _try_whole_atom_quotient(self, elem):
@@ -284,6 +311,239 @@ class SymbolicHeckeDivision:
                         return SymbolicHeckeElement(new_terms), True
 
         return elem, False
+
+    def _try_multi_term_subword_quotient(self, elem, *,
+                                           offset: int = 0):
+        """Multi-term sub-word fold (prefix-match case).
+
+        Detects: does `elem` factor as `(NF at offset δ) · suffix`
+        with consistent suffix and coefficients across all of the
+        NF's basis-words?
+
+        Specifically, for each registered atom k with multi-term NF
+        and known n_strands_NF, and for each generator-offset δ
+        compatible with the algebra:
+          1. Translate the NF's words by δ:
+                nf_terms_δ = {(w_0+δ, ..., w_k+δ): c_w  for nf_w, c_w}
+          2. For each elem.terms key `e_w`, check if `e_w` starts
+             with one of the translated NF words. Group by suffix.
+          3. If a single suffix appears for ALL translated NF words
+             (i.e., elem contains `nf_w_δ · suf` for every nf_w),
+             AND the coefficient ratios elem[nf_w_δ · suf] / c_w are
+             all equal to a common factor α, replace those keys with
+             a single key `(atom_id,) + suf` with coefficient α.
+
+        This handles the natural construction order where sub-atoms
+        are built first and inter-nucleon crossings appended after
+        (e.g., atomic_braid_to_crossings for D, T, ³He, ⁴He, ...).
+        Generalised "sub-pattern at any position δ inside larger
+        words" is more complex (Hecke non-commutativity scrambles
+        the position) — left as a follow-up.
+
+        offset: generator offset δ to test. Default 0 (no shift).
+
+        Returns (new_elem, did_reduce).
+        """
+        for atom_id, info in self._quotient_relations.items():
+            nf_terms = info['nf_terms']
+            # Skip single-term — handled by _try_subword_quotient.
+            nonzero = [(w, c) for w, c in nf_terms.items() if c != 0]
+            if len(nonzero) <= 1:
+                continue
+            # Translate NF by offset (uses module-level _translate_word).
+            nf_translated = {
+                _translate_word(w, offset): c for w, c in nonzero
+            }
+            # For each translated NF word, find the set of suffixes
+            # in elem.terms that follow it.
+            suffix_map: dict[tuple, dict] = {}  # nf_w_δ → {suffix: coeff}
+            for nf_w_δ, _c_nf in nf_translated.items():
+                L = len(nf_w_δ)
+                suffix_map[nf_w_δ] = {}
+                for elem_w, elem_c in elem.terms.items():
+                    if elem_c == 0 or len(elem_w) < L:
+                        continue
+                    if elem_w[:L] == nf_w_δ:
+                        suf = elem_w[L:]
+                        suffix_map[nf_w_δ][suf] = elem_c
+            # Find suffixes common to ALL translated NF words.
+            common_suffixes = None
+            for nf_w_δ in nf_translated:
+                suf_set = set(suffix_map[nf_w_δ].keys())
+                if common_suffixes is None:
+                    common_suffixes = suf_set
+                else:
+                    common_suffixes = common_suffixes & suf_set
+            if not common_suffixes:
+                continue
+            # For each common suffix, check coefficient consistency:
+            # elem[nf_w_δ · suf] should equal α · nf_terms[nf_w] for
+            # a single common factor α (independent of nf_w).
+            for suf in common_suffixes:
+                ratios = []
+                for nf_w_δ, c_nf in nf_translated.items():
+                    elem_c = suffix_map[nf_w_δ].get(suf)
+                    if elem_c is None:
+                        ratios = None
+                        break
+                    if c_nf == 0:
+                        continue
+                    # `sp.cancel` is significantly faster than
+                    # `sp.simplify` for rational expressions and
+                    # is sufficient here.
+                    ratios.append(sp.cancel(elem_c / c_nf))
+                if not ratios:
+                    continue
+                common = ratios[0]
+                if not all(sp.cancel(r - common).equals(0)
+                           for r in ratios[1:]):
+                    continue
+                # All ratios equal — collapse.
+                new_terms = dict(elem.terms)
+                for nf_w_δ in nf_translated:
+                    full_w = nf_w_δ + suf
+                    if full_w in new_terms:
+                        # Subtract the matched coefficient
+                        c_nf = nf_translated[nf_w_δ]
+                        new_terms[full_w] = sp.expand(
+                            new_terms[full_w] - common * c_nf
+                        )
+                        # `.equals(0)` returns a Python bool (vs
+                        # `== 0` which returns a sympy Equality).
+                        if new_terms[full_w].equals(0):
+                            new_terms.pop(full_w, None)
+                # Add the formal-token replacement.
+                formal_w = (atom_id,) + suf
+                new_terms[formal_w] = sp.expand(
+                    new_terms.get(formal_w, sp.Integer(0)) + common
+                )
+                return SymbolicHeckeElement(new_terms), True
+        return elem, False
+
+    # ── Fold / unfold API ─────────────────────────────────────────
+    #
+    # Conceptual pattern: callers register registered atom NFs via
+    # `register_quotient(...)`, then `fold` an element to compress
+    # registered sub-patterns into formal-variable tokens (ℵ_k),
+    # work with the smaller representation through reduce / markov-
+    # trace, and `unfold` if they need the full Hecke-element form
+    # back (e.g., for Markov-trace recursion that doesn't have
+    # tr_M(ℵ_k) cached).
+    #
+    # Status:
+    #   - Single-term NFs: fold via `_try_subword_quotient` works.
+    #   - Multi-term NFs: matching is non-trivial because
+    #     non-commutativity of H_n means the multi-term sub-pattern
+    #     can be scrambled by Hecke / far-comm / Yang-Baxter rules.
+    #     A correct implementation needs to either (a) match BEFORE
+    #     reduction touches the sub-atom, or (b) re-canonicalize
+    #     during matching. Both add substantial complexity. Marked
+    #     here as a documented extension point.
+
+    def fold(self, elem, atom_ids=None):
+        """Compress registered sub-pattern NFs into formal variables.
+
+        Iterates two matchers to a fixed point:
+          - `_try_subword_quotient` for single-term NFs
+          - `_try_multi_term_subword_quotient` (prefix-match case)
+            for multi-term NFs
+
+        The multi-term matcher handles the natural construction order
+        where sub-atoms are built first and inter-nucleon crossings
+        appended after — covers the production atomic-braid pattern
+        for D, T, ³He, ⁴He. Generalised "sub-pattern at any position"
+        is non-trivial under Hecke non-commutativity and remains a
+        follow-up.
+
+        atom_ids: optional iterable of registered atom_ids to fold;
+        None means "fold any registered atom".
+
+        Returns the (possibly modified) element.
+        """
+        if not self._quotient_relations:
+            return elem
+        # Iterate single-term then multi-term until both reach a
+        # fixed point. The two matchers are layered: collapsing a
+        # multi-term NF can expose a single-term sub-pattern for the
+        # next round (and vice versa).
+        outer_changed = True
+        while outer_changed:
+            outer_changed = False
+            inner_changed = True
+            while inner_changed:
+                elem, inner_changed = self._try_subword_quotient(elem)
+                outer_changed = outer_changed or inner_changed
+            inner_changed = True
+            while inner_changed:
+                elem, inner_changed = (
+                    self._try_multi_term_subword_quotient(elem)
+                )
+                outer_changed = outer_changed or inner_changed
+        return elem
+
+    def unfold(self, elem):
+        """Expand formal-variable tokens back to their NFs.
+
+        For each formal token `aid` (negative index) in any word of
+        `elem.terms`, substitute the registered NF in place and
+        distribute the surrounding generators across the NF's basis
+        words. This is purely textual substitution: the word
+        ``(g_1, ..., g_k, aid, h_1, ..., h_m)`` with NF
+        ``Σ_i c_i · w_i`` becomes
+        ``Σ_i c_i · (g_1, ..., g_k, *w_i, h_1, ..., h_m)``.
+
+        Correctness contract: the registered NF for `aid` must already
+        encode any necessary generator-offset (so it lives on the
+        correct strands relative to the surrounding word). The
+        production path in `markov_peel.tr_M_atomic` registers a
+        distinct `atom_id` per nucleon position, with the NF pre-
+        shifted to that position's strands — substitution is then
+        the correct unfolding.
+
+        Multiple formal tokens per word are handled left-to-right
+        (formal token in expanded position is a generator only if
+        the NF includes one, in which case it is recursively
+        unfolded on the next pass).
+        """
+        if not self._quotient_relations:
+            return elem
+        # Iterate to a fixed point: each pass expands the leftmost
+        # formal token in every word; re-running picks up tokens
+        # introduced by NFs (degenerate case, expected to terminate).
+        for _ in range(64):  # bounded for safety
+            any_formal = False
+            new_terms: dict = {}
+            for word, coeff in elem.terms.items():
+                # Find leftmost formal token.
+                pos = next(
+                    (i for i, g in enumerate(word) if g < 0), -1
+                )
+                if pos == -1:
+                    new_terms[word] = (
+                        new_terms.get(word, sp.Integer(0)) + coeff
+                    )
+                    continue
+                any_formal = True
+                aid = word[pos]
+                info = self._quotient_relations.get(aid)
+                if info is None:
+                    # Unknown formal token — leave as-is.
+                    new_terms[word] = (
+                        new_terms.get(word, sp.Integer(0)) + coeff
+                    )
+                    continue
+                prefix = word[:pos]
+                suffix = word[pos + 1:]
+                for nf_word, nf_coeff in info['nf_terms'].items():
+                    expanded = prefix + tuple(nf_word) + suffix
+                    new_terms[expanded] = sp.expand(
+                        new_terms.get(expanded, sp.Integer(0))
+                        + coeff * nf_coeff
+                    )
+            elem = SymbolicHeckeElement(new_terms)
+            if not any_formal:
+                break
+        return elem
 
     def collapse_formal_powers(self, elem):
         """Collapse consecutive runs of the same formal variable.
@@ -701,7 +961,8 @@ class SymbolicHeckeDivision:
             # Fallback: Hopf link
             return SymbolicHeckeElement({(gen,): C_HOPF})
 
-    def reduce(self, elem, max_iterations=10000, use_quotient=True):
+    def reduce(self, elem, max_iterations=10000, use_quotient=True,
+                use_cache=False):
         """Gröbner--Shirshov reduction with symbolic coefficients.
 
         Applies rules in order:
@@ -711,7 +972,29 @@ class SymbolicHeckeDivision:
           R4: Quotient — whole-atom NF → ℵ_k (if enabled)
 
         Returns (reduced_element, step_count_dict).
+
+        `use_cache` (default False): cache reductions keyed on a
+        hashable snapshot of `elem.terms`. Useful when the SAME
+        element object is reduced repeatedly (e.g., across multi-PR
+        regression suites). NOT useful for `incremental_reduced_element`
+        in markov_peel — each intermediate element is unique, so the
+        cache only adds key-construction overhead. Default off.
         """
+        # Cache lookup (opt-in).
+        cache_key = None
+        if use_cache:
+            try:
+                cache_key = (
+                    frozenset((w, str(c)) for w, c in elem.terms.items()),
+                    max_iterations, use_quotient,
+                    len(self._quotient_relations),
+                )
+                cached = self._reduce_cache.get(cache_key)
+                if cached is not None:
+                    return cached
+            except (TypeError, ValueError):
+                cache_key = None
+
         hecke_steps = 0
         yb_steps = 0
         fc_steps = 0
@@ -809,7 +1092,7 @@ class SymbolicHeckeDivision:
                     changed = True
                     continue
 
-                # Then try sub-word quotient
+                # Then try sub-word quotient (single-term NFs)
                 q_changed = True
                 while q_changed:
                     elem, q_changed = self._try_subword_quotient(elem)
@@ -817,8 +1100,26 @@ class SymbolicHeckeDivision:
                         quotient_steps += 1
                         changed = True
 
-        return elem, {'hecke': hecke_steps, 'yb': yb_steps, 'fc': fc_steps,
-                      'quotient': quotient_steps}
+                # Then try multi-term sub-word quotient (prefix-match
+                # case for multi-term NFs at offset 0). Callers that
+                # need multi-position folds register a distinct
+                # atom_id per offset with the NF pre-shifted (see
+                # markov_peel.tr_M_atomic). Cheaper than whole-atom
+                # quotient because it only inspects elem.terms.
+                q_changed = True
+                while q_changed:
+                    elem, q_changed = (
+                        self._try_multi_term_subword_quotient(elem)
+                    )
+                    if q_changed:
+                        quotient_steps += 1
+                        changed = True
+
+        result = (elem, {'hecke': hecke_steps, 'yb': yb_steps,
+                         'fc': fc_steps, 'quotient': quotient_steps})
+        if cache_key is not None:
+            self._reduce_cache[cache_key] = result
+        return result
 
     # ── Markov trace ─────────────────────────────────────────────
 

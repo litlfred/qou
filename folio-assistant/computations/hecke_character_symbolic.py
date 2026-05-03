@@ -336,8 +336,10 @@ if __name__ == "__main__":
         Q_cat = results["n_total"]["at_q0"] - results["p_total"]["at_q0"]
         print(f"\n  Q_cat = tr_M(n) - tr_M(p) = {Q_cat:+.6e}")
         if abs(Q_cat) > 1e-12:
-            E_0 = 0.782 / abs(Q_cat)
-            print(f"  E_0 = 0.782 MeV / |Q_cat| = {E_0:+.6e} MeV/cat.unit")
+            from experimental_constants import Q_NEUTRON_MEV
+            E_0 = float(Q_NEUTRON_MEV) / abs(Q_cat)
+            print(f"  E_0 = Q_β(n) / |Q_cat| = {E_0:+.6e} MeV/cat.unit "
+                  f"(Q_β = {float(Q_NEUTRON_MEV):.8f} MeV)")
             print(f"  [CALIBRATION SUCCEEDS — q-character distinguishes p/n]")
         else:
             print(f"  [Q_cat = 0: q-character STILL parity-blind for this "
