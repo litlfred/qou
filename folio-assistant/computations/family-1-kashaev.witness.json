@@ -1,0 +1,66 @@
+{
+  "computation": "family-1-kashaev",
+  "computedAt": "2026-05-03T20:51:43.231962+00:00",
+  "description": "Family-1 binding via Kashaev law B = ρ_F · m_e · Vol_hyp(K) for D, T, ³He using historical knot identifications (6_2, 8_11, L6a4).  This is the leading-order term; the remaining ~1-3% residuals are higher-order Habiro/jet corrections per binding_ladder_catalog.find_best_alpha.",
+  "constants": {
+    "m_e_MeV": 0.51099895069
+  },
+  "knot_volumes": {
+    "6_2": 4.400832516123046,
+    "8_11": 8.28631808635811,
+    "L6a4": 7.327724753417752
+  },
+  "rows": [
+    {
+      "applicable": true,
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "symbol": "²H",
+      "knot": "6_2",
+      "rho_F": 1,
+      "Vol_hyp": 4.400832516123046,
+      "m_e_MeV": 0.51099895069,
+      "B_pred_MeV": 2.248820797901309,
+      "formula": "1·m_e·Vol(6_2)",
+      "method": "manual-historical-volume-match",
+      "B_AME_MeV": 2.22452,
+      "err_MeV": 0.02430079790130879,
+      "err_pct": 1.092406357385359
+    },
+    {
+      "applicable": true,
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "symbol": "³H",
+      "knot": "8_11",
+      "rho_F": 2,
+      "Vol_hyp": 8.28631808635811,
+      "m_e_MeV": 0.51099895069,
+      "B_pred_MeV": 8.468599694425127,
+      "formula": "2·m_e·Vol(8_11)",
+      "method": "manual-historical-volume-match",
+      "B_AME_MeV": 8.48181,
+      "err_MeV": -0.013210305574872905,
+      "err_pct": -0.15574866184072628
+    },
+    {
+      "applicable": true,
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "symbol": "³He",
+      "knot": "L6a4",
+      "rho_F": 2,
+      "Vol_hyp": 7.327724753417752,
+      "m_e_MeV": 0.51099895069,
+      "B_pred_MeV": 7.4889193198832205,
+      "formula": "2·m_e·Vol(L6a4)",
+      "method": "manual-historical-volume-match",
+      "B_AME_MeV": 7.71804,
+      "err_MeV": -0.22912068011677977,
+      "err_pct": -2.968638153168159
+    }
+  ]
+}

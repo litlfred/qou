@@ -49,6 +49,12 @@ AME_BA_MEV = {
     # These are NOT magic-A in the framework — they use recursive-on-4He.
 }
 
+# Atom-symbol map (single source of truth for Family 2 atoms; consumed
+# by `b_over_a_v5_unified.py` to avoid duplicating magic strings).
+ATOM_SYMBOL: dict[tuple[int, int], str] = {
+    (2, 2): "⁴He",
+}
+
 MAGIC_NUMBERS = {2, 8, 20, 28, 50, 82, 126}
 
 

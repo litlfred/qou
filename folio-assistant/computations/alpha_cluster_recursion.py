@@ -47,6 +47,13 @@ AME_BA_MEV = {
     (20, 20): 342.05212,   # ⁴⁰Ca  (n_α = 10)
 }
 
+# Atom-symbol map (single source of truth for Family 3 atoms; consumed
+# by `b_over_a_v5_unified.py` and the local main() to avoid duplication).
+ATOM_SYMBOL: dict[tuple[int, int], str] = {
+    (4, 4): "⁸Be", (6, 6): "¹²C", (8, 8): "¹⁶O",
+    (10, 10): "²⁰Ne", (12, 12): "²⁴Mg", (20, 20): "⁴⁰Ca",
+}
+
 
 def is_alpha_chain(Z: int, N: int) -> bool:
     """True iff (Z, N) is an integer-α-cluster atom: Z = N and A divisible by 4."""
@@ -127,10 +134,7 @@ def main() -> int:
           f"{'err_MeV':>10}  {'err %':>7}")
     print("  " + "-" * 80)
     rows = []
-    syms = {
-        (4, 4): "⁸Be", (6, 6): "¹²C", (8, 8): "¹⁶O",
-        (10, 10): "²⁰Ne", (12, 12): "²⁴Mg", (20, 20): "⁴⁰Ca",
-    }
+    syms = ATOM_SYMBOL
     for (Z, N), B_AME in AME_BA_MEV.items():
         r = alpha_cluster_binding(Z, N)
         if not r.get("applicable"):
