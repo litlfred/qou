@@ -94,16 +94,23 @@ def main() -> int:
             tr = pyhecke.trace.markov_trace_symbolic_eval(
                 Z, N, include_inter, 1, 1, 1, float(Q0), precision=30
             )
-            tr_f = float(tr if not hasattr(tr, "imag")
-                         else (tr.real if abs(tr.imag) < 1e-9 else tr))
-            log_tr = math.log(abs(tr_f)) if tr_f != 0 else float("nan")
+            # Coerce to a finite real if the imag part is negligible; keep
+            # complex otherwise so abs()/log() still work without TypeError.
+            if hasattr(tr, "imag") and abs(tr.imag) >= 1e-9:
+                tr_val = complex(tr)
+                tr_disp = f"{tr_val.real:+.6e}{tr_val.imag:+.2e}j"
+            else:
+                tr_val = float(tr.real if hasattr(tr, "imag") else tr)
+                tr_disp = f"{tr_val:>+16.6e}"
+            log_tr = math.log(abs(tr_val)) if abs(tr_val) > 0 else float("nan")
             dt = time.time() - t0
             print(f"  {label:>5} {Z:>2} {N:>2} {A:>3} {n_strands:>3}  "
-                  f"{tr_f:>+16.6e}  {log_tr:>+10.4f}  {dt:>6.3f}")
+                  f"{tr_disp:>16}  {log_tr:>+10.4f}  {dt:>6.3f}")
             results[label] = {
                 "Z": Z, "N": N, "A": A, "n_strands": n_strands,
                 "include_inter": include_inter,
-                "tr_M_q0": tr_f,
+                "tr_M_q0": (str(tr_val) if isinstance(tr_val, complex)
+                            else tr_val),
                 "log_abs_tr_M_q0": log_tr,
                 "walltime_sec": dt,
             }

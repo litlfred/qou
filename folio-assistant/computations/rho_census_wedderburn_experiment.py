@@ -137,12 +137,31 @@ def chi_h3_braid(braid_word, q):
     return chi
 
 
+def _load_h3_y_lambda(base: Path) -> dict:
+    """Load the H_3 Jones–Markov y_λ table once at start of run."""
+    with open(base / "y-lambda-jones-markov-witness.json") as f:
+        W = json.load(f)
+    h3 = W["tables_by_n"]["3"]
+    y = {}
+    for w in h3["weights"]:
+        if w["partition"] == [3]:
+            y["(3)"] = w["y_lambda"]
+        elif w["partition"] == [2, 1]:
+            y["(2,1)"] = w["y_lambda"]
+        elif w["partition"] == [1, 1, 1]:
+            y["(1,1,1)"] = w["y_lambda"]
+    return y
+
+
 def main():
     base = Path(__file__).parent
     print("══════════════════════════════════════════════════════════════════════")
     print("  Plan H — full-census Wedderburn-multiplicity probe (4 atoms)")
     print(f"  q_0 = {Q_0}, m_e = {M_E} MeV")
     print("══════════════════════════════════════════════════════════════════════\n")
+
+    # Load the H_3 y_λ table once outside the per-atom loop.
+    h3_y = _load_h3_y_lambda(base)
 
     rows = []
     for atom in CENSUS:
@@ -164,19 +183,7 @@ def main():
             delta_rho = true_rho - rho_hp
             if atom["native_n"] == 3:
                 chi = chi_h3_braid(atom["braid"], Q_0)
-                # Use witness y_λ for H_3
-                with open(base / "y-lambda-jones-markov-witness.json") as f:
-                    W = json.load(f)
-                h3 = W["tables_by_n"]["3"]
-                y = {}
-                for w in h3["weights"]:
-                    if w["partition"] == [3]:
-                        y["(3)"] = w["y_lambda"]
-                    elif w["partition"] == [2, 1]:
-                        y["(2,1)"] = w["y_lambda"]
-                    elif w["partition"] == [1, 1, 1]:
-                        y["(1,1,1)"] = w["y_lambda"]
-                tr_M = sum(y[k] * chi[k] for k in y)
+                tr_M = sum(h3_y[k] * chi[k] for k in h3_y)
             else:
                 chi = {"(see-witness)": "deferred"}
                 tr_M = float('nan')

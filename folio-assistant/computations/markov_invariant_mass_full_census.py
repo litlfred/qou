@@ -79,18 +79,26 @@ def dim_q_partition(shape, n):
     return qfac(n) / h_prod
 
 
-def partitions_of(n):
+def partitions_of(n, max_height=None):
+    """Yield partitions of n with at most max_height parts (default unbounded).
+
+    The early-prune form avoids generating the full p(n) ≈ 2.3M partitions of
+    n=66 just to filter them later — only those satisfying the height cap are
+    enumerated.
+    """
     if n == 0:
         yield ()
         return
-    def gen(rem, mxp):
+    def gen(rem, mxp, parts_used):
         if rem == 0:
             yield ()
             return
+        if max_height is not None and parts_used >= max_height:
+            return
         for p in range(min(mxp, rem), 0, -1):
-            for rest in gen(rem - p, p):
+            for rest in gen(rem - p, p, parts_used + 1):
                 yield (p,) + rest
-    yield from gen(n, n)
+    yield from gen(n, n, 0)
 
 
 def Sigma_n(n, height_cap=None, time_budget_sec=10.0):
@@ -107,14 +115,16 @@ def Sigma_n(n, height_cap=None, time_budget_sec=10.0):
         height_cap = 8 if n <= 12 else (6 if n <= 24 else (4 if n <= 48 else 3))
     total = mp.mpf(0)
     n_terms = 0
-    for shape in partitions_of(n):
-        if len(shape) > height_cap:
-            continue
+    # Tolerance tied to current mpmath precision (don't hardcode 1e-30).
+    tol = mp.mpf(10) ** (-(mp.mp.dps - 5))
+    for shape in partitions_of(n, max_height=height_cap):
         d = dim_q_partition(shape, n)
-        if abs(d) > mp.mpf("1e-30"):
+        if abs(d) > tol:
             total += 1 / d
             n_terms += 1
         if n_terms % 64 == 0 and _t.time() - t0 > time_budget_sec:
+            print(f"  WARNING: Sigma_n({n}) hit time budget {time_budget_sec}s "
+                  f"after {n_terms} terms; returning partial sum.")
             break
     return total
 

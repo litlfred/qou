@@ -1,7 +1,7 @@
 {
   "computation": "markov-invariant-mass-full-census",
   "description": "30c: Markov-invariant unified mass formula extended to all 23 isotopes with Z \u2264 10.  Plugs the full-census canonical Markov-trace sweep into the 3-prefactor formula (\u03b1_M\u00b7log|tr_M| + \u03b1_F\u00b7m_e\u00b7\u03a3_n + m_e\u00b78G\u00b7B_shadow), with \u03b1_M, \u03b1_F calibrated from {D, T}.  Tests whether the categorical formula generalises across the census or fails the way the per-atom census/\u03b1-cluster strategies do.  Term 7 shadow-price drops to 0 for Z \u2265 3 atoms where it has not yet been computed.",
-  "computedAt": "2026-05-03T09:23:31.396440+00:00",
+  "computedAt": "2026-05-03T09:38:25.423286+00:00",
   "structural_prefactors": {
     "alpha_M_MeV": -3.728573825966886,
     "alpha_F": -1.2917203783792384,
