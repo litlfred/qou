@@ -253,18 +253,29 @@ def paper_six_term_mass(Z, N, include_inter=True,
                           m_e_hecke: float = 1.0,
                           term5_mode: str = "multiplicative_on_t1",
                           isotope_label: str | None = None,
-                          tower_mode: str = "brane"):
+                          tower_mode: str = "li2q"):
     """6-term mass formula.
 
     `tower_mode` controls T2 + T3 evaluation:
-        "brane" (default):  legacy archimedean Φ_q(|V̂_i|) form.
-                            Markov-invariance-broken at q_0 (PR #524).
-        "drop":             T2 = T3 = 0.  Simplest Path B / C variant.
-        "q1-base":          T2 + T3 = (1/2)^(2A-1) (closed-form base
-                            point at q→1 per the Path A probe; see
+        "li2q" (default, 2026-05-03):
+                            T2 = -Σ Li_2^q(-|V̂_i|),
+                            T3 = -z² · Σ Li_2^q(-|V̂_i V̂_j|)
+                            symmetric q-dilogarithm — the corrected
+                            Kashaev limit per `prop:mass-endomorphism-tower`
+                            (proven in commit a43d7f1fa via the
+                            `kashaev-integration-identity` probe).
+        "brane" (legacy, deprecated):
+                            T2 = Σ Φ_q(|V̂_i|), T3 = z² · Σ Φ_q(|V̂_i V̂_j|).
+                            Faddeev quantum dilogarithm form, NOT
+                            Markov-invariant at q_0 (PR #524).
+                            Empirical T - ³He = -737 MeV pathology.
+        "drop":             T2 = T3 = 0.  Simplest test of "no brane".
+        "q1-base":          T2 + T3 = (1/2)^(2A-1) (Path A closed-form
+                            base point at q→1 per
                             `path-a-zeta1-residue-probe.witness.json`).
-                            Captures the spectral-sequence base trace
-                            without the per-generator Φ_q amplification.
+        "r-side-bare":      T2 = (n-1)·z², T3 = C(n-1,2)·z⁴ (R-side
+                            algebraic per `prop:mass-endomorphism-tower`,
+                            Markov-axiom values).
     """
     """Six-term mass formula in Hecke units.
 
