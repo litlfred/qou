@@ -86,17 +86,22 @@ def _hoefsmit_disk_cached(lam: tuple, n_strands: int) -> tuple:
 
     First call per (n, λ) builds + writes cache; subsequent calls
     load + reconstruct in O(matrix-size) time.
+
+    Storage format: JSON (not pickle). `pickle` deserializes
+    arbitrary Python objects and can execute code if the cache
+    files are tampered with — JSON is bounded to data only and
+    sufficient for our string + int + list payload.
     """
-    import pickle
+    import json
     import sympy as sp
     from hecke_character_symbolic import hoefsmit_matrices_symbolic
     _CACHE_DIR.mkdir(parents=True, exist_ok=True)
     key = "_".join(str(p) for p in lam)
-    fp = _CACHE_DIR / f"n{n_strands}_lam{key}.pkl"
+    fp = _CACHE_DIR / f"n{n_strands}_lam{key}.json"
     q_local = sp.Symbol("q", positive=True, real=True)
     if fp.exists():
-        with fp.open("rb") as fh:
-            data = pickle.load(fh)
+        with fp.open("r") as fh:
+            data = json.load(fh)
         # Reconstruct matrices from str list with the local q symbol.
         mats: list = []
         for mat_rows in data["matrix_strs"]:
@@ -112,11 +117,16 @@ def _hoefsmit_disk_cached(lam: tuple, n_strands: int) -> tuple:
         [[str(matrices[k][i, j]) for j in range(dim)] for i in range(dim)]
         for k in range(len(matrices))
     ]
-    with fp.open("wb") as fh:
-        pickle.dump({
+    with fp.open("w") as fh:
+        # `content_lookup` may contain non-JSON-serializable types
+        # (e.g., sympy Rational); coerce to str-form for safety.
+        json.dump({
             "matrix_strs": matrix_strs,
             "dim": dim,
-            "content_lookup": content_lookup,
+            "content_lookup": (
+                {str(k): str(v) for k, v in content_lookup.items()}
+                if isinstance(content_lookup, dict) else content_lookup
+            ),
         }, fh)
     return matrices, dim, content_lookup
 
@@ -174,11 +184,19 @@ def _trace_per_partition(args: tuple) -> tuple[tuple, str]:
         cache_path.write_text("0")
         return (lam, "0")
     h = q - q ** (-1)
+    # Crossing → d-value lookup. Defined inside the loop because
+    # `h` depends on the worker's local `q` symbol (each worker
+    # rebinds q on import); module-level definition would bind to
+    # the wrong Symbol identity.
+    cross_d_table = {
+        "sigma": sp.Integer(0),
+        "sigma_inv": -h,
+        "averaged": -h / 2,
+    }
     M = sp.eye(dim)
     for gen_idx, cross_d in crossings:
         sigma = matrices[gen_idx]
-        d_val = {"sigma": sp.Integer(0), "sigma_inv": -h,
-                 "averaged": -h / 2}[cross_d]
+        d_val = cross_d_table[cross_d]
         cross = sigma + d_val * sp.eye(dim)
         M = M * cross
         M = M.applyfunc(sp.cancel)

@@ -52,7 +52,13 @@ def load_frob_polys() -> dict[str, dict[int, sp.Expr]]:
         for r in atom["frobenius"]:
             if not r.get("frob_p_is_exact", False):
                 continue
-            expr = sp.sympify(r["frob_p_in_Z_zeta_str"], locals={"u": u})
+            # Use the numerator field (always defined and integer-poly).
+            # The full tr_M(ζ_{2p}) = num/denom is in Q(ζ_{2p}) but
+            # only in Z[ζ_{2p}] when denom is a unit there — typically
+            # not the case for Markov traces. Working with the
+            # numerator preserves the substantive motivic structure.
+            field = r.get("frob_num_in_Z_zeta_str") or r.get("frob_p_in_Z_zeta_str")
+            expr = sp.sympify(field, locals={"u": u})
             out[label][int(r["prime"])] = expr
     return out
 
@@ -116,13 +122,17 @@ def check_multiplicative(frob_a: sp.Expr, frob_b: sp.Expr,
     """Test whether Frob_p(ab) = Frob_p(a) · Frob_p(b) in Z[ζ_n].
 
     Also returns the **residue** `ε = Frob(ab) − Frob(a)·Frob(b)`,
-    its Galois norm (rational integer if ε ∈ Z[ζ_n]), and the
-    residue's degree.
+    its Galois TRACE (rational integer if ε ∈ Z[ζ_n]), and the
+    residue's degree. The field is named `residue_galois_norm_int`
+    for historical compatibility, but the value computed is the
+    SUM of conjugates (= trace), NOT the product (= norm).
     """
     product = reduce_in_ring(frob_a * frob_b, n, u)
     target = reduce_in_ring(frob_ab, n, u)
     diff = reduce_in_ring((product - target).as_expr(), n, u)
-    # Compute the Galois norm of the residue: Σ_{k coprime to n} σ_k(ε).
+    # Compute the Galois TRACE of the residue:
+    #   Tr(ε) = Σ_{k coprime to n} σ_k(ε)
+    # (sum of conjugates, NOT product = norm).
     diff_expr = diff.as_expr()
     galois_norm = reduce_in_ring(
         sum(diff_expr.subs(u, u ** k)
@@ -314,10 +324,10 @@ def main() -> int:
             })
         print()
 
-    # Test 1f: Galois-norm symmetry — does the binding-norm depend
+    # Test 1f: Galois-trace symmetry — does the binding-norm depend
     # only on A (mass number) or on (Z, N) separately?
     if proton_lbl and neutron_lbl and T_lbl and He3_lbl:
-        print("─── Test 1f: ε(T) - ε(³He) Galois norm — isobaric asymmetry ───")
+        print("─── Test 1f: ε(T) - ε(³He) Galois trace — isobaric asymmetry ───")
         for p in primes:
             n_2p = 2 * p
             f_p = frobs.get(proton_lbl, {}).get(p)
@@ -485,7 +495,7 @@ def main() -> int:
     # If the residues encode motivic L-function local factors, we
     # expect the norm at prime p to be divisible by p^k for some
     # k ≥ 0 related to the motive's weight at p.
-    print("─── Test 4: p-adic divisibility of residue Galois norms ───")
+    print("─── Test 4: p-adic divisibility of residue Galois traces ───")
     pdic_table: list[dict[str, Any]] = []
     for r in relations:
         if r.get("kind") not in {"multiplicative", "isobaric_gap_norm",
@@ -614,13 +624,12 @@ def main() -> int:
             N = 2 * p * q
             print(f"  (p, q) = ({p}, {q})  → N = 2pq = {N}, "
                   f"φ(N) = {sp.totient(N)}")
-            t0 = sp.Symbol  # placeholder, just to use sp
             try:
                 gap_at_N = evaluate_gap_in_ring(
                     T_coeffs, He_coeffs, N, u,
                     T_terminated, He_terminated,
                 )
-                # Galois norm of the gap residue at level N.
+                # Galois trace of the gap residue at level N.
                 gap_expr = gap_at_N.as_expr()
                 norm_at_N = reduce_in_ring(
                     sum(gap_expr.subs(u, u ** k)
