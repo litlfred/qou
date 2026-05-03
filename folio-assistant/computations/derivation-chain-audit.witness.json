@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T01:02:03.710149+00:00",
-  "commitSha": "a1c8ebfd28cb3b5e629c4007a7c13e617757110b",
+  "computedAt": "2026-05-03T01:04:01.097258+00:00",
+  "commitSha": "41d55c61648f224e4596c7be974349b01f9acaac",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1494,6 +1494,7 @@
         "frobenius-partition-sum.witness.json",
         "full-pipeline.witness.json",
         "full-tower-mass.witness.json",
+        "g-a-g-action-derivation.witness.json",
         "garside-irrep-qvalues.witness.json",
         "gb-filtration-gauge-invariance.witness.json",
         "gb-filtration-jet-order.witness.json",
