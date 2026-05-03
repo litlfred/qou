@@ -77,31 +77,47 @@ def q_pochhammer_at_q0(m: int) -> mp.mpf:
     return prod
 
 
+def u_pochhammer_at_u0(m: int, u_val: mp.mpf) -> mp.mpf:
+    """(u_0; u_0)_m = Π_{k=1..m}(1 - u_0^k) — the q-Pochhammer in u = q^{1/2}.
+
+    The Habiro expansion in habiro_coefficients_atomic_fast.py is
+        p_in_u(u) = a_0 + a_1·(1-u) + a_2·(1-u)(1-u²) + …
+                  = Σ_m a_m · (u; u)_m
+    so the evaluation point is u_0 = √q_0, and the Pochhammer is in
+    u, NOT in q.
+    """
+    if m == 0:
+        return mp.mpf(1)
+    prod = mp.mpf(1)
+    for k in range(1, m + 1):
+        prod *= 1 - u_val ** k
+    return prod
+
+
 def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> mp.mpf:
-    """tr_M(T_w; q) = (Σ_m a_m(u) · (q;q)_m) / denom(u),  u = q^{1/2}.
+    """tr_M(T_w; q) = p_in_u(u) / denom_in_u(u),  u = q^{1/2}.
 
     The witness stores p_in_u (numerator) and denom_in_u (denominator)
     after the substitution q = u² that clears the q^{1/2} subring.  The
-    Habiro expansion a_m is over the numerator; the actual Markov trace
-    requires dividing by denom(u) at the evaluation point.
+    Habiro expansion is p_in_u(u) = Σ_m a_m(u) · (u; u)_m.
     """
     u = sp.symbols("u")
     u_val = mp.sqrt(q_val)
     u_val_sym = sp.Float(str(u_val), 50)
 
-    # Numerator via Habiro expansion sum_m a_m(u) (q;q)_m
+    # Numerator via Habiro expansion sum_m a_m(u) (u;u)_m
     numerator = mp.mpf(0)
     breakdown = []
     for entry in habiro_entry.get("habiro_coefficients", []):
         m = entry["m"]
         a_m_poly = sp.sympify(entry["a_m"])
         a_m_val = mp.mpf(str(complex(a_m_poly.subs(u, u_val_sym)).real))
-        pochhammer = q_pochhammer_at_q0(m)
+        pochhammer = u_pochhammer_at_u0(m, u_val)
         contribution = a_m_val * pochhammer
         numerator += contribution
         breakdown.append({
             "m": m, "a_m_at_u0": float(a_m_val),
-            "q_q_m": float(pochhammer),
+            "u_u_m": float(pochhammer),
             "contribution": float(contribution),
         })
 
