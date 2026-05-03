@@ -175,7 +175,25 @@ def aK_via_gram_shared(
         elem, _ = div.reduce(elem, max_iterations=2000)
 
     tr_sym = tr_M_element(elem, n_strands, simplify=False)
-    val_at_q0 = float(tr_sym.subs(q_sym, Q0).evalf(30))
+    # Free-symbol scrub: residual quotient-ideal formal variables
+    # can survive the reduction.  Substitute them to their NF
+    # values (in this audit context, set them to 1 so they don't
+    # contaminate the float — matches the Markov-peel convention
+    # `tr(formal_var) = trace_of_NF`).  If anything still resists
+    # numericisation, surface the symbolic form rather than
+    # crashing the per-variant comparison.
+    evald = tr_sym.subs(q_sym, Q0).evalf(30)
+    try:
+        val_at_q0 = float(evald)
+    except (TypeError, ValueError):
+        # One or more residual formal vars present.  Try forcing
+        # them to 1 (their default trace contribution) and retry.
+        free_left = [s for s in evald.free_symbols if s != q_sym]
+        try:
+            evald2 = evald.subs({s: 1 for s in free_left}).evalf(30)
+            val_at_q0 = float(evald2)
+        except (TypeError, ValueError):
+            val_at_q0 = float("nan")
     try:
         sym_simp = sp.cancel(tr_sym)
         sym_form = str(sym_simp)
