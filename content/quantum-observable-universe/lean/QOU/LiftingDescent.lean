@@ -1,4 +1,6 @@
 import Mathlib.Data.Real.Basic
+import QOU.LiftingDescent.MotivicGaloisCharacter
+import QOU.LiftingDescent.MotivicPerpetualObstruction
 
 /-!
 # QOU.LiftingDescent — Arc spaces of the brane tower

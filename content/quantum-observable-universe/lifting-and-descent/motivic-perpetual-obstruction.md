@@ -4,7 +4,7 @@ persists at every level $n \nmid \chi(A)$ — lifts cleanly to a single
 algebraic statement at the level of the
 [motivic Galois character](#def:motivic-galois-character).
 
-**Lemma (motivic perpetual obstruction).**
+**Conjecture (motivic perpetual obstruction).**
 *Let $A$ be a Frobenius–Hopf substrate with motivic class
 $[A] \in \widehat{\mathcal{M}}$ and let $\chi^{\mathrm{mot}}_A$ be its
 motivic Galois character. If $\chi(A) \neq 0$ then
@@ -21,7 +21,7 @@ $$
 Yekutieli obstruction $\kappa_0$ projects to a non-trivial Frobenius
 character at every such place.*
 
-**Proof sketch.**
+**Sketch (conditional on `[MotivicGaloisCharacter K0 Mhat Target motiveA]`).**
 *Apply [QU-to-QOU](#thm:qu-to-qou) to identify $\kappa_0$ with the
 Euler class $e(\xi)$ of the Reeb bundle, satisfying
 $\mathrm{tr}(\kappa_0) = \chi(A)$. Under the realization

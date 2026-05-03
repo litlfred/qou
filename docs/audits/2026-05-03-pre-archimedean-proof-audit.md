@@ -791,4 +791,155 @@ This is a documentation-tier inconsistency, not a wall breach.
 
 ---
 
+**End of bridge audit.**
+
+---
+
+## §8 — Sharp Step-6 audit (motivic descent layer)
+
+The Step-6 cluster from §A of the forward-derivation document:
+`def:motivic-galois-character` + `def:descent-involution` +
+`conj:motivic-perpetual-obstruction`.  This is **GAP 6a**, the
+principal open item on the substrate side.
+
+### Findings
+
+**M1 (resolved). Narrative said "Lemma" but block kind is `conjecture`.**
+[`motivic-perpetual-obstruction.md`](../../content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.md):7
+opened with *"**Lemma (motivic perpetual obstruction).**"* — a
+holdover from the pre-2026-05-02 demotion (the `.ts` file's
+header comment notes the demotion from `lemma` to `conjecture`).
+The narrative continued reading as a lemma despite the block-kind
+correction.  Updated to *"**Conjecture (motivic perpetual
+obstruction).**"*; the proof sketch heading also updated to
+*"**Sketch (conditional on
+`[MotivicGaloisCharacter K0 Mhat Target motiveA]`).**"* to make
+the conditional-class status explicit.
+
+**M2 (resolved). The Lean modules existed only as co-located
+documentation stubs.** The block `lean.ref` URIs
+`qou:QOU.AlgebraicSubstrate.MotivicSubstrate`,
+`qou:QOU.LiftingDescent.MotivicGaloisCharacter`, and
+`qou:QOU.LiftingDescent.motivic_perpetual_obstruction` resolved
+only via the sibling rule (co-located stubs at
+`algebraic-substrate/motivic-substrate.lean` and
+`lifting-and-descent/motivic-{galois-character,perpetual-obstruction}.lean`),
+not via the formal Lake package.  The formal-chain
+[`lean/QOU/LiftingDescent/`](../../content/quantum-observable-universe/lean/QOU/LiftingDescent/)
+directory contained only `BBStratification`, `HomologicalCondensation`,
+`JetProlongation` — the Step-6 modules were missing.  Promoted in
+this commit:
+
+- new [`lean/QOU/AlgebraicSubstrate/MotivicSubstrate.lean`](../../content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MotivicSubstrate.lean)
+  — `Place`, `class MotivicSubstrate K0 Mhat Target`;
+- new [`lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean`](../../content/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean)
+  — `class MotivicGaloisCharacter` now properly takes
+  `[MotivicSubstrate K0 Mhat Target]` as a hypothesis (closing the
+  M5 narrative-vs-Lean gap below);
+- new [`lean/QOU/LiftingDescent/MotivicPerpetualObstruction.lean`](../../content/quantum-observable-universe/lean/QOU/LiftingDescent/MotivicPerpetualObstruction.lean)
+  — `theorem motivic_perpetual_obstruction` conditional on
+  `[MotivicSubstrate ...]` + `[MotivicGaloisCharacter ...]`, no
+  `sorry`.
+
+Aggregator updates:
+[`lean/QOU/AlgebraicSubstrate.lean`](../../content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate.lean)
+imports the new `MotivicSubstrate` module;
+[`lean/QOU/LiftingDescent.lean`](../../content/quantum-observable-universe/lean/QOU/LiftingDescent.lean)
+imports both new descent modules.
+
+**M3 (no fix needed). Apparent terminology collision on "archimedean".**
+On first read, `motivic-galois-character.md` line 49 ("the archimedean
+place") looks like it might collide with the "archimedean wall" of
+the forward-derivation document (= τ-realisation).  In fact the two
+uses are *consistent*: the "archimedean place" of ℚ is the place
+`v = ∞`, whose realisation lands in `ℝ`; this IS the τ-image of the
+substrate.  The `MotivicSubstrate` class's `archimedean_nontrivial`
+field axiomatises non-degeneracy of exactly this realisation.  No
+disambiguation needed.
+
+**M4 (resolved). Stale GitHub URL pointed to a different audit's
+branch.**
+[`motivic-galois-character.md`](../../content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.md):56
+linked to
+`https://github.com/litlfred/qou/blob/claude/audit-pole-structure-eqbHE/.../motivic-galois-character.lean`
+— a branch from a different audit (`claude/audit-pole-structure-eqbHE`,
+not the current `claude/audit-pre-archimedean-proofs-VZ3Hl`).  Hard-
+coded branch URLs go stale at every audit; replaced with a relative
+path
+`[`MotivicGaloisCharacter`](../../lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean)`
+that follows the working tree.
+
+**M5 (resolved as part of M2). Narrative claimed
+`MotivicGaloisCharacter` takes a `MotivicSubstrate` hypothesis;
+co-located Lean stub did not.** The .md narrative said *"The class
+takes a `MotivicSubstrate` instance as a hypothesis"*; the
+co-located stub Lean class was
+
+```
+class MotivicGaloisCharacter
+    (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
+    (motiveA : Mhat) where ...
+```
+
+— no `[MotivicSubstrate K0 Mhat]` in sight.  The new formal-chain
+version makes the narrative claim hold:
+
+```
+class MotivicGaloisCharacter
+    (K0 Mhat : Type*) [CommRing K0] [CommRing Mhat]
+    (Target : Place → Type*) [∀ v, CommRing (Target v)]
+    [MotivicSubstrate K0 Mhat Target]
+    (motiveA : Mhat) where ...
+```
+
+The Galois character is now genuinely *of a substrate*, not a
+free-floating typeclass on raw ring parameters.
+
+**M6 (observation, no fix). Lean theorem is a near-tautological
+extraction.** `theorem motivic_perpetual_obstruction` repackages the
+class field `MotivicGaloisCharacter.almost_everywhere_nontrivial`
+(which provides `∃ N, ∀ p ≥ N, ¬IsUnit (frobenius_at p)`) into the
+"bad finite set" form preferred by the conjecture (`∃ S : Finset ℕ,
+∀ p ∉ S, ¬IsUnit ...`).  This is fine per CLAUDE.md §3b — the
+conjectural content lives in the class field; the theorem just
+exposes it — but a reader of the .lean file should know that the
+theorem's no-`sorry` property is *because* the class field carries
+the conjectural input, not because the proof is non-trivial.
+
+**M7 (observation, no fix). `descent-involution` is clean.**  Pure
+categorical structure (ascent / descent / retraction / idempotence);
+co-located Lean stub is polymorphic in `[CommRing R]`; idempotence
+proof is two lines.  Two distinct `DescentInvolution` declarations
+coexist:
+- `QOU.DescentInvolution` (co-located stub at
+  `lifting-and-descent/descent-involution.lean`, polymorphic in
+  `Module R M`),
+- `QOU.Torsion.Descent.DescentInvolution` (formal chain at
+  `lean/QOU/Torsion/Descent.lean`, different signature).
+
+The block `lean.ref = "qou:QOU.DescentInvolution"` resolves to the
+co-located stub via the sibling rule.  This duplication is a
+design observation, not a wall breach.
+
+### Net status of the Step-6 cluster
+
+| Block | Kind | Lean class | Wall status |
+|-------|------|------------|-------------|
+| `def:motivic-substrate` | definition | `class MotivicSubstrate K0 Mhat Target` (formal chain) | 🟢 unconditional, place-typed |
+| `def:motivic-galois-character` | definition | `class MotivicGaloisCharacter` taking `[MotivicSubstrate]` (formal chain) | 🟢 conditional-class axiomatisation |
+| `def:descent-involution` | definition | `structure DescentInvolution` (co-located + formal chain duplication) | 🟢 categorical, no Archimedean |
+| `conj:motivic-perpetual-obstruction` | conjecture | `theorem motivic_perpetual_obstruction` conditional on the two classes (formal chain, no `sorry`) | 🟡 by design (GAP 6a) |
+
+The conjectural content is now fully concentrated in the
+`MotivicGaloisCharacter.almost_everywhere_nontrivial` field; every
+downstream block depending on it (Kummer tower, Descartes-Yekutieli,
+χ=−6 derivation, Hochschild-Kummer connection) inherits the
+conditional-class hypothesis.  GAP 6a remains open at the
+mathematical level — no concrete `instance MotivicGaloisCharacter`
+for the QOU substrate at $q_0$ — but the Lean infrastructure is
+now in place for any such instance to *immediately* discharge every
+downstream block via the typeclass-instance lookup.
+
+---
+
 **End of audit.**
