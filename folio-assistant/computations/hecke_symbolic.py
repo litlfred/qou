@@ -132,6 +132,16 @@ class SymbolicHeckeElement:
             print(f"    ({c_str}) · {ws}")
 
 
+def _translate_word(w: tuple, d: int) -> tuple:
+    """Shift every non-negative generator index in `w` by `d`.
+
+    Negative indices are formal-token IDs (registered atoms) and
+    are left unchanged. Used by the multi-term sub-word matcher to
+    register an NF at a chosen generator-offset δ.
+    """
+    return tuple(g + d if g >= 0 else g for g in w)
+
+
 class SymbolicHeckeDivision:
     """Gröbner--Shirshov division in H_n(q) with symbolic coefficients.
 
@@ -340,11 +350,9 @@ class SymbolicHeckeDivision:
             nonzero = [(w, c) for w, c in nf_terms.items() if c != 0]
             if len(nonzero) <= 1:
                 continue
-            # Translate NF by offset.
-            def _translate(w: tuple, d: int) -> tuple:
-                return tuple(g + d if g >= 0 else g for g in w)
+            # Translate NF by offset (uses module-level _translate_word).
             nf_translated = {
-                _translate(w, offset): c for w, c in nonzero
+                _translate_word(w, offset): c for w, c in nonzero
             }
             # For each translated NF word, find the set of suffixes
             # in elem.terms that follow it.
@@ -380,11 +388,14 @@ class SymbolicHeckeDivision:
                         break
                     if c_nf == 0:
                         continue
-                    ratios.append(sp.simplify(elem_c / c_nf))
+                    # `sp.cancel` is significantly faster than
+                    # `sp.simplify` for rational expressions and
+                    # is sufficient here.
+                    ratios.append(sp.cancel(elem_c / c_nf))
                 if not ratios:
                     continue
                 common = ratios[0]
-                if not all(sp.simplify(r - common) == 0
+                if not all(sp.cancel(r - common).equals(0)
                            for r in ratios[1:]):
                     continue
                 # All ratios equal — collapse.
@@ -397,7 +408,9 @@ class SymbolicHeckeDivision:
                         new_terms[full_w] = sp.expand(
                             new_terms[full_w] - common * c_nf
                         )
-                        if sp.simplify(new_terms[full_w]) == 0:
+                        # `.equals(0)` returns a Python bool (vs
+                        # `== 0` which returns a sympy Equality).
+                        if new_terms[full_w].equals(0):
                             new_terms.pop(full_w, None)
                 # Add the formal-token replacement.
                 formal_w = (atom_id,) + suf

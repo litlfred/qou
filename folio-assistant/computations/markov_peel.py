@@ -272,7 +272,8 @@ def tr_M_atomic(
 
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
 
-    # Pre-registration of proton/neutron NFs (opt-in, default OFF).
+    # Pre-registration of proton/neutron NFs (default ON; opt-out
+    # by passing `pre_register_nucleons=False`).
     # For each nucleon position k ∈ [0, A), register the proton (or
     # neutron) NF pre-shifted by δ=3k as a distinct atom_id. The
     # reduce() Rule 4 multi-term matcher then folds occurrences at
