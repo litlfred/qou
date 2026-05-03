@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T19:53:20.816730+00:00",
-  "commitSha": "f143dbffe69f2976474fa9a04c462e47f940aa80",
+  "computedAt": "2026-05-03T20:45:14.010792+00:00",
+  "commitSha": "c437fd32a0a637f2d2f82d59ad330b7e5ae55fcf",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1373,6 +1373,7 @@
         "atomic-chirality-residue.witness.json",
         "atomic-tr-m-mpfr-50dps.witness.json",
         "atomic-tr-m-wenzl-bridge.witness.json",
+        "b-over-a-v5-unified.witness.json",
         "baryon-product-from-alt.witness.json",
         "basis-knot-tables.witness.json",
         "benzene-resonance.witness.json",
@@ -1482,6 +1483,7 @@
         "explicit-alpha-k-h3.witness.json",
         "explore-1ppb-items-1-and-2.witness.json",
         "f1-spectral-reconciliation.witness.json",
+        "family-1-kashaev.witness.json",
         "family-4-motivic-probe.witness.json",
         "feynman-qou-comparison.witness.json",
         "final-formula-5-isotope.witness.json",

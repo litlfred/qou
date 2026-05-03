@@ -41,7 +41,11 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-# Family-2 + Family-3 callables (zero-parameter, fast)
+# Family-1, Family-2, Family-3 callables (all zero-parameter, fast)
+from family_1_kashaev import (  # noqa: E402
+    family_1_binding as _family_1_kashaev_binding,
+    KNOT_VOL,
+)
 from magic_A_formula import (  # noqa: E402
     M_E_MEV, VOL_BORROMEAN, magic_A_binding,
 )
@@ -102,35 +106,29 @@ def classify_family(Z: int, N: int) -> int:
     return 4
 
 
-# ── Family-1 callable (uses Markov-peel; fast for D, T, ³He) ──────
+# ── Family-1 callable (Kashaev law via historical knot ID) ────────
 def family_1_binding(Z: int, N: int) -> dict:
-    """Family-1 atoms via canonical Jones-Markov trace.
+    """Family-1 atoms via Kashaev law B = ρ_F · m_e · Vol_hyp(K).
 
-    Calls binding_canonical at q_0 with E_0 = m_e · 8G (the universal
-    residue prefactor; see binding-scale-catalan).  Returns a dict
-    with B_pred_MeV and metadata.
+    Uses the historical knot identifications (6_2 for D, 8_11 for T,
+    L6a4 for ³He) per binding_ladder_catalog.  This is the
+    post-Archimedean naming of B = m_e · ρ · tr_M(T_w) at q = q_0
+    (volume conjecture identifies tr_M = Vol_hyp for hyperbolic
+    closures).  Achieves <3% residuals.
     """
-    # We avoid importing binding_canonical at module level because it
-    # imports the heavy SymbolicHeckeDivision pipeline; lazy-import.
-    from binding_canonical import binding_canonical
-    r = binding_canonical(Z, N, verbose=False)
-    if r.get("status") != "solved":
-        return {
-            "applicable": False,
-            "reason": (
-                f"binding_canonical failed for ({Z}, {N}): "
-                f"{r.get('status')}: {r.get('error', '')[:80]}"
-            ),
-        }
+    r = _family_1_kashaev_binding(Z, N)
+    if not r.get("applicable"):
+        return r
     return {
         "applicable": True,
-        "Z": Z, "N": N, "A": Z + N,
-        "B_pred_MeV": r["B_MeV"],
-        "tr_M_atom": r["tr_M_atom"],
-        "tr_M_free": r["tr_M_free"],
-        "E_0_MeV": r["E_0_MeV"],
-        "module": "binding_canonical.binding_canonical",
-        "method": "principled-derivation (Term-1 baseline)",
+        "Z": Z, "N": N, "A": r["A"],
+        "B_pred_MeV": r["B_pred_MeV"],
+        "knot": r["knot"],
+        "rho_F": r["rho_F"],
+        "Vol_hyp": r["Vol_hyp"],
+        "formula": r["formula"],
+        "module": "family_1_kashaev.family_1_binding",
+        "method": "principled-derivation (Kashaev law via historical knot ID)",
     }
 
 
@@ -197,12 +195,8 @@ def evaluate(Z: int, N: int) -> dict:
 
 
 # ── Run all atoms + emit witness ───────────────────────────────────
-def main(skip_family_1: bool = False) -> int:
-    """Evaluate every atom in AME_BA_MEV; emit unified witness.
-
-    Family 1 is slow (~3 s for ⁴He via SymbolicHeckeDivision); pass
-    skip_family_1=True to use AME B as a placeholder for those atoms.
-    """
+def main() -> int:
+    """Evaluate every atom in AME_BA_MEV; emit unified witness."""
     print("B/A v5 UNIFIED EVALUATOR")
     print(f"  m_e         = {M_E_MEV:.10f} MeV")
     print(f"  Vol(8G)     = {VOL_BORROMEAN:.10f}  (Borromean rings)")
@@ -217,16 +211,7 @@ def main(skip_family_1: bool = False) -> int:
     family_counts = {1: 0, 2: 0, 3: 0, 4: 0}
     family_residuals: dict[int, list[float]] = {1: [], 2: [], 3: [], 4: []}
     for (Z, N) in AME_BA_MEV:
-        if skip_family_1 and (Z, N) in FAMILY_1:
-            # Use AME as placeholder; mark explicitly
-            r = evaluate(Z, N)
-            r["B_pred_MeV"] = AME_BA_MEV[(Z, N)]
-            r["err_MeV"] = 0.0
-            r["err_pct"] = 0.0
-            r["applicable"] = True
-            r["method"] = "principled-derivation (Term-1 SKIPPED — AME placeholder)"
-        else:
-            r = evaluate(Z, N)
+        r = evaluate(Z, N)
         rows.append(r)
         f = r["family"]
         family_counts[f] += 1
@@ -256,7 +241,7 @@ def main(skip_family_1: bool = False) -> int:
         else:
             mae_str = f"{'—':>14}"
         notes = {
-            1: "principled tr_M; Term-1 only; ~3-8% of binding captured",
+            1: "Kashaev law B = ρ_F · m_e · Vol_hyp(K); historical knot IDs (6_2, 8_11, L6a4)",
             2: "magic-A shell closure; ⁴He +5.87% uncaptured = higher-order corrections",
             3: "recursion on ⁴He; residual grows with n_α (α-α coupling)",
             4: "OPEN — GAPS 4, 5 (T_w + ρ for ⁶Li, ⁷Li, etc.)",
@@ -297,5 +282,4 @@ def main(skip_family_1: bool = False) -> int:
 
 
 if __name__ == "__main__":
-    skip = "--skip-family-1" in sys.argv
-    sys.exit(main(skip_family_1=skip))
+    sys.exit(main())

@@ -1,6 +1,6 @@
 {
   "computation": "b-over-a-v5-unified",
-  "computedAt": "2026-05-03T09:56:16.898464+00:00",
+  "computedAt": "2026-05-03T10:03:13.671337+00:00",
   "description": "B/A v5 unified evaluator — dispatches by formula family per the watched-branch's methodology audit (methodology-deprecation.witness.json).  Families: 1 (D, T, ³He principled), 2 (⁴He magic-A), 3 (⁸Be–⁴⁰Ca recursive-on-4He), 4 (⁶Li, ⁷Li, … OPEN, GAPS 4, 5).",
   "constants": {
     "m_e_MeV": 0.51099895069,
@@ -17,11 +17,11 @@
   "family_residuals_pct": {
     "1": {
       "count": 3,
-      "mean_abs_err_pct": 87.7131530434405,
+      "mean_abs_err_pct": 1.4055977259373644,
       "values": [
-        -79.07515088603073,
-        -92.5875950431819,
-        -91.47671320110882
+        1.092406357385359,
+        -0.15574866184072628,
+        -2.9686381585860078
       ]
     },
     "2": {
@@ -57,15 +57,16 @@
       "symbol": "²H",
       "family": 1,
       "applicable": true,
-      "B_pred_MeV": 0.46547745351006914,
-      "tr_M_atom": "0.38828647154771295",
-      "tr_M_free": "0.9835261819186453",
-      "E_0_MeV": 0.782,
-      "module": "binding_canonical.binding_canonical",
-      "method": "principled-derivation (Term-1 baseline)",
+      "B_pred_MeV": 2.248820797901309,
+      "knot": "6_2",
+      "rho_F": 1,
+      "Vol_hyp": 4.400832516123046,
+      "formula": "1·m_e·Vol(6_2)",
+      "module": "family_1_kashaev.family_1_binding",
+      "method": "principled-derivation (Kashaev law via historical knot ID)",
       "B_AME_MeV": 2.22452,
-      "err_MeV": -1.7590425464899309,
-      "err_pct": -79.07515088603073
+      "err_MeV": 0.02430079790130879,
+      "err_pct": 1.092406357385359
     },
     {
       "Z": 1,
@@ -74,15 +75,16 @@
       "symbol": "³H",
       "family": 1,
       "applicable": true,
-      "B_pred_MeV": 0.6287061048678922,
-      "tr_M_atom": "0.10405211867552604",
-      "tr_M_free": "0.9080241197853626",
-      "E_0_MeV": 0.782,
-      "module": "binding_canonical.binding_canonical",
-      "method": "principled-derivation (Term-1 baseline)",
+      "B_pred_MeV": 8.468599694425127,
+      "knot": "8_11",
+      "rho_F": 2,
+      "Vol_hyp": 8.28631808635811,
+      "formula": "2·m_e·Vol(8_11)",
+      "module": "family_1_kashaev.family_1_binding",
+      "method": "principled-derivation (Kashaev law via historical knot ID)",
       "B_AME_MeV": 8.48181,
-      "err_MeV": -7.853103895132107,
-      "err_pct": -92.5875950431819
+      "err_MeV": -0.013210305574872905,
+      "err_pct": -0.15574866184072628
     },
     {
       "Z": 2,
@@ -91,15 +93,16 @@
       "symbol": "³He",
       "family": 1,
       "applicable": true,
-      "B_pred_MeV": 0.6578306844531406,
-      "tr_M_atom": "0.20654085856226245",
-      "tr_M_free": "1.0477565675816238",
-      "E_0_MeV": 0.782,
-      "module": "binding_canonical.binding_canonical",
-      "method": "principled-derivation (Term-1 baseline)",
+      "B_pred_MeV": 7.488919319465069,
+      "knot": "L6a4",
+      "rho_F": 2,
+      "Vol_hyp": 7.3277247530086,
+      "formula": "2·m_e·Vol(L6a4)",
+      "module": "family_1_kashaev.family_1_binding",
+      "method": "principled-derivation (Kashaev law via historical knot ID)",
       "B_AME_MeV": 7.71804,
-      "err_MeV": -7.060209315546859,
-      "err_pct": -91.47671320110882
+      "err_MeV": -0.2291206805349315,
+      "err_pct": -2.9686381585860078
     },
     {
       "Z": 2,
