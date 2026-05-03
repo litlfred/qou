@@ -7,7 +7,7 @@
     "prop:chirality-dual-space-derivation",
     "thm:frobenius-codim-universal"
   ],
-  "computedAt": "2026-04-25T02:08:29.642132+00:00",
+  "timestamp": "2026-05-03T10:40:10.883046+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "E_0_MeV": 0.0007958215960275227,
@@ -25,9 +25,13 @@
       "term1_descended": 0.9603954911881509,
       "term2_single_gen_tower": 1096978.396175676,
       "term3_pair_gen_tower": 82016.16886542024,
-      "term4_frobenius_codim": 2.4972905450085907,
-      "term5_chirality": 1.0,
+      "term4_frobenius_codim_raw": 2.4972905450085903,
+      "term4_frobenius_codim_scaled": 2.4972905450085903,
+      "term5_chirality_factor_a_K": 1.0,
+      "term5_additive_contribution": 0.0,
       "term6_higher_residues": 0.0,
+      "term5_mode": "multiplicative_on_t1",
+      "m_e_hecke": 1.0,
       "total_hecke": 1178998.0227271323
     },
     {
@@ -41,9 +45,13 @@
       "term1_descended": 0.8332902504795165,
       "term2_single_gen_tower": 511298.27335123357,
       "term3_pair_gen_tower": 6137.397714011544,
-      "term4_frobenius_codim": 2.4972905450085907,
-      "term5_chirality": 1.0,
+      "term4_frobenius_codim_raw": 2.4972905450085903,
+      "term4_frobenius_codim_scaled": 2.4972905450085903,
+      "term5_chirality_factor_a_K": 1.0,
+      "term5_additive_contribution": 0.0,
       "term6_higher_residues": 0.0,
+      "term5_mode": "multiplicative_on_t1",
+      "m_e_hecke": 1.0,
       "total_hecke": 517439.00164604065
     },
     {
@@ -57,9 +65,13 @@
       "term1_descended": 0.21139221893970686,
       "term2_single_gen_tower": 1608289.7568490328,
       "term3_pair_gen_tower": 252995.20645452797,
-      "term4_frobenius_codim": 3.202133983803196,
-      "term5_chirality": 1.2090603219898794,
+      "term4_frobenius_codim_raw": 3.202133983803198,
+      "term4_frobenius_codim_scaled": 3.202133983803198,
+      "term5_chirality_factor_a_K": 1.2090603219898794,
+      "term5_additive_contribution": 0.0441937253576902,
       "term6_higher_residues": 0.0,
+      "term5_mode": "multiplicative_on_t1",
+      "m_e_hecke": 1.0,
       "total_hecke": 1861288.421023489
     },
     {
@@ -73,9 +85,13 @@
       "term1_descended": 0.02811634584930086,
       "term2_single_gen_tower": 2119592.5580956456,
       "term3_pair_gen_tower": 504113.8067035407,
-      "term4_frobenius_codim": 2.5438838242158326,
-      "term5_chirality": 0.9562937817694879,
+      "term4_frobenius_codim_raw": 2.5438838242158353,
+      "term4_frobenius_codim_scaled": 2.5438838242158353,
+      "term5_chirality_factor_a_K": 0.9562937817694879,
+      "term5_additive_contribution": -0.0012288591475340983,
       "term6_higher_residues": 0.0,
+      "term5_mode": "multiplicative_on_t1",
+      "m_e_hecke": 1.0,
       "total_hecke": 2623708.935570497
     },
     {
@@ -89,9 +105,13 @@
       "term1_descended": 0.07484850403357003,
       "term2_single_gen_tower": 2705308.685944667,
       "term3_pair_gen_tower": 845286.5411869858,
-      "term4_frobenius_codim": 2.5438838242158326,
-      "term5_chirality": 0.9562937817694879,
+      "term4_frobenius_codim_raw": 2.5438838242158353,
+      "term4_frobenius_codim_scaled": 2.5438838242158353,
+      "term5_chirality_factor_a_K": 0.9562937817694879,
+      "term5_additive_contribution": -0.003271345051518576,
       "term6_higher_residues": 0.0,
+      "term5_mode": "multiplicative_on_t1",
+      "m_e_hecke": 1.0,
       "total_hecke": 3550597.8425926357
     },
     {
@@ -105,9 +125,13 @@
       "term1_descended": 0.009955269102458685,
       "term2_single_gen_tower": 3216611.4871912804,
       "term3_pair_gen_tower": 1261252.7159013127,
-      "term4_frobenius_codim": 2.2519340301698803,
-      "term5_chirality": 0.914497797050989,
+      "term4_frobenius_codim_raw": 2.251934030169885,
+      "term4_frobenius_codim_scaled": 2.251934030169885,
+      "term5_chirality_factor_a_K": 0.914497797050989,
+      "term5_additive_contribution": -0.0008511974392104403,
       "term6_higher_residues": 0.0,
+      "term5_mode": "multiplicative_on_t1",
+      "m_e_hecke": 1.0,
       "total_hecke": 4477866.464130695
     },
     {
@@ -121,9 +145,13 @@
       "term1_descended": 0.0004688317450825183,
       "term2_single_gen_tower": 4824933.217533526,
       "term3_pair_gen_tower": 3024773.1825173013,
-      "term4_frobenius_codim": 2.0880906895392,
-      "term5_chirality": 0.8745285567617559,
+      "term4_frobenius_codim_raw": 2.0880906895392073,
+      "term4_frobenius_codim_scaled": 2.0880906895392073,
+      "term5_chirality_factor_a_K": 0.8745285567617559,
+      "term5_additive_contribution": -5.882499569140814e-05,
       "term6_higher_residues": 0.0,
+      "term5_mode": "multiplicative_on_t1",
+      "m_e_hecke": 1.0,
       "total_hecke": 7849708.488551524
     },
     {
@@ -137,12 +165,14 @@
       "term1_descended": 6.235724075364883e-05,
       "term2_single_gen_tower": 5336236.018780138,
       "term3_pair_gen_tower": 3765873.931670588,
-      "term4_frobenius_codim": 2.0598882894764134,
-      "term5_chirality": 1.057357778427713,
+      "term4_frobenius_codim_raw": 2.0598882894764245,
+      "term4_frobenius_codim_scaled": 2.0598882894764245,
+      "term5_chirality_factor_a_K": 1.057357778427713,
+      "term5_additive_contribution": 3.5766727985113417e-06,
       "term6_higher_residues": 0.0,
+      "term5_mode": "multiplicative_on_t1",
+      "m_e_hecke": 1.0,
       "total_hecke": 9102112.01040495
     }
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  ]
 }

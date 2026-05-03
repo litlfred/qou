@@ -1,7 +1,7 @@
 {
   "computation": "six-term-mass-pred",
   "description": "Per-particle six-term mass-formula enumeration for Family 1 (D, T, \u00b3He) consuming canonical GB-NF data from joint-tower-sdp-rust.witness.json. Reads each existing per-term script's helper (no SnapPy, no hp_volume, no fitted constants). All six terms wired (Sprint A v4); na\u00efve AME-comparable binding-energy assembly added (Sprint A v5) with explicit caveats about the open combination convention \u2014 round-2 neutron-gap probe established that full tr_M alone gives \u221225 % residual, so the assembly here is a baseline for further probing, not a canonical accuracy claim.",
-  "computedAt": "2026-04-28T01:37:14.474818+00:00",
+  "computedAt": "2026-05-03T10:39:10.658004+00:00",
   "source_witness": "folio-assistant/computations/joint-tower-sdp-rust.witness.json",
   "precision_dps": 50,
   "per_particle": {
@@ -21,8 +21,8 @@
       "b_ame_mev": 2.2246,
       "terms": {
         "T1_T2_T3_brane_tower": {
-          "M_MeV_raw": "1374.850570439709943919545",
-          "M_MeV_corrected": "1348.234594512608677179121",
+          "M_MeV_raw": "1374.850570439703141797871",
+          "M_MeV_corrected": "1348.234594512601974364855",
           "n_strands": 6,
           "source": "tower_isotope_absolute.compute_isotope_tower"
         },
@@ -76,8 +76,8 @@
       "b_ame_mev": 8.4818,
       "terms": {
         "T1_T2_T3_brane_tower": {
-          "M_MeV_raw": "1794.200365011711426969544",
-          "M_MeV_corrected": "1759.466122069022007842702",
+          "M_MeV_raw": "1794.200365011702630942811",
+          "M_MeV_corrected": "1759.466122069013339848559",
           "n_strands": 9,
           "source": "tower_isotope_absolute.compute_isotope_tower"
         },
@@ -123,8 +123,8 @@
       "b_ame_mev": 7.718,
       "terms": {
         "T1_T2_T3_brane_tower": {
-          "M_MeV_raw": "2330.389319228182948525052",
-          "M_MeV_corrected": "2285.274899265063634812124",
+          "M_MeV_raw": "2330.389319228171338255044",
+          "M_MeV_corrected": "2285.274899265052194429539",
           "n_strands": 9,
           "source": "tower_isotope_absolute.compute_isotope_tower"
         },
@@ -161,17 +161,17 @@
       "N": 1,
       "A": 2,
       "term_MeV_contributions": {
-        "T1_T2_T3_brane_tower_MeV": 1374.85057043971,
+        "T1_T2_T3_brane_tower_MeV": 1374.8505704397032,
         "T4_frobenius_co_casimir_MeV": 1.636287103482751,
         "T5_chirality_MeV": -0.4042138107824068,
         "T6_habiro_residue_MeV_separate": 0.0
       },
-      "M_atom_pred_MeV": 1376.0826437324104,
+      "M_atom_pred_MeV": 1376.0826437324035,
       "constituent_sum_MeV": 1878.3485076299999,
       "B_AME_MeV": 2.2246,
-      "B_pred_MeV": 502.2658638975895,
-      "B_err_pct": 22477.805623374516,
-      "B_err_ppb": 224778056233.74515,
+      "B_pred_MeV": 502.2658638975963,
+      "B_err_pct": 22477.80562337482,
+      "B_err_ppb": 224778056233.7482,
       "assembly_convention": "M_atom_pred = T1+T2+T3 + T4 + T5; T6 treated as already-in T1 per round-2 finding (full Markov trace = T1^entire + cyclotomic residues = T1 + T6 in the decomposition). The right combination convention is open theoretical work \u2014 round-2 probe established that full tr_M alone gives \u221225 % neutron residual, so the remaining gap is in T2/T3 brane-tower assembly, T4/T5 additive contributions, or normalisation/sign convention. Reported ppb_residual is a baseline for further probing, not a canonical accuracy claim."
     },
     "tritium-3H": {
@@ -179,17 +179,17 @@
       "N": 2,
       "A": 3,
       "term_MeV_contributions": {
-        "T1_T2_T3_brane_tower_MeV": 1794.2003650117115,
+        "T1_T2_T3_brane_tower_MeV": 1794.2003650117026,
         "T4_frobenius_co_casimir_MeV": 1.299921963096276,
         "T5_chirality_MeV": 1.5778667156597965,
         "T6_habiro_residue_MeV_separate": 0.0
       },
-      "M_atom_pred_MeV": 1797.0781536904676,
+      "M_atom_pred_MeV": 1797.0781536904587,
       "constituent_sum_MeV": 2817.91392815,
       "B_AME_MeV": 8.4818,
-      "B_pred_MeV": 1020.8357744595326,
-      "B_err_pct": 11935.602990633268,
-      "B_err_ppb": 119356029906.33267,
+      "B_pred_MeV": 1020.8357744595414,
+      "B_err_pct": 11935.602990633373,
+      "B_err_ppb": 119356029906.33374,
       "assembly_convention": "M_atom_pred = T1+T2+T3 + T4 + T5; T6 treated as already-in T1 per round-2 finding (full Markov trace = T1^entire + cyclotomic residues = T1 + T6 in the decomposition). The right combination convention is open theoretical work \u2014 round-2 probe established that full tr_M alone gives \u221225 % neutron residual, so the remaining gap is in T2/T3 brane-tower assembly, T4/T5 additive contributions, or normalisation/sign convention. Reported ppb_residual is a baseline for further probing, not a canonical accuracy claim."
     },
     "helium3-3He": {
@@ -197,17 +197,17 @@
       "N": 1,
       "A": 3,
       "term_MeV_contributions": {
-        "T1_T2_T3_brane_tower_MeV": 2330.389319228183,
+        "T1_T2_T3_brane_tower_MeV": 2330.389319228171,
         "T4_frobenius_co_casimir_MeV": 1.299921963096276,
         "T5_chirality_MeV": 0.18068242097963746,
         "T6_habiro_residue_MeV_separate": 0.0
       },
-      "M_atom_pred_MeV": 2331.8699236122593,
+      "M_atom_pred_MeV": 2331.8699236122475,
       "constituent_sum_MeV": 2817.13159474,
       "B_AME_MeV": 7.718,
-      "B_pred_MeV": 485.26167112774056,
-      "B_err_pct": 6187.40180263981,
-      "B_err_ppb": 61874018026.3981,
+      "B_pred_MeV": 485.2616711277524,
+      "B_err_pct": 6187.4018026399635,
+      "B_err_ppb": 61874018026.399635,
       "assembly_convention": "M_atom_pred = T1+T2+T3 + T4 + T5; T6 treated as already-in T1 per round-2 finding (full Markov trace = T1^entire + cyclotomic residues = T1 + T6 in the decomposition). The right combination convention is open theoretical work \u2014 round-2 probe established that full tr_M alone gives \u221225 % neutron residual, so the remaining gap is in T2/T3 brane-tower assembly, T4/T5 additive contributions, or normalisation/sign convention. Reported ppb_residual is a baseline for further probing, not a canonical accuracy claim."
     }
   },
