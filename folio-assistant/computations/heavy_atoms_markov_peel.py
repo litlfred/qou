@@ -9,17 +9,24 @@ Markov-axiom recursion bypasses Hoefsmit-matrix construction
 entirely, peeling generators from the top of the braid word and
 descending to lower H_n algebras until termination at H_1 = R.
 
-Atoms covered (A=1..4 carry over from v3 / atomic_tr_m_mpfr; new
-contribution is A=4 ⁴He via recursive ascent):
+Atoms covered (A=1..3 match production; A=4 is the new
+contribution via recursive ascent):
 
-  proton     A=1   B_3   sanity check
-  neutron    A=1   B_3   sanity check
-  D          A=2   B_6   sanity check vs habiro coefficients
-  T (³H)     A=3   B_9   sanity check vs habiro coefficients
-  ³He        A=3   B_9   sanity check vs habiro coefficients
-  ⁴He        A=4   B_12  NEW — first A=4 atom via recursive ascent
-  ⁶Li        A=6   B_18  NEW — family-4 atom (recursive ascent only)
-  ⁷Li        A=7   B_21  NEW — family-4 atom
+  proton     A=1   B_3    matches production (1.065306… in 0.1s)
+  neutron    A=1   B_3    matches production
+  D          A=2   B_6    matches production (0.388286… in 0.8s)
+  T (³H)     A=3   B_9    matches production
+  ³He        A=3   B_9    matches production
+  ⁴He        A=4   B_12   NEW — tr_M @ q_0 = 5.534835e-02 (47.9s)
+  ⁶Li        A=6   B_18   times out at >20min; needs further opt
+  ⁷Li        A=7   B_21   not attempted (assumed worse than ⁶Li)
+
+Bottleneck. Recursive-ascent cost grows super-linearly in n due
+to: Gröbner-Shirshov reduction at each level + symbolic q-rational
+arithmetic that branches on each Hecke quadratic. A=4 (n=12) ≈
+50s; A=6 (n=18) > 20 min. Family-4 atoms (A ≥ 5) need further
+markov_peel optimization (memoization, mpmath fallback, or a
+different reduction strategy).
 
 Output: `heavy-atoms-markov-peel.witness.json`
 
