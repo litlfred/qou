@@ -82,11 +82,14 @@ class PhiQTowerAlgebraicStratification (R : Type u) [CommRing R] where
   /-- The mass formula sums over the four levels. -/
   mass_sum :
     mass = level0 + level1 + level2_adj + level2_non_adj
-  /-- Pentagon ascension: no level ≥ 3 contribution survives at fixed
-      jet level `n`.  This is the categorical content of
-      `prop:mass-endomorphism-tower` §"Pentagon ascension". -/
-  pentagon_ascension : True  -- abstract witness; full statement uses
-                              -- the jet-tower hypothesis
+  /-- The cumulative level-≥3 GS-filtration contribution to the mass.
+      Pentagon ascension says this vanishes at fixed jet level `n`. -/
+  level3plus : R
+  /-- Pentagon ascension: the level-≥3 contribution vanishes.  This is
+      the categorical content of `prop:mass-endomorphism-tower`
+      §"Pentagon ascension".  Cf. gemini-code-assist review on
+      PR #535. -/
+  pentagon_ascension : level3plus = 0
 
 /-- **The algebraic-stratification proposition** (statement-level).
 

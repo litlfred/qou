@@ -25,6 +25,7 @@ LaTeX label: `prop:cosimplicial-crossed-groupoid`
 import Mathlib.CategoryTheory.Monoidal.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
+import Mathlib.Algebra.Group.Basic
 
 namespace QOU.LiftingDescent
 
@@ -38,7 +39,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     the datum `(x, g, a)` of local trivialisations, transition
     automorphisms, and deformation parameters. -/
 -- Ref: [yekutieli2010] §3
-structure YekutielijTriple (M : Type*) where
+structure YekutieliTriple (M : Type*) where
   level : ℕ
   objects : M → M
   oneMorphisms : M → R_q
@@ -46,28 +47,42 @@ structure YekutielijTriple (M : Type*) where
   twoMorphisms_ne_zero : ∀ (p : M), twoMorphisms p ≠ 0
 
 /-- A crossed module in the sense of Yekutieli [yekutieli2010]:
-    a boundary homomorphism `∂ : N → G` and a conjugation action
-    satisfying the Peiffer identity. -/
+    a pair of (possibly non-abelian) groups `N`, `G`, a boundary
+    homomorphism `∂ : N → G`, and a conjugation action of `G` on
+    `N` satisfying the Peiffer identity
+    `∂(g · n) = g · ∂n · g⁻¹`.
+
+    Note: the formal-chain layer keeps the carriers polymorphic
+    rather than fixing them to `R_q`; the commutative ring `R_q`
+    enters only through the *image* of `∂` when an instance is
+    realised over the deformation parameter. Cf. gemini-code-assist
+    review on PR #535. -/
 -- Ref: [yekutieli2010] §2, Definition 2.1
 structure CrossedModule where
-  boundary : R_q → R_q
-  conjugation : R_q → R_q → R_q
-  peiffer : ∀ (a b : R_q) (ha : a ≠ 0),
-    boundary a * b = a * b * a⁻¹
+  N : Type
+  G : Type
+  [grpN : Group N]
+  [grpG : Group G]
+  boundary : N → G
+  action : G → N → N
+  peiffer : ∀ (g : G) (n : N),
+    boundary (action g n) = g * boundary n * g⁻¹
+
+attribute [instance] CrossedModule.grpN CrossedModule.grpG
 
 /-- **Cosimplicial crossed groupoid** for the brane tower. -/
 -- Ref: [yekutieli2010] §4, [manuscript] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
-  tripleAt : (n : ℕ) → YekutielijTriple M
-  coface : (n : ℕ) → YekutielijTriple M → YekutielijTriple M
-  codegeneracy : (n : ℕ) → YekutielijTriple M → YekutielijTriple M
-  retraction : ∀ (n : ℕ) (t : YekutielijTriple M),
+  tripleAt : (n : ℕ) → YekutieliTriple M
+  coface : (n : ℕ) → YekutieliTriple M → YekutieliTriple M
+  codegeneracy : (n : ℕ) → YekutieliTriple M → YekutieliTriple M
+  retraction : ∀ (n : ℕ) (t : YekutieliTriple M),
     (codegeneracy n (coface n t)).level = t.level
   crossedMod : (n : ℕ) → CrossedModule
-  coface_coface : ∀ (n : ℕ) (t : YekutielijTriple M),
+  coface_coface : ∀ (n : ℕ) (t : YekutieliTriple M),
     (coface (n + 1) (coface n t)).level =
     (coface n (coface n t)).level
-  codegen_codegen : ∀ (n : ℕ) (t : YekutielijTriple M),
+  codegen_codegen : ∀ (n : ℕ) (t : YekutieliTriple M),
     (codegeneracy n (codegeneracy (n + 1) t)).level =
     (codegeneracy n (codegeneracy n t)).level
 
@@ -83,7 +98,12 @@ theorem cosimplicial_crossed_groupoid_exists (M : Type*)
     coface := fun _ t => { t with level := t.level + 1 }
     codegeneracy := fun _ t => { t with level := t.level - 1 }
     retraction := fun _ _ => by simp [Nat.add_sub_cancel]
-    crossedMod := fun _ => ⟨id, fun a _ => a, fun _ _ _ => by ring⟩
+    crossedMod := fun _ =>
+      { N := PUnit
+        G := PUnit
+        boundary := id
+        action := fun _ n => n
+        peiffer := fun _ _ => Subsingleton.elim _ _ }
     coface_coface := fun _ _ => by simp
     codegen_codegen := fun _ _ => by simp
   }⟩

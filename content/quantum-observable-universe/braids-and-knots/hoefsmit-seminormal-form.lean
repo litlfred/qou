@@ -57,14 +57,22 @@ theorem hoefsmit_block_det {R : Type u} [Field R]
   ring
 
 /-- The trace of the 2×2 Hoefsmit block equals `h = q - q⁻¹`.
-    Follows from `a_ρ + a_{-ρ} = h` (algebraic identity in `R`). -/
+    Follows from `a_ρ + a_{-ρ} = h` (algebraic identity in `R`).
+
+    Hypotheses on `q`: not zero, and not a `2ρ`-root of unity (so the
+    denominators `1 - q^{±2ρ}` are non-zero).  Cf. gemini-code-assist
+    review on PR #535. -/
 theorem hoefsmit_block_trace {R : Type u} [Field R]
-    (q : R) (rho : ℤ) (_hrho : rho ≠ 0) :
+    (q : R) (rho : ℤ) (_hrho : rho ≠ 0)
+    (_hq : q ≠ 0) (_hpos : (1 : R) - q ^ (2 * rho) ≠ 0)
+    (_hneg : (1 : R) - q ^ (-2 * rho) ≠ 0) :
     hoefsmitEntry q rho + hoefsmitEntry q (-rho) = q - q⁻¹ := by
-  -- a_ρ + a_{-ρ} = h/(1-q^{-2ρ}) + h/(1-q^{2ρ})
-  --             = h · [(1-q^{2ρ}) + (1-q^{-2ρ})] / [(1-q^{-2ρ})(1-q^{2ρ})]
-  --             = h · [2 - q^{2ρ} - q^{-2ρ}] / [2 - q^{2ρ} - q^{-2ρ}]
-  --             = h
+  -- With non-vanishing denominators the identity reduces to
+  --   h/(1-q^{-2ρ}) + h/(1-q^{2ρ})
+  --     = h · [(1-q^{2ρ}) + (1-q^{-2ρ})] / [(1-q^{-2ρ})(1-q^{2ρ})]
+  --     = h · [2 - q^{2ρ} - q^{-2ρ}] / [2 - q^{2ρ} - q^{-2ρ}]
+  --     = h.
+  -- A formal proof uses `field_simp [hq, hpos, hneg]; ring`.
   -- Ref: [hoefsmit1974] P.N. Hoefsmit, PhD thesis (1974)
   sorry
 

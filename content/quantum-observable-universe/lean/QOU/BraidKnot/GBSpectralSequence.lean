@@ -51,12 +51,19 @@ class GBSpectralSequence (R : Type u) [CommRing R] where
   /-- The differential squares to zero. -/
   d_squared_zero : ∀ ℓ (x : graded ℓ),
     differential ℓ (differential ℓ x) = 0
-  /-- The spectral-sequence convergence target: at each level ℓ the
-      `E_∞` page identifies with the associated graded.  Stated
-      abstractly as the existence of an iso witness. -/
-  e_infty_converges : True
+  /-- Convergence target: at each level ℓ the `E_∞` page identifies
+      with the associated graded.  The class records the target type
+      and the convergence map, and asserts that the latter is
+      surjective. -/
+  E_infty : ℕ → Type u
+  [E_infty_add : ∀ ℓ, AddCommGroup (E_infty ℓ)]
+  /-- Convergence map `J^ℓ / J^{ℓ+1} → E_∞^ℓ`. -/
+  convergeTo : ∀ ℓ, graded ℓ →+ E_infty ℓ
+  /-- Convergence: the spectral sequence stabilises onto `E_∞`.
+      Cf. gemini-code-assist review on PR #535. -/
+  e_infty_converges : ∀ ℓ, Function.Surjective (convergeTo ℓ)
 
-attribute [instance] GBSpectralSequence.gradedAdd
+attribute [instance] GBSpectralSequence.gradedAdd GBSpectralSequence.E_infty_add
 
 /-- **GB spectral sequence proposition.**
 

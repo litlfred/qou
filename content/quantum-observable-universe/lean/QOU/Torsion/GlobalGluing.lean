@@ -42,9 +42,12 @@ structure TwistedQuantizationMap (R : Type*) [CommRing R] where
   GlobalAlgebra : Type*
   [instGlobalRing : Ring GlobalAlgebra]
   localToGlobal : ∀ i, localData.localAlgebra i →+* GlobalAlgebra
+  -- Each local-to-global map embeds the local algebra; Yekutieli's
+  -- compatibility on overlaps is then a property of how the images
+  -- intersect (handled at the witness layer when overlaps are
+  -- explicit). Cf. gemini-code-assist review on PR #535.
   -- Ref: [yekutieli2008] §4
-  compatible : ∀ (i j : Fin localData.numPatches),
-    Function.Injective (localToGlobal i) ∧ Function.Injective (localToGlobal j)
+  compatible : ∀ i, Function.Injective (localToGlobal i)
 
 attribute [instance] TwistedQuantizationMap.instGlobalRing
 

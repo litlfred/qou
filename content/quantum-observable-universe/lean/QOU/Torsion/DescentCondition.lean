@@ -34,9 +34,13 @@ structure CechCocycleData (G : Type*) [Group G] where
 structure TwistedCocycleCondition (G : Type*) [Group G] where
   cech : CechCocycleData G
   twoMorphism : Fin cech.numPatches → Fin cech.numPatches → G
+  -- The Čech deviation is the coboundary of the 2-morphism layer,
+  -- i.e. the 2-morphism over (i,k) is the conjugate of the deviation
+  -- by the 2-morphism over (i,j) modulo (j,k). Tautology-free version
+  -- of Yekutieli §4 (cf. gemini-code-assist review on PR #535).
   twisted_cocycle : ∀ i j k,
     twoMorphism i j * cech.deviation i j k * (twoMorphism j k)⁻¹ =
-    twoMorphism i j * cech.deviation i j k * (twoMorphism j k)⁻¹
+    twoMorphism i k
 
 /-- **Descent condition**: when the twisted 2-cocycle condition holds
     at all levels of the brane tower, the distributional connection
