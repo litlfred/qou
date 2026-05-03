@@ -216,6 +216,8 @@ export default chapter({
         "alpha-em-derivation-open-problems",
         "em-coupling-bring-zero-mode",
         "alpha-em-derivation-exploration-options",
+        "em-coupling-reeb-holonomy-falsified",
+        "em-coupling-stratum-coupling-h3-attempt",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
