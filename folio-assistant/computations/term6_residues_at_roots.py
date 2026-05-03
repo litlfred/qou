@@ -363,7 +363,16 @@ def main() -> int:
                   flush=True)
             print(f"  PP_roots(u₀) [T6]  = {row['pp_at_roots_at_u0']}",
                   flush=True)
-            rows.append(row)
+            # Drop fluctuating per-row timings before adding to the
+            # witness payload — they cause the witness-pipeline drift
+            # detection to flag every regeneration as a substantive
+            # change.  Console print above retains them for the run
+            # log.
+            row_for_witness = {
+                k: v for k, v in row.items()
+                if not k.startswith("elapsed_")
+            }
+            rows.append(row_for_witness)
         except Exception as exc:  # noqa: BLE001
             print(f"  FAILED: {type(exc).__name__}: {exc}", flush=True)
             rows.append({
