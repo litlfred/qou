@@ -227,10 +227,12 @@ class InterLevelLift
     ∀ (n : ℕ) (i j k : Generator n) (x : EndAlg n),
       ∃ R_q : EndAlg (n + 1),
         descendedPart (R := R) (EndAlg := EndAlg) n R_q = R_q ∧
+        -- u · v = q · v · u + R_q, where u = Ũ_i Ũ_j, v = Ũ_k.
+        -- So u·v = (Ũ_i Ũ_j) · Ũ_k  and  v·u = Ũ_k · (Ũ_i Ũ_j).
         (liftOperator n i x) * (liftOperator n j x) *
           (liftOperator n k x) =
         q • ((liftOperator n k x) *
-              ((liftOperator n j x) * (liftOperator n i x)))
+              ((liftOperator n i x) * (liftOperator n j x)))
         + R_q
 
 namespace InterLevelLift
@@ -259,7 +261,7 @@ theorem pentagon_inter_level_on_transient
     (IL.liftOperator n i x) * (IL.liftOperator n j x) *
       (IL.liftOperator n k x) =
     q • ((IL.liftOperator n k x) *
-          ((IL.liftOperator n j x) * (IL.liftOperator n i x))) := by
+          ((IL.liftOperator n i x) * (IL.liftOperator n j x))) := by
   -- Ref: [prop:pentagon-uv-commutation], §"Step 4 — Quantum-torus
   --   relation on the transient block".
   -- Ref: docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md

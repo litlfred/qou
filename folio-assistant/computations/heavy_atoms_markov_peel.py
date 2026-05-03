@@ -25,8 +25,8 @@ Output: `heavy-atoms-markov-peel.witness.json`
 
 Usage:
     python3 folio-assistant/computations/heavy_atoms_markov_peel.py
-    python3 folio-assistant/computations/heavy_atoms_markov_peel.py --atom 4He
-    python3 folio-assistant/computations/heavy_atoms_markov_peel.py --skip-symbolic
+    python3 folio-assistant/computations/heavy_atoms_markov_peel.py --atom helium-4
+    python3 folio-assistant/computations/heavy_atoms_markov_peel.py --max-iterations 50000
 """
 from __future__ import annotations
 
