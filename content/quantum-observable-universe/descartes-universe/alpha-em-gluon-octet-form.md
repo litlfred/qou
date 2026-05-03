@@ -1,5 +1,5 @@
-**Proposition (gluon-octet closed form for $1/\alpha_{EM}$).**
-*Let $q$ denote the substrate parameter, $[k]_q := (q^k - q^{-k})/(q - q^{-1})$ the quantum integer, and $\hbar_q := (q-1)/q$ the reduced Planck constant. The fine-structure constant satisfies the closed form*
+**Conjecture (gluon-octet closed form for $1/\alpha_{EM}$, PSLQ-empirical).**
+*Let $q$ denote the substrate parameter, $[k]_q := (q^k - q^{-k})/(q - q^{-1})$ the quantum integer, and $\hbar_q := (q-1)/q$ the reduced Planck constant. We conjecture the closed form*
 
 $$
   \frac{1}{\alpha_{EM}}
@@ -9,9 +9,16 @@ $$
   \delta_{CS} \;:=\; \hbar_q^{4} \cdot [5]_q.
 $$
 
-*Each factor is forced by an upstream structural proposition; no factor is empirical, fitted, or transcendental.*
+> **Status: PSLQ-empirical, not derived.** The formula matches CODATA at $q_0$ to $6.7 \times 10^{-9}$ and is the unique short integer relation in the canonical 52-element basis at 1000 dps, but a structural derivation linking each factor to an upstream proposition is **incomplete**. See [open problems](#rem:alpha-em-derivation-open-problems) for a factor-by-factor audit:
+>
+> - **$45 = \binom{10}{2}$**: dimension confirmed via $\Lambda^2 V_{\text{nat}}^{10} = V_{(9,1)} \oplus V_{(8,1,1)}$, but the categorical link to $\alpha_{EM}$ is asserted, not proved (the "10" matches the [10]_q crossing count, not a strand count).
+> - **$[3]_q$**: the claim "$\mathrm{tr}_\tau$ on singlet idempotent in gluon-octet sector $= [3]_q$" is **not supported** by direct computation: in $H_3(q)$, $\dim_q V_{(2,1)} = [2]_q$ (not $[3]_q$), and the $\mathfrak{sl}_3$ adjoint has classical dimension $8$, not $[3]_q$.
+> - **$\delta_{CS} = \hbar_q^4 \cdot [5]_q$**: the κ-formula in [`gram-determinant-plancherel-ratio`](#prop:gram-determinant-plancherel-ratio) is structural, but the "leading non-trivial term at $n=10$" specialisation has not been carried out — the embedding $T_{2,9}, T_{3,5} \hookrightarrow H_{10}$ requires Markov-stabilization choices not specified.
+> - **$8q$**: identified two ways (Lean: $8 = \dim\mathfrak{su}(3)$ gluon octet; .md: "genus-4 torus-knot two-step crossing pattern enumeration") with **no calculation** for either. The required order-3 coefficient to match CODATA exactly is $\approx -52$, which is not a clean q-rational, suggesting the formula is a 2-term truncation/fit rather than an exact closed form.
+>
+> Forms A (Chern-Simons) and B (this conjecture) **disagree at every $q \ne q_0$** — confirming they are not the same q-function and that this form is presently a single-point fit. See [`docs/alpha-fsc-audit.md`](#) for the full audit.
 
-## Proof
+## Conjectured derivation (incomplete)
 
 The closed form is assembled from four structural ingredients, each of which is independently established:
 
@@ -29,7 +36,7 @@ over $S_n$ irreps, where $c_\lambda^{(\bullet)} = \chi_\lambda(\beta_\bullet)$ a
 
 **(iv) The prefactor $8q$ on $\delta_{CS}^2$.** By [prop:force-carrier-bring-uniqueness](#prop:force-carrier-bring-uniqueness), the force-carrier sector consists of exactly $\{T_{2,9}, T_{3,5}\}$ (genus-4 torus knots embedded in Bring's curve). The second-order coefficient $8q$ in the Gram--Plancherel expansion is the genus-$4$ torus-knot enumeration count of distinct two-step crossing patterns, weighted by $q$ (the per-crossing quantum factor).
 
-**Assembly.** Combining (i)--(iv) yields the closed form. No multiplicative or additive constant remains free: $45 \cdot [3]_q$ is the leading Plancherel-weighted scalar coupling on the singlet idempotent, and $1 + \delta_{CS} + 8q \cdot \delta_{CS}^2$ is the truncated $\kappa$-correction series at second order. $\square$
+**Assembly (conjectural).** Combining (i)--(iv) is asserted to yield the closed form. **However, only step (i) admits a complete proof** (the dimension count $9 + 36 = 45$). Steps (ii), (iii), (iv) are sketches: (ii) misidentifies $\dim_q V_{(2,1)}$ in $H_3$ as $[3]_q$ (the correct value is $[2]_q$); (iii) does not carry out the leading-term computation in the Plancherel-character product; (iv) provides two mutually inconsistent stories for the integer $8$.
 
 ## Numerical validation
 
@@ -52,9 +59,9 @@ Run at $\mathrm{tol\_dps} \in \{50, 100, 200, 500, 1000\}$ over the canonical 52
 
 The gluon-octet form is the unique q-arithmetic relation in this basis matching CODATA $\alpha_{EM}$ at $> 10^{-9}$ precision. Witness: [`alpha-em-pslq-uniqueness.witness.json`](#).
 
-## Significance
+## Status
 
-This proposition closes the "$\alpha_{EM}$ derived vs fitted" gap (see [`docs/alpha-fsc-audit.md`](#) §3): no parameter is fit; the closed form is determined by four independent structural propositions plus the substrate parameter $q_0$. The residual is bounded below by the CODATA precision floor on $q_0$, not by any free parameter in the formula.
+This conjecture is **PSLQ-empirical**: it matches CODATA at $q_0$ to sub-ppb precision and is unique in the chosen 52-element basis, but a structural derivation linking each of $45$, $[3]_q$, $\hbar_q^4 [5]_q$, $8q$ to upstream propositions is **incomplete**. Only the integer $45$ is rigorously linked. Cross-validation at $q \ne q_0$ shows the formula disagrees with the alternative Chern-Simons form at every other $q$, indicating that the present statement is a single-point empirical fit, not a proven q-rational identity. Closing the derivation is an open problem.
 
 ## Witness
 
