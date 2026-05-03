@@ -1,0 +1,58 @@
+{
+  "computation": "alpha-em-correction-derivation-attempts",
+  "description": "Honest record of attempts to derive the 1.55e-3 multiplicative correction over the bare formula 1/\u03b1 = q\u00b7[9]_q\u00b7[10]_q. All attempts failed to find a clean q-rational closed form.",
+  "computedAt": "2026-05-03T14:19:29.074402+00:00",
+  "precision_dps": 50,
+  "q_0": "1.1099785955541805752815940796095093779932822799587",
+  "bare_value": "136.823219654561...",
+  "codata_value": "137.035999084(21)",
+  "correction_needed_relative": "1.5551412251e-3",
+  "hbar_q_squared": "9.8171885135e-3",
+  "target_X_for_hbar2_factored_form": "0.15841004",
+  "attempts": [
+    {
+      "name": "gram-determinant-plancherel-character-product at n=3",
+      "description": "Computed kappa = prod_\u03bb [dim/dim_q \u00b7 [3]_q!/3!]^{c_s c_w} with characters \u03c7_\u03bb(\u03c3_1^9) and \u03c7_\u03bb((\u03c3_1\u03c3_2)^5)",
+      "result": "kappa \u2248 7e-6",
+      "verdict": "RULED OUT \u2014 required ~1.888"
+    },
+    {
+      "name": "Plancherel measure on Wedderburn blocks of H_5",
+      "description": "Tried sum_\u03bb P(\u03bb)\u00b7dim/dim_q, prod (dim/dim_q)^P(\u03bb), sum_\u03bb dim_q^k/[5]_q!",
+      "result": "natural sums are either \u22481 (trivial Plancherel completeness) or astronomical (P(\u03bb) values up to 131)",
+      "verdict": "RULED OUT \u2014 no natural Plancherel sum gives 1.55e-3"
+    },
+    {
+      "name": "Direct q-rational scan \u210f\u00b2\u00b7[a]_q\u00b7[b]_q/([c]_q\u00b7[d]_q)",
+      "description": "Scanned all 1\u2264a,b,c,d\u226412; required ratio to target = 1.000 \u00b1 1e-4",
+      "result": "0 matches",
+      "verdict": "RULED OUT \u2014 no clean q-rational of this form"
+    },
+    {
+      "name": "Direct q-rational scan \u210f_q \u00b7 [a]_q/[b]_q",
+      "description": "Linear-in-\u210f form scan",
+      "result": "0 matches within 1e-3",
+      "verdict": "RULED OUT"
+    },
+    {
+      "name": "\u210f\u00b2\u00b71/[k]_q closest fit",
+      "description": "k=6 gives ratio 0.988 (1.2% off); k=7 gives 0.83 (17% off)",
+      "result": "no exact match",
+      "verdict": "Inconclusive"
+    }
+  ],
+  "remaining_paths": [
+    "Compute \u03ba via Plancherel-character product at higher ambient n=5 or n=10 (substantial Hecke character computation)",
+    "Look for transcendental factors (\u03c0, \u03b6 values) \u2014 would break the paper's R-ring framework",
+    "Examine vector-valued refinement on CP^1 fibre of state bundle",
+    "Accept that the bare q[9]_q[10]_q formula has a higher-order correction not expressible as simple q-rational; switch q_0 anchor to m_\u03bc/m_e until further structural insight emerges"
+  ],
+  "conclusion": "The 1.55e-3 multiplicative correction over the bare 1/\u03b1 formula does NOT factor as a clean q-rational of the form \u210f_q^k \u00b7 [a]/[b] for any small integers explored. The Plancherel-character product at n=3 and the q-Plancherel measure on H_5 Wedderburn blocks both fail to produce the correction. Closing the structural derivation requires either: (a) explicit Hecke character computation at n=5 or n=10, (b) admission of transcendental factors, or (c) a different bare-formula decomposition. Until then, 1/\u03b1 as derived from QOU principles is correct only to -0.155%, and \u03b1 should not be used as the q_0 anchor.",
+  "tags": [
+    "alpha-em",
+    "fine-structure",
+    "derivation-attempt",
+    "negative-result",
+    "open-problem"
+  ]
+}

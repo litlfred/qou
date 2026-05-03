@@ -82,13 +82,50 @@ $q_0$). Three plausible structural origins:
 2. **Recognise the correction as $q$-Plancherel measure on Wedderburn
    blocks.** The bare formula uses force-carrier complexity
    $[9]_q[10]_q$; the correction may come from re-weighting by the
-   Plancherel measure of the Hecke ambient algebra. Explicit
-   computation needed.
+   Plancherel measure of the Hecke ambient algebra.
 
-3. **Examine the role of the $\mathbb{CP}^1$-fibration on the state
+   **Result of first attempt (this audit, $n=5$).** Set
+   $T_{2,9} \boxtimes T_{3,5} \in B_5$ as the disjoint-union 5-strand
+   braid. Plancherel measure $P(\lambda) = (\dim_q V_\lambda)^2 / [5]_q!$
+   on partitions of $5$ is computable; common natural sums tested:
+
+   - $\sum_\lambda P(\lambda) \cdot \dim V_\lambda / \dim_q V_\lambda$
+     gives $\sim 6.83$ (not the required $1 + 1.55 \times 10^{-3}$).
+   - $\prod_\lambda (\dim V_\lambda / \dim_q V_\lambda)^{P(\lambda)}$
+     gives $\sim 0$ (because $P(\lambda)$ values reach $131$ on
+     $\lambda = (5)$ and $(1^5)$, blowing up the product).
+   - $\sum_\lambda P(\lambda)^2$ gives $\sim 3.5 \times 10^4$.
+
+   None matches the target correction.
+
+3. **Direct $q$-rational scan of the multiplicative correction.**
+   Required factor: $1 + \hbar_q^2 \cdot X$ with
+   $X(q_0) \approx 0.15841$. Scan over
+   $X = \hbar_q^k \cdot [a]_q \cdot [b]_q / ([c]_q \cdot [d]_q)$ for
+   integers $1 \leq a,b,c,d \leq 12$ at tolerance $10^{-4}$:
+   **zero matches.** Closest single-ratio form is $\hbar_q^2 / [6]_q$
+   at $\sim 1.2\%$ off, which is well outside the precision required
+   for a structural identity.
+
+4. **Examine the role of the $\mathbb{CP}^1$-fibration on the state
    bundle.** The bare derivation uses scalar trace; a vector-valued
    refinement on the $\mathbb{CP}^1$ fibre could produce a corrective
-   factor of order $\hbar_q^2$.
+   factor of order $\hbar_q^2$. Not yet attempted.
+
+## Status of derivation effort (this audit)
+
+Three computational paths to close the $1.55 \times 10^{-3}$ correction
+have been tried and **ruled out** (or shown not to be expressible as
+clean low-degree $q$-rationals):
+
+| Path | Result | Verdict |
+|------|--------|---------|
+| Gram-det Plancherel-character product at $n=3$ | $\kappa \approx 7 \times 10^{-6}$ | Ruled out (need $\sim 1.888$) |
+| q-Plancherel sums on $H_5$ Wedderburn blocks | trivial or astronomical | Ruled out |
+| Scan $\hbar_q^k\cdot[a]_q\cdot[b]_q/([c]_q\cdot[d]_q)$, $a,b,c,d \le 12$ | 0 matches at $10^{-4}$ | Ruled out at this degree |
+
+See [`alpha-em-correction-derivation-attempts.witness.json`](#) for
+the full attempt log.
 
 Until one of these (or another structural source) closes the gap,
 the canonical statement should remain the bare formula
