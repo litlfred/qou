@@ -142,6 +142,38 @@ relative to a proton) + 1 base (the inter-nucleon averaged
 interface)**.  The categorical origin of the coefficients (18, 3, 1)
 is the residual research question.
 
+### Integer-LP closure of the shift formula
+
+The continuous LP for per-generator shift contributions
+(α<sub>σ</sub>, α<sub>σ⁻¹</sub>, α<sub>avg</sub>) is underdetermined
+(2 equations, 3 unknowns; 1-parameter family of solutions).
+Restricting to **integer non-negative** coefficients picks out a
+unique solution per crossing class:
+
+| Crossing class | per-crossing shift (α) |
+|---|---|
+| intra-nucleon σ            | **+1** |
+| intra-nucleon σ⁻¹          | **+4** |
+| intra-nucleon averaged     |  0     |
+| inter-nucleon σ (p, p)     |  0     |
+| inter-nucleon averaged (p, n) | **+1** |
+| inter-nucleon σ⁻¹ (n, n)   |  0     |
+
+(Per-proton intra: 6·1 + 3·4 + 2·0 = 18.  Per-neutron intra:
+5·1 + 4·4 + 2·0 = 21.  Inter: γ<sub>pp</sub>·(Z−1) + γ<sub>pn</sub> +
+γ<sub>nn</sub>·(N−1) = 1 for all Z, N ≥ 1 forces γ<sub>pp</sub> =
+γ<sub>nn</sub> = 0 and γ<sub>pn</sub> = 1.)
+
+**Structural fingerprint.**  The same operator contributes
+differently in intra- vs inter-nucleon contexts (notably σ⁻¹: +4
+intra, 0 inter).  This strand-context dependence is the residue of
+the Markov-trace recursion's interaction with the atomic-braid
+nucleon partition; deriving the (1, 4, 0, 0, 1, 0) profile from the
+Hecke seminormal-form denominators (axial-distance factors at
+adjacent contents within a nucleon vs across the inter-nucleon
+strand) is the next concrete step toward a categorical proof of the
+shift formula.
+
 | Atom | (Z, N) | predicted shift | empirical | match |
 |------|--------|-----------------|-----------|-------|
 | D    | (1, 1) | 18·1 + 21·1 + 1 = 40  | 40  | ✓ |

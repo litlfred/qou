@@ -75,6 +75,26 @@ def count_averaged_crossings(Z: int, N: int) -> dict:
     }
 
 
+# Integer-LP unique closure for per-crossing shift contributions.
+# Only solution with α ∈ ℤ_≥0 satisfying per-proton 18, per-neutron 21
+# intra-nucleon sums and inter-nucleon constancy at 1 (independent of
+# Z, N for canonical pppnnn ordering).
+PER_CROSSING_SHIFT_INTRA = {
+    "sigma":     1,
+    "sigma_inv": 4,
+    "averaged":  0,
+}
+# 6·1 + 3·4 + 2·0 = 18 per proton ✓
+# 5·1 + 4·4 + 2·0 = 21 per neutron ✓
+PER_CROSSING_SHIFT_INTER = {
+    "sigma":     0,  # (p, p) interface
+    "averaged":  1,  # (p, n) interface
+    "sigma_inv": 0,  # (n, n) interface
+}
+# γ_pp·(Z−1) + γ_pn + γ_nn·(N−1) = 1  for all Z, N ≥ 1
+# ⇒ γ_pp = γ_nn = 0, γ_pn = 1
+
+
 # Empirical D(u) prefactor + (1+u²)^k extracted from
 # habiro-coefficients-extended.witness.json (see docs/audits/
 # 2026-05-03-w3-habiro-unblocked.md for the table).
