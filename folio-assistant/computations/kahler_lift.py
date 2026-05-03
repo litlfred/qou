@@ -119,9 +119,10 @@ def d_cl_cached(shape: tuple[int, ...]) -> int:
     return fact // prod
 
 
+@lru_cache(maxsize=128)
 def build_V_hat_symbolic(Z: int, N: int, *, include_inter: bool = True,
                             m_pp: int = 1, m_pn: int = 1,
-                            m_nn: int = 1) -> list[sp.Expr]:
+                            m_nn: int = 1) -> tuple[sp.Expr, ...]:
     """V̂_i(q) as a sympy expression per generator, for the atom braid.
 
     Uses eigenvalue-factored Hoefsmit trace:
@@ -129,8 +130,14 @@ def build_V_hat_symbolic(Z: int, N: int, *, include_inter: bool = True,
         V̂_i^λ(q) = [m_+(λ,i) · Π_k (c_k q + d_k)
                     + m_-(λ,i) · Π_k (−c_k q⁻¹ + d_k)] / d_λ(classical)
 
-    Returns list of sympy expressions (not yet simplified — can be large
-    for heavy atoms).
+    Returns a tuple of sympy expressions (not yet simplified — can be
+    large for heavy atoms).  Tuple rather than list so the result is
+    hashable / safe for `lru_cache` reuse — `binding_full_pipeline`
+    invokes this with identical args (Z, N, include_inter ∈ {True, False})
+    twice per atom (atom + free), and downstream tests / sweeps repeat
+    the call across `kahler_order ∈ {0, 1, 2}`.  Caching collapses
+    those into a single per-(Z, N, include_inter) build, which is the
+    dominant cost at A ≥ 3 (≥ 20 s on ³He).
     """
     A = Z + N
     if A < 1:
@@ -190,10 +197,26 @@ def build_V_hat_symbolic(Z: int, N: int, *, include_inter: bool = True,
                 V_i_lam = tr_lam / dc
             V_i += w_lam * V_i_lam
         V_hat_list.append(sp.simplify(V_i))
-    return V_hat_list
+    # Return tuple so the result is hashable/safe under @lru_cache.
+    return tuple(V_hat_list)
 
 
-def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
+@lru_cache(maxsize=64)
+def _kahler_lift_analytic_cached(
+    V_hat_sym: tuple, order: int
+) -> tuple:
+    """Cached worker for `kahler_lift_analytic`.  See public wrapper
+    below for documentation.
+
+    Cached by `(V_hat_sym, order)` since `binding_full` typically
+    invokes the same `(Z, N)`-derived `V_hat_sym` for orders 0, 1, 2
+    in sequence (per `binding_full_pipeline.binding_full`'s
+    sweep) and the order-2 derivative dominates wall time.
+    """
+    return _kahler_lift_analytic_impl(V_hat_sym, order)
+
+
+def kahler_lift_analytic(V_hat_sym, order: int = 2) -> dict:
     """Analytic Kähler lift with up to ``order`` q-derivatives.
 
     Returns per-generator {"V0": V, "V1": V + ℏ_q·q·dV/dq, "V2": +2nd-order}
@@ -205,7 +228,22 @@ def kahler_lift_analytic(V_hat_sym: list[sp.Expr], order: int = 2) -> dict:
     order=2: V̂^{(1)} = V̂^{(0)} + ℏ_q · q · dV̂/dq
                        + (ℏ_q²/2) · [q² d²V̂/dq² + q dV̂/dq]
                                             ε = O(ℏ_q³)
+
+    Cached via `_kahler_lift_analytic_cached` when the input is a
+    tuple of sympy expressions (the new `build_V_hat_symbolic` return
+    type).  When given a list — for back-compat — falls through to the
+    uncached impl.
     """
+    if isinstance(V_hat_sym, tuple):
+        # Hashable input: route through the cache.  The returned dict
+        # is shared across cache hits — callers must treat it as
+        # read-only (this matches `binding_full_pipeline`'s usage).
+        return _kahler_lift_analytic_cached(V_hat_sym, order)
+    return _kahler_lift_analytic_impl(V_hat_sym, order)
+
+
+def _kahler_lift_analytic_impl(V_hat_sym, order: int) -> dict:
+    """Uncached implementation — see `kahler_lift_analytic` docstring."""
     hbar_sym = HBAR_Q_SYM
     results = {"V0": [], "V1": [], "V2": []}
     for V_i in V_hat_sym:
