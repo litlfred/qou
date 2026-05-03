@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T21:05:53.579338+00:00",
-  "commitSha": "4c92baab5a831dafb7296c7f4c7eddb8e5e1829d",
+  "computedAt": "2026-05-03T21:10:41.553922+00:00",
+  "commitSha": "ac5053f75e815e6f0493aa28af2fd797c2019d41",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1394,6 +1394,7 @@
         "brane-tower-distance-weighted.witness.json",
         "brane-tower-finite-laurent.witness.json",
         "brane-tower-isospin-diagnosis.witness.json",
+        "brane-tower-per-channel-phi-q-probe.witness.json",
         "brane-tower-plancherel-scaffold.witness.json",
         "brane-tower-prefactor-sweep.witness.json",
         "brane-tower-symbolic-D.witness.json",
