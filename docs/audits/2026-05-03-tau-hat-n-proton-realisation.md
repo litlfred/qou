@@ -2,7 +2,24 @@
 
 **Date**: 2026-05-03
 **Phase**: A.3 of issue #522 (mass-tower level-1 computation)
-**Verdict (initial)**: `setup-only` — stub artifact committed; computation in progress.
+**Verdict**: **full-realisation** (computation complete, all checks pass at mpmath dps=50).
+
+## Results
+
+| Quantity | Value |
+|---|---|
+| $q_0$ | $1.1099785955541805$ |
+| $\dim_{\mathbb{C}} A_0$ | **6** ($= |S_3|$, Specht $1+2+2+1$) |
+| $\dim_{\mathbb{C}} \Omega^1(A_0)$ | **30** ($= 36 - 6$, kernel of $m$) |
+| $\dim_{\mathbb{C}} A_1$ | **180** ($= 6 \cdot 30$) |
+| $\dim_{\mathbb{C}} \mathrm{End}(A_1)$ | $32{,}400$ |
+| $\dim$ descended ($\mathrm{im}\,\hat{\tau}_0$) | **36** ($= \mathrm{rank}(P)^2 = 6^2$) |
+| $\dim$ transient ($\ker\hat{\tau}_0$) | **$32{,}364$** ($= 32400 - 36$) |
+| $\|R_1 L_0 - I_6\|_\infty$ | $0$ (splitting exact at dps=50) |
+| $\|P^2 - P\|_\infty$ | $0$ (P is exactly idempotent) |
+| $\|\hat{\tau}_0^2(\phi) - \hat{\tau}_0(\phi)\|_\infty$ on 5 samples | $0$ |
+
+The construction realises $\hat{\tau}_0$ as $\phi \mapsto P \phi P$ where $P := L_0 R_1$ is a rank-6 idempotent on the 180-dim space $A_1$. This means $\hat{\tau}_0 = P \otimes P^T$ on the vectorisation of $\mathrm{End}(A_1)$, with rank $\mathrm{rank}(P)^2 = 36$.
 
 ## Goal
 
@@ -115,19 +132,44 @@ into $\Omega^1$.
 ker(m) explicitly, nor that materialises End(A_1) numerically. This
 realisation is new infrastructure.
 
-## Plan
+## Plan (executed)
 
-1. **Step 1 (built)**: stub witness committed. ✓
-2. **Step 2**: build H_3(q) as 6-dim algebra via direct Specht block
-   matrices ($1 \oplus 2 \oplus 2 \oplus 1$).
-3. **Step 3**: form m: A_0 ⊗ A_0 → A_0 as a 6 × 36 matrix; SVD ker.
-4. **Step 4**: Ω^1 basis (30-dim).
-5. **Step 5**: A_1 = 180-dim; ℓ_0 (with chosen trivial connection),
-   r_1 (canonical retraction).
-6. **Step 6**: build a small principal sub-block of End(A_1)
-   (probably ℓ_0 End(A_0) r_1 + a transient transversal); verify
-   idempotence.
-7. **Step 7**: report dimensions; finalise verdict.
+1. **Step 1**: stub witness committed (commit `ab48bf3c2`). ✓
+2. **Step 2**: built H_3(q_0) regular representation via Coxeter-reduced
+   words and the Hecke + braid relations. ✓
+3. **Step 3**: built m: A_0 ⊗ A_0 → A_0 as a 6 × 36 matrix; ker computed
+   via mpmath Gaussian elimination (RREF). ✓
+4. **Step 4**: Ω^1 basis (30-dim) confirmed. ✓
+5. **Step 5**: ℓ_0 := a ↦ a ⊗ d(σ_1); r_1 := a ⊗ ω ↦ φ_0(ω) · a where
+   φ_0 ∈ (Ω^1)^* is dual to d(σ_1) normalised by ⟨φ_0, d(σ_1)⟩ = 1.
+   Splitting condition R_1 L_0 = I_6 verified to 0 error. ✓
+6. **Step 6**: τ̂_0(φ) = P φ P with P := L_0 R_1 (180×180 rank-6).
+   P^2 − P = 0; idempotence on End(A_1) verified on samples. ✓
+7. **Step 7**: dim(descended) = 36, dim(transient) = 32 364 reported. ✓
+
+## Implementation note — H_3 reduction algorithm
+
+The 6 reduced words for $S_3$ are
+$\{1, \sigma_1, \sigma_2, \sigma_1 \sigma_2, \sigma_2 \sigma_1, \sigma_1 \sigma_2 \sigma_1\}$.
+Multiplication of two reduced words is computed by:
+
+1. Concatenate the two words.
+2. Apply the **braid relation** $\sigma_2 \sigma_1 \sigma_2 \to \sigma_1 \sigma_2 \sigma_1$ to canonicalise the longest element.
+3. Apply the **Hecke relation** $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ to eliminate consecutive equal generators, branching the term into two sub-terms with the appropriate coefficient.
+4. Iterate until every term is a reduced word in the 6-element basis.
+
+This gives a closed-form 6-dim regular representation without depending on the YSN/Hoefsmit machinery in `hecke_core.py`.
+
+## Implication for Phase A.3
+
+The split
+
+$$\mathrm{End}(A_1) = \underbrace{\hat{\tau}_0\,\mathrm{End}(A_1)}_{\dim 36 = (\dim A_0)^2}
+\oplus \underbrace{(1 - \hat{\tau}_0)\,\mathrm{End}(A_1)}_{\dim 32{,}364}$$
+
+is **exact** at proton scale. The descended block has the expected dimension $(\dim A_0)^2 = 36$ — i.e. it is canonically identified with $\mathrm{End}(A_0)$ via the splitting $\mathfrak{d}_1: \mathrm{End}(A_1) \twoheadrightarrow \mathrm{End}(A_0)$. The transient block (dim 32 364) carries the genuine level-1 information that has no counterpart at level 0.
+
+This unblocks the level-1 mass computation: the level-1 mass operator decomposes into a level-0 part (descended, the "carry-down" of proton mass) plus a 32 364-dim transient part that contributes the **level-1 mass increment**.
 
 ## Conjectural propagation note
 
@@ -136,6 +178,13 @@ not a logical claim. No conjectural propagation issues.
 
 ## Files
 
-- Witness JSON: `folio-assistant/computations/tau-hat-n-proton-realisation.witness.json`
-- This memo: `docs/audits/2026-05-03-tau-hat-n-proton-realisation.md`
-- (Forthcoming) script: `folio-assistant/computations/tau_hat_n_proton_realisation.py`
+- Witness JSON: [`folio-assistant/computations/tau-hat-n-proton-realisation.witness.json`](../../folio-assistant/computations/tau-hat-n-proton-realisation.witness.json)
+- This memo: [`docs/audits/2026-05-03-tau-hat-n-proton-realisation.md`](2026-05-03-tau-hat-n-proton-realisation.md)
+- Script: [`folio-assistant/computations/tau_hat_n_proton_realisation.py`](../../folio-assistant/computations/tau_hat_n_proton_realisation.py)
+- Source of truth (descent involution): [`content/quantum-observable-universe/lifting-and-descent/descent-involution.md`](../../content/quantum-observable-universe/lifting-and-descent/descent-involution.md)
+- Source of truth (descent retraction): [`content/quantum-observable-universe/lifting-and-descent/descent-lemma-proof.md`](../../content/quantum-observable-universe/lifting-and-descent/descent-lemma-proof.md)
+
+## Commit history
+
+- Setup stub (verdict: `setup-only`): `ab48bf3c2`
+- Full realisation (verdict: `full-realisation`): (this commit)
