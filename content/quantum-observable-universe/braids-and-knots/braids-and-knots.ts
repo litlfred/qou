@@ -449,6 +449,7 @@ export default chapter({
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
         "phi-q-resums-trace-series",
+        "markov-axiom-recursive-ascent",
         "per-braid-mass-tower",
         "schur-weyl-mass-decomposition",
         "gb-residue-spectral-sum",
