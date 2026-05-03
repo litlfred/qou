@@ -14,6 +14,7 @@ import QOU.BraidKnot.ResidueAtRoot
 import QOU.BraidKnot.GBSpectralSequence
 import QOU.BraidKnot.GradedTraceResidueSplit
 import QOU.BraidKnot.GBResidueSpectralSum
+import QOU.BraidKnot.JetTowerUniformDeltaMax
 import QOU.BraidKnot.PhiQTowerAlgebraicStratification
 
 /-!

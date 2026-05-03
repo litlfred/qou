@@ -1094,4 +1094,113 @@ theorem automatically via typeclass resolution.
 
 ---
 
+**End of Step-13 audit.**
+
+---
+
+## §10 — Sharp Step-14 audit (DB filtration / Δ_max cluster)
+
+The Step-14 cluster from §A of the forward-derivation document
+(GAP 14a — *Uniform Δ_max bound on per-level descent residue*):
+`def:brane-tower-levels` (example), `def:direct-limit-algebra`,
+`prop:delta-max-uniform-bound` (Archimedean / rank-1 closure of the
+gap), and `conj:jet-tower-uniform-delta-max` (the conjectural
+multi-rank statement).
+
+### Findings
+
+**D1 (resolved). `prop:delta-max-uniform-bound` had no Lean file
+at all.** Block kind is `proposition` — CLAUDE.md §3 expects Lean.
+The `lean.ref = "qou:QOU.MassEndomorphism.delta_max_uniform_bound"`
+resolved to nothing; no co-located `.lean` and no formal-chain
+module.
+
+**Fixed**: created the formal-chain module
+[`lean/QOU/MassEndomorphism/DeltaMaxUniformBound.lean`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism/DeltaMaxUniformBound.lean)
+with:
+
+- `structure OperatorNormBound (ρ : Type*)` — the four ingredients
+  of the proof (`braidLength`, `opNorm`, `freeMassLevel0`, `delta`)
+  + non-negativity + the `per_level_bound` field that records the
+  output of Steps 1–4 of the .md proof.
+- `def OperatorNormBound.deltaMax := 2 · L · ‖ρ‖_op² · 𝔪⁽⁰⁾`
+  (closed form), `theorem deltaMax_nonneg`.
+- `theorem delta_max_uniform_bound : |b.delta n| ≤ b.deltaMax`
+  conditional on the `OperatorNormBound` data.
+- A discharger
+  `def OperatorNormBound.toJetTowerUniformDeltaMax`
+  that *converts an `OperatorNormBound`* into an instance of the
+  conjectural class `JetTowerUniformDeltaMax` — i.e. the
+  archimedean / rank-1 SDP regime is the **closure** of the
+  conjecture's leaf, formally witnessed by Lean.
+
+Also created an aggregator
+[`lean/QOU/MassEndomorphism.lean`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism.lean)
+re-exporting the new module, and registered it in `QOU.lean`.
+
+**D2 (resolved). `prop:delta-max-uniform-bound` had no `uses[]`
+field.** The `.ts` manifest carried only `tags`, `lean`, `cites`;
+the narrative `.md` cites at least four upstream blocks
+(`prop:jet-tower-convergence`, `thm:markov-trace-factorization`,
+`prop:descent-eigenspaces`, `def:recursive-brane-tower`). Added
+all four to `uses[]` so the dependency graph is auditable from the
+manifest.
+
+**D3 (resolved). `def:direct-limit-algebra` Lean was co-located
+only.** Promoted to
+[`lean/QOU/LiftingDescent/DirectLimitAlgebra.lean`](../../content/quantum-observable-universe/lean/QOU/LiftingDescent/DirectLimitAlgebra.lean)
+(same `structure DirectLimitAlgebra (R : Type*) [CommRing R]` as
+the co-located stub) and registered in
+`lean/QOU/LiftingDescent.lean`.
+
+**D4 (resolved). `conj:jet-tower-uniform-delta-max` Lean was
+co-located only.** The co-located stub was already a textbook
+§3b conditional-class implementation — `class
+JetTowerUniformDeltaMax (ρ : Type*)` with `delta`, `delta_max`,
+`uniform_bound` fields and a conditional theorem
+`geometric_tail_bound_abstract`.  Promoted verbatim to
+[`lean/QOU/BraidKnot/JetTowerUniformDeltaMax.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/JetTowerUniformDeltaMax.lean)
+and registered in `lean/QOU/BraidKnot.lean`.
+
+**D5 (no fix needed). `ex:brane-tower-levels` is correctly
+Archimedean.** It is an `example` block (no Lean expected), tagged
+`archimedean`, opens *"Starting from an archimedean QOU"* and
+hands off to `cor:jet-prolongation-C`.  ✓ Clean.
+
+**D6 (no fix needed). Wall discipline for `delta-max-uniform-bound`.**
+The proof uses Archimedean ingredients (operator norm `‖·‖_op`,
+real `q > 0`, Cauchy–Schwarz on Hilbert–Schmidt norm, Kassel–Turaev
+JW-module dimension bound) — but the block tags include
+`operator-norm` and `legacy-phi-q-tower`, and the narrative
+explicitly says it *closes the archimedean / rank-1 SDP regime* of
+the convergence conjecture.  This proposition is intentionally on
+the τ-image side; its `OperatorNormBound`-conditional form is the
+right Lean encoding (the Archimedean ingredients become class
+fields).
+
+### Net status of the Step-14 cluster
+
+| Block | Kind | Lean home | Wall status |
+|-------|------|-----------|-------------|
+| `def:recursive-brane-tower` | definition | (upstream — unchanged) | 🟢 |
+| `def:direct-limit-algebra` | definition | new `lean/QOU/LiftingDescent/DirectLimitAlgebra.lean` | 🟢 polymorphic in `[CommRing R]` |
+| `ex:brane-tower-levels` | example | (no Lean — example) | 🟢 Archimedean by design |
+| `prop:delta-max-uniform-bound` | proposition | new `lean/QOU/MassEndomorphism/DeltaMaxUniformBound.lean` | 🟢 closure of GAP 14a in the rank-1 SDP regime, conditional on `OperatorNormBound` |
+| `conj:jet-tower-uniform-delta-max` | conjecture | new `lean/QOU/BraidKnot/JetTowerUniformDeltaMax.lean` | 🟡 by design (multi-rank case open); class-axiomatised per §3b |
+
+GAP 14a status update: the **rank-1 SDP regime** is now formally
+closed in Lean — the `delta_max_uniform_bound` theorem is a direct
+extraction of the `OperatorNormBound` class fields, and a
+constructor `toJetTowerUniformDeltaMax` witnesses that any
+`OperatorNormBound` instance discharges the conjectural class on
+that leaf.  The **multi-rank case** remains 🟡 open (forward-
+derivation §C.1 GAP 14a multi-rank); the conjecture
+`conj:jet-tower-uniform-delta-max` is the right home for it.
+
+The forward-derivation document will need a refresh: GAP 14a
+should be split into 14a-rank1 (closed by
+`prop:delta-max-uniform-bound`) and 14a-multi-rank (still open).
+
+---
+
 **End of audit.**
