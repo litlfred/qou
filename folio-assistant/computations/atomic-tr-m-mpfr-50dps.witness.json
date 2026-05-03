@@ -1,12 +1,12 @@
 {
   "computation": "atomic-tr-m-mpfr-50dps",
   "description": "Plan F advance \u2014 tr_M(T_w, q_0) via the 3A-strand atom-braid convention for proton, neutron, deuteron, tritium, \u00b3He, evaluated at q_0 to 50 dps via the Hoefsmit + Wenzl bridge (\u03a3_\u03bb y_\u03bb \u00b7 \u03c7_\u03bb) and (where applicable) compared against the published Jones polynomial of the historical knot ID. Companion to proton-mass-mpfr-50dps.witness.json.  Tritium / \u00b3He at H_9 unblocked vs. legacy sympy path (>4-min timeout).",
-  "computedAt": "2026-04-27T20:45:20.776213+00:00",
+  "computedAt": "2026-05-03T09:19:36.435950+00:00",
   "precision": "mpfr_50dps",
   "method": "hoefsmit_wenzl_bridge: tr_M(W) = \u03a3_{\u03bb \u22a2 n} y_\u03bb(q) \u00b7 \u03c7_\u03bb(W); y_\u03bb from y-lambda-mpfr-witness.json; \u03c7_\u03bb via per-partition Young-seminormal matrices in mpmath (sparse COO) at 50 dps; W is the atom_braid_word_3A Hecke-factor word",
   "structural_reference": "prop:full-pole-structure-mass-trace \u2014 tr_M(T_w, q) is meromorphic in q with simple poles at every primitive root of unity \u03b6_n^(j) (gcd(j,n)=1, n>=2); this witness reports tr_M evaluated at q = q_0 \u2248 1.11, the regular point used throughout the paper.  The prop's Mittag-Leffler / Habiro cyclotomic expansion expresses the same function as a sum over these poles; Habiro's convergence theorem guarantees the order-m Habiro truncation neglects only the \u03b6_1, \u2026, \u03b6_m residues, so the values reported here are the LHS of the prop's equations (Mittag-Leffler eq. and Habiro eq.) at q = q_0.",
   "y_lambda_witness": "y-lambda-mpfr-witness.json",
-  "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
+  "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
   "symbolic_cross_check_enabled": false,
   "precision_caveat": "y-lambda-mpfr-witness.json was computed with q at f64 precision (its 'q' field stores str(float(Q0))); the y_\u03bb values inherit f64-limited input. Bridge results agree with the prop-table canonical values to ~1e-15. To upgrade to full 50-dps precision, regenerate that witness with q_str at 50 dps (see y_lambda_mpfr_witness.py).",
   "results": [
@@ -18,10 +18,15 @@
       "n_strands_3A": 3,
       "rho_factor": 1,
       "word_length_3A": 11,
-      "tr_M_at_q0_50dps": "1.065306228592389333611777464990998459365907562335",
-      "term1_b_pred_mev_50dps": "0.54437036423917092746681799224406197218759643015027",
-      "bridge_elapsed_sec": 0.002603292465209961,
+      "tr_M_at_q0_50dps": "1.0653062285923893336117774649909984596272253845736",
+      "term1_b_pred_mev_50dps": "0.54437036423917092746681799224406197232112956293044",
+      "bridge_elapsed_sec": 0.0014843940734863281,
       "symbolic_cross_check": null,
+      "peel_cross_check": {
+        "elapsed_sec": 0.061453819274902344,
+        "tr_M_at_q0_50dps": "1.0653062285923892551532775699680661193337632009792",
+        "abs_diff_vs_bridge": "7.8458499895022932340293462183594371693142508329353e-17"
+      },
       "historical_K_comparison": null
     },
     {
@@ -32,10 +37,15 @@
       "n_strands_3A": 3,
       "rho_factor": 1,
       "word_length_3A": 11,
-      "tr_M_at_q0_50dps": "0.92323329716958371987441489925448416037805873290687",
-      "term1_b_pred_mev_50dps": "0.47177124545869525279292014538339718874481961555374",
-      "bridge_elapsed_sec": 0.0010561943054199219,
+      "tr_M_at_q0_50dps": "0.92323329716958371987441489925448416061211730897836",
+      "term1_b_pred_mev_50dps": "0.47177124545869525279292014538339718886442330216477",
+      "bridge_elapsed_sec": 0.0021462440490722656,
       "symbolic_cross_check": null,
+      "peel_cross_check": {
+        "elapsed_sec": 0.04920172691345215,
+        "tr_M_at_q0_50dps": "0.92323329716958364246376988091871375932688744507317",
+        "abs_diff_vs_bridge": "7.7410645018335770401285229863905192281156272937442e-17"
+      },
       "historical_K_comparison": null
     },
     {
@@ -46,15 +56,20 @@
       "n_strands_3A": 6,
       "rho_factor": 1,
       "word_length_3A": 23,
-      "tr_M_at_q0_50dps": "0.3882864715477134196206286177859443593534762784089",
-      "term1_b_pred_mev_50dps": "0.19841397926008643232705062202856889238804905711686",
-      "bridge_elapsed_sec": 0.034384965896606445,
+      "tr_M_at_q0_50dps": "0.38828647154771341962062861778594435957136653050989",
+      "term1_b_pred_mev_50dps": "0.1984139792600864323270506220285688924993907471557",
+      "bridge_elapsed_sec": 0.049684762954711914,
       "symbolic_cross_check": null,
+      "peel_cross_check": {
+        "elapsed_sec": 0.892136812210083,
+        "tr_M_at_q0_50dps": "0.38828647154771327851106592231656879987131358767193",
+        "abs_diff_vs_bridge": "1.4110956269546937555970005294283795635442321816715e-16"
+      },
       "historical_K_comparison": {
         "historical_K": "6_2",
         "J_K_published": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + q**(-5)",
-        "J_K_at_q0_50dps": "1.0269200125513209933037540710311544269026399329976",
-        "tr_M_over_J_K_at_q0_50dps": "0.37810780469945175161103494647453426968825571663026",
+        "J_K_at_q0_50dps": "1.0269200125513209933037540710311544269138710880777",
+        "tr_M_over_J_K_at_q0_50dps": "0.37810780469945175161103494647453426989629885737949",
         "note": "If the ratio is a power of q_0, then tr_M = q_0^k \u00b7 J_K, i.e. they agree up to writhe normalisation. q_0 = 1.1099785955541805752815940796..., so log(ratio)/log(q_0) should be close to an integer."
       }
     },
@@ -66,10 +81,15 @@
       "n_strands_3A": 9,
       "rho_factor": 1,
       "word_length_3A": 35,
-      "tr_M_at_q0_50dps": "0.10405211867552573145768305458682264882849191283961",
-      "term1_b_pred_mev_50dps": "0.053170523388469039472858010326659057387578097544532",
-      "bridge_elapsed_sec": 19.820663928985596,
+      "tr_M_at_q0_50dps": "0.10405211867552573145768305458682264892232343209377",
+      "term1_b_pred_mev_50dps": "0.053170523388469039472858010326659057435525905360315",
+      "bridge_elapsed_sec": 27.906063318252563,
       "symbolic_cross_check": null,
+      "peel_cross_check": {
+        "elapsed_sec": 10.971039056777954,
+        "tr_M_at_q0_50dps": "0.10405211867552565489795832743212275483532305732495",
+        "abs_diff_vs_bridge": "7.6559724727154699894087000374768824668102160481655e-17"
+      },
       "historical_K_comparison": null
     },
     {
@@ -80,10 +100,15 @@
       "n_strands_3A": 9,
       "rho_factor": 1,
       "word_length_3A": 35,
-      "tr_M_at_q0_50dps": "0.20654085856226274930598854594486682967873245140839",
-      "term1_b_pred_mev_50dps": "0.10554216185741477451947337568985370785566112000061",
-      "bridge_elapsed_sec": 20.46855664253235,
+      "tr_M_at_q0_50dps": "0.20654085856226274930598854594486682985557835247013",
+      "term1_b_pred_mev_50dps": "0.10554216185741477451947337568985370794602918975497",
+      "bridge_elapsed_sec": 30.945977926254272,
       "symbolic_cross_check": null,
+      "peel_cross_check": {
+        "elapsed_sec": 4.823328495025635,
+        "tr_M_at_q0_50dps": "0.20654085856226262948910490901292677841811332568245",
+        "abs_diff_vs_bridge": "1.1981688363693194005143746502678768341704689645541e-16"
+      },
       "historical_K_comparison": null
     }
   ]
