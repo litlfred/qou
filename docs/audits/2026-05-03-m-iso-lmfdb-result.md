@@ -75,17 +75,19 @@ Three onward options, in priority order:
    loop:
 
    ```bash
-   for N in 10 20 40 50 80 100 160 200 250 400; do
+   for N in 2 4 8 10 16 20 32 40 50 64 80 100 160 200 320 400 800 1600; do
      curl -fsS "https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=$N" \
        | jq '.data[] | {label, level, dim, traces}' \
        >> lmfdb-w5-rational.jsonl
    done
    ```
 
-   Then for each label with `traces` containing at least
-   `(−1, 13, 63, −285, 239, −315, −356)` at indices `(3, 7, 11, 13,
-   17, 19, 23)`, fetch the q-expansion (`/{label}/?qexpansion=true`)
-   to confirm.
+   Then for each label whose `traces` array (0-indexed,
+   `traces[k] = a_{k+1}`) contains
+   `(-1, 13, 63, -285, 239, -315, -356)` at the 0-based indices
+   `(2, 6, 10, 12, 16, 18, 22)` corresponding to primes
+   `(3, 7, 11, 13, 17, 19, 23)`, fetch the q-expansion
+   (`/{label}/?qexpansion=true`) to confirm.
 
 2. **Use Sage / Pari locally** if LMFDB stays unreachable. Both ship
    newform tables sufficient to enumerate weight-5 rational newforms
@@ -93,7 +95,8 @@ Three onward options, in priority order:
 
    ```python
    from sage.all import Newforms
-   for N in [10, 20, 40, 50, 80, 100, 160, 200, 250, 400]:
+   for N in [2, 4, 8, 10, 16, 20, 32, 40, 50, 64, 80,
+             100, 160, 200, 320, 400, 800, 1600]:
        for f in Newforms(N, 5, names='a'):
            if f.hecke_eigenvalue_field() == QQ:
                aps = [f[p] for p in (3, 7, 11, 13, 17, 19, 23)]

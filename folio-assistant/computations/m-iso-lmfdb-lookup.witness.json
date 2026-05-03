@@ -23,7 +23,8 @@
       "a_23": -356
     },
     "expected_conductor_form": "2^a · 5^b with a ∈ {1..6}, b ∈ {0,1,2}",
-    "candidate_conductors": [10, 20, 40, 50, 80, 100, 160, 200, 250, 400],
+    "candidate_conductors": [2, 4, 8, 10, 16, 20, 32, 40, 50, 64, 80, 100, 160, 200, 320, 400, 800, 1600],
+    "candidate_conductors_note": "Full enumeration of 2^a · 5^b for a ∈ {1..6}, b ∈ {0,1,2} (18 levels). Sorted ascending. Earlier draft of this witness (commit aa68402eb) listed only [10, 20, 40, 50, 80, 100, 160, 200, 250, 400] — Gemini PR #527 review (r3178029008) flagged that as inconsistent with the conductor form (missing all b=0 levels and the larger b ∈ {1, 2} levels; including 250 = 2 · 5^3 which violates b ≤ 2). This corrected list is the authoritative search space.",
     "sato_tate_angles_deg": {
       "p_3": 93.2,
       "p_7": 82.4,
@@ -63,7 +64,7 @@
   "next_actions": [
     {
       "id": "rerun-from-allowlisted-env",
-      "description": "Rerun this lookup from a session where egress to lmfdb.org is permitted (host workstation with Claude Code CLI, or a CI job with explicit network policy). Programmatic API: GET https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=N for N ∈ [10,20,40,50,80,100,160,200,250,400]; for each label fetch /api/mf_newforms/{label}/?qexpansion=true and read traces / a_p."
+      "description": "Rerun this lookup from a session where egress to lmfdb.org is permitted (host workstation with Claude Code CLI, or a CI job with explicit network policy). Programmatic API: GET https://www.lmfdb.org/api/mf_newforms/?weight=5&dim=1&level=N for N ∈ candidate_conductors (the full 2^a · 5^b set above); for each label fetch /api/mf_newforms/{label}/?qexpansion=true and read traces / a_p. The traces array is 0-indexed (traces[k] = a_{k+1}); the target a_p values are at 0-based indices (2, 6, 10, 12, 16, 18, 22) for primes (3, 7, 11, 13, 17, 19, 23)."
     },
     {
       "id": "alternative-data-source",
