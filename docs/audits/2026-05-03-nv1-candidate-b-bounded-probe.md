@@ -103,6 +103,12 @@ all.  The probe weakens the candidate as an *intuitively
 appealing* path; it does not refute the rank-equality numerical
 claim itself.
 
+**Status.**  All three probe steps complete; verdict is final
+within the bounded-probe scope.  Promotion of this verdict to
+either falsification or closure of
+`conj:nv-as-bring-period-rank` requires the research-grade Bring
+period-lattice machinery described in the next section.
+
 ## Handoff
 
 Full Bring-period-lattice machinery on $y^2 = x^5 - 1$ remains
