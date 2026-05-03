@@ -71,8 +71,13 @@ H_VAL = mp.mpf(str(float(h_val)))
 
 
 def abs_mpf(v):
+    """Coerce a per-generator volume to abs mpmath float without an
+    intermediate `str(float(...))` round-trip (preserves precision for
+    callers that pass mpf / sympy values; harmless for the f64 inputs
+    `atom_per_generator_volumes` produces today).
+    """
     x = v['full'] if isinstance(v, dict) else v
-    return abs(mp.mpf(str(float(x))))
+    return abs(mp.mpf(x))
 
 
 # ── Canonical Term 1 from bridge witness ────────────────────────────
@@ -156,7 +161,8 @@ def term4_frobenius_codim(A):
         for h in hooks:
             hl_val = (q ** h - q_inv ** h) / denom
             dim_q_val /= hl_val
-        if abs(dim_q_val) > mp.mpf("1e-40"):
+        # Tolerance tied to current precision (mp.dps), not hardcoded.
+        if abs(dim_q_val) > mp.mpf(10) ** (-(mp.mp.dps - 10)):
             total += 1 / dim_q_val
     return total
 

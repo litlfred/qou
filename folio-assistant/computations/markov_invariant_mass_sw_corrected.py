@@ -167,7 +167,9 @@ def main() -> int:
         t0 = time.time()
         tr = pyhecke.trace.markov_trace_symbolic_eval(
             Z, N, True, 1, 1, 1, float(Q0), precision=PRECISION, legacy_h3=False)
-        tr_mp = mp.mpf(str(float(tr)))
+        # Preserve precision: don't round-trip through f64.  pyhecke
+        # returns mpmath mpf already at PRECISION digits.
+        tr_mp = mp.mpf(tr)
         a = abs(tr_mp)
         log_tr = mp.log(a)
         Sn = Sigma_n(n)

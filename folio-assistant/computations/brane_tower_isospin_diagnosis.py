@@ -100,8 +100,10 @@ from mass_endomorphism import Phi_q  # noqa: E402
 
 
 def abs_mpf(v):
+    """Coerce a per-generator volume to abs mpmath float; no
+    `str(float(...))` round-trip (preserves precision)."""
     x = v["full"] if isinstance(v, dict) else v
-    return abs(mp.mpf(str(float(x))))
+    return abs(mp.mpf(x))
 
 
 def diagnose_atom(label, Z, N):
