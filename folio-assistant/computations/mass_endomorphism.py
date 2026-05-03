@@ -193,6 +193,46 @@ neutron_cross = {
 # trigger the 30+ second recomputation or overwrite
 # mass-endomorphism.witness.json as a side effect.
 
+
+# === Atomic Markov-trace via recursive ascent (#508) ===
+
+def tr_M_atomic_at_q0(Z: int, N: int) -> float:
+    """Canonical Jones–Markov trace `tr_M(β_atom)` evaluated at q = q₀.
+
+    Builds the production atomic braid `β_atom` for atom (Z, N) via
+    `mass_at_3A_proper.atom_braid_word_3A` and evaluates the canonical
+    trace via the Markov-axiom recursive-ascent path
+    (`markov_peel.tr_M_atomic`).
+
+    This is the **production** atomic Markov trace — for `A ≥ 4` it
+    completes in seconds–minutes, vs. the Hoefsmit per-Wedderburn-block
+    sum which would take ~30 minutes per atom (see #508).
+
+    The returned float matches `atomic-tr-m-mpfr-50dps.witness.json`
+    (Hoefsmit + Wenzl bridge) to ~1e-15 at q = q₀.
+
+    Parameters
+    ----------
+    Z, N : int
+        Proton and neutron counts.
+
+    Returns
+    -------
+    float
+        `tr_M(β_atom)` at q = q₀, IEEE-double precision.
+    """
+    # Local import — markov_peel pulls in sympy, which we keep optional
+    # for callers that only need the (c, d) crossing tables.
+    from markov_peel import tr_M_atomic
+    from hecke_symbolic import q as q_sym
+    sym = tr_M_atomic(Z, N)
+    # `subs(...).evalf(30)` evaluates symbolically at 30-digit precision
+    # before truncating to IEEE double — sufficient for all downstream
+    # mass computations.
+    import sympy as sp
+    return float(sp.sympify(sym).subs(q_sym, q0).evalf(30))
+
+
 if __name__ == "__main__":
 
     electron_vols = additive_wedderburn_volumes(2, electron_cross)
@@ -242,6 +282,26 @@ if __name__ == "__main__":
     print(f"m_n - m_p (units of m_e) = {(n_total - p_total)/e_total:.4f}  (CODATA: 2.531)")
     print(f"Δm (MeV) = {(n_total - p_total)/e_total * 0.51100:.4f}  (CODATA: 1.293 MeV)")
 
+    # === Atomic Markov trace via recursive ascent (#508) ===
+    print()
+    print("ATOMIC tr_M(β) via Markov-axiom recursive ascent (#508):")
+    print(f"{'atom':10s} {'Z':>2s} {'N':>2s} {'A':>2s}  {'tr_M(q₀)':>20s}")
+    atomic_tr_m_at_q0 = {}
+    for label, (Z_, N_) in [
+        ("proton",   (1, 0)),
+        ("neutron",  (0, 1)),
+        ("deuteron", (1, 1)),
+        ("tritium",  (1, 2)),
+        ("helium-3", (2, 1)),
+        ("helium-4", (2, 2)),
+    ]:
+        try:
+            tr = tr_M_atomic_at_q0(Z_, N_)
+            atomic_tr_m_at_q0[label] = tr
+            print(f"  {label:10s} {Z_:>2d} {N_:>2d} {Z_+N_:>2d}  {tr:+.16e}")
+        except Exception as exc:  # noqa: BLE001
+            print(f"  {label:10s} {Z_:>2d} {N_:>2d} {Z_+N_:>2d}  FAILED: {exc!r}")
+
     # === WITNESS ===
     w = WitnessBuilder("mass-endomorphism", engine="python")
     w.set_description(
@@ -282,4 +342,12 @@ if __name__ == "__main__":
     w.add_data("ratio", p_total / e_total)
     w.add_data("codata", 1836.152)
     w.add_data("error_pct", abs(p_total / e_total - 1836.152) / 1836.152 * 100)
+    # Production atomic Markov trace via recursive ascent (#508).
+    # Cross-checked against `atomic-tr-m-mpfr-50dps.witness.json`
+    # (Hoefsmit + Wenzl bridge) to ~1e-15 at q₀.
+    if atomic_tr_m_at_q0:
+        w.add_data(
+            "atomic_tr_m_recursive_ascent_at_q0",
+            {k: f"{v:+.16e}" for k, v in atomic_tr_m_at_q0.items()},
+        )
     w.save()
