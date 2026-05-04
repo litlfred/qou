@@ -1,7 +1,7 @@
 {
   "engine": "python (sympy symbolic)",
   "engineVersion": "python 3.11.15, sympy 1.14.0",
-  "computedAt": "2026-05-04T23:41:03.596200+00:00",
+  "computedAt": "2026-05-04T23:48:19.655242+00:00",
   "computation": "ocneanu-cancellation-derivation",
   "scriptFile": "ocneanu_cancellation_derivation.py",
   "description": "First-principles derivation of the cancellation count in the atomic-braid Markov-trace pole order via symbolic-q Hoefsmit seminormal characters \u03c7^\u03bb(\u03b2). Computes the Ocneanu-weighted sum tr_M(\u03b2) = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7^\u03bb(\u03b2) / f^\u03bb symbolically, identifies the lowest-q-power coefficient, and compares to DP-max upper bound from dp_pole_probe to extract the cross-partition cancellation count.",
