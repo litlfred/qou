@@ -1,0 +1,426 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-04T17:44:01.858687+00:00",
+  "computation": "delta-q-decoration",
+  "scriptFile": "delta_q_decoration.py",
+  "description": "\u03b4_q Wedderburn decomposition for H_n(q), n=2,3,4. Tests the round-18 force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): does the bare H_2 molecular braid project onto the (3,1) and (2,1,1) Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? Verifies the algebraic identity \u03b1_EM = h\u00b2/[q\u00b7\u03b4_q(T_29)\u00b7\u03b4_q(T_35)] (prop:alpha-em-categorical-trace-ratio).",
+  "contentBlock": "def:delta-q-decoration",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "h": 0.20906032198987945,
+    "z": 0.4993203340335982
+  },
+  "data": {
+    "H_2": {
+      "identity_1": {
+        "(2,)": {
+          "chi_lambda": 1.0,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.49729054500859143,
+          "trM_contribution": 0.16576351500286382
+        },
+        "(1, 1)": {
+          "chi_lambda": 1.0,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.49729054500859143,
+          "trM_contribution": 0.16576351500286382
+        }
+      },
+      "sigma_1": {
+        "(2,)": {
+          "chi_lambda": 1.109978595554181,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.49729054500859143,
+          "trM_contribution": 0.18399395357700318
+        },
+        "(1, 1)": {
+          "chi_lambda": -0.9009182735643012,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.49729054500859143,
+          "trM_contribution": -0.14933937975633021
+        }
+      },
+      "T_2_9": {
+        "(2,)": {
+          "chi_lambda": 2.557593012443454,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.49729054500859143,
+          "trM_contribution": 0.42395560768939017
+        },
+        "(1, 1)": {
+          "chi_lambda": -0.3909926228038259,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.49729054500859143,
+          "trM_contribution": -0.06481231149615106
+        }
+      }
+    },
+    "H_3": {
+      "identity_1": {
+        "(3,)": {
+          "chi_lambda": 1.0,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.05446107577991941
+        },
+        "(2, 1)": {
+          "chi_lambda": 2.0,
+          "dim_q_lambda": 2.010896869118482,
+          "f_lambda": 3,
+          "w_lambda": 0.6606737723483499,
+          "trM_contribution": 0.4404491815655666
+        },
+        "(1, 1, 1)": {
+          "chi_lambda": 1.0,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.05446107577991941
+        }
+      },
+      "sigma_1": {
+        "(3,)": {
+          "chi_lambda": 1.109978595554181,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.06045062840656477
+        },
+        "(2, 1)": {
+          "chi_lambda": 0.20906032198987978,
+          "dim_q_lambda": 2.010896869118482,
+          "f_lambda": 3,
+          "w_lambda": 0.6606737723483499,
+          "trM_contribution": 0.04604022385913819
+        },
+        "(1, 1, 1)": {
+          "chi_lambda": -0.9009182735643012,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": -0.04906497836809958
+        }
+      },
+      "sigma_2": {
+        "(3,)": {
+          "chi_lambda": 1.109978595554181,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.06045062840656477
+        },
+        "(2, 1)": {
+          "chi_lambda": 0.2090603219898794,
+          "dim_q_lambda": 2.010896869118482,
+          "f_lambda": 3,
+          "w_lambda": 0.6606737723483499,
+          "trM_contribution": 0.046040223859138106
+        },
+        "(1, 1, 1)": {
+          "chi_lambda": -0.9009182735643012,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": -0.04906497836809958
+        }
+      },
+      "sigma_1_sigma_2": {
+        "(3,)": {
+          "chi_lambda": 1.232052482588432,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.06709890361908644
+        },
+        "(2, 1)": {
+          "chi_lambda": -1.0000000000000004,
+          "dim_q_lambda": 2.010896869118482,
+          "f_lambda": 3,
+          "w_lambda": 0.6606737723483499,
+          "trM_contribution": -0.22022459078278342
+        },
+        "(1, 1, 1)": {
+          "chi_lambda": 0.8116537356420811,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.044203535603858056
+        }
+      },
+      "sigma_2_sigma_1": {
+        "(3,)": {
+          "chi_lambda": 1.232052482588432,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.06709890361908644
+        },
+        "(2, 1)": {
+          "chi_lambda": -1.0000000000000004,
+          "dim_q_lambda": 2.010896869118482,
+          "f_lambda": 3,
+          "w_lambda": 0.6606737723483499,
+          "trM_contribution": -0.22022459078278342
+        },
+        "(1, 1, 1)": {
+          "chi_lambda": 0.8116537356420811,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.044203535603858056
+        }
+      },
+      "sigma_1_sigma_2_sigma_1": {
+        "(3,)": {
+          "chi_lambda": 1.3675518842725498,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.07447834680233892
+        },
+        "(2, 1)": {
+          "chi_lambda": -3.3306690738754696e-16,
+          "dim_q_lambda": 2.010896869118482,
+          "f_lambda": 3,
+          "w_lambda": 0.6606737723483499,
+          "trM_contribution": -7.334952338270971e-17
+        },
+        "(1, 1, 1)": {
+          "chi_lambda": -0.7312336822466794,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": -0.039823772981665916
+        }
+      },
+      "T_3_5": {
+        "(3,)": {
+          "chi_lambda": 2.838873499951172,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.15460810481044582
+        },
+        "(2, 1)": {
+          "chi_lambda": -0.9999999999999997,
+          "dim_q_lambda": 2.010896869118482,
+          "f_lambda": 3,
+          "w_lambda": 0.6606737723483499,
+          "trM_contribution": -0.22022459078278322
+        },
+        "(1, 1, 1)": {
+          "chi_lambda": 0.35225239871280084,
+          "dim_q_lambda": 1.0,
+          "f_lambda": 3,
+          "w_lambda": 0.16338322733975824,
+          "trM_contribution": 0.019184044579956237
+        }
+      }
+    },
+    "H_4": {
+      "bare_molecule_b4": {
+        "(4,)": {
+          "chi_lambda": 1.3675518842725498,
+          "dim_q_lambda": 0.9999999999999999,
+          "f_lambda": 3,
+          "w_lambda": 0.0397556818315101,
+          "trM_contribution": 0.01812265253307387
+        },
+        "(3, 1)": {
+          "chi_lambda": -1.1099785955541814,
+          "dim_q_lambda": 3.0437062182305112,
+          "f_lambda": 3,
+          "w_lambda": 0.3683025021555029,
+          "trM_contribution": -0.13626929802721868
+        },
+        "(2, 2)": {
+          "chi_lambda": -3.3306690738754696e-16,
+          "dim_q_lambda": 2.0437062182305112,
+          "f_lambda": 3,
+          "w_lambda": 0.1660489519858909,
+          "trM_contribution": -1.843513697096132e-17
+        },
+        "(2, 1, 1)": {
+          "chi_lambda": 0.9009182735643015,
+          "dim_q_lambda": 3.0437062182305112,
+          "f_lambda": 3,
+          "w_lambda": 0.3683025021555029,
+          "trM_contribution": 0.11060348479711606
+        },
+        "(1, 1, 1, 1)": {
+          "chi_lambda": -0.7312336822466794,
+          "dim_q_lambda": 0.9999999999999999,
+          "f_lambda": 3,
+          "w_lambda": 0.0397556818315101,
+          "trM_contribution": -0.00969023120529418
+        }
+      }
+    },
+    "intertwining_hypothesis_test": {
+      "molecular_braid_word": [
+        1,
+        2,
+        3
+      ],
+      "target_T29_channel": [
+        2,
+        1,
+        1
+      ],
+      "target_T35_channel": [
+        3,
+        1
+      ],
+      "lambda_31_contribution": -0.13626929802721868,
+      "lambda_211_contribution": 0.11060348479711606,
+      "lambda_22_contribution": -1.843513697096132e-17,
+      "total_trM": -0.017233391902322953,
+      "supported": true,
+      "reference": "prop:force-carrier-intertwining-correspondence",
+      "all_lambdas": {
+        "(4,)": 0.01812265253307387,
+        "(3, 1)": -0.13626929802721868,
+        "(2, 2)": -1.843513697096132e-17,
+        "(2, 1, 1)": 0.11060348479711606,
+        "(1, 1, 1, 1)": -0.00969023120529418
+      }
+    },
+    "alpha_em_identity": {
+      "alpha_em_definition": 0.007308700983098553,
+      "alpha_em_via_delta_q": 0.007308700983098551,
+      "delta_q_T29": 2.1666003896396195,
+      "delta_q_T35_B2": 2.4866211012383603,
+      "match_within_1e_minus_12": true,
+      "reference": "prop:alpha-em-categorical-trace-ratio"
+    },
+    "frobenius_self_dual_check": {
+      "dim_q_V_31": 3.0437062182305112,
+      "dim_q_V_211": 3.0437062182305112,
+      "w_31": 0.3683025021555029,
+      "w_211": 0.3683025021555029,
+      "f_31": 3,
+      "f_211": 3,
+      "self_dual": true,
+      "reference": "rem:bound-state-frobenius-self-dual-channel"
+    },
+    "closed_form_characters": {
+      "chi_4_eq_q3": true,
+      "chi_31_eq_neg_q": true,
+      "chi_22_eq_zero": true,
+      "chi_211_eq_q_inv": true,
+      "chi_1111_eq_neg_qm3": true,
+      "all_match": true,
+      "reference": "round-19 task 1 finding"
+    },
+    "dressed_braid": {
+      "alpha_dr": 1.1330288882035493,
+      "beta_dr": 0.42725788003598963,
+      "per_lambda": {
+        "(4,)": {
+          "chi_bare": 1.3675518842725498,
+          "chi_no_middle": 1.232052482588432,
+          "chi_dressed": 2.0758799228018074,
+          "w_lambda": 0.0397556818315101,
+          "f_lambda": 3,
+          "trM_bare": 0.01812265253307387,
+          "trM_dressed": 0.027509340577109468
+        },
+        "(3, 1)": {
+          "chi_bare": -1.1099785955541814,
+          "chi_no_middle": -0.7679475174115693,
+          "chi_dressed": -1.5857494423186598,
+          "w_lambda": 0.3683025021555029,
+          "f_lambda": 3,
+          "trM_bare": -0.13626929802721868,
+          "trM_dressed": -0.1946784957992186
+        },
+        "(2, 2)": {
+          "chi_bare": -3.3306690738754696e-16,
+          "chi_no_middle": 2.043706218230513,
+          "chi_dressed": 0.8731895862175383,
+          "w_lambda": 0.1660489519858909,
+          "f_lambda": 3,
+          "trM_bare": -1.843513697096132e-17,
+          "trM_dressed": 0.04833073855880532
+        },
+        "(2, 1, 1)": {
+          "chi_bare": 0.9009182735643015,
+          "chi_no_middle": -1.1883462643579195,
+          "chi_dressed": 0.5130361242005693,
+          "w_lambda": 0.3683025021555029,
+          "f_lambda": 3,
+          "trM_bare": 0.11060348479711606,
+          "trM_dressed": 0.06298416274641035
+        },
+        "(1, 1, 1, 1)": {
+          "chi_bare": -0.7312336822466794,
+          "chi_no_middle": 0.8116537356420811,
+          "chi_dressed": -0.48172343159921543,
+          "w_lambda": 0.0397556818315101,
+          "f_lambda": 3,
+          "trM_bare": -0.00969023120529418,
+          "trM_dressed": -0.006383747825813875
+        }
+      },
+      "total_trM_dressed": -0.062238001742707334,
+      "force_carrier_bare": -0.025665813230102627,
+      "force_carrier_dressed": -0.13169433305280825,
+      "amplification_ratio": 5.131118654691529,
+      "q_5_at_q0": 5.220441324664572,
+      "reference": "round-19 task 2 (dressed Wedderburn)"
+    }
+  },
+  "assertions": [
+    {
+      "name": "Bare H_2 molecular braid projects onto (3,1) [T_{3,5}] and (2,1,1) [T_{2,9}]; (2,2) zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:force-carrier-intertwining-correspondence (round-18)"
+    },
+    {
+      "name": "\u03b1_EM = h\u00b2 / [q \u00b7 \u03b4_q(T_{2,9}) \u00b7 \u03b4_q(T_{3,5})] within 10\u207b\u00b9\u00b2",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "prop:alpha-em-categorical-trace-ratio (round-12/14)"
+    },
+    {
+      "name": "(3,1) and (2,1,1) are transpose pair: equal dim_q, w, f",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "rem:bound-state-frobenius-self-dual-channel (round-18)"
+    },
+    {
+      "name": "All \u03c7_\u03bb(\u03c3_1\u03c3_2\u03c3_3) are clean q-monomials (q^3, -q, 0, q^-1, -q^-3)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "round-19 task 1 (closed-form)"
+    },
+    {
+      "name": "Force-carrier (3,1)+(2,1,1) amplifies by \u2248 [5]_q under K-shell dressing",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "round-19 task 2 (dressed projection)"
+    },
+    {
+      "name": "Dressing UNZEROES \u03bb=(2,2) channel (selection-rule break)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "round-19 task 2 (dressed projection)"
+    }
+  ],
+  "allPassed": true
+}
