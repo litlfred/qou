@@ -124,6 +124,41 @@ but predicts $m_{\mathfrak{n}}$ to only $4.9\%$
 (`paper-six-term-isotope-sweep.witness.json`, `li2q` mode), so the
 nucleon-anchor question remains the structural bottleneck.
 
+**Connection to the $\alpha_{\mathrm{shift}}$ framework.**
+The same bottleneck appears in the Habiro denominator factorisation
+([w3 audit](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)):
+
+$$
+  D(u) \;=\; 2^{2A+1} \cdot u^{\mathrm{shift}} \cdot (1 + u^2)^{3A-1},
+$$
+
+where the $2^{2A+1}$ and $(1+u^2)^{3A-1}$ factors are proved
+categorically but the per-nucleon shift exponents
+($\mathrm{shift}_{\mathfrak{p}} = 20$,
+$\mathrm{shift}_{\mathfrak{n}} = 16$ for `include_inter=False`) are
+characterised only via integer-LP. The clean torus-knot limit
+$\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$ is proved
+([torus-knot pole order](#prop:alpha-shift-torus-knot)) and powers
+the multiplicative-chain identity for $\alpha_{EM}^{-1}$
+([$\alpha_{EM}$ chain](#prop:alpha-em-shift-multiplicative-chain)),
+but the atomic-braid case carries a strand-context-dependent profile
+$(1, 4, 0, 0, 1, 0)$ for the per-crossing shift contributions whose
+categorical origin is open. Closing the atomic-shift coefficients
+$(18, 3, 1)$ closes the nucleon-mass anchors and hence $\rho_K$.
+
+**Negative result on the simple shift-anchor ansatz**
+(`u-shift-mass-anchor-probe.witness.json`).
+No combination of $\mathrm{shift}_{\mathfrak{p}}, \mathrm{shift}_{\mathfrak{n}}$
+and the $q_0$-derived constants $(q_0, c_q, \hbar_q, z, [n]_q)$
+reproduces both nucleon anchors to better than $11\%$. The closest
+single-formula fit, $\mathrm{shift} \cdot q \cdot c_q^2 \approx 1835.4$,
+matches $m_{\mathfrak{p}}/m_e$ to $0.04\%$ but fails for the neutron
+($20\%$ error). The integer 4-unit shift differential ($20 \to 16$)
+is structurally too coarse to encode the $0.14\%$ CODATA
+$m_{\mathfrak{n}} - m_{\mathfrak{p}}$ splitting — the splitting
+must be encoded in the per-irrep character data, not in the scalar
+shift exponent alone.
+
 The (six-term spectral) form is the current best candidate
 attempt, expanding $\rho_K \cdot \lvert\!\operatorname{tr}_M\!\rvert$
 into a $\sum_{i=1}^{6} T_i$ decomposition over the Wedderburn

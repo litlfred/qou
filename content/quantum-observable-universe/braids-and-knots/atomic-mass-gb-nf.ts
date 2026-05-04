@@ -5,6 +5,7 @@ export default proposition({
   title: "Atomic mass as Markov trace of the Gröbner–Shirshov normal form",
   uses: [
     "prop:categorical-mass-markov",
+    "prop:alpha-shift-torus-knot",
     "def:atomic-braid",
     "unital-groebner-bases:cor:pbw",
   ],
