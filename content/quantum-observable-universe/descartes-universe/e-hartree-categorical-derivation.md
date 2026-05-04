@@ -569,6 +569,107 @@ The remaining question is concrete and tractable, but requires
 LP-optimum projection analysis that the present investigation
 does not carry out.
 
+### Round 15 — why T_{2,9} and T_{3,5}? Markov-equivalence projection?
+
+#### Why these specific torus knots
+
+The force-carrier selection is **NOT** about hyperbolic volume.
+Torus knots are *non-hyperbolic* (Seifert-fibered geometry); they
+have zero hyperbolic volume. The selector is instead the
+**diophantine genus-matching condition** to Bring's surface
+$\Sigma_4$:
+
+$$
+  g(T_{p,q}) = \frac{(p-1)(q-1)}{2} = 4
+  \iff (p-1)(q-1) = 8
+  \iff (p,q) \in \{(2,9), (3,5)\}
+$$
+
+(with $\gcd(p,q) = 1$, $p \le q$).
+
+Combined with the saturation condition that a torus knot embeds
+as a generator of $H_1(\Sigma_4, \mathbb{Z}) \cong \mathbb{Z}^{8}$
+iff its Seifert genus equals the surface genus
+([`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness)),
+this pins down the force-carrier sector uniquely. The Bring
+connection is "magic" in the **solvability-of-the-quintic**
+sense (Bring-Klein-Hermite), through the modular curve associated
+to the $S_5$ symmetry of the quintic. It is *not* the
+nuclear-physics "magic number" sense.
+
+#### Does $\Phi_{\mathrm{bound\;state}}^{*}$ project onto
+$\{T_{2,9}, T_{3,5}\}$?
+
+**Markov-equivalence test — negative.** The H_2 molecular braid
+lives in $B_4$ with 3 generators and all 4 strands participating
+in at least one crossing. Markov-equivalence to $T_{2,9} \in B_2$
+or $T_{3,5} \in B_3$ requires destabilization, which requires
+free strands — *which the molecular braid does not have*. So
+$\Phi_{H_2}^{*}$ is **not** Markov-equivalent to any
+force-carrier torus knot.
+
+**Wedderburn-projection test — open hypothesis.** A more general
+projection via central idempotents:
+
+$$
+  H_4(q)
+  \;\cong\;
+  \bigoplus_{\lambda \vdash 4} \mathrm{End}(V_\lambda)
+$$
+
+with irreps $V_{(4)}, V_{(3,1)}, V_{(2,2)}, V_{(2,1,1)}, V_{(1,1,1,1)}$.
+Projecting $\Phi_{H_2}^{*}$ onto each central idempotent $e_\lambda$
+gives an irrep restriction. The hypothesis (untested):
+
+| $\lambda$ | Carries force-carrier content? |
+|---|---|
+| $(4)$ symmetric | $\sigma_1$ acts as $q$ → $T_{2,9}$-like trace $q^9$ |
+| $(2,2)$ self-conjugate | three-strand symmetry, possible $T_{3,5}$-like content |
+| other | no obvious force-carrier alignment |
+
+If this hypothesis holds — i.e., the LP-optimum has nonzero weight
+on $e_{(4)}$ and $e_{(2,2)}$ in proportion to their $T_{2,9}$ and
+$T_{3,5}$ q-dimensional content — then the binding energy picks
+up the $\alpha_{EM}^{2}$ scaling via:
+
+$$
+  E_{\mathrm{bind}}
+  \;\sim\;
+  x_{(4)}^{*} \cdot \delta_q(T_{2,9})^{-1}
+  + x_{(2,2)}^{*} \cdot \delta_q(T_{3,5})^{-1}
+  \cdots
+$$
+
+bringing in the $h^2/[q\,\delta_q\,\delta_q]$ factor that equals
+$\alpha_{EM}^{2}$.
+
+**Verification required (concrete next step):** Compute the H_2
+LP-optimal coefficient vector $x^{*}$, decompose it via the
+central idempotents $\{e_\lambda\}_{\lambda \vdash 4}$, and check
+which $\lambda$-components carry nonzero weight at $q_0$. This is
+a tractable explicit computation — but requires implementing the
+Hecke algebra Wedderburn decomposition for $H_4(q)$, which is
+new infrastructure not present in the current QOU codebase.
+
+#### Net round-15 status
+
+The conjecture's open question now has **two distinct
+sub-questions**:
+
+1. **Does the H_2 LP-optimum project nontrivially onto the
+   $(4)$ and $(2,2)$ Wedderburn components?** (Computational
+   test, requires Hecke algebra Wedderburn implementation.)
+2. **If yes, does the projection coefficient match the
+   $\delta_q$-ratio that gives $\alpha_{EM}^{2}$?** (Algebraic
+   identity check, follows from the explicit Wedderburn
+   computation.)
+
+If both yes: conjecture closes via the round-14 + round-15
+chain. If either no: identifies the next refinement needed.
+
+This is the sharpest formulation reached in 15 rounds of
+investigation.
+
 This conjecture is left as a **highly-diagnosed open problem**
 with concrete next-step. After 13 rounds, no further candidate
 mechanisms tractable in a single investigation remain to be
