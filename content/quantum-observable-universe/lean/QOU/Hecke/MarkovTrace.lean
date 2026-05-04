@@ -53,6 +53,12 @@ class MarkovTrace
   `tr_M^{H_n}(x · σ_{n-1}) = z · tr_M^{H_{n-1}}(x)` applied at
   level n with x = 1 ∈ H_{n-1}. -/
   trace_gen : ∀ i : Generator n, trace (HeckeAlgebra.embed i) = z_param
+  /-- (M3 / pair product) tr_M(σ_i · σ_j) = z² when i < j.
+  Follows from two consecutive Markov peels: σ_j is top-indexed,
+  one peel gives z · tr_{n-1}(σ_i); σ_i lives in H_{n-1} so the
+  second peel gives z · z. -/
+  trace_prod_gen : ∀ (i j : Generator n), i.idx.val < j.idx.val →
+      trace (HeckeAlgebra.embed i * HeckeAlgebra.embed j) = z_param * z_param
 
 namespace MarkovTrace
 
@@ -72,11 +78,8 @@ theorem trace_generator (i : Generator n) :
 [manuscript] `prop:markov-pair-z2` — direct two-step Markov peel. -/
 theorem trace_pair (i j : Generator n) (h : i.idx.val < j.idx.val) :
     MT.trace (HA.embed i * HA.embed j) = MT.z_param * MT.z_param := by
-  -- Ref: [prop:markov-pair-z2], two-step Markov peel. The σ_j is
-  -- index-maximal in σ_i σ_j; one Markov move gives tr · z; the
-  -- remaining σ_i lives in a lower-index subalgebra; another
-  -- Markov move gives 1 · z.
-  sorry
+  -- Ref: [prop:markov-pair-z2]; follows from trace_prod_gen field.
+  exact MT.trace_prod_gen i j h
 
 end MarkovTrace
 

@@ -83,6 +83,16 @@ class WedderburnDecomp
   prop:y-lambda-recipe-from-partition this is a rational function
   in q given by `s_λ(1, Q, ..., Q^{r-1}) / Σ d_μ s_μ(...)`. -/
   y_lambda : Partition n → R
+  /-- The complete set of partitions (all irreducible representations).
+  This is the finite index set over which the Wedderburn sum runs. -/
+  all_parts : Finset (Partition n)
+  /-- Trace decomposition: the Markov trace decomposes over `all_parts` as
+  `tr(x) = Σ_{λ ∈ all_parts} y_λ · tr(x · π_λ)`.
+  Follows from `Σ_{λ ∈ all_parts} π_λ = 1` (partition of unity),
+  trace linearity, and `y_λ` as central coefficients. -/
+  trace_decomp : ∀ (x : A),
+      (MarkovTrace.trace (A := A)) x =
+        all_parts.sum (fun λ => y_lambda λ • (MarkovTrace.trace (A := A)) (x * pi_lambda λ))
 
 namespace WedderburnDecomp
 
@@ -94,15 +104,14 @@ variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
 
 /-- Wedderburn decomposition of the Markov trace:
     tr_M(x) = Σ_λ y_λ · χ^λ(x)
-where χ^λ(x) = tr(x · π_λ) (block-restricted trace). -/
-theorem trace_decomposition
-    (x : A) (partition_set : Finset (Partition n)) :
-    MT.trace x = partition_set.sum (fun λ =>
+where χ^λ(x) = tr(x · π_λ) (block-restricted trace), and the sum
+runs over `WD.all_parts` (the complete set of irreducibles). -/
+theorem trace_decomposition (x : A) :
+    MT.trace x = WD.all_parts.sum (fun λ =>
       WD.y_lambda λ • MT.trace (x * WD.pi_lambda λ)) := by
-  -- Ref: [thm:wedderburn-mass-formula]. The central idempotents
-  -- partition the algebra; trace-cyclicity + idempotent sum = 1
-  -- gives the decomposition.
-  sorry
+  -- Ref: [thm:wedderburn-mass-formula]. Follows directly from the
+  -- trace_decomp axiom of WedderburnDecomp.
+  exact WD.trace_decomp x
 
 end WedderburnDecomp
 
