@@ -265,6 +265,42 @@ maximises the pole order — concretely, which SYT path in the
 seminormal directed graph realises 20 pole-bearing matrix elements
 for the deuteron.
 
+### DP probe + cross-partition cancellation finding
+
+The DP framework
+([`dp_pole_probe.py`](../../folio-assistant/computations/dp_pole_probe.py))
+implements the cycle-additive upper bound on q=0 pole order per
+partition.  Direct computation of χ^λ for one DP-optimal partition
+on the deuteron reveals **two distinct cancellation mechanisms**:
+
+| Atom | empirical q-pole (tr_M) | DP-max | direct χ^λ at λ=(4,2) | Δ_within | Δ_cross |
+|---|---|---|---|---|---|
+| D (deuteron) | 20 | 22 | 21 | 1 | 1 |
+| ³He | 29 | 34 | — | — | total Δ = 5 |
+| T (triton) | 30.5 | 33 | — | — | total Δ = 2.5 (half-int) |
+
+Concretely for the deuteron:
+
+- DP says max-pole = **22** (over all closed cycles in any partition)
+- Direct computation of χ^(4,2)(β_D) gives pole order = **21**.
+  The DP overcounted by 1, due to **within-partition cancellation**
+  (Hecke quadratic σ² = h·σ + 1 + σ·σ⁻¹ adjacency reductions in
+  the matrix product).
+- tr_M = Σ_λ y_λ χ^λ(β_D) gives pole order = **20**.  This
+  reduction from 21 to 20 is **cross-partition cancellation** —
+  the q⁻²¹ term across all partitions sums to zero by
+  Ocneanu-weight-induced cancellation.
+
+So closing the categorical proof requires **two cancellation
+counts**:
+1. Within-partition (Hecke-relation bookkeeping in matrix products)
+2. Cross-partition (Ocneanu-weight cancellation across the
+   character sum)
+
+Both are integer-valued and atom-dependent.  For ³He the total
+cancellation Δ = 5 is large; cross-partition cancellation likely
+dominates at higher-isospin atoms.
+
 | Atom | (Z, N) | predicted shift | empirical | match |
 |------|--------|-----------------|-----------|-------|
 | D    | (1, 1) | 18·1 + 21·1 + 1 = 40  | 40  | ✓ |
