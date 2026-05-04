@@ -283,9 +283,9 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
     smul over matrix multiplication.  Sorry retained pending refactor
     via the algebra-of-`A` route. -/
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-theorem transferMatrix_comm (a b c d : R_t) :
-    transferMatrix a b * transferMatrix c d =
-    transferMatrix c d * transferMatrix a b := by
+theorem transferMatrix_comm (a₁ b₁ a₂ b₂ : R_t) :
+    transferMatrix a₁ b₁ * transferMatrix a₂ b₂ =
+    transferMatrix a₂ b₂ * transferMatrix a₁ b₁ := by
   -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
   sorry
 

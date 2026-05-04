@@ -1,6 +1,9 @@
 import QOU.Descartes.GroundRing
 import QOU.Interactions.TrefoilVanishing
 
+set_option maxHeartbeats 4000000
+set_option maxRecDepth 4000
+
 /-!
 # Verified Hecke NF Engine for H₃(q)
 

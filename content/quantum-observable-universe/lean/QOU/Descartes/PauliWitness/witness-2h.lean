@@ -1,5 +1,7 @@
 import QOU.Descartes.GroundRing
 
+set_option maxHeartbeats 4000000
+
 namespace QOU.Descartes.PauliWitness
 
 /-- F_Pauli for 2H (Z=1, N=1, A=2), exact in t = q^{1/2}.
@@ -8,7 +10,7 @@ namespace QOU.Descartes.PauliWitness
     Denominator: 2^1. -/
 -- Ref: [leitner2026] §7/descartes-universe (Pauli witness computation)
 noncomputable def tr_alt_2h : LaurentPolynomial ℤ :=
-  -LaurentPolynomial.T -2 + LaurentPolynomial.T 1 - LaurentPolynomial.T 2 - LaurentPolynomial.T 3
+  -LaurentPolynomial.T (-2) + LaurentPolynomial.T 1 - LaurentPolynomial.T 2 - LaurentPolynomial.T 3
 
 noncomputable def net_2h : LaurentPolynomial ℤ :=
   1 + LaurentPolynomial.T 1 - LaurentPolynomial.T 3 + LaurentPolynomial.T 4

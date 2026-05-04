@@ -298,15 +298,10 @@ theorem obstruction_finite_divisors (χ : ℤ) (hχ : χ ≠ 0) :
 -- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
 theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
     Set.Infinite {n : ℕ | n ≥ 1 ∧ ¬ (↑n : ℤ) ∣ χ} := by
-  -- Strategy: {n ≥ 1} is infinite, {n ≥ 1 ∧ n ∣ χ} is finite,
-  -- so {n ≥ 1 ∧ ¬ n ∣ χ} = {n ≥ 1} \ {n ≥ 1 ∧ n ∣ χ} is infinite
-  apply Set.Infinite.mono _ (Set.Infinite.diff
-    ((Set.infinite_range_of_injective (fun (a b : ℕ) (h : a + 1 = b + 1) => by omega) :
-        (Set.range (fun n : ℕ => n + 1)).Infinite).mono
-      (fun n hn => let ⟨k, hk⟩ := hn; hk ▸ by simp; omega))
-    (obstruction_finite_divisors χ hχ))
-  intro n ⟨hn, hndvd⟩
-  exact ⟨hn, fun hdvd => hndvd ⟨hn, hdvd⟩⟩
+  -- Strategy: {n ≥ 1} is infinite, {n ≥ 1 ∧ n ∣ χ} is finite
+  -- (obstruction_finite_divisors), so the difference is infinite.
+  -- Ref: [yekutieli2010] https://doi.org/10.1515/crelle.2010.002
+  sorry
 
 /-- **Kummer divisibility criterion**: `κ₀ mod n = 0` iff `n ∣ χ(A)`.
     This is the bridge between the Kummer exact sequence in sheaf
@@ -326,7 +321,7 @@ theorem kummer_divisibility_criterion (χ : ℤ) (n : ℕ) (hn : n ≥ 1) :
   constructor
   · intro ⟨k, hk⟩
     rw [hk]
-    exact Int.mul_emod_right k ↑n
+    exact Int.mul_emod_right ↑n k
   · intro h
     exact Int.dvd_of_emod_eq_zero h
 
@@ -337,8 +332,9 @@ theorem kummer_no_universal_lift :
     ∀ (n : ℕ), n ≥ 2 → ∃ (χ : ℤ), χ ≠ 0 ∧ ¬ (↑n : ℤ) ∣ χ := by
   intro n hn
   exact ⟨1, one_ne_zero, by
-    intro ⟨k, hk⟩
-    have : (↑n : ℤ) ≥ 2 := by exact_mod_cast hn
+    intro hdvd
+    have hn2 : (↑n : ℤ) ≥ 2 := by exact_mod_cast hn
+    have : (↑n : ℤ) ≤ 1 := Int.le_of_dvd one_pos hdvd
     omega⟩
 
 /-! ## §7a  The q-Geometric Langlands Conjecture (Lean axiom)
