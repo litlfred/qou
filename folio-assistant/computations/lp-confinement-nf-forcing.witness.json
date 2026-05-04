@@ -1,0 +1,623 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-04T23:13:25.371004+00:00",
+  "commitSha": "296ee5b49675082838110e2f78848bb29aa0fe2c",
+  "assertions": [
+    {
+      "name": "all_compounds_feasible",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "confinement_holds_all",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "lp_duality_gap_small_all",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0001
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2635,
+  "computation": "lp-confinement-nf-forcing",
+  "scriptFile": "lp_confinement_nf_forcing.py",
+  "scriptHash": "3fcac72c6e1d",
+  "scriptCommitSha": "051b6d13c38e11d145a91c4bb6dfee1d0ad8028a",
+  "description": "Probe of the conjecture (CLAUDE.md / step 5 of the multiplicative-chain plan): for compound braids β = β₁ ⋆ I ⋆ β₂ on B_n, the LP/SDP active set A = {λ : y_λ* > 0} from prop:operator-selection-lp (i) is strictly smaller than n! (confinement), (ii) contains the Wedderburn maximizer of shift_NF(β), and (iii) bounds the deviation shift_NF(β) − α_shift(I) by the LP duality gap. Per CLAUDE.md §LP/SDP duals, the witness emits BOTH primal and dual fields.",
+  "contentBlock": "conj:confinement-nf-structure-forcing",
+  "data": {
+    "compounds": [
+      {
+        "label": "n3_id_cyc1_id",
+        "n": 3,
+        "beta1_word": [],
+        "I_word": [
+          1,
+          2
+        ],
+        "beta2_word": [],
+        "compound_word": [
+          1,
+          2
+        ],
+        "compound_pole": 2,
+        "compound_maximizer_lambda": [
+          1,
+          1,
+          1
+        ],
+        "I_pole": 2,
+        "I_maximizer_lambda": [
+          1,
+          1,
+          1
+        ],
+        "delta_observed": 0,
+        "delta_bound_heuristic": 1e-06,
+        "active_set_partitions": [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "active_set_size": 2,
+        "n_factorial": 6,
+        "confinement_holds": true,
+        "maximizer_in_active_set": true,
+        "delta_within_bound": true,
+        "lp_x_star": [
+          2.0,
+          -0.0,
+          -0.0
+        ],
+        "lp_y0_star": -1.2320524825884298,
+        "lp_y_star": [
+          0.0,
+          1.116026241294215,
+          0.42039874694634805
+        ],
+        "lp_active_set_indices": [
+          1,
+          2
+        ],
+        "lp_primal_obj": -2.4641049651768596,
+        "lp_dual_obj": -2.4641049651768596,
+        "lp_duality_gap": 0.0,
+        "lp_feasible": true
+      },
+      {
+        "label": "n3_s1_cyc1_s1",
+        "n": 3,
+        "beta1_word": [
+          1
+        ],
+        "I_word": [
+          1,
+          2
+        ],
+        "beta2_word": [
+          1
+        ],
+        "compound_word": [
+          1,
+          1,
+          2,
+          1
+        ],
+        "compound_pole": 4,
+        "compound_maximizer_lambda": [
+          1,
+          1,
+          1
+        ],
+        "I_pole": 2,
+        "I_maximizer_lambda": [
+          1,
+          1,
+          1
+        ],
+        "delta_observed": 2,
+        "delta_bound_heuristic": 1e-06,
+        "active_set_partitions": [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "active_set_size": 2,
+        "n_factorial": 6,
+        "confinement_holds": true,
+        "maximizer_in_active_set": true,
+        "delta_within_bound": true,
+        "lp_x_star": [
+          2.0,
+          -0.0,
+          -0.0
+        ],
+        "lp_y0_star": -1.5179533198523134,
+        "lp_y_star": [
+          0.0,
+          1.2589766599261567,
+          0.8591715332705671
+        ],
+        "lp_active_set_indices": [
+          1,
+          2
+        ],
+        "lp_primal_obj": -3.035906639704627,
+        "lp_dual_obj": -3.035906639704627,
+        "lp_duality_gap": 0.0,
+        "lp_feasible": true
+      },
+      {
+        "label": "n3_s2_cyc2_s1",
+        "n": 3,
+        "beta1_word": [
+          2
+        ],
+        "I_word": [
+          1,
+          2,
+          1,
+          2
+        ],
+        "beta2_word": [
+          1
+        ],
+        "compound_word": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "compound_pole": 6,
+        "compound_maximizer_lambda": [
+          1,
+          1,
+          1
+        ],
+        "I_pole": 4,
+        "I_maximizer_lambda": [
+          1,
+          1,
+          1
+        ],
+        "delta_observed": 2,
+        "delta_bound_heuristic": 1e-06,
+        "active_set_partitions": [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "active_set_size": 2,
+        "n_factorial": 6,
+        "confinement_holds": true,
+        "maximizer_in_active_set": true,
+        "delta_within_bound": true,
+        "lp_x_star": [
+          -0.0,
+          2.0,
+          -0.0
+        ],
+        "lp_y0_star": -2.0,
+        "lp_y_star": [
+          0.1298018438226083,
+          0.0,
+          1.465297301947961
+        ],
+        "lp_active_set_indices": [
+          0,
+          2
+        ],
+        "lp_primal_obj": -4.0,
+        "lp_dual_obj": -4.0,
+        "lp_duality_gap": 0.0,
+        "lp_feasible": true
+      },
+      {
+        "label": "n4_id_cyc1_id",
+        "n": 4,
+        "beta1_word": [],
+        "I_word": [
+          1,
+          2,
+          3
+        ],
+        "beta2_word": [],
+        "compound_word": [
+          1,
+          2,
+          3
+        ],
+        "compound_pole": 3,
+        "compound_maximizer_lambda": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "I_pole": 3,
+        "I_maximizer_lambda": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "delta_observed": 0,
+        "delta_bound_heuristic": 1e-06,
+        "active_set_partitions": [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "active_set_size": 4,
+        "n_factorial": 24,
+        "confinement_holds": true,
+        "maximizer_in_active_set": true,
+        "delta_within_bound": true,
+        "lp_x_star": [
+          5.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "lp_y0_star": -1.3675518842725463,
+        "lp_y_star": [
+          0.0,
+          0.8258434932755755,
+          0.6837759421362731,
+          0.15554453690274825,
+          2.0987855665192265
+        ],
+        "lp_active_set_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "lp_primal_obj": -6.8377594213627315,
+        "lp_dual_obj": -6.8377594213627315,
+        "lp_duality_gap": 0.0,
+        "lp_feasible": true
+      },
+      {
+        "label": "n4_s1_cyc1_s2",
+        "n": 4,
+        "beta1_word": [
+          1
+        ],
+        "I_word": [
+          1,
+          2,
+          3
+        ],
+        "beta2_word": [
+          2
+        ],
+        "compound_word": [
+          1,
+          1,
+          2,
+          3,
+          2
+        ],
+        "compound_pole": 5,
+        "compound_maximizer_lambda": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "I_pole": 3,
+        "I_maximizer_lambda": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "delta_observed": 2,
+        "delta_bound_heuristic": 1e-06,
+        "active_set_partitions": [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "active_set_size": 4,
+        "n_factorial": 24,
+        "confinement_holds": true,
+        "maximizer_in_active_set": true,
+        "delta_within_bound": true,
+        "lp_x_star": [
+          5.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "lp_y0_star": -1.6848956940864757,
+        "lp_y_star": [
+          0.0,
+          0.10578126993797647,
+          0.946978008038177,
+          0.8053764587777187,
+          2.278404243909309
+        ],
+        "lp_active_set_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "lp_primal_obj": -8.424478470432378,
+        "lp_dual_obj": -8.424478470432378,
+        "lp_duality_gap": 0.0,
+        "lp_feasible": true
+      },
+      {
+        "label": "n4_s1s2_cyc1_s3",
+        "n": 4,
+        "beta1_word": [
+          1,
+          2
+        ],
+        "I_word": [
+          1,
+          2,
+          3
+        ],
+        "beta2_word": [
+          3
+        ],
+        "compound_word": [
+          1,
+          2,
+          1,
+          2,
+          3,
+          3
+        ],
+        "compound_pole": 6,
+        "compound_maximizer_lambda": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "I_pole": 3,
+        "I_maximizer_lambda": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "delta_observed": 3,
+        "delta_bound_heuristic": 1e-06,
+        "active_set_partitions": [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "active_set_size": 4,
+        "n_factorial": 24,
+        "confinement_holds": true,
+        "maximizer_in_active_set": true,
+        "delta_within_bound": true,
+        "lp_x_star": [
+          5.0,
+          -0.0,
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "lp_y0_star": -1.8701981561773917,
+        "lp_y_star": [
+          0.0,
+          0.5280991063045027,
+          1.4569521872039517,
+          0.674356701745909,
+          1.3354954581253526
+        ],
+        "lp_active_set_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "lp_primal_obj": -9.350990780886958,
+        "lp_dual_obj": -9.350990780886958,
+        "lp_duality_gap": 0.0,
+        "lp_feasible": true
+      }
+    ],
+    "q0": "1.10997859555418",
+    "lp_dual_emitted": true,
+    "lp_dual_summary": [
+      {
+        "label": "n3_id_cyc1_id",
+        "y0_star": -1.2320524825884298,
+        "y_star": [
+          0.0,
+          1.116026241294215,
+          0.42039874694634805
+        ],
+        "active_set": [
+          1,
+          2
+        ],
+        "primal_obj": -2.4641049651768596,
+        "dual_obj": -2.4641049651768596,
+        "duality_gap": 0.0
+      },
+      {
+        "label": "n3_s1_cyc1_s1",
+        "y0_star": -1.5179533198523134,
+        "y_star": [
+          0.0,
+          1.2589766599261567,
+          0.8591715332705671
+        ],
+        "active_set": [
+          1,
+          2
+        ],
+        "primal_obj": -3.035906639704627,
+        "dual_obj": -3.035906639704627,
+        "duality_gap": 0.0
+      },
+      {
+        "label": "n3_s2_cyc2_s1",
+        "y0_star": -2.0,
+        "y_star": [
+          0.1298018438226083,
+          0.0,
+          1.465297301947961
+        ],
+        "active_set": [
+          0,
+          2
+        ],
+        "primal_obj": -4.0,
+        "dual_obj": -4.0,
+        "duality_gap": 0.0
+      },
+      {
+        "label": "n4_id_cyc1_id",
+        "y0_star": -1.3675518842725463,
+        "y_star": [
+          0.0,
+          0.8258434932755755,
+          0.6837759421362731,
+          0.15554453690274825,
+          2.0987855665192265
+        ],
+        "active_set": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "primal_obj": -6.8377594213627315,
+        "dual_obj": -6.8377594213627315,
+        "duality_gap": 0.0
+      },
+      {
+        "label": "n4_s1_cyc1_s2",
+        "y0_star": -1.6848956940864757,
+        "y_star": [
+          0.0,
+          0.10578126993797647,
+          0.946978008038177,
+          0.8053764587777187,
+          2.278404243909309
+        ],
+        "active_set": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "primal_obj": -8.424478470432378,
+        "dual_obj": -8.424478470432378,
+        "duality_gap": 0.0
+      },
+      {
+        "label": "n4_s1s2_cyc1_s3",
+        "y0_star": -1.8701981561773917,
+        "y_star": [
+          0.0,
+          0.5280991063045027,
+          1.4569521872039517,
+          0.674356701745909,
+          1.3354954581253526
+        ],
+        "active_set": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "primal_obj": -9.350990780886958,
+        "dual_obj": -9.350990780886958,
+        "duality_gap": 0.0
+      }
+    ],
+    "n_compounds_total": 6,
+    "n_compounds_maximizer_in_active": 6
+  },
+  "caveats": [
+    "Conjectural — no Lean proof attempted at this step. The witness compares predicted vs observed NF support across a small bench of compound braids. The Frobenius Gram is taken diagonal (G_{λμ} = δ_{λμ} dim V_λ), reflecting the orthogonality of irreducible Markov channels — a simplification of the full non-diagonal G that would arise from a non-trivial inner product."
+  ]
+}
