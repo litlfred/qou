@@ -670,6 +670,88 @@ chain. If either no: identifies the next refinement needed.
 This is the sharpest formulation reached in 15 rounds of
 investigation.
 
+### Round 16 — non-hyperbolic force carriers create hyperbolic JSJ pieces in the tower
+
+The natural follow-up: although $T_{2,9}$ and $T_{3,5}$ are
+*themselves* non-hyperbolic (Seifert-fibered, zero hyperbolic
+volume), when they enter the **Φ_q tower / GB filtration** as
+Hecke-algebra operations, they generate molecular/atomic braids
+whose closures *do* have hyperbolic JSJ pieces.
+
+**The Φ_q tower / JSJ archimedean bridge**
+([`conj:phi-q-tower-jsj-bridge`](#conj:phi-q-tower-jsj-bridge),
+unconditional algebraic side
+[`prop:phi-q-tower-algebraic-stratification`](#prop:phi-q-tower-algebraic-stratification))
+states:
+
+$$
+  \tau_{\mathrm{arch}}\!\bigl(z^{|S|} \cdot \Phi_q(\|V_S\|_F)\bigr)
+  \;=\;
+  \rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S)
+$$
+
+where the LHS is a Frobenius-norm summand on the algebraic side
+(in $\mathbb{Z}[q^{\pm 1/2}]$) and the RHS is the hyperbolic
+volume of the JSJ piece $K_S$ on the archimedean side.
+
+**Implication for force carriers and $\alpha_{EM}$:**
+
+- Force-carrier complexity $[9]_q\,[10]_q$ enters the algebraic
+  side via $\|V_S\|_F$ Frobenius-norm constructions.
+- Under $\tau_{\mathrm{arch}}$, this algebraic complexity maps
+  to **hyperbolic volumes** of the molecular braid's JSJ
+  decomposition.
+- $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q)$ is the *inverse*
+  force-carrier complexity, which on the archimedean side
+  corresponds to the *inverse* hyperbolic volume of the
+  force-carrier-decorated JSJ pieces.
+
+**The "magic" of $T_{2,9}, T_{3,5}$ is twofold:**
+
+1. **Bring genus-matching** (algebraic side, round 15): selects
+   them as the unique torus knots whose Seifert genus equals the
+   genus of Bring's surface $\Sigma_4$.
+2. **Φ_q tower / JSJ bridge** (archimedean side, round 16):
+   their *operation* in the tower / GB filtration produces
+   hyperbolic JSJ pieces, whose volumes carry the binding
+   energy. They themselves are non-hyperbolic, but the *Hecke
+   composition* with atomic/molecular braids creates
+   hyperbolicity.
+
+**Updated picture of the closure programme.** With round 16, the
+two-question framework from round 15 becomes:
+
+1. Does $\Phi_{H_2}^{*}$ project onto $\{e_{(4)}, e_{(2,2)}\}$
+   Wedderburn components? (Round 15.)
+2. Do those components correspond to JSJ pieces whose
+   hyperbolic volumes are inverse to $\delta_q(T_{2,9})$ and
+   $\delta_q(T_{3,5})$ via the Φ_q–JSJ bridge? (Round 16.)
+3. If both yes: $\alpha_{EM}^{2} = h^{4}/[q^{2}\,\delta_q(T_{2,9})^{2}\,\delta_q(T_{3,5})^{2}]$
+   becomes the inverse-hyperbolic-volume product, and
+   $E_{\mathrm{bind}} \sim \alpha_{EM}^{2} \cdot m_e c^{2}$
+   follows from the standard Bohr-radius / virial picture
+   transported through the JSJ bridge.
+
+The Φ_q–JSJ bridge is itself **conjectural**
+([`conj:phi-q-tower-jsj-bridge`](#conj:phi-q-tower-jsj-bridge)),
+so this closure path is conditional on that conjecture also
+closing.
+
+### Net status after 16 rounds
+
+The conjecture is now connected to a broader QOU programme: the
+$\Phi_q$ tower / JSJ archimedean bridge. Closing
+$E_{\mathrm{Hartree}} = m_e c^{2} \alpha_{EM}^{2}$ becomes part
+of the same task as closing the Φ_q–JSJ bridge — they share the
+same archimedean-realization functor and the same
+Frobenius-norm-to-hyperbolic-volume mapping.
+
+**Final concrete question:** does the H_2 LP-optimum's
+Wedderburn projection produce, on the archimedean side, JSJ
+pieces whose hyperbolic volumes match the inverse force-carrier
+$\delta_q$ values? This is the unified closure target for both
+this conjecture and the broader Φ_q–JSJ programme.
+
 This conjecture is left as a **highly-diagnosed open problem**
 with concrete next-step. After 13 rounds, no further candidate
 mechanisms tractable in a single investigation remain to be

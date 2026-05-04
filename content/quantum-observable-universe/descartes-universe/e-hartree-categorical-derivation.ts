@@ -43,6 +43,9 @@ export default conjecture({
     "cor:commutative-chirality-vanishes",
     "prop:bohr-radius-categorical",
     "prop:archimedean-hartree-derivation",
+    "prop:force-carrier-bring-uniqueness",
+    "prop:phi-q-tower-algebraic-stratification",
+    "conj:phi-q-tower-jsj-bridge",
   ],
   tags: [
     "hartree-energy",
