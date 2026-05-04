@@ -59,10 +59,10 @@ namespace QOU.BraidKnot
     only through the `recoversBinding` predicate, which is the
     intended Archimedean comparison.
 
-    `R` is implicit because the explicit `q : R` argument always
-    determines it at use sites (standard Mathlib convention,
-    cf. `Module {R : Type*} [Semiring R] (M : Type*)`); no
-    inference ambiguity can arise. -/
+    `R` is implicit because the type annotation `q : R` lets Lean
+    infer `R` via unification at every use site (standard Mathlib
+    convention, cf. `Module {R : Type*} [Semiring R] (M : Type*)`);
+    no inference ambiguity can arise. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 -- Ref: [manuscript] def:z-habiro-ring
 class BraneTowerZHabiro {R : Type*} [CommRing R] (n₀ : ℕ) (q : R) where

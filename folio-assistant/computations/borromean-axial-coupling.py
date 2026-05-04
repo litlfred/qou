@@ -279,8 +279,13 @@ M_bare_std = evaluate_braid_std(conversion_op)
 tr_bare_std = mat_trace(M_bare_std)
 tr_bare_triv = evaluate_braid_triv(conversion_op)
 
-# Borromean suppression factor
+# Borromean suppression factor.
+# STRUCTURAL: this ratio is forced to be exactly 1.0 by trace-cyclicity
+# (tr(β·σ·β⁻¹) = tr(σ) for any matrix rep). The numerical value reported
+# below will be 1.0 ± O(machine epsilon) (≈ 0.999...984 in f64); the
+# structural value is exactly 1.0 and we surface both for clarity.
 suppression = abs(tr_full_std / tr_bare_std) if tr_bare_std != 0 else None
+suppression_structural = 1.0  # forced by trace cyclicity, see audit doc §0c
 
 # The naive quark model gives g_A/g_V = 5/3.
 # The Borromean topology modifies this by the suppression factor.
@@ -332,7 +337,13 @@ w.add_data("borromean_conversion", {
     "tr_trivial_full": tr_full_triv,
     "tr_standard_bare": tr_bare_std,
     "tr_trivial_bare": tr_bare_triv,
-    "suppression_factor": suppression,
+    "suppression_factor_numerical": suppression,
+    "suppression_factor_structural": suppression_structural,
+    "suppression_factor_note": (
+        "The numerical value is 1.0 ± O(machine epsilon); the "
+        "structural value is exactly 1.0, forced by trace-cyclicity "
+        "of any matrix representation. See audit doc §0c."
+    ),
     "g_A_with_borromean": g_A_borromean,
 })
 w.add_data("interpretation",

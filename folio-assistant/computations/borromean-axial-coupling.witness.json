@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-04T20:32:44.554514+00:00",
-  "commitSha": "0a964e11e8f39b5bf2ae5925d0a1b109460f6eeb",
+  "computedAt": "2026-05-04T20:38:05.497010+00:00",
+  "commitSha": "1fc824eb4c79e6e80bee74e5d26d0fdc12b80ce7",
   "assertions": [
     {
       "name": "g_A_vs_PDG_2024",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
-  "scriptHash": "d5b66e024fb7",
-  "scriptCommitSha": "f76bcac6ad07fc27ebc86a9798eebfba0b0927c6",
+  "scriptHash": "ab7feb4d4e46",
+  "scriptCommitSha": "1fc824eb4c79e6e80bee74e5d26d0fdc12b80ce7",
   "description": "Computation of g_A from the Iwahori--Hecke algebra H_3(q). The Borromean braid β = σ₁σ₂⁻¹σ₁σ₂⁻¹ is conjugated with the single-strand conversion operator σ₁ to model the d→u weak vertex on the Borromean nucleon. KNOWN STRUCTURAL GAP: any conjugation β·σ·β⁻¹ has the same trace as σ by trace-cyclicity, so the suppression factor is forced to be 1.0 and the script can only output the naive g_A = 5/3 ≈ 1.667 (+30.6% vs PDG 1.2754). The right operator requires the full colored Markov trace with Wedderburn-block weights; see audit doc GT-MATRIX gap and y-lambda-jones-markov-witness.json for the canonical recipe.",
   "contentBlock": "def:categorical-proton",
   "parameters": {
@@ -97,7 +97,9 @@
       "tr_trivial_full": 1.1099785955541805,
       "tr_standard_bare": 0.20906032198987945,
       "tr_trivial_bare": 1.1099785955541805,
-      "suppression_factor": 0.9999999999999984,
+      "suppression_factor_numerical": 0.9999999999999984,
+      "suppression_factor_structural": 1.0,
+      "suppression_factor_note": "The numerical value is 1.0 ± O(machine epsilon); the structural value is exactly 1.0, forced by trace-cyclicity of any matrix representation. See audit doc §0c.",
       "g_A_with_borromean": 1.666666666666664
     },
     "interpretation": "The Borromean braid β = σ₁σ₂⁻¹σ₁σ₂⁻¹ in H_3(q) conjugates the conversion operator σ₁. The suppression factor is the ratio of the standard-rep trace (with Borromean) to the standard-rep trace (without). By trace-cyclicity tr(βσβ⁻¹) = tr(σ), so this ratio is forced to 1.0; g_A reduces to the naive 5/3. Closure of the +30.6% gap requires the colored Markov trace, not a conjugation."
