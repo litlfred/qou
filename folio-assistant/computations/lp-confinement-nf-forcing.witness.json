@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-04T21:35:43.512925+00:00",
-  "commitSha": "c9a52406cc526a764b492cfad60c87bfa24a7b40",
+  "computedAt": "2026-05-04T23:13:25.371004+00:00",
+  "commitSha": "296ee5b49675082838110e2f78848bb29aa0fe2c",
   "assertions": [
     {
       "name": "all_compounds_feasible",
@@ -25,11 +25,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2044,
+  "durationMs": 2635,
   "computation": "lp-confinement-nf-forcing",
   "scriptFile": "lp_confinement_nf_forcing.py",
-  "scriptHash": "44cba0559d90",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3fcac72c6e1d",
+  "scriptCommitSha": "051b6d13c38e11d145a91c4bb6dfee1d0ad8028a",
   "description": "Probe of the conjecture (CLAUDE.md / step 5 of the multiplicative-chain plan): for compound braids β = β₁ ⋆ I ⋆ β₂ on B_n, the LP/SDP active set A = {λ : y_λ* > 0} from prop:operator-selection-lp (i) is strictly smaller than n! (confinement), (ii) contains the Wedderburn maximizer of shift_NF(β), and (iii) bounds the deviation shift_NF(β) − α_shift(I) by the LP duality gap. Per CLAUDE.md §LP/SDP duals, the witness emits BOTH primal and dual fields.",
   "contentBlock": "conj:confinement-nf-structure-forcing",
   "data": {

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-04T21:31:36.316209+00:00",
-  "commitSha": "c9a52406cc526a764b492cfad60c87bfa24a7b40",
+  "computedAt": "2026-05-04T23:13:21.880751+00:00",
+  "commitSha": "296ee5b49675082838110e2f78848bb29aa0fe2c",
   "assertions": [
     {
       "name": "gb_count_nonneg_S_2",
@@ -72,11 +72,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 90666,
+  "durationMs": 349765,
   "computation": "nh-basis-shift",
   "scriptFile": "nh_basis_shift.py",
-  "scriptHash": "9504602cf40b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "46c3406cfd3a",
+  "scriptCommitSha": "051b6d13c38e11d145a91c4bb6dfee1d0ad8028a",
   "description": "Per-NF-letter shift accounting for the NH_n basis of H_n(q). For each w ∈ S_n (n ≤ 5) we compute the seminormal pole order at q = 0 of T_w, the naive per-letter upper bound (= ℓ(w)), and the GB-reduction count = ℓ(w) − pole_order. Validates the cycle-additive DP probe upper bound and cross-checks the torus-knot Coxeter element against alpha_shift_torus.py.",
   "contentBlock": "prop:alpha-shift-torus-knot",
   "data": {

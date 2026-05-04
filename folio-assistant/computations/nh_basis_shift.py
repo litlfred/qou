@@ -117,7 +117,7 @@ def shift_full(word: List[int], n: int) -> Tuple[int, Tuple[int, ...]]:
     best_lam: Tuple[int, ...] = ()
     for lam in partitions_of(n):
         M = hecke_word_matrix(word, tuple(lam))
-        chi = sp.simplify(M.trace())
+        chi = sp.cancel(M.trace())
         po = pole_order_at_zero(chi)
         if po > best:
             best = po

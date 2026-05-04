@@ -88,7 +88,7 @@ def markov_trace_per_irrep(word: List[int], n: int, q0_sp: sp.Rational) -> Dict[
     for lam in partitions_of(n):
         lam_t = tuple(lam)
         M = hecke_word_matrix(word, lam_t)
-        chi = sp.simplify(M.trace())
+        chi = sp.cancel(M.trace())
         try:
             val = float(chi.subs(q_sym, q0_sp).evalf())
         except (TypeError, ValueError):

@@ -122,7 +122,7 @@ def torus_braid_matrix(p: int, k: int, lam: Tuple[int, ...]) -> Tuple[sp.Expr, i
         base = sigmas[i] * base
     # k-th power
     full = base ** k
-    chi = sp.simplify(full.trace())
+    chi = sp.cancel(full.trace())
     return chi, dim
 
 
@@ -137,9 +137,9 @@ def pole_order_at_zero(expr: sp.Expr) -> int:
     expr = N(q)/D(q), expanding into ℚ[q, q⁻¹], and taking
     (deg of pole of D at 0) - (deg of zero of N at 0).
     """
-    if expr == 0:
+    if expr.equals(0):
         return 0
-    e = sp.together(sp.simplify(expr))
+    e = sp.cancel(expr)
     n_expr, d_expr = sp.fraction(e)
     n_poly = sp.Poly(sp.expand(n_expr * q_sym ** 0), q_sym)
     d_poly = sp.Poly(sp.expand(d_expr * q_sym ** 0), q_sym)
@@ -154,9 +154,9 @@ def laurent_lowest_power(expr: sp.Expr) -> int:
     """Return the lowest power of q in expr written as a Laurent polynomial.
     Negative => true pole at q = 0; non-negative => regular at q = 0.
     """
-    if expr == 0:
+    if expr.equals(0):
         return 0
-    e = sp.together(sp.simplify(expr))
+    e = sp.cancel(expr)
     n_expr, d_expr = sp.fraction(e)
     n_poly = sp.Poly(sp.expand(n_expr), q_sym)
     d_poly = sp.Poly(sp.expand(d_expr), q_sym)
@@ -193,7 +193,7 @@ def alpha_shift_per_irrep(p: int, k: int) -> Dict[Tuple[int, ...], Dict[str, obj
         pole = pole_order_at_zero(chi)
         low = laurent_lowest_power(chi)
         out[tuple(lam)] = {
-            "chi_symbolic": str(sp.simplify(chi)),
+            "chi_symbolic": str(sp.cancel(chi)),
             "dim_V_lambda": int(dim),
             "pole_order_q0": int(pole),
             "lowest_power_q": int(low),

@@ -104,7 +104,7 @@ def _analyse_atom(label: str, Z: int, N: int, max_m: int) -> dict:
     # Reconstruction sanity check (cheap)
     t4 = time.time()
     recon = reconstruct(coeffs, u, max_m=max_m)
-    matches_recon = sp.expand(p_u - recon) == 0
+    matches_recon = (p_u - recon).equals(0)
     t_rec = time.time() - t4
     print(f"  reconstruction check: {t_rec:.1f} s  matches = {matches_recon}")
 
