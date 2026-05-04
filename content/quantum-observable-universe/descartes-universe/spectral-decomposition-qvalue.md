@@ -1,12 +1,12 @@
 The torus knots embeddable on $\Sigma_4$ form a **complete,
 self-dual basis** for the regular representation of the
-Iwahori--Hecke algebra $H_n(q)$.  The $\mathcal{Q}_q$-value of beta decay is the
+Iwahori--Hecke algebra $H_n(q)$.  The $Q$-value of beta decay is the
 spectral decomposition of the decay operator in this basis.
 The decomposition is **exact and finite** — it terminates at
 degree $2$ because the embeddability bound on $\Sigma_4$ kills
 all higher jets.
 
-## Corollary (spectral decomposition of the $\mathcal{Q}_q$-value)
+## Corollary (spectral decomposition of the $Q$-value)
 
 *This is a direct consequence of the
 [cohomological embedding](#prop:cohomological-embedding) (completeness
@@ -17,10 +17,10 @@ of the torus knot basis on $\Sigma_g$) applied to the beta decay
 $\mathcal{E}_g = \{\tau(r,s) : \tfrac{(r-1)(s-1)}{2} \leq g\}$
 the set of torus knot labels embeddable on $\Sigma_g$.  For
 $\beta^-$ decay $\mathcal{N}_{Z,N} \to \mathcal{N}_{Z+1,N-1}$,
-the $\mathcal{Q}_q$-value admits the spectral decomposition:*
+the $Q$-value admits the spectral decomposition:*
 
 $$
-  \mathcal{Q}_q
+  Q
   = 
   \underbrace{
     \Bigl|\log_q\frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}\Bigr|
@@ -179,7 +179,7 @@ complete orthogonal basis under the Markov trace inner product.
 
 ### Geometric interpretation
 
-Each factor in $\mathcal{Q}_q$ reads geometrically:
+Each factor in $Q$ reads geometrically:
 
 | Factor | Geometry |
 |--------|----------|
@@ -273,7 +273,7 @@ $6 \times 6$ regular representation of $H_3(q)$.
 neutron in shell degree $d$ and neutron occupation parity $p$:
 
 $$
-  \mathcal{Q}_q
+  Q
   = \mathcal{Q}_{\mathrm{bare}}
     \times F_{\mathrm{deg2}}^{[d \geq 2]}
     \times F_{\mathrm{Pauli}}^{[N \in \mathrm{magic}]}

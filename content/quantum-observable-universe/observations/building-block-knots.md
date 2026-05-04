@@ -157,8 +157,8 @@ crossings — a pure function of $q$.
 action $S_q(e) = 3\mathbf{E}_{\times}(q) \cdot \mu_0$, the neutrino's
 $S_q(\nu) = 0$, and the nuclear actions $S_q(\mathcal{N})$
 from the Markov trace product are all computable from $q$.
-The $\mathcal{Q}_q$-value
-([transition energy](#def:q-value-transition))
-$\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
+The $Q$-value
+([transition energy](#def:Q-value-transition))
+$Q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
 therefore depends on $q$ and $\mu_0$ alone — no external
 constants.

@@ -4,7 +4,7 @@
 
 | Label | Title | Chapter | Lean |
 |-------|-------|---------|------|
-| [def:q-value-transition](#def:q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 9 | `QOU.Descartes.QValueTransition` |
+| [def:Q-value-transition](#def:Q-value-transition) | $Q$-Value as Categorical Action Difference | Ch 9 | `QOU.Descartes.QValueTransition` |
 | [def:su2-basis](#def:su2-basis) | $\mathfrak{su}(2)$ basis | Ch 4 | `QOU.Su2Basis` |
 | [def:so3-generators](#def:so3-generators) | $\mathrm{SO}(3)$ generators | Ch 4 | `QOU.So3Generators` |
 | [def:su2-generators](#def:su2-generators) | $\mathrm{SU}(2)$ generators of $\mathrm{Dic}_3$ | Ch 4 | `QOU.Su2Generators` |
@@ -338,7 +338,7 @@
 | [prop:genus-filtration-ideal](#prop:genus-filtration-ideal) | Genus-filtration ideal and the Chebyshev obstruction for $T_{2,p}$ | Ch 9 | `QOU.Descartes.genus_filtration_ideal` |
 | [prop:jet-tower-convergence](#prop:jet-tower-convergence) | Geometric-series tail bound for the $\hbar_q^2$ brane-tower sum | Ch 4 | `QOU.MassEndomorphism.jet_tower_tail_bound` |
 | [prop:global-gluing](#prop:global-gluing) | Global gluing via twisted quantization | Ch 3 | `QOU.Torsion.global_gluing` |
-| [prop:gram-weighted-qvalue](#prop:gram-weighted-qvalue) | Gram-weighted $\mathcal{Q}_q$-value from Frobenius norm of conversion channels | Ch 10 | `QOU.Descartes.gram_weighted_qvalue` |
+| [prop:gram-weighted-qvalue](#prop:gram-weighted-qvalue) | Gram-weighted $Q$-value from Frobenius norm of conversion channels | Ch 10 | `QOU.Descartes.gram_weighted_qvalue` |
 | [prop:ground-state-ordering](#prop:ground-state-ordering) | Ground-state ordering from transfer matrix eigenvalues | Ch 10 | — |
 | [prop:hadron-half-life](#prop:hadron-half-life) | Hadron half-life from the $q$-deformed transition amplitude | Ch 9 | `QOU.Descartes.hadron_half_life` |
 | [prop:hecke-markov-transition](#prop:hecke-markov-transition) | Hecke generator as stochastic transition operator | Ch 4 | `QOU.Braiding.SpectralIdempotentData` |
@@ -516,7 +516,7 @@
 | [cor:descartes-knot-eigenbasis](#cor:descartes-knot-eigenbasis) | Knot eigenbasis completeness for a Descartes universe | Ch 9 | `QOU.Descartes.descartes_knot_eigenbasis` |
 | [cor:non-self-intersection](#cor:non-self-intersection) | Obstruction to self-intersection | Ch 4 | `QOU.Braiding.non_self_intersection` |
 | [cor:quantum-dilogarithm](#cor:quantum-dilogarithm) | Quantum Dilogarithm as Localized Torsion Volume | Ch 3 | `QOU.Torsion.quantum_dilogarithm` |
-| [cor:spectral-decomposition-qvalue](#cor:spectral-decomposition-qvalue) | Spectral decomposition of the $\mathcal{Q}_q$-value over the torus knot basis of $\Sigma_4$ | Ch 9 | `QOU.Descartes.spectral_decomposition_qvalue` |
+| [cor:spectral-decomposition-qvalue](#cor:spectral-decomposition-qvalue) | Spectral decomposition of the $Q$-value over the torus knot basis of $\Sigma_4$ | Ch 9 | `QOU.Descartes.spectral_decomposition_qvalue` |
 
 ## Conjectures
 

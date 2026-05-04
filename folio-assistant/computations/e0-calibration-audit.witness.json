@@ -1,7 +1,7 @@
 {
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-04T17:29:16.713704+00:00",
+  "computedAt": "2026-05-04T18:08:53.587877+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -152,6 +152,14 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/crt_markov_v4.py",
+        "line": 698,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"categorical-mass-Markov calibration E_0 = 0.782 MeV (or a \"",
+        "kind": "doc"
+      },
+      {
         "file": "folio-assistant/computations/deuteron_first_principles.py",
         "line": 207,
         "pattern": "literal_0_782",
@@ -173,6 +181,22 @@
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "print(f\"    Q_exp (free neutron) ≈ 0.782 MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/hecke_characters.py",
+        "line": 492,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "with E_0 = 0.782 MeV (free-neutron β-decay Q) — the SINGLE",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/hecke_characters.py",
+        "line": 572,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "# E_0 = 0.782 MeV.",
         "kind": "doc"
       },
       {
@@ -317,6 +341,14 @@
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "tower_binding_full.  The β-decay calibration (0.782 MeV) applies",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+        "line": 506,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "#   T1 (descended Markov):  E_0_β = 0.782 MeV per cat unit",
         "kind": "doc"
       },
       {

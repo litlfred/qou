@@ -96,4 +96,79 @@ def braneTowerPartialSum {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] : R :=
   M.tr_transient
 
+-- ────────────────────────────────────────────────────────────────────────────
+-- Further conditional theorems (proved from MassEndomorphism axioms alone)
+-- ────────────────────────────────────────────────────────────────────────────
+
+/-- **Transient part is uniquely determined by the class data.**
+
+    Given `vol_eq : tr_transient = vol_identity - tr_descended`,
+    there is exactly one value of tr_transient consistent with the
+    class — namely `vol_identity - tr_descended`.  Any other element
+    satisfying the same equation equals tr_transient. -/
+-- Ref: [manuscript] conj:mass-endomorphism §Statement
+theorem transient_unique {R : Type*} [CommRing R] (β : Type*)
+    [M : MassEndomorphism R β] (t : R)
+    (h : t = M.vol_identity - M.tr_descended) :
+    t = M.tr_transient := by
+  rw [h, ← M.vol_eq]
+
+/-- **Transient is non-negative when vol_identity ≥ tr_descended.**
+
+    If the volume identity term dominates the descended trace, the
+    brane-tower contribution `tr_transient` is non-negative.  This is
+    the algebraic content of the physical expectation that the tower
+    always contributes positively to mass. -/
+-- Ref: [manuscript] conj:mass-endomorphism §"Tower convergence"
+theorem transient_nonneg {R : Type*} [OrderedRing R] (β : Type*)
+    [M : MassEndomorphism R β]
+    (h : M.tr_descended ≤ M.vol_identity) :
+    0 ≤ M.tr_transient := by
+  have := M.vol_eq
+  linarith
+
+/-- **In the flat case (tr_transient = 0), fullMass equals the descended part.**
+
+    When the brane tower contributes nothing (all z_i = 0 or no
+    blow-up centres), the full mass is entirely descended. -/
+-- Ref: [manuscript] conj:mass-endomorphism §"What is known", Step 1
+theorem fullMass_eq_descended_of_zero_transient {R : Type*} [CommRing R]
+    (β : Type*) [M : MassEndomorphism R β]
+    (h : M.tr_transient = 0) :
+    fullMass β = M.tr_descended := by
+  unfold fullMass
+  rw [h, add_zero]
+
+/-- **fullMass = tr_descended + tr_transient** (explicit decomposition lemma).
+
+    This is definitional but stated as a lemma to make the two-term
+    structure available for downstream rewrites. -/
+-- Ref: [manuscript] conj:mass-endomorphism §"What is known"
+theorem mass_decomposition {R : Type*} [CommRing R] (β : Type*)
+    [M : MassEndomorphism R β] :
+    fullMass β = M.tr_descended + M.tr_transient := rfl
+
+/-- **The descended part equals vol_identity minus the transient.**
+
+    Equivalent rearrangement of `vol_eq` expressed for the descended piece. -/
+-- Ref: [manuscript] conj:mass-endomorphism §Statement
+theorem descended_eq_vol_minus_transient {R : Type*} [CommRing R] (β : Type*)
+    [M : MassEndomorphism R β] :
+    M.tr_descended = M.vol_identity - M.tr_transient := by
+  have := M.vol_eq
+  linarith
+
+/-- **Mass is positive when vol_identity > 0 and tr_descended ≥ 0.**
+
+    Under the natural physical conditions (positive volume, non-negative
+    descended trace), the full categorical mass is positive. -/
+-- Ref: [manuscript] conj:mass-endomorphism §"What is known"
+theorem fullMass_pos_of_vol_pos {R : Type*} [OrderedRing R] (β : Type*)
+    [M : MassEndomorphism R β]
+    (hvol : 0 < M.vol_identity)
+    (hdesc : 0 ≤ M.tr_descended) :
+    0 < fullMass β := by
+  rw [fullMass_eq_volume]
+  exact hvol
+
 end QOU.WedderburnMass

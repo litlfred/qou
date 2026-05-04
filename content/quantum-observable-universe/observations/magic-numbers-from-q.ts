@@ -12,6 +12,10 @@ export default proposition({
     "seminormal-form",
     "block-diagonal",
   ],
+  lean: {
+    ref: "qou:QOU.AtomicMass.magic_numbers_from_q",
+    validation: "not_checked",
+  },
   uses: [
     "conj:shell-closure-nf-term-count",
     "prop:nuclear-knot-classification",

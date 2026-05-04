@@ -118,7 +118,12 @@ theorem nf_b3_trefoil_zero : nf_b3 5 = 0 := by
 theorem nf_b3_eq_witness (i : Fin 6) :
     nf_b3 i = b3_nf_coefficients i := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+  -- Enumerate all 6 indices to avoid the simp loop triggered by
+  -- unfolding an equality at a generic `Fin 6` variable.
+  fin_cases i <;>
+    simp only [nf_b3, nf_unit2, nf_unit, mul_right_s1_inv, mul_right_s0,
+               mul_right_s1, hecke_add, hecke_smul, b3_nf_coefficients, HA] <;>
+    ring
 
 /-! ## §5  Proton NF via Hecke engine -/
 

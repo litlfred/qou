@@ -69,4 +69,26 @@ class SurrealRateCalculus (F : Type u) [Field F] where
       `E(δ) · ε = δ²` for every drift `δ`. -/
   rogueZero_order : ∀ δ : F, roguePartCost δ * epsilon = δ ^ 2
 
+/-- **Classical-limit instance** (ε = 1).
+    At the classical limit, the Reeb infinitesimal collapses to 1
+    and every rate equation becomes trivial:
+    - `Δ = 1 = 1³` ✓
+    - `Ω · 1 = 1 · 1 = 1` ✓
+    - `Z³ · 1⁴ = 1 · 1 = 1` ✓
+    - `E(δ) · 1 = δ² · 1 = δ²` ✓
+    This is the "no infinitesimal" baseline; the substantive
+    surreal content arises when ε is genuinely infinitesimal in
+    `𝐍𝐨` via the standard-part embedding. -/
+instance surrealRateCalculus_classicalLimit (F : Type u) [Field F] :
+    SurrealRateCalculus F where
+  epsilon := 1
+  massGap := 1
+  reebPeriod := 1
+  enstrophyCeiling := 1
+  roguePartCost := fun δ => δ ^ 2
+  massGap_order := by norm_num
+  reebPeriod_order := by norm_num
+  enstrophy_order := by norm_num
+  rogueZero_order := fun δ => by ring
+
 end QOU.AlgebraicSubstrate

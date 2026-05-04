@@ -489,6 +489,11 @@ export default chapter({
         "gb-spectral-sequence",
         "curvature-rank-gb-stratification",
         "spectral-sequence-collapse",
+        "delta-q-decoration",
+        "force-carrier-intertwining-correspondence",
+        "alpha-shift-torus-knot",
+        "confinement-nf-structure-forcing",
+        "bound-state-frobenius-self-dual-channel",
         "confinement-categorical",
         "exterior-square-borromean",
         "alpha-em-categorical-trace",
@@ -520,6 +525,7 @@ export default chapter({
         "y-lambda-sign-pattern",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
+        "six-term-per-derivation-weights",
         "shell-correction-term-seven",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
@@ -535,6 +541,20 @@ export default chapter({
         "skein-binding-lagrangian",
         "beta-stability",
         "beta-stability-interpretation",
+      ],
+    }),
+
+    // ── Derivation audit and pre-Archimedean framework ────────────────
+    section({
+      title: "Pre-Archimedean Derivation Chain and Audit",
+      label: "sec:derivation-audit",
+      blocks: [
+        "pre-archimedean-derivation-chain",
+        "derivation-audit-report",
+        "conj-canonical-knot-id-sdp",
+        "conj-chirality-ribbon-frobenius",
+        "conj-brane-level-selection",
+        "conj-rho-prefactor-structural",
       ],
     }),
 

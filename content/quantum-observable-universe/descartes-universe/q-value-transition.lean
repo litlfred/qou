@@ -11,7 +11,7 @@ q-anomaly δ_q in the energy balance.
 ⚠ This file does NOT assume classical conservation of energy.
 The equivalence Q_q = T_e + T_ν + T_recoil holds only at q = 1.
 
-LaTeX label: `def:q-value-transition`
+LaTeX label: `def:Q-value-transition`
 
 ## References
 - [manuscript] §6/q-value-transition

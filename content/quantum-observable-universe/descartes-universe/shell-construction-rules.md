@@ -1,4 +1,4 @@
-The $\mathcal{Q}_q$-value for any $\beta^-$ decay
+The $Q$-value for any $\beta^-$ decay
 $\mathcal{N}(Z, N) \to \mathcal{N}(Z\!+\!1, N\!-\!1)$
 is computed by the following algorithm.  The inputs are
 the substrate parameter $q$ and the nucleon counts $(Z, N)$.
@@ -42,7 +42,7 @@ observed, not derived in closed form from $q$.
 is the largest $T_{2,n}$ with $n \leq n_s$.
 
 **(C3)** Inner shell dressing by $T_{2,9}$ conjugation cancels
-in the $\mathcal{Q}_q$-value (the inner shells are the same in
+in the $Q$-value (the inner shells are the same in
 parent and daughter).
 
 ## Algorithm
@@ -50,7 +50,7 @@ parent and daughter).
 **Input:** $(Z, N)$ with $N \geq 1$ (parent has at least one
 neutron to convert).
 
-**Output:** $\mathcal{Q}_q(Z, N)$ in MeV.
+**Output:** $Q(Z, N)$ in MeV.
 
 ### Step 0: Magic number table
 
@@ -173,11 +173,11 @@ $$
 
 **(C3)** is used here.
 
-### Step 7: $\mathcal{Q}_q$-value
+### Step 7: $Q$-value
 
 $$
   \boxed{
-    \mathcal{Q}_q(Z, N)
+    Q(Z, N)
     = 
     \bigl|
       R_{\mathrm{bare}}
@@ -231,7 +231,7 @@ $\Delta_{T_{3,5}} = -3.37$
 **Step 7:**
 
 $$
-  \mathcal{Q}_q = |{-32.09 + 5.04 + (-3.37)}|
+  Q = |{-32.09 + 5.04 + (-3.37)}|
   \times 0.0991 \times 0.1045 \times 1.630
   \approx 30.42 \times 0.01688
   \approx 0.513  \text{MeV}
