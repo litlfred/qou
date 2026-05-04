@@ -218,6 +218,9 @@ export default chapter({
         "alpha-em-derivation-exploration-options",
         "em-coupling-reeb-holonomy-falsified",
         "em-coupling-stratum-coupling-h3-attempt",
+        "e-hartree-categorical-derivation",
+        "bohr-radius-categorical",
+        "archimedean-hartree-derivation",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
