@@ -83,8 +83,10 @@ class WedderburnDecomp
   prop:y-lambda-recipe-from-partition this is a rational function
   in q given by `s_λ(1, Q, ..., Q^{r-1}) / Σ d_μ s_μ(...)`. -/
   y_lambda : Partition n → R
-  /-- The complete set of partitions (all irreducible representations).
-  This is the finite index set over which the Wedderburn sum runs. -/
+  /-- The complete set of partitions (all irreducible representations
+  of `H_n(q)`, one for each partition `λ ⊢ n`). This equals the full
+  set `{λ | λ ⊢ n}` of Young diagrams of `n`; by the Wedderburn–Artin
+  theorem there are no other irreducibles over a generic base ring. -/
   all_parts : Finset (Partition n)
   /-- Trace decomposition: the Markov trace decomposes over `all_parts` as
   `tr(x) = Σ_{λ ∈ all_parts} y_λ · tr(x · π_λ)`.

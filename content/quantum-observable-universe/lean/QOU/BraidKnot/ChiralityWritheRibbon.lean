@@ -177,14 +177,14 @@ theorem chirality_writhe_ribbon
   · -- ── Case q = 1 ──────────────────────────────────────────────────
     -- Deduce q = 1 from q > 0 and q - q⁻¹ = 0.
     have hq1 : q = 1 := by
-      have hqq : q * q = 1 := by
-        have heq : q = q⁻¹ := by linarith
-        nth_rw 2 [heq]; exact mul_inv_cancel₀ (ne_of_gt RT.q_pos)
-      have hfactor : (q - 1) * (q + 1) = 0 :=
-        by linarith [show (q - 1) * (q + 1) = q * q - 1 from by ring]
-      rcases mul_eq_zero.mp hfactor with h1 | h1
-      · linarith
-      · exfalso; linarith [RT.q_pos]
+      -- q > 0, q - q⁻¹ = 0 ⟹ q = q⁻¹ ⟹ q·q = 1.  Then q > 0 ⟹ q = 1.
+      have heq : q = q⁻¹ := by linarith
+      have hqq : q * q = 1 := by nth_rw 2 [heq]; exact mul_inv_cancel₀ (ne_of_gt RT.q_pos)
+      have h_le : q ≤ 1 := by nlinarith [sq_nonneg (q - 1)]
+      have h_ge : 1 ≤ q := by
+        have key := mul_le_mul_of_nonneg_left h_le (le_of_lt RT.q_pos)
+        rw [mul_one] at key; linarith
+      linarith
     -- All framing eigenvalues are 1 when q = 1.
     have hfe : ∀ (w k : ℤ), RT.framing_eigenvalue w k = 1 := fun w k => by
       rw [RT.framing_formula, hq1]; simp
