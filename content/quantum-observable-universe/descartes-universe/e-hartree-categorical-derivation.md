@@ -553,7 +553,7 @@ to $y_{\mathrm{cov}}$ vanishes structurally, leaving $\alpha_{EM}^{2}$
 as the leading order.
 
 This block is registered as **conjecture, not proposition**, because
-no candidate mechanism the author can articulate closes the
+no candidate mechanism we can articulate closes the
 $J^{1}$-vanishing step rigorously.  All three candidate
 mechanisms below have an explicit, identifiable gap.
 
@@ -1175,7 +1175,7 @@ categorical Bohr radius is given a precise Hecke definition.
 
 ### Honest reporting
 
-The author of this block attempted three derivation mechanisms and
+We attempted three derivation mechanisms here and
 identified an explicit gap in each.  Mechanism C with the
 $q \mapsto -q^{-1}$ involution is the most promising line of
 attack; pursuing it is the recommended next research step.
