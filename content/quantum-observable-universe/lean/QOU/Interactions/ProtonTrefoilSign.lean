@@ -209,8 +209,10 @@ theorem proton_trefoil_neg_on_interval (q : ℝ) (hq1 : 1 < q) (hq2 : q ≤ 3/2)
   -- Denominator: 4q⁶ > 0
   -- Result: negative / positive < 0
   apply div_neg_of_neg_of_pos
-  · have h1 : (0:ℝ) < (q - 1) ^ 2 := pow_pos (by linarith) 2
-    have h2 : (0:ℝ) < (q + 1) ^ 2 := pow_pos (by linarith) 2
+  · have hsub : 0 < q - 1 := sub_pos.mpr hq1
+    have hadd : 0 < q + 1 := by linarith
+    have h1 : (0:ℝ) < (q - 1) ^ 2 := pow_pos hsub 2
+    have h2 : (0:ℝ) < (q + 1) ^ 2 := pow_pos hadd 2
     exact mul_neg_of_pos_of_neg (mul_pos h1 h2) hp
   · positivity
 

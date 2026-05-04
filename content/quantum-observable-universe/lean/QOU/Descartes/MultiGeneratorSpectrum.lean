@@ -46,7 +46,7 @@ open Matrix
     character is a ring homomorphism:
     `χ_sym(σ_{i₁} ⋯ σ_{iₖ}) = q^k`
     More generally, for crossing `(c_j, d_j)`:
-    `λ_sym(product) = ∏_j (c_j · q + d_j)` -/
+    `lamSym(product) = ∏_j (c_j · q + d_j)` -/
 noncomputable def multiSymEigenvalue : List (R_t × R_t) → R_t
   | [] => 1
   | (c, d) :: rest => symEigenvalue c d * multiSymEigenvalue rest
@@ -54,7 +54,7 @@ noncomputable def multiSymEigenvalue : List (R_t × R_t) → R_t
 /-- The **multi-generator alternating eigenvalue**: the product of
     alternating eigenvalues over a crossing sequence.
 
-    `λ_alt(product) = ∏_j (d_j − c_j · q⁻¹)` -/
+    `lamAlt(product) = ∏_j (d_j − c_j · q⁻¹)` -/
 noncomputable def multiAltEigenvalue : List (R_t × R_t) → R_t
   | [] => 1
   | (c, d) :: rest => altEigenvalue c d * multiAltEigenvalue rest
@@ -75,7 +75,7 @@ noncomputable def multiStdMatrix : List (R_t × R_t) → TMatrix
     For a multi-generator product, the 6×6 transfer matrix is
     block-diagonal:
     ```
-    T₆(product) = λ_sym(product) ⊕ T_std(product) ⊕ T_std(product) ⊕ λ_alt(product)
+    T₆(product) = lamSym(product) ⊕ T_std(product) ⊕ T_std(product) ⊕ lamAlt(product)
     ```
 
     The channels evolve independently — the symmetric eigenvalue
@@ -91,9 +91,9 @@ theorem independent_channel_evolution (seq : List (R_t × R_t)) :
       (multiStdMatrix seq)
       (multiAltEigenvalue seq)
     -- The full-rep matrix is well-defined (just packaging)
-    fullRep.λ_sym = multiSymEigenvalue seq ∧
+    fullRep.lamSym = multiSymEigenvalue seq ∧
     fullRep.T_std = multiStdMatrix seq ∧
-    fullRep.λ_alt = multiAltEigenvalue seq := by
+    fullRep.lamAlt = multiAltEigenvalue seq := by
   exact ⟨rfl, rfl, rfl⟩
 
 /-- **Lemma**: the multi-generator symmetric eigenvalue is multiplicative. -/
@@ -124,13 +124,13 @@ theorem multiAltEigenvalue_append (seq₁ seq₂ : List (R_t × R_t)) :
 
     For a SINGLE generator (crossing sequence of length 1), all three
     irreps have eigenvalues drawn from `{q, −q⁻¹}`:
-    - Symmetric: `λ_sym = c·q + d`
+    - Symmetric: `lamSym = c·q + d`
     - Standard: eigenvalues of `T(c,d)` = `{c·HA + d ± √Δ}/2`
       where `Δ = (c·HA+d-d)² + 4c²` — for pp: eigenvalues are `q, −q⁻¹`
-    - Alternating: `λ_alt = d − c·q⁻¹`
+    - Alternating: `lamAlt = d − c·q⁻¹`
 
     For the pp crossing `(c,d) = (1,0)`:
-    `λ_sym = q`, `λ_alt = −q⁻¹`, and the 2×2 has eigenvalues `q, −q⁻¹`.
+    `lamSym = q`, `lamAlt = −q⁻¹`, and the 2×2 has eigenvalues `q, −q⁻¹`.
     All channels share the same eigenvalue set.
 
     This is the formal content of `transfer_matrix_6x6.py` line 233:
@@ -148,11 +148,11 @@ theorem per_generator_eigenvalue_coincidence :
 
     For a multi-generator product, the ratio between the symmetric
     and alternating eigenvalues is:
-    `λ_sym / λ_alt = ∏_j ((c_j·q + d_j) / (d_j − c_j·q⁻¹))`
+    `lamSym / lamAlt = ∏_j ((c_j·q + d_j) / (d_j − c_j·q⁻¹))`
 
     For `k` pure pp crossings `(1, 0)`:
-    `λ_sym = q^k`, `λ_alt = (−q⁻¹)^k = (−1)^k · q^{−k}`
-    `λ_sym / λ_alt = (−1)^k · q^{2k}`
+    `lamSym = q^k`, `lamAlt = (−q⁻¹)^k = (−1)^k · q^{−k}`
+    `lamSym / lamAlt = (−1)^k · q^{2k}`
 
     This ratio **diverges** as `k → ∞` (for `q > 1`), showing that
     the channels become increasingly separated for longer braid words.
