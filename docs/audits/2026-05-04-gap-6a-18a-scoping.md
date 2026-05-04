@@ -192,8 +192,8 @@ Both classes are confirmed inhabitable:
   trivial substrate over `K0 = Mhat = ℤ`,
   `Target = const ℤ`, `frobenius_at p := (p : ℤ)`. Witnesses
   `motivic_perpetual_obstruction` non-vacuously.
-- [`lean/QOU/BraidKnot/MassEndomorphismTrivial.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MassEndomorphismTrivial.lean) —
-  zero-mass instance over `R = ℝ` (`tr_descended = tr_transient =
+- [`lean/QOU/MassEndomorphism/MassEndomorphismTrivial.lean`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassEndomorphismTrivial.lean) —
+  zero-mass instance over `R = ℤ` (`tr_descended = tr_transient =
   vol_identity = 0`). Witnesses `fullMass_eq_volume` non-vacuously.
 
 These guard against accidental class over-constraint. They do

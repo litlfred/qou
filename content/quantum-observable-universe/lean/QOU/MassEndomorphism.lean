@@ -1,6 +1,11 @@
 import QOU.MassEndomorphism.DeltaMaxUniformBound
 import QOU.MassEndomorphism.MassEndomorphismConjecture
-import QOU.MassEndomorphism.MassEndomorphismTrivial
+-- `MassEndomorphismTrivial` deliberately NOT aggregated here:
+-- the zero-data `MassEndomorphism ℤ β` instance would otherwise
+-- satisfy `MassEndomorphism` typeclass searches in unrelated
+-- developments.  Opt in explicitly with
+-- `import QOU.MassEndomorphism.MassEndomorphismTrivial`.
+-- Cf. copilot-pull-request-reviewer review on PR #541.
 
 /-!
 # QOU.MassEndomorphism — Mass-endomorphism tower aggregator

@@ -1,5 +1,6 @@
 import QOU.LiftingDescent.MotivicGaloisCharacter
 import QOU.AlgebraicSubstrate.MotivicSubstrateTrivial
+import Mathlib.Tactic
 
 /-!
 # Trivial witness for `MotivicGaloisCharacter`
