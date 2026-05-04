@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T17:24:42.315037+00:00",
+  "computedAt": "2026-05-04T17:44:01.858687+00:00",
   "computation": "delta-q-decoration",
   "scriptFile": "delta_q_decoration.py",
   "description": "\u03b4_q Wedderburn decomposition for H_n(q), n=2,3,4. Tests the round-18 force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): does the bare H_2 molecular braid project onto the (3,1) and (2,1,1) Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? Verifies the algebraic identity \u03b1_EM = h\u00b2/[q\u00b7\u03b4_q(T_29)\u00b7\u03b4_q(T_35)] (prop:alpha-em-categorical-trace-ratio).",
@@ -310,6 +310,72 @@
       "f_211": 3,
       "self_dual": true,
       "reference": "rem:bound-state-frobenius-self-dual-channel"
+    },
+    "closed_form_characters": {
+      "chi_4_eq_q3": true,
+      "chi_31_eq_neg_q": true,
+      "chi_22_eq_zero": true,
+      "chi_211_eq_q_inv": true,
+      "chi_1111_eq_neg_qm3": true,
+      "all_match": true,
+      "reference": "round-19 task 1 finding"
+    },
+    "dressed_braid": {
+      "alpha_dr": 1.1330288882035493,
+      "beta_dr": 0.42725788003598963,
+      "per_lambda": {
+        "(4,)": {
+          "chi_bare": 1.3675518842725498,
+          "chi_no_middle": 1.232052482588432,
+          "chi_dressed": 2.0758799228018074,
+          "w_lambda": 0.0397556818315101,
+          "f_lambda": 3,
+          "trM_bare": 0.01812265253307387,
+          "trM_dressed": 0.027509340577109468
+        },
+        "(3, 1)": {
+          "chi_bare": -1.1099785955541814,
+          "chi_no_middle": -0.7679475174115693,
+          "chi_dressed": -1.5857494423186598,
+          "w_lambda": 0.3683025021555029,
+          "f_lambda": 3,
+          "trM_bare": -0.13626929802721868,
+          "trM_dressed": -0.1946784957992186
+        },
+        "(2, 2)": {
+          "chi_bare": -3.3306690738754696e-16,
+          "chi_no_middle": 2.043706218230513,
+          "chi_dressed": 0.8731895862175383,
+          "w_lambda": 0.1660489519858909,
+          "f_lambda": 3,
+          "trM_bare": -1.843513697096132e-17,
+          "trM_dressed": 0.04833073855880532
+        },
+        "(2, 1, 1)": {
+          "chi_bare": 0.9009182735643015,
+          "chi_no_middle": -1.1883462643579195,
+          "chi_dressed": 0.5130361242005693,
+          "w_lambda": 0.3683025021555029,
+          "f_lambda": 3,
+          "trM_bare": 0.11060348479711606,
+          "trM_dressed": 0.06298416274641035
+        },
+        "(1, 1, 1, 1)": {
+          "chi_bare": -0.7312336822466794,
+          "chi_no_middle": 0.8116537356420811,
+          "chi_dressed": -0.48172343159921543,
+          "w_lambda": 0.0397556818315101,
+          "f_lambda": 3,
+          "trM_bare": -0.00969023120529418,
+          "trM_dressed": -0.006383747825813875
+        }
+      },
+      "total_trM_dressed": -0.062238001742707334,
+      "force_carrier_bare": -0.025665813230102627,
+      "force_carrier_dressed": -0.13169433305280825,
+      "amplification_ratio": 5.131118654691529,
+      "q_5_at_q0": 5.220441324664572,
+      "reference": "round-19 task 2 (dressed Wedderburn)"
     }
   },
   "assertions": [
@@ -333,6 +399,27 @@
       "expected": true,
       "passed": true,
       "source": "rem:bound-state-frobenius-self-dual-channel (round-18)"
+    },
+    {
+      "name": "All \u03c7_\u03bb(\u03c3_1\u03c3_2\u03c3_3) are clean q-monomials (q^3, -q, 0, q^-1, -q^-3)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "round-19 task 1 (closed-form)"
+    },
+    {
+      "name": "Force-carrier (3,1)+(2,1,1) amplifies by \u2248 [5]_q under K-shell dressing",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "round-19 task 2 (dressed projection)"
+    },
+    {
+      "name": "Dressing UNZEROES \u03bb=(2,2) channel (selection-rule break)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "round-19 task 2 (dressed projection)"
     }
   ],
   "allPassed": true

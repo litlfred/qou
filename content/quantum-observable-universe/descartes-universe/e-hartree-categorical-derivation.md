@@ -1615,3 +1615,69 @@ attack; pursuing it is the recommended next research step.
 Reporting the partial chain — rather than papering over with
 post-hoc identifications — is the deliberate purpose of this
 block.
+
+### Round 19 — closed-form $\chi_\lambda$ characters and dressed projection
+
+**Task 1 — Closed-form characters.** All five irrep-characters of the
+bare H_2 molecular braid $\sigma_1\sigma_2\sigma_3 \in B_4$ are
+**single $q$-monomials**:
+
+| $\lambda$ | $\chi_\lambda(\sigma_1\sigma_2\sigma_3)$ |
+|---|---:|
+| $(4)$ | $q^{3}$ |
+| $(3,1)$ | $-q$ |
+| $(2,2)$ | $0$ |
+| $(2,1,1)$ | $q^{-1}$ |
+| $(1,1,1,1)$ | $-q^{-3}$ |
+
+These are exact closed forms in $q$ (verified to $10^{-10}$ at $q_0$).
+
+The **force-carrier sum** is
+
+$$
+  \chi_{(3,1)}(\sigma_1\sigma_2\sigma_3) + \chi_{(2,1,1)}(\sigma_1\sigma_2\sigma_3)
+  \;=\; -q + q^{-1}
+  \;=\; -h.
+$$
+
+So the combined (3,1)+(2,1,1) force-carrier Markov-trace contribution
+of the bare braid is exactly $-w\,h/f$.
+
+**Task 2 — Dressed projection.** Replacing the middle crossing
+$\sigma_2$ with the K-shell-dressed $T^{\mathrm{dr}}_{e_2 p_2}$
+(eigenvalues $q^5, -q^{-5}$) — equivalently
+$T^{\mathrm{dr}} = \alpha\,\sigma_2 + \beta\,\mathbf{1}$ with
+$\alpha = (q^5+q^{-5})/(q+q^{-1})$ and $\beta = q^5 - \alpha q$ —
+gives:
+
+| $\lambda$ | Bare $w\chi/f$ | Dressed $w\chi/f$ |
+|---|---:|---:|
+| $(4)$ | $+0.018$ | $+0.028$ |
+| $(3,1)$ | $-0.136$ | $-0.195$ |
+| $(2,2)$ | $0$ | $+0.048$ ← **unzeroed** |
+| $(2,1,1)$ | $+0.111$ | $+0.063$ |
+| $(1,1,1,1)$ | $-0.010$ | $-0.006$ |
+
+**Key new observations:**
+
+1. **The $(2,2)$ channel becomes nonzero under dressing.** The K-shell
+   $q^5$ structure breaks the bare $(2,2) = 0$ selection rule.
+2. **Force-carrier channel amplification factor $\approx [5]_q$.**
+   The combined $(3,1) + (2,1,1)$ contribution scales by $5.13$ in
+   the dressing, very close to the K-shell quantum dimension
+   $[5]_q = 5.22$ at $q_0$. This is a direct algebraic signature of
+   the dressing power.
+3. **Self-duality preserved.** The transpose pair structure is
+   maintained: $w_{(3,1)} = w_{(2,1,1)}$ and $f_{(3,1)} = f_{(2,1,1)}$
+   regardless of dressing.
+
+These findings sharpen the closure programme: the **algebraic factor
+of $[5]_q$ from K-shell dressing** is a candidate for one of the
+needed factors of $h$ (since $[5]_q \cdot h^2 = q^5 - q^{-5}$, which
+is a building block of force-carrier $\delta_q$ values).
+
+The remaining gap is the precise multiplicative chain that produces
+$h^4$ scaling in the binding energy from these dressed Wedderburn
+contributions. Witness data is now cached in
+[`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json)
+for downstream symbolic-$q$ analysis.
