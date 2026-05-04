@@ -147,11 +147,25 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
     V_f_1 = f_lift[key_lift] if kahler_order > 0 else f_lift["V0"]
 
     # ── Tower mass at level 1 ───────────────────────────
+    # NOTE: this path uses kahler_lift_analytic(build_V_hat_symbolic(...))
+    # to produce V̂ values, which carry a DIFFERENT semantic than the
+    # atom_per_generator_volumes used by paper_six_term_isotope_sweep.
+    # The brane-tower MeV calibration (α = m_e · 8G ≈ 3.7445 MeV per
+    # cat unit) applies cleanly to the latter but does NOT apply
+    # directly here without first reconciling the V̂ conventions
+    # (build_V_hat_symbolic emits a 0 entry in V_atom for D, which
+    # atom_per_generator_volumes does not — they are different
+    # objects).  The legacy `E_0 · ℏ_q²` scaling is structurally
+    # wrong in the same way `tower_mass_level(tower_mode='brane')`
+    # was, but recalibrating binding_full to the per-derivation
+    # weights requires switching to atom_per_generator_volumes
+    # throughout — out of scope here.  See
+    # `paper_six_term_isotope_sweep.assemble_per_derivation_weights`
+    # for the working per-term-derivation assembly that achieves
+    # 0.18% mean mass error vs CODATA on A ≤ 9.
     m_a = tower_mass_level(V_a_1, pair_mode=pair_mode)
     m_f = tower_mass_level(V_f_1, pair_mode=pair_mode)
     delta_1 = m_f - m_a
-    # Apply ℏ_q² brane scaling at level 1.  Higher levels are O(ℏ_q⁴)
-    # below AME precision — single level 1 is sufficient.
     tower_MeV = E_0 * HBAR_Q_SQ * delta_1
 
     out["V_atom_0"] = a_lift["V0"]
