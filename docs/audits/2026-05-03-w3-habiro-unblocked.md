@@ -289,6 +289,42 @@ fixed a (q; q)_m vs (u; u)_m ambiguity in its reconstruction; our
 `cyclotomic_expansion` already uses `(1 − u^(m+1))` factors (the
 (u; u)_m Pochhammer convention), so no fix is needed on our side.
 
+### Cross-validation with `term6_residues_at_roots.py` (PR #537)
+
+A second, fully independent reproduction of the D(u) closed form
+landed on `origin/main` in PR #537 a few hours after this work
+began.  `term6_residues_at_roots.py` performs a sympy
+partial-fraction split on the u-plane lift of `tr_M(u²)` (computed
+via the same `markov_peel.tr_M_atomic` symbolic pipeline) and reads
+off the denominator structure as a side-effect.  Its witness for
+⁵Li
+([`term6-residues-at-roots.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/term6-residues-at-roots.witness.json))
+contains:
+
+```
+"denom_pole_order_at_zero": 97
+"denom_factor_no_zero": "2048*(u**2 + 1)**14"
+```
+
+which exactly match this branch's predictions: u-shift `18·5 + 3·2
++ 1 = 97`, prefactor `2^(2·5+1) = 2048`, and cyclotomic exponent
+`(1+u²)^(3·5−1) = (1+u²)^14`.  No coordination between the two
+analyses — the agreement is structural, providing strong external
+cross-validation of:
+
+1. The `2^(2A+1)` and `(1+u²)^(3A−1)` closed-form factors (already
+   proved categorically here from averaged-crossing count + Markov-
+   trace `z^(n−1)`).
+2. The empirical shift formula `18A + 3N + 1` (still conjectural —
+   PR #537 reproduces the value but does not categorically derive
+   it either).
+
+**Reuse opportunity.**  `term6_residues_at_roots.py` could be
+simplified to use the closed-form `D(u)` directly, replacing its
+auto-detection loop (`coeffs_desc[-1-k].equals(0)` and the
+`power_series_invert` call) with a one-line `k = 18*A + 3*N + 1`
+and `Dprime = 2^(2A+1) · (1+u²)^(3A-1)`.  Deferred as a follow-up.
+
 ## Implications
 
 1. **W-3 is unblocked.** The Mittag-Leffler full pole sum
