@@ -1,0 +1,44 @@
+{
+  "engine": "python (sympy symbolic)",
+  "engineVersion": "python 3.11.15, sympy 1.14.0",
+  "computedAt": "2026-05-04T23:41:03.596200+00:00",
+  "computation": "ocneanu-cancellation-derivation",
+  "scriptFile": "ocneanu_cancellation_derivation.py",
+  "description": "First-principles derivation of the cancellation count in the atomic-braid Markov-trace pole order via symbolic-q Hoefsmit seminormal characters \u03c7^\u03bb(\u03b2). Computes the Ocneanu-weighted sum tr_M(\u03b2) = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7^\u03bb(\u03b2) / f^\u03bb symbolically, identifies the lowest-q-power coefficient, and compares to DP-max upper bound from dp_pole_probe to extract the cross-partition cancellation count.",
+  "contentBlock": "docs/audits/2026-05-04-per-nucleon-shift-derivation.md",
+  "data": {
+    "proton_standalone": {
+      "n": 3,
+      "partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "per_lambda_chi": {
+        "(3,)": "q**5/4 + q**3/2 + q/4",
+        "(2, 1)": "(q**22 + 11*q**20 - 13*q**18 + 3*q**16 + q**14 + q**12 - q**10 - q**8 - 3*q**6 + 13*q**4 - 11*q**2 - 1)/(4*q**11)",
+        "(1, 1, 1)": "(-q**4 - 2*q**2 - 1)/(4*q**5)"
+      },
+      "per_lambda_pole_at_q0": {
+        "(3,)": 1,
+        "(2, 1)": -11,
+        "(1, 1, 1)": -5
+      },
+      "trM_pole_at_q0": -11,
+      "empirical_proton_pole": 10,
+      "DP_max_pole": 11,
+      "cross_partition_cancel": -22
+    }
+  },
+  "assertions": [],
+  "allPassed": true
+}

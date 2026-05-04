@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T23:35:48.852341+00:00",
-  "commitSha": "2f186ebc924a9101bd8ce255dc2ab2a4355f1149",
+  "computedAt": "2026-05-04T23:41:53.753682+00:00",
+  "commitSha": "8155ebe30a0558fa0d87de824a6ce42aaef639fb",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1659,6 +1659,7 @@
         "nv-categorical-derivation-probe.witness.json",
         "nv-pslq-extended-basis.witness.json",
         "nv1_candidate_a_doubleprime.witness.json",
+        "ocneanu-cancellation-derivation.witness.json",
         "odd-a-census-search.witness.json",
         "odd-a-decomposition-search.witness.json",
         "p-n-error-isolate.witness.json",
