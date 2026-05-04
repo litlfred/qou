@@ -44,7 +44,6 @@ namespace QOU.AppendixSurreals
 
 universe u
 
-open scoped Ordinal.NaturalOps
 
 /-- A **surreal-coefficient field** `K` is a linearly ordered field
     extending ℝ, equipped with a Conway-style birthday function.
@@ -66,7 +65,8 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
   /-- Birthday is symmetric: `b(-x) = b(x)`. -/
   birthday_neg : ∀ x : K, birthday (-x) = birthday x
   /-- Birthday is bounded under sum by ordinal natural-sum. -/
-  birthday_add_le : ∀ x y : K, birthday (x + y) ≤ birthday x ♯ birthday y
+  birthday_add_le : ∀ x y : K,
+    birthday (x + y) ≤ Ordinal.nadd (birthday x) (birthday y)
   /-- Birthday of a dyadic midpoint is bounded by the natural-sum
       of its parents' birthdays plus one.
 
@@ -90,7 +90,7 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
       `SignSequence.birthday_gonshorIn_le_omega`) and the
       `s.length ≤ 1` cases unconditionally. -/
   birthday_avg_le : ∀ x y : K,
-    birthday ((x + y) / 2) ≤ (birthday x ♯ birthday y) + 1
+    birthday ((x + y) / 2) ≤ Ordinal.nadd (birthday x) (birthday y) + 1
   /-- Real numbers have birthday at most ω. -/
   birthday_ofReal_le_omega : ∀ r : ℝ, birthday (ofReal r) ≤ Ordinal.omega0
   /-- The first infinite surreal `ω` as an element of `K`.
