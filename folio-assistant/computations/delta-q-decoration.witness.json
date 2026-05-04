@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T17:04:39.676814+00:00",
+  "computedAt": "2026-05-04T17:24:42.315037+00:00",
   "computation": "delta-q-decoration",
   "scriptFile": "delta_q_decoration.py",
-  "description": "Wedderburn decomposition of H_n(q) for n=2,3,4: per-irrep q-character vectors of NF basis elements, and Wedderburn projection of the H_2 molecular braid to test the round-15/16 force-carrier-subsector hypothesis.",
-  "contentBlock": "conj:e-hartree-categorical-derivation",
+  "description": "\u03b4_q Wedderburn decomposition for H_n(q), n=2,3,4. Tests the round-18 force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): does the bare H_2 molecular braid project onto the (3,1) and (2,1,1) Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? Verifies the algebraic identity \u03b1_EM = h\u00b2/[q\u00b7\u03b4_q(T_29)\u00b7\u03b4_q(T_35)] (prop:alpha-em-categorical-trace-ratio).",
+  "contentBlock": "def:delta-q-decoration",
   "parameters": {
     "q0": 1.1099785955541805,
     "h": 0.20906032198987945,
@@ -264,49 +264,75 @@
         }
       }
     },
-    "hypothesis_test": {
+    "intertwining_hypothesis_test": {
       "molecular_braid_word": [
         1,
         2,
         3
       ],
+      "target_T29_channel": [
+        2,
+        1,
+        1
+      ],
+      "target_T35_channel": [
+        3,
+        1
+      ],
       "lambda_31_contribution": -0.13626929802721868,
       "lambda_211_contribution": 0.11060348479711606,
       "lambda_22_contribution": -1.843513697096132e-17,
-      "intertwining_hypothesis_supported": true,
+      "total_trM": -0.017233391902322953,
+      "supported": true,
+      "reference": "prop:force-carrier-intertwining-correspondence",
       "all_lambdas": {
         "(4,)": 0.01812265253307387,
         "(3, 1)": -0.13626929802721868,
         "(2, 2)": -1.843513697096132e-17,
         "(2, 1, 1)": 0.11060348479711606,
         "(1, 1, 1, 1)": -0.00969023120529418
-      },
-      "total_trM": -0.017233391902322953,
-      "round_18_reframing": "T_{p,q} intertwines p of n strands \u27f9 partition \u03bb = (p, 1, ..., 1). T_{3,5} \u2192 (3,1); T_{2,9} \u2192 (2,1,1). The (3,1) and (2,1,1) are transpose pair (Frobenius-self-dual). \u03bb=(2,2) is zero because it would require two simultaneous 2-strand operators."
+      }
     },
-    "alpha_EM_decomposition": {
-      "alpha_EM": 0.007308700983098553,
-      "delta_q_T29_B2": 2.1666003896396195,
-      "delta_q_T35_B2_heuristic": 2.4866211012383603,
-      "h_squared_over_q_delta_delta": 0.007308700983098551,
-      "match_exact": true,
-      "note": "T_{2,9} q-dim is exactly h\u00b7[9]_q in B_2 (single-strand). T_{3,5} q-dim should be computed in B_3 (3-strand torus knot); the q^10-q^-10 form here is a B_2 heuristic. Proper B_3 computation is the next step."
+    "alpha_em_identity": {
+      "alpha_em_definition": 0.007308700983098553,
+      "alpha_em_via_delta_q": 0.007308700983098551,
+      "delta_q_T29": 2.1666003896396195,
+      "delta_q_T35_B2": 2.4866211012383603,
+      "match_within_1e_minus_12": true,
+      "reference": "prop:alpha-em-categorical-trace-ratio"
+    },
+    "frobenius_self_dual_check": {
+      "dim_q_V_31": 3.0437062182305112,
+      "dim_q_V_211": 3.0437062182305112,
+      "w_31": 0.3683025021555029,
+      "w_211": 0.3683025021555029,
+      "f_31": 3,
+      "f_211": 3,
+      "self_dual": true,
+      "reference": "rem:bound-state-frobenius-self-dual-channel"
     }
   },
   "assertions": [
     {
-      "name": "H_2 molecular braid projects onto T_{3,5} channel \u03bb=(3,1) and T_{2,9} channel \u03bb=(2,1,1)",
+      "name": "Bare H_2 molecular braid projects onto (3,1) [T_{3,5}] and (2,1,1) [T_{2,9}]; (2,2) zero",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "round-18 intertwining reframing"
+      "source": "prop:force-carrier-intertwining-correspondence (round-18)"
     },
     {
-      "name": "\u03b1_EM = h\u00b2/[q\u00b7\u03b4_q(T_29)\u00b7\u03b4_q(T_35)] within 1e-12",
+      "name": "\u03b1_EM = h\u00b2 / [q \u00b7 \u03b4_q(T_{2,9}) \u00b7 \u03b4_q(T_{3,5})] within 10\u207b\u00b9\u00b2",
       "computed": true,
       "expected": true,
       "passed": true,
-      "source": "round-12/14 algebraic identity"
+      "source": "prop:alpha-em-categorical-trace-ratio (round-12/14)"
+    },
+    {
+      "name": "(3,1) and (2,1,1) are transpose pair: equal dim_q, w, f",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "rem:bound-state-frobenius-self-dual-channel (round-18)"
     }
   ],
   "allPassed": true

@@ -221,6 +221,7 @@ export default chapter({
         "e-hartree-categorical-derivation",
         "bohr-radius-categorical",
         "archimedean-hartree-derivation",
+        "alpha-em-categorical-trace-ratio",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
