@@ -1,3 +1,4 @@
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Canonical Hecke algebra infrastructure for H₃(q).
 
@@ -1412,7 +1413,7 @@ def _load_categorical_shell():
     Recurrence: c_{n+1} = d_n, d_{n+1} = c_n - d_n·h, h = q−q⁻¹.
     All symbolic in q. No Gaussian, no empirical magic numbers.
 
-    Reference: prop:q-integer-mass-formula, conj:shell-closure-nf-term-count
+    Reference: conj:q-integer-mass-formula, conj:shell-closure-nf-term-count
     """
     _h = q0 - qi
     c, d = 0.0, 1.0
@@ -1438,7 +1439,7 @@ def magic_proximity(x, sigma=None):
     Fully categorical: γ(Z) from the Hecke recurrence in q.
     No Gaussian, no empirical magic numbers.
 
-    Reference: prop:q-integer-mass-formula
+    Reference: conj:q-integer-mass-formula
     """
     Z = int(round(x))
     if Z in _CATEGORICAL_SHELL:
@@ -2901,7 +2902,18 @@ def free_nucleon_frobenius_norm_sq(Z, N, k_cap=None):
     return norm_sq
 
 
-E_0_CALIBRATION_MEV = 0.782  # Q-value of free neutron β-decay (MeV).
+from experimental_constants import (  # noqa: E402
+    Q_NEUTRON_MEV as _Q_NEUTRON_MEV,
+    Q_NEUTRON_MEV_ERR as _Q_NEUTRON_MEV_ERR,
+)
+
+# Free-neutron β-decay Q-value, derived from CODATA 2022:
+#   Q_β(n) = m_n - m_p - m_e = 0.78233341 ± 6.1×10⁻⁷ MeV
+# Authoritative source: experimental_constants.Q_NEUTRON_MEV (computed
+# from CODATA mass constituents, not hardcoded). Audited by
+# `e0_calibration_audit.py`.
+E_0_CALIBRATION_MEV     = _Q_NEUTRON_MEV
+E_0_CALIBRATION_MEV_ERR = _Q_NEUTRON_MEV_ERR
 # Single calibration constant E_0 prescribed by prop:categorical-mass-markov
 # as the dimensional bridge τ: R → ℝ from categorical mass to MeV.
 # "To obtain physical masses in MeV, multiply by a calibration constant E_0,

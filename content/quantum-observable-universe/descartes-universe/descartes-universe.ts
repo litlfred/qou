@@ -213,6 +213,11 @@ export default chapter({
         "gram-kappa-spectral-interpretation",
         "chern-simons-as-knot-invariant",
         "alpha-em-gluon-octet-form",
+        "alpha-em-derivation-open-problems",
+        "em-coupling-bring-zero-mode",
+        "alpha-em-derivation-exploration-options",
+        "em-coupling-reeb-holonomy-falsified",
+        "em-coupling-stratum-coupling-h3-attempt",
         "q-chromaticity",
         // Integer stability and Diophantine valley
         "integer-stability",
@@ -332,10 +337,21 @@ export default chapter({
         "baryon-period-conjecture",
         "baryon-integration-limit",
         "mobius-golden-fixed-points",
+        "golden-skew-dual-node",
+        "bar-self-dual-confinement-band",
+        "bar-t-duality-substrate",
+        "bar-apply-transfer",
+        "golden-quartet-galois",
+        "moduli-symmetry-d4",
         "mobius-limit-from-thimble",
         // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
         "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",
+        // Algebraic-geometric duality of PL and SW theories
+        "gb-reduction-pl-thimble-bijection",
+        "denominator-zeros-as-sw-critical-points",
+        "abelianisation-at-algebraic-poles",
+        "pl-jsj-mass-integration-equivalence",
       ],
     }),
     // ── §5. Orbital symmetry and cohomological embedding ────────────

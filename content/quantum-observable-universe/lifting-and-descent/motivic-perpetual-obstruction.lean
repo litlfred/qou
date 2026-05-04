@@ -13,7 +13,7 @@ This file states the lemma; the proof uses QU-to-QOU + HKR and is
 deferred to a substrate axiom in concrete instances.
 
 Ref: [yekutieli2010] — obstruction theory
-LaTeX label: `lem:motivic-perpetual-obstruction`
+LaTeX label: `conj:motivic-perpetual-obstruction`
 -/
 
 namespace QOU.LiftingDescent
@@ -40,7 +40,7 @@ namespace QOU.LiftingDescent
 
     Downstream blocks (Kummer tower, Descartes-Yekutieli, chi=-6
     derivation, Hochschild–Kummer connection) all become
-    corollaries: see `lem:motivic-perpetual-obstruction` in
+    corollaries: see `conj:motivic-perpetual-obstruction` in
     the .md file.
 
     Ref: [yekutieli2010] §3-4 (gerbe obstruction); HKR comparison.

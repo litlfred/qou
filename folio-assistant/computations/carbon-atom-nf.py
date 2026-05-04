@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Full atom NF computation: NF(A(Z, N)) including electrons, via
 Gröbner–Shirshov reduction in H_n(q).

@@ -349,6 +349,109 @@ adding ONLY Term 7 to a baseline captures 6–25% of binding (⁴He hits
 the high end at 25% as doubly-magic).  This is bottom-up: Term 7 is
 the magic-A residue contribution.
 
+## Appendix C: post-#442 infrastructure recompute (2026-04-30+)
+
+After PR #442 merged, the watched branch's R1–R6 Rust kernel + several
+new Python evaluators landed on `origin/main`.  Re-running the canonical
+chain pieces against fresh witnesses confirms / extends the family-aware
+picture:
+
+### C.1  binding_canonical.py — Term-1-only baseline
+
+[`binding_canonical.py`](../folio-assistant/computations/binding_canonical.py)
+implements `B = E_0 · (|tr_M(W_free)| − |tr_M(W_atom)|)` directly via the
+canonical Jones–Markov trace.  Run on the 4-atom family-1+2 set:
+
+| Atom | A | 3A | B_AME (MeV) | \|tr_atom\| | \|tr_free\| | B_pred (MeV) | \|Δm/m\|% | runtime |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| D | 2 | 6 | 2.225 | 3.88e-1 | 9.84e-1 | **+0.466** | 0.094% | 0.01s |
+| T | 3 | 9 | 8.482 | 1.04e-1 | 9.08e-1 | **+0.629** | 0.279% | 0.23s |
+| ³He | 3 | 9 | 7.718 | 2.07e-1 | 1.05e+0 | **+0.658** | 0.251% | 0.08s |
+| ⁴He | 4 | 12 | 28.296 | 5.53e-2 | 9.67e-1 | **+0.713** | 0.735% | 2.29s |
+
+**Headline:** the canonical formula `B = m_e · ρ · tr_M(T_w)` with the
+default ρ = 1 captures only ~3–8% of the AME binding for these atoms.
+The ~5–19% residuals in `mass-table-ppb.witness.json` come from a
+**layered formula**: canonical Term 1 (this) + magic-A `A · 8G`
+(Term 7) + α-cluster cross-couplings + Wigner T-pairing + chirality.
+
+### C.2  atomic_tr_m_mpfr_50dps.py + markov_peel.py — two-path validation
+
+[`atomic_tr_m_mpfr_50dps.py`](../folio-assistant/computations/atomic_tr_m_mpfr_50dps.py)
+computes `tr_M` at MPFR 50-dps via the Hoefsmit-bridge.
+[`markov_peel.py`](../folio-assistant/computations/markov_peel.py)
+(PR #508) computes the same trace via the Markov-axiom recursion
+`tr_M^{(n)}(x · σ_{n−1}) = z · tr_M^{(n−1)}(x)` without materialising
+Wedderburn blocks.  Independent validation:
+
+| Atom | tr_M Hoefsmit-bridge (50 dps) | tr_M Markov-peel (50 dps) | \|bridge − peel\| |
+|---|---|---|---|
+| p | … | … | 7.7e-17 |
+| D | 0.388286471547713419… | 0.388286471547713278… | 1.4e-16 |
+| T | 0.104052118675525731… | 0.104052118675525654… | 7.7e-17 |
+| ³He | 0.206540858562262749… | 0.206540858562262629… | 1.2e-16 |
+
+The two paths agree at the floor of the working precision (~10⁻¹⁶ at
+50 dps).  This is **independent triangulation** of the canonical
+Markov-trace value: the closed-form Wenzl-bridge / Hoefsmit
+construction matches the recursive Ocneanu peel without any shared
+intermediate.  Cross-validation `test_markov_peel.py` reports 13/13
+tests pass for {p, n, D, T, ³He}; ⁴He smoke check also passes.
+
+### C.3  Mass-table-ppb status — unchanged since PR #442
+
+[`mass-table-ppb.witness.json`](../folio-assistant/computations/mass-table-ppb.witness.json)
+last computed 2026-04-25; numbers identical to those in Appendix B
+(⁴He +5.87%, ¹²C +5.41%, ⁴⁰Ca +19.51%).  6 atoms still in
+`atoms_no_assignment` list (⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹⁴N, ¹⁹F).  The
+description identifies the formula as:
+
+  **Kashaev law: B = ρ_F · Vol_hyp(K)** with ρ_F ∈ {m_e, 2m_e}
+
+This is the post-Archimedean naming — at q = q_0, `tr_M(T_w) =
+Vol_hyp(closure)` via the volume conjecture, so the Kashaev-law value
+agrees with the canonical formula's `B = m_e · ρ · tr_M(T_w)`.  Two
+naming conventions, one number.
+
+### C.4  GAP 4 / GAP 5 status
+
+The R1–R6 Rust kernel + LR cross-level embedding are now production-ready
+on main:
+- [`tools/hecke-engine/src/wedderburn_psd.rs`](../tools/hecke-engine/src/wedderburn_psd.rs) (R3) — Wedderburn-block PSD evaluator
+- [`tools/hecke-engine/src/sturm_psd.rs`](../tools/hecke-engine/src/sturm_psd.rs) (R4) — Sturm bound PSD verifier
+- [`tools/hecke-engine/src/cross_level_embedding.rs`](../tools/hecke-engine/src/cross_level_embedding.rs) (R5min) — Littlewood–Richardson edge consistency
+- [`tools/hecke-engine/src/joint_tower_sdp.rs`](../tools/hecke-engine/src/joint_tower_sdp.rs) (R1+R2+R6) — GB-NF reducer + certificate emitter
+
+Despite this infrastructure, **⁶Li and ⁷Li still have no T_w / no ρ /
+no B_pred** in any witness on main.  GAP 4 (T_w for family 4) and
+GAP 5 (ρ for family 4) remain open — the SDP at H_18 / H_21 has not
+yet been instantiated.  Our hypothesis A.2 (LR cluster decomposition,
+e.g. ⁶Li ≈ α + D, ⁷Li ≈ α + T) remains testable but untested.
+
+### C.5  What's now ready to run
+
+| Script | What it produces | Coverage | Runtime |
+|---|---|---|---|
+| `binding_canonical.py` | Term-1 B_pred via canonical tr_M | D, T, ³He, ⁴He | < 3s total |
+| `atomic_tr_m_mpfr_50dps.py` | tr_M at 50 dps (two paths) | p, n, D, T, ³He | ~30s for ³He |
+| `markov_peel.py` | Recursive tr_M, no Wedderburn | A ≤ 3 active; A ≥ 4 deferred (Phase 2 of #508) | ~10s for ³He |
+| `test_markov_peel.py` | 13 cross-validation tests | p–⁴He | ~80s |
+| `atom_mass_partition.py` | Partition-by-partition Markov | up to A = 40 | 0.25s for ⁴⁰Ca |
+| Rust `joint_tower_sdp` (binary) | GB-NF certificate + Wedderburn PSD | H₁ to H₉ | (Rust runtime) |
+
+### C.6  What recompute is still blocked
+
+| Need | Blocker |
+|---|---|
+| Magic-A formula evaluator at A = 4, 16, ... | No standalone script that combines Term-1 (canonical) + Term-7 (magic-A `2A·8G`) yet; mass-table-ppb does this internally but isn't a callable function |
+| α-cluster recursion at ⁸Be–⁴⁰Ca | `cross_level_embedding.rs` (R5min) verifies edges but the **recursion driver** to compose ⁴He cluster T_w's into heavier atoms isn't separated from `mass-table-ppb`'s pipeline |
+| Family-4 (⁶Li, ⁷Li) | No T_w derivation method; H_18/H_21 SDP not yet instantiated |
+
+Three concrete v5 deliverables would unblock the rest:
+1. **`magic_A_formula.py`** — exposes the `B = ρ · m_e · A · 8G` rule as a callable for ⁴He (doubly-magic Z=N=2; the watched-branch's `methodology-deprecation.witness.json` lists magic-A only for ⁴He at the light-A end. Heavier doubly-magic atoms ¹⁶O and ⁴⁰Ca use the recursive-on-4He methodology — see deliverable 2)
+2. **`alpha_cluster_recursion.py`** — composes T_w(⁴He) recursively for ⁸Be (= 2α), ¹²C (= 3α), etc., using R5min edges
+3. **Family-4 derivation** (the actual research gap) — derive T_w for ⁶Li, ⁷Li from cluster ansatz + SDP feasibility
+
 The family-3 error grows because each α-cluster carries family-2's
 ~6% residual; recursively, the residuals accumulate.  A v5 implementation
 against the canonical pipeline should expect:

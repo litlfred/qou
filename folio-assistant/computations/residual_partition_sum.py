@@ -112,7 +112,8 @@ def main() -> int:
     print("SUB-PPM RESIDUAL ANALYSIS for p, n (after 5/2·m_e correction)")
     print('=' * 100)
     mp_tower = mp.mpf('936.9942387')
-    Q_n = mp.mpf('0.782')           # physical neutron β-decay Q-value
+    from experimental_constants import Q_NEUTRON_MEV
+    Q_n = mp.mpf(str(Q_NEUTRON_MEV))  # 0.78233341 MeV (CODATA-derived)
     # Corrected predictions
     mp_corrected = mp_tower + (mp.mpf(5) / 2) * me
     mn_corrected = mp_tower + Q_n + me + (mp.mpf(5) / 2) * me

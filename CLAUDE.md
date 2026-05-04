@@ -124,6 +124,7 @@ When a user request arrives, route to the right skill(s):
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
 | "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
 | "diff / changes / what changed / undo" | `local/diff` | reader |
+| "watch / watch main / watch upstream / watch this PR / watch branch X / what's landing" | `local/watch` | reader |
 | "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
 | "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
 | "dangling remarks / audit remarks / remark backing" | `local/remark-audit` | reader |
@@ -171,7 +172,7 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values |
 | `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit |
 | `owner` | All collaborator skills + deployment-auth |
 
@@ -196,6 +197,43 @@ including the detailed decision tree and Lean-specific routing table.
 Follow the detailed rules in `.github/copilot-instructions.md` — they govern
 LaTeX structure, labeling, cross-references, prose style, notation, and skill
 usage for content changes.
+
+### LP / SDP duals — first-class infra (do not skip)
+
+Per `prop:operator-selection-lp` § *dual program*, every operator-
+selection / shadow-price / knot-operator-selection compute MUST
+emit BOTH primal and dual variables in its witness JSON:
+
+| field | meaning |
+|-------|---------|
+| `y0_star` | shadow price of the net constraint |
+| `y_star` | shadow prices of Frobenius positivity constraints (≥ 0) |
+| `active_set` (or `active_constraints` / `active_channels`) | indices `i` with `y_star[i] > 0` |
+| `primal_obj` | $\sum_i t_i x_i^*$ |
+| `dual_obj` | $n_{\text{target}} \cdot y_0^*$ (= primal_obj by strong duality) |
+| `duality_gap` | $|\text{primal\_obj} - \text{dual\_obj}|$ |
+
+**Canonical entry point**:
+[`folio-assistant/computations/lp_dual_solver.py`](folio-assistant/computations/lp_dual_solver.py)
+exposes `solve_operator_selection_lp(t, G, n_target)` and
+`solve_psd_operator_selection_sdp(t, G, n_target)`. Both return
+a result whose `.to_dict()` contains all required fields.
+
+**CI enforcement**:
+[`folio-assistant/computations/lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)
+runs in `witness-pipeline.yml` (warn-only by default; `--strict`
+fails CI). Scans every `*.witness.json` whose name or
+`description`/`computation` field signals an LP/SDP/operator-
+selection compute and verifies the dual fields are present.
+
+**Why this matters**: the dual variables ARE the binding-energy
+shadow prices. The active demand channels (`y_star[i] > 0`) are
+the "most receptive sub-braids" — they identify which Wedderburn
+blocks the bound state actually saturates. Solving only the
+primal loses this structural information, which has been the
+historical pattern (58 of 58 LP/SDP witnesses on `main` lacked
+the dual at the time this rule was added). Do not repeat this
+pattern.
 
 ## Writing `.lean` proofs — rules for agents
 
@@ -319,18 +357,70 @@ All declarations live under the `QOU` root namespace.
 
 ### 3b. Conjectural propagation and Lean formalization of conjectures
 
-**Conjectural propagation rule (STRICT):** A statement that depends
-on (is downstream of) a conjecture **cannot** be a `theorem`,
-`proposition`, `lemma`, or `corollary`.  It must be `conjecture`.
-Only statements proved from established results (definitions,
-previously proved theorems, axioms) may use provable block kinds.
+**Conjectural propagation rule (STRICT, with conditional-class
+exception per §3b-cond below):** A statement that depends on (is
+downstream of) a conjecture **cannot** be a `theorem`,
+`proposition`, `lemma`, or `corollary` *unless* it satisfies the
+conditional-class exception (§3b-cond). Only statements proved
+from established results (definitions, previously proved theorems,
+axioms) — or proved from explicit conditional hypotheses — may
+use provable block kinds.
 
 - If `uses[]` contains a `conj:` label (directly or transitively),
-  the block **must** be kind `conjecture`.
-- "Proof" blocks downstream of conjectures become `remark` blocks
-  with `interprets: "conj:..."` (proof *sketches*, not proofs).
+  the block **must** be either:
+  - kind `conjecture`, or
+  - a provable kind satisfying the **conditional-class exception**
+    (§3b-cond) — i.e. the conjecture is axiomatised as a Lean
+    class and the downstream block's Lean statement carries that
+    class as an explicit `[Instance]` hypothesis.
+- "Proof" blocks downstream of conjectures (without conditional-
+  class) become `remark` blocks with `interprets: "conj:..."`
+  (proof *sketches*, not proofs).
 - `remark` blocks may freely interpret conjectures (they make no
   logical claims).
+
+#### §3b-cond — Conditional-class exception (Option B, 2026-05-02)
+
+A `theorem`/`proposition`/`lemma`/`corollary` block whose `uses[]`
+cone transitively touches a `conj:C` may keep its provable kind
+**iff all of**:
+
+1. **Class axiomatisation.** `conj:C` has a Lean
+   `class C` declaration in its `.lean` file, with class fields
+   encoding the conjecture's content. The class instance is
+   the only `sorry` in the entire downstream chain.
+2. **Explicit hypothesis on Lean side.** The downstream block's
+   Lean declaration has the class as an explicit `[Instance]`
+   hypothesis. Example:
+   ```lean
+   theorem downstream_result {M : Type*} [C M] : … := by
+     -- proof uses C.field1, C.field2 as hypotheses; otherwise
+     -- fully verified by Lean.
+   ```
+3. **Explicit conditional banner on narrative side.** The `.md`
+   block opens with: **Theorem (conditional on
+   [`conj:C`](path/to/C.md)).** The body cites the conjectural
+   hypothesis where used.
+4. **`uses[]` includes the conjecture explicitly.** The
+   conditional dependency is auditable from the manifest.
+
+When all four hold, the block represents a *rigorous conditional
+result* — fully verified by Lean modulo a single, named,
+class-axiomatised conjectural input. This pattern preserves the
+distinction between rigorous-conditional and unproved-conjecture
+content.
+
+**Audit treatment.** The `conjectural-propagation` audit
+(`content/pipeline/conjectural-propagation-audit.ts`) reports such
+blocks separately as **conditional-on-class** rather than as
+violations. To opt a block into this status, ensure its Lean
+declaration contains a class hypothesis matching one of the
+conjectures in its transitive `uses[]` cone, and confirm the
+narrative banner. The audit script will detect the pattern and
+classify the block accordingly.
+
+(Pre-existing CLAUDE.md text continues from line 335.)
+
 
 **Definitions and conjectures (clarification):** The propagation
 rule above applies to **provable claims** (`theorem`, `proposition`,

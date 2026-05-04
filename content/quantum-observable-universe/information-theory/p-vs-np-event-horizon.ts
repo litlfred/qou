@@ -16,7 +16,6 @@ export default remark({
     "information-flow",
   ],
   uses: [
-    "conj:p-vs-np-boundary",
     "rem:hawking-radiation",
     "def:big-bang-state",
   ],

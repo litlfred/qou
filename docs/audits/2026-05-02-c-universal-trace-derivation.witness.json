@@ -1,0 +1,82 @@
+{
+  "computation": "c-universal-trace-derivation",
+  "computedAt": "2026-05-03T00:33:45.038156+00:00",
+  "q_0": 1.1099785955541805,
+  "cycle_type": [
+    3,
+    3,
+    2,
+    1
+  ],
+  "partitions": [
+    [
+      9
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      5,
+      4
+    ]
+  ],
+  "per_partition_contributions": [
+    {
+      "partition": [
+        9
+      ],
+      "w_lambda_q0": 2.0057592416757145e-05,
+      "chi_MN": 1,
+      "contribution": 2.0057592416757145e-05
+    },
+    {
+      "partition": [
+        8,
+        1
+      ],
+      "w_lambda_q0": 0.0001349486343499965,
+      "chi_MN": 0,
+      "contribution": 0.0
+    },
+    {
+      "partition": [
+        7,
+        2
+      ],
+      "w_lambda_q0": 0.0003546498716650844,
+      "chi_MN": 0,
+      "contribution": 0.0
+    },
+    {
+      "partition": [
+        6,
+        3
+      ],
+      "w_lambda_q0": 0.00043140567028567516,
+      "chi_MN": 2,
+      "contribution": 0.0008628113405713503
+    },
+    {
+      "partition": [
+        5,
+        4
+      ],
+      "w_lambda_q0": 0.00019164610145478442,
+      "chi_MN": 0,
+      "contribution": 0.0
+    }
+  ],
+  "c_numerical": 0.0008828689329881074,
+  "c_symbolic_at_q0": 0.0008828689329881074,
+  "c_symbolic_form": "(2*q**52 + 2*q**50 + 6*q**48 + 8*q**46 + 10*q**44 + q**43 + 14*q**42 + 16*q**40 + q**39 + 18*q**38 + 20*q**36 + q**35 + 20*q**34 + 18*q**32 + q**31 + 16*q**30 + 14*q**28 + q**27 + 10*q**26 + 8*q**24 + 6*q**22 + 2*q**20 + 2*q**18)/(q**70 + 7*q**68 + 28*q**66 + 83*q**64 + 202*q**62 + 426*q**60 + 804*q**58 + 1387*q**56 + 2219*q**54 + 3326*q**52 + 4705*q**50 + 6316*q**48 + 8079*q**46 + 9878*q**44 + 11572*q**42 + 13012*q**40 + 14061*q**38 + 14614*q**36 + 14614*q**34 + 14061*q**32 + 13012*q**30 + 11572*q**28 + 9878*q**26 + 8079*q**24 + 6316*q**22 + 4705*q**20 + 3326*q**18 + 2219*q**16 + 1387*q**14 + 804*q**12 + 426*q**10 + 202*q**8 + 83*q**6 + 28*q**4 + 7*q**2 + 1)",
+  "interpretation": "Closed-form Schur-Weyl sum for the universal triple Markov trace c. Sum is over length-\u2264-2 partitions of 9 (five partitions) with q-Plancherel weights and MN characters on the atom-triple braid cycle type. Result is a Laurent polynomial in q evaluated at q_0."
+}

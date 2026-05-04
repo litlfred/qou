@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 6-term mass formula at MPFR 50 dps — Phase A precision lift.
 

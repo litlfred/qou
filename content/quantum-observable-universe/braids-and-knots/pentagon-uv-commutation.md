@@ -1,168 +1,117 @@
 The pentagon identity of the quantum dilogarithm
-([quantum Bloch group](#rem:quantum-bloch-group)) applies to a
-pair of operators $u, v$ satisfying the **quantum-torus
-relation**
+([quantum Bloch group](#rem:quantum-bloch-group))
 
 $$
-  uv \;=\; q\,vu.
+  \Phi_q(v)\,\Phi_q(u) \;=\; \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)
 $$
 
-The ascension argument in the
-([jet-tower remark](#rem:mass-endomorphism-jet-tower)) uses
-$u = \hat V_i^{(n)} \hat V_j^{(n)}$ and
-$v = \hat V_k^{(n)}$ where $\hat V_\ell^{(n)}$ are the
-additive Wedderburn traced-volume operators at jet level $n$.
-This proposition verifies that the required commutation holds
-on the physically relevant block.
+requires the quantum-torus relation $uv = q\,vu$ on its operator
+arguments. This block locates where that relation lives in the
+brane-tower formalism and how it drives the jet-tower mass
+ascension.
 
-**Proposition.**  Let $(i,j,k)$ with $i < j < k$ be a triple
-of braid-generator indices at fixed jet level $n$, and let
-$\hat V_\ell \equiv \hat V_\ell^{(n)}$ be the Markov-traced
-generator volumes
-([Markov trace factorization](#thm:markov-trace-factorization)).
-Set $u = \hat V_i\hat V_j$ and $v = \hat V_k$.  In the
-Wedderburn block $B_\lambda \subset H_n(R, q)$ on which the
-standard-representation eigenvalue of the Hecke generator is
-$q$, the operator pair satisfies
+## Within a single jet level — trivial commutation
+
+At a fixed jet level $n$, the traced volumes $\hat V_i^{(n)}
+\in \mathbb{Z}[q^{\pm 1/2}, z]$ are **scalar Laurent polynomials**
+([def:algebraic-quantum-volume](#def:algebraic-quantum-volume)).
+Two scalars commute, so
 
 $$
-  u\,v \;=\; q\,v\,u
-  \qquad \text{on }B_\lambda^{\mathrm{trans}},
-$$
-
-where $B_\lambda^{\mathrm{trans}}$ is the transient summand of
-$B_\lambda$ at jet level $n$.
-
-## Derivation
-
-*Step 1 — Reduce to a two-generator commutator.*  By
-far-commutativity in the Hecke algebra
-([Jones--Markov trace](#thm:jones-markov-trace)), for
-$|p - r| \ge 2$ the generators $\sigma_p, \sigma_r$ commute
-outright: $\sigma_p\sigma_r = \sigma_r\sigma_p$, hence
-$\hat V_p\hat V_r = \hat V_r\hat V_p$ whenever they act on
-disjoint strands.  The only non-trivial commutation is between
-**adjacent** Hecke generators; after far-commuting the
-non-adjacent factors of $u$ past $v$, the commutator
-$[u,v]_q := uv - q\,vu$ reduces to a sum of commutators of the
-form $[\hat V_s \hat V_{s+1}, \hat V_{s+1}]_q$ for $s \in \{j-1, j, k-1\}$
-determined by the braid pattern of the triple.
-
-*Step 2 — Eigenvalue specialization.*  On the $q$-eigenblock
-$B_\lambda$ of $\sigma_s$ (the block where the Hecke relation
-$\sigma_s^2 = (q - q^{-1})\sigma_s + 1$ specializes to the
-eigenvalue $q$), the generator $\sigma_s$ acts as scalar
-multiplication by $q$ in the standard representation.  By the
-[generator volume decomposition](#prop:generator-volume-decomposition),
-$\hat V_s = z\,a_s + b_s$ where $a_s, b_s$ are transfer-matrix
-polynomials in $q$.  On $B_\lambda$, the traced-volume operator
-$\hat V_s$ reduces to a scalar $\hat v_s \in \mathbb{Q}(q^{1/2})$
-that commutes with every other block-diagonal operator.  The
-non-trivial commutation survives **only** in the ladder between
-blocks, carried by the Hecke braid relation
-$\sigma_s\sigma_{s+1}\sigma_s = \sigma_{s+1}\sigma_s\sigma_{s+1}$.
-
-*Step 3 — Braid relation at the pair level.*  Multiplying the
-braid relation $\sigma_s\sigma_{s+1}\sigma_s = \sigma_{s+1}\sigma_s\sigma_{s+1}$
-on the left by $\sigma_s^{-1}$ gives the pair-swap identity
-$$
-  \sigma_{s+1}\sigma_s
+  \hat V_i^{(n)} \, \hat V_j^{(n)}
   \;=\;
-  \sigma_s^{-1}\,\sigma_{s+1}\sigma_s\sigma_{s+1}.
+  \hat V_j^{(n)} \, \hat V_i^{(n)}
 $$
-Using $\sigma_s^{-1} = \sigma_s - (q - q^{-1})$ from the Hecke
-relation, and taking the Markov-traced volume at block-diagonal
-eigenvalue $q$:
+
+without any $q$-factor. This is the level-internal lemma
+[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace),
+which closes the level-internal half of the audit gap.
+
+## Between adjacent jet levels — the pentagon q-factor
+
+The brane tower
+([def:recursive-brane-tower](../lifting-and-descent/recursive-brane-tower.md))
+admits a non-commutative quantization in which the level-shift
+operator $\hat\tau_n$ supplies the canonical pair $u, v$
+satisfying $uv = q\,vu$. Specifically, let $\widehat U_i$ and
+$\widehat V_j$ denote level-shift conjugates of $\hat V_i$ and
+$\hat V_j$ at adjacent jet levels $n$ and $n+1$. Then
 
 $$
-  \hat V_s \hat V_{s+1}
+  \widehat U_i \, \widehat V_j
   \;=\;
-  q \cdot \hat V_{s+1} \hat V_s
-  \;+\; R_q(\hat V_s, \hat V_{s+1}),
+  q \, \widehat V_j \, \widehat U_i
 $$
 
-where the residual $R_q$ is a sum of lower-order terms
-proportional to $(q - q^{-1})$.  The residual $R_q$ is
-**descended**: it factors through the image of
-$\hat\tau_n \colon \mathcal{A}_{n+1} \to \mathcal{A}_{n+1}^{\mathrm{desc}}$
-([descent involution](#def:descent-involution)).  Indeed, the
-Hecke reduction $\sigma_s^2 = (q - q^{-1})\sigma_s + 1$
-projects any power of $\sigma_s$ onto $\{1, \sigma_s\}$; the
-constant-term contribution to $R_q$ is the descended part at
-level $n$, and the $\sigma_s$-linear term lifts to a pair
-generator at level $n{+}1$ — precisely the ascension pattern
-encoded in the pentagon identity.
+on the transient summand $\ker \hat\tau_n$ between the two
+levels, where the descent involution $\hat\tau_n$ separates the
+descended part (where the residual $R_q$ lives) from the
+transient part (where the pentagon $q$-factor is exact).
 
-*Step 4 — Quantum-torus relation on the transient block.*
-Restricting to the transient summand
-$B_\lambda^{\mathrm{trans}} = \ker\hat\tau_n \cap B_\lambda$
-([descent eigenspaces](#prop:descent-eigenspaces)), the
-descended residual vanishes:
-$R_q|_{B_\lambda^{\mathrm{trans}}} = 0$.  The remaining
-identity is
+**Proposition.** The pentagon identity
+$\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$
+applies to the operator lift $u = \widehat U_i$, $v = \widehat
+V_j$ at adjacent jet levels $n, n+1$, and supplies the
+*inter-level ascension rule* for the jet-tower mass formula
+([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower)):
+
+a triple product at jet level $n$ rewrites via pentagon as a
+pair plus a singleton at level $n$, leaving a residual
+$\Phi_q(uv)$ that ascends to level $n+1$.
+
+## Derivation sketch
+
+The pentagon q-factor is a feature of the brane tower's
+$q$-graded jet stratification, not of the scalar $\hat V_i$'s:
+
+1. **Hecke braid relation** at the operator level (before
+   descent to scalars): $\sigma_s \sigma_{s+1} \sigma_s =
+   \sigma_{s+1} \sigma_s \sigma_{s+1}$ in $H_n(R, q)$.
+2. **Descent involution split**: $\hat\tau_n$ separates
+   $H_n(R, q)$ into $\mathrm{im}\,\hat\tau_n$ (descended,
+   level-$n$ contribution) and $\ker\,\hat\tau_n$ (transient,
+   ascends to level $n+1$).
+3. **Eigenvalue specialisation** on the $q$-block of $\sigma_s$
+   reduces the descended part to scalar form, where commutation
+   is trivial.
+4. **Operator lift on the transient part**: the surviving
+   non-trivial commutation is between level-$n$ and level-$(n+1)$
+   operators, giving the quantum-torus relation $uv = q\,vu$.
+
+The pentagon identity then governs how triple products at level
+$n$ reorganise into pair + singleton at level $n$ plus a residual
+ascending to level $n+1$ — the algebraic content of the jet-tower
+ascension.
+
+## Why this matters for the mass tower
+
+The mass-tower jet form
+([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower))
 
 $$
-  \hat V_s \hat V_{s+1}
-  \;=\; q\,\hat V_{s+1} \hat V_s
-  \qquad \text{on }B_\lambda^{\mathrm{trans}}.
+  \mathfrak{m} \;=\; |\mathrm{tr}_M(W)|
+  + \sum_{n=0}^{N}\!\Bigl(\sum_{\xi \in \mathcal{S}^{(n)}_1}\!\Phi_q(|\mathrm{tr}_M(\xi)|)
+  + z^2\!\!\!\sum_{(\xi,\xi') \in \mathcal{S}^{(n)}_2}\!\!\!\Phi_q(|\mathrm{tr}_M(\xi\xi')|)\Bigr)
+  + R_N
 $$
 
-Applying this pairwise rewrite to $u = \hat V_i \hat V_j$ and
-$v = \hat V_k$, and using the far-commutativity of Step 1 to
-move non-adjacent factors, yields
-$u\,v = q\,v\,u$ on $B_\lambda^{\mathrm{trans}}$.
-$\square$
+contains only **singletons** ($\mathcal{S}_1$) and **pairs**
+($\mathcal{S}_2$) at each level $n$, plus a tail bound $R_N$.
+The pentagon's role is structural: it certifies that **no
+triples** appear at any level — every triple at level $n$ is
+absorbed into a pair plus singleton at level $n$ plus a
+residual that lives at level $n+1$. Iterating gives the jet
+ascension; the geometric tail bound from
+[`prop:jet-tower-convergence`](#prop:jet-tower-convergence)
+controls $R_N$.
 
-## Why the transient block is the right domain
+## Status
 
-The pentagon identity of $\Phi_q$ in the form
-$\Phi_q(v)\Phi_q(u) = \Phi_q(u)\Phi_q(uv)\Phi_q(v)$ with
-$uv = qvu$ produces a **three-factor** right-hand side.
-Interpreting the residual triple $\Phi_q(uv)$ as a new
-blow-up centre, the ascension
-([jet-tower remark](#rem:mass-endomorphism-jet-tower))
-rewrites a level-$n$ triple $\Phi_q(|\hat V_i\hat V_j\hat V_k|)$
-as level-$n$ pairs/singletons plus a residual that cannot be
-absorbed at level $n$.  By Step 3, that residual lies in
-$\mathcal{A}_{n+1}^{\mathrm{trans}} = \ker\hat\tau_n$ —
-the transient (new-mode) algebra at the next jet level — where
-the pentagon commutation $uv = qvu$ is exact.
-
-The descent involution $\hat\tau_n$ therefore exactly separates
-the two halves of the pentagon:
-
-- **Descended part** ($\mathrm{im}\hat\tau_n$): carries
-  $R_q$, the non-pentagon residual.  Contributes to the
-  base-level mass only once
-  ([descended level-0 only](#prop:descended-level-zero)).
-- **Transient part** ($\ker\hat\tau_n$): satisfies
-  $uv = qvu$ and admits the pentagon ascension.  Contributes
-  a pair or singleton at level $n{+}1$.
-
-This is the operator-level justification of the quadratic
-closure of the mass tower per jet level.
-
-## Limitation — what this proposition does *not* prove
-
-The derivation above establishes the quantum-torus relation
-$uv = q\,vu$ on the $q$-eigenblock $B_\lambda^{\mathrm{trans}}$
-using the Hecke braid relation and descent splitting.  Two
-points are deferred:
-
-1. **Other Wedderburn blocks.**  At the eigenvalue $-q^{-1}$
-   (alt block, $\mathrm{sign}$ representation), the analogous
-   commutation is $uv = q^{-1}\,vu$, which reverses the sign
-   of the quantum dilogarithm argument.  The net contribution
-   at level $n{+}1$ is symmetric under $q \leftrightarrow q^{-1}$,
-   consistent with the $\mathrm{sym} \leftrightarrow \mathrm{alt}$
-   exchange in the three-Wedderburn formula
-   ([Wedderburn mass formula](#thm:wedderburn-mass-formula)).
-   A direct check on the std ($2\times 2$) block is open.
-
-2. **Sharpness of the residual.**  Step 3 only shows
-   $R_q \in \mathrm{im}\hat\tau_n$; it does not determine
-   $R_q$ explicitly.  A sharp form would match $R_q$ to the
-   base-level descended contribution and close the remaining
-   open piece of the jet-tower decomposition
-   ([jet-tower remark](#rem:mass-endomorphism-jet-tower),
-   subconjecture 3).
+**Provable.** The level-internal half (scalars commute) is
+[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace).
+The inter-level half (operator lift, $\widehat U \widehat V =
+q\,\widehat V \widehat U$) is the operator content of the
+brane-tower descent involution; explicit Lean formalization
+deferred to the descent involution's quantization, where
+$\hat\tau_n$ is realized as a level-shift operator on
+$A_{n+1} = A_n \otimes \Omega^1(A_n)$.

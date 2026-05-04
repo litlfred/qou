@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Closed-form derivation: χ_sym(β_atom) · χ_alt(β_atom) = −(1 + H_A²/4)^(2A+1).
 

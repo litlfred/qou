@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Deuteron (²H) binding energy from first principles — NUMERICAL pipeline.
 
@@ -150,7 +151,8 @@ if __name__ == "__main__":
     if abs(Q_cat) < 1e-12:
         print("  ERROR: Q_cat = 0 (calibration fails)")
         sys.exit(1)
-    E_0 = 0.782 / abs(Q_cat)
+    from experimental_constants import Q_NEUTRON_MEV
+    E_0 = float(Q_NEUTRON_MEV) / abs(Q_cat)
     print(f"  Q_cat           = {Q_cat:+.6e}")
     print(f"  E_0             = {E_0:.6f} MeV/cat.unit")
 

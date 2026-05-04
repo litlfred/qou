@@ -8,7 +8,7 @@ export default proof({
     "prop:atom-knot-mass-derivation",
     "def:quantum-observable-universe",
     "def:rigid-monoidal-category",
-    "def:adjoint-trace",
+    "rem:adjoint-trace",
     "def:confined-particle",
     "prop:confinement-sdp",
     "prop:wedderburn-trace-identity",

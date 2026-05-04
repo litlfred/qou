@@ -39,6 +39,7 @@ from hecke_symbolic import (
     HA, s_skein, z_markov,
     C_PP, D_PP, C_NN, D_NN, C_MIX, D_MIX, C_HOPF, D_HOPF,
 )
+from witness_polynomial import expose_polynomial
 
 # ══════════════════════════════════════════════════════════════
 # Helpers
@@ -427,6 +428,7 @@ def main():
                 {
                     'word': list(w),
                     'coeff_symbolic': str(sp.factor(c)),
+                    'coeff_polynomial': expose_polynomial(c, q),
                     'coeff_q0': float(c.subs(q, Q0)),
                 }
                 for w, c in sorted(protium_nf.terms.items(),

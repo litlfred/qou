@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Pure-Hecke binding formula from knot-factor-frobenius-pairing.md.
 
@@ -56,7 +57,8 @@ Q0 = Q_MP  # was f64 roundtrip
 QI = Q_INV_MP
 h = Q0 - QI           # Hecke deformation H_A
 me = mp.mpf(str(M_E_MEV))
-E0 = mp.mpf('0.782')  # neutron β-decay Q, single calibration
+from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+E0 = mp.mpf(str(Q_NEUTRON_MEV))  # 0.78233341 MeV (CODATA-derived)
 
 
 def classical_dim(shape) -> int:

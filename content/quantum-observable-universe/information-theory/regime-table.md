@@ -1,7 +1,7 @@
 All quantitative regime claims in this chapter and Ch 9 collapse
 into a single table.  Per-section tables in
 [operational-entropy](#rem:operational-entropy),
-[information-speed-of-light](#prop:information-speed-of-light),
+[information-speed-of-light](#def:information-speed-of-light),
 [gravitational-constant](#rem:gravitational-constant),
 [hausdorff-dimension-recurrence](#rem:hausdorff-dimension-recurrence)
 are projections of the corresponding columns of this master table
@@ -17,7 +17,7 @@ to the row(s) most relevant to that section.
 **Reading the table.**  $\hbar_q = 1 - q^{-1}$ is the quantum
 Planck constant ([def:quantum-planck-constant](#def:quantum-planck-constant));
 $c_q = 1/(q-1)$ is the information speed of light
-([prop:information-speed-of-light](#prop:information-speed-of-light));
+([def:information-speed-of-light](#def:information-speed-of-light));
 $\eta_q = (2q-1)/q^{3}$ is the operational entropy
 ([rem:operational-entropy](#rem:operational-entropy));
 $d_H(q) = (2q-1)^{2}/q^{3}$ is the Julia-set Hausdorff dimension

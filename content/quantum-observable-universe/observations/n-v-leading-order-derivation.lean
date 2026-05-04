@@ -12,7 +12,7 @@
   axioms, modulo the sub-leading correction (currently a separate
   conjecture for the residual 0.58%).
 
-  Ref: [manuscript] `prop:n-v-leading-order-derivation`,
+  Ref: [manuscript] `conj:n-v-leading-order-derivation`,
        [manuscript] `conj:n-v-bring-action`,
        [manuscript] `conj:n-v-tower-depth-ninety`.
 -/

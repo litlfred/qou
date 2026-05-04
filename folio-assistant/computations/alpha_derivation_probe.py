@@ -25,11 +25,18 @@ from datetime import datetime, timezone
 from fractions import Fraction
 
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 import mpmath as mp
 mp.mp.dps = 50
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0_FLOAT
+from witness_polynomial import expose_polynomial_dict  # P2.5 Tier B
 
 
 q = sp.Symbol('q', positive=True, real=True)
@@ -159,6 +166,16 @@ if __name__ == "__main__":
             "rem:kashaev-volume-density",
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        # P2.5 Tier B — expose symbolic forms of the basic q-quantities.
+        "polynomial_forms": expose_polynomial_dict(
+            {
+                "h_q_minus_inverse": h,
+                "hbar_q": (q - 1) / q,
+                "h_squared": h ** 2,
+            },
+            q,
+            q0=q0,
+        ),
         "parameters": {
             "q_0": float(Q0_FLOAT),
             "G_catalan": float(G_CATALAN),

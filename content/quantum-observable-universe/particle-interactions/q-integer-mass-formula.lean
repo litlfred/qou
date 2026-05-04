@@ -16,7 +16,7 @@
   exceptional divisors (s-orbital pairing enhancement).  See
   conj:shell-closure-nf-term-count and conj:palindromicity-orbital-type.
 
-  Ref: [manuscript] Ch 11 §8, prop:q-integer-mass-formula
+  Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
@@ -112,5 +112,55 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
   - lambda_ex q m_e * (Z : ℝ) ^ (4/3 : ℝ) / A ^ (1/3 : ℝ)
   -- Term 7: shell correction (increases binding at magic numbers)
   + delta_S q m_e * (f_Z + f_N) / A ^ (2/3 : ℝ)
+
+-- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+
+/-- **Conjecture class.** An instance asserts the existence of:
+    (i) the magic-proximity function `f_magic : ℕ → ℝ` peaking at
+        {2, 8, 20, 28, 50, 82, 126},
+    (ii) a CODATA-accuracy bound: for every (Z, N) with binding
+         energy in the AME database, the q-integer formula matches
+         to within `tolerance`.
+
+    The `tolerance` value is the conjectured precision (currently
+    ~1% per the manuscript Ch 11 §8 scorecard); a rigorous
+    derivation would pin it from categorical first principles.
+
+    `sorry` in any concrete instance is understood as **conjecture**,
+    not missing proof. Downstream blocks may take
+    `[QIntegerMassFormula]` as an explicit hypothesis to remain
+    `theorem`/`proposition` per CLAUDE.md §3b-cond.
+
+    Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula -/
+class QIntegerMassFormula where
+  /-- Magic-proximity function. Peaks at the nuclear magic numbers
+      {2, 8, 20, 28, 50, 82, 126}; smooth decay between magics. -/
+  f_magic : ℕ → ℝ
+  /-- Tolerance of the seven-term q-integer fit to AME binding
+      energies (conjectured ~1% per manuscript scorecard). -/
+  tolerance : ℝ
+  /-- Tolerance is positive and bounded by 1% (manuscript bound). -/
+  tolerance_bound : 0 < tolerance ∧ tolerance ≤ (1 : ℝ) / 100
+  /-- **Conjectural accuracy.** For every (Z, N) with a measured
+      binding energy `B_AME` in the AME database, the seven-term
+      formula matches to within `tolerance` of the experimental value.
+      This is the conjecture proper; the `sorry` in a concrete
+      instance carries this assertion. -/
+  fits_AME :
+    ∀ (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ),
+      ∃ δ : ℝ, |δ| ≤ tolerance ∧
+        B_AME = (1 + δ) * binding_energy_bw q m_e Z N (f_magic Z) (f_magic N)
+
+/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+    Conditional on `[QIntegerMassFormula]`, every (Z, N) admits a
+    relative residual `δ` with `|δ| ≤ tolerance` between the AME
+    binding energy and the seven-term prediction. Fully verified
+    by Lean once an instance is fixed. -/
+theorem fits_AME_conditional [inst : QIntegerMassFormula]
+    (q m_e : ℝ) (Z N : ℕ) (B_AME : ℝ) :
+    ∃ δ : ℝ, |δ| ≤ inst.tolerance ∧
+      B_AME = (1 + δ) * binding_energy_bw q m_e Z N
+        (inst.f_magic Z) (inst.f_magic N) :=
+  inst.fits_AME q m_e Z N B_AME
 
 end QOU.Interactions

@@ -84,11 +84,11 @@ theorem term_6_plus_term_7_eq_high_strata
   -- This is honest list algebra — no domain mathematics involved.
   -- Tracked as a routine Mathlib-completion task; not a substantive
   -- gap in the mass-tower derivation.
-  unfold unified_curvature_rank_mass
-  sorry
   -- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
   -- Standard list-fold splitting; full proof requires Mathlib's
   -- List.foldl_append + filter-of-range identities.
+  unfold unified_curvature_rank_mass
+  sorry
 
 /-- **Corollary (paper terminology mapping).**
     The historical "six terms + Term 7" decomposes uniformly:

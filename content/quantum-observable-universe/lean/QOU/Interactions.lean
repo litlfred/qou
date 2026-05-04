@@ -1,12 +1,18 @@
+import QOU.Interactions.AlgebraicPrimality
 import QOU.Interactions.BetaReceptivity
 import QOU.Interactions.BorromeanUnique
+import QOU.Interactions.BringShellBinding
 import QOU.Interactions.CentralElement
 import QOU.Interactions.ConfinementLP
 import QOU.Interactions.ConfinementSDP
 import QOU.Interactions.DemandStability
 import QOU.Interactions.DerivedAtom
+import QOU.Interactions.DoubleMagicDeltaI
 import QOU.Interactions.GramIndefinite
+import QOU.Interactions.HeckeEnergyPositivity
 import QOU.Interactions.HeckeEngine
+import QOU.Interactions.LRFusion
+import QOU.Interactions.MagicLadderEquivalences
 import QOU.Interactions.NuclearOperatorRegimes
 import QOU.Interactions.NucleonNFWitness
 import QOU.Interactions.ProtonTrefoilSign
@@ -29,6 +35,7 @@ Re-exports all particle interaction formalization modules.
 - DerivedAtom: derived atom construction from typed crossings
 - GramIndefinite: Gram matrix indefiniteness (fully proved)
 - HeckeEngine: 6-basis NF computation engine
+- LRFusion: LR-fusion rigidity for double-magic compositions
 - NuclearOperatorRegimes: operator selection rules by Z
 - NucleonNFWitness: proton/neutron NF coefficient verification
 - ProtonTrefoilSign: sign analysis of trefoil coefficient

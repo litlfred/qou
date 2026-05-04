@@ -1,3 +1,4 @@
+import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.SetTheory.Ordinal.Arithmetic
 import Mathlib.SetTheory.Ordinal.Family
@@ -66,6 +67,30 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
   birthday_neg : ∀ x : K, birthday (-x) = birthday x
   /-- Birthday is bounded under sum by ordinal natural-sum. -/
   birthday_add_le : ∀ x y : K, birthday (x + y) ≤ birthday x ♯ birthday y
+  /-- Birthday of a dyadic midpoint is bounded by the natural-sum
+      of its parents' birthdays plus one.
+
+      This is exactly Conway's `{L | R}` recipe: the midpoint
+      `(x + y) / 2` is born one day after the deepest of `x, y`.
+      The bound is genuinely independent of `birthday_add_le`: the
+      additive bound gives only upper bounds on `birthday (x + y)`
+      (hence lower bounds on summands), whereas this asks for an
+      upper bound on a *strictly earlier* surreal.
+
+      **Narrow kernel rationale.**  Every caller in the surreals
+      appendix that reasons about halving does so in the form
+      `(parent₁ + parent₂) / 2` (Gonshor sign-sequence step,
+      dyadic refinement).  A standalone `birthday (x / 2)` axiom
+      would assert more than callers need; this combined form is
+      exactly the Conway midpoint recipe and nothing more.
+
+      Reserved for future induction proofs of the sharper
+      `birthday (gonshorIn K s) ≤ s.length` bound; the current
+      file proves the universally-supported `≤ ω` form (see
+      `SignSequence.birthday_gonshorIn_le_omega`) and the
+      `s.length ≤ 1` cases unconditionally. -/
+  birthday_avg_le : ∀ x y : K,
+    birthday ((x + y) / 2) ≤ (birthday x ♯ birthday y) + 1
   /-- Real numbers have birthday at most ω. -/
   birthday_ofReal_le_omega : ∀ r : ℝ, birthday (ofReal r) ≤ Ordinal.omega0
   /-- The first infinite surreal `ω` as an element of `K`.
@@ -80,6 +105,14 @@ class SurrealField (K : Type u) extends Field K, LinearOrder K, IsStrictOrderedR
 /-- Coerce a real into the surreal field. -/
 instance (K : Type u) [SurrealField K] : Coe ℝ K :=
   ⟨SurrealField.ofReal⟩
+
+/-- Every `SurrealField K` is canonically an `Algebra ℝ K` via the
+    `ofReal` ring homomorphism.  This unlocks Mathlib's
+    `Polynomial.aeval`, `MvPolynomial.aeval`, and the full
+    `Algebra`-flavored API for free. -/
+noncomputable instance SurrealField.toAlgebra (K : Type u) [SurrealField K] :
+    Algebra ℝ K :=
+  RingHom.toAlgebra SurrealField.ofReal
 
 namespace SurrealField
 
@@ -350,6 +383,42 @@ theorem isFinite_decomposition {x : K} (hx : IsFinite x) :
     ∃! r : ℝ, IsInfinitesimal (x - ofReal r) := by
   obtain ⟨r, hr⟩ := isFinite_has_standardPart hx
   exact ⟨r, hr, fun s hs => standardPart_unique hs hr⟩
+
+/-! ### Closure of `IsFinite` under the field operations
+
+The finite surreals form a sub-(unital sub-)ring of `K`.  The
+following closure lemmas (`zero`, `one`, `neg`, `sub`, plus the
+already-proved `add`, `mul`) provide the predicate-level closure
+needed to bundle `{x | IsFinite x}` as a `Subring K`. -/
+
+/-- `0` is finite. -/
+theorem zero_isFinite : IsFinite (0 : K) := by
+  refine ⟨0, ?_⟩
+  simp
+
+/-- `1` is finite. -/
+theorem one_isFinite : IsFinite (1 : K) := by
+  refine ⟨1, ?_⟩
+  simp
+
+/-- Negation preserves finiteness (using the same bound). -/
+theorem IsFinite.neg {x : K} (hx : IsFinite x) : IsFinite (-x) := by
+  obtain ⟨n, hn⟩ := hx
+  refine ⟨n, ?_⟩
+  rwa [abs_neg]
+
+/-- Subtraction of finite surreals is finite. -/
+theorem IsFinite.sub {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+    IsFinite (x - y) := by
+  rw [sub_eq_add_neg]
+  exact hx.add hy.neg
+
+/-- Subtraction of infinitesimals is infinitesimal. -/
+theorem IsInfinitesimal.sub {x y : K}
+    (hx : IsInfinitesimal x) (hy : IsInfinitesimal y) :
+    IsInfinitesimal (x - y) := by
+  rw [sub_eq_add_neg]
+  exact hx.add hy.neg
 
 end SurrealField
 

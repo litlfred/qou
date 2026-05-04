@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "def:confined-particle",
-    "def:knot-particle-dictionary",
+    "rem:knot-particle-dictionary",
     "def:atomic-braid",
     "def:borromean-baryon",
     "prop:fermion-boson-knot-link",

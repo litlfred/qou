@@ -33,9 +33,10 @@ From CODATA 2022:
 - $Q_{\beta} = 0.78233 \text{MeV}$
 
 **Derived energy scale.**
-The energy scale is derivable from the two calibration
-inputs ($m_e$ and $q_0$) alone
-([calibration inputs](#rem:calibration-inputs)):
+The energy scale is derivable from the categorical three-calibration
+inputs $m_e$ ($H^0$) and $q_0$ ($H^1$) alone — $Q_\beta(n)$ ($H^2$) is
+the datum the framework predicts, not consumed here
+([three-calibration discipline](#prop:three-calibration-discipline)):
 
 $$
   \mathbf{E}_0

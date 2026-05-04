@@ -29,6 +29,12 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 from sympy import Rational, Symbol, Integer
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -68,15 +74,19 @@ def witness_atom(Z, N, include_inter=True):
 
     # Numerical evaluation at q_0
     total_mn_q0 = float(total_mn.subs(q, q0).evalf(30))
+    total_mn_q0_polynomial_q = expose_polynomial(total_mn, q)
     total_triv_q0 = float(total_triv.subs(q, q0).evalf(30))
+    total_triv_q0_polynomial_q = expose_polynomial(total_triv, q)
 
     # Top contributing partitions by |w_λ · χ^λ| at q_0
     contribs = []
     for t in terms_mn:
         val = float(t["contribution"].subs(q, q0).evalf(30))
+        val_polynomial_q = expose_polynomial(t["contribution"], q)
         contribs.append({
             "partition": t["partition"],
             "weight_at_q0": float(t["weight"].subs(q, q0).evalf(30)),
+            "weight_at_q0_polynomial_q": expose_polynomial(t["weight"], q),
             "character": int(t["character"]),
             "contribution_at_q0": val,
         })
@@ -138,11 +148,13 @@ if __name__ == "__main__":
     p_free = results["p"]["total_mn_at_q0"]
     n_free = results["n"]["total_mn_at_q0"]
     Q_cat = n_free - p_free
-    E_0 = 0.782 / abs(Q_cat) if abs(Q_cat) > 0 else 0.0
+    from experimental_constants import Q_NEUTRON_MEV
+    E_0 = float(Q_NEUTRON_MEV) / abs(Q_cat) if abs(Q_cat) > 0 else 0.0
     print(f"  |tr_M(p)| @ q_0  = {p_free:+.6e}")
     print(f"  |tr_M(n)| @ q_0  = {n_free:+.6e}")
     print(f"  Q_cat            = {Q_cat:+.6e}")
-    print(f"  E_0 = 0.782 MeV / Q_cat = {E_0:.6e} MeV/cat.unit\n")
+    print(f"  E_0 = Q_β(n) / Q_cat = {E_0:.6e} MeV/cat.unit "
+          f"(Q_β = {float(Q_NEUTRON_MEV):.8f} MeV)\n")
 
     print(f"  {'Atom':>5} {'A':>3} "
           f"{'|tr_M(free)|':>15} {'|tr_M(atom)|':>15} "

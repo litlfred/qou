@@ -1,0 +1,32 @@
+{
+  "computation": "p2-2a-wiring-check",
+  "computedAt": "2026-05-01T21:35:37.355198+00:00",
+  "description": "Descended-term values from tower_mass_symbolic_eval after P2.2a wiring (proper Schur-Weyl at H_{3A}). Compare to docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json proper-SW values; should match.",
+  "q0": 1.1099785955541805,
+  "results": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "desc_post_fix": 0.015585759907318543,
+      "phi_q_convergent_at_q0": true
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "desc_post_fix": 0.0008828689329881074,
+      "phi_q_convergent_at_q0": true
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "desc_post_fix": 4.425191012271548e-06,
+      "phi_q_convergent_at_q0": true
+    }
+  ]
+}

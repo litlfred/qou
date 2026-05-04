@@ -10,5 +10,6 @@ export default proposition({
   uses: [
     "prop:degree-two-baryon-weight",
     "prop:shell-transition-knot",
+    "prop:wedderburn-weight-canonical",
   ],
 });

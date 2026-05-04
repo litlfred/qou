@@ -1,7 +1,7 @@
 Let $v_q$ be the q-NS solution for anti-parallel vortex pair
 initial data ([counter-example](#conj:ns-counterexample)) and let
 $v^*$ be the weak limit as $q \to 1$
-([q-Aubin--Lions](#thm:q-aubin-lions)).  Let $\omega^* = \nabla
+([q-Aubin--Lions](#conj:q-aubin-lions)).  Let $\omega^* = \nabla
 \times v^*$ and let $d(t)$ be the separation between the two
 filament cores.
 

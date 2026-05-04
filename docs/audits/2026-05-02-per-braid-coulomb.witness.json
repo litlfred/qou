@@ -1,0 +1,139 @@
+{
+  "audit": "Per-braid + Coulomb (q-Hecke per-pair traces)",
+  "generated": "2026-05-02T20:28:42.196139+00:00",
+  "q_0": "1.1099785955541805",
+  "m_e_mev": 0.51099895,
+  "qhecke_pair_traces": {
+    "pp": 0.06597243113351399,
+    "nn": 0.02546714706325747,
+    "pn": 0.04189130517448555
+  },
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "level0_q1_total": 3700.802304085801,
+      "level0_coulomb_total": 3700.881188004611,
+      "ame_mass_mev": 1875.61294257,
+      "cal_over_me_q1": 0.9918073612872964,
+      "cal_over_me_coulomb": 0.9917862210108626,
+      "delta_ppm": -21.140276433850858
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "level0_q1_total": 5551.572154550547,
+      "level0_coulomb_total": 5551.901126042718,
+      "ame_mass_mev": 2808.39148127,
+      "cal_over_me_q1": 0.9899691258923752,
+      "cal_over_me_coulomb": 0.9899104664146299,
+      "delta_ppm": -58.65947774530422
+    },
+    {
+      "atom": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "level0_q1_total": 5551.571960813388,
+      "level0_coulomb_total": 5551.757028228671,
+      "ame_mass_mev": 2808.92113298,
+      "cal_over_me_q1": 0.9901558647731613,
+      "cal_over_me_coulomb": 0.9901228579996859,
+      "delta_ppm": -33.00677347539693
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "level0_q1_total": 7402.670551027777,
+      "level0_coulomb_total": 7403.184589935232,
+      "ame_mass_mev": 3727.37909409,
+      "cal_over_me_q1": 0.9853604695052182,
+      "cal_over_me_coulomb": 0.9852920511626738,
+      "delta_ppm": -68.41834254434076
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "level0_q1_total": 11105.730412911438,
+      "level0_coulomb_total": 11107.035877877373,
+      "ame_mass_mev": 5603.05182,
+      "cal_over_me_q1": 0.9873190220739312,
+      "cal_over_me_coulomb": 0.9872029775767593,
+      "delta_ppm": -116.04449717184107
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "level0_q1_total": 12957.691490979465,
+      "level0_coulomb_total": 12959.315506434821,
+      "ame_mass_mev": 6535.36573,
+      "cal_over_me_q1": 0.9870115914720613,
+      "cal_over_me_coulomb": 0.9868879026801364,
+      "delta_ppm": -123.68879192492521
+    },
+    {
+      "atom": "9Be",
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "level0_q1_total": 16662.47594075791,
+      "level0_coulomb_total": 16665.353836838054,
+      "ame_mass_mev": 8392.74912,
+      "cal_over_me_q1": 0.985699867300287,
+      "cal_over_me_coulomb": 0.9855296493851996,
+      "delta_ppm": -170.2179150874228
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "level0_q1_total": 22221.80834953155,
+      "level0_coulomb_total": 22227.62571909194,
+      "ame_mass_mev": 11177.9292,
+      "cal_over_me_q1": 0.9843781133204621,
+      "cal_over_me_coulomb": 0.9841204838577066,
+      "delta_ppm": -257.62946275553753
+    },
+    {
+      "atom": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "level0_q1_total": 29638.275598227556,
+      "level0_coulomb_total": 29648.88225953342,
+      "ame_mass_mev": 14899.16828,
+      "cal_over_me_q1": 0.9837598312007432,
+      "cal_over_me_coulomb": 0.9834078986305869,
+      "delta_ppm": -351.9325701563103
+    },
+    {
+      "atom": "40Ca",
+      "Z": 20,
+      "N": 20,
+      "A": 40,
+      "level0_q1_total": 74233.65597835122,
+      "level0_coulomb_total": 74302.9251599961,
+      "ame_mass_mev": 37224.9202,
+      "cal_over_me_q1": 0.9813251238027486,
+      "cal_over_me_coulomb": 0.9804102797625308,
+      "delta_ppm": -914.8440402177993
+    }
+  ],
+  "mean_cal_q1": 0.9866786370628284,
+  "mean_cal_coulomb": 0.986467078848077,
+  "spread_q1_pct": 1.0623760453303825,
+  "spread_coulomb_pct": 1.1532002934771755,
+  "spread_change_pct": 0.09082424814679291,
+  "interpretation": "Replace q=1 MN per-pair traces with q-Hecke per-pair traces in the cross tower. q-Hecke distinguishes pp/pn/nn (q=1 MN does not). Tests SEMF Coulomb term as a structural feature of q-Hecke."
+}

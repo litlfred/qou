@@ -376,12 +376,19 @@ def lp_dual_at_alpha(alpha: float, G: np.ndarray) -> dict:
         out["tight_constraints"] = [NF_NAMES[i]
                                       for i in range(6)
                                       if abs(Gx[i]) < 1e-6]
-        if (hasattr(res, 'eqlin') and res.eqlin is not None
-                and hasattr(res.eqlin, 'marginals')):
-            out["y0"] = float(res.eqlin.marginals[0])
-        if (hasattr(res, 'ineqlin') and res.ineqlin is not None
-                and hasattr(res.ineqlin, 'marginals')):
-            out["y_ineq"] = [float(v) for v in res.ineqlin.marginals]
+        # Canonical LP-dual record (CLAUDE.md §"LP / SDP duals — first-
+        # class infra"). Lifted from the in-script eqlin/ineqlin to the
+        # standardized field names that lp_dual_witness_validator
+        # checks: y0_star, y_star, active_set, primal_obj, dual_obj,
+        # duality_gap.
+        from lp_dual_solver import solve_operator_selection_lp
+        canon = solve_operator_selection_lp(c, G, target_net).to_dict()
+        out["lp_dual"] = canon
+        out["y0_star"] = canon["y0_star"]
+        out["y_star"] = canon["y_star"]
+        out["active_set"] = canon["active_set"]
+        out["dual_obj"] = canon["dual_obj"]
+        out["duality_gap"] = canon["duality_gap"]
     return out
 
 

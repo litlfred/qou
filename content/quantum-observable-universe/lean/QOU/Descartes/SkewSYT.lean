@@ -726,7 +726,7 @@ noncomputable def branchingFraction
     (partitions_k.sum fun ν => mult λ ν))
   if den ≠ 0 then num / den else 0
 
-/-- **Convergence bound** (prop:jet-convergence-classical-limit).
+/-- **Convergence bound** (conj:jet-convergence-classical-limit).
 
     For the branching H_k(q) → H_3(q), the fraction f_μ^{(k)}
     converges to its limit with rate O(1/k).

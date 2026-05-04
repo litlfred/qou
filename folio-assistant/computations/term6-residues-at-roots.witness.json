@@ -1,0 +1,38 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-03T22:14:01.527625+00:00",
+  "commitSha": "c02228e023aceb1532e3b42428686f05f2dadce8",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "term6-residues-at-roots",
+  "scriptFile": "term6_residues_at_roots.py",
+  "scriptHash": "b71e49c0b2a3",
+  "scriptCommitSha": "c02228e023aceb1532e3b42428686f05f2dadce8",
+  "description": "Term 6 of thm:six-term-mass-formula-complete via partial-fraction polar split on the u-plane lift tr_M(u²): tr_M(u²) = entire(u) + A(u)/u^k + B(u)/Dprime(u), with Term 6 = B(u₀)/Dprime(u₀) the principal-part contribution at non-zero poles only.  This split avoids per-pole residue extraction; sp.div + one sp.series-based power-series inversion deliver the answer in seconds where sp.residue scaled polynomially in atom size and timed out at deuteron.  Evaluation enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q^{1/2}.",
+  "contentBlock": "thm:six-term-mass-formula-complete",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "method": "partial_fraction_split_u_plane"
+  },
+  "data": {
+    "results": [
+      {
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "tr_M_u_symbolic_ops": 50995,
+        "denom_pole_order_at_zero": 97,
+        "denom_factor_no_zero": "2048*(u**2 + 1)**14",
+        "entire_at_u0": "(-265631003.68468788+0j)",
+        "pp_at_zero_at_u0": "(-249844147.86493173+0j)",
+        "pp_at_roots_at_u0": "(515475151.579061+0j)",
+        "term6_at_q0": "(515475151.579061+0j)",
+        "term6_at_q0_real": 515475151.579061,
+        "term6_at_q0_imag": 0.0,
+        "atom": "lithium-5"
+      }
+    ]
+  }
+}

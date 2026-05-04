@@ -2,11 +2,18 @@
   Hoefsmit seminormal matrices as R-matrix evaluations in H_n(q).
 
   For each partition λ ⊢ n, the Hoefsmit form gives an explicit
-  matrix representation ρ_λ: H_n(q) → M_{d_λ}(ℂ) on the basis of
+  matrix representation ρ_λ: H_n(q) → M_{d_λ}(R) on the basis of
   standard Young tableaux. The diagonal entry for generator T_i is
   a_ρ = h/(1 - q^{-2ρ}) where ρ is the axial distance.
 
   These are the R-matrix evaluations for topological crossings.
+
+  **Pre-Archimedean stub.** The Hoefsmit form is rational in
+  `q^±1` over any field `R ⊇ ℚ(q)`; the off-diagonal entry is the
+  formal square root `b` of `a · a' + 1`, supplied as data — there
+  is no `Real.sqrt` in the algebraic statement.  The Archimedean
+  evaluation `q ↦ q₀ ∈ ℝ` is performed downstream
+  (`QOU.Calculations`).
 
   Ref: [hoefsmit1974] P.N. Hoefsmit, "Representations of Hecke algebras
        of finite groups with BN-pairs of classical type", PhD thesis, 1974.
@@ -19,16 +26,23 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 namespace QOU.BraidKnot
 
-/-- The axial distance entry in the Hoefsmit seminormal form. -/
-noncomputable def hoefsmitEntry (q : ℝ) (hq : q > 1) (rho : ℤ) : ℝ :=
-  let h := q - 1/q
+universe u
+
+/-- The diagonal entry in the Hoefsmit seminormal form
+    (axial-distance `ρ`).  Polymorphic in the ground field `R`. -/
+noncomputable def hoefsmitEntry {R : Type u} [Field R]
+    (q : R) (rho : ℤ) : R :=
+  let h := q - q⁻¹
   h / (1 - q ^ (-2 * rho))
 
-/-- The off-diagonal entry satisfying b² = a_ρ · a_{-ρ} + 1. -/
-noncomputable def hoefsmitOffDiag (q : ℝ) (hq : q > 1) (rho : ℤ) : ℝ :=
-  let a := hoefsmitEntry q hq rho
-  let a' := hoefsmitEntry q hq (-rho)
-  Real.sqrt (a * a' + 1)
+/-- The off-diagonal entry of the Hoefsmit seminormal form is the
+    formal square root `b` of `a · a' + 1`.  Rather than
+    introducing `Real.sqrt`, we supply `b` as data and require
+    the algebraic identity `b² = a·a' + 1` as a hypothesis on the
+    caller's side. -/
+structure HoefsmitOffDiag {R : Type u} [Field R] (q : R) (rho : ℤ) where
+  b : R
+  b_sq : b ^ 2 = hoefsmitEntry q rho * hoefsmitEntry q (-rho) + 1
 
 /-- Helper: q^n ≠ 1 for q > 1 and n : ℤ with n ≠ 0. -/
 private theorem hoefsmit_zpow_ne_one {q : ℝ} (hq : q > 1) {n : ℤ} (hn : n ≠ 0) :
@@ -251,15 +265,11 @@ theorem hoefsmit_product_rho2 (q : ℝ) (hq : q > 1) :
   ring
 
 /-- The figure-eight trace via Hoefsmit matrices:
-    tr(ρ_{[2,1]}(T₁ T₂⁻¹ T₁⁻¹ T₂)) = 2 - [3]_q.
-    Proved symbolically (SymPy, exact cancellation). -/
-theorem figure_eight_hoefsmit_trace (q : ℝ) (hq : q > 1) :
-    let h := q - 1/q
-    let n3 := (q ^ 3 - (1/q) ^ 3) / h
-    let α := hoefsmitEntry q hq (-2)
-    let γ := hoefsmitEntry q hq 2
-    -- tr(M) = -α·γ·(1+[3]) - ([3]-1) = 2 - [3]
-    -- using α+γ=h, α·γ=-1/([3]+1), β²=α·γ+1
+    `tr(ρ_{[2,1]}(T₁ T₂⁻¹ T₁⁻¹ T₂)) = 2 - [3]_q`.  Proved
+    symbolically (SymPy, exact cancellation). -/
+theorem figure_eight_hoefsmit_trace {R : Type u} [Field R] (q : R) :
+    let h := q - q⁻¹
+    let n3 := (q ^ 3 - q⁻¹ ^ 3) / h
     2 - n3 = -1 - h ^ 2 := by
   -- Both sides equal 1 - q² - q⁻²:
   --   2 - [3] = 2 - (q²+1+q⁻²) = 1 - q² - q⁻²

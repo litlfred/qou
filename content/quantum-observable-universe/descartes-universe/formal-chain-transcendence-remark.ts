@@ -11,5 +11,5 @@ export default remark({
     "formal-chain",
     "symbolic-computation",
   ],
-  uses: ["conj:hyperbolic-volume-transcendence"],
+  uses: [],
 });

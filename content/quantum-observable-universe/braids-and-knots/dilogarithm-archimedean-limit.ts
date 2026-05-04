@@ -1,0 +1,27 @@
+import { conjecture } from "../../schema/builders";
+
+export default conjecture({
+  label: "conj:dilogarithm-archimedean-limit",
+  title:
+    "$(1{-}q)\\,\\log\\Phi_n(x; q) \\to \\mathrm{Li}_2(x)$ under $\\tau_{\\mathrm{arch}}$",
+  lean: {
+    ref: "qou:QOU.QPochhammer.partialProduct_archimedean_limit",
+    validation: "not_checked",
+  },
+  uses: [
+    "def:q-pochhammer-partial-product",
+    "cor:quantum-dilogarithm",
+    "def:archimedean-realization-functor",
+    "rem:kashaev-as-archimedean-realization",
+    "conj:kashaev-volume-conjecture",
+  ],
+  cites: ["faddeev1994", "kashaev1997", "zagier1986"],
+  tags: [
+    "q-pochhammer",
+    "dilogarithm",
+    "bloch-wigner",
+    "archimedean",
+    "saddle-point",
+    "open-problem",
+  ],
+});

@@ -1,0 +1,151 @@
+{
+  "name": "colored-pair-energy-alignment",
+  "description": "Energy alignment analysis for colored photon pair production \u03b3\u2081\u00b7\u03b3\u2082 \u2192 e\u207be\u207a. Photons \u03b3 = \ud835\udfd9 + \u03c6\u2080\u03c3\u2080 + \u03c6\u2081\u03c3\u2081 with independent formal color weights. Checks whether energy budget \u0394(pair)\u00d7E\u2080 = 2m\u2091 is achievable.",
+  "symbolic_q_form": {
+    "engine": "sympy",
+    "q_symbol": "q (sp.Symbol('q', positive=True))",
+    "h_symbol_definition": "h = q - 1/q  (HA = [2]_q in Kashiwara normalisation)",
+    "color_parametrization": "symmetric one-parameter family \u03c6\u2080 = \u03c6\u2081 = \u03c8\u2080 = \u03c8\u2081 = t (smallest non-trivial colored case)",
+    "nf_coefficients_polynomial_q": {
+      "c_identity": "2*t**2 + 1",
+      "c_sigma0": "t*(2*q + t*(q**2 - 1))/q",
+      "c_sigma1": "t*(2*q + t*(q**2 - 1))/q",
+      "C_plus": "t**2",
+      "C_minus": "t**2",
+      "net": "(q*(4*t**2 + 4*t + 1) + 2*t**2*(q**2 - 1))/q"
+    },
+    "nf_coefficients_general_symbolic": {
+      "c_identity": "1 + \u03c6\u2080\u03c8\u2080 + \u03c6\u2081\u03c8\u2081",
+      "c_sigma0": "\u03c6\u2080 + \u03c8\u2080 + \u03c6\u2080\u03c8\u2080\u00b7h",
+      "c_sigma1": "\u03c6\u2081 + \u03c8\u2081 + \u03c6\u2081\u03c8\u2081\u00b7h",
+      "C_plus": "\u03c6\u2080\u00b7\u03c8\u2081",
+      "C_minus": "\u03c6\u2081\u00b7\u03c8\u2080",
+      "net": "(1 + \u03c6\u2080 + \u03c6\u2081)(1 + \u03c8\u2080 + \u03c8\u2081) + (\u03c6\u2080\u03c8\u2080 + \u03c6\u2081\u03c8\u2081)\u00b7h"
+    },
+    "note": "NF(\u03b3\u2081\u00b7\u03b3\u2082) coefficients in the symmetric symbolic family, expressed as Laurent polynomials in q \u2208 \u211a(q).  The specialisation h \u21a6 q\u2080 - 1/q\u2080 recovers the numerical HA used in the energy budget; this section exposes the algebraic form that lives upstream of the q = q\u2080 specialisation."
+  },
+  "timestamp": "2026-05-02T06:22:55.840960+00:00",
+  "git_sha": "ee6c063f1f5cc3b5cd26590e80cfbc956acf326b",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "HA": 0.20906032198987945,
+    "E0_MeV": 4.154925030008493,
+    "m_e_MeV": 0.51099895,
+    "threshold_2me_MeV": 1.0219979
+  },
+  "energy_balance": {
+    "net_eminus": 1.0,
+    "net_eplus": 0.4510942344351552,
+    "net_ee_sum": 1.4510942344351552,
+    "target_delta_2me_over_E0": 0.24597264514250713,
+    "net_gg_target": 1.2051215892926481,
+    "bare_photon_E_pair_MeV": 1.8742627255471453,
+    "bare_vs_threshold": "above"
+  },
+  "nf_formula": {
+    "c_identity": "1 + \u03c6\u2080\u03c8\u2080 + \u03c6\u2081\u03c8\u2081",
+    "c_sigma0": "\u03c6\u2080 + \u03c8\u2080 + \u03c6\u2080\u03c8\u2080\u00b7HA",
+    "c_sigma1": "\u03c6\u2081 + \u03c8\u2081 + \u03c6\u2081\u03c8\u2081\u00b7HA",
+    "C_plus": "\u03c6\u2080\u00b7\u03c8\u2081",
+    "C_minus": "\u03c6\u2081\u00b7\u03c8\u2080",
+    "net": "(1+\u03c6\u2080+\u03c6\u2081)(1+\u03c8\u2080+\u03c8\u2081) + (\u03c6\u2080\u03c8\u2080+\u03c6\u2081\u03c8\u2081)\u00b7HA"
+  },
+  "symbolic_verification": true,
+  "ratio_sweep": [
+    {
+      "t": 0.0,
+      "net": 1.0,
+      "E_pair": 1.8742627255471453,
+      "ratio": 1.8339203295301738,
+      "obs_content": 0.0
+    },
+    {
+      "t": 0.01,
+      "net": 1.040441812064398,
+      "E_pair": 1.706230028341879,
+      "ratio": 1.6695044366939298,
+      "obs_content": 0.0002
+    },
+    {
+      "t": 0.02,
+      "net": 1.081767248257592,
+      "E_pair": 1.534525939126758,
+      "ratio": 1.5014961763881884,
+      "obs_content": 0.0008
+    },
+    {
+      "t": 0.05,
+      "net": 1.2110453016099496,
+      "E_pair": 0.9973853194222739,
+      "ratio": 0.9759171906539867,
+      "obs_content": 0.005000000000000001
+    },
+    {
+      "t": 0.1,
+      "net": 1.4441812064397976,
+      "E_pair": 0.028723113051060456,
+      "ratio": 0.028104865040388498,
+      "obs_content": 0.020000000000000004
+    },
+    {
+      "t": 0.15,
+      "net": 1.6994077144895448,
+      "E_pair": -1.0317238935664979,
+      "ratio": -1.0095166473106236,
+      "obs_content": 0.045
+    },
+    {
+      "t": 0.2,
+      "net": 1.97672482575919,
+      "E_pair": -2.1839557004303978,
+      "ratio": -2.1369473463990465,
+      "obs_content": 0.08000000000000002
+    },
+    {
+      "t": 0.3,
+      "net": 2.597630857958179,
+      "E_pair": -4.763773714897235,
+      "ratio": -4.661236304788137,
+      "obs_content": 0.18
+    },
+    {
+      "t": 0.5,
+      "net": 4.10453016099494,
+      "E_pair": -11.024827346787026,
+      "ratio": -10.787524462415263,
+      "obs_content": 0.5
+    },
+    {
+      "t": 0.7,
+      "net": 5.964879115550081,
+      "E_pair": -18.754437782618318,
+      "ratio": -18.350759607840995,
+      "obs_content": 0.9799999999999999
+    },
+    {
+      "t": 1.0,
+      "net": 9.418120643979758,
+      "E_pair": -33.102397443755564,
+      "ratio": -32.38988792810197,
+      "obs_content": 2.0
+    }
+  ],
+  "sample_curve": [
+    {
+      "a": 0.09688611842200721,
+      "b": 0.0,
+      "net": 1.2051215892926497,
+      "E_pair": 1.021997899999993,
+      "L_plus": 0.0,
+      "L_minus": 0.0
+    },
+    {
+      "a": 0.047328865414251416,
+      "b": 0.05,
+      "net": 1.2051215892926501,
+      "E_pair": 1.0219978999999912,
+      "L_plus": 0.002366443270712571,
+      "L_minus": 0.002366443270712571
+    }
+  ]
+}

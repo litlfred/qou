@@ -11,7 +11,7 @@ $S_3 \subset S_5$ ([chirality and trefoil](#rem:chirality-trefoil)).
 non-vanishing $\kappa_n \neq 0$ at every level is the statement that
 the Frobenius character of Bring's surface is non-trivial at every
 finite place $p \nmid 6$ — a special case of
-[motivic perpetual obstruction](#lem:motivic-perpetual-obstruction)
+[motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
 applied to the genus-4 substrate
 ([Kummer tower](#rem:kummer-tower) §motivic-Galois).
 The three lepton generations then correspond to the

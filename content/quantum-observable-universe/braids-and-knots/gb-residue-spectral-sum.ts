@@ -8,7 +8,11 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.gb_residue_spectral_sum",
     validation: "not_checked",
   },
-  uses: ["prop:confinement-level-unique"],
+  uses: [
+    "prop:confinement-level-unique",
+    "prop:graded-markov-trace-from-gs-filtration",
+    "prop:residue-at-root",
+  ],
   tags: [
     "mass",
     "filtration",

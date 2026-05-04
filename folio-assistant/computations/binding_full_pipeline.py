@@ -46,6 +46,26 @@ from binding_canonical import build_atom_symbolic
 from hecke_symbolic import SymbolicHeckeDivision
 
 
+# Module-level cache for Term 6 results, keyed by (Z, N).  The CLI
+# loops over kahler_order ∈ {0, 1, 2} for each atom, so without this
+# cache `binding_full` would recompute T6 three times per atom even
+# though it depends only on (Z, N).  Per-(Z, N) symbolic peel +
+# polar split is the dominant cost on A ≥ 3 atoms (~20s on tritium,
+# ~17s on ⁴He), so this cache saves ~40s on tritium and ~34s on ⁴He
+# across a full three-row table.  Keyed on (Z, N) only — Term 6 has
+# no kahler / pair-mode dependence.
+_TERM6_CACHE: dict[tuple[int, int], dict] = {}
+
+
+def _term6_for_atom(Z: int, N: int) -> dict:
+    """Cached lookup for Term 6 of atom (Z, N)."""
+    key = (Z, N)
+    if key not in _TERM6_CACHE:
+        from term6_residues_at_roots import compute_atom as _t6_compute
+        _TERM6_CACHE[key] = _t6_compute(Z, N)
+    return _TERM6_CACHE[key]
+
+
 @lru_cache(maxsize=256)
 def canonical_via_ocneanu(Z: int, N: int, include_inter: bool = True,
                            reduce_first: bool = True) -> complex:
@@ -151,6 +171,23 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
     out["eps_modeling_MeV"] = eps
     out["eps_order"] = f"O(ℏ_q^{eps_order})"
 
+    # ── Term 6 (Mittag-Leffler polar sum at non-zero poles) ──
+    # Pulls from term6_residues_at_roots.compute_atom (partial-fraction
+    # split on the u-plane lift tr_M(u²)).  Reported for diagnostic /
+    # calibration use — the unit conversion T6 → MeV is open, so this
+    # is NOT yet folded into B_MeV.  Cached per (Z, N) to avoid the
+    # symbolic peel cost on repeat calls.
+    t_t6 = time.time()
+    try:
+        _t6 = _term6_for_atom(Z, N)  # cached per (Z, N)
+        out["term6_pp_at_roots"]    = _t6["term6_at_q0_real"]
+        out["term6_pp_at_zero"]     = float(complex(_t6["pp_at_zero_at_u0"]).real)
+        out["term6_entire_at_u0"]   = float(complex(_t6["entire_at_u0"]).real)
+        out["term6_pole_order_zero"] = _t6["denom_pole_order_at_zero"]
+    except Exception as exc:  # noqa: BLE001
+        out["term6_error"] = f"{type(exc).__name__}: {exc}"
+    out["term6_time_sec"] = time.time() - t_t6
+
     B = canonical_MeV + tower_MeV
     out["B_MeV"] = B
     return out
@@ -181,8 +218,8 @@ if __name__ == "__main__":
         print("=" * 80)
         print(f"  {'Atom':>6} {'A':>3} {'B_AME':>8} {'B_canon':>10} "
               f"{'B_tower':>10} {'B_total':>10} {'|Δm/m|%':>9} "
-              f"{'ε_MeV':>10} {'time':>8}")
-        print("  " + "-" * 98)
+              f"{'ε_MeV':>10} {'T6_PP':>14} {'time':>8}")
+        print("  " + "-" * 113)
         for name, Z, N, B_AME in ATOMS:
             A = Z + N
             t0 = time.time()
@@ -193,12 +230,16 @@ if __name__ == "__main__":
                 dt = time.time() - t0
                 dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
                        if math.isfinite(r["B_MeV"]) else float("nan"))
+                t6_str = (f"{r['term6_pp_at_roots']:+14.4e}"
+                           if "term6_pp_at_roots" in r
+                           else f"{'(err)':>14}")
                 print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "
                       f"{r['canonical_MeV']:>+10.4f} "
                       f"{r['tower_MeV']:>+10.4f} "
                       f"{r['B_MeV']:>+10.4f} "
                       f"{dm:>8.4f}% "
                       f"{r['eps_modeling_MeV']:>10.4e} "
+                      f"{t6_str} "
                       f"{dt:>7.1f}s")
                 results.append({**r, "atom": name, "B_AME_MeV": B_AME,
                                  "delta_m_over_m_pct": dm})

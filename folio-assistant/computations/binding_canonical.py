@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Atom binding via the CANONICAL Jones-Markov trace.
 
@@ -38,6 +39,7 @@ from hecke_symbolic import (
     SymbolicHeckeDivision, SymbolicHeckeElement, HA as H_SYMB, q as q_sym,
 )
 from mass_at_3A_proper import atom_braid_word_3A
+from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
 from q_parameter import Q as Q0_NUM, HA as H0_NUM  # central source of truth
 
 
@@ -109,7 +111,7 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 
 
 def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
-                        E_0: float = 0.782,
+                        E_0: float = float(_Q_BETA_N),
                         reduce_before_trace: bool = True,
                         verbose: bool = False) -> dict:
     """Binding via canonical Markov trace.
@@ -137,8 +139,13 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
     t0 = time.time()
     try:
-        tr_atom_sym = tr_M_element(atom_elem, n_strands)
-        tr_free_sym = tr_M_element(free_elem, n_strands)
+        # `simplify=False`: skip the `sp.simplify` step in tr_M_element.
+        # At A=3 the aggregated total has ~5000-12000 sympy ops; calling
+        # `simplify` exceeds 30 minutes (³He) while the recursion itself
+        # runs in seconds.  Numerical evaluation at q=q₀ (below) is
+        # unaffected.  See #508 Phase 2 part 2.
+        tr_atom_sym = tr_M_element(atom_elem, n_strands, simplify=False)
+        tr_free_sym = tr_M_element(free_elem, n_strands, simplify=False)
     except (NotImplementedError, RecursionError) as e:
         return {"status": "trace_error", "error": str(e),
                 "Z": Z, "N": N, "A": A,

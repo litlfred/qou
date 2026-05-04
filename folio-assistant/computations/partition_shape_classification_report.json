@@ -1,0 +1,1027 @@
+[
+  {
+    "n": 1,
+    "canonical": [
+      1
+    ],
+    "self_conj_count": 1,
+    "is_pure_square": true,
+    "square_k": 1,
+    "is_pure_staircase": true,
+    "staircase_k": 1,
+    "frobenius_rank_d": 1,
+    "diagonal_hooks": [
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 1,
+    "n_rows": 1,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 2,
+    "canonical": null,
+    "self_conj_count": 0,
+    "shape_classification": "DEGENERATE (no self-conj)",
+    "empirical_magic": true
+  },
+  {
+    "n": 3,
+    "canonical": [
+      2,
+      1
+    ],
+    "self_conj_count": 1,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": true,
+    "staircase_k": 2,
+    "frobenius_rank_d": 1,
+    "diagonal_hooks": [
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 1,
+    "first_row": 2,
+    "n_rows": 2,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 4,
+    "canonical": [
+      2,
+      2
+    ],
+    "self_conj_count": 1,
+    "is_pure_square": true,
+    "square_k": 2,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 2,
+    "diagonal_hooks": [
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 2,
+    "n_rows": 2,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 5,
+    "canonical": [
+      3,
+      1,
+      1
+    ],
+    "self_conj_count": 1,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 1,
+    "diagonal_hooks": [
+      5
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 2,
+    "first_row": 3,
+    "n_rows": 3,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 6,
+    "canonical": [
+      3,
+      2,
+      1
+    ],
+    "self_conj_count": 1,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": true,
+    "staircase_k": 3,
+    "frobenius_rank_d": 2,
+    "diagonal_hooks": [
+      5,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 2,
+    "first_row": 3,
+    "n_rows": 3,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 7,
+    "canonical": [
+      4,
+      1,
+      1,
+      1
+    ],
+    "self_conj_count": 1,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 1,
+    "diagonal_hooks": [
+      7
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 3,
+    "first_row": 4,
+    "n_rows": 4,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 8,
+    "canonical": [
+      3,
+      3,
+      2
+    ],
+    "self_conj_count": 2,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 2,
+    "diagonal_hooks": [
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 1,
+    "first_row": 3,
+    "n_rows": 3,
+    "aspect_ratio": 1.0,
+    "empirical_magic": true
+  },
+  {
+    "n": 9,
+    "canonical": [
+      3,
+      3,
+      3
+    ],
+    "self_conj_count": 2,
+    "is_pure_square": true,
+    "square_k": 3,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 3,
+    "diagonal_hooks": [
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 3,
+    "n_rows": 3,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 10,
+    "canonical": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "self_conj_count": 2,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": true,
+    "staircase_k": 4,
+    "frobenius_rank_d": 2,
+    "diagonal_hooks": [
+      7,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 3,
+    "first_row": 4,
+    "n_rows": 4,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 12,
+    "canonical": [
+      4,
+      4,
+      2,
+      2
+    ],
+    "self_conj_count": 3,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 2,
+    "diagonal_hooks": [
+      7,
+      5
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 2,
+    "first_row": 4,
+    "n_rows": 4,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 14,
+    "canonical": [
+      5,
+      4,
+      2,
+      2,
+      1
+    ],
+    "self_conj_count": 3,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 2,
+    "diagonal_hooks": [
+      9,
+      5
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 4,
+    "first_row": 5,
+    "n_rows": 5,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 15,
+    "canonical": [
+      4,
+      4,
+      4,
+      3
+    ],
+    "self_conj_count": 4,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 3,
+    "diagonal_hooks": [
+      7,
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 1,
+    "first_row": 4,
+    "n_rows": 4,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 16,
+    "canonical": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "self_conj_count": 5,
+    "is_pure_square": true,
+    "square_k": 4,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 4,
+    "diagonal_hooks": [
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 4,
+    "n_rows": 4,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 18,
+    "canonical": [
+      5,
+      4,
+      4,
+      4,
+      1
+    ],
+    "self_conj_count": 5,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 4,
+    "diagonal_hooks": [
+      9,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 4,
+    "first_row": 5,
+    "n_rows": 5,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 20,
+    "canonical": [
+      5,
+      5,
+      4,
+      4,
+      2
+    ],
+    "self_conj_count": 7,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 4,
+    "diagonal_hooks": [
+      9,
+      7,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 3,
+    "first_row": 5,
+    "n_rows": 5,
+    "aspect_ratio": 1.0,
+    "empirical_magic": true
+  },
+  {
+    "n": 21,
+    "canonical": [
+      5,
+      5,
+      5,
+      3,
+      3
+    ],
+    "self_conj_count": 8,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 3,
+    "diagonal_hooks": [
+      9,
+      7,
+      5
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 2,
+    "first_row": 5,
+    "n_rows": 5,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 24,
+    "canonical": [
+      5,
+      5,
+      5,
+      5,
+      4
+    ],
+    "self_conj_count": 11,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 4,
+    "diagonal_hooks": [
+      9,
+      7,
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 1,
+    "first_row": 5,
+    "n_rows": 5,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 25,
+    "canonical": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "self_conj_count": 12,
+    "is_pure_square": true,
+    "square_k": 5,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 5,
+    "diagonal_hooks": [
+      9,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 5,
+    "n_rows": 5,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 27,
+    "canonical": [
+      6,
+      5,
+      5,
+      5,
+      5,
+      1
+    ],
+    "self_conj_count": 14,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 5,
+    "diagonal_hooks": [
+      11,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 5,
+    "first_row": 6,
+    "n_rows": 6,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 28,
+    "canonical": [
+      6,
+      6,
+      5,
+      5,
+      4,
+      2
+    ],
+    "self_conj_count": 16,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 4,
+    "diagonal_hooks": [
+      11,
+      9,
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 4,
+    "first_row": 6,
+    "n_rows": 6,
+    "aspect_ratio": 1.0,
+    "empirical_magic": true
+  },
+  {
+    "n": 30,
+    "canonical": [
+      6,
+      6,
+      6,
+      5,
+      4,
+      3
+    ],
+    "self_conj_count": 18,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 4,
+    "diagonal_hooks": [
+      11,
+      9,
+      7,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 3,
+    "first_row": 6,
+    "n_rows": 6,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 36,
+    "canonical": [
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "self_conj_count": 33,
+    "is_pure_square": true,
+    "square_k": 6,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 6,
+    "diagonal_hooks": [
+      11,
+      9,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 6,
+    "n_rows": 6,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 40,
+    "canonical": [
+      7,
+      7,
+      6,
+      6,
+      6,
+      6,
+      2
+    ],
+    "self_conj_count": 46,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 6,
+    "diagonal_hooks": [
+      13,
+      11,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 5,
+    "first_row": 7,
+    "n_rows": 7,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 45,
+    "canonical": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      5,
+      5
+    ],
+    "self_conj_count": 68,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 5,
+    "diagonal_hooks": [
+      13,
+      11,
+      9,
+      7,
+      5
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 2,
+    "first_row": 7,
+    "n_rows": 7,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 49,
+    "canonical": [
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    "self_conj_count": 93,
+    "is_pure_square": true,
+    "square_k": 7,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 7,
+    "diagonal_hooks": [
+      13,
+      11,
+      9,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 7,
+    "n_rows": 7,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 50,
+    "canonical": [
+      8,
+      7,
+      7,
+      7,
+      7,
+      7,
+      6,
+      1
+    ],
+    "self_conj_count": 98,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 6,
+    "diagonal_hooks": [
+      15,
+      11,
+      9,
+      7,
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 7,
+    "first_row": 8,
+    "n_rows": 8,
+    "aspect_ratio": 1.0,
+    "empirical_magic": true
+  },
+  {
+    "n": 64,
+    "canonical": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "self_conj_count": 276,
+    "is_pure_square": true,
+    "square_k": 8,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 8,
+    "diagonal_hooks": [
+      15,
+      13,
+      11,
+      9,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 8,
+    "n_rows": 8,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 81,
+    "canonical": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "self_conj_count": 833,
+    "is_pure_square": true,
+    "square_k": 9,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 9,
+    "diagonal_hooks": [
+      17,
+      15,
+      13,
+      11,
+      9,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 9,
+    "n_rows": 9,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 82,
+    "canonical": [
+      10,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      8,
+      1
+    ],
+    "self_conj_count": 881,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 8,
+    "diagonal_hooks": [
+      19,
+      15,
+      13,
+      11,
+      9,
+      7,
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 9,
+    "first_row": 10,
+    "n_rows": 10,
+    "aspect_ratio": 1.0,
+    "empirical_magic": true
+  },
+  {
+    "n": 100,
+    "canonical": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "self_conj_count": 2574,
+    "is_pure_square": true,
+    "square_k": 10,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 10,
+    "diagonal_hooks": [
+      19,
+      17,
+      15,
+      13,
+      11,
+      9,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 10,
+    "n_rows": 10,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 120,
+    "canonical": [
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      10
+    ],
+    "self_conj_count": 7652,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 10,
+    "diagonal_hooks": [
+      21,
+      19,
+      17,
+      15,
+      13,
+      11,
+      9,
+      7,
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 1,
+    "first_row": 11,
+    "n_rows": 11,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 121,
+    "canonical": [
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11
+    ],
+    "self_conj_count": 8057,
+    "is_pure_square": true,
+    "square_k": 11,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 11,
+    "diagonal_hooks": [
+      21,
+      19,
+      17,
+      15,
+      13,
+      11,
+      9,
+      7,
+      5,
+      3,
+      1
+    ],
+    "has_hook_one": true,
+    "raggedness_index": 0,
+    "first_row": 11,
+    "n_rows": 11,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  },
+  {
+    "n": 126,
+    "canonical": [
+      12,
+      12,
+      12,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      11,
+      10,
+      3
+    ],
+    "self_conj_count": 10422,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 10,
+    "diagonal_hooks": [
+      23,
+      21,
+      19,
+      15,
+      13,
+      11,
+      9,
+      7,
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 9,
+    "first_row": 12,
+    "n_rows": 12,
+    "aspect_ratio": 1.0,
+    "empirical_magic": true
+  },
+  {
+    "n": 184,
+    "canonical": [
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      14,
+      13,
+      13,
+      13,
+      13,
+      12,
+      8
+    ],
+    "self_conj_count": 158688,
+    "is_pure_square": false,
+    "square_k": null,
+    "is_pure_staircase": false,
+    "staircase_k": null,
+    "frobenius_rank_d": 12,
+    "diagonal_hooks": [
+      27,
+      25,
+      23,
+      21,
+      19,
+      17,
+      15,
+      13,
+      9,
+      7,
+      5,
+      3
+    ],
+    "has_hook_one": false,
+    "raggedness_index": 6,
+    "first_row": 14,
+    "n_rows": 14,
+    "aspect_ratio": 1.0,
+    "empirical_magic": false
+  }
+]

@@ -23,4 +23,4 @@ The technical content is split across the rest of the section:
 
 Each Planck step is an application of one of these matrices; the
 information-theoretic cost is bounded by the bandwidth $\mathcal{B}(q)$
-([information speed of light](#prop:information-speed-of-light)).
+([information speed of light](#def:information-speed-of-light)).

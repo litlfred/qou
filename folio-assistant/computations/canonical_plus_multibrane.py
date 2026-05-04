@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Canonical Markov trace + MULTI-BRANE Φ_q tower.
 
@@ -65,7 +66,9 @@ from canonical_tower import (per_irrep_V_hat, eigen_multiplicities,
                                _save_mpm_disk)
 
 
-E_0_BETA_DECAY_MEV = 0.782  # prop:categorical-mass-markov E_0
+from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+E_0_BETA_DECAY_MEV = Q_NEUTRON_MEV  # prop:categorical-mass-markov E_0
+                                     # = 0.78233341 MeV (CODATA-derived)
 
 
 # ── Aggregated V̂ (Wedderburn sum BEFORE Φ_q) ────────────────

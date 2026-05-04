@@ -19,6 +19,7 @@ export default chapter({
       blocks: [
         "observations-intro",
         "substrate-consistency-window",
+        "three-calibration-discipline",
       ],
     }),
 
@@ -108,8 +109,14 @@ export default chapter({
         "nitrogen-14-threading",
         "trace-ratio-observable",
         "trace-ratio-interpretation",
-        "shell-threading-conjecture",
+        "diagrammatic-double-magic-lr-fusion",
+        "double-magic-Ca40-diagram",
+        "double-magic-delta-i-bound",
+        "k12-barrier-bypass",
         "magic-numbers-from-q",
+        "non-magic-Li6-diagram",
+        "shell-threading-conjecture",
+        "single-magic-O18-diagram",
       ],
     }),
 

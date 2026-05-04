@@ -1,0 +1,100 @@
+{
+  "audit": "Phase A.1 \u2014 Full Schur-Weyl Markov decomposition",
+  "generated": "2026-05-02T06:36:54.848922+00:00",
+  "q_0": "1.1099785955541805",
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_strands": 6,
+      "p_n": 11,
+      "n_partitions_used": 11,
+      "n_skipped": 0,
+      "abs_value_at_q0": "0.0051265414130566064663149994189592974485465220262891",
+      "length_distribution": {
+        "1": 1,
+        "2": 3,
+        "3": 3,
+        "4": 2,
+        "5": 1,
+        "6": 1
+      },
+      "time_seconds": 0.002395153045654297
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_strands": 9,
+      "p_n": 30,
+      "n_partitions_used": 30,
+      "n_skipped": 0,
+      "abs_value_at_q0": "0.00037683897942726386359325881305672117951263196735737",
+      "length_distribution": {
+        "1": 1,
+        "2": 4,
+        "3": 7,
+        "4": 6,
+        "5": 5,
+        "6": 3,
+        "7": 2,
+        "8": 1,
+        "9": 1
+      },
+      "time_seconds": 0.02577376365661621
+    },
+    {
+      "atom": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_strands": 9,
+      "p_n": 30,
+      "n_partitions_used": 30,
+      "n_skipped": 0,
+      "abs_value_at_q0": "0.00030975402666632226146794867558339182558611676632362",
+      "length_distribution": {
+        "1": 1,
+        "2": 4,
+        "3": 7,
+        "4": 6,
+        "5": 5,
+        "6": 3,
+        "7": 2,
+        "8": 1,
+        "9": 1
+      },
+      "time_seconds": 0.026443004608154297
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_strands": 12,
+      "p_n": 77,
+      "n_partitions_used": 77,
+      "n_skipped": 0,
+      "abs_value_at_q0": "0.000027725932551948972197174714531858201934708560678983",
+      "length_distribution": {
+        "1": 1,
+        "2": 6,
+        "3": 12,
+        "4": 15,
+        "5": 13,
+        "6": 11,
+        "7": 7,
+        "8": 5,
+        "9": 3,
+        "10": 2,
+        "11": 1,
+        "12": 1
+      },
+      "time_seconds": 29.722352266311646
+    }
+  ],
+  "interpretation": "Sums Plancherel weight \u00d7 q-Hecke character over ALL partitions of 3A (not just length-\u2264-2). Compared with the prior length-\u2264-2 Schur path; the difference is the contribution from length-3+ partitions that the 2-variable Schur formula was forcing to zero."
+}

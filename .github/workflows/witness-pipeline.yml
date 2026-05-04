@@ -128,6 +128,32 @@ jobs:
         # per-chain results + the global witness-trust audit.
         run: python3 folio-assistant/computations/derivation_chain_validator.py
 
+      - name: E_0 / Q_β(n) calibration audit (strict)
+        # Per CAL-3 (`prop:three-calibration-inputs`), every site
+        # that uses E_0 or Q_β(n) must derive from the authoritative
+        # `experimental_constants.Q_NEUTRON_MEV` (computed from CODATA
+        # m_n - m_p - m_e). Strict mode fails CI if any active code
+        # site hardcodes the value or anchors on proton mass instead.
+        run: |
+          python3 folio-assistant/computations/e0_calibration_audit.py --strict
+
+      - name: Cross-check tr_M @ q_0 — Hoefsmit vs markov_peel (1ppb)
+        # Independent-path consistency gate for the canonical Markov
+        # trace at the calibrated substrate parameter q_0. Both paths
+        # store full 50-dps decimal strings; the script reports
+        # relative |Δ| via mpmath. Strict mode fails CI on any > 1ppb.
+        run: |
+          python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
+
+      - name: Run lp_dual_witness_validator (warn-only)
+        # Per prop:operator-selection-lp § dual program: every
+        # operator-selection / LP / SDP witness should include the LP
+        # dual variables (y_0_star, y_star, active_set, primal_obj,
+        # dual_obj, duality_gap). Currently warn-only (~58 legacy
+        # witnesses are missing the dual). To enforce: pass --strict.
+        # Migration target: route LP solves through lp_dual_solver.py.
+        run: python3 folio-assistant/computations/lp_dual_witness_validator.py
+
       - name: Detect drift in committed witnesses
         run: |
           # The validators rewrite their output witnesses on every run.

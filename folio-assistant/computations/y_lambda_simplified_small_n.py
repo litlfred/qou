@@ -25,6 +25,9 @@ from pathlib import Path
 
 import sympy as sp
 
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: E402
+
 q = sp.symbols('q', positive=True)
 Q = q ** 2
 qsqrt = sp.sqrt(q)
@@ -113,6 +116,7 @@ for n in [0, 1, 2, 3, 4]:
         n_results[str(lam)] = {
             "expr": str(y_simp),
             "numeric_at_q0": y_num,
+            "y_polynomial": expose_polynomial(y_simp, q, simplify=False),
         }
     results[str(n)] = n_results
     print()

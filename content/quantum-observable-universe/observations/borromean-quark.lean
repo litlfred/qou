@@ -60,6 +60,50 @@ def borromean_volume : ℝ := 7.32772
 def baryon_mass (q : ℝ) (hq : q > 1) : ℝ :=
   borromean_volume / (1 - 1/q)^2
 
+-- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+
+/-- **Conjecture class.** An instance asserts that the Borromean
+    link `B_3` is the canonical baryon model: nucleons (proton,
+    neutron) are realised as Borromean-linked three-quark
+    configurations with hyperbolic volume `borromean_volume ≈
+    7.32772` (the topological mass scale).
+
+    Two conjectural fields:
+    * `is_baryon_realisation` — every observed baryon arises as a
+      Borromean configuration with appropriate orientation/color;
+    * `volume_calibrates_mass` — the bare baryon mass is
+      `borromean_volume / (1 − 1/q)²`, calibrating the
+      topological-mass formula at q = q₀.
+
+    `sorry` in any concrete instance is understood as **conjecture**,
+    not missing proof. Downstream blocks may take `[BorromeanQuark]`
+    as an explicit hypothesis to remain `theorem`/`proposition` per
+    CLAUDE.md §3b-cond.
+
+    Ref: [manuscript] Ch. 6 §3, conj:borromean-quark -/
+class BorromeanQuark where
+  /-- The baryon mass functional (depends on q). -/
+  bare_mass : ℝ → ℝ
+  /-- The mass functional evaluates to `borromean_volume / (1 − 1/q)²`
+      at every q > 1. -/
+  volume_calibrates_mass :
+    ∀ q : ℝ, q > 1 → bare_mass q = borromean_volume / (1 - 1/q)^2
+  /-- Every observed baryon (proton, neutron) is realised as some
+      Borromean partition (the predicate is conjectural; the witness
+      is the explicit `proton_partition` / `neutron_partition`
+      structures defined above). -/
+  is_baryon_realisation : Prop
+  is_baryon_realisation_holds : is_baryon_realisation
+
+/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+    Conditional on `[BorromeanQuark]`, baryon mass at every q > 1
+    equals `borromean_volume / (1 − 1/q)²`. Fully verified by Lean
+    once an instance is fixed. -/
+theorem baryon_mass_from_volume [inst : BorromeanQuark]
+    (q : ℝ) (hq : q > 1) :
+    inst.bare_mass q = borromean_volume / (1 - 1/q)^2 :=
+  inst.volume_calibrates_mass q hq
+
 end QOU.Descartes
 
 end

@@ -12,16 +12,15 @@ import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Topology.Basic
-import Mathlib.Topology.ContinuousFunction.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
-import Mathlib.Analysis.InnerProductSpace.Basic
-import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 
-open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
+-- Pre-Archimedean stub: this declaration lives in a rigid monoidal category
+-- with abstract ground ring `R`.  Real / Analysis / Topology / Manifold /
+-- InnerProductSpace imports were dead-weight (the body uses only
+-- CategoryTheory morphisms) and were removed to make the pre-Arch ground-ring
+-- discipline visible (cf. QOU.GroundRingAnnotations and audit
+-- docs/audits/2026-05-03-pre-archimedean-proof-audit.md §1).
+
+open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 

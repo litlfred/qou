@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Task B: unified Markov-stab + Kähler jet lift.
 
@@ -38,6 +39,7 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0
+from experimental_constants import Q_NEUTRON_MEV
 from kahler_lift import (build_V_hat_symbolic, q as q_sym,
                             HBAR_Q_SYM)
 
@@ -259,7 +261,7 @@ if __name__ == "__main__":
             "O(ℏ_q⁵) per order."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "parameters": {"q0": Q0, "E_0_MeV": 0.782},
+        "parameters": {"q0": Q0, "E_0_MeV": float(Q_NEUTRON_MEV)},
         "results": results,
     }
     out = Path(__file__).parent / "unified-lift.witness.json"

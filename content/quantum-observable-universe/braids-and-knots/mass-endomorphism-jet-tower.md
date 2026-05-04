@@ -123,22 +123,46 @@ cubic terms at level $n$
 
 ## Remaining open subconjectures
 
-1. **Jet-level sum convergence**: a geometric-series tail bound
+1. **Jet-level sum convergence** — 🟡 path-(b) closure via
+   [`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max)
+   (workplan **P3.4** path (b)). A geometric-series tail bound
    has been proved conditional on uniform boundedness of
    $\Delta^{(n)}$
    ([brane-tower tail bound](#prop:jet-tower-convergence)):
    if $|\Delta^{(n)}| \leq \Delta_{\max}$ for all $n$, then the
    $N$-term truncation error is
    $\leq \Delta_{\max} \hbar_q^{2(N+1)} / (1 - \hbar_q^{2})$.
-   The remaining open piece is to prove the uniform bound on
-   $\Delta^{(n)}$ itself; empirically it holds (and is roughly
-   constant) on light atoms.
-2. **Pentagon $\to$ uv-commutation**: the pentagon identity as
-   stated requires $uv = q\,vu$; verifying this relation for
-   traced volumes $\hat V$ at generic jet level needs explicit
-   check (expected to follow from the Hecke braid/commutation
-   on generators, but not written out).
-3. **Descent involution on pairs**: does $\hat\tau_n$ map some
-   level-$(n+1)$ pairs back to level-$n$ singletons (or trivial)?
-   The pentagon ascension gives an upper bound on the level-$n+1$
-   support; sharpness is open.
+   The uniform bound is now an explicit conjecture with empirical
+   support: the
+   [`jet_tower_delta_max.py`](../../../folio-assistant/computations/jet_tower_delta_max.py)
+   measurement script confirms `uniform_bound_pass = true` for
+   D, T, ³He across $n = 1, \dots, 7$. The path-(a) proof from
+   GS spectral-sequence $E_2$-collapse remains open.
+2. **Pentagon $\to$ uv-commutation** — ✅ resolved by
+   [`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace).
+   The traced volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$
+   are scalar polynomials and commute trivially; the pentagon
+   identity in its operator form does not apply to scalars. The
+   ascension argument's rigorous content is Markov-trace
+   factorization
+   ([thm:markov-trace-factorization](#thm:markov-trace-factorization))
+   plus the brane-tower's $q$-graded jet ascension between
+   adjacent levels — which is where the operator pentagon $uv =
+   q\,vu$ does apply (on inter-level lifts $\widehat U_i$,
+   $\widehat V_j$).
+3. **Descent involution on pairs / pair-formula sharpness** — ✅
+   resolved by
+   [`lem:tower-pair-equality-fixed-level`](#lem:tower-pair-equality-fixed-level).
+   The level-$n$ pair contribution $z^2 \sum_{(i, j) \in
+   \mathcal{P}_n} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)$ is an
+   **exact equality**, not an upper bound — the pentagon-bound
+   framing was vacuous (per item 2 above the pentagon doesn't apply
+   to scalar $\hat V$'s), and the Markov-pair identity
+   ([prop:markov-pair-z2](#prop:markov-pair-z2)) is itself an
+   equality. The empirical residual to CODATA at light atoms
+   ($\sim 0.5$–$0.9\%$) reflects incomplete tower truncation
+   (level $\ge 1$ contributions), not a sharpness gap in the
+   level-$n$ formula. The remaining open piece is the uniform
+   $\Delta_{\max}$ bound for the truncation-error formula
+   ([prop:jet-tower-convergence](#prop:jet-tower-convergence)),
+   tracked as workplan **P3.4** (item 1 above).

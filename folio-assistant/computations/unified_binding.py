@@ -37,7 +37,8 @@ E_0_MeV = 938.272 / M_PROTON_TOWER  # tower-level calibration (non-magic path)
 # E_0 = 0.782 MeV = free-neutron β-decay Q-value.
 # This is the CANONICAL categorical calibration for single-level
 # Markov trace mass identity: 𝔪|_SL = |tr_M|; B = E_0 · (|tr_M_free| - |tr_M_atom|).
-E_0_BETA_MeV = 0.782
+from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+E_0_BETA_MeV = Q_NEUTRON_MEV  # 0.78233341 MeV (CODATA-derived)
 
 
 def unified_binding(Z, N, cache):

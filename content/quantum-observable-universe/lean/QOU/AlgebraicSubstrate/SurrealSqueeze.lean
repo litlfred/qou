@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Order.Field.Basic
+import QOU.AppendixSurreals.Basic
 
 /-!
 # QOU.AlgebraicSubstrate.SurrealSqueeze — the squeeze lemma
@@ -10,9 +11,20 @@ in the ordered field `ℝ(ε) ⊂ 𝐍𝐨`.
 
 Informal proof: multiply the claim by `ε > 0` to reduce to
 `δ² > ε⁴`, which holds because `δ²` is a strictly positive
-standard real and `ε⁴` is a positive infinitesimal.  The formal
-version requires `LinearOrderedField` + an archimedean-infinitesimal
-hypothesis, both available in `QOU.AppendixSurreals`.
+standard real and `ε⁴` is a positive infinitesimal.
+
+Two formalisations are provided:
+
+1. **`surreal_squeeze`** — the surreal-field version with the
+   intended hypotheses (`ε` infinitesimal in some `SurrealField K`,
+   `δ` a positive standard real).  Proved using the
+   `IsInfinitesimal` infrastructure from `QOU.AppendixSurreals.Basic`.
+
+2. **`surreal_squeeze_of_pow_lt`** — the abstract pure-algebra form
+   over any linearly ordered field, taking the substantive size
+   separation `ε^4 < δ^2` directly as a hypothesis.  Used internally
+   by `surreal_squeeze` and available to callers who already control
+   the `ε^4 < δ^2` bound by other means.
 
 LaTeX label: `lem:surreal-squeeze`.
 
@@ -71,5 +83,70 @@ theorem surreal_squeeze_of_pow_lt
         mul_inv_cancel₀ hε_ne, mul_one]
   rw [h_pow] at key
   exact key
+
+/-- **surreal_squeeze**: in any `SurrealField K`, for every strictly
+    positive infinitesimal `ε ∈ K` and every strictly positive standard
+    real `δ`, the cost `(ofReal δ)² · ε⁻¹` of a standard-scale deviation
+    strictly exceeds the mass-gap budget `ε³`.
+
+    This is the surreal-coefficient version intended by the paper
+    (`lem:surreal-squeeze`).  The proof reduces — via
+    `surreal_squeeze_of_pow_lt` — to the size separation
+    `ε⁴ < (ofReal δ)²`, which holds because `ε⁴` is infinitesimal
+    (closure of infinitesimals under multiplication by finite
+    elements, applied iteratively) and `(ofReal δ)²` is a strictly
+    positive standard real.
+
+    Ref: [conway1976] https://doi.org/10.1201/9781439864159
+    Ref: [gonshor1986] https://doi.org/10.1017/CBO9780511629143 -/
+theorem surreal_squeeze
+    {K : Type u} [QOU.AppendixSurreals.SurrealField K]
+    (ε : K) (δ : ℝ)
+    (hε : 0 < ε) (hε_inf : QOU.AppendixSurreals.SurrealField.IsInfinitesimal ε)
+    (hδ : 0 < δ) :
+    (QOU.AppendixSurreals.SurrealField.ofReal δ : K)^2 * ε⁻¹ > ε^3 := by
+  -- Strategy: reduce to `surreal_squeeze_of_pow_lt` with `δ' := ofReal δ`.
+  -- Need `ε^4 < (ofReal δ)^2`.  Since `ε^4` is infinitesimal and
+  -- `(ofReal δ)^2 = ofReal (δ^2)` is a strictly positive standard real,
+  -- the inequality follows directly from `IsInfinitesimal`.
+  --
+  -- (ofReal δ)^2 = ofReal (δ^2)
+  have hpow_ofReal :
+      (QOU.AppendixSurreals.SurrealField.ofReal δ : K)^2
+        = QOU.AppendixSurreals.SurrealField.ofReal (δ^2) :=
+    (map_pow _ _ _).symm
+  -- ε^4 is infinitesimal: ε * (ε * (ε * ε)) with the leftmost ε
+  -- carrying the `IsInfinitesimal` flag and the rest carrying
+  -- `IsFinite` (since infinitesimals are finite).
+  have hε_fin : QOU.AppendixSurreals.SurrealField.IsFinite ε :=
+    hε_inf.isFinite
+  have hε2_fin : QOU.AppendixSurreals.SurrealField.IsFinite (ε * ε) :=
+    hε_fin.mul hε_fin
+  have hε3_fin : QOU.AppendixSurreals.SurrealField.IsFinite (ε * (ε * ε)) :=
+    hε_fin.mul hε2_fin
+  have hε4_inf : QOU.AppendixSurreals.SurrealField.IsInfinitesimal
+      (ε * (ε * (ε * ε))) :=
+    hε_inf.mul_finite hε3_fin
+  -- Rewrite ε^4 = ε * (ε * (ε * ε)).
+  have hε4_eq : ε^4 = ε * (ε * (ε * ε)) := by ring
+  -- δ^2 > 0 in ℝ.
+  have hδ_sq_pos : (0 : ℝ) < δ^2 := by positivity
+  -- |ε^4| < ofReal (δ^2) from the infinitesimal definition.
+  have habs : |ε * (ε * (ε * ε))|
+      < (QOU.AppendixSurreals.SurrealField.ofReal (δ^2) : K) :=
+    hε4_inf (δ^2) hδ_sq_pos
+  -- ε^4 ≥ 0, so |ε^4| = ε^4.
+  have hε4_nonneg : 0 ≤ ε * (ε * (ε * ε)) := by
+    have h : 0 ≤ ε^4 := by positivity
+    rw [hε4_eq] at h; exact h
+  have habs_eq : |ε * (ε * (ε * ε))| = ε * (ε * (ε * ε)) :=
+    abs_of_nonneg hε4_nonneg
+  rw [habs_eq] at habs
+  -- Assemble: ε^4 < (ofReal δ)^2.
+  have hsq : ε^4 < (QOU.AppendixSurreals.SurrealField.ofReal δ : K)^2 := by
+    rw [hε4_eq, hpow_ofReal]; exact habs
+  -- Apply the abstract pure-algebra form.
+  exact surreal_squeeze_of_pow_lt ε
+    (QOU.AppendixSurreals.SurrealField.ofReal δ) hε hsq
 
 end QOU.AlgebraicSubstrate

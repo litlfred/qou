@@ -1,4 +1,4 @@
-*Atomic masses from the seven-term [q-integer BW formula](#prop:q-integer-mass-formula)
+*Atomic masses from the seven-term [q-integer BW formula](#conj:q-integer-mass-formula)
 with zero fitted parameters.  All seven coefficients and the shell
 width $\sigma = [2]_q$ are products of quantum integers $[n]_q$
 evaluated at $q_0 \approx 1.110$, times $m_e$.

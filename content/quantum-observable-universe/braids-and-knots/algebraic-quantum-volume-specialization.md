@@ -33,6 +33,34 @@ its dimensional bridge to laboratory MeV; the appearance of $8G$
 is route 2 used only as a name for the realized scale, not as a
 derivation step.*
 
+4. ***$q$-Pochhammer partial-product expansion (pre-Archimedean,
+   structural).** Substituting the partial-product factorisation
+   $\hat{V}_i(q) = C_i(q) \cdot \Phi_{n_i}(x_i; q)$ from
+   [algebraic quantum volume §partial-product expansion](#def:algebraic-quantum-volume)
+   into route 3 gives the explicit shared denominator*
+
+   $$
+     \mathrm{Vol}_{q_0}(\beta)
+     \;=\;
+     \frac{\prod_i C_i(q_0)}{\prod_i (x_i; q_0)_{n_i}},
+   $$
+
+   *whose denominator $\prod_i (x_i; q_0)_{n_i}$ is the algebraic
+   image of the JSJ-piece cusps
+   ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
+   This route does not produce a different number from route 3 — it
+   is the same evaluation rewritten to expose the pole structure that
+   feeds the Picard-Lefschetz / Seiberg-Witten thimble integration
+   ([SW-period $\equiv$ thimble integral](#prop:sw-period-thimble-equivalence))
+   and the Newton-Raphson seeding rule for the Thurston gluing
+   equations.*
+
+*Route 4 is structural rather than numerical: it is a rewriting of
+route 3 that names the algebraic denominator. The explicit shared
+denominator is the bridge between the algebraic state sum and the
+geometric volume; it is the QOU-native form of the Kashaev limit
+([algebraic-geometric dilog equivalence](#conj:algebraic-geometric-dilog-equivalence)).*
+
 *Proof sketch.*
 $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i(q)$ is a finite product in
 $\mathbb{Z}[q^{1/2}, q^{-1/2}][z]$; route 1 follows from $H_A(1)=0$,

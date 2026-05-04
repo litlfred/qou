@@ -8,7 +8,7 @@ $$
 
 *where $\alpha = m_e \times 8G \approx 0.511 \times 7.328
 \approx 3.744 \;\mathrm{MeV}$ is the universal binding scale
-from the [Wedderburn mass formula](#prop:wedderburn-mass-formula).*
+from the [Wedderburn mass formula](#thm:wedderburn-mass-formula).*
 
 *The optimal binding from the LP dual encodes:*
 

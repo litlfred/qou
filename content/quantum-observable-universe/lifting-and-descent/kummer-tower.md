@@ -105,7 +105,7 @@ $\chi(A) \neq 0$:
    $p \nmid \chi(A)$ — perpetuity is realised place-by-place in
    the realization tower, not only as a torsion-filtration claim.
    This is the content of
-   [motivic perpetual obstruction](#lem:motivic-perpetual-obstruction);
+   [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction);
    items 1–5 above are corollaries of that lemma at each adelic
    place separately.
 

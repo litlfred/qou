@@ -12,5 +12,5 @@ export default remark({
     "electron-shell",
     "diagram",
   ],
-  uses: ["conj:electron-shells-hopf"],
+  uses: [],
 });

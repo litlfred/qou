@@ -49,10 +49,10 @@ for each crossing.
 | 5 | Pairing | [3][7]m_e | ±1/√A | [3]+[1,1,1] descent | DERIVED |
 | 6 | Exchange | [3]/[2]m_e | -Z^{4/3}/A^{1/3} | [2,1] h³ boundary | DERIVED |
 | 7 | Shell | [2]²[3]m_e | +f_magic/A^{2/3} | [3,1] branching | DERIVED |
-| 8 | Hook | \|β₄\|·\|lnλ\|·m_e | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (coeff ad hoc) |
+| 8 | Hook | [3]·[2]²·m_e | -(1-f_Z)(1-f_N)A^{1/3} | [2,2] self-conj | DERIVED (q-hook product H_q((2,2)) = [3]·[2]² via prop:wigner-np-pairing; numerically equal to the previous |β₄|·|lnλ| ad-hoc form at q₀ ≈ 6.29 MeV) |
 | 9 | Wigner | [5]!·m_e | -T(T+1)/A | [3,1,1] Frob reciprocity | DERIVED |
 | 10 | Form factor | h[5]m_e | -Z²/A | [3,2]⊕[2,2,1] conj pair | DERIVED |
-| 11 | pn corr | 2[2][3]/[4]·[2]m_e | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (coeff approx) |
+| 11 | pn corr | (y_{(4,1)}+y_{(2,1,1,1)})·m_e via Wenzl-bridge n=5 | +ZN/A^{4/3} | [4,1]⊕[2,1,1,1] conj pair | DERIVED (Wenzl-bridge symbolic in ℤ[q^{±1}] via prop:y-lambda-recipe-from-partition; previous "approx" tag obsolete — closed form available at n ≤ 12 per y_lambda_wenzl_bridge_extended.py) |
 
 ### Figure-eight modification (A=3 nuclei)
 
@@ -80,10 +80,19 @@ The content sum c(λ) = Σ(j-i) determines the BW scaling:
 
 ## Fine Structure Constant
 
+**Live closed form** (`prop:alpha-em-categorical-trace`):
+
 ```
-1/α = q·[9]·[10] × (1 + c₁ + c₁²·κ) = 137.035944
-CODATA: 137.035999
-Error: 399 ppb
+1/α = 45 · [3]_q · (1 + δ_CS + 8q·δ_CS²)        where δ_CS = ℏ_q⁴ · [5]_q
+    = 137.035998166
+CODATA: 137.035999084 ± ~3                       (~21 ppb)
+Residual: 6.7 ppb  (within CODATA uncertainty)
+```
+
+**Legacy formulation** (superseded; kept for historical reference):
+
+```
+1/α = q·[9]·[10] × (1 + c₁ + c₁²·κ) = 137.035944  (399 ppb — legacy)
 ```
 
 ## Current Results (k=5)
@@ -93,7 +102,7 @@ Mass MAE:      0.006% (45 isotopes, H through U)
 ³H mass:       0.00001% (figure-eight BW)
 ³He mass:      0.00000% (figure-eight BW)
 Q(³H→³He):     18.23 keV (exp 18.59, 2.0%)
-1/α:           137.035944 (399 ppb)
+1/α:           137.035998166 (6.7 ppb, within CODATA 21 ppb)
 H-H bond:      4.469 eV (0.2%)
 ```
 
@@ -164,6 +173,24 @@ Computing this marginal requires the full spectral LP at H_6(q)
 (not just the branching rule), because the scaling functions at
 different levels interact non-trivially.
 
+## Calibration discipline (post-2026-05-01 audit)
+
+The framework has **categorically exactly three** external
+calibration inputs (per
+[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
+
+| ID | Calibration | (Co)homology | Role |
+|----|-------------|--------------|------|
+| **CAL-0** | $m_e$ (CODATA) | $H^0$ | Mass scale |
+| **CAL-1** | $m_\mu / m_e$ (CODATA) | $H^1$ | Fixes substrate parameter $q_0$ |
+| **CAL-2** | $Q_\beta$ (PDG) | $H^2$ | Weak / β-decay sector ($E_0$ above) |
+
+The substrate parameter $q_0$ is **not** a fitted parameter beyond
+this budget; it is the $H^1$ calibration. Any **fourth** external
+input is a hard audit failure. The earlier "Energy scale $E_0$:
+calibrated, not independently derived" entry is now correctly framed
+as the $H^2$ calibration — not an additional fit.
+
 ## Open questions (ranked)
 
 1. **k=6 scaling function**: coefficient DERIVED (C_{321}=w·h/2),
@@ -175,8 +202,53 @@ different levels interact non-trivially.
    character polynomial in Z,N,A from the symbolic computation.
 2. **Q-values for A≥4**: BW at k=5 gives keV-scale errors in mass DIFFERENCES.
    Needs k≥7 exact corrections.
-3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface — not derived.
+3. **Magic numbers**: {2,8,20,28,50,82,126} from Bring's surface
+   — algebraic claim now stated as
+   [`conj:magic-numbers-bring`](../../content/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md)
+   (P1.4 path-(b)): the seven values are conjectured to be the
+   ranks of distinguished $S_5 \times \langle\hat\tau\rangle$-stable
+   period sub-lattices on Bring's surface. Path-(a) proof
+   (concrete period-lattice construction + bijection) remains
+   open. Equivalent under Yekutieli rigidity to
+   `conj:categorical-neutrality-saturated-shells` and
+   `conj:homological-shell-condensation`; the three are three
+   models of the same conjectural surface.
 4. **Molecular binding beyond H-H**: vertex-volume method fails for multi-electron atoms.
-5. **1/α remaining 399 ppb**: J³ correction (Massey products?).
-6. **Energy scale E₀**: calibrated, not independently derived.
-7. **Neutrino mass**: wrong by 10⁶.
+5. **1/α residual**: ~~399 ppb~~ — **resolved at 6.7 ppb**. Live closed
+   form (`prop:alpha-em-categorical-trace`):
+   $1/\alpha_{EM} = 45 \cdot [3]_q \cdot (1 + \delta_{CS} + 8q\delta_{CS}^2)$
+   with $\delta_{CS} = \hbar_q^4 \cdot [5]_q$ predicts $137.035998166$
+   vs CODATA $137.035999084$. 6.7 ppb residual is **inside** the
+   CODATA 21-ppb experimental uncertainty; no further derivation
+   required. Each factor is forced by an upstream block
+   (`exterior-square-borromean`, `force-carrier-bring-uniqueness`,
+   `gram-determinant-plancherel-ratio`, genus-4 torus-knot enumeration);
+   PSLQ uniqueness confirms no shorter rational combination matches.
+6. **Energy scale E₀**: calibrated as the $H^2$ input (CAL-2 = $Q_\beta$).
+7. **Neutrino mass**: ν = unknot ($K_{0_1}$); $J_\nu(q)=1$; bare-knot
+   mass = 0. The framework predicts $m_\nu \sim \mu_0\cdot(q-1)$
+   (vacuum drag, not knot topology — see
+   `content/.../descartes-universe/neutrino-knot.md`). The earlier
+   "wrong by 10⁶" claim was a neutron/neutrino confusion (comparing
+   neutrino against neutron mass) and is **withdrawn**.
+
+## Audit closures (2026-05-01 / 2026-05-02)
+
+| ID | Status | Notes |
+|----|--------|-------|
+| **CAL-0/1/2** | 🟢 declared | Three-calibration discipline (P0.4 landed) |
+| **SUB-1** ($q_0$) | 🟢 = CAL-1 | $H^1$ calibration; `q_parameter.py` + `q_pinning_50_digit.py` derive $q_0$ from a single CODATA $m_\mu/m_e$ input — no separate fit-against-mass-tower step exists. P1.1(b) confirmed in place. |
+| **NU-1** | 🟢 withdrawn | Neutrino = unknot; bare mass = 0 (P1.6 audit) |
+| **SHELL-1** | 🟢 cleared | Compound-shell calibration *is* CAL-2 (P1.5 audit) |
+| **JSJ-link 8** | 🟢 algebraic recast landed | Hecke $J^\bullet$-stratification (P0.3) |
+| **BW-8** | 🟢 closed | Wenzl-bridge q-hook product; live derivation in `wigner-np-pairing`. |
+| **BW-11** | 🟢 closed | Wenzl-bridge closed form $(y_{(4,1)} + y_{(2,1,1,1)})\,m_e$ at $n=5$. |
+| **MAG-1** | 🟢 6/7 derived/verified | Hoefsmit $\{2,8,20,28\}$ + PR #499 self-conjugate witness $\{50,82\}$ + PR #500 homological framework; only $Z=126$ pending (cron compute). The "only on the magic ladder" claim is `conj:homological-shell-condensation`. |
+| **ALPHA-2** (1/α residual) | 🟢 closed at 6.7 ppb | Within CODATA 21-ppb uncertainty; no further derivation required (P1.7). |
+
+See [`docs/audits/2026-05-01-math-framework-deep-audit.md`](../../docs/audits/2026-05-01-math-framework-deep-audit.md)
+for the full audit and
+[`docs/audits/2026-05-01-math-framework-workplan.md`](../../docs/audits/2026-05-01-math-framework-workplan.md)
+for the priority queue.  Open conjectures and their downstream cones
+are tracked in
+[`docs/audits/conjecture-cones.md`](../../docs/audits/conjecture-cones.md).

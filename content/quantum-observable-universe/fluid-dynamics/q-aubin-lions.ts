@@ -1,7 +1,7 @@
-import { theorem } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default theorem({
-  label: "thm:q-aubin-lions",
+export default conjecture({
+  label: "conj:q-aubin-lions",
   title:
     "q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\to 1$",
   uses: [

@@ -15,7 +15,6 @@ export default remark({
     "binomial",
   ],
   uses: [
-    "conj:baryon-period-ratio",
     "prop:mobius-golden-fixed-points",
     "rem:golden-ratio-degeneration",
   ],

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath-only correctness probe (Picard-Lefschetz / SW thimble equivalence); no symbolic-q polynomial.
 """
 Baryon integrand ∏_k dc_k/dz as the Alt^3 isotype of the color-tube
 Jacobian — numerical witness.

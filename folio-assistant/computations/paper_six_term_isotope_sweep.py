@@ -270,8 +270,9 @@ if __name__ == "__main__":
     print(f"  p terms:    t1={p_terms['term1_descended']:.3e} "
           f"t2={p_terms['term2_single_gen_tower']:.3e} "
           f"t3={p_terms['term3_pair_gen_tower']:.3e}")
-    print(f"             t4={p_terms['term4_frobenius_codim']:.3e} "
-          f"t5={p_terms['term5_chirality']:.3e}")
+    print(f"             t4={p_terms['term4_frobenius_codim_scaled']:.3e} "
+          f"t5={p_terms['term5_additive_contribution']:.3e} "
+          f"t6={p_terms['term6_higher_residues']:.3e}")
     print()
 
     ISOTOPES = [

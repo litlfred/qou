@@ -1,4 +1,4 @@
-The [critical exponent](#prop:critical-exponent) $\alpha = 4/3$
+The [critical exponent](#conj:critical-exponent) $\alpha = 4/3$
 governs the rate at which enstrophy diverges as $q \to 1$.
 The question is whether $\alpha$ depends on the initial data
 $v_0$ or only on the categorical invariants of

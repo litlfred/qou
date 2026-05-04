@@ -1,0 +1,24 @@
+import { conjecture } from "../../schema/builders";
+
+export default conjecture({
+  label: "conj:categorical-higgs-idempotent",
+  title:
+    "Categorical Higgs idempotent $e_H \\colon A \\to A$ projecting onto unbroken $\\mathrm{U}(1)_{em}$",
+  uses: [
+    "def:frobenius-hopf-substrate",
+    "def:categorical-action",
+    "conj:electroweak-mass-eigenstate-count",
+    "conj:force-carrier-knot-vs-link-dichotomy",
+    "thm:em-spectral-completeness",
+    "prop:gauge-coupling-uniqueness",
+  ],
+  tags: [
+    "higgs-mechanism",
+    "categorical-idempotent",
+    "ew-symmetry-breaking",
+    "u1-em",
+    "unbroken-direction",
+    "n-sym",
+    "open-problem",
+  ],
+});

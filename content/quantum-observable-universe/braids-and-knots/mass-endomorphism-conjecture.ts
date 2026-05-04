@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:mass-endomorphism",
   title: "Mass endomorphism conjecture",
   lean: {
-    ref: "qou:QOU.WedderburnMass.MassEndomorphism",
+    ref: "qou:QOU.MassEndomorphism.MassEndomorphism",
     validation: "not_checked",
   },
   uses: [

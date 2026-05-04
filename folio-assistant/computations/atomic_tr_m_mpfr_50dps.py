@@ -35,6 +35,12 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 from mpmath import mp, mpf
 
 mp.dps = 50
@@ -117,7 +123,8 @@ def main(also_symbolic: bool = False) -> int:
             try:
                 t_sym = time.time()
                 elem, stats = M.build_atom_nf_symbolic(Z, N, verbose=False)
-                tr_q = tr_M_element(elem, n_strands, Z_SYMB, H_SYMB)
+                tr_q = tr_M_element(elem, n_strands, Z_SYMB, H_SYMB,
+                                      simplify=False)
                 free = list(tr_q.free_symbols)
                 q60 = sp.Float(q_str, 60)
                 tr_at_q0_sym = sp.N(tr_q.subs({s: q60 for s in free}), 50)
@@ -135,6 +142,37 @@ def main(also_symbolic: bool = False) -> int:
             except Exception as exc:
                 print(f"    [sympy] FAILED ({type(exc).__name__}: {exc})")
                 symbolic_check = {"error": f"{type(exc).__name__}: {exc}"}
+
+        # Markov-axiom recursive ascent (#508) — third independent path.
+        # Build via `markov_peel.tr_M_atomic`, evaluate at 50 dps to
+        # cross-check both the bridge and the symbolic legacy path.
+        peel_check = None
+        try:
+            from markov_peel import tr_M_atomic
+            from hecke_symbolic import q as q_peel_sym
+            t_peel = time.time()
+            tr_peel_sym = tr_M_atomic(Z, N)
+            q60 = sp.Float(q_str, 60)
+            free = list(tr_peel_sym.free_symbols) if hasattr(
+                tr_peel_sym, "free_symbols") else [q_peel_sym]
+            tr_peel_at_q0 = sp.N(
+                tr_peel_sym.subs(
+                    {s: q60 for s in free} if free else
+                    {q_peel_sym: q60}),
+                50)
+            tr_peel_mpf = mpf(str(tr_peel_at_q0))
+            dt_peel = time.time() - t_peel
+            diff_peel = abs(tr_peel_mpf - tr_at_q0_mpf)
+            print(f"    [peel]  tr_M(q_0) = {tr_peel_mpf}  ({dt_peel:.2f}s)")
+            print(f"    |bridge - peel|    = {diff_peel}")
+            peel_check = {
+                "elapsed_sec": dt_peel,
+                "tr_M_at_q0_50dps": str(tr_peel_mpf),
+                "abs_diff_vs_bridge": str(diff_peel),
+            }
+        except Exception as exc:
+            print(f"    [peel]  FAILED ({type(exc).__name__}: {exc})")
+            peel_check = {"error": f"{type(exc).__name__}: {exc}"}
 
         # If a historical knot ID is available, compare numerically at q_0.
         comparison = None
@@ -173,6 +211,7 @@ def main(also_symbolic: bool = False) -> int:
             "term1_b_pred_mev_50dps": str(b_term1),
             "bridge_elapsed_sec": bridge_t,
             "symbolic_cross_check": symbolic_check,
+            "peel_cross_check": peel_check,
             "historical_K_comparison": comparison,
         })
 

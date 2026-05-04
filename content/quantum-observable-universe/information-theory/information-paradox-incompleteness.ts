@@ -14,9 +14,6 @@ export default remark({
     "degree-0-opacity",
     "aeon-boundary",
   ],
-  uses: [
-    "rem:incompleteness-horizon",
-    "conj:aeon-boundary-generates-chart",
-  ],
+  uses: ["rem:incompleteness-horizon"],
   cites: ["hawking1975", "bekenstein1973", "goedel1931"],
 });

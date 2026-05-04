@@ -50,6 +50,12 @@ from datetime import datetime, timezone
 
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0_FLOAT
 
@@ -178,6 +184,7 @@ if __name__ == "__main__":
         d = dim_q_spin(m)
         d_simpl = sp.simplify(d)
         d_q0 = float(d.subs(q, q0).evalf(20))
+        d_q0_polynomial_q = expose_polynomial(d, q)
         print(f"  dim_q(V_{{{m}/2}}) = [{m+1}]_q = {d_simpl}  @ q_0 = {d_q0:.6f}")
     print()
 
@@ -206,7 +213,9 @@ if __name__ == "__main__":
     print(f"    Sanity: [2]_q^3 = [4]_q + 2·[2]_q ? "
           f"{identity_check == 0}  (diff = {identity_check})")
     q2_cubed_q0 = float(q2_cubed.subs(q, q0).evalf(15))
+    q2_cubed_q0_polynomial_q = expose_polynomial(q2_cubed, q)
     qdim_total_q0 = float(qdim_total.subs(q, q0).evalf(15))
+    qdim_total_q0_polynomial_q = expose_polynomial(qdim_total, q)
     print(f"    @ q_0: [2]^3 = {q2_cubed_q0:.6f},  [4]+2[2] = {qdim_total_q0:.6f}")
     print()
 
@@ -218,9 +227,11 @@ if __name__ == "__main__":
         pq_n = q_pochhammer(n)
         coeff_inv = 1 / pq_n if n > 0 else sp.Integer(1)
         coeff_q0 = float(coeff_inv.subs(q, q0).evalf(20))
+        coeff_q0_polynomial_q = expose_polynomial(coeff_inv, q)
         # Compare to sym^n V character: Σ z^n [n+1]_q (power series at z=z_m)
         sym_dim = dim_q_spin(n)
         sym_q0 = float(sym_dim.subs(q, q0).evalf(20))
+        sym_q0_polynomial_q = expose_polynomial(sym_dim, q)
         print(f"  n={n}: 1/(q;q)_n @ q_0 = {coeff_q0:>10.4f}   "
               f"dim_q(Sym^n V) = [{n+1}]_q @ q_0 = {sym_q0:>10.4f}")
     print()

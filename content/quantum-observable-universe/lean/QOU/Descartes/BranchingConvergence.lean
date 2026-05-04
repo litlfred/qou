@@ -38,7 +38,7 @@ as k → ∞, shifting the limit from dim/Σdim to d_q/Σd_q.
 
 ## References
 
-- [prop:jet-convergence-classical-limit]
+- [conj:jet-convergence-classical-limit]
 - [fomin1994] S. Fomin, Dual graphs and Schensted correspondences.
 -/
 
@@ -282,7 +282,7 @@ theorem fomin_k4_alt : 1 * 0 + 3 * 0 + 2 * 0 + 3 * 1 + 1 * 1 = 24 / 6 * 1 := by 
 --   "A q-analog of the hook walk algorithm for random Young tableaux",
 --   J. Algebraic Combinatorics 5, 1996.
 --   https://doi.org/10.1023/A:1022423901412
--- Ref: [prop:jet-convergence-classical-limit]
+-- Ref: [conj:jet-convergence-classical-limit]
 
 /-- **Kerov q-hook walk transition**.
 

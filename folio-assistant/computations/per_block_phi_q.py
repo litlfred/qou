@@ -42,6 +42,8 @@ from q_parameter import Q as q0
 from mass_endomorphism import (additive_wedderburn_volumes,
                                   Phi_q, HA, qi0, z_mark,
                                   w_sym, w_std, w_alt)
+from experimental_constants import (M_E_MEV, M_P_MEV, M_N_MEV,
+                                       Q_NEUTRON_MEV)
 
 
 def _phi_safe(v, cap_frac=0.995):
@@ -117,10 +119,11 @@ def particle_braids() -> dict:
 
 
 OBSERVABLES_MEV = {
-    "electron":    0.51099895,
-    "positron":    0.51099895,
-    "proton":      938.272,
-    "neutron":     939.565,
+    # Authoritative source: experimental_constants (CODATA 2022)
+    "electron":    M_E_MEV,
+    "positron":    M_E_MEV,
+    "proton":      M_P_MEV,
+    "neutron":     M_N_MEV,
     "gamma_gamma": 1.021998,
 }
 
@@ -269,8 +272,8 @@ if __name__ == "__main__":
     print(f"\n{'=' * 90}")
     print("COMPARISON to existing hardcoded E_0 values")
     print("=" * 90)
-    E0_BETA_DECAY = 0.782
-    E0_PROTON_TOWER = 938.272 / 1178995.5254
+    E0_BETA_DECAY = float(Q_NEUTRON_MEV)  # 0.78233341 MeV (CODATA-derived)
+    E0_PROTON_TOWER = float(M_P_MEV) / 1178995.5254
     E0_FROM_NET = 4.154925
     print(f"  fitted E_0^sym  = {fit['E0_sym']:+.6e}  "
           f"(Markov-trace / β-decay-like)")

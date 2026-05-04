@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """Full multi-term mass formula with canonical components — D, T, ³He.
 
 Assembles each term from its canonical source:

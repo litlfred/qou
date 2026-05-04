@@ -24,6 +24,7 @@ export default proposition({
   uses: [
     "prop:bw-categorical-descent",
     "prop:wigner-coefficient-derivation",
+    "prop:wedderburn-weight-canonical",
   ],
   tags: [
     "bethe-weizsaecker",

@@ -27,6 +27,12 @@ import sys, json, time
 from pathlib import Path
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 sys.path.insert(0, str(Path(__file__).parent))
 from murnaghan_nakayama import partitions_of, dim_specht, hook_lengths
 from q_parameter import Q as Q0_FLOAT
@@ -74,6 +80,7 @@ if __name__ == "__main__":
         t0 = time.time()
         s_sym = sigma_inv_dim_q(n)
         s_q0 = float(s_sym.subs(q, sp.Rational(int(Q0_FLOAT*10**16), 10**16)).evalf(30))
+        s_q0_polynomial_q = expose_polynomial(s_sym, q)
         dt = time.time() - t0
         sigma_table[A] = (s_sym, s_q0)
         print(f"  Σ_{{λ⊢{n}}} 1/dim_q(λ) = {sp.nsimplify(s_sym)}")
@@ -137,6 +144,18 @@ if __name__ == "__main__":
             "n=6":  sigma_table[2][1],
             "n=9":  sigma_table[3][1],
             "n=12": sigma_table[4][1],
+        },
+        # P2.5: symbolic-q forms of the σ_n3A sums above.  Each
+        # entry is a string ℚ(q)-Laurent expression for
+        # Σ_{λ ⊢ n} 1/dim_q(λ).  The numerical *_at_q0* values
+        # above are obtained by .subs(q, q_0).evalf(30) on these
+        # symbolic forms; the symbolic form is the algebraic
+        # truth and the numerical value is its specialisation.
+        "sigma_inv_dim_q_polynomial_q": {
+            "n=3":  str(sp.simplify(sigma_table[1][0])),
+            "n=6":  str(sp.simplify(sigma_table[2][0])),
+            "n=9":  str(sp.simplify(sigma_table[3][0])),
+            "n=12": str(sp.simplify(sigma_table[4][0])),
         },
         "rows": rows,
     }

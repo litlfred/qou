@@ -12,6 +12,7 @@ export default proposition({
     "prop:curvature-rank-gb-stratification",
     "prop:spectral-sequence-collapse",
     "def:hecke-normal-form",
+    "def:q-pochhammer-partial-product",
   ],
   proofs: ["prf:quantum-dilogarithm-stratified"],
   tags: [

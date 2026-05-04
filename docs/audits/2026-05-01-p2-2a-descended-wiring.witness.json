@@ -1,0 +1,58 @@
+{
+  "audit": "P2.2a wiring \u2014 descended Markov trace via proper Schur-Weyl",
+  "generated": "2026-05-02T18:18:56.207077+00:00",
+  "q_0": "1.1099785955541805",
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "path_1_h3_std_only": "0.33682122894480510252096458388164945797389683124181",
+      "path_2_h3_three_channel": "0.015585759907318542591414534115301648853346705436707",
+      "path_3_schur_weyl_proper": "0.015585759907318543104918864290687798494706125015981",
+      "phi_q_descended": {
+        "path_1": 28.489959384304132,
+        "path_2": 1.1528569568403604,
+        "path_3": 1.1528569568403604
+      },
+      "all_three_convergent_under_phi_q": true
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "path_1_h3_std_only": "0.17916500034358749894497969449748365171497143103188",
+      "path_2_h3_three_channel": "0.00088286893298810743043597559776003436127211898565292",
+      "path_3_schur_weyl_proper": "0.00088286893298810744398132212123033136018211602445505",
+      "phi_q_descended": {
+        "path_1": 5.496049758499405,
+        "path_2": 1.008061644843408,
+        "path_3": 1.008061644843408
+      },
+      "all_three_convergent_under_phi_q": true
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "path_1_h3_std_only": "0.041648468842339327074140208866343568507986043678426",
+      "path_2_h3_three_channel": "0.0000044251910122715481819073886360360603475783136673272",
+      "path_3_schur_weyl_proper": "0.0000044251910122715483525776306844557398699562049748615",
+      "phi_q_descended": {
+        "path_1": 1.4659458209037568,
+        "path_2": 1.0000402376903959,
+        "path_3": 1.0000402376903959
+      },
+      "all_three_convergent_under_phi_q": true
+    },
+    {
+      "atom": "12C",
+      "error": "no luck"
+    }
+  ],
+  "interpretation": "Three descended-trace paths compared. Refinement of P2.1a finding: the \u03a6_q tower divergence reported there comes from the per-generator V\u0302_full at H_3 weights (path 2's tower-term contribution), not from path 2's descended part. All three descended paths produce convergent values (|\u00b7| < q_0). The proper Schur-Weyl path (3, NEW via markov_trace_schur_weyl_eval) gives values 10-10000x smaller than either H_3 path \u2014 a structural correctness improvement to the descended trace, independent of the tower-term divergence question.",
+  "next_steps": "P2.2a wiring proper: replace tower_mass_symbolic_eval's descended part with markov_trace_schur_weyl_eval. Tower terms (\u03a3 \u03a6_q(|V\u0302_i|), z\u00b2 \u03a3 \u03a6_q(|V\u0302_i V\u0302_j|)) need re-derivation in proper Schur-Weyl framing \u2014 they're intrinsically per-generator and don't have an immediate H_{3A}-weight reformulation. Tracked as P2.2a-deeper."
+}

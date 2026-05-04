@@ -15,7 +15,11 @@ y-lambda-symbolic-witness.json values to floating-point precision.
 from __future__ import annotations
 import json, sys, time
 from pathlib import Path
+import sys
 import sympy as sp
+
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: E402
 
 
 # Symbolic q
@@ -135,10 +139,12 @@ def main():
 
         # y_λ = s_λ / Z, with X substituted — NO simplify (recursion error at large n)
         y_results = {}
+        y_exprs = {}
         for lam in parts:
             y_unsimp = s_vals[lam] / Z
             # Substitute X → q-rational form
             y_with_X = y_unsimp.subs(Xs, X)
+            y_exprs[str(lam)] = y_with_X
             # Just record the expression as a string; user can simplify externally
             y_results[str(lam)] = str(y_with_X)
 
@@ -154,7 +160,13 @@ def main():
             "n": n,
             "num_partitions": len(parts),
             "weights": [
-                {"partition": list(lam), "y_lambda_symbolic": y_results[str(lam)]}
+                {
+                    "partition": list(lam),
+                    "y_lambda_symbolic": y_results[str(lam)],
+                    "y_lambda_polynomial": expose_polynomial(
+                        y_exprs[str(lam)], q, simplify=False
+                    ),
+                }
                 for lam in parts
             ],
             "compute_time_sec": elapsed,

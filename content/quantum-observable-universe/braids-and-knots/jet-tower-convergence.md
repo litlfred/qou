@@ -73,22 +73,27 @@ gives the stated count.  $\square$
 
 The hypothesis $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$
 — uniform boundedness of per-level binding across the brane tower —
-is precisely the open subconjecture
-[jet-level sum convergence](#rem:mass-endomorphism-jet-tower) item 1.
-This proposition therefore **reduces the convergence question to a
-single boundedness statement**: once $\Delta^{(n)}$ is shown to be
-bounded (uniformly or with growth slower than $\hbar_q^{-2n}$), the
-tail decays as a geometric series.
+is the named conjecture
+[`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max)
+(workplan **P3.4** path (b)). This proposition therefore
+**reduces the convergence question to a single boundedness
+statement**: once $\Delta^{(n)}$ is shown to be bounded (uniformly
+or with growth slower than $\hbar_q^{-2n}$), the tail decays as a
+geometric series.
 
 Empirically (see
-`folio-assistant/computations/unified_lift.py` with the
-`JET_TARGET_PPM` flag) the per-level terms for $\mathrm{D}$,
+[`folio-assistant/computations/jet_tower_delta_max.py`](../../../folio-assistant/computations/jet_tower_delta_max.py)
+and `unified_lift.py`) the per-level terms for $\mathrm{D}$,
 $\mathrm{T}$, $\mathrm{^{3}He}$ satisfy
 $|\hbar_q^{2n} \Delta^{(n)}| \leq |\hbar_q^{2(n-1)} \Delta^{(n-1)}|
-\cdot \hbar_q^2$ to three significant figures at levels $n = 1, 2, 3$
-— consistent with $\Delta^{(n)}$ being bounded (in fact roughly
-constant).  Promoting that observation to a theorem closes the open
-subconjecture.
+\cdot \hbar_q^2$ to three significant figures, and the
+`uniform_bound_pass` flag in
+[`jet-tower-delta-max.witness.json`](../../../folio-assistant/computations/jet-tower-delta-max.witness.json)
+is **true** for D, T, ³He across $n = 1, \dots, 7$ — consistent
+with $\Delta^{(n)}$ being bounded (in fact roughly constant).
+Promoting that observation to a theorem closes the open
+subconjecture
+[`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max).
 
 ## Engineering consequence
 

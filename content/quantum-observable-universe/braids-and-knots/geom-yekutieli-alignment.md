@@ -3,8 +3,12 @@
 $\mathrm{Geom}(K)$
 ([topological mass formula](#prop:topological-mass-formula))
 is the evaluation of the Yekutieli rigid dualizing complex
-$\omega_A^\bullet$ on the knot complement $S^3 \setminus K$,
-filtered by Thurston's geometrization:*
+$\omega_A^\bullet$ on the algebraic stratification of the braid
+$\beta$ with closure $K = \widehat\beta$ (per
+[algebraic stratification](#prop:phi-q-tower-algebraic-stratification);
+the τ-image of this evaluation is the geometric reading on
+$S^3 \setminus K$, classified by Thurston's geometrization at the
+τ-side):*
 
 $$
   \mathrm{Geom}(K) =
@@ -55,53 +59,71 @@ $$
 This is the categorical substitute for the canonical sheaf in the
 non-commutative setting.
 
-**Part 2: Thurston geometrization selects the evaluation mode.**
-Thurston's geometrization theorem for knot complements classifies
-$S^3 \setminus K$ into exactly three geometric types.  The
-cohomology $H^\bullet(S^3 \setminus K; \omega_A^\bullet)$ evaluates
-differently in each case:
-
-- *Hyperbolic $K$*: the fundamental class pairs against the
-  hyperbolic volume form.  The rigid dualizing complex evaluation
-  yields $\mathrm{Vol}(K)$, and the Frobenius normalisation
-  introduces $1/\hbar_q^2$ as the mass scale.  This is the content
-  of the Kashaev--Murakami--Murakami Volume Conjecture: the Hecke
-  algebra trace (Frobenius character $c_K$) recovers
-  $\mathrm{Vol}(K)$ in the asymptotic limit.
-
-- *Torus $K = T_{m,n}$*: the hyperbolic volume vanishes.  The
-  rigid dualizing evaluation reduces to the Chern--Simons invariant
-  $\mathrm{CS}(T_{m,n}) = \pi^2(m^2-1)(n^2-1)/(12mn)$,
-  which is the phase of the path integral on the Seifert-fibred
-  complement.  The dualising normalisation flips to $\hbar_q^2$
-  (multiplicative rather than divisive), reflecting the
-  Frobenius duality between bulk and boundary:
+**Part 2: Geometric type selects the evaluation mode (algebraic
+side).** The proof works in $\mathbb{Z}[q^{\pm 1/2}]$ throughout;
+the geometric / 3-manifold reading appears only as the τ-image
+discussed in Part 3. Algebraically, the rigid dualizing evaluation
+$\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$
+admits a single closed-form expression in terms of the
+[algebraic quantum volume](#def:algebraic-quantum-volume)
+$\mathrm{Vol}_q(\beta) \in \mathbb{Z}[q^{\pm 1/2}]$ and the
+[Chern-Simons phase](#def:chern-simons-phase) $\mathrm{CS}_q(\beta)$:
 
 $$
-  \frac{\mathrm{Vol}(K)}{\hbar_q^2}
+  \mathrm{Geom}(K)
+  \;=\;
+  \frac{\mathrm{Vol}_q(\beta)}{\hbar_q^2}
+  \;+\;
+  \mathrm{CS}_q(\beta) \cdot \hbar_q^2
+$$
+
+with the $\hbar_q$ factors normalising the Frobenius pairing. For
+the algebraic-side derivation no Thurston-geometrization input is
+required; the Wedderburn-Artin block decomposition of $H_n(R, q)$
+selects which of the two summands dominates for a given braid:
+
+- *Algebraic-hyperbolic regime* ($\mathrm{Vol}_q(\beta) \ne 0$
+  in $\mathbb{Z}[q^{\pm 1/2}]$): the first summand carries the
+  contribution. The fundamental class pairs against the algebraic
+  quantum volume, and the Frobenius normalisation introduces
+  $1/\hbar_q^2$ as the mass scale.
+
+- *Algebraic-torus regime* ($\mathrm{Vol}_q(\beta) = 0$ in
+  $\mathbb{Z}[q^{\pm 1/2}]$, e.g. $\beta = \beta_{T_{m,n}}$): the
+  algebraic quantum volume vanishes identically and the second
+  summand carries the contribution. The dualising normalisation
+  flips to $\hbar_q^2$ (multiplicative rather than divisive),
+  reflecting the Frobenius duality between bulk and boundary:
+
+$$
+  \frac{\mathrm{Vol}_q(\beta)}{\hbar_q^2}
   \quad\longleftrightarrow\quad
-  \mathrm{CS}(K) \cdot \hbar_q^2.
+  \mathrm{CS}_q(\beta) \cdot \hbar_q^2.
 $$
 
-- *Unknot $K = \bigcirc$*: the complement $S^3 \setminus \bigcirc$
-  is a solid torus with no non-trivial cohomology against
-  $\omega_A^\bullet$.  The evaluation is zero (vacuum
-  normalisation).
+- *Algebraic-trivial regime* ($\beta = 1$, the identity / unknot
+  closure): both algebraic summands vanish (vacuum normalisation),
+  reflecting the empty cohomology of the trivial element of
+  $H_n(R, q)$ against $\omega_A^\bullet$.
 
-**Part 3: the Frobenius self-pairing is unitary.**
-For any knot $K$ and its mirror $K^*$, the Frobenius pairing
-satisfies
+**Part 3: the Frobenius self-pairing is unitary (algebraic).**
+For any braid $\beta$ and its mirror $\beta^*$ (obtained by
+reversing each $\sigma_i \mapsto \sigma_i^{-1}$), the Frobenius
+pairing satisfies
 
 $$
-  \langle K, K^* \rangle_{\mathrm{Frob}}
-  = \mathrm{Geom}(K) \cdot \mathrm{Geom}(K^*)^{-1}
+  \langle \beta, \beta^* \rangle_{\mathrm{Frob}}
+  = \mathrm{Geom}(\beta) \cdot \mathrm{Geom}(\beta^*)^{-1}
   = 1,
 $$
 
-since $\mathrm{Vol}(K^*) = \mathrm{Vol}(K)$ for hyperbolic knots
-(volume is invariant under mirror image) and
-$\mathrm{CS}(K^*) = -\mathrm{CS}(K)$ for torus knots
-(Chern--Simons changes sign).
+since $\mathrm{Vol}_q(\beta^*) = \mathrm{Vol}_q(\beta)$ in
+$\mathbb{Z}[q^{\pm 1/2}]$ (algebraic quantum volume is invariant
+under mirror image, by inspection of the Markov-trace product
+formula) and $\mathrm{CS}_q(\beta^*) = -\mathrm{CS}_q(\beta)$
+(the Chern-Simons phase changes sign on mirror — direct
+consequence of the $q \mapsto q^{-1}$ involution on the relevant
+braid representation).
 
 For **amphicheiral** knots ($K = K^*$, e.g.\ the figure-eight
 $4_1$), the self-pairing is manifestly real.  This explains why
@@ -113,7 +135,7 @@ $1 - h^2 = 4 - [3]_q$ and $h[2]_q = q^2 - q^{-2}$.
 **Connection to transcendence.**
 The non-vanishing Yekutieli obstruction classes $\kappa_n \neq 0$
 at every level of the brane tower — the content of
-[motivic perpetual obstruction](#lem:motivic-perpetual-obstruction)
+[motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
 applied to the substrate's motivic Galois character at every
 finite place — ensure that the evaluation $\mathrm{Geom}(K)$ for
 distinct hyperbolic knots produces algebraically independent

@@ -16,7 +16,7 @@ $$
 where $M(Z, N) = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e
 - B(Z, N)$ is the neutral atomic mass and $B(Z, N)$ is the BW
 binding energy at Hecke level $k$
-([q-integer mass formula](#prop:q-integer-mass-formula)).
+([q-integer mass formula](#conj:q-integer-mass-formula)).
 
 This definition is consistent with the mass accuracy: if
 $|\Delta M/M| \approx 0.002\%$, then $Q$-values for transitions

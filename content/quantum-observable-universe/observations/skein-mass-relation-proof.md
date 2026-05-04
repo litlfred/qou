@@ -1,15 +1,27 @@
 The electron is identified with the trefoil $3_1$, a torus knot with
-$\mathrm{Vol}(3_1) = 0$, sitting at the base of the topological tower
-as the unit against which all other masses are measured.  The Higgs
-field is identified with the figure-eight knot $4_1$
+$\mathrm{Vol}_q(\beta_{3_1}) = 0$ in $\mathbb{Z}[q^{\pm 1/2}]$
+(see [algebraic quantum volume](#def:algebraic-quantum-volume)),
+sitting at the base of the topological tower as the unit against
+which all other masses are measured.  The Higgs field is identified
+with the figure-eight knot $4_1$
 ([cohomological embedding](#prop:cohomological-embedding)), whose
-complement carries a complete hyperbolic structure of volume
+algebraic quantum volume $\mathrm{Vol}_q(\beta_{4_1})$ τ-realises
+to the hyperbolic-volume constant
 $\mathrm{Vol}(4_1) \approx :val[Vol_4_1]{precision=6}$.
 
-Applying the [topological mass theorem](#thm:topological-mass) to the
-muon--electron *ratio* eliminates the overall mass scale and gives
-$m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^{2}$.  Substituting
-$\hbar_q = 1 - q^{-1}$ and the CODATA value
+Applying the **algebraic** topological mass formula
+([algebraic topological mass](#prop:topological-mass-formula-algebraic))
+to the muon–electron *ratio* eliminates the overall mass scale and
+gives $m_\mu / m_e = \Phi_1(4_1) / \hbar_q^{2}$ at the
+$\mathbb{Q}(q)$ level, where
+$\Phi_1(4_1) = \tau_{\mathrm{arch}}(\mathrm{Vol}_q(4_1))$ is the
+$\tau_{\mathrm{arch}}$-image of the algebraic quantum volume
+([`def:algebraic-quantum-volume`](#def:algebraic-quantum-volume)).
+Under $\tau_{\mathrm{arch}}$ the value $\Phi_1(4_1)$ specialises
+to the numerical hyperbolic volume $\mathrm{Vol}(4_1)$ via the
+volume conjecture \cite{kashaev1997, murakami-murakami2001} —
+**τ-side naming** of the algebraic value, not a derivation
+input. Substituting $\hbar_q = 1 - q^{-1}$ and the CODATA value
 $m_\mu / m_e \approx 206.7682827(46)$ yields
 
 $$

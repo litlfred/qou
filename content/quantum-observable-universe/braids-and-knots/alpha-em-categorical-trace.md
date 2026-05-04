@@ -1,6 +1,6 @@
-**Remark (legacy closed form for $1/\alpha_{EM}$).**
+**Remark (legacy closed form for $1/\alpha_{EM}$ — fit warning).**
 
-The earlier numerical PSLQ-confirmed form
+The numerical PSLQ-confirmed form
 
 $$
   \frac{1}{\alpha_{EM}}
@@ -8,8 +8,16 @@ $$
   \qquad \delta_{CS} := \hbar_q^4 \cdot [5]_q,
 $$
 
-is now a **consequence** of the merged spectral-completeness program,
-not an independent ansatz. Each factor is forced by:
+was claimed to be a **consequence** of the merged spectral-completeness
+program. Subsequent audit ([conj:alpha-em-gluon-octet-form](#conj:alpha-em-gluon-octet-form))
+shows this claim is **not yet supported**: only the integer $45$ has a
+full structural derivation; the factors $[3]_q$, $\hbar_q^4 [5]_q$, and
+$8q$ are unproved or post-hoc identifications, and the formula
+disagrees with the alternative Chern-Simons form
+([conj:em-coupling-chern-simons](#conj:em-coupling-chern-simons))
+at every $q \ne q_0$. The form is presently a single-point empirical
+match, not a derivation. Each factor was originally claimed to be
+forced by:
 
 | Factor | Upstream block |
 |---|---|
@@ -21,11 +29,12 @@ not an independent ansatz. Each factor is forced by:
 
 **What this remark does (and does not) claim.**
 
-*This remark is purely interpretive: the upstream spectral-completeness
-program supplies the rigorous derivation; the Yekutieli-rigidity argument
-that older drafts used as a stand-in is now redundant. The closed form
-above is the **explicit numerical specialisation** at $n = 10$ strands,
-useful for ppb-class numerical comparison against CODATA.*
+*This remark is interpretive only and now carries a fit-warning: the
+upstream spectral-completeness program does **not yet** supply a rigorous
+derivation of the displayed closed form. The form is a PSLQ-uniqueness
+match in a 52-element basis at $q_0$; outside $q_0$ it disagrees with
+the Chern-Simons-descent form. Treat as conjectural empirical formula
+until each factor is structurally derived.*
 
 **Numerical witness.**
 [`folio-assistant/computations/alpha_em_q9_q10_derivation.py`](#)

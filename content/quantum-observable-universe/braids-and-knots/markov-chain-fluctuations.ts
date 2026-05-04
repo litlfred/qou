@@ -16,7 +16,7 @@ export default remark({
   cites: ["feray-meliot2012", "diaconis-ram2000"],
   uses: [
     "rem:markov-lambda-knot-operations",
-    "prop:jet-convergence-classical-limit",
+    "conj:jet-convergence-classical-limit",
     "prop:hecke-convergence-bound",
   ],
 });
