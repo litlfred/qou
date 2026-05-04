@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-04T21:47:43.952471+00:00",
-  "commitSha": "f557f4603e5385ff81dab510d2cd3148883aacbf",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-04T23:18:44.336601+00:00",
+  "commitSha": "f05bfe76f22bb4dda2b14d016080508f175bb059",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1750,6 +1750,7 @@
         "shell-correction-lambda.witness.json",
         "shell-level-qvalues.witness.json",
         "shell7-bb-stratum.witness.json",
+        "shift-from-nf-basis.witness.json",
         "sigma-all-evaluator.witness.json",
         "sigma-all-symbolic-decay.witness.json",
         "sigma-shell-characterization.witness.json",
