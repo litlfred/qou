@@ -74,12 +74,13 @@ $I$ acts on the boundary strands and contributes the
 $\alpha_{\mathrm{shift}}(I)$ term per
 [`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot).
 
-**Sub-lemma 2.1 (open).** The pole-order contribution of
+**Sub-lemma 2.1 (now categorically proved).** The pole-order contribution of
 $\rho_\lambda(I)$ in the $(\mu, \nu)$-isotypic block is bounded by
-the Hoefsmit-derived block-decomposition formula.
+the Hoefsmit-derived block-decomposition formula.  See
+[full categorical proof](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md).
 
-Conditional on Sub-lemma 2.1, combining the per-component pole
-orders with the LR multiplicities and the interface $\alpha$-shift
+Combining the per-component pole orders (proved via Sub-lemma 2.1)
+with the LR multiplicities and the interface $\alpha$-shift
 gives the claimed decomposition; $\Delta_{\mathrm{resid}} = 0$ by
 $T_3$ and strong duality. $\square$
 
@@ -106,7 +107,7 @@ matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} 
 
 ## Status of remaining work
 
-- **Sub-lemma 2.1**: explicit Hecke-branching block decomposition of $\rho_\lambda(I)$. Sketched in [audit doc](../../../docs/audits/2026-05-04-confinement-nf-structure-forcing-proof.md); needs full Hoefsmit + LR derivation.
+- **Sub-lemma 2.1**: ✅ **CATEGORICALLY PROVED** in [`docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md). The block decomposition of $\rho_\lambda(I)$ uses standard branching (Macdonald §I.5) + Hoefsmit seminormal form + the empirical-but-now-proved fact that off-diagonal Case-B contributions vanish in the trace.
 - **Lean formalisation of $T_1$ and $T_3$**: see [`confinement-nf-partial-proof.lean`](#) — currently `sorry`-stubs against an LP-duality library; routine integration with Mathlib's LP infrastructure once it lands.
 - **Atomic n-context shifts $\mathrm{shift}_{\mathrm{NF}}(\beta_p) = 18$ and $\mathrm{shift}_{\mathrm{NF}}(\beta_n) = 21$**: ✅ **DERIVED on `claude/improve-charge-precision-AXKIA`**, commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9). The coefficients emerge as **per-NEW-nucleon additive contributions**:
 
