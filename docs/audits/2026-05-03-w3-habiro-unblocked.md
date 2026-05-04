@@ -193,6 +193,78 @@ correction.  This narrows the categorical proof problem to
 analysing how the seminormal denominators reshuffle when the
 inter-nucleon coupling is added to the braid.
 
+### Branch-cut structure (q-pole vs u-pole)
+
+The shift exponent corresponds to a **u-plane pole at u = 0**, NOT
+directly to a q-plane pole at q = 0.  Empirically:
+
+| Atom | shift | parity |
+|------|-------|--------|
+| D    | 40    | even   |
+| T    | 61    | odd    |
+| ³He  | 58    | even   |
+| ⁴He  | 79    | odd    |
+| ⁵Li  | 97    | odd    |
+| ⁶Li  | 118   | even   |
+
+Parity of shift correlates with parity of N: shift mod 2 = (N + 1)
+mod 2.  Odd shifts (T, ⁴He, ⁵Li) correspond to **half-integer
+q-poles**, i.e. tr_M(q) carries a `(q^{1/2} + q^{-1/2})` factor /
+branch cut.  This is the same q-plane branch ambiguity at q = 0 / ±1
+flagged in the docstring of `term6_residues_at_roots.py` (PR #537):
+"Markov traces of atomic braids carry (q^{1/2} + q^{-1/2}) factors,
+so they are single-valued in u (where u² = q) but only sheet-valued
+in q."
+
+So the closed form is genuinely a u-plane statement; expressing it
+purely in q-coordinates would require careful tracking of the
+two-sheeted u → q² covering.
+
+### Pole-order analysis at q = 0 (deuteron)
+
+For the deuteron (A = 2, shift = 40 = 2 × 20), tr_M(q) has a pole of
+order 20 at q = 0.  Per-generator contribution to this pole order:
+
+- **σ** at axial distance ρ in seminormal block: matrix entries
+  `a = h/(1 − q^{−2ρ})` is regular at q = 0 (pole order 0); entry
+  `a' = h/(1 − q^{2ρ})` has pole of order 1 at q = 0; off-diagonal
+  `b = √[(1 − q^{2ρ−2})(1 − q^{2ρ+2})] / (1 − q^{2ρ})` is regular
+  at q = 0 for ρ ≥ 2 (and identically zero at ρ = 1).
+- **σ⁻¹** = `σ − h`: same pole structure as σ — `a − h` has pole of
+  order 1; `a' − h` is regular.
+- **averaged** = `(σ + σ⁻¹)/2`: has pole of order 1 in each block.
+
+So **every generator contributes pole order ≤ 1 in its individual
+matrix entries at q = 0**.  In a closed-cycle trace over SYT paths,
+the pole order of the trace is the maximum number of "pole-bearing"
+matrix elements traversed in any single cycle.  For the deuteron's
+23-generator braid, the empirical pole order at q = 0 is 20 — three
+**less** than the generator count.  The 3-cell discount is the
+seminormal-cancellation residue that the categorical proof must
+account for.
+
+### Status: partial categorical proof
+
+Two of three closed-form factors are categorically proved.  The
+third — `u^(18Z + 21N + 1)` — has been narrowed from "empirical
+fit" to a precise structural claim:
+
+> *The shift exponent equals the maximum pole-order of the seminormal-
+> trace closed-cycle product over all axial-distance configurations,
+> minus the per-cycle cancellation count from b² = (1 − q^{2ρ−2})(1 −
+> q^{2ρ+2})/(1 − q^{2ρ})² zeroing on adjacent contents (ρ = 1).*
+
+The integer-LP closure
+**(α<sub>σ</sub>, α<sub>σ⁻¹</sub>, α<sub>avg</sub>) = (1, 4, 0)
+intra; (0, 0, 1) inter** then specifies the per-crossing
+contribution exactly under the constraint that all pole-order
+contributions are non-negative integers and the inter-nucleon
+contribution is independent of (Z, N) for the canonical pppnnn
+ordering.  Closing the proof requires identifying which closed-cycle
+maximises the pole order — concretely, which SYT path in the
+seminormal directed graph realises 20 pole-bearing matrix elements
+for the deuteron.
+
 | Atom | (Z, N) | predicted shift | empirical | match |
 |------|--------|-----------------|-----------|-------|
 | D    | (1, 1) | 18·1 + 21·1 + 1 = 40  | 40  | ✓ |
