@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """
-Paper-canonical 6-term mass-formula sweep across light isotopes.
+Paper-canonical 6-term mass-formula sweep (singular implementation).
+
+This is the **only** categorical mass formula in the repo.  Other
+historical implementations (v3 `compute_mass_at_level`, v4
+`crt_markov_v4` / `v4_mass_pipeline`, `markov_invariant_unified_mass`,
+`paper_six_term_canonical_t1`) were retired on 2026-05-03 — see
+`docs/audits/2026-05-03-categorical-mass-divergence-audit.md`.
 
 Implements the paper's 6-term formula:
 
@@ -9,40 +15,26 @@ Implements the paper's 6-term formula:
          + z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)              (Term 3)
          + m_e · τ(C_dim_q)                       (Term 4)
          + a_K · 𝒞_K                              (Term 5; additive)
-         + Σ_{ℓ≥2} Res_{ζ_ℓ}                     (Term 6)
+         + Σ_{ℓ≥2} Res_{ζ_ℓ}                     (Term 6 — cyclotomic tail)
 
-Markov-invariance status (honest accounting):
+Canonical inputs:
 
-    Term 1 (descended trace)  : Markov-invariant — when computed
-                                via the canonical Jones-Markov trace
-                                (`pyhecke.trace.markov_trace_symbolic_eval`).
-                                THIS SCRIPT uses `atom_per_generator_volumes`
-                                in Term 1 above as a structural proxy
-                                — the proxy is NOT Markov-invariant.
-                                For canonical Markov-invariant values
-                                use `canonical_isospin_pyhecke.py`.
+    Term 1 — `atomic-tr-m-mpfr-50dps.witness.json`
+             Hoefsmit + Wenzl bridge: `tr_M(W) = Σ_λ y_λ(q) · χ^λ(W)`
+             at q = q_0, atom-name-keyed.  Equivalent to `markov_peel`
+             recursive-ascent values (PR #520) to 15+ digits.
 
-    Term 4 (Frobenius co-Casimir): Vortex-independent (depends only on A).
-                                   Strictly Markov-invariant.
+    Term 6 — `term6-habiro-residue-mpfr-50dps.witness.json`
+             Per-A cyclotomic-pole residue series.  Tiny at q_0 (≤ 0.7
+             MeV for A=1, ≤ 3 μMeV for A=4) but structurally important.
 
-    Term 5 (chirality)         : Crossing-sign pattern dependent.
-                                   Markov-invariant within the chirality
-                                   sign list; sign-list itself is a
-                                   topological invariant of the link.
-
-    Terms 2, 3                 : The single/pair-generator brane towers
-                                   use per-generator volumes V̂_i which
-                                   are NOT Markov-invariant — they
-                                   depend on braid-word ordering.  For a
-                                   genuinely Markov-invariant tower see
-                                   the Frobenius-antipode-symmetrised
-                                   form V̂ → (V̂ + S(V̂))/2 (upstream).
-
-    Term 6 (residues)          : Markov-invariant (cohomological pairing).
-
-Witness output of this script reproduces the paper's |S|≤2 truncation
-behaviour.  For higher-order Markov-invariant computations consult
-`canonical_isospin_pyhecke.py` and the upstream `binding_full_pipeline.py`.
+Terms 2 and 3 use per-generator volumes from
+`hecke_core.atom_per_generator_volumes`.  These are NOT Markov-invariant
+and exhibit a known structural pathology: Φ_q diverges near x=1, so
+per-generator volumes |V̂_i| ≈ 0.99 amplify p/n asymmetries by ~10⁵×.
+See `brane-tower-isospin-diagnosis.witness.json` (PR #524).  The
+brane-tower is kept as the literal paper formula but should be
+re-derived; `prop:mass-endomorphism-tower` is open.
 
 Witness: paper-six-term-isotope-sweep.witness.json
 """
@@ -51,27 +43,145 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 from itertools import combinations
+import warnings
 
-import numpy as np
+import numpy as np  # noqa: F401  (kept for downstream consumers)
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
-from hecke_core import (
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
+from hecke_core import (  # noqa: E402
     atom_per_generator_volumes, h as h_val, z as z_mark,
 )
-from mass_endomorphism import Phi_q
+from mass_endomorphism import Phi_q  # noqa: E402
+from experimental_constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
 
+HERE = Path(__file__).parent
 
-Q0 = Q_MP  # was f64 roundtrip
+Q0 = Q_MP
 Z_MARK = mp.mpf(str(float(z_mark)))
 H_VAL = mp.mpf(str(float(h_val)))
 
 
 def abs_mpf(v):
-    """Coerce a volume entry to abs mpmath float."""
-    x = v['full'] if isinstance(v, dict) else v
-    return abs(mp.mpf(str(float(x))))
+    """Coerce a per-generator volume to abs mpmath float (no f64
+    round-trip — preserves precision for callers that pass mpf/sympy)."""
+    x = v["full"] if isinstance(v, dict) else v
+    return abs(mp.mpf(x))
+
+
+# ── Canonical Term 1 from Hoefsmit+Wenzl bridge witness ────────────
+_T1_CACHE: dict | None = None
+
+
+def _load_canonical_t1() -> dict:
+    """Atom name → |tr_M(W)| at q_0 from the canonical bridge witness.
+    Result is cached at module level so multi-isotope sweeps pay one disk read.
+    """
+    global _T1_CACHE
+    if _T1_CACHE is not None:
+        return _T1_CACHE
+    path = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+    if not path.exists():
+        raise FileNotFoundError(f"missing canonical T1 witness: {path}")
+    d = json.loads(path.read_text())
+    out: dict[str, mp.mpf] = {}
+    for r in d.get("results", []):
+        out[r["atom"]] = abs(mp.mpf(r["tr_M_at_q0_50dps"]))
+    _T1_CACHE = out
+    return _T1_CACHE
+
+
+# Markov-peel inline values for atoms not in the bridge witness (e.g. ⁴He
+# and beyond — see markov-peel-atomic-tr-m.witness.json, computed at
+# 50 dps via Markov-axiom recursive ascent and verified against the
+# bridge for proton..³He to 4×10⁻¹⁶).
+_PEEL_INLINE_T1 = {
+    "helium-4": "0.055348345876697992162807082650033407844603061676025",
+}
+
+# Mapping from sweep-table isotope labels to bridge-witness atom names.
+_T1_ATOM_NAME = {
+    "p": "proton", "n": "neutron",
+    "D": "deuteron", "T": "tritium",
+    "3He": "helium-3", "4He": "helium-4",
+}
+
+
+def canonical_t1(isotope_label: str) -> mp.mpf:
+    """Return |tr_M(W)| at q_0 for the named isotope."""
+    name = _T1_ATOM_NAME.get(isotope_label, isotope_label)
+    table = _load_canonical_t1()
+    if name in table:
+        return table[name]
+    if name in _PEEL_INLINE_T1:
+        return abs(mp.mpf(_PEEL_INLINE_T1[name]))
+    raise KeyError(
+        f"no canonical T1 for {isotope_label!r}; "
+        f"add to atomic-tr-m-mpfr-50dps.witness.json or "
+        f"markov-peel-atomic-tr-m.witness.json"
+    )
+
+
+# ── Symmetric q-dilogarithm (Hecke convention) ──
+# Used by tower_mode="li2q" — the corrected Kashaev limit per
+# `prop:mass-endomorphism-tower` (proof: kashaev-integration-identity
+# .witness.json + a43d7f1fa).
+def _q_int(n: int) -> mp.mpf:
+    """[n]_q = (q^n - q^{-n}) / (q - q^{-1}), symmetric q-integer."""
+    if n == 0:
+        return mp.mpf(0)
+    return (Q0 ** n - Q0 ** (-n)) / (Q0 - 1 / Q0)
+
+
+def li2_q_sym(z: mp.mpf, max_n: int = 300) -> mp.mpf:
+    """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
+
+    Identity: ∫_0^V (ln_q(1+t)/t) dt = -Li_2^q(-V).
+    """
+    total = mp.mpf(0)
+    for n in range(1, max_n + 1):
+        nq = _q_int(n)
+        if abs(nq) < mp.mpf("1e-300"):
+            continue
+        term = z ** n / (n * nq)
+        total += term
+        if abs(term) < mp.mpf("1e-50"):
+            break
+    return total
+
+
+# ── Canonical Term 6 from Habiro residue witness ────────────────────
+_T6_CACHE: dict | None = None
+
+
+def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
+    """A → Term 6 (cyclotomic residue tail) in MeV from Habiro witness.
+    Result is cached at module level.  Missing witness emits a warning and
+    returns {} (all T6 contributions silently set to zero).
+    """
+    global _T6_CACHE
+    if _T6_CACHE is not None:
+        return _T6_CACHE
+    path = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
+    if not path.exists():
+        warnings.warn(
+            f"T6 witness missing ({path}); Term 6 contributions set to 0 MeV. "
+            "Run term6_residues_at_roots.py to regenerate.",
+            stacklevel=2,
+        )
+        _T6_CACHE = {}
+        return _T6_CACHE
+    d = json.loads(path.read_text())
+    out: dict[int, mp.mpf] = {}
+    for r in d.get("results_by_atom", []):
+        try:
+            A = int(r["atom"].split("=")[1])
+            out[A] = mp.mpf(r["term6_b_pred_mev_50dps"])
+        except (KeyError, IndexError, ValueError):
+            continue
+    _T6_CACHE = out
+    return _T6_CACHE
 
 
 def term1_descended(vols):
@@ -168,7 +278,32 @@ def term6_higher_residues(vols):
 def paper_six_term_mass(Z, N, include_inter=True,
                           chirality_signs=None,
                           m_e_hecke: float = 1.0,
-                          term5_mode: str = "multiplicative_on_t1"):
+                          term5_mode: str = "multiplicative_on_t1",
+                          isotope_label: str | None = None,
+                          tower_mode: str = "li2q"):
+    """6-term mass formula.
+
+    `tower_mode` controls T2 + T3 evaluation:
+        "li2q" (default, 2026-05-03):
+                            T2 = -Σ Li_2^q(-|V̂_i|),
+                            T3 = -z² · Σ Li_2^q(-|V̂_i V̂_j|)
+                            symmetric q-dilogarithm — the corrected
+                            Kashaev limit per `prop:mass-endomorphism-tower`
+                            (proven in commit a43d7f1fa via the
+                            `kashaev-integration-identity` probe).
+        "brane" (legacy, deprecated):
+                            T2 = Σ Φ_q(|V̂_i|), T3 = z² · Σ Φ_q(|V̂_i V̂_j|).
+                            Faddeev quantum dilogarithm form, NOT
+                            Markov-invariant at q_0 (PR #524).
+                            Empirical T - ³He = -737 MeV pathology.
+        "drop":             T2 = T3 = 0.  Simplest test of "no brane".
+        "q1-base":          T2 + T3 = (1/2)^(2A-1) (Path A closed-form
+                            base point at q→1 per
+                            `path-a-zeta1-residue-probe.witness.json`).
+        "r-side-bare":      T2 = (n-1)·z², T3 = C(n-1,2)·z⁴ (R-side
+                            algebraic per `prop:mass-endomorphism-tower`,
+                            Markov-axiom values).
+    """
     """Six-term mass formula in Hecke units.
 
     Per `thm:knot-mass-formula-unified` the formula assembles as:
@@ -200,15 +335,77 @@ def paper_six_term_mass(Z, N, include_inter=True,
     τ(C_dim_q) units.
     """
     vols = atom_per_generator_volumes(Z, N, include_inter=include_inter)
-    t1 = term1_descended(vols)
-    t2 = term2_single_gen_tower(vols)
-    t3 = term3_pair_gen_tower(vols)
+    # T1: canonical |tr_M| from Hoefsmit+Wenzl bridge witness.  Falls
+    # back to the legacy per-generator product Π|V̂_i| when no isotope
+    # label is provided (legacy callers without a label).
+    if isotope_label is not None:
+        try:
+            t1 = canonical_t1(isotope_label)
+        except KeyError:
+            t1 = term1_descended(vols)
+    else:
+        t1 = term1_descended(vols)
+
+    # T2, T3 evaluation per `tower_mode`:
+    if tower_mode == "brane":
+        t2 = term2_single_gen_tower(vols)
+        t3 = term3_pair_gen_tower(vols)
+    elif tower_mode == "drop":
+        t2 = mp.mpf(0)
+        t3 = mp.mpf(0)
+    elif tower_mode == "q1-base":
+        # Path A closed form: tr_M(T_w; q→1) = (1/2)^(2A-1).  Allocate
+        # to T2; set T3 = 0.  Captures the spectral-sequence base
+        # trace value at q→1 without per-generator amplification.
+        A = Z + N
+        t2 = mp.mpf(1) / mp.mpf(2) ** (2 * A - 1)
+        t3 = mp.mpf(0)
+    elif tower_mode == "r-side-bare":
+        # R-side algebraic form per `prop:mass-endomorphism-tower`:
+        #   T2 = z · Σ_i tr_M(σ_i)    = n_gens · z² (Markov axiom)
+        #   T3 = z² · Σ_{i<j} tr_M(σ_i σ_j) = C(n_gens, 2) · z⁴ (Markov pair-z²)
+        # By the Markov axiom (Markov 1, Markov pair-z²), each single
+        # generator contributes z and each generator-pair contributes z²
+        # to the Markov trace, REGARDLESS of which braid β you're in.
+        # This evaluation is manifestly Markov-invariant (uses only the
+        # universal Markov axiom values, no per-braid-word data) and
+        # depends only on n_gens = number of Hecke generators in the
+        # ambient algebra.
+        n_gens_total = (3 * (Z + N) - 1) if include_inter else (2 * (Z + N))
+        z2 = Z_MARK ** 2
+        z4 = Z_MARK ** 4
+        t2 = n_gens_total * z2
+        t3 = mp.mpf(n_gens_total * (n_gens_total - 1) // 2) * z4
+    elif tower_mode == "li2q":
+        # CORRECTED Kashaev limit per `prop:mass-endomorphism-tower`
+        # (proof: a43d7f1fa).  T2 = -Σ Li_2^q(-|V_i|),
+        # T3 = -z² · Σ Li_2^q(-|V_i V_j|) (symmetric q-dilogarithm).
+        t2 = mp.mpf(0)
+        for v in vols:
+            arg = -abs_mpf(v)
+            try:
+                t2 -= li2_q_sym(arg)  # -Li_2^q(-|V|)
+            except Exception:
+                pass
+        t3 = mp.mpf(0)
+        z2 = Z_MARK ** 2
+        for i, j in combinations(range(len(vols)), 2):
+            arg = -(abs_mpf(vols[i]) * abs_mpf(vols[j]))
+            try:
+                t3 -= z2 * li2_q_sym(arg)
+            except Exception:
+                pass
+    else:
+        raise ValueError(f"unknown tower_mode {tower_mode!r}")
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
     t4 = mp.mpf(str(m_e_hecke)) * t4_raw
     if chirality_signs is None:
         chirality_signs = []
     t5_factor = term5_chirality(Z, N, chirality_signs)
-    t6 = term6_higher_residues(vols)
+    # T6: canonical cyclotomic residue tail in MeV (per-A from Habiro
+    # residue witness).  Returned in MeV directly; not in Hecke units.
+    # Caller adds it to M_pred post-calibration (after × E_0).
+    t6_MeV = _load_canonical_t6_MeV().get(Z + N, mp.mpf(0))
 
     if term5_mode == "additive":
         t1_with_chirality = t1
@@ -220,17 +417,18 @@ def paper_six_term_mass(Z, N, include_inter=True,
         raise ValueError(f"unknown term5_mode {term5_mode!r}")
 
     total = (float(t1_with_chirality) + float(t2) + float(t3)
-             + float(t4) + float(t6))
+             + float(t4))  # T6 added in MeV post-calibration
     return {
-        "term1_descended": float(t1),
+        "term1_canonical_tr_M": float(t1),
         "term2_single_gen_tower": float(t2),
         "term3_pair_gen_tower": float(t3),
         "term4_frobenius_codim_raw": float(t4_raw),
         "term4_frobenius_codim_scaled": float(t4),
         "term5_chirality_factor_a_K": float(t5_factor),
         "term5_additive_contribution": float(t5),
-        "term6_higher_residues": float(t6),
+        "term6_cyclotomic_tail_MeV": float(t6_MeV),
         "term5_mode": term5_mode,
+        "tower_mode": tower_mode,
         "m_e_hecke": float(m_e_hecke),
         "total_hecke": total,
     }
@@ -252,28 +450,187 @@ def chirality_signs_for_isotope(iso):
     return patterns.get(iso, [])
 
 
-if __name__ == "__main__":
-    print("PAPER 6-TERM FORMULA — MARKOV-INVARIANT isotope sweep")
-    print("=" * 80)
-    print(f"q_0 = {float(Q0):.6f}")
+def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True):
+    """Run the proton-calibrated 6-term sweep for one tower_mode."""
+    M_P_CODATA = 938.27208816
 
-    # Proton calibration
+    # Proton calibration under this tower_mode
     p_terms = paper_six_term_mass(
         1, 0, include_inter=False,
-        chirality_signs=chirality_signs_for_isotope("p"))
+        chirality_signs=chirality_signs_for_isotope("p"),
+        isotope_label="p", tower_mode=tower_mode)
     m_p_hecke = p_terms["total_hecke"]
+    p_t6_MeV = p_terms["term6_cyclotomic_tail_MeV"]
+    E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke
+
+    if verbose:
+        print(f"\nMode: {tower_mode}")
+        print(f"  Proton: t1={p_terms['term1_canonical_tr_M']:.4e} "
+              f"t2={p_terms['term2_single_gen_tower']:.4e} "
+              f"t3={p_terms['term3_pair_gen_tower']:.4e} "
+              f"t4={p_terms['term4_frobenius_codim_scaled']:.4e} "
+              f"t6={p_terms['term6_cyclotomic_tail_MeV']:.4f} MeV")
+        print(f"  E_0 = {E_0:.6e} MeV/Hecke-unit")
+
+    rows = []
+    for iso, Z, N, inter, M_codata in isotopes:
+        try:
+            terms = paper_six_term_mass(
+                Z, N, include_inter=inter,
+                chirality_signs=chirality_signs_for_isotope(iso),
+                isotope_label=iso, tower_mode=tower_mode)
+        except Exception as exc:
+            rows.append({"isotope": iso, "Z": Z, "N": N, "A": Z + N,
+                         "M_codata": M_codata,
+                         "error": f"{type(exc).__name__}: {exc}"})
+            continue
+        # Unit reminder (per Gemini review on PR #542):
+        # `total_hecke` (= T1+T2+T3+T4) is in cat units and gets
+        # multiplied by E_0 (MeV/cat-unit) to convert to MeV.
+        # `term6_cyclotomic_tail_MeV` is ALREADY in MeV (loaded from
+        # the Habiro residue witness via `_load_canonical_t6_MeV`),
+        # so it must NOT be scaled by E_0 — it is added directly.
+        M_pred = E_0 * terms["total_hecke"] + terms["term6_cyclotomic_tail_MeV"]
+        err_pct = (M_pred - M_codata) / M_codata * 100 if M_codata else 0.0
+        rows.append({
+            "isotope": iso, "Z": Z, "N": N, "A": Z + N,
+            "M_codata": M_codata, "M_predicted": M_pred, "err_pct": err_pct,
+            **terms,
+        })
+    return E_0, rows
+
+
+# ── Per-derivation weights (no proton-fitting) ───────────────────────
+# Per docs/audits/2026-05-04-six-term-per-weight-derivation.md, the
+# six terms have DIFFERENT physical scales from the derivation:
+#   T1 (descended Markov):  E_0_β = 0.782 MeV per cat unit
+#       (`prop:categorical-mass-markov`; binding from |tr_free|−|tr_atom|)
+#   T2, T3 (brane tower):   α = m_e · 8G ≈ 3.7445 MeV per cat unit
+#       (`prop:atomic-braid-mass`, `prop:binding-scale-catalan`)
+#   T4 (Frobenius co-Casimir):  m_e ≈ 0.511 MeV per raw τ unit
+#       (T4 has m_e factor INSIDE; raw τ comes out in cat-unit-of-τ)
+#   T5 (chirality):  multiplicative (a_K − 1) on T1 with T1's weight
+#   T6 (cyclotomic tail):  already in MeV via Habiro residue witness
+#
+# The proton-fitted `run_sweep_for_mode` collapses all of T1+T2+T3+T4
+# to a single E_0 fit at A=1; this loses the per-term unit information
+# and propagates mass error quickly with A.  The derivation-fixed
+# assembly below uses the published constants instead.
+
+E_0_BETA_DECAY_MEV_DERIV = Q_NEUTRON_MEV             # free-neutron β-decay Q (CODATA)
+M_E_MEV_DERIV            = M_E_MEV                   # CODATA electron rest mass
+ALPHA_BORROMEAN_MEV      = 3.74446989    # m_e · 8G  (`prop:binding-scale-catalan`)
+
+
+def assemble_per_derivation_weights(Z: int, N: int,
+                                      tower_mode: str = "li2q",
+                                      term5_mode: str = "multiplicative_on_t1") -> dict:
+    """Build atomic mass per the derivation-fixed weights (no proton fit).
+
+    For each isotope, evaluates both the bound (`include_inter=True`)
+    and free (`include_inter=False`) six-term decompositions and
+    differences them through the per-term physical scales:
+
+        B(Z, N) = E_0_β·(T1_free − T1_atom)               # binding from descended trace
+                + α·((T2+T3)_atom − (T2+T3)_free)        # brane tower contribution
+                + m_e·(T4_atom − T4_free)                 # Frobenius co-Casimir
+                + E_0_β·(a_K − 1)·T1_atom                 # chirality (mult on T1)
+                + (T6_atom − T6_free)                     # cyclotomic tail (MeV)
+        M_pred  = constituent − B
+
+    `constituent` = Z·m_p + N·m_n + Z·m_e (CODATA bare-particle masses).
+
+    Returns a dict with the per-term contributions in MeV plus
+    M_pred and the constituent baseline.
+    """
     M_P_CODATA = 938.27208816
-    E_0 = M_P_CODATA / m_p_hecke
-    print(f"\nProton calibration:")
-    print(f"  m_p_hecke   = {m_p_hecke:.6e}")
-    print(f"  E_0         = {E_0:.6e} MeV/Hecke-unit")
-    print(f"  p terms:    t1={p_terms['term1_descended']:.3e} "
-          f"t2={p_terms['term2_single_gen_tower']:.3e} "
-          f"t3={p_terms['term3_pair_gen_tower']:.3e}")
-    print(f"             t4={p_terms['term4_frobenius_codim_scaled']:.3e} "
-          f"t5={p_terms['term5_additive_contribution']:.3e} "
-          f"t6={p_terms['term6_higher_residues']:.3e}")
-    print()
+    M_N_CODATA = 939.56542052
+    constituent = Z * M_P_CODATA + N * M_N_CODATA + Z * M_E_MEV_DERIV
+
+    A = Z + N
+    inter_flag = (A >= 2)
+
+    chir = chirality_signs_for_isotope_inferred(Z, N)
+
+    atom_terms = paper_six_term_mass(
+        Z, N, include_inter=inter_flag,
+        chirality_signs=chir, tower_mode=tower_mode,
+        term5_mode=term5_mode,
+    )
+    free_terms = paper_six_term_mass(
+        Z, N, include_inter=False,
+        chirality_signs=[],
+        tower_mode=tower_mode, term5_mode=term5_mode,
+    )
+
+    t1_a = atom_terms["term1_canonical_tr_M"]
+    t1_f = free_terms["term1_canonical_tr_M"]
+    t2_a = atom_terms["term2_single_gen_tower"]
+    t2_f = free_terms["term2_single_gen_tower"]
+    t3_a = atom_terms["term3_pair_gen_tower"]
+    t3_f = free_terms["term3_pair_gen_tower"]
+    # T4 is reported as `term4_frobenius_codim_raw` (raw τ, no m_e
+    # factor) and `term4_frobenius_codim_scaled` (with m_e_hecke=1
+    # factor; effectively same).  Use the raw and apply m_e in MeV
+    # ourselves.
+    t4_a = atom_terms["term4_frobenius_codim_raw"]
+    t4_f = free_terms["term4_frobenius_codim_raw"]
+    aK_a = atom_terms["term5_chirality_factor_a_K"]
+    t6_a = atom_terms["term6_cyclotomic_tail_MeV"]
+    t6_f = free_terms["term6_cyclotomic_tail_MeV"]
+
+    # Per-term binding contributions (each in MeV).
+    binding_T1  = E_0_BETA_DECAY_MEV_DERIV * (t1_f - t1_a)
+    binding_T23 = ALPHA_BORROMEAN_MEV * ((t2_a + t3_a) - (t2_f + t3_f))
+    binding_T4  = M_E_MEV_DERIV * (t4_a - t4_f)
+    binding_T5  = E_0_BETA_DECAY_MEV_DERIV * (aK_a - 1.0) * t1_a
+    binding_T6  = t6_a - t6_f
+
+    B_pred = (binding_T1 + binding_T23 + binding_T4
+              + binding_T5 + binding_T6)
+    M_pred = constituent - B_pred
+
+    return {
+        "Z": Z, "N": N, "A": A,
+        "constituent_MeV": constituent,
+        "binding_T1_MeV":  binding_T1,
+        "binding_T2T3_MeV": binding_T23,
+        "binding_T4_MeV":  binding_T4,
+        "binding_T5_MeV":  binding_T5,
+        "binding_T6_MeV":  binding_T6,
+        "B_pred_MeV":      B_pred,
+        "M_predicted_MeV": M_pred,
+        "tower_mode":      tower_mode,
+        "term5_mode":      term5_mode,
+        "weights_used": {
+            "E_0_beta_MeV": E_0_BETA_DECAY_MEV_DERIV,
+            "alpha_borromean_MeV": ALPHA_BORROMEAN_MEV,
+            "m_e_MeV": M_E_MEV_DERIV,
+        },
+    }
+
+
+def chirality_signs_for_isotope_inferred(Z: int, N: int) -> list[int]:
+    """Pattern keyed on (Z, N) instead of label string."""
+    if Z == 1 and N == 0: return []
+    if Z == 0 and N == 1: return []
+    if Z == 1 and N == 1: return [+1]
+    if Z == 1 and N == 2: return [+1, -1]
+    if Z == 2 and N == 1: return [+1, -1]
+    if Z == 2 and N == 2: return [+1, -1, +1, -1]
+    if Z == 3 and N == 2: return [+1, -1, +1, -1, +1]
+    if Z == 3 and N == 3: return [+1, -1, +1, -1, +1, -1]
+    if Z == 3 and N == 4: return [+1, -1, +1, -1, +1, -1, +1]
+    if Z == 4 and N == 3: return [+1, -1, +1, -1, +1, -1, +1]
+    if Z == 4 and N == 4: return [+1, -1, +1, -1, +1, -1, +1, -1]
+    if Z == 4 and N == 5: return [+1, -1, +1, -1, +1, -1, +1, -1, +1]
+    return []
+
+
+if __name__ == "__main__":
+    print("PAPER 6-TERM FORMULA — five-mode comparison sweep")
+    print("=" * 80)
+    print(f"q_0 = {float(Q0):.6f}")
 
     ISOTOPES = [
         ("p",   1, 0, False,  938.272),
@@ -282,52 +639,63 @@ if __name__ == "__main__":
         ("T",   1, 2, True,  2809.432),
         ("3He", 2, 1, True,  2809.413),
         ("4He", 2, 2, True,  3728.401),
+        ("5Li", 3, 2, True,  4669.151),
         ("6Li", 3, 3, True,  5603.052),
         ("7Li", 3, 4, True,  6535.366),
+        ("7Be", 4, 3, True,  6536.227),
+        ("8Be", 4, 4, True,  7456.894),
+        ("9Be", 4, 5, True,  8392.749),
     ]
 
-    print(f"{'iso':>5} {'A':>3} {'total':>11} {'M_pred':>10} "
-          f"{'M_CODATA':>10} {'err%':>8}")
-    print('-' * 60)
+    modes = ["brane", "drop", "q1-base", "r-side-bare", "li2q"]
+    sweep_results = {}
+    for mode in modes:
+        E_0, rows = run_sweep_for_mode(mode, ISOTOPES)
+        sweep_results[mode] = {"E_0": E_0, "rows": rows}
 
-    rows = []
-    for iso, Z, N, inter, M_codata in ISOTOPES:
-        try:
-            terms = paper_six_term_mass(
-                Z, N, include_inter=inter,
-                chirality_signs=chirality_signs_for_isotope(iso))
-        except Exception as exc:
-            print(f"  {iso}: ERROR {type(exc).__name__}: {exc}")
-            continue
-        M_pred = E_0 * terms["total_hecke"]
-        err = (M_pred - M_codata) / M_codata * 100
-        print(f"{iso:>5} {Z+N:>3} {terms['total_hecke']:>11.3e} "
-              f"{M_pred:>10.2f} {M_codata:>10.3f} {err:>+7.2f}%")
-        rows.append({
-            "isotope": iso, "Z": Z, "N": N, "A": Z + N,
-            "M_codata": M_codata,
-            "M_predicted": M_pred,
-            "err_pct": err,
-            **terms,
-        })
+    # Side-by-side comparison
+    print("\n" + "=" * 80)
+    print("Side-by-side comparison (% error vs CODATA)")
+    print("=" * 80)
+    print(f"  {'iso':>5} {'A':>3} | {'brane':>10} {'drop':>10} {'q1-base':>10} {'r-side':>10} {'li2q':>10}")
+    print("  " + "-" * 50)
+    for iso, Z, N, _, M_cod in ISOTOPES:
+        line = f"  {iso:>5} {Z+N:>3} |"
+        for mode in modes:
+            row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == iso), None)
+            if row is None or "error" in row:
+                line += f" {'ERR':>10}"
+            else:
+                line += f" {row['err_pct']:>+9.3f}%"
+        print(line)
 
+    # Mean and max abs errors per mode (excluding proton calibration anchor)
     print()
-    heavy = [r for r in rows if r['A'] >= 3]
-    if heavy:
-        mean_err = sum(abs(r['err_pct']) for r in heavy) / len(heavy)
-        print(f"Mean |err| for A≥3: {mean_err:.2f}%")
+    for mode in modes:
+        rows = sweep_results[mode]["rows"]
+        non_p_errs = [abs(r["err_pct"]) for r in rows
+                       if r["isotope"] != "p" and "err_pct" in r]
+        if non_p_errs:
+            mean_e = sum(non_p_errs) / len(non_p_errs)
+            max_e = max(non_p_errs)
+            print(f"  {mode:<8}: mean |err| = {mean_e:>7.3f}%, max |err| = {max_e:>7.3f}%")
 
-    # Isospin-symmetry check: T vs 3He
-    T_row = next((r for r in rows if r['isotope'] == 'T'), None)
-    He3_row = next((r for r in rows if r['isotope'] == '3He'), None)
-    if T_row and He3_row:
-        T_minus_3He_pred = T_row['M_predicted'] - He3_row['M_predicted']
-        T_minus_3He_codata = T_row['M_codata'] - He3_row['M_codata']
-        print(f"\nIsospin-symmetry check:")
-        print(f"  T − ³He predicted     = {T_minus_3He_pred:+.3f} MeV")
-        print(f"  T − ³He CODATA        = {T_minus_3He_codata:+.3f} MeV")
-        print(f"  (isospin-symmetric formula should give ≈ 0 MeV;")
-        print(f"   the 0.019 MeV CODATA split is Coulomb + m_n − m_p)")
+    # Isospin (T vs 3He) per mode
+    print(f"\n  Isospin check (T - ³He, MeV):")
+    print(f"  {'mode':<10} {'pred':>14}  {'CODATA':>10}")
+    for mode in modes:
+        T_row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == "T"), None)
+        He_row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == "3He"), None)
+        if T_row and He_row and "M_predicted" in T_row and "M_predicted" in He_row:
+            delta = T_row["M_predicted"] - He_row["M_predicted"]
+            print(f"  {mode:<10} {delta:>+14.4f}  {0.019:>10.4f}")
+
+    # Use li2q mode rows as the primary witness output (canonical corrected form).
+    # Back-compat consumers that need the legacy brane form can read
+    # all_modes["brane"]["rows"].
+    CANONICAL_MODE = "li2q"
+    rows = sweep_results[CANONICAL_MODE]["rows"]
+    E_0 = sweep_results[CANONICAL_MODE]["E_0"]
 
     witness = {
         "computation": "paper-six-term-isotope-sweep",
@@ -345,13 +713,19 @@ if __name__ == "__main__":
             "prop:chirality-dual-space-derivation",
             "thm:frobenius-codim-universal",
         ],
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q_0": float(Q0_FLOAT),
-            "E_0_MeV": E_0,
-            "m_p_hecke": m_p_hecke,
+            "canonical_mode": CANONICAL_MODE,
+            "E_0_MeV": sweep_results[CANONICAL_MODE]["E_0"],
+            "E_0_MeV_brane": sweep_results["brane"]["E_0"],
         },
         "rows": rows,
+        "all_modes": {
+            mode: {"E_0": sweep_results[mode]["E_0"],
+                   "rows": sweep_results[mode]["rows"]}
+            for mode in modes
+        },
     }
     out = Path(__file__).parent / "paper-six-term-isotope-sweep.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))

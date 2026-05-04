@@ -519,6 +519,7 @@ export default chapter({
         "y-lambda-sign-pattern",
         "terms-2-6-higher-operations",
         "six-term-mass-formula-complete",
+        "six-term-per-derivation-weights",
         "shell-correction-term-seven",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
