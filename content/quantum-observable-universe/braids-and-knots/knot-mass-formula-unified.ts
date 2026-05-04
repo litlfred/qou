@@ -9,6 +9,7 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
+    "prop:atomic-mass-gb-nf",
     "thm:frobenius-codim-universal",
     "prop:partition-sum-proton-residual",
     "conj:knot-factor-frobenius-pairing",

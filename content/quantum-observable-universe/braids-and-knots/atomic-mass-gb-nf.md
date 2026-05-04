@@ -1,0 +1,135 @@
+## Statement
+
+**Proposition.**
+*Let $(Z, N)$ be a neutral atom with atomic braid
+$\beta_K \in B_{n}$, where $n = 3A + Z$ and $A = Z + N$
+([atomic braid](#def:atomic-braid)).
+Let $\mathrm{NF}_{\mathrm{GS}}(\beta_K) \in H_n(R, q_0)$ denote the
+Gröbner–Shirshov normal form of $\beta_K$ in the Iwahori–Hecke
+algebra under the PBW Gröbner–Shirshov basis
+([PBW corollary](unital-groebner-bases:cor:pbw)).
+Then the atomic mass admits the unified categorical expression*
+
+$$
+  \mathcal{M}(K)
+  \;=\;
+  m_e \cdot \rho_K \cdot
+  \bigl\lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\beta_K)\bigr)\!\bigr\rvert,
+$$
+
+*where $\operatorname{tr}_M$ is the canonical Jones–Markov trace
+([categorical mass = Markov](#prop:categorical-mass-markov))
+and $\rho_K$ is a positive scalar — the **categorical density**
+of the atomic braid class.*
+
+## Three equivalent forms
+
+The same observable $\mathcal{M}(K)$ admits three rewritings,
+each exposing different structure:
+
+| Form | Inputs | Status |
+|:-----|:-------|:-------|
+| **(GB-NF)** $\mathcal{M} = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\beta_K)\bigr)\!\rvert$ | $m_e$, $\beta_K$, $q_0$, $\rho_K$ | algebraic; $\rho_K$ currently empirical |
+| **(constituent)** $\mathcal{M} = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e + \alpha \sum_i \ln\lvert\hat{V}_i^{\mathrm{full}}\rvert$ | $m_e$, **$m_{\mathfrak{p}}$, $m_{\mathfrak{n}}$ (CODATA)**, $\beta_K$, $q_0$ | $0.18\%$ mean error, $Z\!=\!1\!\dots\!20$ ([Wedderburn mass](#thm:wedderburn-mass-formula)) |
+| **(six-term spectral)** $\mathcal{M} = T_1 + T_2 + T_3 + T_4 + T_5 + T_6$ | $m_e$, $\beta_K$, $q_0$, $E_0$ (proton calibration) | $25\%$ under-prediction at ${}^4\mathrm{He}$ ([unified mass formula](#thm:knot-mass-formula-unified)) |
+
+The (GB-NF) form is the **abstract algebraic statement**; the
+other two are concrete evaluations that fix $\rho_K$ via different
+calibration data.
+
+## The categorical density factor $\rho_K$
+
+By the categorical-mass identity
+([categorical mass = Markov](#prop:categorical-mass-markov)):
+$\mathfrak{m}_{q,K} = \lvert\!\operatorname{tr}_M(\rho(\beta_K))\!\rvert$
+is the **dimensionless** mass ratio. To obtain MeV, one multiplies
+by a calibration factor with the dimensions of energy. The
+**categorical density** $\rho_K$ packages this calibration as a
+braid-class invariant:
+
+$$
+  \rho_K \;=\;
+  \frac{\mathcal{M}(K)}{m_e \cdot
+    \lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\beta_K)\bigr)\!\rvert}.
+$$
+
+**Empirical values** (from
+`rho-k-codata-vs-six-term.witness.json`, evaluated at $q_0$ via
+50-dps Markov trace of `markov_peel.tr_M_atomic`):
+
+| Atom | $A$ | $\lvert\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}})\rvert$ | $\mathcal{M}_{\mathrm{CODATA}}$ (MeV) | $\rho_K^{\mathrm{CODATA}}$ |
+|:---:|:--:|:---:|:---:|:---:|
+| $\mathfrak{p}$ | 1 | $1.0653$ | $938.272$ | $1723.6$ |
+| $\mathfrak{n}$ | 1 | $0.9232$ | $939.565$ | $1991.6$ |
+| $D$ | 2 | $0.3883$ | $1875.613$ | $9453.0$ |
+| $T$ | 3 | $0.1041$ | $2808.921$ | $52828.5$ |
+| ${}^3\mathrm{He}$ | 3 | $0.2065$ | $2808.392$ | $26609.2$ |
+
+$\rho_K^{\mathrm{CODATA}}$ grows super-linearly in $A$, with
+$\rho_K(\mathrm{T}) / \rho_K(\mathfrak{p}) \approx 30.6$ for $A = 3$.
+
+## Open question: categorical derivation of $\rho_K$
+
+The (GB-NF) form makes the **algebraic** structure manifest: $\beta_K$
+reduces to a unique normal form $\mathrm{NF}_{\mathrm{GS}}(\beta_K)$ in
+$H_n(q_0)$, and its Markov trace is computable directly from braid
+data alone. The empirical question is whether $\rho_K$ admits a
+similar braid-categorical derivation — i.e. whether there exists a
+functional $\rho \colon B_n / \!\sim_{\mathrm{Markov}} \to \mathbb{R}_{>0}$
+computable from $\beta_K$ and $q_0$ such that
+$\rho(\beta_K) = \rho_K^{\mathrm{CODATA}}$.
+
+The (six-term spectral) form is the current best candidate
+attempt, expanding $\rho_K \cdot \lvert\!\operatorname{tr}_M\!\rvert$
+into a $\sum_{i=1}^{6} T_i$ decomposition over the Wedderburn
+blocks plus the cyclotomic tail. Empirically the six-term
+expansion **under-predicts** $\rho_K$ by $22\%$–$31\%$ for
+$A \in \{2, 3\}$ when calibrated against the proton
+(`paper-six-term-isotope-sweep.witness.json`):
+
+| Atom | $\rho_K^{\mathrm{CODATA}}$ | $\rho_K^{6\text{-term}}$ | gap (\%) |
+|:---:|:---:|:---:|:---:|
+| $\mathfrak{p}$ | $1723.6$ | $1723.6$ | $0.0$ (calibrated) |
+| $\mathfrak{n}$ | $1991.6$ | $1893.8$ | $+4.9$ |
+| $D$  | $9453.0$ | $7398.2$ | $+21.7$ |
+| $T$  | $52828.5$ | $36193.8$ | $+31.5$ |
+| ${}^3\mathrm{He}$ | $26609.2$ | $19523.5$ | $+26.6$ |
+
+The (constituent) form sidesteps this question by **using CODATA
+$m_{\mathfrak{p}}, m_{\mathfrak{n}}$ as inputs**: the $0.18\%$
+accuracy is dominated by the CODATA constituent sum, with
+$\alpha \sum \ln\lvert\hat{V}_i^{\mathrm{full}}\rvert \approx -7$ MeV
+of categorical correction. In particular, the (constituent)
+formula does **not** demonstrate that $\rho_K$ is categorically
+self-determined; it demonstrates that, given CODATA nucleon masses,
+the small binding correction is captured by a clean log-volume sum.
+
+## Reading the three forms
+
+The three forms encode the same physical mass $\mathcal{M}(K)$
+parameterised by different calibration data:
+
+- **(constituent)** anchors at the *nucleon level*: take CODATA
+  $m_{\mathfrak{p}}, m_{\mathfrak{n}}$ as primitive, treat the
+  binding/electron-coupling as a categorical correction.
+  Sub-percent for $Z = 1$..$20$.
+- **(six-term spectral)** anchors at the *electron level*: take
+  $m_e$ and $E_0 = m_{\mathfrak{p}}^{\mathrm{CODATA}} / \lvert\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_{\mathfrak{p}}))\!\rvert$
+  as the only calibration; predict everything else from $q_0$ and
+  the braid spectrum. Currently $25\%$ off at $A = 4$.
+- **(GB-NF)** is the *algebraic statement*: the atomic mass is
+  proportional to the Markov trace of the normal form, with the
+  proportionality constant $\rho_K$ as the categorical density.
+
+The propositional content carried by (GB-NF) — that the atomic mass
+factors through the Gröbner–Shirshov quotient — is what makes the
+descent in [categorical mass = Markov](#prop:categorical-mass-markov)
+applicable: the trace depends only on the braid class modulo the
+PBW relations.
+
+## Witnesses
+
+- `rho-k-codata-vs-six-term.witness.json` — $\rho_K^{\mathrm{CODATA}}$ vs $\rho_K^{6\text{-term}}$ table for $A = 1, 2, 3$.
+- `atomic-tr-m-mpfr-50dps.witness.json` — canonical $\lvert\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$ at 50 decimal-place precision.
+- `atom-mass-atomic-braid.witness.json` — (constituent) form predictions.
+- `paper-six-term-isotope-sweep.witness.json` — (six-term spectral) predictions across all five tower modes.

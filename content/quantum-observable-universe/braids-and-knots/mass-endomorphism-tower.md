@@ -88,6 +88,17 @@ parameters — but the integration probe shows the
 $\int (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$ identity doesn't
 reduce to $\alpha \cdot \ln|V|$ either.*
 
+*Both forms above are concrete evaluations of the abstract GB-NF
+statement
+([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
+$\mathcal{M}(K) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$.
+The substrate density $\rho_q = 1/\hbar_q^2$ above is a substrate-only
+ansatz for the categorical density $\rho_K$; empirically
+$\rho_K^{\mathrm{CODATA}}$ is strongly braid-class-dependent
+(see `rho-k-codata-vs-six-term.witness.json`: $\rho_K^{\mathrm{CODATA}}(D)/\rho_K^{\mathrm{CODATA}}(\mathfrak{p}) \approx 5.5$),
+so any candidate dimensional factor must absorb that scaling either
+into $\rho_q$ itself or into $\mathrm{Vol}_q^{\mathrm{tower}}(\beta)$.*
+
 *Open: the correct Kashaev limit of $\mathrm{Vol}_q^{(S)}$ at $q_0$
 needs derivation.  Two candidates the integral does NOT support:
 ($\Phi_q(|V|)$) blows up; ($\alpha\cdot\ln|V|$) is empirically close

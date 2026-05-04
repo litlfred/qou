@@ -7,6 +7,18 @@ volume at generator $i$ of the braid word.  Let
 $\Phi_q(z) = \prod_{k \geq 1} (1 - q^{-k} z)^{-1}$ be the quantum
 dilogarithm and $z = 1/(q^{1/2} + q^{-1/2})$ the Markov parameter.
 
+*The boxed theorem below is the **six-term spectral expansion** of
+the Gröbner–Shirshov-NF mass identity
+([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
+$\mathfrak{m}(\varrho) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$.
+The descended $\lvert\!\operatorname{tr}_M(T_w)\!\rvert$ piece supplies
+the GB-NF normal-form trace; the brane tower and Frobenius co-Casimir
+are the spectral decomposition of $\rho_K$ across Wedderburn blocks.
+Empirically the six-term sum recovers $\rho_K^{\mathrm{CODATA}}$ to
+$\sim 5\%$ for $A = 1$ but under-predicts by $22\%$–$31\%$ for $A \in \{2, 3\}$
+(`rho-k-codata-vs-six-term.witness.json`), so the spectral closure of
+$\rho_K$ from braid data alone remains open.*
+
 **Theorem (unified knot mass formula).**
 *The categorical mass of the vortex $\varrho$ is*
 

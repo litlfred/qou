@@ -331,6 +331,7 @@ export default chapter({
         "topological-mass-cat-transient-proof",
         "topological-mass-categorical-proof",
         "categorical-mass-markov",
+        "atomic-mass-gb-nf",
         "markov-z-reconciliation",
         "mass-endomorphism-conjecture",
         "categorical-neutrality-saturated-shells",
