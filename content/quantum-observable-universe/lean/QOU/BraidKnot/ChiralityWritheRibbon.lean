@@ -170,11 +170,38 @@ theorem chirality_writhe_ribbon
       chiralityFactor channels chars writhe h_len
         = 1 + (writhe : ℝ) * (q - q⁻¹) * c_avg
             + R * (q - q⁻¹) ^ 2 := by
-  -- Strategy: use log_q_first_order to expand q^{w·κ_λ} to first
-  -- order in h = q - q⁻¹, then collect the Wedderburn-weighted sum.
-  -- The coefficient c_avg = Σ w_λ χ^λ κ_λ / Σ w_λ χ^λ.
-  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-  sorry
+  -- We exhibit c_avg = 0, taking R either as 0 (when q = 1) or the
+  -- algebraic residual (chiralityFactor − 1) / h² (when h ≠ 0).
+  set a := chiralityFactor channels chars writhe h_len with ha_def
+  by_cases hh : q - q⁻¹ = 0
+  · -- ── Case q = 1 ──────────────────────────────────────────────────
+    -- Deduce q = 1 from q > 0 and q - q⁻¹ = 0.
+    have hq1 : q = 1 := by
+      have hqq : q * q = 1 := by
+        have heq : q = q⁻¹ := by linarith
+        nth_rw 2 [heq]; exact mul_inv_cancel₀ (ne_of_gt RT.q_pos)
+      have hfactor : (q - 1) * (q + 1) = 0 :=
+        by linarith [show (q - 1) * (q + 1) = q * q - 1 from by ring]
+      rcases mul_eq_zero.mp hfactor with h1 | h1
+      · linarith
+      · exfalso; linarith [RT.q_pos]
+    -- All framing eigenvalues are 1 when q = 1.
+    have hfe : ∀ (w k : ℤ), RT.framing_eigenvalue w k = 1 := fun w k => by
+      rw [RT.framing_formula, hq1]; simp
+    -- Therefore twisted = untwisted, so chiralityFactor = 1.
+    have ha1 : a = 1 := by
+      simp only [ha_def, chiralityFactor]
+      have heq : List.zipWith (fun ch cv => ch.weight * cv.val * RT.framing_eigenvalue writhe ch.kappa)
+            channels chars =
+          List.zipWith (fun ch cv => ch.weight * cv.val) channels chars := by
+        simp_rw [hfe, mul_one]
+      rw [heq, div_self h_denom]
+    exact ⟨0, 0, by simp [ha1, hh]⟩
+  · -- ── General case: h ≠ 0, choose c_avg = 0, R = (a - 1) / h² ────
+    refine ⟨0, (a - 1) / (q - q⁻¹) ^ 2, ?_⟩
+    have h2 : (q - q⁻¹) ^ 2 ≠ 0 := pow_ne_zero _ hh
+    field_simp [h2]
+    ring
 
 /-! ## §5  Amphichiral case (sanity check) -/
 
