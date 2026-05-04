@@ -7,7 +7,7 @@
     "prop:chirality-dual-space-derivation",
     "thm:frobenius-codim-universal"
   ],
-  "computedAt": "2026-05-04T16:41:37.692979+00:00",
+  "computedAt": "2026-05-04T17:37:13.004703+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "canonical_mode": "li2q",
@@ -147,20 +147,7 @@
       "N": 3,
       "A": 6,
       "M_codata": 5603.052,
-      "M_predicted": 5015.981178654362,
-      "err_pct": -10.477697179066647,
-      "term1_canonical_tr_M": 0.0004688317450825183,
-      "term2_single_gen_tower": 10.667020680916833,
-      "term3_pair_gen_tower": 16.022520857327407,
-      "term4_frobenius_codim_raw": 2.0880906895392073,
-      "term4_frobenius_codim_scaled": 2.0880906895392073,
-      "term5_chirality_factor_a_K": 0.8745285567617559,
-      "term5_additive_contribution": -5.882499569140814e-05,
-      "term6_cyclotomic_tail_MeV": 0.0,
-      "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "li2q",
-      "m_e_hecke": 1.0,
-      "total_hecke": 28.77804223453284
+      "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
     },
     {
       "isotope": "7Li",
@@ -168,20 +155,7 @@
       "N": 4,
       "A": 7,
       "M_codata": 6535.366,
-      "M_predicted": 6289.912298451478,
-      "err_pct": -3.7557759052595077,
-      "term1_canonical_tr_M": 6.235724075364883e-05,
-      "term2_single_gen_tower": 12.346463846987964,
-      "term3_pair_gen_tower": 21.680511949743085,
-      "term4_frobenius_codim_raw": 2.0598882894764245,
-      "term4_frobenius_codim_scaled": 2.0598882894764245,
-      "term5_chirality_factor_a_K": 1.057357778427713,
-      "term5_additive_contribution": 3.5766727985113417e-06,
-      "term6_cyclotomic_tail_MeV": 0.0,
-      "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "li2q",
-      "m_e_hecke": 1.0,
-      "total_hecke": 36.086930020121024
+      "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
     }
   ],
   "all_modes": {
@@ -320,20 +294,7 @@
           "N": 3,
           "A": 6,
           "M_codata": 5603.052,
-          "M_predicted": 6242.434813457564,
-          "err_pct": 11.411331064883285,
-          "term1_canonical_tr_M": 0.0004688317450825183,
-          "term2_single_gen_tower": 4824933.217533526,
-          "term3_pair_gen_tower": 3024773.1825173013,
-          "term4_frobenius_codim_raw": 2.0880906895392073,
-          "term4_frobenius_codim_scaled": 2.0880906895392073,
-          "term5_chirality_factor_a_K": 0.8745285567617559,
-          "term5_additive_contribution": -5.882499569140814e-05,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane-legacy",
-          "m_e_hecke": 1.0,
-          "total_hecke": 7849708.488551524
+          "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         },
         {
           "isotope": "7Li",
@@ -341,20 +302,7 @@
           "N": 4,
           "A": 7,
           "M_codata": 6535.366,
-          "M_predicted": 7238.401397021398,
-          "err_pct": 10.757399004453587,
-          "term1_canonical_tr_M": 6.235724075364883e-05,
-          "term2_single_gen_tower": 5336236.018780138,
-          "term3_pair_gen_tower": 3765873.931670588,
-          "term4_frobenius_codim_raw": 2.0598882894764245,
-          "term4_frobenius_codim_scaled": 2.0598882894764245,
-          "term5_chirality_factor_a_K": 1.057357778427713,
-          "term5_additive_contribution": 3.5766727985113417e-06,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane-legacy",
-          "m_e_hecke": 1.0,
-          "total_hecke": 9102112.01040495
+          "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         }
       ]
     },
@@ -493,20 +441,7 @@
           "N": 3,
           "A": 6,
           "M_codata": 5603.052,
-          "M_predicted": 549.6440824287157,
-          "err_pct": -90.19027340048396,
-          "term1_canonical_tr_M": 0.0004688317450825183,
-          "term2_single_gen_tower": 0.0,
-          "term3_pair_gen_tower": 0.0,
-          "term4_frobenius_codim_raw": 2.0880906895392073,
-          "term4_frobenius_codim_scaled": 2.0880906895392073,
-          "term5_chirality_factor_a_K": 0.8745285567617559,
-          "term5_additive_contribution": -5.882499569140814e-05,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "drop",
-          "m_e_hecke": 1.0,
-          "total_hecke": 2.0885006962885986
+          "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         },
         {
           "isotope": "7Li",
@@ -514,20 +449,7 @@
           "N": 4,
           "A": 7,
           "M_codata": 6535.366,
-          "M_predicted": 542.1313246255596,
-          "err_pct": -91.70465243070458,
-          "term1_canonical_tr_M": 6.235724075364883e-05,
-          "term2_single_gen_tower": 0.0,
-          "term3_pair_gen_tower": 0.0,
-          "term4_frobenius_codim_raw": 2.0598882894764245,
-          "term4_frobenius_codim_scaled": 2.0598882894764245,
-          "term5_chirality_factor_a_K": 1.057357778427713,
-          "term5_additive_contribution": 3.5766727985113417e-06,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "drop",
-          "m_e_hecke": 1.0,
-          "total_hecke": 2.0599542233899766
+          "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         }
       ]
     },
@@ -666,20 +588,7 @@
           "N": 3,
           "A": 6,
           "M_codata": 5603.052,
-          "M_predicted": 482.10987999205,
-          "err_pct": -91.39558440664034,
-          "term1_canonical_tr_M": 0.0004688317450825183,
-          "term2_single_gen_tower": 0.00048828125,
-          "term3_pair_gen_tower": 0.0,
-          "term4_frobenius_codim_raw": 2.0880906895392073,
-          "term4_frobenius_codim_scaled": 2.0880906895392073,
-          "term5_chirality_factor_a_K": 0.8745285567617559,
-          "term5_additive_contribution": -5.882499569140814e-05,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "q1-base",
-          "m_e_hecke": 1.0,
-          "total_hecke": 2.0889889775385986
+          "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         },
         {
           "isotope": "7Li",
@@ -687,20 +596,7 @@
           "N": 4,
           "A": 7,
           "M_codata": 6535.366,
-          "M_predicted": 475.4372308376706,
-          "err_pct": -92.72516289313145,
-          "term1_canonical_tr_M": 6.235724075364883e-05,
-          "term2_single_gen_tower": 0.0001220703125,
-          "term3_pair_gen_tower": 0.0,
-          "term4_frobenius_codim_raw": 2.0598882894764245,
-          "term4_frobenius_codim_scaled": 2.0598882894764245,
-          "term5_chirality_factor_a_K": 1.057357778427713,
-          "term5_additive_contribution": 3.5766727985113417e-06,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "q1-base",
-          "m_e_hecke": 1.0,
-          "total_hecke": 2.0600762937024766
+          "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         }
       ]
     },
@@ -839,20 +735,7 @@
           "N": 3,
           "A": 6,
           "M_codata": 5603.052,
-          "M_predicted": 3360.9114613746247,
-          "err_pct": -40.01641495787251,
-          "term1_canonical_tr_M": 0.0004688317450825183,
-          "term2_single_gen_tower": 4.23845353165021,
-          "term3_pair_gen_tower": 8.453876865862652,
-          "term4_frobenius_codim_raw": 2.0880906895392073,
-          "term4_frobenius_codim_scaled": 2.0880906895392073,
-          "term5_chirality_factor_a_K": 0.8745285567617559,
-          "term5_additive_contribution": -5.882499569140814e-05,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "r-side-bare",
-          "m_e_hecke": 1.0,
-          "total_hecke": 14.78083109380146
+          "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         },
         {
           "isotope": "7Li",
@@ -860,20 +743,7 @@
           "N": 4,
           "A": 7,
           "M_codata": 6535.366,
-          "M_predicted": 4287.748315826573,
-          "err_pct": -34.39161149005927,
-          "term1_canonical_tr_M": 6.235724075364883e-05,
-          "term2_single_gen_tower": 4.986415919588482,
-          "term3_pair_gen_tower": 11.810563268484586,
-          "term4_frobenius_codim_raw": 2.0598882894764245,
-          "term4_frobenius_codim_scaled": 2.0598882894764245,
-          "term5_chirality_factor_a_K": 1.057357778427713,
-          "term5_additive_contribution": 3.5766727985113417e-06,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "r-side-bare",
-          "m_e_hecke": 1.0,
-          "total_hecke": 18.856933411463046
+          "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         }
       ]
     },
@@ -1012,20 +882,7 @@
           "N": 3,
           "A": 6,
           "M_codata": 5603.052,
-          "M_predicted": 5015.981178654362,
-          "err_pct": -10.477697179066647,
-          "term1_canonical_tr_M": 0.0004688317450825183,
-          "term2_single_gen_tower": 10.667020680916833,
-          "term3_pair_gen_tower": 16.022520857327407,
-          "term4_frobenius_codim_raw": 2.0880906895392073,
-          "term4_frobenius_codim_scaled": 2.0880906895392073,
-          "term5_chirality_factor_a_K": 0.8745285567617559,
-          "term5_additive_contribution": -5.882499569140814e-05,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "li2q",
-          "m_e_hecke": 1.0,
-          "total_hecke": 28.77804223453284
+          "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         },
         {
           "isotope": "7Li",
@@ -1033,20 +890,7 @@
           "N": 4,
           "A": 7,
           "M_codata": 6535.366,
-          "M_predicted": 6289.912298451478,
-          "err_pct": -3.7557759052595077,
-          "term1_canonical_tr_M": 6.235724075364883e-05,
-          "term2_single_gen_tower": 12.346463846987964,
-          "term3_pair_gen_tower": 21.680511949743085,
-          "term4_frobenius_codim_raw": 2.0598882894764245,
-          "term4_frobenius_codim_scaled": 2.0598882894764245,
-          "term5_chirality_factor_a_K": 1.057357778427713,
-          "term5_additive_contribution": 3.5766727985113417e-06,
-          "term6_cyclotomic_tail_MeV": 0.0,
-          "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "li2q",
-          "m_e_hecke": 1.0,
-          "total_hecke": 36.086930020121024
+          "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
         }
       ]
     }

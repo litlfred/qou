@@ -58,8 +58,12 @@ from mass_endomorphism import Phi_q  # noqa: E402
 HERE = Path(__file__).parent
 
 Q0 = Q_MP
-Z_MARK = mp.mpf(str(float(z_mark)))
-H_VAL = mp.mpf(str(float(h_val)))
+# `z_mark`, `h_val` are float64 in `hecke_core` (see `q_parameter.py`).
+# `mp.mpf(str(...))` is the canonical lossless lift to mpmath without a
+# spurious round-trip via `float()` (per gemini-code-assist comment #3
+# on PR #534).
+Z_MARK = mp.mpf(str(z_mark))
+H_VAL = mp.mpf(str(h_val))
 
 
 def abs_mpf(v):
@@ -337,16 +341,26 @@ def paper_six_term_mass(Z, N, include_inter=True,
     τ(C_dim_q) units.
     """
     vols = atom_per_generator_volumes(Z, N, include_inter=include_inter)
-    # T1: canonical |tr_M| from Hoefsmit+Wenzl bridge witness.  Falls
-    # back to the legacy per-generator product Π|V̂_i| when no isotope
-    # label is provided (legacy callers without a label).
-    if isotope_label is not None:
-        try:
-            t1 = canonical_t1(isotope_label)
-        except KeyError:
-            t1 = term1_descended(vols)
-    else:
-        t1 = term1_descended(vols)
+    # T1: canonical |tr_M| from Hoefsmit+Wenzl bridge witness.  Per
+    # gemini-code-assist comment #2 on PR #534 and the audit
+    # docs/audits/2026-05-03-categorical-mass-divergence-audit.md, the
+    # legacy per-generator product Π|V̂_i| (term1_descended) is
+    # non-canonical and the source of isospin-violating pathologies
+    # (the −737 MeV mirror-nucleus gap).  We refuse to silently
+    # substitute it here; the caller must supply an isotope_label that
+    # the canonical witness file covers.
+    if isotope_label is None:
+        raise ValueError(
+            "paper_six_term_mass: isotope_label is required. The "
+            "canonical T1 path (canonical_t1) takes |tr_M(T_w)| from "
+            "atomic-tr-m-mpfr-50dps.witness.json, which is keyed by "
+            "isotope_label ('p', 'n', 'D', 'T', '3He', '4He', ...).  "
+            "Per the categorical-mass-divergence audit, the legacy "
+            "per-generator-product fallback is non-canonical and "
+            "produces ~10⁵× isospin pathologies — it has been "
+            "removed."
+        )
+    t1 = canonical_t1(isotope_label)
 
     # T2, T3 evaluation per `tower_mode`:
     if tower_mode in ("brane-legacy", "brane"):
@@ -433,6 +447,12 @@ def paper_six_term_mass(Z, N, include_inter=True,
 
     total = (float(t1_with_chirality) + float(t2) + float(t3)
              + float(t4))  # T6 added in MeV post-calibration
+    # Per gemini-code-assist comment #5 on PR #534: keep `total_hecke`
+    # and `term6_cyclotomic_tail_MeV` as mpf so the proton calibration
+    # `E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke` and the final
+    # `M_pred = E_0 * total_hecke + t6_MeV` retain 50-dps precision
+    # all the way through. Display fields stay float to keep witness
+    # JSON consumers (which expect numbers, not strings) compatible.
     return {
         "term1_canonical_tr_M": float(t1),
         "term2_single_gen_tower": float(t2),
@@ -441,11 +461,11 @@ def paper_six_term_mass(Z, N, include_inter=True,
         "term4_frobenius_codim_scaled": float(t4),
         "term5_chirality_factor_a_K": float(t5_factor),
         "term5_additive_contribution": float(t5),
-        "term6_cyclotomic_tail_MeV": float(t6_MeV),
+        "term6_cyclotomic_tail_MeV": t6_MeV,  # mpf — calibration-critical
         "term5_mode": term5_mode,
         "tower_mode": tower_mode,
         "m_e_hecke": float(m_e_hecke),
-        "total_hecke": total,
+        "total_hecke": total,  # mpf — calibration-critical
     }
 
 
@@ -480,12 +500,13 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True)
 
     if verbose:
         print(f"\nMode: {tower_mode}")
+        # Cast mpf-valued fields (t6, E_0) to float for display only.
         print(f"  Proton: t1={p_terms['term1_canonical_tr_M']:.4e} "
               f"t2={p_terms['term2_single_gen_tower']:.4e} "
               f"t3={p_terms['term3_pair_gen_tower']:.4e} "
               f"t4={p_terms['term4_frobenius_codim_scaled']:.4e} "
-              f"t6={p_terms['term6_cyclotomic_tail_MeV']:.4f} MeV")
-        print(f"  E_0 = {E_0:.6e} MeV/Hecke-unit")
+              f"t6={float(p_terms['term6_cyclotomic_tail_MeV']):.4f} MeV")
+        print(f"  E_0 = {float(E_0):.6e} MeV/Hecke-unit")
 
     rows = []
     for iso, Z, N, inter, M_codata in isotopes:
@@ -499,12 +520,23 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True)
                          "M_codata": M_codata,
                          "error": f"{type(exc).__name__}: {exc}"})
             continue
+        # Calibration arithmetic stays in mpf (per Gemini #5):
         M_pred = E_0 * terms["total_hecke"] + terms["term6_cyclotomic_tail_MeV"]
         err_pct = (M_pred - M_codata) / M_codata * 100 if M_codata else 0.0
+        # Cast mpf-valued fields to float at row-storage time so the
+        # witness JSON contains numeric values for downstream consumers
+        # (the precision-critical work happens above; storage is for
+        # reporting and float64 is sufficient for ~16 digits).
+        terms_for_row = {
+            **terms,
+            "total_hecke": float(terms["total_hecke"]),
+            "term6_cyclotomic_tail_MeV": float(terms["term6_cyclotomic_tail_MeV"]),
+        }
         rows.append({
             "isotope": iso, "Z": Z, "N": N, "A": Z + N,
-            "M_codata": M_codata, "M_predicted": M_pred, "err_pct": err_pct,
-            **terms,
+            "M_codata": M_codata, "M_predicted": float(M_pred),
+            "err_pct": float(err_pct),
+            **terms_for_row,
         })
     return E_0, rows
 
@@ -595,12 +627,16 @@ if __name__ == "__main__":
         "parameters": {
             "q_0": float(Q0_FLOAT),
             "canonical_mode": CANONICAL_MODE,
-            "E_0_MeV": sweep_results[CANONICAL_MODE]["E_0"],
-            "E_0_MeV_brane_legacy": sweep_results["brane-legacy"]["E_0"],
+            # E_0 stays mpf through calibration arithmetic (Gemini #5);
+            # cast to float here so the witness JSON contains a numeric
+            # value rather than a 50-dps string, keeping downstream
+            # JSON consumers compatible.
+            "E_0_MeV": float(sweep_results[CANONICAL_MODE]["E_0"]),
+            "E_0_MeV_brane_legacy": float(sweep_results["brane-legacy"]["E_0"]),
         },
         "rows": rows,
         "all_modes": {
-            mode: {"E_0": sweep_results[mode]["E_0"],
+            mode: {"E_0": float(sweep_results[mode]["E_0"]),
                    "rows": sweep_results[mode]["rows"]}
             for mode in modes
         },

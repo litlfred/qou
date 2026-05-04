@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T16:44:09.985264+00:00",
-  "commitSha": "06c04b2fe6456a4f8c477854909c1fb75047a682",
+  "computedAt": "2026-05-04T17:28:57.942981+00:00",
+  "commitSha": "c201fb8dd59acc4abf51b0340ad53bc44039bf06",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1721,6 +1721,7 @@
         "rho-f-categorical-probe.witness.json",
         "rho-f-complexity-sweep.witness.json",
         "rho-f-derived-vs-observed.witness.json",
+        "rho-k-codata-vs-six-term.witness.json",
         "rho-z-n-scan.witness.json",
         "ribbon-content-average.witness.json",
         "rosso-jones-qvalues.witness.json",
