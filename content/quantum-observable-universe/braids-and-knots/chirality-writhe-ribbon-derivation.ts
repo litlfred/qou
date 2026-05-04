@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Chirality factor $1 + w \\cdot h$ from ribbon-twist framing (writhe $w$)",
   lean: {
-    ref: "qou:QOU.BraidKnot.chirality_writhe_ribbon",
+    ref: "qou:QOU.BraidKnot.ChiralityWritheRibbon.chirality_writhe_ribbon",
     validation: "not_checked",
   },
   uses: ["prop:e-infinity-page-identifications"],
