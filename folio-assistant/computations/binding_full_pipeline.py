@@ -99,13 +99,33 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
                   kahler_order: int = 2,
                   E_0: float = E_0_BETA_DECAY_MEV,
                   verbose: bool = False) -> dict:
-    """End-to-end binding: canonical (Ocneanu) + Kähler tower.
+    """End-to-end binding using per-derivation per-term weights.
 
-    kahler_order ∈ {0, 1, 2}:
-      0 — no lift (V̂^(1) = V̂^(0), ε = O(ℏ_q³))
-      1 — 1st-order: V̂^(1) = V̂ + ℏ_q·q·dV̂/dq, ε = O(ℏ_q⁴)
-      2 — 2nd-order: + (ℏ_q²/2)·[q²d²V̂+qdV̂], ε = O(ℏ_q⁵)
+    Refactored 2026-05-04: previously used Kähler-lift V̂ with
+    `E_0 · ℏ_q²` calibration, which produced GeV-regime tower_MeV
+    (wrong calibration constant; see audit
+    `2026-05-03-tower-mev-calibration-finding.md`).
+
+    Now uses:
+      • V̂ from `atom_per_generator_volumes(Z, N)["full"]` channel
+        — same source as `paper_six_term_isotope_sweep`, conventions
+        agree across atom (include_inter=True) and free
+        (include_inter=False).
+      • Tower formula via `tower_mass_level(tower_mode='li2q')` — the
+        Kashaev integration limit -Σ Li_2^q(-|V|) (bounded; corrected
+        per audit branch's `kashaev-integration-identity` proof).
+      • Calibration α = m_e · 8G ≈ 3.7445 MeV (`prop:binding-scale-catalan`)
+        — the binding scale derived from Borromean hyperbolic volume.
+        E_0 · ℏ_q² was the wrong scale by ~5 orders of magnitude.
+
+    `kahler_order` is now ignored (no Kähler lift on the
+    atom_per_generator_volumes V̂'s; preserved for API compatibility).
+
+    Returns canonical + tower binding contributions in MeV, plus the
+    Term 6 cyclotomic-residue diagnostic (when available).
     """
+    from hecke_core import atom_per_generator_volumes
+
     A = Z + N
     n_strands = 3 * A
     out = {"Z": Z, "N": N, "A": A,
@@ -133,57 +153,52 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
               f"|tr_atom|={abs(tr_atom):.6f}, |tr_free|={abs(tr_free):.6f}, "
               f"B_canon = {canonical_MeV:.6f} MeV")
 
-    # ── Build symbolic V̂ + Kähler lift ──────────────────
-    t_kahler = time.time()
-    V_atom_sym = build_V_hat_symbolic(Z, N, include_inter=True)
-    V_free_sym = build_V_hat_symbolic(Z, N, include_inter=False)
-    a_lift = kahler_lift_analytic(V_atom_sym, order=kahler_order)
-    f_lift = kahler_lift_analytic(V_free_sym, order=kahler_order)
-    out["kahler_time_sec"] = time.time() - t_kahler
+    # ── Brane tower (Li_2^q form, atom_per_generator_volumes V̂) ──
+    t_tower = time.time()
+    vols_atom = atom_per_generator_volumes(Z, N, include_inter=True)
+    vols_free = atom_per_generator_volumes(Z, N, include_inter=False)
+    V_atom = [v["full"] for v in vols_atom]
+    V_free = [v["full"] for v in vols_free]
 
-    # Level-1 V̂ (one jet-up step)
-    key_lift = f"V{kahler_order}" if kahler_order > 0 else "V0"
-    V_a_1 = a_lift[key_lift] if kahler_order > 0 else a_lift["V0"]
-    V_f_1 = f_lift[key_lift] if kahler_order > 0 else f_lift["V0"]
+    m_a = tower_mass_level(V_atom, pair_mode=pair_mode)
+    m_f = tower_mass_level(V_free, pair_mode=pair_mode)
 
-    # ── Tower mass at level 1 ───────────────────────────
-    # NOTE: this path uses kahler_lift_analytic(build_V_hat_symbolic(...))
-    # to produce V̂ values, which carry a DIFFERENT semantic than the
-    # atom_per_generator_volumes used by paper_six_term_isotope_sweep.
-    # The brane-tower MeV calibration (α = m_e · 8G ≈ 3.7445 MeV per
-    # cat unit) applies cleanly to the latter but does NOT apply
-    # directly here without first reconciling the V̂ conventions
-    # (build_V_hat_symbolic emits a 0 entry in V_atom for D, which
-    # atom_per_generator_volumes does not — they are different
-    # objects).  The legacy `E_0 · ℏ_q²` scaling is structurally
-    # wrong in the same way `tower_mass_level(tower_mode='brane')`
-    # was, but recalibrating binding_full to the per-derivation
-    # weights requires switching to atom_per_generator_volumes
-    # throughout — out of scope here.  See
-    # `paper_six_term_isotope_sweep.assemble_per_derivation_weights`
-    # for the working per-term-derivation assembly that achieves
-    # 0.18% mean mass error vs CODATA on A ≤ 9.
-    m_a = tower_mass_level(V_a_1, pair_mode=pair_mode)
-    m_f = tower_mass_level(V_f_1, pair_mode=pair_mode)
-    delta_1 = m_f - m_a
-    tower_MeV = E_0 * HBAR_Q_SQ * delta_1
+    # Calibration per `prop:binding-scale-catalan`:
+    #   α = m_e · 8G ≈ 3.7445 MeV  (Borromean hyperbolic volume × m_e)
+    # This is the per-cat-unit MeV scale for the brane-tower
+    # contribution to atomic mass (see
+    # `docs/audits/2026-05-04-six-term-per-weight-derivation.md`).
+    M_E_MEV   = 0.51099895
+    G_CATALAN = 0.91596559417721901505
+    ALPHA_BORROMEAN_MEV = M_E_MEV * 8 * G_CATALAN
 
-    out["V_atom_0"] = a_lift["V0"]
-    out["V_free_0"] = f_lift["V0"]
-    if kahler_order >= 1:
-        out["V_atom_1st"] = a_lift["V1"]
-        out["V_free_1st"] = f_lift["V1"]
-    if kahler_order >= 2:
-        out["V_atom_2nd"] = a_lift["V2"]
-        out["V_free_2nd"] = f_lift["V2"]
-    out["tower_level_1_delta_cat"] = delta_1
+    # Sign convention: tower contribution to BINDING energy.  At the
+    # standalone level, B = α · ((T2+T3)_atom − (T2+T3)_free) is
+    # positive for a bound system (li2q tower of atom > tower of free
+    # because the atom has more generators contributing).  Match here.
+    delta_atom_minus_free = m_a - m_f
+    tower_MeV = ALPHA_BORROMEAN_MEV * delta_atom_minus_free
+
+    out["tower_time_sec"] = time.time() - t_tower
+    out["alpha_borromean_MeV"] = ALPHA_BORROMEAN_MEV
+    out["V_atom_full"] = [float(v) for v in V_atom]
+    out["V_free_full"] = [float(v) for v in V_free]
+    out["tower_atom_cat"] = float(m_a)
+    out["tower_free_cat"] = float(m_f)
+    out["tower_delta_cat"] = float(delta_atom_minus_free)
     out["tower_MeV"] = tower_MeV
-
-    # ── Error bounds (O/o in ℏ_q) ──────────────────────
-    eps_order = 3 + kahler_order  # Markov=3, 1st-Kähler=4, 2nd-Kähler=5
-    eps = (HBAR_Q ** eps_order) * abs(delta_1) * E_0
-    out["eps_modeling_MeV"] = eps
-    out["eps_order"] = f"O(ℏ_q^{eps_order})"
+    # Legacy keys for backward-compat readers (no longer used by this
+    # function but kept in the schema):
+    out["kahler_time_sec"] = 0.0
+    out["tower_level_1_delta_cat"] = float(delta_atom_minus_free)
+    # Error bound: with li2q tower the modeling residual is dominated
+    # by the V̂ truncation in `atom_per_generator_volumes` rather than
+    # the Φ_q-vs-Li_2^q identity (which is now exact per the audit
+    # branch's `kashaev-integration-identity` proof).  Estimate via
+    # the standalone empirical sweep's max error: ~0.5 % of M_pred,
+    # i.e. ~0.5 % · α · |delta| MeV.
+    out["eps_modeling_MeV"] = 0.005 * abs(tower_MeV)
+    out["eps_order"] = "empirical (0.5% via spectrum sweep, A ≤ 9)"
 
     # ── Term 6 (Mittag-Leffler polar sum at non-zero poles) ──
     # Pulls from term6_residues_at_roots.compute_atom (partial-fraction
