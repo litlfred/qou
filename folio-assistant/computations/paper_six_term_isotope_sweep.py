@@ -483,6 +483,12 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True)
                          "M_codata": M_codata,
                          "error": f"{type(exc).__name__}: {exc}"})
             continue
+        # Unit reminder (per Gemini review on PR #542):
+        # `total_hecke` (= T1+T2+T3+T4) is in cat units and gets
+        # multiplied by E_0 (MeV/cat-unit) to convert to MeV.
+        # `term6_cyclotomic_tail_MeV` is ALREADY in MeV (loaded from
+        # the Habiro residue witness via `_load_canonical_t6_MeV`),
+        # so it must NOT be scaled by E_0 — it is added directly.
         M_pred = E_0 * terms["total_hecke"] + terms["term6_cyclotomic_tail_MeV"]
         err_pct = (M_pred - M_codata) / M_codata * 100 if M_codata else 0.0
         rows.append({

@@ -185,19 +185,23 @@ def tower_mass_level(V: list[float], *, pair_mode: str = "full",
         n = len(V)
         if n == 0:
             return 0.0
+        # Per project rule (Vol_q^tower convention) and Gemini review on
+        # PR #542: pair sum terms remain SIGNED — only the product
+        # carries through `_li2q_sym`'s domain handling, no abs().
+        # This preserves the sign info from V_i, V_j of mixed sign
+        # (e.g. the alt Wedderburn channel can be negative).  The
+        # single sum, by contrast, takes |V| because the sign of each
+        # individual V is conventionally absorbed into the volume
+        # interpretation.
         single = sum(-_li2q_sym(-abs(v)) for v in V)
         cross = 0.0
         if pair_mode == "full":
             for i in range(n):
                 for j in range(i + 1, n):
-                    cross += -z_mark ** 2 * _li2q_sym(
-                        -abs(V[i] * V[j])
-                    )
+                    cross += -z_mark ** 2 * _li2q_sym(-(V[i] * V[j]))
         elif pair_mode == "adjacent":
             for i in range(n - 1):
-                cross += -z_mark ** 2 * _li2q_sym(
-                    -abs(V[i] * V[i + 1])
-                )
+                cross += -z_mark ** 2 * _li2q_sym(-(V[i] * V[i + 1]))
         return single + cross
 
     if tower_mode != "brane":
