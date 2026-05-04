@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T16:57:01.449641+00:00",
+  "computedAt": "2026-05-04T17:04:39.676814+00:00",
   "computation": "delta-q-decoration",
   "scriptFile": "delta_q_decoration.py",
   "description": "Wedderburn decomposition of H_n(q) for n=2,3,4: per-irrep q-character vectors of NF basis elements, and Wedderburn projection of the H_2 molecular braid to test the round-15/16 force-carrier-subsector hypothesis.",
@@ -270,9 +270,10 @@
         2,
         3
       ],
-      "lambda_4_contribution": 0.01812265253307387,
+      "lambda_31_contribution": -0.13626929802721868,
+      "lambda_211_contribution": 0.11060348479711606,
       "lambda_22_contribution": -1.843513697096132e-17,
-      "both_nonzero": false,
+      "intertwining_hypothesis_supported": true,
       "all_lambdas": {
         "(4,)": 0.01812265253307387,
         "(3, 1)": -0.13626929802721868,
@@ -280,7 +281,8 @@
         "(2, 1, 1)": 0.11060348479711606,
         "(1, 1, 1, 1)": -0.00969023120529418
       },
-      "total_trM": -0.017233391902322953
+      "total_trM": -0.017233391902322953,
+      "round_18_reframing": "T_{p,q} intertwines p of n strands \u27f9 partition \u03bb = (p, 1, ..., 1). T_{3,5} \u2192 (3,1); T_{2,9} \u2192 (2,1,1). The (3,1) and (2,1,1) are transpose pair (Frobenius-self-dual). \u03bb=(2,2) is zero because it would require two simultaneous 2-strand operators."
     },
     "alpha_EM_decomposition": {
       "alpha_EM": 0.007308700983098553,
@@ -293,11 +295,11 @@
   },
   "assertions": [
     {
-      "name": "H_2 molecular braid (bare) projects nontrivially onto \u03bb=(4) and \u03bb=(2,2)",
-      "computed": false,
+      "name": "H_2 molecular braid projects onto T_{3,5} channel \u03bb=(3,1) and T_{2,9} channel \u03bb=(2,1,1)",
+      "computed": true,
       "expected": true,
-      "passed": false,
-      "source": "round-15/16 force-carrier-subsector hypothesis"
+      "passed": true,
+      "source": "round-18 intertwining reframing"
     },
     {
       "name": "\u03b1_EM = h\u00b2/[q\u00b7\u03b4_q(T_29)\u00b7\u03b4_q(T_35)] within 1e-12",
@@ -307,5 +309,5 @@
       "source": "round-12/14 algebraic identity"
     }
   ],
-  "allPassed": false
+  "allPassed": true
 }
