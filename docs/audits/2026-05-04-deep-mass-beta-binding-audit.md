@@ -346,21 +346,32 @@ conjecture's status. Prior audit's wording stands.
 
 CLAUDE.md mandates dual variables on every LP/SDP witness:
 `y0_star, y_star, active_set, primal_obj, dual_obj, duality_gap`.
-Per CI in `lp_dual_witness_validator.py` the validator runs
-warn-only and the binding-side sub-agent reported these
-non-compliant witnesses (verified by spot-grep):
 
-| Witness | Compliant? | Missing |
-|---------|:---------:|---------|
+> **Superseded by §0a (post-execution correction).** The
+> binding-side sub-agent's claims of "missing all six fields" for
+> `per-atom-lp-binding.witness.json` and `pn-alpha-lp-dual.witness.json`
+> turned out to be false positives — direct grep + the LP validator
+> (`lp_dual_witness_validator.py`, scanned 501 witnesses, flagged 2
+> as LP/SDP, both compliant) confirm both files carry all six dual
+> fields. `qvalue-unified.witness.json` is not currently committed
+> (the script emits it at run time). `branching-qvalues.witness.json`
+> is an S₃ᴮ decomposition (not an operator-selection LP) and is
+> correctly skipped by the validator. The corrected status table
+> below replaces the stale one. **No remediation required.**
+
+| Witness | Compliant? | Note |
+|---------|:---------:|------|
 | `confinement-lp.witness.json` | ✓ | — |
 | `lp-duality-check.witness.json` | ✓ | — |
-| `per-atom-lp-binding.witness.json` | ✗ | all six fields |
-| `pn-alpha-lp-dual.witness.json` | ✗ | all six fields |
-| `qvalue-unified.witness.json` | partial | only scalar `y0_star` ; no `y_star`, `active_set`, `duality_gap` |
-| `branching-qvalues.witness.json` | partial | scalar `y0` ; no vector dual |
+| `per-atom-lp-binding.witness.json` | ✓ | (sub-agent claim was wrong) |
+| `pn-alpha-lp-dual.witness.json` | ✓ | (sub-agent claim was wrong) |
+| `qvalue-unified.witness.json` | n/a | not committed; script emits at run time and uses heuristic `lp_shadow_price` keyed off the hardcoded MAGIC list (separate flag: LP-COST-MAG) |
+| `branching-qvalues.witness.json` | n/a | S₃ᴮ decomposition, not an operator-selection LP — correctly skipped by validator |
 
-**Action**: turn the validator on `--strict` after the three
-remediations.
+**Action**: the LP-dual infrastructure is healthy. The validator
+already runs in CI; flipping it to `--strict` is safe today and is
+recorded as a future hygiene improvement (no failing witnesses to
+remediate first).
 
 ### §4.4  Term-6 status (full pole structure mass trace)
 

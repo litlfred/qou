@@ -57,7 +57,12 @@ namespace QOU.BraidKnot
     pre-archimedean wall (see `2026-05-04-deep-mass-beta-binding-audit.md`
     finding **WALL-BREACH-NEW**).  Empirical binding energies enter
     only through the `recoversBinding` predicate, which is the
-    intended Archimedean comparison. -/
+    intended Archimedean comparison.
+
+    `R` is implicit because the explicit `q : R` argument always
+    determines it at use sites (standard Mathlib convention,
+    cf. `Module {R : Type*} [Semiring R] (M : Type*)`); no
+    inference ambiguity can arise. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 -- Ref: [manuscript] def:z-habiro-ring
 class BraneTowerZHabiro {R : Type*} [CommRing R] (n₀ : ℕ) (q : R) where
