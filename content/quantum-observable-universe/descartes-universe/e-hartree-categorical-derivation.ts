@@ -33,6 +33,7 @@ export default conjecture({
     "Conjectured categorical derivation of $E_h = m_e c_q^2 \\alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual",
   uses: [
     "prop:em-coupling-projection",
+    "prop:alpha-em-shift-multiplicative-chain",
     "prop:h2-lp-dual-binding",
     "prop:ilp-covalent-bond",
     "prop:operator-selection-lp",
