@@ -25,7 +25,7 @@ namespace QOU.AlgebraicSubstrate
 /-- Constant-`ℤ` realisation target at every place. -/
 def trivialTarget : Place → Type := fun _ => ℤ
 
-instance instCommRingTrivialTarget : ∀ v, CommRing (trivialTarget v) :=
+instance inst_comm_ring_trivial_target : ∀ v, CommRing (trivialTarget v) :=
   fun _ => inferInstanceAs (CommRing ℤ)
 
 /-- Trivial witness: every field is the obvious choice over `ℤ`.
@@ -35,7 +35,7 @@ instance instCommRingTrivialTarget : ∀ v, CommRing (trivialTarget v) :=
     in `ℤ`, satisfying `lefschetz_invertible`.  Real instances must
     pick the actual class of `𝔸¹` in `K₀(Var_k)`. -/
 -- Ref: [tate1967]
-instance trivialMotivicSubstrate :
+instance trivial_motivic_substrate :
     MotivicSubstrate ℤ ℤ trivialTarget where
   lefschetz := 1
   inclusion := RingHom.id ℤ

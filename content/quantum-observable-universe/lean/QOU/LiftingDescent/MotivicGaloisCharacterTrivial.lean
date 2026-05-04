@@ -29,7 +29,7 @@ open QOU.AlgebraicSubstrate
 
 /-- Trivial witness: `frobenius_at p := (p.val : ℤ)`. -/
 -- Ref: [yekutieli2010] §3 (the perpetual-obstruction phenomenon)
-instance trivialMotivicGaloisCharacter :
+instance trivial_motivic_galois_character :
     MotivicGaloisCharacter ℤ ℤ trivialTarget (motiveA := 1) where
   frobenius_at := fun p => (p.val : ℤ)
   almost_everywhere_nontrivial := by

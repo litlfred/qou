@@ -25,7 +25,7 @@ namespace QOU.MassEndomorphism
 /-- Trivial witness: zero-mass instance over `ℤ`. -/
 -- Ref: [manuscript] conj:mass-endomorphism §"What is known", Step 1
 --      (the flat case `tr_transient = 0`)
-instance trivialIntZero (β : Type*) :
+instance trivial_int_zero (β : Type*) :
     MassEndomorphism ℤ β where
   q := 0
   N := 0
