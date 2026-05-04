@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import QOU.HadronicMass
+import QOU.AtomicMass.MagicNumbersFromQ
 import Mathlib.Tactic.NormNum
 
 /-!

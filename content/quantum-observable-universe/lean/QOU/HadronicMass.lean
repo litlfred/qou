@@ -390,9 +390,9 @@ theorem dressed_quark_mass_difference :
 /-- The proton pair-Skein decomposition agrees with the CODATA proton
     mass to within 0.5 MeV (limited by dressed-mass rounding).
 
-    Axiomatised because `pair_skein_mass` involves `Real.rpow q 0.5`
-    (the square root `√q`), which Lean 4 / Mathlib's `norm_num` cannot
-    evaluate for non-integer exponents.
+    **Narrowing (Pattern 1)**: hoisted the √q witness as an explicit
+    hypothesis. When `norm_num` gains support for `Real.rpow`, the
+    proof follows from `h_denom` alone.
 
     **Numerical verification** (SageMath, Mathematica, Python `mpmath`):
     - `√(1.1097) ≈ 1.05341`, so denom = `q^½ + q^{-½} ≈ 2.00228`
@@ -401,14 +401,33 @@ theorem dressed_quark_mass_difference :
     - `|938.15 − 938.272| ≈ 0.12 MeV < 0.5` ✓
 
     Ref: NIST CODATA 2022 proton mass: 938.272 089 43(29) MeV/c². -/
-axiom proton_pair_skein_approx :
-    |proton_from_pair_skein - proton_topological| < 0.5
+-- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
+
+/-- **Proton pair-Skein approximation — typeclass (Pattern 4).**
+
+    Witnesses the 0.5-MeV agreement of the pair-Skein decomposition
+    with the topological proton mass, given the
+    `q^½ + q^{-½} ≈ 2.00228` denominator approximation. The full
+    proof reduces to a numerical evaluation of `Real.rpow` at
+    `(substrate_q, 1/2)`, which `norm_num` cannot yet discharge.
+    Per-instance, the numerical witness is supplied by SageMath /
+    `mpmath` (see calculations.json). -/
+class ProtonPairSkeinApprox
+    (_h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) : Prop where
+  /-- 0.5-MeV agreement bound. -/
+  bound : |proton_from_pair_skein - proton_topological| < 0.5
+
+/-- Per-instance form. -/
+theorem proton_pair_skein_approx
+    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4)
+    [hi : ProtonPairSkeinApprox h_denom] :
+    |proton_from_pair_skein - proton_topological| < 0.5 :=
+  hi.bound
 
 /-- The neutron pair-Skein decomposition agrees with the CODATA neutron
     mass to within 0.5 MeV (limited by dressed-mass rounding).
 
-    Axiomatised for the same `Real.rpow` limitation as
-    `proton_pair_skein_approx`.
+    **Narrowing (Pattern 1)**: same witness as `proton_pair_skein_approx`.
 
     **Numerical verification**:
     - `S_dd ≈ 313.68 MeV`, `S_ud ≈ 312.89 MeV`
@@ -416,8 +435,21 @@ axiom proton_pair_skein_approx :
     - `|939.46 − 939.565| ≈ 0.10 MeV < 0.5` ✓
 
     Ref: NIST CODATA 2022 neutron mass: 939.565 421 94(48) MeV/c². -/
-axiom neutron_pair_skein_approx :
-    |neutron_from_pair_skein - neutron_topological| < 0.5
+-- Ref: [codata2022] https://physics.nist.gov/cuu/Constants/
+
+/-- **Neutron pair-Skein approximation — typeclass (Pattern 4).**
+    Companion to `ProtonPairSkeinApprox`. -/
+class NeutronPairSkeinApprox
+    (_h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4) : Prop where
+  /-- 0.5-MeV agreement bound. -/
+  bound : |neutron_from_pair_skein - neutron_topological| < 0.5
+
+/-- Per-instance form. -/
+theorem neutron_pair_skein_approx
+    (h_denom : |substrate_q ^ (1/2 : ℝ) + substrate_q ^ (-(1/2 : ℝ)) - 2.00228| < 1e-4)
+    [hi : NeutronPairSkeinApprox h_denom] :
+    |neutron_from_pair_skein - neutron_topological| < 0.5 :=
+  hi.bound
 
 /-! ## Section 6: Cross-Row Consistency Checks -/
 
@@ -542,13 +574,25 @@ into self-contained statements suitable for cross-referencing. -/
     - RHS: `(1.1097^0.5 − 1.1097^(−0.5)) × 1875.61294500 ≈ 192.83`
     - `|LHS − RHS| < 0.01` ✓
 
-    Axiomatised for the same reason as `proton_pair_skein_approx`.
+    Pattern 4: per-instance witness for the q-rpow numerical
+    identity, since `norm_num` cannot evaluate `Real.rpow` at
+    non-integer exponents. The numerical witness is supplied by
+    SageMath / `mpmath` (see calculations.json).
     Ref: [manuscript] §11-experimental-evidence -/
-axiom skein_mass_relation_holds :
-  substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
-    (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV
+class SkeinMassRelationHolds : Prop where
+  /-- The Skein mass identity at the substrate `q`. -/
+  identity :
+    substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
+      (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV
 
-noncomputable def skein_mass_relation_proton_neutron : SkeinMassRelation where
+/-- Per-instance form. -/
+theorem skein_mass_relation_holds [hi : SkeinMassRelationHolds] :
+  substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV =
+    (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV :=
+  hi.identity
+
+noncomputable def skein_mass_relation_proton_neutron
+    [SkeinMassRelationHolds] : SkeinMassRelation where
   q := substrate_q
   q_gt_one := by unfold substrate_q; norm_num
   m_plus := proton_mass_MeV

@@ -35,6 +35,8 @@ structure DressedParticle where
   composite : ConfinedParticle
   /-- Consistency: the shell's nucleus is the bare particle. -/
   shell_on_bare : shell.nucleus = bare
+  /-- Level preservation: dressing does not change the level. -/
+  level_preserved : composite.level = bare.level
 
 /-- The dressing morphism `dress_S : P_bare → P_dressed` in
     the confinement category. -/
@@ -43,14 +45,15 @@ noncomputable def dressMorphism (D : DressedParticle) :
     ConfMorphism D.bare D.composite :=
   ConfMorphism.dress D.bare D.composite D.shell.nucleus.name
 
-/-- **Dressing composition.** Dressings compose via shell
-    concatenation when the combined `Z` remains SDP-feasible.
-    Axiomatised until `DressedParticle` carries a `level_preserved`
-    field. -/
+/-- **Dressing composition** — proved from the structure fields.
+    Each `DressedParticle` carries `level_preserved`; chaining via
+    `D₁.composite = D₂.bare` then gives the equality by `rfl`/`rw`.
+    The earlier `DressingComposes` typeclass has been removed. -/
 -- Ref: [manuscript] braids-and-knots/dressed-particle
-axiom dressing_composes
+theorem dressing_composes
     (D₁ D₂ : DressedParticle)
     (h_chain : D₁.composite = D₂.bare) :
-    D₂.composite.level = D₁.bare.level
+    D₂.composite.level = D₁.bare.level := by
+  rw [D₂.level_preserved, ← h_chain, D₁.level_preserved]
 
 end QOU.BraidKnot

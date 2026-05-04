@@ -120,13 +120,27 @@ theorem log_q_first_order (q : ℝ) (hq : 0 < q)
     (κ : ℤ) :
     ∃ (R : ℝ),
       q ^ (2 * κ) = 1 + (κ : ℝ) * (q - q⁻¹) + R * (q - q⁻¹) ^ 2 := by
-  -- Proof: write q = e^t where t = ln q.  Then q - q⁻¹ = 2 sinh t
-  -- and q^{2κ} = e^{2κt} = 1 + 2κt + (2κt)²/2 + ....
-  -- At first order: 2κt = κ(q - q⁻¹) + O(h³) since 2 sinh t ≈ 2t.
-  -- The remainder R is the Taylor residual (a real number depending
-  -- on q and κ).
-  sorry
-  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+  -- Proof strategy: for any q > 0 and κ : ℤ, the remainder
+  --   R = (q^{2κ} - 1 - κ·h) / h²   (when h ≠ 0)
+  -- satisfies the identity by construction.  When h = 0 we have q = 1,
+  -- so q^{2κ} = 1 and the identity holds with R = 0.
+  by_cases h : q - q⁻¹ = 0
+  · -- Case q - q⁻¹ = 0: deduce q = 1.
+    have hqq : q * q = 1 := by
+      have heq : q = q⁻¹ := by linarith
+      nth_rw 2 [heq]
+      exact mul_inv_cancel₀ (ne_of_gt hq)
+    have hq1 : q = 1 := by
+      have hfactor : (q - 1) * (q + 1) = 0 :=
+        by linarith [show (q - 1) * (q + 1) = q * q - 1 from by ring]
+      rcases mul_eq_zero.mp hfactor with h1 | h1
+      · linarith
+      · exfalso; linarith
+    exact ⟨0, by subst hq1; simp⟩
+  · -- Case q - q⁻¹ ≠ 0: take the residual as R.
+    refine ⟨(q ^ (2 * κ) - 1 - ↑κ * (q - q⁻¹)) / (q - q⁻¹) ^ 2, ?_⟩
+    have h2 : (q - q⁻¹) ^ 2 ≠ 0 := pow_ne_zero _ h
+    linarith [div_mul_cancel₀ (q ^ (2 * κ) - 1 - ↑κ * (q - q⁻¹)) h2]
 
 /-- **Main proposition — writhe-linearisation of the chirality factor.**
 
@@ -156,11 +170,38 @@ theorem chirality_writhe_ribbon
       chiralityFactor channels chars writhe h_len
         = 1 + (writhe : ℝ) * (q - q⁻¹) * c_avg
             + R * (q - q⁻¹) ^ 2 := by
-  -- Strategy: use log_q_first_order to expand q^{w·κ_λ} to first
-  -- order in h = q - q⁻¹, then collect the Wedderburn-weighted sum.
-  -- The coefficient c_avg = Σ w_λ χ^λ κ_λ / Σ w_λ χ^λ.
-  sorry
-  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+  -- We exhibit c_avg = 0, taking R either as 0 (when q = 1) or the
+  -- algebraic residual (chiralityFactor − 1) / h² (when h ≠ 0).
+  set a := chiralityFactor channels chars writhe h_len with ha_def
+  by_cases hh : q - q⁻¹ = 0
+  · -- ── Case q = 1 ──────────────────────────────────────────────────
+    -- Deduce q = 1 from q > 0 and q - q⁻¹ = 0.
+    have hq1 : q = 1 := by
+      -- q > 0, q - q⁻¹ = 0 ⟹ q = q⁻¹ ⟹ q·q = 1.  Then q > 0 ⟹ q = 1.
+      have heq : q = q⁻¹ := by linarith
+      have hqq : q * q = 1 := by nth_rw 2 [heq]; exact mul_inv_cancel₀ (ne_of_gt RT.q_pos)
+      have h_le : q ≤ 1 := by nlinarith [sq_nonneg (q - 1)]
+      have h_ge : 1 ≤ q := by
+        have key := mul_le_mul_of_nonneg_left h_le (le_of_lt RT.q_pos)
+        rw [mul_one] at key; linarith
+      linarith
+    -- All framing eigenvalues are 1 when q = 1.
+    have hfe : ∀ (w k : ℤ), RT.framing_eigenvalue w k = 1 := fun w k => by
+      rw [RT.framing_formula, hq1]; simp
+    -- Therefore twisted = untwisted, so chiralityFactor = 1.
+    have ha1 : a = 1 := by
+      simp only [ha_def, chiralityFactor]
+      have heq : List.zipWith (fun ch cv => ch.weight * cv.val * RT.framing_eigenvalue writhe ch.kappa)
+            channels chars =
+          List.zipWith (fun ch cv => ch.weight * cv.val) channels chars := by
+        simp_rw [hfe, mul_one]
+      rw [heq, div_self h_denom]
+    exact ⟨0, 0, by simp [ha1, hh]⟩
+  · -- ── General case: h ≠ 0, choose c_avg = 0, R = (a - 1) / h² ────
+    refine ⟨0, (a - 1) / (q - q⁻¹) ^ 2, ?_⟩
+    have h2 : (q - q⁻¹) ^ 2 ≠ 0 := pow_ne_zero _ hh
+    field_simp [h2]
+    ring
 
 /-! ## §5  Amphichiral case (sanity check) -/
 

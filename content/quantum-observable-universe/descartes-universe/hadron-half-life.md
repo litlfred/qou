@@ -44,7 +44,7 @@ $$
    \cdot 
   |\mathcal{M}_q|^2
    \cdot 
-  f(\mathcal{Q}_q)
+  f(Q)
 $$
 
 where every factor is determined by $q$:
@@ -81,10 +81,10 @@ where every factor is determined by $q$:
    generator volume
    ([factorization theorem](#thm:markov-trace-factorization)).
 
-4. **Phase-space integral**: The $\mathcal{Q}_q$-value
-   ([transition energy](#def:q-value-transition)) is the
+4. **Phase-space integral**: The $Q$-value
+   ([transition energy](#def:Q-value-transition)) is the
    categorical action difference
-   $\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$.
+   $Q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$.
    This is **not** defined by classical energy conservation
    ($M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e$), which assumes
    $d_q^2 = 0$ and fails at $q \neq 1$.  The action of each
@@ -93,7 +93,7 @@ where every factor is determined by $q$:
    ([terminal resolution](#prop:terminal-resolution)),
    evaluated at $q$ using the pair Skein mass formula
    $\mathcal{S}_{ab}(q) = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$.
-   The fifth-power Sargent rule gives $f(\mathcal{Q}_q) \propto \mathcal{Q}_q^5$
+   The fifth-power Sargent rule gives $f(Q) \propto Q^5$
    for allowed transitions.
 
 5. **Dimensional scale** $\mu_0$: the single free parameter,
@@ -158,18 +158,18 @@ The decay rate depends on $q$ through four channels:
 - $[2]_q = q + q^{-1}$: the weak-vertex dimension.
 - $|\mathcal{M}_q|^2$: the Markov trace ratio, which depends on
   the crossing structure of the nuclear braid at $q$.
-- $\mathcal{Q}_q^5$: the categorical action difference
-  ([transition energy](#def:q-value-transition)), determined by
+- $Q^5$: the categorical action difference
+  ([transition energy](#def:Q-value-transition)), determined by
   the pair Skein weights $\mathcal{S}_{ab}(q)$ which depend on $q$
   through the dressed quark masses $\mu_{\mathfrak{u}}, \mu_{\mathfrak{d}}$.  Note:
-  $\mathcal{Q}_q \neq T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}}$
+  $Q \neq T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}}$
   at $q \neq 1$ (the $q$-anomaly $\delta_q \neq 0$).
 
 At $q = 1$ (classical limit): $s = 0$, $[2]_1 = 2$, the crossing
 asymmetry vanishes, all isobars are degenerate
-($\mathcal{Q}_q = 0$), and no beta decay occurs.  At $q > 1$:
+($Q = 0$), and no beta decay occurs.  At $q > 1$:
 the crossing asymmetry splits the isobars, producing nonzero
-$\mathcal{Q}_q$ and finite half-lives.
+$Q$ and finite half-lives.
 
 The sensitivity of the decay rate to $q$ is
 

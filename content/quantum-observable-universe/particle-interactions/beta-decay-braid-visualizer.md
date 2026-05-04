@@ -63,4 +63,4 @@ $$
 
 The $7$ re-reduction crossings modify inter-nucleon crossing
 types at the converting quark's strand, producing the dominant
-contribution to the $\mathcal{Q}_q$-value.
+contribution to the $Q$-value.

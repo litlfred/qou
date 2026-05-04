@@ -131,12 +131,12 @@ All evaluated in milliseconds.
 
 **Consequence for beta decay.**
 
-The $\mathcal{Q}_q$-value
-([transition energy](#def:q-value-transition)) is the ratio
+The $Q$-value
+([transition energy](#def:Q-value-transition)) is the ratio
 of two Skein polynomials evaluated at the substrate parameter $q$:
 
 $$
-  \mathcal{Q}_q
+  Q
   = 
   P_{\mathcal{N}_{\mathrm{par}}}(q)
   - 

@@ -385,6 +385,11 @@ structure SchurWeylDecomposition where
       summand embedding — the direct sum spans the tensor power. -/
   complete : ∀ (v : tensor_power), ∃ μ, ∃ (hμ : μ ∈ partitions),
     ∃ (w : V_irrep μ) (s : S_irrep μ), summand_embed μ hμ w s = v
+  /-- **Finiteness bound**: the partition list has at most `⌊n/2⌋ + 1`
+      elements (one per two-row Young diagram of size `n`).
+      Requires `partitions` to be duplicate-free; the bound is the
+      exact count of 2-row diagrams (b = 0, …, ⌊n/2⌋). -/
+  partitions_length : partitions.length ≤ n / 2 + 1
 
 /-- **Alexander's theorem**: every oriented link in `S³` is the closure
     `β̂` of some braid `β ∈ B_n` for some `n`.

@@ -35,9 +35,13 @@ structure MarkovClass where
   gsNormalForm : BraidWord strandCount
 
 /-- **Confined particle.** A named tuple at a confinement level
-    with an underlying Markov class of closed braid and a coarse
-    strand count. Stability predicates layer on top; confinement at
-    `q ∈ R_q` is the SDP-feasibility predicate. -/
+    with an underlying Markov class of closed braid. Stability
+    predicates layer on top; confinement at `q ∈ R_q` is the
+    SDP-feasibility predicate.
+
+    Note: the coarse strand count is derived from the Markov class
+    rather than stored separately, so well-formedness
+    (`coarseStrands = markovClass.strandCount`) holds by definition. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
 structure ConfinedParticle where
   /-- Symbol from the particle-shortcut registry
@@ -48,25 +52,36 @@ structure ConfinedParticle where
   level : ℕ
   /-- Canonical Markov class of the underlying closed braid. -/
   markovClass : MarkovClass
-  /-- Coarse strand count `n₀` at level ℓ (e.g. A for an atom at
-      nucleon level). -/
-  coarseStrands : ℕ
 
-/-- Confinement predicate on a particle at a parameter value in the
-    generic locus. `confined P q` holds iff the confinement SDP at
-    `P` is Slater-strictly feasible at `q`. -/
+namespace ConfinedParticle
+
+/-- Coarse strand count `n₀` at level ℓ — derived from the Markov
+    class so well-formedness holds definitionally. -/
+def coarseStrands (P : ConfinedParticle) : ℕ :=
+  P.markovClass.strandCount
+
+end ConfinedParticle
+
+/-- Confinement predicate on a particle at a parameter value. The
+    semantic content (`confined P q ↔ Slater-strict SDP feasibility
+    at (P, q)`) is supplied per-instance via `HasConfinementWitness`
+    below; the ambient predicate is just a typeclass accessor. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque confined : ConfinedParticle → R_q → Prop
+class HasConfinementWitness (P : ConfinedParticle) where
+  /-- The confinement predicate at parameter `q`. -/
+  confined : R_q → Prop
 
-/-- **Coarse-strand correctness.** The coarse strand count of a
-    confined particle matches the strand count of its Markov-class
-    canonical representative. -/
-/-- `coarseStrands` and `markovClass.strandCount` are currently
-    independent ℕ fields.  A cleaner long-term fix adds a
-    `coarseStrands_eq` field to `ConfinedParticle`, breaking
-    every existing instance constructor.  Axiomatised until then. -/
+/-- Confinement predicate accessor. -/
+def confined (P : ConfinedParticle) [h : HasConfinementWitness P] (q : R_q) :
+    Prop :=
+  h.confined q
+
+/-- **Coarse-strand correctness** — proved by definition.
+    The earlier `WellFormedConfinedParticle` typeclass is no longer
+    needed: `coarseStrands` is now a derived projection through the
+    Markov class, so the equality holds by `rfl`. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-axiom coarseStrands_eq_markov_strands (P : ConfinedParticle) :
-    P.coarseStrands = P.markovClass.strandCount
+theorem coarseStrands_eq_markov_strands (P : ConfinedParticle) :
+    P.coarseStrands = P.markovClass.strandCount := rfl
 
 end QOU.BraidKnot

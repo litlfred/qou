@@ -314,9 +314,47 @@ noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
 -- Mathlib gap: q-Plancherel CLT + q-hook-walk mixing time.
 -- Ref: [kerov1996] q-hook walk
 -- Ref: [feray2010] q-Plancherel CLT Theorem 1.1
-axiom branching_convergence (k : ℕ) (hk : k ≥ 4)
-    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0) :
-    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
+
+/-- **Branching convergence — typeclass (Pattern 4).**
+
+    The free-real statement `|f_k - f_inf| ≤ C_q / √(k-3)`
+    has no a-priori semantic link between `f_k`, `f_inf`, `C_q`,
+    and the actual q-Plancherel branching fractions. Until the
+    Mathlib q-Plancherel CLT lands, callers must witness the
+    bound for the specific `(k, f_k, f_inf, C_q)` they use. -/
+class BranchingConverges (k : ℕ) (_hk : k ≥ 4)
+    (f_k f_inf : ℝ) (C_q : ℝ) (_hC : C_q > 0) : Prop where
+  /-- The Féray–Méliot O(1/√k) bound. -/
+  bound : |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)
+
+/-- **Default instance from a `Fact` witness on the bound**.
+    When `Fact (|f_k - f_inf| ≤ C_q / √(k-3))` is in scope (e.g.
+    from a numerical witness at the specific `(k, f_k, f_inf)`),
+    the typeclass instance follows. -/
+instance branchingConverges_of_fact (k : ℕ) (hk : k ≥ 4)
+    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0)
+    [hf : Fact (|f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ))] :
+    BranchingConverges k hk f_k f_inf C_q hC :=
+  ⟨hf.out⟩
+
+/-- **Self-convergence (reflexivity)**: when `f_k = f_inf`, the
+    bound holds trivially with LHS = 0. -/
+instance branchingConverges_refl (k : ℕ) (hk : k ≥ 4)
+    (f : ℝ) (C_q : ℝ) (hC : C_q > 0) :
+    BranchingConverges k hk f f C_q hC := by
+  refine ⟨?_⟩
+  simp
+  have hk_real : (3 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk
+  have h_pos : (k : ℝ) - 3 ≥ 0 := by linarith
+  have h_sqrt_nonneg : Real.sqrt ((k : ℝ) - 3) ≥ 0 := Real.sqrt_nonneg _
+  positivity
+
+/-- Per-instance form. -/
+theorem branching_convergence (k : ℕ) (hk : k ≥ 4)
+    (f_k f_inf : ℝ) (C_q : ℝ) (hC : C_q > 0)
+    [hi : BranchingConverges k hk f_k f_inf C_q hC] :
+    |f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ) :=
+  hi.bound
 
 /-- **Convergence at finite k** (the practically useful version).
 
@@ -334,13 +372,25 @@ theorem finite_k_convergence (k : ℕ) (hk : 4 ≤ k) (hK : k ≤ 12)
     have := hK; push_cast; omega
   linarith [abs_nonneg (f_k - f_4)]
 
-/-- The finite-k version is NUMERICALLY VERIFIED by the witness
-    jet-knot-invariants.witness.json. For all atoms tested:
-    |f_μ^{(k)} − f_μ^{(4)}| < 0.01 for k = 4, ..., 9.
+/-- **Finite-k witness — numerical agreement class.**
+    Per-`(k, k', tol)` witness that the level-`k` and level-`k'`
+    branching fractions agree within tolerance `tol`. The `mpmath`
+    witness in `jet-knot-invariants.witness.json` records
+    `|f_μ^{(k)} − f_μ^{(4)}| < 0.01` for k = 4, …, 9 across all
+    atoms tested; instances of this class are the formal record of
+    that numerical agreement at specific `(k, k', tol)`. -/
+class FiniteKWitness (k k' : ℕ) (_hk : 4 ≤ k) (_hk' : 4 ≤ k')
+    (_hkbd : k ≤ 12) (_hkbd' : k' ≤ 12)
+    (f_k f_k' : ℝ) (tol : ℝ) (_htol : 0 ≤ tol) : Prop where
+  /-- Numerical agreement at `(k, k')`. -/
+  agreement : |f_k - f_k'| ≤ tol
 
-    This establishes the convergence computationally for the
-    levels used by the BW formula, independent of the asymptotic
-    proof. -/
-theorem finite_k_witness : True := by trivial
+/-- **Self-agreement (reflexivity)**: when `f_k = f_k'`, the
+    agreement bound holds with LHS = 0 ≤ tol (using `htol`). -/
+instance finiteKWitness_refl (k k' : ℕ) (hk : 4 ≤ k) (hk' : 4 ≤ k')
+    (hkbd : k ≤ 12) (hkbd' : k' ≤ 12) (f : ℝ) (tol : ℝ) (htol : 0 ≤ tol) :
+    FiniteKWitness k k' hk hk' hkbd hkbd' f f tol htol := by
+  refine ⟨?_⟩
+  simp [htol]
 
 end QOU.Descartes.BranchingConvergence

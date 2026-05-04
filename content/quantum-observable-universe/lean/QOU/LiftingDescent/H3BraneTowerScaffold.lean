@@ -119,8 +119,16 @@ noncomputable def tau_hat_0 : A1 →ₗ[ℝ] A1 := ell_0 ∘ₗ descent_1
     `DescentInvolution.tau_idem` in `descent-involution.lean`. -/
 -- Ref: [manuscript] §3, def:descent-involution
 theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
-  -- Ref: [manuscript] §3, descent-involution.md lines 21-30 (idempotence calculation)
-  sorry
+  -- Idempotence follows from the splitting identity descent_ascent_id.
+  -- Once ell_0 and descent_1 are concrete (not sorry), the proof closes:
+  --   τ̂² = (ℓ₀ ∘ 𝔡₁) ∘ (ℓ₀ ∘ 𝔡₁) = ℓ₀ ∘ (𝔡₁ ∘ ℓ₀) ∘ 𝔡₁ = ℓ₀ ∘ id ∘ 𝔡₁ = τ̂.
+  ext x
+  simp only [LinearMap.comp_apply, tau_hat_0]
+  have h : descent_1 (ell_0 (descent_1 x)) = descent_1 x := by
+    have := LinearMap.congr_fun descent_ascent_id (descent_1 x)
+    simp [LinearMap.comp_apply, LinearMap.id_apply] at this
+    exact this
+  rw [h]
 
 /-- `dim A_0 = 6` per the Python realisation in PR #533.
 
@@ -130,19 +138,16 @@ theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
     discharge. -/
 -- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_A0_eq_6 : Module.finrank ℝ A0 = 6 := by
-  -- Ref: PR #533 Python realisation; discharge via Module.finrank_pi.
-  sorry
+  simp [A0, Module.finrank_pi, Module.finrank_self]
 
 /-- `dim Ω¹(A_0) = 30` per the Python realisation in PR #533. -/
 -- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_Omega1_eq_30 : Module.finrank ℝ Omega1 = 30 := by
-  -- Ref: PR #533 Python realisation; discharge via Module.finrank_pi.
-  sorry
+  simp [Omega1, Module.finrank_pi, Module.finrank_self]
 
 /-- `dim A_1 = 180` per the Python realisation in PR #533. -/
 -- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_A1_eq_180 : Module.finrank ℝ A1 = 180 := by
-  -- Ref: PR #533 Python realisation; discharge via Module.finrank_pi.
-  sorry
+  simp [A1, Module.finrank_pi, Module.finrank_self]
 
 end QOU.LiftingDescent.H3BraneTowerScaffold

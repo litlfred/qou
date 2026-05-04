@@ -28,7 +28,7 @@
 | `prop:knot-operator-selection` | proposition | Multi-channel selection via spectral decomposition |
 | `prop:frobenius-gram-matrix` | proposition | 6×6 Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ |
 | `def:typed-garside-element` | definition | **NEW** — Typed Garside staircase, all $\binom{A}{2}$ crossings |
-| `prop:gram-weighted-qvalue` | proposition | **NEW** — $\mathcal{Q}_q = (\sum w_k^G \Delta_k) \times N \times m_e$ |
+| `prop:gram-weighted-qvalue` | proposition | **NEW** — $Q = (\sum w_k^G \Delta_k) \times N \times m_e$ |
 | `rem:gram-weight-eigenstructure` | remark | **NEW** — Eigenstructure of $G$ and adjoint character weight |
 | `prop:ground-state-ordering` | proposition | GS from transfer matrix eigenvalue structure |
 | `prop:transfer-matrix-identities` | proposition | $T_{pp} \cdot T_{nn} = I$ and $T_{pn}^2 = [2]_q^2/4 \cdot I$ |

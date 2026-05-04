@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.MathlibExt
 import QOU.Glossary
 import QOU.KnotTheory
 import QOU.Torsion
@@ -106,6 +107,38 @@ lemma vol_figure_eight_approx :
   -- Ref: [turaev2010] https://doi.org/10.1515/9783110221831 — Vol(4₁) via Bloch-Wigner
   unfold vol_figure_eight
   norm_num
+
+/-! ### Substrate-`q` `Real.sqrt` bracket
+
+The numerical witness `1.05341 < Real.sqrt substrate_q < 1.05342`
+discharges the half-denominator
+`Real.sqrt substrate_q + 1 / Real.sqrt substrate_q ≈ 2.00228`
+required by every QOU pair-skein bound. -/
+
+/-- `Real.sqrt substrate_q > 1.05341`. Proof: `1.05341² ≈
+    1.10967 < 1.1097`, so by monotonicity of `Real.sqrt`. -/
+lemma sqrt_substrate_q_gt :
+    (1.05341 : ℝ) < Real.sqrt substrate_q := by
+  apply QOU.MathlibExt.Real.lt_sqrt_of_sq_lt
+  · norm_num
+  · unfold substrate_q
+    norm_num
+
+/-- `Real.sqrt substrate_q < 1.05342`. Proof: `1.05342² ≈
+    1.10969 > 1.1097`, so by monotonicity of `Real.sqrt`. -/
+lemma sqrt_substrate_q_lt :
+    Real.sqrt substrate_q < 1.05342 := by
+  apply QOU.MathlibExt.Real.sqrt_lt_of_lt_sq
+  · norm_num
+  · unfold substrate_q; norm_num
+  · unfold substrate_q
+    norm_num
+
+/-- Two-sided bracket on `Real.sqrt substrate_q`. -/
+lemma sqrt_substrate_q_bracket :
+    (1.05341 : ℝ) < Real.sqrt substrate_q ∧
+    Real.sqrt substrate_q < 1.05342 :=
+  ⟨sqrt_substrate_q_gt, sqrt_substrate_q_lt⟩
 
 /-- The muon-electron mass ratio is approximately 206.7683. -/
 lemma mu_e_ratio_approx :
