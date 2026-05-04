@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T23:38:03.348652+00:00",
-  "commitSha": "f69d8e672af6d0450f372bf4ba48c755511e3677",
+  "computedAt": "2026-05-04T16:44:09.985264+00:00",
+  "commitSha": "06c04b2fe6456a4f8c477854909c1fb75047a682",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1718,6 +1718,7 @@
         "residual-partition-sum.witness.json",
         "residual-probe-pn.witness.json",
         "rho-census-wedderburn-experiment.witness.json",
+        "rho-f-categorical-probe.witness.json",
         "rho-f-complexity-sweep.witness.json",
         "rho-f-derived-vs-observed.witness.json",
         "rho-z-n-scan.witness.json",

@@ -290,11 +290,14 @@ def paper_six_term_mass(Z, N, include_inter=True,
                             Kashaev limit per `prop:mass-endomorphism-tower`
                             (proven in commit a43d7f1fa via the
                             `kashaev-integration-identity` probe).
-        "brane" (legacy, deprecated):
+        "brane-legacy" (deprecated; alias "brane" emits DeprecationWarning):
                             T2 = Σ Φ_q(|V̂_i|), T3 = z² · Σ Φ_q(|V̂_i V̂_j|).
                             Faddeev quantum dilogarithm form, NOT
                             Markov-invariant at q_0 (PR #524).
-                            Empirical T - ³He = -737 MeV pathology.
+                            Empirical T − ³He = −737 MeV pathology.
+                            Retained for back-compat / regression
+                            testing only — do not use for new
+                            mass-prediction work.
         "drop":             T2 = T3 = 0.  Simplest test of "no brane".
         "q1-base":          T2 + T3 = (1/2)^(2A-1) (Path A closed-form
                             base point at q→1 per
@@ -346,7 +349,20 @@ def paper_six_term_mass(Z, N, include_inter=True,
         t1 = term1_descended(vols)
 
     # T2, T3 evaluation per `tower_mode`:
-    if tower_mode == "brane":
+    if tower_mode in ("brane-legacy", "brane"):
+        # "brane" alias kept for backward compatibility; emits deprecation
+        # warning since the legacy Φ_q form has the -737 MeV isospin
+        # pathology documented in PR #524.  New callers should pass
+        # tower_mode="li2q" (default) or explicitly "brane-legacy".
+        if tower_mode == "brane":
+            warnings.warn(
+                "tower_mode='brane' is deprecated; use 'brane-legacy' "
+                "for the Faddeev-Φ_q legacy form, or 'li2q' (default) "
+                "for the corrected Kashaev limit per "
+                "prop:mass-endomorphism-tower (a43d7f1fa).",
+                DeprecationWarning,
+                stacklevel=2,
+            )
         t2 = term2_single_gen_tower(vols)
         t3 = term3_pair_gen_tower(vols)
     elif tower_mode == "drop":
@@ -509,7 +525,7 @@ if __name__ == "__main__":
         ("7Li", 3, 4, True,  6535.366),
     ]
 
-    modes = ["brane", "drop", "q1-base", "r-side-bare", "li2q"]
+    modes = ["brane-legacy", "drop", "q1-base", "r-side-bare", "li2q"]
     sweep_results = {}
     for mode in modes:
         E_0, rows = run_sweep_for_mode(mode, ISOTOPES)
@@ -553,8 +569,8 @@ if __name__ == "__main__":
             print(f"  {mode:<10} {delta:>+14.4f}  {0.019:>10.4f}")
 
     # Use li2q mode rows as the primary witness output (canonical corrected form).
-    # Back-compat consumers that need the legacy brane form can read
-    # all_modes["brane"]["rows"].
+    # Back-compat consumers that need the legacy brane-tower form can read
+    # all_modes["brane-legacy"]["rows"].
     CANONICAL_MODE = "li2q"
     rows = sweep_results[CANONICAL_MODE]["rows"]
     E_0 = sweep_results[CANONICAL_MODE]["E_0"]
@@ -580,7 +596,7 @@ if __name__ == "__main__":
             "q_0": float(Q0_FLOAT),
             "canonical_mode": CANONICAL_MODE,
             "E_0_MeV": sweep_results[CANONICAL_MODE]["E_0"],
-            "E_0_MeV_brane": sweep_results["brane"]["E_0"],
+            "E_0_MeV_brane_legacy": sweep_results["brane-legacy"]["E_0"],
         },
         "rows": rows,
         "all_modes": {

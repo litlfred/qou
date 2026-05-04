@@ -7,10 +7,12 @@
     "prop:chirality-dual-space-derivation",
     "thm:frobenius-codim-universal"
   ],
-  "timestamp": "2026-05-03T23:39:10.862854+00:00",
+  "computedAt": "2026-05-04T16:41:37.692979+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
-    "E_0_MeV_brane": 0.0007952441574820133
+    "canonical_mode": "li2q",
+    "E_0_MeV": 174.2989025374119,
+    "E_0_MeV_brane_legacy": 0.0007952441574820133
   },
   "rows": [
     {
@@ -19,20 +21,20 @@
       "N": 0,
       "A": 1,
       "M_codata": 938.272,
-      "M_predicted": 938.27208816,
-      "err_pct": 9.395996033639143e-06,
+      "M_predicted": 938.2720881600001,
+      "err_pct": 9.395996045755761e-06,
       "term1_canonical_tr_M": 1.0653062285923893,
-      "term2_single_gen_tower": 1096978.396175676,
-      "term3_pair_gen_tower": 82016.16886542024,
+      "term2_single_gen_tower": 1.6183053302953443,
+      "term3_pair_gen_tower": 0.19831347943187463,
       "term4_frobenius_codim_raw": 2.4972905450085903,
       "term4_frobenius_codim_scaled": 2.4972905450085903,
       "term5_chirality_factor_a_K": 1.0,
       "term5_additive_contribution": 0.0,
       "term6_cyclotomic_tail_MeV": 0.6807154737511466,
       "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "brane",
+      "tower_mode": "li2q",
       "m_e_hecke": 1.0,
-      "total_hecke": 1178998.1276378697
+      "total_hecke": 5.3792155833281985
     },
     {
       "isotope": "n",
@@ -40,20 +42,20 @@
       "N": 1,
       "A": 1,
       "M_codata": 939.565,
-      "M_predicted": 412.1711299127732,
-      "err_pct": -56.13170670333897,
+      "M_predicted": 893.4294652036698,
+      "err_pct": -4.910307939986085,
       "term1_canonical_tr_M": 0.9232332971695837,
-      "term2_single_gen_tower": 511298.27335123357,
-      "term3_pair_gen_tower": 6137.397714011544,
+      "term2_single_gen_tower": 1.525753488027125,
+      "term3_pair_gen_tower": 0.1756639828692181,
       "term4_frobenius_codim_raw": 2.4972905450085903,
       "term4_frobenius_codim_scaled": 2.4972905450085903,
       "term5_chirality_factor_a_K": 1.0,
       "term5_additive_contribution": 0.0,
       "term6_cyclotomic_tail_MeV": 0.6807154737511466,
       "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "brane",
+      "tower_mode": "li2q",
       "m_e_hecke": 1.0,
-      "total_hecke": 517439.09158908733
+      "total_hecke": 5.121941313074517
     },
     {
       "isotope": "D",
@@ -61,20 +63,20 @@
       "N": 1,
       "A": 2,
       "M_codata": 1876.124,
-      "M_predicted": 1480.2214062429957,
-      "err_pct": -21.10215496187908,
+      "M_predicted": 1467.907653267809,
+      "err_pct": -21.758494999914234,
       "term1_canonical_tr_M": 0.3882864715477134,
-      "term2_single_gen_tower": 1608289.7568490328,
-      "term3_pair_gen_tower": 252995.20645452797,
+      "term2_single_gen_tower": 3.392619344776146,
+      "term3_pair_gen_tower": 1.3573247883031847,
       "term4_frobenius_codim_raw": 3.202133983803198,
       "term4_frobenius_codim_scaled": 3.202133983803198,
       "term5_chirality_factor_a_K": 1.2090603219898794,
       "term5_additive_contribution": 0.08117529476607915,
       "term6_cyclotomic_tail_MeV": 0.04249395164648911,
       "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "brane",
+      "tower_mode": "li2q",
       "m_e_hecke": 1.0,
-      "total_hecke": 1861288.634899311
+      "total_hecke": 8.42153988319632
     },
     {
       "isotope": "T",
@@ -82,20 +84,20 @@
       "N": 2,
       "A": 3,
       "M_codata": 2809.432,
-      "M_predicted": 2086.4898385064935,
-      "err_pct": -25.732680538041368,
+      "M_predicted": 1924.4416326507187,
+      "err_pct": -31.500686521306836,
       "term1_canonical_tr_M": 0.10405211867552573,
-      "term2_single_gen_tower": 2119592.5580956456,
-      "term3_pair_gen_tower": 504113.8067035407,
+      "term2_single_gen_tower": 5.072062510847276,
+      "term3_pair_gen_tower": 3.3255886912111126,
       "term4_frobenius_codim_raw": 2.5438838242158353,
       "term4_frobenius_codim_scaled": 2.5438838242158353,
       "term5_chirality_factor_a_K": 0.9562937817694879,
       "term5_additive_contribution": -0.004547724606179679,
       "term6_cyclotomic_tail_MeV": 0.0005788125323147802,
       "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "brane",
+      "tower_mode": "li2q",
       "m_e_hecke": 1.0,
-      "total_hecke": 2623709.0081874044
+      "total_hecke": 11.04103942034357
     },
     {
       "isotope": "3He",
@@ -103,20 +105,20 @@
       "N": 1,
       "A": 3,
       "M_codata": 2809.413,
-      "M_predicted": 2823.592868852896,
-      "err_pct": 0.5047271032381536,
+      "M_predicted": 2060.5501690712767,
+      "err_pct": -26.65549105555941,
       "term1_canonical_tr_M": 0.20654085856226276,
-      "term2_single_gen_tower": 2705308.685944667,
-      "term3_pair_gen_tower": 845286.5411869858,
+      "term2_single_gen_tower": 5.350376846775358,
+      "term3_pair_gen_tower": 3.7301565391408396,
       "term4_frobenius_codim_raw": 2.5438838242158353,
       "term4_frobenius_codim_scaled": 2.5438838242158353,
       "term5_chirality_factor_a_K": 0.9562937817694879,
       "term5_additive_contribution": -0.009027119837839603,
       "term6_cyclotomic_tail_MeV": 0.0005788125323147802,
       "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "brane",
+      "tower_mode": "li2q",
       "m_e_hecke": 1.0,
-      "total_hecke": 3550597.9685292155
+      "total_hecke": 11.821930948856455
     },
     {
       "isotope": "4He",
@@ -124,20 +126,20 @@
       "N": 2,
       "A": 4,
       "M_codata": 3728.401,
-      "M_predicted": 3560.9971792992255,
-      "err_pct": -4.489962874185859,
+      "M_predicted": 2792.973958706838,
+      "err_pct": -25.089228366078704,
       "term1_canonical_tr_M": 0.05534834587669799,
-      "term2_single_gen_tower": 3216611.4871912804,
-      "term3_pair_gen_tower": 1261252.7159013127,
+      "term2_single_gen_tower": 7.029820012846489,
+      "term3_pair_gen_tower": 6.691677875457475,
       "term4_frobenius_codim_raw": 2.251934030169885,
       "term4_frobenius_codim_scaled": 2.251934030169885,
       "term5_chirality_factor_a_K": 0.914497797050989,
       "term5_additive_contribution": -0.004732405502041487,
       "term6_cyclotomic_tail_MeV": 2.702578418625278e-06,
       "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "brane",
+      "tower_mode": "li2q",
       "m_e_hecke": 1.0,
-      "total_hecke": 4477866.505642563
+      "total_hecke": 16.024047858848505
     },
     {
       "isotope": "6Li",
@@ -145,20 +147,20 @@
       "N": 3,
       "A": 6,
       "M_codata": 5603.052,
-      "M_predicted": 6242.434813457564,
-      "err_pct": 11.411331064883285,
+      "M_predicted": 5015.981178654362,
+      "err_pct": -10.477697179066647,
       "term1_canonical_tr_M": 0.0004688317450825183,
-      "term2_single_gen_tower": 4824933.217533526,
-      "term3_pair_gen_tower": 3024773.1825173013,
+      "term2_single_gen_tower": 10.667020680916833,
+      "term3_pair_gen_tower": 16.022520857327407,
       "term4_frobenius_codim_raw": 2.0880906895392073,
       "term4_frobenius_codim_scaled": 2.0880906895392073,
       "term5_chirality_factor_a_K": 0.8745285567617559,
       "term5_additive_contribution": -5.882499569140814e-05,
       "term6_cyclotomic_tail_MeV": 0.0,
       "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "brane",
+      "tower_mode": "li2q",
       "m_e_hecke": 1.0,
-      "total_hecke": 7849708.488551524
+      "total_hecke": 28.77804223453284
     },
     {
       "isotope": "7Li",
@@ -166,24 +168,24 @@
       "N": 4,
       "A": 7,
       "M_codata": 6535.366,
-      "M_predicted": 7238.401397021398,
-      "err_pct": 10.757399004453587,
+      "M_predicted": 6289.912298451478,
+      "err_pct": -3.7557759052595077,
       "term1_canonical_tr_M": 6.235724075364883e-05,
-      "term2_single_gen_tower": 5336236.018780138,
-      "term3_pair_gen_tower": 3765873.931670588,
+      "term2_single_gen_tower": 12.346463846987964,
+      "term3_pair_gen_tower": 21.680511949743085,
       "term4_frobenius_codim_raw": 2.0598882894764245,
       "term4_frobenius_codim_scaled": 2.0598882894764245,
       "term5_chirality_factor_a_K": 1.057357778427713,
       "term5_additive_contribution": 3.5766727985113417e-06,
       "term6_cyclotomic_tail_MeV": 0.0,
       "term5_mode": "multiplicative_on_t1",
-      "tower_mode": "brane",
+      "tower_mode": "li2q",
       "m_e_hecke": 1.0,
-      "total_hecke": 9102112.01040495
+      "total_hecke": 36.086930020121024
     }
   ],
   "all_modes": {
-    "brane": {
+    "brane-legacy": {
       "E_0": 0.0007952441574820133,
       "rows": [
         {
@@ -203,7 +205,7 @@
           "term5_additive_contribution": 0.0,
           "term6_cyclotomic_tail_MeV": 0.6807154737511466,
           "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane",
+          "tower_mode": "brane-legacy",
           "m_e_hecke": 1.0,
           "total_hecke": 1178998.1276378697
         },
@@ -224,7 +226,7 @@
           "term5_additive_contribution": 0.0,
           "term6_cyclotomic_tail_MeV": 0.6807154737511466,
           "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane",
+          "tower_mode": "brane-legacy",
           "m_e_hecke": 1.0,
           "total_hecke": 517439.09158908733
         },
@@ -245,7 +247,7 @@
           "term5_additive_contribution": 0.08117529476607915,
           "term6_cyclotomic_tail_MeV": 0.04249395164648911,
           "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane",
+          "tower_mode": "brane-legacy",
           "m_e_hecke": 1.0,
           "total_hecke": 1861288.634899311
         },
@@ -266,7 +268,7 @@
           "term5_additive_contribution": -0.004547724606179679,
           "term6_cyclotomic_tail_MeV": 0.0005788125323147802,
           "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane",
+          "tower_mode": "brane-legacy",
           "m_e_hecke": 1.0,
           "total_hecke": 2623709.0081874044
         },
@@ -287,7 +289,7 @@
           "term5_additive_contribution": -0.009027119837839603,
           "term6_cyclotomic_tail_MeV": 0.0005788125323147802,
           "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane",
+          "tower_mode": "brane-legacy",
           "m_e_hecke": 1.0,
           "total_hecke": 3550597.9685292155
         },
@@ -308,7 +310,7 @@
           "term5_additive_contribution": -0.004732405502041487,
           "term6_cyclotomic_tail_MeV": 2.702578418625278e-06,
           "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane",
+          "tower_mode": "brane-legacy",
           "m_e_hecke": 1.0,
           "total_hecke": 4477866.505642563
         },
@@ -329,7 +331,7 @@
           "term5_additive_contribution": -5.882499569140814e-05,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane",
+          "tower_mode": "brane-legacy",
           "m_e_hecke": 1.0,
           "total_hecke": 7849708.488551524
         },
@@ -350,7 +352,7 @@
           "term5_additive_contribution": 3.5766727985113417e-06,
           "term6_cyclotomic_tail_MeV": 0.0,
           "term5_mode": "multiplicative_on_t1",
-          "tower_mode": "brane",
+          "tower_mode": "brane-legacy",
           "m_e_hecke": 1.0,
           "total_hecke": 9102112.01040495
         }
