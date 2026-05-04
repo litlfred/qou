@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T23:29:02.661268+00:00",
-  "commitSha": "6be7d421742060154ba45ef8cb32575c85c12334",
+  "computedAt": "2026-05-04T23:41:38.291250+00:00",
+  "commitSha": "f4fb0b4a99d6220ec396b1111ddc28ebe8dc6e1b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1753,6 +1753,7 @@
         "shell-correction-lambda.witness.json",
         "shell-level-qvalues.witness.json",
         "shell7-bb-stratum.witness.json",
+        "shift-from-nf-basis.witness.json",
         "sigma-all-evaluator.witness.json",
         "sigma-all-symbolic-decay.witness.json",
         "sigma-shell-characterization.witness.json",
@@ -1804,6 +1805,7 @@
         "trefoil-quark-nucleon-nf.witness.json",
         "tritium-he3-groebner-nf.witness.json",
         "tritium-q-spectral-extension.witness.json",
+        "u-shift-mass-anchor-probe.witness.json",
         "unified-binding.witness.json",
         "unified-formula-test.witness.json",
         "unified-lift.witness.json",
