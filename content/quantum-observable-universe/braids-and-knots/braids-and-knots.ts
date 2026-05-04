@@ -492,6 +492,7 @@ export default chapter({
         "force-carrier-intertwining-correspondence",
         "alpha-shift-torus-knot",
         "confinement-nf-structure-forcing",
+        "confinement-nf-partial-proof",
         "bound-state-frobenius-self-dual-channel",
         "confinement-categorical",
         "exterior-square-borromean",
