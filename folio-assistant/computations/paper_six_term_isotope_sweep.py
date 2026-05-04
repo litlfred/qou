@@ -54,6 +54,7 @@ from hecke_core import (  # noqa: E402
     atom_per_generator_volumes, h as h_val, z as z_mark,
 )
 from mass_endomorphism import Phi_q  # noqa: E402
+from experimental_constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
 
 HERE = Path(__file__).parent
 
@@ -516,8 +517,8 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True)
 # and propagates mass error quickly with A.  The derivation-fixed
 # assembly below uses the published constants instead.
 
-E_0_BETA_DECAY_MEV_DERIV = 0.78233341    # free-neutron β-decay Q
-M_E_MEV_DERIV            = 0.51099895    # CODATA electron rest mass
+E_0_BETA_DECAY_MEV_DERIV = Q_NEUTRON_MEV             # free-neutron β-decay Q (CODATA)
+M_E_MEV_DERIV            = M_E_MEV                   # CODATA electron rest mass
 ALPHA_BORROMEAN_MEV      = 3.74446989    # m_e · 8G  (`prop:binding-scale-catalan`)
 
 

@@ -1,7 +1,7 @@
 {
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-04T18:04:45.671718+00:00",
+  "computedAt": "2026-05-04T18:08:01.578466+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -345,7 +345,7 @@
       },
       {
         "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
-        "line": 505,
+        "line": 506,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "#   T1 (descended Markov):  E_0_β = 0.782 MeV per cat unit",
@@ -551,14 +551,6 @@
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "q_codata = -0.78233341",
-        "kind": "active"
-      },
-      {
-        "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
-        "line": 519,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "E_0_BETA_DECAY_MEV_DERIV = 0.78233341    # free-neutron β-decay Q",
         "kind": "active"
       },
       {
