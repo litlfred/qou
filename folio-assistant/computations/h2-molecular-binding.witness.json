@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-13T14:58:58.028221+00:00",
-  "commitSha": "54c633b3287db1e06b4ca7007e9d548e4a946da7",
+  "computedAt": "2026-05-04T23:33:15.965121+00:00",
+  "commitSha": "2f186ebc924a9101bd8ce255dc2ab2a4355f1149",
   "assertions": [
     {
       "name": "H2 binding is positive",
@@ -20,7 +20,7 @@
     },
     {
       "name": "H2 binding energy within 5% of observed (no calibration)",
-      "computed": 4.637525848818541,
+      "computed": 4.62313909908715,
       "expected": 4.478,
       "passed": true,
       "tolerance": 0.25,
@@ -29,21 +29,21 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 5,
   "computation": "h2-molecular-binding",
   "scriptFile": "h2-molecular-binding.py",
-  "scriptHash": "a9f24ca06cbc",
-  "scriptCommitSha": "54c633b3287db1e06b4ca7007e9d548e4a946da7",
-  "description": "H\u2082 molecular braid binding energy from LP dual. Enumerates all 24 strand orderings of H\u2084(q), finds optimal binding by comparing molecular \u03a6\u2081 with 2 isolated H atoms.",
+  "scriptHash": "67803838402b",
+  "scriptCommitSha": "e16c38ee0dbc13fc68eb0fa4926bf1ff3f4e4f61",
+  "description": "H₂ molecular braid binding energy from LP dual. Enumerates all 24 strand orderings of H₄(q), finds optimal binding by comparing molecular Φ₁ with 2 isolated H atoms.",
   "contentBlock": "prop:h2-lp-dual-binding",
   "parameters": {
     "q": 1.1099785955541805,
     "HA": 0.20906032198987945,
     "z": 0.4993203340335982,
-    "alpha_EM": 0.007308700983098551,
-    "E_hartree_eV": 27.296143240836667,
+    "alpha_EM": 0.007297355480002014,
+    "E_hartree_eV": 27.21146386777438,
     "TWO_Q": 2.010896869118482,
-    "E_mol_scale_eV": 6.750278523641413,
+    "E_mol_scale_eV": 6.729337493682183,
     "strand_labels": [
       "p1",
       "e1",
@@ -63,7 +63,7 @@
       "p2"
     ],
     "binding_Phi_diff": 0.687012518457808,
-    "E_bind_eV_predicted": 4.637525848818541,
+    "E_bind_eV_predicted": 4.62313909908715,
     "generator_volumes": [
       -0.3830064882401706,
       0.6638243461846167,
@@ -131,7 +131,5 @@
         "binding": 0.687012518457808
       }
     ]
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  }
 }

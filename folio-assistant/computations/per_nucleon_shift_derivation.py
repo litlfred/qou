@@ -299,6 +299,89 @@ WITNESS["data"]["formula_check"] = {
 }
 
 # ──────────────────────────────────────────────────────────────────────
+# §5 — Cancellation count derivation via σ²-adjacency + Ocneanu averaging
+# ──────────────────────────────────────────────────────────────────────
+print()
+print("=" * 70)
+print("§5  Cancellation count derivation (partial — open question)")
+print("=" * 70)
+print()
+print("Cancellation has two sources:")
+print()
+print("  A. Hecke σ²-relation cancellation: each σ²·σ² (or σ⁻¹·σ⁻¹)")
+print("     adjacency in the braid word at the same generator gives 1")
+print("     pole-cancellation when both σ's are in the col block (where")
+print("     each contributes pole 1 individually).")
+print()
+print("  B. Averaged-generator Ocneanu averaging: each (σ + σ⁻¹)/2")
+print("     averaged generator contributes pole 0.5 on Ocneanu average")
+print("     across SYT paths (instead of DP-max 1).")
+
+# Per-atom σ²-adjacency analysis
+print()
+print(f"{'atom':<8} {'gens':>4} {'σ²-adj':>7} {'avg':>4}  cancel from A: σ²-adj × ?")
+
+adjacency_analysis = {}
+for (Z, N), shift in EMPIRICAL_SHIFT.items():
+    crosses = atomic_braid_to_crossings(Z, N, include_inter=True)
+    adj = sum(
+        1 for i in range(len(crosses) - 1)
+        if crosses[i][0] == crosses[i+1][0]
+        and crosses[i][1] == crosses[i+1][1]
+        and crosses[i][1] in ('sigma', 'sigma_inv')
+    )
+    avg = sum(1 for g, t in crosses if t == 'averaged')
+    cancel = gen_counts[(Z, N)]["cancellation"]
+    print(f"  {ATOM_NAMES[(Z, N)]:<6} {len(crosses):>4} {adj:>7} {avg:>4}  "
+          f"cancel = {cancel}, avg_part = {0.5*avg}, σ²_part = {cancel - 0.5*avg}")
+    adjacency_analysis[(Z, N)] = {
+        "sigma_sq_adjacencies": adj,
+        "averaged_count": avg,
+        "predicted_avg_cancel": 0.5 * avg,
+        "implied_sigma_sq_cancel": cancel - 0.5 * avg,
+    }
+
+WITNESS["data"]["cancellation_decomposition"] = {
+    str(k): v for k, v in adjacency_analysis.items()
+}
+
+# CONJECTURE: cancel = (σ²-adj) · ε + (avg_count) · 0.5
+# where ε is some fraction (NOT 1 because not all adjacencies cancel)
+# Test by linear regression:
+print()
+print("CONJECTURE: cancel = c_adj · σ²-adj + c_avg · avg")
+print("  Linear fit across atoms:")
+import numpy as np
+A = np.array([[adjacency_analysis[k]["sigma_sq_adjacencies"], adjacency_analysis[k]["averaged_count"]] for k in EMPIRICAL_SHIFT])
+b = np.array([gen_counts[k]["cancellation"] for k in EMPIRICAL_SHIFT])
+sol, residuals, rank, sv = np.linalg.lstsq(A, b, rcond=None)
+print(f"    c_adj = {sol[0]:.4f}, c_avg = {sol[1]:.4f}")
+print(f"    Residuals: {residuals if len(residuals) else 'N/A'}")
+print(f"    Predictions vs actual:")
+for i, (k, (Z, N)) in enumerate(zip(EMPIRICAL_SHIFT, EMPIRICAL_SHIFT.keys())):
+    pred = A[i] @ sol
+    print(f"      {ATOM_NAMES[k]:<6}: pred={pred:.3f}, actual={b[i]:.3f}, Δ={pred - b[i]:+.4f}")
+
+WITNESS["data"]["linear_fit_cancellation"] = {
+    "c_sigma_sq_adj": float(sol[0]),
+    "c_averaged":     float(sol[1]),
+    "fit_residuals":  float(residuals[0]) if len(residuals) > 0 else None,
+}
+
+# Per-new-nucleon cancellation interpretation
+print()
+print("Per-new-nucleon cancellation (Δcancel from §3):")
+print("  +proton:  +3.0 = (σ²-adj × c_adj) + (avg × 0.5) where new gens")
+print("            = 7σ + 3σ⁻¹ + 2avg + 1σ (interface)")
+print("            σ²-adjacencies depend on host context — not yet")
+print("            decomposed at first-principles level.")
+print("  +neutron: +1.5 = similar structure with one less σ²-adj")
+print()
+print("OPEN: closed-form derivation of c_adj and the per-new-nucleon")
+print("σ²-adjacency count requires explicit Ocneanu-weight tracking")
+print("through SYT paths in n=3A seminormal — see audit doc for sketch.")
+
+# ──────────────────────────────────────────────────────────────────────
 # §5 — Save witness
 # ──────────────────────────────────────────────────────────────────────
 WITNESS["allPassed"] = all(a["passed"] for a in WITNESS["assertions"])

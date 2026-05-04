@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T23:25:03.965849+00:00",
+  "computedAt": "2026-05-04T23:33:56.666648+00:00",
   "computation": "per-nucleon-shift-derivation",
   "scriptFile": "per_nucleon_shift_derivation.py",
   "description": "Derive the (18, 21, 1) per-nucleon shift coefficients in shift = 18Z + 21N + 1 via per-NEW-nucleon additive analysis. Proves linearity: \u0394shift(A\u2192A+1, +proton) = 18 EXACTLY, \u0394shift(A\u2192A+1, +neutron) = 21 EXACTLY, independent of host. Decomposes per-new-nucleon = 11 generators - 2 (p) or 0.5 (n) Hecke \u03c3\u00b2-cancellations + 1 mixed (p,n) interface contribution.",
@@ -210,6 +210,49 @@
         ]
       ],
       "all_match": true
+    },
+    "cancellation_decomposition": {
+      "(1, 1)": {
+        "sigma_sq_adjacencies": 11,
+        "averaged_count": 5,
+        "predicted_avg_cancel": 2.5,
+        "implied_sigma_sq_cancel": 0.5
+      },
+      "(1, 2)": {
+        "sigma_sq_adjacencies": 16,
+        "averaged_count": 7,
+        "predicted_avg_cancel": 3.5,
+        "implied_sigma_sq_cancel": 1.0
+      },
+      "(2, 1)": {
+        "sigma_sq_adjacencies": 17,
+        "averaged_count": 7,
+        "predicted_avg_cancel": 3.5,
+        "implied_sigma_sq_cancel": 2.5
+      },
+      "(2, 2)": {
+        "sigma_sq_adjacencies": 22,
+        "averaged_count": 9,
+        "predicted_avg_cancel": 4.5,
+        "implied_sigma_sq_cancel": 3.0
+      },
+      "(3, 2)": {
+        "sigma_sq_adjacencies": 28,
+        "averaged_count": 11,
+        "predicted_avg_cancel": 5.5,
+        "implied_sigma_sq_cancel": 5.0
+      },
+      "(3, 3)": {
+        "sigma_sq_adjacencies": 33,
+        "averaged_count": 13,
+        "predicted_avg_cancel": 6.5,
+        "implied_sigma_sq_cancel": 5.5
+      }
+    },
+    "linear_fit_cancellation": {
+      "c_sigma_sq_adj": 1.0513685045616812,
+      "c_averaged": -1.7332407774692564,
+      "fit_residuals": 0.1570805236017456
     }
   },
   "assertions": [
