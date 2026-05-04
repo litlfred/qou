@@ -466,6 +466,77 @@ and `Dprime = 2^(2A+1) · (1+u²)^(3A-1)`.  Deferred as a follow-up.
   q-independent and cannot be probed by the multi-q test that
   refuted W-2's b8 / q^(1/12) candidates in PR #521.
 
+## Compound Markov-Trace Shift Theorem (proposed; two-component form)
+
+The atomic-braid shift formula `18Z + 21N + 1` is one instance of a
+more general theorem about how Markov-trace denominators behave
+under compound-braid composition.  The proposed theorem (status:
+conjectural, two of three closed-form factors proved):
+
+> **Theorem (compound Markov-trace shift, two-component form).**
+> For β_1 ∈ B_(n_1), β_2 ∈ B_(n_2), and interface I composed of
+> generators acting on the join-boundary strands, the canonical
+> Markov trace `tr_M = Σ_λ y_λ χ^λ` on B_(n_1+n_2) satisfies
+>
+> $$\text{shift}(\beta_1 \star_I \beta_2) = \widetilde{\text{shift}}_{n_1+n_2}(\beta_1) + \widetilde{\text{shift}}_{n_1+n_2}(\beta_2) + \alpha(I)$$
+>
+> where:
+> 1. `shift_n(β)` is the **n-context shift** — the u-shift exponent
+>    of β regarded as a braid on n strands (≠ its standalone
+>    n_β-context shift).  Determined by the branching of ρ_λ from
+>    B_(n_1+n_2) to B_(n_β) via the Littlewood-Richardson rule.
+> 2. `α(I)` is the **interface contribution**, which depends on
+>    the **knot operator type** at the interface:
+>    - σ alone (chiral crossing): α = 0
+>    - σ⁻¹ alone (opposite chirality): α = 0
+>    - **(σ + σ⁻¹)/2 ("Hecke-symmetric averaged") at the (p, n)
+>      interface: α = 1**
+>    - Higher torus-knot operators T_(2, p), p ≥ 2: α likely
+>      involves [p]_q quantum-integer combinatorics (cf. AXKIA's
+>      α_EM = 1/(q · [9]_q · [10]_q) at the charge layer)
+>    - General k-generator interface: α extends linearly modulo
+>      Hecke-quadratic reductions
+> 3. `Δ = Δ_within + Δ_cross` are the two integer-valued
+>    cancellation counts (Hecke-quadratic + Ocneanu-weight).
+>
+> **Corollary (atomic-braid shift).**  Apply the theorem
+> inductively along a chain of A nucleons in canonical pppnnn
+> ordering with one (p, n) Hecke-symmetric averaged interface:
+>
+> $$\text{shift}(\beta_{\text{atomic}}(Z, N)) = Z \cdot \widetilde{\text{shift}}_{3A}(\beta_p) + N \cdot \widetilde{\text{shift}}_{3A}(\beta_n) + 1$$
+>
+> Empirically (verified A = 2..6): `shift_(3A)(β_p) = 18` and
+> `shift_(3A)(β_n) = 21` for any A ≥ 2, recovering
+> `shift = 18Z + 21N + 1`. ∎
+
+### Why the interface contribution depends on the knot operator
+
+The α(I) = 1 for "averaged at (p, n)" assumes the **simplest
+possible interface** — the Hecke-symmetric (σ + σ⁻¹)/2 — which is
+NOT the Hopf link (closure of σ²) but a level-1 unframed mixing.
+Different physical couplings populate different interface knot
+operators:
+
+| Interface | Knot operator | Markov trace structure | Likely α(I) |
+|---|---|---|---|
+| (p, p) | σ | unframed positive crossing | 0 |
+| (n, n) | σ⁻¹ | unframed negative crossing | 0 |
+| (p, n), simplest | (σ + σ⁻¹)/2 | Hecke-symmetric mixing | **1** |
+| Hopf link (level 2) | σ² | T_(2, 2) torus, doubly-linked | ~h^? |
+| Trefoil (level 3) | σ³ | T_(2, 3), triply-twisted | ~? |
+| Force-carrier T_(2, p) | σ^p | torus knot at level p | ∝ [p]_q-combinatorics? |
+
+The `claude/improve-charge-precision-AXKIA` branch is exploring the
+T_(2, 9) and T_(2, 10) cases for `α_EM = 1/(q · [9]_q · [10]_q)` —
+that infrastructure is the natural setting for deriving α(I) for
+non-trivial torus-knot interfaces.
+
+For the atomic braid in canonical pppnnn ordering, the interface
+is the simplest case (single averaged generator), so α((p, n)) = 1
+suffices.  Generalising to compound braids built from heavier
+nuclei (clustering, halo-nucleon couplings) may require richer α
+tables.
+
 ## References
 
 - `markov_peel.tr_M_atomic` — PR #520 / PR #516 (#508).
@@ -473,3 +544,16 @@ and `Dprime = 2^(2A+1) · (1+u²)^(3A-1)`.  Deferred as a follow-up.
   [`habiro-coefficients-interpolate.witness.json`](../../folio-assistant/computations/habiro-coefficients-interpolate.witness.json).
 - 1-ppb workplan:
   [`docs/audits/2026-05-03-next-session-plan-to-1ppb.md`](2026-05-03-next-session-plan-to-1ppb.md).
+
+### Larger picture
+
+The compound-braid shift theorem is the structural framework, and
+**isotopes are the observable** associated with the Markov-trace
+denominator structure.  Concretely: each (Z, N) compound braid
+gives a different `tr_M`, hence different D(u), hence different
+shift exponent.  Mass differences between isotopes (cf. Family-1
+Kashaev law in PR #521) reflect the interaction of the shift
+exponent with the regular-locus tr_M(q_0) value.  The categorical
+proof of the shift formula is therefore inseparable from the
+physical observables — it is the categorical encoding of nuclear
+shell structure under braid composition.
