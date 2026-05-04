@@ -490,6 +490,7 @@ export default chapter({
         "spectral-sequence-collapse",
         "delta-q-decoration",
         "force-carrier-intertwining-correspondence",
+        "alpha-shift-torus-knot",
         "bound-state-frobenius-self-dual-channel",
         "confinement-categorical",
         "exterior-square-borromean",
