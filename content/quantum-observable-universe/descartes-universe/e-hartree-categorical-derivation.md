@@ -1005,7 +1005,17 @@ mechanisms below have an explicit, identifiable gap.
    $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ is rigorously derived from
    the singlet-idempotent / Bring force-carrier
    complexity ([EM coupling projection](#prop:em-coupling-projection)).
-   It lies in $R$.
+   It lies in $R$. The same expression admits the equivalent
+   **shift-exponent form**
+   $1/\alpha_{EM} = q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q \cdot
+   [\alpha_{\mathrm{shift}}(T_{3,5})]_q$
+   ([multiplicative-chain form](#prop:alpha-em-shift-multiplicative-chain)),
+   which exposes the same combinatorial primitive — pole order at
+   $q = 0$ of a seminormal Hecke trace — that controls the
+   atomic-shift framework
+   ([w3 Habiro audit](../../docs/audits/2026-05-03-w3-habiro-unblocked.md)).
+   This converts the previous transport sketch through
+   $\alpha_{EM}$ into a categorically-proved leg.
 
 3. **The Frobenius / curvature-rank decomposition.** The
    Gröbner-Shirshov spectral sequence collapses at $E_1$

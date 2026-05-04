@@ -491,6 +491,7 @@ export default chapter({
         "delta-q-decoration",
         "force-carrier-intertwining-correspondence",
         "alpha-shift-torus-knot",
+        "confinement-nf-structure-forcing",
         "bound-state-frobenius-self-dual-channel",
         "confinement-categorical",
         "exterior-square-borromean",
