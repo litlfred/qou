@@ -92,7 +92,7 @@ If true, the conjecture supplies the missing categorical structure
 for the **NV-1** audit flag (the weak-scale crossing count). With
 $W^\pm, Z, H$ identified as $T(2,4), T(2,6), T(2,8)$, the parallel
 of the $1/\alpha_{EM}$ derivation
-([`prop:alpha-em-categorical-trace`](#prop:alpha-em-categorical-trace))
+([`rem:alpha-em-categorical-trace`](#rem:alpha-em-categorical-trace))
 becomes available for $G_F$:
 
 | Step in the parallel pipeline | EM analog | EW/Higgs analog |

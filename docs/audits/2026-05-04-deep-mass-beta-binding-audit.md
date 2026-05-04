@@ -122,6 +122,62 @@ its current ppb floor down to the 1 ppb target, with each row tagged
    `rem:` kind is the bug. Either way, the references are
    inconsistent. Bibliographically clean fix.
 
+## §0a — Corrections to this audit (2026-05-04, post-execution)
+
+While executing the §7 mechanical follow-ups, two findings in the
+deep audit above turned out to be false positives or misframed.
+Recording them here rather than silently rewriting the body so the
+provenance is auditable.
+
+1. **LP-DUAL-MISSING was a false positive.** Direct grep confirmed
+   that `per-atom-lp-binding.witness.json` and
+   `pn-alpha-lp-dual.witness.json` already carry all six required
+   dual fields (`y0_star, y_star, active_set, primal_obj, dual_obj,
+   duality_gap`). `qvalue-unified.witness.json` does not currently
+   exist on disk (the script emits it at run time but it has not
+   been committed) and is **not** flagged by
+   `lp_dual_witness_validator.py` (which scanned 501 witnesses and
+   flagged exactly 2 as LP/SDP/operator-selection — both compliant).
+   `branching-qvalues.witness.json` lacks the fields but is an S₃ᴮ
+   decomposition, not an operator-selection LP, so the validator's
+   heuristics correctly skip it. **Action**: none required; the LP
+   dual infra is healthy.
+
+2. **CONJ-MOTIVIC-STALE is `uses[]`-stale, not prose-stale.**
+   `conj:motivic-perpetual-obstruction` is referenced from **11
+   `.md` files** across `algebraic-substrate/`, `lifting-and-descent/`,
+   `descartes-universe/`, `fluid-dynamics/`, `observations/`, and
+   `braids-and-knots/` — including the proof closure of
+   `qou-obstruction-reduction.md:114` ("$\square$ by reduction to
+   motivic perpetual obstruction"). It is *not* stale at the
+   narrative level. It is **stale at the manifest level**: not a
+   single block has the conjecture in its `uses[]` array. The
+   conditional-class exception (CLAUDE.md §3b-cond) is therefore
+   *unmodelled* at the dependency-graph level, even though the
+   prose proofs explicitly cite the conjecture. **Action**: do
+   *not* simply add `uses[]` entries — that would trip
+   conjectural-propagation on the `theorem` blocks that depend on
+   it. The right fix is the §3b-cond pattern: add a Lean class
+   for the conjecture (the existing `MotivicGaloisCharacter` and
+   `MotivicPerpetualObstruction` Lean files are the start), take
+   it as `[Instance]` on each downstream theorem, and *then* add
+   it to `uses[]`. This is research-grade Lean work and remains
+   open.
+
+These two corrections do not change the gap-ledger row count or
+severity; they sharpen which 🟠 / 🟡 items deserve session time.
+
+## §0b — Mechanical follow-ups landed in this PR (2026-05-04)
+
+| ID | Finding | Action taken | Verification |
+|----|---------|--------------|--------------|
+| WALL-BREACH-NEW | `brane-tower-z-habiro.lean:43` had `class … (q : ℝ)` | Generalised to `class … {R : Type*} [CommRing R] (q : R)`; added an explanatory paragraph in the file header that pins the categorical-wall discipline (substrate `q : R`, empirical comparison via `B_target : ℝ` only). The `import Mathlib.Data.Real.Basic` is now confined to the `recoversBinding` predicate's empirical comparison, which is the intended Archimedean side of the wall (CAL-2). | content validation passes; no downstream Lean files take `[BraneTowerZHabiro]` as instance, so no breakage. Lean build deferred to CI (`lake build QOU`). |
+| MASS-WITNESS-DESC | `mass-table-ppb.witness.json` `description` claimed *"NO AME-derived calibrations or fits"* contradicting the script docstring | Rewrote the `description` field to (a) name the three prediction tiers (magic-A 8G, α-cluster recursion, hyp: census-assigned), (b) admit explicitly that 'hyp: census-assigned' rows are AME-driven fits to within knot-census granularity, (c) point to `mass_table_ppb.py:18–21` and this audit doc | JSON re-validates; description matches the per-row `origin` field semantics |
+| REM-PROP-MISCITE (3 spots) | `prop:alpha-em-categorical-trace` cited in 3 `.md` files; the block is `kind: remark` | Replaced `prop:` → `rem:` in `n-sym-symmetric-channel-normalization.md:18`, `force-carrier-knot-vs-link-dichotomy.md:108`, `electroweak-higgs-torus-link-triplet.md:95` | content validation passes; the two existing `rem:`-cites in `exterior-square-borromean.md` already correct |
+| TERM6-CONVENTION | `term6_full_pole_sum.py` consumes Schur–Weyl-weighted trace; physics consumers must use `term6_residues_at_roots.py` (Markov trace) | Added an opt-in guard at `main()`: refuses to run unless `--symbolic-study` flag (or env `TERM6_FULL_POLE_SUM_SYMBOLIC_STUDY=1`) is passed. Refusal message points to the canonical script and to this audit doc. | Manually exercised both branches: refused without flag (exit 2 with the correct message + numeric split 0.177 vs 0.388); accepted with flag and continued |
+| LP-DUAL-MISSING | (false positive — see §0a) | None — verified all flagged LP/SDP witnesses already include duals via `lp_dual_witness_validator.py` | `Scanned 501 witness files; 2 flagged as LP/SDP/operator-selection. OK — all 2 flagged witnesses include LP dual.` |
+| CONJ-MOTIVIC-STALE | (re-framed — see §0a) | Documented the prose-vs-manifest gap; deliberately did *not* add `uses[]` entries (that would trip propagation) | Recorded as research-grade follow-up |
+
 ---
 
 ## §1 — Pre-archimedean re-walk (Steps 0–19)

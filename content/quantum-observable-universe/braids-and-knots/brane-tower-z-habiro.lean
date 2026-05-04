@@ -22,6 +22,18 @@ $\pi_{n_\star}^{(z)}$ uniformly across atoms.
 - [manuscript] conj:brane-tower-z-habiro
 - [manuscript] def:z-habiro-ring
 - [manuscript] prop:atom-knot-mass-derivation
+
+## Categorical wall
+
+Per `CLAUDE.md §3 Coding conventions` and the pre-archimedean
+discipline of `2026-05-03-pre-archimedean-proof-audit.md`, the
+*substrate* parameter `q` of this class is kept generic over an
+arbitrary commutative ring `R`.  The `recoversBinding` Prop
+*does* compare a categorical prediction to an empirical binding
+energy `B_target : ℝ` — that comparison happens on the
+**Archimedean side** of the wall, by design (CAL-2 calibration).
+Importing `Mathlib.Data.Real.Basic` is therefore confined to
+the recovery-assertion field, not to the substrate parameter.
 -/
 
 import Mathlib.Data.Nat.Basic
@@ -34,13 +46,21 @@ namespace QOU.BraidKnot
 
 /-- **BraneTowerZHabiro** — the conjectural class.
 
-    An instance for strand count `n₀` and substrate `q` asserts that
-    the brane-tower partial sums converge in the `z`-Habiro topology
-    and that a structural level-selection rule `nStar` exists which
-    recovers empirical binding energies without per-atom calibration. -/
+    An instance for strand count `n₀` and substrate `q : R` asserts
+    that the brane-tower partial sums converge in the `z`-Habiro
+    topology and that a structural level-selection rule `nStar`
+    exists which recovers empirical binding energies without
+    per-atom calibration.
+
+    `q` is parameterised by an arbitrary commutative ring `R` so
+    that downstream consumers stay on the categorical side of the
+    pre-archimedean wall (see `2026-05-04-deep-mass-beta-binding-audit.md`
+    finding **WALL-BREACH-NEW**).  Empirical binding energies enter
+    only through the `recoversBinding` predicate, which is the
+    intended Archimedean comparison. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 -- Ref: [manuscript] def:z-habiro-ring
-class BraneTowerZHabiro (n₀ : ℕ) (q : ℝ) where
+class BraneTowerZHabiro {R : Type*} [CommRing R] (n₀ : ℕ) (q : R) where
   /-- The canonical cyclotomic truncation level for a confined particle
       with confinement level `ell`, strand count `n₀`, and GB grade `k`. -/
   nStar (ell k : ℕ) : ℕ

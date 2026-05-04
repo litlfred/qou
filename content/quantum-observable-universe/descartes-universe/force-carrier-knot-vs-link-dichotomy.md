@@ -105,7 +105,7 @@ The unbroken EM survivor $\gamma$ has no Goldstone thread (it
 generates the unbroken $U(1)_{em}$); it remains a 1-component
 object — and matches the Bring-saturated photon
 identification within $\{T_{2,9}, T_{3,5}\}$
-([alpha-em-categorical-trace](#prop:alpha-em-categorical-trace)).
+([alpha-em-categorical-trace](#rem:alpha-em-categorical-trace)).
 $\square$
 
 ### Status
