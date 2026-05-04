@@ -1,0 +1,46 @@
+{
+  "computation": "shift-from-nf-basis",
+  "computedAt": "2026-05-04T17:59:29.446344+00:00",
+  "description": "Symbolic-q NF reduction of per-nucleon braids β_p, β_n in H_3(q) = 6-dimensional Hecke algebra of B_3.  Decomposes each nucleon into the 6 fundamental knot operators (NF basis: γ, σ₀, σ₁, L₊, L₋, e⁻) with categorical coefficients c_b(q) ∈ Habiro ring.  Computes shift_NF(β_p), shift_NF(β_n) from the trace decomposition tr_M = Σ c_b · TR_M_SYM[b].  These are the H_3-context shifts; the embedded H_(3A)-context shifts (18 for p, 21 for n) require Littlewood-Richardson branching analysis.",
+  "nf_basis_names": [
+    "γ",
+    "σ₀",
+    "σ₁",
+    "L₊",
+    "L₋",
+    "e⁻"
+  ],
+  "tr_m_symbolic": [
+    "1",
+    "1/(sqrt(q) + 1/sqrt(q))",
+    "1/(sqrt(q) + 1/sqrt(q))",
+    "(sqrt(q) + 1/sqrt(q))**(-2)",
+    "(sqrt(q) + 1/sqrt(q))**(-2)",
+    "(sqrt(q) + 1/sqrt(q))**(-3)"
+  ],
+  "proton_nf_symbolic": [
+    "(q**18 + q**10 - q**8 - 1)/(4*q**9)",
+    "(q**20 + q**12 + q**8 + 1)/(4*q**10)",
+    "(-q**16 + q**10 + q**6 - 1)/(4*q**8)",
+    "0",
+    "(-q**18 + q**12 - q**6 + 1)/(4*q**9)",
+    "0"
+  ],
+  "neutron_nf_symbolic": [
+    "(q**14 - q**8 + q**6 - 1)/(4*q**7)",
+    "(q**16 + 2*q**8 + 1)/(4*q**8)",
+    "(-q**12 + 2*q**6 - 1)/(4*q**6)",
+    "0",
+    "(-q**14 + q**8 - q**6 + 1)/(4*q**7)",
+    "0"
+  ],
+  "shift_proton_h3": 27,
+  "shift_neutron_h3": 23,
+  "tr_proton_h3": "(q**(51/2) + 3*q**(49/2) + 2*q**(47/2) - 2*q**(45/2) - 3*q**(43/2) - q**(41/2) + 2*q**(35/2) + 6*q**(33/2) + 6*q**(31/2) + 2*q**(29/2) + 2*q**(27/2) + 6*q**(25/2) + 6*q**(23/2) + 2*q**(21/2) - q**(15/2) - 3*q**(13/2) - 2*q**(11/2) + 2*q**(9/2) + 3*q**(7/2) + q**(5/2) + q**25 + 3*q**24 + 4*q**23 + 3*q**22 + q**21 + q**18 + 3*q**17 + 5*q**16 + 5*q**15 - 5*q**13 - 5*q**12 - 3*q**11 - q**10 - q**7 - 3*q**6 - 4*q**5 - 3*q**4 - q**3)/(4*q**16 + 16*q**15 + 24*q**14 + 16*q**13 + 4*q**12)",
+  "tr_neutron_h3": "(q**(43/2) + 3*q**(41/2) + 2*q**(39/2) - 2*q**(37/2) - 3*q**(35/2) - q**(33/2) + 4*q**(27/2) + 12*q**(25/2) + 12*q**(23/2) + 4*q**(21/2) - q**(15/2) - 3*q**(13/2) - 2*q**(11/2) + 2*q**(9/2) + 3*q**(7/2) + q**(5/2) + q**21 + 3*q**20 + 4*q**19 + 3*q**18 + q**17 - q**15 - 3*q**14 - 3*q**13 + 3*q**11 + 3*q**10 + q**9 - q**7 - 3*q**6 - 4*q**5 - 3*q**4 - q**3)/(4*q**14 + 16*q**13 + 24*q**12 + 16*q**11 + 4*q**10)",
+  "empirical_shift_proton_h3_standalone": 20,
+  "empirical_shift_neutron_h3_standalone": 16,
+  "empirical_shift_proton_in_deuteron_h6": 18,
+  "empirical_shift_neutron_in_deuteron_h6": 21,
+  "caveat": "Predictions may differ from empirical due to (a) the embedded-vs-standalone H-context shift difference and (b) cross-partition cancellation Δ_cross from Ocneanu-weight cancellation across active LP channels."
+}
