@@ -126,12 +126,37 @@ predictions should use `assemble_per_derivation_weights`.
 
 ## Open follow-ups
 
-1. **T4 differential is identically zero** — investigate whether
-   `term4_frobenius_codim` is supposed to depend on `include_inter`
-   or whether the cancellation is correct by construction.
+1. ~~**T4 differential is identically zero**~~ **RESOLVED 2026-05-04**:
+   inspection of `term4_frobenius_codim(A)` shows it takes ONLY
+   `A = Z + N`, computing `τ(C_dim_q) = Σ_{λ ⊢ 3A} 1/dim_q(λ)`.
+   This is a structural invariant of `H_{3A}(q)` depending only on
+   the algebra rank, not on the specific braid (`include_inter` has
+   no effect by construction).  Therefore `T4_atom = T4_free` for
+   the same A, and the binding differential `T4_atom − T4_free` is
+   identically zero — correct, not a bug.  T4 contributes to
+   absolute mass M(Z, N) but cancels in the binding-energy
+   differential B = M_free − M_atom.  The per-derivation assembly
+   correctly captures this; the (vanishing) `binding_T4` field is
+   diagnostic-only and confirms the cancellation.
+
 2. **T6 witness coverage** — extend the Habiro residue witness to
    A ≥ 5 atoms so the cyclotomic tail contributes to the assembly.
-3. **binding_full V̂ reconciliation** — switch its V̂ source from
+   Currently `_load_canonical_t6_MeV` returns 0 for those atoms.
+
+3. ~~**binding_full V̂ reconciliation**~~ **RESOLVED 2026-05-04**:
+   commit 7746a7a5e switches `binding_full`'s V̂ source from
    `kahler_lift_analytic(build_V_hat_symbolic(...))` to
-   `atom_per_generator_volumes(...)` so the per-term weights apply
-   uniformly.
+   `atom_per_generator_volumes(...)['full']` and applies the
+   α = m_e · 8G calibration directly.  D smoke-test:
+   tower_MeV = +1.81 MeV (was +28828.85), B_MeV = +2.28 vs B_AME
+   2.224 (+2.44 % residual; from canonical_MeV path mismatch with
+   the per-derivation T1, plus no T4/T5/T6 corrections at this
+   stage).  `kahler_order` parameter preserved for API compat but
+   no longer used.
+
+4. **⁴He outlier (0.525 %)** — largest residual in the per-
+   derivation assembly's spectrum.  Possibly a missing
+   Wedderburn-channel contribution that manifests only at the
+   doubly-magic ⁴He configuration (worth checking std/sym/alt
+   channels of `atom_per_generator_volumes` rather than just
+   `full`).
