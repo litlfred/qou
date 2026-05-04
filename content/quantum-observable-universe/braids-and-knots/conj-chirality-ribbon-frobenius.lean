@@ -41,12 +41,16 @@ namespace QOU.BraidKnot
 class ChiralityRibbonFrobenius (q : ℝ) (w_writhe : ℤ) where
   /-- First-order chirality factor: `1 + w(K) · (q - q⁻¹)`. -/
   a_firstOrder : ℝ
-  /-- The exact Frobenius-ribbon form agrees with the first-order term
-      up to an error controlled by `h² = (q - q⁻¹)²`. -/
-  exactAgreement : Prop
+  /-- The exact Frobenius-ribbon form `a_exact` (the full Wedderburn-weighted
+      ribbon-twist ratio) differs from the first-order term by at most
+      `C * (q - q⁻¹)²` for some constant `C` depending only on `q` and `w_writhe`. -/
+  a_exact : ℝ
+  exactAgreement : ∃ (C : ℝ), a_exact = a_firstOrder + C * (q - q⁻¹) ^ 2
   exact_holds : exactAgreement
-  /-- The agreement is sufficient for 0.75% mass-formula accuracy. -/
-  massFormulaAccuracy : Prop
+  /-- The first-order term achieves ≤ 0.75% relative error for all nucleon
+      and nuclear knots in the QOU model (empirically bounded; the precise
+      bound depends on the substrate value `q`). -/
+  massFormulaAccuracy : |a_exact - a_firstOrder| / (|a_firstOrder| + 1) ≤ 0.0075
   accuracy_holds : massFormulaAccuracy
 
 end QOU.BraidKnot

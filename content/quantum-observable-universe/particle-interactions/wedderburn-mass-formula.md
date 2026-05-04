@@ -1,6 +1,5 @@
 For a neutral atom $(Z, N)$ with $n_{\mathrm{gen}}$ Hecke–NF generators, the
-\refterm{qou:three-invariant mass formula}{three-invariant mass formula} decomposes
-the total atomic mass as
+three-invariant mass formula decomposes the total atomic mass as
 
 $$
   M(Z, N) \;=\; Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e
@@ -27,8 +26,7 @@ $$
   [3]_q! = (1+q+q^2)(1+q).
 $$
 
-The binding scale is $\alpha = m_e \cdot 8G$ where $G$ is Catalan's constant
-(volume of the unit 3-ball $B_3$).
+The binding scale is $\alpha = m_e \cdot 8G$ where $G \approx 0.9159$ is Catalan's constant.
 
 **Proof.**
 The mass split $M(Z,N) = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e + \mathrm{bindingTerm}(Z,N,q)$
