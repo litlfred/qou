@@ -87,19 +87,18 @@ def atomicMassGBNF (m_e ρ_K : ℝ) (β_K : A) : ℝ :=
   m_e * ρ_K * atomic_mass_dimensionless β_K
 
 /-- **The mass formula respects GB descent.** Adding any element
-    annihilated by `NF_GS - id` (i.e. an element in the kernel of
-    the GB descent map) does not change the predicted mass. -/
+    annihilated by `NF_GS` (i.e. an element in the kernel of the
+    GB descent map) does not change the predicted mass. -/
 theorem atomicMassGBNF_descends
     (m_e ρ_K : ℝ) (β_K δ : A) (hδ : NF_GS δ = (0 : A)) :
     atomicMassGBNF m_e ρ_K (β_K + δ) =
     atomicMassGBNF m_e ρ_K β_K := by
   unfold atomicMassGBNF atomic_mass_dimensionless
-  -- Ref: [kassel1995] §III.4 (Markov descent through ideals).
-  -- The categorical content (NF_GS is a linear retraction whose
-  -- kernel coincides with the Markov-vanishing ideal) is
-  -- axiomatised by `tr_M_factors_through_NF`; this proof is the
-  -- direct calculation modulo that axiom.
-  sorry
+  -- `NF_GS` is `ℝ`-linear, so `NF_GS (β_K + δ) = NF_GS β_K + NF_GS δ`.
+  -- The hypothesis `hδ` collapses the second summand to `0`.
+  have h_nf : NF_GS (β_K + δ) = NF_GS β_K := by
+    rw [map_add, hδ, add_zero]
+  rw [h_nf]
 
 end GBNFAlgebra
 

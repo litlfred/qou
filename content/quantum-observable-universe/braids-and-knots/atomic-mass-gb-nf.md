@@ -79,6 +79,51 @@ functional $\rho \colon B_n / \!\sim_{\mathrm{Markov}} \to \mathbb{R}_{>0}$
 computable from $\beta_K$ and $q_0$ such that
 $\rho(\beta_K) = \rho_K^{\mathrm{CODATA}}$.
 
+**Leading-order ansatz** (`rho-k-scaling-structure.witness.json`).
+Empirically across $A = 1, 2, 3$,
+
+$$
+  \rho_K^{\mathrm{CODATA}}
+  \;\approx\;
+  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}}}{m_e \cdot \lvert\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert}
+  \quad (\text{mean residual } 0.14\%, \text{ max } 0.30\%).
+$$
+
+This is the constituent-mass form of `prop:atomic-braid-mass`
+rewritten through the GB-NF identity. The residual is exactly the
+binding energy $B(K)$ divided by $m_e \cdot \lvert\!\operatorname{tr}_M\!\rvert$, i.e.
+
+$$
+  \rho_K
+  \;=\;
+  \rho_K^{\mathrm{LO}}
+  \;-\; \frac{B(K)}{m_e \cdot \lvert\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert},
+  \qquad
+  B(K) \;=\; (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}}) - \mathcal{M}(K).
+$$
+
+**Mirror-pair check** (T and ${}^3\mathrm{He}$, both $A=3$, $n=9$
+strands): the categorical density factors $\rho_K(T) / \rho_K({}^3\mathrm{He}) = 1.9853$
+exactly compensate $|\!\operatorname{tr}_M({}^3\mathrm{He})| / |\!\operatorname{tr}_M(T)| = 1.9850$,
+since their CODATA masses agree to $0.02\%$. So $\rho_K$ is **not**
+a function of $(A, n\text{-strands})$ alone — it must depend on the
+specific braid $\beta_K$ through $|\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_K))|$
+(and hence $\rho_K \cdot |\!\operatorname{tr}_M\!|$ is the
+mirror-symmetric quantity, equal to $\mathcal{M}(K)/m_e$).
+
+**Reduction.** The categorical-closure question reduces to deriving
+the nucleon-mass anchors $m_{\mathfrak{p}}/m_e \approx 1836.15$ and
+$m_{\mathfrak{n}}/m_e \approx 1838.68$ from $H_3(q_0)$ data alone.
+Once these anchors are categorically self-determined, the
+constituent decomposition plus binding correction recovers atomic
+masses to sub-percent across the full $A = 1..20$ range
+([Wedderburn mass](#thm:wedderburn-mass-formula)). The six-term
+spectral form is the current best candidate; empirically with
+proton calibration it recovers $m_{\mathfrak{p}}$ by construction
+but predicts $m_{\mathfrak{n}}$ to only $4.9\%$
+(`paper-six-term-isotope-sweep.witness.json`, `li2q` mode), so the
+nucleon-anchor question remains the structural bottleneck.
+
 The (six-term spectral) form is the current best candidate
 attempt, expanding $\rho_K \cdot \lvert\!\operatorname{tr}_M\!\rvert$
 into a $\sum_{i=1}^{6} T_i$ decomposition over the Wedderburn
@@ -130,6 +175,7 @@ PBW relations.
 ## Witnesses
 
 - `rho-k-codata-vs-six-term.witness.json` — $\rho_K^{\mathrm{CODATA}}$ vs $\rho_K^{6\text{-term}}$ table for $A = 1, 2, 3$.
+- `rho-k-scaling-structure.witness.json` — leading-order ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\operatorname{tr}_M\!|)$ ($0.14\%$ mean residual); mirror-pair analysis.
 - `atomic-tr-m-mpfr-50dps.witness.json` — canonical $\lvert\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$ at 50 decimal-place precision.
 - `atom-mass-atomic-braid.witness.json` — (constituent) form predictions.
 - `paper-six-term-isotope-sweep.witness.json` — (six-term spectral) predictions across all five tower modes.
