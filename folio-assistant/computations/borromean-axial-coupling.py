@@ -27,18 +27,46 @@ where β is the nucleon braid.
 
 Target: g_A ≈ 1.2754 ± 0.0013 (PDG 2024)
 
+────────────────────────────────────────────────────────────────────
+KNOWN STRUCTURAL GAP — Borromean conjugation is trace-cyclic
+────────────────────────────────────────────────────────────────────
+Per `docs/audits/2026-05-04-deep-mass-beta-binding-audit.md` finding
+**GT-MATRIX**, the current "Borromean correction" operator
+`β · σ₁ · β⁻¹` is the conjugation of `σ₁` by `β`, and any trace is
+invariant under conjugation: `tr(β · σ₁ · β⁻¹) = tr(σ₁)`.  The
+suppression factor is therefore *forced* to be exactly 1.0 by the
+trace-cyclicity of any matrix representation, and the script can
+only output the naive quark-model value `g_A = 5/3 ≈ 1.667` — a
++30.6% error vs PDG 1.2754.
+
+The right operator is NOT a conjugation but a Markov-trace
+matrix element of `β` insertion at a specific site, weighted by
+the Wedderburn-block decomposition (Schur–Weyl bridge / colored
+Markov trace).  See `prop:operator-selection-lp` and
+`y-lambda-jones-markov-witness.json` for the canonical recipe.
+
+This script is retained as the *current best probe*; the witness
+records `allPassed: false` against the PDG target so the
++30.6% gap is visible in CI and documents the structural
+problem rather than hiding it.  Closure is the GT-MATRIX
+research-grade item.
+
 Usage:
     python3 computations/borromean-axial-coupling.py
 
 Output:
     computations/borromean-axial-coupling.witness.json
+    (via WitnessBuilder — includes scriptHash, commitSha,
+     engineVersion, and a failing assertion against PDG)
 """
 
-import json
-from datetime import datetime, timezone
+import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+
 from q_parameter import Q as q
+from witness_base import WitnessBuilder
 
 # ══════════════════════════════════════════════════════════════════
 # Iwahori--Hecke algebra H_3(q) — irreducible representations
@@ -260,61 +288,98 @@ g_A_naive = 5.0 / 3.0
 g_A_borromean = g_A_naive * suppression if suppression else None
 
 # ══════════════════════════════════════════════════════════════════
-# Assemble witness
+# Assemble witness (via WitnessBuilder — gets scriptHash, commitSha,
+# engineVersion automatically; participates in run_pipeline staleness
+# detection).
 # ══════════════════════════════════════════════════════════════════
 
-witness = {
-    "computation": "borromean-axial-coupling",
-    "timestamp": datetime.now(timezone.utc).isoformat(),
-    "description": (
-        "Computation of g_A from the Iwahori--Hecke algebra H_3(q). "
-        "The Borromean braid topology of the nucleon modifies the "
-        "naive quark model prediction g_A = 5/3 by a suppression "
-        "factor from the standard representation trace."
-    ),
-    "q": q,
-    "target": {"g_A": 1.2754, "source": "PDG 2024"},
-    "hecke_algebra": {
-        "q_integers": {
-            "[2]_q": q + qi,
-            "[3]_q": three_q,
-            "[4]_q": four_q,
-            "[5]_q": five_q,
-        },
-        "naive_g_A": g_A_naive,
-    },
-    "braid_candidates": results,
-    "borromean_conversion": {
-        "full_operator": "β·σ₁·β⁻¹ where β = σ₁σ₂⁻¹σ₁σ₂⁻¹",
-        "tr_standard_full": tr_full_std,
-        "tr_trivial_full": tr_full_triv,
-        "tr_standard_bare": tr_bare_std,
-        "tr_trivial_bare": tr_bare_triv,
-        "suppression_factor": suppression,
-        "g_A_with_borromean": g_A_borromean,
-    },
-    "interpretation": (
-        "The Borromean braid β = σ₁σ₂⁻¹σ₁σ₂⁻¹ in H_3(q) conjugates "
-        "the conversion operator σ₁. The suppression factor is the "
-        "ratio of the standard-rep trace (with Borromean) to the "
-        "standard-rep trace (without). This modifies g_A from the "
-        "naive 5/3 to a q-dependent value."
-    ),
-    "caveats": [
-        "The exact Borromean braid word for the nucleon is model-dependent.",
-        "Multiple candidate braids are evaluated above.",
-        "The spin-isospin Clebsch-Gordan factor is taken from the naive "
-        "quark model (5/3 = 4/3 + 1/3).",
-        "A full computation requires the colored Markov trace, not just "
-        "the standard representation.",
-    ],
-}
+PDG_G_A = 1.2754           # PDG 2024 axial coupling (target, not input)
+PDG_G_A_UNCERTAINTY = 0.0013
 
-out_path = Path(__file__).parent / "borromean-axial-coupling.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
+w = WitnessBuilder("borromean-axial-coupling", engine="python")
+w.set_description(
+    "Computation of g_A from the Iwahori--Hecke algebra H_3(q). "
+    "The Borromean braid β = σ₁σ₂⁻¹σ₁σ₂⁻¹ is conjugated with the "
+    "single-strand conversion operator σ₁ to model the d→u weak "
+    "vertex on the Borromean nucleon. KNOWN STRUCTURAL GAP: any "
+    "conjugation β·σ·β⁻¹ has the same trace as σ by trace-cyclicity, "
+    "so the suppression factor is forced to be 1.0 and the script can "
+    "only output the naive g_A = 5/3 ≈ 1.667 (+30.6% vs PDG 1.2754). "
+    "The right operator requires the full colored Markov trace with "
+    "Wedderburn-block weights; see audit doc GT-MATRIX gap and "
+    "y-lambda-jones-markov-witness.json for the canonical recipe."
+)
+w.set_content_block("def:categorical-proton")
 
-print(f"Witness written to {out_path}")
+w.add_parameter("q", q)
+w.add_parameter("PDG_g_A", PDG_G_A)
+w.add_parameter("PDG_g_A_uncertainty", PDG_G_A_UNCERTAINTY)
+w.add_parameter("PDG_source", "PDG 2024")
+
+w.add_data("hecke_algebra", {
+    "q_integers": {
+        "[2]_q": q + qi,
+        "[3]_q": three_q,
+        "[4]_q": four_q,
+        "[5]_q": five_q,
+    },
+    "naive_g_A": g_A_naive,
+})
+w.add_data("braid_candidates", results)
+w.add_data("borromean_conversion", {
+    "full_operator": "β·σ₁·β⁻¹ where β = σ₁σ₂⁻¹σ₁σ₂⁻¹",
+    "tr_standard_full": tr_full_std,
+    "tr_trivial_full": tr_full_triv,
+    "tr_standard_bare": tr_bare_std,
+    "tr_trivial_bare": tr_bare_triv,
+    "suppression_factor": suppression,
+    "g_A_with_borromean": g_A_borromean,
+})
+w.add_data("interpretation",
+    "The Borromean braid β = σ₁σ₂⁻¹σ₁σ₂⁻¹ in H_3(q) conjugates "
+    "the conversion operator σ₁. The suppression factor is the "
+    "ratio of the standard-rep trace (with Borromean) to the "
+    "standard-rep trace (without). By trace-cyclicity tr(βσβ⁻¹) "
+    "= tr(σ), so this ratio is forced to 1.0; g_A reduces to the "
+    "naive 5/3. Closure of the +30.6% gap requires the colored "
+    "Markov trace, not a conjugation."
+)
+
+# Failing assertion: makes the +30.6% PDG gap visible in CI's `allPassed`.
+# Tolerance is intentionally loose (5%) so this script will pass once a
+# correct operator-selection LP / Markov-trace formula closes the gap to
+# within experimental precision; today it FAILS, and that is the point.
+w.add_assertion(
+    name="g_A_vs_PDG_2024",
+    computed=g_A_borromean if g_A_borromean is not None else float("nan"),
+    expected=PDG_G_A,
+    tolerance=0.05,
+    unit="dimensionless",
+    source="PDG 2024 (compared to derived value from H_3(q) conjugation)",
+)
+
+w.add_caveat(
+    "The Borromean correction operator β·σ₁·β⁻¹ is a CONJUGATION; by "
+    "trace-cyclicity its trace equals tr(σ₁), so the 'suppression factor' "
+    "is forced to be exactly 1.0 in any matrix representation. The "
+    "+30.6% gap vs PDG is therefore structural, not numerical."
+)
+w.add_caveat(
+    "The exact Borromean braid word for the nucleon is model-dependent. "
+    "Multiple candidate braids are evaluated above (data.braid_candidates)."
+)
+w.add_caveat(
+    "The spin-isospin Clebsch-Gordan factor is taken from the naive "
+    "quark model (5/3 = 4/3 + 1/3)."
+)
+w.add_caveat(
+    "A full computation requires the colored Markov trace with "
+    "Wedderburn-block weights, not just the standard representation. "
+    "See audit doc 2026-05-04-deep-mass-beta-binding-audit.md GT-MATRIX."
+)
+
+w.save()
+
 print(f"\nIwahori--Hecke algebra H_3(q) at q = {q}:")
 print(f"  [2]_q = {q + qi:.6f}")
 print(f"  [3]_q = {three_q:.6f}")
@@ -330,7 +395,9 @@ for name, res in results.items():
 print(f"\nConversion operator (β·σ₁·β⁻¹):")
 print(f"  tr_std(bare σ₁) = {tr_bare_std:.6f}")
 print(f"  tr_std(β·σ₁·β⁻¹) = {tr_full_std:.6f}")
-print(f"  Suppression factor = {suppression:.6f}")
+print(f"  Suppression factor = {suppression:.6f}  ← FORCED to 1.0 by trace-cyclicity")
 print(f"  g_A (Borromean) = {g_A_borromean:.4f}")
-print(f"  g_A (target) = 1.2754")
-print(f"  Ratio to target = {g_A_borromean / 1.2754:.4f}" if g_A_borromean else "  (computation failed)")
+print(f"  g_A (PDG 2024)  = {PDG_G_A}")
+print(f"  Ratio to PDG    = {g_A_borromean / PDG_G_A:.4f}  (+{100*(g_A_borromean/PDG_G_A - 1):.1f}%)")
+print(f"\n  STRUCTURAL GAP (GT-MATRIX): conjugation is trace-invariant; need")
+print(f"  colored Markov trace with Wedderburn-block weights to close.")

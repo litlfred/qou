@@ -146,11 +146,16 @@ $$
 **Computational backing.** The Borromean construction underlying
 this definition is supported by witness data committed alongside
 the paper: `folio-assistant/computations/borromean-axial-coupling.witness.json`
-(the axial-coupling $g_A$ from $H_3(q_0)$ matches PDG 2024
-$g_A = 1.2754$), `proton-braid-sweep-gg.witness.json` (proton
-braid coefficients in the NF basis at $q_0$), and
-`borromean-qvalue.py` (derivation of $q_0 \approx 1.10998$ from
-Borromean topology). These are numerical witnesses, not formal
-proofs — see also
+(axial-coupling $g_A$ probe in $H_3(q_0)$ — *current* value
+$g_A = 5/3 \approx 1.667$ is the naive quark-model prediction;
+the +30.6% gap vs PDG 2024 $g_A = 1.2754$ is open research, see
+audit doc `2026-05-04-deep-mass-beta-binding-audit.md` finding
+**GT-MATRIX**: the conjugation operator $\beta\sigma_1\beta^{-1}$
+is trace-cyclic and forces a unit suppression factor; closure
+requires the colored Markov trace with Wedderburn-block weights),
+`proton-braid-sweep-gg.witness.json` (proton braid coefficients
+in the NF basis at $q_0$), and `borromean-qvalue.py` (derivation
+of $q_0 \approx 1.10998$ from Borromean topology). These are
+numerical witnesses, not formal proofs — see also
 [Borromean-quark conjecture](#conj:borromean-quark) and the
 ground-ring annotation in `borromean-quark.lean`.

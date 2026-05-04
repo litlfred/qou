@@ -177,6 +177,51 @@ severity; they sharpen which 🟠 / 🟡 items deserve session time.
 | TERM6-CONVENTION | `term6_full_pole_sum.py` consumes Schur–Weyl-weighted trace; physics consumers must use `term6_residues_at_roots.py` (Markov trace) | Added an opt-in guard at `main()`: refuses to run unless `--symbolic-study` flag (or env `TERM6_FULL_POLE_SUM_SYMBOLIC_STUDY=1`) is passed. Refusal message points to the canonical script and to this audit doc. | Manually exercised both branches: refused without flag (exit 2 with the correct message + numeric split 0.177 vs 0.388); accepted with flag and continued |
 | LP-DUAL-MISSING | (false positive — see §0a) | None — verified all flagged LP/SDP witnesses already include duals via `lp_dual_witness_validator.py` | `Scanned 501 witness files; 2 flagged as LP/SDP/operator-selection. OK — all 2 flagged witnesses include LP dual.` |
 | CONJ-MOTIVIC-STALE | (re-framed — see §0a) | Documented the prose-vs-manifest gap; deliberately did *not* add `uses[]` entries (that would trip propagation) | Recorded as research-grade follow-up |
+| **GT-MATRIX-OVERCLAIM** (new in §0c) | `categorical-proton.md:148` claimed the witness "matches PDG 2024 g_A = 1.2754"; actual computed g_A is naive 5/3 ≈ 1.667 (+30.6%). Witness lacked `scriptHash`/`commitSha`/assertions (invisible to staleness detection). | Refactored `borromean-axial-coupling.py` to `WitnessBuilder` (gets `scriptHash`, `commitSha`, `engineVersion`, `computedAt`); added explicit `g_A_vs_PDG_2024` assertion → `allPassed: false` exposes the +30.6% gap in CI. Added 4 caveats including the trace-cyclicity diagnosis. Linked to `def:categorical-proton` via `set_content_block`. Fixed the `categorical-proton.md` overclaim to honest "open: current 1.667 (naive 5/3); +30.6% gap is GT-MATRIX research-grade". | Script runs end-to-end; witness JSON parses; `allPassed: false` with the failing assertion `g_A_vs_PDG_2024` (computed 1.667, expected 1.2754, tol 0.05); `scriptHash` and `commitSha` populated. |
+
+## §0c — GT-MATRIX structural diagnosis (2026-05-04)
+
+While shipping `borromean-axial-coupling.py` to a witness output
+(§7 item 4), discovered the existing 2026-03-28 witness (which had
+been on disk all along) reveals a **structural** problem, not just
+a precision one:
+
+- The script's "Borromean correction" operator is `β · σ₁ · β⁻¹`,
+  the *conjugation* of `σ₁` by the Borromean braid `β`.
+- Any matrix trace is invariant under conjugation:
+  `tr(β · σ₁ · β⁻¹) = tr(β⁻¹ · β · σ₁) = tr(σ₁)` (trace cyclicity).
+- The "suppression factor" computed as
+  `tr_std(β · σ₁ · β⁻¹) / tr_std(σ₁)` is therefore **forced to be
+  exactly 1.0** in any matrix representation.
+- The script can only output the naive quark-model value
+  `g_A = 5/3 ≈ 1.667`, independent of `q`, independent of which
+  representation is chosen, independent of the Borromean braid word.
+- This is a **+30.6% error vs PDG 2024 g_A = 1.2754**.
+
+The right operator is **NOT** a conjugation. The g_A computation
+needs the **colored Markov trace** with explicit
+Wedderburn-block weights (cf. `prop:operator-selection-lp`,
+`y-lambda-jones-markov-witness.json`). Concretely:
+
+  g_A = (Σ_λ y_λ · χ_λ(σ_1) [in axial channel])
+      / (Σ_λ y_λ · χ_λ(1)   [in vector channel])
+
+where the `y_λ` are the Jones–Markov weights of the
+H_3(q)-irrep λ ∈ {(3), (2,1), (1,1,1)}, and the χ_λ are
+trace functionals — **not** matrix-rep traces of conjugated
+operators.
+
+Until that machinery lands, the witness now records
+`allPassed: false` with the explicit `g_A_vs_PDG_2024` assertion
+so the +30.6% gap is **visible in CI** rather than silently
+overclaimed in prose. The narrative `categorical-proton.md` was
+also corrected to admit the gap.
+
+**Status update**: GT-MATRIX is no longer "hardcoded PDG with no
+witness produced" (the prior audit framing). It is now
+"structural-operator-bug producing 1.667 with `allPassed: false`
+witness". The closure path is concrete: implement the
+y_λ-weighted Markov trace per the formula above.
 
 ---
 
@@ -410,7 +455,7 @@ from prior audits.
 | **MASS-WITNESS-DESC** (new) | Edit `mass-table-ppb.witness.json` `description` to drop "NO AME-derived calibrations or fits" and admit the census-fitted rows; or regenerate from a pinned witness builder that includes a per-row `derivation_origin` field. | hygiene | trivial fix |
 | **§3·A CRT-MARKOV-CHANNELS** | Extend `crt_markov_v4.py` from std-channel + descended (≈1 % of trace) to the full Wedderburn channel set + tower. | ~99 % of mass tower → potentially 10²–10⁴ on every row | **single largest open compute fix** |
 | **NV-1** | Identify N_v as a topological invariant (e.g. T_{3,5} vertex crossing count or the EW sub-tower's Markov-trace coefficient). Candidate `nv1_candidate_a_doubleprime` ≈ 120·q₀⁹⁰ matches to −0.58 % per `2026-05-03-nv1-candidate-a-doubleprime-test.md`; not yet promoted. | gates **all** β-decay rates ; t½ ∝ N_v⁻⁴ | research-grade |
-| **GT-MATRIX** | Compute g_A from `borromean-axial-coupling.py` (Borromean Skein algebra trace ratio); produce a witness; compare to PDG. | × 4 on every t½ row | **borromean-axial-coupling** is in the tree; finish it |
+| **GT-MATRIX** | Compute g_A from `borromean-axial-coupling.py` via the **colored Markov trace** (NOT the conjugation operator currently in the script — that is forced to be trace-invariant; see §0c). Concretely: `g_A = (Σ_λ y_λ · χ_λ(σ_1)_axial) / (Σ_λ y_λ · χ_λ(1)_vector)` with Jones–Markov weights `y_λ` from `y-lambda-jones-markov-witness.json`. | × 4 on every t½ row | **borromean-axial-coupling.py** now ships a `WitnessBuilder` witness with a **failing** `g_A_vs_PDG_2024` assertion (computed 1.667, expected 1.2754, gap +30.6%) — gap is visible in CI, ready for someone to swap the operator |
 | **FROB-FILTER** | Derive activation threshold A=3 → A=6 from LP dual eigenvalue per `prop:bw-coefficient-shadow-price`. | ⁶He from −10.9 % → ≤1 % ; unblocks A>6 Q-values | active research |
 | **FROB-FILTER-ELECTRON-LP** (new sub-flag) | Make the "+1" (emitted electron) of the A=1 case come out of the LP dual (`y_star[electron-emission constraint]`), not be added manually. | hygiene + structural | mechanical once LP is recast with dual |
 | **G_F-CAL3** | Audit every direct use of G_F (`experimental_constants.py:53–54`, `beta-decay-from-q.py:43`, `end-to-end-halflife.py:158`, `shell-aware-halflife.py:8`); route every one through `N_v`; remove G_F from `experimental_constants.py` once NV-1 lands. | depends on NV-1 | mechanical post-NV-1 |
