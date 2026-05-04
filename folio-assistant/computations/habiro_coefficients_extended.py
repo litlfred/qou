@@ -45,7 +45,10 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from markov_peel import tr_M_atomic  # noqa: E402
+from hecke_laurent_fast import tr_M_atomic_fast as tr_M_atomic  # noqa: E402
+# Drop-in fast replacement for `markov_peel.tr_M_atomic` via the
+# LaurentQ-coefficient pipeline (PR #537 in main).  3-8× speedup on
+# the symbolic Markov-peel reduction; verified equivalent at q = q₀.
 from habiro_coefficients_atomic import (  # noqa: E402
     to_u_polynomial,
     cyclotomic_expansion,
