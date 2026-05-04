@@ -752,6 +752,83 @@ pieces whose hyperbolic volumes match the inverse force-carrier
 $\delta_q$ values? This is the unified closure target for both
 this conjecture and the broader Φ_q–JSJ programme.
 
+### Round 17 — Wedderburn projection computed: hypothesis FALSIFIED for bare braid
+
+Implementing the Wedderburn decomposition via the existing
+[`hecke_characters.py`](folio-assistant/computations/hecke_characters.py)
+infrastructure, computed the H_4(q) Wedderburn projection of the
+bare H_2 molecular braid $\sigma_1 \sigma_2 \sigma_3 \in B_4$.
+
+Witness: [`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json).
+
+**Result at $q_0 \approx 1.110$:**
+
+| $\lambda \vdash 4$ | $\chi_\lambda$ | $w_\lambda \cdot \chi_\lambda / f^\lambda$ | Hypothesised? |
+|---|---:|---:|---|
+| $(4)$ | $1.368$ | $+0.0181$ | yes — nonzero ✓ |
+| $(3,1)$ | $-1.110$ | $-0.1363$ | no — DOMINANT |
+| $(2,2)$ | $0.000$ | $\;\;\,0.0000$ | yes — **ZERO!** ✗ |
+| $(2,1,1)$ | $0.901$ | $+0.1106$ | no |
+| $(1,1,1,1)$ | $-0.731$ | $-0.0097$ | no |
+
+Total $\mathrm{tr}_M = -0.0172$.
+
+**Hypothesis falsified.** The (2,2) component is **exactly zero**
+for the bare molecular braid. The Wedderburn weight is
+concentrated on $\lambda \in \{(3,1), (2,1,1)\}$ — the
+"hook-shaped" partitions, not the "rectangular" $(4)$ and $(2,2)$
+that would correspond to $T_{2,9}$ and $T_{3,5}$ via the
+hypothesized force-carrier alignment.
+
+**Side-product confirmed.** The algebraic identity from round 12
+is verified to $10^{-12}$ precision at $q_0$:
+
+$$
+  \alpha_{EM} \;=\; \frac{h^{2}}{q \cdot (q^{9}-q^{-9})(q^{10}-q^{-10})}
+$$
+
+(witness assertion `α_EM = h²/[q·δ_q(T_29)·δ_q(T_35)]` passes).
+
+**What this means.**
+
+The bare molecular braid $\sigma_1\sigma_2\sigma_3$ does *not*
+carry T_{3,5}-like content. The round-15 hypothesis that
+$T_{2,9}$ and $T_{3,5}$ enter via the (4) and (2,2) Wedderburn
+projections is wrong as stated.
+
+However, this is the BARE braid (no atomic dressing). The DRESSED
+molecular braid (with $T_1 = T^{\mathrm{dressed}}_{e_2 p_2}$
+having eigenvalues $(q^5, -q^{-5})$) has more content and could
+project differently. The dressing power $5 = 2k+1$ for K-shell
+hydrogen modifies the Wedderburn weights significantly.
+
+**Two possible refinements remain:**
+
+1. **Compute the DRESSED Wedderburn projection.** Replace
+   $\sigma_2$ in the molecular braid with the dressed form
+   $\sigma_2^{\mathrm{dressed}}$ (eigenvalues $q^5, -q^{-5}$).
+   The Wedderburn weights change. If the dressed (2,2)
+   component is nonzero, the hypothesis survives in revised
+   form.
+2. **Identify the correct force-carrier-carrying $\lambda$.**
+   The dominant components are $(3,1)$ and $(2,1,1)$ (transpose
+   of each other). These hook-shaped partitions might
+   correspond to a *different* knot operator alignment than
+   $T_{2,9}, T_{3,5}$ — possibly a Hopf-link-decorated 4-strand
+   structure that's the actual force-carrier projection in
+   the molecular setting.
+
+**Net round-17 status.** Concrete computation falsifies the
+specific round-15 hypothesis but produces:
+1. A working Wedderburn-decomposition witness for caching.
+2. A precise algebraic identity for $\alpha_{EM}$ as
+   $h^2/[q\,\delta_q(T_{2,9})\,\delta_q(T_{3,5})]$.
+3. Two refined hypotheses (dressed projection; alternative
+   $\lambda$ alignment) for next investigation.
+
+The conjecture remains open with the sharpest computational
+foothold yet established.
+
 This conjecture is left as a **highly-diagnosed open problem**
 with concrete next-step. After 13 rounds, no further candidate
 mechanisms tractable in a single investigation remain to be
