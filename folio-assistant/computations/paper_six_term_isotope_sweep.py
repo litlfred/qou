@@ -493,6 +493,133 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True)
     return E_0, rows
 
 
+# ── Per-derivation weights (no proton-fitting) ───────────────────────
+# Per docs/audits/2026-05-04-six-term-per-weight-derivation.md, the
+# six terms have DIFFERENT physical scales from the derivation:
+#   T1 (descended Markov):  E_0_β = 0.782 MeV per cat unit
+#       (`prop:categorical-mass-markov`; binding from |tr_free|−|tr_atom|)
+#   T2, T3 (brane tower):   α = m_e · 8G ≈ 3.7445 MeV per cat unit
+#       (`prop:atomic-braid-mass`, `prop:binding-scale-catalan`)
+#   T4 (Frobenius co-Casimir):  m_e ≈ 0.511 MeV per raw τ unit
+#       (T4 has m_e factor INSIDE; raw τ comes out in cat-unit-of-τ)
+#   T5 (chirality):  multiplicative (a_K − 1) on T1 with T1's weight
+#   T6 (cyclotomic tail):  already in MeV via Habiro residue witness
+#
+# The proton-fitted `run_sweep_for_mode` collapses all of T1+T2+T3+T4
+# to a single E_0 fit at A=1; this loses the per-term unit information
+# and propagates mass error quickly with A.  The derivation-fixed
+# assembly below uses the published constants instead.
+
+E_0_BETA_DECAY_MEV_DERIV = 0.78233341    # free-neutron β-decay Q
+M_E_MEV_DERIV            = 0.51099895    # CODATA electron rest mass
+ALPHA_BORROMEAN_MEV      = 3.74446989    # m_e · 8G  (`prop:binding-scale-catalan`)
+
+
+def assemble_per_derivation_weights(Z: int, N: int,
+                                      tower_mode: str = "li2q",
+                                      term5_mode: str = "multiplicative_on_t1") -> dict:
+    """Build atomic mass per the derivation-fixed weights (no proton fit).
+
+    For each isotope, evaluates both the bound (`include_inter=True`)
+    and free (`include_inter=False`) six-term decompositions and
+    differences them through the per-term physical scales:
+
+        B(Z, N) = E_0_β·(T1_free − T1_atom)               # binding from descended trace
+                + α·((T2+T3)_atom − (T2+T3)_free)        # brane tower contribution
+                + m_e·(T4_atom − T4_free)                 # Frobenius co-Casimir
+                + E_0_β·(a_K − 1)·T1_atom                 # chirality (mult on T1)
+                + (T6_atom − T6_free)                     # cyclotomic tail (MeV)
+        M_pred  = constituent − B
+
+    `constituent` = Z·m_p + N·m_n + Z·m_e (CODATA bare-particle masses).
+
+    Returns a dict with the per-term contributions in MeV plus
+    M_pred and the constituent baseline.
+    """
+    M_P_CODATA = 938.27208816
+    M_N_CODATA = 939.56542052
+    constituent = Z * M_P_CODATA + N * M_N_CODATA + Z * M_E_MEV_DERIV
+
+    A = Z + N
+    inter_flag = (A >= 2)
+
+    chir = chirality_signs_for_isotope_inferred(Z, N)
+
+    atom_terms = paper_six_term_mass(
+        Z, N, include_inter=inter_flag,
+        chirality_signs=chir, tower_mode=tower_mode,
+        term5_mode=term5_mode,
+    )
+    free_terms = paper_six_term_mass(
+        Z, N, include_inter=False,
+        chirality_signs=[],
+        tower_mode=tower_mode, term5_mode=term5_mode,
+    )
+
+    t1_a = atom_terms["term1_canonical_tr_M"]
+    t1_f = free_terms["term1_canonical_tr_M"]
+    t2_a = atom_terms["term2_single_gen_tower"]
+    t2_f = free_terms["term2_single_gen_tower"]
+    t3_a = atom_terms["term3_pair_gen_tower"]
+    t3_f = free_terms["term3_pair_gen_tower"]
+    # T4 is reported as `term4_frobenius_codim_raw` (raw τ, no m_e
+    # factor) and `term4_frobenius_codim_scaled` (with m_e_hecke=1
+    # factor; effectively same).  Use the raw and apply m_e in MeV
+    # ourselves.
+    t4_a = atom_terms["term4_frobenius_codim_raw"]
+    t4_f = free_terms["term4_frobenius_codim_raw"]
+    aK_a = atom_terms["term5_chirality_factor_a_K"]
+    t6_a = atom_terms["term6_cyclotomic_tail_MeV"]
+    t6_f = free_terms["term6_cyclotomic_tail_MeV"]
+
+    # Per-term binding contributions (each in MeV).
+    binding_T1  = E_0_BETA_DECAY_MEV_DERIV * (t1_f - t1_a)
+    binding_T23 = ALPHA_BORROMEAN_MEV * ((t2_a + t3_a) - (t2_f + t3_f))
+    binding_T4  = M_E_MEV_DERIV * (t4_a - t4_f)
+    binding_T5  = E_0_BETA_DECAY_MEV_DERIV * (aK_a - 1.0) * t1_a
+    binding_T6  = t6_a - t6_f
+
+    B_pred = (binding_T1 + binding_T23 + binding_T4
+              + binding_T5 + binding_T6)
+    M_pred = constituent - B_pred
+
+    return {
+        "Z": Z, "N": N, "A": A,
+        "constituent_MeV": constituent,
+        "binding_T1_MeV":  binding_T1,
+        "binding_T2T3_MeV": binding_T23,
+        "binding_T4_MeV":  binding_T4,
+        "binding_T5_MeV":  binding_T5,
+        "binding_T6_MeV":  binding_T6,
+        "B_pred_MeV":      B_pred,
+        "M_predicted_MeV": M_pred,
+        "tower_mode":      tower_mode,
+        "term5_mode":      term5_mode,
+        "weights_used": {
+            "E_0_beta_MeV": E_0_BETA_DECAY_MEV_DERIV,
+            "alpha_borromean_MeV": ALPHA_BORROMEAN_MEV,
+            "m_e_MeV": M_E_MEV_DERIV,
+        },
+    }
+
+
+def chirality_signs_for_isotope_inferred(Z: int, N: int) -> list[int]:
+    """Pattern keyed on (Z, N) instead of label string."""
+    if Z == 1 and N == 0: return []
+    if Z == 0 and N == 1: return []
+    if Z == 1 and N == 1: return [+1]
+    if Z == 1 and N == 2: return [+1, -1]
+    if Z == 2 and N == 1: return [+1, -1]
+    if Z == 2 and N == 2: return [+1, -1, +1, -1]
+    if Z == 3 and N == 2: return [+1, -1, +1, -1, +1]
+    if Z == 3 and N == 3: return [+1, -1, +1, -1, +1, -1]
+    if Z == 3 and N == 4: return [+1, -1, +1, -1, +1, -1, +1]
+    if Z == 4 and N == 3: return [+1, -1, +1, -1, +1, -1, +1]
+    if Z == 4 and N == 4: return [+1, -1, +1, -1, +1, -1, +1, -1]
+    if Z == 4 and N == 5: return [+1, -1, +1, -1, +1, -1, +1, -1, +1]
+    return []
+
+
 if __name__ == "__main__":
     print("PAPER 6-TERM FORMULA — five-mode comparison sweep")
     print("=" * 80)
