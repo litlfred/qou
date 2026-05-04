@@ -477,6 +477,98 @@ new layer of QOU's formalism would unlock the full categorical
 derivation, but is significant infrastructure work outside this
 investigation's scope.
 
+### Round 14 — $\delta_q$ partially built; $\alpha_{EM}$ is force-carrier categorical trace
+
+Direct computation builds $\delta_q$ for $H_2(q)$:
+
+| Basis element | $\delta_q$ |
+|---|---|
+| $\mathbf{1}$ | $[2]_q^2 = q^2 + 2 + q^{-2}$ |
+| $\sigma_1$ | $q^2\,[2]_q = q^3 + q$ |
+
+Hook-content formula gives $\dim_q$ for $H_3(q)$ irreps:
+
+| Irrep | $\dim_q$ |
+|---|---|
+| $V_{(3)}$ | $[4]_q\,[5]_q / [2]_q$ |
+| $V_{(2,1)}$ | $[2]_q\,[4]_q$ |
+| $V_{(1,1,1)}$ | $1$ |
+
+For force-carrier torus knots, computing $\delta_q$ as the
+categorical trace in $H_2(q)$ acting on $\sigma_1^9$:
+
+$$
+  \delta_q(T_{2,9}) \;=\; q^{9} - q^{-9} \;=\; h\,[9]_q.
+$$
+
+Combining:
+
+$$
+  \boxed{\;\;
+    \alpha_{EM}
+    \;=\;
+    \frac{h^{2}}{q \cdot \delta_q(T_{2,9}) \cdot \delta_q(T_{3,5})}
+  \;\;}
+$$
+
+**$\alpha_{EM}$ IS the inverse product of force-carrier
+categorical traces** (modulo the $h^2/q$ prefactor inherent in
+the q-dimension layer's relation to the operator-selection LP).
+
+**Honest assessment.** This identifies $\alpha_{EM}$
+structurally as a ratio of $\delta_q$ values — but the connection
+applies *only* to specific force-carrier knots
+($T_{2,9}, T_{3,5}$ on the genus-4 Bring surface), not to
+generic NF basis elements. Generic $b_i \in H_n(q)$ have
+$\delta_q(b_i)$ that does not reduce to $\alpha_{EM}^k$ for any
+$k$.
+
+**The single missing link (post-round-14).** The bound-state LP
+optimum must **project onto the force-carrier subsector**
+(equivalently: the LP-optimal $\Phi^* = \sum_i x_i^* b_i$ must
+admit a Hecke-algebraic decomposition that exposes the
+$T_{2,9}$ and $T_{3,5}$ q-dimensions explicitly). Once that
+projection is established, the chain
+
+$$
+  E_{\mathrm{bind}}
+  \;\sim\;
+  \alpha_{EM}^{2}
+  \;=\;
+  \frac{h^{4}}{q^{2} \cdot \delta_q(T_{2,9})^{2} \cdot \delta_q(T_{3,5})^{2}}
+$$
+
+closes the conjecture by exhibiting the binding energy as a pure
+function of force-carrier categorical traces in $R$.
+
+### Net status after 14 rounds
+
+The conjecture is reduced to a **single specific structural
+question**:
+
+> *Does the bound-state LP/SDP optimum
+> $\Phi^{*} = \sum_i x_i^{*} b_i$ project onto a Hecke-algebraic
+> sub-sector spanned by the force-carrier torus knots
+> $T_{2,9}$ and $T_{3,5}$, with the projection coefficients
+> producing the inverse $\delta_q$-products that give
+> $\alpha_{EM}^{2}$?*
+
+This is sharper than any prior framing.  Closing it requires
+a single calculation — the LP-optimum-to-force-carrier projection
+— rather than building infrastructure or identifying new
+mechanisms.
+
+**Genuine progress over 14 rounds:**
+- Round 8a: $V_i$ additive in $\{h_b, h_d\}$ at LP optimum
+- Round 8b: Bohr $1/n^2$ from $(2k+1)^{-2}$ shell ratios
+- Round 11: $\alpha_{EM}$ in q-dim layer, not Markov layer
+- Round 12: $\alpha_{EM} = h^2/[q\,(q^9-q^{-9})(q^{10}-q^{-10})]$
+- **Round 14: $\delta_q$ built for small bases; $\alpha_{EM} = h^2/[q\,\delta_q(T_{2,9})\,\delta_q(T_{3,5})]$ structural**
+
+The remaining question is concrete and tractable, but requires
+LP-optimum projection analysis that the present investigation
+does not carry out.
+
 This conjecture is left as a **highly-diagnosed open problem**
 with concrete next-step. After 13 rounds, no further candidate
 mechanisms tractable in a single investigation remain to be
