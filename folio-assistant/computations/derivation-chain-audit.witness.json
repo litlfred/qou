@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T02:23:22.978915+00:00",
-  "commitSha": "905c2d943a4a5c81cff6b4e54af0d5187f40497f",
+  "computedAt": "2026-05-04T17:08:10.251052+00:00",
+  "commitSha": "822601cef8a9293f98bdca6f5de370f3eb41747e",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1474,6 +1474,7 @@
         "deuteron-first-principles.witness.json",
         "deuteron-residual-probe.witness.json",
         "diagnose-4he-blowup.witness.json",
+        "dp-pole-probe.witness.json",
         "e0-calibration-audit.witness.json",
         "electron-chiral-probe.witness.json",
         "electron-proton-skein-weight.witness.json",
