@@ -28,7 +28,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as q0, Q_INV as qi0, HA
+from q_parameter import Q as q0, Q_INV as qi0, HA, q_int
 from hecke_wedderburn import (
     wedderburn_decompose, alpha_em_from_delta_q, force_carrier_channel,
     force_carrier_q_dim,
@@ -234,6 +234,122 @@ WITNESS["assertions"].append({
     "expected": True,
     "passed":   self_dual,
     "source":   "rem:bound-state-frobenius-self-dual-channel (round-18)",
+})
+
+# ──────────────────────────────────────────────────────────────────────
+# §6b — Closed-form characters (round-19 task 1)
+# ──────────────────────────────────────────────────────────────────────
+print("\n" + "=" * 70)
+print("§6b Closed-form q-monomial χ_λ(σ_1·σ_2·σ_3)")
+print("=" * 70)
+chi_4    = bare[(4,)]["chi_lambda"]
+chi_31_v = bare[(3, 1)]["chi_lambda"]
+chi_22_v = bare[(2, 2)]["chi_lambda"]
+chi_211_v= bare[(2, 1, 1)]["chi_lambda"]
+chi_1111 = bare[(1, 1, 1, 1)]["chi_lambda"]
+
+predictions = {
+    "(4)":       (chi_4,    q0**3,        "q^3"),
+    "(3,1)":     (chi_31_v, -q0,          "-q"),
+    "(2,2)":     (chi_22_v, 0.0,          "0"),
+    "(2,1,1)":   (chi_211_v, qi0,         "q^-1"),
+    "(1,1,1,1)": (chi_1111, -qi0**3,      "-q^-3"),
+}
+print(f"\n{'λ':<10} {'χ_λ':>14} {'predicted':>14} {'closed-form':>14} {'match':>8}")
+all_match = True
+for lam_str, (got, pred, formula) in predictions.items():
+    ok = abs(got - pred) < 1e-9
+    print(f"  {lam_str:<8} {got:>+14.10f} {pred:>+14.10f} {formula:>14} {'✓' if ok else '✗':>8}")
+    all_match = all_match and ok
+WITNESS["data"]["closed_form_characters"] = {
+    "chi_4_eq_q3":          abs(chi_4 - q0**3) < 1e-9,
+    "chi_31_eq_neg_q":      abs(chi_31_v - (-q0)) < 1e-9,
+    "chi_22_eq_zero":       abs(chi_22_v) < 1e-9,
+    "chi_211_eq_q_inv":     abs(chi_211_v - qi0) < 1e-9,
+    "chi_1111_eq_neg_qm3":  abs(chi_1111 - (-qi0**3)) < 1e-9,
+    "all_match":            all_match,
+    "reference":            "round-19 task 1 finding",
+}
+WITNESS["assertions"].append({
+    "name": "All χ_λ(σ_1σ_2σ_3) are clean q-monomials (q^3, -q, 0, q^-1, -q^-3)",
+    "computed": all_match,
+    "expected": True,
+    "passed":   all_match,
+    "source":   "round-19 task 1 (closed-form)",
+})
+
+# ──────────────────────────────────────────────────────────────────────
+# §6c — Dressed projection (round-19 task 2)
+# ──────────────────────────────────────────────────────────────────────
+print("\n" + "=" * 70)
+print("§6c Dressed H_2 molecular braid (T_dr = α·σ_2 + β·1, K-shell q^5)")
+print("=" * 70)
+alpha_dr = (q0**5 + qi0**5) / (q0 + qi0)
+beta_dr  = q0**5 - alpha_dr * q0
+dec_no_mid = wedderburn_decompose([1, 3], 4)
+dressed_chars = {}
+print(f"  α = (q^5+q^-5)/(q+q^-1) = {alpha_dr:.6f}")
+print(f"  β = q^5 - α·q           = {beta_dr:.6f}")
+print()
+print(f"{'λ':<14} {'χ_bare':>10} {'χ_no_mid':>10} {'χ_dressed':>11} {'w·χ/f bare':>11} {'w·χ/f dressed':>14}")
+total_dressed = 0.0
+H4_dressed = {}
+for lam in bare:
+    chi_b = bare[lam]['chi_lambda']
+    chi_nm = dec_no_mid[lam]['chi_lambda']
+    chi_dr = alpha_dr * chi_b + beta_dr * chi_nm
+    dressed_chars[lam] = chi_dr
+    w = bare[lam]['w_lambda']
+    f = bare[lam]['f_lambda']
+    c_bare = w * chi_b / f
+    c_dr = w * chi_dr / f
+    total_dressed += c_dr
+    H4_dressed[lam] = {
+        "chi_bare":     float(chi_b),
+        "chi_no_middle":float(chi_nm),
+        "chi_dressed":  float(chi_dr),
+        "w_lambda":     float(w),
+        "f_lambda":     int(f),
+        "trM_bare":     float(c_bare),
+        "trM_dressed":  float(c_dr),
+    }
+    print(f"  {str(lam):<12} {chi_b:>+10.4f} {chi_nm:>+10.4f} {chi_dr:>+11.4f} {c_bare:>+11.4f} {c_dr:>+14.4f}")
+
+force_carrier_dressed = H4_dressed[(3, 1)]["trM_dressed"] + H4_dressed[(2, 1, 1)]["trM_dressed"]
+force_carrier_bare = H4_dressed[(3, 1)]["trM_bare"] + H4_dressed[(2, 1, 1)]["trM_bare"]
+amplification = force_carrier_dressed / force_carrier_bare if abs(force_carrier_bare) > 1e-12 else 0.0
+q5_q = float(q_int(5))
+print()
+print(f"  Total tr_M(σ_1·T_dr·σ_3) = {total_dressed:>+10.6f}")
+print(f"  Force-carrier (3,1)+(2,1,1) bare    = {force_carrier_bare:>+10.6f}")
+print(f"  Force-carrier (3,1)+(2,1,1) dressed = {force_carrier_dressed:>+10.6f}")
+print(f"  Amplification ratio                 = {amplification:>10.4f}")
+print(f"  Compare [5]_q at q_0                = {q5_q:>10.4f}  (close: {abs(amplification - q5_q)/q5_q < 0.05})")
+
+WITNESS["data"]["dressed_braid"] = {
+    "alpha_dr": float(alpha_dr),
+    "beta_dr":  float(beta_dr),
+    "per_lambda": {str(k): v for k, v in H4_dressed.items()},
+    "total_trM_dressed": float(total_dressed),
+    "force_carrier_bare":    float(force_carrier_bare),
+    "force_carrier_dressed": float(force_carrier_dressed),
+    "amplification_ratio":   float(amplification),
+    "q_5_at_q0":             float(q5_q),
+    "reference": "round-19 task 2 (dressed Wedderburn)",
+}
+WITNESS["assertions"].append({
+    "name": "Force-carrier (3,1)+(2,1,1) amplifies by ≈ [5]_q under K-shell dressing",
+    "computed": abs(amplification - q5_q)/q5_q < 0.05,
+    "expected": True,
+    "passed":   abs(amplification - q5_q)/q5_q < 0.05,
+    "source":   "round-19 task 2 (dressed projection)",
+})
+WITNESS["assertions"].append({
+    "name": "Dressing UNZEROES λ=(2,2) channel (selection-rule break)",
+    "computed": abs(H4_dressed[(2,2)]["trM_dressed"]) > 1e-3,
+    "expected": True,
+    "passed":   abs(H4_dressed[(2,2)]["trM_dressed"]) > 1e-3,
+    "source":   "round-19 task 2 (dressed projection)",
 })
 
 # ──────────────────────────────────────────────────────────────────────
