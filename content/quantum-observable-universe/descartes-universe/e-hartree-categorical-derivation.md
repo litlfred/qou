@@ -1,4 +1,4 @@
-### Status update: open after seven rounds of investigation
+### Status update: open after thirteen rounds of investigation
 
 This conjecture remains **open**. Five rounds of investigation
 ruled out parity-based mechanisms (rounds 1–3), confirmed the

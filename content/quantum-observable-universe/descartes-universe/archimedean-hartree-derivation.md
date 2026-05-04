@@ -181,7 +181,7 @@ yielded the following:
   electron systems also at $\alpha^2$ but only one EM coupling).
 
 **Implication for this proposition:** the $\alpha^2$ factor in
-$\rho_\infty(\Phi_1) = \Phi_1 \cdot E_{\mathrm{Hartree}} \cdot \cdot$
+$\rho_\infty(\Phi_1) = \Phi_1 \cdot E_{\mathrm{Hartree}} \cdot (q+q^{-1})^{-2}$
 is partially supported (covalent case via 4d, shell-spacing via
 4b) but the **absolute scale** — the appearance of $m_e c^2$ as
 the universal mass-energy unit — is not derived from Hecke
@@ -204,7 +204,23 @@ $h_b/h_d$ decomposition, covalent-bond rank-2 scaling) and
 **partially transported** (universal $m_e c^2$ unit, atomic
 $\alpha^2$ scaling).
 
-### Round 9 — sharpened 4d: bound state ⟺ Hopf link ⟺ 2 crossings
+### Round 9 — sharpened 4d: bound state ⟺ Hopf link ⟺ 2 crossings (WITHDRAWN in round 10)
+
+> ### ⚠ Round 9 withdrawn
+>
+> The Hopf-link → 2-crossings → $\alpha^2$ argument presented
+> below was **refuted in Round 10** (see
+> [`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation)
+> "Round 10 — LP-cost factorization REFUTED"). Direct computation
+> gives $\mathrm{tr}_M(\sigma_1^2) = h\,z + 1 \approx 1.10$ at
+> $q_0$ — i.e. $O(1)$, not $O(\alpha^2)$. The Hopf-link Hecke
+> generators carry Markov weight $z$, not $\alpha_{EM}$, so the
+> "each crossing → 1 $\alpha$ factor" mapping fails.
+>
+> The Round-9 argument is preserved here as an **investigation
+> record**, not as an active closure route. Skip to Round 10
+> (in the conjecture .md) for the refutation and to Round 11 for
+> the q-dimension layer insight that supersedes it.
 
 A unifying mechanism for *both* atomic and covalent
 $\alpha^2$ scaling: **every bound state in QOU is a Hopf-linked

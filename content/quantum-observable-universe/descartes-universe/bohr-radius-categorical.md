@@ -34,12 +34,17 @@ $$
 >
 > Specifically, a direct computational test
 > ([`folio-assistant/computations/h2-molecular-binding.py`](folio-assistant/computations/h2-molecular-binding.py))
-> shows that per-generator transfer-matrix updates are
-> *multiplicative*: intra-atomic (dressed/kinetic-like) and
-> inter-atomic (bare/Coulomb-like) crossing contributions get
-> mixed nonlinearly within each $V_i$ and **cannot be additively
-> decomposed** at the per-generator level in the current
-> formalism.
+> shows that per-generator transfer-matrix updates are in general
+> *multiplicative*, mixing intra-atomic (dressed/kinetic-like) and
+> inter-atomic (bare/Coulomb-like) crossing contributions
+> nonlinearly within each $V_i$.  Round-8 below finds that the
+> cross-terms $h_b \cdot h_d$ happen to **cancel for the optimal
+> ordering** $[p_1, e_2, e_1, p_2]$ of $H_2$, leaving an additive
+> $\{h_b, h_d\}$ decomposition there; but this cancellation is
+> permutation-specific and does not give a uniform
+> Hecke-algebraic definition of $\Phi_1^{\mathrm{kin}}$ vs
+> $\Phi_1^{\mathrm{Coul}}$ that holds for arbitrary molecular
+> braids.
 >
 > The proposition is recorded with this caveat — not as a closed
 > theorem — to preserve the structural mapping between QOU and

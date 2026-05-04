@@ -3,19 +3,25 @@ import { conjecture } from "../../schema/builders";
 /**
  * Conjecture: the Hartree-energy scaling
  * $E_h = m_e c_q^2 \alpha_{EM}^2$ used as input in the molecular
- * binding LP/SDP framework should arise as the leading non-trivial
- * coefficient of the LP-dual variable $y_{\mathrm{cov}}$ expanded
- * in powers of $\alpha_{EM}$, with the $J^1$ (linear-in-$\alpha$)
- * contribution vanishing by a categorical-symmetry argument that
- * is currently *open*.
+ * binding LP/SDP framework should arise from QOU/Hecke structure
+ * rather than being an empirical conversion factor.
  *
- * Three candidate mechanisms are surveyed in the .md (Pauli /
- * 2-electron combinatorial counting; Frobenius LP quadratic-form;
- * antipode invariance of the Markov trace), each with an explicit
- * gap. The most promising route — the $q \mapsto -q^{-1}$
- * substrate involution, which *does* flip the sign of
- * $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q)$ — is identified as the
- * recommended next step.
+ * Status after a 13-round investigation (recorded in the .md):
+ * coupling-level parity arguments are doomed by the Skein identity
+ * (no automorphism of R flips the sign of α_EM — using
+ * $[n]_{-q^{-1}} = (-1)^{n+1}[n]_q$, the sign factors cancel and
+ * α_EM rescales by a power of q under every obvious involution),
+ * the brief's "expand y_cov in α_EM" framing was a category error
+ * (y_cov is dimensionless, no α dependence), and the Hopf-link
+ * rank-2 → α² mechanism is refuted (round 10).
+ *
+ * Genuine Hecke wins preserved: additive {h_b, h_d} decomposition
+ * of V_i at LP optimum (round 8a); Bohr 1/n² shell spacing from
+ * (2k+1)^-2 (8b); α_EM lives in q-dimension layer not Markov layer
+ * (round 11); α_EM = h²/[q·(q^9-q^-9)(q^10-q^-10)] explicit (12).
+ *
+ * Single tractable closure path identified: q-dimension decoration
+ * δ_q : NF basis → R, dual to GB filtration / jet expansion.
  *
  * Honest open-problem block: no closure claimed, no numerology,
  * coefficient $c_2$ conjecturally inside
