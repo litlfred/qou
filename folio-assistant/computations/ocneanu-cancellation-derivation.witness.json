@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-05T01:40:46.180452+00:00",
-  "commitSha": "7919c654f6e124d4f8c106640e26d2e7382e2c3e",
+  "computedAt": "2026-05-05T01:46:00.629878+00:00",
+  "commitSha": "9b84828cc37b50bfe314d354958a3f0926ad24e3",
   "assertions": [
     {
       "name": "symbolic χ^(2,1)(proton) matches numerical hecke_characters",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 2540,
+  "durationMs": 2543,
   "computation": "ocneanu-cancellation-derivation",
   "scriptFile": "ocneanu_cancellation_derivation.py",
   "scriptHash": "9372633f5487",
-  "scriptCommitSha": "7919c654f6e124d4f8c106640e26d2e7382e2c3e",
+  "scriptCommitSha": "9b84828cc37b50bfe314d354958a3f0926ad24e3",
   "description": "Round-1 SCAFFOLD: symbolic-q Hoefsmit attempt at first-principles derivation of the cancellation count via Σ_λ w_λ χ^λ(β) / f^λ. The 2×2-block Hoefsmit construction has known convention/sign issues (cross-validated against numerical: χ^(2,1)(proton) sym=2.515 vs num=1.808). High-precision numerical pole detection in docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md is the canonical verification path until the symbolic 2×2 convention is repaired.",
   "contentBlock": "conj:e-hartree-categorical-derivation",
   "data": {
