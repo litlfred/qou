@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T22:42:33.705322+00:00",
-  "commitSha": "58e78090e3465688056a6c09eae8c76bf20054f8",
+  "computedAt": "2026-05-05T22:47:38.561691+00:00",
+  "commitSha": "26851cb63e403980fdc6d3f1fcb1864d2594e676",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1603,6 +1603,7 @@
         "markov-peel-atomic-tr-m.witness.json",
         "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
+        "markov-trace-atomic-proton-full.witness.json",
         "markov-trace-axiomatic-proton.witness.json",
         "markov-weight-verification.witness.json",
         "mass-at-3A-proper.witness.json",
