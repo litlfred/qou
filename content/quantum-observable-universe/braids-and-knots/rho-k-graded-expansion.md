@@ -77,27 +77,40 @@ $$
   \alpha \cdot z^2 \cdot \sum_{i<j} \ln\bigl|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}\bigr|_{\mathrm{Wedderburn}}.
 $$
 
-**Open challenge** (`rho-k-pair-gen-extension.witness.json`):
-the **naive log-additive** version $\sum \ln|V_i V_j|$ collapses to
-$(n - 1) \cdot \sum \ln|V_i|$ — a pure rescaling that **degrades
-accuracy** from $0.25\%$ to $9\%$ mean error across $Z = 1..20$.
-The correct pair-coupling structure is the Wedderburn-decomposed
-inner product
+**Pair-coupling structure** (`wedderburn_pair_volumes.py`):
+the Wedderburn-decomposed inner product
 
 $$
   \bigl|\hat V_i \hat V_j\bigr|_{\mathrm{Wedderburn}}
   \;=\;
   w_{\mathrm{sym}}\, \lambda_i^{\mathrm{sym}} \lambda_j^{\mathrm{sym}}
-  + w_{\mathrm{std}}\, \mathrm{tr}(M_i M_j)_{2,2}
+  + w_{\mathrm{std}}\, \bigl[\,z\,(M_i M_j)_{1,2} + (M_i M_j)_{2,2}\bigr]
   + w_{\mathrm{alt}}\, \lambda_i^{\mathrm{alt}} \lambda_j^{\mathrm{alt}},
 $$
 
-where $w_\bullet$ are the Wedderburn-Markov weights from
-[Wedderburn mass](#thm:wedderburn-mass-formula). Implementing this
-requires extending [hecke_core](../../folio-assistant/computations/hecke_core.py)
-with `atom_per_generator_pair_volumes(Z, N)` returning the
-Wedderburn-coupled $|\hat V_i \hat V_j|_{\mathrm{Wedderburn}}$ for
-each pair.
+where $M_i$ is the per-generator $2 \times 2$ standard-rep transfer
+matrix and $w_\bullet$ are the Wedderburn-Markov weights from
+[Wedderburn mass](#thm:wedderburn-mass-formula). The std-channel
+pair coupling uses the Markov-traced $2 \times 2$ matrix product
+$M_i M_j$ — genuinely capturing braid non-commutativity — rather
+than the naive $V_i^{\mathrm{std}} \cdot V_j^{\mathrm{std}}$.
+
+**Empirical findings** (probes on $Z = 1..20$):
+
+| Probe | Mean \|err\| | Max \|err\| | Witness |
+|:---|---:|---:|:---|
+| Single-gen only ($\alpha \sum \ln\|V_i\|$) | $0.25\%$ | $0.35\%$ | `atomic-braid-mass-paper-formula` |
+| + naive log-additive pair $\Sigma \ln\|V_i V_j\|$ | $9.0\%$ | $17.9\%$ | `rho-k-pair-gen-extension` |
+| + Wedderburn-coupled pair $\Sigma \ln\|V_i V_j\|_{\mathrm{Wedd}}$ | $4.7\%$ | $8.9\%$ | `rho-k-pair-gen-v2-wedderburn` |
+
+Both pair extensions **degrade accuracy** under the simple $\alpha z^2$
+log-formula — even with the correct Wedderburn coupling. The
+remaining gap is the **functional form**: $T_3$ in the six-term
+theorem is $-z^2 \sum \mathrm{Li}_2^q(-|V_i V_j|)$, not
+$\alpha z^2 \sum \ln |V_i V_j|$. The Kashaev-limit derivation that
+gave $\alpha \sum \ln|V_i|$ for the single-gen piece (matching
+$T_2$) needs a parallel derivation for the pair piece that
+produces the correct functional form and prefactor — open work.
 
 ## Identification with the six-term theorem
 

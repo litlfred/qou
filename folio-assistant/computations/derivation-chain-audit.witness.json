@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T17:47:19.657342+00:00",
-  "commitSha": "4db16b9623ddba03cce58d0af8a5a1fd5333ddd6",
+  "computedAt": "2026-05-05T17:53:51.339737+00:00",
+  "commitSha": "076d6d88e16f1932eb731cc145f5bfd1dde8bd84",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1734,6 +1734,7 @@
         "rho-k-codata-vs-six-term.witness.json",
         "rho-k-markov-multiplicativity.witness.json",
         "rho-k-pair-gen-extension.witness.json",
+        "rho-k-pair-gen-v2-wedderburn.witness.json",
         "rho-k-scaling-structure.witness.json",
         "rho-z-n-scan.witness.json",
         "ribbon-content-average.witness.json",
