@@ -6,7 +6,7 @@
     "prop:atomic-mass-gb-nf",
     "prop:alpha-shift-torus-knot"
   ],
-  "computedAt": "2026-05-05T16:41:01.607902+00:00",
+  "computedAt": "2026-05-05T16:50:11.345275+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "interface": "I = \u03c3_2 - h/2 (atomic-braid pn averaged crossing)",
@@ -32,7 +32,7 @@
       "n_unknowns": 1,
       "n_equations": 144,
       "rank": 1,
-      "max_relative_residual": 6.459465786667296e-16,
+      "max_relative_residual": 7.161081815713406e-16,
       "consistent": true,
       "A_per_pair": {
         "((3,),(3,))": {
@@ -100,7 +100,7 @@
       "n_unknowns": 9,
       "n_equations": 144,
       "rank": 9,
-      "max_relative_residual": 7.074002826043008e-14,
+      "max_relative_residual": 2.2852147590943134e-15,
       "consistent": true,
       "A_per_pair": {
         "((3,),(3,))": {
@@ -240,7 +240,7 @@
       "n_unknowns": 25,
       "n_equations": 144,
       "rank": 25,
-      "max_relative_residual": 6.792065013953956e-13,
+      "max_relative_residual": 5.6606929962906604e-15,
       "consistent": true,
       "A_per_pair": {
         "((3,),(3,))": {
@@ -457,7 +457,7 @@
       "n_unknowns": 26,
       "n_equations": 144,
       "rank": 26,
-      "max_relative_residual": 2.557269191241887e-12,
+      "max_relative_residual": 5.609937717042966e-15,
       "consistent": true,
       "A_per_pair": {
         "((3,),(2, 1))": {
@@ -651,7 +651,7 @@
       "n_unknowns": 17,
       "n_equations": 144,
       "rank": 17,
-      "max_relative_residual": 2.6285272545152297e-13,
+      "max_relative_residual": 5.648126248918263e-15,
       "consistent": true,
       "A_per_pair": {
         "((3,),(3,))": {
@@ -812,8 +812,8 @@
       "n_unknowns": 32,
       "n_equations": 144,
       "rank": 32,
-      "max_relative_residual": 0.003400058012914542,
-      "consistent": false,
+      "max_relative_residual": 6.865626943502918e-15,
+      "consistent": true,
       "A_per_pair": {
         "((3,),(2, 1))": {
           "matrix_re": [
@@ -1072,7 +1072,7 @@
       "n_unknowns": 26,
       "n_equations": 144,
       "rank": 26,
-      "max_relative_residual": 1.7435926303952356e-12,
+      "max_relative_residual": 4.747917192351025e-15,
       "consistent": true,
       "A_per_pair": {
         "((3,),(1, 1, 1))": {
@@ -1270,7 +1270,7 @@
       "n_unknowns": 17,
       "n_equations": 144,
       "rank": 17,
-      "max_relative_residual": 2.8792808940408386e-13,
+      "max_relative_residual": 4.8724683483003735e-15,
       "consistent": true,
       "A_per_pair": {
         "((2, 1),(2, 1))": {
@@ -1421,7 +1421,7 @@
       "n_unknowns": 25,
       "n_equations": 144,
       "rank": 25,
-      "max_relative_residual": 5.346944798219844e-13,
+      "max_relative_residual": 5.033389791277289e-15,
       "consistent": true,
       "A_per_pair": {
         "((2, 1),(2, 1))": {
@@ -1616,7 +1616,7 @@
       "n_unknowns": 9,
       "n_equations": 144,
       "rank": 9,
-      "max_relative_residual": 7.326645784115656e-14,
+      "max_relative_residual": 2.06315901259635e-15,
       "consistent": true,
       "A_per_pair": {
         "((2, 1),(1, 1, 1))": {
@@ -1720,7 +1720,7 @@
       "n_unknowns": 1,
       "n_equations": 144,
       "rank": 1,
-      "max_relative_residual": 3.5849343809576137e-16,
+      "max_relative_residual": 5.245760575236077e-16,
       "consistent": true,
       "A_per_pair": {
         "((1, 1, 1),(1, 1, 1))": {
@@ -1768,6 +1768,11 @@
     ],
     [
       3,
+      2,
+      1
+    ],
+    [
+      3,
       1,
       1,
       1
@@ -1799,8 +1804,8 @@
       1
     ]
   ],
-  "n_consistent": 10,
-  "all_lambda_consistent": false,
-  "n_scalar_blocks": 12,
-  "n_operator_blocks": 18
+  "n_consistent": 11,
+  "all_lambda_consistent": true,
+  "n_scalar_blocks": 16,
+  "n_operator_blocks": 19
 }

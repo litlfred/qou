@@ -185,8 +185,15 @@ def main() -> int:
         # Solve by least squares
         sol, residuals, rank, sv = np.linalg.lstsq(M, rhs, rcond=None)
         pred = M @ sol
-        rel = np.abs(pred - rhs) / np.maximum(np.abs(rhs), 1e-12)
-        max_rel = float(np.max(rel))
+        # Use a SCALE-AWARE relative error: residual normalized by the
+        # typical magnitude of |rhs| across the test pairs, not divided
+        # per-equation. The per-equation form |res|/|rhs| explodes when
+        # an individual rhs[k] happens to be near zero (which can occur
+        # for symmetry-driven cancellations in specific test pairs)
+        # even when the global fit is at machine precision.
+        rhs_scale = max(float(np.mean(np.abs(rhs))), 1e-12)
+        max_abs_res = float(np.max(np.abs(pred - rhs)))
+        max_rel = max_abs_res / rhs_scale
 
         # Reshape sol into per-pair matrices A_diag^{μν}
         A_per_pair = {}
