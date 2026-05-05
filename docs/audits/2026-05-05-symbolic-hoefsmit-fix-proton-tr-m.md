@@ -214,11 +214,21 @@ into the six-term mass formula.
 - **Closed-form Jones–Markov weights $y_\lambda(q)$ (round-3)**:
   derived in two equivalent ways — ladder linear system at $H_3$
   and Wenzl Schur principal specialisation for any $n$. Symbolic
-  $\mathrm{tr}_M(\text{proton}) = 1.06530622859239\ldots$ at $q_0$
-  matches `markov_peel` to 14 decimal places. The
-  partition-sum normalisation $w_\lambda/f^\lambda$ used in
-  round-1/2 is NOT the canonical Markov weight; it agrees only
+  $\mathrm{tr}_M$ at $q_0$ now matches the canonical bridge for:
+  - **proton** to 14 decimal places (using closed-form $y_\lambda$
+    from the linear system + symbolic $\chi^\lambda$);
+  - **deuteron** to $3.3 \times 10^{-16}$ (machine precision)
+    using the canonical 23-crossing braid
+    (`include_inter=True`) with bridge $y_\lambda$ for $n = 6$ and
+    symbolic $\chi^\lambda$ from `chi_lambda_symbolic`.
+  The partition-sum normalisation $w_\lambda/f^\lambda$ used in
+  round-1/2 is NOT the canonical Markov weight; the two agree only
   at $q = 1$.
+- **Deuteron braid convention**: the canonical $A = 2$ word includes
+  one inter-nucleon crossing (gen $\sigma_2$), giving 23 crossings
+  total. The 22-crossing form (`include_inter=False`) corresponds
+  to two non-interacting nucleons in $H_6$ — useful for additivity
+  audits but not the physical deuteron.
 
 ## Files
 
