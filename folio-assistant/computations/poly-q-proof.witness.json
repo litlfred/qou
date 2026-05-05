@@ -6,15 +6,15 @@
     "prop:rho-k-graded-expansion",
     "prop:hecke-branching-trace-decomposition"
   ],
-  "computedAt": "2026-05-05T21:56:07.105388+00:00",
+  "computedAt": "2026-05-05T22:14:52.420374+00:00",
   "claimed_polynomial": "q^20 + q^18 + 2*q^12 - 2*q^8 - q^2 - 1",
   "claimed_denominator": "12 * q^10",
   "numerical_verification": [
     {
       "q": 1.05,
-      "tr_M_numeric": 1.6342972686323147,
+      "tr_M_numeric": 1.6342972686323145,
       "tr_M_pr546_closed_form": 0.18387820817341327,
-      "rel_diff": 7.887933403674618
+      "rel_diff": 7.887933403674615
     },
     {
       "q": 1.1,
@@ -30,9 +30,9 @@
     },
     {
       "q": 1.15,
-      "tr_M_numeric": 1.631993435498282,
+      "tr_M_numeric": 1.6319934354982817,
       "tr_M_pr546_closed_form": 0.6386005653071135,
-      "rel_diff": 1.5555778121076818
+      "rel_diff": 1.5555778121076815
     },
     {
       "q": 1.2,
@@ -48,12 +48,12 @@
     },
     {
       "q": 2.0,
-      "tr_M_numeric": 1.5734493487479302,
+      "tr_M_numeric": 1.57344934874793,
       "tr_M_pr546_closed_form": 107.291259765625,
       "rel_diff": 0.9853347854039082
     }
   ],
-  "max_relative_diff_across_q": 7.887933403674618,
+  "max_relative_diff_across_q": 7.887933403674615,
   "anti_self_reciprocal_proved": true,
   "pole_order_at_zero": 10,
   "leading_coefficient_at_zero": "-1/12",

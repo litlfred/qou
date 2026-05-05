@@ -1,7 +1,7 @@
 {
   "computation": "path-b-habiro-mass-probe",
   "description": "Probe of Path B from docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md: predict atomic mass via the Habiro expansion sum_m a_m(T_w; q_0) (q_0;q_0)_m \u2014 using a single-prefactor binding model alpha_M * |tr_M| calibrated from deuteron.  Tests whether the Markov trace via Habiro gives sensible binding without the Phi_q brane-tower specialisation that produces the -737 MeV isospin pathology.",
-  "computedAt": "2026-05-03T22:15:07.601194+00:00",
+  "computedAt": "2026-05-05T22:14:48.605139+00:00",
   "alpha_M_MeV": 12.53728692512135,
   "calibrated_from": "deuteron binding",
   "rows": [
@@ -54,7 +54,7 @@
           "m": 6,
           "a_m_at_u0": 17534.772322013436,
           "u_u_m": 2.5366282677196877e-05,
-          "contribution": 0.4447919914004807
+          "contribution": 0.44479199140048065
         },
         {
           "m": 7,
@@ -66,7 +66,7 @@
           "m": 8,
           "a_m_at_u0": 468.4001617584037,
           "u_u_m": 5.7913602857441455e-06,
-          "contribution": 0.002712674094643753
+          "contribution": 0.0027126740946437533
         },
         {
           "m": 9,
@@ -123,7 +123,7 @@
           "m": 5,
           "a_m_at_u0": -8552.914025266418,
           "u_u_m": -6.90141549060518e-05,
-          "contribution": 0.5902721334378797
+          "contribution": 0.5902721334378795
         },
         {
           "m": 6,
@@ -180,13 +180,13 @@
           "m": 3,
           "a_m_at_u0": -3732295.1713818926,
           "u_u_m": -0.0009978935579287116,
-          "contribution": 3724.4333078104273
+          "contribution": 3724.433307810427
         },
         {
           "m": 4,
           "a_m_at_u0": 17502760.99560633,
           "u_u_m": 0.00023156367747635998,
-          "contribution": 4053.0037021323974
+          "contribution": 4053.003702132397
         },
         {
           "m": 5,
@@ -216,7 +216,7 @@
           "m": 9,
           "a_m_at_u0": -22003714.056031246,
           "u_u_m": -3.470458980721017e-06,
-          "contribution": 76.36298705497092
+          "contribution": 76.3629870549709
         },
         {
           "m": 10,
@@ -273,7 +273,7 @@
           "m": 2,
           "a_m_at_u0": 99939698.35295059,
           "u_u_m": 0.005889927565200622,
-          "contribution": 588637.5841868789
+          "contribution": 588637.584186879
         },
         {
           "m": 3,
@@ -315,19 +315,19 @@
           "m": 9,
           "a_m_at_u0": -750045424137.0736,
           "u_u_m": -3.470458980721017e-06,
-          "contribution": 2603001.8781452114
+          "contribution": 2603001.878145211
         },
         {
           "m": 10,
           "a_m_at_u0": 579538370924.0236,
           "u_u_m": 2.3769024123995792e-06,
-          "contribution": 1377506.151927434
+          "contribution": 1377506.1519274337
         },
         {
           "m": 11,
           "a_m_at_u0": -316179548431.6153,
           "u_u_m": -1.8424099091396937e-06,
-          "contribution": 582532.3330977217
+          "contribution": 582532.3330977218
         },
         {
           "m": 12,
@@ -351,7 +351,7 @@
           "m": 15,
           "a_m_at_u0": -478098152.06024975,
           "u_u_m": -1.9868738664353943e-06,
-          "contribution": 949.9207239195654
+          "contribution": 949.9207239195655
         },
         {
           "m": 16,
@@ -408,7 +408,7 @@
           "m": 3,
           "a_m_at_u0": -2049232071.2103772,
           "u_u_m": -0.0009978935579287116,
-          "contribution": 2044915.4825617461
+          "contribution": 2044915.4825617464
         },
         {
           "m": 4,
@@ -462,7 +462,7 @@
           "m": 12,
           "a_m_at_u0": 391306238625.0599,
           "u_u_m": 1.603261705856328e-06,
-          "contribution": 627366.3076502369
+          "contribution": 627366.3076502368
         },
         {
           "m": 13,
@@ -480,7 +480,7 @@
           "m": 15,
           "a_m_at_u0": -2704130349.906775,
           "u_u_m": -1.9868738664353943e-06,
-          "contribution": 5372.7659236645695
+          "contribution": 5372.765923664569
         },
         {
           "m": 16,
@@ -492,13 +492,13 @@
           "m": 17,
           "a_m_at_u0": -5493503.721898899,
           "u_u_m": -3.699218981438266e-06,
-          "contribution": 20.321673242650167
+          "contribution": 20.32167324265017
         },
         {
           "m": 18,
           "a_m_at_u0": 50125.9527973878,
           "u_u_m": 5.761877636986403e-06,
-          "contribution": 0.2888196064559048
+          "contribution": 0.28881960645590476
         },
         {
           "m": 19,
