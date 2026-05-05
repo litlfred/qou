@@ -537,6 +537,59 @@ suffices.  Generalising to compound braids built from heavier
 nuclei (clustering, halo-nucleon couplings) may require richer α
 tables.
 
+### Cross-validation: `copilot/identify-multiplicative-chain` branch
+
+While this branch was preparing the two-component theorem, the
+`copilot/identify-multiplicative-chain` branch (almost-in-main as
+of 2026-05-04) **independently derived `α_shift(T_(p,k)) = k(p-1)`**
+for torus-knot interfaces, with maximizer at the column partition
+V_(1^p).  Their files:
+
+- [`alpha_shift_torus.py`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/folio-assistant/computations/alpha_shift_torus.py) —
+  symbolic seminormal computation of `α_shift(T_(p,k))` for torus
+  knots, verified at (p, k) ∈ {(2, 3), (2, 5), (2, 9), (3, 4),
+  (3, 5), (3, 7)}.
+- [`nh_basis_shift.py`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/folio-assistant/computations/nh_basis_shift.py) —
+  per-NF-letter shift accounting for NH_n basis braids; verifies
+  `shift_full(T_w) = length(w) − gb_reduction_count(T_w)` for every
+  w ∈ S_n at n = 2, 3, 4, 5 (153 basis braids).
+- [`conj:confinement-nf-structure-forcing`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/content/quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.md) —
+  the formal conjecture that under LP confinement (active set size
+  < n!), the Wedderburn-maximizer partition lies in the LP active
+  set and the shift deviation `Δ(β_1, β_2; A)` is bounded by the
+  LP `duality_gap`.  Verified at 6 compounds with `duality_gap = 0`
+  in every case.
+
+**Consistency with the canonical (p, n) interface.**  The
+α(I) = 1 for the simplest averaged inter-nucleon interface here is
+the special case `α_shift(T_(2, 1)) = 1·(2 − 1) = 1` — the
+single-crossing unknot at the lowest torus index.  More generally,
+torus-knot interfaces in heavier nuclei should follow
+`α(I) = k(p − 1)` where (p, k) characterises the inter-nucleon
+torus-knot operator.  This connects directly to the AXKIA branch's
+`α_EM = 1/(q · [9]_q · [10]_q)` derivation (T_(2, 9) and T_(3, 5)
+giving `[9]_q` and `[10]_q` via `α_shift = k(p−1) = 9` and `10`).
+
+**Implication for our deficit count Δ = Δ_within + Δ_cross.**  The
+`confinement-nf-structure-forcing` conjecture gives a sharper
+formula:
+> shift_NF(β) = α_shift(I) + Δ(β_1, β_2; A), |Δ| ≤ duality_gap(β)
+
+For the atomic-braid case in canonical pppnnn ordering, this
+implies Δ_(within) + Δ_(cross) is exactly the duality-gap-bounded
+deviation from the additive interface contribution — **bounding
+both cancellation counts simultaneously**.  When the LP is at
+strong duality (gap = 0), Δ = 0 and the shift formula reduces to
+the cleanest additive composition, which is what we observe for
+canonical pppnnn at A = 2..6.
+
+For the atomic braid in canonical pppnnn ordering, the interface
+is the simplest case (single averaged generator), so α((p, n)) = 1
+suffices.  Generalising to compound braids built from heavier
+nuclei (clustering, halo-nucleon couplings) may require richer α
+tables — and the copilot branch's `α_shift = k(p−1)` formula
+provides the machinery.
+
 ## References
 
 - `markov_peel.tr_M_atomic` — PR #520 / PR #516 (#508).
