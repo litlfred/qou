@@ -17,9 +17,7 @@ Output: ocneanu-cancellation-derivation.witness.json
 """
 from __future__ import annotations
 
-import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 import sympy as sp
@@ -157,25 +155,33 @@ def lowest_q_power(expr: sp.Expr) -> int:
 # ──────────────────────────────────────────────────────────────────────
 # Witness scaffold
 # ──────────────────────────────────────────────────────────────────────
-WITNESS = {
-    "engine": "python (sympy symbolic)",
-    "engineVersion": f"python {sys.version.split()[0]}, sympy {sp.__version__}",
-    "computedAt": datetime.now(timezone.utc).isoformat(),
-    "computation": "ocneanu-cancellation-derivation",
-    "scriptFile": "ocneanu_cancellation_derivation.py",
-    "description": (
-        "First-principles derivation of the cancellation count in the "
-        "atomic-braid Markov-trace pole order via symbolic-q Hoefsmit "
-        "seminormal characters χ^λ(β). Computes the Ocneanu-weighted "
-        "sum tr_M(β) = Σ_λ w_λ · χ^λ(β) / f^λ symbolically, identifies "
-        "the lowest-q-power coefficient, and compares to DP-max upper "
-        "bound from dp_pole_probe to extract the cross-partition "
-        "cancellation count."
-    ),
-    "contentBlock": "docs/audits/2026-05-04-per-nucleon-shift-derivation.md",
-    "data": {},
-    "assertions": [],
-}
+from witness_base import WitnessBuilder  # noqa: E402
+
+_witness = (
+    WitnessBuilder("ocneanu-cancellation-derivation", engine="sympy")
+    .set_description(
+        "Round-1 SCAFFOLD: symbolic-q Hoefsmit attempt at first-"
+        "principles derivation of the cancellation count via Σ_λ w_λ "
+        "χ^λ(β) / f^λ. The 2×2-block Hoefsmit construction has known "
+        "convention/sign issues (cross-validated against numerical: "
+        "χ^(2,1)(proton) sym=2.515 vs num=1.808). High-precision "
+        "numerical pole detection in "
+        "docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md "
+        "is the canonical verification path until the symbolic 2×2 "
+        "convention is repaired."
+    )
+    .set_content_block("conj:e-hartree-categorical-derivation")
+    .add_caveat(
+        "Symbolic 2×2 block has a documented convention bug: the "
+        "computed χ^(2,1)(proton) at q_0 is 2.515 vs numerical 1.808. "
+        "Treat the symbolic_cross_partition_cancel field as "
+        "known-incorrect; the empirical_cross_partition_cancel = 1 "
+        "from numerical verification is the correct value."
+    )
+)
+# Compatibility: keep the dict-based WITNESS interface (used through
+# the script body) and migrate to WitnessBuilder at save time.
+WITNESS = {"data": {}, "assertions": []}
 
 # ──────────────────────────────────────────────────────────────────────
 # §1 — Proton standalone (n = 3)
@@ -263,12 +269,25 @@ WITNESS["data"]["proton_standalone"] = {
 }
 
 # ──────────────────────────────────────────────────────────────────────
-# §2 — Save witness
+# §2 — Save witness via WitnessBuilder + explicit failing assertion
 # ──────────────────────────────────────────────────────────────────────
-WITNESS["allPassed"] = True
-out_path = HERE / "ocneanu-cancellation-derivation.witness.json"
-with open(out_path, "w") as f:
-    json.dump(WITNESS, f, indent=2, default=str)
+# The 2×2-block Hoefsmit construction has a documented convention bug:
+# χ^(2,1)(proton) symbolic = 2.515 vs numerical = 1.808. Add an
+# explicit FAILING assertion so the chain auditor sees this as
+# verifying-FAIL rather than a silent "verified" witness.
+SYMBOLIC_CHI_2_1_AT_Q0 = 2.5154623216489195
+NUMERICAL_CHI_2_1_AT_Q0 = 1.807703
+
+for key, value in WITNESS["data"].items():
+    _witness.add_data(key, value)
+_witness.add_assertion(
+    name="symbolic χ^(2,1)(proton) matches numerical hecke_characters",
+    computed=SYMBOLIC_CHI_2_1_AT_Q0,
+    expected=NUMERICAL_CHI_2_1_AT_Q0,
+    tolerance=1e-3,
+    source="cross-validation against build_seminormal_matrices",
+)
+out_path = _witness.save()
 
 print()
 print("=" * 70)

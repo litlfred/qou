@@ -1,11 +1,53 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-05T01:32:25.422496+00:00",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-05T01:40:46.756385+00:00",
+  "commitSha": "7919c654f6e124d4f8c106640e26d2e7382e2c3e",
+  "assertions": [
+    {
+      "name": "Per-NEW-proton Δshift = 18 invariant across host",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "empirical from EMPIRICAL_SHIFT table (w3-w4 audit)"
+    },
+    {
+      "name": "Per-NEW-neutron Δshift = 21 invariant across host",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "empirical from EMPIRICAL_SHIFT table (w3-w4 audit)"
+    },
+    {
+      "name": "Per-new-proton: +12 generators, +9 pole, +3 total cancellation (σ²-adj=2, Ocneanu-avg=1), +18 shift",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "decomposition of EMPIRICAL_SHIFT increments"
+    },
+    {
+      "name": "Per-new-neutron: +12 generators, +10.5 pole, +1.5 total cancellation (Ocneanu-avg=1.0, σ²-adj=0.5), +21 shift",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "decomposition of EMPIRICAL_SHIFT increments"
+    },
+    {
+      "name": "shift(Z, N) = 18Z + 21N + 1 holds for all 6 atoms (A=2..6)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "EMPIRICAL_SHIFT table cross-validation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 78,
   "computation": "per-nucleon-shift-derivation",
   "scriptFile": "per_nucleon_shift_derivation.py",
-  "description": "Derive the (18, 21, 1) per-nucleon shift coefficients in shift = 18Z + 21N + 1 via per-NEW-nucleon additive analysis. Proves linearity: \u0394shift(A\u2192A+1, +proton) = 18 EXACTLY, \u0394shift(A\u2192A+1, +neutron) = 21 EXACTLY, independent of host. Decomposes per-new-nucleon = 12 generators - 3 (p) or 1.5 (n) total pole cancellations (proton: 2 \u03c3\u00b2-adj + 1 Ocneanu-avg; neutron: 0.5 \u03c3\u00b2-adj + 1.0 Ocneanu-avg) + 1 mixed (p,n) interface.",
-  "contentBlock": "docs/audits/2026-05-03-w3-habiro-unblocked.md",
+  "scriptHash": "4a5d1fb947e4",
+  "scriptCommitSha": "7919c654f6e124d4f8c106640e26d2e7382e2c3e",
+  "description": "Derive the (18, 21, 1) per-nucleon shift coefficients in shift = 18Z + 21N + 1 via per-NEW-nucleon additive analysis. Proves linearity: Δshift(A→A+1, +proton) = 18 EXACTLY, Δshift(A→A+1, +neutron) = 21 EXACTLY, independent of host. Decomposes per-new-nucleon = 12 generators - 3 (p) or 1.5 (n) total pole cancellations + 1 mixed (p,n) interface.",
+  "contentBlock": "prop:per-nucleon-shift-additive-linearity",
   "data": {
     "per_new_nucleon_shifts": {
       "proton_deltas": [
@@ -250,47 +292,9 @@
       }
     },
     "linear_fit_cancellation": {
-      "c_sigma_sq_adj": 1.0513685045616814,
-      "c_averaged": -1.7332407774692573,
-      "fit_residuals": 0.15708052360174554
+      "c_sigma_sq_adj": 1.0513685045616812,
+      "c_averaged": -1.7332407774692564,
+      "fit_residuals": 0.1570805236017456
     }
-  },
-  "assertions": [
-    {
-      "name": "Per-NEW-proton \u0394shift = 18 invariant across host",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "empirical from EMPIRICAL_SHIFT table (w3-w4 audit)"
-    },
-    {
-      "name": "Per-NEW-neutron \u0394shift = 21 invariant across host",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "empirical from EMPIRICAL_SHIFT table (w3-w4 audit)"
-    },
-    {
-      "name": "Per-new-proton: +12 generators, +9 pole, +3 total cancellation (\u03c3\u00b2-adj=2, Ocneanu-avg=1), +18 shift",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "decomposition of EMPIRICAL_SHIFT increments"
-    },
-    {
-      "name": "Per-new-neutron: +12 generators, +10.5 pole, +1.5 total cancellation (Ocneanu-avg=1.0, \u03c3\u00b2-adj=0.5), +21 shift",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "decomposition of EMPIRICAL_SHIFT increments"
-    },
-    {
-      "name": "shift(Z, N) = 18Z + 21N + 1 holds for all 6 atoms (A=2..6)",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "EMPIRICAL_SHIFT table cross-validation"
-    }
-  ],
-  "allPassed": true
+  }
 }

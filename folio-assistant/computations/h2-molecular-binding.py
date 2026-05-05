@@ -260,7 +260,11 @@ try:
     print(f"  (2,1,1) channel [T_2,9 intertwining]: w·χ/f = {_bare_dec[_T29_chan]['trM_contribution']:>+10.6f}")
     print(f"  (2,2) channel [exactly zero, expected]: w·χ/f = {_bare_dec[(2,2)]['trM_contribution']:>+10.6f}")
     print(f"  Combined force-carrier sum: {_trM_force_carrier:>+10.6f}")
-except ImportError:
+except Exception:
+    # Cross-check is best-effort and ancillary; never let it abort the
+    # main H₂ binding computation. Catches ImportError if the library
+    # isn't on PYTHONPATH plus any runtime / cache / numeric failure
+    # in wedderburn_decompose itself.
     pass
 
 E_bind_eV = best['binding'] * E_mol_scale

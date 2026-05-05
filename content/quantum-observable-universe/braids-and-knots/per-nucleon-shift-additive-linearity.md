@@ -2,7 +2,7 @@
 *The atomic Markov-trace denominator
 $D(u) = 2^{2A+1} \cdot u^{\mathrm{shift}} \cdot (1 + u^{2})^{3A-1}$
 of canonical pppnnn ordering
-([`docs/audits/2026-05-03-w3-habiro-unblocked.md`](docs/audits/2026-05-03-w3-habiro-unblocked.md))
+([`docs/audits/2026-05-03-w3-habiro-unblocked.md`](../../docs/audits/2026-05-03-w3-habiro-unblocked.md))
 has shift exponent satisfying the additive-linearity recurrence:*
 
 $$
@@ -32,7 +32,7 @@ $$
 | (3, 2) | ⁵Li | 97 | 97 ✓ |
 | (3, 3) | ⁶Li | 118 | 118 ✓ |
 
-(Witness: [`per-nucleon-shift-derivation.witness.json`](folio-assistant/computations/per-nucleon-shift-derivation.witness.json),
+(Witness: [`per-nucleon-shift-derivation.witness.json`](../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json),
 5/5 assertions pass.  Cross-validated against
 `term6-residues-at-roots.witness.json` for ⁵Li.)
 
@@ -49,7 +49,7 @@ The additive linearity is structural: each new nucleon adds exactly
 (11 from the nucleon's intrinsic structure
 + 1 from its incoming interface generator
 in
-[`mass_endomorphism.proton_cross`/`neutron_cross`](folio-assistant/computations/mass_endomorphism.py).)
+[`mass_endomorphism.proton_cross`/`neutron_cross`](../../folio-assistant/computations/mass_endomorphism.py).)
 
 ### Proof
 
@@ -75,7 +75,7 @@ average. $\square$
 ### Generator-decomposition reading of (18, 21)
 
 Each new generator's DP-max contribution to the q=0 pole is 1
-([`dp_pole_probe.py`](folio-assistant/computations/dp_pole_probe.py)),
+([`dp_pole_probe.py`](../../folio-assistant/computations/dp_pole_probe.py)),
 so DP-max increment per new nucleon is $12$. The actual pole
 increments are:
 - **per-new-proton:** pole $+9$ (cancellation $= 12 - 9 = 3$),
@@ -88,7 +88,7 @@ The cancellation count enumerates the σ²-relation reductions
 nucleon's intrinsic $\sigma^{\pm 1}$-adjacencies plus its incoming
 interface contribution. Detailed σ²-adjacency analysis is given in
 the audit doc
-([`docs/audits/2026-05-04-per-nucleon-shift-derivation.md`](docs/audits/2026-05-04-per-nucleon-shift-derivation.md)).
+([`docs/audits/2026-05-04-per-nucleon-shift-derivation.md`](../../docs/audits/2026-05-04-per-nucleon-shift-derivation.md)).
 
 ### Companion remark — leading-coefficient identity
 
@@ -99,7 +99,7 @@ $D(u)^{-1} \cdot \mathrm{tr}_M(\beta)$ at $u = 0$) is
 $-\tfrac{1}{12}$ for neutron standalone (precision-limited at
 high-$A$ atoms in the existing float-precision Hoefsmit pipeline).
 See
-[`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)
+[`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)
 for the high-precision (200 dps) verification.
 
 The simple rational $-\tfrac{1}{12}$ is strong evidence that the
@@ -127,7 +127,7 @@ exponent in the atomic Markov-trace denominator, providing:
 2. **Cross-validation gate.** Any atomic mass / binding pipeline
    that involves $D(u)$ can verify shift = 18Z + 21N + 1 as a
    structural invariant.
-3. **Pole-counting consumer.** [`dp_pole_probe.py`](folio-assistant/computations/dp_pole_probe.py)
+3. **Pole-counting consumer.** [`dp_pole_probe.py`](../../folio-assistant/computations/dp_pole_probe.py)
    and downstream pole-counting analyses now have a closed-form
    target for the actual q-pole order of $\mathrm{tr}_M$ (= shift / 2,
    modulo half-integer cases).

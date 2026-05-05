@@ -30,9 +30,7 @@ Output: per-nucleon-shift-derivation.witness.json
 """
 from __future__ import annotations
 
-import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -40,6 +38,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from hecke_character_symbolic import atomic_braid_to_crossings  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 # ──────────────────────────────────────────────────────────────────────
 # Empirical shift values from docs/audits/2026-05-03-w3-habiro-unblocked.md
@@ -63,25 +62,21 @@ ATOM_NAMES = {
 # ──────────────────────────────────────────────────────────────────────
 # Witness scaffold
 # ──────────────────────────────────────────────────────────────────────
-WITNESS = {
-    "engine": "python",
-    "engineVersion": f"python {sys.version.split()[0]}",
-    "computedAt": datetime.now(timezone.utc).isoformat(),
-    "computation": "per-nucleon-shift-derivation",
-    "scriptFile": "per_nucleon_shift_derivation.py",
-    "description": (
+_witness = (
+    WitnessBuilder("per-nucleon-shift-derivation", engine="python")
+    .set_description(
         "Derive the (18, 21, 1) per-nucleon shift coefficients in "
         "shift = 18Z + 21N + 1 via per-NEW-nucleon additive analysis. "
         "Proves linearity: Δshift(A→A+1, +proton) = 18 EXACTLY, "
         "Δshift(A→A+1, +neutron) = 21 EXACTLY, independent of host. "
         "Decomposes per-new-nucleon = 12 generators - 3 (p) or 1.5 (n) "
-        "total pole cancellations (proton: 2 σ²-adj + 1 Ocneanu-avg; "
-        "neutron: 0.5 σ²-adj + 1.0 Ocneanu-avg) + 1 mixed (p,n) interface."
-    ),
-    "contentBlock": "docs/audits/2026-05-03-w3-habiro-unblocked.md",
-    "data": {},
-    "assertions": [],
-}
+        "total pole cancellations + 1 mixed (p,n) interface."
+    )
+    .set_content_block("prop:per-nucleon-shift-additive-linearity")
+)
+# Compatibility: keep the dict-based WITNESS interface (used through
+# the script body) and migrate to WitnessBuilder at save time.
+WITNESS = {"data": {}, "assertions": []}
 
 # ──────────────────────────────────────────────────────────────────────
 # §1 — Per-NEW-nucleon shift contribution (Δshift across A→A+1)
@@ -385,22 +380,31 @@ print("through SYT paths in n=3A seminormal — see audit doc for sketch.")
 # ──────────────────────────────────────────────────────────────────────
 # §5 — Save witness
 # ──────────────────────────────────────────────────────────────────────
-WITNESS["allPassed"] = all(a["passed"] for a in WITNESS["assertions"])
-out_path = HERE / "per-nucleon-shift-derivation.witness.json"
-
-# Stringify tuple keys for JSON
+# Stringify tuple keys + recurse into both lists and tuples for
+# JSON-friendly nesting before WitnessBuilder save
 def _stringify(o):
     if isinstance(o, dict):
         return {str(k) if isinstance(k, tuple) else k: _stringify(v) for k, v in o.items()}
-    if isinstance(o, list):
+    if isinstance(o, (list, tuple)):
         return [_stringify(x) for x in o]
     return o
 
-with open(out_path, "w") as f:
-    json.dump(_stringify(WITNESS), f, indent=2, default=str)
+for key, value in WITNESS["data"].items():
+    _witness.add_data(key, _stringify(value))
+for assertion in WITNESS["assertions"]:
+    # WitnessBuilder.add_assertion auto-computes passed via comparison;
+    # boolean computed/expected with both True yields a passing assertion.
+    _witness.add_assertion(
+        name=assertion["name"],
+        computed=assertion["computed"],
+        expected=assertion["expected"],
+        source=assertion.get("source", ""),
+    )
+out_path = _witness.save()
+all_passed = all(a["passed"] for a in WITNESS["assertions"])
 
 print()
 print("=" * 70)
 print(f"Witness written: {out_path.name}")
-print(f"All assertions passed: {WITNESS['allPassed']}")
+print(f"All assertions passed: {all_passed}")
 print("=" * 70)
