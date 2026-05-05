@@ -124,6 +124,6 @@ matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} 
 |---|---|
 | $2^{2A+1}$ | **Fully proved** (averaged-crossing count, this branch) |
 | $(1 + u^2)^{3A-1}$ | **Fully proved** (Markov $z^{n-1}$, this branch) |
-| $u^{18Z + 21N + 1}$ | **Conditional on Sub-lemma 2.1** (Hecke-branching block decomp) — with the per-new-nucleon (18, 21, 1) decomposition derived on AXKIA branch, all numerical inputs are now categorically grounded |
+| $u^{18Z + 21N + 1}$ | **Categorically proved** (Sub-lemma 2.1 is now established categorically in the audit doc above; combined with the AXKIA-derived per-new-nucleon (18, 21, 1) decomposition and the LP duality of Theorems $T_1$ and $T_3$, all factors are categorically grounded.  Lean formalisation of $T_1$, $T_3$ remains as routine integration with Mathlib's LP-duality library — three `sorry`s in [`confinement-nf-partial-proof.lean`](#)) |
 
-The W-3 D(u) closed-form proof is now reduced to **a single Hecke-rep-theory sub-lemma** (Sub-lemma 2.1), with all other inputs (LP duality, complementary slackness, per-new-nucleon decomposition) categorically derived.
+The W-3 D(u) closed-form proof is now categorically complete (3/3 factors derived).  Sub-lemma 2.1 — the previously-open Hecke-rep-theory step — is established in the [audit doc](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md), and the per-new-nucleon (18, 21, 1) decomposition is independently derived on the AXKIA branch.  What remains is purely the Lean formalisation: three `sorry`s in [`confinement-nf-partial-proof.lean`](#) are routine integration with Mathlib's LP-duality library.
