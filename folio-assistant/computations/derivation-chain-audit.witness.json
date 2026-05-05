@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T18:15:43.376190+00:00",
-  "commitSha": "113268aee238eb2a513d5a6909105750392edcca",
+  "computedAt": "2026-05-05T21:31:38.513119+00:00",
+  "commitSha": "a9cdf6317b77f00d1cebed7e0fc781206bb156c9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1679,6 +1679,7 @@
         "picard-lefschetz-thimble.witness.json",
         "piece1-dimensional-bridge.witness.json",
         "piece2-linked-cluster.witness.json",
+        "piece3-c-intra-symbolic.witness.json",
         "piece3-interface-vs-intra.witness.json",
         "plancherel-term-7.witness.json",
         "pn-alpha-lp-dual.witness.json",
