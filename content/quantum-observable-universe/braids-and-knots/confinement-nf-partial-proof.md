@@ -107,9 +107,9 @@ matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} 
 
 ## Status of remaining work
 
-- **Sub-lemma 2.1**: ✅ **CATEGORICALLY PROVED** in [`docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md). The block decomposition of $\rho_\lambda(I)$ uses standard branching (Macdonald §I.5) + Hoefsmit seminormal form + the empirical-but-now-proved fact that off-diagonal Case-B contributions vanish in the trace.
+- **Sub-lemma 2.1** is established categorically in [`docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md). The block decomposition of $\rho_\lambda(I)$ uses standard branching (Macdonald §I.5) + Hoefsmit seminormal form, with off-diagonal Case-B contributions shown to vanish in the trace.
 - **Lean formalisation of $T_1$ and $T_3$**: see [`confinement-nf-partial-proof.lean`](#) — currently `sorry`-stubs against an LP-duality library; routine integration with Mathlib's LP infrastructure once it lands.
-- **Atomic n-context shifts $\mathrm{shift}_{\mathrm{NF}}(\beta_p) = 18$ and $\mathrm{shift}_{\mathrm{NF}}(\beta_n) = 21$**: ✅ **DERIVED on `claude/improve-charge-precision-AXKIA`**, commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9). The coefficients emerge as **per-NEW-nucleon additive contributions**:
+- The atomic n-context shifts $\mathrm{shift}_{\mathrm{NF}}(\beta_p) = 18$ and $\mathrm{shift}_{\mathrm{NF}}(\beta_n) = 21$ are derived in commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9) on `claude/improve-charge-precision-AXKIA`. The coefficients emerge as **per-NEW-nucleon additive contributions**:
 
 | Per new nucleon | Δσ | Δσ⁻¹ | Δavg | Δtotal generators | Δpole order | Δcancellation | **Δshift** |
 |---|---:|---:|---:|---:|---:|---:|---:|

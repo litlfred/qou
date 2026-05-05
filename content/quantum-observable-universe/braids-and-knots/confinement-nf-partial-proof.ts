@@ -32,7 +32,7 @@ export default proposition({
     "prop:operator-selection-lp",
     "prop:alpha-shift-torus-knot",
   ],
-  cites: ["schrijver1986theory", "macdonald1995symmetric"],
+  cites: ["schrijver1986theory", "macdonald1995"],
   lean: { ref: "qou:QOU.BraidKnot.ConfinementNFPartial.theorem_3_strong_duality" },
   tags: [
     "lp-duality",

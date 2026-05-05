@@ -122,7 +122,7 @@ theorem theorem_2_shift_decomposition
   -- (Δ_resid = 0).  The structural block decomposition gives
   -- shift_NF as a sum over LR-active blocks of per-component
   -- pole orders.
-  -- Ref: [macdonald1995symmetric] (LR rule)
+  -- Ref: [macdonald1995] (LR rule)
   trivial
 
 end QOU.BraidKnot.ConfinementNFPartial
