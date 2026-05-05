@@ -91,8 +91,11 @@ def main() -> int:
     print(f"  Bar-self-duality verified: {bar_self_dual}")
     print()
 
-    # Numerical at q_0
-    q_0 = sp.Float("1.10997859555418057", 50)
+    # Numerical at q_0 — use sp.Rational(str(...)) per repo
+    # convention (q_parameter.Q canonical source) to preserve
+    # the exact decimal expansion and avoid binary-float drift.
+    from q_parameter import Q_50_DIGIT_STR
+    q_0 = sp.Rational(Q_50_DIGIT_STR)
     tr_num = sp.simplify(tr_pure.subs(q, q_0))
     print(f"  At q_0 = {q_0}:")
     print(f"    tr_pure(W·Z·H) ≈ {float(tr_num):.10f}")

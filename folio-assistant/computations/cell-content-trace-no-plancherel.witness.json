@@ -1,6 +1,6 @@
 {
   "computation": "cell-content-trace-no-plancherel",
-  "computedAt": "2026-05-05T23:05:08.211435+00:00",
+  "computedAt": "2026-05-05T23:09:43.076403+00:00",
   "description": "Direct computation of tr_pure(σ_1^4 σ_3^6 σ_5^8) on the pure-eigenspace of End_R(V^⊗6), using cell-content multiplicities only — no Plancherel weight invoked. Confirms bar-self-duality and supersedes the (degenerate) Plancherel-weighted N_sym(q) = q^6(1+q²+q⁴)/3 from prop:weak-symmetric-normalization.",
   "reference_blocks": [
     "conj:hoefsmit-ew-cell-content",
@@ -44,9 +44,9 @@
       "coefficient": 3
     }
   ],
-  "tr_pure_q0_numerical": 41.69490029979511,
-  "plancherel_legacy_N_sym_q0_numerical": 1.8974445857601276,
-  "ratio_tr_over_plancherel_q0": 21.974238727552553,
+  "tr_pure_q0_numerical": 41.69490029979508,
+  "plancherel_legacy_N_sym_q0_numerical": 1.897444585760127,
+  "ratio_tr_over_plancherel_q0": 21.974238727552546,
   "bar_self_dual_verified": true,
   "audit": "docs/audits/2026-05-05-path-alpha-bring-refinement.md"
 }

@@ -16,6 +16,7 @@
 -/
 
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.LinearAlgebra.BilinearForm.Basic
 import Mathlib.Data.Fintype.Basic
 
@@ -65,7 +66,7 @@ structure KnotOperatorFamily
     generically a singleton (Schrijver §7.4).
 -/
 class KnotOperatorLPSelection
-    (R : Type*) [CommRing R]
+    (R : Type*) [OrderedCommRing R]
     (H : Type*) [Ring H] [Algebra R H]
     (ops : KnotOperatorFamily R H)
     where
@@ -113,7 +114,7 @@ class KnotOperatorLPSelection
   the dependency chain.
 -/
 theorem knot_operator_lp_selection
-    {R : Type*} [CommRing R]
+    {R : Type*} [OrderedCommRing R]
     {H : Type*} [Ring H] [Algebra R H]
     {ops : KnotOperatorFamily R H}
     [_inst : KnotOperatorLPSelection R H ops]

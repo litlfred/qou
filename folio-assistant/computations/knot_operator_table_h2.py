@@ -88,8 +88,12 @@ def main() -> int:
         ("T(2,8)", 8, "σ_0⁸  (H candidate; even-twist k=4)"),
     ]
 
-    # Specialization point for numerical witness only:
-    q_num = sp.Float("1.10997859555418057", 50)
+    # Specialization point for numerical witness only.
+    # Use sp.Rational(str(...)) per repo convention (q_parameter.Q
+    # canonical source) to preserve the exact decimal expansion and
+    # avoid binary-float rounding drift.
+    from q_parameter import Q_50_DIGIT_STR
+    q_num = sp.Rational(Q_50_DIGIT_STR)
 
     eigenvalues: list[dict] = []
     tables: dict = {}
