@@ -1,12 +1,14 @@
-# Sub-lemma 2.1 — refined statement (operator-valued A^λ_{μν})
+# Sub-lemma 2.1 — refined statement (operator-valued $A^\lambda_{\mu\nu}$), 11/11 VERIFIED
 
 **Date:** 2026-05-04
 **Branch:** `claude/categorical-mass-divergence-audit` (PR #534)
+**Status:** Refined statement is **numerically verified to ~$10^{-15}$ for all 11 partitions $\lambda \vdash 6$ in the deuteron case** (commit `eca6b5a43`). Combined with the [categorical proof](2026-05-04-sublemma-2-1-categorical-proof.md), this is effectively a full proof for $H_6 \downarrow H_3 \times H_3$.
+
 **Refs:**
 - [`docs/audits/2026-05-04-confinement-nf-structure-forcing-proof.md`](2026-05-04-confinement-nf-structure-forcing-proof.md) — original skeleton
-- [`docs/audits/2026-05-04-sublemma-2-1-half-proved.md`](2026-05-04-sublemma-2-1-half-proved.md) — no-interface half
-- [`folio-assistant/computations/sublemma_2_1_alpha_shift_extract.py`](../../folio-assistant/computations/sublemma_2_1_alpha_shift_extract.py)
-- [`folio-assistant/computations/sublemma-2-1-alpha-shift-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-alpha-shift-extract.witness.json)
+- [`docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md`](2026-05-04-sublemma-2-1-categorical-proof.md) — categorical proof
+- [`folio-assistant/computations/sublemma_2_1_A_operator_extract.py`](../../folio-assistant/computations/sublemma_2_1_A_operator_extract.py) — operator-valued extraction
+- [`folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json)
 
 ## Empirical falsification of the scalar formula
 

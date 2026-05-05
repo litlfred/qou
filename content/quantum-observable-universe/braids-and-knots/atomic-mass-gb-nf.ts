@@ -6,6 +6,7 @@ export default proposition({
   uses: [
     "prop:categorical-mass-markov",
     "prop:alpha-shift-torus-knot",
+    "prop:hecke-branching-trace-decomposition",
     "def:atomic-braid",
     "unital-groebner-bases:cor:pbw",
   ],

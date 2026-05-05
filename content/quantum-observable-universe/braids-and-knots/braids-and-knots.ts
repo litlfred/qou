@@ -332,6 +332,7 @@ export default chapter({
         "topological-mass-categorical-proof",
         "categorical-mass-markov",
         "atomic-mass-gb-nf",
+        "hecke-branching-trace-decomposition",
         "markov-z-reconciliation",
         "mass-endomorphism-conjecture",
         "categorical-neutrality-saturated-shells",
