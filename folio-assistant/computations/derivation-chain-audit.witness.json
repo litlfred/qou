@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T22:47:38.561691+00:00",
-  "commitSha": "26851cb63e403980fdc6d3f1fcb1864d2594e676",
+  "computedAt": "2026-05-05T23:06:40.908895+00:00",
+  "commitSha": "3b709d6636bc7a9bda4ab98c923a0c2510eea646",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1605,6 +1605,7 @@
         "markov-substrate-realization.witness.json",
         "markov-trace-atomic-proton-full.witness.json",
         "markov-trace-axiomatic-proton.witness.json",
+        "markov-trace-recursive.witness.json",
         "markov-weight-verification.witness.json",
         "mass-at-3A-proper.witness.json",
         "mass-endomorphism-atom-exact.witness.json",
