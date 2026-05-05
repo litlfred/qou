@@ -1,7 +1,7 @@
 {
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-04T18:08:53.587877+00:00",
+  "computedAt": "2026-05-05T01:47:35.973745+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -499,7 +499,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2911,
+        "line": 2918,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "#   Q_β(n) = m_n - m_p - m_e = 0.78233341 ± 6.1×10⁻⁷ MeV",
@@ -791,7 +791,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2915,
+        "line": 2922,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0_CALIBRATION_MEV     = _Q_NEUTRON_MEV",
@@ -799,7 +799,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2916,
+        "line": 2923,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0_CALIBRATION_MEV_ERR = _Q_NEUTRON_MEV_ERR",
@@ -807,7 +807,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2966,
+        "line": 2973,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "r = _canon(Z, N, E_0=E_0_CALIBRATION_MEV)",
@@ -815,7 +815,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2972,
+        "line": 2979,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))",
@@ -823,7 +823,7 @@
       },
       {
         "file": "folio-assistant/computations/hecke_core.py",
-        "line": 2977,
+        "line": 2984,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "return E_0_CALIBRATION_MEV * (abs(free_tr) - abs(atom_tr))",

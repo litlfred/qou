@@ -491,6 +491,7 @@ export default chapter({
         "delta-q-decoration",
         "force-carrier-intertwining-correspondence",
         "alpha-shift-torus-knot",
+        "per-nucleon-shift-additive-linearity",
         "confinement-nf-structure-forcing",
         "confinement-nf-partial-proof",
         "bound-state-frobenius-self-dual-channel",
