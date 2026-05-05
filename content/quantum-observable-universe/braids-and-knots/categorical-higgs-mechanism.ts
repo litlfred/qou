@@ -7,6 +7,8 @@ export default conjecture({
   uses: [
     "conj:force-carrier-knot-vs-link-dichotomy",
     "conj:hoefsmit-ew-cell-content",
+    "conj:categorical-linking-operation",
+    "conj:weinberg-angle-categorical",
     "conj:electroweak-mass-eigenstate-count",
     "def:rigid-monoidal-category",
     "def:frobenius-hopf-substrate",

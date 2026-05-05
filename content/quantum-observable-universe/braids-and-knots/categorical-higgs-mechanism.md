@@ -106,14 +106,22 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
 ### What this skeleton needs
 
 1. **Rigorous definition of $\mathrm{Lk}_R$** as a categorical
-   operation in a ribbon $\mathbf{C}$. This is plausibly the
-   ribbon-category braiding $c_{X, Y}$ composed with itself
-   $\mathrm{lk}$ times — but the formal categorical analog of
-   "linking number" needs authoring.
+   operation in a ribbon $\mathbf{C}$ —
+   ✓ now authored as
+   [`conj:categorical-linking-operation`](#conj:categorical-linking-operation)
+   (Tier A1, this branch). Five open structural properties
+   (linearity, $k = 0$ reduction, multiplicativity, trace-cut
+   symmetry, bar-involution compatibility) pending discharge.
 2. **Derivation of $\theta_W$ (Weinberg angle)** as a categorical
    parameter of the linking, identifying $\cos\theta_W,
    \sin\theta_W$ as Hecke eigenvalues / Frobenius traces on
-   specific projectors.
+   specific projectors —
+   ✓ now authored as
+   [`conj:weinberg-angle-categorical`](#conj:weinberg-angle-categorical)
+   (Tier A2, this branch). Simple-multiplicity reading numerically
+   fails; corrected version requires non-uniform Hoefsmit
+   multiplicities + the Higgs-vev induced Hoefsmit-decomposition
+   automorphism.
 3. **Connection to U4** — the count of three broken generators is
    currently structural (from the four-generator $SU(2)_L \times
    U(1)_Y$ minus one surviving $U(1)_{\rm em}$). Categorical
@@ -125,7 +133,7 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
    = 91.2$ GeV, $m_H = 125.3$ GeV) requires the constrained-
    PSLQ structurally derived from the Hoefsmit cell-content
    arithmetic + the per-pattern multiplicities $(2, 1, 3, 3, 1,
-   2)$.
+   2)$. Gated on (1) and (2) above.
 
 ### Status
 
