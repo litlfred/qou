@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T22:12:20.508171+00:00",
-  "commitSha": "e1fc26cd919d3fbc2e4442c43c409ec6e7459455",
+  "computedAt": "2026-05-05T22:39:57.635382+00:00",
+  "commitSha": "f8312651a5c8c38037726dd51099fbcba50574be",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1546,6 +1546,7 @@
         "higher-a-binding-refinement.witness.json",
         "higher-a-shell-diagnostic.witness.json",
         "hochschild-h3.witness.json",
+        "hoefsmit-ew-cell-content.witness.json",
         "hyperbolic-knot-db-extended.witness.json",
         "integer-lp-gluon.witness.json",
         "inter-nucleon-crossing-sweep.witness.json",
