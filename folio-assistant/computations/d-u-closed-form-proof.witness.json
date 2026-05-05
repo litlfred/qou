@@ -1,6 +1,6 @@
 {
   "computation": "d-u-closed-form-proof",
-  "computedAt": "2026-05-05T17:57:47.742647+00:00",
+  "computedAt": "2026-05-05T23:01:30.217957+00:00",
   "description": "Structural proof of D(u) = 2^(2A+1) · u^shift · (1+u²)^(3A−1) for atomic-braid Markov trace at q = u² in the canonical pppnnn ordering used by `atomic_braid_to_crossings`.  The 2^(2A+1) factor is proved by counting averaged crossings (each averaged crossing = (σ + σ⁻¹)/2, contributing a factor of 1/2): each nucleon has 2 averaged ud-pair couplings → 2A factors; canonical pppnnn ordering has exactly one mixed (p,n) inter-nucleon interface → +1 more, total 2A+1.  The (1+u²)^(3A−1) factor follows from the Markov/Ocneanu trace formula z^(n−1) at q = u²: with z = u/(1+u²) and n = 3A, clearing the denominator yields (1+u²)^(3A−1) in D(u).  The u^shift residual is left as an open structural question (depends on the Hecke-NF reduction; varies by 3 between T and ³He at A=3).",
   "reference_blocks": [
     "def:hecke-quadratic-relation",
