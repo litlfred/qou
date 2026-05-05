@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T21:51:49.253545+00:00",
-  "commitSha": "3f5271db8c3e1721d87ef96f0b1ee42f64017368",
+  "computedAt": "2026-05-05T21:56:56.740832+00:00",
+  "commitSha": "7b5b51a8541e40cee3a5dd5590d51b545341cdfd",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1686,6 +1686,7 @@
         "plancherel-term-7.witness.json",
         "pn-alpha-lp-dual.witness.json",
         "polarized-pair-production.witness.json",
+        "poly-q-proof.witness.json",
         "positron-lifted-sdp.witness.json",
         "predictive-binding-from-braid.witness.json",
         "prefix-all-variants.witness.json",
