@@ -31,6 +31,7 @@ export default proposition({
   uses: [
     "prop:operator-selection-lp",
     "prop:alpha-shift-torus-knot",
+    "prop:hecke-branching-trace-decomposition",
   ],
   cites: ["schrijver1986theory", "macdonald1995"],
   lean: { ref: "qou:QOU.BraidKnot.ConfinementNFPartial.theorem_3_strong_duality" },
