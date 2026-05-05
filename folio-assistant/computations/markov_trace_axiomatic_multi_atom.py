@@ -40,8 +40,10 @@ sys.path.insert(0, str(HERE))
 mp.mp.dps = 50
 
 from markov_trace_recursive import markov_trace_of_word, q as _q  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 
 q = _q
+Q0_MP = mp.mpf(str(Q_MP))
 
 
 # ── Atomic-braid words ─────────────────────────────────────────
@@ -76,7 +78,6 @@ M_E_MEV = mp.mpf("0.51099895")
 
 def evaluate_at_q0(expr: sp.Expr) -> mp.mpf:
     """Evaluate sympy expr at the substrate q_0 to 50 dps."""
-    from q_parameter import Q_MP
     return mp.mpf(str(expr.subs(q, sp.sympify(str(Q_MP))).evalf(mp.mp.dps)))
 
 
@@ -86,16 +87,14 @@ def main() -> int:
     print(f"  Uses markov_trace_recursive (axiom-only, repr-theory-free)")
     print("=" * 96)
 
-    from q_parameter import Q_MP
-    q0_mp = mp.mpf(str(Q_MP))
-    print(f"\n  Substrate parameter q_0 = {q0_mp}")
+    print(f"\n  Substrate parameter q_0 = {Q0_MP}")
     print(f"  m_e (CODATA)            = {M_E_MEV} MeV")
 
     results = {}
     for atom_name, info in ATOMS.items():
         print(f"\n  ── {atom_name} ──")
         print(f"    word: {info['word_str']}  ∈ H_{info['n']}")
-        print(f"    Z={info['Z']}, N={info['n']-info['Z']-info['N']+info['N']}={info['N']}, m={info['m_MeV']} MeV")
+        print(f"    Z={info['Z']}, N={info['N']}, A={info['Z']+info['N']}, m={info['m_MeV']} MeV")
 
         try:
             tr_sym = markov_trace_of_word(info["n"], info["word"])
@@ -138,6 +137,7 @@ def main() -> int:
         }
 
     # ── Disjoint-product check ──────────────────────────────────
+    checks: dict = {}
     print(f"\n  Disjoint-product structural check (deuteron = proton ⊗ neutron):")
     if all(a in results and "tr_M_at_q0_50dps" in results[a]
            for a in ["proton", "neutron", "deuteron"]):
@@ -160,7 +160,7 @@ def main() -> int:
         else:
             print(f"    ✗ Mismatch — investigate axiom application on H_6.")
             disjoint_ok = False
-        results["disjoint_product_check"] = {
+        checks["disjoint_product"] = {
             "tr_p_times_tr_n_at_q0": str(product),
             "tr_d_at_q0": str(tr_d),
             "relative_error": str(relative),
@@ -189,7 +189,7 @@ def main() -> int:
         else:
             print(f"    ⚠ discrepancy — recursive vs Hecke-power expansion diverged.")
             cross_check_ok = False
-        results["cross_check_atomic_proton_full"] = {
+        checks["atomic_proton_full"] = {
             "prior_tr_M": str(prior_tr),
             "current_tr_M": str(cur_tr),
             "relative_error": str(diff),
@@ -224,9 +224,10 @@ def main() -> int:
             "folio-assistant/computations/markov_trace_axiomatic_proton.py",
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q0": str(q0_mp),
+        "q0": str(Q0_MP),
         "m_e_MeV": str(M_E_MEV),
         "atoms": results,
+        "checks": checks,
         "all_passed": disjoint_ok and cross_check_ok,
     }
     out = HERE / "markov-trace-axiomatic-multi-atom.witness.json"

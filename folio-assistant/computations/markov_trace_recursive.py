@@ -233,11 +233,9 @@ def main() -> int:
             "prop:markov-trace-axiomatic-closed-form",
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "cache_stats": {
-            "hits": cache_info.hits,
-            "misses": cache_info.misses,
-            "size": cache_info.currsize,
-        },
+        # Cache stats are runtime/ordering-dependent; printed to stdout
+        # but deliberately omitted from the witness to avoid spurious
+        # drift. Fresh runs reproduce identical mathematical content.
         "test_cases": results,
     }
     out = HERE / "markov-trace-recursive.witness.json"

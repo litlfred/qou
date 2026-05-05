@@ -11,7 +11,7 @@
     "folio-assistant/computations/markov_trace_atomic_proton_full.py",
     "folio-assistant/computations/markov_trace_axiomatic_proton.py"
   ],
-  "computedAt": "2026-05-05T23:28:15.516882+00:00",
+  "computedAt": "2026-05-05T23:49:50.871766+00:00",
   "q0": "1.1099785955541805752815940796095093779932822799587",
   "m_e_MeV": "0.51099895",
   "atoms": {
@@ -100,15 +100,17 @@
       "abs_tr_M_at_q0_50dps": "2.0385811138332745799256136192088997773849272884166",
       "m_over_m_e_codata": "3670.4829628319197133379628275165731749546647796439",
       "rho_K_codata": "1800.5086665058304258913686085519525036467849856792"
-    },
-    "disjoint_product_check": {
+    }
+  },
+  "checks": {
+    "disjoint_product": {
       "tr_p_times_tr_n_at_q0": "2.0385811138332745799256136192088997773849272884166",
       "tr_d_at_q0": "2.0385811138332745799256136192088997773849272884166",
       "relative_error": "1.5733088226642647832035598730349575348519056637587e-50",
       "matches_within_1ppb": true,
       "matches_mpmath_exact": true
     },
-    "cross_check_atomic_proton_full": {
+    "atomic_proton_full": {
       "prior_tr_M": "1.6331535640480812",
       "current_tr_M": "1.6331535640480814257473330892701240938276544598183",
       "relative_error": "1.382278666616705019120262855595652863873076724541e-16",
