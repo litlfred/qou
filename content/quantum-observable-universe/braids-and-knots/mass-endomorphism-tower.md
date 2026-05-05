@@ -25,6 +25,27 @@ $$
 *where $\rho_{q} = 1/\hbar_{q}^{2}$ is the substrate density
 ([quantum Planck constant](#def:quantum-planck-constant)) and*
 
+**SUPERSEDED.** *The substrate-only ansatz
+$\rho_q = 1/\hbar_q^2 \approx 102$ is **structurally wrong**: it is
+braid-class-independent, but the categorical density $\rho_K$
+varies $\sim 30\times$ across atoms ($A = 1$ to $A = 3$;
+[graded ρ_K expansion](#prop:rho-k-graded-expansion)). The
+correct dimensional factor is the **operator-valued**
+$A^\lambda_{\mu, \nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)$
+from [hecke branching trace decomp](#prop:hecke-branching-trace-decomposition),
+which depends on the specific braid through its LR-block decomposition.
+The graded expansion
+$\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\beta_K)|) = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$
+([prop:rho-k-graded-expansion](#prop:rho-k-graded-expansion))
+replaces the $\rho_q$ ansatz with a categorically-derived series
+where the LO piece is the constituent-mass ratio (Markov
+multiplicativity, [Wenzl 1988] Theorem 5) and the single-gen
+piece is the proven $\alpha \cdot \sum \ln|\hat V_i^{\mathrm{full}}|$
+binding correction at $0.18\%$ accuracy across $Z = 1..20$. The
+$\rho_q$ display below is retained for historical readability of
+the brane-tower spectral structure but does not represent the
+correct dimensional scaling.*
+
 $$
   \mathrm{Vol}_{q}^{\mathrm{tower}}(\beta)
   \;=\;
@@ -87,6 +108,17 @@ the Borromean binding scale `prop:binding-scale-catalan`), which gives
 parameters — but the integration probe shows the
 $\int (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$ identity doesn't
 reduce to $\alpha \cdot \ln|V|$ either.*
+
+*Both forms above are concrete evaluations of the abstract GB-NF
+statement
+([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
+$\mathcal{M}(K) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$.
+The substrate density $\rho_q = 1/\hbar_q^2$ above is a substrate-only
+ansatz for the categorical density $\rho_K$; empirically
+$\rho_K^{\mathrm{CODATA}}$ is strongly braid-class-dependent
+(see `rho-k-codata-vs-six-term.witness.json`: $\rho_K^{\mathrm{CODATA}}(D)/\rho_K^{\mathrm{CODATA}}(\mathfrak{p}) \approx 5.5$),
+so any candidate dimensional factor must absorb that scaling either
+into $\rho_q$ itself or into $\mathrm{Vol}_q^{\mathrm{tower}}(\beta)$.*
 
 *Open: the correct Kashaev limit of $\mathrm{Vol}_q^{(S)}$ at $q_0$
 needs derivation.  Two candidates the integral does NOT support:

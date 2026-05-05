@@ -1,0 +1,243 @@
+{
+  "computation": "path-a-zeta1-residue-probe",
+  "description": "Path A from docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md.  Identifies zeta_1 = 1 explicitly per terms-2-6-higher-operations.md and extracts T2+T3 (combined) as Res_{q=1}[tr_M(T_w)] / (q_0 - 1) using markov_peel + sympy.residue.  The result is Markov-invariant by construction (residue of an invariant function).  Filtration-level split into T2 (level 1) vs T3 (level 2) is finer Hochschild work; this probe extracts the combined sum.",
+  "computedAt": "2026-05-03T22:30:50.543279+00:00",
+  "zeta_1_identified_as": "1 (the trivial root of unity)",
+  "source_for_zeta_1_definition": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md",
+  "rows": [
+    {
+      "atom": "proton",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "tr_M_at_q_close_to_1": "(0.5000042500033125+0j)",
+      "q_minus_1_times_tr_M_limit": "(5.000042500033125e-07+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(4.546377842741111e-06+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.5428735940364613+0j)",
+          "qm1_tr_M": "(0.005428735940364613+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.504253354870624+0j)",
+          "qm1_tr_M": "(0.000504253354870624+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.5004250331673745+0j)",
+          "qm1_tr_M": "(5.0042503316737456e-05+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.5000425003312924+0j)",
+          "qm1_tr_M": "(5.000425003312924e-06+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.5000042500033125+0j)",
+          "qm1_tr_M": "(5.000042500033125e-07+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 0.11310696601867676,
+      "elapsed_eval_sec": 0.0224759578704834
+    },
+    {
+      "atom": "neutron",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "tr_M_at_q_close_to_1": "(0.5000030000029375+0j)",
+      "q_minus_1_times_tr_M_limit": "(5.000030000029375e-07+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(4.546366476889704e-06+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.5303360330727842+0j)",
+          "qm1_tr_M": "(0.005303360330727842+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.5030029798082799+0j)",
+          "qm1_tr_M": "(0.0005030029798082799+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.5003000294173121+0j)",
+          "qm1_tr_M": "(5.0030002941731216e-05+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.5000300002937923+0j)",
+          "qm1_tr_M": "(5.000300002937923e-06+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.5000030000029375+0j)",
+          "qm1_tr_M": "(5.000030000029375e-07+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 0.037819862365722656,
+      "elapsed_eval_sec": 0.007470607757568359
+    },
+    {
+      "atom": "deuteron",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "tr_M_at_q_close_to_1": "(0.1250015625044219+0j)",
+      "q_minus_1_times_tr_M_limit": "(1.250015625044219e-07+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(1.1365990070571537e-06+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.14108613106147105+0j)",
+          "qm1_tr_M": "(0.0014108613106147106+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.12656693995610188+0j)",
+          "qm1_tr_M": "(0.00012656693995610188+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.12515629423674407+0j)",
+          "qm1_tr_M": "(1.2515629423674408e-05+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.12501562544220549+0j)",
+          "qm1_tr_M": "(1.250156254422055e-06+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.1250015625044219+0j)",
+          "qm1_tr_M": "(1.250015625044219e-07+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 1.9759516716003418,
+      "elapsed_eval_sec": 0.2086188793182373
+    },
+    {
+      "atom": "tritium",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "tr_M_at_q_close_to_1": "(0.03125045312637891+0j)",
+      "q_minus_1_times_tr_M_limit": "(3.125045312637891e-08+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(2.841503200591745e-07+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.035922013571275356+0j)",
+          "qm1_tr_M": "(0.0003592201357127536+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.03170450650063317+0j)",
+          "qm1_tr_M": "(3.170450650063317e-05+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.0312953262916282+0j)",
+          "qm1_tr_M": "(3.12953262916282e-06+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.031254531387893185+0j)",
+          "qm1_tr_M": "(3.1254531387893186e-07+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.03125045312637891+0j)",
+          "qm1_tr_M": "(3.125045312637891e-08+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 3.893350839614868,
+      "elapsed_eval_sec": 0.9347507953643799
+    },
+    {
+      "atom": "helium-3",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "tr_M_at_q_close_to_1": "(0.031250656254628924+0j)",
+      "q_minus_1_times_tr_M_limit": "(3.125065625462892e-08+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(2.8415216703902534e-07+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.03829549356782454+0j)",
+          "qm1_tr_M": "(0.0003829549356782454+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.03191089805940947+0j)",
+          "qm1_tr_M": "(3.191089805940947e-05+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.03131567130812349+0j)",
+          "qm1_tr_M": "(3.131567130812349e-06+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.03125656296290968+0j)",
+          "qm1_tr_M": "(3.125656296290968e-07+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.031250656254628924+0j)",
+          "qm1_tr_M": "(3.125065625462892e-08+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 2.880183696746826,
+      "elapsed_eval_sec": 0.6074464321136475
+    },
+    {
+      "atom": "helium-4",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "tr_M_at_q_close_to_1": "(0.007812679688858404+0j)",
+      "q_minus_1_times_tr_M_limit": "(7.812679688858404e-09+0j)",
+      "is_regular_at_q1": false,
+      "T2_plus_T3_contribution_at_q0": "(7.10381838346855e-08+0j)",
+      "samples": [
+        {
+          "eps": 0.01,
+          "tr_M": "(0.009750435633270797+0j)",
+          "qm1_tr_M": "(9.750435633270798e-05+0j)"
+        },
+        {
+          "eps": 0.001,
+          "tr_M": "(0.007993550885535288+0j)",
+          "qm1_tr_M": "(7.993550885535288e-06+0j)"
+        },
+        {
+          "eps": 0.0001,
+          "tr_M": "(0.007830482338948801+0j)",
+          "qm1_tr_M": "(7.830482338948802e-07+0j)"
+        },
+        {
+          "eps": 1e-05,
+          "tr_M": "(0.007814297010844806+0j)",
+          "qm1_tr_M": "(7.814297010844806e-08+0j)"
+        },
+        {
+          "eps": 1e-06,
+          "tr_M": "(0.007812679688858404+0j)",
+          "qm1_tr_M": "(7.812679688858404e-09+0j)"
+        }
+      ],
+      "elapsed_peel_sec": 19.878900051116943,
+      "elapsed_eval_sec": 3.3664395809173584
+    }
+  ]
+}

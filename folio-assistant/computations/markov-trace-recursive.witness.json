@@ -1,0 +1,135 @@
+{
+  "computation": "markov-trace-recursive",
+  "description": "Recursive symbolic Markov-trace computer for arbitrary H_n(q) words. Uses gb_filtration_jet_tracker.HeckeElement (symbolic in q via sympy) to expand braids into the Hecke basis, then applies recursive Markov-axiom descent for each basis element. Tested up to H_6 for representative words.",
+  "reference_blocks": [
+    "prop:atomic-mass-gb-nf",
+    "prop:categorical-mass-markov"
+  ],
+  "computedAt": "2026-05-05T22:51:34.446831+00:00",
+  "test_cases": [
+    {
+      "name": "identity_H3",
+      "n": 3,
+      "word": [],
+      "tr_M_at_q0": 1.0,
+      "tr_M_symbolic_short": "1",
+      "tr_M_symbolic_full": "1"
+    },
+    {
+      "name": "\u03c3_1",
+      "n": 3,
+      "word": [
+        1
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1\u00b2",
+      "n": 3,
+      "word": [
+        1,
+        1
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1\u03c3_2",
+      "n": 3,
+      "word": [
+        1,
+        2
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1\u03c3_2\u03c3_1",
+      "n": 3,
+      "word": [
+        1,
+        2,
+        1
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1^7 \u03c3_2^4 (proton)",
+      "n": 3,
+      "word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1^6 \u03c3_2^4 \u03c3_1 inv (neutron-like)",
+      "n": 3,
+      "word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        -1
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1\u03c3_2\u03c3_3 (H_4)",
+      "n": 4,
+      "word": [
+        1,
+        2,
+        3
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1\u03c3_2\u03c3_3\u03c3_2\u03c3_1 (H_4)",
+      "n": 4,
+      "word": [
+        1,
+        2,
+        3,
+        2,
+        1
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1\u03c3_2\u03c3_3\u03c3_4 (H_5)",
+      "n": 5,
+      "word": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    },
+    {
+      "name": "\u03c3_1\u03c3_2\u03c3_4\u03c3_5 (deuteron disjoint)",
+      "n": 6,
+      "word": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+    }
+  ]
+}

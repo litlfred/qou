@@ -66,6 +66,24 @@ providing LP stability without explicit $\mathcal{B}_3$ dressing.*
 
 ## Three-invariant mass formula
 
+**Relation to the GB-NF form.**
+*The atomic mass admits the abstract algebraic expression
+([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))*
+
+$$
+  \mathcal{M}(K)
+  \;=\;
+  m_e \cdot \rho_K \cdot
+  \bigl\lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\beta_K)\bigr)\!\bigr\rvert,
+$$
+
+*where $\mathrm{NF}_{\mathrm{GS}}$ is the Gröbner–Shirshov normal
+form in $H_n(R, q_0)$ and $\rho_K$ is the categorical density. The
+formula below is a **concrete evaluation** of this abstract form
+that fixes $\rho_K$ via CODATA constituent inputs $m_{\mathfrak{p}},
+m_{\mathfrak{n}}$ and absorbs the residual $\rho_K$ structure into
+the per-generator log-volume sum $\alpha \sum_i \ln\lvert\hat{V}_i^{\mathrm{full}}\rvert$.*
+
 **Proposition.**
 *The mass of a neutral atom $(Z, N)$ is*
 
