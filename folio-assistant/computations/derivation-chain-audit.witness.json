@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T21:54:47.786326+00:00",
-  "commitSha": "47de19d8153bb30343a76f2e6eb5b22599a92cbe",
+  "computedAt": "2026-05-05T22:08:05.508013+00:00",
+  "commitSha": "6968201bdea4d327394fec4a6e3ae9ea3d99cd97",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1826,6 +1826,7 @@
         "wedderburn-mass-3term.witness.json",
         "wedderburn-orthogonal-r-3-h4.witness.json",
         "wenzl-bridge-witness-audit.witness.json",
+        "wenzl_n6_closed_form.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-simplified-small-n.witness.json",
         "z-power-scan.witness.json"
