@@ -45,36 +45,45 @@ analysis: U2 ("force-carriers are 2-component links, not knots")
 becomes a categorical premise about object types in $\mathbf{C}$,
 not a separate surface assumption.
 
-## 2. q-precision contract (STRICT)
+## 2. q-precision contract (STRICT) — categorical ring $R$
 
-The eigenvalue analysis in
+The QOU framework works over a **categorical coefficient ring
+$R$** (typically $\mathbb{Z}[q, q^{-1}]$ or its localization
+$R = \mathbb{Q}(q)$ — see
+[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/CLAUDE.md)),
+**not** the real numbers. The eigenvalue analysis in
 [`prop:even-twist-torus-link-psd-feasibility`](../../content/quantum-observable-universe/descartes-universe/electroweak-higgs-torus-link-triplet.md)
-states $\sigma_1^{2k}$ has block eigenvalues $(q^{2k}, q^{-2k})$
-both positive. To make this rigorous, we must specify the domain
-of $q$:
+states $\sigma_1^{2k}$ has block eigenvalues $(q^{2k}, q^{-2k})$.
+The precision contract is on $q$ as an element of $R$:
 
-| Domain | Status of statement |
-|--------|--------------------|
-| $q = 1$ (classical) | $H_n(1) = \mathbb{Q}[S_n]$; eigenvalues collapse to $(1, 1)$. **Excluded** — q=1 is a root of unity. |
-| $q$ a primitive $\ell$-th root of unity, $\ell \leq n$ | $H_n(q)$ is **not semisimple**; Wedderburn fails; PSD claim breaks. **Excluded.** |
-| $q \in \mathbb{R}_{>0} \setminus \{1\}$ | $H_n(q)$ is semisimple; both eigenvalues real and positive ($q^{2k} > 0$, $q^{-2k} > 0$). **Domain of validity.** |
-| $q \in \mathbb{Q}(q)$ symbolic, $q$ not a root of unity | All identities hold formally; PSD requires real specialization. |
+| Locus of $q$ in $R$ | Status of statement |
+|---------------------|--------------------|
+| $q = 1$ (classical) | $H_n(1) = \mathbb{Q}[S_n]$; eigenvalues collapse to $(1, 1)$. **Excluded** — $q=1$ is a (trivial) root of unity. |
+| $q$ a primitive $\ell$-th root of unity in $R$, $\ell \leq n$ | $H_n(q)$ is **not semisimple**; Wedderburn fails; PSD claim breaks. **Excluded.** |
+| $q$ generic in $R$ (not a root of unity) | $H_n(q)$ is semisimple over $R$; eigenvalues $q^{2k}, q^{-2k} \in R^\times$. Identities hold formally over $R$. **Domain of validity for algebraic claims.** |
+| Specialization $R \to F$ for $F$ a real-closed field, $q \mapsto q^* \in F$ with $q^* > 1$ | Eigenvalues become positive elements of $F$. **Domain of PSD/positivity claims.** |
 
-**Explicit contract** for the refined block: results stated for
-$q \in \mathbb{R}$ with $q > 1$, or formally over $\mathbb{Q}(q)$
-with $q$ generic (not a root of unity). The numerical
-specialization $q = q_0 = 1.10997859\ldots$ is a single point in
-the $q > 1$ domain — propositions should be stated **for all
-$q > 1$**, with $q_0$ appearing only in numerical-evaluation
-remarks.
+**Explicit contract** for the refined blocks: algebraic identities
+(eigenvalue expressions, Wedderburn projectors, Plancherel
+weights) are stated **over generic $q \in R$, not a root of
+unity**. Positivity / PSD claims (e.g. "both eigenvalues
+positive") require an *additional* assumption — a specialization
+to a real-closed field $F$ with $q \mapsto q^* > 1$ in $F$. The
+numerical evaluation $q \mapsto q_0 = 1.10997859\ldots$ is one
+such specialization (with $F = \mathbb{R}$); $q_0$ should appear
+**only** in numerical-evaluation remarks, never in the
+proposition body.
 
 This is a **direct correction** to the current
-`weak-spectral-completeness.md` and
-`electroweak-higgs-torus-link-triplet.md` blocks, both of which
-state eigenvalue expressions without specifying the q-domain. The
+[`weak-spectral-completeness.md`](../../content/quantum-observable-universe/braids-and-knots/weak-spectral-completeness.md)
+and
+[`electroweak-higgs-torus-link-triplet.md`](../../content/quantum-observable-universe/descartes-universe/electroweak-higgs-torus-link-triplet.md)
+blocks, both of which state eigenvalue expressions over an
+unspecified $q$-domain and silently use $q_0$-specific values.
+The
 [Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/CLAUDE.md)
-is generic in $q$; the per-block statements need to inherit this
-generality, not silently specialize to $q_0$.
+is generic in $q \in R$; per-block statements must inherit this
+generality.
 
 ## 3. LP/SDP selection of operators per confinement
 
@@ -182,32 +191,58 @@ normalization (analog of the Plancherel ratio) yet to be
 authored. This is a **structurally constrained** basis, unlike
 the brute-force 7.5×10⁵-element basis of the impasse audit.
 
-## 6. Action items (path-α only)
+## 6. Prioritization plan (path-α only)
 
-In dependency order:
+Six action items in **dependency order** with parallelizable phases:
+
+### Phase A — Independent block refinements (start now)
 
 1. **Refine `conj:electroweak-higgs-torus-link-triplet`** — replace
    "non-Bring even-twist" with "Bring-internal even-twist
-   complement"; update host-genus discussion to cite
-   `prop:torus-embeddable-complete`.
+   complement"; cite `prop:torus-embeddable-complete`; lift
+   eigenvalue claims to generic $q \in R$, not a root of unity.
 2. **Refine `conj:weak-spectral-completeness`** — drop
-   host-distinctness; state for $q \in \mathbb{R}_{>1}$ (and
-   formally over $\mathbb{Q}(q)$, $q$ not a root of unity).
-3. **Author `prop:knot-operator-LP-selection`** — formal
-   LP/SDP-duality statement that the Gram-inverse basis selects
-   one knot operator per confinement, with `active_set` (dual
-   support) identifying the bound-state's saturated demand
-   channels.
+   host-distinctness assertion; state Wedderburn decomposition
+   over generic $q \in R$, not a root of unity; specialize to a
+   real-closed field for the Plancherel-weight positivity remark.
+
+### Phase B — Witness extension (parallel to A)
+
 4. **Extend `knot-operator-table` witness** — add $T(2,4),
-   T(2,6), T(2,8)$ in $H_2(q)$ alongside the current $H_3(q)$
-   table.
+   T(2,6), T(2,8)$ in $H_2(q)$ to the existing $H_3(q)$ table.
+   Compute symbolically over $R = \mathbb{Z}[q, q^{-1}]$;
+   evaluate at $q_0$ for numerical witness only.
+
+### Phase C — New content blocks (gated on A + B)
+
+3. **Author `prop:knot-operator-LP-selection`** — formal
+   LP/SDP-duality statement that the Gram-inverse basis $G^{-1}$
+   selects one knot operator per confinement, with the
+   active-set (LP dual support) identifying the bound-state's
+   saturated demand channels. Inputs: refined blocks (1, 2) +
+   extended witness (4).
 5. **Author `prop:weak-symmetric-normalization`** — define
-   $\mathcal{N}_{\rm sym}(q)$ structurally (analog of
-   `prop:gram-determinant-plancherel-ratio`).
-6. **Run constrained PSLQ** for $N_v$ on the basis $\{[4]_q,
-   [6]_q, [8]_q, [2]_q, q^k, h^k, \mathcal{N}_{\rm sym}\}$ at
-   1000-dps with target tolerance capped at CODATA $G_F$
-   ($5\times 10^{-7}$).
+   $\mathcal{N}_{\rm sym}(q) \in R$ structurally as the
+   symmetric-channel Plancherel weight in the EW Wedderburn
+   decomposition. Analog of
+   `prop:gram-determinant-plancherel-ratio` for the EM sector.
+
+### Phase D — Verification (gated on C)
+
+6. **Run constrained PSLQ** for $N_v$ on the structurally
+   constrained basis
+   $\{[4]_q, [6]_q, [8]_q, [2]_q, q^k, h^k, \mathcal{N}_{\rm sym}\}$
+   at 1000-dps with tolerance capped at CODATA $G_F$
+   ($5\times 10^{-7}$). Treat as **uniqueness witness**, not
+   discovery.
+
+### Cross-branch coordination
+
+| Branch | Overlap | Coordination message |
+|--------|---------|---------------------|
+| `claude/categorical-mass-divergence-audit` (PR #534) | dimensional anchor (Piece 1) ↔ $N_v$ derivation | Notify on this audit; their `prop:rho-k-graded-expansion` may inherit $\mathcal{N}_{\rm sym}$ structure |
+| `claude/hoefsmit-2x2-fix` (PR #546) | per-partition $\chi^\lambda$ symbolic | Notify of R-precision contract; their symbolic engine should emit $R$-elements (not floats) for use in (3) and (5) |
+| `copilot/identify-multiplicative-chain` (AXKIA, merged) | $\alpha_{\rm EM}$ closed form template | Already merged; (5) and (6) parallel the AXKIA pipeline |
 
 ## 7. Files
 

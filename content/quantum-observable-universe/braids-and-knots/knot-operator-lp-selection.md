@@ -1,0 +1,143 @@
+**Proposition (knot-operator LP/SDP selection via Gram-inverse dual basis).**
+
+*Let $R$ be the categorical coefficient ring with $q \in R$ generic
+(not a root of unity in $R$ — note $q = 1$ IS excluded), and let
+$H_n(q)$ be the Iwahori-Hecke algebra over $R$ in the standard
+generators ([Hecke-Skein convention](https://github.com/litlfred/qou/blob/main/CLAUDE.md) §7a).
+Let $\{b_i\}$ be a Frobenius-non-degenerate basis (e.g. the
+Gröbner-Shirshov NF basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-,
+e^-\}$ for $H_3(q)$ on three strands). Then for any confinement
+target $T \in H_n(q)$ — a bound-state defined by a vector of
+required NF-channel multiplicities $n_T = (n_T^i)_{i=1}^{|\text{basis}|}
+\in R^{|\text{basis}|}$ — the selection of a knot operator
+$\beta(T_{m,m'}) \in H_n(q)$ producing $T$ is determined by the
+Frobenius-Gram-inverse LP/SDP dual basis:*
+
+$$
+  \min_{\substack{x \geq 0 \\ G^{-1} S x \;\geq\; n_T}}
+  \;\;\sum_{m'} t_{(m, m')} \, x_{(m, m')},
+$$
+
+*where $S = (s_{i,(m, m')})$ is the supply matrix encoding which
+NF channel each torus knot $T_{m,m'}$ produces (computed by
+[`knot-operator-table.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table.witness.json)
+for $H_3(q)$ matter operators and
+[`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json)
+for $H_2(q)$ EW even-twist links), $t_{(m, m')}$ is the crossing
+energy ($q$-rational expression in $R$), and $G^{-1}$ is the
+Frobenius co-Casimir Gram-inverse.*
+
+*By Schrijver §7.4 strong duality + complementary slackness, the
+LP dual variables $(y_0^*, y^*)$ supply:*
+
+- *the **shadow price** $y_0^*$ of the net-multiplicity
+  constraint;*
+- *per-NF-channel **Frobenius positivity shadow prices** $y_i^* \geq
+  0$ for each demand channel;*
+- *the **active set** $A^*(T) := \{(m, m') : x_{(m, m')}^* > 0\}$
+  identifying which knot operators actually contribute to the
+  bound state $T$.*
+
+*The selected operator is the unique $T_{m,m'}$ with $x_{(m,
+m')}^* > 0$ when $A^*(T)$ is a singleton; otherwise the bound
+state is a Wedderburn superposition with weights given by
+$x^*$.*
+
+### Statement (formal)
+
+Define the **demand profile** of a confinement $T$ as the negative
+NF coefficients ([knot-operator basis table](#prop:knot-operator-basis-table-summary))
+of the formal product $T = \prod_i b_i^{n_T^i}$. Define the
+**supply profile** of a candidate knot operator $\beta(T_{m,m'})$
+as the vector of positive NF coefficients in $b_i \cdot
+\beta(T_{m,m'}) \cdot b_j$ ranging over basis pairs $(b_i, b_j)$.
+
+The LP
+
+$$
+  \begin{aligned}
+    \min_{x \geq 0} \quad & \sum_{(m, m')} t_{(m, m')} \, x_{(m, m')} \\
+    \text{s.t.} \quad     & \sum_{(m, m')} S_{i, (m, m')} \, x_{(m, m')}
+                            \;\geq\; n_T^i, \qquad i = 1, \ldots, \dim H_n(q),
+  \end{aligned}
+$$
+
+is feasible iff the bound state $T$ is **physically realisable** —
+i.e. iff the demand profile lies in the positive cone spanned by
+the supply profiles. The Frobenius pairing
+$\langle \cdot, \cdot \rangle_F$ on $H_n(q)$ provides the natural
+inner product underlying the SDP relaxation.
+
+**The Gram-inverse $G^{-1}$ is the canonical dual basis** for the
+constraint matrix: rewriting the LP in the dual basis transforms
+the constraint $S x \geq n_T$ into $\widetilde{S} x \geq G^{-1}
+n_T$ where $\widetilde{S}$ is sparse (each torus knot couples to
+at most a small fixed number of dual-basis directions). This is
+the LP-rewriting that makes operator selection efficient.
+
+### Existence + uniqueness of the selection
+
+*By LP duality (Schrijver §7.2 strong duality), if the LP is
+feasible, the optimal active set $A^*(T)$ is determined by the
+complementary slackness condition*
+
+$$
+  y_i^* > 0 \;\;\Longleftrightarrow\;\;
+  \text{constraint } i \text{ is tight at } x^*.
+$$
+
+*The active set is generically unique (Schrijver §7.4); ties
+correspond to degenerate confinements with a continuous family of
+operator-selection equivalents.*
+
+### Existing instances (from witness data)
+
+Per [`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json):
+
+| Confinement | Active operator (LP-optimal) | NF demand | Crossing energy $t_{(m,m')}$ |
+|-------------|------------------------------|-----------|-----------------------------:|
+| Proton | $L_+ = \sigma_0\sigma_1$ | 0 | $\approx 0.152$ at $q_0$ |
+| Neutron | $L_+ = \sigma_0\sigma_1$ | 0 | $\approx 0.106$ at $q_0$ |
+
+Per the to-be-extended [`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json):
+
+- **EW carriers** $T(2,4), T(2,6), T(2,8)$ in $H_2(q)$ select the
+  Wedderburn-(sym, alt) projector pair as the LP-active set, with
+  uniform Plancherel weight $1/[2]_q$ per
+  [conj:weak-spectral-completeness](#conj:weak-spectral-completeness).
+
+### Status
+
+🟡 **Open** as a fully-formalized proposition. The LP/SDP
+infrastructure is already first-class
+([CLAUDE.md §LP/SDP duals](https://github.com/litlfred/qou/blob/main/CLAUDE.md))
+and witnesses for individual confinements are in place. To
+promote to `proposition`:
+
+1. **Discharge** the LP-feasibility ↔ confinement-realisability
+   equivalence (currently asserted as part of [`prop:operator-selection-lp`](#prop:operator-selection-lp); requires
+   a categorical-physics statement linking the Frobenius-positive
+   cone to physical confinement).
+2. **Verify** that for every authored confinement (proton,
+   neutron, deuteron, ...) the LP/SDP solver returns an active
+   set matching the existing categorical-physics identification.
+3. **Lean formalization**: encode the LP duality statement as a
+   class hypothesis with the witness data as an instance proof.
+
+### Audit-flag impact
+
+*Closing this proposition would close the methodological
+discontinuity in the **FROB-FILTER** flag (the
+Frobenius-positivity activation threshold between $A = 3$ and
+$A = 6$ in
+[`docs/audits/2026-05-02-nv-frob-filter-conjectures.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-02-nv-frob-filter-conjectures.md)):
+the activation rule becomes a **derived consequence** of
+LP/SDP duality, not an empirical fit per atomic mass.*
+
+**Witness inputs.**
+[`gram-matrix-dual.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gram-matrix-dual.witness.json),
+[`knot-operator-table.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table.witness.json),
+[`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json),
+[`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json).
+
+**Audit doc.** [`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement.md).

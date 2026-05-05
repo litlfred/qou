@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T18:19:46.815719+00:00",
-  "commitSha": "7b34963df80d979e730863d033d206e0209480ab",
+  "computedAt": "2026-05-05T22:02:39.738744+00:00",
+  "commitSha": "cfe45430b23ef6c60a77f3159972f99d88fb074a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1574,6 +1574,7 @@
         "kerov-knot-factor.witness.json",
         "kerov-walk-verify.witness.json",
         "knot-ideals-gb-jet-locations.witness.json",
+        "knot-operator-table-h2.witness.json",
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",
         "lambda-descartes-q0.witness.json",
