@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T01:27:55.931568+00:00",
-  "commitSha": "73d799bc340f29d7d36d8b7bce18e4966e18d115",
+  "computedAt": "2026-05-05T01:43:45.469477+00:00",
+  "commitSha": "2d676cb182d904e8ad8c93dd64a5233ddc140f90",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1763,6 +1763,7 @@
         "spectral-sequence-unified-h3.witness.json",
         "std-matrix-trace-closed-form.witness.json",
         "strict-3cal-unified-mass.witness.json",
+        "sublemma-2-1-alpha-shift-extract.witness.json",
         "sublemma-2-1-deuteron-branching.witness.json",
         "sw-period-thimble-equivalence.witness.json",
         "sym-alt-loo-validation.witness.json",
