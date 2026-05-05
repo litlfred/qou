@@ -143,9 +143,15 @@ needs the full Wedderburn structure that
   closed-form $\mathrm{tr}_M$ for proton + neutron derived in $R$,
   pole orders ($10$ and $8$) confirmed against `dp_pole_probe`,
   leading coefficient $-1/8$ universal.
-- **Open for $A \geq 2$**: symbolic deuteron tr_M timed out at 600s
-  (n=6 has 11 partitions, $f^\lambda$ up to 16 — feasible with
-  partition filtering or longer compute time).
+- **Closed for $A = 2$**: deuteron internal Markov trace closed
+  form derived (commit on PR #546, follow-up). All 11 partitions of
+  6 contribute; per-partition $\chi^\lambda$ takes 0.1–22.8 s
+  using the canonical engine's caching (total ~80 s). Pole order
+  $19$, leading coefficient $+1/128 = +1/2^7$ — POSITIVE, opposite
+  the $A = 1$ sign. The naive "universal $-1/(2 n!)$" conjecture is
+  thereby falsified; the leading coefficient is still a power of 2,
+  suggesting a refined conjecture.
+- **Open for $A \geq 3$**: no symbolic computation attempted yet.
 - **No normalization gap**: the apparent $0.702$ vs $1.065$
   discrepancy (round-1 audit) was a phantom — the canonical
   pipeline short-circuits at $A \le 1$ and does not compute the
