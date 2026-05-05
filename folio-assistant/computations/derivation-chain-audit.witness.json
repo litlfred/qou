@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T17:57:47.980320+00:00",
-  "commitSha": "89f3a0c6771c1c023da88fb2c6a882bfdf49919c",
+  "computedAt": "2026-05-05T18:19:46.815719+00:00",
+  "commitSha": "7b34963df80d979e730863d033d206e0209480ab",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1656,6 +1656,7 @@
         "nuclear-ilp.witness.json",
         "nuclear-markov-trace.witness.json",
         "nucleon-with-gluons-nf.witness.json",
+        "nv-axkia-template-search.witness.json",
         "nv-categorical-derivation-probe.witness.json",
         "nv-pslq-extended-basis.witness.json",
         "nv1_candidate_a_doubleprime.witness.json",
