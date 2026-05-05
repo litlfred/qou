@@ -334,6 +334,7 @@ export default chapter({
         "atomic-mass-gb-nf",
         "rho-k-graded-expansion",
         "hecke-branching-trace-decomposition",
+        "markov-trace-antipode-polynomial-symmetry",
         "markov-z-reconciliation",
         "mass-endomorphism-conjecture",
         "categorical-neutrality-saturated-shells",
