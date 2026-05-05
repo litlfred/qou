@@ -129,7 +129,7 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
 
 ### Status
 
-🟡 **Skeleton — actively in development.** The structural
+**Skeleton.** The structural
 sketch above is internally consistent with the path-α-Bring
 refinement and the Hoefsmit cell-content identification. The
 open inputs (Steps A–D above) are research-grade gaps; this

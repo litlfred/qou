@@ -108,7 +108,7 @@ Per the to-be-extended [`knot-operator-table-h2.witness.json`](https://github.co
 
 ### Status
 
-🟡 **Open** as a fully-formalized proposition. The LP/SDP
+**Open** as a fully-formalized proposition. The LP/SDP
 infrastructure is already first-class
 ([CLAUDE.md §LP/SDP duals](https://github.com/litlfred/qou/blob/main/CLAUDE.md))
 and witnesses for individual confinements are in place. To

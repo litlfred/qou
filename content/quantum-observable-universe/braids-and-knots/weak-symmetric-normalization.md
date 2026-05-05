@@ -12,6 +12,17 @@ Plancherel-normalization framing).**
 > weights. The Plancherel-weighted form below is retained only
 > as a **degenerate special case** for backward reference; do
 > not use it for $N_v$ derivation.
+>
+> **Upstream parallel.** The upstream block
+> [`conj:n-sym-symmetric-channel-normalization`](#conj:n-sym-symmetric-channel-normalization)
+> (already on main) carries the Plancherel-weighted N_sym
+> framing with N_sym(q_0) = 213.11 numerically pinned from
+> CODATA G_F. That back-solve is a CAL-3 violation (N_v
+> functions as a fourth calibration). The bar-self-dual
+> $\mathrm{tr}_{\rm pure}$ derivation supersedes both this
+> proposition and the upstream conjecture for the structural
+> N_v ansatz; the upstream block should likewise be demoted in
+> a follow-up.
 
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic
 (not a root of unity in $R$, $q \neq 1$). The
@@ -138,7 +149,7 @@ $\{[4]_q, [6]_q, [8]_q, [2]_q, \mathrm{tr}_{\rm pure}\}$ basis,
 
 ### Status
 
-🟡 **Open** as a formal proposition. The closed-form expression
+**Open** as a formal proposition. The closed-form expression
 $\mathcal{N}_{\rm sym}(q) = q^6 \cdot [3]_{q^2} / 3 \in R$ is
 straightforwardly derivable once
 [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness)

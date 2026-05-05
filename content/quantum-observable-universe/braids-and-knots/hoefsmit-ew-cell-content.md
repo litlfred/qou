@@ -187,7 +187,7 @@ $\mathrm{tr}_{\rm pure}$ is the operative quantity going forward.
 
 ### Status
 
-🟡 **Open**. The Hoefsmit cell-content arithmetic is correct
+**Open.** The Hoefsmit cell-content arithmetic is correct
 (verified by the witness enumeration); the open inputs are:
 
 1. **The $W \leftrightarrow \sigma_1^4$, $Z \leftrightarrow \sigma_3^6$,

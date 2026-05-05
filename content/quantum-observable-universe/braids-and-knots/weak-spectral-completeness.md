@@ -161,7 +161,7 @@ is **superseded**.
 
 ### Status
 
-🟡 **Open**. Requires two prerequisite conjectures (U2 + U4)
+**Open.** Requires two prerequisite conjectures (U2 + U4)
 plus authoring of $\mathcal{N}_{\rm sym}(q)$; see
 `docs/audits/2026-05-05-path-alpha-bring-refinement.md` for the
 prioritization plan.
@@ -189,7 +189,7 @@ prioritization plan.
 ### Audit-flag impact
 
 If this conjecture closes:
-- **NV-1**: 🔴 → 🟢 (closed via PSLQ on extended basis)
+- **NV-1**: hard flag closed via constrained PSLQ on the extended basis
 - **β-decay rates**: $G_F = 1/(\sqrt{2}\,N_v^2 E_\times^2 \mu_0^2)$
   becomes derivable from $(q_0, m_e)$ alone, closing every β-decay
   half-life prediction simultaneously.
