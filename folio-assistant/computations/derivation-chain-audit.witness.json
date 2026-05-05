@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T23:16:58.467444+00:00",
-  "commitSha": "199dad06534585da56fcb524e74bfa6ea8fe64c7",
+  "computedAt": "2026-05-05T23:18:34.549991+00:00",
+  "commitSha": "624230ce2cb767557db644ef1156d281b507c474",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1832,6 +1832,7 @@
         "wedderburn-inter-gen-direct.witness.json",
         "wedderburn-mass-3term.witness.json",
         "wedderburn-orthogonal-r-3-h4.witness.json",
+        "weinberg-angle-simple-falsified.witness.json",
         "wenzl-bridge-witness-audit.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-simplified-small-n.witness.json",
