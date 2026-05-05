@@ -10,17 +10,17 @@
   ],
   "diff_per_shape": {
     "(3,)": [
-      "0",
-      true
+      "is_zero",
+      "all_int_coeffs"
     ],
     "(2, 1)": [
-      "0",
-      true
+      "is_zero",
+      "all_int_coeffs"
     ],
     "(1, 1, 1)": [
-      "0",
-      true
+      "is_zero",
+      "all_int_coeffs"
     ]
   },
-  "generated_at": "2026-05-05T22:34:57.121906+00:00"
+  "generated_at": "2026-05-05T22:52:22.450179+00:00"
 }

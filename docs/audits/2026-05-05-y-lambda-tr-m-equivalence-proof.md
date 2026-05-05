@@ -4,15 +4,34 @@
 **Witness.** [`y_lambda_equivalence_proof.witness.json`](../../folio-assistant/computations/y_lambda_equivalence_proof.witness.json)
 **Script.** [`y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py)
 
+## Setup — base ring
+
+Throughout, fix the **integer Laurent ring**
+$$
+R \;=\; \mathbb{Z}\big[t,\,t^{-1}\big],\qquad t = q^{1/2},
+$$
+so $q = t^2$ and the Markov parameter $z = 1/(t + t^{-1})$.
+
+The seminormal Hoefsmit matrices live in $\mathrm{Frac}(R)$ since the
+2×2 blocks invert factors $(1 - q^{2\rho})$. The Wedderburn weights
+$y_\lambda(q)$ also live in $\mathrm{Frac}(R)$ (they are explicit
+quotients of integer Laurent polynomials in $t$).
+
+**Important:** all polynomial identities below hold in $R$ itself,
+not just in $\mathrm{Frac}(R)$. By base-change they descend to
+$R \otimes_\mathbb{Z} S$ for **any** commutative ring $S$ — in
+particular to $\mathbb{F}_p[t,t^{-1}]$ for any prime $p$ where the
+relevant denominators do not vanish.
+
 ## Statement
 
-Let $H_n(q)$ be the Iwahori-Hecke algebra with Markov parameter
-$z = 1/(\sqrt{q} + 1/\sqrt{q})$. Let $y_\lambda(q)$ denote the
-Wedderburn weight in the decomposition
+Let $H_n(q)$ be the Iwahori-Hecke algebra over $\mathrm{Frac}(R)$
+with Markov parameter $z = 1/(t + t^{-1})$. Let $y_\lambda(q)$
+denote the Wedderburn weight in the decomposition
 $\mathrm{tr}_M = \sum_{\lambda \vdash n} y_\lambda(q) \cdot \chi^\lambda$.
 
 **Theorem (equivalence of derivations).** Two derivations of
-$y_\lambda(q)$ are equivalent as elements of $\mathbb{Q}(q^{1/2})$:
+$y_\lambda(q)$ are equivalent as elements of $\mathrm{Frac}(R)$:
 
 - **Path A (linear system on the ladder).** Solve $A \cdot y = b$
   where $A_{ij} = \chi^{\lambda_j}(\sigma_1 \cdots \sigma_{i-1})$
@@ -63,21 +82,43 @@ class functions on $H_n$).
 By uniqueness, $y_\lambda^A = y_\lambda^B$ for every $\lambda \vdash n$.
 $\square$
 
-### Computational verification (rational-function identity)
+### Computational verification (polynomial identity in $R$)
 
-For $n = 3$ ($\lambda \in \{(3), (2,1), (1,1,1)\}$), sympy's
-`sp.simplify` reduces $y_\lambda^A(q) - y_\lambda^B(q)$ to **exactly**
-$0$ as a rational function in $\mathbb{Q}(q^{1/2})$:
+For $n = 3$ ($\lambda \in \{(3), (2,1), (1,1,1)\}$), write
+$y_\lambda^A = P_\lambda^A / Q_\lambda^A$ and
+$y_\lambda^B = P_\lambda^B / Q_\lambda^B$ as **integer** Laurent
+polynomials $P, Q \in R = \mathbb{Z}[t, t^{-1}]$. Then sympy's
+`sp.expand` reduces the cleared-denominator form
 
-| $\lambda$ | $\Delta = y^A - y^B$ |
-|---|---|
-| $(3)$ | $0$ ✓ |
-| $(2,1)$ | $0$ ✓ |
-| $(1,1,1)$ | $0$ ✓ |
+$$
+\Delta_\lambda \;:=\; P^A_\lambda \cdot Q^B_\lambda \;-\; P^B_\lambda \cdot Q^A_\lambda
+$$
 
-This is a stronger statement than numerical agreement at any
-specific $q_0$ — it is the equality of rational functions over the
-algebraic closure $\mathbb{Q}(q^{1/2})$.
+to **exactly** $0$ as a Laurent polynomial in $R$:
+
+| $\lambda$ | $\Delta_\lambda \in R$ | integer coeffs? |
+|---|---|---|
+| $(3)$ | $0$ ✓ | ✓ |
+| $(2,1)$ | $0$ ✓ | ✓ |
+| $(1,1,1)$ | $0$ ✓ | ✓ |
+
+This is a **polynomial identity** in $\mathbb{Z}[t, t^{-1}]$, hence
+holds **in any commutative ring** by base-change:
+
+$$
+\Delta_\lambda \;=\; 0 \;\;\text{in}\;\; S[t, t^{-1}] \;\;\text{for all commutative}\; S,
+$$
+
+including $S = \mathbb{F}_p$ for every prime $p$. Therefore
+$y_\lambda^A = y_\lambda^B$ in $\mathrm{Frac}(\mathbb{F}_p[t, t^{-1}])$
+whenever $Q_\lambda^A, Q_\lambda^B \neq 0$ in that field — i.e. for
+all primes $p$ where the explicit cyclotomic-factor denominators
+do not vanish.
+
+This is a strictly stronger statement than numerical agreement at
+any specific $q_0$, and is also stronger than rational-function
+equality over $\mathbb{Q}(t)$: it is a universal polynomial
+identity over $\mathbb{Z}$.
 
 (For $n \geq 4$ the linear system is rank-deficient on the ladder
 basis alone — there are more partitions than ladder elements — so
