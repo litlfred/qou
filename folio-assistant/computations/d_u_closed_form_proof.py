@@ -158,7 +158,15 @@ def closed_form_d_u(Z: int, N: int, include_inter: bool = True) -> dict:
         "u_shift": u_shift,
         "one_plus_u2_exp": cyc_exp,
         "factored_str": f"2^{two_power} · u^{u_shift} · (1 + u²)^{cyc_exp}",
-        "leading_coef": "-1/8 (conjectured, A ≥ 2; PR #546)",
+        # Leading coefficient at u=0 of tr_M(u²) in the canonical
+        # Markov-trace convention (= markov_peel.tr_M_atomic):
+        # leading_coef = +2^A.  Verified at A = 2, 3, 4, 5, 6 from
+        # the extended Habiro witness (PR #539); see commit log
+        # discussion of PR #546's universal-(-1/8) claim, which
+        # holds in PR #546's symbolic-Hoefsmit convention but not
+        # in the canonical Markov-trace convention used here.
+        "leading_coef_canonical_markov": 2 ** A,
+        "leading_coef_pr546_symbolic": "-1/8 (proton/neutron A=1; A≥2 falsified at canonical convention)",
         "Z": Z, "N": N, "A": A,
     }
 
