@@ -104,39 +104,86 @@ identification at $n = 6$ resolves this:
   pure-eigenspace; the complementary rank-56 mixed-eigenspace
   carries off-diagonal generator mixing.
 
-### Implications for $\mathcal{N}_{\rm sym}(q)$
+### The Plancherel weight is a degenerate special case
 
-The previous closed-form computation
+Earlier drafts of this audit posited a **Plancherel weight**
+$w_X = (\dim_q \mathrm{im}\,e_X)^2 / [n]_q!$ as the structural
+multiplier for each EW projector. **This framing is wrong.** The
+Hoefsmit cell-content data give a more direct quantity: the
+**unweighted trace** of the operator product
+$\sigma_1^4 \sigma_3^6 \sigma_5^8$ on each pure pattern is
+just (cell-content multiplicity) × (eigenvalue of pattern).
+No external Plancherel prefactor is required.
+
+Concretely, $\sigma_i^{2k}$ has eigenvalue $q^{2k}$ on a sym
+tableau and $q^{-2k}$ on an alt tableau, so on the pure pattern
+$(X_W, X_Z, X_H) \in \{\mathrm{sym}, \mathrm{alt}\}^3$ the operator
+$\sigma_1^4 \sigma_3^6 \sigma_5^8$ has eigenvalue
+
+$$
+  \varepsilon(X_W, X_Z, X_H) \;=\; q^{\,\pm 4} \cdot q^{\,\pm 6} \cdot q^{\,\pm 8}
+$$
+
+with sign $+1$ for sym and $-1$ for alt in each factor. The trace
+on the pure-eigenspace is:
+
+$$
+  \mathrm{tr}_{\rm pure}\bigl(\sigma_1^4 \sigma_3^6 \sigma_5^8\bigr)
+  \;=\;
+  \sum_{(X_W, X_Z, X_H)} m(X_W, X_Z, X_H) \cdot \varepsilon(X_W, X_Z, X_H).
+$$
+
+Substituting the multiplicities $(4, 3, 1, 2, 2, 1, 3, 4)$ and
+collecting powers:
+
+$$
+\boxed{\;
+  \mathrm{tr}_{\rm pure}\bigl(\sigma_1^4 \sigma_3^6 \sigma_5^8\bigr)
+  \;=\;
+  4\bigl(q^{18} + q^{-18}\bigr)
+  + 2\bigl(q^{10} + q^{-10}\bigr)
+  + 1\bigl(q^{6} + q^{-6}\bigr)
+  + 3\bigl(q^{2} + q^{-2}\bigr)
+\;}
+$$
+
+This is **bar-self-dual** under $\iota \colon q \mapsto q^{-1}$ —
+exactly the substrate-level
+[bar self-duality](#prop:bar-t-duality-substrate) at the level of
+the trace. The bar-self-duality is **automatic** from the
+disjoint-strand-pair construction (each $\sigma_i^{2k}$ is
+bar-self-dual on its own per
+[`prop:even-twist-torus-link-psd-feasibility`](#prop:even-twist-torus-link-psd-feasibility),
+and the disjoint product preserves the duality).
+
+By contrast, the Plancherel-weighted "uniform-1/[2]_q" form
+$q^6 (1 + q^2 + q^4) / 3$ from the prior draft is **not**
+bar-self-dual: under $\iota$ it becomes $q^{-6}(1 + q^{-2} +
+q^{-4})/3 \neq q^6 (1 + q^2 + q^4) / 3$. So the Plancherel
+expression cannot be the substrate-level trace; it was a
+**degenerate artifact** of the dimensionally-collapsed
+$H_2(q)$-only computation, which lost the cell-content structure
+that enforces bar-self-duality.
+
+Numerical comparison at $q_0 \approx 1.10998$:
+
+| Quantity | Value at $q_0$ |
+|----------|---------------:|
+| $\mathrm{tr}_{\rm pure}(\sigma_1^4 \sigma_3^6 \sigma_5^8)$ | $\approx 41.69$ |
+| Plancherel-weighted (degenerate) $\mathcal{N}_{\rm sym}$ | $\approx 1.90$ |
+
+The two differ by a factor of $\sim 22$ at $q_0$ and are
+**inequivalent** as $R$-elements.
+
+### Implication for $N_v$ derivation
+
+The constrained-PSLQ basis for $N_v$ should therefore use the
+**direct cell-content trace** $\mathrm{tr}_{\rm pure}$ as the
+structural input — not the Plancherel-weighted form. The
 [`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization)
-assumed **uniform** Plancherel weights $w_X = 1/[2]_q$ across the
-six EW projectors. Under the Hoefsmit identification, the
-weights should track the **rank multiplicities** $(2, 1, 3, 3, 1,
-2)$ for the six single-/double-flip patterns:
-
-$$
-  \mathcal{N}_{\rm sym}^{\rm Hoefsmit}(q)
-  \;=\;
-  \frac{2 q^4 + 1 \cdot q^6 + 3 q^8 + 3 q^4 q^6 + 1 \cdot q^4 q^8 + 2 q^6 q^8}{12}
-  \;\in\; R
-$$
-
-(numerator divided by $1 + 2 + 1 + 3 + 3 + 1 + 2 = 12$, the total
-single-/double-flip multiplicity). This **supersedes** the
-uniform-weight expression $q^6 (1 + q^2 + q^4) / 3$, which was
-derived under the incorrect $H_2(q)$-only assumption.
-
-Concrete simplification:
-
-$$
-  \mathcal{N}_{\rm sym}^{\rm Hoefsmit}(q)
-  \;=\;
-  \frac{1}{12}\bigl(2 q^4 + q^6 + 3 q^8 + 3 q^{10} + q^{12} + 2 q^{14}\bigr).
-$$
-
-At $q_0 \approx 1.10998$: numerator $\approx 39.7$, divided by 12
-gives $\mathcal{N}_{\rm sym}^{\rm Hoefsmit}(q_0) \approx 3.31$.
-(Compare to the uniform-weight value $1.8966$ — the corrected
-weight is $\sim 1.75\times$ larger.)
+block needs corresponding refinement: the Plancherel framing is
+demoted to "degenerate special case" status; the bar-self-dual
+$\mathrm{tr}_{\rm pure}$ is the operative quantity going forward.
 
 ### Status
 

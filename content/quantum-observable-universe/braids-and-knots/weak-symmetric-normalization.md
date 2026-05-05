@@ -1,4 +1,17 @@
-**Proposition (weak-sector symmetric-channel Plancherel normalization).**
+**Proposition (weak-sector cell-content trace; supersedes
+Plancherel-normalization framing).**
+
+> **DEMOTED 2026-05-05.** Earlier drafts of this proposition
+> framed $\mathcal{N}_{\rm sym}(q)$ as a Plancherel-weighted
+> ratio with uniform $1/[2]_q$ weights — derived under the
+> dimensionally-inconsistent $H_2(q)$-only formulation. Per
+> [`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content),
+> the operative structural quantity is the **direct cell-content
+> trace** of $\sigma_1^4 \sigma_3^6 \sigma_5^8$ on the
+> pure-eigenspace — bar-self-dual, derived without Plancherel
+> weights. The Plancherel-weighted form below is retained only
+> as a **degenerate special case** for backward reference; do
+> not use it for $N_v$ derivation.
 
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic
 (not a root of unity in $R$, $q \neq 1$). The
@@ -82,10 +95,30 @@ This is the **structural input** that the constrained-basis PSLQ
 search for $N_v$ requires (Phase D of
 `docs/audits/2026-05-05-path-alpha-bring-refinement.md`).
 
-### Connection to the closed-form $N_v$ ansatz
+### Superseding structural input — direct cell-content trace
+
+The proper structural input for the $N_v$ closed form is the
+**bar-self-dual cell-content trace**
+
+$$
+  \mathrm{tr}_{\rm pure}\bigl(\sigma_1^4 \sigma_3^6 \sigma_5^8\bigr)
+  \;=\;
+  4\bigl(q^{18} + q^{-18}\bigr)
+  + 2\bigl(q^{10} + q^{-10}\bigr)
+  + 1\bigl(q^{6} + q^{-6}\bigr)
+  + 3\bigl(q^{2} + q^{-2}\bigr)
+$$
+
+derived in
+[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)
+**without** invoking Plancherel weights. The corresponding
+constrained-PSLQ basis for $N_v$ should use this trace as the
+structural input — not the Plancherel-weighted form below.
+
+### Connection to the closed-form $N_v$ ansatz (legacy framing)
 
 Per the parallel pipeline with [`prop:alpha-em-categorical-trace`](#prop:alpha-em-categorical-trace),
-the EW closed form for $N_v$ is conjecturally
+an earlier-proposed closed form for $N_v$ was
 
 $$
   N_v \;\stackrel{?}{=}\;
@@ -95,10 +128,13 @@ $$
 $$
 
 with $\delta_{\rm EW}(q)$ a small Plancherel correction (analog of
-$\delta_{CS}$). Concrete exponents $a, b$ and the form of
-$\delta_{\rm EW}$ are determined by the LP/SDP solve on the EW
-sector + PSLQ uniqueness on the $\{[4]_q, [6]_q, [8]_q, [2]_q,
-\mathcal{N}_{\rm sym}\}$ basis.
+$\delta_{CS}$). **This ansatz was based on the Plancherel-weight
+framing now demoted.** A revised ansatz using
+$\mathrm{tr}_{\rm pure}$ as the structural input is the operative
+direction; concrete exponents are determined by the LP/SDP solve
+on the EW sector + PSLQ uniqueness on the
+$\{[4]_q, [6]_q, [8]_q, [2]_q, \mathrm{tr}_{\rm pure}\}$ basis,
+**not** the Plancherel basis.
 
 ### Status
 
