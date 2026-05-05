@@ -105,20 +105,43 @@ Without these, step 4 (closed-form ansatz) has no upstream source,
 and step 5 (PSLQ) collapses into the brute-force search done above —
 which is what the false-positive rate predicts.
 
-## 4. Required content-authoring blocks (path β, recommended)
+## 4. Required content-authoring blocks — competing paths
 
-Per the source audit's recommendation
-([2026-05-02-nv-frob-filter-conjectures.md §"Updated recommended
-action sequence"](2026-05-02-nv-frob-filter-conjectures.md)), the
-strongest paper-internal evidence supports **path β: $T_{3,5}$ as
-weak mediator**. Authoring sequence:
+Per the source audit
+([2026-05-02-nv-frob-filter-conjectures.md](2026-05-02-nv-frob-filter-conjectures.md))
+two paths are on the table:
 
-| Step | Block to author | Status | Notes |
-|-----:|-----------------|:------:|-------|
-| 1 | `prop:t35-as-weak-mediator` | TODO | Promote the speculation in `unmapped-torus-knots.md` lines 104–111 to a proposition. Cite cross-link argument: $(p,q) = (3,5)$ structure cross-links generation count $3$ with second-generation winding $5$. |
-| 2 | `prop:weak-spectral-completeness` | TODO | Analog of `thm:em-spectral-completeness` for the SU(2) idempotent decomposition of $T_{3,5}$'s Wedderburn presentation. Schur–Weyl on $V^{\otimes 5}$ ↔ Hecke $H_5(q)$. |
-| 3 | `prop:nv-closed-form-ansatz` | TODO | Plug strand count + force-carrier complexity + Plancherel weight into ansatz. Predict shape $N_v \sim [10]_q \cdot [n]_q \cdot (\text{small correction})$ for some level $n$. |
-| 4 | High-precision PSLQ uniqueness | gated on (1)–(3) | At 1000-dps, but with target precision capped at CODATA $G_F$ tolerance ($5\times 10^{-7}$). |
+- **Path α (links):** force-carrier sector is $\{T(2,4), T(2,6),
+  T(2,8)\}$ — torus *links* on three distinct hosts (genus 1, 2, 3).
+  This path is **already authored** as
+  [`conj:weak-spectral-completeness`](../../content/quantum-observable-universe/braids-and-knots/weak-spectral-completeness.md).
+  Closure depends on three prerequisite conjectures
+  (`conj:force-carrier-knot-vs-link-dichotomy`,
+  `conj:electroweak-mass-eigenstate-count`, plus a Plancherel
+  normalization $\mathcal{N}_{\rm sym}(q)$).
+- **Path β (knots):** force-carrier is the $T_{3,5}$ torus *knot*
+  acting as a unified weak/EM mediator. This path has paper-internal
+  evidence (the [knot-particle-dictionary.md](../../content/quantum-observable-universe/braids-and-knots/knot-particle-dictionary.md)
+  lists $T_{3,5}$ alongside $10_{124}$ as "weak force ($\beta$-decay)")
+  but **is not yet authored** as a proposition.
+
+The two paths are **mutually exclusive** as currently stated: path α
+requires links (host-distinct), path β requires a single knot. A
+choice between them is an architectural decision that touches
+`conj:force-carrier-knot-vs-link-dichotomy` and is outside the
+scope of this audit.
+
+| Path | Status | Next-step authoring |
+|------|--------|---------------------|
+| α (links) | partially authored: `conj:weak-spectral-completeness` exists; gated on three prereq conjectures | discharge prereqs; author $\mathcal{N}_{\rm sym}(q)$ |
+| β (knots) | not yet authored | (would conflict with path α) author `prop:t35-as-weak-mediator` |
+| **PSLQ uniqueness witness** | gated on either path completing | 1000-dps probe on extended basis (path-specific) |
+
+**No N_v derivation is possible without one of these paths
+completing.** The numerical search closed in §2–3 was over the
+*unextended* basis (no path-α $[2k]_q^2/[2]_q$ factors, no path-β
+$T_{3,5}$ Markov trace as a structural input); that is why the
+search did not converge.
 
 The available T_{3,5} structural inputs (already computed):
 
