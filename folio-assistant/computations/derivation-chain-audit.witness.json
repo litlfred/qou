@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T22:08:05.508013+00:00",
-  "commitSha": "6968201bdea4d327394fec4a6e3ae9ea3d99cd97",
+  "computedAt": "2026-05-05T22:36:07.427004+00:00",
+  "commitSha": "e70785f8e9b8e15ab15f68359a54eb93eae1a1e6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1829,6 +1829,7 @@
         "wenzl_n6_closed_form.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-simplified-small-n.witness.json",
+        "y_lambda_equivalence_proof.witness.json",
         "z-power-scan.witness.json"
       ]
     }
