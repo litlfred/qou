@@ -1,9 +1,15 @@
 # Categorical proof of Sub-lemma 2.1: Hecke-branching block decomposition
 
 **Date:** 2026-05-04
-**Status:** Categorical proof complete (up to standard rep-theory inputs).
+**Status:** Categorical proof of the **scalar form**, valid at 1-dim
+irreps including the W-3 maximizer V_(1^p).  The general (multidim
+irrep) form is operator-valued and is refined in
+[`docs/audits/2026-05-04-sublemma-2-1-refined.md`](2026-05-04-sublemma-2-1-refined.md)
+(landing on `claude/categorical-mass-divergence-audit` PR #534).
 **Closes:** the residual research step in
-[`prop:confinement-nf-partial-proof`](../../content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.md).
+[`prop:confinement-nf-partial-proof`](../../content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.md)
+**at the maximizer**, which suffices for the W-3 D(u) shift formula
+since the shift is determined by the maximizer.
 
 This document gives the categorical proof of Sub-lemma 2.1, which
 was the only open piece in the partial proof of
@@ -224,6 +230,49 @@ categorical proof of the third factor `u^{18Z + 21N + 1}` in
 `D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} \cdot (1+u^2)^{3A-1}`.
 
 ∎
+
+---
+
+## Refinement: scalar form valid only at 1-dim irreps
+
+The scalar trace formula proved above:
+
+$$\chi^\lambda(\beta) \;=\; \sum_{(\mu, \nu)} c^\lambda_{\mu, \nu} \cdot \chi^\mu(\beta_1) \cdot \chi^\nu(\beta_2) \cdot a^{(\mu, \nu)}_{\lambda, I}$$
+
+is **only correct when `dim V_λ = 1`** (i.e. λ ∈ {(n), (1^n)}).  An
+empirical 100-pair test of the deuteron (Z=N=1, n=6) on the
+`claude/categorical-mass-divergence-audit` branch
+([`docs/audits/2026-05-04-sublemma-2-1-refined.md`](2026-05-04-sublemma-2-1-refined.md))
+shows the scalar form fails for all 9 multidim partitions of 6 and
+holds (to numerical precision 1e-15) for the two 1-dim extremes
+λ = (6) and λ = (1^6).
+
+The **refined statement** with operator-valued
+A^λ_{μν}(I) ∈ End(V_μ ⊗ V_ν)^(c^λ_{μν}) is:
+
+$$\rho_\lambda(\beta_1 \cdot I \cdot \beta_2) \;=\; \bigoplus_{(\mu, \nu)} c^\lambda_{\mu, \nu} \cdot (\rho_\mu(\beta_1) \otimes \mathbf{1}_\nu) \cdot A^\lambda_{\mu, \nu}(I) \cdot (\mathbf{1}_\mu \otimes \rho_\nu(\beta_2))$$
+
+When dim V_λ = 1 the entire decomposition is trivial and
+A^λ_{μν}(I) reduces to the scalar a^(μ, ν)_{λ, I} of the present
+proof.
+
+### Why W-3 closure is preserved
+
+For the W-3 shift formula, the only λ that matters is the
+**maximizer** λ* := argmax_λ ord_(q=0) χ^λ(β).  Per
+[`alpha_shift_torus.py`](../../folio-assistant/computations/alpha_shift_torus.py)
+(landed via PR #543), the maximizer for torus-knot interfaces
+T_(p, k) is the column partition V_(1^p), which is **1-dimensional**
+(dim V_(1^p) = 1).  For the canonical pppnnn atomic braid with
+interface I = T_(2, 1), the maximizer is V_(1^n) (sign rep, also
+1-dim).
+
+The scalar form of Sub-lemma 2.1 is therefore valid at the
+maximizer, and the shift formula derivation in Steps 1-8 above
+uses only the 1-dim case.  Hence **W-3 D(u) closed-form proof
+remains 3/3 categorical** modulo the routine Lean formalisation
+(integration with Mathlib's LP-duality library; no new rep-theory
+input needed for the maximizer-driven argument).
 
 ---
 
