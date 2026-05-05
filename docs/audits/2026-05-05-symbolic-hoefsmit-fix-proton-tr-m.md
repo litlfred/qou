@@ -100,20 +100,32 @@ symbolic computations become tractable.
 
 ## Use case: m_p calculation?
 
-**Direct plug-in: NOT YET.** The existing
-`hecke_characters.compute_mass_at_level(1, 0, k=3)` returns
-$m_p \approx 938.78$ MeV (within 0.05% of CODATA 938.27). At $q_0$,
-the symbolic closed form gives $\mathrm{tr}_M(\text{proton}) \approx 0.702$,
-while the canonical pipeline produces $\approx 1.065$. The remaining
-discrepancy is a normalization issue in the partition-sum weight
-$w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ (not in the per-irrep
-character $\chi^\lambda$, which now matches numerically to $10^{-6}$
-across all three irreps).
+**Comparison with canonical pipeline.** The closed form
+$\mathrm{tr}_M(\text{proton}) \approx 0.702$ at $q_0$ refers to the
+**internal** 3-strand braid of the proton (the "atomic" braid from
+`atomic_braid_to_crossings(1, 0, include_inter=False)`). The
+canonical mass pipeline,
+`hecke_characters.compute_mass_at_level(Z, N, k=3A)`, short-circuits
+for $A \le 1$ — `nuclear_braid_character` returns
+`float(dim)` whenever $A \le 1$ — so it does **not** compute the
+internal-braid character for a single nucleon. Its trivial output
+$1.0$ at $A=1$ is the empty inter-nucleon braid, not a comparable
+quantity.
 
-**To use this for $m_p$ calculation**, the symbolic closed form
-needs to be aligned with the canonical pipeline's Wedderburn
-normalization (or that pipeline's normalization needs to be
-expressed symbolically). Both approaches are tractable next steps.
+In other words: the closed forms above are the **only** symbolic
+expressions for the internal proton/neutron Markov traces in the
+codebase. There is no separate canonical reference value to
+normalize against; the per-irrep characters cross-validate against
+`build_seminormal_matrices` to $10^{-6}$, and the partition sum uses
+the same Wedderburn weight formula
+$w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ as
+`compute_mass_at_level`'s loop body (verified by direct inspection).
+
+For an **$A \geq 2$** atom, the inter-nucleon crossings dominate
+the braid and `compute_mass_at_level` produces a non-trivial
+Markov trace; the natural extension of this work is to derive
+closed forms there ($n = 6, 9, 12$) once the symbolic pipeline is
+made tractable.
 
 **Where m_e enters:** the Wedderburn-Markov mass formula uses
 $E_0 = Q_{\text{neutron}} = 0.7823$ MeV as the dimensional bridge,
@@ -134,10 +146,12 @@ needs the full Wedderburn structure that
 - **Open for $A \geq 2$**: symbolic deuteron tr_M timed out at 600s
   (n=6 has 11 partitions, $f^\lambda$ up to 16 — feasible with
   partition filtering or longer compute time).
-- **Open: $m_p$ direct plug-in**: residual normalization
-  discrepancy between $\mathrm{tr}_M(\text{proton}) \approx 0.702$
-  (closed form) and $\approx 1.065$ (canonical pipeline); per-irrep
-  $\chi^\lambda$ already matches.
+- **No normalization gap**: the apparent $0.702$ vs $1.065$
+  discrepancy (round-1 audit) was a phantom — the canonical
+  pipeline short-circuits at $A \le 1$ and does not compute the
+  internal proton braid character. The closed form here is the
+  unique symbolic reference for $\mathrm{tr}_M(\text{atomic
+  proton})$.
 
 ## Files
 
