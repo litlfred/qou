@@ -1,0 +1,62 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-05T01:46:00.629878+00:00",
+  "commitSha": "9b84828cc37b50bfe314d354958a3f0926ad24e3",
+  "assertions": [
+    {
+      "name": "symbolic χ^(2,1)(proton) matches numerical hecke_characters",
+      "computed": 2.5154623216489194,
+      "expected": 1.807703,
+      "passed": false,
+      "tolerance": 0.001,
+      "source": "cross-validation against build_seminormal_matrices"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 2543,
+  "computation": "ocneanu-cancellation-derivation",
+  "scriptFile": "ocneanu_cancellation_derivation.py",
+  "scriptHash": "9372633f5487",
+  "scriptCommitSha": "9b84828cc37b50bfe314d354958a3f0926ad24e3",
+  "description": "Round-1 SCAFFOLD: symbolic-q Hoefsmit attempt at first-principles derivation of the cancellation count via Σ_λ w_λ χ^λ(β) / f^λ. The 2×2-block Hoefsmit construction has known convention/sign issues (cross-validated against numerical: χ^(2,1)(proton) sym=2.515 vs num=1.808). High-precision numerical pole detection in docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md is the canonical verification path until the symbolic 2×2 convention is repaired.",
+  "contentBlock": "conj:e-hartree-categorical-derivation",
+  "data": {
+    "proton_standalone": {
+      "n": 3,
+      "partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "per_lambda_chi": {
+        "(3,)": "q**5/4 + q**3/2 + q/4",
+        "(2, 1)": "(q**22 + 11*q**20 - 13*q**18 + 3*q**16 + q**14 + q**12 - q**10 - q**8 - 3*q**6 + 13*q**4 - 11*q**2 - 1)/(4*q**11)",
+        "(1, 1, 1)": "(-q**4 - 2*q**2 - 1)/(4*q**5)"
+      },
+      "per_lambda_pole_at_q0": {
+        "(3,)": 1,
+        "(2, 1)": -11,
+        "(1, 1, 1)": -5
+      },
+      "trM_pole_at_q0": -11,
+      "symbolic_pole_order": 11,
+      "empirical_proton_pole": 10,
+      "DP_max_pole": 11,
+      "symbolic_cross_partition_cancel": 0,
+      "empirical_cross_partition_cancel": 1
+    }
+  },
+  "caveats": [
+    "Symbolic 2×2 block has a documented convention bug: the computed χ^(2,1)(proton) at q_0 is 2.515 vs numerical 1.808. Treat the symbolic_cross_partition_cancel field as known-incorrect; the empirical_cross_partition_cancel = 1 from numerical verification is the correct value."
+  ]
+}

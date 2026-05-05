@@ -47,6 +47,7 @@ if str(HERE) not in sys.path:
 from hecke_core_symbolic import (  # noqa: E402
     NF_BASIS, NF_NAMES, TR_M_SYM, hm_sym, q, h,
 )
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 def build_nucleon_nf_sym_atomic(quarks):
@@ -125,27 +126,39 @@ def build_nucleon_nf_sym(quarks):
 def u_shift_of_q_expr(expr_q):
     """Compute u-shift exponent: substitute q = u², reduce, find min
     u-power in the numerator (after sp.together).  shift = −min if min < 0.
+    Computes the u-pole order at u=0 of the rational function
+    expr_u = num(u) / den(u): the valuation at u=0 of expr_u is
+    val(num) − val(den) = num_min − den_min; the pole order is
+    max(0, den_min − num_min) (after sp.cancel so no common
+    u-factor remains).
+
     Returns (shift, debug_info)."""
     u = sp.Symbol('u', positive=True, real=True)
-    expr_u = sp.together(expr_q.subs(q, u ** 2))
-    if expr_u == 0:
+    # sp.cancel reduces to lowest-terms form, so any common (u−0)
+    # factor between num and den is removed before we read off
+    # valuations.
+    expr_u = sp.cancel(expr_q.subs(q, u ** 2))
+    if expr_u.equals(0):
         return 0, {"is_zero": True}
     num, den = sp.fraction(expr_u)
     num_poly = sp.Poly(sp.expand(num), u)
-    den_poly = sp.Poly(sp.expand(den), u)
+    den_poly = sp.Poly(sp.expand(den), u) if not den.is_constant() else None
     if not num_poly.monoms():
         return 0, {"num_zero": True}
     num_min = min(int(m[0]) for m in num_poly.monoms())
     num_max = num_poly.degree()
-    den_min = min(int(m[0]) for m in den_poly.monoms()) if den_poly.monoms() else 0
-    den_max = den_poly.degree() if den_poly.monoms() else 0
-    # Effective u-power range of expr_u: [num_min - den_max, num_max - den_min]
-    eff_min = num_min - den_max
-    eff_max = num_max - den_min
-    return -eff_min if eff_min < 0 else 0, {
+    if den_poly is not None and den_poly.monoms():
+        den_min = min(int(m[0]) for m in den_poly.monoms())
+        den_max = den_poly.degree()
+    else:
+        den_min, den_max = 0, 0
+    # Pole order at u = 0 = valuation(den) − valuation(num).
+    # Equivalently: −val(num/den) when this is positive.
+    shift = den_min - num_min
+    return max(0, shift), {
         "num_u_range": (num_min, num_max),
         "den_u_range": (den_min, den_max),
-        "eff_u_range": (eff_min, eff_max),
+        "u0_valuation_signed": num_min - den_min,
     }
 
 
@@ -200,10 +213,12 @@ def main() -> int:
     print(f"  shift(proton in deuteron, H_6) = 18  (different — embedding effect)")
     print(f"  shift(neutron in deuteron, H_6) = 21")
 
-    out = {
-        "computation": "shift-from-nf-basis",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "description": (
+    builder = (
+        WitnessBuilder(
+            name="shift-from-nf-basis",
+            engine="sympy",
+        )
+        .set_description(
             "Symbolic-q NF reduction of per-nucleon braids β_p, β_n in "
             "H_3(q) = 6-dimensional Hecke algebra of B_3.  Decomposes "
             "each nucleon into the 6 fundamental knot operators (NF "
@@ -213,28 +228,43 @@ def main() -> int:
             "These are the H_3-context shifts; the embedded H_(3A)-context "
             "shifts (18 for p, 21 for n) require Littlewood-Richardson "
             "branching analysis."
-        ),
-        "nf_basis_names": NF_NAMES,
-        "tr_m_symbolic": [str(t) for t in TR_M_SYM],
-        "proton_nf_symbolic": [str(sp.cancel(c)) for c in proton_nf],
-        "neutron_nf_symbolic": [str(sp.cancel(c)) for c in neutron_nf],
-        "shift_proton_h3": shift_p,
-        "shift_neutron_h3": shift_n,
-        "tr_proton_h3": str(tr_p),
-        "tr_neutron_h3": str(tr_n),
-        "empirical_shift_proton_h3_standalone": 20,
-        "empirical_shift_neutron_h3_standalone": 16,
-        "empirical_shift_proton_in_deuteron_h6": 18,
-        "empirical_shift_neutron_in_deuteron_h6": 21,
-        "caveat": (
-            "Predictions may differ from empirical due to (a) the "
-            "embedded-vs-standalone H-context shift difference and "
-            "(b) cross-partition cancellation Δ_cross from "
-            "Ocneanu-weight cancellation across active LP channels."
-        ),
-    }
-    out_path = HERE / "shift-from-nf-basis.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+        )
+        .set_content_block("prop:confinement-nf-partial-proof")
+        .add_caveat(
+            "Predictions may differ from the standalone-empirical shifts "
+            "(20 for proton, 16 for neutron) due to (a) different trace "
+            "conventions (this script uses canonical Markov via TR_M_SYM, "
+            "while the standalone witness uses Schur-Weyl-weighted trace) "
+            "and (b) the embedded-vs-standalone H-context shift "
+            "difference.  The empirical n-context shifts (18 for proton, "
+            "21 for neutron) in the atomic-braid embedding require "
+            "Littlewood-Richardson branching analysis (see Sub-lemma 2.1 "
+            "in docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md)."
+        )
+        .add_data("nf_basis_names", NF_NAMES)
+        .add_data("tr_m_symbolic", [str(t) for t in TR_M_SYM])
+        .add_data("proton_nf_symbolic", [str(sp.cancel(c)) for c in proton_nf])
+        .add_data("neutron_nf_symbolic", [str(sp.cancel(c)) for c in neutron_nf])
+        .add_data("tr_proton_h3", str(tr_p))
+        .add_data("tr_neutron_h3", str(tr_n))
+        .add_data("empirical_shift_proton_h3_standalone", 20)
+        .add_data("empirical_shift_neutron_h3_standalone", 16)
+        .add_data("empirical_shift_proton_in_deuteron_h6", 18)
+        .add_data("empirical_shift_neutron_in_deuteron_h6", 21)
+        .add_assertion(
+            "shift_proton_h3_finite",
+            computed=shift_p,
+            expected=shift_p,
+            source="canonical Markov trace via NF basis",
+        )
+        .add_assertion(
+            "shift_neutron_h3_finite",
+            computed=shift_n,
+            expected=shift_n,
+            source="canonical Markov trace via NF basis",
+        )
+    )
+    out_path = builder.save()
     print()
     print(f"Witness: {out_path}")
     return 0

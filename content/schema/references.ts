@@ -291,6 +291,35 @@ export const references: CSLData[] = [
     note: "Proves that skewed-Poisson structures on commutative formal groups integrate to non-commutative formal groups via Gr\u00f6bner-Shirshov deformations of distribution algebras; introduces the strong multiplicativity condition ensuring comultiplication is preserved under lifting from characteristic p to characteristic 0",
   }),
 
+  // ── Schrijver 1986 ────────────────────────────────────────────
+  ref({
+    id: "schrijver1986theory",
+    type: "book",
+    title: "Theory of Linear and Integer Programming",
+    author: [
+      { family: "Schrijver", given: "Alexander" },
+    ],
+    publisher: "Wiley",
+    issued: { "date-parts": [[1986]] },
+    "collection-title": "Wiley-Interscience Series in Discrete Mathematics and Optimization",
+    URL: "https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326",
+  }),
+
+  // ── Macdonald 1995 ────────────────────────────────────────────
+  ref({
+    id: "macdonald1995",
+    type: "book",
+    title: "Symmetric Functions and Hall Polynomials",
+    author: [
+      { family: "Macdonald", given: "I. G." },
+    ],
+    publisher: "Oxford University Press",
+    issued: { "date-parts": [[1995]] },
+    edition: "2",
+    "collection-title": "Oxford Mathematical Monographs",
+    URL: "https://global.oup.com/academic/product/symmetric-functions-and-hall-polynomials-9780198504504",
+  }),
+
   // ── Hazewinkel 1978 ───────────────────────────────────────────
   ref({
     id: "hazewinkel1978",
