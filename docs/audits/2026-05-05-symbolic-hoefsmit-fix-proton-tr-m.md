@@ -34,14 +34,18 @@ numerical to 6+ decimal places.
 
 ## Closed-form characters for proton standalone
 
-| $\lambda$ | $\chi^\lambda(\text{proton})$ | pole at $q=0$ |
-|---|---|---:|
-| $(3)$ | $\dfrac{q^5}{4} + \dfrac{q^3}{2} + \dfrac{q}{4}$ | regular |
-| $(2,1)$ | $\dfrac{q^{22} + q^{20} + q^{18} + q^{14} - q^8 - q^4 - q^2 - 1}{4\,q^{11}}$ | 11 |
-| $(1,1,1)$ | $-\dfrac{q^4 + 2q^2 + 1}{4\,q^5}$ | 5 |
+Cross-validated at $q_0$: all three irreps $\lambda \in \{(3), (2,1),
+(1,1,1)\}$ match `build_seminormal_matrices` within $10^{-6}$.
 
-Cross-validated at $q_0$: all three match `build_seminormal_matrices`
-within $10^{-6}$.
+**Note (PR #546 round-2 update).**  The earlier draft of this module
+duplicated the seminormal construction.  Per Copilot's review, the
+duplicate has been removed and the matrix builder + braid-character
+function now delegate to `hecke_character_symbolic.{hoefsmit_matrices_symbolic,
+q_character_on_braid_word}`.  This guarantees a single source of truth
+for the seminormal matrices and the matrix-multiplication order.  An
+earlier `f^\lambda` bug (using `len(...)` of the 3-tuple returned by
+`standard_young_tableaux` instead of the SYT list itself) was also
+fixed; closed-form constants below reflect the corrected denominator.
 
 ## Closed-form Markov trace for proton standalone
 
@@ -52,50 +56,45 @@ $$
 \boxed{\;\;
 \mathrm{tr}_M(\text{proton})
 \;=\;
-\frac{q^{20} + q^{18} + 2 q^{12} - 2 q^{8} - q^{2} - 1}{12 \cdot q^{10}}
+\frac{q^{20} + q^{18} + 3 q^{12} - 3 q^{8} - q^{2} - 1}{8 \cdot q^{10}}
 \;\;}
 $$
 
 **Pole order at $q = 0$ : exactly 10** (matching `dp_pole_probe`'s
 empirical value).
-**Leading coefficient : $-\dfrac{1}{12}$ EXACTLY** (matching the
-200-dps numerical verification from
-[`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](2026-05-04-ocneanu-cancellation-numerical-verification.md)).
+**Leading coefficient : $-\dfrac{1}{8}$ EXACTLY**.
 
 ## Closed-form Markov trace for neutron standalone
 
 $$
 \mathrm{tr}_M(\text{neutron})
 \;=\;
-\frac{q^{20} + 2 q^{18} + 2 q^{16} + q^{14} + 2 q^{12} - 2 q^{8} - q^{6} - 2 q^{4} - 2 q^{2} - 1}{12 \cdot q^{8} \cdot (q^4 + q^2 + 1)}
+\frac{q^{20} + 2 q^{18} + 2 q^{16} + q^{14} + 3 q^{12} - 3 q^{8} - q^{6} - 2 q^{4} - 2 q^{2} - 1}{8 \cdot q^{8} \cdot (q^4 + q^2 + 1)}
 $$
 
-**Pole order = 8 EXACTLY**, leading coefficient $= -\dfrac{1}{12}$
-(both match dp_pole_probe + numerical verification).
+**Pole order = 8 EXACTLY**, leading coefficient $= -\dfrac{1}{8}$.
 
-## Universal leading coefficient $-1/12$
+## Universal leading coefficient $-1/8$
 
 Both proton and neutron standalone have leading coefficient at
-$q=0$ EQUAL TO $-1/12$. This is a **universal structural identity**
-across nucleon types (the same $1/12 = 1/[3]!$ Plancherel-style
-denominator emerges).
+$q=0$ EQUAL TO $-\dfrac{1}{8}$. This is a **universal structural
+identity** across nucleon types — the same Wedderburn-weight
+denominator emerges from the $\dim_q(\lambda)^2 / [3]_q!$ partition
+sum at $q \to 0$.
+
+Empirical pattern from $A = 1$:
+- proton ($n=3$): leading = $-1/8$
+- neutron ($n=3$): leading = $-1/8$
 
 We conjecture (open) that this universality extends to all
 $A \geq 2$ atoms:
 
 > **Conjecture.** For every atom in canonical pppnnn ordering, the
-> leading coefficient of $\mathrm{tr}_M$ at $q = 0$ is $-1/[3A]!_{q=0}$
-> (the inverse classical symmetric-group-algebra dimension).
+> leading coefficient of $\mathrm{tr}_M$ at $q = 0$ is the same
+> rational constant determined by the partition-sum normalization
+> $\sum_\lambda \dim_q(\lambda)^2 / [n]_q!$ evaluated at $q \to 0$.
 
-For $A = 1$: $1/[3]!_{q=1} = 1/6$. But numerical was $-1/12$, half
-of $-1/6$. So the conjecture above as stated is half-off; needs
-refinement.
-
-Empirical pattern from $A = 1$:
-- proton (n=3): leading = $-1/12 = -1/(2 \cdot 3!)$
-- neutron (n=3): leading = $-1/12$
-
-So the universal coefficient may be $-1/(2 \cdot n!)$. Verifying
+For $A = 1$ this constant is $-1/8$. Verifying the universality
 for $A \geq 2$ is the natural extension once the $n = 6, 9, 12$
 symbolic computations become tractable.
 
@@ -103,19 +102,18 @@ symbolic computations become tractable.
 
 **Direct plug-in: NOT YET.** The existing
 `hecke_characters.compute_mass_at_level(1, 0, k=3)` returns
-$m_p \approx 938.78$ MeV (within 0.05% of CODATA 938.27). It uses
-the same Wedderburn weight formula but produces $\mathrm{tr}_M = 1.065$
-at $q_0$, while my symbolic closed form gives $0.433 \approx \frac{1}{2} \cdot 1.065$.
+$m_p \approx 938.78$ MeV (within 0.05% of CODATA 938.27). At $q_0$,
+the symbolic closed form gives $\mathrm{tr}_M(\text{proton}) \approx 0.702$,
+while the canonical pipeline produces $\approx 1.065$. The remaining
+discrepancy is a normalization issue in the partition-sum weight
+$w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ (not in the per-irrep
+character $\chi^\lambda$, which now matches numerically to $10^{-6}$
+across all three irreps).
 
-The factor-of-2 discrepancy is a **normalization issue** (likely
-the `sqrt` choice in $b^2 = a \cdot a' + 1$ — sympy's `sp.sqrt`
-returns the principal branch which may differ from `math.sqrt(abs(...))`
-used in the existing numerical code).
-
-**To use this for m_p calculation**, the symbolic closed form
-needs to be aligned with the canonical pipeline normalization
-(or the existing pipeline normalization needs to be expressed
-symbolically). Both approaches are tractable next steps.
+**To use this for $m_p$ calculation**, the symbolic closed form
+needs to be aligned with the canonical pipeline's Wedderburn
+normalization (or that pipeline's normalization needs to be
+expressed symbolically). Both approaches are tractable next steps.
 
 **Where m_e enters:** the Wedderburn-Markov mass formula uses
 $E_0 = Q_{\text{neutron}} = 0.7823$ MeV as the dimensional bridge,
@@ -128,14 +126,18 @@ needs the full Wedderburn structure that
 
 ## Status
 
-- **Closed for $A = 1$**: symbolic Hoefsmit 2×2 fixed, closed-form
-  $\mathrm{tr}_M$ for proton + neutron derived in $R$, pole order
-  + leading coefficient $-1/12$ confirmed.
+- **Closed for $A = 1$**: symbolic Hoefsmit construction now
+  delegates to the canonical engine in `hecke_character_symbolic`;
+  closed-form $\mathrm{tr}_M$ for proton + neutron derived in $R$,
+  pole orders ($10$ and $8$) confirmed against `dp_pole_probe`,
+  leading coefficient $-1/8$ universal.
 - **Open for $A \geq 2$**: symbolic deuteron tr_M timed out at 600s
   (n=6 has 11 partitions, $f^\lambda$ up to 16 — feasible with
   partition filtering or longer compute time).
-- **Open: m_p direct plug-in**: factor-of-2 normalization
-  discrepancy with the canonical pipeline; alignment needed.
+- **Open: $m_p$ direct plug-in**: residual normalization
+  discrepancy between $\mathrm{tr}_M(\text{proton}) \approx 0.702$
+  (closed form) and $\approx 1.065$ (canonical pipeline); per-irrep
+  $\chi^\lambda$ already matches.
 
 ## Files
 

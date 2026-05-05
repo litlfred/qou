@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """
-hoefsmit_symbolic.py — Reusable symbolic-q seminormal-Hoefsmit
-representation matrices for the Iwahori–Hecke algebra H_n(q),
-plus q-integer / q-factorial / dim_q symbolic helpers.
+hoefsmit_symbolic.py — Thin symbolic-q convenience layer over the
+existing Hoefsmit engine in `hecke_character_symbolic`, plus
+q-integer / q-factorial / dim_q symbolic helpers and Markov-trace /
+pole-order utilities.
 
-Replaces the buggy 2×2 block construction in
-ocneanu_cancellation_derivation.py (PR #544 audit) with the
-correct Hoefsmit formulas — calibrated by direct cross-validation
-against the existing numerical build_seminormal_matrices in
-hecke_characters.py.
+History.  An earlier draft of this module duplicated the seminormal
+construction.  Per PR #546 review feedback (Copilot), the duplicate
+build was removed and `chi_lambda_symbolic` / the matrix builder now
+delegate to `hecke_character_symbolic.{hoefsmit_matrices_symbolic,
+q_character_on_braid_word}`.  This guarantees a single source of truth
+for the seminormal Hoefsmit matrices and the matrix-multiplication
+order used to evaluate braid characters.
 
-Hoefsmit formulas (symbolic in sympy q):
+Hoefsmit conventions (matching the canonical engine):
 
   For SYT i with k-th and (k+1)-th entries at cells with axial
   contents differing by ρ = c(i+1) - c(i):
@@ -21,22 +24,14 @@ Hoefsmit formulas (symbolic in sympy q):
 
     2×2 block on {i, j} (j = swap partner):
       M[i, i] = a  := h / (1 − q^{−2ρ})
-      M[j, j] = a' := h / (1 − q^{2ρ})    (= a evaluated at -ρ)
-      M[i, j] = M[j, i] = b
-      where b² = a · a' + 1   (constraint: det = −1)
+      M[j, j] = a' := h / (1 − q^{2ρ})
+      M[i, j] = M[j, i] = b   with   b² = a · a' + 1   (det = −1)
+
+  Braid-word accumulation (canonical):
+      M ← M · σ_k          for each crossing, left-to-right.
 
 This convention matches the existing numerical implementation
 exactly (verified at q_0 to 1e-6 for all proton-standalone partitions).
-
-The symbolic version yields exact closed-form characters:
-
-  χ^(3)(proton)       = q^5/4 + q^3/2 + q/4
-  χ^(2,1)(proton)     = (q^22 + q^20 + q^18 + q^14 − q^8 − q^4 − q^2 − 1) / (4 q^11)
-  χ^(1,1,1)(proton)   = −(q^4 + 2 q^2 + 1) / (4 q^5)
-
-  tr_M(proton)        = (q^20 + q^18 + 2 q^12 − 2 q^8 − q^2 − 1) / (12 q^10)
-
-with pole order EXACTLY 10 at q=0 and leading coefficient −1/12.
 """
 from __future__ import annotations
 
@@ -50,6 +45,10 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from hecke_characters import standard_young_tableaux, partitions_of  # noqa: E402
+from hecke_character_symbolic import (  # noqa: E402
+    hoefsmit_matrices_symbolic,
+    q_character_on_braid_word,
+)
 
 # ──────────────────────────────────────────────────────────────────
 # Canonical sympy variable for symbolic q
@@ -85,94 +84,36 @@ def young_hooks(shape) -> list[int]:
 def dim_q(shape) -> sp.Expr:
     """q-dimension of irrep V_λ via hook formula, symbolic in q."""
     n = sum(shape)
-    return sp.simplify(q_fac(n) / sp.prod([q_int(h) for h in young_hooks(shape)]))
+    return sp.cancel(q_fac(n) / sp.prod([q_int(h) for h in young_hooks(shape)]))
 
 
 # ──────────────────────────────────────────────────────────────────
-# §2  Hoefsmit seminormal-basis representation, symbolic in q
+# §2  Hoefsmit seminormal matrices + braid character (delegating)
 # ──────────────────────────────────────────────────────────────────
 
 def build_seminormal_matrices_symbolic(shape):
-    """Build symbolic σ_1, …, σ_{n−1} matrices in V_λ for shape = λ.
+    """Symbolic σ_1, …, σ_{n−1} matrices for shape = λ.
 
-    Uses the canonical Hoefsmit formulas:
-      a  = h / (1 − q^{−2ρ})   (diagonal at SYT i with axial diff ρ)
-      a' = h / (1 − q^{2ρ})    (diagonal at swap partner j)
-      b  = sqrt(a·a' + 1)      (off-diagonal, satisfying det = −1)
-
-    Returns (matrices, dim) where matrices[k] = σ_{k+1}.
+    Thin wrapper around `hecke_character_symbolic.hoefsmit_matrices_symbolic`
+    that pins the q-symbol to this module's canonical `Q`.  Returns
+    `(matrices, dim)` (the canonical engine returns a 3-tuple including
+    the SYT list; we drop it here for backward compatibility with the
+    earlier signature in this module).
     """
-    syts, cells, contents = standard_young_tableaux(shape)
-    dim = len(syts)
-    if dim == 0:
-        return [], 0
-
-    n = sum(shape)
-    matrices = []
-    for k in range(1, n):  # σ_k swaps entries k and k+1 in SYT
-        M = sp.zeros(dim, dim)
-        processed = set()
-        for i in range(dim):
-            if i in processed:
-                continue
-            ci_k = syts[i][k]
-            ci_k1 = syts[i][k + 1]
-            rho = contents[ci_k1] - contents[ci_k]
-            a = H_SKEIN / (1 - Q**(-2 * rho))
-
-            swap_map = dict(syts[i])
-            swap_map[k] = ci_k1
-            swap_map[k + 1] = ci_k
-            j = None
-            for jj in range(dim):
-                if jj == i:
-                    continue
-                if syts[jj] == swap_map:
-                    j = jj
-                    break
-
-            if j is None:
-                # 1×1 block (eigenvalue +q for ρ=+1, −q^{−1} for ρ=−1)
-                M[i, i] = a
-                processed.add(i)
-            else:
-                # 2×2 block on {i, j}
-                a_prime = H_SKEIN / (1 - Q**(2 * rho))
-                b = sp.sqrt(a * a_prime + 1)
-                M[i, i] = a
-                M[j, j] = a_prime
-                M[i, j] = b
-                M[j, i] = b
-                processed.add(i)
-                processed.add(j)
-        matrices.append(M)
+    matrices, dim, _syts = hoefsmit_matrices_symbolic(tuple(shape), Q)
     return matrices, dim
 
 
 def chi_lambda_symbolic(shape, crossings) -> sp.Expr:
     """Symbolic χ^λ(β) for braid word β = list of (k_gen, ctype).
 
+    Delegates to `hecke_character_symbolic.q_character_on_braid_word`,
+    which uses the canonical `M ← M · σ_k` accumulation order.
+
     crossings: list of (k_gen, ctype) where
-      ctype ∈ {'sigma', 'sigma_inv', 'averaged'}
-    matching the convention in hecke_character_symbolic.atomic_braid_to_crossings.
+      ctype ∈ {'sigma', 'sigma_inv', 'averaged'}.
     """
-    sigmas, dim = build_seminormal_matrices_symbolic(shape)
-    if dim == 0:
-        return sp.Integer(0)
-    M = sp.eye(dim)
-    Id = sp.eye(dim)
-    for k_gen, ctype in crossings:
-        s_k = sigmas[k_gen]
-        if ctype == 'sigma':
-            step = s_k
-        elif ctype == 'sigma_inv':
-            step = s_k - H_SKEIN * Id
-        elif ctype == 'averaged':
-            step = s_k - (H_SKEIN / 2) * Id
-        else:
-            raise ValueError(f"unknown crossing type {ctype}")
-        M = step * M
-    return sp.cancel(M.trace())
+    return q_character_on_braid_word(tuple(shape), crossings, Q)
 
 
 def tr_M_symbolic(crossings, n: int) -> sp.Expr:
@@ -183,7 +124,10 @@ def tr_M_symbolic(crossings, n: int) -> sp.Expr:
     total = sp.Integer(0)
     for shape in partitions_of(n):
         chi = chi_lambda_symbolic(tuple(shape), crossings)
-        f_lam = len(standard_young_tableaux(list(shape)))
+        # standard_young_tableaux returns a 3-tuple (syts, cells, contents);
+        # take element 0 to get the actual SYT list.
+        syts, _, _ = standard_young_tableaux(list(shape))
+        f_lam = len(syts)
         if f_lam == 0:
             continue
         d_q = dim_q(list(shape))
@@ -209,7 +153,7 @@ def pole_order_at_zero(expr: sp.Expr) -> tuple[int, sp.Expr]:
     den_low = min((m[0] for m in den_p.monoms()), default=0)
     lowest = num_low - den_low
     pole_order = -lowest if lowest < 0 else 0
-    leading = sp.simplify(sp.limit(expr_c * Q**pole_order, Q, 0))
+    leading = sp.cancel(sp.limit(expr_c * Q**pole_order, Q, 0))
     return pole_order, leading
 
 
@@ -250,7 +194,7 @@ if __name__ == "__main__":
                 step = s_i - h_num * np.eye(dim_num)
             elif ctype == 'averaged':
                 step = s_i - (h_num / 2) * np.eye(dim_num)
-            M = step @ M
+            M = M @ step
         num = float(np.real(np.trace(M)))
         match = "✓" if abs(sym_at_q0 - num) < 1e-6 else "✗"
         print(f"  λ={str(shape):<10} sym={sym_at_q0:>+12.6f}  num={num:>+12.6f}  {match}")
