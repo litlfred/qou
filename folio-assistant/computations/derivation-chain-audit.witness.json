@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T17:15:08.194386+00:00",
-  "commitSha": "d4ac2e68bf15253480356b71f67c36971979e061",
+  "computedAt": "2026-05-05T17:47:19.657342+00:00",
+  "commitSha": "4db16b9623ddba03cce58d0af8a5a1fd5333ddd6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1732,6 +1732,8 @@
         "rho-f-complexity-sweep.witness.json",
         "rho-f-derived-vs-observed.witness.json",
         "rho-k-codata-vs-six-term.witness.json",
+        "rho-k-markov-multiplicativity.witness.json",
+        "rho-k-pair-gen-extension.witness.json",
         "rho-k-scaling-structure.witness.json",
         "rho-z-n-scan.witness.json",
         "ribbon-content-average.witness.json",

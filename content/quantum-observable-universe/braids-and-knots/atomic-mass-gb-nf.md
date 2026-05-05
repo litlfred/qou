@@ -73,34 +73,36 @@ $\rho_K(\mathrm{T}) / \rho_K(\mathfrak{p}) \approx 30.6$ for $A = 3$.
 The (GB-NF) form makes the **algebraic** structure manifest: $\beta_K$
 reduces to a unique normal form $\mathrm{NF}_{\mathrm{GS}}(\beta_K)$ in
 $H_n(q_0)$, and its Markov trace is computable directly from braid
-data alone. The empirical question is whether $\rho_K$ admits a
-similar braid-categorical derivation — i.e. whether there exists a
-functional $\rho \colon B_n / \!\sim_{\mathrm{Markov}} \to \mathbb{R}_{>0}$
-computable from $\beta_K$ and $q_0$ such that
-$\rho(\beta_K) = \rho_K^{\mathrm{CODATA}}$.
-
-**Leading-order ansatz** (`rho-k-scaling-structure.witness.json`).
-Empirically across $A = 1, 2, 3$,
+data alone. The categorical-density derivation lives in
+[graded ρ_K expansion](#prop:rho-k-graded-expansion):
 
 $$
-  \rho_K^{\mathrm{CODATA}}
-  \;\approx\;
-  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}}}{m_e \cdot \lvert\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert}
-  \quad (\text{mean residual } 0.14\%, \text{ max } 0.30\%).
-$$
-
-This is the constituent-mass form of `prop:atomic-braid-mass`
-rewritten through the GB-NF identity. The residual is exactly the
-binding energy $B(K)$ divided by $m_e \cdot \lvert\!\operatorname{tr}_M\!\rvert$, i.e.
-
-$$
-  \rho_K
+  m_e \cdot |\!\operatorname{tr}_M(\beta_K)| \cdot \rho_K
   \;=\;
-  \rho_K^{\mathrm{LO}}
-  \;-\; \frac{B(K)}{m_e \cdot \lvert\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert},
-  \qquad
-  B(K) \;=\; (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}}) - \mathcal{M}(K).
+  \underbrace{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece}}
+  \;+\; \underbrace{\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|}_{\rho_K^{\text{single-gen}}\text{-piece}}
+  \;+\; \underbrace{\alpha\, z^2\!\!\sum_{i<j}\!\ln|\hat V_i \hat V_j|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
+  \;+\; \dots
 $$
+
+**The LO piece is no longer an "ansatz"** — it is the categorical
+consequence of [Wenzl 1988] Markov multiplicativity for disjoint
+braids ($\operatorname{tr}_M(\beta_p \otimes \beta_n) = \operatorname{tr}_M(\beta_p) \operatorname{tr}_M(\beta_n)$,
+verified to $3.2 \times 10^{-14}$ in `rho-k-markov-multiplicativity.witness.json`)
+plus free-constituent mass additivity:
+
+$$
+  \rho_K^{\mathrm{LO}}
+  \;=\;
+  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot \lvert\!\operatorname{tr}_M(\beta_K)\!\rvert}.
+$$
+
+The single-gen binding correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$
+with $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan))
+takes ρ_K to $0.18\%$ mean accuracy across $Z = 1..20$
+([atomic braid mass](#prop:atomic-braid-mass)). The pair-gen and
+higher pieces require the proper Wedderburn-coupling structure
+(open work; see [graded ρ_K expansion](#prop:rho-k-graded-expansion)).
 
 **Mirror-pair check** (T and ${}^3\mathrm{He}$, both $A=3$, $n=9$
 strands): the categorical density factors $\rho_K(T) / \rho_K({}^3\mathrm{He}) = 1.9853$
