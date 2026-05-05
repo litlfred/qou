@@ -493,6 +493,7 @@ export default chapter({
         "alpha-shift-torus-knot",
         "per-nucleon-shift-additive-linearity",
         "confinement-nf-structure-forcing",
+        "confinement-nf-partial-proof",
         "bound-state-frobenius-self-dual-channel",
         "confinement-categorical",
         "exterior-square-borromean",
