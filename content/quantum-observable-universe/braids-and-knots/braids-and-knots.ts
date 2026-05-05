@@ -336,6 +336,7 @@ export default chapter({
         "hecke-branching-trace-decomposition",
         "markov-trace-antipode-polynomial-symmetry",
         "markov-trace-axiomatic-closed-form",
+        "markov-trace-recursive-reducer",
         "markov-z-reconciliation",
         "mass-endomorphism-conjecture",
         "categorical-neutrality-saturated-shells",

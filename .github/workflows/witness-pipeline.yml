@@ -145,6 +145,26 @@ jobs:
         run: |
           python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
 
+      - name: Axiomatic Markov-trace recursive reducer (H_3..H_6)
+        # Per prop:markov-trace-recursive-reducer: terminating axiom-
+        # only reducer for arbitrary H_n braid words. Smoke-tests the
+        # recursive descent on representative atomic-braid words
+        # (proton, neutron-like, deuteron disjoint) and emits the
+        # symbolic closed form + numerical value at q_0 for each.
+        run: |
+          python3 folio-assistant/computations/markov_trace_recursive.py
+
+      - name: Multi-atom axiomatic Markov-trace anchor (proton/neutron/deuteron)
+        # Per prop:markov-trace-recursive-reducer + prop:markov-trace-
+        # axiomatic-closed-form: applies the recursive reducer to all
+        # supported atoms, verifies the disjoint-product property
+        # tr_M(p ⊗ n) = tr_M(p) · tr_M(n) on the H_6 deuteron word
+        # (mpmath-exact at 50 dps), and cross-checks the proton against
+        # markov_trace_atomic_proton_full at float64 precision. Exits
+        # non-zero on any structural failure.
+        run: |
+          python3 folio-assistant/computations/markov_trace_axiomatic_multi_atom.py
+
       - name: Run lp_dual_witness_validator (warn-only)
         # Per prop:operator-selection-lp § dual program: every
         # operator-selection / LP / SDP witness should include the LP
