@@ -325,7 +325,7 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
           | cons h =>
             have heq' : xs.length = ys.length := by
               simp [List.length_cons] at heq; exact heq
-            exact List.Lex.cons (ih heq' h)
+            exact List.Lex.cons (ih ys heq' h)
           | rel h => exact List.Lex.rel h
 
 end UGB.GrobnerShirshov

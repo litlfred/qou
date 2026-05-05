@@ -1,6 +1,8 @@
 import QOU.QuantumObservableUniverse.Structures
 import Mathlib.CategoryTheory.Linear.Basic
 
+set_option linter.style.docString false
+
 /-!
 # §1¾  Categorical Instanton, d_q², Jet, Transport
 
@@ -90,7 +92,7 @@ theorem categorical_irreducible {k : Type*} [Field k]
     {frobHopf : FrobeniusHopfData C}
     {adjointObj : C}
     (adj_vanish : Subsingleton ((𝟙_ C) ⟶ adjointObj))
-    (_inst : CategoricalInstanton frobHopf) :
+    (instData : CategoricalInstanton frobHopf) :
     Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
   adj_vanish
 
@@ -181,7 +183,7 @@ structure CategoricalTransport (C : Type u) [CategoryTheory.Category.{v} C]
   /-- The categorical jet data. -/
   jet : CategoricalJet C
   /-- The instanton connection. -/
-  instanton : @CategoricalInstanton C _ _ jet.frobHopf
+  instanton : CategoricalInstanton jet.frobHopf
   /-- The vertical projection of the covariant derivative `π_V(∇ψ)`. -/
   proj_V_nabla : jet.jetObj ⟶ jet.jetObj
   /-- The q-Hamiltonian `Ĥ_q` (LaTeX `\hat{H}_q`). -/

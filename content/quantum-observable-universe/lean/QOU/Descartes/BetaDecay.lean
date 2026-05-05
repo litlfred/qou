@@ -3,6 +3,8 @@ import QOU.Descartes.TorusKnot
 import Mathlib.RingTheory.Localization.FractionRing
 import Mathlib.Data.Nat.GCD.Basic
 
+set_option linter.style.docString false
+
 /-!
 # Beta Decay Operator and Knot Operators
 

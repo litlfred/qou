@@ -9,6 +9,13 @@ Adapt ALL responses accordingly:
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
 - **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
+- **One-liners must be self-contained.** When suggesting a re-run command,
+  always prepend `reset;` (clears the terminal) and include the full
+  branch-sync prefix when relevant: `git fetch origin <branch> && git
+  reset --hard origin/<branch>` (or `git switch <branch> && git pull`).
+  Local repos live under `~/space_cats/<repo>` — write paths accordingly
+  (e.g. `cd ~/space_cats/qou && reset; …`). Never give a bare `lake build`
+  without the sync step on top.
 
 This repository is a formal mathematics paper with:
 - **Content objects** (`.ts` + `.md` + `.lean` file triples) as authoritative source

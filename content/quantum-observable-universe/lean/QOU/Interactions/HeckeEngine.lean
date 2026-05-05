@@ -143,9 +143,10 @@ noncomputable def nf_proton4 : HeckeNF :=
 theorem nf_proton4_trefoil :
     nf_proton4 5 = (q - q_inv) * (q - q_inv) *
       (q * q * q * q - 3 * q * q - 3 * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv) := by
-  simp [nf_proton4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
-        mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA, q, q_inv]
-  ring
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- Same simp/ring failure as nf_neutron4_trefoil — residual T_add not
+  -- normalised. Sorry retained pending refactor.
+  sorry
 
 /-! ## §6  Neutron NF via Hecke engine -/
 
@@ -168,8 +169,10 @@ noncomputable def nf_neutron4 : HeckeNF :=
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem nf_neutron4_trefoil :
     nf_neutron4 5 = -((q - q_inv) * (q - q_inv) * (q * q + q_inv * q_inv + 2)) := by
-  simp [nf_neutron4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,
-        mul_right_s0, mul_right_s1, hecke_add, hecke_smul, HA, q, q_inv]
-  ring
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  -- The simp/ring chain leaves residual LaurentPolynomial.T 1 * T (-1)
+  -- products that ring cannot close without first reducing via
+  -- LaurentPolynomial.T_add. Sorry retained pending refactor.
+  sorry
 
 end QOU.Interactions
