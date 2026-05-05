@@ -95,24 +95,53 @@ def closed_form_d_u(Z: int, N: int, include_inter: bool = True) -> dict:
       - 'two_power_exp': exponent k in 2^k prefactor
       - 'u_shift':       u-power exponent (= pole order at u=0)
       - 'one_plus_u2_exp': exponent in (1+u²)^? cyclotomic factor
+        (only for include_inter=True; None for standalone)
       - 'factored_str':  human-readable factored form
+      - 'leading_coef':  leading coefficient of tr_M(q) at q=0
+        (universal -1/8 for A=1; conjectured for A≥2)
 
     For atomic braid in canonical pppnnn ordering with A = Z + N:
       D(u) = 2^(2A + 1) · u^(18Z + 21N + 1) · (1 + u²)^(3A − 1)
 
-    Categorically proved: see docs/audits/2026-05-03-w3-habiro-unblocked.md
-    and PR #539 (merged 2026-05-04).
+    For single nucleon (include_inter=False) per PR #546:
+      proton:  tr_M = (q^20 + q^18 + 3q^12 - 3q^8 - q^2 - 1) / (8·q^10)
+      neutron: tr_M = (q^20 + 2q^18 + 2q^16 + q^14 + 3q^12 - 3q^8
+                      - q^6 - 2q^4 - 2q^2 - 1) / (8·q^8·(q^4+q^2+1))
+      leading coefficient: −1/8 EXACTLY for both
+
+    Categorically proved for include_inter=True: see
+    docs/audits/2026-05-03-w3-habiro-unblocked.md and PR #539
+    (merged 2026-05-04).  Symbolic Hoefsmit closed form per PR #546.
     """
     if not include_inter:
-        # Single-nucleon (A=1) or include_inter=False: separate formulas
-        # per the strand-topology dependence.  These are empirical
-        # (witness): proton=20, neutron=16, and the (1+u²) structure
-        # differs (uses u^4 cyclotomic Φ_3(u^4) rather than (1+u²)^?).
-        # Caller should fall back to auto-detection for include_inter=False.
+        # Single-nucleon (A=1): closed forms from PR #546 (symbolic
+        # Hoefsmit fix).  Cyclotomic structure differs from the
+        # multi-nucleon case (uses Φ_3(u^4) factor for the neutron).
+        if (Z, N) == (1, 0):  # proton
+            return {
+                "Z": Z, "N": N, "A": 1,
+                "two_power_exp": 3,        # 8 = 2^3
+                "u_shift": 20,             # u-pole order
+                "one_plus_u2_exp": None,    # different cyclotomic structure
+                "factored_str": "(q^20 + q^18 + 3q^12 − 3q^8 − q^2 − 1) / (8·q^10)",
+                "leading_coef": "-1/8",
+                "tr_M_symbolic_q": "(q**20 + q**18 + 3*q**12 - 3*q**8 - q**2 - 1)/(8*q**10)",
+                "source": "PR #546 (claude/hoefsmit-2x2-fix)",
+            }
+        if (Z, N) == (0, 1):  # neutron
+            return {
+                "Z": Z, "N": N, "A": 1,
+                "two_power_exp": 3,        # 8 = 2^3
+                "u_shift": 16,             # u-pole order (cf. dp_pole_probe)
+                "one_plus_u2_exp": None,
+                "factored_str": "(q^20 + 2q^18 + 2q^16 + q^14 + 3q^12 − 3q^8 − q^6 − 2q^4 − 2q^2 − 1) / (8·q^8·(q^4+q^2+1))",
+                "leading_coef": "-1/8",
+                "tr_M_symbolic_q": "(q**20 + 2*q**18 + 2*q**16 + q**14 + 3*q**12 - 3*q**8 - q**6 - 2*q**4 - 2*q**2 - 1)/(8*q**8*(q**4 + q**2 + 1))",
+                "source": "PR #546 (claude/hoefsmit-2x2-fix)",
+            }
         raise NotImplementedError(
-            "Closed form for include_inter=False uses different "
-            "cyclotomic structure (Φ_3(u^4) rather than (1+u²)^k); "
-            "fall back to auto-detection for single-nucleon braids."
+            f"Closed form for include_inter=False, (Z={Z}, N={N}) "
+            "not yet derived.  PR #546 covers (1, 0) and (0, 1) only."
         )
     A = Z + N
     if A < 2 or Z < 1 or N < 1:
@@ -129,6 +158,7 @@ def closed_form_d_u(Z: int, N: int, include_inter: bool = True) -> dict:
         "u_shift": u_shift,
         "one_plus_u2_exp": cyc_exp,
         "factored_str": f"2^{two_power} · u^{u_shift} · (1 + u²)^{cyc_exp}",
+        "leading_coef": "-1/8 (conjectured, A ≥ 2; PR #546)",
         "Z": Z, "N": N, "A": A,
     }
 
