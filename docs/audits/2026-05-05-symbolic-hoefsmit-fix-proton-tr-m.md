@@ -1,4 +1,4 @@
-# Symbolic Hoefsmit 2×2 fix → closed-form proton tr_M
+# Symbolic Hoefsmit + canonical Jones–Markov weights → closed-form proton/neutron/deuteron tr_M
 
 **Branch.** `claude/hoefsmit-2x2-fix`
 **Module.** [`folio-assistant/computations/hoefsmit_symbolic.py`](../../folio-assistant/computations/hoefsmit_symbolic.py)
@@ -136,6 +136,65 @@ multiplying by $E_0$ gives binding energies in MeV, but mass itself
 needs the full Wedderburn structure that
 `compute_mass_at_level` already encodes.
 
+## Round-3 update — closed-form Jones–Markov weights $y_\lambda(q)$
+
+The remaining $0.702$ vs $1.065$ "phantom" gap (round-2) was actually
+real after all — but on a **different formula**. The
+partition-sum normalisation $w_\lambda / f^\lambda
+= \dim_q(\lambda)^2 / ([n]_q!\, f^\lambda)$ used in round-1/2 is
+**not** the canonical Ocneanu–Wenzl Markov weight $y_\lambda(q)$;
+the two coincide only at the classical Plancherel point $q = 1$.
+
+### Derivation: $y_\lambda$ from Markov axioms (n = 3)
+
+The Ocneanu Markov trace is the unique linear functional satisfying
+$\mathrm{tr}_M(1) = 1$, $\mathrm{tr}_M(x\sigma_n) = z\cdot\mathrm{tr}_M(x)$
+(Markov property) and $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$, with
+$z = 1/(\sqrt{q} + 1/\sqrt{q})$. Its Wedderburn decomposition is
+$\mathrm{tr}_M = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda$.
+At $H_3$ the system is $3\times 3$ and admits a closed-form solve
+on the ladder basis $\{1, \sigma_1, \sigma_1\sigma_2\}$. The
+solution reproduces the bridge witness $y_\lambda$ values to 10
+digits and yields
+$$
+\mathrm{tr}_M(\text{proton}) \stackrel{q_0}{=} 1.0653062285923887\ldots
+$$
+matching `markov_peel`'s reference $1.0653062285923893$ to 14
+decimal places (remaining drift is the float precision of $q_0$).
+
+### Closed form for general $n$ via Schur principal specialization
+
+For $n \ge 4$ the ladder system is rank-deficient. The Wenzl
+closed form is
+$$
+y_\lambda(q) = \frac{1}{Z}\, s_\lambda(1, Q, Q^2, \ldots, Q^{r-1}),
+\qquad Q = q^2,\quad Q^r = \frac{z_W}{1 - Q + z_W},\quad z_W = q\,z,
+$$
+with $s_\lambda$ the Schur polynomial principal specialization
+$Q^{n(\lambda)} \prod_{x\in\lambda}(1 - Q^{r+c(x)})/(1 - Q^{h(x)})$
+and normalisation $Z = \sum_\mu f^\mu \cdot s_\mu$ to enforce
+$\mathrm{tr}_M(1) = 1$. At $n = 3$ the Schur and ladder formulas
+agree exactly. At $n = 6$ the closed form gives the canonical
+deuteron weights.
+
+### Code
+
+[`folio-assistant/computations/markov_weights_symbolic.py`](../../folio-assistant/computations/markov_weights_symbolic.py)
+implements both paths (`solve_y_lambda` for $n \le 3$ via the
+linear system; `y_lambda_symbolic` for any $n$ via Schur principal
+specialisation). Witness:
+[`markov_weights_symbolic.witness.json`](../../folio-assistant/computations/markov_weights_symbolic.witness.json).
+
+The earlier closed forms in §"Closed-form Markov trace for proton
+standalone" (and the deuteron $-1/8 / +1/128$ leading-coefficient
+analysis) are **valid for the partition-sum normalisation
+$w_\lambda/f^\lambda$**, but that quantity is *not* the canonical
+$\mathrm{tr}_M$ — it differs from the Ocneanu Markov trace by a
+$q$-rational factor that can be tracked symbolically through the
+Schur formula. The canonical $\mathrm{tr}_M$ closed forms (from
+$y_\lambda(q)$) supersede the earlier ones for any use that feeds
+into the six-term mass formula.
+
 ## Status
 
 - **Closed for $A = 1$**: symbolic Hoefsmit construction now
@@ -152,12 +211,14 @@ needs the full Wedderburn structure that
   thereby falsified; the leading coefficient is still a power of 2,
   suggesting a refined conjecture.
 - **Open for $A \geq 3$**: no symbolic computation attempted yet.
-- **No normalization gap**: the apparent $0.702$ vs $1.065$
-  discrepancy (round-1 audit) was a phantom — the canonical
-  pipeline short-circuits at $A \le 1$ and does not compute the
-  internal proton braid character. The closed form here is the
-  unique symbolic reference for $\mathrm{tr}_M(\text{atomic
-  proton})$.
+- **Closed-form Jones–Markov weights $y_\lambda(q)$ (round-3)**:
+  derived in two equivalent ways — ladder linear system at $H_3$
+  and Wenzl Schur principal specialisation for any $n$. Symbolic
+  $\mathrm{tr}_M(\text{proton}) = 1.06530622859239\ldots$ at $q_0$
+  matches `markov_peel` to 14 decimal places. The
+  partition-sum normalisation $w_\lambda/f^\lambda$ used in
+  round-1/2 is NOT the canonical Markov weight; it agrees only
+  at $q = 1$.
 
 ## Files
 
