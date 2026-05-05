@@ -1,26 +1,40 @@
-**Conjecture (weak-sector spectral completeness).**
+**Conjecture (weak-sector spectral completeness — Hoefsmit
+$n=6$ form).**
 *Over the categorical ring $R$ with $q$ generic (not a root of
 unity in $R$ — note $q = 1$ IS excluded), the EW/Higgs
 force-carrier sector $\{T(2,4), T(2,6), T(2,8)\}$
 ([electroweak/Higgs torus-link triplet](#conj:electroweak-higgs-torus-link-triplet))
 admits a **categorically complete idempotent decomposition** in
-the Hecke algebra $H_2(q)$ over $R$:*
+$\mathrm{End}_R(V^{\otimes 6})$ via the disjoint-strand-pair
+Hoefsmit assignment*
 
 $$
-  e_W^{+} + e_W^{-} + e_Z^{+} + e_Z^{-} + e_H^{+} + e_H^{-} = \mathbf{1}_{H_2(q)},
+  W \leftrightarrow \sigma_1^4, \qquad
+  Z \leftrightarrow \sigma_3^6, \qquad
+  H \leftrightarrow \sigma_5^8
 $$
 
-*where $e_X^{\pm}$ are the (sym, alt) idempotents corresponding
-to the $(q^{2k}, q^{-2k})$ eigenvalue pair of $T(2, 2k)$ at $k =
-2, 3, 4$. The associated Plancherel weights*
+*([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).
+Eight pairwise-orthogonal pure-eigenspace projectors of
+$(\sigma_1, \sigma_3, \sigma_5)$ — labelled by sym/alt patterns —
+exhaust the EW Wedderburn content with cell-content
+multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$ summing to $20$ (out
+of $\sum_{\lambda \vdash 6} f_\lambda = 76$ seminormal-basis
+vectors). The substrate-level structural quantity is the
+**bar-self-dual cell-content trace***
 
 $$
-  w_X = \dim_q\bigl(\mathrm{im}\,e_X^{+}\bigr)^2 / [2]_q!
+  \mathrm{tr}_{\rm pure}\bigl(\sigma_1^4 \sigma_3^6 \sigma_5^8\bigr)
+  \;=\;
+  4\bigl(q^{18} + q^{-18}\bigr)
+  + 2\bigl(q^{10} + q^{-10}\bigr)
+  + \bigl(q^{6} + q^{-6}\bigr)
+  + 3\bigl(q^{2} + q^{-2}\bigr)
   \;\in\; R
 $$
 
-*are categorical constants of the EW sector, computable in $R$
-from $q$ alone (no specialization to $q_0$ required).*
+*— derivable directly from cell-content multiplicities, **without
+invoking Plancherel weights**.*
 
 ### Statement (formal)
 
@@ -77,49 +91,73 @@ completeness across the direct sum following from per-link
 completeness in Step 1 + pairwise orthogonality of the six
 $e_X^\pm$ in $H_2(q)$.
 
-**Step 3 — Plancherel weight assignment.**
-For each $k$, $\dim_q(\mathrm{im}\,e_W^{+}) = 1$ (the 1-dimensional
-sym block) and $[2]_q! = [2]_q$. So:
+**Step 3 — Cell-content trace, not Plancherel weight.**
+
+> **Demoted 2026-05-05.** Earlier drafts of this proof used
+> Plancherel weights $w_X = 1/[2]_q$ as a "uniform completeness
+> signature." That uniform-weight expression was a degenerate
+> artifact of the dimensionally-collapsed $H_2(q)$-only
+> formulation (six rank-1 projectors cannot fit in a 2-dim
+> algebra; see audit
+> [`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement.md)
+> §"Plancherel weight is degenerate special case"). The Hoefsmit
+> $n=6$ formulation supersedes it.
+
+The substrate-level structural quantity is the cell-content
+trace, computed directly from the eight pure-pattern
+multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$:
 
 $$
-  w_X^{(k, \pm)} \;=\; 1^2 / [2]_q \;=\; 1 / [2]_q
+  \mathrm{tr}_{\rm pure}\bigl(\sigma_1^4 \sigma_3^6 \sigma_5^8\bigr)
+  \;=\;
+  4\bigl(q^{18} + q^{-18}\bigr)
+  + 2\bigl(q^{10} + q^{-10}\bigr)
+  + \bigl(q^{6} + q^{-6}\bigr)
+  + 3\bigl(q^{2} + q^{-2}\bigr)
+  \;\in\; R.
 $$
 
-a *uniform* Plancherel weight across all six EW idempotents at any
-fixed $q$. This uniformity is the **completeness signature** —
-contrast EM, where the Bring-saturating $T_{2,9}$ and $T_{3,5}$
-have *non-uniform* weights $[9]_q$ and $[10]_q$.
+This expression is **bar-self-dual** under
+$\iota \colon q \mapsto q^{-1}$ — the substrate-level
+[bar T-duality](#prop:bar-t-duality-substrate) at the trace level.
+The duality is automatic from the disjoint-strand-pair
+construction: each $\sigma_i^{2k}$ is bar-self-dual on its own
+([`prop:even-twist-torus-link-psd-feasibility`](#prop:even-twist-torus-link-psd-feasibility)),
+and disjoint products preserve the duality.
 
-The uniform-weight identity is what closes the EW spectral
-completeness once the host-distinctness conjecture (U2) is
-discharged.
+The Plancherel-weighted form
+$\mathcal{N}_{\rm sym}^{\rm Plancherel} = q^6 (1 + q^2 + q^4)/3$
+from
+[`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization)
+is **not** bar-self-dual and differs from $\mathrm{tr}_{\rm pure}$
+by a factor of $\sim 22$ at $q_0$. It is retained only as a
+legacy/degenerate reference; the cell-content trace is operative.
 
 ### Downstream consequence — closes NV-1
 
-The weak-scale crossing count $N_v$ is conjecturally the
-**Plancherel-weighted Hecke-trace product** over the EW
-force-carrier sector:
+The weak-scale crossing count $N_v$ is conjecturally derivable
+from the **bar-self-dual cell-content trace** over the EW
+force-carrier sector. The structural ansatz takes the form
 
 $$
-  N_v \;\stackrel{?}{=}\; \prod_{k = 2, 3, 4}
-  \frac{\dim_q(T(2, 2k))^2}{[2]_q}
-  \cdot \mathcal{N}_{\rm sym}(q),
+  N_v \;\stackrel{?}{=}\;
+  F\bigl( [2]_q,\, [4]_q,\, [6]_q,\, [8]_q,\,
+  \mathrm{tr}_{\rm pure}(\sigma_1^4 \sigma_3^6 \sigma_5^8) \bigr)
 $$
 
-where $\dim_q(T(2, 2k)) = [2k]_q$ is the q-dimension of the
-$T(2, 2k)$ representation
-([Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/CLAUDE.md))
-and $\mathcal{N}_{\rm sym}(q)$ is a categorical normalization
-constant from the symmetric channel.
+for some $R$-rational function $F$. The bar-self-duality of
+$\mathrm{tr}_{\rm pure}$ is a strong structural constraint on
+admissible $F$: any candidate must be invariant under
+$\iota: q \mapsto q^{-1}$ (since $N_v$ is a $q$-independent
+constant when evaluated at $q_0$, and the substrate-level
+identity must hold at all generic $q$).
 
-**PSLQ test status.** When this conjecture is discharged, the
-basis $\{[4]_q^2/[2]_q, [6]_q^2/[2]_q, [8]_q^2/[2]_q,
-\mathcal{N}_{\rm sym}(q)\}$ becomes available. PSLQ at 1000 dps
-on this *extended* basis would test whether $N_v$ admits the
-conjectured product form. The earlier negative PSLQ result
-([nv-pslq-uniqueness-probe.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/nv-pslq-uniqueness-probe.witness.json))
-in the *unextended* basis is consistent with the closed form
-requiring this Plancherel structure.
+**PSLQ test.** The constrained basis is
+$\{[2]_q, [4]_q, [6]_q, [8]_q, q^k, h^k,
+\mathrm{tr}_{\rm pure}\}$ — strictly smaller than the
+brute-force monomial basis of the impasse audit. The earlier
+Plancherel-weight basis $\{[2k]_q^2/[2]_q, \mathcal{N}_{\rm sym}\}$
+is **superseded**.
 
 ### Status
 
