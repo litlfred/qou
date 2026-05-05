@@ -57,7 +57,11 @@ def _w(*pairs):
 # Ten distinct H_3 algebra elements (mix of pure σ words and
 # c·σ + d·1 algebra elements). They span the 6-dim Hecke algebra
 # H_3 well enough for system inversion.
-H = 0.20906032198987945  # h = q − q⁻¹ at q_0 (matches mass_at_3A_proper)
+# Hecke parameter h := q − q⁻¹ at q = Q0 (the canonical substrate
+# parameter from q_parameter.Q).  Defined at module level to keep a
+# single source of truth and avoid drift between this file and
+# mass_at_3A_proper.HA.
+H = Q0 - 1 / Q0
 TEST_WORDS_H3 = [
     [],                                   # identity
     [(1.0, 0.0, 0)],                      # σ_0
