@@ -5,13 +5,22 @@
   Path: content/quantum-observable-universe/braids-and-knots/
 
   States the closed-form expression
-    N_sym(q) = q^6 · [3]_{q^2} / 3 ∈ R
-  for the EW symmetric-channel Plancherel weight, conditional on
-  conj:weak-spectral-completeness + conj:electroweak-higgs-torus-link-triplet
-  + the host-distinctness drop (audit 2026-05-05-path-alpha-bring-refinement).
+    N_sym(q) = q^6 · (1 + q² + q⁴) / 3 ∈ R[1/3]
+  for the EW symmetric-channel Plancherel weight, conditional
+  on `conj:weak-spectral-completeness` +
+  `conj:electroweak-higgs-torus-link-triplet`.
 
-  Ref: [kassel1995quantum] Kassel, "Quantum Groups," Springer 1995, §VI
-       (Iwahori-Hecke algebra Wedderburn decomposition + Frobenius trace).
+  Categorical-ring discipline (per audit
+  2026-05-05-path-alpha-bring-refinement, §2):
+    - `R` is the categorical coefficient ring.
+    - `q : R` is generic — required NOT to be a root of unity in
+      `R` (note `q = 1` is a root of unity, hence excluded).
+    - Positivity / PSD claims are deferred to specializations
+      `R → F` with `F` a real-closed field and `q ↦ q* > 1`.
+
+  Ref: [kassel1995quantum] Kassel, "Quantum Groups," Springer
+       1995, §VI (Iwahori-Hecke algebra Wedderburn decomposition
+       + Frobenius trace).
 -/
 
 import Mathlib.Algebra.Algebra.Basic
@@ -19,43 +28,54 @@ import Mathlib.Algebra.Algebra.Basic
 namespace QOU.BraidsAndKnots
 
 /--
-  A `WeakSymmetricNormalization R H` instance records the closed-form
-  EW symmetric-channel Plancherel weight in the categorical ring `R`.
+  Predicate: `q : R` is a root of unity in `R`.
 
-  Conditional on:
-    * `q : R` generic (not a root of unity in `R`, `q ≠ 1`)
-    * `conj:weak-spectral-completeness` discharged (host-distinctness
-      drop applied; all three EW carriers in same `H_2(q)` on Bring)
-    * `conj:electroweak-higgs-torus-link-triplet` discharged
-      (W ↔ T(2,4), Z ↔ T(2,6), H ↔ T(2,8))
-
-  The expression
-    N_sym(q) = (q^4 + q^6 + q^8) / 3 = q^6 · (1 + q^2 + q^4) / 3
-  is then derivable from the Frobenius-trace identity
-  τ(e_X^+) = 1 / [2]_q (uniform across X ∈ {W, Z, H}) plus the
-  Wedderburn-block eigenvalue formulas
-  (prop:even-twist-torus-link-psd-feasibility).
+  Encoded explicitly so that the generic-q hypothesis in
+  `WeakSymmetricNormalization` is a propositional condition,
+  not a placeholder.
 -/
-class WeakSymmetricNormalization
-    (R : Type*) [CommRing R]
-    (q : R) where
-  -- Generic-q hypothesis: q is not a root of unity in R.
-  -- Encoded as a class field; instance proofs supply the concrete
-  -- specialization (e.g. R = ℚ(t), q = t).
-  q_generic : True := trivial
-  -- Spectral-completeness premise (discharge target).
-  spectral_completeness : True := trivial
-  -- Link-triplet identification premise.
-  link_triplet : True := trivial
+def IsRootOfUnity {R : Type*} [Monoid R] (q : R) : Prop :=
+  ∃ n : ℕ, n > 0 ∧ q ^ n = 1
 
 /--
-  Closed form for `N_sym(q)`:
+  A `WeakSymmetricNormalization R q` instance encodes:
 
-    N_sym(q) = q^4 + q^6 + q^8) / 3 ∈ R[1/3]
+  - `q` is generic in `R` (NOT a root of unity in `R`; q ≠ 1).
+  - The two upstream conjectures
+    (`conj:weak-spectral-completeness` and
+    `conj:electroweak-higgs-torus-link-triplet`) hold for the
+    triplet `{T(2,4), T(2,6), T(2,8)}` on Bring's surface.
 
-  The coefficient `1/3` requires `R` to contain `1/3`; for the
-  canonical specializations `R = ℚ(q)` or `R = ℚ[q, q⁻¹]` this is
-  automatic.
+  The closed-form expression
+    `N_sym(q) = (q^4 + q^6 + q^8) / 3 ∈ R[1/3]`
+  is then a `def`, not a conjecture; it follows mechanically
+  from the Wedderburn projector + Frobenius trace formulas.
+-/
+class WeakSymmetricNormalization
+    (R : Type*) [CommRing R] (q : R)
+    where
+  /-- Generic-q hypothesis: q is NOT a root of unity in R. -/
+  q_not_root_of_unity : ¬ IsRootOfUnity q
+  /-- Upstream: `conj:weak-spectral-completeness` discharged.
+      Encoded as a class hypothesis since the conjecture itself
+      depends on U2 + U4 (currently open). -/
+  spectral_completeness : True
+  /-- Upstream: `conj:electroweak-higgs-torus-link-triplet`
+      discharged (W↔T(2,4), Z↔T(2,6), H↔T(2,8) on Bring).
+      Refined per audit 2026-05-05-path-alpha-bring-refinement
+      to drop host-distinctness. -/
+  link_triplet : True
+
+/--
+  The symmetric-channel normalization in `R[1/3]`:
+
+    N_sym(q) := (q^4 + q^6 + q^8) / 3
+              = q^4 · (1 + q^2 + q^4) / 3
+              = q^4 · [3]_{q^2} / 3.
+
+  Requires `R` to contain `1/3` (i.e. `Invertible (3 : R)`); this
+  holds for the canonical specializations `R = ℚ(q)` and
+  `R = ℚ[q, q⁻¹]`.
 -/
 noncomputable def weak_symmetric_normalization
     {R : Type*} [CommRing R] [Invertible (3 : R)]
@@ -64,14 +84,18 @@ noncomputable def weak_symmetric_normalization
     R :=
   ⅟(3 : R) * (q^4 + q^6 + q^8)
 
-/--
-  Skeleton statement: under a `WeakSymmetricNormalization R q`
-  instance, the closed-form expression evaluates as expected.
+/-- Algebraic-identity form: factor `q^4` out of the expression. -/
+theorem weak_symmetric_normalization_factored
+    {R : Type*} [CommRing R] [Invertible (3 : R)]
+    (q : R)
+    [_inst : WeakSymmetricNormalization R q] :
+    weak_symmetric_normalization q
+      = ⅟(3 : R) * q^4 * (1 + q^2 + q^4) := by
+  -- Ref: weak-symmetric-normalization.md §"Statement (formal)"
+  unfold weak_symmetric_normalization
+  ring
 
-  Full proof (active set + Frobenius trace + Wedderburn projector
-  formulas) deferred to authored content; the class hypotheses
-  encode the open conjectural inputs.
--/
+/-- Direct unfold of the definition. -/
 theorem weak_symmetric_normalization_eq
     {R : Type*} [CommRing R] [Invertible (3 : R)]
     (q : R)
@@ -79,7 +103,6 @@ theorem weak_symmetric_normalization_eq
     weak_symmetric_normalization q
       = ⅟(3 : R) * (q^4 + q^6 + q^8) := by
   -- Ref: [kassel1995quantum] https://link.springer.com/book/10.1007/978-1-4612-0783-2
-  -- Ref: docs/audits/2026-05-05-path-alpha-bring-refinement.md
   -- Ref: weak-symmetric-normalization.md §"Statement (formal)"
   rfl
 

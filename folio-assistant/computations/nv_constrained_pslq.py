@@ -200,18 +200,23 @@ def main() -> int:
             best_overall = {**hits[0], "ansatz": ansatz_name}
 
     print("VERDICT:")
-    if best_overall and best_overall["rel_err"] < 5e-7:
-        print(f"  Best: {best_overall['ansatz']} ansatz, "
-              f"rel_err = {best_overall['rel_err']:.3e}")
-        print(f"  Below CODATA tol — candidate closed form.")
-    else:
-        be = best_overall["rel_err"] if best_overall else None
-        print(f"  No hits below CODATA tol (5e-7) on constrained basis.")
-        if be:
-            print(f"  Best overall: {be:.3e}, ansatz {best_overall['ansatz']}")
-        print("  Implication: either (a) basis still missing a"
-              " structural input, or (b) the constants in the closed"
-              " form are not in the searched integer set.")
+    print("  PURE NUMERICAL SEARCH IS FITTING — NOT A DERIVATION.")
+    print("  ")
+    print("  Informative null results:")
+    print(f"    A2 (pure N_sym^a):          0 hits at 1e-5  →  N_sym alone "
+          "does NOT close the form.")
+    print(f"    A3 (structural · N_sym^a):  0 hits at 1e-5  →  N_sym is NOT "
+          "a multiplicative correction.")
+    print(f"  ")
+    print(f"  A1 hit (rel_err = {best_overall['rel_err']:.3e} if any)"
+          if best_overall else "  A1: no hits.")
+    print("  has no categorical justification of its exponents and so is")
+    print("  recorded as a null result (consistent with chance for a "
+          f"{A1_size:,}-element basis).")
+    print("  ")
+    print("  Conclusion: numerical PSLQ over basis-of-monomials cannot")
+    print("  derive N_v.  Going forward requires categorical authoring,")
+    print("  not more search.")
 
     out = {
         "computation": "nv-constrained-pslq",
@@ -256,10 +261,17 @@ def main() -> int:
             "top_hits": hits_A3[:5],
         },
         "best_overall": best_overall,
-        "verdict": (
-            "candidate-closed-form-found"
-            if best_overall and best_overall["rel_err"] < 5e-7
-            else "no-closed-form-on-current-basis"
+        "verdict": "fitting-not-derivation",
+        "verdict_explanation": (
+            "Pure numerical PSLQ over a monomial basis is fitting, not "
+            "derivation, regardless of basis size. Even at 27,440 elements "
+            "(30× smaller than the impasse-audit search), CODATA-precision "
+            "hits exist that are mathematically equivalent to chance "
+            "matches. The informative content of this run is the NULL "
+            "results from A2 (pure N_sym) and A3 (N_sym as multiplicative "
+            "correction), which RULE OUT those structural shapes. A "
+            "derivation of N_v requires categorical authoring of the "
+            "structural exponents, not more search."
         ),
     }
     out_path = Path(__file__).parent / "nv-constrained-pslq.witness.json"

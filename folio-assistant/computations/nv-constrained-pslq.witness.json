@@ -1,6 +1,6 @@
 {
   "computation": "nv-constrained-pslq",
-  "computedAt": "2026-05-05T22:04:28.899141+00:00",
+  "computedAt": "2026-05-05T22:09:54.787935+00:00",
   "description": "Constrained-PSLQ search for v_weak/m_e on the path-α-Bring basis {[2]_q, [4]_q, [6]_q, [8]_q, q^k, h^k, N_sym(q)} informed by prop:weak-symmetric-normalization. Three ansatz shapes A1/A2/A3 tested; results vs CODATA-G_F precision.",
   "reference_blocks": [
     "prop:weak-symmetric-normalization",
@@ -55,5 +55,6 @@
     "rel_err": 5.237771222080009e-08,
     "ansatz": "A1"
   },
-  "verdict": "candidate-closed-form-found"
+  "verdict": "fitting-not-derivation",
+  "verdict_explanation": "Pure numerical PSLQ over a monomial basis is fitting, not derivation, regardless of basis size. Even at 27,440 elements (30× smaller than the impasse-audit search), CODATA-precision hits exist that are mathematically equivalent to chance matches. The informative content of this run is the NULL results from A2 (pure N_sym) and A3 (N_sym as multiplicative correction), which RULE OUT those structural shapes. A derivation of N_v requires categorical authoring of the structural exponents, not more search."
 }
