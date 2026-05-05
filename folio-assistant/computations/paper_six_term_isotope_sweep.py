@@ -446,8 +446,14 @@ def paper_six_term_mass(Z, N, include_inter=True,
     else:
         raise ValueError(f"unknown term5_mode {term5_mode!r}")
 
-    total = (float(t1_with_chirality) + float(t2) + float(t3)
-             + float(t4))  # T6 added in MeV post-calibration
+    # Keep `total` in mpf — no float() casts here (Gemini PR #534 high
+    # priority on line 450).  `total_hecke` is in cat-units (Hecke-energy
+    # quantum, dimensionless w.r.t. q_0); the calibration site multiplies
+    # by E_0 (MeV / cat-unit) to convert to MeV.  T6 is loaded already
+    # in MeV via `_load_canonical_t6_MeV` and is added DIRECTLY to
+    # E_0 · total_hecke at the assembly site (run_sweep_for_mode);
+    # T6 must NOT be scaled by E_0.
+    total = t1_with_chirality + t2 + t3 + t4
     # Per gemini-code-assist comment #5 on PR #534: keep `total_hecke`
     # and `term6_cyclotomic_tail_MeV` as mpf so the proton calibration
     # `E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke` and the final
