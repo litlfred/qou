@@ -111,7 +111,11 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> mp.mpf:
     for entry in habiro_entry.get("habiro_coefficients", []):
         m = entry["m"]
         a_m_poly = sp.sympify(entry["a_m"])
-        a_m_val = mp.mpf(str(complex(a_m_poly.subs(u, u_val_sym)).real))
+        # Per gemini-code-assist PR #534 high-priority review: avoid the
+        # complex(...) cast which drops precision from mp.mp.dps to ~15
+        # digits (float64). evalf(mp.mp.dps) honours the global precision
+        # floor; mp.mpf(str(...)) lifts losslessly to mpmath.
+        a_m_val = mp.mpf(str(a_m_poly.subs(u, u_val_sym).evalf(mp.mp.dps)))
         pochhammer = u_pochhammer_at_u0(m, u_val)
         contribution = a_m_val * pochhammer
         numerator += contribution
@@ -124,7 +128,9 @@ def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> mp.mpf:
     # Divide by denom(u) at u_val
     denom_str = habiro_entry.get("denom_in_u", "1")
     denom_poly = sp.sympify(denom_str)
-    denom_val = mp.mpf(str(complex(denom_poly.subs(u, u_val_sym)).real))
+    # Per gemini-code-assist PR #534 high-priority review: same
+    # precision-preservation as the numerator coefficient above.
+    denom_val = mp.mpf(str(denom_poly.subs(u, u_val_sym).evalf(mp.mp.dps)))
     if abs(denom_val) < mp.mpf("1e-300"):
         return mp.mpf(0), breakdown
     tr_M = numerator / denom_val

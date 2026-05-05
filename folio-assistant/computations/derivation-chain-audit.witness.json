@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T21:56:56.740832+00:00",
-  "commitSha": "7b5b51a8541e40cee3a5dd5590d51b545341cdfd",
+  "computedAt": "2026-05-05T22:16:00.047391+00:00",
+  "commitSha": "35b2fec0cb3a4670c1d9ec6c465f3d19f8af2cd7",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1360,6 +1360,7 @@
         "alpha-shift-torus.witness.json",
         "alpha-vol-chirality-correlation.witness.json",
         "alpha4-universality-test.witness.json",
+        "anti-self-reciprocity-universality.witness.json",
         "atom-builder-lp.witness.json",
         "atom-full-partition-3A.witness.json",
         "atom-jones-vs-knots-D.witness.json",

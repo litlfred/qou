@@ -98,15 +98,18 @@ def derive_h3_plancherel_weights_at_q(q_val):
 
     # Solve the linear system y · M = b where M[i, j] = chi^{λ_j}(w_i)
     # and b = (1, z, z^2). Three equations, three unknowns.
-    import numpy as np
-    M = np.array([
+    # Per gemini-code-assist PR #534 medium-priority review: use
+    # mpmath.lu_solve to honour the mp.dps = 50 precision floor
+    # set at module level, rather than np.linalg.solve which
+    # bottlenecks at float64 (~15 digits).
+    M_mat = mp.matrix([
         [chi_id[p] for p in parts],
         [chi_s1[p] for p in parts],
         [chi_s1_s2[p] for p in parts],
     ])
-    b = np.array([1.0, z, z * z])
-    y = np.linalg.solve(M, b)
-    return {p: y[i] for i, p in enumerate(parts)}, {
+    b_vec = mp.matrix([mp.mpf(1), mp.mpf(z), mp.mpf(z) ** 2])
+    y_vec = mp.lu_solve(M_mat, b_vec)
+    return {p: float(y_vec[i, 0]) for i, p in enumerate(parts)}, {
         "chi_id": chi_id, "chi_s1": chi_s1, "chi_s1_s2": chi_s1_s2,
         "chi_trefoil": chi_tre,
     }
