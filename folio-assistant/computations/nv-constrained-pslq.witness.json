@@ -1,0 +1,59 @@
+{
+  "computation": "nv-constrained-pslq",
+  "computedAt": "2026-05-05T22:04:28.899141+00:00",
+  "description": "Constrained-PSLQ search for v_weak/m_e on the path-α-Bring basis {[2]_q, [4]_q, [6]_q, [8]_q, q^k, h^k, N_sym(q)} informed by prop:weak-symmetric-normalization. Three ansatz shapes A1/A2/A3 tested; results vs CODATA-G_F precision.",
+  "reference_blocks": [
+    "prop:weak-symmetric-normalization",
+    "prop:knot-operator-lp-selection",
+    "conj:weak-spectral-completeness",
+    "conj:electroweak-higgs-torus-link-triplet"
+  ],
+  "audit": "docs/audits/2026-05-05-path-alpha-bring-refinement.md",
+  "ratio_target": "481839.8163817402432227908",
+  "N_v_target": "1445519.449145220729668372",
+  "q_0": "1.1099785955541805169583001889887986763787613849839",
+  "N_sym_q0": "1.897444585760127079830558",
+  "tolerance_codata": "5e-7",
+  "ansatz_A1": {
+    "form": "INT · [4]_q^a · [6]_q^b · [8]_q^c / [2]_q^d · q^L",
+    "basis_size": 27440,
+    "n_hits": 1,
+    "expected_chance_hits_5e-7": 0.01372,
+    "top_hits": [
+      {
+        "INT": 1,
+        "a": 3,
+        "b": 1,
+        "c": 4,
+        "d": 0,
+        "L": -17,
+        "rel_err": 5.237771222080009e-08
+      }
+    ]
+  },
+  "ansatz_A2": {
+    "form": "INT · N_sym(q)^a · h^b · q^L",
+    "basis_size": 576,
+    "n_hits": 0,
+    "expected_chance_hits_1e-5": 0.00576,
+    "top_hits": []
+  },
+  "ansatz_A3": {
+    "form": "INT · ([4]·[6]·[8])/[2] · N_sym^a · q^L",
+    "basis_size": 112,
+    "n_hits": 0,
+    "expected_chance_hits_1e-5": 0.0011200000000000001,
+    "top_hits": []
+  },
+  "best_overall": {
+    "INT": 1,
+    "a": 3,
+    "b": 1,
+    "c": 4,
+    "d": 0,
+    "L": -17,
+    "rel_err": 5.237771222080009e-08,
+    "ansatz": "A1"
+  },
+  "verdict": "candidate-closed-form-found"
+}
