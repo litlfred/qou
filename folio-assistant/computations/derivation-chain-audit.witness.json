@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T18:11:25.533929+00:00",
-  "commitSha": "d3f04a9a24a301ddef3cda72933611d6765c3634",
+  "computedAt": "2026-05-05T21:54:47.786326+00:00",
+  "commitSha": "47de19d8153bb30343a76f2e6eb5b22599a92cbe",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1604,6 +1604,7 @@
         "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
         "markov-weight-verification.witness.json",
+        "markov_weights_symbolic.witness.json",
         "mass-at-3A-proper.witness.json",
         "mass-endomorphism-atom-exact.witness.json",
         "mass-endomorphism-atom-tower.witness.json",
