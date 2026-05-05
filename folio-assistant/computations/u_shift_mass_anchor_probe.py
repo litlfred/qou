@@ -88,13 +88,17 @@ SHIFT_FREE = {
     "n": 16,
 }
 
+from d_u_closed_form_proof import closed_form_d_u  # noqa: E402
+
+# Atomic-braid shift values from the closed-form proof (PR #539):
+#   shift_atom(Z, N) = 18Z + 21N + 1.
+# Routed through closed_form_d_u to keep a single source of truth.
 SHIFT_ATOMIC_FORMULA = {
-    # shift_atom(Z, N) = 18A + 3N + 1 = 18Z + 21N + 1
-    "D":  18 * 2 + 3 * 1 + 1,   # = 40
-    "T":  18 * 3 + 3 * 2 + 1,   # = 61
-    "3He": 18 * 3 + 3 * 1 + 1,  # = 58
-    "4He": 18 * 4 + 3 * 2 + 1,  # = 79
-    "5Li": 18 * 5 + 3 * 2 + 1,  # = 97
+    "D":   closed_form_d_u(1, 1)["u_shift"],   # = 40
+    "T":   closed_form_d_u(1, 2)["u_shift"],   # = 61
+    "3He": closed_form_d_u(2, 1)["u_shift"],   # = 58
+    "4He": closed_form_d_u(2, 2)["u_shift"],   # = 79
+    "5Li": closed_form_d_u(3, 2)["u_shift"],   # = 97
 }
 
 # Anchor: m/m_e

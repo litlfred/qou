@@ -86,6 +86,53 @@ PER_CROSSING_SHIFT_INTRA = {
 }
 # 6·1 + 3·4 + 2·0 = 18 per proton ✓
 # 5·1 + 4·4 + 2·0 = 21 per neutron ✓
+
+
+def closed_form_d_u(Z: int, N: int, include_inter: bool = True) -> dict:
+    """Closed-form D(u) for the atomic-braid Markov-trace denominator.
+
+    Returns dict with:
+      - 'two_power_exp': exponent k in 2^k prefactor
+      - 'u_shift':       u-power exponent (= pole order at u=0)
+      - 'one_plus_u2_exp': exponent in (1+u²)^? cyclotomic factor
+      - 'factored_str':  human-readable factored form
+
+    For atomic braid in canonical pppnnn ordering with A = Z + N:
+      D(u) = 2^(2A + 1) · u^(18Z + 21N + 1) · (1 + u²)^(3A − 1)
+
+    Categorically proved: see docs/audits/2026-05-03-w3-habiro-unblocked.md
+    and PR #539 (merged 2026-05-04).
+    """
+    if not include_inter:
+        # Single-nucleon (A=1) or include_inter=False: separate formulas
+        # per the strand-topology dependence.  These are empirical
+        # (witness): proton=20, neutron=16, and the (1+u²) structure
+        # differs (uses u^4 cyclotomic Φ_3(u^4) rather than (1+u²)^?).
+        # Caller should fall back to auto-detection for include_inter=False.
+        raise NotImplementedError(
+            "Closed form for include_inter=False uses different "
+            "cyclotomic structure (Φ_3(u^4) rather than (1+u²)^k); "
+            "fall back to auto-detection for single-nucleon braids."
+        )
+    A = Z + N
+    if A < 2 or Z < 1 or N < 1:
+        raise ValueError(
+            "Closed form derived for canonical pppnnn ordering with "
+            "Z, N ≥ 1 (so the (p,n) interface contributes).  Got "
+            f"(Z={Z}, N={N})."
+        )
+    two_power = 2 * A + 1
+    u_shift = 18 * Z + 21 * N + 1
+    cyc_exp = 3 * A - 1
+    return {
+        "two_power_exp": two_power,
+        "u_shift": u_shift,
+        "one_plus_u2_exp": cyc_exp,
+        "factored_str": f"2^{two_power} · u^{u_shift} · (1 + u²)^{cyc_exp}",
+        "Z": Z, "N": N, "A": A,
+    }
+
+
 PER_CROSSING_SHIFT_INTER = {
     "sigma":     0,  # (p, p) interface
     "averaged":  1,  # (p, n) interface
