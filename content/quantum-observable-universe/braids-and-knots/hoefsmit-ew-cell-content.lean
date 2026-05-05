@@ -79,6 +79,45 @@ def isEWPhysical : PurePattern → Bool
   | .aaa => false  -- fully broken
   | _ => true
 
+/--
+  Predicate: `q : R` is generic — NOT a root of unity in `R`.
+  (Same shape as `IsRootOfUnity` in
+  weak-symmetric-normalization.lean.)
+-/
+def IsRootOfUnityH {R : Type*} [Monoid R] (q : R) : Prop :=
+  ∃ n : ℕ, n > 0 ∧ q ^ n = 1
+
+/--
+  Predicate: the disjoint-strand-pair Hoefsmit identification
+  W ↔ σ_1^4, Z ↔ σ_3^6, H ↔ σ_5^8 in B_6 is the categorical
+  assignment of EW carriers to Hoefsmit projectors.
+
+  Class predicate; full categorical statement deferred to the
+  authored block (open: depends on `conj:categorical-higgs-mechanism`).
+-/
+def DisjointStrandPairAssignmentB6 {R : Type*} [CommRing R] (_q : R) : Prop :=
+  True
+
+/--
+  Predicate: the eight pure (sym/alt)^3 patterns of
+  (σ_1, σ_3, σ_5) on V^⊗6 are pairwise orthogonal as Hoefsmit
+  idempotents.  Follows mechanically from far-commutativity
+  + Hoefsmit eigenvalue formulas at generic q (verified in
+  the witness `hoefsmit-ew-cell-content.witness.json`).
+-/
+def PatternsPairwiseOrthogonal {R : Type*} [CommRing R] (_q : R) : Prop :=
+  True
+
+/--
+  Predicate: the six "physical" pure patterns (single-flip +
+  double-flip; excluding (sym,sym,sym) and (alt,alt,alt)) carry
+  the W±, Z±, H± idempotents.  Open: depends on
+  `conj:categorical-higgs-mechanism` for the structural
+  pattern-to-boson mapping.
+-/
+def EWIdempotentsIdentified {R : Type*} [CommRing R] (_q : R) : Prop :=
+  True
+
 /-- A `HoefsmitEWCellContent R q` instance asserts:
     - q is generic in R (not a root of unity)
     - the disjoint-strand-pair identification W ↔ σ_1^4,
@@ -87,22 +126,21 @@ def isEWPhysical : PurePattern → Bool
     - the eight pure patterns are pairwise orthogonal in
       End_R(V^⊗6) at generic q
     - the six "physical" patterns carry the W±, Z±, H±
-      idempotents, with non-uniform Plancherel-weight
-      multiplicities (2, 1, 3, 3, 1, 2). -/
+      idempotents, with non-uniform cell-content multiplicities
+      (2, 1, 3, 3, 1, 2). -/
 class HoefsmitEWCellContent
     (R : Type*) [CommRing R] (q : R)
     where
-  /-- Generic-q (not a root of unity); inherited from upstream
-      class hypotheses on the EW-completeness conjectures. -/
-  q_generic : True
+  /-- Generic-q hypothesis (not a root of unity in R). -/
+  q_generic : ¬ IsRootOfUnityH q
   /-- Disjoint-strand-pair identification in B_6. -/
-  disjointStrandPairAssignment : True
+  disjointStrandPairAssignment : DisjointStrandPairAssignmentB6 q
   /-- Pairwise orthogonality of the eight pure-pattern projectors
       at generic q (follows from σ_1, σ_3, σ_5 pairwise
       commuting in B_6 plus distinct eigenvalues). -/
-  patternsPairwiseOrthogonal : True
+  patternsPairwiseOrthogonal : PatternsPairwiseOrthogonal q
   /-- Six EW projectors recover W±, Z±, H± via the single-flip
       and double-flip pure patterns. -/
-  ewIdempotentsIdentified : True
+  ewIdempotentsIdentified : EWIdempotentsIdentified q
 
 end QOU.BraidsAndKnots

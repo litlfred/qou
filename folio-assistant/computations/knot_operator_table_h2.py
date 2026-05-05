@@ -99,8 +99,9 @@ def main() -> int:
         # Wedderburn block eigenvalues (analytic, generic q):
         # e_+ block: σ_0 acts as q;  σ_0^k acts as q^k
         # e_- block: σ_0 acts as -q^{-1};  σ_0^k acts as (-q^{-1})^k
-        eig_sym = sp.simplify(q ** k)
-        eig_alt = sp.simplify((-1)**k * q ** (-k))
+        # Monomial — no sp.simplify/sp.cancel needed (Gemini review).
+        eig_sym = q ** k
+        eig_alt = (-1) ** k * q ** (-k)
         is_even = (k % 2 == 0)
         eigenvalues.append({
             "operator": op_name,

@@ -53,7 +53,8 @@ def main() -> int:
 
     # Verify bar-self-duality: tr_pure | q ↦ 1/q == tr_pure
     bar = sp.expand(tr_pure.subs(q, 1 / q))
-    bar_self_dual = sp.simplify(tr_pure - bar) == 0
+    # Use .equals(0) for robust algebraic-identity check (Gemini review).
+    bar_self_dual = (tr_pure - bar).equals(0)
 
     # Collect into bar-self-dual pairs
     poly_dict = sp.Poly(tr_pure * q ** 18, q).as_dict()

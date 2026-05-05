@@ -1,6 +1,6 @@
 {
   "computation": "knot-operator-table-h2",
-  "computedAt": "2026-05-05T21:53:19.683303+00:00",
+  "computedAt": "2026-05-05T23:05:08.701818+00:00",
   "description": "Knot-operator table for T(2,2k), k=1..4 in H_2(q), extending knot-operator-table.witness.json (which covered H_3(q) matter operators) with the EW even-twist 2-component link sector. Symbolic results in R = Z[q, q^{-1}]; numerical specialization at q_0 for cross-check only. Confirms prop:even-twist-torus-link-psd-feasibility: even twists give (q^{2k}, q^{-2k}) eigenvalue pairs (PSD-feasible in any real-closed specialization q* > 1); odd twists give (q^k, -q^{-k}) and are never PSD-feasible.",
   "reference_blocks": [
     "conj:electroweak-higgs-torus-link-triplet",

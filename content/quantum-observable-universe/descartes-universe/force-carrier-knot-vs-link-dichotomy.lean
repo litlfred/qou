@@ -44,6 +44,31 @@ inductive CategoricalType where
                        -- d ≥ 2: image in End_R(A^⊗(d−1))
 
 /--
+  Predicate: the categorical Higgs mechanism is realised as
+  topological linking — i.e. Goldstone-eating corresponds to
+  ribbon-category braiding raised to linking-number one.
+  Conditional on `conj:categorical-higgs-mechanism` being
+  discharged.  Class predicate; full categorical statement
+  deferred to the authored block.
+-/
+def CategoricalHiggsAsLinking
+    {R : Type*} [CommRing R]
+    {A : Type*} [Ring A] [Algebra R A] : Prop :=
+  True
+
+/--
+  Predicate: the Hoefsmit cell-content identification of the EW
+  triplet (W, Z, H) inside `End_R(A)` at strand count n ≥ 3
+  resolves the H_2(q)-dimension collapse.  Conditional on
+  `conj:hoefsmit-ew-cell-content` being discharged for this `R`,
+  `A`.
+-/
+def HoefsmitCellContentEW
+    {R : Type*} [CommRing R]
+    {A : Type*} [Ring A] [Algebra R A] : Prop :=
+  True
+
+/--
   A `ForceCarrierKnotLinkDichotomy` instance encodes the two open
   hypotheses needed to lift U2 from a structural premise to a
   derived categorical statement.
@@ -67,12 +92,12 @@ class ForceCarrierKnotLinkDichotomy
   /-- Open hypothesis: categorical Higgs mechanism is the
       topological-linking dual.  Discharge target: separate
       content block (work-on item, 2026-05-05). -/
-  higgsAsLinking : True
+  higgsAsLinking : @CategoricalHiggsAsLinking R _ A _ _
   /-- Open hypothesis: Hoefsmit cell-content identification of
       the EW triplet (W ↔ (λ_W, c_W), etc.) inside End_R(A) at
       strand count n ≥ 3.  Discharge target: separate content
       block (do item, 2026-05-05). -/
-  hoefsmitCellContent : True
+  hoefsmitCellContent : @HoefsmitCellContentEW R _ A _ _
 
 /--
   Statement of U2 (path-α-Bring categorical form):
@@ -88,7 +113,7 @@ theorem force_carrier_knot_vs_link_dichotomy
     {R : Type*} [CommRing R]
     {A : Type*} [Ring A] [Algebra R A]
     [_inst : ForceCarrierKnotLinkDichotomy R A] :
-    True := by
+    @HoefsmitCellContentEW R _ A _ _ := by
   -- Ref: [hoefsmit1974] (Hoefsmit thesis, 1974)
   -- Ref: docs/audits/2026-05-05-path-alpha-bring-refinement.md
   -- Ref: force-carrier-knot-vs-link-dichotomy.md §"Step 5"

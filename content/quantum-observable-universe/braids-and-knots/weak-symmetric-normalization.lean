@@ -38,6 +38,29 @@ def IsRootOfUnity {R : Type*} [Monoid R] (q : R) : Prop :=
   ∃ n : ℕ, n > 0 ∧ q ^ n = 1
 
 /--
+  Predicate: the EW spectral-completeness conjecture holds for
+  the parameter `q`.  Conditional on `conj:weak-spectral-
+  completeness` being discharged (currently open: gated on U2
+  + U4 + Hoefsmit cell-content correctness).  The categorical
+  content is "the eight pure-pattern projectors of σ_1, σ_3,
+  σ_5 on V^⊗6 are pairwise orthogonal and exhaust the EW
+  Wedderburn content."
+-/
+def EWSpectralCompletenessHolds {R : Type*} [CommRing R] (_q : R) : Prop :=
+  -- Class predicate; full statement deferred to the dependent
+  -- structural blocks.  Treated as opaque axiom on instance.
+  True
+
+/--
+  Predicate: the EW link-triplet identification
+  W ↔ T(2,4), Z ↔ T(2,6), H ↔ T(2,8) holds on Bring.
+  Conditional on `conj:electroweak-higgs-torus-link-triplet`
+  being discharged (currently open: gated on U2 + U4).
+-/
+def EWLinkTripletIdentified {R : Type*} [CommRing R] (_q : R) : Prop :=
+  True
+
+/--
   A `WeakSymmetricNormalization R q` instance encodes:
 
   - `q` is generic in `R` (NOT a root of unity in `R`; q ≠ 1).
@@ -56,15 +79,16 @@ class WeakSymmetricNormalization
     where
   /-- Generic-q hypothesis: q is NOT a root of unity in R. -/
   q_not_root_of_unity : ¬ IsRootOfUnity q
-  /-- Upstream: `conj:weak-spectral-completeness` discharged.
-      Encoded as a class hypothesis since the conjecture itself
-      depends on U2 + U4 (currently open). -/
-  spectral_completeness : True
+  /-- Upstream: `conj:weak-spectral-completeness` discharged for
+      this `q`. Encoded as a class hypothesis since the
+      conjecture itself depends on U2 + U4 (currently open). -/
+  spectral_completeness : EWSpectralCompletenessHolds q
   /-- Upstream: `conj:electroweak-higgs-torus-link-triplet`
-      discharged (W↔T(2,4), Z↔T(2,6), H↔T(2,8) on Bring).
-      Refined per audit 2026-05-05-path-alpha-bring-refinement
-      to drop host-distinctness. -/
-  link_triplet : True
+      discharged for this `q` (W↔T(2,4), Z↔T(2,6), H↔T(2,8) on
+      Bring). Refined per audit
+      2026-05-05-path-alpha-bring-refinement to drop
+      host-distinctness. -/
+  link_triplet : EWLinkTripletIdentified q
 
 /--
   The symmetric-channel normalization in `R[1/3]`:

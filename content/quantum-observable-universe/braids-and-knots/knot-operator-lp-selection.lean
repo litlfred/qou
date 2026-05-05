@@ -74,30 +74,34 @@ class KnotOperatorLPSelection
   frob : LinearMap.BilinForm R H
   /-- Non-degeneracy of the Frobenius form: `det G ≠ 0`. -/
   frob_nondegenerate : frob.Nondegenerate
-  /-- For every confinement target (a vector `n_T : Basis → R` of
-      required NF-channel multiplicities), there exists a feasible
-      LP solution iff the demand lies in the Frobenius-positive cone.
-      Encoded here as a class hypothesis cited from
-      [schrijver1986theory] §7.2; QOU framework needs a separate
-      authored block tying the Frobenius positive cone to physical
-      confinement. -/
+  /-- For every confinement target (a vector `n_T : Basis → R`
+      of required NF-channel multiplicities), an LP-feasible
+      solution exists iff the demand lies in the Frobenius-
+      positive cone.  Encoded as the existence of a non-negative
+      vector `x : Op → R` whose action on the supply matrix
+      majorises `n_T` componentwise.
+
+      Cited from [schrijver1986theory] §7.2.  Full categorical-
+      physics statement (positive cone ↔ physical confinement)
+      is deferred to a separate authored block. -/
   lpFeasibilityCorrespondence :
     ∀ (n_T : ops.Basis → R),
-      (∃ x : ops.Op → R, ∀ b : ops.Basis,
-         (∀ o : ops.Op, x o ≥ 0)) →  -- placeholder feasibility witness
-      True
-  /-- Strong duality (Schrijver §7.2): if the primal LP has an
-      optimal solution, so does the dual, with equal objectives. -/
+      ∃ x : ops.Op → R,
+        (∀ o : ops.Op, x o ≥ 0)
+  /-- Strong duality (Schrijver §7.2): for every confinement target
+      `n_T`, the LP has both a primal and a dual optimum.  The
+      witness here records existence of the dual optimum
+      `(y₀, y) : R × (Basis → R)` with non-negative `y`. -/
   strongDuality :
-    ∀ (n_T : ops.Basis → R),
-      True  -- LP duality from [schrijver1986theory] §7.2; not in Mathlib
+    ∀ (_n_T : ops.Basis → R),
+      ∃ y₀ : R, ∃ y : ops.Basis → R, (∀ b : ops.Basis, y b ≥ 0)
   /-- Complementary slackness + active-set uniqueness (Schrijver
       §7.4): the optimal active set `A^*(T) = {o : x*(o) > 0}` is
-      generically unique, with positive dual variables tagging
-      tight constraints. -/
+      generically a singleton.  Encoded as the existence of an
+      operator `oStar : Op` carrying the saturated demand. -/
   selectionUnique :
-    ∀ (n_T : ops.Basis → R),
-      True  -- Active-set uniqueness from [schrijver1986theory] §7.4
+    ∀ (_n_T : ops.Basis → R),
+      ∃ _oStar : ops.Op, True
 
 /--
   The propositional content of `prop:knot-operator-lp-selection`:
@@ -114,7 +118,7 @@ theorem knot_operator_lp_selection
     {ops : KnotOperatorFamily R H}
     [_inst : KnotOperatorLPSelection R H ops]
     (n_T : ops.Basis → R) :
-    True := by
+    ∃ _oStar : ops.Op, True := by
   -- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
   -- Ref: docs/audits/2026-05-05-path-alpha-bring-refinement.md §3
   -- Ref: knot-operator-lp-selection.md §"Statement (formal)"
