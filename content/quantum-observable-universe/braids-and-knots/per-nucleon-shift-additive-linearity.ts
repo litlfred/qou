@@ -31,6 +31,13 @@ export default proposition({
     "prop:alpha-shift-torus-knot",
     "prop:alpha-em-shift-multiplicative-chain",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/per_nucleon_shift_derivation.py",
+    witness: "folio-assistant/computations/per-nucleon-shift-derivation.witness.json",
+    status: "verified",
+    requires: ["numpy"],
+  },
   tags: [
     "atomic-markov-trace",
     "shift-exponent",

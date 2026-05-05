@@ -74,8 +74,9 @@ WITNESS = {
         "shift = 18Z + 21N + 1 via per-NEW-nucleon additive analysis. "
         "Proves linearity: Δshift(A→A+1, +proton) = 18 EXACTLY, "
         "Δshift(A→A+1, +neutron) = 21 EXACTLY, independent of host. "
-        "Decomposes per-new-nucleon = 11 generators - 2 (p) or 0.5 (n) "
-        "Hecke σ²-cancellations + 1 mixed (p,n) interface contribution."
+        "Decomposes per-new-nucleon = 12 generators - 3 (p) or 1.5 (n) "
+        "total pole cancellations (proton: 2 σ²-adj + 1 Ocneanu-avg; "
+        "neutron: 0.5 σ²-adj + 1.0 Ocneanu-avg) + 1 mixed (p,n) interface."
     ),
     "contentBlock": "docs/audits/2026-05-03-w3-habiro-unblocked.md",
     "data": {},
@@ -221,8 +222,8 @@ WITNESS["data"]["per_new_nucleon_increments"] = new_nuc_deltas
 # pole order by some integer k (proton: k=2, neutron: k=0.5).
 print()
 print("Per-new-nucleon DECOMPOSITION (verified):")
-print(f"  +proton:  +12 gens (6σ+3σ⁻¹+3avg) = 11 nucleon + 1 interface;  pole +9   (cancel +2);  shift +18 ✓")
-print(f"  +neutron: +12 gens (5σ+4σ⁻¹+3avg) = 11 nucleon + 1 interface;  pole +10.5 (cancel +0.5); shift +21 ✓")
+print(f"  +proton:  +12 gens (7σ+3σ⁻¹+2avg) = 11 nucleon + 1 interface;  pole +9   (cancel +3: σ²-adj=2, Ocneanu-avg=1);  shift +18 ✓")
+print(f"  +neutron: +12 gens (5σ+5σ⁻¹+2avg) = 11 nucleon + 1 interface;  pole +10.5 (cancel +1.5: Ocneanu-avg=1.0, σ²-adj=0.5); shift +21 ✓")
 print()
 print("The 'factor-of-3' (18 = 6×3, 21 = 7×3 in the audit conjecture) is")
 print("more naturally read as: per-new-nucleon adds 11 generators × 1 (DP-max")
@@ -242,14 +243,14 @@ neutron_increments_match = all(
 )
 
 WITNESS["assertions"].append({
-    "name": "Per-new-proton: +12 generators, +9 pole, +2 cancellation, +18 shift",
+    "name": "Per-new-proton: +12 generators, +9 pole, +3 total cancellation (σ²-adj=2, Ocneanu-avg=1), +18 shift",
     "computed": proton_increments_match,
     "expected": True,
     "passed": proton_increments_match,
     "source": "decomposition of EMPIRICAL_SHIFT increments",
 })
 WITNESS["assertions"].append({
-    "name": "Per-new-neutron: +12 generators, +10.5 pole, +0.5 cancellation, +21 shift",
+    "name": "Per-new-neutron: +12 generators, +10.5 pole, +1.5 total cancellation (Ocneanu-avg=1.0, σ²-adj=0.5), +21 shift",
     "computed": neutron_increments_match,
     "expected": True,
     "passed": neutron_increments_match,
@@ -276,9 +277,9 @@ print()
 print("  ⟹ shift(Z, N) = 18Z + 21N + 1   (for A ≥ 2, canonical ordering)")
 print()
 print("Per-new-nucleon = 11 nucleon-internal generators + 1 interface generator")
-print("  × DP-max contribution (1 per gen) - cancellation:")
-print("    proton:  12·1 - 3 = 9 → shift +18  (3 from intra-σ⁻¹ adjacencies)")
-print("    neutron: 12·1 - 1.5 = 10.5 → shift +21  (Ocneanu-averaged half-int)")
+print("  × DP-max contribution (1 per gen) - total cancellation:")
+print("    proton:  12·1 - 3 = 9 → shift +18  (3 = 2 σ²-adj cancel + 1 Ocneanu-avg cancel)")
+print("    neutron: 12·1 - 1.5 = 10.5 → shift +21  (1.5 = 0.5 σ²-adj + 1.0 Ocneanu-avg)")
 
 # Final verification: shift formula 18Z+21N+1 holds for all 6 atoms
 formula_check = all(

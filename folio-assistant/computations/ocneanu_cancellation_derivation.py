@@ -235,8 +235,17 @@ for shape in partitions:
 trM = sp.cancel(trM)
 trM_pole = lowest_q_power(trM)
 print(f"  tr_M(proton) symbolic pole = {trM_pole}")
-print(f"  Empirical proton pole       = 10 (DP-max 11)")
-print(f"  ⟹ Cross-partition cancellation = {trM_pole - 10 if trM_pole is not None else '?'}")
+DP_MAX_POLE = 11
+EMPIRICAL_PROTON_POLE = 10
+# lowest_q_power returns -k for a pole of order k (leading term q^{-k}).
+# So the symbolic pole order = -trM_pole, and the cancellation from DP-max
+# = DP_max_pole - (-trM_pole).  For empirical: DP_max - empirical.
+sym_pole_order = -trM_pole if trM_pole is not None else None
+sym_cancel = DP_MAX_POLE - sym_pole_order if sym_pole_order is not None else None
+emp_cancel = DP_MAX_POLE - EMPIRICAL_PROTON_POLE
+print(f"  Empirical proton pole       = {EMPIRICAL_PROTON_POLE} (DP-max {DP_MAX_POLE})")
+print(f"  Symbolic pole order         = {sym_pole_order} (from trM_pole={trM_pole})")
+print(f"  ⟹ Symbolic cancel = {sym_cancel}, Empirical cancel = {emp_cancel}")
 
 WITNESS["data"]["proton_standalone"] = {
     "n": n,
@@ -244,9 +253,13 @@ WITNESS["data"]["proton_standalone"] = {
     "per_lambda_chi": {str(k): str(v) for k, v in per_lambda_chi.items()},
     "per_lambda_pole_at_q0": {str(k): v for k, v in per_lambda_pole.items()},
     "trM_pole_at_q0": trM_pole,
-    "empirical_proton_pole": 10,
-    "DP_max_pole": 11,
-    "cross_partition_cancel": trM_pole - 11 if trM_pole is not None else None,
+    "symbolic_pole_order": sym_pole_order,
+    "empirical_proton_pole": EMPIRICAL_PROTON_POLE,
+    "DP_max_pole": DP_MAX_POLE,
+    # symbolic_cross_partition_cancel: 0 when symbolic bug makes pole=DP_max.
+    # empirical_cross_partition_cancel: correct count from numerical detection.
+    "symbolic_cross_partition_cancel": sym_cancel,
+    "empirical_cross_partition_cancel": emp_cancel,
 }
 
 # ──────────────────────────────────────────────────────────────────────
