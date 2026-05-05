@@ -38,13 +38,32 @@ with **leading coefficient $-1/12$ exactly**.
 
 ## What this is, and what it isn't
 
-This is **not numerology**. It is two independent computations on the same braid:
-- PR #546: Hoefsmit-Wenzl symbolic seminormal reduction, giving the closed-form Markov trace via Plancherel weights and quantum dimensions.
-- This probe: braid-group $\to H_n(q)$ reduction via the Coxeter-length filtration, counting quadratic-relation firings.
+**UPDATE (2026-05-05, post-universality test):** the universality conjecture **"GB-NF event count = $2 \cdot |S_n|$ universally"** has been **falsified** by `gb-nf-event-count-universality.witness.json`. The quadratic event count is **word-specific**, not a universal $H_n$-invariant:
 
-Both produce the integer $12$ from the same input (proton word, $H_3(q)$). The match is structurally derivable: at $q = 1$, $\sum_\lambda d_\lambda^2 = |S_3| = 6$, and the doubled normalization $2 \cdot |S_3| = 12$ corresponds to the Wedderburn-Markov-weight aggregate $\sum_\lambda y_\lambda \cdot d_\lambda^{-1}$ in the Hoefsmit-Wenzl trace formula, evaluated at unit normalization. Equivalently, $12 = [2]_q \cdot [3]_q \cdot 2$ at $q = 1$ (the $H_3$ braid-length normalization).
+| Word in $H_3$ | Length | Quadratic events |
+|:---|---:|---:|
+| trivial | 0 | 0 |
+| $\sigma_1$ | 1 | 0 |
+| $\sigma_1^2$ | 2 | 1 |
+| trefoil $\sigma_1^3$ | 3 | 2 |
+| Borromean $(\sigma_1\sigma_2)^3$ | 6 | 6 |
+| **proton intra $\sigma_1^7 \sigma_2^4$** | **11** | **12** |
+| $\sigma_1^{10}$ | 10 | 9 |
+| $\sigma_1^{15}$ | 15 | 14 |
+| $\sigma_1^{20}$ | 20 | 19 |
 
-**This is not yet a closed derivation.** It is a structural connection: the GB-NF event count and the Hoefsmit closed-form denominator both produce $12$ for the proton in $H_3$. To close Piece 1 categorically:
+The proton's $12$ events is **specific to that word's structure**, not a universal $H_3$-invariant. The match with PR #546's $1/12$ leading-coefficient denominator is therefore **most likely coincidental** for that specific word.
+
+**Distinction:**
+
+- PR #546's "$1/12$" is an $H_3$-INVARIANT (depends on $n = 3$ only, via the Wedderburn-Markov aggregate normalization $2 \cdot |S_3| = 12$). It would appear in the leading coefficient of $\mathrm{tr}_M$ for any $H_3$ element.
+- This probe's "12 events" is WORD-SPECIFIC (depends on the proton word's GB-NF reduction trajectory). Different words give different counts.
+
+These are different categorical objects. Their numerical match for the proton case is **not a derived identity** — it's a coincidence of that specific word's reduction trajectory landing on $2 \cdot |S_3|$ events.
+
+**The right structural anchor for Piece 1 is PR #546's closed-form $\mathrm{tr}_M(p)$ itself**, not the GB-NF event count. The "$1/12$" in the denominator is the $H_3$ Plancherel-Markov aggregate normalization (Wenzl 1988 Theorem 5), which is the **categorical** dimensional bridge.
+
+To close Piece 1 categorically:
 
 1. **Prove** the equivalence: Hecke-quadratic event count during GB-NF reduction $=$ $\sum_\lambda d_\lambda^2$ Wedderburn aggregate (or its normalization analog).
 2. **Use PR #546's closed-form $\mathrm{tr}_M(p)$** as the dimensional anchor:

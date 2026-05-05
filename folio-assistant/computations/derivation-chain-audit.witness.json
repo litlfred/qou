@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T21:42:51.813184+00:00",
-  "commitSha": "ecc282252e9ae3f52146205542f612e7488634d6",
+  "computedAt": "2026-05-05T21:51:49.253545+00:00",
+  "commitSha": "3f5271db8c3e1721d87ef96f0b1ee42f64017368",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1515,6 +1515,7 @@
         "garside-irrep-qvalues.witness.json",
         "gb-filtration-gauge-invariance.witness.json",
         "gb-filtration-jet-order.witness.json",
+        "gb-nf-event-count-universality.witness.json",
         "gb-prefix-probe.witness.json",
         "gb-residue-tower.witness.json",
         "gram-matrix-dual.witness.json",
