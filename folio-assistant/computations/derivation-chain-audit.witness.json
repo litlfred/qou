@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T23:18:34.549991+00:00",
-  "commitSha": "624230ce2cb767557db644ef1156d281b507c474",
+  "computedAt": "2026-05-05T23:28:04.982985+00:00",
+  "commitSha": "08f144fd54dd662f1cd84784000fd3db68c97f5a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1736,6 +1736,9 @@
         "rho-census-wedderburn-experiment.witness.json",
         "rho-f-complexity-sweep.witness.json",
         "rho-f-derived-vs-observed.witness.json",
+        "rho-k-markov-multiplicativity.witness.json",
+        "rho-k-pair-gen-extension.witness.json",
+        "rho-k-pair-gen-v2-wedderburn.witness.json",
         "rho-z-n-scan.witness.json",
         "ribbon-content-average.witness.json",
         "rosso-jones-qvalues.witness.json",
@@ -1768,6 +1771,7 @@
         "spectral-sequence-unified-h3.witness.json",
         "std-matrix-trace-closed-form.witness.json",
         "strict-3cal-unified-mass.witness.json",
+        "sublemma-2-1-A-recursive-formula.witness.json",
         "sublemma-2-1-alpha-shift-extract.witness.json",
         "sublemma-2-1-deuteron-branching.witness.json",
         "sw-period-thimble-equivalence.witness.json",

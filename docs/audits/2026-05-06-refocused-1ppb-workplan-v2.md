@@ -42,6 +42,10 @@ Recently authored on `claude/w3-followup-term6-integration`:
 | `prop:weak-symmetric-normalization` | Demoted as Plancherel-degenerate; carries explicit "Demoted 2026-05-05" banner |
 | `conj:hoefsmit-ew-cell-content` | Open conj, n=6 disjoint-strand-pair identification + multiplicities |
 | `conj:categorical-higgs-mechanism` | Skeleton, four open inputs identified |
+| `conj:categorical-linking-operation` | **NEW (Tier A1, 2026-05-06)**: Lk_R^(k) ribbon-cat operation; **Property 1 (linearity) PROVED** at categorical level; properties 2–5 open |
+| `conj:weinberg-angle-categorical` | **NEW (Tier A2, 2026-05-06)**: simple-uniform reading falsified at 64% rel deviation; corrected version gated on linking + Hoefsmit + Higgs-vev automorphism |
+| `prop:rho-k-graded-expansion` | **CHERRY-PICKED (Tier B4, 2026-05-06)** from PR #534 commit `076d6d88e`: graded series for ρ_K matching six-term term-by-term |
+| `wedderburn_pair_volumes.py` | **CHERRY-PICKED (Tier B5, 2026-05-06)** from PR #534 commit `06305f30c`: Wedderburn-block-decomposed pair amplitude |V_i V_j|_Wedd |
 | `conj:force-carrier-knot-vs-link-dichotomy` | Refined to categorical form (drop host-arithmetic Steps 4–5) |
 | `conj:weak-spectral-completeness` | Refined to Hoefsmit n=6 form, bar-self-dual cell-content trace replaces Plancherel weight |
 | `conj:electroweak-higgs-torus-link-triplet` | Refined to Bring-internal even-twist complement |
@@ -70,9 +74,9 @@ All Lean siblings now use concrete propositional predicates (`IsRootOfUnity`, `E
 
 **Tier B — sibling-coordination dependent:**
 
-4. **Pull in `prop:rho-k-graded-expansion`** from PR #534 (commit `076d6d88e`). This factors out $1/(m_e |\mathrm{tr}_M|)$ to expose the term-by-term six-term mass-formula structure. Once integrated, my W-3 closed-form $D(u) = 2^{2A+1} u^{18Z + 21N + 1} (1 + u^2)^{3A - 1}$ slots directly into their graded series.
+4. ~~**Pull in `prop:rho-k-graded-expansion`** from PR #534 (commit `076d6d88e`).~~ **DONE** (2026-05-06, this branch). Factors out $1/(m_e |\mathrm{tr}_M|)$ to expose the term-by-term six-term mass-formula structure. My W-3 closed-form $D(u) = 2^{2A+1} u^{18Z + 21N + 1} (1 + u^2)^{3A - 1}$ now feeds the cyclotomic-tail term of the graded series.
 
-5. **Pull in `wedderburn_pair_volumes.py`** from PR #534 (commit `06305f30c`). Compute $|V_W V_Z|_{\rm Wedd}, |V_Z V_H|_{\rm Wedd}, |V_W V_H|_{\rm Wedd}$ — these are the **LP/SDP-dual inputs** for the EW-sector operator-selection in `prop:knot-operator-lp-selection`. With the pair amplitudes in hand, the six EW projector multiplicities $(2, 1, 3, 3, 1, 2)$ get concrete physics interpretation.
+5. ~~**Pull in `wedderburn_pair_volumes.py`** from PR #534 (commit `06305f30c`).~~ **DONE** (2026-05-06, this branch). Implements $|V_i V_j|_{\rm Wedderburn} = w_{\rm sym} \lambda_i^{\rm sym} \lambda_j^{\rm sym} + w_{\rm std} \cdot \mathrm{tr}_{\rm Markov}(M_i M_j)|_{\rm std} + w_{\rm alt} \lambda_i^{\rm alt} \lambda_j^{\rm alt}$. Now usable as the **LP/SDP-dual input** for the EW-sector operator-selection in `prop:knot-operator-lp-selection`.
 
 6. **Cross-validate Hoefsmit multiplicities against PR #546's symbolic engine**. PR #546 has produced closed-form symbolic $\chi^\lambda$ for proton and deuteron; extending to $\sigma_1^4 \sigma_3^6 \sigma_5^8$ on $V^{\otimes 6}$ supplies an independent ground-truth check on my $(4, 2, 1, 3, 3, 1, 2, 4)$ pattern multiplicities and the bar-self-dual closed form $\mathrm{tr}_{\rm pure}$.
 

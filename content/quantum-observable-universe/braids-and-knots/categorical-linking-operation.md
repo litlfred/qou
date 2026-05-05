@@ -38,31 +38,97 @@ the other as an endomorphism of $A$.*
 ### Statement (formal)
 
 The categorical linking operation $\mathrm{Lk}_R^{(k)}$ has the
-following properties (each is conjectural; status open):
+following properties:
 
-1. **Linearity.** $\mathrm{Lk}_R^{(k)}$ is $R$-linear in each
-   factor separately.
-2. **Reduction at $k = 0$.** $\mathrm{Lk}_R^{(0)}(a, b) = (\tau_R(b))
+1. **Linearity** — *proved* (see proof below). $\mathrm{Lk}_R^{(k)}$
+   is $R$-linear in each factor separately.
+2. **Reduction at $k = 0$** — open. $\mathrm{Lk}_R^{(0)}(a, b) = (\tau_R(b))
    \cdot a^*$ where $a^*$ is the dual morphism of $a$ in
    $\mathrm{End}_R(A)$ (no linking ⟹ disjoint trace closure ⟹
    scalar multiplication).
-3. **Multiplicativity in $k$.** $\mathrm{Lk}_R^{(k_1 + k_2)}(a, b)
+3. **Multiplicativity in $k$** — open. $\mathrm{Lk}_R^{(k_1 + k_2)}(a, b)
    = c_{A, A}^{\,k_2} \cdot \mathrm{Lk}_R^{(k_1)}(a, b)$ (linking
    composes additively in the integer index).
-4. **Trace-cut symmetry.** Cutting via $\tau_R \otimes \mathrm{id}_A$
+4. **Trace-cut symmetry** — open. Cutting via $\tau_R \otimes \mathrm{id}_A$
    instead of $\mathrm{id}_A \otimes \tau_R$ produces the
    $\iota$-conjugate $\mathrm{Lk}_R^{(-k)}(b, a)$, where $\iota$
    is the bar involution on $R$.
-5. **Compatibility with bar involution.**
+5. **Compatibility with bar involution** — open.
    $\iota(\mathrm{Lk}_R^{(k)}(a, b)) = \mathrm{Lk}_R^{(-k)}(\iota(a),
    \iota(b))$. Equivalently: bar self-duality holds for $k = 0$ pairs;
    non-zero linking breaks bar self-duality by exactly the linking
    sign.
 
-The first four are direct from the ribbon-category axioms once
-the trace-cut definition is fixed; the fifth is the categorical
-content needed for path-α-Bring's even-twist parity rule
-([prop:even-twist-torus-link-psd-feasibility](#conj:electroweak-higgs-torus-link-triplet)).
+Properties 2–5 are categorical-physics statements requiring the
+substrate-specific ribbon structure on $A$. Property 1 (linearity)
+is a generic categorical fact that holds in any $R$-linear rigid
+monoidal category, proved below.
+
+### Proof of Property 1 (linearity)
+
+**Claim.** Let $\mathbf{C}$ be an $R$-linear rigid monoidal
+category with braiding $c$. For every fixed integer $k \in
+\mathbb{Z}$, the categorical linking operation
+$\mathrm{Lk}_R^{(k)}$ is $R$-linear in each factor separately.
+
+**Proof.** By the definition
+
+$$
+  \mathrm{Lk}_R^{(k)}(a, b)
+  \;=\;
+  (\mathrm{id}_A \otimes \tau_R) \,\circ\,
+  \bigl( c_{A, A}^{\,k} \circ (a \otimes b) \otimes \mathrm{id}_A \bigr).
+$$
+
+Three observations:
+
+(i) **Tensor product is $R$-bilinear on morphisms** in any
+$R$-linear monoidal category: $(\alpha f) \otimes g = \alpha (f
+\otimes g) = f \otimes (\alpha g)$, and $(f_1 + f_2) \otimes g =
+f_1 \otimes g + f_2 \otimes g$, for $\alpha \in R$ (axiom of
+$R$-linear monoidal category).
+
+(ii) **Composition is $R$-bilinear on morphisms** in any
+$R$-linear category: $(\alpha f) \circ g = \alpha (f \circ g) =
+f \circ (\alpha g)$, with the corresponding additivity (axiom
+of $R$-linear category).
+
+(iii) **The morphisms $c_{A, A}^{\,k}$, $\tau_R$, and $\mathrm{id}_A$
+are fixed** (independent of $(a, b)$) once $A$, the braiding $c$,
+the integer $k$, and the Frobenius trace $\tau_R$ are fixed.
+
+Now fix $b \in \mathrm{Hom}_R(\mathbf{1}, A)$, and consider the
+map $a \mapsto \mathrm{Lk}_R^{(k)}(a, b)$. By (i), $a \mapsto a
+\otimes b$ is $R$-linear (tensor with fixed $b$ is $R$-linear).
+The map $u \mapsto u \otimes \mathrm{id}_A$ is $R$-linear by (i)
+applied with the fixed morphism $\mathrm{id}_A$ on the right.
+Pre-composition with the fixed morphism $c_{A, A}^{\,k}$ and
+post-composition with the fixed morphism $\mathrm{id}_A \otimes
+\tau_R$ are each $R$-linear by (ii). The composition of $R$-linear
+maps is $R$-linear, so $a \mapsto \mathrm{Lk}_R^{(k)}(a, b)$ is
+$R$-linear.
+
+The argument for linearity in the second slot $b$ (with $a$
+fixed) is symmetric: replace "tensor with fixed $b$ on the right"
+with "tensor with fixed $a$ on the left" in the first step; all
+other steps are identical.
+
+Therefore $\mathrm{Lk}_R^{(k)}$ is $R$-bilinear, i.e. $R$-linear
+in each factor separately. $\square$
+
+**Remark (proof scope).** This proof uses only the $R$-linear
+rigid-monoidal-category axioms; it makes no assumption about the
+specific ribbon structure of the QOU substrate, the Hecke
+algebra, or the Markov trace. So linearity holds for **any**
+rigid monoidal $R$-linear category in which the trace-cut
+definition makes sense — it is a generic categorical fact, not a
+QOU-specific statement.
+
+The remaining four properties (reduction at $k = 0$,
+multiplicativity, trace-cut symmetry, bar-involution
+compatibility) **do** depend on the ribbon structure and the
+Frobenius-trace structure on $A$; they are open per the status
+section below.
 
 ### Why this is the right operation for the Higgs mechanism
 
