@@ -335,6 +335,7 @@ export default chapter({
         "rho-k-graded-expansion",
         "hecke-branching-trace-decomposition",
         "markov-trace-antipode-polynomial-symmetry",
+        "markov-trace-axiomatic-closed-form",
         "markov-z-reconciliation",
         "mass-endomorphism-conjecture",
         "categorical-neutrality-saturated-shells",
