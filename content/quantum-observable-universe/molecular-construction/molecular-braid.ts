@@ -20,4 +20,15 @@ export default definition({
     "covalent-bond",
     "iterative-construction",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/ch-bond-writhe-lp.py",
+    witness: [
+      "folio-assistant/computations/ch-bond-writhe-lp.witness.json",
+      "folio-assistant/computations/molecular-frobenius-lp.witness.json",
+      "folio-assistant/computations/molecular-trefoil-scan.witness.json",
+      "folio-assistant/computations/unified-mass-molecular.witness.json",
+    ],
+    status: "experimental",
+  },
 });

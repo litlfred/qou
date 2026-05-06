@@ -21,4 +21,15 @@ export default proposition({
     "root-of-unity",
     "mass",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/markov_substrate_realizer.py",
+    witness: [
+      "folio-assistant/computations/habiro-interpolate-cross-validation.witness.json",
+      "folio-assistant/computations/markov-substrate-realization.witness.json",
+      "folio-assistant/computations/neutron-gap-probes-round2.witness.json",
+      "folio-assistant/computations/proton-mass-codata-50dps.witness.json",
+    ],
+    status: "experimental",
+  },
 });

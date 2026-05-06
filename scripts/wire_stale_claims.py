@@ -108,6 +108,8 @@ def main() -> int:
     ap.add_argument("--tsv", default="/tmp/audit-out/stale-claims.tsv",
                     help="Path to stale-claims.tsv")
     ap.add_argument("--max-witnesses-per-block", type=int, default=4)
+    ap.add_argument("--max-scripts-per-block", type=int, default=4,
+                    help="Skip groups with more than this many distinct scripts.")
     ap.add_argument("--exclude", action="append", default=[],
                     help="Skip these labels (repeatable).")
     ap.add_argument("--limit", type=int, default=20,
@@ -159,11 +161,17 @@ def main() -> int:
         # engine.  Status: "verified" iff every witness is passing.
         witnesses = sorted({r["witness"] for r in rows})
         scripts = sorted({r["scriptFile"] for r in rows})
-        if len(scripts) != 1:
+        if len(scripts) > args.max_scripts_per_block:
             skipped.append((label,
-                            f"multiple scripts ({len(scripts)})"))
+                            f"{len(scripts)} scripts > limit"
+                            f" {args.max_scripts_per_block}"))
             continue
-        script = f"folio-assistant/computations/{scripts[0]}"
+        # Choose canonical script: prefer non-probe_ prefix, then shortest
+        # name (probe_ ... _round7 < probe_ ... _round6_canonical < ...).
+        non_probe = [s for s in scripts if not s.startswith("probe_")]
+        canonical_pool = non_probe if non_probe else scripts
+        canonical = sorted(canonical_pool, key=lambda s: (len(s), s))[0]
+        script = f"folio-assistant/computations/{canonical}"
         if not (REPO / script).exists():
             skipped.append((label, f"script not found: {script}"))
             continue
