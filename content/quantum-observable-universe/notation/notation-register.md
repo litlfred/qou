@@ -27,8 +27,10 @@ refers to it.
 | Iwahori–Hecke algebra | Latin cap | $H_n(q)$ — always with subscript $n$. |
 | Jones–Markov central coefficient | plain italic | $y_\lambda$ — coefficient in $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$. Sign-indefinite at $n \geq 4$. Never confuse with $u_\lambda$ (LP shadow-price). |
 | LP shadow-price | plain italic | $u_\lambda, u_0$ — Schrijver linear-programming convention for operator-selection LP dual variables. Non-negative by LP duality. Never write $y_\lambda$ here. |
-| Markov parameter | plain italic | $z = 1/(q^{1/2} + q^{-1/2})$ |
+| Markov parameter | plain italic | $z = 1/(r + r^{-1})$ — equivalently $1/(q^{1/2} + q^{-1/2})$. |
 | Mass (knot) | fraktur | $\mathfrak{m}_{\mathcal{K}}$ — knot mass. |
+| Spinor information rate | plain italic | $r$ — eigenvalue of the elementary half-twist on the spin-½ fundamental rep of $\mathrm{SU}_q(2)$, $r^2 = q$. The "rate per half-twist" along a single linear braid (no surface area). Analogous to $i: -1$ as $r: q$ — the algebraic ingredient that lifts the 1-D adjoint braid algebra to the 2-D spinor (spin-½) representation. **Never** use $t$ (clashes with $V_K(t)$ knot variable) or $\iota$ (clashes with involution / inclusion). |
+| Wenzl principal-spec length | Greek | $\ell$ — number of points in the Schur principal specialisation $s_\lambda(1, q^2, q^4, \ldots, q^{2(\ell-1)})$ defining $y_\lambda$ via Wenzl's formula. **Renamed from $r_W$** to free $r$ for the spinor rate above. |
 
 ### Algebraic substrate (Chapter 6)
 

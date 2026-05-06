@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T23:58:24.429153+00:00",
-  "commitSha": "ce5bbefb6e9f7bef2cd9c5c19115cdb6286ee914",
+  "computedAt": "2026-05-06T00:36:38.875933+00:00",
+  "commitSha": "52302c5efa6e669a6f9e29c6788a877b7a780dce",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1479,6 +1479,7 @@
         "deuterium-optimal-nf.witness.json",
         "deuteron-first-principles.witness.json",
         "deuteron-residual-probe.witness.json",
+        "deuteron_tr_M_symbolic.witness.json",
         "diagnose-4he-blowup.witness.json",
         "dp-pole-probe.witness.json",
         "e0-calibration-audit.witness.json",
@@ -1577,6 +1578,7 @@
         "kashaev-integration-identity.witness.json",
         "kerov-knot-factor.witness.json",
         "kerov-walk-verify.witness.json",
+        "kite_tail_verification.witness.json",
         "knot-ideals-gb-jet-locations.witness.json",
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",
@@ -1608,6 +1610,7 @@
         "markov-trace-axiomatic-proton.witness.json",
         "markov-trace-recursive.witness.json",
         "markov-weight-verification.witness.json",
+        "markov_weights_symbolic.witness.json",
         "mass-at-3A-proper.witness.json",
         "mass-endomorphism-atom-exact.witness.json",
         "mass-endomorphism-atom-tower.witness.json",
@@ -1652,6 +1655,7 @@
         "nf-qvalues.witness.json",
         "nf-transition-lifting.witness.json",
         "nh-basis-shift.witness.json",
+        "notation_consistency_audit.witness.json",
         "np-splitting-chirality-residue.witness.json",
         "nuclear-binding-lp.witness.json",
         "nuclear-braid-exact.witness.json",
@@ -1847,8 +1851,10 @@
         "wedderburn-mass-3term.witness.json",
         "wedderburn-orthogonal-r-3-h4.witness.json",
         "wenzl-bridge-witness-audit.witness.json",
+        "wenzl_n6_closed_form.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-simplified-small-n.witness.json",
+        "y_lambda_equivalence_proof.witness.json",
         "z-power-scan.witness.json"
       ]
     }
