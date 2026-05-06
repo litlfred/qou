@@ -1839,6 +1839,44 @@ export const references: CSLData[] = [
     DOI: "10.1016/j.aop.2005.10.005",
   }),
 
+  // ── Nayak et al. 2008 ─────────────────────────────────────────
+  ref({
+    id: "nayak2008",
+    type: "article-journal",
+    title:
+      "Non-Abelian anyons and topological quantum computation",
+    author: [
+      { family: "Nayak", given: "Chetan" },
+      { family: "Simon", given: "Steven H." },
+      { family: "Stern", given: "Ady" },
+      { family: "Freedman", given: "Michael" },
+      { family: "Das Sarma", given: "Sankar" },
+    ],
+    "container-title": "Reviews of Modern Physics",
+    issued: { "date-parts": [[2008]] },
+    volume: "80",
+    issue: "3",
+    page: "1083-1159",
+    DOI: "10.1103/RevModPhys.80.1083",
+  }),
+
+  // ── Bakalov & Kirillov 2001 ───────────────────────────────────
+  ref({
+    id: "bakalovkirillov2001",
+    type: "book",
+    title:
+      "Lectures on Tensor Categories and Modular Functors",
+    author: [
+      { family: "Bakalov", given: "Bojko" },
+      { family: "Kirillov", given: "Alexander" },
+    ],
+    publisher: "American Mathematical Society",
+    "collection-title": "University Lecture Series",
+    volume: "21",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1090/ulect/021",
+  }),
+
   // ── Deligne 2007 ──────────────────────────────────────────────
   ref({
     id: "deligne2007",
