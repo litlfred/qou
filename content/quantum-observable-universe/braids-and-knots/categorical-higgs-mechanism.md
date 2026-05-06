@@ -107,7 +107,7 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
 
 1. **Rigorous definition of $\mathrm{Lk}_R$** as a categorical
    operation in a ribbon $\mathbf{C}$ —
-   ✓ now authored as
+   — now authored as
    [`conj:categorical-linking-operation`](#conj:categorical-linking-operation)
    (Tier A1, this branch). Five open structural properties
    (linearity, $k = 0$ reduction, multiplicativity, trace-cut
@@ -116,7 +116,7 @@ projector and $E_\times \cdot \mu_0$ is the unit-mass scale per
    parameter of the linking, identifying $\cos\theta_W,
    \sin\theta_W$ as Hecke eigenvalues / Frobenius traces on
    specific projectors —
-   ✓ now authored as
+   — now authored as
    [`conj:weinberg-angle-categorical`](#conj:weinberg-angle-categorical)
    (Tier A2, this branch). Simple-multiplicity reading numerically
    fails; corrected version requires non-uniform Hoefsmit
