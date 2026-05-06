@@ -1,0 +1,77 @@
+{
+  "computation": "deuteron-tr_M-symbolic",
+  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via tr_M = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7^\u03bb / f^\u03bb with w_\u03bb = dim_q(\u03bb)\u00b2 / [6]_q!. Per-irrep \u03c7^\u03bb delegates to hecke_character_symbolic.q_character_on_braid_word; no LP/SDP solve required (this is a partition sum, not an operator-selection program).",
+  "atom": {
+    "Z": 1,
+    "N": 1,
+    "A": 2,
+    "include_inter": false
+  },
+  "n_strands": 6,
+  "n_crossings": 22,
+  "n_partitions": 11,
+  "tr_M_numerator": "90*q**68 + 1132*q**66 + 3502*q**64 + 9138*q**62 + 18427*q**60 + 34931*q**58 + 54421*q**56 + 81062*q**54 + 102681*q**52 + 121409*q**50 + 115669*q**48 + 98246*q**46 + 42303*q**44 - 22503*q**42 - 111415*q**40 - 176606*q**38 - 244110*q**36 - 256754*q**34 - 244110*q**32 - 176606*q**30 - 111415*q**28 - 22503*q**26 + 42303*q**24 + 98246*q**22 + 115669*q**20 + 121409*q**18 + 102681*q**16 + 81062*q**14 + 54421*q**12 + 34931*q**10 + 18427*q**8 + 9138*q**6 + 3502*q**4 + 1132*q**2 + 90",
+  "tr_M_denominator": "11520*q**49 + 57600*q**47 + 161280*q**45 + 334080*q**43 + 564480*q**41 + 817920*q**39 + 1036800*q**37 + 1163520*q**35 + 1163520*q**33 + 1036800*q**31 + 817920*q**29 + 564480*q**27 + 334080*q**25 + 161280*q**23 + 57600*q**21 + 11520*q**19",
+  "pole_order_at_q0": 19,
+  "leading_coefficient": "1/128",
+  "value_at_q0": 0.32110239061838586,
+  "per_partition": {
+    "(1, 1, 1, 1, 1, 1)": {
+      "f_lambda": 1,
+      "chi_at_q0": 0.6738629570406685,
+      "compute_seconds": 0.07
+    },
+    "(6,)": {
+      "f_lambda": 1,
+      "chi_at_q0": 1.5495880968054445,
+      "compute_seconds": 0.06
+    },
+    "(2, 1, 1, 1, 1)": {
+      "f_lambda": 5,
+      "chi_at_q0": -1.9010877174878886,
+      "compute_seconds": 3.27
+    },
+    "(2, 2, 2)": {
+      "f_lambda": 5,
+      "chi_at_q0": 2.9475618751634283,
+      "compute_seconds": 2.46
+    },
+    "(3, 3)": {
+      "f_lambda": 5,
+      "chi_at_q0": 3.8232870149282046,
+      "compute_seconds": 1.91
+    },
+    "(5, 1)": {
+      "f_lambda": 5,
+      "chi_at_q0": 5.314009710360784,
+      "compute_seconds": 2.94
+    },
+    "(2, 2, 1, 1)": {
+      "f_lambda": 9,
+      "chi_at_q0": 0.3726112006348712,
+      "compute_seconds": 7.4
+    },
+    "(4, 2)": {
+      "f_lambda": 9,
+      "chi_at_q0": 7.5877086284835435,
+      "compute_seconds": 7.04
+    },
+    "(3, 1, 1, 1)": {
+      "f_lambda": 10,
+      "chi_at_q0": -2.389430138330715,
+      "compute_seconds": 15.57
+    },
+    "(4, 1, 1)": {
+      "f_lambda": 10,
+      "chi_at_q0": 3.949942149753181,
+      "compute_seconds": 14.2
+    },
+    "(3, 2, 1)": {
+      "f_lambda": 16,
+      "chi_at_q0": 5.736868775272302,
+      "compute_seconds": 22.81
+    }
+  },
+  "total_compute_seconds": 80.13,
+  "generated_at": "2026-05-05T18:06:48.991805+00:00"
+}
