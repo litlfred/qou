@@ -265,6 +265,11 @@ const CHARTS = {
 // ── Knot-curve generators (parametric, witness-driven topology) ──
 
 // Torus knot (p,q) on a unit torus then projected by chart.
+//   R = major radius, r = minor radius.  Chosen so the embedded torus
+//   sits comfortably inside the chart's [-1, 1]^2 viewBox (R + r < 1)
+//   with enough minor-radius separation to keep the strands visually
+//   distinct.  These are pure rendering / projection parameters — no
+//   QOU substrate values are hardcoded here.
 function torusKnotPoints(p, q, N = 360, R = 0.7, r = 0.25) {
   const pts = [];
   for (let i = 0; i <= N; i++) {
