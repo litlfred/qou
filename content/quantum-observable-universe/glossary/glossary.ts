@@ -57,6 +57,7 @@ export default chapter({
       blocks: [
         "glossary-r-linear-category",
         "glossary-no-quasi-zeros",
+        "glossary-cemetery-group",
       ],
     }),
 

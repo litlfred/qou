@@ -3050,6 +3050,78 @@ export const references: CSLData[] = [
     URL: "https://archive.org/details/vorlesungenber00kleiuoft",
   }),
 
+  // ── Brundan–Kleshchev 2009 (cyclotomic Hecke ↔ KLR isomorphism) ─
+  ref({
+    id: "brundankleshchev2009",
+    type: "article-journal",
+    title:
+      "Blocks of cyclotomic Hecke algebras and Khovanov–Lauda algebras",
+    author: [
+      { family: "Brundan", given: "Jonathan" },
+      { family: "Kleshchev", given: "Alexander" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[2009]] },
+    volume: "178",
+    issue: "3",
+    page: "451-484",
+    DOI: "10.1007/s00222-009-0204-8",
+    URL: "https://doi.org/10.1007/s00222-009-0204-8",
+  }),
+
+  // ── Khovanov–Lauda 2009 (KLR / categorification of quantum groups) ─
+  ref({
+    id: "khovanovlauda2009",
+    type: "article-journal",
+    title:
+      "A diagrammatic approach to categorification of quantum groups I",
+    author: [
+      { family: "Khovanov", given: "Mikhail" },
+      { family: "Lauda", given: "Aaron D." },
+    ],
+    "container-title": "Representation Theory",
+    issued: { "date-parts": [[2009]] },
+    volume: "13",
+    page: "309-347",
+    DOI: "10.1090/S1088-4165-09-00346-X",
+    URL: "https://doi.org/10.1090/S1088-4165-09-00346-X",
+  }),
+
+  // ── Kashiwara 1991 (crystal bases) ────────────────────────────
+  ref({
+    id: "kashiwara1991",
+    type: "article-journal",
+    title:
+      "On crystal bases of the $Q$-analogue of universal enveloping algebras",
+    author: [
+      { family: "Kashiwara", given: "Masaki" },
+    ],
+    "container-title": "Duke Mathematical Journal",
+    issued: { "date-parts": [[1991]] },
+    volume: "63",
+    issue: "2",
+    page: "465-516",
+    DOI: "10.1215/S0012-7094-91-06321-0",
+    URL: "https://doi.org/10.1215/S0012-7094-91-06321-0",
+  }),
+
+  // ── Lecouvey 2007 (Gröbner–Shirshov bases for plactic algebras) ─
+  ref({
+    id: "lecouvey2007",
+    type: "article-journal",
+    title:
+      "Combinatorics of crystal graphs for the root systems of types $A_n$, $B_n$, $C_n$, $D_n$ and $G_2$",
+    author: [
+      { family: "Lecouvey", given: "Cédric" },
+    ],
+    "container-title": "MSJ Memoirs",
+    issued: { "date-parts": [[2007]] },
+    volume: "17",
+    page: "11-41",
+    DOI: "10.2969/msjmemoirs/01701C020",
+    URL: "https://doi.org/10.2969/msjmemoirs/01701C020",
+  }),
+
   // ── Sugic et al. 2021 ─────────────────────────────────────────
   ref({
     id: "sugic2021",

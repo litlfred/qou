@@ -74,3 +74,12 @@ nucleus sits at the bottom of an energy gap, far from the next
 LP-boundary, and its $k_{\max}(K, q)$ jumps to a higher value
 than non-magic neighbors (more strand interactions are required
 to express the closed-shell structure).*
+
+**Categorical interpretation.**
+*Conjecturally the filtration $J^\bullet(q)$ coincides with the
+$\mathbb{Z}$-grading filtration on the corresponding KLR module
+under the Brundan–Kleshchev isomorphism — see
+[confinement–grading correspondence](#conj:confinement-grading-correspondence).
+This identifies the heuristic shadow-price ordering with a rigid
+homological grading and supplies a structural cutoff for the
+crystal-graph traversal that replaces S-polynomial overlap analysis.*
