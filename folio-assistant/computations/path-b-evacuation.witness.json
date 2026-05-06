@@ -1,0 +1,202 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-06T09:14:55.654620+00:00",
+  "commitSha": "186d745af37f2852c26dca4787e65df01dc6de00",
+  "assertions": [
+    {
+      "name": "n_syt_eq_16",
+      "computed": 16,
+      "expected": 16,
+      "passed": true
+    },
+    {
+      "name": "evacuation_is_involution",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "n_evacuation_pairs_eq_8",
+      "computed": 8,
+      "expected": 8,
+      "passed": true
+    },
+    {
+      "name": "n_self_paired_gte_0",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "principal_pair_spread_eq_max",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "principal_pair_opposite_sign_content",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "path_b_corrected_err_lt_0p5pct",
+      "computed": 0.00127,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.005
+    },
+    {
+      "name": "top_diagonal_syt_in_principal_bar_pair",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "content_sum_diag_M_correlation_gt_0",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "principal_by_spread_matches_principal_by_diag",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 118,
+  "computation": "path-b-evacuation",
+  "scriptFile": "path_b_evacuation.py",
+  "scriptHash": "87032e93a7da",
+  "scriptCommitSha": "unknown",
+  "description": "Path B: Schützenberger evacuation bar-pairing of 16 SYT of (3,2,1).  Implements forward JDT slide and evacuation involution e(T).  Pairs all 16 SYT into 8 bar-pairs, verifies structural properties (involution, zero-sum content), and links bar-pairs to eigenvalue pairs of M_(3,2,1) at q=q_0.  Identifies which bar-pair carries the max+/2nd-max+ EW channel.",
+  "contentBlock": "conj:weinberg-angle-categorical",
+  "parameters": {
+    "q_0_numeric": 1.1099785955541805,
+    "cot_w_codata": 1.8230678710486174,
+    "shape": [
+      3,
+      2,
+      1
+    ]
+  },
+  "data": {
+    "pairs": [
+      {
+        "i": 0,
+        "j": 13,
+        "self": false,
+        "cs_i": -8,
+        "cs_j": 5,
+        "spread": 13,
+        "diag_i": 3.388121372837596,
+        "diag_j": 1.34702557582131,
+        "diag_str_i": "++X+X",
+        "diag_str_j": "-XXXX",
+        "syt_display_i": "1 2 3 / 4 5 / 6",
+        "syt_display_j": "1 3 6 / 2 5 / 4"
+      },
+      {
+        "i": 2,
+        "j": 15,
+        "self": false,
+        "cs_i": -5,
+        "cs_j": 8,
+        "spread": 13,
+        "diag_i": -0.20059107420306124,
+        "diag_j": -0.6790395053628344,
+        "diag_str_i": "+XXXX",
+        "diag_str_j": "--X-X",
+        "syt_display_i": "1 2 4 / 3 5 / 6",
+        "syt_display_j": "1 4 6 / 2 5 / 3"
+      },
+      {
+        "i": 1,
+        "j": 7,
+        "self": false,
+        "cs_i": -6,
+        "cs_j": 3,
+        "spread": 9,
+        "diag_i": -3.72171773420193,
+        "diag_j": 1.7043019431658892,
+        "diag_str_i": "++X-X",
+        "diag_str_j": "+X-XX",
+        "syt_display_i": "1 2 3 / 4 6 / 5",
+        "syt_display_j": "1 2 6 / 3 5 / 4"
+      },
+      {
+        "i": 8,
+        "j": 14,
+        "self": false,
+        "cs_i": -3,
+        "cs_j": 6,
+        "spread": 9,
+        "diag_i": -0.6036094154635059,
+        "diag_j": 0.6181737642213306,
+        "diag_str_i": "-X+XX",
+        "diag_str_j": "--X+X",
+        "syt_display_i": "1 3 4 / 2 5 / 6",
+        "syt_display_j": "1 4 5 / 2 6 / 3"
+      },
+      {
+        "i": 3,
+        "j": 5,
+        "self": false,
+        "cs_i": -3,
+        "cs_j": 1,
+        "spread": 4,
+        "diag_i": -0.24952058463343163,
+        "diag_j": -1.2762449267068567,
+        "diag_str_i": "+XXXX",
+        "diag_str_j": "+X+XX",
+        "syt_display_i": "1 2 4 / 3 6 / 5",
+        "syt_display_j": "1 2 6 / 3 4 / 5"
+      },
+      {
+        "i": 10,
+        "j": 12,
+        "self": false,
+        "cs_i": -1,
+        "cs_j": 3,
+        "spread": 4,
+        "diag_i": 0.8649636882596166,
+        "diag_j": 0.7267445800426222,
+        "diag_str_i": "-X-XX",
+        "diag_str_j": "-XXXX",
+        "syt_display_i": "1 3 5 / 2 4 / 6",
+        "syt_display_j": "1 3 5 / 2 6 / 4"
+      },
+      {
+        "i": 4,
+        "j": 9,
+        "self": false,
+        "cs_i": -3,
+        "cs_j": -1,
+        "spread": 2,
+        "diag_i": 2.0300324019916856,
+        "diag_j": -0.23542443516231687,
+        "diag_str_i": "+X+XX",
+        "diag_str_j": "-X+XX",
+        "syt_display_i": "1 2 5 / 3 4 / 6",
+        "syt_display_j": "1 3 4 / 2 6 / 5"
+      },
+      {
+        "i": 6,
+        "j": 11,
+        "self": false,
+        "cs_i": 1,
+        "cs_j": 3,
+        "spread": 2,
+        "diag_i": 0.576686472664053,
+        "diag_j": -0.05337625454918442,
+        "diag_str_i": "+X-XX",
+        "diag_str_j": "-X-XX",
+        "syt_display_i": "1 2 5 / 3 6 / 4",
+        "syt_display_j": "1 3 6 / 2 4 / 5"
+      }
+    ]
+  }
+}
