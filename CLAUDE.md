@@ -822,6 +822,41 @@ generator and its image in $H_n(q)$ — context disambiguates.
   This shared notation follows the standard knot-theory convention
   (Kassel, Jones).
 
+### 7b. Symmetric-crystal techniques (KLR / Kashiwara) — authoring guidance
+
+When **expanding the QOU formalization** or **updating the GS / Hecke
+reduction engine**, prefer these symmetric-analogue constructions over
+custom combinatorial machinery. Each one is a structural shortcut that
+buys a categorical guarantee for free.
+
+1. **Type B folding for chirality / CPT.** To enforce matter–antimatter
+   pairing structurally in the reduction engine, do not write custom
+   $\mathbb{Z}/2\mathbb{Z}$ rules. Fold the $\mathfrak{sl}_n$ Cartan
+   datum into a Type B datum; the resulting Kashiwara graph is a
+   *symmetric crystal*, and its GS normal forms are bar-involution
+   ($q \mapsto q^{-1}$) invariant by construction. Stable matter =
+   fixed points of the folded crystal.
+
+2. **Decategorifying to KL bases for the classical limit.** The
+   transition from quantum braiding to macroscopic statistics
+   (Pauli / Bose–Einstein) is the functor mapping the KLR canonical
+   basis to the Kazhdan–Lusztig basis of $S_n$. Define the classical
+   limit of fluid dynamics via this functor — do not abandon the
+   categorical substrate to recover ordinary statistics.
+
+3. **Demazure sub-crystals for resonances.** Unstable intermediaries
+   (W/Z bosons, hadronic resonances, virtual particles) are Demazure
+   sub-crystals — incomplete topological states. Their non-symmetric
+   Macdonald-polynomial evaluation under the Observation Frame
+   ($\tau$ / Markov trace) reproduces the broken symmetry of a
+   short-lived state without ad-hoc decay machinery.
+
+These directives are **authoring shortcuts**, not new content. Apply
+them when implementing a feature whose first instinct would be a
+hand-rolled combinatorial rule; the symmetric-crystal route gives the
+correct algebraic answer with less code and an audit trail to the
+KLR / Kashiwara literature (Brundan–Kleshchev, Kashiwara, Lecouvey).
+
 ### 8. File hygiene
 
 - Never commit `.lake/`, `lake-packages/`, or `build/`.
