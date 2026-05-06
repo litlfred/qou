@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """Factor y_λ closed forms via cyclotomic polynomials Φ_d(q).
 
-The Wenzl-bridge gives y_λ as q-rational expressions in Q(q^{1/2}).
-Sympy's default `together`/`cancel` doesn't simplify well at n≥3,
-but sympy `factor` over Q can identify cyclotomic factors directly:
+The Wenzl-bridge gives y_λ as q-rational expressions in
+Frac(Z[r, r^{-1}]) where r = q^{1/2} (the spinor information rate;
+see notation-register.md Ch 4 and notation-collisions.md).  Sympy's
+default `together`/`cancel` doesn't simplify well at n≥3, but
+sympy `factor` over Q can identify cyclotomic factors directly:
 
   q^n - 1 = ∏_{d | n} Φ_d(q)
   Φ_1 = q-1, Φ_2 = q+1, Φ_3 = q²+q+1, Φ_4 = q²+1,
   Φ_5 = q⁴+q³+q²+q+1, Φ_6 = q²-q+1, ...
 
-Strategy: substitute q^{1/2} = t (Q = t², q = t²) so all expressions
-become polynomial in t. Then factor over Q to identify Φ_d(t)
-factors. This gives the cleanest possible compact form.
+Strategy: substitute q = r² so all expressions become Laurent
+polynomial in r.  Then factor over Q to identify Φ_d(r) factors.
+This gives the cleanest possible compact form.
 """
 from __future__ import annotations
 import json
@@ -24,30 +26,34 @@ sys.path.insert(0, str(Path(__file__).parent))
 from witness_polynomial import expose_polynomial  # noqa: E402
 
 
-# Use t = q^{1/2} as the underlying variable so all expressions are
-# polynomial in t (no sqrt's).
-t = sp.symbols('t', positive=True)
-q = t ** 2  # q = t²
-Q = q ** 2  # Q = q² = t⁴
+# Use r = q^{1/2} as the underlying variable so all expressions are
+# Laurent polynomial in r (no sqrt's).  The Python local variable
+# happens to be named `t` for legacy reasons (this script predates
+# the r adoption); the sympy SYMBOL is "r" so all printed output
+# uses r-notation per notation-register.md.
+t = sp.symbols("r", positive=True)
+q = t ** 2  # q = r²
+Q = q ** 2  # Q = q² = r⁴
 
-# Markov parameter z = 1/(q^{1/2} + q^{-1/2}) = 1/(t + 1/t) = t/(t²+1)
+# Markov parameter z = 1/(q^{1/2} + q^{-1/2}) = 1/(r + 1/r) = r/(r²+1)
 z = t / (t ** 2 + 1)
 
-# X = Q^r = (q · z) / (1 - Q + q · z) = (q · z) substituted
-qz = q * z  # = t² · t/(t²+1) = t³/(t²+1)
-# Numerator of X = qz = t³ / (t²+1)
-# Denominator of X = (1 - Q + qz) = 1 - t⁴ + t³/(t²+1)
-#                  = ((1-t⁴)(t²+1) + t³)/(t²+1)
-#                  = (t²+1 - t⁴(t²+1) + t³)/(t²+1)
-#                  = (t²+1 - t⁶ - t⁴ + t³)/(t²+1)
-#                  = (1 + t² + t³ - t⁴ - t⁶)/(t²+1)
+# X = Q^ℓ = (q · z) / (1 - Q + q · z)  (Wenzl level expressed in r)
+qz = q * z  # = r² · r/(r²+1) = r³/(r²+1)
+# Numerator of X = qz = r³ / (r²+1)
+# Denominator of X = (1 - Q + qz) = 1 - r⁴ + r³/(r²+1)
+#                  = ((1-r⁴)(r²+1) + r³)/(r²+1)
+#                  = (r²+1 - r⁴(r²+1) + r³)/(r²+1)
+#                  = (r²+1 - r⁶ - r⁴ + r³)/(r²+1)
+#                  = (1 + r² + r³ - r⁴ - r⁶)/(r²+1)
 X = sp.together(qz / (1 - Q + qz))
 X_factored = sp.factor(X)
 
 
 def cyclotomic_factor(expr, max_d=20):
-    """Factor a polynomial in t over Q and identify cyclotomic factors.
-    Returns a string with cyclotomic notation Φ_d(t) where applicable."""
+    """Factor a Laurent polynomial in r over Q and identify cyclotomic
+    factors.  Returns a string with cyclotomic notation Φ_d(r) where
+    applicable."""
     expr = sp.together(expr)
     num, den = sp.fraction(expr)
     num_f = sp.factor(num)
@@ -101,7 +107,7 @@ def partitions_of(n):
     return list(gen(n, n))
 
 
-print(f"X (in t = q^(1/2)) factored:")
+print(f"X (in r = q^(1/2)) factored:")
 print(f"  X = {X_factored}")
 print()
 
@@ -139,7 +145,7 @@ for n in [2, 3, 4]:
         print(f"  y_{lam}:")
         print(f"    num: {num_str}")
         print(f"    den: {den_str}")
-        # Polynomial form in t = q^{1/2}; reuse the default q_0
+        # Polynomial form in r = q^{1/2}; reuse the default q_0
         # for q's value but pass sqrt(q_0) for the t-substitution
         # (this script's symbolic variable is t, not q).
         from witness_polynomial import _default_q0
@@ -160,12 +166,12 @@ with open(out_path, "w") as fp:
     json.dump({
         "computation": "y-lambda-cyclotomic-factor",
         "description": (
-            "Factor y_λ closed forms over Q in t = q^{1/2} to identify "
-            "cyclotomic Φ_d(t) factors. Substitution Q = q² = t⁴ makes "
-            "all expressions polynomial in t; sympy `factor` then "
-            "exposes Schur-element-style cyclotomic structure."
+            "Factor y_λ closed forms over Q in r = q^{1/2} to identify "
+            "cyclotomic Φ_d(r) factors. Substitution Q = q² = r⁴ makes "
+            "all expressions Laurent polynomial in r; sympy `factor` "
+            "then exposes Schur-element-style cyclotomic structure."
         ),
-        "X_in_t": str(X_factored),
+        "X_in_r": str(X_factored),
         "results": results,
         "precision": "symbolic_q",
         "truncation_eps": 0.0,

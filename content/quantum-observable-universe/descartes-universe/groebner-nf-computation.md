@@ -103,13 +103,13 @@ ${}^8\mathrm{Li}(3,5)$ have identical histograms).
 The histogram depends only on the Iwahori--Hecke algebra $H_A(q)$, not on
 the crossing coefficients.  It factors as a product of $q$-integers:
 
-| $A$ | Histogram polynomial $\sum_\ell h(\ell)  t^\ell$ |
+| $A$ | Histogram polynomial $\sum_\ell h(\ell)  r^\ell$ |
 |:---:|---|
-| $2$ | $[2]_t = 1 + t$ |
-| $3$ | $[2]_t^2 = (1+t)^2$ |
-| $4$ | $[2]_t^2 \cdot [3]_t = (1+t)^2(1+t+t^2)$ |
-| $5$ | $[2]_t^2 \cdot [3]_t^2$ |
-| $6$ | $[2]_t^2 \cdot [3]_t^2 \cdot [5]_t$ |
+| $2$ | $[2]_r = 1 + r$ |
+| $3$ | $[2]_r^2 = (1+r)^2$ |
+| $4$ | $[2]_r^2 \cdot [3]_r = (1+r)^2(1+r+r^2)$ |
+| $5$ | $[2]_r^2 \cdot [3]_r^2$ |
+| $6$ | $[2]_r^2 \cdot [3]_r^2 \cdot [5]_r$ |
 
 These are $q$-multinomial coefficients — the $q$-analogue of
 Pascal's triangle.  The palindromicity of the histogram polynomial
@@ -201,7 +201,7 @@ acts between **pairs** of fermions (quarks in a Borromean triplet),
 not on individual crossings.  The multi-generator structure IS the
 inter-quark correlation that the Pauli principle creates.
 
-Computed witnesses (exact in $\mathbb{Z}[t, t^{-1}]$ for $A \leq 12$,
+Computed witnesses (exact in $\mathbb{Z}[r, r^{-1}]$ for $A \leq 12$,
 $f_{64}$ at $q_0$ for display):
 
 | Nucleus | $A$ | $F_{\mathrm{Pauli}}^{(A)}$ | Magic? |
@@ -218,10 +218,10 @@ $f_{64}$ at $q_0$ for display):
 | ${}^{16}\mathrm{O}$ | $16$ | $\approx 0.059$ | $\star\star$ doubly magic (float) |
 
 For each nucleus through $A = 12$, the symbolic witnesses are
-**exact in $q$**: the polynomials $\mathrm{tr}_{\mathrm{alt}}(t)$,
-$\mathrm{net}(t)$, $\mathrm{observable}(t)$, and $\mathrm{coral}(t)$
-are elements of $\mathbb{Z}[t, t^{-1}]$ (Laurent polynomials over
-$\mathbb{Z}$ in $t = q^{1/2}$).  The denominator $2^{p_n}$ is
+**exact in $q$**: the polynomials $\mathrm{tr}_{\mathrm{alt}}(r)$,
+$\mathrm{net}(r)$, $\mathrm{observable}(r)$, and $\mathrm{coral}(r)$
+are elements of $\mathbb{Z}[r, r^{-1}]$ (Laurent polynomials over
+$\mathbb{Z}$ in $r = q^{1/2}$).  The denominator $2^{p_n}$ is
 tracked separately (from the doubled pn crossing convention).
 
 The $H_3(q)$ Pauli factor (from $3$-strand irrep decomposition)
