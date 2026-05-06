@@ -42,6 +42,7 @@ export default chapter({
         "confinement-lp",
         "confinement-nucleon-unit",
         "confinement-operator-selection",
+        "confinement-frobenius-reciprocity",
         "confinement-sdp",
         "confinement-topological",
         "lp-dual-stability",
