@@ -131,20 +131,27 @@ of how to fill the same shape with entries reversed in content-weighted sense.
 
 ---
 
-## Open questions
+## Open questions — RESOLVED
 
-1. **No self-paired SYT**: For `(3,2,1)`, all 8 evacuation pairs are
-   cross-pairs.  The Frobenius–Schur indicator of `(3,2,1)` is `+1`
-   (orthogonal type), which predicts a nonzero count of fixed-point SYT
-   under a *different* involution (the Schur Q-function).  This distinction
-   deserves further investigation.
+See [`2026-05-06-path-b-open-questions-resolved.md`](2026-05-06-path-b-open-questions-resolved.md)
+for the full resolution probe (`path_b_open_questions.py`, 7/7 assertions).
 
-2. **Pearson correlation = 0.03**: The weighted content sum does not linearly
-   predict the Hoefsmit diagonal entries of `M`.  The structural connection
-   runs through the *pair-level* ranking (content-spread ↔ avg-diag), not
-   the individual SYT level.
+1. **No self-paired SYT — RESOLVED**: Stanley's theorem (EC2 §7.A2.20):
+   `#{self-evac SYT} = #{domino tableaux}`.  For (3,2,1), 2-core is
+   `(2,1,1) ≠ ∅` ⇒ no domino tilings ⇒ 0 self-evac SYT.  All staircases
+   `ρ_k`, `k ≥ 2` have non-empty 2-core ⇒ all predicted to have 0
+   self-evacuating SYT.
 
-3. **Why `q^(1/5)`**: The residual factor is the corner hook `h_corner = 5`
-   root of `q` (Path C).  Path B identifies which SYT pair carries the
-   EW channel but does not yet explain why the pair-ratio needs a `q^(1/5)`
-   correction.  This gap remains open.
+2. **Pearson correlation = 0.03 — RESOLVED (negative finding)**: No
+   SYT-level linear invariant predicts `diag(M)` (best `|r| = 0.17`,
+   multivariate R² = 0.085).  The bar-pair, not the individual SYT, is
+   the correct unit of analysis — consistent with Schur duality acting
+   on irreducible blocks (= evacuation orbits).
+
+3. **Why `q^(1/5)` — RESOLVED**: `q^(1/5) = q^(1/h_corner)` where
+   `h_corner(ρ_k) = 2k − 1 = 5` for `k = 3`.  Independent sweeps (H3
+   single-cell `q^(c/h)`, H4 two-cell product) both converge on cell
+   (0,0) with hook 5.  Origin: corner Hecke generator `σ_5` at the
+   Markov-trace closure cell, contributing the inverse-hook power
+   `1/h_corner` to the trace residue.  Generalization conjecture:
+   staircase EW-like channels carry residual `q^(1/(2k-1))`.
