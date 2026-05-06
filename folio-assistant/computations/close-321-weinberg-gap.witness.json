@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-06T03:00:27.684557+00:00",
-  "commitSha": "c2277377a591f8cb8e62cc8b6b9a4e04e3688ee2",
+  "computedAt": "2026-05-06T03:03:42.780280+00:00",
+  "commitSha": "1f6f3868e703d5b6975dec9a4756e5faf02fc84e",
   "assertions": [
     {
       "name": "predecessor_321_dim_eq_16",
@@ -66,11 +66,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 403,
+  "durationMs": 411,
   "computation": "close-321-weinberg-gap",
   "scriptFile": "close_321_weinberg_gap.py",
-  "scriptHash": "afea41a48501",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6c2cb8b481ea",
+  "scriptCommitSha": "1f6f3868e703d5b6975dec9a4756e5faf02fc84e",
   "description": "Close-the-gap probe for the (3,2,1) Weinberg-angle 2.19% residual.  Three independent paths: (A) sign-coherent conjugate-pair Wedderburn aggregate over 6-group quotient; (B) categorical pick of EW bar-pair channel via principal Frobenius coords on 16 SYT; (C/G3) hook-length q-rational sweep for the residual factor cot_codata / empirical = 1.0223944.  All values substrate-derived from q_0 (50dps) + canonical Hoefsmit + combinatorial invariants of (3,2,1).  No fit constants.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
@@ -397,8 +397,8 @@
         "family": "F3",
         "abs_diff_from_target": 0.001298281135274193
       },
-      "ansatz_supported_at_1e_3": "False",
-      "ansatz_falsified_at_1e_2": "False",
+      "ansatz_supported_at_1e_3": false,
+      "ansatz_falsified_at_1e_2": false,
       "h_corner": 5,
       "q_over_corner_value": 1.0210874086805357,
       "combined_prediction": 1.8207528399904918,
