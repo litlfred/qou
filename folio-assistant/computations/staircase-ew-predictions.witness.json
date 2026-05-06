@@ -1,0 +1,195 @@
+{
+  "engine": "sympy+numpy",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-06T08:58:02.846492+00:00",
+  "commitSha": "8d0b12ac6d3c0579428633f7dfef245f563f66d5",
+  "assertions": [
+    {
+      "name": "rho3_corrected_err_lt_0p5pct",
+      "computed": 0.00127,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.005
+    },
+    {
+      "name": "rho3_correction_helps",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "rho3_top_eigenvalue_nondegenerate",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "rho4_top_eigenvalue_degenerate",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "rho4_ew_reading_inapplicable",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "rho4_full_spectrum_completed",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "rho3_hook_ratio_hypothesis_falsified_30pct",
+      "computed": 0.302,
+      "expected": 0.302,
+      "passed": true,
+      "tolerance": 0.05
+    },
+    {
+      "name": "rho3_hook_ratio_not_cot_w_30pct_off",
+      "computed": 0.303,
+      "expected": 0.303,
+      "passed": true,
+      "tolerance": 0.05
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 40378,
+  "computation": "staircase-ew-predictions",
+  "scriptFile": "staircase_ew_predictions.py",
+  "scriptHash": "ec4613e0e11a",
+  "scriptCommitSha": "unknown",
+  "description": "Staircase EW corner-hook falsification probe.  Tests P1: ρ_4 = (4,3,2,1) pure-SL stratum should NOT benefit from q^(1/7) correction.  Reproduces ρ_3 sanity check (0.127%). Also examines corner-generator eigenvalue structure and q-hook ratios for a derivation of why q^(1/h_corner) appears.",
+  "contentBlock": "conj:weinberg-angle-categorical",
+  "parameters": {
+    "q_0": "1.1099785955541805169583001889...",
+    "q_0_numeric": 1.1099785955541805,
+    "cot_w_codata": 1.8230678710486174
+  },
+  "data": {
+    "results": {
+      "spectrum": [
+        {
+          "label": "rho_3 (3,2,1)",
+          "h_corner": 5,
+          "n_pos": 8,
+          "n_neg": 8,
+          "ratio_applicable": true,
+          "top_degenerate": false,
+          "top_multiplicity": 1,
+          "ev_max_pos": 5.240325308166744,
+          "ev_2nd_pos": 2.9388009575132417,
+          "ratio": 1.7831508101184945,
+          "ratio_corrected": 1.8207528399904915,
+          "err_raw": 0.02189554298226038,
+          "err_corrected": 0.0012698545648738378,
+          "correction_helps": true,
+          "cot_w_codata": 1.8230678710486174
+        },
+        {
+          "label": "rho_4 (4,3,2,1) FULL",
+          "h_corner": 7,
+          "n_pos": 384,
+          "n_neg": 384,
+          "ratio_applicable": false,
+          "top_degenerate": true,
+          "top_multiplicity": 2,
+          "ev_max_pos": 56.00476610061667,
+          "ev_2nd_pos": 56.00476610061663,
+          "ratio": 1.0000000000000007,
+          "ratio_corrected": 1.0150174645878947,
+          "err_raw": 0.45147406968188913,
+          "err_corrected": 0.4432366009477953,
+          "correction_helps": true,
+          "cot_w_codata": 1.8230678710486174
+        }
+      ],
+      "corner_gen": [
+        {
+          "shape": [
+            3,
+            2,
+            1
+          ],
+          "label": "ρ_3=(3,2,1)",
+          "h_corner": 5,
+          "dim": 16,
+          "n_q": 8,
+          "n_neg_qinv": 8,
+          "n_other": 0,
+          "eig_max": 1.1099785955541805,
+          "q_1_over_h": 1.0210874086805357
+        },
+        {
+          "shape": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "label": "ρ_4=(4,3,2,1)",
+          "h_corner": 7,
+          "dim": 768,
+          "n_q": 384,
+          "n_neg_qinv": 384,
+          "n_other": 0,
+          "eig_max": 1.1099785955541805,
+          "q_1_over_h": 1.015017464587894
+        }
+      ],
+      "hook_ratios": [
+        {
+          "shape": [
+            3,
+            2,
+            1
+          ],
+          "h_corner": 5,
+          "q_int_h": 5.220441324664572,
+          "q_int_hm1": 4.109682435637708,
+          "hook_ratio_h_hm1": 1.2702785206454776,
+          "hook_ratio_hp1_h": 1.2236679395984729,
+          "q_1_over_h": 1.0210874086805357,
+          "err_h_hm1_vs_cotw": 0.3032192926998262
+        },
+        {
+          "shape": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "h_corner": 7,
+          "q_int_h": 7.625342178894006,
+          "q_int_hm1": 6.388086679547019,
+          "hook_ratio_h_hm1": 1.1936817018010033,
+          "hook_ratio_hp1_h": 1.1731526040508176,
+          "q_1_over_h": 1.015017464587894,
+          "err_h_hm1_vs_cotw": 0.3452346340158993
+        }
+      ],
+      "derivation_rho3": {
+        "h_corner": 5,
+        "q_int_h": 5.220441324664572,
+        "q_int_hm1": 4.109682435637708,
+        "hook_ratio": 1.2702785206454776,
+        "q_1_over_h": 1.0210874086805357,
+        "predicted_ratio": 1.244044838714592,
+        "actual_ratio": 1.7831508101184945,
+        "err_derivation": 0.3023333575291244,
+        "hook_vs_cot_w_err": 0.3032192926998262,
+        "conclusion": "hook-ratio hypothesis FALSIFIED; eigenvalue ratio is emergent from full beta_EW word structure"
+      },
+      "derivation_rho4": {
+        "h_corner": 7,
+        "q_int_h": 7.625342178894006,
+        "q_int_hm1": 6.388086679547019,
+        "hook_ratio": 1.1936817018010033,
+        "note": "EW reading inapplicable — top eigenvalue degenerate in pure-SL stratum"
+      }
+    }
+  }
+}
