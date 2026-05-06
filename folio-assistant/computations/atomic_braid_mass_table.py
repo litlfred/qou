@@ -89,24 +89,68 @@ ATOMS_CODATA = {
 
 
 # ── Quotient-braid Jones-polynomial factor a(Z, N) ─────────────
-def jones_quotient_factor(Z: int, N: int) -> mp.mpf:
-    """The BW knot factor a(Z, N) = J_{\\bar\\beta}(q) at q_0.
+# Two sources for a(Z, N):
+#   (a) Canonical: jet-knot-invariants.witness.json — per-level
+#       convergent ratios a_k(Z,N) from Wedderburn-weighted
+#       characters, computed by jet_knot_invariants.py.  Atoms
+#       covered: ³H, ³He, ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹²C, ¹⁶O.
+#   (b) Fallback (Jones-quotient): for atoms not in the witness
+#       (p, n, D, ⁵Li, ...), use the structural quotient-braid
+#       Jones polynomial table from prop:jet-filtered-knot-factor:
+#         A=1: 1   (trivial; no inter-nucleon structure)
+#         A=2: 1   (single pn crossing, trivial Jones)
+#         A=3+: 1 - h^2 (figure-eight) extrapolated as (1-h²)^(A-2)
+_JET_KNOT_CACHE: dict[str, mp.mpf] | None = None
+_ATOM_LABEL_TO_JET = {  # mass-table label → jet-knot key
+    "T":   "³H",
+    "3He": "³He",
+    "4He": "⁴He",
+    "6Li": "⁶Li",
+    "7Li": "⁷Li",
+    "9Be": "⁹Be",
+    "12C": "¹²C",
+    "16O": "¹⁶O",
+}
 
-    Per `prop:jet-filtered-knot-factor` Part 4 (table on row 82-87
-    of jet-filtered-knot-factor.md), the quotient-braid Jones
-    polynomial of an (Z, N) atom is:
 
-      A = 1: trivial (no inter-nucleon structure)  → 1
-      A = 2: single pn crossing                    → 1
-      A = 3: figure-eight 4_1                      → 1 - h²
-      A = 4: Borromean B_3²                        → (1 - h²)²
-      A ≥ 5: open; extrapolate the (1 - h²) per
-             nucleon-pair structure (placeholder)  → (1 - h²)^(A-2)
+def _load_canonical_a_jet() -> dict[str, mp.mpf]:
+    """Load convergent a_k from jet-knot-invariants.witness.json.
 
-    For A ≤ 2 the trivial value follows from the satellite-knot
-    structure (no signed crossing yet); for A = 3, 4 the values
-    are the actual Jones polynomials of 4_1 and Borromean rings
-    respectively, evaluated at q_0.
+    For each atom, returns the largest-k a_k (convergent value, per
+    `prop:jet-filtered-knot-factor` Part 1: 'a_k converges by k=4').
+    """
+    global _JET_KNOT_CACHE
+    if _JET_KNOT_CACHE is not None:
+        return _JET_KNOT_CACHE
+    path = HERE / "jet-knot-invariants.witness.json"
+    out: dict[str, mp.mpf] = {}
+    if not path.exists():
+        _JET_KNOT_CACHE = out
+        return out
+    d = json.loads(path.read_text())
+    for atom, info in d.get("data", {}).items():
+        levels = info.get("levels", [])
+        if not levels:
+            continue
+        # Use the highest-k entry (most converged).
+        best = max(levels, key=lambda lvl: int(lvl.get("k", 0)))
+        a_val = best.get("a_k")
+        if a_val is None:
+            continue
+        out[atom] = mp.mpf(str(a_val))
+    _JET_KNOT_CACHE = out
+    return out
+
+
+def jones_quotient_factor_fallback(Z: int, N: int) -> mp.mpf:
+    """Structural quotient-braid Jones-polynomial factor.
+
+    Per `prop:jet-filtered-knot-factor` Part 4 table:
+      A = 1: trivial → 1
+      A = 2: single pn crossing → 1
+      A = 3: figure-eight 4_1 → 1 - h²
+      A = 4: Borromean B_3² → (1 - h²)²
+      A ≥ 5: open; extrapolate (1 - h²)^(A-2) as a placeholder.
     """
     A = Z + N
     h2 = H_VAL ** 2
@@ -117,7 +161,18 @@ def jones_quotient_factor(Z: int, N: int) -> mp.mpf:
         return one_minus_h2
     if A == 4:
         return one_minus_h2 ** 2
-    return one_minus_h2 ** (A - 2)  # extrapolation for A ≥ 5
+    return one_minus_h2 ** (A - 2)
+
+
+def jones_quotient_factor(atom_label: str, Z: int, N: int) -> tuple[mp.mpf, str]:
+    """Return (a_factor, source) — canonical convergent a_k from
+    jet-knot-invariants when available, else Jones-quotient
+    fallback."""
+    canonical = _load_canonical_a_jet()
+    jet_key = _ATOM_LABEL_TO_JET.get(atom_label)
+    if jet_key is not None and jet_key in canonical:
+        return canonical[jet_key], f"canonical_a_k(jet-knot:{jet_key})"
+    return jones_quotient_factor_fallback(Z, N), "jones_quotient_fallback"
 
 
 # ── Full-twist Δ_n² scalar at shell-saturation ─────────────────
@@ -140,24 +195,28 @@ def full_twist_scalar(A: int) -> mp.mpf:
 
 
 # ── Term 1 (atomic-braid + Δ_I + Δ_n²) ─────────────────────────
-def t1_atomic_with_coupling(Z: int, N: int, tr_p: mp.mpf, tr_n: mp.mpf) -> tuple:
+def t1_atomic_with_coupling(atom_label: str, Z: int, N: int,
+                             tr_p: mp.mpf, tr_n: mp.mpf) -> tuple:
     """Return (|tr_M_atomic|, factors) where:
 
       |tr_M_atomic(K)| = |tr_M(p)|^Z · |tr_M(n)|^N · |a(Z, N)| · Δ_n²-scalar
 
     The disjoint-product piece is the per-carrier base; the
     multiplicative knot factor a(Z, N) couples the carriers via
-    the Δ_I inter-nucleon interface knot (= quotient-braid Jones
-    polynomial); Δ_n² adds the saturated-shell scalar.
+    the Δ_I inter-nucleon interface knot.  When the atom is
+    covered by `jet-knot-invariants.witness.json`, the canonical
+    convergent a_k is used; otherwise the Jones-quotient fallback.
+    Δ_n² adds the saturated-shell scalar.
     """
     A = Z + N
     base = abs(tr_p) ** Z * abs(tr_n) ** N
-    a_ZN = jones_quotient_factor(Z, N)
+    a_ZN, a_source = jones_quotient_factor(atom_label, Z, N)
     delta_n2 = full_twist_scalar(A)
     t1 = base * a_ZN * delta_n2
     return t1, {
         "base_disjoint": base,
-        "jones_quotient_a_ZN": a_ZN,
+        "a_ZN": a_ZN,
+        "a_ZN_source": a_source,
         "full_twist_delta_n2": delta_n2,
     }
 
@@ -214,11 +273,12 @@ def t6_canonical_MeV(A: int) -> mp.mpf:
 
 
 # ── Assembly ───────────────────────────────────────────────────
-def six_term_atomic(Z: int, N: int, tr_p: mp.mpf, tr_n: mp.mpf,
+def six_term_atomic(atom_label: str, Z: int, N: int,
+                    tr_p: mp.mpf, tr_n: mp.mpf,
                     m_e_hecke: mp.mpf = mp.mpf(1)) -> dict:
     A = Z + N
     n_gens = max(3 * A - 1, 0)
-    t1, t1_factors = t1_atomic_with_coupling(Z, N, tr_p, tr_n)
+    t1, t1_factors = t1_atomic_with_coupling(atom_label, Z, N, tr_p, tr_n)
     t2 = t2_markov(n_gens)
     t3 = t3_markov(n_gens)
     t4r = t4_raw(A)
@@ -263,13 +323,13 @@ def main() -> int:
     # Quotient-braid Jones factors
     print(f"\n  Quotient-braid Jones factors a(Z,N) at q_0 (Δ_I coupling):")
     for atom, info in ATOMS_CODATA.items():
-        a_ZN = jones_quotient_factor(info["Z"], info["N"])
-        print(f"    {atom:<5} (A={info['Z']+info['N']}): a = {mp.nstr(a_ZN, 14)}")
+        a_ZN, a_src = jones_quotient_factor(atom, info["Z"], info["N"])
+        print(f"    {atom:<5} (A={info['Z']+info['N']}): a = {mp.nstr(a_ZN, 14)}  [{a_src}]")
 
     # Per-atom assembly
     raw_terms = {}
     for atom, info in ATOMS_CODATA.items():
-        terms = six_term_atomic(info["Z"], info["N"], tr_p, tr_n)
+        terms = six_term_atomic(atom, info["Z"], info["N"], tr_p, tr_n)
         raw_terms[atom] = terms
 
     # Proton calibration
@@ -291,7 +351,7 @@ def main() -> int:
         M_codata = mp.mpf(info["M_MeV"])
         M_pred = E_0 * terms["total_hecke"] + terms["t6_MeV"]
         err_pct = (M_pred - M_codata) / M_codata * 100
-        a_ZN = terms["t1_factors"]["jones_quotient_a_ZN"]
+        a_ZN = terms["t1_factors"]["a_ZN"]
         print(f"  {atom:<6}{float(M_codata):>12.4f}{float(M_pred):>12.4f}"
               f"{float(err_pct):>8.3f}%"
               f"{float(terms['t1']):>12.6f}{float(a_ZN):>10.6f}"
@@ -305,7 +365,8 @@ def main() -> int:
             "err_pct": str(err_pct),
             "term1_atomic_total": str(terms["t1"]),
             "term1_factor_disjoint_base": str(terms["t1_factors"]["base_disjoint"]),
-            "term1_factor_jones_a_ZN": str(a_ZN),
+            "term1_factor_a_ZN": str(a_ZN),
+            "term1_factor_a_ZN_source": terms["t1_factors"]["a_ZN_source"],
             "term1_factor_full_twist_delta_n2": str(terms["t1_factors"]["full_twist_delta_n2"]),
             "term2_markov_z2": str(terms["t2"]),
             "term3_markov_z4": str(terms["t3"]),

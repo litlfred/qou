@@ -1,0 +1,3541 @@
+{
+  "computation": "full-twist-delta-n2-verification",
+  "description": "Empirical verification of the full-twist \u0394_n\u00b2 scalar action q^{c(\u03bb)} per Wedderburn block V_\u03bb \u21aa H_n(q). Tabulates c(\u03bb) for every partition \u03bb \u22a2 n at n \u2208 {1,...,12}; identifies the \u0394_n\u00b2-invariant subspace (c(\u03bb) = 0); records magic-n empirical realisability of the categorical-neutrality predicate (prop:categorical-neutrality-saturated-shells). Structural finding: at magic n = 2 the invariant subspace is empty under pure-scalar q^c(\u03bb) action, indicating the conjecture must hold via a refined mechanism (root-of-unity specialisation, sum cancellation, or a non-scalar action component captured in T2/T3).",
+  "reference_blocks": [
+    "prop:categorical-neutrality-saturated-shells",
+    "conj:mass-endomorphism",
+    "prop:atomic-mass-gb-nf"
+  ],
+  "computedAt": "2026-05-06T00:41:06.140966+00:00",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "magic_nucleon_counts": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "n_range_swept": [
+      1,
+      12
+    ]
+  },
+  "results_by_n": {
+    "1": {
+      "n": 1,
+      "n_partitions": 1,
+      "total_dim": 1,
+      "invariant_dim": 1,
+      "invariant_ratio": 1.0,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        }
+      ]
+    },
+    "2": {
+      "n": 2,
+      "n_partitions": 2,
+      "total_dim": 2,
+      "invariant_dim": 0,
+      "invariant_ratio": 0.0,
+      "is_magic_shell": true,
+      "blocks": [
+        {
+          "lambda": [
+            2
+          ],
+          "content_sum": 1,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 1.1099785955541805,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1
+          ],
+          "content_sum": -1,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.9009182735643011,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "3": {
+      "n": 3,
+      "n_partitions": 3,
+      "total_dim": 4,
+      "invariant_dim": 2,
+      "invariant_ratio": 0.5,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            3
+          ],
+          "content_sum": 3,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 2,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "content_sum": -3,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "4": {
+      "n": 4,
+      "n_partitions": 5,
+      "total_dim": 10,
+      "invariant_dim": 2,
+      "invariant_ratio": 0.2,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            4
+          ],
+          "content_sum": 6,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            1
+          ],
+          "content_sum": 2,
+          "dim_irrep": 3,
+          "q_to_c_at_q0": 1.2320524825884311,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2
+          ],
+          "content_sum": 0,
+          "dim_irrep": 2,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1
+          ],
+          "content_sum": -2,
+          "dim_irrep": 3,
+          "q_to_c_at_q0": 0.8116537356420809,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -6,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "5": {
+      "n": 5,
+      "n_partitions": 7,
+      "total_dim": 26,
+      "invariant_dim": 6,
+      "invariant_ratio": 0.23076923076923078,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            5
+          ],
+          "content_sum": 10,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 2.838873499951162,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            1
+          ],
+          "content_sum": 5,
+          "dim_irrep": 4,
+          "q_to_c_at_q0": 1.68489569408648,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2
+          ],
+          "content_sum": 2,
+          "dim_irrep": 5,
+          "q_to_c_at_q0": 1.2320524825884311,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 6,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1
+          ],
+          "content_sum": -2,
+          "dim_irrep": 5,
+          "q_to_c_at_q0": 0.8116537356420809,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -5,
+          "dim_irrep": 4,
+          "q_to_c_at_q0": 0.5935085498228315,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -10,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.35225239871280045,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "6": {
+      "n": 6,
+      "n_partitions": 11,
+      "total_dim": 76,
+      "invariant_dim": 16,
+      "invariant_ratio": 0.21052631578947367,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            6
+          ],
+          "content_sum": 15,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 4.783205736123928,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            1
+          ],
+          "content_sum": 9,
+          "dim_irrep": 5,
+          "q_to_c_at_q0": 2.5575930124434456,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2
+          ],
+          "content_sum": 5,
+          "dim_irrep": 9,
+          "q_to_c_at_q0": 1.68489569408648,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1
+          ],
+          "content_sum": 3,
+          "dim_irrep": 10,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3
+          ],
+          "content_sum": 3,
+          "dim_irrep": 5,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 16,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -3,
+          "dim_irrep": 10,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2
+          ],
+          "content_sum": -3,
+          "dim_irrep": 5,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -5,
+          "dim_irrep": 9,
+          "q_to_c_at_q0": 0.5935085498228315,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -9,
+          "dim_irrep": 5,
+          "q_to_c_at_q0": 0.3909926228038255,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -15,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.20906481033164806,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "7": {
+      "n": 7,
+      "n_partitions": 15,
+      "total_dim": 232,
+      "invariant_dim": 20,
+      "invariant_ratio": 0.08620689655172414,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            7
+          ],
+          "content_sum": 21,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 8.945542548316121,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            1
+          ],
+          "content_sum": 14,
+          "dim_irrep": 6,
+          "q_to_c_at_q0": 4.309277453891631,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2
+          ],
+          "content_sum": 9,
+          "dim_irrep": 14,
+          "q_to_c_at_q0": 2.5575930124434456,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            1,
+            1
+          ],
+          "content_sum": 7,
+          "dim_irrep": 15,
+          "q_to_c_at_q0": 2.0758799228018057,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3
+          ],
+          "content_sum": 6,
+          "dim_irrep": 14,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            1
+          ],
+          "content_sum": 3,
+          "dim_irrep": 35,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 20,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            1
+          ],
+          "content_sum": 1,
+          "dim_irrep": 21,
+          "q_to_c_at_q0": 1.1099785955541805,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2
+          ],
+          "content_sum": -1,
+          "dim_irrep": 21,
+          "q_to_c_at_q0": 0.9009182735643011,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -3,
+          "dim_irrep": 35,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -7,
+          "dim_irrep": 15,
+          "q_to_c_at_q0": 0.4817234315992153,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -6,
+          "dim_irrep": 14,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -9,
+          "dim_irrep": 14,
+          "q_to_c_at_q0": 0.3909926228038255,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -14,
+          "dim_irrep": 6,
+          "q_to_c_at_q0": 0.23205746455172388,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -21,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.11178751815206968,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "8": {
+      "n": 8,
+      "n_partitions": 22,
+      "total_dim": 764,
+      "invariant_dim": 132,
+      "invariant_ratio": 0.17277486910994763,
+      "is_magic_shell": true,
+      "blocks": [
+        {
+          "lambda": [
+            8
+          ],
+          "content_sum": 28,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 18.569872174618737,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            1
+          ],
+          "content_sum": 20,
+          "dim_irrep": 7,
+          "q_to_c_at_q0": 8.059202748724958,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2
+          ],
+          "content_sum": 14,
+          "dim_irrep": 20,
+          "q_to_c_at_q0": 4.309277453891631,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1
+          ],
+          "content_sum": 12,
+          "dim_irrep": 21,
+          "q_to_c_at_q0": 3.497641143369337,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3
+          ],
+          "content_sum": 10,
+          "dim_irrep": 28,
+          "q_to_c_at_q0": 2.838873499951162,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            1
+          ],
+          "content_sum": 7,
+          "dim_irrep": 64,
+          "q_to_c_at_q0": 2.0758799228018057,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 4,
+          "dim_irrep": 35,
+          "q_to_c_at_q0": 1.5179533198523165,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4
+          ],
+          "content_sum": 8,
+          "dim_irrep": 14,
+          "q_to_c_at_q0": 2.304182281250669,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            1
+          ],
+          "content_sum": 4,
+          "dim_irrep": 70,
+          "q_to_c_at_q0": 1.5179533198523165,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2
+          ],
+          "content_sum": 2,
+          "dim_irrep": 56,
+          "q_to_c_at_q0": 1.2320524825884311,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 90,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -4,
+          "dim_irrep": 35,
+          "q_to_c_at_q0": 0.6587817865817449,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2
+          ],
+          "content_sum": 0,
+          "dim_irrep": 42,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            1,
+            1
+          ],
+          "content_sum": -2,
+          "dim_irrep": 56,
+          "q_to_c_at_q0": 0.8116537356420809,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -4,
+          "dim_irrep": 70,
+          "q_to_c_at_q0": 0.6587817865817449,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -7,
+          "dim_irrep": 64,
+          "q_to_c_at_q0": 0.4817234315992153,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -12,
+          "dim_irrep": 21,
+          "q_to_c_at_q0": 0.2859069753041283,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "content_sum": -8,
+          "dim_irrep": 14,
+          "q_to_c_at_q0": 0.4339934423318358,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -10,
+          "dim_irrep": 28,
+          "q_to_c_at_q0": 0.35225239871280045,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -14,
+          "dim_irrep": 20,
+          "q_to_c_at_q0": 0.23205746455172388,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -20,
+          "dim_irrep": 7,
+          "q_to_c_at_q0": 0.12408175239892176,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -28,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.05385066685417458,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "9": {
+      "n": 9,
+      "n_partitions": 30,
+      "total_dim": 2620,
+      "invariant_dim": 112,
+      "invariant_ratio": 0.042748091603053436,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            9
+          ],
+          "content_sum": 36,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 42.788370429846324,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            1
+          ],
+          "content_sum": 27,
+          "dim_irrep": 8,
+          "q_to_c_at_q0": 16.729937179867267,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            2
+          ],
+          "content_sum": 20,
+          "dim_irrep": 27,
+          "q_to_c_at_q0": 8.059202748724958,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            1,
+            1
+          ],
+          "content_sum": 18,
+          "dim_irrep": 28,
+          "q_to_c_at_q0": 6.5412820172995385,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            3
+          ],
+          "content_sum": 15,
+          "dim_irrep": 48,
+          "q_to_c_at_q0": 4.783205736123928,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            1
+          ],
+          "content_sum": 12,
+          "dim_irrep": 105,
+          "q_to_c_at_q0": 3.497641143369337,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 9,
+          "dim_irrep": 56,
+          "q_to_c_at_q0": 2.5575930124434456,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            4
+          ],
+          "content_sum": 12,
+          "dim_irrep": 42,
+          "q_to_c_at_q0": 3.497641143369337,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            1
+          ],
+          "content_sum": 8,
+          "dim_irrep": 162,
+          "q_to_c_at_q0": 2.304182281250669,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2
+          ],
+          "content_sum": 6,
+          "dim_irrep": 120,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "content_sum": 4,
+          "dim_irrep": 189,
+          "q_to_c_at_q0": 1.5179533198523165,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 70,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            1
+          ],
+          "content_sum": 6,
+          "dim_irrep": 84,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            2
+          ],
+          "content_sum": 3,
+          "dim_irrep": 168,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "content_sum": 1,
+          "dim_irrep": 216,
+          "q_to_c_at_q0": 1.1099785955541805,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -1,
+          "dim_irrep": 216,
+          "q_to_c_at_q0": 0.9009182735643011,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -4,
+          "dim_irrep": 189,
+          "q_to_c_at_q0": 0.6587817865817449,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -9,
+          "dim_irrep": 56,
+          "q_to_c_at_q0": 0.3909926228038255,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            3
+          ],
+          "content_sum": 0,
+          "dim_irrep": 42,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2,
+            1
+          ],
+          "content_sum": -3,
+          "dim_irrep": 168,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -6,
+          "dim_irrep": 120,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "content_sum": -6,
+          "dim_irrep": 84,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -8,
+          "dim_irrep": 162,
+          "q_to_c_at_q0": 0.4339934423318358,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -12,
+          "dim_irrep": 105,
+          "q_to_c_at_q0": 0.2859069753041283,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -18,
+          "dim_irrep": 28,
+          "q_to_c_at_q0": 0.1528752310870146,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -12,
+          "dim_irrep": 42,
+          "q_to_c_at_q0": 0.2859069753041283,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -15,
+          "dim_irrep": 48,
+          "q_to_c_at_q0": 0.20906481033164806,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -20,
+          "dim_irrep": 27,
+          "q_to_c_at_q0": 0.12408175239892176,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -27,
+          "dim_irrep": 8,
+          "q_to_c_at_q0": 0.05977308756445276,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -36,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.023370836279908113,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "10": {
+      "n": 10,
+      "n_partitions": 42,
+      "total_dim": 9496,
+      "invariant_dim": 1216,
+      "invariant_ratio": 0.12805391743892164,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            10
+          ],
+          "content_sum": 45,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 109.43523722521671,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            9,
+            1
+          ],
+          "content_sum": 35,
+          "dim_irrep": 9,
+          "q_to_c_at_q0": 38.548824816286945,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            2
+          ],
+          "content_sum": 27,
+          "dim_irrep": 35,
+          "q_to_c_at_q0": 16.729937179867267,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            1,
+            1
+          ],
+          "content_sum": 25,
+          "dim_irrep": 36,
+          "q_to_c_at_q0": 13.578916009096607,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            3
+          ],
+          "content_sum": 21,
+          "dim_irrep": 75,
+          "q_to_c_at_q0": 8.945542548316121,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            2,
+            1
+          ],
+          "content_sum": 18,
+          "dim_irrep": 160,
+          "q_to_c_at_q0": 6.5412820172995385,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 15,
+          "dim_irrep": 84,
+          "q_to_c_at_q0": 4.783205736123928,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            4
+          ],
+          "content_sum": 17,
+          "dim_irrep": 90,
+          "q_to_c_at_q0": 5.89316050192271,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            3,
+            1
+          ],
+          "content_sum": 13,
+          "dim_irrep": 315,
+          "q_to_c_at_q0": 3.882306804069615,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            2
+          ],
+          "content_sum": 11,
+          "dim_irrep": 225,
+          "q_to_c_at_q0": 3.1510888204317715,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            1,
+            1
+          ],
+          "content_sum": 9,
+          "dim_irrep": 350,
+          "q_to_c_at_q0": 2.5575930124434456,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 5,
+          "dim_irrep": 126,
+          "q_to_c_at_q0": 1.68489569408648,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            5
+          ],
+          "content_sum": 15,
+          "dim_irrep": 42,
+          "q_to_c_at_q0": 4.783205736123928,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            4,
+            1
+          ],
+          "content_sum": 10,
+          "dim_irrep": 288,
+          "q_to_c_at_q0": 2.838873499951162,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            2
+          ],
+          "content_sum": 7,
+          "dim_irrep": 450,
+          "q_to_c_at_q0": 2.0758799228018057,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "content_sum": 5,
+          "dim_irrep": 567,
+          "q_to_c_at_q0": 1.68489569408648,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2,
+            1
+          ],
+          "content_sum": 3,
+          "dim_irrep": 525,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 448,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -5,
+          "dim_irrep": 126,
+          "q_to_c_at_q0": 0.5935085498228315,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            2
+          ],
+          "content_sum": 5,
+          "dim_irrep": 252,
+          "q_to_c_at_q0": 1.68489569408648,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            1,
+            1
+          ],
+          "content_sum": 3,
+          "dim_irrep": 300,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            3
+          ],
+          "content_sum": 3,
+          "dim_irrep": 210,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 768,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -3,
+          "dim_irrep": 525,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2,
+            2
+          ],
+          "content_sum": -3,
+          "dim_irrep": 300,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -5,
+          "dim_irrep": 567,
+          "q_to_c_at_q0": 0.5935085498228315,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -9,
+          "dim_irrep": 350,
+          "q_to_c_at_q0": 0.3909926228038255,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -15,
+          "dim_irrep": 84,
+          "q_to_c_at_q0": 0.20906481033164806,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            3,
+            1
+          ],
+          "content_sum": -3,
+          "dim_irrep": 210,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "content_sum": -5,
+          "dim_irrep": 252,
+          "q_to_c_at_q0": 0.5935085498228315,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -7,
+          "dim_irrep": 450,
+          "q_to_c_at_q0": 0.4817234315992153,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -11,
+          "dim_irrep": 225,
+          "q_to_c_at_q0": 0.31735062290722005,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -10,
+          "dim_irrep": 288,
+          "q_to_c_at_q0": 0.35225239871280045,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -13,
+          "dim_irrep": 315,
+          "q_to_c_at_q0": 0.2575788185909865,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -18,
+          "dim_irrep": 160,
+          "q_to_c_at_q0": 0.1528752310870146,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -25,
+          "dim_irrep": 36,
+          "q_to_c_at_q0": 0.0736435809257597,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "content_sum": -15,
+          "dim_irrep": 42,
+          "q_to_c_at_q0": 0.20906481033164806,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -17,
+          "dim_irrep": 90,
+          "q_to_c_at_q0": 0.16968823429698526,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -21,
+          "dim_irrep": 75,
+          "q_to_c_at_q0": 0.11178751815206968,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -27,
+          "dim_irrep": 35,
+          "q_to_c_at_q0": 0.05977308756445276,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -35,
+          "dim_irrep": 9,
+          "q_to_c_at_q0": 0.025941128030899097,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -45,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.009137824574200074,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "11": {
+      "n": 11,
+      "n_partitions": 56,
+      "total_dim": 35696,
+      "invariant_dim": 1440,
+      "invariant_ratio": 0.04034065441506051,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            11
+          ],
+          "content_sum": 55,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 310.6727949195366,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            10,
+            1
+          ],
+          "content_sum": 44,
+          "dim_irrep": 10,
+          "q_to_c_at_q0": 98.59220498804198,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            9,
+            2
+          ],
+          "content_sum": 35,
+          "dim_irrep": 44,
+          "q_to_c_at_q0": 38.548824816286945,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            9,
+            1,
+            1
+          ],
+          "content_sum": 33,
+          "dim_irrep": 45,
+          "q_to_c_at_q0": 31.28829766675145,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            3
+          ],
+          "content_sum": 28,
+          "dim_irrep": 110,
+          "q_to_c_at_q0": 18.569872174618737,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            2,
+            1
+          ],
+          "content_sum": 25,
+          "dim_irrep": 231,
+          "q_to_c_at_q0": 13.578916009096607,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 22,
+          "dim_irrep": 120,
+          "q_to_c_at_q0": 9.929360754250093,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            4
+          ],
+          "content_sum": 23,
+          "dim_irrep": 165,
+          "q_to_c_at_q0": 11.021377904753317,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            3,
+            1
+          ],
+          "content_sum": 19,
+          "dim_irrep": 550,
+          "q_to_c_at_q0": 7.260683026685959,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            2,
+            2
+          ],
+          "content_sum": 17,
+          "dim_irrep": 385,
+          "q_to_c_at_q0": 5.89316050192271,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            2,
+            1,
+            1
+          ],
+          "content_sum": 15,
+          "dim_irrep": 594,
+          "q_to_c_at_q0": 4.783205736123928,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 11,
+          "dim_irrep": 210,
+          "q_to_c_at_q0": 3.1510888204317715,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            5
+          ],
+          "content_sum": 20,
+          "dim_irrep": 132,
+          "q_to_c_at_q0": 8.059202748724958,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            4,
+            1
+          ],
+          "content_sum": 15,
+          "dim_irrep": 693,
+          "q_to_c_at_q0": 4.783205736123928,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            3,
+            2
+          ],
+          "content_sum": 12,
+          "dim_irrep": 990,
+          "q_to_c_at_q0": 3.497641143369337,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            3,
+            1,
+            1
+          ],
+          "content_sum": 10,
+          "dim_irrep": 1232,
+          "q_to_c_at_q0": 2.838873499951162,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            2,
+            1
+          ],
+          "content_sum": 8,
+          "dim_irrep": 1100,
+          "q_to_c_at_q0": 2.304182281250669,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 5,
+          "dim_irrep": 924,
+          "q_to_c_at_q0": 1.68489569408648,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 252,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            5,
+            5,
+            1
+          ],
+          "content_sum": 13,
+          "dim_irrep": 330,
+          "q_to_c_at_q0": 3.882306804069615,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            4,
+            2
+          ],
+          "content_sum": 9,
+          "dim_irrep": 990,
+          "q_to_c_at_q0": 2.5575930124434456,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            4,
+            1,
+            1
+          ],
+          "content_sum": 7,
+          "dim_irrep": 1155,
+          "q_to_c_at_q0": 2.0758799228018057,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            3
+          ],
+          "content_sum": 7,
+          "dim_irrep": 660,
+          "q_to_c_at_q0": 2.0758799228018057,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            2,
+            1
+          ],
+          "content_sum": 4,
+          "dim_irrep": 2310,
+          "q_to_c_at_q0": 1.5179533198523165,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 1,
+          "dim_irrep": 1540,
+          "q_to_c_at_q0": 1.1099785955541805,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2,
+            2
+          ],
+          "content_sum": 1,
+          "dim_irrep": 825,
+          "q_to_c_at_q0": 1.1099785955541805,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -1,
+          "dim_irrep": 1540,
+          "q_to_c_at_q0": 0.9009182735643011,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -5,
+          "dim_irrep": 924,
+          "q_to_c_at_q0": 0.5935085498228315,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -11,
+          "dim_irrep": 210,
+          "q_to_c_at_q0": 0.31735062290722005,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            3
+          ],
+          "content_sum": 5,
+          "dim_irrep": 462,
+          "q_to_c_at_q0": 1.68489569408648,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            2,
+            1
+          ],
+          "content_sum": 2,
+          "dim_irrep": 1320,
+          "q_to_c_at_q0": 1.2320524825884311,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -1,
+          "dim_irrep": 825,
+          "q_to_c_at_q0": 0.9009182735643011,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            3,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 1188,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            2,
+            2
+          ],
+          "content_sum": -2,
+          "dim_irrep": 1320,
+          "q_to_c_at_q0": 0.8116537356420809,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -4,
+          "dim_irrep": 2310,
+          "q_to_c_at_q0": 0.6587817865817449,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -8,
+          "dim_irrep": 1100,
+          "q_to_c_at_q0": 0.4339934423318358,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -7,
+          "dim_irrep": 1155,
+          "q_to_c_at_q0": 0.4817234315992153,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -10,
+          "dim_irrep": 1232,
+          "q_to_c_at_q0": 0.35225239871280045,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -15,
+          "dim_irrep": 594,
+          "q_to_c_at_q0": 0.20906481033164806,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -22,
+          "dim_irrep": 120,
+          "q_to_c_at_q0": 0.1007114178596006,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            3,
+            2
+          ],
+          "content_sum": -5,
+          "dim_irrep": 462,
+          "q_to_c_at_q0": 0.5935085498228315,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            3,
+            1,
+            1
+          ],
+          "content_sum": -7,
+          "dim_irrep": 660,
+          "q_to_c_at_q0": 0.4817234315992153,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -9,
+          "dim_irrep": 990,
+          "q_to_c_at_q0": 0.3909926228038255,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -12,
+          "dim_irrep": 990,
+          "q_to_c_at_q0": 0.2859069753041283,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -17,
+          "dim_irrep": 385,
+          "q_to_c_at_q0": 0.16968823429698526,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            2,
+            2
+          ],
+          "content_sum": -13,
+          "dim_irrep": 330,
+          "q_to_c_at_q0": 0.2575788185909865,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -15,
+          "dim_irrep": 693,
+          "q_to_c_at_q0": 0.20906481033164806,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -19,
+          "dim_irrep": 550,
+          "q_to_c_at_q0": 0.13772808926165675,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -25,
+          "dim_irrep": 231,
+          "q_to_c_at_q0": 0.0736435809257597,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -33,
+          "dim_irrep": 45,
+          "q_to_c_at_q0": 0.031960831191613574,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -20,
+          "dim_irrep": 132,
+          "q_to_c_at_q0": 0.12408175239892176,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -23,
+          "dim_irrep": 165,
+          "q_to_c_at_q0": 0.09073275670628429,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -28,
+          "dim_irrep": 110,
+          "q_to_c_at_q0": 0.05385066685417458,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -35,
+          "dim_irrep": 44,
+          "q_to_c_at_q0": 0.025941128030899097,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -44,
+          "dim_irrep": 10,
+          "q_to_c_at_q0": 0.010142789687291076,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -55,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.003218820625278751,
+          "is_delta_invariant": false
+        }
+      ]
+    },
+    "12": {
+      "n": 12,
+      "n_partitions": 77,
+      "total_dim": 140152,
+      "invariant_dim": 12440,
+      "invariant_ratio": 0.08876077401678178,
+      "is_magic_shell": false,
+      "blocks": [
+        {
+          "lambda": [
+            12
+          ],
+          "content_sum": 66,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 978.9575708832443,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            11,
+            1
+          ],
+          "content_sum": 54,
+          "dim_irrep": 11,
+          "q_to_c_at_q0": 279.8907980423051,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            10,
+            2
+          ],
+          "content_sum": 44,
+          "dim_irrep": 54,
+          "q_to_c_at_q0": 98.59220498804198,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            10,
+            1,
+            1
+          ],
+          "content_sum": 42,
+          "dim_irrep": 55,
+          "q_to_c_at_q0": 80.02273148373408,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            9,
+            3
+          ],
+          "content_sum": 36,
+          "dim_irrep": 154,
+          "q_to_c_at_q0": 42.788370429846324,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            9,
+            2,
+            1
+          ],
+          "content_sum": 33,
+          "dim_irrep": 320,
+          "q_to_c_at_q0": 31.28829766675145,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            9,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 30,
+          "dim_irrep": 165,
+          "q_to_c_at_q0": 22.879057114088845,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            4
+          ],
+          "content_sum": 30,
+          "dim_irrep": 275,
+          "q_to_c_at_q0": 22.879057114088845,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            3,
+            1
+          ],
+          "content_sum": 26,
+          "dim_irrep": 891,
+          "q_to_c_at_q0": 15.07230612092523,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            2,
+            2
+          ],
+          "content_sum": 24,
+          "dim_irrep": 616,
+          "q_to_c_at_q0": 12.233493567789965,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            2,
+            1,
+            1
+          ],
+          "content_sum": 22,
+          "dim_irrep": 945,
+          "q_to_c_at_q0": 9.929360754250093,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 18,
+          "dim_irrep": 330,
+          "q_to_c_at_q0": 6.5412820172995385,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            5
+          ],
+          "content_sum": 26,
+          "dim_irrep": 297,
+          "q_to_c_at_q0": 15.07230612092523,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            4,
+            1
+          ],
+          "content_sum": 21,
+          "dim_irrep": 1408,
+          "q_to_c_at_q0": 8.945542548316121,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            3,
+            2
+          ],
+          "content_sum": 18,
+          "dim_irrep": 1925,
+          "q_to_c_at_q0": 6.5412820172995385,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            3,
+            1,
+            1
+          ],
+          "content_sum": 16,
+          "dim_irrep": 2376,
+          "q_to_c_at_q0": 5.309255985229537,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            2,
+            2,
+            1
+          ],
+          "content_sum": 14,
+          "dim_irrep": 2079,
+          "q_to_c_at_q0": 4.309277453891631,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 11,
+          "dim_irrep": 1728,
+          "q_to_c_at_q0": 3.1510888204317715,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            7,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 6,
+          "dim_irrep": 462,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            6
+          ],
+          "content_sum": 24,
+          "dim_irrep": 132,
+          "q_to_c_at_q0": 12.233493567789965,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            5,
+            1
+          ],
+          "content_sum": 18,
+          "dim_irrep": 1155,
+          "q_to_c_at_q0": 6.5412820172995385,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            4,
+            2
+          ],
+          "content_sum": 14,
+          "dim_irrep": 2673,
+          "q_to_c_at_q0": 4.309277453891631,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            4,
+            1,
+            1
+          ],
+          "content_sum": 12,
+          "dim_irrep": 3080,
+          "q_to_c_at_q0": 3.497641143369337,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            3,
+            3
+          ],
+          "content_sum": 12,
+          "dim_irrep": 1650,
+          "q_to_c_at_q0": 3.497641143369337,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            3,
+            2,
+            1
+          ],
+          "content_sum": 9,
+          "dim_irrep": 5632,
+          "q_to_c_at_q0": 2.5575930124434456,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            3,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 6,
+          "dim_irrep": 3696,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            2,
+            2
+          ],
+          "content_sum": 6,
+          "dim_irrep": 1925,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": 4,
+          "dim_irrep": 3564,
+          "q_to_c_at_q0": 1.5179533198523165,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            6,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 2100,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            6,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -6,
+          "dim_irrep": 462,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            5,
+            2
+          ],
+          "content_sum": 12,
+          "dim_irrep": 1320,
+          "q_to_c_at_q0": 3.497641143369337,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            5,
+            1,
+            1
+          ],
+          "content_sum": 10,
+          "dim_irrep": 1485,
+          "q_to_c_at_q0": 2.838873499951162,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            4,
+            3
+          ],
+          "content_sum": 9,
+          "dim_irrep": 2112,
+          "q_to_c_at_q0": 2.5575930124434456,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            4,
+            2,
+            1
+          ],
+          "content_sum": 6,
+          "dim_irrep": 5775,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            4,
+            1,
+            1,
+            1
+          ],
+          "content_sum": 3,
+          "dim_irrep": 3520,
+          "q_to_c_at_q0": 1.3675518842725483,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            3,
+            1
+          ],
+          "content_sum": 4,
+          "dim_irrep": 4158,
+          "q_to_c_at_q0": 1.5179533198523165,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            2,
+            2
+          ],
+          "content_sum": 2,
+          "dim_irrep": 4455,
+          "q_to_c_at_q0": 1.2320524825884311,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "content_sum": 0,
+          "dim_irrep": 7700,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            5,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -4,
+          "dim_irrep": 3564,
+          "q_to_c_at_q0": 0.6587817865817449,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -3,
+          "dim_irrep": 3520,
+          "q_to_c_at_q0": 0.7312336822466793,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -6,
+          "dim_irrep": 3696,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -11,
+          "dim_irrep": 1728,
+          "q_to_c_at_q0": 0.31735062290722005,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -18,
+          "dim_irrep": 330,
+          "q_to_c_at_q0": 0.1528752310870146,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            4
+          ],
+          "content_sum": 6,
+          "dim_irrep": 462,
+          "q_to_c_at_q0": 1.8701981561773975,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            3,
+            1
+          ],
+          "content_sum": 2,
+          "dim_irrep": 2970,
+          "q_to_c_at_q0": 1.2320524825884311,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            2,
+            2
+          ],
+          "content_sum": 0,
+          "dim_irrep": 2640,
+          "q_to_c_at_q0": 1.0,
+          "is_delta_invariant": true
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -2,
+          "dim_irrep": 4455,
+          "q_to_c_at_q0": 0.8116537356420809,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -6,
+          "dim_irrep": 1925,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            3,
+            2
+          ],
+          "content_sum": -2,
+          "dim_irrep": 2970,
+          "q_to_c_at_q0": 0.8116537356420809,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            3,
+            1,
+            1
+          ],
+          "content_sum": -4,
+          "dim_irrep": 4158,
+          "q_to_c_at_q0": 0.6587817865817449,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -6,
+          "dim_irrep": 5775,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -9,
+          "dim_irrep": 5632,
+          "q_to_c_at_q0": 0.3909926228038255,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -14,
+          "dim_irrep": 2079,
+          "q_to_c_at_q0": 0.23205746455172388,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2,
+            2,
+            2
+          ],
+          "content_sum": -10,
+          "dim_irrep": 1485,
+          "q_to_c_at_q0": 0.35225239871280045,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -12,
+          "dim_irrep": 3080,
+          "q_to_c_at_q0": 0.2859069753041283,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -16,
+          "dim_irrep": 2376,
+          "q_to_c_at_q0": 0.18835030798703645,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -22,
+          "dim_irrep": 945,
+          "q_to_c_at_q0": 0.1007114178596006,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -30,
+          "dim_irrep": 165,
+          "q_to_c_at_q0": 0.04370809491900798,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "content_sum": -6,
+          "dim_irrep": 462,
+          "q_to_c_at_q0": 0.5347026980520374,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            3,
+            2,
+            1
+          ],
+          "content_sum": -9,
+          "dim_irrep": 2112,
+          "q_to_c_at_q0": 0.3909926228038255,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -12,
+          "dim_irrep": 1650,
+          "q_to_c_at_q0": 0.2859069753041283,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2,
+            2,
+            2
+          ],
+          "content_sum": -12,
+          "dim_irrep": 1320,
+          "q_to_c_at_q0": 0.2859069753041283,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -14,
+          "dim_irrep": 2673,
+          "q_to_c_at_q0": 0.23205746455172388,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -18,
+          "dim_irrep": 1925,
+          "q_to_c_at_q0": 0.1528752310870146,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -24,
+          "dim_irrep": 616,
+          "q_to_c_at_q0": 0.0817427985275554,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "content_sum": -18,
+          "dim_irrep": 1155,
+          "q_to_c_at_q0": 0.1528752310870146,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -21,
+          "dim_irrep": 1408,
+          "q_to_c_at_q0": 0.11178751815206968,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -26,
+          "dim_irrep": 891,
+          "q_to_c_at_q0": 0.06634684778672834,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -33,
+          "dim_irrep": 320,
+          "q_to_c_at_q0": 0.031960831191613574,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -42,
+          "dim_irrep": 55,
+          "q_to_c_at_q0": 0.012496449214599309,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "content_sum": -24,
+          "dim_irrep": 132,
+          "q_to_c_at_q0": 0.0817427985275554,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "content_sum": -26,
+          "dim_irrep": 297,
+          "q_to_c_at_q0": 0.06634684778672834,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -30,
+          "dim_irrep": 275,
+          "q_to_c_at_q0": 0.04370809491900798,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -36,
+          "dim_irrep": 154,
+          "q_to_c_at_q0": 0.023370836279908113,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -44,
+          "dim_irrep": 54,
+          "q_to_c_at_q0": 0.010142789687291076,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -54,
+          "dim_irrep": 11,
+          "q_to_c_at_q0": 0.0035728219969877375,
+          "is_delta_invariant": false
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "content_sum": -66,
+          "dim_irrep": 1,
+          "q_to_c_at_q0": 0.001021494730458819,
+          "is_delta_invariant": false
+        }
+      ]
+    }
+  },
+  "magic_findings": {
+    "2": {
+      "invariant_dim": 0,
+      "total_dim": 2,
+      "scalar_predicate_realisable_at_generic_q": false
+    },
+    "8": {
+      "invariant_dim": 132,
+      "total_dim": 764,
+      "scalar_predicate_realisable_at_generic_q": true
+    }
+  },
+  "structural_finding": "At magic n=2 no \u03bb has c(\u03bb) = 0; pure scalar \u0394_n\u00b2 action would force \u03a6_n = 0. The categorical-neutrality proposition therefore holds via a refined mechanism \u2014 either q at a root of unity, sum cancellation, or a non-scalar action component.",
+  "all_passed": true
+}
