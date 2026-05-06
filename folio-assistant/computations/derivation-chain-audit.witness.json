@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-06T01:09:52.706050+00:00",
-  "commitSha": "37f5d9dcdfeb369100e9b6d7cd63396d77e5e228",
+  "computedAt": "2026-05-06T01:41:47.639484+00:00",
+  "commitSha": "fdcf90354abcc48c4c1b62f194d05a42b46f7eb6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1385,6 +1385,7 @@
         "beta-decay-energy-scale.witness.json",
         "beta-decay-from-q.witness.json",
         "beta-decay-matrix.witness.json",
+        "beta-ew-delta-I-321-and-wedderburn.witness.json",
         "beta-ew-delta-I-eigenvalues.witness.json",
         "beta-ew-delta-I-numerical-spectrum.witness.json",
         "bigraded-e-infinity-h3.witness.json",
