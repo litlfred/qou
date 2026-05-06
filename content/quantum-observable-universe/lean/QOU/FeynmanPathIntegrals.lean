@@ -280,7 +280,8 @@ structure ClassicalLimitDegeneration where
   symmetric_degeneration :
     hecke_q.q = 1 →
     ∀ (i : Fin (n - 1)),
-    hecke_q.mul (hecke_q.T i) (hecke_q.T i) = hecke_q.one
+    let i' : Fin (hecke_q.n - 1) := i.cast (by rw [n_eq])
+    hecke_q.mul (hecke_q.T i') (hecke_q.T i') = hecke_q.one
   /-- (2) ℏ_q = 1 - q⁻¹ → 0 as q → 1. -/
   planck_limit : ∀ (ε : ℝ), 0 < ε →
     ∃ (δ : ℝ), 0 < δ ∧ ∀ (q : ℝ),
