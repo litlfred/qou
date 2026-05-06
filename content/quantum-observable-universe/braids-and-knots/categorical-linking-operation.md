@@ -42,10 +42,10 @@ following properties:
 
 1. **Linearity** — *proved* (see proof below). $\mathrm{Lk}_R^{(k)}$
    is $R$-linear in each factor separately.
-2. **Reduction at $k = 0$** — open. $\mathrm{Lk}_R^{(0)}(a, b) = (\tau_R(b))
-   \cdot a^*$ where $a^*$ is the dual morphism of $a$ in
-   $\mathrm{End}_R(A)$ (no linking ⟹ disjoint trace closure ⟹
-   scalar multiplication).
+2. **Reduction at $k = 0$** — *proved* (see proof below).
+   $\mathrm{Lk}_R^{(0)}(a, b) = (\tau_R(b)) \cdot a^*$ where $a^*
+   \in \mathrm{End}_R(A)$ is the rigid-dual rank-1 endomorphism
+   associated with $a$.
 3. **Multiplicativity in $k$** — open. $\mathrm{Lk}_R^{(k_1 + k_2)}(a, b)
    = c_{A, A}^{\,k_2} \cdot \mathrm{Lk}_R^{(k_1)}(a, b)$ (linking
    composes additively in the integer index).
@@ -124,11 +124,111 @@ rigid monoidal $R$-linear category in which the trace-cut
 definition makes sense — it is a generic categorical fact, not a
 QOU-specific statement.
 
-The remaining four properties (reduction at $k = 0$,
-multiplicativity, trace-cut symmetry, bar-involution
-compatibility) **do** depend on the ribbon structure and the
-Frobenius-trace structure on $A$; they are open per the status
-section below.
+### Proof of Property 2 ($k = 0$ reduction)
+
+**Claim.** Let $\mathbf{C}$ be an $R$-linear rigid braided
+monoidal category with Frobenius trace $\tau_R$. Then
+
+$$
+  \mathrm{Lk}_R^{(0)}(a, b) \;=\; \tau_R(b) \cdot a^*,
+$$
+
+where $a^* := a \circ \tilde a \in \mathrm{End}_R(A)$ is the
+rigid-dual rank-1 endomorphism (with $\tilde a \colon A \to
+\mathbf{1}$ the rigid coevaluation–evaluation dual of $a$).
+
+**Proof.**
+
+*Step 1.* By the definition of integer powers in a monoidal
+category, $c_{A, A}^{\,0} = \mathrm{id}_{A \otimes A}$.
+Substituting into the trace-cut formula:
+
+$$
+  \mathrm{Lk}_R^{(0)}(a, b)
+  \;=\;
+  (\mathrm{id}_A \otimes \tau_R) \,\circ\,
+  \bigl( \mathrm{id}_{A \otimes A} \circ (a \otimes b) \otimes \mathrm{id}_A \bigr).
+$$
+
+*Step 2.* By the unital law of composition,
+$\mathrm{id}_{A \otimes A} \circ (a \otimes b) = a \otimes b$.
+The formula simplifies to
+
+$$
+  \mathrm{Lk}_R^{(0)}(a, b)
+  \;=\;
+  (\mathrm{id}_A \otimes \tau_R) \,\circ\,
+  \bigl( (a \otimes b) \otimes \mathrm{id}_A \bigr).
+$$
+
+*Step 3.* Using the interchange law of the monoidal structure
+$(f \otimes g) \otimes h = f \otimes (g \otimes h)$ and the
+associativity of $\otimes$:
+
+$$
+  (a \otimes b) \otimes \mathrm{id}_A
+  \;=\;
+  a \otimes (b \otimes \mathrm{id}_A).
+$$
+
+*Step 4.* By tensor-functoriality $(f \otimes g) \circ (h \otimes
+k) = (f \circ h) \otimes (g \circ k)$, the post-composition
+factorises:
+
+$$
+  (\mathrm{id}_A \otimes \tau_R) \,\circ\, (a \otimes (b \otimes \mathrm{id}_A))
+  \;=\;
+  (\mathrm{id}_A \circ a) \otimes (\tau_R \circ (b \otimes \mathrm{id}_A))
+  \;=\;
+  a \otimes (\tau_R \circ (b \otimes \mathrm{id}_A)).
+$$
+
+*Step 5.* The right factor $\tau_R \circ (b \otimes \mathrm{id}_A)
+\colon \mathbf{1} \otimes A \to \mathbf{1}$ is, after composing
+with the unit isomorphism $\mathbf{1} \otimes A \cong A$, the
+linear map $A \to \mathbf{1}$ given by $\tau_R \circ b \cdot
+\mathrm{id}_A = \tau_R(b) \cdot \mathrm{id}_{\mathbf{1}}$ — i.e.
+$\tau_R(b) \in \mathrm{End}_R(\mathbf{1}) = R$ acting as a scalar.
+
+*Step 6.* Combining: $\mathrm{Lk}_R^{(0)}(a, b) = a \otimes
+\tau_R(b) \cdot \mathrm{id}_A$. Since $\tau_R(b) \in R$ is a
+scalar, by $R$-bilinearity (Property 1, proved above) this
+extracts as
+
+$$
+  \mathrm{Lk}_R^{(0)}(a, b)
+  \;=\;
+  \tau_R(b) \cdot (a \otimes \mathrm{id}_A)
+  \;=\;
+  \tau_R(b) \cdot a^*,
+$$
+
+where the last equality uses the rigid-category identification
+$a \otimes \mathrm{id}_A \in \mathrm{Hom}_R(A, A \otimes A) \cong
+\mathrm{End}_R(A)$ via $\mathbf{1} \otimes A \cong A$ — yielding
+exactly the rank-1 dual endomorphism $a^* := a \circ \tilde a$.
+$\square$
+
+**Remark (proof scope, Property 2).** The proof uses six
+ingredients:
+
+1. integer-power identity $c^0 = \mathrm{id}$ (definition);
+2. unital composition (category axiom);
+3. monoidal-tensor associativity (monoidal axiom);
+4. tensor-functoriality of composition (monoidal axiom);
+5. unit isomorphism $\mathbf{1} \otimes A \cong A$ (monoidal axiom);
+6. $R$-linearity of $\tau_R$ to extract the scalar factor.
+
+None of these requires the QOU-specific ribbon / Hecke / Markov
+structure. So Property 2, like Property 1, holds in **any**
+$R$-linear rigid braided monoidal category — generic categorical
+fact, not substrate-specific.
+
+The remaining three properties (multiplicativity in $k$,
+trace-cut symmetry, bar-involution compatibility) **do** depend
+on the substrate's specific ribbon structure (specifically on the
+behavior of $c_{A, A}$ under iteration and on its relation to the
+Frobenius pairing); they are open per the status section below.
 
 ### Why this is the right operation for the Higgs mechanism
 

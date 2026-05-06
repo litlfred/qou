@@ -99,12 +99,52 @@ Per [`confinement-operator-selection.witness.json`](https://github.com/litlfred/
 | Proton | $L_+ = \sigma_0\sigma_1$ | 0 | $\approx 0.152$ at $q_0$ |
 | Neutron | $L_+ = \sigma_0\sigma_1$ | 0 | $\approx 0.106$ at $q_0$ |
 
-Per the to-be-extended [`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json):
+Per [`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json):
 
 - **EW carriers** $T(2,4), T(2,6), T(2,8)$ in $H_2(q)$ select the
-  Wedderburn-(sym, alt) projector pair as the LP-active set, with
-  uniform Plancherel weight $1/[2]_q$ per
-  [conj:weak-spectral-completeness](#conj:weak-spectral-completeness).
+  Wedderburn-(sym, alt) projector pair as the LP-active set,
+  superseded — see Hoefsmit n=6 lift below.
+
+### EW-sector LP/SDP-dual input via Wedderburn-pair volumes
+
+The EW-sector instance of this proposition draws its supply
+matrix from the Wedderburn-block-decomposed pair amplitude
+$|V_i V_j|_{\rm Wedderburn}$ defined in
+[`wedderburn_pair_volumes.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn_pair_volumes.py)
+(integrated 2026-05-06 from PR #534 commit `06305f30c`):
+
+$$
+  |V_i V_j|_{\rm Wedd}
+  \;=\;
+  w_{\rm sym} \cdot \lambda_i^{\rm sym} \lambda_j^{\rm sym}
+  \;+\; w_{\rm std} \cdot \mathrm{tr}_{\rm Markov}(M_i M_j)\big|_{\rm std\ block}
+  \;+\; w_{\rm alt} \cdot \lambda_i^{\rm alt} \lambda_j^{\rm alt},
+$$
+
+where $M_i$ are the full $2 \times 2$ transfer matrices (not just
+the $(m_{21}, m_{22})$ bottom row used by the basic
+`hecke_core.atom_per_generator_volumes`).
+
+**LP/SDP-dual pair amplitudes for the EW sector:**
+
+| Pair | Categorical interpretation |
+|------|----------------------------|
+| $\|V_W V_Z\|_{\rm Wedd}$ | LP-active edge: $W^\pm \leftrightarrow Z$ coupling via shared sym/alt block on $V^{\otimes 6}$ |
+| $\|V_Z V_H\|_{\rm Wedd}$ | LP-active edge: $Z \leftrightarrow H$ Higgs vacuum-induced linkage |
+| $\|V_W V_H\|_{\rm Wedd}$ | LP-active edge: $W^\pm \leftrightarrow H$ Yukawa-like coupling |
+| $\|V_W V_W\|_{\rm Wedd}$ | self-pair amplitude for $W^\pm$ (charge-2 channel) |
+
+These amplitudes feed the supply matrix $S$ in the LP for the EW
+operator-selection instance. Combined with the Hoefsmit
+cell-content multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$ of
+[`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content),
+they determine the active set $A^*(T)$ for each EW confinement
+target.
+
+The LP dual variables (shadow prices) $y^* \geq 0$ then identify
+the saturated demand channels — the EW-sector analog of the
+existing $\{e^-, L_+, L_-, \gamma\}$ active-set extraction for
+matter operators.
 
 ### Status
 
