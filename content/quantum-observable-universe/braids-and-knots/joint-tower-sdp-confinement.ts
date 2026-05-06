@@ -27,4 +27,10 @@ export default proposition({
     "wedderburn",
     "cross-level-consistency",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/probe_neutron_gap.py",
+    witness: "folio-assistant/computations/neutron-gap-probes.witness.json",
+    status: "verified",
+  },
 });

@@ -19,4 +19,10 @@ export default proposition({
     "quantum-group",
     "sigma-shell",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "folio-assistant/computations/probe_atom_shell_self_duality_mpfr.py",
+    witness: "folio-assistant/computations/probe-atom-shell-self-duality-mpfr.witness.json",
+    status: "experimental",
+  },
 });
