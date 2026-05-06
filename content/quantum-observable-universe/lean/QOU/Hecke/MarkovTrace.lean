@@ -83,14 +83,25 @@ theorem trace_pair (i j : Generator n) (h : i.idx.val < j.idx.val) :
 
 end MarkovTrace
 
-/-- **Uniqueness of the Markov trace.**
-Two `MarkovTrace` instances on `H_n(q)` with the same parameter
-`z` produce the same linear functional.  This is the standard
-uniqueness result (Ocneanu 1985; Jones 1987; Wenzl 1988): any
-linear functional satisfying the three Markov axioms (M1
-normalisation, M2 cyclicity, M3 Markov property at every level)
-is determined by its values on a basis of reduced braid words,
-and the axioms determine those values uniquely.
+/-- **Uniqueness of the Markov trace (target statement).**
+The mathematical claim is: any two `R`-linear functionals on
+`H_n(q)` satisfying the full Markov axioms (M1 normalisation,
+M2 cyclicity, M3 cross-level Markov property at every level
+`H_k ⊂ H_{k+1}`, k = 1, …, n−1) coincide once the Markov
+parameter `z = 1/(√q + 1/√q)` is fixed.  This is Ocneanu (1985);
+Jones (1987); Wenzl (1988).
+
+**Caveat on the current `MarkovTrace` class.**  The class above
+encodes only the *consequences* of the Markov axioms at the
+generator/pair-product level (`trace_gen`, `trace_prod_gen`,
+plus normalisation and cyclicity from `cyclic`/`normalise`
+fields), not the cross-level Markov axiom itself or a basis
+reduction principle.  As stated, two instances with the same
+`z_param` are not yet shown equal at the linear-map level by
+this class alone — the field set is too weak.  Strengthening
+the class to carry the full cross-level Markov axiom (or
+equivalently a basis-of-reduced-words decomposition) is a
+prerequisite for a Lean-checkable proof.
 
 The `Wedderburn` decomposition `tr_M = Σ_λ y_λ · χ^λ` with
 explicit closed-form `y_λ(q)` (linear-system at H_3 or Wenzl
@@ -101,10 +112,13 @@ for the symbolic verification that the polynomial identity
 `P^A_λ · Q^B_λ − P^B_λ · Q^A_λ ≡ 0` holds in
 `Z[r, r^{-1}]` (`r = q^{1/2}`) for every λ ⊢ 3.
 
-This Lean statement encodes the abstract uniqueness; the proof
-is left as `sorry` with a bibliographic reference, since a
-complete formalisation requires a basis-of-reduced-words lemma
-for `H_n(q)` that has not yet been built up in `QOU.Hecke.*`.
+This Lean statement is therefore a **target / placeholder**:
+it records the eventual theorem with a bibliographic reference
+and a `sorry` so the proof obligation is tracked.  Closing this
+`sorry` requires (a) extending `MarkovTrace` to carry the
+cross-level Markov field, and (b) a basis-of-reduced-words
+lemma for `H_n(q)` that has not yet been built up in
+`QOU.Hecke.*`.
 -/
 theorem markov_trace_unique
     {R : Type u} {n : ℕ} {q : R} {A : Type u}

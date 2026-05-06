@@ -51,8 +51,9 @@ X_factored = sp.factor(X)
 
 
 def cyclotomic_factor(expr, max_d=20):
-    """Factor a polynomial in t over Q and identify cyclotomic factors.
-    Returns a string with cyclotomic notation Φ_d(t) where applicable."""
+    """Factor a Laurent polynomial in r over Q and identify cyclotomic
+    factors.  Returns a string with cyclotomic notation Φ_d(r) where
+    applicable."""
     expr = sp.together(expr)
     num, den = sp.fraction(expr)
     num_f = sp.factor(num)
@@ -106,7 +107,7 @@ def partitions_of(n):
     return list(gen(n, n))
 
 
-print(f"X (in t = q^(1/2)) factored:")
+print(f"X (in r = q^(1/2)) factored:")
 print(f"  X = {X_factored}")
 print()
 
@@ -166,11 +167,11 @@ with open(out_path, "w") as fp:
         "computation": "y-lambda-cyclotomic-factor",
         "description": (
             "Factor y_λ closed forms over Q in r = q^{1/2} to identify "
-            "cyclotomic Φ_d(t) factors. Substitution Q = q² = t⁴ makes "
-            "all expressions polynomial in t; sympy `factor` then "
-            "exposes Schur-element-style cyclotomic structure."
+            "cyclotomic Φ_d(r) factors. Substitution Q = q² = r⁴ makes "
+            "all expressions Laurent polynomial in r; sympy `factor` "
+            "then exposes Schur-element-style cyclotomic structure."
         ),
-        "X_in_t": str(X_factored),
+        "X_in_r": str(X_factored),
         "results": results,
         "precision": "symbolic_q",
         "truncation_eps": 0.0,

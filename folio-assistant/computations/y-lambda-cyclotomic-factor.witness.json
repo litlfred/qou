@@ -1,7 +1,7 @@
 {
   "computation": "y-lambda-cyclotomic-factor",
-  "description": "Factor y_\u03bb closed forms over Q in r = q^{1/2} to identify cyclotomic \u03a6_d(t) factors. Substitution Q = q\u00b2 = t\u2074 makes all expressions polynomial in t; sympy `factor` then exposes Schur-element-style cyclotomic structure.",
-  "X_in_t": "-r**3/(r**6 + r**4 - r**3 - r**2 - 1)",
+  "description": "Factor y_\u03bb closed forms over Q in r = q^{1/2} to identify cyclotomic \u03a6_d(r) factors. Substitution Q = q\u00b2 = r\u2074 makes all expressions Laurent polynomial in r; sympy `factor` then exposes Schur-element-style cyclotomic structure.",
+  "X_in_r": "-r**3/(r**6 + r**4 - r**3 - r**2 - 1)",
   "results": {
     "2": {
       "(2,)": {

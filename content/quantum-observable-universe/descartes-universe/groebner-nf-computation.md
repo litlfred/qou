@@ -105,11 +105,11 @@ the crossing coefficients.  It factors as a product of $q$-integers:
 
 | $A$ | Histogram polynomial $\sum_\ell h(\ell)  r^\ell$ |
 |:---:|---|
-| $2$ | $[2]_t = 1 + r$ |
-| $3$ | $[2]_t^2 = (1+r)^2$ |
-| $4$ | $[2]_t^2 \cdot [3]_t = (1+r)^2(1+r+r^2)$ |
-| $5$ | $[2]_t^2 \cdot [3]_t^2$ |
-| $6$ | $[2]_t^2 \cdot [3]_t^2 \cdot [5]_t$ |
+| $2$ | $[2]_r = 1 + r$ |
+| $3$ | $[2]_r^2 = (1+r)^2$ |
+| $4$ | $[2]_r^2 \cdot [3]_r = (1+r)^2(1+r+r^2)$ |
+| $5$ | $[2]_r^2 \cdot [3]_r^2$ |
+| $6$ | $[2]_r^2 \cdot [3]_r^2 \cdot [5]_r$ |
 
 These are $q$-multinomial coefficients — the $q$-analogue of
 Pascal's triangle.  The palindromicity of the histogram polynomial
