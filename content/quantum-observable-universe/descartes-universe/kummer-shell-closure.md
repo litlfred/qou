@@ -107,8 +107,8 @@ $A = 40$ (${}^{40}\mathrm{Ca}$, doubly magic) tractable in minutes.
 
 ## Symbolic witnesses
 
-The symbolic engine (v7, exact in $\mathbb{Z}[t, t^{-1}]$ where
-$t = q^{1/2}$) produces Laurent polynomial witnesses for
+The symbolic engine (v7, exact in $\mathbb{Z}[r, r^{-1}]$ where
+$r = q^{1/2}$) produces Laurent polynomial witnesses for
 $\mathrm{tr}_{\mathrm{alt}}(q)$ and $\mathrm{net}(q)$.
 Verified through $A = 9$ (${}^9\mathrm{Be}$) without overflow.
 
