@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-06T00:12:27.657120+00:00",
-  "commitSha": "64b053c0f89b81caf2edca3ebf4fda0baf11b8f2",
+  "computedAt": "2026-05-06T00:22:06.035939+00:00",
+  "commitSha": "fadb96b951af86e57ad6fe0067486fd140dc61ee",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1574,6 +1574,7 @@
         "kashaev-integration-identity.witness.json",
         "kerov-knot-factor.witness.json",
         "kerov-walk-verify.witness.json",
+        "kite_tail_verification.witness.json",
         "knot-ideals-gb-jet-locations.witness.json",
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",

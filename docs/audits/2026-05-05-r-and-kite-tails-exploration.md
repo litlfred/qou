@@ -194,6 +194,50 @@ To verify or refute the Yekutieli connection, one would need:
 This is a 1-3 day research effort. **Not in scope for PR #546**, but
 worth queuing as a follow-up.
 
+### Verification result (2026-05-06 follow-up)
+
+The kite-tail conjecture in its naive form is **falsified** by direct
+verification. [`folio-assistant/computations/kite_tail_verification.py`](../../folio-assistant/computations/kite_tail_verification.py)
+runs the closed-form symbolic $\mathrm{tr}_M$ for proton, neutron,
+and deuteron (with bridge-numeric $y_\lambda$ at $n=6$ for tractability)
+and extracts the factorisation:
+
+| Atom | Predicted (PR #545 D(u)) | Observed (canonical tr_M denominator) |
+|---|---|---|
+| Proton (A=1) | $2^3 \cdot r^{19} \cdot (1+r^2)^2$ | $2^2 \cdot r^{19} \cdot (1+r^2)^1$ |
+| Neutron (A=1) | $2^3 \cdot r^{22} \cdot (1+r^2)^2$ | $2^2 \cdot r^{19} \cdot (1+r^2)^1$ |
+
+**What matches:** the tail exponent ($\text{shift} = 18Z + 21N + 1$) is
+correct: 19 for proton, 22 for neutron. ✓
+
+**What doesn't match:** the kite power and the $2^k$ prefactor.
+Observed (1, $2^2$) vs predicted ($3A-1=2$, $2^{2A+1}=2^3$). At $A=1$
+the discrepancy is by exactly a factor of 2 in each.
+
+### Reconciliation (open)
+
+PR #545's $D(u)$ is computing a **different quantity** than the
+canonical Wedderburn $\mathrm{tr}_M$. Possibilities:
+
+1. **$D(u)$ is the polynomial after stripping a different
+   normalisation**, e.g. multiplying by an extra $z = u/(1+u^2)$
+   or $u/(r+r^{-1})$ factor that absorbs one $(1+r^2)$ and one $2$.
+2. **$D(u)$ uses a different braid encoding** (with vs without
+   gluon dressing — the `proton_cross` vs `nucleon_gen_chains`
+   distinction we hit in PR #546 round-1).
+3. **$D(u)$ is the cleared-NUMERATOR**, and the $(1+r^2)^{3A-1}$
+   exponent is the NUMERATOR-side cyclotomic factor, not the
+   denominator-side. (Need to redo the extraction on the numerator
+   to test.)
+
+This is open work. The kite-tail **dictionary** (tail = pure $r$-power,
+kite = cyclotomic junction, averaging = $2^k$) remains structurally
+correct; only the precise exponents in PR #545's $D(u)$ closed form
+need reconciliation with the canonical Wedderburn $\mathrm{tr}_M$.
+
+The Yekutieli connection — if it exists — would naturally arise
+from the correct refined kite-tail form, not the naive one.
+
 ## Recommendation
 
 For **immediate notation** (PR #546 close-out):

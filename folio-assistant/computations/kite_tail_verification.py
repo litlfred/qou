@@ -86,20 +86,34 @@ def kite_tail_predict(Z: int, N: int) -> dict:
 
 
 def tr_M_canonical_symbolic(Z: int, N: int) -> sp.Expr:
-    """Symbolic canonical Jones-Markov tr_M(β_atom) at H_{3A}(q)."""
+    """Canonical Jones-Markov tr_M(β_atom) at H_{3A}(q).
+
+    n = 3:  uses fully-symbolic linear-system y_λ (closed form).
+    n ≥ 6:  uses bridge-witness numeric y_λ at q_0 multiplied by
+            symbolic χ^λ.  Result is then a polynomial in q (and √q)
+            with FLOAT coefficients — sufficient for kite-tail
+            factorisation extraction at q_0.  (Full symbolic Wenzl
+            for n ≥ 6 is also implemented in `y_lambda_symbolic` but
+            is too heavy for sympy factor at deuteron-scale; we
+            verify structurally via numeric coefficients here.)
+    """
     n = 3 * (Z + N)
     word = atom_braid_word_3A_to_crossings(Z, N, include_inter=(Z + N >= 2))
     if n <= 3:
-        # n=3: use linear-system y_λ (closed form via Markov axioms).
         y_lam = solve_y_lambda(n)
-    else:
-        # n ≥ 6: use Wenzl Schur (closed-form symbolic).
-        from markov_weights_symbolic import y_lambda_symbolic
-        y_lam = y_lambda_symbolic(n)
+        total = sp.Integer(0)
+        for shape, y in y_lam.items():
+            chi = chi_lambda_symbolic(shape, word)
+            total = total + sp.cancel(y * chi)
+        return sp.cancel(total)
+    # n ≥ 6: hybrid — bridge y_λ at q_0 + symbolic χ.
+    bridge = json.load((HERE / "y-lambda-mpfr-witness.json").open())
+    y_at_q0 = {tuple(w["partition"]): float(w["y_lambda"])
+               for w in bridge["tables_by_n"][str(n)]["weights"]}
     total = sp.Integer(0)
-    for shape, y in y_lam.items():
+    for shape, y_val in y_at_q0.items():
         chi = chi_lambda_symbolic(shape, word)
-        total = total + sp.cancel(y * chi)
+        total = total + sp.Float(y_val) * chi
     return sp.cancel(total)
 
 
@@ -176,19 +190,27 @@ def main() -> int:
     witness = {
         "computation": "kite-tail-verification",
         "description": (
-            "Verify the kite-tail factorisation D(r) = 2^(2A+1) · "
-            "r^shift · (1+r²)^(3A−1) for the canonical atomic Markov "
-            "trace at A = 1 (proton, neutron) and A = 2 (deuteron). "
-            "r := q^{1/2} is the spinor information rate per the "
-            "notation register. The 'tail' factor is r^shift "
-            "(linear-chain content), the 'kite' factor is (1+r²)^k "
-            "(cyclotomic-junction content), and the prefactor "
-            "2^(2A+1) is the averaging count. Predicted exponents "
-            "from PR #545's D(u) closed-form derivation; observed "
-            "exponents from sympy factorisation of the closed-form "
-            "tr_M produced by the round-3 markov_weights_symbolic + "
-            "hoefsmit_symbolic chain."
+            "Verification of the conjectured kite-tail factorisation "
+            "D(r) = 2^(2A+1) · r^shift · (1+r²)^(3A−1) (PR #545's "
+            "D(u) closed form) against the canonical Wedderburn "
+            "Jones-Markov tr_M denominator. r := q^{1/2} is the "
+            "spinor information rate per the notation register. "
+            "FINDING: the conjecture is FALSIFIED in its naive form. "
+            "For proton (A=1) the canonical tr_M denominator is "
+            "4·r^19·(1+r²)¹, not 2^3·r^19·(1+r²)². The tail exponent "
+            "(shift = 18Z+21N+1 = 19) matches the prediction; the "
+            "kite power (1 vs 2) and prefactor (2^2 vs 2^3) do NOT. "
+            "Conclusion: PR #545's D(u) computes a different quantity "
+            "than the canonical Wedderburn tr_M. The structural "
+            "relation between them needs reconciliation in a "
+            "follow-up audit; see "
+            "docs/audits/2026-05-05-r-and-kite-tails-exploration.md "
+            "for the conjecture statement and proposed refinement."
         ),
+        "kite_tail_conjecture_status": "FALSIFIED-naive-form",
+        "tail_exponent_status": "MATCHES (shift = 18Z+21N+1 verified)",
+        "kite_power_status": "DOES-NOT-MATCH (observed 1 vs predicted 3A-1=2 at A=1)",
+        "prefactor_status": "DOES-NOT-MATCH (observed 2^2 vs predicted 2^(2A+1)=2^3 at A=1)",
         "results": out_results,
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
