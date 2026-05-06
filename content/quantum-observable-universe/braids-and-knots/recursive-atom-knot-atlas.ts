@@ -18,6 +18,7 @@ export default proposition({
     "thm:jones-markov-trace",
   ],
   cites: ["wenzl1988"],
+  simulator: { ref: "sim:knot-atlas-viewer", view: "default-atlas-overview" },
   tags: [
     "atlas",
     "recursive",

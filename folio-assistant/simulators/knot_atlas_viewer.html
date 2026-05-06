@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<!--
+  Recursive Knot-Atlas Viewer — interactive simulator.
+
+  CONTRACT (no hardcoded QOU values):
+    Every numeric / knot-identity displayed by this simulator MUST come
+    from `knot-atlas-viewer-data.witness.json`.  The HTML carries only:
+      - URL/event glue
+      - SVG/Canvas drawing primitives
+      - pure coordinate-chart math (projections, no QOU constants)
+
+  WASM acceleration (Slice B):
+    On load, attempts to import `/wasm/qou_knot_kernel.js`.  When the
+    WASM artefact is present, q-slider recomputes (Markov closure,
+    Wedderburn dims) flow through the kernel; otherwise the simulator
+    falls back to JS-only static rendering of the witness data.
+
+  Pyodide path (Slice C, future):
+    On opt-in (?backend=pyodide), loads Pyodide + the pyhecke_native
+    Emscripten wheel for full Hecke-engine surface inside the browser.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recursive Knot-Atlas Viewer</title>
+  <style>
+    :root {
+      --bg: #0e1116; --fg: #e6edf3; --muted: #8b949e; --ac: #58a6ff;
+      --panel: #161b22; --border: #30363d; --warn: #d29922;
+    }
+    [data-theme="light"] {
+      --bg: #ffffff; --fg: #1f2328; --muted: #59636e; --ac: #0969da;
+      --panel: #f6f8fa; --border: #d0d7de; --warn: #9a6700;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg);
+      font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    .app { display: grid; grid-template-rows: auto 1fr auto; height: 100%; }
+    header.bar { display: flex; gap: .5rem; align-items: center; padding: .5rem .75rem;
+      background: var(--panel); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    header.bar h1 { font-size: 14px; margin: 0; font-weight: 600; }
+    header.bar .spacer { flex: 1; }
+    select, button { background: var(--bg); color: var(--fg); border: 1px solid var(--border);
+      border-radius: 4px; padding: .25rem .5rem; font: inherit; }
+    select:hover, button:hover { border-color: var(--ac); }
+    button.primary { background: var(--ac); color: white; border-color: var(--ac); }
+    label { color: var(--muted); font-size: 11px; display: inline-flex; align-items: center; gap: .35rem; }
+    main { display: grid; grid-template-columns: 240px 1fr 280px; gap: 1px; background: var(--border); overflow: hidden; }
+    aside { background: var(--bg); padding: .75rem; overflow-y: auto; }
+    .canvas-wrap { background: var(--bg); position: relative; overflow: hidden; }
+    svg { width: 100%; height: 100%; display: block; }
+    footer.bar { padding: .35rem .75rem; background: var(--panel); border-top: 1px solid var(--border);
+      font-size: 11px; color: var(--muted); display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    footer .badge { padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 600; }
+    .badge.ok { background: #2ea04333; color: #2ea043; }
+    .badge.warn { background: #d2992233; color: var(--warn); }
+    .badge.err { background: #f8514933; color: #f85149; }
+    .info { font-family: ui-monospace, "Cascadia Code", Menlo, monospace; font-size: 11px; }
+    .info .kv { display: grid; grid-template-columns: auto 1fr; gap: .25rem .75rem; }
+    .info .kv dt { color: var(--muted); white-space: nowrap; }
+    .info .kv dd { margin: 0; word-break: break-word; }
+    .group { margin-bottom: .85rem; }
+    .group h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+      color: var(--muted); margin: 0 0 .35rem; font-weight: 600; }
+    .copy-btn { font-size: 10px; padding: 1px 6px; }
+    .slider-row { display: grid; grid-template-columns: auto 1fr auto; gap: .35rem; align-items: center; }
+    .slider-row input[type=range] { width: 100%; }
+    .err-banner { background: #f8514922; color: #f85149; padding: .5rem .75rem;
+      border-bottom: 1px solid #f85149; }
+  </style>
+</head>
+<body data-theme="dark">
+<div class="app">
+  <header class="bar">
+    <h1>🪢 Recursive Knot-Atlas Viewer</h1>
+    <label>Mode
+      <select id="mode">
+        <option value="basis">basis-knot</option>
+        <option value="confined">confined-baryon</option>
+      </select>
+    </label>
+    <label>Knot
+      <select id="knot"></select>
+    </label>
+    <label>Chart
+      <select id="chart"></select>
+    </label>
+    <label id="scaling-row" hidden>Scaling
+      <select id="scaling"></select>
+    </label>
+    <label id="centre-row" hidden>Centre
+      <select id="centre"></select>
+    </label>
+    <span class="spacer"></span>
+    <button id="copy-link" class="copy-btn" title="Copy a stable URL for this view">⎘ link</button>
+  </header>
+
+  <div id="err" class="err-banner" hidden></div>
+
+  <main>
+    <aside id="picker">
+      <div class="group">
+        <h2>q parameter</h2>
+        <div class="slider-row">
+          <span>q</span>
+          <input id="q-slider" type="range" min="1.001" max="1.5" step="0.0001" />
+          <span id="q-readout" class="info">—</span>
+        </div>
+        <button id="q-reset" class="copy-btn" style="margin-top:.35rem">reset to q₀</button>
+      </div>
+      <div class="group">
+        <h2>Overlays</h2>
+        <label><input type="checkbox" id="ov-c5" /> C₅ orbit</label><br/>
+        <label><input type="checkbox" id="ov-tube" /> chromaticity tube</label><br/>
+        <label><input type="checkbox" id="ov-vacuum" checked /> unknot-vacuum origin</label><br/>
+        <label><input type="checkbox" id="ov-wedderburn" /> Wedderburn centroid</label>
+      </div>
+      <div class="group">
+        <h2>Sources</h2>
+        <div class="info" id="sources"></div>
+      </div>
+    </aside>
+
+    <div class="canvas-wrap">
+      <svg id="stage" viewBox="-1 -1 2 2" preserveAspectRatio="xMidYMid meet"
+           xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+
+    <aside id="meta">
+      <div class="group">
+        <h2>Selected entry</h2>
+        <dl class="info kv" id="entry-kv"></dl>
+      </div>
+      <div class="group">
+        <h2>Methodology</h2>
+        <div class="info" id="entry-method"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="bar">
+    <span>q₀ <span id="q0-badge" class="info">—</span></span>
+    <span>Vol(4₁) <span id="vol41-badge" class="info">—</span></span>
+    <span>witness <span id="witness-badge" class="badge warn">loading…</span></span>
+    <span>WASM <span id="wasm-badge" class="badge warn">probing…</span></span>
+    <span class="spacer"></span>
+    <span class="info">no QOU values are hardcoded — all numerics from witness JSON</span>
+  </footer>
+</div>
+
+<script type="module">
+/* ──────────────────────────────────────────────────────────────────
+   Recursive Knot-Atlas Viewer — runtime
+   ────────────────────────────────────────────────────────────────── */
+
+// ── URL params ────────────────────────────────────────────────────
+const qs = new URLSearchParams(location.search);
+const initial = {
+  mode:    qs.get('mode')    || 'basis',
+  knot:    qs.get('knot')    || null,
+  chart:   qs.get('chart')   || null,    // resolved from witness default
+  scaling: qs.get('scaling') || null,
+  centre:  qs.get('centre')  || null,
+  q:       parseFloat(qs.get('q')) || null,
+  theme:   qs.get('theme')   || 'dark',
+  view:    qs.get('view')    || 'default',
+  backend: qs.get('backend') || 'wasm',  // 'wasm' | 'pyodide' | 'js'
+};
+document.body.dataset.theme = initial.theme;
+
+// ── Theme sync from parent (viewer overlay) ───────────────────────
+window.addEventListener('message', (e) => {
+  if (e.data?.type === 'theme' && e.data.theme) {
+    document.body.dataset.theme = e.data.theme;
+  }
+});
+
+// ── DOM refs ──────────────────────────────────────────────────────
+const $ = (id) => document.getElementById(id);
+const stage = $('stage');
+const errBanner = $('err');
+function showErr(msg) {
+  errBanner.textContent = '⚠ ' + msg;
+  errBanner.hidden = false;
+  console.error('[knot-atlas-viewer]', msg);
+}
+
+// ── Witness loader ────────────────────────────────────────────────
+const WITNESS_URL = '/folio-assistant/computations/knot-atlas-viewer-data.witness.json';
+let WITNESS = null;
+
+async function loadWitness() {
+  // Try a few likely locations to be robust to deployment layouts.
+  const candidates = [
+    WITNESS_URL,
+    '../folio-assistant/computations/knot-atlas-viewer-data.witness.json',
+    '/computations/knot-atlas-viewer-data.witness.json',
+  ];
+  for (const url of candidates) {
+    try {
+      const r = await fetch(url);
+      if (r.ok) {
+        WITNESS = await r.json();
+        $('witness-badge').textContent = 'loaded';
+        $('witness-badge').className = 'badge ok';
+        return WITNESS;
+      }
+    } catch (e) { /* try next */ }
+  }
+  $('witness-badge').textContent = 'missing';
+  $('witness-badge').className = 'badge err';
+  showErr(`Could not load witness from any of: ${candidates.join(', ')}. ` +
+          `Run \`python3 folio-assistant/computations/knot_atlas_viewer_data.py\` ` +
+          `to generate it.`);
+  throw new Error('witness load failed');
+}
+
+// ── WASM kernel loader (Slice B — optional) ───────────────────────
+let KERNEL = null;
+async function loadKernel(backend) {
+  if (backend === 'js') { $('wasm-badge').textContent = 'js-only'; $('wasm-badge').className = 'badge warn'; return null; }
+  if (backend === 'pyodide') {
+    // Reserved for Slice C; fall back to JS for now with a clear note.
+    $('wasm-badge').textContent = 'pyodide (deferred)';
+    $('wasm-badge').className = 'badge warn';
+    return null;
+  }
+  try {
+    const mod = await import('/wasm/qou_knot_kernel.js');
+    if (typeof mod.default === 'function') { await mod.default(); }
+    KERNEL = mod;
+    $('wasm-badge').textContent = 'wasm';
+    $('wasm-badge').className = 'badge ok';
+    return mod;
+  } catch (e) {
+    // Expected on first deploy when the WASM artefact hasn't been built yet.
+    $('wasm-badge').textContent = 'js-fallback';
+    $('wasm-badge').className = 'badge warn';
+    return null;
+  }
+}
+
+// ── Coordinate charts (pure projections, no QOU constants) ───────
+// Each chart maps a unit-3D point (x, y, z) to 2D screen coords in [-1,1]^2.
+const CHARTS = {
+  'briggs-klein-A1': (x, y, z) => [x, y],                       // ortho XY
+  'briggs-klein-A2': (x, y, z) => {                             // C5 polar
+    const r = Math.hypot(x, y);
+    const a = Math.atan2(y, x);
+    return [r * Math.cos(a), r * Math.sin(a) * 0.85 + z * 0.15];
+  },
+  'briggs-klein-A3': (x, y, z) => {                              // FS stereographic
+    const d = 1 - z * 0.5;
+    return [x / d * 0.7, y / d * 0.7];
+  },
+  'hyperbolic-B3': (x, y, z) => {                                // volume-puff (radial inflate)
+    const r = Math.hypot(x, y, z) || 1e-9;
+    const puff = 1 + 0.25 * (1 - r);
+    return [x * puff, y * puff];
+  },
+  'polar-knot-projection': (x, y, z) => [x, y],                  // 2D braid closure
+};
+
+// ── Knot-curve generators (parametric, witness-driven topology) ──
+
+// Torus knot (p,q) on a unit torus then projected by chart.
+function torusKnotPoints(p, q, N = 360, R = 0.7, r = 0.25) {
+  const pts = [];
+  for (let i = 0; i <= N; i++) {
+    const t = (i / N) * 2 * Math.PI;
+    const a = (R + r * Math.cos(q * t)) * Math.cos(p * t);
+    const b = (R + r * Math.cos(q * t)) * Math.sin(p * t);
+    const c = r * Math.sin(q * t);
+    pts.push([a, b, c]);
+  }
+  return pts;
+}
+
+// Figure-eight knot — analytic embedding (Bates–Maxwell parameterisation).
+function fig8Points(N = 360) {
+  const pts = [];
+  for (let i = 0; i <= N; i++) {
+    const t = (i / N) * 2 * Math.PI;
+    const x = (2 + Math.cos(2 * t)) * Math.cos(3 * t);
+    const y = (2 + Math.cos(2 * t)) * Math.sin(3 * t);
+    const z = Math.sin(4 * t);
+    pts.push([x / 4, y / 4, z / 4]);
+  }
+  return pts;
+}
+
+// Borromean rings — three orthogonal ellipses (canonical embedding).
+function borromeanPoints(N = 240) {
+  const rings = [];
+  const a = 0.55, b = 0.32;
+  for (let k = 0; k < 3; k++) {
+    const ring = [];
+    for (let i = 0; i <= N; i++) {
+      const t = (i / N) * 2 * Math.PI;
+      const u = a * Math.cos(t), v = b * Math.sin(t);
+      let p;
+      if (k === 0) p = [u, v, 0];
+      else if (k === 1) p = [0, u, v];
+      else p = [v, 0, u];
+      ring.push(p);
+    }
+    rings.push(ring);
+  }
+  return rings;  // array of components
+}
+
+// Hopf link — two interlocked circles.
+function hopfPoints(N = 240) {
+  const r = 0.5;
+  const ring = (k) => {
+    const arr = [];
+    for (let i = 0; i <= N; i++) {
+      const t = (i / N) * 2 * Math.PI;
+      if (k === 0) arr.push([r * Math.cos(t), r * Math.sin(t), 0]);
+      else        arr.push([r * Math.cos(t) + 0.4, 0, r * Math.sin(t)]);
+    }
+    return arr;
+  };
+  return [ring(0), ring(1)];
+}
+
+// Generic knot from braid word: synthesise a wavy parametric curve whose
+// crossings count matches |word|.  This is a *visual stand-in* for knots
+// whose canonical embedding isn't analytic; the topological invariants
+// (knot id, volume, braid word) are still witness-driven and shown in
+// the meta panel.
+function braidWordCurve(word, n_strands, N = 360) {
+  const w = word?.length || 0;
+  if (!w) return [[[0.5, 0, 0], [-0.5, 0, 0]]];  // unknot fallback
+  const pts = [];
+  for (let i = 0; i <= N; i++) {
+    const t = (i / N) * 2 * Math.PI;
+    const x = 0.55 * Math.cos(t) + 0.08 * Math.cos(w * t);
+    const y = 0.55 * Math.sin(t) + 0.08 * Math.sin(w * t);
+    const z = 0.12 * Math.sin((n_strands || 2) * t);
+    pts.push([x, y, z]);
+  }
+  return [pts];
+}
+
+// Choose components based on entry topology.
+function entryComponents(entry) {
+  if (!entry) return [[]];
+  if (entry.knot_id === 'B_3') return borromeanPoints();
+  if (entry.knot_id === 'L_H' || entry.name === 'hopf-link') return hopfPoints();
+  if (entry.knot_id === '4_1' || entry.name === 'figure-eight') return [fig8Points()];
+  if (entry.torus_pq) {
+    const [p, q] = entry.torus_pq;
+    if (p > 0 && q > 0) return [torusKnotPoints(p, q)];
+    return [torusKnotPoints(1, 0, 60, 0.6, 0.0)];  // unknot
+  }
+  return braidWordCurve(entry.braid_word, entry.n_strands);
+}
+
+// ── Renderer ─────────────────────────────────────────────────────
+function ns(tag, attrs = {}) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, String(v));
+  return el;
+}
+
+function renderEntry(entry, chartId, opts) {
+  stage.innerHTML = '';
+  const project = CHARTS[chartId] || CHARTS['briggs-klein-A2'];
+  const components = entryComponents(entry);
+
+  // Background grid (chart-independent visual aid)
+  for (let g = -0.9; g <= 0.9 + 1e-9; g += 0.3) {
+    stage.appendChild(ns('line', { x1: -1, y1: g, x2: 1, y2: g,
+      stroke: 'currentColor', 'stroke-width': 0.002, opacity: 0.08 }));
+    stage.appendChild(ns('line', { x1: g, y1: -1, x2: g, y2: 1,
+      stroke: 'currentColor', 'stroke-width': 0.002, opacity: 0.08 }));
+  }
+
+  // Vacuum origin marker
+  if (opts.vacuum) {
+    stage.appendChild(ns('circle', {
+      cx: 0, cy: 0, r: 0.03, fill: 'none',
+      stroke: '#888', 'stroke-width': 0.005, 'stroke-dasharray': '0.02,0.02',
+    }));
+  }
+
+  // C5 orbit overlay
+  if (opts.c5) {
+    for (let k = 0; k < 5; k++) {
+      const a = (k / 5) * 2 * Math.PI;
+      stage.appendChild(ns('line', {
+        x1: 0, y1: 0, x2: 0.85 * Math.cos(a), y2: 0.85 * Math.sin(a),
+        stroke: '#58a6ff', 'stroke-width': 0.003, opacity: 0.4,
+      }));
+    }
+  }
+
+  // Wedderburn centroid (visual marker only — categorical placeholder)
+  if (opts.wedderburn) {
+    stage.appendChild(ns('circle', {
+      cx: 0, cy: 0, r: 0.05, fill: 'none', stroke: 'var(--warn)',
+      'stroke-width': 0.005,
+    }));
+  }
+
+  // Chromaticity tube (radial gradient overlay)
+  if (opts.tube) {
+    const defs = ns('defs');
+    const grad = ns('radialGradient', { id: 'tube', cx: 0.5, cy: 0.5, r: 0.5 });
+    grad.appendChild(ns('stop', { offset: '0', 'stop-color': '#ff5555', 'stop-opacity': 0.0 }));
+    grad.appendChild(ns('stop', { offset: '0.7', 'stop-color': '#55ff77', 'stop-opacity': 0.05 }));
+    grad.appendChild(ns('stop', { offset: '1', 'stop-color': '#5577ff', 'stop-opacity': 0.0 }));
+    defs.appendChild(grad);
+    stage.appendChild(defs);
+    stage.appendChild(ns('rect', { x: -1, y: -1, width: 2, height: 2, fill: 'url(#tube)' }));
+  }
+
+  // Knot/link components
+  const palette = ['#58a6ff', '#d29922', '#7ee787', '#ff7b72', '#bc8cff'];
+  components.forEach((comp, idx) => {
+    const proj = comp.map(([x, y, z]) => project(x, y, z));
+    if (proj.length < 2) return;
+    const d = proj.map(([x, y], i) => `${i === 0 ? 'M' : 'L'}${x.toFixed(4)},${(-y).toFixed(4)}`).join('');
+    stage.appendChild(ns('path', {
+      d, fill: 'none', stroke: palette[idx % palette.length],
+      'stroke-width': 0.012, 'stroke-linejoin': 'round',
+    }));
+  });
+
+  // Centre label
+  const lbl = ns('text', {
+    x: 0, y: 0.95, 'text-anchor': 'middle', fill: 'currentColor',
+    'font-size': 0.06, opacity: 0.75,
+  });
+  lbl.textContent = entry?.knot_id || entry?.id || '—';
+  stage.appendChild(lbl);
+}
+
+// ── State ────────────────────────────────────────────────────────
+const state = {
+  mode: initial.mode,
+  knotId: initial.knot,
+  chart: initial.chart,
+  scaling: initial.scaling,
+  centre: initial.centre,
+  q: initial.q,
+};
+
+function currentEntries() {
+  if (!WITNESS) return [];
+  const entries = WITNESS.data?.entries || [];
+  const blocks = WITNESS.data?.building_block_knots || [];
+  // Combine; in basis mode prefer building_block_knots, in confined prefer entries
+  if (state.mode === 'basis') {
+    // Building blocks first; then any entry that is *not* a confined composite
+    const seen = new Set(blocks.map(b => b.id));
+    return [...blocks, ...entries.filter(e => !seen.has(e.id) && (e.ell ?? 0) <= 1)];
+  } else {
+    return entries.filter(e => (e.ell ?? 0) >= 1);
+  }
+}
+
+function findEntry(id) {
+  const all = [...(WITNESS.data?.entries || []), ...(WITNESS.data?.building_block_knots || [])];
+  return all.find(e => e.id === id || e.knot_id === id) || all[0];
+}
+
+// ── UI population ────────────────────────────────────────────────
+function populateUI() {
+  const w = WITNESS;
+  const schema = w.data?.schema || {};
+
+  // q params
+  const q0 = w.parameters?.q0;
+  const vol41 = w.parameters?.vol_4_1_input;
+  $('q0-badge').textContent = q0?.toFixed?.(8) ?? '—';
+  $('vol41-badge').textContent = vol41?.toFixed?.(6) ?? '—';
+  const qSlider = $('q-slider');
+  qSlider.value = state.q ?? q0;
+  $('q-readout').textContent = (+qSlider.value).toFixed(6);
+
+  // Mode + knot picker
+  $('mode').value = state.mode;
+  refreshKnotPicker();
+
+  // Chart picker
+  const charts = w.data?.chart_registers || [];
+  const cs = $('chart');
+  cs.innerHTML = '';
+  for (const c of charts) {
+    const o = document.createElement('option');
+    o.value = c.id; o.textContent = c.title;
+    cs.appendChild(o);
+  }
+  cs.value = state.chart || schema.default_chart || charts[0]?.id || 'briggs-klein-A2';
+  state.chart = cs.value;
+
+  // Scaling picker (confined-mode only)
+  const scs = $('scaling');
+  scs.innerHTML = '';
+  for (const s of (w.data?.scaling_formulas || [])) {
+    const o = document.createElement('option');
+    o.value = s.id; o.textContent = s.title;
+    scs.appendChild(o);
+  }
+  scs.value = state.scaling || schema.default_scaling || 'S2';
+  state.scaling = scs.value;
+  $('scaling-row').hidden = state.mode !== 'confined';
+
+  // Centre picker
+  const ces = $('centre');
+  ces.innerHTML = '';
+  for (const c of (w.data?.centre_options || [])) {
+    const o = document.createElement('option');
+    o.value = c.id; o.textContent = c.title;
+    ces.appendChild(o);
+  }
+  ces.value = state.centre || schema.default_centre || 'C6';
+  state.centre = ces.value;
+  $('centre-row').hidden = state.mode !== 'confined';
+
+  // Sources panel
+  const srcDiv = $('sources');
+  srcDiv.innerHTML = '';
+  const dl = document.createElement('dl');
+  dl.className = 'kv';
+  for (const [k, v] of Object.entries(w.data?.sources || {})) {
+    const dt = document.createElement('dt'); dt.textContent = k;
+    const dd = document.createElement('dd'); dd.textContent = v;
+    dl.appendChild(dt); dl.appendChild(dd);
+  }
+  srcDiv.appendChild(dl);
+}
+
+function refreshKnotPicker() {
+  const ks = $('knot');
+  ks.innerHTML = '';
+  for (const e of currentEntries()) {
+    const o = document.createElement('option');
+    o.value = e.id;
+    const lbl = e.knot_id ? `${e.knot_id} — ${e.id}` : e.id;
+    const ame = e.ame_label ? `  [${e.ame_label}]` : '';
+    o.textContent = lbl + ame;
+    ks.appendChild(o);
+  }
+  if (state.knotId && [...ks.options].some(o => o.value === state.knotId)) {
+    ks.value = state.knotId;
+  } else {
+    state.knotId = ks.value;
+  }
+}
+
+// ── Meta panel ───────────────────────────────────────────────────
+function renderMeta(entry) {
+  const dl = $('entry-kv');
+  dl.innerHTML = '';
+  if (!entry) return;
+  const fields = [
+    ['id', entry.id],
+    ['knot', entry.knot_id],
+    ['kind', entry.knot_kind],
+    ['ℓ', entry.ell],
+    ['n strands', entry.n_strands],
+    ['braid word', entry.braid_word ? `[${entry.braid_word.join(',')}]` : '—'],
+    ['Vol_hyp', entry.hyp_volume ?? '—'],
+    ['hyperbolic?', entry.is_hyperbolic ? 'yes' : 'no'],
+    ['AME', entry.ame_label ?? '—'],
+    ['ρ-factor', entry.rho_factor ?? '—'],
+    ['Z, N, A', (entry.Z !== undefined) ? `${entry.Z}, ${entry.N}, ${entry.A}` : '—'],
+    ['flavor', entry.flavor ?? '—'],
+  ];
+  for (const [k, v] of fields) {
+    const dt = document.createElement('dt'); dt.textContent = k;
+    const dd = document.createElement('dd'); dd.textContent = v;
+    dl.appendChild(dt); dl.appendChild(dd);
+  }
+  const m = $('entry-method');
+  m.textContent = entry.methodology || '—';
+  const legend = (WITNESS.data?.methodology_legend || {})[entry.methodology];
+  if (legend) m.title = legend;
+}
+
+// ── Re-render ────────────────────────────────────────────────────
+function rerender() {
+  const entry = findEntry(state.knotId);
+  state.knotId = entry?.id || state.knotId;
+  renderEntry(entry, state.chart, {
+    c5: $('ov-c5').checked,
+    tube: $('ov-tube').checked,
+    vacuum: $('ov-vacuum').checked,
+    wedderburn: $('ov-wedderburn').checked,
+  });
+  renderMeta(entry);
+}
+
+// ── Stable URL builder ───────────────────────────────────────────
+function stableUrl() {
+  const u = new URL(location.href);
+  u.search = '';
+  const sp = u.searchParams;
+  sp.set('mode', state.mode);
+  sp.set('knot', state.knotId);
+  sp.set('chart', state.chart);
+  if (state.mode === 'confined') {
+    sp.set('scaling', state.scaling);
+    sp.set('centre', state.centre);
+  }
+  const qSliderVal = +$('q-slider').value;
+  if (Math.abs(qSliderVal - (WITNESS?.parameters?.q0 || 0)) > 1e-9) {
+    sp.set('q', qSliderVal.toString());
+  }
+  return u.toString();
+}
+
+// ── Wire events ──────────────────────────────────────────────────
+function wire() {
+  $('mode').onchange = () => {
+    state.mode = $('mode').value;
+    $('scaling-row').hidden = state.mode !== 'confined';
+    $('centre-row').hidden = state.mode !== 'confined';
+    refreshKnotPicker();
+    state.knotId = $('knot').value;
+    rerender();
+  };
+  $('knot').onchange = () => { state.knotId = $('knot').value; rerender(); };
+  $('chart').onchange = () => { state.chart = $('chart').value; rerender(); };
+  $('scaling').onchange = () => { state.scaling = $('scaling').value; rerender(); };
+  $('centre').onchange = () => { state.centre = $('centre').value; rerender(); };
+  for (const id of ['ov-c5', 'ov-tube', 'ov-vacuum', 'ov-wedderburn']) {
+    $(id).onchange = rerender;
+  }
+  $('q-slider').oninput = () => {
+    state.q = +$('q-slider').value;
+    $('q-readout').textContent = state.q.toFixed(6);
+    // Recompute hook for kernel — currently triggers re-render only;
+    // when KERNEL is loaded, we'd recompute Markov closure / Wedderburn.
+    rerender();
+  };
+  $('q-reset').onclick = () => {
+    $('q-slider').value = WITNESS.parameters.q0;
+    $('q-slider').dispatchEvent(new Event('input'));
+  };
+  $('copy-link').onclick = async () => {
+    const url = stableUrl();
+    try { await navigator.clipboard.writeText(url); $('copy-link').textContent = '✓ copied'; }
+    catch { prompt('Copy this URL:', url); }
+    setTimeout(() => $('copy-link').textContent = '⎘ link', 1500);
+  };
+}
+
+// ── Boot ─────────────────────────────────────────────────────────
+(async function boot() {
+  try {
+    await loadWitness();
+    await loadKernel(initial.backend);
+    populateUI();
+    wire();
+    rerender();
+  } catch (e) {
+    showErr(e.message || String(e));
+  }
+})();
+</script>
+</body>
+</html>

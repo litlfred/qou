@@ -485,6 +485,7 @@ export default chapter({
         "nuclear-knot-classification",
         "geom-yekutieli-alignment",
         "recursive-atom-knot-atlas",
+        "knot-atlas-viewer-sim",
         "content-scaling-correspondence",
         "partition-sum-proton-residual",
         "np-discrepancy-resolution",

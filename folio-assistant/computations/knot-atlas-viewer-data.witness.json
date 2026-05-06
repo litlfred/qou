@@ -1,0 +1,686 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-06T15:54:49.028170+00:00",
+  "commitSha": "70d3093090cf01e43679c192e074ce6ef84c9716",
+  "assertions": [
+    {
+      "name": "q0_is_from_q_parameter",
+      "computed": 1.1099785955541805,
+      "expected": 1.1099785955541805,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "q_parameter.Q"
+    },
+    {
+      "name": "entries_nonempty",
+      "computed": "ok",
+      "expected": "ok",
+      "passed": true
+    },
+    {
+      "name": "num_entries",
+      "computed": 16,
+      "expected": 16,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "knot-atlas-viewer-data",
+  "scriptFile": "knot_atlas_viewer_data.py",
+  "scriptHash": "2b2a34911910",
+  "scriptCommitSha": "unknown",
+  "description": "Aggregated viewer-side data witness for the recursive-knot-atlas interactive simulator (sim:knot-atlas-viewer). All numeric and knot-identity values are sourced from existing witnesses and q_parameter.py — the simulator HTML must not contain any hardcoded QOU values.",
+  "contentBlock": "sim:knot-atlas-viewer",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "q0_err": 1.3578965598837824e-09,
+    "vol_4_1_input": 2.029883212819307,
+    "mass_ratio_mu_e_input": 206.768283,
+    "hbar_q": 0.09908172643569887,
+    "m_e_MeV": 0.51099895
+  },
+  "data": {
+    "sources": {
+      "q_parameter": "folio-assistant/computations/q_parameter.py",
+      "mass_table_ppb": "folio-assistant/computations/mass-table-ppb.witness.json",
+      "methodology_deprecation": "folio-assistant/computations/methodology-deprecation.witness.json",
+      "gb_filtration": "folio-assistant/computations/gb-filtration-jet-order.witness.json",
+      "confined_particle_registry": "content/quantum-observable-universe/braids-and-knots/confined-particle.md"
+    },
+    "entries": [
+      {
+        "id": "neutrino",
+        "particle": "neutrino",
+        "label_tex": "\\nu",
+        "ell": 0,
+        "n_strands": 1,
+        "braid_word": [],
+        "knot_id": "0_1",
+        "knot_kind": "torus",
+        "torus_pq": [
+          1,
+          0
+        ],
+        "hyp_volume": "0",
+        "is_hyperbolic": false,
+        "ame_value_MeV": 0.0,
+        "ame_label": "\\le 1\\,\\mathrm{eV}",
+        "rho_factor": null,
+        "methodology": "principled-gb-nf",
+        "flavor": null,
+        "parent_id": null
+      },
+      {
+        "id": "photon",
+        "particle": "photon",
+        "label_tex": "\\gamma",
+        "ell": 0,
+        "n_strands": 4,
+        "braid_word": [],
+        "knot_id": "4·0_1",
+        "knot_kind": "disjoint-unknots",
+        "torus_pq": null,
+        "hyp_volume": "0",
+        "is_hyperbolic": false,
+        "ame_value_MeV": 0.0,
+        "ame_label": "0",
+        "rho_factor": null,
+        "methodology": "principled-gb-nf",
+        "flavor": null,
+        "parent_id": null
+      },
+      {
+        "id": "quark",
+        "particle": "quark",
+        "label_tex": "\\mathfrak{q}",
+        "ell": 0,
+        "n_strands": 1,
+        "braid_word": [
+          1
+        ],
+        "knot_id": "0_1",
+        "knot_kind": "confined",
+        "torus_pq": [
+          1,
+          1
+        ],
+        "hyp_volume": null,
+        "is_hyperbolic": false,
+        "ame_value_MeV": null,
+        "ame_label": "(confined)",
+        "rho_factor": null,
+        "methodology": "principled-gb-nf",
+        "flavor": null,
+        "parent_id": null
+      },
+      {
+        "id": "electron",
+        "particle": "electron",
+        "label_tex": "e^{-}",
+        "ell": 1,
+        "n_strands": 2,
+        "braid_word": [
+          1,
+          1,
+          1
+        ],
+        "knot_id": "3_1",
+        "knot_kind": "torus",
+        "torus_pq": [
+          2,
+          3
+        ],
+        "hyp_volume": "0",
+        "is_hyperbolic": false,
+        "ame_value_MeV": 0.51099895,
+        "ame_label": "0.51099895 MeV (anchor)",
+        "rho_factor": null,
+        "methodology": "principled-derivation",
+        "flavor": null,
+        "parent_id": null
+      },
+      {
+        "id": "proton",
+        "particle": "proton",
+        "label_tex": "\\mathfrak{p}",
+        "ell": 1,
+        "n_strands": 3,
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "knot_id": "B_3",
+        "knot_kind": "borromean",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": true,
+        "ame_value_MeV": 938.27208816,
+        "ame_label": "938.272 MeV",
+        "rho_factor": null,
+        "methodology": "principled-derivation",
+        "flavor": "uud",
+        "parent_id": null
+      },
+      {
+        "id": "neutron",
+        "particle": "neutron",
+        "label_tex": "\\mathfrak{n}",
+        "ell": 1,
+        "n_strands": 3,
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "knot_id": "B_3",
+        "knot_kind": "borromean",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": true,
+        "ame_value_MeV": 939.56542052,
+        "ame_label": "939.565 MeV",
+        "rho_factor": null,
+        "methodology": "principled-derivation",
+        "flavor": "udd",
+        "parent_id": null
+      },
+      {
+        "id": "2h",
+        "particle": "2H",
+        "label_tex": "^{2}\\mathrm{H}",
+        "ell": 2,
+        "n_strands": 6,
+        "braid_word": null,
+        "knot_id": "6_2",
+        "knot_kind": "atom-knot",
+        "torus_pq": null,
+        "hyp_volume": "4.400832516123046",
+        "is_hyperbolic": true,
+        "ame_value_MeV": 2.22456612,
+        "ame_label": "2.2246 MeV",
+        "pred_value_MeV": 2.2488207948647343,
+        "err_ppb": 10903103.596999094,
+        "rho_factor": 1,
+        "methodology": "manual-historical-volume-match",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "formula": "1·m_e · Vol(6_2)"
+      },
+      {
+        "id": "3h",
+        "particle": "3H",
+        "label_tex": "^{3}\\mathrm{H}",
+        "ell": 2,
+        "n_strands": 9,
+        "braid_word": null,
+        "knot_id": "8_11",
+        "knot_kind": "atom-knot",
+        "torus_pq": null,
+        "hyp_volume": "8.286316817806593",
+        "is_hyperbolic": true,
+        "ame_value_MeV": 8.4817984,
+        "ame_label": "8.4818 MeV",
+        "pred_value_MeV": 8.46859838653302,
+        "err_ppb": -1556275.3138508755,
+        "rho_factor": 2,
+        "methodology": "manual-historical-volume-match",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "formula": "2·m_e · Vol(8_11)"
+      },
+      {
+        "id": "3he",
+        "particle": "3He",
+        "label_tex": "^{3}\\mathrm{He}",
+        "ell": 2,
+        "n_strands": 9,
+        "braid_word": null,
+        "knot_id": "L6a4",
+        "knot_kind": "atom-knot",
+        "torus_pq": null,
+        "hyp_volume": "7.327724753417752",
+        "is_hyperbolic": true,
+        "ame_value_MeV": 7.7180375,
+        "ame_label": "7.7180 MeV",
+        "pred_value_MeV": 7.48891930977096,
+        "err_ppb": -29686068.54126327,
+        "rho_factor": 2,
+        "methodology": "manual-historical-volume-match",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "formula": "2·m_e · Vol(L6a4)"
+      },
+      {
+        "id": "4he",
+        "particle": "4He",
+        "label_tex": "^{4}\\mathrm{He}",
+        "ell": 2,
+        "n_strands": 12,
+        "braid_word": null,
+        "knot_id": null,
+        "knot_kind": "recursive",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": false,
+        "ame_value_MeV": 28.2956912,
+        "ame_label": "28.2957 MeV",
+        "pred_value_MeV": 29.95567723908384,
+        "err_ppb": 58665682.60696314,
+        "rho_factor": 2,
+        "methodology": "magic-A-formula",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "formula": "2·m_e · 4·8G"
+      },
+      {
+        "id": "8be",
+        "particle": "8Be",
+        "label_tex": "^{8}\\mathrm{Be}",
+        "ell": 2,
+        "n_strands": 24,
+        "braid_word": null,
+        "knot_id": null,
+        "knot_kind": "recursive",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": false,
+        "ame_value_MeV": 56.49951,
+        "ame_label": "56.4995 MeV",
+        "pred_value_MeV": 62.338343981930535,
+        "err_ppb": 103343090.6202644,
+        "rho_factor": null,
+        "methodology": "recursive-on-4He",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 4,
+        "N": 4,
+        "A": 8,
+        "formula": "2·B(⁴He_derived) + 1·c_αα"
+      },
+      {
+        "id": "12c",
+        "particle": "12C",
+        "label_tex": "^{12}\\mathrm{C}",
+        "ell": 2,
+        "n_strands": 36,
+        "braid_word": null,
+        "knot_id": null,
+        "knot_kind": "recursive",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": false,
+        "ame_value_MeV": 92.16175,
+        "ame_label": "92.1617 MeV",
+        "pred_value_MeV": 97.1480002285401,
+        "err_ppb": 54103250.302214324,
+        "rho_factor": null,
+        "methodology": "recursive-on-4He",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "formula": "3·B(⁴He_derived) + 3·c_αα"
+      },
+      {
+        "id": "16o",
+        "particle": "16O",
+        "label_tex": "^{16}\\mathrm{O}",
+        "ell": 2,
+        "n_strands": 48,
+        "braid_word": null,
+        "knot_id": null,
+        "knot_kind": "recursive",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": false,
+        "ame_value_MeV": 127.61929,
+        "ame_label": "127.6193 MeV",
+        "pred_value_MeV": 134.38464597891252,
+        "err_ppb": 53012017.06193875,
+        "rho_factor": null,
+        "methodology": "recursive-on-4He",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "formula": "4·B(⁴He_derived) + 6·c_αα"
+      },
+      {
+        "id": "20ne",
+        "particle": "20Ne",
+        "label_tex": "^{20}\\mathrm{Ne}",
+        "ell": 2,
+        "n_strands": 60,
+        "braid_word": null,
+        "knot_id": null,
+        "knot_kind": "recursive",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": false,
+        "ame_value_MeV": 160.64486,
+        "ame_label": "160.6449 MeV",
+        "pred_value_MeV": 174.0482812330478,
+        "err_ppb": 83435107.9334116,
+        "rho_factor": null,
+        "methodology": "recursive-on-4He",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "formula": "5·B(⁴He_derived) + 10·c_αα"
+      },
+      {
+        "id": "24mg",
+        "particle": "24Mg",
+        "label_tex": "^{24}\\mathrm{Mg}",
+        "ell": 2,
+        "n_strands": 72,
+        "braid_word": null,
+        "knot_id": null,
+        "knot_kind": "recursive",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": false,
+        "ame_value_MeV": 198.2569,
+        "ame_label": "198.2569 MeV",
+        "pred_value_MeV": 216.1389059909459,
+        "err_ppb": 90196134.36377692,
+        "rho_factor": null,
+        "methodology": "recursive-on-4He",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 12,
+        "N": 12,
+        "A": 24,
+        "formula": "6·B(⁴He_derived) + 15·c_αα"
+      },
+      {
+        "id": "40ca",
+        "particle": "40Ca",
+        "label_tex": "^{40}\\mathrm{Ca}",
+        "ell": 2,
+        "n_strands": 120,
+        "braid_word": null,
+        "knot_id": null,
+        "knot_kind": "recursive",
+        "torus_pq": null,
+        "hyp_volume": null,
+        "is_hyperbolic": false,
+        "ame_value_MeV": 342.05212,
+        "ame_label": "342.0521 MeV",
+        "pred_value_MeV": 408.771300060167,
+        "err_ppb": 195055595.79682475,
+        "rho_factor": null,
+        "methodology": "recursive-on-4He",
+        "flavor": null,
+        "parent_id": null,
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "formula": "10·B(⁴He_derived) + 45·c_αα"
+      }
+    ],
+    "building_block_knots": [
+      {
+        "id": "0_1",
+        "label_tex": "0_1",
+        "name": "unknot",
+        "braid_word": [],
+        "n_strands": 1,
+        "is_hyperbolic": false,
+        "torus_pq": [
+          1,
+          0
+        ],
+        "uses": "vacuum, neutrino",
+        "hyp_volume": null
+      },
+      {
+        "id": "3_1",
+        "label_tex": "3_1",
+        "name": "trefoil",
+        "braid_word": [
+          1,
+          1,
+          1
+        ],
+        "n_strands": 2,
+        "is_hyperbolic": false,
+        "torus_pq": [
+          2,
+          3
+        ],
+        "uses": "electron",
+        "hyp_volume": null
+      },
+      {
+        "id": "4_1",
+        "label_tex": "4_1",
+        "name": "figure-eight",
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "n_strands": 3,
+        "is_hyperbolic": true,
+        "torus_pq": null,
+        "uses": "Higgs",
+        "hyp_volume": null
+      },
+      {
+        "id": "B_3",
+        "label_tex": "\\mathcal{B}_3",
+        "name": "borromean-rings",
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "n_strands": 3,
+        "is_hyperbolic": true,
+        "torus_pq": null,
+        "uses": "proton, neutron",
+        "hyp_volume": null
+      },
+      {
+        "id": "L_H",
+        "label_tex": "L_H",
+        "name": "hopf-link",
+        "braid_word": [
+          1,
+          1
+        ],
+        "n_strands": 2,
+        "is_hyperbolic": false,
+        "torus_pq": [
+          2,
+          2
+        ],
+        "uses": "gluon, deuteron binding",
+        "hyp_volume": null
+      },
+      {
+        "id": "6_2",
+        "label_tex": "6_2",
+        "name": "6_2",
+        "braid_word": null,
+        "n_strands": null,
+        "is_hyperbolic": true,
+        "torus_pq": null,
+        "uses": "²H deuteron",
+        "hyp_volume": null
+      },
+      {
+        "id": "8_11",
+        "label_tex": "8_{11}",
+        "name": "8_11",
+        "braid_word": null,
+        "n_strands": null,
+        "is_hyperbolic": true,
+        "torus_pq": null,
+        "uses": "³H tritium",
+        "hyp_volume": null
+      },
+      {
+        "id": "L6a4",
+        "label_tex": "L_{6a4}",
+        "name": "L6a4",
+        "braid_word": null,
+        "n_strands": null,
+        "is_hyperbolic": true,
+        "torus_pq": null,
+        "uses": "³He",
+        "hyp_volume": null
+      }
+    ],
+    "chart_registers": [
+      {
+        "id": "briggs-klein-A1",
+        "title": "Briggs–Klein A1 (real-imaginary slice)",
+        "description": "Affine slice (Re w_1, Im w_1, Re w_2) — flat reference."
+      },
+      {
+        "id": "briggs-klein-A2",
+        "title": "Briggs–Klein A2 (C_5 pentagonal, default)",
+        "description": "(r, arg w_1, Re w_2) — exposes the C_5 symmetry; h=0 is central axis."
+      },
+      {
+        "id": "briggs-klein-A3",
+        "title": "Briggs–Klein A3 (Fubini–Study stereographic)",
+        "description": "FS stereographic projection of CP^1 fibre."
+      },
+      {
+        "id": "hyperbolic-B3",
+        "title": "Hyperbolic B3 (volume-puff skin)",
+        "description": "Conformal puff from Vol_hyp(K); shows hyperbolic-volume backing."
+      },
+      {
+        "id": "polar-knot-projection",
+        "title": "Polar knot projection (2D braid closure)",
+        "description": "Standard 2D Markov-closure rendering for comparison."
+      }
+    ],
+    "scaling_formulas": [
+      {
+        "id": "S1",
+        "title": "h² grade scaling",
+        "description": "Sub-knot radius ∝ h² (Gröbner–Shirshov filtration grade squared).",
+        "formula_tex": "r_i \\propto h_i^2"
+      },
+      {
+        "id": "S2",
+        "title": "Energy-ratio scaling (default)",
+        "description": "Sub-knot radius ∝ E_ℓ(q)/E_{ℓ+1}(q) — matches def:confinement-level.",
+        "formula_tex": "r_i \\propto E_\\ell(q) / E_{\\ell+1}(q)"
+      },
+      {
+        "id": "S3",
+        "title": "q-hook scaling",
+        "description": "Sub-knot radius ∝ [h_x(λ)]_q (q-hook length).",
+        "formula_tex": "r_i \\propto [h_x(\\lambda)]_q"
+      }
+    ],
+    "centre_options": [
+      {
+        "id": "C6",
+        "title": "Unknot at origin (default)",
+        "description": "Categorical centre = vacuum unknot at chart origin."
+      },
+      {
+        "id": "C3",
+        "title": "Wedderburn-block centroid",
+        "description": "Categorical centre = centroid of Wedderburn-block embeddings."
+      },
+      {
+        "id": "C1",
+        "title": "Markov-trace centroid",
+        "description": "Categorical centre = trace-weighted centroid."
+      }
+    ],
+    "methodology_legend": {
+      "principled-derivation": "Knot is closure of an explicit σ-braid word with Vol_hyp at ≥50 dps via hp_volume_of_link_closure.",
+      "principled-gb-nf": "Trivial-NF (single strand or pure identity); closure unknot or disjoint unknots.",
+      "manual-historical-volume-match": "Knot identified in earlier work via volume-match against AME; GB-NF derivation pending.",
+      "magic-A-formula": "Algebraic shell-closure formula A·8G; no single hyperbolic knot.",
+      "recursive-on-4He": "Built from n·⁴He + n_αα·c_αα recursion.",
+      "deprecated-volume-match": "PROVISIONAL — brute-force SnapPy volume search; NOT principled."
+    },
+    "schema": {
+      "version": 1,
+      "entry_fields": [
+        "id",
+        "particle",
+        "label_tex",
+        "ell",
+        "n_strands",
+        "braid_word",
+        "knot_id",
+        "knot_kind",
+        "torus_pq",
+        "hyp_volume",
+        "is_hyperbolic",
+        "ame_value_MeV",
+        "ame_label",
+        "pred_value_MeV",
+        "err_ppb",
+        "rho_factor",
+        "methodology",
+        "flavor",
+        "parent_id",
+        "Z",
+        "N",
+        "A",
+        "formula"
+      ],
+      "url_param_keys": [
+        "knot",
+        "mode",
+        "chart",
+        "scaling",
+        "q",
+        "centre",
+        "view"
+      ],
+      "modes": [
+        "basis",
+        "confined"
+      ],
+      "default_chart": "briggs-klein-A2",
+      "default_scaling": "S2",
+      "default_centre": "C6"
+    },
+    "downstream_consumers": [
+      "folio-assistant/simulators/knot_atlas_viewer.html",
+      "content/quantum-observable-universe/braids-and-knots/knot-atlas-viewer-sim.ts"
+    ]
+  }
+}
