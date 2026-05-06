@@ -143,10 +143,14 @@ def t4_raw(A: int) -> mp.mpf:
     if A < 1:
         return mp.mpf(0)
     from schur_weyl_symbolic import partitions_of
-    from hecke_characters import young_hooks, qfac
+    from hecke_characters import young_hooks
     n = 3 * A
-    nfac_val = mp.mpf(qfac(n))
     denom = Q0 - 1 / Q0
+    # Compute [n]_q! directly in mpmath to preserve 50-dps precision
+    # (avoids SymPy → mpmath conversion). Per Gemini PR #548 high-pri.
+    nfac_val = mp.mpf(1)
+    for k in range(1, n + 1):
+        nfac_val *= (Q0 ** k - 1 / Q0 ** k) / denom
     total = mp.mpf(0)
     for lam in partitions_of(n):
         hooks = young_hooks(lam)

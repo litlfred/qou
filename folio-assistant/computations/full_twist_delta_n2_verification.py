@@ -135,7 +135,9 @@ def main() -> int:
         for lam in parts:
             c = content_sum(lam)
             d = dim_irrep(lam)
-            q_c_at_q0 = float(Q0 ** c) if c >= 0 else 1.0 / float(Q0 ** (-c))
+            # Keep mpf precision (50 dps); mpmath handles negative exponents.
+            # Per Gemini PR #548 medium-pri precision review.
+            q_c_at_q0 = Q0 ** c
             is_invariant = (c == 0)
             rows.append({
                 "lambda": list(lam),
@@ -185,7 +187,7 @@ def main() -> int:
             lam = "(" + ", ".join(map(str, blk["lambda"])) + ")"
             print(f"    {tag}  λ = {lam:<20} c(λ) = {blk['content_sum']:>3}  "
                   f"dim = {blk['dim_irrep']:>4}  "
-                  f"q^c(q_0) = {blk['q_to_c_at_q0']:.6f}")
+                  f"q^c(q_0) = {float(blk['q_to_c_at_q0']):.6f}")
 
     # Categorical-neutrality empirical check at every magic n in range
     print(f"\n  Categorical-neutrality empirical check at magic n in range:")
