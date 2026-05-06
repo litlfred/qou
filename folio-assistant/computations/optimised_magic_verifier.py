@@ -251,6 +251,67 @@ def main(argv: List[str]) -> int:
         json.dump(results, f, indent=2)
     print()
     print("Full report saved to optimised_magic_verifier_report.json")
+
+    # ── Witness emission ─────────────────────────────────────────
+    from witness_base import WitnessBuilder  # noqa: E402
+
+    w = WitnessBuilder("optimised-magic-verifier", engine="python")
+    w.set_description(
+        "Empirical Δi ≤ 1 selection rule: LR-fusion sweep of "
+        "shell-pair indices restricted to |i_N − i_Z| ≤ 1 "
+        "(13 pairs of 49); supports "
+        "conj:double-magic-delta-i-bound."
+    )
+    w.set_content_block("conj:double-magic-delta-i-bound")
+    w.add_parameter("naive_pair_count", len(naive))
+    w.add_parameter("optimised_pair_count", len(opt))
+    w.add_parameter("computed_pair_count", len(computed))
+    w.add_data(
+        "results",
+        [
+            {
+                "i_Z": r.get("i_Z"),
+                "i_N": r.get("i_N"),
+                "n_Z": r.get("n_Z"),
+                "n_N": r.get("n_N"),
+                "status": r.get("status"),
+                "dominant_nu": r.get("dominant_nu"),
+                "dominant_is_self_conj": r.get("dominant_is_self_conj"),
+                "elapsed_sec": r.get("elapsed_sec"),
+            }
+            for r in results
+        ],
+    )
+    sc_count = sum(
+        1 for r in computed if r.get("dominant_is_self_conj")
+    )
+    w.add_data(
+        "summary",
+        {
+            "naive_pair_count": len(naive),
+            "optimised_pair_count": len(opt),
+            "computed_pair_count": len(computed),
+            "dominant_self_conj_count": sc_count,
+            "actual_optimised_sec": actual_optimised,
+            "estimated_naive_sec": naive_estimate,
+            "empirical_speedup":
+                (naive_estimate / actual_optimised)
+                if actual_optimised > 0 else None,
+        },
+    )
+    # Sanity-only assertions: structural invariants of the sweep.
+    w.add_assertion(
+        "Optimised pair count ≤ naive pair count",
+        computed=len(opt) <= len(naive),
+        expected=True,
+    )
+    w.add_assertion(
+        "Every result has a status field",
+        computed=sum(1 for r in results if "status" in r),
+        expected=len(results),
+        tolerance=0,
+    )
+    w.save()
     return 0
 
 
