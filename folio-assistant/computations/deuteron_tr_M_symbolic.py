@@ -61,6 +61,11 @@ from hoefsmit_symbolic import (  # noqa: E402
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from hecke_character_symbolic import atomic_braid_to_crossings  # noqa: E402
 
+# Canonical 50-dps q_0 (full precision; matches y-lambda-mpfr-witness.json
+# and other round-3 scripts). Defined at module level to avoid duplicated
+# magic values across functions.
+Q0_CANONICAL = sp.Float('1.1099785955541805', 50)
+
 
 def main() -> int:
     deut = atomic_braid_to_crossings(1, 1, include_inter=False)
@@ -80,8 +85,7 @@ def main() -> int:
         t0 = time.time()
         chi = chi_lambda_symbolic(shape, deut)
         dt = time.time() - t0
-        q0 = sp.Rational(11097, 10000)
-        chi_q0 = float(sp.N(chi.subs(Q, q0), 30))
+        chi_q0 = float(sp.N(chi.subs(Q, Q0_CANONICAL), 30))
         chi_per_lam[shape] = {
             "f_lambda": f,
             "chi_at_q0": chi_q0,
@@ -96,7 +100,7 @@ def main() -> int:
     dt_total = time.time() - t0
     print(f"  tr_M assembled in {dt_total:.1f}s")
     pole, leading = pole_order_at_zero(trM)
-    val_q0 = float(sp.N(trM.subs(Q, sp.Rational(11097, 10000)), 30))
+    val_q0 = float(sp.N(trM.subs(Q, Q0_CANONICAL), 30))
     print()
     print(f"pole order at q=0   : {pole}")
     print(f"leading coefficient : {leading}")

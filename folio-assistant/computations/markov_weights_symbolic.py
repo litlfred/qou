@@ -52,6 +52,7 @@ import json
 import sys
 import time
 from datetime import datetime, timezone
+from math import factorial
 from pathlib import Path
 
 import sympy as sp
@@ -182,7 +183,6 @@ def y_lambda_symbolic(n: int) -> dict[tuple, sp.Expr]:
     # Normalisation: Σ_λ y_λ · f^λ = tr_M(1) = 1.
     Z = sp.Integer(0)
     for sh in shapes:
-        from math import factorial
         hs, _ = hooks_and_contents(list(sh))
         prod = 1
         for h in hs:

@@ -37,6 +37,23 @@ numerical to 6+ decimal places.
 Cross-validated at $q_0$: all three irreps $\lambda \in \{(3), (2,1),
 (1,1,1)\}$ match `build_seminormal_matrices` within $10^{-6}$.
 
+> **Important (round-3 supersession).** The closed-form
+> $\mathrm{tr}_M$ values shown in the next two sections (proton
+> $\boxed{\frac{q^{20} + q^{18} + 3q^{12} - 3q^{8} - q^{2} - 1}{8q^{10}}}$
+> with leading $-\frac{1}{8}$, and the analogous neutron form) are
+> for the **partition-sum normalisation**
+> $\mathrm{tr}_M^{\text{partition-sum}}(\beta) =
+>  \sum_\lambda \frac{\dim_q(\lambda)^2}{[n]_q!\,f^\lambda} \chi^\lambda(\beta)$,
+> which is **NOT** the canonical Ocneanu/Wenzl Markov trace. They
+> agree only at $q = 1$. The canonical $\mathrm{tr}_M$ closed forms
+> (using Jones-Markov weights $y_\lambda(q)$) are derived in the
+> §Round-3 section below and yield $\mathrm{tr}_M(\text{proton}) =
+>  1.06530622859239\ldots$ at $q_0$ — matching the canonical
+> bridge to 14 decimal places. **Use the round-3 forms for any
+> downstream six-term mass formula computation.** The round-2
+> partition-sum forms remain accurate as a derived quantity but
+> should not be confused with the canonical Markov trace.
+
 **Note (PR #546 round-2 update).**  The earlier draft of this module
 duplicated the seminormal construction.  Per Copilot's review, the
 duplicate has been removed and the matrix builder + braid-character
@@ -45,7 +62,9 @@ q_character_on_braid_word}`.  This guarantees a single source of truth
 for the seminormal matrices and the matrix-multiplication order.  An
 earlier `f^\lambda` bug (using `len(...)` of the 3-tuple returned by
 `standard_young_tableaux` instead of the SYT list itself) was also
-fixed; closed-form constants below reflect the corrected denominator.
+fixed; closed-form constants below reflect the corrected denominator
+**under the partition-sum convention** (not the canonical Markov
+trace — see the round-3 supersession note above).
 
 ## Closed-form Markov trace for proton standalone
 

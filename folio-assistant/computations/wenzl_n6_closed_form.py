@@ -1,14 +1,22 @@
 """Compute symbolic y_lambda(6) as closed-form (s_lambda, Z, chi) tuples
 without aggressive simplification; emit witness with closed forms + numeric q_0 values."""
-import json, sys, time
-from pathlib import Path
-import sympy as sp
-sys.path.insert(0, '/home/user/qou/folio-assistant/computations')
-from markov_weights_symbolic import (Q, schur_principal_symbolic, hooks_and_contents,
-                                       atom_braid_word_3A_to_crossings)
-from hoefsmit_symbolic import chi_lambda_symbolic
-from hecke_characters import partitions_of
+import json
+import sys
+import time
 from math import factorial
+from pathlib import Path
+
+import sympy as sp
+
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+from markov_weights_symbolic import (Q, schur_principal_symbolic,  # noqa: E402
+                                       hooks_and_contents,
+                                       atom_braid_word_3A_to_crossings)
+from hoefsmit_symbolic import chi_lambda_symbolic  # noqa: E402
+from hecke_characters import partitions_of  # noqa: E402
 
 q0 = sp.Float('1.1099785955541805', 50)
 
@@ -43,7 +51,7 @@ for sh in shapes:
     print(f'  y_{str(sh):<22} q0={y_q0[sh]:+.16f}', flush=True)
 
 # Cross-check against bridge witness
-ref_path = '/home/user/qou/folio-assistant/computations/y-lambda-mpfr-witness.json'
+ref_path = HERE / 'y-lambda-mpfr-witness.json'
 ref = json.load(open(ref_path))
 bridge = {tuple(w['partition']): float(w['y_lambda']) for w in ref['tables_by_n']['6']['weights']}
 print('\nDiff vs bridge:')
@@ -75,7 +83,7 @@ print(f'bridge ref            = 0.3882864715477134')
 print(f'diff                  = {abs(trM_q0 - 0.3882864715477134):.2e}')
 
 # Emit witness
-out = Path('/home/user/qou/folio-assistant/computations/wenzl_n6_closed_form.witness.json')
+out = HERE / 'wenzl_n6_closed_form.witness.json'
 witness = {
     'computation': 'wenzl-n6-closed-form',
     'description': (
