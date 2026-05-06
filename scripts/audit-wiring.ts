@@ -200,6 +200,11 @@ function collectWiredWitnesses(): {
   const witnessArrayRe =
     /\bwitness\s*:\s*\[([\s\S]*?)\]/g;
   const witnessInArrayRe = /["']([^"']+\.witness\.json)["']/g;
+  // Witnessed-value registry uses `witnessFile: "..."` (see
+  // content/values/registry.ts).  Each entry is the canonical source for
+  // a `:val[name]` substitution in paper prose, so it counts as a real
+  // wiring path even though no content block carries it directly.
+  const witnessFileRe = /\bwitnessFile\s*:\s*["']([^"']+\.witness\.json)["']/g;
 
   for (const tsf of tsFiles) {
     let src: string;
@@ -224,6 +229,12 @@ function collectWiredWitnesses(): {
       for (const inner of m[1].matchAll(witnessInArrayRe)) {
         witnessesInThisFile.push(inner[1]);
       }
+    }
+    // Witnessed-value registry entries (`witnessFile: "..."`).  Treated
+    // as wired: each registry entry feeds a `:val[name]` substitution
+    // that is rendered into paper prose at build time.
+    for (const m of src.matchAll(witnessFileRe)) {
+      witnessesInThisFile.push(m[1]);
     }
 
     for (const w of witnessesInThisFile) {
@@ -303,8 +314,11 @@ function audit(args: Args): BucketResult {
 
     let witness: any = null;
     let malformed = false;
+    const rawText = (() => {
+      try { return readFileSync(wf, "utf-8"); } catch { return ""; }
+    })();
     try {
-      witness = JSON.parse(readFileSync(wf, "utf-8"));
+      witness = JSON.parse(rawText);
     } catch {
       malformed = true;
     }
@@ -316,9 +330,22 @@ function audit(args: Args): BucketResult {
       continue;
     }
 
-    // Bucket 2: audit-only (must declare auditOnly explicitly)
-    if (!malformed && witness && typeof witness.auditOnly === "string" &&
-        witness.auditOnly.length > 0) {
+    // Bucket 2: audit-only (must declare auditOnly explicitly).  We honor
+    // the field even when the body fails strict JSON.parse (some scripts
+    // emit `-Infinity` literals that are valid Python but invalid JSON);
+    // the auditOnly flag is the author's intentional opt-out from the
+    // orphan tally and should not be defeated by an unrelated body issue.
+    const auditOnlyFromJson =
+      !malformed && witness && typeof witness.auditOnly === "string" &&
+      witness.auditOnly.length > 0
+        ? witness.auditOnly
+        : null;
+    const auditOnlyFromRegex = auditOnlyFromJson
+      ? null
+      : (rawText.match(
+          /"auditOnly"\s*:\s*"([^"\\]+)"/
+        )?.[1] ?? null);
+    if (auditOnlyFromJson || auditOnlyFromRegex) {
       report.totals.auditOnly++;
       dirBucket.auditOnly++;
       continue;
