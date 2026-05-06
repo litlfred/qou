@@ -139,42 +139,16 @@ def t3_markov(n_gens: int) -> mp.mpf:
     return mp.mpf(n_gens * (n_gens - 1) // 2) * Z_MARK ** 4
 
 
+# Shared with atomic_braid_mass_table.py (consolidated per Copilot
+# PR #548 medium-pri).
+from atomic_braid_mass_terms import (  # noqa: E402
+    t4_raw as _t4_raw,
+    t6_canonical_MeV,
+)
+
+
 def t4_raw(A: int) -> mp.mpf:
-    if A < 1:
-        return mp.mpf(0)
-    from schur_weyl_symbolic import partitions_of
-    from hecke_characters import young_hooks
-    n = 3 * A
-    denom = Q0 - 1 / Q0
-    # Compute [n]_q! directly in mpmath to preserve 50-dps precision
-    # (avoids SymPy → mpmath conversion). Per Gemini PR #548 high-pri.
-    nfac_val = mp.mpf(1)
-    for k in range(1, n + 1):
-        nfac_val *= (Q0 ** k - 1 / Q0 ** k) / denom
-    total = mp.mpf(0)
-    for lam in partitions_of(n):
-        hooks = young_hooks(lam)
-        dim_q = nfac_val
-        for h in hooks:
-            qh = (Q0 ** h - 1 / Q0 ** h) / denom
-            dim_q = dim_q / qh
-        total += 1 / dim_q
-    return total
-
-
-def t6_canonical_MeV(A: int) -> mp.mpf:
-    path = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
-    if not path.exists():
-        return mp.mpf(0)
-    d = json.loads(path.read_text())
-    for r in d.get("results_by_atom", []):
-        try:
-            entry_A = int(r["atom"].split("=")[1])
-            if entry_A == A:
-                return mp.mpf(r["term6_b_pred_mev_50dps"])
-        except (KeyError, IndexError, ValueError):
-            continue
-    return mp.mpf(0)
+    return _t4_raw(A, Q0)
 
 
 def t1_for_mode(mode: str, atom: str, info: dict,
@@ -305,9 +279,10 @@ def main() -> int:
                 print(f"  → No mode in the sweep beats legacy "
                       f"(legacy is {-improvement:.4f}pp better).")
 
-    witness = {
-        "computation": "atomic-braid-mass-table-modes-sweep",
-        "description": (
+    # Emit via WitnessBuilder (canonical schema).  Per Copilot PR #548.
+    from witness_base import WitnessBuilder
+    w = (WitnessBuilder("atomic-braid-mass-table-modes-sweep", engine="mpmath")
+         .set_description(
             "T1 modes sweep for the atomic-braid six-term mass "
             "formula. Tests seven T1 constructions (disjoint, "
             "disjoint × Jones, disjoint × canonical a_k, a_k alone, "
@@ -315,30 +290,26 @@ def main() -> int:
             "per-atom + mean err% vs CODATA, with proton-only "
             "calibration per mode. Identifies which T1 construction "
             "is closest to legacy GS-NF (or beyond)."
-        ),
-        "reference_blocks": [
-            "thm:knot-mass-formula-unified",
-            "prop:markov-trace-axiomatic-closed-form",
-            "prop:markov-trace-recursive-reducer",
-            "prop:jet-filtered-knot-factor",
-            "prop:categorical-mass-markov",
-        ],
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "parameters": {
-            "q_0": str(Q0),
-            "abs_tr_M_atomic_p": str(tr_p),
-            "abs_tr_M_atomic_n": str(tr_n),
-            "modes": modes,
-        },
-        "by_mode": summary,
-        "best_mode": best_mode[0],
-        "legacy_GS_NF_mean_abs_err_pct": (
-            str(legacy_mean) if legacy_mean is not None else None
-        ),
-        "all_passed": True,
-    }
-    out = HERE / "atomic-braid-mass-table-modes-sweep.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+         )
+         .set_content_block("prop:atomic-mass-gb-nf"))
+    w.parameters.update({
+        "q_0": str(Q0),
+        "abs_tr_M_atomic_p": str(tr_p),
+        "abs_tr_M_atomic_n": str(tr_n),
+        "modes": modes,
+    })
+    w.add_data("reference_blocks", [
+        "thm:knot-mass-formula-unified",
+        "prop:markov-trace-axiomatic-closed-form",
+        "prop:markov-trace-recursive-reducer",
+        "prop:jet-filtered-knot-factor",
+        "prop:categorical-mass-markov",
+    ])
+    w.add_data("by_mode", summary)
+    w.add_data("best_mode", best_mode[0])
+    w.add_data("legacy_GS_NF_mean_abs_err_pct",
+               str(legacy_mean) if legacy_mean is not None else None)
+    out = w.save()
     print(f"\n  Witness: {out}")
     return 0
 

@@ -2,7 +2,7 @@
 """
 Full-twist Δ_n² scalar verification compute.
 
-Per `prop:categorical-neutrality-saturated-shells`, the full-twist
+Per `conj:categorical-neutrality-saturated-shells`, the full-twist
 generator Δ_n² ∈ Z(B_n) ↪ Z(H_n(q)) acts on each Wedderburn block
 V_λ by the central scalar q^{c(λ)}, where
 
@@ -55,50 +55,18 @@ q = sp.symbols("q", positive=True)
 Q0 = mp.mpf(str(Q_MP))
 
 
-# Magic-shell nucleon counts (per prop:categorical-neutrality-saturated-shells).
+# Magic-shell nucleon counts (per conj:categorical-neutrality-saturated-shells).
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
 
 
-def partitions_of(n: int) -> list[tuple[int, ...]]:
-    """Enumerate partitions of n (non-increasing tuples)."""
-    if n == 0:
-        return [()]
-    parts: list[tuple[int, ...]] = []
-
-    def go(remaining: int, max_part: int, prefix: tuple[int, ...]) -> None:
-        if remaining == 0:
-            parts.append(prefix)
-            return
-        for k in range(min(remaining, max_part), 0, -1):
-            go(remaining - k, k, prefix + (k,))
-
-    go(n, n, ())
-    return parts
+# Partition + hook-length utilities — shared with schur_weyl_symbolic
+# (centralized per Gemini PR #548 medium-pri).
+from schur_weyl_symbolic import partitions_of, hook_lengths  # noqa: E402
 
 
 def content_sum(lam: tuple[int, ...]) -> int:
     """c(λ) = Σ_{(i,j) ∈ λ} (j - i), 0-indexed."""
     return sum(j - i for i, row in enumerate(lam) for j in range(row))
-
-
-def hook_lengths(lam: tuple[int, ...]) -> list[int]:
-    """h(x) = (arm + leg + 1) for each cell x of λ."""
-    parts = list(lam)
-    n = len(parts)
-    hooks: list[int] = []
-    # conjugate (column lengths)
-    if not parts:
-        return hooks
-    cols = [0] * parts[0]
-    for r in parts:
-        for j in range(r):
-            cols[j] += 1
-    for i, row in enumerate(parts):
-        for j in range(row):
-            arm = row - 1 - j
-            leg = cols[j] - 1 - i
-            hooks.append(arm + leg + 1)
-    return hooks
 
 
 def dim_irrep(lam: tuple[int, ...]) -> int:
@@ -109,9 +77,8 @@ def dim_irrep(lam: tuple[int, ...]) -> int:
         return 1
     from math import factorial
     fact_n = factorial(n)
-    hooks = hook_lengths(lam)
     prod = 1
-    for h in hooks:
+    for h in hook_lengths(lam):
         prod *= h
     return fact_n // prod
 
@@ -119,7 +86,7 @@ def dim_irrep(lam: tuple[int, ...]) -> int:
 def main() -> int:
     print("=" * 96)
     print("  Full-twist Δ_n² scalar verification")
-    print("  Per prop:categorical-neutrality-saturated-shells:")
+    print("  Per conj:categorical-neutrality-saturated-shells:")
     print("    Δ_n² acts on V_λ by q^{c(λ)}; trivial action iff c(λ) = 0.")
     print("=" * 96)
     print(f"\n  Substrate q_0 = {Q0}")
@@ -130,81 +97,97 @@ def main() -> int:
     for n in range(1, 13):
         parts = partitions_of(n)
         rows = []
-        invariant_dim = 0
-        total_dim = 0
+        invariant_sum_dim = 0
+        invariant_sum_dim_sq = 0
+        sum_dim_irrep = 0
+        sum_dim_irrep_sq = 0
         for lam in parts:
             c = content_sum(lam)
             d = dim_irrep(lam)
             # Keep mpf precision (50 dps); mpmath handles negative exponents.
-            # Per Gemini PR #548 medium-pri precision review.
+            # Per Gemini PR #548 medium-pri.  Convert to str for JSON.
             q_c_at_q0 = Q0 ** c
             is_invariant = (c == 0)
             rows.append({
                 "lambda": list(lam),
                 "content_sum": c,
                 "dim_irrep": d,
-                "q_to_c_at_q0": q_c_at_q0,
+                "q_to_c_at_q0_50dps": str(q_c_at_q0),
                 "is_delta_invariant": is_invariant,
             })
-            total_dim += d
+            sum_dim_irrep += d
+            sum_dim_irrep_sq += d * d
             if is_invariant:
-                invariant_dim += d
+                invariant_sum_dim += d
+                invariant_sum_dim_sq += d * d
         is_magic = n in MAGIC
-        invariant_ratio = invariant_dim / total_dim if total_dim else 0.0
+        # |S_n| = n! = Σ dim(V_λ)² (true regular-rep dimension).
+        # Σ dim(V_λ) is a separate, smaller quantity.  Per Copilot
+        # PR #548 — both are reported so callers don't conflate.
+        from math import factorial
+        Sn_order = factorial(n)
+        invariant_ratio_dim_sq = (
+            invariant_sum_dim_sq / sum_dim_irrep_sq if sum_dim_irrep_sq else 0.0
+        )
         results[n] = {
             "n": n,
             "n_partitions": len(parts),
-            "total_dim": total_dim,
-            "invariant_dim": invariant_dim,
-            "invariant_ratio": invariant_ratio,
+            "Sn_order_factorial": Sn_order,         # = n! = Σ dim(V_λ)²
+            "sum_dim_irrep": sum_dim_irrep,         # Σ dim(V_λ)
+            "sum_dim_irrep_sq": sum_dim_irrep_sq,   # = n! by Burnside
+            "invariant_sum_dim": invariant_sum_dim,        # Σ_{c=0} dim
+            "invariant_sum_dim_sq": invariant_sum_dim_sq,  # Σ_{c=0} dim²
+            "invariant_ratio_dim_sq": invariant_ratio_dim_sq,
             "is_magic_shell": is_magic,
             "blocks": rows,
         }
 
     # Summary table
-    print(f"\n  Per-n summary (n_partitions, |Sym(n)|, Δ_n²-invariant dim, "
-          f"ratio, magic):")
-    print(f"  {'n':>3}{'#λ':>5}{'|S_n|':>8}{'inv_dim':>10}{'ratio':>10}"
-          f"{'magic?':>8}")
-    print("  " + "-" * 50)
+    print(f"\n  Per-n summary (n_partitions, |S_n|=n!, Σ dim(V_λ), "
+          f"Δ_n²-invariant Σ dim², ratio, magic):")
+    print(f"  {'n':>3}{'#λ':>5}{'|S_n|=n!':>10}{'Σ dim':>10}"
+          f"{'inv Σ dim²':>14}{'ratio':>10}{'magic?':>8}")
+    print("  " + "-" * 60)
     for n, r in results.items():
         flag = "✓" if r["is_magic_shell"] else " "
-        print(f"  {n:>3}{r['n_partitions']:>5}{r['total_dim']:>8}"
-              f"{r['invariant_dim']:>10}{r['invariant_ratio']:>10.4f}"
-              f"{flag:>8}")
+        print(f"  {n:>3}{r['n_partitions']:>5}{r['Sn_order_factorial']:>10}"
+              f"{r['sum_dim_irrep']:>10}{r['invariant_sum_dim_sq']:>14}"
+              f"{r['invariant_ratio_dim_sq']:>10.4f}{flag:>8}")
 
     # Detail at n = 2 (magic) and n = 12 (atomic-braid ⁴He)
     for n_focus in [2, 6, 9, 12]:
         print(f"\n  ── n = {n_focus} detail ──")
         r = results[n_focus]
         print(f"    n_partitions = {r['n_partitions']}, "
-              f"|S_n| = {r['total_dim']}, "
-              f"Δ_n²-inv dim = {r['invariant_dim']} "
-              f"(ratio {r['invariant_ratio']:.4f}), "
+              f"|S_n| = n! = {r['Sn_order_factorial']}, "
+              f"Σ dim(V_λ) = {r['sum_dim_irrep']}, "
+              f"Δ_n²-inv Σ dim² = {r['invariant_sum_dim_sq']} "
+              f"(ratio {r['invariant_ratio_dim_sq']:.4f}), "
               f"magic = {r['is_magic_shell']}")
         for blk in r["blocks"]:
             tag = "★" if blk["is_delta_invariant"] else " "
             lam = "(" + ", ".join(map(str, blk["lambda"])) + ")"
+            q_c_str = blk['q_to_c_at_q0_50dps']
             print(f"    {tag}  λ = {lam:<20} c(λ) = {blk['content_sum']:>3}  "
                   f"dim = {blk['dim_irrep']:>4}  "
-                  f"q^c(q_0) = {float(blk['q_to_c_at_q0']):.6f}")
+                  f"q^c(q_0) ≈ {float(q_c_str):.6f}")
 
     # Categorical-neutrality empirical check at every magic n in range
     print(f"\n  Categorical-neutrality empirical check at magic n in range:")
-    print(f"  {'n':>3}{'invariant_dim':>16}{'total_dim':>12}{'predicate':>16}")
+    print(f"  {'n':>3}{'inv Σ dim²':>14}{'|S_n|=n!':>12}{'predicate':>16}")
     print("  " + "-" * 50)
     magic_findings = {}
     for n, r in results.items():
         if not r["is_magic_shell"]:
             continue
-        has_inv = r["invariant_dim"] > 0
+        has_inv = r["invariant_sum_dim_sq"] > 0
         magic_findings[n] = {
-            "invariant_dim": r["invariant_dim"],
-            "total_dim": r["total_dim"],
+            "invariant_sum_dim_sq": r["invariant_sum_dim_sq"],
+            "Sn_order": r["Sn_order_factorial"],
             "scalar_predicate_realisable_at_generic_q": has_inv,
         }
         verdict = "realisable" if has_inv else "EMPTY (Φ_n=0?)"
-        print(f"  {n:>3}{r['invariant_dim']:>16}{r['total_dim']:>12}"
+        print(f"  {n:>3}{r['invariant_sum_dim_sq']:>14}{r['Sn_order_factorial']:>12}"
               f"{verdict:>16}")
 
     # Structural finding (not a CI failure): the *generic-q scalar*
@@ -228,46 +211,44 @@ def main() -> int:
     print(f"    This is an open structural question; the witness records")
     print(f"    the c(λ), q^c(λ), and dim(V_λ) data needed to investigate.")
 
-    witness = {
-        "computation": "full-twist-delta-n2-verification",
-        "description": (
+    # Emit via WitnessBuilder (canonical schema).  Per Copilot PR #548.
+    from witness_base import WitnessBuilder
+    w = (WitnessBuilder("full-twist-delta-n2-verification", engine="mpmath")
+         .set_description(
             "Empirical verification of the full-twist Δ_n² scalar "
             "action q^{c(λ)} per Wedderburn block V_λ ↪ H_n(q). "
             "Tabulates c(λ) for every partition λ ⊢ n at n ∈ "
             "{1,...,12}; identifies the Δ_n²-invariant subspace "
             "(c(λ) = 0); records magic-n empirical realisability "
             "of the categorical-neutrality predicate "
-            "(prop:categorical-neutrality-saturated-shells). "
+            "(conj:categorical-neutrality-saturated-shells). "
             "Structural finding: at magic n = 2 the invariant "
             "subspace is empty under pure-scalar q^c(λ) action, "
             "indicating the conjecture must hold via a refined "
             "mechanism (root-of-unity specialisation, sum cancellation, "
             "or a non-scalar action component captured in T2/T3)."
-        ),
-        "reference_blocks": [
-            "prop:categorical-neutrality-saturated-shells",
-            "conj:mass-endomorphism",
-            "prop:atomic-mass-gb-nf",
-        ],
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "parameters": {
-            "q_0": str(Q0),
-            "magic_nucleon_counts": sorted(MAGIC),
-            "n_range_swept": [1, 12],
-        },
-        "results_by_n": results,
-        "magic_findings": magic_findings,
-        "structural_finding": (
-            "At magic n=2 no λ has c(λ) = 0; pure scalar Δ_n² action "
-            "would force Φ_n = 0. The categorical-neutrality "
-            "proposition therefore holds via a refined mechanism — "
-            "either q at a root of unity, sum cancellation, or a "
-            "non-scalar action component."
-        ),
-        "all_passed": True,  # informational compute, not a pass/fail gate
-    }
-    out = HERE / "full-twist-delta-n2-verification.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+         )
+         .set_content_block("conj:categorical-neutrality-saturated-shells"))
+    w.parameters.update({
+        "q_0": str(Q0),
+        "magic_nucleon_counts": sorted(MAGIC),
+        "n_range_swept": [1, 12],
+    })
+    w.add_data("reference_blocks", [
+        "conj:categorical-neutrality-saturated-shells",
+        "conj:mass-endomorphism",
+        "prop:atomic-mass-gb-nf",
+    ])
+    w.add_data("results_by_n", results)
+    w.add_data("magic_findings", magic_findings)
+    w.add_data("structural_finding",
+        "At magic n=2 no λ has c(λ) = 0; pure scalar Δ_n² action "
+        "would force Φ_n = 0. The categorical-neutrality "
+        "proposition therefore holds via a refined mechanism — "
+        "either q at a root of unity, sum cancellation, or a "
+        "non-scalar action component."
+    )
+    out = w.save()
     print(f"\n  Witness: {out}")
     return 0
 

@@ -11,7 +11,7 @@ Re-derives the six-term mass formula using:
     (per `prop:jet-filtered-knot-factor` and the H_3(R,q)
     crossing-balance identity δV_pn = h/2).
   • Full-twist Δ_n² action at saturated shells
-    (per `prop:categorical-neutrality-saturated-shells`):
+    (per `conj:categorical-neutrality-saturated-shells`):
     Δ_n²·Φ_n = Φ_n at every magic n ∈ {2, 8, 20, 28, 50, 82, 126},
     so the saturated-shell mass is a fixed point of the
     full-twist scalar action.
@@ -179,7 +179,7 @@ def jones_quotient_factor(atom_label: str, Z: int, N: int) -> tuple[mp.mpf, str]
 def full_twist_scalar(A: int) -> mp.mpf:
     """Δ_n² scalar action at the categorical level n = 3A.
 
-    Per `prop:categorical-neutrality-saturated-shells`,
+    Per `conj:categorical-neutrality-saturated-shells`,
     Δ_n² · Φ_n = Φ_n at magic n ∈ {2, 8, 20, 28, 50, 82, 126},
     i.e. the action is the IDENTITY (scalar 1) at saturation.
 
@@ -230,50 +230,16 @@ def t3_markov(n_gens: int) -> mp.mpf:
     return mp.mpf(n_gens * (n_gens - 1) // 2) * Z_MARK ** 4
 
 
+# T4, T6: shared with atomic_braid_mass_table_modes_sweep via
+# atomic_braid_mass_terms (consolidated per Gemini PR #548 medium-pri).
+from atomic_braid_mass_terms import (  # noqa: E402
+    t4_raw as _t4_raw,
+    t6_canonical_MeV,
+)
+
+
 def t4_raw(A: int) -> mp.mpf:
-    if A < 1:
-        return mp.mpf(0)
-    from schur_weyl_symbolic import partitions_of
-    from hecke_characters import young_hooks
-    n = 3 * A
-    denom = Q0 - 1 / Q0
-    # Compute [n]_q! directly in mpmath to preserve 50-dps precision
-    # (avoids SymPy → mpmath conversion). Per Gemini PR #548 high-pri.
-    nfac_val = mp.mpf(1)
-    for k in range(1, n + 1):
-        nfac_val *= (Q0 ** k - 1 / Q0 ** k) / denom
-    total = mp.mpf(0)
-    for lam in partitions_of(n):
-        hooks = young_hooks(lam)
-        dim_q = nfac_val
-        for h in hooks:
-            qh = (Q0 ** h - 1 / Q0 ** h) / denom
-            dim_q = dim_q / qh
-        total += 1 / dim_q
-    return total
-
-
-def t6_canonical_MeV(A: int) -> mp.mpf:
-    """Canonical T6 cyclotomic residue tail per A in MeV.
-
-    Loads from term6-habiro-residue-mpfr-50dps.witness.json (the
-    canonical witness used by paper_six_term_isotope_sweep) which
-    keys per-atom labels like 'A=1', 'A=2', etc."""
-    path = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
-    if not path.exists():
-        return mp.mpf(0)
-    try:
-        d = json.loads(path.read_text())
-    except json.JSONDecodeError:
-        return mp.mpf(0)
-    for r in d.get("results_by_atom", []):
-        try:
-            entry_A = int(r["atom"].split("=")[1])
-            if entry_A == A:
-                return mp.mpf(r["term6_b_pred_mev_50dps"])
-        except (KeyError, IndexError, ValueError):
-            continue
-    return mp.mpf(0)
+    return _t4_raw(A, Q0)
 
 
 # ── Assembly ───────────────────────────────────────────────────
@@ -421,58 +387,59 @@ def main() -> int:
               f"{M_pred:>12.3f}{err:>9.3f}%"
               f"{leg_pred:>14.3f}{leg_err:>13.3f}%")
 
-    witness = {
-        "computation": "atomic-braid-mass-table",
-        "description": (
+    # Emit witness via WitnessBuilder (canonical schema; staleness
+    # detection via scriptHash).  Per Copilot PR #548 medium-pri
+    # comments on schema compliance.
+    from witness_base import WitnessBuilder
+    w = (WitnessBuilder("atomic-braid-mass-table", engine="mpmath")
+         .set_description(
             "Six-term mass formula re-derived using the atomic-braid "
             "Markov-trace anchor (PR #534/#547) with inter-carrier "
             "coupling via the quotient-braid Jones-polynomial factor "
             "a(Z, N) = J_{bar β}(q) (Δ_I knot operator, per "
             "prop:jet-filtered-knot-factor) and the full-twist Δ_n² "
             "saturated-shell scalar (per "
-            "prop:categorical-neutrality-saturated-shells). "
+            "conj:categorical-neutrality-saturated-shells). "
             "T1 = |tr_M(p)|^Z · |tr_M(n)|^N · |a(Z, N)| · Δ_n²-scalar. "
             "T2, T3 are Markov-axiom values for n_gens = 3A-1. "
             "T4 = Frobenius codim. T6 = cyclotomic tail. "
             "Calibration: proton-only."
+         )
+         .set_content_block("prop:atomic-mass-gb-nf"))
+    w.parameters.update({
+        "q_0": str(Q0),
+        "h": str(H_VAL),
+        "z": str(Z_MARK),
+        "m_e_MeV": str(M_E_MEV),
+        "E_0_MeV_proton_anchored": str(E_0),
+        "abs_tr_M_atomic_p": str(tr_p),
+        "abs_tr_M_atomic_n": str(tr_n),
+        "magic_shells_used": sorted(MAGIC_NUCLEON_COUNTS),
+        "jones_quotient_table": {
+            "A=1": "1",
+            "A=2": "1",
+            "A=3": "1 - h^2",
+            "A=4": "(1 - h^2)^2",
+            "A>=5": "(1 - h^2)^(A-2) [extrapolation, open]",
+        },
+    })
+    w.add_data("reference_blocks", [
+        "thm:knot-mass-formula-unified",
+        "prop:markov-trace-axiomatic-closed-form",
+        "prop:markov-trace-recursive-reducer",
+        "prop:jet-filtered-knot-factor",
+        "conj:categorical-neutrality-saturated-shells",
+        "prop:knot-operator-transition",
+        "prop:categorical-mass-markov",
+    ])
+    w.add_data("rows", rows)
+    w.add_data("summary", {
+        "mean_abs_err_pct_strategy3": str(mean_atomic),
+        "mean_abs_err_pct_legacy_GS_NF": (
+            str(legacy_mean) if legacy_mean is not None else None
         ),
-        "reference_blocks": [
-            "thm:knot-mass-formula-unified",
-            "prop:markov-trace-axiomatic-closed-form",
-            "prop:markov-trace-recursive-reducer",
-            "prop:jet-filtered-knot-factor",
-            "prop:categorical-neutrality-saturated-shells",
-            "prop:knot-operator-transition",
-            "prop:categorical-mass-markov",
-        ],
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "parameters": {
-            "q_0": str(Q0),
-            "h": str(H_VAL),
-            "z": str(Z_MARK),
-            "m_e_MeV": str(M_E_MEV),
-            "E_0_MeV_proton_anchored": str(E_0),
-            "abs_tr_M_atomic_p": str(tr_p),
-            "abs_tr_M_atomic_n": str(tr_n),
-            "magic_shells_used": sorted(MAGIC_NUCLEON_COUNTS),
-            "jones_quotient_table": {
-                "A=1": "1",
-                "A=2": "1",
-                "A=3": "1 - h^2",
-                "A=4": "(1 - h^2)^2",
-                "A>=5": "(1 - h^2)^(A-2) [extrapolation, open]",
-            },
-        },
-        "rows": rows,
-        "summary": {
-            "mean_abs_err_pct_strategy3": str(mean_atomic),
-            "mean_abs_err_pct_legacy_GS_NF": (
-                str(legacy_mean) if legacy_mean is not None else None
-            ),
-        },
-    }
-    out = HERE / "atomic-braid-mass-table.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    })
+    out = w.save()
     print(f"\n  Witness: {out}")
     return 0
 
