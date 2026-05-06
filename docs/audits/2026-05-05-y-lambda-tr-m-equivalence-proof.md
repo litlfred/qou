@@ -8,25 +8,29 @@
 
 Throughout, fix the **integer Laurent ring**
 $$
-R \;=\; \mathbb{Z}\big[t,\,t^{-1}\big],\qquad t = q^{1/2},
+R \;=\; \mathbb{Z}\big[r,\,r^{-1}\big],\qquad r = q^{1/2},\quad r^2 = q,
 $$
-so $q = t^2$ and the Markov parameter $z = 1/(t + t^{-1})$.
+where $r$ is the **spinor information rate** — the eigenvalue of
+the elementary half-twist on the spin-½ fundamental rep of
+$\mathrm{SU}_q(2)$ (see [`notation-register.md`](../../content/quantum-observable-universe/notation/notation-register.md) Ch 4
+and [`notation-collisions.md`](../../content/quantum-observable-universe/notation/notation-collisions.md)).
+The Markov parameter is $z = 1/(r + r^{-1})$.
 
 The seminormal Hoefsmit matrices live in $\mathrm{Frac}(R)$ since the
 2×2 blocks invert factors $(1 - q^{2\rho})$. The Wedderburn weights
 $y_\lambda(q)$ also live in $\mathrm{Frac}(R)$ (they are explicit
-quotients of integer Laurent polynomials in $t$).
+quotients of integer Laurent polynomials in $r$).
 
 **Important:** all polynomial identities below hold in $R$ itself,
 not just in $\mathrm{Frac}(R)$. By base-change they descend to
 $R \otimes_\mathbb{Z} S$ for **any** commutative ring $S$ — in
-particular to $\mathbb{F}_p[t,t^{-1}]$ for any prime $p$ where the
+particular to $\mathbb{F}_p[r,r^{-1}]$ for any prime $p$ where the
 relevant denominators do not vanish.
 
 ## Statement
 
 Let $H_n(q)$ be the Iwahori-Hecke algebra over $\mathrm{Frac}(R)$
-with Markov parameter $z = 1/(t + t^{-1})$. Let $y_\lambda(q)$
+with Markov parameter $z = 1/(r + r^{-1})$. Let $y_\lambda(q)$
 denote the Wedderburn weight in the decomposition
 $\mathrm{tr}_M = \sum_{\lambda \vdash n} y_\lambda(q) \cdot \chi^\lambda$.
 
@@ -87,7 +91,7 @@ $\square$
 For $n = 3$ ($\lambda \in \{(3), (2,1), (1,1,1)\}$), write
 $y_\lambda^A = P_\lambda^A / Q_\lambda^A$ and
 $y_\lambda^B = P_\lambda^B / Q_\lambda^B$ as **integer** Laurent
-polynomials $P, Q \in R = \mathbb{Z}[t, t^{-1}]$. Then sympy's
+polynomials $P, Q \in R = \mathbb{Z}[r, r^{-1}]$. Then sympy's
 `sp.expand` reduces the cleared-denominator form
 
 $$
@@ -102,11 +106,11 @@ to **exactly** $0$ as a Laurent polynomial in $R$:
 | $(2,1)$ | $0$ ✓ | ✓ |
 | $(1,1,1)$ | $0$ ✓ | ✓ |
 
-This is a **polynomial identity** in $\mathbb{Z}[t, t^{-1}]$, hence
+This is a **polynomial identity** in $\mathbb{Z}[r, r^{-1}]$, hence
 holds **in any commutative ring** by base-change:
 
 $$
-\Delta_\lambda \;=\; 0 \;\;\text{in}\;\; S[t, t^{-1}] \;\;\text{for all commutative}\; S,
+\Delta_\lambda \;=\; 0 \;\;\text{in}\;\; S[r, r^{-1}] \;\;\text{for all commutative}\; S,
 $$
 
 including $S = \mathbb{F}_p$ for every prime $p$. Therefore

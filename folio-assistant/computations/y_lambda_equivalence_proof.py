@@ -66,30 +66,33 @@ def main() -> int:
 
     print()
     print("Per-shape POLYNOMIAL identity check (works over any base ring):")
-    print("  Cleared form  P^A · Q^B − P^B · Q^A ∈ Z[q^{±1/2}]  must be 0.")
+    print("  Cleared form  P^A · Q^B − P^B · Q^A ∈ Z[r, r^{-1}]  must be 0.")
     print()
 
-    # Use t = q^{1/2} so everything is a Laurent polynomial in t.
-    t = sp.Symbol("t", positive=True)
+    # r = q^{1/2}, the spinor information rate (eigenvalue of the
+    # elementary half-twist on the spin-½ fundamental rep).  Per
+    # `notation-register.md` Ch 4 and `notation-collisions.md` this
+    # is the canonical paper-wide variable; r^2 = q.
+    r_sym = sp.Symbol("r", positive=True)
     all_zero = True
     diffs = {}
     for shape in y_A:
-        # Substitute q = t^2 to remove sqrt; multiply through by a common
-        # power of t to clear negative exponents → polynomial in t with
+        # Substitute q = r^2 to remove sqrt; multiply through by a common
+        # power of r to clear negative exponents → polynomial in r with
         # INTEGER coefficients (independent of base field).
-        ya_t = sp.expand(y_A[shape].subs(Q, t**2))
-        yb_t = sp.expand(y_B[shape].subs(Q, t**2))
-        Pa, Qa = sp.fraction(sp.together(ya_t))
-        Pb, Qb = sp.fraction(sp.together(yb_t))
+        ya_r = sp.expand(y_A[shape].subs(Q, r_sym**2))
+        yb_r = sp.expand(y_B[shape].subs(Q, r_sym**2))
+        Pa, Qa = sp.fraction(sp.together(ya_r))
+        Pb, Qb = sp.fraction(sp.together(yb_r))
         # The identity to check:  Pa·Qb − Pb·Qa  ≡ 0  as a Laurent
-        # polynomial in t with integer coefficients.
+        # polynomial in r with integer coefficients.
         cross = sp.expand(Pa * Qb - Pb * Qa)
-        # Multiply by a positive power of t to convert to a true
+        # Multiply by a positive power of r to convert to a true
         # polynomial (no negative exponents) — this preserves the
         # zero-or-nonzero status.
-        cross_poly = sp.expand(cross * t**100)
+        cross_poly = sp.expand(cross * r_sym**100)
         try:
-            poly = sp.Poly(cross_poly, t, domain="ZZ")
+            poly = sp.Poly(cross_poly, r_sym, domain="ZZ")
             is_zero = poly.is_zero
             coeffs_clean_int = all(c.is_Integer for c in poly.all_coeffs()) if not is_zero else True
         except sp.PolynomialError:
@@ -109,11 +112,11 @@ def main() -> int:
     print()
     if all_zero:
         print("  ✓ POLYNOMIAL EQUIVALENCE PROVED:")
-        print("    P^A_λ · Q^B_λ − P^B_λ · Q^A_λ ≡ 0 in Z[q^{±1/2}].")
+        print("    P^A_λ · Q^B_λ − P^B_λ · Q^A_λ ≡ 0 in Z[r, r^{-1}].")
         print("    By base change, the same identity holds in")
-        print("    R[q^{±1/2}] for ANY commutative ring R, including F_p.")
-        print("    Hence y_λ^A = y_λ^B as elements of Frac(R[q^{±1/2}])")
-        print("    whenever the denominators don't vanish in R.")
+        print("    S[r, r^{-1}] for ANY commutative ring S, including F_p.")
+        print("    Hence y_λ^A = y_λ^B as elements of Frac(S[r, r^{-1}])")
+        print("    whenever the denominators don't vanish in S.")
     else:
         print("  ✗ Polynomial identity fails — paths disagree.")
 

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T22:53:58.936964+00:00",
-  "commitSha": "4f99219c68f4c7b8feb1ff9aa755ccc078d8797a",
+  "computedAt": "2026-05-06T00:12:27.657120+00:00",
+  "commitSha": "64b053c0f89b81caf2edca3ebf4fda0baf11b8f2",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1649,6 +1649,7 @@
         "nf-qvalues.witness.json",
         "nf-transition-lifting.witness.json",
         "nh-basis-shift.witness.json",
+        "notation_consistency_audit.witness.json",
         "np-splitting-chirality-residue.witness.json",
         "nuclear-binding-lp.witness.json",
         "nuclear-braid-exact.witness.json",
