@@ -149,7 +149,6 @@ theorem chain_correspondence (seq : CrossingSeq) (init : StateVec) :
   induction seq generalizing init with
   | nil =>
     simp [heckeChain, matrixChain, mulVec, dotProduct, Fin.sum_univ_two]
-    ext i; fin_cases i <;> simp
   | cons hd tl ih =>
     obtain ⟨c, d⟩ := hd
     simp only [heckeChain, matrixChain]
@@ -209,7 +208,6 @@ theorem traced_vol_from_state (M : TMatrix) :
     markov_denom * identCoeff (M.mulVec initialState) := by
   simp [tracedVolCleared, sigmaCoeff, identCoeff, initialState, mkState,
     mulVec, dotProduct, Fin.sum_univ_two, markov_denom]
-  ring
 
 -- ════════════════════════════════════════════════════════════════
 -- §6  The main theorem: optimal NF coefficient = traced volume

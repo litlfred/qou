@@ -37,6 +37,8 @@ namespace QOU.YoungIdempotent
 
 open QOU.Descartes Matrix
 
+variable {d : ℕ}
+
 /-! ## §1  Coxeter length (inversion count) -/
 
 /-- The Coxeter length of a permutation: the number of inversions.
@@ -50,7 +52,7 @@ theorem coxeterLength_one {n : ℕ} : coxeterLength (1 : Equiv.Perm (Fin n)) = 0
   simp only [coxeterLength, Equiv.Perm.one_apply]
   rw [Finset.card_eq_zero]
   ext ⟨a, b⟩
-  simp only [Finset.mem_filter, Finset.mem_product, Finset.mem_univ, true_and, Finset.not_mem_empty,
+  simp only [Finset.mem_filter, Finset.mem_product, Finset.mem_univ, true_and, Finset.notMem_empty,
              iff_false, not_and]
   intro hab
   exact not_lt.mpr (le_of_lt hab)
