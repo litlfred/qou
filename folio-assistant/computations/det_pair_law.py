@@ -115,7 +115,9 @@ def verify_det_pair_law(lam: tuple[int, ...],
     # ratio rather than the raw difference, which can blow up on
     # large-dimension reps where det ρ_λ(w) is far from unit modulus.
     if abs(actual) < tol:
-        return float(predicted), actual, predicted == 0
+        # predicted is always ±1 from det_pair_sign, so a near-zero
+        # actual product is always a failure.
+        return float(predicted), actual, False
     sign_actual = 1 if actual > 0 else -1
     passes = sign_actual == predicted
     return float(predicted), actual, passes

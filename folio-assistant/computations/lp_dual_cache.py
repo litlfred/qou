@@ -39,7 +39,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-from functools import lru_cache
 from typing import Any
 
 import numpy as np
@@ -60,7 +59,7 @@ def _array_key(arr: np.ndarray) -> bytes:
     """Stable bytes key for a numpy array (shape + dtype + raw bytes)."""
     a = np.ascontiguousarray(np.asarray(arr, dtype=np.float64))
     return (
-        a.shape.__repr__().encode()
+        repr(a.shape).encode()
         + b"|"
         + a.dtype.str.encode()
         + b"|"
@@ -74,16 +73,6 @@ def _kwargs_key(kw: dict[str, Any]) -> bytes:
 
 
 # ── LP cache ───────────────────────────────────────────────────
-
-@lru_cache(maxsize=1024)
-def _cached_lp(key: bytes, _payload_id: int) -> dict:
-    raise RuntimeError(  # pragma: no cover - sentinel
-        "_cached_lp must be invoked via cached_solve_operator_selection_lp"
-    )
-
-
-# Replace the sentinel-keyed cache with a real one whose body
-# closes over the live solver. Done at import time.
 
 _LP_RESULTS: dict[bytes, dict] = {}
 _LP_HITS = 0

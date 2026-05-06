@@ -60,8 +60,8 @@ def bar_polynomial(P) -> sp.Expr:
 def is_bar_invariant_poly(P, *, tol: float = 1e-12) -> bool:
     """True iff ``bar(P) = P`` symbolically (or within numerical tol
     after substituting random q values)."""
-    diff = sp.simplify(bar_polynomial(P) - sp.sympify(P))
-    if diff == 0:
+    diff = sp.cancel(bar_polynomial(P) - sp.sympify(P))
+    if diff.equals(0):
         return True
     # Numerical fallback for messy expressions
     for sample in (sp.Rational(7, 5), sp.Rational(3, 2), sp.Rational(11, 7)):
@@ -109,7 +109,7 @@ def bar_coeff_dict(coeffs: dict[tuple[int, ...], sp.Expr]) -> dict[
         new_c = sp.expand(bar_polynomial(c) * pref)
         out[w_inv] = sp.expand(out.get(w_inv, sp.S.Zero) + new_c)
     # Drop zero entries to keep the basis sparse
-    return {w: c for w, c in out.items() if sp.simplify(c) != 0}
+    return {w: c for w, c in out.items() if not sp.sympify(c).equals(0)}
 
 
 def is_bar_invariant(coeffs: dict[tuple[int, ...], sp.Expr],
@@ -136,8 +136,8 @@ def bar_symmetric_part(coeffs: dict[tuple[int, ...], sp.Expr]) -> dict[
         k: sp.expand(half * (coeffs.get(k, sp.S.Zero)
                               + barred.get(k, sp.S.Zero)))
         for k in keys
-        if sp.simplify(coeffs.get(k, sp.S.Zero)
-                        + barred.get(k, sp.S.Zero)) != 0
+        if not (coeffs.get(k, sp.S.Zero)
+                        + barred.get(k, sp.S.Zero)).equals(0)
     }
 
 
@@ -151,8 +151,8 @@ def bar_antisymmetric_part(coeffs: dict[tuple[int, ...], sp.Expr]) -> dict[
         k: sp.expand(half * (coeffs.get(k, sp.S.Zero)
                               - barred.get(k, sp.S.Zero)))
         for k in keys
-        if sp.simplify(coeffs.get(k, sp.S.Zero)
-                        - barred.get(k, sp.S.Zero)) != 0
+        if not (coeffs.get(k, sp.S.Zero)
+                        - barred.get(k, sp.S.Zero)).equals(0)
     }
 
 
