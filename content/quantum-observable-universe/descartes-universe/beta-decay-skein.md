@@ -71,8 +71,8 @@ components:
 
 The $7$ re-reduction crossings change the R2 step count between
 parent and daughter normal forms.  This is the dominant
-contribution to the $\mathcal{Q}_q$-value
-([transition energy](#def:q-value-transition)) — the single-crossing
+contribution to the $Q$-value
+([transition energy](#def:Q-value-transition)) — the single-crossing
 approximation misses $6$ of these $7$ crossings.
 
 ## Definition ($\beta^-$ decay)
@@ -167,14 +167,14 @@ $$
   \qquad (\beta^+ \text{ decay: } e^+ + \nu_e)
 $$
 
-## The $\mathcal{Q}_q$-value (10-crossing)
+## The $Q$-value (10-crossing)
 
 The transition energy is the difference in categorical actions
 between parent and daughter, now accounting for all $10$
 crossings of the $T_{3,5}$ insertion:
 
 $$
-  \mathcal{Q}_q
+  Q
   = 
   \mathcal{S}_q[\mathcal{N}(Z, N)]
   - 
@@ -203,10 +203,10 @@ word gains $10$ crossings.  The Gröbner--Shirshov reduction must:
    involving the converting quark's strand.
 
 The net R2 step count from all $10$ crossings (not just $1$)
-determines the $\mathcal{Q}_q$-value:
+determines the $Q$-value:
 
 $$
-  \mathcal{Q}_q =  \Delta(\text{R2 steps from 10 crossings})
+  Q =  \Delta(\text{R2 steps from 10 crossings})
    \times  (q - q^{-1})
    \times  (\text{pair Skein scale})
 $$

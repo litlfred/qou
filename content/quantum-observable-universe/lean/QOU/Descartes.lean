@@ -14,6 +14,7 @@ import QOU.Descartes.HeckeH3
 import QOU.Descartes.QuotientIdeal
 import QOU.Descartes.NuclearNormalForms
 import QOU.Descartes.HyperbolicVolumeTranscendence
+import QOU.Descartes.PauliWitness
 
 /-!
 # Descartes Universe — Module Index

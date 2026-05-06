@@ -1,0 +1,153 @@
+import Mathlib.Algebra.Module.Basic
+import Mathlib.LinearAlgebra.Basic
+import Mathlib.LinearAlgebra.FiniteDimensional
+import Mathlib.Data.Real.Basic
+
+/-!
+# QOU.LiftingDescent.H3BraneTowerScaffold
+
+Scaffold for a concrete `RecursiveBraneTower` instance at the
+`H_3(q_0)` (proton-scale) Hecke algebra.  The numerical realisation
+is in
+`folio-assistant/computations/tau_hat_n_proton_realisation.py` (PR
+#533): a 6-dim `level 0 = H_3(q_0)`, 30-dim `Ω¹(H_3(q_0))`, 180-dim
+`level 1 = H_3(q_0) ⊗ Ω¹(H_3(q_0))`, and a 180×180 idempotent
+`τ̂_0 = ℓ_0 ∘ 𝔡_1` with rank 6 (descended) and nullity 174 in End(A_0)
+sense (rank 36 / nullity 32 364 in End(A_1) sense).
+
+This Lean file declares the **shape** of the instance.  Concrete
+matrix entries (the explicit `H_3(q_0)` regular representation, the
+Kähler-differential basis, the ascent/descent matrices) are deferred
+via `sorry` placeholders; closing them is a routine but multi-day
+linear-algebra discharge using `Mathlib.LinearAlgebra` and the
+existing `QOU.FrobeniusHopfData` infra.
+
+This scaffold is **not** required by the abstract τ̂_n stack
+(which is sorry-free in `recursive-brane-tower.lean`,
+`descent-involution.lean`, `jet-prolongation.lean` per PR #532's
+audit).  Its purpose is to provide a Lean-level point of entry for
+the level-1 mass-tower computation at A ≥ 3 — the next step after
+the proton-scale numerical probe.
+
+## References
+
+- [manuscript] §3 Lifting and Descent — recursive brane tower
+- `prop:jet-prolongation` (J¹(A) = A ⊗ Ω¹(A))
+- `def:recursive-brane-tower`
+- `def:descent-involution`
+- PR #533 — proton-scale numerical realisation
+- PR #532 — Lean scaffold audit (zero-sorrys verdict on the abstract stack)
+-/
+
+namespace QOU.LiftingDescent.H3BraneTowerScaffold
+
+open scoped LinearMap
+
+/-- Substrate parameter `q_0`.  Treated symbolically here; the numerical
+    value `q_0 ≈ 1.10997859555…` is loaded from `q_parameter.py`'s
+    `Q_50_DIGIT_STR` in the Python realisation. -/
+def q0 : ℝ := sorry  -- Ref: [manuscript] §6, Definition: Substrate parameter
+
+/-- Markov parameter `z = 1/(q_0^{1/2} + q_0^{-1/2})`. -/
+noncomputable def z_markov : ℝ := sorry  -- Ref: [manuscript] §5, eq. Markov parameter
+
+/-- Hecke deformation `h = q_0 - q_0^{-1}`. -/
+noncomputable def h_hecke : ℝ := sorry  -- Ref: [manuscript] §5, eq. Hecke relation
+
+/-- The level-0 module: `A_0 = H_3(q_0)` realised as `ℝ^6` with the
+    Hecke-algebra multiplication.  The Python realisation builds this
+    via the 6 Coxeter-reduced words of `S_3`; here we declare its
+    underlying additive-group + module shape and defer multiplication. -/
+def A0 : Type := Fin 6 → ℝ  -- 6-dim ℝ-module
+
+instance : AddCommGroup A0 := by unfold A0; infer_instance
+instance : Module ℝ A0 := by unfold A0; infer_instance
+
+/-- The Kähler differentials `Ω¹(A_0) = ker(m: A_0 ⊗ A_0 → A_0)`.
+    Has dimension 30 = 36 - 6 by the Python computation. -/
+def Omega1 : Type := Fin 30 → ℝ
+
+instance : AddCommGroup Omega1 := by unfold Omega1; infer_instance
+instance : Module ℝ Omega1 := by unfold Omega1; infer_instance
+
+/-- The level-1 module: `A_1 = A_0 ⊗ Ω¹(A_0)`, dimension 180. -/
+def A1 : Type := Fin 180 → ℝ
+
+instance : AddCommGroup A1 := by unfold A1; infer_instance
+instance : Module ℝ A1 := by unfold A1; infer_instance
+
+/-- The ascent embedding `ℓ_0 : A_0 → A_1`, `ℓ_0(a) := a ⊗ d(σ_1)`
+    in the universal connection (PR #533).  Concrete 180×6 matrix
+    in the Python realisation. -/
+-- Ref: [manuscript] §3, prop:jet-prolongation
+noncomputable def ell_0 : A0 →ₗ[ℝ] A1 :=
+  -- Ref: [manuscript] §3, prop:jet-prolongation (universal connection)
+  sorry
+
+/-- The descent retraction `𝔡_1 : A_1 → A_0`, the splitting of `ℓ_0`
+    in the universal connection.  Concrete 6×180 matrix in the Python
+    realisation. -/
+-- Ref: [manuscript] §3, lem:descent
+noncomputable def descent_1 : A1 →ₗ[ℝ] A0 :=
+  -- Ref: [manuscript] §3, lem:descent (retraction of unit section)
+  sorry
+
+/-- The retraction identity `𝔡_1 ∘ ℓ_0 = id_{A_0}`.  Verified to
+    f64 floor (≤ 0 error) in the Python realisation. -/
+-- Ref: [manuscript] §3, lem:descent (splitting condition)
+theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
+  -- Ref: [manuscript] §3, lem:descent (proof closes once ell_0, descent_1 are concrete)
+  sorry
+
+/-- The descent involution `τ̂_0 = ℓ_0 ∘ 𝔡_1 : A_1 → A_1`.
+
+    Note: in the abstract stack (`descent-involution.lean`), τ̂ is
+    defined on `End(A_1)` rather than directly on `A_1`.  The two
+    formulations are equivalent under `End(M) ≃ M ⊗ M*` for
+    finite-rank `M`; this scaffold uses the simpler `A_1 → A_1`
+    form to match the Python realisation's matrix-on-vec(End(A_1))
+    structure. -/
+noncomputable def tau_hat_0 : A1 →ₗ[ℝ] A1 := ell_0 ∘ₗ descent_1
+
+/-- Idempotence of `τ̂_0`.  Once `descent_ascent_id` is discharged,
+    this proof is the abstract calculation in `descent-involution.lean`:
+
+      `τ̂_0² = ℓ_0 ∘ 𝔡_1 ∘ ℓ_0 ∘ 𝔡_1 = ℓ_0 ∘ id ∘ 𝔡_1 = τ̂_0`.
+
+    Marked `sorry` here because the discharge depends on
+    `descent_ascent_id` (itself a downstream sorry).  Inherited from
+    `DescentInvolution.tau_idem` in `descent-involution.lean`. -/
+-- Ref: [manuscript] §3, def:descent-involution
+theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
+  -- Idempotence follows from the splitting identity descent_ascent_id.
+  -- Once ell_0 and descent_1 are concrete (not sorry), the proof closes:
+  --   τ̂² = (ℓ₀ ∘ 𝔡₁) ∘ (ℓ₀ ∘ 𝔡₁) = ℓ₀ ∘ (𝔡₁ ∘ ℓ₀) ∘ 𝔡₁ = ℓ₀ ∘ id ∘ 𝔡₁ = τ̂.
+  ext x
+  simp only [LinearMap.comp_apply, tau_hat_0]
+  have h : descent_1 (ell_0 (descent_1 x)) = descent_1 x := by
+    have := LinearMap.congr_fun descent_ascent_id (descent_1 x)
+    simp [LinearMap.comp_apply, LinearMap.id_apply] at this
+    exact this
+  rw [h]
+
+/-- `dim A_0 = 6` per the Python realisation in PR #533.
+
+    Syntactic consequence of `A_0 = Fin 6 → ℝ`; the discharge uses
+    `Module.finrank_pi` once the right `Fintype` instance unfolding is
+    set up.  Deferred along with the rest of the linear-algebra
+    discharge. -/
+-- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+theorem dim_A0_eq_6 : Module.finrank ℝ A0 = 6 := by
+  simp [A0, Module.finrank_pi, Module.finrank_self]
+
+/-- `dim Ω¹(A_0) = 30` per the Python realisation in PR #533. -/
+-- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+theorem dim_Omega1_eq_30 : Module.finrank ℝ Omega1 = 30 := by
+  simp [Omega1, Module.finrank_pi, Module.finrank_self]
+
+/-- `dim A_1 = 180` per the Python realisation in PR #533. -/
+-- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
+theorem dim_A1_eq_180 : Module.finrank ℝ A1 = 180 := by
+  simp [A1, Module.finrank_pi, Module.finrank_self]
+
+end QOU.LiftingDescent.H3BraneTowerScaffold

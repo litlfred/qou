@@ -1,5 +1,5 @@
 The Gram weights $w_k^G$
-([Gram-weighted $\mathcal{Q}_q$-value](#prop:gram-weighted-qvalue))
+([Gram-weighted $Q$-value](#prop:gram-weighted-qvalue))
 arise from the eigenstructure of the Gram matrix $G$ on $H_A(q)$
 and reflect the decomposition of $H_A(q)$ into irreducible
 representations.

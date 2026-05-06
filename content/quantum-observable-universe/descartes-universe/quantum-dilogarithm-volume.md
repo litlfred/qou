@@ -92,7 +92,7 @@ $$
   \frac{\ln 2 \cdot 2N_v^4}{243\mathbf{E}_{\times} \cdot \mu_0}
    \cdot 
   \frac{1}{[2]_q  \cdot  s^2
-     \cdot  f(Z_d, \mathcal{Q}_q)}
+     \cdot  f(Z_d, Q)}
    \cdot 
   \prod_{i=0}^{p}
   \left|

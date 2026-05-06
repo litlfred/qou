@@ -46,6 +46,26 @@ from binding_canonical import build_atom_symbolic
 from hecke_symbolic import SymbolicHeckeDivision
 
 
+# Module-level cache for Term 6 results, keyed by (Z, N).  The CLI
+# loops over kahler_order ∈ {0, 1, 2} for each atom, so without this
+# cache `binding_full` would recompute T6 three times per atom even
+# though it depends only on (Z, N).  Per-(Z, N) symbolic peel +
+# polar split is the dominant cost on A ≥ 3 atoms (~20s on tritium,
+# ~17s on ⁴He), so this cache saves ~40s on tritium and ~34s on ⁴He
+# across a full three-row table.  Keyed on (Z, N) only — Term 6 has
+# no kahler / pair-mode dependence.
+_TERM6_CACHE: dict[tuple[int, int], dict] = {}
+
+
+def _term6_for_atom(Z: int, N: int) -> dict:
+    """Cached lookup for Term 6 of atom (Z, N)."""
+    key = (Z, N)
+    if key not in _TERM6_CACHE:
+        from term6_residues_at_roots import compute_atom as _t6_compute
+        _TERM6_CACHE[key] = _t6_compute(Z, N)
+    return _TERM6_CACHE[key]
+
+
 @lru_cache(maxsize=256)
 def canonical_via_ocneanu(Z: int, N: int, include_inter: bool = True,
                            reduce_first: bool = True) -> complex:
@@ -79,13 +99,33 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
                   kahler_order: int = 2,
                   E_0: float = E_0_BETA_DECAY_MEV,
                   verbose: bool = False) -> dict:
-    """End-to-end binding: canonical (Ocneanu) + Kähler tower.
+    """End-to-end binding using per-derivation per-term weights.
 
-    kahler_order ∈ {0, 1, 2}:
-      0 — no lift (V̂^(1) = V̂^(0), ε = O(ℏ_q³))
-      1 — 1st-order: V̂^(1) = V̂ + ℏ_q·q·dV̂/dq, ε = O(ℏ_q⁴)
-      2 — 2nd-order: + (ℏ_q²/2)·[q²d²V̂+qdV̂], ε = O(ℏ_q⁵)
+    Refactored 2026-05-04: previously used Kähler-lift V̂ with
+    `E_0 · ℏ_q²` calibration, which produced GeV-regime tower_MeV
+    (wrong calibration constant; see audit
+    `2026-05-03-tower-mev-calibration-finding.md`).
+
+    Now uses:
+      • V̂ from `atom_per_generator_volumes(Z, N)["full"]` channel
+        — same source as `paper_six_term_isotope_sweep`, conventions
+        agree across atom (include_inter=True) and free
+        (include_inter=False).
+      • Tower formula via `tower_mass_level(tower_mode='li2q')` — the
+        Kashaev integration limit -Σ Li_2^q(-|V|) (bounded; corrected
+        per audit branch's `kashaev-integration-identity` proof).
+      • Calibration α = m_e · 8G ≈ 3.7445 MeV (`prop:binding-scale-catalan`)
+        — the binding scale derived from Borromean hyperbolic volume.
+        E_0 · ℏ_q² was the wrong scale by ~5 orders of magnitude.
+
+    `kahler_order` is now ignored (no Kähler lift on the
+    atom_per_generator_volumes V̂'s; preserved for API compatibility).
+
+    Returns canonical + tower binding contributions in MeV, plus the
+    Term 6 cyclotomic-residue diagnostic (when available).
     """
+    from hecke_core import atom_per_generator_volumes
+
     A = Z + N
     n_strands = 3 * A
     out = {"Z": Z, "N": N, "A": A,
@@ -113,43 +153,69 @@ def binding_full(Z: int, N: int, *, pair_mode: str = "full",
               f"|tr_atom|={abs(tr_atom):.6f}, |tr_free|={abs(tr_free):.6f}, "
               f"B_canon = {canonical_MeV:.6f} MeV")
 
-    # ── Build symbolic V̂ + Kähler lift ──────────────────
-    t_kahler = time.time()
-    V_atom_sym = build_V_hat_symbolic(Z, N, include_inter=True)
-    V_free_sym = build_V_hat_symbolic(Z, N, include_inter=False)
-    a_lift = kahler_lift_analytic(V_atom_sym, order=kahler_order)
-    f_lift = kahler_lift_analytic(V_free_sym, order=kahler_order)
-    out["kahler_time_sec"] = time.time() - t_kahler
+    # ── Brane tower (Li_2^q form, atom_per_generator_volumes V̂) ──
+    t_tower = time.time()
+    vols_atom = atom_per_generator_volumes(Z, N, include_inter=True)
+    vols_free = atom_per_generator_volumes(Z, N, include_inter=False)
+    V_atom = [v["full"] for v in vols_atom]
+    V_free = [v["full"] for v in vols_free]
 
-    # Level-1 V̂ (one jet-up step)
-    key_lift = f"V{kahler_order}" if kahler_order > 0 else "V0"
-    V_a_1 = a_lift[key_lift] if kahler_order > 0 else a_lift["V0"]
-    V_f_1 = f_lift[key_lift] if kahler_order > 0 else f_lift["V0"]
+    m_a = tower_mass_level(V_atom, pair_mode=pair_mode)
+    m_f = tower_mass_level(V_free, pair_mode=pair_mode)
 
-    # ── Tower mass at level 1 ───────────────────────────
-    m_a = tower_mass_level(V_a_1, pair_mode=pair_mode)
-    m_f = tower_mass_level(V_f_1, pair_mode=pair_mode)
-    delta_1 = m_f - m_a
-    # Apply ℏ_q² brane scaling at level 1.  Higher levels are O(ℏ_q⁴)
-    # below AME precision — single level 1 is sufficient.
-    tower_MeV = E_0 * HBAR_Q_SQ * delta_1
+    # Calibration per `prop:binding-scale-catalan`:
+    #   α = m_e · 8G ≈ 3.7445 MeV  (Borromean hyperbolic volume × m_e)
+    # This is the per-cat-unit MeV scale for the brane-tower
+    # contribution to atomic mass (see
+    # `docs/audits/2026-05-04-six-term-per-weight-derivation.md`).
+    M_E_MEV   = 0.51099895
+    G_CATALAN = 0.91596559417721901505
+    ALPHA_BORROMEAN_MEV = M_E_MEV * 8 * G_CATALAN
 
-    out["V_atom_0"] = a_lift["V0"]
-    out["V_free_0"] = f_lift["V0"]
-    if kahler_order >= 1:
-        out["V_atom_1st"] = a_lift["V1"]
-        out["V_free_1st"] = f_lift["V1"]
-    if kahler_order >= 2:
-        out["V_atom_2nd"] = a_lift["V2"]
-        out["V_free_2nd"] = f_lift["V2"]
-    out["tower_level_1_delta_cat"] = delta_1
+    # Sign convention: tower contribution to BINDING energy.  At the
+    # standalone level, B = α · ((T2+T3)_atom − (T2+T3)_free) is
+    # positive for a bound system (li2q tower of atom > tower of free
+    # because the atom has more generators contributing).  Match here.
+    delta_atom_minus_free = m_a - m_f
+    tower_MeV = ALPHA_BORROMEAN_MEV * delta_atom_minus_free
+
+    out["tower_time_sec"] = time.time() - t_tower
+    out["alpha_borromean_MeV"] = ALPHA_BORROMEAN_MEV
+    out["V_atom_full"] = [float(v) for v in V_atom]
+    out["V_free_full"] = [float(v) for v in V_free]
+    out["tower_atom_cat"] = float(m_a)
+    out["tower_free_cat"] = float(m_f)
+    out["tower_delta_cat"] = float(delta_atom_minus_free)
     out["tower_MeV"] = tower_MeV
+    # Legacy keys for backward-compat readers (no longer used by this
+    # function but kept in the schema):
+    out["kahler_time_sec"] = 0.0
+    out["tower_level_1_delta_cat"] = float(delta_atom_minus_free)
+    # Error bound: with li2q tower the modeling residual is dominated
+    # by the V̂ truncation in `atom_per_generator_volumes` rather than
+    # the Φ_q-vs-Li_2^q identity (which is now exact per the audit
+    # branch's `kashaev-integration-identity` proof).  Estimate via
+    # the standalone empirical sweep's max error: ~0.5 % of M_pred,
+    # i.e. ~0.5 % · α · |delta| MeV.
+    out["eps_modeling_MeV"] = 0.005 * abs(tower_MeV)
+    out["eps_order"] = "empirical (0.5% via spectrum sweep, A ≤ 9)"
 
-    # ── Error bounds (O/o in ℏ_q) ──────────────────────
-    eps_order = 3 + kahler_order  # Markov=3, 1st-Kähler=4, 2nd-Kähler=5
-    eps = (HBAR_Q ** eps_order) * abs(delta_1) * E_0
-    out["eps_modeling_MeV"] = eps
-    out["eps_order"] = f"O(ℏ_q^{eps_order})"
+    # ── Term 6 (Mittag-Leffler polar sum at non-zero poles) ──
+    # Pulls from term6_residues_at_roots.compute_atom (partial-fraction
+    # split on the u-plane lift tr_M(u²)).  Reported for diagnostic /
+    # calibration use — the unit conversion T6 → MeV is open, so this
+    # is NOT yet folded into B_MeV.  Cached per (Z, N) to avoid the
+    # symbolic peel cost on repeat calls.
+    t_t6 = time.time()
+    try:
+        _t6 = _term6_for_atom(Z, N)  # cached per (Z, N)
+        out["term6_pp_at_roots"]    = _t6["term6_at_q0_real"]
+        out["term6_pp_at_zero"]     = float(complex(_t6["pp_at_zero_at_u0"]).real)
+        out["term6_entire_at_u0"]   = float(complex(_t6["entire_at_u0"]).real)
+        out["term6_pole_order_zero"] = _t6["denom_pole_order_at_zero"]
+    except Exception as exc:  # noqa: BLE001
+        out["term6_error"] = f"{type(exc).__name__}: {exc}"
+    out["term6_time_sec"] = time.time() - t_t6
 
     B = canonical_MeV + tower_MeV
     out["B_MeV"] = B
@@ -164,6 +230,8 @@ if __name__ == "__main__":
         ("T",    1, 2,  8.481821),
         ("3He",  2, 1,  7.71804),
         ("4He",  2, 2, 28.295674),
+        ("5Li",  3, 2, 26.330700),   # AME: 5Li unbound, B from m(5Li) − 3m_p − 2m_n
+        ("6Li",  3, 3, 31.994570),
     ]
 
     print("=" * 110)
@@ -181,8 +249,8 @@ if __name__ == "__main__":
         print("=" * 80)
         print(f"  {'Atom':>6} {'A':>3} {'B_AME':>8} {'B_canon':>10} "
               f"{'B_tower':>10} {'B_total':>10} {'|Δm/m|%':>9} "
-              f"{'ε_MeV':>10} {'time':>8}")
-        print("  " + "-" * 98)
+              f"{'ε_MeV':>10} {'T6_PP':>14} {'time':>8}")
+        print("  " + "-" * 113)
         for name, Z, N, B_AME in ATOMS:
             A = Z + N
             t0 = time.time()
@@ -193,12 +261,16 @@ if __name__ == "__main__":
                 dt = time.time() - t0
                 dm = (abs(r["B_MeV"] - B_AME) / (A * 938.272) * 100
                        if math.isfinite(r["B_MeV"]) else float("nan"))
+                t6_str = (f"{r['term6_pp_at_roots']:+14.4e}"
+                           if "term6_pp_at_roots" in r
+                           else f"{'(err)':>14}")
                 print(f"  {name:>6} {A:>3} {B_AME:>8.3f} "
                       f"{r['canonical_MeV']:>+10.4f} "
                       f"{r['tower_MeV']:>+10.4f} "
                       f"{r['B_MeV']:>+10.4f} "
                       f"{dm:>8.4f}% "
                       f"{r['eps_modeling_MeV']:>10.4e} "
+                      f"{t6_str} "
                       f"{dt:>7.1f}s")
                 results.append({**r, "atom": name, "B_AME_MeV": B_AME,
                                  "delta_m_over_m_pct": dm})

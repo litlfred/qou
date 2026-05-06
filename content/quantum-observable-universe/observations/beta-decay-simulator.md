@@ -11,25 +11,25 @@ For a nucleus $\mathcal{N}(Z, N)$, the simulator evaluates:
    $\binom{A}{2}$ transfer matrix multiplications
    ([transfer matrix operator](#def:transfer-matrix-operator)).
 
-2. **$\mathcal{Q}_q$-value** from the ratio
-   $\mathcal{Q}_q = |\ln(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
+2. **$Q$-value** from the ratio
+   $Q = |\ln(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
    E_{\times} \times \mu_0$, optionally with the shell correction
    $\Delta_{\mathrm{shell}} + \Delta_{T_{3,5}}$
    ([shell construction rules](#def:shell-construction-rules)).
 
-3. **Phase-space integral** $f(Z, \mathcal{Q}_q)$ with the
+3. **Phase-space integral** $f(Z, Q)$ with the
    Skein-Coulomb Fermi function $F_q(Z, E)$
    ([Skein-Coulomb enhancement](#prop:skein-coulomb-enhancement))
    using $\alpha_{\mathrm{EM}}(q) = q^{-1}/([9]_q \cdot [10]_q)$.
 
 4. **Half-life** $t_{1/2} = \ln 2 / \Gamma_\beta$ where
    $\Gamma_\beta = G_F^2 m_e^5 / (2\pi^3 \hbar) \cdot [2]_q
-   \cdot f(Z, \mathcal{Q}_q)$
+   \cdot f(Z, Q)$
    ([hadron half-life](#prop:hadron-half-life)).
 
 ## Two modes
 
-- **From $q$**: the $\mathcal{Q}_q$-value is predicted from the
+- **From $q$**: the $Q$-value is predicted from the
   transfer matrix ratio.  Accurate for light nuclei ($A \leq 14$,
   $5$--$7\%$ error); heavy nuclei overshoot due to naive nucleon
   ordering ([verification](#ex:hadron-half-life-verification)).

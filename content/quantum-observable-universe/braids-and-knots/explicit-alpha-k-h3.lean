@@ -9,7 +9,15 @@ in closed `q`-algebraic form:
   α_2 = z²
   α_3 = h · z² + z = z(1 + q^{1/2} - q^{-1/2})
 
-where `z = 1/(√q + 1/√q)` is the Markov parameter and `h = q - q⁻¹`.
+where `z = 1/(v + v⁻¹)` is the Markov parameter, `v` is the formal
+square root of `q` (so `v² = q`), and `h = q - q⁻¹`.
+
+**Pre-Archimedean stub.** Polymorphic in the ground field `R`.
+The previous version forced `q : ℝ`, `z : ℝ`, `h : ℝ` and used
+`q ^ (1/2 : ℝ)` (a real power); the new version uses an
+abstract `v : R` with `v² = q` carried as a structure field.
+The Archimedean evaluation `R = ℝ`, `v = √q₀` is the post-τ
+realisation.
 
 LaTeX label: `prop:explicit-alpha-k-h3`
 
@@ -19,24 +27,33 @@ LaTeX label: `prop:explicit-alpha-k-h3`
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
+import Mathlib.Algebra.Field.Basic
+
 namespace QOU.BraidsAndKnots
 
-/-- Markov parameter z and amplitude h at substrate q. -/
-structure HeckeQ where
-  q : ℝ
-  q_pos : 0 < q
-  z : ℝ
-  z_def : z = 1 / (q ^ (1/2 : ℝ) + 1 / q ^ (1/2 : ℝ))
-  h : ℝ
+universe u
+
+/-- Markov parameter `z` and amplitude `h` at substrate `q`,
+    polymorphic in the ground field `R`.
+
+    `v` is the formal square root of `q` (so `v² = q`), `z` is the
+    Markov parameter `1/(v + v⁻¹)`, and `h = q - q⁻¹`. -/
+structure HeckeQ (R : Type u) [Field R] where
+  q : R
+  v : R                          -- formal √q
+  v_sq : v ^ 2 = q
+  z : R
+  z_def : z = 1 / (v + v⁻¹)
+  h : R
   h_def : h = q - q⁻¹
 
 /-- **Proposition (explicit α_k at H_3)**.
 
-    α_0 = 1, α_1 = 0, α_2 = z², α_3 = h · z² + z. -/
+    `α_0 = 1`, `α_1 = 0`, `α_2 = z²`, `α_3 = h · z² + z`. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §α_k at H_3
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-theorem explicit_alpha_k_h3 (Q : HeckeQ) :
-    ∃ a₀ a₁ a₂ a₃ : ℝ,
+theorem explicit_alpha_k_h3 {R : Type u} [Field R] (Q : HeckeQ R) :
+    ∃ a₀ a₁ a₂ a₃ : R,
       a₀ = 1 ∧ a₁ = 0 ∧ a₂ = Q.z ^ 2 ∧ a₃ = Q.h * Q.z ^ 2 + Q.z :=
   ⟨1, 0, Q.z ^ 2, Q.h * Q.z ^ 2 + Q.z, rfl, rfl, rfl, rfl⟩
 

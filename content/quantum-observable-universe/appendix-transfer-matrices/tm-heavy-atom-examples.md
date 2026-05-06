@@ -1,7 +1,7 @@
 The light-nucleus examples (Section B.5) use only the bare
 transfer matrix product.  For heavy nuclei, **shell corrections**
 from the magic number structure become essential.  This section
-works through the full $\mathcal{Q}_q$-value algorithm for
+works through the full $Q$-value algorithm for
 nuclei spanning the periodic table.
 
 Recall: $s = q^{1/2} - q^{-1/2}$,
@@ -34,7 +34,7 @@ $n_{\mathrm{shell}}(X)$.
 
 ---
 
-## The $\mathcal{Q}_q$-value algorithm (summary)
+## The $Q$-value algorithm (summary)
 
 **Input:** $(Z, N)$, substrate parameter $q$.
 
@@ -48,7 +48,7 @@ $n_{\mathrm{shell}}(X)$.
    $\Delta_{\mathrm{shell}} = (\text{proton shell change}) +
    (\text{neutron shell change})$.
 5. Add weak vertex $\Delta_{T_{3,5}} = -3.370$.
-6. Convert: $\mathcal{Q}_q = |R_{\mathrm{bare}} +
+6. Convert: $Q = |R_{\mathrm{bare}} +
    \Delta_{\mathrm{shell}} + \Delta_{T_{3,5}}| \times
    \hbar_q \cdot E_{\times} \cdot \mu_0$.
 
@@ -201,7 +201,7 @@ the daughter gains the stability of a closed $Z = 28$ shell.
 ### Step 4: Weak vertex and final answer
 
 $$
-  \mathcal{Q}_q
+  Q
   = 
   |{-32.09 + 5.04 + (-3.37)}|
    \times 

@@ -188,7 +188,7 @@ peer-review practices and the methodology of
 - **NEVER assume classical energy conservation at $q \neq 1$.**
   The $q$-differential satisfies $d_q^2 \neq 0$, so
   $E_{\mathrm{before}} = E_{\mathrm{after}}$ fails.  Use the
-  categorical action difference $\mathcal{Q}_q = S_q(\mathrm{par})
+  categorical action difference $Q = S_q(\mathrm{par})
   - S_q(\mathrm{dau}) - S_q(e)$ instead. The daughter is evaluated
   at the shifted $q + \Delta q_{\mathrm{eff}}$.  If you find yourself
   writing "$Q = M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e$", stop

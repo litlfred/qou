@@ -162,7 +162,24 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
     Summing over S₃ with q^{ℓ(w)} weights produces q · e_{(3)}. -/
 -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-axiom youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
+
+/-- **Young-symmetric eigenvalue — typeclass (Pattern 4).**
+
+    Witnesses the symmetric-rep eigenvalue property `σ_i · e_{(3)} = q · e_{(3)}`
+    for a *specific* representation `ρ`. The universal claim
+    requires expanding σ_i · T_w via Hecke/braid relations across
+    the full S_3 sum; until that is mechanised, callers supply a
+    per-`ρ` witness. -/
+class YoungSym3Eigenvalue (ρ : HeckeRep 3 d) : Prop where
+  /-- For every generator `i`, the symmetric idempotent acts as
+      multiplication by `q`. -/
+  eigenvalue : ∀ i : Fin 2,
     ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ
+
+/-- Per-instance form. -/
+theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2)
+    [hi : YoungSym3Eigenvalue ρ] :
+    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ :=
+  hi.eigenvalue i
 
 end QOU.YoungIdempotent

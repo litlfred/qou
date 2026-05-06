@@ -85,7 +85,7 @@ Beta transitions between table entries are governed by a single
 universal matrix $\Delta_\beta(q)$
 ([beta decay matrix](#prop:beta-decay-transfer-matrix)):
 the same $2 \times 2$ perturbation for every nucleus, regardless
-of partner nucleon type.  The $\mathcal{Q}_q$-value of any decay
+of partner nucleon type.  The $Q$-value of any decay
 is the difference of parent and daughter Skein polynomials,
 concentrated at the converting nucleon's generators.
 

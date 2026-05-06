@@ -7,6 +7,7 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
+    "prop:atomic-mass-gb-nf",
     "prop:three-parameters-wedderburn",
     "prop:binding-scale-catalan",
     "def:atomic-braid",

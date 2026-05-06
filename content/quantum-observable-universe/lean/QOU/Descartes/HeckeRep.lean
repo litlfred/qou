@@ -117,8 +117,11 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 := by
   -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
-  -- See docstring DIAGNOSTIC for the proof obligations.
-  sorry
+  simp only [genInv, sub_mul, mul_sub, smul_mul_assoc, mul_smul_comm,
+             one_mul, mul_one, smul_smul]
+  rw [ρ.hecke_rel i]
+  simp only [neg_smul, smul_sub, smul_smul]
+  abel
 
 /-! ## §3  Braid word evaluation -/
 
@@ -287,7 +290,12 @@ theorem transferMatrix_comm (a₁ b₁ a₂ b₂ : R_t) :
     transferMatrix a₁ b₁ * transferMatrix a₂ b₂ =
     transferMatrix a₂ b₂ * transferMatrix a₁ b₁ := by
   -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-  sorry
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp only [transferMatrix, Matrix.mul_apply, Fin.sum_univ_two,
+               Matrix.cons_val_zero, Matrix.cons_val_one,
+               Matrix.head_cons, Matrix.head_fin_const] <;>
+    ring
 
 /-- Corollary: the product of any finite list of transfer matrices
     is independent of the order (for the same multiset of factors). -/

@@ -279,7 +279,7 @@ $$
   \Delta M_1 = \Delta_\beta
 $$
 
-### $\mathcal{Q}_q$-value
+### $Q$-value
 
 $$
   \ln \frac{P_{{}^3\mathrm{He}}}{P_{{}^3\mathrm{H}}}

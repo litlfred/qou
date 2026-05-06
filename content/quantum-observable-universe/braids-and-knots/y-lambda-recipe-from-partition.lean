@@ -5,16 +5,25 @@
   coefficient y_λ(q) is determined by the following algorithm:
 
   Step 1: Compute partition data (contents c, hooks h, n(λ)).
-  Step 2: Compute the universal X = q^(3/2)/(1 + q - q² - q³ + q^(3/2)).
+  Step 2: Compute the universal X = v³ / (1 + v² - v⁴ - v⁶ + v³)
+          where v is the formal square root of q (so v² = q).
   Step 3: Compute s_{λ,r}(Q) = Q^{n(λ)} · ∏ (1 - X·Q^c)/(1 - Q^h)
-          with Q = q².
+          with Q = q² = v⁴.
   Step 4: Normalise: y_λ(q) = s_λ / Σ_µ d_µ s_µ.
-  Step 5: Factor over Q in √q to get cyclotomic denominator + numerator.
+  Step 5: Factor over Q in v to get cyclotomic denominator + numerator.
 
   This formalises the algorithmic content of
   prop:y-lambda-closed-form-wenzl-bridge: given any partition, the
   recipe produces y_λ in closed q-rational form in O(p(n) · max_hooks)
   time.
+
+  **Pre-Archimedean stub.** Polymorphic in the ground field `R`.
+  The previous version used `q : ℝ`, `open Real`, `Real.sqrt`, and
+  axiomatised the Schur principal-specialisation as a real-valued
+  `constant`.  All three were Archimedean shortcuts: y_λ is
+  `q`-rational by [wenzl1988] (cf. CLAUDE.md §7aa notation register).
+  The stub now parametrises in an abstract `(q, v) : R × R` with
+  `v² = q` and replaces `constant` with `opaque` over `R`.
 
   Refs: prop:y-lambda-recipe-from-partition (this block),
         prop:y-lambda-closed-form-wenzl-bridge,
@@ -23,13 +32,12 @@
         [macdonald1995] Macdonald, "Symmetric Functions and Hall Polynomials"
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.List.Basic
 
 namespace QOU.BraidsAndKnots
 
-open Real
+universe u
 
 /-! ## Step 1: Partition data -/
 
@@ -62,37 +70,43 @@ noncomputable def hookDim (lam : List ℕ) : ℕ :=
         (fun j inner => inner * cellHook lam p.2 j) 1) 1
   Nat.factorial n / prod_hooks
 
-/-! ## Step 2: Universal X substitution -/
+/-! ## Step 2: Universal X substitution
 
-/-- Markov parameter z = 1 / (√q + 1/√q) = √q / (q + 1). -/
-noncomputable def markovZ (q : ℝ) : ℝ :=
-  Real.sqrt q / (q + 1)
+    Polymorphic in the ground field `R`.  `q ∈ R` is the substrate
+    parameter; `v ∈ R` is its formal square root with `v² = q`.
+    No `Real.sqrt`. -/
 
-/-- Universal X = q^(3/2) / (1 + q - q² - q³ + q^(3/2))
-    = Q^r where Q = q² and r is the Wenzl level for the
-    Jones-Markov trace at parameter z = 1/(√q + 1/√q). -/
-noncomputable def universalX (q : ℝ) : ℝ :=
-  q * Real.sqrt q / (1 + q - q^2 - q^3 + q * Real.sqrt q)
+/-- Markov parameter `z = 1 / (v + v⁻¹) = v / (q + 1)` (using
+    `v² = q`). -/
+noncomputable def markovZ {R : Type u} [Field R] (q v : R) : R :=
+  v / (q + 1)
+
+/-- Universal X = `v³ / (1 + q - q² - q³ + v³)` where `v² = q`.
+    Equivalently `Q^r` for `Q = q²` and `r` the Wenzl level. -/
+noncomputable def universalX {R : Type u} [Field R] (q v : R) : R :=
+  q * v / (1 + q - q^2 - q^3 + q * v)
 
 /-! ## Step 3: Schur principal-specialisation -/
 
-/-- The Schur principal-specialisation factor for partition λ at level
-    r, with Q = q² and X = Q^r:
+/-- The Schur principal-specialisation factor for partition λ at
+    level r, with `Q = q²` and `X = Q^r`:
 
       s_{λ, r}(Q) = Q^{n(λ)} · ∏_{(i,j) ∈ λ} (1 - X·Q^{c(i,j)}) / (1 - Q^{h(i,j)})
 
     Stub — full implementation requires partition-cell iteration. -/
-constant schurPrincipal (lam : List ℕ) (q : ℝ) : ℝ
+opaque schurPrincipal {R : Type u} [Field R] (lam : List ℕ) (q v : R) : R
 
 /-! ## Step 4: Normalisation -/
 
-/-- Partition function denominator Z_n = Σ_µ d_µ · s_µ over all
-    partitions µ of n. -/
-constant partitionFunctionZ (n : ℕ) (q : ℝ) : ℝ
+/-- Partition function denominator `Z_n = Σ_µ d_µ · s_µ` over all
+    partitions µ of `n`. -/
+opaque partitionFunctionZ {R : Type u} [Field R] (n : ℕ) (q v : R) : R
 
-/-- The recipe: y_λ(q) = s_{λ, r}(Q) / Z_n. -/
-noncomputable def yLambdaRecipe (lam : List ℕ) (q : ℝ) : ℝ :=
-  schurPrincipal lam q / partitionFunctionZ (lam.foldr (· + ·) 0) q
+/-- The recipe: `y_λ(q) = s_{λ, r}(Q) / Z_n`. -/
+noncomputable def yLambdaRecipe {R : Type u} [Field R]
+    (lam : List ℕ) (q v : R) : R :=
+  schurPrincipal lam q v /
+    partitionFunctionZ (lam.foldr (· + ·) 0) q v
 
 /-! ## Markov-trace convention discriminator
 
@@ -120,12 +134,11 @@ inductive MarkovTraceConvention : Type
 /-- A Markov-trace y_λ value paired with the convention it
     implements. Wrapping a raw `value` in this structure lets
     downstream theorems pattern-match on the `convention` field
-    (e.g. `(c : MarkovTraceCoefficient).convention = .wenzlSchur`)
     rather than relying on prose annotations or external audit
     docs. -/
-structure MarkovTraceCoefficient where
-  /-- The y_λ value at the substrate parameter. -/
-  value : ℝ
+structure MarkovTraceCoefficient (R : Type u) where
+  /-- The y_λ value at the substrate parameter (in the ground ring). -/
+  value : R
   /-- The Markov-trace convention this value follows. -/
   convention : MarkovTraceConvention
 
@@ -133,7 +146,7 @@ structure MarkovTraceCoefficient where
 
 /-- **Recipe correctness**: the algorithm `yLambdaRecipe` produces the
     Jones-Markov central coefficient y_λ for the symmetric Hecke
-    convention σ² = (q - q⁻¹)σ + 1 with parameter z = 1/(√q + 1/√q).
+    convention σ² = (q - q⁻¹)σ + 1 with parameter z = 1/(v + v⁻¹).
 
     The output is **Wenzl–Schur-canonical**: `JonesMarkovCoefficient`
     is the y_λ on the Wenzl-Schur side of the convention split (see
@@ -142,75 +155,81 @@ structure MarkovTraceCoefficient where
 
     Equivalent to prop:y-lambda-closed-form-wenzl-bridge restated
     algorithmically. -/
-constant JonesMarkovCoefficient (q : ℝ) (lam : List ℕ) : ℝ
+opaque JonesMarkovCoefficient {R : Type u} [Field R]
+    (q v : R) (lam : List ℕ) : R
 
 /-- The Markov-trace convention this recipe implements. -/
 def yLambdaRecipeConvention : MarkovTraceConvention :=
   MarkovTraceConvention.wenzlSchur
 
-/-- The Wenzl–Schur-tagged y_λ wrapper, bundling
-    `JonesMarkovCoefficient` with its convention so that downstream
-    consumers can demand `convention = .wenzlSchur` at the type
-    level. -/
-noncomputable def jonesMarkovTagged (q : ℝ) (lam : List ℕ) :
-    MarkovTraceCoefficient :=
-  { value := JonesMarkovCoefficient q lam,
+/-- The Wenzl–Schur-tagged y_λ wrapper. -/
+noncomputable def jonesMarkovTagged {R : Type u} [Field R]
+    (q v : R) (lam : List ℕ) : MarkovTraceCoefficient R :=
+  { value := JonesMarkovCoefficient q v lam,
     convention := yLambdaRecipeConvention }
 
-@[simp] theorem jonesMarkovTagged_convention (q : ℝ) (lam : List ℕ) :
-    (jonesMarkovTagged q lam).convention = MarkovTraceConvention.wenzlSchur :=
+@[simp] theorem jonesMarkovTagged_convention {R : Type u} [Field R]
+    (q v : R) (lam : List ℕ) :
+    (jonesMarkovTagged q v lam).convention =
+      MarkovTraceConvention.wenzlSchur :=
   rfl
 
-theorem y_lambda_recipe_correct
-    (q : ℝ) (hq : q > 1)
-    (lam : List ℕ) (hpos : ∀ p ∈ lam, 0 < p)
-    (hnonincr : List.Sorted (· ≥ ·) lam) :
-    JonesMarkovCoefficient q lam = yLambdaRecipe lam q := by
-  sorry  -- Ref: prop:y-lambda-recipe-from-partition proof;
-         -- composes prop:y-lambda-closed-form-wenzl-bridge with
-         -- the explicit X substitution from Step 2.
+theorem y_lambda_recipe_correct {R : Type u} [Field R]
+    (q v : R) (lam : List ℕ)
+    (_hpos : ∀ p ∈ lam, 0 < p)
+    (_hnonincr : List.Sorted (· ≥ ·) lam) :
+    JonesMarkovCoefficient q v lam = yLambdaRecipe lam q v := by
+  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+  -- Composes prop:y-lambda-closed-form-wenzl-bridge with the
+  -- explicit X substitution from Step 2.
+  sorry
 
 /-- **Plancherel completeness**: Σ_λ⊢n d_λ · y_λ(q) = 1 for every n. -/
-theorem plancherel_via_recipe
-    (q : ℝ) (hq : q > 1) (n : ℕ)
+theorem plancherel_via_recipe {R : Type u} [Field R]
+    (q v : R) (n : ℕ)
     (parts : List (List ℕ))
-    (parts_complete : ∀ lam : List ℕ, lam.foldr (· + ·) 0 = n → lam ∈ parts)
-    (parts_nodup : parts.Nodup) :
-    (parts.map (fun lam => (hookDim lam : ℝ) * yLambdaRecipe lam q)).sum = 1 := by
-  sorry  -- Ref: tr_M(1_{H_n}) = 1 normalisation transported through
-         -- Wedderburn (cf. prop:y-lambda-closed-form-wenzl-bridge).
+    (_parts_complete : ∀ lam : List ℕ,
+      lam.foldr (· + ·) 0 = n → lam ∈ parts)
+    (_parts_nodup : parts.Nodup) :
+    (parts.map
+      (fun lam => (hookDim lam : R) * yLambdaRecipe lam q v)).sum
+        = (1 : R) := by
+  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+  -- tr_M(1_{H_n}) = 1 normalisation transported through Wedderburn
+  -- (cf. prop:y-lambda-closed-form-wenzl-bridge).
+  sorry
 
 /-- **Cyclotomic factorisation**: the recipe output factors as
-    P_λ(√q) / D_n(√q) where D_n is a pure product of cyclotomic
-    polynomials Φ_d(√q). -/
-/-- The recipe output factorises as P_λ(√q) / D_n(√q) where D_n is a
-    pure product of cyclotomic polynomials. -/
-constant YLambdaRecipeCyclotomicFactor : Prop
+    P_λ(v) / D_n(v) where D_n is a pure product of cyclotomic
+    polynomials Φ_d(v). -/
+opaque YLambdaRecipeCyclotomicFactor : Prop
 
-theorem y_lambda_cyclotomic_via_recipe
-    (q : ℝ) (hq : q > 1)
-    (lam : List ℕ) :
+theorem y_lambda_cyclotomic_via_recipe {R : Type u} [Field R]
+    (q v : R) (lam : List ℕ) :
     YLambdaRecipeCyclotomicFactor := by
-  sorry  -- Ref: prop:y-lambda-cyclotomic-factorization;
-         -- denominators arise from ∏(1 - q^h) = ∏ Φ_d(√q) products
-         -- by the identity 1 - q^k = ∏_{d ∣ 2k} Φ_d(√q).
+  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+  -- Denominators arise from ∏(1 - q^h) = ∏ Φ_d(v) products by the
+  -- identity 1 - q^k = ∏_{d ∣ 2k} Φ_d(v).
+  sorry
 
 /-! ## Worked example: n = 2 -/
 
-/-- For n = 2, λ = (2): y_(2)(q) = (q^(3/2) + q + 1) / ((q + 1)(q² + 1)).
+/-- For n = 2, λ = (2):
+    y_(2)(q) = (v³ + q + 1) / ((q + 1)(q² + 1))   where v² = q.
 
     By the recipe:
       Step 1: cells (1,1), (1,2); contents 0, 1; hooks 2, 1; n((2)) = 0.
-      Step 2: X = q^(3/2) / (1 + q - q² - q³ + q^(3/2)).
+      Step 2: X = v³ / (1 + q - q² - q³ + v³).
       Step 3: s_(2),r = (1 - X)(1 - X·q²) / ((1 - q⁴)(1 - q²)).
       Step 4: Z_2 = (1 - X)² / (1 - q²)² (after telescope).
       Step 5: y_(2) = (1 - X·q²) / ((1 - X)(1 + q²))
-              = (q^(3/2) + q + 1) / ((q + 1)(q² + 1))
+              = (v³ + q + 1) / ((q + 1)(q² + 1))
               after substituting X. -/
-theorem y_lambda_recipe_n2_partition_2
-    (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
-    yLambdaRecipe [2] q = (q * Real.sqrt q + q + 1) / ((q + 1) * (q^2 + 1)) := by
-  sorry  -- Ref: prop:y-lambda-recipe-from-partition §"Worked example";
-         -- explicit computation through the 5-step recipe.
+theorem y_lambda_recipe_n2_partition_2 {R : Type u} [Field R]
+    (q v : R) :
+    yLambdaRecipe [2] q v = (q * v + q + 1) / ((q + 1) * (q^2 + 1)) := by
+  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+  -- Explicit computation through the 5-step recipe.
+  sorry
 
 end QOU.BraidsAndKnots

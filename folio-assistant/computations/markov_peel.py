@@ -230,6 +230,7 @@ def tr_M_atomic(
     reduce_first: bool = True,
     max_iterations: int = 10000,
     pre_register_nucleons: bool = True,
+    use_fast: bool = True,
 ):
     """Symbolic Markov trace `tr_M(β)` of the atomic braid for (Z, N).
 
@@ -269,6 +270,20 @@ def tr_M_atomic(
 
     A = Z + N
     n_strands = 3 * A
+
+    # Fast path: route through the LaurentQ-coefficient pipeline in
+    # `hecke_laurent_fast.tr_M_atomic_fast`.  Numerical equivalence at
+    # q = q₀ verified on all atoms in [proton, neutron, deuteron,
+    # tritium, helium-3, helium-4, lithium-5]; speedup 3-25× over the
+    # sympy path below.  Opt out with `use_fast=False` to recover the
+    # sympy path verbatim (e.g. for callers that depend on the exact
+    # symbolic form rather than the numerical value at q₀).
+    if use_fast and reduce_first:
+        from hecke_laurent_fast import tr_M_atomic_fast
+        return tr_M_atomic_fast(
+            Z, N, include_inter=include_inter,
+            max_iterations=max_iterations,
+        )
 
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
 

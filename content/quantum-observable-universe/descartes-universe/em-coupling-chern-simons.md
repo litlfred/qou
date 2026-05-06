@@ -14,9 +14,9 @@ $\mathrm{CS}(T_{m, n})$ through the single RT construction.  The
 proposition's numerical prediction specialises the shared object rather
 than combining two independently postulated quantities.
 
-**Proposition.**
-*The fine structure constant receives corrections from the
-Chern–Simons invariants of the force-carrier torus knots
+**Conjecture (Chern-Simons descent correction, $\kappa$ unproved).**
+*The fine structure constant is conjectured to receive corrections from
+the Chern–Simons invariants of the force-carrier torus knots
 $T_{2,9}$ and $T_{3,5}$ on Bring's surface:*
 
 $$
@@ -40,10 +40,17 @@ $$
 is the Gram determinant ratio of the classical and $q$-deformed
 Chern–Simons pairing on Bring's surface.*
 
-*At $q_0 \approx 1.110$:
-$1/\alpha = 137.035944$ vs CODATA $137.035999$ (399 ppb).*
+*At $q_0 \approx 1.110$ with the Witten-1988 value $\kappa \approx 1.722$:
+$1/\alpha = 137.035944$ vs CODATA $137.035999$ — residual $399$ ppb.
+The value $\kappa = 1.722$ was pointed at the Gram-determinant computation
+sketched below but was admitted as `sorry` in the Lean formalisation
+([`em-coupling-chern-simons.lean`](#)) and never closed. To match
+CODATA exactly requires $\kappa \approx 1.8878$, which differs from the
+Witten value by $\sim 10\%$ — indicating that either the Gram-determinant
+identification of $\kappa$ is wrong, or that the order-$\delta_{CS}^2$
+truncation is incomplete and missing higher-order contributions.*
 
-*Proof.*
+*Proof sketch (does not close $\kappa$).*
 The bare coupling $\alpha = q^{-1}/([9]_q \cdot [10]_q)$ comes
 from the antisymmetric braiding eigenvalue (Layer 2 of
 [EM coupling projection](#prop:em-coupling-projection))
@@ -84,8 +91,14 @@ $\ell = |m_1 n_2 - m_2 n_1| = 17$ is the linking number,
 and $c_i = m_i n_i$ is the crossing product.  The $q$-deformed
 version replaces $m,n$ with $[m]_q, [n]_q$ throughout.
 
-The determinant ratio $\kappa = \det G^{\mathrm{cl}} / \det G^q
-= 1.722$ captures the self-dual damping at the $J^2$ jet level.
-
-Combining: $1/\alpha = 136.823 + 0.212 + 0.001 = 137.036$.
-$\square$
+The determinant ratio $\kappa = \det G^{\mathrm{cl}} / \det G^q$ is
+*conjectured* to capture the self-dual damping at the $J^2$ jet level,
+with claimed numerical value $\kappa \approx 1.722$. **This identification
+is not proved**: the Gram matrix above is dimensionally ambiguous (the
+choice of basis for the rank-$2$ sublattice and the explicit form of
+$s_i, \ell, c_i$ in the $q$-deformed setting have not been fixed), and
+the resulting $\kappa$ has not been computed end-to-end. A direct fit
+to CODATA gives $\kappa \approx 1.8878$, which suggests either the
+formula is missing a higher-order term or that this entire ansatz is
+the wrong decomposition. Closing $\kappa$ structurally is an open
+problem — see [open problems](#rem:alpha-em-derivation-open-problems).$\square$

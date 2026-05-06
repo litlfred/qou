@@ -17,6 +17,7 @@ import QOU.Interactions.NuclearOperatorRegimes
 import QOU.Interactions.NucleonNFWitness
 import QOU.Interactions.ProtonTrefoilSign
 import QOU.Interactions.TrefoilVanishing
+import QOU.Interactions.WedderburnMassFormula
 
 /-!
 # Interactions — Module Index
@@ -39,4 +40,6 @@ Re-exports all particle interaction formalization modules.
 - NucleonNFWitness: proton/neutron NF coefficient verification
 - ProtonTrefoilSign: sign analysis of trefoil coefficient
 - TrefoilVanishing: B₃ trefoil coefficient = 0 (fully proved)
+- WedderburnMassFormula: three-invariant atomic mass formula
+  (`prop:wedderburn-mass-formula`)
 -/

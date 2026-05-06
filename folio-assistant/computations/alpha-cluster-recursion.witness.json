@@ -1,6 +1,6 @@
 {
   "computation": "alpha-cluster-recursion",
-  "computedAt": "2026-05-03T09:42:58.183740+00:00",
+  "computedAt": "2026-05-03T20:51:43.169468+00:00",
   "description": "α-cluster binding via recursion B(nα) = n·B(⁴He) + C(n,2)·c_αα as a callable.  Implements the `recursive-on-4He` methodology for ⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca.  c_αα = m_e · Vol(7²_1) is derived per c_alpha_via_knot_operators.py (knot-operator decomposition); B(⁴He) anchor is the magic-A zero-parameter prediction by default.",
   "constants": {
     "m_e_MeV": 0.51099895069,

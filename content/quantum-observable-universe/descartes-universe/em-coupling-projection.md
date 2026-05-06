@@ -185,7 +185,7 @@ $\lambda_V \cdot A$ in the mass formula.
 The full coupling receives an **exceptional divisor correction**
 from the Chern-Simons invariants of the force-carrier torus knots
 $T_{2,9}$ and $T_{3,5}$
-([EM coupling Chern-Simons](#prop:em-coupling-chern-simons)):
+([EM coupling Chern-Simons](#conj:em-coupling-chern-simons)):
 
 $$
   \frac{1}{\alpha_{\mathrm{EM}}}
@@ -212,7 +212,7 @@ capturing self-dual damping at the second jet level.  Both
 $\delta_{\mathrm{CS}}$ and $\kappa$ are **derived** from the
 Chern–Simons invariants and the Bring-surface Gram matrix — no
 free parameters are introduced
-([EM coupling Chern-Simons](#prop:em-coupling-chern-simons)).
+([EM coupling Chern-Simons](#conj:em-coupling-chern-simons)).
 
 The Chern-Simons invariants of torus knots
 $T_{m,n}$ are given by the universal formula
@@ -242,9 +242,34 @@ Planck constant is $\hbar_q = (q - 1)/q$.
 | CODATA 2018 | $137.035999084(21)$ |
 | Residual | $399\;\mathrm{ppb}$ |
 
-The Chern-Simons correction reduces the discrepancy from $0.155\%$
-(bare formula) to $399\;\mathrm{ppb}$ — a $3900\times$ improvement
-with zero additional parameters.
+The Chern-Simons correction was claimed to reduce the discrepancy from
+$0.155\%$ (bare formula) to $399\;\mathrm{ppb}$. **However, audit
+shows** the $\kappa \approx 1.722$ value used here was admitted as
+`sorry` in the Lean formalisation and never closed; matching CODATA
+exactly requires $\kappa \approx 1.8878$. See
+[`conj:em-coupling-chern-simons`](#conj:em-coupling-chern-simons) for
+the demoted statement and [open problems](#rem:alpha-em-derivation-open-problems)
+for the path forward.
+
+**Open problem: closing the $0.155\%$ bare residual.**
+The bare formula $1/\alpha_{\text{bare}} = q\cdot[9]_q\cdot[10]_q$ has
+a complete categorical derivation (singlet-idempotent trace squared,
+divided by Bring-forced force-carrier complexity) and accounts for
+$\alpha_{\text{EM}}$ to $-0.155\%$ at $q_0$. The remaining
+$\sim 1.55 \times 10^{-3}$ relative gap is currently unexplained at
+the level of a closed structural derivation:
+
+1. The Chern-Simons form ($1+\delta_{CS}+\kappa\delta_{CS}^2$ with
+   $\kappa$ from a Gram-determinant ratio) is conjectural; the
+   $\kappa$ identification is unproved.
+2. The PSLQ-empirical form $45[3]_q(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$
+   matches CODATA to $7$ ppb at $q_0$ but disagrees with the bare
+   formula at every other $q$ and has only one of four factors
+   structurally derived.
+
+The honest current status is: the bare $q[9]_q[10]_q$ derivation is
+solid; closing the remaining $1.55 \times 10^{-3}$ requires further
+work and should not yet be presented as derived.
 
 **Physical interpretation.**
 
