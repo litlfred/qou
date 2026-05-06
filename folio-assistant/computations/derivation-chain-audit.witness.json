@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-06T00:36:38.875933+00:00",
-  "commitSha": "52302c5efa6e669a6f9e29c6788a877b7a780dce",
+  "computedAt": "2026-05-06T00:46:46.411520+00:00",
+  "commitSha": "40eefd6dd750215892bf47a2e4185ecc37b86084",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1385,6 +1385,7 @@
         "beta-decay-energy-scale.witness.json",
         "beta-decay-from-q.witness.json",
         "beta-decay-matrix.witness.json",
+        "beta-ew-delta-I-eigenvalues.witness.json",
         "bigraded-e-infinity-h3.witness.json",
         "binding-canonical.witness.json",
         "binding-fast-pipeline.witness.json",
