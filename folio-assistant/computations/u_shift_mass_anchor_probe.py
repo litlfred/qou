@@ -47,14 +47,25 @@ from q_parameter import Q_MP as Q0_MP  # noqa: E402
 
 Q0 = Q0_MP
 
-M_E_MEV = 0.51099895
-M_P_MEV = 938.27208816
-M_N_MEV = 939.56542052
+# Nucleon masses (MeV).  These are dimensionful CODATA values; they
+# require scaling by E_0 (= categorical-mass calibration) before
+# being added to the categorical mass terms in the probe sweep.
+M_E_MEV = mp.mpf('0.51099895')
+M_P_MEV = mp.mpf('938.27208816')
+M_N_MEV = mp.mpf('939.56542052')
+
+# Module-level h := q − q⁻¹ at q = Q0 (Hecke parameter).
+H = Q0 - 1 / Q0
 
 
 # ── Categorical constants at q_0 ────────────────────────────────
 def categorical_constants() -> dict:
-    """Compute the named categorical constants at q_0 = q_0_MP."""
+    """Compute the named categorical constants at q_0 = q_0_MP.
+
+    Returns mpmath types throughout to respect the `mp.dps = 50`
+    precision floor; downstream callers that need plain `float`
+    should cast at the consumption point, not here.
+    """
     q = Q0
     h_bar_q = (q - 1) / q                  # Planck-q
     c_q     = 1 / (q - 1)                  # speed-of-light-q
@@ -62,12 +73,12 @@ def categorical_constants() -> dict:
     n3_q    = (q**3 - q**(-3)) / (q - q**(-1))   # [3]_q
     n2_q    = (q + q**(-1))                       # [2]_q
     return {
-        "q_0":     float(q),
-        "h_bar_q": float(h_bar_q),
-        "c_q":     float(c_q),
-        "z_markov": float(z),
-        "[2]_q":   float(n2_q),
-        "[3]_q":   float(n3_q),
+        "q_0":     q,
+        "h_bar_q": h_bar_q,
+        "c_q":     c_q,
+        "z_markov": z,
+        "[2]_q":   n2_q,
+        "[3]_q":   n3_q,
     }
 
 
@@ -77,13 +88,17 @@ SHIFT_FREE = {
     "n": 16,
 }
 
+from d_u_closed_form_proof import closed_form_d_u  # noqa: E402
+
+# Atomic-braid shift values from the closed-form proof (PR #539):
+#   shift_atom(Z, N) = 18Z + 21N + 1.
+# Routed through closed_form_d_u to keep a single source of truth.
 SHIFT_ATOMIC_FORMULA = {
-    # shift_atom(Z, N) = 18A + 3N + 1 = 18Z + 21N + 1
-    "D":  18 * 2 + 3 * 1 + 1,   # = 40
-    "T":  18 * 3 + 3 * 2 + 1,   # = 61
-    "3He": 18 * 3 + 3 * 1 + 1,  # = 58
-    "4He": 18 * 4 + 3 * 2 + 1,  # = 79
-    "5Li": 18 * 5 + 3 * 2 + 1,  # = 97
+    "D":   closed_form_d_u(1, 1)["u_shift"],   # = 40
+    "T":   closed_form_d_u(1, 2)["u_shift"],   # = 61
+    "3He": closed_form_d_u(2, 1)["u_shift"],   # = 58
+    "4He": closed_form_d_u(2, 2)["u_shift"],   # = 79
+    "5Li": closed_form_d_u(3, 2)["u_shift"],   # = 97
 }
 
 # Anchor: m/m_e
@@ -206,16 +221,16 @@ def main() -> int:
     print("  Test: does shift exponent (Habiro D(u)) directly predict m_p/m_e?")
     print("=" * 96)
 
-    print(f"\n  Categorical constants at q_0 = {consts['q_0']:.10f}:")
+    print(f"\n  Categorical constants at q_0 = {float(consts['q_0']):.10f}:")
     for k, v in consts.items():
-        print(f"    {k:<10} = {v:>14.8f}")
+        print(f"    {k:<10} = {float(v):>14.8f}")
 
     print(f"\n  Empirical inputs (from w3 audit):")
     print(f"    shift_p = {SHIFT_FREE['p']}  (isolated proton, include_inter=False)")
     print(f"    shift_n = {SHIFT_FREE['n']}  (isolated neutron, include_inter=False)")
     print(f"\n  Anchor targets:")
-    print(f"    m_p/m_e = {ANCHOR['p']:.6f}  (CODATA)")
-    print(f"    m_n/m_e = {ANCHOR['n']:.6f}  (CODATA)")
+    print(f"    m_p/m_e = {float(ANCHOR['p']):.6f}  (CODATA)")
+    print(f"    m_n/m_e = {float(ANCHOR['n']):.6f}  (CODATA)")
 
     candidates = evaluate_candidates(consts)
     joint = joint_test(candidates)
@@ -224,20 +239,20 @@ def main() -> int:
     print(f"\n  {'formula':<25} {'p value':>12} {'p err%':>9}  {'n value':>12} {'n err%':>9}")
     print("  " + "-" * 76)
     for j in joint:
-        print(f"  {j['formula']:<25} {j['p_value']:>12.2f} {j['p_err_pct']:>+8.3f}%  "
-              f"{j['n_value']:>12.2f} {j['n_err_pct']:>+8.3f}%")
+        print(f"  {j['formula']:<25} {float(j['p_value']):>12.2f} {float(j['p_err_pct']):>+8.3f}%  "
+              f"{float(j['n_value']):>12.2f} {float(j['n_err_pct']):>+8.3f}%")
 
     print(f"\n  Best candidate: {joint[0]['formula']}")
-    print(f"     max error: {joint[0]['max_err_pct']:.3f}%")
+    print(f"     max error: {float(joint[0]['max_err_pct']):.3f}%")
 
     # Sanity: m_n - m_p splitting consistency for the best candidate
     print(f"\n  Splitting consistency check:")
-    print(f"    Δm_np / m_e (CODATA) = {ANCHOR['n'] - ANCHOR['p']:.4f}")
+    print(f"    Δm_np / m_e (CODATA) = {float(ANCHOR['n'] - ANCHOR['p']):.4f}")
     for j in joint[:5]:
         diff_n_p = j['n_value'] - j['p_value']
         diff_actual = ANCHOR['n'] - ANCHOR['p']
         diff_err = (diff_n_p - diff_actual) / diff_actual * 100
-        print(f"    {j['formula']:<25}  pred Δ = {diff_n_p:>+9.4f}  err {diff_err:>+8.2f}%")
+        print(f"    {j['formula']:<25}  pred Δ = {float(diff_n_p):>+9.4f}  err {float(diff_err):>+8.2f}%")
 
     # Conclusion
     print("\n  Conclusion:")

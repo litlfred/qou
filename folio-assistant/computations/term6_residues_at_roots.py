@@ -225,6 +225,10 @@ def split_polar_at_u0(tr_u_expr, u, u0_sp) -> dict:
     else:
         Dprime_coeffs_desc = coeffs_desc
     Dprime = sp.Poly(Dprime_coeffs_desc, u)
+    # Cross-check against the closed-form D(u) for canonical pppnnn
+    # atomic braids (PR #539): D(u) = 2^(2A+1) · u^(18Z+21N+1) · (1+u²)^(3A−1).
+    # The auto-detected k must match the closed-form 18Z + 21N + 1.
+    # (Caller-side check; passed in via expected_k_pole when known.)
 
     if k == 0:
         # No u = 0 pole; the proper rational is entirely Term 6.
@@ -301,11 +305,28 @@ def compute_atom(Z: int, N: int) -> dict:
     t_split = time.time() - t0
 
     pp_roots = split["pp_at_roots"]
+
+    # Cross-check the auto-detected pole order against the closed-form
+    # prediction for canonical pppnnn atomic braids (PR #539, merged
+    # 2026-05-04).  D(u) = 2^(2A+1) · u^(18Z+21N+1) · (1+u²)^(3A−1).
+    closed_form_pred = None
+    closed_form_match = None
+    if Z >= 1 and N >= 1:
+        try:
+            from d_u_closed_form_proof import closed_form_d_u
+            cf = closed_form_d_u(Z, N, include_inter=True)
+            closed_form_pred = cf["u_shift"]
+            closed_form_match = (split["pole_order_at_zero"] == closed_form_pred)
+        except (ImportError, ValueError, NotImplementedError):
+            pass
+
     return {
         "Z": Z, "N": N, "A": A,
         "tr_M_u_symbolic_ops": int(sp.count_ops(tr_u)),
         "denom_pole_order_at_zero": split["pole_order_at_zero"],
         "denom_factor_no_zero": split["denom_factor_no_zero"],
+        "closed_form_pole_order": closed_form_pred,
+        "closed_form_match": closed_form_match,
         "elapsed_peel_sec":  round(t_peel,  3),
         "elapsed_subs_sec":  round(t_subs,  3),
         "elapsed_split_sec": round(t_split, 3),
