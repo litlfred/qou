@@ -111,7 +111,7 @@ theorem ne_identity : crossingCoeffs .ne = (0, 1) := by rfl
 
 /-! ## §3  Confinement universality -/
 
-/-- **Confinement universality** (structural proof).
+/- **Confinement universality** (structural proof).
 
     The nucleon NF is independent of photon polarization because
     the confinement step (B₃ · typed crossings) takes as input

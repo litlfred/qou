@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+
 /-!
 # QOU.BraidKnot.ShellNeutrality — saturated-shell neutrality conjecture
 
@@ -41,9 +44,6 @@ LaTeX label: `conj:categorical-neutrality-saturated-shells`
   finite groups with BN-pairs of classical type (PhD thesis)
 - [manuscript] braids-and-knots / categorical-neutrality-saturated-shells
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
 
 namespace QOU.BraidKnot.ShellNeutrality
 

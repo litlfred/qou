@@ -1,3 +1,7 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.Interactions.AlgebraicPrimality — magic via tensor-product irreducibility
 
@@ -27,10 +31,6 @@ LaTeX labels:
 - [manuscript] particle-interactions / n-equals-1-vacuous-magic
 - [manuscript] particle-interactions / algebraic-primality-equals-empirical-at-q0
 -/
-
-import Mathlib.Data.List.Basic
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Tactic
 
 namespace QOU.Interactions.AlgebraicPrimality
 

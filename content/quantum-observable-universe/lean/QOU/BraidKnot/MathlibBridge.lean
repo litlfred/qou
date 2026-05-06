@@ -1,3 +1,6 @@
+import Mathlib.Combinatorics.Young.YoungDiagram
+import QOU.BraidKnot.ShellNeutrality
+
 /-!
 # QOU.BraidKnot.MathlibBridge — concrete bridge to Mathlib YoungDiagrams
 
@@ -32,9 +35,6 @@ LaTeX label: `conj:categorical-neutrality-saturated-shells`
 - [manuscript] braids-and-knots / categorical-neutrality-saturated-shells
 - [mathas1999] https://doi.org/10.1090/ulect/015
 -/
-
-import Mathlib.Combinatorics.Young.YoungDiagram
-import QOU.BraidKnot.ShellNeutrality
 
 namespace QOU.BraidKnot.MathlibBridge
 
