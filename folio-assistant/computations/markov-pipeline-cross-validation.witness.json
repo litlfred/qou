@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T17:05:12.582806+00:00",
-  "commitSha": "97ca6136a1abb3ab3cda005be83b324d27e83f52",
+  "computedAt": "2026-05-06T00:24:58.763876+00:00",
+  "commitSha": "22f9e201585e3374e3c495474ebd54fa78cbb9a1",
   "assertions": [
     {
       "name": "tr_M_at_q0_archimedean[D (deuteron, A=2)]",
@@ -45,7 +45,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "markov-pipeline-cross-validation",
   "scriptFile": "markov_pipeline_cross_validator.py",
   "scriptHash": "2ba19efaa410",
