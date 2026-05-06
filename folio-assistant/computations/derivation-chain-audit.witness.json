@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-06T00:41:39.664768+00:00",
-  "commitSha": "a1a2e2e8b43f7d194d849c7d828c276911f9ce20",
+  "computedAt": "2026-05-06T00:48:35.606620+00:00",
+  "commitSha": "1db55bd007126f2800a8e2f26709f97f2a6a3fb9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 1,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1375,6 +1375,7 @@
         "atom-wedderburn-blend.witness.json",
         "atomic-braid-b3-band-scanner.witness.json",
         "atomic-braid-mass-paper-formula.witness.json",
+        "atomic-braid-mass-table-modes-sweep.witness.json",
         "atomic-braid-mass-table.witness.json",
         "atomic-chirality-residue.witness.json",
         "atomic-tr-m-mpfr-50dps.witness.json",
@@ -1515,6 +1516,7 @@
         "full-pipeline.witness.json",
         "full-tower-mass.witness.json",
         "full-twist-delta-n2-verification.witness.json",
+        "full-twist-root-of-unity-probe.witness.json",
         "g-a-g-action-derivation.witness.json",
         "garside-irrep-qvalues.witness.json",
         "gb-filtration-gauge-invariance.witness.json",

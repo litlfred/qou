@@ -1,0 +1,869 @@
+{
+  "computation": "full-twist-root-of-unity-probe",
+  "description": "Probe of category-(a) for the full_twist_delta_n2_verification structural finding: at q = \u03b6_\u2113, the \u0394_n\u00b2-invariant subspace of H_n(q) is the span of V_\u03bb with c(\u03bb) \u2261 0 (mod \u2113).  Sweeps small \u2113 at magic n in range; identifies which \u2113 make the categorical-neutrality predicate realisable at magic n = 2.",
+  "reference_blocks": [
+    "prop:categorical-neutrality-saturated-shells",
+    "conj:mass-endomorphism"
+  ],
+  "computedAt": "2026-05-06T00:46:17.627549+00:00",
+  "parameters": {
+    "magic_nucleon_counts": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "ell_sweep": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12,
+      24,
+      60,
+      120
+    ],
+    "n_probed": [
+      2,
+      8
+    ]
+  },
+  "findings_by_n": {
+    "2": {
+      "n": 2,
+      "n_partitions": 2,
+      "total_dim": 2,
+      "is_magic": true,
+      "by_root_of_unity": {
+        "2": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "3": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "4": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "5": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "6": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "7": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "8": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "12": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "24": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "60": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        },
+        "120": {
+          "invariant_dim": 0,
+          "ratio": 0.0,
+          "invariant_blocks": []
+        }
+      }
+    },
+    "8": {
+      "n": 8,
+      "n_partitions": 22,
+      "total_dim": 764,
+      "is_magic": true,
+      "by_root_of_unity": {
+        "2": {
+          "invariant_dim": 636,
+          "ratio": 0.8324607329842932,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                8
+              ],
+              "content_sum": 28,
+              "dim": 1
+            },
+            {
+              "lambda": [
+                7,
+                1
+              ],
+              "content_sum": 20,
+              "dim": 7
+            },
+            {
+              "lambda": [
+                6,
+                2
+              ],
+              "content_sum": 14,
+              "dim": 20
+            },
+            {
+              "lambda": [
+                6,
+                1,
+                1
+              ],
+              "content_sum": 12,
+              "dim": 21
+            },
+            {
+              "lambda": [
+                5,
+                3
+              ],
+              "content_sum": 10,
+              "dim": 28
+            },
+            {
+              "lambda": [
+                5,
+                1,
+                1,
+                1
+              ],
+              "content_sum": 4,
+              "dim": 35
+            },
+            {
+              "lambda": [
+                4,
+                4
+              ],
+              "content_sum": 8,
+              "dim": 14
+            },
+            {
+              "lambda": [
+                4,
+                3,
+                1
+              ],
+              "content_sum": 4,
+              "dim": 70
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                2
+              ],
+              "content_sum": 2,
+              "dim": 56
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                4,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -4,
+              "dim": 35
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                1,
+                1
+              ],
+              "content_sum": -2,
+              "dim": 56
+            },
+            {
+              "lambda": [
+                3,
+                2,
+                2,
+                1
+              ],
+              "content_sum": -4,
+              "dim": 70
+            },
+            {
+              "lambda": [
+                3,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -12,
+              "dim": 21
+            },
+            {
+              "lambda": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "content_sum": -8,
+              "dim": 14
+            },
+            {
+              "lambda": [
+                2,
+                2,
+                2,
+                1,
+                1
+              ],
+              "content_sum": -10,
+              "dim": 28
+            },
+            {
+              "lambda": [
+                2,
+                2,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -14,
+              "dim": 20
+            },
+            {
+              "lambda": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -20,
+              "dim": 7
+            },
+            {
+              "lambda": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -28,
+              "dim": 1
+            }
+          ]
+        },
+        "3": {
+          "invariant_dim": 174,
+          "ratio": 0.22774869109947643,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                6,
+                1,
+                1
+              ],
+              "content_sum": 12,
+              "dim": 21
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            },
+            {
+              "lambda": [
+                3,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -12,
+              "dim": 21
+            }
+          ]
+        },
+        "4": {
+          "invariant_dim": 428,
+          "ratio": 0.5602094240837696,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                8
+              ],
+              "content_sum": 28,
+              "dim": 1
+            },
+            {
+              "lambda": [
+                7,
+                1
+              ],
+              "content_sum": 20,
+              "dim": 7
+            },
+            {
+              "lambda": [
+                6,
+                1,
+                1
+              ],
+              "content_sum": 12,
+              "dim": 21
+            },
+            {
+              "lambda": [
+                5,
+                1,
+                1,
+                1
+              ],
+              "content_sum": 4,
+              "dim": 35
+            },
+            {
+              "lambda": [
+                4,
+                4
+              ],
+              "content_sum": 8,
+              "dim": 14
+            },
+            {
+              "lambda": [
+                4,
+                3,
+                1
+              ],
+              "content_sum": 4,
+              "dim": 70
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                4,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -4,
+              "dim": 35
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            },
+            {
+              "lambda": [
+                3,
+                2,
+                2,
+                1
+              ],
+              "content_sum": -4,
+              "dim": 70
+            },
+            {
+              "lambda": [
+                3,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -12,
+              "dim": 21
+            },
+            {
+              "lambda": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "content_sum": -8,
+              "dim": 14
+            },
+            {
+              "lambda": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -20,
+              "dim": 7
+            },
+            {
+              "lambda": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -28,
+              "dim": 1
+            }
+          ]
+        },
+        "5": {
+          "invariant_dim": 202,
+          "ratio": 0.2643979057591623,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                7,
+                1
+              ],
+              "content_sum": 20,
+              "dim": 7
+            },
+            {
+              "lambda": [
+                5,
+                3
+              ],
+              "content_sum": 10,
+              "dim": 28
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            },
+            {
+              "lambda": [
+                2,
+                2,
+                2,
+                1,
+                1
+              ],
+              "content_sum": -10,
+              "dim": 28
+            },
+            {
+              "lambda": [
+                2,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -20,
+              "dim": 7
+            }
+          ]
+        },
+        "6": {
+          "invariant_dim": 174,
+          "ratio": 0.22774869109947643,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                6,
+                1,
+                1
+              ],
+              "content_sum": 12,
+              "dim": 21
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            },
+            {
+              "lambda": [
+                3,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -12,
+              "dim": 21
+            }
+          ]
+        },
+        "7": {
+          "invariant_dim": 302,
+          "ratio": 0.39528795811518325,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                8
+              ],
+              "content_sum": 28,
+              "dim": 1
+            },
+            {
+              "lambda": [
+                6,
+                2
+              ],
+              "content_sum": 14,
+              "dim": 20
+            },
+            {
+              "lambda": [
+                5,
+                2,
+                1
+              ],
+              "content_sum": 7,
+              "dim": 64
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            },
+            {
+              "lambda": [
+                3,
+                2,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -7,
+              "dim": 64
+            },
+            {
+              "lambda": [
+                2,
+                2,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -14,
+              "dim": 20
+            },
+            {
+              "lambda": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -28,
+              "dim": 1
+            }
+          ]
+        },
+        "8": {
+          "invariant_dim": 160,
+          "ratio": 0.2094240837696335,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                4,
+                4
+              ],
+              "content_sum": 8,
+              "dim": 14
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            },
+            {
+              "lambda": [
+                2,
+                2,
+                2,
+                2
+              ],
+              "content_sum": -8,
+              "dim": 14
+            }
+          ]
+        },
+        "12": {
+          "invariant_dim": 174,
+          "ratio": 0.22774869109947643,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                6,
+                1,
+                1
+              ],
+              "content_sum": 12,
+              "dim": 21
+            },
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            },
+            {
+              "lambda": [
+                3,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "content_sum": -12,
+              "dim": 21
+            }
+          ]
+        },
+        "24": {
+          "invariant_dim": 132,
+          "ratio": 0.17277486910994763,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            }
+          ]
+        },
+        "60": {
+          "invariant_dim": 132,
+          "ratio": 0.17277486910994763,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            }
+          ]
+        },
+        "120": {
+          "invariant_dim": 132,
+          "ratio": 0.17277486910994763,
+          "invariant_blocks": [
+            {
+              "lambda": [
+                4,
+                2,
+                1,
+                1
+              ],
+              "content_sum": 0,
+              "dim": 90
+            },
+            {
+              "lambda": [
+                3,
+                3,
+                2
+              ],
+              "content_sum": 0,
+              "dim": 42
+            }
+          ]
+        }
+      }
+    }
+  },
+  "magic_n2_realising_ell": [],
+  "all_passed": true
+}
