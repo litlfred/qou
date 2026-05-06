@@ -146,6 +146,33 @@ variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
   [CommRing R] [Inv R] [Ring A] [Algebra R A]
   [HA : HeckeAlgebra R n q A]
 
+/-- Evaluate a *word* `w : List (Generator n)` through the
+Hoefsmit-matrix homomorphism, producing the matrix product
+`ρ_λ(σ_{w₀}) · ρ_λ(σ_{w₁}) · … · ρ_λ(σ_{w_{ℓ-1}})`.
+
+The empty word evaluates to the identity matrix (the unit of the
+Hoefsmit-matrix monoid). -/
+def wordImage {λ : Partition n}
+    [HR : HoefsmitRepresentation n q A λ] :
+    List (Generator n) → Matrix (Fin HR.dim) (Fin HR.dim) R
+  | []      => 1
+  | g :: gs => HR.seminormal_matrix g * wordImage gs
+
+/-- `HasEigenvalueRatio M r` asserts that the matrix `M` has two
+nonzero eigenvalues `μ₁`, `μ₂` (with multiplicity) whose ratio is
+`r` — that is, there exists `μ` such that both `μ` and `r * μ`
+appear in the spectrum, and `μ ≠ 0`.
+
+We state the predicate via the characteristic polynomial vanishing
+condition: `λ` is an eigenvalue of `M` iff `det (M - λ • 1) = 0`.
+This avoids committing to a particular eigenvalue-extraction API. -/
+def HasEigenvalueRatio
+    {d : ℕ} [DecidableEq (Fin d)] (M : Matrix (Fin d) (Fin d) R)
+    (r : R) : Prop :=
+  ∃ μ : R, μ ≠ 0 ∧
+    (M - μ • (1 : Matrix (Fin d) (Fin d) R)).det = 0 ∧
+    (M - (r * μ) • (1 : Matrix (Fin d) (Fin d) R)).det = 0
+
 /-- The block-trace of the Hoefsmit representation at partition `λ`
 restricted to a Hecke generator gives the (q = 1 limit of) the
 Murnaghan–Nakayama character; the q-deformation enters via the

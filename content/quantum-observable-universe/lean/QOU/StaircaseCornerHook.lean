@@ -1,5 +1,6 @@
 import Mathlib.Data.Nat.Defs
 import Mathlib.Algebra.BigOperators.Basic
+import QOU.Hecke.Staircase
 
 /-!
 # Staircase EW-residual conjecture
@@ -107,46 +108,72 @@ Ref: [manuscript] §EW-residual, observed at q_0 to relative error
 pairwise-ratio search in dim-768 spectrum).
 -/
 
-/-- Opaque proposition encoding the spectral claim "for staircase
-`ρ k = (k, k-1, …, 1)`, the inverse-corner-hook scale `q^(1/(2k-1))`
-is realised as a ratio of two positive eigenvalues of the canonical
-β_EW Δ_I^minimal operator on the Hoefsmit module `V_{ρ k}`".
+/-- Concrete spectral statement: in any Hoefsmit representation `HR`
+of `H_{n_k}(q)` on the staircase Specht module `V_{ρ k}`, the
+matrix image of the canonical β_EW Δ_I^minimal word has two
+nonzero eigenvalues whose ratio is `q ^ (1 / (2k - 1))`.
 
-Declared as an `axiom`-protected `Prop` rather than a concrete
-predicate because the precise statement requires the full Hoefsmit
-matrix infrastructure (`QOU.Hecke.Hoefsmit`).  When that
-infrastructure exposes the staircase β_EW operator and an eigenvalue
-interface, this declaration is to be replaced by the literal
-predicate, and the `sorry` instance below becomes either discharged
-or restated against the new shape.
+The exponent `1 / (2k - 1)` lives in the real / `rpow` world; we
+state the predicate over an arbitrary `R` together with a
+designated **scale element** `s : R` standing for the would-be
+`q ^ (1 / (2k - 1))`.  Downstream callers supply `s` either by
+working over `ℝ` with `Real.rpow`, or by adjoining a `(2k−1)`-th
+root of `q` to the base ring.
 
-Crucially, this declaration has **no introduction rule** — providing
-a witness requires either (a) a literal proof, or (b) an additional
-axiom — so the field cannot be vacuously satisfied. -/
-axiom StaircaseEWSpectralContent (k : ℕ) : Prop
+This replaces the previous opaque
+`axiom StaircaseEWSpectralContent (k : ℕ) : Prop` with a
+predicate that actually mentions the Hoefsmit-matrix spectrum. -/
+def StaircaseEWSpectralContent
+    {R : Type*} {A : Type*} [CommRing R] [Inv R] [Ring A]
+    [Algebra R A] (q : R) (s : R) (k : ℕ)
+    [QOU.Hecke.HeckeAlgebra R (QOU.Hecke.staircaseStrands k) q A]
+    [HR : QOU.Hecke.HoefsmitRepresentation
+            (QOU.Hecke.staircaseStrands k) q A
+            (QOU.Hecke.staircasePartition k)] : Prop :=
+  QOU.Hecke.HoefsmitRepresentation.HasEigenvalueRatio
+    (QOU.Hecke.HoefsmitRepresentation.wordImage
+      (QOU.Hecke.betaEWWord (QOU.Hecke.staircaseStrands k)))
+    s
 
 /-- Axiomatic class encoding the staircase EW-residual conjecture. -/
-class StaircaseEWResidual : Prop where
-  /-- For every `k ≥ 2`, the inverse-corner-hook scale
-  `q^(1/(2k-1))` is realised as a ratio of two positive eigenvalues
-  of the canonical staircase β_EW operator on `V_{ρ k}`. -/
+class StaircaseEWResidual
+    {R : Type*} {A : Type*} [CommRing R] [Inv R] [Ring A]
+    [Algebra R A] (q : R) (scale : ℕ → R)
+    [∀ k, QOU.Hecke.HeckeAlgebra R (QOU.Hecke.staircaseStrands k) q A]
+    [∀ k, QOU.Hecke.HoefsmitRepresentation
+            (QOU.Hecke.staircaseStrands k) q A
+            (QOU.Hecke.staircasePartition k)] : Prop where
+  /-- For every `k ≥ 2`, the inverse-corner-hook scale `scale k`
+  (intended interpretation: `q ^ (1 / (2k − 1))`) is realised as
+  a ratio of two positive eigenvalues of the canonical staircase
+  β_EW operator on `V_{ρ k}`. -/
   spectral_scale_present :
-    ∀ (k : ℕ), 2 ≤ k → StaircaseEWSpectralContent k
+    ∀ (k : ℕ), 2 ≤ k → StaircaseEWSpectralContent q (scale k) k
 
 /-- **Open conjecture, recorded via `sorry`.**
 
 This is the *single* `sorry` in the staircase EW-residual chain.
 Per `CLAUDE.md §3b-cond`, downstream theorems that take
-`[StaircaseEWResidual]` as an instance hypothesis are
+`[StaircaseEWResidual q scale]` as an instance hypothesis are
 **rigorous-conditional** results: their Lean side is fully verified
 modulo this one named conjectural input.
 
 To formalise the proof, replace `sorry` with a real construction
-that supplies `StaircaseEWSpectralContent k` for every `k ≥ 2`
-(once `QOU.Hecke.Hoefsmit` exposes the staircase β_EW operator and
-the eigenvalue-ratio set).
+that supplies `StaircaseEWSpectralContent q (scale k) k` for every
+`k ≥ 2`.
+
+The instance is parameterised over an arbitrary commutative ring
+`R`, parameter `q`, scale function `scale`, Hecke algebra `A`,
+and Hoefsmit representations of every staircase Specht module.
 -/
-instance staircase_ew_residual_conjecture : StaircaseEWResidual where
+instance staircase_ew_residual_conjecture
+    {R : Type*} {A : Type*} [CommRing R] [Inv R] [Ring A]
+    [Algebra R A] (q : R) (scale : ℕ → R)
+    [∀ k, QOU.Hecke.HeckeAlgebra R (QOU.Hecke.staircaseStrands k) q A]
+    [∀ k, QOU.Hecke.HoefsmitRepresentation
+            (QOU.Hecke.staircaseStrands k) q A
+            (QOU.Hecke.staircasePartition k)] :
+    StaircaseEWResidual q scale where
   spectral_scale_present := fun _ _ => sorry
   -- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
 
