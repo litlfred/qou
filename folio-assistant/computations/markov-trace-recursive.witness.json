@@ -1,11 +1,12 @@
 {
   "computation": "markov-trace-recursive",
-  "description": "Recursive symbolic Markov-trace computer for arbitrary H_n(q) words. Uses gb_filtration_jet_tracker.HeckeElement (symbolic in q via sympy) to expand braids into the Hecke basis, then applies recursive Markov-axiom descent for each basis element. Tested up to H_6 for representative words.",
+  "description": "Recursive symbolic Markov-trace computer for arbitrary H_n(q) words. Uses gb_filtration_jet_tracker.HeckeElement (symbolic in q via sympy) to expand braids into the Hecke basis, then applies recursive Markov-axiom descent for each basis element with LRU memoisation on (perm, n). Tested up to H_6 for representative atomic-braid words (proton, neutron-like, deuteron disjoint cluster).",
   "reference_blocks": [
     "prop:atomic-mass-gb-nf",
-    "prop:categorical-mass-markov"
+    "prop:categorical-mass-markov",
+    "prop:markov-trace-axiomatic-closed-form"
   ],
-  "computedAt": "2026-05-05T22:51:34.446831+00:00",
+  "computedAt": "2026-05-05T23:58:21.883627+00:00",
   "test_cases": [
     {
       "name": "identity_H3",
@@ -13,7 +14,9 @@
       "word": [],
       "tr_M_at_q0": 1.0,
       "tr_M_symbolic_short": "1",
-      "tr_M_symbolic_full": "1"
+      "tr_M_symbolic_full": "1",
+      "expected_at_q0": 1.0,
+      "reference": "tr_M(1) = 1"
     },
     {
       "name": "\u03c3_1",
@@ -21,7 +24,11 @@
       "word": [
         1
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 0.49932033403359827,
+      "tr_M_symbolic_short": "sqrt(q)/(q + 1)",
+      "tr_M_symbolic_full": "sqrt(q)/(q + 1)",
+      "expected_at_q0": null,
+      "reference": "tr_M(\u03c3_i) = z \u2248 0.4993"
     },
     {
       "name": "\u03c3_1\u00b2",
@@ -30,7 +37,11 @@
         1,
         1
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 1.104388069809158,
+      "tr_M_symbolic_short": "(q**(5/2) - sqrt(q) + q**2 + q)/(q**2 + q)",
+      "tr_M_symbolic_full": "(q**(5/2) - sqrt(q) + q**2 + q)/(q**2 + q)",
+      "expected_at_q0": null,
+      "reference": "Hecke quadratic: h z + 1"
     },
     {
       "name": "\u03c3_1\u03c3_2",
@@ -39,17 +50,25 @@
         1,
         2
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 0.24932079597942414,
+      "tr_M_symbolic_short": "q/(q**2 + 2*q + 1)",
+      "tr_M_symbolic_full": "q/(q**2 + 2*q + 1)",
+      "expected_at_q0": null,
+      "reference": "tr_M = z\u00b2 \u2248 0.2493"
     },
     {
-      "name": "\u03c3_1\u03c3_2\u03c3_1",
+      "name": "\u03c3_1\u03c3_2\u03c3_1 (w_0)",
       "n": 3,
       "word": [
         1,
         2,
         1
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 0.5514434199198298,
+      "tr_M_symbolic_short": "(q**(5/2) + q**(3/2) + q**3 - q)/(q**3 + 2*q**2 + q)",
+      "tr_M_symbolic_full": "(q**(5/2) + q**(3/2) + q**3 - q)/(q**3 + 2*q**2 + q)",
+      "expected_at_q0": null,
+      "reference": "z + h z\u00b2 \u2248 0.5514"
     },
     {
       "name": "\u03c3_1^7 \u03c3_2^4 (proton)",
@@ -67,10 +86,14 @@
         2,
         2
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 1.6331535640480803,
+      "tr_M_symbolic_short": "(q**(67/2) + 2*q**(65/2) + q**(63/2) - q**(61/2) - 2*q**(59/...",
+      "tr_M_symbolic_full": "(q**(67/2) + 2*q**(65/2) + q**(63/2) - q**(61/2) - 2*q**(59/2) + 3*q**(55/2) + 2*q**(53/2) - 2*q**(51/2) - 2*q**(49/2) + 2*q**(47/2) + 2*q**(45/2) - 2*q**(43/2) - 3*q**(41/2) + 2*q**(37/2) + q**(35/2) - q**(33/2) - 2*q**(31/2) - q**(29/2) + 2*q**33 + 4*q**32 - 2*q**31 - 8*q**30 + 2*q**29 + 12*q**28 - q**27 - 14*q**26 + 14*q**24 - 14*q**22 - q**21 + 12*q**20 + 2*q**19 - 8*q**18 - 2*q**17 + 4*q**16 + 2*q**15)/(q**(51/2) + 3*q**(49/2) + 3*q**(47/2) + q**(45/2))",
+      "expected_at_q0": 1.6332,
+      "reference": "match char_fast"
     },
     {
-      "name": "\u03c3_1^6 \u03c3_2^4 \u03c3_1 inv (neutron-like)",
+      "name": "\u03c3_1^6 \u03c3_2^4 \u03c3_1^{-1} (neutron-like)",
       "n": 3,
       "word": [
         1,
@@ -85,7 +108,11 @@
         2,
         -1
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 1.2482482717548393,
+      "tr_M_symbolic_short": "(q**(131/2) + 7*q**(129/2) + 21*q**(127/2) + 34*q**(125/2) +...",
+      "tr_M_symbolic_full": "(q**(131/2) + 7*q**(129/2) + 21*q**(127/2) + 34*q**(125/2) + 28*q**(123/2) + q**(121/2) - 20*q**(119/2) - 7*q**(117/2) + 27*q**(115/2) + 35*q**(113/2) - 35*q**(109/2) - 27*q**(107/2) + 7*q**(105/2) + 20*q**(103/2) - q**(101/2) - 28*q**(99/2) - 34*q**(97/2) - 21*q**(95/2) - 7*q**(93/2) - q**(91/2) + 2*q**65 + 14*q**64 + 38*q**63 + 42*q**62 - 8*q**61 - 56*q**60 - 7*q**59 + 79*q**58 + 41*q**57 - 81*q**56 - 81*q**55 + 41*q**54 + 79*q**53 - 7*q**52 - 56*q**51 - 8*q**50 + 42*q**49 + 38*q**48 + 14*q**47 + 2*q**46)/(q**(119/2) + 8*q**(117/2) + 28*q**(115/2) + 56*q**(113/2) + 70*q**(111/2) + 56*q**(109/2) + 28*q**(107/2) + 8*q**(105/2) + q**(103/2))",
+      "expected_at_q0": null,
+      "reference": "Markov 11-cross with inverse"
     },
     {
       "name": "\u03c3_1\u03c3_2\u03c3_3 (H_4)",
@@ -95,7 +122,11 @@
         2,
         3
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 0.12449094312996865,
+      "tr_M_symbolic_short": "q**(3/2)/(q**3 + 3*q**2 + 3*q + 1)",
+      "tr_M_symbolic_full": "q**(3/2)/(q**3 + 3*q**2 + 3*q + 1)",
+      "expected_at_q0": null,
+      "reference": "tr_M = z\u00b3"
     },
     {
       "name": "\u03c3_1\u03c3_2\u03c3_3\u03c3_2\u03c3_1 (H_4)",
@@ -107,7 +138,11 @@
         2,
         1
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 0.6090075341342218,
+      "tr_M_symbolic_short": "(q**(15/2) + 2*q**(13/2) + q**(11/2) + q**(9/2) + 2*q**(7/2)...",
+      "tr_M_symbolic_full": "(q**(15/2) + 2*q**(13/2) + q**(11/2) + q**(9/2) + 2*q**(7/2) + q**(5/2) + 2*q**7 + 4*q**6 - 4*q**4 - 2*q**3)/(q**7 + 4*q**6 + 6*q**5 + 4*q**4 + q**3)",
+      "expected_at_q0": null,
+      "reference": "non-trivial 4-strand"
     },
     {
       "name": "\u03c3_1\u03c3_2\u03c3_3\u03c3_4 (H_5)",
@@ -118,7 +153,11 @@
         3,
         4
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 0.06216085930781364,
+      "tr_M_symbolic_short": "q**2/(q**4 + 4*q**3 + 6*q**2 + 4*q + 1)",
+      "tr_M_symbolic_full": "q**2/(q**4 + 4*q**3 + 6*q**2 + 4*q + 1)",
+      "expected_at_q0": null,
+      "reference": "tr_M = z^4"
     },
     {
       "name": "\u03c3_1\u03c3_2\u03c3_4\u03c3_5 (deuteron disjoint)",
@@ -129,7 +168,11 @@
         4,
         5
       ],
-      "error": "RecursionError: maximum recursion depth exceeded in comparison"
+      "tr_M_at_q0": 0.06216085930781364,
+      "tr_M_symbolic_short": "q**2/(q**4 + 4*q**3 + 6*q**2 + 4*q + 1)",
+      "tr_M_symbolic_full": "q**2/(q**4 + 4*q**3 + 6*q**2 + 4*q + 1)",
+      "expected_at_q0": null,
+      "reference": "tr_M = z^4 (disjoint H_3 \u2297 H_3)"
     }
   ]
 }

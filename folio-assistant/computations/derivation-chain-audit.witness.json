@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T23:06:40.908895+00:00",
-  "commitSha": "3b709d6636bc7a9bda4ab98c923a0c2510eea646",
+  "computedAt": "2026-05-05T23:58:24.429153+00:00",
+  "commitSha": "ce5bbefb6e9f7bef2cd9c5c19115cdb6286ee914",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "d0c7ed1b810b",
@@ -1604,6 +1604,7 @@
         "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
         "markov-trace-atomic-proton-full.witness.json",
+        "markov-trace-axiomatic-multi-atom.witness.json",
         "markov-trace-axiomatic-proton.witness.json",
         "markov-trace-recursive.witness.json",
         "markov-weight-verification.witness.json",
