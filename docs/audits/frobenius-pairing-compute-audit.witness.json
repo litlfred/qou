@@ -1,10 +1,10 @@
 {
   "scan_dir": "folio-assistant/computations",
-  "n_scripts_scanned": 791,
+  "n_scripts_scanned": 792,
   "counts": {
-    "A": 307,
+    "A": 308,
     "B": 0,
-    "C": 1,
+    "C": 0,
     "skip": 479
   },
   "buckets": {
@@ -500,6 +500,19 @@
         "reason": "raw tr_M / markov_trace (no operator-on-state)",
         "witnesses": [],
         "script": "folio-assistant/computations/binding_full_pipeline.py"
+      },
+      {
+        "bucket": "A",
+        "reason": "raw tr_M / markov_trace (no operator-on-state)",
+        "witnesses": [
+          {
+            "witness": "folio-assistant/computations/borromean-axial-coupling.witness.json",
+            "ok": true,
+            "missing_fields": [],
+            "opted_out_raw_trace": false
+          }
+        ],
+        "script": "folio-assistant/computations/borromean-axial-coupling.py"
       },
       {
         "bucket": "A",
@@ -4080,26 +4093,7 @@
       }
     ],
     "B": [],
-    "C": [
-      {
-        "bucket": "C",
-        "reason": "conjugation pattern \u03b2 \u00b7 X \u00b7 \u03b2\u207b\u00b9",
-        "witnesses": [
-          {
-            "witness": "folio-assistant/computations/borromean-axial-coupling.witness.json",
-            "ok": false,
-            "missing_fields": [
-              "gram_matrix",
-              "gram_inverse",
-              "lp_active_set",
-              "shadow_prices"
-            ],
-            "opted_out_raw_trace": false
-          }
-        ],
-        "script": "folio-assistant/computations/borromean-axial-coupling.py"
-      }
-    ],
+    "C": [],
     "skip": [
       {
         "bucket": "skip",
@@ -6498,17 +6492,5 @@
       }
     ]
   },
-  "failures": [
-    {
-      "script": "folio-assistant/computations/borromean-axial-coupling.py",
-      "bucket": "C",
-      "witness": "folio-assistant/computations/borromean-axial-coupling.witness.json",
-      "missing": [
-        "gram_matrix",
-        "gram_inverse",
-        "lp_active_set",
-        "shadow_prices"
-      ]
-    }
-  ]
+  "failures": []
 }
