@@ -32,8 +32,9 @@ const QOU_IDENTIFIER_RE = new RegExp(
   "i",
 );
 
-// Numeric literal next to a QOU-identifier on the same line:
-const HARDCODED_RE = /(\b[A-Za-z_][A-Za-z0-9_]*\b)\s*[:=]\s*(-?\d+\.\d+|-?\d+e[+-]?\d+)/i;
+// Numeric literal next to a QOU-identifier on the same line.
+// Matches floats, scientific notation, AND plain integers (e.g. `q0 = 1`).
+const HARDCODED_RE = /(\b[A-Za-z_][A-Za-z0-9_]*\b)\s*[:=]\s*(-?\d+\.\d+|-?\d+e[+-]?\d+|-?\d+\b)/i;
 
 interface Finding {
   file: string;

@@ -206,14 +206,13 @@ pub fn hp_volume_estimate(word_js: JsValue) -> Result<f64, JsValue> {
     if word.iter().all(|&g| g == word[0]) {
         return Ok(0.0);
     }
+    /// Volume of the regular ideal hyperbolic octahedron — a universal
+    /// constant of hyperbolic 3-geometry, NOT a QOU substrate parameter.
+    /// It appears as the natural unit for analytic-fallback estimates of
+    /// the volume of an alternating link complement (Lackenby's bound).
+    /// Documented so it is not confused with the witness-only QOU values
+    /// forbidden by the module-level no-hardcoded-QOU-values contract.
     const V_OCT: f64 = 3.66386237670887606;
-    // V_OCT is the volume of the regular ideal hyperbolic octahedron —
-    // a universal constant of hyperbolic 3-geometry, NOT a QOU
-    // substrate parameter.  It appears as the natural unit for
-    // analytic-fallback estimates of the volume of an alternating
-    // link complement (Lackenby's bound).  Documented here so it is
-    // not confused with the witness-only QOU values forbidden by the
-    // module-level no-hardcoded-QOU-values contract.
     let len = word.len() as i32;
     let n = n_strands as i32;
     let est = V_OCT * (((len - n).max(0)) as f64);

@@ -4897,10 +4897,11 @@
       const qs = new URLSearchParams();
       // Pass current theme so simulator starts in the right mode
       qs.set('theme', html.dataset.theme || 'dark');
-      for (const [k, v] of Object.entries(params || {})) qs.set(k, String(v));
       // extraParams override view defaults — used by atlas deep-links via
       // #/simulate/sim:foo/view?key=val&… (parsed in routeSimulate).
-      for (const [k, v] of Object.entries(extraParams || {})) qs.set(k, String(v));
+      for (const [k, v] of Object.entries({ ...(params || {}), ...(extraParams || {}) })) {
+        qs.set(k, String(v));
+      }
       return `/${htmlPath}?${qs.toString()}`;
     }
 
