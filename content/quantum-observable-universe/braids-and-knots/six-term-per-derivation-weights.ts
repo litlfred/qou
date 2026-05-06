@@ -17,4 +17,11 @@ export default proposition({
     "prop:mass-endomorphism-tower",
   ],
   cites: [],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+    witness:
+      "folio-assistant/computations/paper-six-term-isotope-sweep.witness.json",
+    status: "verified",
+  },
 });

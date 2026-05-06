@@ -32,5 +32,11 @@ export default proposition({
     "conj:archimedean-remainder-exponential-decay",
   ],
   cites: ["jones1985", "wenzl1988", "kassel1995"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/per_braid_tower.py",
+    witness: "docs/audits/2026-05-01-per-braid-tower.witness.json",
+    status: "verified",
+  },
   lean: { ref: "qou:QOU.BraidKnot.perBraidMassTower" },
 });
