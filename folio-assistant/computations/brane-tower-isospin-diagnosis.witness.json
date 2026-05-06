@@ -1,7 +1,8 @@
 {
-  "computation": "brane-tower-isospin-diagnosis",
-  "description": "Diagnoses the origin of the 6-term formula's isospin violation (predicted T - \u00b3He = -737 MeV vs CODATA +0.019). Localises to T2/T3 brane-tower: \u03a6_q diverges near x=1 and amplifies tiny per-generator |V\u0302_i| differences between p/n intra-crossings into hundreds of MeV.  Term 1 (canonical Markov trace) does NOT have this problem \u2014 the issue is structural to the brane-tower formula at q_0.",
   "computedAt": "2026-05-03T14:26:31.976613+00:00",
+  "computation": "brane-tower-isospin-diagnosis",
+  "description": "Diagnoses the origin of the 6-term formula's isospin violation (predicted T - ³He = -737 MeV vs CODATA +0.019). Localises to T2/T3 brane-tower: Φ_q diverges near x=1 and amplifies tiny per-generator |V̂_i| differences between p/n intra-crossings into hundreds of MeV.  Term 1 (canonical Markov trace) does NOT have this problem — the issue is structural to the brane-tower formula at q_0.",
+  "auditOnly": "docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md",
   "rows": [
     {
       "atom": "proton",
@@ -166,10 +167,10 @@
       "max_abs_v": 0.98900731592926
     }
   ],
-  "verdict": "Brane-tower \u03a3 \u03a6_q(|V\u0302_i|) is the pathology source.  The formula faithfully reproduces |V\u0302_i| from the Wedderburn construction, but \u03a6_q's divergence near x=1 amplifies small p/n asymmetries by 10\u2075\u00d7.  Not a software bug \u2014 a feature of the formula as stated.",
+  "verdict": "Brane-tower Σ Φ_q(|V̂_i|) is the pathology source.  The formula faithfully reproduces |V̂_i| from the Wedderburn construction, but Φ_q's divergence near x=1 amplifies small p/n asymmetries by 10⁵×.  Not a software bug — a feature of the formula as stated.",
   "reconciliation_paths": [
     "(A) audit per-generator (c, d) for p vs n intra-crossings",
-    "(B) audit \u03a6_q derivation in prop:mass-endomorphism-tower",
+    "(B) audit Φ_q derivation in prop:mass-endomorphism-tower",
     "(C) re-evaluate brane-tower applicability at q_0 (vs roots)",
     "(D) check Term 5 chirality absorbs more p/n asymmetry"
   ]

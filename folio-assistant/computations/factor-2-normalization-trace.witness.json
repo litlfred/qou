@@ -1,14 +1,15 @@
 {
+  "computedAt": "2026-05-05T22:33:29.635181+00:00",
   "computation": "factor-2-normalization-trace",
-  "description": "Traces the factor-of-2 normalization mismatch between PR #546's hoefsmit_symbolic.tr_M_symbolic (using w_\u03bb = dim_q\u00b2 / [n]_q! and dividing by f^\u03bb) and char_fast + Plancherel-Markov-axiom convention (using y_\u03bb solved from {tr_M(1)=1, tr_M(\u03c3_1)=z, tr_M(\u03c3_1\u03c3_2)=z\u00b2}). Tests whether the two formulas are equivalent (y_\u03bb = w_\u03bb/f^\u03bb) and where any discrepancy arises.",
+  "description": "Traces the factor-of-2 normalization mismatch between PR #546's hoefsmit_symbolic.tr_M_symbolic (using w_λ = dim_q² / [n]_q! and dividing by f^λ) and char_fast + Plancherel-Markov-axiom convention (using y_λ solved from {tr_M(1)=1, tr_M(σ_1)=z, tr_M(σ_1σ_2)=z²}). Tests whether the two formulas are equivalent (y_λ = w_λ/f^λ) and where any discrepancy arises.",
+  "auditOnly": "docs/audits/2026-05-05-factor-2-resolved-different-traces.md",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
   "reference_blocks": [
     "prop:atomic-mass-gb-nf",
     "prop:markov-trace-antipode-polynomial-symmetry"
   ],
-  "computedAt": "2026-05-05T22:33:29.635181+00:00",
-  "parameters": {
-    "q_0": 1.1099785955541805
-  },
   "weight_comparison": [
     {
       "lambda": [
@@ -49,13 +50,13 @@
       "name": "identity",
       "ctypes": [],
       "tr_M_pr546": 0.9874402270278662,
-      "tr_M_char_fast": 1.0,
+      "tr_M_char_fast": 1,
       "ratio_cf_over_pr546": 1.0127195273479368,
-      "tr_M_pr546_renormalized": 1.0,
-      "ratio_cf_over_pr546_renormalized": 1.0
+      "tr_M_pr546_renormalized": 1,
+      "ratio_cf_over_pr546_renormalized": 1
     },
     {
-      "name": "\u03c3_1",
+      "name": "σ_1",
       "ctypes": [
         [
           1,
@@ -69,7 +70,7 @@
       "ratio_cf_over_pr546_renormalized": 4.776806323466491
     },
     {
-      "name": "\u03c3_1\u00b2",
+      "name": "σ_1²",
       "ctypes": [
         [
           1,
@@ -87,7 +88,7 @@
       "ratio_cf_over_pr546_renormalized": 1.0807698875285139
     },
     {
-      "name": "trefoil \u03c3_1\u00b3",
+      "name": "trefoil σ_1³",
       "ctypes": [
         [
           1,

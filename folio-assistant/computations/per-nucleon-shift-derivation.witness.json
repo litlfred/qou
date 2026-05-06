@@ -48,6 +48,7 @@
   "scriptCommitSha": "9b84828cc37b50bfe314d354958a3f0926ad24e3",
   "description": "Derive the (18, 21, 1) per-nucleon shift coefficients in shift = 18Z + 21N + 1 via per-NEW-nucleon additive analysis. Proves linearity: Δshift(A→A+1, +proton) = 18 EXACTLY, Δshift(A→A+1, +neutron) = 21 EXACTLY, independent of host. Decomposes per-new-nucleon = 12 generators - 3 (p) or 1.5 (n) total pole cancellations + 1 mixed (p,n) interface.",
   "contentBlock": "prop:per-nucleon-shift-additive-linearity",
+  "auditOnly": "docs/audits/2026-05-04-per-nucleon-shift-derivation.md",
   "data": {
     "per_new_nucleon_shifts": {
       "proton_deltas": [
@@ -70,8 +71,8 @@
         "averaged": 5,
         "total": 23,
         "shift": 40,
-        "pole": 20.0,
-        "cancellation": 3.0
+        "pole": 20,
+        "cancellation": 3
       },
       "(1,2)": {
         "sigma": 16,
@@ -88,8 +89,8 @@
         "averaged": 7,
         "total": 35,
         "shift": 58,
-        "pole": 29.0,
-        "cancellation": 6.0
+        "pole": 29,
+        "cancellation": 6
       },
       "(2,2)": {
         "sigma": 23,
@@ -115,8 +116,8 @@
         "averaged": 13,
         "total": 71,
         "shift": 118,
-        "pole": 59.0,
-        "cancellation": 12.0
+        "pole": 59,
+        "cancellation": 12
       }
     },
     "per_new_nucleon_increments": [
@@ -151,8 +152,8 @@
         "d_sigma_inv": 3,
         "d_averaged": 2,
         "d_total": 12,
-        "d_pole": 9.0,
-        "d_cancellation": 3.0
+        "d_pole": 9,
+        "d_cancellation": 3
       },
       {
         "from": [
@@ -168,8 +169,8 @@
         "d_sigma_inv": 3,
         "d_averaged": 2,
         "d_total": 12,
-        "d_pole": 9.0,
-        "d_cancellation": 3.0
+        "d_pole": 9,
+        "d_cancellation": 3
       },
       {
         "from": [
@@ -202,8 +203,8 @@
         "d_sigma_inv": 3,
         "d_averaged": 2,
         "d_total": 12,
-        "d_pole": 9.0,
-        "d_cancellation": 3.0
+        "d_pole": 9,
+        "d_cancellation": 3
       },
       {
         "from": [
@@ -264,7 +265,7 @@
         "sigma_sq_adjacencies": 16,
         "averaged_count": 7,
         "predicted_avg_cancel": 3.5,
-        "implied_sigma_sq_cancel": 1.0
+        "implied_sigma_sq_cancel": 1
       },
       "(2, 1)": {
         "sigma_sq_adjacencies": 17,
@@ -276,13 +277,13 @@
         "sigma_sq_adjacencies": 22,
         "averaged_count": 9,
         "predicted_avg_cancel": 4.5,
-        "implied_sigma_sq_cancel": 3.0
+        "implied_sigma_sq_cancel": 3
       },
       "(3, 2)": {
         "sigma_sq_adjacencies": 28,
         "averaged_count": 11,
         "predicted_avg_cancel": 5.5,
-        "implied_sigma_sq_cancel": 5.0
+        "implied_sigma_sq_cancel": 5
       },
       "(3, 3)": {
         "sigma_sq_adjacencies": 33,

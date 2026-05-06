@@ -1,7 +1,8 @@
 {
-  "computation": "binding-ladder-catalog",
-  "description": "29b: Per-isotope binding catalog with ladder corrections. For each light isotope, leading order via mass_table_ppb / cross-fork best knot identification, then ladder correction \u03b1\u00b7m_e\u00b7|(q;q)_r|.  Tests universality of \u03b1 across isotopes at fixed rank.",
   "computedAt": "2026-04-28T01:35:00.922785+00:00",
+  "computation": "binding-ladder-catalog",
+  "description": "29b: Per-isotope binding catalog with ladder corrections. For each light isotope, leading order via mass_table_ppb / cross-fork best knot identification, then ladder correction α·m_e·|(q;q)_r|.  Tests universality of α across isotopes at fixed rank.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "isotopes": [
     {
       "iso": "D",
@@ -9,7 +10,7 @@
       "N": 1,
       "A": 2,
       "B_AME_MeV": 2.22456612,
-      "leading_formula": "1\u00b7m_e\u00b7Vol(6_2)",
+      "leading_formula": "1·m_e·Vol(6_2)",
       "leading_MeV": 2.2488207937687203,
       "leading_err_pct": 1.0903103104312548,
       "residual_MeV": -0.024254673768720522,
@@ -70,7 +71,7 @@
       "N": 2,
       "A": 3,
       "B_AME_MeV": 8.481798,
-      "leading_formula": "2\u00b7m_e\u00b7Vol(8_11)",
+      "leading_formula": "2·m_e·Vol(8_11)",
       "leading_MeV": 8.468599682990007,
       "leading_err_pct": -0.15560753757626547,
       "residual_MeV": 0.013198317009992931,
@@ -126,12 +127,12 @@
       }
     },
     {
-      "iso": "\u00b3He",
+      "iso": "³He",
       "Z": 2,
       "N": 1,
       "A": 3,
       "B_AME_MeV": 7.718058,
-      "leading_formula": "2\u00b7m_e\u00b7Vol(L6a4)",
+      "leading_formula": "2·m_e·Vol(L6a4)",
       "leading_MeV": 7.4889193093528075,
       "leading_err_pct": -2.9688645854590896,
       "residual_MeV": 0.2291386906471921,
@@ -140,37 +141,37 @@
           "r": 2,
           "alpha": 17.57049638550497,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -2.8550424019226246e-09
+          "err_ppb": -2.8550424019226246e-9
         },
         {
           "r": 3,
           "alpha": 47.80412545096908,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -1.4065785512533702e-09
+          "err_ppb": -1.4065785512533702e-9
         },
         {
           "r": 4,
           "alpha": 92.29427367045244,
           "B_pred_MeV": 7.718058,
-          "err_ppb": 2.0622317860303517e-09
+          "err_ppb": 2.0622317860303517e-9
         },
         {
           "r": 5,
           "alpha": 134.75668553232086,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -1.42218907183218e-09
+          "err_ppb": -1.42218907183218e-9
         },
         {
           "r": 6,
           "alpha": 154.85747076766907,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -1.8746923037413046e-09
+          "err_ppb": -1.8746923037413046e-9
         },
         {
           "r": 7,
           "alpha": 143.9356451270039,
           "B_pred_MeV": 7.718058,
-          "err_ppb": -1.9800383852164966e-09
+          "err_ppb": -1.9800383852164966e-9
         },
         {
           "r": 8,
@@ -183,16 +184,16 @@
         "r": 4,
         "alpha": 92.29427367045244,
         "B_pred_MeV": 7.718058,
-        "err_ppb": 2.0622317860303517e-09
+        "err_ppb": 2.0622317860303517e-9
       }
     },
     {
-      "iso": "\u2074He",
+      "iso": "⁴He",
       "Z": 2,
       "N": 2,
       "A": 4,
       "B_AME_MeV": 28.29566,
-      "leading_formula": "2\u00b7m_e\u00b74\u00b7Vol(L6a4)",
+      "leading_formula": "2·m_e·4·Vol(L6a4)",
       "leading_MeV": 29.95567723741123,
       "leading_err_pct": 5.8666849877727945,
       "residual_MeV": -1.6600172374112316,
@@ -201,54 +202,54 @@
           "r": 2,
           "alpha": -127.2911475029737,
           "B_pred_MeV": 28.29566,
-          "err_ppb": 1.3303732544679185e-09
+          "err_ppb": 1.3303732544679185e-9
         },
         {
           "r": 3,
           "alpha": -346.32157512919815,
           "B_pred_MeV": 28.29566,
-          "err_ppb": 1.5658449498604308e-09
+          "err_ppb": 1.5658449498604308e-9
         },
         {
           "r": 4,
           "alpha": -668.6347241252251,
           "B_pred_MeV": 28.29566,
-          "err_ppb": 1.5285757457030536e-09
+          "err_ppb": 1.5285757457030536e-9
         },
         {
           "r": 5,
           "alpha": -976.2577424538433,
           "B_pred_MeV": 28.29566,
-          "err_ppb": -1.5373662153202145e-09
+          "err_ppb": -1.5373662153202145e-9
         },
         {
           "r": 6,
           "alpha": -1121.8798103897898,
           "B_pred_MeV": 28.29566,
-          "err_ppb": -4.667484422167271e-09
+          "err_ppb": -4.667484422167271e-9
         },
         {
           "r": 7,
           "alpha": -1042.755596245528,
           "B_pred_MeV": 28.29566,
-          "err_ppb": 2.739384251054244e-09
+          "err_ppb": 2.739384251054244e-9
         },
         {
           "r": 8,
           "alpha": -799.5474338491694,
           "B_pred_MeV": 28.29566,
-          "err_ppb": -1.4613758852117214e-09
+          "err_ppb": -1.4613758852117214e-9
         }
       ],
       "best_fit_at_rank_4": {
         "r": 4,
         "alpha": -668.6347241252251,
         "B_pred_MeV": 28.29566,
-        "err_ppb": 1.5285757457030536e-09
+        "err_ppb": 1.5285757457030536e-9
       }
     },
     {
-      "iso": "\u2076Li",
+      "iso": "⁶Li",
       "Z": 3,
       "N": 3,
       "A": 6,
@@ -256,7 +257,7 @@
       "no_leading_rule": true
     },
     {
-      "iso": "\u2077Li",
+      "iso": "⁷Li",
       "Z": 3,
       "N": 4,
       "A": 7,

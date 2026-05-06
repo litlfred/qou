@@ -1,7 +1,8 @@
 {
-  "computation": "b-over-a-v5-unified",
   "computedAt": "2026-05-03T23:05:13.676376+00:00",
+  "computation": "b-over-a-v5-unified",
   "description": "B/A v5 unified evaluator — dispatches by formula family per the watched-branch's methodology audit (methodology-deprecation.witness.json).  Families: 1 (D, T, ³He principled), 2 (⁴He magic-A), 3 (⁸Be–⁴⁰Ca recursive-on-4He), 4 (⁶Li, ⁷Li, … OPEN, GAPS 4, 5).",
+  "auditOnly": "docs/audits/2026-05-03-w3-habiro-unblocked.md",
   "constants": {
     "m_e_MeV": 0.51099895069,
     "Vol_8G_borromean": 7.327724753417752,
@@ -140,7 +141,7 @@
       "applicable": true,
       "reason": null,
       "B_pred_MeV": 29.955677279532882,
-      "rho_F": 2.0,
+      "rho_F": 2,
       "formula": "2·m_e·4·8G",
       "module": "magic_A_formula.magic_A_binding",
       "method": "magic-A-formula (shell-closure)",

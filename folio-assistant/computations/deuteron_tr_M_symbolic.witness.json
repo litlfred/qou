@@ -1,6 +1,7 @@
 {
   "computation": "deuteron-tr_M-symbolic",
-  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via tr_M = \u03a3_\u03bb w_\u03bb \u00b7 \u03c7^\u03bb / f^\u03bb with w_\u03bb = dim_q(\u03bb)\u00b2 / [6]_q!. Per-irrep \u03c7^\u03bb delegates to hecke_character_symbolic.q_character_on_braid_word; no LP/SDP solve required (this is a partition sum, not an operator-selection program).",
+  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via tr_M = Σ_λ w_λ · χ^λ / f^λ with w_λ = dim_q(λ)² / [6]_q!. Per-irrep χ^λ delegates to hecke_character_symbolic.q_character_on_braid_word; no LP/SDP solve required (this is a partition sum, not an operator-selection program).",
+  "auditOnly": "docs/audits/2026-05-05-nv-categorical-impasse.md",
   "atom": {
     "Z": 1,
     "N": 1,

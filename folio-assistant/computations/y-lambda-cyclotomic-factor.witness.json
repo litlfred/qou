@@ -1,6 +1,7 @@
 {
   "computation": "y-lambda-cyclotomic-factor",
-  "description": "Factor y_\u03bb closed forms over Q in r = q^{1/2} to identify cyclotomic \u03a6_d(r) factors. Substitution Q = q\u00b2 = r\u2074 makes all expressions Laurent polynomial in r; sympy `factor` then exposes Schur-element-style cyclotomic structure.",
+  "description": "Factor y_λ closed forms over Q in r = q^{1/2} to identify cyclotomic Φ_d(r) factors. Substitution Q = q² = r⁴ makes all expressions Laurent polynomial in r; sympy `factor` then exposes Schur-element-style cyclotomic structure.",
+  "auditOnly": "docs/audits/last-2-days-pipeline-wiring.md",
   "X_in_r": "-r**3/(r**6 + r**4 - r**3 - r**2 - 1)",
   "results": {
     "2": {
@@ -101,5 +102,5 @@
     }
   },
   "precision": "symbolic_q",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

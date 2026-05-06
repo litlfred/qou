@@ -15,7 +15,7 @@
       "computed": 0.336821,
       "expected": 0.336821,
       "passed": true,
-      "tolerance": 3.3682099999999994e-07
+      "tolerance": 3.3682099999999994e-7
     },
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -38,8 +38,8 @@
     },
     {
       "name": "leaf_value[alpha-k-h3-0.derivation]",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
       "tolerance": 1e-12
     },
@@ -51,8 +51,8 @@
     },
     {
       "name": "leaf_value[alpha-k-h3-1.derivation]",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": 0,
+      "expected": 0,
       "passed": true,
       "tolerance": 1e-12
     },
@@ -118,7 +118,7 @@
       "computed": 2.12258250945273,
       "expected": 2.12258250945273,
       "passed": true,
-      "tolerance": 2.1225825094527304e-09
+      "tolerance": 2.1225825094527304e-9
     },
     {
       "name": "chain_valid[n-tr-M-q0.derivation]",
@@ -131,7 +131,7 @@
       "computed": 1.5893934459539052,
       "expected": 1.5893934459539052,
       "passed": true,
-      "tolerance": 1.5893934459539053e-09
+      "tolerance": 1.5893934459539053e-9
     },
     {
       "name": "chain_valid[p-tr-M-q0.derivation]",
@@ -144,7 +144,7 @@
       "computed": 2.12258250945273,
       "expected": 2.12258250945273,
       "passed": true,
-      "tolerance": 2.1225825094527304e-09
+      "tolerance": 2.1225825094527304e-9
     },
     {
       "name": "chain_valid[proton-mass-50dps.derivation]",
@@ -444,6 +444,7 @@
   "scriptHash": "d0c7ed1b810b",
   "scriptCommitSha": "186782db9b2276c3dba313737a36be8faf6b730e",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
+  "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
     "chain_results": [
       {
@@ -483,8 +484,8 @@
       {
         "chain": "alpha-k-h3-0.derivation.json",
         "target": "α_0(q)  at H_3(R, q)",
-        "target_value": 1.0,
-        "computed_value": 1.0,
+        "target_value": 1,
+        "computed_value": 1,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -498,8 +499,8 @@
       {
         "chain": "alpha-k-h3-1.derivation.json",
         "target": "α_1(q)  at H_3(R, q)",
-        "target_value": 0.0,
-        "computed_value": 0.0,
+        "target_value": 0,
+        "computed_value": 0,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
