@@ -115,10 +115,40 @@ def deltaIMinimal {n : ℕ} (h₁ : 1 < n - 1) (h₃ : 3 < n - 1) :
     List (Generator n) :=
   [⟨⟨1, h₁⟩⟩, ⟨⟨3, h₃⟩⟩, ⟨⟨1, h₁⟩⟩]
 
-/-- Generic placeholder for the canonical `β_EW Δ_I^minimal` word
+/-- Concrete reproduction of one `β_EW` block: `[σ_k, σ_k, σ_k, σ_k, σ_1, σ_3, σ_1]`.
+
+Requires `5 ≤ n` so that index `3` fits in `Fin (n - 1)` (the `Δ_I`
+sub-word uses generator indices `1, 3`); the caller also passes a
+proof that the block's anchor index `2j` is in range. -/
+def betaEWBlock {n : ℕ} (h₅ : 5 ≤ n) (j : ℕ) (hk : 2 * j < n - 1) :
+    List (Generator n) :=
+  have h₁ : (1 : ℕ) < n - 1 := by omega
+  have h₃ : (3 : ℕ) < n - 1 := by omega
+  let g  : Generator n := ⟨⟨2 * j, hk⟩⟩
+  let g₁ : Generator n := ⟨⟨1, h₁⟩⟩
+  let g₃ : Generator n := ⟨⟨3, h₃⟩⟩
+  [g, g, g, g, g₁, g₃, g₁]
+
+/-- Internal helper: append `m` blocks counted **up** from index
+`0` so that the final left-to-right order matches the Python
+`for k in range(0, n_strands - 1, 2)` loop (smallest `j` first).
+
+`accumulateBlocks 0` is `[]`; `accumulateBlocks (m + 1)` is
+`accumulateBlocks m ++ block_m`.  Out-of-range anchors emit no
+generators so the function is total. -/
+private def accumulateBlocks {n : ℕ} (h₅ : 5 ≤ n) : ℕ → List (Generator n)
+  | 0      => []
+  | m + 1  =>
+      let prev := accumulateBlocks h₅ m
+      if hk : 2 * m < n - 1 then
+        prev ++ betaEWBlock h₅ m hk
+      else
+        prev
+
+/-- Concrete realisation of the canonical `β_EW Δ_I^minimal` word
 on `n` strands.
 
-The full Python reference is
+The Python reference (verbatim from `staircase_ew_predictions.py`):
 
 ```python
 def beta_ew_word(n_strands: int) -> list[int]:
@@ -130,13 +160,34 @@ def beta_ew_word(n_strands: int) -> list[int]:
     return word
 ```
 
-Faithfully reproducing the bound-respecting `[k] * 4 + delta_I`
-loop in Lean requires per-`k` bounds proofs that the indices fit
-in `Fin (n - 1)`; we expose only the abstract type signature here
-and leave the explicit construction (with omega-discharged bounds)
-to a downstream file once concrete `HoefsmitRepresentation`
-instances are in scope.  This keeps the conjecture stated against
-a *named* word `betaEWWord n` rather than an unfolded list. -/
-opaque betaEWWord (n : ℕ) : List (Generator n)
+For `n ≥ 5` we emit the `[2j] * 4 ++ [1, 3, 1]` block for every
+`j ∈ {0, 1, …, n/2 − 1}` whose anchor index `2j` fits in
+`Fin (n − 1)`; the in-range check is discharged by `omega` per
+block.  For `3 ≤ n < 5` we emit the Python fallback
+`[σ₀, σ₁, σ₀]`.  For `n < 3` no generators exist and the word
+is empty.
+
+Replaces the previous `opaque` declaration so downstream
+`wordImage` calls see a concrete list rather than an unevaluable
+black box. -/
+def betaEWWord (n : ℕ) : List (Generator n) :=
+  if h₅ : 5 ≤ n then
+    accumulateBlocks h₅ (n / 2)
+  else if h₃ : 3 ≤ n then
+    have h₀ : (0 : ℕ) < n - 1 := by omega
+    have h₁ : (1 : ℕ) < n - 1 := by omega
+    [⟨⟨0, h₀⟩⟩, ⟨⟨1, h₁⟩⟩, ⟨⟨0, h₀⟩⟩]
+  else []
+
+/-- Sanity: at `n = 6` (i.e. `staircaseStrands 3`) the word has length
+`3 · 7 = 21` (three full blocks `j = 0, 1, 2`). -/
+example : (betaEWWord 6).length = 21 := by decide
+
+/-- Sanity: at `n = 10` (i.e. `staircaseStrands 4`) the word has length
+`5 · 7 = 35` (five full blocks). -/
+example : (betaEWWord 10).length = 35 := by decide
+
+/-- Sanity: the fallback at `n = 3` is `[σ₀, σ₁, σ₀]` (length 3). -/
+example : (betaEWWord 3).length = 3 := by decide
 
 end QOU.Hecke
