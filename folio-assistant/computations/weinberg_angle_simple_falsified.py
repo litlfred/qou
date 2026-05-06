@@ -12,7 +12,7 @@ from pathlib import Path
 import json
 from datetime import datetime, timezone
 
-sys.path.insert(0, str(Path("/home/user/qou/folio-assistant/computations")))
+sys.path.insert(0, str(Path(__file__).parent))
 import mpmath
 mpmath.mp.dps = 50
 from q_parameter import Q_50_DIGIT_STR
@@ -80,7 +80,6 @@ out = {
         "discharge gated on conj:categorical-linking-operation."
     ),
 }
-out_path = Path("/home/user/qou/folio-assistant/computations/"
-                "weinberg-angle-simple-falsified.witness.json")
+out_path = Path(__file__).parent / "weinberg-angle-simple-falsified.witness.json"
 out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
 print(f"\nWrote: {out_path}")

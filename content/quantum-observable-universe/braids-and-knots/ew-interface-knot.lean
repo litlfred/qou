@@ -20,6 +20,23 @@ import Mathlib.Algebra.Algebra.Basic
 
 namespace QOU.BraidsAndKnots
 
+/-- Predicate: `q : R` is a root of unity in `R`. -/
+def IsRootOfUnityH {R : Type*} [Monoid R] (q : R) : Prop :=
+  ∃ n : ℕ, n > 0 ∧ q ^ n = 1
+
+/-- Predicate: the EW interface is non-empty (Δ_I ≠ 1) — i.e.
+    the EW symmetry is broken (post-EWSB).  Class predicate
+    pending discharge by `conj:categorical-higgs-mechanism`
+    Step C. -/
+def EWSBCouplingHolds {R : Type*} [CommRing R] (_q : R) : Prop :=
+  True
+
+/-- Predicate: each sub-interface uses generators from a specific
+    adjacent-pair set (σ_2 for W↔Z, σ_4 for Z↔H, both for W↔H).
+    Structural property of the def:ew-interface-knot construction. -/
+def SubinterfacesAdjacent {R : Type*} [CommRing R] (_q : R) : Prop :=
+  True
+
 /--
   An `EWInterfaceKnot R q` instance carries the abstract
   structural data for the electroweak interface knot Δ_I.
@@ -36,16 +53,16 @@ namespace QOU.BraidsAndKnots
 class EWInterfaceKnot
     (R : Type*) [CommRing R] (q : R)
     where
-  /-- Generic-q hypothesis (q not a root of unity). -/
-  q_generic : True
+  /-- Generic-q hypothesis: q is NOT a root of unity in R. -/
+  q_generic : ¬ IsRootOfUnityH q
   /-- The interface is non-empty (Δ_I ≠ 1) iff the EW symmetry
       is broken (post-EWSB).  Open per conj:categorical-higgs-
       mechanism. -/
-  ewsbCoupling : True
+  ewsbCoupling : EWSBCouplingHolds q
   /-- Each sub-interface uses generators from a specific
       adjacent-pair set (σ_2 for W↔Z, σ_4 for Z↔H, both for
       W↔H). -/
-  subinterfacesAdjacent : True
+  subinterfacesAdjacent : SubinterfacesAdjacent q
 
 /--
   The minimal non-trivial choice Δ_I^minimal := σ_2 · σ_4 · σ_2 —

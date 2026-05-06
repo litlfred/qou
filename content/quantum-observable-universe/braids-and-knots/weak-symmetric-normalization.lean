@@ -5,7 +5,8 @@
   Path: content/quantum-observable-universe/braids-and-knots/
 
   States the closed-form expression
-    N_sym(q) = q^6 · (1 + q² + q⁴) / 3 ∈ R[1/3]
+    N_sym(q) = q^4 · (1 + q² + q⁴) / 3
+             = (q^4 + q^6 + q^8) / 3 ∈ R[1/3]
   for the EW symmetric-channel Plancherel weight, conditional
   on `conj:weak-spectral-completeness` +
   `conj:electroweak-higgs-torus-link-triplet`.

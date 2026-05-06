@@ -208,9 +208,9 @@ def main():
         "pattern_counts": {f"{p}": c for p, c in pattern_counts.items()},
         "audit": "docs/audits/2026-05-05-path-alpha-bring-refinement.md",
     }
-    out_path = Path(__file__).parent.parent.parent / \
-        "folio-assistant" / "computations" / \
-        "hoefsmit-ew-cell-content.witness.json"
+    # Write next to this script (Path(__file__).parent), not via a
+    # multi-level parent chain — robust to invocation from any cwd.
+    out_path = Path(__file__).parent / "hoefsmit-ew-cell-content.witness.json"
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     print(f"\nWrote: {out_path}")
 
