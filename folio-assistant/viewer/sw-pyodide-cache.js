@@ -17,6 +17,7 @@
 
 const PYODIDE_CACHE = "pyodide-v1";
 const DEPS_CACHE = "simulator-deps-v1";
+const WASM_CACHE = "qou-wasm-v1";
 
 // Patterns that should be cache-first (immutable CDN assets)
 const CACHE_PATTERNS = [
@@ -33,11 +34,16 @@ const CACHE_PATTERNS = [
   // D3.js (visualization)
   /cdn\.jsdelivr\.net\/npm\/d3/,
   /d3js\.org/,
+  // QOU WASM kernels (Rust→WASM, served from gh-pages /wasm/)
+  /\/wasm\/.*\.(?:js|wasm)$/,
+  // Pyodide-loaded Emscripten wheels (Slice C)
+  /\.whl(?:\?wasm32)?$/,
 ];
 
 // Determine which cache to use based on URL
 function getCacheName(url) {
-  if (/pyodide|\.whl$/.test(url)) return PYODIDE_CACHE;
+  if (/\/wasm\//.test(url)) return WASM_CACHE;
+  if (/pyodide|\.whl/.test(url)) return PYODIDE_CACHE;
   return DEPS_CACHE;
 }
 
@@ -52,7 +58,7 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
       // Clean up old cache versions
-      const validCaches = [PYODIDE_CACHE, DEPS_CACHE];
+      const validCaches = [PYODIDE_CACHE, DEPS_CACHE, WASM_CACHE];
       return Promise.all(
         keys
           .filter((k) => !validCaches.includes(k))
@@ -107,7 +113,8 @@ self.addEventListener("message", (event) => {
     Promise.all([
       caches.open(PYODIDE_CACHE).then((c) => c.keys()),
       caches.open(DEPS_CACHE).then((c) => c.keys()),
-    ]).then(([pyodideKeys, depsKeys]) => {
+      caches.open(WASM_CACHE).then((c) => c.keys()),
+    ]).then(([pyodideKeys, depsKeys, wasmKeys]) => {
       event.source?.postMessage({
         type: "CACHE_STATUS_RESPONSE",
         pyodide: {
@@ -118,6 +125,10 @@ self.addEventListener("message", (event) => {
           cached: depsKeys.length > 0,
           entries: depsKeys.length,
         },
+        wasm: {
+          cached: wasmKeys.length > 0,
+          entries: wasmKeys.length,
+        },
       });
     });
   }
@@ -127,6 +138,7 @@ self.addEventListener("message", (event) => {
     Promise.all([
       caches.delete(PYODIDE_CACHE),
       caches.delete(DEPS_CACHE),
+      caches.delete(WASM_CACHE),
     ]).then(() => {
       event.source?.postMessage({ type: "CACHE_CLEARED" });
     });

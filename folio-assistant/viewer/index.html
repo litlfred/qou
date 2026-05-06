@@ -4881,6 +4881,7 @@
     const simTitle = document.getElementById('sim-title');
     const simViewSelect = document.getElementById('sim-view-select');
     let simCurrentBlock = null;
+    let simCurrentExtras = null;
 
     document.getElementById('sim-close').onclick = () => {
       simOverlay.classList.remove('open');
@@ -4892,11 +4893,14 @@
      * Build URL with view params as query string.
      * Simulator HTML files read these via URLSearchParams.
      */
-    function simUrl(htmlPath, params) {
+    function simUrl(htmlPath, params, extraParams) {
       const qs = new URLSearchParams();
       // Pass current theme so simulator starts in the right mode
       qs.set('theme', html.dataset.theme || 'dark');
       for (const [k, v] of Object.entries(params || {})) qs.set(k, String(v));
+      // extraParams override view defaults — used by atlas deep-links via
+      // #/simulate/sim:foo/view?key=val&… (parsed in routeSimulate).
+      for (const [k, v] of Object.entries(extraParams || {})) qs.set(k, String(v));
       return `/${htmlPath}?${qs.toString()}`;
     }
 
@@ -4904,9 +4908,12 @@
      * Open the simulator overlay for a given simulator block.
      * @param {object} simBlock - The simulator content object
      * @param {string} [viewName] - Named view to activate (default: "default")
+     * @param {object} [extraParams] - Extra URL params (override view params).
+     *   Used for atlas deep-links e.g. ?knot=proton&mode=confined.
      */
-    function openSimulator(simBlock, viewName) {
+    function openSimulator(simBlock, viewName, extraParams) {
       simCurrentBlock = simBlock;
+      simCurrentExtras = extraParams || null;
       simTitle.textContent = simBlock.title || 'Simulator';
 
       // Populate view selector
@@ -4930,7 +4937,7 @@
       const view = targetView === simBlock.defaultView.name
         ? simBlock.defaultView
         : (simBlock.views || []).find(v => v.name === targetView) || simBlock.defaultView;
-      simFrame.src = simUrl(simBlock.html, view.params);
+      simFrame.src = simUrl(simBlock.html, view.params, extraParams);
       simOverlay.classList.add('open');
     }
 
@@ -4941,7 +4948,7 @@
       const view = viewName === simCurrentBlock.defaultView.name
         ? simCurrentBlock.defaultView
         : (simCurrentBlock.views || []).find(v => v.name === viewName) || simCurrentBlock.defaultView;
-      simFrame.src = simUrl(simCurrentBlock.html, view.params);
+      simFrame.src = simUrl(simCurrentBlock.html, view.params, simCurrentExtras);
     };
 
     /**
@@ -6162,8 +6169,19 @@
         applyUrlBranch(branch);
         await routeDiff(slug);
       } else if (action === 'simulate' && rest) {
-        // #/simulate/sim:q-double-slit or #/simulate/sim:q-double-slit/bach-2013
-        const parts = rest.split('/');
+        // #/simulate/sim:foo                              → default view
+        // #/simulate/sim:foo/bach-2013                    → named view
+        // #/simulate/sim:foo/default?knot=proton&mode=…   → view + URL params
+        //   (atlas deep-link form; extras override view params in simUrl)
+        let routeRest = rest;
+        let extraParams = {};
+        const qIdx = routeRest.indexOf('?');
+        if (qIdx >= 0) {
+          const qsStr = routeRest.slice(qIdx + 1);
+          routeRest = routeRest.slice(0, qIdx);
+          for (const [k, v] of new URLSearchParams(qsStr)) extraParams[k] = v;
+        }
+        const parts = routeRest.split('/');
         const label = parts[0];
         const viewName = parts[1] || undefined;
         // Load the paper first, then open the simulator
@@ -6172,7 +6190,7 @@
           const r = await fetch(`/api/paper/block?id=${encodeURIComponent(paperId)}&label=${encodeURIComponent(label)}${branchParam()}`);
           if (r.ok) {
             const simBlock = await r.json();
-            if (simBlock) openSimulator(simBlock, viewName);
+            if (simBlock) openSimulator(simBlock, viewName, extraParams);
           }
         } catch (err) { console.error(`Failed to load simulator for route #simulate/${rest}:`, err); }
       } else {

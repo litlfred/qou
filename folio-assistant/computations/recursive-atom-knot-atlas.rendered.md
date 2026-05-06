@@ -38,17 +38,17 @@ Entries below have either a GB-NF derivation (fundamental particles) or are *man
 <tr><th>Z</th><th>N</th><th>e<sup>−</sup></th><th>ℓ</th><th>n₀</th><th>Braid (NF) / AME (MeV)</th><th>Closure / Pred (MeV)</th><th>Vol<sub>hyp</sub> / err ppb (ρ)</th></tr>
 </thead>
 <tbody>
-<tr><td rowspan='2'><strong>Neutrino $\nu$</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>$\mathbf{1} \in H_1$</td><td>$0_1$ (unknot)</td><td>Vol<sub>hyp</sub>: 0</td></tr>
+<tr><td rowspan='2'><strong>Neutrino $\nu$</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>$\mathbf{1} \in H_1$</td><td>[$0_1$ (unknot)](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=0_1&mode=basis&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: 0</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: $\le 1$ eV</td><td>Pred: $\approx 0$ MeV</td><td>err: — ppb (ρ=—)</td></tr>
-<tr><td rowspan='2'><strong>Photon $\gamma$</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>$\mathbf{1}_{B_4} \in H_4$</td><td>$4 \cdot 0_1$ (4-strand id)</td><td>Vol<sub>hyp</sub>: 0</td></tr>
+<tr><td rowspan='2'><strong>Photon $\gamma$</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>$\mathbf{1}_{B_4} \in H_4$</td><td>[$4 \cdot 0_1$ (4-strand id)](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=0_1&mode=basis&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: 0</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 0 MeV</td><td>Pred: 0 MeV</td><td>err: — ppb (ρ=—)</td></tr>
-<tr><td rowspan='2'><strong>Quark $\mathfrak{q}$</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>$\sigma_0 \in H_1$</td><td>(in $\mathcal{B}_3$)</td><td>Vol<sub>hyp</sub>: —</td></tr>
+<tr><td rowspan='2'><strong>Quark $\mathfrak{q}$</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>$\sigma_0 \in H_1$</td><td>[(in $\mathcal{B}_3$)](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=quark&mode=basis&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: —</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: (confined)</td><td>Pred: —</td><td>err: — ppb (ρ=—)</td></tr>
-<tr><td rowspan='2'><strong>Electron $e^-$</strong></td><td>0</td><td>0</td><td>1</td><td>1</td><td>2</td><td>$\sigma_1^3 \in H_2$</td><td>$T_{2,3} = 3_1$ (trefoil)</td><td>Vol<sub>hyp</sub>: 0 (torus knot, non-hyp)</td></tr>
+<tr><td rowspan='2'><strong>Electron $e^-$</strong></td><td>0</td><td>0</td><td>1</td><td>1</td><td>2</td><td>$\sigma_1^3 \in H_2$</td><td>[$T_{2,3} = 3_1$ (trefoil)](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=3_1&mode=basis&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: 0 (torus knot, non-hyp)</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 0.51099895 MeV</td><td>Pred: 0.51099895 MeV</td><td>err: (anchor) ppb (ρ=—)</td></tr>
-<tr><td rowspan='2'><strong>Proton $\mathfrak{p}$</strong></td><td>1</td><td>0</td><td>0</td><td>1</td><td>3</td><td>$(\sigma_1 \sigma_2^{-1})^3$ flav-uud</td><td>$\mathcal{B}_3(\mathrm{uud})$</td><td>Vol<sub>hyp</sub>: 7.3277</td></tr>
+<tr><td rowspan='2'><strong>Proton $\mathfrak{p}$</strong></td><td>1</td><td>0</td><td>0</td><td>1</td><td>3</td><td>$(\sigma_1 \sigma_2^{-1})^3$ flav-uud</td><td>[$\mathcal{B}_3(\mathrm{uud})$](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=proton&mode=confined&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: 7.3277</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 938.272 MeV</td><td>Pred: 938.272 MeV</td><td>err: (anchor) ppb (ρ=—)</td></tr>
-<tr><td rowspan='2'><strong>Neutron $\mathfrak{n}$</strong></td><td>0</td><td>1</td><td>0</td><td>1</td><td>3</td><td>$(\sigma_1 \sigma_2^{-1})^3$ flav-udd</td><td>$\mathcal{B}_3(\mathrm{udd})$</td><td>Vol<sub>hyp</sub>: 7.3277</td></tr>
+<tr><td rowspan='2'><strong>Neutron $\mathfrak{n}$</strong></td><td>0</td><td>1</td><td>0</td><td>1</td><td>3</td><td>$(\sigma_1 \sigma_2^{-1})^3$ flav-udd</td><td>[$\mathcal{B}_3(\mathrm{udd})$](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=neutron&mode=confined&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: 7.3277</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 939.565 MeV</td><td>Pred: 939.565 MeV</td><td>err: (anchor) ppb (ρ=—)</td></tr>
 </tbody></table>
 
@@ -60,11 +60,11 @@ Entries below have either a GB-NF derivation (fundamental particles) or are *man
 <tr><th>Z</th><th>N</th><th>e<sup>−</sup></th><th>ℓ</th><th>n₀</th><th>Braid (NF) / AME (MeV)</th><th>Closure / Pred (MeV)</th><th>Vol<sub>hyp</sub> / err ppb (ρ)</th></tr>
 </thead>
 <tbody>
-<tr><td rowspan='2'><strong>$^{2}\mathrm{H}$</strong></td><td>1</td><td>1</td><td>1</td><td>2</td><td>6</td><td>closure = $6_{2}$ — atomic-braid in $H_{6}$</td><td>$6_{2}$</td><td>Vol<sub>hyp</sub>: 4.4008</td></tr>
+<tr><td rowspan='2'><strong>$^{2}\mathrm{H}$</strong></td><td>1</td><td>1</td><td>1</td><td>2</td><td>6</td><td>closure = [$6_{2}$](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=6_2&mode=confined&chart=briggs-klein-A2) — atomic-braid in $H_{6}$</td><td>[$6_{2}$](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=6_2&mode=confined&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: 4.4008</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 2.2246 MeV</td><td>Pred: 2.2488 MeV</td><td>err: +10,903,104 ppb (ρ=1)</td></tr>
-<tr><td rowspan='2'><strong>$^{3}\mathrm{H}$</strong></td><td>1</td><td>2 ★</td><td>1</td><td>2</td><td>9</td><td>closure = $8_{11}$ — atomic-braid in $H_{9}$</td><td>$8_{11}$</td><td>Vol<sub>hyp</sub>: 8.2863</td></tr>
+<tr><td rowspan='2'><strong>$^{3}\mathrm{H}$</strong></td><td>1</td><td>2 ★</td><td>1</td><td>2</td><td>9</td><td>closure = [$8_{11}$](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=8_11&mode=confined&chart=briggs-klein-A2) — atomic-braid in $H_{9}$</td><td>[$8_{11}$](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=8_11&mode=confined&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: 8.2863</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 8.4818 MeV</td><td>Pred: 8.4686 MeV</td><td>err: -1,556,275 ppb (ρ=2)</td></tr>
-<tr><td rowspan='2'><strong>$^{3}\mathrm{He}$</strong></td><td>2 ★</td><td>1</td><td>2</td><td>2</td><td>9</td><td>closure = $L_{6a4}$ — atomic-braid in $H_{9}$</td><td>$L_{6a4}$</td><td>Vol<sub>hyp</sub>: 7.3277</td></tr>
+<tr><td rowspan='2'><strong>$^{3}\mathrm{He}$</strong></td><td>2 ★</td><td>1</td><td>2</td><td>2</td><td>9</td><td>closure = [$L_{6a4}$](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=L6a4&mode=confined&chart=briggs-klein-A2) — atomic-braid in $H_{9}$</td><td>[$L_{6a4}$](#/simulate/sim:knot-atlas-viewer/default-atlas-overview?knot=L6a4&mode=confined&chart=briggs-klein-A2)</td><td>Vol<sub>hyp</sub>: 7.3277</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 7.7180 MeV</td><td>Pred: 7.4889 MeV</td><td>err: -29,686,069 ppb (ρ=2)</td></tr>
 <tr><td rowspan='2'><strong>$^{4}\mathrm{He}$</strong></td><td>2 ★</td><td>2 ★</td><td>2</td><td>2</td><td>12</td><td>$A \cdot 8G$ magic-A formula — atomic-braid in $H_{12}$</td><td>$A \cdot 8G$ magic-A</td><td>Vol<sub>hyp</sub>: —</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 28.2957 MeV</td><td>Pred: 29.9557 MeV</td><td>err: +58,665,683 ppb (ρ=2)</td></tr>
@@ -95,8 +95,8 @@ Entries below have either a GB-NF derivation (fundamental particles) or are *man
 <tr><th>Z</th><th>N</th><th>e<sup>−</sup></th><th>ℓ</th><th>n₀</th><th>Braid (NF) / AME (MeV)</th><th>Closure / Pred (MeV)</th><th>Vol<sub>hyp</sub> / err ppb (ρ)</th></tr>
 </thead>
 <tbody>
-<tr><td rowspan='2'><strong>$^{6}\mathrm{Li}$ [PROVISIONAL]</strong></td><td>3</td><td>3</td><td>3</td><td>2</td><td>18</td><td>⚠ volume-match (DEPRECATED) → $K_{11a259}(0,0)$ in $H_{18}$ (no GB-NF derivation)</td><td>$K_{11a259}(0,0)$ *(provisional)*</td><td>Vol<sub>hyp</sub>: 12.5201</td></tr>
+<tr><td rowspan='2'><strong>$^{6}\mathrm{Li}$ \textbf{[PROVISIONAL]}</strong></td><td>3</td><td>3</td><td>3</td><td>2</td><td>18</td><td>⚠ volume-match (DEPRECATED) → $K_{11a259}(0,0)$ in $H_{18}$ (no GB-NF derivation)</td><td>$K_{11a259}(0,0)$ \emph{(provisional)}</td><td>Vol<sub>hyp</sub>: 12.5201</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 31.9941 MeV</td><td>Pred: 31.9888 MeV</td><td>err: -164,991 ppb (ρ=5)</td></tr>
-<tr><td rowspan='2'><strong>$^{7}\mathrm{Li}$ [PROVISIONAL]</strong></td><td>3</td><td>4</td><td>3</td><td>2</td><td>21</td><td>⚠ volume-match (DEPRECATED) → $L_{11a62}(0,0)(0,0)$ in $H_{21}$ (no GB-NF derivation)</td><td>$L_{11a62}(0,0)(0,0)$ *(provisional)*</td><td>Vol<sub>hyp</sub>: 15.3600</td></tr>
+<tr><td rowspan='2'><strong>$^{7}\mathrm{Li}$ \textbf{[PROVISIONAL]}</strong></td><td>3</td><td>4</td><td>3</td><td>2</td><td>21</td><td>⚠ volume-match (DEPRECATED) → $L_{11a62}(0,0)(0,0)$ in $H_{21}$ (no GB-NF derivation)</td><td>$L_{11a62}(0,0)(0,0)$ \emph{(provisional)}</td><td>Vol<sub>hyp</sub>: 15.3600</td></tr>
 <tr><td colspan='5'><em>(physics)</em></td><td>AME: 39.2445 MeV</td><td>Pred: 39.2447 MeV</td><td>err: +4,009 ppb (ρ=5)</td></tr>
 </tbody></table>

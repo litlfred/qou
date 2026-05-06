@@ -94,6 +94,23 @@ def fmt_isotope(sym):
     return f"${sym}$"
 
 
+def viewer_link(knot_or_id, mode="basis", inner=None):
+    """Wrap `inner` (markdown / TeX) in a clickable link to the
+    Recursive Knot-Atlas Viewer pre-loaded on the given knot id.
+
+    The link target is the viewer-spec URL fragment used by the SPA
+    router (`#/simulate/sim:knot-atlas-viewer/default-atlas-overview?…`).
+    `inner` defaults to `knot_or_id` formatted via `fmt_knot()`.
+    """
+    if not knot_or_id:
+        return inner or ""
+    if inner is None:
+        inner = fmt_knot(knot_or_id)
+    target = (f"#/simulate/sim:knot-atlas-viewer/default-atlas-overview"
+              f"?knot={knot_or_id}&mode={mode}&chart=briggs-klein-A2")
+    return f"[{inner}]({target})"
+
+
 def fmt_knot(name):
     """Format knot/link names with LaTeX subscripts.
 
@@ -134,7 +151,7 @@ def closure_for_row(r):
     """
     knot = r.get("inputs", {}).get("knot")
     if knot:
-        return fmt_knot(knot)
+        return viewer_link(knot, mode="confined")
     formula = r.get("formula", "")
     # Recursive α-cluster: "2·B(⁴He_derived) + 1·c_αα" → recursive notation
     if "B(⁴He_derived)" in formula:
@@ -183,40 +200,43 @@ def fundamental_particles():
     return [
         {"label": r"Neutrino $\nu$", "Z": 0, "N": 0, "e": 0,
          "ell": 0, "n_0": 1, "method": "principled-gb-nf",
-         "braid": r"$\mathbf{1} \in H_1$", "closure": r"$0_1$ (unknot)",
+         "braid": r"$\mathbf{1} \in H_1$",
+         "closure": viewer_link("0_1", inner=r"$0_1$ (unknot)"),
          "vol_hyp": "0",
          "AME": r"$\le 1$ eV", "pred": r"$\approx 0$ MeV",
          "err_ppb_str": "—", "rho": "—"},
         {"label": r"Photon $\gamma$", "Z": 0, "N": 0, "e": 0,
          "ell": 0, "n_0": 4, "method": "principled-gb-nf",
          "braid": r"$\mathbf{1}_{B_4} \in H_4$",
-         "closure": r"$4 \cdot 0_1$ (4-strand id)",
+         "closure": viewer_link("0_1", inner=r"$4 \cdot 0_1$ (4-strand id)"),
          "vol_hyp": "0", "AME": "0 MeV", "pred": "0 MeV",
          "err_ppb_str": "—", "rho": "—"},
         {"label": r"Quark $\mathfrak{q}$", "Z": 0, "N": 0, "e": 0,
          "ell": 0, "n_0": 1, "method": "principled-gb-nf",
          "braid": r"$\sigma_0 \in H_1$",
-         "closure": r"(in $\mathcal{B}_3$)",
+         "closure": viewer_link("quark", inner=r"(in $\mathcal{B}_3$)"),
          "vol_hyp": "—", "AME": "(confined)", "pred": "—",
          "err_ppb_str": "—", "rho": "—"},
         {"label": r"Electron $e^-$", "Z": 0, "N": 0, "e": 1,
          "ell": 1, "n_0": 2, "method": "principled-derivation",
          "braid": r"$\sigma_1^3 \in H_2$",
-         "closure": r"$T_{2,3} = 3_1$ (trefoil)",
+         "closure": viewer_link("3_1", inner=r"$T_{2,3} = 3_1$ (trefoil)"),
          "vol_hyp": electron_vol,
          "AME": "0.51099895 MeV", "pred": "0.51099895 MeV",
          "err_ppb_str": "(anchor)", "rho": "—"},
         {"label": r"Proton $\mathfrak{p}$", "Z": 1, "N": 0, "e": 0,
          "ell": 1, "n_0": 3, "method": "principled-derivation",
          "braid": r"$(\sigma_1 \sigma_2^{-1})^3$ flav-uud",
-         "closure": r"$\mathcal{B}_3(\mathrm{uud})$",
+         "closure": viewer_link("proton", mode="confined",
+                                inner=r"$\mathcal{B}_3(\mathrm{uud})$"),
          "vol_hyp": pn_vol,
          "AME": "938.272 MeV", "pred": "938.272 MeV",
          "err_ppb_str": "(anchor)", "rho": "—"},
         {"label": r"Neutron $\mathfrak{n}$", "Z": 0, "N": 1, "e": 0,
          "ell": 1, "n_0": 3, "method": "principled-derivation",
          "braid": r"$(\sigma_1 \sigma_2^{-1})^3$ flav-udd",
-         "closure": r"$\mathcal{B}_3(\mathrm{udd})$",
+         "closure": viewer_link("neutron", mode="confined",
+                                inner=r"$\mathcal{B}_3(\mathrm{udd})$"),
          "vol_hyp": pn_vol,
          "AME": "939.565 MeV", "pred": "939.565 MeV",
          "err_ppb_str": "(anchor)", "rho": "—"},
@@ -248,7 +268,8 @@ def light_atoms_from_witness(W):
                          f"$H_{{{3 * A}}}$")
         else:
             knot = r.get("inputs", {}).get("knot", "?")
-            braid_str = f"closure = {fmt_knot(knot)} — atomic-braid in $H_{{{3 * A}}}$"
+            braid_str = (f"closure = {viewer_link(knot, mode='confined')}"
+                         f" — atomic-braid in $H_{{{3 * A}}}$")
         # Methodology classification per particle (matches
         # methodology-deprecation.witness.json).
         if "B(⁴He_derived)" in r.get("formula", ""):

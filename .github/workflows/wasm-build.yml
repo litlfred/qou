@@ -1,0 +1,76 @@
+name: WASM Kernel Build (qou-knot-wasm)
+
+# Builds the browser-side WASM kernel used by the Recursive Knot-Atlas
+# Viewer simulator and publishes the artefact to the `gh-pages` branch
+# under `/wasm/`, so the deployed viewer can lazy-load it without a
+# manual build step.  Mirrors how `build-lean-mcp.yml` publishes the
+# Lean MCP Docker image.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tools/qou-knot-wasm/**"
+      - ".github/workflows/wasm-build.yml"
+  pull_request:
+    paths:
+      - "tools/qou-knot-wasm/**"
+      - ".github/workflows/wasm-build.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust (stable + wasm32 target)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Install wasm-pack
+        run: cargo install wasm-pack --locked --version 0.13.0
+
+      - name: Cargo cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            tools/qou-knot-wasm/target
+          key: ${{ runner.os }}-cargo-wasm-${{ hashFiles('tools/qou-knot-wasm/Cargo.toml') }}
+
+      - name: Run unit tests (native target)
+        working-directory: tools/qou-knot-wasm
+        run: cargo test --lib --release
+
+      - name: Build WASM artefact
+        working-directory: tools/qou-knot-wasm
+        run: |
+          wasm-pack build \
+            --target web \
+            --release \
+            --out-dir ../../wasm-artifact \
+            --out-name qou_knot_kernel
+
+      - name: List artefact
+        run: ls -la wasm-artifact/
+
+      - name: Upload artefact (PR / branch)
+        uses: actions/upload-artifact@v4
+        with:
+          name: qou-knot-kernel-wasm
+          path: wasm-artifact/
+
+      - name: Deploy to gh-pages /wasm/ (main only)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./wasm-artifact
+          destination_dir: wasm
+          keep_files: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "chore(wasm): publish qou-knot-kernel build ${{ github.sha }}"

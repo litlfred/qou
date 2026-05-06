@@ -1,0 +1,33 @@
+[package]
+name = "qou-knot-wasm"
+version = "0.1.0"
+edition = "2021"
+description = "Browser-side WASM kernel for the recursive knot-atlas viewer (Markov closure, Wedderburn block dimensions, hyperbolic-volume estimates) — exported via wasm-bindgen for direct use from the simulator HTML."
+
+[lib]
+name = "qou_knot_kernel"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Pinned to a recent stable release; bumped together with the rest of
+# the Rust toolchain (see tools/hecke-engine/Cargo.toml).
+wasm-bindgen = "0.2"
+serde = { version = "1", features = ["derive"] }
+serde-wasm-bindgen = "0.6"
+js-sys = "0.3"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+
+# NB: this crate intentionally does NOT depend on `hecke-engine` directly
+# — that crate pulls in MPFR / GMP / SnapPy bindings that don't cross-
+# compile to wasm32-unknown-unknown without significant work.  The
+# kernel here implements the small surface the viewer needs (Markov
+# closure on a braid word, Wedderburn-block dimensions for H_n at
+# small n, an analytic-fallback hyperbolic-volume estimator) using
+# pure Rust.  A heavier Pyodide-loaded `pyhecke_native` wheel
+# (Slice C) will provide the full Hecke-engine surface when the
+# Emscripten cross-build is in place.
