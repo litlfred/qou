@@ -4,7 +4,7 @@ eye is a tensor product of $n$ such strands; reflection from
 environmental matter (electrons, nuclei — non-trivial highest-weight
 knots) braids the photon strands with the environment's state, so
 the outgoing light carries an imprint as a braid word in the
-Iwahori-Hecke algebra $H_n(R, q)$.  An act of seeing applies the
+Iwahori–Hecke algebra $H_n(R, q)$.  An act of seeing applies the
 [observation functor $\tau$](#def:observation) to this braided
 state, returning a classical scalar.*
 

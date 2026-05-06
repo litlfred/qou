@@ -14,12 +14,15 @@ every Kashiwara raising operator $\tilde e_i$.*
 *Consequently the GS reduction engine that computes $T_w$ from a
 braid word may be replaced by a directed traversal on the crystal
 graph: starting from the input word and applying $\tilde e_i$
-operators recursively, the procedure terminates at $T_w$.  Because
-the relevant component of $\mathrm{Cryst}(\mathfrak{sl}_n)$ is
-finite, termination is immediate; no Diamond-Lemma S-polynomial
-overlap analysis is required.  The plactic-monoid bridge of
-Lecouvey \cite{lecouvey2007} certifies that the GS irreducible
-forms and crystal highest-weight vertices are in bijection.*
+operators recursively, the procedure terminates at $T_w$.  The
+relevant component of $\mathrm{Cryst}(\mathfrak{sl}_n)$ is finite
+because the cyclotomic quotient of the KLR algebra realising
+$H_n(R, q)$ is itself finite-dimensional
+\cite{brundankleshchev2009}; termination is therefore immediate
+and no Diamond-Lemma S-polynomial overlap analysis is required.
+The plactic-monoid bridge of Lecouvey \cite{lecouvey2007}
+certifies that the GS irreducible forms and crystal highest-weight
+vertices are in bijection.*
 
 **Why a conjecture and not a theorem.**
 *The literature establishes the Brundan–Kleshchev isomorphism and
