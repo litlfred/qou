@@ -1,0 +1,334 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-06T02:18:28.249469+00:00",
+  "commitSha": "fd29244a85796c88ed4b535c7cc69bf85a66bd29",
+  "assertions": [
+    {
+      "name": "abs_det_product_eq_1[6_x_1_1_1_1_1_1]",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "abs_det_product_eq_1[5_1_x_2_1_1_1_1]",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "abs_det_product_eq_1[4_2_x_2_2_1_1]",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "abs_det_product_eq_1[4_1_1_x_3_1_1_1]",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "abs_det_product_eq_1[3_3_x_2_2_2]",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "det_squared_self_conj_eq_1[lambda=3_2_1]",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "staircase_k=2_det_eq_pair_sign",
+      "computed": -1.0,
+      "expected": -1.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "staircase_k=3_det_eq_pair_sign",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "staircase_k=3_bar_pairs_eq_8",
+      "computed": 8,
+      "expected": 8,
+      "passed": true
+    },
+    {
+      "name": "staircase_k=4_all_gen_dets_unit_modulus",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "staircase_k=4_det_reconstructed_unit",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.001
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 38485,
+  "computation": "beta-ew-delta-I-conjugate-pairing",
+  "scriptFile": "beta_ew_delta_I_conjugate_pairing.py",
+  "scriptHash": "70ba1251a3c4",
+  "scriptCommitSha": "unknown",
+  "description": "β_EW(Δ_I^minimal) conjugate-partition pairing at n=6 + staircase recursion (k=2,3,4 ↔ n=3,6,10).  Verifies the structural det law det(M_λ)·det(M_λ′) = ±1 across every conjugate pair, and tests the staircase ρ_k = (k,…,1) extension of the (3,2,1) bar-pair finding from fd29244a.",
+  "contentBlock": "conj:weinberg-angle-categorical",
+  "parameters": {
+    "q_0": "1.1099785955541805169583001889887986763787613849839",
+    "q_0_numeric": 1.1099785955541805
+  },
+  "data": {
+    "conjugate_pair_results_n6": [
+      {
+        "lambda": [
+          6
+        ],
+        "lambda_prime": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "self_conjugate": false,
+        "dim_lambda": 1,
+        "dim_lambda_prime": 1,
+        "det_lambda": 16.729937179867242,
+        "det_lambda_prime": -0.05977308756445285,
+        "det_product": -1.0,
+        "abs_det_product_minus_1": 0.0
+      },
+      {
+        "lambda": [
+          5,
+          1
+        ],
+        "lambda_prime": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "self_conjugate": false,
+        "dim_lambda": 5,
+        "dim_lambda_prime": 5,
+        "det_lambda": -4682.555468470684,
+        "det_lambda_prime": 0.00021355860207815182,
+        "det_product": -1.0000000000000047,
+        "abs_det_product_minus_1": 4.6629367034256575e-15
+      },
+      {
+        "lambda": [
+          4,
+          2
+        ],
+        "lambda_prime": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "self_conjugate": false,
+        "dim_lambda": 9,
+        "dim_lambda_prime": 9,
+        "det_lambda": -4682.555468470667,
+        "det_lambda_prime": 0.0002135586020781536,
+        "det_product": -1.0000000000000093,
+        "abs_det_product_minus_1": 9.325873406851315e-15
+      },
+      {
+        "lambda": [
+          4,
+          1,
+          1
+        ],
+        "lambda_prime": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "self_conjugate": false,
+        "dim_lambda": 10,
+        "dim_lambda_prime": 10,
+        "det_lambda": 279.8907980423071,
+        "det_lambda_prime": 0.0035728219969877206,
+        "det_product": 1.0000000000000024,
+        "abs_det_product_minus_1": 2.4424906541753444e-15
+      },
+      {
+        "lambda": [
+          3,
+          3
+        ],
+        "lambda_prime": [
+          2,
+          2,
+          2
+        ],
+        "self_conjugate": false,
+        "dim_lambda": 5,
+        "dim_lambda_prime": 5,
+        "det_lambda": 16.729937179867264,
+        "det_lambda_prime": -0.059773087564452966,
+        "det_product": -1.0000000000000033,
+        "abs_det_product_minus_1": 3.3306690738754696e-15
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          1
+        ],
+        "lambda_prime": [
+          3,
+          2,
+          1
+        ],
+        "self_conjugate": true,
+        "dim": 16,
+        "det_lambda": 0.9999999999999983,
+        "det_product": 0.9999999999999967,
+        "abs_det_product_minus_1": 3.3306690738754696e-15
+      }
+    ],
+    "staircase_results": [
+      {
+        "k": 2,
+        "rho_k": [
+          2,
+          1
+        ],
+        "n": 3,
+        "dim": 2,
+        "eigenvalues": [
+          1.0,
+          -0.9999999999999999
+        ],
+        "bar_pairs": 1,
+        "unpaired": 0,
+        "det": -0.9999999999999999,
+        "det_expected": -1,
+        "computed_kind": "full_spectrum"
+      },
+      {
+        "k": 3,
+        "rho_k": [
+          3,
+          2,
+          1
+        ],
+        "n": 6,
+        "dim": 16,
+        "bar_pairs": 8,
+        "unpaired": 0,
+        "det": 0.9999999999999982,
+        "det_expected": 1,
+        "computed_kind": "full_spectrum"
+      },
+      {
+        "k": 4,
+        "rho_k": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "n": 10,
+        "dim": 768,
+        "gen_determinants": [
+          {
+            "generator": 1,
+            "det": 1.000000000000028
+          },
+          {
+            "generator": 2,
+            "det": 1.0000000000000457
+          },
+          {
+            "generator": 3,
+            "det": 1.000000000000085
+          },
+          {
+            "generator": 4,
+            "det": 0.9999999999999527
+          },
+          {
+            "generator": 5,
+            "det": 0.9999999999999952
+          },
+          {
+            "generator": 6,
+            "det": 1.0000000000000646
+          },
+          {
+            "generator": 7,
+            "det": 1.0000000000000002
+          },
+          {
+            "generator": 8,
+            "det": 0.9999999999999358
+          },
+          {
+            "generator": 9,
+            "det": 0.9999999999999298
+          }
+        ],
+        "all_gen_dets_unit_modulus": true,
+        "det_reconstructed_from_gens": 1.0000000000005256,
+        "computed_kind": "per_generator_only"
+      }
+    ],
+    "verdict": "structural-laws-verified",
+    "delta_I_minimal_word": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      3,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      3,
+      1,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      1,
+      3,
+      1
+    ]
+  },
+  "caveats": [
+    "All values derived from q_0 (50-digit) via canonical Hoefsmit seminormal construction.  No fit constants introduced.  The det-product law and bar-pair count are categorical consequences of bar-involution compatibility (Tier-A1 Property 5, 6f447ce1); this probe reports them as derived (not fitted) at q = q_0.",
+    "(4,3,2,1) full β_EW eigendecomposition skipped (dim=768).  Per-generator det computation suffices because det is multiplicative on the braid word and the word contains no inverse generators."
+  ]
+}
