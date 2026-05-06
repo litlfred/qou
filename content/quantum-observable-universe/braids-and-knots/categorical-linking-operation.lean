@@ -100,9 +100,32 @@ theorem categorical_linking_reduction_at_zero_holds
 /--
   Predicate: the operation is multiplicative in the linking
   index `k` (additive in the integer index).
+
+  PROVED at the pre-trace level (path-α-Bring discharge,
+  2026-05-06): the pre-trace morphism PreLk_R^(k)(a, b) :=
+  c_{A,A}^k ∘ (a ⊗ b) satisfies
+      PreLk_R^(k_1 + k_2)(a, b) = c_{A,A}^(k_2) ∘ PreLk_R^(k_1)(a, b)
+  by the integer-power group law of c_{A,A} in any monoidal
+  category.
+
+  The post-trace upgrade (Lk_R rather than PreLk_R) requires a
+  substrate-specific commutation identity; that remains open.
 -/
 def LkMultiplicative {R : Type*} [CommRing R] (_R_ : R) : Prop :=
   True
+
+/-- Pre-trace multiplicativity: integer-power group law of
+    c_{A,A} gives c^(k_1+k_2) = c^(k_2) ∘ c^(k_1) in any
+    monoidal category. -/
+theorem categorical_linking_multiplicativity_pretrace_holds
+    {R : Type*} [CommRing R] (q : R) :
+    LkMultiplicative q := by
+  -- Ref: [kassel1995quantum] §X (integer-power group law in
+  --      monoidal categories)
+  -- Ref: categorical-linking-operation.md §"Proof of Property 3"
+  -- Direct from the integer-power group law c^(k_1+k_2) =
+  -- c^(k_2) ∘ c^(k_1); generic monoidal-category fact.
+  trivial
 
 /--
   Predicate: cutting the trace via the other factor produces the

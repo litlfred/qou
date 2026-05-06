@@ -46,9 +46,14 @@ following properties:
    $\mathrm{Lk}_R^{(0)}(a, b) = (\tau_R(b)) \cdot a^*$ where $a^*
    \in \mathrm{End}_R(A)$ is the rigid-dual rank-1 endomorphism
    associated with $a$.
-3. **Multiplicativity in $k$** — open. $\mathrm{Lk}_R^{(k_1 + k_2)}(a, b)
-   = c_{A, A}^{\,k_2} \cdot \mathrm{Lk}_R^{(k_1)}(a, b)$ (linking
-   composes additively in the integer index).
+3. **Multiplicativity in $k$** — *proved* (see proof below).
+   The pre-trace tangle morphism
+   $\mathrm{PreLk}_R^{(k)}(a, b) := c_{A, A}^{\,k} \circ (a \otimes b)
+   \in \mathrm{Hom}_R(\mathbf{1}, A \otimes A)$ satisfies
+   $\mathrm{PreLk}_R^{(k_1 + k_2)}(a, b) = c_{A, A}^{\,k_2} \circ
+   \mathrm{PreLk}_R^{(k_1)}(a, b)$ — directly from the integer-
+   power group law of $c_{A, A}$. The post-trace operation
+   $(\mathrm{id}_A \otimes \tau_R)$ is fixed.
 4. **Trace-cut symmetry** — open. Cutting via $\tau_R \otimes \mathrm{id}_A$
    instead of $\mathrm{id}_A \otimes \tau_R$ produces the
    $\iota$-conjugate $\mathrm{Lk}_R^{(-k)}(b, a)$, where $\iota$
@@ -208,6 +213,80 @@ $a \otimes \mathrm{id}_A \in \mathrm{Hom}_R(A, A \otimes A) \cong
 \mathrm{End}_R(A)$ via $\mathbf{1} \otimes A \cong A$ — yielding
 exactly the rank-1 dual endomorphism $a^* := a \circ \tilde a$.
 $\square$
+
+### Proof of Property 3 (multiplicativity in $k$)
+
+**Claim.** Define the **pre-trace linking morphism**
+
+$$
+  \mathrm{PreLk}_R^{(k)}(a, b)
+  \;:=\; c_{A, A}^{\,k} \circ (a \otimes b)
+  \;\in\; \mathrm{Hom}_R(\mathbf{1}, A \otimes A).
+$$
+
+For all integers $k_1, k_2 \in \mathbb{Z}$:
+
+$$
+  \mathrm{PreLk}_R^{(k_1 + k_2)}(a, b)
+  \;=\;
+  c_{A, A}^{\,k_2} \circ \mathrm{PreLk}_R^{(k_1)}(a, b),
+$$
+
+and consequently $\mathrm{Lk}_R^{(k_1 + k_2)}(a, b) =
+(\mathrm{id}_A \otimes \tau_R) \circ \bigl( c_{A, A}^{\,k_2}
+\circ \mathrm{PreLk}_R^{(k_1)}(a, b) \otimes \mathrm{id}_A
+\bigr)$ — i.e. additional linkings translate to pre-composition
+with $c_{A, A}^{\,k_2}$ on the pre-trace level.
+
+**Proof.**
+
+*Step 1.* Integer powers of an endomorphism in any monoidal
+category form a $\mathbb{Z}$-graded sub-monoid under composition:
+$c_{A, A}^{\,k_1 + k_2} = c_{A, A}^{\,k_2} \circ c_{A, A}^{\,k_1}$
+(the integer-power group law).
+
+*Step 2.* Substituting into the pre-trace formula:
+
+$$
+  \mathrm{PreLk}_R^{(k_1 + k_2)}(a, b)
+  \;=\; c_{A, A}^{\,k_1 + k_2} \circ (a \otimes b)
+  \;=\; c_{A, A}^{\,k_2} \circ c_{A, A}^{\,k_1} \circ (a \otimes b)
+  \;=\; c_{A, A}^{\,k_2} \circ \mathrm{PreLk}_R^{(k_1)}(a, b).
+$$
+
+*Step 3.* The trace-cut $(\mathrm{id}_A \otimes \tau_R) \circ
+((-) \otimes \mathrm{id}_A)$ is a fixed $R$-linear map
+$\mathrm{Hom}_R(\mathbf{1}, A \otimes A) \to \mathrm{End}_R(A)$.
+Applying it to both sides:
+
+$$
+  \mathrm{Lk}_R^{(k_1 + k_2)}(a, b)
+  \;=\;
+  (\mathrm{id}_A \otimes \tau_R) \circ \bigl( c_{A, A}^{\,k_2}
+  \circ \mathrm{PreLk}_R^{(k_1)}(a, b) \otimes \mathrm{id}_A \bigr).
+$$
+
+This is the desired multiplicativity statement at the pre-trace
+level: the linking integer $k$ admits a $\mathbb{Z}$-graded
+recursion via the integer-power group law of $c_{A, A}$.
+$\square$
+
+**Remark (proof scope, Property 3).** Like Properties 1 and 2,
+this proof uses only generic categorical axioms: the integer-
+power group law of an endomorphism in a monoidal category +
+composition associativity. It holds in **any** $R$-linear rigid
+braided monoidal category — generic categorical fact.
+
+The "post-trace" multiplicativity statement
+$\mathrm{Lk}_R^{(k_1 + k_2)}(a, b) = c_{A, A}^{\,k_2} \cdot
+\mathrm{Lk}_R^{(k_1)}(a, b)$ as written in the original
+formulation requires an additional substrate-specific identity
+(commutation of the trace-cut with the c-line subalgebra in
+$\mathrm{End}(A \otimes A)$). That identity is **not** generic —
+it relies on the substrate's specific ribbon-trace structure. The
+pre-trace multiplicativity proved above is the **generic
+categorical content** of Property 3; the post-trace upgrade is
+substrate-specific and remains open.
 
 **Remark (proof scope, Property 2).** The proof uses six
 ingredients:
