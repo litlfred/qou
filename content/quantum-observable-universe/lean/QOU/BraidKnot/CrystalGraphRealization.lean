@@ -71,6 +71,25 @@ theorem nodeOf_highest_weight
     C.raising i (C.nodeOf T) = none :=
   C.crystal_realises T i
 
+/-- **Trivial model (consistency witness).**
+
+    Concrete `CrystalGraphRealization R q` with `NormalForm` and
+    `CrystalNode` both `PUnit`, and `raising _ _ := none`.  Every
+    crystal node is then trivially highest-weight, so
+    `crystal_realises` reduces to `none = none`, witnessed by `rfl`.
+    Proves the class axiomatisation is **consistent**.  Provided as
+    a `def` (not `instance`) to avoid polluting typeclass
+    resolution. -/
+-- Ref: [manuscript] braids-and-knots/crystal-graph-realization
+def trivialModel (R : Type u) [CommRing R] (q : R) :
+    CrystalGraphRealization R q where
+  NormalForm := PUnit
+  CrystalNode := PUnit
+  nodeOf _ := PUnit.unit
+  raising _ _ := none
+  lowering _ _ := none
+  crystal_realises _ _ := rfl
+
 end CrystalGraphRealization
 
 end QOU.BraidKnot

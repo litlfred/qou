@@ -56,6 +56,22 @@ theorem confLevel_le_klrTopDegree
     F.confLevel T ≤ F.klrTopDegree T :=
   (F.filtrations_agree T).le
 
+/-- **Trivial model (consistency witness).**
+
+    Concrete `ConfinementGradingCorrespondence R q` over an
+    upstream `CrystalGraphRealization R q`: both `confLevel` and
+    `klrTopDegree` are constantly `0`, so `filtrations_agree`
+    reduces to `0 = 0`.  Proves the class axiomatisation is
+    **consistent**.  Provided as a `def` (not `instance`) to avoid
+    polluting typeclass resolution. -/
+-- Ref: [manuscript] braids-and-knots/confinement-grading-correspondence
+def trivialModel (R : Type u) [CommRing R] (q : R)
+    [C : CrystalGraphRealization R q] :
+    ConfinementGradingCorrespondence R q where
+  confLevel _ := 0
+  klrTopDegree _ := 0
+  filtrations_agree _ := rfl
+
 end ConfinementGradingCorrespondence
 
 end QOU.BraidKnot

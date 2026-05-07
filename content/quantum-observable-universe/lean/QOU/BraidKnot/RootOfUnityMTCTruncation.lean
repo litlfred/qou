@@ -84,6 +84,24 @@ theorem nodeOf_inTruncation
     M.inTruncation (C.nodeOf T) :=
   M.truncation_holds T
 
+/-- **Trivial model (consistency witness, `k = 2`).**
+
+    Concrete `RootOfUnityMTCTruncation R q 2` over an upstream
+    `CrystalGraphRealization R q`: every node is in the truncation
+    (`inTruncation := fun _ => True`) and every column count is
+    `0 < 2`.  Proves the class axiomatisation is **consistent** at
+    the smallest admissible level `k = 2`.  Provided as a `def`
+    (not `instance`) to avoid polluting typeclass resolution. -/
+-- Ref: [manuscript] braids-and-knots/root-of-unity-mtc-truncation
+def trivialModel (R : Type u) [CommRing R] (q : R)
+    [C : CrystalGraphRealization R q] :
+    RootOfUnityMTCTruncation R q 2 where
+  k_ge_two := le_refl 2
+  inTruncation _ := True
+  columnCount _ := 0
+  inTruncation_iff _ := ⟨fun _ => by decide, fun _ => True.intro⟩
+  truncation_holds _ := True.intro
+
 end RootOfUnityMTCTruncation
 
 end QOU.BraidKnot
