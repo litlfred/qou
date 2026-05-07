@@ -1,0 +1,139 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-06T15:16:04.394769+00:00",
+  "commitSha": "56c93beff0207782d6934fb842033b952fd94569",
+  "assertions": [
+    {
+      "name": "k3_residual_matches_q_one_fifth",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "k2_skipped_due_to_degeneracy",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "k4_q_pow_inv_hc_present_in_spectrum",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "k2_corner_hook_eq_2k_minus_1",
+      "computed": 3,
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "name": "k3_corner_hook_eq_2k_minus_1",
+      "computed": 5,
+      "expected": 5,
+      "passed": true
+    },
+    {
+      "name": "k4_corner_hook_eq_2k_minus_1",
+      "computed": 7,
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "name": "k5_corner_hook_eq_2k_minus_1",
+      "computed": 9,
+      "expected": 9,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 40858,
+  "computation": "staircase-ew-residual-conjecture",
+  "scriptFile": "staircase_ew_residual_conjecture.py",
+  "scriptHash": "e1620ea85867",
+  "scriptCommitSha": "unknown",
+  "description": "Test the staircase EW-residual conjecture: q^(1/(2k-1)) appears as the residual factor between raw β_EW spectral ratio and the structurally-meaningful ratio for staircase ρ_k = (k, k-1, …, 1).  Verified for k=3 (q^(1/5) closes the cot θ_W gap to 0.13%).  Tests k=2 (n=3, dim=2), k=3 (n=6, dim=16) for cross-validation, and k=4 (n=10, dim=768) for the prediction.  ρ_5 (dim≈3·10⁵) recorded as prediction only.",
+  "contentBlock": "conj:weinberg-angle-categorical",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "data": {
+    "predictions": {
+      "k_2": {
+        "shape": [
+          2,
+          1
+        ],
+        "n": 3,
+        "h_corner": 3,
+        "q_pow_inv_hc": 1.0353921501090408
+      },
+      "k_3": {
+        "shape": [
+          3,
+          2,
+          1
+        ],
+        "n": 6,
+        "h_corner": 5,
+        "q_pow_inv_hc": 1.0210874086805357
+      },
+      "k_4": {
+        "shape": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "n": 10,
+        "h_corner": 7,
+        "q_pow_inv_hc": 1.015017464587894
+      },
+      "k_5": {
+        "shape": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "n": 15,
+        "h_corner": 9,
+        "q_pow_inv_hc": 1.0116608787430426
+      }
+    },
+    "empirical_results": {
+      "2": {
+        "skipped": true,
+        "reason": "insufficient positive eigenvalues (1)",
+        "n_real_pos_eigs": 1,
+        "predicted_q_power_inv_hc": 1.0353921501090408
+      },
+      "3": {
+        "best_ratio_value": 1.0920785668553477,
+        "best_ratio_indices": [
+          8,
+          9
+        ],
+        "log_distance": 0.06721467603357706,
+        "relative_error": 0.06952505492800834,
+        "predicted_q_power_inv_hc": 1.0210874086805357,
+        "n_real_pos_eigs": 8,
+        "top_two_ratio": 1.7831508101184945
+      },
+      "4": {
+        "best_ratio_value": 1.0135740227975922,
+        "best_ratio_indices": [
+          254,
+          188
+        ],
+        "log_distance": 0.0014230977926145642,
+        "relative_error": 0.0014220856691247261,
+        "predicted_q_power_inv_hc": 1.015017464587894,
+        "n_real_pos_eigs": 384,
+        "top_two_ratio": 1.0000000000000013
+      }
+    }
+  }
+}

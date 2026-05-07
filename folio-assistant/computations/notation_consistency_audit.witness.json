@@ -1,59 +1,10 @@
 {
   "computation": "notation-consistency-audit",
   "description": "Scan repository for violations of notation rules in notation-register.md / notation-collisions.md. Currently enforces: r := q^(1/2) (no t, no iota), Wenzl level uses ell (not r_W), numerical q_0 only in intro/Ch8/Ch11. Warn-only by default; --strict makes errors fail CI.",
-  "n_files_scanned": 4680,
-  "n_errors": 8,
+  "n_files_scanned": 4757,
+  "n_errors": 0,
   "n_warnings": 22,
-  "errors": [
-    {
-      "rule": "forbidden-t-for-sqrt-q",
-      "file": "content/quantum-observable-universe/braids-and-knots/y-lambda-cyclotomic-factorization.md",
-      "line": 3,
-      "text": "Markov parameter $z = 1/(q^{1/2} + q^{-1/2})$, and write $t = q^{1/2}$."
-    },
-    {
-      "rule": "forbidden-t-for-sqrt-q",
-      "file": "content/quantum-observable-universe/braids-and-knots/y-lambda-cyclotomic-factorization.md",
-      "line": 15,
-      "text": "## Per-$n$ denominators (over $\\mathbb{Q}$ in $t = q^{1/2}$)"
-    },
-    {
-      "rule": "forbidden-t-for-sqrt-q",
-      "file": "content/quantum-observable-universe/descartes-universe/groebner-nf-computation.md",
-      "line": 224,
-      "text": "$\\mathbb{Z}$ in $t = q^{1/2}$).  The denominator $2^{p_n}$ is"
-    },
-    {
-      "rule": "forbidden-t-for-sqrt-q",
-      "file": "content/quantum-observable-universe/descartes-universe/kummer-shell-closure.md",
-      "line": 111,
-      "text": "$t = q^{1/2}$) produces Laurent polynomial witnesses for"
-    },
-    {
-      "rule": "forbidden-t-for-sqrt-q",
-      "file": "content/quantum-observable-universe/appendix-nf-witnesses/witness-computation-method.md",
-      "line": 43,
-      "text": "$\\mathbb{Z}[t, t^{-1}]$ where $t = q^{1/2}$.  No floating-point"
-    },
-    {
-      "rule": "forbidden-t-for-sqrt-q",
-      "file": "folio-assistant/computations/y_lambda_cyclotomic_factor.py",
-      "line": 27,
-      "text": "# Use t = q^{1/2} as the underlying variable so all expressions are"
-    },
-    {
-      "rule": "forbidden-t-for-sqrt-q",
-      "file": "folio-assistant/computations/y_lambda_cyclotomic_factor.py",
-      "line": 142,
-      "text": "        # Polynomial form in t = q^{1/2}; reuse the default q_0"
-    },
-    {
-      "rule": "forbidden-t-for-sqrt-q",
-      "file": "folio-assistant/computations/y_lambda_cyclotomic_factor.py",
-      "line": 163,
-      "text": "            \"Factor y_\u03bb closed forms over Q in t = q^{1/2} to identify \""
-    }
-  ],
+  "errors": [],
   "warnings": [
     {
       "rule": "numeric-q-outside-allowed-chapters",
@@ -188,5 +139,5 @@
       "text": "    \"r_W\": float(r_W),"
     }
   ],
-  "generated_at": "2026-05-06T00:12:27.465845+00:00"
+  "generated_at": "2026-05-06T00:48:00.803497+00:00"
 }

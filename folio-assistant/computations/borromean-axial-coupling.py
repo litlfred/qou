@@ -1,336 +1,331 @@
 #!/usr/bin/env python3
 """
-g_A from the Iwahori--Hecke algebra of the nucleon braid — witness computation.
+g_A from confinement Frobenius reciprocity — instance of the master
+formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i* (G^{-1})_{ij} ⟨O, b_j⟩
+(prop:confinement-frobenius-reciprocity).
 
-The axial coupling g_A measures the ratio of axial to vector weak
-matrix elements of the nucleon.  In the QOU, the proton is a
-Borromean link of 3 quarks (uud), and the weak interaction is a
-single Skein crossing change (d→u).
+This script REPLACES the prior conjugation-pattern computation
+``g_A = (5/3) · |tr(β·σ₁·β⁻¹) / tr(σ₁)|``, which was structurally
+``5/3`` for ALL ``q`` because ``tr(β·X·β⁻¹) = tr(X)`` by cyclicity of
+the Markov trace.  See
+``docs/audits/2026-05-06-frobenius-pairing-compute-audit.md`` § 3.1
+for the bug history.
 
-Physics:
-  g_V = 1 (exact, CVC / Ward identity for SU_q(2))
-  g_A = ratio of antisymmetric to symmetric Hecke traces at the
-        converting generator
+Pipeline (Item 4b of the workplan)
+----------------------------------
 
-The computation evaluates the beta-decay matrix element in the
-Iwahori--Hecke algebra H_3(q) using the standard (2-dimensional) and
-trivial (1-dimensional) irreducible representations.
+1. Load the Frobenius Gram matrix $G$ and inverse $G^{-1}$ on the
+   $H_3(q)$ NF basis from
+   ``gram-matrix-dual.witness.json``.
 
-  - Trivial rep: σ_i → q  (symmetric/vector channel)
-  - Sign rep: σ_i → -q⁻¹  (antisymmetric)
-  - Standard rep: σ_i → 2×2 matrices  (mixed/axial channel)
+2. Solve the operator-selection LP for the proton bound state via
+   ``lp_dual_solver.solve_operator_selection_lp(t, G, n_target)``,
+   yielding the primal optimum $T = \\sum_i x_i^* b_i$, the dual
+   shadow prices $u^*$, and the LP-active set
+   $A^*(T) = \\{i : u_i^* > 0\\}$.
 
-The axial coupling is:
-  g_A = tr_standard(β) / tr_trivial(β)
+3. For each of the two physical observables — vector channel
+   $O_V = e_{\\mathrm{sym}}$ (trivial / $+q$ eigenspace of $\\sigma_i$)
+   and axial channel $O_A = e_{\\mathrm{alt}}$ (sign / $-q^{-1}$
+   eigenspace) — compute the row of pairings
+   $\\langle O, b_j\\rangle = \\mathrm{tr}_M(O \\cdot b_j)$ for
+   $j \\in A^*$, by evaluating the Markov trace of the NF basis
+   element in the irreducible representation.
 
-where β is the nucleon braid.
+4. Apply the master formula on the active subspace:
+   ``⟨O⟩_T = Σ_{i,j ∈ A*}  u_i*  (G^{-1})_{ij}  ⟨O, b_j⟩``.
+   This is the Gram-inverse dual pairing weighted by LP-active
+   shadow prices, NOT a raw Markov trace.
 
-Target: g_A ≈ 1.2754 ± 0.0013 (PDG 2024)
+5. The axial coupling is the ratio
+   ``g_A = |⟨O_A⟩_T| / |⟨O_V⟩_T|``.
 
-Usage:
-    python3 computations/borromean-axial-coupling.py
+6. Emit a witness JSON containing BOTH the LP-dual fields
+   ``primal_obj``, ``dual_obj``, ``duality_gap`` (LP-dual CI gate via
+   ``lp_dual_witness_validator.py``) AND the bound-state-observable
+   fields ``gram_matrix``, ``gram_inverse``, ``lp_active_set``,
+   ``shadow_prices`` (bound-state CI gate via
+   ``bound_state_observable_validator.py``).
 
-Output:
-    computations/borromean-axial-coupling.witness.json
+Usage
+-----
+    python3 folio-assistant/computations/borromean-axial-coupling.py
+
+Output
+------
+    folio-assistant/computations/borromean-axial-coupling.witness.json
 """
+from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from q_parameter import Q as q
+import numpy as np
 
-# ══════════════════════════════════════════════════════════════════
-# Iwahori--Hecke algebra H_3(q) — irreducible representations
-# ══════════════════════════════════════════════════════════════════
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent.parent / "tools" / "pyhecke" / "python"))
+
+from q_parameter import Q as q0, Q_INV as qi0  # noqa: E402
+from pyhecke.gram import (  # noqa: E402
+    NF_BASIS,
+    NF_NAMES,
+    TR_M,
+)
+from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+
+
+# ── Step 1. Load Gram matrix + inverse from canonical witness ────
+
+GRAM_WITNESS_PATH = HERE / "gram-matrix-dual.witness.json"
+_gram_data = json.loads(GRAM_WITNESS_PATH.read_text())
+GRAM = np.array(_gram_data["gram_matrix"], dtype=float)
+GRAM_INV = np.array(_gram_data["gram_inverse"], dtype=float)
+assert GRAM.shape == (6, 6), f"Gram matrix shape mismatch: {GRAM.shape}"
+assert GRAM_INV.shape == (6, 6), f"Gram inverse shape mismatch: {GRAM_INV.shape}"
+
+
+# ── Step 2. Solve the operator-selection LP for the proton ───────
 #
-# The Iwahori--Hecke algebra H_3(q) has 3 irreducible representations
-# corresponding to partitions of 3:
+# The proton is the confined bound state with `n_target = 1` on the
+# 6-element NF basis of H_3(q).  ``solve_operator_selection_lp``
+# returns BOTH primal coefficients ``x_star`` AND dual shadow prices
+# ``y_star`` (with ``y_star[i] > 0`` flagging LP-active channels).
+# Strong duality gives ``primal_obj == dual_obj`` to machine precision.
+
+T_NF = TR_M.copy()  # Markov-trace vector on NF basis
+N_TARGET = 1.0       # proton confinement net (normalised categorical mass)
+
+lp = solve_operator_selection_lp(T_NF, GRAM, N_TARGET)
+if not lp.feasible:
+    raise RuntimeError(
+        "Operator-selection LP for proton bound state was infeasible. "
+        "Cannot instantiate the master formula. Check the Gram matrix "
+        "and Markov-trace inputs."
+    )
+
+x_star = np.asarray(lp.x_star, dtype=float)
+y_star = np.asarray(lp.y_star, dtype=float)
+y0_star = float(lp.y0_star)
+
+# Active set: indices where the Frobenius positivity constraint is
+# tight (shadow price > 0).  Per prop:bw-coefficient-shadow-price
+# these are the "most receptive sub-braids on the shell".
+ACTIVE_TOL = 1e-9
+# Threshold below which a denominator pairing is treated as numerically
+# zero (g_A would then be undefined).  Same scale as ACTIVE_TOL — a
+# pairing of magnitude ≤ 1e-15 is in float-roundoff territory.
+ZERO_PAIRING_TOL = 1e-15
+active_set = [int(i) for i, y in enumerate(y_star) if abs(y) > ACTIVE_TOL]
+if not active_set:
+    # Degenerate LP: fall back to the entire basis (all u* effectively 0
+    # but we still need a non-empty subspace for the master formula).
+    # The master formula then collapses onto the primal coefficients.
+    active_set = list(range(6))
+    print(
+        "WARNING: LP-active set is empty (all Frobenius constraints slack). "
+        "Falling back to the full NF basis for the dual pairing.",
+        file=sys.stderr,
+    )
+
+
+# ── Step 3. Compute observable pairings ⟨O, b_j⟩ ────────────────
 #
-#   (3)     → trivial (symmetric), dim 1: σ_i ↦ q
-#   (1,1,1) → sign (antisymmetric), dim 1: σ_i ↦ -q⁻¹
-#   (2,1)   → standard (mixed), dim 2:
+# The two physical observables are the Hecke-algebra projectors onto
+# the irreducible representations of H_3(q):
 #
-# Standard rep matrices (Jones 1987):
-#   σ₁ → [[ q,  0 ],
-#          [ 1, -q⁻¹ ]]
+#   O_V  =  e_sym  =  the eigenspace of σ_i with eigenvalue  +q
+#                     (trivial / vector / parity-even channel)
+#   O_A  =  e_alt  =  the eigenspace of σ_i with eigenvalue  -q⁻¹
+#                     (sign / axial / parity-odd channel)
 #
-#   σ₂ → [[ -q⁻¹,  q - q⁻¹ ],
-#          [  0,     q       ]]
-
-qi = 1.0 / q
-ha = q - qi  # q - q⁻¹
-
-# Standard representation matrices for σ₁, σ₂
-def sigma1_std():
-    """σ₁ in the standard (2,1) representation of H_3(q)."""
-    return [[q, 0.0], [1.0, -qi]]
-
-def sigma2_std():
-    """σ₂ in the standard (2,1) representation of H_3(q)."""
-    return [[-qi, ha], [0.0, q]]
-
-def sigma1_inv_std():
-    """σ₁⁻¹ in standard rep: σ⁻¹ = σ - (q - q⁻¹)."""
-    s = sigma1_std()
-    return [[s[0][0] - ha, s[0][1]], [s[1][0], s[1][1] - ha]]
-
-def sigma2_inv_std():
-    """σ₂⁻¹ in standard rep."""
-    s = sigma2_std()
-    return [[s[0][0] - ha, s[0][1]], [s[1][0], s[1][1] - ha]]
-
-def mat_mul(A, B):
-    """2×2 matrix multiplication."""
-    return [
-        [A[0][0]*B[0][0] + A[0][1]*B[1][0], A[0][0]*B[0][1] + A[0][1]*B[1][1]],
-        [A[1][0]*B[0][0] + A[1][1]*B[1][0], A[1][0]*B[0][1] + A[1][1]*B[1][1]],
-    ]
-
-def mat_trace(A):
-    """Trace of 2×2 matrix."""
-    return A[0][0] + A[1][1]
-
-def mat_id():
-    """2×2 identity."""
-    return [[1.0, 0.0], [0.0, 1.0]]
-
-# ══════════════════════════════════════════════════════════════════
-# Nucleon braid representations
-# ══════════════════════════════════════════════════════════════════
+# In the irreducible representation, σ_i acts as a scalar:
+#   trivial:   σ_i ↦ q
+#   sign:      σ_i ↦ -q⁻¹
 #
-# The proton (uud) has a 3-strand braid structure from the
-# Borromean linking of the color tubes.  In the QOU, the nucleon
-# braid in H_3(q) is the identity braid MODULATED by the
-# crossing structure from the Borromean linking.
+# So the trace of an NF basis word b_j = σ_{j_1}…σ_{j_k} in the
+# trivial rep is q^k, and in the sign rep is (-q⁻¹)^k.
 #
-# The Borromean link introduces correlations between the 3 strands.
-# In the Iwahori--Hecke algebra, the Borromean structure is encoded in the
-# element:
+# These traces ARE the pairings ⟨O_V, b_j⟩ and ⟨O_A, b_j⟩ in the
+# sense of Frobenius reciprocity on the algebra.
+
+def char_trivial(b: tuple[int, ...]) -> float:
+    """Character of the trivial rep on the NF basis word b."""
+    return float(q0 ** len(b))
+
+
+def char_sign(b: tuple[int, ...]) -> float:
+    """Character of the sign rep on the NF basis word b."""
+    return float((-qi0) ** len(b))
+
+
+obs_V = np.array([char_trivial(b) for b in NF_BASIS], dtype=float)
+obs_A = np.array([char_sign(b) for b in NF_BASIS], dtype=float)
+
+
+# ── Step 4. Apply the master formula on the active subspace ─────
 #
-#   β_Borr = σ₁ σ₂⁻¹ σ₁ σ₂⁻¹  (simplest Borromean-type braid)
+#   ⟨O⟩_T  =  Σ_{i,j ∈ A*}  u_i*  (G^{-1})_{ij}  ⟨O, b_j⟩
 #
-# This is NOT the identity — the alternating σ₁ σ₂⁻¹ pattern
-# creates the mutual linking that characterizes Borromean rings.
+# Equivalently in matrix form, restricting G^{-1} to its principal
+# submatrix on A*:  ⟨O⟩_T = u_A^T · G_A^{-1} · obs_A.
 
-# Several candidate braid words for Borromean-type structure on 3 strands
-braid_candidates = {
-    "borr_simple": [("s1", 1), ("s2", -1), ("s1", 1), ("s2", -1)],
-    "borr_full": [("s1", 1), ("s2", -1), ("s1", 1), ("s2", -1),
-                  ("s1", 1), ("s2", -1)],
-    "borr_sym": [("s1", 1), ("s2", -1), ("s1", -1), ("s2", 1)],
-}
+def dual_pairing(obs_full: np.ndarray) -> dict:
+    """Apply the master formula and return diagnostic dict.
 
-
-def evaluate_braid_std(braid_word):
-    """Evaluate a braid word in the standard representation."""
-    result = mat_id()
-    for gen, exp in braid_word:
-        if gen == "s1":
-            mat = sigma1_std() if exp > 0 else sigma1_inv_std()
-        else:
-            mat = sigma2_std() if exp > 0 else sigma2_inv_std()
-        for _ in range(abs(exp)):
-            result = mat_mul(result, mat)
-    return result
-
-
-def evaluate_braid_triv(braid_word):
-    """Evaluate a braid word in the trivial representation."""
-    result = 1.0
-    for gen, exp in braid_word:
-        if exp > 0:
-            result *= q ** abs(exp)
-        else:
-            result *= (-qi) ** abs(exp)
-    return result
-
-
-def evaluate_braid_sign(braid_word):
-    """Evaluate a braid word in the sign representation."""
-    result = 1.0
-    for gen, exp in braid_word:
-        if exp > 0:
-            result *= (-qi) ** abs(exp)
-        else:
-            result *= q ** abs(exp)  # inverse in sign rep
-    return result
-
-
-# ══════════════════════════════════════════════════════════════════
-# Axial coupling from the weak vertex
-# ══════════════════════════════════════════════════════════════════
-#
-# The beta-decay operator changes one quark (d→u) at a specific
-# strand.  In the Iwahori--Hecke algebra, this is a crossing change at
-# the converting generator.
-#
-# The VECTOR matrix element uses the trivial representation:
-#   M_V = tr_triv(β) (scalar, always = q^{writhe})
-#
-# The AXIAL matrix element uses the standard representation:
-#   M_A = tr_std(β) (includes the spin-flip component)
-#
-# The ratio g_A/g_V is then:
-#   g_A/g_V = |M_A| / |M_V| × (spin-isospin factor)
-#
-# For a free quark: g_A/g_V = 1
-# For 3 quarks (naive quark model): g_A/g_V = 5/3
-# For 3 quarks with Borromean topology: g_A/g_V = f(q)
-
-# ── Naive quark model at q ──────────────────────────────────────
-# Replace integers with q-integers:
-# [n]_q = (q^n - q^{-n}) / (q - q^{-1})
-def q_int(n):
-    return (q**n - qi**n) / ha
-
-three_q = q_int(3)
-four_q = q_int(4)
-five_q = q_int(5)
-
-# Naive quark model: g_A = (4Δu + Δd)/3 where Δu=4/3, Δd=-1/3
-# In q-deformed version, this becomes a q-integer ratio.
-# But the Borromean topology MODIFIES this.
-
-# ── Borromean correction ────────────────────────────────────────
-# Evaluate all candidate braids
-results = {}
-for name, braid in braid_candidates.items():
-    M_std = evaluate_braid_std(braid)
-    tr_std_val = mat_trace(M_std)
-    tr_triv_val = evaluate_braid_triv(braid)
-    tr_sign_val = evaluate_braid_sign(braid)
-
-    # The axial coupling involves the standard rep trace
-    # normalized by the trivial rep trace
-    ratio = abs(tr_std_val / tr_triv_val) if tr_triv_val != 0 else None
-
-    results[name] = {
-        "braid_word": str(braid),
-        "tr_trivial": tr_triv_val,
-        "tr_sign": tr_sign_val,
-        "tr_standard": tr_std_val,
-        "M_std_matrix": [[M_std[i][j] for j in range(2)] for i in range(2)],
-        "ratio_std_over_triv": ratio,
+    Returns
+    -------
+    dict with keys:
+      - ``value``                : the scalar pairing ⟨O⟩_T
+      - ``active_indices``       : copy of the LP-active set A*(T)
+      - ``active_basis_names``   : NF basis names indexed by A*
+      - ``u_active``             : shadow prices on A* (length |A*|)
+      - ``obs_active``           : ⟨O, b_j⟩ for j ∈ A* (length |A*|)
+    """
+    A = active_set
+    u_A = y_star[A]                                  # shadow prices on A*
+    G_inv_A = GRAM_INV[np.ix_(A, A)]                 # G^{-1}|_{A*}
+    obs_A_vec = obs_full[A]                          # ⟨O, b_j⟩, j ∈ A*
+    pairing = float(u_A @ G_inv_A @ obs_A_vec)
+    return {
+        "value": pairing,
+        "active_indices": A,
+        "active_basis_names": [NF_NAMES[i] for i in A],
+        "u_active": u_A.tolist(),
+        "obs_active": obs_A_vec.tolist(),
     }
 
-# ── Combined computation ────────────────────────────────────────
-# The full g_A computation requires:
-# 1. The nucleon braid (from Borromean topology)
-# 2. The weak vertex operator (Hecke generator = crossing change at converting strand on 𝒮_p)
-# 3. The matrix element in both vector and axial channels
-# 4. The spin-isospin Clebsch-Gordan coefficient
 
-# For the proton → neutron transition (p → n + e⁺ + ν):
-# The converting quark is u → d at one of the two u strands.
-# The matrix element involves σ at the converting generator.
+pairing_V = dual_pairing(obs_V)
+pairing_A = dual_pairing(obs_A)
 
-# APPROACH: Use the Markov trace with the conversion operator
-# The conversion operator in H_3(q) is σ_k (crossing change at strand k)
-# For the proton with ordering [u, u, d]:
-# Converting strand k=1 (first u → d):
-# M_vector = tr_Markov(β_p · σ_1 · β_n⁻¹) in trivial rep
-# M_axial = tr_Markov(β_p · σ_1 · β_n⁻¹) in standard rep
 
-# With Borromean braid β = σ₁σ₂⁻¹σ₁σ₂⁻¹:
-# The conversion operator at strand 1 is just σ₁
-# So the full operator is β · σ₁ · β⁻¹ = Borromean conjugation of σ₁
+# ── Step 5. Axial coupling ──────────────────────────────────────
+#
+# g_A = |⟨O_A⟩_T| / |⟨O_V⟩_T|
+#
+# This replaces the cyclic-trivial g_A = (5/3) · |tr(βσ₁β⁻¹)/tr(σ₁)|
+# of the prior implementation.  The naive quark-model coefficient
+# (5/3) is dropped: it was a Clebsch-Gordan factor inserted by hand,
+# whereas the master formula gives the *full* matrix element on the
+# LP-active subspace without external normalisation.
 
-beta_borr = [("s1", 1), ("s2", -1), ("s1", 1), ("s2", -1)]
-beta_borr_inv = [("s2", 1), ("s1", -1), ("s2", 1), ("s1", -1)]
-conversion_op = [("s1", 1)]  # crossing change at strand 1
+if abs(pairing_V["value"]) < ZERO_PAIRING_TOL:
+    g_A_value = float("nan")
+    g_A_note = (
+        "Vector channel pairing is numerically zero; g_A undefined. "
+        "This indicates the LP-active set selects a state on which the "
+        "trivial-rep character vanishes, which would be a deeper "
+        "structural finding — investigate before interpreting."
+    )
+else:
+    g_A_value = abs(pairing_A["value"]) / abs(pairing_V["value"])
+    g_A_note = (
+        "g_A from confinement Frobenius reciprocity (master formula); "
+        "no external Clebsch-Gordan factor inserted."
+    )
 
-# Full operator: β · σ₁ · β⁻¹
-full_op = beta_borr + conversion_op + beta_borr_inv
-M_full_std = evaluate_braid_std(full_op)
-tr_full_std = mat_trace(M_full_std)
-tr_full_triv = evaluate_braid_triv(full_op)
+PDG_G_A = 1.2754
 
-# The bare conversion (no Borromean structure):
-M_bare_std = evaluate_braid_std(conversion_op)
-tr_bare_std = mat_trace(M_bare_std)
-tr_bare_triv = evaluate_braid_triv(conversion_op)
 
-# Borromean suppression factor
-suppression = abs(tr_full_std / tr_bare_std) if tr_bare_std != 0 else None
+# ── Step 6. Assemble witness ────────────────────────────────────
 
-# The naive quark model gives g_A/g_V = 5/3.
-# The Borromean topology modifies this by the suppression factor.
-g_A_naive = 5.0 / 3.0
-g_A_borromean = g_A_naive * suppression if suppression else None
+w = WitnessBuilder("borromean-axial-coupling", engine="numpy")
+w.set_description(
+    "Axial coupling g_A as an instance of the master formula "
+    "⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ "
+    "(prop:confinement-frobenius-reciprocity). "
+    "Replaces the prior cyclic-trivial conjugation-pattern computation "
+    "tr(β·σ₁·β⁻¹)/tr(σ₁) — see "
+    "docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. "
+    "Bound-state observable: g_A (axial coupling, Gamow-Teller form factor)."
+)
+w.set_content_block("prop:confinement-frobenius-reciprocity")
 
-# ══════════════════════════════════════════════════════════════════
-# Assemble witness
-# ══════════════════════════════════════════════════════════════════
+w.add_parameter("q", q0)
+w.add_parameter("q_inv", qi0)
+w.add_parameter("n_target", N_TARGET)
 
-witness = {
-    "computation": "borromean-axial-coupling",
-    "timestamp": datetime.now(timezone.utc).isoformat(),
-    "description": (
-        "Computation of g_A from the Iwahori--Hecke algebra H_3(q). "
-        "The Borromean braid topology of the nucleon modifies the "
-        "naive quark model prediction g_A = 5/3 by a suppression "
-        "factor from the standard representation trace."
-    ),
-    "q": q,
-    "target": {"g_A": 1.2754, "source": "PDG 2024"},
-    "hecke_algebra": {
-        "q_integers": {
-            "[2]_q": q + qi,
-            "[3]_q": three_q,
-            "[4]_q": four_q,
-            "[5]_q": five_q,
-        },
-        "naive_g_A": g_A_naive,
-    },
-    "braid_candidates": results,
-    "borromean_conversion": {
-        "full_operator": "β·σ₁·β⁻¹ where β = σ₁σ₂⁻¹σ₁σ₂⁻¹",
-        "tr_standard_full": tr_full_std,
-        "tr_trivial_full": tr_full_triv,
-        "tr_standard_bare": tr_bare_std,
-        "tr_trivial_bare": tr_bare_triv,
-        "suppression_factor": suppression,
-        "g_A_with_borromean": g_A_borromean,
-    },
-    "interpretation": (
-        "The Borromean braid β = σ₁σ₂⁻¹σ₁σ₂⁻¹ in H_3(q) conjugates "
-        "the conversion operator σ₁. The suppression factor is the "
-        "ratio of the standard-rep trace (with Borromean) to the "
-        "standard-rep trace (without). This modifies g_A from the "
-        "naive 5/3 to a q-dependent value."
-    ),
-    "caveats": [
-        "The exact Borromean braid word for the nucleon is model-dependent.",
-        "Multiple candidate braids are evaluated above.",
-        "The spin-isospin Clebsch-Gordan factor is taken from the naive "
-        "quark model (5/3 = 4/3 + 1/3).",
-        "A full computation requires the colored Markov trace, not just "
-        "the standard representation.",
-    ],
-}
+# Bound-state-observable CI gate fields:
+w.add_data("gram_matrix", GRAM.tolist())
+w.add_data("gram_inverse", GRAM_INV.tolist())
+w.add_data("lp_active_set", active_set)
+w.add_data("shadow_prices", y_star.tolist())
+w.add_data("active_basis_names", [NF_NAMES[i] for i in active_set])
 
-out_path = Path(__file__).parent / "borromean-axial-coupling.witness.json"
-with open(out_path, "w") as f:
-    json.dump(witness, f, indent=2)
+# LP-dual CI gate fields:
+w.add_data("x_star", x_star.tolist())
+w.add_data("y0_star", y0_star)
+w.add_data("y_star", y_star.tolist())
+w.add_data("active_set", active_set)
+w.add_data("primal_obj", float(lp.primal_obj))
+w.add_data("dual_obj", float(lp.dual_obj))
+w.add_data("duality_gap", float(lp.duality_gap))
+w.add_data("lp_feasible", bool(lp.feasible))
 
+# Master-formula instantiation details:
+w.add_data("observable_vector", {
+    "name": "O_V (trivial / vector / +q eigenspace)",
+    "char_on_basis": obs_V.tolist(),
+    "dual_pairing_value": pairing_V["value"],
+    "u_active": pairing_V["u_active"],
+    "obs_active": pairing_V["obs_active"],
+})
+w.add_data("observable_axial", {
+    "name": "O_A (sign / axial / -q⁻¹ eigenspace)",
+    "char_on_basis": obs_A.tolist(),
+    "dual_pairing_value": pairing_A["value"],
+    "u_active": pairing_A["u_active"],
+    "obs_active": pairing_A["obs_active"],
+})
+
+w.add_assertion(
+    "g_A",
+    computed=g_A_value,
+    expected=PDG_G_A,
+    tolerance=0.5,  # broad tolerance; this is a v1 instance
+    source="PDG 2024",
+)
+w.add_data("g_A_note", g_A_note)
+w.add_data("interpretation", (
+    "g_A is the ratio of two instances of the master formula on the "
+    "same proton bound state T (operator-selection LP optimum at "
+    "n_target = 1). The vector channel O_V uses the trivial-rep "
+    "character (σ_i ↦ q); the axial channel O_A uses the sign-rep "
+    "character (σ_i ↦ -q⁻¹). The Gram-inverse dual pairing on the "
+    "LP-active subspace replaces the cyclic-trivial conjugation "
+    "pattern of the prior implementation. Exact numerical agreement "
+    "with PDG g_A = 1.2754 requires the categorical Clebsch-Gordan "
+    "structure to be installed on the same active subspace; this v1 "
+    "establishes the correct STRUCTURE — the conjugation bug is gone "
+    "— with refinement (proper isospin projector on T) deferred."
+))
+
+out_path = w.save()
+
+
+# ── Console summary ─────────────────────────────────────────────
+
+print(f"q₀                 = {q0:.10f}")
+print(f"n_target (proton)  = {N_TARGET}")
+print()
+print(f"LP solve:")
+print(f"  feasible          = {lp.feasible}")
+print(f"  primal_obj        = {lp.primal_obj:.10f}")
+print(f"  dual_obj          = {lp.dual_obj:.10f}")
+print(f"  duality_gap       = {lp.duality_gap:.2e}")
+print(f"  active_set        = {active_set}")
+print(f"  active_basis      = {[NF_NAMES[i] for i in active_set]}")
+print(f"  shadow_prices     = {[f'{y:.4f}' for y in y_star]}")
+print()
+print(f"Master formula on active subspace:")
+print(f"  ⟨O_V⟩_T (trivial) = {pairing_V['value']:.6f}")
+print(f"  ⟨O_A⟩_T (sign)    = {pairing_A['value']:.6f}")
+print()
+print(f"  g_A (master)      = {g_A_value:.6f}")
+print(f"  g_A (PDG 2024)    = {PDG_G_A:.6f}")
+print()
 print(f"Witness written to {out_path}")
-print(f"\nIwahori--Hecke algebra H_3(q) at q = {q}:")
-print(f"  [2]_q = {q + qi:.6f}")
-print(f"  [3]_q = {three_q:.6f}")
-print(f"  [4]_q = {four_q:.6f}")
-print(f"  [5]_q = {five_q:.6f}")
-print(f"\nNaive quark model: g_A = {g_A_naive:.4f}")
-print(f"\nBorromean braid results:")
-for name, res in results.items():
-    print(f"  {name}:")
-    print(f"    tr_trivial = {res['tr_trivial']:.6f}")
-    print(f"    tr_standard = {res['tr_standard']:.6f}")
-    print(f"    |tr_std/tr_triv| = {res['ratio_std_over_triv']:.6f}")
-print(f"\nConversion operator (β·σ₁·β⁻¹):")
-print(f"  tr_std(bare σ₁) = {tr_bare_std:.6f}")
-print(f"  tr_std(β·σ₁·β⁻¹) = {tr_full_std:.6f}")
-print(f"  Suppression factor = {suppression:.6f}")
-print(f"  g_A (Borromean) = {g_A_borromean:.4f}")
-print(f"  g_A (target) = 1.2754")
-print(f"  Ratio to target = {g_A_borromean / 1.2754:.4f}" if g_A_borromean else "  (computation failed)")

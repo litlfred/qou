@@ -165,6 +165,23 @@ jobs:
         run: |
           python3 folio-assistant/computations/markov_trace_axiomatic_multi_atom.py
 
+      - name: Atomic-braid mass-table (Strategy 3 — knot-op + Δ_n²)
+        # Re-derives the six-term mass formula using the atomic-braid
+        # Markov-trace anchor (PR #534/#547) with inter-carrier
+        # coupling via the canonical jet-knot-invariants a_k(Z,N) and
+        # full-twist Δ_n² scalar. Per-atom predictions for p, n, D,
+        # T, ³He, ⁴He vs CODATA. Informational; does not gate CI.
+        run: |
+          python3 folio-assistant/computations/atomic_braid_mass_table.py || true
+
+      - name: Full-twist Δ_n² scalar verification
+        # Per prop:categorical-neutrality-saturated-shells: tabulates
+        # c(λ) and q^c(λ) per Wedderburn block at n ∈ {1,...,12};
+        # records the empirical realisability of the categorical-
+        # neutrality predicate at magic n. Informational compute.
+        run: |
+          python3 folio-assistant/computations/full_twist_delta_n2_verification.py
+
       - name: Run lp_dual_witness_validator (warn-only)
         # Per prop:operator-selection-lp § dual program: every
         # operator-selection / LP / SDP witness should include the LP
@@ -173,6 +190,19 @@ jobs:
         # witnesses are missing the dual). To enforce: pass --strict.
         # Migration target: route LP solves through lp_dual_solver.py.
         run: python3 folio-assistant/computations/lp_dual_witness_validator.py
+
+      - name: Run bound_state_observable_validator (warn-only)
+        # Per prop:confinement-frobenius-reciprocity: every witness
+        # whose description / computation / name claims a bound-state
+        # observable (axial coupling, magnetic moment, form factor,
+        # expectation value of an operator on a confined state, …)
+        # must include gram_matrix, gram_inverse, lp_active_set,
+        # shadow_prices — OR carry the explicit opt-out
+        # "observable_type": "raw_trace" (legitimate raw Markov-trace
+        # case). Currently warn-only; tickets AXIAL-G_A-002 and
+        # TRIAGE-001..003 in docs/audits/2026-05-06-frobenius-pairing-
+        # compute-audit.md are pending. Pass --strict to enforce.
+        run: python3 folio-assistant/computations/bound_state_observable_validator.py
 
       - name: Detect drift in committed witnesses
         run: |
