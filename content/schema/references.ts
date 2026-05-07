@@ -944,6 +944,23 @@ export const references: CSLData[] = [
     ISBN: "978-0-521-01041-2",
   }),
 
+  // ── Woronowicz 1987 PRIMS (Twisted SU(2); 3D differential calculus) ──
+  ref({
+    id: "woronowicz1987-twisted-su2",
+    type: "article-journal",
+    title: "Twisted SU(2) group. An example of a non-commutative differential calculus",
+    author: [
+      { family: "Woronowicz", given: "Stanis\u0142aw Lech" },
+    ],
+    "container-title": "Publications of the Research Institute for Mathematical Sciences",
+    issued: { "date-parts": [[1987]] },
+    volume: "23",
+    issue: "1",
+    page: "117-181",
+    DOI: "10.2977/prims/1195176848",
+    URL: "https://doi.org/10.2977/prims/1195176848",
+  }),
+
   // ── Woronowicz 1988 ───────────────────────────────────────────
   ref({
     id: "woronowicz1988",
