@@ -6,13 +6,13 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from lp_dual_cache import (
+from lp_dual_cache import (  # noqa: E402
     cached_solve_operator_selection_lp,
     clear_lp_cache,
     lp_cache_info,
     set_lp_cache_size,
 )
-from lp_dual_solver import solve_operator_selection_lp
+from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 
 
 def _sample_lp() -> tuple[np.ndarray, np.ndarray, float]:

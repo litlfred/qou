@@ -170,7 +170,7 @@ def unitary_q(P, theta) -> sp.Expr:
     Returns the value as a complex sympy expression; use
     ``complex(.)`` for a numeric result.
     """
-    return sp.simplify(sp.sympify(P).subs(q, s1_phase(theta)))
+    return sp.cancel(sp.sympify(P).subs(q, s1_phase(theta)))
 
 
 def root_of_unity_truncate(P, k: int) -> sp.Expr:
@@ -181,7 +181,7 @@ def root_of_unity_truncate(P, k: int) -> sp.Expr:
     """
     if k <= 0:
         raise ValueError("k must be a positive integer")
-    return sp.simplify(sp.sympify(P).subs(q, sp.exp(sp.I * 2 * sp.pi / k)))
+    return sp.cancel(sp.sympify(P).subs(q, sp.exp(sp.I * 2 * sp.pi / k)))
 
 
 # ── 4.  Crystal graph (skeleton)  ────────────────────────────

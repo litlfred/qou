@@ -74,16 +74,17 @@ theorem killSwitch_zero_mul
 /-- **Trivial model (consistency witness).**
 
     Concrete `CemeteryGroupEmergence R q` over the
-    `CrystalGraphRealization.trivialModel`: every node is in the
-    cemetery (`inCemetery := fun _ => True`) and every τ-image is
-    `0`, so monotonicity reduces to `0 = 0`.  Proves the class
+    `CrystalGraphRealization.trivialModel`: cemetery-membership is a
+    concrete node-realisation predicate (`∃ T, nodeOf T = v`), and
+    every τ-image is `0`, so monotonicity reduces to `0 = 0`.  Proves
+    the class
     axiomatisation is **consistent** in conjunction with the
     upstream trivial model.  Provided as a `def` (not `instance`)
     to avoid polluting typeclass resolution. -/
 -- Ref: [manuscript] braids-and-knots/cemetery-group-emergence
 def trivialModel (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] : CemeteryGroupEmergence R q where
-  inCemetery _ := True
+  inCemetery v := ∃ T : C.NormalForm, C.nodeOf T = v
   tauImage _ := 0
   monotone_under_extension _ _ := rfl
 

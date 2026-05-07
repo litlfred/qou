@@ -12,7 +12,7 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from bar_involution import (
+from bar_involution import (  # noqa: E402
     bar_antisymmetric_part,
     bar_coeff_dict,
     bar_polynomial,
@@ -26,7 +26,7 @@ from bar_involution import (
     s1_phase,
     unitary_q,
 )
-from bar_involution import q as q_sym
+from bar_involution import q as q_sym  # noqa: E402
 
 
 # ── 1.  bar on polynomials in q ─────────────────────────────

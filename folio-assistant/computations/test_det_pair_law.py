@@ -5,14 +5,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from det_pair_law import (
+from det_pair_law import (  # noqa: E402
     det_pair_sign,
     det_rho,
     sweep_det_pair_law,
     syt_count,
     verify_det_pair_law,
 )
-from q_parameter import Q as Q0
+from q_parameter import Q as Q0  # noqa: E402
 
 
 # ── basic helpers ─────────────────────────────────────────
