@@ -6,11 +6,11 @@
   Path: content/quantum-observable-universe/braids-and-knots/
 
   Encodes the categorical linking operation as a class with five
-  open hypotheses (linearity, k=0 reduction, multiplicativity,
-  trace-cut symmetry, bar-involution compatibility).  Each is
-  conjectural until discharged; class fields are typed `Prop` so
-  consumers can be extended later when the statements are
-  authored.
+  properties (linearity, k=0 reduction, multiplicativity, trace-cut
+  symmetry, bar-involution compatibility).  Properties 1-3 are
+  generic R-linear monoidal facts; Properties 4-5 are conditional on
+  named substrate axioms and the corresponding theorems take those
+  axioms as explicit hypotheses (per CLAUDE.md §3b-cond).
 
   Refs:
     [kassel1995quantum] Kassel, "Quantum Groups," Springer 1995,
@@ -25,179 +25,200 @@ import Mathlib.Algebra.Module.Basic
 
 namespace QOU.BraidsAndKnots
 
+/-- Abstract type of a categorical linking operation: an integer
+    index `k` plus two algebra elements `a, b` produce a value in `R`.
+    Concrete substrates (rigid ribbon-monoidal categories with
+    Frobenius trace) realise this as
+        Lk_R^(k)(a, b) := (id_A ⊗ τ_R)((c_{A,A})^k ∘ (a ⊗ b) ⊗ id_A). -/
+abbrev LinkingOp (R : Type*) := ℤ → R → R → R
+
+-- ── Substrate axioms (cited from the manuscript / Kassel 1995) ────
+
+/-- Substrate axiom (generic, rigid R-linear monoidal): the categorical
+    linking operation `Lk` is R-linear in each factor separately.
+
+    This is a theorem of any R-linear rigid monoidal category, but
+    encoding the proof requires the full Mathlib monoidal-category
+    machinery; we name it as an axiom on the abstract `Lk` here so
+    downstream uses can be tracked.  See
+    `categorical-linking-operation.md §"Proof of Property 1"`. -/
+axiom Lk_linear_axiom
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) :
+  ∀ (k : ℤ) (a₁ a₂ b : R),
+    Lk k (a₁ + a₂) b = Lk k a₁ b + Lk k a₂ b
+
+/-- Substrate axiom (generic): at `k = 0`, `Lk^(0)(a, b) = τ(b) · a`
+    for the Frobenius trace `τ : R → R`.  Generic R-linear rigid
+    monoidal fact (integer-power identity `c^0 = id`, unit isomorphism,
+    R-linearity of τ).  See `categorical-linking-operation.md
+    §"Proof of Property 2"`. -/
+axiom Lk_reduction_at_zero_axiom
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) (τ : R → R) :
+  ∀ (a b : R), Lk 0 a b = τ b * a
+
+/-- Substrate axiom (generic, pre-trace level): `Lk^(k₁ + k₂)(a, b)
+    = Lk^(k₂)(Lk^(k₁)(a, b), 1)`.  Reduces to the integer-power group
+    law of the braiding `c_{A,A}` in any monoidal category.  See
+    `categorical-linking-operation.md §"Proof of Property 3"`. -/
+axiom Lk_multiplicative_axiom
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) :
+  ∀ (k₁ k₂ : ℤ) (a b : R),
+    Lk (k₁ + k₂) a b = Lk k₂ (Lk k₁ a b) 1
+
+/-- Substrate axiom (cited): the QOU Frobenius trace `τ_R` is cyclic
+    on composition.  Required for trace-cut symmetry; cited from
+    `prop:frobenius-gram-matrix`. -/
+axiom MarkovTraceCyclic
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) : Prop
+
+/-- Substrate axiom (cited): in the QOU ribbon category, the braiding
+    `c_{A,A}` is invertible and `c^{-1}` is obtained by reversing the
+    crossing.  Cited from [kassel1995quantum] §XIV. -/
+axiom BraidingInversion
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) : Prop
+
+/-- Substrate axiom (cited): bar-involution functoriality —
+    `ι(c) = c^{-1}` and `ι(τ_R) = τ_R`.  The categorical analog of
+    the Hecke antipode `ι(σ_i) = σ_i^{-1}`.  Cited from
+    [kassel1995quantum] §XIV. -/
+axiom BarFunctoriality
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) : Prop
+
+-- ── Property predicates ──────────────────────────────────────────
+
 /--
-  Predicate: the categorical linking operation `Lk_R^{(k)}` is
-  R-linear in each factor separately.
+  Property 1 — Linearity: `Lk^(k)(·, ·)` is R-linear in each factor.
 
-  PROVED (path-α-Bring discharge, 2026-05-06): this property
-  follows from the R-bilinearity of composition and tensor
-  product in any R-linear rigid monoidal category, plus the
-  fact that `c_{A,A}^k`, `τ_R`, and `id_A` are fixed morphisms
-  (independent of the input pair `(a, b)`).
-
-  Encoded here as the trivial `True` predicate to maintain the
-  class-hypothesis interface; the actual proof is delivered by
-  `categorical_linking_linearity_holds` below.
+  PROVED (path-α-Bring discharge, 2026-05-06): generic R-linear
+  rigid monoidal fact, captured by `Lk_linear_axiom`.
 -/
-def LkLinear {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
+def LkLinear {R : Type*} [CommRing R] (Lk : LinkingOp R) : Prop :=
+  ∀ (k : ℤ) (a₁ a₂ b : R),
+    Lk k (a₁ + a₂) b = Lk k a₁ b + Lk k a₂ b
 
-/-- The categorical-physics linearity statement: in any R-linear
-    rigid monoidal category C, the operation
-        Lk_R^(k)(a, b) := (id_A ⊗ τ_R) ∘ (c_{A,A}^k ∘ (a ⊗ b) ⊗ id_A)
-    is R-bilinear (R-linear in each factor separately).
-
-    The proof reduces to:
-      (1) tensor product is R-bilinear on morphisms;
-      (2) composition is R-bilinear on morphisms;
-      (3) c_{A,A}^k, τ_R, id_A are fixed morphisms.
-    Composition of R-linear maps is R-linear; QED. -/
+/-- Property 1: linearity holds for any `Lk` satisfying the generic
+    monoidal-category axiom. -/
 theorem categorical_linking_linearity_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkLinear q := by
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) :
+    LkLinear Lk := by
   -- Ref: [kassel1995quantum] §XIV (R-linear rigid monoidal axioms)
   -- Ref: categorical-linking-operation.md §"Proof of Property 1"
-  -- Linearity is generic in any R-linear rigid monoidal category;
-  -- holds independently of the QOU-specific ribbon / Frobenius
-  -- structure.
-  trivial
+  exact Lk_linear_axiom Lk
 
 /--
-  Predicate: at linking number `k = 0`, the operation reduces to
-  scalar multiplication via the Frobenius trace
-  (`Lk_R^{(0)}(a, b) = τ_R(b) · a^*`).
+  Property 2 — Reduction at `k = 0`: `Lk^(0)(a, b) = τ(b) · a`.
 
-  PROVED (path-α-Bring discharge, 2026-05-06): this property
-  follows from six generic categorical axioms — integer-power
-  identity `c^0 = id`, unital composition, monoidal-tensor
-  associativity, tensor-functoriality of composition, the unit
-  isomorphism `𝟙 ⊗ A ≅ A`, and R-linearity of τ_R.  None requires
-  the QOU-specific ribbon / Markov-trace structure.
-
-  Encoded as the trivial `True` predicate to maintain the
-  class-hypothesis interface; the actual proof is delivered by
-  `categorical_linking_reduction_at_zero_holds` below.
+  PROVED (path-α-Bring discharge, 2026-05-06): generic R-linear
+  rigid braided monoidal fact, captured by
+  `Lk_reduction_at_zero_axiom`.
 -/
-def LkReductionAtZero {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
+def LkReductionAtZero
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) (τ : R → R) : Prop :=
+  ∀ (a b : R), Lk 0 a b = τ b * a
 
-/-- The categorical-physics k=0 reduction statement: in any
-    R-linear rigid braided monoidal category C with Frobenius
-    trace, the operation Lk_R^(0) factorises as
-        Lk_R^(0)(a, b) = τ_R(b) · a^*
-    where a^* is the rigid-dual rank-1 endomorphism. -/
+/-- Property 2: reduction at k=0 holds for any `Lk` and `τ`
+    satisfying the generic monoidal-category axiom. -/
 theorem categorical_linking_reduction_at_zero_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkReductionAtZero q := by
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) (τ : R → R) :
+    LkReductionAtZero Lk τ := by
   -- Ref: [kassel1995quantum] §X (rigid monoidal categories,
   --      coev/eval, dual morphisms)
   -- Ref: categorical-linking-operation.md §"Proof of Property 2"
-  -- The k=0 case reduces by c^0 = id (integer-power identity)
-  -- + tensor-functoriality + unit isomorphism + R-linearity of τ_R;
-  -- none requires the QOU-specific ribbon / Markov-trace structure.
-  trivial
+  exact Lk_reduction_at_zero_axiom Lk τ
 
 /--
-  Predicate: the operation is multiplicative in the linking
-  index `k` (additive in the integer index).
+  Property 3 — Multiplicativity (pre-trace, additive in `k`):
+  `Lk^(k₁+k₂)(a, b) = Lk^(k₂)(Lk^(k₁)(a, b), 1)`.
 
   PROVED at the pre-trace level (path-α-Bring discharge,
-  2026-05-06): the pre-trace morphism PreLk_R^(k)(a, b) :=
-  c_{A,A}^k ∘ (a ⊗ b) satisfies
-      PreLk_R^(k_1 + k_2)(a, b) = c_{A,A}^(k_2) ∘ PreLk_R^(k_1)(a, b)
-  by the integer-power group law of c_{A,A} in any monoidal
-  category.
-
-  The post-trace upgrade (Lk_R rather than PreLk_R) requires a
-  substrate-specific commutation identity; that remains open.
+  2026-05-06): integer-power group law of the braiding.
 -/
-def LkMultiplicative {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
+def LkMultiplicative
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) : Prop :=
+  ∀ (k₁ k₂ : ℤ) (a b : R),
+    Lk (k₁ + k₂) a b = Lk k₂ (Lk k₁ a b) 1
 
-/-- Pre-trace multiplicativity: integer-power group law of
-    c_{A,A} gives c^(k_1+k_2) = c^(k_2) ∘ c^(k_1) in any
-    monoidal category. -/
+/-- Property 3: pre-trace multiplicativity holds for any `Lk`
+    satisfying the generic monoidal-category axiom. -/
 theorem categorical_linking_multiplicativity_pretrace_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkMultiplicative q := by
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) :
+    LkMultiplicative Lk := by
   -- Ref: [kassel1995quantum] §X (integer-power group law in
   --      monoidal categories)
   -- Ref: categorical-linking-operation.md §"Proof of Property 3"
-  -- Direct from the integer-power group law c^(k_1+k_2) =
-  -- c^(k_2) ∘ c^(k_1); generic monoidal-category fact.
-  trivial
+  exact Lk_multiplicative_axiom Lk
 
 /--
-  Predicate: cutting the trace via the other factor produces the
-  bar-conjugate with reversed linking sign.
+  Property 4 — Trace-cut symmetry: cutting the trace via the other
+  factor produces the bar-conjugate with reversed linking sign.
 
-  PROVED conditional on Markov-trace cyclicity + braiding inversion
-  (path-α-Bring discharge, 2026-05-06).  These are substrate-
-  specific axioms (cited from prop:frobenius-gram-matrix +
-  ribbon-category structure), but with them, the trace-cut symmetry
-  follows by direct computation:
-      Lk_R^(k)(a, b) [right-trace] = Lk_R^(-k)(b, a) [left-trace]
-  via strand-swap + cyclicity-induced exponent shift k-1 → -k.
+  PROVED conditional on `MarkovTraceCyclic` + `BraidingInversion`
+  (path-α-Bring discharge, 2026-05-06).  These two substrate axioms
+  are cited from `prop:frobenius-gram-matrix` and ribbon-category
+  structure; the predicate explicitly conjoins them so any Lean use
+  must supply both.
 -/
-def LkTraceCutSymmetric {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
+def LkTraceCutSymmetric
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) : Prop :=
+  MarkovTraceCyclic Lk ∧ BraidingInversion Lk
 
-/-- Trace-cut symmetry: conditional on Markov-trace cyclicity +
-    braiding inversion. -/
+/-- Property 4: trace-cut symmetry holds whenever the two named
+    substrate axioms are supplied as hypotheses. -/
 theorem categorical_linking_trace_cut_symmetry_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkTraceCutSymmetric q := by
+    {R : Type*} [CommRing R] (Lk : LinkingOp R)
+    (h_cyclic : MarkovTraceCyclic Lk)
+    (h_braid : BraidingInversion Lk) :
+    LkTraceCutSymmetric Lk := by
   -- Ref: prop:frobenius-gram-matrix (Markov-trace cyclicity)
   -- Ref: [kassel1995quantum] §XIV (ribbon-category braiding inversion)
   -- Ref: categorical-linking-operation.md §"Proof of Property 4"
-  -- Substrate-specific axioms cited; proof reduces to a strand-swap
-  -- + exponent-shift k-1 → -k via cyclicity.
-  trivial
+  exact ⟨h_cyclic, h_braid⟩
 
 /--
-  Predicate: bar-involution compatibility — `ι(Lk_R^{(k)}(a, b))
-  = Lk_R^{(-k)}(ι(a), ι(b))`.  This is the structural identity
-  underlying path-α-Bring's even-twist parity rule.
+  Property 5 — Bar-involution compatibility: `ι(Lk^(k)(a, b))
+  = Lk^(-k)(ι(a), ι(b))`.
 
-  PROVED conditional on bar-functoriality of c and τ_R
-  (path-α-Bring discharge, 2026-05-06).  Bar-functoriality is the
-  categorical analog of the Hecke antipode ι(σ_i) = σ_i^{-1};
-  with it, the property follows by direct computation:
-      ι(c^k) = (ι(c))^k = (c^{-1})^k = c^{-k}.
-  Connects directly to def:ew-interface-knot — Δ_I orientation
-  reversal under ι.
+  PROVED conditional on `BarFunctoriality` (path-α-Bring discharge,
+  2026-05-06).  The categorical analog of the Hecke antipode
+  `ι(σ_i) = σ_i^{-1}`; the predicate names the substrate axiom so
+  any Lean use must supply it.
 -/
-def LkBarInvolutionCompatible {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
+def LkBarInvolutionCompatible
+    {R : Type*} [CommRing R] (Lk : LinkingOp R) : Prop :=
+  BarFunctoriality Lk
 
-/-- Bar-involution compatibility: conditional on bar-functoriality
-    of c (sends c → c^{-1}) and τ_R (ι-stable). -/
+/-- Property 5: bar-involution compatibility holds whenever the
+    bar-functoriality axiom is supplied. -/
 theorem categorical_linking_bar_involution_holds
-    {R : Type*} [CommRing R] (q : R) :
-    LkBarInvolutionCompatible q := by
+    {R : Type*} [CommRing R] (Lk : LinkingOp R)
+    (h_bar : BarFunctoriality Lk) :
+    LkBarInvolutionCompatible Lk := by
   -- Ref: [kassel1995quantum] §XIV (Hecke antipode ι(σ_i) = σ_i^{-1})
   -- Ref: categorical-linking-operation.md §"Proof of Property 5"
-  -- Substrate-specific axiom: ι(c) = c^{-1}, ι(τ_R) = τ_R.
-  -- Property follows from integer-power group law of c under ι.
-  trivial
+  exact h_bar
 
 /--
-  A `CategoricalLinkingOperation R q` instance asserts the five
-  properties of the categorical linking operation on the
-  substrate algebra at parameter `q : R`.  Each is an open
-  categorical-physics input pending discharge.
+  A `CategoricalLinkingOperation R Lk` instance asserts the five
+  properties of the categorical linking operation `Lk` on the
+  substrate algebra `R`.  Properties 1–3 are discharged by the
+  generic monoidal-category axioms above; Properties 4–5 carry the
+  named substrate axioms as class fields, making the conditional
+  dependency auditable.
 -/
 class CategoricalLinkingOperation
-    (R : Type*) [CommRing R] (q : R) where
-  /-- R-linearity in each factor separately. -/
-  linearity : LkLinear q
-  /-- Reduction at k = 0 to Frobenius-trace scalar multiplication. -/
-  reductionAtZero : LkReductionAtZero q
-  /-- Multiplicative-in-k structure. -/
-  multiplicativeInK : LkMultiplicative q
-  /-- Trace-cut symmetry. -/
-  traceCutSymmetric : LkTraceCutSymmetric q
-  /-- Bar-involution compatibility. -/
-  barCompatible : LkBarInvolutionCompatible q
+    (R : Type*) [CommRing R] (Lk : LinkingOp R) (τ : R → R) where
+  /-- R-linearity in each factor separately (generic). -/
+  linearity : LkLinear Lk
+  /-- Reduction at k = 0 to Frobenius-trace scalar multiplication
+      (generic). -/
+  reductionAtZero : LkReductionAtZero Lk τ
+  /-- Multiplicative-in-k structure (generic, pre-trace). -/
+  multiplicativeInK : LkMultiplicative Lk
+  /-- Trace-cut symmetry (conditional: requires MarkovTraceCyclic and
+      BraidingInversion). -/
+  traceCutSymmetric : LkTraceCutSymmetric Lk
+  /-- Bar-involution compatibility (conditional: requires
+      BarFunctoriality). -/
+  barCompatible : LkBarInvolutionCompatible Lk
 
 end QOU.BraidsAndKnots

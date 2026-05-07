@@ -31,9 +31,9 @@ import sympy as sp
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q_50_DIGIT_STR
-from hecke_character_symbolic import (
-    standard_young_tableaux, _hoefsmit_build,
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from hecke_character_symbolic import (  # noqa: E402
+    hoefsmit_matrices_symbolic,
 )
 
 
@@ -61,8 +61,12 @@ def beta_ew_delta_I_word():
 
 
 def beta_ew_matrix_numerical(shape, q_0):
-    """Build β_EW(Δ_I^minimal) numerically at q = q_0."""
-    matrices, dim, _ = _hoefsmit_build(list(shape), q_0)
+    """Build β_EW(Δ_I^minimal) numerically at q = q_0.
+
+    Uses the public `hoefsmit_matrices_symbolic`, which routes to the
+    uncached numerical build when `q_0` is not a `sp.Symbol`.
+    """
+    matrices, dim, _ = hoefsmit_matrices_symbolic(list(shape), q_0)
     if dim == 0:
         return None, 0
     word = beta_ew_delta_I_word()
@@ -76,8 +80,12 @@ def main() -> int:
     n = 6
     # sp.Float specialization (not Rational) — Rational-based matrix mult
     # blows up the numerator/denominator complexity of Hoefsmit entries
-    # (~1/(1 - q^{-2c}) etc.); Float keeps each entry bounded in
-    # representation and gives 50-digit numerical accuracy.
+    # (~1/(1 - q^{-2c}) etc.); Float keeps each entry bounded.  Note:
+    # we carry sp.Float(..., 50) into hoefsmit_matrices_symbolic, but
+    # the eigenvalue extraction below converts to np.complex128, so the
+    # *effective* spectrum precision is float64 (~1e-16), not 50 digits.
+    # The intermediate matrix multiplication retains the higher precision;
+    # only the final eigenvalue solve drops to float64.
     q_0 = sp.Float(Q_50_DIGIT_STR, 50)
 
     print(f"β_EW(Δ_I^minimal) numerical spectrum at q_0 ≈ {float(q_0):.10f}")
@@ -88,10 +96,11 @@ def main() -> int:
     per_partition = []
     all_eigenvalues = []  # (shape, eigenvalue_real, eigenvalue_imag, multiplicity)
 
+    # Threshold below which a numerical imaginary part is treated as
+    # float64 noise (eigvals on a real matrix can return ~1e-17 imag).
+    REAL_IMAG_TOL = 1e-9
+
     for shape in parts:
-        f_lambda = len(standard_young_tableaux(shape)[0])
-        if f_lambda == 0:
-            continue
         t0 = time.time()
         M, dim = beta_ew_matrix_numerical(shape, q_0)
         elapsed_build = time.time() - t0
@@ -110,12 +119,15 @@ def main() -> int:
 
         evs_list = []
         for ev in eigs:
+            # Clamp tiny imaginary noise to 0.0 for diff-stable witnesses
+            # consistent with the aggregate `n_complex_eigenvalues` count.
+            imag = float(ev.imag) if abs(ev.imag) >= REAL_IMAG_TOL else 0.0
             evs_list.append({
                 "real": float(ev.real),
-                "imag": float(ev.imag),
+                "imag": imag,
                 "multiplicity": 1,
             })
-            all_eigenvalues.append((shape, complex(ev), 1))
+            all_eigenvalues.append((shape, complex(ev.real, imag), 1))
 
         print(f"  λ = {shape}, dim = {dim}, χ^λ = {chi:.4f}, "
               f"det = {det:.3e}, build {elapsed_build:.2f}s, "
@@ -259,10 +271,17 @@ def main() -> int:
         "description": (
             "Numerical-at-q_0 spectrum extraction of β_EW(Δ_I^minimal) "
             "across all 11 partitions of 6, using PR #546's "
-            "_hoefsmit_build directly at q = q_0 = Rational specialization. "
-            "Avoids the symbolic-q combinatorial blowup that timed out on "
-            "partitions with f_λ ≥ 5.  Tests Weinberg-angle candidate "
-            "readings using the full Δ_I-coupled spectrum + invariants."
+            "hoefsmit_matrices_symbolic at q = q_0 = sp.Float(50-digit) "
+            "specialization (the public API routes to the uncached "
+            "numerical build for non-Symbol q).  Avoids the symbolic-q "
+            "combinatorial blowup that timed out on partitions with "
+            "f_λ ≥ 5.  Note: the matrix entries are carried as sp.Float "
+            "with 50 digits of precision, but the eigenvalue solve "
+            "converts to np.complex128, so the effective spectrum "
+            "precision is float64 (~1e-16) — sufficient for the "
+            "aggregate Weinberg-angle candidate readings tested here.  "
+            "Tests Weinberg-angle candidates using the full Δ_I-coupled "
+            "spectrum + invariants."
         ),
         "reference_blocks": [
             "def:ew-interface-knot",

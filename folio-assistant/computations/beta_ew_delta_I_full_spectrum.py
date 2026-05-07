@@ -1,16 +1,20 @@
-"""Full spectrum of β_EW(Δ_I^minimal) on every partition of 6 via
-PR #546's Hoefsmit symbolic engine.
+"""Partial-spectrum probe of β_EW(Δ_I^minimal) on every partition of 6
+via PR #546's Hoefsmit symbolic engine.
 
 Builds on hecke_character_symbolic.q_character_on_braid_word
 (PR #546, on main as of 2026-05-06) and hoefsmit_matrices_symbolic
 to compute:
 
-  1. Per-partition χ^λ trace of β_EW(Δ_I^minimal) — symbolic in R = ℚ(q).
-  2. Per-partition det / characteristic polynomial — extracts
-     eigenvalues for partitions where dim_q V_λ ≤ 5.
+  1. Per-partition χ^λ trace of β_EW(Δ_I^minimal) — symbolic in R = ℚ(q),
+     for every partition λ ⊢ 6.
+  2. Per-partition det for every λ; characteristic polynomial (and hence
+     the full eigenvalue spectrum on V_λ) ONLY when dim V_λ ≤ 5 — for
+     larger blocks the symbolic charpoly times out, so we record only
+     trace + det.  See beta_ew_delta_I_numerical_spectrum.py for the
+     full numerical eigenvalues at q = q_0 across all partitions.
   3. Aggregate: sum of χ^λ weighted by dim_q V_λ — the full Markov
      trace of β_EW(Δ_I^minimal) (Wenzl-bridge formula).
-  4. Candidate cot θ_W readings using the full-spectrum data.
+  4. Candidate cot θ_W readings using the partial-spectrum data.
 
 β_EW(Δ_I^minimal) = σ_1^4 · (σ_2 σ_4 σ_2) · σ_3^6 · (σ_2 σ_4 σ_2)
                   · σ_5^8 · (σ_2 σ_4 σ_2)
@@ -28,8 +32,8 @@ from pathlib import Path
 import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q_50_DIGIT_STR
-from hecke_character_symbolic import (
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from hecke_character_symbolic import (  # noqa: E402
     standard_young_tableaux, hoefsmit_matrices_symbolic,
 )
 

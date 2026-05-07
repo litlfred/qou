@@ -43,9 +43,10 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
 import sympy as sp
-from q_parameter import Q_50_DIGIT_STR
+
+sys.path.insert(0, str(Path(__file__).parent))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
 def main() -> int:
@@ -88,8 +89,8 @@ def main() -> int:
     bar_plus = eig_plus.subs(q, 1/q)  # = q^{-27}
     bar_minus = eig_minus.subs(q, 1/q)  # = -q^{27}
     print("Bar-involution behavior:")
-    print(f"  ι(eig_+) = {sp.simplify(bar_plus)}  vs eig_- = {eig_minus}")
-    print(f"  ι(eig_+) + eig_- = {sp.simplify(bar_plus + eig_minus)}")
+    print(f"  ι(eig_+) = {sp.cancel(bar_plus)}  vs eig_- = {eig_minus}")
+    print(f"  ι(eig_+) + eig_- = {sp.cancel(bar_plus + eig_minus)}")
     # ι(eig_+) = q^{-27}, eig_- = -q^{-27}.
     # ι(eig_+) + eig_- = q^{-27} - q^{-27} = 0. ✓
     # So ι(eig_+) = -eig_-, i.e. eig_+ + bar(eig_-) = 0.

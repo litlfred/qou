@@ -1,7 +1,7 @@
 {
   "computation": "beta-ew-delta-I-numerical-spectrum",
-  "computedAt": "2026-05-06T01:08:52.359477+00:00",
-  "description": "Numerical-at-q_0 spectrum extraction of β_EW(Δ_I^minimal) across all 11 partitions of 6, using PR #546's _hoefsmit_build directly at q = q_0 = Rational specialization. Avoids the symbolic-q combinatorial blowup that timed out on partitions with f_λ ≥ 5.  Tests Weinberg-angle candidate readings using the full Δ_I-coupled spectrum + invariants.",
+  "computedAt": "2026-05-07T18:44:28.602088+00:00",
+  "description": "Numerical-at-q_0 spectrum extraction of β_EW(Δ_I^minimal) across all 11 partitions of 6, using PR #546's hoefsmit_matrices_symbolic at q = q_0 = sp.Float(50-digit) specialization (the public API routes to the uncached numerical build for non-Symbol q).  Avoids the symbolic-q combinatorial blowup that timed out on partitions with f_λ ≥ 5.  Note: the matrix entries are carried as sp.Float with 50 digits of precision, but the eigenvalue solve converts to np.complex128, so the effective spectrum precision is float64 (~1e-16) — sufficient for the aggregate Weinberg-angle candidate readings tested here.  Tests Weinberg-angle candidates using the full Δ_I-coupled spectrum + invariants.",
   "reference_blocks": [
     "def:ew-interface-knot",
     "conj:hoefsmit-ew-cell-content",
@@ -352,52 +352,52 @@
       "eigenvalues": [
         {
           "real": 1.8404444073946737,
-          "imag": 6.650902701840766e-18,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": -1.508751678051005,
-          "imag": -1.514978611631815e-18,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": 0.923622564342405,
-          "imag": 4.042771968882138e-19,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": -0.8933050207656369,
-          "imag": -5.5601552197300964e-18,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": 0.546860484745462,
-          "imag": -6.125895834228163e-18,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": 0.31452724549520594,
-          "imag": 7.299423843543367e-18,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": -0.5137850976730047,
-          "imag": 1.6197544536512964e-17,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": -0.44830295916814544,
-          "imag": 2.125449984734396e-17,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": -0.15266354497835133,
-          "imag": 1.331693788650797e-17,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": -0.2578418057763629,
-          "imag": -3.763424716206305e-18,
+          "imag": 0.0,
           "multiplicity": 1
         }
       ]
@@ -414,27 +414,27 @@
       "eigenvalues": [
         {
           "real": -2.380808272971138,
-          "imag": 9.86623976961809e-18,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": 1.2539301586442178,
-          "imag": -2.464912198624317e-18,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": 0.37921921098225575,
-          "imag": 3.404083166869834e-17,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": -0.44531565186005956,
-          "imag": 5.2000254765337224e-17,
+          "imag": 0.0,
           "multiplicity": 1
         },
         {
           "real": -0.11856312259411096,
-          "imag": 2.0847314790471743e-18,
+          "imag": 0.0,
           "multiplicity": 1
         }
       ]
@@ -603,19 +603,19 @@
     },
     {
       "form": "|sum χ^λ · f_λ|",
-      "value": 484.87471573773155,
+      "value": 484.8747157377315,
       "rel_err": 264.96635453776855
     },
     {
       "form": "|Σ_{χ>0} χ^λ / Σ_{χ<0} χ^λ|",
-      "value": 25.203186614111313,
-      "rel_err": 12.824601384486357
+      "value": 25.203186614111317,
+      "rel_err": 12.824601384486359
     }
   ],
   "best": {
     "form": "|Σ_{χ>0} χ^λ / Σ_{χ<0} χ^λ|",
-    "value": 25.203186614111313,
-    "rel_err": 12.824601384486357
+    "value": 25.203186614111317,
+    "rel_err": 12.824601384486359
   },
   "codata_cot_theta_W": 1.8230678710486174,
   "verdict": "no-clean-fit"
