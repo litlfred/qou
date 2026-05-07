@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:crystal-graph-realization",
   title:
     "Hecke normal forms realise crystal highest-weight vectors",
+  lean: { ref: "qou:QOU.BraidKnot.CrystalGraphRealization", validation: "stub" },
   uses: [
     "def:hecke-normal-form",
     "def:knot-operator-energy",

@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:root-of-unity-mtc-truncation",
   title:
     "At $q = e^{2\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons",
+  lean: { ref: "qou:QOU.BraidKnot.RootOfUnityMTCTruncation", validation: "stub" },
   uses: [
     "conj:hecke-anyonic-substrate",
     "conj:crystal-graph-realization",

@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:kazhdan-lusztig-classical-limit",
   title:
     "As $q \\to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics",
+  lean: { ref: "qou:QOU.BraidKnot.KazhdanLusztigClassicalLimit", validation: "stub" },
   uses: [
     "conj:hecke-anyonic-substrate",
     "conj:crystal-graph-realization",

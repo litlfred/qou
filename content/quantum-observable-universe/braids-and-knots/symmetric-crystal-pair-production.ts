@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:symmetric-crystal-pair-production",
   title:
     "Type-B folding forces matter/antimatter to be created in conjugate-operator pairs",
+  lean: { ref: "qou:QOU.BraidKnot.SymmetricCrystalPairProduction", validation: "stub" },
   uses: [
     "conj:crystal-graph-realization",
     "def:hecke-normal-form",
