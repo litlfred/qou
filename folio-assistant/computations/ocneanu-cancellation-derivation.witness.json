@@ -21,6 +21,7 @@
   "scriptCommitSha": "9b84828cc37b50bfe314d354958a3f0926ad24e3",
   "description": "Round-1 SCAFFOLD: symbolic-q Hoefsmit attempt at first-principles derivation of the cancellation count via Σ_λ w_λ χ^λ(β) / f^λ. The 2×2-block Hoefsmit construction has known convention/sign issues (cross-validated against numerical: χ^(2,1)(proton) sym=2.515 vs num=1.808). High-precision numerical pole detection in docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md is the canonical verification path until the symbolic 2×2 convention is repaired.",
   "contentBlock": "conj:e-hartree-categorical-derivation",
+  "auditOnly": "docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md",
   "data": {
     "proton_standalone": {
       "n": 3,

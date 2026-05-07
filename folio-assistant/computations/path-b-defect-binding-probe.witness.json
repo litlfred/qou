@@ -1,7 +1,8 @@
 {
+  "computedAt": "2026-05-03T22:57:44.132531+00:00",
   "computation": "path-b-defect-binding-probe",
   "description": "Refined Path B: defect binding model. B(K) = alpha * (|tr_M_free(K)| - |tr_M_atomic(K)|), where tr_M_free factorises as |tr_M(p)|^Z * |tr_M(n)|^N for disconnected constituents.  Single fit parameter alpha, calibrated from D's binding.  T, 3He, 4He are pure predictions.",
-  "computedAt": "2026-05-03T22:57:44.132531+00:00",
+  "auditOnly": "docs/audits/2026-05-05-kashaev-limit-pair-gen-investigation.md",
   "alpha_MeV_per_unit_defect": 3.7372802770297886,
   "calibrated_from": "deuteron",
   "rows": [
@@ -13,12 +14,12 @@
       "constituent_sum_MeV": 938.78308711,
       "tr_M_free": 1.0653062286,
       "tr_M_atomic": 1.0653062286,
-      "defect_tr_M": 0.0,
-      "B_AME_MeV": 0.0,
-      "B_pred_MeV": 0.0,
+      "defect_tr_M": 0,
+      "B_AME_MeV": 0,
+      "B_pred_MeV": 0,
       "M_pred_MeV": 938.78308711,
-      "B_err_pct": 0.0,
-      "M_err_pct": 0.0
+      "B_err_pct": 0,
+      "M_err_pct": 0
     },
     {
       "atom": "n",
@@ -28,12 +29,12 @@
       "constituent_sum_MeV": 939.56542052,
       "tr_M_free": 0.9232332972,
       "tr_M_atomic": 0.9232332972,
-      "defect_tr_M": 0.0,
-      "B_AME_MeV": 0.0,
-      "B_pred_MeV": 0.0,
+      "defect_tr_M": 0,
+      "B_AME_MeV": 0,
+      "B_pred_MeV": 0,
       "M_pred_MeV": 939.56542052,
-      "B_err_pct": 0.0,
-      "M_err_pct": 0.0
+      "B_err_pct": 0,
+      "M_err_pct": 0
     },
     {
       "atom": "D",
@@ -47,8 +48,8 @@
       "B_AME_MeV": 2.224577629999885,
       "B_pred_MeV": 2.224577629999885,
       "M_pred_MeV": 1876.12393,
-      "B_err_pct": 0.0,
-      "M_err_pct": 0.0
+      "B_err_pct": 0,
+      "M_err_pct": 0
     },
     {
       "atom": "T",

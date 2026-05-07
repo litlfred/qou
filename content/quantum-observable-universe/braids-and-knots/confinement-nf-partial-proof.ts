@@ -43,4 +43,10 @@ export default proposition({
     "littlewood-richardson",
     "partial-proof",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/shift_from_nf_basis.py",
+    witness: "folio-assistant/computations/shift-from-nf-basis.witness.json",
+    status: "verified",
+  },
 });

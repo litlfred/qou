@@ -12,6 +12,7 @@
   "scriptCommitSha": "",
   "description": "Probe of the categorical magic condition (shell-self-duality) on atom braids. For each (Z, N), tests whether x_λ(β) = x_{λ*}(β) for every partition pair (λ, λ*) ⊢ 3A in the Wedderburn decomposition of H_{3A}(q) at q_0. NO Vol_hyp, NO knot identification, NO census search. Purely algebraic. Predicts: Z=N atoms are categorically magic (all dual pairs); Z≠N atoms are non-magic (some pairs not dual).",
   "contentBlock": "prop:shell-schur-weyl-self-duality",
+  "auditOnly": "docs/audits/sigma-shell-categorical-identification.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895
@@ -151,7 +152,7 @@
             "chi_lambda_star": -1.8845100728432118,
             "y_lambda": 0.3586356424845347,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1.0
+            "ratio_chi_to_chi_star": 1
           }
         ]
       },
@@ -193,7 +194,7 @@
             "dim": 1,
             "chi_lambda": 1.5768015283810746,
             "chi_lambda_star": -0.6843215231761933,
-            "y_lambda": 1.6863231502783998e-06,
+            "y_lambda": 0.0000016863231502783998,
             "equal_within_1e-9": false,
             "ratio_chi_to_chi_star": -2.3041822812506996
           },
@@ -436,7 +437,7 @@
             "chi_lambda_star": 5.304275713076871,
             "y_lambda": 0.01379245637223561,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1.0
+            "ratio_chi_to_chi_star": 1
           },
           {
             "shape": [
@@ -516,7 +517,7 @@
             "chi_lambda_star": 5.898969733071177,
             "y_lambda": 0.005867270647824394,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1.0
+            "ratio_chi_to_chi_star": 1
           }
         ]
       },
@@ -558,7 +559,7 @@
             "dim": 1,
             "chi_lambda": 2.3935111147542583,
             "chi_lambda_star": -0.4508185556343536,
-            "y_lambda": 1.6863231502783998e-06,
+            "y_lambda": 0.0000016863231502783998,
             "equal_within_1e-9": false,
             "ratio_chi_to_chi_star": -5.309255985229607
           },
@@ -801,7 +802,7 @@
             "chi_lambda_star": 5.539235677980239,
             "y_lambda": 0.01379245637223561,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1.0
+            "ratio_chi_to_chi_star": 1
           },
           {
             "shape": [
@@ -881,7 +882,7 @@
             "chi_lambda_star": 8.679864561652202,
             "y_lambda": 0.005867270647824394,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1.0
+            "ratio_chi_to_chi_star": 1
           }
         ]
       }

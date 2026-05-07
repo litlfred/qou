@@ -1,14 +1,15 @@
 {
-  "computation": "canonical-tr-m-three-path-comparison",
-  "description": "Compares the three tr_M(q_0) computation paths in the repo against the canonical Hoefsmit+Wenzl bridge witness.  Headline: bridge \u2261 markov_peel; pyhecke SW disagrees by orders of magnitude; legacy is only ~15% off but still wrong.  T \u2260 \u00b3He on the canonical path (ratio 1.985), refuting PR #524's 'isospin forces equality' claim.",
   "computedAt": "2026-05-03T10:52:53.376302+00:00",
+  "computation": "canonical-tr-m-three-path-comparison",
+  "description": "Compares the three tr_M(q_0) computation paths in the repo against the canonical Hoefsmit+Wenzl bridge witness.  Headline: bridge ≡ markov_peel; pyhecke SW disagrees by orders of magnitude; legacy is only ~15% off but still wrong.  T ≠ ³He on the canonical path (ratio 1.985), refuting PR #524's 'isospin forces equality' claim.",
+  "auditOnly": "docs/audits/2026-05-03-categorical-mass-divergence-audit.md",
   "rows": [
     {
       "atom": "proton",
       "bridge_canonical": 1.0653062285923893,
       "markov_peel": 1.0653062285923893,
       "pyhecke_SW_pseudo_canonical": 0.671453179676007,
-      "peel_vs_bridge_ratio": 1.0,
+      "peel_vs_bridge_ratio": 1,
       "pyhecke_vs_bridge_ratio": 0.630291236129551
     },
     {
@@ -16,7 +17,7 @@
       "bridge_canonical": 0.9232332971695837,
       "markov_peel": 0.9232332971695837,
       "pyhecke_SW_pseudo_canonical": 0.671453179676007,
-      "peel_vs_bridge_ratio": 1.0,
+      "peel_vs_bridge_ratio": 1,
       "pyhecke_vs_bridge_ratio": 0.7272844055067389
     },
     {
@@ -45,16 +46,16 @@
     },
     {
       "atom": "helium-4",
-      "bridge_canonical": 0.0,
+      "bridge_canonical": 0,
       "markov_peel": 0.05534834587669799,
-      "pyhecke_SW_pseudo_canonical": 4.425191012271548e-06,
+      "pyhecke_SW_pseudo_canonical": 0.000004425191012271548,
       "peel_vs_bridge_ratio": null,
       "pyhecke_vs_bridge_ratio": null
     }
   ],
   "verdict": {
-    "canonical_path": "Hoefsmit+Wenzl bridge \u2261 markov_peel",
-    "pr_518_path": "pyhecke legacy H_3-per-generator (\u224815% off canonical)",
+    "canonical_path": "Hoefsmit+Wenzl bridge ≡ markov_peel",
+    "pr_518_path": "pyhecke legacy H_3-per-generator (≈15% off canonical)",
     "pr_524_initial_claim": "pyhecke SW (FAR off canonical, orders of magnitude wrong)",
     "T_eq_3He_on_canonical": false,
     "T_3He_canonical_ratio": "1.985"

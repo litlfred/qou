@@ -20,4 +20,10 @@ export default conjecture({
     "prop:thurston-volume-additivity",
   ],
   cites: ["thurston1978", "murakami-murakami2001"],
+  computation: {
+    engine: "closed-form",
+    script: "folio-assistant/computations/d_density_derivation.py",
+    witness: "folio-assistant/computations/d-density-derivation.witness.json",
+    status: "verified",
+  },
 });

@@ -1,7 +1,8 @@
 {
-  "computation": "habiro-frobenius-probe",
   "computedAt": "2026-05-03T00:57:30.314926+00:00",
+  "computation": "habiro-frobenius-probe",
   "description": "R6 step-1 + step-2 probe: extract Frobenius eigenvalues Frob_p(q) from the Habiro cyclotomic expansion of each atom's Markov trace by evaluating at u = ζ_{2p}. The cyclotomic Pochhammer (u; u)_m vanishes once m ≥ 2p, so the sum truncates after a finite number of terms. The Galois norm N(Frob_p) = Σ_{k coprime to 2p} Frob_p(ζ_{2p}^k) is verified to be a rational integer (residual < 1e-6) on every (atom, prime) where the truncation lands inside the on-disk Habiro data — finite-place reciprocity check.",
+  "auditOnly": "docs/audits/2026-05-02-m-iso-l-function-handoff.md",
   "reference_blocks": [
     "def:motivic-galois-character",
     "def:motivic-substrate",
@@ -35,7 +36,7 @@
           "denom_inversion_error": null,
           "frob_complex": {
             "real": -0.6666666666666666,
-            "imag": 0.0
+            "imag": 0
           },
           "abs_frob": 0.6666666666666666,
           "pochhammer_truncates_at_m": 4,
@@ -59,10 +60,10 @@
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
           "frob_complex": {
-            "real": -1.0,
-            "imag": 0.0
+            "real": -1,
+            "imag": 0
           },
-          "abs_frob": 1.0,
+          "abs_frob": 1,
           "pochhammer_truncates_at_m": 6,
           "frob_p_is_exact": true,
           "exact_via": "pochhammer_truncates_inside_data",
@@ -275,7 +276,7 @@
           "denom_inversion_error": null,
           "frob_complex": {
             "real": 0.016666666666666666,
-            "imag": 0.0
+            "imag": 0
           },
           "abs_frob": 0.016666666666666666,
           "pochhammer_truncates_at_m": 4,
@@ -515,7 +516,7 @@
           "denom_inversion_error": null,
           "frob_complex": {
             "real": -0.0012621252204585538,
-            "imag": 0.0
+            "imag": 0
           },
           "abs_frob": 0.0012621252204585538,
           "pochhammer_truncates_at_m": 4,
@@ -755,7 +756,7 @@
           "denom_inversion_error": null,
           "frob_complex": {
             "real": -0.0012621252204585538,
-            "imag": 0.0
+            "imag": 0
           },
           "abs_frob": 0.0012621252204585538,
           "pochhammer_truncates_at_m": 4,
@@ -779,7 +780,7 @@
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
           "frob_complex": {
-            "real": -41.0,
+            "real": -41,
             "imag": 10.392304845413264
           },
           "abs_frob": 42.2965719651132,
@@ -995,7 +996,7 @@
           "denom_inversion_error": null,
           "frob_complex": {
             "real": -0.6666666666666666,
-            "imag": 0.0
+            "imag": 0
           },
           "abs_frob": 0.6666666666666666,
           "pochhammer_truncates_at_m": 4,
@@ -1019,7 +1020,7 @@
           "denom_folded": false,
           "denom_inversion_error": "denominator vanishes mod Phi_{2p}",
           "frob_complex": {
-            "real": 2.0,
+            "real": 2,
             "imag": 1.7320508075688772
           },
           "abs_frob": 2.6457513110645907,

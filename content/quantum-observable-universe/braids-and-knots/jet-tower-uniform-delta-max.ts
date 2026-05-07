@@ -18,6 +18,12 @@ export default conjecture({
     "kassel1995",
     "yekutieli2010",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/jet_tower_delta_max.py",
+    witness: "folio-assistant/computations/jet-tower-delta-max.witness.json",
+    status: "verified",
+  },
   tags: [
     "jet-tower",
     "uniform-bound",

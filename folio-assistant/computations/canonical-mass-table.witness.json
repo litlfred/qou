@@ -1,7 +1,8 @@
 {
-  "computation": "canonical-mass-table",
-  "description": "Canonical Jones-Markov trace binding via incremental GS (reduce_every=4), no K\u00e4hler tower.",
   "computedAt": "2026-04-18T18:51:19.573972+00:00",
+  "computation": "canonical-mass-table",
+  "description": "Canonical Jones-Markov trace binding via incremental GS (reduce_every=4), no Kähler tower.",
+  "auditOnly": "docs/audits/2h-markov-trace-zero-audit.md",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.782
@@ -61,5 +62,5 @@
     }
   ],
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

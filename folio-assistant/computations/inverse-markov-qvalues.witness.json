@@ -1,18 +1,20 @@
 {
+  "computedAt": "2026-04-12T09:20:10.980714+00:00",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "title": "Inverse Markov trace Q-values",
   "nucleon_results": [
     {
-      "name": "n\u2192p",
+      "name": "n→p",
       "A": 1,
-      "tr_par": 1.0,
-      "tr_dau": 1.0,
-      "inv_par": 1.0,
-      "inv_dau": 1.0,
-      "delta_inv": 0.0,
+      "tr_par": 1,
+      "tr_dau": 1,
+      "inv_par": 1,
+      "inv_dau": 1,
+      "delta_inv": 0,
       "Q_exp": 0.7823334100000222
     },
     {
-      "name": "\u00b3H\u2192\u00b3He",
+      "name": "³H→³He",
       "A": 3,
       "tr_par": 0.38281187369613856,
       "tr_dau": 0.5047761849051494,
@@ -22,7 +24,7 @@
       "Q_exp": 0.01861
     },
     {
-      "name": "\u2076He\u2192\u2076Li",
+      "name": "⁶He→⁶Li",
       "A": 6,
       "tr_par": 0.05161259550221606,
       "tr_dau": 0.1140363565062686,
@@ -32,7 +34,7 @@
       "Q_exp": 3.508
     },
     {
-      "name": "\u00b9\u2074C\u2192\u00b9\u2074N",
+      "name": "¹⁴C→¹⁴N",
       "A": 14,
       "tr_par": -0.01910144289658517,
       "tr_dau": 0.07422197078465519,
@@ -44,7 +46,7 @@
   ],
   "quark_results": [
     {
-      "name": "n\u2192p",
+      "name": "n→p",
       "A": 1,
       "n_quarks": 3,
       "tr_par": 0.2934315539012122,
@@ -55,7 +57,7 @@
       "Q_exp": 0.7823334100000222
     },
     {
-      "name": "\u00b3H\u2192\u00b3He",
+      "name": "³H→³He",
       "A": 3,
       "n_quarks": 9,
       "tr_par": 0.018842357017904928,
@@ -66,7 +68,7 @@
       "Q_exp": 0.01861
     },
     {
-      "name": "\u2076He\u2192\u2076Li",
+      "name": "⁶He→⁶Li",
       "A": 6,
       "n_quarks": 18,
       "tr_par": 0.0015747542200049165,
@@ -78,7 +80,6 @@
     }
   ],
   "Q0": 0.7823334100000222,
-  "computedAt": "2026-04-12T09:20:10.980714+00:00",
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

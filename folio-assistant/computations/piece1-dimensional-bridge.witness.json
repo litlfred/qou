@@ -1,19 +1,20 @@
 {
-  "computation": "piece1-dimensional-bridge",
-  "description": "Piece 1 of the open functional-form problem: structural investigation of the dimensional bridge E_0 \u2194 \u03b1 = m_e\u00b78G. Tests categorical formulas (combinations of [n]_q, c_q, \u210f_q, weights) against the empirical ratio E_0/\u03b1 \u2248 46.6 and m_p/m_e \u2248 1836.15. Closed-form tr_M(proton) from PR #546 (leading coefficient -1/12) provides the categorical anchor. The factor of 12 in the denominator is suggestive of |S_3| \u00b7 2 = 12 or [2]_q \u00b7 [3]_q normalisation.",
-  "reference_blocks": [
-    "prop:rho-k-graded-expansion",
-    "prop:atomic-mass-gb-nf",
-    "prop:hecke-branching-trace-decomposition",
-    "prop:binding-scale-catalan"
-  ],
   "computedAt": "2026-05-05T18:10:00.490161+00:00",
+  "computation": "piece1-dimensional-bridge",
+  "description": "Piece 1 of the open functional-form problem: structural investigation of the dimensional bridge E_0 ↔ α = m_e·8G. Tests categorical formulas (combinations of [n]_q, c_q, ℏ_q, weights) against the empirical ratio E_0/α ≈ 46.6 and m_p/m_e ≈ 1836.15. Closed-form tr_M(proton) from PR #546 (leading coefficient -1/12) provides the categorical anchor. The factor of 12 in the denominator is suggestive of |S_3| · 2 = 12 or [2]_q · [3]_q normalisation.",
+  "auditOnly": "docs/audits/2026-05-05-three-pieces-investigation.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
     "m_p_MeV": 938.27208816,
     "alpha_MeV": 3.74445965488548
   },
+  "reference_blocks": [
+    "prop:rho-k-graded-expansion",
+    "prop:atomic-mass-gb-nf",
+    "prop:hecke-branching-trace-decomposition",
+    "prop:binding-scale-catalan"
+  ],
   "targets": {
     "E_0_alpha_ratio": 46.548772336907646,
     "m_p_m_e_ratio": 1836.1526734252584
@@ -28,31 +29,31 @@
   },
   "candidate_formulas_E0_alpha": {
     "[3]_q!^2": 37.46149102580978,
-    "12 \u00b7 [3]_q": 36.52447461876614,
-    "12 \u00b7 [2]_q": 24.13076242942178,
-    "[2]_q \u00b7 c_q\u00b2": 166.25451915994995,
-    "[3]_q \u00b7 c_q": 27.6754417793146,
-    "[3]_q \u00b7 c_q\u00b2": 251.64389161234914,
-    "c_q\u00b2 + 2[3]_q\u00b2": 101.205095528983,
+    "12 · [3]_q": 36.52447461876614,
+    "12 · [2]_q": 24.13076242942178,
+    "[2]_q · c_q²": 166.25451915994995,
+    "[3]_q · c_q": 27.6754417793146,
+    "[3]_q · c_q²": 251.64389161234914,
+    "c_q² + 2[3]_q²": 101.205095528983,
     "12 / h_bar_q": 121.1121407718672,
-    "8G \u00b7 [3]_q": 22.30344139745926,
-    "8G \u00b7 6": 43.966348520506514,
-    "8G \u00b7 12": 87.93269704101303,
+    "8G · [3]_q": 22.30344139745926,
+    "8G · 6": 43.966348520506514,
+    "8G · 12": 87.93269704101303,
     "1 / h_bar_q": 10.0926783976556,
-    "1 / h_bar_q\u00b2": 101.86215723850403,
-    "(c_q\u00b2+1)\u00b2": 7001.806932409914,
-    "c_q \u00b7 [2]_q \u00b7 [3]_q": 55.65245922549455,
-    "c_q\u00b2 \u00b7 [3]_q": 251.64389161234914
+    "1 / h_bar_q²": 101.86215723850403,
+    "(c_q²+1)²": 7001.806932409914,
+    "c_q · [2]_q · [3]_q": 55.65245922549455,
+    "c_q² · [3]_q": 251.64389161234914
   },
   "matches_within_5pct_E0_alpha": [],
   "candidate_formulas_mp_me": {
-    "12 \u00b7 153": 1836,
-    "12 \u00b7 c_q\u00b2": 992.1216053183139,
-    "12 \u00b7 [3]_q\u00b2": 111.16977051474103,
-    "(c_q \u00b7 [2]_q)\u00b2 \u00b7 12 / (c_q\u00b2)": 48.52447461876614,
-    "8G \u00b7 c_q\u00b2": 605.8328371409638,
-    "(8G)\u00b2 \u00b7 c_q\u00b2": 4439.3762771511465,
-    "1/h_bar_q\u00b2 \u00b7 18": 1833.5188302930724,
-    "1/h_bar_q\u00b2 \u00b7 [2]_q \u00b7 9": 1843.50863765306
+    "12 · 153": 1836,
+    "12 · c_q²": 992.1216053183139,
+    "12 · [3]_q²": 111.16977051474103,
+    "(c_q · [2]_q)² · 12 / (c_q²)": 48.52447461876614,
+    "8G · c_q²": 605.8328371409638,
+    "(8G)² · c_q²": 4439.3762771511465,
+    "1/h_bar_q² · 18": 1833.5188302930724,
+    "1/h_bar_q² · [2]_q · 9": 1843.50863765306
   }
 }

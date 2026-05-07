@@ -21,4 +21,10 @@ export default conjecture({
     "quantum-dilogarithm",
     "open-problem",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/probe_phiq_uniform_k.py",
+    witness: "folio-assistant/computations/probe-phiq-uniform-k.witness.json",
+    status: "experimental",
+  },
 });

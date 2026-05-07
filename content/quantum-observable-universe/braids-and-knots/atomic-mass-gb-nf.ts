@@ -25,4 +25,13 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.atomicMassGBNF",
     validation: "not_checked",
   },
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/atomic_braid_mass_table.py",
+    witness: [
+      "folio-assistant/computations/atomic-braid-mass-table-modes-sweep.witness.json",
+      "folio-assistant/computations/atomic-braid-mass-table.witness.json",
+    ],
+    status: "experimental",
+  },
 });

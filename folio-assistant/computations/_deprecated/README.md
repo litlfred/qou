@@ -1,36 +1,56 @@
-# `_deprecated/`
+# Deprecated witnesses and producing scripts
 
-Scripts and witness files in this directory are **superseded by the
-canonical chain** (see `../README.md`). They are kept in git history
-for reference but should not be imported by any active code.
+This directory holds `*.witness.json` files that are **dead exploratory
+probes** from earlier research passes:
 
-## Quarantined as of 2026-04-27
+- no content block consumes them (`computation.witness` / `:val[…]`
+  registry / `witness:` array)
+- no audit report under `docs/audits/*.md` cites them
+- the witness body itself contains no assertions
+  (`falsifiability == "no-assertions"`)
 
-| script / witness | reason | superseded by |
-|---|---|---|
-| `atom_mass_qou_calibration.py` | explicit "calibration" in name; fits to AME | `categorical_q_decay_ba_low_isotopes.py` |
-| `atom_rt_fusion_v2.py` | exploratory v2 of an RT-fusion approach; not used in canonical chain | `mass_formula_6term.py` |
-| `bw_lagrangian_prefactor_derivation_attempt.py` | explicit "attempt" in name; superseded | `bw_chirality_isotopes.py` |
-| `comprehensive_low_isotope_table_v2.py` + witness | superseded by 4-tier canonical predictor | `categorical_q_decay_ba_low_isotopes.py` |
-| `recursive_three_calibration.py` | explicit "calibration" in name; fits | derived from canonical 3-input scheme |
-| `universal_three_calibration.py` | explicit "calibration" in name; fits | derived from canonical 3-input scheme |
+It also holds the **producing `.py` scripts** for those witnesses, when
+the script is not imported by any live (non-`_deprecated/`) code.  In a
+follow-on pass, 262 of the 285 candidate scripts were moved here
+alongside their witnesses; the remaining 23 candidate scripts are
+**kept in place** under `folio-assistant/computations/` with a
+`# DEPRECATION-CANDIDATE: ...` header comment, because they are still
+imported by live code and moving them would break the importer.  Those
+23 should be revisited when the live importer is itself retired or
+rewired off the deprecated dependency.
 
-## Policy
+A subsequent **"unwrap chains"** pass (this PR) moved the 30 remaining
+orphan witnesses from the live area, plus their producer scripts, plus
+the transitive closure of producer scripts that became unimported as a
+result.  This brought the orphan-witness count to **0** and the live
+script count from 522 down to ~225.  Restoration safety net: any wired
+or audit-only witness whose `scriptFile` claim was about to be moved
+was detected and the producer (and its transitive imports) were kept
+in the live area.  Canonical scripts named in
+[`../README.md`](../README.md) (`gb_residue_tower.py`,
+`habiro_residue_symbolic.py`, `frobenius_partition_sum.py`,
+`y_lambda_symbolic_validate.py`, `atom_mass_partition.py`) were also
+explicitly preserved.
 
-- **Do not import from `_deprecated/`.** If you need functionality
-  here, the canonical replacement is in the table above.
-- **Do not delete.** Git history is the audit trail; explicit
-  quarantine signals "superseded but preserved" rather than
-  "missing or accidentally lost".
-- **Adding to this directory**: a script is deprecation-eligible if
-  it (a) has explicit `_deprecated*`, `_v[0-9]+`, `_attempt`,
-  `_calibration` markers in its filename AND (b) is not imported by
-  any non-deprecated script (verified via `grep -l "from <name>"`).
+Reviving an exploration only requires running the producer to re-emit
+the witness next to its script.
 
-## See also
+## Audit-wiring behavior
 
-- [`../README.md`](../README.md) — canonical-script index for
-  `folio-assistant/computations/`
-- [`../canonical-script-input-audit.witness.json`](../canonical-script-input-audit.witness.json) —
-  full classification of all 524 scripts (524 → 518 after this
-  quarantine round)
+`scripts/audit-wiring.ts` scans `folio-assistant/computations/*.witness.json`
+(glob without `**`), so witnesses in this `_deprecated/` subdirectory
+are excluded from every bucket (wired / audit-only / orphan).  This is
+intentional — the directory is the storage location for "intentionally
+not part of the live wiring graph".
+
+## Reviving a witness
+
+To bring a deprecated witness back into the audit:
+
+1. `git mv folio-assistant/computations/_deprecated/<name>.witness.json
+   folio-assistant/computations/<name>.witness.json`
+2. Either:
+   - add `"auditOnly": "docs/audits/<report>.md"` and `WitnessBuilder.set_audit_only(...)` in the producer, or
+   - point a content block's `computation.witness` (or a `content/values/registry.ts` `witnessFile:`) at it.
+
+Bulk deletion of this directory is owner-only.

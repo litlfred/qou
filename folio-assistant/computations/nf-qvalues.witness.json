@@ -1,7 +1,8 @@
 {
-  "computation": "nf-qvalues",
-  "description": "NF-based Q-value computation (corrected Hecke \u03c3\u207b\u00b9 = \u03c3\u2212h). Stage 1: free neutron quark-level calibration of E_q. Stage 2: nucleon-level NF for \u03b2\u207b decay isotopes.",
   "computedAt": "2026-04-07T01:35:41.241914+00:00",
+  "computation": "nf-qvalues",
+  "description": "NF-based Q-value computation (corrected Hecke σ⁻¹ = σ−h). Stage 1: free neutron quark-level calibration of E_q. Stage 2: nucleon-level NF for β⁻ decay isotopes.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "q0": 1.1099785955541805,
   "HA": 0.20906032198987945,
   "crossing_convention": {
@@ -13,7 +14,7 @@
   "free_neutron": {
     "codata_source": {
       "Q_NEUTRON_MEV": 0.7823334100000222,
-      "Q_NEUTRON_MEV_ERR": 6.129437351829285e-07,
+      "Q_NEUTRON_MEV_ERR": 6.129437351829285e-7,
       "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mnmpm",
       "citation": "CODATA 2022, NIST Physics Laboratory, Gaithersburg MD 20899 USA. Q = m_n - m_p - m_e derived from individual mass-energy equivalents; cross-checked against direct CODATA entry m_n-m_p = 1.2933321 MeV."
     },
@@ -29,23 +30,23 @@
     "Q_obs_MeV": 0.7823334100000222,
     "status": "exact by construction (E_q is calibrated from this)",
     "neutron_nf_terms": {
-      "1": 1.008995448774928,
       "0": 0.04813038950468018,
-      "0\u00b71": -0.009640792161232896,
-      "1\u00b70": 0.009237074564505125,
-      "0\u00b71\u00b70": -0.04418377660851536
+      "1": 1.008995448774928,
+      "0·1": -0.009640792161232896,
+      "1·0": 0.009237074564505125,
+      "0·1·0": -0.04418377660851536
     },
     "proton_nf_terms": {
-      "1": 0.9975704635686099,
       "0": 0.03572941527166866,
-      "0\u00b71": 0.09935378478991747,
-      "1\u00b70": 0.009336913072779455,
-      "0\u00b71\u00b70": -0.04320778758182197
+      "1": 0.9975704635686099,
+      "0·1": 0.09935378478991747,
+      "1·0": 0.009336913072779455,
+      "0·1·0": -0.04320778758182197
     }
   },
   "isotopes_nucleon_level": [
     {
-      "name": "\u00b3H\u2192\u00b3He",
+      "name": "³H→³He",
       "Z": 1,
       "N": 2,
       "A": 3,
@@ -55,11 +56,11 @@
       "r_suppression": 1.0063779166348719,
       "Q_pred_MeV": 0.7873230672696774,
       "Q_exp_MeV": 0.01861,
-      "Q_exp_err_MeV": 1e-05,
+      "Q_exp_err_MeV": 0.00001,
       "error_pct": 4130.645176086391
     },
     {
-      "name": "\u00b9\u2074C\u2192\u00b9\u2074N",
+      "name": "¹⁴C→¹⁴N",
       "Z": 6,
       "N": 8,
       "A": 14,
@@ -69,15 +70,15 @@
       "r_suppression": 2.605208560192416,
       "Q_pred_MeV": 2.0381416966565813,
       "Q_exp_MeV": 0.15648,
-      "Q_exp_err_MeV": 4e-05,
+      "Q_exp_err_MeV": 0.00004,
       "error_pct": 1202.4934155525189
     }
   ],
   "diagnosis": {
-    "observation": "Nucleon-level \u0394_A \u2248 \u0394_q for all light nuclei: r \u2248 1. Q_pred(\u00b3H) \u2248 Q_NEUTRON, far above observed 0.019 MeV.",
-    "root_cause": "With corrected Hecke inverse (c=1, d=-h), the matrices T_pp and T_nn differ only in the constant term. The nucleon-level \u0394_A is insensitive to nuclear binding. Binding suppression enters only at quark level (L1).",
-    "next_step": "Quark-level (L1) computation for \u00b3H and 14C via Rust hecke-engine with corrected crossing convention."
+    "observation": "Nucleon-level Δ_A ≈ Δ_q for all light nuclei: r ≈ 1. Q_pred(³H) ≈ Q_NEUTRON, far above observed 0.019 MeV.",
+    "root_cause": "With corrected Hecke inverse (c=1, d=-h), the matrices T_pp and T_nn differ only in the constant term. The nucleon-level Δ_A is insensitive to nuclear binding. Binding suppression enters only at quark level (L1).",
+    "next_step": "Quark-level (L1) computation for ³H and 14C via Rust hecke-engine with corrected crossing convention."
   },
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

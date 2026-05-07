@@ -13,5 +13,11 @@ export default definition({
     "prop:markov-pair-z2",
     "thm:topological-mass",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/markov_peel.py",
+    witness: "folio-assistant/computations/markov-peel-atomic-tr-m.witness.json",
+    status: "verified",
+  },
   tags: ["markov-trace", "computation", "algorithm"],
 });

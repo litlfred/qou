@@ -30,4 +30,13 @@ export default conjecture({
     "newton-raphson",
     "open-problem",
   ],
+  computation: {
+    engine: "numpy",
+    script: "folio-assistant/computations/q_pochhammer_seed.py",
+    witness: [
+      "folio-assistant/computations/q-pochhammer-seed.witness.json",
+      "folio-assistant/computations/snappy-cusp-seeding.witness.json",
+    ],
+    status: "experimental",
+  },
 });

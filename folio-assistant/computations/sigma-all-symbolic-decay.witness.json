@@ -1,7 +1,8 @@
 {
-  "computation": "sigma-all-symbolic-decay",
   "computedAt": "2026-05-02T20:41:46.380342+00:00",
+  "computation": "sigma-all-symbolic-decay",
   "description": "Symbolic factored form of Σ_all(A) (the unfiltered β-decay character sum) for A = 1..6, plus the closed-form two-step decay ratio in ℤ[q^{±1}]. Establishes the cancellation structure: Σ_all is NOT identically zero, but factors with (q-1)^A (q+1)^A as the dominant suppression factor.",
+  "auditOnly": "docs/audits/2026-05-02-nv-frob-filter-conjectures.md",
   "two_step_ratio_symbolic": "3*(q - 1)**2*(q + 1)**2*(q**2 + 1)**2/(8*q**4)",
   "two_step_ratio_at_q0": 0.06627566491277298,
   "per_A_decay_rate": 0.25744060463099633,
