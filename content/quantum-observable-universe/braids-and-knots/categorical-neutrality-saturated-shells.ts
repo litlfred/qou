@@ -33,4 +33,13 @@ export default conjecture({
     "framing-anomaly",
     "open-problem",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/full_twist_root_of_unity_probe.py",
+    witness: [
+      "folio-assistant/computations/full-twist-delta-n2-verification.witness.json",
+      "folio-assistant/computations/full-twist-root-of-unity-probe.witness.json",
+    ],
+    status: "experimental",
+  },
 });

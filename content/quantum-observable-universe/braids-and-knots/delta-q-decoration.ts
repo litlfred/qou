@@ -29,6 +29,12 @@ export default definition({
     "prop:force-carrier-bring-uniqueness",
   ],
   defines: ["delta-q-decoration", "q-dimension-layer"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/delta_q_decoration.py",
+    witness: "folio-assistant/computations/delta-q-decoration.witness.json",
+    status: "verified",
+  },
   lean: { ref: "qou:QOU.BraidKnot.delta_q" },
   tags: [
     "delta-q",

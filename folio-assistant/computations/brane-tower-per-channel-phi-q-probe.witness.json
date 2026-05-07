@@ -1,7 +1,8 @@
 {
+  "computedAt": "2026-05-03T21:09:59.411955+00:00",
   "computation": "brane-tower-per-channel-phi-q-probe",
   "description": "Tests whether applying Phi_q per Wedderburn channel (sym/std/alt) and summing with Markov weights y_lambda restores trace-invariance to the T2 brane-tower.  Compares to the legacy literal Phi_q(|V_full|) form that currently produces the -737 MeV T-3He isospin pathology in paper_six_term_isotope_sweep.py.",
-  "computedAt": "2026-05-03T21:09:59.411955+00:00",
+  "auditOnly": "docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md",
   "rows": [
     {
       "iso": "p",

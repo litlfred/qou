@@ -1,20 +1,21 @@
 {
-  "computation": "free-neutron-decay",
-  "description": "Free neutron decay n \u2192 p + e\u207b + \u03bd\u0304\u2091 with B\u2083 Borromean binding. All Gr\u00f6bner--Shirshov relations traced verbosely.",
   "computedAt": "2026-04-14T22:24:03.405420+00:00",
+  "computation": "free-neutron-decay",
+  "description": "Free neutron decay n → p + e⁻ + ν̄ₑ with B₃ Borromean binding. All Gröbner--Shirshov relations traced verbosely.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "commit_sha": "9c7af975ec8405b4f0c3f93dc70cfb8fe2d81ce6",
   "q0": 1.1099785955541805,
   "relations": {
-    "R1_Hecke": "\u03c3_i\u00b2 = (q \u2212 q\u207b\u00b9)\u00b7\u03c3_i + 1",
-    "R2_far_comm": "\u03c3_i\u00b7\u03c3_j = \u03c3_j\u00b7\u03c3_i for |i\u2212j| \u2265 2",
-    "R3_Yang_Baxter": "\u03c3_i\u00b7\u03c3_{i+1}\u00b7\u03c3_i = \u03c3_{i+1}\u00b7\u03c3_i\u00b7\u03c3_{i+1}",
-    "sigma_inv": "\u03c3_i\u207b\u00b9 = \u03c3_i \u2212 (q \u2212 q\u207b\u00b9)",
-    "B3": "B\u2083 = (\u03c3\u2080\u00b7\u03c3\u2081\u207b\u00b9)\u00b3"
+    "R1_Hecke": "σ_i² = (q − q⁻¹)·σ_i + 1",
+    "R2_far_comm": "σ_i·σ_j = σ_j·σ_i for |i−j| ≥ 2",
+    "R3_Yang_Baxter": "σ_i·σ_{i+1}·σ_i = σ_{i+1}·σ_i·σ_{i+1}",
+    "sigma_inv": "σ_i⁻¹ = σ_i − (q − q⁻¹)",
+    "B3": "B₃ = (σ₀·σ₁⁻¹)³"
   },
   "crossing_types": {
-    "u-u": "\u03c3_i",
-    "d-d": "q\u00b2\u00b7\u03c3_i \u2212 q\u00b7s\u00b7\ud835\udfcf  where s = q^\u00bd \u2212 q^{-\u00bd}",
-    "u-d": "\u00bd(1+q\u00b2)\u00b7\u03c3_i \u2212 \u00bdq\u00b7s\u00b7\ud835\udfcf"
+    "u-u": "σ_i",
+    "d-d": "q²·σ_i − q·s·𝟏  where s = q^½ − q^{-½}",
+    "u-d": "½(1+q²)·σ_i − ½q·s·𝟏"
   },
   "constants_at_q0": {
     "q0": 1.1099785955541805,
@@ -27,9 +28,9 @@
     "nf_terms": [
       {
         "word": [],
-        "word_str": "\ud835\udfcf",
-        "particle": "\u03bd",
-        "knot": "unknot (0\u2081)",
+        "word_str": "𝟏",
+        "particle": "ν",
+        "knot": "unknot (0₁)",
         "coefficient_symbolic": "q**7/4 - q**5/2 - q**3/4 + q/2 - 1/(2*q) + 1/(4*q**3) + 1/(2*q**5) - 1/(4*q**7)",
         "coefficient_numeric": -0.20170383884270415
       },
@@ -37,9 +38,9 @@
         "word": [
           0
         ],
-        "word_str": "\u03c3_0",
-        "particle": "\u03c3\u2080",
-        "knot": "virtual (\u2113=1)",
+        "word_str": "σ_0",
+        "particle": "σ₀",
+        "knot": "virtual (ℓ=1)",
         "coefficient_symbolic": "q**8/4 - q**6/2 + q**4/4 + q**2/2 - 1 + 1/(2*q**2) + 1/(4*q**4) - 1/(2*q**6) + 1/(4*q**8)",
         "coefficient_numeric": 0.04813038950468018
       },
@@ -47,9 +48,9 @@
         "word": [
           1
         ],
-        "word_str": "\u03c3_1",
-        "particle": "\u03c3\u2081",
-        "knot": "virtual (\u2113=1)",
+        "word_str": "σ_1",
+        "particle": "σ₁",
+        "knot": "virtual (ℓ=1)",
         "coefficient_symbolic": "-q**6/4 + q**4/2 + q**2/2 - 1/2 + 1/(2*q**2) + 1/(2*q**4) - 1/(4*q**6)",
         "coefficient_numeric": 1.008995448774928
       },
@@ -58,8 +59,8 @@
           0,
           1
         ],
-        "word_str": "\u03c3_0\u00b7\u03c3_1",
-        "particle": "L\u208a",
+        "word_str": "σ_0·σ_1",
+        "particle": "L₊",
         "knot": "Hopf link",
         "coefficient_symbolic": "-q**7/4 + q**5/2 - 3*q/4 + 3/(4*q) - 1/(2*q**5) + 1/(4*q**7)",
         "coefficient_numeric": -0.009640792161232925
@@ -69,8 +70,8 @@
           1,
           0
         ],
-        "word_str": "\u03c3_1\u00b7\u03c3_0",
-        "particle": "L\u208b",
+        "word_str": "σ_1·σ_0",
+        "particle": "L₋",
         "knot": "Hopf link",
         "coefficient_symbolic": "q**5/4 - q**3/4 - q/2 + 1/(2*q) + 1/(4*q**3) - 1/(4*q**5)",
         "coefficient_numeric": 0.009237074564505066
@@ -81,9 +82,9 @@
           1,
           0
         ],
-        "word_str": "\u03c3_0\u00b7\u03c3_1\u00b7\u03c3_0",
-        "particle": "e\u207b",
-        "knot": "trefoil (3\u2081)",
+        "word_str": "σ_0·σ_1·σ_0",
+        "particle": "e⁻",
+        "knot": "trefoil (3₁)",
         "coefficient_symbolic": "-q**4/4 + 1/2 - 1/(4*q**4)",
         "coefficient_numeric": -0.0441837766085153
       }
@@ -102,9 +103,9 @@
     "nf_terms": [
       {
         "word": [],
-        "word_str": "\ud835\udfcf",
-        "particle": "\u03bd",
-        "knot": "unknot (0\u2081)",
+        "word_str": "𝟏",
+        "particle": "ν",
+        "knot": "unknot (0₁)",
         "coefficient_symbolic": "q**7/4 - q**5 + 2*q**3 - 13*q/4 + 13/(4*q) - 2/q**3 + q**(-5) - 1/(4*q**7)",
         "coefficient_numeric": -0.0996576638783706
       },
@@ -112,9 +113,9 @@
         "word": [
           0
         ],
-        "word_str": "\u03c3_0",
-        "particle": "\u03c3\u2080",
-        "knot": "virtual (\u2113=1)",
+        "word_str": "σ_0",
+        "particle": "σ₀",
+        "knot": "virtual (ℓ=1)",
         "coefficient_symbolic": "q**8/4 - q**6 + 5*q**4/2 - 17*q**2/4 + 5 - 17/(4*q**2) + 5/(2*q**4) - 1/q**6 + 1/(4*q**8)",
         "coefficient_numeric": 0.03572941527166762
       },
@@ -122,9 +123,9 @@
         "word": [
           1
         ],
-        "word_str": "\u03c3_1",
-        "particle": "\u03c3\u2081",
-        "knot": "virtual (\u2113=1)",
+        "word_str": "σ_1",
+        "particle": "σ₁",
+        "knot": "virtual (ℓ=1)",
         "coefficient_symbolic": "-q**6/2 + 7*q**4/4 - 5*q**2/2 + 7/2 - 5/(2*q**2) + 7/(4*q**4) - 1/(2*q**6)",
         "coefficient_numeric": 0.99757046356861
       },
@@ -133,8 +134,8 @@
           0,
           1
         ],
-        "word_str": "\u03c3_0\u00b7\u03c3_1",
-        "particle": "L\u208a",
+        "word_str": "σ_0·σ_1",
+        "particle": "L₊",
         "knot": "Hopf link",
         "coefficient_symbolic": "-q**7/2 + 2*q**5 - 7*q**3/2 + 9*q/2 - 9/(2*q) + 7/(2*q**3) - 2/q**5 + 1/(2*q**7)",
         "coefficient_numeric": 0.0993537847899173
@@ -144,8 +145,8 @@
           1,
           0
         ],
-        "word_str": "\u03c3_1\u00b7\u03c3_0",
-        "particle": "L\u208b",
+        "word_str": "σ_1·σ_0",
+        "particle": "L₋",
         "knot": "Hopf link",
         "coefficient_symbolic": "q**5/2 - 3*q**3/2 + 2*q - 2/q + 3/(2*q**3) - 1/(2*q**5)",
         "coefficient_numeric": 0.009336913072779618
@@ -156,9 +157,9 @@
           1,
           0
         ],
-        "word_str": "\u03c3_0\u00b7\u03c3_1\u00b7\u03c3_0",
-        "particle": "e\u207b",
-        "knot": "trefoil (3\u2081)",
+        "word_str": "σ_0·σ_1·σ_0",
+        "particle": "e⁻",
+        "knot": "trefoil (3₁)",
         "coefficient_symbolic": "q**6/4 - 5*q**4/4 + 7*q**2/4 - 3/2 + 7/(4*q**2) - 5/(4*q**4) + 1/(4*q**6)",
         "coefficient_numeric": -0.04320778758182264
       }
@@ -179,5 +180,5 @@
     "Q_observed_MeV": 0.78233
   },
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

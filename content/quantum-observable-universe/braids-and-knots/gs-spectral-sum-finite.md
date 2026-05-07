@@ -62,3 +62,12 @@ support of the residue function requires:*
 contributions beyond, consistent with the proton/neutron/deuteron
 confinement levels.  See
 `folio-assistant/computations/term6-full-pole-sum.witness.json`.*
+
+**Structural shortcut.**
+*The vanishing of the residue strata above $\ell(K, q_0)$ is
+explained homologically by
+[cemetery-group emergence](#conj:cemetery-group-emergence): the
+strata that fall outside $J^{\ell(K, q_0)}(q_0)$ map under the
+observation functor $\tau$ into the
+[cemetery group](#def:cemetery-group), and so vanish without any
+term-by-term polynomial cancellation.*

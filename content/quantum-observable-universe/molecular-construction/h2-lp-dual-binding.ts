@@ -11,4 +11,13 @@ export default proposition({
     "prop:shell-filling-rule",
   ],
   tags: ["H2", "LP-dual", "binding", "optimal"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/h2-integer-lp.py",
+    witness: [
+      "folio-assistant/computations/h2-integer-lp.witness.json",
+      "folio-assistant/computations/h2-molecular-binding.witness.json",
+    ],
+    status: "verified",
+  },
 });

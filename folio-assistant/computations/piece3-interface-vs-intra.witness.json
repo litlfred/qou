@@ -1,17 +1,18 @@
 {
-  "computation": "piece3-interface-vs-intra",
-  "description": "Piece 3 of the open functional-form problem: split the single-gen log-volume sum \u03b1\u00b7\u03a3_i ln|V_i^full| into intra-nucleon and inter-nucleon contributions for atoms Z=1..10. Tests whether the interface (inter-nucleon \u03c3 at gen 3k+2) follows a different functional form than the intra-nucleon (positions 3k, 3k+1) \u2014 connecting to the operator-valued A^\u03bb_{\u03bc\u03bd}(I) of refined Sub-lemma 2.1.",
-  "reference_blocks": [
-    "prop:rho-k-graded-expansion",
-    "prop:hecke-branching-trace-decomposition",
-    "prop:atomic-braid-mass"
-  ],
   "computedAt": "2026-05-05T18:13:53.565272+00:00",
+  "computation": "piece3-interface-vs-intra",
+  "description": "Piece 3 of the open functional-form problem: split the single-gen log-volume sum α·Σ_i ln|V_i^full| into intra-nucleon and inter-nucleon contributions for atoms Z=1..10. Tests whether the interface (inter-nucleon σ at gen 3k+2) follows a different functional form than the intra-nucleon (positions 3k, 3k+1) — connecting to the operator-valued A^λ_{μν}(I) of refined Sub-lemma 2.1.",
+  "auditOnly": "docs/audits/2026-05-05-three-pieces-investigation.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "alpha_MeV": 3.74445965488548,
     "z_markov_squared": 0.2493207959794241
   },
+  "reference_blocks": [
+    "prop:rho-k-graded-expansion",
+    "prop:hecke-branching-trace-decomposition",
+    "prop:atomic-braid-mass"
+  ],
   "rows": [
     {
       "Z": 1,
@@ -21,10 +22,10 @@
       "intra_count": 2,
       "inter_count": 0,
       "intra_log_sum": -0.0404101093689341,
-      "inter_log_sum": 0.0,
+      "inter_log_sum": 0,
       "total_log_sum": -0.0404101093689341,
       "intra_correction_MeV": -0.1513140241814835,
-      "inter_correction_MeV": 0.0,
+      "inter_correction_MeV": 0,
       "name": "H",
       "M_obs_MeV": 938.783
     },

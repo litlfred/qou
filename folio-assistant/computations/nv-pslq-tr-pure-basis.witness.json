@@ -1,7 +1,8 @@
 {
-  "computation": "nv-pslq-tr-pure-basis",
   "computedAt": "2026-05-05T22:49:09.677700+00:00",
+  "computation": "nv-pslq-tr-pure-basis",
   "description": "Re-run of constrained PSLQ for N_v using bar-self-dual cell-content trace tr_pure(σ_1^4 σ_3^6 σ_5^8) as the structural input, replacing the demoted Plancherel-weighted N_sym from the prior basis. Tests three ansatz shapes B1/B2/B3 against CODATA-G_F precision.",
+  "auditOnly": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
   "reference_blocks": [
     "conj:hoefsmit-ew-cell-content",
     "conj:weak-spectral-completeness",

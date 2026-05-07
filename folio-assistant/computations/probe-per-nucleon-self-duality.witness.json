@@ -12,6 +12,7 @@
   "scriptCommitSha": "",
   "description": "Per-nucleon shell-self-duality probe at H_3. Tests whether proton (uud) and neutron (udd) intra braids satisfy χ_λ(β) = χ_{λ*}(β) on every Wedderburn pair of H_3. Sub-tower complement to probe-atom-shell-self-duality (which tested at H_{3A} and falsified the atom-level conjecture). If individual nucleons are self-dual at H_3, this gives the categorical magic condition at the sub-tower level.",
   "contentBlock": "prop:shell-schur-weyl-self-duality",
+  "auditOnly": "docs/audits/sigma-shell-categorical-identification.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895
@@ -62,7 +63,7 @@
             "chi_lambda_star": 1.8077033200981636,
             "y_lambda": 0.6606737723483499,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1.0
+            "ratio_chi_to_chi_star": 1
           }
         ]
       },
@@ -110,7 +111,7 @@
             "chi_lambda_star": 1.7008888500891666,
             "y_lambda": 0.6606737723483499,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1.0
+            "ratio_chi_to_chi_star": 1
           }
         ]
       }

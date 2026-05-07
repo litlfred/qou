@@ -1,11 +1,12 @@
 {
+  "computedAt": "2026-05-05T18:11:27.758091+00:00",
   "computation": "piece2-linked-cluster",
-  "description": "Piece 2 of the open functional-form problem: empirical investigation of linked-cluster structure between T_2 (single-gen brane tower) and T_3 (pair-gen brane tower) in the six-term theorem. Tests whether T_3 \u2248 T_2\u00b2/2 (classic linked-cluster) holds across atoms \u2014 if yes, the \u03c1_K graded expansion needs cumulant form rather than naive additivity.",
+  "description": "Piece 2 of the open functional-form problem: empirical investigation of linked-cluster structure between T_2 (single-gen brane tower) and T_3 (pair-gen brane tower) in the six-term theorem. Tests whether T_3 ≈ T_2²/2 (classic linked-cluster) holds across atoms — if yes, the ρ_K graded expansion needs cumulant form rather than naive additivity.",
+  "auditOnly": "docs/audits/2026-05-05-three-pieces-investigation.md",
   "reference_blocks": [
     "prop:rho-k-graded-expansion",
     "thm:knot-mass-formula-unified"
   ],
-  "computedAt": "2026-05-05T18:11:27.758091+00:00",
   "rows": [
     {
       "atom": "p",

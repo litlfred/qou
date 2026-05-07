@@ -1,7 +1,8 @@
 {
-  "computation": "habiro-motivic-orbit-relations",
   "computedAt": "2026-05-03T00:44:33.841793+00:00",
+  "computation": "habiro-motivic-orbit-relations",
   "description": "Motivic-orbit relation analysis on the exact-algebraic Frobenius eigenvalues from habiro-frobenius-probe. Tests (a) multiplicative factoring D = p ⊗ n, (b) Galois conjugacy ³He ~ σ(³H), (c) per-(atom, prime) Weil-purity signature. All relations are checked in exact ring arithmetic in Z[ζ_{2p}] = Z[u]/Φ_{2p}(u).",
+  "auditOnly": "docs/audits/2026-05-02-m-iso-l-function-handoff.md",
   "reference_blocks": [
     "def:motivic-galois-character",
     "prop:motivic-perpetual-obstruction"
@@ -753,17 +754,17 @@
       "prime": 2,
       "orbit_max_abs": 0.6666666666666666,
       "orbit_min_abs": 0.6666666666666666,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": -1.1699250014423126,
       "is_pure_motive": true
     },
     {
       "atom": "p (proton, A=1)",
       "prime": 3,
-      "orbit_max_abs": 1.0,
-      "orbit_min_abs": 1.0,
-      "orbit_spread": 0.0,
-      "inferred_weight": 0.0,
+      "orbit_max_abs": 1,
+      "orbit_min_abs": 1,
+      "orbit_spread": 0,
+      "inferred_weight": 0,
       "is_pure_motive": true
     },
     {
@@ -771,7 +772,7 @@
       "prime": 5,
       "orbit_max_abs": 0.25,
       "orbit_min_abs": 0.25,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": -1.7227062322935722,
       "is_pure_motive": true
     },
@@ -834,7 +835,7 @@
       "prime": 2,
       "orbit_max_abs": 0.016666666666666666,
       "orbit_min_abs": 0.016666666666666666,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": -11.813781191217037,
       "is_pure_motive": true
     },
@@ -843,7 +844,7 @@
       "prime": 3,
       "orbit_max_abs": 4.58257569495584,
       "orbit_min_abs": 4.58257569495584,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": 2.771243749161422,
       "is_pure_motive": true
     },
@@ -915,7 +916,7 @@
       "prime": 2,
       "orbit_max_abs": 0.0012621252204585538,
       "orbit_min_abs": 0.0012621252204585538,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": -19.259858463465296,
       "is_pure_motive": true
     },
@@ -924,7 +925,7 @@
       "prime": 3,
       "orbit_max_abs": 68.02205524680947,
       "orbit_min_abs": 68.02205524680947,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": 7.682113222253077,
       "is_pure_motive": true
     },
@@ -996,7 +997,7 @@
       "prime": 2,
       "orbit_max_abs": 0.0012621252204585538,
       "orbit_min_abs": 0.0012621252204585538,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": -19.259858463465296,
       "is_pure_motive": true
     },
@@ -1005,7 +1006,7 @@
       "prime": 3,
       "orbit_max_abs": 42.2965719651132,
       "orbit_min_abs": 42.2965719651132,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": 6.817156662782667,
       "is_pure_motive": true
     },
@@ -1077,7 +1078,7 @@
       "prime": 2,
       "orbit_max_abs": 0.6666666666666666,
       "orbit_min_abs": 0.6666666666666666,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": -1.1699250014423126,
       "is_pure_motive": true
     },
@@ -1086,7 +1087,7 @@
       "prime": 3,
       "orbit_max_abs": 2.6457513110645907,
       "orbit_min_abs": 2.6457513110645907,
-      "orbit_spread": 0.0,
+      "orbit_spread": 0,
       "inferred_weight": 1.7712437491614224,
       "is_pure_motive": true
     },
@@ -1230,7 +1231,7 @@
       "v_p": 1,
       "a_p_candidate": -1,
       "min_weight_consistent": 0,
-      "weil_bound_at_min_w": 2.0
+      "weil_bound_at_min_w": 2
     }
   ],
   "summary": {

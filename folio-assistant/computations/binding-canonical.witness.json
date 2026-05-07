@@ -1,7 +1,8 @@
 {
+  "computedAt": "2026-04-18T10:53:04.158950+00:00",
   "computation": "binding-canonical-markov",
   "description": "Direction-1 canonical Jones-Markov trace binding on D.",
-  "computedAt": "2026-04-18T10:53:04.158950+00:00",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "results": [
     {
       "status": "solved",
@@ -21,5 +22,5 @@
     }
   ],
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

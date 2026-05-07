@@ -16,6 +16,12 @@ export default conjecture({
     "conj:gs-spectral-decomposition-existence",
   ],
   cites: ["habiro2004"],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/term6_full_pole_sum.py",
+    witness: "folio-assistant/computations/term6-full-pole-sum.witness.json",
+    status: "verified",
+  },
   tags: [
     "gs-filtration",
     "spectral-sequence",

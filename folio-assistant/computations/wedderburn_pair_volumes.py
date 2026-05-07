@@ -216,3 +216,44 @@ if __name__ == "__main__":
     for p in pairs[:3]:
         print(f"    ({p['i']}, {p['j']}): sym={p['sym']:.4f}  std={p['std']:.4f}  "
               f"alt={p['alt']:.4f}  full={p['full']:.4f}")
+
+    # ── Witness emission ─────────────────────────────────────────
+    from witness_base import WitnessBuilder  # noqa: E402
+
+    w = WitnessBuilder("wedderburn-pair-volumes", engine="python")
+    w.set_description(
+        "Per-pair Wedderburn-coupled volumes |V̂_i V̂_j| = "
+        "w_sym·λ^sym + w_std·Markov-trace + w_alt·λ^alt for the "
+        "deuteron Z=1, N=1 atom braid; supports "
+        "prop:knot-operator-lp-selection by exposing the LP/SDP "
+        "input matrix entries for the active set."
+    )
+    w.set_content_block("prop:knot-operator-lp-selection")
+    w.add_parameter("Z", 1)
+    w.add_parameter("N", 1)
+    w.add_parameter("n_pairs", n)
+    # Cast to floats for JSON
+    w.add_data(
+        "pairs",
+        [
+            {
+                "i": p["i"],
+                "j": p["j"],
+                "sym": float(p["sym"]),
+                "std": float(p["std"]),
+                "alt": float(p["alt"]),
+                "full": float(p["full"]),
+            }
+            for p in pairs
+        ],
+    )
+    # Sanity assertion: pair count = C(n_gens, 2) where n_gens = 5
+    # (atom Z=1,N=1 with include_inter=True gives n_strands=6, n_gens=5)
+    expected_n_pairs = 5 * 4 // 2
+    w.add_assertion(
+        "n_pairs equals C(n_gens, 2)",
+        computed=n,
+        expected=expected_n_pairs,
+        tolerance=0,
+    )
+    w.save()

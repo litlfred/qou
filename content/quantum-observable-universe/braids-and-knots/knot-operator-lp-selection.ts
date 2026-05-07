@@ -15,6 +15,13 @@ export default proposition({
     "prop:operator-selection-lp",
     "conj:weak-spectral-completeness",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/wedderburn_pair_volumes.py",
+    witness:
+      "folio-assistant/computations/wedderburn-pair-volumes.witness.json",
+    status: "verified",
+  },
   tags: [
     "lp-dual",
     "sdp",

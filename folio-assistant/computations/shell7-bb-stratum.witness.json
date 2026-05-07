@@ -1,7 +1,13 @@
 {
-  "computation": "shell7-bb-stratum-test",
   "computedAt": "2026-05-02T23:39:37.447865+00:00",
-  "description": "Tests the BB-stratum (= self-conjugate partition) partition-sum hypothesis for the SHELL-7 scale-form f_magic(Z, N) in BW Term 7. P1: Plancherel-share of self-conjugate \u03bb \u22a2 3A for A \u2208 {4,6,8,12,28} (computable for all A from hooks alone). P2: full \u03c7_\u03bb(\u03b2_\u2074He) sum over self-conjugate \u03bb \u22a2 12 (only A=4 within K_PARTITION_MAX=11 reach). Compares both to AME shell-correction-per-nucleon estimates.",
+  "computation": "shell7-bb-stratum-test",
+  "description": "Tests the BB-stratum (= self-conjugate partition) partition-sum hypothesis for the SHELL-7 scale-form f_magic(Z, N) in BW Term 7. P1: Plancherel-share of self-conjugate λ ⊢ 3A for A ∈ {4,6,8,12,28} (computable for all A from hooks alone). P2: full χ_λ(β_⁴He) sum over self-conjugate λ ⊢ 12 (only A=4 within K_PARTITION_MAX=11 reach). Compares both to AME shell-correction-per-nucleon estimates.",
+  "auditOnly": "docs/audits/2026-05-02-4-parallel-followup-synthesis.md",
+  "caveats": [
+    "Existing seminormal-matrix infrastructure caps at K_PARTITION_MAX=11 (n=11). Only A=4 (n=12, in K_GAUSSIAN_MAX=15 metadata range) admits full χ_λ evaluation; A=6,8,12,28 (n=18,24,36,84) require P1 proxy.",
+    "P1 has NO (Z,N) dependence at fixed A; cannot distinguish 8Be (Z=N=4) from a hypothetical A=8 with different Z. Tests A-only magic clustering.",
+    "SC partition counts grow rapidly: q(12)=2, q(18)=4, q(24)=12, q(36)=78, q(84)~10^4. Larger A capped."
+  ],
   "q_0": 1.1099785955541805,
   "C_7_MeV": 6.289300348688731,
   "precision_dps": 30,
@@ -241,7 +247,7 @@
             1,
             1
           ],
-          7.665649396305014e+17
+          766564939630501400
         ],
         [
           [
@@ -263,7 +269,7 @@
             1,
             1
           ],
-          1.4859451647025755e+20
+          148594516470257550000
         ],
         [
           [
@@ -580,7 +586,7 @@
     "partitions_total": 77,
     "self_conjugate_count": 3,
     "full_char_sum_re": 0.10431650153571567,
-    "full_char_sum_im": 0.0,
+    "full_char_sum_im": 0,
     "full_char_sum_abs": 0.10431650153571567,
     "rows": [
       {
@@ -594,8 +600,8 @@
         ],
         "dim_q": 4196.835881036417,
         "w_lambda": 0.01199197428522376,
-        "chi_re": 2100.0,
-        "chi_im": 0.0,
+        "chi_re": 2100,
+        "chi_im": 0,
         "contrib_abs": 0.0060005076950378315
       },
       {
@@ -608,8 +614,8 @@
         ],
         "dim_q": 16707.275158579687,
         "w_lambda": 0.19004566447832663,
-        "chi_re": 7700.0,
-        "chi_im": 0.0,
+        "chi_re": 7700,
+        "chi_im": 0,
         "contrib_abs": 0.08758768875196504
       },
       {
@@ -621,8 +627,8 @@
         ],
         "dim_q": 5968.709917998506,
         "w_lambda": 0.024255356434209823,
-        "chi_re": 2640.0,
-        "chi_im": 0.0,
+        "chi_re": 2640,
+        "chi_im": 0,
         "contrib_abs": 0.010728305088712801
       }
     ]
@@ -653,7 +659,7 @@
       "Z": 4,
       "N": 4,
       "label": "8Be  (unstable; alpha-cluster, NEGATIVE shell)",
-      "AME_shell_per_nucleon_MeV": -2.0,
+      "AME_shell_per_nucleon_MeV": -2,
       "AME_BA_per_nucleon_MeV": 7.062,
       "P1_pred_per_nucleon_MeV": 0.42252280682552545,
       "pred_to_AME_ratio": -0.21126140341276273
@@ -679,10 +685,5 @@
       "pred_to_AME_ratio": 6.338448778746057e+69
     }
   ],
-  "pearson_r_P1_vs_AME": -0.056873998512150206,
-  "caveats": [
-    "Existing seminormal-matrix infrastructure caps at K_PARTITION_MAX=11 (n=11). Only A=4 (n=12, in K_GAUSSIAN_MAX=15 metadata range) admits full \u03c7_\u03bb evaluation; A=6,8,12,28 (n=18,24,36,84) require P1 proxy.",
-    "P1 has NO (Z,N) dependence at fixed A; cannot distinguish 8Be (Z=N=4) from a hypothetical A=8 with different Z. Tests A-only magic clustering.",
-    "SC partition counts grow rapidly: q(12)=2, q(18)=4, q(24)=12, q(36)=78, q(84)~10^4. Larger A capped."
-  ]
+  "pearson_r_P1_vs_AME": -0.056873998512150206
 }

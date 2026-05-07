@@ -18,4 +18,13 @@ export default definition({
     "molecular-braid",
     "prototype",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/hh-vertex-volume.py",
+    witness: [
+      "folio-assistant/computations/hh-trefoil-corrected.witness.json",
+      "folio-assistant/computations/hh-vertex-volume.witness.json",
+    ],
+    status: "experimental",
+  },
 });

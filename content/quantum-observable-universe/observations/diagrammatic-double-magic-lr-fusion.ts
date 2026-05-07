@@ -15,6 +15,13 @@ export default conjecture({
     "prop:hoefsmit-seminormal-form",
     "thm:wedderburn-mass-formula",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/lr_fusion_self_conj_test.py",
+    witness:
+      "folio-assistant/computations/lr-fusion-self-conj-test.witness.json",
+    status: "verified",
+  },
   cites: [
     "ariki1996",
     "ram1991",

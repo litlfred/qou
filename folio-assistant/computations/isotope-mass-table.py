@@ -348,6 +348,7 @@ def main():
     
     # ── Witness generation ───────────────────────────────────
     w = WitnessBuilder("isotope-mass-table", engine="python")
+    w.set_audit_only("docs/audits/last-2-days-pipeline-wiring.md")
     w.set_description(
         "Comprehensive isotope mass table for all stable and long-lived "
         "nuclides up to Z=30. Uses CODATA nucleon masses + AME2020 binding "

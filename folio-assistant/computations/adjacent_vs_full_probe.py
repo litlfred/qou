@@ -367,6 +367,7 @@ if __name__ == "__main__":
 
     # Witness
     witness = {
+        "auditOnly": "docs/audits/2026-05-02-tier3-final-state.md",
         "computation": "adjacent-vs-full-probe",
         "description": (
             "Empirical probe of prop:mass-endomorphism-tower. "

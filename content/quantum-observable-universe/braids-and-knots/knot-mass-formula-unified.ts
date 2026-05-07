@@ -25,4 +25,14 @@ export default theorem({
     "unified-formula",
     "universal",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py",
+    witness: [
+      "folio-assistant/computations/mass-formula-6term-mpfr-50dps.witness.json",
+      "folio-assistant/computations/probe-d-height-stratification.witness.json",
+      "folio-assistant/computations/probe-phiq-yekutieli-truncation.witness.json",
+    ],
+    status: "experimental",
+  },
 });

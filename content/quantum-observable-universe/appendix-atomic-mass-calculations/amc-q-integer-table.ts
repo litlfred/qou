@@ -13,4 +13,10 @@ export default remark({
     "shell-correction",
     "exceptional-divisor",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/channel_product_mass.py",
+    witness: "folio-assistant/computations/channel-product-mass.witness.json",
+    status: "verified",
+  },
 });

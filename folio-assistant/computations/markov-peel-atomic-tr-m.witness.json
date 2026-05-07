@@ -12,6 +12,7 @@
   "scriptCommitSha": "eaa61b06898320515e5367413b3867e053bec85b",
   "description": "Production atomic Markov trace tr_M(β_atom) at q = q₀ via the Markov-axiom recursive-ascent path (markov_peel + markov_trace_canonical, #508 / PR #516).  Cross-checks against atomic-tr-m-mpfr-50dps.witness.json (Hoefsmit + Wenzl bridge) for the atoms it covers (proton, neutron, D, T, ³He); ⁴He and beyond are first-time computations enabled by this rewrite.",
   "contentBlock": "prop:markov-pair-z2",
+  "auditOnly": "docs/audits/2026-05-03-categorical-mass-divergence-audit.md",
   "parameters": {
     "q0": "1.1099785955541805"
   },
@@ -44,7 +45,7 @@
         "trace_sympy_ops": 63,
         "tr_M_at_q0": "0.92323329716958346669031243436620570719242095947266",
         "elapsed_reduce_sec": 0.039,
-        "elapsed_trace_sec": 0.0,
+        "elapsed_trace_sec": 0,
         "elapsed_evalf_sec": 0.001,
         "atom": "neutron",
         "bridge_witness_value": "0.92323329716958371987441489925448416037805873290687",

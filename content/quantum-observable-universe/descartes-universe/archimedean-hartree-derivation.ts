@@ -34,6 +34,13 @@ export default proposition({
     "def:archimedean-realization-functor",
     "conj:e-hartree-categorical-derivation",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/hecke_core.py",
+    witness:
+      "folio-assistant/computations/hecke-core-symbolic-migration.witness.json",
+    status: "verified",
+  },
   tags: [
     "hartree-energy",
     "archimedean-functor",

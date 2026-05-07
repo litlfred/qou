@@ -1,7 +1,8 @@
 {
-  "computation": "ew-interface-knot-probe",
   "computedAt": "2026-05-06T00:15:18.181865+00:00",
+  "computation": "ew-interface-knot-probe",
   "description": "Hoefsmit-action enumeration of β_EW(Δ_I^minimal) on H_6(q) standard tableaux.  Δ_I^minimal := σ_2 · σ_4 · σ_2 (per def:ew-interface-knot).  Quantifies which tableaux remain simultaneous eigenvectors of all five σ_1..σ_5 (and are therefore Higgs-invariant under Δ_I^minimal coupling) vs which acquire off-diagonal mixing from the interface generators σ_2, σ_4.",
+  "auditOnly": "docs/audits/2026-05-06-delta-I-interface-knot-refinement.md",
   "reference_blocks": [
     "def:ew-interface-knot",
     "conj:hoefsmit-ew-cell-content",
