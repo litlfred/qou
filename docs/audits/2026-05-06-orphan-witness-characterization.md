@@ -6,22 +6,20 @@ patch and the bulk move of 328 dead-exploratory probes into
 `folio-assistant/computations/_deprecated/`).
 
 ```
-                 baseline    after registry/auditOnly patch    after deprecation move
-total:           547         547                                219
-wired:            95          98                                 98
-audit-only:       90          91                                 91
-orphan:          362         358                                 30
-stale-claims:      0           0                                  0
+                 baseline    after registry/auditOnly patch    after deprecation move    after unwrap chains (this PR)
+total:           547         547                                219                        189
+wired:            95          98                                 98                         98
+audit-only:       90          91                                 91                         91
+orphan:          362         358                                 30                          0
+stale-claims:      0           0                                  3                          0
 ```
 
-The remaining **30 orphan witnesses** are the actionable backlog.  They
-have non-zero falsifiability signal (`passing`, `FAILING`, or
-`malformed`) and therefore are **not safe** to auto-classify as
-deprecated; each needs an owner-side decision among **wire / mark
-`auditOnly` / fix / delete**.
+At the **2026-05-06 snapshot**, the remaining 30 orphan witnesses were
+the actionable backlog.  This document characterizes those 30 by
+failure mode, content-block claim status, and suggested next action.
 
-This document characterizes the 30 by failure mode, content-block
-claim status, and suggested next action.
+In the subsequent **unwrap chains** pass (this PR), those 30 were moved
+to `_deprecated/`, bringing live orphan count to **0**.
 
 ## A. FAILING (4) — assertions present and red
 
@@ -32,10 +30,10 @@ acknowledging the failure.
 
 | Witness | Assertion summary | Suggested action |
 |---|---|---|
-| [`chi-inter-and-nchir-rank`](../../folio-assistant/computations/chi-inter-and-nchir-rank.witness.json) | 3 assertions, 1 failed: "D: dominant-block rank vs paper n_chir" | Wire to a `prop:` for `n_chir`; if no such prop exists, demote to `audit-only` with a probe-report MD |
-| [`level-k-binding`](../../folio-assistant/computations/level-k-binding.witness.json) | 1/1 failed: "N≡N triple bond at k=3" | Likely paired with `molecular-binding-level-k`; investigate `level_k_binding.py` source |
-| [`molecular-binding-level-k`](../../folio-assistant/computations/molecular-binding-level-k.witness.json) | 1/1 failed: "k=3 single bond" | See above — both target the level-k molecular-binding prediction |
-| [`proton-neutron-mass-error`](../../folio-assistant/computations/proton-neutron-mass-error.witness.json) | 1/1 failed: "tower ratio m_n/m_p matches CODATA within 10%" | Cross-link to `categorical-proton g_A` audit (memory: borromean-axial-coupling.py:30-65); investigate if this is the same y_λ-weighted Markov-trace gap |
+| [`chi-inter-and-nchir-rank`](../../folio-assistant/computations/_deprecated/chi-inter-and-nchir-rank.witness.json) | 3 assertions, 1 failed: "D: dominant-block rank vs paper n_chir" | Wire to a `prop:` for `n_chir`; if no such prop exists, demote to `audit-only` with a probe-report MD |
+| [`level-k-binding`](../../folio-assistant/computations/_deprecated/level-k-binding.witness.json) | 1/1 failed: "N≡N triple bond at k=3" | Likely paired with `molecular-binding-level-k`; investigate `level_k_binding.py` source |
+| [`molecular-binding-level-k`](../../folio-assistant/computations/_deprecated/molecular-binding-level-k.witness.json) | 1/1 failed: "k=3 single bond" | See above — both target the level-k molecular-binding prediction |
+| [`proton-neutron-mass-error`](../../folio-assistant/computations/_deprecated/proton-neutron-mass-error.witness.json) | 1/1 failed: "tower ratio m_n/m_p matches CODATA within 10%" | Cross-link to `categorical-proton g_A` audit (memory: borromean-axial-coupling.py:30-65); investigate if this is the same y_λ-weighted Markov-trace gap |
 
 ## B. malformed (15) — body fails `JSON.parse`
 
