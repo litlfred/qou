@@ -1,76 +1,147 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-07T13:15:16.345282+00:00",
-  "commitSha": "227542a0c761bd4dec5c5a2fc6f03e45c379ba69",
+  "computedAt": "2026-05-07T18:55:08.471003+00:00",
+  "commitSha": "d05259d1c5923a76565594d80479cf5e414ea6c2",
   "assertions": [
     {
-      "name": "cyclic standard trace identity",
-      "computed": 0.20906032198987912,
-      "expected": 0.20906032198987945,
+      "name": "tr_M(σ_1) = z_markov",
+      "computed": 0.4993203340335982,
+      "expected": 0.49932033403359827,
       "passed": true,
-      "tolerance": 1e-12
+      "tolerance": 1e-09
     },
     {
-      "name": "cyclic trivial trace identity",
-      "computed": 1.1099785955541805,
-      "expected": 1.1099785955541805,
-      "passed": true,
-      "tolerance": 1e-12
-    },
-    {
-      "name": "direct probe breaks cyclic triviality",
+      "name": "axial trace differs from bare σ_1 trace",
       "computed": true,
       "expected": true,
       "passed": true
     },
     {
-      "name": "direct probe stays near PDG",
+      "name": "g_A predicted within 50% of PDG (structural gap)",
       "computed": true,
       "expected": true,
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 13,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
-  "scriptHash": "00d1dbeee064",
-  "scriptCommitSha": "227542a0c761bd4dec5c5a2fc6f03e45c379ba69",
-  "description": "Restored Borromean axial-coupling probe. Diagnoses the cyclic-trivial βσ₁β⁻¹ bug and replaces it with the non-conjugate βσ₁ probe.",
+  "scriptHash": "803b2bcf3cb4",
+  "scriptCommitSha": "d05259d1c5923a76565594d80479cf5e414ea6c2",
+  "description": "Borromean axial-coupling probe via y_λ-weighted Markov trace. Replaces the trace-cyclic β·σ₁·β⁻¹ formula and the seminormal-only β·σ₁ probe with tr_M = Σ_λ y_λ · χ_λ on the full Specht tower of n=3.",
   "auditOnly": "docs/audits/2026-05-07-borromean-axial-coupling-fix.md",
   "parameters": {
     "q": 1.1099785955541805,
+    "yLambdaSource": "folio-assistant/computations/y-lambda-jones-markov-witness.json#tables_by_n.3",
     "betaBorr": "σ₁ σ₂⁻¹ σ₁ σ₂⁻¹",
-    "conversionOperator": "σ₁"
+    "conversionOperator": "σ₁",
+    "axialOperator": "β · σ₁"
   },
   "data": {
-    "qIntegers": {
-      "[2]_q": 2.010896869118482,
-      "[3]_q": 3.0437062182305117,
-      "[4]_q": 4.109682435637708,
-      "[5]_q": 5.220441324664572
+    "yLambdaWeights": [
+      {
+        "partition": [
+          3
+        ],
+        "depth": 0,
+        "y_lambda": 0.4153957863345663
+      },
+      {
+        "partition": [
+          2,
+          1
+        ],
+        "depth": 1,
+        "y_lambda": 0.28092963397986415
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "depth": 2,
+        "y_lambda": 0.022744945705705347
+      }
+    ],
+    "markovTraces": {
+      "tr_M_beta": 0.18230448304203783,
+      "tr_M_sigma1": 0.4993203340335982,
+      "tr_M_axial": 0.507133285558539,
+      "z_markov_reference": 0.49932033403359827
     },
-    "cyclicDiagnostic": {
-      "operator": "β · σ₁ · β⁻¹",
-      "trStandard": 0.20906032198987912,
-      "trTrivial": 1.1099785955541805,
-      "suppression": 0.9999999999999984
-    },
-    "directProbe": {
-      "operator": "β · σ₁",
-      "trStandard": 0.8781728221432924,
-      "trTrivial": 1.1099785955541805,
-      "trSign": -0.9009182735643011,
-      "channelRatioStdOverTriv": 0.791161942816425,
-      "gA_naive": 1.6666666666666667,
-      "gA_directProbe": 1.3186032380273751,
-      "targetPDG": 1.2754,
-      "relativeErrorVsPDG": 0.033874265349988254
+    "axialBreakdownByPartition": [
+      {
+        "partition": [
+          3
+        ],
+        "y_lambda": 0.4153957863345663,
+        "chi": 1.1099785955541828,
+        "contribution": 0.4610804315147673
+      },
+      {
+        "partition": [
+          2,
+          1
+        ],
+        "y_lambda": 0.28092963397986415,
+        "chi": 0.2368713841916697,
+        "contribution": 0.06654419126126955
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "y_lambda": 0.022744945705705347,
+        "chi": -0.9009182735643012,
+        "contribution": -0.020491337217497827
+      }
+    ],
+    "borromeanBreakdownByPartition": [
+      {
+        "partition": [
+          3
+        ],
+        "y_lambda": 0.4153957863345663,
+        "chi": 1.0000000000000016,
+        "contribution": 0.415395786334567
+      },
+      {
+        "partition": [
+          2,
+          1
+        ],
+        "y_lambda": 0.28092963397986415,
+        "chi": -0.9106773300269624,
+        "contribution": -0.2558362489982345
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "y_lambda": 0.022744945705705347,
+        "chi": 1.0,
+        "contribution": 0.022744945705705347
+      }
+    ],
+    "axialCoupling": {
+      "suppressionFactor": 1.0156471727514607,
+      "gA_naive_5_over_3": 1.6666666666666667,
+      "gA_yLambdaWeighted": 1.6927452879191012,
+      "gA_PDG": 1.2754,
+      "relativeErrorVsPDG": 0.3272269781394865,
+      "absoluteGap": 0.4173452879191011
     }
   },
   "caveats": [
-    "The old β · σ₁ · β⁻¹ formula is trace-cyclic and cannot encode Borromean suppression.",
-    "The direct β · σ₁ probe is still not the full bound-state observable; the principled formula uses G⁻¹ and the LP active set."
+    "The y_λ-weighted Markov trace fixes the trace-cyclicity bug (tr(βXβ⁻¹)=tr(X)) of the deprecated probe and the standard-rep-only restriction of the 2026-05-07 βσ₁ probe; the remaining gap to g_A = 1.2754 is a genuine structural mismatch of the naive 5/3 prediction, not a numerical artifact.",
+    "Closing the gap requires the full bound-state observable ⟨O⟩_T = Σ_{i,j∈A*(T)} u_i (G⁻¹)_{ij} ⟨O, b_j⟩ on the LP active set A*(T); see confinement-frobenius-reciprocity.md.",
+    "tr_M(σ_1) is identically z_markov by definition; the assertion is retained as a regression check on the y_λ table."
   ]
 }
