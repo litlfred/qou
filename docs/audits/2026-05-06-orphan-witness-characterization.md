@@ -21,6 +21,11 @@ failure mode, content-block claim status, and suggested next action.
 In the subsequent **unwrap chains** pass (this PR), those 30 were moved
 to `_deprecated/`, bringing live orphan count to **0**.
 
+The intermediate `stale-claims: 3` entry is the C.1 subset below:
+three witnesses whose `contentBlock` labels were stale at the snapshot;
+after unwrap they are no longer in the live audit set, so the live
+`stale-claims` count is 0.
+
 ## A. FAILING (4) — assertions present and red
 
 These witnesses run, but at least one assertion fails.  They are the
