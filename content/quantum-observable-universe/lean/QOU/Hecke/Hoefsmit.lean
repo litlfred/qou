@@ -1,6 +1,7 @@
 import QOU.Hecke.Algebra
 import QOU.Hecke.Wedderburn
 import Mathlib.LinearAlgebra.Matrix.Basic
+import Mathlib.LinearAlgebra.Matrix.Charpoly.Basic
 
 /-!
 # Hoefsmit seminormal-form representation of `H_n(q)`
@@ -159,19 +160,26 @@ def wordImage {λ : Partition n}
   | g :: gs => HR.seminormal_matrix g * wordImage gs
 
 /-- `HasEigenvalueRatio M r` asserts that the matrix `M` has two
-nonzero eigenvalues `μ₁`, `μ₂` (with multiplicity) whose ratio is
-`r` — that is, there exists `μ` such that both `μ` and `r * μ`
-appear in the spectrum, and `μ ≠ 0`.
+nonzero eigenvalues `μ₁`, `μ₂` (counted with algebraic multiplicity)
+whose ratio is `r` — that is, there exists `μ ≠ 0` such that the
+characteristic polynomial of `M` is divisible by
+`(X − μ) · (X − r·μ)`.
 
-We state the predicate via the characteristic polynomial vanishing
-condition: `λ` is an eigenvalue of `M` iff `det (M - λ • 1) = 0`.
-This avoids committing to a particular eigenvalue-extraction API. -/
+When `r ≠ 1` the two factors are coprime, so the divisibility is
+equivalent to `μ` and `r·μ` each appearing as roots (each with
+algebraic multiplicity ≥ 1). When `r = 1` the product collapses
+to `(X − μ)²`, so divisibility correctly forces `μ` to have
+algebraic multiplicity ≥ 2 — the multiplicity case the docstring
+demands. (A weaker formulation in terms of two separate
+`det (M − λ • 1) = 0` conditions would be trivially satisfied at
+`r = 1` by any single nonzero eigenvalue, which is *not* the
+intended meaning.) -/
 def HasEigenvalueRatio
     {d : ℕ} [DecidableEq (Fin d)] (M : Matrix (Fin d) (Fin d) R)
     (r : R) : Prop :=
   ∃ μ : R, μ ≠ 0 ∧
-    (M - μ • (1 : Matrix (Fin d) (Fin d) R)).det = 0 ∧
-    (M - (r * μ) • (1 : Matrix (Fin d) (Fin d) R)).det = 0
+    ((Polynomial.X - Polynomial.C μ) *
+        (Polynomial.X - Polynomial.C (r * μ))) ∣ M.charpoly
 
 /-- The block-trace of the Hoefsmit representation at partition `λ`
 restricted to a Hecke generator gives the (q = 1 limit of) the

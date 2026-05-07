@@ -167,6 +167,16 @@ block.  For `3 ≤ n < 5` we emit the Python fallback
 `[σ₀, σ₁, σ₀]`.  For `n < 3` no generators exist and the word
 is empty.
 
+**Intentional deviation from the verbatim Python at `n = 4`.** The
+Python reference applies the `< 4` fallback (so `n = 4` enters the
+loop body), but the loop's `delta_I = [1, 3, 1]` writes index `3`,
+which is out of bounds in `Fin (n − 1) = Fin 3` for `n = 4` and
+would not type-check on the Lean side. We therefore extend the
+fallback to `3 ≤ n < 5` so the construction stays well-typed. The
+`n = 4` case is not part of the staircase conjecture's testable
+regime (`staircaseStrands k = k(k+1)/2 ∈ {3, 6, 10, 15, …}`), so
+this deviation does not weaken any downstream theorem.
+
 Replaces the previous `opaque` declaration so downstream
 `wordImage` calls see a concrete list rather than an unevaluable
 black box. -/
