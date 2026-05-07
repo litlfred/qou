@@ -84,6 +84,21 @@ theorem nodeOf_inTruncation
     M.inTruncation (C.nodeOf T) :=
   M.truncation_holds T
 
+/-- Unconditional consequence: every normal form's crystal node has
+    column count strictly less than `k`.  Direct consequence of
+    `truncation_holds` together with `inTruncation_iff`.  This is
+    the form actually used downstream by the MTC truncation pipeline:
+    it bounds the number of columns in the partition labelling each
+    GS normal form by the chosen root-of-unity level `k`. -/
+-- Ref: [manuscript] braids-and-knots/root-of-unity-mtc-truncation
+theorem columnCount_nodeOf_lt_k
+    {R : Type u} [CommRing R] {q : R} {k : ℕ}
+    [C : CrystalGraphRealization R q]
+    [M : RootOfUnityMTCTruncation R q k]
+    (T : C.NormalForm) :
+    M.columnCount (C.nodeOf T) < k :=
+  (M.inTruncation_iff (C.nodeOf T)).mp (M.truncation_holds T)
+
 /-- **Trivial model (consistency witness, `k = 2`).**
 
     Concrete `RootOfUnityMTCTruncation R q 2` over an upstream

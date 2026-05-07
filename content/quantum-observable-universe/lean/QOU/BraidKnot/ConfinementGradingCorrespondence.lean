@@ -56,6 +56,20 @@ theorem confLevel_le_klrTopDegree
     F.confLevel T ≤ F.klrTopDegree T :=
   (F.filtrations_agree T).le
 
+/-- Unconditional consequence (reverse direction): the KLR top degree
+    is upper-bounded by the confinement filtration.  Together with
+    `confLevel_le_klrTopDegree` this packages `filtrations_agree` as
+    a two-sided ≤ pair, the form most often used in proofs about the
+    GS shadow-price filtration. -/
+-- Ref: [manuscript] braids-and-knots/confinement-grading-correspondence
+theorem klrTopDegree_le_confLevel
+    {R : Type u} [CommRing R] {q : R}
+    [C : CrystalGraphRealization R q]
+    [F : ConfinementGradingCorrespondence R q]
+    (T : C.NormalForm) :
+    F.klrTopDegree T ≤ F.confLevel T :=
+  (F.filtrations_agree T).symm.le
+
 /-- **Trivial model (consistency witness).**
 
     Concrete `ConfinementGradingCorrespondence R q` over an

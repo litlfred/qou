@@ -71,6 +71,25 @@ theorem nodeOf_highest_weight
     C.raising i (C.nodeOf T) = none :=
   C.crystal_realises T i
 
+/-- Highest-weight predicate on a crystal node: every Kashiwara raising
+    operator `ẽ_i` annihilates it.  Standard Kashiwara/Lecouvey
+    convention. -/
+-- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
+-- Ref: [lecouvey2007] https://doi.org/10.2969/msjmemoirs/01701C040
+def IsHighestWeight {R : Type u} [CommRing R] {q : R}
+    [C : CrystalGraphRealization R q] (v : C.CrystalNode) : Prop :=
+  ∀ i : ℕ, C.raising i v = none
+
+/-- Unconditional packaged form: the crystal node attached to any GS
+    normal form is a Kashiwara highest-weight vector.  This is the
+    clean, downstream-usable restatement of `crystal_realises`. -/
+-- Ref: [manuscript] braids-and-knots/crystal-graph-realization
+theorem nodeOf_isHighestWeight
+    {R : Type u} [CommRing R] {q : R} [C : CrystalGraphRealization R q]
+    (T : C.NormalForm) :
+    IsHighestWeight (C.nodeOf T) :=
+  fun i => C.crystal_realises T i
+
 /-- **Trivial model (consistency witness).**
 
     Concrete `CrystalGraphRealization R q` with `NormalForm` and
