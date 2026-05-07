@@ -330,5 +330,6 @@
   "caveats": [
     "All values derived from q_0 (50-digit) via canonical Hoefsmit seminormal construction.  No fit constants introduced.  The det-product law and bar-pair count are categorical consequences of bar-involution compatibility (Tier-A1 Property 5, 6f447ce1); this probe reports them as derived (not fitted) at q = q_0.",
     "(4,3,2,1) full β_EW eigendecomposition skipped (dim=768).  Per-generator det computation suffices because det is multiplicative on the braid word and the word contains no inverse generators."
-  ]
+  ],
+  "auditOnly": "docs/audits/2026-05-06-staircase-bar-pair-recursion.md"
 }

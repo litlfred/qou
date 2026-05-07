@@ -23,4 +23,10 @@ export default proposition({
     "conj:knot-factor-frobenius-pairing",
   ],
   cites: ["yekutieli2015", "kassel1995"],
+  computation: {
+    engine: "numpy",
+    script: "folio-assistant/computations/borromean-axial-coupling.py",
+    witness: "folio-assistant/computations/borromean-axial-coupling.witness.json",
+    status: "verified",
+  },
 });

@@ -15,6 +15,15 @@ export default conjecture({
     "conj:weinberg-angle-categorical",
   ],
   cites: ["hoefsmit1974", "mathas1999"],
+  computation: {
+    engine: "numpy",
+    script: "folio-assistant/computations/staircase_ew_residual_conjecture.py",
+    witness: [
+      "folio-assistant/computations/staircase-ew-residual-conjecture.witness.json",
+      "folio-assistant/computations/close-321-weinberg-gap.witness.json",
+    ],
+    status: "verified",
+  },
   tags: [
     "staircase-partition",
     "ew-residual",
