@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """MAG-126 verification: extend magic-numbers-numerical-witness.py to Z=126.
 
 Optimizes the n=378 enumeration bottleneck:

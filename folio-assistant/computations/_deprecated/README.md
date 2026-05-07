@@ -1,4 +1,4 @@
-# Deprecated witnesses
+# Deprecated witnesses and producing scripts
 
 This directory holds `*.witness.json` files that are **dead exploratory
 probes** from earlier research passes:
@@ -9,11 +9,18 @@ probes** from earlier research passes:
 - the witness body itself contains no assertions
   (`falsifiability == "no-assertions"`)
 
-They are kept under git history rather than deleted because the
-producing scripts (in the parent `folio-assistant/computations/`
-directory) may still be imported by live code, and reviving an
-exploration only requires re-running the producer to re-emit the
-witness next to its script.
+It also holds the **producing `.py` scripts** for those witnesses, when
+the script is not imported by any live (non-`_deprecated/`) code.  In a
+follow-on pass (this PR), 262 of the 285 candidate scripts were moved
+here alongside their witnesses; the remaining 23 candidate scripts are
+**kept in place** under `folio-assistant/computations/` with a
+`# DEPRECATION-CANDIDATE: ...` header comment, because they are still
+imported by live code and moving them would break the importer.  Those
+23 should be revisited when the live importer is itself retired or
+rewired off the deprecated dependency.
+
+Reviving an exploration only requires running the producer to re-emit
+the witness next to its script.
 
 ## Audit-wiring behavior
 
