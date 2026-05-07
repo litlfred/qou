@@ -11,4 +11,9 @@ $F_\nabla = d\mathcal{A} + \mathcal{A} \wedge \mathcal{A} \in \Omega^2(A)$,
 which is $A$-linear ($F_\nabla(f \cdot s) = f \cdot F_\nabla(s)$).
 (When the substrate parameter $q$ is introduced in
 [substrate parameter](#def:substrate-parameter), this calculus deforms to the
-Woronowicz $3D$-calculus on $\mathcal{O}_q(\mathrm{SU}(2))$.)
+Woronowicz left-covariant $3D$ differential calculus on
+$\mathcal{O}_q(\mathrm{SU}(2))$ \cite{woronowicz1987-twisted-su2}.  We rely
+throughout on the \emph{left-covariant} (left-invariant) $3D$ calculus
+of \cite{woronowicz1987-twisted-su2}; this calculus is not bi-covariant,
+and the distinction matters for the deformation theory of $d$ away from
+the classical limit $q = 1$.)

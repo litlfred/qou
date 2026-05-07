@@ -7,10 +7,12 @@ faithfulness of the Haar state for compact quantum groups).  The category
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ is $R$-linear, rigid
 monoidal (duals given by contragredient representations), and the forgetful
 functor $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ is exact,
-faithful, and monoidal.  The Woronowicz $3D$-calculus
+faithful, and monoidal.  The Woronowicz left-covariant $3D$ differential
+calculus \cite{woronowicz1987-twisted-su2}
 $\Omega^1(A) = \ker(\varepsilon) / \ker(\varepsilon)^2$ is a
 $3$-dimensional $A$-bimodule in $\mathbf{C}$, providing the differential
-calculus axiom.
+calculus axiom; we use the left-covariant (not bi-covariant) $3D$
+calculus of \cite{woronowicz1987-twisted-su2} throughout.
 
 *Item (2).*
 The adjoint representation $\mathrm{Ad}(A)$ decomposes under
