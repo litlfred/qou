@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-07T13:02:52.404415+00:00",
-  "commitSha": "191bd9f54ee672873899ef66801bb13f0ffa6fa7",
+  "computedAt": "2026-05-07T13:15:16.345282+00:00",
+  "commitSha": "227542a0c761bd4dec5c5a2fc6f03e45c379ba69",
   "assertions": [
     {
       "name": "cyclic standard trace identity",
@@ -32,11 +32,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 35,
+  "durationMs": 6,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
   "scriptHash": "00d1dbeee064",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "227542a0c761bd4dec5c5a2fc6f03e45c379ba69",
   "description": "Restored Borromean axial-coupling probe. Diagnoses the cyclic-trivial βσ₁β⁻¹ bug and replaces it with the non-conjugate βσ₁ probe.",
   "auditOnly": "docs/audits/2026-05-07-borromean-axial-coupling-fix.md",
   "parameters": {
