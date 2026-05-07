@@ -11,13 +11,26 @@ probes** from earlier research passes:
 
 It also holds the **producing `.py` scripts** for those witnesses, when
 the script is not imported by any live (non-`_deprecated/`) code.  In a
-follow-on pass (this PR), 262 of the 285 candidate scripts were moved
-here alongside their witnesses; the remaining 23 candidate scripts are
+follow-on pass, 262 of the 285 candidate scripts were moved here
+alongside their witnesses; the remaining 23 candidate scripts are
 **kept in place** under `folio-assistant/computations/` with a
 `# DEPRECATION-CANDIDATE: ...` header comment, because they are still
 imported by live code and moving them would break the importer.  Those
 23 should be revisited when the live importer is itself retired or
 rewired off the deprecated dependency.
+
+A subsequent **"unwrap chains"** pass (this PR) moved the 30 remaining
+orphan witnesses from the live area, plus their producer scripts, plus
+the transitive closure of producer scripts that became unimported as a
+result.  This brought the orphan-witness count to **0** and the live
+script count from 522 down to ~225.  Restoration safety net: any wired
+or audit-only witness whose `scriptFile` claim was about to be moved
+was detected and the producer (and its transitive imports) were kept
+in the live area.  Canonical scripts named in
+[`../README.md`](../README.md) (`gb_residue_tower.py`,
+`habiro_residue_symbolic.py`, `frobenius_partition_sum.py`,
+`y_lambda_symbolic_validate.py`, `atom_mass_partition.py`) were also
+explicitly preserved.
 
 Reviving an exploration only requires running the producer to re-emit
 the witness next to its script.
