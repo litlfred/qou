@@ -1,0 +1,76 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-07T13:02:52.404415+00:00",
+  "commitSha": "191bd9f54ee672873899ef66801bb13f0ffa6fa7",
+  "assertions": [
+    {
+      "name": "cyclic standard trace identity",
+      "computed": 0.20906032198987912,
+      "expected": 0.20906032198987945,
+      "passed": true,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "cyclic trivial trace identity",
+      "computed": 1.1099785955541805,
+      "expected": 1.1099785955541805,
+      "passed": true,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "direct probe breaks cyclic triviality",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "direct probe stays near PDG",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 35,
+  "computation": "borromean-axial-coupling",
+  "scriptFile": "borromean-axial-coupling.py",
+  "scriptHash": "00d1dbeee064",
+  "scriptCommitSha": "unknown",
+  "description": "Restored Borromean axial-coupling probe. Diagnoses the cyclic-trivial βσ₁β⁻¹ bug and replaces it with the non-conjugate βσ₁ probe.",
+  "auditOnly": "docs/audits/2026-05-07-borromean-axial-coupling-fix.md",
+  "parameters": {
+    "q": 1.1099785955541805,
+    "betaBorr": "σ₁ σ₂⁻¹ σ₁ σ₂⁻¹",
+    "conversionOperator": "σ₁"
+  },
+  "data": {
+    "qIntegers": {
+      "[2]_q": 2.010896869118482,
+      "[3]_q": 3.0437062182305117,
+      "[4]_q": 4.109682435637708,
+      "[5]_q": 5.220441324664572
+    },
+    "cyclicDiagnostic": {
+      "operator": "β · σ₁ · β⁻¹",
+      "trStandard": 0.20906032198987912,
+      "trTrivial": 1.1099785955541805,
+      "suppression": 0.9999999999999984
+    },
+    "directProbe": {
+      "operator": "β · σ₁",
+      "trStandard": 0.8781728221432924,
+      "trTrivial": 1.1099785955541805,
+      "trSign": -0.9009182735643011,
+      "channelRatioStdOverTriv": 0.791161942816425,
+      "gA_naive": 1.6666666666666667,
+      "gA_directProbe": 1.3186032380273751,
+      "targetPDG": 1.2754,
+      "relativeErrorVsPDG": 0.033874265349988254
+    }
+  },
+  "caveats": [
+    "The old β · σ₁ · β⁻¹ formula is trace-cyclic and cannot encode Borromean suppression.",
+    "The direct β · σ₁ probe is still not the full bound-state observable; the principled formula uses G⁻¹ and the LP active set."
+  ]
+}
