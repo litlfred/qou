@@ -183,6 +183,7 @@ class WitnessBuilder:
 
         self.description: Optional[str] = None
         self.content_block: Optional[str] = None
+        self.audit_only: Optional[str] = None
         self.assertions: list[Assertion] = []
         self.parameters: dict[str, Any] = {}
         self.data: dict[str, Any] = {}
@@ -219,6 +220,32 @@ class WitnessBuilder:
     def set_content_block(self, label: str) -> "WitnessBuilder":
         """Link this witness to a content block label (e.g. 'prop:foo')."""
         self.content_block = label
+        return self
+
+    def set_audit_only(self, report_path: str) -> "WitnessBuilder":
+        """Mark this witness as audit-only — produced by an audit/probe whose
+        report lives in ``docs/audits/*.md`` and which is **not expected** to
+        wire to a content block via ``computation.witness``.
+
+        Setting this field excludes the witness from the orphan tally
+        computed by ``scripts/audit-wiring.ts``.
+
+        Parameters
+        ----------
+        report_path : str
+            Path to the audit report (typically
+            ``docs/audits/YYYY-MM-DD-<slug>.md``), relative to repo root.
+
+        Examples
+        --------
+        ::
+
+            w = WitnessBuilder("path-b-evacuation", engine="numpy")
+            w.set_audit_only("docs/audits/2026-05-06-path-b-evacuation.md")
+            ... # compute
+            w.save()
+        """
+        self.audit_only = report_path
         return self
 
     def add_assertion(
@@ -308,6 +335,8 @@ class WitnessBuilder:
             witness["description"] = self.description
         if self.content_block:
             witness["contentBlock"] = self.content_block
+        if self.audit_only:
+            witness["auditOnly"] = self.audit_only
         if self.parameters:
             witness["parameters"] = self.parameters
         if self.data:

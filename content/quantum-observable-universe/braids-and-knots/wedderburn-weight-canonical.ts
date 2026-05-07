@@ -19,5 +19,11 @@ export default proposition({
     "prop:wedderburn-as-noncomm-fourier",
   ],
   cites: ["jones1985", "wenzl1988", "kassel1995"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/bw_wenzl_shadow_equivalence.py",
+    witness: "docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json",
+    status: "verified",
+  },
   lean: { ref: "qou:QOU.BraidKnot.wedderburnWeightCanonical" },
 });

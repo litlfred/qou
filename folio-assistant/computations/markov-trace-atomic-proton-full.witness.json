@@ -1,0 +1,20 @@
+{
+  "computation": "markov-trace-atomic-proton-full",
+  "description": "Symbolic Markov-trace closed form for the actual atomic-braid 11-crossing proton word \u03c3_1^7 \u03c3_2^4 in H_3(q), derived via direct axiomatic reduction. Uses the Hecke-power recurrence \u03c3_i^k = a_k(h) \u03c3_i + b_k(h) where a_{k+1} = a_k h + b_k, b_{k+1} = a_k. Combined with Markov-axiom values on the H_3 basis to get the closed form in \u211a(q).",
+  "reference_blocks": [
+    "prop:atomic-mass-gb-nf",
+    "prop:categorical-mass-markov"
+  ],
+  "computedAt": "2026-05-05T22:46:14.246437+00:00",
+  "hecke_power_a_7": "h**6 + 5*h**4 + 6*h**2 + 1",
+  "hecke_power_b_7": "h**5 + 4*h**3 + 3*h",
+  "hecke_power_a_4": "h**3 + 2*h",
+  "hecke_power_b_4": "h**2 + 1",
+  "tr_M_proton_full_symbolic": "(2*q**(41/2) + 4*q**(39/2) - 2*q**(37/2) - 8*q**(35/2) + 2*q**(33/2) + 12*q**(31/2) - q**(29/2) - 14*q**(27/2) + 14*q**(23/2) - 14*q**(19/2) - q**(17/2) + 12*q**(15/2) + 2*q**(13/2) - 8*q**(11/2) - 2*q**(9/2) + 4*q**(7/2) + 2*q**(5/2) + q**21 + 2*q**20 + q**19 - q**18 - 2*q**17 + 3*q**15 + 2*q**14 - 2*q**13 - 2*q**12 + 2*q**11 + 2*q**10 - 2*q**9 - 3*q**8 + 2*q**6 + q**5 - q**4 - 2*q**3 - q**2)/(q**13 + 3*q**12 + 3*q**11 + q**10)",
+  "tr_M_proton_full_factored": "(2*q**(41/2) + 4*q**(39/2) - 2*q**(37/2) - 8*q**(35/2) + 2*q**(33/2) + 12*q**(31/2) - q**(29/2) - 14*q**(27/2) + 14*q**(23/2) - 14*q**(19/2) - q**(17/2) + 12*q**(15/2) + 2*q**(13/2) - 8*q**(11/2) - 2*q**(9/2) + 4*q**(7/2) + 2*q**(5/2) + q**21 + 2*q**20 + q**19 - q**18 - 2*q**17 + 3*q**15 + 2*q**14 - 2*q**13 - 2*q**12 + 2*q**11 + 2*q**10 - 2*q**9 - 3*q**8 + 2*q**6 + q**5 - q**4 - 2*q**3 - q**2)/(q**10*(q + 1)**3)",
+  "tr_M_proton_at_q0": 1.6331535640480812,
+  "tr_M_proton_at_inv_q0": -0.024128599002128222,
+  "ratio_at_inv_q": -0.014774237728337627,
+  "rho_p_codata": 1124.298744050247,
+  "matches_char_fast": true
+}

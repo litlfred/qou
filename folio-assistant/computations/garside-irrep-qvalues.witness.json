@@ -1,14 +1,16 @@
 {
-  "title": "Per-irrep Garside Q-values (quark level, 2-row)",
+  "computedAt": "2026-04-12T09:15:16.900639+00:00",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "parameters": {
     "q": 1.1099785955541805,
     "h": 0.20906032198987945,
     "z": 0.4993203340335982,
     "m_e_MeV": 0.51099895
   },
+  "title": "Per-irrep Garside Q-values (quark level, 2-row)",
   "decays": [
     {
-      "name": "n\u2192p",
+      "name": "n→p",
       "A": 1,
       "n_quarks": 3,
       "Z_par": 0,
@@ -19,7 +21,7 @@
       "sum_weighted_dtr": 0.10643375183998782,
       "sum_dtr": 0.31815910101293465,
       "sum_abs_weighted_dtr": 0.10643375183998782,
-      "weight_coverage": 1.0,
+      "weight_coverage": 1,
       "irreps": [
         {
           "partition": [
@@ -43,7 +45,7 @@
       ]
     },
     {
-      "name": "\u00b3H\u2192\u00b3He",
+      "name": "³H→³He",
       "A": 3,
       "n_quarks": 9,
       "Z_par": 1,
@@ -54,7 +56,7 @@
       "sum_weighted_dtr": 0.008720129904319255,
       "sum_dtr": 3.6403492907938593,
       "sum_abs_weighted_dtr": 0.008720129904319255,
-      "weight_coverage": 1.0,
+      "weight_coverage": 1,
       "irreps": [
         {
           "partition": [
@@ -108,7 +110,7 @@
       ]
     },
     {
-      "name": "\u2076He\u2192\u2076Li",
+      "name": "⁶He→⁶Li",
       "A": 6,
       "n_quarks": 18,
       "Z_par": 2,
@@ -119,7 +121,7 @@
       "sum_weighted_dtr": 9.02079542785348e-11,
       "sum_dtr": 26.119044237188202,
       "sum_abs_weighted_dtr": 9.083737743993915e-11,
-      "weight_coverage": 3.8763609397647214e-05,
+      "weight_coverage": 0.000038763609397647214,
       "irreps": [
         {
           "partition": [
@@ -223,7 +225,6 @@
       ]
     }
   ],
-  "computedAt": "2026-04-12T09:15:16.900639+00:00",
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

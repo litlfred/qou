@@ -10,6 +10,12 @@ export default conjecture({
     "def:hecke-normal-form",
     "rem:hecke-algebra-from-braiding",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/ew_higgs_sdp_probe.py",
+    witness: "folio-assistant/computations/ew-higgs-sdp-probe.witness.json",
+    status: "verified",
+  },
   tags: [
     "electroweak",
     "higgs",

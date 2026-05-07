@@ -1,7 +1,8 @@
 {
-  "schema": "audit-witness/v1",
   "computation": "tau-hat-n-proton-level-1-empty",
   "description": "Application of the proton-scale tau_hat_0 realisation (PR #533) to the mass-tower jet form. Finding: at A=1 the tower is structurally empty beyond level 0 (no triples at level 0 to source level-1 sub-braids). The proton residual ~500 ppm vs CODATA is therefore NOT a tower-truncation issue.",
+  "auditOnly": "docs/audits/2026-05-03-tau-hat-n-proton-level-1-empty.md",
+  "schema": "audit-witness/v1",
   "date": "2026-05-03",
   "branch": "claude/tau-hat-n-proton-probe",
   "verdict": "tower-empty-at-A-1",
@@ -11,7 +12,9 @@
     "n_nucleons": 1,
     "n_pairs": 0,
     "n_triples": 0,
-    "S_1_at_n_eq_0": ["{atom braid W}"],
+    "S_1_at_n_eq_0": [
+      "{atom braid W}"
+    ],
     "S_2_at_n_eq_0": [],
     "S_1_at_n_geq_1": "empty (no triple-absorption source)",
     "S_2_at_n_geq_1": "empty"
@@ -22,7 +25,10 @@
   },
   "where_phase_a3_applies": {
     "structural_threshold": "A >= 3 (atoms with at least 1 triple of nucleons at level 0)",
-    "smallest_relevant_atoms": ["T (Z=1, N=2)", "He-3 (Z=2, N=1)"],
+    "smallest_relevant_atoms": [
+      "T (Z=1, N=2)",
+      "He-3 (Z=2, N=1)"
+    ],
     "current_residuals_at_A_3": {
       "T": "3200 ppm",
       "He3": "3100 ppm"

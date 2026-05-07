@@ -44,6 +44,8 @@ on:
       - "folio-assistant/computations/build_*.py"
       - "folio-assistant/computations/*.witness.json"
       - "folio-assistant/computations/*.derivation.json"
+      - "scripts/audit-wiring.ts"
+      - "scripts/audit-wiring-migrate.ts"
       - ".github/workflows/witness-pipeline.yml"
   push:
     branches: [main]
@@ -62,6 +64,8 @@ on:
       - "folio-assistant/computations/build_*.py"
       - "folio-assistant/computations/*.witness.json"
       - "folio-assistant/computations/*.derivation.json"
+      - "scripts/audit-wiring.ts"
+      - "scripts/audit-wiring-migrate.ts"
       - ".github/workflows/witness-pipeline.yml"
   workflow_dispatch:
 
@@ -145,6 +149,43 @@ jobs:
         run: |
           python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
 
+      - name: Axiomatic Markov-trace recursive reducer (H_3..H_6)
+        # Per prop:markov-trace-recursive-reducer: terminating axiom-
+        # only reducer for arbitrary H_n braid words. Smoke-tests the
+        # recursive descent on representative atomic-braid words
+        # (proton, neutron-like, deuteron disjoint) and emits the
+        # symbolic closed form + numerical value at q_0 for each.
+        run: |
+          python3 folio-assistant/computations/markov_trace_recursive.py
+
+      - name: Multi-atom axiomatic Markov-trace anchor (proton/neutron/deuteron)
+        # Per prop:markov-trace-recursive-reducer + prop:markov-trace-
+        # axiomatic-closed-form: applies the recursive reducer to all
+        # supported atoms, verifies the disjoint-product property
+        # tr_M(p ⊗ n) = tr_M(p) · tr_M(n) on the H_6 deuteron word
+        # (mpmath-exact at 50 dps), and cross-checks the proton against
+        # markov_trace_atomic_proton_full at float64 precision. Exits
+        # non-zero on any structural failure.
+        run: |
+          python3 folio-assistant/computations/markov_trace_axiomatic_multi_atom.py
+
+      - name: Atomic-braid mass-table (Strategy 3 — knot-op + Δ_n²)
+        # Re-derives the six-term mass formula using the atomic-braid
+        # Markov-trace anchor (PR #534/#547) with inter-carrier
+        # coupling via the canonical jet-knot-invariants a_k(Z,N) and
+        # full-twist Δ_n² scalar. Per-atom predictions for p, n, D,
+        # T, ³He, ⁴He vs CODATA. Informational; does not gate CI.
+        run: |
+          python3 folio-assistant/computations/atomic_braid_mass_table.py || true
+
+      - name: Full-twist Δ_n² scalar verification
+        # Per prop:categorical-neutrality-saturated-shells: tabulates
+        # c(λ) and q^c(λ) per Wedderburn block at n ∈ {1,...,12};
+        # records the empirical realisability of the categorical-
+        # neutrality predicate at magic n. Informational compute.
+        run: |
+          python3 folio-assistant/computations/full_twist_delta_n2_verification.py
+
       - name: Run lp_dual_witness_validator (warn-only)
         # Per prop:operator-selection-lp § dual program: every
         # operator-selection / LP / SDP witness should include the LP
@@ -153,6 +194,22 @@ jobs:
         # witnesses are missing the dual). To enforce: pass --strict.
         # Migration target: route LP solves through lp_dual_solver.py.
         run: python3 folio-assistant/computations/lp_dual_witness_validator.py
+
+      - name: Witness wiring audit (warn-only)
+        # Three-bucket triage of every Python `.witness.json`:
+        #   wired   → referenced by `computation.witness` in some content block
+        #   audit-only → declares top-level `auditOnly: docs/audits/*.md`
+        #   orphan  → neither (actionable)
+        # Currently warn-only.  After per-directory orphan count drops
+        # below 50, swap `--warn-only` for `--max-per-dir 5 --baseline N`
+        # to enforce the §5 budget gate.  See scripts/audit-wiring.ts and
+        # `develop triage policy` PR for the full policy.
+        run: |
+          # Install bun on demand (workflow's other steps are pure Python).
+          curl -fsSL https://bun.sh/install | bash
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun run scripts/audit-wiring.ts --warn-only
+
 
       - name: Detect drift in committed witnesses
         run: |

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """Family-1 binding via Kashaev law — historical knot identifications.
 
 Implements the leading-order family-1 formula from

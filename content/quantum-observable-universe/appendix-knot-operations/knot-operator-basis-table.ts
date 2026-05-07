@@ -16,4 +16,10 @@ export default remark({
     "prop:frobenius-gram-matrix",
   ],
   interprets: "prop:knot-operator-selection",
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/photon_operator_table.py",
+    witness: "folio-assistant/computations/photon-operator-table.witness.json",
+    status: "verified",
+  },
 });

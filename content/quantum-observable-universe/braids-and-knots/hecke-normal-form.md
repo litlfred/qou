@@ -16,3 +16,11 @@ resulting basis elements are in bijection with the symmetric
 group $S_n$: each $w \in S_n$ gives a basis element
 $T_w = T_{s_{i_1}} \cdots T_{s_{i_k}}$ for any reduced
 expression $w = s_{i_1} \cdots s_{i_k}$.*
+
+**Computational shortcut.**
+*Under the Brundan–Kleshchev isomorphism the irreducible $T_w$
+are equivalently the highest-weight vertices of a finite component
+of the Kashiwara crystal $\mathrm{Cryst}(\mathfrak{sl}_n)$; the
+engine may compute $T_w$ by directed crystal traversal rather than
+by S-polynomial overlap analysis.  See
+[crystal-graph realisation](#conj:crystal-graph-realization).*

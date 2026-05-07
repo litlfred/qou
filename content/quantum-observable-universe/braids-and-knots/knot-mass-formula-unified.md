@@ -7,6 +7,18 @@ volume at generator $i$ of the braid word.  Let
 $\Phi_q(z) = \prod_{k \geq 1} (1 - q^{-k} z)^{-1}$ be the quantum
 dilogarithm and $z = 1/(q^{1/2} + q^{-1/2})$ the Markov parameter.
 
+*The boxed theorem below is the **six-term spectral expansion** of
+the Gröbner–Shirshov-NF mass identity
+([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
+$\mathfrak{m}(\varrho) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$.
+The descended $\lvert\!\operatorname{tr}_M(T_w)\!\rvert$ piece supplies
+the GB-NF normal-form trace; the brane tower and Frobenius co-Casimir
+are the spectral decomposition of $\rho_K$ across Wedderburn blocks.
+Empirically the six-term sum recovers $\rho_K^{\mathrm{CODATA}}$ to
+$\sim 5\%$ for $A = 1$ but under-predicts by $22\%$–$31\%$ for $A \in \{2, 3\}$
+(`rho-k-codata-vs-six-term.witness.json`), so the spectral closure of
+$\rho_K$ from braid data alone remains open.*
+
 **Theorem (unified knot mass formula).**
 *The categorical mass of the vortex $\varrho$ is*
 
@@ -15,14 +27,86 @@ $$
     \mathfrak{m}(\varrho)
     \;=\;
     \underbrace{\bigl|\mathrm{tr}_M(T_w)\bigr|}_{\text{descended}}
-    \;+\;
-    \underbrace{\sum_{i=0}^{n-2} \Phi_q\bigl(|\hat V_i^{\mathrm{full}}|\bigr)
-               + z^2 \sum_{0 \leq i < j \leq n-2}
-                  \Phi_q\bigl(|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|\bigr)}_{\text{brane tower}}
+    \;-\;
+    \underbrace{\sum_{i=0}^{n-2} \mathrm{Li}_2^q\bigl(-|\hat V_i^{\mathrm{full}}|\bigr)
+               - z^2 \sum_{0 \leq i < j \leq n-2}
+                  \mathrm{Li}_2^q\bigl(-|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}|\bigr)}_{\text{brane tower}}
     \;+\;
     \underbrace{m_e \cdot \mathrm{tr}_M\bigl(C_{\dim_q}^{H_n(R, q)}\bigr)}_{\text{Frobenius co-Casimir}}
   }
 $$
+
+*where $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$
+is the symmetric q-dilogarithm with
+$[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  Per
+([mass endomorphism tower proof](#prop:mass-endomorphism-tower)), this
+is the closed-form result of integrating the Briggs–Klein
+expansion flow $\int_0^V (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$
+over each resolved defect $E_i \cong \mathbb{P}^1(\mathbb{C})$.*
+
+**Brane-tower-evaluation note (added 2026-05-03).**
+*The boxed brane-tower form $\sum_i \Phi_q(|\hat V_i|) + z^2 \sum_{i<j}
+\Phi_q(|\hat V_i \hat V_j|)$ is the **archimedean Kashaev specialisation**
+of the algebraic R-side form
+$\sum_i z\,\mathrm{Vol}_q^{(\{i\})}(\beta) + z^2\sum_{i<j}\mathrm{Vol}_q^{(\{i,j\})}(\beta)$
+in `prop:mass-endomorphism-tower`.  The Kashaev substitution
+$\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q(|\hat V_i|)$ evaluates the
+quantum dilogarithm on per-generator amplitudes, which are NOT
+Markov-invariant.  Numerically at $q_0 \approx 1.110$ this
+specialisation produces $\Phi_q(0.99) \approx 6.7 \times 10^5$ — i.e.
+each per-generator term contributes $\sim 10^5$ Hecke-units, summing
+to $\sim 10^6$ for atomic braids.  Tiny p/n asymmetries between
+mirror nuclei (T = 1p+2n vs $^3$He = 2p+1n) get amplified by
+$\sim 10^5\times$, predicting T − $^3$He $\approx -737$ MeV against
+CODATA $+0.019$ MeV.  See
+`brane-tower-isospin-diagnosis.witness.json` and
+`paper-six-term-isotope-sweep.witness.json` (the four `tower_mode`
+variants).*
+
+*The R-side algebraic form, by contrast, gives
+$\mathrm{tr}_M(\sigma_i) = z$ and $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
+(Markov axiom; `prop:markov-pair-z2`) for every braid
+$\beta$, so $T_2 = (n-1)\cdot z^2$ and $T_3 = \binom{n-1}{2}\cdot z^4$
+universally, depending only on the strand count $n$.  These are
+isospin-exact (T and $^3$He get identical T2+T3 since both have
+$n=3A=9$) and $O(1)$ Hecke-units at $q_0$ — six orders of
+magnitude smaller than the Kashaev-specialisation form.  At
+$q\to 1$ the closed-form trace value is $(1/2)^{2A-1}$, also
+isospin-exact.*
+
+*Implications.  The boxed Kashaev specialisation in this theorem is
+**Markov-invariance-broken at $q_0$** and produces hundreds-of-MeV
+isospin pathologies at the atomic-braid scale.  A complete proof
+requires either:*
+
+1. *replacing the boxed formula with the R-side algebraic form
+   $\sum_S z^{|S|}\,\mathrm{Vol}_q^{(S)}(\beta)$ — Markov-invariant
+   by construction; or*
+2. *replacing the per-generator $\Phi_q(|\hat V_i|)$ with a
+   Plancherel-weighted trace expansion $\sum_n c_n\,\mathrm{tr}_M(\sigma_i^n)$
+   (Heine identity; `brane-tower-plancherel-scaffold.witness.json`)
+   — converges to $\Phi_q(z)$ but each summand is a trace; or*
+3. *using the Habiro-coefficient sum $\sum_m a_m(T_w)\,(u;u)_m / \mathrm{denom}(u)$
+   per `prop:full-pole-structure-mass-trace` — single trace,
+   absorbs T2+T3+T6 into one cyclotomic expansion.*
+
+*Empirical: Path 3 (Habiro form) gives sub-1% atomic-mass errors
+on $\{p, n, D, T, ^3\mathrm{He}\}$ via a single-prefactor binding
+model (`path-b-habiro-mass-probe.witness.json`).  None of the
+additive variants of paths 1, 2 reach this accuracy when forced
+through the proton-calibration in the boxed theorem — suggesting
+that the additive structure itself may need to be re-derived from
+the categorical mass identity $\mathfrak{m}_{q,K} = m_e\cdot\rho\cdot|\mathrm{tr}_M(T_w)|$
+([categorical mass, Markov](#prop:categorical-mass-markov)) rather
+than treated as a sum of independent pieces.*
+
+*This is **not a refutation of the theorem** — the algebraic form
+$\sum_S z^{|S|}\mathrm{Vol}_q^{(S)}$ is correct as a Hochschild-page
+decomposition (`prop:gb-spectral-sequence`).  It is a flag that
+the boxed Kashaev specialisation is the wrong evaluation step at
+$q_0$, and the open derivation question is which of paths 1–3
+(or another structural reformulation) gives the canonical numerical
+value matching CODATA.*
 
 *where*
 

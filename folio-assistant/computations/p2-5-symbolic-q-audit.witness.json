@@ -1,8 +1,9 @@
 {
-  "computation": "p2-5-symbolic-q-audit",
-  "purpose": "P2.5 audit: triage every Python script in folio-assistant/computations/ as compliant / mpmath-only / partial / early-substitution / no-q-dependence. Emits the prioritised refactor target list (top-20 by witness-JSON visibility).",
-  "narrative_block": "audit \u00a73\u00b7E + workplan P2.5",
   "computedAt": "2026-05-02T06:08:27.540143+00:00",
+  "computation": "p2-5-symbolic-q-audit",
+  "auditOnly": "docs/audits/2026-05-02-p2-5-symbolic-q-audit.md",
+  "purpose": "P2.5 audit: triage every Python script in folio-assistant/computations/ as compliant / mpmath-only / partial / early-substitution / no-q-dependence. Emits the prioritised refactor target list (top-20 by witness-JSON visibility).",
+  "narrative_block": "audit §3·E + workplan P2.5",
   "n_files_total": 610,
   "category_counts": {
     "mpmath-only": 169,

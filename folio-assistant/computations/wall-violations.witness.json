@@ -1,7 +1,8 @@
 {
-  "computation": "wall-violations-sweep",
   "computedAt": "2026-05-02T06:44:36.203Z",
+  "computation": "wall-violations-sweep",
   "description": "Audit P0.1 — strict-Archimedean-wall enforcement at the proof level. Greps proof bodies for Mostow / Vol(K) / Gromov / Thurston / Kashaev / Murakami / SnapPy / hyperbolic / cusp shape / SW thimble. Auto-triage buckets: 'citation' (cite-adjacent, OK), 'appendix-surreals' (whole chapter is post-Archimedean by design, OK), 'verification-witness' (auxiliary numerical check — SnapPy/Vol independently verifies an algebraically-derived value, OK), 'tau-side-label' (refers to a τ-image block, OK), 'candidate' (manual review required).",
+  "auditOnly": "docs/audits/2026-05-01-tier3-progress.md",
   "patternCount": 10,
   "fileCount": 9,
   "totalHits": 20,

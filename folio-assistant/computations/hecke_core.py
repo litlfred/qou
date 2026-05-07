@@ -72,7 +72,14 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 #   2. Molecular binding: uses E_HARTREE = m_e·c²·α² → USES corrected α.
 #   3. Half-lives: uses α_EM in Fermi phase space (Sommerfeld factor) → USES corrected α.
 #
-# Bare value (Hecke algebra projection, no CS correction):
+# Bare value (Hecke algebra projection, no CS correction).
+# This is the multiplicative-chain identity from
+# prop:alpha-em-shift-multiplicative-chain:
+#   α_EM⁻¹ = q · [α_shift(T_{2,9})]_q · [α_shift(T_{3,5})]_q
+#          = q · [9]_q · [10]_q
+# where α_shift(T_{p,k}) = k(p-1) on V_{(1^p)} per
+# prop:alpha-shift-torus-knot. Verified to 50 dps in
+# folio-assistant/computations/alpha-em-shift-multiplicative-chain.witness.json
 _bare_alpha_em = qi / (q_int(9) * q_int(10))
 _bare_alpha_inv = q0 * q_int(9) * q_int(10)
 

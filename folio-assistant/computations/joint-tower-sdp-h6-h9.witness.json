@@ -1,7 +1,8 @@
 {
-  "computation": "joint-tower-sdp-h6-h9",
   "computedAt": "2026-04-27T02:24:57.604259+00:00",
+  "computation": "joint-tower-sdp-h6-h9",
   "description": "Phase 3b: extend joint-tower SDP solver from H_3 ground truth to H_6 (²H), H_9 (³H, ³He). Historical knot identifications (6_2, 8_11, L6a4) consumed; cvxpy SDP feasibility checked on H_3 Hoefsmit blocks for ²H and ³He (B_3 braids); ³H (B_5 braid) deferred to Rust.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "design_spec": "prop:joint-tower-sdp-confinement",
   "consumed_by": "prop:atom-knot-mass-derivation",
   "phase": "3b",
@@ -97,30 +98,15 @@
         -2
       ],
       "filtration_certificate": {
-        "2": [
+        "0": [
           {
             "perm": [
-              2,
-              3,
-              1
-            ],
-            "canonical_word": [
               1,
-              2
-            ],
-            "coefficient_in_q": "-q**4 + 2*q**2 - 2 + 2/q**2 - 1/q**4"
-          },
-          {
-            "perm": [
-              3,
-              1,
-              2
-            ],
-            "canonical_word": [
               2,
-              1
+              3
             ],
-            "coefficient_in_q": "q**2 - 1 + q**(-2)"
+            "canonical_word": [],
+            "coefficient_in_q": "(q**2 - 1)*(q**4 - q**2 + (q**2 - 1)**3)/q**4"
           }
         ],
         "1": [
@@ -147,22 +133,37 @@
             "coefficient_in_q": "q**5 - 3*q**3 + 5*q - 5/q + 3/q**3 - 1/q**5"
           }
         ],
-        "0": [
+        "2": [
           {
             "perm": [
-              1,
               2,
-              3
+              3,
+              1
             ],
-            "canonical_word": [],
-            "coefficient_in_q": "(q**2 - 1)*(q**4 - q**2 + (q**2 - 1)**3)/q**4"
+            "canonical_word": [
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q**4 + 2*q**2 - 2 + 2/q**2 - 1/q**4"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "q**2 - 1 + q**(-2)"
           }
         ]
       },
       "filtration_shape": {
-        "2": 2,
+        "0": 1,
         "1": 2,
-        "0": 1
+        "2": 2
       },
       "max_grade": 2,
       "jet_log": [
@@ -497,219 +498,304 @@
         2
       ],
       "filtration_certificate": {
-        "7": [
+        "0": [
           {
             "perm": [
-              3,
-              4,
-              5,
-              2,
-              1
-            ],
-            "canonical_word": [
               1,
               2,
               3,
               4,
-              1,
-              2,
-              3
+              5
             ],
-            "coefficient_in_q": "(q**2 - 1)**3*(q**2 + (q**2 - 1)**2)/q**5"
-          },
-          {
-            "perm": [
-              3,
-              5,
-              2,
-              4,
-              1
-            ],
-            "canonical_word": [
-              1,
-              2,
-              3,
-              4,
-              3,
-              1,
-              2
-            ],
-            "coefficient_in_q": "(-2*q**2 - (q**2 - 1)**2)*(q**2 - 1)**5/q**7"
-          },
-          {
-            "perm": [
-              3,
-              5,
-              4,
-              1,
-              2
-            ],
-            "canonical_word": [
-              2,
-              3,
-              4,
-              1,
-              2,
-              3,
-              2
-            ],
-            "coefficient_in_q": "-q**7 + 5*q**5 - 12*q**3 + 18*q - 18/q + 12/q**3 - 5/q**5 + q**(-7)"
-          },
-          {
-            "perm": [
-              4,
-              2,
-              5,
-              3,
-              1
-            ],
-            "canonical_word": [
-              1,
-              2,
-              3,
-              4,
-              2,
-              3,
-              1
-            ],
-            "coefficient_in_q": "-q + 1/q - (q**2 - 1)**3/q**3"
-          },
-          {
-            "perm": [
-              4,
-              3,
-              5,
-              1,
-              2
-            ],
-            "canonical_word": [
-              2,
-              3,
-              4,
-              1,
-              2,
-              3,
-              1
-            ],
-            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
-          },
-          {
-            "perm": [
-              4,
-              5,
-              1,
-              3,
-              2
-            ],
-            "canonical_word": [
-              2,
-              3,
-              4,
-              2,
-              3,
-              1,
-              2
-            ],
-            "coefficient_in_q": "q**5 - 3*q**3 + 5*q - 5/q + 3/q**3 - 1/q**5"
-          },
-          {
-            "perm": [
-              4,
-              5,
-              2,
-              1,
-              3
-            ],
-            "canonical_word": [
-              3,
-              4,
-              1,
-              2,
-              3,
-              1,
-              2
-            ],
-            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
+            "canonical_word": [],
+            "coefficient_in_q": "(q**2 - 1)**3*(q**4 - q**2 + (q**2 - 1)**3)/q**6"
           }
         ],
-        "6": [
+        "1": [
           {
             "perm": [
               1,
-              5,
-              4,
+              2,
               3,
-              2
+              5,
+              4
             ],
             "canonical_word": [
-              2,
-              3,
-              4,
-              2,
-              3,
-              2
+              4
             ],
-            "coefficient_in_q": "-(q**2 - 1)*(q**4 - q**2 + (q**2 - 1)**3)/q**4"
+            "coefficient_in_q": "(q**2 - 1)**2*(-q**4 + q**2 - (q**2 - 1)**3)/q**5"
           },
           {
             "perm": [
-              3,
-              2,
-              5,
-              4,
-              1
-            ],
-            "canonical_word": [
               1,
               2,
-              3,
               4,
               3,
-              1
+              5
             ],
-            "coefficient_in_q": "(-2*q**2 - (q**2 - 1)**2)*(q**2 - 1)**4/q**6"
+            "canonical_word": [
+              3
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**5/q**5"
           },
           {
             "perm": [
+              1,
               3,
-              4,
               2,
-              5,
-              1
+              4,
+              5
             ],
             "canonical_word": [
-              1,
-              2,
-              3,
-              4,
-              1,
               2
             ],
-            "coefficient_in_q": "-(q**2 - 1)**4/q**4"
+            "coefficient_in_q": "-2*q**5 + 8*q**3 - 14*q + 14/q - 8/q**3 + 2/q**5"
+          }
+        ],
+        "2": [
+          {
+            "perm": [
+              1,
+              2,
+              4,
+              5,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4
+            ],
+            "coefficient_in_q": "(q**2 - 1)**4/q**4"
           },
           {
             "perm": [
-              3,
-              4,
-              5,
               1,
-              2
+              2,
+              5,
+              3,
+              4
             ],
             "canonical_word": [
+              4,
+              3
+            ],
+            "coefficient_in_q": "q**6 - 3*q**4 + 4*q**2 - 4 + 4/q**2 - 3/q**4 + q**(-6)"
+          },
+          {
+            "perm": [
+              1,
+              3,
               2,
+              5,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2
+            ],
+            "coefficient_in_q": "(q**2 - 1)**4/q**4"
+          },
+          {
+            "perm": [
+              1,
               3,
               4,
-              1,
+              2,
+              5
+            ],
+            "canonical_word": [
               2,
               3
             ],
-            "coefficient_in_q": "-q**6 + 4*q**4 - 8*q**2 + 10 - 8/q**2 + 4/q**4 - 1/q**6"
+            "coefficient_in_q": "(q**2 - 1)**4/q**4"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              2,
+              3,
+              5
+            ],
+            "canonical_word": [
+              3,
+              2
+            ],
+            "coefficient_in_q": "2*q**4 - 7*q**2 + 10 - 7/q**2 + 2/q**4"
           },
           {
             "perm": [
               3,
-              5,
               1,
+              2,
+              4,
+              5
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**4*(q**2 + (q**2 - 1)**2)*(2*q**2 + (q**2 - 1)**2)/q**8"
+          }
+        ],
+        "3": [
+          {
+            "perm": [
+              1,
+              2,
+              5,
+              4,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              3
+            ],
+            "coefficient_in_q": "-q**5 + 3*q**3 - 4*q + 4/q - 3/q**3 + q**(-5)"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              4,
+              5,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**3/q**3"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              5,
+              2,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              3
+            ],
+            "coefficient_in_q": "-q**5 + 3*q**3 - 4*q + 4/q - 3/q**3 + q**(-5)"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              2,
+              5,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              2
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**3/q**3"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              3,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**3/q**3"
+          },
+          {
+            "perm": [
+              1,
+              5,
+              2,
+              3,
+              4
+            ],
+            "canonical_word": [
+              4,
+              3,
+              2
+            ],
+            "coefficient_in_q": "q**7 - 4*q**5 + 7*q**3 - 8*q + 8/q - 7/q**3 + 4/q**5 - 1/q**7"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2,
+              5,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              1
+            ],
+            "coefficient_in_q": "(q**2 - 1)**5*(2*q**2 + (q**2 - 1)**2)/q**7"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              4,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "(q**2 - 1)**5*(q**2 + (q**2 - 1)**2)/q**7"
+          },
+          {
+            "perm": [
+              3,
+              2,
+              1,
+              4,
+              5
+            ],
+            "canonical_word": [
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "(q**2 - 1)**5*(q**2 + (q**2 - 1)**2)/q**7"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              2,
+              3,
+              5
+            ],
+            "canonical_word": [
+              3,
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q**5 + 3*q**3 - 5*q + 5/q - 3/q**3 + q**(-5)"
+          }
+        ],
+        "4": [
+          {
+            "perm": [
+              1,
+              3,
+              5,
               4,
               2
             ],
@@ -717,89 +803,127 @@
               2,
               3,
               4,
-              3,
+              3
+            ],
+            "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
               1,
+              4,
+              3,
+              5,
               2
             ],
-            "coefficient_in_q": "q**8 - 5*q**6 + 12*q**4 - 19*q**2 + 22 - 19/q**2 + 12/q**4 - 5/q**6 + q**(-8)"
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2
+            ],
+            "coefficient_in_q": "q**2 - 2 + q**(-2)"
+          },
+          {
+            "perm": [
+              1,
+              4,
+              5,
+              2,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              2,
+              3
+            ],
+            "coefficient_in_q": "q**2 - 2 + q**(-2) + (q**2 - 1)**4/q**4"
+          },
+          {
+            "perm": [
+              1,
+              5,
+              2,
+              4,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-q**6 + 4*q**4 - 7*q**2 + 8 - 7/q**2 + 4/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
+              1,
+              5,
+              3,
+              2,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-q**6 + 4*q**4 - 7*q**2 + 8 - 7/q**2 + 4/q**4 - 1/q**6"
           },
           {
             "perm": [
               3,
+              1,
+              4,
+              5,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1
+            ],
+            "coefficient_in_q": "(-q**2 - (q**2 - 1)**2)*(q**2 - 1)**4/q**6"
+          },
+          {
+            "perm": [
+              3,
+              1,
               5,
               2,
+              4
+            ],
+            "canonical_word": [
+              4,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "-q**8 + 4*q**6 - 7*q**4 + 8*q**2 - 8 + 8/q**2 - 7/q**4 + 4/q**6 - 1/q**8"
+          },
+          {
+            "perm": [
+              3,
+              2,
               1,
+              5,
               4
             ],
             "canonical_word": [
               4,
               1,
               2,
-              3,
-              1,
-              2
+              1
             ],
-            "coefficient_in_q": "q**8 - 5*q**6 + 11*q**4 - 15*q**2 + 16 - 15/q**2 + 11/q**4 - 5/q**6 + q**(-8)"
+            "coefficient_in_q": "-q**6 + 5*q**4 - 11*q**2 + 14 - 11/q**2 + 5/q**4 - 1/q**6"
           },
           {
             "perm": [
+              3,
+              2,
               4,
-              1,
-              5,
-              3,
-              2
-            ],
-            "canonical_word": [
-              2,
-              3,
-              4,
-              2,
-              3,
-              1
-            ],
-            "coefficient_in_q": "q**4 - 2*q**2 + 3 - 2/q**2 + q**(-4)"
-          },
-          {
-            "perm": [
-              4,
-              2,
-              3,
-              5,
-              1
-            ],
-            "canonical_word": [
-              1,
-              2,
-              3,
-              4,
-              2,
-              1
-            ],
-            "coefficient_in_q": "(q**2 - 1)**2/q**2"
-          },
-          {
-            "perm": [
-              4,
-              2,
-              5,
-              1,
-              3
-            ],
-            "canonical_word": [
-              3,
-              4,
-              1,
-              2,
-              3,
-              1
-            ],
-            "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
-          },
-          {
-            "perm": [
-              4,
-              3,
-              2,
               1,
               5
             ],
@@ -807,29 +931,73 @@
               1,
               2,
               3,
-              1,
-              2,
               1
             ],
-            "coefficient_in_q": "q**2 - 2 + q**(-2)"
+            "coefficient_in_q": "-(q**2 - 1)**6/q**6"
+          },
+          {
+            "perm": [
+              3,
+              4,
+              1,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "2*(-q**2 - (q**2 - 1)**2)*(q**2 - 1)**4/q**6"
           },
           {
             "perm": [
               4,
-              5,
               1,
               2,
+              5,
               3
             ],
             "canonical_word": [
               3,
               4,
               2,
+              1
+            ],
+            "coefficient_in_q": "(q**2 - 1)**2*(q**2 + (q**2 - 1)**2)/q**4"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              3,
+              2,
+              5
+            ],
+            "canonical_word": [
+              2,
+              3,
+              2,
+              1
+            ],
+            "coefficient_in_q": "(q**2 - 1)**2*(q**2 + (q**2 - 1)**2)/q**4"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              1,
+              3,
+              5
+            ],
+            "canonical_word": [
               3,
               1,
-              2
+              2,
+              1
             ],
-            "coefficient_in_q": "-q**6 + 3*q**4 - 4*q**2 + 4 - 4/q**2 + 3/q**4 - 1/q**6"
+            "coefficient_in_q": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
           }
         ],
         "5": [
@@ -1072,12 +1240,84 @@
             "coefficient_in_q": "-(q**2 - 1)**3/q**3"
           }
         ],
-        "4": [
+        "6": [
           {
             "perm": [
               1,
+              5,
+              4,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-(q**2 - 1)*(q**4 - q**2 + (q**2 - 1)**3)/q**4"
+          },
+          {
+            "perm": [
+              3,
+              2,
+              5,
+              4,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              3,
+              1
+            ],
+            "coefficient_in_q": "(-2*q**2 - (q**2 - 1)**2)*(q**2 - 1)**4/q**6"
+          },
+          {
+            "perm": [
+              3,
+              4,
+              2,
+              5,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              1,
+              2
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**4/q**4"
+          },
+          {
+            "perm": [
+              3,
+              4,
+              5,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1,
+              2,
+              3
+            ],
+            "coefficient_in_q": "-q**6 + 4*q**4 - 8*q**2 + 10 - 8/q**2 + 4/q**4 - 1/q**6"
+          },
+          {
+            "perm": [
               3,
               5,
+              1,
               4,
               2
             ],
@@ -1085,31 +1325,107 @@
               2,
               3,
               4,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**8 - 5*q**6 + 12*q**4 - 19*q**2 + 22 - 19/q**2 + 12/q**4 - 5/q**6 + q**(-8)"
+          },
+          {
+            "perm": [
+              3,
+              5,
+              2,
+              1,
+              4
+            ],
+            "canonical_word": [
+              4,
+              1,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**8 - 5*q**6 + 11*q**4 - 15*q**2 + 16 - 15/q**2 + 11/q**4 - 5/q**6 + q**(-8)"
+          },
+          {
+            "perm": [
+              4,
+              1,
+              5,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "q**4 - 2*q**2 + 3 - 2/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              3,
+              5,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              2,
+              1
+            ],
+            "coefficient_in_q": "(q**2 - 1)**2/q**2"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              5,
+              1,
               3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              1,
+              2,
+              3,
+              1
             ],
             "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
           },
           {
             "perm": [
-              1,
               4,
               3,
-              5,
-              2
+              2,
+              1,
+              5
             ],
             "canonical_word": [
+              1,
               2,
               3,
-              4,
-              2
+              1,
+              2,
+              1
             ],
             "coefficient_in_q": "q**2 - 2 + q**(-2)"
           },
           {
             "perm": [
-              1,
               4,
               5,
+              1,
               2,
               3
             ],
@@ -1117,448 +1433,146 @@
               3,
               4,
               2,
-              3
-            ],
-            "coefficient_in_q": "q**2 - 2 + q**(-2) + (q**2 - 1)**4/q**4"
-          },
-          {
-            "perm": [
-              1,
-              5,
-              2,
-              4,
-              3
-            ],
-            "canonical_word": [
-              3,
-              4,
-              3,
-              2
-            ],
-            "coefficient_in_q": "-q**6 + 4*q**4 - 7*q**2 + 8 - 7/q**2 + 4/q**4 - 1/q**6"
-          },
-          {
-            "perm": [
-              1,
-              5,
-              3,
-              2,
-              4
-            ],
-            "canonical_word": [
-              4,
-              2,
-              3,
-              2
-            ],
-            "coefficient_in_q": "-q**6 + 4*q**4 - 7*q**2 + 8 - 7/q**2 + 4/q**4 - 1/q**6"
-          },
-          {
-            "perm": [
-              3,
-              1,
-              4,
-              5,
-              2
-            ],
-            "canonical_word": [
-              2,
-              3,
-              4,
-              1
-            ],
-            "coefficient_in_q": "(-q**2 - (q**2 - 1)**2)*(q**2 - 1)**4/q**6"
-          },
-          {
-            "perm": [
-              3,
-              1,
-              5,
-              2,
-              4
-            ],
-            "canonical_word": [
-              4,
-              2,
-              3,
-              1
-            ],
-            "coefficient_in_q": "-q**8 + 4*q**6 - 7*q**4 + 8*q**2 - 8 + 8/q**2 - 7/q**4 + 4/q**6 - 1/q**8"
-          },
-          {
-            "perm": [
-              3,
-              2,
-              1,
-              5,
-              4
-            ],
-            "canonical_word": [
-              4,
-              1,
-              2,
-              1
-            ],
-            "coefficient_in_q": "-q**6 + 5*q**4 - 11*q**2 + 14 - 11/q**2 + 5/q**4 - 1/q**6"
-          },
-          {
-            "perm": [
-              3,
-              2,
-              4,
-              1,
-              5
-            ],
-            "canonical_word": [
-              1,
-              2,
-              3,
-              1
-            ],
-            "coefficient_in_q": "-(q**2 - 1)**6/q**6"
-          },
-          {
-            "perm": [
-              3,
-              4,
-              1,
-              2,
-              5
-            ],
-            "canonical_word": [
-              2,
               3,
               1,
               2
             ],
-            "coefficient_in_q": "2*(-q**2 - (q**2 - 1)**2)*(q**2 - 1)**4/q**6"
-          },
-          {
-            "perm": [
-              4,
-              1,
-              2,
-              5,
-              3
-            ],
-            "canonical_word": [
-              3,
-              4,
-              2,
-              1
-            ],
-            "coefficient_in_q": "(q**2 - 1)**2*(q**2 + (q**2 - 1)**2)/q**4"
-          },
-          {
-            "perm": [
-              4,
-              1,
-              3,
-              2,
-              5
-            ],
-            "canonical_word": [
-              2,
-              3,
-              2,
-              1
-            ],
-            "coefficient_in_q": "(q**2 - 1)**2*(q**2 + (q**2 - 1)**2)/q**4"
-          },
-          {
-            "perm": [
-              4,
-              2,
-              1,
-              3,
-              5
-            ],
-            "canonical_word": [
-              3,
-              1,
-              2,
-              1
-            ],
-            "coefficient_in_q": "q**4 - 4*q**2 + 6 - 4/q**2 + q**(-4)"
+            "coefficient_in_q": "-q**6 + 3*q**4 - 4*q**2 + 4 - 4/q**2 + 3/q**4 - 1/q**6"
           }
         ],
-        "3": [
+        "7": [
           {
             "perm": [
-              1,
-              2,
-              5,
-              4,
-              3
-            ],
-            "canonical_word": [
-              3,
-              4,
-              3
-            ],
-            "coefficient_in_q": "-q**5 + 3*q**3 - 4*q + 4/q - 3/q**3 + q**(-5)"
-          },
-          {
-            "perm": [
-              1,
               3,
               4,
               5,
-              2
-            ],
-            "canonical_word": [
-              2,
-              3,
-              4
-            ],
-            "coefficient_in_q": "-(q**2 - 1)**3/q**3"
-          },
-          {
-            "perm": [
-              1,
-              3,
-              5,
-              2,
-              4
-            ],
-            "canonical_word": [
-              4,
-              2,
-              3
-            ],
-            "coefficient_in_q": "-q**5 + 3*q**3 - 4*q + 4/q - 3/q**3 + q**(-5)"
-          },
-          {
-            "perm": [
-              1,
-              4,
-              2,
-              5,
-              3
-            ],
-            "canonical_word": [
-              3,
-              4,
-              2
-            ],
-            "coefficient_in_q": "-(q**2 - 1)**3/q**3"
-          },
-          {
-            "perm": [
-              1,
-              4,
-              3,
-              2,
-              5
-            ],
-            "canonical_word": [
-              2,
-              3,
-              2
-            ],
-            "coefficient_in_q": "-(q**2 - 1)**3/q**3"
-          },
-          {
-            "perm": [
-              1,
-              5,
-              2,
-              3,
-              4
-            ],
-            "canonical_word": [
-              4,
-              3,
-              2
-            ],
-            "coefficient_in_q": "q**7 - 4*q**5 + 7*q**3 - 8*q + 8/q - 7/q**3 + 4/q**5 - 1/q**7"
-          },
-          {
-            "perm": [
-              3,
-              1,
-              2,
-              5,
-              4
-            ],
-            "canonical_word": [
-              4,
               2,
               1
             ],
-            "coefficient_in_q": "(q**2 - 1)**5*(2*q**2 + (q**2 - 1)**2)/q**7"
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              1,
+              2,
+              3
+            ],
+            "coefficient_in_q": "(q**2 - 1)**3*(q**2 + (q**2 - 1)**2)/q**5"
           },
           {
             "perm": [
               3,
-              1,
-              4,
+              5,
               2,
-              5
+              4,
+              1
             ],
             "canonical_word": [
+              1,
+              2,
+              3,
+              4,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "(-2*q**2 - (q**2 - 1)**2)*(q**2 - 1)**5/q**7"
+          },
+          {
+            "perm": [
+              3,
+              5,
+              4,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1,
+              2,
+              3,
+              2
+            ],
+            "coefficient_in_q": "-q**7 + 5*q**5 - 12*q**3 + 18*q - 18/q + 12/q**3 - 5/q**5 + q**(-7)"
+          },
+          {
+            "perm": [
+              4,
+              2,
+              5,
+              3,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              3,
+              4,
               2,
               3,
               1
             ],
-            "coefficient_in_q": "(q**2 - 1)**5*(q**2 + (q**2 - 1)**2)/q**7"
-          },
-          {
-            "perm": [
-              3,
-              2,
-              1,
-              4,
-              5
-            ],
-            "canonical_word": [
-              1,
-              2,
-              1
-            ],
-            "coefficient_in_q": "(q**2 - 1)**5*(q**2 + (q**2 - 1)**2)/q**7"
+            "coefficient_in_q": "-q + 1/q - (q**2 - 1)**3/q**3"
           },
           {
             "perm": [
               4,
-              1,
-              2,
               3,
-              5
-            ],
-            "canonical_word": [
-              3,
-              2,
-              1
-            ],
-            "coefficient_in_q": "-q**5 + 3*q**3 - 5*q + 5/q - 3/q**3 + q**(-5)"
-          }
-        ],
-        "2": [
-          {
-            "perm": [
-              1,
-              2,
-              4,
               5,
-              3
-            ],
-            "canonical_word": [
-              3,
-              4
-            ],
-            "coefficient_in_q": "(q**2 - 1)**4/q**4"
-          },
-          {
-            "perm": [
               1,
-              2,
-              5,
-              3,
-              4
-            ],
-            "canonical_word": [
-              4,
-              3
-            ],
-            "coefficient_in_q": "q**6 - 3*q**4 + 4*q**2 - 4 + 4/q**2 - 3/q**4 + q**(-6)"
-          },
-          {
-            "perm": [
-              1,
-              3,
-              2,
-              5,
-              4
-            ],
-            "canonical_word": [
-              4,
               2
             ],
-            "coefficient_in_q": "(q**2 - 1)**4/q**4"
+            "canonical_word": [
+              2,
+              3,
+              4,
+              1,
+              2,
+              3,
+              1
+            ],
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
           },
           {
             "perm": [
-              1,
-              3,
               4,
-              2,
-              5
-            ],
-            "canonical_word": [
-              2,
-              3
-            ],
-            "coefficient_in_q": "(q**2 - 1)**4/q**4"
-          },
-          {
-            "perm": [
+              5,
               1,
-              4,
-              2,
-              3,
-              5
-            ],
-            "canonical_word": [
               3,
               2
             ],
-            "coefficient_in_q": "2*q**4 - 7*q**2 + 10 - 7/q**2 + 2/q**4"
-          },
-          {
-            "perm": [
-              3,
-              1,
+            "canonical_word": [
               2,
+              3,
               4,
-              5
-            ],
-            "canonical_word": [
-              2,
-              1
-            ],
-            "coefficient_in_q": "-(q**2 - 1)**4*(q**2 + (q**2 - 1)**2)*(2*q**2 + (q**2 - 1)**2)/q**8"
-          }
-        ],
-        "1": [
-          {
-            "perm": [
-              1,
               2,
               3,
-              5,
-              4
-            ],
-            "canonical_word": [
-              4
-            ],
-            "coefficient_in_q": "(q**2 - 1)**2*(-q**4 + q**2 - (q**2 - 1)**3)/q**5"
-          },
-          {
-            "perm": [
               1,
-              2,
-              4,
-              3,
-              5
-            ],
-            "canonical_word": [
-              3
-            ],
-            "coefficient_in_q": "-(q**2 - 1)**5/q**5"
-          },
-          {
-            "perm": [
-              1,
-              3,
-              2,
-              4,
-              5
-            ],
-            "canonical_word": [
               2
             ],
-            "coefficient_in_q": "-2*q**5 + 8*q**3 - 14*q + 14/q - 8/q**3 + 2/q**5"
+            "coefficient_in_q": "q**5 - 3*q**3 + 5*q - 5/q + 3/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              4,
+              5,
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
+              3,
+              4,
+              1,
+              2,
+              3,
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
           }
         ],
         "8": [
@@ -1643,19 +1657,6 @@
             "coefficient_in_q": "-q**4 + 3*q**2 - 4 + 3/q**2 - 1/q**4"
           }
         ],
-        "0": [
-          {
-            "perm": [
-              1,
-              2,
-              3,
-              4,
-              5
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "(q**2 - 1)**3*(q**4 - q**2 + (q**2 - 1)**3)/q**6"
-          }
-        ],
         "9": [
           {
             "perm": [
@@ -1681,15 +1682,15 @@
         ]
       },
       "filtration_shape": {
-        "7": 7,
-        "6": 11,
-        "5": 14,
-        "4": 13,
-        "3": 10,
-        "2": 6,
-        "1": 3,
-        "8": 4,
         "0": 1,
+        "1": 3,
+        "2": 6,
+        "3": 10,
+        "4": 13,
+        "5": 14,
+        "6": 11,
+        "7": 7,
+        "8": 4,
         "9": 1
       },
       "max_grade": 9,
@@ -7141,6 +7142,17 @@
         2
       ],
       "filtration_certificate": {
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "1 - (q**2 - 1)**4/q**4"
+          }
+        ],
         "1": [
           {
             "perm": [
@@ -7163,17 +7175,6 @@
               1
             ],
             "coefficient_in_q": "(q**2 - 1)**3/q**3"
-          }
-        ],
-        "0": [
-          {
-            "perm": [
-              1,
-              2,
-              3
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "1 - (q**2 - 1)**4/q**4"
           }
         ],
         "2": [
@@ -7204,8 +7205,8 @@
         ]
       },
       "filtration_shape": {
-        "1": 2,
         "0": 1,
+        "1": 2,
         "2": 2
       },
       "max_grade": 2,
@@ -7567,11 +7568,11 @@
       "methodology": "manual-historical-volume-match",
       "sdp_feasibility": {
         "trivial_(3)": {
-          "value": 1.0,
+          "value": 1,
           "psd": true
         },
         "sign_(1,1,1)": {
-          "value": 1.0,
+          "value": 1,
           "psd": true
         },
         "standard_(2,1)": {

@@ -83,4 +83,58 @@ theorem trace_pair (i j : Generator n) (h : i.idx.val < j.idx.val) :
 
 end MarkovTrace
 
+/-- **Uniqueness of the Markov trace (target statement).**
+The mathematical claim is: any two `R`-linear functionals on
+`H_n(q)` satisfying the full Markov axioms (M1 normalisation,
+M2 cyclicity, M3 cross-level Markov property at every level
+`H_k ⊂ H_{k+1}`, k = 1, …, n−1) coincide once the Markov
+parameter `z = 1/(√q + 1/√q)` is fixed.  This is Ocneanu (1985);
+Jones (1987); Wenzl (1988).
+
+**Caveat on the current `MarkovTrace` class.**  The class above
+encodes only the *consequences* of the Markov axioms at the
+generator/pair-product level (`trace_gen`, `trace_prod_gen`,
+plus normalisation and cyclicity from `cyclic`/`normalise`
+fields), not the cross-level Markov axiom itself or a basis
+reduction principle.  As stated, two instances with the same
+`z_param` are not yet shown equal at the linear-map level by
+this class alone — the field set is too weak.  Strengthening
+the class to carry the full cross-level Markov axiom (or
+equivalently a basis-of-reduced-words decomposition) is a
+prerequisite for a Lean-checkable proof.
+
+The `Wedderburn` decomposition `tr_M = Σ_λ y_λ · χ^λ` with
+explicit closed-form `y_λ(q)` (linear-system at H_3 or Wenzl
+Schur principal specialisation for any n) is the constructive
+shadow of this uniqueness — see
+`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`
+for the symbolic verification that the polynomial identity
+`P^A_λ · Q^B_λ − P^B_λ · Q^A_λ ≡ 0` holds in
+`Z[r, r^{-1}]` (`r = q^{1/2}`) for every λ ⊢ 3.
+
+This Lean statement is therefore a **target / placeholder**:
+it records the eventual theorem with a bibliographic reference
+and a `sorry` so the proof obligation is tracked.  Closing this
+`sorry` requires (a) extending `MarkovTrace` to carry the
+cross-level Markov field, and (b) a basis-of-reduced-words
+lemma for `H_n(q)` that has not yet been built up in
+`QOU.Hecke.*`.
+-/
+theorem markov_trace_unique
+    {R : Type u} {n : ℕ} {q : R} {A : Type u}
+    [CommRing R] [Inv R] [Ring A] [Algebra R A]
+    [HeckeAlgebra R n q A]
+    (MT₁ MT₂ : MarkovTrace n q A)
+    (hz : MT₁.z_param = MT₂.z_param) :
+    MT₁.trace = MT₂.trace := by
+  -- Ref: [jones1987hecke] https://doi.org/10.2307/1971403
+  -- Ocneanu 1985, Jones 1987, Wenzl 1988 — the Markov trace on
+  -- H_n(q) is unique once the parameter z = 1/(√q + 1/√q) is fixed.
+  -- Proof: reduce any element of H_n(q) to a Z-linear combination of
+  -- reduced braid words via the Hecke quadratic relation
+  -- σ_i² = h σ_i + 1, then evaluate via the Markov axiom + cyclicity.
+  -- Both traces produce the same value on each reduced word; by
+  -- linearity, MT₁.trace = MT₂.trace.
+  sorry
+
 end QOU.Hecke

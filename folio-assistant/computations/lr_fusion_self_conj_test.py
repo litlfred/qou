@@ -273,4 +273,78 @@ def test_self_conjugacy_at_magic_shell(
 
 if __name__ == "__main__":
     targets = [int(a) for a in sys.argv[1:]] if len(sys.argv) > 1 else None
-    test_self_conjugacy_at_magic_shell(targets)
+    report = test_self_conjugacy_at_magic_shell(targets)
+
+    # ── Witness emission ─────────────────────────────────────────
+    from witness_base import WitnessBuilder  # noqa: E402
+
+    w = WitnessBuilder("lr-fusion-self-conj-test", engine="python")
+    w.set_description(
+        "LR-fusion self-conjugacy test for the magic-shell "
+        "rank-collapse conjecture: at magic n, the dominant ν in "
+        "V_λ ⊗ V_λ (canonical self-conjugate λ ⊢ n) is itself "
+        "self-conjugate; predicted to fail at non-magic n."
+    )
+    w.set_content_block("conj:diagrammatic-double-magic-lr-fusion")
+
+    magic_total = sum(
+        1 for r in report.values()
+        if r.get("magic") and "dominant_is_self_conjugate" in r
+    )
+    magic_self = sum(
+        1 for r in report.values()
+        if r.get("magic") and r.get("dominant_is_self_conjugate")
+    )
+    nonmagic_total = sum(
+        1 for r in report.values()
+        if r.get("magic") is False and "dominant_is_self_conjugate" in r
+    )
+    nonmagic_self = sum(
+        1 for r in report.values()
+        if r.get("magic") is False and r.get("dominant_is_self_conjugate")
+    )
+
+    w.add_parameter("targets", targets if targets else "default")
+    w.add_parameter("magic_count", magic_total)
+    w.add_parameter("nonmagic_count", nonmagic_total)
+    w.add_data(
+        "per_n",
+        {
+            str(n): {
+                "magic": r.get("magic"),
+                "canonical": r.get("canonical"),
+                "dominant_nu": r.get("dominant_nu"),
+                "dominant_c": r.get("dominant_c"),
+                "dominant_is_self_conjugate":
+                    r.get("dominant_is_self_conjugate"),
+            }
+            for n, r in report.items()
+        },
+    )
+    w.add_data(
+        "summary",
+        {
+            "magic_self_conj_dominant": magic_self,
+            "magic_total_tested": magic_total,
+            "nonmagic_self_conj_dominant": nonmagic_self,
+            "nonmagic_total_tested": nonmagic_total,
+            "hypothesis_supported": (
+                magic_total > 0
+                and magic_self == magic_total
+                and nonmagic_self == 0
+            ),
+        },
+    )
+    # Sanity-only assertion: every entry produced a result OR was
+    # explicitly skipped.
+    accounted = sum(
+        1 for r in report.values()
+        if "dominant_is_self_conjugate" in r or "skipped" in r
+    )
+    w.add_assertion(
+        "All targets accounted for (computed or skipped)",
+        computed=accounted,
+        expected=len(report),
+        tolerance=0,
+    )
+    w.save()

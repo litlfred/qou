@@ -1,6 +1,12 @@
 {
+  "computedAt": "2026-04-27T21:20:43.384482+00:00",
   "computation": "paper-six-term-shadow-price-sweep",
-  "description": "BW shadow-price decomposition B = \u03a3_\u03bb C_\u03bb \u00b7 S_\u03bb for each isotope.  Markov-invariant by construction: C_\u03bb depends only on partition (no braid-word ordering); S_\u03bb depends only on (Z, N, A, content_sum).  Replaces the non-Markov-invariant per-generator V\u0302_i sum of paper_six_term_isotope_sweep.py.",
+  "description": "BW shadow-price decomposition B = Σ_λ C_λ · S_λ for each isotope.  Markov-invariant by construction: C_λ depends only on partition (no braid-word ordering); S_λ depends only on (Z, N, A, content_sum).  Replaces the non-Markov-invariant per-generator V̂_i sum of paper_six_term_isotope_sweep.py.",
+  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate λ; approximate q^{c̄} − q^{−c̄} for non-self-conjugate (coarse — exact via Hoefsmit available in pyhecke)."
+  },
   "reference_blocks": [
     "thm:knot-mass-formula-unified",
     "prop:bw-coefficient-shadow-price",
@@ -8,11 +14,6 @@
     "prop:content-scaling-correspondence",
     "conj:shell-correction-term-seven"
   ],
-  "computedAt": "2026-04-27T21:20:43.384482+00:00",
-  "parameters": {
-    "q_0": 1.1099785955541805,
-    "tau_lambda_implementation": "Wigner-2 closed form (h/2) for self-conjugate \u03bb; approximate q^{c\u0304} \u2212 q^{\u2212c\u0304} for non-self-conjugate (coarse \u2014 exact via Hoefsmit available in pyhecke)."
-  },
   "results": {
     "p   (Z=1, N=0)": {
       "Z": 1,
@@ -29,7 +30,7 @@
           "content_sum": 0,
           "self_conjugate": true,
           "C_lambda": 0.06906033578870716,
-          "S_lambda": 1.0,
+          "S_lambda": 1,
           "contribution": 0.06906033578870716
         },
         {
@@ -74,7 +75,7 @@
           "content_sum": 0,
           "self_conjugate": true,
           "C_lambda": 0.06906033578870716,
-          "S_lambda": 1.0,
+          "S_lambda": 1,
           "contribution": 0.06906033578870716
         },
         {
@@ -120,7 +121,7 @@
           "content_sum": 0,
           "self_conjugate": true,
           "C_lambda": 0.037488241447432034,
-          "S_lambda": 2.0,
+          "S_lambda": 2,
           "contribution": 0.07497648289486407
         }
       ],
@@ -158,7 +159,7 @@
           "content_sum": 0,
           "self_conjugate": true,
           "C_lambda": 0.0014417276851054703,
-          "S_lambda": 3.0,
+          "S_lambda": 3,
           "contribution": 0.004325183055316411
         },
         {
@@ -206,7 +207,7 @@
       ],
       "walltime_sec": 0.011742830276489258
     },
-    "\u00b3He (Z=2, N=1)": {
+    "³He (Z=2, N=1)": {
       "Z": 2,
       "N": 1,
       "B_shadow": 0.01145613885170324,
@@ -238,7 +239,7 @@
           "content_sum": 0,
           "self_conjugate": true,
           "C_lambda": 0.0014417276851054703,
-          "S_lambda": 3.0,
+          "S_lambda": 3,
           "contribution": 0.004325183055316411
         },
         {
@@ -286,7 +287,7 @@
       ],
       "walltime_sec": 0.011924982070922852
     },
-    "\u2074He (Z=2, N=2)": {
+    "⁴He (Z=2, N=2)": {
       "Z": 2,
       "N": 2,
       "B_shadow": 0.094617772880196,
@@ -304,7 +305,7 @@
           "content_sum": 0,
           "self_conjugate": true,
           "C_lambda": 0.019865503904309783,
-          "S_lambda": 4.0,
+          "S_lambda": 4,
           "contribution": 0.07946201561723913
         },
         {
@@ -318,7 +319,7 @@
           "content_sum": 0,
           "self_conjugate": true,
           "C_lambda": 0.0025354163130576,
-          "S_lambda": 4.0,
+          "S_lambda": 4,
           "contribution": 0.0101416652522304
         },
         {
@@ -334,7 +335,7 @@
           "content_sum": 0,
           "self_conjugate": true,
           "C_lambda": 0.001253523002681617,
-          "S_lambda": 4.0,
+          "S_lambda": 4,
           "contribution": 0.005014092010726468
         },
         {
