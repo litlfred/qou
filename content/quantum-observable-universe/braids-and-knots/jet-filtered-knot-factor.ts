@@ -18,4 +18,10 @@ export default conjecture({
     "nuclear-quotient-braid",
     "open-problem",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/nf_transition_lifting.py",
+    witness: "folio-assistant/computations/nf-transition-lifting.witness.json",
+    status: "experimental",
+  },
 });

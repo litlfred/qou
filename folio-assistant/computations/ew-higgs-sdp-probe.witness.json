@@ -1,6 +1,7 @@
 {
-  "computation": "ew-higgs-sdp-probe",
   "computedAt": "2026-05-02T19:55:41.613868+00:00",
+  "computation": "ew-higgs-sdp-probe",
+  "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "purpose": "Exploratory probe of the joint-tower SDP infrastructure on candidate EW/Higgs torus-knot identifications. Maps to the three remaining paths (α non-Bring genus-2; β T_{3,5} double-duty; γ non-torus) per docs/audits/2026-05-02-nv-frob-filter-conjectures.md NV-1 §Bring-surface inventory.",
   "q_0_numeric": 1.1097,
   "registry": [
@@ -143,6 +144,16 @@
         1
       ],
       "filtration_certificate": {
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4"
+          }
+        ],
         "1": [
           {
             "perm": [
@@ -154,21 +165,11 @@
             ],
             "coefficient_in_q": "(q**10 - q**8 + q**6 - q**4 + q**2 - 1)/q**5"
           }
-        ],
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4"
-          }
         ]
       },
       "filtration_shape": {
-        "1": 1,
-        "0": 1
+        "0": 1,
+        "1": 1
       },
       "max_grade": 1,
       "jet_log": [
@@ -359,6 +360,16 @@
         1
       ],
       "filtration_certificate": {
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "(q**12 - q**10 + q**8 - q**6 + q**4 - q**2 + 1)/q**6"
+          }
+        ],
         "1": [
           {
             "perm": [
@@ -370,21 +381,11 @@
             ],
             "coefficient_in_q": "(q**14 - q**12 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/q**7"
           }
-        ],
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "(q**12 - q**10 + q**8 - q**6 + q**4 - q**2 + 1)/q**6"
-          }
         ]
       },
       "filtration_shape": {
-        "1": 1,
-        "0": 1
+        "0": 1,
+        "1": 1
       },
       "max_grade": 1,
       "jet_log": [
@@ -631,6 +632,16 @@
         1
       ],
       "filtration_certificate": {
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q**2 - 1 + q**(-2)"
+          }
+        ],
         "1": [
           {
             "perm": [
@@ -642,21 +653,11 @@
             ],
             "coefficient_in_q": "q**3 - q + 1/q - 1/q**3"
           }
-        ],
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "q**2 - 1 + q**(-2)"
-          }
         ]
       },
       "filtration_shape": {
-        "1": 1,
-        "0": 1
+        "0": 1,
+        "1": 1
       },
       "max_grade": 1,
       "jet_log": [
@@ -789,19 +790,39 @@
         2
       ],
       "filtration_certificate": {
-        "3": [
+        "0": [
           {
             "perm": [
-              3,
-              2,
-              1
-            ],
-            "canonical_word": [
               1,
               2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
+          }
+        ],
+        "1": [
+          {
+            "perm": [
+              1,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2
+            ],
+            "coefficient_in_q": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
               1
             ],
-            "coefficient_in_q": "q**7 - 2*q**5 + 2*q**3 - q + 1/q - 2/q**3 + 2/q**5 - 1/q**7"
+            "coefficient_in_q": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5"
           }
         ],
         "2": [
@@ -830,47 +851,27 @@
             "coefficient_in_q": "q**6 - 2*q**4 + 2*q**2 - 1 + 2/q**2 - 2/q**4 + q**(-6)"
           }
         ],
-        "1": [
+        "3": [
           {
             "perm": [
-              1,
               3,
-              2
-            ],
-            "canonical_word": [
-              2
-            ],
-            "coefficient_in_q": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5"
-          },
-          {
-            "perm": [
               2,
-              1,
-              3
-            ],
-            "canonical_word": [
               1
             ],
-            "coefficient_in_q": "q**5 - 2*q**3 + 2*q - 2/q + 2/q**3 - 1/q**5"
-          }
-        ],
-        "0": [
-          {
-            "perm": [
+            "canonical_word": [
               1,
               2,
-              3
+              1
             ],
-            "canonical_word": [],
-            "coefficient_in_q": "q**4 - 2*q**2 + 2 - 2/q**2 + q**(-4)"
+            "coefficient_in_q": "q**7 - 2*q**5 + 2*q**3 - q + 1/q - 2/q**3 + 2/q**5 - 1/q**7"
           }
         ]
       },
       "filtration_shape": {
-        "3": 1,
-        "2": 2,
+        "0": 1,
         "1": 2,
-        "0": 1
+        "2": 2,
+        "3": 1
       },
       "max_grade": 3,
       "jet_log": [
@@ -1516,30 +1517,15 @@
         -2
       ],
       "filtration_certificate": {
-        "2": [
+        "0": [
           {
             "perm": [
-              2,
-              3,
-              1
-            ],
-            "canonical_word": [
               1,
-              2
-            ],
-            "coefficient_in_q": "-(q**2 - 1)**2/q**2"
-          },
-          {
-            "perm": [
-              3,
-              1,
-              2
-            ],
-            "canonical_word": [
               2,
-              1
+              3
             ],
-            "coefficient_in_q": "1"
+            "canonical_word": [],
+            "coefficient_in_q": "(q**2 - 1)**2/q**2"
           }
         ],
         "1": [
@@ -1566,22 +1552,37 @@
             "coefficient_in_q": "(q**2 - 1)**3/q**3"
           }
         ],
-        "0": [
+        "2": [
           {
             "perm": [
-              1,
               2,
-              3
+              3,
+              1
             ],
-            "canonical_word": [],
-            "coefficient_in_q": "(q**2 - 1)**2/q**2"
+            "canonical_word": [
+              1,
+              2
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**2/q**2"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "1"
           }
         ]
       },
       "filtration_shape": {
-        "2": 2,
+        "0": 1,
         "1": 2,
-        "0": 1
+        "2": 2
       },
       "max_grade": 2,
       "jet_log": [
@@ -1718,11 +1719,11 @@
       "ref": "topological-mass-trefoil.md",
       "sdp_feasibility": {
         "trivial_(3)": {
-          "value": 1.0,
+          "value": 1,
           "psd": true
         },
         "sign_(1,1,1)": {
-          "value": 1.0,
+          "value": 1,
           "psd": true
         },
         "standard_(2,1)": {
@@ -1770,19 +1771,39 @@
         -2
       ],
       "filtration_certificate": {
-        "3": [
+        "0": [
           {
             "perm": [
-              3,
-              2,
-              1
-            ],
-            "canonical_word": [
               1,
               2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
+          }
+        ],
+        "1": [
+          {
+            "perm": [
+              1,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2
+            ],
+            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
+          },
+          {
+            "perm": [
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
               1
             ],
-            "coefficient_in_q": "q - 1/q"
+            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
           }
         ],
         "2": [
@@ -1811,47 +1832,27 @@
             "coefficient_in_q": "1"
           }
         ],
-        "1": [
+        "3": [
           {
             "perm": [
-              1,
               3,
-              2
-            ],
-            "canonical_word": [
-              2
-            ],
-            "coefficient_in_q": "-q**3 + 2*q - 2/q + q**(-3)"
-          },
-          {
-            "perm": [
               2,
-              1,
-              3
-            ],
-            "canonical_word": [
               1
             ],
-            "coefficient_in_q": "q**5 - 3*q**3 + 4*q - 4/q + 3/q**3 - 1/q**5"
-          }
-        ],
-        "0": [
-          {
-            "perm": [
+            "canonical_word": [
               1,
               2,
-              3
+              1
             ],
-            "canonical_word": [],
-            "coefficient_in_q": "q**4 - 3*q**2 + 4 - 3/q**2 + q**(-4)"
+            "coefficient_in_q": "q - 1/q"
           }
         ]
       },
       "filtration_shape": {
-        "3": 1,
-        "2": 2,
+        "0": 1,
         "1": 2,
-        "0": 1
+        "2": 2,
+        "3": 1
       },
       "max_grade": 3,
       "jet_log": [
@@ -2156,6 +2157,16 @@
         1
       ],
       "filtration_certificate": {
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q - 1/q"
+          }
+        ],
         "1": [
           {
             "perm": [
@@ -2167,21 +2178,11 @@
             ],
             "coefficient_in_q": "q**2 - 1 + q**(-2)"
           }
-        ],
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "q - 1/q"
-          }
         ]
       },
       "filtration_shape": {
-        "1": 1,
-        "0": 1
+        "0": 1,
+        "1": 1
       },
       "max_grade": 1,
       "jet_log": [

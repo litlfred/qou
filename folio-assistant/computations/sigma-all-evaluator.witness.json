@@ -1,7 +1,8 @@
 {
-  "computation": "sigma-all-evaluator",
   "computedAt": "2026-05-03T10:30:54.364049+00:00",
+  "computation": "sigma-all-evaluator",
   "description": "Reference table + precision schedule for the Σ_all closed-form evaluator (sigma_all_evaluator.py). Replaces raw 4^A configuration-sum routes in the β-decay / binding-energy pipeline with a constant-time, cancellation-free evaluator. Closed form verified for A=1..6 in sigma_all_symbolic_decay.py and documented in docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 683-769.",
+  "auditOnly": "docs/audits/2026-05-03-frob-filter-evaluator-wired.md",
   "q_parameter": {
     "q_at_q0": "1.1099785955541805752815940796095093779932822799587",
     "q_at_q0_f64": 1.1099785955541805,
@@ -31,7 +32,7 @@
       "sigma_all_at_q0": "0.529503732016871748793519713006",
       "sigma_all_at_q0_f64": 0.5295037320168717,
       "ratio_to_A1": "1.00000000000000000000000000000",
-      "ratio_to_A1_f64": 1.0,
+      "ratio_to_A1_f64": 1,
       "log10_abs": -0.27613097457704017,
       "precision_digits_required_for_raw_sum": 1
     },
@@ -106,7 +107,7 @@
       "a_exp": 13,
       "d_exp": 18,
       "sigma_all_at_q0": "-0.0000977335738756986850143034549770",
-      "sigma_all_at_q0_f64": -9.773357387569868e-05,
+      "sigma_all_at_q0_f64": -0.00009773357387569868,
       "ratio_to_A1": "-0.000184575797990002775877040820128",
       "ratio_to_A1_f64": -0.00018457579799000277,
       "log10_abs": -4.009956219861485,
@@ -117,9 +118,9 @@
       "a_exp": 14,
       "d_exp": 19,
       "sigma_all_at_q0": "0.0000102161062118376193139895097282",
-      "sigma_all_at_q0_f64": 1.0216106211837619e-05,
+      "sigma_all_at_q0_f64": 0.000010216106211837619,
       "ratio_to_A1": "0.0000192937378796644632812442485940",
-      "ratio_to_A1_f64": 1.9293737879664464e-05,
+      "ratio_to_A1_f64": 0.000019293737879664464,
       "log10_abs": -4.990714600574789,
       "precision_digits_required_for_raw_sum": 6
     },
@@ -128,9 +129,9 @@
       "a_exp": 16,
       "d_exp": 22,
       "sigma_all_at_q0": "-0.00000647735759291355578500129758648",
-      "sigma_all_at_q0_f64": -6.477357592913556e-06,
+      "sigma_all_at_q0_f64": -0.000006477357592913556,
       "ratio_to_A1": "-0.0000122328837385931127744033016933",
-      "ratio_to_A1_f64": -1.2232883738593112e-05,
+      "ratio_to_A1_f64": -0.000012232883738593112,
       "log10_abs": -5.188602126360923,
       "precision_digits_required_for_raw_sum": 6
     }

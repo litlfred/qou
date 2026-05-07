@@ -1,7 +1,8 @@
 {
-  "computation": "mass-table-ppb-zero-param",
-  "description": "AME2020 light-atom binding vs strictly zero-free-parameter predictions: Kashaev law B = \u03c1_F \u00b7 Vol_hyp(K) with \u03c1_F \u2208 {m_e, 2m_e}; atom\u2192knot assignments from framework rules (magic A\u00b78G, \u03b1-cluster with c_\u03b1\u03b1 = m_e\u00b7Vol(7\u00b2_1)) or census search (flagged 'hyp: census-assigned').  NO AME-derived calibrations or fits.",
   "computedAt": "2026-04-25T18:28:57.416715+00:00",
+  "computation": "mass-table-ppb-zero-param",
+  "description": "AME2020 light-atom binding vs strictly zero-free-parameter predictions: Kashaev law B = ρ_F · Vol_hyp(K) with ρ_F ∈ {m_e, 2m_e}; atom→knot assignments from framework rules (magic A·8G, α-cluster with c_αα = m_e·Vol(7²_1)) or census search (flagged 'hyp: census-assigned').  NO AME-derived calibrations or fits.",
+  "auditOnly": "docs/audits/2026-05-03-next-session-plan-to-1ppb.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -20,7 +21,7 @@
       "err_MeV": 0.024254674864734316,
       "err_pct": 1.0903103596999093,
       "err_ppb": 10903103.596999094,
-      "formula": "1\u00b7m_e \u00b7 Vol(6_2)",
+      "formula": "1·m_e · Vol(6_2)",
       "origin": "hyp: census-assigned",
       "inputs": {
         "knot": "6_2",
@@ -38,7 +39,7 @@
       "err_MeV": -0.013200013466979854,
       "err_pct": -0.15562753138508753,
       "err_ppb": -1556275.3138508755,
-      "formula": "2\u00b7m_e \u00b7 Vol(8_11)",
+      "formula": "2·m_e · Vol(8_11)",
       "origin": "hyp: census-assigned",
       "inputs": {
         "knot": "8_11",
@@ -56,7 +57,7 @@
       "err_MeV": -0.22911819022904023,
       "err_pct": -2.968606854126327,
       "err_ppb": -29686068.54126327,
-      "formula": "2\u00b7m_e \u00b7 Vol(L6a4)",
+      "formula": "2·m_e · Vol(L6a4)",
       "origin": "hyp: census-assigned",
       "inputs": {
         "knot": "L6a4",
@@ -74,8 +75,8 @@
       "err_MeV": 1.6599860390838401,
       "err_pct": 5.866568260696314,
       "err_ppb": 58665682.60696314,
-      "formula": "2\u00b7m_e \u00b7 4\u00b78G",
-      "origin": "framework: A\u00b78G magic rule",
+      "formula": "2·m_e · 4·8G",
+      "origin": "framework: A·8G magic rule",
       "inputs": {
         "A": 4,
         "8G": 7.327724753417752,
@@ -92,8 +93,8 @@
       "err_MeV": 5.838833981930534,
       "err_pct": 10.33430906202644,
       "err_ppb": 103343090.6202644,
-      "formula": "2\u00b7B(\u2074He_derived) + 1\u00b7c_\u03b1\u03b1",
-      "origin": "framework: \u03b1-cluster n_\u03b1=2",
+      "formula": "2·B(⁴He_derived) + 1·c_αα",
+      "origin": "framework: α-cluster n_α=2",
       "inputs": {
         "n_alpha": 2,
         "n_pairs": 1,
@@ -111,8 +112,8 @@
       "err_MeV": 4.986250228540101,
       "err_pct": 5.410325030221432,
       "err_ppb": 54103250.302214324,
-      "formula": "3\u00b7B(\u2074He_derived) + 3\u00b7c_\u03b1\u03b1",
-      "origin": "framework: \u03b1-cluster n_\u03b1=3",
+      "formula": "3·B(⁴He_derived) + 3·c_αα",
+      "origin": "framework: α-cluster n_α=3",
       "inputs": {
         "n_alpha": 3,
         "n_pairs": 3,
@@ -130,8 +131,8 @@
       "err_MeV": 6.76535597891251,
       "err_pct": 5.301201706193875,
       "err_ppb": 53012017.06193875,
-      "formula": "4\u00b7B(\u2074He_derived) + 6\u00b7c_\u03b1\u03b1",
-      "origin": "framework: \u03b1-cluster n_\u03b1=4",
+      "formula": "4·B(⁴He_derived) + 6·c_αα",
+      "origin": "framework: α-cluster n_α=4",
       "inputs": {
         "n_alpha": 4,
         "n_pairs": 6,
@@ -149,8 +150,8 @@
       "err_MeV": 13.403421233047794,
       "err_pct": 8.34351079334116,
       "err_ppb": 83435107.9334116,
-      "formula": "5\u00b7B(\u2074He_derived) + 10\u00b7c_\u03b1\u03b1",
-      "origin": "framework: \u03b1-cluster n_\u03b1=5",
+      "formula": "5·B(⁴He_derived) + 10·c_αα",
+      "origin": "framework: α-cluster n_α=5",
       "inputs": {
         "n_alpha": 5,
         "n_pairs": 10,
@@ -168,8 +169,8 @@
       "err_MeV": 17.882005990945885,
       "err_pct": 9.019613436377693,
       "err_ppb": 90196134.36377692,
-      "formula": "6\u00b7B(\u2074He_derived) + 15\u00b7c_\u03b1\u03b1",
-      "origin": "framework: \u03b1-cluster n_\u03b1=6",
+      "formula": "6·B(⁴He_derived) + 15·c_αα",
+      "origin": "framework: α-cluster n_α=6",
       "inputs": {
         "n_alpha": 6,
         "n_pairs": 15,
@@ -187,8 +188,8 @@
       "err_MeV": 66.71918006016699,
       "err_pct": 19.505559579682476,
       "err_ppb": 195055595.79682475,
-      "formula": "10\u00b7B(\u2074He_derived) + 45\u00b7c_\u03b1\u03b1",
-      "origin": "framework: \u03b1-cluster n_\u03b1=10",
+      "formula": "10·B(⁴He_derived) + 45·c_αα",
+      "origin": "framework: α-cluster n_α=10",
       "inputs": {
         "n_alpha": 10,
         "n_pairs": 45,
@@ -250,5 +251,5 @@
   "mean_abs_pct": 6.799563261375073,
   "mean_abs_ppb": 67995632.61375073,
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

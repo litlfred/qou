@@ -44,6 +44,8 @@ on:
       - "folio-assistant/computations/build_*.py"
       - "folio-assistant/computations/*.witness.json"
       - "folio-assistant/computations/*.derivation.json"
+      - "scripts/audit-wiring.ts"
+      - "scripts/audit-wiring-migrate.ts"
       - ".github/workflows/witness-pipeline.yml"
   push:
     branches: [main]
@@ -62,6 +64,8 @@ on:
       - "folio-assistant/computations/build_*.py"
       - "folio-assistant/computations/*.witness.json"
       - "folio-assistant/computations/*.derivation.json"
+      - "scripts/audit-wiring.ts"
+      - "scripts/audit-wiring-migrate.ts"
       - ".github/workflows/witness-pipeline.yml"
   workflow_dispatch:
 
@@ -203,6 +207,21 @@ jobs:
         # TRIAGE-001..003 in docs/audits/2026-05-06-frobenius-pairing-
         # compute-audit.md are pending. Pass --strict to enforce.
         run: python3 folio-assistant/computations/bound_state_observable_validator.py
+
+      - name: Witness wiring audit (warn-only)
+        # Three-bucket triage of every Python `.witness.json`:
+        #   wired   → referenced by `computation.witness` in some content block
+        #   audit-only → declares top-level `auditOnly: docs/audits/*.md`
+        #   orphan  → neither (actionable)
+        # Currently warn-only.  After per-directory orphan count drops
+        # below 50, swap `--warn-only` for `--max-per-dir 5 --baseline N`
+        # to enforce the §5 budget gate.  See scripts/audit-wiring.ts and
+        # `develop triage policy` PR for the full policy.
+        run: |
+          # Install bun on demand (workflow's other steps are pure Python).
+          curl -fsSL https://bun.sh/install | bash
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun run scripts/audit-wiring.ts --warn-only
 
       - name: Detect drift in committed witnesses
         run: |

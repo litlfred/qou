@@ -1,15 +1,16 @@
 {
-  "computation": "joint-tower-sdp-rust",
-  "computedAt": "2026-04-27T02:09:36.066251819+00:00",
-  "description": "Rust port of joint-tower SDP certificate emitter. Runs GB-NF reduction on the confined-particle registry, emits design-spec certificate (filtration + jet-order log per atom). Phases R1+R2+R6 of RUST_INTEGRATION.md; R3 (Wedderburn PSD) and R5 (SDP solver) deferred.",
-  "design_spec": "prop:joint-tower-sdp-confinement",
-  "consumed_by": "prop:atom-knot-mass-derivation",
-  "phase": "rust-r1-r2-r3-r4-r5min-r6",
   "engine": {
     "name": "hecke-engine",
     "version": "0.8.0",
     "language": "rust"
   },
+  "computedAt": "2026-04-27T02:09:36.066251819+00:00",
+  "computation": "joint-tower-sdp-rust",
+  "description": "Rust port of joint-tower SDP certificate emitter. Runs GB-NF reduction on the confined-particle registry, emits design-spec certificate (filtration + jet-order log per atom). Phases R1+R2+R6 of RUST_INTEGRATION.md; R3 (Wedderburn PSD) and R5 (SDP solver) deferred.",
+  "auditOnly": "docs/audits/2h-3a-vs-sdp-tr-m-discrepancy.md",
+  "design_spec": "prop:joint-tower-sdp-confinement",
+  "consumed_by": "prop:atom-knot-mass-derivation",
+  "phase": "rust-r1-r2-r3-r4-r5min-r6",
   "q_0_numeric": 1.1097,
   "per_atom_certificates": [
     {
@@ -624,8 +625,8 @@
           "diagnostic": "λ=[1, 1, 1], d_λ=1, Σ c·Πd_μ = 1  [1·[[1], [1], [1]]]"
         }
       ],
-      "psd_cone_alpha_star": 1.0,
-      "psd_cone_gap": 0.0,
+      "psd_cone_alpha_star": 1,
+      "psd_cone_gap": 0,
       "rho_factor": 1,
       "b_ame_mev": 938.272,
       "methodology": "principled-derivation"
@@ -1073,8 +1074,8 @@
           "diagnostic": "λ=[1, 1, 1], d_λ=1, Σ c·Πd_μ = 1  [1·[[1], [1], [1]]]"
         }
       ],
-      "psd_cone_alpha_star": 1.0,
-      "psd_cone_gap": 0.0,
+      "psd_cone_alpha_star": 1,
+      "psd_cone_gap": 0,
       "rho_factor": 1,
       "b_ame_mev": 939.565,
       "methodology": "principled-derivation"
@@ -8996,8 +8997,8 @@
           "psd_symmetric_part": true
         }
       ],
-      "psd_cone_alpha_star": 1.0,
-      "psd_cone_gap": 0.0,
+      "psd_cone_alpha_star": 1,
+      "psd_cone_gap": 0,
       "rho_factor": 2,
       "b_ame_mev": 7.718,
       "methodology": "manual-historical-volume-match"

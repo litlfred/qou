@@ -1,18 +1,19 @@
 {
+  "computedAt": "2026-05-05T16:50:11.345275+00:00",
   "computation": "sublemma-2-1-A-operator-extract",
-  "description": "Operator-valued A^\u03bb_{\u03bc\u03bd}(I) extraction via bilinear-system inversion. Confirms refined Sub-lemma 2.1: the (\u03bc,\u03bd)-block of \u03c1_\u03bb(I) is generally a non-scalar operator on V_\u03bc \u2297 V_\u03bd. For deuteron interface I = \u03c3_2 - h/2 on H_6 \u2193 H_3 \u00d7 H_3, all 11 \u03bb admit consistent operator-valued A^\u03bb_{\u03bc\u03bd} solutions to machine precision; only the 1-dim extreme \u03bb \u2208 {(6), (1^6)} have scalar A^\u03bb_{\u03bc\u03bd}. The extracted matrices are the concrete categorical inputs the Hoefsmit-formula derivation must reproduce per docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md.",
+  "description": "Operator-valued A^λ_{μν}(I) extraction via bilinear-system inversion. Confirms refined Sub-lemma 2.1: the (μ,ν)-block of ρ_λ(I) is generally a non-scalar operator on V_μ ⊗ V_ν. For deuteron interface I = σ_2 - h/2 on H_6 ↓ H_3 × H_3, all 11 λ admit consistent operator-valued A^λ_{μν} solutions to machine precision; only the 1-dim extreme λ ∈ {(6), (1^6)} have scalar A^λ_{μν}. The extracted matrices are the concrete categorical inputs the Hoefsmit-formula derivation must reproduce per docs/audits/2026-05-04-sublemma-2-1-categorical-proof.md.",
+  "auditOnly": "docs/audits/2026-05-04-sublemma-2-1-refined.md",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "interface": "I = σ_2 - h/2 (atomic-braid pn averaged crossing)",
+    "n_test_pairs": 144,
+    "n_test_words_per_side": 12
+  },
   "reference_blocks": [
     "conj:confinement-nf-structure-forcing",
     "prop:atomic-mass-gb-nf",
     "prop:alpha-shift-torus-knot"
   ],
-  "computedAt": "2026-05-05T16:50:11.345275+00:00",
-  "parameters": {
-    "q_0": 1.1099785955541805,
-    "interface": "I = \u03c3_2 - h/2 (atomic-braid pn averaged crossing)",
-    "n_test_pairs": 144,
-    "n_test_words_per_side": 12
-  },
   "results_per_lambda": {
     "(6,)": {
       "support": [
@@ -43,7 +44,7 @@
           ],
           "matrix_im": [
             [
-              -0.0
+              0
             ]
           ],
           "frobenius_norm": 1.005448434559241,
@@ -111,7 +112,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.31589911013745925,
@@ -135,12 +136,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.062918680925432,
@@ -164,12 +165,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.062918680925433,
@@ -251,7 +252,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.1277123950343833,
@@ -275,12 +276,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.8604779582435956,
@@ -304,12 +305,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.8604779582435971,
@@ -349,28 +350,28 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.250730356706176,
@@ -473,12 +474,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.4676128906352691,
@@ -497,7 +498,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.3447746622108914,
@@ -521,12 +522,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.46761289063527023,
@@ -566,28 +567,28 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.1612312163167735,
@@ -606,7 +607,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.34477466221089104,
@@ -662,7 +663,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.3447746622108892,
@@ -702,28 +703,28 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.775288492435952,
@@ -828,12 +829,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.4875850032612443,
@@ -857,12 +858,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.48758500326124554,
@@ -902,28 +903,28 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.9751700065224908,
@@ -947,12 +948,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.48758500326124565,
@@ -976,12 +977,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.48758500326124554,
@@ -1083,7 +1084,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.3447746622108913,
@@ -1123,28 +1124,28 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.161231216316775,
@@ -1162,18 +1163,18 @@
               -8.326672684688674e-17
             ],
             [
-              0.0,
+              0,
               0.34477466221089115
             ]
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.4676128906352696,
@@ -1192,7 +1193,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.34477466221089165,
@@ -1216,12 +1217,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.46761289063526923,
@@ -1302,28 +1303,28 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.7752884924359513,
@@ -1342,7 +1343,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.34477466221089154,
@@ -1453,28 +1454,28 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ],
             [
-              0.0,
-              0.0,
-              0.0,
-              0.0
+              0,
+              0,
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.2507303567061752,
@@ -1498,12 +1499,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.8604779582435962,
@@ -1527,12 +1528,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 0.8604779582435973,
@@ -1551,7 +1552,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.127712395034384,
@@ -1632,12 +1633,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.0629186809254323,
@@ -1661,12 +1662,12 @@
           ],
           "matrix_im": [
             [
-              0.0,
-              0.0
+              0,
+              0
             ],
             [
-              0.0,
-              0.0
+              0,
+              0
             ]
           ],
           "frobenius_norm": 1.0629186809254334,
@@ -1685,7 +1686,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 0.3158991101374582,
@@ -1731,7 +1732,7 @@
           ],
           "matrix_im": [
             [
-              0.0
+              0
             ]
           ],
           "frobenius_norm": 1.005448434559241,

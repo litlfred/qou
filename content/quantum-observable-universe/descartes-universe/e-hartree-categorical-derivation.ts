@@ -48,6 +48,13 @@ export default conjecture({
     "prop:phi-q-tower-algebraic-stratification",
     "conj:phi-q-tower-jsj-bridge",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/hecke_core.py",
+    witness:
+      "folio-assistant/computations/hecke-core-symbolic-migration.witness.json",
+    status: "verified",
+  },
   tags: [
     "hartree-energy",
     "molecular-binding",

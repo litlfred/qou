@@ -1,7 +1,8 @@
 {
+  "computedAt": "2026-05-03T21:14:51.581626+00:00",
   "computation": "brane-tower-two-avenues-probe",
   "description": "Concrete numerical exploration of two avenues for restoring Markov-invariance to T2/T3.  Avenue 2 (Frobenius-antipode T2_sym = (T2(beta) + T2(S(beta)))/2) and Avenue 1 (Kahler derivative of global tr_M(beta)).",
-  "computedAt": "2026-05-03T21:14:51.581626+00:00",
+  "auditOnly": "docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md",
   "avenue_2_T2_sym": [
     {
       "iso": "p",

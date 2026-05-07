@@ -19,4 +19,14 @@ export default proposition({
     "extremal-cancellation",
     "confined-knot",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/jet_knot_invariants.py",
+    witness: [
+      "folio-assistant/computations/confined-knot-binding.witness.json",
+      "folio-assistant/computations/intermediate-knot-detection.witness.json",
+      "folio-assistant/computations/jet-knot-invariants.witness.json",
+    ],
+    status: "experimental",
+  },
 });

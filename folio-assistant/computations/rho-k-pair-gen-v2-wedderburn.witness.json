@@ -1,13 +1,8 @@
 {
-  "computation": "rho-k-pair-gen-v2-wedderburn",
-  "description": "Pair-generator v2 extension using Wedderburn-block-coupled pair volumes |V\u0302_i V\u0302_j|_Wedderburn (`wedderburn_pair_volumes.py`). The std-channel pair amplitude is the Markov-traced 2x2 transfer-matrix product (M_i M_j) rather than the naive product V_i^std \u00b7 V_j^std, capturing the actual braid-group non-commutativity. Tests the unified \u03c1_K formula M = constituent + \u03b1\u00b7\u03a3 ln|V_i| + \u03b1\u00b7z\u00b2\u00b7\u03a3 ln|V_iV_j|_Wedd across Z=1..20.",
-  "reference_blocks": [
-    "prop:rho-k-graded-expansion",
-    "prop:atomic-mass-gb-nf",
-    "thm:wedderburn-mass-formula",
-    "thm:knot-mass-formula-unified"
-  ],
   "computedAt": "2026-05-05T17:52:44.014951+00:00",
+  "computation": "rho-k-pair-gen-v2-wedderburn",
+  "description": "Pair-generator v2 extension using Wedderburn-block-coupled pair volumes |V̂_i V̂_j|_Wedderburn (`wedderburn_pair_volumes.py`). The std-channel pair amplitude is the Markov-traced 2x2 transfer-matrix product (M_i M_j) rather than the naive product V_i^std · V_j^std, capturing the actual braid-group non-commutativity. Tests the unified ρ_K formula M = constituent + α·Σ ln|V_i| + α·z²·Σ ln|V_iV_j|_Wedd across Z=1..20.",
+  "auditOnly": "docs/audits/2026-05-05-kashaev-limit-pair-gen-investigation.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "alpha_MeV": 3.74445965488548,
@@ -18,6 +13,12 @@
       20
     ]
   },
+  "reference_blocks": [
+    "prop:rho-k-graded-expansion",
+    "prop:atomic-mass-gb-nf",
+    "thm:wedderburn-mass-formula",
+    "thm:knot-mass-formula-unified"
+  ],
   "rows": [
     {
       "Z": 1,

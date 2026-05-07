@@ -1,6 +1,6 @@
 {
-  "title": "Markov chain free energy Q-values (quark-level Garside)",
-  "formula": "Q = |\u0394F| \u00d7 ln(q) \u00d7 m_e, where F = -\u03a3 log|V\u0302_i|",
+  "computedAt": "2026-04-12T09:07:26.547130+00:00",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "parameters": {
     "q": 1.1099785955541805,
     "ln_q": 0.10434073185379582,
@@ -9,9 +9,11 @@
     "m_e_MeV": 0.51099895,
     "kT_MeV": 0.05331800441952121
   },
+  "title": "Markov chain free energy Q-values (quark-level Garside)",
+  "formula": "Q = |ΔF| × ln(q) × m_e, where F = -Σ log|V̂_i|",
   "decays": [
     {
-      "name": "n\u2192p (free neutron)",
+      "name": "n→p (free neutron)",
       "A": 1,
       "Z_par": 0,
       "N_par": 1,
@@ -27,11 +29,11 @@
       "error_pct": -97.63110275160338,
       "ord_par": "udd",
       "ord_dau": "uud",
-      "nuc_Q": 0.0,
-      "nuc_err_pct": -100.0
+      "nuc_Q": 0,
+      "nuc_err_pct": -100
     },
     {
-      "name": "\u00b3H\u2192\u00b3He (tritium)",
+      "name": "³H→³He (tritium)",
       "A": 3,
       "Z_par": 1,
       "N_par": 2,
@@ -51,7 +53,7 @@
       "nuc_err_pct": -20.761751219488144
     },
     {
-      "name": "\u2076He\u2192\u2076Li",
+      "name": "⁶He→⁶Li",
       "A": 6,
       "Z_par": 2,
       "N_par": 4,
@@ -71,8 +73,7 @@
       "nuc_err_pct": -98.79509886384241
     }
   ],
-  "computedAt": "2026-04-12T09:07:26.547130+00:00",
   "source": "markov-free-energy-qvalues.py",
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

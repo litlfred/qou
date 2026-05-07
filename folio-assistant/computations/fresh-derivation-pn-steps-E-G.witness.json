@@ -1,7 +1,8 @@
 {
-  "computation": "fresh-derivation-pn-steps-E-G",
-  "description": "Fresh derivation E-G: per-block V_hyp with reference knots (3) \u2192 unknot, (2,1) \u2192 figure-8, (1,1,1) \u2192 trefoil; only std block contributes non-zero V_hyp (2.02988...).  Hecke energy computed two ways (Plancherel-derived and LP-dual); characters via Hoefsmit seminormal matrices; prefactor deferred to user.  Output per-partition contributions and multiple prefactor-choice columns for the user to pick.",
   "computedAt": "2026-04-24T16:52:50.533831+00:00",
+  "computation": "fresh-derivation-pn-steps-E-G",
+  "description": "Fresh derivation E-G: per-block V_hyp with reference knots (3) → unknot, (2,1) → figure-8, (1,1,1) → trefoil; only std block contributes non-zero V_hyp (2.02988...).  Hecke energy computed two ways (Plancherel-derived and LP-dual); characters via Hoefsmit seminormal matrices; prefactor deferred to user.  Output per-partition contributions and multiple prefactor-choice columns for the user to pick.",
+  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
   "q_0": 1.1099785955541805,
   "V_fig8": "2.029883212819307250042405108549",
   "proton": {
@@ -18,9 +19,9 @@
         "E_Plancherel": "0.0",
         "E_LP": "0.0",
         "chi_re": 1.3824945145464325,
-        "chi_im": 0.0,
-        "contribution_Plancherel_re": 0.0,
-        "contribution_LP_re": 0.0
+        "chi_im": 0,
+        "contribution_Plancherel_re": 0,
+        "contribution_LP_re": 0
       },
       {
         "shape": [
@@ -33,7 +34,7 @@
         "E_Plancherel": "0.16516359298423475145",
         "E_LP": "0.16695365883441673809",
         "chi_re": 1.8077033200981516,
-        "chi_im": 0.0,
+        "chi_im": 0,
         "contribution_Plancherel_re": 0.606055685283843,
         "contribution_LP_re": 0.6126242005718265
       },
@@ -49,15 +50,15 @@
         "E_Plancherel": "0.0",
         "E_LP": "0.0",
         "chi_re": -0.7392235469701218,
-        "chi_im": 0.0,
-        "contribution_Plancherel_re": 0.0,
-        "contribution_LP_re": 0.0
+        "chi_im": 0,
+        "contribution_Plancherel_re": 0,
+        "contribution_LP_re": 0
       }
     ],
     "total_Plancherel_re": 0.606055685283843,
-    "total_Plancherel_im": 0.0,
+    "total_Plancherel_im": 0,
     "total_LP_re": 0.6126242005718265,
-    "total_LP_im": 0.0
+    "total_LP_im": 0
   },
   "neutron": {
     "name": "NEUTRON",
@@ -73,9 +74,9 @@
         "E_Plancherel": "0.0",
         "E_LP": "0.0",
         "chi_re": 1.1221068372362972,
-        "chi_im": 0.0,
-        "contribution_Plancherel_re": 0.0,
-        "contribution_LP_re": 0.0
+        "chi_im": 0,
+        "contribution_Plancherel_re": 0,
+        "contribution_LP_re": 0
       },
       {
         "shape": [
@@ -88,7 +89,7 @@
         "E_Plancherel": "0.16516359298423475145",
         "E_LP": "0.16695365883441673809",
         "chi_re": 1.7008888500891552,
-        "chi_im": 0.0,
+        "chi_im": 0,
         "contribution_Plancherel_re": 0.5702447664788601,
         "contribution_LP_re": 0.5764251580789402
       },
@@ -104,16 +105,16 @@
         "E_Plancherel": "0.0",
         "E_LP": "0.0",
         "chi_re": -0.9107622062323645,
-        "chi_im": 0.0,
-        "contribution_Plancherel_re": 0.0,
-        "contribution_LP_re": 0.0
+        "chi_im": 0,
+        "contribution_Plancherel_re": 0,
+        "contribution_LP_re": 0
       }
     ],
     "total_Plancherel_re": 0.5702447664788601,
-    "total_Plancherel_im": 0.0,
+    "total_Plancherel_im": 0,
     "total_LP_re": 0.5764251580789402,
-    "total_LP_im": 0.0
+    "total_LP_im": 0
   },
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

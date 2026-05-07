@@ -79,6 +79,7 @@
   "scriptCommitSha": "051b6d13c38e11d145a91c4bb6dfee1d0ad8028a",
   "description": "Per-NF-letter shift accounting for the NH_n basis of H_n(q). For each w ∈ S_n (n ≤ 5) we compute the seminormal pole order at q = 0 of T_w, the naive per-letter upper bound (= ℓ(w)), and the GB-reduction count = ℓ(w) − pole_order. Validates the cycle-additive DP probe upper bound and cross-checks the torus-knot Coxeter element against alpha_shift_torus.py.",
   "contentBlock": "prop:alpha-shift-torus-knot",
+  "auditOnly": "docs/audits/2026-05-04-nh-basis-shift.md",
   "data": {
     "per_S_n": {
       "S_2": {

@@ -15,6 +15,13 @@ export default conjecture({
     "def:confinement-level",
     "thm:jones-markov-trace",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/markov_pipeline_cross_validator.py",
+    witness:
+      "folio-assistant/computations/markov-pipeline-cross-validation.witness.json",
+    status: "verified",
+  },
   tags: [
     "gs-filtration",
     "spectral-sequence",

@@ -14,6 +14,13 @@ export default conjecture({
     "def:brings-surface",
     "conj:categorical-neutrality-saturated-shells",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/optimised_magic_verifier.py",
+    witness:
+      "folio-assistant/computations/optimised-magic-verifier.witness.json",
+    status: "verified",
+  },
   cites: [
     "mathas1999",
     "kassel1995",

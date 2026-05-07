@@ -25,4 +25,10 @@ export default definition({
     "universal",
     "algorithm",
   ],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/universal-ilp.py",
+    witness: "folio-assistant/computations/universal-ilp.witness.json",
+    status: "verified",
+  },
 });

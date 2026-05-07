@@ -1,7 +1,8 @@
 {
-  "computation": "kashaev-integration-identity",
-  "description": "Numerical test of the Kashaev integration identity from prop:mass-endomorphism-tower. Compares \u222b_0^V (ln_q(1+t)/t) dt to \u03a6_q(V) and to ln|V| to determine which form the integration evaluates to.  Resolves the conflict between prop:atomic-braid-mass (uses \u03b1\u00b7\u03a3 ln|V_i|) and thm:knot-mass-formula-unified (uses \u03a3 \u03a6_q(|V_i|)) at q_0.",
   "computedAt": "2026-05-03T23:13:14.912154+00:00",
+  "computation": "kashaev-integration-identity",
+  "description": "Numerical test of the Kashaev integration identity from prop:mass-endomorphism-tower. Compares ∫_0^V (ln_q(1+t)/t) dt to Φ_q(V) and to ln|V| to determine which form the integration evaluates to.  Resolves the conflict between prop:atomic-braid-mass (uses α·Σ ln|V_i|) and thm:knot-mass-formula-unified (uses Σ Φ_q(|V_i|)) at q_0.",
+  "auditOnly": "docs/audits/2026-05-03-tower-mev-calibration-finding.md",
   "rows": [
     {
       "V": 0.1,
@@ -41,7 +42,7 @@
       "phi_q": 33346.80250795853,
       "log_V": -0.1625189294977749,
       "integral_over_log_V": -4.409991091322751,
-      "integral_over_phi_q": 2.1492526339982632e-05
+      "integral_over_phi_q": 0.000021492526339982632
     },
     {
       "V": 0.95,
@@ -49,7 +50,7 @@
       "phi_q": 257962.27053084117,
       "log_V": -0.051293294387550536,
       "integral_over_log_V": -15.364768551805273,
-      "integral_over_phi_q": 3.0551351362450595e-06
+      "integral_over_phi_q": 0.0000030551351362450595
     },
     {
       "V": 0.989,
@@ -57,7 +58,7 @@
       "phi_q": 671092.6101542669,
       "log_V": -0.011060947359424938,
       "integral_over_log_V": -73.71937679527379,
-      "integral_over_phi_q": 1.2150426539709546e-06
+      "integral_over_phi_q": 0.0000012150426539709546
     }
   ]
 }
