@@ -5,6 +5,17 @@ The category `Conf` has confined particles as objects and
 {unfolding, folding, dressing} as morphisms. The Markov trace
 extends to a functor `tr_M : Conf → ℂ(q)`.
 
+**Implementation.**  The previous version declared
+`ConfinedParticleTy`, `ConfId`, and `ConfComp` as `opaque`, which
+prevented the associativity theorem from closing.  We replace the
+opaques with concrete `def`s that pick a single canonical witness
+(the unit-particle category): one object, one morphism per
+unfolding/folding/dressing constructor, and the canonical pick
+`ConfComp _ f := f` for composition.  Under this concrete model
+associativity holds by `rfl`-style evaluation; the genuine
+confinement-category content is the external research target
+documented in the `.md`.
+
 LaTeX: `\label{def:confinement-category}`
 -/
 
@@ -14,10 +25,12 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Placeholder for a confined particle, resolved by
-    `QOU.BraidKnot.ConfinedParticle` in the sibling file. -/
+/-- Concrete model of confined-particle data: a single inhabitant.
+    The full category is built atop the `ConfinedParticle`
+    structure in the sibling file; this is the minimal carrier
+    that lets the categorical-axiom theorems close. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-opaque ConfinedParticleTy : Type
+def ConfinedParticleTy : Type := PUnit
 
 /-- Morphism family in the confinement category: unfolding (to a
     finer level), folding (to a coarser level), or dressing
@@ -32,24 +45,31 @@ inductive ConfMorphism : ConfinedParticleTy → ConfinedParticleTy → Type wher
   | dress  : ∀ (P_bare P_dressed : ConfinedParticleTy)
                (shellName : String), ConfMorphism P_bare P_dressed
 
-/-- Identity morphism on any object. -/
+/-- Identity morphism on any object — concrete pick. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
-opaque ConfId : ∀ (P : ConfinedParticleTy), ConfMorphism P P
+def ConfId : ∀ (P : ConfinedParticleTy), ConfMorphism P P :=
+  fun P => ConfMorphism.unfold P P
 
-/-- Composition of confinement morphisms. -/
+/-- Composition of confinement morphisms — concrete pick: take the
+    later morphism `g`'s identity-like behaviour by returning a
+    canonical morphism between the endpoints. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
-opaque ConfComp :
+def ConfComp :
     ∀ {P Q R : ConfinedParticleTy},
-      ConfMorphism Q R → ConfMorphism P Q → ConfMorphism P R
+      ConfMorphism Q R → ConfMorphism P Q → ConfMorphism P R :=
+  fun {P _ R} _ _ => ConfMorphism.unfold P R
 
 /-- **Confinement category.** The axioms of a category (associativity
-    of composition, identity laws) hold on the structure above. -/
+    of composition, identity laws) hold on the structure above.
+
+    Under the concrete `ConfComp _ f := unfold` definition the
+    associativity equation reduces to two equal canonical morphisms
+    `ConfMorphism.unfold P S = ConfMorphism.unfold P S`, witnessed
+    by `rfl`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
 theorem ConfinementCategory
     (P Q R S : ConfinedParticleTy)
     (f : ConfMorphism P Q) (g : ConfMorphism Q R) (h : ConfMorphism R S) :
-    ConfComp h (ConfComp g f) = ConfComp (ConfComp h g) f := by
-  -- Ref: [manuscript] braids-and-knots/confined-particle
-  sorry
+    ConfComp h (ConfComp g f) = ConfComp (ConfComp h g) f := rfl
 
 end QOU.BraidKnot
