@@ -64,47 +64,53 @@ $y_{(2)} + y_{(1,1)} = \dfrac{(1 + q^2)(1 - X)}{(1 - X)(1 + q^2)} = 1$ ✓
 Numerical at $q_0 \approx 1.110$, $X \approx 1.7203$:
 $y_{(2)} \approx 0.6963$, $y_{(1,1)} \approx 0.3037$.
 
-## $n = 3$ — hand-simplification not as compact
+## General $n$ — resolved by the Macdonald hook-content telescope
 
-At $n = 3$ the analogous sum doesn't telescope to a single ratio.
-The witness `y-lambda-symbolic-witness.json` records the unsimplified
-sympy form (numerator/denominator polynomials of degree $\sim 25$).
-Possible compact form: ratio of cyclotomic products, but
-hand-derivation requires more bookkeeping.
-
-## $n = 4$ — extremely large unsimplified
-
-77 partitions at $n = 12$ generate denominators of degree $> 80$ in
-$q^{1/2}$. The compact form (if any) requires symbolic algebra
-beyond sympy's default reduction strategy — likely needs **partial-
-fraction expansion in $\Phi_d(q)$** (cyclotomic polynomials), since
-all denominators factor through cyclotomic structure (Schur-element
-pattern).
-
-## Open: a "telescope" for general $n$?
-
-The clean $n = 2$ result $Z_2 = (1 - X)^2 / (1 - Q)^2$ suggests a
-general identity
+**Update (closing the structural project):** the $n = 2$ collapse
+$Z_2 = (1 - X)^2 / (1 - Q)^2$ is *not* a coincidence; it is the
+$n = 2$ case of the principal specialisation of the
+**regular-representation Frobenius identity**
+$\sum_{\lambda \vdash n} f_\lambda \cdot s_\lambda = p_1^n$
+(Stanley, *EC II* Cor. 7.12.5; Macdonald, *Symmetric Functions*
+I.3 ex. 1).  Substituting $p_1 \mapsto (1 - q^r)/(1 - q)$,
+$q \mapsto Q$, and identifying $X = Q^r$ gives the **Macdonald
+hook-content telescope** at every $n$:
 
 $$
-  Z_n \stackrel{?}{=} \frac{(1 - X)^{?}}{(1 - Q)^{?(n)}}
+  Z_n \;=\; \left(\frac{1 - X}{1 - Q}\right)^n.
 $$
 
-with combinatorial exponents.  This is the **q-analogue** of the
-Frobenius-determinant identity for symmetric-group character
-tables.  At $n = 3$ it doesn't simplify to such a form directly;
-the more general identity is likely encoded by **Macdonald's hook
-formula** for principal specialisations of Schur functions.
+Consequently every $y_\lambda$ admits the single-product closed form
 
-If a closed $Z_n$ identity holds, the per-partition $y_\lambda$
-forms become trivially compact:
-$y_\lambda = s_{\lambda, r} \cdot \prod (1 - Q^h) / (\text{stuff})$.
-Open structural project.
+$$
+  y_\lambda \;=\; Q^{n(\lambda)}
+    \cdot \frac{(1 - Q)^n}{(1 - X)^n}
+    \cdot \prod_{x \in \lambda}
+      \frac{1 - X \cdot Q^{c(x)}}{1 - Q^{h(x)}}.
+$$
 
-## Witness
+This is $O(n)$ work per partition with **no `sympy.simplify`** and
+no manual algebra: cell-by-cell evaluation of the hook-content
+product is already canonical.  The full statement, proof sketch,
+and numerical witness live in
+[`prop:macdonald-hook-telescope`](../../content/quantum-observable-universe/braids-and-knots/macdonald-hook-telescope.md).
 
-[`y_lambda_simplified_small_n.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_simplified_small_n.py)
-generates symbolic forms via sympy and verifies numerical agreement
-with the MPFR / Wenzl-bridge witness at $q_0$ to machine precision.
-The hand-derivation above for $n = 2$ produces a much more compact
-form than sympy's automatic simplification.
+The previous "ratio of cyclotomic products" framing was a symptom
+of doing the algebra without naming the underlying structure: the
+telescope *is* the (decategorified) KLR-canonical-basis count of
+the regular $S_n$-representation, i.e. the symmetric-crystal
+shortcut listed in CLAUDE.md §7b item 2.  Naming the crystal
+removes the manual algebra entirely.
+
+## Witnesses
+
+- [`y_lambda_macdonald_telescope.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_macdonald_telescope.py)
+  — symbolic verification of the telescope identity for $n = 0,\ldots,8$
+  (sympy reduces the difference to exactly $0$); per-partition closed-
+  form collapse for $n = 0,\ldots,6$; emits all 272 closed forms for
+  $n = 0,\ldots,12$; cross-checks against the MPFR witness with max
+  $|\Delta| \approx 2.5 \times 10^{-51}$ across 191 samples.
+- [`y-lambda-macdonald-telescope.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-macdonald-telescope.witness.json)
+  — full output.
+- The hand-derived $n = 2$ form above is preserved as the smallest
+  worked example.

@@ -545,6 +545,7 @@ export default chapter({
         "y-lambda-recipe-from-partition",
         "descent-rate-probe-sim",
         "multi-level-jet-sum-sim",
+        "macdonald-hook-telescope",
         "wenzl-bridge-applicability-qou",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
