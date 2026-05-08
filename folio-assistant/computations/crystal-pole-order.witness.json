@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-08T18:49:10.823316+00:00",
-  "commitSha": "5a2c46522c4c134726297930ab4b5a5d6f88316f",
+  "computedAt": "2026-05-08T19:19:21.337496+00:00",
+  "commitSha": "499b2b2f7a8a2bd7c01ef61327850b1dc600f9e0",
   "assertions": [
     {
       "name": "crystal_pole[T_2_1]_equals_published_alpha_shift",
@@ -183,8 +183,8 @@
   "durationMs": 9,
   "computation": "crystal-pole-order",
   "scriptFile": "crystal_pole_order.py",
-  "scriptHash": "00faf7e26d17",
-  "scriptCommitSha": "787b272de4727f608814883869673304fa4500a6",
+  "scriptHash": "6cfafb56d905",
+  "scriptCommitSha": "d88fcd6a1cc98f7b148c154c746ccf5037005847",
   "description": "Combinatorial verification of the crystal-R-matrix proof of Sub-lemma 2.1 (refined). For T_{p,k} on p strands, the column SYT (1^p) has all axial distances ρ = -1, so the pole-per-cycle is p-1 and the total over k cycles is k(p-1) — matching prop:alpha-shift-torus-knot. AXKIA chain T_{2,9}→9, T_{3,5}→10 verified.",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "data": {
@@ -582,7 +582,7 @@
       "agree_with_published": true
     },
     "method": {
-      "description": "For each torus-knot interface T_{p,k} = (σ_1...σ_{p-2})^k acting on p strands, the column SYT (1^p) has every adjacent pair at axial distance ρ = -1 (by definition of a column). By Step 2 of the crystal-R-matrix audit, σ_j on this SYT has pole order 1[ρ_T(j) ≤ -1] = 1 for every j ∈ {1, ..., p-1}, so each cycle contributes pole p-1 and k cycles give k(p-1) — matching prop:alpha-shift-torus-knot.",
+      "description": "For each torus-knot interface T_{p,k} = (σ_1...σ_{p-1})^k acting on p strands, the column SYT (1^p) has every adjacent pair at axial distance ρ = -1 (by definition of a column). By Step 2 of the crystal-R-matrix audit, σ_j on this SYT has pole order 1[ρ_T(j) ≤ -1] = 1 for every j ∈ {1, ..., p-1}, so each cycle contributes pole p-1 and k cycles give k(p-1) — matching prop:alpha-shift-torus-knot.",
       "audit_doc": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
       "conditional_on": "conj:crystal-graph-realization"
     }

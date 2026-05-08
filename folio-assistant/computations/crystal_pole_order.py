@@ -3,7 +3,7 @@
 crystal_pole_order.py — combinatorial verification of the crystal-R-matrix
 proof of Sub-lemma 2.1 (refined / operator-valued).
 
-For a torus-knot interface T_{p,k} = (σ_1 σ_2 ⋯ σ_{p-2})^k acting on p
+For a torus-knot interface T_{p,k} = (σ_1 σ_2 ⋯ σ_{p-1})^k acting on p
 strands (p-1 generators per cycle, k twists), the crystal R-matrix
 audit (`docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md`)
 proves:
@@ -20,7 +20,7 @@ k(p-1) over k cycles.  Recovers `prop:alpha-shift-torus-knot`
 This script verifies the combinatorial formula by:
 
   1. Enumerating the SYT of shape (1^p) (the column irrep, single SYT).
-  2. Computing ρ_T(j) for j = 1..p-2 (boundary cycle generators).
+  2. Computing ρ_T(j) for j = 1..p-1 (boundary cycle generators).
   3. Counting #{j : ρ_T(j) ≤ -1}.
   4. Multiplying by k → predicted pole order.
   5. Comparing with the published formula k(p-1).
@@ -423,7 +423,7 @@ def main() -> int:
         "method",
         {
             "description": (
-                "For each torus-knot interface T_{p,k} = (σ_1...σ_{p-2})^k "
+                "For each torus-knot interface T_{p,k} = (σ_1...σ_{p-1})^k "
                 "acting on p strands, the column SYT (1^p) has every adjacent "
                 "pair at axial distance ρ = -1 (by definition of a column). "
                 "By Step 2 of the crystal-R-matrix audit, σ_j on this SYT has "
