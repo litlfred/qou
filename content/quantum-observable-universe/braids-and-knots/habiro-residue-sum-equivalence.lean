@@ -155,4 +155,28 @@ noncomputable instance protonExample : HabiroResidueSumEquivalence where
     -- proton atomic witness.  Formal proof open (see class docstring).
     sorry
 
+/-! ## Trivial-zero skeleton instance
+
+A second, **fully Lean-verified** instance using the zero polynomial
+and zero gb-mass.  Both sides of `archimedean_agreement` evaluate to
+`0`; the equation holds by direct evaluation.  This proves the class
+is non-vacuous as a Lean type and provides a typeclass-resolution
+discharge target distinct from the witness-pinned proton example
+(whose archimedean agreement remains a `sorry` because no integer
+polynomial has eval at `Real.sqrt q_0_proton ≈ 1.05356` equal to
+the witness value `2.1225825095`).
+-/
+
+/-- Trivial-zero skeleton: every numerical field is `0`. -/
+-- Ref: [manuscript] habiro-residue-sum-equivalence §"Skeleton"
+instance trivialZero : HabiroResidueSumEquivalence where
+  q_0 := 0
+  q_0_nonneg := le_refl 0
+  habiro_trace := 0
+  gb_mass := 0
+  archimedean_agreement := by
+    -- Both sides evaluate to 0: (0.map _).eval _ = 0 = gb_mass.
+    show (Polynomial.map (Int.castRingHom ℝ) 0).eval (Real.sqrt 0) = 0
+    simp
+
 end QOU.BraidKnot
