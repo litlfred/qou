@@ -573,6 +573,82 @@ noncomputable def yLambdaCorrected_col3 (q : ℝ) : ℝ :=
 theorem yLambdaCorrected_row3_eq_col3 (q : ℝ) :
     yLambdaCorrected_row3 q = yLambdaCorrected_col3 q := rfl
 
+/-! ### Trivial hook-formula proofs (n=2 row/column, n=4 row/column)
+
+    For row partitions `[n]` and column partitions `[1ⁿ]`, the
+    hook product equals `[n]_q!` (both have the same multiset of
+    hook lengths `(n, n-1, …, 1)`), so `dim_q = [n]_q!/[n]_q! = 1`.
+    The proof is `qFactorial q n / qFactorial q n = 1` whenever
+    `[n]_q! ≠ 0`. -/
+
+/-- `[n]_q! ≠ 0` for `q > 1`.  Iterated product of non-zero
+    `qInteger`s is non-zero. -/
+theorem qFactorial_ne_zero (q : ℝ) (n : ℕ) (hq_one : q > 1) :
+    QOU.qFactorial q n ≠ 0 := by
+  induction n with
+  | zero =>
+    show (1 : ℝ) ≠ 0
+    norm_num
+  | succ m ih =>
+    show QOU.qInteger q (m + 1) * QOU.qFactorial q m ≠ 0
+    apply mul_ne_zero
+    · exact QOU.qInteger_ne_zero q (m + 1) hq_one (Nat.succ_pos m)
+    · exact ih
+
+/-- Row partition `[n]` hook-formula: `dim_q([n]) = 1`.  Demonstrated
+    at `n = 2` (hooks `(2, 1)`). -/
+theorem dimqRowPartition2_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 2 / QOU.qHookProduct q [2, 1] = dimqRowPartition 2 q := by
+  unfold dimqRowPartition
+  show QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)
+    / (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)) = 1
+  have h2 : QOU.qInteger q 2 * (QOU.qInteger q 1 * 1) ≠ 0 := by
+    have h2_ne : QOU.qInteger q 2 ≠ 0 :=
+      QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1_ne : QOU.qInteger q 1 ≠ 0 :=
+      QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+    exact mul_ne_zero h2_ne (mul_ne_zero h1_ne one_ne_zero)
+  exact div_self h2
+
+/-- Column partition `[1,1]` hook-formula: same hook multiset as
+    row `[2]`, so `dim_q([1,1]) = 1`. -/
+theorem dimqColPartition2_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 2 / QOU.qHookProduct q [2, 1] = dimqColPartition 2 q := by
+  unfold dimqColPartition
+  exact dimqRowPartition2_via_hook_formula q hq_one
+
+/-- Row partition `[4]` hook-formula: `dim_q([4]) = 1`.  Hooks
+    `(4, 3, 2, 1)`, hook product = `[4]_q!`. -/
+theorem dimqPartition4_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 3, 2, 1]
+      = dimqPartition4 q := by
+  unfold dimqPartition4
+  show QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * 1)))
+    / (QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * 1)))) = 1
+  have hne : QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * 1))) ≠ 0 := by
+    have h4 : QOU.qInteger q 4 ≠ 0 :=
+      QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+    have h3 : QOU.qInteger q 3 ≠ 0 :=
+      QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+    have h2 : QOU.qInteger q 2 ≠ 0 :=
+      QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1 : QOU.qInteger q 1 ≠ 0 :=
+      QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+    exact mul_ne_zero h4 (mul_ne_zero h3 (mul_ne_zero h2
+      (mul_ne_zero h1 one_ne_zero)))
+  exact div_self hne
+
+/-- Column partition `[1,1,1,1]` hook-formula: same hooks as row
+    `[4]`, so `dim_q([1,1,1,1]) = 1`. -/
+theorem dimqPartition1111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 3, 2, 1]
+      = dimqPartition1111 q := by
+  unfold dimqPartition1111
+  exact dimqPartition4_via_hook_formula q hq_one
+
 /-! ### Cohort: `n = 5` (7 partitions)
 
     Partition data:
