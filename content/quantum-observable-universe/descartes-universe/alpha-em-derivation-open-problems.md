@@ -143,16 +143,20 @@ A natural ansatz (cf. external review note, May 2026) is to deform the
 Gram matrix by a *framing correction* $\mathcal{A}$ induced by a chiral
 anomaly on Bring's surface, $G_n' = G_n \otimes \mathcal{A}$. Two sub-cases:
 
-1. **Scalar $\mathcal{A} \in R$.** Then $\det G_n' = \mathcal{A}^n \det G_n$
-   and the determinant ratio becomes
-   $\kappa' = \mathcal{A} \cdot \kappa_{\text{Witten}}$. The corrected
-   $1/\alpha_{EM}$ takes the multiplicative form
-   $q[9]_q[10]_q \cdot (1 + \delta_{CS} + \mathcal{A}\kappa_{\text{Witten}}\delta_{CS}^2)$.
+1. **Scalar $\mathcal{A} \in R$.** For an $N \times N$ Gram matrix,
+   $\det G_n' = \mathcal{A}^N \det G_n$ where $N = \dim G_n$ is the
+   matrix dimension (not the strand count). The determinant ratio
+   $\kappa = \det G_n / \det G_{n-1}$ then becomes
+   $\kappa' = \mathcal{A}^{\dim G_n - \dim G_{n-1}} \cdot \kappa_{\text{Witten}}$ —
+   a fixed power of $\mathcal{A}$ multiplying the Witten value. The
+   corrected $1/\alpha_{EM}$ takes the multiplicative form
+   $q[9]_q[10]_q \cdot (1 + \delta_{CS} + \mathcal{A}^{\Delta\dim}\kappa_{\text{Witten}}\delta_{CS}^2)$
+   for $\Delta\dim = \dim G_n - \dim G_{n-1}$.
 2. **Block-diagonal $2{\times}2$ $\mathcal{A}$** acting on the two Hecke
    eigenchannels $V_{(2)}, V_{(1,1)}$ (eigenvalues $q, -q^{-1}$). The
-   determinant of $G_n'$ factors per channel, $\kappa'$ remains a
-   product of two scalar contributions, and $\kappa'$ is again a
-   *multiplicative* perturbation of $\kappa_{\text{Witten}}$. This is
+   determinant of $G_n'$ factors per channel as a product of
+   per-channel scalar powers, and $\kappa'$ is again a *multiplicative*
+   perturbation of $\kappa_{\text{Witten}}$. This is
    precisely the "old derivation" route already carried out in
    [`gram-kappa-spectral-interpretation`](#rem:gram-kappa-spectral-interpretation),
    which yielded $\kappa \approx 1.722$ — agreeing with the
@@ -175,7 +179,22 @@ to be a scalar or a $2{\times}2$ matrix. Closure must either:
   in which the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ enters
   $1/\alpha_{EM}$ as a *summand*, not a factor.
 
-The additive route is the current preferred lead.
+The additive route is the current numerical front-runner, **conditional on
+resolving a pre-archimedean concern**: the bare formula and its
+trace-ratio refactoring live entirely in the pre-archimedean substrate
+ring $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, but the candidate
+correction $2/(3\pi)$ imports the archimedean transcendental $\pi$ via
+sphere volumes and Hodge data on Bring's surface — neither of which is
+an object of $R$. A closed form for $1/\alpha_{EM}$ over the substrate
+must produce $\pi$ from a pre-archimedean source: candidates include
+the $q \to 1$ asymptotics of a Reshetikhin-Turaev invariant of $S^3$
+involving the genus-$4$ pair $\{T_{2,9}, T_{3,5}\}$, or the classical
+limit of the Faddeev / Kashaev quantum dilogarithm $\Phi_q$ on Bring's
+curve. Until one is established, the additive form is numerically
+viable but structurally outside $R$, and is not on equal footing with
+the bare formula. See
+[`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode)
+for the two repair routes.
 
 ## What this implies
 
@@ -215,11 +234,11 @@ $$
   \frac{\alpha}{4\pi}.
 $$
 
-| Form | Predicted $1/\alpha$ at $q_0$ | Residual vs CODATA |
-|------|------------------------------|--------------------|
+| Form | Predicted $1/\alpha$ at $q_0$ | Residual vs CODATA (calc $-$ CODATA, relative) |
+|------|------------------------------|------------------------------------------------|
 | Bare $q[9]_q[10]_q$ | 136.823220 | $-1.55 \times 10^{-3}$ |
-| $+ 2/(3\pi)$ | 137.035426 | $+4.2 \times 10^{-6}$ |
-| $+ \alpha/(4\pi)$ (self-consistent) | 137.036007 | $-5.7 \times 10^{-8}$ |
+| $+ 2/(3\pi)$ | 137.035426 | $-4.2 \times 10^{-6}$ |
+| $+ \alpha/(4\pi)$ (self-consistent) | 137.036007 | $+5.7 \times 10^{-8}$ |
 | CODATA | $137.035999084(21)$ | — |
 
 The first correction has a clean geometric identification:

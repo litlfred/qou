@@ -279,15 +279,22 @@ the level of a closed structural derivation:
    at $g=4$, where $2g/(4\pi(g-1)) = 2/(3\pi)$ admits two clean
    geometric identifications (Hodge / Gauss-Bonnet ratio on Bring's
    surface; sphere-volume ratio $\mathrm{Vol}(S^2)/(3\,\mathrm{Vol}(S^3))$).
-   Single-term residual $+4.2 \times 10^{-6}$; with the next-order
-   $\alpha/(4\pi)$ term, $-5.7 \times 10^{-8}$. This is the **current
-   preferred lead** — structurally cleanest and exits the multiplicative
-   $q$-rational family ruled out by the PSLQ scan.
+   Single-term residual (calc $-$ CODATA, relative) $-4.2 \times 10^{-6}$;
+   with the next-order $\alpha/(4\pi)$ term, $+5.7 \times 10^{-8}$. This is the current
+   *numerical* front-runner — but it imports the archimedean
+   transcendental $\pi$ via sphere volumes / Hodge data, putting the
+   correction structurally outside the pre-archimedean substrate ring
+   $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ in which the bare
+   formula lives. Pre-archimedean status open; see
+   [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode)
+   for the two repair routes.
 
 The honest current status is: the bare $q[9]_q[10]_q$ derivation is
-solid; closing the remaining $1.55 \times 10^{-3}$ requires further
-work and should not yet be presented as derived. Effort should
-concentrate on the additive Bring zero-mode lead (item 3).
+solid and pre-archimedean; closing the remaining $1.55 \times 10^{-3}$
+requires either (i) a pre-archimedean origin for the $\pi$-bearing
+additive correction (RT-invariant or quantum-dilogarithm $q \to 1$
+asymptotics) or (ii) an off-diagonal Gram deformation that escapes
+the multiplicative-family ruling. Neither has been established.
 
 **Physical interpretation.**
 

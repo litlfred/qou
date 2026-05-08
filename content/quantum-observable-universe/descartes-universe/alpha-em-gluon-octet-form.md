@@ -6,7 +6,7 @@
 > 54-element basis ($\pi, \zeta(3), \log 2, [k]_q, \hbar_q^k, \ldots$)
 > returned no integer relation
 > ([`rem:alpha-em-derivation-open-problems`](#rem:alpha-em-derivation-open-problems));
-> together with the factor-by-factor structural audit below this rules
+> together with the factor-by-factor structural audit below, this rules
 > the present form out as a viable derivation. Retained in the
 > manifest as a **historical numerical curiosity** (single-point match
 > at $q_0$ to $6.7 \times 10^{-9}$); not a candidate for closing the

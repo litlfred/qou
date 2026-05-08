@@ -36,10 +36,10 @@ At $q_0 \approx 1.10998$ in 60 dps mpmath:
 | $2/(3\pi) = 2g/(4\pi(g-1))$ | $0.212206591\ldots$ |
 | Sum | $137.035426245\ldots$ |
 | CODATA $1/\alpha$ | $137.035999084(21)$ |
-| **Residual** | $\mathbf{+4.2 \times 10^{-6}}$ relative |
+| **Residual** (calc $-$ CODATA, relative) | $\mathbf{-4.2 \times 10^{-6}}$ |
 
 A second additive term $\alpha/(4\pi) \approx 5.81 \times 10^{-4}$
-brings the residual to $-5.7 \times 10^{-8}$ relative, near CODATA
+brings the residual to $+5.7 \times 10^{-8}$ relative (calc $-$ CODATA), near CODATA
 $\sigma_\alpha = 1.5 \times 10^{-10}$ — but the coefficient $1/(4\pi)$
 is currently a numerical near-match (1.4% off) and may refine to
 $1/(2\pi[2]_q)$ or another small $q$-correction.
@@ -68,10 +68,50 @@ structurally consistent and not coincidental — it is what one expects
 from a categorical-Lagrangian QFT whose UV completion lives on
 Bring's curve.
 
+## Pre-archimedean concern (open)
+
+The bare formula $1/\alpha_{\text{bare}} = q[9]_q[10]_q$ and its
+trace-ratio refactoring
+[`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)
+both live entirely in the pre-archimedean substrate ring
+$R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. The proposed correction
+$2/(3\pi)$, however, imports the archimedean transcendental $\pi$ via
+sphere volumes and Hodge / Gauss-Bonnet data on Bring's surface — none
+of which are objects of $R$. This is a structural cost: a $q$-rational
+formula with a $\pi$-summand is not a closed form *over the substrate*.
+
+Two routes to repair this without abandoning the numerical match:
+
+1. **Pre-archimedean origin for $\pi$.** Show that $2/(3\pi)$ arises
+   as the $q \to 1$ asymptotic limit of a quantity definable in $R$
+   (or in a categorical / RT invariant context). Candidate sources:
+   - The Reshetikhin-Turaev invariant of $S^3$ at level $k$ has known
+     $q \to 1$ asymptotics that involve $\pi$; if the genus-$4$
+     torus-knot pair $\{T_{2,9}, T_{3,5}\}$ on Bring's surface enters
+     an RT invariant whose $k \to \infty$ semi-classical limit
+     produces a $1/\pi$, the additive shift would have a categorical
+     origin.
+   - The Faddeev / Kashaev quantum dilogarithm $\Phi_q(z)$ has
+     classical-limit asymptotics involving $\pi^2/6$ (Spence's
+     identity) and $\pi$ (Stokes data); these are pre-archimedean
+     objects that produce $\pi$ only in the archimedean realisation.
+2. **Pre-archimedean reformulation.** Replace $2/(3\pi)$ by an
+   equivalent expression in $R$, perhaps an asymptotic series in $q-1$
+   or a $q$-deformation $f_q$ with $f_1 = 2/(3\pi)$. This is what
+   $q$-deformed analogues of $\pi$ (e.g.\ Gosper's $\pi_q$) are for;
+   none of the standard candidates have been tested numerically here.
+
+Until one of these is supplied, the additive form is **numerically
+viable but structurally outside $R$** — it is not on equal footing
+with the bare formula. Treat its "preferred-lead" status as
+*provisional*, conditional on an upstream pre-archimedean
+identification of the $\pi$-bearing term.
+
 ## Status: conjectural — naive interpretations fail
 
 The structural identification $2/(3\pi) = 2g/(4\pi(g-1)) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$
-at $g = 4$ is an **exact algebraic identity**, but the *physical origin*
+at $g = 4$ is an **exact algebraic identity** (in $\mathbb{R}$, not in
+$R$), but the *physical origin*
 in the QOU framework is **not yet established**. A first-pass derivation
 attempt (May 2026 audit) ruled out the simplest mechanism:
 
@@ -136,7 +176,7 @@ the structural derivation almost certainly exists, but it is
 | Bare $q[9]_q[10]_q$ | multiplicative tree | $-1.55\times 10^{-3}$ | Derived |
 | [`conj:em-coupling-chern-simons`](#conj:em-coupling-chern-simons) | multiplicative + Gram-det $\kappa$ | $-4\times 10^{-7}$ | $\kappa$ unproved (Lean `sorry`) |
 | [`conj:alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form) | $45[3]_q\,(1+\delta_B+8q\delta_B^2)$ | $+7\times 10^{-9}$ | PSLQ-empirical, 3 of 4 factors unjustified |
-| **This conjecture (additive Bring zero-mode)** | $q[9]_q[10]_q + 2g/(4\pi(g-1))$ | $+4.2\times 10^{-6}$ | **Geometrically clean; one Bring-genus-4 quantity in each term** |
+| **This conjecture (additive Bring zero-mode)** | $q[9]_q[10]_q + 2g/(4\pi(g-1))$ | $-4.2\times 10^{-6}$ | **Geometrically clean; one Bring-genus-4 quantity in each term** |
 
 The additive form is **structurally cleanest** of the four candidates:
 no fitted coefficients, every factor identifiable with a known geometric
