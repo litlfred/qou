@@ -1,112 +1,372 @@
 #!/usr/bin/env python3
-# polynomial_q_not_applicable: stub script; full compute requires per-atom Hoefsmit characters and Wenzl-bridge y_λ closed forms.
-"""Stub · ρ_K refinement via H_{3A} Wedderburn weights (P3 from PR #564).
+# polynomial_q_not_applicable: numerical sympy/mpmath consumer; symbolic-q polynomials live downstream in hoefsmit_symbolic / y_lambda_wenzl_bridge witnesses.
+"""ρ_K refinement via H_{3A} Wedderburn weights — deuteron proof-of-concept (P3' from PR #564).
 
-Implements the **structural** scaffold for the closed-form
-refinement of ρ_K beyond the leading-order constituent-mass
-ansatz, per `prop:rho-k-h3a-refinement`:
+Implements the **first concrete instance** of the per-block binding-fraction
+$\\Delta_\\lambda(K)$ closed form from `prop:rho-k-h3a-refinement`:
 
     ρ_K(q) - ρ_K^LO(Z, N)
        = (1 / |tr_M(β_K)|) · Σ_{λ ⊢ 3A} y_λ(q) · χ^λ(β_K) · Δ_λ(K)
 
-Inputs needed (NOT yet wired in this stub):
-  • Per-atom |tr_M(β_K)| (currently in `atomic-tr-m-mpfr-50dps.witness.json`
-    + per-atom extension witnesses for ⁴He+).
-  • Wenzl-bridge y_λ(q) for partitions λ ⊢ 3A — closed form per
-    `prop:y-lambda-closed-form-wenzl-bridge`; for n ≤ 12 the
-    `y-lambda-wenzl-bridge-symbolic-witness.json` already covers.
-  • Hoefsmit characters χ^λ(β_K) — from `hecke_character_symbolic.py`
-    via `hoefsmit_symbolic.py` for n ≤ 12.
-  • Per-block binding-fraction Δ_λ(K) — the **categorical question**
-    this refinement is meant to answer.
+For the **deuteron** (A=2, n=6, p(6)=11 partitions of 6) this script:
 
-The full compute is the 1–2 wk follow-up labelled P3' in
-`docs/coordination/1ppb.md`. This stub:
-  (a) documents the algorithm,
-  (b) emits a witness skeleton with all atoms flagged
-      `compute_status: "stub"`,
-  (c) preserves the .md / .ts / .lean wiring so the audit script
-      classifies the proposition as `conditional-on-class` (the
-      class hypothesis being implicit in the H_{3A} compute path).
+  1. Loads |tr_M(β_D)| from atomic-tr-m-mpfr-50dps.witness.json.
+  2. Enumerates the 11 partitions of 6.
+  3. For each λ ⊢ 6:
+     a. Loads y_λ(q_0) from y-lambda-wenzl-bridge-symbolic-witness.json
+        (closed form, evaluated at q_0 to 50 dps).
+     b. Computes the Hoefsmit character χ^λ(β_D) via
+        `hoefsmit_symbolic.chi_lambda_symbolic`, evaluated at q_0.
+  4. Verifies the Schur-Weyl identity Σ_λ y_λ χ^λ = tr_M(β_D)
+     (sanity check; should match to 50 dps numerical precision).
+  5. **Dominant-partition heuristic.**  The single mass equation
+     ρ_K - ρ_K^LO = (1/|tr_M|) Σ_λ y_λ χ^λ Δ_λ is underdetermined
+     by 11 unknowns.  This proof-of-concept *assumes* Δ_λ is supported
+     only on a single partition (default: the "balanced" (3,2,1)
+     with content sum 0) and solves for the corresponding scalar.
+     The script then sweeps every λ and reports which partition
+     yields the **smallest** |Δ| (Occam's-razor minimal perturbation).
+  6. Verifies that with the chosen Δ_λ, the predicted M(D)
+     reproduces CODATA 1875.61294257 MeV exactly (by construction).
 
-Output: `rho-k-h3a-refinement.witness.json` (skeleton).
+Output: `rho-k-h3a-refinement.witness.json` with the full deuteron
+profile.  `compute_status: "deuteron"` flags the atom as tractable.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-HERE = Path(__file__).parent
+import mpmath as mp
+import sympy as sp
 
-ATOMS_FOR_REFINEMENT = ["p", "n", "D", "T", "3He", "4He"]
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+from hoefsmit_symbolic import chi_lambda_symbolic, Q as Q_SYM  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
+
+mp.mp.dps = 50
+
+# ── Calibration anchors (CODATA, MeV) ──────────────────────────
+M_E_MEV = mp.mpf("0.51099895")
+M_P_MEV = mp.mpf("938.27208816")
+M_N_MEV = mp.mpf("939.56542052")
+M_D_MEV = mp.mpf("1875.61294257")  # CODATA deuteron mass
+
+# ── Deuteron braid word (3A=6 strands) ─────────────────────────
+# σ₁⁷ σ₂⁴ ⊕ σ₄⁶ σ₅⁴ σ₄⁻¹ — see markov_trace_axiomatic_multi_atom.py
+DEUTERON_WORD_1IDX = [1] * 7 + [2] * 4 + [4] * 6 + [5] * 4 + [-4]
+
+
+def word_to_crossings(word_1idx):
+    """Convert a 1-indexed signed-int braid word to (gen_idx, ctype) pairs
+    for `hoefsmit_symbolic.chi_lambda_symbolic` / `q_character_on_braid_word`.
+
+    Positive `i` → σ_i  →  (i-1, 'sigma')
+    Negative `-i` → σ_i^{-1}  →  (i-1, 'sigma_inv')
+    """
+    out = []
+    for tok in word_1idx:
+        if tok > 0:
+            out.append((tok - 1, "sigma"))
+        elif tok < 0:
+            out.append((-tok - 1, "sigma_inv"))
+        else:
+            raise ValueError("braid generator index 0 is invalid (1-indexed)")
+    return out
+
+
+def partitions_of_n(n):
+    """Enumerate partitions of n as tuples in weakly-decreasing order."""
+    if n == 0:
+        return [()]
+    out = []
+
+    def _rec(rem, max_part, acc):
+        if rem == 0:
+            out.append(tuple(acc))
+            return
+        for k in range(min(rem, max_part), 0, -1):
+            _rec(rem - k, k, acc + [k])
+
+    _rec(n, n, [])
+    return out
+
+
+def load_y_lambda_n6():
+    """Load symbolic closed-form y_λ for n=6 from the Wenzl-bridge witness.
+
+    Returns: dict mapping tuple(partition) → sympy expression in q.
+    """
+    path = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
+    d = json.loads(path.read_text())
+    n6 = d["tables_by_n"]["6"]
+    out = {}
+    for w in n6["weights"]:
+        lam = tuple(w["partition"])
+        # The witness uses the same sympy var name 'q' as hoefsmit_symbolic.
+        expr = sp.sympify(w["y_lambda_symbolic"])
+        # Re-bind to our canonical Q_SYM (defensive; `q` already matches).
+        free = expr.free_symbols
+        if free:
+            qsym = next(iter(free))
+            expr = expr.subs(qsym, Q_SYM)
+        out[lam] = sp.cancel(expr)
+    return out
+
+
+def load_deuteron_tr_M():
+    """Load |tr_M(β_D)| at q_0 from atomic-tr-m-mpfr-50dps.witness.json."""
+    path = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+    d = json.loads(path.read_text())
+    for r in d["results"]:
+        if r["atom"] == "deuteron":
+            tr = mp.mpf(r["tr_M_at_q0_50dps"])
+            return tr
+    raise RuntimeError("deuteron entry not found in atomic-tr-m-mpfr-50dps")
+
+
+def evaluate_at_q0(expr) -> mp.mpf:
+    """Evaluate sympy expr at q = q_0 to current mpmath precision."""
+    sub = expr.subs(Q_SYM, sp.sympify(str(Q_MP)))
+    return mp.mpf(str(sub.evalf(mp.mp.dps)))
 
 
 def main() -> int:
-    print("=" * 80)
-    print("  ρ_K H_{3A} Wedderburn refinement — STUB")
-    print("  (full compute deferred per AUDIT-DEEP-2026-05.md §7 P3')")
-    print("=" * 80)
+    print("=" * 96)
+    print("  ρ_K H_{3A} Wedderburn refinement — DEUTERON proof-of-concept")
+    print("  (P3' from AUDIT-DEEP-2026-05.md §7; PR #564)")
+    print("=" * 96)
 
-    print("\n  Algorithm (per prop:rho-k-h3a-refinement):")
-    print("    1. Load |tr_M(β_K)| from atomic-tr-m-*.witness.json")
-    print("    2. For each atom K (Z, N, A=Z+N):")
-    print("       a. n = 3·A; load Wenzl-bridge y_λ(q_0) for λ ⊢ n")
-    print("       b. For each λ ⊢ n: compute Hoefsmit χ^λ(β_K)")
-    print("       c. Determine Δ_λ(K) per-block binding fraction")
-    print("       d. ρ_K = ρ_K^LO + (1/|tr_M|)·Σ_λ y_λ χ^λ Δ_λ")
-    print("    3. Compare to CODATA M(K); refine Δ_λ profile")
+    print(f"\n  q_0 = {mp.nstr(Q_MP, 25)}")
+    print(f"  m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA)")
+    print(f"  m_p = {mp.nstr(M_P_MEV, 8)} MeV (CODATA)")
+    print(f"  m_n = {mp.nstr(M_N_MEV, 8)} MeV (CODATA)")
+    print(f"  M(D) = {mp.nstr(M_D_MEV, 12)} MeV (CODATA)")
 
-    print("\n  Inputs needed (currently absent or partial):")
-    print("    - Per-block Δ_λ(K) extraction logic (the open question)")
-    print("    - Full Hoefsmit χ^λ for n=12 (⁴He): 77 partitions × generators")
-    print("    - Plancherel-truncation level k_max via the bound")
-    print("      MAE(k) ≤ C_0·[2]_q^{-2(k-3)}; at q_0, [2]_q² ≈ 4.04, so")
-    print("      k=12 reduces residual by ~4^9 ≈ 250 000× (well below 1 ppb)")
+    # ── Step 1: |tr_M(β_D)| ───────────────────────────────────
+    tr_M = load_deuteron_tr_M()
+    abs_tr_M = abs(tr_M)
+    print(f"\n  |tr_M(β_D)| (50 dps) = {mp.nstr(abs_tr_M, 30)}")
 
-    rows = [
-        {
-            "atom": atom,
-            "compute_status": "stub",
-            "blocker": "Δ_λ extraction logic not yet derived",
-        }
-        for atom in ATOMS_FOR_REFINEMENT
-    ]
+    # ── Step 2: ρ_K^LO and the residual to be explained ────────
+    rho_K_LO = (M_P_MEV + M_N_MEV) / (M_E_MEV * abs_tr_M)
+    M_pred_LO = rho_K_LO * M_E_MEV * abs_tr_M  # = m_p + m_n by construction
+    rho_K_codata = M_D_MEV / (M_E_MEV * abs_tr_M)
+    delta_rho = rho_K_codata - rho_K_LO
+    err_pct_LO = (M_pred_LO - M_D_MEV) / M_D_MEV * 100
+    print(f"\n  ρ_K^LO         = {mp.nstr(rho_K_LO, 25)}")
+    print(f"  ρ_K^CODATA     = {mp.nstr(rho_K_codata, 25)}")
+    print(f"  Δρ_K (residual) = {mp.nstr(delta_rho, 25)}")
+    print(f"  M^LO(D)        = {mp.nstr(M_pred_LO, 14)} MeV  "
+          f"(err = {mp.nstr(err_pct_LO, 4)} %)")
+    print(f"  binding gap    = {mp.nstr(M_pred_LO - M_D_MEV, 8)} MeV  "
+          f"(should be ≈ +2.225 MeV deuteron binding)")
+
+    # ── Step 3: per-λ y_λ and χ^λ(β_D) at q_0 ─────────────────
+    print("\n  Loading y_λ(q_0) from Wenzl-bridge witness …")
+    y_lam_sym = load_y_lambda_n6()
+
+    print("  Computing χ^λ(β_D) via hoefsmit_symbolic … (11 partitions)")
+    crossings = word_to_crossings(DEUTERON_WORD_1IDX)
+    print(f"    deuteron word: {len(crossings)} crossings on H_6")
+
+    parts = partitions_of_n(6)
+    assert len(parts) == 11, f"expected 11 partitions, got {len(parts)}"
+
+    rows = []
+    sw_sum = mp.mpf(0)
+    for lam in parts:
+        chi_sym = chi_lambda_symbolic(lam, crossings)
+        chi_q0 = evaluate_at_q0(chi_sym)
+
+        if lam not in y_lam_sym:
+            raise RuntimeError(f"y_λ for partition {lam} missing from witness")
+        y_q0 = evaluate_at_q0(y_lam_sym[lam])
+
+        contribution = y_q0 * chi_q0
+        sw_sum += contribution
+
+        rows.append({
+            "partition": list(lam),
+            "y_lambda_at_q0": str(y_q0),
+            "chi_lambda_beta_D_at_q0": str(chi_q0),
+            "y_chi_product": str(contribution),
+            "abs_y_chi": str(abs(contribution)),
+        })
+
+    # ── Step 4: Schur-Weyl identity sanity check ──────────────
+    sw_err = abs(sw_sum - tr_M)
+    sw_match = sw_err < mp.mpf("1e-40")
+    print(f"\n  Schur-Weyl identity check:")
+    print(f"    Σ_λ y_λ χ^λ(β_D)    = {mp.nstr(sw_sum, 30)}")
+    print(f"    tr_M(β_D)           = {mp.nstr(tr_M, 30)}")
+    print(f"    |residual|          = {mp.nstr(sw_err, 6)}  "
+          f"{'✓ PASS' if sw_match else '✗ FAIL'}")
+    if not sw_match:
+        print("    WARNING: Schur-Weyl identity failed at 1e-40 tolerance.")
+        print("    Δ_λ extraction below is meaningless without this identity.")
+
+    # ── Step 5: dominant-partition heuristic ──────────────────
+    # Δρ = (1/|tr_M|) · y_λ · χ^λ · Δ_λ   ⇒   Δ_λ = Δρ · |tr_M| / (y_λ χ^λ)
+    target = delta_rho * abs_tr_M
+    print(f"\n  Dominant-partition heuristic.  Δ_λ values for each λ ⊢ 6,")
+    print(f"  assuming Δ_λ is supported on that partition alone:")
+    print(f"    Δ_λ = Δρ · |tr_M| / (y_λ χ^λ)")
+    print(f"\n    {'partition':<24}{'|y_λ χ^λ|':>20}{'Δ_λ':>22}")
+    print("    " + "-" * 64)
+
+    delta_table = []
+    for r in rows:
+        lam = tuple(r["partition"])
+        y_chi = mp.mpf(r["y_chi_product"])
+        if abs(y_chi) < mp.mpf("1e-40"):
+            d_lam = mp.mpf("inf")
+        else:
+            d_lam = target / y_chi
+        delta_table.append((lam, abs(y_chi), d_lam))
+        r["Delta_lambda_solo_assumption"] = str(d_lam)
+        r["abs_Delta_solo"] = str(abs(d_lam))
+        print(f"    {str(list(lam)):<24}{mp.nstr(abs(y_chi), 8):>20}"
+              f"{mp.nstr(d_lam, 8):>22}")
+
+    # Find Occam's-razor minimum |Δ| (excluding inf / non-finite)
+    finite = [(lam, _y, d) for (lam, _y, d) in delta_table
+              if mp.isfinite(d)]
+    occam = min(finite, key=lambda t: abs(t[2]))
+    occam_lam, occam_y_chi, occam_delta = occam
+    print(f"\n  Occam's-razor pick (minimum |Δ_λ| among singleton hypotheses):")
+    print(f"    λ        = {list(occam_lam)}")
+    print(f"    Δ_λ      = {mp.nstr(occam_delta, 16)}")
+    print(f"    y_λ χ^λ  = {mp.nstr(occam_y_chi, 16)}")
+
+    # Dominant heuristic: (3,2,1) is the "balanced" content-sum-zero pick
+    DOMINANT = (3, 2, 1)
+    dom_row = next((d for d in delta_table if d[0] == DOMINANT), None)
+    if dom_row is not None:
+        _, _y321, _d321 = dom_row
+        print(f"\n  Heuristic-prior pick (balanced partition (3,2,1)):")
+        print(f"    Δ_(3,2,1) = {mp.nstr(_d321, 16)}")
+        print(f"    |Δ_(3,2,1)| = {mp.nstr(abs(_d321), 8)}")
+
+    # ── Step 6: verify M(D) reconstructs CODATA exactly ───────
+    # Using Occam's pick (smallest perturbation):
+    rho_K_refined = rho_K_LO + (occam_y_chi if occam_delta >= 0 else
+                                -occam_y_chi) / abs_tr_M  # placeholder shape
+    # Direct closed-form check:
+    rho_K_check = rho_K_LO + occam_y_chi * occam_delta / abs_tr_M
+    M_pred = rho_K_check * M_E_MEV * abs_tr_M
+    closure_err_MeV = M_pred - M_D_MEV
+    closure_err_ppm = closure_err_MeV / M_D_MEV * mp.mpf("1e6")
+    print(f"\n  Closure verification (Occam Δ_λ inserted into ρ_K):")
+    print(f"    ρ_K^refined       = {mp.nstr(rho_K_check, 25)}")
+    print(f"    M(D)^pred         = {mp.nstr(M_pred, 16)} MeV")
+    print(f"    M(D)^codata       = {mp.nstr(M_D_MEV, 16)} MeV")
+    print(f"    closure error     = {mp.nstr(closure_err_MeV, 6)} MeV  "
+          f"({mp.nstr(closure_err_ppm, 4)} ppm)")
+
+    # ── Step 7: emit witness ──────────────────────────────────
+    script_bytes = Path(__file__).read_bytes()
+    script_hash = "sha256:" + hashlib.sha256(script_bytes).hexdigest()
 
     witness = {
         "computation": "rho-k-h3a-refinement",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
-            "STUB. Skeleton for the H_{3A} Wedderburn refinement of ρ_K "
-            "per prop:rho-k-h3a-refinement (PR #564). The closed form is "
-            "ρ_K = ρ_K^LO + (1/|tr_M|)·Σ_λ y_λ χ^λ Δ_λ. The unknown is the "
-            "per-block binding-fraction Δ_λ(K); deriving it from "
-            "categorical structure (rather than fitting to CODATA) is the "
-            "P3 follow-up. Until then, ρ_K^LO ≤ 0.1 % residual on D, T, ³He "
-            "remains the canonical accuracy."
+            "Deuteron proof-of-concept for the H_{3A} Wedderburn "
+            "refinement of ρ_K per prop:rho-k-h3a-refinement (PR #564). "
+            "Computes y_λ(q_0) χ^λ(β_D) for all 11 partitions λ ⊢ 6, "
+            "verifies the Schur-Weyl identity Σ_λ y_λ χ^λ = tr_M(β_D) "
+            "to 50 dps, then extracts Δ_λ(D) under the singleton-support "
+            "hypothesis (Δ supported on one partition).  Reports the "
+            "Occam's-razor pick (smallest |Δ|) and the prior heuristic "
+            "(balanced partition (3,2,1)).  Both reconstruct M(D) = "
+            "1875.61294257 MeV exactly by construction (single equation, "
+            "single unknown)."
         ),
-        "engine": "stub",
+        "engine": "sympy + mpmath (50 dps)",
         "scriptFile": "rho_k_h3a_refinement.py",
-        "scriptHash": None,
+        "scriptHash": script_hash,
         "parameters": {
-            "q0": "1.1099785955541805",
-            "atoms_planned": ATOMS_FOR_REFINEMENT,
-            "compute_status": "stub",
+            "q_0_50dps": mp.nstr(Q_MP, 50),
+            "atom": "deuteron",
+            "Z": 1, "N": 1, "A": 2, "n_strands": 6,
+            "braid_word_1idx": DEUTERON_WORD_1IDX,
+            "braid_word_str": "σ₁⁷ σ₂⁴ σ₄⁶ σ₅⁴ σ₄⁻¹",
+            "n_crossings": len(crossings),
+            "n_partitions": len(parts),
+            "compute_status": "deuteron",
+            "M_codata_MeV": str(M_D_MEV),
+            "m_e_MeV": str(M_E_MEV),
+            "m_p_MeV": str(M_P_MEV),
+            "m_n_MeV": str(M_N_MEV),
         },
-        "data": {"rows": rows},
-        "audit_reference": "AUDIT-DEEP-2026-05.md §7 P3",
+        "data": {
+            "abs_tr_M_at_q0_50dps": str(abs_tr_M),
+            "rho_K_LO": str(rho_K_LO),
+            "rho_K_codata": str(rho_K_codata),
+            "delta_rho_residual": str(delta_rho),
+            "M_LO_pred_MeV": str(M_pred_LO),
+            "M_LO_err_pct": str(err_pct_LO),
+            "binding_gap_MeV": str(M_pred_LO - M_D_MEV),
+            "schur_weyl_check": {
+                "sum_y_chi": str(sw_sum),
+                "tr_M": str(tr_M),
+                "abs_residual": str(sw_err),
+                "match_at_1e_40": bool(sw_match),
+            },
+            "per_lambda": rows,
+            "occam_pick": {
+                "partition": list(occam_lam),
+                "Delta_lambda": str(occam_delta),
+                "abs_Delta": str(abs(occam_delta)),
+                "y_chi": str(occam_y_chi),
+                "M_pred_MeV": str(M_pred),
+                "closure_err_MeV": str(closure_err_MeV),
+                "closure_err_ppm": str(closure_err_ppm),
+            },
+            "balanced_321_heuristic": {
+                "partition": [3, 2, 1],
+                "Delta_lambda": (str(dom_row[2]) if dom_row is not None else None),
+                "abs_Delta": (str(abs(dom_row[2])) if dom_row is not None else None),
+            },
+        },
+        "audit_reference": "AUDIT-DEEP-2026-05.md §7 P3 / P3'",
         "pr": "#564",
+        "notes": (
+            "The single mass equation  ρ_K^codata - ρ_K^LO = "
+            "(1/|tr_M|) Σ_λ y_λ χ^λ Δ_λ  is **underdetermined**: 11 "
+            "unknowns (Δ_λ for λ ⊢ 6), 1 constraint.  This proof-of-"
+            "concept assumes singleton support for Δ_λ and reports "
+            "(a) the Occam's-razor pick (minimum |Δ|), and (b) the "
+            "balanced-partition heuristic (3,2,1).  Both reproduce "
+            "M(D) exactly by construction.  The categorical question "
+            "— *which* λ carries the binding, and why — is the open "
+            "P3' problem.  Likely resolution paths: (i) Plancherel-"
+            "truncation bound MAE(k) ≤ C₀·[2]_q^{-2(k-3)} via "
+            "k_max = 12; (ii) jet-knot Hochschild-cohomology "
+            "obstruction selecting a privileged Wedderburn block; "
+            "(iii) variational principle minimising Σ_λ |Δ_λ|² "
+            "subject to the mass constraint (Tikhonov / minimum-"
+            "norm solution = Moore-Penrose pseudoinverse)."
+        ),
         "follow_up": (
-            "Derive Δ_λ(K) from categorical structure. Plancherel-truncated "
-            "Hoefsmit character sum at q_0; per-block binding extraction "
-            "via comparison with rho-k-leading-order-verification."
+            "Extend to (T, ³He) at n=9 (p(9)=30) using the same "
+            "pipeline; then to ⁴He at n=12 (p(12)=77).  Add a "
+            "minimum-norm Δ_λ extraction (least-squares against "
+            "all atoms simultaneously) once ≥ 2 atoms are wired."
         ),
     }
     out = HERE / "rho-k-h3a-refinement.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")
-    print(f"\n  Wrote {out.name} (stub).")
-    return 0
+    print(f"\n  Wrote {out.name} ({out.stat().st_size} bytes).")
+    print("=" * 96)
+    return 0 if sw_match else 2
 
 
 if __name__ == "__main__":
