@@ -119,4 +119,27 @@ theorem force_carrier_knot_vs_link_dichotomy
   -- Ref: force-carrier-knot-vs-link-dichotomy.md §"Step 5"
   exact _inst.hoefsmitCellContent
 
+/-- **Skeleton instance.**  Provides the canonical photon = trefoil
+    (1-component, matter-like knot) and $W$ = Hopf link (2-component,
+    broken-symmetry link) classification using ℕ as the component-count
+    classifier (`0`, `1` for the two cases of interest).  The two open
+    hypothesis fields close trivially because `CategoricalHiggsAsLinking`
+    and `HoefsmitCellContentEW` are currently defined as `True` (their
+    full categorical content is the subject of separate conjecture
+    blocks).  This is the minimal Lean witness that the dichotomy
+    classifier exists; the structural derivation lives in the upstream
+    conjectures `conj:categorical-higgs-mechanism` and
+    `conj:hoefsmit-ew-cell-content`. -/
+-- Ref: docs/audits/2026-05-05-path-alpha-bring-refinement.md
+instance skeleton
+    {R : Type*} [CommRing R]
+    {A : Type*} [Ring A] [Algebra R A] :
+    ForceCarrierKnotLinkDichotomy R A where
+  componentCount := ℕ
+  categoricalType := fun n =>
+    if n ≤ 1 then CategoricalType.matterLikeKnot
+    else CategoricalType.brokenSymmetryLink n (by omega)
+  higgsAsLinking := trivial
+  hoefsmitCellContent := trivial
+
 end QOU.Descartes
