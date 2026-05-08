@@ -168,6 +168,15 @@ export async function validateObjects(
         allLabels.add(block.label);
       }
     }
+    // PR #565: also register the chapter's own label and the
+    // labels of every section, so md-crossref-resolve recognises
+    // [chap:foo](#chap:foo) and [sec:bar](#sec:bar) references.
+    if ((chapter as Chapter).label) allLabels.add((chapter as Chapter).label!);
+    for (const sec of chapter.sections) {
+      if ("label" in sec && (sec as Section).label) {
+        allLabels.add((sec as Section).label!);
+      }
+    }
   } else if (manifestKind === "paper" && manifestPath && manifestData) {
     // ── Paper mode: manifest already validated by detectManifestKind ──
     const paper: Paper = manifestData;
@@ -217,6 +226,13 @@ export async function validateObjects(
           allBlocks.set(name, { block, dir: chDir });
           if ("label" in block && block.label) {
             allLabels.add(block.label);
+          }
+        }
+        // PR #565: register chapter + section labels (paper mode).
+        if (chapter.label) allLabels.add(chapter.label);
+        for (const sec of chapter.sections) {
+          if ("label" in sec && (sec as Section).label) {
+            allLabels.add((sec as Section).label!);
           }
         }
       } catch (e) {
