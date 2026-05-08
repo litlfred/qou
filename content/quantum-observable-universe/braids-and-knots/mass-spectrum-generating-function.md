@@ -77,8 +77,8 @@ is the **functorial equivalence** linking the categorical state, its
 generating function, and the physical observable. None of the three
 arrows is an identity: $\tau$ is decategorification (loses
 isomorphism information), $\mathrm{ev}_{q_0}$ is specialisation
-(loses generic-$q$ structure — see the open issue in
-[unified knot-mass formula](#thm:knot-mass-formula-unified)), and
+(loses generic-$q$ structure — see the open issue in the
+unified knot-mass formula), and
 $m_0\,|\cdot|$ is unit conversion.
 
 ## Why the distinction matters

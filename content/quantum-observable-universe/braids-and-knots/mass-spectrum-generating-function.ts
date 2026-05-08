@@ -12,7 +12,6 @@ export default remark({
     "def:confinement-level",
     "def:observation",
     "prop:three-calibration-inputs",
-    "thm:knot-mass-formula-unified",
   ],
   cites: [
     "khovanovlauda2009",
