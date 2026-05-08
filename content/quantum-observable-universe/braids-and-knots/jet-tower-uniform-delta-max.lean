@@ -73,4 +73,15 @@ theorem geometric_tail_bound_abstract
     exact pow_nonneg (le_of_lt hbarSq_pos) _
   · linarith
 
+/-- **Trivial-delta skeleton instance.**  Sets `delta ≡ 0` and
+    `delta_max = 0`; the uniform bound `|0| ≤ 0` reduces to `0 ≤ 0`.
+    Encodes none of the actual jet-tower binding content but
+    discharges the §3b-cond hypothesis. -/
+-- Ref: [manuscript] conj:jet-tower-uniform-delta-max §"Skeleton"
+instance skeleton (ρ : Type*) : JetTowerUniformDeltaMax ρ where
+  delta := fun _ => 0
+  delta_max := 0
+  delta_max_nonneg := le_refl 0
+  uniform_bound := fun _ _ => by simp
+
 end QOU.BraidKnot

@@ -53,4 +53,21 @@ class CanonicalKnotIdSDP (n : LightNucleus) where
   rho : ℕ
   rho_pos : 0 < rho
 
+/-- **Canonical-name skeleton.**  Pins the canonical knot identifier
+    by direct knot-table lookup (`6_2`, `8_11`, `L6a4`), uses
+    `sdpUniqueness := True` so `uniqueness_holds` closes by `trivial`,
+    and sets `rho = 1`.  Encodes the historical knot-name assignment
+    but not the SDP-uniqueness derivation. -/
+-- Ref: [manuscript] conj:canonical-knot-id-sdp §"Skeleton"
+instance skeleton : ∀ n : LightNucleus, CanonicalKnotIdSDP n
+  | LightNucleus.deuterium =>
+    { canonicalKnotId := "6_2",  sdpUniqueness := True
+      uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }
+  | LightNucleus.tritium =>
+    { canonicalKnotId := "8_11", sdpUniqueness := True
+      uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }
+  | LightNucleus.helium3 =>
+    { canonicalKnotId := "L6a4", sdpUniqueness := True
+      uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }
+
 end QOU.BraidKnot
