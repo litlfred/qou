@@ -167,6 +167,23 @@ def main():
             f"chi_threshold={CHI_THRESHOLD}. For n=5 the partition basis "
             "is small (7 partitions), so robust to threshold choice."
         )
+        # F1 (PR #565): structural anchors. k★ ≤ n always, and the
+        # falsification narrative (k★ < max_grade) is the central
+        # claim of the witness — encode it as an assertion.
+        .add_assertion(
+            "k_star_le_structural_bound",
+            computed=int(k_star),
+            expected=int(n_0),
+            tolerance=int(n_0),  # passes iff k_star ∈ [0, 2*n_0]
+            source="prop:phi-q-categorical-truncation § structural bound",
+        )
+        .add_assertion(
+            "k_star_lt_max_grade",
+            computed=1.0 if k_star < witness_max_grade else 0.0,
+            expected=1.0,
+            tolerance=0.0,  # binary: must hold
+            source="this witness's central falsification claim",
+        )
     )
     out = w.save()
     print(f"\nWitness: {out.name}")

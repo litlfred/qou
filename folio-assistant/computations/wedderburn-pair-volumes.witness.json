@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-06T15:46:56.013761+00:00",
-  "commitSha": "adfaff0fcdaa25a041bb14e08eec6121fb04029a",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-08T18:06:51.837830+00:00",
+  "commitSha": "074545548b063ae3b21961bbc42bc1f749c8cc51",
   "assertions": [
     {
       "name": "n_pairs equals C(n_gens, 2)",
@@ -10,14 +10,22 @@
       "expected": 10,
       "passed": true,
       "tolerance": 0
+    },
+    {
+      "name": "wedderburn_full_pair_volumes_finite",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "prop:knot-operator-lp-selection"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "wedderburn-pair-volumes",
   "scriptFile": "wedderburn_pair_volumes.py",
-  "scriptHash": "8bb657c9c713",
-  "scriptCommitSha": "f79dccf6a91d3a302c0b3325b296914413ed5bf3",
+  "scriptHash": "977ea04d1e07",
+  "scriptCommitSha": "b763e7b40591c66ec1f61a2e01391af8c1cad264",
   "description": "Per-pair Wedderburn-coupled volumes |V̂_i V̂_j| = w_sym·λ^sym + w_std·Markov-trace + w_alt·λ^alt for the deuteron Z=1, N=1 atom braid; supports prop:knot-operator-lp-selection by exposing the LP/SDP input matrix entries for the active set.",
   "contentBlock": "prop:knot-operator-lp-selection",
   "parameters": {

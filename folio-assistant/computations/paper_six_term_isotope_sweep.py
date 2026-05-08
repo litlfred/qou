@@ -807,6 +807,34 @@ if __name__ == "__main__":
             for mode in modes
         },
     }
+    # F1 (PR #565): structural assertions on the canonical-mode sweep.
+    # Encoded directly into the witness dict (script does not yet use
+    # the structured-witness builder; migration to wrap_legacy is a
+    # separate concern tracked under P30 in compute_audit_scan).
+    canonical_rows = [r for r in rows if "M_predicted" in r]
+    proton_row = next((r for r in canonical_rows if r["isotope"] == "p"), None)
+    non_p_errs = [abs(r["err_pct"]) for r in canonical_rows
+                  if r["isotope"] != "p" and "err_pct" in r]
+    witness["assertions"] = []
+    if proton_row is not None:
+        witness["assertions"].append({
+            "name": "proton_anchor_exact",
+            "computed": float(proton_row["err_pct"]),
+            "expected": 0.0,
+            "passed": abs(float(proton_row["err_pct"])) < 1e-6,
+            "tolerance": 1e-6,
+            "source": "thm:knot-mass-formula-unified § proton calibration",
+        })
+    if non_p_errs:
+        max_err = max(non_p_errs)
+        witness["assertions"].append({
+            "name": "non_proton_max_err_finite",
+            "computed": float(max_err),
+            "expected": 0.0,
+            "passed": max_err < 1e6,  # massively loose; just rules out NaN/inf
+            "tolerance": 1e6,
+            "source": "this witness",
+        })
     out = Path(__file__).parent / "paper-six-term-isotope-sweep.witness.json"
     out.write_text(json.dumps(witness, indent=2, default=str))
     print(f"\nWitness: {out}")
