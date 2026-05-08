@@ -284,7 +284,9 @@ Content change detected
 ## Responsibilities
 
 1. **Coordinate workplan**: maintain the plan file, track progress via TodoWrite,
-   sequence changes to avoid conflicts.
+   sequence changes to avoid conflicts. The workplan is the user's stated
+   priority — see *PR webhook events during active workplans* below for
+   how to handle ad-hoc PR/CI events without losing focus.
 2. **Delegate to agents**: dispatch formalizer, glossary, consistency, and
    category-theory agents for specific tasks. Review their output for
    cross-file consistency before presenting to author.
@@ -519,6 +521,76 @@ When the user asks to "work on todos" or "process feedback":
 
 See `todo-review` skill for full details. Agents may create and
 `in_progress` todos but **never** resolve or delete them.
+
+## PR webhook events during active workplans
+
+When a PR activity event (review comment, code-suggestion, CI status,
+review summary) arrives via `<github-webhook-activity>` while a workplan
+is in progress, the **default action is to triage and queue, not
+interrupt**. The workplan is the user's stated priority; ad-hoc PR
+events are not.
+
+### Triage criteria for *immediate* action (override the queue)
+
+Interrupt the workplan only if the event meets one of these:
+
+1. **Consistency risk** — the comment exposes a contradiction with
+   another part of the manuscript that, if left, would propagate
+   incorrect assumptions into work being done in this session.
+2. **Direct impact on current work** — the comment is on a file or
+   block the workplan is actively editing right now.
+3. **CI failure on the active branch** — a build / validate / Lean
+   failure that blocks merge or invalidates a commit just made in
+   this session.
+4. **Explicit user redirect** — the user (in chat) tells the editor
+   to handle the event now.
+
+### Default action (queue, do not interrupt)
+
+For everything else — general suggestions, grammar nits, optional
+refactorings, comments on outdated code, comments on unrelated PRs,
+review summaries that recap already-handled items:
+
+1. Acknowledge receipt internally; do **not** print a long analysis.
+2. Record the event in the workplan as a `TodoWrite` entry tagged
+   `pr-comment-queued` with the PR number, comment URL, and a
+   one-line summary of what the reviewer asked.
+3. Continue the workplan task in progress without context-switching.
+4. Do not start a fresh investigation, do not run `mcp__github__*`
+   tools beyond what the webhook payload already provided, and do
+   not post a reply on GitHub. Keep tool calls focused on the
+   current workplan task.
+
+### Drain the queue
+
+Switch from the workplan to the queued PR-comment batch only when:
+
+- (a) The workplan reaches a natural pause (a logical chunk is
+      complete, e.g. one block fully revised, one Lean lemma closed,
+      one chapter finished), **or**
+- (b) The user explicitly asks to drain the queue ("clear the PR
+      queue", "go through the comments now"), **or**
+- (c) The workplan has nothing left to do — all tasks are
+      `completed`. In this case, **do not stop and wait for the
+      user**: pick up the queued PR-comment batch automatically and
+      process each item in turn. At that point, ad-hoc events
+      become the work.
+
+When draining, process queued items oldest-first; for each, decide
+*action* / *reply-only* / *no-op* per the standard PR-event policy.
+Mark the corresponding `pr-comment-queued` todo `completed` as you
+go.
+
+### Anti-patterns
+
+- **Do not** reply on GitHub the moment a webhook arrives unless
+  the comment is genuinely actionable now — frequent replies
+  during a workplan create noise on the PR.
+- **Do not** stop the workplan to "investigate" a low-impact
+  comment. Investigation belongs in the queue-drain phase.
+- **Do not** silently drop events. Every webhook produces either
+  an immediate action (criteria 1–4) or a `pr-comment-queued`
+  todo. Nothing is forgotten.
 
 ## Proof workflow (narrative and Lean)
 
