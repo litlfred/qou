@@ -138,6 +138,42 @@ theorem qHookProduct_row_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
   show qInteger q 2 * (qInteger q 1 * 1) = q + q⁻¹
   rw [qInteger_two q hq, qInteger_one q hq]; ring
 
+/-- Hook product for the row partition `[3]` equals `[3]_q!`. -/
+theorem qHookProduct_row_three (q : ℝ) :
+    qHookProduct q (hooksRow 3) =
+      qInteger q 3 * (qInteger q 2 * (qInteger q 1 * 1)) := rfl
+
+/-- Hook lengths for the L-shape partition `[2, 1]` of `n = 3`.
+    Cells: (1,1)→3, (1,2)→1, (2,1)→1.  Returned in row-major order. -/
+def hooksLshape21 : List ℕ := [3, 1, 1]
+
+/-- Hook product for `λ = [2, 1]` is `[3]_q · [1]_q · [1]_q = [3]_q`
+    (since `[1]_q = 1` whenever `q ≠ q⁻¹`). -/
+theorem qHookProduct_lshape21 (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+    qHookProduct q hooksLshape21 = qInteger q 3 := by
+  show qInteger q 3 * (qInteger q 1 * (qInteger q 1 * 1)) = qInteger q 3
+  rw [qInteger_one q hq]; ring
+
+/-- Hook lengths for the column partition `[1, 1, 1]` of `n = 3`.
+    Cells: (1,1)→3, (2,1)→2, (3,1)→1.  Same multiset as `hooksRow 3`. -/
+def hooksCol3 : List ℕ := [3, 2, 1]
+
+/-- Hook product for the column `[1,1,1]` equals `[3]_q!`. -/
+theorem qHookProduct_col3 (q : ℝ) :
+    qHookProduct q hooksCol3 =
+      qInteger q 3 * (qInteger q 2 * (qInteger q 1 * 1)) := rfl
+
+/-- The standard-Young-tableaux dimensions `(d_[3], d_[2,1], d_[1,1,1])
+    = (1, 2, 1)` for the three partitions of `n = 3`. -/
+def syt3_dims : List ℕ := [1, 2, 1]
+
+/-- Sum of `(d_λ)²` over partitions of `n = 3` equals `n! = 6`
+    (Burnside / RSK identity).  `1² + 2² + 1² = 6`. -/
+theorem syt3_squares_sum_eq_six :
+    (syt3_dims.map (fun d => d ^ 2)).sum = 6 := by
+  show (1 ^ 2 + (2 ^ 2 + (1 ^ 2 + 0))) = 6
+  norm_num
+
 -- ════════════════════════════════════════════════════════════════
 -- §2  Brane fluid data and viscosity
 -- ════════════════════════════════════════════════════════════════
