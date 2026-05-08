@@ -73,18 +73,40 @@ ATOM_LABEL_TO_TR_M_KEY = {
 
 
 def load_atomic_tr_m() -> dict[str, mp.mpf]:
-    """Load |tr_M(K)| values from `atomic-tr-m-mpfr-50dps.witness.json`."""
-    path = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
-    if not path.exists():
-        return {}
-    d = json.loads(path.read_text())
+    """Load |tr_M(K)| values from the legacy 50-dps witness *and*
+    any per-atom extension witnesses (e.g. `atomic-tr-m-helium4`).
+
+    Per-atom extension files are appended after the legacy file, so
+    they can override or extend the 5-atom legacy table without the
+    legacy file being treated as mutable."""
     out: dict[str, mp.mpf] = {}
-    for r in d.get("results", []):
-        atom = r.get("atom")
-        tr_str = r.get("tr_M_at_q0_50dps")
-        if atom is None or tr_str is None:
+
+    # Legacy 5-atom witness (p, n, D, T, ³He).
+    legacy = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+    if legacy.exists():
+        d = json.loads(legacy.read_text())
+        for r in d.get("results", []):
+            atom = r.get("atom")
+            tr_str = r.get("tr_M_at_q0_50dps")
+            if atom is None or tr_str is None:
+                continue
+            out[atom] = abs(mp.mpf(tr_str))
+
+    # Per-atom extension witnesses: any file matching
+    # `atomic-tr-m-*.witness.json` whose name is NOT the legacy one.
+    for ext in sorted(HERE.glob("atomic-tr-m-*.witness.json")):
+        if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
             continue
-        out[atom] = abs(mp.mpf(tr_str))
+        try:
+            d = json.loads(ext.read_text())
+        except json.JSONDecodeError:
+            continue
+        for r in d.get("results", []):
+            atom = r.get("atom")
+            tr_str = r.get("tr_M_at_q0_50dps") or r.get("abs_tr_M_at_q0_50dps")
+            if atom is None or tr_str is None:
+                continue
+            out[atom] = abs(mp.mpf(tr_str))
     return out
 
 
