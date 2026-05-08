@@ -81,4 +81,22 @@ class CategoricalHiggsMechanism
   /-- Mass formula via Hoefsmit-projector Markov trace. -/
   mass_formula : CategoricalMassFormula q
 
+/-- **Skeleton instance.**  Requires the upstream
+    `q_generic` hypothesis as a parameter (cannot be discharged for
+    a free `q : R` without external input).  Defers to the existing
+    skeleton instances of `CategoricalLinkingOperation` and
+    `WeinbergAngleCategorical`; the two `True`-predicate fields close
+    by `trivial`.  Note: this is a `def`-style helper, not an
+    `instance`, because Lean cannot synthesise `q_generic` for a free
+    `q`.  Callers with a witness `hq : ¬ IsRootOfUnityH q` build the
+    instance via `mkSkeleton hq`. -/
+-- Ref: [manuscript] conj:categorical-higgs-mechanism §"Skeleton"
+def mkSkeleton {R : Type*} [CommRing R] (q : R)
+    (hq : ¬ IsRootOfUnityH q) : CategoricalHiggsMechanism R q where
+  q_generic := hq
+  linkingOperation := inferInstance
+  weinbergAngleCategorical := inferInstance
+  mass_eigenstate_count := trivial
+  mass_formula := trivial
+
 end QOU.BraidsAndKnots

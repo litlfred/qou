@@ -319,6 +319,16 @@ class ShellClosureNFTermCount where
     ∀ Z : ℕ, (Z + 1 ∉ magic_numbers ∧ Z ∉ magic_numbers) →
       nf_term_count (Z + 1) = nf_term_count Z
 
+/-- **Constant-count skeleton instance.**  Sets `nf_term_count ≡ 0`;
+    both `helium_base` and `shell_constant_between_magics` close by
+    `rfl` (every shell-step is `0 = 0`).  Encodes none of the actual
+    NF-term-count content but discharges the §3b-cond hypothesis. -/
+-- Ref: [manuscript] conj:shell-closure-nf-term-count §"Skeleton"
+instance skeleton : ShellClosureNFTermCount where
+  nf_term_count := fun _ => 0
+  helium_base := rfl
+  shell_constant_between_magics := fun _ _ => rfl
+
 /-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
     Conditional on `[ShellClosureNFTermCount]`, the term-count
     function is constant on each shell. Fully verified by Lean

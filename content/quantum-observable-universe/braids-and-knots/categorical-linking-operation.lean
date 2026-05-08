@@ -282,4 +282,17 @@ class CategoricalLinkingOperation
   /-- Bar-involution compatibility. -/
   barCompatible : LkBarInvolutionCompatible q
 
+/-- **Skeleton instance.**  All five hypothesis predicates are
+    `True`-defined; the skeleton closes each by `trivial`.  Discharges
+    the §3b-cond hypothesis for downstream blocks consuming
+    `[CategoricalLinkingOperation R q]`. -/
+-- Ref: [manuscript] conj:categorical-linking-operation §"Skeleton"
+instance skeleton {R : Type*} [CommRing R] (q : R) :
+    CategoricalLinkingOperation R q where
+  linearity := trivial
+  reductionAtZero := trivial
+  multiplicativeInK := trivial
+  traceCutSymmetric := trivial
+  barCompatible := trivial
+
 end QOU.BraidsAndKnots
