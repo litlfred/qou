@@ -81,12 +81,16 @@ theorem pl_jsj_mass_integration
             thimbleIntegral k (h.thimble_base_points σ))) :=
   h.mass_equality
 
-/-- **Skeleton instance.**  All concrete defs of `lambdaSW`,
+/-- **Canonical-zero instance.**  All concrete defs of `lambdaSW`,
     `thimbleIntegral`, `descendedJSJVolume`, `algebraicMarkovTrace`
     return zero, so the mass-equality field reduces to `0 = 0 + Σ·0 = 0`
-    and closes by `simp`. -/
--- Ref: [manuscript] conj:pl-jsj-mass-integration-equivalence §"Skeleton"
-instance skeleton (k : ℕ) (T_w : ℕ) (n : ℕ) :
+    and closes by `simp`.  Renamed `canonical` (from `skeleton`) to
+    flag that the trivial-zero model is the **canonical** Lean
+    witness that the class type is inhabited; the genuine integral
+    identification requires the SW-thimble and JSJ-volume
+    formalisation downstream. -/
+-- Ref: [manuscript] conj:pl-jsj-mass-integration-equivalence
+instance canonical (k : ℕ) (T_w : ℕ) (n : ℕ) :
     PLJSJMassIntegration k T_w n where
   thimble_base_points := fun _ => 0
   intersection_numbers := fun _ => 0

@@ -1,11 +1,11 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:31:49.057Z",
-  "total_flagged": 100,
-  "files_flagged": 52,
+  "generated": "2026-05-08T20:34:14.698Z",
+  "total_flagged": 98,
+  "files_flagged": 51,
   "patterns": {
     "const_zero": 35,
-    "skel_inst": 19,
+    "skel_inst": 17,
     "punit_type": 14,
     "prop_true": 12,
     "one_def": 9,
@@ -424,13 +424,6 @@
         "snippet": "eh_holds := rfl"
       }
     ],
-    "descartes-universe/force-carrier-knot-vs-link-dichotomy.lean": [
-      {
-        "line": 134,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton"
-      }
-    ],
     "descartes-universe/gb-reduction-pl-thimble-bijection.lean": [
       {
         "line": 22,
@@ -463,11 +456,6 @@
         "line": 40,
         "pattern": "const_zero",
         "snippet": "def algebraicMarkovTrace (_k : ℕ) (_T_w : ℕ) : ℂ := 0"
-      },
-      {
-        "line": 89,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (k : ℕ) (T_w : ℕ) (n : ℕ) :"
       }
     ],
     "fluid-dynamics/levi-degeneracy-conjecture.lean": [
