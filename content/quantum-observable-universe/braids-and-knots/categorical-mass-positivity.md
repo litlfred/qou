@@ -20,3 +20,12 @@ correspond to summands that lie in the
 [cemetery group](#def:cemetery-group), which the engine drops
 during traversal — see
 [cemetery-group emergence](#conj:cemetery-group-emergence).*
+
+*The polynomial $\tau(M_K) = P_K(q)$ is therefore the **mass-spectrum
+generating function** of $K$: each term $c_d q^d$ is a mass component
+indexed by **graded Hecke energy** $d$ with **microstate degeneracy**
+$c_d$. The relation to the macroscopic scalar is a functorial
+composition (decategorification, then evaluation at the substrate
+$q_0$, then dimensional anchor), not an identity — see
+[mass-spectrum generating function](#rem:mass-spectrum-generating-function)
+for the full $M_K \approx m_0 \cdot |P_K(q_0)|$ pipeline.*
