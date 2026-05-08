@@ -41,9 +41,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 from gb_filtration_jet_tracker import HeckeElement, perm_to_canonical_word
 from joint_tower_sdp_solver import REGISTRY as REGISTRY_PHASE_3A
 from joint_tower_sdp_solver import solve_per_atom
+from q_parameter import Q as Q_FLOAT
 
-# Substrate parameter q_0 (numerical value used in the QOU framework).
-q_0_NUMERIC = 1.1097      # see q_parameter.py
+# Substrate parameter q_0 (canonical witnessed value, ~1.10998).
+q_0_NUMERIC = Q_FLOAT
 
 # ───────────────────────────────────────────────────────────────────
 # Phase 3b registry: historical knot identifications for ²H, ³H, ³He.

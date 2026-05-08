@@ -17,20 +17,99 @@ conditional‑on‑class blocks, **258** §3b violators).
 
 ---
 
-## 0 · Headline findings (TL;DR)
+## 0 · Headline findings (TL;DR — revised 2026-05-08 after corrections)
 
-| # | Finding | Severity |
-|---|---------|----------|
-| F1 | The Wedderburn mass formula and every load‑bearing mass‑related theorem (`thm:wedderburn-mass-formula`, `thm:six-term-mass-formula-complete`, `thm:knot-mass-formula-unified`, `thm:markov-trace-factorization`, `thm:groebner-shirshov-energy`, …) are **§3b violators** — they are stated as theorems while their `uses[]` cone transitively touches conjectures that are *not* class‑axiomatised. | **Critical** |
-| F2 | The current best mass prediction (`atomic_braid_mass_table.py`) gives **35 % MAE on D…⁴He**, not the 0.9 % figure repeated in `HANDOVER-STATUS.md`. The 0.9 % number applied to a deprecated single‑level CRT computation. | **Critical** |
-| F3 | The framework has **three** empirical anchors, not one: `m_e` (CODATA), `m_μ/m_e` (CODATA, pins `q₀`), `Q_β` (CODATA neutron β decay, pins `E₀`). `HANDOVER-STATUS.md` claims "single‑calibration" — false on the page. | **High** |
-| F4 | Tower terms `T4` (Frobenius codim) and `T6` (cyclotomic tail) are **per‑A lookup tables** in `atomic_braid_mass_terms.py`, not formulas. They are presented as derived. | **High** |
-| F5 | `q₀ = 1.1099785955541805…` is **hard‑coded as a numeric literal** in 20+ scripts/witnesses, contrary to the witnessed‑values rule (CLAUDE.md skill `witnessed-values`). | **High** |
-| F6 | GS filtration & jet order produce a structured witness but the SDP solver **does not consume the sparsity pattern** — pure metadata today. Estimated **50–500× speed‑up** unlocked by wiring it. | **High** |
-| F7 | Crystal bases / KLR / KL canonical basis / Type B folding / Demazure sub‑crystals are documented (CLAUDE.md §7b, `conj:crystal-graph-realization`) but **nothing is implemented in compute**. | **Medium** |
-| F8 | Magic numbers `{2,8,20,28,50,82,126}` are encoded as a **literal Python list** (`atomic_braid_mass_table.py:70` `MAGIC_NUCLEON_COUNTS`) — not derived from Bring's surface (`conj:magic-numbers-bring` is open). | **Medium** |
-| F9 | `Z_MARK = 1/(√q + 1/√q)` (`atomic_braid_mass_table.py:66`) is a different `z` than `z_markov` imported from `hecke_symbolic` (`markov_trace_canonical.py:45`) and different again from the `z = q − q⁻¹` pattern used elsewhere. **Convention chaos.** | **Medium** |
-| F10 | The mass framework currently uses **`H₃` Plancherel weights at every generator** for A‑nucleon atoms; the correct `H_{3A}` Wedderburn summation is not implemented (`HANDOVER-STATUS.md §3f` admits this). | **High** |
+The first cut of this report contained two over-statements (F4) and
+one false positive (F9); they are corrected here, and the actions
+taken on each finding are recorded inline. Where a finding still
+needs work, the remaining work is explicit.
+
+| # | Finding | Severity | Status / action taken |
+|---|---------|----------|----------------------|
+| F1 | The Wedderburn mass formula and every load-bearing mass theorem (`thm:wedderburn-mass-formula`, `thm:six-term-mass-formula-complete`, `thm:knot-mass-formula-unified`, `thm:markov-trace-factorization`, `thm:groebner-shirshov-energy`, …) flag as **§3b violators**. | **Critical** | **Reframed** — see §1A: the violators are *transitive*, not direct. Of the 12 listed theorems, only `thm:knot-mass-formula-unified` directly cites a `conj:` in its `uses[]`; the others reach conjectures via intermediate `prop:` nodes. The right unblocking move is to class-axiomatise the 12 hub conjectures (or tighten 2–3 intermediate `uses[]` lists), **not** to demote the theorems. Concrete migration plan in §7 P1. |
+| F2 | The current atomic-braid path shows ~35 % MAE on D…⁴He, not the 0.9 % cited in `HANDOVER-STATUS.md`. | **Critical** | **Doc fixed** — top of `HANDOVER-STATUS.md` now carries a status banner pointing here and clarifying that the 0.9 % figure described the deprecated CRT path. |
+| F3 | The framework actually carries three calibrations (`m_e`, `m_μ/m_e`, `Q_β`), not one. | **High** | **Doc fixed** — same banner in `HANDOVER-STATUS.md`. |
+| F4 | T4 / T6 are per-A lookup tables, not derived formulas. | **Was High — now Medium / Low** | **Corrected** — see §3.3a: T4 (`atomic_braid_mass_terms.t4_raw`) is **derived live** at 50 dps (Frobenius co-Casimir trace ∑_λ 1/dim_q(λ)). T6 reads a witness, but the witness is itself produced by a derivation script — there are *two* derivation scripts (`term6_full_pole_sum.py` Habiro path, `term6_residues_at_roots.py` canonical Markov-peel path), and `t6_canonical_MeV` consumes the older one. Concrete fix in §7 P4'. |
+| F5 | `q₀ = 1.1097…` hardcoded in 20+ scripts/witnesses. | **High → Medium** | **Partly fixed** — the only active *executable* hardcode (`joint_tower_sdp_solver_v2.py:46`, `q_0_NUMERIC = 1.1097`) now imports `q_parameter.Q`. The remaining 20-odd hits are comments, deprecated copies, or 50-dps-string literals (`"1.1099785955541805"`) which already match the canonical witness; left in place. |
+| F6 | GS filtration + jet order are pure metadata; SDP solver does not consume them. | **High** | **Plan written** — §7 P6 retained. No code change yet (engineering task; see §6 sketch). |
+| F7 | Crystal bases / KLR / KL / Type B folding / Demazure sub-crystals: zero compute integration. | **Medium** | **Plan written** — §7 P5'. No code change yet. |
+| F8 | `MAGIC_NUCLEON_COUNTS = {2, 8, 20, 28, 50, 82, 126}` is a literal Python set, not derived. | **Medium** | **Tagged** — comment added at `atomic_braid_mass_table.py:69` flagging the empirical status and pointing at `conj:magic-numbers-bring`. |
+| F9 | `Z_MARK` differs from `z_markov`. | — | **False positive — withdrawn.** Both `Z_MARK` (mpmath, `atomic_braid_mass_table.py:66`) and `z_markov` (sympy, `hecke_symbolic.py:34`) implement the same formula `1/(q^{1/2}+q^{-1/2})`; the only difference is the numerical engine. Symbol-name unification is cosmetic and not pursued here. |
+| F10 | `H₃` Plancherel weights used at every generator instead of `H_{3A}`. | **High** | **Plan retained** — §7 P3. The audit witness `atomic_braid_mass_table.witness.json` is honest about this; no doc fix needed. Substantive math change — concrete file pointers in §7 P3. |
+
+---
+
+## 1A · §3b reframe — direct vs transitive violators (added 2026-05-08)
+
+The audit script
+[`content/pipeline/conjectural-propagation-audit.ts`] flags any
+provable-kind block whose **transitive** `uses[]` cone touches an
+unaxiomatised conjecture. That is the right rule for catching
+silent dependencies, but it is conservative: a theorem can be
+flagged because some node 4 hops upstream cites a conjecture the
+theorem does not actually use.
+
+Of the 19 flagged theorems / corollaries, on direct inspection of
+the `uses[]` field (no transitive walk):
+
+| Block | Direct `uses[]` includes a `conj:`? | Path to the conjecture |
+|-------|-------------------------------------|------------------------|
+| `thm:wedderburn-mass-formula` | no | via `prop:atomic-mass-gb-nf` |
+| `thm:six-term-mass-formula-complete` | no | via `prop:terms-2-6-higher-operations` |
+| `thm:knot-mass-formula-unified` | **yes** (`conj:knot-factor-frobenius-pairing`) | direct |
+| `thm:markov-trace-factorization` | no | via `thm:markov-trace-product` |
+| `thm:groebner-shirshov-energy` | no | via `prop:nuclear-groebner-reduction` |
+| `thm:frobenius-codim-universal` | no | via `prop:hook-weight-derivation` |
+| `thm:frobenius-antipode-unifies-chirality-and-tower` | no | (transitive) |
+| `thm:em-spectral-completeness`, `thm:embeddability-closure`, `thm:generation-completeness`, `thm:parity-regime-selection`, `thm:ns-singularity-descartes` | no | (transitive) |
+| `cor:knot-factor-amphicheiral`, `cor:knot-factor-borromean-composite`, `cor:knot-factor-shell-closed`, `cor:habiro-expansion-atomic`, `cor:commutative-chirality-vanishes`, `cor:gauge-coupling-uniqueness`, `cor:spectral-decomposition-qvalue` | mostly via `conj:knot-factor-frobenius-pairing` (which is *itself* class-axiomatised in some places — see below) | mixed |
+
+So the §3b ledger is materially different from the headline
+"19 violators":
+
+* **1 direct violation** (`thm:knot-mass-formula-unified`) — fixable
+  by adding the conditional banner + a Lean class hypothesis on
+  `conj:knot-factor-frobenius-pairing`.
+* **18 transitive violations** — fixable in either of two ways:
+  (a) class-axiomatise the 12 hub conjectures (paper-side; one PR
+      per conjecture; existing `class_axiomatised_conjectures` field
+      in the witness shows this is the established pattern), or
+  (b) tighten the `uses[]` of the 2–3 intermediate `prop:` nodes
+      that pull in conjectures the downstream theorem does not
+      actually need (e.g. drop `conj:e-hartree-categorical-derivation`
+      from `prop:atomic-mass-gb-nf.uses[]` if it is not used in
+      that proof).
+
+Either is paper-side bookkeeping, not new mathematics. **No
+theorem needs to be demoted.** The user's directive ("every
+computation should be backed up by approved conjecture, gaps are an
+audit flag") is satisfied by either route — (a) makes the
+conjectures Lean-class objects so downstream theorems become
+conditional-on-class compliant; (b) prunes spurious dependencies so
+the cone no longer touches a `conj:` at all.
+
+The 12 hub conjectures, in proposed migration order (smallest cone
+first, so each PR is locally checkable):
+
+1. `conj:shell-closure-nf-term-count`
+2. `conj:shell-correction-term-seven`
+3. `conj:palindromicity-orbital-type`
+4. `conj:baryon-period-ratio`
+5. `conj:borromean-quark`
+6. `conj:q-integer-mass-formula`
+7. `conj:phi-q-tower-jsj-bridge`
+8. `conj:e-hartree-categorical-derivation`
+9. `conj:classical-limit-stpart`
+10. `conj:knot-factor-frobenius-pairing`
+11. `conj:hyperbolic-volume-transcendence`
+12. `conj:kashaev-volume-conjecture`
+
+For each, the migration is: add a `class C` declaration to the
+conjecture's sibling `.lean`; add a `[C M]` hypothesis to every
+downstream theorem's Lean statement; add the conditional banner
+*Theorem (conditional on …)* to the `.md`; ensure the `uses[]`
+explicitly cites the `conj:`. The audit script then re-classifies
+each as `conditional-on-class` rather than violator.
 
 ---
 
@@ -300,12 +379,37 @@ atomic‑braid code**.
   chain structure) but the compound‑β extraction of $y_\text{target}$
   is **not implemented** (`HANDOVER-STATUS.md §4b`).
 
-### 3.3 Hidden‑fit catalog (where "derived" is fitted)
+### 3.3 Hidden‑fit catalog (where "derived" is fitted) — **revised**
 
-* `T4` (Frobenius codim) — per‑A lookup
-  (`atomic_braid_mass_terms.py:61`), not a formula.
-* `T6` (cyclotomic tail) — per‑A lookup
-  (`atomic_braid_mass_terms.py:t6_canonical_MeV`), not a formula.
+#### 3.3a T4 / T6 status (corrects original F4)
+
+* `T4` is **derived live** at 50 dps in `atomic_braid_mass_terms.t4_raw`
+  (lines 29–53). It computes the Frobenius co-Casimir trace
+  $\sum_{\lambda \vdash 3A} 1/\dim_q(\lambda)$ from the
+  Hoefsmit hook-length formula. **Not a fit, not a lookup.** The
+  original F4 was wrong; corrected here.
+
+* `T6` is also derived in principle — `t6_canonical_MeV` reads
+  `term6-habiro-residue-mpfr-50dps.witness.json`, which is produced
+  by `term6_full_pole_sum.py` (Habiro residue extraction). However,
+  there are **two competing derivation scripts**:
+
+  - `term6_full_pole_sum.py` (Habiro, currently consumed) — uses
+    the *non-canonical* Schur-Weyl weight
+    `s_λ(q, q⁻¹) / H_q(λ)` per the explicit `CONVENTION CAVEAT`
+    at lines 1–32 of that file.
+  - `term6_residues_at_roots.py` (Markov-peel, canonical) — uses
+    the canonical Wenzl-bridge weight per
+    `prop:y-lambda-closed-form-wenzl-bridge`. Witness exists at
+    `term6-residues-at-roots.witness.json` but with a different
+    field schema (`data.results[].term6_at_q0_real` per atom, not
+    `results_by_atom[].term6_b_pred_mev_50dps` keyed by `A=`).
+
+  So T6 is *cached but with the wrong convention being read*. The
+  fix is mechanical (parse the canonical witness, verify unit
+  scaling, swap consumer) but not zero-risk — see §7 P4'.
+
+#### 3.3b Other fits
 * `a(Z, N)` — quotient‑braid Jones‑polynomial coupling: canonical for
   atoms in `jet-knot-invariants.witness.json`, **structural fallback
   `(1−h²)^(A−2)` for A ≥ 5** explicitly labelled "open — placeholder"
@@ -395,6 +499,70 @@ plus direct verification.
 
 ---
 
+## 5A · F6 — Jet-order → SDP wiring (sketch)
+
+The witness produced by `gb_filtration_jet_tracker.py` is already
+machine-readable and structured per the spec in
+`derivation-tracking-methodology.md`. The Rust `joint-tower-sdp`
+binary in `parallel-branch/` already accepts a sparsity pattern
+input but currently runs against the *full* `H_n(q_0)` basis.
+
+The minimum viable wiring is three changes, all in the Rust crate:
+
+1. **Witness reader.** Add a deserialiser for
+   `gb-filtration-jet-order.witness.json` that produces a
+   `Vec<(grade: usize, basis_index: usize)>` mask.
+2. **Variable filter.** When constructing the SDP variable vector,
+   skip basis indices whose `grade > grade_cutoff` (CLI
+   `--filtration-cutoff`, default = `ℓ_max` from witness).
+3. **Sequential decomposition.** Solve the chain
+   `grade ∈ {0, 1, …, ℓ_max}` as a sequence of warm-started
+   sub-problems instead of one large problem; each sub-problem
+   carries forward the previous step's certificate.
+
+Expected payoff (per the crystal-bases agent's estimate):
+~50–500× variable-space reduction at `n = 12`. Concretely, for
+`A = 4` (`n = 12` strands), `12! ≈ 4.8 × 10⁸` reduces to ~10³–10⁴
+active basis elements after filtration cutoff at ℓ_max.
+
+Risk: the SDP infeasibility detection becomes filtration-relative;
+if a band of variables is wrongly cut, the solver returns
+"infeasible" rather than a slightly-worse certificate. Mitigation:
+run the unfiltered solver as a regression test on the smallest
+atom class (`n ≤ 6`).
+
+## 5B · F7 — Crystal-basis traversal oracle (long-term plan)
+
+`conj:crystal-graph-realization` posits that the Hecke algebra's GS
+normal form is encoded by a Kashiwara crystal whose vertices
+correspond to canonical-basis elements and whose edges encode the
+KLR diagrammatic calculus. If proven, an `e_i / f_i` traversal
+oracle replaces the current Diamond-Lemma overlap analysis with an
+O(1) check per S-polynomial.
+
+Concretely, this would require:
+
+* A Lean `CrystalBasisOracle` class axiomatising the conjecture
+  (so until proof, it lives behind a `[CrystalOracle Hₙ]`
+  hypothesis on every consumer).
+* A SageMath bridge to compute crystal graphs for `n ≤ 8` as a
+  starting prototype (Sage already has KLR / KL machinery).
+* A Rust adapter on top of P6 that consults the oracle when
+  detecting termination of the GS reducer.
+
+This is a 3–6 month project, only justified after P6 lands and the
+SDP becomes the bottleneck. Listed here so it is not lost.
+
+## 5C · F10 — `H_{3A}` weights (current narrative is honest)
+
+`HANDOVER-STATUS.md §3f` already states
+"`H_{3A}(q)` Wedderburn weights are approximated. Current code uses
+`H₃` weights (`w_sym`, `w_std`, `w_alt`) at every generator." The
+audit witness `atomic_braid_mass_table.witness.json` carries the
+same caveat. No prose claim is currently overstating the
+status — this is bookkeeping-clean even if math-incomplete. The
+substantive fix is §7 P3.
+
 ## 6 · Baseline mass‑table review
 
 Re‑running `atomic_braid_mass_table.py` on this branch reproduces the
@@ -418,34 +586,36 @@ Findings:
 
 ---
 
-## 7 · 1 ppb workplan (ordered by error contribution)
+## 7 · Workplan to the calibration floor (revised 2026-05-08)
 
-The framework's current **structural floor** is set by the CAL‑2
-calibration (`Q_β`) at relative uncertainty **7.8 × 10⁻⁷** ≈ **780
-ppb**. Reaching 1 ppb therefore requires *eliminating* one of the
-calibrations (deriving it from the other two, or from pure
-substrate). That is a research target, not an engineering target.
-The plan below interleaves the derivations that close the gap *up to
-the floor* with the research moves that lower the floor itself.
+**Ground rule (per repo owner, this PR):** we keep `Q_β` as a
+calibration. We do **not** attempt to derive it. The CAL-2
+relative uncertainty `7.8 × 10⁻⁷` is therefore the **floor**: the
+framework's predictions cannot be tighter than ~780 ppb
+*relative*, and that is fine — every prediction simply carries the
+CAL-2 caveat. The workplan below is exclusively about closing the
+gap *up to that floor*. There is no P10.
 
 | Phase | Goal | Target error | Concrete actions | Effort |
 |-------|------|--------------|------------------|--------|
-| **P1** | Restore truth‑in‑labelling | – | Migrate the 19 §3b violator theorems/corollaries to either (a) class‑axiomatised conditional banner or (b) `remark` + `interprets:`. Run `conjectural-propagation-audit.ts --strict` in CI. | 1 wk |
-| **P2** | Convention freeze | – | Land C1–C7 fixes from §4. Add a `conventions.lean` with tests. Replace 20 hard‑coded `1.1097…` literals with `Q0_FLOAT` import. CI rule via `witnessed-values`. | 1 wk |
-| **P3** | Real `H_{3A}` Wedderburn weights | 5–15 % → 1–3 % | Replace the `H₃` shortcut in `crt_markov.py` and `atomic_braid_mass_table.py`. Use the Plancherel‑truncated top‑$N$ per $A$ with rigorous tail bound. | 2 wk |
-| **P4** | Derive `T4`, `T6` formulas | 10–25 % → 1–3 % | Express `T4` (Frobenius codim) and `T6` (cyclotomic tail) symbolically; replace the per‑A lookups; verify against witness numerics. | 2 wk |
-| **P5** | Quotient‑braid `a(Z, N)` for `A ≥ 5` | 10–30 % → 1–3 % | Either prove the placeholder $(1−h²)^{A-2}$ from the Borromean braid or derive a different closed form. Class‑axiomatise `conj:knot-factor-frobenius-pairing`. | 4–6 wk |
-| **P6** | Wire jet‑order filtration into SDP solver | – | Compute speed‑up; unlocks heavier atoms in finite wall‑clock time. | 2 wk |
-| **P7** | Φ_q tower terms | residual % → 0.1 % | Implement single‑gen and cross‑pair $\Phi_q$ summation per the recipe in `HANDOVER-STATUS.md §4a` (V_full = w_sym V_sym + w_std V_s + w_alt V_alt). | 2–3 wk |
-| **P8** | Compound β‑chain calibration of σ_shell | shell residual % → 0.1 % | Implement `compound_beta_shell.py` chain subtraction over AME 2020. | 1 wk |
-| **P9** | Volume conjecture at real $q$ (`conj:hyperbolic-volume-transcendence`) | – | Specialise Yokota's saddle‑point analysis (Picard–Lefschetz). Either prove or class‑axiomatise. | 4–8 wk research |
-| **P10** | Eliminate one of `m_e`, `m_μ/m_e`, `Q_β` | floor 780 ppb → ≤ 1 ppb | Derive `Q_β` from `q₀` alone (would close CAL‑2). Requires P9 *and* a categorical lepton‑mass derivation. | months, not guaranteed |
+| **P1** | §3b ledger compliance | – | Class-axiomatise the 12 hub conjectures listed in §1A (one PR each, smallest cone first) **or** prune the 2–3 intermediate `prop:` `uses[]` lists that pull in conjectures the downstream theorem does not use. Re-run `conjectural-propagation-audit.ts --strict` in CI; expect violators → 0. **No theorem demotion.** | 1–2 wk |
+| **P2** | Convention freeze | – | Land C2–C7 / C10 fixes from §4 (h vs Δq naming, generator-count canonical, partition order, single `Q0` alias). C1 (Z_MARK) was a false alarm — withdrawn. C4 (q₀ literals): only `joint_tower_sdp_solver_v2.py:46` was an active hardcode and is now fixed; remaining 20-odd hits are comments / 50-dps strings already matching the canonical witness. Add CI rule via the `witnessed-values` skill. | 1 wk |
+| **P3** | Real `H_{3A}` Wedderburn weights | 5–15 % → 1–3 % | Replace the `H₃` shortcut in `crt_markov.py` and `atomic_braid_mass_table.py`. Use the Plancherel-truncated top-`N` per `A` with the rigorous tail bound from `prop:hoefsmit-scattering-pipeline §142–150`. | 2 wk |
+| **P4'** | Wire canonical T6 path | residual contribution → 0.1 % | T4 is already derived live (no work). For T6: rewrite `atomic_braid_mass_terms.t6_canonical_MeV` to read `term6-residues-at-roots.witness.json` (Markov-peel canonical) instead of `term6-habiro-residue-mpfr-50dps.witness.json` (Habiro non-canonical Schur-Weyl weight). Verify unit scaling against the legacy path; add an A-by-A regression test that the two agree where the Habiro convention is nominally valid. | 3–5 d |
+| **P5'** | Quotient-braid `a(Z, N)` for `A ≥ 5` | 10–30 % → 1–3 % | Either prove the placeholder `(1−h²)^(A−2)` from the Borromean braid, or derive a different closed form. Add the conditional banner to `thm:knot-mass-formula-unified` since it directly cites `conj:knot-factor-frobenius-pairing`; class-axiomatise that conjecture per §1A. | 4–6 wk |
+| **P6** | Jet-order filtered SDP | wall-clock 50–500× | See §6 sketch. Wire `gb-filtration-jet-order.witness.json` into the Rust `joint-tower-sdp` binary as a sparsity-pattern hint and as a chain decomposition of sub-problems along `jet_order`. | 2 wk |
+| **P7** | Φ_q tower terms | residual % → 0.1 % | Implement single-gen and cross-pair Φ_q summation: `V_full = w_sym V_sym + w_std V_s + w_alt V_alt`. Documented recipe in (deprecated, but still correct on this point) `HANDOVER-STATUS.md §4a`. | 2–3 wk |
+| **P8** | Compound β-chain calibration of `σ_shell` | shell residual % → 0.1 % | Implement the chain-subtraction in `compound_beta_shell.py` against AME 2020 Q-values. Used categorically (only chain structure), not as fit data. | 1 wk |
+| **P9** | Class-axiomatise the volume / Kashaev pair (`conj:hyperbolic-volume-transcendence`, `conj:kashaev-volume-conjecture`) | – | Add Lean classes; downstream theorems become conditional-on-class. This does not *prove* the conjectures — it makes their use auditable in Lean and unblocks the rest of P1. | 1 wk paper-side |
 
-**Realistic milestone**: P1–P8 land us at the **single‑digit‑MeV
-range across D…⁴⁰Ca with a calibrated 780 ppb floor**, which is the
-honest "sub‑percent" deliverable. P9–P10 turn the framework from a
-phenomenological model into a derivation; until P10, every
-"derivation" headline must carry a CAL‑2 footnote.
+**Realistic milestone**: P1, P2, P4', P6 in the next iteration is
+mostly bookkeeping + one Rust integration; combined effort ~5 wk
+for the order of a 100× compute speed-up plus a clean §3b ledger.
+P3, P7, P8, P5' are the substantive math/physics moves to take the
+residual error from ~35 % MAE down to the calibration floor; combined
+effort ~10–14 wk. **End state: single-digit-MeV across D…⁴⁰Ca with
+a clean 780 ppb floor and a conjecture ledger with zero §3b
+violators.** Nothing in this plan derives `Q_β`.
 
 ---
 

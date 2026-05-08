@@ -1,8 +1,23 @@
 # Handover: Categorical nuclear binding on branch `claude/nf-transition-projection-aZ3MH`
 
+> **Status note (2026-05-08, deep-audit pass).** The headline
+> numbers in §1a–§1d below describe the *legacy* single-level
+> CRT path (`crt_markov.py`) and were the right summary at the
+> time of the original handover. The current best-of-breed mass
+> path is `atomic_braid_mass_table.py` (T1…T6 assembly). On the
+> light-atom test bucket (D, ³H, ³He, ⁴He) the atomic-braid path
+> currently shows ~25–55 % residuals, dominated by the placeholder
+> `(1−h²)^{A−2}` quotient-braid coupling for `A≥3`. The 0.9 %
+> figure still applies to the deprecated CRT path it was measured
+> on, **not** to the atomic-braid path. See
+> [`AUDIT-DEEP-2026-05.md`](../../AUDIT-DEEP-2026-05.md) §3 for
+> the current empirical-input ledger; in particular the framework
+> currently uses **three** calibration constants (m_e CODATA,
+> m_µ/m_e CODATA → q₀, Q_β CODATA → E₀), not one.
+
 ## 1. What IS working (computed, validated, committed)
 
-### 1a. Rest mass via CRT/mpmath (|Δm/m|% ≤ 0.91% for D → ⁴⁰Ca)
+### 1a. Rest mass via CRT/mpmath (|Δm/m|% ≤ 0.91% for D → ⁴⁰Ca, *legacy CRT path*)
 
 **File:** `crt_markov.py`
 **Witness:** `crt-markov.witness.json`

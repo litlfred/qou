@@ -67,6 +67,12 @@ Z_MARK = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
 
 
 # ── Magic numbers (saturated shells) ───────────────────────────
+# Empirical nuclear-physics shell closures.  The categorical
+# derivation from Bring's surface is open
+# (`conj:magic-numbers-bring`); until that conjecture is class-
+# axiomatised these counts are an external input, not derived.
+# Used here only as a structural placeholder for the full-twist
+# scalar (atom is "magic" → full_twist_scalar(A) = 1).
 MAGIC_NUCLEON_COUNTS = {2, 8, 20, 28, 50, 82, 126}
 
 
