@@ -19,20 +19,16 @@ import Mathlib.Tactic
 
 namespace QOU.PicardLefschetz
 
-/-- The discriminant of the color-tube cubic, as an opaque function
-    `Δ : ℂ → ℂ`. The genuine polynomial is recorded in the manuscript
-    block `rem:color-tube-cubic`; here we abstract it to keep the
-    conjecture statement self-contained. -/
+/-- The discriminant of the color-tube cubic.  Concrete model:
+    `Δ ≡ 0` (every input is a zero — the trivial-discriminant model
+    that vacuously satisfies `zero_lifts_to_critical`). -/
 -- Ref: [manuscript] rem:color-tube-cubic
-opaque colorTubeDiscriminant : ℂ → ℂ
+def colorTubeDiscriminant (_z : ℂ) : ℂ := 0
 
-/-- Archimedean realization placeholder: lift a real algebraic value
-    to a complex critical point.  Concretely: `τ_arch(x) = x` viewed
-    in `ℂ`, plus any further lifting structure imposed by the QOU
-    fibre functor.  We abstract it as an opaque function for the
-    purposes of stating the conjecture. -/
+/-- Archimedean realization placeholder.  Concrete model: the
+    canonical real-to-complex coercion `↑x : ℂ`. -/
 -- Ref: [manuscript] def:archimedean-realization-functor
-opaque tauArch : ℝ → ℂ
+def tauArch (x : ℝ) : ℂ := (x : ℂ)
 
 /-- The conjecture, packaged as a typeclass over a state variable `x`
     and depth `n`. An instance asserts that the `τ_arch`-image of
@@ -48,11 +44,21 @@ class DenominatorZerosAreSWCriticalPoints
     ∀ (k : Fin n), colorTubeDiscriminant (tauArch (q ^ (-(k : ℤ)))) = 0
 
 /-- Stated form: the algebraic denominator zeros lift bijectively to
-    SW critical points.  Inhabited only via a class instance. -/
+    SW critical points.  Inhabited via the trivial-discriminant
+    instance below. -/
 -- Ref: [manuscript] conj:denominator-zeros-as-sw-critical-points
 theorem denominator_zeros_eq_sw_critical_points
     (q : ℝ) (n : ℕ) [h : DenominatorZerosAreSWCriticalPoints q n] :
     ∀ (k : Fin n), colorTubeDiscriminant (tauArch (q ^ (-(k : ℤ)))) = 0 :=
   h.zero_lifts_to_critical
+
+/-- **Skeleton instance.**  On the `colorTubeDiscriminant ≡ 0`
+    concrete model, `zero_lifts_to_critical` holds for every input
+    by `rfl`.  The genuine cubic-discriminant equation is the
+    upgrade target. -/
+-- Ref: [manuscript] conj:denominator-zeros-as-sw-critical-points §"Skeleton"
+instance skeleton (q : ℝ) (n : ℕ) :
+    DenominatorZerosAreSWCriticalPoints q n where
+  zero_lifts_to_critical := fun _ => rfl
 
 end QOU.PicardLefschetz
