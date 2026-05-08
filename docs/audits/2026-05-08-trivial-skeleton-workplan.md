@@ -330,28 +330,35 @@ Targets (6 substrate axioms):
   (`Polynomial.cyclotomic_eval` is in Mathlib; per-n closed forms
   for n=2..6 need the `factor` tactic over ℚ(t)).
 
-### Bucket 6 — CI strict-gate flip (governance)
+### Bucket 6 — CI strict-gate flip (governance) — ✅ landed 2026-05-08
 
-Once Buckets 1–3 land and the per-pattern counts drop below
-sustainable thresholds, flip the CI audit step from warn-only to
-strict-per-pattern.
+The `|| true` mask has been dropped from
+`.github/workflows/witness-pipeline.yml`.  The trivial-skeleton
+audit step now fails CI on any per-pattern budget overshoot.
 
-Order of strict-gates to enable:
-1. **`punit_unit`** (currently 2): easiest first; the only legitimate
-   use is `PUnit.unit` as an explicit element of a `PUnit` carrier.
-   Flip strict at 0.
-2. **`id_def`** (currently 1): legitimate iff the function is genuinely
-   identity (not a stand-in). Flip strict at 0.
-3. **`one_def`** (currently 10): some are canonical multiplicative
-   neutrals (`localFactor := 1`, `qHookProduct := 1`). Flip after
-   Bucket 2 with budget 5.
-4. **`holds_trivial`** (currently 8): expected to remain non-zero
-   for genuine vacuous-truth fields; flip with budget 10.
-5. **`prop_true`** (currently 15): flip after Bucket 5 lands the
-   Mathlib upstreams; budget 6 for residual substrate axioms.
-6. **`punit_type`** (currently 14): flip after Bucket 4 lands; budget 0.
-7. **`const_zero`** (currently 38) and **`skel_inst`** (currently 21):
-   the largest; flip last with per-PR delta budgets.
+Final budget (with +2 buffer per pattern to absorb minor
+local/CI count drift):
 
-Each strict-gate flip is its own one-line PR (extend the
-`trivial-skeleton-audit.ts` invocation with `--max-per-pattern`).
+| Pattern | Local count | Budget |
+|---|---:|---:|
+| `const_zero` | 34 | 36 |
+| `skel_inst` | 12 | 14 |
+| `prop_true` | 1 | 3 |
+| `punit_type` | 0 | 2 |
+| `one_def` | 9 | 11 |
+| `holds_trivial` | 4 | 6 |
+| `punit_unit` | 0 | 2 |
+| `id_def` | 1 | 3 |
+| `const_zero_typed` | 1 | 3 |
+| `first_arg` | (n/a) | 12 |
+
+Re-baselining procedure: after a clean-up PR, edit the per-pattern
+budget in the workflow's `--max-per-pattern` flag down to the new
+post-clean-up count + 2.  No other action needed; the gate is
+strict by default.
+
+Future tightening targets (incremental):
+- Drive the +2 buffers down to +1 once CI parity is empirically
+  confirmed across a few PRs.
+- `const_zero` and `skel_inst` carry the largest residuals; keep
+  per-PR delta budgets to surface regressions early.

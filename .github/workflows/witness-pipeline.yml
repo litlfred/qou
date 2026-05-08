@@ -277,20 +277,21 @@ jobs:
           # content/package.json by running with --cwd content.
           set -o pipefail
           # Baselines (re-baseline after each clean-up parcel):
-          # 2026-05-08 (latest): Buckets 1+2+3 — total 111 → 88.
-          #   const_zero 38 → 35, skel_inst 21 → 12, prop_true 15 →  7
-          #   (joint-tower-sdp 5 + partition-height 1 + atlas/cyclotomic 2),
-          #   one_def 10 → 9, holds_trivial 8 → 7.  +2 buffer per
+          # 2026-05-08 (latest): Buckets 1+2+3+4+5′ — total 111 → 62.
+          #   const_zero 38 → 34, skel_inst 21 → 12, prop_true 15 →  1
+          #   (only InSymmetricIdempotent, per-callsite by design),
+          #   punit_type 14 → 0 (B4 ✓), punit_unit 2 → 0 (B4 ✓),
+          #   one_def 10 → 9, holds_trivial 8 → 4.  +2 buffer per
           #   pattern to absorb local/CI minor discrepancies.
           #
-          # Note: invocation is currently `|| true` while we
-          # validate the strict-gate behaviour on CI.  Once we
-          # confirm parity between local and CI counts, drop the
-          # `|| true` to flip the gate strict.
+          # Strict-gate (B6): the `|| true` mask has been dropped.
+          # Any new trivial-skeleton occurrence beyond the budget
+          # below fails CI.  To re-baseline after a clean-up PR,
+          # drop the corresponding `name=N` entry to the post-clean-
+          # up count and update the comment above.
           bun run --cwd content pipeline/trivial-skeleton-audit.ts \
             --max-per-pattern \
-              "const_zero=37,skel_inst=14,prop_true=3,punit_type=2,one_def=11,holds_trivial=6,punit_unit=2,id_def=3,const_zero_typed=3,first_arg=12" \
-            || true
+              "const_zero=36,skel_inst=14,prop_true=3,punit_type=2,one_def=11,holds_trivial=6,punit_unit=2,id_def=3,const_zero_typed=3,first_arg=12"
 
       - name: Detect drift in committed witnesses
         run: |
