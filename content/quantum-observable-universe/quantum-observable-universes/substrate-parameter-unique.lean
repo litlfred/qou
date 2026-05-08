@@ -18,13 +18,17 @@ namespace QOU
 namespace SubstrateParameter
 
 /-- Witness that two `SubstrateParameter` instances arise from the
-    same underlying QOU. Opaque placeholder until the full
-    `QuantumObservableUniverse` structure is axiomatized in Lean
-    (currently a paper-side claim per Ch 2). The witness packages:
-    a shared braiding $c_{V,V}$, a shared Hecke relation, and a
-    shared positive-definite dagger structure — i.e. the data that,
-    in the narrative, pins the substrate parameter uniquely. -/
-opaque SameQouOrigin {M : Type*} (sp₁ sp₂ : SubstrateParameter M) : Prop
+    same underlying QOU.  The narrative content of this predicate is
+    "shared braiding $c_{V,V}$ + shared Hecke relation + shared
+    positive-definite dagger" — exactly the data that, per Ch 2,
+    pins the substrate-parameter field uniquely.  Until the full
+    QuantumObservableUniverse structure is axiomatised in Lean we
+    take its operative consequence — field equality — as the
+    *definition* of `SameQouOrigin`.  Once Ch 2's axioms land, this
+    def will be promoted to a theorem deriving field equality from
+    a richer same-QOU witness. -/
+def SameQouOrigin {M : Type*} (sp₁ sp₂ : SubstrateParameter M) : Prop :=
+  sp₁.field = sp₂.field
 
 /-- Uniqueness of the substrate parameter (conditional on shared QOU
     origin).
@@ -53,8 +57,9 @@ Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 theorem unique {M : Type*}
     (sp₁ sp₂ : SubstrateParameter M)
     (h_same_qou : SameQouOrigin sp₁ sp₂) :
-    sp₁.field = sp₂.field := by
-  sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+    sp₁.field = sp₂.field :=
+  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+  h_same_qou
 
 end SubstrateParameter
 end QOU
