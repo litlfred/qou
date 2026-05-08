@@ -570,16 +570,33 @@ Switch from the workplan to the queued PR-comment batch only when:
       one chapter finished), **or**
 - (b) The user explicitly asks to drain the queue ("clear the PR
       queue", "go through the comments now"), **or**
-- (c) The workplan has nothing left to do — all tasks are
-      `completed`. In this case, **do not stop and wait for the
-      user**: pick up the queued PR-comment batch automatically and
-      process each item in turn. At that point, ad-hoc events
-      become the work.
+- (c) The workplan has nothing left to do — all tasks are at their
+      terminal agent-state. In this case, follow the §"What next?"
+      prompt protocol (above) and offer "Process queued PR comments"
+      as the **first / recommended** option in `AskUserQuestion`,
+      with the queue length and a one-line summary of the oldest
+      item visible in the option label. The user picks; do not
+      auto-start the drain (this preserves the §"What next?" mandate
+      that finishing a task ends with an `AskUserQuestion`, not with
+      another task).
 
-When draining, process queued items oldest-first; for each, decide
-*action* / *reply-only* / *no-op* per the standard PR-event policy.
-Mark the corresponding `pr-comment-queued` todo `completed` as you
-go.
+When draining, process queued items oldest-first. For each item,
+choose one of three dispositions:
+
+- **action** — make the requested fix (small, confident, in-scope).
+  Commit and push as part of the PR's branch.
+- **reply-only** — explain on the PR thread why the request is
+  declined or already handled (use
+  `mcp__github__add_reply_to_pull_request_comment`); do not edit
+  code.
+- **no-op** — silently skip duplicates, comments on outdated diff
+  hunks, or events superseded by a later commit.
+
+Mark the corresponding `pr-comment-queued` todo `in_progress` while
+working on it. **Never** resolve or delete it (per §Todo workflow:
+agents may create and `in_progress` todos; the author closes them).
+Append a short status note to the todo describing the disposition
+and outcome, then move on — the author closes when satisfied.
 
 ### Anti-patterns
 
