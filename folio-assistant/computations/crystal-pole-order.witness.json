@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-08T19:33:57.507393+00:00",
-  "commitSha": "35756bbbf103b388158a47b0f1dccfc4e686525f",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-08T19:41:15.569121+00:00",
+  "commitSha": "54d988902adbbcbf7b907ee295943afa5894281d",
   "assertions": [
     {
       "name": "crystal_pole[T_2_1]_equals_published_alpha_shift",
@@ -216,11 +216,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "crystal-pole-order",
   "scriptFile": "crystal_pole_order.py",
   "scriptHash": "e448a52a00b9",
-  "scriptCommitSha": "487d5ee15108042048e495ef03924d5d3d172d55",
+  "scriptCommitSha": "5c67cac915c992a317c21012f47443ed7f280cd3",
   "description": "Combinatorial verification of the crystal-R-matrix proof of Sub-lemma 2.1 (refined). For T_{p,k} on p strands, the column SYT (1^p) has all axial distances ρ = -1, so the pole-per-cycle is p-1 and the total over k cycles is k(p-1) — matching prop:alpha-shift-torus-knot. AXKIA chain T_{2,9}→9, T_{3,5}→10 verified.",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "data": {
