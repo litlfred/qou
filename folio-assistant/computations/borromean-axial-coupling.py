@@ -289,6 +289,23 @@ w.add_assertion(
     tolerance=0.5,  # broad tolerance; this is a v1 instance
     source="PDG 2024",
 )
+# F1 (PR #565): backfill structural-correctness anchors so a
+# regression that breaks LP duality is caught before the g_A
+# tolerance widens silently.
+w.add_assertion(
+    "lp_duality_gap_zero",
+    computed=abs(float(lp.duality_gap)),
+    expected=0.0,
+    tolerance=1e-10,
+    source="prop:operator-selection-lp § strong duality",
+)
+w.add_assertion(
+    "lp_active_set_nonempty",
+    computed=float(len(active_set)),
+    expected=1.0,
+    tolerance=10.0,  # at least 1; passes for any non-empty active set
+    source="prop:confinement-frobenius-reciprocity § master formula",
+)
 w.add_data("g_A_note", g_A_note)
 w.add_data("interpretation", (
     "g_A is the ratio of two instances of the master formula on the "

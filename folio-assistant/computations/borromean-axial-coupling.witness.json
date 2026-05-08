@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-06T21:19:56.859414+00:00",
-  "commitSha": "aad17cc2d5cdd4b0c71066d8667af4b357d850ee",
+  "computedAt": "2026-05-08T17:56:11.047514+00:00",
+  "commitSha": "84e33e7a7de5c942dbdd849653df64b7e48df78a",
   "assertions": [
     {
       "name": "g_A",
@@ -11,14 +11,30 @@
       "passed": true,
       "tolerance": 0.5,
       "source": "PDG 2024"
+    },
+    {
+      "name": "lp_duality_gap_zero",
+      "computed": 3.448090080566395e-17,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "prop:operator-selection-lp § strong duality"
+    },
+    {
+      "name": "lp_active_set_nonempty",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 10.0,
+      "source": "prop:confinement-frobenius-reciprocity § master formula"
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 21,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
-  "scriptHash": "297bf30f0104",
-  "scriptCommitSha": "a9599705b85f4a25a13cd8a060cfc4fe864db0ac",
+  "scriptHash": "0e8fd976829c",
+  "scriptCommitSha": "d95cd8418824ea1bc8d74f881cbae00fd4ce410c",
   "description": "Axial coupling g_A as an instance of the master formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ (prop:confinement-frobenius-reciprocity). Replaces the prior cyclic-trivial conjugation-pattern computation tr(β·σ₁·β⁻¹)/tr(σ₁) — see docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. Bound-state observable: g_A (axial coupling, Gamow-Teller form factor).",
   "contentBlock": "prop:confinement-frobenius-reciprocity",
   "parameters": {
