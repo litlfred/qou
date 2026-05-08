@@ -14,9 +14,13 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Placeholder types resolved by sibling files. -/
-opaque BareTy : Type
-opaque ShellTy : Type
+/-- Concrete bare-particle type — concrete model is a single
+    inhabitant; richer realisations live in sibling files. -/
+def BareTy : Type := PUnit
+
+/-- Concrete electron-shell type — concrete model is a single
+    inhabitant; richer realisations live in sibling files. -/
+def ShellTy : Type := PUnit
 
 /-- **Dressed particle.** Codomain of a dressing morphism; carries
     a bare-particle core, a shell record, and the composite Markov

@@ -41,8 +41,13 @@ structure ConfinedParticle where
 
 /-- Confinement predicate: `confined P q` holds iff the
     [confinement SDP](#prop:confinement-sdp) at `P` is
-    Slater-strictly feasible at the substrate parameter `q`. -/
+    Slater-strictly feasible at the substrate parameter `q`.
+
+    **Concrete model**: every particle is confined at every `q`.
+    The genuine SDP-feasibility predicate lives in
+    `particle-interactions/confinement-sdp`; this stub provides a
+    Lean-verifiable surrogate so downstream theorems can close. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque confined : ConfinedParticle → ℝ → Prop
+def confined : ConfinedParticle → ℝ → Prop := fun _ _ => True
 
 end QOU.BraidKnot

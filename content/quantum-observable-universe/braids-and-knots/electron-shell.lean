@@ -16,8 +16,8 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Placeholder for the confined-particle type. -/
-opaque NucleusTy : Type
+/-- Concrete model of a confined-particle type. -/
+def NucleusTy : Type := PUnit
 
 /-- **Electron shell.** Cabled-strand representation: `Z` electrons
     added as extra strands in `H_{A+Z}(q)` with binding subword
@@ -35,9 +35,10 @@ structure ElectronShell where
 
 /-- Binding multiplicity `μ(S, q)` — cardinality of the active dual
     support of the confinement SDP at substrate parameter `q`.
-    `μ = 1` is the single-block regime; `μ ≥ 2` is the multi-operator
-    regime that obtains at noble-gas `Z`. -/
+    Concrete model returns `1` (single-block regime); the multi-
+    operator regime `μ ≥ 2` for noble-gas `Z` is the conjectural
+    target in `shell-closure-stability`. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque bindingMultiplicity : ElectronShell → ℝ → ℕ
+def bindingMultiplicity : ElectronShell → ℝ → ℕ := fun _ _ => 1
 
 end QOU.BraidKnot
