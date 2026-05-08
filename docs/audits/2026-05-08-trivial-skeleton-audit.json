@@ -1,12 +1,12 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T23:28:59.347Z",
-  "total_flagged": 69,
+  "generated": "2026-05-08T23:33:24.360Z",
+  "total_flagged": 71,
   "files_flagged": 41,
   "patterns": {
     "const_zero": 34,
+    "one_def": 13,
     "skel_inst": 12,
-    "one_def": 11,
     "holds_trivial": 9,
     "id_def": 1,
     "const_zero_typed": 1,
@@ -374,6 +374,16 @@
         "line": 56,
         "pattern": "one_def",
         "snippet": "def dimqColPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
+      },
+      {
+        "line": 222,
+        "pattern": "one_def",
+        "snippet": "def dimqPartition3 (_q : ℝ) : ℝ := 1"
+      },
+      {
+        "line": 231,
+        "pattern": "one_def",
+        "snippet": "def dimqPartition111 (_q : ℝ) : ℝ := 1"
       }
     ],
     "molecular-construction/shell-closure-nf-term-count.lean": [

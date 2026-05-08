@@ -79,6 +79,45 @@ theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
   field_simp
   ring
 
+/-- **Recursion for q-integers**: `[n+1]_q = q · [n]_q + q⁻ⁿ`
+    for `q ≠ q⁻¹`.  Equivalently expanded as a sum of monomials,
+    `[n]_q = q^(n-1) + q^(n-3) + … + q^(-(n-1))` (n terms).
+
+    Algebraic proof: using `qInteger q (n + 1) = (q^(n+1)
+    − q⁻^(n+1))/(q − q⁻¹)`, one rearranges the numerator
+    `q^(n+1) − q⁻^(n+1) = q · (q^n − q⁻^n) + q⁻ⁿ · (q − q⁻¹)`
+    which yields the recursion after dividing by `q − q⁻¹`. -/
+theorem qInteger_succ (q : ℝ) (n : ℕ) (hq : q - q⁻¹ ≠ 0) (hq0 : q ≠ 0) :
+    qInteger q (n + 1) = q * qInteger q n + q⁻¹ ^ n := by
+  unfold qInteger
+  have hne : q - q⁻¹ ≠ 0 := hq
+  have hq_inv_ne : q⁻¹ ≠ 0 := inv_ne_zero hq0
+  field_simp
+  ring
+
+/-- **q-binomial coefficient** `[n choose k]_q := [n]_q!
+    / ([k]_q! · [n−k]_q!)`.  Note: this is the ratio definition;
+    when `q − q⁻¹ ≠ 0` and the denominator is non-zero (always
+    true at generic `q`) the result is a well-defined rational. -/
+noncomputable def qBinomial (q : ℝ) (n k : ℕ) : ℝ :=
+  qFactorial q n / (qFactorial q k * qFactorial q (n - k))
+
+/-- `[n choose 0]_q = 1` whenever `[n]_q!` is non-zero. -/
+theorem qBinomial_zero (q : ℝ) (n : ℕ)
+    (hfact : qFactorial q n ≠ 0) : qBinomial q n 0 = 1 := by
+  unfold qBinomial qFactorial
+  have hsub : n - 0 = n := Nat.sub_zero n
+  rw [hsub]
+  field_simp
+
+/-- `[n choose n]_q = 1` whenever `[n]_q!` is non-zero. -/
+theorem qBinomial_self (q : ℝ) (n : ℕ)
+    (hfact : qFactorial q n ≠ 0) : qBinomial q n n = 1 := by
+  unfold qBinomial qFactorial
+  have hsub : n - n = 0 := Nat.sub_self n
+  rw [hsub]
+  field_simp
+
 /-- The q-factorial `[n]_q! = ∏_{k=1..n} [k]_q`.  Returns 1 for n = 0. -/
 noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
   | 0     => 1

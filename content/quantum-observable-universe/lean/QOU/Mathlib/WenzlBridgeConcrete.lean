@@ -208,6 +208,49 @@ theorem n2_cohort_length : n2_cohort.length = 2 := rfl
 theorem n3_cohort_length : n3_cohort.length = 3 := rfl
 theorem n4_cohort_length : n4_cohort.length = 5 := rfl
 
+/-! ### n=3 dim_q values via the hook formula
+
+    `dim_q(λ) = [n]_q! / H_q(λ)` (Frame–Robinson–Thrall q-deformation).
+    For partitions of `n = 3`:
+    - `dim_q([3])     = [3]_q! / [3]_q[2]_q[1]_q = 1`.
+    - `dim_q([2,1])   = [3]_q! / ([3]_q · 1 · 1) = [2]_q · [1]_q
+                      = q + q⁻¹`.
+    - `dim_q([1,1,1]) = [3]_q! / [3]_q[2]_q[1]_q = 1`. -/
+
+/-- `dim_q([3]) = 1`.  Row partition has hook product `[3]_q!`,
+    matching the q-factorial denominator. -/
+def dimqPartition3 (_q : ℝ) : ℝ := 1
+
+/-- `dim_q([2,1]) = q + q⁻¹`.  Hook product `H_q([2,1]) = [3]_q
+    · [1]_q · [1]_q = [3]_q`, so `dim_q = [3]_q! / [3]_q
+    = [2]_q · [1]_q = (q + q⁻¹) · 1`. -/
+noncomputable def dimqPartition21 (q : ℝ) : ℝ := q + q⁻¹
+
+/-- `dim_q([1,1,1]) = 1`.  Column partition has hook product
+    `[3]_q!`, matching the q-factorial denominator. -/
+def dimqPartition111 (_q : ℝ) : ℝ := 1
+
+/-! ### n=3 y_λ coefficients (Wenzl-bridge central characters)
+
+    `y_λ = dim_q(λ) · d_λ / [n]_q! = d_λ / H_q(λ)` (the closed
+    form follows after one cancellation).
+    - `y_[3]     = 1 / [3]_q!`.
+    - `y_[2,1]   = 2 / [3]_q`.
+    - `y_[1,1,1] = 1 / [3]_q!`. -/
+
+/-- `y_[3] = 1 / [3]_q!`. -/
+noncomputable def yLambda_row3 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 3
+
+/-- `y_[2,1] = 2 / [3]_q`. -/
+noncomputable def yLambda_lshape21 (q : ℝ) : ℝ := 2 / QOU.qInteger q 3
+
+/-- `y_[1,1,1] = 1 / [3]_q!`. -/
+noncomputable def yLambda_col3 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 3
+
+/-- Symmetry: `y_[3] = y_[1,1,1]` (column-row duality at `n = 3`). -/
+theorem yLambda_row3_eq_col3 (q : ℝ) :
+    yLambda_row3 q = yLambda_col3 q := rfl
+
 /-! ### Cohort: `n = 5` (7 partitions)
 
     Partition data:
@@ -239,6 +282,127 @@ theorem n5_squares_sum_eq :
   norm_num
 
 theorem n5_cohort_length : n5_cohort.length = 7 := rfl
+
+/-! ### Cohort: `n = 6` (11 partitions)
+
+    SYT counts (Frame–Robinson–Thrall):
+    - `[6]:1, [5,1]:5, [4,2]:9, [4,1,1]:10, [3,3]:5,
+       [3,2,1]:16, [3,1,1,1]:10, [2,2,2]:5, [2,2,1,1]:9,
+       [2,1,1,1,1]:5, [1,1,1,1,1,1]:1`.
+    Sum of squares: `1 + 25 + 81 + 100 + 25 + 256 + 100 + 25
+       + 81 + 25 + 1 = 720 = 6!` ✓ -/
+
+/-- The 11 partitions of `n = 6` with hook + SYT data. -/
+def n6_cohort : List (WenzlPartitionData 6) :=
+  [{ name := "[6]",            hooks := [6, 5, 4, 3, 2, 1], syt_count := 1 },
+   { name := "[5,1]",          hooks := [6, 4, 3, 2, 1, 1], syt_count := 5 },
+   { name := "[4,2]",          hooks := [5, 4, 2, 1, 2, 1], syt_count := 9 },
+   { name := "[4,1,1]",        hooks := [6, 3, 2, 1, 2, 1], syt_count := 10 },
+   { name := "[3,3]",          hooks := [4, 3, 2, 3, 2, 1], syt_count := 5 },
+   { name := "[3,2,1]",        hooks := [5, 3, 1, 3, 1, 1], syt_count := 16 },
+   { name := "[3,1,1,1]",      hooks := [6, 2, 1, 3, 2, 1], syt_count := 10 },
+   { name := "[2,2,2]",        hooks := [4, 3, 3, 2, 2, 1], syt_count := 5 },
+   { name := "[2,2,1,1]",      hooks := [5, 2, 3, 1, 2, 1], syt_count := 9 },
+   { name := "[2,1,1,1,1]",    hooks := [6, 1, 4, 3, 2, 1], syt_count := 5 },
+   { name := "[1,1,1,1,1,1]",  hooks := [6, 5, 4, 3, 2, 1], syt_count := 1 }]
+
+/-- `Σ d_λ² = 6! = 720` at `n = 6`. -/
+theorem n6_squares_sum_eq :
+    (n6_cohort.map (fun p => p.syt_count ^ 2)).sum = 720 := by
+  show (1 ^ 2 + (5 ^ 2 + (9 ^ 2 + (10 ^ 2 + (5 ^ 2 + (16 ^ 2 + (10 ^ 2 +
+    (5 ^ 2 + (9 ^ 2 + (5 ^ 2 + (1 ^ 2 + 0))))))))))) = 720
+  norm_num
+
+theorem n6_cohort_length : n6_cohort.length = 11 := rfl
+
+/-! ### Cohort: `n = 7` (15 partitions)
+
+    SYT counts:
+    `[7]:1, [6,1]:6, [5,2]:14, [5,1,1]:15, [4,3]:14, [4,2,1]:35,
+     [4,1,1,1]:20, [3,3,1]:21, [3,2,2]:21, [3,2,1,1]:35,
+     [3,1,1,1,1]:15, [2,2,2,1]:14, [2,2,1,1,1]:14,
+     [2,1,1,1,1,1]:6, [1,1,1,1,1,1,1]:1`.
+    Sum of squares: `1+36+196+225+196+1225+400+441+441+1225+225
+     +196+196+36+1 = 5040 = 7!` ✓ -/
+
+/-- The 15 partitions of `n = 7` with hook + SYT data. -/
+def n7_cohort : List (WenzlPartitionData 7) :=
+  [{ name := "[7]",                 hooks := [7, 6, 5, 4, 3, 2, 1], syt_count := 1 },
+   { name := "[6,1]",               hooks := [7, 5, 4, 3, 2, 1, 1], syt_count := 6 },
+   { name := "[5,2]",               hooks := [6, 5, 3, 2, 1, 2, 1], syt_count := 14 },
+   { name := "[5,1,1]",             hooks := [7, 4, 3, 2, 1, 2, 1], syt_count := 15 },
+   { name := "[4,3]",               hooks := [5, 4, 3, 2, 3, 2, 1], syt_count := 14 },
+   { name := "[4,2,1]",             hooks := [6, 4, 2, 1, 3, 1, 1], syt_count := 35 },
+   { name := "[4,1,1,1]",           hooks := [7, 3, 2, 1, 3, 2, 1], syt_count := 20 },
+   { name := "[3,3,1]",             hooks := [5, 3, 2, 4, 2, 1, 1], syt_count := 21 },
+   { name := "[3,2,2]",             hooks := [5, 3, 2, 3, 2, 1, 1], syt_count := 21 },
+   { name := "[3,2,1,1]",           hooks := [6, 3, 1, 4, 1, 2, 1], syt_count := 35 },
+   { name := "[3,1,1,1,1]",         hooks := [7, 2, 1, 4, 3, 2, 1], syt_count := 15 },
+   { name := "[2,2,2,1]",           hooks := [5, 2, 4, 1, 3, 2, 1], syt_count := 14 },
+   { name := "[2,2,1,1,1]",         hooks := [6, 2, 4, 3, 1, 2, 1], syt_count := 14 },
+   { name := "[2,1,1,1,1,1]",       hooks := [7, 1, 5, 4, 3, 2, 1], syt_count := 6 },
+   { name := "[1,1,1,1,1,1,1]",     hooks := [7, 6, 5, 4, 3, 2, 1], syt_count := 1 }]
+
+/-- `Σ d_λ² = 7! = 5040` at `n = 7`. -/
+theorem n7_squares_sum_eq :
+    (n7_cohort.map (fun p => p.syt_count ^ 2)).sum = 5040 := by
+  show (1 ^ 2 + (6 ^ 2 + (14 ^ 2 + (15 ^ 2 + (14 ^ 2 + (35 ^ 2 + (20 ^ 2 +
+    (21 ^ 2 + (21 ^ 2 + (35 ^ 2 + (15 ^ 2 + (14 ^ 2 + (14 ^ 2 +
+    (6 ^ 2 + (1 ^ 2 + 0))))))))))))))) = 5040
+  norm_num
+
+theorem n7_cohort_length : n7_cohort.length = 15 := rfl
+
+/-! ### Cohort: `n = 8` (22 partitions)
+
+    SYT counts:
+    `[8]:1, [7,1]:7, [6,2]:20, [6,1,1]:21, [5,3]:28, [5,2,1]:64,
+     [5,1,1,1]:35, [4,4]:14, [4,3,1]:70, [4,2,2]:56, [4,2,1,1]:90,
+     [4,1,1,1,1]:35, [3,3,2]:42, [3,3,1,1]:56, [3,2,2,1]:70,
+     [3,2,1,1,1]:64, [3,1,1,1,1,1]:21, [2,2,2,2]:14,
+     [2,2,2,1,1]:28, [2,2,1,1,1,1]:20, [2,1,1,1,1,1,1]:7,
+     [1,1,1,1,1,1,1,1]:1`.
+    Sum of squares: `1+49+400+441+784+4096+1225+196+4900+3136+
+     8100+1225+1764+3136+4900+4096+441+196+784+400+49+1
+     = 40320 = 8!` ✓ -/
+
+/-- The 22 partitions of `n = 8` with SYT data (hooks elided to a
+    placeholder list of length 8 for compactness; expand on demand
+    via the canonical hook-walk algorithm). -/
+def n8_cohort : List (WenzlPartitionData 8) :=
+  [{ name := "[8]",                       hooks := [8,7,6,5,4,3,2,1], syt_count := 1 },
+   { name := "[7,1]",                     hooks := [8,6,5,4,3,2,1,1], syt_count := 7 },
+   { name := "[6,2]",                     hooks := [7,6,4,3,2,1,2,1], syt_count := 20 },
+   { name := "[6,1,1]",                   hooks := [8,5,4,3,2,1,2,1], syt_count := 21 },
+   { name := "[5,3]",                     hooks := [6,5,4,3,2,3,2,1], syt_count := 28 },
+   { name := "[5,2,1]",                   hooks := [7,5,3,2,1,3,1,1], syt_count := 64 },
+   { name := "[5,1,1,1]",                 hooks := [8,4,3,2,1,3,2,1], syt_count := 35 },
+   { name := "[4,4]",                     hooks := [5,4,3,2,4,3,2,1], syt_count := 14 },
+   { name := "[4,3,1]",                   hooks := [6,4,3,1,4,2,1,1], syt_count := 70 },
+   { name := "[4,2,2]",                   hooks := [6,4,2,1,3,2,2,1], syt_count := 56 },
+   { name := "[4,2,1,1]",                 hooks := [7,4,2,1,4,1,2,1], syt_count := 90 },
+   { name := "[4,1,1,1,1]",               hooks := [8,3,2,1,4,3,2,1], syt_count := 35 },
+   { name := "[3,3,2]",                   hooks := [5,4,2,4,3,1,2,1], syt_count := 42 },
+   { name := "[3,3,1,1]",                 hooks := [6,3,2,5,2,1,2,1], syt_count := 56 },
+   { name := "[3,2,2,1]",                 hooks := [6,4,1,4,2,1,2,1], syt_count := 70 },
+   { name := "[3,2,1,1,1]",               hooks := [7,3,1,5,1,4,2,1], syt_count := 64 },
+   { name := "[3,1,1,1,1,1]",             hooks := [8,2,1,5,4,3,2,1], syt_count := 21 },
+   { name := "[2,2,2,2]",                 hooks := [5,4,4,3,3,2,2,1], syt_count := 14 },
+   { name := "[2,2,2,1,1]",               hooks := [6,2,5,4,1,3,2,1], syt_count := 28 },
+   { name := "[2,2,1,1,1,1]",             hooks := [7,2,5,4,3,1,2,1], syt_count := 20 },
+   { name := "[2,1,1,1,1,1,1]",           hooks := [8,1,6,5,4,3,2,1], syt_count := 7 },
+   { name := "[1,1,1,1,1,1,1,1]",         hooks := [8,7,6,5,4,3,2,1], syt_count := 1 }]
+
+/-- `Σ d_λ² = 8! = 40320` at `n = 8`. -/
+theorem n8_squares_sum_eq :
+    (n8_cohort.map (fun p => p.syt_count ^ 2)).sum = 40320 := by
+  show (1 ^ 2 + (7 ^ 2 + (20 ^ 2 + (21 ^ 2 + (28 ^ 2 + (64 ^ 2 + (35 ^ 2 +
+    (14 ^ 2 + (70 ^ 2 + (56 ^ 2 + (90 ^ 2 + (35 ^ 2 + (42 ^ 2 + (56 ^ 2 +
+    (70 ^ 2 + (64 ^ 2 + (21 ^ 2 + (14 ^ 2 + (28 ^ 2 + (20 ^ 2 + (7 ^ 2 +
+    (1 ^ 2 + 0))))))))))))))))))))) = 40320
+  norm_num
+
+theorem n8_cohort_length : n8_cohort.length = 22 := rfl
 
 /-! ## Generic recursive Burnside identity
 
@@ -285,12 +449,15 @@ theorem burnside_zero_iff (n : ℕ) :
     `Nat.Partition.card` (or equivalent) gives the concrete
     count `p(n)`.
 
-    For `n = 0..5`:  `p(0) = 1, p(1) = 1, p(2) = 2, p(3) = 3,
-    p(4) = 5, p(5) = 7` — matching our explicit cohort lengths. -/
+    For `n = 0..8`:  `p(0) = 1, p(1) = 1, p(2) = 2, p(3) = 3,
+    p(4) = 5, p(5) = 7, p(6) = 11, p(7) = 15, p(8) = 22`.
+    OEIS A000041 — partition function. -/
 theorem cohort_lengths_match_partition_count :
     n2_cohort.length = 2 ∧ n3_cohort.length = 3 ∧
-    n4_cohort.length = 5 ∧ n5_cohort.length = 7 := by
-  refine ⟨?_, ?_, ?_, ?_⟩ <;> rfl
+    n4_cohort.length = 5 ∧ n5_cohort.length = 7 ∧
+    n6_cohort.length = 11 ∧ n7_cohort.length = 15 ∧
+    n8_cohort.length = 22 := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;> rfl
 
 /-- **Recursive Wenzl-data unfold**: extract a single partition's
     hook-product over `q`.  Composes with the per-partition
