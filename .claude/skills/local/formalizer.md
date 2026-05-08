@@ -569,3 +569,72 @@ iterative proof development.
 - [ ] Proof state can be exported at every sorry site
 - [ ] `blueprint/src/content.tex` entries match Lean declarations
 - [ ] `\leanok` only on sorry-free declarations
+
+---
+
+## QOU tactic ladder (QS18)
+
+When filling a `sorry` in `QOU/` (or `UGB/`, `Fred2005/`), attempt
+these tactics in order via `lean_multi_attempt` before reaching
+for hand-written proof structure.  Empirically derived from ~30
+sorry-closing commits on `main`; reorders the generic Lean
+ladder around QOU's actual goal distribution.
+
+| Rank | Tactic / recipe | Best for |
+|------|-----------------|----------|
+|  1 | `rfl` | `comp_id`, `nodeOf _ := PUnit.unit` style |
+|  2 | `unfold <decl>; rfl` | registry lookup, table tabulation lemmas |
+|  3 | `omega` after `rw [sel.field_eq]` | `Nat`-valued conjecture-class consequences |
+|  4 | `decide` | `_ ∉ Finset _`, decidable enum equality |
+|  5 | `simp` / `simpa using h` / `unfold; simp` | tabulation lemmas (`Phi_signal_at_*`) |
+|  6 | `ring` | pure polynomial identity |
+|  7 | `field_simp; ring` | rational identity (e.g. `(q+q⁻¹)/2 - 1 = (q-1)²/(2q)`) |
+|  8 | `linear_combination <multiplier> * q_mul_q_inv` | Hecke / Skein normal forms |
+|  9 | `linarith` / `gcongr` | additive bound after factorisation |
+| 10 | `positivity` after AM-GM rewrite `(q-1)²/q` | `q + q⁻¹ ≥ 2` family |
+| 11 | `nlinarith [sq_nonneg …, mul_nonneg …, hq_pos]` with the QS1 substrate hint set | substrate-window polynomial bound |
+| 12 | `induction <list> with \| nil … \| cons … ih => …` | Markov-trace recursion, foldl/foldr identities |
+| 13 | `interval_cases n <;> omega` | finite `n` case split (`minimal_z5_branch_size` etc.) |
+| 14 | `fin_cases i <;> fin_cases j <;> simp […] <;> ring` | 2×2 / Fin-indexed matrix equality |
+| 15 | 2-monomial `Finset` witness against `no_relation` | `Irrational`/`Transcendental` of an algebraic constant |
+
+Steps 7–11 are the **`lean-q-substitution`** skill; step 11 also
+needs the **`lean-substrate-numerics`** brackets when the goal
+involves `Real.sqrt substrate_q`.
+
+### Hecke / Skein normal-form recipe (rank 8)
+
+Whenever two normal forms of a Hecke / Skein word are to be shown
+equal, the difference is always a Laurent-polynomial multiple of
+`q · q⁻¹ = 1`.  Name that hypothesis `q_mul_q_inv` and invoke
+`linear_combination`:
+
+```lean
+have q_mul_q_inv : q * q_inv = 1 := …  -- usually already in scope
+simp only [b3_nf_coefficients, HA]
+linear_combination (q^4 - 5*q^2 + q_inv^4 - 5*q_inv^2 + 20) * q_mul_q_inv
+```
+
+Authority: `7113099d` (six sorries in `TrefoilVanishing.lean`
+closed in one pass with this pattern).
+
+### 2×2 transfer-matrix equality (rank 14)
+
+```lean
+ext i j
+fin_cases i <;> fin_cases j <;>
+  simp only [transferMatrix, Matrix.mul_apply, Fin.sum_univ_two,
+             Matrix.cons_val_zero, Matrix.cons_val_one,
+             Matrix.head_cons, Matrix.head_fin_const] <;>
+  ring
+```
+
+Authority: `7113099d` (`transferMatrix_comm`).
+
+### MathlibExt promotion
+
+When a proof body inlines a general-purpose helper (no QOU types,
+no `substrate_q`), promote it via the `lean-mathlibext-curator`
+skill before continuing.  The promotion removes the lemma from
+the proof body and adds a `-- TODO upstream: <module>` tag in
+`QOU/MathlibExt.lean`.

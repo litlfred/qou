@@ -261,3 +261,58 @@ Parse with `parseLeanRef()` from
 - [ ] Every `-- Ref: [key]` key exists in `content/schema/references.ts`
 - [ ] `blueprint/src/content.tex` mirrors all `\lean{}` macros from chapters
 - [ ] `\leanok` only appears for sorry-free declarations
+
+---
+
+## Trivial-model consistency witness (Pattern 3.3 companion)
+
+Whenever a conjecture is axiomatised as a `class` (per CLAUDE.md
+§3b, the conditional-class exception), generate a paired
+`def trivialModel … : TheClass … where …` populated with
+`PUnit`/`0`/`fun _ => True` so that **every** class field reduces
+to `rfl`.  This proves the class axiomatisation is **consistent**
+(not vacuously inconsistent) without polluting typeclass
+resolution — use `def`, never `instance`.
+
+Authority: `13782dfb` (seven conjecture classes each given a
+trivial model in one commit — `HeckeAnyonicSubstrate`,
+`CrystalGraphRealization`, `KazhdanLusztigClassicalLimit`,
+`CemeteryGroupEmergence`, `ConfinementGradingCorrespondence`,
+`RootOfUnityMTCTruncation`, `SymmetricCrystalPairProduction`).
+
+```lean
+/-- **Trivial model (consistency witness).**
+
+    Concrete `HeckeAnyonicSubstrate R q` with `NormalForm := PUnit`
+    and the identity braid action.  Proves the class axiomatisation
+    is consistent.  Provided as a `def` (not `instance`) so it does
+    not pollute typeclass resolution. -/
+-- Ref: [manuscript] braids-and-knots/hecke-anyonic-substrate
+def trivialModel (R : Type u) [CommRing R] (q : R) :
+    HeckeAnyonicSubstrate R q where
+  NormalForm := PUnit
+  braidAction _ T := T
+  heckeQuadratic := True
+  anyonic_holds T := ⟨0, T, rfl⟩
+```
+
+### Generation rule
+
+When generating a Pattern 3.3 conjecture class, emit two `def`s
+in the same file:
+
+1. The `class` itself (Pattern 3.3, with `nStar_eq` / `field_eq` style).
+2. A `trivialModel` populated entirely with degenerate values so
+   each class field discharges by `rfl`.
+
+The trivial model unblocks downstream `[ClassName]`-conditional
+theorems (CLAUDE.md §3b-cond) by guaranteeing the conditional
+hypothesis is satisfiable, hence the conditional results are not
+vacuously true.
+
+### Anti-pattern
+
+Do **not** mark the trivial model as `instance` — typeclass search
+would then prefer the trivial model over any future genuine
+instance, silently collapsing all downstream theorems to the
+degenerate model.  Always `def trivialModel … : TheClass`.

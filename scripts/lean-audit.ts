@@ -134,19 +134,49 @@ function extractSorries(filePath: string, content: string): SorryEntry[] {
   const lines = content.split("\n");
   const entries: SorryEntry[] = [];
 
+  // Track block-comment depth across lines so `sorry` mentions inside
+  // `/- … -/` or `/-! … -/` blocks (including multi-line module
+  // docstrings) are skipped.  Lean nests block comments, so we count.
+  let blockDepth = 0;
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+    const trimmed = line.trim();
+
+    // Update block-comment depth based on this line's openers/closers.
+    // Lean nests block comments, so we count `/-` (which matches `/--`
+    // docstrings too) against `-/`.  We deliberately do NOT strip
+    // `--` line comments first: doing so would also strip the leading
+    // `/` of `/--`, breaking the open count.  Stray `/-` inside line
+    // comments is vanishingly rare in QOU.
+    const opens = (line.match(/\/-/g) || []).length;
+    const closes = (line.match(/-\//g) || []).length;
+    const wasInBlock = blockDepth > 0;
+    // Approximation: if the line both opens and closes balanced, the
+    // sorry on that line is still "inside" the comment for our purposes.
+    const startedInBlock = wasInBlock || line.trimStart().startsWith("/-");
+    blockDepth = Math.max(0, blockDepth + opens - closes);
+    const endsInBlock = blockDepth > 0;
+
     // Match sorry as a term (not in comments about sorry)
     if (
       /\bsorry\b/.test(line) &&
-      !line.trim().startsWith("--") &&
-      !line.trim().startsWith("/-") &&
-      !/sorry-free|sorryFree|sorry_free|not sorry|no sorry|without sorry|No sorry|Proved.*not sorry/i.test(
+      !trimmed.startsWith("--") &&
+      !trimmed.startsWith("/-") &&
+      !/sorry-free|sorryFree|sorry_free|not sorry|no sorry|without\s+(any\s+)?sorry|No sorry|Proved.*not sorry|role of `?sorry`?/i.test(
         line
       )
     ) {
-      // Check if this is actually a sorry term vs mention in a doc comment
-      const trimmed = line.trim();
+      // Skip if the line entered while inside a block comment (the
+      // body of the `/- … -/` block, even if `-/` closes on this very
+      // line — the `sorry` text is still part of the comment body).
+      if (wasInBlock) {
+        continue;
+      }
+      // Skip if the line both opens AND remains inside a block comment.
+      if (startedInBlock && endsInBlock) {
+        continue;
+      }
       // Skip lines that are pure comments about sorry
       if (
         trimmed.startsWith("--") ||
@@ -155,13 +185,36 @@ function extractSorries(filePath: string, content: string): SorryEntry[] {
       ) {
         continue;
       }
+      // Skip type-ascription placeholders like `(sorry : SomeType)` —
+      // these are header-position term holes, not proof obligations.
+      // They still count as sorries (the file isn't sorry-free), but
+      // they don't need a `Ref:` citation; flag them with a distinct
+      // marker so the audit summary doesn't conflate them with proof
+      // bodies.
+      if (/\(\s*sorry\s*:\s*[^)]+\)/.test(line)) {
+        entries.push({
+          file: relative(REPO_ROOT, filePath),
+          line: i + 1,
+          context: line.trim(),
+          hasCitation: true, // not a proof obligation; suppress NO CITATION
+          citation: "(type-ascription placeholder)",
+        });
+        continue;
+      }
 
-      // Look for citation in same line or previous 2 lines
-      const contextLines = [
-        i >= 2 ? lines[i - 2] : "",
-        i >= 1 ? lines[i - 1] : "",
-        line,
-      ];
+      // Look for citation in same line, previous up-to-10 lines, or
+      // next 2 lines.  QOU convention: the `-- Ref: [key]` line often
+      // sits at the top of the proof body, separated from the `sorry`
+      // by several explanatory comment lines (cf. `MarkovTrace.lean`).
+      // A 10-line lookback covers the common case without sweeping in
+      // unrelated `Ref:` citations from sibling proofs (which are
+      // separated by `theorem`/`def`/blank-line boundaries far more
+      // than 10 lines apart in practice).
+      const contextLines: string[] = [];
+      for (let k = Math.max(0, i - 10); k < i; k++) contextLines.push(lines[k]);
+      contextLines.push(line);
+      if (i + 1 < lines.length) contextLines.push(lines[i + 1]);
+      if (i + 2 < lines.length) contextLines.push(lines[i + 2]);
       const context = contextLines.join("\n");
       // Primary: explicit Ref: [key] citation format
       const explicitCitation = context.match(
@@ -209,8 +262,22 @@ function extractAxioms(filePath: string, content: string): AxiomEntry[] {
   const lines = content.split("\n");
   const entries: AxiomEntry[] = [];
 
+  // Same block-comment depth tracker as `extractSorries` so docstring
+  // mentions of the word "axiom" (e.g. "Markov axiom and normalisation")
+  // do not register as `axiom` declarations.
+  let blockDepth = 0;
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+
+    const opens = (line.match(/\/-/g) || []).length;
+    const closes = (line.match(/-\//g) || []).length;
+    const wasInBlock = blockDepth > 0;
+    blockDepth = Math.max(0, blockDepth + opens - closes);
+
+    if (wasInBlock) continue;
+    if (line.trim().startsWith("--")) continue;
+
     if (/^axiom\s+\w|^\s+axiom\s+\w/.test(line)) {
       const nameMatch = line.match(/axiom\s+(\w+)/);
       const name = nameMatch ? nameMatch[1] : "unknown";
