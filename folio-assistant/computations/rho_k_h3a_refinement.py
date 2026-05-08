@@ -150,7 +150,8 @@ def _per_partition_numeric(args):
     mp.mp.dps = dps
     q_mp = mp.mpf(q_str_50dps)
     chi = chi_numeric(lam, crossings, q_mp)
-    return lam, str(chi)
+    # str(mpf) truncates to ~16 digits (Python repr); use nstr for full dps.
+    return lam, mp.nstr(chi, dps, strip_zeros=False)
 
 
 def _per_partition_symbolic(args):
@@ -158,8 +159,7 @@ def _per_partition_symbolic(args):
     mp.mp.dps = dps
     chi_sym = chi_lambda_symbolic(lam, crossings)
     sub = chi_sym.subs(Q_SYM, sp.sympify(q_str_50dps))
-    chi = mp.mpf(str(sub.evalf(dps)))
-    return lam, str(chi)
+    return lam, str(sub.evalf(dps))
 
 # ── Calibration anchors (CODATA, MeV) ──────────────────────────
 M_E_MEV = mp.mpf("0.51099895")
@@ -168,13 +168,54 @@ M_N_MEV = mp.mpf("939.56542052")
 M_D_MEV = mp.mpf("1875.61294257")  # CODATA deuteron mass
 
 # ── Deuteron braid word (3A=6 strands) ─────────────────────────
-# σ₁⁷ σ₂⁴ ⊕ σ₄⁶ σ₅⁴ σ₄⁻¹ — see markov_trace_axiomatic_multi_atom.py
-DEUTERON_WORD_1IDX = [1] * 7 + [2] * 4 + [4] * 6 + [5] * 4 + [-4]
+# Canonical convention (matches atomic-tr-m-mpfr-50dps.witness.json):
+# β_D = β_p · I · β_n in H_3 ⊗ H_3 ⊂ H_6 with interface I at σ_3 (gen_idx=2).
+# Built by mass_at_3A_proper.atom_braid_word_3A(1, 1):
+#   - per nucleon: intra g₀ (7 crossings: 3×σ + uu/ud + 2×σ),
+#                  intra g₁ (4 crossings: 3×σ⁻¹ + ud/dd)
+#   - inter (p,n): 1× averaged at gen_idx 2  (= σ_3, the interface I)
+#   - total: 11 + 1 + 11 = 23 crossings (vs 22 in the legacy disjoint word)
+#
+# Per `hecke-branching-trace-decomposition.md`: this is NOT a disjoint
+# product — the interface I = σ_3 - h/2·1 acts as an operator-valued
+# A^λ_{μ,ν}(I), non-scalar for 9 of 11 partitions λ ⊢ 6.
+#
+# The legacy disjoint word σ₁⁷σ₂⁴σ₄⁶σ₅⁴σ₄⁻¹ from
+# markov_trace_axiomatic_multi_atom.py does NOT reproduce
+# |tr_M(β_D)| = 0.388286... in the witness (Schur-Weyl fails).
+def deuteron_canonical_crossings():
+    """Build the canonical 23-crossing deuteron word as
+    (gen_idx, ctype) pairs for chi_numeric / chi_lambda_symbolic.
+
+    Source of truth: mass_at_3A_proper.atom_braid_word_3A(Z=1, N=1).
+    """
+    from mass_at_3A_proper import atom_braid_word_3A
+    from hecke_core import h as h_val  # numeric h = q_0 - q_0^{-1}
+
+    triples = atom_braid_word_3A(1, 1)  # list of (c, d, gen_idx)
+    out = []
+    for (c, d, g) in triples:
+        # c is always 1 in this convention; classify by d.
+        if abs(d) < 1e-12:
+            ctype = "sigma"
+        elif abs(d - (-h_val)) < 1e-9:
+            ctype = "sigma_inv"
+        elif abs(d - (-h_val / 2)) < 1e-9:
+            ctype = "averaged"
+        else:
+            raise ValueError(
+                f"Unknown crossing (c={c}, d={d}) — "
+                f"expected one of (1,0), (1,-h), (1,-h/2)"
+            )
+        out.append((g, ctype))
+    return out
 
 
 def word_to_crossings(word_1idx):
-    """Convert a 1-indexed signed-int braid word to (gen_idx, ctype) pairs
-    for `hoefsmit_symbolic.chi_lambda_symbolic` / `q_character_on_braid_word`.
+    """Convert a 1-indexed signed-int braid word to (gen_idx, ctype) pairs.
+
+    Used only for the legacy disjoint test word; canonical deuteron
+    extraction uses `deuteron_canonical_crossings()`.
 
     Positive `i` → σ_i  →  (i-1, 'sigma')
     Negative `-i` → σ_i^{-1}  →  (i-1, 'sigma_inv')
@@ -246,8 +287,14 @@ def load_deuteron_tr_M():
 
 
 def evaluate_at_q0(expr) -> mp.mpf:
-    """Evaluate sympy expr at q = q_0 to current mpmath precision."""
-    sub = expr.subs(Q_SYM, sp.sympify(str(Q_MP)))
+    """Evaluate sympy expr at q = q_0 to current mpmath precision.
+
+    NOTE: `str(Q_MP)` truncates to ~16 digits (Python repr), capping
+    precision at f64 epsilon. We use `mp.nstr(Q_MP, mp.mp.dps)` to
+    preserve the full 50-dps q_0 value through sympy's substitution.
+    """
+    q0_str = mp.nstr(Q_MP, mp.mp.dps, strip_zeros=False)
+    sub = expr.subs(Q_SYM, sp.sympify(q0_str))
     return mp.mpf(str(sub.evalf(mp.mp.dps)))
 
 
@@ -300,7 +347,7 @@ def main() -> int:
     print("\n  Loading y_λ(q_0) from Wenzl-bridge witness …")
     y_lam_sym = load_y_lambda_n6()
 
-    crossings = word_to_crossings(DEUTERON_WORD_1IDX)
+    crossings = deuteron_canonical_crossings()
     parts = partitions_of_n(6)
     assert len(parts) == 11, f"expected 11 partitions, got {len(parts)}"
     print(f"  Computing χ^λ(β_D) via {engine} engine "
@@ -440,8 +487,12 @@ def main() -> int:
             "q_0_50dps": mp.nstr(Q_MP, 50),
             "atom": "deuteron",
             "Z": 1, "N": 1, "A": 2, "n_strands": 6,
-            "braid_word_1idx": DEUTERON_WORD_1IDX,
-            "braid_word_str": "σ₁⁷ σ₂⁴ σ₄⁶ σ₅⁴ σ₄⁻¹",
+            "braid_word_source": "mass_at_3A_proper.atom_braid_word_3A(1, 1)",
+            "braid_word_str": (
+                "β_p · I · β_n  (canonical: H_3 ⊗ H_3 ⊂ H_6 with "
+                "interface I = σ_3 - h/2·1 at gen_idx=2)"
+            ),
+            "crossings_typed": [[g, t] for (g, t) in crossings],
             "n_crossings": len(crossings),
             "n_partitions": len(parts),
             "compute_status": "deuteron",
