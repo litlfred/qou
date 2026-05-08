@@ -344,6 +344,10 @@ def main() -> int:
         "QOU methodology directive: every numerical claim must trace "
         "back to first-principles axioms via a DerivationChain."
     )
+    # Audit-only: this is a per-CI-run validator emitting an audit
+    # report, not a content-block dependency.  Audit doc cites the
+    # CI failure post-mortem that introduced the validator (2026-05-02).
+    w.set_audit_only("docs/audits/2026-05-02-pr503-ci-failure-postmortem.md")
     # No `def:derivation-chain` content block exists yet (the
     # methodology lives in `DERIVATION-CHAIN-METHODOLOGY.md`); leaving
     # contentBlock unset avoids generating broken cross-reference

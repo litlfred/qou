@@ -138,6 +138,10 @@ jobs:
         # `experimental_constants.Q_NEUTRON_MEV` (computed from CODATA
         # m_n - m_p - m_e). Strict mode fails CI if any active code
         # site hardcodes the value or anchors on proton mass instead.
+        # Restored to canonical location in #567 — the script was
+        # incorrectly swept into _deprecated/ by 1026fa8b along with
+        # 262 actually-unblocked scripts; it is an active CI gate
+        # for the 22 ppb m_μ/m_e calibration floor (#564 1ppb plan).
         run: |
           python3 folio-assistant/computations/e0_calibration_audit.py --strict
 
@@ -145,7 +149,11 @@ jobs:
         # Independent-path consistency gate for the canonical Markov
         # trace at the calibrated substrate parameter q_0. Both paths
         # store full 50-dps decimal strings; the script reports
-        # relative |Δ| via mpmath. Strict mode fails CI on any > 1ppb.
+        # relative |Δ| via mpmath. Strict mode fails CI on any > 1ppb
+        # divergence — this is the **primary precision regression
+        # gate** for the 1 ppb program goal.
+        # Restored to canonical location in #567 (same provenance
+        # as e0_calibration_audit above).
         run: |
           python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
 

@@ -130,6 +130,7 @@ def main() -> int:
         })
 
     out = {
+        "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
         "computation": "cross-check-trM-1ppb",
         "description": (
             "Pairwise comparison of tr_M(β_atom) @ q_0 between the "

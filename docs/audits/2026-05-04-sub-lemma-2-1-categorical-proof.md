@@ -5,7 +5,10 @@
 irreps including the W-3 maximizer V_(1^p).  The general (multidim
 irrep) form is operator-valued and is refined in
 [`docs/audits/2026-05-04-sublemma-2-1-refined.md`](2026-05-04-sublemma-2-1-refined.md)
-(landing on `claude/categorical-mass-divergence-audit` PR #534).
+(landing on `claude/categorical-mass-divergence-audit` PR #534), and
+**categorically closed (conditional on `conj:crystal-graph-realization`)**
+in [`docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md`](2026-05-08-crystal-r-matrix-sublemma-2-1.md)
+via the combinatorial $R$-matrix on $B_\mu \otimes B_\nu$.
 **Closes:** the residual research step in
 [`prop:confinement-nf-partial-proof`](../../content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.md)
 **at the maximizer**, which suffices for the W-3 D(u) shift formula

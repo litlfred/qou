@@ -59,7 +59,7 @@
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "kassel1995",
-      "notes": "Normalization matches `schur-weyl-weight-3.derivation.json` (w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏ [h_x]_q^{-1}).  script: folio-assistant/computations/build_schur_weyl_weight_chain.py — this is the BUILDER pattern that should be specialised to λ=(2,1) and λ=(1,1,1) in follow-up PRs.  The existing helper `schur_weyl_symbolic.py:schur_weyl_weight(lam, q)` computes a different normalisation (s_λ(q,q^{-1}) / ∏ [h]_q, returning 0 for partitions with >2 rows) and is intentionally NOT the cited source for these weights."
+      "notes": "Normalization matches `schur-weyl-weight-3.derivation.json` (w_λ(q) = (q − q^{-1})^(n − l(λ)) · ∏ [h_x]_q^{-1}).  script: folio-assistant/computations/_deprecated/build_schur_weyl_weight_chain.py — this is the BUILDER pattern that should be specialised to λ=(2,1) and λ=(1,1,1) in follow-up PRs.  (Path moved to `_deprecated/` in commit 191bd9f5 'unwrap chains: move 298 dead scripts'; canonical builder pattern preserved there as a reference template until the per-λ chains are shipped.)  The existing helper `schur_weyl_symbolic.py:schur_weyl_weight(lam, q)` computes a different normalisation (s_λ(q,q^{-1}) / ∏ [h]_q, returning 0 for partitions with >2 rows) and is intentionally NOT the cited source for these weights."
     },
     {
       "name": "Trivial rep χ^(3)_q on proton braid word",

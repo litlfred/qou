@@ -1,6 +1,6 @@
 ---
 name: coordinate
-description: Coordinate work across multiple in-flight Claude PRs working toward a shared goal (e.g. 1ppb mass-prediction). Post intent + asks on related PRs, identify cherry-pickable work, respond to code-review comments on your own PR, escalate inconsistent findings to the author, and keep a coordination ledger up to date.
+description: Coordinate work across multiple in-flight Claude PRs working toward a shared goal (e.g. 1ppb mass-prediction). Post intent + asks on related PRs, identify cherry-pickable work, respond to code-review comments on your own PR, periodically triage sibling PR activity (new comments, CI status, new commits), watch main + newly created branches/PRs, escalate inconsistent findings to the author, and keep a coordination ledger up to date.
 roles: [reader, collaborator, owner]
 user_invocable: true
 ---
@@ -21,7 +21,9 @@ context.  Without coordination they will:
 - accept inconsistent findings without flagging them to the author,
 - accept review-tool feedback without checking it against the actual
   proof / sibling PR's framing (e.g. accepting an off-by-one "fix"
-  that contradicts a definition another PR is also using).
+  that contradicts a definition another PR is also using),
+- miss new sibling PRs that opened mid-session (new branches landing
+  on `main` with overlapping scope).
 
 `/coordinate` is the protocol that prevents this.  None of the agents
 has all the answers; they look to the author for clarification on
@@ -36,6 +38,13 @@ inconsistencies, and they cherry-pick from each other.
 - When you finish a substantive task — post progress + concrete
   cherry-pickable artefacts (file paths, function names, Lean class
   templates, witness fixtures).
+- **Periodic triage between substantive commits** (§7) — even with no
+  external trigger, sibling PRs may have landed commits or comments
+  that change your scope.  Run a quick triage every ~3–5 commits or
+  when you finish a task and pick up the next one.
+- **When `main` lands new commits** during your session — if any
+  touch the same content blocks, conjectures, or compute scripts you
+  are editing, treat as a sibling PR for §3 classification purposes.
 - **When a code-review comment lands on your own PR** (gemini-code-
   assist, copilot-pull-request-reviewer, codex, or human reviewers)
   — see §5 *Responding to review comments*.
@@ -172,7 +181,7 @@ modes:
   hallucination and ignore the cross-reference (but still
   evaluate the substantive content of the comment on its merits).
 
-If you can't verify in < 2 minutes, escalate (§6) rather than
+If you can't verify in &lt; 2 minutes, escalate (§6) rather than
 guess.
 
 #### 5c.  Post one consolidated status comment
@@ -237,7 +246,101 @@ same way that conjectures-not-class-axiomatised are.
 possible: one comment listing every disagreement found in a
 review pass, with a short table.
 
-### 7.  Coordination ledger
+### 7.  Periodic sibling-PR triage
+
+Sibling PRs land commits and comments while you work.  Without
+periodic triage you will:
+
+- duplicate a fix the sibling already landed,
+- miss a question they posted directing back at you,
+- accept a review-comment that contradicts a finding the sibling
+  just published.
+
+Run a triage **every 3–5 of your own commits**, or whenever you
+finish one substantive task and pick up the next.  Format:
+
+```
+## Sibling-PR triage report (<your PR>, <timestamp>)
+
+| PR | New comments | New commits | CI | Asks for me | Action |
+|----|:---:|:---:|:---:|---|---|
+| #564 | 6 | 8 | ✅ | (none) | none |
+| #565 | 5 | 3 | 🟡 | P6 scope check (3 Q) | answer in next round |
+| #568 | 1 | 1 | ⚪ | (cherry-pick acked) | post drop-duplicate notice |
+```
+
+For each "Asks for me" with verdict `answer` or `escalate`, queue a
+coordination response in the next coordination round.  For verdict
+`none` or `acked`, no further action.
+
+**Use a background subagent for triage when possible** —
+`Agent(subagent_type=Explore, run_in_background=true, prompt=...)` reads sibling
+PRs without blocking your foreground work.  Triage prompt template:
+
+> Background triage of sibling PRs <list>. For each:
+> 1. New comments since <my last coordination round timestamp>.
+> 2. New commits + sha + 1-line message.
+> 3. CI status.
+> 4. Specifically flag asks/replies directed at <my PR> + any
+>    inconsistent findings vs <my key audit/proof claims>.
+> Report under 400 words; per-PR table.
+
+### 8.  Watching `main` and newly-created branches
+
+Sibling PRs are not the only thing that moves.  `main` lands merges,
+and **new branches/PRs** sometimes open mid-session by the author or
+other agents — these need to enter the scope map immediately.
+
+#### 8a.  Watch `main` for new commits
+
+Run `git fetch origin main` at each triage cycle.  If new commits
+landed since your last fetch, run:
+
+```bash
+git log --oneline <last-fetched-main-sha>..origin/main \
+  -- <files-or-paths-you-are-touching>
+```
+
+For each main-landed commit that touches **a file or content block
+you are editing**, classify it like a sibling PR using §2: overlap /
+dependency / cherry-pick.  Then choose:
+
+- **Merge `origin/main` into your branch** if the changes are
+  additive and you don't have local edits to the same files.
+- **Cherry-pick the relevant commit** if main's branch tip has too
+  much unrelated noise.
+- **Escalate to the author (§6)** if main's change contradicts a
+  finding you just published.
+
+Do not silently rebase or force-push to incorporate `main` — those
+are author-authorised actions, see [`.github/copilot-instructions.md`
+§ Git Operations].
+
+#### 8b.  Watch for newly-opened PRs / branches
+
+Each triage cycle, list open PRs and branches:
+
+```bash
+gh pr list --state open --json number,title,headRefName,createdAt
+gh api repos/<owner>/<repo>/branches --jq '.[].name'
+```
+
+If a **new** PR or branch appears since the last triage and its
+title / branch-name overlaps any of your scope keywords (your
+audit subjects, your changed files, your conjectures), **prompt
+the author**:
+
+```markdown
+**Q from #<your PR>:** I see #<N> (`<branch>`) opened at
+<timestamp>; should I add it to my coordination scope (§3) and
+post intent?  Or is it independent of the <goal> goal-thread?
+```
+
+Do not silently add the new PR to scope — the author may have
+opened it as an isolated probe.  Wait for confirmation before
+posting coordination comments on the new PR.
+
+### 9.  Coordination ledger
 
 Maintain a single shared ledger at:
 
@@ -258,7 +361,7 @@ Each PR appends a row (no rewrites of others' rows):
 The ledger lives on the branch where the coordinator is currently
 posting; final state can be merged to main when the goal completes.
 
-### 8.  Cherry-picking
+### 10.  Cherry-picking
 
 `/coordinate` explicitly authorises cross-PR cherry-picks under
 these constraints:
@@ -271,7 +374,7 @@ these constraints:
 3. **Match the author's voice / style** (one-voice rule still
    applies).
 
-### 9.  Asks and responses
+### 11.  Asks and responses
 
 Asks are a first-class artefact.  Format every cross-PR ask as:
 
@@ -295,6 +398,12 @@ After invocation, you should have:
   progress comment.
 - Triaged every open review-tool thread on your own PR (§5) and
   posted a single consolidated status comment.
+- Run a §7 periodic triage every 3–5 of your own commits, capturing
+  new sibling-PR comments + commits + CI status in one table.
+- Run §8a (`git fetch origin main`) at each triage cycle and react
+  to any main-landed changes that touch your scope.
+- Run §8b (newly-opened PRs / branches) at each triage cycle and
+  prompt the author when a new sibling overlaps your scope keywords.
 - Identified the next concrete, non-overlapping task on your own
   workplan and started on it.
 - (Optional) Created or updated `docs/coordination/<goal-slug>.md`
@@ -316,6 +425,13 @@ After invocation, you should have:
 - ❌ Reply per-thread on a 6-comment review pass.  Use one
   consolidated status comment + per-thread `accept` /
   `reject-with-reason` flags.
+- ❌ Skip §7 triage between commits because "I would have heard if
+  something landed" — you wouldn't.  Sibling agents work in parallel
+  and rarely interrupt each other.  Run the triage anyway.
+- ❌ Silently merge / cherry-pick from `main` without §8a
+  classification.  Main commits can also be inconsistent findings.
+- ❌ Add a newly-opened PR to your scope without prompting the
+  author (§8b).  The author may want it independent.
 - ❌ Long prose.  Coordination comments are tables, file pointers,
   and one-line asks.
 
