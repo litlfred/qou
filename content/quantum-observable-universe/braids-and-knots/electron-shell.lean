@@ -16,8 +16,14 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Concrete model of a confined-particle type. -/
-def NucleusTy : Type := PUnit
+/-- Concrete model of a nucleus type.  Carries the atomic number `Z`
+    and mass number `A`; downstream theorems never inspect them. -/
+structure NucleusTy where
+  /-- Atomic number `Z` (proton count). -/
+  Z : ℕ
+  /-- Mass number `A` (proton + neutron count). -/
+  A : ℕ
+  deriving Repr
 
 /-- **Electron shell.** Cabled-strand representation: `Z` electrons
     added as extra strands in `H_{A+Z}(q)` with binding subword

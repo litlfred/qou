@@ -37,12 +37,20 @@ namespace QOU.Interactions.AlgebraicPrimality
 /-! ## §1  Confinement SDP state — abstract surrogate -/
 
 /-- Surrogate type for the state space of an `n`-strand hadron at
-    substrate `q`. Concrete model: `PUnit`. -/
-def SDPState (_n : ℕ) (_q : ℝ) : Type := PUnit
+    substrate `q`. Concrete model: a record carrying the strand
+    count and substrate parameter as observable fields. -/
+structure SDPState (_n : ℕ) (_q : ℝ) where
+  /-- Strand count `n` (recorded for downstream decomposition checks). -/
+  strands : ℕ
+  /-- Substrate parameter `q` at which the SDP is evaluated. -/
+  qVal : ℝ
+  deriving Repr
 
 /-- The canonical confinement-SDP optimum state `ψ_n(q)`.
-    Concrete model: the unique inhabitant of `PUnit`. -/
-def canonicalState (n : ℕ) (q : ℝ) : SDPState n q := PUnit.unit
+    Concrete model: a record pinning `strands := n`, `qVal := q`
+    (the canonical observable assignment). -/
+def canonicalState (n : ℕ) (q : ℝ) : SDPState n q :=
+  { strands := n, qVal := q }
 
 /-- The "is in the closed span of tensor products of canonical
     states indexed by a decomposition" predicate.

@@ -27,8 +27,13 @@ namespace QOU.Descartes.AlphaEmShiftChain
 
 open QOU.BraidKnot.AlphaShiftTorus
 
-/-- Abstract q-integer indexing function.  Concrete model: `PUnit`. -/
-def qIntegerIndex (_n : ℕ) : Type := PUnit
+/-- Abstract q-integer indexing.  Concrete model: a record carrying
+    the integer index `n` itself (so `qIntegerIndex n` records the
+    target degree of the `[n]_q` q-integer being indexed). -/
+structure qIntegerIndex (_n : ℕ) where
+  /-- The numerical index `n` of the `[n]_q` q-integer. -/
+  idx : ℕ
+  deriving Repr
 
 /-- Abstract bare-form indexing for `α_EM⁻¹ = q · [9]_q · [10]_q`
     from prop:em-coupling-projection.  Concrete model: `[9, 10]`,

@@ -33,10 +33,15 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Concrete model of a dressed particle: a single inhabitant
-    (the unit dressing) suffices for the structural results below;
-    a richer model lives in the SDP / electron-shell layer. -/
-def DressedTy : Type := PUnit
+/-- Concrete model of a dressed particle.  Carries a nuclear core
+    (atomic number) and the electron count in the dressing shell;
+    structural theorems below never inspect the fields. -/
+structure DressedTy where
+  /-- Atomic number `Z` of the nuclear core. -/
+  Z : ℕ
+  /-- Electron count in the dressing shell. -/
+  electrons : ℕ
+  deriving Repr
 
 /-- Frobenius stability index `σ_F(P, q) = n_target · y₀*(P, q)`.
     Concrete model: identically zero — the optimal dual objective

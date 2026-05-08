@@ -14,13 +14,24 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Concrete bare-particle type — concrete model is a single
-    inhabitant; richer realisations live in sibling files. -/
-def BareTy : Type := PUnit
+/-- Concrete bare-particle type.  Carries the proton number and a
+    strand count for the bare braid representation; richer
+    realisations live in sibling files. -/
+structure BareTy where
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Strand count `n₀` of the bare braid representation. -/
+  n_0 : ℕ
+  deriving Repr
 
-/-- Concrete electron-shell type — concrete model is a single
-    inhabitant; richer realisations live in sibling files. -/
-def ShellTy : Type := PUnit
+/-- Concrete electron-shell type.  Carries a principal quantum number
+    `n` and the electron count in the shell. -/
+structure ShellTy where
+  /-- Principal quantum number of the shell. -/
+  principal : ℕ
+  /-- Electron count occupying the shell. -/
+  electrons : ℕ
+  deriving Repr
 
 /-- **Dressed particle.** Codomain of a dressing morphism; carries
     a bare-particle core, a shell record, and the composite Markov

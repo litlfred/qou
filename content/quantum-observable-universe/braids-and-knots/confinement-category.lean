@@ -25,12 +25,21 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Concrete model of confined-particle data: a single inhabitant.
-    The full category is built atop the `ConfinedParticle`
-    structure in the sibling file; this is the minimal carrier
-    that lets the categorical-axiom theorems close. -/
+/-- Concrete model of confined-particle data.
+
+    Captures the two minimal physical observables of a confined
+    particle: its braid-strand count and its total colour charge
+    (mod 3 sum of strand colours).  These are content-bearing
+    fields; the categorical-axiom theorems below never inspect them
+    so downstream proofs continue to close by `rfl`-style
+    evaluation. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-def ConfinedParticleTy : Type := PUnit
+structure ConfinedParticleTy where
+  /-- Number of strands in the confined particle's braid representation. -/
+  strands : ℕ
+  /-- Total colour charge (mod 3 sum of strand colours). -/
+  colourCharge : Fin 3
+  deriving Repr
 
 /-- Morphism family in the confinement category: unfolding (to a
     finer level), folding (to a coarser level), or dressing

@@ -1,16 +1,14 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:52:04.876Z",
-  "total_flagged": 83,
-  "files_flagged": 45,
+  "generated": "2026-05-08T21:03:15.738Z",
+  "total_flagged": 66,
+  "files_flagged": 40,
   "patterns": {
-    "const_zero": 35,
-    "punit_type": 14,
+    "const_zero": 34,
     "skel_inst": 12,
     "one_def": 9,
     "prop_true": 5,
     "holds_trivial": 4,
-    "punit_unit": 2,
     "id_def": 1,
     "const_zero_typed": 1
   },
@@ -44,13 +42,6 @@
         "snippet": "instance skeleton (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where"
       }
     ],
-    "braids-and-knots/confinement-category.lean": [
-      {
-        "line": 33,
-        "pattern": "punit_type",
-        "snippet": "def ConfinedParticleTy : Type := PUnit"
-      }
-    ],
     "braids-and-knots/confinement-nf-partial-proof.lean": [
       {
         "line": 54,
@@ -65,12 +56,7 @@
     ],
     "braids-and-knots/confinement-phase-stratification.lean": [
       {
-        "line": 31,
-        "pattern": "punit_type",
-        "snippet": "def ConfinedParticleTy : Type := PUnit"
-      },
-      {
-        "line": 49,
+        "line": 57,
         "pattern": "const_zero",
         "snippet": "def sigmaF : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
       }
@@ -82,43 +68,9 @@
         "snippet": "instance skeleton (n₀ : ℕ) (q : ℝ) : RhoPrefactorStructural n₀ q where"
       }
     ],
-    "braids-and-knots/dressed-particle.lean": [
-      {
-        "line": 19,
-        "pattern": "punit_type",
-        "snippet": "def BareTy : Type := PUnit"
-      },
-      {
-        "line": 23,
-        "pattern": "punit_type",
-        "snippet": "def ShellTy : Type := PUnit"
-      }
-    ],
-    "braids-and-knots/electron-shell.lean": [
-      {
-        "line": 20,
-        "pattern": "punit_type",
-        "snippet": "def NucleusTy : Type := PUnit"
-      }
-    ],
     "braids-and-knots/frobenius-antipode-lean-stub.lean": [
       {
-        "line": 32,
-        "pattern": "punit_type",
-        "snippet": "def HeckeAlgebra (_n : ℕ) (_q : ℝ) : Type := PUnit"
-      },
-      {
-        "line": 40,
-        "pattern": "const_zero",
-        "snippet": "def markovTrace (_n : ℕ) (_q : ℝ) (_ : HeckeAlgebra _n _q) : ℝ := 0"
-      },
-      {
-        "line": 49,
-        "pattern": "punit_unit",
-        "snippet": "def heckeOne (_n : ℕ) (_q : ℝ) : HeckeAlgebra _n _q := PUnit.unit"
-      },
-      {
-        "line": 118,
+        "line": 127,
         "pattern": "one_def",
         "snippet": "def chiralityFactor (_n : ℕ) (_q : ℝ) (_β : HeckeAlgebra _n _q) : ℝ := 1"
       }
@@ -149,22 +101,17 @@
     ],
     "braids-and-knots/level-sufficiency.lean": [
       {
-        "line": 29,
-        "pattern": "punit_type",
-        "snippet": "def ConfinedParticleTy : Type := PUnit"
-      },
-      {
-        "line": 33,
+        "line": 37,
         "pattern": "one_def",
         "snippet": "def coarseStrands : ConfinedParticleTy → ℕ := fun _ => 1"
       },
       {
-        "line": 39,
+        "line": 43,
         "pattern": "one_def",
         "snippet": "def kMax : ConfinedParticleTy → ℝ → ℕ := fun _ _ => 1"
       },
       {
-        "line": 45,
+        "line": 49,
         "pattern": "const_zero",
         "snippet": "def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
       }
@@ -185,19 +132,9 @@
     ],
     "braids-and-knots/qmn-recursive-memoized.lean": [
       {
-        "line": 35,
-        "pattern": "punit_type",
-        "snippet": "def BorderStrip (_lam : List ℕ) (_k : ℕ) : Type := PUnit"
-      },
-      {
-        "line": 48,
+        "line": 56,
         "pattern": "const_zero",
         "snippet": "def chi_qMN_partition (_lam _rho : List ℕ) (_q : ℝ) : ℝ := 0"
-      },
-      {
-        "line": 99,
-        "pattern": "punit_type",
-        "snippet": "def CharCache (_q : ℝ) : Type := PUnit"
       }
     ],
     "braids-and-knots/schur-weyl-mass-decomposition.lean": [
@@ -233,12 +170,7 @@
     ],
     "braids-and-knots/shell-closure-stability.lean": [
       {
-        "line": 39,
-        "pattern": "punit_type",
-        "snippet": "def DressedTy : Type := PUnit"
-      },
-      {
-        "line": 46,
+        "line": 51,
         "pattern": "const_zero",
         "snippet": "def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0"
       }
@@ -252,17 +184,12 @@
     ],
     "braids-and-knots/wenzl-qmn-synergy.lean": [
       {
-        "line": 35,
-        "pattern": "punit_type",
-        "snippet": "def CanonicalPermutationBraid (_n : ℕ) : Type := PUnit"
-      },
-      {
-        "line": 38,
+        "line": 43,
         "pattern": "const_zero",
         "snippet": "def length {_n : ℕ} (_w : CanonicalPermutationBraid _n) : ℕ := 0"
       },
       {
-        "line": 49,
+        "line": 54,
         "pattern": "const_zero",
         "snippet": "def yLambdaWenzl (_lam : List ℕ) (_q : ℝ) : ℝ := 0"
       }
@@ -321,13 +248,6 @@
         "line": 54,
         "pattern": "skel_inst",
         "snippet": "instance skeleton (q x : ℝ) (n k : ℕ) :"
-      }
-    ],
-    "descartes-universe/alpha-em-shift-multiplicative-chain.lean": [
-      {
-        "line": 31,
-        "pattern": "punit_type",
-        "snippet": "def qIntegerIndex (_n : ℕ) : Type := PUnit"
       }
     ],
     "descartes-universe/denominator-zeros-as-sw-critical-points.lean": [
@@ -432,18 +352,6 @@
         "snippet": "def InSymmetricIdempotent (_x : TMatrix) : Prop := True"
       }
     ],
-    "lean/QOU/Interactions/AlgebraicPrimality.lean": [
-      {
-        "line": 41,
-        "pattern": "punit_type",
-        "snippet": "def SDPState (_n : ℕ) (_q : ℝ) : Type := PUnit"
-      },
-      {
-        "line": 45,
-        "pattern": "punit_unit",
-        "snippet": "def canonicalState (n : ℕ) (q : ℝ) : SDPState n q := PUnit.unit"
-      }
-    ],
     "lean/QOU/LiftingDescent/HomologicalCondensation.lean": [
       {
         "line": 80,
@@ -491,17 +399,12 @@
     ],
     "particle-interactions/confinement-sdp.lean": [
       {
-        "line": 28,
-        "pattern": "punit_type",
-        "snippet": "def ConfinedParticleTy : Type := PUnit"
-      },
-      {
-        "line": 39,
+        "line": 43,
         "pattern": "const_zero",
         "snippet": "def y0_star : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
       },
       {
-        "line": 44,
+        "line": 48,
         "pattern": "const_zero",
         "snippet": "def n_target : ConfinedParticleTy → ℝ := fun _ => 0"
       }

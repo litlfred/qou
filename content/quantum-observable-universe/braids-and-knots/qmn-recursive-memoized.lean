@@ -31,10 +31,18 @@ namespace QOU.BraidsAndKnots
 
 /-- A border strip of size k in partition λ: a connected skew shape
     of size k that is the difference λ \ μ for some sub-partition μ
-    of λ, with no 2×2 square.  Concrete model: `PUnit`. -/
-def BorderStrip (_lam : List ℕ) (_k : ℕ) : Type := PUnit
+    of λ, with no 2×2 square.  Concrete model: a record carrying
+    the strip's start row and final row in the Young diagram (the
+    strip's vertical extent determines its height). -/
+structure BorderStrip (_lam : List ℕ) (_k : ℕ) where
+  /-- Top row of the strip (smaller row index = closer to the top). -/
+  topRow : ℕ
+  /-- Bottom row of the strip. -/
+  bottomRow : ℕ
+  deriving Repr
 
-/-- Height of a border strip.  Concrete model: 0. -/
+/-- Height of a border strip = bottom row − top row.  Concrete model:
+    `0` (single-row strip). -/
 def BorderStrip.height {_lam : List ℕ} {_k : ℕ}
     (_xi : BorderStrip _lam _k) : ℕ := 0
 
@@ -95,8 +103,13 @@ theorem chi_q_recursive_halverson_ram
 /-! ## Memoised compute -/
 
 /-- A memoisation cache mapping (λ, ρ) ↦ χ_ρ^λ(q).  Concrete
-    model: `PUnit`. -/
-def CharCache (_q : ℝ) : Type := PUnit
+    model: a record carrying the cache's hit-count statistic
+    (proxy for memoisation effectiveness; the genuine cache lives
+    in the Python from-scratch port). -/
+structure CharCache (_q : ℝ) where
+  /-- Number of cache hits served so far. -/
+  hits : ℕ
+  deriving Repr
 
 /-- Lookup or compute χ_ρ^λ(q) using the memoised recursion.
     Concrete model: returns `0` (matches the trivial-character

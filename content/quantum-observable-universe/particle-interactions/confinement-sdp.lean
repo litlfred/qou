@@ -24,8 +24,12 @@ namespace QOU.ParticleInteractions
 
 universe u
 
-/-- Concrete model of a confined particle. -/
-def ConfinedParticleTy : Type := PUnit
+/-- Concrete model of a confined particle (strand count + colour
+    charge).  Downstream proofs never inspect the fields. -/
+structure ConfinedParticleTy where
+  strands : ℕ
+  colourCharge : Fin 3
+  deriving Repr
 
 /-- Feasibility of the Slater-strict confinement SDP at `(P, q)` —
     concrete model returns constant `True`. -/

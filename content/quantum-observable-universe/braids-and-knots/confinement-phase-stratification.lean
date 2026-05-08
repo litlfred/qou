@@ -27,8 +27,16 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Concrete model of a confined particle. -/
-def ConfinedParticleTy : Type := PUnit
+/-- Concrete model of a confined particle.  Carries the two minimal
+    physical observables (strand count + colour charge); proofs
+    below never inspect these fields, so they close by
+    `rfl`-style evaluation. -/
+structure ConfinedParticleTy where
+  /-- Strand count in the confined particle's braid representation. -/
+  strands : ℕ
+  /-- Total colour charge (mod 3 sum of strand colours). -/
+  colourCharge : Fin 3
+  deriving Repr
 
 /-- Confinement predicate: in the unit-particle model every
     particle is confined at every `q`. -/

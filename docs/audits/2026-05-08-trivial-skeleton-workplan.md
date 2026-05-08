@@ -24,20 +24,37 @@ work can promote them to faithful instances.
 | **B. Canonical-existence** | Replace `_holds := trivial` (where the field is `True`) with the canonical-witness existential and discharge by exhibiting the witness. | `is_baryon_realisation := ∃ p n, p = proton_partition ∧ ...; := ⟨proton_partition, neutron_partition, …⟩` |
 | **C. Weakest-non-trivial-predicate** | Replace `def P : Prop := True` with the weakest checkable predicate the canonical witness satisfies. | `AtlasIsWitnessDerived := atomKnotAtlas.length ≥ 1` (after populating the atlas) |
 
-## Audit summary (post-Bucket 1+2+3 work)
+## Audit summary (post-Bucket 1+2+3+4 work)
 
-| Pattern | Initial | After B1+B2+B3 | Δ |
+| Pattern | Initial | After B1+B2+B3+B4 | Δ |
 |---|---:|---:|---:|
-| `const_zero`     | 38 | 35 | -3 |
+| `const_zero`     | 38 | 34 | -4 |
 | `skel_inst`      | 21 | 12 | **-9** (renamed faithful instances to `canonical`) |
 | `prop_true`      | 15 |  5 | **-10** (atlas + cyclotomic + weinberg + joint-tower-sdp 5 + partition-height + r_3-h4 2) |
-| `punit_type`     | 14 | 14 | 0 (Bucket 4) |
+| `punit_type`     | 14 |  0 | **-14 (B4 ✓)** (carriers upgraded to content-bearing structs) |
 | `one_def`        | 10 |  9 | -1 |
 | `holds_trivial`  | 8  |  4 | **-4** (canonical-knot-id-sdp: 3 sites; was 7 → 4) |
-| `punit_unit`     | 2  |  2 | 0 |
+| `punit_unit`     | 2  |  0 | **-2 (B4 ✓)** (heckeOne, canonicalState now structured) |
 | `id_def`         | 1  |  1 | 0 |
 | `const_zero_typed` | 1 | 1 | 0 |
-| **Total**        | **111** | **83** | **-28 (25 % reduction)** |
+| **Total**        | **111** | **66** | **-45 (41 % reduction)** |
+
+### Bucket 4 — PUnit carrier upgrades (this commit)
+
+| File | Old | New |
+|---|---|---|
+| `confinement-category.lean` | `def ConfinedParticleTy : Type := PUnit` | `structure ConfinedParticleTy where strands : ℕ; colourCharge : Fin 3` |
+| `confinement-phase-stratification.lean` | same PUnit | same struct |
+| `level-sufficiency.lean` | same PUnit | same struct |
+| `particle-interactions/confinement-sdp.lean` | same PUnit | same struct |
+| `dressed-particle.lean` | `BareTy := PUnit; ShellTy := PUnit` | `structure BareTy where Z : ℕ; n_0 : ℕ` + `structure ShellTy where principal : ℕ; electrons : ℕ` |
+| `electron-shell.lean` | `NucleusTy := PUnit` | `structure NucleusTy where Z : ℕ; A : ℕ` |
+| `shell-closure-stability.lean` | `DressedTy := PUnit` | `structure DressedTy where Z : ℕ; electrons : ℕ` |
+| `frobenius-antipode-lean-stub.lean` | `HeckeAlgebra n q := PUnit`; `heckeOne := PUnit.unit` | `structure HeckeAlgebra n q where coeff : ℝ`; `heckeOne := { coeff := 1 }` |
+| `qmn-recursive-memoized.lean` | `BorderStrip _lam _k := PUnit`; `CharCache := PUnit` | `structure BorderStrip _lam _k where topRow : ℕ; bottomRow : ℕ` + `structure CharCache _q where hits : ℕ` |
+| `wenzl-qmn-synergy.lean` | `CanonicalPermutationBraid _n := PUnit` | `structure CanonicalPermutationBraid _n where reducedWord : List ℕ` |
+| `descartes-universe/alpha-em-shift-multiplicative-chain.lean` | `qIntegerIndex _n := PUnit` | `structure qIntegerIndex _n where idx : ℕ` |
+| `lean/QOU/Interactions/AlgebraicPrimality.lean` | `SDPState n q := PUnit; canonicalState := PUnit.unit` | `structure SDPState n q where strands : ℕ; qVal : ℝ`; `canonicalState n q := { strands := n, qVal := q }` |
 
 ## Per-file triage
 

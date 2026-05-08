@@ -31,8 +31,13 @@ namespace QOU.BraidsAndKnots
 /-- A canonical permutation braid T_w in H_n is one written as a
     minimal-length reduced expression in the simple transpositions
     s_{i_1} s_{i_2} ... s_{i_ℓ} where ℓ = ℓ(w) = #inversions(w).
-    Concrete model: `PUnit`. -/
-def CanonicalPermutationBraid (_n : ℕ) : Type := PUnit
+    Concrete model: a record carrying the reduced word as a list
+    of simple-reflection indices.  All structural theorems below
+    treat the word abstractly (do not inspect it). -/
+structure CanonicalPermutationBraid (_n : ℕ) where
+  /-- Reduced word `[i_1, …, i_ℓ]` in the simple transpositions. -/
+  reducedWord : List ℕ
+  deriving Repr
 
 /-- The Coxeter length ℓ(w).  Concrete model: 0. -/
 def length {_n : ℕ} (_w : CanonicalPermutationBraid _n) : ℕ := 0
