@@ -106,17 +106,23 @@ theorem baryon_mass_from_volume [inst : BorromeanQuark]
 
 /-- **Faithful instance.**  Defines `bare_mass` literally as the
     topological-volume formula `borromean_volume / (1 - 1/q)²`, so
-    `volume_calibrates_mass` closes by `rfl`.  The
-    `is_baryon_realisation` predicate is set to `True` (the observed
-    baryon ↔ partition correspondence is empirically witnessed by the
-    `proton_partition` and `neutron_partition` definitions in this
-    file). -/
+    `volume_calibrates_mass` closes by `rfl`.
+
+    The `is_baryon_realisation` predicate is now the **canonical
+    existence statement**: the proton and neutron partitions both
+    inhabit `BorromeanBaryon` and have the expected charge sums.
+    Discharged by exhibiting `proton_partition` and `neutron_partition`
+    as the canonical witnesses. -/
 -- Ref: [manuscript] Ch. 6 §3, conj:borromean-quark
 instance canonical : BorromeanQuark where
   bare_mass := fun q => borromean_volume / (1 - 1/q)^2
   volume_calibrates_mass := fun _ _ => rfl
-  is_baryon_realisation := True
-  is_baryon_realisation_holds := trivial
+  is_baryon_realisation :=
+    ∃ p n : BorromeanBaryon,
+      p.color = ![0, 1, 2] ∧ p.orientation = ![1, 1, -1] ∧
+      n.color = ![0, 1, 2] ∧ n.orientation = ![1, -1, -1]
+  is_baryon_realisation_holds :=
+    ⟨proton_partition, neutron_partition, rfl, rfl, rfl, rfl⟩
 
 end QOU.Descartes
 

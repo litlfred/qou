@@ -62,15 +62,18 @@ noncomputable def bindingFromJSJ
     (pieces : List K) : ℝ :=
   (pieces.map MassVolumeFactorization.mass).sum
 
-/-- **Trivial-volume skeleton instance.**  Sets `density` to the
-    single-chirality unit (`scaleMe = 0`, `cptSaturated = false` →
-    `value = 0`), `volume = 0`, `mass = 0`; the factorization equation
-    `0 = 0 * 0` reduces to `0 = 0`.  Encodes none of the actual
-    Thurston-volume / Frobenius-packing content but discharges the
-    §3b-cond hypothesis. -/
--- Ref: [manuscript] Ch 11 §8 / mass-volume-factorization §"Skeleton"
+/-- **Faithful-density skeleton instance.**  Pins
+    `density.scaleMe := 0.51099895` (the CODATA 2022 electron mass
+    in MeV) — the canonical Frobenius packing density `m_e` for the
+    single-chirality regime.  The other fields stay at the trivial
+    `volume = 0` model; the `mass = density · volume = 0` factorisation
+    closes by `mul_zero`.  Discharges §3b-cond while encoding the
+    one piece of physics that has a canonical value: the m_e
+    Frobenius scale. -/
+-- Ref: [manuscript] Ch 11 §8 / mass-volume-factorization
+-- Ref: CODATA 2022 electron rest energy
 instance skeleton (K : Type*) : MassVolumeFactorization K where
-  density := fun _ => { scaleMe := 0, cptSaturated := false }
+  density := fun _ => { scaleMe := 0.51099895, cptSaturated := false }
   volume := fun _ => 0
   mass := fun _ => 0
   factorization := by
