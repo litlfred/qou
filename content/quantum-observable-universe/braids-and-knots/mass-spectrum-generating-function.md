@@ -9,7 +9,7 @@ $q_0$ collapses to the observed scalar.*
 
 ## The polynomial is a generating function, not a number
 
-Let $M_K$ denote the stable highest-weight KLR module
+Let $\mathfrak{M}_K$ denote the stable highest-weight KLR module
 \cite{khovanovlauda2009, brundankleshchev2009} associated to the
 braid closure $\hat{\beta}_K$. The
 [Observation Frame](#def:observation) $\tau$ takes the graded
@@ -19,12 +19,12 @@ $$
   P_K(q)
   \;=\;
   \sum_{d \in \mathbb{Z}}
-    \dim_R \mathrm{Hom}_{\mathcal{K}_n}(P_d, M_K) \, q^d
+    \dim_R \mathrm{Hom}_{\mathcal{K}_n}(P_d, \mathfrak{M}_K) \, q^d
   \;\in\; \mathbb{Z}_{\geq 0}[q^{\pm 1/2}],
 $$
 
 where the sum is finite — confinement is the homological boundedness
-of $M_K$ under the jet/filtration order ([confinement
+of $\mathfrak{M}_K$ under the jet/filtration order ([confinement
 level](#def:confinement-level)). The word "confined" is not
 decorative: an unbounded module would yield an infinite power series
 (formally an infinite mass tower); the bound truncates this to a
@@ -36,7 +36,7 @@ Each term $c_d q^d$ of $P_K(q)$ has an independent physical reading:
 
 - **Exponent $d$** — the **graded Hecke energy**: a $\mathbb{Z}$-grading
   shift counting topological complexity (crystal-operator depth in
-  $M_K$). Higher $d$ = higher internal topological tension.
+  $\mathfrak{M}_K$). Higher $d$ = higher internal topological tension.
 - **Coefficient $c_d$** — the **microstate degeneracy**: the number
   of orthogonal Hom-channels carrying that energy. Coefficients are
   structurally non-negative integers
@@ -64,7 +64,7 @@ factorisation into the Tier-1 quantum-dimension normalisation and the
 Tier-2 base-mass anchor $m_0$). The composition
 
 $$
-  M_K
+  \mathfrak{M}_K
   \;\xrightarrow{\;\tau\;}\;
   P_K(q)
   \;\xrightarrow{\;\mathrm{ev}_{q_0}\;}\;
