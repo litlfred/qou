@@ -38,6 +38,9 @@ current (not stale).
 bun run scripts/lean-audit.ts            # console report
 bun run scripts/lean-audit.ts --json     # JSON for programmatic use
 bun run scripts/lean-audit.ts --chapter ch5  # filter to one chapter
+bun run scripts/lean-audit.ts --strict   # exit 1 on uncited sorry
+bun run scripts/lean-audit.ts --strict --check-axioms  # also fail on axioms
+bun run scripts/lean-audit.ts --help     # full CLI reference
 ```
 
 This script produces:
