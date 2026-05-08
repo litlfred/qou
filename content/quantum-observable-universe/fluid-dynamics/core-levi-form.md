@@ -1,7 +1,7 @@
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
 the [state bundle](#ex:c-quantum-observable-universe) $(\mathcal{S}, \varTheta)$
 with contact form $\varTheta$ and
-[Levi form](#rem:levi-form-defect)
+[Levi form](#def:levi-form-defect)
 $\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$.  At each
 point $p \in \varrho$, let $N_p\varrho \subset \ker(\varTheta_p)$ be
 the horizontal normal plane.  Define:

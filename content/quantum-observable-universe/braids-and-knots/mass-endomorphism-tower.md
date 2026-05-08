@@ -72,7 +72,7 @@ expanded form below.
 
 Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
-([quantum Bloch group](#def:quantum-bloch-group)).
+([quantum Bloch group](#rem:quantum-bloch-group)).
 
 **Kashaev-integration-identity audit (added 2026-05-03).**
 *The proof step claims*
@@ -297,7 +297,7 @@ with spectral coordinate $\prod_{i\in S}\hat{V}_i$ and Markov
 weight $z^{|S|}$; triples and higher generator subsets are not
 independent at level $n$ (they ascend to jet level $n+1$ via the
 pentagon closure of $\Phi_q$, see
-[quantum Bloch group](#def:quantum-bloch-group)).  The independent
+[quantum Bloch group](#rem:quantum-bloch-group)).  The independent
 order-1 and order-2 subsets enumerate exactly the singleton and
 pair sums above.
 

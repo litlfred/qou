@@ -37,7 +37,7 @@ Under the archimedean fibre functor
 this is the imaginary part of the Chern--Simons functional on the
 flat connection associated to $K$, which by the Chern–Simons /
 hyperbolic-volume correspondence equals $\mathrm{Vol}(S^3 \setminus K)$
-([Möbius energy](#rem:mobius-energy);
+([Möbius energy](#prop:mobius-energy);
 [Kashaev volume density](#rem:kashaev-volume-density)).  Concretely,
 $$
   \mathrm{Re}\,\mathrm{tr}\bigl(\hat{\tau}_n^{\mathrm{desc}}\,\mathrm{Hol}\bigr)

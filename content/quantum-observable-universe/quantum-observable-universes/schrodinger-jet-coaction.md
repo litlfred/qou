@@ -1,6 +1,6 @@
 The $q$-deformed Schrödinger equation governs the evolution of states
 in the linearised state bundle
-([linearisation convention](#rem:linearisation-convention)).
+([linearisation convention](#sec:linearisation-convention)).
 
 For a section $\psi \in \Gamma(\mathcal{S}_{\mathrm{lin}})$ and the $q$-deformed Reeb
 vector field $\xi_q$ ([$q$-Reeb vector field](#ex:q-reeb-vector-field)), the

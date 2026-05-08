@@ -15,7 +15,7 @@ For a nucleus $\mathcal{N}(Z, N)$, the simulator evaluates:
    $Q = |\ln(P_{\mathrm{dau}}/P_{\mathrm{par}})| \times
    E_{\times} \times \mu_0$, optionally with the shell correction
    $\Delta_{\mathrm{shell}} + \Delta_{T_{3,5}}$
-   ([shell construction rules](#def:shell-construction-rules)).
+   ([shell construction rules](#rem:shell-construction-rules)).
 
 3. **Phase-space integral** $f(Z, Q)$ with the
    Skein-Coulomb Fermi function $F_q(Z, E)$
