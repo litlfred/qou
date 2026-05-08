@@ -133,7 +133,7 @@ $\tau_{\text{arch}}$, not in different rings of the same kind. The
 [figure-8 archimedean illustration](#rem:figure-8-archimedean-illustration)
 shows the same dichotomy in concrete miniature: $4_1$ has
 $\mathrm{Vol}_q(4_1) \in \mathbb{Z}[q^{\pm 1/2}]$ on the substrate
-side and $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx
+side and $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \approx
 2.02988$ on the laboratory side, with the bridge fixed by
 uniqueness.
 

@@ -199,7 +199,7 @@ motivic / algebraic representation via its Hecke normal form in
 $\mathbb{Z}[q^{\pm 1/2}]$. Once $\tau_{\text{arch}}$ maps this
 motivic state into the observable continuum, its hyperbolic volume
 realizes as the transcendental
-$\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$. The
+$\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$. The
 motivic side guarantees exact algebraic relationships governing
 particle interactions; $\tau_{\text{arch}}$ supplies the
 transcendental continuum required for geometric measurement. See

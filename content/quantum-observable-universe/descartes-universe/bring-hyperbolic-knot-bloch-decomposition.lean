@@ -56,23 +56,55 @@ def r2Cyclotomic (n : ℕ) : ℕ := Nat.totient n / 2
   unfold r2Cyclotomic
   decide
 
-/-- For `n = 15`: `r_2(Q(ζ_15)) = 4`. The compositum
-    `Q(ζ_3, ζ_5) = Q(ζ_15)` has Bloch group of rank 4 — the
-    natural ambient space for the decomposition conjecture. -/
+/-- For `n = 4`: `r_2(Q(ζ_4)) = r_2(Q(i)) = 1`. The Borromean rings
+    `B_3` (= proton/neutron in the QOU spectrum) have trace field
+    `Q(i)` via two ideal regular octahedra of shape parameter `i`,
+    contributing `8G = 8·Cl_2(π/4) = 8·D(i)` to the BW image. -/
+-- Ref: [borel1974], [thurston1978]
+@[simp] theorem r2_zeta4_eq_one : r2Cyclotomic 4 = 1 := by
+  unfold r2Cyclotomic
+  decide
+
+/-- For `n = 12`: `r_2(Q(ζ_12)) = 2`. Compositum of figure-8 and
+    Borromean trace fields. -/
+-- Ref: [borel1974]
+@[simp] theorem r2_zeta12_eq_two : r2Cyclotomic 12 = 2 := by
+  unfold r2Cyclotomic
+  decide
+
+/-- For `n = 15`: `r_2(Q(ζ_15)) = 4`. Compositum of Bring's natural
+    field and figure-8's trace field. -/
 -- Ref: [borel1974]
 @[simp] theorem r2_zeta15_eq_four : r2Cyclotomic 15 = 4 := by
   unfold r2Cyclotomic
   decide
 
-/-- The compositum rank is the sum of the constituent ranks plus
-    the cross-piece. Since `φ(15) = φ(3)·φ(5) = 2·4 = 8`, we have
-    `r_2(Q(ζ_15)) = r_2(Q(ζ_3)) + r_2(Q(ζ_5)) + 1`, where the `+1`
-    accounts for the rank-1 cross-class that is in neither
-    constituent Bloch group. -/
+/-- For `n = 60`: `r_2(Q(ζ_60)) = 8`. Full compositum
+    `Q(ζ_3, ζ_4, ζ_5)` carrying figure-8, Borromean, and Bring
+    contributions simultaneously — the natural ambient field for
+    the decomposition once Borromean's `Q(i)` trace field is
+    accounted for. -/
+-- Ref: [borel1974], [thurston1978]
+@[simp] theorem r2_zeta60_eq_eight : r2Cyclotomic 60 = 8 := by
+  unfold r2Cyclotomic
+  decide
+
+/-- The compositum rank, narrow version (no Borromean):
+    `r_2(Q(ζ_15)) = r_2(Q(ζ_3)) + r_2(Q(ζ_5)) + 1`. The `+1`
+    accounts for the rank-1 cross-class in `Q(ζ_15) \ (Q(ζ_3) ∪ Q(ζ_5))`. -/
 -- Ref: [borel1974]
-theorem compositum_rank_decomposition :
+theorem compositum_rank_decomposition_narrow :
     r2Cyclotomic 15 = r2Cyclotomic 3 + r2Cyclotomic 5 + 1 := by
   rw [r2_zeta15_eq_four, r2_zeta3_eq_one, r2_zeta5_eq_two]
+
+/-- The compositum rank, full version (figure-8 + Borromean + Bring):
+    `r_2(Q(ζ_60)) = r_2(Q(ζ_15)) + r_2(Q(ζ_4)) + 3`. The `+3`
+    accounts for the cross-classes generated when the Borromean
+    contribution `[Q(i) ↪ Q(ζ_60)]` is adjoined. -/
+-- Ref: [borel1974]
+theorem compositum_rank_decomposition_full :
+    r2Cyclotomic 60 = r2Cyclotomic 15 + r2Cyclotomic 4 + 3 := by
+  rw [r2_zeta60_eq_eight, r2_zeta15_eq_four, r2_zeta4_eq_one]
 
 /-- **Bloch-group decomposition class.**
     A concrete instance asserts the existence of a finite multi-set

@@ -55,7 +55,7 @@ $$
     \;=\;
     2\,D(\mathrm{e}^{i\pi/3})
     \;=\;
-    3\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right)
+    2\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right)
     \;\approx\;
     2.029883\ldots
   \;}
@@ -78,7 +78,7 @@ measurement. Both pictures are needed:
 | Side | Object for $4_1$ | Lives in | Role |
 |---|---|---|---|
 | Pre-archimedean | $\mathrm{Vol}_q(4_1) = \prod_i \hat{V}_i(q)$ | $\mathbb{Z}[q^{\pm 1/2}]$ | Exact algebraic identities, mass-formula state sum, Hecke trace |
-| Archimedean | $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)$ | $\mathbb{R}$ (transcendental) | Laboratory mass-scale, Higgs-like amphichiral mechanism |
+| Archimedean | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ | $\mathbb{R}$ (transcendental) | Laboratory mass-scale, Higgs-like amphichiral mechanism |
 
 The bridge between the two columns is uniquely determined by
 [`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
@@ -92,4 +92,6 @@ $3\,\mathrm{Cl}_2(\pi/3)$ and the $\pi$ in $1/\alpha_{EM}$'s
 correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ share a single
 provenance — the unique archimedean shadow of pentagon-coherent
 substrate data on Bring's surface, factored through the
-Bloch-Wigner dilogarithm.
+Bloch-Wigner dilogarithm. The numerical value $2.029883\ldots =
+2\,\mathrm{Cl}_2(\pi/3)$ matches the standard hyperbolic
+2-tetrahedra triangulation [`thurston1978`].

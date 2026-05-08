@@ -63,9 +63,11 @@ Let $\zeta_n$ denote a primitive $n$-th root of unity.
 
 | Field $F$ | $[F:\mathbb{Q}]$ | $r_1$ | $r_2$ | $\mathrm{rk}_{\mathbb{Z}}\,B(F)\otimes\mathbb{Q}$ |
 |---|---:|---:|---:|---:|
-| $\mathbb{Q}(\zeta_3)$ — figure-8 trace field | 2 | 0 | 1 | 1 |
+| $\mathbb{Q}(\zeta_3)$ — figure-8 ($4_1$) trace field | 2 | 0 | 1 | 1 |
+| $\mathbb{Q}(\zeta_4) = \mathbb{Q}(i)$ — Borromean ($\mathcal{B}_3$) trace field, via 2 ideal regular octahedra of shape $i$ | 2 | 0 | 1 | 1 |
 | $\mathbb{Q}(\zeta_5)$ — Bring's natural field | 4 | 0 | 2 | 2 |
-| $\mathbb{Q}(\zeta_{15}) = \mathbb{Q}(\zeta_3,\zeta_5)$ — compositum | 8 | 0 | 4 | 4 |
+| $\mathbb{Q}(\zeta_{12}) = \mathbb{Q}(\zeta_3,\zeta_4)$ — figure-8 + Borromean compositum | 4 | 0 | 2 | 2 |
+| $\mathbb{Q}(\zeta_{60}) = \mathbb{Q}(\zeta_3,\zeta_4,\zeta_5)$ — full compositum (figure-8, Borromean, Bring) | 16 | 0 | 8 | 8 |
 
 The rank columns are by Borel's theorem [`borel1974`]:
 $\mathrm{rk}\,K_3^{\mathrm{ind}}(F)\otimes\mathbb{Q} =
@@ -82,22 +84,48 @@ imaginary subfield other than $\mathbb{Q}$). So a decomposition
 working entirely inside $B(\mathbb{Q}(\zeta_5))$ cannot include the
 figure-8.
 
-**Observation 2.** The compositum
-$\mathbb{Q}(\zeta_{15}) = \mathbb{Q}(\zeta_3, \zeta_5)$ contains
-both the figure-8's trace field and Bring's natural field, with
-$r_2(\mathbb{Q}(\zeta_{15})) = 4$. The Bloch group there has
-rank 4; the figure-8 contribution sits in a 1-dimensional
-sub-line, and three further linearly independent classes are
-available for the decomposition.
+**Observation 2.** The natural compositum is widened by the
+Borromean rings (proton/neutron in the QOU spectrum, see
+[`recursive-atom-knot-atlas`](../braids-and-knots/recursive-atom-knot-atlas.md)):
+$\mathrm{Vol}(\mathcal{B}_3) = 8G = 8\,\mathrm{Cl}_2(\pi/4)$ via two
+ideal regular octahedra of shape parameter $i$
+([`binding-scale-catalan`](../braids-and-knots/binding-scale-catalan.md)),
+so $\mathcal{B}_3$'s trace field is $\mathbb{Q}(i) = \mathbb{Q}(\zeta_4)$,
+not $\mathbb{Q}(\zeta_3)$. Combining figure-8, Borromean, and Bring's
+$\mathbb{Q}(\zeta_5)$ gives the compositum
+$\mathbb{Q}(\zeta_{60}) = \mathbb{Q}(\zeta_3, \zeta_4, \zeta_5)$,
+of degree 16 over $\mathbb{Q}$ and Bloch-group rank
+$r_2(\mathbb{Q}(\zeta_{60})) = 8$. The figure-8 and Borromean
+contributions occupy two distinct 1-dimensional sub-lines, so the
+remaining 6 dimensions are available for the decomposition.
 
-**Observation 3.** Every hyperbolic knot embedding in genus 4 has
-trace field a number field, so the sum $[Z]_{\mathrm{Bring}}$
-lives in some compositum $F$ of trace fields. The
-$S_5$-equivariance constraint should restrict $F$ to be a
-sub-extension of $\mathbb{Q}(\zeta_{15})$ at most: the relevant
-Galois action is by $S_5$ on the Bring construction and by
-$\mathrm{Gal}(F/\mathbb{Q})$ on the Bloch group, and equivariance
-requires compatibility.
+**Observation 3.** The QOU framework supplies an explicit
+finite enumeration of hyperbolic knots in its mass-bearing
+spectrum, via the
+[recursive atom-knot atlas](../braids-and-knots/recursive-atom-knot-atlas.md):
+
+| Particle / atom | Hyperbolic knot / link | Volume | Trace field (standard) |
+|---|---|---|---|
+| Proton, neutron | $\mathcal{B}_3$ Borromean | $8G \approx 7.328$ | $\mathbb{Q}(i)$ |
+| Deuteron $^2$H | $6_2$ | $\approx 4.401$ | quartic field over $\mathbb{Q}$ |
+| Tritium $^3$H | $8_{11}$ | $\approx 8.286$ | sextic field |
+| $^3$He | $L_{6a4}$ (link) | $\approx 7.328$ | $\mathbb{Q}(i)$ (twin to $\mathcal{B}_3$) |
+| Higgs / mass mechanism | $4_1$ figure-8 | $\approx 2.030$ | $\mathbb{Q}(\zeta_3)$ |
+
+(`recursive-on-⁴He` and the $^4$He magic-A formula contribute via
+$8G$ algebraically, not via a single hyperbolic knot.) Trace fields
+beyond degree 2 quickly enlarge the compositum: $6_2$'s field is
+quartic, $8_{11}$'s is sextic. Including all hyperbolic knots in
+the QOU spectrum, the natural compositum is **at least**
+$\mathbb{Q}(\zeta_{60})$ and may be larger depending on which
+non-cyclotomic fields appear.
+
+The $S_5$-equivariance constraint pins which knots actually embed
+$S_5$-equivariantly in Bring's surface; the figure-8 and Borromean
+admit such embeddings up to standard ambiguities, and the higher
+isotope knots ($6_2, 8_{11}, L_{6a4}, \ldots$) inherit
+$S_5$-equivariance via the binding-operator $\bowtie$ structure of
+the atlas.
 
 ## Partial proof: the figure-8 sub-piece
 
@@ -113,7 +141,7 @@ $$
   \;=\;
   2\,D\bigl(e^{i\pi/3}\bigr)
   \;=\;
-  3\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right)
+  2\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right)
   \;\approx\;
   2.029883\ldots
 $$
