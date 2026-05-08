@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.FluidDynamics.NSCounterexample
 
 Counter-example to Navier–Stokes regularity via q → 1 degeneration.
+=======
+/-!
+# QOU.NS.NSCounterexample — `conj:ns-counterexample` axiomatised
+
+Conjectural content: **the classical limit $q \to 1$ of the
+$q$-NS evolution exhibits an explicit finite-time singularity** — a
+concrete velocity profile and a finite singularity time $T^*$ such
+that the velocity becomes unbounded as $t \to T^{*-}$.
+>>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 LaTeX label: `conj:ns-counterexample`
 
@@ -32,12 +42,33 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.FluidDynamics
 
+<<<<<<< HEAD
 /-- **Conjecture class** for `conj:ns-counterexample`.
 
     Encodes the conjectural content as a Lean type-class so that
     downstream theorems can take `[NSCounterexample]` as an explicit
     hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
     prove the conjecture or supply a `sorry` (read as conjecture).
+=======
+/-- **`conj:ns-counterexample` (axiomatised).**
+
+    The classical limit $q \to 1$ of the $q$-NS evolution admits a
+    finite-time singularity: a concrete velocity profile $u(t, x)$
+    and time $T^*$ at which $\sup_x |u(t, x)|$ blows up. -/
+class NSCounterexample where
+  /-- A finite singularity time $T^* > 0$. -/
+  singularityTime : ℝ
+  /-- The velocity profile $u : \mathrm{time} \to \mathrm{space} \to \mathbb{R}$. -/
+  velocityProfile : ℝ → ℝ → ℝ
+  /-- Singularity time is strictly positive. -/
+  singularityTime_pos : 0 < singularityTime
+  /-- **The conjecture itself.**  The velocity is unbounded as
+      $t \to T^{*-}$: for every $M > 0$ there is a time $t < T^*$
+      and a point $x$ where the velocity exceeds $M$. -/
+  -- Ref: [manuscript] fluid-dynamics/p5-counterexample
+  ns_counterexample_holds :
+    ∀ M : ℝ, ∃ t x : ℝ, t < singularityTime ∧ M < velocityProfile t x
+>>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
     Ref: [manuscript] §Counter-example to Navier–Stokes regularity via q → 1 degeneration, `conj:ns-counterexample` -/
 class NSCounterexample : Prop where

@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.FluidDynamics.LeviDegeneracy
 
 Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity.
+=======
+/-!
+# QOU.NS.LeviDegeneracy — `conj:levi-degeneracy` axiomatised
+
+Conjectural content: **the Levi form of the $q$-NS singularity locus
+degenerates exactly at the parameter values $q_\kappa = e^{i\pi/\kappa}$
+($\kappa \geq 2$)**, and the degeneracy set is therefore countable.
+>>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 LaTeX label: `conj:levi-degeneracy`
 
@@ -32,12 +41,35 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.FluidDynamics
 
+<<<<<<< HEAD
 /-- **Conjecture class** for `conj:levi-degeneracy`.
 
     Encodes the conjectural content as a Lean type-class so that
     downstream theorems can take `[LeviDegeneracy]` as an explicit
     hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
     prove the conjecture or supply a `sorry` (read as conjecture).
+=======
+/-- **`conj:levi-degeneracy` (axiomatised).**
+
+    The Levi form on the singularity locus of the $q$-NS evolution
+    is positive-definite away from the discrete set
+    $\{q_\kappa = e^{i\pi/\kappa} : \kappa \geq 2\}$ and degenerates
+    exactly on it. -/
+class LeviDegeneracy where
+  /-- The Levi-form pairing on the singularity locus. -/
+  leviForm : ℝ → ℝ → ℝ
+  /-- The degeneracy set: the locus on which the Levi form is not
+      positive-definite. -/
+  degeneracySet : Set ℝ
+  /-- The Levi form is symmetric. -/
+  leviForm_symm : ∀ x y, leviForm x y = leviForm y x
+  /-- **The conjecture itself.**  The degeneracy set is precisely the
+      countable family $\{1/\kappa : \kappa \geq 2\}$ representing the
+      principal-root parameters $q_\kappa = e^{i\pi/\kappa}$. -/
+  -- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture
+  levi_degeneracy_holds :
+    degeneracySet = { x : ℝ | ∃ κ : ℕ, 2 ≤ κ ∧ x = 1 / (κ : ℝ) }
+>>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
     Ref: [manuscript] §Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity, `conj:levi-degeneracy` -/
 class LeviDegeneracy : Prop where

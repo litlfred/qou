@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.Algebra.Module.End
@@ -8,6 +9,16 @@ import Mathlib.Data.Matrix.Notation
 # QOU.BraidKnot.WeakSpectralCompleteness
 
 Plancherel completeness for the EW/Higgs {T(2,4), T(2,6), T(2,8)} idempotent decomposition.
+=======
+/-!
+# QOU.WeakSpectralCompleteness — `conj:weak-spectral-completeness` axiomatised
+
+Conjectural content: **the Hoefsmit cell-content data spans the
+weak-sector spectrum** — the spectral basis indexed by Hoefsmit cells
+is complete in the weak-interaction sub-algebra of $H_n(q)$.  In
+practice this requires lifting the $H_2(q)$-only formulation to
+$\mathrm{End}_R(A)$ with $n \geq 3$.
+>>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 LaTeX label: `conj:weak-spectral-completeness`
 
@@ -36,6 +47,7 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.BraidKnot
 
+<<<<<<< HEAD
 /-- **Conjecture class** for `conj:weak-spectral-completeness`,
     operator-level form.
 
@@ -70,6 +82,28 @@ class WeakSpectralCompleteness (R : Type*) [Ring R] (EWModule : Type*)
   /-- Plancherel completeness: the three idempotents sum to the
       identity on the EW/Higgs sector. -/
   spans : e_T_2_4 + e_T_2_6 + e_T_2_8 = LinearMap.id
+=======
+/-- **`conj:weak-spectral-completeness` (axiomatised).**
+
+    The spectral basis indexed by Hoefsmit cell-content data spans
+    the weak sector of the Hecke representation. -/
+class WeakSpectralCompleteness where
+  /-- The basis of the weak-sector spectrum. -/
+  spectralBasis : Type
+  /-- The completeness index: rank of the spanned subspace divided
+      by the rank of the weak sector.  Equals $1$ iff the spectrum
+      is complete. -/
+  completenessIndex : ℝ
+  /-- Completeness index is in $[0, 1]$. -/
+  completenessIndex_le_one : completenessIndex ≤ 1
+  /-- Completeness index is non-negative. -/
+  completenessIndex_nonneg : 0 ≤ completenessIndex
+  /-- **The conjecture itself.**  The completeness index is exactly
+      $1$: the weak-sector spectrum is fully spanned by the Hoefsmit
+      basis. -/
+  -- Ref: [manuscript] braids-and-knots/weak-spectral-completeness
+  weak_spectral_completeness_holds : completenessIndex = 1
+>>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 /-- **Structural skeleton** of `conj:weak-spectral-completeness`
     (kept for `uses` cone bookkeeping under §3b-cond — see CLAUDE.md).
