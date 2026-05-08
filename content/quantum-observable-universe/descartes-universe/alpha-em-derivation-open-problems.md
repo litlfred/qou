@@ -197,7 +197,7 @@ $\tau_{\text{arch}}$, not in different rings of the same kind. The
 [figure-8 example](#rem:figure-8-archimedean-illustration) shows
 the same dichotomy in concrete miniature: $\mathrm{Vol}_q(4_1) \in
 \mathbb{Z}[q^{\pm 1/2}]$ pre-archimedeanly,
-$\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)$ archimedeanly. Two
+$\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ archimedeanly. Two
 sub-problems remain (both open computations rather than structural
 anomalies): identify the precise Bloch-group class on Bring's
 surface, and lift the next-order $\alpha/(4\pi)$ term to a higher

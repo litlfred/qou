@@ -18,7 +18,7 @@ contributions:
   yielding `Vol(4_1) = 2 · Cl_2(π/3)`.
 * Borromean per-octahedron shape parameter `i = e^{iπ/2}` →
   `D(i) = Cl_2(π/2) = G` (Catalan), yielding
-  `Vol(B_3) = 8G = 8 · Cl_2(π/4)` after the 4-tetrahedra-per-
+  `Vol(B_3) = 8G = 8 · Cl_2(π/2)` after the 4-tetrahedra-per-
   octahedron decomposition.
 
 This file provides:
@@ -72,14 +72,14 @@ noncomputable def BlochWigner_unit_circle (θ : ℝ) : ℝ := Cl_2 θ
 noncomputable def BlochWigner_figure_8_per_tetrahedron : ℝ :=
   BlochWigner_unit_circle (Real.pi / 3)
 
-/-- **Borromean per-octahedron BW value:** `D(i) = D(e^{iπ/2}) = G`
-    (Catalan constant), via the regular ideal octahedron decomposing
-    into 4 ideal tetrahedra of shape `i`, each contributing
-    `Cl_2(π/4)`. The total per-octahedron BW value is therefore
-    `4 · Cl_2(π/4)`. -/
+/-- **Borromean per-octahedron BW value:** the regular ideal
+    octahedron decomposes into 4 ideal tetrahedra of shape
+    parameter `i = e^{iπ/2}`, each contributing
+    `D(i) = Cl_2(π/2) = G` (Catalan constant). The
+    per-octahedron BW value is therefore `4 · Cl_2(π/2) = 4G`. -/
 -- Ref: [manuscript] binding-scale-catalan
 noncomputable def BlochWigner_Borromean_per_octahedron : ℝ :=
-  4 * BlochWigner_unit_circle (Real.pi / 4)
+  4 * BlochWigner_unit_circle (Real.pi / 2)
 
 /-- **Identity: `Vol(4_1) = 2 · BW_figure_8_per_tetrahedron`.**
 
@@ -95,7 +95,7 @@ theorem Vol_figure_8_eq_two_BW_tetrahedron :
 /-- **Identity: `Vol(B_3) = 2 · BW_Borromean_per_octahedron`.**
 
     Via the 2-octahedra decomposition of the Borromean rings
-    complement, each octahedron contributing `4G = 4 Cl_2(π/4)`.
+    complement, each octahedron contributing `4G = 4 Cl_2(π/2)`.
     Sorry-free by definition. -/
 -- Ref: [manuscript] binding-scale-catalan
 theorem Vol_Borromean_eq_two_BW_octahedron :

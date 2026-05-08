@@ -126,7 +126,7 @@ classical Faddeev-Kashaev limit (the role played by
 `QOU.QPochhammer.ArchimedeanLimit`), the figure-8 archimedean
 volume is determined: `Vol(4_1) = c · 2 · D(e^{iπ/3})`. The
 classical normalisation gives `c = 1`, hence
-`Vol(4_1) = 2 · D(e^{iπ/3}) = 3 · Cl_2(π/3)` (Thurston 1978).
+`Vol(4_1) = 2 · D(e^{iπ/3}) = 2 · Cl_2(π/3)` (Thurston 1978).
 
 This corollary is purely book-keeping: the existence of the scalar
 is the content of `archimedean_functor_uniqueness`, and the value

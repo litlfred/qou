@@ -59,7 +59,7 @@ def r2Cyclotomic (n : ℕ) : ℕ := Nat.totient n / 2
 /-- For `n = 4`: `r_2(Q(ζ_4)) = r_2(Q(i)) = 1`. The Borromean rings
     `B_3` (= proton/neutron in the QOU spectrum) have trace field
     `Q(i)` via two ideal regular octahedra of shape parameter `i`,
-    contributing `8G = 8·Cl_2(π/4) = 8·D(i)` to the BW image. -/
+    contributing `8G = 8·Cl_2(π/2) = 8·D(i)` to the BW image. -/
 -- Ref: [borel1974], [thurston1978]
 @[simp] theorem r2_zeta4_eq_one : r2Cyclotomic 4 = 1 := by
   unfold r2Cyclotomic
@@ -96,6 +96,7 @@ def r2Cyclotomic (n : ℕ) : ℕ := Nat.totient n / 2
 theorem compositum_rank_decomposition_narrow :
     r2Cyclotomic 15 = r2Cyclotomic 3 + r2Cyclotomic 5 + 1 := by
   rw [r2_zeta15_eq_four, r2_zeta3_eq_one, r2_zeta5_eq_two]
+  rfl
 
 /-- The compositum rank, full version (figure-8 + Borromean + Bring):
     `r_2(Q(ζ_60)) = r_2(Q(ζ_15)) + r_2(Q(ζ_4)) + 3`. The `+3`
@@ -105,6 +106,7 @@ theorem compositum_rank_decomposition_narrow :
 theorem compositum_rank_decomposition_full :
     r2Cyclotomic 60 = r2Cyclotomic 15 + r2Cyclotomic 4 + 3 := by
   rw [r2_zeta60_eq_eight, r2_zeta15_eq_four, r2_zeta4_eq_one]
+  rfl
 
 /-- **Bloch-group decomposition class.**
     A concrete instance asserts the existence of a finite multi-set
@@ -146,9 +148,9 @@ theorem bring_hyperbolic_decomposition
   bring_zero_mode_realised := hD.bw_sum_realised
 
 /-- **Lower bound: figure-8 alone is insufficient.** The figure-8
-    knot's BW value `D[Z_{4_1}] = 3·Cl_2(π/3) ≈ 2.02988` is not a
+    knot's BW value `D[Z_{4_1}] = 2·Cl_2(π/3) ≈ 2.02988` is not a
     rational multiple of `2/(3π) ≈ 0.21221`. Concretely, no
-    single rational `q ∈ ℚ` makes `q · 3·Cl_2(π/3) = 2/(3π)`,
+    single rational `q ∈ ℚ` makes `q · 2·Cl_2(π/3) = 2/(3π)`,
     because `Cl_2(π/3) ∉ ℚ · π⁻¹` (a folklore irrationality
     fact tied to Apéry-style transcendence; the closest small-form
     rational ratio is `4.78`-ish, well away from any Z-multiple).
@@ -173,10 +175,10 @@ theorem bring_zero_mode_value_ne_zero : bringZeroModeValue ≠ 0 := by
     the Q-linear independence of three specific reals:
     `bringZeroModeValue = 2/(3π)`, the figure-8 BW value
     `2·Cl_2(π/3)`, and the per-octahedron Borromean BW value
-    `Cl_2(π/4) = G` (Catalan).
+    `Cl_2(π/2) = G` (Catalan).
 
     This is a transcendence-style hypothesis — the strongest known
-    related fact is that `Cl_2(π/3)` and `Cl_2(π/4)` lie in distinct
+    related fact is that `Cl_2(π/3)` and `Cl_2(π/2)` lie in distinct
     sub-Bloch groups `B(Q(ζ_3)) ⊥ B(Q(ζ_4))` after Galois
     decomposition, so they are Q-linearly independent over each
     other; including `1/π` introduces a rational-vs-Bloch axis that
@@ -198,9 +200,9 @@ class BWQIndependence
 /-- **Two-knot insufficiency (conditional on `BWQIndependence`).**
 
     Under the Q-linear-independence hypothesis on the BW values
-    `{2/(3π), Cl_2(π/3), Cl_2(π/4)}`, no `Z`-linear combination of
+    `{2/(3π), Cl_2(π/3), Cl_2(π/2)}`, no `Z`-linear combination of
     only the figure-8 (`2·Cl_2(π/3)`) and the Borromean rings
-    (`8·Cl_2(π/4)`) BW values equals `2/(3π)`. Equivalently: any
+    (`8·Cl_2(π/2)`) BW values equals `2/(3π)`. Equivalently: any
     `BringHyperbolicDecomposition` instance must include at least
     one hyperbolic knot beyond `{4_1, B_3}` from the QOU spectrum.
 
@@ -238,15 +240,16 @@ theorem atlas_count_lt_zeta60_rank :
   rw [r2_zeta60_eq_eight]
   decide
 
-/-- The named-atlas effective rank (after the `B_3 ~ L_6a4` shared
-    `8G` identity) is at most `r_2(Q(ζ_12)) + r_2(Q(ζ_4)) = 3` if
-    only Q(ζ_3), Q(ζ_4) trace-field contributions are counted. The
-    full reachable BW image extends beyond this via NF-basis
-    products. -/
-theorem atlas_named_rank_le_three :
-    atlasHyperbolicCount - 1 ≤ r2Cyclotomic 12 + r2Cyclotomic 4 := by
+/-- The named-atlas hyperbolic count is bounded by the ambient
+    rank-8 image of `B(Q(ζ_60)) ⊗ Q`. With `atlasHyperbolicCount = 5`
+    and `r2(Q(ζ_60)) = 8`, the count fits inside the ambient
+    image dimensionally. (The earlier "rank ≤ 3" version was
+    arithmetically false; replaced with the correct bound.) -/
+theorem atlas_named_count_le_zeta60 :
+    atlasHyperbolicCount ≤ r2Cyclotomic 60 := by
   unfold atlasHyperbolicCount
-  rw [r2_zeta12_eq_two, r2_zeta4_eq_one]
+  rw [r2_zeta60_eq_eight]
+  decide
 
 /-- **Cyclotomic compositum identity (unconditional).**
     `lcm(3, 4, 5) = 60`, so the compositum of `Q(ζ_3), Q(ζ_4),
@@ -310,7 +313,7 @@ theorem class_equality_from_value_equality
     z₁ = z₂ := by
   rw [h₁, h₂]
 
-/-- Carrier for the shared atlas value `8G = 8·Cl_2(π/4)`, the
+/-- Carrier for the shared atlas value `8G = 8·Cl_2(π/2)`, the
     common BW image of the Borromean rings `B_3` and `L_6a4`. -/
 -- Ref: [manuscript] binding-scale-catalan
 def borromeanValue (cl2_pi_4 : ℝ) : ℝ := 8 * cl2_pi_4
@@ -320,7 +323,7 @@ def borromeanValue (cl2_pi_4 : ℝ) : ℝ := 8 * cl2_pi_4
 
     Both Borromean rings `B_3` and the link `L_6a4` decompose into
     two ideal regular octahedra of shape parameter `i`, giving BW
-    image `8G = 8·Cl_2(π/4)`. By injectivity of `D⊗Q`, their
+    image `8G = 8·Cl_2(π/2)`. By injectivity of `D⊗Q`, their
     Bloch classes coincide in `B(Q(i))⊗Q`, hence in
     `B(Q(ζ_60))⊗Q` after extension. The lemma below records the
     real-level identification.

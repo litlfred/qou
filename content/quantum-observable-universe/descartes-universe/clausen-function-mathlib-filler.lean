@@ -11,7 +11,7 @@ which is the imaginary part of the dilogarithm on the unit circle and
 the standard ingredient in hyperbolic-volume formulas:
 
   Vol(figure-8 knot 4_1)  = 2 · Cl_2(π/3)         ≈ 2.029883
-  Vol(Borromean rings B_3) = 8 · Cl_2(π/4) = 8G    ≈ 7.327724
+  Vol(Borromean rings B_3) = 8 · Cl_2(π/2) = 8G    ≈ 7.327724
 
 Both volumes are needed in:
 
@@ -92,51 +92,30 @@ noncomputable def Catalan_constant : ℝ := Cl_2 (Real.pi / 2)
 noncomputable def Vol_figure_8 : ℝ := 2 * Cl_2 (Real.pi / 3)
 
 /-- **Borromean rings hyperbolic volume carrier.** By the
-    2-octahedron decomposition, each octahedron contributes
-    `4 · Cl_2(π/4) = 4G`, giving `Vol(B_3) = 2 · 4G = 8G`. -/
+    2-octahedron decomposition, each ideal regular octahedron
+    decomposes into 4 ideal tetrahedra of shape parameter
+    `i = e^{iπ/2}`, each contributing `Cl_2(π/2) = G` (Catalan).
+    Per octahedron = `4G = 4·Cl_2(π/2)`; total Borromean
+    volume = `8G = 8·Cl_2(π/2)`. -/
 -- Ref: [manuscript] binding-scale-catalan
 noncomputable def Vol_Borromean : ℝ :=
-  8 * Cl_2 (Real.pi / 4)
+  8 * Cl_2 (Real.pi / 2)
 
-/-- **Borromean = 8 · Catalan_constant equality.** Direct
-    consequence of `Catalan_constant = Cl_2(π/2)` only if the
-    Borromean's per-octahedron BW value `Cl_2(π/4)` were equal
-    to `Cl_2(π/2)`, which it is *not* (Cl_2(π/4) ≠ Cl_2(π/2)
-    in general). The repo's `binding-scale-catalan` identifies
-    `G = Cl_2(π/4)` (NOT `Cl_2(π/2)`), so the Catalan-constant
-    carrier here matches the standard
-    `G := Σ_{k≥0} (-1)^k / (2k+1)²` only via the
-    Fourier-series identity
-
-        Cl_2(π/2) = Σ_{k≥0} (-1)^k / (2k+1)² = G.
-
-    This identity holds by the alternating-sign sub-series of the
-    Cl_2 expansion at `θ = π/2`; a full Lean proof requires
-    Mathlib's Fourier-series infrastructure not yet in scope. We
-    record both definitions and mark the identity as a follow-up. -/
+/-- **Borromean = 8 · Catalan_constant equality.** The standard
+    identification: `G = Cl_2(π/2)` (NOT `Cl_2(π/2)`), so
+    `Catalan_constant = Cl_2(π/2) = G ≈ 0.91596`. The Borromean
+    rings hyperbolic volume `8G = 8·Cl_2(π/2)` decomposes via
+    2 ideal regular octahedra, each of which is 4 ideal tetrahedra
+    of shape parameter `i = e^{iπ/2}` contributing
+    `Cl_2(π/2) = G` per tetrahedron. -/
 -- Ref: [manuscript] binding-scale-catalan §"Catalan constant"
-theorem catalan_via_cl2_pi_over_2_open :
+theorem catalan_constant_eq_cl_2_pi_over_2 :
     Catalan_constant = Cl_2 (Real.pi / 2) := rfl
 
-/-- **Half-period antisymmetry sketch:** `Cl_2(2π - θ) = -Cl_2(θ)`.
-    Follows from `sin(k(2π - θ)) = -sin(kθ)` for integer `k`. A
-    full proof requires `Real.sin` periodicity lemmas and
-    `tsum`-rearrangement, deferred. -/
-theorem Cl_2_reflection_2pi_open
-    (θ : ℝ) :
-    Cl_2 (2 * Real.pi - θ) = -Cl_2 θ ∨
-    Cl_2 (2 * Real.pi - θ) ≠ -Cl_2 θ := by
-  -- Either direction is true (LEM); recorded as a non-trivial open lemma.
-  exact em _
-
-/-- **Series-level positivity at small θ.** For `0 < θ < 2π`,
-    `Cl_2(θ)` is positive on `(0, π)` and negative on `(π, 2π)`.
-    Strict positivity at `θ = π/3` (figure-8 case) is well-known
-    numerically: `Cl_2(π/3) ≈ 1.0149`. We record the existence of
-    the positive value without a quantitative proof — that needs
-    Fourier-series tail bounds. -/
-theorem Cl_2_pi_third_positive_open : Cl_2 (Real.pi / 3) ≥ 0 ∨
-    Cl_2 (Real.pi / 3) < 0 := by
-  exact le_or_lt _ _
+/-- **Borromean volume in terms of Catalan constant.** -/
+theorem Vol_Borromean_eq_eight_Catalan :
+    Vol_Borromean = 8 * Catalan_constant := by
+  unfold Vol_Borromean Catalan_constant
+  rfl
 
 end QOU.Descartes

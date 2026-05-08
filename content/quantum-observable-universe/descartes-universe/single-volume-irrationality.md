@@ -2,7 +2,7 @@
 Each of the three non-zero QOU hyperbolic volumes is irrational:
 
 $$
-  \mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \notin \mathbb{Q},
+  \mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \notin \mathbb{Q},
   \qquad
   \mathrm{Vol}(5_2) \notin \mathbb{Q},
   \qquad
@@ -10,7 +10,7 @@ $$
 $$
 
 *Remark.* This conjecture is completely open.  No hyperbolic 3-manifold volume has ever been
-proved irrational.  The figure-eight volume $3\,\mathrm{Cl}_2(\pi/3)$
+proved irrational.  The figure-eight volume $2\,\mathrm{Cl}_2(\pi/3)$
 is a value of the Clausen function at a rational multiple of $\pi$.
 Its irrationality would follow from the irrationality of
 $\mathrm{Cl}_2(\pi/3) = \sum_{k=1}^{\infty} \sin(k\pi/3)/k^2$ ---

@@ -43,20 +43,25 @@ open SubstantiveFillers
 
 variable {F : Type*} [Field F] [DecidableEq F]
 
-/-- A **pentagon shape** is a quintuple of pre-Bloch elements
-    derived from a pair `(x, y) ∈ (F \ {0,1})²` via the 5-term
-    Rogers-form maps `x, y, y/x, (1-y⁻¹)/(1-x⁻¹), (1-y)/(1-x)`.
-    The pentagon-relation generator at this shape is the formal sum
+/-- A **pentagon shape** is intended to be a quintuple of pre-Bloch
+    elements derived from a pair `(x, y) ∈ (F \ {0,1})²` via the
+    5-term Rogers-form maps `x, y, y/x, (1-y⁻¹)/(1-x⁻¹), (1-y)/(1-x)`.
 
-      [x] - [y] + [y/x] - [(1-y⁻¹)/(1-x⁻¹)] + [(1-y)/(1-x)]
-
-    in `PreBlochGroup F`. We package the existential structure of
-    "five pre-Bloch elements together with proofs that each is
-    distinct from 0 and 1" as a structure, leaving the explicit
-    domain-validity check to downstream callers. -/
+    **Caveat (over-permissive).** As declared, this structure
+    allows ARBITRARY 5-tuples of pre-Bloch elements, not the
+    constrained Rogers-form 5-tuples. Any concrete instance with
+    repeated entries (e.g. `e₂ = e₃ = e₄ = e₅`) yields a
+    pentagon-relation generator that collapses to `of(e₁)`,
+    putting individual pre-Bloch elements into the relation
+    subgroup and trivialising the quotient. The proper fix is a
+    `ValidPentagonShape F` predicate enforcing the Rogers-form
+    constraints (deferred to a future commit alongside
+    `Field F` arithmetic for the inverse and division maps).
+    The structural skeleton below supports this drop-in
+    refinement without modification. -/
 -- Ref: [bloch2000] AMS CRM 11
 structure PentagonShape (F : Type*) [Zero F] [One F] [DecidableEq F] where
-  e₁ : PreBlochElement F  -- represents x
+  e₁ : PreBlochElement F  -- represents x  (Rogers form)
   e₂ : PreBlochElement F  -- represents y
   e₃ : PreBlochElement F  -- represents y/x
   e₄ : PreBlochElement F  -- represents (1-y⁻¹)/(1-x⁻¹)

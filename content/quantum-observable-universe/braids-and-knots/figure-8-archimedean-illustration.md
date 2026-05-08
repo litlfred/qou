@@ -88,7 +88,7 @@ no other archimedean image is admissible.
 the additive Bring zero-mode candidate
 [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode):
 the $\pi$ in $4_1$'s archimedean image
-$3\,\mathrm{Cl}_2(\pi/3)$ and the $\pi$ in $1/\alpha_{EM}$'s
+$2\,\mathrm{Cl}_2(\pi/3)$ and the $\pi$ in $1/\alpha_{EM}$'s
 correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ share a single
 provenance — the unique archimedean shadow of pentagon-coherent
 substrate data on Bring's surface, factored through the
