@@ -53,4 +53,17 @@ noncomputable def productFormCollapse
   let c := (LiftedCrossingLocality.crossings k).length
   LiftedCrossingLocality.massGB k * (1 + xi) ^ c
 
+/-- **Tautological skeleton instance.**  Sets every mass and local
+    factor to zero; under this assignment the factorization equation
+    `0 = 0 * prod` holds by direct evaluation.  Encodes none of the
+    conjectural locality content (KZ flatness, Kohno–Drinfeld) but
+    discharges the §3b-cond hypothesis for downstream blocks. -/
+-- Ref: [manuscript] particle-interactions/lifted-crossing-locality §"Skeleton"
+instance skeleton {K C : Type*} : LiftedCrossingLocality K C where
+  crossings := fun _ => []
+  massGB := fun _ => 0
+  massGBSubset := fun _ _ => 0
+  localFactor := fun _ => 0
+  factorization := fun _ _ _ => by simp
+
 end QOU.ParticleInteractions

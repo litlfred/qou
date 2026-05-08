@@ -109,4 +109,27 @@ theorem rescale_EW_eq_120 (Σ : ElectroweakSlice)
     rw [s5_acts_on_ew_slice Σ, mul_comm 120]
   exact mul_left_cancel₀ h h2
 
+/-- **`conj:n-v-bring-action` (axiomatised as a typeclass).**
+
+    Wraps the substrate axiom `s5_acts_on_ew_slice` in a §3b-cond
+    class so that downstream blocks can take `[NVBringAction Σ]` as
+    a typeclass hypothesis and inherit `conditional-on-class`
+    status.  The rescaling identity is now a class field rather than
+    a free-standing axiom; the underlying axiom remains as the
+    instance-level discharge target. -/
+-- Ref: \cite{bring1786}, \cite{klein1888}
+class NVBringAction (Σ : ElectroweakSlice) : Prop where
+  /-- Rescaling identity: $\tau_{M,C}^{\mathrm{EW}}(\Sigma) \cdot
+      \mathrm{rescale}_{EW}(\Sigma) = 120 \cdot
+      \tau_{M,C}^{\mathrm{EW}}(\Sigma)$. -/
+  rescale_eq :
+    tau_M_C_dim_q_EW Σ * rescale_EW Σ = 120 * tau_M_C_dim_q_EW Σ
+
+/-- **Default instance.**  Discharges `rescale_eq` from the
+    substrate axiom `s5_acts_on_ew_slice`. -/
+-- Ref: [manuscript] observations/n-v-bring-action
+instance instance_from_axiom (Σ : ElectroweakSlice) :
+    NVBringAction Σ where
+  rescale_eq := s5_acts_on_ew_slice Σ
+
 end QOU.Observations

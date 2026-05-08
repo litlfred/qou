@@ -166,4 +166,22 @@ theorem mass_mono_of_extra_dilog {R : Type*} [OrderedAddCommMonoid R]
   apply le_add_of_nonneg_right
   simpa using hextra_nonneg
 
+/-- **Trivial-vortex skeleton instance.**  The flat-vortex case
+    `holonomy = 0`, `N = 0`, `mass = 0` satisfies the decomposition
+    by `simp`.  Encodes none of the conjectural content (the actual
+    holonomy + dilogarithm values for a non-trivial vortex must come
+    from a richer instance) but discharges the §3b-cond hypothesis
+    for downstream blocks consuming
+    `[TopologicalDecompositionMass ℝ vortex]`. -/
+-- Ref: [manuscript] conj:topological-decomposition-mass §"Skeleton"
+instance trivialVortex (vortex : Type*) :
+    TopologicalDecompositionMass ℝ vortex where
+  holonomy := 0
+  holonomy_nonneg := le_refl 0
+  N := 0
+  dilog := fun i => i.elim0
+  dilog_nonneg := fun i => i.elim0
+  mass := 0
+  decomp := by simp
+
 end QOU.TopologicalMass
