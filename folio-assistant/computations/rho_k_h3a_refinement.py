@@ -34,10 +34,12 @@ profile.  `compute_status: "deuteron"` flags the atom as tractable.
 """
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import sys
 from datetime import datetime, timezone
+from multiprocessing import Pool, cpu_count
 from pathlib import Path
 
 import mpmath as mp
@@ -47,10 +49,117 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+from hecke_characters import standard_young_tableaux  # noqa: E402
 from hoefsmit_symbolic import chi_lambda_symbolic, Q as Q_SYM  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 
 mp.mp.dps = 50
+
+
+# ── Numeric Hoefsmit builder (mirrors _hoefsmit_build but at concrete q) ──
+def hoefsmit_matrices_numeric(shape, q_mp):
+    """Build Hoefsmit matrices at concrete mpmath q.  ~100× faster than
+    the symbolic path: skips polynomial cancellation and uses mpmath
+    arithmetic at the working precision (mp.mp.dps).
+
+    Mirrors hecke_character_symbolic._hoefsmit_build exactly; only the
+    field of entries differs (mpmath.mpf vs sympy expr in q).
+    """
+    n = sum(shape)
+    syts, cells, contents = standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], 0, []
+
+    q = mp.mpf(q_mp)
+    one = mp.mpf(1)
+    h = q - one / q
+
+    matrices = []
+    for k in range(1, n):
+        M = mp.matrix(dim, dim)
+        processed = set()
+        for i in range(dim):
+            if i in processed:
+                continue
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+            a = h / (one - q ** (-2 * rho))
+
+            swap_map = dict(syts[i])
+            swap_map[k], swap_map[k + 1] = ci_k1, ci_k
+            j = None
+            for jj in range(dim):
+                if jj == i:
+                    continue
+                if syts[jj] == swap_map:
+                    j = jj
+                    break
+
+            if j is None:
+                M[i, i] = a
+                processed.add(i)
+            else:
+                a_prime = h / (one - q ** (2 * rho))
+                b_sq = a * a_prime + one
+                b = mp.sqrt(b_sq)
+                M[i, i] = a
+                M[j, j] = a_prime
+                M[i, j] = b
+                M[j, i] = b
+                processed.add(i)
+                processed.add(j)
+        matrices.append(M)
+    return matrices, dim, syts
+
+
+def chi_numeric(shape, crossings, q_mp):
+    """Numeric χ^λ_q(T_w) at concrete q via mpmath matrix product.
+
+    Returns: mp.mpf trace.  Microseconds per crossing × ~22 crossings ×
+    dim² ≤ 256 → milliseconds per partition (vs. minutes symbolic).
+    """
+    matrices, dim, _ = hoefsmit_matrices_numeric(shape, q_mp)
+    if dim == 0:
+        return mp.mpf(0)
+
+    q = mp.mpf(q_mp)
+    h = q - mp.mpf(1) / q
+    d_lookup = {"sigma": mp.mpf(0), "sigma_inv": -h, "averaged": -h / 2}
+    eye = mp.eye(dim)
+
+    M = mp.eye(dim)
+    for gen_idx, ctype in crossings:
+        if gen_idx < 0 or gen_idx >= len(matrices):
+            raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
+        sigma = matrices[gen_idx]
+        d_val = d_lookup[ctype]
+        cross = sigma + d_val * eye
+        M = M * cross
+
+    tr = mp.mpf(0)
+    for i in range(dim):
+        tr += M[i, i]
+    return tr
+
+
+# Worker for multiprocessing — top-level so Pool can pickle it.
+def _per_partition_numeric(args):
+    lam, crossings, q_str_50dps, dps = args
+    mp.mp.dps = dps
+    q_mp = mp.mpf(q_str_50dps)
+    chi = chi_numeric(lam, crossings, q_mp)
+    return lam, str(chi)
+
+
+def _per_partition_symbolic(args):
+    lam, crossings, q_str_50dps, dps = args
+    mp.mp.dps = dps
+    chi_sym = chi_lambda_symbolic(lam, crossings)
+    sub = chi_sym.subs(Q_SYM, sp.sympify(q_str_50dps))
+    chi = mp.mpf(str(sub.evalf(dps)))
+    return lam, str(chi)
 
 # ── Calibration anchors (CODATA, MeV) ──────────────────────────
 M_E_MEV = mp.mpf("0.51099895")
@@ -138,9 +247,23 @@ def evaluate_at_q0(expr) -> mp.mpf:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--symbolic", action="store_true",
+        help="Use the slow symbolic-q path (sympy chi_lambda_symbolic). "
+             "Default is the numeric mpmath path — ~100× faster, "
+             "bit-identical to the symbolic path at q_0 (50 dps)."
+    )
+    parser.add_argument(
+        "--workers", type=int, default=min(cpu_count(), 11),
+        help="multiprocessing.Pool size (default = min(cpu_count, 11))."
+    )
+    args = parser.parse_args()
+    engine = "symbolic" if args.symbolic else "numeric"
+
     print("=" * 96)
     print("  ρ_K H_{3A} Wedderburn refinement — DEUTERON proof-of-concept")
-    print("  (P3' from AUDIT-DEEP-2026-05.md §7; PR #564)")
+    print(f"  (P3' from AUDIT-DEEP-2026-05.md §7; PR #564)  engine={engine}, workers={args.workers}")
     print("=" * 96)
 
     print(f"\n  q_0 = {mp.nstr(Q_MP, 25)}")
@@ -172,19 +295,30 @@ def main() -> int:
     print("\n  Loading y_λ(q_0) from Wenzl-bridge witness …")
     y_lam_sym = load_y_lambda_n6()
 
-    print("  Computing χ^λ(β_D) via hoefsmit_symbolic … (11 partitions)")
     crossings = word_to_crossings(DEUTERON_WORD_1IDX)
-    print(f"    deuteron word: {len(crossings)} crossings on H_6")
-
     parts = partitions_of_n(6)
     assert len(parts) == 11, f"expected 11 partitions, got {len(parts)}"
+    print(f"  Computing χ^λ(β_D) via {engine} engine "
+          f"({len(parts)} partitions, {len(crossings)} crossings on H_6) …")
+
+    q_str_50 = mp.nstr(Q_MP, 50)
+    worker = _per_partition_symbolic if args.symbolic else _per_partition_numeric
+    work = [(lam, crossings, q_str_50, mp.mp.dps) for lam in parts]
+
+    chi_at_q0 = {}
+    if args.workers > 1 and len(parts) > 1:
+        with Pool(args.workers) as pool:
+            for lam, chi_str in pool.imap_unordered(worker, work):
+                chi_at_q0[lam] = mp.mpf(chi_str)
+    else:
+        for w in work:
+            lam, chi_str = worker(w)
+            chi_at_q0[lam] = mp.mpf(chi_str)
 
     rows = []
     sw_sum = mp.mpf(0)
     for lam in parts:
-        chi_sym = chi_lambda_symbolic(lam, crossings)
-        chi_q0 = evaluate_at_q0(chi_sym)
-
+        chi_q0 = chi_at_q0[lam]
         if lam not in y_lam_sym:
             raise RuntimeError(f"y_λ for partition {lam} missing from witness")
         y_q0 = evaluate_at_q0(y_lam_sym[lam])
@@ -289,7 +423,12 @@ def main() -> int:
             "1875.61294257 MeV exactly by construction (single equation, "
             "single unknown)."
         ),
-        "engine": "sympy + mpmath (50 dps)",
+        "engine": (
+            f"mpmath numeric Hoefsmit at q_0 (50 dps), "
+            f"multiprocessing.Pool({args.workers})"
+            if not args.symbolic
+            else "sympy symbolic-q + mpmath evaluation (50 dps), single-threaded"
+        ),
         "scriptFile": "rho_k_h3a_refinement.py",
         "scriptHash": script_hash,
         "parameters": {
