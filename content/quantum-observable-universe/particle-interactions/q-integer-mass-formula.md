@@ -70,7 +70,7 @@ and exact here.*
 
 *The first three BW coefficients $\lambda_V$, $\lambda_S$, $\lambda_C$
 are derivable from the per-nucleon channel product
-([per-nucleon channel decomposition](#rem:per-nucleon-channel-decomposition)).
+([per-nucleon channel decomposition](#def:per-nucleon-channel-decomposition)).
 The effective binding scale is $\alpha_{\mathrm{eff}} = m_e \times 8G
 \times [3]_q$, where $8G = \mathrm{Vol}(\mathcal{B}_3)$ is the
 Borromean link volume and $[3]_q$ is the nucleon strand count:*

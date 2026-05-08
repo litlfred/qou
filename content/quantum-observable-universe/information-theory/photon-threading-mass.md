@@ -47,7 +47,7 @@ the braid word to the other.
    and far-commutativity ($\sigma_i\sigma_j = \sigma_j\sigma_i$)
    are **free** — they rearrange crossings without changing the
    Skein weight
-   ([Gröbner--Shirshov energy](#rem:groebner-shirshov-energy)).
+   ([Gröbner--Shirshov energy](#thm:groebner-shirshov-energy)).
    Only the **Hecke steps**
    ($\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$) cost energy:
    each resolves a double crossing into a weighted single crossing

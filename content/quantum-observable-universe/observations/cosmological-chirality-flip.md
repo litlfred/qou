@@ -2,7 +2,7 @@ The [time reversal barrier](#rem:time-reversal-energy-barrier)
 shows that chirality reversal costs infinite energy **in the
 observable sector** — where the Frobenius form is non-degenerate
 and $q$ is forced to be real.  But the
-[cosmological limits](#rem:cosmological-limits) identify two
+[cosmological limits](#ex:cosmological-limits) identify two
 regimes where this protection breaks down.
 
 **Formalization status.**  The claims below are **conjectural**.

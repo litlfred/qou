@@ -14,7 +14,7 @@ $\mathrm{SDiff}_q(\mathcal{S})$ on the
 [state bundle](#ex:c-quantum-observable-universe), with two consequences:
 
 1. The $L^2$ metric becomes the
-   [Webster inner product](#rem:webster-inner-product).
+   [Webster inner product](#sec:webster-inner-product).
    Geodesics solve the [quantum Euler
    equation](#rem:madelung-fluid) with pressure $Q_q$.
 

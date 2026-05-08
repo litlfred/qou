@@ -1,5 +1,5 @@
 The Feynman--Stueckelberg interpretation identifies the
-[positron](#rem:positron-knot) as an electron travelling backward in
+[positron](#def:positron-knot) as an electron travelling backward in
 time.  In the QOU framework this becomes precise: "time reversal" of
 a particle means chirality reversal of its constituent knots —
 replacing every $T_{2,3}$ with $T_{2,3}^{\sigma}$.  We now show that

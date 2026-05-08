@@ -244,7 +244,7 @@ Yekutieli's picture:
   (word, grade, jet-position) triples per term.
 
 The jet-convergence result
-([prop:jet-convergence-classical-limit](#prop:jet-convergence-classical-limit))
+([prop:jet-convergence-classical-limit](#conj:jet-convergence-classical-limit))
 shows that the jet tower converges to the classical limit as
 $q \to 1$, confirming the finite-slice picture is algebraically
 consistent with the semiclassical approximation.

@@ -32,7 +32,7 @@ braids.*
 4. *Close the ring: C$_6$--H$_6$ + C$_6$--C$_1$ $\sigma$ bond,
    forming the cyclic structure, reduce in $H_{120}(q)$*
 5. *Add $\pi$ electrons: 6 electrons form a
-   [threading link](#rem:benzene-threading-emergence) $T(2, 6)$
+   [threading link](#prop:benzene-threading-emergence) $T(2, 6)$
    around the ring*
 
 *Step 5 is the critical one: the threading link emerges from the

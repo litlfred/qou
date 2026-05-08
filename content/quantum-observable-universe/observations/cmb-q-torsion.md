@@ -1,4 +1,4 @@
-In the Descartes universe ([Descartes universe](#ex:descartes)), the negative Euler
+In the Descartes universe ([Descartes universe](#thm:descartes)), the negative Euler
 characteristic $\chi(\mathcal{S}) = -6$ forces a non-trivial distribution of angular
 modes across the CR manifold ([Descartes CMB](#rem:descartes-cmb)). The
 $q$-torsion leaves ([$q$-torsion leaf](#ex:q-torsion-leaf); here "leaves" is the

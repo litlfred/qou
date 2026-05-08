@@ -17,7 +17,7 @@ $$
   \tau\bigl(\mathbb{P}(V)\bigr) =  \mathbb{P}^1(R)
 $$
 
-([scheme notation](#rem:scheme-notation)).  The notation
+([scheme notation](#sec:scheme-notation)).  The notation
 $\mathbb{P}(V)$ is used when the categorical construction matters
 (built from the fundamental object $V$); the notation
 $\mathbb{P}^1(R)$ is used in scheme-theoretic or coordinate
