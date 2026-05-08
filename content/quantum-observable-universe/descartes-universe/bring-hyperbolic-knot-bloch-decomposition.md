@@ -269,6 +269,21 @@ $n$ is bounded (every knot of bridge number $b$ embeds in a
 genus-$b$ Heegaard surface, so genus-4 embeddability requires
 $b \leq 4$, hence $n \leq 8$ suffices).
 
+**Open computational sub-question (not theoretical):** *Does every
+hyperbolic-in-Bring knot appear as the Markov closure of a single
+NF-basis word in some $H_n(q)$ for $n \leq 8$, or do some require
+non-NF representatives (requiring conjugation across the
+Gröbner-Shirshov boundary)?* The Markov-stabilization argument
+above guarantees reachability *as a knot*, but the NF-basis
+constraint may restrict the *representative*: a hyperbolic-in-Bring
+knot $K$ might require a $\sigma$-word that is NOT in the
+GS-shortlex normal form of $H_n(q)$, in which case the BW value
+$D[Z_K]$ is reached only after Hecke-trace identification with an
+NF-basis triple-product image. Verifying this for all
+hyperbolic-in-Bring knots up to a chosen crossing bound is a
+SnapPy / KnotInfo computation outside this proof's scope; it is
+not blocked by Markov stabilization but by the GS-NF reduction.
+
 Concretely:
 
 - For each hyperbolic knot $K$ embeddable in Bring's surface

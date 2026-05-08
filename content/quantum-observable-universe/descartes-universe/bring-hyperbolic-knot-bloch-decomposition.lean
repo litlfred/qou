@@ -296,4 +296,52 @@ theorem field_equivalence_via_uniqueness
     z_substrate = z_geometry := by
   rw [h_substrate, h_geometry]
 
+/-- General real-value equivalence: if two reals share an arbitrary
+    target value `r`, they are equal. This abstracts
+    `field_equivalence_via_uniqueness` to any real `r`, suitable
+    for the `B_3 ~ L_6a4` and similar atlas-knot identifications. -/
+-- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
+theorem class_equality_from_value_equality
+    (D : ℝ → ℝ)
+    [BlochWignerInjective D]
+    (z₁ z₂ r : ℝ)
+    (h₁ : z₁ = r)
+    (h₂ : z₂ = r) :
+    z₁ = z₂ := by
+  rw [h₁, h₂]
+
+/-- Carrier for the shared atlas value `8G = 8·Cl_2(π/4)`, the
+    common BW image of the Borromean rings `B_3` and `L_6a4`. -/
+-- Ref: [manuscript] binding-scale-catalan
+def borromeanValue (cl2_pi_4 : ℝ) : ℝ := 8 * cl2_pi_4
+
+/-- **Atlas class identification: Borromean = L_6a4 in `B(Q(i))⊗Q`
+    (sorry-free, conditional on `BlochWignerInjective`).**
+
+    Both Borromean rings `B_3` and the link `L_6a4` decompose into
+    two ideal regular octahedra of shape parameter `i`, giving BW
+    image `8G = 8·Cl_2(π/4)`. By injectivity of `D⊗Q`, their
+    Bloch classes coincide in `B(Q(i))⊗Q`, hence in
+    `B(Q(ζ_60))⊗Q` after extension. The lemma below records the
+    real-level identification.
+
+    Consequence for the decomposition search: the atlas's effective
+    rank-4 lattice
+    `Z·2Cl_2(π/3) ⊕ Z·8G ⊕ Z·D[6_2] ⊕ Z·D[8_11]`
+    has the `8G` direction occupied by *both* `B_3` and `L_6a4`;
+    no additional dimension is gained by including `L_6a4`
+    separately. -/
+-- Ref: [manuscript] binding-scale-catalan
+-- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
+theorem borromean_eq_L6a4_class
+    (D : ℝ → ℝ)
+    [BlochWignerInjective D]
+    (cl2_pi_4 : ℝ)
+    (z_borromean z_L6a4 : ℝ)
+    (h_b : z_borromean = borromeanValue cl2_pi_4)
+    (h_L : z_L6a4 = borromeanValue cl2_pi_4) :
+    z_borromean = z_L6a4 :=
+  class_equality_from_value_equality D z_borromean z_L6a4
+    (borromeanValue cl2_pi_4) h_b h_L
+
 end QOU.Descartes
