@@ -68,12 +68,20 @@ The rigorous statement requires:
    fixed $T_w$ kills the poles above GB-depth $k_\star(T_w)$ —
    see [stratified Φ$_q$](#prop:quantum-dilogarithm-stratified)).
 
-3. **Mathlib infrastructure.** A Lean proof would need
-   `Complex.dilog`, asymptotic expansions of $q$-series, and a
-   uniform Tauberian theorem — none currently formalised in
-   Mathlib. The Lean theorem
-   `QOU.QPochhammer.partialProduct_archimedean_limit` is therefore
-   a stated identity (see CLAUDE.md §3b).
+3. **Mathlib infrastructure.** A complete Lean proof needs a
+   uniform Tauberian theorem and branch-cut control on the
+   principal-branch dilogarithm — neither currently in Mathlib.
+   The conjecture is therefore packaged as the typeclass
+   `QOU.QPochhammer.ArchimedeanLimit`, with one field stating the
+   convergence along Faddeev's joint scaling. `LiTwo : ℝ → ℝ`
+   is no longer opaque: it is now defined as the explicit series
+   $\mathrm{LiTwo}(x) := \sum_{k \geq 1} x^k / k^2$ via Mathlib's
+   `tsum`, and the boundary lemmas `LiTwo_zero` and
+   `partialProduct_zero` are unconditional. The class is inhabited
+   unconditionally at $x = 0$ (`archimedeanLimit_zero` instance),
+   where both sides of the convergence are identically zero; for
+   $x \in (0, 1)$ the instance still awaits the Tauberian
+   argument from `faddeev1994` / `kashaev1997`.
 
 ## Bridge to the geometric side
 

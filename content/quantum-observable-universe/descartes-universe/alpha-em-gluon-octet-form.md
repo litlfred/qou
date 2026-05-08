@@ -1,4 +1,17 @@
-**Conjecture (gluon-octet closed form for $1/\alpha_{EM}$, PSLQ-empirical).**
+**Conjecture (gluon-octet closed form for $1/\alpha_{EM}$, PSLQ-empirical — superseded).**
+
+> **Status (May 2026): superseded by the additive Bring zero-mode form**
+> [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).
+> The 100-dps PSLQ scan for the multiplicative correction term over the
+> 54-element basis ($\pi, \zeta(3), \log 2, [k]_q, \hbar_q^k, \ldots$)
+> returned no integer relation
+> ([`rem:alpha-em-derivation-open-problems`](#rem:alpha-em-derivation-open-problems));
+> together with the factor-by-factor structural audit below, this rules
+> the present form out as a viable derivation. Retained in the
+> manifest as a **historical numerical curiosity** (single-point match
+> at $q_0$ to $6.7 \times 10^{-9}$); not a candidate for closing the
+> $1.55 \times 10^{-3}$ gap.
+
 *Let $q$ denote the substrate parameter, $[k]_q := (q^k - q^{-k})/(q - q^{-1})$ the quantum integer, and $\hbar_q := (q-1)/q$ the reduced Planck constant. We conjecture the closed form*
 
 $$

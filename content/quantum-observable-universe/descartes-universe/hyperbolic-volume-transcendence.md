@@ -5,7 +5,7 @@ hyperbolic volumes drive the Descartes universe mass spectrum:
 
 | Knot/Link | Volume | QOU identity |
 |-----------|--------|-------------|
-| Figure-eight $4_1$ | $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$ | Higgs boson |
+| Figure-eight $4_1$ | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$ | Higgs boson |
 | Three-twist $5_2$ | $\mathrm{Vol}(5_2) \approx 2.82812$ | Down quark |
 | Borromean rings $\mathcal{B}_3$ | $\mathrm{Vol}(\mathcal{B}_3) \approx 7.32772$ | Nucleon |
 

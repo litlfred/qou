@@ -368,6 +368,54 @@ export const references: CSLData[] = [
     DOI: "10.1007/BFb0084581",
   }),
 
+  // ── Borel 1974 ────────────────────────────────────────────────
+  ref({
+    id: "borel1974",
+    type: "article-journal",
+    title: "Stable real cohomology of arithmetic groups",
+    author: [
+      { family: "Borel", given: "Armand" },
+    ],
+    "container-title": "Annales scientifiques de l'École Normale Supérieure",
+    volume: "7",
+    issue: "2",
+    issued: { "date-parts": [[1974]] },
+    page: "235-272",
+    DOI: "10.24033/asens.1269",
+    note: "Borel's regulator: rank K_{2n-1}(O_F) ⊗ Q = r_1 + r_2 (n odd) or r_2 (n even), and Bloch-Wigner / polylogarithm regulator maps from K_{2n-1} to R^{r_2}.",
+  }),
+
+  // ── Suslin 1991 ───────────────────────────────────────────────
+  ref({
+    id: "suslin1991",
+    type: "article-journal",
+    title: "K_3 of a field, and the Bloch group",
+    author: [
+      { family: "Suslin", given: "A. A." },
+    ],
+    "container-title": "Proceedings of the Steklov Institute of Mathematics",
+    volume: "183",
+    issued: { "date-parts": [[1991]] },
+    page: "217-239",
+    note: "Pentagon characterisation of the Bloch-Wigner dilogarithm: any continuous, antisymmetric, real-valued function on the Bloch group satisfying the 5-term identity is a constant scalar multiple of $D$.",
+  }),
+
+  // ── Bloch 2000 ────────────────────────────────────────────────
+  ref({
+    id: "bloch2000",
+    type: "book",
+    title: "Higher Regulators, Algebraic K-Theory, and Zeta Functions of Elliptic Curves",
+    author: [
+      { family: "Bloch", given: "Spencer J." },
+    ],
+    publisher: "American Mathematical Society",
+    "publisher-place": "Providence, RI",
+    issued: { "date-parts": [[2000]] },
+    "collection-title": "CRM Monograph Series",
+    "collection-number": 11,
+    ISBN: "978-0-8218-2973-8",
+  }),
+
   // ── Lusztig 1993 ──────────────────────────────────────────────
   ref({
     id: "lusztig1993",

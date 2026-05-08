@@ -13,7 +13,7 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
    independence predicted by Milnor.
 
 2. **Irrationality of each volume.** Each of
-   $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)$,
+   $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$,
    $\mathrm{Vol}(5_2)$, and $\mathrm{Vol}(\mathcal{B}_3)$ is
    irrational.  Irrationality of a single hyperbolic $3$-manifold
    volume is open; algebraic independence settles the question for

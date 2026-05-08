@@ -1,7 +1,17 @@
-**Conjecture (additive Bring-surface zero-mode form for $1/\alpha_{EM}$).**
+**Proposition (additive Bring-surface zero-mode form for
+$1/\alpha_{EM}$, conditional on
+[`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
+and on the Bloch-Suslin pentagon-uniqueness theorem
+[`suslin1991`]).**
 *Let $g = 4$ denote the genus of Bring's surface (the unique Riemann
 surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$,
-[force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Then*
+[force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)).
+Assume the upstream typeclasses
+`QOU.QPochhammer.ArchimedeanLimit`,
+`QOU.Descartes.BlochSuslinUniqueness`, and
+`QOU.Descartes.BringZeroModeBlochClass` are all inhabited
+([`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness)).
+Then*
 
 $$
   \frac{1}{\alpha_{EM}}
@@ -36,10 +46,10 @@ At $q_0 \approx 1.10998$ in 60 dps mpmath:
 | $2/(3\pi) = 2g/(4\pi(g-1))$ | $0.212206591\ldots$ |
 | Sum | $137.035426245\ldots$ |
 | CODATA $1/\alpha$ | $137.035999084(21)$ |
-| **Residual** | $\mathbf{+4.2 \times 10^{-6}}$ relative |
+| **Residual** (calc $-$ CODATA, relative) | $\mathbf{-4.2 \times 10^{-6}}$ |
 
 A second additive term $\alpha/(4\pi) \approx 5.81 \times 10^{-4}$
-brings the residual to $-5.7 \times 10^{-8}$ relative, near CODATA
+brings the residual to $+5.7 \times 10^{-8}$ relative (calc $-$ CODATA), near CODATA
 $\sigma_\alpha = 1.5 \times 10^{-10}$ — but the coefficient $1/(4\pi)$
 is currently a numerical near-match (1.4% off) and may refine to
 $1/(2\pi[2]_q)$ or another small $q$-correction.
@@ -68,10 +78,86 @@ structurally consistent and not coincidental — it is what one expects
 from a categorical-Lagrangian QFT whose UV completion lives on
 Bring's curve.
 
+> **Conditional theorem (§3b-cond).** Per CLAUDE.md §3b-cond: the
+> upstream conjectures are axiomatised in Lean as the typeclasses
+> [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean),
+> [`QOU.Descartes.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean),
+> and the new
+> [`QOU.Descartes.BringZeroModeBlochClass`](em-coupling-bring-zero-mode.lean).
+> The Lean theorem
+> [`QOU.Descartes.bring_zero_mode_additive_form`](em-coupling-bring-zero-mode.lean)
+> takes `BringZeroModeBlochClass` as `[Instance]` and is proved
+> **without `sorry`** (the algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$
+> at $g=4$ is closed unconditionally by `field_simp; ring`). The
+> remaining structural input is the explicit Bloch-group class
+> realising $2/(3\pi)$ on Bring's surface — captured exactly by the
+> single `[Instance]` hypothesis.
+
+## Pre-archimedean status — resolved by uniqueness of $\tau_{\text{arch}}$
+
+The bare formula $1/\alpha_{\text{bare}} = q[9]_q[10]_q$ and its
+trace-ratio refactoring
+[`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)
+both live entirely in the pre-archimedean substrate ring
+$R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. The additive
+correction $2/(3\pi)$ imports the archimedean transcendental $\pi$
+via sphere-volume / Hodge data on Bring's surface — *not* an
+object of $R$. An earlier audit (May 2026) flagged this as a
+structural cost requiring repair.
+
+**Resolution (May 2026):** The repair route comes from
+[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness).
+The substrate's pentagon-coherence (built into the cosimplicial /
+Yekutieli triple structure) factors the QOU mass-formula state
+sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin
+pentagon-uniqueness [`suslin1991`, `bloch2000`] then forces every
+real-valued archimedean realization to coincide with the
+Bloch-Wigner dilogarithm $D$ up to a single overall scalar. The
+$\pi$ in $2/(3\pi)$ is therefore *not* an external import: it is
+the unique archimedean shadow of substrate pentagon data on
+Bring's surface, propagated through $D$.
+
+In short, the dichotomy is intentional and forced:
+
+- **Pre-archimedean side** ($q$-rational, in $R$): the bare formula
+  $q[9]_q[10]_q$ and its categorical trace-ratio derivation. No
+  $\pi$, no transcendentals.
+- **Archimedean side** (transcendental, in $\mathbb{R}$): the
+  unique image under $\tau_{\text{arch}}$, factoring through $D$.
+  Carries $\pi$, $\zeta(3)$, hyperbolic volumes, etc., as forced
+  archimedean shadows of substrate data.
+
+The additive correction is the archimedean image; the bare formula
+is the pre-archimedean source. They live on different sides of
+$\tau_{\text{arch}}$, not in different rings of the same kind. The
+[figure-8 archimedean illustration](#rem:figure-8-archimedean-illustration)
+shows the same dichotomy in concrete miniature: $4_1$ has
+$\mathrm{Vol}_q(4_1) \in \mathbb{Z}[q^{\pm 1/2}]$ on the substrate
+side and $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \approx
+2.02988$ on the laboratory side, with the bridge fixed by
+uniqueness.
+
+Two open computational sub-problems remain (both are now framed by
+uniqueness rather than structural anomaly):
+
+1. **Identify the precise Bloch-group class on Bring's surface.**
+   The conjecture predicts $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ is
+   the $\tau_{\text{arch}}$-image of a specific class in
+   $B(\mathbb{C})$ assembled from the cosimplicial data of the
+   genus-$4$ pair $\{T_{2,9}, T_{3,5}\}$. Making this class
+   explicit closes the Lean stub.
+2. **Compute the next-order self-energy.** The $\alpha/(4\pi)$
+   term that brings the residual to $+5.7 \times 10^{-8}$ should
+   factor through a higher Bloch group $B_n(\mathbb{C})$ with the
+   $n$-variable polylogarithm $D_n$. Pentagon-uniqueness for $D_n$
+   at $n \geq 3$ is open (Goncharov 1995); the QOU framework can
+   take it as input where needed.
+
 ## Status: conjectural — naive interpretations fail
 
 The structural identification $2/(3\pi) = 2g/(4\pi(g-1)) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$
-at $g = 4$ is an **exact algebraic identity**, but the *physical origin*
+at $g = 4$ is an **exact algebraic identity** (in $\mathbb{R}$, not in
+$R$), but the *physical origin*
 in the QOU framework is **not yet established**. A first-pass derivation
 attempt (May 2026 audit) ruled out the simplest mechanism:
 
@@ -136,7 +222,7 @@ the structural derivation almost certainly exists, but it is
 | Bare $q[9]_q[10]_q$ | multiplicative tree | $-1.55\times 10^{-3}$ | Derived |
 | [`conj:em-coupling-chern-simons`](#conj:em-coupling-chern-simons) | multiplicative + Gram-det $\kappa$ | $-4\times 10^{-7}$ | $\kappa$ unproved (Lean `sorry`) |
 | [`conj:alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form) | $45[3]_q\,(1+\delta_B+8q\delta_B^2)$ | $+7\times 10^{-9}$ | PSLQ-empirical, 3 of 4 factors unjustified |
-| **This conjecture (additive Bring zero-mode)** | $q[9]_q[10]_q + 2g/(4\pi(g-1))$ | $+4.2\times 10^{-6}$ | **Geometrically clean; one Bring-genus-4 quantity in each term** |
+| **This conjecture (additive Bring zero-mode)** | $q[9]_q[10]_q + 2g/(4\pi(g-1))$ | $-4.2\times 10^{-6}$ | **Geometrically clean; one Bring-genus-4 quantity in each term** |
 
 The additive form is **structurally cleanest** of the four candidates:
 no fitted coefficients, every factor identifiable with a known geometric

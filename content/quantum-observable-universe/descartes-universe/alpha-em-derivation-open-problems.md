@@ -137,6 +137,72 @@ correction in any natural q-arithmetic basis at low degree.
 See [`alpha-em-correction-derivation-attempts.witness.json`](#) for
 the full attempt log.
 
+## Why block-diagonal Gram deformations cannot close the gap
+
+A natural ansatz (cf. external review note, May 2026) is to deform the
+Gram matrix by a *framing correction* $\mathcal{A}$ induced by a chiral
+anomaly on Bring's surface, $G_n' = G_n \otimes \mathcal{A}$. Two sub-cases:
+
+1. **Scalar $\mathcal{A} \in R$.** For an $N \times N$ Gram matrix,
+   $\det G_n' = \mathcal{A}^N \det G_n$ where $N = \dim G_n$ is the
+   matrix dimension (not the strand count). The determinant ratio
+   $\kappa = \det G_n / \det G_{n-1}$ then becomes
+   $\kappa' = \mathcal{A}^{\dim G_n - \dim G_{n-1}} \cdot \kappa_{\text{Witten}}$ —
+   a fixed power of $\mathcal{A}$ multiplying the Witten value. The
+   corrected $1/\alpha_{EM}$ takes the multiplicative form
+   $q[9]_q[10]_q \cdot (1 + \delta_{CS} + \mathcal{A}^{\Delta\dim}\kappa_{\text{Witten}}\delta_{CS}^2)$
+   for $\Delta\dim = \dim G_n - \dim G_{n-1}$.
+2. **Block-diagonal $2{\times}2$ $\mathcal{A}$** acting on the two Hecke
+   eigenchannels $V_{(2)}, V_{(1,1)}$ (eigenvalues $q, -q^{-1}$). The
+   determinant of $G_n'$ factors per channel as a product of
+   per-channel scalar powers, and $\kappa'$ is again a *multiplicative*
+   perturbation of $\kappa_{\text{Witten}}$. This is
+   precisely the "old derivation" route already carried out in
+   [`gram-kappa-spectral-interpretation`](#rem:gram-kappa-spectral-interpretation),
+   which yielded $\kappa \approx 1.722$ — agreeing with the
+   Wedderburn-block Plancherel sum and falling short of the
+   $\kappa \approx 1.888$ required for CODATA.
+
+Both sub-cases live in the multiplicative $q$-rational family — exactly
+the family the 100-dps PSLQ scan over the 54-element basis ruled out
+(table above). Therefore any Gram deformation that preserves
+block-diagonal structure on $V_{(2)} \oplus V_{(1,1)}$ cannot close the
+$1.55 \times 10^{-3}$ gap, regardless of whether $\mathcal{A}$ is taken
+to be a scalar or a $2{\times}2$ matrix. Closure must either:
+
+- (a) be off-diagonal — mixing the symmetric and antisymmetric channels
+  in a way that breaks the multiplicative-product structure of the
+  determinant ratio, or
+- (b) leave the multiplicative family entirely — most plausibly via
+  the *additive* Bring zero-mode form
+  [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode),
+  in which the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ enters
+  $1/\alpha_{EM}$ as a *summand*, not a factor.
+
+The additive route is the current numerical front-runner. The
+earlier "pre-archimedean concern" — that the candidate correction
+$2/(3\pi)$ imports $\pi$ via Bring-surface Hodge data, none of which
+is an object of $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ — is
+**structurally resolved** by
+[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
+the substrate's pentagon-coherence factors the QOU mass-formula
+state sum through a class in the Bloch group $B(\mathbb{C})$, and
+Bloch-Suslin pentagon-uniqueness [`suslin1991`, `bloch2000`] forces
+every real-valued archimedean realization to coincide (up to a
+single overall scalar) with the Bloch-Wigner dilogarithm $D$. The
+$\pi$ in $2/(3\pi)$ is therefore the unique archimedean shadow of
+substrate pentagon data, not an external import — the bare formula
+and the additive correction live on different sides of
+$\tau_{\text{arch}}$, not in different rings of the same kind. The
+[figure-8 example](#rem:figure-8-archimedean-illustration) shows
+the same dichotomy in concrete miniature: $\mathrm{Vol}_q(4_1) \in
+\mathbb{Z}[q^{\pm 1/2}]$ pre-archimedeanly,
+$\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ archimedeanly. Two
+sub-problems remain (both open computations rather than structural
+anomalies): identify the precise Bloch-group class on Bring's
+surface, and lift the next-order $\alpha/(4\pi)$ term to a higher
+Bloch group $B_n(\mathbb{C})$.
+
 ## What this implies
 
 Either:
@@ -175,11 +241,11 @@ $$
   \frac{\alpha}{4\pi}.
 $$
 
-| Form | Predicted $1/\alpha$ at $q_0$ | Residual vs CODATA |
-|------|------------------------------|--------------------|
+| Form | Predicted $1/\alpha$ at $q_0$ | Residual vs CODATA (calc $-$ CODATA, relative) |
+|------|------------------------------|------------------------------------------------|
 | Bare $q[9]_q[10]_q$ | 136.823220 | $-1.55 \times 10^{-3}$ |
-| $+ 2/(3\pi)$ | 137.035426 | $+4.2 \times 10^{-6}$ |
-| $+ \alpha/(4\pi)$ (self-consistent) | 137.036007 | $-5.7 \times 10^{-8}$ |
+| $+ 2/(3\pi)$ | 137.035426 | $-4.2 \times 10^{-6}$ |
+| $+ \alpha/(4\pi)$ (self-consistent) | 137.036007 | $+5.7 \times 10^{-8}$ |
 | CODATA | $137.035999084(21)$ | — |
 
 The first correction has a clean geometric identification:

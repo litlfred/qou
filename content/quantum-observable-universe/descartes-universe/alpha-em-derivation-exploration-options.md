@@ -3,7 +3,7 @@
 This remark maps the existing QOU infrastructure to the open
 $2/(3\pi)$ derivation. The numerical match
 $1/\alpha_{EM} \approx q\cdot[9]_q\cdot[10]_q + 2/(3\pi)$
-(see [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode))
+(see [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode))
 is exact at the algebraic identity
 $2/(3\pi) = 2g/(4\pi(g{-}1))$ at $g = 4$ but lacks a derivation.
 Below: what's already in place, and four concrete paths forward.

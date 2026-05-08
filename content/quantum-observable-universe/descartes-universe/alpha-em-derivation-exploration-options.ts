@@ -4,9 +4,9 @@ export default remark({
   label: "rem:alpha-em-derivation-exploration-options",
   title:
     "Exploration map: GB/spectral-sequence/Hopf infrastructure for closing $1/\\alpha_{EM}$ derivation",
-  interprets: "conj:em-coupling-bring-zero-mode",
+  interprets: "prop:em-coupling-bring-zero-mode",
   uses: [
-    "conj:em-coupling-bring-zero-mode",
+    "prop:em-coupling-bring-zero-mode",
     "def:reeb-bundle",
     "rem:q-chromaticity",
     "prop:spectral-sequence-collapse",
