@@ -117,6 +117,8 @@ export default chapter({
         "non-magic-Li6-diagram",
         "shell-threading-conjecture",
         "single-magic-O18-diagram",
+        "bw-mass-decomposition-dictionary",
+        "strutinsky-from-graded-trace",
       ],
     }),
 
