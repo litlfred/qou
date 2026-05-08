@@ -272,6 +272,16 @@ export async function validateObjects(
     mdCache.set(name, existsSync(mdPath) ? readFileSync(mdPath, "utf-8") : undefined);
   }
 
+  // PR #565: harvest \label{eq:foo} declarations from .md content
+  // into allLabels so [eq:foo](#eq:foo) cross-references resolve.
+  const labelDecl = /\\label\{([^}]+)\}/g;
+  for (const md of mdCache.values()) {
+    if (!md) continue;
+    for (const m of md.matchAll(labelDecl)) {
+      allLabels.add(m[1]);
+    }
+  }
+
   // Phase 2: Constraint rules
   for (const [name, { block, dir }] of allBlocks) {
     const mdContent = mdCache.get(name);

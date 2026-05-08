@@ -5,5 +5,11 @@ export default example({
   title: "Topological mass of the trefoil knot (electron)",
   interprets: "prop:topological-mass-formula",
   uses: ["prop:topological-mass-formula"],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: ["mass", "trefoil", "electron", "example"],
 });

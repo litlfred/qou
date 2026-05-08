@@ -17,5 +17,11 @@ export default proposition({
     "rem:w-boson-mass-discrepancy",
   ],
   proofs: ["prf:local-substrate-q"],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: ["substrate", "mass", "observation"],
 });

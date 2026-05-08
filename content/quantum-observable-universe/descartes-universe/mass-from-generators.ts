@@ -4,6 +4,12 @@ export default remark({
   interprets: "def:knot-particle-generation",
   label: "rem:mass-from-generators",
   title: "Mass spectrum from $T_{m,n}$ generators and linking operations",
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: [
     "mass",
     "generator",

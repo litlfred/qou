@@ -1,5 +1,5 @@
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
-the [state bundle](#def:state-bundle) $(\mathcal{S}, \varTheta)$
+the [state bundle](#ex:c-quantum-observable-universe) $(\mathcal{S}, \varTheta)$
 with contact form $\varTheta$ and
 [Levi form](#rem:levi-form-defect)
 $\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$.  At each

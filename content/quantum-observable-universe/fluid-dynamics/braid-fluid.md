@@ -11,7 +11,7 @@ $\partial_t v + \nabla_v v = -\nabla p$.
 **$q$-deformed diffeomorphisms.**
 The classical $\mathrm{SDiff}(M)$ is replaced by
 $\mathrm{SDiff}_q(\mathcal{S})$ on the
-[state bundle](#def:state-bundle), with two consequences:
+[state bundle](#ex:c-quantum-observable-universe), with two consequences:
 
 1. The $L^2$ metric becomes the
    [Webster inner product](#rem:webster-inner-product).
