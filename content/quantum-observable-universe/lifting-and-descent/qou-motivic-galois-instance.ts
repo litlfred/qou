@@ -19,6 +19,13 @@ export default definition({
     "prop:full-pole-structure-mass-trace",
   ],
   cites: ["habiro2002", "yekutieli2010", "tate1967"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/habiro_frobenius_probe.py",
+    witness:
+      "folio-assistant/computations/habiro-frobenius-probe.witness.json",
+    status: "verified",
+  },
   lean: {
     ref: "qou:QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar",
     validation: "not_checked",

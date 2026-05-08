@@ -27,6 +27,7 @@ Usage (CI):
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -147,9 +148,31 @@ def is_lp_sdp_witness(path: Path) -> tuple[bool, str]:
     return True, f"{field} matches '{hint}' + script imports '{marker}'"
 
 
+def collect_wired_witnesses(repo_root: Path) -> set[str]:
+    """Collect wired witness basenames from content block `computation.witness`."""
+    wired: set[str] = set()
+    content_root = repo_root / "content"
+    ts_files = content_root.glob("*/*/*.ts")
+    witness_pattern = re.compile(
+        r"witness(?:File)?\s*:\s*[\"']([^\"']+\.json)[\"']"
+    )
+    for ts in ts_files:
+        try:
+            txt = ts.read_text()
+        except OSError:
+            continue
+        for m in witness_pattern.finditer(txt):
+            wired.add(Path(m.group(1)).name)
+    return wired
+
+
 def main(argv: list[str]) -> int:
     strict = "--strict" in argv
+    strict_wired = "--strict-wired" in argv
+    list_wired = "--list-wired" in argv
     root = Path(__file__).parent
+    repo_root = root.parent.parent
+    wired = collect_wired_witnesses(repo_root) if (strict_wired or list_wired) else set()
     witnesses = sorted(root.glob("*.witness.json")) + sorted(
         root.glob("*-witness.json"))
     flagged = []
@@ -160,25 +183,53 @@ def main(argv: list[str]) -> int:
 
     print(f"Scanned {len(witnesses)} witness files; "
           f"{len(flagged)} flagged as LP/SDP/operator-selection.")
+    if strict_wired or list_wired:
+        flagged_wired = [(w, r) for (w, r) in flagged if w.name in wired]
+        print(f"Wired LP/SDP flagged subset: {len(flagged_wired)} "
+              f"(from {len(wired)} total wired witnesses).")
     print()
+
+    if list_wired:
+        print("Flagged LP/SDP witnesses (wired status):")
+        for w, reason in flagged:
+            status = "wired" if w.name in wired else "audit/orphan"
+            print(f"  - {w.name:45s} [{status}] {reason}")
+        print()
+
     failures = []
     for w, reason in flagged:
         result = verify_dual_present(w)
         if not result["ok"]:
-            failures.append((w, result))
+            failures.append((w, reason, result))
+
+    if strict_wired:
+        failures = [f for f in failures if f[0].name in wired]
+        scope_msg = "flagged wired witnesses"
+    else:
+        scope_msg = "flagged witnesses"
 
     if not failures:
-        print(f"OK — all {len(flagged)} flagged witnesses include LP dual.")
+        if strict_wired:
+            print(f"OK — all {len([w for w, _ in flagged if w.name in wired])} "
+                  "flagged wired witnesses include LP dual.")
+        else:
+            print(f"OK — all {len(flagged)} flagged witnesses include LP dual.")
         return 0
 
     # Brief failure summary
-    print(f"{'FAIL' if strict else 'WARN'} — "
-          f"{len(failures)}/{len(flagged)} flagged witnesses missing "
+    severity = "FAIL" if (strict or strict_wired) else "WARN"
+    denominator = len([w for w, _ in flagged if w.name in wired]) if strict_wired else len(flagged)
+    print(f"{severity} — "
+          f"{len(failures)}/{denominator} {scope_msg} missing "
           f"LP dual fields.")
     print()
     print("Sample (first 10):")
-    for w, result in failures[:10]:
+    for w, reason, result in failures[:10]:
+        sibling = _sibling_script(w)
         print(f"  ✗  {w.name}")
+        print(f"     reason:  {reason}")
+        if sibling is not None:
+            print(f"     script:  {sibling.name}")
         print(f"     missing: {result['missing']}")
     if len(failures) > 10:
         print(f"  ... ({len(failures) - 10} more)")
@@ -189,10 +240,13 @@ def main(argv: list[str]) -> int:
     print("  solve_operator_selection_lp() or solve_psd_operator_selection_sdp().")
     print("The result's .to_dict() contains all required fields.")
     print()
-    if strict:
-        print("Exit 1 (--strict mode).")
+    if strict or strict_wired:
+        if strict_wired:
+            print("Exit 1 (--strict-wired mode).")
+        else:
+            print("Exit 1 (--strict mode).")
         return 1
-    print("Exit 0 (warn-only mode; pass --strict to enforce).")
+    print("Exit 0 (warn-only mode; pass --strict or --strict-wired to enforce).")
     return 0
 
 

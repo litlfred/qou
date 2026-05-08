@@ -271,6 +271,29 @@ export interface ComputationWitness {
   allPassed: boolean;
   /** Script execution time in milliseconds. */
   durationMs?: number;
+  /**
+   * Optional: content-block label this witness was authored for
+   * (e.g. ``"prop:foo"``).  Set by ``WitnessBuilder.set_content_block``.
+   *
+   * This is a **self-claim** by the script author; it does not, on its
+   * own, constitute a wire — the named content block must reference the
+   * witness back via ``computation.witness`` for the witness to count
+   * as "wired".  See ``scripts/audit-wiring.ts``.
+   */
+  contentBlock?: string;
+  /**
+   * Optional: marks the witness as **audit-only** — produced by an
+   * audit/probe whose report lives at ``docs/audits/<file>.md`` and
+   * which is *not* expected to wire to a content block.
+   *
+   * Set by ``WitnessBuilder.set_audit_only``.  Recognised by
+   * ``scripts/audit-wiring.ts``, which excludes audit-only witnesses
+   * from the orphan tally.
+   *
+   * Value is the path to the audit report, relative to repo root
+   * (e.g. ``"docs/audits/2026-05-06-path-b-evacuation.md"``).
+   */
+  auditOnly?: string;
 }
 
 /**

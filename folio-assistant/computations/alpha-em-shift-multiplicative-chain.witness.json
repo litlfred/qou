@@ -1,0 +1,49 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-04T21:24:14.607564+00:00",
+  "commitSha": "ecb2aecb3d5c39846836520bbfb015c437680a1b",
+  "assertions": [
+    {
+      "name": "chain_equals_bare_to_mpmath_precision",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30
+    },
+    {
+      "name": "alpha_shift_T_2_9_equals_9",
+      "computed": 9,
+      "expected": 9,
+      "passed": true
+    },
+    {
+      "name": "alpha_shift_T_3_5_equals_10",
+      "computed": 10,
+      "expected": 10,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "alpha-em-shift-multiplicative-chain",
+  "scriptFile": "alpha_em_shift_chain.py",
+  "scriptHash": "25de9c69a689",
+  "scriptCommitSha": "unknown",
+  "description": "Numerical re-evaluation of the multiplicative-chain identity α_EM⁻¹ = q · [α_shift(T_{2,9})]_q · [α_shift(T_{3,5})]_q at q₀, composing prop:em-coupling-projection with prop:alpha-shift-torus-knot. α_shift values are read from alpha-shift-torus.witness.json (not recomputed here) — the witness validates that composition is exact.",
+  "contentBlock": "prop:alpha-em-shift-multiplicative-chain",
+  "parameters": {
+    "q0_dps": 50,
+    "alpha_shift_T_2_9": 9,
+    "alpha_shift_T_3_5": 10
+  },
+  "data": {
+    "upstream_witness": "alpha-shift-torus.witness.json",
+    "q0": "1.1099785955541805752815940796095093779932822799587",
+    "inv_alpha_chain": "136.8232196545612096104428037101892934934",
+    "inv_alpha_bare": "136.8232196545612096104428037101892934934",
+    "delta_chain_minus_bare": "0.0",
+    "inv_alpha_codata": "137.035999083999996628335793502628803253173828125",
+    "delta_chain_minus_codata": "0.2127794294"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "computation": "notation-consistency-audit",
+  "description": "Scan repository for violations of notation rules in notation-register.md / notation-collisions.md. Currently enforces: r := q^(1/2) (no t, no iota), Wenzl level uses ell (not r_W), numerical q_0 only in intro/Ch8/Ch11. Warn-only by default; --strict makes errors fail CI.",
+  "n_files_scanned": 4757,
+  "n_errors": 0,
+  "n_warnings": 22,
+  "errors": [],
+  "warnings": [
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "CLAUDE.md",
+      "line": 765,
+      "text": "- `$q = 1.1097$` (or any specific numerical value of the substrate"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": ".github/copilot-instructions.md",
+      "line": 370,
+      "text": "**Numerical substrate values** (`$q = 1.1097$` etc.) **must not appear**"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
+      "line": 268,
+      "text": "### PSD-cone $\\alpha^*$ ranking (Rust R5-minimal, $q_0 = 1.1097$)"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.md",
+      "line": 44,
+      "text": "$q_0 = 1.1097$ for $n = 12$ \u2014 so $\\widetilde{w}$ is **not** a"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "content/unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.md",
+      "line": 165,
+      "text": "The Hecke algebra $H_n(q)$ at $q = 1.1097$, starting from"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/mass-beta-decay-derivation-audit-2026-04-29.md",
+      "line": 31,
+      "text": "| 1 | Lepton mass ratio | $m_\\mu / m_e$ | Pins $q_0 = 1.1097\\ldots$ via the Descartes condition $\\chi(A) = -6$ (one-parameter family in $q$ collapses to a point). |"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/mass-beta-decay-derivation-audit-2026-04-29.md",
+      "line": 40,
+      "text": "- $q_0 = 1.1097\\ldots$ \u2014 \u2713 CALIBRATED via input 1 (was previously"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/mass-beta-decay-derivation-audit-2026-04-29.md",
+      "line": 68,
+      "text": "| 6 | Descartes condition $\\chi(A) = -6$ | One-parameter family in $q$, pinned by **calibration input 1** ($m_\\mu / m_e$) to $q_0 = 1.1097\\ldots$ | `prop:descartes-condition`, `def:q-pinning` \u2014 CALIBR"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/mass-beta-decay-derivation-audit-2026-04-29.md",
+      "line": 118,
+      "text": "- ~~$q_0 = 1.1097$ empirical~~ \u2192 \u2713 CALIBRATED via input 1."
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/beta-decay-handoff.md",
+      "line": 344,
+      "text": "| `ch5/beta-decay-skein.md` | Rewrote: T_{3,5} 10-crossing weak vertex | Changed q=1.1097\u2192\"substrate q\", p,n\u2192Z,N | Take our T_{3,5} rewrite + upstream Z,N notation |"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/beta-decay-handoff.md",
+      "line": 345,
+      "text": "| `ch5/beta-decay-transfer-matrix.md` | Added T_{3,5} context in intro | Changed q=1.1097\u2192\"substrate q\" | Merge both (different paragraphs) |"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/beta-decay-handoff.md",
+      "line": 348,
+      "text": "| `ch5/q-value-transition.md` | Changed q=1.1097\u21921.110 | Changed to \"substrate q\", E_\u00d7\u2192\ud835\udcd4_\u00d7 | Take upstream (parametric is better) |"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/qa/content-alignment-2026-04-25/ch00-introduction.md",
+      "line": 163,
+      "text": "| 307 | `q_0 = 1.1097 + O\\!\\bigl(2.2 \\times 10^{-8}\\bigr)` | \u2713 Correct (explicit error term present) |"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": "docs/qa/content-alignment-2026-04-25/ch00-introduction.md",
+      "line": 185,
+      "text": "- Line 307: `q_0 = 1.1097 + O\\!\\bigl(2.2 \\times 10^{-8}\\bigr)`"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": ".claude/skills/local/rendering-fixes.md",
+      "line": 330,
+      "text": "At $q = 1.1097$, the ..."
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": ".claude/skills/local/rendering-auditor.md",
+      "line": 109,
+      "text": "| Numerical `$q = 1.1097...$` only in intro/Ch7/Ch9 | **warning** | Flag specific numerical values of `$q$` outside allowed chapters |"
+    },
+    {
+      "rule": "numeric-q-outside-allowed-chapters",
+      "file": ".claude/skills/local/one-voice.md",
+      "line": 338,
+      "text": "| Substrate parameter | $q$ (symbolic) | $q = 1.1097$ (numerical, except Ch 6) |"
+    },
+    {
+      "rule": "forbidden-r-W-use-ell",
+      "file": "folio-assistant/computations/g_a_g_action_derivation.py",
+      "line": 136,
+      "text": "#   r_W : [4]_q  \u2192  [5]_q     (one extra crossing in T(2,5))"
+    },
+    {
+      "rule": "forbidden-r-W-use-ell",
+      "file": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "line": 53,
+      "text": "r_W = mp.log(X) / mp.log(Q_W)"
+    },
+    {
+      "rule": "forbidden-r-W-use-ell",
+      "file": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "line": 54,
+      "text": "print(f\"Wenzl level r = log(X)/log(Q) = {float(r_W):.6f}  (X = Q^r = {float(X):.6f})\")"
+    },
+    {
+      "rule": "forbidden-r-W-use-ell",
+      "file": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "line": 110,
+      "text": "        s = schur_principal(lam, r_W, Q_W)"
+    },
+    {
+      "rule": "forbidden-r-W-use-ell",
+      "file": "folio-assistant/computations/gb_filtration_gauge_invariance_test.py",
+      "line": 163,
+      "text": "    \"r_W\": float(r_W),"
+    }
+  ],
+  "generated_at": "2026-05-06T00:48:00.803497+00:00"
+}

@@ -1,7 +1,8 @@
 {
-  "computation": "beta-decay-energy-scale",
-  "description": "Derives the energy scale E\u2080 (MeV) converting dimensionless Hecke NF coefficient differences to physical decay energy. E\u2080 = Q_decay / |\u0394(net)| where Q = m_n \u2212 m_p \u2212 m_e. Includes NF\u208a/NF\u208b decomposition and observable-only (\u2113\u22652) scenarios.",
   "computedAt": "2026-04-14T22:24:03.511682+00:00",
+  "computation": "beta-decay-energy-scale",
+  "description": "Derives the energy scale E₀ (MeV) converting dimensionless Hecke NF coefficient differences to physical decay energy. E₀ = Q_decay / |Δ(net)| where Q = m_n − m_p − m_e. Includes NF₊/NF₋ decomposition and observable-only (ℓ≥2) scenarios.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "q0": 1.1099785955541805,
   "crossing_type": "typed (u-u, d-d, u-d)",
   "observed": {
@@ -10,38 +11,38 @@
     "m_e_MeV": 0.51099895,
     "delta_m_MeV": 1.2933323600000222,
     "Q_decay_MeV": 0.7823334100000222,
-    "Q_decay_MeV_err": 6.129437351829285e-07
+    "Q_decay_MeV_err": 6.129437351829285e-7
   },
   "nucleon_nf": {
     "neutron": {
-      "\u03bd": -0.20170383884270415,
-      "\u03c3\u2080": 0.04813038950468018,
-      "\u03c3\u2081": 1.008995448774928,
-      "L\u208a": -0.009640792161232925,
-      "L\u208b": 0.009237074564505066,
-      "e\u207b": -0.0441837766085153
+      "ν": -0.20170383884270415,
+      "σ₀": 0.04813038950468018,
+      "σ₁": 1.008995448774928,
+      "L₊": -0.009640792161232925,
+      "L₋": 0.009237074564505066,
+      "e⁻": -0.0441837766085153
     },
     "proton": {
-      "\u03bd": -0.0996576638783706,
-      "\u03c3\u2080": 0.03572941527166762,
-      "\u03c3\u2081": 0.99757046356861,
-      "L\u208a": 0.0993537847899173,
-      "L\u208b": 0.009336913072779618,
-      "e\u207b": -0.04320778758182264
+      "ν": -0.0996576638783706,
+      "σ₀": 0.03572941527166762,
+      "σ₁": 0.99757046356861,
+      "L₊": 0.0993537847899173,
+      "L₋": 0.009336913072779618,
+      "e⁻": -0.04320778758182264
     },
     "neutron_net": 0.8108345052316609,
     "proton_net": 0.9991251252427813,
-    "sign_pattern_neutron": "\u2212++\u2212+\u2212",
-    "sign_pattern_proton": "\u2212++++\u2212"
+    "sign_pattern_neutron": "−++−+−",
+    "sign_pattern_proton": "−++++−"
   },
   "hecke_nf_differences": {
     "per_channel": {
-      "\u03bd": -0.10204617496433355,
-      "\u03c3\u2080": 0.012400974233012563,
-      "\u03c3\u2081": 0.011424985206317961,
-      "L\u208a": -0.10899457695115022,
-      "L\u208b": -9.983850827455232e-05,
-      "e\u207b": -0.0009759890266926585
+      "ν": -0.10204617496433355,
+      "σ₀": 0.012400974233012563,
+      "σ₁": 0.011424985206317961,
+      "L₊": -0.10899457695115022,
+      "L₋": -0.00009983850827455232,
+      "e⁻": -0.0009759890266926585
     },
     "delta_net": -0.1882906200111204
   },
@@ -75,12 +76,12 @@
     "ratio_Q_ge2_over_Q": 0.5845772055964163
   },
   "full_budget_MeV": {
-    "\u03bd": 0.4239942065759355,
-    "\u03c3\u2080": -0.05152511823723427,
-    "\u03c3\u2081": -0.04746995700120724,
-    "L\u208a": 0.4528642959095208,
-    "L\u208b": 0.0004148215169886475,
-    "e\u207b": 0.004055161236018954
+    "ν": 0.4239942065759355,
+    "σ₀": -0.05152511823723427,
+    "σ₁": -0.04746995700120724,
+    "L₊": 0.4528642959095208,
+    "L₋": 0.0004148215169886475,
+    "e⁻": 0.004055161236018954
   },
   "verification": {
     "delta_net_times_E0": 0.7823334100000222,
@@ -88,5 +89,5 @@
     "match": true
   },
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

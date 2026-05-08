@@ -1,0 +1,101 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-06T15:05:19.514043+00:00",
+  "commitSha": "c8717623433bf7e6af4f04aee8e53003070eab8e",
+  "assertions": [
+    {
+      "name": "self_evacuating_eq_domino_count",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "two_core_is_nonempty",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "no_self_evacuating_for_321",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "best_single_invariant_r_lt_0p3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "multivariate_R2_lt_0p2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "h2_q_one_fifth_within_1e_2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "corner_hook_eq_2k_minus_1",
+      "computed": 5,
+      "expected": 5,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 791,
+  "computation": "path-b-open-questions",
+  "scriptFile": "path_b_open_questions.py",
+  "scriptHash": "a2042b295f8c",
+  "scriptCommitSha": "unknown",
+  "description": "Resolve three open questions from path_b_evacuation: (1) why no self-paired SYT — connect to 2-core / domino-tableau count for (3,2,1); (2) refine SYT-level invariants — find which statistic best predicts diag(M) (descents, major index, Hoefsmit + count); (3) derive q^(1/5) — test fractional-power, corner-hook, and abelian-residue hypotheses.",
+  "contentBlock": "conj:weinberg-angle-categorical",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "cot_w_codata": 1.8230678710486174,
+    "shape": [
+      3,
+      2,
+      1
+    ]
+  },
+  "data": {
+    "syt_invariant_correlations": {
+      "content_sum": [
+        0.03262383230075061,
+        0.05481631871250128
+      ],
+      "max_diag_entry": [
+        0.0,
+        0.0
+      ],
+      "n_descents": [
+        -0.07075121907754953,
+        -0.1084652289093281
+      ],
+      "major_index": [
+        -0.027731308981225732,
+        -0.001483738317275951
+      ],
+      "n_plus": [
+        0.07536316900608249,
+        -0.03757345746510897
+      ],
+      "n_minus": [
+        -0.17030230460825102,
+        -0.09706476511819816
+      ],
+      "comaj_charge": [
+        0.0,
+        0.0
+      ]
+    },
+    "multivariate_R2": 0.08475652169441239
+  },
+  "auditOnly": "docs/audits/2026-05-06-path-b-open-questions-resolved.md"
+}

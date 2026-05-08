@@ -1,0 +1,112 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-06T15:46:56.013761+00:00",
+  "commitSha": "adfaff0fcdaa25a041bb14e08eec6121fb04029a",
+  "assertions": [
+    {
+      "name": "n_pairs equals C(n_gens, 2)",
+      "computed": 10,
+      "expected": 10,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "wedderburn-pair-volumes",
+  "scriptFile": "wedderburn_pair_volumes.py",
+  "scriptHash": "8bb657c9c713",
+  "scriptCommitSha": "f79dccf6a91d3a302c0b3325b296914413ed5bf3",
+  "description": "Per-pair Wedderburn-coupled volumes |V̂_i V̂_j| = w_sym·λ^sym + w_std·Markov-trace + w_alt·λ^alt for the deuteron Z=1, N=1 atom braid; supports prop:knot-operator-lp-selection by exposing the LP/SDP input matrix entries for the active set.",
+  "contentBlock": "prop:knot-operator-lp-selection",
+  "parameters": {
+    "Z": 1,
+    "N": 1,
+    "n_pairs": 10
+  },
+  "data": {
+    "pairs": [
+      {
+        "i": 0,
+        "j": 1,
+        "sym": 1.3824945145464391,
+        "std": 0.7381826740041164,
+        "alt": -0.7392235469701229,
+        "full": 0.6003377241753288
+      },
+      {
+        "i": 0,
+        "j": 2,
+        "sym": 1.8906329783644449,
+        "std": 1.4806456264465755,
+        "alt": 0.540545156254414,
+        "full": 1.3929323758131755
+      },
+      {
+        "i": 0,
+        "j": 3,
+        "sym": 3.2028754581379744,
+        "std": 2.328198733131206,
+        "alt": 0.3225661286167933,
+        "full": 2.1410692071962467
+      },
+      {
+        "i": 0,
+        "j": 4,
+        "sym": 1.2387652399133642,
+        "std": 0.6147621967716406,
+        "alt": -0.8160759779054901,
+        "full": 0.4812621386282397
+      },
+      {
+        "i": 1,
+        "j": 2,
+        "sym": 0.7392235469701228,
+        "std": 0.09491170642779967,
+        "alt": -1.3824945145464396,
+        "full": -0.042933243400987836
+      },
+      {
+        "i": 1,
+        "j": 3,
+        "sym": 1.252300675891371,
+        "std": 0.6214794294546329,
+        "alt": -0.8249928766012442,
+        "full": 0.4865206756424818
+      },
+      {
+        "i": 1,
+        "j": 4,
+        "sym": 0.48434807019193654,
+        "std": 0.9710904859466993,
+        "alt": 2.087190218714033,
+        "full": 1.0752248191335358
+      },
+      {
+        "i": 2,
+        "j": 3,
+        "sym": 1.7125861489910306,
+        "std": 1.3757127801339741,
+        "alt": 0.603262578984408,
+        "full": 1.303641634289953
+      },
+      {
+        "i": 2,
+        "j": 4,
+        "sym": 0.6623711160347554,
+        "std": -0.0022495219081665185,
+        "alt": -1.526223789179514,
+        "full": -0.1444393634223407
+      },
+      {
+        "i": 3,
+        "j": 4,
+        "sym": 1.1221068372363028,
+        "std": 0.5047761849051495,
+        "alt": -0.9107622062323654,
+        "full": 0.37270362710963467
+      }
+    ]
+  }
+}

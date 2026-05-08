@@ -379,36 +379,6 @@ def main():
     print(f"m_e = {M_E_MEV} MeV")
     print()
 
-    # ── Convention guard (TERM6-CONVENTION; audit 2026-05-04) ────────────
-    # This script consumes Schur–Weyl-weighted traces from
-    # `habiro-coefficients-atomic.witness.json`.  At q_0 the deuteron split
-    # is Schur–Weyl 0.177 vs canonical Hoefsmit/Markov 0.388.  Physics
-    # consumers MUST go through `term6_residues_at_roots.py`, not this
-    # script.  We refuse to run unless the caller acknowledges the
-    # symbolic-only intent via `--symbolic-study` (or the env var).
-    import os as _os
-    _ack_flag = "--symbolic-study"
-    _ack_env = _os.environ.get("TERM6_FULL_POLE_SUM_SYMBOLIC_STUDY", "").lower() in {"1", "true", "yes"}
-    if _ack_flag not in sys.argv and not _ack_env:
-        print(
-            "REFUSED: this script is the *Schur–Weyl-weighted* Term-6\n"
-            "fallback (sqrt-sub for higher-order poles).  At q_0 the\n"
-            "deuteron split is Schur–Weyl 0.177 vs canonical Hoefsmit\n"
-            "0.388.  For the canonical Markov-trace Term 6, run\n"
-            "`term6_residues_at_roots.py` instead.\n"
-            f"\nIf you really want the symbolic-study path, pass `{_ack_flag}`\n"
-            "or set env `TERM6_FULL_POLE_SUM_SYMBOLIC_STUDY=1`.\n"
-            "See docs/audits/2026-05-04-deep-mass-beta-binding-audit.md\n"
-            "finding TERM6-CONVENTION for the full caveat."
-        )
-        sys.exit(2)
-    # When the user opts in, drop the flag from argv so downstream argv
-    # consumers (none today, but be defensive) see a clean argv.
-    if _ack_flag in sys.argv:
-        sys.argv.remove(_ack_flag)
-    print("[symbolic-study mode acknowledged: Schur–Weyl-weighted trace]")
-    print()
-
     if not HABIRO_WITNESS.exists():
         print(f"ERROR: {HABIRO_WITNESS} not found")
         sys.exit(1)

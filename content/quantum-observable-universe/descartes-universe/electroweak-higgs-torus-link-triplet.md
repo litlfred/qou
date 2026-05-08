@@ -4,7 +4,8 @@ Higgs scalar $H$ are identified, in any QOU built on
 ([Bring's surface](#def:brings-surface)) with EM/strong sector
 $\{T_{2,9}, T_{3,5}\}$
 ([force-carrier Bring uniqueness](#prop:force-carrier-bring-uniqueness)),
-with the **non-Bring even-twist 2-component torus-link triplet***
+with the **Bring-internal even-twist 2-component torus-link
+triplet***
 
 $$
   W^{\pm} \;\longleftrightarrow\; T(2,4),
@@ -16,8 +17,12 @@ $$
 
 *Each link has braid presentation $\sigma_1^{2k}$ in $B_2$ for
 $k = 2, 3, 4$ respectively; their Seifert-surface genera are
-$1, 2, 3$ — exactly the genera **not** occupied by the Bring-
-saturating force-carrier sector (which lives at genus $4$).*
+$1, 2, 3$ — all $\leq 4$, hence all embed in the genus-$4$
+Seifert fiber of Bring's surface alongside the saturating
+force-carriers $\{T_{2,9}, T_{3,5}\}$ (genus $4$). All five
+EM + EW carriers therefore live in the **same host** by
+([prop:torus-embeddable-complete](#prop:torus-embeddable-complete));
+no separate non-Bring host surfaces are required.*
 
 **Where this conjecture comes from.**
 
@@ -47,24 +52,39 @@ established that:
 
 **Decisive structural argument: even-twist parity.**
 
+*The argument is stated over the categorical coefficient ring $R$
+(typically $R = \mathbb{Z}[q, q^{-1}]$ or its localization $\mathbb{Q}(q)$),
+with $q$ generic — i.e. $q$ is **not a root of unity** in $R$ (so
+$H_n(q)$ is semisimple over $R$ by the standard Hecke-algebra
+semisimplicity criterion). Note $q = 1$ IS a root of unity and is
+**excluded**.*
+
 The $T(2, 2k)$ braid is $\sigma_1^{2k} \in B_2$. The Hecke
-algebra $H_2(q)$ has Wedderburn decomposition $H_2(q) \cong
-\mathbb{Q}(q) \oplus \mathbb{Q}(q)$ with the two block projectors
-sym + alt, and $\sigma_1$ acts as $q$ on sym and $-q^{-1}$ on alt.
-Hence $\sigma_1^{2k}$ has block eigenvalues
+algebra $H_2(q)$ over $R$ has Wedderburn decomposition $H_2(q)
+\cong R \oplus R$ with the two block projectors sym + alt, and
+$\sigma_1$ acts as $q$ on sym and $-q^{-1}$ on alt. Hence
+$\sigma_1^{2k}$ has block eigenvalues
 
 $$
-  \mathrm{sym}\colon\; q^{2k} > 0,
+  \mathrm{sym}\colon\; q^{2k} \in R^\times,
   \qquad
-  \mathrm{alt}\colon\; (-q^{-1})^{2k} = q^{-2k} > 0.
+  \mathrm{alt}\colon\; (-q^{-1})^{2k} \;=\; q^{-2k} \in R^\times.
 $$
 
-**Both eigenvalues are strictly positive** for any $k \geq 1$ —
-the even power kills the sign-flip. By contrast, $\sigma_1^{2k+1}$
-(odd-twist) has alt eigenvalue $-q^{-(2k+1)} < 0$ and is **never**
-PSD-feasible. So **even-twist is the unique parity** at which a
-2-component torus link supports a positive-definite Frobenius
-form.
+Both eigenvalues are units in $R$ (no sign ambiguity from the
+even power); $\sigma_1^{2k+1}$ (odd-twist) has alt eigenvalue
+$-q^{-(2k+1)}$, which carries an irremovable sign relative to
+sym.
+
+**Positivity / PSD specialization.** When $R$ is specialized to
+a real-closed field $F$ via $q \mapsto q^* \in F$ with $q^* > 1$
+(in particular at $q^* = q_0 \approx 1.10998$), both even-twist
+eigenvalues become strictly positive elements of $F$:
+$(q^*)^{2k} > 0$ and $(q^*)^{-2k} > 0$. The odd-twist alt
+eigenvalue becomes negative under any such specialization
+($-(q^*)^{-(2k+1)} < 0$). So **even-twist is the unique parity**
+at which a 2-component torus link supports a positive-definite
+Frobenius form **in every real-closed-field specialization**.
 
 This is the proposition `prop:even-twist-torus-link-psd-feasibility`
 (below) that *is* a derivable proposition — it follows mechanically
@@ -76,9 +96,12 @@ from the Hecke relation. The conjecture sits at the next layer:
 The genera of the 2-component torus links $T(2, 2k)$ form an
 arithmetic progression $g(T(2, 2k)) = k - 1$ (Seifert genus of the
 canonical Seifert surface). Bring's saturating force-carriers
-occupy genus $4$ exclusively. The non-Bring **complement** thus has
-genera $\{1, 2, 3\}$ available for 2-component torus-link
-identifications, occupied by $T(2, 4), T(2, 6), T(2, 8)$.
+$\{T_{2,9}, T_{3,5}\}$ occupy genus $4$ (the maximum allowed). The
+**Bring-internal complement** at lower genera $\{1, 2, 3\}$ admits
+exactly the 2-component torus-link identifications $T(2, 4),
+T(2, 6), T(2, 8)$ — all embedded in the same genus-$4$ Seifert
+fiber by ([prop:torus-embeddable-complete](#prop:torus-embeddable-complete)),
+which gives the embeddability bound $g(T_{m,n}) \leq g(\Sigma_4) = 4$.
 
 The **mass ordering** of the standard model
 $m_{W^\pm}\;{<}\;m_Z\;{<}\;m_H$
@@ -92,7 +115,7 @@ If true, the conjecture supplies the missing categorical structure
 for the **NV-1** audit flag (the weak-scale crossing count). With
 $W^\pm, Z, H$ identified as $T(2,4), T(2,6), T(2,8)$, the parallel
 of the $1/\alpha_{EM}$ derivation
-([`rem:alpha-em-categorical-trace`](#rem:alpha-em-categorical-trace))
+([`prop:alpha-em-categorical-trace`](#prop:alpha-em-categorical-trace))
 becomes available for $G_F$:
 
 | Step in the parallel pipeline | EM analog | EW/Higgs analog |
@@ -118,8 +141,8 @@ from the existing framework:
 | # | Sub-argument | Derivability | Status |
 |---|--------------|-------------:|--------|
 | **U1** | Even-twist parity (forces $\sigma_1^{2k}$ over $\sigma_1^{2k+1}$) | derivable from Hecke positivity | ✓ proven below as the proposition |
-| **U2** | Force-carriers are 2-component **links**, not knots | structural premise (matter = knots, force = links) | needs content support — currently a structural choice |
-| **U3** | Non-Bring genus $\leq 3$ | corollary of `prop:force-carrier-bring-uniqueness` | ✓ Bring saturates genus 4 |
+| **U2** | Force-carriers are 2-component **links**, not knots | structural premise (matter = knots, force = links) — purely categorical (no host-surface dependence) | needs content support — currently a structural choice |
+| **U3** | Bring-internal genus $\leq 3$ for the EW complement | corollary of `prop:torus-embeddable-complete` and `prop:force-carrier-bring-uniqueness`: Bring's genus-$4$ fiber accommodates all $T(2, 2k)$ with $k \leq 4$, so the EW carriers $T(2,4), T(2,6), T(2,8)$ fit alongside saturating $\{T_{2,9}, T_{3,5}\}$ in **the same host**. | ✓ derivable |
 | **U4** | Exactly **three** force-carrier slots in the EW/Higgs sector | from representation theory of broken $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (3 mass eigenstates after Higgs eating Goldstones) | needs content block — open |
 | **U5** | Mass ordering $m_W < m_Z < m_H$ matches crossing ordering $4 < 6 < 8$ | empirical / consistency | ✓ matches PDG |
 
@@ -182,19 +205,28 @@ $(2,1)$ block.
 
 **Proposition (even-twist 2-component torus links are
 PSD-feasible).**
-*For every $k \geq 1$, the braid $\sigma_1^{2k} \in B_2$ acts
-on the Hecke algebra $H_2(q)$ with both Wedderburn-block
-eigenvalues strictly positive at any real $q > 0$:*
+*Over the categorical ring $R$ with $q$ generic (not a root of
+unity in $R$), and for every $k \geq 1$, the braid $\sigma_1^{2k}
+\in B_2$ acts on the Hecke algebra $H_2(q)$ with Wedderburn-block
+eigenvalues*
 
 $$
-  \mathrm{sym\text{-}eigenvalue}(\sigma_1^{2k}) = q^{2k} > 0,
+  \mathrm{sym\text{-}eigenvalue}(\sigma_1^{2k}) = q^{2k},
   \qquad
-  \mathrm{alt\text{-}eigenvalue}(\sigma_1^{2k}) = q^{-2k} > 0.
+  \mathrm{alt\text{-}eigenvalue}(\sigma_1^{2k}) = q^{-2k}
 $$
 
-*Conversely, for every $k \geq 0$, $\sigma_1^{2k+1}$ has
-$\mathrm{alt\text{-}eigenvalue} = -q^{-(2k+1)} < 0$, hence is
-**never** PSD-feasible.*
+*— both elements of $R^\times$ obtained from each other by the
+bar involution $\iota \colon q \mapsto q^{-1}$. For every $k \geq
+0$, $\sigma_1^{2k+1}$ has $\mathrm{alt\text{-}eigenvalue} =
+-q^{-(2k+1)}$, carrying an irremovable sign relative to sym.*
+
+*Under any specialization of $R$ to a real-closed field $F$ via
+$q \mapsto q^* \in F$ with $q^* > 1$ (in particular at $q^* =
+q_0$), the even-twist eigenvalues are both strictly positive in
+$F$, so $\sigma_1^{2k}$ is **PSD-feasible**; the odd-twist
+$\sigma_1^{2k+1}$ has a negative alt eigenvalue and is **never**
+PSD-feasible under any such specialization.*
 
 *Proof.* Direct from the Hecke relation
 $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ specialised to $i = 1$ in
@@ -202,8 +234,10 @@ $B_2$: $\sigma_1 = q$ on sym, $\sigma_1 = -q^{-1}$ on alt
 ([Hecke-Skein convention](#prop:hecke-skein-convention) §7a of
 CLAUDE.md). Composition with itself $2k$ times preserves the sign
 on sym and squares the sign on alt, giving $(-q^{-1})^{2k} =
-q^{-2k} > 0$. Odd powers retain the negative sign on alt.
-$\square$
+q^{-2k}$. Odd powers retain the negative sign on alt. The
+positivity statement under specialization $R \to F$ uses only
+that $(q^*)^{2k} > 0$ for $q^* > 1$ in $F$, and the same for the
+inverse power. $\square$
 
 This proposition is the **even-twist parity selection rule**.
 Together with the structural input that force-carrier links are

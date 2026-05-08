@@ -14,4 +14,10 @@ export default remark({
     "residue",
   ],
   uses: ["rem:generation-dependent-sw"],
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/tau-lepton-nf.py",
+    witness: "folio-assistant/computations/tau-lepton-nf.witness.json",
+    status: "verified",
+  },
 });

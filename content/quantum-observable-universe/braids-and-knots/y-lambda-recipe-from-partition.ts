@@ -25,4 +25,13 @@ export default proposition({
     "closed-form",
     "principal-specialization",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "folio-assistant/computations/probe_wedderburn_weight_scheme.py",
+    witness: [
+      "folio-assistant/computations/probe-proton-with-wenzl-weights.witness.json",
+      "folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json",
+    ],
+    status: "experimental",
+  },
 });

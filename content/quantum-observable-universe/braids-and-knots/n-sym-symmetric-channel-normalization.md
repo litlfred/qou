@@ -15,7 +15,7 @@ $$
 **symmetric-channel Plancherel normalization** of the EW/Higgs
 sector — a categorical scalar in $\mathbb{Q}(q)$ analogous to
 $\delta_{\rm CS} = \hbar_q^4 \cdot [5]_q$ in*
-[`rem:alpha-em-categorical-trace`](#rem:alpha-em-categorical-trace).
+[`prop:alpha-em-categorical-trace`](#prop:alpha-em-categorical-trace).
 *Its value at $q_0$ is fixed by consistency with CODATA $G_F$:*
 
 $$

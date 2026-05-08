@@ -11,6 +11,7 @@
   "scriptHash": "37085609a9f1",
   "scriptCommitSha": "f77abff983320a6bb518e5baeafc84012d555fff",
   "description": "Mass endomorphism via Φ_q tower with z²-weighted cross-term. m_p/m_e = 1869.8506 (CODATA: 1836.152, error 1.84%). Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "parameters": {
     "q0": "1.1099785955541805",
     "w_sym": "0.16546138476810043",
@@ -30,7 +31,7 @@
       "n_generators": 1,
       "descended": 0.5938490006705097,
       "single": 629.9354190959173,
-      "cross": 0.0,
+      "cross": 0,
       "total": 630.5292680965878
     },
     "proton": {

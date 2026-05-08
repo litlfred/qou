@@ -1,5 +1,12 @@
 import QOU.AlgebraicSubstrate.AdelicSubstrate
 import QOU.AlgebraicSubstrate.MotivicSubstrate
+-- `MotivicSubstrateTrivial` deliberately NOT aggregated here:
+-- the trivial `MotivicSubstrate ℤ ℤ trivialTarget` instance
+-- would otherwise pollute typeclass search anywhere
+-- `QOU.AlgebraicSubstrate` (and thus `QOU`) is imported.
+-- Modules that need the witness must opt in explicitly with
+-- `import QOU.AlgebraicSubstrate.MotivicSubstrateTrivial`.
+-- Cf. copilot-pull-request-reviewer review on PR #541.
 import QOU.AlgebraicSubstrate.ReebEpsilon
 import QOU.AlgebraicSubstrate.QFromEpsilon
 import QOU.AlgebraicSubstrate.SurrealRateCalculus

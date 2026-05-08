@@ -1,8 +1,9 @@
 {
-  "computation": "atomic-tr-m-wenzl-bridge",
-  "description": "tr_M(T_w, q_0) computed via Hoefsmit + Wenzl-bridge per prop:atom-knot-mass-derivation: tr_M = \u03a3_\u03bb y_\u03bb \u00b7 Tr(\u03c1_\u03bb(T_w)). y_\u03bb at 50 dps from y-lambda-mpfr-witness.json; Tr(\u03c1_\u03bb) at f64 from dump-block-matrices Rust binary. Mixed precision: the y_\u03bb \u00d7 Tr product is at f64 precision (~15 digits). Sidesteps sympy's H_9 cost wall (>4 min vs <1 sec here). J_K writhe-match test disabled per docs/audits/markov-test-is-post-archimedean.md.",
   "computedAt": "2026-04-27T21:27:46.973442+00:00",
-  "precision": "mixed (y_\u03bb@50dps; Tr(\u03c1_\u03bb)@f64)",
+  "computation": "atomic-tr-m-wenzl-bridge",
+  "description": "tr_M(T_w, q_0) computed via Hoefsmit + Wenzl-bridge per prop:atom-knot-mass-derivation: tr_M = Σ_λ y_λ · Tr(ρ_λ(T_w)). y_λ at 50 dps from y-lambda-mpfr-witness.json; Tr(ρ_λ) at f64 from dump-block-matrices Rust binary. Mixed precision: the y_λ × Tr product is at f64 precision (~15 digits). Sidesteps sympy's H_9 cost wall (>4 min vs <1 sec here). J_K writhe-match test disabled per docs/audits/markov-test-is-post-archimedean.md.",
+  "auditOnly": "docs/audits/2h-3a-vs-sdp-tr-m-discrepancy.md",
+  "precision": "mixed (y_λ@50dps; Tr(ρ_λ)@f64)",
   "q_0_50dps": "1.1099785955541805752815940796095093779667618976181",
   "results": [
     {
@@ -33,7 +34,7 @@
       "historical_K_comparison": {
         "historical_K": "3_1",
         "J_K_published_polynomial": "q + q**3 - q**4",
-        "post_archimedean_caveat": "J_K and tr_M live in different categories \u2014 see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
+        "post_archimedean_caveat": "J_K and tr_M live in different categories — see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
       }
     },
     {
@@ -48,7 +49,7 @@
             3
           ],
           "y_lambda_50dps": "0.41539578633456659696386950060551865095490170518139",
-          "tr_rho_lambda_f64": 1.0,
+          "tr_rho_lambda_f64": 1,
           "contribution_mixed_precision": "0.41539578633456659696386950060551865095490170518139"
         },
         {
@@ -67,7 +68,7 @@
             1
           ],
           "y_lambda_50dps": "0.022744945705705262906935880756151767482347539991734",
-          "tr_rho_lambda_f64": 1.0,
+          "tr_rho_lambda_f64": 1,
           "contribution_mixed_precision": "0.022744945705705262906935880756151767482347539991734"
         }
       ],
@@ -85,7 +86,7 @@
             3
           ],
           "y_lambda_50dps": "0.41539578633456659696386950060551865095490170518139",
-          "tr_rho_lambda_f64": 1.0,
+          "tr_rho_lambda_f64": 1,
           "contribution_mixed_precision": "0.41539578633456659696386950060551865095490170518139"
         },
         {
@@ -104,7 +105,7 @@
             1
           ],
           "y_lambda_50dps": "0.022744945705705262906935880756151767482347539991734",
-          "tr_rho_lambda_f64": 1.0,
+          "tr_rho_lambda_f64": 1,
           "contribution_mixed_precision": "0.022744945705705262906935880756151767482347539991734"
         }
       ],
@@ -148,7 +149,7 @@
       "historical_K_comparison": {
         "historical_K": "6_2",
         "J_K_published_polynomial": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + 1/q**5",
-        "post_archimedean_caveat": "J_K and tr_M live in different categories \u2014 see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
+        "post_archimedean_caveat": "J_K and tr_M live in different categories — see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
       }
     },
     {
@@ -163,7 +164,7 @@
             3
           ],
           "y_lambda_50dps": "0.41539578633456659696386950060551865095490170518139",
-          "tr_rho_lambda_f64": 1.0,
+          "tr_rho_lambda_f64": 1,
           "contribution_mixed_precision": "0.41539578633456659696386950060551865095490170518139"
         },
         {
@@ -182,14 +183,14 @@
             1
           ],
           "y_lambda_50dps": "0.022744945705705262906935880756151767482347539991734",
-          "tr_rho_lambda_f64": 1.0,
+          "tr_rho_lambda_f64": 1,
           "contribution_mixed_precision": "0.022744945705705262906935880756151767482347539991734"
         }
       ],
       "historical_K_comparison": {
         "historical_K": "L_6a4",
         "J_K_published_polynomial": "q**3 - 3*q**2 + 6*q - 7 + 6/q - 3/q**2 + 1/q**3",
-        "post_archimedean_caveat": "J_K and tr_M live in different categories \u2014 see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
+        "post_archimedean_caveat": "J_K and tr_M live in different categories — see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
       }
     },
     {
@@ -272,7 +273,7 @@
       "historical_K_comparison": {
         "historical_K": "8_11",
         "J_K_published_polynomial": "-q**6 + 2*q**5 - 4*q**4 + 5*q**3 - 5*q**2 + 5*q - 4 + 3/q - 1/q**2",
-        "post_archimedean_caveat": "J_K and tr_M live in different categories \u2014 see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
+        "post_archimedean_caveat": "J_K and tr_M live in different categories — see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
       }
     }
   ]

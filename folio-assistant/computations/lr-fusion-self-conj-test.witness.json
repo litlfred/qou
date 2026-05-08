@@ -1,0 +1,76 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-06T15:57:13.823793+00:00",
+  "commitSha": "adfaff0fcdaa25a041bb14e08eec6121fb04029a",
+  "assertions": [
+    {
+      "name": "All targets accounted for (computed or skipped)",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "lr-fusion-self-conj-test",
+  "scriptFile": "lr_fusion_self_conj_test.py",
+  "scriptHash": "894f5bbd731d",
+  "scriptCommitSha": "f79dccf6a91d3a302c0b3325b296914413ed5bf3",
+  "description": "LR-fusion self-conjugacy test for the magic-shell rank-collapse conjecture: at magic n, the dominant ν in V_λ ⊗ V_λ (canonical self-conjugate λ ⊢ n) is itself self-conjugate; predicted to fail at non-magic n.",
+  "contentBlock": "conj:diagrammatic-double-magic-lr-fusion",
+  "parameters": {
+    "targets": [
+      8,
+      12
+    ],
+    "magic_count": 1,
+    "nonmagic_count": 1
+  },
+  "data": {
+    "per_n": {
+      "8": {
+        "magic": true,
+        "canonical": [
+          3,
+          3,
+          2
+        ],
+        "dominant_nu": [
+          6,
+          5,
+          3,
+          2
+        ],
+        "dominant_c": 11,
+        "dominant_is_self_conjugate": false
+      },
+      "12": {
+        "magic": false,
+        "canonical": [
+          4,
+          4,
+          2,
+          2
+        ],
+        "dominant_nu": [
+          8,
+          8,
+          4,
+          2,
+          2
+        ],
+        "dominant_c": 274,
+        "dominant_is_self_conjugate": false
+      }
+    },
+    "summary": {
+      "magic_self_conj_dominant": 0,
+      "magic_total_tested": 1,
+      "nonmagic_self_conj_dominant": 0,
+      "nonmagic_total_tested": 1,
+      "hypothesis_supported": false
+    }
+  }
+}

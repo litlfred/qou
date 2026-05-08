@@ -1,8 +1,9 @@
 {
-  "computation": "toffoli-lp-stability",
-  "description": "LP-dual stability of the q-Toffoli braid: P_{7,7}(q), \u03a6(q), Gram spectrum on a q-grid spanning the golden-ratio threshold q\u22c6 = 1/\u03c6\u00b2.",
-  "label": "prop:toffoli-lp-stability",
   "computedAt": "2026-04-17T20:18:13.317138+00:00",
+  "computation": "toffoli-lp-stability",
+  "description": "LP-dual stability of the q-Toffoli braid: P_{7,7}(q), Φ(q), Gram spectrum on a q-grid spanning the golden-ratio threshold q⋆ = 1/φ².",
+  "auditOnly": "docs/audits/2026-05-02-lp-dual-infra-scope.md",
+  "label": "prop:toffoli-lp-stability",
   "git_sha": "555b846893b01c6615bd15f68fef04b585a27eb7",
   "constants": {
     "phi_golden": 1.618033988749895,
@@ -11,22 +12,22 @@
     "q0_physical": 1.1099785955541805
   },
   "threshold_verification": {
-    "P_77_at_q_star": 0.0,
+    "P_77_at_q_star": 0,
     "Phi_at_q_star": 0.03819660112501051,
     "P_77_vanishes_at_q_star": true,
     "Phi_vanishes_at_q_star": false
   },
   "nf_basis": [
-    "\u03b3",
-    "\u03c3\u2080",
-    "\u03c3\u2081",
-    "L\u208a",
-    "L\u208b",
-    "e\u207b"
+    "γ",
+    "σ₀",
+    "σ₁",
+    "L₊",
+    "L₋",
+    "e⁻"
   ],
   "gram_matrix_at_q0": [
     [
-      1.0,
+      1,
       0.4993203340335982,
       0.4993203340335982,
       0.2493207959794241,
@@ -113,7 +114,7 @@
     },
     {
       "q": 0.38196601125010515,
-      "P_77": 0.0,
+      "P_77": 0,
       "Phi_qAND": 0.03819660112501051,
       "gram_eigenvalues": [
         -0.28944271909999153,
@@ -202,9 +203,9 @@
       "Phi_sign": "-"
     },
     {
-      "q": 1.0,
+      "q": 1,
       "P_77": 0.5,
-      "Phi_qAND": 0.0,
+      "Phi_qAND": 0,
       "gram_eigenvalues": [
         -0.838525491562421,
         0.3749999999999999,
@@ -292,7 +293,7 @@
       "Phi_sign": "+"
     },
     {
-      "q": 2.0,
+      "q": 2,
       "P_77": 0.8047378541243649,
       "Phi_qAND": 1.0499719409228705,
       "gram_eigenvalues": [
@@ -310,7 +311,7 @@
       "Phi_sign": "+"
     },
     {
-      "q": 3.0,
+      "q": 3,
       "P_77": 0.9330127018922192,
       "Phi_qAND": 3.4072912811497127,
       "gram_eigenvalues": [
@@ -329,14 +330,14 @@
     }
   ],
   "conclusions": {
-    "stable_regime": "q > q\u22c6 \u2248 0.381966",
+    "stable_regime": "q > q⋆ ≈ 0.381966",
     "physical_q0_stable": true,
     "classical_limit_q_equals_1": {
       "P_77": 0.5,
-      "Phi": 0.0,
-      "note": "\u03a6(1) = 0 by construction (classical reversible Toffoli trivialises q-AND)"
+      "Phi": 0,
+      "note": "Φ(1) = 0 by construction (classical reversible Toffoli trivialises q-AND)"
     }
   },
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0
 }

@@ -1,7 +1,8 @@
 {
-  "computation": "probe-term4-conventions",
   "computedAt": "auto",
+  "computation": "probe-term4-conventions",
   "description": "Term 4 under per-vortex / per-A / per-3A scaling",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "FROB_N3_MeV": 1.2761128463443179,
   "sigma_inv_dim_q_at_q0": {
     "n=3": 2.4972905450085916,

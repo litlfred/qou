@@ -17,6 +17,20 @@ paper to keep them disambiguated:
   letter $H$: $\mathcal{H}_q$ (shuffle Hopf algebra), $\hat{H}_q$
   (Hamiltonian operator), $H_n(q)$ or $H_q(\lambda)$ (Hecke /
   hook-length, always with argument).
+- **$r$** = spinor information rate, $r = q^{1/2}$, $r^2 = q$.
+  Eigenvalue of the elementary half-twist on the spin-½ fundamental
+  rep of $\mathrm{SU}_q(2)$. Reserved exclusively for this purpose.
+  **Never** use $r$ for radius (use $\rho$), recurrence rate (use
+  $\nu$), or Wenzl level (use $\ell$ — see below). The relation to
+  $q$ is exactly analogous to $i$ vs $-1$: $r$ opens up the 2-D
+  spinor (spin-½) representation from the 1-D adjoint (spin-1)
+  representation. **Never** use $t$ for $q^{1/2}$ either ($t$ is
+  the standard knot-polynomial variable in $V_K(t)$, and $t$ is
+  also reserved for time-like usage).
+- **$\ell$** = Wenzl principal-specialisation length (number of
+  points in $s_\lambda(1, q^2, \ldots, q^{2(\ell-1)})$). **Renamed
+  from $r_W$** to free $r$ for the spinor rate. Old code/docs
+  using $r_W$ should migrate to $\ell$.
 - **Numerical $q = 1.1097$** (or any specific value of the substrate
   parameter) should not appear outside the introduction, Chapter 8
   (Information Theory, for falsifiability computations), and
