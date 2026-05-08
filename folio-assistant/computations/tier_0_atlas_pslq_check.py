@@ -66,7 +66,6 @@ def main() -> None:
             "BringHyperbolicDecomposition: PSLQ over atlas BW "
             "values vs 2/(3π) at 100 dps."
         ),
-        "auditOnly": True,
         "contentBlock": "conj:bring-hyperbolic-knot-bloch-decomposition",
         "precision_dps": 100,
         "tolerance": "1e-80",

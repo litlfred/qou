@@ -1,7 +1,6 @@
 {
   "computation": "tier-0-atlas-pslq-check",
   "description": "Tier-0 falsifiability check for BringHyperbolicDecomposition: PSLQ over atlas BW values vs 2/(3\u03c0) at 100 dps.",
-  "auditOnly": true,
   "contentBlock": "conj:bring-hyperbolic-knot-bloch-decomposition",
   "precision_dps": 100,
   "tolerance": "1e-80",
