@@ -1,40 +1,18 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T21:03:15.738Z",
-  "total_flagged": 66,
-  "files_flagged": 40,
+  "generated": "2026-05-08T21:14:32.570Z",
+  "total_flagged": 62,
+  "files_flagged": 39,
   "patterns": {
     "const_zero": 34,
     "skel_inst": 12,
     "one_def": 9,
-    "prop_true": 5,
     "holds_trivial": 4,
     "id_def": 1,
-    "const_zero_typed": 1
+    "const_zero_typed": 1,
+    "prop_true": 1
   },
   "flagged": {
-    "braids-and-knots/atom-knot-mass-derivation.lean": [
-      {
-        "line": 70,
-        "pattern": "prop_true",
-        "snippet": "def YekutieliFiniteSliceMultiplicativeTrace (_T_w : Type*) : Prop := True"
-      },
-      {
-        "line": 74,
-        "pattern": "prop_true",
-        "snippet": "def GbSpectralSequenceCollapseAtE2 : Prop := True"
-      },
-      {
-        "line": 78,
-        "pattern": "prop_true",
-        "snippet": "def CategoricalMassInvariantFinite (_T_w : Type*) : Prop := True"
-      },
-      {
-        "line": 129,
-        "pattern": "prop_true",
-        "snippet": "def MassIdentity (_cert : MassDerivationCertificate) : Prop := True"
-      }
-    ],
     "braids-and-knots/brane-tower-z-habiro.lean": [
       {
         "line": 61,

@@ -289,7 +289,7 @@ jobs:
           # `|| true` to flip the gate strict.
           bun run --cwd content pipeline/trivial-skeleton-audit.ts \
             --max-per-pattern \
-              "const_zero=37,skel_inst=14,prop_true=7,punit_type=2,one_def=11,holds_trivial=6,punit_unit=2,id_def=3,const_zero_typed=3,first_arg=12" \
+              "const_zero=37,skel_inst=14,prop_true=3,punit_type=2,one_def=11,holds_trivial=6,punit_unit=2,id_def=3,const_zero_typed=3,first_arg=12" \
             || true
 
       - name: Detect drift in committed witnesses

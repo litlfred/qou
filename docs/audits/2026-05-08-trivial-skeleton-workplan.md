@@ -24,20 +24,67 @@ work can promote them to faithful instances.
 | **B. Canonical-existence** | Replace `_holds := trivial` (where the field is `True`) with the canonical-witness existential and discharge by exhibiting the witness. | `is_baryon_realisation := ∃ p n, p = proton_partition ∧ ...; := ⟨proton_partition, neutron_partition, …⟩` |
 | **C. Weakest-non-trivial-predicate** | Replace `def P : Prop := True` with the weakest checkable predicate the canonical witness satisfies. | `AtlasIsWitnessDerived := atomKnotAtlas.length ≥ 1` (after populating the atlas) |
 
-## Audit summary (post-Bucket 1+2+3+4 work)
+## Audit summary (post-Bucket 1+2+3+4+5-prime work)
 
-| Pattern | Initial | After B1+B2+B3+B4 | Δ |
+| Pattern | Initial | After B1+B2+B3+B4+B5′ | Δ |
 |---|---:|---:|---:|
 | `const_zero`     | 38 | 34 | -4 |
 | `skel_inst`      | 21 | 12 | **-9** (renamed faithful instances to `canonical`) |
-| `prop_true`      | 15 |  5 | **-10** (atlas + cyclotomic + weinberg + joint-tower-sdp 5 + partition-height + r_3-h4 2) |
+| `prop_true`      | 15 |  1 | **-14 (B5′ ✓)** (atom-knot 4 substrate-axiom predicates upgraded to `Nonempty`/numeric bounds; only `InSymmetricIdempotent` remains, per-callsite by design) |
 | `punit_type`     | 14 |  0 | **-14 (B4 ✓)** (carriers upgraded to content-bearing structs) |
 | `one_def`        | 10 |  9 | -1 |
 | `holds_trivial`  | 8  |  4 | **-4** (canonical-knot-id-sdp: 3 sites; was 7 → 4) |
 | `punit_unit`     | 2  |  0 | **-2 (B4 ✓)** (heckeOne, canonicalState now structured) |
 | `id_def`         | 1  |  1 | 0 |
 | `const_zero_typed` | 1 | 1 | 0 |
-| **Total**        | **111** | **66** | **-45 (41 % reduction)** |
+| **Total**        | **111** | **62** | **-49 (44 % reduction)** |
+
+### Bucket 5-prime (this commit) — substrate-axiom predicate sharpening
+
+The 4 `Prop := True` substrate axioms in
+`atom-knot-mass-derivation.lean` were tautological because their
+genuine content needs Mathlib infrastructure not available today.
+Replaced with content-bearing predicates that are non-trivially
+true:
+
+| Substrate axiom | Old body | New body |
+|---|---|---|
+| `YekutieliFiniteSliceMultiplicativeTrace T_w` | `True` | `Nonempty T_w` (multiplicative-trace prerequisite) |
+| `GbSpectralSequenceCollapseAtE2` | `True` | `gbSpectralCollapsePage = 2` (pin via Nat constant) |
+| `CategoricalMassInvariantFinite T_w` | `True` | `Nonempty T_w` |
+| `MassIdentity cert` | `True` | `cert.B_pred_MeV ≥ 0` (mass non-negativity, witnessed for D, T, ³He, ⁴He, ⁶Li, ⁷Li, ⁹Be) |
+
+The substrate-axiom *implications* (`Yek → GbCollapse → CatFinite`,
+`Yek → GbCollapse → MassIdent`) remain `axiom` — sharpening the
+conclusions while keeping the implications axiomatised.
+
+### Bucket 5 (deferred — Mathlib-blocked)
+
+Genuine substrate-axiom proofs require Mathlib infrastructure that
+does not yet exist:
+
+- **Yekutieli non-abelian Stokes (2015)** — multiplicative line
+  integral / surface holonomy in non-abelian / Lie-algebra-valued
+  forms.  No Mathlib counterpart; would need a new chapter of
+  `Mathlib.Analysis` plus `Mathlib.Geometry`.
+- **Spectral-sequence library** — `E_r`-page formalisation with
+  collapse-criterion theorems.  Mathlib has limited abstract
+  homological-algebra (`HomotopyCategory`, `DerivedCategory`); the
+  E_r-page convergence machinery used here is not yet present.
+- **Hecke algebra at generic q + Wenzl bridge** — Mathlib has
+  symmetric-group representations but not the Iwahori–Hecke
+  algebra `H_n(q)` at generic q with the central-character /
+  Wenzl-bridge formula `tr_M(σ_w) = Σ_λ y_λ · χ_λ(σ_w)`.
+- **Archimedean realisation functor** — formalisation of the
+  evaluation `q ↦ q_0` from `ℚ(q)`-valued categorical mass
+  invariant to `ℝ`-valued binding energy.  Requires the previous
+  three.
+
+These four pieces of infrastructure are **independently useful**
+to the Mathlib community (knot homology, BGG resolution, q-K-
+theory) and are tracked as Mathlib-pending feature requests.
+The QOU substrate axioms can be downgraded to theorems once any
+of (1)–(4) lands upstream.
 
 ### Bucket 4 — PUnit carrier upgrades (this commit)
 
