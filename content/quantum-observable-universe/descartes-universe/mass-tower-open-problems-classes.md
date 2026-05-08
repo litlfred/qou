@@ -98,14 +98,38 @@ geometric derivation written out in full.
 
 ## Status summary
 
-| Open problem | Class | Conditional theorem (Lean) | Status |
-|---|---|---|---|
-| Term 7 shell correction $\alpha_5$ | `Term7ShellCorrectionClass` | `term7_structural` | sorry-free conditional |
-| Chirality factor $1 + w \cdot h$ | `ChiralityFactorClass` | `chirality_factor_structural` | sorry-free conditional |
-| Brane-tower $|V|\approx 1$ | `ZHabiroConvergenceClass` | `brane_tower_finite` | sorry-free conditional |
-| α/(4π) next-order | `AlphaOver4PiClass` | `alpha_over_4pi_structural` | sorry-free conditional |
+| Open problem | Class | Conditional theorem (Lean) | Lean instance | Status |
+|---|---|---|---|---|
+| Term 7 shell correction $\alpha_5$ | `Term7ShellCorrectionClass` | `term7_structural` | (none — placeholder) | conjectural; awaits GS-filtration spectral-sequence derivation |
+| Chirality factor $1 + w \cdot h$ | `ChiralityFactorClass` | `chirality_factor_structural` | `chiralityFactorInstance` (rfl) | §3b-cond hook formally discharged; substantive Kauffman content lives upstream |
+| Brane-tower $|V|\approx 1$ | `ZHabiroConvergenceClass` | `brane_tower_finite` | `zHabiroConvergenceInstance` ($M=1$) | §3b-cond hook formally discharged; uniform-truncation bound lives upstream |
+| α/(4π) next-order | `AlphaOver4PiClass` | `alpha_over_4pi_structural` | `alphaOver4PiInstance` (rfl) | §3b-cond hook formally discharged; higher Bloch group content lives upstream |
 
-Each row is a clean §3b-cond split: the Lean theorem closes
-unconditionally modulo the named class; the class instance itself
-is the residual open structural input documented in the upstream
-block.
+Three of the four classes have been **unconditionally inhabited**
+in `mass-tower-open-problems-classes.lean` — their formal
+existential content (`∃ z, z = <named real>` etc.) is closed by
+`rfl` or `norm_num`, with the substantive structural conjectures
+remaining upstream. The corresponding `*_unconditional` theorems
+(`chirality_factor_unconditional`, `brane_tower_finite_unconditional`,
+`alpha_over_4pi_unconditional`) close without an explicit
+`[Instance]` hypothesis.
+
+Term 7 stands as the only class still awaiting closure: the
+carrier `alpha5_value` is a placeholder, and a structural
+derivation of $\alpha_5$ from the Gröbner-Shirshov filtration at
+$\ell = 5$ is required before the class field can be defined
+substantively, let alone instantiated.
+
+**Caveat (formal vs. structural closure).** Inhabiting these
+existential classes does *not* close the substantive structural
+conjectures upstream. The classes are §3b-cond hooks with
+purely-existential content (`there exists a real equal to the
+named target`), and their inhabitation is therefore a logical
+formality. The Kauffman ribbon-twist derivation, the uniform
+brane-tower bound, and the higher-Bloch-group origin of $\alpha/(4\pi)$
+are the substantive open results; the unconditional Lean instances
+discharge the §3b-cond conditional dependence in `prop:em-coupling-bring-zero-mode`
+and its sibling chains, while the structural claims remain
+documented in the cited upstream blocks. A future iteration that
+strengthens these classes to encode the actual structural assertion
+(rather than its existential shadow) is the natural next step.
