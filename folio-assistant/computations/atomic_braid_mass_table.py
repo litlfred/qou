@@ -2,6 +2,25 @@
 """
 Atomic-braid mass-table compute (Strategy 3 — knot operator + Δ_n full-twist).
 
+⚠ DEPRECATION NOTICE (2026-05-08, AUDIT-DEEP-2026-05.md §3.3a, PR #564).
+  ───────────────────────────────────────────────────────────────────────
+  The single-anchor proton-only `E_0` calibration in this script is
+  KNOWN BROKEN: it propagates 8–54 % errors to D, T, ³He, ⁴He via
+  the jet-knot a_k coupling.  See the side-by-side comparison
+  emitted by `atomic_mass_via_rho_k.py` (mean |err%| 36 % legacy
+  vs 0.23 % rho_K on D, T, ³He).
+
+  CANONICAL going-forward path: `atomic_mass_via_rho_k.py`, which
+  uses the resolved formula `M(K) = ρ_K · m_e · |tr_M(K)|` (Options
+  A + C in PR #564 — no additive T6, Mittag-Leffler complementarity).
+
+  This script is RETAINED ONLY for downstream-witness compatibility.
+  Downstream consumers (atomic_braid_mass_table_modes_sweep.py,
+  mass_formula_6term_mpfr_50dps.py, paper_six_term_isotope_sweep.py)
+  should migrate to `atomic-mass-via-rho-k.witness.json`.
+
+  Migration tracker: `docs/coordination/1ppb.md` §Open phases · P4‴.
+
 Re-derives the six-term mass formula using:
 
   • Per-carrier (proton/neutron) atomic-braid Markov traces
