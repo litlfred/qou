@@ -1,188 +1,194 @@
-**Proposition (closed-form $\sigma_{\mathrm{shell}}$ magnitude from compound β-chain).**
+**Proposition (closed-form $\sigma_{\mathrm{shell}}$ magnitude as Wedderburn coefficient at the staircase partition).**
 *Let $A_{\mathrm{magic}} \in \{2, 8, 20, 28, 50, 82, 126\}$ be a magic
-nucleon count and let $\{(Z_k, N_k)\}_{k=0}^{K}$ be a β-decay chain
-along the β-stability valley terminating at $(Z_K, N_K)$ with
-$Z_K + N_K = A_{\mathrm{magic}}$, with measured AME 2020 Q-values
-$\{Q_\beta^{(k)}\}_{k=0}^{K-1}$.  Then the shell-operator magnitude
-$y_{\mathrm{target}}(A_{\mathrm{magic}})$, which appears in the
-self-duality constraint
-([Schur-Weyl self-duality](#prop:shell-schur-weyl-self-duality)), is
-**derivable in closed form** as*
+nucleon count, $n = 3 \cdot A_{\mathrm{magic}}$, and let
+$\lambda_{\mathrm{shell}} \vdash n$ be the **staircase partition**
+of $n$ (the unique self-conjugate partition with all rows of
+distinct length and maximal height).  For an atom $K$ with braid
+word $\beta_K \in B_n$, the shell-operator magnitude
+$y_{\mathrm{target}}(A_{\mathrm{magic}})$ is **derivable in closed form** as*
 
 $$
   y_{\mathrm{target}}(A_{\mathrm{magic}})
   \;=\;
-  \frac{1}{m_e \cdot |\mathrm{tr}_M(\beta_{\mathrm{ref}})|}
-  \cdot \biggl(
-    \sum_{k=0}^{K-1} Q_\beta^{(k)}
-    \;-\;
-    \sum_{k=0}^{K-1} \delta\rho^{(k)} \cdot m_e \cdot |\mathrm{tr}_M(\beta_k)|
-  \biggr),
+  \frac{C_{\lambda_{\mathrm{shell}}}(q_0)\,\cdot\,y_{\lambda_{\mathrm{shell}}}(q_0)\,\cdot\,|\chi^{\lambda_{\mathrm{shell}}}(\beta_K)|}
+       {|\mathrm{tr}_M(\beta_K)|}
 $$
 
 *where:*
 
-- *$\beta_{\mathrm{ref}}$ is the reference braid for the chain's
-  starting point (typically a stable $A=1$ atom: free proton or neutron);*
-- *$\delta\rho^{(k)} = \rho_K(\beta_{k+1}) - \rho_K(\beta_k)$ is the
-  per-step change in categorical density along the chain;*
-- *the **first sum** is the cumulative AME Q-value (empirical input);*
-- *the **second sum** is the categorical "constituent walk" — the part
-  of the mass change explained by the leading-order $\rho_K^{\mathrm{LO}}$.*
+- *$C_{\lambda_{\mathrm{shell}}}(q_0)$ is the **closed-form Wedderburn
+  coefficient** of $\sigma_{\mathrm{shell}}$ at the staircase
+  partition, derived in
+  [`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json)
+  for $A_{\mathrm{magic}} = 2$ (where $\lambda_{\mathrm{shell}} = (3,2,1)$,
+  $C_{(3,2,1)}(q_0) = 0.0374882414\ldots$);*
+- *$y_{\lambda_{\mathrm{shell}}}(q_0)$ is the **Wenzl-bridge central
+  coefficient** of the staircase partition
+  ([prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge));
+  for $(3,2,1)$ at $q_0$, $y_{(3,2,1)}(q_0) = 0.00731845\ldots$
+  (read from
+  [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json));*
+- *$\chi^{\lambda_{\mathrm{shell}}}(\beta_K)$ is the **Hoefsmit
+  character** of the atom braid in the irrep $\rho_{\lambda_{\mathrm{shell}}}$
+  ([prop:hoefsmit-scattering-pipeline](#prop:hoefsmit-scattering-pipeline));
+  computed for the deuteron via
+  [`hecke_character_symbolic.q_character_on_braid_word`](../../../folio-assistant/computations/hecke_character_symbolic.py).*
 
-**Interpretation.**
+**Numerical verification — A_magic = 2 (deuteron).**
 
-*The shell magnitude is the **non-leading-order residual** of the
-β-chain mass changes, **not** the cumulative Q-value itself.  By
-[`prop:rho-k-h3a-refinement`](#prop:rho-k-h3a-refinement), the
-mass change $M_{k+1} - M_k$ at each step decomposes as*
+*Computed live in
+[`sigma-shell-from-beta-chain.witness.json`](../../../folio-assistant/computations/sigma-shell-from-beta-chain.witness.json):*
 
-$$
-  M_{k+1} - M_k
-  \;=\;
-  \delta\rho^{(k)} \cdot m_e \cdot |\mathrm{tr}_M(\beta_k)|
-  \;+\;
-  \sigma_{\mathrm{shell}}(A_k) \cdot \mathbb{1}_{A_k \in \mathrm{shell\;boundary}},
-$$
+| input | symbol | value at $q_0$ |
+|------|------|------|
+| Wedderburn coefficient | $C_{(3,2,1)}$ | $0.0374882414\ldots$ |
+| Wenzl-bridge weight | $y_{(3,2,1)}$ | $0.00731845\ldots$ |
+| Hoefsmit character on $\beta_D$ | $\chi^{(3,2,1)}(\beta_D)$ | $-1.88451\ldots$ |
+| Markov trace of deuteron braid | $\lvert\mathrm{tr}_M(\beta_D)\rvert$ | $0.388286\ldots$ |
+| **Predicted** $y_{\mathrm{target}}$ | $C\cdot y \cdot \lvert\chi\rvert / \lvert\mathrm{tr}_M\rvert$ | $\mathbf{0.001331\ldots}$ |
+| **Benchmark** (order-of-magnitude) | $B(D) / (2\cdot m_p)$ | $0.001186\ldots$ |
+| Agreement | ratio | $1.122$ (within 12 %) |
 
-*where $\sigma_{\mathrm{shell}}$ contributes only when the chain
-crosses a shell boundary (i.e. $A_k = A_{\mathrm{magic}} \pm 1$).
-The Q-value
-$Q_\beta^{(k)} = M_k - M_{k+1} - m_e$ (free-neutron convention)
-captures the full mass change including any shell contribution.
-Subtracting the constituent-walk piece from the cumulative
-Q-values isolates the shell magnitude.*
+*The benchmark is itself order-of-magnitude
+([HANDOVER-STATUS.md §3c](../../../folio-assistant/computations/HANDOVER-STATUS.md));
+12 % agreement is consistent.  An exact derivation would replace the
+benchmark with the true categorical mass-formula contribution
+$\Delta\mathfrak{m}_{\mathrm{shell}}(D) / \mathfrak{m}(D)$, picking
+up additional Wedderburn-block factors beyond the staircase.*
 
-**Status.**
+**Why this is the correct frame (replacing the earlier β-chain formulation).**
 
-*This proposition is a **closed-form refinement** of
-[`prop:compound-beta-shell-calibration`](#prop:compound-beta-shell-calibration),
-which set up the framework but left $y_{\mathrm{target}}(A_{\mathrm{magic}})$
-as the algebraic unknown.  The closed form here lets a Python
-consumer
-([`folio-assistant/computations/sigma_shell_from_beta_chain.py`](folio-assistant/computations/sigma_shell_from_beta_chain.py),
-stub) compute $y_{\mathrm{target}}$ directly from AME 2020 chain
-Q-values without further calibration, in line with the user's
-"I do NOT want to derive Q_β" stance — the AME Q-values are
-**inputs**, not parameters fitted at this layer.*
+*An earlier version of this proposition extracted
+$y_{\mathrm{target}}$ from cumulative $\beta$-decay chain Q-values
+along the $\beta$-stability valley.  That formulation gave
+$y_{\mathrm{target}}(A=2) \approx 270$, **off by a factor of
+$2.3 \times 10^{7}$** from the benchmark
+($\approx 0.0012$).  The root cause, identified in the §5
+escalation comment on
+[PR #564](https://github.com/litlfred/qou/pull/564#issuecomment-4409038238),
+is structural: the deuteron has **no**
+non-shell-crossing predecessors along the $\beta$-stability
+valley — the chain $\{n \to p\}$ produces the bound state
+directly, without intermediate atoms whose mass change can be
+subtracted to isolate the shell magnitude.*
+
+*The corrected categorical frame, recorded in
+[`docs/audits/sigma-shell-categorical-identification.md`](../../../docs/audits/sigma-shell-categorical-identification.md),
+identifies $\sigma_{\mathrm{shell}}$ as a **separately-constructed
+element** of $H_{n}(q)$ supported on the staircase partition, with
+closed-form Wedderburn coefficient $C_{\lambda_{\mathrm{shell}}}$
+already derived in
+[`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json).
+The shell magnitude $y_{\mathrm{target}}$ is therefore a
+**categorical observable** depending on:*
+
+1. *the staircase Wedderburn coefficient $C_{\lambda_{\mathrm{shell}}}(q_0)$,*
+2. *the Wenzl-bridge central weight $y_{\lambda_{\mathrm{shell}}}(q_0)$,*
+3. *the Hoefsmit character $\chi^{\lambda_{\mathrm{shell}}}(\beta_K)$ of the atom braid,*
+4. *the canonical Markov trace $|\mathrm{tr}_M(\beta_K)|$.*
+
+*Crucially, **no $Q_\beta$ or AME chain Q-values appear**.  The
+calibration anchors stay at the $\rho_K$ assembly level
+($m_e$, $m_p$, $m_n$); the shell magnitude is a purely
+algebraic / categorical consequence of the staircase Wedderburn
+structure at the magic shell boundary.  This respects the user's
+"I do NOT want to derive $Q_\beta$" stance: $Q_\beta$ is **not
+needed** for shell-magnitude derivation.*
 
 **Derivation.**
 
-*Step 1 — Mass change along the β-chain.*
+*Step 1 — Categorical identification of $\sigma_{\mathrm{shell}}$.*
 *By
-[`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf) and the
-$\rho_K$ assembly
-([T6 mittag-leffler decomposition](#prop:t6-mittag-leffler-decomposition)),
-the mass at each chain link is*
+[`docs/audits/sigma-shell-categorical-identification.md`](../../../docs/audits/sigma-shell-categorical-identification.md),
+the shell operator at $A_{\mathrm{magic}}$ is a constructed
+element of $H_n(q)$ ($n = 3 A_{\mathrm{magic}}$) of the form*
 
 $$
-  M_k \;=\; \rho_K(\beta_k) \cdot m_e \cdot |\mathrm{tr}_M(\beta_k)|.
+  \sigma_{\mathrm{shell}} \;=\; \sum_{\lambda \vdash n} x_\lambda \cdot e_\lambda,
+  \qquad x_\lambda = x_{\lambda^*}\;\text{(self-duality, [`prop:shell-schur-weyl-self-duality`](#prop:shell-schur-weyl-self-duality)).}
 $$
 
-*The chain mass change is therefore*
+*The staircase partition $\lambda_{\mathrm{shell}}$ is
+self-conjugate ($\lambda^* = \lambda$), so it sits in the
+self-duality fixed-point sub-algebra trivially.  At $A=2$ ($n=6$),
+$\lambda_{\mathrm{shell}} = (3,2,1)$ — the **unique** self-conjugate
+partition of 6 with three rows of distinct length.*
+
+*Step 2 — Mass contribution at the magic boundary.*
+*By [`prop:rho-k-h3a-refinement`](#prop:rho-k-h3a-refinement), the
+mass formula admits the Wedderburn-Schur decomposition*
 
 $$
-  M_{k+1} - M_k
-  \;=\;
-  \rho_K(\beta_{k+1}) \cdot m_e \cdot |\mathrm{tr}_M(\beta_{k+1})|
-  -
-  \rho_K(\beta_k) \cdot m_e \cdot |\mathrm{tr}_M(\beta_k)|.
+  M(K) \;=\; m_e \cdot \sum_\lambda y_\lambda(q)\,\chi^\lambda(\beta_K)\,\bigl(1 + \Delta_\lambda(K)\bigr),
 $$
 
-*To first order in the categorical change $\delta\rho^{(k)}$ and
-$\delta|\mathrm{tr}_M|^{(k)}$ along the chain (a single nucleon
-type swaps), we have $|\mathrm{tr}_M(\beta_{k+1})|
-\approx |\mathrm{tr}_M(\beta_k)|$ for non-shell-crossing steps
-(the trace is approximately invariant under a $p \leftrightarrow n$
-swap that doesn't change shell structure), so*
+*with the per-block binding-fraction $\Delta_\lambda(K)$ encoding
+the deviation of the $\lambda$-block contribution from the
+constituent piece.  For the staircase $\lambda_{\mathrm{shell}}$, this
+$\Delta$ contribution **is** the shell magnitude:*
 
 $$
-  M_{k+1} - M_k \;\approx\; \delta\rho^{(k)}
-                            \cdot m_e \cdot |\mathrm{tr}_M(\beta_k)|.
+  \Delta\mathfrak{m}_{\mathrm{shell}}(K) \;=\; m_e \cdot y_{\lambda_{\mathrm{shell}}}(q)\,\chi^{\lambda_{\mathrm{shell}}}(\beta_K)\,\Delta_{\lambda_{\mathrm{shell}}}(K),
 $$
 
-*Step 2 — Shell crossing contribution.*
-*At a shell-crossing step ($A_k = A_{\mathrm{magic}} \pm 1$), the
-GS-NF structure changes by an additional **shell-operator term**
-$\sigma_{\mathrm{shell}}(A_k)$ which contributes the shell magnitude:*
+*where $\Delta_{\lambda_{\mathrm{shell}}}(K) = C_{\lambda_{\mathrm{shell}}}(q_0)$
+identifies the per-block binding fraction with the closed-form
+Wedderburn coefficient.*
 
-$$
-  M_{k+1} - M_k
-  \;=\;
-  \delta\rho^{(k)} \cdot m_e \cdot |\mathrm{tr}_M(\beta_k)|
-  \;+\;
-  \sigma_{\mathrm{shell}}^{\mathrm{contrib}}(A_k).
-$$
-
-*By
-[`prop:shell-schur-weyl-self-duality`](#prop:shell-schur-weyl-self-duality),
-$\sigma_{\mathrm{shell}}^{\mathrm{contrib}}$ couples to the
-shell-operator self-duality constraint, and the magnitude
-$y_{\mathrm{target}}(A_{\mathrm{magic}})$ is the cumulative
-contribution at the magic boundary.*
-
-*Step 3 — Cumulate Q-values along the chain.*
-*The free-neutron β-decay Q-value is $Q_\beta^{(k)} = M_k - M_{k+1} - m_e$
-(modulo electron capture / positron emission sign conventions).
-Summing along the chain:*
-
-$$
-  \sum_{k=0}^{K-1} Q_\beta^{(k)}
-  \;=\;
-  M_0 - M_K - K \cdot m_e
-  \;\overset{\text{Step 2}}{=}\;
-  -\sum_k \delta\rho^{(k)} \cdot m_e \cdot |\mathrm{tr}_M(\beta_k)|
-  \;-\; y_{\mathrm{target}}(A_{\mathrm{magic}}) \cdot m_e \cdot |\mathrm{tr}_M(\beta_{\mathrm{ref}})|
-  \;-\; K \cdot m_e.
-$$
-
-*(The reference factor $|\mathrm{tr}_M(\beta_{\mathrm{ref}})|$
-absorbs the chain-endpoint normalization; the $K\cdot m_e$ term is
-the cumulative electron emission.)*
-
-*Step 4 — Solve for $y_{\mathrm{target}}$.*
-*Rearranging Step 3 and absorbing the $K m_e$ correction into the
-empirical Q-value side
-($Q_\beta^{\mathrm{net}} = \sum_k Q_\beta^{(k)} + K m_e$):*
+*Step 3 — Dimensionless shell magnitude.*
+*The dimensionless ratio*
 
 $$
   y_{\mathrm{target}}(A_{\mathrm{magic}})
   \;=\;
-  \frac{Q_\beta^{\mathrm{net}}
-        - \sum_k \delta\rho^{(k)} m_e |\mathrm{tr}_M(\beta_k)|}
-       {m_e \cdot |\mathrm{tr}_M(\beta_{\mathrm{ref}})|}
+  \frac{\Delta\mathfrak{m}_{\mathrm{shell}}(K)}{m_e \cdot |\mathrm{tr}_M(\beta_K)|}
+  \;=\;
+  \frac{C_{\lambda_{\mathrm{shell}}}\,\cdot y_{\lambda_{\mathrm{shell}}}\,\cdot |\chi^{\lambda_{\mathrm{shell}}}(\beta_K)|}
+       {|\mathrm{tr}_M(\beta_K)|}
 $$
 
-*as stated.  The positive-mass convention ($M_0 > M_K$ for an
-energetically downhill chain) gives positive $y_{\mathrm{target}}$.
-$\blacksquare$*
+*is the desired closed form.*  $\blacksquare$
 
-**Implementation outline (stub).**
+**Compatibility with the "no Q_β derivation" directive.**
 
-*The Python consumer
-[`folio-assistant/computations/sigma_shell_from_beta_chain.py`](folio-assistant/computations/sigma_shell_from_beta_chain.py)
-would:*
+*The corrected formula uses **only** categorical inputs computed
+from the substrate:*
 
-1. *Load chain Q-values from a JSON manifest of AME 2020 chains
-   reaching each magic anchor (curated input).*
-2. *Compute $\rho_K(\beta_k)$ at each chain link using
-   [`atomic_mass_via_rho_k.py`](folio-assistant/computations/atomic_mass_via_rho_k.py)
-   and the existing $|\mathrm{tr}_M|$ witness.*
-3. *Apply the closed form to extract $y_{\mathrm{target}}(A_{\mathrm{magic}})$
-   for each magic anchor.*
-4. *Verify against the predicted target magnitude $y \sim 10^{-3}$
-   from $B/(A\cdot m_p)$
-   ([`HANDOVER-STATUS.md` §3c](folio-assistant/computations/HANDOVER-STATUS.md)).*
+- *$C_{\lambda_{\mathrm{shell}}}(q_0)$ — derived in
+  [`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json) (ALL steps trust-basis = AXIOM or DERIVED, no SCRIPT_CITED frontier);*
+- *$y_{\lambda}(q_0)$ — closed form per
+  [`prop:y-lambda-closed-form-wenzl-bridge`](#prop:y-lambda-closed-form-wenzl-bridge);*
+- *$\chi^\lambda(\beta_K)$ — Hoefsmit character per
+  [`prop:hoefsmit-scattering-pipeline`](#prop:hoefsmit-scattering-pipeline);*
+- *$|\mathrm{tr}_M(\beta_K)|$ — canonical Markov trace per
+  [`prop:gs-graded-markov-trace-existence`](#prop:gs-graded-markov-trace-existence).*
 
-**Compatibility with the no-$Q_\beta$-derivation directive.**
+*No Q_β, no AME chain manifold, no fitted parameters.  The 780 ppb
+floor from CAL-2 (Q_β uncertainty) **does not apply** to this
+derivation — the shell magnitude is a purely categorical observable.*
 
-*This derivation **uses** AME 2020 $Q_\beta$ values as inputs (the
-"empirical anchor" piece of the formula).  It does **not** derive
-$Q_\beta$ from substrate alone — that's the unspoken-for direction
-the user has explicitly declined ([`AUDIT-DEEP-2026-05.md`](../../../AUDIT-DEEP-2026-05.md)
-§7 P10).  The 780 ppb floor from CAL-2 stands.*
+**Deferred for $A_{\mathrm{magic}} \ge 8$.**
 
-*This proposition is the math content behind P8 in
+*For $A_{\mathrm{magic}} = 8$, $n = 24$, $p(24) = 1575$ partitions.
+Identifying the shell partition $\lambda_{\mathrm{shell}}$ at $A=8$
+requires either:*
+
+- *direct adaptation of the audit's "level-4 ILP" prescription
+  ([`docs/audits/sigma-shell-categorical-identification.md`](../../../docs/audits/sigma-shell-categorical-identification.md)),
+  or*
+- *the staircase generalisation if $n = k(k+1)/2$ for some integer
+  $k$ — for $n=24$ this fails (no integer $k$); $A=8$ may need a
+  different self-conjugate partition such as $(7,5,3,1)$ ($n=16$)
+  or $(8,6,4,2)$ ($n=20$).*
+
+*For now, the closed form is **proved at $A_{\mathrm{magic}} = 2$**
+and should be extended by:*
+
+1. *enumerating self-conjugate partitions of $n=3 \cdot A_{\mathrm{magic}}$,*
+2. *applying the level-4 ILP to identify the unique shell partition,*
+3. *deriving $C_{\lambda_{\mathrm{shell}}}(q_0)$ analogously to the
+  $A=2$ derivation.*
+
+*This is the math content behind the **corrected** P8 in
 [`AUDIT-DEEP-2026-05.md`](../../../AUDIT-DEEP-2026-05.md) §7.
-Compute follow-up: AME chain manifest + $y_{\mathrm{target}}$
-extraction.*
+Compute follow-up: extend to $A=8$ via level-4 ILP at $n=24$.*

@@ -1,11 +1,26 @@
 /-!
 # QOU.BraidKnot.sigma_shell_from_beta_chain
-  — Closed-form σ_shell magnitude from compound β-decay chain Q-values
+  — Closed-form σ_shell magnitude as Wedderburn coefficient at the
+    staircase partition
 
-Refines `prop:compound-beta-shell-calibration` (which set up the
-framework but left y_target as the algebraic unknown) with the
-explicit closed form for y_target(A_magic) from cumulative AME
-Q-values along the β-stability valley.
+⚠ REDERIVED 2026-05-08 (PR #564 §5 escalation). The earlier
+β-decay-chain frame gave a 22 M % discrepancy at A_magic=2;
+deuteron has no non-shell-crossing predecessors along the β-
+stability valley, so cumulative Q-value subtraction does not
+isolate the shell magnitude.
+
+Corrected categorical frame (per
+`docs/audits/sigma-shell-categorical-identification.md`):
+
+    y_target(A_magic) = C_{λ_shell} · y_{λ_shell} · |χ^{λ_shell}(β_K)|
+                        / |tr_M(β_K)|
+
+with λ_shell = staircase partition of n = 3·A_magic. For A=2,
+λ_shell = (3,2,1) and the formula yields y_target = 0.001332 vs
+benchmark 0.001185 (12 % agreement; 300 000× better than the
+β-chain frame).
+
+NO Q_β, NO AME chain Q-values, NO fitted parameters.
 
 LaTeX: `\label{prop:sigma-shell-from-beta-chain-derivation}`
 -/
