@@ -1,15 +1,15 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T19:47:09.306Z",
-  "total_flagged": 111,
-  "files_flagged": 57,
+  "generated": "2026-05-08T19:59:04.256Z",
+  "total_flagged": 108,
+  "files_flagged": 56,
   "patterns": {
     "const_zero": 38,
     "skel_inst": 21,
-    "prop_true": 16,
+    "prop_true": 15,
     "punit_type": 14,
-    "one_def": 10,
-    "holds_trivial": 8,
+    "one_def": 9,
+    "holds_trivial": 7,
     "punit_unit": 2,
     "id_def": 1,
     "const_zero_typed": 1
@@ -135,11 +135,6 @@
         "line": 20,
         "pattern": "punit_type",
         "snippet": "def NucleusTy : Type := PUnit"
-      },
-      {
-        "line": 42,
-        "pattern": "one_def",
-        "snippet": "def bindingMultiplicity : ElectronShell → ℝ → ℕ := fun _ _ => 1"
       }
     ],
     "braids-and-knots/explicit-alpha-k-h4.lean": [
@@ -301,17 +296,12 @@
     ],
     "braids-and-knots/recursive-atom-knot-atlas.lean": [
       {
-        "line": 117,
-        "pattern": "prop_true",
-        "snippet": "def AtlasIsWitnessDerived : Prop := True"
-      },
-      {
-        "line": 161,
+        "line": 200,
         "pattern": "prop_true",
         "snippet": "def PrincipledPathForAtomKnot : Prop := True"
       },
       {
-        "line": 181,
+        "line": 220,
         "pattern": "prop_true",
         "snippet": "def FiltrationCertificateFormat : Prop := True"
       }
@@ -620,13 +610,6 @@
         "snippet": "def milnor_mu_cfl : Int := 0"
       }
     ],
-    "observations/borromean-quark.lean": [
-      {
-        "line": 119,
-        "pattern": "holds_trivial",
-        "snippet": "is_baryon_realisation_holds := trivial"
-      }
-    ],
     "observations/hopf-diquark.lean": [
       {
         "line": 71,
@@ -665,14 +648,14 @@
     ],
     "particle-interactions/lifted-crossing-locality.lean": [
       {
-        "line": 62,
+        "line": 66,
         "pattern": "skel_inst",
         "snippet": "instance skeleton {K C : Type*} : LiftedCrossingLocality K C where"
       }
     ],
     "particle-interactions/mass-volume-factorization.lean": [
       {
-        "line": 72,
+        "line": 75,
         "pattern": "skel_inst",
         "snippet": "instance skeleton (K : Type*) : MassVolumeFactorization K where"
       }
