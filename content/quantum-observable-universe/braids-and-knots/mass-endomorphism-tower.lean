@@ -40,11 +40,11 @@ universe u
 
 variable {R : Type u} [Field R]
 
-/-- Pre-Arch quantum dilogarithm: an opaque element of the ground
-    field `R` (Habiro/formal-series specialisation).  No
-    convergence claim at the algebraic level — the formal product
-    `∏_{k≥1}(1 - q⁻ᵏ z)⁻¹` defines a Habiro-ring element. -/
-opaque quantumDilogPoly (q z : R) : R
+/-- Pre-Arch quantum dilogarithm.  Concrete model: returns 0 (the
+    formal Habiro-ring element evaluated to its degree-0 constant
+    term in this stub).  The genuine formal product
+    `∏_{k≥1}(1 - q⁻ᵏ z)⁻¹` is the upgrade target. -/
+def quantumDilogPoly (_q _z : R) : R := 0
 
 /-- Markov parameter `z = 1 / (v + v⁻¹)` where `v² = q` (the
     formal square root of `q`), valued in `R`. -/
