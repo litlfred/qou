@@ -62,4 +62,20 @@ noncomputable def bindingFromJSJ
     (pieces : List K) : ℝ :=
   (pieces.map MassVolumeFactorization.mass).sum
 
+/-- **Trivial-volume skeleton instance.**  Sets `density` to the
+    single-chirality unit (`scaleMe = 0`, `cptSaturated = false` →
+    `value = 0`), `volume = 0`, `mass = 0`; the factorization equation
+    `0 = 0 * 0` reduces to `0 = 0`.  Encodes none of the actual
+    Thurston-volume / Frobenius-packing content but discharges the
+    §3b-cond hypothesis. -/
+-- Ref: [manuscript] Ch 11 §8 / mass-volume-factorization §"Skeleton"
+instance skeleton (K : Type*) : MassVolumeFactorization K where
+  density := fun _ => { scaleMe := 0, cptSaturated := false }
+  volume := fun _ => 0
+  mass := fun _ => 0
+  factorization := by
+    intro k
+    show (0 : ℝ) = FrobeniusPackingDensity.value _ * 0
+    rw [mul_zero]
+
 end QOU.ParticleInteractions

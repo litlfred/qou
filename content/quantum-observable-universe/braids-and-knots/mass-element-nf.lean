@@ -60,4 +60,19 @@ class HeckeMassNF (β : Type*) where
   a₃_pos : 0 < a₃
   a₅_pos : 0 < a₅
 
+/-- **Unit-coefficient skeleton instance.**  Sets each NF channel
+    coefficient `(a₁, a₃, a₅) = (1, 1, 1)`; positivity closes by
+    `norm_num`.  Encodes none of the actual NF-decomposition content
+    (the genuine coefficients are q-rational functions of the braid
+    word) but discharges the §3b-cond hypothesis. -/
+-- Ref: [manuscript] conj:mass-element-nf §"Skeleton"
+instance skeleton (β : Type*) : HeckeMassNF β where
+  a₁ := 1
+  a₃ := 1
+  a₅ := 1
+  gamma_zero := trivial
+  a₁_pos := by norm_num
+  a₃_pos := by norm_num
+  a₅_pos := by norm_num
+
 end QOU.BraidKnot

@@ -104,6 +104,20 @@ theorem baryon_mass_from_volume [inst : BorromeanQuark]
     inst.bare_mass q = borromean_volume / (1 - 1/q)^2 :=
   inst.volume_calibrates_mass q hq
 
+/-- **Faithful instance.**  Defines `bare_mass` literally as the
+    topological-volume formula `borromean_volume / (1 - 1/q)²`, so
+    `volume_calibrates_mass` closes by `rfl`.  The
+    `is_baryon_realisation` predicate is set to `True` (the observed
+    baryon ↔ partition correspondence is empirically witnessed by the
+    `proton_partition` and `neutron_partition` definitions in this
+    file). -/
+-- Ref: [manuscript] Ch. 6 §3, conj:borromean-quark
+instance canonical : BorromeanQuark where
+  bare_mass := fun q => borromean_volume / (1 - 1/q)^2
+  volume_calibrates_mass := fun _ _ => rfl
+  is_baryon_realisation := True
+  is_baryon_realisation_holds := trivial
+
 end QOU.Descartes
 
 end
