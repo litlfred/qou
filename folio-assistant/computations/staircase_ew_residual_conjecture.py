@@ -36,10 +36,14 @@ from __future__ import annotations
 
 import sys
 import time
+import math
+import os
 from pathlib import Path
 
 import numpy as np
 import sympy as sp
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import LinearOperator, eigs
 
 COMP_DIR = Path(__file__).parent
 sys.path.insert(0, str(COMP_DIR))
@@ -47,6 +51,7 @@ sys.path.insert(0, str(COMP_DIR))
 from witness_base import WitnessBuilder
 from q_parameter import Q_50_DIGIT_STR, Q
 from hecke_character_symbolic import _hoefsmit_build
+from hecke_characters import standard_young_tableaux
 from staircase_ew_predictions import beta_ew_word
 
 
@@ -82,6 +87,58 @@ def best_ratio_match(eigs: np.ndarray, target: float,
             if best is None or d < best[1]:
                 best = (r, d, i, j)
     return best  # type: ignore[return-value]
+
+
+def build_sparse_generator(
+    syts: list[dict[int, int]],
+    contents: dict[int, int],
+    syt_index: dict[tuple[int, ...], int],
+    generator_1based: int,
+    q: float,
+) -> csr_matrix:
+    """Fast sparse Hoefsmit generator build for one σ_i on a fixed SYT basis."""
+    dim = len(syts)
+    h = q - 1.0 / q
+    rows: list[int] = []
+    cols: list[int] = []
+    vals: list[float] = []
+    processed = [False] * dim
+    n = len(next(iter(syt_index)))
+    key_range = tuple(range(1, n + 1))
+
+    for i in range(dim):
+        if processed[i]:
+            continue
+
+        tab = syts[i]
+        ci_k = tab[generator_1based]
+        ci_k1 = tab[generator_1based + 1]
+        rho = contents[ci_k1] - contents[ci_k]
+
+        a = h / (1.0 - q ** (-2 * rho))
+
+        swapped = dict(tab)
+        swapped[generator_1based] = ci_k1
+        swapped[generator_1based + 1] = ci_k
+        key = tuple(swapped[k] for k in key_range)
+        j = syt_index.get(key)
+
+        if j is None or j == i:
+            rows.append(i)
+            cols.append(i)
+            vals.append(a)
+            processed[i] = True
+        else:
+            a_prime = h / (1.0 - q ** (2 * rho))
+            b_sq = a * a_prime + 1.0
+            b = math.sqrt(abs(b_sq))
+            rows.extend([i, j, i, j])
+            cols.extend([i, j, j, i])
+            vals.extend([a, a_prime, b, b])
+            processed[i] = True
+            processed[j] = True
+
+    return csr_matrix((vals, (rows, cols)), shape=(dim, dim))
 
 
 def main() -> int:
@@ -153,11 +210,11 @@ def main() -> int:
 
         # Eigenvalues
         t0 = time.time()
-        eigs = np.linalg.eigvals(M)
+        eigvals = np.linalg.eigvals(M)
         print(f"  Eigenvalues:   {time.time()-t0:.1f}s")
 
         # Filter and sort
-        real_pos = sorted([e.real for e in eigs
+        real_pos = sorted([e.real for e in eigvals
                            if e.real > 1e-9 and abs(e.imag) < 1e-6],
                           reverse=True)
         print(f"\n  Spectrum summary:")
@@ -166,7 +223,7 @@ def main() -> int:
             print(f"    top 5 positive: {[f'{x:.6f}' for x in real_pos[:5]]}")
 
         # Best pairwise-ratio match to q^(1/h_c)
-        best = best_ratio_match(eigs, s_k)
+        best = best_ratio_match(eigvals, s_k)
         if best is None:
             print(f"  ⚠ No valid ratio found (only {len(real_pos)} positive eigenvalue(s))")
             results[k] = {
@@ -207,6 +264,120 @@ def main() -> int:
         }
 
     wb.add_data("empirical_results", results)
+
+    # ════════════════════════════════════════════════════════════════
+    # Matrix-free ρ_5 sparse sweep (dim = 292,864)
+    # ════════════════════════════════════════════════════════════════
+    k5_matrix_free = {"attempted": False}
+    try:
+        rho5 = staircase(5)
+        n5 = sum(rho5)
+        s5 = predictions[5][3]
+        word5 = beta_ew_word(n5)
+        gens_needed = sorted(set(word5))
+        eig_sample = int(os.environ.get("STAIRCASE_K5_EIG_SAMPLE", "256"))
+
+        print(f"\n{'='*64}")
+        print("k = 5 matrix-free sparse sweep")
+        print('='*64)
+        print(f"  shape={rho5}, n={n5}, word length={len(word5)}, "
+              f"unique generators={len(gens_needed)}")
+        print(f"  target q^(1/9) = {s5:.10f}")
+
+        t0 = time.time()
+        syts, _cells, contents = standard_young_tableaux(rho5)
+        dim5 = len(syts)
+        key_range = tuple(range(1, n5 + 1))
+        syt_index = {
+            tuple(tab[k] for k in key_range): i for i, tab in enumerate(syts)
+        }
+        print(f"  SYT enumeration/index: dim={dim5}, {time.time()-t0:.1f}s")
+
+        t0 = time.time()
+        sparse_gens = {
+            g: build_sparse_generator(
+                syts=syts,
+                contents=contents,
+                syt_index=syt_index,
+                generator_1based=g + 1,
+                q=Q0,
+            )
+            for g in gens_needed
+        }
+        print(f"  Sparse generator build: {time.time()-t0:.1f}s")
+
+        def mv(vec: np.ndarray) -> np.ndarray:
+            out = vec
+            for g in word5:
+                out = sparse_gens[g] @ out
+            return out
+
+        op = LinearOperator((dim5, dim5), matvec=mv, dtype=np.float64)
+        k_req = min(eig_sample, max(dim5 - 2, 2))
+
+        t0 = time.time()
+        vals = eigs(
+            op,
+            k=k_req,
+            which="LM",
+            return_eigenvectors=False,
+            tol=1e-8,
+            maxiter=20000,
+            ncv=min(2 * k_req + 20, dim5 - 1),
+        )
+        eig_time = time.time() - t0
+        vals_real = sorted(
+            [float(np.real(v)) for v in vals if abs(np.imag(v)) < 1e-6],
+            reverse=True,
+        )
+
+        best = None
+        for i, ei in enumerate(vals_real):
+            if abs(ei) < 1e-12:
+                continue
+            for j in range(i + 1, len(vals_real)):
+                ej = vals_real[j]
+                if abs(ej) < 1e-12:
+                    continue
+                ratio = ei / ej
+                rel = abs(ratio - s5) / s5
+                if best is None or rel < best["relative_error"]:
+                    best = {
+                        "ratio": float(ratio),
+                        "relative_error": float(rel),
+                        "numerator_index": int(i),
+                        "denominator_index": int(j),
+                        "numerator_eigenvalue": float(ei),
+                        "denominator_eigenvalue": float(ej),
+                    }
+
+        print(f"  eigs(k={k_req}) runtime: {eig_time:.1f}s; "
+              f"real eigenvalues kept={len(vals_real)}")
+        if best is not None:
+            print(f"  best pairwise ratio vs q^(1/9): {best['ratio']:.10f} "
+                  f"(rel.err {best['relative_error']:.3e})")
+
+        k5_matrix_free = {
+            "attempted": True,
+            "shape": list(rho5),
+            "n": n5,
+            "dimension": dim5,
+            "word_length": len(word5),
+            "generators_used": [int(g + 1) for g in gens_needed],
+            "eig_sample_size": int(k_req),
+            "target_q_pow_inv_hc": float(s5),
+            "eigs_runtime_seconds": float(eig_time),
+            "leading_real_eigenvalues": vals_real[:32],
+            "best_pairwise_ratio_match": best,
+        }
+    except Exception as exc:
+        k5_matrix_free = {
+            "attempted": True,
+            "error": f"{type(exc).__name__}: {exc}",
+        }
+        print(f"  ⚠ k=5 matrix-free sweep failed: {k5_matrix_free['error']}")
+
+    wb.add_data("k5_matrix_free_sweep", k5_matrix_free)
 
     # ════════════════════════════════════════════════════════════════
     # Assertions
@@ -282,8 +453,20 @@ def main() -> int:
     print(f"  k=4 (ρ_4, n=10, dim=768): "
           f"rel.err to q^(1/7) = {results[4]['relative_error']:.2e}  "
           f"★ generalization confirmed")
-    print(f"  k=5 (ρ_5, n=15, dim=292864): out of compute scope; "
-          f"predicted q^(1/9) = {predictions[5][3]:.6f}")
+    if (
+        k5_matrix_free.get("attempted")
+        and isinstance(k5_matrix_free.get("best_pairwise_ratio_match"), dict)
+    ):
+        rel = k5_matrix_free["best_pairwise_ratio_match"]["relative_error"]
+        k_req = k5_matrix_free.get("eig_sample_size")
+        print(f"  k=5 (ρ_5, n=15, dim=292864): matrix-free eigs(k={k_req}) "
+              f"rel.err to q^(1/9) = {rel:.2e}")
+    elif k5_matrix_free.get("attempted"):
+        print("  k=5 (ρ_5, n=15, dim=292864): matrix-free attempt failed: "
+              f"{k5_matrix_free.get('error')}")
+    else:
+        print(f"  k=5 (ρ_5, n=15, dim=292864): out of compute scope; "
+              f"predicted q^(1/9) = {predictions[5][3]:.6f}")
 
     saved = wb.save()
     summary = wb.build()
