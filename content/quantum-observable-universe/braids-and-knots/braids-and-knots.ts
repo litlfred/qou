@@ -335,6 +335,7 @@ export default chapter({
         "atomic-mass-gb-nf",
         "rho-k-graded-expansion",
         "hecke-branching-trace-decomposition",
+        "q-hecke-seminormal-character-closure",
         "markov-trace-antipode-polynomial-symmetry",
         "markov-trace-axiomatic-closed-form",
         "markov-trace-recursive-reducer",

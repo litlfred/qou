@@ -39,7 +39,6 @@ export default proposition({
     "Hoefsmit $\\chi^\\lambda_q$ agrees with the canonical Markov-axiom reducer",
   uses: [
     "prop:hecke-branching-trace-decomposition",
-    "prop:atomic-mass-gb-nf",
     "prop:per-nucleon-shift-additive-linearity",
   ],
   cites: [

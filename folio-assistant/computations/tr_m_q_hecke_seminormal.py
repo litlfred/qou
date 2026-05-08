@@ -135,6 +135,8 @@ ATOMIC_TEST_BENCH = [
     (1, 1, 0, "proton"),
     (1, 0, 1, "neutron"),
     (2, 1, 1, "deuteron"),
+    (3, 1, 2, "tritium"),
+    (3, 2, 1, "helium-3"),
 ]
 
 
