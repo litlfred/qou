@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:p-bandwidth-bound",
+  lean: { ref: "qou:QOU.Information.p_bandwidth_bound", validation: "not_started" },
   title: "Polynomial computation as sub-horizon bandwidth",
   tags: [
     "P-class",

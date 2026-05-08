@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:reeb-operations-per-planck",
+  lean: { ref: "qou:QOU.Information.reeb_operations_per_planck", validation: "not_started" },
   title: "Discrete iterations per Reeb circuit",
   tags: [
     "planck-time",
