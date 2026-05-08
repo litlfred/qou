@@ -104,6 +104,40 @@ theorem markovParameter_pos (s : ℝ) (hs : s > 0) :
   have hs_inv_pos : s⁻¹ > 0 := inv_pos.mpr hs
   linarith
 
+/-- The q-hook product `H_q(λ) = ∏_{x ∈ λ} [h_x]_q` over a partition
+    `λ` represented as the list of its hook lengths.  The `dim_q(λ)`
+    formula is `[n]_q! / H_q(λ)`. -/
+noncomputable def qHookProduct (q : ℝ) : List ℕ → ℝ
+  | []        => 1
+  | h :: rest => qInteger q h * qHookProduct q rest
+
+/-- The empty partition has hook product `1`. -/
+theorem qHookProduct_nil (q : ℝ) : qHookProduct q [] = 1 := rfl
+
+/-- The hook product distributes over `cons`. -/
+theorem qHookProduct_cons (q : ℝ) (h : ℕ) (rest : List ℕ) :
+    qHookProduct q (h :: rest) = qInteger q h * qHookProduct q rest := rfl
+
+/-- Hook lengths for the row partition `[n]` are `n, n-1, …, 1`. -/
+def hooksRow : ℕ → List ℕ
+  | 0     => []
+  | n + 1 => (n + 1) :: hooksRow n
+
+/-- For `λ = [2]` (single row of length 2), hook lengths are `[2, 1]`. -/
+theorem hooksRow_two : hooksRow 2 = [2, 1] := rfl
+
+/-- For `λ = [3]` (single row of length 3), hook lengths are `[3, 2, 1]`. -/
+theorem hooksRow_three : hooksRow 3 = [3, 2, 1] := rfl
+
+/-- Hook product for the row partition `[2]` equals `[2]_q · [1]_q
+    = (q + q⁻¹) · 1`.  At `q = q_0 ≈ 1.11` this gives a positive
+    value; the genuine Wenzl-bridge `dim_q([2])` is then
+    `[2]_q!/H_q([2]) = (q+q⁻¹)/(q+q⁻¹) = 1`. -/
+theorem qHookProduct_row_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+    qHookProduct q (hooksRow 2) = q + q⁻¹ := by
+  show qInteger q 2 * (qInteger q 1 * 1) = q + q⁻¹
+  rw [qInteger_two q hq, qInteger_one q hq]; ring
+
 -- ════════════════════════════════════════════════════════════════
 -- §2  Brane fluid data and viscosity
 -- ════════════════════════════════════════════════════════════════
