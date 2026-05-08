@@ -1,12 +1,13 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-05-08T17:15:18.228Z",
+  "generated": "2026-05-08T17:47:28.592Z",
   "total_blocks": 1450,
   "class_axiomatised_conjectures": [
     "conj:abelianisation-at-algebraic-poles",
     "conj:algebraic-geometric-dilog-equivalence",
     "conj:archimedean-remainder-exponential-decay",
     "conj:baryon-period-ratio",
+    "conj:blowup-yekutieli",
     "conj:borromean-quark",
     "conj:brane-level-selection",
     "conj:brane-tower-z-habiro",
@@ -19,11 +20,15 @@
     "conj:classical-limit-stpart",
     "conj:confinement-grading-correspondence",
     "conj:cp-violation-spectral-form",
+    "conj:critical-exponent",
     "conj:crossing-graded-mass-expansion",
     "conj:crystal-graph-realization",
     "conj:denominator-zeros-as-sw-critical-points",
     "conj:diagrammatic-double-magic-lr-fusion",
     "conj:dilogarithm-archimedean-limit",
+    "conj:e-hartree-categorical-derivation",
+    "conj:electroweak-higgs-torus-link-triplet",
+    "conj:electroweak-mass-eigenstate-count",
     "conj:em-coupling-chern-simons",
     "conj:force-carrier-knot-vs-link-dichotomy",
     "conj:gb-reduction-pl-thimble-bijection",
@@ -35,19 +40,23 @@
     "conj:kashaev-volume-conjecture",
     "conj:kazhdan-lusztig-classical-limit",
     "conj:knot-factor-frobenius-pairing",
+    "conj:levi-degeneracy",
     "conj:lifted-crossing-locality",
     "conj:magic-numbers-bring",
     "conj:mass-element-nf",
     "conj:mass-endomorphism",
     "conj:mass-volume-factorization",
     "conj:n-v-bring-action",
+    "conj:ns-counterexample",
     "conj:p-vs-np-boundary",
     "conj:p-vs-np-qou",
     "conj:palindromicity-orbital-type",
     "conj:phi-q-tower-jsj-bridge",
     "conj:pl-jsj-mass-integration-equivalence",
+    "conj:q-aubin-lions",
     "conj:q-geometric-langlands",
     "conj:q-integer-mass-formula",
+    "conj:regularity-breakdown",
     "conj:rho-prefactor-structural",
     "conj:root-of-unity-mtc-truncation",
     "conj:shared-denominator-cusp-holonomy",
@@ -55,10 +64,12 @@
     "conj:shell-correction-term-seven",
     "conj:symmetric-crystal-pair-production",
     "conj:topological-decomposition-mass",
+    "conj:weak-spectral-completeness",
     "conj:weinberg-angle-categorical"
   ],
   "provable_blocks_touching_conjecture": 261,
-  "violators": [
+  "violators": [],
+  "conditional_on_class": [
     {
       "label": "cor:commutative-chirality-vanishes",
       "kind": "corollary",
@@ -1818,6 +1829,24 @@
       "file": "content/quantum-observable-universe/descartes-universe/genus-filtration-ideal.ts"
     },
     {
+      "label": "prop:geom-universality",
+      "kind": "proposition",
+      "conj": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-universality.ts"
+    },
+    {
+      "label": "prop:geom-yekutieli-alignment",
+      "kind": "proposition",
+      "conj": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts"
+    },
+    {
       "label": "prop:golden-quartet-galois",
       "kind": "proposition",
       "conj": [
@@ -2082,6 +2111,15 @@
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction.ts"
+    },
+    {
+      "label": "prop:hoefsmit-scattering-pipeline",
+      "kind": "proposition",
+      "conj": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts"
     },
     {
       "label": "prop:hoefsmit-seminormal-form",
@@ -4934,35 +4972,6 @@
         "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts"
-    }
-  ],
-  "conditional_on_class": [
-    {
-      "label": "prop:geom-universality",
-      "kind": "proposition",
-      "conj": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/geom-universality.ts"
-    },
-    {
-      "label": "prop:geom-yekutieli-alignment",
-      "kind": "proposition",
-      "conj": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts"
-    },
-    {
-      "label": "prop:hoefsmit-scattering-pipeline",
-      "kind": "proposition",
-      "conj": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts"
     }
   ]
 }
