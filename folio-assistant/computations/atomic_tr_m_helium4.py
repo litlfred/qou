@@ -2,8 +2,31 @@
 # polynomial_q_not_applicable: numerical mpmath consumer; no symbolic-q polynomial in this layer.
 """Compute |tr_M(⁴He)| via the disjoint-product extension on H_12.
 
-Per the AUDIT-DEEP-2026-05.md §3.3a resolution, ⁴He is identified as
-the disjoint product
+⚠ CONVENTION CORRECTION (PR #564, 2026-05-08).  This script uses the
+*disjoint* multi-atom word inherited from
+`markov_trace_axiomatic_multi_atom.py`.  Per the convention audit
+(see `hecke-branching-trace-decomposition.md`), the disjoint-product
+identity tr_M(α⊗β) = tr_M(α)·tr_M(β) is **only valid for genuine
+disjoint-cluster braids** (e.g. an unknot operator on a disjoint
+strand bundle), NOT for multi-nucleon atoms whose canonical word
+(from `mass_at_3A_proper.atom_braid_word_3A`) includes operator-
+valued σ_{3k} interfaces between adjacent nucleons.
+
+Empirical evidence (deuteron, P3' from rho_k_h3a_refinement.py):
+the disjoint 22-crossing word σ₁⁷σ₂⁴σ₄⁶σ₅⁴σ₄⁻¹ fails the
+Schur-Weyl identity Σ_λ y_λ χ^λ = tr_M by factor ~5; the canonical
+23-crossing word with σ_3 interface matches at machine precision.
+
+For ⁴He, the canonical word atom_braid_word_3A(2, 2) has 47
+crossings with 3 interfaces (pp at gen 2, pn at gen 5, nn at gen 8),
+not the 44 crossings used here.  The output witness
+`atomic-tr-m-helium4.witness.json` therefore stores a value that
+is NOT the canonical |tr_M(⁴He)|; it should be regenerated using
+tr_M_via_wenzl_bridge_mpfr.py once the y-lambda witness is extended
+to n=12 at true 50 dps.
+
+Per the AUDIT-DEEP-2026-05.md §3.3a resolution, ⁴He was originally
+identified as the disjoint product
 
     ⁴He = proton ⊗ proton ⊗ neutron ⊗ neutron
 

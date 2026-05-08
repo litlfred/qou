@@ -1,6 +1,7 @@
 {
   "computation": "markov-trace-axiomatic-multi-atom",
-  "description": "Multi-atom Markov-trace anchor using the axiomatic recursive reducer (markov_trace_recursive). Computes tr_M(\u03b2_K) for K \u2208 {proton, neutron, deuteron} via Hecke quadratic + Markov axioms + cyclicity, no representation theory. Verifies the disjoint-product property tr_M(p \u2297 n) = tr_M(p) \u00b7 tr_M(n) on the H_6 deuteron word, and cross-checks the proton against the prior Hecke-power expansion in markov_trace_atomic_proton_full.py.",
+  "convention_status": "DEPRECATED_NON_CANONICAL \u2014 the proton word \u03c3\u2081\u2077\u03c3\u2082\u2074 and neutron word \u03c3\u2081\u2076\u03c3\u2082\u2074\u03c3\u2081\u207b\u00b9 used here do NOT match the canonical convention from mass_at_3A_proper.atom_braid_word_3A (which has 2 averaged crossings per nucleon). Computed values 1.6332 (proton) and 1.2482 (neutron) disagree with canonical 1.0653 / 0.9232 in atomic-tr-m-mpfr-50dps.witness.json. DO NOT use for mass predictions. Use atomic_tr_m_mpfr_50dps.py for canonical |tr_M| values. Deuteron entry removed entirely (disjoint convention empirically wrong; recursive reducer does not support averaged crossings).",
+  "description": "Multi-atom Markov-trace anchor using the axiomatic recursive reducer (markov_trace_recursive). Computes tr_M(\u03b2_K) for K \u2208 {proton, neutron} via Hecke quadratic + Markov axioms + cyclicity, no representation theory. The disjoint-product check on the deuteron has been removed (see convention_status above).",
   "reference_blocks": [
     "prop:atomic-mass-gb-nf",
     "prop:categorical-mass-markov",
@@ -64,51 +65,12 @@
       "abs_tr_M_at_q0_50dps": "1.2482482717548397202242497985371807788067261625718",
       "m_over_m_e_codata": "1838.6836617178958978291442673218800156047287377009",
       "rho_K_codata": "1473.0111816081246145117839885716617181522606321887"
-    },
-    "deuteron": {
-      "Z": 1,
-      "N": 1,
-      "n": 6,
-      "word": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        2,
-        2,
-        2,
-        2,
-        4,
-        4,
-        4,
-        4,
-        4,
-        4,
-        5,
-        5,
-        5,
-        5,
-        -4
-      ],
-      "word_str": "\u03c3\u2081\u2077 \u03c3\u2082\u2074 \u2295 \u03c3\u2084\u2076 \u03c3\u2085\u2074 \u03c3\u2084\u207b\u00b9",
-      "m_MeV_codata": 1875.61294,
-      "tr_M_symbolic": "(4*q**(1711/2) + 120*q**(1709/2) + 1732*q**(1707/2) + 15996*q**(1705/2) + 106032*q**(1703/2) + 536176*q**(1701/2) + 2145190*q**(1699/2) + 6947148*q**(1697/2) + 18463987*q**(1695/2) + 40555058*q**(1693/2) + 73678870*q**(1691/2) + 110132485*q**(1689/2) + 133868828*q**(1687/2) + 130314737*q**(1685/2) + 101960027*q**(1683/2) + 72883032*q**(1681/2) + 68778459*q**(1679/2) + 86267790*q**(1677/2) + 88771306*q**(1675/2) + 45502453*q**(1673/2) - 25807352*q**(1671/2) - 71101222*q**(1669/2) - 63295348*q**(1667/2) - 37754660*q**(1665/2) - 45869650*q**(1663/2) - 83654004*q**(1661/2) - 96072832*q**(1659/2) - 55764726*q**(1657/2) - 4072404*q**(1655/2) + 7776466*q**(1653/2) - 7776466*q**(1651/2) + 4072404*q**(1649/2) + 55764726*q**(1647/2) + 96072832*q**(1645/2) + 83654004*q**(1643/2) + 45869650*q**(1641/2) + 37754660*q**(1639/2) + 63295348*q**(1637/2) + 71101222*q**(1635/2) + 25807352*q**(1633/2) - 45502453*q**(1631/2) - 88771306*q**(1629/2) - 86267790*q**(1627/2) - 68778459*q**(1625/2) - 72883032*q**(1623/2) - 101960027*q**(1621/2) - 130314737*q**(1619/2) - 133868828*q**(1617/2) - 110132485*q**(1615/2) - 73678870*q**(1613/2) - 40555058*q**(1611/2) - 18463987*q**(1609/2) - 6947148*q**(1607/2) - 2145190*q**(1605/2) - 536176*q**(1603/2) - 106032*q**(1601/2) - 15996*q**(1599/2) - 1732*q**(1597/2) - 120*q**(1595/2) - 4*q**(1593/2) + q**856 + 34*q**855 + 555*q**854 + 5782*q**853 + 43105*q**852 + 244338*q**851 + 1091982*q**850 + 3935892*q**849 + 11600498*q**848 + 28160157*q**847 + 56381777*q**846 + 92717838*q**845 + 124006104*q**844 + 133127606*q**843 + 114647274*q**842 + 86073319*q**841 + 75040472*q**840 + 87066737*q**839 + 92508727*q**838 + 60551262*q**837 + 4484294*q**836 - 29023281*q**835 - 23595534*q**834 - 18730921*q**833 - 49091217*q**832 - 85022677*q**831 - 74948979*q**830 - 31609757*q**829 - 20568761*q**828 - 59060873*q**827 - 86329684*q**826 - 59060873*q**825 - 20568761*q**824 - 31609757*q**823 - 74948979*q**822 - 85022677*q**821 - 49091217*q**820 - 18730921*q**819 - 23595534*q**818 - 29023281*q**817 + 4484294*q**816 + 60551262*q**815 + 92508727*q**814 + 87066737*q**813 + 75040472*q**812 + 86073319*q**811 + 114647274*q**810 + 133127606*q**809 + 124006104*q**808 + 92717838*q**807 + 56381777*q**806 + 28160157*q**805 + 11600498*q**804 + 3935892*q**803 + 1091982*q**802 + 244338*q**801 + 43105*q**800 + 5782*q**799 + 555*q**798 + 34*q**797 + q**796)/(q**842 + 32*q**841 + 496*q**840 + 4960*q**839 + 35960*q**838 + 201376*q**837 + 906192*q**836 + 3365856*q**835 + 10518300*q**834 + 28048800*q**833 + 64512240*q**832 + 129024480*q**831 + 225792840*q**830 + 347373600*q**829 + 471435600*q**828 + 565722720*q**827 + 601080390*q**826 + 565722720*q**825 + 471435600*q**824 + 347373600*q**823 + 225792840*q**822 + 129024480*q**821 + 64512240*q**820 + 28048800*q**819 + 10518300*q**818 + 3365856*q**817 + 906192*q**816 + 201376*q**815 + 35960*q**814 + 4960*q**813 + 496*q**812 + 32*q**811 + q**810)",
-      "tr_M_at_q0_50dps": "2.0385811138332745799256136192088997773849272884166",
-      "abs_tr_M_at_q0_50dps": "2.0385811138332745799256136192088997773849272884166",
-      "m_over_m_e_codata": "3670.4829628319197133379628275165731749546647796439",
-      "rho_K_codata": "1800.5086665058304258913686085519525036467849856792"
     }
   },
   "checks": {
-    "disjoint_product": {
-      "tr_p_times_tr_n_at_q0": "2.0385811138332745799256136192088997773849272884166",
-      "tr_d_at_q0": "2.0385811138332745799256136192088997773849272884166",
-      "relative_error": "1.5733088226642647832035598730349575348519056637587e-50",
-      "matches_within_1ppb": true,
-      "matches_mpmath_exact": true
+    "disjoint_product_removed": {
+      "reason": "The disjoint-product property tr_M(\u03b1\u2297\u03b2)=tr_M(\u03b1)\u00b7tr_M(\u03b2) applies only to genuine disjoint-cluster braids; the deuteron \u03b2_p\u00b7I\u00b7\u03b2_n has an interface \u03c3_3 averaged crossing that breaks multiplicativity. Canonical |tr_M(deuteron)| = 0.388286... \u2260 |tr_M(p)|\u00b7|tr_M(n)|.",
+      "canonical_witness": "atomic-tr-m-mpfr-50dps.witness.json"
     },
     "atomic_proton_full": {
       "prior_tr_M": "1.6331535640480812",
