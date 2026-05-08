@@ -64,6 +64,20 @@ Hecke-algebra structure.  Each filtration level has a well-defined
 $\dim\mathrm{Res}^{H_k}_{H_3}$ because the graded piece
 $J^\ell/J^{\ell+1}$ is itself a semisimple $H_3$-bimodule.*
 
+**KLR grading interpretation.**
+*Under the
+[confinement–grading correspondence](#conj:confinement-grading-correspondence),
+the jet level $\ell$ used here coincides with the natural
+$\mathbb{Z}$-grading bound on the cyclotomic KLR algebra: the symbol
+$\sigma_\ell(T_w) \in J^\ell / J^{\ell+1}$ is the top non-zero
+graded component of the KLR-module lift $M_K$. The truncation of
+$T_w$ at jet order $\ell$ is therefore the homological truncation of
+the graded KLR complex at degree $\ell$, and the residual
+error $E(\ell, c)$ is the homological remainder lying in degrees
+$> \ell$. The candidate prefix $\beta_k^{\mathrm{GS}}$ inherits its
+restriction multiplicities $\dim\mathrm{Res}^{H_k}_{H_3}$ from this
+graded structure.*
+
 **Predictions of the GB-filtration prefix.**
 
 1. *At level $0$: $\beta_0^{\mathrm{GS}} = $ descended Markov-trace

@@ -8,7 +8,10 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.jet_prefix_gb_filtration",
     validation: "not_checked",
   },
-  uses: ["thm:knot-mass-formula-unified"],
+  uses: [
+    "thm:knot-mass-formula-unified",
+    "conj:confinement-grading-correspondence",
+  ],
   tags: [
     "jet-level",
     "prefix-formula",

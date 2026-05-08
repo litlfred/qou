@@ -127,3 +127,15 @@ depends only on the Markov trace of the Hecke-reduced element
 --- not on the specific braid representative, the
 decomposition of $\mathfrak{H}$ into constituents, or the path of
 braiding operations within $\mathcal{S}_p$.
+
+**Categorification.**
+Under the Brundan–Kleshchev isomorphism
+\cite{brundankleshchev2009}, the diagonalisation of $T$ via the
+Gröbner–Shirshov filtration $J^\bullet(q)$ structurally categorifies
+to the identification of a **Lusztig canonical-basis vector** in the
+KLR module category $\mathcal{K}_n$
+([crystal-graph realisation](#conj:crystal-graph-realization)): the
+equivalence class $\mathcal{T}(\mathfrak{H})$ corresponds to an
+indecomposable graded projective KLR module, and its eigenvalue
+$\hat{V}(T, q)$ is the graded Euler characteristic of that module
+under the Observation Frame $\tau$.
