@@ -20,7 +20,8 @@ evidence have been dropped (proof-gap-audit anti-hallucination rule).
 
 | Metric | Count | Status |
 |---|---|---|
-| Content blocks (kind-detected) | 1465 | — |
+| Content blocks (kind-detected by my regex sweep over per-block `.ts` files) | 1465 | — |
+| Content blocks (audit-wiring tool — includes prose / equation / diagram / simulator manifests my regex skipped, plus chapter-manifest blocks) | 1601 | denominator for the wiring row below |
 | `.lean` files in QOU paper | 659 | — |
 | Total `sorry` occurrences | 193 | per re-audit (was 58 on `main`) |
 | **Uncited sorries** (CLAUDE.md §1 violations) | **84** | ❌ |
@@ -42,7 +43,7 @@ Severity: **C** = critical (proof / schema invalid as written),
 
 | Chapter | Block / file | Kind | Skill | Sev | Issue (verbatim where possible) | Fix |
 |---|---|---|---|---|---|---|
-| **notation** | (whole chapter) | prose | rendering-auditor | — | Register correctly fixes $\mathbf{C}$ for categories, $\tau$ for fibre functor. No issues. | — |
+| **notation** | (whole chapter) | prose | rendering-auditor | — | Register correctly mandates $\mathbf{C}$ for categories and $\tau$ for fibre functor. No issues. | — |
 | **introduction** | (whole chapter) | prose | one-voice-audit | — | No TODO / FIXME / emoji / first-person leaks. | — |
 | **quantum-universes** | `categorical-connection-unique.lean:25-39` | theorem | lean-proof-review | C | `Subsingleton (CategoricalConnection C fh)` — diagnostic in same file says "claim is too strong; underlying structure carries free fields admitting distinct valid values" | Sharpen with constraining hypothesis (fixed gauge), pattern from `frobenius-pairing-unique.lean` |
 | **quantum-universes** | `categorical-hodge-star-unique.lean:24-37` | theorem | lean-proof-review | C | Same oversized `Subsingleton` diagnostic | Same pattern |
@@ -92,7 +93,8 @@ Severity: **C** = critical (proof / schema invalid as written),
 | **organic-chemistry** | (whole chapter) | — | content-block-review | ✓ | 0 sorries, 0 conjectures, 0 dangling remarks | — |
 | **q-geometric-langlands** | `q-gl-conjecture.lean` | conjecture | lean-proof-review | ✓ | 1 sorry annotated as "= conjecture (not missing proof)"; correct usage | — |
 | **glossary** (Ch 8) | 24 / 24 blocks | remark | content-block-review | ✓ | All conform to CLAUDE.md §4b: `kind: remark`, `tag: glossary`, `label: rem:glossary-*` | — |
-| **all chapters** | (cross-cutting) | — | content-block-review | C | **§4c `\defterm`/`\refterm` coverage ≈ 1 %**: spot-check finds 87 plain mentions of "monoidal category" but only 1 `:refterm`/`:defterm` wrap; same pattern for `rigid-category`, `exact-pairing`, `left-dual`, `right-dual` | Run `bun run pipeline/codemod-refterm.ts <chapter-dir> --write` per chapter; gate with `bun run validate <paper> --strict` |
+| **all chapters** | (cross-cutting) | — | content-block-review | C | **§4c `\defterm`/`\refterm` coverage ≈ 1 %**: spot-check finds 87 plain mentions of "monoidal category" but only 1 `:refterm`/`:defterm` wrap; same pattern for `rigid-category`, `exact-pairing`, `left-dual`, `right-dual`. Concrete bare-mention examples: `braids-and-knots/chirality-from-frobenius-self-pairing.md` ("braided monoidal category with ribbon structure"), `braids-and-knots/categorical-linking-operation.md`. | Run codemod per chapter (P1 step 5 below) |
+| **glossary** | 8 blocks (`weierstrass-projection`, `observed-value`, `categorical-q-torsion-leaf`, `categorical-transport`, `descent`, `quantum-flatness`, `reeb-gauge-group`, `s3-group`) | remark | content-block-review | — (informational) | These glossary blocks carry `lean.ref` to QOU-side declarations. CLAUDE.md §4b says glossary `lean` is "not required" — it does **not** prohibit a ref. **Not a violation.** Listed here only because a sub-agent flagged it as critical; verifying the ref targets exist would still be useful hygiene. | Verify each `qou:QOU.<Decl>` resolves; otherwise no action |
 | **appendix-surreals** | (chapter) | — | conjectural-propagation | M | 1 violator + 13 conjectures | check chain |
 | **all appendices** | — | — | proof-status-tracking | ✓ | No uncited sorries in any appendix | — |
 | **paper-wide** | — | — | content-block-review | M | Wiring audit: only 60 / 1601 blocks wired-e2e (3.7 %) | longer-horizon, treat as P3 |
@@ -118,7 +120,9 @@ Severity: **C** = critical (proof / schema invalid as written),
 | organic-chemistry         |   0 |  0 |   0 |  0 | ✓ |
 | models-of-qous            |   0 |  0 |   0 |  0 | ✓ |
 | appendix-surreals         |   0 |  0 |   1 |  0 | P3 |
-| (other appendices)        |   0 |  0 |   0 |  ≤4 | ✓ |
+| appendix-knot-operations  |   0 |  0 |   0 |  4 | ✓ |
+| appendix-atomic-mass-calculations | 0 | 0 | 0 | 1 | ✓ |
+| (other appendices + glossary) | 0 | 0 | 0 | 0 | ✓ |
 | **TOTAL**                 | 193 | **84** | 258 | 60 | — |
 
 ---
@@ -128,12 +132,12 @@ Severity: **C** = critical (proof / schema invalid as written),
 | Skill | Findings | Severity mix |
 |---|---|---|
 | `proof-gap-audit` (intra A–E) | ~14 found (terse-proof / unsourced cite) | 0 C, 6 M, 8 m |
-| `proof-gap-audit` (inter F–J) | ~5 (broken chains in Foundations) | 1 C, 4 M |
+| `proof-gap-audit` (inter F–J) | ~5 (broken chains + missing bridging cites in Foundations); the chapter-wide propagation issues are accounted for under `conjectural-propagation` rather than here | 0 C, 5 M |
 | `lean-completeness-audit` | **83+ provable blocks missing `.lean`** (40 in braids-and-knots, 25 in particle-interactions, 18 in descartes-universe) | 83 M |
 | `proof-narrative-lean-equivalence` | ~5 narrative-claims-stronger-than-Lean (Subsingleton over-statements + obs sorries) | 4 C, 1 M |
 | `proof-conciseness` | not a current bottleneck | 0 |
-| `content-block-review` | **§4c defterm coverage ≈ 1 %** + 24/24 glossary OK | 1 C, 0 M |
-| `lean-proof-review` | **84 uncited sorries** + 4 oversized Subsingleton + various | 4 C, 80 M |
+| `content-block-review` | **§4c defterm coverage ≈ 1 %** + glossary kind/tag/label compliance 24/24 ✓; §4b "lean-not-required" interpretation verified — 8 glossary blocks carry `lean.ref` but spec says "not required" not prohibited, so this is **not** a violation per CLAUDE.md §4b | 1 C, 0 M |
+| `lean-proof-review` | **84 uncited sorries** + 4 oversized Subsingleton + 2 misaligned `-- Ref:` (obs) | 6 C (`categorical-connection-unique`, `categorical-hodge-star-unique`, `quantum-characteristic-classes-unique`, `quantum-universe-exists`, `w-boson-mass-discrepancy`, `double-slit-massive-pattern`), 80 M |
 | `proof-status-tracking` | covered by sorry table | — |
 | `proof-triage` | Top P0: braids+descartes+particles propagation+sorries | — |
 | `one-voice-audit` | ~50 emoji/TODO/status leaks (concentrated in braids-and-knots and descartes-universe) | ~50 M/m |
@@ -187,13 +191,17 @@ Severity: **C** = critical (proof / schema invalid as written),
 
 ### P0 — unblock review (1–2 days)
 
-1. **Fix the 4 oversized `Subsingleton` declarations** in Foundations
-   using the `frobenius-pairing-unique.lean` quotient pattern.
-   *Files*: `quantum-universes/categorical-connection-unique.lean`,
+1. **Fix 3 oversized `Subsingleton` declarations + 1 uncited
+   `sorry`** in Foundations.
+   *Subsingleton sites* (apply the `frobenius-pairing-unique.lean`
+   quotient pattern):
+   `quantum-universes/categorical-connection-unique.lean`,
    `quantum-universes/categorical-hodge-star-unique.lean`,
-   `lifting-and-descent/quantum-characteristic-classes-unique.lean`,
-   plus `quantum-universe-exists.lean:29` (add `-- Ref:` or demote).
-   Skill: `lean-proof-review`.
+   `lifting-and-descent/quantum-characteristic-classes-unique.lean`.
+   *Citation site* (separate issue, same chapter):
+   `quantum-universes/quantum-universe-exists.lean:29` — add a
+   `-- Ref:` line above the `sorry` or demote the theorem to a
+   conjecture + remark. Skill: `lean-proof-review`.
 
 2. **Class-axiomatise the top-6 conjectures**:
    `e-hartree-categorical-derivation`, `phi-q-tower-jsj-bridge`,
@@ -217,12 +225,17 @@ Severity: **C** = critical (proof / schema invalid as written),
 
 ### P1 — narrative integrity (3–5 days)
 
-5. **§4c defterm/refterm sweep paper-wide.**
-   `for d in content/quantum-observable-universe/*/; do bun run pipeline/codemod-refterm.ts $d --write; done`
-   then `bun run validate quantum-observable-universe --strict` and
-   address residual `term-mention-coverage` failures by hand. CI
-   gate flips on after pass.
-   Skill: `content-block-review`.
+5. **§4c defterm/refterm sweep paper-wide.** From the repo root:
+   ```bash
+   cd content
+   for d in quantum-observable-universe/*/; do
+     bun run pipeline/codemod-refterm.ts "$d" --write
+   done
+   bun run validate quantum-observable-universe --strict
+   ```
+   Address residual `term-mention-coverage` failures by hand. The
+   `--strict` flag is the CI gate; flip it on once the sweep
+   passes. Skill: `content-block-review`.
 
 6. **Strip emoji / TODO / status banners** from
    `braids-and-knots/*.md`, `descartes-universe/*.md`,
@@ -247,11 +260,23 @@ Severity: **C** = critical (proof / schema invalid as written),
 
 ### P2 — completeness (1–2 weeks)
 
-9. **Generate stub `.lean` for the 43 missing provable-kind
-   blocks**, prioritising the LP/SDP chain in
-   `particle-interactions/`. Use `local/lean-generation` skill. For
-   each, the corresponding `.witness.json` must include the six
-   LP-dual fields (CLAUDE.md LP/SDP section).
+9. **Generate stub `.lean` for the 83+ missing provable-kind blocks**
+   (40 in `braids-and-knots/`, 25 in `particle-interactions/`,
+   18 in `descartes-universe/` — see the §2 findings table for
+   per-block lists). Sequence the work:
+   1. **First wave (43 blocks, LP/SDP & nuclear-structure
+      backbone)**: the 25 `particle-interactions/` propositions plus
+      the 18 `descartes-universe/` propositions/lemmas. The
+      particle-interactions block is the LP/SDP chain that CLAUDE.md
+      flags as first-class infra — every emitted `.witness.json`
+      must include the six LP-dual fields
+      (`y0_star`, `y_star`, `active_set`, `primal_obj`, `dual_obj`,
+      `duality_gap`).
+   2. **Second wave (40 blocks)**: `braids-and-knots/` provable
+      blocks; many of these will inherit class hypotheses from the
+      conjectures class-axiomatised in P0 step 2.
+
+   Skill: `local/lean-generation`.
 
 10. **Witness backing for observations predictions**: convert the
     15+ numerical claims to `:val[…]` directives and emit witness
