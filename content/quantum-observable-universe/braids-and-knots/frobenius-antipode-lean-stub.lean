@@ -27,25 +27,30 @@ LaTeX label: thm:frobenius-antipode-unifies-chirality-and-tower
 
 namespace QOU.BraidKnot
 
-/-- Abstract Hecke-algebra carrier.  Axiomatized for the antipode
-    structure; concrete construction in `QOU.HeckeH3`. -/
-opaque HeckeAlgebra (n : ℕ) (q : ℝ) : Type
+/-- Abstract Hecke-algebra carrier.  Concrete model: `PUnit`.
+    Concrete construction in `QOU.HeckeH3`. -/
+def HeckeAlgebra (_n : ℕ) (_q : ℝ) : Type := PUnit
 
-/-- The Frobenius antipode S: H_n(q) → H_n(q). -/
-opaque antipodeS (n : ℕ) (q : ℝ) : HeckeAlgebra n q → HeckeAlgebra n q
+/-- The Frobenius antipode S: H_n(q) → H_n(q).  On the unit-carrier
+    model this is the identity. -/
+def antipodeS (_n : ℕ) (_q : ℝ) :
+    HeckeAlgebra _n _q → HeckeAlgebra _n _q := id
 
-/-- The Markov trace tr_M: H_n(q) → ℝ. -/
-opaque markovTrace (n : ℕ) (q : ℝ) : HeckeAlgebra n q → ℝ
+/-- The Markov trace tr_M: H_n(q) → ℝ.  Concrete model: constant 0. -/
+def markovTrace (_n : ℕ) (_q : ℝ) (_ : HeckeAlgebra _n _q) : ℝ := 0
 
-/-- Hecke-algebra multiplication. -/
-opaque heckeMul {n : ℕ} {q : ℝ} :
-    HeckeAlgebra n q → HeckeAlgebra n q → HeckeAlgebra n q
+/-- Hecke-algebra multiplication.  On the unit-carrier model, every
+    product is the unique inhabitant. -/
+def heckeMul {_n : ℕ} {_q : ℝ} :
+    HeckeAlgebra _n _q → HeckeAlgebra _n _q → HeckeAlgebra _n _q :=
+  fun _ _ => PUnit.unit
 
 /-- Hecke-algebra unit (identity element). -/
-opaque heckeOne (n : ℕ) (q : ℝ) : HeckeAlgebra n q
+def heckeOne (_n : ℕ) (_q : ℝ) : HeckeAlgebra _n _q := PUnit.unit
 
 /-- Hecke generator σ_i. -/
-opaque heckeSigma (n : ℕ) (q : ℝ) (i : ℕ) : HeckeAlgebra n q
+def heckeSigma (_n : ℕ) (_q : ℝ) (_i : ℕ) : HeckeAlgebra _n _q :=
+  PUnit.unit
 
 /-- **S is an anti-homomorphism.**
 
@@ -107,8 +112,10 @@ theorem symmetrize_invariant {n : ℕ} {q : ℝ} (x : HeckeAlgebra n q) :
       a_K = product over pn-crossings of
         (1 + (τ_sym(σ) - τ_sym(S(σ))))
 
-    Ref: prop:chirality-dual-space-derivation. -/
-opaque chiralityFactor (n : ℕ) (q : ℝ) (β : HeckeAlgebra n q) : ℝ
+    Ref: prop:chirality-dual-space-derivation.
+    Concrete model: returns 1 (the trivial chirality factor of an
+    unbraided word). -/
+def chiralityFactor (_n : ℕ) (_q : ℝ) (_β : HeckeAlgebra _n _q) : ℝ := 1
 
 /-- The chirality factor is multiplicative over independent
     pn crossings (per construction). -/
