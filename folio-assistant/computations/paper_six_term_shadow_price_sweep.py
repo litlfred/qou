@@ -95,7 +95,14 @@ def dim_q_via_hooks(shape, q, n):
 
 
 def w_lambda(shape, q, n):
-    """w_λ = dim_q² / [n]_q!."""
+    """w_λ = dim_q² / [n]_q!  (**symmetric Plancherel, not Jones-Markov**).
+
+    .. warning::
+        Symmetric Plancherel weight; coincides with Jones-Markov y_λ
+        only at q = 1.  For Markov-trace contexts at q ≠ 1, use
+        `markov_weights_symbolic.solve_y_lambda(n)`.  See
+        `docs/audits/2026-05-08-p3-h-3a-divergence.md`.
+    """
     d = dim_q_via_hooks(shape, q, n)
     return d ** 2 / q_factorial(n, q)
 

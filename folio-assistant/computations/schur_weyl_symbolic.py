@@ -164,6 +164,22 @@ def schur_at_two_vars(partition, q, simplify=True):
 def schur_weyl_weight(partition, q, simplify=True):
     """w_λ(q) = s_λ(q, q⁻¹) / H_q(λ), simplified symbolically.
 
+    .. warning::
+        This is the **2-variable Schur weight**, NOT the canonical
+        Jones-Markov weight y_λ(q).  The 2-variable Schur
+        s_λ(q, q⁻¹) **vanishes for partitions with > 2 rows** —
+        callers using this for Markov-trace assembly will silently
+        drop the `(1^p)` sign-rep contribution and any other
+        ≥3-row partition.
+
+        For Markov-trace contexts (the QOU paper's tr_M = Σ y_λ χ^λ),
+        use `wedderburn_jones_markov.global_wedderburn_sum_jones_markov`
+        which calls `markov_weights_symbolic.solve_y_lambda` (Wenzl
+        Schur principal specialization, the canonical y_λ).
+
+        See `docs/audits/2026-05-08-p3-h-3a-divergence.md` for the
+        full divergence quantification (-73.6% at D, -95.6% at T/³He).
+
     F10 (PR #565): `simplify=True` opt-out parameter; default kept
     True for back-compat. Hot-loop callers should pass False.
     Per gemini review, propagate `simplify` into `schur_at_two_vars`

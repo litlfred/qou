@@ -164,16 +164,30 @@ def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     if not legacy_h3:
         try:
             import sympy as _sp
-            from schur_weyl_symbolic import global_wedderburn_sum_symbolic
-            _q_sym = _sp.Symbol("q", positive=True, real=True)
+            # Per docs/audits/2026-05-08-p3-h-3a-divergence.md: the
+            # legacy `global_wedderburn_sum_symbolic` uses the
+            # 2-variable Schur weight `s_λ(q,q⁻¹) / H_q(λ)` which
+            # vanishes for partitions with > 2 rows — actively drops
+            # the `(1^p)` sign-rep contribution.  Switching to the
+            # canonical Jones-Markov weight y_λ via
+            # `wedderburn_jones_markov.global_wedderburn_sum_jones_markov`
+            # (Wenzl Schur principal specialization).  Numerical-q-from-
+            # start: pass q_val directly so each y_λ is evaluated at q_0
+            # before the symbolic Schur, avoiding the sp.cancel
+            # bottleneck on rationals.
+            from wedderburn_jones_markov import (
+                global_wedderburn_sum_jones_markov,
+            )
             A = Z + N
-            _desc_sym, _ = global_wedderburn_sum_symbolic(
-                A, _q_sym, char_kind="mn-atom",
+            _q_for_y = _sp.Rational(str(q_val))
+            _desc_sym, _ = global_wedderburn_sum_jones_markov(
+                A, q_val=_q_for_y, char_kind="mn-atom",
                 Z=Z, N=N, include_inter=include_inter,
                 m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
             )
-            _desc_q0 = _sp.N(
-                _desc_sym.subs(_q_sym, _sp.Rational(str(q_val))), precision)
+            # _desc_sym is already evaluated at q = q_val (numerical-q-
+            # from-start); just convert to mpmath.
+            _desc_q0 = _sp.N(_desc_sym, precision)
             return abs(mpmath.mpc(complex(_desc_q0)))
         except (ImportError, ModuleNotFoundError, ValueError):
             # Specific exceptions only; fall through to legacy.
@@ -250,29 +264,39 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
         V_full = w_sym * sp + w_std * Vs + w_alt * ap
         V_full_list.append(V_full)
 
-    # Descended term: proper Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) via Schur-Weyl
+    # Descended term: proper Σ_{λ ⊢ 3A} y_λ(q) · χ^λ(𝒜) via Schur-Weyl
     # at H_{3A} (P2.2a wiring; per docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json
     # the H_3-at-H_{3A} approximation Π V_full diverges by 5–7 orders of
     # magnitude at A ≥ 2; the proper SW sum stays |·| < q_0).
     #
-    # Falls back to the legacy product if schur_weyl_symbolic is unavailable
-    # or the SW evaluation fails (preserves backward compatibility for
-    # callers passing m_pp/m_pn/m_nn != 1, where the SW char_kind="mn-atom"
-    # is not yet wired to the dressed-quark mass parameters).
-    # P2.1 wiring: SW path accepts m_pp/m_pn/m_nn (threaded through
-    # global_wedderburn_sum_symbolic → specht_character_atomic →
-    # character_on_atomic_braid → atomic_braid_word).
+    # P3 audit fix (docs/audits/2026-05-08-p3-h-3a-divergence.md):
+    # switched from `schur_weyl_symbolic.global_wedderburn_sum_symbolic`
+    # (uses the 2-variable Schur weight `s_λ(q,q⁻¹) / H_q(λ)` which
+    # vanishes for ≥3-row partitions, dropping the `(1^p)` sign-rep) to
+    # the canonical Jones-Markov weight y_λ via
+    # `wedderburn_jones_markov.global_wedderburn_sum_jones_markov`
+    # (Wenzl Schur principal specialization).  Numerical-q-from-start:
+    # pass q_val directly so y_λ is evaluated at q_0 before the
+    # symbolic Schur, avoiding sp.cancel on large rationals.
+    #
+    # Falls back to the legacy H_3 product if the SW evaluation fails
+    # (preserves backward compatibility for callers passing
+    # m_pp/m_pn/m_nn != 1, where the SW char_kind="mn-atom" is not yet
+    # wired to the dressed-quark mass parameters).
     try:
         import sympy as _sp
-        from schur_weyl_symbolic import global_wedderburn_sum_symbolic
-        _q_sym = _sp.Symbol("q", positive=True, real=True)
-        _desc_sym, _terms = global_wedderburn_sum_symbolic(
-            A, _q_sym, char_kind="mn-atom",
+        from wedderburn_jones_markov import (
+            global_wedderburn_sum_jones_markov,
+        )
+        _q_for_y = _sp.Rational(str(q_val))
+        _desc_sym, _terms = global_wedderburn_sum_jones_markov(
+            A, q_val=_q_for_y, char_kind="mn-atom",
             Z=Z, N=N, include_inter=include_inter,
             m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
         )
-        _desc_q0 = _sp.N(_desc_sym.subs(_q_sym, _sp.Rational(str(q_val))),
-                         precision)
+        # _desc_sym is already evaluated at q = q_val (numerical-q-
+        # from-start); just convert to mpmath via N + complex.
+        _desc_q0 = _sp.N(_desc_sym, precision)
         desc_abs = abs(mpmath.mpc(complex(_desc_q0)))
     except (ImportError, ModuleNotFoundError, ValueError) as _e:
         # Specific exceptions only — never silently mask NameError /
