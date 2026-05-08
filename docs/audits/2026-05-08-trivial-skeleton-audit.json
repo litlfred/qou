@@ -1,11 +1,11 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T23:33:24.360Z",
-  "total_flagged": 71,
+  "generated": "2026-05-08T23:43:22.849Z",
+  "total_flagged": 73,
   "files_flagged": 41,
   "patterns": {
     "const_zero": 34,
-    "one_def": 13,
+    "one_def": 15,
     "skel_inst": 12,
     "holds_trivial": 9,
     "id_def": 1,
@@ -384,6 +384,16 @@
         "line": 231,
         "pattern": "one_def",
         "snippet": "def dimqPartition111 (_q : ℝ) : ℝ := 1"
+      },
+      {
+        "line": 292,
+        "pattern": "one_def",
+        "snippet": "def dimqPartition4 (_q : ℝ) : ℝ := 1"
+      },
+      {
+        "line": 306,
+        "pattern": "one_def",
+        "snippet": "def dimqPartition1111 (_q : ℝ) : ℝ := 1"
       }
     ],
     "molecular-construction/shell-closure-nf-term-count.lean": [

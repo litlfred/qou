@@ -251,6 +251,105 @@ noncomputable def yLambda_col3 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 3
 theorem yLambda_row3_eq_col3 (q : ℝ) :
     yLambda_row3 q = yLambda_col3 q := rfl
 
+/-- **Hook-formula derivation** for `dim_q([2,1])`.  Frame–
+    Robinson–Thrall: `dim_q(λ) = [n]_q! / H_q(λ)`.  At `λ =
+    [2,1]`, hooks `(3, 1, 1)`, so `H_q = [3]_q · [1]_q · [1]_q
+    = [3]_q · 1 · 1 = [3]_q` (using `[1]_q = 1`).  Then
+    `dim_q([2,1]) = [3]_q · [2]_q · [1]_q / [3]_q = [2]_q · 1
+    = q + q⁻¹`.  This theorem audits the closed-form
+    `dimqPartition21 q = q + q⁻¹` against the underlying
+    q-arithmetic. -/
+theorem dimqPartition21_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+    QOU.qFactorial q 3 / QOU.qHookProduct q [3, 1, 1]
+      = dimqPartition21 q := by
+  unfold dimqPartition21
+  show QOU.qFactorial q 3 / QOU.qHookProduct q [3, 1, 1] = q + q⁻¹
+  show QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))
+    / (QOU.qInteger q 3 * (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))
+    = q + q⁻¹
+  rw [QOU.qInteger_two q hq, QOU.qInteger_one q hq]
+  have h3 : QOU.qInteger q 3 ≠ 0 := by
+    rw [QOU.qInteger_three q hq]
+    nlinarith [sq_nonneg q, sq_nonneg q⁻¹, sq_nonneg (q + q⁻¹)]
+  field_simp
+  ring
+
+/-! ### n=4 dim_q values
+
+    Hook formula `dim_q(λ) = [4]_q! / H_q(λ)`:
+    - `[4]`        : hooks `(4,3,2,1)`,   `H_q = [4]_q!`,
+                     `dim_q = 1`.
+    - `[3,1]`      : hooks `(4,2,1,1)`,   `H_q = [4]_q · [2]_q`,
+                     `dim_q = [3]_q · [1]_q = [3]_q`.
+    - `[2,2]`      : hooks `(3,2,2,1)`,   `H_q = [3]_q · [2]_q²`,
+                     `dim_q = [4]_q · [1]_q / [2]_q = [4]_q/[2]_q`.
+    - `[2,1,1]`    : hooks `(4,1,2,1)`,   `H_q = [4]_q · [2]_q`,
+                     `dim_q = [3]_q · [1]_q = [3]_q`.
+    - `[1,1,1,1]`  : hooks `(4,3,2,1)`,   `H_q = [4]_q!`,
+                     `dim_q = 1`. -/
+
+/-- `dim_q([4]) = 1`. -/
+def dimqPartition4 (_q : ℝ) : ℝ := 1
+
+/-- `dim_q([3,1]) = [3]_q`. -/
+noncomputable def dimqPartition31 (q : ℝ) : ℝ := QOU.qInteger q 3
+
+/-- `dim_q([2,2]) = [4]_q / [2]_q`. -/
+noncomputable def dimqPartition22 (q : ℝ) : ℝ :=
+  QOU.qInteger q 4 / QOU.qInteger q 2
+
+/-- `dim_q([2,1,1]) = [3]_q`.  Equal to `dim_q([3,1])` (column-row
+    duality). -/
+noncomputable def dimqPartition211 (q : ℝ) : ℝ := QOU.qInteger q 3
+
+/-- `dim_q([1,1,1,1]) = 1`. -/
+def dimqPartition1111 (_q : ℝ) : ℝ := 1
+
+/-- Column-row duality at `n = 4`: `dim_q([3,1]) = dim_q([2,1,1])`. -/
+theorem dimqPartition31_eq_dimqPartition211 (q : ℝ) :
+    dimqPartition31 q = dimqPartition211 q := rfl
+
+/-- Self-duality at `n = 4`: `dim_q([4]) = dim_q([1,1,1,1]) = 1`. -/
+theorem dimqPartition4_eq_dimqPartition1111 (q : ℝ) :
+    dimqPartition4 q = dimqPartition1111 q := rfl
+
+/-! ### n=4 y_λ Wenzl-bridge coefficients
+
+    `y_λ = d_λ / H_q(λ)` (closed form after `dim_q · d_λ /
+    [n]_q!` cancellation).
+    - `y_[4]       = 1 / [4]_q!`.
+    - `y_[3,1]     = 3 / ([4]_q · [2]_q)`.
+    - `y_[2,2]     = 2 / ([3]_q · [2]_q²)`.
+    - `y_[2,1,1]   = 3 / ([4]_q · [2]_q)`.
+    - `y_[1,1,1,1] = 1 / [4]_q!`. -/
+
+/-- `y_[4] = 1 / [4]_q!`. -/
+noncomputable def yLambda_row4 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 4
+
+/-- `y_[3,1] = 3 / ([4]_q · [2]_q)`. -/
+noncomputable def yLambda_31 (q : ℝ) : ℝ :=
+  3 / (QOU.qInteger q 4 * QOU.qInteger q 2)
+
+/-- `y_[2,2] = 2 / ([3]_q · [2]_q²)`. -/
+noncomputable def yLambda_22 (q : ℝ) : ℝ :=
+  2 / (QOU.qInteger q 3 * QOU.qInteger q 2 ^ 2)
+
+/-- `y_[2,1,1] = 3 / ([4]_q · [2]_q)`.  Equal to `y_[3,1]`
+    (column-row duality at n = 4). -/
+noncomputable def yLambda_211 (q : ℝ) : ℝ :=
+  3 / (QOU.qInteger q 4 * QOU.qInteger q 2)
+
+/-- `y_[1,1,1,1] = 1 / [4]_q!`. -/
+noncomputable def yLambda_col4 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 4
+
+/-- Column-row duality at `n = 4` for `y_λ`. -/
+theorem yLambda_31_eq_yLambda_211 (q : ℝ) :
+    yLambda_31 q = yLambda_211 q := rfl
+
+/-- Self-duality at `n = 4` for `y_λ`. -/
+theorem yLambda_row4_eq_yLambda_col4 (q : ℝ) :
+    yLambda_row4 q = yLambda_col4 q := rfl
+
 /-! ### Cohort: `n = 5` (7 partitions)
 
     Partition data:
