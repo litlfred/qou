@@ -230,6 +230,8 @@ export default chapter({
         "bloch-wigner-mathlib-filler",
         "mass-tower-deeper-fillers",
         "three-substantive-mathlib-fillers",
+        "bloch-group-quotient-construction",
+        "cl2-pentagon-and-faddeev-partial",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
