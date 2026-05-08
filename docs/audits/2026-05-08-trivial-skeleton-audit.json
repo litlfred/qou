@@ -1,6 +1,6 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T23:24:44.310Z",
+  "generated": "2026-05-08T23:28:59.347Z",
   "total_flagged": 69,
   "files_flagged": 41,
   "patterns": {
@@ -366,12 +366,12 @@
     ],
     "lean/QOU/Mathlib/WenzlBridgeConcrete.lean": [
       {
-        "line": 49,
+        "line": 50,
         "pattern": "one_def",
         "snippet": "def dimqRowPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 55,
+        "line": 56,
         "pattern": "one_def",
         "snippet": "def dimqColPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
       }

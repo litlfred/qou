@@ -69,6 +69,16 @@ theorem qInteger_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
   field_simp
   ring
 
+/-- `[3]_q = q² + 1 + q⁻²` for `q ≠ q⁻¹`.  Closed form of the
+    third q-integer; uses the factorisation `q³ - q⁻³ =
+    (q - q⁻¹)(q² + 1 + q⁻²)`. -/
+theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+    qInteger q 3 = q ^ 2 + 1 + (q⁻¹) ^ 2 := by
+  unfold qInteger
+  have hne : q - q⁻¹ ≠ 0 := hq
+  field_simp
+  ring
+
 /-- The q-factorial `[n]_q! = ∏_{k=1..n} [k]_q`.  Returns 1 for n = 0. -/
 noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
   | 0     => 1
