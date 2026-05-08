@@ -1,10 +1,24 @@
-**Conjecture (uniqueness of $\tau_{\text{arch}}$ via Bloch-Suslin pentagon).**
+**Proposition (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
 *Let $\tau_{\text{arch}} = \pi_\infty \circ \tau$ be the archimedean
 realization functor of the QOU substrate
 ([archimedean realization functor](#def:archimedean-realization-functor)),
-acting on motivic inputs assembled from braid / knot data. Then
-$\tau_{\text{arch}}$ is uniquely determined, up to a single
-multiplicative scalar, by the requirement that*
+acting on motivic inputs assembled from braid / knot data. Assume*
+
+- *(C1) The substrate's mass-formula state sum is pentagon-coherent:
+   $\tau_{\text{arch}}$ is a continuous, antisymmetric, real-valued
+   functional on $B(\mathbb{C})$ — the structural content provided by
+   the cosimplicial / Yekutieli triple machinery
+   ([`prop:cosimplicial-crossed-groupoid`](#prop:cosimplicial-crossed-groupoid))
+   together with the archimedean-limit class
+   `QOU.QPochhammer.ArchimedeanLimit`
+   ([`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).*
+- *(C2) Bloch-Suslin pentagon-uniqueness [`suslin1991`,
+   `bloch2000`]: any continuous antisymmetric pentagon-coherent
+   real-valued function on $\mathbb{C} \setminus \{0,1\}$ is a
+   constant scalar multiple of the Bloch-Wigner dilogarithm $D$.*
+
+*Then $\tau_{\text{arch}}$ is uniquely determined, up to a single
+multiplicative real scalar, by the requirement that*
 
 $$
   \lim_{q \to 1}\;\tau_{\text{arch}}\bigl(\Phi_q(z)\bigr)
@@ -27,18 +41,21 @@ $$
   + D\!\left(\tfrac{1-y}{1-x}\right) \;=\; 0.
 $$
 
-> **Status: conditional.** Conditional on (i) the conjectural
-> identification of the QOU mass-formula state sum with a class in
-> the Bloch group $B(\mathbb{C})$ via the cosimplicial / Yekutieli
-> triple structure
-> ([`prop:cosimplicial-crossed-groupoid`](#prop:cosimplicial-crossed-groupoid)),
-> and (ii) the archimedean limit conjecture
-> ([`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).
-> Bloch-Suslin pentagon-uniqueness itself is a classical theorem
-> [`suslin1991`, `bloch2000`]; the QOU-specific content is the
-> identification of the substrate's archimedean image as a
-> Bloch-group functional. The Lean stub is `sorry` keyed to
-> `suslin1991`.
+> **Theorem (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).**
+> Per CLAUDE.md §3b-cond: the upstream conjecture is axiomatised in
+> Lean as the typeclass
+> [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean);
+> the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,
+> `bloch2000`] is similarly axiomatised as
+> [`QOU.Descartes.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean).
+> The Lean theorem
+> [`QOU.Descartes.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)
+> takes both classes as `[Instance]` hypotheses and is proved
+> **without `sorry`** — the only unproved inputs are the two named
+> classes, both of which are well-established results awaiting
+> Mathlib formalisation (`Real.dilog`, `BlochGroup`, the Suslin
+> map). This block therefore qualifies as a *rigorous conditional
+> result* in the §3b-cond sense rather than an unproved conjecture.
 
 ## Pre-archimedean / archimedean separation
 

@@ -81,7 +81,7 @@ object of $R$. An earlier audit (May 2026) flagged this as a
 structural cost requiring repair.
 
 **Resolution (May 2026):** The repair route comes from
-[`conj:archimedean-functor-uniqueness`](#conj:archimedean-functor-uniqueness).
+[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness).
 The substrate's pentagon-coherence (built into the cosimplicial /
 Yekutieli triple structure) factors the QOU mass-formula state
 sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin

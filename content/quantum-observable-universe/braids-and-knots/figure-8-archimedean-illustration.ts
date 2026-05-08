@@ -4,7 +4,7 @@ export default remark({
   label: "rem:figure-8-archimedean-illustration",
   title:
     "Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy",
-  interprets: "conj:archimedean-functor-uniqueness",
+  interprets: "prop:archimedean-functor-uniqueness",
   tags: [
     "figure-8-knot",
     "amphichiral",
@@ -17,7 +17,7 @@ export default remark({
     "illustration",
   ],
   uses: [
-    "conj:archimedean-functor-uniqueness",
+    "prop:archimedean-functor-uniqueness",
     "def:archimedean-realization-functor",
     "def:algebraic-quantum-volume",
     "conj:kashaev-volume-conjecture",

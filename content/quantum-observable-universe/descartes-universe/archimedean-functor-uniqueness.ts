@@ -1,9 +1,9 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:archimedean-functor-uniqueness",
+export default proposition({
+  label: "prop:archimedean-functor-uniqueness",
   title:
-    "Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon)",
+    "Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)",
   tags: [
     "archimedean",
     "realization-functor",
@@ -16,6 +16,7 @@ export default conjecture({
     "alpha-em",
     "fine-structure-constant",
     "pre-archimedean",
+    "conditional-class",
   ],
   uses: [
     "def:archimedean-realization-functor",
@@ -24,8 +25,8 @@ export default conjecture({
     "def:motivic-substrate",
     "prop:quantum-dilogarithm-volume",
     "conj:dilogarithm-archimedean-limit",
-    "conj:mass-endomorphism",
     "conj:kashaev-volume-conjecture",
+    "conj:mass-endomorphism",
     "prop:cosimplicial-crossed-groupoid",
   ],
   cites: [
@@ -35,6 +36,7 @@ export default conjecture({
     "kashaev1997",
     "murakami-murakami2001",
     "faddeev1994",
+    "thurston1978",
   ],
   lean: {
     ref: "qou:QOU.Descartes.archimedean_functor_uniqueness",

@@ -184,7 +184,7 @@ earlier "pre-archimedean concern" — that the candidate correction
 $2/(3\pi)$ imports $\pi$ via Bring-surface Hodge data, none of which
 is an object of $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ — is
 **structurally resolved** by
-[`conj:archimedean-functor-uniqueness`](#conj:archimedean-functor-uniqueness):
+[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
 the substrate's pentagon-coherence factors the QOU mass-formula
 state sum through a class in the Bloch group $B(\mathbb{C})$, and
 Bloch-Suslin pentagon-uniqueness [`suslin1991`, `bloch2000`] forces

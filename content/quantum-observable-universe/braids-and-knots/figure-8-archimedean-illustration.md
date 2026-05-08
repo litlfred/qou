@@ -4,7 +4,7 @@ example).**
 The figure-8 knot $4_1$ is the smallest hyperbolic knot
 [`thurston1978`] and serves as the cleanest illustration of the
 dual existence forced by
-[`conj:archimedean-functor-uniqueness`](#conj:archimedean-functor-uniqueness):
+[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
 *algebraic / motivic in the substrate, transcendental in the
 laboratory*.
 
@@ -81,7 +81,7 @@ measurement. Both pictures are needed:
 | Archimedean | $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)$ | $\mathbb{R}$ (transcendental) | Laboratory mass-scale, Higgs-like amphichiral mechanism |
 
 The bridge between the two columns is uniquely determined by
-[`conj:archimedean-functor-uniqueness`](#conj:archimedean-functor-uniqueness):
+[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
 no other archimedean image is admissible.
 
 **Cross-reference: $\alpha_{EM}$.** The same dichotomy underlies
