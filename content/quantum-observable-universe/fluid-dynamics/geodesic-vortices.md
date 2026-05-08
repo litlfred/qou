@@ -33,7 +33,7 @@ self-induction (Hasimoto soliton).
 
 **Stability.**
 The second variation $\delta^2\mathcal{E}_q$ decomposes via the
-[weight-space decomposition](#def:adjoint-weight-decomposition):
+[weight-space decomposition](#def:weight-decomposition):
 
 - **Longitudinal** (Cartan): stable, eigenvalues
   $[k]_q^2 \hbar_q / L_q^2$ ([discrete

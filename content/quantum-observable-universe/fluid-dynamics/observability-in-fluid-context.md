@@ -42,7 +42,7 @@ In the [brane fluid](#sec:brane-fluid):
    dynamically active.
 
 4. **Vortex stretching is isotropic.**  The
-   [weight-space decomposition](#def:adjoint-weight-decomposition)
+   [weight-space decomposition](#def:weight-decomposition)
    of the adjoint bundle has no trivial component.  The
    stretching term $(\omega \cdot \nabla)v$ in the vorticity
    equation acts nontrivially in every direction — vorticity

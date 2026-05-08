@@ -27,7 +27,7 @@ that yield the same result:
 | Ribbon trace | Algebraic | $\lVert\mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta_{\mathfrak{H}}))\rVert \cdot (q-1)^2$ |
 | Gröbner--Shirshov reduction | Computational | $(q-1)^2 \sum \lvert c_w\rvert \cdot \lvert q - q^{-1}\rvert$ |
 
-The first is the definition ([mass over $\mathbb{C}$](#ex:mass-identity-C)).
+The first is the definition ([mass over $\mathbb{C}$](#ex:mass-identity-su2)).
 The second follows from the ribbon category structure
 ([mass--energy equivalence](#thm:mass-energy-equivalence)).
 The third is the content of this proposition.

@@ -160,9 +160,21 @@ def _cached_seminormal(shape: tuple[int, ...]):
     json_path = stem.with_suffix(".json")
     if npz_path.exists() and json_path.exists():
         try:
-            with np.load(npz_path) as npz:
-                sigmas = [npz[f"sig{i}"] for i in range(len(npz.files))]
             meta = json.loads(json_path.read_text())
+            # PR #565 (Gemini review): drive sigma reconstruction from
+            # the explicit n_sigmas count in the JSON sidecar rather
+            # than from the npz file list, so the loader is robust to
+            # legacy archives that may carry extra arrays alongside
+            # the sig{i} entries. Falls back to len(npz.files) if the
+            # field is absent (older caches written before this PR).
+            with np.load(npz_path) as npz:
+                if "n_sigmas" in meta:
+                    n_sigmas = int(meta["n_sigmas"])
+                else:
+                    n_sigmas = sum(
+                        1 for k in npz.files if k.startswith("sig")
+                    )
+                sigmas = [npz[f"sig{i}"] for i in range(n_sigmas)]
             syts = [{int(k): int(v) for k, v in d.items()}
                     for d in meta["syts"]]
             data = (sigmas, int(meta["dim"]), syts)
@@ -184,6 +196,7 @@ def _cached_seminormal(shape: tuple[int, ...]):
                             **{f"sig{i}": M for i, M in enumerate(dense)})
         json_path.write_text(json.dumps({
             "dim": int(dim),
+            "n_sigmas": len(dense),
             "syts": [{str(k): int(v) for k, v in d.items()} for d in syts],
         }))
     except Exception:
