@@ -138,16 +138,22 @@ jobs:
         # `experimental_constants.Q_NEUTRON_MEV` (computed from CODATA
         # m_n - m_p - m_e). Strict mode fails CI if any active code
         # site hardcodes the value or anchors on proton mass instead.
+        # Path: script was moved to _deprecated/ in 1026fa8b ('move
+        # 262 unblocked .py to _deprecated/') but the gate is still
+        # operative and should be relocated as a follow-up.
         run: |
-          python3 folio-assistant/computations/e0_calibration_audit.py --strict
+          python3 folio-assistant/computations/_deprecated/e0_calibration_audit.py --strict
 
       - name: Cross-check tr_M @ q_0 — Hoefsmit vs markov_peel (1ppb)
         # Independent-path consistency gate for the canonical Markov
         # trace at the calibrated substrate parameter q_0. Both paths
         # store full 50-dps decimal strings; the script reports
         # relative |Δ| via mpmath. Strict mode fails CI on any > 1ppb.
+        # Path: script was moved to _deprecated/ in 1026fa8b ('move
+        # 262 unblocked .py to _deprecated/') but the gate is still
+        # operative and should be relocated as a follow-up.
         run: |
-          python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
+          python3 folio-assistant/computations/_deprecated/cross_check_trM_1ppb.py --strict
 
       - name: Axiomatic Markov-trace recursive reducer (H_3..H_6)
         # Per prop:markov-trace-recursive-reducer: terminating axiom-
