@@ -1,6 +1,6 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T21:45:11.824Z",
+  "generated": "2026-05-08T22:05:11.811Z",
   "total_flagged": 62,
   "files_flagged": 39,
   "patterns": {
@@ -283,7 +283,7 @@
     ],
     "fluid-dynamics/levi-degeneracy-conjecture.lean": [
       {
-        "line": 49,
+        "line": 61,
         "pattern": "holds_trivial",
         "snippet": "levi_degeneracy_holds := rfl"
       }

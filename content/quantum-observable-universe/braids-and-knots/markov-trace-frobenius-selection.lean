@@ -108,14 +108,23 @@ theorem tau_M_non_degenerate {R : Type u} [Field R]
 /-- Predicate: the partition indexed by `lambda_idx` (under any
     enumeration of partitions of `n`) has Young-diagram height > 2.
 
-    Concrete predicate: `lambda_idx ≥ 1` — at any reasonable
-    enumeration of partitions, the index `0` corresponds to the
-    one-row partition (height 1) and `≥ 1` captures the
-    non-trivial-height entries.  This is a weakest-non-trivial
-    sanity bound; the exact enumeration-dependent height check
-    belongs to the genuine partition-lattice formalisation. -/
-def PartitionHeightGtTwo (_n : ℕ) (lambda_idx : ℕ) : Prop :=
-  lambda_idx ≥ 1
+    Concrete predicate: `n ≥ 3 ∧ lambda_idx ≥ 1` — encodes the two
+    enumeration-independent **necessary** conditions for a height-
+    >2 partition to exist:
+      (i)  `n ≥ 3` (height-3+ partitions of `n` only exist when
+           `n` has at least 3 strands), and
+      (ii) `lambda_idx ≥ 1` (at any reasonable enumeration the
+           one-row partition `[n]` of height 1 sits at index 0).
+
+    These are **necessary** but not sufficient: at `n = 4`, for
+    example, `[3,1]` and `[2,2]` both have height 2 yet satisfy
+    the predicate.  False positives are tolerated; the genuine
+    height test belongs to a partition-lattice formalisation
+    (Mathlib `Combinatorics.Young.YoungDiagram.colLen`).  Use this
+    predicate as the substrate-level *necessary* hypothesis
+    (caller-supplied), not as a sufficient height check. -/
+def PartitionHeightGtTwo (n : ℕ) (lambda_idx : ℕ) : Prop :=
+  n ≥ 3 ∧ lambda_idx ≥ 1
 
 /-- **Substrate axiom (S-Frobenius-degenerate-SW).**
 
@@ -149,21 +158,22 @@ theorem tau_M_satisfies_non_degeneracy {R : Type u} [Field R]
       (fun li => tau_M_block_value (R := R) n li q) :=
   fun li => tau_M_non_degenerate n li q hq hq_generic
 
-/-- Witness theorem: there exists a partition index whose underlying
-    partition has height > 2.  Under the
-    `PartitionHeightGtTwo n li := li ≥ 1` model this is `∃ li,
-    li ≥ 1`, witnessed by `li = 1`. -/
-theorem exists_height_gt_two_index (n : ℕ) :
+/-- Witness theorem: when `n ≥ 3`, there exists a partition index
+    satisfying the (necessary) `PartitionHeightGtTwo` predicate.
+    Witnessed by `li = 1` and the supplied `n ≥ 3` hypothesis. -/
+theorem exists_height_gt_two_index (n : ℕ) (hn : n ≥ 3) :
     ∃ li, PartitionHeightGtTwo n li :=
-  ⟨1, le_refl 1⟩
+  ⟨1, hn, le_refl 1⟩
 
-/-- **Theorem.** τ_SW DOES NOT satisfy non-degeneracy. -/
+/-- **Theorem.** τ_SW DOES NOT satisfy non-degeneracy.  On the
+    concrete `tau_SW ≡ 0` model, the conclusion holds for every
+    `(n, q)` directly via `li = 0`; no detour through the
+    enumeration-fragile `PartitionHeightGtTwo` predicate is
+    required. -/
 theorem tau_SW_fails_non_degeneracy {R : Type u} [Field R]
     (n : ℕ) (q : R) :
-    ∃ li, tau_SW_block_value (R := R) n li q = 0 := by
-  obtain ⟨li, h_height⟩ := exists_height_gt_two_index n
-  refine ⟨li, ?_⟩
-  exact tau_SW_degenerate_height_gt_2 n li q h_height
+    ∃ li, tau_SW_block_value (R := R) n li q = 0 :=
+  ⟨0, rfl⟩
 
 /-- **Selection theorem.**  The QOU mass formula's Frobenius co-Casimir
     construction is well-defined under τ_M but NOT under τ_SW.

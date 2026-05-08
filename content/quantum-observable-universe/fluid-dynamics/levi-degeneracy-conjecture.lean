@@ -14,6 +14,16 @@ degenerates exactly at the parameter values $q_\kappa = e^{i\pi/\kappa}$
 ($\kappa \geq 2$)**, and the degeneracy set is therefore countable.
 >>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
+This Lean axiomatisation works in the **real-parameter projection**:
+the manuscript's complex principal-root family
+$q_\kappa = e^{i\pi/\kappa}$ is parametrised by the angular fraction
+$\theta_\kappa = \pi/\kappa$, and the Lean `degeneracySet` records
+the angular reciprocal $1/\kappa \in \mathbb{R}$.  Each $1/\kappa$
+is the unique real datum identifying the principal root $q_\kappa$
+on the unit circle — formalising directly in $\mathbb{C}$ awaits
+the complex-`q` substrate API (Mathlib root-of-unity machinery
+indexed over an arbitrary `R`-valued parameter).
+
 LaTeX label: `conj:levi-degeneracy`
 
 ## Conjectural content
@@ -63,9 +73,11 @@ class LeviDegeneracy where
   degeneracySet : Set ℝ
   /-- The Levi form is symmetric. -/
   leviForm_symm : ∀ x y, leviForm x y = leviForm y x
-  /-- **The conjecture itself.**  The degeneracy set is precisely the
-      countable family $\{1/\kappa : \kappa \geq 2\}$ representing the
-      principal-root parameters $q_\kappa = e^{i\pi/\kappa}$. -/
+  /-- **The conjecture itself.**  The (real-parameter projection of
+      the) degeneracy set is precisely the countable family
+      $\{1/\kappa : \kappa \geq 2\}$, where each $1/\kappa$ is the
+      angular reciprocal of the manuscript's principal-root parameter
+      $q_\kappa = e^{i\pi/\kappa}$ on the unit circle. -/
   -- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture
   levi_degeneracy_holds :
     degeneracySet = { x : ℝ | ∃ κ : ℕ, 2 ≤ κ ∧ x = 1 / (κ : ℝ) }

@@ -230,8 +230,10 @@ def FiltrationCertificateFormat : Prop :=
 
 theorem filtration_certificate_format_specified : FiltrationCertificateFormat := by
   -- Ref: gb-filtration-jet-order.witness.json §framework.
-  -- Each seed entry has a fixed σ-word string; check by enumeration.
+  -- `atomKnotAtlas` is a `List`, so we exhaust membership via
+  -- `cases he` (NOT `fin_cases`, which expects a Fin / Fintype).
   intro e he
-  fin_cases he <;> decide
+  simp only [atomKnotAtlas, List.mem_cons, List.not_mem_nil, or_false] at he
+  rcases he with rfl | rfl <;> decide
 
 end QOU.BraidsAndKnots

@@ -59,26 +59,35 @@ inductive ConfMorphism : ConfinedParticleTy → ConfinedParticleTy → Type wher
 def ConfId : ∀ (P : ConfinedParticleTy), ConfMorphism P P :=
   fun P => ConfMorphism.unfold P P
 
-/-- Composition of confinement morphisms — concrete pick: take the
-    later morphism `g`'s identity-like behaviour by returning a
-    canonical morphism between the endpoints. -/
+/-- Composition of confinement morphisms — concrete pick: preserve
+    the morphism *kind* of the outer-applied morphism `g`, with new
+    endpoints `(P, R)`.  This satisfies the right-identity law
+    `f ∘ id_P = f` because `match f with | unfold _ _ ⇒ unfold P Q`
+    rebuilds `f` itself when `f = unfold P Q` (and similarly for
+    `fold` / `dress`).  The earlier "always return `unfold`" model
+    failed the identity law for `dress`/`fold` morphisms. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
-def ConfComp :
-    ∀ {P Q R : ConfinedParticleTy},
-      ConfMorphism Q R → ConfMorphism P Q → ConfMorphism P R :=
-  fun {P _ R} _ _ => ConfMorphism.unfold P R
+def ConfComp {P Q R : ConfinedParticleTy}
+    (g : ConfMorphism Q R) (_f : ConfMorphism P Q) : ConfMorphism P R :=
+  match g with
+  | ConfMorphism.unfold _ _    => ConfMorphism.unfold P R
+  | ConfMorphism.fold _ _      => ConfMorphism.fold P R
+  | ConfMorphism.dress _ _ s   => ConfMorphism.dress P R s
 
-/-- **Confinement category.** The axioms of a category (associativity
-    of composition, identity laws) hold on the structure above.
+/-- Right-identity law: `ConfComp f (ConfId P) = f` for every `f`. -/
+theorem ConfComp_right_id (P Q : ConfinedParticleTy) (f : ConfMorphism P Q) :
+    ConfComp f (ConfId P) = f := by
+  cases f <;> rfl
 
-    Under the concrete `ConfComp _ f := unfold` definition the
-    associativity equation reduces to two equal canonical morphisms
-    `ConfMorphism.unfold P S = ConfMorphism.unfold P S`, witnessed
-    by `rfl`. -/
+/-- **Confinement category.** Associativity of composition holds on
+    the kind-preserving model: composing on either side with `h`
+    reduces by `match` to `h.kind P S` whichever way you parenthesise.
+    Witnessed by `rfl`-style evaluation after `cases h`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category
 theorem ConfinementCategory
     (P Q R S : ConfinedParticleTy)
     (f : ConfMorphism P Q) (g : ConfMorphism Q R) (h : ConfMorphism R S) :
-    ConfComp h (ConfComp g f) = ConfComp (ConfComp h g) f := rfl
+    ConfComp h (ConfComp g f) = ConfComp (ConfComp h g) f := by
+  cases h <;> cases g <;> rfl
 
 end QOU.BraidKnot

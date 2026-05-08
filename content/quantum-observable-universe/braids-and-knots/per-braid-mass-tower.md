@@ -75,14 +75,17 @@ $$
   + z^2\!\!\sum_{(i,j)\in\mathcal{P}_n}\!\!\Phi_q(|\hat V_i^{\text{full}}\hat V_j^{\text{full}}|).
 $$
 
-The per-generator \$\hat V\_i^{\text{full}} = w\_{\text{sym}}V\_{\text{sym},i}
-
-* w\_{\text{std}}V\_{\text{std},i} + w\_{\text{alt}}V\_{\text{alt},i}$mixes three Wedderburn channels — but **at the H_3 weights$w\_{\text{sym}/\text{std}/\text{alt}} = \dim\_q(\lambda)^2/\[3]*q!$for$\lambda \vdash 3$**. Applying these weights per-generator at
-  $H*{3A}$is a structural mismatch
-  ([H_3-at-H_{3A} weight derivation](../../../docs/audits/2026-05-01-h3-at-h3a-weight-derivation.md)):
-  the actual$H\_{3A}$Wedderburn decomposition is indexed by
-  partitions$\lambda \vdash 3A$, not by H_3-channels, and the
-  per-generator product compounds $\hat V\_i$values past the$\Phi\_q$convergence radius$|z| < q\$.
+The per-generator $\hat V_i^{\text{full}} = w_{\text{sym}}V_{\text{sym},i}
++ w_{\text{std}}V_{\text{std},i} + w_{\text{alt}}V_{\text{alt},i}$
+mixes three Wedderburn channels — but **at the $H_3$ weights
+$w_{\text{sym}/\text{std}/\text{alt}} = \dim_q(\lambda)^2/[3]_q!$
+for $\lambda \vdash 3$**. Applying these weights per-generator at
+$H_{3A}$ is a structural mismatch
+([H_3-at-H_{3A} weight derivation](../../../docs/audits/2026-05-01-h3-at-h3a-weight-derivation.md)):
+the actual $H_{3A}$ Wedderburn decomposition is indexed by
+partitions $\lambda \vdash 3A$, not by $H_3$-channels, and the
+per-generator product compounds $\hat V_i$ values past the
+$\Phi_q$ convergence radius $|z| < q$.
 
 The **per-braid** form replaces this with three structural
 improvements:
@@ -140,12 +143,12 @@ with witness
 
 Per-braid tower values (at $q_0 \approx 1.11$):
 
-\| Atom | descended $|\mathrm{tr}_M(W)|$ | single $\sum\Phi_q$ | pair $z^2\sum\Phi_q$ | total | max sub-trace | $\Phi_q$ conv |
-\|------|------------------------------:|--------------------:|---------------------:|------:|--------------:|:-------------:|
-\| D    | $1.56 \times 10^{-2}$ | $3.70 \times 10^{3}$ | $2.87 \times 10^{-1}$ | $3.70 \times 10^{3}$ | $0.67$ | yes |
-\| ³He  | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
-\| ³H   | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
-\| ⁴He  | $4.43 \times 10^{-6}$ | $7.40 \times 10^{3}$ | $1.72$               | $7.40 \times 10^{3}$ | $0.67$ | yes |
+| Atom | descended $|\mathrm{tr}_M(W)|$ | single $\sum\Phi_q$ | pair $z^2\sum\Phi_q$ | total | max sub-trace | $\Phi_q$ conv |
+|------|------------------------------:|--------------------:|---------------------:|------:|--------------:|:-------------:|
+| D    | $1.56 \times 10^{-2}$ | $3.70 \times 10^{3}$ | $2.87 \times 10^{-1}$ | $3.70 \times 10^{3}$ | $0.67$ | yes |
+| ³He  | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
+| ³H   | $8.83 \times 10^{-4}$ | $5.55 \times 10^{3}$ | $8.62 \times 10^{-1}$ | $5.55 \times 10^{3}$ | $0.67$ | yes |
+| ⁴He  | $4.43 \times 10^{-6}$ | $7.40 \times 10^{3}$ | $1.72$               | $7.40 \times 10^{3}$ | $0.67$ | yes |
 
 For comparison, the per-generator H\_3 tower at the same atoms
 gives totals $\sim 10^{6}$ — reflecting the H\_3-at-H\_{3A}

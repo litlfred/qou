@@ -156,16 +156,20 @@ theorem categorical_mass_invariant_finite (T_w : Type*) :
 
 /-- Mass identity (Archimedean realization).
 
-    Concrete predicate: `cert.B_pred_MeV ≥ 0` — the predicted
-    binding energy is non-negative.  Witnessed for every AME-
-    validated derivation in the from-scratch chain (D, T, ³He,
-    ⁴He, ⁶Li, ⁷Li, ⁹Be).  Genuine content (`B_pred = m_e · M(𝔥)
-    |_{q = q_0}` with a categorical Archimedean realisation
-    functor) awaits Mathlib formalisation of the realisation
-    functor; the non-negativity bound is the empirical lower-
-    bound version. -/
+    Concrete predicate: `B_pred ≥ 0` AND `|B_pred − B_AME| ≤ B_AME/4`
+    — the predicted binding energy is non-negative and within 25 %
+    of the AME 2020 reference value.  Witnessed for every AME-
+    validated derivation in `mass-table-ppb.witness.json` (10 light
+    atoms ²H–⁴⁰Ca; max relative error ≈ 19.5 % at ⁴⁰Ca).
+
+    Genuine content (`B_pred = m_e · M(𝔥)|_{q = q_0}` with a
+    categorical Archimedean realisation functor) awaits Mathlib
+    formalisation of the realisation functor; the 25 %-tolerance
+    bound is the empirical version that catches predictions which
+    are wildly off without forcing PPB precision. -/
 def MassIdentity (cert : MassDerivationCertificate) : Prop :=
-  cert.B_pred_MeV ≥ 0
+  cert.B_pred_MeV ≥ 0 ∧
+    |cert.B_pred_MeV - cert.B_AME_MeV| ≤ cert.B_AME_MeV / 4
 
 /-- **Substrate axiom (S2).** Yekutieli + collapse + Archimedean
     realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}`
@@ -220,80 +224,110 @@ def deuterium_cert : MassDerivationCertificate :=
   witnessCert "2H" 1 2 2.2488207948647343 2.22456612 10903104
 
 theorem mass_identity_deuterium : MassIdentity deuterium_cert := by
-  show (2.2488207948647343 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (2.2488207948647343 : ℝ) ≥ 0
+    norm_num
+  · show |(2.2488207948647343 : ℝ) - 2.22456612| ≤ 2.22456612 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Tritium witness certificate (³H, B_pred ≈ 8.4686 MeV). -/
 def tritium_cert : MassDerivationCertificate :=
   witnessCert "3H" 1 3 8.46859838653302 8.4817984 (-1556275)
 
 theorem mass_identity_tritium : MassIdentity tritium_cert := by
-  show (8.46859838653302 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (8.46859838653302 : ℝ) ≥ 0
+    norm_num
+  · show |(8.46859838653302 : ℝ) - 8.4817984| ≤ 8.4817984 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Helium-3 witness certificate (³He, B_pred ≈ 7.4889 MeV). -/
 def helium3_cert : MassDerivationCertificate :=
   witnessCert "3He" 2 3 7.48891930977096 7.7180375 (-29686069)
 
 theorem mass_identity_helium3 : MassIdentity helium3_cert := by
-  show (7.48891930977096 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (7.48891930977096 : ℝ) ≥ 0
+    norm_num
+  · show |(7.48891930977096 : ℝ) - 7.7180375| ≤ 7.7180375 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Helium-4 witness certificate (⁴He, B_pred ≈ 29.956 MeV). -/
 def helium4_cert : MassDerivationCertificate :=
   witnessCert "4He" 2 4 29.95567723908384 28.2956912 58665683
 
 theorem mass_identity_helium4 : MassIdentity helium4_cert := by
-  show (29.95567723908384 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (29.95567723908384 : ℝ) ≥ 0
+    norm_num
+  · show |(29.95567723908384 : ℝ) - 28.2956912| ≤ 28.2956912 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Beryllium-8 witness certificate (⁸Be, B_pred ≈ 62.338 MeV). -/
 def beryllium8_cert : MassDerivationCertificate :=
   witnessCert "8Be" 4 8 62.338343981930535 56.49951 103343091
 
 theorem mass_identity_beryllium8 : MassIdentity beryllium8_cert := by
-  show (62.338343981930535 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (62.338343981930535 : ℝ) ≥ 0
+    norm_num
+  · show |(62.338343981930535 : ℝ) - 56.49951| ≤ 56.49951 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Carbon-12 witness certificate (¹²C, B_pred ≈ 97.148 MeV). -/
 def carbon12_cert : MassDerivationCertificate :=
   witnessCert "12C" 6 12 97.1480002285401 92.16175 54103250
 
 theorem mass_identity_carbon12 : MassIdentity carbon12_cert := by
-  show (97.1480002285401 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (97.1480002285401 : ℝ) ≥ 0
+    norm_num
+  · show |(97.1480002285401 : ℝ) - 92.16175| ≤ 92.16175 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Oxygen-16 witness certificate (¹⁶O, B_pred ≈ 134.385 MeV). -/
 def oxygen16_cert : MassDerivationCertificate :=
   witnessCert "16O" 8 16 134.38464597891252 127.61929 53012017
 
 theorem mass_identity_oxygen16 : MassIdentity oxygen16_cert := by
-  show (134.38464597891252 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (134.38464597891252 : ℝ) ≥ 0
+    norm_num
+  · show |(134.38464597891252 : ℝ) - 127.61929| ≤ 127.61929 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Neon-20 witness certificate (²⁰Ne, B_pred ≈ 174.048 MeV). -/
 def neon20_cert : MassDerivationCertificate :=
   witnessCert "20Ne" 10 20 174.0482812330478 160.64486 83435108
 
 theorem mass_identity_neon20 : MassIdentity neon20_cert := by
-  show (174.0482812330478 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (174.0482812330478 : ℝ) ≥ 0
+    norm_num
+  · show |(174.0482812330478 : ℝ) - 160.64486| ≤ 160.64486 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Magnesium-24 witness certificate (²⁴Mg, B_pred ≈ 216.139 MeV). -/
 def magnesium24_cert : MassDerivationCertificate :=
   witnessCert "24Mg" 12 24 216.1389059909459 198.2569 90196134
 
 theorem mass_identity_magnesium24 : MassIdentity magnesium24_cert := by
-  show (216.1389059909459 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (216.1389059909459 : ℝ) ≥ 0
+    norm_num
+  · show |(216.1389059909459 : ℝ) - 198.2569| ≤ 198.2569 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- Calcium-40 witness certificate (⁴⁰Ca, B_pred ≈ 408.771 MeV). -/
 def calcium40_cert : MassDerivationCertificate :=
   witnessCert "40Ca" 20 40 408.771300060167 342.05212 195055596
 
 theorem mass_identity_calcium40 : MassIdentity calcium40_cert := by
-  show (408.771300060167 : ℝ) ≥ 0
-  norm_num
+  refine ⟨?_, ?_⟩
+  · show (408.771300060167 : ℝ) ≥ 0
+    norm_num
+  · show |(408.771300060167 : ℝ) - 342.05212| ≤ 342.05212 / 4
+    rw [abs_sub_le_iff]; constructor <;> norm_num
 
 /-- The collection of witness-validated atoms.  Each has a
     `MassIdentity` theorem (above) proved without recourse to the

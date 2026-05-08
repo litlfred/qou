@@ -56,12 +56,10 @@ $$
     \cdot \mathrm{Vol}_{q}^{(S)}(\beta),
 $$
 
-\*with each $\mathrm{Vol}_{q}^{(S)}(\beta) \in \mathbb{Z}[q^{1/2},
-q^{-1/2}]$ a Markov trace over the transfer-matrix chain supported on
-$S$
-([Markov trace product](#thm\:markov-trace-product)), and \$z = 1/(q^{1/2}
-
-* q^{-1/2})\$ the Markov parameter.\*
+*with each $\mathrm{Vol}_{q}^{(S)}(\beta) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$
+a Markov trace over the transfer-matrix chain supported on $S$
+([Markov trace product](#thm\:markov-trace-product)), and
+$z = 1/(q^{1/2} + q^{-1/2})$ the Markov parameter.*
 
 Every per-generator contribution is a finite Laurent polynomial in $q$;
 no quantum-dilogarithm evaluation is required to **state** the tower.
