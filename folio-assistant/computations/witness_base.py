@@ -31,7 +31,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Optional, Union
+from typing import Any, Mapping, Optional, Union
 
 
 # ── Git helpers ──────────────────────────────────────────────────
@@ -163,16 +163,22 @@ class WitnessBuilder:
         engine: str = "python",
         engine_version: Optional[str] = None,
         output_dir: Optional[Union[str, Path]] = None,
+        _script_path: Optional[Union[str, Path]] = None,
     ):
         self.name = name
         self.engine = engine
         self.engine_version = engine_version or self._detect_version(engine)
         self._start_time = time.monotonic()
 
-        # Get caller frame once for both output dir and script path
-        import inspect
-        caller_frame = inspect.stack()[1]
-        caller_file = Path(caller_frame.filename).resolve()
+        # Resolve caller frame ONLY when script path not explicitly
+        # provided (factory classmethods like ``wrap_legacy`` pass it
+        # in directly so they don't capture witness_base.py itself).
+        if _script_path is not None:
+            caller_file = Path(_script_path).resolve()
+        else:
+            import inspect
+            caller_frame = inspect.stack()[1]
+            caller_file = Path(caller_frame.filename).resolve()
         self._script_path = caller_file
 
         # Determine output directory
@@ -188,6 +194,11 @@ class WitnessBuilder:
         self.parameters: dict[str, Any] = {}
         self.data: dict[str, Any] = {}
         self.caveats: list[str] = []
+        # Extra top-level keys (used by wrap_legacy to preserve the
+        # original flat layout of hand-written witnesses during P30
+        # migration). Merged in by ``build()`` after the structured
+        # fields, so structured values win on key collision.
+        self._extra_top_level: dict[str, Any] = {}
 
     @staticmethod
     def _detect_version(engine: str) -> str:
@@ -278,6 +289,111 @@ class WitnessBuilder:
         self.caveats.append(text)
         return self
 
+    # ── Reserved structured keys used by ``wrap_legacy`` ─────────
+    # Keys that are routed to dedicated WitnessBuilder slots rather
+    # than being preserved as raw top-level fields. Anything else in
+    # the legacy payload is kept verbatim under ``_extra_top_level``.
+    _RESERVED_LEGACY_KEYS = frozenset({
+        "computation",
+        "description",
+        "contentBlock",
+        "auditOnly",
+        "engine",
+        "engineVersion",
+        "computedAt",
+        "commitSha",
+        "scriptFile",
+        "scriptHash",
+        "scriptCommitSha",
+        "durationMs",
+        "allPassed",
+        "assertions",
+    })
+
+    @classmethod
+    def wrap_legacy(
+        cls,
+        name: str,
+        payload: Mapping[str, Any],
+        *,
+        script_path: Union[str, Path],
+        engine: str = "python",
+        engine_version: Optional[str] = None,
+        output_dir: Optional[Union[str, Path]] = None,
+    ) -> "WitnessBuilder":
+        """Wrap a legacy hand-written witness payload.
+
+        Migrates a pre-existing ``json.dump(out_dict, f)`` writer to
+        the ``WitnessBuilder`` API **without** changing the on-disk
+        layout: every original top-level key is preserved verbatim,
+        and the structured fields ``scriptHash``, ``scriptCommitSha``,
+        ``engine``, ``engineVersion``, ``computedAt``, and
+        ``durationMs`` are added so that ``run_pipeline.py`` can
+        detect staleness (P30 in the compute-audit catalogue).
+
+        Reserved keys (``description``, ``auditOnly``, etc.) are
+        routed to their structured slots; everything else is held in
+        ``_extra_top_level`` and emitted verbatim by ``build()``.
+
+        Parameters
+        ----------
+        name : str
+            Witness filename stem (becomes ``<name>.witness.json``).
+        payload : Mapping[str, Any]
+            The dict the legacy script was dumping with ``json.dump``.
+        script_path : str or Path
+            Absolute path to the calling script. Required because
+            ``wrap_legacy`` is a classmethod and cannot reliably
+            inspect the caller frame.
+        engine, engine_version, output_dir
+            Same as the constructor.
+
+        Returns
+        -------
+        WitnessBuilder
+            A builder whose ``save()`` will produce a witness JSON
+            that contains every original key plus the staleness
+            metadata. Bit-equivalence on the original keys is
+            preserved.
+
+        Example
+        -------
+        ::
+
+            out = {"computation": "my-thing", "description": "...", ...}
+            (WitnessBuilder.wrap_legacy(
+                "my-thing", out, script_path=__file__,
+                engine="mpmath",
+            )
+                .set_audit_only("docs/audits/2026-05-08-compute-audit-workplan.md")
+                .save())
+        """
+        # Use the explicit script_path; engine_version is auto-detected
+        # if not supplied.
+        builder = cls(
+            name=name,
+            engine=engine,
+            engine_version=engine_version,
+            output_dir=output_dir,
+            _script_path=script_path,
+        )
+        for key, value in payload.items():
+            if key == "description" and isinstance(value, str):
+                builder.set_description(value)
+            elif key == "contentBlock" and isinstance(value, str):
+                builder.set_content_block(value)
+            elif key == "auditOnly" and isinstance(value, str):
+                builder.set_audit_only(value)
+            elif key == "computation":
+                # Filename already encodes this; skip to avoid duplicate
+                continue
+            elif key in cls._RESERVED_LEGACY_KEYS:
+                # Skip auto-generated metadata; build() will recompute
+                continue
+            else:
+                builder._extra_top_level[key] = value
+        return builder
+
     def is_fresh(self) -> bool:
         """Return True if an existing witness JSON on disk records the
         same script content hash as the current source.
@@ -343,6 +459,15 @@ class WitnessBuilder:
             witness["data"] = self.data
         if self.caveats:
             witness["caveats"] = self.caveats
+
+        # Append legacy top-level keys captured by ``wrap_legacy``
+        # WITHOUT overwriting structured fields above. This preserves
+        # the original layout of hand-written witnesses during P30
+        # migration so downstream readers that key on top-level paths
+        # do not break.
+        for k, v in self._extra_top_level.items():
+            if k not in witness:
+                witness[k] = v
 
         return witness
 

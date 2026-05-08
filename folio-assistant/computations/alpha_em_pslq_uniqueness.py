@@ -32,7 +32,6 @@ Method:
 Output: alpha-em-pslq-uniqueness.witness.json
 """
 from __future__ import annotations
-import json
 import sys
 import time
 from pathlib import Path
@@ -41,6 +40,7 @@ from datetime import datetime, timezone
 import mpmath as mp
 
 from q_parameter import vol_4_1_at
+from witness_base import WitnessBuilder
 
 
 def main():
@@ -182,9 +182,20 @@ def main():
         "basis_labels": basis_labels,
         "pslq_results": pslq_results,
     }
-    out_path = Path(__file__).parent / "alpha-em-pslq-uniqueness.witness.json"
-    with open(out_path, "w") as f:
-        json.dump(out, f, indent=2)
+    # P30 migration (compute-audit workplan, 2026-05-08): preserve the
+    # original payload layout via WitnessBuilder.wrap_legacy so that
+    # scriptHash + scriptCommitSha are recorded for staleness tracking
+    # without changing top-level keys consumed by any narrative reader.
+    builder = WitnessBuilder.wrap_legacy(
+        "alpha-em-pslq-uniqueness",
+        out,
+        script_path=__file__,
+        engine="mpmath",
+    )
+    if "auditOnly" not in out:
+        builder.set_audit_only(
+            "docs/audits/2026-05-08-compute-audit-workplan.md")
+    out_path = builder.save()
     print()
     print(f"Witness: {out_path}")
 
