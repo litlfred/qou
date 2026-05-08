@@ -6,12 +6,14 @@ normal forms together with the
 admit a sharper computational reading: every observable extracted by
 the Observation Frame $\tau$ is determined by its image at the
 **crystal limit** $q \to 0$ and transported back to the generic
-fibre $\mathcal{S}_p$ along the flat $q$-connection.
+fibre [$\mathcal{S}_p$](#def:exceptional-divisor) along the flat
+$q$-connection.
 
 **Mechanism.**
 At the crystal limit $q \to 0$ the cyclotomic KLR module category
-$\mathcal{K}_n$ degenerates to its associated graded — the Kashiwara
-crystal $\mathrm{Cryst}(\mathfrak{sl}_n)$ \cite{kashiwara1991}. The
+$\mathcal{K}_n$ \cite{khovanovlauda2009, brundankleshchev2009}
+degenerates to its associated graded — the Kashiwara crystal
+$\mathrm{Cryst}(\mathfrak{sl}_n)$ \cite{kashiwara1991}. The
 crystal carries no quantum corrections: edges are decorated only by
 Kashiwara operators $\tilde{e}_i, \tilde{f}_i$ and weights are
 integer-graded. The graded Euler characteristic
