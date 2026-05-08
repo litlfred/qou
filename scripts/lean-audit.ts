@@ -10,9 +10,11 @@
  *   - missing .lean files for blocks that require them
  *
  * Usage:
- *   bun run scripts/lean-audit.ts                 # full audit, console output
- *   bun run scripts/lean-audit.ts --json          # JSON output
- *   bun run scripts/lean-audit.ts --chapter ch5   # filter to one chapter
+ *   bun run scripts/lean-audit.ts                    # full audit, console output
+ *   bun run scripts/lean-audit.ts --json             # JSON output
+ *   bun run scripts/lean-audit.ts --chapter ch5      # filter to one chapter
+ *   bun run scripts/lean-audit.ts --strict           # exit 1 on uncited sorries
+ *   bun run scripts/lean-audit.ts --strict --check-axioms  # also fail on axioms
  *
  * @module scripts/lean-audit
  */
@@ -581,10 +583,49 @@ function printReport(report: AuditReport) {
 
 // ── CLI ──────────────────────────────────────────────────────────
 
+const HELP_TEXT = `
+Usage: bun run scripts/lean-audit.ts [options]
+
+Options:
+  --json              Emit the audit report as JSON instead of pretty text.
+  --chapter <id>      Filter to a single chapter (e.g. "ch5", "core").
+  --strict            Exit with status 1 if any uncited sorry is found.
+                      Implies --check-axioms unless --no-axioms is given.
+  --check-axioms      In --strict mode, also fail on any non-zero axiom
+                      count. (Standalone: no effect on default reporting.)
+  --no-axioms         In --strict mode, do NOT fail on axiom count
+                      (uncited-sorry-only gate).
+  --help, -h          Show this help.
+
+Exit codes:
+  0  audit clean (or --strict not given)
+  1  --strict: at least one uncited sorry (and/or axiom) was found
+  2  CLI usage error (e.g. --chapter without a value)
+`.trim();
+
 if (import.meta.main) {
   const args = process.argv.slice(2);
+
+  if (args.includes("--help") || args.includes("-h")) {
+    console.log(HELP_TEXT);
+    process.exit(0);
+  }
+
   const jsonMode = args.includes("--json");
+  const strictMode = args.includes("--strict");
+  const checkAxioms = args.includes("--check-axioms");
+  const noAxioms = args.includes("--no-axioms");
+
+  if (checkAxioms && noAxioms) {
+    console.error("Error: --check-axioms and --no-axioms are mutually exclusive.");
+    process.exit(2);
+  }
+
   const chapterIdx = args.indexOf("--chapter");
+  if (chapterIdx >= 0 && (chapterIdx + 1 >= args.length || args[chapterIdx + 1].startsWith("--"))) {
+    console.error("Error: --chapter requires a chapter id (e.g. --chapter ch5).");
+    process.exit(2);
+  }
   const chapterFilter =
     chapterIdx >= 0 ? args[chapterIdx + 1] : undefined;
 
@@ -594,6 +635,29 @@ if (import.meta.main) {
     console.log(JSON.stringify(report, null, 2));
   } else {
     printReport(report);
+  }
+
+  if (strictMode) {
+    // Default: gate on uncited sorries.  Axiom gate only when explicitly
+    // requested via --check-axioms; suppressed by --no-axioms.
+    const failOnAxioms = checkAxioms && !noAxioms;
+    const failures: string[] = [];
+    if (report.summary.uncitedSorries > 0) {
+      failures.push(
+        `${report.summary.uncitedSorries} uncited sorr${report.summary.uncitedSorries === 1 ? "y" : "ies"} (need \`-- Ref: [key] url\`)`,
+      );
+    }
+    if (failOnAxioms && report.summary.axiomCount > 0) {
+      failures.push(`${report.summary.axiomCount} axiom declaration(s)`);
+    }
+    if (failures.length > 0) {
+      console.error("");
+      console.error("──────────────────────────────────────────────────");
+      console.error("STRICT MODE: audit failed");
+      for (const f of failures) console.error("  - " + f);
+      console.error("──────────────────────────────────────────────────");
+      process.exit(1);
+    }
   }
 }
 

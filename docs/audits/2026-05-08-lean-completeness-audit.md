@@ -98,6 +98,11 @@ implements the unambiguous portions:
 
 - [x] **Audit script triage.** Fix 5 false-positive classes in
       `lean-audit.ts`; reduce uncited count `30 → 0`.
+- [x] **`--strict` / `--check-axioms` / `--no-axioms` / `--help`
+      CLI flags** for `scripts/lean-audit.ts`.  Exit codes:
+      `0` clean, `1` strict failure, `2` CLI usage error.
+      Provides the gate; *enabling it in CI* remains an open
+      question (see below).
 - [x] **`lean-q-substitution`** skill — QS1, QS2, QS18 ladder
       rows 7–11 (the `s := q + q⁻¹` substrate substitution).
 - [x] **`lean-substrate-numerics`** skill — QS13 brackets on
@@ -143,11 +148,13 @@ content shape and are intentionally deferred:
 
 ### Open questions (require user decision)
 
-1. **Should the audit script's new behaviour become a CI
-   gate?**  At present `scripts/lean-audit.ts` runs ad hoc; the
-   `--strict` flag could fail the workflow when uncited sorries
-   appear.  The pre-fix CI would have failed daily — the fixed
-   script makes a strict gate genuinely actionable.
+1. **Should the `--strict` audit gate be wired into CI?**
+   The flag now exists (`bun run scripts/lean-audit.ts --strict`,
+   exit 1 on uncited sorries; add `--check-axioms` to also fail
+   on axioms).  Wiring it into `lean_ci.yml` is a one-line
+   change that needs your sign-off — the pre-fix script would
+   have failed CI daily, so the gate must wait until the
+   updated script lands on `main`.
 2. **`Hoefsmit.lean:209/210` — should we define the canonical
    `partitionZ1N2` / `partitionZ2N1` and drop the `(sorry :
    Partition n)` placeholders?**  This is a real proof-design
