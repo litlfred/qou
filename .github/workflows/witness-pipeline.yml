@@ -194,13 +194,31 @@ jobs:
         run: |
           python3 folio-assistant/computations/full_twist_delta_n2_verification.py
 
-      - name: Run lp_dual_witness_validator (warn-only)
-        # Per prop:operator-selection-lp § dual program: every
-        # operator-selection / LP / SDP witness should include the LP
-        # dual variables (y_0_star, y_star, active_set, primal_obj,
-        # dual_obj, duality_gap). Currently warn-only (~58 legacy
-        # witnesses are missing the dual). To enforce: pass --strict.
-        # Migration target: route LP solves through lp_dual_solver.py.
+      - name: Compute-audit static scan (P14/P15/P16/P21/P30, warn-only)
+        # Per `local/compute-audit` skill: tracks the count of
+        # P-pattern hits per file. Warn-only — purpose is to detect
+        # regressions (count growing) on the existing 260-finding
+        # baseline. Re-emits compute-audit-scan.witness.json under
+        # folio-assistant/computations/. See PR #565 audit doc:
+        # docs/audits/2026-05-08-compute-infrastructure-audit.md F11.
+        run: |
+          python3 folio-assistant/computations/compute_audit_scan.py
+          python3 -c "import json; d=json.load(open('folio-assistant/computations/compute-audit-scan.witness.json')); print('compute-audit-scan:', d['data']['by_pattern_count'])"
+
+      - name: Run lp_dual_witness_validator (--strict-wired)
+        # Per prop:operator-selection-lp § dual program: every wired
+        # LP/SDP witness MUST include the LP dual variables
+        # (y0_star, y_star, active_set, primal_obj, dual_obj,
+        # duality_gap). --strict-wired enforces only the wired subset
+        # (currently 0/37 wired LP failures, so promotion to fail is
+        # safe). The orphan/audit-only set is still warn-only via the
+        # default mode below. PR #565 audit F11.
+        run: python3 folio-assistant/computations/lp_dual_witness_validator.py --strict-wired
+
+      - name: Run lp_dual_witness_validator (audit-only set, warn-only)
+        # Same validator, default (non-strict) mode: covers the audit-
+        # only and orphan witnesses for visibility. Migration target:
+        # route LP solves through lp_dual_solver.py.
         run: python3 folio-assistant/computations/lp_dual_witness_validator.py
 
       - name: Run bound_state_observable_validator (warn-only)

@@ -143,19 +143,29 @@ _SEMINORMAL_DISK = Path(__file__).parent / ".cache" / "seminormal"
 
 
 def _cached_seminormal(shape: tuple[int, ...]):
-    import pickle
+    # P14 fix (2026-05-08, audit F8): replaced pickle (RCE on tampered cache)
+    # with numpy.savez_compressed for the dense σ matrices + JSON sidecar
+    # for dim and the SYT entry→cell maps. Densify any sparse matrices
+    # before save (the 3A use case has dim ≤ a few hundred — well under
+    # the build_seminormal_matrices sparse threshold of 500).
+    import json
     n = sum(shape)
     key = (n, shape)
     if key in _SEMINORMAL_CACHE:
         return _SEMINORMAL_CACHE[key]
-    # Disk lookup (shape-specific file; Q0 in name avoids stale)
     _SEMINORMAL_DISK.mkdir(parents=True, exist_ok=True)
-    fname = (_SEMINORMAL_DISK /
-              f"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}.pkl")
-    if fname.exists():
+    stem = (_SEMINORMAL_DISK /
+            f"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}")
+    npz_path = stem.with_suffix(".npz")
+    json_path = stem.with_suffix(".json")
+    if npz_path.exists() and json_path.exists():
         try:
-            with fname.open('rb') as f:
-                data = pickle.load(f)
+            with np.load(npz_path) as npz:
+                sigmas = [npz[f"sig{i}"] for i in range(len(npz.files))]
+            meta = json.loads(json_path.read_text())
+            syts = [{int(k): int(v) for k, v in d.items()}
+                    for d in meta["syts"]]
+            data = (sigmas, int(meta["dim"]), syts)
             _SEMINORMAL_CACHE[key] = data
             return data
         except Exception:
@@ -163,8 +173,19 @@ def _cached_seminormal(shape: tuple[int, ...]):
     data = build_seminormal_matrices(shape)
     _SEMINORMAL_CACHE[key] = data
     try:
-        with fname.open('wb') as f:
-            pickle.dump(data, f)
+        sigmas, dim, syts = data
+        dense = []
+        for M in sigmas:
+            if hasattr(M, "toarray"):
+                dense.append(np.asarray(M.toarray()))
+            else:
+                dense.append(np.asarray(M))
+        np.savez_compressed(npz_path,
+                            **{f"sig{i}": M for i, M in enumerate(dense)})
+        json_path.write_text(json.dumps({
+            "dim": int(dim),
+            "syts": [{str(k): int(v) for k, v in d.items()} for d in syts],
+        }))
     except Exception:
         pass
     return data
