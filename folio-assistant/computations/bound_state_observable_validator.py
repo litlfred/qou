@@ -70,7 +70,14 @@ REQUIRED_FIELDS = (
     "shadow_prices",
 )
 OPTOUT_FIELD = "observable_type"
-OPTOUT_VALUE = "raw_trace"
+# Accepted opt-outs.  ``raw_trace`` is the legitimate Hamiltonian /
+# raw-Markov-trace case (e.g. T_{3,5} weak-vertex form factor as
+# direct Markov trace).  ``pslq_probe`` covers PSLQ / arithmetic-
+# closed-form probes of *residuals* (e.g. δ_GT in g_A = [5]/[4]·(1+δ)),
+# which are not bound-state observable computations and have no
+# Gram / LP-active-set structure to verify.  PR #565 F5.
+OPTOUT_VALUES = ("raw_trace", "pslq_probe")
+OPTOUT_VALUE = OPTOUT_VALUES[0]  # back-compat for any importer
 
 
 def _has_field(node, key: str) -> bool:
@@ -119,7 +126,7 @@ def verify_bound_state_witness(path: Path) -> dict:
             "error": str(e),
         }
 
-    opted_out = data.get(OPTOUT_FIELD) == OPTOUT_VALUE
+    opted_out = data.get(OPTOUT_FIELD) in OPTOUT_VALUES
     missing = [f for f in REQUIRED_FIELDS if not _has_field(data, f)]
     return {
         "ok": (not missing) or opted_out,
