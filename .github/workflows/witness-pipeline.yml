@@ -46,6 +46,8 @@ on:
       - "folio-assistant/computations/*.derivation.json"
       - "scripts/audit-wiring.ts"
       - "scripts/audit-wiring-migrate.ts"
+      - "content/pipeline/trivial-skeleton-audit.ts"
+      - "content/quantum-observable-universe/**/*.lean"
       - ".github/workflows/witness-pipeline.yml"
   push:
     branches: [main]
@@ -66,6 +68,8 @@ on:
       - "folio-assistant/computations/*.derivation.json"
       - "scripts/audit-wiring.ts"
       - "scripts/audit-wiring-migrate.ts"
+      - "content/pipeline/trivial-skeleton-audit.ts"
+      - "content/quantum-observable-universe/**/*.lean"
       - ".github/workflows/witness-pipeline.yml"
   workflow_dispatch:
 
@@ -246,6 +250,25 @@ jobs:
           curl -fsSL https://bun.sh/install | bash
           export PATH="$HOME/.bun/bin:$PATH"
           bun run scripts/audit-wiring.ts --warn-only
+
+      - name: Trivial-skeleton audit (warn-only)
+        # Flags `.lean` declarations whose body is a tautological
+        # constant — the def/instance is Lean-verified but encodes
+        # none of the conjectural content.  Spec-compliant under
+        # CLAUDE.md §3b-cond ("class is inhabited") but should be
+        # upgraded to faithful instances as the genuine mathematics
+        # is formalised.
+        #
+        # Patterns: const_zero, prop_true, punit_type, punit_unit,
+        # one_def, id_def, *skeleton/*trivial instances, holds_trivial.
+        #
+        # Currently warn-only.  Per-pattern strict gates can be
+        # enabled later by extending the script with
+        # --max-per-pattern <N> or --baseline-witness <path>.
+        # Workplan: docs/audits/2026-05-08-trivial-skeleton-workplan.md.
+        run: |
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun run content/pipeline/trivial-skeleton-audit.ts
 
       - name: Detect drift in committed witnesses
         run: |

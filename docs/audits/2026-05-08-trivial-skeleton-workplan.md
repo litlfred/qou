@@ -131,15 +131,162 @@ Net audit deltas across the full session:
 - Conjectures with concrete Lean witness: 1 → ~30
 - Conjectural-propagation violators: 258 → 0 (held since W1)
 
-## Next steps (deferred)
+## CI integration (landed in this PR)
 
-- **Run the trivial-skeleton-audit in CI** as a warn-only check; flip
-  to a strict gate per-pattern as upgrades land. Suggested PR: add a
-  `bun run pipeline/trivial-skeleton-audit.ts --max-flagged N` mode.
-- **Faithful Hecke / Mathlib bridge**: the carrier-type stubs and
-  Prop=True predicates that wait on Mathlib's q-Specht modules,
-  spectral sequences, and SDP machinery should be revisited as those
-  packages land.
-- **Upstream the canonical instances**: every faithful witness should
-  appear in the corresponding `.witness.json` so the Python compute
-  pipeline and the Lean defs share a single source of truth.
+Wired the trivial-skeleton-audit into `.github/workflows/witness-pipeline.yml`
+as a warn-only check (alongside the existing `Witness wiring audit`).
+Path filters extended so any change to
+`content/pipeline/trivial-skeleton-audit.ts` or any
+`content/quantum-observable-universe/**/*.lean` triggers the workflow.
+
+The CI step prints flagged counts but does not fail. To convert to
+a strict gate later, extend the script with per-pattern thresholds
+(e.g. `--max-per-pattern const_zero=37 prop_true=15`) and an
+`--exit-on-baseline-exceeded` flag.
+
+## Buckets (discrete follow-up parcels)
+
+The 108 remaining flagged sites split into six concrete work buckets
+prioritised by upstream effort needed.
+
+### Bucket 1 — Numerical-pinning sweep (low-effort)
+
+Single-PR scope. For each remaining `def f := 0` numerical placeholder,
+pin to the witness JSON value. Each upgrade is a 2-line edit + a
+norm_num/decide proof.
+
+Targets (5 files, ~10 lines):
+- `mass-formula-regime-switching.lean` — `bindingSW`, `bindingBW`,
+  `bindingBWShell` → import the per-atom values from
+  `mass_formula_6term.witness.json`.
+- `wenzl-qmn-synergy.lean` — `markovTrace`, `length`, `cycleType` for
+  the canonical proton/neutron CanonicalPermutationBraid case.
+- `qmn-recursive-memoized.lean` — `markovTraceCanonical` from
+  `markov-substrate-realization.witness.json`.
+
+### Bucket 2 — Canonical-existence sweep (medium-effort)
+
+For each remaining tautological skeleton, build the canonical
+existential witness from upstream definitions and discharge by
+exhibiting the witness (Pattern B in §"Three upgrade patterns").
+
+Targets (8 files):
+- `magic-numbers-bring.lean` — replace `s5_stable := True` /
+  `tau_stable := True` with concrete sub-lattice carriers (need
+  Bring-surface cohomology data).
+- `categorical-linking-operation.lean` — populate the five Lk-*
+  predicates with their algebraic content (linearity, reduction-at-zero,
+  multiplicative-in-k, trace-cut-symmetric, bar-involution-compatible).
+- `weinberg-angle-categorical.lean` — define `LkDischarged`,
+  `HoefsmitDischarged`, `HiggsVEVAutomorphism`, `WeinbergAngleNumerical`
+  in terms of the underlying Hecke / Hoefsmit data.
+- `e-hartree-categorical-derivation.lean` — encode the
+  δ_q : NF basis → R q-dimension decoration map per the .md roadmap.
+- `force-carrier-knot-vs-link-dichotomy.lean` — define
+  `CategoricalHiggsAsLinking`, `HoefsmitCellContentEW` non-vacuously.
+- `pl-jsj-mass-integration-equivalence.lean` — populate
+  `algebraicMarkovTrace` / `descendedJSJVolume` / `thimbleIntegral`
+  with the integrals from the SW thimble side.
+- `lifted-crossing-locality.lean` — encode KZ flatness factorisation.
+- `mass-volume-factorization.lean` — supply per-atom Thurston volumes
+  for the canonical {proton, neutron, ²H, ³H, ³He, ⁴He} entries.
+
+### Bucket 3 — Weakest-non-trivial-predicate sweep (medium-effort)
+
+For each `def P : Prop := True`, replace with the smallest decidable
+predicate the canonical witness already satisfies. Pattern C from
+§"Three upgrade patterns".
+
+Targets (15 sites in 6 files):
+- `atom-knot-mass-derivation.lean` — `YekutieliFiniteSliceMultiplicativeTrace`
+  → `T_w.Foo ≠ none` (or similar minimal sanity check).
+- `joint-tower-sdp-confinement.lean` — five Prop-fields (Wedderburn,
+  GbFiltrationGrading, JetOrderOrdering, CrossLevelConsistency,
+  JointTowerSdpFeasible) → minimal "data is well-formed" predicates.
+- `recursive-atom-knot-atlas.lean` — `PrincipledPathForAtomKnot`,
+  `FiltrationCertificateFormat` → check the atlas has no
+  `deprecatedVolumeMatch` entries (i.e. `principledAtlas atomKnotAtlas
+  = atomKnotAtlas`).
+- `markov-trace-frobenius-selection.lean` — `PartitionHeightGtTwo`
+  encoded against the actual partition's height field.
+- `y-lambda-cyclotomic-factorization.lean` — `CyclotomicDenominatorN23456`
+  → witness-pinned numerical bound on `cyclotomicDenominator n t` for
+  `n ∈ {2, 3, 4, 5, 6}`.
+- `lean/QOU/Descartes/AxialCoupling.lean` — `InSymmetricIdempotent`
+  per the symmetric-idempotent characterisation in
+  `prop:hoefsmit-cell-content`.
+
+### Bucket 4 — Carrier-type formalisation (heavy-effort, Mathlib-bound)
+
+Replace `def T : Type := PUnit` with genuine carrier types as the
+upstream Mathlib packages land. Each replacement requires:
+- The genuine type definition (q-Specht module, KLR algebra, …)
+- Migration of every downstream consumer
+
+Targets (14 files):
+- `confinement-category.lean`, `confinement-phase-stratification.lean`,
+  `level-sufficiency.lean`, `electron-shell.lean`,
+  `confinement-sdp.lean` — `ConfinedParticleTy` → `ConfinedParticle`
+  (already a real structure in `confined-particle.lean`).
+- `dressed-particle.lean` — `BareTy`, `ShellTy` → `BareParticle`
+  / `ElectronShell`.
+- `frobenius-antipode-lean-stub.lean` — `HeckeAlgebra n q` →
+  `LaurentPolynomialQuotient` of the type-A Iwahori–Hecke presentation.
+- `qmn-recursive-memoized.lean` — `BorderStrip lam k` →
+  combinatorial border-strip type from
+  `Mathlib.Combinatorics.Young`.
+- `wenzl-qmn-synergy.lean` — `CanonicalPermutationBraid n` →
+  `Equiv.Perm (Fin n)` length-minimal braid-word lift.
+- `lean/QOU/Interactions/AlgebraicPrimality.lean` — `SDPState n q`
+  → `Confinement.SDP.OptimumState`.
+- `alpha-em-shift-multiplicative-chain.lean` — `qIntegerIndex n`
+  → `Fin n` (after the witness chain is verified through the
+  q-integer literal substitution).
+
+### Bucket 5 — Substrate axioms waiting on Mathlib (deferred, blocked)
+
+These predicates encode mathematical content that **cannot** be
+upgraded until specific Mathlib packages land. Each is correctly
+declared as an axiom or `Prop := True` substrate axiom; the upgrade
+target is documented at the file level.
+
+Targets (6 substrate axioms):
+- Spectral-sequence collapse predicates (Mathlib spectral-sequence
+  support not yet available).
+- LP / SDP duality theorems (Schrijver §7.2 / §7.4 require Mathlib
+  LP-duality formalisation).
+- Arbitrary-precision real-number bounds (CODATA comparisons require
+  Mathlib `Real.evalRational`-style decision procedures).
+- Partition-enumeration over `Mathlib.Combinatorics.Young.YoungDiagram`
+  (waits on the `Fintype (Partition n)` instance).
+- q-deformed Specht-module construction (waits on
+  `Mathlib.RepresentationTheory.Hecke`).
+- Cyclotomic factor-product comparison
+  (`Polynomial.cyclotomic_eval` is in Mathlib; per-n closed forms
+  for n=2..6 need the `factor` tactic over ℚ(t)).
+
+### Bucket 6 — CI strict-gate flip (governance)
+
+Once Buckets 1–3 land and the per-pattern counts drop below
+sustainable thresholds, flip the CI audit step from warn-only to
+strict-per-pattern.
+
+Order of strict-gates to enable:
+1. **`punit_unit`** (currently 2): easiest first; the only legitimate
+   use is `PUnit.unit` as an explicit element of a `PUnit` carrier.
+   Flip strict at 0.
+2. **`id_def`** (currently 1): legitimate iff the function is genuinely
+   identity (not a stand-in). Flip strict at 0.
+3. **`one_def`** (currently 10): some are canonical multiplicative
+   neutrals (`localFactor := 1`, `qHookProduct := 1`). Flip after
+   Bucket 2 with budget 5.
+4. **`holds_trivial`** (currently 8): expected to remain non-zero
+   for genuine vacuous-truth fields; flip with budget 10.
+5. **`prop_true`** (currently 15): flip after Bucket 5 lands the
+   Mathlib upstreams; budget 6 for residual substrate axioms.
+6. **`punit_type`** (currently 14): flip after Bucket 4 lands; budget 0.
+7. **`const_zero`** (currently 38) and **`skel_inst`** (currently 21):
+   the largest; flip last with per-PR delta budgets.
+
+Each strict-gate flip is its own one-line PR (extend the
+`trivial-skeleton-audit.ts` invocation with `--max-per-pattern`).
