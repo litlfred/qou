@@ -67,16 +67,17 @@ $J^\ell/J^{\ell+1}$ is itself a semisimple $H_3$-bimodule.*
 **KLR grading interpretation.**
 *Under the
 [confinement–grading correspondence](#conj:confinement-grading-correspondence),
-the jet level $\ell$ used here coincides with the natural
-$\mathbb{Z}$-grading bound on the cyclotomic KLR algebra: the symbol
-$\sigma_\ell(T_w) \in J^\ell / J^{\ell+1}$ is the top non-zero
-graded component of the KLR-module lift $M_K$. The truncation of
-$T_w$ at jet order $\ell$ is therefore the homological truncation of
-the graded KLR complex at degree $\ell$, and the residual
-error $E(\ell)$ is the homological remainder lying in degrees
-$> \ell$. The candidate prefix $\beta_k^{\mathrm{GS}}$ inherits its
-restriction multiplicities $\dim\mathrm{Res}^{H_k}_{H_3}$ from this
-graded structure.*
+the confinement level $\ell(K, q)$ of a closed braid $K$ coincides
+with the top non-zero $\mathbb{Z}$-grading degree of its KLR-module
+lift $M_K$ on the cyclotomic KLR algebra; the symbol
+$\sigma_\ell(T_w) \in J^\ell / J^{\ell+1}$ is that top graded
+component. Truncating $T_w$ at jet order $k$ therefore keeps the
+graded components of $M_K$ in degrees $\leq k$ of the KLR complex;
+the residual error $E(k)$ is the homological remainder supported in
+degrees $k < d \leq \ell(K, q)$, and the truncation is exact
+precisely when $k \geq \ell(K, q)$. The candidate prefix
+$\beta_k^{\mathrm{GS}}$ inherits its restriction multiplicities
+$\dim\mathrm{Res}^{H_k}_{H_3}$ from this graded structure.*
 
 **Predictions of the GB-filtration prefix.**
 
