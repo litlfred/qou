@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-06T15:16:04.394769+00:00",
-  "commitSha": "56c93beff0207782d6934fb842033b952fd94569",
+  "computedAt": "2026-05-08T00:39:09.889262+00:00",
+  "commitSha": "4c270191521894fbd25b5cc7d404ea1a957ea0b7",
   "assertions": [
     {
       "name": "k3_residual_matches_q_one_fifth",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 40858,
+  "durationMs": 63647,
   "computation": "staircase-ew-residual-conjecture",
   "scriptFile": "staircase_ew_residual_conjecture.py",
-  "scriptHash": "e1620ea85867",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "deacf52d5ef9",
+  "scriptCommitSha": "96d52c7105b35699e1b17adcf05a839ff4c4af76",
   "description": "Test the staircase EW-residual conjecture: q^(1/(2k-1)) appears as the residual factor between raw β_EW spectral ratio and the structurally-meaningful ratio for staircase ρ_k = (k, k-1, …, 1).  Verified for k=3 (q^(1/5) closes the cot θ_W gap to 0.13%).  Tests k=2 (n=3, dim=2), k=3 (n=6, dim=16) for cross-validation, and k=4 (n=10, dim=768) for the prediction.  ρ_5 (dim≈3·10⁵) recorded as prediction only.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
@@ -123,16 +123,85 @@
         "top_two_ratio": 1.7831508101184945
       },
       "4": {
-        "best_ratio_value": 1.0135740227975922,
+        "best_ratio_value": 1.0135740227975927,
         "best_ratio_indices": [
-          254,
-          188
+          256,
+          216
         ],
-        "log_distance": 0.0014230977926145642,
-        "relative_error": 0.0014220856691247261,
+        "log_distance": 0.001423097792614127,
+        "relative_error": 0.0014220856691242885,
         "predicted_q_power_inv_hc": 1.015017464587894,
         "n_real_pos_eigs": 384,
-        "top_two_ratio": 1.0000000000000013
+        "top_two_ratio": 1.0000000000000007
+      }
+    },
+    "k5_matrix_free_sweep": {
+      "attempted": true,
+      "shape": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 15,
+      "dimension": 292864,
+      "word_length": 49,
+      "generators_used": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        11,
+        13
+      ],
+      "eig_sample_size": 32,
+      "target_q_pow_inv_hc": 1.0116608787430426,
+      "eigs_runtime_seconds": 21.460941553115845,
+      "leading_real_eigenvalues": [
+        139.29406098407364,
+        139.29406098406065,
+        139.2940609840606,
+        139.29406098406005,
+        139.29406098406005,
+        139.29406098405988,
+        139.29406098405954,
+        139.29406098405954,
+        139.29406098405937,
+        139.29406098405914,
+        139.2940609840581,
+        116.63333983119827,
+        116.63333983119794,
+        116.63333983119787,
+        116.63333983119752,
+        116.63333983119728,
+        116.63333983119713,
+        116.63333983119702,
+        116.6333398311967,
+        116.63333983119657,
+        102.96929992122698,
+        102.96929992101494,
+        102.96929992101465,
+        102.96929992101441,
+        102.96929992101427,
+        102.96929992101414,
+        102.9692999210138,
+        102.96929992101364,
+        93.61631827225912,
+        93.61631827225891,
+        93.61631827225881,
+        93.61631827225871
+      ],
+      "best_pairwise_ratio_match": {
+        "ratio": 1.000000000002072,
+        "relative_error": 0.011526469972288482,
+        "numerator_index": 20,
+        "denominator_index": 27,
+        "numerator_eigenvalue": 102.96929992122698,
+        "denominator_eigenvalue": 102.96929992101364
       }
     }
   }
