@@ -117,6 +117,69 @@ to fix `crt_markov.py` would not improve `atomic_mass_via_rho_k.py`
 directly; instead it would fix the legacy `crt_markov.py` consumers
 that haven't migrated to the rho-k path.
 
+## Cross-check finding (2026-05-08, post-wiring): residual gap is q=1 character limit
+
+After wiring `crt_markov.py` to use `wedderburn_jones_markov.global_wedderburn_sum_jones_markov`
+(commit [`ac7880c5`](https://github.com/litlfred/qou/pull/572/commits/ac7880c5)),
+ran [`tr_m_jones_markov_cross_check.py`](../../folio-assistant/computations/tr_m_jones_markov_cross_check.py)
+against the canonical reducer (`markov_trace_recursive` →
+`atomic-tr-m-mpfr-50dps.witness.json`):
+
+| Atom | canonical |tr_M| | Jones-Markov sum | rel err |
+|---|---:|---:|---:|
+| proton | 1.0653 | 0.4154 | 61% |
+| neutron | 0.9232 | 0.4154 | 55% |
+| deuteron | 0.3883 | 0.0733 | 81% |
+
+**The new path is closer to the legacy 2-var-Schur path than to
+the canonical reducer.** Diagnosis: this is **not** a y_λ bug. The
+remaining discrepancy is the **q=1 classical-character limit**
+baked into `specht_character_atomic` (used by both legacy and new
+partition-sum paths). Per `schur_weyl_symbolic.py:182-186`, the
+file is explicit:
+
+> "The q=1 limit of the Hecke character is still implicit;
+> full q-deformation is a separate refinement (q-ribbon-tableau
+> weights)."
+
+The partition-sum formula
+
+$$
+  \mathrm{tr}_M(\beta) \;=\; \sum_\lambda y_\lambda(q)\,\chi^\lambda_q(\beta)
+$$
+
+requires the **q-deformed Hecke character** $\chi^\lambda_q$. The
+current `specht_character_atomic` returns the **classical
+Murnaghan–Nakayama** character $\chi^\lambda_{\mathrm{MN}}(\pi(\beta))$,
+which is the q=1 limit. The y_λ weight fix removes the 2-var-Schur
+drop-out (≥3-row partitions); the residual is the character.
+
+**Implication for the wiring fix:** the y_λ correction is *necessary
+but not sufficient* — without q-Hecke characters, both legacy and
+new paths give a Σ that approximates tr_M only at q=1. For the
+QOU paper at q=q_0, the canonical-reducer route
+(`markov_trace_recursive`) remains the correct integration path.
+
+**Status of partition-sum path consumers:**
+
+- `crt_markov.py` — wired to new path; produces y_λ-corrected sum, but
+  remains q=1-character-limited until a follow-up refinement.
+- `gb_residue_tower.py`, `canonical_tr_m_three_path_comparison.py` —
+  reference but don't actively call.
+- `habiro_residue_symbolic.py` — wired to new path (commit on this PR).
+
+**Status of canonical-reducer consumers (unaffected):**
+
+- `atomic_braid_mass_table.py` → `markov_trace_recursive` — correct path; 0.23% MAE on D/T/³He stands.
+- `atomic_mass_via_rho_k.py` (PR #564) → `markov_trace_recursive` — same.
+
+The fix in this PR therefore:
+- ✅ removes the weight bug (`schur_weyl_weight` 2-var-Schur drop-out)
+- ❌ does NOT close the partition-sum path's q=1 character gap
+- ✅ documents the gap explicitly so future consumers don't re-stumble
+
+The character refinement is **research-grade follow-up** (q-ribbon-tableau weights, or direct seminormal-Hoefsmit character evaluation at q_0).
+
 ## What this PR does NOT do
 
 - **Does NOT modify** `crt_markov.py` — the wiring fix belongs in

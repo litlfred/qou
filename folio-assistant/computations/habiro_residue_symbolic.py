@@ -127,30 +127,40 @@ def demonstrate_residue_toy():
 def eval_schur_weyl_exact_at_q0(A_values=(1, 2, 3, 4)):
     """Exact sympy evaluation of the global H_{3A} Wedderburn sum at q₀.
 
-    Uses schur_weyl_symbolic.global_wedderburn_sum_symbolic (trivial
-    Specht character χ^λ = 1).  This is the "ground-truth" that
-    numerical Mittag-Leffler sums should reproduce — but doing so
-    numerically would mix residues from all ζ_n, hook-poles, and
-    branch cuts. Symbolically the answer is one rational number.
+    Uses wedderburn_jones_markov.global_wedderburn_sum_jones_markov
+    (trivial Specht character χ^λ = 1, **canonical Jones-Markov
+    weights y_λ via Wenzl's Schur principal specialization**) for
+    the partition sum.  This is the "ground-truth" that numerical
+    Mittag-Leffler sums should reproduce — but doing so numerically
+    would mix residues from all ζ_n, hook-poles, and branch cuts.
+    Symbolically the answer is one rational number.
+
+    Per docs/audits/2026-05-08-p3-h-3a-divergence.md, the legacy
+    `global_wedderburn_sum_symbolic` used the 2-variable Schur
+    weight `s_λ(q,q⁻¹) / H_q(λ)` which vanishes for partitions with
+    > 2 rows — actively dropping the (1^p) sign-rep contribution.
+    Switched to the canonical y_λ + numerical-q-from-start (passes
+    q_val=q_0 to substitute before sp.cancel).
     """
-    from schur_weyl_symbolic import (
-        global_wedderburn_sum_symbolic,
-        h3_additive_approximation_symbolic,
-    )
+    from schur_weyl_symbolic import h3_additive_approximation_symbolic
+    from wedderburn_jones_markov import global_wedderburn_sum_jones_markov
 
     q = sp.Symbol('q', positive=True, real=True)
     q0 = Rational(int(_Q_CANONICAL * 10 ** 16), 10 ** 16)
 
     out = {}
     for A in A_values:
-        total, _ = global_wedderburn_sum_symbolic(A, q)
+        # numerical-q-from-start: pass q_val=q0 directly so the
+        # Wenzl-Schur evaluation produces a numeric expression at
+        # q_0 rather than a symbolic rational requiring sp.cancel.
+        total, _ = global_wedderburn_sum_jones_markov(A, q_val=q0)
         h3 = h3_additive_approximation_symbolic(A, q)
         out[f"A={A}"] = {
             "partition_count": len(partitions_of(3 * A)),
-            "global_sum_at_q0": str(total.subs(q, q0).evalf(30)),
+            "global_sum_at_q0": str(sp.N(total, 30)),
             "h3_additive_at_q0": str(h3.subs(q, q0).evalf(30)),
             "ratio_global_over_h3": str(
-                ((total) / h3).subs(q, q0).evalf(30)
+                sp.N(total / h3.subs(q, q0), 30)
             ),
         }
     return out
