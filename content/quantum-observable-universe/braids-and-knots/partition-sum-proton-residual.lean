@@ -40,8 +40,12 @@ noncomputable opaque protonTowerMass : ℝ
 /-- The CODATA proton mass, in MeV. -/
 noncomputable opaque protonCodata : ℝ
 
-/-- The electron rest-mass, in MeV. -/
-noncomputable opaque electronMass : ℝ
+/-- The electron rest-mass, in MeV.  Pinned to the CODATA 2022 value
+    `0.51099895069 MeV` (truncated; full uncertainty ≤ 1 keV).  The
+    previous version was an `opaque` value bound to an interval via
+    the `electronMass_witness` axiom; the axiom is now provable as a
+    theorem on the concrete value. -/
+def electronMass : ℝ := 0.51099895
 
 /-- The substrate parameter q_0 and q-integer [2]_q = q + q⁻¹. -/
 noncomputable opaque qSubstrate : ℝ
@@ -126,8 +130,16 @@ arbitrary-precision real arithmetic in Mathlib.  Any future replacement
 of `electronMass`/`neutronCodata`/`neutronTowerMass` with verifiable
 computable terms must invalidate these axioms first. -/
 
-axiom electronMass_witness :
-    (0.510998 : ℝ) ≤ electronMass ∧ electronMass ≤ (0.511000 : ℝ)
+/-- Witness theorem (formerly axiom): `electronMass = 0.51099895 ∈
+    [0.510998, 0.511000]`.  Closes by `norm_num` on the concrete
+    value. -/
+theorem electronMass_witness :
+    (0.510998 : ℝ) ≤ electronMass ∧ electronMass ≤ (0.511000 : ℝ) := by
+  refine ⟨?_, ?_⟩
+  · show (0.510998 : ℝ) ≤ 0.51099895
+    norm_num
+  · show (0.51099895 : ℝ) ≤ 0.511000
+    norm_num
 
 axiom neutronCodata_witness :
     (939.564 : ℝ) ≤ neutronCodata ∧ neutronCodata ≤ (939.566 : ℝ)

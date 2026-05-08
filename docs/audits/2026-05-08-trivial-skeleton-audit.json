@@ -1,0 +1,681 @@
+{
+  "audit": "trivial-skeleton-audit",
+  "generated": "2026-05-08T19:40:48.563Z",
+  "total_flagged": 110,
+  "files_flagged": 56,
+  "patterns": {
+    "const_zero": 37,
+    "skel_inst": 21,
+    "prop_true": 16,
+    "punit_type": 14,
+    "one_def": 10,
+    "holds_trivial": 8,
+    "punit_unit": 2,
+    "id_def": 1,
+    "const_zero_typed": 1
+  },
+  "flagged": {
+    "algebraic-substrate/magic-numbers-bring.lean": [
+      {
+        "line": 76,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton : MagicNumbersBring where"
+      }
+    ],
+    "braids-and-knots/atom-knot-mass-derivation.lean": [
+      {
+        "line": 70,
+        "pattern": "prop_true",
+        "snippet": "def YekutieliFiniteSliceMultiplicativeTrace (_T_w : Type*) : Prop := True"
+      },
+      {
+        "line": 74,
+        "pattern": "prop_true",
+        "snippet": "def GbSpectralSequenceCollapseAtE2 : Prop := True"
+      },
+      {
+        "line": 78,
+        "pattern": "prop_true",
+        "snippet": "def CategoricalMassInvariantFinite (_T_w : Type*) : Prop := True"
+      },
+      {
+        "line": 129,
+        "pattern": "prop_true",
+        "snippet": "def MassIdentity (_cert : MassDerivationCertificate) : Prop := True"
+      }
+    ],
+    "braids-and-knots/brane-tower-z-habiro.lean": [
+      {
+        "line": 61,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where"
+      }
+    ],
+    "braids-and-knots/categorical-linking-operation.lean": [
+      {
+        "line": 208,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton {R : Type*} [CommRing R] (q : R) :"
+      }
+    ],
+    "braids-and-knots/confinement-category.lean": [
+      {
+        "line": 33,
+        "pattern": "punit_type",
+        "snippet": "def ConfinedParticleTy : Type := PUnit"
+      }
+    ],
+    "braids-and-knots/confinement-nf-partial-proof.lean": [
+      {
+        "line": 54,
+        "pattern": "const_zero",
+        "snippet": "def primal_obj (lp : OperatorSelectionLP) : ℝ := 0"
+      },
+      {
+        "line": 58,
+        "pattern": "const_zero",
+        "snippet": "def dual_obj (lp : OperatorSelectionLP) : ℝ := 0"
+      }
+    ],
+    "braids-and-knots/confinement-phase-stratification.lean": [
+      {
+        "line": 31,
+        "pattern": "punit_type",
+        "snippet": "def ConfinedParticleTy : Type := PUnit"
+      },
+      {
+        "line": 49,
+        "pattern": "const_zero",
+        "snippet": "def sigmaF : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
+      }
+    ],
+    "braids-and-knots/conj-canonical-knot-id-sdp.lean": [
+      {
+        "line": 62,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton : ∀ n : LightNucleus, CanonicalKnotIdSDP n"
+      },
+      {
+        "line": 65,
+        "pattern": "holds_trivial",
+        "snippet": "uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }"
+      },
+      {
+        "line": 68,
+        "pattern": "holds_trivial",
+        "snippet": "uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }"
+      },
+      {
+        "line": 71,
+        "pattern": "holds_trivial",
+        "snippet": "uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }"
+      }
+    ],
+    "braids-and-knots/conj-rho-prefactor-structural.lean": [
+      {
+        "line": 66,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (n₀ : ℕ) (q : ℝ) : RhoPrefactorStructural n₀ q where"
+      }
+    ],
+    "braids-and-knots/dressed-particle.lean": [
+      {
+        "line": 19,
+        "pattern": "punit_type",
+        "snippet": "def BareTy : Type := PUnit"
+      },
+      {
+        "line": 23,
+        "pattern": "punit_type",
+        "snippet": "def ShellTy : Type := PUnit"
+      }
+    ],
+    "braids-and-knots/electron-shell.lean": [
+      {
+        "line": 20,
+        "pattern": "punit_type",
+        "snippet": "def NucleusTy : Type := PUnit"
+      },
+      {
+        "line": 42,
+        "pattern": "one_def",
+        "snippet": "def bindingMultiplicity : ElectronShell → ℝ → ℕ := fun _ _ => 1"
+      }
+    ],
+    "braids-and-knots/explicit-alpha-k-h4.lean": [
+      {
+        "line": 60,
+        "pattern": "prop_true",
+        "snippet": "def R3OrthogonalToLowerDepthsH4 : Prop := True"
+      },
+      {
+        "line": 71,
+        "pattern": "prop_true",
+        "snippet": "def Alpha3H4MarkovPairing : Prop := True"
+      }
+    ],
+    "braids-and-knots/frobenius-antipode-lean-stub.lean": [
+      {
+        "line": 32,
+        "pattern": "punit_type",
+        "snippet": "def HeckeAlgebra (_n : ℕ) (_q : ℝ) : Type := PUnit"
+      },
+      {
+        "line": 40,
+        "pattern": "const_zero",
+        "snippet": "def markovTrace (_n : ℕ) (_q : ℝ) (_ : HeckeAlgebra _n _q) : ℝ := 0"
+      },
+      {
+        "line": 49,
+        "pattern": "punit_unit",
+        "snippet": "def heckeOne (_n : ℕ) (_q : ℝ) : HeckeAlgebra _n _q := PUnit.unit"
+      },
+      {
+        "line": 118,
+        "pattern": "one_def",
+        "snippet": "def chiralityFactor (_n : ℕ) (_q : ℝ) (_β : HeckeAlgebra _n _q) : ℝ := 1"
+      }
+    ],
+    "braids-and-knots/jet-tower-uniform-delta-max.lean": [
+      {
+        "line": 81,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (ρ : Type*) : JetTowerUniformDeltaMax ρ where"
+      }
+    ],
+    "braids-and-knots/joint-tower-sdp-confinement.lean": [
+      {
+        "line": 44,
+        "pattern": "prop_true",
+        "snippet": "def GbFiltrationGrading (_vars : PerParticleSdpVariables) : Prop := True"
+      },
+      {
+        "line": 47,
+        "pattern": "prop_true",
+        "snippet": "def JetOrderOrdering (_vars : PerParticleSdpVariables) : Prop := True"
+      },
+      {
+        "line": 62,
+        "pattern": "prop_true",
+        "snippet": "def CrossLevelConsistency (_edge : TowerEdge) : Prop := True"
+      },
+      {
+        "line": 84,
+        "pattern": "prop_true",
+        "snippet": "def JointTowerSdpFeasible (_sdp : JointTowerSdp) : Prop := True"
+      }
+    ],
+    "braids-and-knots/knot-mass-formula-unified.lean": [
+      {
+        "line": 27,
+        "pattern": "const_zero",
+        "snippet": "def descendedMarkov (_q : ℝ) (_braid : Unit) : ℝ := 0"
+      },
+      {
+        "line": 28,
+        "pattern": "const_zero",
+        "snippet": "def braneTower (_q : ℝ) (_braid : Unit) : ℝ := 0"
+      },
+      {
+        "line": 39,
+        "pattern": "const_zero",
+        "snippet": "def frobeniusCoCasimirTraceFallback (_q : ℝ) (_n : ℕ) : ℝ := 0"
+      }
+    ],
+    "braids-and-knots/level-sufficiency.lean": [
+      {
+        "line": 29,
+        "pattern": "punit_type",
+        "snippet": "def ConfinedParticleTy : Type := PUnit"
+      },
+      {
+        "line": 33,
+        "pattern": "one_def",
+        "snippet": "def coarseStrands : ConfinedParticleTy → ℕ := fun _ => 1"
+      },
+      {
+        "line": 39,
+        "pattern": "one_def",
+        "snippet": "def kMax : ConfinedParticleTy → ℝ → ℕ := fun _ _ => 1"
+      },
+      {
+        "line": 45,
+        "pattern": "const_zero",
+        "snippet": "def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
+      }
+    ],
+    "braids-and-knots/markov-trace-frobenius-selection.lean": [
+      {
+        "line": 116,
+        "pattern": "prop_true",
+        "snippet": "def PartitionHeightGtTwo (_n : ℕ) (_lambda_idx : ℕ) : Prop := True"
+      }
+    ],
+    "braids-and-knots/mass-element-nf.lean": [
+      {
+        "line": 69,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (β : Type*) : HeckeMassNF β where"
+      }
+    ],
+    "braids-and-knots/mass-endomorphism-tower.lean": [
+      {
+        "line": 47,
+        "pattern": "const_zero",
+        "snippet": "def quantumDilogPoly (_q _z : R) : R := 0"
+      }
+    ],
+    "braids-and-knots/mass-formula-regime-switching.lean": [
+      {
+        "line": 27,
+        "pattern": "const_zero",
+        "snippet": "def bindingSW (_Z _N : ℕ) : ℝ := 0"
+      },
+      {
+        "line": 31,
+        "pattern": "const_zero",
+        "snippet": "def bindingBW (_Z _N : ℕ) : ℝ := 0"
+      },
+      {
+        "line": 35,
+        "pattern": "const_zero",
+        "snippet": "def bindingBWShell (_Z _N : ℕ) : ℝ := 0"
+      }
+    ],
+    "braids-and-knots/qmn-recursive-memoized.lean": [
+      {
+        "line": 35,
+        "pattern": "punit_type",
+        "snippet": "def BorderStrip (_lam : List ℕ) (_k : ℕ) : Type := PUnit"
+      },
+      {
+        "line": 48,
+        "pattern": "const_zero",
+        "snippet": "def chi_qMN_partition (_lam _rho : List ℕ) (_q : ℝ) : ℝ := 0"
+      },
+      {
+        "line": 99,
+        "pattern": "punit_type",
+        "snippet": "def CharCache (_q : ℝ) : Type := PUnit"
+      }
+    ],
+    "braids-and-knots/recursive-atom-knot-atlas.lean": [
+      {
+        "line": 117,
+        "pattern": "prop_true",
+        "snippet": "def AtlasIsWitnessDerived : Prop := True"
+      },
+      {
+        "line": 161,
+        "pattern": "prop_true",
+        "snippet": "def PrincipledPathForAtomKnot : Prop := True"
+      },
+      {
+        "line": 181,
+        "pattern": "prop_true",
+        "snippet": "def FiltrationCertificateFormat : Prop := True"
+      }
+    ],
+    "braids-and-knots/schur-weyl-mass-decomposition.lean": [
+      {
+        "line": 32,
+        "pattern": "one_def",
+        "snippet": "def qHookProduct {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ := 1"
+      },
+      {
+        "line": 35,
+        "pattern": "const_zero",
+        "snippet": "def schurAtQ {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ := 0"
+      }
+    ],
+    "braids-and-knots/schur-weyl-vanishing.lean": [
+      {
+        "line": 100,
+        "pattern": "const_zero",
+        "snippet": "def schur_2var {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 0"
+      },
+      {
+        "line": 105,
+        "pattern": "one_def",
+        "snippet": "def q_hook_product {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 1"
+      }
+    ],
+    "braids-and-knots/shared-denominator-cusp-holonomy.lean": [
+      {
+        "line": 77,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (q x : ℝ) (n : ℕ) :"
+      }
+    ],
+    "braids-and-knots/shell-closure-stability.lean": [
+      {
+        "line": 39,
+        "pattern": "punit_type",
+        "snippet": "def DressedTy : Type := PUnit"
+      },
+      {
+        "line": 46,
+        "pattern": "const_zero",
+        "snippet": "def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0"
+      }
+    ],
+    "braids-and-knots/weak-spectral-completeness.lean": [
+      {
+        "line": 50,
+        "pattern": "holds_trivial",
+        "snippet": "weak_spectral_completeness_holds := rfl"
+      }
+    ],
+    "braids-and-knots/weinberg-angle-categorical.lean": [
+      {
+        "line": 79,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton {R : Type*} [CommRing R] (q : R) :"
+      }
+    ],
+    "braids-and-knots/wenzl-qmn-synergy.lean": [
+      {
+        "line": 35,
+        "pattern": "punit_type",
+        "snippet": "def CanonicalPermutationBraid (_n : ℕ) : Type := PUnit"
+      },
+      {
+        "line": 38,
+        "pattern": "const_zero",
+        "snippet": "def length {_n : ℕ} (_w : CanonicalPermutationBraid _n) : ℕ := 0"
+      },
+      {
+        "line": 49,
+        "pattern": "const_zero",
+        "snippet": "def yLambdaWenzl (_lam : List ℕ) (_q : ℝ) : ℝ := 0"
+      }
+    ],
+    "braids-and-knots/y-lambda-closed-form-wenzl-bridge.lean": [
+      {
+        "line": 87,
+        "pattern": "one_def",
+        "snippet": "def hookDim {_n : ℕ} (_lam : Partition _n) : ℕ := 1"
+      },
+      {
+        "line": 91,
+        "pattern": "const_zero",
+        "snippet": "def nLambda {_n : ℕ} (_lam : Partition _n) : ℕ := 0"
+      },
+      {
+        "line": 104,
+        "pattern": "const_zero",
+        "snippet": "def wenzlSchurElement {_n : ℕ} (_lam : Partition _n) (_Q _X : ℝ) : ℝ := 0"
+      },
+      {
+        "line": 127,
+        "pattern": "const_zero",
+        "snippet": "def jonesMarkovTrace {_n : ℕ} (_q : ℝ) (_x : Unit) : ℝ := 0"
+      },
+      {
+        "line": 131,
+        "pattern": "const_zero",
+        "snippet": "def jonesMarkovCoefficient {_n : ℕ} (_q : ℝ) (_lam : Partition _n) : ℝ := 0"
+      }
+    ],
+    "braids-and-knots/y-lambda-cyclotomic-factorization.lean": [
+      {
+        "line": 48,
+        "pattern": "one_def",
+        "snippet": "def cyclotomicDenominator (_n : ℕ) (_t : ℝ) : ℝ := 1"
+      },
+      {
+        "line": 53,
+        "pattern": "const_zero",
+        "snippet": "def cyclotomicNumerator {_n : ℕ} (_lam : List ℕ) (_t : ℝ) : ℝ := 0"
+      },
+      {
+        "line": 88,
+        "pattern": "prop_true",
+        "snippet": "def CyclotomicDenominatorN23456 : Prop := True"
+      }
+    ],
+    "descartes-universe/abelianisation-at-algebraic-poles.lean": [
+      {
+        "line": 22,
+        "pattern": "const_zero",
+        "snippet": "def miOnDivisor (_n : ℕ) (_z_c : ℂ) : ℂ := 0"
+      },
+      {
+        "line": 26,
+        "pattern": "const_zero",
+        "snippet": "def swPeriod (_n : ℕ) (_z_c : ℂ) : ℂ := 0"
+      },
+      {
+        "line": 54,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (q x : ℝ) (n k : ℕ) :"
+      }
+    ],
+    "descartes-universe/alpha-em-shift-multiplicative-chain.lean": [
+      {
+        "line": 31,
+        "pattern": "punit_type",
+        "snippet": "def qIntegerIndex (_n : ℕ) : Type := PUnit"
+      }
+    ],
+    "descartes-universe/denominator-zeros-as-sw-critical-points.lean": [
+      {
+        "line": 26,
+        "pattern": "const_zero",
+        "snippet": "def colorTubeDiscriminant (_z : ℂ) : ℂ := 0"
+      },
+      {
+        "line": 60,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (q : ℝ) (n : ℕ) :"
+      }
+    ],
+    "descartes-universe/e-hartree-categorical-derivation.lean": [
+      {
+        "line": 77,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (q : ℝ) : EHartreeCategoricalDerivation q where"
+      },
+      {
+        "line": 81,
+        "pattern": "holds_trivial",
+        "snippet": "eh_holds := rfl"
+      }
+    ],
+    "descartes-universe/force-carrier-knot-vs-link-dichotomy.lean": [
+      {
+        "line": 134,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton"
+      }
+    ],
+    "descartes-universe/gb-reduction-pl-thimble-bijection.lean": [
+      {
+        "line": 22,
+        "pattern": "const_zero",
+        "snippet": "def imSAction : ℂ → ℝ := fun _ => 0"
+      },
+      {
+        "line": 66,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (n : ℕ) : GBReductionPLThimbleBijection n where"
+      }
+    ],
+    "descartes-universe/pl-jsj-mass-integration-equivalence.lean": [
+      {
+        "line": 27,
+        "pattern": "const_zero",
+        "snippet": "def lambdaSW (_k : ℕ) (_z : ℂ) : ℂ := 0"
+      },
+      {
+        "line": 31,
+        "pattern": "const_zero",
+        "snippet": "def thimbleIntegral (_k : ℕ) (_z_c : ℂ) : ℂ := 0"
+      },
+      {
+        "line": 36,
+        "pattern": "const_zero",
+        "snippet": "def descendedJSJVolume (_T_w : ℕ) : ℂ := 0"
+      },
+      {
+        "line": 40,
+        "pattern": "const_zero",
+        "snippet": "def algebraicMarkovTrace (_k : ℕ) (_T_w : ℕ) : ℂ := 0"
+      },
+      {
+        "line": 89,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (k : ℕ) (T_w : ℕ) (n : ℕ) :"
+      }
+    ],
+    "fluid-dynamics/levi-degeneracy-conjecture.lean": [
+      {
+        "line": 45,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton : LeviDegeneracy where"
+      },
+      {
+        "line": 49,
+        "pattern": "holds_trivial",
+        "snippet": "levi_degeneracy_holds := rfl"
+      }
+    ],
+    "information-theory/q-game-of-life.lean": [
+      {
+        "line": 32,
+        "pattern": "id_def",
+        "snippet": "def qGameOfLife {L : Type*} (_generations : ℕ) : L → L := id"
+      }
+    ],
+    "lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean": [
+      {
+        "line": 75,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton : ClassicalLimitStpart where"
+      }
+    ],
+    "lean/QOU/AppendixSurreals/Conjectures.lean": [
+      {
+        "line": 180,
+        "pattern": "const_zero",
+        "snippet": "def HyperbolicVolume : Knot → ℝ := fun _ => 0"
+      }
+    ],
+    "lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.lean": [
+      {
+        "line": 82,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton : KnotFactorFrobeniusPairing where"
+      }
+    ],
+    "lean/QOU/BraidKnot/ShellNeutrality.lean": [
+      {
+        "line": 259,
+        "pattern": "const_zero_typed",
+        "snippet": "def fullTwistTrivial (λ : YoungDiagram) (_q : ℝ) : Prop := kappa λ = 0"
+      }
+    ],
+    "lean/QOU/Descartes/AxialCoupling.lean": [
+      {
+        "line": 128,
+        "pattern": "prop_true",
+        "snippet": "def InSymmetricIdempotent (_x : TMatrix) : Prop := True"
+      }
+    ],
+    "lean/QOU/Interactions/AlgebraicPrimality.lean": [
+      {
+        "line": 41,
+        "pattern": "punit_type",
+        "snippet": "def SDPState (_n : ℕ) (_q : ℝ) : Type := PUnit"
+      },
+      {
+        "line": 45,
+        "pattern": "punit_unit",
+        "snippet": "def canonicalState (n : ℕ) (q : ℝ) : SDPState n q := PUnit.unit"
+      }
+    ],
+    "molecular-construction/shell-closure-nf-term-count.lean": [
+      {
+        "line": 327,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton : ShellClosureNFTermCount where"
+      }
+    ],
+    "observations/borromean-hopf-energy-crossover.lean": [
+      {
+        "line": 49,
+        "pattern": "one_def",
+        "snippet": "def milnor_mu_borromean : Int := 1"
+      },
+      {
+        "line": 53,
+        "pattern": "const_zero",
+        "snippet": "def milnor_mu_cfl : Int := 0"
+      }
+    ],
+    "observations/borromean-quark.lean": [
+      {
+        "line": 119,
+        "pattern": "holds_trivial",
+        "snippet": "is_baryon_realisation_holds := trivial"
+      }
+    ],
+    "observations/hopf-diquark.lean": [
+      {
+        "line": 71,
+        "pattern": "one_def",
+        "snippet": "def hopf_linking_number : Int := 1"
+      },
+      {
+        "line": 75,
+        "pattern": "const_zero",
+        "snippet": "def hopf_link_volume : ℝ := 0"
+      }
+    ],
+    "observations/n-v-tower-depth-ninety.lean": [
+      {
+        "line": 33,
+        "pattern": "const_zero",
+        "snippet": "def level_m_e : BraneTowerLevel := 0"
+      }
+    ],
+    "particle-interactions/confinement-sdp.lean": [
+      {
+        "line": 28,
+        "pattern": "punit_type",
+        "snippet": "def ConfinedParticleTy : Type := PUnit"
+      },
+      {
+        "line": 39,
+        "pattern": "const_zero",
+        "snippet": "def y0_star : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
+      },
+      {
+        "line": 44,
+        "pattern": "const_zero",
+        "snippet": "def n_target : ConfinedParticleTy → ℝ := fun _ => 0"
+      }
+    ],
+    "particle-interactions/lifted-crossing-locality.lean": [
+      {
+        "line": 62,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton {K C : Type*} : LiftedCrossingLocality K C where"
+      }
+    ],
+    "particle-interactions/mass-volume-factorization.lean": [
+      {
+        "line": 72,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton (K : Type*) : MassVolumeFactorization K where"
+      }
+    ],
+    "quantum-observable-universes/frobenius-su2.lean": [
+      {
+        "line": 52,
+        "pattern": "holds_trivial",
+        "snippet": "frobenius_holds := rfl"
+      }
+    ]
+  }
+}

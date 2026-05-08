@@ -1,0 +1,130 @@
+#!/usr/bin/env bun
+/**
+ * Trivial-skeleton audit (CLAUDE.md §3b-cond honesty check).
+ *
+ * Flags Lean declarations whose body is a tautological constant —
+ * the instance/def is Lean-verified but encodes none of the
+ * conjectural content.  These are spec-compliant under the §3b-cond
+ * pattern (prove the class is inhabited) but should be **upgraded
+ * to faithful instances** as the genuine mathematics is formalised.
+ *
+ * Patterns flagged:
+ *   const_zero        : `def f ... := 0` / `:= constant 0`
+ *   one_def           : `def f ... := 1`
+ *   punit_type        : `def T ... : Type := PUnit`
+ *   punit_unit        : `def x ... := PUnit.unit`
+ *   prop_true         : `def P ... : Prop := True`
+ *   id_def            : `def f ... := id`
+ *   first_arg         : `def f x ... := x` (ignores everything else)
+ *   skel_inst         : `instance ...skeleton`/`...trivial`
+ *   holds_trivial     : `_holds := trivial` / `:= rfl` / `by simp`
+ *
+ * Output: JSON manifest at
+ *   `docs/audits/2026-05-08-trivial-skeleton-audit.json`
+ *
+ * Usage (from repo root):
+ *   bun run content/pipeline/trivial-skeleton-audit.ts
+ */
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { join, dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { glob } from "glob";
+
+const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = resolve(SCRIPT_DIR, "..", "..");
+const ROOT = join(REPO_ROOT, "content/quantum-observable-universe");
+const WITNESS_OUT = process.argv[2] ??
+  join(REPO_ROOT, "docs/audits/2026-05-08-trivial-skeleton-audit.json");
+
+interface PatternHit {
+  line: number;
+  pattern: string;
+  snippet: string;
+}
+
+const PATTERNS: Array<[string, RegExp]> = [
+  ["const_zero",       /^\s*def\s+\w[\w.]*[^=]*:=\s*(?:fun\s[^=]*=>\s*)?(?:0|0\.0)\s*$/],
+  ["const_zero_typed", /^\s*def\s+\w[\w.]*[^=]*:.*=\s*(?:fun\s[^=]*=>\s*)?0\s*$/],
+  ["punit_type",       /^\s*def\s+\w[\w.]*[^=]*:\s*Type[^=]*:=\s*PUnit\s*$/],
+  ["punit_unit",       /^\s*def\s+\w[\w.]*[^=]*:=\s*PUnit\.unit\s*$/],
+  ["prop_true",        /^\s*def\s+\w[\w.]*[^=]*:\s*Prop[^=]*:=\s*True\s*$/],
+  ["id_def",           /^\s*def\s+\w[\w.]*[^=]*:=\s*id\s*$/],
+  ["one_def",          /^\s*def\s+\w[\w.]*[^=]*:.*=\s*(?:fun\s[^=]*=>\s*)?1\s*$/],
+  ["first_arg",        /^\s*def\s+\w[\w.]*\([^)]*\)\s*[^=]*:=\s*\w\s*$/],
+];
+const SKEL_INSTANCE = /^\s*instance\s+\w*[Ss]keleton\b/;
+const TRIV_INSTANCE = /^\s*instance\s+\w*[Tt]rivial\b/;
+const HOLDS_TRIVIAL = /_holds\s*:=\s*(?:trivial|rfl|by\s+(?:trivial|rfl|simp|norm_num))/;
+
+async function main() {
+  const files = await glob([
+    "*/*.lean",
+    "lean/QOU/**/*.lean",
+  ], { cwd: ROOT, absolute: true });
+
+  const flagged: Record<string, PatternHit[]> = {};
+  for (const f of files.sort()) {
+    const text = await readFile(f, "utf8");
+    const lines = text.split("\n");
+    const hits: PatternHit[] = [];
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      let matched = false;
+      for (const [name, pat] of PATTERNS) {
+        if (pat.test(line)) {
+          hits.push({ line: i + 1, pattern: name, snippet: line.trim().slice(0, 90) });
+          matched = true;
+          break;
+        }
+      }
+      if (!matched && (SKEL_INSTANCE.test(line) || TRIV_INSTANCE.test(line))) {
+        hits.push({ line: i + 1, pattern: "skel_inst", snippet: line.trim().slice(0, 90) });
+      } else if (!matched && HOLDS_TRIVIAL.test(line)) {
+        hits.push({ line: i + 1, pattern: "holds_trivial", snippet: line.trim().slice(0, 90) });
+      }
+    }
+    if (hits.length) {
+      const rel = f.replace(ROOT + "/", "");
+      flagged[rel] = hits;
+    }
+  }
+
+  const total = Object.values(flagged).reduce((s, h) => s + h.length, 0);
+  console.log(`Files with tautological-skeleton patterns: ${Object.keys(flagged).length}`);
+  console.log(`Total flagged lines: ${total}\n`);
+
+  const byCount = Object.entries(flagged).sort((a, b) => b[1].length - a[1].length);
+  console.log("Top 10 files by trivial-pattern count:");
+  for (const [f, hits] of byCount.slice(0, 10)) {
+    console.log(`  ${String(hits.length).padStart(3)} ${f}`);
+  }
+
+  const patCounts: Record<string, number> = {};
+  for (const hits of Object.values(flagged)) {
+    for (const h of hits) {
+      patCounts[h.pattern] = (patCounts[h.pattern] ?? 0) + 1;
+    }
+  }
+  console.log("\nPer-pattern counts:");
+  const sortedPats = Object.entries(patCounts).sort((a, b) => b[1] - a[1]);
+  for (const [name, c] of sortedPats) {
+    console.log(`  ${String(c).padStart(4)} ${name}`);
+  }
+
+  await mkdir(dirname(WITNESS_OUT), { recursive: true });
+  const witness = {
+    audit: "trivial-skeleton-audit",
+    generated: new Date().toISOString(),
+    total_flagged: total,
+    files_flagged: Object.keys(flagged).length,
+    patterns: Object.fromEntries(sortedPats),
+    flagged,
+  };
+  await writeFile(WITNESS_OUT, JSON.stringify(witness, null, 2));
+  console.log(`\nWitness: ${WITNESS_OUT}`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
