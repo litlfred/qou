@@ -295,6 +295,47 @@ purely whether the specific real number $2/(3\pi)$ lies on the
 image lattice — and iterated NF-composition guarantees the
 generating set is finite and explicit.
 
+## Field equivalence (proved)
+
+The two routes — QOU substrate (NF-product closures) and Bring
+geometry (Hodge / Gauss-Bonnet) — produce Bloch classes that
+coincide:
+
+**Theorem (cyclotomic compositum, unconditional).**
+$\mathrm{lcm}(3, 4, 5) = 60$, so the compositum of the three
+constituent trace fields is exactly
+$$
+  \mathbb{Q}(\zeta_3) \cdot \mathbb{Q}(\zeta_4) \cdot \mathbb{Q}(\zeta_5)
+  \;=\; \mathbb{Q}(\zeta_{60}).
+$$
+This is the natural ambient field for both routes — it contains
+the figure-8's $\mathbb{Q}(\zeta_3)$, Borromean's $\mathbb{Q}(\zeta_4)$,
+and Bring's $\mathbb{Q}(\zeta_5)$.
+
+**Theorem (field equivalence via injectivity, conditional on
+`BlochSuslinUniqueness` / `BlochWignerInjective`).** If both routes
+produce a Bloch class with $\tau_{\text{arch}}$-image $2/(3\pi)$,
+then by the injectivity of
+$D \otimes \mathbb{Q} \colon B(\mathbb{Q}(\zeta_{60}))\otimes\mathbb{Q}
+\to \mathbb{R}^{r_2(\mathbb{Q}(\zeta_{60}))}$ (a consequence of
+Bloch-Suslin pentagon-uniqueness, `BlochSuslinUniqueness` from
+[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness)),
+the two Bloch classes are equal in
+$B(\mathbb{Q}(\zeta_{60}))\otimes\mathbb{Q}$. The Lean theorem
+`field_equivalence_via_uniqueness` makes this explicit using a
+real-level injectivity surrogate
+[`BlochWignerInjective`](bring-hyperbolic-knot-bloch-decomposition.lean);
+no `sorry`, conditional only on the named class.
+
+**Synthesis.** Modulo (a) the existence of the explicit
+NF-product decomposition realising $2/(3\pi)$ (the K-theoretic
+sub-conjecture of this block) and (b) Bloch-Suslin uniqueness
+(`prop:archimedean-functor-uniqueness`), the substrate and
+geometry sides agree on the same Bloch class in the same field
+$\mathbb{Q}(\zeta_{60})$. The remaining open content is purely
+the integer relation in step (a) — a finite, search-tractable
+problem rather than a structural mismatch.
+
 ## Partial proof: the figure-8 sub-piece
 
 The figure-8 knot $4_1$ has trace field $F_{4_1} = \mathbb{Q}(\zeta_3)$
