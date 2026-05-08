@@ -58,6 +58,52 @@ theorem qInteger_sq_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
     qInteger q k ^ 2 > 0 := by
   exact sq_pos_of_pos (qInteger_pos q k hq hk)
 
+/-- `[2]_q = q + q⁻¹` for `q ≠ q⁻¹` — closed form of the second
+    q-integer.  Used by the Markov-parameter substitution
+    `z = 1/[2]_{q^{1/2}}`. -/
+theorem qInteger_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+    qInteger q 2 = q + q⁻¹ := by
+  unfold qInteger
+  have hne : q - q⁻¹ ≠ 0 := hq
+  rw [pow_two, pow_two]
+  field_simp
+  ring
+
+/-- The q-factorial `[n]_q! = ∏_{k=1..n} [k]_q`.  Returns 1 for n = 0. -/
+noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
+  | 0     => 1
+  | n + 1 => qInteger q (n + 1) * qFactorial q n
+
+/-- `[0]_q! = 1` by convention. -/
+theorem qFactorial_zero (q : ℝ) : qFactorial q 0 = 1 := rfl
+
+/-- `[1]_q! = [1]_q = 1` (for `q ≠ q⁻¹`). -/
+theorem qFactorial_one (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+    qFactorial q 1 = 1 := by
+  show qInteger q 1 * qFactorial q 0 = 1
+  rw [qInteger_one q hq, qFactorial_zero, mul_one]
+
+/-- `[2]_q! = [2]_q · [1]_q = q + q⁻¹` (for `q ≠ q⁻¹`). -/
+theorem qFactorial_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+    qFactorial q 2 = q + q⁻¹ := by
+  show qInteger q 2 * qFactorial q 1 = q + q⁻¹
+  rw [qInteger_two q hq, qFactorial_one q hq, mul_one]
+
+/-- The Markov parameter `z = 1/(q^{1/2} + q^{-1/2})` — but we
+    parametrise by the substituted variable `s := q^{1/2}` so the
+    result is purely rational arithmetic.  The Jones-Markov trace
+    obeys `tr_M(σ_w) = z^{ℓ(w)}` for trivial-NF braids. -/
+noncomputable def markovParameter (s : ℝ) : ℝ := 1 / (s + s⁻¹)
+
+/-- Markov parameter is positive when `s > 0` (so in particular
+    when the underlying `q > 0` and `s = q^{1/2}`). -/
+theorem markovParameter_pos (s : ℝ) (hs : s > 0) :
+    markovParameter s > 0 := by
+  unfold markovParameter
+  apply div_pos one_pos
+  have hs_inv_pos : s⁻¹ > 0 := inv_pos.mpr hs
+  linarith
+
 -- ════════════════════════════════════════════════════════════════
 -- §2  Brane fluid data and viscosity
 -- ════════════════════════════════════════════════════════════════
