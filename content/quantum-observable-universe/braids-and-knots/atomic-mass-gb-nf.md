@@ -100,7 +100,7 @@ $$
 The single-gen binding correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$
 with $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan))
 takes ρ_K to $0.18\%$ mean accuracy across $Z = 1..20$
-([atomic braid mass](#prop:atomic-braid-mass)). The pair-gen and
+([atomic braid mass](#prop:atomic-mass-gb-nf)). The pair-gen and
 higher pieces require the proper Wedderburn-coupling structure
 (open work; see [graded ρ_K expansion](#prop:rho-k-graded-expansion)).
 

@@ -79,4 +79,4 @@ $$
 Combined with the knot--particle dictionary identifying particles with specific
 knots (e.g.\ the figure-eight knot $4_1$ with the Higgs field), this formula
 determines the substrate parameter $q$ from experimental mass
-ratios (see [§6.10](#sec:small-scale)).
+ratios (see [§6.10](#sec:precision-tests)).

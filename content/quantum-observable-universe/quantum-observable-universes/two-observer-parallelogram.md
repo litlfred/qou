@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$, and let
 $p \colon \mathbf{1} \to A$ be a
 ([categorical point](#def:categorical-point)).  Let
-$\alpha$ be a ([fermion](#def:fermion)) with germ
+$\alpha$ be a ([fermion](#def:fermion-boson-decomposition)) with germ
 $\alpha_p \in A / \mathfrak{m}_p^2$.
 Consider two independent observations at $p$,
 $\mathfrak{I}_{1,p}, \mathfrak{I}_{2,p} \colon A / \mathfrak{m}_p^2 \to A / \mathfrak{m}_p^2$

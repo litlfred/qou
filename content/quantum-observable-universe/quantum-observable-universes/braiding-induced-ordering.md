@@ -54,7 +54,7 @@ by construction.  $\square$
 
 *Admissibility.*  The ordering $\prec_c$ is **admissible**
 in the sense of
-([admissible system](#def:admissible-system)):
+([admissible system](#unital-groebner-bases:def:admissible-system)):
 left and right multiplication by basis elements preserves
 the ordering ($w \prec_c w'$ implies
 $u \cdot w \cdot v \prec_c u \cdot w' \cdot v$ whenever

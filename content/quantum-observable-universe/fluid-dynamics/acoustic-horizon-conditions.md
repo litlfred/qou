@@ -32,7 +32,7 @@ $$
 $$
 
 where $c_q = 1/(q-1)$ is the
-[speed of light](#def:speed-of-light).  The second term is the
+[speed of light](#def:substrate-parameter).  The second term is the
 quantum correction: at low density ($\rho \to 0$), the quantum
 pressure diverges and $c_s \to \infty$; at high density, the
 quantum correction is negligible and $c_s \to c_q$.
