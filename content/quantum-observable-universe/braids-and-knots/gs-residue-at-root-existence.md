@@ -59,7 +59,7 @@ lands, instances supply the value directly and downstream consequences
 are stated conditionally on this conjecture.*
 
 **Empirical witness.**
-*The numerical residue values at $q_0 = 1.10997\ldots$ for proton,
+*The numerical residue values at $q_0 = :val[q_0]{precision=6}\ldots$ for proton,
 neutron, deuteron are computed by `term6_full_pole_sum.py` and stored
 in `folio-assistant/computations/term6-full-pole-sum.witness.json`.
 Agreement with the Habiro side at machine precision is recorded in

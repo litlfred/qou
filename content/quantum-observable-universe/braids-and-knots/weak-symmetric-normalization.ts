@@ -23,4 +23,8 @@ export default proposition({
     "nv-1",
     "categorical-normalization",
   ],
+  computation: {
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    label: "q_0 numerical anchor (cited via :val[q_0])",
+  },
 });

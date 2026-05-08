@@ -30,7 +30,7 @@ $$
 
 ### Numerical anchor
 
-At $q_0 = 1.10997859\ldots$:
+At $q_0 = :val[q_0]{precision=6}\ldots$:
 
 | factor | value |
 |--------|------:|
