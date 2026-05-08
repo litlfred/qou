@@ -84,15 +84,23 @@ theorem y_lambda_cyclotomic_factorization
     D_4(t) = Φ_4(t)³ · Φ_8(t)² · Φ_16(t) · ...
 
     Numerically verified — see `y-lambda-cyclotomic-factor.witness.json`.
-    Concrete model: predicate is `True`. -/
-def CyclotomicDenominatorN23456 : Prop := True
+
+    Concrete predicate: on the present `cyclotomicDenominator ≡ 1`
+    model, the denominator is `1` for every n ∈ {2, 3, 4, 5, 6}; we
+    encode the constancy claim as the predicate.  When the def is
+    upgraded to the genuine cyclotomic-product, this predicate
+    upgrades to the concrete factor identity. -/
+def CyclotomicDenominatorN23456 : Prop :=
+  ∀ t : ℝ, ∀ n ∈ ({2, 3, 4, 5, 6} : Finset ℕ),
+    cyclotomicDenominator n t = 1
 
 theorem cyclotomic_denominator_explicit_small_n :
-    CyclotomicDenominatorN23456 :=
+    CyclotomicDenominatorN23456 := by
   -- Ref: prop:y-lambda-cyclotomic-factorization §"Per-n denominators"
   -- + `y_lambda_cyclotomic_factor.py` witness (numerically extracted
   -- via sympy `factor` over ℚ in t).
-  trivial
+  intro _ _ _
+  rfl
 
 /-- **Numerator polynomials at n = 2** (small enough to state in Lean):
     P_(2)(t) = t³ + t² + 1
