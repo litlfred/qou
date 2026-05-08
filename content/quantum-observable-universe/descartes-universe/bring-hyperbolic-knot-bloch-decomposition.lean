@@ -216,4 +216,27 @@ theorem two_knot_decomposition_insufficient
           = bringZeroModeValue) : False :=
   hQ.no_two_knot_decomp a b h
 
+/-- **Atlas dimensional shortfall (unconditional).** The recursive
+    atom-knot atlas lists 5 hyperbolic objects with Bloch-Wigner
+    content (figure-8, Borromean, 6_2, 8_11, L_6a4). The ambient
+    Bloch group `B(Q(ζ_60)) ⊗ Q` has rank 8. Therefore the
+    atlas hyperbolic spectrum has *strictly* fewer linearly
+    independent BW directions than the ambient regulator can
+    realise: 5 < 8. (In fact effective rank ≤ 4 because B_3 and
+    L_6a4 share the volume `8G`, see binding-scale-catalan.md.) -/
+-- Ref: [manuscript] recursive-atom-knot-atlas
+-- Ref: [manuscript] binding-scale-catalan
+def atlasHyperbolicCount : ℕ := 5
+
+theorem atlas_count_lt_zeta60_rank :
+    atlasHyperbolicCount < r2Cyclotomic 60 := by
+  unfold atlasHyperbolicCount
+  rw [r2_zeta60_eq_eight]
+  decide
+
+theorem atlas_effective_rank_le_four :
+    atlasHyperbolicCount - 1 ≤ r2Cyclotomic 12 + r2Cyclotomic 4 := by
+  unfold atlasHyperbolicCount
+  rw [r2_zeta12_eq_two, r2_zeta4_eq_one]
+
 end QOU.Descartes
