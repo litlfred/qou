@@ -407,6 +407,84 @@ def main() -> int:
         "full_syt_sweep_n_2_to_5",
         full_sweep_rows,
     )
+
+    # ───────────────────────────────────────────────────────────────
+    # Atomic-shift formula bridge: the per-atom Markov-trace shift
+    # exponent shift(Z, N) = 18Z + 21N + 1 (per the merged
+    # `prop:per-nucleon-shift-additive-linearity`) is the chain
+    #
+    #   shift(β_{atomic}(Z, N))  =  Σ_{Z protons} 18           (per-new-proton)
+    #                            +  Σ_{N neutrons} 21          (per-new-neutron)
+    #                            +  α_shift(T_{(2, 1)}) · #interfaces
+    #
+    # The `α_shift(T_{(2, 1)}) = 1` interface contribution is the
+    # `column_syt_pole_per_cycle(p=2)` value verified above.  The
+    # per-nucleon 18 / 21 contributions are AXKIA inputs (cited in
+    # audit Step 5; not derivable from this witness alone).
+    #
+    # Below we verify the assembly for the standard nuclei test
+    # bench — purely formula arithmetic, but ties the abstract
+    # α_shift = k(p-1) to the per-atom mass-table predictions.
+    # ───────────────────────────────────────────────────────────────
+    interface_pole = column_syt_pole_per_cycle(2)[0]  # = 1 by audit Step 5
+
+    ATOMIC_TEST_BENCH: List[Tuple[int, int, str]] = [
+        (1, 1, "deuteron"),
+        (1, 2, "tritium"),
+        (2, 1, "helium-3"),
+        (2, 2, "helium-4"),
+        (3, 2, "lithium-5"),
+        (3, 3, "lithium-6"),
+    ]
+    PER_PROTON_SHIFT = 18    # AXKIA input — audit Step 5
+    PER_NEUTRON_SHIFT = 21   # AXKIA input — audit Step 5
+
+    atomic_rows = []
+    for Z, N, name in ATOMIC_TEST_BENCH:
+        predicted = PER_PROTON_SHIFT * Z + PER_NEUTRON_SHIFT * N + interface_pole
+        published = 18 * Z + 21 * N + 1   # prop:per-nucleon-shift-additive-linearity
+        passed = predicted == published
+        if not passed:
+            all_passed = False
+        atomic_rows.append({
+            "atom": name,
+            "Z": Z,
+            "N": N,
+            "A": Z + N,
+            "predicted_shift_NF": predicted,
+            "published_shift_NF": published,
+            "agree": passed,
+            "decomposition": (
+                f"{PER_PROTON_SHIFT}·{Z} + {PER_NEUTRON_SHIFT}·{N} + "
+                f"{interface_pole} (= α_shift(T_{{2,1}})) = {predicted}"
+            ),
+        })
+        builder.add_assertion(
+            name=f"atomic_shift_NF[{name}]_eq_18Z_plus_21N_plus_1",
+            computed=predicted,
+            expected=published,
+        )
+
+    builder.add_data(
+        "atomic_shift_formula_bridge",
+        {
+            "formula": "shift(Z, N) = 18Z + 21N + 1",
+            "interface_pole": interface_pole,
+            "interface_source": (
+                "α_shift(T_{(2,1)}) = column_syt_pole_per_cycle(p=2) = 1 — "
+                "derived combinatorially from this witness."
+            ),
+            "per_proton_shift_18": (
+                "AXKIA input from audit Step 5; not derivable from this "
+                "witness alone (requires per-irrep pole order on the proton "
+                "braid word's λ-maximizer)."
+            ),
+            "per_neutron_shift_21": "Same provenance as per-proton 18.",
+            "test_bench": atomic_rows,
+            "published_block": "prop:per-nucleon-shift-additive-linearity",
+        },
+    )
+
     builder.add_data(
         "test_bench", rows,
     )
