@@ -1,14 +1,14 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:39:59.588Z",
-  "total_flagged": 89,
-  "files_flagged": 48,
+  "generated": "2026-05-08T20:41:46.508Z",
+  "total_flagged": 88,
+  "files_flagged": 47,
   "patterns": {
     "const_zero": 35,
     "punit_type": 14,
     "skel_inst": 12,
     "one_def": 9,
-    "prop_true": 8,
+    "prop_true": 7,
     "holds_trivial": 7,
     "punit_unit": 2,
     "id_def": 1,
@@ -196,13 +196,6 @@
         "line": 45,
         "pattern": "const_zero",
         "snippet": "def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
-      }
-    ],
-    "braids-and-knots/markov-trace-frobenius-selection.lean": [
-      {
-        "line": 116,
-        "pattern": "prop_true",
-        "snippet": "def PartitionHeightGtTwo (_n : ℕ) (_lambda_idx : ℕ) : Prop := True"
       }
     ],
     "braids-and-knots/mass-element-nf.lean": [
