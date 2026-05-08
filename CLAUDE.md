@@ -237,6 +237,19 @@ historical pattern (58 of 58 LP/SDP witnesses on `main` lacked
 the dual at the time this rule was added). Do not repeat this
 pattern.
 
+**Current baseline (2026-05-08, post-LP_SDP_HINTS tightening,
+PR #565 F4):** the validator's hint list was deliberately narrowed
+to `lp-dual` / `operator-selection-lp` / `shadow-price` /
+`primal-dual` / `lp-duality` and now flags only **3** witnesses,
+**all 3** of which include the LP dual. **0 of 37 wired
+LP/SDP-flagged witnesses are missing duals.** The historical 58/58
+figure refers to the pre-tightening hint list (which incorrectly
+matched symbolic feasibility certificates and knot-particle probes
+that do not compute LP duals). Going forward, treat the 3-of-3
+set as authoritative; the 14 LP-solving scripts not on the hint
+list are presumed `feasibility-only` (opt-out) until reviewed
+per-file.
+
 ## Writing `.lean` proofs — rules for agents
 
 These rules apply whenever an agent creates or modifies a `.lean` file.

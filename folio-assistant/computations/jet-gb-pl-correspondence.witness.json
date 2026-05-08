@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-05T17:06:14.278169+00:00",
-  "commitSha": "97ca6136a1abb3ab3cda005be83b324d27e83f52",
+  "computedAt": "2026-05-08T17:46:19.130429+00:00",
+  "commitSha": "60893dfd00d9f356072e6cdf0e152fcf79fc8e63",
   "assertions": [
     {
       "name": "rank chain: E_0^p = J^p(A) = J^p𝓢 = p + 1 for all p ∈ {0,1,2,3}",
@@ -35,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "jet-gb-pl-correspondence",
   "scriptFile": "jet_gb_pl_correspondence.py",
   "scriptHash": "a556bd2d08ea",
-  "scriptCommitSha": "da70a3e2714055af54818f6b314ae3819c6d7952",
+  "scriptCommitSha": "ccc484ea9419441c0e2e685743a6a8f4d34e2748",
   "description": "Per-stratum table E_0^p ↔ J^p(A) ↔ J^p𝓢 ↔ Π^(p) for p ∈ {0,1,2,3}.  Asserts (a) the categorical, geometric and GB ranks all equal p + 1, and (b) the PL period magnitude is finite and recorded in picard-lefschetz-thimble.witness.json. The horizontal arrow τ : J^p(A) → J^p𝓢 is the only archimedean step in the diagram.",
   "contentBlock": "prop:jet-gb-pl-correspondence",
   "parameters": {

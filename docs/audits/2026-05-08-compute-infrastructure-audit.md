@@ -94,11 +94,11 @@ the user can triage.
 
 ### Tier 2 — Batched mechanical sweeps with per-file 2-line read
 
-3. **Close F2 (`scriptHash` backfill).** Apply
-   `WitnessBuilder.wrap_legacy` to the ~18 computational-output
-   witnesses that lack `scriptHash`. Hand-curated `auditOnly`
-   witnesses are kept as-is. Batch in PRs of ≤ 10 files; cross-check
-   bit-stability of original keys per `wrap_legacy` invariant.
+3. **F2 — dropped (2026-05-08, author decision).** PR #564 is
+   regenerating witnesses with the canonical `WitnessBuilder` flow,
+   which carries `scriptHash` for free. Backfilling here would be
+   redundant and would risk merge conflicts. Re-evaluate after #564
+   lands.
 4. **Close F3 (pipeline staleness).** Single supervised
    `run_pipeline.py --jobs 4` run on a clean main; review the
    resulting witness diff with `witness-pipeline.yml` drift filter;
@@ -131,15 +131,18 @@ the user can triage.
    Hoefsmit callers per `2026-05-08-compute-audit-workplan.md` §8
    table. Add an `mpmath` BlockCache variant for the 2 mpfr
    callers. Expected: 5–20× per call on n ≥ 8.
-10. **Close F1 (assertion backfill).** Pick the 37 witnesses linked
-    to provable-kind content blocks (theorem/proposition/lemma/
-    corollary); for each, identify the central numerical claim and
-    encode it as `w.add_assertion(...)` with a tolerance. Skip
+10. **Close F1 (assertion backfill, 2026-05-08, author scope: all
+    37 in one batch).** For every wired witness linked to a
+    theorem / proposition / lemma / corollary content block,
+    identify the central numerical claim and encode it as
+    `w.add_assertion(name, computed, expected, tolerance)`. Skip
     audit-only witnesses (their assertions live in the audit MD).
-11. **Close F4 (LP coverage gap review).** Read the 14 LP-solving
-    scripts whose witnesses are not LP_SDP_HINTS-flagged; tag each
-    `feasibility-only` (opt-out) or migrate to `lp_dual_solver` and
-    extend `LP_SDP_HINTS`.
+    Per-witness 2-line read required.
+11. **F4 — closed (2026-05-08, author decision).** The 3-of-3
+    flagged-with-dual set on the tightened `LP_SDP_HINTS` is the
+    authoritative baseline going forward. The 14 LP-solving scripts
+    not on the hint list are presumed `feasibility-only` (opt-out).
+    `--strict-wired` enforced in CI per F11. CLAUDE.md updated.
 12. **Close F13 (`:val[…]` codemod sweep).** Run codemod dry-run on
     the QOU paper; report drift; apply with `--write` after user
     review.
