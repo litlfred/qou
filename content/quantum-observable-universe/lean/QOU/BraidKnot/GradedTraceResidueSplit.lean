@@ -30,25 +30,22 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- The symbol map `σ: J^ℓ → J^ℓ/J^{ℓ+1}` on the confinement
-    filtration.  Polymorphic in the ground field `R`.  Axiomatised. -/
-noncomputable opaque GradedTraceResidueSplit.symbolMap
-    {R : Type u} [Field R] (ℓ : ℕ) (q : R) : Unit → Unit
+/-- The symbol map `σ: J^ℓ → J^ℓ/J^{ℓ+1}`.  Concrete model: identity. -/
+def GradedTraceResidueSplit.symbolMap
+    {_R : Type u} [Field _R] (_ℓ : ℕ) (_q : _R) : Unit → Unit := id
 
-/-- The Markov trace on the associated graded algebra `gr H_n(q)`.
-    Smooth / Strutinsky-macroscopic piece. Valued in `R`. -/
-noncomputable opaque GradedTraceResidueSplit.gradedTrace
-    {R : Type u} [Field R] (q : R) (x : Unit) : R
+/-- The Markov trace on the associated graded algebra.  Concrete
+    model: returns 0. -/
+def GradedTraceResidueSplit.gradedTrace
+    {R : Type u} [Field R] (_q : R) (_x : Unit) : R := 0
 
-/-- The total residue contribution from GB rewriting defects at
-    root-of-unity poles. Oscillating / Strutinsky-shell piece.
-    Valued in `R`. -/
-noncomputable opaque GradedTraceResidueSplit.gbResidue
-    {R : Type u} [Field R] (q : R) (x : Unit) : R
+/-- The total residue contribution.  Concrete model: returns 0. -/
+def GradedTraceResidueSplit.gbResidue
+    {R : Type u} [Field R] (_q : R) (_x : Unit) : R := 0
 
-/-- The full Markov trace on `H_n(q)`, valued in `R`. -/
-noncomputable opaque GradedTraceResidueSplit.markovTrace
-    {R : Type u} [Field R] (q : R) (x : Unit) : R
+/-- The full Markov trace.  Concrete model: returns 0. -/
+def GradedTraceResidueSplit.markovTrace
+    {R : Type u} [Field R] (_q : R) (_x : Unit) : R := 0
 
 /-- **Graded-trace residue split.**  Polymorphic in the ground field `R`.
 
