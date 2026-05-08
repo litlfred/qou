@@ -229,6 +229,7 @@ export default chapter({
         "clausen-function-mathlib-filler",
         "bloch-wigner-mathlib-filler",
         "mass-tower-deeper-fillers",
+        "three-substantive-mathlib-fillers",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
