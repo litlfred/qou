@@ -1,14 +1,14 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:35:59.981Z",
-  "total_flagged": 93,
-  "files_flagged": 49,
+  "generated": "2026-05-08T20:39:59.588Z",
+  "total_flagged": 89,
+  "files_flagged": 48,
   "patterns": {
     "const_zero": 35,
     "punit_type": 14,
-    "prop_true": 12,
     "skel_inst": 12,
     "one_def": 9,
+    "prop_true": 8,
     "holds_trivial": 7,
     "punit_unit": 2,
     "id_def": 1,
@@ -157,28 +157,6 @@
         "line": 81,
         "pattern": "skel_inst",
         "snippet": "instance skeleton (ρ : Type*) : JetTowerUniformDeltaMax ρ where"
-      }
-    ],
-    "braids-and-knots/joint-tower-sdp-confinement.lean": [
-      {
-        "line": 44,
-        "pattern": "prop_true",
-        "snippet": "def GbFiltrationGrading (_vars : PerParticleSdpVariables) : Prop := True"
-      },
-      {
-        "line": 47,
-        "pattern": "prop_true",
-        "snippet": "def JetOrderOrdering (_vars : PerParticleSdpVariables) : Prop := True"
-      },
-      {
-        "line": 62,
-        "pattern": "prop_true",
-        "snippet": "def CrossLevelConsistency (_edge : TowerEdge) : Prop := True"
-      },
-      {
-        "line": 84,
-        "pattern": "prop_true",
-        "snippet": "def JointTowerSdpFeasible (_sdp : JointTowerSdp) : Prop := True"
       }
     ],
     "braids-and-knots/knot-mass-formula-unified.lean": [
