@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-08T21:07:37.437000+00:00",
-  "commitSha": "7a56d6c8abfc034ef6119ef99c3f88c1db90e819",
+  "computedAt": "2026-05-08T23:28:08.360614+00:00",
+  "commitSha": "99036fa356c15c07d2aa96cb05dec8467be6dc2e",
   "assertions": [
     {
       "name": "q_hecke_seminormal_closes_gap[proton]_to_1e-3",
@@ -48,9 +48,9 @@
     },
     {
       "name": "q_hecke_seminormal_closes_gap[tritium]_to_1e-6",
-      "computed": "False",
+      "computed": "True",
       "expected": "True",
-      "passed": false
+      "passed": true
     },
     {
       "name": "q_hecke_seminormal_closes_gap[helium-3]_to_1e-3",
@@ -60,17 +60,17 @@
     },
     {
       "name": "q_hecke_seminormal_closes_gap[helium-3]_to_1e-6",
-      "computed": "False",
+      "computed": "True",
       "expected": "True",
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 97029,
+  "allPassed": true,
+  "durationMs": 66046,
   "computation": "tr-m-q-hecke-seminormal",
   "scriptFile": "tr_m_q_hecke_seminormal.py",
-  "scriptHash": "f6eb11e4ce8b",
-  "scriptCommitSha": "7a56d6c8abfc034ef6119ef99c3f88c1db90e819",
+  "scriptHash": "6ec43b3ae639",
+  "scriptCommitSha": "d5209609fafb808625f182bc11be8b1fe9fc0809",
   "description": "Closes the character gap in the partition-sum tr_M path: tr_M(β) = Σ_λ y_λ(q) · χ^λ_q(β) via canonical Wenzl y_λ (numerical-q-from-start) + Hoefsmit seminormal χ^λ_q at q_0. Cross-checks against `markov_trace_recursive` reference (atomic-tr-m-mpfr-50dps.witness.json). Closes the residual gap identified in tr-m-jones-markov-cross-check.witness.json (rel err ~55-80% with q=1 MN character → expected ~1e-6 with q-Hecke seminormal character).",
   "auditOnly": "docs/audits/2026-05-08-q-hecke-character-gap-closure.md",
   "data": {
@@ -82,12 +82,12 @@
         "A": 1,
         "n_strands": 3,
         "canonical_abs_tr_M": 1.0653062285923893,
-        "q_hecke_partition_sum": 1.0653062285924353,
-        "q_hecke_abs": 1.0653062285924353,
-        "rel_err_vs_canonical": 4.3145559451213976e-14,
+        "q_hecke_partition_sum": 1.0653062285923935,
+        "q_hecke_abs": 1.0653062285923935,
+        "rel_err_vs_canonical": 3.9602204327201236e-15,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.32492328899934364,
+        "elapsed_sec": 0.31940430599979663,
         "non_zero_partitions": 3,
         "top_3_contributions": [
           {
@@ -95,9 +95,9 @@
               3
             ],
             "dim": 1,
-            "y_at_q0": 0.41539578633438373,
+            "y_at_q0": 0.4153957863345666,
             "chi_q_at_q0": 1.382494514546446,
-            "contribution": 0.574282395972993
+            "contribution": 0.5742823959732458
           },
           {
             "partition": [
@@ -105,9 +105,9 @@
               1
             ],
             "dim": 2,
-            "y_at_q0": 0.2809296339799948,
+            "y_at_q0": 0.2809296339798641,
             "chi_q_at_q0": 1.8077033200981636,
-            "contribution": 0.5078374320595985
+            "contribution": 0.5078374320593622
           },
           {
             "partition": [
@@ -116,9 +116,9 @@
               1
             ],
             "dim": 1,
-            "y_at_q0": 0.02274494570562666,
+            "y_at_q0": 0.022744945705705264,
             "chi_q_at_q0": -0.7392235469701234,
-            "contribution": -0.016813599440156216
+            "contribution": -0.016813599440214322
           }
         ]
       },
@@ -129,12 +129,12 @@
         "A": 1,
         "n_strands": 3,
         "canonical_abs_tr_M": 0.9232332971695837,
-        "q_hecke_partition_sum": 0.9232332971696764,
-        "q_hecke_abs": 0.9232332971696764,
-        "rel_err_vs_canonical": 1.0041191412875607e-13,
+        "q_hecke_partition_sum": 0.9232332971695876,
+        "q_hecke_abs": 0.9232332971695876,
+        "rel_err_vs_canonical": 4.208882628151452e-15,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.03844511700117437,
+        "elapsed_sec": 0.00023294000015994243,
         "non_zero_partitions": 3,
         "top_3_contributions": [
           {
@@ -143,18 +143,18 @@
               1
             ],
             "dim": 2,
-            "y_at_q0": 0.2809296339799948,
+            "y_at_q0": 0.2809296339798641,
             "chi_q_at_q0": 1.7008888500891666,
-            "contribution": 0.47783008209620387
+            "contribution": 0.4778300820959815
           },
           {
             "partition": [
               3
             ],
             "dim": 1,
-            "y_at_q0": 0.41539578633438373,
+            "y_at_q0": 0.4153957863345666,
             "chi_q_at_q0": 1.1221068372363079,
-            "contribution": 0.46611845200496443
+            "contribution": 0.46611845200516966
           },
           {
             "partition": [
@@ -163,9 +163,9 @@
               1
             ],
             "dim": 1,
-            "y_at_q0": 0.02274494570562666,
+            "y_at_q0": 0.022744945705705264,
             "chi_q_at_q0": -0.910762206232366,
-            "contribution": -0.020715236931491916
+            "contribution": -0.020715236931563505
           }
         ]
       },
@@ -176,12 +176,12 @@
         "A": 2,
         "n_strands": 6,
         "canonical_abs_tr_M": 0.3882864715477134,
-        "q_hecke_partition_sum": 0.3882864712890246,
-        "q_hecke_abs": 0.3882864712890246,
-        "rel_err_vs_canonical": 6.662317942165924e-10,
+        "q_hecke_partition_sum": 0.3882864715477161,
+        "q_hecke_abs": 0.3882864715477161,
+        "rel_err_vs_canonical": 7.00525671030851e-15,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 3.788165812000443,
+        "elapsed_sec": 3.680352311999968,
         "non_zero_partitions": 11,
         "top_3_contributions": [
           {
@@ -190,18 +190,18 @@
               1
             ],
             "dim": 5,
-            "y_at_q0": 0.05896068139733709,
+            "y_at_q0": 0.058960681401453746,
             "chi_q_at_q0": 3.2158914339387135,
-            "contribution": 0.189611150244886
+            "contribution": 0.18961115025812472
           },
           {
             "partition": [
               6
             ],
             "dim": 1,
-            "y_at_q0": 0.05918771713724117,
+            "y_at_q0": 0.05918771693214866,
             "chi_q_at_q0": 1.559758739418077,
-            "contribution": 0.092318559071017
+            "contribution": 0.09231855875112216
           },
           {
             "partition": [
@@ -209,9 +209,9 @@
               2
             ],
             "dim": 9,
-            "y_at_q0": 0.04028438657433148,
+            "y_at_q0": 0.04028438696593522,
             "chi_q_at_q0": 1.6737481247387067,
-            "contribution": 0.06742591648503644
+            "contribution": 0.06742591714048247
           }
         ]
       },
@@ -222,12 +222,12 @@
         "A": 3,
         "n_strands": 9,
         "canonical_abs_tr_M": 0.10405211867552573,
-        "q_hecke_partition_sum": 0.10405398879467263,
-        "q_hecke_abs": 0.10405398879467263,
-        "rel_err_vs_canonical": 1.7972907911019694e-05,
+        "q_hecke_partition_sum": 0.10405211867552684,
+        "q_hecke_abs": 0.10405211867552684,
+        "rel_err_vs_canonical": 1.0669874277978483e-14,
         "agrees_to_1e_minus_3": true,
-        "agrees_to_1e_minus_6": false,
-        "elapsed_sec": 63.82832383999994,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": 61.78864293899983,
         "non_zero_partitions": 30,
         "top_3_contributions": [
           {
@@ -236,9 +236,9 @@
               3
             ],
             "dim": 48,
-            "y_at_q0": 0.004456576547457841,
+            "y_at_q0": 0.0044564421255197766,
             "chi_q_at_q0": 10.16741952165563,
-            "contribution": 0.045311883388375496
+            "contribution": 0.04531051666413828
           },
           {
             "partition": [
@@ -246,9 +246,9 @@
               1
             ],
             "dim": 8,
-            "y_at_q0": 0.007306412680316064,
+            "y_at_q0": 0.007306301640626693,
             "chi_q_at_q0": 3.7402811795852773,
-            "contribution": 0.027328037838469394
+            "contribution": 0.027327622518809054
           },
           {
             "partition": [
@@ -256,9 +256,9 @@
               2
             ],
             "dim": 27,
-            "y_at_q0": 0.00626904182167138,
+            "y_at_q0": 0.0062689450192913556,
             "chi_q_at_q0": 3.1900195401578078,
-            "contribution": 0.0199983659091982
+            "contribution": 0.01999805710771439
           }
         ]
       },
@@ -269,12 +269,12 @@
         "A": 3,
         "n_strands": 9,
         "canonical_abs_tr_M": 0.20654085856226276,
-        "q_hecke_partition_sum": 0.20654412889585438,
-        "q_hecke_abs": 0.20654412889585438,
-        "rel_err_vs_canonical": 1.583383362687218e-05,
+        "q_hecke_partition_sum": 0.2065408585622649,
+        "q_hecke_abs": 0.2065408585622649,
+        "rel_err_vs_canonical": 1.0347489292338557e-14,
         "agrees_to_1e_minus_3": true,
-        "agrees_to_1e_minus_6": false,
-        "elapsed_sec": 29.03077409300022,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": 0.2364059400001679,
         "non_zero_partitions": 30,
         "top_3_contributions": [
           {
@@ -283,9 +283,9 @@
               3
             ],
             "dim": 48,
-            "y_at_q0": 0.004456576547457841,
+            "y_at_q0": 0.0044564421255197766,
             "chi_q_at_q0": 16.06473221702975,
-            "contribution": 0.07159370883960518
+            "contribution": 0.0715915493871661
           },
           {
             "partition": [
@@ -293,9 +293,9 @@
               1
             ],
             "dim": 8,
-            "y_at_q0": 0.007306412680316064,
+            "y_at_q0": 0.007306301640626693,
             "chi_q_at_q0": 6.567663928203207,
-            "contribution": 0.04798606300507832
+            "contribution": 0.04798533373371584
           },
           {
             "partition": [
@@ -303,9 +303,9 @@
               2
             ],
             "dim": 27,
-            "y_at_q0": 0.00626904182167138,
+            "y_at_q0": 0.0062689450192913556,
             "chi_q_at_q0": 7.5675725819338036,
-            "contribution": 0.047441429004676676
+            "contribution": 0.047440696445639745
           }
         ]
       }

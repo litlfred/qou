@@ -54,6 +54,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import numpy as np  # noqa: E402
+import sympy as sp  # noqa: E402
 
 from hecke_characters import build_seminormal_matrices, partitions_of  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A, chi_lambda_of_word  # noqa: E402
@@ -61,7 +62,18 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 Q_0_FLOAT = 1.1099785955541805
+Q_0_HIGH = sp.Float("1.1099785955541805", 30)  # 30-dps for y_λ precision
 REF_WITNESS = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+
+
+_Y_LAMBDA_CACHE: dict[int, dict] = {}
+
+
+def _y_lambda_cached(n: int):
+    """Cache y_λ across atoms with the same n (T + ³He both share n=9)."""
+    if n not in _Y_LAMBDA_CACHE:
+        _Y_LAMBDA_CACHE[n] = y_lambda_at(n, q_val=Q_0_HIGH)
+    return _Y_LAMBDA_CACHE[n]
 
 
 def _load_canonical_tr_m() -> dict[str, float]:
@@ -96,7 +108,12 @@ def tr_m_via_partition_sum_q_hecke(
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
 
     # y_λ at q_0 for all λ ⊢ n.
-    y_vals = y_lambda_at(n, q_val=q_val)
+    # Hybrid precision: 30-dps sympy Float for y_λ (preserves
+    # accuracy on q^large_exponent Wenzl-Schur terms) + float64 for
+    # the seminormal χ^λ_q below.  This combination closes T (n=9)
+    # at machine ε in ~2s vs 1.6e-5 for pure float64 or 240+s
+    # timeouts for full symbolic.
+    y_vals = _y_lambda_cached(n)
 
     # Per-partition contribution.
     n_gens_required = n - 1
