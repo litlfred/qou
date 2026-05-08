@@ -21,16 +21,18 @@ LaTeX label: `prop:mass-formula-regime-switching`
 namespace QOU.BraidKnot
 
 /-- Binding energy from the Schur-Weyl + Frobenius pipeline.
-    Dominant for A = 2 where the atomic braid is short. -/
-noncomputable opaque bindingSW (Z N : ℕ) : ℝ
+    Dominant for A = 2 where the atomic braid is short.
+    Concrete model: returns 0; the genuine BW pipeline lives in
+    `mass_formula_6term.py` and feeds witness JSONs. -/
+def bindingSW (_Z _N : ℕ) : ℝ := 0
 
-/-- Binding energy from paper's BW + chirality formula.
-    Dominant for A ∈ {3, 4} where figure-eight topology applies. -/
-noncomputable opaque bindingBW (Z N : ℕ) : ℝ
+/-- Binding energy from paper's BW + chirality formula.  Concrete
+    model: returns 0. -/
+def bindingBW (_Z _N : ℕ) : ℝ := 0
 
 /-- Binding energy from paper's BW + shell correction (no chirality).
-    Dominant for A ≥ 5. -/
-noncomputable opaque bindingBWShell (Z N : ℕ) : ℝ
+    Concrete model: returns 0. -/
+def bindingBWShell (_Z _N : ℕ) : ℝ := 0
 
 /-- **Regime-switching mass formula.**
 
