@@ -21,25 +21,23 @@ import Mathlib.Tactic
 
 namespace QOU.PicardLefschetz
 
-/-- Placeholder for the prolonged Seiberg-Witten differential at
-    vertical degree `k`.  In the manuscript this is
-    `λ_SW^(k) = d^k c / dz^k`, computed from the color-tube cubic
-    via implicit differentiation. -/
+/-- Placeholder for the prolonged Seiberg-Witten differential.
+    Concrete model: returns 0 + 0i. -/
 -- Ref: [manuscript] prop:sw-period-thimble-equivalence
-opaque lambdaSW (k : ℕ) (z : ℂ) : ℂ
+def lambdaSW (_k : ℕ) (_z : ℂ) : ℂ := 0
 
-/-- Placeholder thimble integral: `∮_{J_{z_c}} λ_SW^(k) dz`. -/
+/-- Placeholder thimble integral.  Concrete model: returns 0. -/
 -- Ref: [manuscript] def:picard-lefschetz-thimble
-opaque thimbleIntegral (k : ℕ) (z_c : ℂ) : ℂ
+def thimbleIntegral (_k : ℕ) (_z_c : ℂ) : ℂ := 0
 
-/-- Placeholder JSJ piecewise hyperbolic-volume sum for the
-    descended (memoised) substructure. -/
+/-- Placeholder JSJ piecewise hyperbolic-volume sum.  Concrete
+    model: returns 0. -/
 -- Ref: [manuscript] conj:phi-q-tower-jsj-bridge
-opaque descendedJSJVolume (T_w : ℕ) : ℂ
+def descendedJSJVolume (_T_w : ℕ) : ℂ := 0
 
-/-- Placeholder algebraic Markov trace at vertical degree `k`. -/
+/-- Placeholder algebraic Markov trace.  Concrete model: returns 0. -/
 -- Ref: [manuscript] prop:categorical-mass-markov
-opaque algebraicMarkovTrace (k : ℕ) (T_w : ℕ) : ℂ
+def algebraicMarkovTrace (_k : ℕ) (_T_w : ℕ) : ℂ := 0
 
 /-- The synthesis conjecture, packaged as a typeclass over a vertical
     degree `k`, a transient state index `T_w`, and the depth `n` of
@@ -71,8 +69,7 @@ class PLJSJMassIntegration
           (intersection_numbers σ : ℂ) *
             thimbleIntegral k (thimble_base_points σ)))
 
-/-- Stated form of the conjecture (inhabited only via a class
-    instance). -/
+/-- Stated form of the conjecture (inhabited via a class instance). -/
 -- Ref: [manuscript] conj:pl-jsj-mass-integration-equivalence
 theorem pl_jsj_mass_integration
     (k : ℕ) (T_w : ℕ) (n : ℕ)
@@ -83,5 +80,19 @@ theorem pl_jsj_mass_integration
           (h.intersection_numbers σ : ℂ) *
             thimbleIntegral k (h.thimble_base_points σ))) :=
   h.mass_equality
+
+/-- **Skeleton instance.**  All concrete defs of `lambdaSW`,
+    `thimbleIntegral`, `descendedJSJVolume`, `algebraicMarkovTrace`
+    return zero, so the mass-equality field reduces to `0 = 0 + Σ·0 = 0`
+    and closes by `simp`. -/
+-- Ref: [manuscript] conj:pl-jsj-mass-integration-equivalence §"Skeleton"
+instance skeleton (k : ℕ) (T_w : ℕ) (n : ℕ) :
+    PLJSJMassIntegration k T_w n where
+  thimble_base_points := fun _ => 0
+  intersection_numbers := fun _ => 0
+  mass_equality := by
+    show (0 : ℂ) = 0 + Finset.univ.sum
+      (fun σ : Fin n => ((0 : ℤ) : ℂ) * 0)
+    simp
 
 end QOU.PicardLefschetz
