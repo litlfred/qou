@@ -76,6 +76,13 @@ ATOMS = [
     ("deuteron",  1, 1, 1, "²H (B_6 atom-3A)",    "6_2"),
     ("tritium",   1, 2, 1, "³H (B_9 atom-3A)",    None),
     ("helium-3",  2, 1, 1, "³He (B_9 atom-3A)",   None),
+    # Canonical ⁴He (47-crossing word with 3 interfaces pp/pn/nn at
+    # gens 2/5/8). Replaces the disjoint H_12 value previously stored
+    # in atomic-tr-m-helium4.witness.json. Requires n=12 y_λ table
+    # which is now available in y-lambda-mpfr-witness.json (regenerated
+    # by regenerate_y_lambda_mpfr.py at true 50 dps from the symbolic
+    # witness; the Rust kernel times out at n=12 >45 min).
+    ("helium-4",  2, 2, 2, "⁴He (B_12 atom-3A)",  None),
 ]
 
 
