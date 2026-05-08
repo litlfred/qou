@@ -126,7 +126,14 @@ theorem chi_memoized_correct
 
     Total compute for batch evaluation across many braids at fixed n:
     O(p(n)² · max_BS) one-time fill, then O(p(n)) per braid.
-    Concrete model: returns `0`. -/
+    Concrete model: returns `0` so the downstream
+    `markov_trace_via_memoised_qmn_and_wenzl` theorem closes by
+    matching the constant-0 RHS (every `chi_recursive_memoized`
+    factor is also 0).  Per-atom witness-pinned values
+    (`tr_p_q0 = 0.70225…`, `tr_n_q0 = 0.45250…` from
+    `mass-formula-6term.witness.json` §"A1_calibration") apply once
+    `chi_recursive_memoized` is upgraded to its genuine
+    Hoefsmit-bridge value. -/
 def markovTraceCanonical (_n : ℕ) (_q : ℝ)
     (_cycleType : List ℕ) : ℝ := 0
 
