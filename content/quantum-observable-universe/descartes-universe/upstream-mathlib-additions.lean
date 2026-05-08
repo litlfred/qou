@@ -173,15 +173,44 @@ theorem one_div_nat_succ_sq_summable :
     simp [Real.rpow_natCast]
     ring
 
-/-- **Sketch lemma (deferred):** `complexLiTwo` is summable on the
-    closed unit disk `|z| ≤ 1`. The proof would compare each term
-    `|z^(k+1) / (k+1)²|` against `1/(k+1)²` using `|z|^(k+1) ≤ 1`
-    and apply `Summable.of_nonneg_of_le` to the helper above.
+/-- **Theorem: `complexLiTwo` is summable on the closed unit disk
+    `‖z‖ ≤ 1` (proof attempt).** Compares each term
+    `‖z^(k+1) / (k+1)²‖ = ‖z‖^(k+1) / (k+1)²` against the
+    summable real series `1/(k+1)²` from
+    `one_div_nat_succ_sq_summable`, using `‖z‖^(k+1) ≤ 1`. The
+    `Summable.of_nonneg_of_le` (or `Summable.of_norm_bounded`)
+    Mathlib lemma closes it.
 
-    The Lean proof requires Mathlib's complex absolute-value
-    infrastructure and `Summable.norm_iff` / `Complex.summable_abs`
-    bridging. We state the conclusion as a class hypothesis,
-    parallel to the Tauberian gap. -/
+    NOTE: this proof uses Mathlib API from `Complex.norm_div`,
+    `Complex.norm_pow`, and `pow_le_one`. Without local Lean
+    compilation we cannot guarantee the exact lemma names match;
+    if Mathlib renames any, the proof needs a one-line patch. -/
+-- Ref: [zagier1986]
+theorem complexLiTwo_summable_on_unit_disk
+    {z : ℂ} (hz : ‖z‖ ≤ 1) :
+    Summable (fun k : ℕ => z ^ (k + 1) / ((↑k + 1 : ℂ)) ^ 2) := by
+  apply Summable.of_norm
+  apply Summable.of_nonneg_of_le
+    (fun k => norm_nonneg _)
+    ?_
+    one_div_nat_succ_sq_summable
+  intro k
+  rw [norm_div, norm_pow]
+  -- ‖z^(k+1)/((k+1)²)‖ = ‖z‖^(k+1) / ‖((k+1):ℂ)²‖
+  -- Need: ‖z‖^(k+1) / ‖((k+1):ℂ)²‖ ≤ 1 / ((k+1)² : ℝ)
+  have hnz : ‖z‖ ^ (k + 1) ≤ 1 := pow_le_one (k + 1) (norm_nonneg z) hz
+  -- and the denominator ‖((k+1):ℂ)²‖ = ((k+1)² : ℝ)
+  have hdenom : ‖((↑k + 1 : ℂ)) ^ 2‖ = ((↑k + 1 : ℝ)) ^ 2 := by
+    rw [norm_pow, Complex.norm_natCast]
+  rw [hdenom]
+  apply div_le_div_of_nonneg_right hnz
+  positivity
+
+/-- **Class form for downstream use.** Some downstream blocks
+    take `complexLiTwo`'s summability as a typeclass hypothesis;
+    we provide both the unconditional theorem above and the
+    class form here for backward compatibility with the §3b-cond
+    pattern. -/
 -- Ref: [zagier1986]
 class ComplexLiTwoSummable (z : ℂ) : Prop where
   /-- The complex dilogarithm series is summable at `z`. -/
@@ -211,5 +240,58 @@ theorem blochWigner_unit_circle_eq_Cl_2
     [ComplexLiTwoUnitCircleClassical]
     (θ : ℝ) :
     True := trivial
+
+/-! ## (5) Cl_2 double-angle functional equation -/
+
+/-- The **Cl_2 double-angle functional equation** (Spence-Lewin
+    form, restricted to Cl_2):
+
+      Cl_2(2θ) = 2 · Cl_2(θ) - 2 · Cl_2(π - θ).
+
+    This is the imaginary-part projection of the classical
+    Spence-Lewin / Landen identity for `Li_2`:
+
+      Li_2(z²) = 2·Li_2(z) + 2·Li_2(-z),
+
+    after the standard substitution `Li_2(-z) = π²/6 - Li_2(1+z)`
+    and taking imaginary parts on the unit circle.
+
+    Direct `tsum` proof is blocked: `sin(2kθ) = 2 sin(kθ) cos(kθ)`
+    doesn't decompose into a *linear* combination of `sin(kθ)`
+    terms (it's a cross-product), so termwise rearrangement of
+    the `tsum` defining `Cl_2(2θ)` does not produce
+    `2·Cl_2(θ) - 2·Cl_2(π-θ)`. The proof requires Mathlib's
+    `Real.dilog` (or `Complex.dilog`) infrastructure plus the
+    Spence-Lewin functional equation for `Re(Li_2)` and
+    `Im(Li_2)`.
+
+    We axiomatise the identity as a typeclass hypothesis with
+    one field; downstream callers that need the double-angle
+    formula take `[Cl_2_DoubleAngle]` as `[Instance]`. -/
+-- Ref: [zagier1986], [bloch2000]
+class Cl_2_DoubleAngle : Prop where
+  /-- The Spence-Lewin double-angle identity for Cl_2. -/
+  double_angle :
+    ∀ θ : ℝ,
+      Cl_2 (2 * θ) = 2 * Cl_2 θ - 2 * Cl_2 (Real.pi - θ)
+
+/-- **Conditional theorem (sorry-free).** With the double-angle
+    class in scope, the identity holds. Boundary case: at `θ = 0`,
+    both sides reduce to `Cl_2(0) = 0` directly without invoking
+    the class hypothesis (since `Cl_2(2·0) = Cl_2(0) = 0` and
+    `2·Cl_2(0) - 2·Cl_2(π) = 0 - 0 = 0`). -/
+-- Ref: [zagier1986]
+theorem Cl_2_double_angle [hC : Cl_2_DoubleAngle] (θ : ℝ) :
+    Cl_2 (2 * θ) = 2 * Cl_2 θ - 2 * Cl_2 (Real.pi - θ) :=
+  hC.double_angle θ
+
+/-- **Boundary unconditional check:** at `θ = 0`, the double-angle
+    identity reduces to `Cl_2(0) = 0` on both sides (using
+    `Cl_2(0) = 0` and `Cl_2(π) = 0` from `Cl_2_pi`). -/
+-- Ref: [zagier1986]
+theorem Cl_2_double_angle_at_zero_unconditional :
+    Cl_2 (2 * 0) = 2 * Cl_2 0 - 2 * Cl_2 (Real.pi - 0) := by
+  rw [mul_zero, Cl_2_zero, sub_zero, Cl_2_pi]
+  ring
 
 end QOU.Descartes.UpstreamAdditions

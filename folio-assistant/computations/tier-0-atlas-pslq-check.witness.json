@@ -1,0 +1,25 @@
+{
+  "computation": "tier-0-atlas-pslq-check",
+  "description": "Tier-0 falsifiability check for BringHyperbolicDecomposition: PSLQ over atlas BW values vs 2/(3\u03c0) at 100 dps.",
+  "contentBlock": "conj:bring-hyperbolic-knot-bloch-decomposition",
+  "precision_dps": 100,
+  "tolerance": "1e-80",
+  "basis_labels": [
+    "2/(3\u03c0)",
+    "2\u00b7Cl_2(\u03c0/3)",
+    "8G",
+    "Vol(6_2)",
+    "Vol(8_11)"
+  ],
+  "basis_values_50dp": [
+    "0.21220659078919378102517835116335248271261286098727526",
+    "2.02988321281930725004240510854904057188337861506059958",
+    "7.32772475341775212043682811945907288619319499425337707",
+    "4.40083549247793113278424664201152265381958410185379398",
+    "8.28627104794135746111462863950761968157704880431446814"
+  ],
+  "target": "0.2122065907891937810251783511633524827126128609872752649968897920785290635123020467868184036883374479",
+  "relation_found": false,
+  "relation": null,
+  "interpretation": "NO non-trivial small relation found at 100 dps with max coeff 10^8 \u2014 atlas hyperbolic objects {4_1, B_3, 6_2, 8_11} (modulo L_6a4 = B_3 via 8G identity) DO NOT span 2/(3\u03c0). Higher-tier search needed."
+}
