@@ -279,10 +279,40 @@ constraint may restrict the *representative*: a hyperbolic-in-Bring
 knot $K$ might require a $\sigma$-word that is NOT in the
 GS-shortlex normal form of $H_n(q)$, in which case the BW value
 $D[Z_K]$ is reached only after Hecke-trace identification with an
-NF-basis triple-product image. Verifying this for all
-hyperbolic-in-Bring knots up to a chosen crossing bound is a
-SnapPy / KnotInfo computation outside this proof's scope; it is
-not blocked by Markov stabilization but by the GS-NF reduction.
+NF-basis triple-product image.
+
+**Status of the NF-probe (May 2026 audit).** A repository scan
+identifies the present coverage gap concretely:
+
+| Atlas hyperbolic object | Explicit $\sigma$-word in $H_n(q)$? | Methodology tag |
+|---|---|---|
+| Figure-8 $4_1$ | ✗ (mentioned as Higgs/mass mechanism only) | not principled-derivation |
+| Borromean $\mathcal{B}_3$ | ✓ $(\sigma_1\sigma_2^{-1})^3 \in H_3$ | `principled-derivation` |
+| Deuterium $6_2$ | ✗ | `manual-historical-volume-match` |
+| Tritium $8_{11}$ | ✗ | `manual-historical-volume-match` |
+| Helium-3 $L_{6a4}$ | ✗ | `manual-historical-volume-match` |
+
+So **only 1 of 5 atlas hyperbolic objects has a principled-derivation
+$\sigma$-word**; the other four lack explicit Hecke representatives.
+The existing
+[`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb_filtration_jet_tracker.py)
+has tested $\sigma_1^3$ (electron, trefoil — torus, no BW) and
+$(\sigma_1\sigma_2^{-1})^3$ (Borromean, hyperbolic) but has NOT
+been extended to $H_{18}$ / $H_{21}$ / etc. for the four
+unrepresented hyperbolic objects.
+
+**Smallest concrete sub-question:** compute the canonical Hecke NF
+form of each of $\{4_1, 6_2, 8_{11}, L_{6a4}\}$ in the appropriate
+$H_n(q_0)$ for $n \leq 8$, either by (a) extending
+`gb_filtration_jet_tracker.py` to handle these knots, or (b)
+running the joint-tower SDP referenced as `"next_step"` in the
+existing
+[`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb-filtration-jet-order.witness.json).
+Once obtained, verify closure-identity against SnapPy volumes. This
+is the irreducible computational gate to inhabiting
+`BringHyperbolicDecomposition` from the atlas side — the question
+is no longer "does it exist?" but "perform the GS reduction for
+the 4 unrepresented objects."
 
 Concretely:
 
