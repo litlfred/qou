@@ -29,5 +29,5 @@ scalar is a functorial composition (decategorification, then
 evaluation at the substrate $q_0$, then dimensional anchor), not an
 identity — see [mass-spectrum generating
 function](#rem:mass-spectrum-generating-function) for the full
-$\mathfrak{M}_K \to P_K(q) \to M_K \approx m_0 \cdot |P_K(q_0)|$
+$\mathfrak{M}_K \to P_K(q) \to \mathfrak{m}_{\mathcal{K}} \approx m_0 \cdot |P_K(q_0)|$
 pipeline.*

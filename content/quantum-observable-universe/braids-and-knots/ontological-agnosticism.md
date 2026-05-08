@@ -23,9 +23,9 @@ transport from the special fibre at $q = 0$ to a generic fibre
 $\mathcal{S}_p$ at $q = q_0$:
 
 $$
-  \tau\bigl(M_K\bigr)\big|_{q = q_0}
+  \tau\bigl(\mathfrak{M}_K\bigr)\big|_{q = q_0}
   \;=\;
-  \tau\bigl(M_K\bigr)\big|_{q \to 0},
+  \tau\bigl(\mathfrak{M}_K\bigr)\big|_{q \to 0},
 $$
 
 so any Laurent polynomial $P_K^{(k)}(q)$ extracted at level $k$ from

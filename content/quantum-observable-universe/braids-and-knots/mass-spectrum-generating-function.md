@@ -53,7 +53,7 @@ the substrate value $q_0 \approx 1.1097$:
 
 $$
   \boxed{\;\;
-    M_K
+    \mathfrak{m}_{\mathcal{K}}
     \;\approx\;
     m_0 \cdot \bigl|P_K(q_0)\bigr|
   \;\;}
@@ -70,7 +70,7 @@ $$
   \;\xrightarrow{\;\mathrm{ev}_{q_0}\;}\;
   P_K(q_0)
   \;\xrightarrow{\;m_0\,|\cdot|\;}\;
-  M_K \in \mathbb{R}_{\geq 0}
+  \mathfrak{m}_{\mathcal{K}} \in \mathbb{R}_{\geq 0}
 $$
 
 is the **functorial equivalence** linking the categorical state, its
@@ -86,8 +86,9 @@ $m_0\,|\cdot|$ is unit conversion.
 Conflating the polynomial with the mass produces three failure modes:
 
 1. **A polynomial cannot equal a scalar.** Any agent or formalisation
-   that writes "$P_K(q) = M_K$" type-checks as nonsense. The correct
-   statement is $M_K \approx m_0 \cdot |P_K(q_0)|$.
+   that writes "$P_K(q) = \mathfrak{m}_{\mathcal{K}}$" type-checks as
+   nonsense. The correct statement is
+   $\mathfrak{m}_{\mathcal{K}} \approx m_0 \cdot |P_K(q_0)|$.
 2. **The microstate spectrum is invisible.** Treating $P_K$ as a
    single number erases the degeneracy structure carried by
    coefficients $c_d$ and the energy structure carried by exponents
@@ -104,8 +105,9 @@ Conflating the polynomial with the mass produces three failure modes:
 When stating mass results in `.md` or `.lean`:
 
 - **Do** write "$P_K(q)$ is the mass-spectrum generating function of
-  $K$, and $M_K \approx m_0 \cdot |P_K(q_0)|$".
-- **Do not** write "$P_K(q)$ is the mass of $K$" or "$P_K = M_K$".
+  $K$, and $\mathfrak{m}_{\mathcal{K}} \approx m_0 \cdot |P_K(q_0)|$".
+- **Do not** write "$P_K(q)$ is the mass of $K$" or
+  "$P_K = \mathfrak{m}_{\mathcal{K}}$".
 - The Lean side carries this via the [mass identity](#def:mass-identity)
   definition (categorical state $\to$ polynomial) and the calibration
   blocks ([three calibration inputs](#prop:three-calibration-inputs))
