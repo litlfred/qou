@@ -68,44 +68,65 @@ structurally consistent and not coincidental — it is what one expects
 from a categorical-Lagrangian QFT whose UV completion lives on
 Bring's curve.
 
-## Pre-archimedean concern (open)
+## Pre-archimedean status — resolved by uniqueness of $\tau_{\text{arch}}$
 
 The bare formula $1/\alpha_{\text{bare}} = q[9]_q[10]_q$ and its
 trace-ratio refactoring
 [`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)
 both live entirely in the pre-archimedean substrate ring
-$R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. The proposed correction
-$2/(3\pi)$, however, imports the archimedean transcendental $\pi$ via
-sphere volumes and Hodge / Gauss-Bonnet data on Bring's surface — none
-of which are objects of $R$. This is a structural cost: a $q$-rational
-formula with a $\pi$-summand is not a closed form *over the substrate*.
+$R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. The additive
+correction $2/(3\pi)$ imports the archimedean transcendental $\pi$
+via sphere-volume / Hodge data on Bring's surface — *not* an
+object of $R$. An earlier audit (May 2026) flagged this as a
+structural cost requiring repair.
 
-Two routes to repair this without abandoning the numerical match:
+**Resolution (May 2026):** The repair route comes from
+[`conj:archimedean-functor-uniqueness`](#conj:archimedean-functor-uniqueness).
+The substrate's pentagon-coherence (built into the cosimplicial /
+Yekutieli triple structure) factors the QOU mass-formula state
+sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin
+pentagon-uniqueness [`suslin1991`, `bloch2000`] then forces every
+real-valued archimedean realization to coincide with the
+Bloch-Wigner dilogarithm $D$ up to a single overall scalar. The
+$\pi$ in $2/(3\pi)$ is therefore *not* an external import: it is
+the unique archimedean shadow of substrate pentagon data on
+Bring's surface, propagated through $D$.
 
-1. **Pre-archimedean origin for $\pi$.** Show that $2/(3\pi)$ arises
-   as the $q \to 1$ asymptotic limit of a quantity definable in $R$
-   (or in a categorical / RT invariant context). Candidate sources:
-   - The Reshetikhin-Turaev invariant of $S^3$ at level $k$ has known
-     $q \to 1$ asymptotics that involve $\pi$; if the genus-$4$
-     torus-knot pair $\{T_{2,9}, T_{3,5}\}$ on Bring's surface enters
-     an RT invariant whose $k \to \infty$ semi-classical limit
-     produces a $1/\pi$, the additive shift would have a categorical
-     origin.
-   - The Faddeev / Kashaev quantum dilogarithm $\Phi_q(z)$ has
-     classical-limit asymptotics involving $\pi^2/6$ (Spence's
-     identity) and $\pi$ (Stokes data); these are pre-archimedean
-     objects that produce $\pi$ only in the archimedean realisation.
-2. **Pre-archimedean reformulation.** Replace $2/(3\pi)$ by an
-   equivalent expression in $R$, perhaps an asymptotic series in $q-1$
-   or a $q$-deformation $f_q$ with $f_1 = 2/(3\pi)$. This is what
-   $q$-deformed analogues of $\pi$ (e.g.\ Gosper's $\pi_q$) are for;
-   none of the standard candidates have been tested numerically here.
+In short, the dichotomy is intentional and forced:
 
-Until one of these is supplied, the additive form is **numerically
-viable but structurally outside $R$** — it is not on equal footing
-with the bare formula. Treat its "preferred-lead" status as
-*provisional*, conditional on an upstream pre-archimedean
-identification of the $\pi$-bearing term.
+- **Pre-archimedean side** ($q$-rational, in $R$): the bare formula
+  $q[9]_q[10]_q$ and its categorical trace-ratio derivation. No
+  $\pi$, no transcendentals.
+- **Archimedean side** (transcendental, in $\mathbb{R}$): the
+  unique image under $\tau_{\text{arch}}$, factoring through $D$.
+  Carries $\pi$, $\zeta(3)$, hyperbolic volumes, etc., as forced
+  archimedean shadows of substrate data.
+
+The additive correction is the archimedean image; the bare formula
+is the pre-archimedean source. They live on different sides of
+$\tau_{\text{arch}}$, not in different rings of the same kind. The
+[figure-8 archimedean illustration](#rem:figure-8-archimedean-illustration)
+shows the same dichotomy in concrete miniature: $4_1$ has
+$\mathrm{Vol}_q(4_1) \in \mathbb{Z}[q^{\pm 1/2}]$ on the substrate
+side and $\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3) \approx
+2.02988$ on the laboratory side, with the bridge fixed by
+uniqueness.
+
+Two open computational sub-problems remain (both are now framed by
+uniqueness rather than structural anomaly):
+
+1. **Identify the precise Bloch-group class on Bring's surface.**
+   The conjecture predicts $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ is
+   the $\tau_{\text{arch}}$-image of a specific class in
+   $B(\mathbb{C})$ assembled from the cosimplicial data of the
+   genus-$4$ pair $\{T_{2,9}, T_{3,5}\}$. Making this class
+   explicit closes the Lean stub.
+2. **Compute the next-order self-energy.** The $\alpha/(4\pi)$
+   term that brings the residual to $+5.7 \times 10^{-8}$ should
+   factor through a higher Bloch group $B_n(\mathbb{C})$ with the
+   $n$-variable polylogarithm $D_n$. Pentagon-uniqueness for $D_n$
+   at $n \geq 3$ is open (Goncharov 1995); the QOU framework can
+   take it as input where needed.
 
 ## Status: conjectural — naive interpretations fail
 

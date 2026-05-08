@@ -10,6 +10,8 @@ export default remark({
     "conj:em-coupling-chern-simons",
     "conj:alpha-em-gluon-octet-form",
     "conj:em-coupling-bring-zero-mode",
+    "conj:archimedean-functor-uniqueness",
+    "rem:figure-8-archimedean-illustration",
     "prop:gram-determinant-plancherel-ratio",
     "rem:gram-kappa-spectral-interpretation",
   ],

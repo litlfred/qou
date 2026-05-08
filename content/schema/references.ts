@@ -368,6 +368,37 @@ export const references: CSLData[] = [
     DOI: "10.1007/BFb0084581",
   }),
 
+  // ── Suslin 1991 ───────────────────────────────────────────────
+  ref({
+    id: "suslin1991",
+    type: "article-journal",
+    title: "K_3 of a field, and the Bloch group",
+    author: [
+      { family: "Suslin", given: "A. A." },
+    ],
+    "container-title": "Proceedings of the Steklov Institute of Mathematics",
+    volume: "183",
+    issued: { "date-parts": [[1991]] },
+    page: "217-239",
+    note: "Pentagon characterisation of the Bloch-Wigner dilogarithm: any continuous, antisymmetric, real-valued function on the Bloch group satisfying the 5-term identity is a constant scalar multiple of $D$.",
+  }),
+
+  // ── Bloch 2000 ────────────────────────────────────────────────
+  ref({
+    id: "bloch2000",
+    type: "book",
+    title: "Higher Regulators, Algebraic K-Theory, and Zeta Functions of Elliptic Curves",
+    author: [
+      { family: "Bloch", given: "Spencer J." },
+    ],
+    publisher: "American Mathematical Society",
+    "publisher-place": "Providence, RI",
+    issued: { "date-parts": [[2000]] },
+    "collection-title": "CRM Monograph Series",
+    "collection-number": 11,
+    ISBN: "978-0-8218-2973-8",
+  }),
+
   // ── Lusztig 1993 ──────────────────────────────────────────────
   ref({
     id: "lusztig1993",

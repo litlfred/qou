@@ -221,6 +221,7 @@ export default chapter({
         "e-hartree-categorical-derivation",
         "bohr-radius-categorical",
         "archimedean-hartree-derivation",
+        "archimedean-functor-uniqueness",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",

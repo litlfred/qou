@@ -8,8 +8,10 @@ export default conjecture({
     "prop:em-coupling-projection",
     "prop:force-carrier-bring-uniqueness",
     "prop:exterior-square-borromean",
+    "conj:archimedean-functor-uniqueness",
+    "rem:figure-8-archimedean-illustration",
   ],
-  cites: ["jones1987", "kassel1995"],
+  cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"],
   tags: [
     "alpha-em",
     "fine-structure",

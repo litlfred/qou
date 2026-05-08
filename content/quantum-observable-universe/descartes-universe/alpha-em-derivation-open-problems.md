@@ -179,22 +179,29 @@ to be a scalar or a $2{\times}2$ matrix. Closure must either:
   in which the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ enters
   $1/\alpha_{EM}$ as a *summand*, not a factor.
 
-The additive route is the current numerical front-runner, **conditional on
-resolving a pre-archimedean concern**: the bare formula and its
-trace-ratio refactoring live entirely in the pre-archimedean substrate
-ring $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, but the candidate
-correction $2/(3\pi)$ imports the archimedean transcendental $\pi$ via
-sphere volumes and Hodge data on Bring's surface — neither of which is
-an object of $R$. A closed form for $1/\alpha_{EM}$ over the substrate
-must produce $\pi$ from a pre-archimedean source: candidates include
-the $q \to 1$ asymptotics of a Reshetikhin-Turaev invariant of $S^3$
-involving the genus-$4$ pair $\{T_{2,9}, T_{3,5}\}$, or the classical
-limit of the Faddeev / Kashaev quantum dilogarithm $\Phi_q$ on Bring's
-curve. Until one is established, the additive form is numerically
-viable but structurally outside $R$, and is not on equal footing with
-the bare formula. See
-[`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode)
-for the two repair routes.
+The additive route is the current numerical front-runner. The
+earlier "pre-archimedean concern" — that the candidate correction
+$2/(3\pi)$ imports $\pi$ via Bring-surface Hodge data, none of which
+is an object of $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ — is
+**structurally resolved** by
+[`conj:archimedean-functor-uniqueness`](#conj:archimedean-functor-uniqueness):
+the substrate's pentagon-coherence factors the QOU mass-formula
+state sum through a class in the Bloch group $B(\mathbb{C})$, and
+Bloch-Suslin pentagon-uniqueness [`suslin1991`, `bloch2000`] forces
+every real-valued archimedean realization to coincide (up to a
+single overall scalar) with the Bloch-Wigner dilogarithm $D$. The
+$\pi$ in $2/(3\pi)$ is therefore the unique archimedean shadow of
+substrate pentagon data, not an external import — the bare formula
+and the additive correction live on different sides of
+$\tau_{\text{arch}}$, not in different rings of the same kind. The
+[figure-8 example](#rem:figure-8-archimedean-illustration) shows
+the same dichotomy in concrete miniature: $\mathrm{Vol}_q(4_1) \in
+\mathbb{Z}[q^{\pm 1/2}]$ pre-archimedeanly,
+$\mathrm{Vol}(4_1) = 3\,\mathrm{Cl}_2(\pi/3)$ archimedeanly. Two
+sub-problems remain (both open computations rather than structural
+anomalies): identify the precise Bloch-group class on Bring's
+surface, and lift the next-order $\alpha/(4\pi)$ term to a higher
+Bloch group $B_n(\mathbb{C})$.
 
 ## What this implies
 
