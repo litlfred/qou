@@ -29,7 +29,7 @@ needs work, the remaining work is explicit.
 | F1 | The Wedderburn mass formula and every load-bearing mass theorem (`thm:wedderburn-mass-formula`, `thm:six-term-mass-formula-complete`, `thm:knot-mass-formula-unified`, `thm:markov-trace-factorization`, `thm:groebner-shirshov-energy`, …) flag as **§3b violators**. | **Critical** | **Reframed** — see §1A: the violators are *transitive*, not direct. Of the 12 listed theorems, only `thm:knot-mass-formula-unified` directly cites a `conj:` in its `uses[]`; the others reach conjectures via intermediate `prop:` nodes. The right unblocking move is to class-axiomatise the 12 hub conjectures (or tighten 2–3 intermediate `uses[]` lists), **not** to demote the theorems. Concrete migration plan in §7 P1. |
 | F2 | The current atomic-braid path shows ~35 % MAE on D…⁴He, not the 0.9 % cited in `HANDOVER-STATUS.md`. | **Critical** | **Doc fixed** — top of `HANDOVER-STATUS.md` now carries a status banner pointing here and clarifying that the 0.9 % figure described the deprecated CRT path. |
 | F3 | The framework actually carries three calibrations (`m_e`, `m_μ/m_e`, `Q_β`), not one. | **High** | **Doc fixed** — same banner in `HANDOVER-STATUS.md`. |
-| F4 | T4 / T6 are per-A lookup tables, not derived formulas. | **Was High — now Medium / Low** | **Corrected** — see §3.3a: T4 (`atomic_braid_mass_terms.t4_raw`) is **derived live** at 50 dps (Frobenius co-Casimir trace ∑_λ 1/dim_q(λ)). T6 reads a witness, but the witness is itself produced by a derivation script — there are *two* derivation scripts (`term6_full_pole_sum.py` Habiro path, `term6_residues_at_roots.py` canonical Markov-peel path), and `t6_canonical_MeV` consumes the older one. Concrete fix in §7 P4'. |
+| F4 | T4 / T6 are per-A lookup tables, not derived formulas. | **Mixed** | **T4 corrected (low):** derived live at 50 dps in `t4_raw` (Frobenius co-Casimir trace ∑_λ 1/dim_q(λ)). **T6 worse than originally reported (high, escalated 2026-05-08):** the witness `t6_canonical_MeV` reads (`term6-habiro-residue-mpfr-50dps.witness.json`) does **not exist on this branch** — T6 contributes silently zero to every prediction. Canonical witness `term6-residues-at-roots.witness.json` exists for A=1–4 but uses different units; magnitudes (O(10⁶) for ⁴He) suggest a missing consumer-side normalization. Audit flag now coded into `t6_canonical_MeV` docstring; unit-convention question escalated to author on #564. See §3.3a. |
 | F5 | `q₀ = 1.1097…` hardcoded in 20+ scripts/witnesses. | **High → Medium** | **Partly fixed** — the only active *executable* hardcode (`joint_tower_sdp_solver_v2.py:46`, `q_0_NUMERIC = 1.1097`) now imports `q_parameter.Q`. The remaining 20-odd hits are comments, deprecated copies, or 50-dps-string literals (`"1.1099785955541805"`) which already match the canonical witness; left in place. |
 | F6 | GS filtration + jet order are pure metadata; SDP solver does not consume them. | **High** | **Plan written** — §7 P6 retained. No code change yet (engineering task; see §6 sketch). |
 | F7 | Crystal bases / KLR / KL / Type B folding / Demazure sub-crystals: zero compute integration. | **Medium** | **Plan written** — §7 P5'. No code change yet. |
@@ -389,25 +389,52 @@ atomic‑braid code**.
   Hoefsmit hook-length formula. **Not a fit, not a lookup.** The
   original F4 was wrong; corrected here.
 
-* `T6` is also derived in principle — `t6_canonical_MeV` reads
-  `term6-habiro-residue-mpfr-50dps.witness.json`, which is produced
-  by `term6_full_pole_sum.py` (Habiro residue extraction). However,
-  there are **two competing derivation scripts**:
+* `T6` — **bigger surprise on closer inspection (2026-05-08)**.
+  Three problems, in escalating severity:
 
-  - `term6_full_pole_sum.py` (Habiro, currently consumed) — uses
-    the *non-canonical* Schur-Weyl weight
-    `s_λ(q, q⁻¹) / H_q(λ)` per the explicit `CONVENTION CAVEAT`
-    at lines 1–32 of that file.
-  - `term6_residues_at_roots.py` (Markov-peel, canonical) — uses
-    the canonical Wenzl-bridge weight per
-    `prop:y-lambda-closed-form-wenzl-bridge`. Witness exists at
-    `term6-residues-at-roots.witness.json` but with a different
-    field schema (`data.results[].term6_at_q0_real` per atom, not
-    `results_by_atom[].term6_b_pred_mev_50dps` keyed by `A=`).
+  1. The witness file `t6_canonical_MeV` reads
+     (`term6-habiro-residue-mpfr-50dps.witness.json`) **does not
+     exist on this branch.** The function falls into its
+     `if not path.exists(): return 0` branch for every A, so T6
+     contributes **silently zero** to every mass prediction in
+     the current `atomic_braid_mass_table.py` pipeline. The
+     proton calibration `E₀ = (M_p − T6_p) / total_hecke_p`
+     reduces to `M_p / total_hecke_p` — equivalent to ignoring
+     T6 entirely. *Audit flag now coded into the function
+     docstring so the gap is no longer silent.*
 
-  So T6 is *cached but with the wrong convention being read*. The
-  fix is mechanical (parse the canonical witness, verify unit
-  scaling, swap consumer) but not zero-risk — see §7 P4'.
+  2. There are **two competing derivation scripts**:
+     - `term6_full_pole_sum.py` (Habiro) — uses the *non-canonical*
+       Schur–Weyl weight `s_λ(q, q⁻¹) / H_q(λ)` per the explicit
+       `CONVENTION CAVEAT` at lines 1–32 of that file.
+     - `term6_residues_at_roots.py` (Markov-peel, canonical) —
+       uses the canonical Wenzl-bridge weight per
+       `prop:y-lambda-closed-form-wenzl-bridge`. Witness exists
+       at `term6-residues-at-roots.witness.json`, covers A = 1–4,
+       schema is `data.results[].term6_at_q0_real`.
+
+  3. **Unit-convention question — escalation needed on #564.**
+     The canonical script's output `term6_at_q0_real` is in
+     dimensionless tr_M space (it is `pp_roots.real`, the
+     partial-fraction polar split evaluated at `u₀`, no MeV
+     scaling). The narrative formula in
+     `six-term-mass-formula-complete.md` makes Term 6 the same
+     dimensionless residue sum as Term 1, so the natural wiring
+     is **into `total_hecke`** with `E₀` scaling — not as a
+     MeV-direct add. *But* the canonical numbers are huge: proton
+     1.92, deuteron 109, tritium −41830, ⁴He 1.36 × 10⁶. Adding
+     these raw to `total_hecke ≈ O(1)` would dominate the mass
+     formula and produce catastrophically wrong predictions. The
+     original Habiro field name (`term6_b_pred_mev_50dps`,
+     "b_pred") suggests a B-coefficient prediction, not a raw T6
+     value — pointing at a missing transformation between the
+     residue-sum output and the contribution that lands in the
+     mass formula.
+
+  **Status:** P4′ paused at the wiring step. (1) is now coded;
+  (2) is documented; (3) is an inconsistent finding awaiting
+  author input. Remainder of P4′ blocks on the unit-convention
+  answer.
 
 #### 3.3b Other fits
 * `a(Z, N)` — quotient‑braid Jones‑polynomial coupling: canonical for

@@ -60,10 +60,33 @@ def t6_canonical_MeV(A: int) -> mp.mpf:
     The result is in MeV directly — the assembly site adds it to
     `E_0 · total_hecke` without further E_0 scaling.
 
+    AUDIT FLAG (added 2026-05-08, see AUDIT-DEEP-2026-05.md §3.3a):
+    -----------------------------------------------------------------
+    The Habiro witness file `term6-habiro-residue-mpfr-50dps.witness.json`
+    does NOT exist on the current branch.  This function therefore
+    silently returns 0 for every A, meaning T6 contributes zero to
+    every mass prediction in the current `atomic_braid_mass_table.py`
+    pipeline.
+
+    The canonical Markov-peel witness `term6-residues-at-roots.witness.json`
+    DOES exist and emits per-atom values
+    `data.results[].term6_at_q0_real` (dimensionless tr_M units, not
+    MeV).  Wiring it requires resolving a unit-convention question
+    (cat-unit additive into `total_hecke` vs MeV-scaled separately)
+    and the apparent magnitude mismatch (canonical values are
+    O(10⁶) for ⁴He and would dominate the mass formula if added
+    raw).  See AUDIT-DEEP-2026-05.md §3.3a / §7 P4′.  Until the
+    convention is confirmed by the repo owner, this function is
+    LEFT in its silently-zero state — making the gap explicit
+    rather than fabricating values.
+
     Missing witness or missing-A → returns 0 MeV.
     """
     path = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
     if not path.exists():
+        # Silently zero — see AUDIT FLAG above.  Once the unit
+        # convention is confirmed, this branch should consume
+        # `term6-residues-at-roots.witness.json` instead.
         return mp.mpf(0)
     try:
         d = json.loads(path.read_text())
