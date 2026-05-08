@@ -17,7 +17,13 @@ decompose as follows.*
    weighted by Littlewood-Richardson coefficients $c^{\lambda^\star}_{\mu, \nu}$,
    and $\Delta_{\mathrm{resid}} = 0$ by $T_3$.
    **Reduced to Sub-lemma 2.1** (Hecke-branching block-decomposition
-   of $\rho_\lambda(I)$ — see [audit](../../../docs/audits/2026-05-04-confinement-nf-structure-forcing-proof.md)).
+   of $\rho_\lambda(I)$ — scalar form proved in
+   [scalar audit](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md);
+   operator-valued form closed conditional on
+   [`conj:crystal-graph-realization`](#conj:crystal-graph-realization)
+   via the combinatorial $R$-matrix on $B_\mu \otimes B_\nu$ at
+   $q \to 0$ — see
+   [crystal audit](../../../docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md)).
 
 3. *(Strong duality, $T_3$.)*
    $\mathrm{duality\_gap}(\beta) = 0$.
