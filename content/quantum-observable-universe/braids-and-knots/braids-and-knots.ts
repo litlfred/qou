@@ -417,6 +417,7 @@ export default chapter({
         "cemetery-group",
         "crystal-graph-realization",
         "confinement-grading-correspondence",
+        "confinement-grading-correspondence-conditional",
         "cemetery-group-emergence",
         "ontological-agnosticism",
         "symmetric-crystal-pair-production",
