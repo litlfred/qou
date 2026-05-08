@@ -7,7 +7,7 @@
 > $1.55 \times 10^{-3}$ residual gap to CODATA is the subject of
 > [`rem:alpha-em-derivation-open-problems`](#rem:alpha-em-derivation-open-problems);
 > the current preferred lead is the *additive* Bring zero-mode form
-> [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode),
+> [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode),
 > not the multiplicative gluon-octet ansatz reproduced below. The
 > 100-dps PSLQ scan over an extended 54-element basis ruled out the
 > multiplicative $q$-rational family entirely. This remark is retained

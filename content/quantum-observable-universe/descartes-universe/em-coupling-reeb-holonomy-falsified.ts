@@ -7,7 +7,7 @@ export default remark({
   interprets: "rem:alpha-em-derivation-exploration-options",
   uses: [
     "rem:alpha-em-derivation-exploration-options",
-    "conj:em-coupling-bring-zero-mode",
+    "prop:em-coupling-bring-zero-mode",
     "def:reeb-bundle",
   ],
   tags: [

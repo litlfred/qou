@@ -274,7 +274,7 @@ the level of a closed structural derivation:
    structurally derived. Now superseded — see
    [`conj:alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form).
 3. The **additive Bring zero-mode form**
-   [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode):
+   [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode):
    $1/\alpha_{EM} = q[9]_q[10]_q + 2g/(4\pi(g-1)) + \mathcal{O}(\alpha)$
    at $g=4$, where $2g/(4\pi(g-1)) = 2/(3\pi)$ admits two clean
    geometric identifications (Hodge / Gauss-Bonnet ratio on Bring's
@@ -286,7 +286,7 @@ the level of a closed structural derivation:
    correction structurally outside the pre-archimedean substrate ring
    $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ in which the bare
    formula lives. Pre-archimedean status open; see
-   [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode)
+   [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
    for the two repair routes.
 
 The honest current status is: the bare $q[9]_q[10]_q$ derivation is

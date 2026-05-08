@@ -1,7 +1,17 @@
-**Conjecture (additive Bring-surface zero-mode form for $1/\alpha_{EM}$).**
+**Proposition (additive Bring-surface zero-mode form for
+$1/\alpha_{EM}$, conditional on
+[`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
+and on the Bloch-Suslin pentagon-uniqueness theorem
+[`suslin1991`]).**
 *Let $g = 4$ denote the genus of Bring's surface (the unique Riemann
 surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$,
-[force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Then*
+[force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)).
+Assume the upstream typeclasses
+`QOU.QPochhammer.ArchimedeanLimit`,
+`QOU.Descartes.BlochSuslinUniqueness`, and
+`QOU.Descartes.BringZeroModeBlochClass` are all inhabited
+([`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness)).
+Then*
 
 $$
   \frac{1}{\alpha_{EM}}
@@ -67,6 +77,21 @@ and the IR shift $2g/(4\pi(g-1))$ comes from the Hodge data of the
 structurally consistent and not coincidental — it is what one expects
 from a categorical-Lagrangian QFT whose UV completion lives on
 Bring's curve.
+
+> **Conditional theorem (§3b-cond).** Per CLAUDE.md §3b-cond: the
+> upstream conjectures are axiomatised in Lean as the typeclasses
+> [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean),
+> [`QOU.Descartes.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean),
+> and the new
+> [`QOU.Descartes.BringZeroModeBlochClass`](em-coupling-bring-zero-mode.lean).
+> The Lean theorem
+> [`QOU.Descartes.bring_zero_mode_additive_form`](em-coupling-bring-zero-mode.lean)
+> takes `BringZeroModeBlochClass` as `[Instance]` and is proved
+> **without `sorry`** (the algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$
+> at $g=4$ is closed unconditionally by `field_simp; ring`). The
+> remaining structural input is the explicit Bloch-group class
+> realising $2/(3\pi)$ on Bring's surface — captured exactly by the
+> single `[Instance]` hypothesis.
 
 ## Pre-archimedean status — resolved by uniqueness of $\tau_{\text{arch}}$
 

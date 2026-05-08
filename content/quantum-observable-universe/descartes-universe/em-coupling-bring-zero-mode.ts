@@ -1,15 +1,16 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:em-coupling-bring-zero-mode",
+export default proposition({
+  label: "prop:em-coupling-bring-zero-mode",
   title:
-    "Conjectured closed form $1/\\alpha_{EM} = q\\cdot[9]_q\\cdot[10]_q + 2g/(4\\pi(g-1))$ via Bring's-surface photon zero-mode",
+    "Additive Bring zero-mode form $1/\\alpha_{EM} = q\\cdot[9]_q\\cdot[10]_q + 2g/(4\\pi(g-1))$ (conditional)",
   uses: [
     "prop:em-coupling-projection",
     "prop:force-carrier-bring-uniqueness",
     "prop:exterior-square-borromean",
     "prop:archimedean-functor-uniqueness",
     "rem:figure-8-archimedean-illustration",
+    "conj:dilogarithm-archimedean-limit",
   ],
   cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"],
   tags: [
@@ -19,7 +20,11 @@ export default conjecture({
     "genus-4",
     "zero-mode",
     "gauss-bonnet",
-    "conjecture",
+    "conditional-class",
     "derivation-lead",
   ],
+  lean: {
+    ref: "qou:QOU.Descartes.bring_zero_mode_additive_form",
+    validation: "not_checked",
+  },
 });

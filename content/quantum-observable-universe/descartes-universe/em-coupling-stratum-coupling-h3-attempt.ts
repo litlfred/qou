@@ -7,7 +7,7 @@ export default remark({
   interprets: "rem:alpha-em-derivation-exploration-options",
   uses: [
     "rem:alpha-em-derivation-exploration-options",
-    "conj:em-coupling-bring-zero-mode",
+    "prop:em-coupling-bring-zero-mode",
     "prop:alpha-k-derivation-procedure",
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:unified-curvature-rank-mass-formula",

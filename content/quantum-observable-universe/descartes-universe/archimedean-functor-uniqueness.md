@@ -79,7 +79,7 @@ transcendental constant in a QOU observable is the
 $\tau_{\text{arch}}$-image of substrate pentagon data via $D$ (or
 its multivariate generalisations), and is therefore not an external
 import. The additive Bring zero-mode candidate
-[`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode)
+[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
 illustrates the second point: the $2/(3\pi) = 2g/(4\pi(g-1))$
 correction at $g = 4$ is the archimedean shadow of pentagon
 data on Bring's surface, not a $\pi$-import outside $R$.
@@ -171,7 +171,7 @@ Three ingredients close the conditional statement.
 ## Consequences
 
 **(a) Resolves the pre-archimedean concern in
-[`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode).**
+[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).**
 The $\pi$ in the additive correction $2/(3\pi) = 2g/(4\pi(g-1))$
 at $g=4$ is the unique archimedean shadow of pentagon-coherent
 substrate data on Bring's surface. The substrate's pentagon
@@ -234,7 +234,7 @@ observable proposed in this repository must be expressible as a
 $\tau_{\text{arch}}$-image of a pentagon-coherent
 $R$-internal class, or equivalently, must factor through $D$ (or
 $D_n$) in its archimedean expansion. The
-[`em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode)
+[`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
 candidate satisfies this; the
 [`alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form)
 candidate does not.

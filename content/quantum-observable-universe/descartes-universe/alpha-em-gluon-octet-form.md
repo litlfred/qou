@@ -1,7 +1,7 @@
 **Conjecture (gluon-octet closed form for $1/\alpha_{EM}$, PSLQ-empirical — superseded).**
 
 > **Status (May 2026): superseded by the additive Bring zero-mode form**
-> [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode).
+> [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).
 > The 100-dps PSLQ scan for the multiplicative correction term over the
 > 54-element basis ($\pi, \zeta(3), \log 2, [k]_q, \hbar_q^k, \ldots$)
 > returned no integer relation

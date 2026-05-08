@@ -175,7 +175,7 @@ to be a scalar or a $2{\times}2$ matrix. Closure must either:
   determinant ratio, or
 - (b) leave the multiplicative family entirely — most plausibly via
   the *additive* Bring zero-mode form
-  [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode),
+  [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode),
   in which the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ enters
   $1/\alpha_{EM}$ as a *summand*, not a factor.
 
