@@ -1,7 +1,7 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-05-06T20:22:22.419Z",
-  "total_blocks": 1439,
+  "generated": "2026-05-08T16:25:06.794Z",
+  "total_blocks": 1450,
   "class_axiomatised_conjectures": [
     "conj:abelianisation-at-algebraic-poles",
     "conj:algebraic-geometric-dilog-equivalence",
@@ -14,21 +14,26 @@
     "conj:categorical-higgs-mechanism",
     "conj:categorical-linking-operation",
     "conj:categorical-neutrality-saturated-shells",
+    "conj:cemetery-group-emergence",
     "conj:chirality-ribbon-frobenius",
     "conj:classical-limit-stpart",
+    "conj:confinement-grading-correspondence",
     "conj:cp-violation-spectral-form",
     "conj:crossing-graded-mass-expansion",
+    "conj:crystal-graph-realization",
     "conj:denominator-zeros-as-sw-critical-points",
     "conj:diagrammatic-double-magic-lr-fusion",
     "conj:dilogarithm-archimedean-limit",
     "conj:em-coupling-chern-simons",
     "conj:force-carrier-knot-vs-link-dichotomy",
     "conj:gb-reduction-pl-thimble-bijection",
+    "conj:hecke-anyonic-substrate",
     "conj:hoefsmit-ew-cell-content",
     "conj:homological-shell-condensation",
     "conj:hyperbolic-volume-transcendence",
     "conj:jet-tower-uniform-delta-max",
     "conj:kashaev-volume-conjecture",
+    "conj:kazhdan-lusztig-classical-limit",
     "conj:knot-factor-frobenius-pairing",
     "conj:lifted-crossing-locality",
     "conj:magic-numbers-bring",
@@ -44,13 +49,15 @@
     "conj:q-geometric-langlands",
     "conj:q-integer-mass-formula",
     "conj:rho-prefactor-structural",
+    "conj:root-of-unity-mtc-truncation",
     "conj:shared-denominator-cusp-holonomy",
     "conj:shell-closure-nf-term-count",
     "conj:shell-correction-term-seven",
+    "conj:symmetric-crystal-pair-production",
     "conj:topological-decomposition-mass",
     "conj:weinberg-angle-categorical"
   ],
-  "provable_blocks_touching_conjecture": 176,
+  "provable_blocks_touching_conjecture": 261,
   "violators": [
     {
       "label": "cor:commutative-chirality-vanishes",
@@ -65,11 +72,30 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.ts"
+    },
+    {
+      "label": "cor:gauge-coupling-uniqueness",
+      "kind": "corollary",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.ts"
+      "file": "content/quantum-observable-universe/descartes-universe/gauge-coupling-uniqueness.ts"
     },
     {
       "label": "cor:habiro-expansion-atomic",
@@ -84,9 +110,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/habiro-expansion-atomic.ts"
     },
@@ -99,13 +125,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/knot-factor-amphicheiral.ts"
     },
@@ -118,13 +144,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/knot-factor-borromean-composite.ts"
     },
@@ -137,18 +163,56 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/knot-factor-shell-closed.ts"
     },
     {
+      "label": "cor:spectral-decomposition-qvalue",
+      "kind": "corollary",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/spectral-decomposition-qvalue.ts"
+    },
+    {
       "label": "lem:degree-one-braid-trivial-volume",
+      "kind": "lemma",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/degree-one-braid-trivial-volume.ts"
+    },
+    {
+      "label": "lem:genus-from-hecke-completeness",
       "kind": "lemma",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -164,7 +228,26 @@
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/degree-one-braid-trivial-volume.ts"
+      "file": "content/quantum-observable-universe/descartes-universe/genus-from-hecke-completeness.ts"
+    },
+    {
+      "label": "lem:genus-ideal-characterisation",
+      "kind": "lemma",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/genus-ideal-characterisation.ts"
     },
     {
       "label": "lem:surreal-squeeze",
@@ -191,9 +274,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.ts"
     },
@@ -201,20 +284,39 @@
       "label": "lem:vhat-pair-commutation-trace",
       "kind": "lemma",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/vhat-pair-commutation-trace.ts"
+    },
+    {
+      "label": "lem:yekutieli-leading-coefficient",
+      "kind": "lemma",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/yekutieli-leading-coefficient.ts"
     },
     {
       "label": "prop:algebraic-volume-specialization",
@@ -227,9 +329,9 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
         "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
@@ -242,11 +344,11 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -282,12 +384,12 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/alpha-k-derivation-procedure.ts"
@@ -299,11 +401,11 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -312,17 +414,36 @@
       "file": "content/quantum-observable-universe/braids-and-knots/alpha-shift-torus-knot.ts"
     },
     {
+      "label": "prop:antiparticle-crossing-reversal",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts"
+    },
+    {
       "label": "prop:archimedean-hartree-derivation",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -339,18 +460,18 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.ts"
     },
     {
-      "label": "prop:atomic-mass-gb-nf",
+      "label": "prop:atomic-lp-stability",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -360,28 +481,123 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/atomic-lp-stability.ts"
+    },
+    {
+      "label": "prop:atomic-mass-gb-nf",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.ts"
+    },
+    {
+      "label": "prop:atomic-nf-witness",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/atomic-nf-witness.ts"
+    },
+    {
+      "label": "prop:bar-apply-transfer",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/bar-apply-transfer.ts"
+    },
+    {
+      "label": "prop:bar-self-dual-confinement-band",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/bar-self-dual-confinement-band.ts"
+    },
+    {
+      "label": "prop:bar-t-duality-substrate",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/bar-t-duality-substrate.ts"
     },
     {
       "label": "prop:baryon-product-from-alt",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
@@ -391,13 +607,13 @@
       "label": "prop:benzene-threading-emergence",
       "kind": "proposition",
       "conj": [
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
@@ -407,17 +623,36 @@
       "file": "content/quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts"
     },
     {
+      "label": "prop:beta-decay-transfer-matrix",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/beta-decay-transfer-matrix.ts"
+    },
+    {
       "label": "prop:bohr-radius-categorical",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -433,11 +668,11 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven"
@@ -445,7 +680,7 @@
       "file": "content/quantum-observable-universe/information-theory/boltzmann-constant.ts"
     },
     {
-      "label": "prop:bw-categorical-descent",
+      "label": "prop:box-braid-irreducibility",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -455,11 +690,30 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.ts"
+    },
+    {
+      "label": "prop:bw-categorical-descent",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/bw-categorical-descent.ts"
     },
@@ -467,18 +721,18 @@
       "label": "prop:bw-coefficient-shadow-price",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.ts"
     },
@@ -495,9 +749,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.ts"
     },
@@ -514,9 +768,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.ts"
     },
@@ -533,9 +787,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-unique.ts"
     },
@@ -552,9 +806,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.ts"
     },
@@ -571,23 +825,42 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.ts"
+    },
+    {
+      "label": "prop:categorical-mass-markov",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.ts"
+      "file": "content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.ts"
     },
     {
       "label": "prop:ch4-lp-dual-binding",
       "kind": "proposition",
       "conj": [
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
@@ -605,13 +878,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.ts"
     },
@@ -624,13 +897,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts"
     },
@@ -643,12 +916,12 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts"
@@ -662,13 +935,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/chirality-writhe-ribbon-derivation.ts"
     },
@@ -676,13 +949,13 @@
       "label": "prop:co-lp-dual-binding",
       "kind": "proposition",
       "conj": [
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
@@ -695,13 +968,13 @@
       "label": "prop:co2-lp-dual-binding",
       "kind": "proposition",
       "conj": [
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
@@ -709,6 +982,25 @@
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts"
+    },
+    {
+      "label": "prop:cohomological-embedding",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/cohomological-embedding.ts"
     },
     {
       "label": "prop:collatz-contact-boundary",
@@ -735,6 +1027,25 @@
       "file": "content/quantum-observable-universe/algebraic-substrate/collatz-no-cycles.ts"
     },
     {
+      "label": "prop:composite-crossing-parity",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/information-theory/composite-crossing-parity.ts"
+    },
+    {
       "label": "prop:confined-knot-binding",
       "kind": "proposition",
       "conj": [
@@ -745,11 +1056,11 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/confined-knot-binding.ts"
     },
@@ -763,27 +1074,46 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count"
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/confinement-categorical.ts"
+    },
+    {
+      "label": "prop:confinement-frobenius-reciprocity",
+      "kind": "proposition",
+      "conj": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:borromean-quark",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts"
     },
     {
       "label": "prop:confinement-level-exists",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -795,14 +1125,14 @@
       "label": "prop:confinement-level-unique",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -811,23 +1141,137 @@
       "file": "content/quantum-observable-universe/braids-and-knots/confinement-level-unique.ts"
     },
     {
+      "label": "prop:confinement-lp",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/confinement-lp.ts"
+    },
+    {
       "label": "prop:confinement-nf-partial-proof",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.ts"
+    },
+    {
+      "label": "prop:confinement-operator-selection",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/confinement-operator-selection.ts"
+    },
+    {
+      "label": "prop:confinement-phase-stratification",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/confinement-phase-stratification.ts"
+    },
+    {
+      "label": "prop:confinement-sdp",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/confinement-sdp.ts"
+    },
+    {
+      "label": "prop:confinement-topological",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/confinement-topological.ts"
+    },
+    {
+      "label": "prop:confinement-universality",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/confinement-universality.ts"
     },
     {
       "label": "prop:core-levi-form",
@@ -854,14 +1298,33 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts"
     },
     {
       "label": "prop:degree-two-baryon-weight",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/degree-two-baryon-weight.ts"
+    },
+    {
+      "label": "prop:delta-max-uniform-bound",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -871,13 +1334,32 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/degree-two-baryon-weight.ts"
+      "file": "content/quantum-observable-universe/braids-and-knots/delta-max-uniform-bound.ts"
+    },
+    {
+      "label": "prop:demand-stability",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/demand-stability.ts"
     },
     {
       "label": "prop:derived-mass-formula-light-isotopes",
@@ -889,14 +1371,33 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count"
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/derived-mass-formula-light-isotopes.ts"
+    },
+    {
+      "label": "prop:deuterium-derived-binding",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts"
     },
     {
       "label": "prop:deuteron-binding-frobenius-codim",
@@ -907,13 +1408,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/deuteron-binding-frobenius-codim.ts"
     },
@@ -926,13 +1427,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts"
     },
@@ -944,16 +1445,35 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.ts"
+    },
+    {
+      "label": "prop:em-coupling-projection",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/em-coupling-projection.ts"
     },
     {
       "label": "prop:explicit-alpha-k-h3",
@@ -964,13 +1484,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h3.ts"
     },
@@ -983,13 +1503,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts"
     },
@@ -1006,11 +1526,49 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts"
+    },
+    {
+      "label": "prop:feynman-categorical-trace",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts"
+      "file": "content/quantum-observable-universe/braids-and-knots/feynman-categorical-trace.ts"
+    },
+    {
+      "label": "prop:feynman-classical-limit",
+      "kind": "proposition",
+      "conj": [
+        "conj:classical-limit-stpart",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/feynman-classical-limit.ts"
     },
     {
       "label": "prop:figure-eight-branching-rule",
@@ -1023,11 +1581,11 @@
         "conj:classical-limit-stpart",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/figure-eight-branching-rule.ts"
     },
@@ -1042,13 +1600,32 @@
         "conj:classical-limit-stpart",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.ts"
+    },
+    {
+      "label": "prop:force-carrier-bring-uniqueness",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/force-carrier-bring-uniqueness.ts"
     },
     {
       "label": "prop:force-carrier-intertwining-correspondence",
@@ -1070,7 +1647,7 @@
       "file": "content/quantum-observable-universe/braids-and-knots/force-carrier-intertwining-correspondence.ts"
     },
     {
-      "label": "prop:frobenius-s-classification",
+      "label": "prop:four-term-pair-nucleon",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -1080,11 +1657,68 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts"
+    },
+    {
+      "label": "prop:frobenius-gram-matrix",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/frobenius-gram-matrix.ts"
+    },
+    {
+      "label": "prop:frobenius-positivity-filter",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts"
+    },
+    {
+      "label": "prop:frobenius-s-classification",
+      "kind": "proposition",
+      "conj": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/frobenius-s-classification.ts"
     },
@@ -1101,9 +1735,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts"
     },
@@ -1120,9 +1754,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts"
     },
@@ -1135,28 +1769,104 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts"
     },
     {
-      "label": "prop:graded-markov-trace-from-gs-filtration",
+      "label": "prop:generator-volume-decomposition",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.ts"
+    },
+    {
+      "label": "prop:genus-filtration-ideal",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/genus-filtration-ideal.ts"
+    },
+    {
+      "label": "prop:golden-quartet-galois",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/golden-quartet-galois.ts"
+    },
+    {
+      "label": "prop:golden-skew-dual-node",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/golden-skew-dual-node.ts"
+    },
+    {
+      "label": "prop:graded-markov-trace-from-gs-filtration",
+      "kind": "proposition",
+      "conj": [
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -1177,9 +1887,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts"
     },
@@ -1192,15 +1902,34 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts"
+    },
+    {
+      "label": "prop:gram-weighted-qvalue",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts"
     },
     {
       "label": "prop:gravity-spectral-prefactor",
@@ -1212,26 +1941,45 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count"
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts"
+    },
+    {
+      "label": "prop:ground-state-ordering",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/ground-state-ordering.ts"
     },
     {
       "label": "prop:h2-lp-dual-binding",
       "kind": "proposition",
       "conj": [
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
@@ -1253,9 +2001,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.ts"
     },
@@ -1266,11 +2014,11 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -1286,16 +2034,35 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/hecke-convergence-bound.ts"
+    },
+    {
+      "label": "prop:hecke-markov-transition",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/hecke-markov-transition.ts"
     },
     {
       "label": "prop:hoefsmit-is-surreal-construction",
@@ -1308,11 +2075,11 @@
         "conj:classical-limit-stpart",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction.ts"
     },
@@ -1327,16 +2094,54 @@
         "conj:classical-limit-stpart",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.ts"
     },
     {
       "label": "prop:hook-weight-derivation",
+      "kind": "proposition",
+      "conj": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts"
+    },
+    {
+      "label": "prop:hydrogen-shell-writhe",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/hydrogen-shell-writhe.ts"
+    },
+    {
+      "label": "prop:incompleteness-implies-horizon",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -1346,13 +2151,32 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts"
+      "file": "content/quantum-observable-universe/information-theory/incompleteness-implies-horizon.ts"
+    },
+    {
+      "label": "prop:inductive-gb-reduction",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts"
     },
     {
       "label": "prop:jet-gb-pl-correspondence",
@@ -1365,9 +2189,9 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
         "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
@@ -1382,15 +2206,34 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.ts"
+    },
+    {
+      "label": "prop:jet-tower-convergence",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/jet-tower-convergence.ts"
     },
     {
       "label": "prop:joint-tower-sdp-confinement",
@@ -1401,12 +2244,12 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts"
@@ -1420,13 +2263,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/knot-factor-spectral-derivation.ts"
     },
@@ -1434,14 +2277,14 @@
       "label": "prop:knot-operator-energy-exists",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -1453,14 +2296,14 @@
       "label": "prop:knot-operator-energy-unique",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -1492,7 +2335,7 @@
       "file": "content/quantum-observable-universe/braids-and-knots/knot-operator-lp-selection.ts"
     },
     {
-      "label": "prop:knot-operator-transition",
+      "label": "prop:knot-operator-selection",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -1502,13 +2345,51 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
+      "file": "content/quantum-observable-universe/descartes-universe/knot-operator-selection.ts"
+    },
+    {
+      "label": "prop:knot-operator-transition",
+      "kind": "proposition",
+      "conj": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark"
+      ],
       "file": "content/quantum-observable-universe/braids-and-knots/knot-operator-transition.ts"
+    },
+    {
+      "label": "prop:lepton-continuant-recurrence",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/lepton-continuant-recurrence.ts"
     },
     {
       "label": "prop:leray-profile",
@@ -1519,12 +2400,12 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:q-aubin-lions",
@@ -1536,21 +2417,40 @@
       "file": "content/quantum-observable-universe/fluid-dynamics/leray-profile.ts"
     },
     {
-      "label": "prop:magic-numbers-from-q",
+      "label": "prop:lp-dual-stability",
       "kind": "proposition",
       "conj": [
-        "conj:shell-closure-nf-term-count",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
-        "conj:shell-correction-term-seven"
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts"
+    },
+    {
+      "label": "prop:magic-numbers-from-q",
+      "kind": "proposition",
+      "conj": [
+        "conj:shell-closure-nf-term-count",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts"
     },
@@ -1558,14 +2458,14 @@
       "label": "prop:markov-pair-z2",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -1580,11 +2480,11 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -1599,11 +2499,11 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -1615,18 +2515,18 @@
       "label": "prop:markov-trace-frobenius-selection",
       "kind": "proposition",
       "conj": [
-        "conj:knot-factor-frobenius-pairing",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.ts"
     },
@@ -1637,15 +2537,15 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/markov-trace-recursive-reducer.ts"
     },
@@ -1653,14 +2553,14 @@
       "label": "prop:mass-endomorphism-tower",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
@@ -1677,13 +2577,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts"
     },
@@ -1696,15 +2596,72 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/mass-tower-coefficient-stratification.ts"
+    },
+    {
+      "label": "prop:mobius-golden-fixed-points",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/mobius-golden-fixed-points.ts"
+    },
+    {
+      "label": "prop:mobius-limit-from-thimble",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/mobius-limit-from-thimble.ts"
+    },
+    {
+      "label": "prop:moduli-symmetry-d4",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/moduli-symmetry-d4.ts"
     },
     {
       "label": "prop:n-equals-1-vacuous-magic",
@@ -1729,23 +2686,42 @@
       "label": "prop:neutron-proton-mass-splitting",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/observations/neutron-proton-mass-splitting.ts"
     },
     {
       "label": "prop:neutron-proton-splitting",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts"
+    },
+    {
+      "label": "prop:neutron-qvalue-symbolic",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -1755,13 +2731,13 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts"
+      "file": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts"
     },
     {
       "label": "prop:ns-kummer-specialisation",
@@ -1772,12 +2748,12 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:q-aubin-lions",
@@ -1797,12 +2773,12 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:q-aubin-lions",
@@ -1829,6 +2805,25 @@
       "label": "prop:nuclear-knot-classification",
       "kind": "proposition",
       "conj": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/nuclear-knot-classification.ts"
+    },
+    {
+      "label": "prop:nuclear-operator-regimes",
+      "kind": "proposition",
+      "conj": [
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
@@ -1836,13 +2831,32 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/nuclear-knot-classification.ts"
+      "file": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts"
+    },
+    {
+      "label": "prop:nucleon-ordering-factorization",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts"
     },
     {
       "label": "prop:operator-selection-lp",
@@ -1864,7 +2878,45 @@
       "file": "content/quantum-observable-universe/particle-interactions/operator-selection-lp.ts"
     },
     {
-      "label": "prop:partition-sum-proton-residual",
+      "label": "prop:orbital-fourier-decomposition",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts"
+    },
+    {
+      "label": "prop:orbital-space-normal-bundle",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/orbital-space-normal-bundle.ts"
+    },
+    {
+      "label": "prop:p-bandwidth-bound",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -1880,6 +2932,44 @@
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
+      "file": "content/quantum-observable-universe/information-theory/p-bandwidth-bound.ts"
+    },
+    {
+      "label": "prop:parity-violation-skein",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/parity-violation-skein.ts"
+    },
+    {
+      "label": "prop:partition-sum-proton-residual",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
       "file": "content/quantum-observable-universe/braids-and-knots/partition-sum-proton-residual.ts"
     },
     {
@@ -1891,13 +2981,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts"
     },
@@ -1908,15 +2998,15 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.ts"
     },
@@ -1932,11 +3022,11 @@
         "conj:classical-limit-stpart",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven"
@@ -1966,18 +3056,18 @@
       "label": "prop:phase-transition-boundary",
       "kind": "proposition",
       "conj": [
-        "conj:classical-limit-stpart",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/information-theory/phase-transition-boundary.ts"
     },
@@ -1994,9 +3084,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts"
     },
@@ -2009,13 +3099,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/phi-q-tower-algebraic-stratification.ts"
     },
@@ -2032,9 +3122,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/pieri-photon-shift.ts"
     },
@@ -2048,12 +3138,12 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count"
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts"
     },
@@ -2067,17 +3157,17 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count"
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts"
     },
     {
-      "label": "prop:q-dilogarithm-exists",
+      "label": "prop:positron-correction",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -2092,6 +3182,25 @@
         "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/positron-correction.ts"
+    },
+    {
+      "label": "prop:q-dilogarithm-exists",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists.ts"
     },
@@ -2108,9 +3217,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.ts"
     },
@@ -2127,9 +3236,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-exponential-exists.ts"
     },
@@ -2146,9 +3255,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/information-theory/q-exponential-taylor.ts"
     },
@@ -2165,14 +3274,14 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-exponential-unique.ts"
     },
     {
-      "label": "prop:q-gaussian-solves-q-heat",
+      "label": "prop:q-game-of-life",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -2187,6 +3296,25 @@
         "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/information-theory/q-game-of-life.ts"
+    },
+    {
+      "label": "prop:q-gaussian-solves-q-heat",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.ts"
     },
@@ -2203,9 +3331,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts"
     },
@@ -2222,9 +3350,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists.ts"
     },
@@ -2241,9 +3369,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-unique.ts"
     },
@@ -2260,9 +3388,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-exists.ts"
     },
@@ -2279,9 +3407,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-unique.ts"
     },
@@ -2289,18 +3417,18 @@
       "label": "prop:qmn-recursive-memoized",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts"
     },
@@ -2317,30 +3445,106 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts"
     },
     {
-      "label": "prop:quantum-ideal-gas-law",
+      "label": "prop:quantum-dilogarithm-volume",
       "kind": "proposition",
       "conj": [
-        "conj:classical-limit-stpart",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/quantum-dilogarithm-volume.ts"
+    },
+    {
+      "label": "prop:quantum-ideal-gas-law",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts"
+    },
+    {
+      "label": "prop:recursive-atom-knot-atlas",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.ts"
+    },
+    {
+      "label": "prop:reidemeister-action-table",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/reidemeister-action-table.ts"
+    },
+    {
+      "label": "prop:reidemeister-mass-invariance",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.ts"
     },
     {
       "label": "prop:residue-at-root",
@@ -2355,9 +3559,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/residue-at-root.ts"
     },
@@ -2372,13 +3576,32 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.ts"
+    },
+    {
+      "label": "prop:rj-canonical-inner-product",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/rj-canonical-inner-product.ts"
     },
     {
       "label": "prop:root-of-unity-truncation",
@@ -2405,9 +3628,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts"
     },
@@ -2420,12 +3643,12 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts"
@@ -2443,30 +3666,163 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/observations/sdp-regime-switch.ts"
     },
     {
-      "label": "prop:six-term-per-derivation-weights",
+      "label": "prop:shell-closure-normal-form",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/shell-closure-normal-form.ts"
+    },
+    {
+      "label": "prop:shell-filling-rule",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts"
+    },
+    {
+      "label": "prop:shell-structure-eigenvalues",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/shell-structure-eigenvalues.ts"
+    },
+    {
+      "label": "prop:shell-transition-knot",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/shell-transition-knot.ts"
+    },
+    {
+      "label": "prop:six-term-per-derivation-weights",
+      "kind": "proposition",
+      "conj": [
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts"
+    },
+    {
+      "label": "prop:skein-finiteness-bound",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/skein-finiteness-bound.ts"
+    },
+    {
+      "label": "prop:skein-polynomial-transfer-matrix",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/skein-polynomial-transfer-matrix.ts"
+    },
+    {
+      "label": "prop:sorting-color-energy",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/sorting-color-energy.ts"
     },
     {
       "label": "prop:spectral-chart-correspondence",
@@ -2481,9 +3837,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.ts"
     },
@@ -2500,9 +3856,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.ts"
     },
@@ -2515,15 +3871,34 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts"
+    },
+    {
+      "label": "prop:substrate-consistency-window",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/observations/substrate-consistency-window.ts"
     },
     {
       "label": "prop:surreal-rate-calculus",
@@ -2548,95 +3923,16 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
         "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.ts"
     },
     {
-      "label": "prop:term6-binding-density",
-      "kind": "proposition",
-      "conj": [
-        "conj:categorical-neutrality-saturated-shells",
-        "conj:mass-endomorphism",
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven",
-        "conj:brane-tower-z-habiro"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/term6-binding-density.ts"
-    },
-    {
-      "label": "prop:terms-2-6-higher-operations",
-      "kind": "proposition",
-      "conj": [
-        "conj:knot-factor-frobenius-pairing",
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts"
-    },
-    {
-      "label": "prop:three-calibration-discipline",
-      "kind": "proposition",
-      "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
-      ],
-      "file": "content/quantum-observable-universe/observations/three-calibration-discipline.ts"
-    },
-    {
-      "label": "prop:thurston-volume-additivity",
-      "kind": "proposition",
-      "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
-      ],
-      "file": "content/quantum-observable-universe/particle-interactions/thurston-volume-additivity.ts"
-    },
-    {
-      "label": "prop:topological-mass-formula-algebraic",
+      "label": "prop:symbolic-character-table",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -2652,15 +3948,33 @@
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.ts"
+      "file": "content/quantum-observable-universe/braids-and-knots/symbolic-character-table.ts"
     },
     {
-      "label": "prop:tower-binding-energy",
+      "label": "prop:tau-leptonic-universality",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/tau-leptonic-universality.ts"
+    },
+    {
+      "label": "prop:term6-binding-density",
+      "kind": "proposition",
+      "conj": [
+        "conj:categorical-neutrality-saturated-shells",
+        "conj:mass-endomorphism",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
@@ -2669,9 +3983,317 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:brane-tower-z-habiro"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/term6-binding-density.ts"
+    },
+    {
+      "label": "prop:terms-2-6-higher-operations",
+      "kind": "proposition",
+      "conj": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts"
+    },
+    {
+      "label": "prop:three-calibration-discipline",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/observations/three-calibration-discipline.ts"
+    },
+    {
+      "label": "prop:three-calibration-inputs",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.ts"
+    },
+    {
+      "label": "prop:three-parameters-wedderburn",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.ts"
+    },
+    {
+      "label": "prop:thurston-volume-additivity",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/thurston-volume-additivity.ts"
+    },
+    {
+      "label": "prop:toffoli-lp-stability",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/information-theory/toffoli-lp-stability.ts"
+    },
+    {
+      "label": "prop:toffoli-transfer-matrix",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts"
+    },
+    {
+      "label": "prop:topological-mass-formula-algebraic",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.ts"
+    },
+    {
+      "label": "prop:torus-embeddable-complete",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/torus-embeddable-complete.ts"
+    },
+    {
+      "label": "prop:torus-knot-generators",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/torus-knot-generators.ts"
+    },
+    {
+      "label": "prop:torus-knot-genus-four-unique",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/torus-knot-genus-four-unique.ts"
+    },
+    {
+      "label": "prop:torus-knot-shell-binding",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/torus-knot-shell-binding.ts"
+    },
+    {
+      "label": "prop:tower-binding-energy",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/tower-binding-energy.ts"
+    },
+    {
+      "label": "prop:trace-ratio-observable",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/observations/trace-ratio-observable.ts"
+    },
+    {
+      "label": "prop:transfer-matrix-identities",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/transfer-matrix-identities.ts"
+    },
+    {
+      "label": "prop:transfer-matrix-level-independence",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/transfer-matrix-level-independence.ts"
     },
     {
       "label": "prop:unified-curvature-rank-mass-formula",
@@ -2683,12 +4305,12 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count"
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/unified-curvature-rank-mass-formula.ts"
     },
@@ -2696,18 +4318,18 @@
       "label": "prop:unified-iterative-correction",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/unified-iterative-correction.ts"
     },
@@ -2719,12 +4341,12 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio"
       ],
@@ -2739,6 +4361,44 @@
         "conj:regularity-breakdown"
       ],
       "file": "content/quantum-observable-universe/fluid-dynamics/p4-universality.ts"
+    },
+    {
+      "label": "prop:vertex-algebra-jet-relations",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/vertex-algebra-jet-relations.ts"
+    },
+    {
+      "label": "prop:vertex-algebra-relations",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/vertex-algebra-relations.ts"
     },
     {
       "label": "prop:vol-through-tau",
@@ -2767,12 +4427,12 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio"
       ],
@@ -2817,18 +4477,18 @@
       "label": "prop:wedderburn-as-noncomm-fourier",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-as-noncomm-fourier.ts"
     },
@@ -2841,18 +4501,18 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.ts"
     },
     {
-      "label": "prop:wedderburn-weight-canonical",
+      "label": "prop:wedderburn-mass-formula",
       "kind": "proposition",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -2862,11 +4522,49 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/wedderburn-mass-formula.ts"
+    },
+    {
+      "label": "prop:wedderburn-trace-identity",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.ts"
+    },
+    {
+      "label": "prop:wedderburn-weight-canonical",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts"
     },
@@ -2874,18 +4572,18 @@
       "label": "prop:wenzl-bridge-applicability-qou",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wenzl-bridge-applicability-qou.ts"
     },
@@ -2898,12 +4596,12 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts"
@@ -2919,11 +4617,11 @@
         "conj:classical-limit-stpart",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts"
     },
@@ -2950,18 +4648,18 @@
       "label": "prop:y-lambda-closed-form-wenzl-bridge",
       "kind": "proposition",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.ts"
     },
@@ -2974,12 +4672,12 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/y-lambda-cyclotomic-factorization.ts"
@@ -2995,13 +4693,51 @@
         "conj:classical-limit-stpart",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts"
+    },
+    {
+      "label": "thm:em-spectral-completeness",
+      "kind": "theorem",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/em-spectral-completeness.ts"
+    },
+    {
+      "label": "thm:embeddability-closure",
+      "kind": "theorem",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/embeddability-closure.ts"
     },
     {
       "label": "thm:frobenius-antipode-unifies-chirality-and-tower",
@@ -3012,18 +4748,37 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.ts"
     },
     {
       "label": "thm:frobenius-codim-universal",
+      "kind": "theorem",
+      "conj": [
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.ts"
+    },
+    {
+      "label": "thm:generation-completeness",
       "kind": "theorem",
       "conj": [
         "conj:e-hartree-categorical-derivation",
@@ -3033,13 +4788,32 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:knot-factor-frobenius-pairing",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.ts"
+      "file": "content/quantum-observable-universe/descartes-universe/generation-completeness.ts"
+    },
+    {
+      "label": "thm:groebner-shirshov-energy",
+      "kind": "theorem",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.ts"
     },
     {
       "label": "thm:knot-mass-formula-unified",
@@ -3050,15 +4824,34 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts"
+    },
+    {
+      "label": "thm:markov-trace-factorization",
+      "kind": "theorem",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/markov-trace-factorization.ts"
     },
     {
       "label": "thm:ns-singularity-descartes",
@@ -3069,12 +4862,12 @@
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
         "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:q-aubin-lions",
@@ -3086,6 +4879,25 @@
       "file": "content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts"
     },
     {
+      "label": "thm:parity-regime-selection",
+      "kind": "theorem",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/parity-regime-selection.ts"
+    },
+    {
       "label": "thm:six-term-mass-formula-complete",
       "kind": "theorem",
       "conj": [
@@ -3094,13 +4906,13 @@
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:borromean-quark",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven"
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts"
     },
@@ -3108,47 +4920,23 @@
       "label": "thm:wedderburn-mass-formula",
       "kind": "theorem",
       "conj": [
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts"
     }
   ],
   "conditional_on_class": [
-    {
-      "label": "prop:box-braid-irreducibility",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/descartes-universe/box-braid-irreducibility.ts"
-    },
-    {
-      "label": "prop:composite-crossing-parity",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/information-theory/composite-crossing-parity.ts"
-    },
-    {
-      "label": "prop:feynman-classical-limit",
-      "kind": "proposition",
-      "conj": [
-        "conj:classical-limit-stpart"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/feynman-classical-limit.ts"
-    },
     {
       "label": "prop:geom-universality",
       "kind": "proposition",
@@ -3175,62 +4963,6 @@
         "conj:baryon-period-ratio"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts"
-    },
-    {
-      "label": "prop:hydrogen-shell-writhe",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/descartes-universe/hydrogen-shell-writhe.ts"
-    },
-    {
-      "label": "prop:neutron-qvalue-symbolic",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts"
-    },
-    {
-      "label": "prop:orbital-fourier-decomposition",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts"
-    },
-    {
-      "label": "prop:orbital-space-normal-bundle",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/descartes-universe/orbital-space-normal-bundle.ts"
-    },
-    {
-      "label": "prop:reidemeister-mass-invariance",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.ts"
-    },
-    {
-      "label": "prop:shell-structure-eigenvalues",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/descartes-universe/shell-structure-eigenvalues.ts"
-    },
-    {
-      "label": "prop:shell-transition-knot",
-      "kind": "proposition",
-      "conj": [
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/shell-transition-knot.ts"
     }
   ]
 }
