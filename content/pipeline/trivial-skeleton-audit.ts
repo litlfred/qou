@@ -33,8 +33,29 @@ import { glob } from "glob";
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(SCRIPT_DIR, "..", "..");
 const ROOT = join(REPO_ROOT, "content/quantum-observable-universe");
-const WITNESS_OUT = process.argv[2] ??
-  join(REPO_ROOT, "docs/audits/2026-05-08-trivial-skeleton-audit.json");
+
+// CLI parsing: `--out <path>` overrides witness output;
+// `--max-per-pattern name=N,name2=M` enforces per-pattern strict
+// gates (process exits non-zero if any pattern's count exceeds the
+// stated budget).  Without `--max-per-pattern`, the script is
+// warn-only.  Positional arg #1 (compat with the original API) is
+// also treated as `--out`.
+const argv = process.argv.slice(2);
+let WITNESS_OUT = join(REPO_ROOT, "docs/audits/2026-05-08-trivial-skeleton-audit.json");
+let strictGates: Record<string, number> = {};
+for (let i = 0; i < argv.length; i++) {
+  const a = argv[i];
+  if (a === "--out") WITNESS_OUT = argv[++i];
+  else if (a === "--max-per-pattern") {
+    const spec = argv[++i] ?? "";
+    for (const kv of spec.split(",")) {
+      const [k, v] = kv.split("=");
+      if (k && v) strictGates[k.trim()] = Number(v);
+    }
+  } else if (i === 0 && !a.startsWith("--")) {
+    WITNESS_OUT = a;
+  }
+}
 
 interface PatternHit {
   line: number;
@@ -122,6 +143,25 @@ async function main() {
   };
   await writeFile(WITNESS_OUT, JSON.stringify(witness, null, 2));
   console.log(`\nWitness: ${WITNESS_OUT}`);
+
+  // Strict-gate enforcement: if --max-per-pattern was passed, fail
+  // the process with a non-zero exit when any pattern exceeds its
+  // budget.  Allows progressive tightening as Buckets 1–4 land.
+  if (Object.keys(strictGates).length > 0) {
+    const violations: string[] = [];
+    for (const [name, budget] of Object.entries(strictGates)) {
+      const observed = patCounts[name] ?? 0;
+      if (observed > budget) {
+        violations.push(`  ${name}: ${observed} (budget ${budget})`);
+      }
+    }
+    if (violations.length > 0) {
+      console.error("\n❌ Strict-gate violations:");
+      for (const v of violations) console.error(v);
+      process.exit(1);
+    }
+    console.log("\n✓ All strict-gate budgets respected.");
+  }
 }
 
 main().catch((err) => {
