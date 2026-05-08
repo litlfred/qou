@@ -1,11 +1,11 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:18:16.199Z",
-  "total_flagged": 102,
-  "files_flagged": 54,
+  "generated": "2026-05-08T20:31:49.057Z",
+  "total_flagged": 100,
+  "files_flagged": 52,
   "patterns": {
     "const_zero": 35,
-    "skel_inst": 21,
+    "skel_inst": 19,
     "punit_type": 14,
     "prop_true": 12,
     "one_def": 9,
@@ -49,13 +49,6 @@
         "line": 61,
         "pattern": "skel_inst",
         "snippet": "instance skeleton (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where"
-      }
-    ],
-    "braids-and-knots/categorical-linking-operation.lean": [
-      {
-        "line": 208,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton {R : Type*} [CommRing R] (q : R) :"
       }
     ],
     "braids-and-knots/confinement-category.lean": [
@@ -327,13 +320,6 @@
         "snippet": "weak_spectral_completeness_holds := rfl"
       }
     ],
-    "braids-and-knots/weinberg-angle-categorical.lean": [
-      {
-        "line": 79,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton {R : Type*} [CommRing R] (q : R) :"
-      }
-    ],
     "braids-and-knots/wenzl-qmn-synergy.lean": [
       {
         "line": 35,
@@ -428,12 +414,12 @@
     ],
     "descartes-universe/e-hartree-categorical-derivation.lean": [
       {
-        "line": 77,
+        "line": 79,
         "pattern": "skel_inst",
         "snippet": "instance skeleton (q : ℝ) : EHartreeCategoricalDerivation q where"
       },
       {
-        "line": 81,
+        "line": 83,
         "pattern": "holds_trivial",
         "snippet": "eh_holds := rfl"
       }
