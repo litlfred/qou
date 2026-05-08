@@ -75,8 +75,9 @@ matrix-entry computation.
 ## Statement (refined Sub-lemma 2.1, crystal form)
 
 **Sub-lemma 2.1 (crystal R-matrix form).** *Let
-$I = \sigma_{n_1} \sigma_{n_1+1} \cdots \sigma_{n_1+p-1} \in H_n(q)$ be
-a single-cycle interface on the boundary $p$ strands, and let
+$I = \sigma_{n_1} \sigma_{n_1+1} \cdots \sigma_{n_1+p-2} \in H_n(q)$ be
+a single Coxeter cycle on the $p$ boundary strands at positions
+$n_1, n_1+1, \ldots, n_1+p-1$ ($p-1$ generators), and let
 $\lambda \vdash n$. Under the LR decomposition
 $V_\lambda \downarrow_{H_{n_1} \otimes H_{n_2}}$, the maximum pole
 order at $q = 0$ of any matrix entry of $A^\lambda_{\mu, \nu}(I)$ is*
@@ -84,36 +85,39 @@ order at $q = 0$ of any matrix entry of $A^\lambda_{\mu, \nu}(I)$ is*
 $$
   \mathrm{pole}_{\mu, \nu}(I)
   \;=\;
-  \#\bigl\{j \in \{n_1, \ldots, n_1 + p - 1\} :
-    \rho_T(j) < 0 \text{ for some } T \in \mathrm{SYT}(\lambda)
+  \#\bigl\{j \in \{n_1, \ldots, n_1 + p - 2\} :
+    \rho_T(j) \le -1 \text{ for some } T \in \mathrm{SYT}(\lambda)
     \text{ in support of } (\mu, \nu)\bigr\},
 $$
 
 *where $\rho_T(j) := c(\text{cell of }j+1\text{ in }T) - c(\text{cell of }j\text{ in }T)$
 is the axial distance and $c(\square) = (\mathrm{col} - \mathrm{row})$
 is the cell content. The maximum over $(\mu, \nu)$ is achieved at the
-column-rich support* $(\mu^*, \nu^*)$ *— the unique pair of LR-supported
-shapes for which all $p$ boundary cells lie strictly below the diagonal
-of the embedding $\mu^* \subset \lambda^*$.*
+column-rich support* $(\mu^*, \nu^*)$ *— the LR-supported pair for
+which the $p$ boundary cells of $\lambda$ form a single column.*
 
-**Corollary (torus-knot interface).** *For $I = T_{(p, k)} = (\sigma_{n_1} \cdots \sigma_{n_1+p-1})^k$,*
+**Corollary (torus-knot interface).** *For $I = T_{(p, k)} = (\sigma_{n_1} \cdots \sigma_{n_1+p-2})^k$
+on $p$ strands ($p-1$ generators per cycle),*
 
 $$
   \mathrm{pole}_{\mu^*, \nu^*}(T_{(p, k)}) = k \cdot (p - 1),
 $$
 
 *recovering [`prop:alpha-shift-torus-knot`](../../content/quantum-observable-universe/braids-and-knots/alpha-shift-torus-knot.md)
-without the Hoefsmit matrix-entry computation. In particular the AXKIA
+without the Hoefsmit matrix-entry computation. In particular AXKIA's
 multiplicative chain*
 
 $$
-  \alpha_{\mathrm{EM}}^{-1} \;=\; q \cdot [9]_q \cdot [10]_q
-  \;=\; q \cdot \alpha_{\mathrm{shift}}(T_{2,9}) \cdot \alpha_{\mathrm{shift}}(T_{3,5})_{q\text{-deformed}}
+  \alpha_{\mathrm{EM}}^{-1}
+  \;=\; q \cdot [9]_q \cdot [10]_q
+  \;=\; q \cdot [\alpha_{\mathrm{shift}}(T_{2, 9})]_q \cdot [\alpha_{\mathrm{shift}}(T_{3, 5})]_q
 $$
 
-*reads off as $9 \cdot 1 + 5 \cdot 2 = 9 + 10 = 19$ pole-order
-contributions distributed across the two cycle-component interfaces,
-in their respective $q$-integer envelopes.*
+*reads off as the $q$-deformed product of two crystal-counted pole orders:
+$\alpha_{\mathrm{shift}}(T_{2, 9}) = 9 \cdot (2 - 1) = 9$ from a 2-strand
+boundary cycle iterated $9$ times, and $\alpha_{\mathrm{shift}}(T_{3, 5}) = 5 \cdot (3 - 1) = 10$
+from a 3-strand boundary cycle iterated $5$ times. The factors $[9]_q$ and
+$[10]_q$ are the $q$-integer envelopes of these two integer pole orders.*
 
 ---
 
@@ -126,61 +130,76 @@ $V_\lambda \in H_n(q)$-mod transports under $\sim$ to the canonical
 basis of the corresponding cyclotomic-KLR projective. By
 [kashiwara1991] (sl_n affine type) and [mathas1999] §3.4, the
 $q \to 0$ specialisation of the canonical basis is the crystal basis
-$B_\lambda$. The action of $\sigma_i \in H_n(q)$ at $q = 0$ on the
-seminormal basis vector $|T\rangle$ is
+$B_\lambda$. The Hoefsmit action of $\sigma_i \in H_n(q)$ on the
+seminormal basis vector $|T\rangle$ is:
 
-- **+1 eigenvalue** on the symmetric eigenspace ($i, i+1$ in same row);
-- **0** on the antisymmetric eigenspace ($i, i+1$ in same column);
-- **off-diagonal swap** $|T\rangle \mapsto |T^{(i,i+1)}\rangle$
-  weighted by $1/(1 - q^{-2 \rho_T(i)})$ in the Hoefsmit normalisation,
-  whose `q → 0` limit is finite iff $\rho_T(i) > 0$ and has a
-  pole of order 1 iff $\rho_T(i) < 0$.
+- **$\rho_T(i) = +1$** ($i, i+1$ in same row of $T$): $1 \times 1$
+  block, eigenvalue $+q$ (no pole at $q = 0$);
+- **$\rho_T(i) = -1$** ($i, i+1$ in same column of $T$): $1 \times 1$
+  block, eigenvalue $-q^{-1}$ (**pole of order 1** at $q = 0$);
+- **$|\rho_T(i)| \ge 2$** ($i, i+1$ in distinct rows and columns):
+  $2 \times 2$ block on $\{|T\rangle, |T^{(i,i+1)}\rangle\}$ with
+  eigenvalues $\{+q, -q^{-1}\}$. The block trace is
+  $q - q^{-1}$ (pole of order $1$), and the off-diagonal entry
+  has pole of order 1 iff $\rho_T(i) \le -2$, else 0.
 
 (This is a direct re-reading of `2026-05-04-sub-lemma-2-1-categorical-proof.md`
 Step 4 in crystal language.) The combinatorial R-matrix on
 $B_\mu \otimes B_\nu \subset B_\lambda$ is precisely the SYT-swap
 operator weighted by the sign of $\rho_T(i)$.
 
-### Step 2: $A^\lambda_{\mu, \nu}(\sigma_i)$ pole order = boundary-axial sign count
+### Step 2: $A^\lambda_{\mu, \nu}(\sigma_i)$ pole order = $[\rho_T(i) \le -1]$
 
 For a single boundary generator $I = \sigma_i$ with $i = n_1$, the
 operator $A^\lambda_{\mu, \nu}(\sigma_i)$ acts on
-$V_\mu \otimes V_\nu$-blocks of $V_\lambda$. By Step 1, its matrix
-entries in the SYT basis are:
+$V_\mu \otimes V_\nu$-blocks of $V_\lambda$. By Step 1, its action
+on each SYT $T \in \mathrm{SYT}(\lambda)$ in the $(\mu, \nu)$-block:
 
-- **Diagonal entries** ($T'' = T'''$): bounded as `q → 0` (no pole)
-  unless `T''` swaps to itself within the same `(μ, ν)`-block, which
-  it does only when $\rho_T(i) = \pm 1$ (degenerate $1 \times 1$
-  case, no pole contribution).
-- **Off-diagonal entries** ($T'' \neq T'''$ via the $\sigma_i$-swap):
-  pole of order **exactly 1** at `q = 0` iff $\rho_T(i) < 0$, else
-  pole of order 0.
+- **$\rho_T(i) = +1$**: $1 \times 1$ block, $+q$ eigenvalue, **pole 0**;
+- **$\rho_T(i) = -1$**: $1 \times 1$ block, $-q^{-1}$ eigenvalue, **pole 1**;
+- **$|\rho_T(i)| \ge 2$**: $2 \times 2$ block; diagonal trace
+  $q - q^{-1}$ has **pole 1**; off-diagonal entry has pole 0
+  for $\rho_T(i) \ge 2$, **pole 1** for $\rho_T(i) \le -2$.
 
-So `pole(A^λ_{μν}(σ_i)) = 1` if **any** SYT $T$ in the
-$(\mu, \nu)$-block has $\rho_T(i) < 0$, else `0`. Equivalently:
-the cell of $i+1$ lies below–and–left of the cell of $i$ in some
-$T$ in support of $(\mu, \nu)$.
+Combining: the matrix-entry pole order of
+$A^\lambda_{\mu, \nu}(\sigma_i)$ on any SYT $T$ in the
+$(\mu, \nu)$-block is $\mathbf{1}[\rho_T(i) \le -1]$.
+
+So `pole(A^λ_{μν}(σ_i)) = 1` iff **any** SYT $T$ in the
+$(\mu, \nu)$-block has $\rho_T(i) \le -1$, else `0`. Equivalently:
+the cell of $i+1$ lies in a strictly lower row than the cell of $i$
+in some $T \in \mathrm{SYT}(\lambda)$ supporting $(\mu, \nu)$.
 
 ### Step 3: Maximizer $(\mu^*, \nu^*)$ is column-rich
 
-The cells of the boundary strands $\{n_1, n_1+1, \ldots\}$ in the LR
-decomposition $\mu \cup \nu = \lambda$ partition into shapes
-$\mu \vdash n_1$ and $\nu \vdash n_2$. For $\rho_T(i) < 0$, we need
-the cell of $i+1$ to lie below the cell of $i$ — i.e. the cell of
-$i+1$ is in a strictly lower row. This is realised when **the cells
-of $i+1, \ldots, n_1+p-1$ all lie in the $\nu$-shape and form a column
-below the $\mu$-shape's bottom row**.
+The $p$ boundary cells of $\lambda$ — at positions
+$n_1, n_1+1, \ldots, n_1+p-1$ — split under the LR decomposition
+into the last cell of $\mu$ (strand $n_1$) and the first $p-1$
+cells of $\nu$ (strands $n_1+1, \ldots, n_1+p-1$).
 
-Equivalently, $\nu = (1^{p-1})$ contained in $\lambda / \mu$ as a
-column (the column-rich configuration). Concrete form:
-$\lambda^* = \mu^* + (1^p)$ with $\mu^* \vdash n_1 - 1$ arbitrary and
-$\nu^* = (1^{p-1})$ ⊂ $\lambda^* / \mu^*$. This support is **always
-non-empty** for any $p \le \mathrm{height}(\lambda)$ — by the LR rule
-this is a non-zero contribution, so the max is achieved.
+For $\rho_T(j) \le -1$ at every $j \in \{n_1, \ldots, n_1+p-2\}$,
+the $p$ boundary cells must form a single column in $\lambda$:
+the cell of strand $n_1$ at position $(r, c)$ for some row $r$ and
+column $c$, and the cells of strands $n_1+1, \ldots, n_1+p-1$ at
+positions $(r+1, c), (r+2, c), \ldots, (r+p-1, c)$.
+
+In partition language: the boundary slice of $\nu$ inside $\lambda$
+is a column of length $p-1$, and the cell of $\mu$ at strand $n_1$
+sits directly above this column. Concretely, the **column-rich**
+$(\mu^*, \nu^*)$ has $\mu^*$ ending in column $c$ at row $r$ and
+$\nu^*$ beginning with $(p-1)$ cells stacked in column $c$ below
+row $r$ (the rest of $\nu^*$, on strands $n_1+p, \ldots, n$, is
+unconstrained).
+
+This support is **non-empty** whenever $\lambda$ has at least
+$p$ rows reachable in column $c$ — by the LR rule this contributes
+$c^\lambda_{\mu^*, \nu^*} > 0$ for every such $\lambda$, so the
+max is achieved.
 
 ### Step 4: Composition for cycles
 
-For $I = (\sigma_{n_1} \sigma_{n_1+1} \cdots \sigma_{n_1+p-1})^k = T_{(p, k)}$,
+For $I = (\sigma_{n_1} \sigma_{n_1+1} \cdots \sigma_{n_1+p-2})^k = T_{(p, k)}$
+on $p$ strands ($p-1$ generators per cycle),
 each cycle factor contributes one swap of $p - 1$ adjacent boundary
 strand cells; in the column-rich configuration each swap encounters
 $\rho < 0$ once, so each cycle factor adds $p - 1$ to the pole

@@ -20,7 +20,7 @@ decompose as follows.*
    of $\rho_\lambda(I)$ — scalar form proved in
    [scalar audit](../../../docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md);
    operator-valued form closed conditional on
-   [`conj:crystal-graph-realization`](#conj:crystal-graph-realization)
+   [`conj:crystal-graph-realization`](crystal-graph-realization.md)
    via the combinatorial $R$-matrix on $B_\mu \otimes B_\nu$ at
    $q \to 0$ — see
    [crystal audit](../../../docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md)).
