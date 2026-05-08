@@ -58,4 +58,17 @@ class RhoPrefactorStructural (n₀ : ℕ) (q : ℝ) where
       whose real embedding is closest to `q_int d_lambda_star`. -/
   rho_eq_qdim : (rho : ℝ) = q_int d_lambda_star
 
+/-- **Trivial-rho skeleton instance.**  Sets `rho = d_lambda_star = 1`
+    and `q_int n = (n : ℝ)`, so `rho_eq_qdim` becomes `(1 : ℝ) = 1` by
+    `rfl`.  Encodes none of the Wedderburn / quantum-dimension content
+    but discharges the §3b-cond hypothesis. -/
+-- Ref: [manuscript] conj:rho-prefactor-structural §"Skeleton"
+instance skeleton (n₀ : ℕ) (q : ℝ) : RhoPrefactorStructural n₀ q where
+  rho := 1
+  rho_pos := Nat.one_pos
+  d_lambda_star := 1
+  d_lambda_pos := Nat.one_pos
+  q_int := fun n => (n : ℝ)
+  rho_eq_qdim := by norm_num
+
 end QOU.BraidKnot
