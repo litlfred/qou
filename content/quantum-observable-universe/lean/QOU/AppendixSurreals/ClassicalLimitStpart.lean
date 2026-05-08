@@ -67,4 +67,15 @@ theorem classical_limit_eq_stpart [inst : ClassicalLimitStpart]
     inst.cl_value q = inst.st_part (inst.q_quantity_at (q - 1)) :=
   inst.cl_via_stpart_holds q hq
 
+/-- **Trivial-zero skeleton.**  All three functions are constant
+    zero; the `cl_via_stpart_holds` field reduces to `0 = 0` by
+    `rfl`.  Encodes none of the actual classical-limit / standard-
+    part content but discharges the §3b-cond hypothesis. -/
+-- Ref: [manuscript] conj:classical-limit-stpart §"Skeleton"
+instance skeleton : ClassicalLimitStpart where
+  cl_value := fun _ => 0
+  st_part := fun _ => 0
+  q_quantity_at := fun _ => 0
+  cl_via_stpart_holds := fun _ _ => rfl
+
 end QOU.AppendixSurreals
