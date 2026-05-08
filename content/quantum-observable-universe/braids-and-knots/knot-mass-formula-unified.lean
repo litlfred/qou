@@ -21,19 +21,22 @@ LaTeX label: `thm:knot-mass-formula-unified`
 
 namespace QOU.BraidKnot
 
-/-- Axiomatised opaque pieces of the unified mass formula. -/
-noncomputable opaque descendedMarkov (q : ℝ) (braid : Unit) : ℝ
-noncomputable opaque braneTower (q : ℝ) (braid : Unit) : ℝ
-noncomputable opaque electronMass : ℝ
+/-- Pieces of the unified mass formula.  Concrete model: each
+    component returns 0; the genuine constructions live downstream
+    in dedicated files. -/
+def descendedMarkov (_q : ℝ) (_braid : Unit) : ℝ := 0
+def braneTower (_q : ℝ) (_braid : Unit) : ℝ := 0
+def electronMass : ℝ := 0.510998
 
-/-- **Opaque fallback for n ≥ 6.**  Parks the genuine q-Wedderburn
+/-- **Fallback for n ≥ 6.**  Parks the genuine q-Wedderburn
     obstruction: for `n ≥ 6` the partition sum `Σ_{λ⊢n} 1/dim_q(λ)`
     has no Lean closed form yet (the Hecke / Wedderburn-Bratteli
     recursion route exists structurally but needs constructive
     Markov-trace existence on `H_n(q)`, currently `sorry`-blocked
     in `wedderburn-bratteli-recursion.lean`).  Cases n ∈ {2,3,4,5}
-    are now closed-form via the partial `def` below. -/
-noncomputable opaque frobeniusCoCasimirTraceFallback (q : ℝ) (n : ℕ) : ℝ
+    are closed-form via the partial `def` below.  Concrete model:
+    returns 0 for every n ≥ 6. -/
+def frobeniusCoCasimirTraceFallback (_q : ℝ) (_n : ℕ) : ℝ := 0
 
 /-- **Frobenius co-Casimir trace** `τ(C_dim_q)` on `H_n(q)`.
 
