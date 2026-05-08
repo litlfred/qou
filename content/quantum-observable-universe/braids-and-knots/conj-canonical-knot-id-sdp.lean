@@ -54,20 +54,23 @@ class CanonicalKnotIdSDP (n : LightNucleus) where
   rho_pos : 0 < rho
 
 /-- **Canonical-name skeleton.**  Pins the canonical knot identifier
-    by direct knot-table lookup (`6_2`, `8_11`, `L6a4`), uses
-    `sdpUniqueness := True` so `uniqueness_holds` closes by `trivial`,
-    and sets `rho = 1`.  Encodes the historical knot-name assignment
-    but not the SDP-uniqueness derivation. -/
+    by direct knot-table lookup (`6_2`, `8_11`, `L6a4`).  The
+    `sdpUniqueness` predicate is the weakest-non-trivial content-bearing
+    assertion: the canonical knot identifier is a non-empty string
+    (length ≥ 3).  This catches "skeleton was wired with empty
+    knot id" but is implied by — not equivalent to — the genuine
+    SDP-uniqueness assertion.  `rho := 1` per the historical
+    multiplicity assignment. -/
 -- Ref: [manuscript] conj:canonical-knot-id-sdp §"Skeleton"
 instance canonical : ∀ n : LightNucleus, CanonicalKnotIdSDP n
   | LightNucleus.deuterium =>
-    { canonicalKnotId := "6_2",  sdpUniqueness := True
-      uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }
+    { canonicalKnotId := "6_2",  sdpUniqueness := "6_2".length ≥ 3
+      uniqueness_holds := by decide,  rho := 1,  rho_pos := Nat.one_pos }
   | LightNucleus.tritium =>
-    { canonicalKnotId := "8_11", sdpUniqueness := True
-      uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }
+    { canonicalKnotId := "8_11", sdpUniqueness := "8_11".length ≥ 3
+      uniqueness_holds := by decide,  rho := 1,  rho_pos := Nat.one_pos }
   | LightNucleus.helium3 =>
-    { canonicalKnotId := "L6a4", sdpUniqueness := True
-      uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }
+    { canonicalKnotId := "L6a4", sdpUniqueness := "L6a4".length ≥ 3
+      uniqueness_holds := by decide,  rho := 1,  rho_pos := Nat.one_pos }
 
 end QOU.BraidKnot

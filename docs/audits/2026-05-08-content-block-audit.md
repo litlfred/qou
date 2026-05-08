@@ -22,6 +22,7 @@ evidence have been dropped (proof-gap-audit anti-hallucination rule).
 |---|---|---|
 | Content blocks (kind-detected by my regex sweep over per-block `.ts` files) | 1465 | — |
 | Content blocks (audit-wiring tool — includes prose / equation / diagram / simulator manifests my regex skipped, plus chapter-manifest blocks) | 1601 | denominator for the wiring row below |
+| _(The 136-block delta is intentional: the audit-wiring tool walks every chapter-manifest entry including non-provable kinds (`prose`, `equation`, `diagram`, `simulator`) which my per-block-`.ts` regex skips. Both denominators are correct for their respective rows.)_ | | |
 | `.lean` files in QOU paper | 659 | — |
 | Total `sorry` occurrences | 193 | per re-audit (was 58 on `main`) |
 | **Uncited sorries** (CLAUDE.md §1 violations) | **84** | ❌ |

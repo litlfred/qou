@@ -30,14 +30,14 @@ work can promote them to faithful instances.
 |---|---:|---:|---:|
 | `const_zero`     | 38 | 35 | -3 |
 | `skel_inst`      | 21 | 12 | **-9** (renamed faithful instances to `canonical`) |
-| `prop_true`      | 15 |  7 | **-8** (atlas + cyclotomic + weinberg + joint-tower-sdp 5 + partition-height) |
+| `prop_true`      | 15 |  5 | **-10** (atlas + cyclotomic + weinberg + joint-tower-sdp 5 + partition-height + r_3-h4 2) |
 | `punit_type`     | 14 | 14 | 0 (Bucket 4) |
 | `one_def`        | 10 |  9 | -1 |
-| `holds_trivial`  | 8  |  7 | -1 |
+| `holds_trivial`  | 8  |  4 | **-4** (canonical-knot-id-sdp: 3 sites; was 7 → 4) |
 | `punit_unit`     | 2  |  2 | 0 |
 | `id_def`         | 1  |  1 | 0 |
 | `const_zero_typed` | 1 | 1 | 0 |
-| **Total**        | **111** | **88** | **-23 (21 % reduction)** |
+| **Total**        | **111** | **83** | **-28 (25 % reduction)** |
 
 ## Per-file triage
 

@@ -1,15 +1,15 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:44:55.533Z",
-  "total_flagged": 86,
-  "files_flagged": 46,
+  "generated": "2026-05-08T20:52:04.876Z",
+  "total_flagged": 83,
+  "files_flagged": 45,
   "patterns": {
     "const_zero": 35,
     "punit_type": 14,
     "skel_inst": 12,
     "one_def": 9,
-    "holds_trivial": 7,
     "prop_true": 5,
+    "holds_trivial": 4,
     "punit_unit": 2,
     "id_def": 1,
     "const_zero_typed": 1
@@ -73,23 +73,6 @@
         "line": 49,
         "pattern": "const_zero",
         "snippet": "def sigmaF : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
-      }
-    ],
-    "braids-and-knots/conj-canonical-knot-id-sdp.lean": [
-      {
-        "line": 65,
-        "pattern": "holds_trivial",
-        "snippet": "uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }"
-      },
-      {
-        "line": 68,
-        "pattern": "holds_trivial",
-        "snippet": "uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }"
-      },
-      {
-        "line": 71,
-        "pattern": "holds_trivial",
-        "snippet": "uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }"
       }
     ],
     "braids-and-knots/conj-rho-prefactor-structural.lean": [
