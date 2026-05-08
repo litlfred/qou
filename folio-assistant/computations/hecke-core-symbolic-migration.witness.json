@@ -151,5 +151,40 @@
     "Decide whether to keep the parallel module long-term, or commit to a Track-A1 in-place refactor of hecke_core.py once all downstream callers are migrated.",
     "\u03b1_EM\u207b\u00b9 symbolic path still carries \u03c0\u00b2 literals; document whether the Gram-determinant ratio cancels \u03c0\u00b2 (it does in the leading order \u2014 only the residual ratio matters).",
     "Cross-paper consideration: if UGB / Fred2005 also depend on these constants, they should switch to the symbolic API too."
-  ]
+  ],
+  "assertions": [
+    {
+      "name": "nf_basis_max_delta_lt_1e_15",
+      "computed": 2.7755575615628914e-17,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "test_summary.max_nf_basis_abs_delta"
+    },
+    {
+      "name": "markov_trace_max_delta_lt_1e_15",
+      "computed": 2.220446049250313e-16,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "test_summary.markov_trace_abs_delta"
+    },
+    {
+      "name": "alpha_em_inv_symbolic_vs_numerical_lt_1e_13",
+      "computed": 2.842170943040401e-14,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-13,
+      "source": "test_summary.alpha_em_inv_abs_delta"
+    },
+    {
+      "name": "alpha_em_inv_numerical_matches_codata_2pp_per_billion",
+      "computed": 137.0359444240373,
+      "expected": 137.035999084,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "CODATA 2018 inverse fine-structure constant"
+    }
+  ],
+  "allPassed": true
 }

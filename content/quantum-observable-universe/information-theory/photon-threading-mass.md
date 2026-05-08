@@ -27,7 +27,7 @@ that yield the same result:
 | Ribbon trace | Algebraic | $\lVert\mathrm{tr}_{\mathrm{ribbon}}(\rho(\beta_{\mathfrak{H}}))\rVert \cdot (q-1)^2$ |
 | Gröbner--Shirshov reduction | Computational | $(q-1)^2 \sum \lvert c_w\rvert \cdot \lvert q - q^{-1}\rvert$ |
 
-The first is the definition ([mass over $\mathbb{C}$](#ex:mass-identity-C)).
+The first is the definition ([mass over $\mathbb{C}$](#ex:mass-identity-su2)).
 The second follows from the ribbon category structure
 ([mass--energy equivalence](#thm:mass-energy-equivalence)).
 The third is the content of this proposition.
@@ -47,7 +47,7 @@ the braid word to the other.
    and far-commutativity ($\sigma_i\sigma_j = \sigma_j\sigma_i$)
    are **free** — they rearrange crossings without changing the
    Skein weight
-   ([Gröbner--Shirshov energy](#rem:groebner-shirshov-energy)).
+   ([Gröbner--Shirshov energy](#thm:groebner-shirshov-energy)).
    Only the **Hecke steps**
    ($\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$) cost energy:
    each resolves a double crossing into a weighted single crossing

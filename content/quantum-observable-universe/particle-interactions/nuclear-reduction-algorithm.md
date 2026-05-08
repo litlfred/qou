@@ -60,6 +60,6 @@ $g \in G$ at each step because $G$ is a Groebner--Shirshov basis
 **Complexity.** The inductive strategy (reduce after each
 multiplication) yields $O(A^2)$ multiplications and $O(A^3)$ Hecke
 reduction steps
-([inductive reduction](#def:inductive-gb-reduction)),
+([inductive reduction](#prop:inductive-gb-reduction)),
 compared to $O(2^{Z \cdot N})$ terms if all crossings are multiplied
 before reducing.

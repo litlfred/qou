@@ -3,6 +3,12 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:tritium-qvalue-audit",
   title: "Audit of tritium Q-value derivation",
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: [
     "tritium",
     "q-value",

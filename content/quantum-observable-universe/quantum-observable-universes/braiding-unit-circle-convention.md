@@ -6,7 +6,7 @@ $q := \lambda_- = -q^{-1}$.  The present choice is the
 **inside-unit-circle convention**.
 
 **Why $\lambda_+$ and not $\lambda_-$.**  The
-[substrate parameter existence](#prop:substrate-parameter-exists)
+[substrate parameter existence](#thm:substrate-parameter-exists)
 proof requires $q > 1$ over $\mathbb{R}$ (the `field_ge_one`
 positivity axiom).  Under the Hecke relation
 $(T - q)(T + q^{-1}) = 0$, the eigenvalue $\lambda_+= q$ lies

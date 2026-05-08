@@ -67,5 +67,24 @@
       "self_consistent": true
     }
   ],
-  "conclusion": "The three forms are NOT independent results. They are the same Wedderburn-block invariant w_\u03bb scaled by explicit factors: BW supplies the unsigned mass coefficient (w_\u03bb/2); LP shadow-price multiplies by h to give the LP dual variable; Wenzl-bridge tracks y_\u03bb = \u00b1w_\u03bb with sign determined by the content sum \u03ba_\u03bb = \u03a3 c(x). For self-conjugate \u03bb (\u03ba_\u03bb = 0), y_\u03bb = w_\u03bb. No independent fits; all three are the same w_\u03bb."
+  "conclusion": "The three forms are NOT independent results. They are the same Wedderburn-block invariant w_\u03bb scaled by explicit factors: BW supplies the unsigned mass coefficient (w_\u03bb/2); LP shadow-price multiplies by h to give the LP dual variable; Wenzl-bridge tracks y_\u03bb = \u00b1w_\u03bb with sign determined by the content sum \u03ba_\u03bb = \u03a3 c(x). For self-conjugate \u03bb (\u03ba_\u03bb = 0), y_\u03bb = w_\u03bb. No independent fits; all three are the same w_\u03bb.",
+  "assertions": [
+    {
+      "name": "all_3_ratio_identities_hold_per_partition",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "claim: BW=-w_\u03bb/2, shadow=w_\u03bb\u00b7h/2, Wenzl-bridge=w_\u03bb for \u03ba_\u03bb=0"
+    },
+    {
+      "name": "tested_partition_count",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "self-witness: number of partitions tested"
+    }
+  ],
+  "allPassed": true
 }

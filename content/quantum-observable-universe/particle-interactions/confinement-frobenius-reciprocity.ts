@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:confinement-frobenius-reciprocity",
+  lean: { ref: "qou:QOU.ParticleInteractions.confinement_frobenius_reciprocity", validation: "not_started" },
   title:
     "Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings",
   tags: [

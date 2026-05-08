@@ -103,7 +103,7 @@ $$
 Each intermediate result is in NF (at most $\binom{A-1}{k}$ terms
 of length $\leq A - 1$), so the total computation is polynomial
 in $A$ rather than exponential
-([nuclear Gröbner reduction](#def:nuclear-groebner-reduction)).
+([nuclear Gröbner reduction](#prop:nuclear-groebner-reduction)).
 
 ## NF characterization
 

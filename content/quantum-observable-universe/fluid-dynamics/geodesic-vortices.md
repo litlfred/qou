@@ -1,6 +1,6 @@
 Geodesics of the [acoustic metric](#rem:madelung-fluid) coincide
 with critical points of a $q$-deformed energy functional on closed
-curves in the [state bundle](#def:state-bundle) $\mathcal{S}$.
+curves in the [state bundle](#ex:c-quantum-observable-universe) $\mathcal{S}$.
 
 **The $q$-energy functional.**
 For $\varrho \colon S^1 \to \mathcal{S}$:
@@ -33,7 +33,7 @@ self-induction (Hasimoto soliton).
 
 **Stability.**
 The second variation $\delta^2\mathcal{E}_q$ decomposes via the
-[weight-space decomposition](#def:adjoint-weight-decomposition):
+[weight-space decomposition](#def:weight-decomposition):
 
 - **Longitudinal** (Cartan): stable, eigenvalues
   $[k]_q^2 \hbar_q / L_q^2$ ([discrete

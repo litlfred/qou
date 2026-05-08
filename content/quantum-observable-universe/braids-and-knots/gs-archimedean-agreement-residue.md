@@ -5,7 +5,7 @@ on the proton braid $T_w(Z = 1, N = 0)$, the degree-$48$ Markov-normalised
 Habiro polynomial trace
 $T_{\mathfrak{p}}(u) \in \mathbb{Z}[u]$
 evaluates at the substrate value $u_0 = \sqrt{q_0}$,
-$q_0 = 1.10997\ldots$, to the proton GB mass*
+$q_0 = :val[q_0]{precision=6}\ldots$, to the proton GB mass*
 
 $$
   T_{\mathfrak{p}}\bigl(\sqrt{q_0}\bigr)

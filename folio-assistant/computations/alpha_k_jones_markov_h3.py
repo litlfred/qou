@@ -29,6 +29,10 @@ mp.mp.dps = 30
 
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import build_seminormal_matrices, dim_q, qfac, q_int
+# F6 (PR #565): wire numerical-q Hoefsmit matrix construction through
+# BlockCache. Effect on H_3 partitions is modest (dim ≤ 2) but the
+# pattern is correct; carries forward for later-extended H_n callers.
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 m_e = mp.mpf("0.51099895")
@@ -38,9 +42,12 @@ z_mark = 1/(mp.sqrt(Q0) + 1/mp.sqrt(Q0))
 
 # Build seminormal matrices for each partition of 3
 shapes = [(3,), (2, 1), (1, 1, 1)]
+_block_cache = BlockCache(float(Q0_FLOAT), float(Q0_FLOAT - 1.0/Q0_FLOAT))
 data = {}
 for shape in shapes:
-    sigmas, d_lam, _ = build_seminormal_matrices(shape)
+    sigmas, d_lam, _ = build_seminormal_matrices_cached(
+        shape, cache=_block_cache,
+    )
     if hasattr(sigmas[0], 'toarray'):
         sigmas_dense = [s.toarray() for s in sigmas]
     else:

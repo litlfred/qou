@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:collatz-contact-boundary",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.collatz_contact_boundary", validation: "not_started" },
   title:
     "The $[2]_q$-contact boundary on the Reeb bundle",
   uses: [

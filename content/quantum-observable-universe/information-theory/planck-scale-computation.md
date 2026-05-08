@@ -6,13 +6,13 @@ $\eta_q$ of the substrate.
 
 The technical content is split across the rest of the section:
 
-- [Toffoli transfer matrix](#rem:toffoli-transfer-matrix) — the
+- [Toffoli transfer matrix](#prop:toffoli-transfer-matrix) — the
   universal classical gate as a $2 \times 2$ matrix on $\Sigma_3$.
 - [Toffoli $q$-AND amplitudes](#rem:toffoli-q-and) — the explicit
   amplitude formula and its $q \to 1$ limit.
-- [Toffoli LP stability](#rem:toffoli-lp-stability) — robustness of
+- [Toffoli LP stability](#prop:toffoli-lp-stability) — robustness of
   the gate's binding under noise.
-- [$q$-Game of Life](#rem:q-game-of-life) — a worked discrete
+- [$q$-Game of Life](#prop:q-game-of-life) — a worked discrete
   dynamical system on the substrate.
 - [Substrate computation](#rem:substrate-computation) — why the
   combinatorics is medium-independent ("computers from stones").

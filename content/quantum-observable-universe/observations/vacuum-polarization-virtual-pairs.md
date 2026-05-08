@@ -14,7 +14,7 @@ reaches $A_0$ --- it lives and dies in the blow-up geometry.
 
 **Virtual exchange as Skein resolution.**
 
-In the [Reidemeister mass invariance](#rem:reidemeister-mass-invariance)
+In the [Reidemeister mass invariance](#prop:reidemeister-mass-invariance)
 framework, a virtual pair corresponds to an R-II move: two crossings
 of opposite sign are temporarily introduced and then removed.  The
 Skein resolution of this pair produces a correction term

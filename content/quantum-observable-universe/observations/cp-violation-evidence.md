@@ -61,7 +61,7 @@ the complex substrate parameter $q = |q|e^{i\theta}$:
   projected onto the observable quark-mixing matrix.
 
 **Quantitative gap.**
-The [crossing energy decomposition](#rem:crossing-energy-decomposition)
+The [crossing energy decomposition](#prop:crossing-energy-decomposition)
 gives the electromagnetic/strong ratio $\tanh(\ln q) \approx 0.104$.
 If the residual phase scales similarly —
 $\theta_{\mathrm{res}} \sim \tanh(\ln q) \cdot \alpha_{\mathrm{EM}}$

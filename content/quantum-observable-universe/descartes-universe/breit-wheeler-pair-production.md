@@ -50,7 +50,7 @@ $(\sigma, r)$ crossing plane, $\sigma_1$ on the $(r, g)$
 crossing plane, and $\sigma_0\sigma_1 = L_+$ is the Hopf link
 dressing.  The derivation below uses the 3-term specialization
 $\varphi_{01} = 0$; see
-[photon knot operations](#rem:photon-knot-operations)
+[photon knot operations](#rem:physics-names-knot-operations)
 for the general 4-term formula.
 
 **Step-by-step derivation of the pair NF.**
@@ -159,7 +159,7 @@ $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
 + \varphi_{01}\sigma_0\sigma_1$.  With $\varphi_{01} \neq 0$,
 the $e^-$ (trefoil) channel opens directly in the $\gamma\gamma$
 product — see
-[photon knot operations](#rem:photon-knot-operations) for the
+[photon knot operations](#rem:physics-names-knot-operations) for the
 full 6-term NF formula.  The 4-term form is used in the complete
 derivation of nucleons from pair production
 ([4-term pair nucleon](#prop:four-term-pair-nucleon)).

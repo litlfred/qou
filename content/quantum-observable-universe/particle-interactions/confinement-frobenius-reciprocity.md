@@ -75,7 +75,7 @@ to the entire class of bound-state observables.
    Frobenius positivity constraint $\sum_j G_{ij} x_j \geq 0$.  These
    prices are exactly the weights that make $\langle O\rangle_T$
    coincide with the physical expectation under the categorical action
-   functional ([Yekutieli 2D nonabelian Stokes](#rem:yekutieli-stokes-remark)).
+   functional ([Yekutieli 2D nonabelian Stokes](#rem:yekutieli-stokes)).
 
 ## Sketch of proof
 

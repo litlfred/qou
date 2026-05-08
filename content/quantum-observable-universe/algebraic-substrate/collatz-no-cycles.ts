@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:collatz-no-cycles",
+  lean: { ref: "qou:QOU.AlgebraicSubstrate.collatz_no_cycles", validation: "not_started" },
   title:
     "No periodic Collatz cycles: coprimality of $[2]_q$ and $[3]_q$",
   uses: ["prop:collatz-contact-boundary"],

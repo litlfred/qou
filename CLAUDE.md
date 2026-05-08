@@ -105,6 +105,7 @@ When a user request arrives, route to the right skill(s):
 | "glossary / terminology / naming" | `local/ontologist` + `local/content-validation` | collaborator |
 | "witnessed value / drift / numerical literal / :val / hardcoded number / pin to witness" | `local/witnessed-values` + `local/content-validation` | collaborator |
 | "audit compute / compute audit / what can be sped up / find slow scripts / where is sympy.simplify / LaurentQ wiring / BlockCache wiring" | `local/compute-audit` | collaborator |
+| "coordinate / coordinate with PR / sibling PR / cherry-pick / cross-PR request" | `local/coordinate` | collaborator |
 | "work on todos / process feedback" | `local/todo-review` | reader |
 | "missing proof (narrative)" | `local/editor` §Proof workflow | collaborator |
 | "missing proof (Lean)" | `local/formalizer` + `local/proof-triage` | collaborator |
@@ -174,7 +175,7 @@ user roles may invoke it. The three roles form a hierarchy:
 | Role | Skills |
 |------|--------|
 | `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit, compute-audit |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit, compute-audit, coordinate |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -235,6 +236,19 @@ primal loses this structural information, which has been the
 historical pattern (58 of 58 LP/SDP witnesses on `main` lacked
 the dual at the time this rule was added). Do not repeat this
 pattern.
+
+**Current baseline (2026-05-08, post-LP_SDP_HINTS tightening,
+PR #565 F4):** the validator's hint list was deliberately narrowed
+to `lp-dual` / `operator-selection-lp` / `shadow-price` /
+`primal-dual` / `lp-duality` and now flags only **3** witnesses,
+**all 3** of which include the LP dual. **0 of 37 wired
+LP/SDP-flagged witnesses are missing duals.** The historical 58/58
+figure refers to the pre-tightening hint list (which incorrectly
+matched symbolic feasibility certificates and knot-particle probes
+that do not compute LP duals). Going forward, treat the 3-of-3
+set as authoritative; the 14 LP-solving scripts not on the hint
+list are presumed `feasibility-only` (opt-out) until reviewed
+per-file.
 
 ## Writing `.lean` proofs — rules for agents
 

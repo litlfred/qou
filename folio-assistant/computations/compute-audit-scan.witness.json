@@ -1,11 +1,11 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-08T03:59:33.610788+00:00",
-  "commitSha": "1f8c93034a3e556746a4c098ae7e7b70932af450",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-08T17:11:18.662480+00:00",
+  "commitSha": "209169d602e48663f4a6aae198d3150e03c47d13",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 15,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "b540c436e909",
@@ -15,7 +15,6 @@
   "parameters": {
     "files_scanned": 245,
     "patterns": [
-      "P14",
       "P15",
       "P16",
       "P21",
@@ -24,7 +23,6 @@
   },
   "data": {
     "by_pattern_count": {
-      "P14": 1,
       "P15": 64,
       "P16": 71,
       "P21": 21,
@@ -1346,13 +1344,6 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
-      },
-      {
-        "pattern": "P14",
-        "file": "mass_at_3A_proper.py",
-        "line": 1,
-        "snippet": "pickle + .pkl filenames",
-        "note": "pickle deserialises arbitrary objects (RCE risk on tampered cache); use json of str(sympy.Expr) and re-sympify on load. Ref: 0eda79c6."
       },
       {
         "pattern": "P30",

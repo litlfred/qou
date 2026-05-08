@@ -8,7 +8,7 @@ QOU — and makes time discrete at the origin.
 
 **Algebraic normalization.**
 The $q$-deformed Reeb flow rotates the affine coordinate $Z$ of a
-state ([substrate radial coordinate](#rem:substrate-radial-coordinate)):
+state ([substrate radial coordinate](#prop:substrate-radial-coordinate)):
 
 $$
   \mathcal{L}_\xiZ =  J\hbar_qZ.

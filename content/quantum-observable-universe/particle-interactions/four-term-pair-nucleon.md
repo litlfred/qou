@@ -16,7 +16,7 @@ $$
 
 where $\varphi_{01}\sigma_0\sigma_1 = \varphi_{01}L_+$ is the
 Hopf link dressing
-([photon knot operations](#rem:photon-knot-operations)).
+([photon knot operations](#rem:physics-names-knot-operations)).
 In the 3-term specialization $\varphi_{01} = 0$, the $e^-$ channel
 is closed; with $\varphi_{01} \neq 0$, the trefoil channel opens
 directly in the $\gamma\gamma$ product.

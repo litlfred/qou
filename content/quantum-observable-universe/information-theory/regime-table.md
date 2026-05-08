@@ -1,8 +1,8 @@
 All quantitative regime claims in this chapter and Ch 9 collapse
 into a single table.  Per-section tables in
-[operational-entropy](#rem:operational-entropy),
+[operational-entropy](#def:operational-entropy),
 [information-speed-of-light](#def:information-speed-of-light),
-[gravitational-constant](#rem:gravitational-constant),
+[gravitational-constant](#def:gravitational-constant),
 [hausdorff-dimension-recurrence](#rem:hausdorff-dimension-recurrence)
 are projections of the corresponding columns of this master table
 to the row(s) most relevant to that section.
@@ -19,11 +19,11 @@ Planck constant ([def:quantum-planck-constant](#def:quantum-planck-constant));
 $c_q = 1/(q-1)$ is the information speed of light
 ([def:information-speed-of-light](#def:information-speed-of-light));
 $\eta_q = (2q-1)/q^{3}$ is the operational entropy
-([rem:operational-entropy](#rem:operational-entropy));
+([rem:operational-entropy](#def:operational-entropy));
 $d_H(q) = (2q-1)^{2}/q^{3}$ is the Julia-set Hausdorff dimension
 ([rem:hausdorff-dimension-recurrence](#rem:hausdorff-dimension-recurrence));
 $G(q)$ is the gravitational constant
-([rem:gravitational-constant](#rem:gravitational-constant)) in
+([rem:gravitational-constant](#def:gravitational-constant)) in
 Planck-normalised units (varies with $q$ in the table; equal to
 $G_{\mathrm{Planck}} = 1$ exactly when $q = q_0$).
 

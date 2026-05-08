@@ -18,7 +18,7 @@ $A_{n+1} = J^1(A_n)$
    $a \prec_{n+1} b$ implies $c \cdot a \prec_{n+1} c \cdot b$
    and $a \cdot d \prec_{n+1} b \cdot d$ for all
    $c, d \in A_{n+1}$
-   ([admissible system](#def:admissible-system)).*
+   ([admissible system](#unital-groebner-bases:def:admissible-system)).*
 
 3. **(Well-foundedness.)** *Each $\prec_n$ is well-founded:
    there are no infinite descending chains in the Hecke

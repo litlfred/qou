@@ -70,7 +70,7 @@ or algebraic sector — the phase $\varTheta$ has a geometric interpretation:
    phase rotation of the internal quantum state.
 
 **Relation to root-of-unity specialisations.**  The
-[$\mathrm{SU}(2)$ specialisation](#def:substrate-parameter-su2) at
+[$\mathrm{SU}(2)$ specialisation](#def:substrate-parameter) at
 $q_0 = e^{\pi i / \kappa}$ has $|q_0| = 1$ and
 $\varTheta = \pi / \kappa$ — it is genuinely complex.  This does not
 contradict the observability constraint because root-of-unity

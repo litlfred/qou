@@ -127,7 +127,7 @@ axiom:
 
 ### Verification against numerical anchor
 
-At $q_0 = 1.10997859\ldots$:
+At $q_0 = :val[q_0]{precision=6}\ldots$:
 
 $$
   [2]_q \cdot [4]_q^2 \cdot [6]_q \;=\; 2.0109 \cdot 16.892 \cdot 6.388

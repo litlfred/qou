@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:fibre-functor-atlas",
+  lean: { ref: "qou:QOU.QuantumObservableUniverse.fibre_functor_atlas", validation: "not_started" },
   title:
     "Fibre functors as an affine atlas with $G$-torsor transitions",
   tags: [

@@ -108,16 +108,24 @@ def q_integer(k, q):
     return (q ** k - q ** (-k)) / (q - q ** (-1))
 
 
-def q_hook_product(partition, q):
-    """Symbolic H_q(λ) = Π_{x ∈ λ} [h_x(λ)]_q, as a sympy expression."""
+def q_hook_product(partition, q, simplify=True):
+    """Symbolic H_q(λ) = Π_{x ∈ λ} [h_x(λ)]_q, as a sympy expression.
+
+    F10 (PR #565): added `simplify=True` opt-out (default kept True
+    for back-compat). Pass `simplify=False` from hot loops where the
+    caller will further-process the expression. The product of
+    q_integers is a pure rational expression in q, so `sp.cancel`
+    suffices for normalisation and is significantly faster than
+    `sp.simplify`. Ref: 2834792d (gemini review on PR #565).
+    """
     hooks = hook_lengths(partition)
     result = Integer(1)
     for h in hooks:
         result *= q_integer(h, q)
-    return sp.simplify(result)
+    return sp.cancel(result) if simplify else result
 
 
-def schur_at_two_vars(partition, q):
+def schur_at_two_vars(partition, q, simplify=True):
     """Schur function s_λ(q, q⁻¹) — specialisation to two Schur variables.
 
     By the principal specialisation formula for two variables:
@@ -148,16 +156,26 @@ def schur_at_two_vars(partition, q):
     # With x_1 = q, x_2 = q⁻¹:
     numer = q ** (a + 1) * q ** (-b) - q ** b * q ** (-(a + 1))
     denom = q - q ** (-1)
-    return sp.simplify(numer / denom)
+    # Pure rational in q; cancel suffices and is far faster than
+    # simplify (gemini review on PR #565).
+    return sp.cancel(numer / denom) if simplify else (numer / denom)
 
 
-def schur_weyl_weight(partition, q):
-    """w_λ(q) = s_λ(q, q⁻¹) / H_q(λ), simplified symbolically."""
-    s = schur_at_two_vars(partition, q)
+def schur_weyl_weight(partition, q, simplify=True):
+    """w_λ(q) = s_λ(q, q⁻¹) / H_q(λ), simplified symbolically.
+
+    F10 (PR #565): `simplify=True` opt-out parameter; default kept
+    True for back-compat. Hot-loop callers should pass False.
+    Per gemini review, propagate `simplify` into `schur_at_two_vars`
+    and use `sp.cancel` (not `sp.simplify`) since the result is a
+    rational expression in q.
+    """
+    s = schur_at_two_vars(partition, q, simplify=simplify)
     if s == 0:
         return Integer(0)
-    H = q_hook_product(partition, q)
-    return sp.simplify(s / H)
+    H = q_hook_product(partition, q, simplify=simplify)
+    result = s / H
+    return sp.cancel(result) if simplify else result
 
 
 # ─── Specht character — Murnaghan–Nakayama ────────────────────────────
@@ -190,7 +208,7 @@ def specht_character_atomic(partition, Z, N, include_inter=True,
 
 def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
                                      Z=None, N=None, include_inter=True,
-                                     m_pp=1, m_pn=1, m_nn=1):
+                                     m_pp=1, m_pn=1, m_nn=1, simplify=True):
     """Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) as a sympy expression.
 
     Enumerates all p(3A) partitions of 3A.
@@ -220,7 +238,7 @@ def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
     terms = []
     total = Integer(0)
     for lam in partitions:
-        w = schur_weyl_weight(lam, q)
+        w = schur_weyl_weight(lam, q, simplify=simplify)
         if char_kind == "mn-atom":
             chi = specht_character_atomic(lam, Z, N, include_inter,
                                           m_pp, m_pn, m_nn)
@@ -232,11 +250,13 @@ def global_wedderburn_sum_symbolic(A, q, char_kind="trivial",
         total += contrib
         terms.append({
             "partition": lam,
+            # Per-term display values: keep simplify ON for human-
+            # readable output regardless of outer caller's choice.
             "weight": sp.simplify(w),
             "character": chi,
             "contribution": sp.simplify(contrib),
         })
-    return sp.simplify(total), terms
+    return (sp.simplify(total) if simplify else total), terms
 
 
 # ─── Per-stratum Schur-Weyl sums (P2.2b) ──────────────────────────────
@@ -272,7 +292,7 @@ def stratum_permutation(A, S):
     return tuple(perm)
 
 
-def per_stratum_sum_symbolic(A, S, q):
+def per_stratum_sum_symbolic(A, S, q, simplify=True):
     """Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(π_S) where π_S is the stratum permutation.
 
     Parameters
@@ -295,7 +315,7 @@ def per_stratum_sum_symbolic(A, S, q):
     terms = []
     total = Integer(0)
     for lam in partitions:
-        w = schur_weyl_weight(lam, q)
+        w = schur_weyl_weight(lam, q, simplify=simplify)
         chi = mn_character(lam, cyc)
         if chi == 0:
             continue
@@ -303,26 +323,30 @@ def per_stratum_sum_symbolic(A, S, q):
         total += contrib
         terms.append({
             "partition": lam,
+            # Per-term display: simplify ON for readability.
             "weight": sp.simplify(w),
             "character": chi,
             "contribution": sp.simplify(contrib),
         })
-    return sp.simplify(total), terms
+    return (sp.simplify(total) if simplify else total), terms
 
 
-def h3_additive_approximation_symbolic(A, q):
+def h3_additive_approximation_symbolic(A, q, simplify=True):
     """Additive-H_3 approximation: only partitions of shape (3), (2,1), (1,1,1).
 
     For A nucleons the current engine sums w_(3) + w_(2,1) + w_(1,1,1) per
     generator, for each of the 3A-1 generators — a crude approximation.
 
     Returns a sympy expression representing (w_sym + w_std + w_alt)^{3A-1}.
+
+    F10 (PR #565): `simplify=True` opt-out parameter.
     """
-    w_sym = schur_weyl_weight((3,), q)
-    w_std = schur_weyl_weight((2, 1), q)
-    w_alt = schur_weyl_weight((1, 1, 1), q)
+    w_sym = schur_weyl_weight((3,), q, simplify=simplify)
+    w_std = schur_weyl_weight((2, 1), q, simplify=simplify)
+    w_alt = schur_weyl_weight((1, 1, 1), q, simplify=simplify)
     total_h3 = w_sym + w_std + w_alt
-    return sp.simplify(total_h3 ** (3 * A - 1))
+    raised = total_h3 ** (3 * A - 1)
+    return sp.simplify(raised) if simplify else raised
 
 
 def analyze_pole_structure(A, q, max_cyclotomic=12):

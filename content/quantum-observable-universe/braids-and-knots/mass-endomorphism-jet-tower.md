@@ -19,7 +19,7 @@ in the prop: it is the intended content.
 
 $q$ calculations are not linear: the Hecke relation
 $\sigma_i^2 = H_A \sigma_i + 1$ is quadratic, and the pentagon
-identity of $\Phi_q$ ([quantum Bloch group](#def:quantum-bloch-group))
+identity of $\Phi_q$ ([quantum Bloch group](#rem:quantum-bloch-group))
 closes on pairs.  **Per jet level**, the transient contribution
 therefore contains:
 
@@ -49,7 +49,7 @@ level-$(n{+}1)$ contribution in the tower sum.
 ## Pentagon ascension of higher-order interactions
 
 The quantum dilogarithm satisfies the **pentagon identity**
-([quantum Bloch group](#def:quantum-bloch-group)): for operators
+([quantum Bloch group](#rem:quantum-bloch-group)): for operators
 $u, v$ with $uv = q\,vu$,
 
 $$

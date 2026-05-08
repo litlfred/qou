@@ -263,6 +263,24 @@ def main() -> int:
             expected=shift_n,
             source="canonical Markov trace via NF basis",
         )
+        # F1 (PR #565): anchor the per-nucleon shifts against the
+        # empirical-deuteron values recorded in this same witness.
+        # If the canonical Markov-trace path drifts, these assertions
+        # catch it before the deuteron-shift consumer regresses.
+        .add_assertion(
+            "shift_proton_h3_within_pm2_of_empirical_standalone",
+            computed=int(shift_p),
+            expected=20,
+            tolerance=2,
+            source="empirical_shift_proton_h3_standalone (this witness)",
+        )
+        .add_assertion(
+            "shift_neutron_h3_within_pm2_of_empirical_standalone",
+            computed=int(shift_n),
+            expected=16,
+            tolerance=2,
+            source="empirical_shift_neutron_h3_standalone (this witness)",
+        )
     )
     out_path = builder.save()
     print()

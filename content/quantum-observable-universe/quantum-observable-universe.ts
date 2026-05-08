@@ -73,6 +73,7 @@ export default paper({
     chapterRef({ dir: "appendix-knot-operations" }),
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "appendix-atomic-mass-calculations" }),
+    chapterRef({ dir: "appendix-qvalues" }),
     chapterRef({ dir: "appendix-surreals" }),
     chapterRef({ dir: "index-of-definitions" }),
   ],

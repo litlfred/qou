@@ -51,7 +51,7 @@ such that:
 **Archimedean realisation.**
 Under the fibre functor $\tau$, the categorical solution maps to
 a smooth vector field on the
-[state bundle](#def:state-bundle) $\mathcal{S}$:
+[state bundle](#ex:c-quantum-observable-universe) $\mathcal{S}$:
 
 $$
   \tau(v) \in C^\infty(\mathcal{S} \times [0,\infty); T\mathcal{S}),

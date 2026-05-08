@@ -52,7 +52,7 @@ so the categorical action expands to three terms:
 \end{equation}
 ```
 
-with notation as in [categorical action notation](#rem:categorical-action-notation).
+with notation as in [categorical action notation](#sec:categorical-action-notation).
 Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A$ is the categorical trace, which plays the role of
 spacetime integration; $R_{\int}$ is the Frobenius--Ricci endomorphism;
 and $F_\nabla = \nabla^2$ is the curvature.

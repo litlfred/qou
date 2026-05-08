@@ -34,7 +34,7 @@ descends under the fibre functor $\tau$ to the Frobenius integral
 $\int_A : A \to R$ — the Jones--Markov trace on $H_n(R, q)$
 ([RJ interpretation](#rem:rj-inner-product-interpretation)),
 satisfying Markov properties I and II
-([vertex algebra relations](#rem:vertex-algebra-relations), QU-3).
+([vertex algebra relations](#prop:vertex-algebra-relations), QU-3).
 
 **Step 2 (Nakayama automorphism = identity).**
 The mass involves $\Psi = (\int_A \otimes \mathrm{id}) \circ \Delta$,

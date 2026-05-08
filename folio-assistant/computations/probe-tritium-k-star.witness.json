@@ -1,15 +1,32 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-29T21:20:01.832079+00:00",
-  "commitSha": "95ed33748d4b28a0b78e8f7751aa76c1c4cc2f9d",
-  "assertions": [],
+  "computedAt": "2026-05-08T18:09:07.475727+00:00",
+  "commitSha": "074545548b063ae3b21961bbc42bc1f749c8cc51",
+  "assertions": [
+    {
+      "name": "k_star_le_structural_bound",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "tolerance": 5,
+      "source": "prop:phi-q-categorical-truncation § structural bound"
+    },
+    {
+      "name": "k_star_lt_max_grade",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "this witness's central falsification claim"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "probe-tritium-k-star",
   "scriptFile": "probe_tritium_k_star.py",
-  "scriptHash": "51b9f6d829df",
-  "scriptCommitSha": "641fda128046f94890cdf7a13decbc3685f859c4",
+  "scriptHash": "54fca25f3338",
+  "scriptCommitSha": "f6538bf84d57da11e6c8aecdd505e19f2e7b620e",
   "description": "Compute k★(T_w) := max GB-depth (= max-hook) over partition support supp(T_w) for tritium's H_5 braid word. Compares to the witness's max_grade (Coxeter-length filtration depth) and falsifies the identification of max_grade with k★.",
   "contentBlock": "prop:phi-q-categorical-truncation",
   "parameters": {

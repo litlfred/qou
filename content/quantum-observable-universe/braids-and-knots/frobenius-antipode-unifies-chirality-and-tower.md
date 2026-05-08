@@ -19,7 +19,7 @@ $$
 $$
 
 *Equivalently in $(c, d)$-pair notation
-([proton/neutron Hecke crossings](#def:proton-neutron-crossings)):*
+([proton/neutron Hecke crossings](#def:atomic-braid)):*
 
 $$
   S \colon (1, 0) \;\leftrightarrow\; (1, -h),

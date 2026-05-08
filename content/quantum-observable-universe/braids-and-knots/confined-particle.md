@@ -60,7 +60,7 @@ $\mathrm{GS}(P_1) = \mathrm{GS}(P_2)$.*
   (no crossings; four polarisation × chirality components on the
   exceptional divisor $\mathcal{S}_p$).  Confined at $q_0$ via
   the Reeb-bundle holonomy
-  ([breit-wheeler-vertex](#prop:breit-wheeler-vertex));
+  ([breit-wheeler-vertex](#rem:breit-wheeler-vertex));
   see notation discussion in
   [knot-particle-dictionary](#rem:knot-particle-dictionary)
   Table 3.*

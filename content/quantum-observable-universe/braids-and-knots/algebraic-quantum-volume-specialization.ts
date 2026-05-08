@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:algebraic-volume-specialization",
+  lean: { ref: "qou:QOU.BraidKnot.algebraic_quantum_volume_specialization", validation: "not_started" },
   title: "Specialisation of the algebraic quantum volume",
   // The previous `uses[]` listing of
   // `conj:shared-denominator-cusp-holonomy` and

@@ -67,7 +67,7 @@ $\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$
 admits a single closed-form expression in terms of the
 [algebraic quantum volume](#def:algebraic-quantum-volume)
 $\mathrm{Vol}_q(\beta) \in \mathbb{Z}[q^{\pm 1/2}]$ and the
-[Chern-Simons phase](#def:chern-simons-phase) $\mathrm{CS}_q(\beta)$:
+[Chern-Simons phase](#rem:chern-simons-as-knot-invariant) $\mathrm{CS}_q(\beta)$:
 
 $$
   \mathrm{Geom}(K)

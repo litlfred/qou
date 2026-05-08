@@ -256,4 +256,19 @@ if __name__ == "__main__":
         expected=expected_n_pairs,
         tolerance=0,
     )
+    # F1 (PR #565): structural anchors for the LP-selection
+    # consumer. Wedderburn decomposition |V̂_i V̂_j| = w_sym λ^sym +
+    # w_std λ^std + w_alt λ^alt is a real-valued sum; entries must
+    # be finite reals.
+    all_full_finite = all(
+        not (p["full"] != p["full"]) and abs(p["full"]) < 1e15
+        for p in pairs
+    )
+    w.add_assertion(
+        "wedderburn_full_pair_volumes_finite",
+        computed=1.0 if all_full_finite else 0.0,
+        expected=1.0,
+        tolerance=0.0,
+        source="prop:knot-operator-lp-selection",
+    )
     w.save()

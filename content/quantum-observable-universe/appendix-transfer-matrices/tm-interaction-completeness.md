@@ -57,6 +57,6 @@ matrix algebra of [tm-interactions](#tm-interactions).  The global
 $\Sigma_4$-admissible interaction is a finite product of these
 seven) is the content of *interaction completeness*; the explicit
 proof tracks the embeddability bound on $\Sigma_4$ from
-[Chapter](#chap:descartes-universe) §[force-knot-identification](#sec:force-knots)
+[Chapter](#chap:descartes-universe) §[force-knot-identification](#sec:fundamental-particles)
 and is left to the formalisation pass.  The seven operators are
 the alphabet; closure is the grammar.

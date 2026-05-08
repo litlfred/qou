@@ -143,19 +143,41 @@ _SEMINORMAL_DISK = Path(__file__).parent / ".cache" / "seminormal"
 
 
 def _cached_seminormal(shape: tuple[int, ...]):
-    import pickle
+    # P14 fix (2026-05-08, audit F8): replaced pickle (RCE on tampered cache)
+    # with numpy.savez_compressed for the dense σ matrices + JSON sidecar
+    # for dim and the SYT entry→cell maps. Densify any sparse matrices
+    # before save (the 3A use case has dim ≤ a few hundred — well under
+    # the build_seminormal_matrices sparse threshold of 500).
+    import json
     n = sum(shape)
     key = (n, shape)
     if key in _SEMINORMAL_CACHE:
         return _SEMINORMAL_CACHE[key]
-    # Disk lookup (shape-specific file; Q0 in name avoids stale)
     _SEMINORMAL_DISK.mkdir(parents=True, exist_ok=True)
-    fname = (_SEMINORMAL_DISK /
-              f"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}.pkl")
-    if fname.exists():
+    stem = (_SEMINORMAL_DISK /
+            f"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}")
+    npz_path = stem.with_suffix(".npz")
+    json_path = stem.with_suffix(".json")
+    if npz_path.exists() and json_path.exists():
         try:
-            with fname.open('rb') as f:
-                data = pickle.load(f)
+            meta = json.loads(json_path.read_text())
+            # PR #565 (Gemini review): drive sigma reconstruction from
+            # the explicit n_sigmas count in the JSON sidecar rather
+            # than from the npz file list, so the loader is robust to
+            # legacy archives that may carry extra arrays alongside
+            # the sig{i} entries. Falls back to len(npz.files) if the
+            # field is absent (older caches written before this PR).
+            with np.load(npz_path) as npz:
+                if "n_sigmas" in meta:
+                    n_sigmas = int(meta["n_sigmas"])
+                else:
+                    n_sigmas = sum(
+                        1 for k in npz.files if k.startswith("sig")
+                    )
+                sigmas = [npz[f"sig{i}"] for i in range(n_sigmas)]
+            syts = [{int(k): int(v) for k, v in d.items()}
+                    for d in meta["syts"]]
+            data = (sigmas, int(meta["dim"]), syts)
             _SEMINORMAL_CACHE[key] = data
             return data
         except Exception:
@@ -163,8 +185,20 @@ def _cached_seminormal(shape: tuple[int, ...]):
     data = build_seminormal_matrices(shape)
     _SEMINORMAL_CACHE[key] = data
     try:
-        with fname.open('wb') as f:
-            pickle.dump(data, f)
+        sigmas, dim, syts = data
+        dense = []
+        for M in sigmas:
+            if hasattr(M, "toarray"):
+                dense.append(np.asarray(M.toarray()))
+            else:
+                dense.append(np.asarray(M))
+        np.savez_compressed(npz_path,
+                            **{f"sig{i}": M for i, M in enumerate(dense)})
+        json_path.write_text(json.dumps({
+            "dim": int(dim),
+            "n_sigmas": len(dense),
+            "syts": [{str(k): int(v) for k, v in d.items()} for d in syts],
+        }))
     except Exception:
         pass
     return data

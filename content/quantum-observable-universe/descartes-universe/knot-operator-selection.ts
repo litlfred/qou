@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:knot-operator-selection",
+  lean: { ref: "qou:QOU.Descartes.knot_operator_selection", validation: "not_started" },
   title: "Knot operator selection via Frobenius dual",
   uses: [
     "def:breit-wheeler-pair-production",

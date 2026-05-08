@@ -54,14 +54,14 @@ conditions hold:
    The first condition ensures the adjoint bundle is
    orientable, precluding global anomalies; the second ensures
    the volume form acquires no topological phases (see
-   [Remark](#rem:yekutieli-stokes-remark) for the connection to
+   [Remark](#rem:yekutieli-stokes) for the connection to
    categorical flatness via Yekutieli's nonabelian Stokes theorem).
    For many applications, axioms (1), (2), and (3) suffice — axiom
    (3) is needed only when global topology of $M$ matters.
 
 4. *(categorical volume constraint)*
    let $V$ denote the fundamental object of $\mathbf{C}$
-   ([Remark](#rem:fundamental-object-explication)); there exists a
+   ([Remark](#sec:fundamental-object-explication)); there exists a
    non-degenerate epimorphism $\epsilon$ preserved by the rigid
    dualities, making the following diagram commute for every
    $g \in \mathrm{Aut}^{\otimes}(\tau)$:

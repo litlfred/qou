@@ -4,7 +4,7 @@ Hecke-algebraic content — descended trace, brane towers,
 Frobenius co-Casimir, chirality, and higher-stratum residues —
 but under-predicts isotope masses for $A \geq 5$ by $\sim 10\%$.
 A diagnostic analysis
-([higher-A shell diagnostic](#rem:higher-a-shell-diagnostic))
+([higher-A shell diagnostic](#rem:strutinsky-from-graded-trace))
 identifies a structured residual whose best single-feature
 predictor is the GB-filtration level $\ell = 5$ (partitions of
 height $6$).  This motivates a **seventh term** capturing
@@ -129,7 +129,7 @@ $$
 with Wedderburn weights $w_\lambda = \dim_q(\lambda)^2 / [3A]_q!$
 ([Schur–Weyl](#prop:schur-weyl-mass-decomposition)) and
 Hoefsmit-seminormal $q$-characters $\chi^\lambda$
-([Hecke characters](#def:hecke-character)).  This is a
+([Hecke characters](#prop:hoefsmit-seminormal-form)).  This is a
 structural functional — no new mathematical machinery beyond
 the existing Wedderburn decomposition — and its action on an
 atomic braid $T_w(Z, N)$ is computable via the same

@@ -1,15 +1,40 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T21:09:04.053891+00:00",
-  "commitSha": "797623fc122556d63cd75c6e1696436afcb82337",
-  "assertions": [],
+  "computedAt": "2026-05-08T18:24:54.354171+00:00",
+  "commitSha": "d05fc78da316bdb6d732851ac69f33d3886b178c",
+  "assertions": [
+    {
+      "name": "all_dual_is_false",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "prop:shell-schur-weyl-self-duality § H_12 prediction"
+    },
+    {
+      "name": "partition_count_h12",
+      "computed": 77,
+      "expected": 77,
+      "passed": true,
+      "tolerance": 0,
+      "source": "OEIS A000041 (partition function p(12))"
+    },
+    {
+      "name": "tr_M_at_q0_finite",
+      "computed": 2.7725932551947156e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "source": "this witness's Markov-trace anchor at q_0"
+    }
+  ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 25,
   "computation": "probe-atom-shell-self-duality-mpfr",
   "scriptFile": "probe_atom_shell_self_duality_mpfr.py",
-  "scriptHash": "b1f5c12749ba",
-  "scriptCommitSha": "797623fc122556d63cd75c6e1696436afcb82337",
+  "scriptHash": "2c88e286e6ed",
+  "scriptCommitSha": "d05fc78da316bdb6d732851ac69f33d3886b178c",
   "description": "MPFR-precision extension of probe_atom_shell_self_duality.py to ⁴He at H_12 (A=4, 77 partitions). The f64 version timed out; mpmath at 50 dps handles the load. Tests χ_λ(β) = χ_{λ*}(β) for every Wedderburn pair of H_12. Predicts: NOT shell-self-dual (extending the empirical pattern from D/T/³He where the (n) ↔ (1ⁿ) extreme pair is sign-asymmetric).",
   "contentBlock": "prop:shell-schur-weyl-self-duality",
   "parameters": {

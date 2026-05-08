@@ -5,6 +5,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:co-lp-dual-binding",
+  lean: { ref: "qou:QOU.Molecular.co_lp_dual_binding", validation: "not_started" },
   title: "LP dual selects the triple bond as optimal for $CO$",
   uses: [
     "def:co-molecular-braid",

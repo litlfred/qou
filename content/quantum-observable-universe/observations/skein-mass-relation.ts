@@ -13,5 +13,11 @@ export default remark({
     "thm:categorical-reeb-exists",
     "thm:substrate-parameter-exists",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: ["mass", "skein"],
 });
