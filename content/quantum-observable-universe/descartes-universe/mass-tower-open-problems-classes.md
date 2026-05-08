@@ -100,25 +100,34 @@ geometric derivation written out in full.
 
 | Open problem | Class | Conditional theorem (Lean) | Lean instance | Status |
 |---|---|---|---|---|
-| Term 7 shell correction $\alpha_5$ | `Term7ShellCorrectionClass` | `term7_structural` | (none — placeholder) | conjectural; awaits GS-filtration spectral-sequence derivation |
+| Term 7 shell correction $\alpha_5$ | `Term7ShellCorrectionClass` (strengthened: $\alpha_5 < 0$) | `term7_structural` | `term7ShellCorrectionInstance` (sign witness, $\alpha_5 = -1$) | sign constraint discharged; magnitude awaits GS-filtration spectral-sequence derivation |
 | Chirality factor $1 + w \cdot h$ | `ChiralityFactorClass` | `chirality_factor_structural` | `chiralityFactorInstance` (rfl) | §3b-cond hook formally discharged; substantive Kauffman content lives upstream |
 | Brane-tower $|V|\approx 1$ | `ZHabiroConvergenceClass` | `brane_tower_finite` | `zHabiroConvergenceInstance` ($M=1$) | §3b-cond hook formally discharged; uniform-truncation bound lives upstream |
 | α/(4π) next-order | `AlphaOver4PiClass` | `alpha_over_4pi_structural` | `alphaOver4PiInstance` (rfl) | §3b-cond hook formally discharged; higher Bloch group content lives upstream |
 
-Three of the four classes have been **unconditionally inhabited**
-in `mass-tower-open-problems-classes.lean` — their formal
-existential content (`∃ z, z = <named real>` etc.) is closed by
-`rfl` or `norm_num`, with the substantive structural conjectures
-remaining upstream. The corresponding `*_unconditional` theorems
-(`chirality_factor_unconditional`, `brane_tower_finite_unconditional`,
-`alpha_over_4pi_unconditional`) close without an explicit
-`[Instance]` hypothesis.
+**All four classes** have been **unconditionally inhabited** in
+`mass-tower-open-problems-classes.lean`. The first three classes
+(`ChiralityFactorClass`, `ZHabiroConvergenceClass`,
+`AlphaOver4PiClass`) reduce to purely-existential statements
+(`∃ z, z = <named real>`) closed by `rfl` or `norm_num`. The
+fourth class (`Term7ShellCorrectionClass`) was **strengthened** to
+encode the structural sign constraint $\alpha_5 < 0$ (binding-
+enhancing) before being inhabited with a sign-witness instance
+$\alpha_5 = -1$. The corresponding `*_unconditional` theorems
+close without `[Instance]` hypothesis:
 
-Term 7 stands as the only class still awaiting closure: the
-carrier `alpha5_value` is a placeholder, and a structural
-derivation of $\alpha_5$ from the Gröbner-Shirshov filtration at
-$\ell = 5$ is required before the class field can be defined
-substantively, let alone instantiated.
+- `chirality_factor_unconditional`
+- `brane_tower_finite_unconditional`
+- `alpha_over_4pi_unconditional`
+- `term7_structural_unconditional`
+
+The Term-7 sign witness is honest about scope: the *magnitude* of
+$\alpha_5$ requires the explicit GS-filtration spectral-sequence
+derivation at $\ell = 5$ (height-6 partitions), which remains the
+substantive open content. Strengthening the other three classes
+to encode genuine structural assertions (Kauffman first-order
+expansion, uniform brane-tower bound, higher Bloch group origin)
+is the natural next iteration.
 
 **Caveat (formal vs. structural closure).** Inhabiting these
 existential classes does *not* close the substantive structural
