@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).parent / "from_scratch"))
 from hecke_characters import (
     partitions_of, build_seminormal_matrices, qfac, dim_q,
 )
-from hecke_character_symbolic import atomic_braid_to_crossings
+from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
 from chi_sym_alt_closed_form import chi_sym_closed_form, chi_alt_closed_form
 from q_parameter import Q as Q0_FLOAT, HA
 # F6 (PR follow-up #582): wire numerical-q Hoefsmit through BlockCache.

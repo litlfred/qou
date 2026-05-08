@@ -174,7 +174,7 @@ if __name__ == "__main__":
     # Self-test: cross-validate symbolic vs numerical at q_0 for proton.
     import numpy as np
     from hecke_characters import build_seminormal_matrices
-    from hecke_character_symbolic import atomic_braid_to_crossings
+    from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
     from q_parameter import Q as q_num
 
     proton = atomic_braid_to_crossings(1, 0, include_inter=False)

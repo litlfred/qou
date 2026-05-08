@@ -45,9 +45,8 @@ from sympy import Symbol, Rational, Integer, simplify, together, nsimplify
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as _Q_CANONICAL
-from hecke_character_symbolic import (
-    q_character_on_braid_word, atomic_braid_to_crossings,
-)
+from hecke_character_symbolic import q_character_on_braid_word
+from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
 from schur_weyl_symbolic import partitions_of, schur_weyl_weight
 
 

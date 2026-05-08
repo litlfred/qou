@@ -59,7 +59,7 @@ from hoefsmit_symbolic import (  # noqa: E402
     tr_M_symbolic,
 )
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
-from hecke_character_symbolic import atomic_braid_to_crossings  # noqa: E402
+from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings  # noqa: E402
 
 # Canonical 50-dps q_0 (full precision; matches y-lambda-mpfr-witness.json
 # and other round-3 scripts). Defined at module level to avoid duplicated

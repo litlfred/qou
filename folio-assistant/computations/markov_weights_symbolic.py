@@ -62,9 +62,9 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from hoefsmit_symbolic import Q, chi_lambda_symbolic  # noqa: E402
-from hecke_character_symbolic import (  # noqa: E402
-    atomic_braid_to_crossings,
-    hoefsmit_matrices_symbolic,
+from hecke_character_symbolic import hoefsmit_matrices_symbolic  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    atom_canonical_crossings as atomic_braid_to_crossings,
 )
 from hecke_characters import partitions_of  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402

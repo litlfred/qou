@@ -43,9 +43,8 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as _Q_CANONICAL
-from hecke_character_symbolic import (
-    standard_young_tableaux, atomic_braid_to_crossings,
-)
+from hecke_character_symbolic import standard_young_tableaux
+from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
 
 
 # ─── Hoefsmit at numerical q (mpmath, arbitrary precision) ─────────────
