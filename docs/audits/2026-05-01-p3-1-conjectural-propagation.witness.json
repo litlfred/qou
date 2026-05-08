@@ -1,6 +1,6 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-05-08T16:25:06.794Z",
+  "generated": "2026-05-08T17:28:21.977Z",
   "total_blocks": 1450,
   "class_axiomatised_conjectures": [
     "conj:abelianisation-at-algebraic-poles",
@@ -24,6 +24,7 @@
     "conj:denominator-zeros-as-sw-critical-points",
     "conj:diagrammatic-double-magic-lr-fusion",
     "conj:dilogarithm-archimedean-limit",
+    "conj:e-hartree-categorical-derivation",
     "conj:em-coupling-chern-simons",
     "conj:force-carrier-knot-vs-link-dichotomy",
     "conj:gb-reduction-pl-thimble-bijection",
@@ -59,6 +60,260 @@
   ],
   "provable_blocks_touching_conjecture": 261,
   "violators": [
+    {
+      "label": "lem:surreal-squeeze",
+      "kind": "lemma",
+      "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/algebraic-substrate/surreal-squeeze.ts"
+    },
+    {
+      "label": "prop:collatz-contact-boundary",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/algebraic-substrate/collatz-contact-boundary.ts"
+    },
+    {
+      "label": "prop:collatz-no-cycles",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/algebraic-substrate/collatz-no-cycles.ts"
+    },
+    {
+      "label": "prop:core-levi-form",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts"
+    },
+    {
+      "label": "prop:knot-operator-lp-selection",
+      "kind": "proposition",
+      "conj": [
+        "conj:weak-spectral-completeness",
+        "conj:electroweak-higgs-torus-link-triplet",
+        "conj:force-carrier-knot-vs-link-dichotomy",
+        "conj:electroweak-mass-eigenstate-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/knot-operator-lp-selection.ts"
+    },
+    {
+      "label": "prop:leray-profile",
+      "kind": "proposition",
+      "conj": [
+        "conj:levi-degeneracy",
+        "conj:classical-limit-stpart",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/leray-profile.ts"
+    },
+    {
+      "label": "prop:ns-kummer-specialisation",
+      "kind": "proposition",
+      "conj": [
+        "conj:levi-degeneracy",
+        "conj:classical-limit-stpart",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts"
+    },
+    {
+      "label": "prop:ns-obstruction-computation",
+      "kind": "proposition",
+      "conj": [
+        "conj:levi-degeneracy",
+        "conj:classical-limit-stpart",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts"
+    },
+    {
+      "label": "prop:ns-obstruction-tower",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts"
+    },
+    {
+      "label": "prop:root-of-unity-truncation",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts"
+    },
+    {
+      "label": "prop:surreal-rate-calculus",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/algebraic-substrate/surreal-rate-calculus.ts"
+    },
+    {
+      "label": "prop:universality",
+      "kind": "proposition",
+      "conj": [
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/p4-universality.ts"
+    },
+    {
+      "label": "prop:vorticity-lower-bound",
+      "kind": "proposition",
+      "conj": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts"
+    },
+    {
+      "label": "prop:weak-symmetric-normalization",
+      "kind": "proposition",
+      "conj": [
+        "conj:weak-spectral-completeness",
+        "conj:electroweak-higgs-torus-link-triplet",
+        "conj:force-carrier-knot-vs-link-dichotomy",
+        "conj:electroweak-mass-eigenstate-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/weak-symmetric-normalization.ts"
+    },
+    {
+      "label": "thm:ns-singularity-descartes",
+      "kind": "theorem",
+      "conj": [
+        "conj:levi-degeneracy",
+        "conj:classical-limit-stpart",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "file": "content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts"
+    }
+  ],
+  "conditional_on_class": [
     {
       "label": "cor:commutative-chirality-vanishes",
       "kind": "corollary",
@@ -248,18 +503,6 @@
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/genus-ideal-characterisation.ts"
-    },
-    {
-      "label": "lem:surreal-squeeze",
-      "kind": "lemma",
-      "conj": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/algebraic-substrate/surreal-squeeze.ts"
     },
     {
       "label": "lem:tower-pair-equality-fixed-level",
@@ -1003,30 +1246,6 @@
       "file": "content/quantum-observable-universe/descartes-universe/cohomological-embedding.ts"
     },
     {
-      "label": "prop:collatz-contact-boundary",
-      "kind": "proposition",
-      "conj": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/algebraic-substrate/collatz-contact-boundary.ts"
-    },
-    {
-      "label": "prop:collatz-no-cycles",
-      "kind": "proposition",
-      "conj": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/algebraic-substrate/collatz-no-cycles.ts"
-    },
-    {
       "label": "prop:composite-crossing-parity",
       "kind": "proposition",
       "conj": [
@@ -1272,18 +1491,6 @@
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/confinement-universality.ts"
-    },
-    {
-      "label": "prop:core-levi-form",
-      "kind": "proposition",
-      "conj": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts"
     },
     {
       "label": "prop:curvature-rank-gb-stratification",
@@ -1818,6 +2025,24 @@
       "file": "content/quantum-observable-universe/descartes-universe/genus-filtration-ideal.ts"
     },
     {
+      "label": "prop:geom-universality",
+      "kind": "proposition",
+      "conj": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-universality.ts"
+    },
+    {
+      "label": "prop:geom-yekutieli-alignment",
+      "kind": "proposition",
+      "conj": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts"
+    },
+    {
       "label": "prop:golden-quartet-galois",
       "kind": "proposition",
       "conj": [
@@ -2084,6 +2309,15 @@
       "file": "content/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction.ts"
     },
     {
+      "label": "prop:hoefsmit-scattering-pipeline",
+      "kind": "proposition",
+      "conj": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts"
+    },
+    {
       "label": "prop:hoefsmit-seminormal-form",
       "kind": "proposition",
       "conj": [
@@ -2312,29 +2546,6 @@
       "file": "content/quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts"
     },
     {
-      "label": "prop:knot-operator-lp-selection",
-      "kind": "proposition",
-      "conj": [
-        "conj:weak-spectral-completeness",
-        "conj:electroweak-higgs-torus-link-triplet",
-        "conj:force-carrier-knot-vs-link-dichotomy",
-        "conj:electroweak-mass-eigenstate-count",
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/knot-operator-lp-selection.ts"
-    },
-    {
       "label": "prop:knot-operator-selection",
       "kind": "proposition",
       "conj": [
@@ -2390,31 +2601,6 @@
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/lepton-continuant-recurrence.ts"
-    },
-    {
-      "label": "prop:leray-profile",
-      "kind": "proposition",
-      "conj": [
-        "conj:levi-degeneracy",
-        "conj:classical-limit-stpart",
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/leray-profile.ts"
     },
     {
       "label": "prop:lp-dual-stability",
@@ -2738,68 +2924,6 @@
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts"
-    },
-    {
-      "label": "prop:ns-kummer-specialisation",
-      "kind": "proposition",
-      "conj": [
-        "conj:levi-degeneracy",
-        "conj:classical-limit-stpart",
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts"
-    },
-    {
-      "label": "prop:ns-obstruction-computation",
-      "kind": "proposition",
-      "conj": [
-        "conj:levi-degeneracy",
-        "conj:classical-limit-stpart",
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts"
-    },
-    {
-      "label": "prop:ns-obstruction-tower",
-      "kind": "proposition",
-      "conj": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts"
     },
     {
       "label": "prop:nuclear-knot-classification",
@@ -3604,18 +3728,6 @@
       "file": "content/quantum-observable-universe/descartes-universe/rj-canonical-inner-product.ts"
     },
     {
-      "label": "prop:root-of-unity-truncation",
-      "kind": "proposition",
-      "conj": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts"
-    },
-    {
       "label": "prop:schur-weyl-mass-decomposition",
       "kind": "proposition",
       "conj": [
@@ -3899,18 +4011,6 @@
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/observations/substrate-consistency-window.ts"
-    },
-    {
-      "label": "prop:surreal-rate-calculus",
-      "kind": "proposition",
-      "conj": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/algebraic-substrate/surreal-rate-calculus.ts"
     },
     {
       "label": "prop:sw-period-thimble-equivalence",
@@ -4353,16 +4453,6 @@
       "file": "content/quantum-observable-universe/braids-and-knots/universal-braid-branching.ts"
     },
     {
-      "label": "prop:universality",
-      "kind": "proposition",
-      "conj": [
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/p4-universality.ts"
-    },
-    {
       "label": "prop:vertex-algebra-jet-relations",
       "kind": "proposition",
       "conj": [
@@ -4437,41 +4527,6 @@
         "conj:baryon-period-ratio"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/volume-perturbation-formula.ts"
-    },
-    {
-      "label": "prop:vorticity-lower-bound",
-      "kind": "proposition",
-      "conj": [
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts"
-    },
-    {
-      "label": "prop:weak-symmetric-normalization",
-      "kind": "proposition",
-      "conj": [
-        "conj:weak-spectral-completeness",
-        "conj:electroweak-higgs-torus-link-triplet",
-        "conj:force-carrier-knot-vs-link-dichotomy",
-        "conj:electroweak-mass-eigenstate-count",
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:classical-limit-stpart",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/weak-symmetric-normalization.ts"
     },
     {
       "label": "prop:wedderburn-as-noncomm-fourier",
@@ -4854,31 +4909,6 @@
       "file": "content/quantum-observable-universe/particle-interactions/markov-trace-factorization.ts"
     },
     {
-      "label": "thm:ns-singularity-descartes",
-      "kind": "theorem",
-      "conj": [
-        "conj:levi-degeneracy",
-        "conj:classical-limit-stpart",
-        "conj:e-hartree-categorical-derivation",
-        "conj:phi-q-tower-jsj-bridge",
-        "conj:kashaev-volume-conjecture",
-        "conj:knot-factor-frobenius-pairing",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark",
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio",
-        "conj:q-aubin-lions",
-        "conj:ns-counterexample",
-        "conj:critical-exponent",
-        "conj:blowup-yekutieli",
-        "conj:regularity-breakdown"
-      ],
-      "file": "content/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts"
-    },
-    {
       "label": "thm:parity-regime-selection",
       "kind": "theorem",
       "conj": [
@@ -4934,35 +4964,6 @@
         "conj:kashaev-volume-conjecture"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-mass-formula.ts"
-    }
-  ],
-  "conditional_on_class": [
-    {
-      "label": "prop:geom-universality",
-      "kind": "proposition",
-      "conj": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/geom-universality.ts"
-    },
-    {
-      "label": "prop:geom-yekutieli-alignment",
-      "kind": "proposition",
-      "conj": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts"
-    },
-    {
-      "label": "prop:hoefsmit-scattering-pipeline",
-      "kind": "proposition",
-      "conj": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts"
     }
   ]
 }

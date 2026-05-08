@@ -31,6 +31,10 @@ export default conjecture({
   label: "conj:e-hartree-categorical-derivation",
   title:
     "Conjectured categorical derivation of $E_h = m_e c_q^2 \\alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual",
+  lean: {
+    ref: "qou:QOU.Descartes.EHartreeCategoricalDerivation",
+    validation: "not_checked",
+  },
   uses: [
     "prop:em-coupling-projection",
     "prop:alpha-em-shift-multiplicative-chain",
