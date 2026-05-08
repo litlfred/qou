@@ -185,8 +185,13 @@ def main() -> int:
         "rho_p_codata": rho_p,
         "matches_char_fast": abs(ratio_to_charfast - 1) < 0.01,
     }
-    out = HERE / "markov-trace-atomic-proton-full.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+
+    out = (WitnessBuilder
+
+        .wrap_legacy("markov-trace-atomic-proton-full", witness, script_path=__file__, engine="sympy")
+
+        .save())
     print(f"\n  Witness: {out}")
     return 0
 

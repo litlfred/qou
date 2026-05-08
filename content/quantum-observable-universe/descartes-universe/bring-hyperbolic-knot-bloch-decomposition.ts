@@ -20,6 +20,12 @@ export default conjecture({
     "kashaev1997",
     "murakami-murakami2001",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: [
     "bloch-group",
     "borel-regulator",

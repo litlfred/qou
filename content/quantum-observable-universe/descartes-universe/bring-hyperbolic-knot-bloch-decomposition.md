@@ -397,7 +397,7 @@ $$
   \;=\;
   2\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right)
   \;\approx\;
-  2.029883\ldots
+  :val[Vol_4_1]{precision=6}\ldots
 $$
 
 The Clausen value $\mathrm{Cl}_2(\pi/3)$ is a Gauss-Catalan-type

@@ -238,8 +238,13 @@ def main() -> int:
         # drift. Fresh runs reproduce identical mathematical content.
         "test_cases": results,
     }
-    out = HERE / "markov-trace-recursive.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder
+
+    out = (WitnessBuilder
+
+        .wrap_legacy("markov-trace-recursive", witness, script_path=__file__, engine="sympy")
+
+        .save())
     print(f"\n  Witness: {out}")
     return 0
 

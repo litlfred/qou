@@ -137,8 +137,13 @@ def main() -> int:
         "measurements": measurements,
         "aggregate_uniform_bound_pass": aggregate_pass,
     }
-    out = DIR / "jet-tower-delta-max.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder
+
+    out = (WitnessBuilder
+
+        .wrap_legacy("jet-tower-delta-max", witness, script_path=__file__, engine="python")
+
+        .save())
     print(f"  Witness written to {out.name}")
     print(f"  aggregate_uniform_bound_pass = {aggregate_pass}")
     for m in measurements:

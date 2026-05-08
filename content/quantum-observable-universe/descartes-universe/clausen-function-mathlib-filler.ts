@@ -10,6 +10,12 @@ export default remark({
     "prop:em-coupling-bring-zero-mode",
   ],
   cites: ["thurston1978", "zagier1986"],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: [
     "mathlib-filler",
     "clausen-function",

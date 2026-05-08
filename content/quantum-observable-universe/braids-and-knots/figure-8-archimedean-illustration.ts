@@ -5,6 +5,12 @@ export default remark({
   title:
     "Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy",
   interprets: "prop:archimedean-functor-uniqueness",
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: [
     "figure-8-knot",
     "amphichiral",

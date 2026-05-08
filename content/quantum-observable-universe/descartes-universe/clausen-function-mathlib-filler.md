@@ -13,7 +13,7 @@ which is the imaginary part of the dilogarithm on the unit circle
 and the standard ingredient in hyperbolic-volume formulas:
 
 $$
-  \mathrm{Vol}(4_1)\;=\;2\,\mathrm{Cl}_2(\pi/3)\;\approx\;2.029883,
+  \mathrm{Vol}(4_1)\;=\;2\,\mathrm{Cl}_2(\pi/3)\;\approx\;:val[Vol_4_1]{precision=6},
   \qquad
   \mathrm{Vol}(\mathcal{B}_3)\;=\;8\,\mathrm{Cl}_2(\pi/4)\;=\;8G\;\approx\;7.327724.
 $$
