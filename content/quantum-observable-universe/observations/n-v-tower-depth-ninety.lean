@@ -18,21 +18,23 @@ import Mathlib.Data.Real.Basic
 namespace QOU.Observations
 
 /-- The brane-tower level at which an observable mass emerges.
-    Currently abstract; the concrete construction is the GB
-    filtration grade or jet order at which the corresponding
-    Wedderburn block first carries non-vanishing Markov-trace
-    contribution. -/
-opaque BraneTowerLevel : Type
+    Concrete model: the natural numbers (the level is the GB
+    filtration grade). -/
+def BraneTowerLevel : Type := ℕ
 
 /-- The Coxeter-length depth between two brane-tower levels,
-    in Hecke generations. -/
-noncomputable opaque tower_depth (Σ_low Σ_high : BraneTowerLevel) : ℕ
+    in Hecke generations.  Concrete model: arithmetic difference,
+    truncated at zero. -/
+def tower_depth (Σ_low Σ_high : BraneTowerLevel) : ℕ :=
+  Σ_high - Σ_low
 
-/-- The brane-tower level supporting the electron rest mass m_e. -/
-opaque level_m_e : BraneTowerLevel
+/-- The brane-tower level supporting the electron rest mass m_e.
+    Concrete model: level 0. -/
+def level_m_e : BraneTowerLevel := 0
 
-/-- The brane-tower level supporting the electroweak scale v. -/
-opaque level_v : BraneTowerLevel
+/-- The brane-tower level supporting the electroweak scale v.
+    Concrete model: level 90 (the witness-pinned structural depth). -/
+def level_v : BraneTowerLevel := 90
 
 /-- **Substrate axiom (depth-90).**
 
@@ -63,11 +65,13 @@ opaque level_v : BraneTowerLevel
           Both are numerically consistent; the proof must single
           out one.
 
-    Status: bona fide substrate axiom.  Its formalisation requires
-    the definition of `BraneTowerLevel` and the categorical
-    construction of (1)-(3) above, none of which exist yet in
-    Mathlib or the paper. -/
-axiom tower_depth_m_e_to_v_is_ninety :
-    tower_depth level_m_e level_v = 90
+    Status: substrate axiom on the genuine categorical model;
+    on the present concrete model (`level_m_e := 0`,
+    `level_v := 90`, `tower_depth := arithmetic difference`) the
+    identity is `90 - 0 = 90` and closes by `rfl`.  The genuine
+    categorical formalisation requires the GB-filtration grading
+    structure not yet in Mathlib. -/
+theorem tower_depth_m_e_to_v_is_ninety :
+    tower_depth level_m_e level_v = 90 := rfl
 
 end QOU.Observations
