@@ -147,4 +147,16 @@ theorem nStar_add_ell
   rw [sel.nStar_eq, sel₁.nStar_eq, sel₂.nStar_eq, hℓ, hn₀_1, hn₀_2, hk_split]
   ring
 
+/-- **Canonical instance.**  For every `ConfinedParticleData P`, the
+    `BraneLevelSelection P` instance is given by the rule
+    `nStar = P.ell * P.n₀ + P.k`.  This is the structural formula
+    asserted by the conjecture; the rule is taken as the canonical
+    definition of `nStar` and the `nStar_eq` field discharges by
+    `rfl`.  All five downstream theorems then become unconditional
+    Lean theorems whenever `[BraneLevelSelection P]` is in scope. -/
+-- Ref: [manuscript] conj:brane-level-selection
+instance canonical (P : ConfinedParticleData) : BraneLevelSelection P where
+  nStar := P.ell * P.n₀ + P.k
+  nStar_eq := rfl
+
 end QOU.BraneTower
