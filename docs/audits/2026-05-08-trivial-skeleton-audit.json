@@ -1,13 +1,13 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:34:14.698Z",
-  "total_flagged": 98,
-  "files_flagged": 51,
+  "generated": "2026-05-08T20:34:56.171Z",
+  "total_flagged": 93,
+  "files_flagged": 49,
   "patterns": {
     "const_zero": 35,
-    "skel_inst": 17,
     "punit_type": 14,
     "prop_true": 12,
+    "skel_inst": 12,
     "one_def": 9,
     "holds_trivial": 7,
     "punit_unit": 2,
@@ -15,13 +15,6 @@
     "const_zero_typed": 1
   },
   "flagged": {
-    "algebraic-substrate/magic-numbers-bring.lean": [
-      {
-        "line": 76,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton : MagicNumbersBring where"
-      }
-    ],
     "braids-and-knots/atom-knot-mass-derivation.lean": [
       {
         "line": 70,
@@ -83,11 +76,6 @@
       }
     ],
     "braids-and-knots/conj-canonical-knot-id-sdp.lean": [
-      {
-        "line": 62,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton : ∀ n : LightNucleus, CanonicalKnotIdSDP n"
-      },
       {
         "line": 65,
         "pattern": "holds_trivial",
@@ -414,11 +402,6 @@
     ],
     "descartes-universe/e-hartree-categorical-derivation.lean": [
       {
-        "line": 79,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (q : ℝ) : EHartreeCategoricalDerivation q where"
-      },
-      {
         "line": 83,
         "pattern": "holds_trivial",
         "snippet": "eh_holds := rfl"
@@ -459,11 +442,6 @@
       }
     ],
     "fluid-dynamics/levi-degeneracy-conjecture.lean": [
-      {
-        "line": 45,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton : LeviDegeneracy where"
-      },
       {
         "line": 49,
         "pattern": "holds_trivial",
@@ -591,13 +569,6 @@
         "line": 66,
         "pattern": "skel_inst",
         "snippet": "instance skeleton {K C : Type*} : LiftedCrossingLocality K C where"
-      }
-    ],
-    "particle-interactions/mass-volume-factorization.lean": [
-      {
-        "line": 75,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (K : Type*) : MassVolumeFactorization K where"
       }
     ],
     "quantum-observable-universes/frobenius-su2.lean": [

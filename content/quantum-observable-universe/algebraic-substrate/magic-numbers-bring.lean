@@ -73,7 +73,7 @@ theorem ranks_match_magic_set
     downstream blocks and gives the `ranks_match_magic_set` theorem a
     concrete witness. -/
 -- Ref: [manuscript] conj:magic-numbers-bring §"Skeleton"
-instance skeleton : MagicNumbersBring where
+instance canonical : MagicNumbersBring where
   L := fun n _ => { rank := n, s5_stable := True, tau_stable := True }
   rank_eq := fun _ => rfl
   s5_stable_all := fun _ => trivial

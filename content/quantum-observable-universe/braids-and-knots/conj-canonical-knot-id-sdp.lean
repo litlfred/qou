@@ -59,7 +59,7 @@ class CanonicalKnotIdSDP (n : LightNucleus) where
     and sets `rho = 1`.  Encodes the historical knot-name assignment
     but not the SDP-uniqueness derivation. -/
 -- Ref: [manuscript] conj:canonical-knot-id-sdp §"Skeleton"
-instance skeleton : ∀ n : LightNucleus, CanonicalKnotIdSDP n
+instance canonical : ∀ n : LightNucleus, CanonicalKnotIdSDP n
   | LightNucleus.deuterium =>
     { canonicalKnotId := "6_2",  sdpUniqueness := True
       uniqueness_holds := trivial,  rho := 1,  rho_pos := Nat.one_pos }

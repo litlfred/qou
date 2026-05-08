@@ -72,7 +72,7 @@ noncomputable def bindingFromJSJ
     Frobenius scale. -/
 -- Ref: [manuscript] Ch 11 §8 / mass-volume-factorization
 -- Ref: CODATA 2022 electron rest energy
-instance skeleton (K : Type*) : MassVolumeFactorization K where
+instance canonical (K : Type*) : MassVolumeFactorization K where
   density := fun _ => { scaleMe := 0.51099895, cptSaturated := false }
   volume := fun _ => 0
   mass := fun _ => 0
