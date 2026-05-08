@@ -188,8 +188,8 @@ theorem one_div_nat_succ_sq_summable :
 -- Ref: [zagier1986]
 theorem complexLiTwo_summable_on_unit_disk
     {z : ℂ} (hz : ‖z‖ ≤ 1) :
-    Summable (fun k : ℕ =>
-      ‖z ^ (k + 1) / ((↑k + 1 : ℂ)) ^ 2‖) := by
+    Summable (fun k : ℕ => z ^ (k + 1) / ((↑k + 1 : ℂ)) ^ 2) := by
+  apply Summable.of_norm
   apply Summable.of_nonneg_of_le
     (fun k => norm_nonneg _)
     ?_
@@ -201,7 +201,7 @@ theorem complexLiTwo_summable_on_unit_disk
   have hnz : ‖z‖ ^ (k + 1) ≤ 1 := pow_le_one (k + 1) (norm_nonneg z) hz
   -- and the denominator ‖((k+1):ℂ)²‖ = ((k+1)² : ℝ)
   have hdenom : ‖((↑k + 1 : ℂ)) ^ 2‖ = ((↑k + 1 : ℝ)) ^ 2 := by
-    rw [norm_pow, Complex.norm_natCast_succ]
+    rw [norm_pow, Complex.norm_natCast]
   rw [hdenom]
   apply div_le_div_of_nonneg_right hnz
   positivity
