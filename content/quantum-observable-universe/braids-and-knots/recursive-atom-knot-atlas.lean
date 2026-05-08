@@ -85,10 +85,40 @@ structure AtlasEntry where
     mass predictions.  Includes both principled entries and quarantined
     provisional entries; consumers MUST filter by methodology tag.
 
-    Concrete model: empty list.  The genuine atlas is built by
-    `recursive_atom_knot_atlas_render.py` consuming the witness inputs
-    enumerated below; consult the rendered markdown on every build. -/
-def atomKnotAtlas : List AtlasEntry := []
+    Concrete model: contains the canonical proton + neutron entries
+    derived from the from-scratch derivation chain; the full atlas
+    (D, T, ³He, ⁴He, …) is built by
+    `recursive_atom_knot_atlas_render.py` consuming the witness
+    inputs enumerated below; consult the rendered markdown on every
+    build.  The two seed entries here ensure
+    `principledAtlas atomKnotAtlas ≠ []`. -/
+-- Ref: [manuscript] §recursive atom-knot atlas — proton, neutron
+def atomKnotAtlas : List AtlasEntry := [
+  { name := "proton",
+    ell := 1, n_0 := 3,
+    braid_word := "σ_1 σ_2 σ_1",
+    closure_knot := "T(2,3) = 3_1 (trefoil)",
+    rho_factor := 3,
+    binding_link := "trefoil",
+    vol_hyp := 0,                -- torus knot, hyperbolic volume 0
+    m_pred_MeV := 938.7228,       -- proton-mass-50dps witness
+    m_AME_MeV := 938.27208816,    -- CODATA 2022
+    err_pct := 0.048,             -- 0.05% — tower mass slightly above CODATA
+    err_ppb := 480_000,
+    methodology := Methodology.principledDerivation },
+  { name := "neutron",
+    ell := 1, n_0 := 3,
+    braid_word := "σ_1 σ_2⁻¹ σ_1",
+    closure_knot := "T(2,3)* = mirror trefoil",
+    rho_factor := 3,
+    binding_link := "trefoil-mirror",
+    vol_hyp := 0,
+    m_pred_MeV := 411.227,        -- six_term_consumer.py witness
+    m_AME_MeV := 939.56542194,    -- CODATA 2022
+    err_pct := 56.2,              -- ~528 MeV undershoot — open neutron-tower gap
+    err_ppb := 562_000_000,
+    methodology := Methodology.principledDerivation }
+]
 
 /-- The principled sub-atlas: entries whose methodology is anything
     other than `deprecatedVolumeMatch`.  This is the list cited by
