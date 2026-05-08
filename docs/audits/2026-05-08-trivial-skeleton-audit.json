@@ -1,13 +1,13 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T23:13:55.892Z",
-  "total_flagged": 62,
-  "files_flagged": 39,
+  "generated": "2026-05-08T23:22:02.112Z",
+  "total_flagged": 69,
+  "files_flagged": 41,
   "patterns": {
     "const_zero": 34,
     "skel_inst": 12,
-    "one_def": 9,
-    "holds_trivial": 4,
+    "one_def": 11,
+    "holds_trivial": 9,
     "id_def": 1,
     "const_zero_typed": 1,
     "prop_true": 1
@@ -335,6 +335,45 @@
         "line": 80,
         "pattern": "const_zero",
         "snippet": "def obstructionSize (_n _r _p _q : ℕ) : ℝ := 0"
+      }
+    ],
+    "lean/QOU/Mathlib/HeckeAlgebra.lean": [
+      {
+        "line": 148,
+        "pattern": "holds_trivial",
+        "snippet": "hecke_holds := trivial"
+      },
+      {
+        "line": 150,
+        "pattern": "holds_trivial",
+        "snippet": "braid_holds := trivial"
+      },
+      {
+        "line": 152,
+        "pattern": "holds_trivial",
+        "snippet": "far_commute_holds := trivial"
+      },
+      {
+        "line": 159,
+        "pattern": "holds_trivial",
+        "snippet": "blocks_sum_holds := trivial"
+      },
+      {
+        "line": 161,
+        "pattern": "holds_trivial",
+        "snippet": "blocks_orthogonal_holds := trivial"
+      }
+    ],
+    "lean/QOU/Mathlib/WenzlBridgeConcrete.lean": [
+      {
+        "line": 49,
+        "pattern": "one_def",
+        "snippet": "def dimqRowPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
+      },
+      {
+        "line": 55,
+        "pattern": "one_def",
+        "snippet": "def dimqColPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
       }
     ],
     "molecular-construction/shell-closure-nf-term-count.lean": [
