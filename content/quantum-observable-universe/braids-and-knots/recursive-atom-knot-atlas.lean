@@ -143,13 +143,22 @@ def principledAtlas : List AtlasEntry → List AtlasEntry
 
     Updates to any input propagate via witness_staleness_tracker.py
     to the rendered appendix on the next `bun run build`.
-    Concrete model: predicate is `True`. -/
-def AtlasIsWitnessDerived : Prop := True
 
-theorem atlas_witness_derived : AtlasIsWitnessDerived :=
+    Concrete predicate: `atomKnotAtlas` is non-empty (the witness
+    pipeline has produced at least one entry).  After the canonical
+    proton and neutron entries above, this is `2 ≥ 1`, provable by
+    `decide`.  The genuine "every entry is witness-derived" content
+    requires per-entry methodology checks; this minimal predicate
+    catches the regression "atlas regenerated to empty". -/
+def AtlasIsWitnessDerived : Prop := atomKnotAtlas.length ≥ 1
+
+theorem atlas_witness_derived : AtlasIsWitnessDerived := by
   -- Ref: prop:recursive-atom-knot-atlas §"Build-pipeline integration"
   -- + the renderer recursive_atom_knot_atlas_render.py.
-  trivial
+  -- The atomKnotAtlas list above contains the canonical proton +
+  -- neutron entries; length ≥ 1 closes by decide.
+  show atomKnotAtlas.length ≥ 1
+  decide
 
 /-- (provisional / deprecated methodology)
 
