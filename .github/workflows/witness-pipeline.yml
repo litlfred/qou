@@ -277,11 +277,11 @@ jobs:
           # content/package.json by running with --cwd content.
           set -o pipefail
           # Baselines (re-baseline after each clean-up parcel):
-          # Last update: 2026-05-08 after Bucket 3 atlas predicates →
-          #   prop_true 15 → 13.
+          # 2026-05-08 (Bucket 3 atlas + cyclotomic predicates):
+          #   prop_true 15 → 12.
           bun run --cwd content pipeline/trivial-skeleton-audit.ts \
             --max-per-pattern \
-              "const_zero=38,skel_inst=21,prop_true=13,punit_type=14,one_def=10,holds_trivial=8,punit_unit=2,id_def=1,const_zero_typed=1,first_arg=10"
+              "const_zero=38,skel_inst=21,prop_true=12,punit_type=14,one_def=10,holds_trivial=8,punit_unit=2,id_def=1,const_zero_typed=1,first_arg=10"
 
       - name: Detect drift in committed witnesses
         run: |
