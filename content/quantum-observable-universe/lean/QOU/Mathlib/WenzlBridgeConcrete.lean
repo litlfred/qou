@@ -258,19 +258,19 @@ theorem yLambda_row3_eq_col3 (q : ℝ) :
     `dim_q([2,1]) = [3]_q · [2]_q · [1]_q / [3]_q = [2]_q · 1
     = q + q⁻¹`.  This theorem audits the closed-form
     `dimqPartition21 q = q + q⁻¹` against the underlying
-    q-arithmetic. -/
-theorem dimqPartition21_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+    q-arithmetic.
+
+    Caller-supplied `h3 : [3]_q ≠ 0`.  At substrate `q > 1`,
+    `qInteger_pos q 3 hq_one (le_refl 3)` discharges. -/
+theorem dimqPartition21_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
+    (h3 : QOU.qInteger q 3 ≠ 0) :
     QOU.qFactorial q 3 / QOU.qHookProduct q [3, 1, 1]
       = dimqPartition21 q := by
   unfold dimqPartition21
-  show QOU.qFactorial q 3 / QOU.qHookProduct q [3, 1, 1] = q + q⁻¹
   show QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))
     / (QOU.qInteger q 3 * (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))
     = q + q⁻¹
   rw [QOU.qInteger_two q hq, QOU.qInteger_one q hq]
-  have h3 : QOU.qInteger q 3 ≠ 0 := by
-    rw [QOU.qInteger_three q hq]
-    nlinarith [sq_nonneg q, sq_nonneg q⁻¹, sq_nonneg (q + q⁻¹)]
   field_simp
   ring
 
@@ -349,6 +349,75 @@ theorem yLambda_31_eq_yLambda_211 (q : ℝ) :
 /-- Self-duality at `n = 4` for `y_λ`. -/
 theorem yLambda_row4_eq_yLambda_col4 (q : ℝ) :
     yLambda_row4 q = yLambda_col4 q := rfl
+
+/-- **Hook-formula derivation for `dim_q([3,1])`** at `n = 4`.
+
+    Hooks of `[3,1]` are `(4, 2, 1, 1)`, so
+    `H_q = [4]_q · [2]_q · [1]_q · [1]_q = [4]_q · [2]_q`
+    (using `[1]_q = 1`).  Then
+    `dim_q = [4]_q · [3]_q · [2]_q · [1]_q / ([4]_q · [2]_q)
+           = [3]_q`.  Matches `dimqPartition31 q := qInteger q 3`.
+
+    Caller-supplied hypotheses `h2 : [2]_q ≠ 0` and `h4 :
+    [4]_q ≠ 0`.  At substrate `q > 1` these follow from
+    `QOU.qInteger_pos q k (hq_one : q > 1) (hk : k ≥ 1)`. -/
+theorem dimqPartition31_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
+    (h2 : QOU.qInteger q 2 ≠ 0) (h4 : QOU.qInteger q 4 ≠ 0) :
+    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 2, 1, 1]
+      = dimqPartition31 q := by
+  unfold dimqPartition31
+  show QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * 1)))
+    / (QOU.qInteger q 4 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1))))
+    = QOU.qInteger q 3
+  rw [QOU.qInteger_one q hq]
+  field_simp
+  ring
+
+/-- **Recursive `cohortDimqValues`** — maps each
+    `WenzlPartitionData` entry to its q-deformed Wenzl
+    dimension via the hook formula.  Composes the existing
+    `qFactorial` + `qHookProduct` primitives. -/
+noncomputable def cohortDimqValues
+    {n : ℕ} (cohort : List (WenzlPartitionData n)) (q : ℝ) : List ℝ :=
+  cohort.map (fun p => QOU.qFactorial q n / QOU.qHookProduct q p.hooks)
+
+/-- The dim_q-values list of the n=2 cohort has length 2. -/
+theorem cohortDimqValues_n2_length (q : ℝ) :
+    (cohortDimqValues n2_cohort q).length = 2 := by
+  unfold cohortDimqValues
+  show (n2_cohort.map _).length = 2
+  rw [List.length_map]
+  exact n2_cohort_length
+
+/-- The dim_q-values list of the n=3 cohort has length 3. -/
+theorem cohortDimqValues_n3_length (q : ℝ) :
+    (cohortDimqValues n3_cohort q).length = 3 := by
+  unfold cohortDimqValues
+  rw [List.length_map]
+  exact n3_cohort_length
+
+/-- The dim_q-values list of the n=4 cohort has length 5. -/
+theorem cohortDimqValues_n4_length (q : ℝ) :
+    (cohortDimqValues n4_cohort q).length = 5 := by
+  unfold cohortDimqValues
+  rw [List.length_map]
+  exact n4_cohort_length
+
+/-- The dim_q-values list of the n=5 cohort has length 7. -/
+theorem cohortDimqValues_n5_length (q : ℝ) :
+    (cohortDimqValues n5_cohort q).length = 7 := by
+  unfold cohortDimqValues
+  rw [List.length_map]
+  exact n5_cohort_length
+
+/-- The dim_q-values list at any cohort has length p(n). -/
+theorem cohortDimqValues_length
+    {n : ℕ} (cohort : List (WenzlPartitionData n)) (q : ℝ) :
+    (cohortDimqValues cohort q).length = cohort.length := by
+  unfold cohortDimqValues
+  rw [List.length_map]
 
 /-! ### Cohort: `n = 5` (7 partitions)
 
