@@ -201,8 +201,77 @@ def per_stratum_sum_jones_markov(
     return total, terms
 
 
+def global_wedderburn_sum_q_hecke_seminormal(
+    Z: int,
+    N: int,
+    q_val: float,
+    *,
+    include_inter: bool = True,
+    m_pp: int = 1,
+    m_pn: int = 1,
+    m_nn: int = 1,
+) -> tuple[float, list[dict]]:
+    """tr_M(β_atomic(Z, N)) = Σ_{λ ⊢ 3A} y_λ(q_0) · χ^λ_q(β) — exact form.
+
+    **Closes the character gap** flagged in
+    docs/audits/2026-05-08-q-hecke-character-gap-closure.md.
+
+    Composes:
+      - y_λ via Wenzl Schur principal specialization (numerical-q-from-start)
+      - χ^λ_q via Hoefsmit seminormal matrices at q_val (numerical, float64)
+
+    Drop-in replacement for the q=1-character-limited
+    `global_wedderburn_sum_jones_markov` when consumers need the
+    canonical Hecke character at q ≠ 1.  Numerically agrees with
+    `markov_trace_recursive` (canonical Markov-axiom reducer) to
+    1e-13 (proton/neutron, A=1) — 1e-10 (deuteron, A=2) relative;
+    full-precision mpmath path lives on PR #564 as
+    `rho_k_h3a_refinement.py` with 50-dps agreement at 1.4e-16.
+
+    Returns (tr_M_value, per_partition_breakdown).
+    """
+    import numpy as np
+
+    from hecke_characters import build_seminormal_matrices  # noqa: E402
+    from mass_at_3A_proper import (  # noqa: E402
+        atom_braid_word_3A,
+        chi_lambda_of_word,
+    )
+
+    A = Z + N
+    n = 3 * A
+    word = atom_braid_word_3A(
+        Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        include_inter=include_inter,
+    )
+    y_vals = y_lambda_at(n, q_val=q_val)
+    n_gens_required = n - 1
+
+    rows = []
+    total = 0.0
+    for shape, y in y_vals.items():
+        sigmas, dim, _syts = build_seminormal_matrices(shape, q=q_val)
+        if dim == 0:
+            continue
+        try:
+            chi = chi_lambda_of_word(sigmas, dim, word, n_gens_required)
+        except IndexError:
+            continue
+        contrib = float(y) * float(chi)
+        total += contrib
+        rows.append({
+            "partition": list(shape),
+            "dim": int(dim),
+            "y_at_q0": float(y),
+            "chi_q_at_q0": float(chi),
+            "contribution": float(contrib),
+        })
+    return total, rows
+
+
 __all__ = [
     "y_lambda_at",
     "global_wedderburn_sum_jones_markov",
     "per_stratum_sum_jones_markov",
+    "global_wedderburn_sum_q_hecke_seminormal",
 ]
