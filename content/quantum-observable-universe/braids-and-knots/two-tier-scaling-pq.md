@@ -37,7 +37,7 @@ $q_0 \approx 1.1097$ produces a dimensionless real number; converting
 to MeV requires multiplication by a base mass scale,
 
 $$
-  M_K \;\approx\; m_0 \cdot \bigl| P_K(q_0) \bigr|.
+  \mathfrak{m}_{\mathcal{K}} \;\approx\; m_0 \cdot \bigl| P_K(q_0) \bigr|.
 $$
 
 The choice of $m_0$ is a **boundary condition** of the framework, not

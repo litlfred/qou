@@ -69,10 +69,10 @@ $J^\ell/J^{\ell+1}$ is itself a semisimple $H_3$-bimodule.*
 [confinement–grading correspondence](#conj:confinement-grading-correspondence),
 the confinement level $\ell(K, q)$ of a closed braid $K$ coincides
 with the top non-zero $\mathbb{Z}$-grading degree of its KLR-module
-lift $M_K$ on the cyclotomic KLR algebra; the symbol
+lift $\mathfrak{M}_K$ on the cyclotomic KLR algebra; the symbol
 $\sigma_\ell(T_w) \in J^\ell / J^{\ell+1}$ is that top graded
 component. Truncating $T_w$ at jet order $k$ therefore keeps the
-graded components of $M_K$ in degrees $\leq k$ of the KLR complex;
+graded components of $\mathfrak{M}_K$ in degrees $\leq k$ of the KLR complex;
 the residual error $E(k)$ is the homological remainder supported in
 degrees $k < d \leq \ell(K, q)$, and the truncation is exact
 precisely when $k \geq \ell(K, q)$. The candidate prefix

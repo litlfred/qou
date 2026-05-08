@@ -473,6 +473,7 @@ export default chapter({
         "schur-weyl-mass-decomposition",
         "gb-residue-spectral-sum",
         "categorical-mass-positivity",
+        "mass-spectrum-generating-function",
         "graded-markov-trace-from-gs-filtration",
         "residue-at-root",
         "vhat-pair-commutation-trace",

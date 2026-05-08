@@ -6,13 +6,13 @@ $H_n(R, q)$ coincides with the filtration induced by the natural
 $\mathbb{Z}$-grading on the KLR algebra
 \cite{khovanovlauda2009}: a closed braid $K$ with normal form
 $T_w$ has confinement level $\ell(K, q)$ if and only if its
-KLR-module lift $M_K$ has top non-zero graded piece in degree
+KLR-module lift $\mathfrak{M}_K$ has top non-zero graded piece in degree
 $\ell(K, q)$,*
 
 $$
   T_w \in J^\ell(q) \setminus J^{\ell+1}(q)
   \;\iff\;
-  (M_K)_d = 0 \;\;\text{for}\;\; d > \ell.
+  (\mathfrak{M}_K)_d = 0 \;\;\text{for}\;\; d > \ell.
 $$
 
 **Computational role.**
