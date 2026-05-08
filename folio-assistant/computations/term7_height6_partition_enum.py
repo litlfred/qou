@@ -66,31 +66,42 @@ def hook_length(lam: tuple[int, ...], i: int, j: int) -> int:
     return arm + leg + 1
 
 
-def dim_q_of_partition(lam: tuple[int, ...], n: int, q_val: mpf) -> mpf:
+def q_int(k: int, q_val: mpf) -> mpf:
+    """Unsymmetric quantum integer [k]_q := (q^k - 1)/(q - 1).
+    Gives the same hook-length formula for `dim_q` at q ≠ 1 as the
+    symmetric form (q^k - q^{-k})/(q - q^{-1}) up to overall power
+    of q that cancels in numerator/denominator ratio."""
+    if k == 0:
+        return mpf(0)
+    return (q_val ** k - 1) / (q_val - 1)
+
+
+def q_factorial(k: int, q_val: mpf) -> mpf:
+    """[k]_q! := [1]_q · [2]_q · ... · [k]_q."""
+    out = mpf(1)
+    for i in range(1, k + 1):
+        out *= q_int(i, q_val)
+    return out
+
+
+def dim_q_of_partition(
+    lam: tuple[int, ...],
+    n: int,
+    q_val: mpf,
+    n_factorial_q: mpf,
+) -> mpf:
     """q-dimension via hook-length:
        dim_q(λ) = [n]_q! / ∏_{x ∈ λ} [h_x]_q.
+
+    The numerator `[n]_q!` is constant per `n`, so callers compute
+    it once per `A` and pass it via `n_factorial_q` for efficiency.
     """
-    # [k]_q := (q^k - q^{-k}) / (q - q^{-1})  for symmetric form
-    # We use the unsymmetric quantum integer (q^k - 1)/(q - 1)
-    # which gives the same hook-length formula at q != 1.
-    def q_int(k: int) -> mpf:
-        if k == 0:
-            return mpf(0)
-        return (q_val ** k - 1) / (q_val - 1)
-
-    def q_factorial(k: int) -> mpf:
-        out = mpf(1)
-        for i in range(1, k + 1):
-            out *= q_int(i)
-        return out
-
-    numerator = q_factorial(n)
     denom = mpf(1)
     for i, row_len in enumerate(lam, start=1):
         for j in range(1, row_len + 1):
             h = hook_length(lam, i, j)
-            denom *= q_int(h)
-    return numerator / denom
+            denom *= q_int(h, q_val)
+    return n_factorial_q / denom
 
 
 def main() -> None:
@@ -104,12 +115,19 @@ def main() -> None:
     for A in A_values:
         n = 3 * A
         parts = partitions_of_height(n, height)
-        # Compute dim_q for each, then Wedderburn weight ∝ dim_q²
+        # Cache [n]_q! once per A — constant for all partitions of n.
+        n_factorial_q = q_factorial(n, q_0)
+        # Compute dim_q for each, then Wedderburn weight w_λ =
+        # dim_q(λ)² / [n]_q! (the actual Wedderburn weight, not just
+        # dim_q²).
         weights = []
         for lam in parts:
-            d = dim_q_of_partition(lam, n, q_0)
-            weights.append((lam, d, d * d))
-        weights.sort(key=lambda t: -float(t[2]))  # descending by dim_q²
+            d = dim_q_of_partition(lam, n, q_0, n_factorial_q)
+            wedderburn = d * d / n_factorial_q
+            weights.append((lam, d, wedderburn))
+        # mpf supports direct comparison; reverse=True is the
+        # standard Python idiom (avoids lossy float coercion).
+        weights.sort(key=lambda t: t[2], reverse=True)
 
         results.append({
             "A": A,
@@ -118,14 +136,15 @@ def main() -> None:
             "top_5_partitions_by_weight": [
                 {
                     "partition": list(lam),
-                    "dim_q": str(d)[:40],
-                    "dim_q_sq": str(dsq)[:40],
+                    # Full mp.dps precision — no truncation
+                    "dim_q": mpmath.nstr(d, 60),
+                    "wedderburn_weight": mpmath.nstr(w, 60),
                 }
-                for lam, d, dsq in weights[:5]
+                for lam, d, w in weights[:5]
             ],
-            "total_weight_sum": str(
-                sum(t[2] for t in weights)
-            )[:40],
+            "total_weight_sum": mpmath.nstr(
+                sum(t[2] for t in weights), 60
+            ),
         })
 
     payload = {
