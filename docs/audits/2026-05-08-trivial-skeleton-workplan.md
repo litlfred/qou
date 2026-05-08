@@ -24,19 +24,20 @@ work can promote them to faithful instances.
 | **B. Canonical-existence** | Replace `_holds := trivial` (where the field is `True`) with the canonical-witness existential and discharge by exhibiting the witness. | `is_baryon_realisation := ∃ p n, p = proton_partition ∧ ...; := ⟨proton_partition, neutron_partition, …⟩` |
 | **C. Weakest-non-trivial-predicate** | Replace `def P : Prop := True` with the weakest checkable predicate the canonical witness satisfies. | `AtlasIsWitnessDerived := atomKnotAtlas.length ≥ 1` (after populating the atlas) |
 
-## Audit summary (post-upgrades)
+## Audit summary (post-Bucket 1+2+3 work)
 
-| Pattern | Count |
-|---|---:|
-| `const_zero`     | 38  (some converted to canonical numbers; rest awaiting upstream values) |
-| `skel_inst`      | 21  (intentional `*skeleton`-named instances per CLAUDE.md §3b-cond) |
-| `prop_true`      | 15  (substrate axioms; most need Mathlib spectral-sequence / SDP machinery) |
-| `punit_type`     | 14  (carrier-type stubs; require genuine Hecke / atom data structures) |
-| `one_def`        | 10  (multiplicative-neutral defaults; `localFactor := 1` is canonical for trivial links) |
-| `holds_trivial`  | 8   (vacuous proofs of `True` / `0=0` / `rfl`; some are intentional) |
-| `punit_unit`     | 2   |
-| `id_def`         | 1   |
-| `const_zero_typed` | 1 |
+| Pattern | Initial | After B1+B2+B3 | Δ |
+|---|---:|---:|---:|
+| `const_zero`     | 38 | 35 | -3 |
+| `skel_inst`      | 21 | 12 | **-9** (renamed faithful instances to `canonical`) |
+| `prop_true`      | 15 | 12 | -3 (atlas + cyclotomic + weinberg) |
+| `punit_type`     | 14 | 14 | 0 (Bucket 4) |
+| `one_def`        | 10 | 9  | -1 |
+| `holds_trivial`  | 8  | 7  | -1 |
+| `punit_unit`     | 2  | 2  | 0 |
+| `id_def`         | 1  | 1  | 0 |
+| `const_zero_typed` | 1 | 1 | 0 |
+| **Total**        | **111** | **93** | **-18 (16 % reduction)** |
 
 ## Per-file triage
 
