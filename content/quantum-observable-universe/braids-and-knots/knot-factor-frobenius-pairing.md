@@ -82,7 +82,7 @@ $$
 $$
 
 **Step 3: Yekutieli 2D nonabelian Stokes.**
-[Yekutieli (2015)](#rem:yekutieli-stokes-remark) identifies the
+[Yekutieli (2015)](#rem:yekutieli-stokes) identifies the
 Markov trace with the nonabelian multiplicative integral of the
 instanton connection $A$ over the surface bounded by the braid
 closure.  The mass identity is therefore the **categorical action

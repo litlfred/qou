@@ -70,7 +70,7 @@ structure-preserving maps that may degrade axioms:
 - The **initial object** would be the Big Bang state: the
   maximally degenerate QOU where $q = \infty$, the Frobenius
   form is zero, and the only data is the
-  [bundle initial condition](#def:bundle-initial-condition)
+  [bundle initial condition](#def:bundle-initial-conditions)
   $E_0 = \sum_i (p_i, H_i)$ — positions without momenta.
   Every QOU with finite $q$ receives a unique morphism from
   this state (time evolution from the initial singularity).

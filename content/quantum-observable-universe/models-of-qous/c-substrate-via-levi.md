@@ -1,5 +1,5 @@
 Let $A$ be an instanton connection on $P$
-([instanton](#def:instanton)), $F_A^+$ its self-dual curvature
+([instanton](#def:categorical-instanton)), $F_A^+$ its self-dual curvature
 ([self-dual curvature](#ex:self-dual-curvature)), and
 $L_\varTheta(V, W) = -id\varTheta(V, \bar{W})$ the Levi form.  Since
 $\Lambda^{1,1} H^* \subset \Lambda^+ H^*$ on the $4$-dimensional

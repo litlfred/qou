@@ -60,7 +60,7 @@ reduce to a triple:
    category of vector bundles over $M$, playing the role of
    $(G, \mathcal{S})$; and
 3. an instanton connection on the underlying $A$-bundle
-   ([instanton](#def:instanton)).
+   ([instanton](#def:categorical-instanton)).
 
 The vanishing condition $H^0(M, \mathrm{Ad}(P)) = 0$ then follows from
 the non-degeneracy of the Frobenius form $\int_A$ via the diagram

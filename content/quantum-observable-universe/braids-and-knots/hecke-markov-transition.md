@@ -124,4 +124,4 @@ simple exclusion process (TASEP).  For the substrate value
 $q = q_0$, the per-step Shannon entropy
 $H = -p_+\ln p_+ - p_-\ln p_-$ is close to the maximum $\ln 2$;
 the numerical evaluation is given in Chapter 7
-([physical observations](#chap:physical-observations)).
+([physical observations](#chap:observations)).
