@@ -58,6 +58,11 @@ theorem qInteger_sq_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
     qInteger q k ^ 2 > 0 := by
   exact sq_pos_of_pos (qInteger_pos q k hq hk)
 
+/-- `[k]_q ≠ 0` for `k ≥ 1` and `q > 1`. -/
+theorem qInteger_ne_zero (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
+    qInteger q k ≠ 0 :=
+  ne_of_gt (qInteger_pos q k hq hk)
+
 /-- `[2]_q = q + q⁻¹` for `q ≠ q⁻¹` — closed form of the second
     q-integer.  Used by the Markov-parameter substitution
     `z = 1/[2]_{q^{1/2}}`. -/

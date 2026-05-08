@@ -419,6 +419,160 @@ theorem cohortDimqValues_length
   unfold cohortDimqValues
   rw [List.length_map]
 
+/-- **Hook-formula derivation for `dim_q([2,2])`** at `n = 4`.
+
+    Hooks of `[2,2]` are `(3, 2, 2, 1)`, so
+    `H_q = [3]_q · [2]_q · [2]_q · [1]_q = [3]_q · [2]_q²`
+    (using `[1]_q = 1`).  Then
+    `dim_q = [4]_q [3]_q [2]_q [1]_q / ([3]_q [2]_q²) = [4]_q / [2]_q`.
+
+    Caller-supplied `[2]_q ≠ 0` and `[3]_q ≠ 0` hypotheses. -/
+theorem dimqPartition22_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
+    (h2 : QOU.qInteger q 2 ≠ 0) (h3 : QOU.qInteger q 3 ≠ 0) :
+    QOU.qFactorial q 4 / QOU.qHookProduct q [3, 2, 2, 1]
+      = dimqPartition22 q := by
+  unfold dimqPartition22
+  show QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * 1)))
+    / (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * 1))))
+    = QOU.qInteger q 4 / QOU.qInteger q 2
+  rw [QOU.qInteger_one q hq]
+  field_simp
+  ring
+
+/-- **Hook-formula derivation for `dim_q([2,1,1])`** at `n = 4`.
+
+    Hooks of `[2,1,1]` are `(4, 1, 2, 1)`, so
+    `H_q = [4]_q · [1]_q · [2]_q · [1]_q = [4]_q · [2]_q`.
+    Then `dim_q = [4]_q [3]_q [2]_q [1]_q / ([4]_q [2]_q) = [3]_q`.
+
+    Caller-supplied `[2]_q ≠ 0` and `[4]_q ≠ 0`.  Same target as
+    `dimqPartition31_via_hook_formula` (column-row duality at
+    `n = 4`). -/
+theorem dimqPartition211_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
+    (h2 : QOU.qInteger q 2 ≠ 0) (h4 : QOU.qInteger q 4 ≠ 0) :
+    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 1, 2, 1]
+      = dimqPartition211 q := by
+  unfold dimqPartition211
+  show QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * 1)))
+    / (QOU.qInteger q 4 * (QOU.qInteger q 1 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * 1))))
+    = QOU.qInteger q 3
+  rw [QOU.qInteger_one q hq]
+  field_simp
+  ring
+
+/-! ### Substrate-q corollaries
+
+    At the QOU substrate `q > 1`, every `[k]_q` for `k ≥ 1` is
+    positive and hence non-zero (via `qInteger_pos`).  These
+    corollaries package the hook-formula theorems with their
+    non-vanishing hypotheses discharged automatically from the
+    single hypothesis `q > 1`. -/
+
+/-- At substrate `q > 1`, `dim_q([2,1])` equals the hook formula. -/
+theorem dimqPartition21_at_substrate (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 3 / QOU.qHookProduct q [3, 1, 1]
+      = dimqPartition21 q := by
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs
+    linarith
+  have h3 : QOU.qInteger q 3 ≠ 0 :=
+    QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+  exact dimqPartition21_via_hook_formula q hq h3
+
+/-- At substrate `q > 1`, `dim_q([3,1])` equals the hook formula. -/
+theorem dimqPartition31_at_substrate (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 2, 1, 1]
+      = dimqPartition31 q := by
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs
+    linarith
+  have h2 : QOU.qInteger q 2 ≠ 0 :=
+    QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  have h4 : QOU.qInteger q 4 ≠ 0 :=
+    QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+  exact dimqPartition31_via_hook_formula q hq h2 h4
+
+/-- At substrate `q > 1`, `dim_q([2,2])` equals the hook formula. -/
+theorem dimqPartition22_at_substrate (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 4 / QOU.qHookProduct q [3, 2, 2, 1]
+      = dimqPartition22 q := by
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs
+    linarith
+  have h2 : QOU.qInteger q 2 ≠ 0 :=
+    QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  have h3 : QOU.qInteger q 3 ≠ 0 :=
+    QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+  exact dimqPartition22_via_hook_formula q hq h2 h3
+
+/-- At substrate `q > 1`, `dim_q([2,1,1])` equals the hook formula. -/
+theorem dimqPartition211_at_substrate (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 1, 2, 1]
+      = dimqPartition211 q := by
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs
+    linarith
+  have h2 : QOU.qInteger q 2 ≠ 0 :=
+    QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  have h4 : QOU.qInteger q 4 ≠ 0 :=
+    QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+  exact dimqPartition211_via_hook_formula q hq h2 h4
+
+/-! ### Wenzl-bridge trace identity (sketch)
+
+    The Markov-trace normalisation `tr_M(1) = 1` plus the
+    Wenzl-bridge expansion gives the constraint
+      `Σ_λ y_λ · χ_λ(1) = Σ_λ y_λ · d_λ = 1`.
+
+    For our concrete cohorts, this is a multi-term identity
+    relating the y_λ values across all partitions of `n`.  At
+    n = 2 the identity reads
+      `y_[2] · 1 + y_[1,1] · 1 = 2/(q + q⁻¹) = 1`,
+    which holds **only** at `q = 1`; at generic `q ≠ 1` the
+    direct formula `y_λ = d_λ / H_q(λ)` requires a
+    normalisation factor.  The genuine Wenzl-bridge formula is
+    `y_λ(q) = dim_q(λ) · d_λ / [n]_q!`, which DOES sum to 1
+    via the Plancherel formula `Σ_λ dim_q(λ)² = [n]_q!` (the
+    q-deformation of Burnside).  We record the corrected y_λ
+    values as `yLambdaCorrected_*` below, distinct from the
+    raw `d_λ / H_q(λ)` shorthand. -/
+
+/-- **Corrected** `y_[3]` Wenzl-bridge coefficient at `n = 3`:
+    `y_[3] = dim_q([3]) · d_[3] / [3]_q! = 1 · 1 / [3]_q!`. -/
+noncomputable def yLambdaCorrected_row3 (q : ℝ) : ℝ :=
+  dimqPartition3 q * 1 / QOU.qFactorial q 3
+
+/-- Corrected `y_[2,1]` at `n = 3`:
+    `y_[2,1] = dim_q([2,1]) · d_[2,1] / [3]_q! = (q+q⁻¹) · 2 / [3]_q!`. -/
+noncomputable def yLambdaCorrected_lshape21 (q : ℝ) : ℝ :=
+  dimqPartition21 q * 2 / QOU.qFactorial q 3
+
+/-- Corrected `y_[1,1,1]` at `n = 3`:
+    `y_[1,1,1] = dim_q([1,1,1]) · d_[1,1,1] / [3]_q! = 1 / [3]_q!`. -/
+noncomputable def yLambdaCorrected_col3 (q : ℝ) : ℝ :=
+  dimqPartition111 q * 1 / QOU.qFactorial q 3
+
+/-- Corrected column-row duality at `n = 3`:
+    `y_[3] = y_[1,1,1]` (rfl after `dim_q([3]) = dim_q([1,1,1]) = 1`). -/
+theorem yLambdaCorrected_row3_eq_col3 (q : ℝ) :
+    yLambdaCorrected_row3 q = yLambdaCorrected_col3 q := rfl
+
 /-! ### Cohort: `n = 5` (7 partitions)
 
     Partition data:
