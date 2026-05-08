@@ -224,6 +224,7 @@ export default chapter({
         "archimedean-functor-uniqueness",
         "bring-hyperbolic-knot-bloch-decomposition",
         "mass-tower-open-problems-classes",
+        "gluon-octet-ruled-out",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
