@@ -45,26 +45,55 @@ yield the partition sum
 
 $$\mathrm{tr}_M^{\text{q-Hecke}}(\beta) \;=\; \sum_{\lambda \vdash 3A} y_\lambda(q_0) \cdot \mathrm{tr}\,\rho_\lambda^{q_0}(\beta).$$
 
-## Cross-check: closure verified
+## Cross-check: closure verified at machine epsilon for all 5 low isotopes
 
 [`tr-m-q-hecke-seminormal.witness.json`](../../folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json)
 compares against the canonical reducer reference
 ([`atomic-tr-m-mpfr-50dps.witness.json`](../../folio-assistant/computations/atomic-tr-m-mpfr-50dps.witness.json),
-produced by `markov_trace_recursive`):
+produced by `markov_trace_recursive`).
 
-| Atom | $|\mathrm{tr}_M|$ canonical | partition-sum (q-Hecke) | rel err |
-|---|---:|---:|---:|
-| proton | 1.06530622859 | 1.06530622859 | **4.31 × 10⁻¹⁴** |
-| neutron | 0.92323329717 | 0.92323329717 | **1.00 × 10⁻¹³** |
-| deuteron | 0.38828647155 | 0.38828647155 | **6.66 × 10⁻¹⁰** |
+**Final hybrid-precision result** (commit
+[`9bed8d71`](https://github.com/litlfred/qou/pull/572/commits/9bed8d71)):
+30-dps sympy `Float` for $y_\lambda$ + float64 for $\chi^\lambda_q$,
+with per-`n` cache.
 
-All 6 / 6 assertions pass (including the tighter `< 1e-3` and the
-loose `< 1e-6` tolerances).
+| Atom | $n = 3A$ | $|\mathrm{tr}_M|$ canonical | partition-sum (q-Hecke) | rel err | time |
+|---|---:|---:|---:|---:|---:|
+| proton | 3 | 1.0653062286 | 1.0653062286 | **3.96 × 10⁻¹⁵** | 0.32 s |
+| neutron | 3 | 0.9232332972 | 0.9232332972 | **4.21 × 10⁻¹⁵** | 0.00 s |
+| deuteron | 6 | 0.3882864715 | 0.3882864715 | **7.01 × 10⁻¹⁵** | 3.68 s |
+| tritium | 9 | 0.1040521187 | 0.1040521187 | **1.07 × 10⁻¹⁴** | 61.79 s |
+| ³He | 9 | 0.2065408586 | 0.2065408586 | **1.03 × 10⁻¹⁴** | 0.24 s ← cached |
 
-The deuteron's `1e-10` (vs proton/neutron `1e-13`) reflects the
-heavier numerical cost of the n=6 partition-sum — 11 partitions ×
-seminormal matrix products. The agreement is at the float64
-precision floor.
+**All 5 atoms at machine epsilon** — same precision floor as the
+canonical Markov-axiom reducer. 10 / 10 witness assertions pass.
+
+### Why hybrid precision
+
+An earlier float64-throughout path gave only $1.8 \times 10^{-5}$ at
+$n = 9$ (T, ³He). The Wenzl–Schur sum over 30 partitions of 9
+involves $q^{\text{large}}$ terms that lose significance at float64.
+Computing $y_\lambda$ at 30-dps sympy `Float` and substituting at
+the end recovers the precision; the subsequent matrix products via
+`mass_at_3A_proper.chi_lambda_of_word` (numpy float64) are
+short-step and don't accumulate error.
+
+A full-symbolic path (`hoefsmit_symbolic.chi_lambda_symbolic` for
+both $y_\lambda$ and $\chi^\lambda_q$) timed out at 240 s for $n = 9$
+in interactive sessions. The hybrid technique closes the same
+result in ~62 s for the slowest atom.
+
+### Cumulative cost
+
+~66 s total for 5 atoms (cached y_λ across atoms with the same n
+makes the second-atom-at-n=9 cost negligible). Compares favorably
+to PR #564's
+[`rho_k_h3a_refinement.py`](../../folio-assistant/computations/rho_k_h3a_refinement.py)
+(50-dps mpmath throughout: ~5–10 minutes for the same 5 atoms).
+The hybrid 30-dps + float64 approach is the recommended default
+for partition-sum tr_M consumers needing better than 1e-5
+agreement; for binding-fraction $\Delta_\lambda$ analysis (#564's
+production path), use mpmath 50-dps throughout.
 
 **Note:** PR #564's
 [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py)
