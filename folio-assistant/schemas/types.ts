@@ -217,7 +217,10 @@ export type ComputationEngine =
   | "sage"
   | "python"
   | "numpy"
-  | "scipy";
+  | "scipy"
+  | "closed-form"
+  | "python+mpmath"
+  | "python+numpy+cvxpy";
 
 /**
  * Status of a computational verification.
@@ -227,7 +230,8 @@ export type ComputationStatus =
   | "verified"      // script ran, witness matches expected values within tolerance
   | "failed"        // script ran, witness does NOT match expected values
   | "error"         // script crashed or could not run
-  | "stale";        // witness exists but is older than script or inputs
+  | "stale"         // witness exists but is older than script or inputs
+  | "experimental"; // exploratory probe, not yet validated against expected values
 
 /**
  * A single assertion in a computation witness.
