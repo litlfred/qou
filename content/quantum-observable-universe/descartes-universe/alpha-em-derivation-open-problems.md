@@ -137,6 +137,46 @@ correction in any natural q-arithmetic basis at low degree.
 See [`alpha-em-correction-derivation-attempts.witness.json`](#) for
 the full attempt log.
 
+## Why block-diagonal Gram deformations cannot close the gap
+
+A natural ansatz (cf. external review note, May 2026) is to deform the
+Gram matrix by a *framing correction* $\mathcal{A}$ induced by a chiral
+anomaly on Bring's surface, $G_n' = G_n \otimes \mathcal{A}$. Two sub-cases:
+
+1. **Scalar $\mathcal{A} \in R$.** Then $\det G_n' = \mathcal{A}^n \det G_n$
+   and the determinant ratio becomes
+   $\kappa' = \mathcal{A} \cdot \kappa_{\text{Witten}}$. The corrected
+   $1/\alpha_{EM}$ takes the multiplicative form
+   $q[9]_q[10]_q \cdot (1 + \delta_{CS} + \mathcal{A}\kappa_{\text{Witten}}\delta_{CS}^2)$.
+2. **Block-diagonal $2{\times}2$ $\mathcal{A}$** acting on the two Hecke
+   eigenchannels $V_{(2)}, V_{(1,1)}$ (eigenvalues $q, -q^{-1}$). The
+   determinant of $G_n'$ factors per channel, $\kappa'$ remains a
+   product of two scalar contributions, and $\kappa'$ is again a
+   *multiplicative* perturbation of $\kappa_{\text{Witten}}$. This is
+   precisely the "old derivation" route already carried out in
+   [`gram-kappa-spectral-interpretation`](#rem:gram-kappa-spectral-interpretation),
+   which yielded $\kappa \approx 1.722$ — agreeing with the
+   Wedderburn-block Plancherel sum and falling short of the
+   $\kappa \approx 1.888$ required for CODATA.
+
+Both sub-cases live in the multiplicative $q$-rational family — exactly
+the family the 100-dps PSLQ scan over the 54-element basis ruled out
+(table above). Therefore any Gram deformation that preserves
+block-diagonal structure on $V_{(2)} \oplus V_{(1,1)}$ cannot close the
+$1.55 \times 10^{-3}$ gap, regardless of whether $\mathcal{A}$ is taken
+to be a scalar or a $2{\times}2$ matrix. Closure must either:
+
+- (a) be off-diagonal — mixing the symmetric and antisymmetric channels
+  in a way that breaks the multiplicative-product structure of the
+  determinant ratio, or
+- (b) leave the multiplicative family entirely — most plausibly via
+  the *additive* Bring zero-mode form
+  [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode),
+  in which the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ enters
+  $1/\alpha_{EM}$ as a *summand*, not a factor.
+
+The additive route is the current preferred lead.
+
 ## What this implies
 
 Either:

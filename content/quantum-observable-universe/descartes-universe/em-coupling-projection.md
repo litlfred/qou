@@ -261,15 +261,33 @@ the level of a closed structural derivation:
 
 1. The Chern-Simons form ($1+\delta_{CS}+\kappa\delta_{CS}^2$ with
    $\kappa$ from a Gram-determinant ratio) is conjectural; the
-   $\kappa$ identification is unproved.
+   $\kappa$ identification is unproved. Both the original $2{\times}2$
+   $J^2$-jet derivation and the Wedderburn-block Plancherel sum yield
+   $\kappa \approx 1.722$, falling short of the $\kappa \approx 1.888$
+   needed for CODATA. Block-diagonal Gram deformations cannot close
+   this gap — see
+   [`rem:alpha-em-derivation-open-problems`](#rem:alpha-em-derivation-open-problems)
+   for the multiplicative-family ruling.
 2. The PSLQ-empirical form $45[3]_q(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$
    matches CODATA to $7$ ppb at $q_0$ but disagrees with the bare
    formula at every other $q$ and has only one of four factors
-   structurally derived.
+   structurally derived. Now superseded — see
+   [`conj:alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form).
+3. The **additive Bring zero-mode form**
+   [`conj:em-coupling-bring-zero-mode`](#conj:em-coupling-bring-zero-mode):
+   $1/\alpha_{EM} = q[9]_q[10]_q + 2g/(4\pi(g-1)) + \mathcal{O}(\alpha)$
+   at $g=4$, where $2g/(4\pi(g-1)) = 2/(3\pi)$ admits two clean
+   geometric identifications (Hodge / Gauss-Bonnet ratio on Bring's
+   surface; sphere-volume ratio $\mathrm{Vol}(S^2)/(3\,\mathrm{Vol}(S^3))$).
+   Single-term residual $+4.2 \times 10^{-6}$; with the next-order
+   $\alpha/(4\pi)$ term, $-5.7 \times 10^{-8}$. This is the **current
+   preferred lead** — structurally cleanest and exits the multiplicative
+   $q$-rational family ruled out by the PSLQ scan.
 
 The honest current status is: the bare $q[9]_q[10]_q$ derivation is
 solid; closing the remaining $1.55 \times 10^{-3}$ requires further
-work and should not yet be presented as derived.
+work and should not yet be presented as derived. Effort should
+concentrate on the additive Bring zero-mode lead (item 3).
 
 **Physical interpretation.**
 
