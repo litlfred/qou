@@ -22,7 +22,7 @@ $$
   \Phi_{1}^{\mathrm{Coul}}(a_{0}^{\mathrm{cat}}).
 $$
 
-> ### ⚠ Derivation status
+> ### Caveat — derivation status
 >
 > This proposition is **not yet derived from QOU/Hecke structure**.
 > The formula $a_0 = \hbar/(m_e c \alpha)$ is *transported* from

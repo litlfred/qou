@@ -1,10 +1,10 @@
 A Turing machine computation of $N$ gates encodes as a braid
 $\beta$ on $n$ strands with $c = 3N$ crossings — three per
 Toffoli gate
-([q-AND](#rem:toffoli-q-and)).  Closing the braid gives a
+([q-AND](#rem\:toffoli-q-and)).  Closing the braid gives a
 link $L = \hat{\beta}$ whose Skein polynomial $P_L(q)$ is
 the **output** of the computation
-([transfer matrix product](#prop:skein-polynomial-transfer-matrix)).
+([transfer matrix product](#prop\:skein-polynomial-transfer-matrix)).
 
 **The Skein decomposition is the discrete path integral.**
 
@@ -23,16 +23,16 @@ leaves — one per discrete history of the computation.
 
 This is the **path integral at Planck resolution**:
 
-| Path integral | Skein decomposition |
-|---------------|---------------------|
-| History | Resolution path through the tree |
-| Action weight $e^{iS/\hbar}$ | Skein weight $q^{\pm 1}$ or $s$ per crossing |
-| Partition function $Z$ | Skein polynomial $P_L(q) = \sum_{\text{paths}}(\text{weights})$ |
-| Path integral measure | Markov trace $\mathrm{tr}_M$ |
-| Planck time step | One crossing resolution |
+| Path integral                | Skein decomposition                                             |
+| ---------------------------- | --------------------------------------------------------------- |
+| History                      | Resolution path through the tree                                |
+| Action weight $e^{iS/\hbar}$ | Skein weight $q^{\pm 1}$ or $s$ per crossing                    |
+| Partition function $Z$       | Skein polynomial $P_L(q) = \sum_{\text{paths}}(\text{weights})$ |
+| Path integral measure        | Markov trace $\mathrm{tr}_M$                                    |
+| Planck time step             | One crossing resolution                                         |
 
 Each resolution is one Planck step
-([discrete Planck step](#rem:discrete-planck-step)).  Each
+([discrete Planck step](#rem\:discrete-planck-step)).  Each
 path through the tree is one discrete history of the
 universe at the resolution of one crossing.  The Skein
 polynomial is the sum over all $3^c$ histories, weighted by
@@ -68,16 +68,16 @@ Start from a section $E \in \Gamma(M, \mathcal{S})$ — the
 output state of the computation.  Resolve each crossing via
 the Skein relation, one gate at a time, flowing backward
 through the jet tower
-([jet–Planck steps](#rem:jet-planck-steps)):
+([jet–Planck steps](#rem\:jet-planck-steps)):
 
-- After $1$ resolution: the last gate is undone.
-- After $3N$ resolutions: complete unwinding —
+* After $1$ resolution: the last gate is undone.
+* After $3N$ resolutions: complete unwinding —
   arrival at the Big Bang initial conditions
   $\mathcal{S}_0 = \sum_i (p_i, H_i)$
-  ([bundle initial conditions](#def:bundle-initial-conditions)).
+  ([bundle initial conditions](#def\:bundle-initial-conditions)).
 
-By descent
-([descent involution](#def:descent-involution)), all
+By :refterm[descent]{#descent}
+([:refterm[descent]{#descent} involution](#def\:descent-involution)), all
 branches of the resolution tree flow back to
 $\mathcal{S}_0$.  The initial conditions **are** the
 program.  The braid **is** the computation.  The Skein

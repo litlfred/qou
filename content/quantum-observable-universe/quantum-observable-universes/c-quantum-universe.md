@@ -1,5 +1,5 @@
 Let $K$ be an archimedean field.  A quantum universe over $K$
-([quantum universe](#def:quantum-universe)) is realised by the $4$-tuple
+([quantum universe](#def\:quantum-universe)) is realised by the $4$-tuple
 $(\mathbf{C}, \varTheta, G, \mathcal{S})$: here
 $\varTheta$ is a contact form on a CR manifold $M$ (encoding the contact
 geometry and Reeb structure),
@@ -24,9 +24,9 @@ under $G$.  The precise requirements are:
    $\mathrm{SU}(2)$ acts on $\mathbb{P}^1(\mathbb{C})$ by Möbius
    transformations.
 
-The monoidal category is $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
+The :refterm[monoidal category]{#monoidal-category} is $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_{q(p)}(2))$
 (the representation category of the quantum group at the substrate
-parameter $q(p)$, [substrate parameter](#def:substrate-parameter)), the
+parameter $q(p)$, [substrate parameter](#def\:substrate-parameter)), the
 Frobenius--Hopf object is
 $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the
 Haar state, and the fibre functor $\tau$ is the forgetful functor

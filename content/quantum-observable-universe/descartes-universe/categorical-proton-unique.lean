@@ -30,6 +30,7 @@ theorem CategoricalProton.unique_up_to_isotopy : Subsingleton CategoricalProton 
   -- quotient by structural equivalence) — see
   -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
   -- with this diagnosis rather than closed-as-stated.
+  -- Ref: [jones1987]
   sorry
 
 end QOU

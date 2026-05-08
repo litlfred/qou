@@ -1,4 +1,4 @@
-**:defterm[Symmetric monoidal category]{#symmetric-monoidal-category}.** A braided monoidal category whose
+**:defterm[Symmetric monoidal category]{#symmetric-monoidal-category}.** A :refterm[braided monoidal category]{#braided-monoidal-category} whose
 braiding is involutive: $\beta_{Y,X} \circ \beta_{X,Y} = \mathrm{id}_{X \otimes Y}$
 for all objects $X, Y$.
 

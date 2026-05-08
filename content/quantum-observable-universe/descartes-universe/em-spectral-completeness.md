@@ -5,7 +5,7 @@ $$
   R \;=\; \mathbb{Z}\bigl[q^{\pm 1/2},\, (q - q^{-1})^{-1}\bigr].
 $$
 
-Let $(\mathbf{C}, A, \tau)$ be a rigid braided monoidal category
+Let $(\mathbf{C}, A, \tau)$ be a rigid :refterm[braided monoidal category]{#braided-monoidal-category}
 $R$-enriched with self-dual fundamental object $A$ of categorical
 dimension $\dim_q A = [2]_q \in R$, and $\tau \colon \mathbf{C} \to
 R\text{-mod}$ the fibre functor.
@@ -40,7 +40,7 @@ is a free $R$-module of rank $2$ with the following structure.*
 
 *Proof.*
 The braiding eigenvalue extraction
-([eigenvalue extraction](#prop:braiding-eigenvalue-extraction))
+([eigenvalue extraction](#prop\:braiding-eigenvalue-extraction))
 shows that $c_{A,A}$ satisfies the Hecke minimal polynomial
 
 $$
@@ -66,5 +66,5 @@ singlet identification $V_- \cong \mathbf{1}$ is the standard
 Schur-functor decomposition $A \otimes A = S^2 A \oplus \Lambda^2 A$
 with $\Lambda^2 A \cong \mathbf{1}$ when $A$ is the fundamental of
 $\mathrm{SU}_q(2)$.  Statement (4) is the Wedderburn trace identity
-([Wedderburn trace](#prop:wedderburn-trace-identity)) at $n = 2$.
+([Wedderburn trace](#prop\:wedderburn-trace-identity)) at $n = 2$.
 $\square$

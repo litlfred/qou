@@ -20,7 +20,7 @@ $$
 z_c^{\pm} \approx 0.106 \pm 0.937\,i.
 $$
 
-For each critical point $z_c$, the Picard--Lefschetz thimble $\mathcal{J}_{z_c}$ is the steepest-descent contour of $\operatorname{Re}(S)$ emanating from $z_c$:
+For each critical point $z_c$, the Picard--Lefschetz thimble $\mathcal{J}_{z_c}$ is the steepest-:refterm[descent]{#descent} contour of $\operatorname{Re}(S)$ emanating from $z_c$:
 
 $$
 \mathcal{J}_{z_c} = \bigl\{ z(t) \in \mathbb{C} \;\big|\; \tfrac{dz}{dt} = -\overline{\nabla S(z)},\; z(0) = z_c,\; \operatorname{Im}(S(z(t))) = \operatorname{Im}(S(z_c)) \bigr\}.
@@ -46,17 +46,17 @@ where $n_\sigma$ are the intersection numbers of the anti-thimbles $\mathcal{K}_
 
 The Picard–Lefschetz thimble decomposition above is an
 intrinsically archimedean construction: thimbles are objects in
-$\mathbb{C}$ and the steepest-descent ODE requires a complex
+$\mathbb{C}$ and the steepest-:refterm[descent]{#descent} ODE requires a complex
 metric.  The categorical license to use PL on the archimedean side
 of the fibre functor $\tau \colon R \hookrightarrow \mathbb{C}$ is
 provided by the non-abelian Stokes theorem of \cite{yekutieli2015}:
 the categorical surface integral
-([Yekutieli–Stokes remark](#rem:yekutieli-stokes),
- [topological mass holonomy](#prop:topological-mass-formula))
+([Yekutieli–Stokes remark](#rem\:yekutieli-stokes),
+[topological mass holonomy](#prop\:topological-mass-formula))
 collapses, after applying $\tau$, to a finite sum of point residues
 at the discriminant locus — exactly the thimble decomposition above.
 The full bridging argument is recorded in
-([PL ↔ Yekutieli Stokes](#rem:pl-yekutieli-stokes)).  See also
-([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence))
+([PL ↔ Yekutieli Stokes](#rem\:pl-yekutieli-stokes)).  See also
+([SW-period thimble equivalence](#prop\:sw-period-thimble-equivalence))
 for the four-way correspondence GB filtration $\equiv$ jet order
 $\equiv$ PL degree under $\tau$.

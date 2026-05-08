@@ -1,6 +1,6 @@
-Beyond the grouplike $\exp_q$ ([$q$-exponential](#def:q-exponential))
+Beyond the grouplike $\exp_q$ ([$q$-exponential](#def\:q-exponential))
 and its primitive inverse $\log_q$
-([$q$-logarithm](#def:q-logarithm)), the $q$-shuffle Hopf algebra
+([$q$-logarithm](#def\:q-logarithm)), the $q$-shuffle Hopf algebra
 $\mathcal{H}_q$ admits a canonical *level-2* element — the $q$-dilogarithm —
 obtained by iterating the primitive structure once.
 
@@ -34,7 +34,7 @@ $$
 $$
 
 which is the Hopf-algebraic avatar of the *pentagon axiom* for the
-monoidal category $\mathbf{C}$.  This identity characterises
+:refterm[monoidal category]{#monoidal-category} $\mathbf{C}$.  This identity characterises
 $\mathrm{Li}_2^q$ up to a scalar — it is the unique level-2 primitive
 compatible with the monoidal associator $\alpha_{X,Y,Z}$.
 
@@ -86,7 +86,7 @@ $\mathbb{Z}[q^{\pm 1}, (q-q^{-1})^{-1}]$ and the partial sums are
 coherent modulo $((q;q)_m)$ as $m \to \infty$. Thus
 $\mathrm{Li}_2^q(x)$ is naturally an element of the Habiro ring
 $\widehat{\mathbb{Z}[q]}[\![x]\!]$
-([Habiro ring](#def:habiro-ring)) of formal power series with
+([Habiro ring](#def\:habiro-ring)) of formal power series with
 Habiro-completed coefficients. This is the algebraic home that
 makes "evaluation at any root of unity" well-defined without
 invoking $\mathbb{C}$: the projection $\widehat{\mathbb{Z}[q]} \to
@@ -100,19 +100,19 @@ $\mathrm{Li}_2^q(x) = \sum x^n / (n [n]_q)$ carries an *extra* factor
 of $n$ in the denominator, so its convergence in char $p$ and $p$-adic
 settings is slightly worse than that of $\exp_q$:
 
-- **$\mathbb{F}_p$.**  Fails at $n = p$ (because $p = 0$) and at
+* **$\mathbb{F}_p$.**  Fails at $n = p$ (because $p = 0$) and at
   $n = \mathrm{ord}_{\mathbb{F}_p^\times}(q)$; replaced by the
   polynomial truncation $\mathrm{Li}_2^{q,(p)}(x) = \sum_{n=1}^{p-1} x^n / (n [n]_q)$,
   which retains the pentagon identity modulo $x^p = 0$.  The
   **Kontsevich--Zagier mod $p$ dilogarithm** is the corresponding
   object at $q = 1$; $\mathrm{Li}_2^{q,(p)}$ is its $q$-deformation.
-- **$\mathbb{Q}_p$.**  For $q \in 1 + p\mathbb{Z}_p$ and
+* **$\mathbb{Q}_p$.**  For $q \in 1 + p\mathbb{Z}_p$ and
   $v_p(x) \ge 1$, converges with valuation
   $v_p(x^n / (n[n]_q)) \ge n - 2 v_p(n) - v_p(n!)/(p-1)$.  The pentagon
   identity holds identically in $\mathbb{Q}_p[\![x,y]\!]$ restricted to
   $p\mathbb{Z}_p \times p\mathbb{Z}_p$.  This is Coleman's $p$-adic
   dilogarithm in the $q$-deformed form.
-- **$\mathbb{C}_p$.**  Converges on $v_p(x) > 1/(p-1)$ (same radius as
+* **$\mathbb{C}_p$.**  Converges on $v_p(x) > 1/(p-1)$ (same radius as
   $\exp_q$; the extra $n$ in the denominator shifts the boundary
   slightly inward at the cutoff $n = p$ but does not change the
   asymptotic).  Beyond the disc, $\mathrm{Li}_2^q$ extends to
@@ -131,8 +131,8 @@ sometimes called the *Kirillov dilogarithm*.  At $q = 1$ this reduces
 to the classical dilogarithm $\mathrm{Li}_2(x) = \sum x^n / n^2$.
 
 **Role in the $q$-heat story.**  The Laplace transform
-([categorical Laplace transform](#def:categorical-laplace)) of the
-$q$-heat kernel ([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl))
+([categorical Laplace transform](#def\:categorical-laplace)) of the
+$q$-heat kernel ([Peter--Weyl heat kernel](#prop\:q-heat-kernel-peter-weyl))
 involves the resolvent $(\widehat{\Delta_q} + s)^{-1}$, whose
 contour integral against the spectrum picks up a logarithmic branch
 at each eigenvalue $\lambda_j(q)$.  Summing these logarithms over

@@ -40,7 +40,7 @@ inductive DerivationMethodology where
   | manualHistoricalVolumeMatch      -- knot ID by earlier vol-match work
   | magicAFormula                    -- algebraic shell-closure rule
   | recursiveOn4He                   -- α-cluster recursion from ⁴He
-  | deprecatedVolumeMatch            -- ⚠ reverse-engineered, quarantined
+  | deprecatedVolumeMatch            -- (deprecated) reverse-engineered, quarantined
 
 /-- Output of the end-to-end categorical derivation pipeline. -/
 structure MassDerivationCertificate where

@@ -54,6 +54,7 @@ theorem LevelSufficiency
     (h_unfold : unfolds P P')
     (h_cover : kMax P q ≤ coarseStrands P) :
     markovTrace P q = markovTrace P' q := by
+  -- Ref: [manuscript] braids-and-knots/confined-particle
   sorry
 
 end QOU.BraidKnot

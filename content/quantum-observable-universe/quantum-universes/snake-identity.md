@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \otimes, \mathbf{1})$ be a monoidal category and
+Let $(\mathbf{C}, \otimes, \mathbf{1})$ be a :refterm[monoidal category]{#monoidal-category} and
 let $V$ be an object with dual $V^{\vee}$, evaluation
 $\mathrm{ev} \colon V \otimes V^{\vee} \to \mathbf{1}$, and
 coevaluation $\mathrm{coev} \colon \mathbf{1} \to V^{\vee} \otimes V$.
@@ -38,9 +38,9 @@ two commutative diagrams:
 ```
 
 These identities express the fact that $(\mathrm{ev}, \mathrm{coev})$
-exhibit $V^{\vee}$ as a right dual of $V$ (equivalently, that the pair
+exhibit $V^{\vee}$ as a :refterm[right dual]{#right-dual} of $V$ (equivalently, that the pair
 forms an :defterm[exact pairing]{#exact-pairing} in the sense of
-[`CategoryTheory.ExactPairing`](#rem:glossary-exact-pairing)). The
+[`CategoryTheory.ExactPairing`](#rem\:glossary-exact-pairing)). The
 terminology "snake" comes from the graphical calculus, where the
 composites trace out an S-shaped curve that straightens to a vertical
 line.

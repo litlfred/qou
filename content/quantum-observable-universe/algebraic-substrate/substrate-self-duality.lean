@@ -53,6 +53,7 @@ theorem substrate_self_duality {C : Type u} [Category.{v} C]
   -- the snake identities (S.snake_left and S.snake_right),
   -- which assert the zig-zag relations for the duality pair.
   -- See [kock2004] §2.3, Theorem 2.3.24.
+  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 §2.3
   sorry
 
 end QOU.AlgebraicSubstrate

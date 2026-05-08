@@ -61,6 +61,7 @@ theorem ShellClosureStability_monotone
     (P_prev P : DressedTy) (q : ℝ)
     (h : isOneStepDressing P_prev P) :
     frobeniusStability P q ≥ frobeniusStability P_prev q := by
+  -- Ref: [manuscript] particle-interactions/confinement-sdp
   sorry
 
 /-- **Shell-closure stability, claim (2) — local maxima at noble-gas Z.**
@@ -71,6 +72,7 @@ theorem ShellClosureStability_monotone
 theorem ShellClosureStability_noble_multiplicity
     (P : DressedTy) (q : ℝ)
     (h : electronCount P ∈ nobleGasMagic) :
+    -- Ref: [manuscript] particle-interactions/confinement-sdp
     mu P q ≥ 2 := by
   sorry
 
@@ -81,6 +83,7 @@ theorem ShellClosureStability
     (P : DressedTy) (q : ℝ)
     (h : electronCount P ∈ nobleGasMagic) :
     mu P q ≥ 2 ∧ frobeniusStability P q ≥ 0 := by
+  -- Ref: [manuscript] particle-interactions/confinement-sdp
   sorry
 
 end QOU.BraidKnot

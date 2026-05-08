@@ -42,6 +42,7 @@ theorem dressComposition
     (h₀₁ : P₁.bare = P₀.bare)
     (h₁₂ : P₂.bare = P₁.bare) :
     P₂.level = P₀.level := by
+  -- Ref: [manuscript] braids-and-knots/dressed-particle
   sorry
 
 end QOU.BraidKnot

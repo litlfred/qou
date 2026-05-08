@@ -1,4 +1,4 @@
-Let $\mathbf{C}$ be a $R$-linear rigid monoidal category and let
+Let $\mathbf{C}$ be a $R$-linear rigid :refterm[monoidal category]{#monoidal-category} and let
 
 $$
   1  \longrightarrow  \mathcal{B}

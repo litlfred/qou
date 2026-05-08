@@ -1,14 +1,14 @@
-[Yekutieli lifting](#prop:yekutieli-lifting) establishes that the constructed
+[Yekutieli lifting](#prop\:yekutieli-lifting) establishes that the constructed
 brane tower satisfies the Yekutieli lifting condition.  We prove each
 structural property in turn.
 
-*Item (1): Descent terminates.*
+*Item (1): :refterm[Descent]{#descent} terminates.*
 The centre $Z(\mathrm{End}_{\mathbf{C}}(A))$ is a finitely generated
 commutative $R$-algebra (since $R$ is Noetherian and $\tau$ is faithful),
 hence has finite Krull dimension $d_0$.  Observability forces the
 $G_q$-action on $A$ to be faithful: any $G_q$-invariant element of
 $\mathrm{Ad}(A)$ would give a non-zero element of
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$.  Each descent step strictly
+$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A))$.  Each :refterm[descent]{#descent} step strictly
 reduces the Krull dimension of the centre, so after at most $d_0$ steps
 the base becomes a discrete (Artinian) scheme.
 
@@ -39,4 +39,4 @@ At a branch point $p$, the Krull dimension of the centre is $0$, so the
 base is a point.  The QOU data reduces to the fiber: the Frobenius--Hopf
 algebra $A$ at parameter $q(p)$, with the involution
 $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$ of
-[fibre adjoint involution](#prop:fiber-adjoint-involution).  $\square$
+[fibre adjoint involution](#prop\:fiber-adjoint-involution).  $\square$

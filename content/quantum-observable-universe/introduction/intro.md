@@ -31,7 +31,7 @@ any particular ontology.
 
 The central thesis is that these everyday observations, once
 stated carefully, determine a specific algebraic structure: a
-*rigid monoidal category* equipped with a fibre functor and a
+*rigid :refterm[monoidal category]{#monoidal-category}* equipped with a fibre functor and a
 Frobenius trace.  We call this structure a **quantum
 observable universe** (QOU).  Its axioms encode precisely the
 features listed above and nothing more.

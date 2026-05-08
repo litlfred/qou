@@ -1,4 +1,4 @@
-Let $A$ be a Frobenius--Hopf substrate in a rigid monoidal category
+Let $A$ be a Frobenius--Hopf substrate in a rigid :refterm[monoidal category]{#monoidal-category}
 $\mathbf{C}$. The *categorical Reeb derivation* is the morphism
 $\xi_q \colon A \to A$ uniquely determined by the following two
 conditions.

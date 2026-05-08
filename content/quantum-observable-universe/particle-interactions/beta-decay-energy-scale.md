@@ -28,9 +28,9 @@ From the witness (`free-neutron-decay.witness.json`, typed crossings):
 
 From CODATA 2022:
 
-- $\mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}} = 1.29333 \text{MeV}$
-- $\mathfrak{m}_{e} = 0.51100 \text{MeV}$
-- $Q_{\beta} = 0.78233 \text{MeV}$
+- $\mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}} \approx 1.29333\;\text{MeV}$
+- $\mathfrak{m}_{e} \approx 0.51100\;\text{MeV}$
+- $Q_{\beta} \approx 0.78233\;\text{MeV}$
 
 **Derived energy scale.**
 The energy scale is derivable from the categorical three-calibration

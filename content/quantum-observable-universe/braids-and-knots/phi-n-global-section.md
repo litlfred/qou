@@ -2,7 +2,7 @@ In the algebraic refactor of the magic-number / shell-closure
 framework, the categorical mass endomorphism $\Phi_n$ is *not* a
 local object built per-vortex and combined by tensor product.
 Instead $\Phi_n$ is the **global section** of the categorical mass
-functor over the rigid braided monoidal category $\mathbf{C}$, in
+functor over the rigid :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}$, in
 the strict sense of monoidal-category global sections:
 $\Phi_n \in \mathrm{End}_{\mathbf{C}}(A^{\otimes n})$ is determined
 by its compatibility with the Frobenius-Hopf substrate axioms across
@@ -18,12 +18,12 @@ trivialises the full-twist action. That picture has two flaws:
 1. **Anomalous ribbon flux.** A non-trivial ribbon (= framing)
    action on $\Phi_n$ at a non-magic level $n$ would propagate
    *unboundedly* up the brane tower
-   ([recursive-brane-tower](#def:recursive-brane-tower)). Each
+   ([recursive-brane-tower](#def\:recursive-brane-tower)). Each
    brane level $A_{n+1} = A_n \otimes \Omega^1(A_n)$ inherits the
    framing flux; without a global cancellation mechanism, the
-   accumulated flux at the descent limit diverges.
+   accumulated flux at the :refterm[descent]{#descent} limit diverges.
 2. **Finite observable mass.** The categorical mass identity
-   ([def:hecke-mass-element](#def:hecke-mass-element)) is finite —
+   ([def:hecke-mass-element](#def\:hecke-mass-element)) is finite —
    $\mathfrak{m}(\varrho) \in \mathbb{R}$ for every observed
    hadron. Finite observable mass is *incompatible* with
    unbounded framing flux.
@@ -33,7 +33,7 @@ neutrality at saturation**: at $n \in \mathfrak{M}$, the ribbon
 action on $\Phi_n$ is globally zero (in the centre-of-the-braid-
 group sense), not locally trivialised by some spectator structure.
 This is precisely the
-[`conj:categorical-neutrality-saturated-shells`](#conj:categorical-neutrality-saturated-shells)
+[`conj:categorical-neutrality-saturated-shells`](#conj\:categorical-neutrality-saturated-shells)
 statement, and it is the structural reason a non-trivial action
 *cannot* coexist with finite mass at saturated $n$.
 
@@ -62,7 +62,7 @@ saturated $n$.
 
 ## What this changes for the conjecture
 
-[`conj:mass-endomorphism`](#conj:mass-endomorphism) (the open
+[`conj:mass-endomorphism`](#conj\:mass-endomorphism) (the open
 problem of finding a closed-form NF for $\Phi_{\mathrm{mass}}$) is
 correspondingly reframed. The conjecture is no longer "find the
 local NF generators and combine"; it is "find the categorical
@@ -72,7 +72,7 @@ constraint". The reframing makes the magic-number ladder a
 
 This remark interprets `conj:mass-endomorphism` only — it makes no
 new logical claim. The mathematical content is in the
-[saturated-shell](#conj:categorical-neutrality-saturated-shells)
+[saturated-shell](#conj\:categorical-neutrality-saturated-shells)
 and [shell-condensation](../lifting-and-descent/homological-shell-condensation.md)
 conjectures, which are themselves conditional on the algebraic
 refactor.

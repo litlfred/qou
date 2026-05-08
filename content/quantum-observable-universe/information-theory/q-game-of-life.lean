@@ -73,6 +73,7 @@ theorem qGameOfLife_stable {M : Type*} (sp : SubstrateParameter M)
   -- Non-zero because T is injective as a group hom ℤ → (R_q)ˣ,
   -- so T 1 ≠ T 0 = 1. Numerical verification at q₀ ≈ 1.110 yields
   -- Φ(q₀) ≈ 0.0495 (see toffoli-lp-stability.witness.json).
+  -- Ref: [toffoli1980] https://doi.org/10.1007/3-540-10003-2_104
   sorry
 
 end

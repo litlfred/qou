@@ -1,7 +1,7 @@
 **Proof.**
 We assemble the decomposition from three lemmas.  By
-([eigenspace decomposition](#lem:topological-mass-cat-eigenspace)),
-the descent involution gives an orthogonal Frobenius-norm split
+([eigenspace decomposition](#lem\:topological-mass-cat-eigenspace)),
+the :refterm[descent]{#descent} involution gives an orthogonal Frobenius-norm split
 
 $$
   \mathfrak{m}(\varrho)
@@ -12,8 +12,8 @@ $$
 $$
 
 where $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$.
-By ([descended term equals base mass](#lem:topological-mass-cat-descended)),
+By ([descended term equals base mass](#lem\:topological-mass-cat-descended)),
 the first summand is $\mathfrak{m}(\varrho_0)$.  By
-([transient terms localise to blow-ups](#lem:topological-mass-cat-transient)),
+([transient terms localise to blow-ups](#lem\:topological-mass-cat-transient)),
 the second summand decomposes as $\sum_{i=1}^{N} \mathrm{tr}_{\mathrm{trans}}(\varrho, p_i)$.
 Combining yields the claimed decomposition.  $\square$

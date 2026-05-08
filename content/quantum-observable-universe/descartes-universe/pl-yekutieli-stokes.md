@@ -1,7 +1,7 @@
 **Remark (Yekutieli license: PL is the archimedean shadow of non-abelian
 Stokes).**
 *The Picard–Lefschetz thimble decomposition
-([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble))
+([Picard–Lefschetz thimble](#def\:picard-lefschetz-thimble))
 acquires its categorical license from the non-abelian Stokes
 theorem.  Without that license, PL on $\mathcal{E}_q$ would be
 ordinary complex analysis with no formal connection to the
@@ -11,8 +11,8 @@ categorical machinery of $H_n(R, q)$ and the GB spectral sequence.*
 
 **1. Categorical ($R$-side): MI-integral over a categorical surface.**
 *By
-([Yekutieli–Stokes remark](#rem:yekutieli-stokes)) and
-([topological mass holonomy](#prop:topological-mass-formula)),
+([Yekutieli–Stokes remark](#rem\:yekutieli-stokes)) and
+([topological mass holonomy](#prop\:topological-mass-formula)),
 the categorical mass of a vortex $\varrho$ admits an MI-integral
 representation*
 
@@ -28,12 +28,12 @@ curvature of the categorical connection.  This statement is fully
 on the $R$-side: $\Sigma$ is a categorical surface in $\mathbf{C}$,
 and $\mathrm{MI}\!\!\int$ is the multiplicative integral defined in
 $\mathbf{C}$
-([yekutieli2015]).*
+(\[yekutieli2015]).*
 
 **2. Bridge ($\tau$): non-abelian Stokes commutes with $\tau$.**
 *Apply the archimedean fibre functor
 $\tau \colon R \hookrightarrow \mathbb{C}$.  Because $\tau$ is a
-monoidal functor, it commutes with the multiplicative integral:*
+:refterm[monoidal functor]{#monoidal-functor}, it commutes with the multiplicative integral:*
 
 $$
   \tau\Bigl(\mathrm{MI}\!\!\int_{\Sigma}\, F_{\nabla_A}\Bigr)
@@ -52,7 +52,7 @@ d\lambda^{(1)}_{\mathrm{SW}}$.*
 without changing the value of the MI-integral, provided the
 deformation does not cross the discriminant locus
 $\{z : \Delta(z) = 0\}$.  Deforming $\tau(\Sigma)$ to a "thimble cap"
-— a finite union of steepest-descent disks $\{D_\sigma\}$ each
+— a finite union of steepest-:refterm[descent]{#descent} disks $\{D_\sigma\}$ each
 attached to a critical point $z_\sigma$ of $S$ — collapses the
 surface integral to a finite sum of point residues:*
 
@@ -69,7 +69,7 @@ $$
 $$
 
 *which is the Picard–Lefschetz period
-([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).
+([SW-period thimble equivalence](#prop\:sw-period-thimble-equivalence)).
 The intersection numbers $n_\sigma$ are determined by how the original
 contour $\partial(\tau(\Sigma))$ wraps around each $z_\sigma$.*
 
@@ -94,9 +94,9 @@ non-abelian-Stokes datum, related by $\tau$.*
 **Why this remark exists.**
 
 *Without
-([Yekutieli–Stokes remark](#rem:yekutieli-stokes)) and
-([topological mass holonomy](#prop:topological-mass-formula)),
-the steepest-descent integral on $\mathcal{E}_q$ would be a free-
+([Yekutieli–Stokes remark](#rem\:yekutieli-stokes)) and
+([topological mass holonomy](#prop\:topological-mass-formula)),
+the steepest-:refterm[descent]{#descent} integral on $\mathcal{E}_q$ would be a free-
 floating complex-analytic computation, disconnected from the
 categorical formalism that defines what "mass" means in the QOU.
 This remark records the formal bridge: PL is **not an alternative**
@@ -107,9 +107,9 @@ realisation**, accessible only after $\tau$.*
 
 *The diagram's two rows live on opposite sides of $\tau$:*
 
-- *Top row: categorical surfaces, MI-integrals, curvature 2-forms in
+* *Top row: categorical surfaces, MI-integrals, curvature 2-forms in
   $\mathbf{C}$.  All $R$-valued.*
-- *Bottom row: $\mathbb{C}$-contours, residues, Picard–Lefschetz
+* *Bottom row: $\mathbb{C}$-contours, residues, Picard–Lefschetz
   thimbles.  All $\mathbb{C}$-valued.*
 
 *The vertical arrows are $\tau$ itself.  The horizontal equalities

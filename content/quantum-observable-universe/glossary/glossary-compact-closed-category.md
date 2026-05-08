@@ -1,4 +1,4 @@
-**:defterm[Compact closed category]{#compact-closed-category}.** A symmetric monoidal category that is
+**:defterm[Compact closed category]{#compact-closed-category}.** A :refterm[symmetric monoidal category]{#symmetric-monoidal-category} that is
 also rigid. Because the braiding identifies $X \otimes Y \cong Y \otimes X$, left duals and right duals coincide, so it suffices to
 ask that every object has a dual.
 

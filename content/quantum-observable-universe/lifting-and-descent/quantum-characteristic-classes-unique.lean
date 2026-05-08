@@ -31,6 +31,7 @@ theorem QuantumCharClasses.unique : Subsingleton QuantumCharacteristicClass := b
   -- quotient by structural equivalence) — see
   -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
   -- with this diagnosis rather than closed-as-stated.
+  -- Ref: [yekutieli2010]
   sorry
 
 end QOU

@@ -5,7 +5,7 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
 
 1. *The ground-state nucleon ordering is the global minimum of
    $\Phi_1$ over all $\binom{A}{Z}$ permutations (exact for
-   $\binom{A}{Z} \leq 50000$, steepest descent otherwise).*
+   $\binom{A}{Z} \leq 50000$, steepest :refterm[descent]{#descent} otherwise).*
 
 2. *Each electron is inserted at the position minimizing $\Phi_1$
    (greedy, verified to produce ep pairs adjacent to protons).*
@@ -13,7 +13,7 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
 3. *At each construction step (adding strand $k$ with crossings
    to all previous strands $0, \ldots, k-1$): the
    Gröbner--Shirshov reduction is run to convergence
-   ([inductive reduction](#prop:inductive-gb-reduction)).  Convergence
+   ([inductive reduction](#prop\:inductive-gb-reduction)).  Convergence
    is guaranteed by the Diamond Lemma (the three rewriting rules
    satisfy all overlap ambiguities).*
 
@@ -30,7 +30,7 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
 
 *The three Wedderburn invariants $\Phi_1$, $\Phi_2$, $\Phi_3$ used
 in the mass formula
-([three-invariant mass formula](#thm:wedderburn-mass-formula))
+([three-invariant mass formula](#thm\:wedderburn-mass-formula))
 are computed from the transfer matrix chain, which incorporates the
 Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + \mathbf{1}$
 at each crossing.  The transfer matrix output is in normal form by

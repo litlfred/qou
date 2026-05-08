@@ -1,5 +1,5 @@
 The proof above shows that jet prolongation is an *intrinsic*
-consequence of the Frobenius--Hopf structure in a rigid monoidal category:
+consequence of the Frobenius--Hopf structure in a rigid :refterm[monoidal category]{#monoidal-category}:
 no additional geometric input beyond the categorical data
 $(\mathbf{C}, A, \tau)$ is required.  Concretely:
 
@@ -13,8 +13,8 @@ $(\mathbf{C}, A, \tau)$ is required.  Concretely:
    $J^1(A)$ by functoriality.
 
 In this sense, the
-([recursive brane tower](#def:recursive-brane-tower)) is generated entirely by
+([recursive brane tower](#def\:recursive-brane-tower)) is generated entirely by
 iterating the categorical jet construction.  The tower, together with its
-associated descent ([Subsection](#ssec:descent)), is a formal consequence
+associated :refterm[descent]{#descent} ([Subsection](#ssec\:descent)), is a formal consequence
 of the axioms of a quantum observable universe and does not require any
 case-by-case verification.

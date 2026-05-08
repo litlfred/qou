@@ -2,7 +2,7 @@
 Let $\beta$ be a braid on $n$ strands with $c$ crossings,
 $L = \hat{\beta}$ its closure, and
 $\mathcal{R}(L)$ the Skein resolution tree
-([Skein Turing machine](#rem:skein-turing-machine)).  Fix a
+([Skein Turing machine](#rem\:skein-turing-machine)).  Fix a
 polynomial bound $p(c) = c^d$.
 
 **Definition (polynomial observable subcategory).**
@@ -25,7 +25,7 @@ Markov trace restricted to $\mathcal{R}_{p(c)}$ — in at most
 $p(c)$ Planck steps.  This is the computational analog of the
 observable subcategory
 $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$
-([observable subcategory](#def:observable-subcategory)): the
+([observable subcategory](#def\:observable-subcategory)): the
 nodes of the resolution tree from which the degree-$0$ answer
 $P_L(q)$ is polynomial-time accessible.
 
@@ -61,7 +61,7 @@ This is the locus in the resolution tree where every
 polynomial-time degree-$0$ section vanishes — the exact
 analog of the jet horizon
 $\mathcal{H} = V(\mathfrak{h})$
-([jet horizon](#def:jet-horizon)), with the brane tower
+([jet horizon](#def\:jet-horizon)), with the brane tower
 replaced by the resolution tower and the Frobenius algebra
 replaced by the Iwahori--Hecke algebra.
 
@@ -91,7 +91,7 @@ $$
 
 **What each case means geometrically.**
 
-- **$\mathcal{H}_c = \varnothing$** (P = NP):
+* **$\mathcal{H}_c = \varnothing$** (P = NP):
   The polynomial observable subcategory $\mathcal{R}^{\circ}$
   is **closed** — it equals its own closure.  Every degree-$0$
   section that exists anywhere in $\mathcal{R}$ already extends
@@ -101,7 +101,7 @@ $$
   full tree.  The resolution tree has no genuine boundary — it
   is a **removable singularity**.
 
-- **$\mathcal{H}_c \neq \varnothing$** (P $\neq$ NP):
+* **$\mathcal{H}_c \neq \varnothing$** (P $\neq$ NP):
   The polynomial observable subcategory $\mathcal{R}^{\circ}$
   is **not closed** — its closure includes points beyond
   polynomial depth.  There exists a non-trivial computational
@@ -114,15 +114,15 @@ $$
 
 **Parallel with the jet horizon and NS obstruction.**
 
-| Object | Jet horizon | NS boundary | Computational boundary |
-|--------|------------|-------------|----------------------|
-| Space | Brane tower $A_n$ | State bundle $\mathcal{S}$ | Resolution tree $\mathcal{R}$ |
-| Observable part | $\mathrm{Bun}^{\circ}$ ($A_0 \neq 0$) | $\mathcal{S} \setminus \Sigma$ (off collision) | $\mathcal{R}^{\circ}$ (poly-time computable) |
-| Boundary | $\mathcal{H} = V(\mathfrak{h})$ | $\Sigma$ (collision locus) | $\mathcal{H}_c = V(\mathfrak{h}_c)$ |
-| Ideal | $\mathfrak{h} \subset \Gamma(A_0)$ | $I_\Sigma \subset \mathcal{O}_M$ | $\mathfrak{h}_c \subset \Gamma(A_0^{\mathrm{comp}})$ |
-| $\partial = \varnothing$ | All configs observable | No collision (global smooth flow) | P = NP |
-| $\partial \neq \varnothing$ | Horizon exists (aeons) | NS-singular (blowup) | P $\neq$ NP |
-| Obstruction | $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ | $\mathrm{NS}(A) = \kappa_0\rvert_\Sigma$ | $\kappa_c^{\mathrm{comp}} \in H^2(\mathcal{R}, \mathbb{G}_m)$ |
+| Object                      | Jet horizon                                   | NS boundary                                    | Computational boundary                                        |
+| --------------------------- | --------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------- |
+| Space                       | Brane tower $A_n$                             | State bundle $\mathcal{S}$                     | Resolution tree $\mathcal{R}$                                 |
+| Observable part             | $\mathrm{Bun}^{\circ}$ ($A_0 \neq 0$)         | $\mathcal{S} \setminus \Sigma$ (off collision) | $\mathcal{R}^{\circ}$ (poly-time computable)                  |
+| Boundary                    | $\mathcal{H} = V(\mathfrak{h})$               | $\Sigma$ (collision locus)                     | $\mathcal{H}_c = V(\mathfrak{h}_c)$                           |
+| Ideal                       | $\mathfrak{h} \subset \Gamma(A_0)$            | $I_\Sigma \subset \mathcal{O}_M$               | $\mathfrak{h}_c \subset \Gamma(A_0^{\mathrm{comp}})$          |
+| $\partial = \varnothing$    | All configs observable                        | No collision (global smooth flow)              | P = NP                                                        |
+| $\partial \neq \varnothing$ | Horizon exists (aeons)                        | NS-singular (blowup)                           | P $\neq$ NP                                                   |
+| Obstruction                 | $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ | $\mathrm{NS}(A) = \kappa_0\rvert_\Sigma$       | $\kappa_c^{\mathrm{comp}} \in H^2(\mathcal{R}, \mathbb{G}_m)$ |
 
 **The three equivalent criteria for $\mathcal{H}_c
 \neq \varnothing$.**
@@ -135,13 +135,13 @@ $$
 
 2. **Cohomological.**  The Skein resolution obstruction
    $\kappa_c^{\mathrm{comp}}(L, q) \neq 0$
-   ([Skein resolution obstruction](#def:skein-resolution-obstruction)).
+   ([Skein resolution obstruction](#def\:skein-resolution-obstruction)).
    The Yekutieli class obstructs the lift from polynomial
    depth to full resolution.
 
 3. **Information-theoretic.**  The effective tree size after
    interference exceeds the polynomial bandwidth budget
-   ([bandwidth bound](#prop:p-bandwidth-bound)):
+   ([bandwidth bound](#prop\:p-bandwidth-bound)):
    $I(\mathrm{poly}(c)) < c \cdot \log 3$ $q$-bits.
 
 All three are equivalent: the ideal is non-trivial iff the
@@ -152,7 +152,7 @@ saturated.
 
 *For the QOU at substrate parameter $q_0 \in
 \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$
-(non-torsion, [substrate $\mathbb{G}_m$-torsion](#rem:substrate-gm-torsion)):*
+(non-torsion, [substrate $\mathbb{G}_m$-torsion](#rem\:substrate-gm-torsion)):*
 
 *There exists a family of braids
 $\{L_N = \hat{\beta}_N\}_{N \geq 1}$ with $c_N = 3N$ crossings
@@ -171,8 +171,8 @@ $q = q_0$ \cite{freedman2003}.*
 
 **Connection to quantum computation.**
 
-The descent involution $\hat{\tau}$
-([quantum universality](#conj:quantum-computational-universality))
+The :refterm[descent]{#descent} involution $\hat{\tau}$
+([quantum universality](#conj\:quantum-computational-universality))
 acts on the boundary.  At a root of unity $q_k$:
 
 $$
@@ -194,8 +194,8 @@ unity — the boundary dissolves under quantum interference.
 
 The standard complexity hierarchy translates to:
 
-| Class | Boundary at real $q$ | Boundary at $q_k$ |
-|-------|---------------------|-------------------|
-| P | $\varnothing$ | $\varnothing$ |
-| BQP $\setminus$ P | $\neq \varnothing$ | $\varnothing$ (quantum cancellation) |
-| NP $\setminus$ BQP | $\neq \varnothing$ | $\neq \varnothing$ (even quantum cannot dissolve) |
+| Class              | Boundary at real $q$ | Boundary at $q_k$                                 |
+| ------------------ | -------------------- | ------------------------------------------------- |
+| P                  | $\varnothing$        | $\varnothing$                                     |
+| BQP $\setminus$ P  | $\neq \varnothing$   | $\varnothing$ (quantum cancellation)              |
+| NP $\setminus$ BQP | $\neq \varnothing$   | $\neq \varnothing$ (even quantum cannot dissolve) |

@@ -1,8 +1,8 @@
 The Białynicki-Birula stratification of the brane tower
-([recursive-brane-tower](#def:recursive-brane-tower),
-[brane-tower-levels](#ex:brane-tower-levels)) under the descent
+([recursive-brane-tower](#def\:recursive-brane-tower),
+[brane-tower-levels](#ex\:brane-tower-levels)) under the :refterm[descent]{#descent}
 involution $\hat\tau$
-([descent-involution](#def:descent-involution)) yields a spectral
+([:refterm[descent]{#descent}-involution](#def\:descent-involution)) yields a spectral
 sequence whose $E_\infty$ page records the *failure* of categorical
 neutrality at each level. This block names the **homological
 condensation** at saturated $n$: the higher pages collapse to zero,
@@ -12,10 +12,10 @@ brane-tower stratification.
 ## Setup
 
 Fix a level $n \in \mathbb{N}$ in the brane tower, with associated
-descent-graded jet algebra $A_n = A_{n-1} \otimes \Omega^1(A_{n-1})$
-([def:direct-limit-algebra](#def:direct-limit-algebra)). The
+:refterm[descent]{#descent}-graded jet algebra $A_n = A_{n-1} \otimes \Omega^1(A_{n-1})$
+([def:direct-limit-algebra](#def\:direct-limit-algebra)). The
 Białynicki-Birula stratification of $\mathrm{Spec}(A_n)$ under the
-$\mathbb{C}^\times$-action induced by the descent involution
+$\mathbb{C}^\times$-action induced by the :refterm[descent]{#descent} involution
 $\hat\tau$ \cite{bialynicki1973} produces a filtration
 
 $$
@@ -24,8 +24,8 @@ $$
 
 with associated graded $\mathrm{gr}_F A_n$. The Gröbner–Shirshov
 spectral sequence
-([prop:gb-spectral-sequence](#prop:gb-spectral-sequence)) on this
-filtration converges to the descent-graded algebra:
+([prop:gb-spectral-sequence](#prop\:gb-spectral-sequence)) on this
+filtration converges to the :refterm[descent]{#descent}-graded algebra:
 
 $$
   E_1^{p,q} \;=\; H^q\bigl(\mathrm{gr}_F^p A_n\bigr)
@@ -35,9 +35,9 @@ $$
 
 The **strict-positive part** $E_\infty^{p, >0}(n)$ measures the
 non-trivial cohomology supported above the $E_2$-collapse line —
-operationally, the obstruction to reading the descent-graded trace
+operationally, the obstruction to reading the :refterm[descent]{#descent}-graded trace
 purely from the diagonal
-([prop:graded-trace-residue-split](#prop:graded-trace-residue-split)).
+([prop:graded-trace-residue-split](#prop\:graded-trace-residue-split)).
 
 ## Statement
 
@@ -52,16 +52,16 @@ $$
   \quad n \in \mathfrak{M}.
 $$
 
-*Equivalently, the descent-graded trace
+*Equivalently, the :refterm[descent]{#descent}-graded trace
 $\mathrm{tr}_{M, \ell}$ on $J^\ell / J^{\ell+1}$
-([prop:graded-trace-residue-split](#prop:graded-trace-residue-split))
+([prop:graded-trace-residue-split](#prop\:graded-trace-residue-split))
 is supported entirely on the diagonal at saturated $n$, and the
-brane-tower descent residues vanish for $\ell \geq 2$.*
+brane-tower :refterm[descent]{#descent} residues vanish for $\ell \geq 2$.*
 
 ## Why "condensation"
 
 The vanishing $E_\infty^{p, >0}(n) = 0$ means that *every* higher
-descent residue collapses onto the diagonal: there are no
+:refterm[descent]{#descent} residue collapses onto the diagonal: there are no
 off-diagonal jet-tower contributions at saturated $n$. The shell
 condenses into a single graded piece. For $n \notin \mathfrak{M}$
 the off-diagonal pieces survive, providing the algebraic content of
@@ -80,7 +80,7 @@ Conditional on
 the full-twist $\Delta_n^2$ acts trivially on $\Phi_n$ at
 $n \in \mathfrak{M}$. The categorical neutrality forces the
 Wedderburn support of $\Phi_n$ onto self-conjugate partitions. Pairing
-this with Yekutieli rigidity \cite{yekutieli2010}, the descent
+this with Yekutieli rigidity \cite{yekutieli2010}, the :refterm[descent]{#descent}
 involution $\hat\tau$ inherits the corresponding self-conjugacy on
 $A_n$, and the BB stratification becomes self-dual: the strata above
 the $E_2$ collapse line cancel pairwise. The conjectured
@@ -98,7 +98,7 @@ the substrate axioms.
 Numerical verification at $k = 3, \dots, 10$
 ([prop:magic-numbers-from-q](../observations/magic-numbers-from-q.md))
 empirically confirms $E_\infty^{p, >0}(n) = 0$ at $n = 2, 8, 20$ via
-direct computation of descent residues from Hoefsmit matrices. The
+direct computation of :refterm[descent]{#descent} residues from Hoefsmit matrices. The
 combinatorial blow-up at $k \geq 12$ blocks the matrix-evaluation
 approach; the homological framework analytically bypasses this
 barrier by replacing per-partition matrix computation with

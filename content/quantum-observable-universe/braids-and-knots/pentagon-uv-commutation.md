@@ -1,5 +1,5 @@
 The pentagon identity of the quantum dilogarithm
-([quantum Bloch group](#rem:quantum-bloch-group))
+([quantum Bloch group](#rem\:quantum-bloch-group))
 
 $$
   \Phi_q(v)\,\Phi_q(u) \;=\; \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)
@@ -14,7 +14,7 @@ ascension.
 
 At a fixed jet level $n$, the traced volumes $\hat V_i^{(n)}
 \in \mathbb{Z}[q^{\pm 1/2}, z]$ are **scalar Laurent polynomials**
-([def:algebraic-quantum-volume](#def:algebraic-quantum-volume)).
+([def:algebraic-quantum-volume](#def\:algebraic-quantum-volume)).
 Two scalars commute, so
 
 $$
@@ -24,7 +24,7 @@ $$
 $$
 
 without any $q$-factor. This is the level-internal lemma
-[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace),
+[`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace),
 which closes the level-internal half of the audit gap.
 
 ## Between adjacent jet levels — the pentagon q-factor
@@ -44,7 +44,7 @@ $$
 $$
 
 on the transient summand $\ker \hat\tau_n$ between the two
-levels, where the descent involution $\hat\tau_n$ separates the
+levels, where the :refterm[descent]{#descent} involution $\hat\tau_n$ separates the
 descended part (where the residual $R_q$ lives) from the
 transient part (where the pentagon $q$-factor is exact).
 
@@ -53,7 +53,7 @@ $\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$
 applies to the operator lift $u = \widehat U_i$, $v = \widehat
 V_j$ at adjacent jet levels $n, n+1$, and supplies the
 *inter-level ascension rule* for the jet-tower mass formula
-([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower)):
+([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower)):
 
 a triple product at jet level $n$ rewrites via pentagon as a
 pair plus a singleton at level $n$, leaving a residual
@@ -65,9 +65,9 @@ The pentagon q-factor is a feature of the brane tower's
 $q$-graded jet stratification, not of the scalar $\hat V_i$'s:
 
 1. **Hecke braid relation** at the operator level (before
-   descent to scalars): $\sigma_s \sigma_{s+1} \sigma_s =
+   :refterm[descent]{#descent} to scalars): $\sigma_s \sigma_{s+1} \sigma_s =
    \sigma_{s+1} \sigma_s \sigma_{s+1}$ in $H_n(R, q)$.
-2. **Descent involution split**: $\hat\tau_n$ separates
+2. **:refterm[Descent]{#descent} involution split**: $\hat\tau_n$ separates
    $H_n(R, q)$ into $\mathrm{im}\,\hat\tau_n$ (descended,
    level-$n$ contribution) and $\ker\,\hat\tau_n$ (transient,
    ascends to level $n+1$).
@@ -86,7 +86,7 @@ ascension.
 ## Why this matters for the mass tower
 
 The mass-tower jet form
-([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower))
+([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower))
 
 $$
   \mathfrak{m} \;=\; |\mathrm{tr}_M(W)|
@@ -102,16 +102,16 @@ triples** appear at any level — every triple at level $n$ is
 absorbed into a pair plus singleton at level $n$ plus a
 residual that lives at level $n+1$. Iterating gives the jet
 ascension; the geometric tail bound from
-[`prop:jet-tower-convergence`](#prop:jet-tower-convergence)
+[`prop:jet-tower-convergence`](#prop\:jet-tower-convergence)
 controls $R_N$.
 
 ## Status
 
 **Provable.** The level-internal half (scalars commute) is
-[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace).
+[`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace).
 The inter-level half (operator lift, $\widehat U \widehat V =
 q\,\widehat V \widehat U$) is the operator content of the
-brane-tower descent involution; explicit Lean formalization
-deferred to the descent involution's quantization, where
+brane-tower :refterm[descent]{#descent} involution; explicit Lean formalization
+deferred to the :refterm[descent]{#descent} involution's quantization, where
 $\hat\tau_n$ is realized as a level-shift operator on
 $A_{n+1} = A_n \otimes \Omega^1(A_n)$.

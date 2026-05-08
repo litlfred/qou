@@ -294,7 +294,7 @@ substitution.
 
 The quarantined provisional ⁶Li, ⁷Li entries
 ([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
-§"⚠ Provisional / deprecated methodology") run *backwards* from Step
+§"Provisional / deprecated methodology") run *backwards* from Step
 6 to a candidate knot, bypassing Step 1a entirely.  Such shortcuts
 are forbidden by this proposition.
 

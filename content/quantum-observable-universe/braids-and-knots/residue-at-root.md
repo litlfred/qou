@@ -153,7 +153,7 @@ algebraic-side derivation does not need analytic continuation.
 
 ## Status
 
-🟢 **Provable** in pure Habiro-ring algebra, conditional on
+**Status: provable** in pure Habiro-ring algebra, conditional on
 [`prop:graded-markov-trace-from-gs-filtration`](#prop:graded-markov-trace-from-gs-filtration)
 and the Habiro-completion theorem \cite{habiro2002}. The downstream
 effect is that the Lean `noncomputable opaque residueAtRoot` can

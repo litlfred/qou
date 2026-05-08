@@ -5,25 +5,25 @@ no analytic limits, no fitting, and no empirical nuclear-physics constants
 enter until the Archimedean realization functor is applied at the very end.
 
 The three pre-approved calibration inputs are
-([rem:calibration-inputs](#rem:calibration-inputs)):
+([rem:calibration-inputs](#rem\:calibration-inputs)):
 
-| Input | Role |
-|-------|------|
-| $m_e$ | Leptonic mass scale (converts natural units to MeV) |
-| $m_\mu/m_e$ | Fixes the substrate parameter $q_0$ |
-| $Q_\beta$ | Fixes the hadronic energy scale $\mathbf{E}_0$ |
+| Input       | Role                                                |
+| ----------- | --------------------------------------------------- |
+| $m_e$       | Leptonic mass scale (converts natural units to MeV) |
+| $m_\mu/m_e$ | Fixes the substrate parameter $q_0$                 |
+| $Q_\beta$   | Fixes the hadronic energy scale $\mathbf{E}_0$      |
 
----
+***
 
 ## Step 1 — Categorical action of $\mathbf{C}$ on $\mathcal{S}$
 
 Let $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
 observable universe
-([def:quantum-observable-universe](#def:quantum-observable-universe)).
-The braided monoidal category $\mathbf{C}$ has objects (strands) and
+([def:quantum-observable-universe](#def\:quantum-observable-universe)).
+The :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}$ has objects (strands) and
 morphisms (braid generators $\sigma_i$); the braiding
 $c_{X,Y}: X \otimes Y \to Y \otimes X$ satisfies the Yang--Baxter
-equation by the axioms of a braided monoidal category.
+equation by the axioms of a :refterm[braided monoidal category]{#braided-monoidal-category}.
 
 The action of $\mathbf{C}$ on the state bundle $\mathcal{S}$ via
 the fibre functor $\tau$ gives a group homomorphism
@@ -33,14 +33,14 @@ $$
 $$
 
 by the braid-action-tensor proposition
-([prop:braid-action-tensor](#prop:braid-action-tensor)):
+([prop:braid-action-tensor](#prop\:braid-action-tensor)):
 the braid generator $\sigma_i$ acts on strand $i$ and $i+1$ via the
 $R$-matrix $R_{i,i+1} \in \mathrm{End}_\mathbf{C}(V^{\otimes n})$.
 
 The categorical action is the *starting point*; every subsequent step
 is a consequence of the structure of $\rho_n$.
 
----
+***
 
 ## Step 2 — Non-abelian Stokes theorem (Yekutieli, finite slices)
 
@@ -48,15 +48,15 @@ Yekutieli's multiplicative integration on surfaces
 provides the bridge from the 2-categorical action to the
 Iwahori--Hecke algebra.  At finite slice depth $k$:
 
-| 2-categorical datum | Finite-slice avatar in $H_{n_0}(q)$ |
-|---|---|
-| 1-cells (paths) | Braid generators $\sigma_i$ |
-| 2-cells (squares) | Hecke quadratic relation $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ |
-| Multiplicative line integral | Finite product $\prod_k \rho(\sigma_{i_k})$ |
-| Multiplicative trace on closed surface | Markov trace $\mathrm{tr}_M(T_w)$ |
-| Slicing depth | GB filtration grade $\ell(w)$ (Coxeter length) |
-| Slice traversal order | Jet order |
-| Non-abelian Stokes identity at adjacent slices | Braid relations + Hecke quadratic |
+| 2-categorical datum                            | Finite-slice avatar in $H_{n_0}(q)$                            |
+| ---------------------------------------------- | -------------------------------------------------------------- |
+| 1-cells (paths)                                | Braid generators $\sigma_i$                                    |
+| 2-cells (squares)                              | Hecke quadratic relation $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ |
+| Multiplicative line integral                   | Finite product $\prod_k \rho(\sigma_{i_k})$                    |
+| Multiplicative trace on closed surface         | Markov trace $\mathrm{tr}_M(T_w)$                              |
+| Slicing depth                                  | GB filtration grade $\ell(w)$ (Coxeter length)                 |
+| Slice traversal order                          | Jet order                                                      |
+| Non-abelian Stokes identity at adjacent slices | Braid relations + Hecke quadratic                              |
 
 **Key point.** The Hecke quadratic relation
 $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ *is* the curvature 2-form of
@@ -65,7 +65,7 @@ additional input; it follows from the $R$-matrix eigenvalues
 $(\lambda_+, \lambda_-) = (q, -q^{-1})$ forced by the braiding
 structure of $\mathbf{C}$.
 
----
+***
 
 ## Step 3 — Knot decomposition (Alexander + Markov)
 
@@ -74,13 +74,13 @@ $\beta \in B_n$ (Alexander's theorem).  Two closures $\hat\beta$ and
 $\hat\beta'$ represent the same knot type if and only if $\beta$ and
 $\beta'$ are related by:
 
-- *Markov move I* (conjugation in $B_n$): $\beta \sim \alpha\beta\alpha^{-1}$, and
-- *Markov move II* (stabilisation): $\beta \in B_n \sim \beta\sigma_n^{\pm 1} \in B_{n+1}$.
+* *Markov move I* (conjugation in $B_n$): $\beta \sim \alpha\beta\alpha^{-1}$, and
+* *Markov move II* (stabilisation): $\beta \in B_n \sim \beta\sigma_n^{\pm 1} \in B_{n+1}$.
 
 Jones (1987) proved that the Jones--Markov trace
 $\mathrm{tr}_M \colon \bigcup_n H_n(q) \to R$ is the **unique trace**
 invariant under both Markov moves
-([thm:jones-markov-trace](#thm:jones-markov-trace)).  This identifies
+([thm:jones-markov-trace](#thm\:jones-markov-trace)).  This identifies
 knot invariants with Hecke-algebra traces unambiguously:
 
 $$
@@ -88,21 +88,21 @@ $$
   T_w \in H_{n_0}(q)\text{ canonical braid closure of }K.
 $$
 
----
+***
 
 ## Step 4 — Bring surface / Weierstrass and particle content
 
 The Bring surface $\Sigma_4$ (genus 4, automorphism group $S_5$) has
 Euler characteristic $\chi(\Sigma_4) = -6$.  The Descartes condition
 $\chi(A) = -6$ on the Frobenius--Hopf algebra $A$
-([def:frobenius-hopf-substrate](#def:frobenius-hopf-substrate))
+([def:frobenius-hopf-substrate](#def\:frobenius-hopf-substrate))
 identifies $H_3(R, q)$ as the relevant Hecke algebra:
 
-- Dimension: $\dim H_3(q) = 6$ (exactly 6 basis elements in the
+* Dimension: $\dim H_3(q) = 6$ (exactly 6 basis elements in the
   seminormal representation, 6 independent crossing operators).
-- The six basis elements $\{1, \sigma_0, \sigma_1, L_+, L_-, \gamma\}$
+* The six basis elements $\{1, \sigma_0, \sigma_1, L_+, L_-, \gamma\}$
   in Gröbner--Shirshov normal form
-  ([prop:spectral-sequence-h3-explicit](#prop:spectral-sequence-h3-explicit))
+  ([prop:spectral-sequence-h3-explicit](#prop\:spectral-sequence-h3-explicit))
   correspond bijectively to the six independent curvature insertions
   on $\Sigma_4$.
 
@@ -111,14 +111,14 @@ The $\chi = -6$ condition determines the particle content
 there are no adjustable parameters at this stage.
 
 The $x_5$-Bring weight identification
-([prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification))
-and the Prym-Jacobian descent make this concrete:
+([prop:x5-bring-weight-identification](#prop\:x5-bring-weight-identification))
+and the Prym-Jacobian :refterm[descent]{#descent} make this concrete:
 the $Z_5$ automorphism group of the Bring curve $x_5$ acts on
 $H_3(q)$ partitions via the Prym decomposition, selecting exactly the
 partitions $\lambda \vdash 3$ that label the Wedderburn summands of the
 nucleon mass formula.
 
----
+***
 
 ## Step 5 — Weights and partitions (Wedderburn decomposition)
 
@@ -145,19 +145,19 @@ $$
 $$
 
 where the weights $y_\lambda \in R$ are the Wenzl-bridge coefficients
-([prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure)).
+([prop:alpha-k-derivation-procedure](#prop\:alpha-k-derivation-procedure)).
 These weights are **uniquely determined** by the Markov property: the
 linear system $\sum_\lambda \chi_\lambda(w_\mu) y_\lambda = z^{n - \ell(\mu)}$
 is invertible at generic $q$ by Schur--Weyl--Hecke duality.
 No free parameters arise; the $y_\lambda$ are $q$-rational, no fitting.
 
----
+***
 
 ## Step 6 — Frobenius pairing and mass integral
 
 The Jones--Markov trace $\int_A \colon A \to R$ is the Frobenius
 integral on the symmetric Frobenius algebra structure of $H_n(R, q)$
-([def:frobenius-hopf-substrate](#def:frobenius-hopf-substrate)).
+([def:frobenius-hopf-substrate](#def\:frobenius-hopf-substrate)).
 The Frobenius pairing
 
 $$
@@ -189,14 +189,14 @@ $$
 
 derived from the Kauffman framing formula applied to the twist
 endomorphism $\varTheta$ on irreducibles
-([prop:chirality-writhe-ribbon-derivation](#prop:chirality-writhe-ribbon-derivation)).
+([prop:chirality-writhe-ribbon-derivation](#prop\:chirality-writhe-ribbon-derivation)).
 
----
+***
 
 ## Step 7 — Gröbner--Shirshov basis filtration
 
 The Gröbner--Shirshov basis for $H_{n_0}(q)$
-([prop:gb-spectral-sequence](#prop:gb-spectral-sequence)) induces a
+([prop:gb-spectral-sequence](#prop\:gb-spectral-sequence)) induces a
 filtration on $H_{n_0}(q)$ by Coxeter length $\ell(w)$:
 
 $$
@@ -206,18 +206,18 @@ $$
 
 The associated graded $\mathrm{gr}_\bullet H_{n_0}(q)$ forms the
 $E_1$-page of the GB spectral sequence.  By
-[prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse),
+[prop:spectral-sequence-collapse](#prop\:spectral-sequence-collapse),
 this spectral sequence **collapses at $E_2$** for semisimple $H_n(q)$
 at generic $q$:
 
-- The $d_1$-differential encodes the braid relations;
-- The $d_2$-differential captures the Hecke quadratic relation
+* The $d_1$-differential encodes the braid relations;
+* The $d_2$-differential captures the Hecke quadratic relation
   $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$;
-- All higher differentials $d_r = 0$ for $r \geq 3$
+* All higher differentials $d_r = 0$ for $r \geq 3$
   (no further relations beyond braid + Hecke).
 
 The $E_\infty$-page identification
-([prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications))
+([prop:e-infinity-page-identifications](#prop\:e-infinity-page-identifications))
 recovers the Wedderburn decomposition:
 
 $$
@@ -230,26 +230,26 @@ filtration grade $k$, the surviving $E_\infty$-classes already account
 for all of $\mathrm{tr}_M(T_w)$ because $d_r = 0$ for $r \geq 3$.
 No higher slices contribute to the mass invariant.
 
----
+***
 
 ## Step 8 — Jet order and slice traversal
 
 Jet order = the order of GB reductions in the filtration.  In
 Yekutieli's picture:
 
-- Temporal slice-traversal order = the order in which elementary
+* Temporal slice-traversal order = the order in which elementary
   curvature insertions (braid generators) are processed;
-- This is the jet-prefix partial order on reduced words in $H_{n_0}(q)$;
-- The GB-filtration tracker certificate records
+* This is the jet-prefix partial order on reduced words in $H_{n_0}(q)$;
+* The GB-filtration tracker certificate records
   (word, grade, jet-position) triples per term.
 
 The jet-convergence result
-([prop:jet-convergence-classical-limit](#conj:jet-convergence-classical-limit))
+([prop:jet-convergence-classical-limit](#prop\:jet-convergence-classical-limit))
 shows that the jet tower converges to the classical limit as
 $q \to 1$, confirming the finite-slice picture is algebraically
 consistent with the semiclassical approximation.
 
----
+***
 
 ## Step 9 — Hecke energy scale and mass identity
 
@@ -279,13 +279,13 @@ $$
 $$
 
 The $0.75\%$ discrepancy is the brane tower correction
-([prop:atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)).
+([prop:atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation)).
 The hadronic calibration fixes $\mathbf{E}_0$ exactly; the leptonic
 expression is an approximation valid to the single-level accuracy.
 
 3. **Mass identity.**  After applying the Archimedean realization
-functor $\Phi_\mathrm{arch}$
-([def:archimedean-realization-functor](#def:archimedean-realization-functor)):
+   functor $\Phi_\mathrm{arch}$
+   ([def:archimedean-realization-functor](#def\:archimedean-realization-functor)):
 
 $$
   \boxed{
@@ -299,18 +299,18 @@ $$
 
 where $\rho \in \mathbb{Z}_{>0}$ is the SDP multiplicity of $T_w$'s
 Wedderburn solution, $\mathrm{tower}(T_w)$ is the brane-tower
-correction ([conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro)),
+correction ([conj:brane-tower-z-habiro](#conj\:brane-tower-z-habiro)),
 and $\mathrm{tr}_M(C_{\dim_q})$ is the Frobenius co-Casimir trace
-([thm:frobenius-codim-universal](#thm:frobenius-codim-universal)).
+([thm:frobenius-codim-universal](#thm\:frobenius-codim-universal)).
 
----
+***
 
 ## Step 10 — Confinement SDP and canonical knot identification
 
 The canonical Hecke element $T_w$ for a confined particle $\mathfrak{H}$
 is selected by the joint mass-tower confinement SDP
-([prop:confinement-sdp](#prop:confinement-sdp),
-[prop:atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)).
+([prop:confinement-sdp](#prop\:confinement-sdp),
+[prop:atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation)).
 The SDP minimizes the Frobenius residual
 
 $$
@@ -331,9 +331,9 @@ extends the identification to $A \leq 60$.
 **canonical knot identification for $^2$H, $^3$H, $^3$He**
 from first principles (without matching to historical hyperbolic
 volumes) is an open problem
-([conj:canonical-knot-id-sdp](#conj:canonical-knot-id-sdp)).
+([conj:canonical-knot-id-sdp](#conj\:canonical-knot-id-sdp)).
 
----
+***
 
 ## Step 11 — Beta-decay $Q$-values (symbolic, no calibration beyond $Q_\beta$)
 
@@ -349,7 +349,7 @@ $$
 $$
 
 The symbolic NF computation
-([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic))
+([prop:neutron-qvalue-symbolic](#prop\:neutron-qvalue-symbolic))
 gives the free-neutron $Q$-value without any additional calibration:
 
 $$
@@ -363,7 +363,7 @@ so $Q_\beta = |\Delta(\mathrm{net})| \times \mathbf{E}_0$ by construction.
 All other $Q$-values in the beta-decay chain are **predictions** once
 $\mathbf{E}_0$ is fixed.
 
----
+***
 
 ## Summary pipeline
 

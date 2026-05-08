@@ -1,7 +1,7 @@
-Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2),
-we verify the [descent lemma](#lem:descent) at the first level.
+Continuing the [brane tower for SU(2)](#ex\:recursive-brane-tower-su2),
+we verify the [:refterm[descent]{#descent} lemma](#lem\:descent) at the first level.
 
-**The descent map.** The descent
+**The :refterm[descent]{#descent} map.** The :refterm[descent]{#descent}
 $\mathfrak{d}_1 \colon \mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2))) \to \mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))$ sends a jet-level
 endomorphism to its base-level shadow by averaging over the cotangent
 fibre directions.
@@ -21,7 +21,7 @@ $\mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))$, giving
 $\mathfrak{d}_1(\tilde{\phi}) = \phi$. Hence $\mathfrak{d}_1$ is
 surjective.
 
-**Equivariance.** The descent map intertwines the
+**Equivariance.** The :refterm[descent]{#descent} map intertwines the
 $\mathrm{SU}_q(2)$-actions: for $q = 1$ (the classical case),
 
 $$

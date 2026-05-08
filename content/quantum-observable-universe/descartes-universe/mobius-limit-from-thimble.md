@@ -1,18 +1,18 @@
-**Proposition (steepest-descent derivation of the integration limit).**
+**Proposition (steepest-:refterm[descent]{#descent} derivation of the integration limit).**
 *Work in the **archimedean realisation** of $\mathcal{E}_q$, i.e. after
 applying the fibre functor $\tau \colon R \to \mathbb{R}$ and embedding
 $R \hookrightarrow \mathbb{C}$ so that the SW differentials
 $\lambda_{\mathrm{SW}}^{(k)}$ become honest meromorphic 1-forms on
 $\mathbb{C}$
-([lepton mass integrals](#rem:lepton-mass-integrals)).*
+([lepton mass integrals](#rem\:lepton-mass-integrals)).*
 
 *Let $z_c^\pm \in \mathbb{C} \setminus \mathbb{R}$ be the two complex
 critical points of the SW action $S(z) = \int^z \lambda_{\mathrm{SW}}^{(1)}\,dz'$
 closest to the real axis
-([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble)), with
+([Picard–Lefschetz thimble](#def\:picard-lefschetz-thimble)), with
 $z_c^- = \overline{z_c^+}$ and $\mathrm{Re}(z_c^\pm) \approx 0.106$,
 $\lvert\mathrm{Im}(z_c^\pm)\rvert \approx 0.937$ at $q = q_0$.  Let
-$\mathcal{J}_{z_c^\pm}$ denote the steepest-descent thimbles emanating
+$\mathcal{J}_{z_c^\pm}$ denote the steepest-:refterm[descent]{#descent} thimbles emanating
 from $z_c^\pm$ in the directions $e^{i\Theta^\pm}$ with
 $\Theta^\pm = -\tfrac12 \arg H(z_c^\pm)$.*
 
@@ -52,7 +52,7 @@ evaluates $|H(z_c^\pm)| \approx 3.29 \times 10^{17}$ with
 $\arg H \approx \pm 14.0^\circ$, yielding the Hessian-direction angle
 $\Theta^\pm \approx \mp 7.0^\circ$ relative to the imaginary axis.*
 
-**Step 2 (Steepest-descent contour direction at $z_c$).**
+**Step 2 (Steepest-:refterm[descent]{#descent} contour direction at $z_c$).**
 *The thimble $\mathcal{J}_{z_c^+}$ emerges from $z_c^+$ along the
 direction*
 
@@ -66,13 +66,13 @@ $$
 for $z_c^-$ in the lower half-plane.*
 
 **Step 3 (Asymptotic re-entry on the real axis).**
-*Following $\mathcal{J}_{z_c^+}$ along $\hat{u}^+$, the steepest-descent
+*Following $\mathcal{J}_{z_c^+}$ along $\hat{u}^+$, the steepest-:refterm[descent]{#descent}
 ODE $dz/dt = -\overline{\nabla S}(z)$ rotates the contour clockwise as
 $\mathrm{Re}(S)$ decreases.  In the leading asymptotic regime
 ($t \to \infty$, $|z| \to \infty$ along $\mathcal{J}_{z_c^+}$), the
 $\lambda_{\mathrm{SW}}^{(1)} \sim z$ behaviour at infinity gives
 $S(z) \sim z^2/2$, so the thimble follows the same asymptote as the
-descent direction of $z^2/2$ — namely $\arg z = \Theta^+ + \pi$ for
+:refterm[descent]{#descent} direction of $z^2/2$ — namely $\arg z = \Theta^+ + \pi$ for
 $\mathrm{Re}(\mathcal{J}_{z_c^+}) \to -\infty$ and $\arg z = \Theta^+$
 for $\mathrm{Re}(\mathcal{J}_{z_c^+}) \to +\infty$.*
 
@@ -110,26 +110,26 @@ $$
 **Step 4 (Coefficient identification from the cubic).**
 *The numerator $4 - q$ encodes:*
 
-- *the leading $z^2$-coefficient $4z + 1$ of the cubic's $c^2$ term
-  ([color-tube cubic](#rem:color-tube-cubic)) at $z = z_c^+$, which sets
+* *the leading $z^2$-coefficient $4z + 1$ of the cubic's $c^2$ term
+  ([color-tube cubic](#rem\:color-tube-cubic)) at $z = z_c^+$, which sets
   the re-entry abscissa;*
-- *the alternating sign of the descent direction $\Theta^+ - \Theta^-$
+* *the alternating sign of the :refterm[descent]{#descent} direction $\Theta^+ - \Theta^-$
   (which differs by $\pi$ between the two thimbles) — yielding the
   factor of $-1$ in $-q$.*
 
 *The denominator $4q + 3$ encodes:*
 
-- *the binomial coefficient $\binom{4}{1} = 4$ from the cubic's
+* *the binomial coefficient $\binom{4}{1} = 4$ from the cubic's
   $c^2$-term;*
-- *the cubic's degree $\deg_c F = 3$, which appears as the additive
+* *the cubic's degree $\deg_c F = 3$, which appears as the additive
   constant tracking the number of colour sheets contributing to the
   Hessian.*
 
 *This matches the matrix $M = \bigl(\begin{smallmatrix} -1 & 4 \\ 4 & 3 \end{smallmatrix}\bigr)$
 identified in
-([Möbius golden fixed points](#prop:mobius-golden-fixed-points))
+([Möbius golden fixed points](#prop\:mobius-golden-fixed-points))
 purely from the integration-limit's algebraic shape, now derived from
-the Hessian geometry of the steepest-descent contour. $\square$*
+the Hessian geometry of the steepest-:refterm[descent]{#descent} contour. $\square$*
 
 **Numerical check (archimedean witness).**
 *At $q = q_0 \approx 1.10998$:*
@@ -145,7 +145,7 @@ recovers $m_p$ to $0.0006\%$ accuracy.*
 **Categorical / archimedean status.**
 
 *The proposition is **inherently archimedean**: it speaks about steepest-
-descent contours in $\mathbb{C}$ and uses $|H(z_c)|$ and
+:refterm[descent]{#descent} contours in $\mathbb{C}$ and uses $|H(z_c)|$ and
 $\arg H(z_c)$, both of which require the embedding $\tau \colon R
 \hookrightarrow \mathbb{C}$.  The categorical / $R$-side statement is
 weaker — only that $a(q) \in R(q)$ is the unique Möbius transformation
@@ -165,16 +165,16 @@ $$
 *is therefore the **archimedean realisation** of the categorical
 Möbius pencil; the categorical statement (existence of the Möbius
 transformation) and the analytic statement (it equals the steepest-
-descent re-entry abscissa) live on opposite sides of $\tau$ and must
+:refterm[descent]{#descent} re-entry abscissa) live on opposite sides of $\tau$ and must
 not be conflated.*
 
 **Demotion of `rem:baryon-integration-limit` open question.**
 
 *Open question #2 of
-([baryon integration limit](#rem:baryon-integration-limit))
+([baryon integration limit](#rem\:baryon-integration-limit))
 ("Why the Möbius limit $(4-q)/(4q+3)$ rather than the exact
 degeneration locus $1/\varphi^2$ defines the integration domain")
-is now derived: the Möbius limit is the steepest-descent re-entry
+is now derived: the Möbius limit is the steepest-:refterm[descent]{#descent} re-entry
 abscissa for the leading-order Hessian-direction expansion at
 $z_c^\pm$, with the discrepancy from $1/\varphi^2$ accounted for by
 sub-leading discriminant corrections that vanish at the elliptic

@@ -78,6 +78,7 @@ theorem mass_at_zero_depth
   -- result is `gbCoeff k 0` — which by `gbCoeffZero_eq_groebner`
   -- equals `groebnerMass k`.  Induction on `crossingCount k`
   -- deferred.
+  -- Ref: [thurston1978] http://library.msri.org/books/gt3m/
   sorry
 
 end QOU.ParticleInteractions

@@ -1,24 +1,24 @@
 **Where this fits.** Three blocks in this paper address the
 $q \to 1$ classical limit:
 
-| Block | Scope | Status |
-|---|---|---|
-| [classical limit functor](#def:classical-limit-functor) | Topological definition $\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$ | Definition (with obstruction) |
-| **This block** | Single-functor surreal replacement: $\mathcal{L} \cong \mathrm{St} \circ \mathrm{ev}_{1+\varepsilon}$ | Conjecture (open) |
-| [archimedean QOU is standard-part of surreal](#conj:archimedean-stpart) | Whole-tuple surreal replacement on $(\mathbf{C}, \varTheta, G, \mathcal{S})$ | Conjecture (open); strategy in [archimedean-stpart strategy](#rem:archimedean-stpart-strategy) |
+| Block                                                                    | Scope                                                                                                 | Status                                                                                          |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [classical limit functor](#def\:classical-limit-functor)                 | Topological definition $\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$                                  | Definition (with obstruction)                                                                   |
+| **This block**                                                           | Single-functor surreal replacement: $\mathcal{L} \cong \mathrm{St} \circ \mathrm{ev}_{1+\varepsilon}$ | Conjecture (open)                                                                               |
+| [archimedean QOU is standard-part of surreal](#conj\:archimedean-stpart) | Whole-tuple surreal replacement on $(\mathbf{C}, \varTheta, G, \mathcal{S})$                          | Conjecture (open); strategy in [archimedean-stpart strategy](#rem\:archimedean-stpart-strategy) |
 
 The current block is the *single-functor* version; the
 whole-tuple version is the appendix companion. Both are likely
 equivalent modulo functoriality.
 
-The [classical limit functor](#def:classical-limit-functor)
+The [classical limit functor](#def\:classical-limit-functor)
 $\mathrm{cl} : \mathbf{C}_q \to \mathbf{C}_{q=1}$ takes the
 $q \to 1$ limit of categorical structures parametrised by the
 substrate parameter $q$. Classically, this requires either a
 topological notion of limit on the parameter space (which fails
 for surreal-valued $q$) or a careful Hochschild-cohomology
 construction
-([classical limit obstruction](#def:classical-limit-obstruction)).
+([classical limit obstruction](#def\:classical-limit-obstruction)).
 
 This conjecture proposes a clean replacement: the classical-limit
 functor is the **standard-part of evaluation at $q = 1 +
@@ -26,7 +26,7 @@ functor is the **standard-part of evaluation at $q = 1 +
 
 ## Conjecture
 
-Let $\mathbf{C}_q$ be a $K$-linear monoidal category whose
+Let $\mathbf{C}_q$ be a $K$-linear :refterm[monoidal category]{#monoidal-category} whose
 structure constants are rational functions of $q \in K$, and let
 $\mathrm{cl}_{\mathrm{top}} : \mathbf{C}_q \to \mathbf{C}_{q=1}$
 be the topological classical-limit functor (defined when it
@@ -60,7 +60,7 @@ The novelty is that the right-hand side **always exists** as long
 as the structure constants are rational in $\varepsilon$ — even in
 cases where the left-hand side has obstructions. The
 classical-limit obstruction
-([classical limit obstruction](#def:classical-limit-obstruction))
+([classical limit obstruction](#def\:classical-limit-obstruction))
 $\mathrm{HH}^2(\mathcal{U}_q, \mathrm{Ad})$ becomes, on the
 right-hand side, a *non-zero finite surreal* in
 $\mathbf{No}_{\mathrm{fin}}$ whose standard-part vanishes only
@@ -75,12 +75,12 @@ only when the standard-part is non-zero.
 
 **Open.** The conjecture is partly motivated by Berarducci--
 Mantova's derivation construction
-[@berarducci-mantova2018]: their derivation $D : \mathbf{No} \to
+\[@berarducci-mantova2018]: their derivation $D : \mathbf{No} \to
 \mathbf{No}$ extends $d/dx$ on $\mathbb{R}$, so the standard-
 part of $D(f(1 + \varepsilon))$ recovers $f'(1)$ when $f$ is
 analytic. Promoting this from a single function to a functor on
 $\mathbf{C}_q$ requires functoriality of the standard-part — known
-classically [@robinson1966] in the model-theoretic setting but
+classically \[@robinson1966] in the model-theoretic setting but
 not (yet) in the categorical setting.
 
 A first step would be to prove the conjecture for
@@ -136,9 +136,10 @@ naturality case:
    $K$-modules).
 
 **Required infrastructure**:
-- `QOU.AppendixSurreals.standardPart_add`, `_mul` (proved up to
+
+* `QOU.AppendixSurreals.standardPart_add`, `_mul` (proved up to
   the `IsFinite_decomposition` axiom).
-- A decision procedure for "rational in $\varepsilon$" in Lean
+* A decision procedure for "rational in $\varepsilon$" in Lean
   (could specialise to `Polynomial K`).
 
 **Falsification path**: produce a categorical structure

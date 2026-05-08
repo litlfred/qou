@@ -26,19 +26,19 @@ has $\ker\partial = 1$ and $\mathrm{coker}\partial = 1$, so it is
 connected and simply connected as a $2$-group. A $2$-connection for
 $\mathrm{INN}(G)$ on a principal $2$-bundle over $M$ consists of a
 $\mathfrak{g}$-valued $1$-form $A$ and a $\mathfrak{g}$-valued
-$2$-form $B$, subject to the *quantum flatness* condition
+$2$-form $B$, subject to the *:refterm[quantum flatness]{#quantum-flatness}* condition
 
-$$F_A =  B.$$
+$F_A =  B.$
 
 In the QOU setting, $G = \mathrm{SU}(2)$ and the Levi distribution
 $H = \ker\varTheta$ has $\dim_{\mathbb{R}} H = 4$, so the Hodge
 decomposition $\Lambda^2 H^* = \Lambda^+\!H^* \oplus \Lambda^-\!H^*$
 is available. Imposing the *simplicity constraint*
 
-$$B  \in  \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)$$
+$B  \in  \Gamma\!\bigl(\Lambda^+\!H^* \otimes \mathrm{Ad}(P)\bigr)$
 
---- that is, requiring the $2$-form datum to be self-dual ---
-and combining with quantum flatness gives
+\--- that is, requiring the $2$-form datum to be self-dual ---
+and combining with :refterm[quantum flatness]{#quantum-flatness} gives
 the commutative diagram
 
 ```tex
@@ -57,11 +57,11 @@ the commutative diagram
 \end{equation}
 ```
 
-The quantum flatness condition $F_A = B$ combined with the simplicity
+The :refterm[quantum flatness]{#quantum-flatness} condition $F_A = B$ combined with the simplicity
 constraint $B = F_A^+$ forces $F_A = F_A^+$, hence $F_A^- = 0$.
 This is precisely the instanton equation
 $F_A|_H = {*_H}F_A|_H$
-of [instanton](#def:categorical-instanton). Thus, the self-dual formulation
+of [instanton](#def\:instanton). Thus, the self-dual formulation
 used throughout this paper is a special case of $2$-group gauge theory
 for $\mathrm{INN}(\mathrm{SU}(2))$ subject to a simplicity constraint
 on the $2$-form datum.

@@ -5,7 +5,7 @@ is retained as the analogous tail bound on the $\Phi_q$ side and
 remains mathematically correct.
 
 The jet-tower tail bound
-([jet-tower convergence](#prop:jet-tower-convergence))
+([jet-tower convergence](#prop\:jet-tower-convergence))
 is *conditional* on a uniform bound
 $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$ across
 jet levels $n \ge 1$.  This proposition supplies an explicit
@@ -53,17 +53,17 @@ $$
 
 by Cauchy--Schwarz on the Hilbert--Schmidt norm and the
 positivity of the Markov trace at real $q > 0$
-([Markov trace factorization](#thm:markov-trace-factorization),
+([Markov trace factorization](#thm\:markov-trace-factorization),
 appendix).
 
 *Step 2 — Jet-level transient lives on a bounded module.*
-The descent splitting
+The :refterm[descent]{#descent} splitting
 $\mathrm{End}(A_{n+1}) =
  \mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
-([descent eigenspaces](#prop:descent-eigenspaces)) places every
+([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)) places every
 transient endomorphism at level $n+1$ in $\ker\hat\tau_n$.  By
 the recursive brane tower
-([recursive brane tower](#def:recursive-brane-tower)),
+([recursive brane tower](#def\:recursive-brane-tower)),
 $A_{n+1} = A_n \otimes \Omega^1(A_n)$, so a transient mode at
 level $n+1$ is a section of the Kähler cotangent bundle
 $\Omega^1(A_n)$ paired with its Frobenius dual.  On the
@@ -146,7 +146,7 @@ $E_0 \approx m_e \cdot 8G \approx 3.744$ MeV.
 ## Consequence for the binding energy
 
 Combining with the jet-tower tail bound
-([jet-tower convergence](#prop:jet-tower-convergence)), the
+([jet-tower convergence](#prop\:jet-tower-convergence)), the
 $N$-term truncation error for any vortex is
 
 $$
@@ -168,7 +168,7 @@ deuteron, tritium, and ${}^3\mathrm{He}$
 
 This proposition closes the **archimedean / rank-1 SDP**
 regime of the convergence conjecture
-([jet-tower remark](#rem:mass-endomorphism-jet-tower),
+([jet-tower remark](#rem\:mass-endomorphism-jet-tower),
 subconjecture 1).  The two remaining pieces are:
 
 1. **Multi-rank confinement SDP.**  At higher SDP ranks the

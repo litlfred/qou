@@ -1,23 +1,23 @@
 **Preliminaries.**
 
-- **$\widehat{A}$**: the **isomorphism-class index set of simple
+* **$\widehat{A}$**: the **isomorphism-class index set of simple
   $A$-modules** — equivalently, the indexing set of Wedderburn
   blocks of a finite-dim semisimple algebra $A$.  Standard
   representation-theory notation (analogous to $\widehat{G}$ for
   the unitary dual of a group).  For $A = H_n(R, q)$,
   $\widehat{A} = \{\lambda \vdash n\}$ (partitions of $n$).
 
-- **Vortex**: a morphism $\varrho \colon \mathbf{1} \to A$ in the
-  rigid monoidal category of the quantum observable universe —
+* **Vortex**: a morphism $\varrho \colon \mathbf{1} \to A$ in the
+  rigid :refterm[monoidal category]{#monoidal-category} of the quantum observable universe —
   i.e., a closed element of $A$ arising as the closure of a braid
   $\beta \in B_n$
-  ([Hecke mass element](#def:hecke-mass-element)).  Each vortex has
+  ([Hecke mass element](#def\:hecke-mass-element)).  Each vortex has
   a Hecke-algebra representative $\sigma_w \in H_n(R, q)$ whose Markov
   trace is the categorical mass
-  ([categorical mass, Markov](#prop:categorical-mass-markov)).
+  ([categorical mass, Markov](#prop\:categorical-mass-markov)).
   In physics: particles (quarks, nucleons, nuclei) are vortices.
 
-- **$C_{\dim_q}$**: the "C" stands for **Casimir** (Lie-algebra /
+* **$C_{\dim_q}$**: the "C" stands for **Casimir** (Lie-algebra /
   TQFT terminology); "co-" because it is the Frobenius-pairing
   dual of the unit $1 = \sum_\lambda p_\lambda$, **not** the
   standard quadratic Casimir $\Omega = \sum_i e_i \otimes e^i$.
@@ -43,7 +43,7 @@ dimension giving $\tau(p_\lambda) = \dim_q(\lambda) \, d_\lambda
 / [n]_q!$).
 
 **Theorem (Frobenius quantum-co-dimension trace).**
-*The **quantum-co-dimension element**
+\*The **quantum-co-dimension element**
 
 $$
   C_{\dim_q}
@@ -97,7 +97,7 @@ therefore **forced by the structure**, not ad-hoc.*
 *$C_{\dim_q}$ is categorical in three distinct senses:*
 
 1. *The Frobenius pairing $\tau \colon A \otimes A \to \mathbb{C}$
-   is a morphism in the monoidal category of $A$-bimodules;
+   is a morphism in the :refterm[monoidal category]{#monoidal-category} of $A$-bimodules;
    $C_{\dim_q}$ is built from it by universal constructions
    (central idempotents + duality).*
 2. *The $q$-dimension $\dim_q(\lambda)$ is the categorical
@@ -155,7 +155,7 @@ self-duality.*
 **GB-filtration (confinement) decomposition.**
 *When $A = H_n(R, q)$ is filtered by the confinement filtration
 $J^\bullet(q)$
-([confinement level](#def:confinement-level)), the partitions
+([confinement level](#def\:confinement-level)), the partitions
 $\lambda$ sort by level
 $\ell(\lambda) = \mathrm{height}(\lambda) - 1$.  The Frobenius
 co-Casimir trace decomposes*
@@ -204,7 +204,7 @@ $$
 
 *This is the **universal derivation** of the proton
 $(5/2) \cdot m_e$ residual
-([proton residual](#prop:partition-sum-proton-residual)) and its
+([proton residual](#prop\:partition-sum-proton-residual)) and its
 extensions to nuclear bindings.  The specific value
 $\tau(C_{\dim_q})$ depends on the algebra $A$ (hence on the
 vortex content), but the **structural form** — trace of the
@@ -217,24 +217,24 @@ $A$ (equivalently on $n$ and $q$), not on the braid word
 $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
 **limitation**:*
 
-- *Feature (universality):* *Every vortex on $H_3(R, q)$ —
+* *Feature (universality):* *Every vortex on $H_3(R, q)$ —
   proton $(uud)$, neutron $(udd)$, any nucleon-like trefoil —
   inherits the same $(2 + 1/[2]_q) \cdot m_e$ additive
   offset.  Mass differences between nucleons come entirely
   from the descended $|\mathrm{tr}_M|$ and brane-tower pieces,
   not from the Frobenius correction.*
-- *Limitation (vortex-blind):* *The Frobenius correction cannot
+* *Limitation (vortex-blind):* *The Frobenius correction cannot
   by itself distinguish $\varrho_{\mathfrak{p}}$ from
   $\varrho_{\mathfrak{n}}$ or any other trefoil-like vortex.
   Vortex-dependent corrections (e.g. chirality factors
   $\{1+h, 1-h^2, (1-h^2)^2\}$ per
-  ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+  ([figure-eight BW coefficients](#prop\:figure-eight-bw-coefficients))
   or knot-factor Frobenius pairings per
-  ([knot-factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
+  ([knot-factor Frobenius pairing](#conj\:knot-factor-frobenius-pairing))
   — are separate structural terms beyond $\tau(C_{\dim_q})$.*
 
 *The unified mass formula
-([unified knot mass](#thm:knot-mass-formula-unified)) therefore has
+([unified knot mass](#thm\:knot-mass-formula-unified)) therefore has
 three tiers:*
 
 1. *Vortex-specific: descended $|\mathrm{tr}_M(\sigma_w)|$ and brane

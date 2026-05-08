@@ -43,6 +43,7 @@ theorem ConfinementSDP
     (P : ConfinedParticleTy) (q : ℝ)
     (h : slaterStrictFeasible P q) :
     y0_star P q ≥ 0 := by
+  -- Ref: [manuscript] particle-interactions/confinement-sdp
   sorry
 
 end QOU.ParticleInteractions

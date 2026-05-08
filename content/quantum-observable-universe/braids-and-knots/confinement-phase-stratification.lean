@@ -49,6 +49,7 @@ opaque sigmaF : ConfinedParticleTy → ℝ → ℝ
 theorem ConfinementPhaseStratification_open
     (P : ConfinedParticleTy) :
     IsOpen (confinementLocus P) := by
+  -- Ref: [manuscript] particle-interactions/confinement-sdp
   sorry
 
 /-- **Phase stratification, claim (3) — local constancy of μ.**
@@ -59,6 +60,7 @@ theorem ConfinementPhaseStratification_mu_constant
     (P : ConfinedParticleTy) (C : Set ℝ)
     (h_comp : IsConnected C) (h_sub : C ⊆ confinementLocus P)
     (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
+    -- Ref: [manuscript] particle-interactions/confinement-sdp
     mu P q₁ = mu P q₂ := by
   sorry
 

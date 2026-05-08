@@ -61,7 +61,7 @@ inductive Methodology where
   | manualHistoricalVolumeMatch      -- vol-match in earlier work, established
   | magicAFormula                    -- A · 8G shell-closure formula
   | recursiveOn4He                   -- n · ⁴He + n_αα · c_αα recursion
-  | deprecatedVolumeMatch            -- ⚠ PROVISIONAL — reverse-engineered
+  | deprecatedVolumeMatch            -- (provisional) reverse-engineered
 
 /-- A particle in the atlas at q_0: registry entry from the
     confined-particle definition. -/
@@ -105,7 +105,7 @@ def principledAtlas : List AtlasEntry → List AtlasEntry
 
     DEPRECATED INPUT (consumed only by the quarantined provisional
     section, never by the principled atlas):
-      6. li-atom-knot-search.witness.json — ⚠ volume-match search.
+      6. li-atom-knot-search.witness.json — (provisional) volume-match search.
 
     Updates to any input propagate via witness_staleness_tracker.py
     to the rendered appendix on the next `bun run build`. -/
@@ -115,7 +115,7 @@ theorem atlas_witness_derived : AtlasIsWitnessDerived := by
   sorry  -- Ref: prop:recursive-atom-knot-atlas §"Build-pipeline integration"
          -- + the renderer recursive_atom_knot_atlas_render.py.
 
-/-- ⚠ PROVISIONAL — DEPRECATED METHODOLOGY.
+/-- (provisional / deprecated methodology)
 
     The 7Li / 6Li volume-match results from the SnapPy search
     (li-atom-knot-search.witness.json) are NOT principled.  The

@@ -1,7 +1,7 @@
 The Wedderburn trace identity relates the $q$-dimensions of
 irreducible representations of the Hecke algebra $H_n(R, q)$ to the
 $q$-factorial, providing the combinatorial foundation for the
-descent decomposition of mass and coupling.
+:refterm[descent]{#descent} decomposition of mass and coupling.
 
 **Proposition.**
 *For the Hecke algebra $H_n(R, q)$ over $R$
@@ -19,9 +19,9 @@ and $[n]_q! = [1]_q [2]_q \cdots [n]_q$.*
 **Consequence for mass.**
 
 This identity determines the partition of the total Markov weight
-among the irreducible representations.  In the descent decomposition
+among the irreducible representations.  In the :refterm[descent]{#descent} decomposition
 of the mass endomorphism
-([BW as descent](#prop:bw-categorical-descent)), each partition
+([BW as :refterm[descent]{#descent}](#prop\:bw-categorical-descent)), each partition
 $\lambda$ contributes a weight proportional to
 $\dim_q(\lambda)^2 / [n]_q!$ to the total binding energy.
 
@@ -40,12 +40,12 @@ the standard block) is the leading term in the BW formula.
 
 **Explicit values.**
 
-| $n$ | $[n]_{q_0}!$ | $\sum_\lambda \dim_{q_0}(\lambda)^2$ | Partitions |
-|-----|------------|-------------------------------------|-----------|
-| $2$ | $[2]_q = 2.230$ | $1 + 1 = 2.230$ | $[2], [1^2]$ |
-| $3$ | $[3]_q! = 8.376$ | $1 + 4.376 + 1 = 8.376$ | $[3], [2,1], [1^3]$ |
-| $4$ | $[4]_q! = 42.31$ | $1 + 13.1 + d_{[2,2]}^2 + 13.1 + 1$ | 5 partitions |
-| $5$ | $[5]_q! = 267.5$ | sum of 7 terms | 7 partitions |
+| $n$ | $[n]_{q_0}!$     | $\sum_\lambda \dim_{q_0}(\lambda)^2$ | Partitions          |
+| --- | ---------------- | ------------------------------------ | ------------------- |
+| $2$ | $[2]_q = 2.230$  | $1 + 1 = 2.230$                      | $[2], [1^2]$        |
+| $3$ | $[3]_q! = 8.376$ | $1 + 4.376 + 1 = 8.376$              | $[3], [2,1], [1^3]$ |
+| $4$ | $[4]_q! = 42.31$ | $1 + 13.1 + d_{[2,2]}^2 + 13.1 + 1$  | 5 partitions        |
+| $5$ | $[5]_q! = 267.5$ | sum of 7 terms                       | 7 partitions        |
 
 The Wigner coefficient $\lambda_W = [5]_q! \cdot m_e$ in the BW
 formula arises from the Frobenius reciprocity of the $[n{-}2, 2]$

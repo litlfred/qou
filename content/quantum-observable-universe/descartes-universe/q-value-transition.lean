@@ -8,7 +8,7 @@ Classical energy conservation (E_before = E_after) is a q=1 limit.
 At q ≠ 1, the q-differential satisfies d_q² ≠ 0, producing a
 q-anomaly δ_q in the energy balance.
 
-⚠ This file does NOT assume classical conservation of energy.
+Note: this file does NOT assume classical conservation of energy.
 The equivalence Q_q = T_e + T_ν + T_recoil holds only at q = 1.
 
 LaTeX label: `def:Q-value-transition`
@@ -60,7 +60,7 @@ noncomputable def QqValue.value (Q : QqValue) : ℝ :=
 /-- The q-anomaly: difference between categorical 𝒬_q and
     the sum of observed kinetic energies.
 
-    ⚠ This is NONZERO at q ≠ 1.  Classical energy conservation
+    Note: this is NONZERO at q ≠ 1.  Classical energy conservation
     (δ_q = 0) holds ONLY at q = 1. -/
 -- Ref: [manuscript] §6/q-value-transition
 structure QAnomaly where
@@ -127,7 +127,7 @@ theorem singleCrossingDelta_classical : singleCrossingDelta 1 = 0 := by
 
     S_q(parent) = S_{q+Δq}(daughter) + S_q(e) + S_q(ν̄) + kinetic + δ_q
 
-    ⚠ This is NOT classical conservation.  The daughter nucleus
+    Note: this is NOT classical conservation.  The daughter nucleus
     lives in a shifted q-environment due to the re-reduction
     R2 moves in the Hecke algebra. -/
 -- Ref: [manuscript] §6/q-value-transition

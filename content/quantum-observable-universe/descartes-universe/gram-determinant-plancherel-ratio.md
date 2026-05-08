@@ -2,7 +2,7 @@
 *Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, let
 $\beta_s = T_{2,9}$, $\beta_w = T_{3,5}$ be the unique pair of
 genus-$4$ torus knots
-([Bring uniqueness](#prop:force-carrier-bring-uniqueness)).  Each
+([Bring uniqueness](#prop\:force-carrier-bring-uniqueness)).  Each
 admits a Wedderburn decomposition into central idempotents of the
 ambient Hecke algebra $H_n(R, q)$:*
 
@@ -20,8 +20,8 @@ $$
                      {\det G^{q}_{\mathrm{CS}}}
 $$
 
-*appearing in the Chern-Simons descent
-([CS coupling](#conj:em-coupling-chern-simons)) is given by the
+*appearing in the Chern-Simons :refterm[descent]{#descent}
+([CS coupling](#conj\:em-coupling-chern-simons)) is given by the
 Plancherel-weighted character product*
 
 $$
@@ -47,7 +47,7 @@ $$
   \frac{\dim_q V_\lambda \cdot \dim V_\lambda}{[n]_q!}
 $$
 
-([Gram-spectral connection](#rem:gram-matrix-spectral-connection)).
+([Gram-spectral connection](#rem\:gram-matrix-spectral-connection)).
 The classical limit $q \to 1$ replaces $\dim_q \to \dim$ and $[n]_q!
 \to n!$.  For the 2-knot $(\beta_s, \beta_w)$ configuration, the
 relevant determinant projects onto the rank-$2$ sublattice spanned

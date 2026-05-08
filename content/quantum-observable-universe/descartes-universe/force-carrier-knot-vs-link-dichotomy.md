@@ -213,7 +213,7 @@ refinement.
 - [`conj:weak-spectral-completeness`](#conj:weak-spectral-completeness):
   the H_2(q)-only formulation is dimensionally inconsistent;
   needs lift to $\mathrm{End}_R(A)$ with $n \geq 3$ Hoefsmit
-  cell-content data. ⚠ flagged in audit.
+  cell-content data (flagged in audit).
 - [`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization):
   the closed form $\mathcal{N}_{\rm sym}(q) = q^6 (1+q^2+q^4)/3$
   is currently the **trace-side** Plancherel partition (Fix B

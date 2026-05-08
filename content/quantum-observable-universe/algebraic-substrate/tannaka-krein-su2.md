@@ -1,12 +1,12 @@
 Continuing the
-[substrate parameter for SU(2)](#ex:substrate-parameter-su2),
+[substrate parameter for SU(2)](#ex\:substrate-parameter-su2),
 we execute the
-[Tannaka--Krein reconstruction](#thm:tannaka-krein-isomorphism)
+[Tannaka--Krein reconstruction](#thm\:tannaka-krein-isomorphism)
 algorithm concretely — replacing "the reconstruction theorem
 guarantees $\mathcal{H}_\xi$ is uniquely determined" with an explicit
 computation.
 
-**Step 1: the monoidal category.** Start with
+**Step 1: the :refterm[monoidal category]{#monoidal-category}.** Start with
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and the forgetful
 (fibre) functor $\tau \colon \mathbf{C} \to \mathrm{Vect}_\mathbb{C}$.
 The simple objects are $V_0, V_{1/2}, V_1, V_{3/2}, \ldots$ with
@@ -71,9 +71,9 @@ extract relations from the $R$-matrix.
 
 **Bring's surface specialisation.** On Bring's QOU, $q$ takes the
 value determined by the Descartes condition
-([constructive extraction of $q$](#ex:substrate-parameter-brings)),
+([constructive extraction of $q$](#ex\:substrate-parameter-brings)),
 and the reconstruction yields
 $\mathcal{O}_{q_{\mathrm{Bring}}}(\mathrm{SU}(2))$ equipped with
 its $S_5$-equivariant structure. The Reeb spectrum
-([constructive Reeb derivation](#ex:categorical-reeb-brings)) is
+([constructive Reeb derivation](#ex\:categorical-reeb-brings)) is
 automatically encoded in the weight spaces of $H$.

@@ -1,12 +1,12 @@
 In the quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$,
 the **speed of light** is the ratio of spatial to temporal information
 transfer within a light cone
-([light cone](#rem:light-cone-affine)).  It is a derived, $q$-dependent
+([light cone](#rem\:light-cone-affine)).  It is a derived, $q$-dependent
 quantity --- not a postulated constant and not trivially $1$.
 
 **The $q$-connection decomposition.**
 The archimedean $q$-connection
-([$q$-connection](#ex:q-connection)) splits the gauge potential
+([$q$-connection](#ex\:q-connection)) splits the gauge potential
 into horizontal (spatial) and vertical (Reeb/temporal) components:
 
 $$
@@ -35,7 +35,7 @@ $$
 $$
 
 This is the contact affine coordinate
-([contact affine chart](#def:contact-affine-chart)):
+([contact affine chart](#def\:contact-affine-chart)):
 $Z = \alpha_H / (\iota_\xi\alpha)$ evaluated on the
 $q$-connection, measuring the ratio of horizontal spatial diffusion
 to vertical quantum spin.
@@ -43,9 +43,9 @@ to vertical quantum spin.
 **Physical meaning.**
 In each discrete $f_q$-iteration:
 
-- The Reeb flow advances the fibre phase by $\hbar_q$ (temporal
+* The Reeb flow advances the fibre phase by $\hbar_q$ (temporal
   information: one tick of the internal clock).
-- The $q$-connection correlates the current fibre with adjacent
+* The $q$-connection correlates the current fibre with adjacent
   fibres at coupling $q^{-1}$ (spatial information: one step of
   horizontal propagation).
 
@@ -62,13 +62,13 @@ $$
 
 **Regime behaviour.**
 
-| Regime | $q$ | $c_q = 1/(q-1)$ | Interpretation |
-|--------|-----|-------------------|----------------|
-| Deep-quantum | $q \to \infty$ | $\to 0$ | No spatial propagation; each fibre is isolated |
-| Deep quantum | $\varphi^2 \approx 2.618$ | $\approx 0.618 = 1/\varphi$ | Sub-luminal; spatial coupling suppressed |
-| Our universe | $q_0$ | $\approx 9.12$ | ${\sim}9$ fibres correlated per Reeb phase advance |
-| Near-classical | $1.01$ | $100$ | Fast spatial propagation; nearly continuous |
-| Classical limit | $q \to 1^+$ | $\to \infty$ | Instantaneous spatial coupling; the $q$-connection reduces to $A$ |
+| Regime          | $q$                       | $c_q = 1/(q-1)$             | Interpretation                                                    |
+| --------------- | ------------------------- | --------------------------- | ----------------------------------------------------------------- |
+| Deep-quantum    | $q \to \infty$            | $\to 0$                     | No spatial propagation; each fibre is isolated                    |
+| Deep quantum    | $\varphi^2 \approx 2.618$ | $\approx 0.618 = 1/\varphi$ | Sub-luminal; spatial coupling suppressed                          |
+| Our universe    | $q_0$                     | $\approx 9.12$              | ${\sim}9$ fibres correlated per Reeb phase advance                |
+| Near-classical  | $1.01$                    | $100$                       | Fast spatial propagation; nearly continuous                       |
+| Classical limit | $q \to 1^+$               | $\to \infty$                | Instantaneous spatial coupling; the $q$-connection reduces to $A$ |
 
 At $q = q_0$, the speed of light is $c \approx 9.12$ in units
 where one Reeb phase advance $= 1$.  This is **not** $1$.  The
@@ -91,7 +91,7 @@ Reeb ticks.
 
 **Connection to the contact affine chart.**
 The light cone of an affine chart
-([light cone](#rem:light-cone-affine)) is the locus $|Z| = c_q$:
+([light cone](#rem\:light-cone-affine)) is the locus $|Z| = c_q$:
 the boundary where horizontal diffusion exactly matches vertical
 advance.  Inside the cone ($|Z| < c_q$), spatial signals arrive
 within one Reeb circuit.  Outside ($|Z| > c_q$), the signal
@@ -100,7 +100,7 @@ requires multiple Reeb circuits and is causally delayed.
 **Lieb--Robinson bound.**
 The locality of $\nabla_q$ (it acts on adjacent fibres only) and
 the unitarity of the $R$-matrix (norm-preserving braiding in the
-rigid monoidal category $\mathbf{C}$) give an exponential decay
+rigid :refterm[monoidal category]{#monoidal-category} $\mathbf{C}$) give an exponential decay
 outside the causal cone:
 
 $$
@@ -120,7 +120,7 @@ units of base-manifold distance.
 The total information transferred across the causal boundary per
 Planck time is the product of the speed of light (fibres correlated
 per tick) and the operational entropy per fibre
-([operational entropy](#def:operational-entropy)):
+([operational entropy](#def\:operational-entropy)):
 
 $$
   \mathcal{B}(q)
@@ -135,9 +135,9 @@ $\mathcal{B} = q\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
 
 **Comparison with information-theoretic speed limits.**
 
-| Result | Bound | QOU analog |
-|--------|-------|------------|
-| Margolus--Levitin (1998) | $\leq 2E/\pi\hbar$ ops/sec | $n_R(q) = 1/\hbar_q$ ops per Planck time |
-| Bremermann (1962) | $\leq mc^2/h$ bits/sec/kg | $\mathcal{B}(q) = q\eta_q / (q-1)^2$ bits per Planck time |
-| Bekenstein (1981) | $S \leq 2\pi RE / \hbar c$ | Fibre entropy $\leq \eta_q$ per operation |
-| Pawlowski (2009) | No-signaling from information causality | Lieb--Robinson decay outside $\lvert Z\rvert = c_q$ cone |
+| Result                   | Bound                                   | QOU analog                                                |
+| ------------------------ | --------------------------------------- | --------------------------------------------------------- |
+| Margolus--Levitin (1998) | $\leq 2E/\pi\hbar$ ops/sec              | $n_R(q) = 1/\hbar_q$ ops per Planck time                  |
+| Bremermann (1962)        | $\leq mc^2/h$ bits/sec/kg               | $\mathcal{B}(q) = q\eta_q / (q-1)^2$ bits per Planck time |
+| Bekenstein (1981)        | $S \leq 2\pi RE / \hbar c$              | Fibre entropy $\leq \eta_q$ per operation                 |
+| Pawlowski (2009)         | No-signaling from information causality | Lieb--Robinson decay outside $\lvert Z\rvert = c_q$ cone  |

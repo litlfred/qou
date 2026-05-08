@@ -71,7 +71,7 @@ theorem proton_tower_residual_frobenius :
     ∃ (ε : ℝ), abs ε ≤ electronMass * (2 / 1000) ∧
       protonCodata - protonTowerMass =
         electronMass * frobeniusCoCasimirTraceN3 + ε := by
-  -- ⚠ **EMPIRICAL GAP (not a missing-Lean-tactic gap).**
+  -- Caveat: empirical gap (not a missing-Lean-tactic gap).
   -- The witness numerics at q_0 = 1.10998 give:
   --   observed residual  m_p_CODATA - m_p_tower ≈ 1.2779 MeV
   --   predicted          m_e · (2 + 1/[2]_q_0)   ≈ 1.2761 MeV

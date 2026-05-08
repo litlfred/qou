@@ -1,10 +1,10 @@
 Every relation in the QU/QUO presentation
-([vertex algebra relations](#prop:vertex-algebra-relations)) lifts to
+([vertex algebra relations](#prop\:vertex-algebra-relations)) lifts to
 the jet bundle $J^n(A) = A_n$ via the brane tower
-([recursive brane tower](#def:recursive-brane-tower)).  The jet
+([recursive brane tower](#def\:recursive-brane-tower)).  The jet
 prolongation $L_{-1}\colon A_n \to A_{n+1}$ promotes each
 level-$n$ Iwahori--Hecke algebra $H^{(n)}(q)$ to a level-$(n{+}1)$ Hecke
-algebra $H^{(n+1)}(q)$, and the descent involution
+algebra $H^{(n+1)}(q)$, and the :refterm[descent]{#descent} involution
 $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the
 level-$(n{+}1)$ relations into **descended** (inherited from
 level $n$) and **transient** (genuinely new at level $n{+}1$).
@@ -13,9 +13,9 @@ Write $\sigma_i^{(n)}$ for the Hecke generators at brane level $n$,
 $\mathrm{tr}_M^{(n)}$ for the level-$n$ Markov trace, and
 $\check{R}^{(n)}$ for the $R$-matrix at level $n$.  The
 jet embedding is $\ell_n\colon H^{(n)}(q) \hookrightarrow H^{(n+1)}(q)$ with $\ell_n(\sigma_i^{(n)}) = \sigma_i^{(n+1)}$, and
-the descent is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q)$ with $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.
+the :refterm[descent]{#descent} is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q)$ with $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.
 
----
+***
 
 ## I. Structural relations on $J^n(A)$
 
@@ -157,11 +157,11 @@ The $q$-antisymmetriser $\mathrm{Alt}_2^{(n)} = \frac{1}{[2]_q}(\mathrm{id} - q^
 form at every level (same $q$), so the volume constraint is
 **level-independent**.
 
----
+***
 
-## II. Descent decomposition of relations
+## II. :refterm[Descent]{#descent} decomposition of relations
 
-The descent involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ is idempotent on $H^{(n+1)}(q)$ and
+The :refterm[descent]{#descent} involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ is idempotent on $H^{(n+1)}(q)$ and
 splits every relation into descended and transient parts.
 
 ### D-1: Descended Hecke generators
@@ -203,7 +203,7 @@ $$
   =  0.
 $$
 
-### D-3: Descent of the Frobenius relation
+### D-3: :refterm[Descent]{#descent} of the Frobenius relation
 
 The Frobenius sliding relation (J-2a) splits as:
 
@@ -225,11 +225,11 @@ entirely determined by level $n$.
 
 ### D-4: Bosonic vs fermionic modes
 
-The descent eigenspaces
-([descent eigenspaces](#prop:descent-eigenspaces)) separate
+The :refterm[descent]{#descent} eigenspaces
+([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)) separate
 modes by statistics:
 
-- **Bosonic (longitudinal)**: $w \in \mathcal{A}^{\mathrm{desc}}_{n+1}$
+* **Bosonic (longitudinal)**: $w \in \mathcal{A}^{\mathrm{desc}}_{n+1}$
   satisfies $\hat{\tau}_n(w) = w$.  In knot coordinates: braid words
   whose Markov trace is fully determined at level $n$:
 
@@ -237,7 +237,7 @@ $$
   \mathrm{tr}_M^{(n+1)}(w) =  \mathrm{tr}_M^{(n)}(\mathfrak{d}_{n+1}(w)).
 $$
 
-- **Fermionic (ladder)**: $w \in \mathcal{A}^{\mathrm{trans}}_{n+1}$
+* **Fermionic (ladder)**: $w \in \mathcal{A}^{\mathrm{trans}}_{n+1}$
   satisfies $\hat{\tau}_n(w) = 0$.  In knot coordinates: braid words
   whose Markov trace vanishes when descended:
 
@@ -248,7 +248,7 @@ $$
 Fermionic modes are the jet-created braid words with no
 analogue at the previous level.
 
----
+***
 
 ## III. Cohomological relations on $J^n(A)$
 
@@ -387,7 +387,7 @@ $$
   \delta_{q,n} T_\beta^{(n)} = 0.
 $$
 
-The harmonic space decomposes under descent:
+The harmonic space decomposes under :refterm[descent]{#descent}:
 
 $$
   \ker \Delta_{q,n+1}
@@ -417,7 +417,7 @@ $$
 
 The cosimplicial structure links adjacent levels: the coface
 map $\delta^i$ is jet prolongation $\ell_n$, and the
-codegeneracy $\sigma^j$ is descent $\mathfrak{d}_{n+1}$.
+codegeneracy $\sigma^j$ is :refterm[descent]{#descent} $\mathfrak{d}_{n+1}$.
 The cosimplicial identities in knot coordinates:
 
 $$
@@ -449,53 +449,53 @@ $\mathcal{A}_\infty$.  The global gluing condition ensures
 that locally defined braid words patch into a well-defined
 element of the direct limit.
 
----
+***
 
 ## IV. Summary: relations on $J^n(A)$
 
 **Structural (level-$n$ lifts of QU/QUO)**:
 
-| Label | Relation at level $n$ | Source |
-|-------|----------------------|--------|
-| J-1a | $\sigma_i^{(n)2} = (q-q^{-1})\sigma_i^{(n)} + 1$ | QU-1a |
-| J-1b | $\sigma_i^{(n)}\sigma_{i+1}^{(n)}\sigma_i^{(n)} = \sigma_{i+1}^{(n)}\sigma_i^{(n)}\sigma_{i+1}^{(n)}$ | QU-1b |
-| J-1c | $\sigma_i^{(n)}\sigma_j^{(n)} = \sigma_j^{(n)}\sigma_i^{(n)}$ | QU-1c |
-| J-2a | $\Delta_n \circ \mu_n = (\mu_n \otimes 1)(1 \otimes \Delta_n)$ | QU-2b |
-| J-2b | $S_n(\sigma_i^{(n)}) = \sigma_i^{(n)} - (q-q^{-1})$ | QU-2d |
-| J-3a | $\mathrm{tr}_M^{(n)}(\sigma_i^{(n)}w) = \mathrm{tr}_M^{(n)}(w\sigma_i^{(n)})$ | QU-3a |
-| J-3b | $\mathrm{tr}_M^{(n)}(w\sigma_m^{(n)\pm 1}) = \delta^{-1}\mathrm{tr}_M^{(n)}(w)$ | QU-3b |
-| J-3c | $\mathrm{tr}_M^{(n+1)}(\ell_n(w)) = \mathrm{tr}_M^{(n)}(w)$ | New (inter-level) |
-| J-4a | $[L_{-1}, a_m^{(n)}] = -ma_{m-1}^{(n+1)}$ | QU-4a (inter-level) |
-| J-5 | $\sigma_i^{(n)}w\sigma_i^{(n)-1}=w\forall i \Rightarrow w \in R$ | QUO-2 |
-| J-6 | $\epsilon_n \circ \mathrm{Alt}_2^{(n)} = \epsilon_n$ | QUO-4 |
+| Label | Relation at level $n$                                                                                 | Source              |
+| ----- | ----------------------------------------------------------------------------------------------------- | ------------------- |
+| J-1a  | $\sigma_i^{(n)2} = (q-q^{-1})\sigma_i^{(n)} + 1$                                                      | QU-1a               |
+| J-1b  | $\sigma_i^{(n)}\sigma_{i+1}^{(n)}\sigma_i^{(n)} = \sigma_{i+1}^{(n)}\sigma_i^{(n)}\sigma_{i+1}^{(n)}$ | QU-1b               |
+| J-1c  | $\sigma_i^{(n)}\sigma_j^{(n)} = \sigma_j^{(n)}\sigma_i^{(n)}$                                         | QU-1c               |
+| J-2a  | $\Delta_n \circ \mu_n = (\mu_n \otimes 1)(1 \otimes \Delta_n)$                                        | QU-2b               |
+| J-2b  | $S_n(\sigma_i^{(n)}) = \sigma_i^{(n)} - (q-q^{-1})$                                                   | QU-2d               |
+| J-3a  | $\mathrm{tr}_M^{(n)}(\sigma_i^{(n)}w) = \mathrm{tr}_M^{(n)}(w\sigma_i^{(n)})$                         | QU-3a               |
+| J-3b  | $\mathrm{tr}_M^{(n)}(w\sigma_m^{(n)\pm 1}) = \delta^{-1}\mathrm{tr}_M^{(n)}(w)$                       | QU-3b               |
+| J-3c  | $\mathrm{tr}_M^{(n+1)}(\ell_n(w)) = \mathrm{tr}_M^{(n)}(w)$                                           | New (inter-level)   |
+| J-4a  | $[L_{-1}, a_m^{(n)}] = -ma_{m-1}^{(n+1)}$                                                             | QU-4a (inter-level) |
+| J-5   | $\sigma_i^{(n)}w\sigma_i^{(n)-1}=w\forall i \Rightarrow w \in R$                                      | QUO-2               |
+| J-6   | $\epsilon_n \circ \mathrm{Alt}_2^{(n)} = \epsilon_n$                                                  | QUO-4               |
 
-**Descent decomposition**:
+**:refterm[Descent]{#descent} decomposition**:
 
-| Label | Relation | Content |
-|-------|----------|---------|
-| D-1 | $\hat{\tau}_n(\sigma_i^{(n+1)}) = \sigma_i^{(n+1)}$ for $i \leq n-1$ | Base generators descended |
-| D-2 | $\hat{\tau}_n(\sigma^{(n+1)}_{\mathrm{new}}) = 0$ | Transient generators |
-| D-3 | $\Delta_n\mu_n = \hat{\tau}_n(\Delta_{n+1}\mu_{n+1}) + (1-\hat{\tau}_n)(\cdots)$ | Frobenius descent |
-| D-4 | $\hat{\tau}_n(w) = w$ (bosonic) vs $\hat{\tau}_n(w) = 0$ (fermionic) | Statistics from descent |
+| Label | Relation                                                                         | Content                                     |
+| ----- | -------------------------------------------------------------------------------- | ------------------------------------------- |
+| D-1   | $\hat{\tau}_n(\sigma_i^{(n+1)}) = \sigma_i^{(n+1)}$ for $i \leq n-1$             | Base generators descended                   |
+| D-2   | $\hat{\tau}_n(\sigma^{(n+1)}_{\mathrm{new}}) = 0$                                | Transient generators                        |
+| D-3   | $\Delta_n\mu_n = \hat{\tau}_n(\Delta_{n+1}\mu_{n+1}) + (1-\hat{\tau}_n)(\cdots)$ | Frobenius :refterm[descent]{#descent}       |
+| D-4   | $\hat{\tau}_n(w) = w$ (bosonic) vs $\hat{\tau}_n(w) = 0$ (fermionic)             | Statistics from :refterm[descent]{#descent} |
 
 **Cohomological (level-$n$ lifts)**:
 
-| Label | Relation at level $n$ | Source |
-|-------|----------------------|--------|
-| JC-1 | $d_n^2 = 0$ on $\Omega^k_H(A_n)$ | C-1 |
-| JC-2 | $d_{q,n}^2\alpha = q^{-1}(1-q^{-1})\omega_V^{(n)}\wedge_q[\xi_n,\alpha]$ | C-2 |
-| JC-3 | $\mathrm{tr}_M^{(n)}(\mathrm{id}) = -6$ for all $n$ | C-4 |
-| JC-4 | $\kappa_n = \mathrm{tr}_M^{(n+1)}((1-\hat{\tau}_n)\check{R}^{(n+1)}) \neq 0$ | C-5 |
-| JC-5 | $b_k(A_{n+1}) = b_k(A_n) + b_k^{\mathrm{trans}}$ | C-6 |
-| JC-6 | $S_n([\sigma_i^{(n)},\sigma_j^{(n)}])^* = [\sigma_i^{(n)},\sigma_j^{(n)}]$ | C-7 |
-| JC-7 | $\ker\Delta_{q,n+1} = \ell_n(\ker\Delta_{q,n}) \oplus (\ker\Delta_{q,n+1} \cap \mathcal{A}^{\mathrm{trans}})$ | C-8 |
-| JC-8 | $T_{g^{(n)}_{ijk}}T_{g^{(n)}_{jkl}} = T_{a^{(n)}_{ij}}T_{g^{(n)}_{ikl}}T_{a^{(n)}_{kl}}^{-1}$ | C-10 |
-| JC-9 | $\mathrm{tr}_M^{(\infty)}(w_\infty) = \mathrm{tr}_M^{(0)}(w^{(0)})$ | Global gluing |
+| Label | Relation at level $n$                                                                                         | Source        |
+| ----- | ------------------------------------------------------------------------------------------------------------- | ------------- |
+| JC-1  | $d_n^2 = 0$ on $\Omega^k_H(A_n)$                                                                              | C-1           |
+| JC-2  | $d_{q,n}^2\alpha = q^{-1}(1-q^{-1})\omega_V^{(n)}\wedge_q[\xi_n,\alpha]$                                      | C-2           |
+| JC-3  | $\mathrm{tr}_M^{(n)}(\mathrm{id}) = -6$ for all $n$                                                           | C-4           |
+| JC-4  | $\kappa_n = \mathrm{tr}_M^{(n+1)}((1-\hat{\tau}_n)\check{R}^{(n+1)}) \neq 0$                                  | C-5           |
+| JC-5  | $b_k(A_{n+1}) = b_k(A_n) + b_k^{\mathrm{trans}}$                                                              | C-6           |
+| JC-6  | $S_n([\sigma_i^{(n)},\sigma_j^{(n)}])^* = [\sigma_i^{(n)},\sigma_j^{(n)}]$                                    | C-7           |
+| JC-7  | $\ker\Delta_{q,n+1} = \ell_n(\ker\Delta_{q,n}) \oplus (\ker\Delta_{q,n+1} \cap \mathcal{A}^{\mathrm{trans}})$ | C-8           |
+| JC-8  | $T_{g^{(n)}_{ijk}}T_{g^{(n)}_{jkl}} = T_{a^{(n)}_{ij}}T_{g^{(n)}_{ikl}}T_{a^{(n)}_{kl}}^{-1}$                 | C-10          |
+| JC-9  | $\mathrm{tr}_M^{(\infty)}(w_\infty) = \mathrm{tr}_M^{(0)}(w^{(0)})$                                           | Global gluing |
 
 The total presentation on $J^n(A)$ comprises **34 relations**:
-11 structural (level-$n$ QU/QUO), 4 descent, 9 cohomological,
+11 structural (level-$n$ QU/QUO), 4 :refterm[descent]{#descent}, 9 cohomological,
 plus the 2 inter-level relations J-3c and J-4a that connect
 adjacent brane levels.  All are expressed in the level-$n$
 Hecke generators $\sigma_i^{(n)}$, the level-$n$ Markov trace
-$\mathrm{tr}_M^{(n)}$, and the descent involution
+$\mathrm{tr}_M^{(n)}$, and the :refterm[descent]{#descent} involution
 $\hat{\tau}_n$.

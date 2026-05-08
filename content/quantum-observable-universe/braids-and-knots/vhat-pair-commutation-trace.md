@@ -1,5 +1,5 @@
 The jet-tower mass formula
-([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower))
+([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower))
 contains a "pentagon ascension" argument that informally cites the
 quantum-dilogarithm pentagon identity
 $\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$ —
@@ -13,8 +13,9 @@ giving the precise algebraic statement and a one-paragraph proof.
 The headline: **the traced volumes commute.** The pentagon
 ascension argument is therefore **not load-bearing on the
 operator pentagon identity**; the same conclusion (singletons
-+ pairs + jet ascension) follows from Markov-trace factorization
-without any q-commutation input.
+
+* pairs + jet ascension) follows from Markov-trace factorization
+  without any q-commutation input.
 
 ## Statement
 
@@ -29,7 +30,7 @@ $$
 
 with $a_i, b_i \in \mathbb{Z}[q^{\pm 1/2}]$ determined by the
 braid word and the Hecke normal form
-([def:algebraic-quantum-volume](#def:algebraic-quantum-volume)).
+([def:algebraic-quantum-volume](#def\:algebraic-quantum-volume)).
 
 **Lemma (pair commutation at traced-volume level).**
 *For any two indices $i, j$ — adjacent or non-adjacent —*
@@ -61,13 +62,13 @@ lift" below).*
 
 The traced volume $\hat V_i(q) = z(q)\,a_i(q) + b_i(q)$ is, by
 construction
-([def:algebraic-quantum-volume §partial-product expansion](#def:algebraic-quantum-volume)),
+([def:algebraic-quantum-volume §partial-product expansion](#def\:algebraic-quantum-volume)),
 an element of the **commutative** Laurent polynomial ring
 $\mathbb{Z}[q^{\pm 1/2}, z]$ — the coefficients $a_i, b_i$ are
 polynomials in $q^{\pm 1/2}$ and $z$ is a single transcendental
 parameter (the Markov parameter, eliminated by
 $z = 1/(q^{1/2} + q^{-1/2})$ at the end of every Markov peel,
-[`thm:jones-markov-trace`](#thm:jones-markov-trace)).
+[`thm:jones-markov-trace`](#thm\:jones-markov-trace)).
 
 Two elements of a commutative ring commute. Hence
 
@@ -77,7 +78,7 @@ $$
 
 Applying $\mathrm{tr}_M$ (which is $\mathbb{Z}[q^{\pm 1/2}, z]$-
 linear) and invoking the pair Markov-trace identity
-([prop:markov-pair-z2](#prop:markov-pair-z2)) gives the second
+([prop:markov-pair-z2](#prop\:markov-pair-z2)) gives the second
 equality $\mathrm{tr}_M(\hat V_i \hat V_j) = z^2$ for **all**
 $i, j$ — adjacent or not. $\square$
 
@@ -94,12 +95,12 @@ $uv$ values and **does not hold generically**. So the pentagon
 identity does *not* apply to scalar $\hat V$'s.
 
 This means the pentagon ascension argument as stated in
-[`rem:mass-endomorphism-jet-tower`](#rem:mass-endomorphism-jet-tower)
+[`rem:mass-endomorphism-jet-tower`](#rem\:mass-endomorphism-jet-tower)
 is **morally correct** (singletons + pairs at level $n$, defects
 of order $\geq 3$ ascending to level $n+1$) but **not derived
 from the operator pentagon**. The actual derivation goes through
 Markov-trace factorization
-([`thm:markov-trace-factorization`](#thm:markov-trace-factorization)):
+([`thm:markov-trace-factorization`](#thm\:markov-trace-factorization)):
 
 1. The traced product $\mathrm{tr}_M(\prod_i \hat V_i)$ factors
    as a sum over subset structures on $\{i_1, \dots, i_n\}$, with
@@ -108,7 +109,7 @@ Markov-trace factorization
 3. Pairs contribute $z^2 \sum_{i < j} \Phi_q(|\hat V_i \hat V_j|)$.
 4. Order-$\geq 3$ subsets do **not** contribute as new level-$n$
    terms; instead, they reorganise into singleton/pair structures
-   at jet level $n+1$ via the brane-tower descent (which carries
+   at jet level $n+1$ via the brane-tower :refterm[descent]{#descent} (which carries
    an explicit $q$-grading separating levels).
 
 Step 4 is the categorical content of "ascension". The operator
@@ -124,7 +125,7 @@ admits a non-commutative quantization in which the level-shift
 operator $\hat\tau_n$ supplies the canonical pair $u, v$
 satisfying $uv = q\,vu$. Specifically, if $\widehat U_i$ and
 $\widehat V_j$ denote level-shift conjugates of $\hat V_i$ and
-$\hat V_j$ at adjacent jet levels $n$ and $n+1$, the descent
+$\hat V_j$ at adjacent jet levels $n$ and $n+1$, the :refterm[descent]{#descent}
 involution induces
 
 $$
@@ -148,10 +149,10 @@ inter-level pentagon governs the ascension.
 
 ## Status
 
-🟢 **Provable** — the lemma's content is just commutativity of
+**Status: provable** — the lemma's content is just commutativity of
 a Laurent polynomial ring, and the trace identity follows by
 linearity from
-[`prop:markov-pair-z2`](#prop:markov-pair-z2). The corresponding
+[`prop:markov-pair-z2`](#prop\:markov-pair-z2). The corresponding
 Lean stub
 ([qou:QOU.BraidKnot.VhatPairCommutationTrace](vhat-pair-commutation-trace.lean))
 states the lemma in $\mathbb{Z}[q^{\pm 1/2}, z]$ and proves it
@@ -161,7 +162,7 @@ This block closes audit GAP 17a
 ([line 113 of `derivation-audit-2026-04-20.md`](../../../docs/audits/derivation-audit-2026-04-20.md))
 and the corresponding "Pentagon → uv-commutation" subconjecture
 in
-[`rem:mass-endomorphism-jet-tower`](#rem:mass-endomorphism-jet-tower)
+[`rem:mass-endomorphism-jet-tower`](#rem\:mass-endomorphism-jet-tower)
 §"Remaining open subconjectures" (item 2): the question is
 resolved by recognising that the V-hats commute as scalars and
 the pentagon ascension's rigorous content is Markov-trace

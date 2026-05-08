@@ -1,5 +1,5 @@
 The proof mirrors the ascent
-([jet prolongation](#prop:jet-prolongation)) in reverse, working inside $\mathbf{C}$.
+([jet prolongation](#prop\:jet-prolongation)) in reverse, working inside $\mathbf{C}$.
 
 *Step 1: Frobenius restriction.*
 The jet object $J^1(A) = A \otimes \Omega^1(A)$ at level $n$ contains $A$
@@ -25,7 +25,7 @@ from the direct-summand inclusion $A \hookrightarrow J^1(A)$.  The
 vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is
 unchanged since we recover $A$.
 
-*Step 4: The descent homomorphism.*
+*Step 4: The :refterm[descent]{#descent} homomorphism.*
 Applying $\tau$ to $r_n$ yields
 $\mathfrak{d}_n\colon \Gamma(J^1 \mathcal{S}_n, \mathrm{SU}_{q_n}(2)) \to \Gamma(J^1 \mathcal{S}_{n-1}, \mathrm{SU}_{q_{n-1}}(2))$,
 a $*$-homomorphism because $r_n$ preserves multiplication and antipode.

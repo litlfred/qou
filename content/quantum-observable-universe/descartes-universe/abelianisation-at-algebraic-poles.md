@@ -1,18 +1,18 @@
 **Conjecture (MI abelianisation at algebraic poles).**
 *At each $\tau_{\mathrm{arch}}$-image of a $q$-Pochhammer denominator
 zero, the nonabelian multiplicative integral
-([mass identity](#def:mass-identity))
+([mass identity](#def\:mass-identity))
 trivialises and abelianises: the gauge connection reduces strictly
 to its Cartan component and becomes the prolonged Seiberg–Witten
 differential $\lambda_{\mathrm{SW}}^{(n)} = X\, dz$.*
 
 Equivalently, for each algebraic denominator zero $x = q_0^{-k}$ of
 $\Phi_n(x; q_0)$
-([q-Pochhammer partial product](#def:q-pochhammer-partial-product)),
+([q-Pochhammer partial product](#def\:q-pochhammer-partial-product)),
 the matched complex critical point $z_c = \tau_{\mathrm{arch}}(q_0^{-k})$
 sits on an exceptional divisor $\mathcal{S}_c \cong
 \mathbb{P}^1(\mathbb{C})$
-([Bring's surface smoothness](#rem:brings-smoothness)),
+([Bring's surface smoothness](#rem\:brings-smoothness)),
 and the restriction of the MI to $\mathcal{S}_c$ collapses to the
 $n$-th prolonged SW period:
 
@@ -29,10 +29,10 @@ $$
 
 The conjecture pins down **where** the abelianisation occurs. The
 existing
-[MI–SW abelianisation](#prop:mi-sw-abelianisation)
+[MI–SW abelianisation](#prop\:mi-sw-abelianisation)
 proposition shows that the MI collapses to the SW prolongation on
 each exceptional divisor; the existing
-[MI–SW abelianisation Cartan](#lem:mi-sw-abelianisation-cartan)
+[MI–SW abelianisation Cartan](#lem\:mi-sw-abelianisation-cartan)
 lemma identifies the trivialised connection with its Cartan
 component. Neither block specifies which exceptional divisors are
 visited by a given categorical state $T_w$.
@@ -41,7 +41,7 @@ The present conjecture supplies the missing address: the visited
 divisors are **exactly** the $\tau_{\mathrm{arch}}$-images of the
 algebraic denominator zeros of the $q$-Pochhammer partial product
 attached to $T_w$. Combined with
-[denominator zeros = SW critical points](#conj:denominator-zeros-as-sw-critical-points),
+[denominator zeros = SW critical points](#conj\:denominator-zeros-as-sw-critical-points),
 this gives the algebraic-side prescription for the abelianisation
 loci.
 
@@ -55,7 +55,7 @@ Two facts conspire:
    The nonabelian connection therefore admits a global gauge in which
    it is constant on $\mathcal{S}_c$.
 
-2. **Algebraic**: quantum flatness at the pole. The denominator
+2. **Algebraic**: :refterm[quantum flatness]{#quantum-flatness} at the pole. The denominator
    factor $(1 - x q^k) \to 0$ at $x = q^{-k}$ forces the
    corresponding categorical curvature contribution to lie in the
    weight-$0$ sector of the Hecke representation. Under the gauge
@@ -70,26 +70,26 @@ Cartan component within it.
 ## Proof sketch (modulo upstream)
 
 Assume
-([MI–SW abelianisation](#prop:mi-sw-abelianisation)),
-([MI–SW abelianisation Cartan](#lem:mi-sw-abelianisation-cartan)),
+([MI–SW abelianisation](#prop\:mi-sw-abelianisation)),
+([MI–SW abelianisation Cartan](#lem\:mi-sw-abelianisation-cartan)),
 and
-([denominator zeros = SW critical points](#conj:denominator-zeros-as-sw-critical-points)).
+([denominator zeros = SW critical points](#conj\:denominator-zeros-as-sw-critical-points)).
 
 1. **Locus.** By
-   ([denominator zeros = SW critical points](#conj:denominator-zeros-as-sw-critical-points)),
+   ([denominator zeros = SW critical points](#conj\:denominator-zeros-as-sw-critical-points)),
    each algebraic zero $x = q_0^{-k}$ lifts under
    $\tau_{\mathrm{arch}}$ to a critical point $z_c$ of $\Delta(z)$,
    and each $z_c$ sits on an exceptional divisor $\mathcal{S}_c$
-   ([Bring's surface smoothness](#rem:brings-smoothness)).
+   ([Bring's surface smoothness](#rem\:brings-smoothness)).
 
 2. **Trivialisation.** By
-   ([MI–SW abelianisation](#prop:mi-sw-abelianisation)),
+   ([MI–SW abelianisation](#prop\:mi-sw-abelianisation)),
    the MI restricted to any exceptional divisor abelianises to the
    prolonged SW period; the gauge witness is
    $\pi_1(\mathrm{SU}(2)) = 0$.
 
 3. **Cartan reduction.** By
-   ([MI–SW abelianisation Cartan](#lem:mi-sw-abelianisation-cartan)),
+   ([MI–SW abelianisation Cartan](#lem\:mi-sw-abelianisation-cartan)),
    the surviving connection is its Cartan component
    $X\, dz = \lambda_{\mathrm{SW}}^{(n)}$.
 

@@ -49,6 +49,7 @@ theorem ConfinementCategory
     (P Q R S : ConfinedParticleTy)
     (f : ConfMorphism P Q) (g : ConfMorphism Q R) (h : ConfMorphism R S) :
     ConfComp h (ConfComp g f) = ConfComp (ConfComp h g) f := by
+  -- Ref: [manuscript] braids-and-knots/confined-particle
   sorry
 
 end QOU.BraidKnot

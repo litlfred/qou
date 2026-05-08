@@ -166,6 +166,7 @@ theorem plancherel_completeness
   -- Follows from tr_M(1_n) = 1 and Wedderburn block decomposition.
   -- Verified empirically to <1e-15 for n=2..12 in
   -- y-lambda-jones-markov-witness.json.
+  -- Ref: [manuscript] thm:jones-markov-trace base case;
   sorry
 
 end QOU.BraidsAndKnots

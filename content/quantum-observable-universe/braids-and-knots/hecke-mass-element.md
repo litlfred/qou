@@ -1,13 +1,13 @@
 Let $(\mathbf{C}, A, \tau)$ be a
-([quantum observable universe](#def:quantum-observable-universe)) with
+([quantum observable universe](#def\:quantum-observable-universe)) with
 Hecke algebra $H_n(R, q)$
-([Hecke algebra](#rem:hecke-algebra-from-braiding)) and Markov trace
+([Hecke algebra](#rem\:hecke-algebra-from-braiding)) and Markov trace
 $\mathrm{tr}_M \colon H_n(R, q) \to k$
-([Jones--Markov trace](#thm:jones-markov-trace)).
+([Jones--Markov trace](#thm\:jones-markov-trace)).
 
 Let $\varrho \colon \mathbf{1} \to A$ be a vortex morphism with braid
 representative $\beta \in B_n$.  The **mass integrand**
-([mass identity](#def:mass-identity)) is the composition
+([mass identity](#def\:mass-identity)) is the composition
 
 $$
   \alpha_\varrho
@@ -36,8 +36,8 @@ $$
   \;\in\; H_n(R, q).
 $$
 
-The descent involution $\hat{\tau}_n$
-([descent eigenspaces](#prop:descent-eigenspaces)) induces an
+The :refterm[descent]{#descent} involution $\hat{\tau}_n$
+([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)) induces an
 idempotent decomposition within $H_n(R, q)$:
 
 $$

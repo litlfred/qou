@@ -17,7 +17,7 @@ structural results that establish both its existence and its
 uniqueness:
 
 1. *Two-strand spectral completeness*
-   ([completeness theorem](#thm:em-spectral-completeness)) shows
+   ([completeness theorem](#thm\:em-spectral-completeness)) shows
    $\mathrm{End}_{\mathbf{C}}(A \otimes A)$ has $R$-rank $2$, with
    exactly two central idempotents $e_+, e_-$ summing to $\mathrm{id}$.
    Plancherel completeness $w_+ + w_- = 1$ exhausts the Frobenius
@@ -30,7 +30,7 @@ uniqueness:
    normalisation, and the antisymmetric eigenvalue captures the
    *entirety* of the EM coupling.
 3. *Force-carrier uniqueness*
-   ([Bring uniqueness](#prop:force-carrier-bring-uniqueness)):
+   ([Bring uniqueness](#prop\:force-carrier-bring-uniqueness)):
    genus-$4$ torus knots are exhausted by $\{T_{2,9}, T_{3,5}\}$
    alone (a Diophantine fact: $(m-1)(n-1)=8$ with $\gcd(m,n)=1$,
    $m \leq n$ has only the solutions $(2,9)$ and $(3,5)$).  The
@@ -71,7 +71,7 @@ contributions:
 The electromagnetic charge of a knot $K$ is its $q$-writhe, the
 antisymmetric crossing count under the crossing reversal involution
 $\sigma$
-([antiparticle crossing reversal](#prop:antiparticle-crossing-reversal)):
+([antiparticle crossing reversal](#prop\:antiparticle-crossing-reversal)):
 
 $$
   Q_q(K) =  [w(K)]_q
@@ -85,7 +85,7 @@ combinatorial: a finite sum of $\pm 1$ values, $q$-deformed.
 
 *Layer 2: Coupling strength (singlet idempotent).*
 The two-strand spectral completeness theorem
-([completeness](#thm:em-spectral-completeness)) decomposes the
+([completeness](#thm\:em-spectral-completeness)) decomposes the
 braiding into central idempotents:
 
 $$
@@ -104,19 +104,19 @@ $$
 $$
 
 This is the **bare gauge coupling**: by uniqueness of the singlet
-([completeness corollary](#thm:em-spectral-completeness)), it is
+([completeness corollary](#thm\:em-spectral-completeness)), it is
 the *full* scalar exchange amplitude — there is no second EM-like
 channel to add.  It is a unit in $R$, with no transcendental
 content.
 
 *Layer 3: Force-carrier complexity (Bring-forced denominator).*
 By the genus-$4$ uniqueness theorem
-([Bring uniqueness](#prop:force-carrier-bring-uniqueness)), the
+([Bring uniqueness](#prop\:force-carrier-bring-uniqueness)), the
 force-carrier sector of any Bring-supported QOU is *exactly* the
 two-element set $\{T_{2,9}, T_{3,5}\}$ — no choice is being made.
 Their categorical $q$-dimensions are $\dim_q T_{2,9} = [9]_q$ and
 $\dim_q T_{3,5} = [10]_q$, both elements of $R$.  The strong/weak
-labelling ([force identification](#rem:force-knot-identification))
+labelling ([force identification](#rem\:force-knot-identification))
 selects which knot mediates which sector but does not affect the
 product $[9]_q \cdot [10]_q$, which is the categorical complexity
 of the entire force-carrier object.  The electromagnetic coupling
@@ -144,17 +144,17 @@ torus pair).
 
 Every ingredient lives in the commutative ring $R$:
 
-- The charge $Q_q = [w]_q \in R$ is a ratio of $q$-powers — no
+* The charge $Q_q = [w]_q \in R$ is a ratio of $q$-powers — no
   integral.
-- The coupling $q^{-1} \in R^\times$ is the singlet idempotent's
+* The coupling $q^{-1} \in R^\times$ is the singlet idempotent's
   squared $\tau$-trace — by spectral completeness
-  ([completeness](#thm:em-spectral-completeness)) the *only*
+  ([completeness](#thm\:em-spectral-completeness)) the *only*
   scalar two-strand amplitude.
-- The normalisation $[9]_q \cdot [10]_q \in R$ is the categorical
+* The normalisation $[9]_q \cdot [10]_q \in R$ is the categorical
   complexity of the *unique* genus-$4$ torus pair — by Bring
-  uniqueness ([Bring uniqueness](#prop:force-carrier-bring-uniqueness))
+  uniqueness ([Bring uniqueness](#prop\:force-carrier-bring-uniqueness))
   the *only* available denominator.
-- The spatial dependence (Coulomb $1/r^2$) is added by the
+* The spatial dependence (Coulomb $1/r^2$) is added by the
   Green's function of the base manifold, external to
   $\alpha_{\mathrm{EM}}$.
 
@@ -174,7 +174,7 @@ value $\alpha^{-1} \approx 137$ requires $q > 1$; the departure
 from the classical limit is what makes the coupling weaker than
 $1/90$.
 
-**Descent decomposition: Chern-Simons correction.**
+**:refterm[Descent]{#descent} decomposition: Chern-Simons correction.**
 
 The bare formula $\alpha^{-1} = q \cdot [9]_q \cdot [10]_q$ gives
 the **base holonomy** of the electromagnetic endomorphism — the
@@ -185,7 +185,7 @@ $\lambda_V \cdot A$ in the mass formula.
 The full coupling receives an **exceptional divisor correction**
 from the Chern-Simons invariants of the force-carrier torus knots
 $T_{2,9}$ and $T_{3,5}$
-([EM coupling Chern-Simons](#conj:em-coupling-chern-simons)):
+([EM coupling Chern-Simons](#conj\:em-coupling-chern-simons)):
 
 $$
   \frac{1}{\alpha_{\mathrm{EM}}}
@@ -212,7 +212,7 @@ capturing self-dual damping at the second jet level.  Both
 $\delta_{\mathrm{CS}}$ and $\kappa$ are **derived** from the
 Chern–Simons invariants and the Bring-surface Gram matrix — no
 free parameters are introduced
-([EM coupling Chern-Simons](#conj:em-coupling-chern-simons)).
+([EM coupling Chern-Simons](#conj\:em-coupling-chern-simons)).
 
 The Chern-Simons invariants of torus knots
 $T_{m,n}$ are given by the universal formula
@@ -229,26 +229,26 @@ Planck constant is $\hbar_q = (q - 1)/q$.
 
 **Numerical evaluation.**
 
-| Quantity | Value |
-|----------|-------|
-| Base: $q \cdot [9]_q \cdot [10]_q$ | $136.823$ |
-| $\mathrm{CS}(T_{2,9})$ | $\pi^2 \cdot 10/9 \approx 10.966$ |
-| $\mathrm{CS}(T_{3,5})$ | $\pi^2 \cdot 16/15 \approx 10.528$ |
-| $\hbar_q^2$ | $0.009817$ |
-| $[2]_q / 2$ | $1.00545$ |
-| $\delta_{\mathrm{CS}}$ | $0.001551$ |
-| $\kappa$ | $1.722$ |
-| $\alpha^{-1}_{\mathrm{CS}}$ | $\mathbf{137.035944}$ |
-| CODATA 2018 | $137.035999084(21)$ |
-| Residual | $399\;\mathrm{ppb}$ |
+| Quantity                           | Value                              |
+| ---------------------------------- | ---------------------------------- |
+| Base: $q \cdot [9]_q \cdot [10]_q$ | $136.823$                          |
+| $\mathrm{CS}(T_{2,9})$             | $\pi^2 \cdot 10/9 \approx 10.966$  |
+| $\mathrm{CS}(T_{3,5})$             | $\pi^2 \cdot 16/15 \approx 10.528$ |
+| $\hbar_q^2$                        | $0.009817$                         |
+| $[2]_q / 2$                        | $1.00545$                          |
+| $\delta_{\mathrm{CS}}$             | $0.001551$                         |
+| $\kappa$                           | $1.722$                            |
+| $\alpha^{-1}_{\mathrm{CS}}$        | $\mathbf{137.035944}$              |
+| CODATA 2018                        | $137.035999084(21)$                |
+| Residual                           | $399\;\mathrm{ppb}$                |
 
 The Chern-Simons correction was claimed to reduce the discrepancy from
 $0.155\%$ (bare formula) to $399\;\mathrm{ppb}$. **However, audit
 shows** the $\kappa \approx 1.722$ value used here was admitted as
 `sorry` in the Lean formalisation and never closed; matching CODATA
 exactly requires $\kappa \approx 1.8878$. See
-[`conj:em-coupling-chern-simons`](#conj:em-coupling-chern-simons) for
-the demoted statement and [open problems](#rem:alpha-em-derivation-open-problems)
+[`conj:em-coupling-chern-simons`](#conj\:em-coupling-chern-simons) for
+the demoted statement and [open problems](#rem\:alpha-em-derivation-open-problems)
 for the path forward.
 
 **Open problem: closing the $0.155\%$ bare residual.**
@@ -298,14 +298,14 @@ the multiplicative-family ruling. Neither has been established.
 
 **Physical interpretation.**
 
-The descent decomposition of the coupling mirrors that of the mass:
+The :refterm[descent]{#descent} decomposition of the coupling mirrors that of the mass:
 
-| | Mass | Coupling |
-|---|---|---|
-| **Base term** | $\lambda_V \cdot A$ (volume holonomy) | $q \cdot [9]_q \cdot [10]_q$ ($R$-matrix eigenvalue $\times$ $q$-dimensions) |
+|                        | Mass                                          | Coupling                                                                          |
+| ---------------------- | --------------------------------------------- | --------------------------------------------------------------------------------- |
+| **Base term**          | $\lambda_V \cdot A$ (volume holonomy)         | $q \cdot [9]_q \cdot [10]_q$ ($R$-matrix eigenvalue $\times$ $q$-dimensions)      |
 | **Divisor correction** | $-\lambda_S \cdot A^{2/3}$ (surface nucleons) | $(\mathrm{CS}_1 + \mathrm{CS}_2) \cdot \hbar_q^2$ (force-carrier blow-up centres) |
-| **Sign** | Negative (reduces binding) | Positive (increases $1/\alpha$) |
-| **Origin** | Nuclear boundary (fewer neighbors) | Crossing degeneracies on Bring's surface |
+| **Sign**               | Negative (reduces binding)                    | Positive (increases $1/\alpha$)                                                   |
+| **Origin**             | Nuclear boundary (fewer neighbors)            | Crossing degeneracies on Bring's surface                                          |
 
 The correction is positive because the force-carrier braids
 $T_{2,9}$ and $T_{3,5}$, embedded on the genus-$4$ Bring's surface,

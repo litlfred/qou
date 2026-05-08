@@ -50,3 +50,14 @@ quotient of the braid group algebra of $B_n$, so the same symbol
 $\sigma_i$ denotes both the braid-group generator and its image in
 $H_n(q)$ — context disambiguates. The Jones polynomial is always
 $J_K(q)$, not $V_K(t)$.
+
+**Categories vs CPT operators.** Categories are typeset bold,
+$\mathbf{C}$, $\mathbf{Rep}$, etc. The calligraphic $\mathcal{C}$
+is **reserved for the charge-conjugation operator** in CPT
+discussions (parity $\mathcal{P}$, time-reversal $\mathcal{T}$,
+combined $\mathcal{CP}$, $\mathcal{CPT}$). Calligraphic $\mathcal{C}$
+must never denote a category in this paper; readers should always
+parse a calligraphic $\mathcal{C}$ in context as a discrete
+symmetry operator. The $\mathcal{P}$ / $\mathcal{T}$ / $\mathcal{CP}$
+companions are likewise CPT operators; they do not collide with any
+categorical or geometric reservation.

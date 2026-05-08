@@ -1,7 +1,7 @@
 The polynomial ring $\mathbb{C}[z]$ is the algebra of functions on the
 complex line $\mathbb{C}$.  The category
 $\mathrm{Vect}_{\mathbb{C}}$ of finite-dimensional complex vector spaces
-is the simplest $\mathbb{C}$-linear rigid monoidal category: the tensor
+is the simplest $\mathbb{C}$-linear rigid :refterm[monoidal category]{#monoidal-category}: the tensor
 product is $V \otimes W$, the unit is $\mathbf{1} = \mathbb{C}$, and the
 dual is $V^{\vee} = \mathrm{Hom}(V, \mathbb{C})$ with
 $\mathrm{ev}(v \otimes f) = f(v)$.

@@ -143,7 +143,7 @@ $\square$
 
 ## Status and audit closure
 
-🟢 **Provable** in $\mathbb{Q}(q)$ from the upstream lemmas (mass
+**Status: provable** in $\mathbb{Q}(q)$ from the upstream lemmas (mass
 formula, jet-tower-pair equality, algebraic-volume definition,
 Markov-trace factorization). The corresponding Lean stub
 [qou:QOU.Torsion.AlgebraicMassFormula](topological-mass-formula-algebraic.lean)

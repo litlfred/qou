@@ -10,7 +10,7 @@ algebra $A$, and the closed orbits of this flow --- the periodic
 trajectories of $\phi_t^q$ --- correspond to the prime ideals of the
 underlying geometry. Each prime is no longer a point; it is a *closed
 orbit* winding through the brane tower
-([recursive brane tower](#def:recursive-brane-tower)).
+([recursive brane tower](#def\:recursive-brane-tower)).
 
 This shift has three consequences that will unfold over the next
 chapters:
@@ -25,7 +25,7 @@ chapters:
    the parallel transport of the adjoint representation around the
    closed orbit. This promotes the abelian counting of classical
    number theory to a nonabelian, matrix-valued integral
-   ([Chapter 8](#chap:algebraic-substrate)).
+   ([Chapter 8](#chap\:algebraic-substrate)).
 
 3. **Stability becomes geometric.** Whether the prime distribution
    has bounded fluctuations (the content of the Riemann hypothesis)
@@ -33,5 +33,5 @@ chapters:
    geometric constraint on the Reeb flow, not an analytic property of
    a complex function.
 
-The machinery of lifting and descent developed in this chapter
+The machinery of lifting and :refterm[descent]{#descent} developed in this chapter
 provides the algebraic infrastructure for making these ideas precise.

@@ -36,6 +36,7 @@ theorem CategoricalConnection.unique_up_to_gauge
   -- quotient by structural equivalence) — see
   -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
   -- with this diagnosis rather than closed-as-stated.
+  -- Ref: [kock2004]
   sorry
 
 end QOU

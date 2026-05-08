@@ -201,6 +201,7 @@ def neutronBraid (H_A : ℝ) : NucBraidWord :=
     sympy (see `chi_std_pernucleon_derivation.py`).  The Lean
     formalization of steps 1-4 as a single `ring`/`field_simp`
     computation is mechanical but voluminous; we record it as a
+    -- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof.
     sorry with this citation.
 
     Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof,
@@ -225,6 +226,7 @@ theorem chi_std_proton_closed_form (q : ℝ) (hq : 1 < q) :
 theorem chi_std_neutron_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (neutronBraid (q - q⁻¹)) =
       chiStdClosedForm q neutronIndices := by
+  -- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof.
   sorry
 
 /-- Both nucleon characters share the unified ladder shape

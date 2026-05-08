@@ -1,11 +1,11 @@
-The Laplace transform ([categorical Laplace transform](#def:categorical-laplace))
+The Laplace transform ([categorical Laplace transform](#def\:categorical-laplace))
 pairs against the *real* exponential grouplike $\exp_q(-s\cdot)$.  Its
 companion pairs against the *unitary* grouplike $\exp_q(i\xi\cdot)$ — a
 second grouplike of the same Hopf algebra $\mathcal{H}_q$, distinguished only by
 the sign of the spectral parameter.
 
 **Categorical Fourier transform.**  The categorical Fourier transform
-is the monoidal functor
+is the :refterm[monoidal functor]{#monoidal-functor}
 
 $$
   \mathcal{F}\colon \bigl(\mathrm{End}_{\mathbf{C}}(A), \ast_q\bigr)
@@ -21,7 +21,7 @@ of the Reeb-translation object.
 
 **Tannakian reconstruction.**  When $G = \mathrm{SU}_q(2)$ and
 $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, the Tannaka--Krein
-reconstruction ([Tannaka--Krein reconstruction](#prop:tannaka-krein-reconstruction))
+reconstruction ([Tannaka--Krein reconstruction](#prop\:tannaka-krein-reconstruction))
 identifies $\mathcal{F}$ with the *Peter--Weyl decomposition*:
 
 $$
@@ -98,9 +98,9 @@ $$
 $$
 
 the $k$-th Lagrange resolvent
-([Lagrange resolvents](#rem:lagrange-resolvents)).  The Briggs--Klein
-chart ([Briggs--Klein chart](#def:briggs-klein-chart)) on Bring's
-surface ([smoothness of Bring's surface](#rem:brings-smoothness))
+([Lagrange resolvents](#rem\:lagrange-resolvents)).  The Briggs--Klein
+chart ([Briggs--Klein chart](#def\:briggs-klein-chart)) on Bring's
+surface ([smoothness of Bring's surface](#rem\:brings-smoothness))
 is built from these DFT coordinates: even where two colour sheets
 $x_i, x_j$ collide (branch points of the projection $\pi$), the
 Fourier components $w_k$ remain pairwise distinct because they
@@ -121,20 +121,20 @@ over $\mathbb{F}_p$, $\mathbb{Q}_p$, and $\mathbb{Z}[q, q^{-1}]$.
 
 **Three-context behaviour.**
 
-- **$\mathbb{F}_p$.**  Peter--Weyl over $\mathbb{F}_p$ is valid
+* **$\mathbb{F}_p$.**  Peter--Weyl over $\mathbb{F}_p$ is valid
   whenever $p \nmid |\widehat{G}|$ and $p \nmid [n]_q!$ for small $n$
   (Maschke semisimplicity for quantum groups).  Under these conditions
   $\mathcal{F}$ is a *finite* Fourier transform — the Peter--Weyl
   matrix is invertible, and the heat-equation diagonalisation holds
   termwise.  The archimedean Gauss sum $\sum_j e^{i\xi j}$ becomes a
   character sum over $\mathbb{F}_p^\times$.
-- **$\mathbb{Q}_p$.**  $\mathcal{F}$ sends locally constant $f$ to its
+* **$\mathbb{Q}_p$.**  $\mathcal{F}$ sends locally constant $f$ to its
   $p$-adic Mellin transform, convergent on the same disc as
   $\exp_q(i\xi\cdot)$.  When $G = \mathrm{SU}_q(2)$ with
   $q \in 1 + p\mathbb{Z}_p$, the Peter--Weyl sum $\sum_j \pi_j(f)$
   converges in $\mathbb{Q}_p$ because the irrep dimensions $[2j+1]_q$
   have bounded $p$-adic valuation.
-- **$\mathbb{C}_p$.**  Peter--Weyl holds identically; the Wick rotation
+* **$\mathbb{C}_p$.**  Peter--Weyl holds identically; the Wick rotation
   $\mathcal{F}[f](\xi) = \mathcal{L}[f](i\xi)$ is a *formal* identity
   in $\mathbb{C}_p[\![\xi]\!]$ because both sides are now series in
   grouplike coefficients.  No analytic continuation is required — the

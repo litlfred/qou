@@ -61,16 +61,16 @@ $$
 At $q_0 \approx 1.1100$ ($h \approx 0.2091$):
 
 $$
-  \mathrm{NF}(\mathfrak{M}_+) = 0.209\sigma_1 + 1.044 L_+ + 0.044 L_- + 0.218 e^-
+  \mathrm{NF}(\mathfrak{M}_+) \approx 0.209\,\sigma_1 + 1.044\,L_+ + 0.044\,L_- + 0.218\,e^-
 $$
 
-with $\mathrm{net}(\mathfrak{M}_+) = +1.515$.
+with $\mathrm{net}(\mathfrak{M}_+) \approx +1.515$.
 
 The mirror meson $\mathfrak{M}_- = T_{10} \cdot \mathcal{L}_H \cdot T_{01}$
 has the same net but with $\sigma_0$ replacing $\sigma_1$:
 
 $$
-  \mathrm{NF}(\mathfrak{M}_-) = 0.209\sigma_0 + 1.044 L_+ + 0.044 L_- + 0.218 e^-
+  \mathrm{NF}(\mathfrak{M}_-) \approx 0.209\,\sigma_0 + 1.044\,L_+ + 0.044\,L_- + 0.218\,e^-
 $$
 
 Both mesons carry the same Hopf link content ($L_+ + L_-$)

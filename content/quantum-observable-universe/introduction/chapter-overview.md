@@ -1,12 +1,12 @@
 **Part I: Foundations.**
-[Chapter 1](#chap:qu) introduces the **quantum universe** (QU):
+[Chapter 1](#chap\:qu) introduces the **quantum universe** (QU):
 the algebraic skeleton encoded in the triple
 
 $$
 (\mathbf{C}, A, \tau)
 $$
 
-— a rigid monoidal category $\mathbf{C}$, a Frobenius–Hopf object
+— a rigid :refterm[monoidal category]{#monoidal-category} $\mathbf{C}$, a Frobenius–Hopf object
 $A$, and a fibre functor $\tau$.  The Frobenius trace
 $\int_A \colon A \to \mathbf{1}$ is the categorical analogue of
 integration: it assigns a scalar to each element of the algebra.
@@ -20,7 +20,7 @@ destroys information.  From these ingredients the chapter derives
 the Frobenius relation, the dagger involution, and the Tannaka–Krein
 reconstruction of the symmetry group.
 
-[Chapter 2](#chap:qou) imposes three cohomological constraints —
+[Chapter 2](#chap\:qou) imposes three cohomological constraints —
 observability, measurability, and volume — that promote the QU to
 a **quantum observable universe** (QOU).  The volume axiom makes
 the everyday observation of size precise: the Frobenius trace
@@ -61,13 +61,13 @@ $$
 from which quantum versions of the Einstein, Yang–Mills, and Dirac
 equations follow.
 
-[Chapter 3](#chap:torsion) addresses the obstructions that arise
+[Chapter 3](#chap\:torsion) addresses the obstructions that arise
 when local categorical data is extended globally.  Measurement
 constrains observation, and observation constrains what can be
 lifted from one level of the brane tower to the next.  The
 Yekutieli lifting condition makes this precise: an object admits
 a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$
-vanishes.  The descent involution $\hat{\tau}$ then decomposes the
+vanishes.  The :refterm[descent]{#descent} involution $\hat{\tau}$ then decomposes the
 algebra at each level into descended (observable) and transient
 (pre-observable) modes.  A key result is the Descartes condition
 $\chi(A) = -6$, forced by the lifting obstructions and the
@@ -79,7 +79,7 @@ a perpetual obstruction that no amount of jet refinement can
 remove.
 
 **Part II: Structure.**
-[Chapter 4](#chap:path-integrals-braiding) replaces continuum path
+[Chapter 4](#chap\:path-integrals-braiding) replaces continuum path
 integrals with discrete braid-group computations.  The braid group
 acts on the fibre degrees of freedom; particle exchange becomes a
 representation of $B_n$ inside the Iwahori–Hecke algebra $H_n(q)$,
@@ -89,13 +89,13 @@ unknot to the photon (and, with framing, the neutrino); the
 trefoil $3_1$ to the electron; higher torus knots $T_{2,2k+1}$
 to the muon and tau through the brane tower.
 
-[Chapter 5](#chap:models-qou) examines concrete realisations of
+[Chapter 5](#chap\:models-qou) examines concrete realisations of
 the QOU axioms: archimedean, $p$-adic, and finite-field models.
 The archimedean model is the one we inhabit; the non-archimedean
 models provide arithmetic analogues through which properties of
 the substrate can be transferred.
 
-[Chapter 6](#chap:algebraic-substrate) develops the spectral theory
+[Chapter 6](#chap\:algebraic-substrate) develops the spectral theory
 of the Frobenius–Hopf algebra.  The local $q$-zeta function of
 Bring's curve encodes the Frobenius eigenvalues; the Hasse–Weil
 bound confines them to the critical line $|\alpha_i| = q^{1/2}$
@@ -120,13 +120,13 @@ gap $[2]_q^2 - [3]_q = q$ place the $(2,3)$ Collatz map at a
 unique arithmetic point — the only critical case where the
 $q$-gap is a monomial.
 
-[Chapter 7](#chap:fluid-dynamics) develops the fluid dynamics of
+[Chapter 7](#chap\:fluid-dynamics) develops the fluid dynamics of
 the brane.  The $q$-deformed Navier–Stokes equation is derived
 from the Frobenius–Hopf structure, and the obstruction to global
 smoothness is located in a single cohomology class — offering an
 obstruction-based perspective on Navier–Stokes regularity.
 
-[Chapter 8](#chap:info-theory) addresses Wigner's mystery directly:
+[Chapter 8](#chap\:info-theory) addresses Wigner's mystery directly:
 the mechanics of a QOU are Turing complete — the
 combinatorics supporting logic and computation is a property of
 the algebraic substrate, not the medium.  The Gröbner–Shirshov
@@ -152,7 +152,7 @@ where $c_q$ is the information speed of light — $E = mc^2$
 derived from the categorical structure.
 
 **Part III: The Descartes Universe and Observations.**
-[Chapter 9](#chap:descartes-universe) maps the genus-$4$ constraint
+[Chapter 9](#chap\:descartes-universe) maps the genus-$4$ constraint
 to Bring's surface $\Sigma_4$, a complex curve with Euler
 characteristic $-6$ and maximal automorphisms ($S_5$).  This
 surface serves as the foundational state space: its coral tubes —
@@ -162,7 +162,7 @@ operators interact.  Within this space, embeddable knots form a
 basis for homology and cohomology, and specific knots and
 torus-knot words define the full particle spectrum.
 
-[Chapter 10](#chap:particle-interactions) develops the Gröbner–Shirshov
+[Chapter 10](#chap\:particle-interactions) develops the Gröbner–Shirshov
 reduction engine that computes normal forms for knot words in the
 Iwahori–Hecke algebra, together with a **semidefinite program**
 over matrix-valued operators — its diagonal projection is the
@@ -189,7 +189,7 @@ acts as a Feynman path integral via the non-abelian Stokes formula,
 but avoids standard infinities because the space is
 finite-dimensional.
 
-[Chapter 11](#chap:observations) confronts theory with experiment.
+[Chapter 11](#chap\:observations) confronts theory with experiment.
 We calibrate with CODATA values
 $(m_\mu / m_e,\ m_e,\ Q_\beta(n))$; the dimensionless ratio
 $m_\mu/m_e$ fixes the substrate parameter via the Skein mass
@@ -209,20 +209,20 @@ for our local patch of the universe.  Once $q_0$ and the two
 energy scales are fixed, concrete computable formulas follow.
 A few examples:
 
-- **Atomic masses**
+* **Atomic masses**
   $\mathfrak{m}_A(Z, N; q_0)$ via the Wedderburn formula on the
   Iwahori–Hecke algebra, matching AME2020 across the periodic
   table to sub-percent precision.
-- **Fine-structure constant** from a $q$-deformed Chern–Simons
+* **Fine-structure constant** from a $q$-deformed Chern–Simons
   calculation on the force-carrier torus knots $T_{2,9}$ and
   $T_{3,5}$: $1/\alpha_{\mathrm{EM}} = q \cdot [9]_q \cdot [10]_q \cdot \bigl(1 + c_1 + c_1^{2}\kappa\bigr) \approx 137.0359$,
   vs CODATA $137.035999$ (399 ppb).
-- **Proton-to-electron mass ratio**
+* **Proton-to-electron mass ratio**
   from the non-perturbative $\Phi_q$-tower endomorphism,
   $m_p / m_e \approx 1836$, together with **$\beta$-decay Q-values**
   for six benchmark nuclei at $4.4\%$ mean absolute error.
 
-[Chapter 12](#chap:molecular-construction) extends the knot-word
+[Chapter 12](#chap\:molecular-construction) extends the knot-word
 formalism from nucleons to molecules.  The molecular Hecke
 algebra describes bond formation as braid concatenation; the
 Frobenius linear-programming problem that stabilised nucleons
@@ -230,12 +230,12 @@ returns here to compute molecular binding energies at the
 calibrated $q_0$.  Worked examples span $\mathrm{H}_2$,
 $\mathrm{H}_2\mathrm{O}$, and benzene.
 
-[Chapter 13](#chap:q-geometric-langlands) develops the
+[Chapter 13](#chap\:q-geometric-langlands) develops the
 $q$-geometric Langlands correspondence that connects the
 categorical framework to the geometric Langlands programme.
 
-The [Glossary](#chap:glossary) maps paper terminology to Mathlib
-declarations, the [Knot-Periodic Table](#app:knot-periodic-table)
+The [Glossary](#chap\:glossary) maps paper terminology to Mathlib
+declarations, the [Knot-Periodic Table](#app\:knot-periodic-table)
 collects the elements with their knot assignments, and the
-[Index of Definitions](#app:index-definitions) provides a
+[Index of Definitions](#app\:index-definitions) provides a
 searchable reference.

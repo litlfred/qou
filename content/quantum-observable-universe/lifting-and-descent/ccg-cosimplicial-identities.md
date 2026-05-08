@@ -1,6 +1,6 @@
 **Lemma.**
 *The coface maps $\delta^i$ (composites of jet prolongation with Cech
-face maps) and codegeneracy maps $\sigma^j$ (composites of descent with
+face maps) and codegeneracy maps $\sigma^j$ (composites of :refterm[descent]{#descent} with
 Cech degeneracy maps) satisfy the cosimplicial identities*
 
 $$
