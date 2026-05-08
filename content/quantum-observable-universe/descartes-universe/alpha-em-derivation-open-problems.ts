@@ -12,6 +12,7 @@ export default remark({
     "prop:em-coupling-bring-zero-mode",
     "prop:archimedean-functor-uniqueness",
     "rem:figure-8-archimedean-illustration",
+    "conj:bring-hyperbolic-knot-bloch-decomposition",
     "prop:gram-determinant-plancherel-ratio",
     "rem:gram-kappa-spectral-interpretation",
   ],

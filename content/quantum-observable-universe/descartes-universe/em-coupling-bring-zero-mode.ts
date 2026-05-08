@@ -11,6 +11,7 @@ export default proposition({
     "prop:archimedean-functor-uniqueness",
     "rem:figure-8-archimedean-illustration",
     "conj:dilogarithm-archimedean-limit",
+    "conj:bring-hyperbolic-knot-bloch-decomposition",
   ],
   cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"],
   tags: [

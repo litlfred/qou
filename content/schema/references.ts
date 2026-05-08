@@ -368,6 +368,23 @@ export const references: CSLData[] = [
     DOI: "10.1007/BFb0084581",
   }),
 
+  // ── Borel 1974 ────────────────────────────────────────────────
+  ref({
+    id: "borel1974",
+    type: "article-journal",
+    title: "Stable real cohomology of arithmetic groups",
+    author: [
+      { family: "Borel", given: "Armand" },
+    ],
+    "container-title": "Annales scientifiques de l'École Normale Supérieure",
+    volume: "7",
+    issue: "2",
+    issued: { "date-parts": [[1974]] },
+    page: "235-272",
+    DOI: "10.24033/asens.1269",
+    note: "Borel's regulator: rank K_{2n-1}(O_F) ⊗ Q = r_1 + r_2 (n odd) or r_2 (n even), and Bloch-Wigner / polylogarithm regulator maps from K_{2n-1} to R^{r_2}.",
+  }),
+
   // ── Suslin 1991 ───────────────────────────────────────────────
   ref({
     id: "suslin1991",

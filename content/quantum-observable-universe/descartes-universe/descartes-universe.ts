@@ -222,6 +222,7 @@ export default chapter({
         "bohr-radius-categorical",
         "archimedean-hartree-derivation",
         "archimedean-functor-uniqueness",
+        "bring-hyperbolic-knot-bloch-decomposition",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
