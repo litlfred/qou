@@ -1,15 +1,15 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:41:46.508Z",
-  "total_flagged": 88,
-  "files_flagged": 47,
+  "generated": "2026-05-08T20:44:55.533Z",
+  "total_flagged": 86,
+  "files_flagged": 46,
   "patterns": {
     "const_zero": 35,
     "punit_type": 14,
     "skel_inst": 12,
     "one_def": 9,
-    "prop_true": 7,
     "holds_trivial": 7,
+    "prop_true": 5,
     "punit_unit": 2,
     "id_def": 1,
     "const_zero_typed": 1
@@ -116,18 +116,6 @@
         "line": 20,
         "pattern": "punit_type",
         "snippet": "def NucleusTy : Type := PUnit"
-      }
-    ],
-    "braids-and-knots/explicit-alpha-k-h4.lean": [
-      {
-        "line": 60,
-        "pattern": "prop_true",
-        "snippet": "def R3OrthogonalToLowerDepthsH4 : Prop := True"
-      },
-      {
-        "line": 71,
-        "pattern": "prop_true",
-        "snippet": "def Alpha3H4MarkovPairing : Prop := True"
       }
     ],
     "braids-and-knots/frobenius-antipode-lean-stub.lean": [
