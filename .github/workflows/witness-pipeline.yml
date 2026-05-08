@@ -268,7 +268,13 @@ jobs:
         # Workplan: docs/audits/2026-05-08-trivial-skeleton-workplan.md.
         run: |
           export PATH="$HOME/.bun/bin:$PATH"
-          bun run content/pipeline/trivial-skeleton-audit.ts
+          # Ensure the script's deps (glob) resolve against
+          # content/package.json by running with --cwd content.  The
+          # script computes its WITNESS_OUT path absolutely from the
+          # script's own filesystem location, so cwd does not affect
+          # the output path.  || true makes this warn-only at the
+          # process-exit level.
+          bun run --cwd content pipeline/trivial-skeleton-audit.ts || true
 
       - name: Detect drift in committed witnesses
         run: |

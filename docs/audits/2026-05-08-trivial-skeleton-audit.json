@@ -1,10 +1,10 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T19:59:04.256Z",
-  "total_flagged": 108,
-  "files_flagged": 56,
+  "generated": "2026-05-08T20:10:44.650Z",
+  "total_flagged": 105,
+  "files_flagged": 55,
   "patterns": {
-    "const_zero": 38,
+    "const_zero": 35,
     "skel_inst": 21,
     "prop_true": 15,
     "punit_type": 14,
@@ -258,23 +258,6 @@
         "line": 47,
         "pattern": "const_zero",
         "snippet": "def quantumDilogPoly (_q _z : R) : R := 0"
-      }
-    ],
-    "braids-and-knots/mass-formula-regime-switching.lean": [
-      {
-        "line": 27,
-        "pattern": "const_zero",
-        "snippet": "def bindingSW (_Z _N : ℕ) : ℝ := 0"
-      },
-      {
-        "line": 31,
-        "pattern": "const_zero",
-        "snippet": "def bindingBW (_Z _N : ℕ) : ℝ := 0"
-      },
-      {
-        "line": 35,
-        "pattern": "const_zero",
-        "snippet": "def bindingBWShell (_Z _N : ℕ) : ℝ := 0"
       }
     ],
     "braids-and-knots/qmn-recursive-memoized.lean": [
