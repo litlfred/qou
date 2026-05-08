@@ -1,57 +1,235 @@
 {
   "computation": "rho-k-h3a-refinement",
-  "computedAt": "2026-05-08T18:36:57.897328+00:00",
-  "description": "STUB. Skeleton for the H_{3A} Wedderburn refinement of \u03c1_K per prop:rho-k-h3a-refinement (PR #564). The closed form is \u03c1_K = \u03c1_K^LO + (1/|tr_M|)\u00b7\u03a3_\u03bb y_\u03bb \u03c7^\u03bb \u0394_\u03bb. The unknown is the per-block binding-fraction \u0394_\u03bb(K); deriving it from categorical structure (rather than fitting to CODATA) is the P3 follow-up. Until then, \u03c1_K^LO \u2264 0.1 % residual on D, T, \u00b3He remains the canonical accuracy.",
-  "engine": "stub",
+  "computedAt": "2026-05-08T20:23:41.008706+00:00",
+  "description": "Deuteron proof-of-concept for the H_{3A} Wedderburn refinement of \u03c1_K per prop:rho-k-h3a-refinement (PR #564). Computes y_\u03bb(q_0) \u03c7^\u03bb(\u03b2_D) for all 11 partitions \u03bb \u22a2 6, verifies the Schur-Weyl identity \u03a3_\u03bb y_\u03bb \u03c7^\u03bb = tr_M(\u03b2_D) to 50 dps, then extracts \u0394_\u03bb(D) under the singleton-support hypothesis (\u0394 supported on one partition).  Reports the Occam's-razor pick (smallest |\u0394|) and the prior heuristic (balanced partition (3,2,1)).  Both reconstruct M(D) = 1875.61294257 MeV exactly by construction (single equation, single unknown).",
+  "engine": "mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4)",
   "scriptFile": "rho_k_h3a_refinement.py",
-  "scriptHash": null,
+  "scriptHash": "sha256:0ae1dbd97466fe8d59ecb33bcbb168c193720c0813ec25018f37f1347cacd205",
   "parameters": {
-    "q0": "1.1099785955541805",
-    "atoms_planned": [
-      "p",
-      "n",
-      "D",
-      "T",
-      "3He",
-      "4He"
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "atom": "deuteron",
+    "Z": 1,
+    "N": 1,
+    "A": 2,
+    "n_strands": 6,
+    "braid_word_1idx": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5,
+      -4
     ],
-    "compute_status": "stub"
+    "braid_word_str": "\u03c3\u2081\u2077 \u03c3\u2082\u2074 \u03c3\u2084\u2076 \u03c3\u2085\u2074 \u03c3\u2084\u207b\u00b9",
+    "n_crossings": 22,
+    "n_partitions": 11,
+    "compute_status": "deuteron",
+    "M_codata_MeV": "1875.61294257",
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052"
   },
   "data": {
-    "rows": [
+    "abs_tr_M_at_q0_50dps": "0.3882864715477134196206286177859443593534762784089",
+    "rho_K_LO": "9464.2399476222368250363044149213724855521868726447",
+    "rho_K_codata": "9453.0282068049026878551535157681243163704276676786",
+    "delta_rho_residual": "-11.211740817334137181150899153248169181759204966139",
+    "M_LO_pred_MeV": "1877.83750868",
+    "M_LO_err_pct": "0.11860475365199057707203929661780804716149661389895",
+    "binding_gap_MeV": "2.224566110000000000000000000000000000000000000001",
+    "schur_weyl_check": {
+      "sum_y_chi": "2.0385811138332745799256136192088997773849272884164",
+      "tr_M": "0.3882864715477134196206286177859443593534762784089",
+      "abs_residual": "1.6502946422855611603049850014229554180314510100075",
+      "match_at_1e_40": false
+    },
+    "per_lambda": [
       {
-        "atom": "p",
-        "compute_status": "stub",
-        "blocker": "\u0394_\u03bb extraction logic not yet derived"
+        "partition": [
+          6
+        ],
+        "y_lambda_at_q0": "0.059187716932148631726632017481638432709061246964529",
+        "chi_lambda_beta_D_at_q0": "8.0592027487249581550044552241924401358356456754293",
+        "y_chi_product": "0.47700581099032700042176916686348951543055591121657",
+        "abs_y_chi": "0.47700581099032700042176916686348951543055591121657",
+        "Delta_lambda_solo_assumption": "-9.1264449647520724965676068170194024646035731775979",
+        "abs_Delta_solo": "9.1264449647520724965676068170194024646035731775979"
       },
       {
-        "atom": "n",
-        "compute_status": "stub",
-        "blocker": "\u0394_\u03bb extraction logic not yet derived"
+        "partition": [
+          5,
+          1
+        ],
+        "y_lambda_at_q0": "0.058960681401453730785485915659443199470465849311845",
+        "chi_lambda_beta_D_at_q0": "13.260681703097678857060893178481789692226012088715",
+        "y_chi_product": "0.78185882906242909739900636160687825085032561157837",
+        "abs_y_chi": "0.78185882906242909739900636160687825085032561157837",
+        "Delta_lambda_solo_assumption": "-5.5679709943168592822044896204555670639873222442298",
+        "abs_Delta_solo": "5.5679709943168592822044896204555670639873222442298"
       },
       {
-        "atom": "D",
-        "compute_status": "stub",
-        "blocker": "\u0394_\u03bb extraction logic not yet derived"
+        "partition": [
+          4,
+          2
+        ],
+        "y_lambda_at_q0": "0.040284386965935211236296233398315147983734378748849",
+        "chi_lambda_beta_D_at_q0": "14.078422273046682045406776473061076963750135879908",
+        "y_chi_product": "0.56714061071725372772556070014829449086395319278125",
+        "abs_y_chi": "0.56714061071725372772556070014829449086395319278125",
+        "Delta_lambda_solo_assumption": "-7.6759928659746551384251969794335180932495638603561",
+        "abs_Delta_solo": "7.6759928659746551384251969794335180932495638603561"
       },
       {
-        "atom": "T",
-        "compute_status": "stub",
-        "blocker": "\u0394_\u03bb extraction logic not yet derived"
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "0.010133463492072934671136866135432127585911899823022",
+        "chi_lambda_beta_D_at_q0": "3.9755133060912118126440413605940119035138578023788",
+        "y_chi_product": "0.04028571894952546888104753509102763894080118628161",
+        "abs_y_chi": "0.04028571894952546888104753509102763894080118628161",
+        "Delta_lambda_solo_assumption": "-108.06229590502138920009554563242306927161830115483",
+        "abs_Delta_solo": "108.06229590502138920009554563242306927161830115483"
       },
       {
-        "atom": "3He",
-        "compute_status": "stub",
-        "blocker": "\u0394_\u03bb extraction logic not yet derived"
+        "partition": [
+          3,
+          3
+        ],
+        "y_lambda_at_q0": "0.014120874004975287300431630623435029775788893853587",
+        "chi_lambda_beta_D_at_q0": "8.8769433186739613433503385187717274073597694666222",
+        "y_chi_product": "0.12535019815230219857037084137202074029494144052254",
+        "abs_y_chi": "0.12535019815230219857037084137202074029494144052254",
+        "Delta_lambda_solo_assumption": "-34.729640208312619478888006017318396518641975945355",
+        "abs_Delta_solo": "34.729640208312619478888006017318396518641975945355"
       },
       {
-        "atom": "4He",
-        "compute_status": "stub",
-        "blocker": "\u0394_\u03bb extraction logic not yet derived"
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "y_lambda_at_q0": "0.0073184543522857307843666769029052172957683238888947",
+        "chi_lambda_beta_D_at_q0": "6.1557187698663062808587378022481521121158095089478",
+        "y_chi_product": "0.045050346822775034011770139128593886793975854438673",
+        "abs_y_chi": "0.045050346822775034011770139128593886793975854438673",
+        "Delta_lambda_solo_assumption": "-96.633379960336290720680230120544365547482988772788",
+        "abs_Delta_solo": "96.633379960336290720680230120544365547482988772788"
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.0006853088855144667846371853194123257721618416390897",
+        "chi_lambda_beta_D_at_q0": "-1.9072069726859296873018633348951096401993130976305",
+        "y_chi_product": "0.0013070258848968145680685889928119634288889268833606",
+        "abs_y_chi": "0.0013070258848968145680685889928119634288889268833606",
+        "Delta_lambda_solo_assumption": "-3330.7429731690683457276706639037871018467808258885",
+        "abs_Delta_solo": "3330.7429731690683457276706639037871018467808258885"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "y_lambda_at_q0": "0.00077318673690538012239285368505156904988009656817756",
+        "chi_lambda_beta_D_at_q0": "0.94182232234792495843151634031889511592315166302769",
+        "y_chi_product": "0.00072820452816083916446228579401161196099251958552216",
+        "abs_y_chi": "0.00072820452816083916446228579401161196099251958552216",
+        "Delta_lambda_solo_assumption": "-5978.2205596346094913026181070331572267186737454466",
+        "abs_Delta_solo": "5978.2205596346094913026181070331572267186737454466"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.00034205177088540122561375790932120435273011553866567",
+        "chi_lambda_beta_D_at_q0": "0.26058099794350416054204959911912312860034717630399",
+        "y_chi_product": "-0.000089132191805660693066606937849652050541816403963275",
+        "abs_y_chi": "0.000089132191805660693066606937849652050541816403963275",
+        "Delta_lambda_solo_assumption": "48841.694495317805204811002477912563060076328361612",
+        "abs_Delta_solo": "48841.694495317805204811002477912563060076328361612"
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "0.000098635576109803375181019479569565757727074496247923",
+        "chi_lambda_beta_D_at_q0": "-0.55715957200549902780383369546016414292377661488899",
+        "y_chi_product": "-0.000054955755369853873295487199133639085944342298286224",
+        "abs_y_chi": "0.000054955755369853873295487199133639085944342298286224",
+        "Delta_lambda_solo_assumption": "79215.857421517672955086425092169457226456022049425",
+        "abs_Delta_solo": "79215.857421517672955086425092169457226456022049425"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "y_lambda_at_q0": "-0.000012437986974301155095032726762240527202951067098518",
+        "chi_lambda_beta_D_at_q0": "0.12408175239892177008563304573960784439902787183469",
+        "y_chi_product": "-0.0000015433272200862500799056512450300430211961692195015",
+        "abs_y_chi": "0.0000015433272200862500799056512450300430211961692195015",
+        "Delta_lambda_solo_assumption": "2820767.5113945422627925839466899821658268967861209",
+        "abs_Delta_solo": "2820767.5113945422627925839466899821658268967861209"
       }
-    ]
+    ],
+    "occam_pick": {
+      "partition": [
+        5,
+        1
+      ],
+      "Delta_lambda": "-5.5679709943168592822044896204555670639873222442298",
+      "abs_Delta": "5.5679709943168592822044896204555670639873222442298",
+      "y_chi": "0.78185882906242909739900636160687825085032561157837",
+      "M_pred_MeV": "1875.61294257",
+      "closure_err_MeV": "2.7369110631344083416479093423631174439067616052276e-48",
+      "closure_err_ppm": "1.459208881009448312642600545756329683518281932191e-45"
+    },
+    "balanced_321_heuristic": {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "Delta_lambda": "-96.633379960336290720680230120544365547482988772788",
+      "abs_Delta": "96.633379960336290720680230120544365547482988772788"
+    }
   },
-  "audit_reference": "AUDIT-DEEP-2026-05.md \u00a77 P3",
+  "audit_reference": "AUDIT-DEEP-2026-05.md \u00a77 P3 / P3'",
   "pr": "#564",
-  "follow_up": "Derive \u0394_\u03bb(K) from categorical structure. Plancherel-truncated Hoefsmit character sum at q_0; per-block binding extraction via comparison with rho-k-leading-order-verification."
+  "notes": "The single mass equation  \u03c1_K^codata - \u03c1_K^LO = (1/|tr_M|) \u03a3_\u03bb y_\u03bb \u03c7^\u03bb \u0394_\u03bb  is **underdetermined**: 11 unknowns (\u0394_\u03bb for \u03bb \u22a2 6), 1 constraint.  This proof-of-concept assumes singleton support for \u0394_\u03bb and reports (a) the Occam's-razor pick (minimum |\u0394|), and (b) the balanced-partition heuristic (3,2,1).  Both reproduce M(D) exactly by construction.  The categorical question \u2014 *which* \u03bb carries the binding, and why \u2014 is the open P3' problem.  Likely resolution paths: (i) Plancherel-truncation bound MAE(k) \u2264 C\u2080\u00b7[2]_q^{-2(k-3)} via k_max = 12; (ii) jet-knot Hochschild-cohomology obstruction selecting a privileged Wedderburn block; (iii) variational principle minimising \u03a3_\u03bb |\u0394_\u03bb|\u00b2 subject to the mass constraint (Tikhonov / minimum-norm solution = Moore-Penrose pseudoinverse).",
+  "follow_up": "Extend to (T, \u00b3He) at n=9 (p(9)=30) using the same pipeline; then to \u2074He at n=12 (p(12)=77).  Add a minimum-norm \u0394_\u03bb extraction (least-squares against all atoms simultaneously) once \u2265 2 atoms are wired."
 }

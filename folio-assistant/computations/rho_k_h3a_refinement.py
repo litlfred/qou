@@ -211,6 +211,12 @@ def load_y_lambda_n6():
     """Load symbolic closed-form y_λ for n=6 from the Wenzl-bridge witness.
 
     Returns: dict mapping tuple(partition) → sympy expression in q.
+
+    NOTE: We deliberately skip `sp.cancel` here. Each y_λ is a ~4000-char
+    rational expression in q; `cancel` on the full y_λ (degree 30+ poly
+    over degree 30+ poly with hundreds of terms) does not finish in
+    minutes. We only need the *numeric value* at q_0, and `subs(q, q_0)
+    .evalf(50)` is fast on the unsimplified expression.
     """
     path = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
     d = json.loads(path.read_text())
@@ -218,14 +224,13 @@ def load_y_lambda_n6():
     out = {}
     for w in n6["weights"]:
         lam = tuple(w["partition"])
-        # The witness uses the same sympy var name 'q' as hoefsmit_symbolic.
         expr = sp.sympify(w["y_lambda_symbolic"])
-        # Re-bind to our canonical Q_SYM (defensive; `q` already matches).
         free = expr.free_symbols
         if free:
             qsym = next(iter(free))
-            expr = expr.subs(qsym, Q_SYM)
-        out[lam] = sp.cancel(expr)
+            if qsym is not Q_SYM:
+                expr = expr.subs(qsym, Q_SYM)
+        out[lam] = expr
     return out
 
 
