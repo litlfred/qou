@@ -212,6 +212,7 @@ def main() -> int:
             print(f"    {hit['context']}")
 
     out = {
+        "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
         "computation": "e0-calibration-audit",
         "description": (
             "Audit of E_0 / Q_β(n) calibration constants across "

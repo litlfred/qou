@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-08T18:04:17.796885+00:00",
-  "commitSha": "787b272de4727f608814883869673304fa4500a6",
+  "computedAt": "2026-05-08T19:12:14.725970+00:00",
+  "commitSha": "d88fcd6a1cc98f7b148c154c746ccf5037005847",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,12 +438,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
-  "scriptHash": "d0c7ed1b810b",
+  "scriptHash": "13de81b5230c",
   "scriptCommitSha": "186782db9b2276c3dba313737a36be8faf6b730e",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
+  "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
     "chain_results": [
       {
@@ -1377,14 +1378,17 @@
         "ch-bond-writhe-lp.witness.json",
         "channel-product-mass.witness.json",
         "close-321-weinberg-gap.witness.json",
+        "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
+        "cross-check-trM-1ppb.witness.json",
         "crystal-pole-order.witness.json",
         "d-density-derivation.witness.json",
         "d-from-scratch.witness.json",
         "d-u-closed-form-proof.witness.json",
         "delta-q-decoration.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
+        "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",

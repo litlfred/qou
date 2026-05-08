@@ -44,6 +44,15 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.CrystalRMatrixSubLemma",
     validation: "stub",
   },
+  computation: {
+    engine: "python",
+    script: "folio-assistant/computations/crystal_pole_order.py",
+    witness: [
+      "folio-assistant/computations/crystal-pole-order.witness.json",
+    ],
+    status: "verified",
+    requires: [],
+  },
   tags: [
     "crystal-r-matrix",
     "sub-lemma-2-1",
