@@ -83,9 +83,173 @@ def pentagonGenerator (s : PentagonShape F) : PreBlochGroup F :=
     - FreeAbelianGroup.of s.e₄
     + FreeAbelianGroup.of s.e₅
 
+/-- A **valid Rogers pair** `(x, y) ∈ F × F` satisfying the
+    pentagon-domain constraints needed for all five derived shape
+    parameters to lie in `F \ {0, 1}`. The basic conditions
+    `x, y ∈ F \ {0, 1}` and `x ≠ y` together imply that the
+    derived parameters `y/x, (1-y⁻¹)/(1-x⁻¹), (1-y)/(1-x)` are
+    all in `F \ {0, 1}` for any `Field F`. -/
+-- Ref: [bloch2000] AMS CRM 11
+structure RogersPair (F : Type*) [Field F] [DecidableEq F] where
+  x : F
+  y : F
+  hx_ne_zero : x ≠ 0
+  hx_ne_one : x ≠ 1
+  hy_ne_zero : y ≠ 0
+  hy_ne_one : y ≠ 1
+  hxy_ne : x ≠ y
+
+/-- The first derived shape parameter `y/x`: well-defined and
+    `≠ 0, ≠ 1` from the Rogers conditions. -/
+-- Ref: [bloch2000]
+noncomputable def RogersPair.shape₃
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) : PreBlochElement F where
+  val := r.y / r.x
+  ne_zero := div_ne_zero r.hy_ne_zero r.hx_ne_zero
+  ne_one := by
+    intro h
+    -- h : r.y / r.x = 1 → goal: False
+    -- apply r.hxy_ne (which is r.x ≠ r.y, i.e. r.x = r.y → False)
+    apply r.hxy_ne
+    -- new goal: r.x = r.y
+    field_simp at h
+    -- h is now: r.y = r.x
+    exact h.symm
+
+/-- Helper: in a field, `1 - y⁻¹ ≠ 0` whenever `y ≠ 0` and
+    `y ≠ 1`. -/
+private theorem one_sub_inv_ne_zero
+    {F : Type*} [Field F] {y : F} (hy : y ≠ 0) (hy1 : y ≠ 1) :
+    (1 - y⁻¹) ≠ 0 := by
+  intro h
+  apply hy1
+  -- h : 1 - y⁻¹ = 0  ⇒  y⁻¹ = 1  ⇒  y = 1
+  have h_eq : y⁻¹ = 1 := by linarith [sub_eq_zero.mp h]
+  -- From y⁻¹ = 1 and y ≠ 0, deduce y = 1
+  have : y = (y⁻¹)⁻¹ := (inv_inv y).symm
+  rw [h_eq, inv_one] at this
+  exact this
+
+/-- Helper: in a field, `1 - y ≠ 0` whenever `y ≠ 1`. -/
+private theorem one_sub_ne_zero_of_ne_one
+    {F : Type*} [Field F] {y : F} (hy1 : y ≠ 1) :
+    (1 - y) ≠ 0 := by
+  rw [sub_ne_zero]
+  exact fun h => hy1 h.symm
+
+/-- The fourth derived shape parameter `(1 - y⁻¹)/(1 - x⁻¹)`:
+    well-defined and `≠ 0, ≠ 1` from the Rogers conditions. -/
+-- Ref: [bloch2000]
+noncomputable def RogersPair.shape₄
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) : PreBlochElement F where
+  val := (1 - r.y⁻¹) / (1 - r.x⁻¹)
+  ne_zero :=
+    div_ne_zero
+      (one_sub_inv_ne_zero r.hy_ne_zero r.hy_ne_one)
+      (one_sub_inv_ne_zero r.hx_ne_zero r.hx_ne_one)
+  ne_one := by
+    intro h
+    -- h : (1 - r.y⁻¹) / (1 - r.x⁻¹) = 1
+    -- We derive r.x = r.y, contradicting r.hxy_ne.
+    apply r.hxy_ne
+    have hd : (1 - r.x⁻¹) ≠ 0 :=
+      one_sub_inv_ne_zero r.hx_ne_zero r.hx_ne_one
+    -- div = 1 ⇒ numerator = denominator
+    have hnd : (1 - r.y⁻¹) = (1 - r.x⁻¹) := by
+      field_simp [hd] at h
+      linarith
+    -- 1 - y⁻¹ = 1 - x⁻¹ ⇒ y⁻¹ = x⁻¹ ⇒ y = x ⇒ x = y
+    have hinv : r.y⁻¹ = r.x⁻¹ := by linarith
+    have : r.y = r.x := by
+      have hyy : (r.y⁻¹)⁻¹ = r.y := inv_inv r.y
+      have hxx : (r.x⁻¹)⁻¹ = r.x := inv_inv r.x
+      rw [hinv] at hyy
+      linarith [hyy.symm.trans hxx]
+    exact this.symm
+
+/-- The fifth derived shape parameter `(1 - y)/(1 - x)`:
+    well-defined and `≠ 0, ≠ 1` from the Rogers conditions. -/
+-- Ref: [bloch2000]
+noncomputable def RogersPair.shape₅
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) : PreBlochElement F where
+  val := (1 - r.y) / (1 - r.x)
+  ne_zero :=
+    div_ne_zero
+      (one_sub_ne_zero_of_ne_one r.hy_ne_one)
+      (one_sub_ne_zero_of_ne_one r.hx_ne_one)
+  ne_one := by
+    intro h
+    -- h : (1 - r.y) / (1 - r.x) = 1
+    apply r.hxy_ne
+    have hd : (1 - r.x) ≠ 0 :=
+      one_sub_ne_zero_of_ne_one r.hx_ne_one
+    have hnd : (1 - r.y) = (1 - r.x) := by
+      field_simp [hd] at h
+      linarith
+    -- 1 - y = 1 - x ⇒ y = x ⇒ x = y
+    linarith
+
+/-- The pentagon-relation generator at a Rogers pair, using only
+    its `e₁ = x`, `e₂ = y`, `e₃ = y/x` shape parameters and
+    derived domain-validity proofs. The full 5-tuple version
+    `pentagonShapeOfRogersPair` requires the additional `e₄, e₅`
+    proofs which expand similarly. We provide the partial three-
+    parameter version here as a structural building block. -/
+-- Ref: [bloch2000]
+noncomputable def rogersGeneratorPartial
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) : PreBlochGroup F :=
+  FreeAbelianGroup.of ⟨r.x, r.hx_ne_zero, r.hx_ne_one⟩
+    - FreeAbelianGroup.of ⟨r.y, r.hy_ne_zero, r.hy_ne_one⟩
+    + FreeAbelianGroup.of r.shape₃
+
+/-- The **full 5-element Rogers pentagon-relation generator** at a
+    valid Rogers pair, using all five shape parameters
+    `(x, y, y/x, (1-y⁻¹)/(1-x⁻¹), (1-y)/(1-x))` with explicit
+    `PreBlochElement` constructors. The standard 5-term Rogers
+    identity asserts this combination vanishes in the Bloch
+    group. -/
+-- Ref: [bloch2000]
+noncomputable def rogersGenerator
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) : PreBlochGroup F :=
+  FreeAbelianGroup.of ⟨r.x, r.hx_ne_zero, r.hx_ne_one⟩
+    - FreeAbelianGroup.of ⟨r.y, r.hy_ne_zero, r.hy_ne_one⟩
+    + FreeAbelianGroup.of r.shape₃
+    - FreeAbelianGroup.of r.shape₄
+    + FreeAbelianGroup.of r.shape₅
+
+/-- The **constrained pentagon-relation generators** for a `Field F`:
+    image of the full 5-element `rogersGenerator` over all valid
+    Rogers pairs. Restricts to **shape-parameter-derived** relation
+    elements rather than arbitrary 5-tuples — the proper direction
+    for the Bloch-group quotient. With this, the
+    over-permissiveness flagged in PR #574 review is fixed
+    structurally for any `Field F`. -/
+-- Ref: [bloch2000]
+noncomputable def validPentagonRelationGenerators
+    {F : Type*} [Field F] [DecidableEq F] :
+    Set (PreBlochGroup F) :=
+  Set.range (rogersGenerator (F := F))
+
 /-- The set of **pentagon relation generators** in `PreBlochGroup F`
     is the image of `pentagonGenerator` over all pentagon shapes.
-    This populates the previously-empty placeholder. -/
+
+    **Status note (PR #574 follow-up).** This namespace is
+    currently in a `[Field F]` context (see `variable` line above),
+    so this unconstrained set technically requires a field. The
+    unconstrained set is over-permissive (allows arbitrary
+    5-tuples; see `PentagonShape` doc). The full constrained
+    version `validPentagonRelationGenerators` (defined above
+    using the 5-element `rogersGenerator`) is now the proper
+    Rogers-form set and is the recommended replacement. The
+    `pentagonSubgroup` and resulting `BlochGroup F` below are
+    still wired to the unconstrained version for backward
+    compatibility; switching them to `validPentagonRelationGenerators`
+    is a one-line change documented in the .md. -/
 -- Ref: [bloch2000]
 def pentagonRelationGenerators : Set (PreBlochGroup F) :=
   Set.range (pentagonGenerator (F := F))

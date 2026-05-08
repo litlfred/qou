@@ -102,6 +102,22 @@ theorem Cl_2_zero_via_oddness : Cl_2 0 = 0 := by
     We state only the unconditional case here. -/
 theorem Cl_2_at_zero : Cl_2 0 = 0 := Cl_2_zero
 
+/-- **`Cl_2(π) = 0` (unconditional).** Every summand
+    `sin((k+1)·π)/(k+1)²` vanishes by `Real.sin_nat_mul_pi`
+    applied to the natural number `k+1`. The `tsum` of identically-
+    zero summands is therefore zero. -/
+-- Ref: [zagier1986]
+theorem Cl_2_pi : Cl_2 Real.pi = 0 := by
+  unfold Cl_2
+  have hzero : ∀ k : ℕ,
+      Real.sin ((↑k + 1) * Real.pi) / ((↑k + 1 : ℝ)) ^ 2 = 0 := by
+    intro k
+    have hcast : ((↑k + 1 : ℝ)) * Real.pi = ((k + 1 : ℕ) : ℝ) * Real.pi := by
+      push_cast; ring
+    rw [hcast, Real.sin_nat_mul_pi]
+    simp
+  rw [tsum_congr hzero, tsum_zero]
+
 /-- **`Cl_2` is `2π`-periodic.** `Cl_2(θ + 2π) = Cl_2(θ)`.
 
     Proof: `sin((k+1)(θ + 2π)) = sin((k+1)θ + (k+1)·2π) = sin((k+1)θ)`
