@@ -1,7 +1,7 @@
 {
   "computation": "atom-jones-vs-knots-D",
   "description": "Numerically evaluate tr_M(D)(q) at multiple q values via Plancherel-weighted seminormal sum, compare to Jones polynomials of low-crossing catalog knots, and identify D's link class (if any catalog match).",
-  "timestamp": "2026-04-24T12:16:20.033730+00:00",
+  "computedAt": "2026-04-24T12:16:20.033730+00:00",
   "q_test_values": [
     1.05,
     1.08,
@@ -282,5 +282,7 @@
       "consistent": false
     }
   ],
-  "matching_knots": []
+  "matching_knots": [],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

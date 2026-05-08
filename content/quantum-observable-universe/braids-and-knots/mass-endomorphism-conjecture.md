@@ -11,7 +11,7 @@ separate structural pieces handled elsewhere; this conjecture
 concerns only the tower piece.
 
 The **Hecke mass element**
-$\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$
+$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) is categorically
 defined: it is the fibre functor image of the mass integrand
 $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$, and
@@ -22,12 +22,60 @@ problem** is computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly
 $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific
 braid words.
 
+## Scope: convenience target, not load-bearing
+
+A note on what this conjecture **is** and **is not** about, added
+2026-05-02 after the P3.1 conjectural-propagation audit:
+
+- **Load-bearing claim** (already proved, *not* part of this
+  conjecture): the categorical mass equals the infinite-series sum
+
+  $$
+    \mathfrak{m}(\varrho)
+    \;=\;
+    \bigl|\mathrm{tr}_M(\rho(\beta))\bigr|
+    \;+\; \sum_{n \ge 0}\!\Bigl(
+      \textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|)
+      + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)
+    \Bigr).
+  $$
+
+  This is
+  [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) +
+  [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower);
+  it does **not** depend on the closed-form conjecture below.
+  Every algebraic-side downstream block whose actual derivation
+  uses the mass tower can route through the infinite series.
+
+- **Convenience target** (the conjectural content of THIS block):
+  the existence of a *single* element
+  $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ — a finite-rank Hecke
+  element — whose Markov trace gives the full categorical mass.
+  This would make the infinite series collapse to a closed-form
+  evaluation. Useful for symbolic computation; not required for
+  the structure of any paper-side derivation.
+
+If this conjecture **fails** (no closed-form $\Phi_{\mathrm{mass}}$
+exists in finite-rank $H_n(R, q)$), the algebraic-side mass formula
+remains valid as the infinite series. Compute scripts that try to
+materialise $\Phi_{\mathrm{mass}}$ as a single element would have
+to truncate explicitly; those that only ever evaluate the infinite
+sum at $q_0$ (the dominant case) are unaffected.
+
+The failure consequence column in
+[`docs/audits/conjecture-cones.md`](../../../docs/audits/conjecture-cones.md)
+already records this scope correctly: "tower formula remains
+correct as an *infinite series*; the closed form is just a
+convenience". This section spells out the distinction in the
+conjecture's own prose, in line with the user's clarifying
+question (2026-05-02).
+
 ## Statement
 
 **Conjecture (explicit mass endomorphism).**
 *The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$
 ([Hecke mass element](#def:hecke-mass-element)) admits a
-closed-form NF decomposition in $H_n(q)$ expressible in terms
+closed-form NF decomposition in $H_n(R, q)$ expressible in terms
 of the braid word $\beta$, the substrate parameter $q$, and
 the quantum dilogarithm $\Phi_q$.  Specifically, the
 transient component satisfies:*
@@ -129,20 +177,120 @@ The brane tower $\{A_n\}$ provides the categorical version of
 $N \to \infty$: each brane level $n$ contributes a transient
 trace $\Phi_q(z_n)$, and the full mass sums over all levels.
 A mass endomorphism $\Phi_{\mathrm{mass}}$ would need to
-encode this sum as a **single** element of $H_n(q)$.
+encode this sum as a **single** element of $H_n(R, q)$.
 
 The quantum dilogarithm $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$
 is an **infinite product** — it is not a finite element of
-$H_n(q)$ for any $n$.  However, the brane tower truncates at
+$H_n(R, q)$ for any $n$.  However, the brane tower truncates at
 finite $N$ (determined by the knot crossing number), so the
 relevant sum is finite.  The question is whether this finite
-sum has a closed-form expression in $H_n(q)$.
+sum has a closed-form expression in $H_n(R, q)$.
+
+**Habiro-ring home for the tower limit.**  *Even when the brane
+tower does not truncate finitely, the partial sums*
+
+$$
+  \Phi_{\mathrm{mass}}^{(N)}(\beta)
+  \;:=\;
+  \sum_{i=1}^{N} \Phi_q(z_i)
+$$
+
+*form a Cauchy sequence in the $(q;q)_n$-adic topology on
+$\widehat{\mathbb{Z}[q]}$ ([Habiro ring](#def:habiro-ring)): each
+factor $\Phi_q(z_i)$ has cyclotomic-denominator structure (the
+$[k]_q$ in $\Phi_q$ are cyclotomic), so successive partial sums
+agree modulo $((q;q)_n)$ for $n$ growing with $N$. Therefore the
+limit*
+
+$$
+  \Phi_{\mathrm{mass}}^{(\infty)}(\beta)
+  \;\in\;\widehat{\mathbb{Z}[q]}
+$$
+
+*exists as an element of the Habiro completion — well-defined
+purely algebraically, with no analytic convergence required. This
+limit object **is** the motive of the mass:* it carries the
+combinatorial data needed to map to $\mathrm{Vol}(K)/\hbar_q^2$
+**only** when the archimedean realization
+[$\rho_\infty$](#def:archimedean-realization-functor) of
+the [motivic substrate](#def:motivic-substrate) is applied at
+$q_0 \in \mathbb{R}$. The non-archimedean realizations
+$\{\rho_p\}$ recover the colored-Jones data via cyclotomic
+projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$
+without any complex-analytic limit.
+
+The conjecture's "closed-form expression in $H_n(R, q)$" is a
+question at the level of the **finite-rank Hecke algebra**; the
+$N \to \infty$ tower limit is then a question at the level of the
+**Habiro completion** $\widehat{\mathbb{Z}[q]}$. Both senses are
+algebraic.
+
+**Two distinct convergence problems (clarification, 2026-04-28f).**
+*The Habiro completion above resolves the* $N \to \infty$ *tower-limit
+problem (number of summands) in the* $((q;q)_n)$*-adic topology on* $q$.
+*This is well-defined and at* $q_0 \approx 1.11$ *(real,* $|q| > 1$,
+*outside the natural boundary* $S^1$*) the Habiro evaluation
+agrees with the analytic infinite product.*
+
+*A separate convergence problem affects the brane tower numerically:
+for the per-generator volumes* $|\hat{V}_i|$ *of low isotopes, all values
+sit at* $|\hat{V}_i| \in [0.85, 1.0]$ *— at the boundary of the
+* $z$*-radius of convergence of* $\Phi_q(z) = \prod (1 - q^{-k} z)^{-1}$.
+*Numerically* $\Phi_q(0.989) \approx 6.7 \times 10^5$ *and* $\Phi_q(1) \approx 9 \times 10^5$.
+*The Habiro framework above is about completion in* $q$*, not in* $z$;
+*it does not regularize the* $|\hat{V}|\approx 1$ *behaviour.*
+
+*Two partial mitigations are documented but neither universally
+closes the gap:*
+
+1. *Yekutieli finite-slice truncation
+   ([atom-knot-mass-derivation §Architecture](#prop:atom-knot-mass-derivation)).
+   The non-abelian Stokes theorem at finite slice depth gives a
+   finite multiplicative integral; per-atom max slice depth equals
+   the GB filtration* $\mathrm{max\_grade}$ *recorded in
+   `joint-tower-sdp-h6-h9.witness.json`. Truncating the* $\Phi_q$
+   *product at this depth reduces* $\Phi_q(0.989)$ *from* $6.7 \times 10^5$
+   *to* $46.5$ *for* $\mathrm{max\_grade}=2$ *(D's filtration depth).*
+   *Empirical test in*
+   [`probe_phiq_yekutieli_truncation.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_phiq_yekutieli_truncation.py):
+   *the free-minus-atom subtraction* $E_0 \cdot (\mathrm{tower}^{\mathrm{free}}_{\leq k_{\max}} - \mathrm{tower}^{\mathrm{atom}}_{\leq k_{\max}})$
+   *gives* $B(D) \approx +1.74 \mathrm{MeV}$ *(error* $-22\%$*) but
+   fails for* $T$ *(deeper filtration* $k_{\max}=9$ *gives* $B(T) \approx 1449 \mathrm{MeV}$, *grossly off).*
+
+2. *The [$z$-Habiro completion](#def:z-habiro-ring) — analogous to the
+   $q$-Habiro one above but in the $z$-variable. The cyclotomic
+   denominator structure in $z$ parallel to $(q; q)_n$ in $q$ is*
+
+   $$
+     P_n(q, z) \;=\; \prod_{k=1}^{n} \bigl(1 - q^{-k} z\bigr)
+     \;=\; (z q^{-1};\, q^{-1})_n,
+   $$
+
+   *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The
+   completion $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z = \varprojlim_n
+   \mathbb{Z}[q^{\pm 1}][z] / (P_n(q, z))$ has cyclotomic projections
+   $\pi_n^{(z)}$ that act as structural truncations at depth $n$,
+   replacing Yekutieli's ad-hoc cutoff with a quotient by a
+   structural ideal. The* [conjecture that the brane tower lives in
+   this ring](#conj:brane-tower-z-habiro) *— with a canonically
+   determined level-selection rule $n_\star(\mathfrak{H})$ derivable
+   from substrate data — is the structural form of the open problem.*
+
+*Until either (1) extended uniformly across atoms (which requires
+understanding why Yekutieli depth differs by* $A$*) or (2) the
+[brane-tower-in-$z$-Habiro conjecture](#conj:brane-tower-z-habiro)
+is established with an explicit $n_\star$ rule, the brane tower
+contribution to the multi-term mass formula is not computable in closed
+form for* $|\hat{V}|\approx 1$. *Empirically the descended Markov
+trace plus Frobenius co-Casimir alone reproduces the binding within*
+$\sim 30\%$ *for low isotopes; closing the residual to AME requires the
+brane tower in some regularized form.*
 
 ## Descended vs transient mass (computed)
 
 The Hecke mass element splits as
 $\Phi_{\mathrm{mass}} = \Phi^{\mathrm{desc}} + \Phi^{\mathrm{trans}}$
-([Hecke mass element](#def:hecke-mass-element)).  At our $q_0$,
+([Hecke mass element](#def:hecke-mass-element)).  At $q_0$,
 the transient (tower) component dominates overwhelmingly:
 
 | Particle | $\mathrm{tr}_M(\Phi^{\mathrm{desc}})$ | $\mathrm{tr}_M(\Phi^{\mathrm{trans}})$ | Ratio trans/desc |
@@ -190,13 +338,13 @@ $\mathrm{tr}_M(e^- \cdot 4_1) = hz^2 + z = \mathrm{tr}_M(e^-)$
 does not produce the correct mass ratios.  The figure-eight
 encodes the **mass mechanism** (amphichiral, hyperbolic,
 $\mathrm{Vol} = 2.0299$) but acts trivially on the trefoil
-in $H_3(q)$.
+in $H_3(R, q)$.
 
 **(b) Tower-accumulated operator.**
 The mass endomorphism may be the product
 $\Phi_{\mathrm{mass}} = \prod_{n=0}^{N} (1 + \Phi_q(z_n))$
 of Hecke elements at each brane level, composed via the
-comultiplication.  This would be an element of $H_n(q)$
+comultiplication.  This would be an element of $H_n(R, q)$
 growing with $N$ — a categorically defined object, but not a
 fixed element independent of the knot.
 
@@ -216,7 +364,7 @@ $\mathrm{Vol}(K)$ in the limit.
 
 The multi-channel decomposition
 ([knot operator selection](#prop:knot-operator-selection))
-showed that interactions decompose over irreps of $H_n(q)$
+showed that interactions decompose over irreps of $H_n(R, q)$
 weighted by quantum dimensions.  The mass endomorphism
 conjecture is the statement that **mass is a specific
 reweighting of the same decomposition** — the weights that

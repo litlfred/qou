@@ -10,9 +10,11 @@ export default remark({
     "obstruction",
     "euler-characteristic",
     "complementary-subgroup",
+    "motivic-galois",
   ],
   uses: [
-    "def:quantum-characteristic-classes",
     "thm:qu-to-qou",
+    "def:motivic-substrate",
+    "def:adelic-substrate",
   ],
 });

@@ -13,9 +13,9 @@ export default proposition({
     "minimum-action",
     "lp-duality",
   ],
-  uses: [
-    "prop:confinement-operator-selection",
-    "prop:frobenius-gram-matrix",
-    "prop:knot-operator-selection",
-  ],
+  lean: {
+    ref: "qou:QOU.Interactions.lp_achieves_zero_trace",
+    validation: "not_checked",
+  },
+  uses: ["prop:confinement-operator-selection"],
 });

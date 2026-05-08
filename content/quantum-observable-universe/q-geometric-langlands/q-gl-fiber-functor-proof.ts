@@ -4,6 +4,6 @@ export default remark({
   interprets: "conj:q-gl-fiber-functor",
   label: "rem:q-gl-fiber-functor-sketch",
   title: "Proof sketch for fibre-functor mediation",
-  uses: ["conj:q-gl-fiber-functor"],
+  uses: [],
   tags: ["geometric-langlands", "proof-sketch"],
 });

@@ -1,0 +1,89 @@
+{
+  "artifacts": {
+    "baryon-product-from-alt": {
+      "baryon_product_from_alt.py": "e436ae9b59b48dda",
+      "picard-lefschetz-thimble.witness.json": "8c1289352723737d",
+      "picard_lefschetz_thimble.py": "5d7d3754028312df",
+      "q_parameter.py": "b08792045d4fae00"
+    },
+    "gb-filtration-jet-order": {
+      "gb_filtration_jet_tracker.py": "3323fefb5f36b5e6"
+    },
+    "jet-gb-pl-correspondence": {
+      "jet_gb_pl_correspondence.py": "a556bd2d08eaf8c3",
+      "picard-lefschetz-thimble.witness.json": "8c1289352723737d",
+      "q_parameter.py": "b08792045d4fae00"
+    },
+    "joint-tower-sdp-h3": {
+      "gb_filtration_jet_tracker.py": "3323fefb5f36b5e6",
+      "joint_tower_sdp_solver.py": "dc9e66b464ffe46b"
+    },
+    "joint-tower-sdp-h6-h9": {
+      "gb_filtration_jet_tracker.py": "3323fefb5f36b5e6",
+      "joint_tower_sdp_solver.py": "dc9e66b464ffe46b",
+      "joint_tower_sdp_solver_v2.py": "bbca8a0f29628e88"
+    },
+    "joint-tower-sdp-rust": {
+      "../../tools/hecke-engine/Cargo.toml": "bcc270b85c1a6add",
+      "../../tools/hecke-engine/src/bin/joint_tower_sdp.rs": "f40f4686044a79e3",
+      "../../tools/hecke-engine/src/gb_nf_reducer.rs": "fa5f0d65136f2558",
+      "../../tools/hecke-engine/src/joint_tower_sdp_certificate.rs": "4545ea6c6c05b956",
+      "../../tools/hecke-engine/src/lib.rs": "6d3f37856944dd67"
+    },
+    "joint-tower-sdp-rust": {
+      "../../tools/hecke-engine/Cargo.toml": "3125734f0c1c10b1",
+      "../../tools/hecke-engine/src/bin/joint_tower_sdp.rs": "f40f4686044a79e3",
+      "../../tools/hecke-engine/src/gb_nf_reducer.rs": "fa5f0d65136f2558",
+      "../../tools/hecke-engine/src/joint_tower_sdp_certificate.rs": "4545ea6c6c05b956",
+      "../../tools/hecke-engine/src/lib.rs": "740d508e2efdf8b3"
+    },
+    "li-atom-knot-search": {
+      "li_atom_knot_search.py": "8b6e11cc74a8c517"
+    },
+    "mass-table-ppb": {},
+    "methodology-deprecation": {
+      "../../content/quantum-observable-universe/braids-and-knots/confined-particle.md": "0075d924251f2478",
+      "li-atom-knot-search.witness.json": "d94cf63d31a93ebc",
+      "li_atom_knot_search.py": "8b6e11cc74a8c517"
+    },
+    "mobius-limit-from-thimble": {
+      "mobius_limit_from_thimble.py": "5dead6bda10d8127",
+      "q_parameter.py": "b08792045d4fae00"
+    },
+    "particle-knot-dictionary-audit": {
+      "particle_knot_dictionary_audit.py": "8408d473bbb82e78"
+    },
+    "picard-lefschetz-thimble": {
+      "picard_lefschetz_thimble.py": "5d7d3754028312df",
+      "q_parameter.py": "b08792045d4fae00"
+    },
+    "recursive-atom-knot-atlas": {
+      "../../content/quantum-observable-universe/braids-and-knots/confined-particle.md": "0075d924251f2478",
+      "hp_volume.py": "28cd918232bbf53f",
+      "li-atom-knot-search.witness.json": "d94cf63d31a93ebc",
+      "mass-table-ppb.witness.json": "961e72b3a6694aba",
+      "methodology-deprecation.witness.json": "b68d4190f1898ead",
+      "recursive_atom_knot_atlas_render.py": "0ea2e4afd262779b"
+    },
+    "sw-period-thimble-equivalence": {
+      "picard-lefschetz-thimble.witness.json": "8c1289352723737d",
+      "picard_lefschetz_thimble.py": "5d7d3754028312df",
+      "q_parameter.py": "b08792045d4fae00",
+      "sw_period_baryon.py": "1df1e010fb2a3b08",
+      "sw_period_thimble_equivalence.py": "77ee95111bea00a4"
+    },
+    "wenzl-qmn-cross-validation": {
+      "q_mn_recursive_memoized.py": "3881ac647ab145bb",
+      "wenzl_qmn_cross_validation.py": "232bba8d10ebfd4a",
+      "y-lambda-jones-markov-witness.json": "6d59b037561b99b0"
+    },
+    "y-lambda-cyclotomic-factor": {
+      "y-lambda-jones-markov-witness.json": "6d59b037561b99b0",
+      "y_lambda_cyclotomic_factor.py": "a19d000ebb0ebe6b"
+    },
+    "y-lambda-wenzl-bridge-symbolic": {
+      "y_lambda_wenzl_bridge_extended.py": "d43fed2894ad38e2"
+    }
+  },
+  "version": 1
+}

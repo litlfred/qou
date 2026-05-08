@@ -79,6 +79,110 @@ def q_int_err(n):
 Q_RAT_NUM = 11099786
 Q_RAT_DEN = 10000000
 
+# ── Centralized high-precision string for q_0 (for mpmath callers) ─
+# Derived from CAL-1 (m_μ/m_e) per the three-calibration discipline; this
+# is the canonical 50-digit pin used by witness scripts that need
+# arbitrary-precision evaluation. Imported by callers to avoid hardcoding
+# the literal in many places (per Gemini review on PR #515).
+Q_50_DIGIT_STR = (
+    "1.10997859555418051695830018898879867637876138498395"
+)
+
+# ── High-precision (mpmath) parallel API ─────────────────────────
+# The f64 globals above are bit-identical to what every existing
+# witness script reads via `from q_parameter import Q, HBAR_Q, ...`.
+# Don't change them — downstream f64 callers depend on stability.
+#
+# For the Clarabel high-precision / 50-dps work (CLARABEL_PRECISION_PLAN
+# §S7), HP callers should use `q_at(dps)` or the `_MP` globals below,
+# which carry mpmath.mpf values computed at 50 decimal digits by
+# default.  Vol(4_1) is reused at 38-digit precision from
+# `alpha_em_pslq_uniqueness.py`; the mass ratio is bounded by CODATA
+# 2022's published precision (~7 sig figs).
+#
+# The mpmath path is bit-identical to f64 in the first ~15 digits
+# (SnapPy's Vol limit); past that it is stable but bounded by
+# CODATA m_μ/m_e uncertainty.
+
+MASS_RATIO_MU_E_STR  = "206.7682830"   # CODATA 2022, ~7 sig figs (treated as exact for q_0 definition)
+
+_DPS_DEFAULT = 50
+
+# Note: previously this module reused a hardcoded 38-dps string for
+# Vol(4_1) from `alpha_em_pslq_uniqueness.py:57`.  That string is
+# inaccurate past digit ~30 — its trailing digits do not match the
+# Clausen-converged value.  The function `vol_4_1_at` below recomputes
+# from scratch at every requested precision, so q is correct at any
+# dps the caller asks for.
+
+try:
+    import mpmath as _mp
+
+    def vol_4_1_at(dps: int = _DPS_DEFAULT):
+        """Hyperbolic volume of the figure-eight knot, computed at
+        requested precision.  Identity: Vol(4_1) = 2 Cl_2(π/3) where
+        Cl_2 is the Clausen function (mpmath.clsin)."""
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)  # +10 guard digits
+            vol = 2 * _mp.clsin(2, _mp.pi / 3)
+            return +vol  # round to current dps
+        finally:
+            _mp.mp.dps = prev
+
+    def q_at(dps: int = _DPS_DEFAULT):
+        """Return q at requested mpmath precision.  Caller should
+        set ``mpmath.mp.dps`` to at least ``dps`` before consuming
+        the result if it does further mpmath arithmetic."""
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 10)
+            vol = vol_4_1_at(dps + 10)
+            r = _mp.mpf(MASS_RATIO_MU_E_STR)
+            hbar_sq = vol / r
+            hbar = _mp.sqrt(hbar_sq)
+            q = _mp.mpf(1) / (_mp.mpf(1) - hbar)
+            _mp.mp.dps = max(prev, dps)
+            return +q
+        finally:
+            _mp.mp.dps = prev
+
+    def q_str(dps: int = _DPS_DEFAULT) -> str:
+        """Return q as a decimal string at requested precision —
+        the canonical witness-JSON / Clarabel-HP serialisation."""
+        return _mp.nstr(q_at(dps), dps, strip_zeros=False)
+
+    # Compute the cached _MP globals at the default precision via
+    # `mp.workdps` so this module does NOT mutate the caller's
+    # `mp.mp.dps`.  Many downstream scripts set `mp.mp.dps` BEFORE
+    # importing q_parameter; the previous global assignment silently
+    # overrode their precision setting.  workdps restores on exit.
+    with _mp.workdps(_DPS_DEFAULT):
+        Q_MP         = q_at(_DPS_DEFAULT)
+        VOL_4_1_MP   = vol_4_1_at(_DPS_DEFAULT)
+        HBAR_Q_SQ_MP = VOL_4_1_MP / _mp.mpf(MASS_RATIO_MU_E_STR)
+        HBAR_Q_MP    = _mp.sqrt(HBAR_Q_SQ_MP)
+        Q_INV_MP     = _mp.mpf(1) / Q_MP
+        HA_MP        = Q_MP - Q_INV_MP
+        E_CROSS_MP   = HA_MP / 2
+        S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
+        TWO_Q_MP     = Q_MP + Q_INV_MP
+        TANH_LN_Q_MP = HA_MP / TWO_Q_MP
+        LN_Q_MP      = _mp.log(Q_MP)
+
+    HAS_MPMATH = True
+except ImportError:
+    HAS_MPMATH = False
+
+    def vol_4_1_at(dps: int = _DPS_DEFAULT):
+        raise RuntimeError("vol_4_1_at requires mpmath; install it with `pip install mpmath`")
+
+    def q_at(dps: int = _DPS_DEFAULT):
+        raise RuntimeError("q_at requires mpmath; install it with `pip install mpmath`")
+
+    def q_str(dps: int = _DPS_DEFAULT) -> str:
+        raise RuntimeError("q_str requires mpmath; install it with `pip install mpmath`")
+
 if __name__ == "__main__":
     print(f"Substrate parameter q (canonical)")
     print(f"  Vol(4_1)   = {VOL_FIGURE_EIGHT} ± {VOL_FIGURE_EIGHT_ERR}")

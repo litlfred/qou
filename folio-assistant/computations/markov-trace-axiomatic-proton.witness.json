@@ -1,0 +1,25 @@
+{
+  "computation": "markov-trace-axiomatic-proton",
+  "description": "Symbolic Markov trace of \u03c3_1\u03c3_2\u03c3_1 (the H_3 longest element w_0, used as a proton-equivalent demo word) via direct Markov-axiom reduction in \u211a(q). Gives the categorically-clean closed form tr_M(\u03c3_1\u03c3_2\u03c3_1)(q) = z(1 + hz) where z = 1/(q^{1/2}+q^{-1/2}) and h = q-q^{-1}. Bypasses PR #546's IndexError on \u03c3_2; uses pure Markov axioms + Hecke quadratic + cyclicity, no rep theory. Demonstrates that the canonical Markov-trace closed form is FULLY SYMMETRIC under q \u2194 1/q (in contrast to the Plancherel-trace form's anti-self-reciprocity).",
+  "reference_blocks": [
+    "prop:categorical-mass-markov",
+    "prop:atomic-mass-gb-nf",
+    "prop:markov-trace-antipode-polynomial-symmetry"
+  ],
+  "computedAt": "2026-05-05T22:41:42.264150+00:00",
+  "h_3_markov_basis_table": {
+    "()": "1",
+    "(1,)": "sqrt(q)/(q + 1)",
+    "(2,)": "sqrt(q)/(q + 1)",
+    "(1, 2)": "q/(q**2 + 2*q + 1)",
+    "(2, 1)": "q/(q**2 + 2*q + 1)",
+    "(1, 2, 1)": "(q**(5/2) + q**(3/2) + q**3 - q)/(q**3 + 2*q**2 + q)"
+  },
+  "tr_M_proton_demo_symbolic": "(q**(5/2) + q**(3/2) + q**3 - q)/(q**3 + 2*q**2 + q)",
+  "tr_M_proton_at_q0": 0.5514434199198298,
+  "tr_M_proton_at_inv_q0": 0.4471972481473669,
+  "anti_self_reciprocal": false,
+  "symmetric_under_q_inv": false,
+  "rho_p_codata": 3329.7205743562718,
+  "rho_p_over_8G": 454.38326615123793
+}

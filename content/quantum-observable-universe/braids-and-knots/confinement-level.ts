@@ -6,11 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.ConfinementLevel",
     validation: "not_checked",
   },
-  uses: [
-    "def:knot-operator-energy",
-    "def:hecke-normal-form",
-    "prop:bw-coefficient-shadow-price",
-  ],
+  uses: ["def:knot-operator-energy"],
   cites: [],
   tags: [
     "confinement",

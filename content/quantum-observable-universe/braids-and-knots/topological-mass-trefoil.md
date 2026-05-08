@@ -64,7 +64,7 @@ $$
 $$
 
 which matches the muon-to-electron mass ratio
-$\mathfrak{m}_\mu / \mathfrak{m}_e \approx 206.768$ to within $0.2\%$
+$\mathfrak{m}_\mu / \mathfrak{m}_e \approx :val[m_mu_over_e]{precision=6}$ to within $0.2\%$
 (the electron mass $\mathfrak{m}_e = 1$ is the dimensionless unit).
 The correspondence
 

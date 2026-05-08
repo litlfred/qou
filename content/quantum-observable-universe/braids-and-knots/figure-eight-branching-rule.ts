@@ -7,11 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.figure_eight_branching_rule",
     validation: "not_checked",
   },
-  uses: [
-    "prop:hoefsmit-seminormal-form",
-    "prop:figure-eight-bw-coefficients",
-    "prop:wedderburn-trace-identity",
-  ],
+  uses: ["prop:hoefsmit-seminormal-form"],
   cites: ["hoefsmit1974"],
   tags: [
     "figure-eight",

@@ -20,7 +20,7 @@ valid element of the Iwahori--Hecke algebra:
 
 | Relation | Status | Detail |
 |----------|--------|--------|
-| Hecke (J-1) | Survives | $T_1^{11} = a_{11}(u) T_1 + a_{10}(u) \in H_2(q)$ |
+| Hecke (J-1) | Survives | $T_1^{11} = a_{11}(u) T_1 + a_{10}(u) \in H_2(R, q)$ |
 | Frobenius (J-2) | Survives | $\mathrm{tr}_M(T_1^{11} \cdot T_\beta) \neq 0$ |
 | Jones polynomial | Survives | $J_{T_{2,11}}(q) \neq 0$ |
 | Translation (J-4) | Survives | Lifts to all brane levels |

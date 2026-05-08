@@ -17,8 +17,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.beta_decay_transfer_matrix",
     validation: "not_checked",
   },
-  uses: [
-    "prop:skein-polynomial-transfer-matrix",
-    "def:beta-decay-skein",
-  ],
+  uses: ["prop:skein-polynomial-transfer-matrix"],
 });

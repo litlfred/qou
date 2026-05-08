@@ -6,10 +6,5 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.StableAtom.decidable",
     validation: "not_checked",
   },
-  uses: [
-    "def:stable-atom",
-    "def:atom-knot",
-    "def:confinement-level",
-  ],
   tags: ["decidability", "stability", "ilp", "atom"],
 });

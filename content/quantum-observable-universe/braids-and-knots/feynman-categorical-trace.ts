@@ -7,10 +7,6 @@ export default proposition({
   },
   title: "Feynman transition amplitude as categorical trace",
   tags: ["path-integral", "feynman", "categorical-trace", "markov-trace", "eigenbasis"],
-  uses: [
-    "prop:knot-eigenbasis-complete",
-    "prop:categorical-mass-markov",
-    "thm:jones-markov-trace",
-  ],
+  uses: ["prop:categorical-mass-markov"],
   proofs: ["prf:feynman-categorical-trace"],
 });

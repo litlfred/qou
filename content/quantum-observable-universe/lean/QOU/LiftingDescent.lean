@@ -1,4 +1,13 @@
 import Mathlib.Data.Real.Basic
+import QOU.LiftingDescent.MotivicGaloisCharacter
+-- `MotivicGaloisCharacterTrivial` deliberately NOT aggregated here:
+-- the trivial `MotivicGaloisCharacter ℤ ℤ trivialTarget (motiveA := 1)`
+-- instance would otherwise pollute typeclass search.  Opt in
+-- explicitly with `import QOU.LiftingDescent.MotivicGaloisCharacterTrivial`.
+-- Cf. copilot-pull-request-reviewer review on PR #541.
+import QOU.LiftingDescent.MotivicPerpetualObstruction
+import QOU.LiftingDescent.DirectLimitAlgebra
+import QOU.LiftingDescent.CosimplicialCrossedGroupoid
 
 /-!
 # QOU.LiftingDescent — Arc spaces of the brane tower

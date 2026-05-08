@@ -1,5 +1,5 @@
 The Reeb vector field $\xi$ on the CR manifold $M$ carries a natural
-orientation: the sign of the contact form $\theta(\xi) = 1$ singles out a
+orientation: the sign of the contact form $\varTheta(\xi) = 1$ singles out a
 preferred direction along the vertical distribution.  Left-handed and
 right-handed chiralities correspond to the two orientations of $\xi$ relative
 to the complex structure of $M$.  For fermions

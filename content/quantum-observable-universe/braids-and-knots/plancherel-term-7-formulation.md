@@ -50,7 +50,7 @@ $\mathrm{depth}(\lambda)$, so binning $\sum_\lambda w_\lambda \cdot
 \log|\int_{A_\lambda} \rho(\beta_\mathcal{K}) \cdot \mathcal{T}|$ by
 $\mathrm{depth}(\lambda)$ is the canonical curvature-rank
 decomposition of the (logarithmic) Frobenius pairing.  The threshold
-$k \geq 4$ is determined by which strata of $Z(H_n(q))$ still carry
+$k \geq 4$ is determined by which strata of $Z(H_n(R, q))$ still carry
 a distinguished knot ideal — empirically $k_* = 4$. $\square$
 
 **Why the logarithm controls scale.** *The bare Plancherel-weighted

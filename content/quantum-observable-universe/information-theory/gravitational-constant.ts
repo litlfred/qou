@@ -16,8 +16,6 @@ export default definition({
   },
   uses: [
     "def:information-speed-of-light",
-    "def:operational-entropy",
-    "def:planck-time",
     "rem:gr-substrate-geometry",
     "rem:c-substrate-via-levi",
   ],

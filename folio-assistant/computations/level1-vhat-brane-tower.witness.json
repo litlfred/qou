@@ -10,7 +10,7 @@
   "scriptFile": "level1_vhat_brane_tower.py",
   "scriptHash": "0430bd003598",
   "scriptCommitSha": "",
-  "description": "Compute explicit level-1 V̂_i^(1) = q·∂V̂/∂q via finite difference, apply ℏ_q² jet suppression, and test whether this closes the proton −0.14% residual and/or the neutron −56% gap.",
+  "description": "Compute explicit level-1 V\u0302_i^(1) = q\u00b7\u2202V\u0302/\u2202q via finite difference, apply \u210f_q\u00b2 jet suppression, and test whether this closes the proton \u22120.14% residual and/or the neutron \u221256% gap.",
   "data": {
     "params": {
       "q_0": 1.1099785955541805,
@@ -65,5 +65,7 @@
       "m_p_err": -99.76398526352753,
       "m_n_err": -99.79202900934322
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

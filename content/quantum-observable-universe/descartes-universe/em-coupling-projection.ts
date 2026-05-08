@@ -21,7 +21,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "rem:force-knot-identification",
     "thm:em-spectral-completeness",
     "prop:force-carrier-bring-uniqueness",
   ],

@@ -20,7 +20,7 @@
   "scriptFile": "benzene_resonance.py",
   "scriptHash": "cc301ceaa282",
   "scriptCommitSha": "",
-  "description": "Benzene ring resonance stabilization from cyclic braid at Hecke levels k=3,5,7. The resonance energy is the difference between ring-closed and open-chain Kekulé structures. Zero fitted parameters.",
+  "description": "Benzene ring resonance stabilization from cyclic braid at Hecke levels k=3,5,7. The resonance energy is the difference between ring-closed and open-chain Kekul\u00e9 structures. Zero fitted parameters.",
   "data": {
     "k3": {
       "E_open_eV": 16.9826,
@@ -37,5 +37,7 @@
       "E_ring_eV": 19.7722,
       "resonance_eV": 2.197
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

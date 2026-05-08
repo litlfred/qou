@@ -1,6 +1,6 @@
 **Proposition (Schur–Weyl justification of shell self-duality).**
 *Let $\mathcal{U}_q(\mathfrak{gl}_k)$ denote the quantum enveloping
-algebra and $H_n(q)$ the Iwahori–Hecke algebra.  Under Schur–Weyl
+algebra and $H_n(R, q)$ the Iwahori–Hecke algebra.  Under Schur–Weyl
 duality*
 
 $$
@@ -9,7 +9,7 @@ $$
   \bigoplus_{\lambda\,\vdash\,n}
     V_{\mathcal{U}_q(\mathfrak{gl}_k)}(\lambda)
     \;\otimes\;
-    V_{H_n(q)}(\lambda),
+    V_{H_n(R, q)}(\lambda),
 $$
 
 *the $S_n$-transpose involution $\lambda \leftrightarrow \lambda^*$
@@ -27,12 +27,12 @@ $$
 Equivalently, on the Hecke side:*
 
 $$
-  V_{H_n(q)}(\lambda) \,\otimes\, V_{H_n(q)}(1^n)
+  V_{H_n(R, q)}(\lambda) \,\otimes\, V_{H_n(R, q)}(1^n)
   \;\cong\;
-  V_{H_n(q)}(\lambda^*),
+  V_{H_n(R, q)}(\lambda^*),
 $$
 
-*where $V_{H_n(q)}(1^n)$ is the sign (alternating) representation.*
+*where $V_{H_n(R, q)}(1^n)$ is the sign (alternating) representation.*
 
 *Consequently, the **shell-operator self-duality constraint***
 
@@ -74,9 +74,9 @@ $\mathrm{GL}_k$-representation duality.
 **Step 3 ($q$-deformation).**
 Quantum Schur–Weyl duality (Kassel \cite{kassel1995} Ch X) extends
 the classical statement: the
-Hecke algebra $H_n(q)$ replaces $S_n$, $\mathcal{U}_q(\mathfrak{gl}_k)$
+Hecke algebra $H_n(R, q)$ replaces $S_n$, $\mathcal{U}_q(\mathfrak{gl}_k)$
 replaces $\mathrm{GL}_k$, and the pairing
-$V_\lambda^{\mathcal{U}_q} \leftrightarrow V_\lambda^{H_n(q)}$ is
+$V_\lambda^{\mathcal{U}_q} \leftrightarrow V_\lambda^{H_n(R, q)}$ is
 preserved.  Representation duality on the quantum group side still
 maps $V_\lambda^{\mathcal{U}_q} \mapsto V_{\lambda^*}^{\mathcal{U}_q}$
 (up to $q$-determinant twist).
@@ -84,8 +84,8 @@ maps $V_\lambda^{\mathcal{U}_q} \mapsto V_{\lambda^*}^{\mathcal{U}_q}$
 **Step 4 (Hecke-side involution).**
 On the Hecke side, the corresponding involution is tensoring with
 the sign representation
-$V_{H_n(q)}(1^n)$, which maps $V_\lambda \to V_{\lambda^*}$.  This
-is an **automorphism** of $H_n(q)$ fixing the Wedderburn blocks
+$V_{H_n(R, q)}(1^n)$, which maps $V_\lambda \to V_{\lambda^*}$.  This
+is an **automorphism** of $H_n(R, q)$ fixing the Wedderburn blocks
 pointwise up to the $\lambda \leftrightarrow \lambda^*$ swap.
 
 **Step 5 (shell-operator self-duality).**
@@ -93,10 +93,10 @@ The shell operator $\sigma_{\mathrm{shell}}$ is the minimal
 categorical ingredient realising magic-shell closure at level $4$
 in the confinement filtration
 ([confinement level](#def:confinement-level)).  By the braiding
-compatibility between $\mathcal{U}_q(\mathfrak{gl}_k)$ and $H_n(q)$
+compatibility between $\mathcal{U}_q(\mathfrak{gl}_k)$ and $H_n(R, q)$
 under Schur–Weyl, any $\mathrm{GL}_k$-charge-conjugate-invariant
 construction in the quantum-group category corresponds, under SW
-transport, to an element of $H_n(q)$ fixed by the sign-twist
+transport, to an element of $H_n(R, q)$ fixed by the sign-twist
 involution.  Such elements satisfy $x_\lambda = x_{\lambda^*}$ in
 the Wedderburn decomposition.
 

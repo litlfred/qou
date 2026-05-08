@@ -13,9 +13,5 @@ export default definition({
   lean: { ref: "qou:QOU.Information.boundaryPressure",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-temperature",
-    "def:categorical-action",
-    "def:frobenius-pairing",
-  ],
+  uses: ["def:quantum-temperature"],
 });

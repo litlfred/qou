@@ -1,7 +1,7 @@
 {
   "computation": "mass-table-ppb-zero-param",
   "description": "AME2020 light-atom binding vs strictly zero-free-parameter predictions: Kashaev law B = \u03c1_F \u00b7 Vol_hyp(K) with \u03c1_F \u2208 {m_e, 2m_e}; atom\u2192knot assignments from framework rules (magic A\u00b78G, \u03b1-cluster with c_\u03b1\u03b1 = m_e\u00b7Vol(7\u00b2_1)) or census search (flagged 'hyp: census-assigned').  NO AME-derived calibrations or fits.",
-  "timestamp": "2026-04-24T02:39:05.917765+00:00",
+  "computedAt": "2026-04-25T18:28:57.416715+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -248,5 +248,7 @@
     "1000000000.0": 10
   },
   "mean_abs_pct": 6.799563261375073,
-  "mean_abs_ppb": 67995632.61375073
+  "mean_abs_ppb": 67995632.61375073,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

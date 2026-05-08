@@ -48,11 +48,11 @@ $$
 By [categorical-mass-markov](#prop:categorical-mass-markov) Steps 1–3:
 - the categorical trace $\mathrm{tr}$ descends under the fibre
   functor $\tau$ to the Jones–Markov trace $\mathrm{tr}_M$ on
-  $H_n(q)$;
+  $H_n(R, q)$;
 - the Nakayama automorphism $\Psi = (\int_A \otimes \mathrm{id}) \circ \Delta$
   equals $S^2$ for a Frobenius–Hopf algebra, and $S^2 = \mathrm{id}$
-  on $H_n(q)$ generators (antipode $S(T_i) = T_i^{-1}$, so
-  $S^2(T_i) = T_i$);
+  on $H_n(R, q)$ generators (antipode $S(\sigma_i) = \sigma_i^{-1}$, so
+  $S^2(\sigma_i) = \sigma_i$);
 - therefore $\mathfrak{m}(\varrho) = |\mathrm{tr}_M(\rho(\beta))|$.
 
 **Step 2: Binding = mass defect of Markov traces.**
@@ -66,7 +66,7 @@ $$
 Applying Step 1 and using the disconnected-tensor factorisation of
 the free-nucleon braid $W_{\mathrm{free}} =
 W_{\mathrm{nucleon}}^{\otimes A}$ under
-$H_3(q)^{\otimes A} \hookrightarrow H_{3A}(q)$:
+$H_3(R, q)^{\otimes A} \hookrightarrow H_{3A}(q)$:
 
 $$
   B \;=\; |\mathrm{tr}_M(W_{\mathrm{free}})|

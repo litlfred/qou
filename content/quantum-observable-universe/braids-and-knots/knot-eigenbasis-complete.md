@@ -3,9 +3,9 @@ $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
 representation.  Suppose $q$ is not a root of unity.  Then:
 
 1. **(Semisimplicity.)**  The Iwahori--Hecke algebra
-   $H_n(q) = \mathrm{End}_{B_n}(V^{\otimes n})$ is semisimple, and
+   $H_n(R, q) = \mathrm{End}_{B_n}(V^{\otimes n})$ is semisimple, and
    $V^{\otimes n}$ admits a complete decomposition into irreducible
-   $H_n(q)$-modules:
+   $H_n(R, q)$-modules:
 
    $$
      V^{\otimes n}
@@ -18,11 +18,11 @@ representation.  Suppose $q$ is not a root of unity.  Then:
    (the $q$-analogue of Schur--Weyl duality), $V_\lambda$ is the
    irreducible $\mathrm{SU}_q(2)$-module of spin
    $j = (\lambda_1 - \lambda_2)/2$, and $S_\lambda$ is the irreducible
-   $H_n(q)$-module labelled by $\lambda$.
+   $H_n(R, q)$-module labelled by $\lambda$.
 2. **(Alexander surjectivity.)**  By Alexander's theorem, every
    oriented link $L$ in $S^3$ is the closure $\hat{\beta}$ of some braid
    $\beta \in B_n$ for some $n$.  The Markov trace
-   $\mathrm{tr}_M \colon \bigcup_n H_n(q) \to R$ assigns to each braid
+   $\mathrm{tr}_M \colon \bigcup_n H_n(R, q) \to R$ assigns to each braid
    closure $\hat{\beta}$ the value
    $\mathrm{tr}_M(\rho_n(\beta))$, which equals the Jones polynomial
    $J_L(q)$ up to a framing factor.  In particular, the map

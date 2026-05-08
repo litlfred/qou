@@ -1,0 +1,199 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-28T23:31:55.386111+00:00",
+  "commitSha": "78f925f2411b842bd2ff93fe9ff4ffe7ced54075",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "probe-d-height-stratification",
+  "scriptFile": "probe_d_height_stratification.py",
+  "scriptHash": "132557e67841",
+  "scriptCommitSha": "",
+  "description": "Height-stratified Markov trace for D's atom braid: splits the full Wenzl-Schur tr_M into per-height contributions, each corresponding to a colored-Jones-at-level-h piece. Per Schur duality, height-≤-(k+1) traces correspond to SU(k+1) projections; height-≤-2 = standard Jones polynomial.",
+  "contentBlock": "thm:knot-mass-formula-unified",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895
+  },
+  "data": {
+    "rows": [
+      {
+        "lambda": [
+          6
+        ],
+        "height": 1,
+        "d_lambda": 1,
+        "dim_q": 0.9999999999999999,
+        "chi": 1.559758739418062,
+        "y_wenzl": 0.05918771693214866,
+        "contrib": 0.09231855875112129
+      },
+      {
+        "lambda": [
+          5,
+          1
+        ],
+        "height": 2,
+        "d_lambda": 5,
+        "dim_q": 5.220441324664572,
+        "chi": 2.673471840331177,
+        "y_wenzl": 0.058960681401453746,
+        "contrib": 0.15762972141352474
+      },
+      {
+        "lambda": [
+          4,
+          2
+        ],
+        "height": 2,
+        "d_lambda": 9,
+        "dim_q": 9.669048397124518,
+        "chi": 1.583765638804527,
+        "y_wenzl": 0.04028438696593522,
+        "contrib": 0.06380102785695314
+      },
+      {
+        "lambda": [
+          4,
+          1,
+          1
+        ],
+        "height": 3,
+        "d_lambda": 10,
+        "dim_q": 10.669048397124513,
+        "chi": -0.6481636308453277,
+        "y_wenzl": 0.010133463492072928,
+        "contrib": -0.006568142490060562
+      },
+      {
+        "lambda": [
+          3,
+          3
+        ],
+        "height": 2,
+        "d_lambda": 5,
+        "dim_q": 5.448607072459945,
+        "chi": 3.2076863422892794,
+        "y_wenzl": 0.01412087400497529,
+        "contrib": 0.04529533468694696
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          1
+        ],
+        "height": 3,
+        "d_lambda": 16,
+        "dim_q": 17.344673582613545,
+        "chi": -1.8845100728432118,
+        "y_wenzl": 0.007318454352285726,
+        "contrib": -0.013791700944525694
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "height": 4,
+        "d_lambda": 10,
+        "dim_q": 10.669048397124515,
+        "chi": 0.079473126470548,
+        "y_wenzl": -0.0006853088855144674,
+        "contrib": -5.446363972988157e-05
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2
+        ],
+        "height": 3,
+        "d_lambda": 5,
+        "dim_q": 5.448607072459945,
+        "chi": -2.907191188292891,
+        "y_wenzl": 0.0007731867369053795,
+        "contrib": -0.002247801668436253
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "height": 4,
+        "d_lambda": 9,
+        "dim_q": 9.669048397124518,
+        "chi": -0.6781155880379685,
+        "y_wenzl": -0.0003420517708854016,
+        "contrib": 0.00023195063775338255
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "height": 5,
+        "d_lambda": 5,
+        "dim_q": 5.220441324664572,
+        "chi": 2.010681783864115,
+        "y_wenzl": 9.863557610980353e-05,
+        "contrib": 0.00019832475612492444
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "height": 6,
+        "d_lambda": 1,
+        "dim_q": 0.9999999999999999,
+        "chi": -0.6769250645272097,
+        "y_wenzl": -1.2437986974301181e-05,
+        "contrib": 8.419585135167421e-06
+      }
+    ],
+    "by_height_sums": {
+      "1": {
+        "sum": 0.09231855875112129,
+        "cum": 0.09231855875112129
+      },
+      "2": {
+        "sum": 0.26672608395742486,
+        "cum": 0.35904464270854614
+      },
+      "3": {
+        "sum": -0.02260764510302251,
+        "cum": 0.33643699760552365
+      },
+      "4": {
+        "sum": 0.00017748699802350097,
+        "cum": 0.33661448460354715
+      },
+      "5": {
+        "sum": 0.00019832475612492444,
+        "cum": 0.33681280935967206
+      },
+      "6": {
+        "sum": 8.419585135167421e-06,
+        "cum": 0.3368212289448072
+      }
+    },
+    "total_wenzl": 0.3368212289448072,
+    "habiro_polynomial_value": 0.177437
+  },
+  "caveats": [
+    "The Schur-Weyl 'Habiro polynomial' tr_M (=0.177437) uses Schur weights w_λ = s_λ(q,q⁻¹)/H_q(λ) which VANISH on partitions of height > 2. The Wenzl-Schur full Markov trace (=0.336821) sums over all partitions including height > 2. The difference is the colored-Jones tower structure beyond Jones level 2."
+  ]
+}

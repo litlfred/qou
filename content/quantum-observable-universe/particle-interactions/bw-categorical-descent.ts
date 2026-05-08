@@ -21,11 +21,5 @@ export default proposition({
   lean: { ref: "qou:QOU.ParticleInteractions.bw_categorical_descent",
     validation: "not_checked",
   },
-  uses: [
-    "thm:wedderburn-mass-formula",
-    "prop:binding-scale-catalan",
-    "def:exceptional-divisor",
-    "def:vertex-operator",
-    "prop:three-parameters-wedderburn",
-  ],
+  uses: ["thm:wedderburn-mass-formula"],
 });

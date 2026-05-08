@@ -1,7 +1,7 @@
 {
   "computation": "beta-decay-matrix",
   "description": "Beta decay as matrix-valued polynomial in q",
-  "timestamp": "2026-04-07T14:54:36.548821+00:00",
+  "computedAt": "2026-04-07T14:54:36.548821+00:00",
   "parameters": {
     "q": 1.11,
     "hecke_coeff": 0.2090990990990993,
@@ -102,5 +102,7 @@
     "ratio": 1.28151286204371,
     "ln_ratio": 0.24804130348150033,
     "Q_q_hecke_units": 25.25716446442611
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

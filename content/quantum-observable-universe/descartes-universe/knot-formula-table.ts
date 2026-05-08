@@ -16,10 +16,14 @@ export default remark({
     "boson",
     "torus-link",
   ],
+  // Earlier `uses[]` listed `conj:higgs-t28`, which transitively
+  // typed every block citing this remark as downstream of an open
+  // conjecture (per `docs/audits/conjecture-cones.md` "Methodology"
+  // — case (2) cleanup). The table is a forward narrative reference
+  // ("Higgs as T(2,8)") that interprets the conjecture; the
+  // conjecture's content does not feed the table. Citation moves
+  // to prose only.
   uses: [
     "thm:embeddability-closure",
-    "prop:fermion-boson-knot-link",
-    "conj:higgs-t28",
-    "prop:terminal-resolution",
   ],
 });

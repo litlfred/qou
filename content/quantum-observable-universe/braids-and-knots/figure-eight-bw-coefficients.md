@@ -27,7 +27,7 @@ $$
 *is the $Z$-dependent (Coulomb + exchange) part, with all
 coefficients $\lambda_V, \lambda_S, \ldots$ unchanged from the
 Borromean formula
-([q-integer mass formula](#prop:q-integer-mass-formula)).*
+([q-integer mass formula](#conj:q-integer-mass-formula)).*
 
 *The two scaling factors are:*
 
@@ -42,11 +42,11 @@ $0.5\%$), $B({}^3\mathrm{He}) \approx 7.78\;\mathrm{MeV}$
 (exp.\ $7.72$, $0.9\%$).  Zero fitted parameters.*
 
 *Proof.*
-The Wedderburn--Artin theorem for the Hecke algebra $H_3(q)$ gives
+The Wedderburn--Artin theorem for the Hecke algebra $H_3(R, q)$ gives
 the semisimple decomposition
 
 $$
-  H_3(q) \;\cong\; M_1(\mathbb{C}) \oplus M_2(\mathbb{C}) \oplus M_1(\mathbb{C})
+  H_3(R, q) \;\cong\; M_1(\mathbb{C}) \oplus M_2(\mathbb{C}) \oplus M_1(\mathbb{C})
 $$
 
 indexed by partitions $[3]$, $[2{,}1]$, $[1{,}1{,}1]$ with Wedderburn

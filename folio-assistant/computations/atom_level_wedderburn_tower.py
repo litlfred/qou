@@ -33,7 +33,7 @@ import numpy as np
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import (
     partitions_of, build_seminormal_matrices, qfac, dim_q,
 )
@@ -41,7 +41,7 @@ from hecke_character_symbolic import atomic_braid_to_crossings
 from mass_endomorphism import Phi_q
 
 
-Q0 = mp.mpf(str(Q0_FLOAT))
+Q0 = Q_MP  # was f64 roundtrip
 
 
 def chi_lambda_atom(shape, crossings):

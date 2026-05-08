@@ -40,7 +40,7 @@
       "source": "Frobenius LP feasibility"
     },
     {
-      "name": "LP solution Frobenius-valid (xᵀGx ≥ 0)",
+      "name": "LP solution Frobenius-valid (x\u1d40Gx \u2265 0)",
       "computed": false,
       "expected": true,
       "passed": false,
@@ -160,5 +160,7 @@
         "gram_min_eigenvalue": -0.7408452101064132
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

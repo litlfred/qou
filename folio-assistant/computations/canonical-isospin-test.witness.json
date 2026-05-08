@@ -6,7 +6,7 @@
     "thm:jones-markov-trace",
     "rem:commutative-crossing-energy"
   ],
-  "timestamp": "2026-04-25T13:18:00+00:00",
+  "computedAt": "2026-04-25T13:18:00+00:00",
   "parameters": {
     "q_0": 1.1099785955541805
   },
@@ -32,5 +32,7 @@
     "canonical_markov_works_on_atomic_braids": "Yes for T (Z=1, N=2): |tr_M| = 0.104052 obtained in 163s via the SymbolicHeckeElement -> Hecke division -> tr_M_element pipeline.",
     "isospin_partner_compute_asymmetry": "T (Z=1, N=2) reduces in 163s; 3He (Z=2, N=1) does not converge in 25min.  The two are isospin partners with distinct braid-word orderings.  The Markov trace value is invariant under the partner exchange, but the cost of computing it via GS reduction is not.",
     "implication": "Long-term: a JIT-style or order-aware SymbolicHeckeDivision normaliser would close the gap.  Short-term: numerical-interpolation pipeline (habiro-coefficients-interpolate) bypasses this asymmetry by sampling at integer q values."
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

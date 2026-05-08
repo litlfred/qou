@@ -1,4 +1,4 @@
-In the quantum observable universe $(\mathbf{C}, \theta, G, \mathcal{S})$,
+In the quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$,
 the **speed of light** is the ratio of spatial to temporal information
 transfer within a light cone
 ([light cone](#rem:light-cone-affine)).  It is a derived, $q$-dependent
@@ -11,9 +11,9 @@ into horizontal (spatial) and vertical (Reeb/temporal) components:
 
 $$
   A_q =  q^{-1}A
-  +  (1 - q^{-1})\iota_\xi A\theta
+  +  (1 - q^{-1})\iota_\xi A\varTheta
   =  q^{-1}A
-  +  \hbar_q\iota_\xi A\theta.
+  +  \hbar_q\iota_\xi A\varTheta.
 $$
 
 The weight $q^{-1}$ controls horizontal information transfer

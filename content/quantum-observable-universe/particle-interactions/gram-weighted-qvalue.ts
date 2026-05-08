@@ -19,7 +19,6 @@ export default proposition({
   uses: [
     "def:typed-garside-element",
     "prop:frobenius-gram-matrix",
-    "prop:nuclear-groebner-reduction",
     "def:transfer-matrix-operator",
   ],
 });

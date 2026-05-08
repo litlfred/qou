@@ -20,11 +20,11 @@ $$
 
 *where the sum is over partitions $\lambda$ of $n$ with at most two
 parts, $w_\lambda$ are the Markov weights determined by the Markov
-property $\mathrm{tr}_M(x T_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
+property $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$
 ([Jones--Markov trace](#thm:jones-markov-trace)),
 $\mathrm{tr}_{S_\lambda}$ is the trace on the irreducible
-$H_n(q)$-module $S_\lambda$, and the right-hand side is the
-Jones--Markov trace on $H_n(q)$.  The Markov weights satisfy
+$H_n(R, q)$-module $S_\lambda$, and the right-hand side is the
+Jones--Markov trace on $H_n(R, q)$.  The Markov weights satisfy
 $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$,
 where $\dim_q(V_\lambda) = [2j+1]_q$ is the quantum dimension of the
 $\mathrm{SU}_q(2)$-module of spin $j = (\lambda_1 - \lambda_2)/2$.*

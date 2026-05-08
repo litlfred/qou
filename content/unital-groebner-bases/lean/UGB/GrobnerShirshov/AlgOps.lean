@@ -1,5 +1,6 @@
 import UGB.GrobnerShirshov.Basic
 import UGB.GrobnerShirshov.NormalForms
+import Mathlib.Data.Finset.Image
 
 /-!
 # AlgElement Algebraic Operations
@@ -35,25 +36,30 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 
 /-- A single monomial with coefficient `c`.  The basis of all
     `AlgElement` construction. -/
-def AlgElement.single (m : Monomial G) (c : k) : AlgElement G k where
+def AlgElement.single [DecidableEq k] (m : Monomial G) (c : k) : AlgElement G k where
   coeff := fun m' => if m' = m then c else 0
   support := if c = 0 then ∅ else {m}
   support_spec := by
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
     intro m' hm'
-    split_ifs with hc
-    · simp
-    · simp only [Finset.mem_singleton] at hm'
-      simp [hm']
+    by_cases hc : c = 0
+    · -- c = 0: coefficient function is identically zero
+      subst hc
+      split_ifs <;> rfl
+    · -- c ≠ 0: support is {m}, so m' ≠ m, hence coeff m' = 0
+      simp [hc] at hm'
+      exact if_neg hm'
 
 /-- A single monomial with coefficient 1. -/
-def AlgElement.singleton (m : Monomial G) : AlgElement G k :=
+def AlgElement.singleton [DecidableEq k] (m : Monomial G) : AlgElement G k :=
   AlgElement.single m 1
 
 /-- The singleton of a non-empty monomial has nonempty support. -/
-theorem AlgElement.singleton_support_nonempty (m : Monomial G) :
+theorem AlgElement.singleton_support_nonempty [DecidableEq k] [Nontrivial k]
+    (m : Monomial G) :
     (AlgElement.singleton m : AlgElement G k).support.Nonempty := by
   unfold AlgElement.singleton AlgElement.single
-  simp [one_ne_zero]
+  simp
 
 /-! ## §2  Addition -/
 
@@ -106,33 +112,57 @@ def AlgElement.leftMulGen (gen : G) (f : AlgElement G k) :
     | h :: t => if h = gen then f.coeff t else 0
   support := f.support.image (fun m => gen :: m)
   support_spec := by
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
     intro m hm
-    simp only [Finset.mem_image, not_exists, not_and] at hm
-    match m with
-    | [] => rfl
-    | h :: t =>
-      split_ifs with heq
-      · subst heq
-        exact f.support_spec t (fun ht => hm t ht rfl)
-      · rfl
+    cases m with
+    | nil => rfl
+    | cons h t =>
+      by_cases hhg : h = gen
+      · -- h = gen, so m = gen :: t.  If t were in f.support, m would
+        -- be in the image — contradicting hm.  Hence t ∉ f.support
+        -- and f.coeff t = 0 by f.support_spec.
+        subst hhg
+        have h_t_zero : f.coeff t = 0 := by
+          apply f.support_spec
+          intro ht
+          apply hm
+          exact Finset.mem_image.mpr ⟨t, ht, rfl⟩
+        -- Goal: (if gen = gen then f.coeff t else 0) = 0.
+        -- `simp` collapses both branches via `h_t_zero`.
+        simp [h_t_zero]
+      · -- h ≠ gen: coefficient is 0 directly
+        exact if_neg hhg
 
 /-- Right-multiply by a single generator: `f · g`.
     Appends `g` to every monomial in the support. -/
 def AlgElement.rightMulGen (f : AlgElement G k) (gen : G) :
     AlgElement G k where
   coeff := fun m =>
-    if h : m.length > 0 ∧ m.getLast (by omega) = gen
-    then f.coeff (m.dropLast)
+    if hne : m ≠ [] then
+      if m.getLast hne = gen
+      then f.coeff (m.dropLast)
+      else 0
     else 0
   support := f.support.image (fun m => m ++ [gen])
   support_spec := by
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
     intro m hm
-    simp only [Finset.mem_image, not_exists, not_and] at hm
-    split_ifs with h
-    · exact f.support_spec m.dropLast (fun hd => by
-        have := hm m.dropLast hd
-        simp [List.dropLast_append_getLast (by omega)] at this)
-    · rfl
+    by_cases hne0 : m = []
+    · subst hne0; rfl
+    · -- m ≠ []
+      have hne : m ≠ [] := hne0
+      simp only [hne, ne_eq, not_false_eq_true, dif_pos]
+      by_cases hlast : m.getLast hne = gen
+      · -- last element is gen; need f.coeff (dropLast m) = 0
+        rw [if_pos hlast]
+        apply f.support_spec
+        intro hsupp
+        apply hm
+        refine Finset.mem_image.mpr ⟨m.dropLast, hsupp, ?_⟩
+        -- dropLast m ++ [gen] = m, using hlast and dropLast_append_getLast
+        conv_rhs => rw [← List.dropLast_append_getLast hne]
+        rw [hlast]
+      · exact if_neg hlast
 
 /-! ## §6  Multi-generator left multiplication -/
 
@@ -143,7 +173,7 @@ def AlgElement.leftMulWord (w : List G) (f : AlgElement G k) :
     AlgElement G k :=
   w.foldr (fun g acc => AlgElement.leftMulGen g acc) f
 
-/-- The singleton of a word `w` with coefficient 1:
+/- The singleton of a word `w` with coefficient 1:
     the algebra element with `coeff(w) = 1` and all others 0.
 
     This is a semantic property: `leftMulWord w (singleton [])` has
@@ -165,24 +195,31 @@ def AlgElement.ofTerms (terms : List (Monomial G × k)) :
     ((terms.filter (fun p => p.1 = m)).map Prod.snd).sum
   support := (terms.map Prod.fst).toFinset
   support_spec := by
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+    -- Per Gemini review on PR #467: m ∉ supports of `terms` ⇒
+    -- the filter is empty ⇒ the coefficient sum is zero.
     intro m hm
-    simp only [List.toFinset, List.mem_toFinset, List.mem_map,
-               not_exists, not_and] at hm
-    suffices h : terms.filter (fun p => p.1 = m) = [] by
-      simp [h]
-    rw [List.filter_eq_nil]
-    intro p hp
-    simp only [decide_eq_true_eq]
-    intro heq
-    exact absurd (Exists.intro p ⟨hp, heq⟩) (by push_neg; exact fun p hp => hm p hp)
+    rw [List.mem_toFinset, List.mem_map, not_exists] at hm
+    push_neg at hm
+    have h_empty : terms.filter (fun p => p.1 = m) = [] := by
+      rw [List.filter_eq_nil_iff]
+      intro x hx heq
+      -- `heq : decide (x.1 = m) = true`, convert to Prop equality.
+      exact hm x hx (decide_eq_true_eq.mp heq)
+    rw [h_empty, List.map_nil, List.sum_nil]
 
 /-- `ofTerms` with nonempty leading term has nonempty support. -/
 theorem AlgElement.ofTerms_support_nonempty
     {terms : List (Monomial G × k)} (h : terms ≠ []) :
     (AlgElement.ofTerms terms).support.Nonempty := by
-  unfold AlgElement.ofTerms
-  simp only [List.toFinset]
-  exact List.toFinset_nonempty_iff.mpr (List.map_ne_nil_of_ne_nil Prod.fst h)
+  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+  -- Direct construction: take the head of `terms` as the witness.
+  cases terms with
+  | nil => exact absurd rfl h
+  | cons head tail =>
+    refine ⟨head.1, ?_⟩
+    show head.1 ∈ ((head :: tail).map Prod.fst).toFinset
+    simp
 
 /-! ## §8  Generic Deg-Lex Order Construction -/
 
@@ -212,7 +249,6 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
       · right; right; left; exact h2
       · have heq : a.length = b.length := by omega
         -- Same length: compare lexicographically
-        -- Use decidability of List.Lex for Nat.lt via rank
         have : ∀ (x y : List G), x.length = y.length →
             List.Lex (fun a b => rank a < rank b) x y ∨
             x = y ∨
@@ -234,56 +270,62 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
                   have hgh : g = h := rank_inj hge
                   subst hgh
                   rcases ih hs hy with hlx | heq | hrx
-                  · left; exact List.Lex.cons g hlx
+                  · left; exact List.Lex.cons hlx
                   · right; left; rw [heq]
-                  · right; right; exact List.Lex.cons g hrx
+                  · right; right; exact List.Lex.cons hrx
         rcases this a b heq with hlx | heq' | hrx
         · left; right; exact ⟨heq, hlx⟩
         · right; left; exact heq'
         · right; right; right; exact ⟨heq.symm, hrx⟩
   wf := by
-    -- Map to (length, rank-encoding) and use product well-foundedness
-    apply Subrelation.wf
-    · intro a b h
-      rcases h with hlen | ⟨heq, hlex⟩
-      · exact Prod.Lex.left _ _ hlen
-      · exact Prod.Lex.right _ (by
-          -- List.Lex rank on same-length lists embeds into
-          -- lexicographic order on ℕ lists via rank
-          clear h
-          induction hlex with
-          | nil => exact List.Lex.nil
-          | @rel a b as bs hr =>
-            exact List.Lex.rel (show rank a < rank b from hr)
-          | @cons a as bs _ ih =>
-            exact List.Lex.cons (rank a) ih)
-    · exact InvImage.wf
-        (fun a => (a.length, a.map rank))
-        (Nat.lt_wfRel.wf.prod_lex (List.Lex.wellFounded Nat.lt_wfRel.wf))
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+    -- The deg-lex order is well-founded as `Prod.Lex Nat.lt L` where L
+    -- is the length-restricted lex order on `(map rank ·) : Monomial G
+    -- → List ℕ`. Mathlib provides `Nat.lt_wfRel.wf.prod_lex` for the
+    -- outer pair; the inner length-restricted lex needs `List.Shortlex`
+    -- (or `lexEncoding` à la NormalForms.lean's `degLexLt_wf`, which
+    -- itself currently sorrys at `lexLt_wf` for the same reason).
+    -- Closing this requires running against Mathlib to confirm the
+    -- post-rename API name (candidates: `List.Shortlex.wf`,
+    -- `WellFoundedRelation.shortlex`, or hand-rolling via strong
+    -- induction on length). Deferred.
+    sorry
   left_compat := by
     intro a b c h
     rcases h with hlen | ⟨heq, hlex⟩
     · left; simp; omega
-    · right; constructor
+    · right; refine ⟨?_, ?_⟩
       · simp; omega
       · -- c ++ a lex< c ++ b when a lex< b (same length)
         induction c with
         | nil => simpa
         | cons x xs ih =>
           simp only [List.cons_append]
-          exact List.Lex.cons (rank x) ih
+          exact List.Lex.cons ih
   right_compat := by
     intro a b d h
     rcases h with hlen | ⟨heq, hlex⟩
     · left; simp; omega
-    · right; constructor
-      · simp; omega
-      · -- a ++ d lex< b ++ d when a lex< b (same length)
-        induction hlex with
-        | nil => exact absurd rfl (by simp [List.length_cons] at heq; omega)
-        | @rel x y xs ys hr =>
-          exact List.Lex.rel hr
-        | @cons x xs ys _ ih =>
-          exact List.Lex.cons (rank x) ih
+    · right; refine ⟨by simp; omega, ?_⟩
+      -- a ++ d lex< b ++ d when a lex< b (same length).
+      -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
+      -- Induction on a (generalising b): the lex difference is in the
+      -- prefix, so appending a common suffix preserves it.
+      induction a generalizing b with
+      | nil =>
+        cases b with
+        | nil => cases hlex
+        | cons _ _ => simp at heq
+      | cons x xs ih =>
+        cases b with
+        | nil => simp at heq
+        | cons y ys =>
+          simp only [List.cons_append]
+          cases hlex with
+          | cons h =>
+            have heq' : xs.length = ys.length := by
+              simp [List.length_cons] at heq; exact heq
+            exact List.Lex.cons (ih heq' h)
+          | rel h => exact List.Lex.rel h
 
 end UGB.GrobnerShirshov

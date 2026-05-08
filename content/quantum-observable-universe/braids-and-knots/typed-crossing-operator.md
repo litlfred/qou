@@ -1,11 +1,11 @@
 Within the Borromean baryon ([Definition](#def:borromean-baryon)),
 the three quark strands form a $3$-strand braid in $B_3$.  Each
 pairwise crossing between strands $i$ and $j$ is resolved in the
-Iwahori--Hecke algebra $H_3(q)$
+Iwahori--Hecke algebra $H_3(R, q)$
 ([Hecke algebra](#rem:hecke-algebra-from-braiding)) according to
 the **flavors** of the quarks at positions $i$ and $j$.
 
-The **typed crossing operator** $C(f_i, f_j; \sigma_k) \in H_3(q)$
+The **typed crossing operator** $C(f_i, f_j; \sigma_k) \in H_3(R, q)$
 for a pair of quarks with flavors $f_i, f_j \in \{\mathfrak{u}, \mathfrak{d}\}$
 at generator $\sigma_k$ is:
 

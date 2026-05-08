@@ -1,7 +1,7 @@
 {
   "computation": "d-phi-q-series",
   "description": "D via \u03a6_q Euler-series expansion: truncate infinite product \u03a0(1-q^{-k}v)^{-1} at n_max = 50 terms of the Euler series \u03a3 v^n/(q^{-1};q^{-1})_n.  For each NF basis word, compute V\u0302, then \u03a6_q(V\u0302, q_0) via finite series, log-abs, weight by c_w(q_0), sum.  No roots of unity.",
-  "timestamp": "2026-04-24T01:53:23.359765+00:00",
+  "computedAt": "2026-04-24T01:53:23.359765+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "q_0_inv": 0.9009182735643012,
@@ -349,5 +349,7 @@
   "total_ln_phi_weighted": 59.342013538607766,
   "target": 4.353367301439661,
   "residual": 54.988646237168105,
-  "relative_err_ppb": 12631290316.115372
+  "relative_err_ppb": 12631290316.115372,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

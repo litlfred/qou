@@ -37,6 +37,12 @@ from pathlib import Path
 
 import sympy as sp
 
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
+
 q_sym = sp.Symbol('q', positive=True)
 
 from q_parameter import Q as q0, Q_INV as qi0, HA as HA0, E_CROSS, HBAR_Q
@@ -782,6 +788,19 @@ witness = {
         "m_e_MeV": M_E_MEV,
         "m_p_MeV": M_P_MEV,
         "m_n_MeV": M_N_MEV,
+    },
+    # P2.5: see docs/audits/2026-05-02-p2-5-symbolic-q-audit.md
+    "symbolic_q_form": {
+        "engine": "sympy",
+        "q_symbol": "q (sp.Symbol('q', positive=True))",
+        "h_symbol_definition": "HA = q - 1/q",
+        "z_symbol_definition": "z = 1 / (sqrt(q) + 1/sqrt(q))",
+        "pattern": "sympy-symbolic-coefficients-evaluated-at-q0",
+        "note": (
+            "Per-NF coefficient polynomials in q are constructed "
+            "symbolically; the numerical results below come from "
+            ".subs(q_sym, q_0) evaluation."
+        ),
     },
     "results": results,
 }

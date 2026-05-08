@@ -112,7 +112,8 @@ wc -l /tmp/dual-sibling-blocks.txt
 From `.lean`:
 
 - Identify the top-level `theorem` / `lemma` / `def` / `structure`
-  matching the `lean.decl` in the `.ts` manifest
+  matching the `lean.ref` URI in the `.ts` manifest (parse with
+  `parseLeanRef()` from `folio-assistant/schemas/lean-packages.ts`)
 - Record: name, type signature, hypotheses, conclusion,
   proof-term-or-tactic-body
 

@@ -8,6 +8,5 @@ export default remark({
   uses: [
     "def:categorical-q-reeb-flow",
     "def:recursive-brane-tower",
-    "def:categorical-reeb",
   ],
 });

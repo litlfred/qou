@@ -1,6 +1,6 @@
 **Definition.**
 *The **algebraic quantum volume** of a braid element
-$\beta \in H_n(q)$ is the product of traced volumes:*
+$\beta \in H_n(R, q)$ is the product of traced volumes:*
 
 $$
   \mathrm{Vol}_q(\beta)
@@ -86,3 +86,43 @@ $\widehat{\mathbb{Z}[q]}$ (the cyclotomic completion),
 where it coexists with the colored Jones polynomials at all
 roots of unity.  The mass at $q_0$ is the evaluation at a
 non-root-of-unity point.*
+
+## Partial-product (q-Pochhammer) expansion
+
+*Each generator volume $\hat{V}_i(q) = z(q)\, a_i(q) + b_i(q)$ admits
+a $q$-Pochhammer partial-product expansion
+([q-Pochhammer partial product](#def:q-pochhammer-partial-product))
+of the form*
+
+$$
+  \hat{V}_i(q)
+  \;=\;
+  C_i(q) \cdot \Phi_{n_i}(x_i; q),
+  \qquad
+  \Phi_{n_i}(x_i; q)
+  \;=\;
+  \prod_{k=0}^{n_i - 1}\frac{1}{1 - x_i\, q^k},
+$$
+
+*with $C_i(q) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ a Laurent prefactor
+and $x_i$ the state variable at the $i$-th crossing. The full
+algebraic volume*
+
+$$
+  \mathrm{Vol}_q(\beta)
+  \;=\;
+  \prod_{i=0}^{n-2} \hat{V}_i(q)
+  \;=\;
+  \Bigl(\prod_i C_i(q)\Bigr)
+  \cdot
+  \Bigl(\prod_i \Phi_{n_i}(x_i; q)\Bigr)
+$$
+
+*therefore exposes its **shared denominator** explicitly: the product
+$\prod_i (x_i; q)_{n_i} \in \mathbb{Z}[q, x_1, \dots, x_{n-2}]$ is a
+polynomial whose zero locus is the algebraic address of the JSJ-piece
+cusps under the Archimedean realization
+([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
+This factorisation does not change $\mathrm{Vol}_q(\beta)$ as a
+Laurent polynomial; it merely names the denominator structure that
+the subsequent thimble / volume-tower derivations rely on.*

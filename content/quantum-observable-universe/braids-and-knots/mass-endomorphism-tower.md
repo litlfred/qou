@@ -3,7 +3,7 @@ substrate parameter $q$
 ([quantum observable universe](#def:quantum-observable-universe)).
 Let $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
-([three-invariant mass formula](#prop:atomic-braid-mass)).
+([three-invariant mass formula](#sec:atomic-braid-mass)).
 
 ### Algebraic form
 
@@ -24,6 +24,27 @@ $$
 
 *where $\rho_{q} = 1/\hbar_{q}^{2}$ is the substrate density
 ([quantum Planck constant](#def:quantum-planck-constant)) and*
+
+**SUPERSEDED.** *The substrate-only ansatz
+$\rho_q = 1/\hbar_q^2 \approx 102$ is **structurally wrong**: it is
+braid-class-independent, but the categorical density $\rho_K$
+varies $\sim 30\times$ across atoms ($A = 1$ to $A = 3$;
+[graded ρ_K expansion](#prop:rho-k-graded-expansion)). The
+correct dimensional factor is the **operator-valued**
+$A^\lambda_{\mu, \nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)$
+from [hecke branching trace decomp](#prop:hecke-branching-trace-decomposition),
+which depends on the specific braid through its LR-block decomposition.
+The graded expansion
+$\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\beta_K)|) = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$
+([prop:rho-k-graded-expansion](#prop:rho-k-graded-expansion))
+replaces the $\rho_q$ ansatz with a categorically-derived series
+where the LO piece is the constituent-mass ratio (Markov
+multiplicativity, [Wenzl 1988] Theorem 5) and the single-gen
+piece is the proven $\alpha \cdot \sum \ln|\hat V_i^{\mathrm{full}}|$
+binding correction at $0.18\%$ accuracy across $Z = 1..20$. The
+$\rho_q$ display below is retained for historical readability of
+the brane-tower spectral structure but does not represent the
+correct dimensional scaling.*
 
 $$
   \mathrm{Vol}_{q}^{\mathrm{tower}}(\beta)
@@ -53,6 +74,92 @@ Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
 ([quantum Bloch group](#def:quantum-bloch-group)).
 
+**Kashaev-integration-identity audit (added 2026-05-03).**
+*The proof step claims*
+
+$$
+  \Phi_q(z_p) \;=\; \int_0^{z_p} \frac{\ln_q(1+t)}{t}\,dt
+              \;=\; \prod_{k\geq 1}(1 - q^{-k} z_p)^{-1}.
+$$
+
+*Numerical probe (`kashaev-integration-identity.witness.json`): the
+left integral at $q_0 \approx 1.110$ for $V \in (0, 1)$ is bounded
+in $[0.1, 0.82]$, while the right-hand product $\Phi_q(V)$ grows
+unboundedly (e.g. $\Phi_q(0.989) \approx 6.7 \times 10^5$).  The
+two sides differ by 6 orders of magnitude at $V = 0.989$ — the
+identity does NOT hold numerically.*
+
+*The integral is a $q$-deformed dilogarithm $-\mathrm{Li}_2^q(-V)$,
+not the quantum dilogarithm $\Phi_q$.  These are distinct functions
+($\mathrm{Li}_2^q$ is regular on $(-1, 1)$; $\Phi_q$ has a pole
+structure tied to the q-Pochhammer denominators).  The proof step
+appears to conflate them.*
+
+*Implication: the boxed theorem's specialisation
+$\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q(|\hat V_i|)$ is not
+the Kashaev limit of the R-side algebraic form.  Its empirical
+consequence is the $-737$ MeV mirror-nucleus pathology
+(`brane-tower-isospin-diagnosis.witness.json`).*
+
+*The paper's `prop:atomic-braid-mass` uses the alternative form
+$\alpha \cdot \sum_i \ln|\hat V_i^{\mathrm{full}}|$ (with $\alpha = m_e \cdot 8G$,
+the Borromean binding scale `prop:binding-scale-catalan`), which gives
+0.19% mean atomic-mass error across $Z = 1$..$10$ with zero fitted
+parameters — but the integration probe shows the
+$\int (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$ identity doesn't
+reduce to $\alpha \cdot \ln|V|$ either.*
+
+*Both forms above are concrete evaluations of the abstract GB-NF
+statement
+([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
+$\mathcal{M}(K) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\beta_K))\!\rvert$.
+The substrate density $\rho_q = 1/\hbar_q^2$ above is a substrate-only
+ansatz for the categorical density $\rho_K$; empirically
+$\rho_K^{\mathrm{CODATA}}$ is strongly braid-class-dependent
+(see `rho-k-codata-vs-six-term.witness.json`: $\rho_K^{\mathrm{CODATA}}(D)/\rho_K^{\mathrm{CODATA}}(\mathfrak{p}) \approx 5.5$),
+so any candidate dimensional factor must absorb that scaling either
+into $\rho_q$ itself or into $\mathrm{Vol}_q^{\mathrm{tower}}(\beta)$.*
+
+*Open: the correct Kashaev limit of $\mathrm{Vol}_q^{(S)}$ at $q_0$
+needs derivation.  Two candidates the integral does NOT support:
+($\Phi_q(|V|)$) blows up; ($\alpha\cdot\ln|V|$) is empirically close
+but not the literal integration evaluation.  The dilogarithm form
+$-\mathrm{Li}_2^q(-|V|)$ is the actual integration result and may be
+the correct specialisation; this needs paper-side verification.*
+
+**Trace-vs-evaluation note (added 2026-05-03).**
+The R-side algebraic form of the tower above expresses each
+$\mathrm{Vol}_q^{(S)}(\beta)$ as a Markov trace over the chain on $S$
+— each term is therefore Markov-invariant.  The archimedean
+specialisation $\mathrm{Vol}_q^{(S)} \rightsquigarrow \Phi_q$ below
+replaces this trace with $\Phi_q(|\hat V_i^{\mathrm{full}}|)$, which
+evaluates the dilogarithm on a per-generator amplitude.  Per-generator
+amplitudes are **not** Markov-invariant — different reduced words for
+the same braid give different per-generator amplitudes — so the
+literal $\Phi_q(|\hat V_i|)$ form is a basis-dependent expansion, not
+itself a trace.  At $q_0 \approx 1.11$ the divergence of $\Phi_q$
+near $|\hat V_i| \to 1$ amplifies tiny p/n asymmetries into hundreds
+of MeV (mirror nuclei T = 1p+2n vs $^3$He = 2p+1n predict T − $^3$He
+$\approx -737$ MeV against CODATA $+0.019$ MeV; see
+`brane-tower-isospin-diagnosis.witness.json`).
+
+**Trace reformulation (Plancherel series).**
+The Heine identity recovers Markov-invariance term-by-term:
+
+$$
+  \Phi_q(z) \;=\; (1 - z) \cdot \sum_{n \geq 0} \frac{z^n}{(q^{-1}; q^{-1})_n},
+  \qquad (q^{-1}; q^{-1})_n = \prod_{k=1}^{n}(1 - q^{-k}).
+$$
+
+With $z = |\hat V_i^{\mathrm{full}}|$ and the standard recognition of
+$|\hat V_i|^n$ as the $n$-th power evaluation of the per-generator
+transfer-matrix chain, each $z^n$ summand factors through
+$\mathrm{tr}_M(\sigma_i^n)$ — which IS Markov-invariant.  See
+`brane_tower_plancherel_scaffold.py` for a numerical scaffold; the
+production wiring depends on PR #526's term-trace infrastructure.
+An equivalent Kähler-derivative reformulation is available via
+`kahler_lift.py` (recursion fix landed in PR #526).
+
 **Proposition.**
 *The mass of a vortex $\varrho$ with braid representative
 $\beta \in B_n$ and $n - 1$ generators is*
@@ -61,17 +168,33 @@ $$
   \mathfrak{m}(\varrho)
   =
   \Bigl\lvert \prod_{i=0}^{n-2} \hat{V}_i^{\mathrm{full}} \Bigr\rvert
-  +
+  -
   \sum_{i=0}^{n-2}
-    \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}\rvert\bigr)
-  +
+    \mathrm{Li}_2^q\!\bigl(-\lvert\hat{V}_i^{\mathrm{full}}\rvert\bigr)
+  -
   \sum_{0 \leq i < j \leq n-2}
-    z^2 \cdot \Phi_q\!\bigl(\lvert\hat{V}_i^{\mathrm{full}}
+    z^2 \cdot \mathrm{Li}_2^q\!\bigl(-\lvert\hat{V}_i^{\mathrm{full}}
       \cdot \hat{V}_j^{\mathrm{full}}\rvert\bigr),
 $$
 
 *where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter
-([Jones--Markov trace](#thm:jones-markov-trace)).*
+([Jones--Markov trace](#thm:jones-markov-trace)) and
+$\mathrm{Li}_2^q$ is the symmetric q-dilogarithm
+$\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$ with
+$[n]_q = (q^n - q^{-n})/(q - q^{-1})$.*
+
+**Note (2026-05-03).**
+*The previous version of this proposition wrote
+$\Phi_q(\lvert\hat V_i\rvert)$ (Faddeev quantum dilogarithm) where this
+revision uses $-\mathrm{Li}_2^q(-\lvert\hat V_i\rvert)$ (symmetric
+q-dilogarithm).  Both are q-deformations of the classical dilogarithm
+but use different q-integer conventions
+(asymmetric $(q^n - 1)$ vs symmetric $[n]_q$).  Numerical probe
+`kashaev-integration-identity.witness.json` shows the literal Briggs–Klein
+integration evaluates to $-\mathrm{Li}_2^q(-z_p)$ in the symmetric
+convention (see proof below).  The Faddeev $\Phi_q$ form is empirically
+incompatible with isospin symmetry at $q_0$
+(`brane-tower-isospin-diagnosis.witness.json`).*
 
 *The three sums correspond to the three types of blow-up centre
 in the brane tower
@@ -112,7 +235,7 @@ level ([jet-tower reformulation](#rem:mass-endomorphism-jet-tower))
 rather than appearing as explicit cubic terms.*
 
 *Proof.*
-The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$
+The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) decomposes via the
 descent involution into descended and transient contributions.  The
 transient trace localises to blow-up centres $p$ in the brane tower
@@ -120,18 +243,55 @@ transient trace localises to blow-up centres $p$ in the brane tower
 $q$-deformed expansion flow $\ln_q(1+t)/t$ along the radial
 coordinate of the Briggs--Klein chart
 ([Briggs--Klein chart](#def:briggs-klein-chart)) over each resolved
-defect $E_i \cong \mathbb{P}^1(\mathbb{C})$ yields the quantum
-dilogarithm
-([quantum dilogarithm as localised torsion volume](#cor:quantum-dilogarithm)):
+defect $E_i \cong \mathbb{P}^1(\mathbb{C})$ yields the symmetric
+q-dilogarithm:
 
 $$
-  \Phi_q(z_p) \;=\; \int_0^{z_p} \frac{\ln_q(1+t)}{t}\,dt
-             \;=\; \prod_{k\geq 1}(1 - q^{-k} z_p)^{-1},
+  \int_0^{V} \frac{\ln_q(1+t)}{t}\,dt
+  \;=\; -\mathrm{Li}_2^q(-V),
+  \qquad
+  \mathrm{Li}_2^q(z) := \sum_{n \geq 1} \frac{z^n}{n \cdot [n]_q},
 $$
 
-where $z_p$ is the spectral coordinate of the blow-up centre.
+*where $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ is the symmetric
+q-integer.*
 
-The NF basis of $H_n(q)$ decomposes by generator content.  Each
+*Subproof.*  The q-deformed natural log has Taylor series
+$\ln_q(1-z) = -\sum_{n\geq 1} z^n/[n]_q$ ([definition of q-log]).
+Termwise differentiation of $\mathrm{Li}_2^q$ gives*
+
+$$
+  \frac{d}{dz}\mathrm{Li}_2^q(z)
+  = \sum_{n \geq 1} \frac{z^{n-1}}{[n]_q}
+  = -\frac{\ln_q(1-z)}{z}.
+$$
+
+*Integrating from $0$ to $z$ (with $\mathrm{Li}_2^q(0) = 0$):
+$\mathrm{Li}_2^q(z) = -\int_0^z (\ln_q(1-u)/u)\,du$.  Substituting
+$u = -t$, $z = -V$:*
+
+$$
+  \mathrm{Li}_2^q(-V)
+  = -\int_0^{-V}\!\frac{\ln_q(1-u)}{u}du
+  = -\int_0^{V}\!\frac{\ln_q(1+t)}{t}dt
+$$
+
+*so $\int_0^V (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$.  $\square_{\text{sub}}$*
+
+*Numerical verification: the integration value matches
+$-\mathrm{Li}_2^q(-V)$ to all displayed digits at $q_0 \approx 1.110$
+for $V \in \{0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 0.989\}$
+(`kashaev-integration-identity.witness.json`).*
+
+*Earlier versions of this proof identified the integral with the
+Faddeev quantum dilogarithm $\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$,
+whose logarithm uses asymmetric q-integers $(q^n - 1)$.  Both
+$\mathrm{Li}_2^q$ and $\log\Phi_q$ are q-deformations of the
+classical dilogarithm, but they use different q-integer conventions;
+the Hecke setting requires the symmetric form $[n]_q$, so
+$\mathrm{Li}_2^q$ is the correct identification.*
+
+The NF basis of $H_n(R, q)$ decomposes by generator content.  Each
 subset $S \subseteq \{0,\dots,n-2\}$ contributes a blow-up centre
 with spectral coordinate $\prod_{i\in S}\hat{V}_i$ and Markov
 weight $z^{|S|}$; triples and higher generator subsets are not
@@ -144,7 +304,7 @@ pair sums above.
 For the adjacent pair $\{i, i+1\}$ the NF elements
 $\sigma_i\sigma_{i+1}$ and $\sigma_{i+1}\sigma_i$ share the same
 spectral support $\hat{V}_i\hat{V}_{i+1}$ (the same blow-up centre,
-distinct elements of $H_n(q)$ modulo Yang--Baxter); their combined
+distinct elements of $H_n(R, q)$ modulo Yang--Baxter); their combined
 weight is $z^2$, not $2z^2$.  For a non-adjacent pair
 $\{i, j\}$ with $\lvert i-j\rvert\geq 2$ far-commutativity gives
 $\sigma_i\sigma_j = \sigma_j\sigma_i$ and
@@ -234,3 +394,24 @@ to $\mathrm{tr}_M > 0$ (stable) with minimum categorical
 action.
 
 **Witness**: `mass-endomorphism.witness.json`.
+
+**Extension beyond $|S| = 2$ (archimedean realisation).**
+*The tower formula $\mathrm{Vol}_q^{\mathrm{tower}}(\beta)$ above is
+truncated at subset size $|S| \leq 2$.  Higher subset sizes
+$|S| \geq 3$ are accessible — but only on the archimedean side of
+$\tau \colon R \hookrightarrow \mathbb{C}$ — via the
+([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence)).
+The $|S| = 3$ contribution corresponds to the simultaneous product
+of three colour-sheet prolongations on the color-tube cubic
+([baryon product from Alt](#prop:baryon-product-from-alt)), which
+under the fibre functor becomes the baryon Picard–Lefschetz period
+$\Pi^{(3)}$
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).
+Higher $|S| \geq 4$ contributions correspond to higher-jet bundles
+$J^p\mathcal{S}$ for $p \geq 4$ and their PL evaluations.*
+
+*Strict archimedean split: the truncation at $|S| \leq 2$ is the
+maximal $R$-side statement available without invoking PL machinery
+(which is intrinsically $\mathbb{C}$-side); the extension to
+$|S| \geq 3$ requires moving across $\tau$ and so is recorded as an
+archimedean addendum, not as part of the $R$-side tower formula.*

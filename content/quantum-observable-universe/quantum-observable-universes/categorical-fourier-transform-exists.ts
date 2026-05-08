@@ -8,7 +8,6 @@ export default proposition({
   },
   uses: [
     "def:categorical-fourier",
-    "prop:q-exponential-exists",
     "prop:categorical-laplace-exists",
   ],
   proofs: ["prf:categorical-fourier-exists"],

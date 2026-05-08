@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Task 3: Tower/mass ratio investigation
-Task 4: Neutrino mass from L₋ channel
+Task 4: Neutrino consistency check (formerly "Neutrino mass from L₋
+        channel" — see audit §2·F, P1.6, 2026-05-01)
 
 The corrected Markov trace gives:
   tr_M(proton) ≈ -0.012
@@ -11,7 +12,28 @@ The corrected Markov trace gives:
 CODATA: m_n/m_p = 1.00138
 
 The tower mechanism must amplify these traces through iterated
-self-interaction (Φ_q composition tower).
+self-interaction (Φ_q composition tower) for the proton/neutron
+investigation in Task 3.
+
+Task 4 (neutrino sector) was previously framed as deriving
+m_ν via tower iteration on V̂ = z² (the L₋ channel). Per the
+2026-05-01 deep audit (§2·F), that derivation is **incorrect by
+construction**: the neutrino is the unknot K_{0,1}, J_ν(q) = 1,
+bare-knot mass = 0. The knot-derived "predicted m_ν" appearing
+below is therefore *empirical confirmation* that the L₋ channel
+does NOT yield a neutrino mass; it is preserved as a diagnostic
+of the unknot identity, not a prediction.
+
+The categorical prediction for m_ν is the vacuum-drag formula:
+
+    m_ν ∝ μ₀ · (q - 1)
+
+reported in §"Alternative: vacuum drag formula" below.
+
+See:
+  docs/audits/2026-05-01-math-framework-deep-audit.md §2·F
+  docs/audits/2026-05-01-math-framework-workplan.md P1.6
+  content/quantum-observable-universe/descartes-universe/neutrino-knot.md
 """
 
 import json
@@ -136,59 +158,86 @@ for k in range(15):
     v_n = phi_q(v_n)
 
 # ═══════════════════════════════════════════════════════════════
-# TASK 4: NEUTRINO MASS
+# TASK 4: NEUTRINO CONSISTENCY CHECK (was: "Neutrino mass from L₋ channel")
+#
+# Per audit §2·F (2026-05-01) and P1.6 of the math-framework workplan,
+# the neutrino is the unknot K_{0,1} with J_ν(q) = 1 and bare-knot
+# mass exactly 0. Any L₋-channel-tower path that emits a numerical
+# m_ν is buggy by the unknot identity. This section keeps the L₋
+# computation as a *diagnostic*: the resulting "predicted m_ν" is
+# the empirical signature of the wrong-channel framing — it cannot
+# match observation because the underlying physics says the answer
+# must be 0 in the bare-knot limit.
+#
+# The categorical prediction for m_ν is the vacuum-drag formula
+# below (§"Alternative: vacuum drag formula").
 # ═══════════════════════════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  TASK 4: NEUTRINO MASS FROM L₋ CHANNEL")
+print("  TASK 4: NEUTRINO CONSISTENCY CHECK (audit §2·F, P1.6)")
 print("=" * 70)
+print()
+print("  Per audit §2·F: the neutrino is the unknot K_{0,1}.")
+print("  J_ν(q) = 1, bare-knot mass = 0.")
+print("  The L₋-channel-tower path below is a diagnostic, NOT a")
+print("  prediction — its output is the empirical signature of")
+print("  the wrong-channel framing. The categorical prediction is")
+print("  the vacuum-drag formula in the next section.")
 
-# The neutrino is the unknot (trivial knot), so J_ν(q) = 1
-# Its vertex volume is V̂_ν = z² (from the L₋ channel, handover)
-# The tower gives m_ν/m_e = Φ_q^(∞)(z²) / Φ_q^(∞)(V̂_e)
+# Diagnostic: the L₋ channel does NOT correspond to the neutrino.
+# V̂_L₋ = z² is preserved as the L₋ channel value (used elsewhere in
+# the witness chain), but it does NOT model the neutrino, which is
+# the unknot with V̂_ν = 1 (trivial vertex volume).
+V_hat_Lminus = z**2  # was mislabelled V̂_ν; this is the L₋ channel
+V_hat_nu_true = 1.0  # unknot K_{0,1} vertex volume (trivial)
+V_hat_e = z**3       # electron vertex volume (corrected)
 
-V_hat_nu = z**2  # neutrino vertex volume
-V_hat_e = z**3   # electron vertex volume (corrected)
+print(f"\n  L₋ channel:  V̂_L₋ = z² = {V_hat_Lminus:.10f} (NOT the neutrino)")
+print(f"  Unknot K_{{0,1}}: V̂_ν = 1.0 (categorical neutrino value)")
+print(f"  Electron:    V̂_e  = z³ = {V_hat_e:.10f}")
 
-print(f"\n  Neutrino: unknot K₀₁, trivial Jones polynomial J_ν(q) = 1")
-print(f"  V̂_ν = z² = {V_hat_nu:.10f}")
-print(f"  V̂_e = z³ = {V_hat_e:.10f}")
-
-# Tower iteration
-print(f"\n  Tower iteration:")
-print(f"  {'k':>3} {'Φ^k(V̂_ν)':>16} {'Φ^k(V̂_e)':>16} {'m_ν/m_e':>12}")
+# L₋-channel diagnostic tower (kept for empirical-signature purposes
+# only; this iteration does NOT yield m_ν per the unknot identity).
+print(f"\n  L₋-channel diagnostic tower (NOT a neutrino-mass prediction):")
+print(f"  {'k':>3} {'Φ^k(V̂_L₋)':>16} {'Φ^k(V̂_e)':>16} {'L₋/e ratio':>12}")
 print("  " + "-" * 50)
 
-v_nu = V_hat_nu
+v_Lminus = V_hat_Lminus
 v_e = V_hat_e
-mass_ratio_history = []
+ratio_history = []
 for k in range(20):
-    ratio = v_nu / v_e if v_e != 0 else float('inf')
-    mass_ratio_history.append(ratio)
-    print(f"  {k:>3} {v_nu:>16.10f} {v_e:>16.10f} {ratio:>12.8f}")
-    if abs(v_nu) > 1e10 or abs(v_e) > 1e10:
+    ratio = v_Lminus / v_e if v_e != 0 else float('inf')
+    ratio_history.append(ratio)
+    print(f"  {k:>3} {v_Lminus:>16.10f} {v_e:>16.10f} {ratio:>12.8f}")
+    if abs(v_Lminus) > 1e10 or abs(v_e) > 1e10:
         print("  ... (diverging)")
         break
-    v_nu = phi_q(v_nu)
+    v_Lminus = phi_q(v_Lminus)
     v_e = phi_q(v_e)
 
-# The ratio should converge to m_ν/m_e
-if len(mass_ratio_history) > 5:
-    converged_ratio = mass_ratio_history[-1]
-    m_nu_eV = converged_ratio * M_E_MEV * 1e6  # convert MeV to eV
-    print(f"\n  Converged ratio m_ν/m_e ≈ {converged_ratio:.8f}")
-    print(f"  Predicted m_ν ≈ {m_nu_eV:.4f} eV")
-    print(f"  Observed upper bound: m_ν < 0.8 eV (KATRIN 2022)")
-    print(f"  Cosmological bound: Σm_ν < 0.12 eV (Planck 2018)")
+# Diagnostic readout: this is what the buggy framing would have
+# called m_ν; here it is named explicitly as the L₋/e ratio so no
+# downstream consumer treats it as a neutrino-mass prediction.
+if len(ratio_history) > 5:
+    converged_ratio = ratio_history[-1]
+    print(f"\n  L₋/e converged ratio ≈ {converged_ratio:.8f}")
+    print(f"  (Naïve L₋ channel \"would-be m_ν\" ≈ "
+          f"{converged_ratio * M_E_MEV * 1e6:.4f} eV — diagnostic only,")
+    print(f"   NOT the categorical neutrino-mass prediction.)")
 
-# ── Alternative: mass from vacuum drag ───────────────────────────
-print(f"\n─── Alternative: vacuum drag formula ───")
-# m_ν ∝ μ₀ × (q - 1) where μ₀ is the vacuum drag coefficient
-# If μ₀ = m_e / (something), then m_ν = m_e × (q-1) / (something)
+# ── Categorical prediction: mass from vacuum drag ────────────────
+# The correct categorical prediction: bare-knot mass is 0 (unknot),
+# observed mass arises from vacuum drag on the brane substrate.
+print(f"\n─── Categorical prediction: vacuum-drag formula ───")
+print(f"  Bare-knot mass (unknot): 0 MeV (exact, from J_ν = 1)")
+print(f"  Vacuum-drag correction: m_ν ∝ μ₀ · (q - 1)")
 print(f"  ℏ_q = 1 - q⁻¹ = {HBAR_Q:.10f}")
 print(f"  q - 1 = {q0 - 1:.10f}")
-print(f"  If m_ν = m_e × ℏ_q² = {M_E_MEV * HBAR_Q**2 * 1e6:.4f} eV")
-print(f"  If m_ν = m_e × ℏ_q³ = {M_E_MEV * HBAR_Q**3 * 1e6:.4f} eV")
-print(f"  If m_ν = m_e × (q-1)³ = {M_E_MEV * (q0-1)**3 * 1e6:.4f} eV")
+print(f"  Candidate vacuum-drag prefactors:")
+print(f"    m_ν ≈ m_e · ℏ_q²   = {M_E_MEV * HBAR_Q**2 * 1e6:.4f} eV")
+print(f"    m_ν ≈ m_e · ℏ_q³   = {M_E_MEV * HBAR_Q**3 * 1e6:.4f} eV")
+print(f"    m_ν ≈ m_e · (q-1)³ = {M_E_MEV * (q0-1)**3 * 1e6:.4f} eV")
+print(f"  Observed upper bound: m_ν < 0.8 eV (KATRIN 2022)")
+print(f"  Cosmological bound:   Σm_ν < 0.12 eV (Planck 2018)")
 
 # ── Write witness ────────────────────────────────────────────────
 witness = {
@@ -201,12 +250,33 @@ witness = {
         "ratio_abs": abs(tr_n) / abs(tr_p),
         "codata_mn_mp": M_N_MEV / M_P_MEV,
     },
+    # Neutrino sector — see audit §2·F (2026-05-01) and P1.6.
+    # Bare-knot mass = 0 by the unknot identity; the L₋-channel
+    # diagnostic below is preserved for empirical-signature purposes
+    # only and is NOT a categorical neutrino-mass prediction.
     "neutrino": {
-        "V_hat_nu": V_hat_nu,
-        "V_hat_e": V_hat_e,
-        "mass_ratio_history": mass_ratio_history[:10],
-        "m_nu_hbar_q2_eV": M_E_MEV * HBAR_Q**2 * 1e6,
-        "m_nu_hbar_q3_eV": M_E_MEV * HBAR_Q**3 * 1e6,
+        "categorical_bare_mass_MeV": 0.0,
+        "categorical_basis": "unknot K_{0,1}, J_nu(q) = 1, no crossings",
+        "L_minus_channel_diagnostic": {
+            "V_hat_L_minus": V_hat_Lminus,
+            "V_hat_e": V_hat_e,
+            "L_minus_over_e_ratio_history": ratio_history[:10],
+            "warning": (
+                "L_minus channel is NOT the neutrino sector; this "
+                "tower iteration is a diagnostic of the wrong-channel "
+                "framing per audit §2·F, not a m_nu prediction."
+            ),
+        },
+        "vacuum_drag_prediction": {
+            "form": "m_nu ∝ mu_0 · (q - 1)",
+            "candidates_eV": {
+                "m_e_times_hbar_q2": M_E_MEV * HBAR_Q**2 * 1e6,
+                "m_e_times_hbar_q3": M_E_MEV * HBAR_Q**3 * 1e6,
+                "m_e_times_q_minus_1_cubed": M_E_MEV * (q0 - 1)**3 * 1e6,
+            },
+            "katrin_upper_bound_eV": 0.8,
+            "planck_cosmological_bound_eV": 0.12,
+        },
     },
 }
 out = DIR / "tower-mass-neutrino.witness.json"

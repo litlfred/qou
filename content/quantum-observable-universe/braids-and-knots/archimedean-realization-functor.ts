@@ -5,6 +5,7 @@ export default definition({
   title: "Archimedean realization functor $\\mathcal{R}_{\\mathrm{top}}$",
   tags: ["realization-functor", "archimedean", "motivic", "observable", "macroscopic-limit"],
   uses: [
+    "def:motivic-substrate",
     "def:adelic-substrate",
     "def:motivic-mass-measure",
     "def:algebraic-quantum-volume",

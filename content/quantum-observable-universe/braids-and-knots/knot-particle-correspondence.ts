@@ -8,9 +8,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Braiding.knot_particle_correspondence",
     validation: "not_checked",
   },
-  uses: [
-    "def:localized-knot",
-    "prop:knot-eigenbasis-complete",
-    "def:hadron",
-  ],
+  uses: ["def:hadron"],
 });

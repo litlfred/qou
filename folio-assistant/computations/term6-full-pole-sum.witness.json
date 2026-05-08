@@ -1,0 +1,389 @@
+{
+  "engine": "python+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-03T22:43:09.412469+00:00",
+  "commitSha": "7a7d39d9817c2c2e447a15ac02ddace60f552d32",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "term6-full-pole-sum",
+  "scriptFile": "term6_full_pole_sum.py",
+  "scriptHash": "65aa9994b574",
+  "scriptCommitSha": "7a7d39d9817c2c2e447a15ac02ddace60f552d32",
+  "description": "Term 6 Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using symbolic Habiro residues + 1/(q_0 − ζ) kernel up to cutoff n_max=6. Upstream Habiro witness has proton, neutron, and deuteron; T, ³He, ⁴He+ pending — extension via habiro_coefficients_interpolate.py is the next step for A≥5 5–20% error assessment. Higher-order poles (e.g. deuteron at ζ_4 = ±i, where (u²+1)² appears in the u = sqrt(q) denominator) are now recovered via a chain-rule contour integral in u-space (_higher_order_q_residue_via_sqrt_sub); the deuteron Term-6 contribution that was previously emitted as 'incomplete' now resolves to ≈ 0.057 MeV.",
+  "contentBlock": "prop:full-pole-structure-mass-trace",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "n_max_cutoff": 6
+  },
+  "data": {
+    "atoms": [
+      {
+        "atom": "p (proton, A=1)",
+        "n_max": 6,
+        "tr_M_at_q0_polynomial": 2.12258250945273,
+        "tr_M_polynomial": {
+          "polynomial_q": "(q**24 + 2*q**22 + 2*q**20 + q**19 + q**18 + 2*q**17 + q**16 + 2*q**15 + q**14 + 2*q**13 + q**11 - q**10 - q**8 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**14 + 4*q**12 + 4*q**10)",
+          "polynomial_q_latex": "\\frac{q^{24} + 2 q^{22} + 2 q^{20} + q^{19} + q^{18} + 2 q^{17} + q^{16} + 2 q^{15} + q^{14} + 2 q^{13} + q^{11} - q^{10} - q^{8} - q^{6} - 2 q^{4} - 2 q^{2} - 1}{4 q^{14} + 4 q^{12} + 4 q^{10}}",
+          "value_at_q0": "2.1225825094527295505663838358689389853458325219767"
+        },
+        "term6_simple_residue_partial": 0.0,
+        "term6_in_MeV": 0.0,
+        "status": "complete-simple-poles-only",
+        "higher_order_pole_unresolved": false,
+        "higher_order_pole_resolved_via_sqrt_sub": false,
+        "per_n_breakdown": [
+          {
+            "n": 2,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "-1",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 3,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 4,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "I",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "-I",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 5,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 2,
+                "zeta": "exp(-4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 3,
+                "zeta": "exp(-2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 6,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "atom": "n (neutron, A=1)",
+        "n_max": 6,
+        "tr_M_at_q0_polynomial": 1.5893934459539052,
+        "tr_M_polynomial": {
+          "polynomial_q": "(q**20 + 2*q**18 + 2*q**16 + q**15 + q**14 + 2*q**13 + q**12 + 2*q**11 + 2*q**9 - q**8 + q**7 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**12 + 4*q**10 + 4*q**8)",
+          "polynomial_q_latex": "\\frac{q^{20} + 2 q^{18} + 2 q^{16} + q^{15} + q^{14} + 2 q^{13} + q^{12} + 2 q^{11} + 2 q^{9} - q^{8} + q^{7} - q^{6} - 2 q^{4} - 2 q^{2} - 1}{4 q^{12} + 4 q^{10} + 4 q^{8}}",
+          "value_at_q0": "1.5893934459539044137415087693689928372969565522957"
+        },
+        "term6_simple_residue_partial": 0.0,
+        "term6_in_MeV": 0.0,
+        "status": "complete-simple-poles-only",
+        "higher_order_pole_unresolved": false,
+        "higher_order_pole_resolved_via_sqrt_sub": false,
+        "per_n_breakdown": [
+          {
+            "n": 2,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "-1",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 3,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 4,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "I",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "-I",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 5,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 2,
+                "zeta": "exp(-4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 3,
+                "zeta": "exp(-2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 6,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "atom": "D (deuteron, A=2)",
+        "n_max": 6,
+        "tr_M_at_q0_polynomial": 0.17743692421543206,
+        "tr_M_polynomial": {
+          "polynomial_q": "(q**52 + 3*q**50 + 6*q**48 + 9*q**46 + 21*q**44 + 35*q**42 + 47*q**40 + 50*q**38 + 70*q**36 + 73*q**34 + 54*q**32 + 7*q**30 - 8*q**28 - 35*q**26 - 59*q**24 - 82*q**22 - 62*q**20 - 46*q**18 - 24*q**16 - 11*q**14 + 8*q**12 + 11*q**10 + 11*q**8 + 7*q**6 + 6*q**4 + 3*q**2 + 1)/(32*q**38 + 128*q**36 + 288*q**34 + 480*q**32 + 672*q**30 + 832*q**28 + 896*q**26 + 832*q**24 + 672*q**22 + 480*q**20 + 288*q**18 + 128*q**16 + 32*q**14)",
+          "polynomial_q_latex": "\\frac{q^{52} + 3 q^{50} + 6 q^{48} + 9 q^{46} + 21 q^{44} + 35 q^{42} + 47 q^{40} + 50 q^{38} + 70 q^{36} + 73 q^{34} + 54 q^{32} + 7 q^{30} - 8 q^{28} - 35 q^{26} - 59 q^{24} - 82 q^{22} - 62 q^{20} - 46 q^{18} - 24 q^{16} - 11 q^{14} + 8 q^{12} + 11 q^{10} + 11 q^{8} + 7 q^{6} + 6 q^{4} + 3 q^{2} + 1}{32 q^{38} + 128 q^{36} + 288 q^{34} + 480 q^{32} + 672 q^{30} + 832 q^{28} + 896 q^{26} + 832 q^{24} + 672 q^{22} + 480 q^{20} + 288 q^{18} + 128 q^{16} + 32 q^{14}}",
+          "value_at_q0": "0.17743692421543195973343227177271915339983307423175"
+        },
+        "term6_simple_residue_partial": 0.11200453481724766,
+        "term6_in_MeV": 0.05723419968685199,
+        "status": "complete-with-sqrt-sub-fallback",
+        "higher_order_pole_unresolved": false,
+        "higher_order_pole_resolved_via_sqrt_sub": true,
+        "per_n_breakdown": [
+          {
+            "n": 2,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "-1",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 3,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-2*I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 4,
+            "n_real_contribution": 0.11200453481724766,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta_real": 0.0,
+                "zeta_imag": 1.0,
+                "residue_complex": [
+                  -1.780560045481919e-100,
+                  -0.125
+                ],
+                "kernel_complex": [
+                  0.4972905450085915,
+                  0.44801813926899064
+                ],
+                "contribution_real": 0.05600226740862383,
+                "method": "sqrt_substitution_contour",
+                "note": "higher-order pole resolved via u = sqrt(q) contour with chain-rule integrand 2u·U(u)"
+              },
+              {
+                "j_index": 1,
+                "zeta_real": 0.0,
+                "zeta_imag": -1.0,
+                "residue_complex": [
+                  6.911501881660007e-101,
+                  0.125
+                ],
+                "kernel_complex": [
+                  0.4972905450085915,
+                  -0.44801813926899064
+                ],
+                "contribution_real": 0.05600226740862383,
+                "method": "sqrt_substitution_contour",
+                "note": "higher-order pole resolved via u = sqrt(q) contour with chain-rule integrand 2u·U(u)"
+              }
+            ]
+          },
+          {
+            "n": 5,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 2,
+                "zeta": "exp(-4*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 3,
+                "zeta": "exp(-2*I*pi/5)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          },
+          {
+            "n": 6,
+            "n_real_contribution": 0.0,
+            "roots": [
+              {
+                "j_index": 0,
+                "zeta": "exp(I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              },
+              {
+                "j_index": 1,
+                "zeta": "exp(-I*pi/3)",
+                "residue": "0 or None",
+                "contribution": 0.0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "caveats": [
+    "CONVENTION: this script reads habiro-coefficients-atomic.witness.json, populated by markov_trace_symbolic in habiro_coefficients_atomic.py via schur_weyl_weight = s_λ(q,q⁻¹) / H_q(λ). That is NOT the canonical Markov trace tr_M = Σ_λ y_λ · χ^λ specified in y-lambda-closed-form-wenzl-bridge.md; the canonical y_λ is the Wenzl-bridge central coefficient. At q_0 = 1.10998 the deuteron split is canonical 0.388 (markov_peel ≡ Hoefsmit) vs Schur-Weyl-weighted 0.177 (this script's input). The canonical Term 6 path is term6_residues_at_roots.py (PR #526), which reads markov_peel.tr_M_atomic directly. Treat term6_in_MeV here as the Schur-Weyl-weighted contribution, not the canonical Term 6.",
+    "Primitive roots of unity are dense in S¹, so this is NOT a complex-analytic Mittag-Leffler in the ordinary sense. tr_M is a Habiro-ring element; convergence is q-adic. Truncation at n_max=6 captures the dominant Cauchy-kernel weighted residues (smaller n → closer to q_0 = 1.11 → larger 1/|q_0 − ζ| kernel).",
+    "Extend habiro-coefficients-atomic.witness.json to T, ³He, ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹²C, ¹⁶O before this script can answer 'does Term 6 close the A≥5 5-20% errors?' — A≥4 is blocked on symbolic Hoefsmit at H_9+, the numerical-interpolation route in habiro_coefficients_interpolate.py documents A=4 as intractable at 60 dps.",
+    "Higher-order pole resolution: when l'Hôpital returns sp.oo, we run a Cauchy contour ∮_{|u-u₀|=0.05} 2u·U(u) du in u-space at u₀ = sqrt(ζ) (principal branch). Radius 0.05 is conservative for ℓ ≤ 12 (nearest neighbour at ≥ 2sin(π/ℓ²) ≥ 0.05). Pole order is detected automatically by the contour identity — no per-pole-order branching."
+  ]
+}

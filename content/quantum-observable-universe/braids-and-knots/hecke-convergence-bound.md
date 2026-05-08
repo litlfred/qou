@@ -1,6 +1,6 @@
 **Proposition (conjectural).**
 *Let $M_k(Z,N)$ denote the atomic mass predicted by the BW formula
-with coefficients derived from $H_3(q)$ through $H_k(q)$ Wedderburn
+with coefficients derived from $H_3(R, q)$ through $H_k(R, q)$ Wedderburn
 decomposition.  Then for stable nuclei:*
 
 $$

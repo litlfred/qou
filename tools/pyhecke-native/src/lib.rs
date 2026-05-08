@@ -5,7 +5,9 @@
 //! Python lists that `pyhecke.bridge` converts on demand. This keeps
 //! the wheel small and the build simple.
 
-use hecke_engine::gram;
+use hecke_engine::{
+    geck_pfeiffer, gram, littlewood_richardson, seminormal, seminormal_mn, seminormal_mpfr,
+};
 use pyo3::prelude::*;
 
 /// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
@@ -138,6 +140,359 @@ fn atom_per_generator_volumes(
     Ok(list.into())
 }
 
+/// Hoefsmit seminormal character `χ_λ(β)` of a braid `β` for partition
+/// `shape` at parameter `q`.
+///
+/// `shape`: partition λ ⊢ n as a list of descending part sizes.
+/// `word`: braid as `[(sign, generator_index_1based), ...]`,
+///   `sign ∈ {+1, -1}`, `generator_index ∈ {1, ..., n-1}`.
+/// `q`: Hecke parameter (substrate value).
+///
+/// Returns `χ_λ(β) ∈ ℝ`.  Uses the sparse Hoefsmit kernel; gives a
+/// ~50–100× speedup over the pure-Python implementation for `n ≥ 9`.
+#[pyfunction]
+fn chi_lambda_braid(shape: Vec<usize>, word: Vec<(i32, u32)>, q: f64) -> f64 {
+    seminormal::chi_lambda_braid(&shape, &word, q)
+}
+
+/// **F3.2.ζ — q-character on a sequence of Hecke factors `c·σ + d·I`.**
+///
+/// `chi_q_atomic(shape, factors, q)` returns
+/// `χ_λ(Π_i (c_i · σ_{g_i} + d_i · I))` for partition `λ ⊢ n` at
+/// substrate parameter `q`.
+///
+/// `factors`: list of `(c, d, gen_1based)` triples, applied
+/// **left-to-right** (factor at position 0 is rightmost in the
+/// matrix product).
+///
+/// Use case: QOU atomic-braid Hecke characters with proton/neutron
+/// `(c, d)` per crossing — what `chi_lambda_braid` (which only
+/// takes `(sign, gen)` braid words) cannot handle. Unlocks A=12+
+/// q-Hecke per-braid evaluation (P2.2c-12C).
+///
+/// Per-basis-vector iterative trace; O(dim²·k) per partition;
+/// ≪ 1 s in release-optimised Rust for typical atomic braids.
+#[pyfunction]
+fn chi_q_atomic(shape: Vec<usize>, factors: Vec<(f64, f64, u32)>, q: f64) -> f64 {
+    seminormal::chi_q_atomic(&shape, &factors, q)
+}
+
+/// Enumerate all partitions of `n` as a list of lists.
+#[pyfunction]
+fn partitions_of(n: usize) -> Vec<Vec<usize>> {
+    seminormal::partitions_of(n)
+}
+
+/// **Classical Murnaghan-Nakayama character** `χ^λ(μ)`.
+///
+/// Computes the irreducible character of the symmetric group `S_n`
+/// at the conjugacy class of cycle type `μ`, on the irrep indexed by
+/// partition `λ`.  Returns an integer (classical MN values are in ℤ).
+///
+/// **Cost**: O(n² · #(border-strip-tableaux)) per character.  For
+/// cross-validation with the Hoefsmit seminormal kernel at q = 1.
+///
+/// `lambda`: partition of n.
+/// `mu`: cycle type (list of cycle lengths in any order).
+#[pyfunction]
+fn mn_chi(lambda: Vec<usize>, mu: Vec<usize>) -> i64 {
+    seminormal_mn::mn_chi(&lambda, &mu)
+}
+
+/// **Debug helper**: returns the reduced Hecke-basis expansion as a list
+/// of `(perm_one_line, length, cycle_type, coeff_terms)` for each
+/// basis element after `reduce_basis_to_minimal_length`.
+#[pyfunction]
+fn debug_reduced_basis(n: usize, word: Vec<(i32, u32)>) -> Vec<(Vec<usize>, usize, Vec<usize>, Vec<(i32, String)>)> {
+    let initial = geck_pfeiffer::braid_to_hecke(n, &word);
+    let reduced = geck_pfeiffer::reduce_basis_to_minimal_length(&initial);
+    let mut out = Vec::new();
+    for (w, c) in reduced {
+        let one_line = w.0.clone();
+        let len = w.length();
+        // cycle type
+        let n = w.n();
+        let mut visited = vec![false; n];
+        let mut cycles = Vec::new();
+        for start in 0..n {
+            if visited[start] { continue; }
+            let mut clen = 0;
+            let mut j = start;
+            while !visited[j] {
+                visited[j] = true;
+                j = w.0[j];
+                clen += 1;
+            }
+            cycles.push(clen);
+        }
+        cycles.sort_by(|a, b| b.cmp(a));
+        let coeff_terms: Vec<(i32, String)> = c.terms.into_iter()
+            .map(|(he, bi)| (he, bi.to_string()))
+            .collect();
+        out.push((one_line, len, cycles, coeff_terms));
+    }
+    out
+}
+
+/// **F3.2.η — correct chi via basis expansion + Hoefsmit per T_w.**
+///
+/// Computes `χ_λ(T_β; q)` correctly at any q by:
+///   1. Expanding T_β = Σ c_w · T_w in the Hecke basis.
+///   2. For each basis element, finding a reduced word for w and
+///      evaluating Hoefsmit on it.
+///   3. Summing c_w · χ_λ(T_w) with c_w evaluated as f64 at q.
+///
+/// Returns f64 character value.  No MN speedup vs direct Hoefsmit
+/// but validates the basis-expansion infrastructure.
+#[pyfunction]
+fn chi_via_gp_hoefsmit(
+    lambda: Vec<usize>,
+    n: usize,
+    word: Vec<(i32, u32)>,
+    q: f64,
+) -> f64 {
+    geck_pfeiffer::chi_lambda_via_gp_hoefsmit(&lambda, n, &word, q)
+}
+
+/// **F3.2.γ — q-character via Geck-Pfeiffer Hecke-basis expansion** *(EXPERIMENTAL).*
+///
+/// Computes `χ_λ(T_β; q)` for an arbitrary braid word `β` by:
+///   1. Expanding `T_β = Σ c_w(q) · T_w` in the canonical Hecke basis.
+///   2. Computing `χ_λ(T_w; q)` via q-MN on cycle type of w (a class
+///      function on canonical T_w).
+///   3. Summing `Σ c_w(q) · χ_λ(T_w; q)`.
+///
+/// Returns the q-Laurent polynomial as `[(half_exp, coeff_str), ...]`.
+///
+/// **WARNING (Copilot review #r3144...): structurally incomplete at q ≠ 1.**
+/// The underlying [`geck_pfeiffer::chi_lambda_via_geck_pfeiffer`] is
+/// explicitly documented as incomplete: at q ≠ 1, two basis elements
+/// `T_w` and `T_{w'}` with the SAME cycle type but DIFFERENT lengths
+/// give DIFFERENT Hecke characters, so the q-MN-on-cycle-type step is
+/// only valid on minimal-length representatives.  The current
+/// implementation reduces basis elements via simple-reflection
+/// conjugation only — sufficient for many cases at n ≤ 6 but **not
+/// guaranteed minimal** without the full Geck-Pfeiffer 2000 §3.2
+/// "good cuspidal moves".  Empirically: D atomic braid (n=6) reduces
+/// to 145 basis elements of which 17 are minimal-length and 128 are
+/// not (see `geck_pfeiffer.rs` notes).
+///
+/// **At q = 1** the result is correct (Hecke ↦ S_n, characters are
+/// class functions on cycle type alone).
+///
+/// **For correct q ≠ 1 evaluation on arbitrary braids**, prefer
+/// [`chi_via_gp_hoefsmit`] (basis expansion + Hoefsmit per T_w —
+/// correct but no MN speedup) or the direct seminormal kernel
+/// [`chi_lambda_braid`] / [`chi_lambda_braid_mpfr`].
+///
+/// **Cost**: worst-case O(n!) basis elements but typical sparse braid
+/// words give smaller spans.  At n = 6 (D atomic braid), basis can
+/// have up to 720 elements but most words touch far fewer.
+#[pyfunction]
+fn chi_q_via_gp(
+    lambda: Vec<usize>,
+    n: usize,
+    word: Vec<(i32, u32)>,
+) -> Vec<(i32, String)> {
+    let poly = geck_pfeiffer::chi_lambda_via_geck_pfeiffer(&lambda, n, &word);
+    poly.terms
+        .into_iter()
+        .map(|(he, c)| (he, c.to_string()))
+        .collect()
+}
+
+/// **Littlewood-Richardson coefficient `c^λ_{μν}`.**
+///
+/// Computes the multiplicity of the Specht module `S^λ` in the
+/// induced representation `Ind_{S_p × S_q}^{S_n} S^μ ⊠ S^ν`, equivalently
+/// the number of LR tableaux of skew shape `λ/μ` with content `ν`.
+///
+/// Used by the F4 composer (`chi_via_factorization`): for a tensor-
+/// product factorization β = β_1 ⊗ β_2,
+///
+///   χ_λ(β) = Σ_{μ ⊢ p, ν ⊢ q} c^λ_{μν} · χ_μ(β_1) · χ_ν(β_2)
+///
+/// `lambda`: outer partition λ.
+/// `mu`: inner partition μ (must satisfy μ ⊆ λ componentwise).
+/// `nu`: content partition ν.
+///
+/// Returns 0 if `|λ| ≠ |μ| + |ν|` or μ ⊄ λ.
+#[pyfunction]
+fn lr_coefficient(lambda: Vec<usize>, mu: Vec<usize>, nu: Vec<usize>) -> i64 {
+    littlewood_richardson::lr_coefficient(&lambda, &mu, &nu)
+}
+
+/// **Experimental q-deformed character of a braid word.**
+///
+/// `chi_q_word(lambda, n_strands, word)` returns a Laurent polynomial
+/// as `[(half_exp, coeff_str), ...]`.  See [`mn_chi_q`] for the
+/// polynomial encoding format.
+///
+/// **WARNING (Copilot review)**: the underlying
+/// `seminormal_mn::chi_lambda_braid_qdef` is correct at `q = 1`
+/// (collapses to classical MN) and on canonical/minimal-length
+/// permutation braids at `q ≠ 1`, but provides a deliberately
+/// simplified (and incorrect) q-deformation for non-minimal braid
+/// words.  For correct q ≠ 1 evaluation on arbitrary braids, use
+/// [`chi_via_gp_hoefsmit`] (basis expansion + Hoefsmit per T_w) or
+/// the direct seminormal kernel [`chi_lambda_braid`].
+///
+/// To avoid accidental misuse this binding rejects:
+///   1. Words containing negative generators (would require the
+///      unsupported `σ⁻¹ = σ − h` expansion).
+///   2. **Positive but non-reduced words** (Copilot review #r3144...),
+///      detected by comparing word length to the underlying
+///      permutation's inversion length.  E.g. `[σ_1, σ_2, σ_1]` (length
+///      3) is rejected because the underlying permutation of the
+///      braid `σ_1 σ_2 σ_1` is `(1 3)` with only 1 inversion → its
+///      reduced expression has length 1, so the q≠1 character is NOT
+///      a class function on cycle type for this 3-letter word.
+#[pyfunction]
+fn chi_q_word(
+    lambda: Vec<usize>,
+    n_strands: usize,
+    word: Vec<(i32, u32)>,
+) -> PyResult<Vec<(i32, String)>> {
+    if word.iter().any(|(sign, _)| *sign < 0) {
+        return Err(pyo3::exceptions::PyValueError::new_err(
+            "chi_q_word is experimental for q != 1 and only supported \
+             for canonical/minimal-length permutation braids; words \
+             with negative generators are rejected. Use \
+             chi_via_gp_hoefsmit or chi_lambda_braid for correct \
+             evaluation on arbitrary braids.",
+        ));
+    }
+    // Reject positive non-reduced words: the underlying permutation
+    // of the braid (apply each generator on the right of the
+    // identity) must have inversion-count equal to the word length.
+    let mut perm: Vec<usize> = (0..n_strands).collect();
+    for &(_, gen) in &word {
+        let i = (gen as usize).saturating_sub(1);
+        if i + 1 < perm.len() {
+            perm.swap(i, i + 1);
+        }
+    }
+    let mut inversions = 0usize;
+    for i in 0..perm.len() {
+        for j in (i + 1)..perm.len() {
+            if perm[i] > perm[j] {
+                inversions += 1;
+            }
+        }
+    }
+    if inversions != word.len() {
+        return Err(pyo3::exceptions::PyValueError::new_err(format!(
+            "chi_q_word: input word has length {} but its underlying \
+             permutation has {} inversions — non-reduced words are not \
+             supported (q-character is not a class function of cycle \
+             type for non-canonical braids).  Reduce the word to a \
+             minimal-length expression of the same permutation, or use \
+             chi_via_gp_hoefsmit / chi_lambda_braid for correct \
+             evaluation on arbitrary braids.",
+            word.len(), inversions
+        )));
+    }
+    let poly = seminormal_mn::chi_lambda_braid_qdef(&lambda, n_strands, &word);
+    Ok(poly
+        .terms
+        .into_iter()
+        .map(|(he, c)| (he, c.to_string()))
+        .collect())
+}
+
+/// **q-deformed Murnaghan-Nakayama character** `χ^λ(T_w; q)` *(EXPERIMENTAL).*
+///
+/// Computes the Hecke character of the canonical permutation braid
+/// `T_w ∈ H_n(q)` of cycle type `μ`, returning the result as a list
+/// of `(half_exponent, coefficient)` pairs encoding a Laurent
+/// polynomial in `q^{1/2}`.  The half-exponent `2k` represents
+/// `q^{k}`; `2k+1` represents `q^{(2k+1)/2}`.
+///
+/// **WARNING (Copilot review #r3144...): simplified q-deformation.**
+/// The underlying [`seminormal_mn::chi_lambda_mn_qdef`] is documented
+/// as a deliberately-simplified Halverson–Ram-style broken-strip
+/// q-deformation: at `q = 1` it agrees exactly with classical MN
+/// (verified across the full S_3, S_5 character tables), and on the
+/// trivial / sign irreps it agrees with Hoefsmit at `q ≠ 1`.  For
+/// *non-trivial* irreps at `q ≠ 1` it is **not** the canonical
+/// Ram–Wenzl q-MN — the broken-strip q-weight differs from the
+/// Ram–Wenzl 1992 weight on multi-row strips.  Treat output for such
+/// cases as a placeholder until the proper Ram–Wenzl recursion is
+/// wired in (next milestone).
+///
+/// For ground truth, evaluate via the Hoefsmit kernel
+/// [`chi_lambda_braid`] on a reduced word for `T_w`, or via the basis
+/// expansion + Hoefsmit path [`chi_via_gp_hoefsmit`].
+///
+/// Currently handles permutation-form `μ` only; mixed-sign generators
+/// (inverses) require Hecke-relation expansion (separate milestone).
+///
+/// Returns `[(half_exp, coeff_str), ...]` where `coeff_str` is the
+/// BigInt rendered as decimal (callers parse via `int(s)`).
+#[pyfunction]
+fn mn_chi_q(lambda: Vec<usize>, mu: Vec<usize>) -> Vec<(i32, String)> {
+    let poly = seminormal_mn::chi_lambda_mn_qdef(&lambda, &mu);
+    poly.terms
+        .into_iter()
+        .map(|(he, c)| (he, c.to_string()))
+        .collect()
+}
+
+/// **Batch character evaluation across many partitions** (rayon-parallel).
+///
+/// Evaluates `χ_λ(β)` for every partition in `shapes` in parallel using
+/// Rust rayon.  Returns a `List[float]` in the same order.
+///
+/// Faster than calling `chi_lambda_braid` from a Python
+/// `multiprocessing.Pool`: no per-partition pickling overhead, rayon
+/// work-stealing balances dim variation across partitions.
+#[pyfunction]
+fn chi_lambdas_braid(
+    shapes: Vec<Vec<usize>>,
+    word: Vec<(i32, u32)>,
+    q: f64,
+) -> Vec<f64> {
+    seminormal::chi_lambdas_braid(&shapes, &word, q)
+}
+
+/// **Batch MPFR character evaluation across many partitions** (rayon-parallel).
+///
+/// Like `chi_lambda_braid_mpfr` but in batch.  Returns a `List[str]`,
+/// each entry being a decimal string at requested `dps` precision.
+#[pyfunction]
+#[pyo3(signature = (shapes, word, q_str, dps=50))]
+fn chi_lambdas_braid_mpfr(
+    shapes: Vec<Vec<usize>>,
+    word: Vec<(i32, u32)>,
+    q_str: String,
+    dps: u32,
+) -> Vec<String> {
+    seminormal_mpfr::chi_lambdas_braid_mpfr(&shapes, &word, &q_str, dps)
+}
+
+/// **High-precision (MPFR) character `χ_λ(β)`.**
+///
+/// Computes the Hoefsmit seminormal character at `dps` decimal-precision
+/// using MPFR-backed arbitrary-precision arithmetic. Returns the result
+/// as a decimal string (callers should parse via `mpmath.mpf` or
+/// equivalent). Substantially slower than the `f64` path (~10–30×) but
+/// exact at the requested precision — no f64 rounding error.
+///
+/// `q_str`: substrate parameter as a decimal string (avoids f64 lossy
+///   conversion at the boundary).
+/// `dps`: requested decimal precision (default 50 if caller passes a
+///   smaller value, MPFR uses internal guard bits).
+#[pyfunction]
+#[pyo3(signature = (shape, word, q_str, dps=50))]
+fn chi_lambda_braid_mpfr(
+    shape: Vec<usize>,
+    word: Vec<(i32, u32)>,
+    q_str: String,
+    dps: u32,
+) -> String {
+    seminormal_mpfr::chi_lambda_braid_mpfr(&shape, &word, &q_str, dps)
+}
+
 #[pymodule]
 fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(markov_z, m)?)?;
@@ -151,6 +506,19 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(nf_net, m)?)?;
     m.add_function(wrap_pyfunction!(build_atom_nf, m)?)?;
     m.add_function(wrap_pyfunction!(atom_per_generator_volumes, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_atomic, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambdas_braid, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambda_braid_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_lambdas_braid_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(partitions_of, m)?)?;
+    m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
+    m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;
+    m.add_function(wrap_pyfunction!(lr_coefficient, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_via_gp, m)?)?;
+    m.add_function(wrap_pyfunction!(debug_reduced_basis, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_via_gp_hoefsmit, m)?)?;
     // Pull __version__ directly from Cargo.toml so the Python module,
     // the Rust crate, and pyproject.toml never drift. (Gemini review
     // r3103025537: hardcoded version is fragile.)

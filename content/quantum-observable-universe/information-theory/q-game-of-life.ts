@@ -19,12 +19,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:toffoli-transfer-matrix",
     "rem:toffoli-q-and",
     "prop:toffoli-lp-stability",
-    "prop:reeb-operations-per-planck",
-    "rem:discrete-planck-step",
-    "def:categorical-action",
     "def:information-speed-of-light",
   ],
 });

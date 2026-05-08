@@ -1,7 +1,7 @@
 {
   "computation": "unified-binding",
   "description": "Unified binding table using heavy-atom-opts cache: magic atoms via opt-7 exact joint H_{3A}(q) signed trace, non-magic via opt-5 nucleon-shorthand.",
-  "timestamp": "2026-04-17T21:24:28.690903+00:00",
+  "computedAt": "2026-04-17T21:24:28.690903+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "E_0_MeV": 0.0007958232069223113,
@@ -635,5 +635,7 @@
     "min_dm_m_pct": 0.1259428518333331,
     "max_dm_m_pct": 2.973819254338499e+49,
     "mean_dm_m_pct": 9.340200443848108e+47
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

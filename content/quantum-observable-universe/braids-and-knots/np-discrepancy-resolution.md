@@ -69,7 +69,7 @@ the theory has (by design).*
 
 *Any alternative calibration (e.g., electron mass alone) would
 force the theory to predict $Q_\beta(\mathfrak{n})$ from first
-principles — which currently it cannot, because the neutron
+principles — which it cannot, because the neutron
 tower structurally undershoots.  Fixing the neutron tower
 absolutely (without $\beta$-calibration) would require deriving
 $Q_\beta(\mathfrak{n}) = 0.782\;\mathrm{MeV}$ from $q_0$ and
@@ -84,9 +84,9 @@ results (script `light_isotope_sweep.py`):*
 
 | isotope | Term 1 err | Term 1 + 4 err | Term 5 (BW+χ) err |
 |---|---|---|---|
-| D ($A=2$) | $-55\%$ | $+2.1\%$ ★ | $-353\%$ ✗ |
-| T ($A=3$) | $-94\%$ | $-79\%$ | $+0.5\%$ ★ |
-| $^3$He ($A=3$) | $-90\%$ | $-73\%$ | $+0.9\%$ ★ |
+| D ($A=2$) | $-55\%$ | $+2.1\%$ (best) | $-353\%$ (fail) |
+| T ($A=3$) | $-94\%$ | $-79\%$ | $+0.5\%$ (best) |
+| $^3$He ($A=3$) | $-90\%$ | $-73\%$ | $+0.9\%$ (best) |
 | $^4$He ($A=4$) | $-98\%$ | $-94\%$ | $-4.1\%$ |
 
 *The $A \geq 3$ errors are **not** from $n/p$ mismatch (that is
@@ -101,12 +101,12 @@ Weyl alone does not capture.*
 ([unified knot mass](#thm:knot-mass-formula-unified)):*
 
 1. *$A = 2$ (D): use Schur–Weyl + universal Frobenius (gives
-   $+2.1\%$).  Paper's BW+chirality currently fails ($-353\%$,
+   $+2.1\%$).  The BW+chirality formula fails ($-353\%$,
    likely wrong $a_K$ assignment — `d_chirality_probe.py`
    found no simple $a_K$ that fits).*
-2. *$A = 3$ (T, ³He): use BW + chirality $(1 - h^2)$ (gives
+2. *$A = 3$ (T, ${}^{3}\mathrm{He}$): use BW + chirality $(1 - h^2)$ (gives
    $0.5$–$0.9\%$).*
-3. *$A = 4$ (⁴He): use BW + chirality $(1-h^2)^2$ + shell
+3. *$A = 4$ (${}^{4}\mathrm{He}$): use BW + chirality $(1-h^2)^2$ + shell
    correction (gives $-4\%$).*
 4. *$A \geq 5$: use BW + shell; chirality $\to 1$.  Errors
    $5$–$20\%$; requires term 6 (jet-level prefix, open).*

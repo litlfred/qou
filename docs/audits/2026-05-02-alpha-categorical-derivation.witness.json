@@ -1,0 +1,68 @@
+{
+  "computation": "alpha-categorical-derivation-attempt",
+  "computedAt": "2026-05-03T00:17:03.938468+00:00",
+  "alpha_fit_MeV": 339.4326,
+  "fit_uncert_pct": 3,
+  "structural_quantities": {
+    "q_fact_9": 593006.1505915447,
+    "q_fact_9_over_6": 706.9364664793875,
+    "dim_q_total": 658784.2666729937,
+    "dim_q_sum": 3500.092514789628,
+    "sc_dim_q_total": 11658.339041846353,
+    "z_minus_3": 8.03271286133642
+  },
+  "candidates": [
+    {
+      "name": "m_e \u00b7 [7]_q \u00b7 [8]_q \u00b7 [9]_q",
+      "value": 361.24379208767715,
+      "err_pct": 6.425779989216466
+    },
+    {
+      "name": "m_e \u00b7 [9]_q! / [6]_q!",
+      "value": 361.2437920876772,
+      "err_pct": 6.425779989216483
+    },
+    {
+      "name": "m_e \u00b7 [9]_q! \u00b7 z^3 / [3]_q!^3",
+      "value": 164.52783171031703,
+      "err_pct": -51.52857100045281
+    },
+    {
+      "name": "m_e \u00b7 [9]_q\u00b2",
+      "value": 54.88256642131155,
+      "err_pct": -83.83108563487669
+    },
+    {
+      "name": "m_e \u00b7 [9]_q \u00b7 z^{-3}",
+      "value": 42.53921316141797,
+      "err_pct": -87.46755227358304
+    },
+    {
+      "name": "m_e \u00b7 \u03a3 dim_q\u00b2 / [9]_q!",
+      "value": 0.5676805682548339,
+      "err_pct": -99.83275602630542
+    },
+    {
+      "name": "m_e \u00b7 \u03a3_{\u03bb\u22a29} dim_q(\u03bb)",
+      "value": 1788.5435999603592,
+      "err_pct": 426.92157440397864
+    },
+    {
+      "name": "m_e \u00b7 [9]_q!/[6]_q! \u00b7 z^{-3}",
+      "value": 2901.7676547806236,
+      "err_pct": 754.8877316971392
+    },
+    {
+      "name": "m_e \u00b7 \u03a3_{self-conj} dim_q\u00b2",
+      "value": 5957.399009127492,
+      "err_pct": 1655.1051399092166
+    },
+    {
+      "name": "m_e \u00b7 \u03a3_{\u03bb\u22a29} dim_q(\u03bb)\u00b2",
+      "value": 336638.06854641973,
+      "err_pct": 99076.70505025733
+    }
+  ],
+  "in_window": [],
+  "interpretation": "Candidate categorical expressions for \u03b1 from H_9(q) structures. Search bottom-up (compute candidates from framework objects, then check vs fit) \u2014 but this is STILL pattern matching. A real derivation would predict \u03b1 before the fit, not select among many candidates."
+}

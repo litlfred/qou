@@ -3,7 +3,7 @@ $\alpha_\varrho = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
 splits along two orthogonal directions in the Hecke algebra, corresponding
 to the two Markov moves of the braid group.
 
-| Restriction | Markov move | $H_n(q)$ element | Physical invariant |
+| Restriction | Markov move | $H_n(R, q)$ element | Physical invariant |
 |---|---|---|---|
 | Horizontal | Conjugation (within a fibre) | $\rho(\beta)$ | Charge $Q$, crossing energy $\mathbf{E}_{\mathrm{cross}}$ |
 | Vertical | Stabilisation (along the tower) | $\Phi_{\mathrm{mass}}(\beta)$ | Mass $\mathfrak{m} = \mathrm{Vol}/\hbar_q^2$ |
@@ -15,7 +15,7 @@ mediates the duality: it pairs $\mu$ (horizontal) with $\int_A$ (vertical).
 **Horizontal restriction (conjugation, within a fibre).**
 Restricting to a single level of the brane tower — crossings within
 $V^{\otimes n}$ with no tower propagation — the Hecke element
-$\rho(\beta) \in H_n(q)$ encodes the crossing structure directly.
+$\rho(\beta) \in H_n(R, q)$ encodes the crossing structure directly.
 The crossing energy
 ([crossing energy](#def:crossing-energy)) reads off the Skein
 eigenvalue sum
@@ -28,7 +28,7 @@ pattern, not on the depth of the tower.
 
 **Vertical restriction (stabilisation, along the tower).**
 The Hecke mass element
-$\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$
+$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) dresses
 $\rho(\beta)$ with the Frobenius--comultiplication operator
 $(\int_A \otimes \mathrm{id}) \circ \Delta$, which projects

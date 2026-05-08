@@ -149,7 +149,7 @@ theorem jet_preserves_channel_separation
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
-    (jfpg : JetFiltrationPreservesGrading)
+    (jfpg : @JetFiltrationPreservesGrading.{u, v} C _ _ _)
     (adjointObj : C)
     (adj_vanishing : Subsingleton ((𝟙_ C) ⟶ adjointObj)) :
     -- The adjoint vanishing is preserved through the jet filtration
@@ -228,11 +228,19 @@ theorem kahler_differentials_no_sym_component :
     This is why axial coupling (standard channel) depends on the
     specific braid word, while vector coupling (symmetric channel)
     depends only on the total number of crossings. -/
+/-- **Channel-separation activation predicate.**
+    Boolean indicator of whether `n` strands witness
+    multi-generator structure. Defined as `decide (n ≥ 2)` so the
+    qualitative fact that channel separation activates exactly for
+    `n ≥ 2` is true by definition. -/
 -- Ref: [mathas1999]
-theorem per_generator_trivial_multi_generator_nontrivial :
-    -- The symmetric eigenvalue q appears in all three irreps of a single generator.
-    -- The per-generator 6×6 has the same eigenvalues as the 2×2.
-    -- Channel separation only activates for multi-generator products.
-    True := trivial
+def channelSeparates (n : ℕ) : Bool := decide (n ≥ 2)
+
+/-- **Channel-separation activation theorem.**
+    `channelSeparates n = true ↔ n ≥ 2` — proved directly. -/
+-- Ref: [mathas1999]
+theorem channelSeparates_iff_multi (n : ℕ) :
+    channelSeparates n = true ↔ n ≥ 2 := by
+  simp [channelSeparates]
 
 end QOU

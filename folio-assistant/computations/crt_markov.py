@@ -140,14 +140,43 @@ def _Phi_q_mp(z_val, q, qi, max_k=200):
 
 
 def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
-                                q_val, precision=30):
+                                q_val, precision=30, *, legacy_h3=False):
     """Evaluate Markov trace (descended |ΠV_s|) at specific q.
 
-    Returns only the DESCENDED term Π V_s.  For the full tower mass,
-    use tower_mass_symbolic_eval instead.
+    P2.2a (2026-05-02): the legacy H_3-per-generator product
+    diverges at A ≥ 2 per the audit witness
+    `docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json`.
+    The default path now uses the proper $H_{3A}$ Schur-Weyl sum
+    via `global_wedderburn_sum_symbolic` (descended channel only),
+    threading m_pp/m_pn/m_nn through char_kind="mn-atom".
+
+    Set ``legacy_h3=True`` to recover the original H_3-per-generator
+    product (kept for backward compatibility / comparison witnesses).
+
+    Returns a single mpmath value (descended trace |ΠV_s|).
+    For the full tower mass, use tower_mass_symbolic_eval.
     """
     mpmath.mp.dps = precision
     q = mpmath.mpf(str(q_val))
+
+    if not legacy_h3:
+        try:
+            import sympy as _sp
+            from schur_weyl_symbolic import global_wedderburn_sum_symbolic
+            _q_sym = _sp.Symbol("q", positive=True, real=True)
+            A = Z + N
+            _desc_sym, _ = global_wedderburn_sum_symbolic(
+                A, _q_sym, char_kind="mn-atom",
+                Z=Z, N=N, include_inter=include_inter,
+                m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+            )
+            _desc_q0 = _sp.N(
+                _desc_sym.subs(_q_sym, _sp.Rational(str(q_val))), precision)
+            return abs(mpmath.mpc(complex(_desc_q0)))
+        except (ImportError, ModuleNotFoundError, ValueError):
+            # Specific exceptions only; fall through to legacy.
+            pass
+
     qi = 1 / q
     h = q - qi
     z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
@@ -219,34 +248,108 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
         V_full = w_sym * sp + w_std * Vs + w_alt * ap
         V_full_list.append(V_full)
 
-    # Descended term |ΠV̂|
-    desc = mpmath.mpf(1)
-    for V in V_full_list:
-        desc *= V
-    desc_abs = abs(desc)
+    # Descended term: proper Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) via Schur-Weyl
+    # at H_{3A} (P2.2a wiring; per docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json
+    # the H_3-at-H_{3A} approximation Π V_full diverges by 5–7 orders of
+    # magnitude at A ≥ 2; the proper SW sum stays |·| < q_0).
+    #
+    # Falls back to the legacy product if schur_weyl_symbolic is unavailable
+    # or the SW evaluation fails (preserves backward compatibility for
+    # callers passing m_pp/m_pn/m_nn != 1, where the SW char_kind="mn-atom"
+    # is not yet wired to the dressed-quark mass parameters).
+    # P2.1 wiring: SW path accepts m_pp/m_pn/m_nn (threaded through
+    # global_wedderburn_sum_symbolic → specht_character_atomic →
+    # character_on_atomic_braid → atomic_braid_word).
+    try:
+        import sympy as _sp
+        from schur_weyl_symbolic import global_wedderburn_sum_symbolic
+        _q_sym = _sp.Symbol("q", positive=True, real=True)
+        _desc_sym, _terms = global_wedderburn_sum_symbolic(
+            A, _q_sym, char_kind="mn-atom",
+            Z=Z, N=N, include_inter=include_inter,
+            m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
+        )
+        _desc_q0 = _sp.N(_desc_sym.subs(_q_sym, _sp.Rational(str(q_val))),
+                         precision)
+        desc_abs = abs(mpmath.mpc(complex(_desc_q0)))
+    except (ImportError, ModuleNotFoundError, ValueError) as _e:
+        # Specific exceptions only — never silently mask NameError /
+        # TypeError. Falls back to legacy H_3-power expansion.
+        import sys as _sys
+        print(f"[crt_markov] SW desc fallback ({type(_e).__name__}: {_e}); "
+              "using legacy H_3-power expansion", file=_sys.stderr)
+        desc = mpmath.mpf(1)
+        for V in V_full_list:
+            desc *= V
+        desc_abs = abs(desc)
 
-    # Single-generator Φ_q tower: Σ Φ_q(|V̂_i|)
-    single_tower = mpmath.mpf(0)
-    for V in V_full_list:
-        V_abs = abs(V)
-        if V_abs < q:
-            phi = _Phi_q_mp(V_abs, q, qi)
-            if mpmath.isinf(phi):
-                single_tower = mpmath.inf
-                break
-            single_tower += phi
-
-    # Adjacent-pair cross tower: z² Σ_{|i-j|=1} Φ_q(|V̂_i V̂_j|)
-    cross_tower = mpmath.mpf(0)
-    if not mpmath.isinf(single_tower):
-        for i in range(len(V_full_list) - 1):
-            VV = abs(V_full_list[i] * V_full_list[i + 1])
-            if VV < q:
-                phi_pair = _Phi_q_mp(VV, q, qi)
-                if mpmath.isinf(phi_pair):
-                    cross_tower = mpmath.inf
+    # P2.2b: Single + cross Φ_q tower from per-stratum SW sums.
+    # Per prop:phi-q-tower-algebraic-stratification, the singleton and
+    # pair tower terms are
+    #   Σ_{|S|=1} Φ_q(|Σ_λ w_λ χ^λ(π_S)|),
+    #   z² Σ_{|S|=2} Φ_q(|Σ_λ w_λ χ^λ(π_S)|),
+    # where π_S ∈ S_{3A} is the permutation of β_S = ∏_{i∈S} σ_i. The
+    # per-stratum SW sums (per_stratum_sum_symbolic) stay safely below
+    # q_0 at light atoms — Φ_q evaluates inside its convergence disk
+    # everywhere — replacing the H_3-at-H_{3A} per-generator V_full
+    # values that drove single + cross to spurious millions.
+    #
+    # SW per-stratum computation; legacy H_3-per-generator path is the
+    # fallback only on specific import/value errors.
+    try:
+        from schur_weyl_symbolic import per_stratum_sum_symbolic
+        _q_rat = _sp.Rational(str(q_val))
+        n_strands_eff = 3 * A  # full atom strands
+        n_gens_eff = n_strands_eff - 1
+        single_tower = mpmath.mpf(0)
+        for i in range(n_gens_eff):
+            _s_sym, _ = per_stratum_sum_symbolic(A, {i}, _q_sym)
+            _s_q0 = _sp.N(_s_sym.subs(_q_sym, _q_rat), precision)
+            s_abs = abs(mpmath.mpc(complex(_s_q0)))
+            if s_abs < q:
+                phi = _Phi_q_mp(s_abs, q, qi)
+                if mpmath.isinf(phi):
+                    single_tower = mpmath.inf
                     break
-                cross_tower += z ** 2 * phi_pair
+                single_tower += phi
+        cross_tower = mpmath.mpf(0)
+        if not mpmath.isinf(single_tower):
+            for i in range(n_gens_eff - 1):
+                _ss_sym, _ = per_stratum_sum_symbolic(A, {i, i + 1}, _q_sym)
+                _ss_q0 = _sp.N(_ss_sym.subs(_q_sym, _q_rat), precision)
+                ss_abs = abs(mpmath.mpc(complex(_ss_q0)))
+                if ss_abs < q:
+                    phi_pair = _Phi_q_mp(ss_abs, q, qi)
+                    if mpmath.isinf(phi_pair):
+                        cross_tower = mpmath.inf
+                        break
+                    cross_tower += z ** 2 * phi_pair
+    except (ImportError, ModuleNotFoundError, ValueError, NameError) as _e:
+        # Specific exceptions only; NameError covers the SW-desc-failed
+        # case where _sp / _q_sym are unbound. Fallback to legacy
+        # per-generator V_full × Φ_q.
+        import sys as _sys
+        print(f"[crt_markov] SW tower fallback ({type(_e).__name__}: {_e}); "
+              "using legacy per-generator V_full × Φ_q", file=_sys.stderr)
+        single_tower = mpmath.mpf(0)
+        for V in V_full_list:
+            V_abs = abs(V)
+            if V_abs < q:
+                phi = _Phi_q_mp(V_abs, q, qi)
+                if mpmath.isinf(phi):
+                    single_tower = mpmath.inf
+                    break
+                single_tower += phi
+        cross_tower = mpmath.mpf(0)
+        if not mpmath.isinf(single_tower):
+            for i in range(len(V_full_list) - 1):
+                VV = abs(V_full_list[i] * V_full_list[i + 1])
+                if VV < q:
+                    phi_pair = _Phi_q_mp(VV, q, qi)
+                    if mpmath.isinf(phi_pair):
+                        cross_tower = mpmath.inf
+                        break
+                    cross_tower += z ** 2 * phi_pair
 
     total = desc_abs + single_tower + cross_tower
     return {
@@ -286,6 +389,55 @@ def tr_M_at_q0_via_crt(Z, N, include_inter, m_pp, m_pn, m_nn,
     tr_M_q0 = markov_trace_symbolic_eval(
         Z, N, include_inter, m_pp, m_pn, m_nn, q0_val, precision=precision)
     return tr_M_q0
+
+
+def markov_trace_schur_weyl_eval(Z, N, include_inter, q_val, precision=50):
+    """Markov trace at q = q_val via the **proper H_{3A} Schur-Weyl sum**.
+
+    Σ_{λ ⊢ 3A} w_λ(q) · χ^λ(𝒜) — correct H_{3A} framing
+    per `prop:schur-weyl-mass-decomposition` and the audit memo
+    `docs/audits/2026-05-01-h3-at-h3a-weight-derivation.md`.
+
+    This wiring (P2.2a) replaces the per-generator H_3-weighted
+    `markov_trace_symbolic_eval` for the **descended** trace,
+    restoring Φ_q convergence (per the P2.2a witness:
+    `docs/audits/2026-05-01-p2-2a-schur-weyl-low-a.witness.json`).
+
+    Implementation (P2.2b-MN, 2026-05-01): direct mpmath path via
+    `schur_weyl_mpmath.markov_trace_mpmath`. Iterates only
+    length-≤-2 partitions (Schur s_λ(q,q⁻¹) vanishes for length
+    > 2), evaluates each weight w_λ(q_0) and character χ^λ(𝒜) at
+    q_0 directly in mpmath, sums. Bypasses sympy's symbolic GCD
+    bottleneck. Scales to A=40 (⁴⁰Ca, 120 strands) in ~0.2s; the
+    earlier sympy path got stuck at A=12 (>5 min).
+
+    The tower terms (Σ Φ_q(|V̂_i|), z² Σ Φ_q(|V̂_i V̂_j|)) are
+    intrinsically per-generator and don't have an immediate
+    Schur-Weyl per-partition reformulation; they remain in
+    `tower_mass_symbolic_eval` flagged for re-derivation. The
+    per-braid tower (`prop:per-braid-mass-tower`) replaces them.
+
+    Caveat: the underlying `mn_character` is the q=1 limit of the
+    Hecke character (Murnaghan-Nakayama). The full q-deformed
+    Hecke character is a refinement; for now MN already restores
+    convergence.
+
+    Args:
+        Z, N: proton/neutron count.
+        include_inter: include inter-nucleon crossings.
+        q_val: substrate parameter (mpmath.mpf or float).
+        precision: mpmath dps.
+
+    Returns:
+        mpmath.mpf — |tr_M(𝒜, q_val)| via the proper H_{3A} sum.
+
+    Ref: prop:schur-weyl-mass-decomposition
+    """
+    from schur_weyl_mpmath import markov_trace_mpmath
+    total, _parts, _cyc = markov_trace_mpmath(
+        Z, N, q_val=q_val, precision=precision, include_inter=include_inter
+    )
+    return total
 
 
 def test_tower_binding():
@@ -389,7 +541,9 @@ if __name__ == "__main__":
     tr_p = tr_M_at_q0_via_crt(1, 0, False, 1, 1, 1, q0)
     tr_n = tr_M_at_q0_via_crt(0, 1, False, 1, 1, 1, q0)
     Q_beta_cat = abs(tr_n) - abs(tr_p)
-    E_0_cat = mpmath.mpf('0.782') / abs(Q_beta_cat) if abs(Q_beta_cat) > 0 else 0
+    from experimental_constants import Q_NEUTRON_MEV
+    E_0_cat = (mpmath.mpf(str(Q_NEUTRON_MEV)) / abs(Q_beta_cat)
+               if abs(Q_beta_cat) > 0 else 0)
     print()
     print(f"  Calibration (β-decay):")
     print(f"    |tr_M(p)|  = {abs(tr_p)!s}")
@@ -460,6 +614,11 @@ if __name__ == "__main__":
             "β-decay calibration: E_0 = 0.782 / (|tr_M(n)| - |tr_M(p)|)."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        # P2.5 marker — mpmath-only numerical path; polynomial-in-q
+        # exposure does not apply. Symbolic q form lives in
+        # mass-from-q-symbolic.py (proton/neutron) and the per-atom
+        # symbolic Markov trace witnesses.
+        "polynomial_q_not_applicable": True,
         "parameters": {"q_0": str(q0), "mpmath_dps": 50,
                        "E_0_cat_MeV": str(E_0_cat)},
         "results": final_results,

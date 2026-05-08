@@ -6,4 +6,5 @@ export default remark({
   title: "Categorical q-torsion leaf",
   tags: ["glossary", "torsion", "q-deformation", "category-theory"],
   uses: ["def:categorical-q-reeb-flow"],
+  defines: ["categorical-q-torsion-leaf"],
 });

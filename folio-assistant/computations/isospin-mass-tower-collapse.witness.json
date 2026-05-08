@@ -25,7 +25,7 @@
   "parameters": {
     "alpha_MeV": 3.74445965488548,
     "E_coulomb_3He_MeV": 0.76,
-    "note": "Coulomb energy of 3He ground state ≈ 0.76 MeV (well-known)."
+    "note": "Coulomb energy of 3He ground state \u2248 0.76 MeV (well-known)."
   },
   "data": {
     "raw_ratios": {
@@ -61,5 +61,7 @@
   },
   "caveats": [
     "Per-nucleon scaling A=2 -> A=3 not derived from first principles. Match at <1.5% level is suggestive, not a derivation."
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -9,16 +9,9 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:confinement-level",
-    "def:hecke-normal-form",
     "prop:confinement-level-unique",
-    "prop:hecke-mass-trace",
-    "prop:categorical-mass-markov",
-    "thm:jones-markov-trace",
-    "cor:quantum-dilogarithm",
-    "prop:mass-endomorphism-tower",
-    "conj:mass-endomorphism",
-    "def:habiro-ring",
+    "prop:graded-markov-trace-from-gs-filtration",
+    "prop:residue-at-root",
   ],
   tags: [
     "mass",

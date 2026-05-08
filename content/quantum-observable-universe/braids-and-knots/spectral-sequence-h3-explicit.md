@@ -1,13 +1,13 @@
 This proposition computes the differentials $d_1, d_2$ of the
 GB-filtered Hochschild spectral sequence
 ([GB spectral sequence](#prop:gb-spectral-sequence)) **explicitly**
-on $H_3(q)$ over the paper's ground ring $R$ (paper's categorical base ring),
+on $H_3(R, q)$ over the paper's ground ring $R$ (paper's categorical base ring),
 making the page identifications
 ([$E_\infty$ page identifications](#prop:e-infinity-page-identifications))
 concrete for the single-nucleon case.
 
 **Setup.**
-*Hecke algebra $H_3(q)$ has a Gröbner–Shirshov basis (rank 6
+*Hecke algebra $H_3(R, q)$ has a Gröbner–Shirshov basis (rank 6
 $R$ (paper's categorical base ring)-module):*
 
 $$
@@ -171,7 +171,7 @@ Term 3 exactly.*
 
 **What this computation establishes.**
 
-1. *The spectral sequence is **computable for $H_3(q)$** over
+1. *The spectral sequence is **computable for $H_3(R, q)$** over
    $R$ (paper's categorical base ring).*
 2. *The $E_\infty$ ranks match the 6-term structure: 1 class per
    filtration level $\ell = 0, 1, 2, 3$ (with level 3 possibly
@@ -190,8 +190,8 @@ Term 3 exactly.*
 *The matching of Term 2 to a **specific higher operation** on
 the spectral sequence (cup product, Gerstenhaber bracket, or
 $L_\infty$-structure) is the remaining identification task.  For
-$H_3(q)$ this is concrete: the Gerstenhaber bracket on
-$HH^*(H_3(q))$ is computable, and its action on the $E_\infty$
+$H_3(R, q)$ this is concrete: the Gerstenhaber bracket on
+$HH^*(H_3(R, q))$ is computable, and its action on the $E_\infty$
 classes should give the $\Phi_q$ expansion.  This is a
 **finite-dimensional linear-algebra computation** in the paper's
 ground ring $R$ (paper's categorical base ring).*

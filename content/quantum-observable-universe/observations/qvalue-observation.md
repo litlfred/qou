@@ -5,7 +5,7 @@ nuclei.
 
 **Predicted vs observed Q-values.**
 
-| Decay | $\mathcal{Q}_{\mathrm{exp}}$ (MeV) | $\mathcal{Q}_q$ (MeV) | $\delta$ | $F_{\mathrm{shell}}$ |
+| Decay | $\mathcal{Q}_{\mathrm{exp}}$ (MeV) | $Q$ (MeV) | $\delta$ | $F_{\mathrm{shell}}$ |
 |:---:|:---:|:---:|:---:|:---:|
 | ${}^3\mathrm{H} \to {}^3\mathrm{He}$ | $0.01861 \pm 0.00001$ | $\approx 0.01849$ | $-0.6\%$ | $1.000$ |
 | ${}^{14}\mathrm{C} \to {}^{14}\mathrm{N}$ | $0.15648 \pm 0.00004$ | $\approx 0.15300$ | $-2.2\%$ | $1.000$ |
@@ -25,10 +25,10 @@ projection).
 The even-even, non-magic nucleus ${}^{90}\mathrm{Sr}$ ($Z = 38$,
 $N = 52$, shell 5) is the cleanest single-nucleus proof that the
 degree-2 torus knot correction is required.  The bare prediction
-$\mathcal{Q}_{\mathrm{bare}} = 0.944 \mathrm{MeV}$ overshoots
+$\mathcal{Q}_{\mathrm{bare}} \approx 0.944 \mathrm{MeV}$ overshoots
 $\mathcal{Q}_{\mathrm{exp}} = 0.546 \mathrm{MeV}$ by $+73\%$.
 After the Rosso--Jones weighted $F_{\mathrm{deg2}} = 0.5904$
-correction: $\mathcal{Q}_q \approx 0.557 \mathrm{MeV}$
+correction: $Q \approx 0.557 \mathrm{MeV}$
 ($+2.1\%$).  No fitting, no magic-number complication, no parity
 issues — the $73\% \to 2\%$ reduction is purely categorical.
 
@@ -40,7 +40,7 @@ $F_{\mathrm{Pauli}}$ are derived from the $6 \times 6$ regular
 representation of $H_3(q)$, not fitted.
 
 **Error structure.** The parametric uncertainty
-$\delta\mathcal{Q}_q / \delta q_0 \sim 10^{-9} \text{MeV}$ is
+$\deltaQ / \delta q_0 \sim 10^{-9} \text{MeV}$ is
 negligible (the substrate parameter $q_0$ is known to ten digits from
 $m_\mu / m_e$).  The residual errors ($\sim 2$--$10\%$ for heavy
 nuclei) are *structural* — they arise from the shell correction

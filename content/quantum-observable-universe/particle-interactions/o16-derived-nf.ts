@@ -14,10 +14,7 @@ export default example({
     "inductive-reduction",
   ],
   uses: [
-    "prop:four-term-pair-nucleon",
     "prop:nuclear-operator-regimes",
-    "prop:demand-stability",
     "prop:inductive-gb-reduction",
-    "conj:periodic-table-demand",
   ],
 });

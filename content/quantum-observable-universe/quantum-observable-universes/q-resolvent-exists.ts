@@ -8,7 +8,6 @@ export default proposition({
   },
   uses: [
     "def:q-resolvent",
-    "def:q-heat-equation",
     "prop:categorical-laplace-exists",
     "prop:q-heat-kernel-peter-weyl",
   ],

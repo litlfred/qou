@@ -39,9 +39,9 @@ $$
 **Unification: paper's BW coefficients are Hecke-derived $q$-integer products.**
 
 *Per
-[$q$-integer mass formula](#prop:q-integer-mass-formula),
+[$q$-integer mass formula](#conj:q-integer-mass-formula),
 each BW coefficient has an exact $q$-integer expression derived
-from the Hecke algebra $H_3(q)$:*
+from the Hecke algebra $H_3(R, q)$:*
 
 | coefficient | $q$-integer form | crossing interpretation |
 |---|---|---|
@@ -168,13 +168,13 @@ a category error.*
 
 *The paper's figure-eight BW derivation
 ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
-explicitly starts from the $4_1$ knot on $H_3(q)$ and derives
+explicitly starts from the $4_1$ knot on $H_3(R, q)$ and derives
 $a_K = 1 - h^2$ from the character $\chi_{4_1}(2,1) = 2 - [3]_q
-= -1 - h^2$.  For $D$ (satellite topology, $H_6(q)$), that
+= -1 - h^2$.  For $D$ (satellite topology, $H_6(R, q)$), that
 derivation does not apply; the satellite-knot character sum is a
 different object.*
 
-*The correct $D$ prediction is via Schur–Weyl on $H_6(q)$ directly
+*The correct $D$ prediction is via Schur–Weyl on $H_6(R, q)$ directly
 (our pipeline): $B_D^{\mathrm{pred}} = 2.27$ MeV vs $B_{\mathrm{AME}}
 = 2.22$ MeV ($+2.1\%$).  The "chirality factor" for $D$ under this
 pipeline is implicitly captured by the braid word $T_w$ itself,
@@ -209,9 +209,9 @@ categorical derivation of $w_A$ is open.*
 
 | $A$ | isotope | SW+Frob err | BW+$\chi$ err | regime-selected |
 |---|---|---|---|---|
-| $2$ | D | **$+2.1\%$** ★ | $-353\%$ ✗ | SW+Frob: $+2.1\%$ |
-| $3$ | T | $-79\%$ | **$+0.51\%$** ★ | BW+$\chi$: $+0.51\%$ |
-| $3$ | $^3$He | $-73\%$ | **$+0.86\%$** ★ | BW+$\chi$: $+0.86\%$ |
+| $2$ | D | **$+2.1\%$** (best) | $-353\%$ (fail) | SW+Frob: $+2.1\%$ |
+| $3$ | T | $-79\%$ | **$+0.51\%$** (best) | BW+$\chi$: $+0.51\%$ |
+| $3$ | $^3$He | $-73\%$ | **$+0.86\%$** (best) | BW+$\chi$: $+0.86\%$ |
 | $4$ | $^4$He | $-94\%$ | **$-4.07\%$** | BW+$\chi$: $-4.07\%$ |
 
 *All predictions use **zero** fitted constants beyond $q_0$ and

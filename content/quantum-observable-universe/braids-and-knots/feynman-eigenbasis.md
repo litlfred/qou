@@ -68,7 +68,7 @@ the categorical trace: the three resolutions $L_+$, $L_-$, $L_0$ of a
 crossing correspond to the eigenvalues $q$ and $-q^{-1}$ of $c_{V,V}$
 and the trace of the identity strand.  Since the eigenvalues are
 determined by the $R$-matrix ([$R$-matrix braiding](#rem:r-matrix-braiding)), the
-mass ratios --- including $\mathfrak{m}_\mu/\mathfrak{m}_e \approx 206.768$ --- are computed by
+mass ratios --- including $\mathfrak{m}_\mu/\mathfrak{m}_e \approx :val[m_mu_over_e]{precision=6}$ --- are computed by
 a finite trace on a finite-dimensional representation, with the knot types
 serving as a *complete* eigenbasis
 ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)) that Feynman's

@@ -1,4 +1,4 @@
-Continuing the [quantum universe for SU(2)](#ex:quantum-universe-su2),
+Continuing the [quantum universe for $\mathrm{SU}(2)$](#ex:quantum-universe-su2),
 we specify the [substrate parameter](#def:substrate-parameter) that
 controls the deformation from classical $\mathrm{SU}(2)$ to quantum
 $\mathrm{SU}_q(2)$.

@@ -5,4 +5,5 @@ export default remark({
   title: "Right dual",
   tags: ["glossary", "category-theory", "monoidal", "duality"],
   uses: ["rem:glossary-exact-pairing"],
+  defines: ["right-dual"],
 });

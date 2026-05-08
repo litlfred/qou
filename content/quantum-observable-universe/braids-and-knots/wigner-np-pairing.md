@@ -56,7 +56,7 @@ The partition $(2,2)$ is self-conjugate ($\lambda = \lambda'$),
 with $q$-dimension $d_q((2,2)) = [2]_q$ and Wedderburn weight
 $w_{(2,2)} = [2]_q^2/[4]_q!$.
 
-By the branching rule $H_4(q) \to H_3(q)$, the restriction of
+By the branching rule $H_4(R, q) \to H_3(R, q)$, the restriction of
 $V_{(2,2)}$ contains only $V_{(2,1)}$ (the standard representation)
 with multiplicity $1$.  Therefore the $(2,2)$ contribution to
 binding is carried entirely by the **standard channel**, consistent

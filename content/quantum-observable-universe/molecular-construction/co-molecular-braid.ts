@@ -10,11 +10,7 @@ export default definition({
   lean: { ref: "qou:QOU.Molecular.COBraid",
     validation: "not_checked",
   },
-  uses: [
-    "def:molecular-braid",
-    "def:covalent-bond-shared-trefoil",
-    "def:electron-shell-braid-capacity",
-  ],
+  uses: ["def:covalent-bond-shared-trefoil"],
   tags: [
     "carbon-monoxide",
     "CO",

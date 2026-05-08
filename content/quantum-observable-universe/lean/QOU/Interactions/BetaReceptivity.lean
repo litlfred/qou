@@ -1,3 +1,6 @@
+import QOU.Descartes.HeckeH3
+import QOU.Interactions.BorromeanUnique
+
 /-!
 # Beta decay receptivity: character theory of B₃
 
@@ -14,9 +17,6 @@ not 2×2 matrix computations.
 - [prop:demand-stability]
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import QOU.Descartes.HeckeH3
-import QOU.Interactions.BorromeanUnique
 
 namespace QOU.Interactions
 

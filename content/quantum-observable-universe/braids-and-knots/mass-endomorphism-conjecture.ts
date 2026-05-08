@@ -3,15 +3,20 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:mass-endomorphism",
   title: "Mass endomorphism conjecture",
+  lean: {
+    ref: "qou:QOU.MassEndomorphism.MassEndomorphism",
+    validation: "not_checked",
+  },
   uses: [
-    "def:mass-identity",
-    "def:hecke-mass-element",
     "prop:hecke-mass-trace",
     "prop:categorical-mass-markov",
+    "def:habiro-ring",
+    "def:z-habiro-ring",
+    "def:qz-bicompletion",
+    "conj:brane-tower-z-habiro",
+    "def:motivic-substrate",
+    "def:archimedean-realization-functor",
     "thm:topological-mass",
-    "prop:knot-operator-selection",
-    "prop:frobenius-gram-matrix",
-    "cor:topological-decomposition-mass",
   ],
   tags: [
     "mass",
@@ -20,6 +25,7 @@ export default conjecture({
     "volume-conjecture",
     "higgs",
     "brane-tower",
+    "habiro-ring",
     "open-problem",
   ],
 });

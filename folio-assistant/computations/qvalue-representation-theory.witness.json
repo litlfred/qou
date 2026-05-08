@@ -5,58 +5,58 @@
   "commitSha": "72c53f2e1cb0349ada987d5a8c97e9b32a12610c",
   "assertions": [
     {
-      "name": "Q(³H) full prediction",
+      "name": "Q(\u00b3H) full prediction",
       "computed": 0.039869,
       "expected": 0.01861,
       "passed": true,
       "tolerance": 0.027915,
       "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 1e-05 MeV)"
+      "source": "NNDC/ENSDF (exp \u00b1 1e-05 MeV)"
     },
     {
-      "name": "Q(¹⁴C) full prediction",
+      "name": "Q(\u00b9\u2074C) full prediction",
       "computed": 0.132775,
       "expected": 0.15648,
       "passed": true,
       "tolerance": 0.23472,
       "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 4e-05 MeV)"
+      "source": "NNDC/ENSDF (exp \u00b1 4e-05 MeV)"
     },
     {
-      "name": "Q(⁶⁰Co) full prediction",
+      "name": "Q(\u2076\u2070Co) full prediction",
       "computed": 0.041535,
       "expected": 0.31817,
       "passed": true,
       "tolerance": 0.477255,
       "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 0.00013 MeV)"
+      "source": "NNDC/ENSDF (exp \u00b1 0.00013 MeV)"
     },
     {
-      "name": "Q(⁹⁰Sr) full prediction",
+      "name": "Q(\u2079\u2070Sr) full prediction",
       "computed": 0.06294,
       "expected": 0.5459,
       "passed": true,
       "tolerance": 0.81885,
       "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 7e-05 MeV)"
+      "source": "NNDC/ENSDF (exp \u00b1 7e-05 MeV)"
     },
     {
-      "name": "Q(¹³⁷Cs) full prediction",
+      "name": "Q(\u00b9\u00b3\u2077Cs) full prediction",
       "computed": 0.154322,
       "expected": 0.514,
       "passed": true,
       "tolerance": 0.771,
       "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 0.00021 MeV)"
+      "source": "NNDC/ENSDF (exp \u00b1 0.00021 MeV)"
     },
     {
-      "name": "Q(²¹⁰Bi) full prediction",
+      "name": "Q(\u00b2\u00b9\u2070Bi) full prediction",
       "computed": 0.577906,
       "expected": 1.1627,
       "passed": true,
       "tolerance": 1.74405,
       "unit": "MeV",
-      "source": "NNDC/ENSDF (exp ± 6e-05 MeV)"
+      "source": "NNDC/ENSDF (exp \u00b1 6e-05 MeV)"
     },
     {
       "name": "MAE (full, 6 nuclei)",
@@ -83,21 +83,21 @@
   "scriptFile": "qvalue-representation-theory.py",
   "scriptHash": "b23e89d60d4b",
   "scriptCommitSha": "ff4856298cca0bad0cdcfdec11692a01ce5d900d",
-  "description": "Q-value predictions from Gröbner--Shirshov-weighted transfer matrix with Rosso--Jones spectral decomposition. Crossing convention: σ⁻¹ = σ − (q−q⁻¹), matching hecke_division.py and HeckeH3.lean (unimodular: det T = −1). Two-stage correction: (1) q/q⁻¹ directional weighting, (2) degree-2 torus knot shell factor F_deg2 ≈ 0.5904 and Pauli exclusion F_Pauli ≈ 0.6382 for magic shells. Zero fitting parameters. All from q alone.",
+  "description": "Q-value predictions from Gr\u00f6bner--Shirshov-weighted transfer matrix with Rosso--Jones spectral decomposition. Crossing convention: \u03c3\u207b\u00b9 = \u03c3 \u2212 (q\u2212q\u207b\u00b9), matching hecke_division.py and HeckeH3.lean (unimodular: det T = \u22121). Two-stage correction: (1) q/q\u207b\u00b9 directional weighting, (2) degree-2 torus knot shell factor F_deg2 \u2248 0.5904 and Pauli exclusion F_Pauli \u2248 0.6382 for magic shells. Zero fitting parameters. All from q alone.",
   "contentBlock": "prop:spectral-decomposition-qvalue",
   "parameters": {
-    "q₀": 1.1099785955541805,
-    "q₀_err": 1.3578965598837824e-09,
-    "κ_q (MeV)": 0.17033298333333333,
+    "q\u2080": 1.1099785955541805,
+    "q\u2080_err": 1.3578965598837824e-09,
+    "\u03ba_q (MeV)": 0.17033298333333333,
     "F_deg2": 0.5904,
     "F_Pauli": 0.6382,
-    "E_× (MeV)": 0.10453016099493972,
-    "μ₀ (MeV)": 1.6295103892701275
+    "E_\u00d7 (MeV)": 0.10453016099493972,
+    "\u03bc\u2080 (MeV)": 1.6295103892701275
   },
   "data": {
     "results": [
       {
-        "nucleus": "³H",
+        "nucleus": "\u00b3H",
         "Z": 1,
         "N": 2,
         "Q_bare_MeV": 0.042242,
@@ -113,7 +113,7 @@
         "ln_unchanged": 0.0
       },
       {
-        "nucleus": "¹⁴C",
+        "nucleus": "\u00b9\u2074C",
         "Z": 6,
         "N": 8,
         "Q_bare_MeV": 0.141643,
@@ -129,7 +129,7 @@
         "ln_unchanged": 0.0
       },
       {
-        "nucleus": "⁶⁰Co",
+        "nucleus": "\u2076\u2070Co",
         "Z": 27,
         "N": 33,
         "Q_bare_MeV": 0.023093,
@@ -145,7 +145,7 @@
         "ln_unchanged": 0.0
       },
       {
-        "nucleus": "⁹⁰Sr",
+        "nucleus": "\u2079\u2070Sr",
         "Z": 38,
         "N": 52,
         "Q_bare_MeV": 0.028025,
@@ -161,7 +161,7 @@
         "ln_unchanged": 0.0
       },
       {
-        "nucleus": "¹³⁷Cs",
+        "nucleus": "\u00b9\u00b3\u2077Cs",
         "Z": 55,
         "N": 82,
         "Q_bare_MeV": 0.190974,
@@ -177,7 +177,7 @@
         "ln_unchanged": 0.0
       },
       {
-        "nucleus": "²¹⁰Bi",
+        "nucleus": "\u00b2\u00b9\u2070Bi",
         "Z": 83,
         "N": 127,
         "Q_bare_MeV": 0.617682,
@@ -205,13 +205,15 @@
       "structural_sources": [
         "nucleon ordering in transfer matrix",
         "degree-2 Rosso--Jones weighting over two knots",
-        "degree tower truncation at k=2 on Σ₄"
+        "degree tower truncation at k=2 on \u03a3\u2084"
       ],
-      "dominant": "structural model (2–10%), not parametric"
+      "dominant": "structural model (2\u201310%), not parametric"
     }
   },
   "caveats": [
-    "With the corrected crossing convention (1, -HA) matching hecke_division.py and HeckeH3.lean, transfer matrix Q-values systematically underpredict heavy nuclei. The old (q², -q·s) coefficients were non-unimodular (det = -1.53) and mathematically incorrect. The canonical Q-value approach uses nf-qvalues.py via the hecke_division.py engine.",
-    "F_deg2 = 0.5904 and F_Pauli = 0.6382 are computed from H₃(q) Markov traces using the Rosso--Jones canonical inner product (Schur orthogonality). Zero fitting freedom."
-  ]
+    "With the corrected crossing convention (1, -HA) matching hecke_division.py and HeckeH3.lean, transfer matrix Q-values systematically underpredict heavy nuclei. The old (q\u00b2, -q\u00b7s) coefficients were non-unimodular (det = -1.53) and mathematically incorrect. The canonical Q-value approach uses nf-qvalues.py via the hecke_division.py engine.",
+    "F_deg2 = 0.5904 and F_Pauli = 0.6382 are computed from H\u2083(q) Markov traces using the Rosso--Jones canonical inner product (Schur orthogonality). Zero fitting freedom."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

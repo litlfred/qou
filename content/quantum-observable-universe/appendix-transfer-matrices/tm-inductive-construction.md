@@ -143,7 +143,7 @@ gains access to one higher jet order — one more layer of
 many-body correlation.
 
 **Beta decay as the 1-jet variation.**  Single beta decay
-changes one nucleon type.  The $\mathcal{Q}_q$-value is:
+changes one nucleon type.  The $Q$-value is:
 
 $$
   \delta E =  \sum_{i=0}^{p} (\hat{V}_i^{\mathrm{dau}} - \hat{V}_i^{\mathrm{par}})
@@ -232,3 +232,58 @@ fits into the existing shell) and **jumps** at the next step
 |:----:|:-----------:|:----------:|:---------:|
 | $3$ | $(2,2)$ | $0.095$ | closure |
 | $4$ | $(3,2)$ | $1.409$ | $\times 14.8$ (shell break) |
+
+## Complexity bound and magic-shell folding
+
+The pairwise inductive step is the engine of the heavy-atom
+algorithm; its cost determines whether the framework scales to
+nuclei of physical interest ($A \leq 250$).
+
+**Worst-case bound.** Without shell-folding optimizations, the
+total number of $2 \times 2$ transfer-matrix multiplications to
+build $\bar{\mathcal{N}}(A)$ from $\mathbf{1}$ is exactly
+
+$$
+  C_{\mathrm{bare}}(A)  =  \binom{A}{2}  =  \tfrac{1}{2} A (A-1).
+$$
+
+Each step appends one factor over $\mathbb{Z}[q^{\pm 1/2}]$ to a
+$2 \times 2$ matrix product, so the algorithm is quadratic in $A$
+and polynomial in the bit-size of intermediate Laurent coefficients.
+
+**Shell-folding optimization.** At a magic configuration $A = m \in
+\mathcal{M} = \{2, 8, 20, 28, 50, 82, 126\}$ (cf.
+[heavy-atom examples](#tm-heavy-atom-examples) §B.7), the
+shell-closure signatures (i)--(iii) above identify the closed
+shell as a single Markov-equivalence class.  When the next nucleon
+is added, it is sufficient to interact it with the
+**collective torus-knot operator** $T_{2, k}$ (where $k$ is the
+shell size) rather than with each of the $k$ internal nucleons
+separately.  The folded step costs
+
+$$
+  C_{\mathrm{fold}}(\text{add nucleon to closed shell of size } k)
+  =  O(1)
+$$
+
+matrix multiplications, replacing $k$ pairwise crossings with one
+torus-knot factor.  Across an atom that closes shells at
+$m_1 < m_2 < \cdots < m_r \leq A$, the savings compound: adding
+the $(m_j + 1)$-th nucleon costs $1$ instead of $m_j$ steps.
+
+**Correctness.** Folding preserves Reidemeister equivalence
+because the palindromic-histogram criterion (i) certifies that the
+closed shell is in the totally-antisymmetric (alternating)
+Wedderburn block, and the alternating block is rank-one over the
+relevant irreducible representation; the torus-knot generator
+$T_{2, k}$ is the unique non-trivial Hecke element in that block.
+The Skein polynomial of the $A+1$-nucleus computed with folding
+agrees identically with the unfolded $\binom{A+1}{2}$-step product,
+provided the fold is taken only at certified shell closures.
+
+**Empirical status.**  The histogram-palindrome criterion is
+verified for $A \leq 6$ ([heavy-atom examples](#tm-heavy-atom-examples)
+§B.7).  For $A > 6$ the fold is taken under the
+[shell-closure-stability conjecture](#prop:shell-closure-stability).
+The complete folded $\mathcal{Q}_q$-value algorithm appears in
+[heavy-atom examples](#tm-heavy-atom-examples) §B.7.

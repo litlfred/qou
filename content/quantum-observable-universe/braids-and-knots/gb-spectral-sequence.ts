@@ -9,12 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:confinement-level",
-    "def:hecke-normal-form",
-    "prop:gb-residue-spectral-sum",
     "prop:graded-trace-residue-split",
-    "prop:schur-weyl-mass-decomposition",
-    "thm:frobenius-codim-universal",
     "thm:knot-mass-formula-unified",
   ],
   tags: [

@@ -5,7 +5,6 @@ export default remark({
   title: "Madelung transformation: quantum fluid, geodesics, and divisor topology",
   uses: [
     "rem:schrodinger-jet-coaction",
-    "def:substrate-parameter",
     "rem:gr-substrate-geometry",
     "def:mass-identity",
     "rem:algebraic-filter",

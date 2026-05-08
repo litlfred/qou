@@ -10,7 +10,7 @@
   "scriptFile": "mass_table_best.py",
   "scriptHash": "9d34d9fd2a3a",
   "scriptCommitSha": "1d726544a67ade6a4f6006554b0a06aa8f504dec",
-  "description": "Best-available mass table combining (a) mass-endomorphism-tower with geometric-series correction for m_p, (b) Q_β calibration for m_n splitting, (c) Kashaev Vol·ρ_F with census-assigned knots for light atoms, (d) framework A·8G + α-cluster for heavy.",
+  "description": "Best-available mass table combining (a) mass-endomorphism-tower with geometric-series correction for m_p, (b) Q_\u03b2 calibration for m_n splitting, (c) Kashaev Vol\u00b7\u03c1_F with census-assigned knots for light atoms, (d) framework A\u00b78G + \u03b1-cluster for heavy.",
   "parameters": {
     "m_e_MeV": 0.51099895,
     "q_0": 1.1099785955541805,
@@ -22,11 +22,11 @@
       "m_p_pred_MeV": 936.9941563375378,
       "m_p_codata_MeV": 938.27208816,
       "m_p_err_pct": -0.1362005583016175,
-      "m_p_method": "tower level-0 × 1/(1 + [2]_q · ℏ_q²)",
+      "m_p_method": "tower level-0 \u00d7 1/(1 + [2]_q \u00b7 \u210f_q\u00b2)",
       "m_n_pred_MeV": 937.5237652875378,
       "m_n_codata_MeV": 939.56542052,
       "m_n_err_pct": -0.2172978259813167,
-      "m_n_method": "m_n = m_p + Q_β(³H) + m_e  (trefoil-NF + Q_β calibration)"
+      "m_n_method": "m_n = m_p + Q_\u03b2(\u00b3H) + m_e  (trefoil-NF + Q_\u03b2 calibration)"
     },
     "nuclear_binding": [
       {
@@ -35,7 +35,7 @@
         "B_AME": 2.22456612,
         "B_pred": 2.2488207948647343,
         "err_pct": 1.0903103596999093,
-        "formula": "1·m_e·Vol(6_2)"
+        "formula": "1\u00b7m_e\u00b7Vol(6_2)"
       },
       {
         "atom": "3H",
@@ -43,7 +43,7 @@
         "B_AME": 8.4817984,
         "B_pred": 8.46859838653302,
         "err_pct": -0.15562753138508753,
-        "formula": "2·m_e·Vol(8_11)"
+        "formula": "2\u00b7m_e\u00b7Vol(8_11)"
       },
       {
         "atom": "3He",
@@ -51,7 +51,7 @@
         "B_AME": 7.7180375,
         "B_pred": 7.48891930977096,
         "err_pct": -2.968606854126327,
-        "formula": "2·m_e·Vol(L6a4)"
+        "formula": "2\u00b7m_e\u00b7Vol(L6a4)"
       },
       {
         "atom": "4He",
@@ -59,7 +59,7 @@
         "B_AME": 28.2956912,
         "B_pred": 29.95567723908384,
         "err_pct": 5.866568260696314,
-        "formula": "2·m_e · 4·8G"
+        "formula": "2\u00b7m_e \u00b7 4\u00b78G"
       },
       {
         "atom": "6Li",
@@ -81,7 +81,7 @@
         "B_AME": 56.49951,
         "B_pred": 62.338343981930535,
         "err_pct": 10.33430906202644,
-        "formula": "2·B(⁴He) + 1·c_αα"
+        "formula": "2\u00b7B(\u2074He) + 1\u00b7c_\u03b1\u03b1"
       },
       {
         "atom": "9Be",
@@ -103,7 +103,7 @@
         "B_AME": 92.16175,
         "B_pred": 97.1480002285401,
         "err_pct": 5.410325030221432,
-        "formula": "3·B(⁴He) + 3·c_αα"
+        "formula": "3\u00b7B(\u2074He) + 3\u00b7c_\u03b1\u03b1"
       },
       {
         "atom": "14N",
@@ -118,7 +118,7 @@
         "B_AME": 127.61929,
         "B_pred": 134.38464597891252,
         "err_pct": 5.301201706193875,
-        "formula": "4·B(⁴He) + 6·c_αα"
+        "formula": "4\u00b7B(\u2074He) + 6\u00b7c_\u03b1\u03b1"
       },
       {
         "atom": "19F",
@@ -133,7 +133,7 @@
         "B_AME": 160.64486,
         "B_pred": 174.0482812330478,
         "err_pct": 8.34351079334116,
-        "formula": "5·B(⁴He) + 10·c_αα"
+        "formula": "5\u00b7B(\u2074He) + 10\u00b7c_\u03b1\u03b1"
       },
       {
         "atom": "24Mg",
@@ -141,7 +141,7 @@
         "B_AME": 198.2569,
         "B_pred": 216.1389059909459,
         "err_pct": 9.019613436377693,
-        "formula": "6·B(⁴He) + 15·c_αα"
+        "formula": "6\u00b7B(\u2074He) + 15\u00b7c_\u03b1\u03b1"
       },
       {
         "atom": "40Ca",
@@ -149,12 +149,14 @@
         "B_AME": 342.05212,
         "B_pred": 408.771300060167,
         "err_pct": 19.505559579682476,
-        "formula": "10·B(⁴He) + 45·c_αα"
+        "formula": "10\u00b7B(\u2074He) + 45\u00b7c_\u03b1\u03b1"
       }
     ],
     "summary": {
       "n_binding_predictions": 10,
       "mean_abs_err_pct": 6.799563261375073
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

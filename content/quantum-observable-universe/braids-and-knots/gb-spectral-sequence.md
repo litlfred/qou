@@ -2,12 +2,12 @@ The unified knot mass formula
 ([unified knot mass](#thm:knot-mass-formula-unified)) has six
 structural terms.  Earlier commentary suggested these emerge as
 pages of a **spectral sequence** associated with the Gröbner–Shirshov
-filtration $J^\bullet(q)$ on $H_n(q)$.  This proposition makes the
+filtration $J^\bullet(q)$ on $H_n(R, q)$.  This proposition makes the
 spectral-sequence structure precise and states the $E_\infty$
 convergence target.
 
 **Definition (filtered differential algebra).**
-*The Hecke algebra $H_n(q)$ with the confinement filtration
+*The Hecke algebra $H_n(R, q)$ with the confinement filtration
 $J^\bullet(q)$
 ([confinement level](#def:confinement-level)) carries a natural
 differential $d$ induced by the three Gröbner–Shirshov rewriting
@@ -21,11 +21,11 @@ rules
 *Each rule lowers filtration degree (the RHS sits in the same or
 lower stratum than the LHS).  The direct sum $d = d_H + d_F + d_{YB}$
 satisfies $d \circ d = 0$ on the filtered complex (after
-normalisation), making $(H_n(q), J^\bullet, d)$ a **filtered
+normalisation), making $(H_n(R, q), J^\bullet, d)$ a **filtered
 differential algebra**.*
 
 **Proposition (GB spectral sequence).**
-*The filtered differential algebra $(H_n(q), J^\bullet, d)$ has an
+*The filtered differential algebra $(H_n(R, q), J^\bullet, d)$ has an
 associated spectral sequence $(E_r^{\ell, *}, d_r)$ with:*
 
 $$
@@ -46,10 +46,10 @@ homology of the $d_r$ differential.*
 $$
   E_\infty^{\ell, *}
   \;\Longrightarrow\;
-  \mathrm{gr}^\ell\bigl(H_n(q)\bigr).
+  \mathrm{gr}^\ell\bigl(H_n(R, q)\bigr).
 $$
 
-*The Markov trace $\mathrm{tr}_M: H_n(q) \to \mathbb{C}$ is a
+*The Markov trace $\mathrm{tr}_M: H_n(R, q) \to \mathbb{C}$ is a
 $d$-closed linear functional (by cyclicity) and therefore descends
 to $E_\infty$.*
 
@@ -75,9 +75,9 @@ get $d \circ d = 0$ we pass to the **Hochschild cochain complex**
 over the natural ground ring $R$ of the Hecke algebra:*
 
 $$
-  C^k(H_n(q), H_n(q))
+  C^k(H_n(R, q), H_n(R, q))
   \;:=\;
-  \mathrm{Hom}_R\bigl(H_n(q)^{\otimes k},\ H_n(q)\bigr),
+  \mathrm{Hom}_R\bigl(H_n(R, q)^{\otimes k},\ H_n(R, q)\bigr),
 $$
 
 *where the ground ring is the paper's **categorical base ring $R$** —
@@ -118,13 +118,13 @@ $$
 
 *$d \circ d = 0$ is a classical theorem
 (Cartan–Eilenberg 1956) for any associative $R$-algebra over any
-commutative ring $R$; it holds verbatim for $H_n(q)$ over the
+commutative ring $R$; it holds verbatim for $H_n(R, q)$ over the
 paper's categorical base ring $R$ (fibre-functor value ring).  The Markov trace $\mathrm{tr}_M$ is a
-**cyclic 0-cochain** (a map $H_n(q) \to \mathbb{C}$ satisfying
+**cyclic 0-cochain** (a map $H_n(R, q) \to \mathbb{C}$ satisfying
 $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$), hence is $d$-closed at
 degree $0$.*
 
-*The confinement filtration $J^\bullet(q)$ on $H_n(q)$ induces a
+*The confinement filtration $J^\bullet(q)$ on $H_n(R, q)$ induces a
 decreasing filtration on $C^\bullet$:*
 
 $$
@@ -144,15 +144,15 @@ $d(F^p) \subset F^p$.  This is the **filtered Hochschild complex**.*
    because $J^\bullet$ is an ideal-filtration compatible with
    multiplication.*
 
-*Hence the filtered Hochschild complex $(C^\bullet(H_n(q)), d, F^\bullet)$
+*Hence the filtered Hochschild complex $(C^\bullet(H_n(R, q)), d, F^\bullet)$
 is a genuine filtered cochain complex with spectral sequence
 pages $(E_r^{p, q}, d_r)$.*
 
-**Convergence $E_\infty \Rightarrow \mathrm{gr}\,H_n(q)$.**
+**Convergence $E_\infty \Rightarrow \mathrm{gr}\,H_n(R, q)$.**
 
 *The filtration $J^\bullet(q)$ is:*
 
-1. *Bounded below: $J^0 = H_n(q)$ (the full algebra).*
+1. *Bounded below: $J^0 = H_n(R, q)$ (the full algebra).*
 2. *Exhaustive: $\bigcap_\ell J^\ell = 0$ for any fixed
    $q = q_0$ off the roots of unity, since partition energies
    $E_\ell(q_0)$ are distinct and positive
@@ -167,7 +167,7 @@ spectral sequence (Weibel 1994, §5.5).  Therefore*
 $$
   E_\infty^{p, q}
   \;\cong\;
-  \mathrm{gr}^p\,H^{p+q}\bigl(H_n(q), H_n(q)\bigr),
+  \mathrm{gr}^p\,H^{p+q}\bigl(H_n(R, q), H_n(R, q)\bigr),
 $$
 
 *and the total Hochschild cohomology equals the sum over pages.
@@ -186,8 +186,8 @@ from standard Hochschild-complex theory.  What remains open:*
    ([Frobenius universal](#thm:frobenius-codim-universal)) this
    is clear; for $p \geq 1$ the identification with $\Phi_q$ poles
    and chirality requires explicit page computation.*
-2. *Explicit $E_1$ page computation for $H_3(q)$ —
-   $\dim H^k(H_n(q), H_n(q))$ is known from
+2. *Explicit $E_1$ page computation for $H_3(R, q)$ —
+   $\dim H^k(H_n(R, q), H_n(R, q))$ is known from
    Burciu–Scheimbauer (2019) to grow like a specific partition
    generating function, but the pairing with
    $\mathrm{tr}_M$ isolates only the cyclic part.  Matching this
@@ -203,7 +203,7 @@ problem.*
 *A complete rigorous derivation would require:*
 
 - *Construct the Hochschild cochain complex
-  $C^*(H_n(q), H_n(q))$ equipped with the filtration induced by
+  $C^*(H_n(R, q), H_n(R, q))$ equipped with the filtration induced by
   $J^\bullet(q)$.*
 - *Show $\mathrm{tr}_M$ is a Hochschild cocycle (follows from
   cyclicity of Markov trace).*
@@ -232,7 +232,7 @@ The proposition flags the target; the work is open.*
 
 **Relation to other formalisations.**
 
-- *Hochschild cohomology of Hecke algebras $HH^*(H_n(q))$ is
+- *Hochschild cohomology of Hecke algebras $HH^*(H_n(R, q))$ is
   computed in Kosmann-Schwarzbach, Lambe–Stasheff, and extended
   by Burciu–Scheimbauer.  These give **deformation-theoretic**
   input: $HH^2$ controls deformations, $HH^3$ controls obstructions.*
@@ -249,3 +249,27 @@ of quantum topology and deformation theory — the unification
 target is to show that the six-term mass is a specific
 **spectral-sequence cohomology class** paired with the atomic
 braid, computable from the Hecke algebra alone.*
+
+**Archimedean realisation: the $\mathbb{C}$-side of the
+$E_\infty$-pairing is a Picard–Lefschetz period.**
+*Strict archimedean split: the spectral sequence above lives
+entirely over the categorical base ring $R$ — pairings
+$\langle \mathrm{tr}_M, E_\infty^{p,*}(T_w)\rangle$ land in $R$,
+not $\mathbb{C}$.  Applying the archimedean fibre functor
+$\tau \colon R \hookrightarrow \mathbb{C}$ promotes the
+$E_\infty$-pairing to a contour integral on the Descartes elliptic
+curve $\mathcal{E}_q(\mathbb{C})$.  Specifically, the level-$p$
+stratum corresponds via
+([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence))
+to the geometric jet bundle $J^p\mathcal{S}$, on which the
+Seiberg–Witten differential $\lambda_{\mathrm{SW}}^{(p)}$ is the
+tautological section.  The pairing's $\mathbb{C}$-realisation is
+the Picard–Lefschetz thimble period $\Pi^{(p)}$
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)),
+which equals $\tau\bigl\langle\mathrm{tr}_M,
+E_\infty^{p,*}(T_w)\bigr\rangle$ up to the integer intersection
+numbers $n_\sigma^{(p)}$ of the Lefschetz decomposition.  The
+spectral sequence and the PL thimble decomposition are therefore
+two presentations of the same data on opposite sides of $\tau$;
+their agreement is the content of
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).*

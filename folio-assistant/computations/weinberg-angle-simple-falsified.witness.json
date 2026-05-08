@@ -1,0 +1,26 @@
+{
+  "computation": "weinberg-angle-simple-falsified",
+  "computedAt": "2026-05-06T00:36:26.524730+00:00",
+  "description": "Numerical falsification of the simple-uniform-multiplicity reading of conj:weinberg-angle-categorical: cot θ_W ≈ q_0^{-4} would give 0.66 at q_0 while CODATA target is 1.823 (rel err 64%).  Records the informative null result that motivates the non-uniform Hoefsmit-multiplicity correction.",
+  "reference_blocks": [
+    "conj:weinberg-angle-categorical",
+    "conj:hoefsmit-ew-cell-content",
+    "conj:categorical-linking-operation"
+  ],
+  "audit": "docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md",
+  "q_0": "1.1099785955541805169583001889887986763787613849839",
+  "codata": {
+    "sin2_theta_W": "0.23129",
+    "cos_theta_W": "0.87676108490283714233881592674195415701047997390659",
+    "sin_theta_W": "0.48092618976304461599798936505460399489665524194519",
+    "cot_theta_W": "1.8230678710486174391643530136663988140740643140276"
+  },
+  "simple_multiplicity_reading": {
+    "form": "cot θ_W = q^{-4}",
+    "value_at_q0": "0.65878178658174508485766538407009218993491116474348",
+    "predicted_sin2_theta_W": "0.69735325872473071882590340800292292605711446403432",
+    "relative_deviation_from_codata": 0.6386411076386214
+  },
+  "verdict": "simple-multiplicity-reading-falsified",
+  "next_step": "Use non-uniform Hoefsmit multiplicities (4, 2, 1, 3, 3, 1, 2, 4) plus Higgs-vev induced (W^3, B) → (Z, γ) automorphism; discharge gated on conj:categorical-linking-operation."
+}

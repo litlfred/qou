@@ -1,7 +1,7 @@
 {
   "computation": "crt-markov-trace",
   "description": "Track A: CRT-style high-precision Markov trace evaluation via mpmath. Avoids float underflow/overflow for heavy atoms. Evaluates tr_M(W) at q_0 with 50-digit precision. \u03b2-decay calibration: E_0 = 0.782 / (|tr_M(n)| - |tr_M(p)|).",
-  "timestamp": "2026-04-17T21:46:19.794946+00:00",
+  "computedAt": "2026-04-17T21:46:19.794946+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "mpmath_dps": 50,
@@ -458,5 +458,7 @@
       "B_per_A_AME": 8.55125,
       "delta_m_over_m_pct": 0.9110538752490686
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

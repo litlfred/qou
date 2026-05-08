@@ -1,13 +1,15 @@
 {
   "computation": "habiro-coefficients-interpolate",
-  "description": "Numerical-pointwise validation of tr_M at q_0 for atomic braids via mpmath Hoefsmit at 60-digit precision.  Agrees with symbolic path (habiro_coefficients_atomic.py) for A = 1, 2 to the precision of both pipelines.  For A = 3 the symbolic pipeline is intractable; this path remains viable.  Full Lagrange recovery of p(u) \u2208 \u2124[u, u\u207b\u00b9] is scaffolded (recover_polynomial_from_samples, coeffs_to_poly, cyclotomic_expansion) and ready to run once the Markov denominator D(u) is cleared analytically.",
+  "description": "Numerical-pointwise validation of tr_M at q_0 for atomic braids via mpmath Hoefsmit at 60-digit precision.  Agrees with symbolic path (habiro_coefficients_atomic.py) for A = 1, 2 to the precision of both pipelines.  Extended to A = 3 atoms (triton, \u00b3He) where the symbolic-q pipeline is intractable; this numerical path remains viable.  Full Lagrange recovery of p(u) \u2208 \u2124[u, u\u207b\u00b9] is scaffolded (recover_polynomial_from_samples, coeffs_to_poly, cyclotomic_expansion) and ready to run once the Markov denominator D(u) is cleared analytically \u2014 see the W-3 blocker note below.  A = 4 (\u2074He, n=12) is currently intractable in dense mpmath: max f^\u03bb \u2248 462 with ~12 crossings exceeds 600s wallclock at 60 dps; sparse-block or character-table approach needed for A \u2265 4.",
+  "blocker_W3_term6_extension": "Extending Term-6 simple-pole sum to A \u2265 3 atoms requires the cyclotomic Habiro coefficients a_m(u) of tr_M, not just pointwise tr_M(q_0) values.  Recovery of a_m(u) needs the analytical Markov-normalisation denominator D(u) such that p(u) := D(u) \u00b7 tr_M(u\u00b2) is a polynomial in \u2124[u, u\u207b\u00b9].  Currently D(u) is extracted by sympy `together()` of the symbolic-q expression (habiro_coefficients_atomic.py:to_u_polynomial) \u2014 intractable for partitions of 3A with A \u2265 3.  A first-principles derivation from Schur\u2013Weyl hook denominators + Hoefsmit character denominators (both LCMs over partitions of 3A) is the next step.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:habiro-expansion-atomic",
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-04-25T01:51:29.758932+00:00",
+  "timestamp": "2026-05-03T15:59:52.196498+00:00",
+  "polynomial_q_not_applicable": true,
   "parameters": {
     "q_0": 1.1099785955541805,
     "engine": "mpmath 60-digit; Hoefsmit numerical"
@@ -18,28 +20,35 @@
       "N": 0,
       "include_inter": false,
       "tr_M_q0_numerical_60dps": "2.12258250945273043393200344480863635436947714512752131398475",
-      "walltime_sec": 0.1795196533203125
+      "walltime_sec": 0.1858961582183838
     },
     "n (neutron, A=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
       "tr_M_q0_numerical_60dps": "1.58939344595390495536006881867908640647880579801663030032846",
-      "walltime_sec": 0.01082754135131836
+      "walltime_sec": 0.008180379867553711
     },
     "D (deuteron, A=2)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
       "tr_M_q0_numerical_60dps": "0.177436924215432053846479495532751812711489591336319784932704",
-      "walltime_sec": 0.11531496047973633
+      "walltime_sec": 0.12555170059204102
     },
     "T (triton, A=3)": {
       "Z": 1,
       "N": 2,
       "include_inter": true,
       "tr_M_q0_numerical_60dps": "0.00506069341454955589063075401728950417098608921377008974710135",
-      "walltime_sec": 13.221444129943848
+      "walltime_sec": 17.74817967414856
+    },
+    "\u00b3He (helion, A=3)": {
+      "Z": 2,
+      "N": 1,
+      "include_inter": true,
+      "tr_M_q0_numerical_60dps": "0.0104542314423689587350948488145779641648217010657447044790039",
+      "walltime_sec": 17.794016361236572
     }
   }
 }

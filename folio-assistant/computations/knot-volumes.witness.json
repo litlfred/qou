@@ -93,5 +93,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8
+  "durationMs": 8,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

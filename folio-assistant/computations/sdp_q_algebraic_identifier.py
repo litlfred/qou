@@ -53,7 +53,7 @@ import numpy as np
 import cvxpy as cp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT  # canonical substrate parameter
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # canonical substrate parameter
 try:
     from experimental_constants import (
         ALPHA_EM_INV, M_E_MEV, M_N_MINUS_P_MEV,
@@ -65,8 +65,8 @@ except Exception:  # pragma: no cover
 
 # ---------- High-precision basis evaluation ------------------------
 mp.mp.dps = 50
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 HA = Q0 - QI
 
 
@@ -446,7 +446,7 @@ def main() -> None:
 
     payload = {
         "schema": "sdp-q-algebraic-identifier/v1",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "q_0": float(Q0),
         "basis": {
             "size": B.size,
@@ -459,7 +459,7 @@ def main() -> None:
         "results": results,
     }
     out_path = Path(args.out)
-    out_path.write_text(json.dumps(payload, indent=2))
+    out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
     print(f"\n[witness] wrote {out_path}")
 
 

@@ -1,0 +1,111 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-05T17:06:12.350414+00:00",
+  "commitSha": "97ca6136a1abb3ab3cda005be83b324d27e83f52",
+  "assertions": [
+    {
+      "name": "pointwise: ∏ dc_k/dz = sign · Δ_root · ∏ ∂F/∂z / ∏ ∂F/∂c",
+      "computed": 4.310857286197097e-16,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "exact identity from Schur–Weyl Alt^3 projection"
+    },
+    {
+      "name": "thimble-period: ∮ ∏ dc_k/dz dz = ∮ Λ_alt dz   (J⁺)",
+      "computed": 2.220446049250313e-16,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "thimble integral cross-form (J⁺)"
+    },
+    {
+      "name": "thimble-period: ∮ ∏ dc_k/dz dz = ∮ Λ_alt dz   (J⁻)",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "thimble integral cross-form (J⁻)"
+    },
+    {
+      "name": "Vieta: Σ dc_k/dz = -4 (sign-trivial / trivial isotype)",
+      "computed": -4.000000000000001,
+      "expected": -4.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "dimensionless",
+      "source": "differentiation of Σ c_k = -(4z+1)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 217,
+  "computation": "baryon-product-from-alt",
+  "scriptFile": "baryon_product_from_alt.py",
+  "scriptHash": "a6060bc4cd59",
+  "scriptCommitSha": "90ca491951fbfca1001c23efe1737e22d20b6945",
+  "description": "Numerical archimedean witness for prop:baryon-product-from-alt: the simultaneous 3-root product ∏ dc_k/dz equals the sign-isotype (Alt^3) projection of the color-tube Jacobian, expressible as Δ_root(z) · (∏ ∂F/∂z) / (∏ ∂F/∂c).  Pointwise ratio is verified along PL thimbles and the integrated thimble period is cross-checked against the Vandermonde form.",
+  "contentBlock": "prop:baryon-product-from-alt",
+  "parameters": {
+    "q0": 1.1099785955541805
+  },
+  "data": {
+    "pointwise_test_points": [
+      {
+        "z_real": 0.1,
+        "z_imag": 0.93,
+        "prod_abs": 25.4223752062352,
+        "alt_abs": 25.422375206235202,
+        "ratio_abs": 0.9999999999999999,
+        "ratio_arg_deg": 1.949008478268473e-15
+      },
+      {
+        "z_real": 0.12,
+        "z_imag": 1.05,
+        "prod_abs": 228.78662558506673,
+        "alt_abs": 228.7866255850668,
+        "ratio_abs": 0.9999999999999999,
+        "ratio_arg_deg": -5.147166229086371e-15
+      },
+      {
+        "z_real": -0.97,
+        "z_imag": 0.22,
+        "prod_abs": 41.910485165330776,
+        "alt_abs": 41.91048516533077,
+        "ratio_abs": 1.0,
+        "ratio_arg_deg": -1.7035253271624186e-14
+      },
+      {
+        "z_real": 0.2,
+        "z_imag": 0.5,
+        "prod_abs": 2.393859169568524,
+        "alt_abs": 2.3938591695685245,
+        "ratio_abs": 0.9999999999999999,
+        "ratio_arg_deg": 7.851549970850191e-15
+      },
+      {
+        "z_real": 0.5,
+        "z_imag": -0.3,
+        "prod_abs": 2.8157824395090003,
+        "alt_abs": 2.815782439509001,
+        "ratio_abs": 0.9999999999999997,
+        "ratio_arg_deg": 5.61606476945023e-15
+      }
+    ],
+    "thimble_periods": {
+      "z_c": {
+        "real": -0.9748155329780397,
+        "imag": 0.22301272758464225
+      },
+      "hessian_abs": 2.884299332574446,
+      "per_prod_plus_abs": 13.327684747506543,
+      "per_alt_plus_abs": 13.32768474750654,
+      "per_prod_minus_abs": 12.45081889979302,
+      "per_alt_minus_abs": 12.45081889979302
+    },
+    "vandermonde_x_prod_period_plus_abs": 791.4040047118372
+  },
+  "caveats": [
+    "The pointwise identity is the certified algebraic statement; thimble-period equality is a downstream numerical consequence and lives inside the archimedean half of the strict split."
+  ]
+}

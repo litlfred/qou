@@ -14,7 +14,6 @@ export default remark({
   ],
   uses: [
     "prop:beta-decay-transfer-matrix",
-    "def:q-value-transition",
-    "prop:generator-volume-decomposition",
+    "def:Q-value-transition",
   ],
 });

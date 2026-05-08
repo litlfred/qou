@@ -1,7 +1,7 @@
 {
   "computation": "nuclear-braid-exact",
   "description": "Exact Iwahori--Hecke algebra reduction of nuclear braid words over Q(q)",
-  "timestamp": "2026-04-07T14:55:30.660081+00:00",
+  "computedAt": "2026-04-07T14:55:30.660081+00:00",
   "engine": "sympy",
   "parameters": {
     "q_numerical": 1.11,
@@ -20,5 +20,7 @@
       "markov_trace_symbolic": "(q**(11/2) + 2*q**(7/2) + q**(3/2) - q**7 - q**6 - q**5 - q**4 + q**3 + q**2 + q + 1)/(4*q**4 + 4*q**3)",
       "markov_trace_numerical": 0.2933932758739525
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -41,11 +41,11 @@ from hecke_core import (
     vertex_volume,
 )
 from hecke_characters import partitions_of, young_hooks
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 B2 = Q0 + QI                            # [2]_q
 HBAR = (Q0 - mp.mpf(1)) / Q0            # ℏ_q
 HBAR_SQ = HBAR * HBAR

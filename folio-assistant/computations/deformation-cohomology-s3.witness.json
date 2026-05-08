@@ -5,11 +5,13 @@
     "prop:terms-2-6-higher-operations",
     "prop:gb-spectral-sequence"
   ],
-  "timestamp": "2026-04-24T22:08:05.512499+00:00",
+  "computedAt": "2026-04-24T22:08:05.512499+00:00",
   "dim_Z_S3": 3,
   "dim_Der_S3": 3,
   "dim_Inner_S3": 3,
   "dim_HH1_S3": 0,
   "HH2_S3_by_burghelea": 0,
-  "conclusion": "Neither HH^* of H_3(q) nor HH^* of R[S_3] sources Term 2's \u03a6_q Cauchy kernel.  Route CLOSED."
+  "conclusion": "Neither HH^* of H_3(q) nor HH^* of R[S_3] sources Term 2's \u03a6_q Cauchy kernel.  Route CLOSED.",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -1,7 +1,7 @@
 {
   "computation": "brane-tower-distance-weighted",
   "description": "Distance-weighted non-adjacent brane tower pair contributions.  Each pair at distance d gets z^(2d) suppression reflecting the GB filtration level (d intermediate crossings between the two generators).  Preserved for future accuracy improvement; small contribution relative to the neutron-tower structural gap in current framework.",
-  "timestamp": "2026-04-24T21:51:37.095723+00:00",
+  "computedAt": "2026-04-27T21:18:11.906794+00:00",
   "q_0": 1.1099785955541805,
   "z_markov": 0.4993203340335982,
   "results": [
@@ -16,13 +16,13 @@
             "distance": 1,
             "pair_count": 1,
             "z_power_2d": 0.24932079597942408,
-            "raw_sum": 328958.394919413,
-            "weighted": 82016.16886542179
+            "raw_sum": 328958.39491941006,
+            "weighted": 82016.16886542104
           }
         },
-        "adj_only": 82016.16886542179,
-        "extended_total": 82016.16886542179,
-        "extra_from_non_adjacent": 2.4865986634380567e-12
+        "adj_only": 82016.16886542104,
+        "extended_total": 82016.16886542104,
+        "extra_from_non_adjacent": -3.37907177739015e-13
       }
     },
     {
@@ -36,13 +36,13 @@
             "distance": 1,
             "pair_count": 1,
             "z_power_2d": 0.24932079597942408,
-            "raw_sum": 24616.469275664207,
-            "weighted": 6137.397714011637
+            "raw_sum": 24616.469275664032,
+            "weighted": 6137.397714011593
           }
         },
-        "adj_only": 6137.397714011637,
-        "extended_total": 6137.397714011637,
-        "extra_from_non_adjacent": 1.2722041646468044e-13
+        "adj_only": 6137.397714011593,
+        "extended_total": 6137.397714011593,
+        "extra_from_non_adjacent": 2.1163465130254783e-13
       }
     },
     {
@@ -56,34 +56,34 @@
             "distance": 1,
             "pair_count": 4,
             "z_power_2d": 0.24932079597942408,
-            "raw_sum": 353595.73419696843,
-            "weighted": 88158.76990491703
+            "raw_sum": 353595.73419696523,
+            "weighted": 88158.76990491625
           },
           "2": {
             "distance": 2,
             "pair_count": 3,
             "z_power_2d": 0.06216085930781361,
-            "raw_sum": 23029.997279107047,
-            "weighted": 1431.5644207259036
+            "raw_sum": 23029.997279106887,
+            "weighted": 1431.5644207258933
           },
           "3": {
             "distance": 3,
             "pair_count": 2,
             "z_power_2d": 0.01549799492138908,
-            "raw_sum": 272726.70204078715,
-            "weighted": 4226.717043155312
+            "raw_sum": 272726.70204078476,
+            "weighted": 4226.717043155276
           },
           "4": {
             "distance": 4,
             "pair_count": 1,
             "z_power_2d": 0.0038639724298857978,
-            "raw_sum": 365385.24795360677,
-            "weighted": 1411.8385243797227
+            "raw_sum": 365385.2479536034,
+            "weighted": 1411.8385243797097
           }
         },
-        "adj_only": 88158.76990491703,
-        "extended_total": 95228.88989317797,
-        "extra_from_non_adjacent": 7070.119988260938
+        "adj_only": 88158.76990491625,
+        "extended_total": 95228.88989317713,
+        "extra_from_non_adjacent": 7070.119988260875
       }
     },
     {
@@ -97,55 +97,55 @@
             "distance": 1,
             "pair_count": 7,
             "z_power_2d": 0.24932079597942408,
-            "raw_sum": 378220.1651981158,
-            "weighted": 94298.1526426635
+            "raw_sum": 378220.16519811243,
+            "weighted": 94298.15264266267
           },
           "2": {
             "distance": 2,
             "pair_count": 6,
             "z_power_2d": 0.06216085930781361,
-            "raw_sum": 47654.428280254404,
-            "weighted": 2962.240211723188
+            "raw_sum": 47654.42828025407,
+            "weighted": 2962.2402117231672
           },
           "3": {
             "distance": 3,
             "pair_count": 5,
             "z_power_2d": 0.01549799492138908,
-            "raw_sum": 544925.3636898812,
-            "weighted": 8445.250519001876
+            "raw_sum": 544925.3636898764,
+            "weighted": 8445.250519001802
           },
           "4": {
             "distance": 4,
             "pair_count": 4,
             "z_power_2d": 0.0038639724298857978,
-            "raw_sum": 390014.8302071897,
-            "weighted": 1507.0065511671717
+            "raw_sum": 390014.83020718617,
+            "weighted": 1507.006551167158
           },
           "5": {
             "distance": 5,
             "pair_count": 3,
             "z_power_2d": 0.0009633686818616765,
-            "raw_sum": 23021.751616834048,
-            "weighted": 22.178434509256338
+            "raw_sum": 23021.751616833884,
+            "weighted": 22.17843450925618
           },
           "6": {
             "distance": 6,
             "pair_count": 2,
             "z_power_2d": 0.00024018784658340177,
-            "raw_sum": 272726.70204078715,
-            "weighted": 65.5056392689697
+            "raw_sum": 272726.70204078476,
+            "weighted": 65.50563926896913
           },
           "7": {
             "distance": 7,
             "pair_count": 1,
             "z_power_2d": 5.988382509475752e-05,
-            "raw_sum": 365385.24795360677,
-            "weighted": 21.880666280658396
+            "raw_sum": 365385.2479536034,
+            "weighted": 21.880666280658197
           }
         },
-        "adj_only": 94298.1526426635,
-        "extended_total": 107322.21466461461,
-        "extra_from_non_adjacent": 13024.062021951124
+        "adj_only": 94298.15264266267,
+        "extended_total": 107322.21466461368,
+        "extra_from_non_adjacent": 13024.062021951011
       }
     },
     {
@@ -159,55 +159,55 @@
             "distance": 1,
             "pair_count": 7,
             "z_power_2d": 0.24932079597942408,
-            "raw_sum": 682628.8576471412,
-            "weighted": 170193.57014711024
+            "raw_sum": 682628.857647135,
+            "weighted": 170193.5701471087
           },
           "2": {
             "distance": 2,
             "pair_count": 6,
             "z_power_2d": 0.06216085930781361,
-            "raw_sum": 352063.1207292799,
-            "weighted": 21884.546115122565
+            "raw_sum": 352063.12072927674,
+            "weighted": 21884.546115122368
           },
           "3": {
             "distance": 3,
             "pair_count": 5,
             "z_power_2d": 0.01549799492138908,
-            "raw_sum": 1000120.6179965498,
-            "weighted": 15499.86425848704
+            "raw_sum": 1000120.6179965407,
+            "weighted": 15499.864258486898
           },
           "4": {
             "distance": 4,
             "pair_count": 4,
             "z_power_2d": 0.0038639724298857978,
-            "raw_sum": 694378.1798745514,
-            "weighted": 2683.058142949548
+            "raw_sum": 694378.1798745451,
+            "weighted": 2683.0581429495237
           },
           "5": {
             "distance": 5,
             "pair_count": 3,
             "z_power_2d": 0.0009633686818616765,
-            "raw_sum": 23054.415313021163,
-            "weighted": 22.20990169119685
+            "raw_sum": 23054.415313021003,
+            "weighted": 22.209901691196695
           },
           "6": {
             "distance": 6,
             "pair_count": 2,
             "z_power_2d": 0.00024018784658340177,
-            "raw_sum": 272726.70204078715,
-            "weighted": 65.5056392689697
+            "raw_sum": 272726.70204078476,
+            "weighted": 65.50563926896913
           },
           "7": {
             "distance": 7,
             "pair_count": 1,
             "z_power_2d": 5.988382509475752e-05,
-            "raw_sum": 365385.24795360677,
-            "weighted": 21.880666280658396
+            "raw_sum": 365385.2479536034,
+            "weighted": 21.880666280658197
           }
         },
-        "adj_only": 170193.57014711024,
-        "extended_total": 210370.6348709102,
-        "extra_from_non_adjacent": 40177.064723799966
+        "adj_only": 170193.5701471087,
+        "extended_total": 210370.6348709083,
+        "extra_from_non_adjacent": 40177.064723799616
       }
     }
   ],

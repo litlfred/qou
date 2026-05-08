@@ -11,9 +11,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:atomic-braid",
     "def:hecke-normal-form",
-    "prop:nuclear-groebner-reduction",
     "def:universal-ilp-algorithm",
   ],
   tags: [

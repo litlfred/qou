@@ -1,4 +1,4 @@
-# Build all papers in the folio (PDF + Markdown + HTML) and publish to gh-pages.
+# Build all papers in the folio (PDF only) and publish to gh-pages.
 #
 # Multi-paper architecture
 # ────────────────────────
@@ -8,29 +8,36 @@
 #
 # Triggers
 # ─────────
-#   push (main only)      – direct commits to the main branch
-#   pull_request_target   – every PR (runs without approval, even for Copilot)
-#   workflow_dispatch     – manual run; optionally override the publish target branch
+#   workflow_dispatch ONLY — manual run; optionally override the publish target branch.
+#
+#   Auto-triggers (push / pull_request_target) are intentionally disabled
+#   for billing reasons.  Do NOT add them back without the owner's
+#   explicit approval — every PR push would otherwise spin up a full
+#   TeX Live + bun build on a hosted runner.  To build a branch,
+#   dispatch this workflow manually from the Actions tab and set
+#   `source_branch` to the branch you want to build.
 #
 # Published artefacts (deployed to the target branch, default: gh-pages)
 # ────────────────────────────────────────────────────────────────────────
 #   index.html                                         Folio landing page (links to all papers)
-#   papers/<dir>/index.html                            Per-paper viewer with paper/visualizer toggle
-#   papers/<dir>/paper.html                            Enhanced HTML paper
+#   papers/<dir>/index.html                            Per-paper viewer (PDF iframe + visualizer toggle)
 #   papers/<dir>/<dir>.pdf                             compiled PDF (main branch)
 #   papers/<dir>/<dir>-<slug>.pdf                      compiled PDF (feature branches)
 #   papers/<dir>/<dir>-<slug>-diff.pdf                 latexdiff vs merge-base (feature branches only)
-#   papers/<dir>/<dir>.md                              Pandoc GitHub-Flavoured Markdown
 #   quantum-observable-universe.pdf                    backward-compat copy of first paper PDF
 #   builds.json                                        Manifest of recent feature builds
 #   qa.html                                            QA report (feature branches only)
 #
+# Note: HTML paper rendering (Pandoc LaTeX→HTML) was removed; the
+# per-paper viewer now embeds the PDF directly via <iframe>.
+#
 # Preview builds
 # ──────────────
-#   Pushes to the main branch deploy to the root of gh-pages.
-#   PRs deploy to  drafts/<branch-name>/  so that every feature branch
-#   gets its own preview URL.  Output filenames on feature branches include
-#   a sanitised branch slug so downloads are distinguishable.
+#   Manual dispatches against the main branch deploy to the root of
+#   gh-pages.  Dispatches against feature branches deploy to
+#   drafts/<branch-name>/ so that every feature branch gets its own
+#   preview URL.  Output filenames on feature branches include a
+#   sanitised branch slug so downloads are distinguishable.
 
 name: Build & Publish
 
@@ -68,10 +75,17 @@ concurrency:
 permissions:
   contents:       write   # required to push to the gh-pages branch
   pull-requests:  write   # required to comment on PRs with preview URLs
-  packages:       read    # required to pull the paper-assistant container image
 
 jobs:
   build-and-publish:
+    # Standard GitHub-hosted runner. The previous `paper-assistant` Docker
+    # container baked Mathlib oleans (~20 GB extracted) for three papers,
+    # which exceeded the runner's free disk; the larger-runner attempt
+    # (`ubuntu-latest-l`) wasn't configured for this account, leaving
+    # dispatched jobs stuck in "Waiting for a runner". The simplest path
+    # is to drop the container and install TeX Live + bun on the host
+    # directly. Slower per-build (~3-4 min apt) but always picks up
+    # a runner.
     runs-on: ubuntu-latest
     outputs:
       head_ref: ${{ steps.deploy-vars.outputs.head_ref }}
@@ -80,14 +94,6 @@ jobs:
     defaults:
       run:
         shell: bash
-    # Paper-assistant image — same image used by the folio MCP server.
-    # Pre-installs: TeX Live (full), Lean 4, Bun, pandoc, ripgrep, Python.
-    # Built by build-lean-mcp.yml → ghcr.io/litlfred/qou/paper-assistant.
-    container:
-      image: ghcr.io/${{ github.repository }}/paper-assistant:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     # Normalise context across push / pull_request_target / workflow_dispatch.
     # pull_request_target sets github.ref to the *base* branch, so we use the
@@ -101,7 +107,34 @@ jobs:
       FEATURE_REF: ${{ inputs.feature_branch || '' }}
 
     steps:
-      # ── 0. Checkout ────────────────────────────────────────────────────────
+      # ── 0. Free disk space ─────────────────────────────────────────────────
+      # ubuntu-latest ships with ~14 GB free. TeX Live full + Mathlib local
+      # clones easily exhaust it, so reclaim ~30 GB before installing anything
+      # by removing pre-installed toolchains we don't need (Android, .NET, GHC,
+      # boost, agent toolcache).
+      - name: Free disk space
+        run: |
+          # Remove only the *contents* of the toolcache directory, not the
+          # directory itself — `oven-sh/setup-bun` (and other setup-* actions)
+          # rely on the toolcache directory being present and writable.
+          # Guard against unset or unsafe toolcache paths: an empty value or
+          # `/` would expand `"${VAR}"/*` to `/*` and `rm -rf` the filesystem
+          # root, and an unexpected path should fail closed rather than delete.
+          TOOLCACHE_DIR="${AGENT_TOOLSDIRECTORY:-${RUNNER_TOOL_CACHE:-/opt/hostedtoolcache}}"
+          if [[ -z "$TOOLCACHE_DIR" || "$TOOLCACHE_DIR" == "/" ]]; then
+            echo "Refusing to clear unsafe TOOLCACHE_DIR: '$TOOLCACHE_DIR'" >&2
+            exit 1
+          fi
+          if [[ ! -d "$TOOLCACHE_DIR" ]]; then
+            echo "Refusing to clear missing TOOLCACHE_DIR: '$TOOLCACHE_DIR'" >&2
+            exit 1
+          fi
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+                      /usr/local/share/boost "${TOOLCACHE_DIR:?}"/*
+          sudo apt-get clean
+          df -h /
+
+      # ── 0a. Checkout ───────────────────────────────────────────────────────
       - name: Checkout source
         uses: actions/checkout@v4
         with:
@@ -141,13 +174,38 @@ jobs:
           echo "PYTHONPATH=${{ github.workspace }}/.github/scripts" >> "$GITHUB_ENV"
           git config --global --add safe.directory '*'
 
-      - name: Verify pre-installed tools
+      # ── 0b1. Install LaTeX + latexdiff + latexpand on the host ──
+      # Replaces the pre-baked tools that used to come from the
+      # `paper-assistant` Docker image. apt's `texlive-full` covers the long
+      # tail of style files our chapters use; ~3 min cold install.
+      - name: Install TeX Live, latexdiff, latexmk, latexpand
         run: |
-          # All tools are pre-installed in the paper-assistant image
-          echo "bun $(bun --version)"
-          echo "pdflatex $(pdflatex --version | head -1)"
-          echo "pandoc $(pandoc --version | head -1)"
-          echo "lean $(lean --version 2>&1 | head -1 || echo 'not needed for this workflow')"
+          sudo apt-get update -qq
+          # texlive-extra-utils provides latexpand explicitly — texlive-full
+          # bundles it on most distros but --no-install-recommends can drop
+          # it, so install the providing package directly to be safe.
+          sudo apt-get install -y --no-install-recommends \
+              texlive-full texlive-extra-utils latexdiff latexmk \
+              graphviz ripgrep jq python3-pip
+          # Surface versions for the build log; fail-fast if any tool we
+          # need later is missing.
+          pdflatex --version | head -1
+          latexmk --version | head -1
+          latexdiff --version 2>&1 | head -1
+          latexpand --version 2>&1 | head -1
+
+      # ── 0b2. Install bun (content pipeline) ─────────────────────────────
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Verify tooling
+        run: |
+          echo "bun       $(bun --version)"
+          echo "pdflatex  $(pdflatex --version | head -1)"
+          echo "node      $(node --version 2>/dev/null || echo 'not installed')"
+          echo "python3   $(python3 --version)"
 
       # ── 0c. Install content pipeline dependencies ───────────────────────
       - name: Cache bun dependencies
@@ -171,6 +229,16 @@ jobs:
           cat papers.json
           # Store as output for downstream steps
           echo "papers_json=$(cat papers.json | jq -c .)" >> "$GITHUB_OUTPUT"
+
+      # ── 0d¼. Install Python scientific stack for witness computations ──
+      - name: Install Python scientific dependencies
+        run: |
+          # The witness scripts under folio-assistant/computations/ depend
+          # on the standard scientific Python stack. Install at minimum
+          # the packages imported by the content-linked scripts that
+          # run in CI (numpy, sympy, scipy, mpmath).
+          pip3 install --break-system-packages --no-cache-dir \
+              numpy sympy scipy mpmath
 
       # ── 0d½. Regenerate stale computation witnesses (appendix tables, etc.) ─
       - name: Regenerate stale witnesses
@@ -287,7 +355,10 @@ jobs:
           # Surface all ! errors as early warnings (does not fail the build)
           if grep -q "^! " main.log 2>/dev/null; then
             echo "::warning::LaTeX errors detected — see details below"
-            grep -B1 "^! " main.log | head -80
+            # `head` closes its stdin early, so `grep` may exit 141 (SIGPIPE).
+            # With `set -e -o pipefail` (GitHub Actions default), that would
+            # abort this advisory step.  Swallow it explicitly.
+            grep -B1 "^! " main.log | head -80 || true
           fi
           # Fail only for structural errors that guarantee no PDF can be produced
           if grep -qE "^! (Emergency stop|LaTeX Error: \\\\begin\{document\} ended|File ended while)" \
@@ -324,15 +395,14 @@ jobs:
           fi
           echo "Captured $(wc -l < build-warnings.log 2>/dev/null || echo 0) warning lines"
 
-      # ── 2. Convert LaTeX → Markdown ────────────────────────────────────────
-      # pandoc, latexpand, latexdiff, and graphviz are pre-installed in the CI image.
+      # ── 2. Flatten LaTeX (for diff generation) ─────────────────────────────
+      # latexpand and latexdiff are installed above on the host.
 
       - name: Flatten \input includes into a single file
         run: latexpand main.tex > main-flat.tex
 
-      # ── 2b. Generate diff + HTML in parallel (background) ────────────────
-      # Start diff generation in background while HTML builds in foreground.
-      - name: Generate diff PDF (background) + HTML viewer
+      # ── 2b. Generate diff PDF in background ─────────────────────────────
+      - name: Generate diff PDF (background)
         if: env.HEAD_REF != 'main'
         continue-on-error: true
         id: generate_diff
@@ -381,21 +451,6 @@ jobs:
           # Wait at end of step — GitHub Actions needs all background
           # processes to finish before the step exits.
           wait $DIFF_PID || true
-
-      # Generate HTML directly from flattened LaTeX (skip markdown intermediate)
-      - name: Generate HTML paper
-        continue-on-error: true
-        env:
-          FNAME_BASE: ${{ steps.names.outputs.base }}
-        run: |
-          pandoc main-flat.tex \
-            --from=latex \
-            --to=html5 \
-            --standalone \
-            --mathjax \
-            --metadata title="Quantum Observable Universe" \
-            --output="paper-raw.html" \
-            || echo "::warning::pandoc LaTeX→HTML conversion failed"
 
       - name: Diff PDF status
         if: env.HEAD_REF != 'main'
@@ -490,69 +545,15 @@ jobs:
             cp q_double_slit.html "${PAPER_OUTDIR}/q-double-slit.html"
           fi
 
-          # ── Extract proof objects early (needed by HTML generator) ──────────
+          # ── Extract proof objects ──────────────────────────────────────────
           python3 .github/scripts/extract_proof_objects.py --output _site/proof-objects.json
 
-          # ── Generate base HTML (already built in earlier step) ────────────
-          if [ -f paper-raw.html ]; then
-            cp paper-raw.html "${PAPER_OUTDIR}/paper-raw.html"
-          else
-            # Fallback: generate directly from flattened LaTeX
-            pandoc main-flat.tex \
-              --from=latex --to=html5 --standalone --mathjax \
-              --metadata title="Quantum Observable Universe" \
-              --output="${PAPER_OUTDIR}/paper-raw.html" \
-              || true
-          fi
-
-          # Fallback landing page if pandoc HTML conversion failed
-          if [ ! -s "${PAPER_OUTDIR}/paper-raw.html" ]; then
-            cat > "${PAPER_OUTDIR}/paper-raw.html" << HTML
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="utf-8">
-            <title>Quantum Observable Universe</title>
-          </head>
-          <body>
-            <h1>Quantum Observable Universe</h1>
-            <div class="downloads">
-              <a href="${FNAME_BASE}.pdf">Download PDF</a>
-            </div>
-          </body>
-          </html>
-          HTML
-          fi
-
-          # ── Enhance HTML → paper.html (with dark mode, TOC, definition links, proof status)
-          ENHANCE_ARGS=(
-            "${PAPER_OUTDIR}/paper-raw.html"
-            main-flat.tex
-            "${PAPER_OUTDIR}/paper.html"
-            --manifest _site/proof-objects.json
-            --pdf "${FNAME_BASE}.pdf"
-          )
-          if [ "${{ env.HEAD_REF }}" != "main" ]; then
-            ENHANCE_ARGS+=(
-              --branch "${{ env.HEAD_REF }}"
-              --repo   "${{ github.repository }}"
-              --sha    "${{ env.HEAD_SHA }}"
-              --src-dir "."
-            )
-            # Link to the diff PDF if it was successfully built
-            if [ -f "${PAPER_OUTDIR}/${FNAME_BASE}-diff.pdf" ]; then
-              ENHANCE_ARGS+=(--diff-pdf "${FNAME_BASE}-diff.pdf")
-            fi
-          fi
-          python3 .github/scripts/generate-html.py "${ENHANCE_ARGS[@]}"
-
-          # Clean up intermediate file
-          rm -f "${PAPER_OUTDIR}/paper-raw.html"
-
-          # ── Generate per-paper index.html with paper/visualizer toggle ──────
+          # ── Generate per-paper index.html (PDF iframe + visualizer toggle) ──
+          # The viewer embeds the PDF directly via <iframe>; the previous
+          # Pandoc-rendered paper.html has been retired.
           INDEX_ARGS=(
             "${PAPER_OUTDIR}/index.html"
-            paper.html
+            "${FNAME_BASE}.pdf"
             --pdf "${FNAME_BASE}.pdf"
           )
           if [ -f "${PAPER_OUTDIR}/visualizer.html" ]; then
@@ -576,13 +577,12 @@ jobs:
           # ── Copy figure assets for all papers to gh-pages ────────────────
           # LaTeX \includegraphics uses paths like:
           #   content/<paper>/<chapter>/figures/img.png
-          # Pandoc converts these to <img src="content/..."> in the HTML.
-          # Mirror the content/ figure directories into _site/ so both the
-          # per-paper viewer and the root-level HTML can resolve image paths.
+          # Mirror the content/ figure directories into _site/ so per-paper
+          # viewers and any other consumers can resolve image paths.
           for paper_dir in $(cat papers.json | python3 -c "import sys,json; [print(p['dir']) for p in json.load(sys.stdin)]"); do
             for fig_dir in content/${paper_dir}/*/figures; do
               if [ -d "${fig_dir}" ]; then
-                # Mirror into _site/ preserving content/.../ path (for Pandoc HTML)
+                # Mirror into _site/ preserving content/.../ path
                 mkdir -p "_site/${fig_dir}"
                 cp -r "${fig_dir}/." "_site/${fig_dir}/"
                 # Also copy into per-paper output dir (for standalone viewers)
@@ -711,7 +711,7 @@ jobs:
           retention-days: 1
 
       # ── 5. Comment on PR with preview URL ─────────────────────────────────
-      # gh CLI is pre-installed in the paper-assistant image.
+      # gh CLI is pre-installed on ubuntu-latest GitHub-hosted runners.
 
       - name: Comment preview link on PR
         if: env.HEAD_REF != 'main'

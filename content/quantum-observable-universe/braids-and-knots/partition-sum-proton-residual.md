@@ -9,10 +9,10 @@ denote the experimental proton mass.
 
 **Derivation via the Frobenius co-Casimir.**
 
-*The Hecke algebra $H_n(q)$ is a **self-dual Frobenius algebra**
+*The Hecke algebra $H_n(R, q)$ is a **self-dual Frobenius algebra**
 under the Markov-trace pairing $\langle x, y\rangle := \mathrm{tr}_M(xy)$
 ([Jones–Markov trace](#thm:jones-markov-trace)).  Self-duality
-identifies $H_n(q) \cong H_n(q)^*$ as bimodules; Wedderburn gives
+identifies $H_n(R, q) \cong H_n(R, q)^*$ as bimodules; Wedderburn gives
 $H_n(R, q) = \bigoplus_{\lambda \vdash n}\mathrm{Mat}_{\dim(\lambda)}(R)$
 with Plancherel weights $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$.*
 
@@ -24,18 +24,18 @@ $$
   \;:=\;
   \sum_{\lambda \,\vdash\, n}
     \frac{[n]_q!}{\dim_q(\lambda)^2 \cdot \dim(\lambda)}
-    \cdot p_\lambda
-  \;\in\; Z\bigl(H_n(q)\bigr),
+    \cdot e_\lambda
+  \;\in\; Z\bigl(H_n(R, q)\bigr),
 $$
 
-*where $p_\lambda$ is the central idempotent of block $\lambda$
+*where $e_\lambda$ is the central idempotent of block $\lambda$
 (projector onto $S^\lambda$).  This is the **inverse-Plancherel-
 per-classical-dim** central element — the natural Frobenius
-partner of the unit $1 = \sum_\lambda p_\lambda$ under the
+partner of the unit $1 = \sum_\lambda e_\lambda$ under the
 Markov pairing.*
 
 **Trace identity (derived).**
-*Using $\mathrm{tr}_M(p_\lambda) = \dim_q(\lambda) \cdot \dim(\lambda)/[n]_q!$,*
+*Using $\mathrm{tr}_M(e_\lambda) = \dim_q(\lambda) \cdot \dim(\lambda)/[n]_q!$,*
 
 $$
   \mathrm{tr}_M(C_{\mathrm{Frob}})
@@ -139,33 +139,18 @@ $q$-dependent) holds for all $n$.*
 
 **Algebraic origin hypothesis.**
 *The quantity $\sum_\lambda 1/d_\lambda$ is the
-**inverse-dimension partition sum** at level $n = 3$.  It appears
-naturally as the expectation of $1/d_\lambda$ under the uniform-
-endpoint measure on the Young lattice at depth $n$.  A Kerov-walk
-interpretation is open — upstream `kerov_walk_verify.py`
-documents: the reciprocal-dim distribution $(2/5, 1/5, 2/5)$ is
-a valid probability but is **not** the stationary measure of any
-simple local-update Kerov walk
-([proof-objects](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/folio-assistant/computations/kerov-walk-verify.witness.json)).
-Possible origins:*
-
-1. *Heat-kernel on Young graph: $\sum_\lambda d_\lambda^{-1}$ is
-   the partition function of the uniform endpoint distribution;
-   its appearance as a physical mass correction suggests the
-   trefoil proton braid samples the Young graph uniformly at
-   its closure.*
-2. *$1/d_\lambda$ is the dimension of the centraliser algebra
-   $Z(\mathrm{End}_{H_n}(S^\lambda))$ normalised; the sum then
-   reflects the trace of the identity on the full Wedderburn
-   decomposition.*
-3. *Schur–Weyl $\mathrm{tr}(\mathrm{id}_{V^{\otimes n}}) =
-   \sum_\lambda d_\lambda \cdot \dim V_\lambda$, but the
-   "dual" trace $\sum_\lambda \frac{1}{d_\lambda} \cdot
-   \dim V_\lambda$ appears in tilting-object expansions.*
-
-*A rigorous derivation is open; the numerical match to $0.03\%$
-across the canonical-$q_0$ substrate is a strong structural
-clue.*
+**inverse-dimension partition sum** at level $n = 3$, the
+expectation of $1/d_\lambda$ under the uniform-endpoint measure
+on the Young lattice. The Kerov-walk variant has been ruled out
+upstream (`kerov_walk_verify.py` confirms the reciprocal-dim
+distribution $(2/5, 1/5, 2/5)$ is a valid probability but **not**
+the stationary measure of any simple local-update Kerov walk).
+Plausible algebraic origins remain open — most natural is the
+centraliser-algebra reading $1/d_\lambda = \dim Z(\mathrm{End}_{H_n}(S^\lambda))$
+normalised, with the partition sum reflecting the trace of the
+identity on the full Wedderburn decomposition. Numerical match
+to $0.03\%$ at canonical $q_0$ is a strong structural clue;
+rigorous derivation is open.*
 
 **Extension failure for neutron-containing configurations.**
 *Upstream `tower_isotope_absolute.py` tested whether the same
@@ -199,66 +184,36 @@ $\sim 2.3$.*
    components — explaining the $-55\%$ deuteron residual in
    ([deuteron first principles](#rem:deuteron-first-principles)).*
 
-**Deuteron-gap empirical probe.**
-*Script `folio-assistant/computations/deuteron_residual_probe.py`
-tested whether adding any of the following closed-form corrections
-closes the $^2$H binding gap
-$B_{\mathrm{AME}} - B_{\mathrm{pred}} = 1.2293\;\mathrm{MeV}$:*
+**Deuteron-gap and $q$-variant probes.**
+*Two upstream probes tested closed-form corrections against the
+$^2$H binding gap $B_{\mathrm{AME}} - B_{\mathrm{pred}} = 1.2293\;\mathrm{MeV}$
+and asked whether the $5/2$ admits a meaningful $q$-deformation:*
 
-| candidate | value (MeV) | error vs gap |
+| probe | best candidate | residual vs gap |
 |---|---|---|
-| $(5/2) \cdot m_e$  [= $\sum_{\lambda \vdash 3} 1/d_\lambda$] | $1.2775$ | **+3.92%** ★ |
-| $\sum_{\lambda \vdash 6} 1/d_\lambda \cdot m_e$  [= $(473/144) m_e$] | $1.6785$ | $+36.5\%$ |
-| $(\sum_{\lambda \vdash 6} - \sum_{\lambda \vdash 3}) \cdot m_e$ | $0.4010$ | $-67.4\%$ |
-| $A \cdot m_e = 2 m_e$ | $1.0220$ | $-16.9\%$ |
+| Deuteron gap (`deuteron_residual_probe.py`) | $(5/2) \cdot m_e$ at $n = 3$ | $+3.92\%$ |
+| $q$-variants (`q-variant-partition-sum`) | classical $5/2$ vs $q$-analogue $2 + 1/[2]_q$ | within $0.1\%$ of each other |
 
-*The **same $(5/2) \cdot m_e$ residual** — computed at $n = 3$,
-not $n = 3A = 6$ — closes the deuteron gap to $3.92\%$.
-The naive $n = 3A$ generalization (473/144) **fails by +37%**.*
+*Two structural readings emerge:*
 
-*Structural reading:* **the residual is per-vortex, not per-atom
-partition sum.**  A single proton gets $(5/2) m_e$; a deuteron,
-built on one proton + one neutron, gets the **same** $(5/2) m_e$
-residual in its binding — suggesting the correction attaches to
-the fibre-functor calibration itself, not to the isotope's
-partition content.  The $n = 3A$ partition-sum hypothesis
-(`tower_isotope_absolute.py`) tested the full-mass residual;
-the binding residual obeys a different scaling.
+1. **Per-vortex, not per-atom.** *The same $(5/2) m_e$ residual at
+   $n = 3$ closes the deuteron gap (best variant); the naïve
+   $n = 3A = 6$ generalization $(473/144) m_e$ fails by $+37\%$.
+   The correction attaches to the fibre-functor calibration, not
+   to the isotope's partition content.*
+2. **Essentially classical, not $q$-deformed.** *No $q$-variant
+   closes the gap below $3.5\%$; the natural $q$-deformation at
+   $q_0 = 1.11$ is a $\sim 0.1\%$ perturbation — orders of
+   magnitude smaller than the residual $4\%$ gap. The remaining
+   gap must come from other sources: $\Phi_q$ tower terms not yet
+   added to the Schur–Weyl descended mass
+   ([mass endomorphism tower](#prop:mass-endomorphism-tower)),
+   higher-cyclotomic Habiro coefficients
+   ([Habiro completion](#prop:full-pole-structure-mass-trace)),
+   or non-default inter-nucleon multiplicities.*
 
-*Witness: `deuteron-residual-probe.witness.json`.*
-
-**$q$-variant probe: is the $5/2$ a $q$-deformation?**
-*Tested several natural $q$-analogues of
-$\sum_{\lambda \vdash 3} 1/d_\lambda = 5/2$ at $q_0 \approx 1.11$:*
-
-| candidate | $q_0$ value | $\times m_e$ | vs gap |
-|---|---|---|---|
-| classical $5/2$ | $2.5000$ | $1.2775$ | $+3.92\%$ |
-| $2 + 1/[2]_q$  (via $\dim_q(\lambda)$) | $2.4973$ | $1.2761$ | $+3.81\%$ |
-| $[5]_q / [2]_q$ | $2.5961$ | $1.3266$ | $+7.91\%$ |
-| $2 + 1/(2 \cdot [2]_q)$ | $2.2486$ | $1.1491$ | $-6.53\%$ |
-| $\sum 1/H_q(\lambda)$ (raw hook) | $0.6553$ | $0.3349$ | $-72.8\%$ |
-
-*Result: **no $q$-variant closes the gap below $3.5\%$**.  The
-classical $5/2$ and the natural $q$-analogue $2 + 1/[2]_q$ cluster
-within $0.1\%$ of each other, both about $+3.9\%$ above the
-observed deuteron gap.  The $[5]_q/[2]_q$ "q-rational" variant is
-worse ($+7.9\%$).*
-
-*Structural reading: **the $5/2$ is essentially classical, not
-$q$-deformed.**  Its $q$-deformation at $q_0 = 1.11$ is a $\sim 0.1\%$
-perturbation — orders of magnitude smaller than the residual $4\%$
-gap.  That residual must come from elsewhere:*
-
-1. *The $\Phi_q$ tower terms not yet added to the Schur–Weyl
-   descended mass
-   ([mass endomorphism tower](#prop:mass-endomorphism-tower)).*
-2. *Root-of-unity residues at $\zeta_\ell$ beyond $\zeta_1$
-   ([full pole structure](#prop:full-pole-structure-mass-trace)).*
-3. *Atomic-braid convention: inter-nucleon multiplicities
-   $m_{pn}$, $m_{pp}$, $m_{nn}$ other than the default $1$.*
-
-*Witness: `q-variant-partition-sum.witness.json`.*
+*Witnesses: `deuteron-residual-probe.witness.json`,
+`q-variant-partition-sum.witness.json`.*
 
 **Reference implementations.**
 *Scripts

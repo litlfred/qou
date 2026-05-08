@@ -13,15 +13,7 @@ export default simulator({
     "nuclear",
     "interactive",
   ],
-  uses: [
-    "prop:integer-stability",
-    "prop:beta-stability",
-    "rem:diophantine-valley",
-    "rem:valley-table",
-    "def:coulomb-charge",
-    "def:substrate-parameter",
-    "prop:local-substrate-q",
-  ],
+  uses: ["rem:valley-table"],
   defaultView: {
     name: "default",
     title: "Default: valley of stability",

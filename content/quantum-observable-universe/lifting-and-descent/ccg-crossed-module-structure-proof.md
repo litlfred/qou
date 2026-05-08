@@ -1,0 +1,13 @@
+**Proof.**
+At each level $n$, the pair
+$(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ carries the structure
+of a crossed module in the sense of [yekutieli2010]: the boundary
+map $\partial \colon \mathcal{O}_M^{\times} \to \mathrm{SU}_{q_n}(2)$
+sends a unit $a \in \mathcal{O}_M^{\times}$ to the central element
+$a \cdot \mathbf{1} \in \mathrm{SU}_{q_n}(2)$ (the central extension),
+and the action of $g \in \mathrm{SU}_{q_n}(2)$ on
+$a \in \mathcal{O}_M^{\times}$ is conjugation:
+$g \cdot a = g a g^{-1}$.  This action is well-defined because
+$\mathcal{O}_M^{\times}$ is central in the gerbe band; the Peiffer
+identity $\partial(a) \cdot b = a b a^{-1}$ is automatic for a
+central extension.  $\square$

@@ -26,10 +26,10 @@ From $q$ and $\mu_0$ alone:
    ([Skein polynomial](#prop:skein-polynomial-transfer-matrix)) —
    polynomial in $q^{1/2}$ of degree $\leq A^2 - 1$, computed
    exactly by $\binom{A}{2}$ transfer matrix multiplications.
-2. **$\mathcal{Q}_q$-value**
-   ([transition energy](#def:q-value-transition)) — the
+2. **$Q$-value**
+   ([transition energy](#def:Q-value-transition)) — the
    categorical action difference
-   $\mathcal{Q}_q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
+   $Q = S_q(\mathrm{par}) - S_q(\mathrm{dau}) - S_q(e)$
    where $S_q(e) = 3m_e/3$
    ([building blocks](#rem:building-block-knots)).
    This is NOT defined by classical energy conservation
@@ -56,9 +56,9 @@ Witness computation scripts are in `folio-assistant/computations/`.
    requires identifying the brane tower structure at the electroweak
    level.  Target: $N_v \cdot \kappa_{\mathrm{cross}} \cdot \mu_0 \approx 246$ GeV.
 
-2. **$\mathcal{Q}_q$-values for $A > 4$.** RESOLVED.
+2. **$Q$-values for $A > 4$.** RESOLVED.
    The representation-theoretic formula
-   $\mathcal{Q}_q = \mathcal{Q}_{\mathrm{bare}} \times F_{\mathrm{deg}} \times F_{\mathrm{Pauli}}$
+   $Q = \mathcal{Q}_{\mathrm{bare}} \times F_{\mathrm{deg}} \times F_{\mathrm{Pauli}}$
    ([torus knot shell binding](#cor:spectral-decomposition-qvalue))
    gives all six test nuclei within $\pm 8\%$ using Level 0
    (nucleon) transfer matrices — no Level 1 (quark) braid needed.
@@ -90,7 +90,7 @@ Witness computation scripts are in `folio-assistant/computations/`.
 
 ## Observed half-lives (NNDC/ENSDF)
 
-| Nucleus | $A$ | $\binom{A}{2}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ (MeV) | $t_{1/2}^{\mathrm{obs}}$ |
+| Nucleus | $A$ | $\binom{A}{2}$ | $Q^{\mathrm{exp}}$ (MeV) | $t_{1/2}^{\mathrm{obs}}$ |
 |---------|-----|:-:|------|------|
 | ${}^{3}\mathrm{H}$ | 3 | 3 | $0.01861 \pm 0.00001$ | $12.32 \pm 0.02$ yr |
 | ${}^{14}\mathrm{C}$ | 14 | 91 | $0.15648 \pm 0.00004$ | $5730 \pm 40$ yr |
@@ -102,13 +102,13 @@ Witness computation scripts are in `folio-assistant/computations/`.
 The $\binom{A}{2}$ column shows the exact number of transfer
 matrix steps needed to compute each nucleus's Skein polynomial.
 
-## $\mathcal{Q}_q$ predictions
+## $Q$ predictions
 
-The $\mathcal{Q}_q$-value for tritium is the best-constrained
+The $Q$-value for tritium is the best-constrained
 case.  At Level 0 ($B_3$, 3 transfer matrix steps):
 
 $$
-  \mathcal{Q}_q({}^3\mathrm{H})
+  Q({}^3\mathrm{H})
   = 
   P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0) - P_e(q_0)
 $$
@@ -117,7 +117,7 @@ With the self-deformation correction (daughter at
 $q + \Delta q_{\mathrm{eff}}$ where $\Delta q = 2/9 \cdot \hbar_q^2 \approx 0.00218$):
 
 $$
-  \mathcal{Q}_q^{\mathrm{corr}}({}^3\mathrm{H})
+  Q^{\mathrm{corr}}({}^3\mathrm{H})
   = 
   P_{{}^3\mathrm{H}}(q_0) - P_{{}^3\mathrm{He}}(q_0 + \Delta q) - P_e(q_0)
 $$
@@ -166,14 +166,14 @@ The previous $10$–$17\%$ overshoot arose from using the
 approximate Sargent rule ($f \propto Q^5$) instead of the exact
 phase-space integral with $F_q(Z, E)$.
 
-## $\mathcal{Q}_q$-value predictions from $q$
+## $Q$-value predictions from $q$
 
-The $\mathcal{Q}_q$-value is predicted from $q$ alone via the
+The $Q$-value is predicted from $q$ alone via the
 knot operator product
 ([torus knot shell binding](#cor:spectral-decomposition-qvalue)):
 
 $$
-  \mathcal{Q}_q
+  Q
   = 
   \mathcal{Q}_{\mathrm{bare}}
    \times 
@@ -190,7 +190,7 @@ Shells unchanged by the decay contribute $F = 1$ (cancel in the
 $\mathcal{Q}$ ratio).  The product collapses to a single active
 term — the converting neutron's shell knot $T_{k^*}$.
 
-| Nucleus | $\mathcal{Q}_{\mathrm{bare}}$ | $T_{k^*}$ | $F(T_{k^*}, N)$ | $\mathcal{Q}_q^{\mathrm{pred}}$ | $\mathcal{Q}_q^{\mathrm{exp}}$ | Error |
+| Nucleus | $\mathcal{Q}_{\mathrm{bare}}$ | $T_{k^*}$ | $F(T_{k^*}, N)$ | $Q^{\mathrm{pred}}$ | $Q^{\mathrm{exp}}$ | Error |
 |---------|:-:|:-:|:-:|:-:|:-:|:-:|
 | ${}^{3}\mathrm{H}$ | $0.01739$ | $T_{2,3}$ | $1$ | $0.01739$ | $0.01861 \pm 0.00001$ | $-6.5\%$ |
 | ${}^{14}\mathrm{C}$ | $0.14936$ | $T_{2,5}$ | $1$ | $0.14936$ | $0.15648 \pm 0.00004$ | $-4.6\%$ |
@@ -227,7 +227,7 @@ have zero topological action on $\Sigma_4$.  Inner shells
 they cancel in the $P_{\mathrm{dau}}/P_{\mathrm{par}}$ ratio.
 
 **Error structure.**  Let $\varepsilon = \delta q / q \approx 1.2 \times 10^{-8}$ (CODATA).  The parametric error is
-$\delta \mathcal{Q}_q / \mathcal{Q}_q = O(\varepsilon)$,
+$\delta Q / Q = O(\varepsilon)$,
 dominated by $\partial \ln \mathcal{Q}_{\mathrm{bare}} / \partial \ln q \approx 10$.  The observed $2$–$10\%$ deviations
 are $O(1)$ relative to $\varepsilon$ — they are structural
 (nucleon ordering, degree-$2$ Rosso--Jones weighting, degree tower truncation),
@@ -291,7 +291,7 @@ by the $\alpha_{\mathrm{EM}}(q)$ contribution to $F_q(Z, E)$.
 
 ### Error propagation with $Q_{\mathrm{pred}}$ (from $q$ alone)
 
-With the representation-theoretic $\mathcal{Q}_q$ formula, the
+With the representation-theoretic $Q$ formula, the
 $Q$-value error is $2$–$10\%$ for all six nuclei.  This propagates
 to the half-life via $t_{1/2} \propto Q^{-5}$:
 
@@ -308,7 +308,7 @@ $\leq 50\%$ half-life error via $Q^5$, compared to the
 previous $4$–$100\times$ factors from bare $Q$-values.
 
 The fully-from-$q$ prediction is now reliable for all $A$:
-the $\mathcal{Q}_q$ error is $O(1)$ relative to $\varepsilon = \delta q/q$
+the $Q$ error is $O(1)$ relative to $\varepsilon = \delta q/q$
 (structural, not parametric), bounded by the degree tower
 truncation on $\Sigma_4$.  The remaining open target is $g_A$
 from the Borromean Skein algebra (P3 in the computational roadmap).

@@ -1,7 +1,7 @@
 {
   "name": "nuclear-binding-lp",
   "description": "LP for inter-nucleon binding operators at magic/doubly-magic numbers",
-  "timestamp": "2026-04-19T01:31:55.100272+00:00",
+  "computedAt": "2026-04-19T01:31:55.100272+00:00",
   "git_sha": "4088056410db6305a90436cf936f5a62a14613f4",
   "parameters": {
     "q0": 1.1099785955541805,
@@ -93,5 +93,7 @@
       "sdp_moment_rank": 6,
       "gram_min_eigenvalue": -0.7408452101064132
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -20,8 +20,8 @@
  * @module content/pipeline/generate-main-tex
  */
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join, dirname, resolve } from "path";
+import { readFileSync, writeFileSync } from "fs";
+import { join, resolve } from "path";
 import type { Paper } from "../schema/types";
 
 /**
@@ -112,8 +112,10 @@ export function generateMainTex(
   lines.push("\\begin{document}");
   lines.push("");
 
-  // Title page with CC license at bottom
-  lines.push("% ── Title page with CC license ─────────────────────────────────────────────");
+  // Title page — title, author, date only. Centered, vertically balanced.
+  // The CC license + copyright notice now lives on its own page (front matter
+  // book convention).
+  lines.push("% ── Title page ────────────────────────────────────────────────────────────");
   lines.push("\\begin{titlepage}");
   lines.push("\\centering");
   lines.push("\\vspace*{3cm}");
@@ -127,9 +129,16 @@ export function generateMainTex(
   } else {
     lines.push(`{\\large ${authorName}}\\\\[1em]`);
   }
-  lines.push(`{\\large ${paper.date ? escapeLatexMeta(paper.date) : "\\today"}}\\\\`);
+  lines.push(`{\\large ${paper.date ? escapeLatexMeta(paper.date) : "\\today"}}`);
   lines.push("\\vfill");
-  lines.push("{\\small");
+  lines.push("\\end{titlepage}");
+  lines.push("");
+
+  // Copyright page — CC license notice on its own page.
+  lines.push("% ── Copyright page ────────────────────────────────────────────────────────");
+  lines.push("\\thispagestyle{empty}");
+  lines.push("\\null\\vfill");
+  lines.push("\\begin{center}{\\small");
   lines.push("  \\ccby\\\\[0.5em]");
   lines.push("  This work is licensed under a");
   lines.push("  \\href{https://creativecommons.org/licenses/by/4.0/}{%");
@@ -137,16 +146,12 @@ export function generateMainTex(
   lines.push("  You are free to share and adapt this material for any purpose,\\\\");
   lines.push("  provided appropriate credit is given, a link to the license is provided,\\\\");
   lines.push("  and any changes made are indicated.");
-  lines.push("}");
-  lines.push("\\end{titlepage}");
+  lines.push("}\\end{center}");
+  lines.push("\\vfill\\null");
+  lines.push("\\clearpage");
   lines.push("");
 
-  // Table of contents
-  lines.push("% ── Table of contents ─────────────────────────────────────────────────────");
-  lines.push("\\tableofcontents");
-  lines.push("");
-
-  // Abstract
+  // Abstract — placed before TOC, book-style.
   if (paper.abstract) {
     lines.push("% ── Abstract ──────────────────────────────────────────────────────────────");
     lines.push("\\begin{abstract}");
@@ -156,6 +161,17 @@ export function generateMainTex(
   }
 
   lines.push("\\proofstatuslegend");
+  lines.push("\\clearpage");
+  lines.push("");
+
+  // Table of contents — depth limited to chapters + sections by preamble.
+  // The notation register is the first chapter (\chapter*{Notation}) and
+  // sits immediately after the TOC, so readers see symbol conventions
+  // before the introduction. The renderer prepends \clearpage to every
+  // chapter (see render-latex.ts renderChapter), so no extra \clearpage
+  // is needed here.
+  lines.push("% ── Table of contents ─────────────────────────────────────────────────────");
+  lines.push("\\tableofcontents");
   lines.push("");
 
   // 4. Chapter includes (excluding standalone appendices)

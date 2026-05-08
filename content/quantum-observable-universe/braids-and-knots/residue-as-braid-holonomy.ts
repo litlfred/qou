@@ -13,10 +13,5 @@ export default remark({
     "gauge-theory",
     "interpretation",
   ],
-  uses: [
-    "prop:gb-residue-spectral-sum",
-    "def:confinement-level",
-    "def:exceptional-divisor",
-    "cor:quantum-dilogarithm",
-  ],
+  uses: ["prop:gb-residue-spectral-sum"],
 });

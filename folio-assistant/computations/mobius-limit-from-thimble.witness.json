@@ -1,0 +1,72 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-05T17:06:11.559097+00:00",
+  "commitSha": "97ca6136a1abb3ab3cda005be83b324d27e83f52",
+  "assertions": [
+    {
+      "name": "a(1) = 3/7",
+      "computed": "3/7",
+      "expected": "3/7",
+      "passed": true,
+      "source": "algebraic substitution q = 1"
+    },
+    {
+      "name": "a(q0) ≈ 0.38843",
+      "computed": 0.38844820732799046,
+      "expected": 0.38843,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "evaluation of closed form at q = q0"
+    },
+    {
+      "name": "Möbius zero at q = 4",
+      "computed": "[4]",
+      "expected": "[4]",
+      "passed": true,
+      "source": "numerator (4 - q) of a(q)"
+    },
+    {
+      "name": "Möbius pole at q = -3/4",
+      "computed": "[-3/4]",
+      "expected": "[-3/4]",
+      "passed": true,
+      "source": "denominator (4q + 3) of a(q)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 237,
+  "computation": "mobius-limit-from-thimble",
+  "scriptFile": "mobius_limit_from_thimble.py",
+  "scriptHash": "57084e42ae29",
+  "scriptCommitSha": "90ca491951fbfca1001c23efe1737e22d20b6945",
+  "description": "Closed-form integration limit a(q) = (4-q)/(4q+3) from steepest-descent re-entry point of the PL thimble. Algebraic identity verified by sympy; archimedean Hessian data lives in picard-lefschetz-thimble.witness.json.",
+  "contentBlock": "prop:mobius-limit-from-thimble",
+  "parameters": {
+    "q0": 1.1099785955541805
+  },
+  "data": {
+    "a_q_closed_form": "(4 - q)/(4*q + 3)",
+    "a_q_polynomial": {
+      "polynomial_q": "(4 - q)/(4*q + 3)",
+      "polynomial_q_latex": "\\frac{4 - q}{4 q + 3}",
+      "value_at_q0": "0.38844820732799048864262363568156358931978636522372"
+    },
+    "a_q0_numeric": 0.38844820732799046,
+    "mobius_matrix_M": [
+      [
+        -1,
+        4
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "mobius_matrix_det": -19,
+    "mobius_matrix_trace": 2
+  },
+  "caveats": [
+    "The algebraic identity is the certified statement.  Numerical agreement with the steepest-descent re-entry point recorded in picard-lefschetz-thimble.witness.json is informational; subleading Hessian-residual corrections of order |H(z_c)|^{-1/2} are absorbed into the tolerance."
+  ]
+}

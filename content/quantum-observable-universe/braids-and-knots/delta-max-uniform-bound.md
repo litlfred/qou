@@ -1,12 +1,8 @@
-**Note (2026-04-24).**  This proposition is tightly coupled to the
-Φ_q-tower binding pipeline, which is currently **deprecated** in
-favour of the JSJ + hyperbolic-volume framework
-(see `docs/phi-q-tower-deprecation.md`).  The result remains
-mathematically correct and is retained in case the Φ_q tower
-returns for pentagon-defect work (Phase 2 of the
-`path-to-1ppb.md` plan).
-
-─────────────────────────────────────────────────────────────────
+*Remark.* This proposition is tightly coupled to the
+$\Phi_q$-tower binding pipeline. The active framework instead
+uses JSJ decomposition with hyperbolic volumes; the result here
+is retained as the analogous tail bound on the $\Phi_q$ side and
+remains mathematically correct.
 
 The jet-tower tail bound
 ([jet-tower convergence](#prop:jet-tower-convergence))
@@ -18,7 +14,7 @@ standard representation, closing the open hypothesis in the
 archimedean (SDP rank-1) regime.
 
 **Proposition.**  Let $\varrho$ have braid representative
-$\beta \in B_n$ with Hecke image $\rho(\beta) \in H_n(q)$ in
+$\beta \in B_n$ with Hecke image $\rho(\beta) \in H_n(R, q)$ in
 the standard representation.  Let
 
 $$
@@ -45,9 +41,9 @@ independent of the jet level $n$.
 ## Derivation
 
 *Step 1 — Operator-norm control of the Markov trace.*  The
-Markov trace $\mathrm{tr}_M \colon H_n(q) \to \mathbb{C}$ is
+Markov trace $\mathrm{tr}_M \colon H_n(R, q) \to \mathbb{C}$ is
 bounded with respect to the operator norm: for any
-$x \in H_n(q)$ acting on a Jones--Wenzl module $W$ of dimension
+$x \in H_n(R, q)$ acting on a Jones--Wenzl module $W$ of dimension
 $d_q$,
 
 $$

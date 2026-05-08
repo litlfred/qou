@@ -1,8 +1,8 @@
-Let $H_n(q)$ carry the confinement filtration $J^\bullet(q)$
+Let $H_n(R, q)$ carry the confinement filtration $J^\bullet(q)$
 ([confinement level](#def:confinement-level)), with associated
-graded algebra $\mathrm{gr}\,H_n(q) = \bigoplus_\ell
+graded algebra $\mathrm{gr}\,H_n(R, q) = \bigoplus_\ell
 J^\ell(q)/J^{\ell+1}(q)$, and let $\mathrm{tr}_M$ be the Markov
-trace on $H_n(q)$
+trace on $H_n(R, q)$
 ([Jones–Markov trace](#thm:jones-markov-trace)).
 
 **Proposition (graded-trace residue split).**
@@ -23,17 +23,22 @@ $$
    computed on the associated graded algebra, obtained by
    replacing each generator product with its leading-order term
    in the Gröbner–Shirshov filtration (no rewriting defects).*
-2. *$\mathrm{Res}_{\mathrm{GB}}(T_w, q_0) = \sum_{\ell \geq 1}
-   (q_0 - \zeta_\ell)^{-1} \cdot
+2. *$\mathrm{Res}_{\mathrm{GB}}(T_w, q_0)$ is the sum of
+   rewriting-defect residues from
+   ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).
+   In symbolic feeding-lemma form this is
+   $\sum_{\ell \geq 1} (q_0 - \zeta_\ell)^{-1} \cdot
    \mathrm{Res}_{q=\zeta_\ell}[\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)]$
-   is the sum of rewriting-defect residues from
-   ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
+   — formal cyclotomic shadow, not a $\mathbb{C}$-analytic
+   identity. The convergent statement is the Habiro expansion
+   ([Habiro completion](#prop:full-pole-structure-mass-trace))
+   of $\mathrm{tr}_M(T_w)$ minus its level-$0$ piece.*
 
 *Both pieces are computable from $T_w$ alone; neither involves
 empirical calibration.*
 
 **Why the split is canonical.**
-*The filtration $J^\bullet(q)$ makes $H_n(q)$ a filtered algebra
+*The filtration $J^\bullet(q)$ makes $H_n(R, q)$ a filtered algebra
 with compatible trace
 ([Hecke mass trace](#prop:hecke-mass-trace)).  Any such filtered
 trace admits the canonical splitting*
@@ -83,7 +88,7 @@ graded trace is the categorical analogue of the liquid-drop
 correction.  This is not merely a formal analogy: the Strutinsky
 smoothing procedure (Gaussian convolution of the single-particle
 spectrum) is the physics shadow of the symbol map $\sigma$ on
-$\mathrm{gr}\,H_n(q)$, and the oscillating $\delta E_{\mathrm{shell}}$
+$\mathrm{gr}\,H_n(R, q)$, and the oscillating $\delta E_{\mathrm{shell}}$
 is the residue contribution from filtration strata that the
 smoothing collapses.  The precise identification is made in
 ([Strutinsky from graded trace](#rem:strutinsky-from-graded-trace)).*

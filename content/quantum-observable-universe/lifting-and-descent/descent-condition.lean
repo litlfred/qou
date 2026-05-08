@@ -18,7 +18,6 @@ LaTeX label: `prop:descent-condition`
 - [manuscript] §3-lifting-of-quantum-torsion/descent-condition
 -/
 
-import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Group.Basic
 
 namespace QOU.Torsion

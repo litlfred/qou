@@ -15,7 +15,7 @@ $$
   \delta_q\alpha = 0.
 $$
 
-This equivalence follows from $\langle \Delta_q \alpha, \alpha \rangle_\theta = \|d_q \alpha\|^2 + \|\delta_q \alpha\|^2$, which
+This equivalence follows from $\langle \Delta_q \alpha, \alpha \rangle_\varTheta = \|d_q \alpha\|^2 + \|\delta_q \alpha\|^2$, which
 vanishes only when both norms are zero.
 
 Physically:

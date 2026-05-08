@@ -11,8 +11,5 @@ export default remark({
     "classical-comparison",
     "gibbs",
   ],
-  uses: [
-    "prop:quantum-ideal-gas-law",
-    "rem:noether-theorem-callout",
-  ],
+  uses: ["prop:quantum-ideal-gas-law"],
 });

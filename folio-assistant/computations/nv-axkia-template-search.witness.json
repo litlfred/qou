@@ -1,0 +1,127 @@
+{
+  "computation": "nv-axkia-template-search",
+  "computedAt": "2026-05-05T18:17:04.327563+00:00",
+  "description": "PSLQ-style search for v_weak/m_e ≈ INT · [3]_q^a3 · [5]_q^a5 · [9]_q^a9 · [10]_q^a10 · h^b · q^L over a 7.5×10⁵-element basis at 50-dps. Hits exist below CODATA G_F tolerance (5×10⁻⁷), but the false-discovery rate is ≈ 1 at this tolerance — the basis is too large for PSLQ to be predictive without upstream content blocks (prop:t35-as-weak-mediator, prop:weak-spectral-completeness) constraining the structural form. Numerical-search line is exhausted; path forward is content authoring.",
+  "N_v_target": "1445519.449145220729668372",
+  "ratio_v_w_over_m_e": "481839.8163817402432227908",
+  "q_0": "1.1099785955541805169583001889887986763787613849839",
+  "tolerance_codata": "5e-7",
+  "basis_size": 754515,
+  "n_hits_below_codata": 5,
+  "n_hits_below_10x_codata": 30,
+  "top_hits": [
+    {
+      "rel_err": 8.891401987592073e-08,
+      "INT": 24,
+      "a3": -1,
+      "a5": 1,
+      "a9": -1,
+      "a10": 3,
+      "b": 2,
+      "L_round": 71,
+      "L_exact": "71.000000852151"
+    },
+    {
+      "rel_err": 1.2806004224759918e-07,
+      "INT": 120,
+      "a3": -1,
+      "a5": 3,
+      "a9": 1,
+      "a10": -1,
+      "b": 1,
+      "L_round": 59,
+      "L_exact": "59.000001227326"
+    },
+    {
+      "rel_err": 2.1629292610452361e-07,
+      "INT": 72,
+      "a3": 4,
+      "a5": 4,
+      "a9": -1,
+      "a10": -3,
+      "b": 0,
+      "L_round": 72,
+      "L_exact": "72.000002072948"
+    },
+    {
+      "rel_err": 2.5647696234717103e-07,
+      "INT": 90,
+      "a3": 1,
+      "a5": 3,
+      "a9": 4,
+      "a10": 2,
+      "b": 2,
+      "L_round": -83,
+      "L_exact": "-83.000002458071"
+    },
+    {
+      "rel_err": 2.6589915943114447e-07,
+      "INT": 72,
+      "a3": -3,
+      "a5": 3,
+      "a9": -2,
+      "a10": 1,
+      "b": -2,
+      "L_round": 60,
+      "L_exact": "60.000002548374"
+    },
+    {
+      "rel_err": 5.372505537349151e-07,
+      "INT": 5,
+      "a3": 4,
+      "a5": -1,
+      "a9": 3,
+      "a10": 4,
+      "b": -1,
+      "L_round": -94,
+      "L_exact": "-94.000005149001"
+    },
+    {
+      "rel_err": 9.8450447202028e-07,
+      "INT": 2,
+      "a3": 3,
+      "a5": -1,
+      "a9": 1,
+      "a10": 3,
+      "b": -2,
+      "L_round": -21,
+      "L_exact": "-20.999990564524"
+    },
+    {
+      "rel_err": 1.1174019148371504e-06,
+      "INT": 5,
+      "a3": 4,
+      "a5": 4,
+      "a9": -3,
+      "a10": 3,
+      "b": 0,
+      "L_round": 0,
+      "L_exact": "1.0709163094647e-5"
+    },
+    {
+      "rel_err": 1.2652780634080242e-06,
+      "INT": 36,
+      "a3": 0,
+      "a5": 3,
+      "a9": 2,
+      "a10": 1,
+      "b": 1,
+      "L_round": -10,
+      "L_exact": "-9.9999878735941"
+    },
+    {
+      "rel_err": 1.4537266792353257e-06,
+      "INT": 36,
+      "a3": 4,
+      "a5": -3,
+      "a9": 4,
+      "a10": -1,
+      "b": 2,
+      "L_round": 60,
+      "L_exact": "60.000013932495"
+    }
+  ],
+  "verdict": "false-discovery rate ≈ 1; numerical search exhausted",
+  "next_step": "Author prop:t35-as-weak-mediator and prop:weak-spectral-completeness as upstream content blocks. Without these, no closed-form ansatz can be constrained.",
+  "audit_doc": "docs/audits/2026-05-05-nv-categorical-impasse.md"
+}

@@ -1,6 +1,6 @@
 {
   "computation": "halflife-from-transfer-matrix",
-  "timestamp": "2026-03-29T14:06:40.188083+00:00",
+  "computedAt": "2026-03-29T14:06:40.188083+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "alpha_em": 0.007308700983098551,
@@ -99,5 +99,7 @@
       "unit": "d",
       "ratio": 4.500481913841003e-06
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

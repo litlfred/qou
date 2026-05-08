@@ -1,7 +1,7 @@
 {
   "computation": "v-hat-pair-ratio-probe",
   "description": "V-hat-within-level candidate #3: compute r_{ij} = V\u0302_{ij}^{content} / (V\u0302_i \u00b7 V\u0302_j) per pair on D / T / 3He (free + atom).  If the ratio is uniform across pairs, the over-correction observed in binding_full_content_pair is homogeneous and a single scale-factor fix recovers scalar-path accuracy.  If structured, content-weighting captures genuine per-pair SYT correlation that the scalar path drops.",
-  "timestamp": "2026-04-19T01:43:29.628556+00:00",
+  "computedAt": "2026-04-19T01:43:29.628556+00:00",
   "parameters": {
     "q0": 1.1099785955541805
   },
@@ -1260,5 +1260,7 @@
       ],
       "time_sec": 13.31900405883789
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

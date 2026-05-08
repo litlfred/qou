@@ -14,7 +14,7 @@ $\mathbf{No}$:
 
 1. **Hecke algebra $H_n(q)$.** The presentation
    $(T - q)(T + q^{-1}) = 0$ plus the braid relations
-   $T_i T_{i+1} T_i = T_{i+1} T_i T_{i+1}$ makes sense over any
+   $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ makes sense over any
    commutative ring in which $q$ is invertible. The Wedderburn
    decomposition $H_n(q) \cong \bigoplus_{\lambda \vdash n}
    M_{d_\lambda}(K)$ holds at generic $q$ over any algebraically
@@ -22,7 +22,7 @@ $\mathbf{No}$:
 
 2. **Hoefsmit seminormal form**
    ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
-   The matrix entries of $\rho_\lambda(T_i)$ are rational
+   The matrix entries of $\rho_\lambda(\sigma_i)$ are rational
    functions in $q$ with coefficients in $\mathbb{Z}$. The
    eigenvalues $q$ (symmetric channel) and $-q^{-1}$
    (antisymmetric channel) are field-polymorphic.
@@ -63,7 +63,7 @@ $\mathbf{No}$:
    Hecke $R$-matrix; the action is functorial in the ground ring.
 
 10. **Character formulas**: the Hoefsmit-Murphy formula for
-    $\chi_\lambda(T_w)$ in terms of contents of the Young
+    $\chi_\lambda(\sigma_w)$ in terms of contents of the Young
     diagram is a rational-function identity.
 
 11. **Elliptic curve $\mathcal{E}_q$ as an algebraic variety.**

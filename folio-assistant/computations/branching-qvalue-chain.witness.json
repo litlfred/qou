@@ -1,7 +1,7 @@
 {
   "computation": "branching-qvalue-chain",
   "description": "Full chain: \u03b3\u03b3 \u2192 e\u207b \u2192 quarks \u2192 nucleon \u2192 Q-values via S\u2083\u1d2c branching",
-  "timestamp": "2026-04-15T13:14:01.202898+00:00",
+  "computedAt": "2026-04-15T13:14:01.202898+00:00",
   "git_sha": "c7f24117de39ad9f39b27c9d354b276d05c12b65",
   "q0": 1.1099785955541805,
   "q0_err": 1.3578965598837824e-09,
@@ -58,5 +58,7 @@
       "regime": "even",
       "source": "handover"
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

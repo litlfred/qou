@@ -26,9 +26,7 @@ export default remark({
     "Euler-characteristic",
   ],
   uses: [
-    "conj:higgs-t28",
     "prop:crossing-energy-decomposition",
-    "rem:building-block-knots",
     "rem:half-life-as-q-probe",
     "rem:mass-comparison-table",
   ],

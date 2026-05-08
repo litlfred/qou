@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-18T22:00:12.563040+00:00",
-  "commitSha": "af3e20bfcb07e3ccaa3169de711ce2364c70ccc7",
+  "computedAt": "2026-04-27T16:25:28.085171+00:00",
+  "commitSha": "bc981e4684318390ad344607018c1e9aa13f20a4",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 8,
   "computation": "mass-endomorphism",
   "scriptFile": "mass_endomorphism.py",
-  "scriptHash": "191a793e7aac",
-  "scriptCommitSha": "af3e20bfcb07e3ccaa3169de711ce2364c70ccc7",
+  "scriptHash": "37085609a9f1",
+  "scriptCommitSha": "f77abff983320a6bb518e5baeafc84012d555fff",
   "description": "Mass endomorphism via Φ_q tower with z²-weighted cross-term. m_p/m_e = 1869.8506 (CODATA: 1836.152, error 1.84%). Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra.",
   "parameters": {
     "q0": "1.1099785955541805",
@@ -29,9 +29,9 @@
       ],
       "n_generators": 1,
       "descended": 0.5938490006705097,
-      "single": 629.9354190959167,
+      "single": 629.9354190959173,
       "cross": 0.0,
-      "total": 630.5292680965872
+      "total": 630.5292680965878
     },
     "proton": {
       "vols": [
@@ -47,12 +47,12 @@
       "n_generators": 2,
       "crossings": "3σ(B₃)+1σ(uu)+1½(ud)+2σ(gluon) | 3σ⁻¹(B₃)+1½(ud)",
       "descended": 0.9603954911881509,
-      "single": 1096978.3961756756,
-      "cross": 82016.16886542017,
-      "total": 1178995.525436587
+      "single": 1096978.396175676,
+      "cross": 82016.16886542024,
+      "total": 1178995.5254365874
     },
-    "ratio": 1869.850592337584,
+    "ratio": 1869.850592337583,
     "codata": 1836.152,
-    "error_pct": 1.8352833718332648
+    "error_pct": 1.8352833718332153
   }
 }

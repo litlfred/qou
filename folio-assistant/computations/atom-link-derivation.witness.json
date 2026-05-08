@@ -1,7 +1,7 @@
 {
   "computation": "atom-link-derivation",
   "description": "Phase 3 prototype: derive an atom's knot/link class by closing its 3A-strand braid word (from atom_braid_word_3A). Each Hecke factor (c\u00b7T_g + d\u00b71) is mapped back to a signed braid generator via the Hecke dictionary (T=\u03c3, T\u207b\u00b9=\u03c3\u207b\u00b9). Mixed proton-neutron crossings do NOT lift uniquely to a braid generator; the MIXED_CROSSING_RULE selects a lift. Exterior volume is computed via SnapPy (float + 50-digit verified via ManifoldHP).",
-  "timestamp": "2026-04-23T23:44:38.206652+00:00",
+  "computedAt": "2026-04-23T23:44:38.206652+00:00",
   "parameters": {
     "m_e_MeV": 0.51099895,
     "h_value": 0.20906032198987945,
@@ -256,5 +256,7 @@
       "target_2me_err_pct": 48.25157713960577,
       "atom_label": "4He"
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -1,0 +1,59 @@
+{
+  "computation": "alpha-analytic-attempt",
+  "computedAt": "2026-05-03T00:24:44.395838+00:00",
+  "alpha_fit_target": 339.4,
+  "predictions_me": [
+    {
+      "expr": "m_e \u00b7 6 / z\u00b3",
+      "val_MeV": 24.628247026766434
+    },
+    {
+      "expr": "m_e \u00b7 6 \u00b7 [3]_q / z\u00b3",
+      "val_MeV": 74.96114861948611
+    },
+    {
+      "expr": "m_e \u00b7 [9]_q!/[6]_q! / z\u00b3",
+      "val_MeV": 2901.7676547806236
+    },
+    {
+      "expr": "m_e \u00b7 m_\u03bc/m_e",
+      "val_MeV": 105.65837550630283
+    },
+    {
+      "expr": "m_e \u00b7 m_\u03bc/m_e \u00b7 z\u00b3",
+      "val_MeV": 13.15351081636002
+    }
+  ],
+  "predictions_e0": [
+    {
+      "expr": "E_0 \u00b7 6 / z\u00b3",
+      "val_MeV": 201.41081792298925
+    },
+    {
+      "expr": "E_0 \u00b7 m_\u03bc/m_e / 2.5",
+      "val_MeV": 345.63141758340316
+    },
+    {
+      "expr": "E_0 \u00b7 [82]_q",
+      "val_MeV": 103895.13304027346
+    },
+    {
+      "expr": "E_0 \u00b7 81",
+      "val_MeV": 338.496606177453
+    },
+    {
+      "expr": "E_0 \u00b7 82",
+      "val_MeV": 342.6755766240882
+    },
+    {
+      "expr": "E_0 \u00b7 80 \u00b7 z\u00b2/z\u00b2",
+      "val_MeV": 334.31763573081776
+    }
+  ],
+  "closest_prediction": {
+    "expr": "E_0 \u00b7 81",
+    "value_MeV": 338.496606177453,
+    "error_pct": -0.26617378389717217
+  },
+  "interpretation": "Framework-only attempts to predict \u03b1 without AME data. Best framework prediction (m_e \u00b7 6 / z\u00b3) lands far from \u03b1_fit; the missing ingredient is \u27e8\u03a6_q\u27e9 averaged over triple-type Markov traces, a finer structural quantity than the level-0 hybrid currently provides. \u03b1 stays empirically calibrated until this gap is closed."
+}

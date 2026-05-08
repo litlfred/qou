@@ -16,10 +16,6 @@ export default proposition({
     "L-R-split",
     "bridge",
   ],
-  uses: [
-    "prop:hoefsmit-seminormal-form",
-    "def:sign-sequence-of-braid",
-    "def:birthday-grading",
-  ],
+  uses: ["def:sign-sequence-of-braid"],
   cites: ["gonshor1986", "conway1976"],
 });

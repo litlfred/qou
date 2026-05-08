@@ -17,10 +17,7 @@ export default remark({
   ],
   interprets: "def:quantum-universe",
   uses: [
-    "def:quantum-universe",
-    "def:contact-affine-chart",
     "rem:force-knot-identification",
     "prop:skein-finiteness-bound",
-    "prop:shell-closure-normal-form",
   ],
 });

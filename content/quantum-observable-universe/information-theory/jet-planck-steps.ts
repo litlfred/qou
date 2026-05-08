@@ -20,9 +20,6 @@ export default remark({
   uses: [
     "rem:discrete-planck-step",
     "ex:photon-wavefront",
-    "prop:fermion-boson-knot-link",
-    "rem:building-block-knots",
     "rem:virtual-particles-exceptional-divisor",
-    "rem:force-knot-identification",
   ],
 });

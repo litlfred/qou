@@ -1,4 +1,4 @@
-Let $H_n(q)$ be the Iwahori--Hecke algebra with Markov trace
+Let $H_n(R, q)$ be the Iwahori--Hecke algebra with Markov trace
 $\mathrm{tr}_M$ normalised by $\mathrm{tr}_M(1_k) = 1$ for all $k$
 and Markov axiom $\mathrm{tr}_M(x\sigma_{k-1}) = z\,\mathrm{tr}_M(x)$
 for $x \in H_{k-1}(q)$, where
@@ -6,7 +6,7 @@ $z = 1/(q^{1/2} + q^{-1/2})$ ([Jones--Markov trace](#thm:jones-markov-trace)).
 
 **Proposition.**  For every pair of braid generators
 $\sigma_i, \sigma_j$ with $0 \le i < j$, embedded in any
-$H_n(q)$ with $n > j$,
+$H_n(R, q)$ with $n > j$,
 
 $$
   \mathrm{tr}_M(\sigma_i\sigma_j) \;=\; z^2.
@@ -21,7 +21,7 @@ The argument is a **direct two-step peel**, one Markov move per
 factor.  Embed $\sigma_i\sigma_j$ in $H_{j+1}(q)$, the minimal
 Hecke algebra containing both generators; higher embeddings
 follow by Markov closure $\mathrm{tr}_M^{H_n} = \mathrm{tr}_M^{H_{n-1}}$
-on any element of $H_{n-1}(q)$ embedded in $H_n(q)$.
+on any element of $H_{n-1}(q)$ embedded in $H_n(R, q)$.
 
 *Peel 1 (outer generator).*  In $H_{j+1}(q)$ the rightmost
 generator is $\sigma_j$.  Since $\sigma_i \in H_j(q)$ (it involves

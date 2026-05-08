@@ -13,8 +13,5 @@ export default definition({
   lean: { ref: "qou:QOU.Information.quantumVolume",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "def:reeb-bundle",
-  ],
+  uses: ["def:reeb-bundle"],
 });

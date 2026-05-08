@@ -285,6 +285,39 @@ their own line, indented to match the surrounding content.
 
 ## 11  Notation Conventions
 
+### 11.0  Glossary terms — `\defterm{}` / `\refterm{}` (Phase A)
+
+Every term that appears in the paper's glossary is wrapped at every
+occurrence — defining and referencing alike. **Never use plain text or
+`\emph{}` for a defined term once the term is registered in a block's
+`defines: [...]` list.**
+
+- **Defining occurrence** (exactly one per term, in the block whose
+  `defines[]` contains the slug):
+  - LaTeX: `\defterm{slug}` or `\defterm{slug}{Visible}` when the
+    visible label differs from the slug.
+  - Markdown (`.md` files): `:defterm[Visible]` (slug = sluggified
+    label) or `:defterm[Visible]{#slug}` (explicit slug).
+- **Referencing occurrence** (every other mention, anywhere in the
+  paper):
+  - LaTeX: `\refterm{slug}` / `\refterm{slug}{Visible}`.
+  - Markdown: `:refterm[Visible]` / `:refterm[Visible]{#slug}`.
+- **PDF rendering** is intentionally clean — `\defterm` is bold-italic,
+  `\refterm` is plain text with an invisible hyperlink target
+  (`\phantomsection\label{term:slug}` → `\hyperref[term:slug]{...}`).
+  No marginal anchors, no underlines.
+- **HTML viewer** carries the affordance: `\defterm` becomes
+  `<dfn id="term-slug">`, `\refterm` becomes `<a class="termref"
+  href="#term-slug">` with a dotted underline on hover/focus and a
+  click-to-jump to the canonical entry.
+- The schema field `defines?: string[]` on `BlockBase` registers the
+  slugs introduced by a block. Phase B validators will enforce
+  declaration/coverage; for now the field is informational only.
+
+Discovery and audit go through proper AST processing
+(`remark-directive` for `.md`, `unified-latex` for `.tex`) — never
+grep over raw source.
+
 ### 11.1  Prime Numbers vs. Manifold Points
 
 - **Prime numbers** are typeset in Fraktur:  use the macro `\pp` (defined as
@@ -315,7 +348,7 @@ Following Herrlich–Strecker, categories are set in **bold upright**:
 | Monoidal unit | `$\mathbf{1}$` | (unchanged) |
 | Forgetful/fibre functor | `$\tau$` | Kept for Tannakian/trace/proper-time resonance (see `tau-notation.md`); minimise its appearance |
 | QOU categorical datum | `$(\mathbf{C}, A)$` | Suppress $\tau$ from the triple where possible; write $(\mathbf{C}, A, \tau)$ only when $\tau$ is needed |
-| QOU archimedean tuple | `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\theta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**. |
+| QOU archimedean tuple | `$(\mathbf{C}, \varTheta, G, \mathcal{S})$` | **Canonical 4-tuple.** $M$ (base manifold) is subordinate to $\varTheta$ (its domain); $P$ (principal bundle) is subordinate to $\mathcal{S}$ (its associated state bundle under $G$). Old 5-tuple $(M, \varTheta, G, P, E)$ is **deprecated**. |
 | State bundle | `$\mathcal{S}$` | The associated state bundle $\mathcal{S} = P \times_G \mathbb{CP}^1(\mathbb{C}) \to M$; replaces $E$. Fibre at $p$: `$\mathcal{S}_p$` (never `$E_p$`). |
 | Elliptic curve | `$\mathcal{E}_q$` | Descartes elliptic curve (never `$E_q$`). |
 | Particles | fraktur | Quarks: `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$`. Nucleons: `$\mathfrak{p}, \mathfrak{n}$`. |
@@ -339,12 +372,12 @@ outside the introduction and Chapter 7 (Physical Observations).
 Geometry chapters use symbolic `$q$`.
 
 **Subordination rules for the archimedean tuple:**
-- $M$ is implicit — it is the domain of $\theta$. Write `$p \in M$` when
+- $M$ is implicit — it is the domain of $\varTheta$. Write `$p \in M$` when
   referring to points, but do not list $M$ in the tuple.
 - $P$ is implicit — it is the frame bundle of $\mathcal{S}$ under $G$.
   Mention $P$ only when discussing gauge structure directly.
-- The old 5-tuple $(M, \theta, G, P, E)$ must not appear in new content.
-  Existing occurrences should be migrated to $(\mathbf{C}, \theta, G, \mathcal{S})$.
+- The old 5-tuple $(M, \varTheta, G, P, E)$ must not appear in new content.
+  Existing occurrences should be migrated to $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 Where physics notation is more natural than category-theoretic notation
 (e.g.\ differential operators $d_q$, $\nabla$, $\star_q$, $\xi$),
@@ -368,6 +401,7 @@ When **writing or editing manuscript content**, apply the following skills:
 | Bibliography QA dashboard | `local/bib-qa` |
 | Generating figures or plots | `claude-scientific-skills/scientific-visualization`, `claude-scientific-skills/matplotlib` |
 | Verifying equations or proofs | `local/scientific-accuracy`, `claude-scientific-skills/sympy` |
+| Citing substrate-derived numerical values | `local/witnessed-values`, `local/content-validation` |
 | Validating LaTeX syntax | `local/latex-validation` |
 | Brainstorming new research directions | `claude-scientific-skills/hypothesis-generation`, `claude-scientific-skills/scientific-brainstorming` |
 | Literature search | `claude-scientific-skills/literature-review`, `claude-scientific-skills/arxiv-database` |

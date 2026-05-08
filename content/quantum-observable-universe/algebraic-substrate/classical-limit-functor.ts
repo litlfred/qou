@@ -7,11 +7,9 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:frobenius-hopf-substrate",
     "def:substrate-parameter-planck",
-    "conj:classical-limit-stpart",
-    "conj:archimedean-stpart",
-    "rem:archimedean-stpart-strategy",
+    "def:motivic-substrate",
+    "def:adelic-substrate",
     "def:classical-limit-obstruction",
   ],
   tags: [
@@ -20,5 +18,7 @@ export default definition({
     "q-to-1",
     "deformation",
     "symmetric-monoidal",
+    "adelic-assembly",
+    "realization-tower",
   ],
 });

@@ -13,9 +13,8 @@ The PAPERS_JSON is a JSON array (as produced by extract-folio.py) with
 at least `dir` and `title` per entry.
 
 For each paper, the generated page links to:
-    papers/<dir>/              paper viewer (index.html + paper.html)
+    papers/<dir>/              paper viewer (index.html, embeds the PDF)
     papers/<dir>/<dir>.pdf     direct PDF download
-    papers/<dir>/<dir>.md      Markdown download
 
 It also links to shared resources: Blueprint, API Docs, Axiom Report, etc.
 """
@@ -258,8 +257,6 @@ def _render_paper_card(paper: dict, is_feature: bool = False) -> str:
   <div class="paper-links">
     <a class="paper-link primary" href="{prefix}/">View Paper</a>
     <a class="paper-link pdf" href="{prefix}/{d}.pdf">PDF</a>
-    <a class="paper-link" href="{prefix}/{d}.md">Markdown</a>
-    <a class="paper-link" href="{prefix}/paper.html">HTML</a>
   </div>
   {tags_html}
 </div>"""

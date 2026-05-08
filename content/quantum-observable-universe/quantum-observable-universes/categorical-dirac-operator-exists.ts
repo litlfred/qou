@@ -6,12 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalDirac.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-dirac-operator",
-    "def:categorical-connection",
-    "def:substrate-parameter",
-    "def:categorical-reeb",
-  ],
+  uses: ["def:categorical-dirac-operator"],
   proofs: ["prf:categorical-dirac-operator-exists"],
   tags: ["existence", "dirac-operator"],
 });

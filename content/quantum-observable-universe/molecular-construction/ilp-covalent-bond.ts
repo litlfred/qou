@@ -9,13 +9,6 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:ilp-covalent-bond",
   title: "The covalent bond is the inverse trefoil $T_{2,3}^{-1}$",
-  uses: [
-    "def:molecular-braid",
-    "def:atomic-braid",
-    "prop:wedderburn-mass-formula",
-    "def:universal-ilp-algorithm",
-    "prop:q-integer-mass-formula",
-  ],
   tags: [
     "covalent-bond",
     "inverse-trefoil",

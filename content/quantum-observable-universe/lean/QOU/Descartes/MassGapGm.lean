@@ -101,13 +101,11 @@ theorem massGapReal_eq_zero_iff {q₀ : ℝ} (hq : q₀ ≠ 0) :
   constructor
   · rintro ((h | h) | h)
     · -- q₀ - q₀⁻¹ = 0 means q₀ = q₀⁻¹ means q₀² = 1
-      have : q₀ = q₀⁻¹ := by linarith
-      have : q₀ * q₀ = 1 := by
-        have := congr_arg (· * q₀) this
-        simp [mul_comm] at this
-        rwa [inv_mul_cancel₀ hq] at this
-      have : q₀ ^ 2 = 1 := by ring_nf; exact this
-      have : (q₀ - 1) * (q₀ + 1) = 0 := by nlinarith
+      have hinv : q₀ = q₀⁻¹ := by linarith
+      -- Per Gemini review: `eq_inv_iff_mul_eq_one₀` captures
+      -- `a = b⁻¹ ↔ a * b = 1` directly.
+      have hsq : q₀ * q₀ = 1 := (eq_inv_iff_mul_eq_one₀ hq).mp hinv
+      have : (q₀ - 1) * (q₀ + 1) = 0 := by nlinarith [hsq]
       rcases mul_eq_zero.mp this with h1 | h1
       · left; linarith
       · right; linarith
@@ -133,8 +131,7 @@ theorem massGapReal_pos {q₀ : ℝ} (hq : 1 < q₀) :
   have hq_pos : 0 < q₀ := by linarith
   have hq_ne : q₀ ≠ 0 := by linarith
   have hq_inv_pos : 0 < q₀⁻¹ := inv_pos.mpr hq_pos
-  have hq_inv_lt_one : q₀⁻¹ < 1 := by
-    rw [inv_lt_one_iff_of_pos hq_pos]; exact hq
+  have hq_inv_lt_one : q₀⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   have hq_inv_lt_q : q₀⁻¹ < q₀ := by
     calc q₀⁻¹ < 1 := hq_inv_lt_one
     _ < q₀ := hq
@@ -187,27 +184,34 @@ theorem massGapReal_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ 
   -- Factor 1: q - q⁻¹ is increasing for q > 0
   have hf1_1 : 0 < q₁ - q₁⁻¹ := by
     have : q₁⁻¹ < q₁ := by
-      calc q₁⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos h1_pos]
+      calc q₁⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq₁
       _ < q₁ := hq₁
     linarith
   have hf1_2 : 0 < q₂ - q₂⁻¹ := by
     have : q₂⁻¹ < q₂ := by
-      calc q₂⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos h2_pos]
+      calc q₂⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq₂_gt
       _ < q₂ := hq₂_gt
     linarith
   have hf1_mono : q₁ - q₁⁻¹ ≤ q₂ - q₂⁻¹ := by
     have hinv : q₂⁻¹ ≤ q₁⁻¹ := by
-      exact inv_le_inv_of_le h1_pos hq₂
+      -- `0 < a ≤ b` ⇒ `1/b ≤ 1/a`, then `1/x = x⁻¹`.
+      have hone_div : (1 : ℝ) / q₂ ≤ 1 / q₁ :=
+        one_div_le_one_div_of_le h1_pos hq₂
+      simpa [one_div] using hone_div
     linarith
   -- Factor 2: 1 - q⁻¹ is increasing for q > 0
   have hf2_1 : 0 < 1 - q₁⁻¹ := by
-    have : q₁⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos h1_pos]
+    have : q₁⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq₁
     linarith
   have hf2_2 : 0 < 1 - q₂⁻¹ := by
-    have : q₂⁻¹ < 1 := by rwa [inv_lt_one_iff_of_pos h2_pos]
+    have : q₂⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq₂_gt
     linarith
   have hf2_mono : 1 - q₁⁻¹ ≤ 1 - q₂⁻¹ := by
-    have hinv : q₂⁻¹ ≤ q₁⁻¹ := inv_le_inv_of_le h1_pos hq₂
+    have hinv : q₂⁻¹ ≤ q₁⁻¹ := by
+      -- `0 < a ≤ b` ⇒ `1/b ≤ 1/a`, then `1/x = x⁻¹`.
+      have hone_div : (1 : ℝ) / q₂ ≤ 1 / q₁ :=
+        one_div_le_one_div_of_le h1_pos hq₂
+      simpa [one_div] using hone_div
     linarith
   -- Product of positive increasing factors is increasing
   unfold massGapReal

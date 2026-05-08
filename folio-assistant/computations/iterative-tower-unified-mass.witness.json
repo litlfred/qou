@@ -1,0 +1,118 @@
+{
+  "computation": "iterative-tower-unified-mass",
+  "description": "Apply unified-curvature-rank-mass-formula iteratively per isotope.  Combines 6-term (calibrated) + Term 7 (universal m_e\u00b78G prefactor) and reports residual.  Demonstrates that current 6-term has non-Markov-invariant proxies that prevent universal-prefactor closure; the structural fix requires pyhecke Markov-trace replacement for Term 1 and Frobenius-antipode symmetrisation for Terms 2, 3 \u2014 at which point higher isotopes (\u2076Li, \u2077Li) become PREDICTIONS not fits.",
+  "computedAt": "2026-04-25T23:29:49.112777+00:00",
+  "alpha_term7_MeV": 3.74445965488548,
+  "isotopes": [
+    {
+      "iso": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "M_codata_MeV": 938.78308711,
+      "M_6term_MeV": 938.27208816,
+      "err_6term_pct": -0.05443205752386638,
+      "B_shadow_dimless": 0.06906033578870716,
+      "T7_MeV": 0.2585936411136578,
+      "M_unified_MeV": 938.5306818011136,
+      "err_unified_pct": -0.026886435466517332
+    },
+    {
+      "iso": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "M_codata_MeV": 939.56542052,
+      "M_6term_MeV": 411.78913213684,
+      "err_6term_pct": -56.17238319510136,
+      "B_shadow_dimless": 0.06906033578870716,
+      "T7_MeV": 0.2585936411136578,
+      "M_unified_MeV": 412.04772577795364,
+      "err_unified_pct": -56.144860509031204
+    },
+    {
+      "iso": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "M_codata_MeV": 1876.12393,
+      "M_6term_MeV": 1481.2535218864607,
+      "err_6term_pct": -21.047138826993123,
+      "B_shadow_dimless": 0.07497648289486408,
+      "T7_MeV": 0.28074641526502986,
+      "M_unified_MeV": 1481.5342683017257,
+      "err_unified_pct": -21.032174654809413
+    },
+    {
+      "iso": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "M_codata_MeV": 2809.43215,
+      "M_6term_MeV": 2088.0042326173857,
+      "err_6term_pct": -25.678780581428683,
+      "B_shadow_dimless": 0.0008740677314373761,
+      "T7_MeV": 0.003272911356004532,
+      "M_unified_MeV": 2088.0075055287416,
+      "err_unified_pct": -25.67866408417297
+    },
+    {
+      "iso": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "M_codata_MeV": 2809.41347,
+      "M_6term_MeV": 2825.6424419439504,
+      "err_6term_pct": 0.5776640611020654,
+      "B_shadow_dimless": 0.01145613885170327,
+      "T7_MeV": 0.042897049730968966,
+      "M_unified_MeV": 2825.6853389936814,
+      "err_unified_pct": 0.5791909652117329
+    },
+    {
+      "iso": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "M_codata_MeV": 3728.40133,
+      "M_6term_MeV": 3563.5828362826096,
+      "err_6term_pct": -4.420621041817688,
+      "B_shadow_dimless": 0.09461777288019597,
+      "T7_MeV": 0.35429243318501136,
+      "M_unified_MeV": 3563.9371287157946,
+      "err_unified_pct": -4.411118512400206
+    },
+    {
+      "iso": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "M_codata_MeV": 5603.05181,
+      "M_6term_MeV": 6246.9675377098665,
+      "err_6term_pct": 11.492232261008963,
+      "B_shadow_dimless": 0.0,
+      "T7_MeV": 0.0,
+      "M_unified_MeV": 6246.9675377098665,
+      "err_unified_pct": 11.492232261008963
+    },
+    {
+      "iso": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "M_codata_MeV": 6535.36652,
+      "M_6term_MeV": 7243.657307341751,
+      "err_6term_pct": 10.83781277108467,
+      "B_shadow_dimless": 0.0,
+      "T7_MeV": 0.0,
+      "M_unified_MeV": 7243.657307341751,
+      "err_unified_pct": 10.83781277108467
+    }
+  ],
+  "next_iterative_steps": [
+    "Replace Term 1 atom_per_generator_volumes with pyhecke canonical Markov trace.",
+    "Symmetrise Terms 2,3 V\u0302_i via Frobenius antipode S.",
+    "Calibrate \u03b1_0..\u03b1_3 from (p, n, D, T) bindings to fix per-rank prefactors.",
+    "Apply same \u03b1_k to \u2076Li, \u2077Li via \u03a6_k computation at H_18, H_21."
+  ]
+}

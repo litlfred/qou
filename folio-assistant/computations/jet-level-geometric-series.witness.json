@@ -10,7 +10,7 @@
   "scriptFile": "jet_level_geometric_series.py",
   "scriptHash": "edd36c8decd6",
   "scriptCommitSha": "",
-  "description": "Geometric-series ansatz for the jet-tower expansion: m_total = m^(0) · Σ (−α ℏ_q²)^n.  Fit α to proton CODATA, test universality on neutron.",
+  "description": "Geometric-series ansatz for the jet-tower expansion: m_total = m^(0) \u00b7 \u03a3 (\u2212\u03b1 \u210f_q\u00b2)^n.  Fit \u03b1 to proton CODATA, test universality on neutron.",
   "data": {
     "level_0": {
       "m_e_Hecke": 630.5292680965904,
@@ -91,5 +91,7 @@
         "err_ppm": -1362.005583039318
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

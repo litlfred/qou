@@ -7,9 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.QExponential",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-laplace",
-    "rem:base-field-independence",
-    "rem:adjoint-trace",
-  ],
+  uses: ["def:categorical-laplace", "def:habiro-ring"],
 });

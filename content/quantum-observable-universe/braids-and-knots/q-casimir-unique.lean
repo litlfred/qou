@@ -23,8 +23,15 @@ namespace QOU
 -- Ref: [kassel1995] Quantum Groups, §VI.4.9
 theorem QCasimir.unique_up_to_scalar (qs : QuantumSu2) :
     Subsingleton (QCasimirData qs) := by
-  -- Joseph–Letzter: Z(𝒰_q(𝔰𝔲(2))) = R[C_q]; eigenvalues pin C_q.
-  -- Ref: [kassel1995] §VI.4.9
+  -- DIAGNOSTIC: The `Subsingleton` claim is too strong. The underlying
+  -- structure carries free fields (parameters / morphisms / opaque
+  -- functions) that admit distinct valid values, so two instances
+  -- need not coincide. To recover a meaningful uniqueness claim,
+  -- sharpen with a constraining hypothesis (fixing the carrier
+  -- object, fixing the substrate parameter, or quantifying over a
+  -- quotient by structural equivalence) — see
+  -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
+  -- with this diagnosis rather than closed-as-stated.
   sorry
 
 end QOU

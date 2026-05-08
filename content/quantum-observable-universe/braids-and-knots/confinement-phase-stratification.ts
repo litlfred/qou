@@ -8,10 +8,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:confined-particle",
-    "def:confinement-category",
-    "prop:confinement-sdp",
-    "prop:confinement-topological",
     "prop:level-sufficiency",
     "prop:shell-closure-stability",
     "thm:parity-regime-selection",

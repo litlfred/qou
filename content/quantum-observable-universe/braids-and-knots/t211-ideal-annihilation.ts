@@ -13,8 +13,6 @@ export default remark({
     "prop:vertex-algebra-jet-relations",
     "prop:shell-structure-eigenvalues",
     "prop:shell-transition-knot",
-    "rem:fivefold-symmetry",
-    "thm:embeddability-closure",
     "prop:x5-bring-weight-identification",
     "thm:hyperelliptic-z5-classification",
   ],

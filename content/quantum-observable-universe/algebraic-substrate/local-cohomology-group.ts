@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.AlgebraicSubstrate.LocalCohomologyGroup",
     validation: "not_checked",
   },
-  uses: ["def:maximal-ideal-defect", "def:frobenius-hopf-substrate"],
+  uses: ["def:maximal-ideal-defect"],
   tags: ["local-cohomology", "defect", "H1", "derived-functor"],
   cites: ["yekutieli2015"],
 });

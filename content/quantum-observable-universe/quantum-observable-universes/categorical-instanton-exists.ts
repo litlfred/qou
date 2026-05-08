@@ -6,11 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalInstanton.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-instanton",
-    "def:categorical-connection",
-    "def:q-hodge-star",
-  ],
+  uses: ["def:categorical-instanton"],
   proofs: ["prf:categorical-instanton-exists"],
   tags: ["existence", "instanton", "self-duality"],
 });

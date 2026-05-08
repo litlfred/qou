@@ -125,6 +125,17 @@ const BlockBaseSchema = z.object({
   rendered: z.array(RenderedAssetSchema).optional(),
   meta: z.record(z.string(), z.unknown()).optional(),
   simulator: SimulatorRefSchema.optional(),
+  /**
+   * Glossary term slugs introduced by this block. See `BlockBase.defines`
+   * in folio-assistant/schemas/types.ts for the authoring contract. Slugs
+   * must be lowercase, hyphen-separated identifiers (no spaces, no `:`).
+   */
+  defines: z
+    .array(z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "term slug must be lowercase, hyphen-separated"))
+    .optional(),
+  // Forward reference: ComputationSchema is declared further down in the
+  // same module.  z.lazy keeps the cyclic reference safe.
+  computation: z.lazy(() => ComputationSchema).optional(),
 });
 
 export const DefinitionSchema = BlockBaseSchema.extend({
@@ -180,7 +191,7 @@ export const RemarkSchema = BlockBaseSchema.extend({
 });
 
 const ComputationEngineSchema = z.enum([
-  "snappea", "sympy", "mpmath", "sage",
+  "snappea", "sympy", "mpmath", "sage", "python", "numpy", "scipy",
 ]);
 
 const ComputationStatusSchema = z.enum([
@@ -190,7 +201,7 @@ const ComputationStatusSchema = z.enum([
 export const ComputationSchema = z.object({
   engine: ComputationEngineSchema,
   script: z.string().min(1, "Script path is required"),
-  witness: z.string().optional(),
+  witness: z.union([z.string(), z.array(z.string()).min(1)]).optional(),
   status: ComputationStatusSchema,
   requires: z.array(z.string()).optional(),
 });

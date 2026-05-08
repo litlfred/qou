@@ -1,7 +1,7 @@
 {
   "computation": "validate-isotope-nf-stability",
   "description": "Validates that every isotope in isotope-mass-table.ISOTOPES (1) carries the nucleon gluon-pair decoration (tail of _{PROTON,NEUTRON}_G0 is two (1, 0) sigma_0 crossings), (2) yields an H_3(q) SDP-stable proton and neutron NF at the final step, with path stability and unstable step count recorded, and (3) produces a non-negative partition-truncated atom-level tr_M for 3A <= 18.  Heavy isotopes (3A > 18) record gluon + nucleon stability only.",
-  "timestamp": "2026-04-18T22:51:38.349824+00:00",
+  "computedAt": "2026-04-18T22:51:38.349824+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "z_markov": 0.4993203340335982,
@@ -1844,5 +1844,7 @@
         "3A": 210
       }
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

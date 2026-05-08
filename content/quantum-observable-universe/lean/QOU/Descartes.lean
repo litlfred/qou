@@ -1,3 +1,21 @@
+import QOU.Descartes.GroundRing
+import QOU.Descartes.TorusKnot
+import QOU.Descartes.TransferMatrix
+import QOU.Descartes.BetaDecay
+import QOU.Descartes.AxialCoupling
+import QOU.Descartes.OrderingIndependence
+import QOU.Descartes.OptimalNF
+import QOU.Descartes.TMCorrespondence
+import QOU.Descartes.MassGapGm
+import QOU.Descartes.YoungIdempotent
+import QOU.Descartes.MultiGeneratorSpectrum
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.HeckeH3
+import QOU.Descartes.QuotientIdeal
+import QOU.Descartes.NuclearNormalForms
+import QOU.Descartes.HyperbolicVolumeTranscendence
+import QOU.Descartes.PauliWitness
+
 /-!
 # Descartes Universe — Module Index
 
@@ -23,20 +41,3 @@ GroundRing          ℤ[q,q⁻¹], [n]_q, ℏ_q
   → MultiGenSpectrum 6×6 product, independent channel evolution
 ```
 -/
-
-import QOU.Descartes.GroundRing
-import QOU.Descartes.TorusKnot
-import QOU.Descartes.TransferMatrix
-import QOU.Descartes.BetaDecay
-import QOU.Descartes.AxialCoupling
-import QOU.Descartes.OrderingIndependence
-import QOU.Descartes.OptimalNF
-import QOU.Descartes.TMCorrespondence
-import QOU.Descartes.MassGapGm
-import QOU.Descartes.YoungIdempotent
-import QOU.Descartes.MultiGeneratorSpectrum
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.QuotientIdeal
-import QOU.Descartes.NuclearNormalForms
-import QOU.Descartes.HyperbolicVolumeTranscendence

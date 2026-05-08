@@ -5,6 +5,7 @@ export default definition({
   title: "Adelic substrate $\\mathbb{A}$",
   tags: ["adeles", "macroscopic-limit", "global", "non-archimedean"],
   uses: [
+    "def:motivic-substrate",
     "def:classical-limit-functor",
   ],
   cites: ["tate1967"],

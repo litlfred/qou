@@ -47,8 +47,8 @@ $\Phi_1$ (trace) and $\Phi_2$ (determinant).
 The crossing-energy interpretation of the commutative limit
 ([commutative crossing energy](#rem:commutative-crossing-energy))
 shows that the same vanishing $H_A \to 0$ corresponds geometrically
-to the unit-circle parameterisation $q = e^{i\theta}$, where the
-crossing weight $q - q^{-1} = 2i\sin\theta$ becomes pure imaginary.
+to the unit-circle parameterisation $q = e^{i\varTheta}$, where the
+crossing weight $q - q^{-1} = 2i\sin\varTheta$ becomes pure imaginary.
 The two readings agree: the chirality channel collapses to zero in
 the strict commutative limit, while a unit-circle deformation
 recovers a non-trivial $\mathrm{U}(1)$ phase.
@@ -62,6 +62,6 @@ representation theory. Numerical scan
 proton--neutron mass splitting *vanishes* in the strict $q \to 1$
 limit (consistent with the chirality channel being the unique
 S-odd carrier), and that the wrong-sign binding for $Z = N$
-fully-paired atoms (D, ⁴He) is **not** a $q$-deformation artefact
+fully-paired atoms (D, ${}^{4}\mathrm{He}$) is **not** a $q$-deformation artefact
 but a structural feature of $\Phi_1$ in the symmetric group
 algebra $\mathbb{C}[S_n] = H_n(1)$.

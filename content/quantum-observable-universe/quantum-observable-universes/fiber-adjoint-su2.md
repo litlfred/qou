@@ -1,4 +1,4 @@
-Continuing [projective line on SU(2)](#ex:projective-line-su2), take
+Continuing [projective line on $\mathrm{SU}(2)$](#ex:projective-line-su2), take
 $G = \mathrm{SU}(2)$, $T = \mathrm{U}(1)$, and
 $V = \mathbb{C}^2$. The projective line object is
 $\mathbb{P}(V) = \mathbb{P}^1(\mathbb{C})$, and the adjoint object is

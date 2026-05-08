@@ -1,7 +1,7 @@
 {
   "computation": "confinement-sdp",
   "description": "Proper SDP (Lasserre moment-matrix relaxation) upgrade of confinement-lp.py.  Adds the quadratic Frobenius positivity constraint tr(G\u00b7X) \u2265 0 \u2014 which the LP cannot express because G has a negative eigenvalue at q\u2080.  Verifies the LP(PSD) = SDP-in-disguise claim from docs/ilp-sdp-audit.md by comparing LP and SDP solutions on proton and neutron cases.",
-  "timestamp": "2026-04-19T01:33:30.992540+00:00",
+  "computedAt": "2026-04-19T01:33:30.992540+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "HA": 0.20906032198987945,
@@ -204,5 +204,7 @@
         "moment_rank_numeric": 6
       }
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

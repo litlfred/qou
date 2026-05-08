@@ -9,12 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:knot-mass-formula-unified",
-    "thm:frobenius-codim-universal",
-    "prop:figure-eight-bw-coefficients",
-    "prop:partition-sum-proton-residual",
-    "prop:categorical-mass-markov",
-    "prop:schur-weyl-mass-decomposition",
     "rem:deuteron-first-principles",
     "rem:np-discrepancy-resolution",
   ],

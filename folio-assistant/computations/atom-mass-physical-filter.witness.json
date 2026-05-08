@@ -1,7 +1,7 @@
 {
   "computation": "atom-mass-physical-filter",
   "description": "Atom tower mass with PHYSICAL (observable) filter: only \u03c7_\u03bb(W_atom) > 0 partitions contribute. Negative-\u03c7 partitions are CPT-conjugate vacuum states, filtered out. Uses joint H_{3A}(q) YSN from hecke_core.atom_character_raw (correct), not per-pair Markov heuristic. Binding = E_0 \u00b7 (m_free - m_atom).",
-  "timestamp": "2026-04-17T20:59:48.950282+00:00",
+  "computedAt": "2026-04-17T20:59:48.950282+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "E_0_tower_MeV": 0.0007958232069223113,
@@ -98,5 +98,7 @@
       "m_atom_MeV": 2264.0121709554564,
       "delta_m_over_m_pct": 27.460553276546257
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

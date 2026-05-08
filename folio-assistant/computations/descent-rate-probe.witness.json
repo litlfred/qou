@@ -1,7 +1,7 @@
 {
   "computation": "descent-rate-probe",
   "description": "Empirical fit of partial-descent weights \u03b2(|i\u2212j|) for pair blow-up centres in prop:mass-endomorphism-tower. Parameterizes the deviation from adjacent-only (\u03b2=\u03b4_{d,1}) and full all-pairs (\u03b2=1 uniform) as one-parameter families (exponential, step, 1/d, linear).  Minimizes mean |\u0394m/m|% on stable atoms A\u22656 and D.",
-  "timestamp": "2026-04-18T09:56:13.760364+00:00",
+  "computedAt": "2026-04-18T09:56:13.760364+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "z_markov_sq": 0.2493207959794241
@@ -294,5 +294,7 @@
     }
   },
   "best_family": "full",
-  "best_mean_err_pct": 0.6555277471963745
+  "best_mean_err_pct": 0.6555277471963745,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

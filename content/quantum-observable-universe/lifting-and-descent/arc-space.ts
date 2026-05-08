@@ -4,10 +4,7 @@ export default definition({
   label: "def:arc-space",
   title: "Arc space $\\mathcal{L}(X)$ of the brane tower",
   tags: ["arc-space", "jet-scheme", "brane-tower", "motivic"],
-  uses: [
-    "prop:jet-prolongation",
-    "def:recursive-brane-tower",
-  ],
+  uses: ["def:recursive-brane-tower"],
   cites: ["denef-loeser2001"],
   lean: {
     ref: "qou:QOU.LiftingDescent.ArcSpace",

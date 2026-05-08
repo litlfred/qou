@@ -15,7 +15,6 @@ export default remark({
   ],
   uses: [
     "prop:braiding-eigenvalue-extraction",
-    "def:quantum-observable-universe",
     "rem:tqft-context",
   ],
 });

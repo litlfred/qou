@@ -1,0 +1,139 @@
+{
+  "description": "Cross-check of Wenzl-bridge symbolic y_λ vs MPFR linear-system y_λ at every n with overlapping coverage in both witnesses.  Independent verification at high precision (50 dps comparison).",
+  "references": [
+    "prop:y-lambda-closed-form-wenzl-bridge",
+    "prop:alpha-k-derivation-procedure"
+  ],
+  "computedAt": "2026-04-29T20:36:59.509015+00:00",
+  "comparison_dps": 50,
+  "rows": [
+    {
+      "n": 3,
+      "num_partitions": 3,
+      "max_abs_diff": "2.0045735325691467346054023503636114091113976600788e-51",
+      "worst_partition": [
+        3
+      ],
+      "worst_diff": "2.0045735325691467346054023503636114091113976600788e-51",
+      "within_1e-30": true,
+      "within_1e-40": true
+    },
+    {
+      "n": 4,
+      "num_partitions": 5,
+      "max_abs_diff": "3.3409558876152445576756705839393523485189961001313e-51",
+      "worst_partition": [
+        4
+      ],
+      "worst_diff": "3.3409558876152445576756705839393523485189961001313e-51",
+      "within_1e-30": true,
+      "within_1e-40": true
+    },
+    {
+      "n": 5,
+      "num_partitions": 7,
+      "max_abs_diff": "2.0045735325691467346054023503636114091113976600788e-51",
+      "worst_partition": [
+        5
+      ],
+      "worst_diff": "2.0045735325691467346054023503636114091113976600788e-51",
+      "within_1e-30": true,
+      "within_1e-40": true
+    },
+    {
+      "n": 6,
+      "num_partitions": 11,
+      "max_abs_diff": "7.5579339000592910330621981520463962063908735019084e-52",
+      "worst_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "worst_diff": "7.5579339000592910330621981520463962063908735019084e-52",
+      "within_1e-30": true,
+      "within_1e-40": true
+    },
+    {
+      "n": 7,
+      "num_partitions": 15,
+      "max_abs_diff": "5.011433831422866836513505875909028522778494150197e-52",
+      "worst_partition": [
+        7
+      ],
+      "worst_diff": "5.011433831422866836513505875909028522778494150197e-52",
+      "within_1e-30": true,
+      "within_1e-40": true
+    },
+    {
+      "n": 8,
+      "num_partitions": 22,
+      "max_abs_diff": "2.7145266586873862031114823494507237831716843313567e-52",
+      "worst_partition": [
+        7,
+        1
+      ],
+      "worst_diff": "2.7145266586873862031114823494507237831716843313567e-52",
+      "within_1e-30": true,
+      "within_1e-40": true
+    },
+    {
+      "n": 9,
+      "num_partitions": 30,
+      "max_abs_diff": "2.6838946874201314107287710371624462205737785729694e-52",
+      "worst_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "worst_diff": "2.6838946874201314107287710371624462205737785729694e-52",
+      "within_1e-30": true,
+      "within_1e-40": true
+    },
+    {
+      "n": 10,
+      "num_partitions": 42,
+      "max_abs_diff": "1.0280126517023046596530743473971178218771062228385e-52",
+      "worst_partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "worst_diff": "1.0280126517023046596530743473971178218771062228385e-52",
+      "within_1e-30": true,
+      "within_1e-40": true
+    },
+    {
+      "n": 11,
+      "num_partitions": 56,
+      "max_abs_diff": "1.4388125094556299842776417906267927331301966145302e-52",
+      "worst_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "worst_diff": "1.4388125094556299842776417906267927331301966145302e-52",
+      "within_1e-30": true,
+      "within_1e-40": true
+    }
+  ]
+}

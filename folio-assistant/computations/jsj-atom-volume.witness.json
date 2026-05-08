@@ -1,7 +1,7 @@
 {
   "computation": "jsj-atom-volume",
   "description": "Test the JSJ / hyperbolic-volume atom model.  Each nucleon modelled as Borromean rings (Vol=8G, hyperbolic).  Atom = either A disjoint Borromeans (free baseline) or A linked Borromeans (atom).  Binding = m_e \u00b7 \u0394Vol.  Explores three counting schemes for the number of couplings: A\u00b78G alone, all-pairs (C(A,2)), and adjacent-only (A-1).",
-  "timestamp": "2026-04-23T18:43:49.803737+00:00",
+  "computedAt": "2026-04-23T18:43:49.803737+00:00",
   "parameters": {
     "Catalan_G": 0.915965594177219,
     "Vol_Borromean_8G": 7.327724753417752,
@@ -359,5 +359,7 @@
       "B_pred_MeV": 33.3678,
       "err_pct": -73.8537846732487
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

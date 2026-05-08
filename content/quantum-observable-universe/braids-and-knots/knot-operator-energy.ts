@@ -6,12 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.KnotOperatorEnergy",
     validation: "not_checked",
   },
-  uses: [
-    "prop:bw-coefficient-shadow-price",
-    "def:hecke-normal-form",
-    "def:confinement-level",
-    "def:stable-atom",
-  ],
+  uses: ["def:stable-atom"],
   cites: [],
   tags: [
     "knot-operator",

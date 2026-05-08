@@ -10,7 +10,7 @@
       "expected": 2.2488207948647343,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 3H: B_pred reproducible",
@@ -18,7 +18,7 @@
       "expected": 8.46859838653302,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 3He: B_pred reproducible",
@@ -26,7 +26,7 @@
       "expected": 7.48891930977096,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 4He: B_pred reproducible",
@@ -34,7 +34,7 @@
       "expected": 29.95567723908384,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 8Be: B_pred reproducible",
@@ -42,7 +42,7 @@
       "expected": 62.338343981930535,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 12C: B_pred reproducible",
@@ -50,7 +50,7 @@
       "expected": 97.1480002285401,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 16O: B_pred reproducible",
@@ -58,7 +58,7 @@
       "expected": 134.38464597891252,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 20Ne: B_pred reproducible",
@@ -66,7 +66,7 @@
       "expected": 174.0482812330478,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 24Mg: B_pred reproducible",
@@ -74,7 +74,7 @@
       "expected": 216.1389059909459,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     },
     {
       "name": "Kashaev 40Ca: B_pred reproducible",
@@ -82,7 +82,7 @@
       "expected": 408.771300060167,
       "passed": true,
       "tolerance": 0,
-      "source": "deterministic rho_F · Vol_hyp"
+      "source": "deterministic rho_F \u00b7 Vol_hyp"
     }
   ],
   "allPassed": true,
@@ -91,7 +91,7 @@
   "scriptFile": "mass_table_combined.py",
   "scriptHash": "f3ca6e9d6e1f",
   "scriptCommitSha": "867970ffcccef598aad080ba2c651b9504171b9f",
-  "description": "Low-isotope mass table. Three-way comparison: AME2020 vs Kashaev (ρ_F · Vol_hyp with census/framework assignment) vs Paper formula (B = -α·Φ_1 with α = m_e·8G). NO FITTING.",
+  "description": "Low-isotope mass table. Three-way comparison: AME2020 vs Kashaev (\u03c1_F \u00b7 Vol_hyp with census/framework assignment) vs Paper formula (B = -\u03b1\u00b7\u03a6_1 with \u03b1 = m_e\u00b78G). NO FITTING.",
   "parameters": {
     "m_e_MeV": 0.51099895,
     "alpha_paper_MeV": 3.74445965488548,
@@ -110,7 +110,7 @@
         "kashaev": {
           "B_pred": 2.2488207948647343,
           "err_pct": 1.0903103596999093,
-          "formula": "1·m_e · Vol(6_2)",
+          "formula": "1\u00b7m_e \u00b7 Vol(6_2)",
           "origin": "hyp: census-assigned"
         },
         "paper": {
@@ -138,7 +138,7 @@
         "kashaev": {
           "B_pred": 8.46859838653302,
           "err_pct": -0.15562753138508753,
-          "formula": "2·m_e · Vol(8_11)",
+          "formula": "2\u00b7m_e \u00b7 Vol(8_11)",
           "origin": "hyp: census-assigned"
         },
         "paper": {
@@ -166,7 +166,7 @@
         "kashaev": {
           "B_pred": 7.48891930977096,
           "err_pct": -2.968606854126327,
-          "formula": "2·m_e · Vol(L6a4)",
+          "formula": "2\u00b7m_e \u00b7 Vol(L6a4)",
           "origin": "hyp: census-assigned"
         },
         "paper": {
@@ -194,8 +194,8 @@
         "kashaev": {
           "B_pred": 29.95567723908384,
           "err_pct": 5.866568260696314,
-          "formula": "2·m_e·4·8G",
-          "origin": "framework: A·8G"
+          "formula": "2\u00b7m_e\u00b74\u00b78G",
+          "origin": "framework: A\u00b78G"
         },
         "paper": {
           "B_pred": 15.59225418363458,
@@ -270,8 +270,8 @@
         "kashaev": {
           "B_pred": 62.338343981930535,
           "err_pct": 10.33430906202644,
-          "formula": "2·B(⁴He) + 1·c_αα",
-          "origin": "framework: α-cluster"
+          "formula": "2\u00b7B(\u2074He) + 1\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
         },
         "paper": {
           "B_pred": 36.80708894402768,
@@ -342,8 +342,8 @@
         "kashaev": {
           "B_pred": 97.1480002285401,
           "err_pct": 5.410325030221432,
-          "formula": "3·B(⁴He) + 3·c_αα",
-          "origin": "framework: α-cluster"
+          "formula": "3\u00b7B(\u2074He) + 3\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
         },
         "paper": {
           "B_pred": 58.021923704420786,
@@ -390,8 +390,8 @@
         "kashaev": {
           "B_pred": 134.38464597891252,
           "err_pct": 5.301201706193875,
-          "formula": "4·B(⁴He) + 6·c_αα",
-          "origin": "framework: α-cluster"
+          "formula": "4\u00b7B(\u2074He) + 6\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
         },
         "paper": {
           "B_pred": 79.23675846481389,
@@ -438,8 +438,8 @@
         "kashaev": {
           "B_pred": 174.0482812330478,
           "err_pct": 8.34351079334116,
-          "formula": "5·B(⁴He) + 10·c_αα",
-          "origin": "framework: α-cluster"
+          "formula": "5\u00b7B(\u2074He) + 10\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
         },
         "paper": {
           "B_pred": 100.45159322520698,
@@ -462,8 +462,8 @@
         "kashaev": {
           "B_pred": 216.1389059909459,
           "err_pct": 9.019613436377693,
-          "formula": "6·B(⁴He) + 15·c_αα",
-          "origin": "framework: α-cluster"
+          "formula": "6\u00b7B(\u2074He) + 15\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
         },
         "paper": {
           "B_pred": 121.66642798560004,
@@ -486,8 +486,8 @@
         "kashaev": {
           "B_pred": 408.771300060167,
           "err_pct": 19.505559579682476,
-          "formula": "10·B(⁴He) + 45·c_αα",
-          "origin": "framework: α-cluster"
+          "formula": "10\u00b7B(\u2074He) + 45\u00b7c_\u03b1\u03b1",
+          "origin": "framework: \u03b1-cluster"
         },
         "paper": {
           "B_pred": 206.52576702717212,
@@ -508,6 +508,8 @@
     }
   },
   "caveats": [
-    "Paper-formula column (B = −α·Φ_1) fails for every light atom (+124% on D, −45% on ⁴He) — reproduced here side-by-side so the gap is explicit. Kashaev column with census-assigned knots is the current best zero-parameter predictor (≤ 20% on A ≤ 40)."
-  ]
+    "Paper-formula column (B = \u2212\u03b1\u00b7\u03a6_1) fails for every light atom (+124% on D, \u221245% on \u2074He) \u2014 reproduced here side-by-side so the gap is explicit. Kashaev column with census-assigned knots is the current best zero-parameter predictor (\u2264 20% on A \u2264 40)."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

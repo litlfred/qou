@@ -1,6 +1,6 @@
 {
   "computation": "t35-exact-halflife",
-  "timestamp": "2026-03-28T13:03:41.471419+00:00",
+  "computedAt": "2026-03-28T13:03:41.471419+00:00",
   "description": "Exact beta decay half-lives from T_{3,5} weak vertex structure. No tuning parameters. Everything from q = 1/(1-\u221a(Vol(4\u2081)/(m_\u03bc/m_e))).",
   "parameters": {
     "q": 1.1099785955541805,
@@ -95,5 +95,7 @@
       "unit": "d",
       "ratio": Infinity
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

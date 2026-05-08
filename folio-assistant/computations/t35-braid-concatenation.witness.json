@@ -1,6 +1,6 @@
 {
   "computation": "t35-braid-concatenation",
-  "timestamp": "2026-03-28T13:34:36.009000+00:00",
+  "computedAt": "2026-03-28T13:34:36.009000+00:00",
   "description": "T_{3,5} beta decay via correct braid concatenation + Gr\u00f6bner reduction. T_{3,5} appended to END of parent braid, then reduced. Energy of Hecke steps gives transition physics (Gr\u00f6bner-Shirshov energy theorem).",
   "parameters": {
     "q": 1.1099785955541805,
@@ -61,5 +61,7 @@
       "delta_E_t35_cost_MeV": 3825.0268206068513,
       "delta_E_total_MeV": 7436.294550884424
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

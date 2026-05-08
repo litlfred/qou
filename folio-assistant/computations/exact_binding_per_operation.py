@@ -55,13 +55,15 @@ mp.mp.dps = 100   # ~100 decimal digits of precision
 
 
 # ── Recompute q_0, ℏ_q², etc. in mpmath precision ───────────────
-_VOL = mp.mpf(str(VOL_FIGURE_EIGHT))
-_MU_E = mp.mpf(str(MASS_RATIO_MU_E))
-HBAR_Q_SQ_MP = _VOL / _MU_E
-HBAR_Q_MP   = mp.sqrt(HBAR_Q_SQ_MP)
-Q0_MP       = mp.mpf(1) / (mp.mpf(1) - HBAR_Q_MP)
-HA_MP       = Q0_MP - mp.mpf(1) / Q0_MP
-Z_MP        = mp.mpf(1) / (mp.sqrt(Q0_MP) + mp.mpf(1) / mp.sqrt(Q0_MP))
+# Use the high-precision globals from q_parameter (computed via
+# Vol(4_1) = 2 Cl_2(π/3) at 50 dps).  Previously this block went
+# `mp.mpf(str(VOL_FIGURE_EIGHT)) / mp.mpf(str(MASS_RATIO_MU_E))`,
+# which only carried f64 (~16 dps) through and printed 40 dps of
+# trailing noise in the witness JSON.
+from q_parameter import (
+    Q_MP as Q0_MP, HBAR_Q_MP, HBAR_Q_SQ_MP, HA_MP,
+)
+Z_MP = mp.mpf(1) / (mp.sqrt(Q0_MP) + mp.mpf(1) / mp.sqrt(Q0_MP))
 
 
 def crossing_coeff_mp(ti: str, tj: str) -> tuple[mp.mpf, mp.mpf]:

@@ -5,7 +5,7 @@ $q \neq 1$.**
 
 The parity violation follows directly from the categorical origin of
 the crossing energy
-([crossing energy](#def:crossing-energy)): the Hecke generator $T =
+([crossing energy](#def:crossing-energy)): the Hecke generator $\sigma =
 P \circ R$ has eigenvalues $(q, -q^{-1})$ on $S^{2} V \oplus \Lambda^{2}
 V$, and $\lvert q \rvert \neq \lvert {-q^{-1}} \rvert$ for $q \neq 1$.
 A positive crossing $L_{+}$ carries the eigenvalue $q$; a negative
@@ -82,11 +82,11 @@ iff $q = q^{-1}$, which holds iff $q^2 = 1$, hence $q = 1$
 
 **Physical interpretation.**
 
-The Hecke relation $T^2 = (q - q^{-1})T + 1$ breaks
+The Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$ breaks
 the symmetry between positive and negative crossings.  At $q = 1$:
-$T^2 = 1$ (positive and negative crossings cancel — parity
+$\sigma^2 = 1$ (positive and negative crossings cancel — parity
 conserved).  At the substrate parameter $q$:
-$T^2 = 0.209T + 1$ (the $0.209T$ term
+$\sigma^2 = 0.209\,\sigma + 1$ (the $0.209\,\sigma$ term
 distinguishes positive from negative — parity violated).
 
 The **degree of parity violation** is controlled by:

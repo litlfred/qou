@@ -7,7 +7,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:confinement-level",
     "prop:confinement-level-exists",
     "def:local-shadow-ordering",
   ],

@@ -1,0 +1,249 @@
+{
+  "computation": "volume-shell-w-lambda-level1-bb-probe",
+  "computedAt": "2026-05-02T22:58:05.505768+00:00",
+  "q0": 1.1099785955541805,
+  "ansatz_summary": "w_\u03bb^(1)_BB = w_\u03bb^(0) \u00b7 M(\u03bb) \u00b7 \u03b4(c(\u03bb)=0); three M(\u03bb) variants:\n  V1 = Frobenius rank,  V2 = 1/H_q(\u03bb),  V3 = #removable corners.\nEach tries to break the magic-atom cancellation seen at q=1 MN.",
+  "atoms": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "variant": "V1_rank",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "D",
+      "binding_per_nucleon_AME": 0.4655287150000049
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "variant": "V1_rank",
+      "total": 0.01760181194347317,
+      "abs_total": 0.01760181194347317,
+      "atom": "3He",
+      "binding_per_nucleon_AME": 2.141506243333424
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "variant": "V1_rank",
+      "total": 0.01760181194347317,
+      "abs_total": 0.01760181194347317,
+      "atom": "3H",
+      "binding_per_nucleon_AME": 1.9649556733334066
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "variant": "V1_rank",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "4He",
+      "binding_per_nucleon_AME": 6.427226477500085
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "variant": "V1_rank",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "6Li",
+      "binding_per_nucleon_AME": 4.430030000000102
+    },
+    {
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "variant": "V1_rank",
+      "total": 5.341245260600824,
+      "abs_total": 5.341245260600824,
+      "atom": "9Be",
+      "binding_per_nucleon_AME": 5.744320000000016
+    },
+    {
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "variant": "V1_rank",
+      "total": 0.8114272010617765,
+      "abs_total": 0.8114272010617765,
+      "atom": "12C",
+      "binding_per_nucleon_AME": 6.777900000000045
+    },
+    {
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "variant": "V1_rank",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "16O",
+      "binding_per_nucleon_AME": 7.0739825000000565
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "variant": "V2_inv_hook",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "D",
+      "binding_per_nucleon_AME": 0.4655287150000049
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "variant": "V2_inv_hook",
+      "total": 5.836124985004361e-07,
+      "abs_total": 5.836124985004361e-07,
+      "atom": "3He",
+      "binding_per_nucleon_AME": 2.141506243333424
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "variant": "V2_inv_hook",
+      "total": 5.836124985004361e-07,
+      "abs_total": 5.836124985004361e-07,
+      "atom": "3H",
+      "binding_per_nucleon_AME": 1.9649556733334066
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "variant": "V2_inv_hook",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "4He",
+      "binding_per_nucleon_AME": 6.427226477500085
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "variant": "V2_inv_hook",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "6Li",
+      "binding_per_nucleon_AME": 4.430030000000102
+    },
+    {
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "variant": "V2_inv_hook",
+      "total": 1.3524631670970247e-17,
+      "abs_total": 1.3524631670970247e-17,
+      "atom": "9Be",
+      "binding_per_nucleon_AME": 5.744320000000016
+    },
+    {
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "variant": "V2_inv_hook",
+      "total": 4.477945301864936e-29,
+      "abs_total": 4.477945301864936e-29,
+      "atom": "12C",
+      "binding_per_nucleon_AME": 6.777900000000045
+    },
+    {
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "variant": "V2_inv_hook",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "16O",
+      "binding_per_nucleon_AME": 7.0739825000000565
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "variant": "V3_corners",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "D",
+      "binding_per_nucleon_AME": 0.4655287150000049
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "variant": "V3_corners",
+      "total": 0.00586727064782439,
+      "abs_total": 0.00586727064782439,
+      "atom": "3He",
+      "binding_per_nucleon_AME": 2.141506243333424
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "variant": "V3_corners",
+      "total": 0.00586727064782439,
+      "abs_total": 0.00586727064782439,
+      "atom": "3H",
+      "binding_per_nucleon_AME": 1.9649556733334066
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "variant": "V3_corners",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "4He",
+      "binding_per_nucleon_AME": 6.427226477500085
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "variant": "V3_corners",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "6Li",
+      "binding_per_nucleon_AME": 4.430030000000102
+    },
+    {
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "variant": "V3_corners",
+      "total": 3.560830173733883,
+      "abs_total": 3.560830173733883,
+      "atom": "9Be",
+      "binding_per_nucleon_AME": 5.744320000000016
+    },
+    {
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "variant": "V3_corners",
+      "total": 0.1352378668436294,
+      "abs_total": 0.1352378668436294,
+      "atom": "12C",
+      "binding_per_nucleon_AME": 6.777900000000045
+    },
+    {
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "variant": "V3_corners",
+      "total": 0.0,
+      "abs_total": 0.0,
+      "atom": "16O",
+      "binding_per_nucleon_AME": 7.0739825000000565
+    }
+  ],
+  "interpretation": "Path (b) of the corrective options. Tests whether BB-grade-inspired multipliers on self-conjugate Plancherel weights break the magic-atom cancellation. Variants V1/V2/V3 are structural surrogates for the full BB-spectral-sequence weight (which would require explicit GS-filtration cohomology computation)."
+}

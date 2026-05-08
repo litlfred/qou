@@ -105,6 +105,16 @@ PYTHONPATH=.github/scripts python .github/scripts/formalizer.py generate-theorem
 Creates Lean theorem declarations with `sorry` bodies, using the glossary
 types for the statement signatures.
 
+**Witnessed values in narrative.**  Whenever the narrative statement
+of a theorem, lemma, proposition, conjecture, corollary, or its proof
+quotes a substrate-derived numerical literal (`q_0`, `\hbar_q`,
+`Vol(4_1)`, CODATA inputs, binding energies, etc.), the **`.md`
+narrative** must use the `:val[name]` directive — not a hard-coded
+number — so the rendered statement tracks the canonical witness JSON.
+The `.lean` file is unaffected (Lean uses its own numerical
+constants); the rule is about the LaTeX render of the narrative
+sibling.  See [`witnessed-values.md`](./witnessed-values.md).
+
 ### 3. Tactic translation
 
 The Formalizer maps narrative proof phrases to Lean tactics:
@@ -188,19 +198,12 @@ Output follows the `ProofStateExport` schema in `folio-assistant/schemas/qou-typ
 
 ## Lean Output Structure
 
-```
-lean/
-├── lakefile.lean
-├── lean-toolchain
-├── QOU.lean              ← Root import
-└── QOU/
-    ├── Basic.lean        ← Shared foundations
-    ├── Glossary.lean     ← Ontologist output (central registry)
-    ├── KnotTheory.lean   ← Knot combinatorics
-    ├── MassDerivation.lean ← CODATA mass parameter derivation
-    ├── QuantumObservableUniverse.lean  ← Chapter 1
-    └── ...
-```
+The Lean source tree lives **per paper** under `content/<paper>/lean/`,
+with the repo's root `/lakefile.toml` aggregating every package into a
+single Lake workspace. See [Root Lake workspace
+(standardized)](#root-lake-workspace-standardized) below for the
+canonical layout, package registry, and build commands. Do **not**
+create a top-level `lean/` directory — that layout is deprecated.
 
 ## Proven Patterns
 
@@ -475,9 +478,22 @@ content/<paper>/<chapter>/
 2. **Check `uses[]`** to understand upstream dependencies — ensure they're
    formalized first (dependency DAG ordering)
 3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
-4. **Update the `.ts` manifest**: set `lean.decl`, `lean.file` if needed
+4. **Update the `.ts` manifest**: set `lean.ref` to the package-qualified
+   URI `"<pkg>:<Decl.Path>"` (per CLAUDE.md §0a; legacy `lean.decl` /
+   `lean.file` shape is removed)
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules
+
+### Glossary terms in narrative `.md`
+
+If you author or update the `.md` sibling alongside a Lean file, defined
+terms (any slug in any block's `defines: [...]`) **must** be wrapped in
+`:defterm[…]{#slug}` (canonical site) or `:refterm[…]{#slug}` (every
+other mention). Do **not** add `\emph{}` or plain-text mentions of
+defined terms. The Lean side is unaffected by this contract — Lean
+declarations are linked via `lean.ref`, not glossary slugs — but the
+validator will flag stray plain-text mentions in the narrative
+companion. See `local/glossary-build`.
 
 ### The `uses[]` dependency graph
 

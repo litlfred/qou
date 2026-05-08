@@ -1,4 +1,4 @@
-The **$\mathcal{Q}_q$-value** of a nuclear transition is the
+The **$Q$-value** of a nuclear transition is the
 $q$-deformed transition energy.  It is NOT defined by classical
 energy conservation — it is defined directly from the categorical
 action.
@@ -16,7 +16,7 @@ $$
 where $M(Z, N) = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e
 - B(Z, N)$ is the neutral atomic mass and $B(Z, N)$ is the BW
 binding energy at Hecke level $k$
-([q-integer mass formula](#prop:q-integer-mass-formula)).
+([q-integer mass formula](#conj:q-integer-mass-formula)).
 
 This definition is consistent with the mass accuracy: if
 $|\Delta M/M| \approx 0.002\%$, then $Q$-values for transitions
@@ -46,7 +46,7 @@ For a $\mathfrak{d} \to \mathfrak{u}$ change ($\sigma_k^{-1} \to \sigma_k$):
 $\Delta \mathbf{E}_\times = q - q^{-1}$.
 
 $$
-  \mathcal{Q}_q
+  Q
   = 
   \sum_{\text{changed crossings}} \Delta \mathbf{E}_\times
   -  S_q(e)
@@ -57,7 +57,7 @@ action).
 
 ## Classical limit and the $q$-anomaly
 
-**⚠ WARNING: Classical energy conservation is NOT assumed.**
+**Warning.** Classical energy conservation is **not** assumed.
 
 In classical physics, the Q-value is defined via conservation
 of energy:
@@ -99,7 +99,7 @@ equal the total $q$-energy of the parent.  There is a
 $$
   \delta_q
    := 
-  \mathcal{Q}_q
+  Q
   - 
   (T_e + T_{\nu^{\sigma}} + T_{\mathrm{recoil}})
 $$
@@ -133,10 +133,10 @@ $$
   \frac{A - 1}{A^2} \cdot \hbar_q^2
 $$
 
-This shift modifies $\mathcal{Q}_q$ at second order:
+This shift modifies $Q$ at second order:
 
 $$
-  \mathcal{Q}_q
+  Q
   = 
   \underbrace{\Delta S_q - S_q(e)}_{\text{leading (crossing change)}}
   + 
@@ -144,18 +144,18 @@ $$
 $$
 
 **At $q = 1$:** $\delta_q = 0$ and
-$\mathcal{Q}_q \to Q_{\mathrm{classical}}$ (classical
+$Q \to Q_{\mathrm{classical}}$ (classical
 conservation restored).
 
 **At the substrate parameter $q$:** $\delta_q \neq 0$.  For tritium ($A = 3$):
 $\Delta q_{\mathrm{eff}} = 2/9 \cdot \hbar_q^2 \approx 0.0022$,
-giving a correction $\delta_q / \mathcal{Q}_q \sim 5\%$.
+giving a correction $\delta_q / Q \sim 5\%$.
 This is the **same correction** that brings the tritium
 half-life prediction from 13 yr to 12.4 yr (vs observed 12.32 yr).
 
-## $\mathcal{Q}_q$ is NOT conserved
+## $Q$ is NOT conserved
 
-The $q$-anomaly $\delta_q$ means that $\mathcal{Q}_q$ defined
+The $q$-anomaly $\delta_q$ means that $Q$ defined
 as the action difference is NOT equal to the sum of kinetic
 energies.  The "missing" energy goes into the $q$-deformation
 of the vacuum — it is absorbed by the change in the effective
@@ -163,7 +163,7 @@ substrate parameter from $q$ to $q + \Delta q_{\mathrm{eff}}$.
 
 This is not a violation of physics — it is the $q$-deformed
 version of the quantum anomaly.  The conserved quantity is not
-$\mathcal{Q}_q$ but the **full categorical action** $S_q$ of
+$Q$ but the **full categorical action** $S_q$ of
 the entire system (products + vacuum shift):
 
 $$
@@ -183,7 +183,7 @@ original.  This is the $q$-analogue of energy conservation.
 
 ## Limits
 
-| $q$ | Regime | $\mathcal{Q}_q$ | $\delta_q$ |
+| $q$ | Regime | $Q$ | $\delta_q$ |
 |-----|--------|:---:|:---:|
 | $q = 1$ | Classical | $0$ | $0$ |
 | the substrate $q$ | Our universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |

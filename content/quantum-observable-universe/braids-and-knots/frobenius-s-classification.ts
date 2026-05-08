@@ -9,8 +9,6 @@ export default proposition({
   },
   uses: [
     "thm:wedderburn-mass-formula",
-    "prop:three-parameters-wedderburn",
     "prop:confined-knot-binding",
-    "prop:binding-scale-catalan",
   ],
 });

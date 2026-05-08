@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 D via colored-Jones tower: compute J_N(β_D, q₀) for N=2,3,4 directly
 from the Hecke-algebra representation ρ_N: H_6(q) → End(V_{N-1}^{⊗6}).

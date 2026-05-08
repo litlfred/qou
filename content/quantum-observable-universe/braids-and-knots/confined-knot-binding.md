@@ -1,5 +1,5 @@
 **Proposition.**
-*Let $\beta \in H_3(q)$ be a confined nuclear braid
+*Let $\beta \in H_3(R, q)$ be a confined nuclear braid
 ([atomic braid](#def:atomic-braid)) built from crossing operators
 with parameters $(c_k, d_k)$.  The Wedderburn-Artin decomposition
 ([three-parameter decomposition](#prop:three-parameters-wedderburn))
@@ -114,7 +114,7 @@ $$
   a(Z, N) = \prod_\ell a_\ell
 $$
 
-*This product emerges from the algebraic structure of $H_3(q)$ —
+*This product emerges from the algebraic structure of $H_3(R, q)$ —
 the character ratios are functions of $q$ alone, with no empirical
 input.*
 
@@ -146,7 +146,7 @@ scale as $1 : 2 : 3$.*
 *Proof.*
 The equality $W_{\mathrm{sym}} = W_{\mathrm{alt}}$ follows from
 $\dim_q(\lambda_{\mathrm{sym}}) = \dim_q(\lambda_{\mathrm{alt}}) = 1$
-for the one-dimensional representations of $H_3(q)$.
+for the one-dimensional representations of $H_3(R, q)$.
 The Wedderburn weight is $w_\lambda = d_q(\lambda)^2 / [n]_q!$,
 and $d_q((3)) = d_q((1,1,1)) = 1$.
 

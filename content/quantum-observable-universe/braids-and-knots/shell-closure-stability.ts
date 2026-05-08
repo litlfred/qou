@@ -7,15 +7,7 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.ShellClosureStability",
     validation: "not_checked",
   },
-  uses: [
-    "def:dressed-particle",
-    "def:electron-shell",
-    "def:confined-particle",
-    "def:confinement-category",
-    "prop:confinement-sdp",
-    "prop:confinement-topological",
-    "prop:confinement-phase-stratification",
-  ],
+  uses: ["def:dressed-particle"],
   tags: [
     "stability",
     "noble-gas",

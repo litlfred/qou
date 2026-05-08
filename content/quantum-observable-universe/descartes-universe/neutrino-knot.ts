@@ -7,8 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.Descartes.Neutrino",
     validation: "not_checked",
   },
-  uses: [
-    "prop:torus-knot-generators",
-    "sec:knot-notation-convention",
-  ],
+  uses: ["prop:torus-knot-generators"],
 });

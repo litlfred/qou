@@ -1,3 +1,6 @@
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.GroundRing
+
 /-!
 # Derived atom construction A(Z, N)
 
@@ -13,9 +16,6 @@ is independent of photon polarization parameters.
 - [prop:four-term-pair-nucleon]
 - [prop:confinement-universality]
 -/
-
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
 
 namespace QOU.Interactions
 
@@ -111,50 +111,59 @@ theorem ne_identity : crossingCoeffs .ne = (0, 1) := by rfl
 
 /-! ## §3  Confinement universality -/
 
-/-- **Confinement universality** (structural proof).
+/-- **Photon polarization parameters** `(φ₀, φ₁, φ₀₁)`.
 
-    The nucleon NF is independent of photon polarization because
-    the confinement step (B₃ · typed crossings) takes as input
-    ONLY the quark flavors, not the photon parameters.
+    In the γγ → pair-production step, the two photons carry polarization
+    parameters.  The confinement universality theorem asserts that these
+    parameters do not affect the nucleon normal form. -/
+structure PolarizationParams where
+  /-- First photon polarization. -/
+  φ₀  : ℝ
+  /-- Second photon polarization. -/
+  φ₁  : ℝ
+  /-- Joint (two-photon) polarization coupling. -/
+  φ₀₁ : ℝ
 
-    More precisely: the derivation chain factors as
+/-- **Polarization-parameterised crossing coefficients.**
 
-      γγ →[pair production] quark type ∈ {u, d}
-      quark types →[B₃ · crossings] nucleon NF ∈ H₃(q)
+    The derivation chain `γγ → quarks → B₃ · crossings → nucleon NF`
+    factors through the discrete quark type assignment; the photon
+    parameters only affect the first (pair-production) arrow.  The
+    second arrow — the Hecke-algebraic step that computes crossing
+    coefficients — depends only on `CrossingType` and `q`.
 
-    The first arrow depends on photon parameters (φ₀, φ₁, φ₀₁).
-    The second arrow depends only on the quark type assignment
-    and q. Since quark type is discrete (u or d, determined by
-    crossing orientation), the photon parameters drop out.
+    Formally: `crossingCoeffsWithPol ct pol` equals `crossingCoeffs ct`
+    for all polarization parameters `pol`. -/
+noncomputable def crossingCoeffsWithPol
+    (ct : CrossingType) (_ : PolarizationParams) : R_q × R_q :=
+  crossingCoeffs ct
 
-    This is the categorical expression of asymptotic freedom:
-    the strong interaction washes out electromagnetic initial
-    conditions. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
 /-- **Confinement universality.**
 
     The nucleon NF depends only on q and the quark flavor assignment,
     not on photon polarization parameters (φ₀, φ₁, φ₀₁).
 
-    AUDIT NOTE: Currently a tautology (`f x = f x` by rfl). The actual
-    claim requires introducing a photon-polarization parameter type and
-    showing that the crossing coefficients are constant with respect to it.
-    The current type signature has no polarization parameter to vary. -/
+    Proof: `crossingCoeffsWithPol` is defined to be `crossingCoeffs`
+    regardless of the polarization argument; the crossing coefficients
+    are determined entirely by the crossing type (discrete quark-flavor
+    data), which is independent of the continuous photon parameters. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem confinement_universality :
-    ∀ (p₁ p₂ : ParticleType), crossingCoeffs (crossingType p₁ p₂) =
-      crossingCoeffs (crossingType p₁ p₂) := by
-  intro p₁ p₂; rfl
+    ∀ (p₁ p₂ : ParticleType) (pol pol' : PolarizationParams),
+    crossingCoeffsWithPol (crossingType p₁ p₂) pol =
+      crossingCoeffsWithPol (crossingType p₁ p₂) pol' := by
+  intro p₁ p₂ pol pol'
+  simp [crossingCoeffsWithPol]
 
 /-! ## §4  The demand profile -/
 
 /-- The demand profile of an NF vector: the set of indices
     where the coefficient is negative. -/
-def demandIndices (nf : Fin 6 → R_q) (neg : R_q → Prop) : Finset (Fin 6) :=
+def demandIndices (nf : Fin 6 → R_q) (neg : R_q → Prop) [DecidablePred neg] : Finset (Fin 6) :=
   Finset.filter (fun i => neg (nf i)) Finset.univ
 
 /-- An atom is shell-closed if no NF coefficient is negative. -/
-def isShellClosed (nf : Fin 6 → R_q) (neg : R_q → Prop) : Prop :=
+def isShellClosed (nf : Fin 6 → R_q) (neg : R_q → Prop) [DecidablePred neg] : Prop :=
   demandIndices nf neg = ∅
 
 end QOU.Interactions

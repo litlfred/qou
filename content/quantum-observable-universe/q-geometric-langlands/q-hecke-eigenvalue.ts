@@ -6,7 +6,6 @@ export default proposition({
   title: "$q$-Hecke eigenvalues from the fibre functor",
   uses: [
     "def:q-hecke-eigensheaf",
-    "def:q-hecke-operator",
     "rem:fibre-functor-rigidity",
   ],
   proofs: ["prf:q-hecke-eigenvalue"],

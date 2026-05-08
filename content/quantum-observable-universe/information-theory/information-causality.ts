@@ -12,14 +12,7 @@ export default remark({
     "margolus-levitin",
     "bekenstein-bound",
   ],
-  uses: [
-    "thm:mass-energy-equivalence",
-    "def:information-speed-of-light",
-    "def:operational-entropy",
-    "rem:light-cone-affine",
-    "def:crossing-energy",
-    "def:mass-identity",
-  ],
+  uses: ["thm:mass-energy-equivalence"],
   cites: [
     "margolus1998",
     "lloyd2000",

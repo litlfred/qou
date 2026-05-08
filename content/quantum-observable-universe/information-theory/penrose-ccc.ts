@@ -8,11 +8,6 @@ export default remark({
     "aeon", "jet-horizon",
   ],
   interprets: "def:aeon",
-  uses: [
-    "def:aeon",
-    "def:jet-horizon",
-    "def:big-bang-state",
-    "conj:aeon-boundary-generates-chart",
-  ],
+  uses: [],
   cites: ["penrose2010"],
 });

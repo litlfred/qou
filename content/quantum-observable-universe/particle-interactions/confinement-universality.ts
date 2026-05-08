@@ -14,9 +14,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Interactions.confinementUniversality",
     validation: "not_checked",
   },
-  uses: [
-    "prop:four-term-pair-nucleon",
-    "prop:confinement-operator-selection",
-    "def:breit-wheeler-pair-production",
-  ],
+  uses: ["prop:four-term-pair-nucleon"],
 });

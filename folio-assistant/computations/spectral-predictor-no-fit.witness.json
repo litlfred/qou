@@ -1,0 +1,98 @@
+{
+  "computation": "spectral-predictor-no-fit",
+  "description": "38a: Strict-spectral binding predictor for D, T, \u00b3He, \u2074He using the new upstream structural propositions: knot-factor-amphicheiral, knot-factor-shell-closed, pauli-factor-wedderburn, gravity-spectral-prefactor.  NO per-isotope fitting.  Tests whether the framework's spectral derivations close binding directly.",
+  "computedAt": "2026-04-26T00:32:12.158555+00:00",
+  "calibrations": {
+    "m_e": 0.51099895,
+    "q_0": 1.1099785955541805,
+    "m_p (anchor)": 938.27208816
+  },
+  "structural_propositions_used": [
+    "prop:knot-factor-shell-closed (\u2074He: a_K = 1 exact)",
+    "prop:knot-factor-amphicheiral (\u00b3H, \u00b3He: a_K = 1 - h\u00b2)",
+    "prop:pauli-factor-wedderburn (F_Pauli = \u03c7_alt/\u03c7_sym)",
+    "prop:gravity-spectral-prefactor (Term 7 prefactor m_e \u00b7 8G)"
+  ],
+  "results": [
+    {
+      "iso": "D",
+      "A": 2,
+      "Z": 1,
+      "N": 1,
+      "B_AME": 2.22456612,
+      "K_assign": "6_2",
+      "rho_F_factor": 1,
+      "a_K": null,
+      "a_K_rule": "general",
+      "F_Pauli": -0.9999999999999996,
+      "Vol_term": 2.2488207937687203,
+      "aK_term": 0.0,
+      "Pauli_term": -0.5109989499999997,
+      "B_pred": 1.7378218437687205,
+      "err_pct": -21.880413976244476
+    },
+    {
+      "iso": "T",
+      "A": 3,
+      "Z": 1,
+      "N": 2,
+      "B_AME": 8.481798,
+      "K_assign": "8_11",
+      "rho_F_factor": 2,
+      "a_K": -0.2591237541724585,
+      "a_K_rule": "amphicheiral_via_4_1",
+      "F_Pauli": -1.2320524825884294,
+      "Vol_term": 8.468599682990005,
+      "aK_term": -0.13241196630218438,
+      "Pauli_term": -0.6295775249475807,
+      "B_pred": 7.70661019174024,
+      "err_pct": -9.13942784607414
+    },
+    {
+      "iso": "3He",
+      "A": 3,
+      "Z": 2,
+      "N": 1,
+      "B_AME": 7.718058,
+      "K_assign": "L6a4",
+      "rho_F_factor": 2,
+      "a_K": 0.17051220369875375,
+      "a_K_rule": "amphicheiral_via_4_1",
+      "F_Pauli": -0.8116537356420799,
+      "Vol_term": 7.4889193093528075,
+      "aK_term": 0.08713155705224927,
+      "Pauli_term": -0.41475420667668034,
+      "B_pred": 7.161296659728376,
+      "err_pct": -7.213749109835972
+    },
+    {
+      "iso": "4He",
+      "A": 4,
+      "Z": 2,
+      "N": 2,
+      "B_AME": 28.29566,
+      "K_assign": "4*L6a4",
+      "rho_F_factor": 2,
+      "a_K": 1.0,
+      "a_K_rule": "shell_closed_ZN_even",
+      "F_Pauli": 0.9999999999999974,
+      "Vol_term": 29.95567723741123,
+      "aK_term": 0.51099895,
+      "Pauli_term": 0.5109989499999986,
+      "B_pred": 30.97767513741123,
+      "err_pct": 9.478538890456086
+    },
+    {
+      "iso": "6Li",
+      "A": 6,
+      "B_AME": 31.99405,
+      "skipped": true
+    },
+    {
+      "iso": "7Li",
+      "A": 7,
+      "B_AME": 39.24452,
+      "skipped": true
+    }
+  ]
+}

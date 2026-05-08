@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: library / no own witness output; sympy used internally by callers.
 """
 Canonical Jones-Markov trace for H_n(q) elements.
 
@@ -44,8 +45,47 @@ import sympy as sp
 from hecke_symbolic import q, HA as H_SYMB, z_markov as Z_SYMB
 
 
+# Manual cache so we can pass depth THROUGH to _tr_M_word_impl
+# (preserving the recursion-depth guard) while keeping depth OUT of
+# the cache key (the result depends only on (word, n, z, h, max_depth)).
+_TR_M_WORD_CACHE: dict = {}
+
+
 def tr_M_word(word: tuple, n: int, z, h, *,
                depth: int = 0, max_depth: int = 200):
+    """See _tr_M_word_impl.  Memoized when (z, h) are hashable (typical
+    symbolic / numeric usage); falls back to direct call when they are
+    not (e.g. mutable mpf wrappers).
+
+    Many subwords repeat across the recursion tree at H_n with multiple
+    top-generator occurrences, so caching collapses the worst-case
+    2^(n-1) branching factor to polynomial in distinct (word, n) pairs.
+
+    The recursion-depth guard is preserved: ``depth`` is propagated
+    through the cached path to ``_tr_M_word_impl``, while the cache
+    key intentionally excludes ``depth`` (the result of tr_M is
+    depth-independent).
+    """
+    if depth > max_depth:
+        raise RecursionError(
+            f"tr_M recursion too deep: word={word}, n={n}")
+    word_t = tuple(word)
+    try:
+        key = (word_t, n, z, h, max_depth)
+        if key in _TR_M_WORD_CACHE:
+            return _TR_M_WORD_CACHE[key]
+    except TypeError:
+        # z or h unhashable — bypass cache entirely.
+        return _tr_M_word_impl(word_t, n, z, h,
+                                depth=depth, max_depth=max_depth)
+    result = _tr_M_word_impl(word_t, n, z, h,
+                              depth=depth, max_depth=max_depth)
+    _TR_M_WORD_CACHE[key] = result
+    return result
+
+
+def _tr_M_word_impl(word: tuple, n: int, z, h, *,
+                     depth: int = 0, max_depth: int = 200):
     """Canonical Markov trace of a Hecke word in H_n(q).
 
     word: tuple of non-negative ints (generator indices σ_i).
@@ -143,7 +183,8 @@ def tr_M_word(word: tuple, n: int, z, h, *,
 
 
 def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
-                  ocneanu_fallback: bool = True):
+                  ocneanu_fallback: bool = True,
+                  simplify: bool = True):
     """Canonical Markov trace of a SymbolicHeckeElement.
 
     Uses the recursive Markov-axiom reduction tr_M_word.  For braid
@@ -154,6 +195,16 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
     computes the same canonical trace via ω-weighted seminormal
     character sum.  Set ``ocneanu_fallback=False`` to keep the
     original NotImplementedError behaviour.
+
+    ``simplify`` (default True for back-compat): apply ``sp.simplify``
+    to the aggregated total before returning.  For elements with
+    many terms this dominates the runtime — at A=3 (³He, 128 reduced
+    terms, ~5000 sympy ops) the simplify step exceeds 30 minutes
+    while the aggregation itself takes 60 ms.  Pass ``simplify=False``
+    to return the unsimplified total; numerical evaluation
+    (``.subs(q, q₀).evalf(...)``) is unaffected by simplification.
+    The Markov-peel production path
+    (`markov_peel.tr_M_atomic`) opts out of simplification.
     """
     total = sp.Integer(0)
     fallback_terms = {}
@@ -191,8 +242,9 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
             num = canonical_markov_trace_via_ocneanu(sub_elem, n,
                                                         q_val=float(_Q0))
             total += num
-    return sp.simplify(total) if isinstance(total, sp.Basic) \
-            else total
+    if simplify and isinstance(total, sp.Basic):
+        return sp.simplify(total)
+    return total
 
 
 # ── Prop table sanity ───────────────────────────────────────────

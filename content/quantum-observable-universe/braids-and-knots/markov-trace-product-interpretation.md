@@ -36,7 +36,7 @@ bounded by $\sum_i (2k_i + 1) \leq (n-1)(n+1) = n^2 - 1$.
 $$
   \mathbb{Z}[B_n]
   \xrightarrow{\text{Hecke quotient}}
-  H_n(q)
+  H_n(R, q)
   \xrightarrow{\text{chain reduction}}
   \prod_{i} (a_i \sigma_i + b_i)
   \xrightarrow{\text{Markov trace}}

@@ -8,7 +8,6 @@ export default theorem({
   },
   uses: [
     "def:unit-particle-state",
-    "def:frobenius-hopf-substrate",
     "def:rigid-dualizing-complex",
   ],
   tags: [

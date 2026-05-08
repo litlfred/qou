@@ -6,11 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalReeb.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-reeb",
-    "thm:categorical-reeb-exists",
-    "def:weight-decomposition",
-  ],
+  uses: ["thm:categorical-reeb-exists"],
   proofs: ["prf:categorical-reeb-unique"],
   tags: ["uniqueness", "reeb", "derivation"],
 });

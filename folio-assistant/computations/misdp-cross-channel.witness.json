@@ -1,7 +1,7 @@
 {
   "computation": "misdp-cross-channel",
   "description": "Mixed-integer SDP for quadratic cross-term z\u00b2\u00b7\u03a6_q(|V\u0302_i V\u0302_j|). Branch-and-bound with continuous SDP lower bound at each node; best-first search; incumbent pruning; most-fractional-variable branching. Replaces the previous single-node continuous-rounding stub.",
-  "timestamp": "2026-04-18T00:48:56.999693+00:00",
+  "computedAt": "2026-04-18T00:48:56.999693+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "z_squared": 0.2493207959794241
@@ -182,5 +182,7 @@
       "max_nodes": 4096,
       "hit_node_limit": false
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -18,10 +18,4 @@ export default remark({
     "sign-pattern",
     "computational-witness",
   ],
-  uses: [
-    "prop:nuclear-groebner-reduction",
-    "def:categorical-neutron",
-    "def:categorical-proton",
-    "def:color-tube-fibers",
-  ],
 });

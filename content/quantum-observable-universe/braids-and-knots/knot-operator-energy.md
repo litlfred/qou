@@ -1,5 +1,5 @@
 **Definition.**
-*Let $H_n(q)$ be the Hecke algebra at substrate parameter $q$.
+*Let $H_n(R, q)$ be the Hecke algebra at substrate parameter $q$.
 For each Wedderburn block indexed by a partition $\lambda \vdash k$
 ($k = 2, \ldots, k_{\max}(K, q)$, where $k_{\max}(K, q)$ is the
 per-atom truncation determined by the interaction-strand
@@ -11,7 +11,7 @@ value of its LP-dual shadow price
 $$
   E(\lambda, q)
   \;:=\;
-  \bigl| y_\lambda(q) \bigr|
+  \bigl| u_\lambda(q) \bigr|
   \;=\;
   \left|
     \frac{w_\lambda(q)}{d_\lambda(q)}

@@ -1,6 +1,8 @@
 **Proposition (compound β-decay calibration across magic shells).**
-*Let $E_0^{(2)} = 0.782$ MeV be the free-neutron β-decay Q-value (the
-single archimedean calibration constant at level 2).  For each magic
+*Let $E_0^{(2)} = Q_\beta = 0.782$ MeV be the free-neutron β-decay
+Q-value — the **$H^2$ calibration** of the
+[three-calibration discipline](#prop:three-calibration-discipline).
+For each magic
 $A_{\mathrm{magic}} \in \{2, 8, 20, 28, 50, 82, 126\}$, the
 shell-binding target $y_{\mathrm{target}}(A_{\mathrm{magic}})$ is
 **derivable**, not independently calibrated, from the cumulative
@@ -80,10 +82,10 @@ $$
 
 | $A_{\mathrm{magic}}$ | $y^{\mathrm{naïve}}$ | $B/(A \cdot m_p)$ (target) | ratio |
 |:---:|:---:|:---:|:---:|
-| 2 | $1.27 \times 10^{-5}$ | $7.54 \times 10^{-3}$ (⁴He) | $1.7 \times 10^{-3}$ |
-| 8 | $2.67 \times 10^{-5}$ | $8.50 \times 10^{-3}$ (¹⁶O) | $3.1 \times 10^{-3}$ |
-| 20 | $8.93 \times 10^{-5}$ | $9.11 \times 10^{-3}$ (⁴⁰Ca) | $9.8 \times 10^{-3}$ |
-| 28 | $1.80 \times 10^{-4}$ | $9.21 \times 10^{-3}$ (⁵⁶Ni) | $1.95 \times 10^{-2}$ |
+| 2 | $1.27 \times 10^{-5}$ | $7.54 \times 10^{-3}$ (${}^{4}\mathrm{He}$) | $1.7 \times 10^{-3}$ |
+| 8 | $2.67 \times 10^{-5}$ | $8.50 \times 10^{-3}$ (${}^{16}\mathrm{O}$) | $3.1 \times 10^{-3}$ |
+| 20 | $8.93 \times 10^{-5}$ | $9.11 \times 10^{-3}$ (${}^{40}\mathrm{Ca}$) | $9.8 \times 10^{-3}$ |
+| 28 | $1.80 \times 10^{-4}$ | $9.21 \times 10^{-3}$ (${}^{56}\mathrm{Ni}$) | $1.95 \times 10^{-2}$ |
 
 *The naïve ratios are all $\ll 1$, confirming that $Q_\beta$ directly
 **does not give** $y_{\mathrm{target}}$ — the missing piece is the
@@ -136,9 +138,9 @@ categorical level-3 shadow prices — no free parameters beyond $E_0$.*
 
 1. *Shell $y_{\mathrm{target}}$ values are not independently calibrated;
    they follow from β-decay Q-values and level-3 shadow prices.*
-2. *The framework remains **single-calibration** at $E_0 = 0.782$ MeV.*
-3. *Predictions for all magic-anchor binding energies (⁴He, ¹⁶O,
-   ⁴⁰Ca, ⁵⁶Ni, ²⁰⁸Pb) are parameter-free given the β-decay table.*
+2. *The shell sector introduces **no new calibration**: $E_0 = Q_\beta$ is the $H^2$ input of the [three-calibration discipline](#prop:three-calibration-discipline) (alongside $H^0$ = $m_e$ and $H^1$ = $m_\mu/m_e$); shell binding is derived from chain Q-values and level-3 shadow prices.*
+3. *Predictions for all magic-anchor binding energies (${}^{4}\mathrm{He}$, ${}^{16}\mathrm{O}$,
+   ${}^{40}\mathrm{Ca}$, ${}^{56}\mathrm{Ni}$, ${}^{208}\mathrm{Pb}$) are parameter-free given the β-decay table.*
 
 **Open:** *full implementation of the chain-Q-value derivation,
 including correct separation of non-magic vs magic contributions at

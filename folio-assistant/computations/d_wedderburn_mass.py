@@ -51,17 +51,16 @@ if __name__ == "__main__":
 from q_parameter import (
     Q as Q0_FLOAT, HBAR_Q, HBAR_Q_SQ,
     VOL_FIGURE_EIGHT, MASS_RATIO_MU_E,
+    Q_MP as Q0_MP, HBAR_Q_MP, HBAR_Q_SQ_MP, Q_INV_MP as Q_INV, HA_MP,
 )
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 # ── Substrate at mpmath precision ─────────────────────────────
-_VOL_FIG8 = mp.mpf(str(VOL_FIGURE_EIGHT))
-_MU_E = mp.mpf(str(MASS_RATIO_MU_E))
-HBAR_Q_SQ_MP = _VOL_FIG8 / _MU_E
-HBAR_Q_MP = mp.sqrt(HBAR_Q_SQ_MP)
-Q0_MP = mp.mpf(1) / (mp.mpf(1) - HBAR_Q_MP)
-Q_INV = mp.mpf(1) / Q0_MP
-HA_MP = Q0_MP - Q_INV                 # h = q - q⁻¹
+# Use the high-precision globals from q_parameter (computed via
+# Vol(4_1) = 2 Cl_2(π/3) at 50 dps).  Previously this block went
+# `mp.mpf(str(VOL_FIGURE_EIGHT)) / mp.mpf(str(MASS_RATIO_MU_E))`,
+# which only carried f64 (~16 dps) through and printed 40 dps of
+# trailing noise in the witness JSON.
 Z_MP = mp.mpf(1) / (mp.sqrt(Q0_MP) + mp.mpf(1) / mp.sqrt(Q0_MP))
 
 # ── q-integer brackets (symmetric Laurent) ────────────────────

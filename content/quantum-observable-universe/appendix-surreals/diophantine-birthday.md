@@ -94,7 +94,7 @@ object: **how efficiently rationals approach a real**.
    transcendentals) at stabilising finite birthdays.
 
 4. **QOU substrate parameter $q_0 \approx 1.1097$**: the
-   conjectured value (not currently known to be algebraic or
+   conjectured value (not known to be algebraic or
    transcendental) has a specific birthday trajectory. If
    computable, this would *decide* its algebraic status.
 

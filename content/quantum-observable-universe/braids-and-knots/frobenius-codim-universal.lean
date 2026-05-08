@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.RepresentationTheory.FDRep
 
 /-!
@@ -82,6 +83,51 @@ theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
   intro λ _
   exact codim_block_contribution λ
 
+/-- **τ-invariance of the Frobenius co-Casimir trace.**
+
+    The Markov-trace identity `τ(C_{dim_q}) = Σ_λ 1/dim_q(λ)` does
+    NOT depend on the specific Frobenius pairing τ used to construct
+    `C_{dim_q}`.  In particular, on `H_n(q)` the two natural choices
+
+      - **Plancherel-A**:  `τ_P(p_λ) = dim_q(λ)·d_λ / [n]_q!`
+      - **Wenzl-Schur**:   `τ_W(p_λ) = y_λ`
+
+    give different `C_{dim_q}` elements but the **same** trace value
+    `Σ_λ 1/dim_q(λ)`, because the per-block contribution
+    `c_λ · τ(p_λ) = [1/(dim_q(λ)·τ(p_λ))] · τ(p_λ) = 1/dim_q(λ)`
+    cancels τ.
+
+    Computational verification:
+    `folio-assistant/computations/probe_term4_conventions.py`.
+
+    Consequence: the Plancherel-vs-Wenzl-Schur convention disagreement
+    affecting `tr_M(T_w)` (Term 1 of the unified mass formula) does
+    NOT propagate into Term 4.  Term 4 is convention-rigid.
+
+    Ref: [manuscript] `thm:frobenius-codim-universal`,
+    `audit:plancherel-vs-wenzl-schur-markov-trace`. -/
+/-- Helper: `(1 / (a * b)) * b = 1 / a` when both are non-zero.
+    Used in `frobenius_codim_tau_invariant` to show the per-block
+    contribution telescopes to `1 / dim_q` independent of τ. -/
+private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (_ha : a ≠ 0) (hb : b ≠ 0) :
+    (1 / (a * b)) * b = 1 / a := by
+  rw [div_mul_eq_mul_div, one_mul, mul_div_assoc, div_self hb, mul_one]
+
+theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
+    (dim_q : Λ → ℝ) (h_dim : ∀ λ, dim_q λ ≠ 0)
+    (τ₁ τ₂ : Λ → ℝ) (hτ₁ : ∀ λ, τ₁ λ ≠ 0) (hτ₂ : ∀ λ, τ₂ λ ≠ 0) :
+    -- Both Frobenius pairings give the same C_{dim_q} trace value.
+    ∑ λ, (1 / (dim_q λ * τ₁ λ)) * τ₁ λ
+      = ∑ λ, (1 / (dim_q λ * τ₂ λ)) * τ₂ λ := by
+  -- Per-block contribution telescopes to 1 / dim_q λ for both τ₁
+  -- and τ₂, independent of the τ choice.  Proved via explicit
+  -- lemma `one_div_mul_eq_div_of_ne` instead of `field_simp`
+  -- (which is fragile across Mathlib bumps).
+  apply Finset.sum_congr rfl
+  intro λ _
+  rw [one_div_mul_eq_div_of_ne (h_dim λ) (hτ₁ λ),
+      one_div_mul_eq_div_of_ne (h_dim λ) (hτ₂ λ)]
+
 /-- Specialisation to H_n(q): `Λ = partitions of n`, `A = H_n(q)`,
     `dim_q` = q-hook-length dimension, `τ` = Markov trace.
     The trace of the Frobenius co-dim element is `Σ_{λ⊢n} 1/dim_q(λ)`.
@@ -90,12 +136,212 @@ theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
     proton tower residual to 0.14% at `q_0 ≈ 1.11`.
 
     Ref: [manuscript] `prop:partition-sum-proton-residual`. -/
-theorem hecke_n3_frobenius_codim :
-    -- Σ_{λ⊢3} 1/dim_q(λ) = 2 + 1/[2]_q
-    ∃ (q two_q : ℝ) (_: 0 < q),
-      two_q = q + 1 / q ∧
-      (2 : ℝ) + 1 / two_q = 1 + 1 / two_q + 1 := by
-  refine ⟨1, 2, by norm_num, by norm_num, ?_⟩
+
+/-- The q-hook-length dimensions of the three partitions of n=3.
+    Indexed by `Fin 3`:
+      0 ↦ λ = (3)     (symmetric)        : dim_q = 1
+      1 ↦ λ = (2,1)   (mixed)            : dim_q = [2]_q = q + q⁻¹
+      2 ↦ λ = (1,1,1) (alternating)      : dim_q = 1
+
+    Computed in `folio-assistant/computations/frobenius_partition_sum.py`
+    via the q-hook-length formula `dim_q(λ) = [n]_q!/H_q(λ)` with
+    H_q((3)) = [3]_q[2]_q[1]_q, H_q((2,1)) = [3]_q·[1]_q²,
+    H_q((1,1,1)) = [3]_q[2]_q[1]_q. -/
+noncomputable def heckeH3DimQ (q : ℝ) (i : Fin 3) : ℝ :=
+  if i.val = 1 then q + q⁻¹ else 1
+
+@[simp] theorem heckeH3DimQ_zero (q : ℝ) : heckeH3DimQ q 0 = 1 := by
+  unfold heckeH3DimQ; simp
+
+@[simp] theorem heckeH3DimQ_one  (q : ℝ) : heckeH3DimQ q 1 = q + q⁻¹ := by
+  unfold heckeH3DimQ; simp
+
+@[simp] theorem heckeH3DimQ_two  (q : ℝ) : heckeH3DimQ q 2 = 1 := by
+  unfold heckeH3DimQ
+  have : ((2 : Fin 3).val) = 2 := rfl
+  simp [this]
+
+/-- **H_3 specialisation: τ(C_dim_q) = Σ_{λ⊢3} 1/dim_q(λ) = 2 + 1/[2]_q.**
+
+    The three partitions of 3 are `(3)`, `(2,1)`, `(1,1,1)`, with
+    q-hook-length dimensions `1`, `[2]_q = q + q⁻¹`, `1`.  Summing
+    `1/dim_q(λ)` over them gives `1/1 + 1/[2]_q + 1/1 = 2 + 1/[2]_q`.
+
+    Numerically at `q_0 ≈ 1.11`: `[2]_q ≈ 2.0107`, so
+    `2 + 1/[2]_q ≈ 2.4973`.  Multiplied by `m_e ≈ 0.511 MeV` this
+    gives the proton tower residual `≈ 1.276 MeV`, matching the
+    observed `1.278 MeV` to `0.14%`.
+
+    This **replaces** the previous tautological statement (which only
+    proved `2 + 1/two_q = 1 + 1/two_q + 1`, a trivial real identity);
+    here we actually evaluate the partition sum at the three `Fin 3`
+    indices and conclude.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual`,
+    `folio-assistant/computations/frobenius_partition_sum.py`. -/
+theorem hecke_n3_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 3, 1 / heckeH3DimQ q i = 2 + 1 / (q + q⁻¹) := by
+  rw [Fin.sum_univ_three]
+  simp
+  ring
+
+/-- The q-hook-length dimensions of the two partitions of n=2.
+    Indexed by `Fin 2`:
+      0 ↦ λ = (2)    (symmetric)    : dim_q = 1
+      1 ↦ λ = (1,1)  (alternating)  : dim_q = 1
+
+    Both partitions of 2 are self-conjugate-dual at the Frobenius
+    pairing level and have hook-product `[2]_q[1]_q = [2]_q`, so
+    `dim_q = [2]_q!/[2]_q = [1]_q = 1` for each. -/
+noncomputable def heckeH2DimQ (_q : ℝ) (_i : Fin 2) : ℝ := 1
+
+@[simp] theorem heckeH2DimQ_eq_one (q : ℝ) (i : Fin 2) :
+    heckeH2DimQ q i = 1 := rfl
+
+/-- **H_2 specialisation: τ(C_dim_q) = Σ_{λ⊢2} 1/dim_q(λ) = 2.**
+
+    The two partitions of 2 are `(2)` and `(1,1)`, both with
+    q-hook-length dimension `1`.  The sum is `1/1 + 1/1 = 2`,
+    saturating the self-dual lower bound `gb_filtration_self_dual_bound`.
+
+    This is the **base case** of the partition-sum identity used in
+    the unified mass formula.  After the partial-`def` closure of
+    `frobeniusCoCasimirTrace` in `knot-mass-formula-unified.lean`,
+    the n=2 value is **definitionally explicit** — `match n with | 2
+    => 2 | …` unfolds by `rfl`, so no opaque-to-explicit bridge is
+    needed (the previous `frobenius_codim_trace_n2` axiom is now a
+    `rfl` theorem).  This explicit theorem cross-validates that
+    chosen def value via Fin-enumeration of the two partitions of 2.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=2 base). -/
+theorem hecke_n2_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 2, 1 / heckeH2DimQ q i = 2 := by
+  rw [Fin.sum_univ_two]
+  simp
+
+/-- The q-hook-length dimensions of the five partitions of n=4.
+    Indexed by `Fin 5`:
+      0 ↦ λ = (4)        : dim_q = 1                     (symmetric)
+      1 ↦ λ = (3,1)      : dim_q = [3]_q = q²+1+q⁻²
+      2 ↦ λ = (2,2)      : dim_q = [4]_q/[2]_q = q²+q⁻²
+      3 ↦ λ = (2,1,1)    : dim_q = [3]_q                 (transpose of (3,1))
+      4 ↦ λ = (1,1,1,1)  : dim_q = 1                     (alternating)
+
+    Computed via the q-hook-length formula
+    `dim_q(λ) = [n]_q! / ∏_{x ∈ λ} [h_λ(x)]_q`:
+      H_q((4))     = [4]_q[3]_q[2]_q[1]_q   ⇒ dim_q = 1
+      H_q((3,1))   = [4]_q[2]_q[1]_q²        ⇒ dim_q = [3]_q
+      H_q((2,2))   = [3]_q[2]_q²[1]_q        ⇒ dim_q = [4]_q/[2]_q = q²+q⁻²
+      H_q((2,1,1)) = [4]_q[2]_q[1]_q²        ⇒ dim_q = [3]_q
+      H_q((1,1,1,1)) = [4]_q[3]_q[2]_q[1]_q  ⇒ dim_q = 1
+
+    The simplification `[4]_q/[2]_q = q²+q⁻²` uses the symmetric
+    q-number factorisation `[4]_q = q³+q+q⁻¹+q⁻³ = (q+q⁻¹)(q²+q⁻²)`. -/
+noncomputable def heckeH4DimQ (q : ℝ) (i : Fin 5) : ℝ :=
+  match i with
+  | ⟨0, _⟩ => 1
+  | ⟨1, _⟩ => q ^ 2 + 1 + (q ^ 2)⁻¹
+  | ⟨2, _⟩ => q ^ 2 + (q ^ 2)⁻¹
+  | ⟨3, _⟩ => q ^ 2 + 1 + (q ^ 2)⁻¹
+  | ⟨4, _⟩ => 1
+  | ⟨_+5, h⟩ => absurd h (by omega)
+
+@[simp] theorem heckeH4DimQ_zero (q : ℝ) : heckeH4DimQ q 0 = 1 := rfl
+@[simp] theorem heckeH4DimQ_one  (q : ℝ) :
+    heckeH4DimQ q 1 = q ^ 2 + 1 + (q ^ 2)⁻¹ := rfl
+@[simp] theorem heckeH4DimQ_two  (q : ℝ) :
+    heckeH4DimQ q 2 = q ^ 2 + (q ^ 2)⁻¹ := rfl
+@[simp] theorem heckeH4DimQ_three (q : ℝ) :
+    heckeH4DimQ q 3 = q ^ 2 + 1 + (q ^ 2)⁻¹ := rfl
+@[simp] theorem heckeH4DimQ_four (q : ℝ) :
+    heckeH4DimQ q 4 = 1 := rfl
+
+/-- **H_4 specialisation: τ(C_dim_q) = Σ_{λ⊢4} 1/dim_q(λ) = 2 + 2/[3]_q + 1/(q²+q⁻²).**
+
+    The five partitions of 4 are `(4)`, `(3,1)`, `(2,2)`, `(2,1,1)`,
+    `(1,1,1,1)`, with q-hook-length dimensions `1`, `[3]_q`,
+    `[4]_q/[2]_q = q²+q⁻²`, `[3]_q`, `1`.  Summing `1/dim_q(λ)`:
+      `1 + 1/[3]_q + 1/(q²+q⁻²) + 1/[3]_q + 1
+        = 2 + 2/(q²+1+q⁻²) + 1/(q²+q⁻²)`.
+
+    The conjugate symmetry `(3,1) ↔ (2,1,1)` gives equal contributions
+    (both `1/[3]_q`), and the self-conjugate `(2,2)` contributes the
+    odd `1/(q²+q⁻²)` term.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=4 base). -/
+theorem hecke_n4_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 5, 1 / heckeH4DimQ q i
+      = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹) := by
+  rw [Fin.sum_univ_five]
+  simp
+  ring
+
+/-- The q-hook-length dimensions of the seven partitions of n=5.
+    Indexed by `Fin 7` (with `p(5) = 7`):
+      0 ↦ λ = (5)         : dim_q = 1
+      1 ↦ λ = (4,1)       : dim_q = [4]_q = q³+q+q⁻¹+q⁻³
+      2 ↦ λ = (3,2)       : dim_q = [5]_q = q⁴+q²+1+q⁻²+q⁻⁴
+      3 ↦ λ = (3,1,1)     : dim_q = [4]_q·[3]_q/[2]_q
+                                  = (q²+q⁻²)·[3]_q
+      4 ↦ λ = (2,2,1)     : dim_q = [5]_q (transpose of (3,2))
+      5 ↦ λ = (2,1,1,1)   : dim_q = [4]_q (transpose of (4,1))
+      6 ↦ λ = (1ⁿ)        : dim_q = 1
+
+    Computed via the q-hook-length formula:
+      H_q((5))     = [5]_q!  ⇒ dim_q = 1
+      H_q((4,1))   = [5]_q[3]_q[2]_q[1]_q²  ⇒ dim_q = [4]_q
+      H_q((3,2))   = [4]_q[3]_q[2]_q[1]_q²  ⇒ dim_q = [5]_q
+      H_q((3,1,1)) = [5]_q[2]_q²[1]_q²       ⇒ dim_q = [4]_q[3]_q/[2]_q
+                                            = (q²+q⁻²)·[3]_q
+      (2,2,1), (2,1,1,1), (1ⁿ) by transpose-conjugation.
+
+    The simplification `[4]_q/[2]_q = q²+q⁻²` was already used at n=4. -/
+noncomputable def heckeH5DimQ (q : ℝ) (i : Fin 7) : ℝ :=
+  match i with
+  | ⟨0, _⟩ => 1
+  | ⟨1, _⟩ => q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹
+  | ⟨2, _⟩ => q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹
+  | ⟨3, _⟩ => (q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)
+  | ⟨4, _⟩ => q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹
+  | ⟨5, _⟩ => q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹
+  | ⟨6, _⟩ => 1
+  | ⟨_+7, h⟩ => absurd h (by omega)
+
+@[simp] theorem heckeH5DimQ_zero (q : ℝ) : heckeH5DimQ q 0 = 1 := rfl
+@[simp] theorem heckeH5DimQ_one  (q : ℝ) :
+    heckeH5DimQ q 1 = q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_two  (q : ℝ) :
+    heckeH5DimQ q 2 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_three (q : ℝ) :
+    heckeH5DimQ q 3 = (q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH5DimQ_four (q : ℝ) :
+    heckeH5DimQ q 4 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_five (q : ℝ) :
+    heckeH5DimQ q 5 = q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ := rfl
+@[simp] theorem heckeH5DimQ_six (q : ℝ) :
+    heckeH5DimQ q 6 = 1 := rfl
+
+/-- **H_5 specialisation: τ(C_dim_q) = Σ_{λ⊢5} 1/dim_q(λ)
+    = 2 + 2/[4]_q + 2/[5]_q + 1/((q²+q⁻²)·[3]_q).**
+
+    The seven partitions of 5 are `(5)`, `(4,1)`, `(3,2)`, `(3,1,1)`,
+    `(2,2,1)`, `(2,1,1,1)`, `(1ⁿ)`.  Conjugate symmetry pairs
+    `(4,1) ↔ (2,1,1,1)` and `(3,2) ↔ (2,2,1)` give equal contributions
+    (`1/[4]_q` and `1/[5]_q` respectively).  The two `(5)` and `(1ⁿ)`
+    blocks each contribute `1/1 = 1`.  The self-conjugate `(3,1,1)`
+    sits alone at `1/((q²+q⁻²)·[3]_q)`.
+
+    This **closes the n = 5 case of S3** (combined with the partial
+    `def` of `frobeniusCoCasimirTrace` in `knot-mass-formula-unified`).
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=5 base). -/
+theorem hecke_n5_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 7, 1 / heckeH5DimQ q i
+      = 2 + 2 / (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹)
+          + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
+          + 1 / ((q ^ 2 + (q ^ 2)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)) := by
+  rw [Fin.sum_univ_seven]
+  simp
   ring
 
 /-- **Self-dual lower bound on the Frobenius co-Casimir trace.**
@@ -136,6 +382,59 @@ theorem gb_filtration_self_dual_bound
   have h_rest_nn : (0 : ℝ) ≤
       ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ :=
     Finset.sum_nonneg (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
+  linarith
+
+/-- **Strict lower bound on the Frobenius co-Casimir trace** (general).
+
+    Strengthens `gb_filtration_self_dual_bound` to a *strict* inequality
+    `2 < Σ_λ 1/dim_q(λ)` whenever there exists a *third* block `t`
+    distinct from the two dim_q=1 blocks `s, a`.
+
+    This applies to `H_n(q)` for all `n ≥ 3`: the symmetric `(n)` and
+    alternating `(1ⁿ)` partitions are always dim_q=1 (s, a), and any
+    `n ≥ 3` admits a non-trivial third partition (`(2,1)` for n=3,
+    `(3,1)`, `(2,2)`, `(2,1,1)` for n=4, …) — these always have
+    `dim_q > 0` for `q > 0` (positivity of q-hook products), giving
+    a strict positive contribution beyond the saturating `2`.
+
+    No partition machinery / Mathlib q-Wedderburn needed: this is
+    a pure linear-algebra identity on a `Fintype Λ` with a
+    `SemisimpleFrobeniusAlgebra` instance.
+
+    Proof: same split as the non-strict version, but the residual
+    sum over `(univ.erase s).erase a` is shown to be **strictly
+    positive** because `t` is in that set and `1/frobDimQ t > 0`.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (general
+    n ≥ 3 strict bound). -/
+theorem gb_filtration_strict_self_dual_bound
+    {Λ : Type*} [Fintype Λ] [SemisimpleFrobeniusAlgebra Λ]
+    (s a t : Λ) (hsa : s ≠ a) (hst : s ≠ t) (hat : a ≠ t)
+    (h_dim_s : frobDimQ s = 1) (h_dim_a : frobDimQ a = 1)
+    (h_pos : ∀ λ, 0 < frobDimQ λ) :
+    (2 : ℝ) < ∑ λ, 1 / frobDimQ λ := by
+  have h_two : (1 : ℝ) / frobDimQ s + 1 / frobDimQ a = 2 := by
+    rw [h_dim_s, h_dim_a]; norm_num
+  have ht_mem : t ∈ (Finset.univ.erase s).erase a :=
+    Finset.mem_erase.mpr ⟨hat.symm,
+      Finset.mem_erase.mpr ⟨hst.symm, Finset.mem_univ t⟩⟩
+  have hSplit :
+      ∑ λ, 1 / frobDimQ λ
+        = 1 / frobDimQ s + 1 / frobDimQ a
+          + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ := by
+    rw [show ∑ λ, 1 / frobDimQ λ
+          = 1 / frobDimQ s + ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ from
+        (Finset.sum_erase_add _ _ (Finset.mem_univ s)).symm]
+    rw [show ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ
+          = 1 / frobDimQ a + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ from
+        (Finset.sum_erase_add _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
+    ring
+  rw [hSplit, h_two]
+  -- Residual sum is strictly positive: it contains 1/frobDimQ t > 0.
+  have h_rest_pos : (0 : ℝ) <
+      ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ :=
+    Finset.sum_pos' (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
+      ⟨t, ht_mem, one_div_pos.mpr (h_pos t)⟩
   linarith
 
 end QOU.BraidKnot

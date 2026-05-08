@@ -1,7 +1,7 @@
 **Definition.**
 Let $\mathcal{E}_q$ be the [Descartes elliptic curve](#prop:descartes-elliptic-curve)
 with Weierstrass coefficients $p(q)$, $r(q)$, and let $\Lambda_q \subset \mathbb{C}$
-be the period lattice of $\mathcal{E}_q$.  The **Weierstrass projection** is the
+be the period lattice of $\mathcal{E}_q$.  The **:defterm[Weierstrass projection]{#weierstrass-projection}** is the
 meromorphic function $\wp_q : \mathbb{C}/\Lambda_q \to \mathbb{P}^1$ defined by
 
 $$

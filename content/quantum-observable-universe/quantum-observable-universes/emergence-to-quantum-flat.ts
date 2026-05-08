@@ -9,4 +9,5 @@ export default proposition({
   tags: ["tannaka-krein", "2-group", "instanton"],
   uses: ["rem:self-dual-2group"],
   proofs: ["prf:emergence-to-quantum-flat"],
+  defines: ["quantum-flatness"],
 });

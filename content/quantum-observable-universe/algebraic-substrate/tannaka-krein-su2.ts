@@ -9,7 +9,6 @@ export default example({
   uses: [
     "thm:tannaka-krein-isomorphism",
     "ex:substrate-parameter-su2",
-    "def:frobenius-hopf-substrate",
     "ex:substrate-parameter-brings",
     "ex:categorical-reeb-brings",
   ],

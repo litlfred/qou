@@ -15,10 +15,10 @@ $$
 neighborhood of $q$".*
 
 **Continuity.**
-*Each shadow price $y_\lambda(q) = w_\lambda(q)/d_\lambda(q) -
+*Each shadow price $u_\lambda(q) = w_\lambda(q)/d_\lambda(q) -
 1/[k]_q!$ is a **rational function** of $q$ over the base ring,
 with denominator $[k]_q! \cdot d_\lambda(q)$.  On the generic
-locus $\{q : [k]_q! \cdot d_\lambda(q) \neq 0\}$, $y_\lambda$ is
+locus $\{q : [k]_q! \cdot d_\lambda(q) \neq 0\}$, $u_\lambda$ is
 continuous in $q$ (smooth in the $\mathbb{R}$ realisation,
 $p$-adic continuous in $\mathbb{Q}_p$, well-defined Zariski
 on $\mathbb{F}_p$).*
@@ -48,7 +48,7 @@ $$
     \mathcal{B}_{\lambda_1, \lambda_2}
   \;\cup\;
   \bigcup_\lambda
-    \{q : y_\lambda(q) = 0\},
+    \{q : u_\lambda(q) = 0\},
 $$
 
 *the union of pairwise-equality varieties and shadow-price-vanishing

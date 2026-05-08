@@ -6,11 +6,6 @@ export default proposition({
   lean: { ref: "qou:QOU.Hadron.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:hadron",
-    "def:crossing-energy",
-    "def:categorical-proton",
-  ],
   proofs: ["prf:hadron-exists"],
   tags: ["existence", "hadron"],
 });

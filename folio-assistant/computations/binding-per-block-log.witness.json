@@ -1,7 +1,7 @@
 {
   "computation": "binding-per-block-log",
   "description": "Paper-exact per-block log-form B(Z,N) = \u03a3_\u03bb w_\u03bb m_e \u03a3_i ln|\u03a6_q(V\u0302_i^\u03bb)| from prop:tower-binding-energy.  Uses the log-form of \u03a6_q which is well-defined past |V\u0302| = q via ln|1 \u2212 q^{-k}v| = ln|q^{-k}v \u2212 1| for q^{-k}v > 1 (the 'analytic continuation past the pole' in the paper).  QED correction (1 \u2212 \u03b1_EM/2) applied per prop:deuterium-derived-binding.",
-  "timestamp": "2026-04-24T00:56:59.453912+00:00",
+  "computedAt": "2026-04-24T00:56:59.453912+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "m_e_MeV": 0.51099895069,
@@ -2269,5 +2269,7 @@
       "K_order": 2,
       "eps_bound_MeV": 0.0004970507165153309
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

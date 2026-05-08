@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QHeatEquation.unique_solution",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-heat-equation",
-    "prop:q-heat-equation-exists",
-  ],
+  uses: ["prop:q-heat-equation-exists"],
   proofs: ["prf:q-heat-equation-unique"],
   tags: ["uniqueness", "q-heat-equation"],
 });

@@ -1,7 +1,7 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
-  label: "def:q-value-transition",
+  label: "def:Q-value-transition",
   title:
     "$\\mathcal{Q}_q$-Value as Categorical Action Difference",
   tags: [
@@ -18,7 +18,6 @@ export default definition({
   },
   uses: [
     "def:q-energy",
-    "prop:branching-qvalue-factorization",
     "thm:parity-regime-selection",
   ],
 });

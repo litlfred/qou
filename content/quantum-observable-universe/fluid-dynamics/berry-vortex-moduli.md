@@ -7,11 +7,11 @@ $$
   \mathcal{M}_{j,K}
   = 
   \bigl\{
-    \gamma \colon S^1 \to \mathcal{S}
+    \varrho \colon S^1 \to \mathcal{S}
      \big| 
-    \delta\mathcal{E}_q[\gamma] = 0,
-    \mathrm{type}(\gamma) = K,
-    \mathrm{level}(\gamma) = j
+    \delta\mathcal{E}_q[\varrho] = 0,
+    \mathrm{type}(\varrho) = K,
+    \mathrm{level}(\varrho) = j
   \bigr\}
   \big/ \mathcal{G},
 $$
@@ -25,18 +25,18 @@ orientation of the vortex filament.
 The $q$-Schrödinger equation restricted to states near the
 vortex ground state defines a line bundle
 $\mathcal{L} \to \mathcal{M}_{j,K}$ whose fibre at a vortex
-configuration $\gamma$ is the ground-state eigenspace of the
-linearised Hamiltonian around $\gamma$.  The **Berry connection**
+configuration $\varrho$ is the ground-state eigenspace of the
+linearised Hamiltonian around $\varrho$.  The **Berry connection**
 on this bundle is
 
 $$
   \mathcal{A}_{\mathrm{Berry}}
   = 
-  i\langle\psi_\gamma|d|\psi_\gamma\rangle,
+  i\langle\psi_\varrho|d|\psi_\varrho\rangle,
 $$
 
-where $|\psi_\gamma\rangle$ is the ground state at configuration
-$\gamma$ and $d$ is the exterior derivative on $\mathcal{M}_{j,K}$.
+where $|\psi_\varrho\rangle$ is the ground state at configuration
+$\varrho$ and $d$ is the exterior derivative on $\mathcal{M}_{j,K}$.
 
 **Berry curvature.**
 The curvature $\mathcal{F} = d\mathcal{A}_{\mathrm{Berry}}$

@@ -291,6 +291,35 @@ export const references: CSLData[] = [
     note: "Proves that skewed-Poisson structures on commutative formal groups integrate to non-commutative formal groups via Gr\u00f6bner-Shirshov deformations of distribution algebras; introduces the strong multiplicativity condition ensuring comultiplication is preserved under lifting from characteristic p to characteristic 0",
   }),
 
+  // ── Schrijver 1986 ────────────────────────────────────────────
+  ref({
+    id: "schrijver1986theory",
+    type: "book",
+    title: "Theory of Linear and Integer Programming",
+    author: [
+      { family: "Schrijver", given: "Alexander" },
+    ],
+    publisher: "Wiley",
+    issued: { "date-parts": [[1986]] },
+    "collection-title": "Wiley-Interscience Series in Discrete Mathematics and Optimization",
+    URL: "https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326",
+  }),
+
+  // ── Macdonald 1995 ────────────────────────────────────────────
+  ref({
+    id: "macdonald1995",
+    type: "book",
+    title: "Symmetric Functions and Hall Polynomials",
+    author: [
+      { family: "Macdonald", given: "I. G." },
+    ],
+    publisher: "Oxford University Press",
+    issued: { "date-parts": [[1995]] },
+    edition: "2",
+    "collection-title": "Oxford Mathematical Monographs",
+    URL: "https://global.oup.com/academic/product/symmetric-functions-and-hall-polynomials-9780198504504",
+  }),
+
   // ── Hazewinkel 1978 ───────────────────────────────────────────
   ref({
     id: "hazewinkel1978",
@@ -2485,6 +2514,35 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1948]] },
   }),
 
+  // ── Mostow 1968 (rigidity for hyperbolic manifolds) ───────────
+  ref({
+    id: "mostow1968",
+    type: "article-journal",
+    title:
+      "Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms",
+    author: [{ family: "Mostow", given: "George D." }],
+    "container-title":
+      "Publications mathématiques de l'IHÉS",
+    volume: "34",
+    page: "53-104",
+    issued: { "date-parts": [[1968]] },
+    URL: "https://www.numdam.org/item/PMIHES_1968__34__53_0/",
+  }),
+
+  // ── Gromov 1982 (Volume and bounded cohomology) ───────────────
+  ref({
+    id: "gromov1982",
+    type: "article-journal",
+    title: "Volume and bounded cohomology",
+    author: [{ family: "Gromov", given: "Mikhail" }],
+    "container-title":
+      "Publications mathématiques de l'IHÉS",
+    volume: "56",
+    page: "5-99",
+    issued: { "date-parts": [[1982]] },
+    URL: "https://www.numdam.org/item/PMIHES_1982__56__5_0/",
+  }),
+
   // ── Kashaev 1997 (Volume Conjecture) ──────────────────────────
   ref({
     id: "kashaev1997",
@@ -2783,6 +2841,237 @@ export const references: CSLData[] = [
       "motivic integration. Provides the change-of-variables " +
       "formula for blow-ups and the motivic measure on cylindrical " +
       "subsets of L(X).",
+  }),
+
+  // ── Mac Lane 1971 ─────────────────────────────────────────────
+  ref({
+    id: "maclane1971",
+    type: "book",
+    title: "Categories for the Working Mathematician",
+    author: [
+      { family: "Mac Lane", given: "Saunders" },
+    ],
+    publisher: "Springer",
+    issued: { "date-parts": [[1971]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": 5,
+    DOI: "10.1007/978-1-4757-4721-8",
+    URL: "https://doi.org/10.1007/978-1-4757-4721-8",
+  }),
+
+  // ── Bokut & Chen 2005 ─────────────────────────────────────────
+  ref({
+    id: "bokut2005",
+    type: "article-journal",
+    title: "Gröbner-Shirshov bases: Some new results",
+    author: [
+      { family: "Bokut", given: "L. A." },
+      { family: "Chen", given: "Yuqun" },
+    ],
+    "container-title":
+      "Advances in Algebra and Combinatorics: Proceedings of the Second International Congress in Algebra and Combinatorics",
+    publisher: "World Scientific",
+    issued: { "date-parts": [[2005]] },
+    page: "35-56",
+    DOI: "10.1142/9789812790019_0003",
+    URL: "https://doi.org/10.1142/9789812790019_0003",
+  }),
+
+  // ── Verlinde 2011 ─────────────────────────────────────────────
+  ref({
+    id: "verlinde2011",
+    type: "article-journal",
+    title: "On the origin of gravity and the laws of Newton",
+    author: [
+      { family: "Verlinde", given: "Erik P." },
+    ],
+    "container-title": "Journal of High Energy Physics",
+    issued: { "date-parts": [[2011]] },
+    volume: "2011",
+    issue: "4",
+    page: "29",
+    DOI: "10.1007/JHEP04(2011)029",
+    URL: "https://doi.org/10.1007/JHEP04(2011)029",
+  }),
+
+  // ── Rolfsen 1976 ──────────────────────────────────────────────
+  ref({
+    id: "rolfsen",
+    type: "book",
+    title: "Knots and Links",
+    author: [
+      { family: "Rolfsen", given: "Dale" },
+    ],
+    publisher: "Publish or Perish",
+    "publisher-place": "Berkeley, CA",
+    issued: { "date-parts": [[1976]] },
+    "collection-title": "Mathematics Lecture Series",
+    "collection-number": 7,
+    URL: "https://bookstore.ams.org/chel-346-h",
+    note:
+      "Reprinted by AMS Chelsea Publishing, 2003 (ISBN 978-0-8218-3436-7).",
+  }),
+
+  // ── Murakami & Murakami 2001 ──────────────────────────────────
+  ref({
+    id: "murakami2001",
+    type: "article-journal",
+    title: "The colored Jones polynomials and the simplicial volume of a knot",
+    author: [
+      { family: "Murakami", given: "Hitoshi" },
+      { family: "Murakami", given: "Jun" },
+    ],
+    "container-title": "Acta Mathematica",
+    issued: { "date-parts": [[2001]] },
+    volume: "186",
+    issue: "1",
+    page: "85-104",
+    DOI: "10.1007/BF02392716",
+    URL: "https://doi.org/10.1007/BF02392716",
+  }),
+
+  // ── Bilson-Thompson 2005 ──────────────────────────────────────
+  ref({
+    id: "bilsonthompson2005",
+    type: "report",
+    title: "A topological model of composite preons",
+    author: [
+      { family: "Bilson-Thompson", given: "Sundance O." },
+    ],
+    publisher: "arXiv",
+    issued: { "date-parts": [[2005]] },
+    number: "hep-ph/0503213",
+    URL: "https://arxiv.org/abs/hep-ph/0503213",
+  }),
+
+  // ── Bilson-Thompson, Markopoulou, Smolin 2007 ─────────────────
+  ref({
+    id: "bilsonthompson2007",
+    type: "article-journal",
+    title:
+      "Quantum gravity and the standard model",
+    author: [
+      { family: "Bilson-Thompson", given: "Sundance O." },
+      { family: "Markopoulou", given: "Fotini" },
+      { family: "Smolin", given: "Lee" },
+    ],
+    "container-title": "Classical and Quantum Gravity",
+    issued: { "date-parts": [[2007]] },
+    volume: "24",
+    issue: "16",
+    page: "3975-3993",
+    DOI: "10.1088/0264-9381/24/16/002",
+    URL: "https://doi.org/10.1088/0264-9381/24/16/002",
+  }),
+
+  // ── Białynicki-Birula 1973 ────────────────────────────────────
+  ref({
+    id: "bialynicki1973",
+    type: "article-journal",
+    title:
+      "Some theorems on actions of algebraic groups",
+    author: [
+      { family: "Białynicki-Birula", given: "Andrzej" },
+    ],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1973]] },
+    volume: "98",
+    issue: "3",
+    page: "480-497",
+    DOI: "10.2307/1970915",
+    URL: "https://doi.org/10.2307/1970915",
+  }),
+
+  // ── Geck & Pfeiffer 2000 ──────────────────────────────────────
+  ref({
+    id: "geckpfeiffer2000",
+    type: "book",
+    title:
+      "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras",
+    author: [
+      { family: "Geck", given: "Meinolf" },
+      { family: "Pfeiffer", given: "Götz" },
+    ],
+    publisher: "Oxford University Press",
+    issued: { "date-parts": [[2000]] },
+    "collection-title": "London Mathematical Society Monographs (New Series)",
+    "collection-number": 21,
+    DOI: "10.1093/oso/9780198502500.001.0001",
+    URL: "https://doi.org/10.1093/oso/9780198502500.001.0001",
+  }),
+
+  // ── Ariki 1996 ────────────────────────────────────────────────
+  ref({
+    id: "ariki1996",
+    type: "article-journal",
+    title:
+      "On the decomposition numbers of the Hecke algebra of $G(m, 1, n)$",
+    author: [
+      { family: "Ariki", given: "Susumu" },
+    ],
+    "container-title": "Journal of the Mathematical Society of Japan",
+    issued: { "date-parts": [[1996]] },
+    volume: "48",
+    issue: "4",
+    page: "789-808",
+    DOI: "10.2969/jmsj/04840789",
+    URL: "https://doi.org/10.2969/jmsj/04840789",
+  }),
+
+  // ── Ram 1991 ──────────────────────────────────────────────────
+  ref({
+    id: "ram1991",
+    type: "article-journal",
+    title:
+      "A Frobenius formula for the characters of the Hecke algebras",
+    author: [
+      { family: "Ram", given: "Arun" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    issued: { "date-parts": [[1991]] },
+    volume: "106",
+    issue: "1",
+    page: "461-488",
+    DOI: "10.1007/BF01243922",
+    URL: "https://doi.org/10.1007/BF01243922",
+  }),
+
+  // ── Klein 1888 (icosahedron / Bring's curve) ──────────────────
+  ref({
+    id: "klein1888",
+    type: "book",
+    title:
+      "Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade",
+    author: [
+      { family: "Klein", given: "Felix" },
+    ],
+    publisher: "Teubner",
+    issued: { "date-parts": [[1888]] },
+    URL: "https://archive.org/details/vorlesungenber00kleiuoft",
+  }),
+
+  // ── Sugic et al. 2021 ─────────────────────────────────────────
+  ref({
+    id: "sugic2021",
+    type: "article-journal",
+    title:
+      "Particle-like topologies in light",
+    author: [
+      { family: "Sugic", given: "Danica" },
+      { family: "Droop", given: "Ramon" },
+      { family: "Otte", given: "Eileen" },
+      { family: "Ehrmanntraut", given: "Daniel" },
+      { family: "Nori", given: "Franco" },
+      { family: "Ruostekoski", given: "Janne" },
+      { family: "Denz", given: "Cornelia" },
+      { family: "Dennis", given: "Mark R." },
+    ],
+    "container-title": "Nature Communications",
+    issued: { "date-parts": [[2021]] },
+    volume: "12",
+    page: "6785",
+    DOI: "10.1038/s41467-021-26171-5",
+    URL: "https://doi.org/10.1038/s41467-021-26171-5",
   }),
 
 ];

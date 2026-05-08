@@ -4,7 +4,7 @@
   $A$-modules** — equivalently, the indexing set of Wedderburn
   blocks of a finite-dim semisimple algebra $A$.  Standard
   representation-theory notation (analogous to $\widehat{G}$ for
-  the unitary dual of a group).  For $A = H_n(q)$,
+  the unitary dual of a group).  For $A = H_n(R, q)$,
   $\widehat{A} = \{\lambda \vdash n\}$ (partitions of $n$).
 
 - **Vortex**: a morphism $\varrho \colon \mathbf{1} \to A$ in the
@@ -12,7 +12,7 @@
   i.e., a closed element of $A$ arising as the closure of a braid
   $\beta \in B_n$
   ([Hecke mass element](#def:hecke-mass-element)).  Each vortex has
-  a Hecke-algebra representative $T_w \in H_n(q)$ whose Markov
+  a Hecke-algebra representative $\sigma_w \in H_n(R, q)$ whose Markov
   trace is the categorical mass
   ([categorical mass, Markov](#prop:categorical-mass-markov)).
   In physics: particles (quarks, nucleons, nuclei) are vortices.
@@ -38,7 +38,7 @@ where $d_\lambda$ is the classical dimension of block $B_\lambda$.
 Let $p_\lambda \in A$ be the central idempotent of block $\lambda$,
 and let $\dim_q(\lambda) \in \mathbb{C}^\times$ denote any
 non-vanishing "quantum dimension" function on blocks (e.g., for
-$A = H_n(q)$ with Markov trace, $\dim_q$ is the $q$-hook-length
+$A = H_n(R, q)$ with Markov trace, $\dim_q$ is the $q$-hook-length
 dimension giving $\tau(p_\lambda) = \dim_q(\lambda) \, d_\lambda
 / [n]_q!$).
 
@@ -121,7 +121,7 @@ purely categorical — no arbitrary choices.*
 $\mathrm{HE}_A := \sum_\lambda p_\lambda / \tau(p_\lambda)$
 and its trace $\tau(\mathrm{HE}_A) = \sum_\lambda d_\lambda$
 (classical-dimension sum, e.g., the number of involutions for
-$A = H_n(q)$).  The element $C_{\dim_q}$ is the **quantum
+$A = H_n(R, q)$).  The element $C_{\dim_q}$ is the **quantum
 refinement** of the handle: an additional factor $1/\dim_q(\lambda)$
 per block rescales by the block's quantum dimension rather than
 its classical one.*
@@ -135,7 +135,7 @@ self-duality.*
 
 **Specialisations.**
 
-1. *$A = H_n(q)$ with Markov trace $\tau = \mathrm{tr}_M$,
+1. *$A = H_n(R, q)$ with Markov trace $\tau = \mathrm{tr}_M$,
    $\dim_q = q$-hook-length dimension.
    $\widehat{A} = \{\lambda \vdash n\}$.  Then
    $\mathrm{tr}_M(C_{\dim_q}) = \sum_{\lambda \vdash n}
@@ -153,7 +153,7 @@ self-duality.*
    first-orthogonality identity.*
 
 **GB-filtration (confinement) decomposition.**
-*When $A = H_n(q)$ is filtered by the confinement filtration
+*When $A = H_n(R, q)$ is filtered by the confinement filtration
 $J^\bullet(q)$
 ([confinement level](#def:confinement-level)), the partitions
 $\lambda$ sort by level
@@ -191,7 +191,7 @@ $\tau(C_{\dim_q}) = 2 + 1/[2]_q$.*
 
 **Physical content.**
 *Any vortex represented on a self-dual Frobenius algebra
-$(A, \tau)$ — whether a single nucleon $(A = H_3(q))$, an
+$(A, \tau)$ — whether a single nucleon $(A = H_3(R, q))$, an
 isotope $(A = H_{3A}(q))$, or an abstract braid closure — has a
 **tower residual** equal to $\tau(C_{\dim_q})$ weighted by the
 fibre-functor calibration constant $m_e$:*
@@ -214,10 +214,10 @@ Frobenius co-dimension element — is universal.*
 *Critically, $\tau(C_{\dim_q}^{(A)})$ is **independent of the
 specific vortex $\varrho$** — it depends only on the algebra
 $A$ (equivalently on $n$ and $q$), not on the braid word
-$T_w$ representing $\varrho$.  This is both a **feature** and a
+$\sigma_w$ representing $\varrho$.  This is both a **feature** and a
 **limitation**:*
 
-- *Feature (universality):* *Every vortex on $H_3(q)$ —
+- *Feature (universality):* *Every vortex on $H_3(R, q)$ —
   proton $(uud)$, neutron $(udd)$, any nucleon-like trefoil —
   inherits the same $(2 + 1/[2]_q) \cdot m_e$ additive
   offset.  Mass differences between nucleons come entirely
@@ -230,14 +230,14 @@ $T_w$ representing $\varrho$.  This is both a **feature** and a
   $\{1+h, 1-h^2, (1-h^2)^2\}$ per
   ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
   or knot-factor Frobenius pairings per
-  ([knot-factor Frobenius pairing](#prop:knot-factor-frobenius-pairing))
+  ([knot-factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
   — are separate structural terms beyond $\tau(C_{\dim_q})$.*
 
 *The unified mass formula
 ([unified knot mass](#thm:knot-mass-formula-unified)) therefore has
 three tiers:*
 
-1. *Vortex-specific: descended $|\mathrm{tr}_M(T_w)|$ and brane
+1. *Vortex-specific: descended $|\mathrm{tr}_M(\sigma_w)|$ and brane
    tower $\sum \Phi_q$.*
 2. *Algebra-specific (but vortex-independent): Frobenius
    co-Casimir $\tau(C_{\dim_q}^{(A)})$.*
@@ -252,13 +252,13 @@ three tiers:*
    $C_{\dim_q}$ reduces to $\sum_\lambda |G|/d_\lambda^2 \cdot p_\lambda$
    and its trace is $\sum_\lambda 1/d_\lambda$ — the classical
    reciprocal-dimension sum.*
-2. *In the "single-vortex" case $A = H_3(q)$, three blocks
+2. *In the "single-vortex" case $A = H_3(R, q)$, three blocks
    $\{(3), (2,1), (1,1,1)\}$ with $q$-dims $\{1, [2]_q, 1\}$
    give $\tau(C_{\dim_q}) = 2 + 1/[2]_q$ matching proton
    residual to $0.14\%$ at $q_0 \approx 1.11$.*
 3. *The self-duality $\lambda \leftrightarrow \lambda'$ is the
    **categorical shadow** of the Young-diagram transpose
    symmetry of the Hecke algebra, which in turn descends from
-   the Hecke relation $T_i^2 = (q - q^{-1}) T_i + 1$ admitting
+   the Hecke relation $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ admitting
    two eigenvalues $(q, -q^{-1})$ — the source of all
    $q$-deformation structure in the paper.*

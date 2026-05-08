@@ -12,10 +12,5 @@ export default remark({
     "valence",
     "magic-numbers",
   ],
-  uses: [
-    "prop:shell-closure-stability",
-    "def:dressed-particle",
-    "def:electron-shell",
-  ],
   interprets: "prop:shell-closure-stability",
 });

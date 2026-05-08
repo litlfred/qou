@@ -4,19 +4,7 @@ export default remark({
   label: "rem:ns-surreal-bound",
   title:
     "Surreal bound for Navier--Stokes: enstrophy transfinite exceeds mass-gap infinitesimal",
-  interprets: "prop:blowup-yekutieli",
-  uses: [
-    "prop:blowup-yekutieli",
-    "thm:q-ns-wellposedness",
-    "lem:surreal-squeeze",
-    "def:reeb-epsilon",
-    "def:q-from-epsilon",
-    "prop:surreal-rate-calculus",
-    "prop:ns-obstruction-computation",
-    "rem:conway-normal-form",
-    "rem:body-asymptotics-catalog",
-    "prop:ns-obstruction-computation",
-  ],
+  interprets: "conj:blowup-yekutieli",
   tags: [
     "navier-stokes",
     "millennium-problem",

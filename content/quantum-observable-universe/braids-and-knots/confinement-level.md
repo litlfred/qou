@@ -9,7 +9,7 @@ $$
 
 *where $E_\ell(q)$ is the $\ell$-th distinct nonzero value of
 $\{E(\lambda, q) : \lambda \vdash k,\; k \leq k_{\max}\}$.
-Define the **confinement filtration** $J^\bullet(q)$ of $H_n(q)$
+Define the **confinement filtration** $J^\bullet(q)$ of $H_n(R, q)$
 by:*
 
 $$
@@ -24,7 +24,7 @@ enter the filtration **together** at the level of their common
 energy — the filtration is well-defined under degeneracy.*
 
 *A closed braid $K$ with Hecke normal form
-([Hecke normal form](#def:hecke-normal-form)) $T_w \in H_n(q)$
+([Hecke normal form](#def:hecke-normal-form)) $T_w \in H_n(R, q)$
 is **confined at level $\ell$ at $q$** iff $\ell$ is the smallest
 integer with $T_w \in J^\ell(q)$.  Write
 $\ell(K, q) := \min\{\ell : T_w \in J^\ell(q)\}$.*

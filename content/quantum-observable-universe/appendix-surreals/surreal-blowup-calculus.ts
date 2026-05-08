@@ -16,9 +16,6 @@ export default definition({
     "regularisation",
     "named-infinity",
   ],
-  uses: [
-    "def:birthday-grading",
-    "def:standard-part-functor",
-  ],
+  uses: ["def:standard-part-functor"],
   cites: ["conway1976", "ehrlich2012"],
 });

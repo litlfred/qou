@@ -8,10 +8,10 @@ This is the primary method.  Each generator log-ratio is classified as
 unbinding ($u$), rebinding ($r$), or spectator ($uc$), then $q$-weighted:
 
 $$
-\mathcal{Q}_q = |q \cdot \Sigma_u + q^{-1} \cdot \Sigma_r + \Sigma_{uc}| \times \kappa_q \times F_{\mathrm{shell}}(q) \times F_{I_{10}}(Z,N;q)
+Q = |q \cdot \Sigma_u + q^{-1} \cdot \Sigma_r + \Sigma_{uc}| \times \kappa_q \times F_{\mathrm{shell}}(q) \times F_{I_{10}}(Z,N;q)
 $$
 
-| Nucleus | Transition | $\mathcal{Q}_{\mathrm{exp}}$ (MeV) | $\delta\mathcal{Q}_{\mathrm{exp}}$ | $\mathcal{Q}_q$ (MeV) | $\delta$ | $F$ | Note |
+| Nucleus | Transition | $\mathcal{Q}_{\mathrm{exp}}$ (MeV) | $\delta\mathcal{Q}_{\mathrm{exp}}$ | $Q$ (MeV) | $\delta$ | $F$ | Note |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | ${}^3\mathrm{H}$ | $\to {}^3\mathrm{He}$ | $0.01861$ | $\pm 0.00001$ | $0.01849$ | $-0.6\%$ | $1.000$ | excellent |
 | ${}^{14}\mathrm{C}$ | $\to {}^{14}\mathrm{N}$ | $0.15648$ | $\pm 0.00004$ | $0.15300$ | $-2.2\%$ | $1.000$ | good |
@@ -49,9 +49,9 @@ representation of $H_3(q)$.
   in the $6 \times 6$ regular representation of $H_3(q)$, which decomposes as
   $1(\mathrm{sym}) \oplus 2(\mathrm{std}) \oplus 1(\mathrm{alt})$.
 
-**Error propagation note.** The prediction uncertainty $\delta\mathcal{Q}_q$
+**Error propagation note.** The prediction uncertainty $\deltaQ$
 from $\delta q_0 \approx 1.4 \times 10^{-9}$ is negligible
 ($\sim 10^{-9} \text{MeV}$).  The dominant theoretical uncertainty is
 *structural* (model approximations in $F_{\mathrm{shell}}$), not
 parametric.  All $\sigma$-separations are therefore
-$|\mathcal{Q}_q - \mathcal{Q}_{\mathrm{exp}}| / \delta\mathcal{Q}_{\mathrm{exp}}$.
+$|Q - \mathcal{Q}_{\mathrm{exp}}| / \delta\mathcal{Q}_{\mathrm{exp}}$.

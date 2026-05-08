@@ -30,7 +30,7 @@ and Lean Generation skills applied in a structured, chunked workflow.
 - The chapter's `.tex` file exists in `chapters/`
 - The corresponding `lean/QOU/<Chapter>.lean` file exists (may be empty)
 - `lean/QOU/Glossary.lean` and `glossary.json` are current
-- The `lakefile.lean` has all needed dependencies (mathlib4, quantumInfo)
+- The per-paper `lakefile.toml` (and the root `/lakefile.toml`) have all needed dependencies (mathlib4, quantumInfo)
 
 ## Chunked Workflow
 
@@ -161,7 +161,7 @@ Chapter analysis should populate **content object triples**, not just
 extract items from LaTeX. Each narrative definition, theorem, lemma,
 proposition, example, or corollary becomes a triple:
 
-- `block-name.ts` — typed manifest with `kind`, `label`, `lean.decl`,
+- `block-name.ts` — typed manifest with `kind`, `label`, `lean.ref`,
   `status`, and `uses[]` referencing other content object labels.
 - `block-name.md` — narrative content (markdown with inline/display math).
 - `block-name.lean` — Lean formalization (required for `definition`,

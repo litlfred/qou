@@ -1,7 +1,7 @@
 {
   "computation": "content-weighted-pair-probe",
   "description": "Content-weighted pair terms SYT-wise.  Replaces scalar V\u0302_i \u00b7 V\u0302_j with V\u0302_{ij}^{content} = \u03a3_\u03bb w_\u03bb / d_\u03bb \u00b7 \u03a3_{T \u2208 SYT(\u03bb)} q^{2(c_T(i+1) + c_T(j+1))} \u00b7 \u27e8T|W^\u03bb|T\u27e9.  Captures per-SYT content correlation between gens i, j missing from the scalar path.  Tests whether this closes the T/\u00b3He residual gap.",
-  "timestamp": "2026-04-18T19:58:47.170407+00:00",
+  "computedAt": "2026-04-18T19:58:47.170407+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_scalar": 0.0007958232069223113,
@@ -65,5 +65,7 @@
       "scalar_time_sec": 0.0030570030212402344,
       "content_time_sec": 8.259557247161865
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -1,6 +1,6 @@
 {
   "name": "h6-full-computation",
-  "timestamp": "2026-04-09T11:13:16.160417+00:00",
+  "computedAt": "2026-04-09T11:13:16.160417+00:00",
   "q": 1.1099785955541805,
   "n_strands": 6,
   "gs_6he": [
@@ -56,5 +56,7 @@
     3.62933311677063,
     9.053424394784788
   ],
-  "subspace_dim": 32
+  "subspace_dim": 32,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

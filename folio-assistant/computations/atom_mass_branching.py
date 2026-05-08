@@ -284,9 +284,15 @@ def atom_tower_mass_branching(Z, N, m_pp=1, m_pn=1, m_nn=1, include_inter=True):
 
 # ── Calibration and test ────────────────────────────────────────────
 
-# Calibrate E_0 from CODATA m_p via single-nucleon free baseline
+# Per CAL-3 (`prop:three-calibration-inputs`), E_0 must trace back
+# to Q_β(n), not proton mass — proton-mass-anchoring is a forbidden
+# second pinning of the hadronic scale. Use the canonical
+# E_0_CALIBRATION_MEV from hecke_core (= experimental_constants.
+# Q_NEUTRON_MEV = 0.78233341 MeV). The proton-tower mass is retained
+# only as a per-block intermediate for diagnostic comparison.
 _m_proton_branching = atom_tower_mass_branching(1, 0, include_inter=False)
-E_0_BRANCH = 938.272 / _m_proton_branching if abs(_m_proton_branching) > 1e-30 else 0
+from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402
+E_0_BRANCH = E_0_CALIBRATION_MEV  # 0.78233341 MeV (CODATA Q_β(n))
 
 
 def binding_branching(Z, N, m_pp, m_pn, m_nn):

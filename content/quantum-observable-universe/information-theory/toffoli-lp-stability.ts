@@ -20,8 +20,6 @@ export default proposition({
   uses: [
     "prop:toffoli-transfer-matrix",
     "prop:lp-dual-stability",
-    "prop:frobenius-gram-matrix",
-    "prop:confinement-lp",
     "def:hecke-mass-element",
   ],
 });

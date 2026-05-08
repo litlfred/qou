@@ -1,3 +1,7 @@
+import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.SetTheory.Ordinal.Arithmetic
+import QOU.AppendixSurreals.Basic
+
 /-!
 # QOU.AppendixSurreals.BirthdayGrading — Birthday-graded hom-spaces
 
@@ -27,10 +31,6 @@ to a future expansion of this module.
 
 LaTeX label: `def:birthday-grading`
 -/
-
-import Mathlib.LinearAlgebra.Span
-import Mathlib.SetTheory.Ordinal.Arithmetic
-import QOU.AppendixSurreals.Basic
 
 namespace QOU.AppendixSurreals
 

@@ -6,5 +6,9 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:wedderburn-mass-formula",
   title: "Three-invariant mass formula",
-  uses: ["def:atomic-braid", "prop:atomic-lp-stability"],
+  lean: {
+    ref: "qou:QOU.Interactions.wedderburnMass_split",
+    validation: "not_checked",
+  },
+  uses: ["prop:atomic-lp-stability"],
 });

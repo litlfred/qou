@@ -13,9 +13,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "prop:operator-selection-lp",
-    "prop:q-integer-mass-formula",
-    "def:atomic-braid",
+    "conj:q-integer-mass-formula",
     "def:molecular-braid",
   ],
   tags: [

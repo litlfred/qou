@@ -6,12 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.ConfinedParticle",
     validation: "not_checked",
   },
-  uses: [
-    "def:hecke-normal-form",
-    "def:confinement-level",
-    "prop:confinement-sdp",
-    "prop:confinement-phase-stratification",
-  ],
+  uses: ["prop:confinement-phase-stratification"],
   tags: [
     "confinement",
     "particle",

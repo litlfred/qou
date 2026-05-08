@@ -194,7 +194,8 @@ explicit knot calculations (trefoil, figure-eight, Borromean links).
 
 **What a writer should know**: The reader should be able to follow
 every knot calculation with pencil and paper. Use the Hecke algebra
-generator $T$ (never $\sigma$ for the Hecke relation). Jones
+generator $\sigma_i$ (never $T$); the same symbol $\sigma_i$ serves
+both as braid generator in $B_n$ and its image in $H_n(q)$. Jones
 polynomial is $J_K(q)$ (never $V_K(t)$). Hadrons are
 $\mathfrak{H}$ (fraktur). The topological mass formula
 $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$ is the chapter's

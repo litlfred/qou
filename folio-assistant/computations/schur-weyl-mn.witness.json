@@ -10,7 +10,7 @@
     "S_{3A} permutation obtained by projecting braid word (sign-ignoring, since \u03c3^\u00b11 \u2192 same transposition).",
     "Full q-deformed Hecke character requires ribbon q-weights (next iteration)."
   ],
-  "timestamp": "2026-04-24T21:48:14.555014+00:00",
+  "computedAt": "2026-04-24T21:48:14.555014+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "evalf_dps": 30,
@@ -267,5 +267,7 @@
         }
       ]
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

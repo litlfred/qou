@@ -40,11 +40,11 @@ Total dimension: $9 + 36 = 45 = \binom{10}{2}$.  $\square$
 
 **Corollary (Borromean interpretation).**
 *The integer $45$ in the $\alpha_{EM}$ formula
-([alpha-em-categorical-trace](#prop:alpha-em-categorical-trace))
+([alpha-em-categorical-trace](#rem:alpha-em-categorical-trace))
 counts unordered pairs of the $10$ strands in $V_{\mathrm{nat}}$.
 This is the **dimension of the strand-pair coupling representation**
 — precisely the algebraic shadow of the Borromean linking
-([borromean-baryon-interpretation](#prop:borromean-baryon-interpretation))
+([borromean-baryon-interpretation](#rem:borromean-baryon-interpretation))
 where each pair of three strands forms a Borromean cycle.*
 
 **Connection to Hecke / quantum dimension.**
@@ -82,4 +82,4 @@ mediate the EM coupling.
 the dimension formula directly: numerical match to the expected
 $45 \cdot [3]_q = 136.967$ at $q_0$, with $-0.05\%$ residue
 explained by the $\delta_{CS}$ + $8q \delta_{CS}^2$ corrections per
-[alpha-em-categorical-trace](#prop:alpha-em-categorical-trace).
+[alpha-em-categorical-trace](#rem:alpha-em-categorical-trace).

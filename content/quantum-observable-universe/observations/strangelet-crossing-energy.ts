@@ -12,9 +12,4 @@ export default proposition({
     "electromagnetic-neutrality",
     "witten",
   ],
-  uses: [
-    "def:crossing-energy",
-    "def:coulomb-charge",
-    "prop:torus-hopf-stability",
-  ],
 });

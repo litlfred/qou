@@ -4,6 +4,15 @@ export default conjecture({
   label: "conj:higgs-t28",
   title:
     "The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors",
+  uses: [
+    "def:color-tube-coordinates",
+    "def:brings-surface",
+    "def:exceptional-divisor",
+    "def:crossing-energy",
+    "def:confined-particle",
+    "prop:fermion-boson-knot-link",
+    "conj:borromean-quark",
+  ],
   tags: [
     "higgs",
     "boson",
@@ -12,9 +21,5 @@ export default conjecture({
     "mass-mechanism",
     "scalar",
     "genus-3",
-  ],
-  uses: [
-    "prop:fermion-boson-knot-link",
-    "conj:borromean-quark",
   ],
 });

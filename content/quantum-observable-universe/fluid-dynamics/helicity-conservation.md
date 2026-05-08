@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a
 [QOU](#def:quantum-observable-universe) with brane fluid velocity
 $v = \nabla_A S$ and vorticity
 $\omega = \mathrm{curl}_Av = \nabla_A \times v$.  Define the

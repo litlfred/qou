@@ -1,6 +1,6 @@
 {
   "computation": "t35-generator-volumes",
-  "timestamp": "2026-03-28T14:49:03.131531+00:00",
+  "computedAt": "2026-03-28T14:49:03.131531+00:00",
   "description": "Per-generator Markov-traced volumes for tritium beta decay",
   "level0": {
     "ordering_par": [
@@ -141,5 +141,7 @@
       "unit": "d",
       "ratio": 3.610452919507892e-07
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

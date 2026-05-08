@@ -1,7 +1,7 @@
 {
   "computation": "meson-nucleon-nf",
   "description": "Meson and nucleon construction via Hecke algebra normal forms",
-  "timestamp": "2026-04-14T15:10:49.504870+00:00",
+  "computedAt": "2026-04-14T15:10:49.504870+00:00",
   "git_sha": "726d3076db353313a5e8e880c70b1860008ee76c",
   "parameters": {
     "q": 1.1099785955541805,
@@ -346,5 +346,7 @@
     "proton": 0.9991251252,
     "neutron": 0.8108345052,
     "delta_net": -0.18829061999999996
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

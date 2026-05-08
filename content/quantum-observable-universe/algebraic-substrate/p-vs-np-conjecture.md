@@ -58,7 +58,7 @@ exceeds the budget — equivalently $\ordw(\text{cost}) = 1 > -3 =
 compressed: the $2^n$-fold speedup cannot fit inside the classical
 mass-gap budget.
 
-**Status.** Speculative.  The conjecture is stated in a form
+**Caveat.** This conjecture is speculative. It is stated in a form
 compatible with the Reeb--surreal framework but does not yet
 admit a Lean formalisation beyond the statement.  A formal
 proof would reduce the $q$-to-classical compression obstruction

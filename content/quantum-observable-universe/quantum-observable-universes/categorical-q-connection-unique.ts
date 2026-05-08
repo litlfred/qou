@@ -7,7 +7,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:categorical-q-connection",
     "prop:categorical-q-connection-exists",
     "prop:categorical-connection-unique",
   ],

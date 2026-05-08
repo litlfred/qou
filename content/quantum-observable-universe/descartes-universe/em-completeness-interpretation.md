@@ -16,6 +16,24 @@ normalisation
 is $\alpha_{\mathrm{EM}}$
 ([EM coupling projection](#prop:em-coupling-projection)).
 
+**Spectral-collapse / confinement reading.**
+The two-strand completeness theorem is the $n = 2$ instance of the
+spectral-sequence collapse
+([spectral collapse](#prop:spectral-sequence-collapse)) and its
+confinement reading
+([confinement = collapse](#prop:confinement-categorical)).  In that
+framework, $\mathrm{HH}^{\geq 1}(H_n(R, q)) = 0$ collapses every
+non-central element at $E_\infty$, leaving only $Z(H_n(R, q)) =
+\bigoplus_\lambda R \cdot e_\lambda$.  At $n = 2$ the centre has
+two summands $e_+, e_-$; the singlet $e_-$ is the unique
+one-dimensional summand.  The QCD analogue
+([confinement reading](#prop:confinement-categorical)) reads:
+non-central elements (coloured) are unobservable at $E_\infty$ —
+"free quarks not observed" — and observables factor through
+$\pi_Z$ — "all observables are gauge-invariant".  The photon
+channel is therefore the unique colour-singlet projection at $n =
+2$, and $\alpha_{\mathrm{EM}}$ is its Frobenius-pairing weight.
+
 **Specialisation.**
 The categorical statement holds over $R$; numerical evaluation
 chooses a ring map $\iota \colon R \to \mathbb{R}$ with $q^{1/2}

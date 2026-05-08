@@ -8,11 +8,7 @@ export default corollary({
     ref: "qou:QOU.BraidKnot.knot_factor_shell_closed",
     validation: "not_checked",
   },
-  uses: [
-    "prop:knot-factor-spectral-form",
-    "prop:wigner-np-pairing",
-    "prop:spectral-sequence-collapse",
-  ],
+  uses: ["prop:knot-factor-spectral-form"],
   tags: [
     "knot-factor",
     "shell-closed",

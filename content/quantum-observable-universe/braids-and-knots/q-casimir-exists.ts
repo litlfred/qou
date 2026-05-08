@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QCasimir.exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-casimir",
-    "def:quantum-su2",
-  ],
+  uses: ["def:q-casimir"],
   proofs: ["prf:q-casimir-exists"],
   tags: ["existence", "casimir", "quantum-group", "central-element"],
 });

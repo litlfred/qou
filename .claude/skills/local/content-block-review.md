@@ -51,7 +51,7 @@ block, with severity (error / warning / info).
 
 | Check | Severity | Rule |
 |-------|----------|------|
-| `lean.decl` in `.ts` matches actual declaration in `.lean` | **error** | The manifest must name the real Lean declaration |
+| `lean.ref` URI in `.ts` matches actual declaration in `.lean` | **error** | The manifest must name the real Lean declaration (parse with `parseLeanRef()`) |
 | Declaration lives under `QOU.*` namespace | **warning** | All project declarations should be namespaced |
 | Naming convention followed (hyphens → underscores, correct case) | **warning** | See CLAUDE.md §2 naming table |
 | Block kind matches Lean construct (`definition` → `def`/`structure`/`class`, `theorem` → `theorem`/`lemma`) | **warning** | A `definition` block should not contain a `theorem` in Lean |
@@ -90,6 +90,21 @@ block, with severity (error / warning / info).
 | Every block file in the directory is referenced in the chapter `.ts` | **warning** | Orphan blocks won't appear in output |
 | Chapter `.ts` references only blocks that exist | **error** | Dangling block references break the build |
 | Section ordering in chapter `.ts` is consistent | **info** | Sections should follow a logical order |
+
+### 10. Glossary terms (`:defterm` / `:refterm`)
+
+| Check | Severity | Rule |
+|-------|----------|------|
+| Every slug in `defines: [...]` has a `:defterm[…]{#slug}` in the block's `.md` | **warning** | `defterm-marked` rule (validator) |
+| Every `:defterm[…]` slug appears in the block's `defines: [...]` | **error** | `defterm-declared` rule |
+| Every `:refterm[…]` resolves to some block's `defines: [...]` | **error** | `refterm-resolves` rule |
+| No slug declared by more than one block | **warning** | `defterm-unique` rule; collapse duplicates by adding `interprets:` to the secondary block |
+| Bare-text mentions of known slugs are wrapped (`--strict`) | **warning** | `term-mention-coverage` rule; run `bun run validate <paper> --strict` |
+| Defined terms are not styled as plain text or `\emph{}` in `.md` | **warning** | Defeats the validator's resolution graph; rewrap with the codemod |
+
+Run `bun run pipeline/build-glossary.ts <paper> --check` as a CI gate
+to catch duplicate slugs and out-of-date `glossary.json`. See
+`local/glossary-build` skill.
 
 ## Output Format
 

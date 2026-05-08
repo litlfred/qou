@@ -1,0 +1,97 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-06T00:24:58.763876+00:00",
+  "commitSha": "22f9e201585e3374e3c495474ebd54fa78cbb9a1",
+  "assertions": [
+    {
+      "name": "tr_M_at_q0_archimedean[D (deuteron, A=2)]",
+      "computed": 0.17743692421543206,
+      "expected": 0.17743692421543206,
+      "passed": true,
+      "tolerance": 1.7743692421543207e-10
+    },
+    {
+      "name": "tr_M_at_q0_archimedean[n (neutron, A=1)]",
+      "computed": 1.5893934459539047,
+      "expected": 1.5893934459539052,
+      "passed": true,
+      "tolerance": 1.5893934459539053e-09
+    },
+    {
+      "name": "tr_M_at_q0_archimedean[p (proton, A=1)]",
+      "computed": 2.12258250945273,
+      "expected": 2.12258250945273,
+      "passed": true,
+      "tolerance": 2.1225825094527304e-09
+    },
+    {
+      "name": "no_atoms_only_in_realizer",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "no_atoms_only_in_term6",
+      "computed": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "atom_intersection_size",
+      "computed": 3,
+      "expected": 3,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "markov-pipeline-cross-validation",
+  "scriptFile": "markov_pipeline_cross_validator.py",
+  "scriptHash": "2ba19efaa410",
+  "scriptCommitSha": "dd4436dc0decabd08e078f9c92e6c99f53f82e1a",
+  "description": "Verifies archimedean tr_M(q_0) agreement between the polynomial-ring realization (markov_substrate_realizer.py) and the Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py).",
+  "contentBlock": "prop:full-pole-structure-mass-trace",
+  "parameters": {
+    "agreement_rtol": 1e-09
+  },
+  "data": {
+    "reference_blocks": [
+      "prop:full-pole-structure-mass-trace",
+      "prop:gb-residue-spectral-sum",
+      "def:motivic-substrate"
+    ],
+    "lean_classes": [
+      "qou:QOU.AlgebraicSubstrate.MotivicSubstrate",
+      "qou:QOU.BraidKnot.HabiroCompletion"
+    ],
+    "checks": [
+      {
+        "atom": "D (deuteron, A=2)",
+        "realizer_value": 0.17743692421543206,
+        "term6_value": 0.17743692421543206,
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "agree": true
+      },
+      {
+        "atom": "n (neutron, A=1)",
+        "realizer_value": 1.5893934459539047,
+        "term6_value": 1.5893934459539052,
+        "abs_diff": 4.440892098500626e-16,
+        "rel_diff": 2.7940797854714566e-16,
+        "agree": true
+      },
+      {
+        "atom": "p (proton, A=1)",
+        "realizer_value": 2.12258250945273,
+        "term6_value": 2.12258250945273,
+        "abs_diff": 0.0,
+        "rel_diff": 0.0,
+        "agree": true
+      }
+    ],
+    "atoms_only_in_realizer": [],
+    "atoms_only_in_term6": []
+  }
+}

@@ -17,7 +17,7 @@ Date: 2026-03-29
 | `ch5/shell-construction-rules` | remark | `rem:shell-construction-rules` | Complete |
 | `ch5/beta-decay-skein` | definition | `def:beta-decay-skein` | Updated + Lean |
 | `ch5/beta-decay-transfer-matrix` | proposition | `prop:beta-decay-transfer-matrix` | Updated + Lean |
-| `ch5/q-value-transition` | definition | `def:q-value-transition` | Updated + Lean |
+| `ch5/q-value-transition` | definition | `def:Q-value-transition` | Updated + Lean |
 | `ch7/hadron-half-life-verification` | proposition | verification | Updated + Lean |
 | `ch7/finiteness-bound-interpretation` | remark | `rem:finiteness-bound-interpretation` | Complete |
 

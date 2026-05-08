@@ -43,6 +43,8 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
+from experimental_constants import (M_E_MEV, M_P_MEV, M_N_MEV,
+                                       Q_NEUTRON_MEV)
 from mass_endomorphism import (additive_wedderburn_volumes, mass_from_tower,
                                   HA, qi0, z_mark,
                                   w_sym, w_std, w_alt)
@@ -108,10 +110,11 @@ def particle_braids() -> dict:
 
 # Physical observables in MeV (CODATA / AME).
 OBSERVABLES_MEV = {
-    "electron":    0.51099895,       # CODATA m_e
-    "positron":    0.51099895,       # CODATA m_e⁺ = m_e⁻ by CPT
-    "proton":      938.272,          # CODATA m_p
-    "neutron":     939.565,          # CODATA m_n
+    # Authoritative source: experimental_constants (CODATA 2022)
+    "electron":    M_E_MEV,
+    "positron":    M_E_MEV,          # m_e⁺ = m_e⁻ by CPT
+    "proton":      M_P_MEV,
+    "neutron":     M_N_MEV,
     "gamma_gamma": 1.021998,         # 2 m_e pair threshold
 }
 
@@ -265,8 +268,8 @@ if __name__ == "__main__":
     print(f"\n{'=' * 80}")
     print("RELATE to existing hardcoded E_0 values")
     print("=" * 80)
-    E0_BETA_DECAY = 0.782
-    E0_PROTON_TOWER = 938.272 / 1178995.5254
+    E0_BETA_DECAY = float(Q_NEUTRON_MEV)  # 0.78233341 MeV
+    E0_PROTON_TOWER = float(M_P_MEV) / 1178995.5254
     E0_FROM_NET = 4.154925
     print(f"  fitted E_0^sym = {fit['E0_sym']:+.6f} MeV/cat")
     print(f"  fitted E_0^std = {fit['E0_std']:+.6f} MeV/cat")

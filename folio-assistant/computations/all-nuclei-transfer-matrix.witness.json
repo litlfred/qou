@@ -1,6 +1,6 @@
 {
   "computation": "all-nuclei-transfer-matrix",
-  "timestamp": "2026-04-07T14:55:21.191325+00:00",
+  "computedAt": "2026-04-07T14:55:21.191325+00:00",
   "description": "Skein polynomial from 2\u00d72 transfer matrix chain for all 6 nuclei",
   "parameters": {
     "q": 1.1099785955541805,
@@ -143,5 +143,7 @@
       "t_pred_Qexp": 0.0008483734341290573,
       "ratio_Qexp": 0.0001692684425636587
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

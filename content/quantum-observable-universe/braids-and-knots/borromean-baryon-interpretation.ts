@@ -5,5 +5,4 @@ export default remark({
   label: "rem:borromean-baryon-interpretation",
   title: "Properties, mass, and confinement of the Borromean baryon",
   tags: ["borromean", "baryon", "mass", "confinement", "crossing"],
-  uses: ["def:borromean-baryon", "def:hadron"],
 });

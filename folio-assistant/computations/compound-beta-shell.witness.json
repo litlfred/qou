@@ -1,7 +1,7 @@
 {
   "computation": "compound-beta-shell-calibration",
   "description": "y_target(A_magic) derivation from compound \u03b2-decay Q-values. Single archimedean input: E_0 = 0.782 MeV (free-neutron \u03b2-decay). For each magic A, find a representative compound \u03b2-decay crossing that shell and compute y_target from Q/(E_0\u00b7A_magic\u00b7m_p).",
-  "timestamp": "2026-04-17T23:55:27.075978+00:00",
+  "computedAt": "2026-04-17T23:55:27.075978+00:00",
   "parameters": {
     "E_0_MeV": 0.782,
     "m_p_MeV": 938.272
@@ -91,5 +91,7 @@
       "anchor_B_over_rest": null,
       "ratio_y_to_B_over_rest": null
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

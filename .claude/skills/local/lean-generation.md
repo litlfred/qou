@@ -116,17 +116,33 @@ Rules:
 
 ## Lean Project Structure
 
+The repo is a **single root Lake workspace** (`/lakefile.toml`,
+`/lean-toolchain`) that aggregates one Lake package per paper. The QOU
+package lives at:
+
 ```
-lean/
-├── lakefile.lean        ← Lake build configuration (depends on mathlib4)
-├── lean-toolchain       ← Lean version pin
-├── QOU.lean             ← Root import file
+content/quantum-observable-universe/lean/
+├── lakefile.toml         ← per-paper Lake config (registered by root lakefile.toml)
+├── QOU.lean              ← root module (library = QOU)
 └── QOU/
-    ├── Basic.lean       ← Shared foundations
+    ├── Basic.lean        ← Shared foundations
     ├── QuantumObservableUniverse.lean  ← Chapter 1
     ├── Elaboration.lean               ← Chapter 2
-    └── ...              ← One per chapter
+    └── ...               ← one per chapter
 ```
+
+Other papers follow the same pattern under `content/<paper>/lean/`. The
+package-name → directory registry lives in
+`folio-assistant/schemas/lean-packages.ts`. Build from the repo root:
+
+```bash
+lake build           # build every paper
+lake build QOU       # just one library
+lake exe cache get   # Mathlib cache for the workspace
+```
+
+Do **not** create a top-level `lean/` directory — that layout is
+deprecated.
 
 ## Linking to mathlib4
 
@@ -206,7 +222,9 @@ Instead of extracting from LaTeX, read the `.ts` manifest:
 2. **Check for existing `.lean` sibling**: skip if already exists
 3. **Read the `.md` file**: extract the mathematical statement
 4. **Generate the `.lean` sibling** alongside the `.ts` and `.md` files
-5. **Update the `.ts` manifest**: set `lean.decl` and `lean.file`
+5. **Update the `.ts` manifest**: set `lean.ref` to the package-qualified
+   URI `"<pkg>:<Decl.Path>"` (per CLAUDE.md §0a). The legacy
+   `lean.decl` / `lean.file` shape is removed from the schema.
 
 ### The `uses[]` dependency graph
 
@@ -221,18 +239,21 @@ after edits.
 
 ### Naming: `.ts` label → Lean declaration
 
-| `.ts` label | Lean declaration |
-|-------------|-----------------|
-| `def:quantum-universe` | `QOU.QuantumUniverse` |
-| `thm:su2-emergence` | `QOU.su2_emergence` |
-| `prop:frobenius-relation` | `QOU.frobenius_relation` |
+| `.ts` label | Lean declaration | `lean.ref` URI |
+|-------------|-----------------|----------------|
+| `def:quantum-universe` | `QOU.QuantumUniverse` | `"qou:QOU.QuantumUniverse"` |
+| `thm:su2-emergence` | `QOU.su2_emergence` | `"qou:QOU.su2_emergence"` |
+| `prop:frobenius-relation` | `QOU.frobenius_relation` | `"qou:QOU.frobenius_relation"` |
 
-The `lean.decl` field in the `.ts` manifest is the canonical mapping.
+The `lean.ref` field in the `.ts` manifest is the canonical mapping.
+Parse with `parseLeanRef()` from
+`folio-assistant/schemas/lean-packages.ts` to get
+`{ package, decl, module, name }`.
 
 ## Checklist
 
 - [ ] All content blocks requiring Lean have sibling `.lean` files
-- [ ] Every object with `formalization_status != "not_started"` has a `lean.decl`
+- [ ] Every block where `kind` requires Lean has a `lean.ref` URI
 - [ ] Lean files compile without errors (sorry warnings are expected)
 - [ ] `\lean{}` macros in LaTeX match the Lean declaration names exactly
 - [ ] `\uses{}` macros capture all mathematical dependencies

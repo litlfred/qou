@@ -1,3 +1,18 @@
+import QOU.AlgebraicSubstrate.AdelicSubstrate
+import QOU.AlgebraicSubstrate.MotivicSubstrate
+-- `MotivicSubstrateTrivial` deliberately NOT aggregated here:
+-- the trivial `MotivicSubstrate ℤ ℤ trivialTarget` instance
+-- would otherwise pollute typeclass search anywhere
+-- `QOU.AlgebraicSubstrate` (and thus `QOU`) is imported.
+-- Modules that need the witness must opt in explicitly with
+-- `import QOU.AlgebraicSubstrate.MotivicSubstrateTrivial`.
+-- Cf. copilot-pull-request-reviewer review on PR #541.
+import QOU.AlgebraicSubstrate.ReebEpsilon
+import QOU.AlgebraicSubstrate.QFromEpsilon
+import QOU.AlgebraicSubstrate.SurrealRateCalculus
+import QOU.AlgebraicSubstrate.SurrealSqueeze
+import QOU.AlgebraicSubstrate.PvsNPQou
+
 /-!
 # QOU.AlgebraicSubstrate — Chapter 8 aggregator
 
@@ -16,10 +31,3 @@ Aggregator module for the algebraic-substrate chapter:
 - **P vs NP conjecture** (`PvsNPQou.lean`) — the QOU-framework
   complexity-theoretic squeeze instance.
 -/
-
-import QOU.AlgebraicSubstrate.AdelicSubstrate
-import QOU.AlgebraicSubstrate.ReebEpsilon
-import QOU.AlgebraicSubstrate.QFromEpsilon
-import QOU.AlgebraicSubstrate.SurrealRateCalculus
-import QOU.AlgebraicSubstrate.SurrealSqueeze
-import QOU.AlgebraicSubstrate.PvsNPQou

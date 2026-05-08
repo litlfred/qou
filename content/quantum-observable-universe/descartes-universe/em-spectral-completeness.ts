@@ -8,11 +8,7 @@ export default theorem({
     ref: "qou:QOU.Descartes.em_spectral_completeness",
     validation: "not_checked",
   },
-  uses: [
-    "prop:braiding-eigenvalue-extraction",
-    "rem:hecke-algebra-from-braiding",
-    "prop:wedderburn-trace-identity",
-  ],
+  uses: ["prop:wedderburn-trace-identity"],
   tags: [
     "spectral-completeness",
     "wedderburn",

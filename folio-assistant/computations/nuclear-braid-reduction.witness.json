@@ -1,7 +1,7 @@
 {
   "computation": "nuclear-braid-reduction",
   "description": "Gr\u00f6bner--Shirshov reduction of nuclear braid words in H_n(q)",
-  "timestamp": "2026-04-14T16:31:15.117999+00:00",
+  "computedAt": "2026-04-14T16:31:15.117999+00:00",
   "parameters": {
     "q": 1.1099785955541805
   },
@@ -70,5 +70,7 @@
       "unreduced_weight": 4.324561947488651,
       "reduced_weight": 2.1503951826812076
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

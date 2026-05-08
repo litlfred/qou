@@ -1,7 +1,7 @@
 {
   "name": "nucleon-with-gluons-nf",
   "description": "Nucleon NF with explicit Hopf-link gluons. Part 1: Basic particle NF table (\u03bd, \u03b3, H\u2070, H\u00b9, L\u208a, L\u208b, e\u207b, e\u207a, \ud835\udd32, \ud835\udd21, B\u2083). Part 2: Five gluon models compared (A: B\u2083 only, B: Hopf/pair, C: global \u03c3\u00b2, D: single L\u208a, E: L\u208a\u00b7L\u208b). Part 3: Quark ordering effects. Part 4: Knot operation actions dictionary.",
-  "timestamp": "2026-04-07T21:57:07.896409+00:00",
+  "computedAt": "2026-04-07T21:57:07.896409+00:00",
   "git_sha": "2a4c9341df81d59e2504dedb1977ca71590c0c3d",
   "parameters": {
     "q0": 1.1099785955541805,
@@ -486,5 +486,7 @@
         "net": 0.4510942344351552
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

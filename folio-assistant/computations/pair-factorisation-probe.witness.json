@@ -1,7 +1,7 @@
 {
   "computation": "pair-factorisation-probe",
   "description": "Tests traced-product V\u0302_ij (true Plancherel-aggregated character of \u03c3_i \u03c3_j) vs scalar V\u0302_i \u00b7 V\u0302_j factorisation in the \u03a6_q tower pair terms.  Scalar factorisation assumes \u03c7^\u03bb(\u03c3_i\u03c3_j) = \u03c7^\u03bb(\u03c3_i)\u00b7\u03c7^\u03bb(\u03c3_j), which only holds for 1-dim irreps.  Per-pair traced evaluation captures the character correlation \u0394_{ij}^\u03bb that the scalar path drops.",
-  "timestamp": "2026-04-18T19:29:45.295328+00:00",
+  "computedAt": "2026-04-18T19:29:45.295328+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_scalar": 0.0007958232069223113,
@@ -84,5 +84,7 @@
       "scalar_time_sec": 0.0060024261474609375,
       "traced_time_sec": 346.6109583377838
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

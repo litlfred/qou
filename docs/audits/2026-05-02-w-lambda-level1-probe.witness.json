@@ -1,0 +1,164 @@
+{
+  "computation": "volume-shell-w-lambda-level1-probe",
+  "computedAt": "2026-05-02T22:48:12.818946+00:00",
+  "q0": 1.1099785955541805,
+  "ansatz": "w_\u03bb^(1) = (d_q(\u03bb)\u00b2 / [n]_q!) \u00b7 \u03b4(c(\u03bb)=0)",
+  "atoms": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "n_strands": 6,
+      "n_self_conj_partitions": 1,
+      "total_level1": 0.0,
+      "abs_level1": 0.0,
+      "top_contributions": [],
+      "atom": "D",
+      "binding_per_nucleon_AME": 0.4655287150000049,
+      "time_s": 0.0002598762512207031
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "n_strands": 9,
+      "n_self_conj_partitions": 2,
+      "total_level1": 0.00586727064782439,
+      "abs_level1": 0.00586727064782439,
+      "top_contributions": [
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "weight": 0.00586727064782439,
+          "character": 1,
+          "contribution": 0.00586727064782439
+        }
+      ],
+      "atom": "3He",
+      "binding_per_nucleon_AME": 2.141506243333424,
+      "time_s": 0.0003650188446044922
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "n_strands": 9,
+      "n_self_conj_partitions": 2,
+      "total_level1": 0.00586727064782439,
+      "abs_level1": 0.00586727064782439,
+      "top_contributions": [
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "weight": 0.00586727064782439,
+          "character": 1,
+          "contribution": 0.00586727064782439
+        }
+      ],
+      "atom": "3H",
+      "binding_per_nucleon_AME": 1.9649556733334066,
+      "time_s": 0.0002837181091308594
+    },
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_strands": 12,
+      "n_self_conj_partitions": 3,
+      "total_level1": 0.0,
+      "abs_level1": 0.0,
+      "top_contributions": [],
+      "atom": "4He",
+      "binding_per_nucleon_AME": 6.427226477500085,
+      "time_s": 0.00031280517578125
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "n_strands": 18,
+      "n_self_conj_partitions": 5,
+      "total_level1": 0.0,
+      "abs_level1": 0.0,
+      "top_contributions": [],
+      "atom": "6Li",
+      "binding_per_nucleon_AME": 4.430030000000102,
+      "time_s": 0.00047326087951660156
+    },
+    {
+      "Z": 4,
+      "N": 5,
+      "A": 9,
+      "n_strands": 27,
+      "n_self_conj_partitions": 14,
+      "total_level1": 1.7804150868669415,
+      "abs_level1": 1.7804150868669415,
+      "top_contributions": [
+        {
+          "partition": [
+            6,
+            6,
+            6,
+            3,
+            3,
+            3
+          ],
+          "weight": 0.037091980976394615,
+          "character": 48,
+          "contribution": 1.7804150868669415
+        }
+      ],
+      "atom": "9Be",
+      "binding_per_nucleon_AME": 5.744320000000016,
+      "time_s": 0.001737833023071289
+    },
+    {
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "n_strands": 36,
+      "n_self_conj_partitions": 33,
+      "total_level1": 0.1352378668436294,
+      "abs_level1": 0.1352378668436294,
+      "top_contributions": [
+        {
+          "partition": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ],
+          "weight": 0.0010245292942699198,
+          "character": 132,
+          "contribution": 0.1352378668436294
+        }
+      ],
+      "atom": "12C",
+      "binding_per_nucleon_AME": 6.777900000000045,
+      "time_s": 0.004755973815917969
+    },
+    {
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "n_strands": 48,
+      "n_self_conj_partitions": 87,
+      "total_level1": 0.0,
+      "abs_level1": 0.0,
+      "top_contributions": [],
+      "atom": "16O",
+      "binding_per_nucleon_AME": 7.0739825000000565,
+      "time_s": 0.019532442092895508
+    }
+  ],
+  "correlation_level1_vs_binding": 0.24591686759589867,
+  "interpretation": "Tests whether the Plancherel weight restricted to self-conjugate partitions of 3A captures the level-1 binding-energy structure. \u03b4(c=0) is the simplest shell-aware enrichment from conj:categorical-neutrality-saturated-shells. If correlation > 0.7 and 4He shows spike vs neighbours, ansatz captures Volume+Shell. Negative or noisy result \u2192 need full BB-spectral-sequence weight, not bare Plancherel restriction."
+}

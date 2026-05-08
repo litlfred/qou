@@ -8,12 +8,7 @@ export default proposition({
     ref: "qou:QOU.Observations.gravity_spectral_prefactor",
     validation: "not_checked",
   },
-  uses: [
-    "prop:plancherel-term-7-formulation",
-    "prop:unified-curvature-rank-mass-formula",
-    "prop:confinement-categorical",
-    "rem:gr-substrate-geometry",
-  ],
+  uses: ["prop:confinement-categorical"],
   tags: [
     "gravity",
     "newton-constant",

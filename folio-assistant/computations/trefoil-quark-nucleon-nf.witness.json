@@ -1,7 +1,7 @@
 {
   "name": "trefoil-quark-nucleon-nf",
   "description": "Nucleon NF with trefoil quarks from dictionary (Remark 4.25.4 Table 4). Up quark = T_{2,3} (trefoil, same as electron). Down quark = T_{2,3}^\u03c3 (mirror trefoil, same as positron). Part 1: Quark NF verification. Part 2: Mixed crossing (ud average). Part 3: Nucleon NF comparison (trefoil vs single crossing). Part 4: Quark ordering effects. Part 5: Photon \u2192 quark via knot operators.",
-  "timestamp": "2026-04-07T22:02:59.699400+00:00",
+  "computedAt": "2026-04-07T22:02:59.699400+00:00",
   "git_sha": "8f70ef590bbd8ce449041f3701eb8ca298fe7a00",
   "parameters": {
     "q0": 1.1099785955541805,
@@ -227,5 +227,7 @@
         }
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

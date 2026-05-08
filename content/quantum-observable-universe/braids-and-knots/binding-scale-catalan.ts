@@ -6,8 +6,5 @@ export default proposition({
   lean: { ref: "qou:QOU.BindingScale.bindingScale_value",
     validation: "not_checked",
   },
-  uses: [
-    "thm:topological-mass",
-    "def:borromean-baryon",
-  ],
+  uses: ["def:borromean-baryon"],
 });

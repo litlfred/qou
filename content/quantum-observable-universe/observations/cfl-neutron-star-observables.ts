@@ -13,9 +13,5 @@ export default remark({
     "cooling",
     "falsifiability",
   ],
-  uses: [
-    "conj:color-superconductivity-borromean",
-    "prop:borromean-hopf-energy-crossover",
-    "def:hopf-diquark",
-  ],
+  uses: [],
 });

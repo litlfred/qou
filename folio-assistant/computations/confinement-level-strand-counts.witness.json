@@ -1,7 +1,7 @@
 {
   "computation": "confinement-level-strand-counts",
   "description": "Mathematical derivation of strand count per confinement level. L_before = word length of primitive operator (# crossings). L_after^max = Coxeter length of S_n (longest NF word). Per def:confinement-level, def:hecke-normal-form.",
-  "timestamp": "2026-04-17T19:54:50.842309+00:00",
+  "computedAt": "2026-04-17T19:54:50.842309+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "magic_A_values": [
@@ -197,5 +197,7 @@
       82,
       126
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

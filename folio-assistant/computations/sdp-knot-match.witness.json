@@ -1,7 +1,7 @@
 {
   "name": "sdp-knot-match",
   "description": "SDP-based knot match for atomic binding.  Solves a block-coefficient QP in H_{3A}(q_0) Wedderburn space rather than scanning SnapPy's census.  Handles sign freedom (\u2079Be) and respects Frobenius positivity + soft-confinement truncation \u2113_*(q_0).",
-  "timestamp": "2026-04-23T19:36:41.981192+00:00",
+  "computedAt": "2026-04-23T19:36:41.981192+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "hbar_q_sq": 0.00981718851347867,
@@ -1108,5 +1108,7 @@
         }
       ]
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

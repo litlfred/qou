@@ -15,8 +15,5 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.NucleonHeckeElement",
     validation: "not_checked",
   },
-  uses: [
-    "def:typed-crossing-operator",
-    "def:borromean-baryon",
-  ],
+  uses: ["def:typed-crossing-operator"],
 });

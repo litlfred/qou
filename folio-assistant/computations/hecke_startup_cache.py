@@ -111,7 +111,7 @@ def generate_cache() -> dict:
 
     cache = {
         "sources_hash": _sources_hash(),
-        "generated_at": __import__("datetime").datetime.now(
+        "computedAt": __import__("datetime").datetime.now(
             __import__("datetime").timezone.utc
         ).isoformat(),
         "generation_ms": duration_ms,

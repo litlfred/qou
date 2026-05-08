@@ -16,9 +16,6 @@ export default proposition({
     "nat-embedding",
     "non-computable",
   ],
-  uses: [
-    "def:computational-horizon",
-    "rem:skein-turing-machine",
-  ],
+  uses: ["def:computational-horizon"],
   cites: ["goedel1931", "turing1936"],
 });

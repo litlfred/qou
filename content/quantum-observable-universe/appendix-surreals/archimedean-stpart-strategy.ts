@@ -12,13 +12,4 @@ export default remark({
     "proof-strategy",
     "open-problem",
   ],
-  uses: [
-    "conj:archimedean-stpart",
-    "conj:classical-limit-stpart",
-    "def:standard-part-functor",
-    "rem:fibre-functor-rigidity",
-    "conj:infinitesimal-frobenius",
-    "conj:infinitesimal-observability",
-    "conj:vacuum-epsilon",
-  ],
 });

@@ -5,7 +5,7 @@
     "prop:habiro-expansion-atomic",
     "def:habiro-ring"
   ],
-  "timestamp": "2026-04-25T13:55:03.587963+00:00",
+  "computedAt": "2026-04-25T13:55:03.587963+00:00",
   "parameters": {
     "num_samples": 53,
     "deg_bound": 48,
@@ -13,5 +13,7 @@
   },
   "all_match": true,
   "symbolic_terms": 10,
-  "recovered_terms": 10
+  "recovered_terms": 10,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

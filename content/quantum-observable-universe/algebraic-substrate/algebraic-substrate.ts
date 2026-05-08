@@ -24,6 +24,7 @@ export default chapter({
         "categorical-reeb-derivation",
         "reeb-flow-bridge",
         "brings-coordinate-ring",
+        "magic-numbers-bring",
         "rigid-dualizing-complex",
         "rigid-dualizing-brings",
         "substrate-self-duality",
@@ -80,6 +81,7 @@ export default chapter({
       label: "sec:classical-limit",
       blocks: [
         "classical-limit-intro",
+        "motivic-substrate",
         "adelic-substrate",
         "classical-limit-functor",
         "quantum-gap-collapse",

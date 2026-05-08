@@ -102,12 +102,13 @@ cd content && bun run pipeline/validate-tex.ts <paper>/<chapter>/<block>.md
 | All math symbols used are defined in the paper or glossary | **warning** | Extract symbols from math AST, cross-ref against glossary.json and notation remarks |
 | Notation register compliance (CLAUDE.md §7aa) | **error** | Verify font register: fraktur for particles/energy/mass, bold for categories, calligraphic for bundles, etc. |
 | No notation collisions | **error** | Check for `$c$` used as charm (should be `$\mathfrak{c}$`), `$E$` standalone (forbidden), `$\gamma$` for vortex (should be `$\varrho$`), `$m$` for categorical mass (should be `$\mathfrak{m}$`) |
-| Hecke-Skein convention (CLAUDE.md §7a) | **error** | Hecke generator is `$T$` not `$\sigma$` for the relation; Jones polynomial is `$J_K(q)$` not `$V_K(t)$` |
+| Hecke-Skein convention (CLAUDE.md §7a) | **error** | Hecke generator is `$\sigma_i$` (not `$T$`); same symbol serves braid generator in $B_n$ and its image in $H_n(q)$. Jones polynomial is `$J_K(q)$` not `$V_K(t)$` |
 | Category notation uses bold `$\mathbf{C}$` | **error** | Flag calligraphic `$\mathcal{C}$` for categories (reserved for sheaves/bundles) |
 | Fibre functor is `$\tau$` | **warning** | Flag `$\omega$` or `$U$` used as fibre functor |
 | QOU tuple is `$(\mathbf{C}, \theta, G, \mathcal{S})$` | **warning** | Flag deprecated 5-tuple `$(M, \theta, G, P, E)$` |
 | Numerical `$q = 1.1097...$` only in intro/Ch7/Ch9 | **warning** | Flag specific numerical values of `$q$` outside allowed chapters |
 | Observed/derived values use `$\approx$` not `$=$` | **error** | Numerical predictions must use `$\approx$` unless an `$O(\cdot)$` error term is present |
+| Defined terms wrapped in `:defterm` / `:refterm` | **error / warning** | Every slug in any block's `defines[]` must be wrapped at every mention. Run `bun run validate <paper> --strict` to fire `term-mention-coverage` warnings on bare-text mentions of known slugs. Bare `\emph{}` of a defined term is a register violation. |
 | `\cite{key}` keys resolve to references.ts | **error** | Every citation key must exist in the bibliography |
 | Cross-ref labels `[text](#label)` resolve | **error** | Labels in `uses[]` and markdown cross-refs must point to existing blocks |
 | Undefined macros (custom commands not in preamble) | **warning** | Extract `\commandname` tokens, check against main.tex preamble and standard LaTeX/amsmath |

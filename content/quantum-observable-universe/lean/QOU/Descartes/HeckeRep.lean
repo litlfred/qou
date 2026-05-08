@@ -35,6 +35,8 @@ namespace QOU.Descartes
 
 open Matrix
 
+variable {n d : ℕ}
+
 /-! ## §1  Representation structure -/
 
 /-- A representation of the Iwahori–Hecke algebra H_n(q) of dimension d
@@ -89,23 +91,36 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 
 /-- The Hecke relation for the inverse: `σ_i⁻¹² = −HA · σ_i⁻¹ + I`.
 
-    Proof: `σ⁻¹ = σ − HA`, so `σ⁻¹² = (σ − HA)² = σ² − 2·HA·σ + HA²`
-    `= (HA·σ + 1) − 2·HA·σ + HA² = 1 − HA·σ + HA² = 1 − HA·(σ − HA) = 1 − HA·σ⁻¹`.
-    Thus `σ⁻¹² = −HA · σ⁻¹ + 1`.
+    Proof sketch: `σ⁻¹ = σ − HA`, so
+      `σ⁻¹² = σ² − 2·HA·σ + HA²` (using that `HA·1` commutes with `σ`)
+            = `(HA·σ + 1) − 2·HA·σ + HA²`            [Hecke]
+            = `1 − HA·σ + HA²`
+            = `1 − HA·(σ − HA)`                       [bilinearity]
+            = `1 − HA·σ⁻¹`.
 
-    Equivalently: `(σ⁻¹ − (−q⁻¹))(σ⁻¹ − q) = 0`. -/
--- Ref: [iwahori1964]
+    Equivalently: `(σ⁻¹ − (−q⁻¹))(σ⁻¹ − q) = 0`.
+
+    DIAGNOSTIC: the algebraic massage requires combining smul of the
+    identity matrix with matrix multiplication.  `abel` fails on the
+    final goal because the term `(HA_t * HA_t) • 1` appears with a
+    nested `(-1) • (-1) •` after `neg_smul` rewrites, and `abel` does
+    not normalize `(-1) • (-1) • X` to `X` when `X` is itself a smul.
+    The cleanest fix would be:
+    1. introduce `H := HA_t • (1 : Matrix _ _ R_t)` as a local set
+       so `abel` sees `H` and `σ` as the only atoms; then
+    2. precompute `H * σ = σ * H = HA_t • σ` and
+       `H * H = (HA_t * HA_t) • 1` once, and
+    3. close by `linear_combination` against `hecke`.
+
+    Sorry retained pending that refactor. -/
+-- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 := by
-  have hR := ρ.gen_mul_genInv i
-  have hL := ρ.genInv_mul_gen i
-  -- σ⁻¹² = σ⁻¹ · σ⁻¹ = σ⁻¹ · (σ − HA) = σ⁻¹σ − HA·σ⁻¹ = I − HA·σ⁻¹
-  unfold genInv at *
-  rw [sub_mul, smul_mul_assoc, one_mul, ρ.hecke_rel i]
-  -- Simplify to show result = -HA_t • (gen i - HA_t • 1) + 1
-  ring_nf
-  simp [Matrix.mul_sub, Matrix.sub_mul, Matrix.mul_smul_comm,
-        Matrix.smul_mul_assoc, ρ.hecke_rel i]
+  -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
+  simp only [genInv, sub_mul, mul_sub, smul_mul_assoc, mul_smul_comm,
+             one_mul, mul_one, smul_smul]
+  rw [ρ.hecke_rel i]
+  simp only [neg_smul, smul_sub, smul_smul]
   abel
 
 /-! ## §3  Braid word evaluation -/
@@ -163,6 +178,50 @@ noncomputable def HeckeRep.halfBorromeanConjMat (ρ : HeckeRep n d)
     (i j : Fin (n - 1)) : Matrix (Fin d) (Fin d) R_t :=
   ρ.genInv i * ρ.genInv j * ρ.gen i * ρ.gen j
 
+/-! ## §4b  Algebraic identities in R_t = ℤ[t, t⁻¹] -/
+
+/-- `t · t⁻¹ = 1` in `R_t = ℤ[t, t⁻¹]`. -/
+lemma t_mul_t_inv : t * t_inv = (1 : R_t) := by
+  unfold t t_inv
+  rw [← LaurentPolynomial.T_add]
+  simp [LaurentPolynomial.T_zero]
+
+/-- `t⁻¹ · t = 1` in `R_t`. -/
+lemma t_inv_mul_t : t_inv * t = (1 : R_t) := by
+  unfold t t_inv
+  rw [← LaurentPolynomial.T_add]
+  simp [LaurentPolynomial.T_zero]
+
+/-- `q · q⁻¹ = 1` in `R_t` (using `q_from_t`/`q_inv_from_t`).
+    Distinct from `QOU.Descartes.q_mul_q_inv` (which uses the
+    `q`/`q_inv` aliases in `GroundRing.lean`). -/
+lemma q_from_t_mul_q_inv_from_t : q_from_t * q_inv_from_t = (1 : R_t) := by
+  unfold q_from_t q_inv_from_t
+  -- (t·t)·(t⁻¹·t⁻¹) = t·(t·t⁻¹)·t⁻¹ = t·1·t⁻¹ = t·t⁻¹ = 1
+  calc t * t * (t_inv * t_inv)
+      = t * (t * t_inv) * t_inv := by ring
+    _ = t * 1 * t_inv := by rw [t_mul_t_inv]
+    _ = t * t_inv := by rw [mul_one]
+    _ = 1 := t_mul_t_inv
+
+/-- The Hecke quadratic identity in R_t: `q² = HA · q + 1`. -/
+lemma q_squared_eq : q_from_t * q_from_t = HA_t * q_from_t + 1 := by
+  unfold HA_t
+  -- Goal: q*q = (q − q⁻¹)*q + 1
+  -- Residual: q*q − (q − q⁻¹)*q − 1 = q⁻¹*q − 1, which matches h' below.
+  have h' : q_inv_from_t * q_from_t = (1 : R_t) := by
+    rw [mul_comm]; exact q_from_t_mul_q_inv_from_t
+  linear_combination h'
+
+/-- The signed Hecke quadratic identity: `q⁻² = −HA · q⁻¹ + 1`. -/
+lemma q_inv_squared_eq :
+    q_inv_from_t * q_inv_from_t = (- HA_t) * q_inv_from_t + 1 := by
+  unfold HA_t
+  -- Goal: q⁻¹*q⁻¹ = -(q − q⁻¹)*q⁻¹ + 1 = -q*q⁻¹ + q⁻¹*q⁻¹ + 1
+  -- Residual: q⁻¹*q⁻¹ + q*q⁻¹ − q⁻¹*q⁻¹ − 1 = q*q⁻¹ − 1, matches h.
+  have h := q_from_t_mul_q_inv_from_t
+  linear_combination h
+
 /-! ## §5  Trivial (symmetric) representation -/
 
 /-- The trivial (symmetric) representation of H_n(q):
@@ -172,19 +231,16 @@ noncomputable def HeckeRep.halfBorromeanConjMat (ρ : HeckeRep n d)
     partition (n) of n. -/
 noncomputable def trivRep (n : ℕ) : HeckeRep n 1 where
   gen _ := q_from_t • 1
+  -- Hecke relation: q² = HA·q + 1 (q_squared_eq).
   hecke_rel _ := by
-    simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm]
-    rw [show q_from_t • (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t)) =
-        (q_from_t * q_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t) from by
-      rw [← mul_smul]]
-    ext i j; fin_cases i; fin_cases j
-    simp [HA_t, q_from_t, q_inv_from_t, t, t_inv, Matrix.smul_apply,
-          Matrix.one_apply]
-    ring
-  braid_adj _ _ _ := by
-    simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm, mul_assoc]
-  braid_far _ _ _ := by
-    simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm]
+    show (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t))
+        * (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t))
+      = HA_t • (q_from_t • (1 : Matrix (Fin 1) (Fin 1) R_t)) + 1
+    rw [smul_mul_smul_comm, Matrix.one_mul, ← smul_assoc,
+        smul_eq_mul, q_squared_eq, add_smul, one_smul]
+  -- braid_adj and braid_far close by reflexivity since `gen` is constant.
+  braid_adj _ _ _ := rfl
+  braid_far _ _ _ := rfl
 
 /-- The sign (alternating) representation of H_n(q):
     every generator σ_i maps to `−q⁻¹ · I` (scalar matrix).
@@ -193,19 +249,22 @@ noncomputable def trivRep (n : ℕ) : HeckeRep n 1 where
     partition (1, 1, …, 1) of n. -/
 noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
   gen _ := (-q_inv_from_t) • 1
+  -- Hecke relation: (−q⁻¹)² = q⁻² = −HA·q⁻¹ + 1 = HA·(−q⁻¹) + 1.
   hecke_rel _ := by
-    simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm]
-    rw [show (-q_inv_from_t) • ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t)) =
-        (q_inv_from_t * q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t) from by
-      rw [neg_smul, neg_smul, neg_neg, ← mul_smul]]
-    ext i j; fin_cases i; fin_cases j
-    simp [HA_t, q_from_t, q_inv_from_t, t, t_inv, Matrix.smul_apply,
-          Matrix.one_apply]
-    ring
-  braid_adj _ _ _ := by
-    simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm, mul_assoc]
-  braid_far _ _ _ := by
-    simp [Matrix.smul_mul_assoc, Matrix.mul_smul_comm]
+    show ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t))
+        * ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t))
+      = HA_t • ((-q_inv_from_t) • (1 : Matrix (Fin 1) (Fin 1) R_t)) + 1
+    rw [smul_mul_smul_comm, Matrix.one_mul, ← smul_assoc, smul_eq_mul]
+    -- Goal: ((-q⁻¹) * (-q⁻¹)) • 1 = (HA · (-q⁻¹)) • 1 + 1
+    -- LHS scalar: (-q⁻¹)·(-q⁻¹) = q⁻² = q⁻¹ · q⁻¹
+    -- RHS scalar: HA · (-q⁻¹) = -HA·q⁻¹
+    -- So need: q⁻¹ · q⁻¹ = -HA · q⁻¹ + 1, which is q_inv_squared_eq.
+    have h : (-q_inv_from_t) * (-q_inv_from_t) = HA_t * (-q_inv_from_t) + 1 := by
+      have hi := q_inv_squared_eq
+      linear_combination hi
+    rw [h, add_smul, one_smul]
+  braid_adj _ _ _ := rfl
+  braid_far _ _ _ := rfl
 
 /-! ## §6  Transfer matrix commutativity -/
 
@@ -215,14 +274,27 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
     form `c · A + d · I` where `A = T(1,0)` is the proton–proton
     crossing matrix.  Since `A` and `I` generate a commutative
     subalgebra (polynomials in a single matrix), any two transfer
-    matrices commute. -/
+    matrices commute.
+
+    DIAGNOSTIC: the per-entry `simp` + `ring` chain exposes
+    sub-expressions in `Matrix.cons` form whose simp normal form has
+    churned across Mathlib versions; `ring` does not auto-close the
+    matmul-expanded entries.  The cleanest robust fix is to factor
+    `transferMatrix a b = a • A + b • 1` (where `A := transferMatrix
+    1 0`) and conclude via `(a•A+b•1) * (c•A+d•1) = (c•A+d•1) *
+    (a•A+b•1)` purely from `A * 1 = A = 1 * A` and the bilinearity of
+    smul over matrix multiplication.  Sorry retained pending refactor
+    via the algebra-of-`A` route. -/
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =
     transferMatrix c d * transferMatrix a b := by
+  -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [transferMatrix, Matrix.mul_apply, Fin.sum_univ_two] <;>
+    simp only [transferMatrix, Matrix.mul_apply, Fin.sum_univ_two,
+               Matrix.cons_val_zero, Matrix.cons_val_one,
+               Matrix.head_cons, Matrix.head_fin_const] <;>
     ring
 
 /-- Corollary: the product of any finite list of transfer matrices

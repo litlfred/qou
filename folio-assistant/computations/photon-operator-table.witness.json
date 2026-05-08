@@ -5,52 +5,52 @@
   "commitSha": "5d947df2882e4af0dccbf091e6eb9b353cd59f3e",
   "assertions": [
     {
-      "name": "T_{1,0} e⁻ pair count",
+      "name": "T_{1,0} e\u207b pair count",
       "computed": 19,
       "expected": 19,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "T_{2,1} e⁻ pair count",
+      "name": "T_{2,1} e\u207b pair count",
       "computed": 24,
       "expected": 24,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "T_{2,2} e⁻ pair count",
+      "name": "T_{2,2} e\u207b pair count",
       "computed": 24,
       "expected": 24,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "T_{2,3} e⁻ pair count",
+      "name": "T_{2,3} e\u207b pair count",
       "computed": 36,
       "expected": 36,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "T_{2,5} e⁻ pair count",
+      "name": "T_{2,5} e\u207b pair count",
       "computed": 36,
       "expected": 36,
       "passed": true,
       "tolerance": 0,
-      "source": "H₃(q) basis multiplication"
+      "source": "H\u2083(q) basis multiplication"
     },
     {
-      "name": "T_{2,3} universally opens e⁻ channel",
+      "name": "T_{2,3} universally opens e\u207b channel",
       "computed": 36,
       "expected": 36,
       "passed": true,
       "tolerance": 0,
-      "source": "Trefoil = e⁻ in NF basis; b_i·e⁻·b_j always has e⁻ ≠ 0"
+      "source": "Trefoil = e\u207b in NF basis; b_i\u00b7e\u207b\u00b7b_j always has e\u207b \u2260 0"
     }
   ],
   "allPassed": true,
@@ -59,19 +59,19 @@
   "scriptFile": "photon_operator_table.py",
   "scriptHash": "7a871d0ae7fd",
   "scriptCommitSha": "103cf8c1c6f2b76da79e67f4292fd8e273245132",
-  "description": "Compact photon operator table: NF of b_i·β(T_{m,n})·b_j for all 6×6 basis pairs and 5 torus knot operators. Each operator stored as a 6×6 matrix of 6-element NF vectors. Replaces the verbose knot-operator-table witness (78KB → ~8KB).",
+  "description": "Compact photon operator table: NF of b_i\u00b7\u03b2(T_{m,n})\u00b7b_j for all 6\u00d76 basis pairs and 5 torus knot operators. Each operator stored as a 6\u00d76 matrix of 6-element NF vectors. Replaces the verbose knot-operator-table witness (78KB \u2192 ~8KB).",
   "contentBlock": "rem:knot-operator-basis-table",
   "parameters": {
     "q": 1.1099785955541805,
     "h": 0.20906032198987945,
     "z": 0.4993203340335982,
     "basis": [
-      "γ",
-      "σ₀",
-      "σ₁",
-      "L₊",
-      "L₋",
-      "e⁻"
+      "\u03b3",
+      "\u03c3\u2080",
+      "\u03c3\u2081",
+      "L\u208a",
+      "L\u208b",
+      "e\u207b"
     ]
   },
   "data": {
@@ -1652,5 +1652,7 @@
         "demand_pairs": 0
       }
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

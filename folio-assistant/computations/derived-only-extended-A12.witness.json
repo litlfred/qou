@@ -1,7 +1,7 @@
 {
   "computation": "derived-only-extended-A12",
   "description": "Extend derived-only formula to A=1..12 using pyhecke speedup for canonical Markov trace cross-check.  Tests how far the formula extends naturally and where Term 7 shell correction becomes critical.",
-  "timestamp": "2026-04-25T17:09:45.963201+00:00",
+  "computedAt": "2026-04-27T21:19:23.983306+00:00",
   "q_0": 1.1099785955541805,
   "have_pyhecke": true,
   "isotopes": [
@@ -38,10 +38,10 @@
       "A": 2,
       "M_pred_MeV": 1875.2038574556555,
       "M_codata_MeV": 1876.12393,
-      "B_pred_MeV": 3.144650174344365,
+      "B_pred_MeV": 3.1446501743443656,
       "B_AME_MeV": 2.22456612,
       "err_M_pct": -0.0490411390011171,
-      "err_B_pct": 41.360157653770486,
+      "err_B_pct": 41.36015765377051,
       "pyhecke_tr_M": "+3.3682e-01"
     },
     {
@@ -51,10 +51,10 @@
       "A": 3,
       "M_pred_MeV": 2812.6230932607687,
       "M_codata_MeV": 2809.43215,
-      "B_pred_MeV": 5.290834889231247,
+      "B_pred_MeV": 5.290834889231245,
       "B_AME_MeV": 8.481798,
       "err_M_pct": 0.11357965205774992,
-      "err_B_pct": -37.62130518515948,
+      "err_B_pct": -37.62130518515949,
       "pyhecke_tr_M": "+7.8297e-02"
     },
     {
@@ -64,10 +64,10 @@
       "A": 3,
       "M_pred_MeV": 2811.849177932779,
       "M_codata_MeV": 2809.41347,
-      "B_pred_MeV": 5.2824168072205495,
+      "B_pred_MeV": 5.282416807220549,
       "B_AME_MeV": 7.718058,
       "err_M_pct": 0.08669809406086544,
-      "err_B_pct": -31.55769486028027,
+      "err_B_pct": -31.55769486028029,
       "pyhecke_tr_M": "+1.7917e-01"
     },
     {
@@ -129,7 +129,7 @@
       "A": 10,
       "M_pred_MeV": 9370.769380578766,
       "M_codata_MeV": 9326.4368,
-      "B_pred_MeV": 20.973157571232512,
+      "B_pred_MeV": 20.97315757123251,
       "B_AME_MeV": 64.75077,
       "err_M_pct": 0.47534317263337145,
       "err_B_pct": -67.60940824142708,
@@ -142,10 +142,10 @@
       "A": 12,
       "M_pred_MeV": 11248.130415494437,
       "M_codata_MeV": 11177.929,
-      "B_pred_MeV": 21.960630285562402,
+      "B_pred_MeV": 21.960630285562416,
       "B_AME_MeV": 92.16175,
       "err_M_pct": 0.6280359760241565,
-      "err_B_pct": -76.17164356627082,
+      "err_B_pct": -76.1716435662708,
       "pyhecke_tr_M": "+9.7364e-06"
     }
   ]

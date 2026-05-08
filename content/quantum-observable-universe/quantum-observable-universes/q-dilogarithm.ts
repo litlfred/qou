@@ -8,9 +8,8 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:q-exponential",
     "def:q-logarithm",
-    "def:categorical-laplace",
+    "def:habiro-ring",
     "prop:tannaka-krein-reconstruction",
   ],
 });

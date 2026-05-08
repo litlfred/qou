@@ -161,7 +161,7 @@ where $d_\lambda$ is the $q$-dimension and $\chi_\lambda$ is the
 character in irrep $\lambda$.
 
 The $6$ embeddable knots, evaluated in the $5$ irreps, give a
-$6 \times 5$ matrix $M_{ij} = \chi_{\lambda_j}(T_i)$.  This
+$6 \times 5$ matrix $M_{ij} = \chi_{\lambda_j}(\sigma_i)$.  This
 matrix has rank $5$ (= number of irreps, verified numerically).
 Therefore the $6$ knot evaluations **span** the $5$-dimensional
 space of irrep characters.

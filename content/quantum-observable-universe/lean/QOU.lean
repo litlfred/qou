@@ -12,6 +12,10 @@
 -- import Fred2005
 
 import QOU.Basic
+import QOU.MathlibExt
+import QOU.MathlibExt.SDP
+import QOU.MathlibExt.QPlancherel
+import QOU.MathlibExt.MonoidalCalcVar
 import QOU.Glossary
 import QOU.KnotTheory
 import QOU.KnotRegistry
@@ -48,4 +52,10 @@ import QOU.QGeometricLanglands
 import QOU.AppendixSurreals
 import QOU.AlgebraicSubstrate
 import QOU.LiftingDescent
+import QOU.LiftingDescent.HomologicalCondensation
+import QOU.LiftingDescent.BBStratification
 import QOU.MotivesArchimedean
+import QOU.MassEndomorphism
+import QOU.PhiQPiece
+import QOU.Kashaev
+import QOU.PhiQJSJ

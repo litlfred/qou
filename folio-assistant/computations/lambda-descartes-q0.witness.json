@@ -94,5 +94,7 @@
     0.9014902429879061,
     -0.9014902429879061
   ],
-  "interpretation": "If ratio_D_lambda_to_v3 == 1, the universal shape parameter ansatz z_c = lambda(q_0) exactly reproduces Thurston volume for knots triangulated by regular tetrahedra (figure-8, knot complement census minimum).  Ratio < 1 means the universal ansatz UNDER-predicts volume and per-knot gluing is required.  Ratio > 1 means OVER-prediction."
+  "interpretation": "If ratio_D_lambda_to_v3 == 1, the universal shape parameter ansatz z_c = lambda(q_0) exactly reproduces Thurston volume for knots triangulated by regular tetrahedra (figure-8, knot complement census minimum).  Ratio < 1 means the universal ansatz UNDER-predicts volume and per-knot gluing is required.  Ratio > 1 means OVER-prediction.",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -18,12 +18,9 @@ export default proposition({
   },
   uses: [
     "prop:jet-tower-convergence",
-    "rem:mass-endomorphism-jet-tower",
-    "prop:mass-endomorphism-tower",
-    "def:recursive-brane-tower",
     "thm:markov-trace-factorization",
-    "prop:confinement-sdp",
     "prop:descent-eigenspaces",
+    "def:recursive-brane-tower",
   ],
   cites: ["kassel1995", "leitner2026"],
 });

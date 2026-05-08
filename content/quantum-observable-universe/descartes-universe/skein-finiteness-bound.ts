@@ -16,11 +16,5 @@ export default proposition({
   lean: { ref: "qou:QOU.Descartes.skein_finiteness_bound",
     validation: "not_checked",
   },
-  uses: [
-    "prop:shell-closure-normal-form",
-    "prop:skein-polynomial-transfer-matrix",
-    "prop:nuclear-groebner-reduction",
-    "prop:integer-stability",
-    "def:substrate-parameter",
-  ],
+  uses: ["prop:shell-closure-normal-form"],
 });

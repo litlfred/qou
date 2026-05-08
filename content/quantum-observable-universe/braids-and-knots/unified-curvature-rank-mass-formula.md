@@ -38,7 +38,7 @@ $e_\lambda$ has GB-depth $\mathrm{depth}(\lambda)$, so the centre
 splits as $Z = \bigoplus_{k} Z_k$ with $Z_k$ the depth-$k$ direct
 summand.  The block-restricted Frobenius integral
 $\int_{A_\lambda} = \int_A \circ\, e_\lambda$
-([Markov–Frobenius pairing](#prop:knot-factor-frobenius-pairing))
+([Markov–Frobenius pairing](#conj:knot-factor-frobenius-pairing))
 extracts the $\lambda$-component.  Plancherel-weighted logarithms of
 those components, binned by depth, give the $\mathfrak{m}^{(k)}$
 functionals.  $\square$
@@ -63,3 +63,23 @@ decomposition was available.  In the unified picture, Term 6 $=
 \mathfrak{m}^{(3)}$ and Term 7 $= \mathfrak{m}^{\geq 4}$ are simply two
 adjacent strata of the same tower.  Future work should reference
 $\mathfrak{m}^{(k)}$ uniformly.*
+
+**Chirality / non-chirality refinement.**
+
+*Per [prop:chirality-residue-mass-term](#prop:chirality-residue-mass-term),
+the mass tower further splits along the signed-content predicate
+$c_\lambda = 0$ (chirality cells, where $D_q^2(\lambda) = 0$):*
+
+$$
+  \mathfrak{m}_{q,\mathcal{K}}(\mathcal{T})
+  \;=\;
+  \mathfrak{m}^{\mathrm{chir}}_{q,\mathcal{K}}(\mathcal{T})
+  \;+\;
+  \mathfrak{m}^{\neg\mathrm{chir}}_{q,\mathcal{K}}(\mathcal{T}).
+$$
+
+*The chirality part is the gauge-invariant background contribution
+([rem:confinement-curvature-rank](#rem:confinement-curvature-rank));
+empirically it accounts for $\sim 3\%$ of the binding energy of $^4$He
+([atomic_chirality_residue.py witness](#)) and dominates the deepest
+curvature-rank strata.*

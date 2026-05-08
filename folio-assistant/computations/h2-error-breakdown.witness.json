@@ -1,7 +1,7 @@
 {
   "name": "h2-error-breakdown",
   "description": "\u00b2H (deuterium) error source breakdown.  Identifies the dominant contribution (knot-matching mismatch, ~24 keV) and quantifies the gap between current ~13 ppm precision and the 1 ppb target (~1.88 eV residual on M(\u00b2H)).",
-  "timestamp": "2026-04-23T19:44:27.077970+00:00",
+  "computedAt": "2026-04-23T19:44:27.077970+00:00",
   "constants": {
     "q_0": 1.1099785955541805,
     "M_E_MEV": 0.51099895,
@@ -40,5 +40,7 @@
     "(a) Refined knot Dehn-filling / mutant at Vol = V_target",
     "(b) Crossing-graded 1st-order correction with \u03b7_c fit",
     "(c) First-principles H_3(q) Markov trace from Hecke machinery"
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

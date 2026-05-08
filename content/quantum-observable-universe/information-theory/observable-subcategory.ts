@@ -14,6 +14,5 @@ export default definition({
     "rem:bundle-category",
     "def:jet-horizon",
     "def:observation",
-    "prop:jet-prolongation",
   ],
 });

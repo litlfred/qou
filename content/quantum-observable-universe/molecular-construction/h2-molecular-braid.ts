@@ -10,11 +10,7 @@ export default definition({
   lean: { ref: "qou:QOU.Molecular.H2Braid",
     validation: "not_checked",
   },
-  uses: [
-    "def:molecular-braid",
-    "def:covalent-bond-shared-trefoil",
-    "def:atomic-braid",
-  ],
+  uses: ["def:covalent-bond-shared-trefoil"],
   tags: [
     "hydrogen",
     "H2",

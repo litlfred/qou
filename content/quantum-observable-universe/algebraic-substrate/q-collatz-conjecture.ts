@@ -5,10 +5,7 @@ export default conjecture({
   title:
     "The $q$-Collatz conjecture: Skein-module crossing resolution",
   uses: [
-    "def:reeb-bundle",
-    "prop:skein-generation",
     "rem:substrate-gm-torsion",
-    "def:classical-limit-obstruction",
     "thm:qou-obstruction-reduction",
   ],
   tags: [

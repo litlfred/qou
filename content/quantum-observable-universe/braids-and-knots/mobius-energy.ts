@@ -11,8 +11,6 @@ export default proposition({
     "def:categorical-action",
     "thm:topological-mass",
     "rem:frobenius-simplification",
-    "conj:classical-limit-stpart",
-    "conj:vacuum-epsilon",
   ],
   proofs: ["prf:mobius-energy"],
   rendered: [

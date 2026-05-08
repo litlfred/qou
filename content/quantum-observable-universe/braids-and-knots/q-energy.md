@@ -22,7 +22,7 @@ where:
   ([q-momentum](#def:q-momentum)),
 - $S_q(K) = \mathrm{tr}_\tau(\rho(\beta))$ is the categorical
   action — the Markov trace of the braid in the Hecke
-  algebra $H_n(q)$,
+  algebra $H_n(R, q)$,
 - $\hbar_q = 1 - q^{-1}$ is the quantum Planck constant,
 - $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ is the $q$-number.
 

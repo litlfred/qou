@@ -11,14 +11,7 @@ export default proposition({
   },
   uses: [
     "prop:wigner-np-pairing",
-    "prop:confined-knot-binding",
-    "prop:hook-weight-derivation",
-    "prop:wedderburn-trace-identity",
     "prop:bw-coefficient-shadow-price",
-    "prop:mass-endomorphism-tower",
-    "prop:nuclear-knot-classification",
-    "rem:conway-normal-form",
-    "rem:body-asymptotics-catalog",
   ],
   cites: [
     "kerov1996",

@@ -1,0 +1,85 @@
+{
+  "audit": "Per-braid mass prediction vs AME \u2014 calibration check",
+  "generated": "2026-05-02T01:35:12.117321+00:00",
+  "q_0": "1.1099785955541805",
+  "m_e_mev": 0.51099895,
+  "calibration_discipline": "prop:three-calibration-discipline (H^0 = m_e)",
+  "atoms": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "per_braid_total": 3700.775998540534,
+      "ame_mass_mev": 1875.61294257,
+      "calibration_constant_mev_per_unit": 0.5068161227022876,
+      "calibration_over_me_dimensionless": 0.9918144111691182
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "per_braid_total": 5551.572648861068,
+      "ame_mass_mev": 2808.39148127,
+      "calibration_constant_mev_per_unit": 0.5058731388206106,
+      "calibration_over_me_dimensionless": 0.989969037745793
+    },
+    {
+      "atom": "3H",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "per_braid_total": 5551.572648861068,
+      "ame_mass_mev": 2808.92113298,
+      "calibration_constant_mev_per_unit": 0.5059685445269754,
+      "calibration_over_me_dimensionless": 0.9901557420557819
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "per_braid_total": 7402.670554842964,
+      "ame_mass_mev": 3727.37909409,
+      "calibration_constant_mev_per_unit": 0.5035181650291705,
+      "calibration_over_me_dimensionless": 0.9853604689973835
+    },
+    {
+      "atom": "12C",
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "per_braid_total": 22221.80834953155,
+      "ame_mass_mev": 11177.9292,
+      "calibration_constant_mev_per_unit": 0.5030161823097371,
+      "calibration_over_me_dimensionless": 0.9843781133204621
+    },
+    {
+      "atom": "16O",
+      "Z": 8,
+      "N": 8,
+      "A": 16,
+      "per_braid_total": 29638.275598227556,
+      "ame_mass_mev": 14899.16828,
+      "calibration_constant_mev_per_unit": 0.5027002407957569,
+      "calibration_over_me_dimensionless": 0.9837598312007432
+    },
+    {
+      "atom": "40Ca",
+      "Z": 20,
+      "N": 20,
+      "A": 40,
+      "per_braid_total": 74233.65597835122,
+      "ame_mass_mev": 37224.9202,
+      "calibration_constant_mev_per_unit": 0.5014561078718245,
+      "calibration_over_me_dimensionless": 0.9813251238027486
+    }
+  ],
+  "mean_calibration_over_me": 0.9866803897560043,
+  "calibration_spread_percent": 1.063088663286746,
+  "interpretation": "Per-braid total \u00d7 (0.986680 \u00d7 m_e) \u2248 AME atomic mass. Spread 1.06% is the binding-energy correction. The per-braid 'natural unit' is dimensionless \u00d7 m_e (H^0 input).",
+  "limitations": [
+    "Murnaghan-Nakayama at q=1: proton and neutron sub-braids have identical permutation cycle structure (S_3 generator action). Per-braid traces don't distinguish them yet. q-deformed Hecke character refinement is the next step (P2.2c)."
+  ]
+}

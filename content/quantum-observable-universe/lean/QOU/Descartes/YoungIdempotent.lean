@@ -47,8 +47,12 @@ def coxeterLength {n : ℕ} (w : Equiv.Perm (Fin n)) : ℕ :=
 
 /-- The identity permutation has length 0. -/
 theorem coxeterLength_one {n : ℕ} : coxeterLength (1 : Equiv.Perm (Fin n)) = 0 := by
-  simp [coxeterLength, Finset.filter_eq_empty]
-  intro a b _ hab
+  simp only [coxeterLength, Equiv.Perm.one_apply]
+  rw [Finset.card_eq_zero]
+  ext ⟨a, b⟩
+  simp only [Finset.mem_filter, Finset.mem_product, Finset.mem_univ, true_and, Finset.not_mem_empty,
+             iff_false, not_and]
+  intro hab
   exact not_lt.mpr (le_of_lt hab)
 
 /-! ## §2  S₃ explicit enumeration -/
@@ -156,7 +160,24 @@ noncomputable def youngSymIdempotent2 (ρ : HeckeRep 2 d) :
     Summing over S₃ with q^{ℓ(w)} weights produces q · e_{(3)}. -/
 -- Ref: [mathas1999] Theorem 3.2 (Young symmetrizer eigenvalue property)
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-axiom youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2) :
+
+/-- **Young-symmetric eigenvalue — typeclass (Pattern 4).**
+
+    Witnesses the symmetric-rep eigenvalue property `σ_i · e_{(3)} = q · e_{(3)}`
+    for a *specific* representation `ρ`. The universal claim
+    requires expanding σ_i · T_w via Hecke/braid relations across
+    the full S_3 sum; until that is mechanised, callers supply a
+    per-`ρ` witness. -/
+class YoungSym3Eigenvalue (ρ : HeckeRep 3 d) : Prop where
+  /-- For every generator `i`, the symmetric idempotent acts as
+      multiplication by `q`. -/
+  eigenvalue : ∀ i : Fin 2,
     ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ
+
+/-- Per-instance form. -/
+theorem youngSym3_eigenvalue (ρ : HeckeRep 3 d) (i : Fin 2)
+    [hi : YoungSym3Eigenvalue ρ] :
+    ρ.gen i * youngSymIdempotent3 ρ = q_from_t • youngSymIdempotent3 ρ :=
+  hi.eigenvalue i
 
 end QOU.YoungIdempotent

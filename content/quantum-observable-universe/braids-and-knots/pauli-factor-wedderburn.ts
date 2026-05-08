@@ -10,9 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:confinement-categorical",
-    "prop:wedderburn-trace-identity",
     "rem:gram-matrix-spectral-connection",
-    "prop:hoefsmit-scattering-pipeline",
   ],
   tags: [
     "pauli-factor",

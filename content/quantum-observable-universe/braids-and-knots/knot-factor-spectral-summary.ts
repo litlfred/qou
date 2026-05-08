@@ -6,8 +6,6 @@ export default remark({
     "Spectral derivation of the empirical $a_K$ pattern across nuclei",
   interprets: "prop:knot-factor-spectral-form",
   uses: [
-    "prop:knot-factor-spectral-form",
-    "cor:knot-factor-amphicheiral",
     "cor:knot-factor-borromean-composite",
     "cor:knot-factor-shell-closed",
   ],

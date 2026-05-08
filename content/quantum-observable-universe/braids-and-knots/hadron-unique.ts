@@ -7,7 +7,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:hadron",
     "prop:hadron-exists",
     "def:hecke-normal-form",
   ],

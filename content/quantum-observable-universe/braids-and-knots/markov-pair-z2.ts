@@ -14,10 +14,6 @@ export default proposition({
     ref: "qou:QOU.Hecke.markov_pair_z2",
     validation: "not_checked",
   },
-  uses: [
-    "thm:jones-markov-trace",
-    "thm:markov-trace-factorization",
-    "rem:mass-endomorphism-jet-tower",
-  ],
+  uses: ["rem:mass-endomorphism-jet-tower"],
   cites: ["kassel1995", "jones1987"],
 });

@@ -30,11 +30,11 @@ import mpmath as mp
 mp.mp.dps = 50
 
 from hecke_characters import partitions_of, young_hooks
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 
 
 def classical_dim(shape) -> int:
@@ -112,7 +112,8 @@ def main() -> int:
     print("SUB-PPM RESIDUAL ANALYSIS for p, n (after 5/2·m_e correction)")
     print('=' * 100)
     mp_tower = mp.mpf('936.9942387')
-    Q_n = mp.mpf('0.782')           # physical neutron β-decay Q-value
+    from experimental_constants import Q_NEUTRON_MEV
+    Q_n = mp.mpf(str(Q_NEUTRON_MEV))  # 0.78233341 MeV (CODATA-derived)
     # Corrected predictions
     mp_corrected = mp_tower + (mp.mpf(5) / 2) * me
     mn_corrected = mp_tower + Q_n + me + (mp.mpf(5) / 2) * me

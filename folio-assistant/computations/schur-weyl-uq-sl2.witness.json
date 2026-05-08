@@ -6,7 +6,7 @@
     "prop:mass-endomorphism-tower",
     "prop:schur-weyl-mass-decomposition"
   ],
-  "timestamp": "2026-04-24T23:17:15.591183+00:00",
+  "computedAt": "2026-04-24T23:17:15.591183+00:00",
   "parameters": {
     "q_0": 1.1099785955541805
   },
@@ -22,5 +22,7 @@
     "quantum_dim_total": "(q**4 - 1/q**4)/(q - 1/q) + (q**2 - 1/q**2)**2/(q - 1/q)**2",
     "q_integer_identity_[2]^3_eq_[4]_plus_[2]^2": true
   },
-  "phi_q_finding": "\u03a6_q Taylor coefficient 1/(q;q)_n \u2260 any single finite-dim U_q irrep quantum dimension.  \u03a6_q lives in infinite-dim q-Heisenberg / quantum dilogarithm structure, not in finite Schur-Weyl.  Paper's derivation via exceptional-divisor blow-up is the correct natural home."
+  "phi_q_finding": "\u03a6_q Taylor coefficient 1/(q;q)_n \u2260 any single finite-dim U_q irrep quantum dimension.  \u03a6_q lives in infinite-dim q-Heisenberg / quantum dilogarithm structure, not in finite Schur-Weyl.  Paper's derivation via exceptional-divisor blow-up is the correct natural home.",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

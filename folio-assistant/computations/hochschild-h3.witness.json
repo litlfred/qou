@@ -5,7 +5,7 @@
     "prop:terms-2-6-higher-operations",
     "prop:gb-spectral-sequence"
   ],
-  "timestamp": "2026-04-24T21:59:04.964199+00:00",
+  "computedAt": "2026-04-24T21:59:04.964199+00:00",
   "parameters": {
     "q_0": 1.1099785955541805
   },
@@ -20,5 +20,7 @@
   ],
   "hecke_relation_verified": true,
   "inner_derivation_pairing_at_q0": 0.0,
-  "cup_product_inner_pair_at_q0": 0.0
+  "cup_product_inner_pair_at_q0": 0.0,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

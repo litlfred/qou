@@ -1,7 +1,7 @@
 {
   "computation": "binding-full-content-pair-v2",
   "description": "Production unified_lift.binding_unified with the scalar pair term swapped for content-weighted V\u0302_{ij}^{content} in every jet level.  Single-gen V_i remains K\u00e4hler-lifted per unified_lift; \u03b2-decay E_0 and \u210f_q\u00b2 multi-level scaling unchanged.  Tests whether content-pair + K\u00e4hler is constructive or over-corrects.",
-  "timestamp": "2026-04-19T00:14:31.716521+00:00",
+  "computedAt": "2026-04-19T00:14:31.716521+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "hbar_q_sq": 0.009817188513478667,
@@ -164,5 +164,7 @@
       "delta_err_pct": 9.187658086942571,
       "time_sec": 3.1979215145111084
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

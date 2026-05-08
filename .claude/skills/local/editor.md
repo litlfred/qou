@@ -291,9 +291,46 @@ Content change detected
 3. **Resolve concerns**: when an agent's output raises mathematical or
    structural questions, bring them to the author as multiple-choice questions
    (author cannot type easily).
-4. **Maintain consistency**: notation ($R$ not $k$, $\mathbf{C}$ for categories
-   not $\mathcal{C}$, $\tau$ for fibre functor — see `copilot-instructions.md`
-   §11.3), labeling conventions, cross-references, glossary terms.
+4. **Maintain consistency**: notation per the front-matter Notation
+   register —
+   [`content/quantum-observable-universe/notation/notation-register.md`](../../../content/quantum-observable-universe/notation/notation-register.md)
+   (per-chapter symbol tables) and
+   [`notation-collisions.md`](../../../content/quantum-observable-universe/notation/notation-collisions.md)
+   (collision avoidances + Hecke-Skein convention). CLAUDE.md §7aa
+   mirrors a summary; the content block is the authority. The hot spots:
+   - Categories: bold `$\mathbf{C}$`, never calligraphic `$\mathcal{C}$`.
+   - Fibre functor: `$\tau$`, never `$\omega$` or `$U$`.
+   - Hecke generator: `$\sigma_i$` (post-2026-04-26 convention flip),
+     same symbol as the braid generator in $B_n$. Never `$T_i$` for
+     the Hecke relation. Torus knots `$T_{p,q}$` (two indices) and
+     basis elements `$T_w$` are unaffected.
+   - Mass: `$\mathfrak{m}$` (fraktur) for categorical mass; plain
+     `$m_e, m_p, m_n$` for CODATA-measured experimental masses.
+   - Energy registers: bold `$\mathbf{E}$` for q-energy /
+     binding-energy register; plain italic `$E_{\mathfrak{H}}$` only
+     with hadron subscript.
+   - Vortex morphism: `$\varrho$`, never `$\gamma$` (reserved).
+   - Numerical `$q$` only in Ch 0 / Ch 6 (Observations) / Ch 9.
+   - §7ab: derived/observed numerical values use `$\approx$`, not
+     `$=$`, unless an explicit `$O(\cdot)$` error term is present.
+   See `copilot-instructions.md` §11.3 for the full register list and
+   `rendering-auditor.md` for the audit checklist.
+4a. **Markdown render check**: after editing any `.md` content block,
+   delegate to `markdown-render-check` for the GitHub-view sanity pass.
+   It catches the `+`/`-` at line start inside `$$...$$` (which GitHub
+   parses as a bullet list and which silently breaks display math),
+   missing blank lines before `$$`, `\operatorname{}` (KaTeX rejects),
+   and similar pitfalls. Always end the proof pass by listing the
+   GitHub blob URLs of changed `.md` files for the author's eyeball.
+4b. **One-voice audit**: also delegate to `one-voice-audit` to scan
+   for status leaks (`✅ Done`, `(TODO)`, `(TBD)`), warning emoji
+   (`⚠`), comparison markers in body prose (`✓`/`✗`/`★`), Unicode
+   crash characters, first-person work tone, and date-stamped
+   notes. The skill applies mechanical fixes (delete status leaks,
+   convert `⚠` to `**Caveat.**`, replace markers with words) and
+   files `TodoItem`s for substantive items needing author judgment
+   (genuine open questions, dense comparison tables, expository
+   proof status).
 5. **Lean coverage**: when adding or modifying `\lean{}`-annotated definitions,
    propositions, or theorems in LaTeX, ensure a corresponding Lean declaration
    exists. Run the audit: extract all `\lean{QOU.X}` from `.tex`, check each
@@ -373,7 +410,7 @@ The review pass consists of:
    each changed `.md` to validate TeX snippets via remark AST parsing.
 5. **Lean coherence** — if `.lean` files were touched, verify diagnostics are
    clean via `lean_diagnostic_messages`. If `.ts` manifests were touched,
-   confirm `lean.decl` fields match actual Lean declarations.
+   confirm `lean.ref` URIs match actual Lean declarations.
 6. **Tier escalation** — if steps 1–5 surface CRITICAL issues (unsupported
    claims, logical gaps, broken evidence chains), escalate per
    §External Academic Review: Tier 1 (`sci-critical-thinking`,
@@ -506,6 +543,14 @@ For every provable block (theorem/lemma/proposition/corollary):
 5. **No TeX in `.lean` files**: Narrative proof content belongs
    exclusively in `.md` files. `.lean` files contain only code, brief
    docstrings, and `-- Ref:` citations.
+6. **Witnessed values**: any substrate-derived numerical literal in a
+   theorem statement, lemma statement, proposition, conjecture, proof
+   step, example, or remark **must** use `:val[name]` instead of a
+   hard-coded number.  The directive resolves at render time against
+   the canonical witness JSON, so the paper cannot drift away from
+   the computations.  See
+   [`witnessed-values.md`](./witnessed-values.md) for the registry,
+   directive syntax, validators, and codemod.
 
 ### Creating a narrative proof (`.md` block)
 
@@ -542,6 +587,19 @@ When a new mathematical term is encountered during editing:
    "formal definition" / "skip for now").
 
 See `ontologist` skill §Glossary Block Policy for the full decision tree.
+
+### Wrap-every-occurrence contract (`:defterm` / `:refterm`)
+
+Once a term is registered in any block's `defines: [...]`, **every**
+occurrence of that term in the paper must be wrapped — `:defterm[…]`
+at the canonical site, `:refterm[…]` everywhere else (LaTeX:
+`\defterm{slug}` / `\refterm{slug}`). Plain text and `\emph{}` for
+defined terms are no longer permitted. Validator (`bun run validate`)
+enforces five rules; codemod (`bun run pipeline/codemod-refterm.ts`)
+backfills `:refterm` from bare-text mentions; builder
+(`bun run pipeline/build-glossary.ts`) emits `glossary.json` +
+`chapters/glossary.tex`. See `local/glossary-build` skill,
+`.github/copilot-instructions.md §11.0`, and `CLAUDE.md §4c`.
 
 ## Delegation patterns
 

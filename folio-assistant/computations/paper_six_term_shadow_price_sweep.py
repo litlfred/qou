@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 Paper 6+1-term mass formula via SHADOW-PRICE DECOMPOSITION.
 
@@ -40,10 +41,10 @@ sys.path.insert(0, str(REPO / "tools/pyhecke/python"))
 sys.path.insert(0, str(Path(__file__).parent))
 
 import pyhecke
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 
 
-Q0 = mp.mpf(str(Q0_FLOAT))
+Q0 = Q_MP  # was f64 roundtrip
 
 
 def q_int(n, q):

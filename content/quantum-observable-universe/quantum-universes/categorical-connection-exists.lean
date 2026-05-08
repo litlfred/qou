@@ -25,9 +25,15 @@ theorem CategoricalConnection.exists
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C) :
-    Nonempty (CategoricalConnection C fh) := by
-  -- Witness: ∇₀ = d via the QU differential-calculus axiom.
+    Nonempty (CategoricalConnection C fh) :=
+  -- Trivial witness: Ω¹ = 𝟙, ∇ = ρ⁻¹, leibniz_rhs ≡ fh.mul ≫ ∇.
+  -- The Leibniz field reduces to rfl since `leibniz_rhs := fh.mul ≫ ∇`.
+  -- Same construction as in `categorical-action-exists.lean`.
   -- Ref: [kock2004]
-  sorry
+  ⟨{ Omega1 := 𝟙_ C
+     nabla := (CategoryTheory.MonoidalCategory.rightUnitor fh.obj).inv
+     leibniz_rhs :=
+       fh.mul ≫ (CategoryTheory.MonoidalCategory.rightUnitor fh.obj).inv
+     leibniz := rfl }⟩
 
 end QOU

@@ -18,6 +18,15 @@ peer-review practices and the methodology of
 - All equations, formulas, and numerical computations are correct.
 - Dimensional analysis and unit consistency hold.
 - Boundary conditions and edge cases are handled appropriately.
+- **Witnessed values must use `:val[name]`** in any block kind
+  (definitions, propositions, conjectures, theorems, lemmas,
+  corollaries, proofs, examples, remarks, prose, algorithms, equations).
+  Numerical literals derived from `q_0` or another substrate witness
+  must be cited via the witness registry — never hard-coded.  See
+  [`witnessed-values.md`](./witnessed-values.md) for the registry
+  contract, the directive syntax, and the codemod that rewrites
+  legacy literals.  Flag any new hard-coded numeral that has (or
+  could have) a registry entry as drift risk.
 
 ### 2. Scientific Rigor
 - Claims are supported by evidence or sound reasoning.
@@ -179,7 +188,7 @@ peer-review practices and the methodology of
 - **NEVER assume classical energy conservation at $q \neq 1$.**
   The $q$-differential satisfies $d_q^2 \neq 0$, so
   $E_{\mathrm{before}} = E_{\mathrm{after}}$ fails.  Use the
-  categorical action difference $\mathcal{Q}_q = S_q(\mathrm{par})
+  categorical action difference $Q = S_q(\mathrm{par})
   - S_q(\mathrm{dau}) - S_q(e)$ instead. The daughter is evaluated
   at the shifted $q + \Delta q_{\mathrm{eff}}$.  If you find yourself
   writing "$Q = M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e$", stop
@@ -313,21 +322,33 @@ Scientific accuracy checks should leverage the content object triple
 architecture (`.ts` manifest + `.md` narrative + `.lean` formalization)
 for cross-validation.
 
-**Lean declaration verification.** The `lean.decl` field in each `.ts`
-manifest names the corresponding Lean declaration. Verify that:
+**Lean declaration verification.** The `lean.ref` URI (form
+`"<pkg>:<Decl>"`, parsed via `parseLeanRef()`) in each `.ts` manifest
+names the corresponding Lean declaration. Verify that:
 - The declaration exists in the `.lean` sibling file.
 - The Lean type signature matches the mathematical statement in `.md`.
-- The `status` field reflects reality (`proved` only if sorry-free).
+- Formalization status is derived at build time (not stored in `.ts`);
+  cross-check against `proof-objects.json`.
 
-**Formalization cross-check.** Use `lean_hover_info` on the `lean.decl`
-to confirm the Lean type matches the narrative claim. Numerical constants
-in `.md` blocks must match their `noncomputable def` values in `.lean`.
+**Formalization cross-check.** Use `lean_hover_info` on the declaration
+named by `lean.ref` to confirm the Lean type matches the narrative claim.
+Numerical constants in `.md` blocks must match their `noncomputable def`
+values in `.lean`.
 
 **Content object completeness.** For blocks with `kind: "definition"`,
 all three files must exist and be consistent. For `theorem`/`lemma`
 blocks, a missing `.lean` sibling is a warning. The `uses[]` dependency
 graph helps trace which upstream definitions a claim relies on — verify
 those are formalized too.
+
+**Glossary terms (`:defterm` / `:refterm`).** Every term registered in
+any block's `defines: [...]` must appear wrapped at every mention —
+`:defterm[…]{#slug}` once, `:refterm[…]{#slug}` everywhere else (LaTeX:
+`\defterm{slug}` / `\refterm{slug}`). Bare-text or `\emph{}` mentions
+of a defined term are scientific-accuracy violations because they
+break the canonical-name → canonical-definition link the validator
+relies on. Run `bun run validate <paper> --strict` to catch
+`term-mention-coverage` warnings. See `local/glossary-build` skill.
 
 ## Mandatory fallback participation
 

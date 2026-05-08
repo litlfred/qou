@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QLogarithm.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:q-logarithm",
-    "prop:q-logarithm-exists",
-  ],
+  uses: ["prop:q-logarithm-exists"],
   proofs: ["prf:q-logarithm-unique"],
   tags: ["uniqueness", "q-logarithm", "primitive", "hopf-algebra"],
 });

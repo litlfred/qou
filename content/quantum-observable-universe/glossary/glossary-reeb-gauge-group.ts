@@ -17,4 +17,5 @@ export default remark({
     validation: "not_checked",
   },
   uses: ["def:contact-affine-chart"],
+  defines: ["reeb-gauge-group"],
 });

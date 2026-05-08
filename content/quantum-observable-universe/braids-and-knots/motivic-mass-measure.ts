@@ -5,9 +5,8 @@ export default definition({
   title: "Motivic mass measure $\\mu$ on the brane arc space",
   tags: ["motivic", "mass", "lefschetz", "grobner-shirshov", "arc-space"],
   uses: [
+    "def:motivic-substrate",
     "def:arc-space",
-    "def:recursive-brane-tower",
-    "prop:topological-mass-formula",
     "thm:wedderburn-mass-formula",
   ],
   cites: ["kontsevich1995", "denef-loeser2001"],

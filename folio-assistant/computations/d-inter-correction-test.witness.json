@@ -1,8 +1,8 @@
 {
   "engine": "closed-form",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-24T05:15:49.153023+00:00",
-  "commitSha": "aee1d4eda15b3dcbc6d8b1ceed952bea688856dd",
+  "computedAt": "2026-04-27T19:41:55.071407+00:00",
+  "commitSha": "2d88d04e30b05e9b7b2290b911479e0cc660d893",
   "assertions": [
     {
       "name": "D: correction changes |err|",
@@ -42,7 +42,7 @@
   "computation": "d-inter-correction-test",
   "scriptFile": "d_inter_correction_test.py",
   "scriptHash": "3ce545e31a6e",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "555f9404b4a09a7bb9bd553fff91984d1a90be94",
   "description": "Derive 2·log|χ(inter)| = log(1 + H_A²/4) from chi-sym-alt-theorem and test the correction factor 1/(1+H_A²/4) on Kashaev predictions for D, T, ³He, ⁴He.  Tests universality.",
   "parameters": {
     "q_0": 1.1099785955541805,

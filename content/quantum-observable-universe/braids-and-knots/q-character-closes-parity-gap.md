@@ -1,7 +1,7 @@
 **Remark.**
 *The parity-blindness of the classical Murnaghan–Nakayama character
 ([MN parity-blind](#rem:mn-classical-parity-blind)) is closed by
-the $q$-deformed Hecke character $\chi^\lambda_q(T_w)$.  Computed
+the $q$-deformed Hecke character $\chi^\lambda_q(\sigma_w)$.  Computed
 symbolically via the Hoefsmit seminormal form, the $q$-character
 distinguishes $\sigma$ from $\sigma^{-1}$ through the Hecke
 eigenvalue gap $(q, -q^{-1})$ and therefore distinguishes proton
@@ -9,12 +9,13 @@ from neutron at every $q$.*
 
 **Hoefsmit seminormal form (symbolic).**
 *For a partition $\lambda \vdash n$ with standard Young tableaux
-$T_1, \ldots, T_{f^\lambda}$, the Hecke generator $T_i$ acts on the
-Specht module $S^\lambda$ by:*
+$T_1, \ldots, T_{f^\lambda}$ (indexing the Specht-module basis;
+distinct from the Hecke generator $\sigma_i$), the Hecke generator
+$\sigma_i$ acts on the Specht module $S^\lambda$ by:*
 
 - *If $i$ and $i+1$ are in the same row of $T$ (axial distance
-  $\rho = 1$): $\rho_\lambda(T_i)\,T = q \cdot T$.*
-- *If in the same column ($\rho = -1$): $\rho_\lambda(T_i)\,T =
+  $\rho = 1$): $\rho_\lambda(\sigma_i)\,T = q \cdot T$.*
+- *If in the same column ($\rho = -1$): $\rho_\lambda(\sigma_i)\,T =
   -q^{-1}\,T$.*
 - *Otherwise: $2 \times 2$ block on $\{T, T'\}$ with $T'$ the
   tableau obtained by swapping $i, i+1$, matrix
@@ -24,13 +25,15 @@ Specht module $S^\lambda$ by:*
   $b^2 = a a' + 1$, $\rho = \mathrm{content}(c_{i+1}) -
   \mathrm{content}(c_i)$.*
 
-*Keeping $q$ as a sympy symbol, $\chi^\lambda_q(T_w) =
-\operatorname{Tr}\bigl(\prod_{i \in w} \rho_\lambda(T_{\text{sign}_i} i)\bigr)$
+*Keeping $q$ as a sympy symbol,
+$\chi^\lambda_q(\sigma_w) =
+\operatorname{Tr}\bigl(\prod_{i \in w} \rho_\lambda(\sigma_i^{\,\varepsilon_i})\bigr)$,
+where $\varepsilon_i = \pm 1$ is the sign of the $i$-th letter in $w$,
 is an exact rational function of $q$.*
 
 **Numerical witness at $A = 1$ ($q_0 \approx 1.11$).**
 
-| $\lambda \vdash 3$ | $\chi^\lambda_q(T_w^{\mathfrak{p}})$ @ $q_0$ | $\chi^\lambda_q(T_w^{\mathfrak{n}})$ @ $q_0$ | difference |
+| $\lambda \vdash 3$ | $\chi^\lambda_q(\sigma_w^{\mathfrak{p}})$ @ $q_0$ | $\chi^\lambda_q(\sigma_w^{\mathfrak{n}})$ @ $q_0$ | difference |
 |---|---|---|---|
 | $(3)$ | $+1.3825$ | $+1.1221$ | $+0.2604$ |
 | $(2,1)$ | $+3.1902$ | $+2.3874$ | $+0.8028$ |
@@ -54,27 +57,27 @@ The q-deformation restores the structural information lost in
 the classical limit.*
 
 **Why the $q$-character sees the sign.**
-*A positive crossing $T_i$ and a negative crossing $T_i^{-1}$
+*A positive crossing $\sigma_i$ and a negative crossing $\sigma_i^{-1}$
 project to the same $S_n$ transposition (parity-blind at $q = 1$),
-but as elements of $H_n(q)$ they are distinct: $T_i$ has
+but as elements of $H_n(R, q)$ they are distinct: $\sigma_i$ has
 eigenvalue $+q$ on the symmetric channel and $-q^{-1}$ on the
-antisymmetric channel, while $T_i^{-1}$ has $q^{-1}$ and $-q$.
-The seminormal matrix for $T_i$ and $T_i^{-1}$ differ:*
+antisymmetric channel, while $\sigma_i^{-1}$ has $q^{-1}$ and $-q$.
+The seminormal matrix for $\sigma_i$ and $\sigma_i^{-1}$ differ:*
 
 $$
-  \rho_\lambda(T_i)
+  \rho_\lambda(\sigma_i)
   \;=\;
   \begin{pmatrix} a & b \\ b & a' \end{pmatrix},
   \qquad
-  \rho_\lambda(T_i^{-1})
+  \rho_\lambda(\sigma_i^{-1})
   \;=\;
   \begin{pmatrix} a' & b \\ b & a \end{pmatrix}
   \;=\;
-  \rho_\lambda(T_i) - (q - q^{-1}) \cdot I.
+  \rho_\lambda(\sigma_i) - (q - q^{-1}) \cdot I.
 $$
 
 *(The Hecke inverse identity
-$T_i^{-1} = T_i - (q - q^{-1}) \cdot I$ gives the clean form
+$\sigma_i^{-1} = \sigma_i - (q - q^{-1}) \cdot I$ gives the clean form
 on the right.)  Tracing through a braid word with mixed
 $\sigma^{\pm 1}$ crossings accumulates a net $q$-dependence that
 distinguishes the proton word (majority $\sigma$) from the
@@ -99,12 +102,12 @@ sympy, where $d = \dim S^\lambda = f^\lambda$:*
 *An earlier draft asserted that the classical Murnaghan–Nakayama
 character's support equals the Hecke $q$-character's support
 (i.e., MN-support pruning is valid).  This is **false** for
-general braid words.  It holds only when $T_w$ is a pure
+general braid words.  It holds only when $\sigma_w$ is a pure
 standard-basis element $T_v$ for some $v \in S_n$: then
 $\chi^\lambda_q(T_v)$ is a $q$-deformation of $\chi^\lambda(v)$
 and shares its support.  For a braid word $T_{i_1}T_{i_2}\cdots
 T_{i_k}$ with mixed $\sigma^{\pm 1}$, the Hecke relations
-$T_i^2 = (q-q^{-1})T_i + I$ expand the product into a linear
+$\sigma_i^2 = (q-q^{-1})\sigma_i + I$ expand the product into a linear
 combination $\sum_v c_v(q)\,T_v$ over many $v$ with different
 cycle types.  The $q$-character pulls in all of them, so the
 effective support can be strictly larger than the
@@ -114,7 +117,7 @@ $A \geq 2$ produces a **biased** result and is not used.*
 **Reference implementation.**
 *Script: `folio-assistant/computations/hecke_character_symbolic.py`.
 Builds Hoefsmit matrices with `q` as sympy symbol, multiplies
-through atomic braid word, traces to extract $\chi^\lambda_q(T_w)$.
+through atomic braid word, traces to extract $\chi^\lambda_q(\sigma_w)$.
 Witness: `hecke-character-symbolic.witness.json`.*
 
 **Next step.**

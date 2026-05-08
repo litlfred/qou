@@ -7,7 +7,6 @@ export default conjecture({
   uses: [
     "prop:q-gl-obstruction-calc",
     "conj:q-geometric-langlands",
-    "def:q-local-system",
   ],
   cites: ["yekutieli2010"],
   tags: ["geometric-langlands", "kummer", "filtration"],

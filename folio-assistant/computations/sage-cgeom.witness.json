@@ -1,6 +1,6 @@
 {
   "computation": "sage-cgeom",
-  "timestamp": "2026-03-27T20:45:05.974363+00:00",
+  "computedAt": "2026-03-27T20:45:05.974363+00:00",
   "sage_version": "10.7",
   "q": "1.11000000000000",
   "target": {
@@ -99,5 +99,7 @@
       "1/alpha": 146.92314276541526,
       "error_pct": 7.2149966179801375
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

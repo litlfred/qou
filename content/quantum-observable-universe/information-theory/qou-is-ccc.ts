@@ -10,13 +10,6 @@ export default proposition({
   lean: { ref: "qou:QOU.qou_is_ccc",
     validation: "not_checked",
   },
-  uses: [
-    "def:aeon",
-    "def:jet-horizon",
-    "def:big-bang-state",
-    "def:cmb-boundary-datum",
-    "prop:horizon-conformal-invariance",
-    "def:observation",
-  ],
+  uses: ["prop:horizon-conformal-invariance"],
   cites: ["penrose2010"],
 });

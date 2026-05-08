@@ -1,7 +1,7 @@
 {
   "computation": "tower-binding-full",
   "description": "Full tower binding per prop:mass-endomorphism-tower for both atom and free. Uses level-walk ILP (m_pp, m_pn, m_nn) ground states + atom_per_generator_volumes + mass_from_tower. B = E_0 \u00b7 (\ud835\udd2a_free - \ud835\udd2a_atom).",
-  "timestamp": "2026-04-18T00:47:01.906532+00:00",
+  "computedAt": "2026-04-18T00:47:01.906532+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "E_0_tower_MeV": 0.0007958232069223113
@@ -796,5 +796,7 @@
     "min_dm_m_pct": 0.12418944921701783,
     "max_dm_m_pct": 434.4656021293918,
     "mean_dm_m_pct": 19.475195429588037
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -41,6 +41,9 @@ export default paper({
     ordw:  { tex: "\\mathrm{ord}_{\\omega}",  unicode: "ord_ω" },
   },
   chapters: [
+    // ── Front matter ────────────────────────────────────────────────
+    chapterRef({ dir: "notation" }),                          // Notation register (after TOC)
+
     // ── Part I: Foundations ──────────────────────────────────────────
     chapterRef({ dir: "introduction" }),
     chapterRef({ dir: "quantum-universes" }),                // QU axioms
@@ -59,6 +62,7 @@ export default paper({
     chapterRef({ dir: "particle-interactions" }),             // GB, LP, nuclear structure
     chapterRef({ dir: "observations" }),                     // Physical observations
     chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂→benzene
+    chapterRef({ dir: "organic-chemistry" }),                  // Organic chemistry (covalent / Hopf-ring)
 
     // ── q-Geometric Langlands ───────────────────────────────────────
     chapterRef({ dir: "q-geometric-langlands" }),

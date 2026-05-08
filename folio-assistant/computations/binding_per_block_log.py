@@ -43,6 +43,10 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 from mass_endomorphism import (additive_wedderburn_volumes,
                                   HA, qi0, z_mark,
                                   w_sym, w_std, w_alt)
@@ -764,6 +768,19 @@ if __name__ == "__main__":
             "alpha_em": ALPHA_EM,
             "w_sym": w_sym, "w_std": w_std, "w_alt": w_alt,
             "alpha_binding_MeV": ALPHA_BINDING_MEV,
+        },
+        # P2.5: see docs/audits/2026-05-02-p2-5-symbolic-q-audit.md
+        "symbolic_q_form": {
+            "engine": "sympy",
+            "q_symbol": "q (sp.Symbol('q', positive=True))",
+            "h_symbol_definition": "HA = q - 1/q",
+            "z_symbol_definition": "z = 1 / (sqrt(q) + 1/sqrt(q))",
+            "pattern": "sympy-symbolic-coefficients-evaluated-at-q0",
+            "note": (
+                "Per-V̂_i^λ coefficient polynomials in q are "
+                "constructed symbolically; the numerical results "
+                "below come from .subs(q_sym, q_0) evaluation."
+            ),
         },
         "sample_ln_phi_q": {
             f"v_{v}": ln_abs_phi_q(v) if v != 1.0 else "DIVERGES"

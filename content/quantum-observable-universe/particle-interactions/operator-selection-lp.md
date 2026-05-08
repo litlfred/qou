@@ -67,6 +67,27 @@ demand--supply balance: $\Phi$ must pair non-negatively with every
 basis element under the Frobenius inner product, so no channel
 carries unbounded demand.
 
+**LP over motivic shadows, not real numbers.**
+*The data feeding the LP — Markov traces $t_i = \mathrm{tr}_M(b_i)$
+and Frobenius Gram entries $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ —
+are formal elements of $\mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$,
+hence elements of the Habiro completion $\widehat{\mathbb{Z}[q]}$
+([Habiro ring](#def:habiro-ring)). The selection of the operator
+$\Phi^* = \sum_i x_i^* b_i$ is therefore a combinatorial problem
+over the **motivic shadows** of the
+[motivic substrate](#def:motivic-substrate) — the algebraic data
+of the Hecke algebra independently of any place-realization.
+Strong duality (which produces the Borromean $\mathcal{B}_3$ as the
+unique optimizer at $n=3$) is a purely algebraic consequence of the
+LP; only **after** the optimizer is selected does the archimedean
+realization $\rho_\infty$
+([archimedean realization](#def:archimedean-realization-functor))
+project the dual prices and objective value into physical binding
+energies in $\mathbb{R}$. The non-archimedean realizations
+$\rho_p$ recover the LP's cyclotomic shadows at each finite place
+$p$ — useful for verifying optimality at roots of unity without
+$\mathbb{C}$-evaluation.*
+
 ## Dual program (demand pricing)
 
 By LP duality, the dual of the primal is:

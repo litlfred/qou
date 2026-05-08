@@ -1,7 +1,7 @@
 {
   "computation": "recursive-three-calibration",
   "description": "Recursive three-calibration of the mass tower.  Flavour B (JET): fits three E_0's on the (desc, single, cross) channels of the per-level tower functional, with \u210f_q\u00b2 damping per jet level.  Flavour A (per-nucleon): fits three E_0's on the sym/std/alt Wedderburn blocks per nucleon with z^k Markov-stab recursion over nucleon positions.  Both use only 3 free parameters fitted from {D, T, \u00b3He}; predictions on {\u2074He, \u2076Li, \u2079Be, \u00b9\u00b2C, \u00b9\u2076O} test whether the 3-scale model is complete.",
-  "timestamp": "2026-04-20T14:38:49.870802+00:00",
+  "computedAt": "2026-04-20T14:38:49.870802+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "HA": 0.20906032198987945,
@@ -260,5 +260,7 @@
         -1.801746605119947
       ]
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

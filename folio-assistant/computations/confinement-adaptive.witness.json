@@ -1,7 +1,7 @@
 {
   "computation": "confinement-adaptive-unwrap",
   "description": "Adaptive confinement-level unwrap per rem:ilp-solution-count-unwrap. Unwrap depth = max(0, N_\u2113 - 1) where N_\u2113 is the ILP solution count at the current level. Uses Z/N magic-ness as proxy for ILP solution count (1 non-magic, 2 single-magic, 3 double-magic). Levels 3 (pair), 4 (shell-magic), 5 (cross-shell) added adaptively based on depth.",
-  "timestamp": "2026-04-17T20:16:16.354598+00:00",
+  "computedAt": "2026-04-17T20:16:16.354598+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "E_0_tower_MeV": 0.0007958232069223113,
@@ -258,5 +258,7 @@
       "B_AME_MeV": 342.05,
       "ratio_off_AME": 5.194934966212985
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

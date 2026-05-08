@@ -7,7 +7,7 @@ The 0.0000% entries are arithmetic checks, not predictions.
 ## The ruler: $m_e$ as external scaling parameter
 
 The substrate parameter $q$ determines all dimensionless mass ratios
-($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = 206.768$), but to convert
+($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$), but to convert
 these ratios into physical MeV we need one external input:
 $m_e = 0.51099895$ MeV (CODATA 2022). This is our **ruler** ---
 it fixes the absolute energy scale. Without $m_e$, QOU predicts
@@ -33,7 +33,7 @@ $m_\mu/m_e$, and $m_e$.
 The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 \to \hbar_q \to q_0$ yields:
 
-- **Mass ratios**: $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = 206.768$
+- **Mass ratios**: $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$
   (definitional, by construction).
 - **$Q$-values**: mass differences $\Delta m = \Delta\mathrm{net}
   \times E_0$ where $E_0 = Q_\mathrm{neutron}/|\Delta\mathrm{net}|

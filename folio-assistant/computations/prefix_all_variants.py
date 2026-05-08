@@ -24,11 +24,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 mp.mp.dps = 30
 
-from q_parameter import Q as Q0_FLOAT
-from experimental_constants import M_E_MEV
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
+from experimental_constants import M_E_MEV, Q_NEUTRON_MEV
 
-Q0 = mp.mpf(str(Q0_FLOAT)); QI = mp.mpf(1)/Q0
-h = Q0 - QI; me = mp.mpf(str(M_E_MEV)); E0 = mp.mpf('0.782')
+Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
+h = Q0 - QI; me = mp.mpf(str(M_E_MEV)); E0 = mp.mpf(str(Q_NEUTRON_MEV))
 
 
 def catalog_jones(name: str, q) -> complex:

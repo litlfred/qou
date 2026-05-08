@@ -10,7 +10,6 @@ export default definition({
   ],
   uses: [
     "def:reeb-bundle",
-    "def:exceptional-divisor",
     "def:contact-affine-chart",
     "ex:projective-line-su2",
     "rem:r-matrix-braiding",

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: library / no own witness output; sympy used internally by callers.
 """
 6×6 transfer matrix for H₃(q) — symbolic in q.
 

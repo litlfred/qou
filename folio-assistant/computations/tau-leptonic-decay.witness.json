@@ -1,6 +1,6 @@
 {
   "title": "Tau leptonic decay \u2014 T_{3,5} weak vertex in H\u2083(q)",
-  "timestamp": "2026-04-06T18:35:02.249339+00:00",
+  "computedAt": "2026-04-06T18:35:02.249339+00:00",
   "commit": "90404e09",
   "parameters": {
     "q": 1.1099785955541805,
@@ -110,5 +110,7 @@
     "BR_ratio_SM": 1.0282135628215614,
     "BR_ratio_PDG": 1.0247268545140886,
     "net_ratio": 0.8151571195134072
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

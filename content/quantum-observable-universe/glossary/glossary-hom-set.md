@@ -1,4 +1,4 @@
-**Hom-set.** For objects $X$ and $Y$ in a category $\mathbf{C}$, the
+**:defterm[Hom-set]{#hom-set}.** For objects $X$ and $Y$ in a category $\mathbf{C}$, the
 *hom-set* $\mathrm{Hom}_{\mathbf{C}}(X, Y)$ (also written
 $\mathbf{C}(X, Y)$ or $X \to Y$) is the collection of all morphisms
 from $X$ to $Y$. In a *locally small* category, each hom-set is a

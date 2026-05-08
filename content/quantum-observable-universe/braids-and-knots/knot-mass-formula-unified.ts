@@ -9,15 +9,10 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
-    "prop:mass-endomorphism-tower",
+    "prop:atomic-mass-gb-nf",
     "thm:frobenius-codim-universal",
     "prop:partition-sum-proton-residual",
-    "prop:categorical-mass-markov",
-    "def:hecke-mass-element",
-    "thm:jones-markov-trace",
-    "cor:quantum-dilogarithm",
-    "prop:figure-eight-bw-coefficients",
-    "prop:knot-factor-frobenius-pairing",
+    "conj:knot-factor-frobenius-pairing",
   ],
   cites: ["kassel1995"],
   tags: [

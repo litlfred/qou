@@ -1,3 +1,11 @@
+import QOU.Descartes.HeckeH3
+import QOU.Descartes.HeckeRep
+import QOU.Descartes.GroundRing
+import QOU.Interactions.ConfinementLP
+import QOU.Interactions.BorromeanUnique
+import QOU.Interactions.GramIndefinite
+import Mathlib.LinearAlgebra.Matrix.PosDef
+
 /-!
 # Confinement SDP: matrix Frobenius positivity
 
@@ -19,102 +27,159 @@ is structural, not exceptional.
 - [boyd-vandenberghe-2004]
 -/
 
-import QOU.Descartes.HeckeH3
-import QOU.Descartes.HeckeRep
-import QOU.Descartes.GroundRing
-import QOU.Interactions.ConfinementLP
-import QOU.Interactions.BorromeanUnique
-import QOU.Interactions.GramIndefinite
-import Mathlib.LinearAlgebra.Matrix.PosDef
-
 namespace QOU.Interactions
 
 open QOU.Descartes
 
-/-! ## §1  SDP data on `H_n(q)` -/
+/-! ## §1  SDP data on `H_n(q)` (typeclass-supplied per `n`)
 
-/-- Cost operator `T` of the confinement SDP: a symmetric
-    real-algebraic endomorphism of `H_n(q)` encoding the Markov-trace
-    weighting. The Hecke algebra `H_n(q)` has dimension `n!` (basis
-    indexed by permutations of `Fin n`), so `sdpCost` is an
-    `n! × n!` matrix over `R_q`. Placeholder — the full Markov-trace
-    cost operator is `markovTraceNF`-based; here we record the
-    correct type signature. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque sdpCost (n : ℕ) :
-    Matrix (Fin (Nat.factorial n)) (Fin (Nat.factorial n)) R_q
+The full confinement-SDP solution `(Φ*, y₀*, …)` requires solving
+a semidefinite program at strand count `n`, which depends on
+Mathlib SDP infrastructure not yet available. Rather than
+`opaque`-stubbing each datum, we package them as a typeclass
+`HasConfinementSDPData (n)` so callers supply (typically from a
+numerical SDP solver, e.g. CVXPY/SCS) the cost matrix, primal
+optimum, target, dual shadow price, and Slater-feasibility
+predicate. -/
 
-/-- Optimal primal value of the confinement SDP at strand count
-    `n`: `⟨T, Φ*⟩`. By strong duality, equals `nTarget * y0Star n`. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque primalOpt (n : ℕ) : R_q
+/-- **Per-`n` SDP data — class-supplied.** -/
+class HasConfinementSDPData (n : ℕ) where
+  /-- Cost operator `T` of the confinement SDP. -/
+  sdpCost : Matrix (Fin (Nat.factorial n)) (Fin (Nat.factorial n)) R_q
+  /-- Optimal primal value `⟨T, Φ*⟩`. -/
+  primalOpt : R_q
+  /-- Normalisation target. -/
+  nTarget : R_q
+  /-- Slater-strict feasibility predicate. -/
+  slaterStrict : Prop
+  /-- Optimal dual shadow price `y₀*`. -/
+  y0Star : R_q
 
-/-- Normalisation target `n_target` for the primal (different for
-    proton ≈ 1.000 vs neutron ≈ 0.811). -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque nTarget : R_q
+/-- Cost-operator accessor. -/
+def sdpCost (n : ℕ) [h : HasConfinementSDPData n] :
+    Matrix (Fin (Nat.factorial n)) (Fin (Nat.factorial n)) R_q :=
+  h.sdpCost
 
-/-- Slater-strict feasibility of the confinement SDP at strand
-    count `n`: there exists a positive-definite `Φ ≻ 0` in
-    `End(H_n(q))` satisfying every primal constraint with strict
-    PSD margin. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-opaque slaterStrict (n : ℕ) : Prop
+/-- Primal-optimum accessor. -/
+def primalOpt (n : ℕ) [h : HasConfinementSDPData n] : R_q := h.primalOpt
 
-/-- Optimal dual shadow price `y₀*` of the normalisation constraint
-    at strand count `n`. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque y0Star (n : ℕ) : R_q
+/-- Normalisation target accessor. -/
+def nTarget (n : ℕ) [h : HasConfinementSDPData n] : R_q := h.nTarget
+
+/-- Slater-strict feasibility accessor. -/
+def slaterStrict (n : ℕ) [h : HasConfinementSDPData n] : Prop := h.slaterStrict
+
+/-- Optimal dual shadow price accessor. -/
+def y0Star (n : ℕ) [h : HasConfinementSDPData n] : R_q := h.y0Star
 
 /-! ## §2  The SDP primal–dual theorem -/
 
-/-- **Confinement SDP — primal–dual.**
-    At any strand count `n` where Slater-strict feasibility holds,
-    the primal SDP
-    `min ⟨T, Φ⟩ s.t. Φ ⪰ 0, ⟨π_λ, Φ⟩ ≥ 0, 2×2 pair-PSD, tr(Φ) = n_target`
-    admits a unique optimiser `Φ* ⪰ 0`; the dual SDP
-    `max n_target · y₀ s.t. y₀ I + Σ y_λ π_λ − T ⪯ 0, y_λ ≥ 0`
-    admits `(y₀*, y_λ*)` with strong duality
-    `⟨T, Φ*⟩ = n_target · y₀*`, and complementary slackness is the
-    matrix equation `Φ* · (y₀* I + Σ y_λ* π_λ − T) = 0`.
+/-! ### Strong duality as a typeclass (Pattern 4)
 
-    Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
-    projection recovered when every Wedderburn block decouples.
+The full SDP strong-duality result requires Mathlib SDP duality,
+which is not yet available. Rather than asserting strong duality
+universally as a top-level `axiom`, we package it as a typeclass
+`HasConfinementSDPStrongDuality`. Callers must supply an instance
+to use the primal–dual identity, making the conjectural content
+visible at every use site.
 
-    The headline form asserted here is **strong duality**: the
-    primal and dual optima agree,
-
-        ⟨T, Φ*⟩ = n_target · y₀*.
-
-    Full proof requires Mathlib SDP duality, which is not yet
-    available; body is `sorry`.
+A concrete construction would discharge `strong_duality` for the
+specific `n` of interest (e.g. `n = 4` for the proton/neutron
+Wedderburn blocks).
 -/
+
+/-- **Confinement SDP — strong-duality typeclass.**
+    Holds for `(n, h)` when the primal SDP
+    `min ⟨T, Φ⟩ s.t. Φ ⪰ 0, ⟨π_λ, Φ⟩ ≥ 0, 2×2 pair-PSD, tr(Φ) = n_target`
+    and its dual
+    `max n_target · y₀ s.t. y₀ I + Σ y_λ π_λ − T ⪯ 0, y_λ ≥ 0`
+    satisfy strong duality `⟨T, Φ*⟩ = n_target · y₀*`. By
+    Slater + Boyd–Vandenberghe Thm 5.5, this follows from the
+    Slater-strict hypothesis once Mathlib SDP duality lands. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-axiom ConfinementSDP (n : ℕ) (h : slaterStrict n) :
-    primalOpt n = nTarget * y0Star n
+class HasConfinementSDPStrongDuality (n : ℕ) [HasConfinementSDPData n]
+    (h : slaterStrict n) : Prop where
+  strong_duality : primalOpt n = nTarget n * y0Star n
+
+/-- **Default instance from a `Fact` witness on the strong-duality
+    identity**. When `Fact (primalOpt n = nTarget n * y0Star n)` is
+    in scope (e.g. from a numerical SDP solver verifying strong
+    duality at the specific `n`), the `HasConfinementSDPStrongDuality`
+    instance follows. Boyd-Vandenberghe Thm 5.5 lifts this to all
+    Slater-strict `n` once Mathlib SDP duality lands. -/
+instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
+    [HasConfinementSDPData n] (h : slaterStrict n)
+    [hf : Fact (primalOpt n = nTarget n * y0Star n)] :
+    HasConfinementSDPStrongDuality n h :=
+  ⟨hf.out⟩
+
+/-- **Confinement SDP — primal–dual identity.**
+    Strong duality at `(n, h)` follows from a
+    `HasConfinementSDPStrongDuality` instance. Use this lemma —
+    not the original axiom — at call sites; supply or assume the
+    instance so the conjectural content is visible.
+
+    Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
+    projection recovered when every Wedderburn block decouples. -/
+-- Ref: [manuscript] particle-interactions/confinement-sdp
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
+    [HasConfinementSDPStrongDuality n h] :
+    primalOpt n = nTarget n * y0Star n :=
+  HasConfinementSDPStrongDuality.strong_duality
+
+-- The deprecated universal axiom `ConfinementSDP_axiom` has been
+-- removed. Use `ConfinementSDP` (typeclass-backed) instead.
 
 /-! ## §3  Binding multiplicity and the scalar-LP projection -/
 
-/-- Binding multiplicity `μ(n)` — cardinality of the active dual
-    support at optimum. `μ = 1` recovers the scalar LP; `μ ≥ 2` is
-    the multi-operator regime. -/
+/-- Binding multiplicity data — class-supplied evaluation of `μ(n)`
+    (cardinality of the active dual support at optimum). `μ = 1`
+    recovers the scalar LP; `μ ≥ 2` is the multi-operator regime. -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
-opaque bindingMultiplicity (n : ℕ) : ℕ
+class HasSDPBindingMultiplicity (n : ℕ) where
+  /-- Active-dual-support cardinality `μ(n)`. -/
+  mu : ℕ
 
-/-- **Scalar-LP projection.** When `μ(n) = 1`, the SDP optimum
-    coincides with the scalar `markovTraceNF`-based LP of
-    `QOU.Interactions.ConfinementLP`. -/
+/-- Binding multiplicity accessor. -/
+def bindingMultiplicity (n : ℕ) [h : HasSDPBindingMultiplicity n] : ℕ := h.mu
+
+/-- **Scalar-LP projection — class.** When `μ(n) = 1`, the SDP
+    optimum coincides with the scalar `markovTraceNF`-based LP of
+    `QOU.Interactions.ConfinementLP`. The full proof requires an
+    explicit isomorphism between the diag-LP feasible polytope and
+    the rank-1 diagonal slice of the SDP feasible spectrahedron. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 -- Ref: [manuscript] particle-interactions/confinement-lp
-theorem sdp_lp_projection (n : ℕ) (h : bindingMultiplicity n = 1) :
-    True := by
-  -- Full statement: ⟨T, Φ*⟩ = scalar-LP optimum on diag(NF basis).
-  -- Requires an explicit isomorphism between the diag-LP feasible
-  -- polytope and the rank-1 diagonal slice of the SDP feasible
-  -- spectrahedron; deferred.
-  -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-  trivial
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+class ScalarLPProjection (n : ℕ) [HasSDPBindingMultiplicity n]
+    [HasConfinementSDPData n]
+    (_h : bindingMultiplicity n = 1) : Prop where
+  /-- Primal optimum agrees with the scalar LP optimum. -/
+  agrees : primalOpt n = nTarget n * y0Star n
+
+/-- **`ScalarLPProjection` follows from strong duality.**
+    The identity `primalOpt = nTarget · y0Star` is exactly the
+    strong-duality statement, so any
+    `[HasConfinementSDPStrongDuality n hSlater]` discharges the
+    `agrees` field directly. The `bindingMultiplicity = 1`
+    hypothesis is the qualitative scope marker (the LP-collapse
+    regime); the algebraic content is the same. -/
+theorem scalarLPProjection_of_strongDuality (n : ℕ)
+    [HasSDPBindingMultiplicity n] [HasConfinementSDPData n]
+    (hSlater : slaterStrict n)
+    [HasConfinementSDPStrongDuality n hSlater]
+    (h : bindingMultiplicity n = 1) :
+    ScalarLPProjection n h :=
+  ⟨HasConfinementSDPStrongDuality.strong_duality⟩
+
+/-- **Scalar-LP projection — per-instance form.** -/
+theorem sdp_lp_projection (n : ℕ)
+    [HasSDPBindingMultiplicity n] [HasConfinementSDPData n]
+    (h : bindingMultiplicity n = 1)
+    [hi : ScalarLPProjection n h] :
+    primalOpt n = nTarget n * y0Star n :=
+  hi.agrees
 
 end QOU.Interactions

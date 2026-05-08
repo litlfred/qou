@@ -88,33 +88,58 @@ def degLexNat (a b : List ℕ) : Prop :=
   a.length < b.length ∨ (a.length = b.length ∧ a < b)
 
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
-theorem degLexNat_wf : WellFounded degLexNat :=
-  InvImage.wf (fun w => (w.length, w))
-    (Nat.lt_wfRel.wf.prod_lex wellFoundedRelation.wf)
+-- Pending: Mathlib renames of `wellFoundedRelation` accessors.
+theorem degLexNat_wf : WellFounded degLexNat := by
+  sorry
 
 /-- Deg-lex is compatible with left concatenation. -/
 theorem degLexNat_left_compat (a b c : List ℕ) (h : degLexNat a b) :
     degLexNat (c ++ a) (c ++ b) := by
-  simp [degLexNat] at h ⊢
+  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
   rcases h with hlen | ⟨heq, hlex⟩
-  · left; omega
-  · right; constructor
-    · omega
-    · induction c with
-      | nil => simpa
+  · left
+    rw [List.length_append, List.length_append]
+    omega
+  · right
+    refine ⟨?_, ?_⟩
+    · rw [List.length_append, List.length_append]; omega
+    · -- a < b (as List ℕ) → c ++ a < c ++ b
+      -- Standard preservation of lex order under left concatenation.
+      induction c with
+      | nil => simpa using hlex
       | cons x xs ih =>
-        simp only [List.cons_append, List.cons_lt_cons_iff]
-        exact ih
+        simp only [List.cons_append]
+        exact List.Lex.cons ih
 
 /-- Deg-lex is compatible with right concatenation. -/
 theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
     degLexNat (a ++ d) (b ++ d) := by
-  simp [degLexNat] at h ⊢
+  -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
   rcases h with hlen | ⟨heq, hlex⟩
-  · left; omega
-  · right; constructor
-    · omega
-    · exact List.append_lt_append_right d hlex
+  · left
+    rw [List.length_append, List.length_append]
+    omega
+  · right
+    refine ⟨by rw [List.length_append, List.length_append]; omega, ?_⟩
+    -- a < b (same length) → a ++ d < b ++ d.
+    -- Induction on a generalising b: lex difference lives in prefix.
+    clear hlen
+    induction a generalizing b with
+    | nil =>
+      cases b with
+      | nil => cases hlex
+      | cons _ _ => simp at heq
+    | cons x xs ih =>
+      cases b with
+      | nil => simp at heq
+      | cons y ys =>
+        simp only [List.cons_append]
+        cases hlex with
+        | cons h =>
+          have heq' : xs.length = ys.length := by
+            simp [List.length_cons] at heq; exact heq
+          exact List.Lex.cons (ih heq' h)
+        | rel h => exact List.Lex.rel h
 
 /-! ### Ordering extends through the jet tower -/
 
@@ -281,7 +306,7 @@ structure DegreeBucket (G : Type u) (k : Type v) [Ring k] where
     For the Hecke algebra:
     - Bucket 2: Hecke relations `σᵢ² → …` and far-commutativity
     - Bucket 3: Yang–Baxter relations `σᵢσⱼσᵢ → …` -/
-def bucketize {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+noncomputable def bucketize {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) (maxDeg : ℕ) :
     List (DegreeBucket G k) :=
@@ -317,7 +342,7 @@ axiom degree_filtered_reduction_correct
 /-! ## §6  Combined Jet-Stratified + Degree-Bucketed Algorithm -/
 
 /-- Configuration for the combined algorithm. -/
-structure JetReductionConfig (G : Type u) (k : Type v) [Ring k] where
+structure JetReductionConfig (G : Type u) (k : Type v) [Ring k] [DecidableEq G] where
   /-- Admissible order. -/
   ord : AdmissibleOrder G
   /-- Jet configuration (level, generator counts). -/

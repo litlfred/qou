@@ -1,17 +1,17 @@
 This proposition derives the chiral-case factor $a_K = 1 + w(K) \cdot h$
 (first order in $h = q - q^{-1}$) from the **Kauffman framing
-formula** applied to the ribbon twist on $H_n(q)$.  The amphichiral
+formula** applied to the ribbon twist on $H_n(R, q)$.  The amphichiral
 case $a_K = 1 - h^2$ is derived elsewhere
 ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients));
 this proposition closes the chiral case
 ([chirality Frobenius self-pairing](#prop:chirality-from-frobenius-self-pairing) §Partial derivation).
 
 **Setup (Kauffman framing formula).**
-*The Hecke algebra $H_n(q)$ is a **ribbon category** with twist
-element $\theta$ acting on each irreducible $V_\lambda$ by*
+*The Hecke algebra $H_n(R, q)$ is a **ribbon category** with twist
+element $\varTheta$ acting on each irreducible $V_\lambda$ by*
 
 $$
-  \theta \cdot v_\lambda \;=\; q^{2 c(\lambda)} \cdot v_\lambda,
+  \varTheta \cdot v_\lambda \;=\; q^{2 c(\lambda)} \cdot v_\lambda,
   \qquad
   c(\lambda) \;=\; \sum_{x \in \lambda} c(x),
 $$
@@ -20,7 +20,7 @@ $$
 content of the cell $x$ in the Young diagram of $\lambda$.*
 
 *For a framed link invariant, changing the framing by $+1$
-multiplies the invariant by $\theta_\lambda$ in each channel.
+multiplies the invariant by $\varTheta_\lambda$ in each channel.
 For a braid $\beta \in B_n$ with writhe $w(\beta)$, the closure
 $\hat\beta$ has framed Jones polynomial*
 
@@ -39,7 +39,7 @@ ribbon-twisted Markov trace to the untwisted trace:*
 $$
   a_K(\beta)
   \;=\;
-  \frac{\sum_\lambda w_\lambda\, \theta_\lambda^{w(\beta)/2}\,\chi^\lambda(\beta)}
+  \frac{\sum_\lambda w_\lambda\, \varTheta_\lambda^{w(\beta)/2}\,\chi^\lambda(\beta)}
        {\sum_\lambda w_\lambda\,\chi^\lambda(\beta)},
 $$
 
@@ -59,7 +59,7 @@ $$
 chirality factor is linear in writhe.*
 
 **Derivation.**
-*Expand $\theta_\lambda^{w/2} = q^{w \cdot c(\lambda)}$ in powers
+*Expand $\varTheta_\lambda^{w/2} = q^{w \cdot c(\lambda)}$ in powers
 of $h = q - q^{-1}$:*
 
 $$
@@ -106,14 +106,14 @@ is the character-weighted average content.*
 *For a braid whose character is **dominated by the standard
 channel** (the middle Wedderburn block, with $c(\lambda) = 0$
 at $H_3$ for $\lambda = (2,1)$) — the cross-term vanishes, and
-one needs the **next** non-trivial channel.  For $H_n(q)$ with
+one needs the **next** non-trivial channel.  For $H_n(R, q)$ with
 $n \geq 3$, the self-dual channel pairing $\lambda \leftrightarrow
 \lambda^T$ gives $c(\lambda) + c(\lambda^T) = 0$, so the
 character-weighted average $\langle c\rangle_\beta$ equals a
 specific non-zero number determined by the imbalance between
 $\chi^\lambda$ and $\chi^{\lambda^T}$.*
 
-**Numerical test at $H_6(q)$ (satellite $D$) — negative result.**
+**Numerical test at $H_6(R, q)$ (satellite $D$) — negative result.**
 *Script `ribbon_content_average.py` computes
 $\langle c\rangle_\beta$ and the predicted
 $a_K = 1 + w(\beta) \cdot \langle c\rangle_\beta \cdot h$
@@ -153,7 +153,7 @@ $\langle c\rangle_\beta$.  Possible refinements:*
    with positive sign from the positive crossing" — which
    **does not** uniquely determine the coefficient.*
 4. *The derivation should use the true **Hecke-algebra ribbon
-   element** $\theta_{H_n(q)}$, which at $H_6(q)$ has a more
+   element** $\varTheta_{H_n(R, q)}$, which at $H_6(R, q)$ has a more
    complex structure than the naive $q^{2c(\lambda)}$ — it
    involves a product of primitive idempotents weighted by
    Hoefsmit content, which may differ from the classical content
@@ -201,11 +201,11 @@ the pn-specific Wedderburn component would give $(1 + h)$.  A
 detailed derivation requires specifying the pn coupling in
 Schur–Weyl terms.*
 
-**Status: refined, not closed.**
+**Caveat.** Refined to leading order; closure is open.
 *The writhe-$h$ linearisation **concept** is correct — chirality
 factor is structurally first-order in $h$ for chiral knots,
 quadratic for amphichiral — but the **precise coefficient
-formula** requires a refined ribbon-twist identity at $H_n(q)$.
+formula** requires a refined ribbon-twist identity at $H_n(R, q)$.
 The current derivation is a **testable framework**; its
 falsification here (for D) shows the specific form needs
 adjustment.*
@@ -256,13 +256,12 @@ dominates and gives $a_K = 1 - c_K h^2$
 ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients)),
 matching the $4_1$ knot's $a_K = 1 - h^2$.*
 
-**Status: derivation complete to leading order, $\langle c\rangle$
-coefficient requires channel-by-channel computation.**
+**Result.** The derivation is complete to leading order; the $\langle c \rangle$ coefficient requires channel-by-channel computation.
 
 *The general formula $a_K = 1 + w(\beta)\langle c\rangle_\beta h
 + O(h^2)$ is derived.  The **specific** value
 $\langle c\rangle_{\beta_D} = 1$ giving the $(1 + h)$ factor
-requires an explicit $H_6(q)$ character computation.  For
+requires an explicit $H_6(R, q)$ character computation.  For
 amphichiral $4_1$, the $O(h^2)$ coefficient $c_K = 1$ is given by
 paper's Fricke-identity derivation.*
 
@@ -277,7 +276,7 @@ this block.*
 ([$E_\infty$ page identifications](#prop:e-infinity-page-identifications))
 §5, the chirality factor is the **ribbon 0-cocycle** paired with
 $\tau$.  The derivation above makes this concrete: the ribbon
-cocycle is $f_\theta(\beta) = \sum_\lambda w_\lambda \chi^\lambda(\beta)
-\theta_\lambda^{w(\beta)/2}$, and its $\tau$-normalisation gives
-$a_K$.  Cohomologically, $f_\theta \in HH^0$ (degree $0$ Hochschild
+cocycle is $f_\varTheta(\beta) = \sum_\lambda w_\lambda \chi^\lambda(\beta)
+\varTheta_\lambda^{w(\beta)/2}$, and its $\tau$-normalisation gives
+$a_K$.  Cohomologically, $f_\varTheta \in HH^0$ (degree $0$ Hochschild
 cocycle) because it factors through the cyclic trace.*

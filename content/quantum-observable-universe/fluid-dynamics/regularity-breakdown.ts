@@ -5,8 +5,6 @@ export default conjecture({
   title: "Regularity breakdown at $q = 1$: the classical limit as a phase transition",
   uses: [
     "thm:q-ns-wellposedness",
-    "def:q-navier-stokes",
-    "rem:planck-reynolds",
     "prop:q-turbulence-spectrum",
     "rem:hamilton-jacobi-phase",
   ],

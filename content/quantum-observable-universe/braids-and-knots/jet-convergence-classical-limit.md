@@ -1,4 +1,4 @@
-**Proposition (exact at $k = 3$, convergence conjectural).**
+**Conjecture (exact at $k = 3$, convergence at $k > 3$ conditional on conj:jet-filtered-knot-factor).**
 
 **Part A (Proved).** *At $k = 3$, the jet-filtered knot invariant
 is exact:*
@@ -17,7 +17,7 @@ $W_{\mathrm{sym}} + 2 W_{\mathrm{std}} + W_{\mathrm{alt}} =
 1 + W_{\mathrm{std}}$.*
 
 *Proof.* Direct computation from the Wedderburn-Artin
-decomposition $H_3(q) \cong M_1 \oplus M_2 \oplus M_1$
+decomposition $H_3(R, q) \cong M_1 \oplus M_2 \oplus M_1$
 with weights $W_\lambda$ and restricted characters
 $\chi_\lambda(\beta)$. $\square$
 
@@ -60,7 +60,7 @@ $W_\mu = d_q(\mu)^2/[3]_q!$ (squared scaling) to the
 $k = \infty$ linear scaling $d_q(\mu)/\sum d_q(\nu)$.*
 
 *Proof sketch.*
-In the seminormal basis of $H_k(q)$, each standard Young
+In the seminormal basis of $H_k(R, q)$, each standard Young
 tableau $t$ of shape $\lambda$ restricts to $H_3$ by
 reading its first $3$ entries, giving a SYT of shape $\mu$.
 The branching multiplicity $m_\mu^\lambda = \#\mathrm{SYT}(\lambda/\mu)$

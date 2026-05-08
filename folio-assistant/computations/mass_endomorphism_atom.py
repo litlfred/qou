@@ -63,10 +63,15 @@ from mass_endomorphism import (
 # but applied at tower scale.
 #
 # 𝔪_tower(proton on 3 strands, 2 gen) ≈ 1.18e6 categorical units
-# CODATA m_p = 938.272 MeV  →  E_0_tower ≈ 7.95e-4 MeV/unit
+# Per `prop:three-calibration-inputs` (CAL-3) E_0 must trace back to
+# Q_β(n), not proton mass — proton-mass-anchoring is a forbidden
+# second pinning of the hadronic scale. Use the canonical
+# E_0_CALIBRATION_MEV from hecke_core (= experimental_constants.
+# Q_NEUTRON_MEV = 0.78233341 MeV). The proton-tower mass is retained
+# only as a per-block intermediate, not as an E_0 anchor.
 _PROTON_VOLS = additive_wedderburn_volumes(3, proton_cross)
 _, _, _, _M_PROTON_TOWER = mass_from_tower(_PROTON_VOLS)
-E_0_CALIBRATION_MEV = 938.272 / _M_PROTON_TOWER
+from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402, F401
 
 
 

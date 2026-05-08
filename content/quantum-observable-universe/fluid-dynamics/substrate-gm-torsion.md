@@ -156,13 +156,11 @@ $$
 and the obstruction persists iff $\kappa_n$ is **not** divisible
 by $n$ in $H^2(\mathcal{S}, \mathbb{G}_m)$ for any $n$.
 
-For the Descartes universe: $\kappa_0 = e(\xi)$ has trace
-$\chi(A) = -6$.  The class $-6 \in \mathbb{Z}$ is divisible by
-$2, 3, 6$ but not by $5, 7, 11, \ldots$  So $\kappa_0$ is
-**not** $n$-divisible for infinitely many $n$, and the
-specialisation $\kappa_0|_{q=1}$ is nonzero in
-$H^2(\mathcal{S}, \mu_n)$ for those $n$.
-
-This means: the Euler-class obstruction survives specialisation
-to the torsion point $q = 1$ for infinitely many levels of the
-Kummer tower.  The NS obstruction does not collapse.
+For the Descartes universe with $\chi(A) = -6$, this is a special
+case of [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction):
+$\kappa_0$ is non-trivial at every finite place $p \nmid 6$, so the
+specialisation $\kappa_0|_{q = \zeta_n}$ at every primitive $n$-th
+root of unity with $\gcd(n, 6) = 1$ is non-zero in
+$H^2(\mathcal{S}, \mu_n)$. The NS obstruction does not collapse —
+this is the fluid-dynamics realization of the substrate's perpetual
+obstruction at every cyclotomic place.

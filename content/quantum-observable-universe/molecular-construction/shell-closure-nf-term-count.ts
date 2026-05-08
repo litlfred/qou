@@ -9,10 +9,7 @@ export default conjecture({
   lean: { ref: "qou:QOU.Molecular.ShellClosureNFTermCount",
     validation: "not_checked",
   },
-  uses: [
-    "def:electron-shell-braid-capacity",
-    "conj:electron-shells-hopf",
-  ],
+  uses: ["def:electron-shell-braid-capacity"],
   cites: ["iwahori1964", "jones1987"],
   tags: [
     "electron-shell",

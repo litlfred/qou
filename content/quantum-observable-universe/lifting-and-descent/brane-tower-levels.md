@@ -1,4 +1,4 @@
-Starting from an archimedean quantum observable universe $(\mathbf{C}, \theta, G, \mathcal{S}_1)$
+Starting from an archimedean quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S}_1)$
 ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), the fibre functor
 $\tau$ converts the categorical brane tower into a geometric tower of
 bundles: $\mathcal{S}_{n+1}$ is the bundle of orthonormal frames of $J^1 \mathcal{S}_n$, and

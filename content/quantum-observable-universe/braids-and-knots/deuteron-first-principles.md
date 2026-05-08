@@ -1,6 +1,6 @@
 **Remark.**
 *The deuteron $^2$H binding energy is computed from first principles
-using the full $H_6(q)$ Schur–Weyl sum
+using the full $H_6(R, q)$ Schur–Weyl sum
 ([Schur–Weyl mass decomposition](#prop:schur-weyl-mass-decomposition))
 over all $11$ partitions of $6$, with the paper's atomic-braid
 convention
@@ -33,7 +33,7 @@ No BW parameters.*
 | $Q_{\mathrm{cat}} = \mathrm{tr}_M(\mathfrak{n}) - \mathrm{tr}_M(\mathfrak{p})$ | $-0.24975$ |
 | $E_0$ | $3.1312\;\mathrm{MeV}/\text{cat.unit}$ |
 
-**A = 2 deuteron, $H_6(q)$ partition sum.**
+**A = 2 deuteron, $H_6(R, q)$ partition sum.**
 *All $11$ partitions of $6$ contribute to the $q$-character sum.
 Top six by magnitude for the atomic (with one pn inter-crossing):*
 
@@ -117,7 +117,7 @@ neutron contribution, not the partition sum.  Paths forward:*
    variant (f): $g_0 + g_1$ re-ordering gives $+6.7\%$ vs
    $-55\%$ baseline for the neutron mass) shift the deuteron
    prediction closer to $B_{\mathrm{AME}}$.*
-2. *Add the Mittag-Leffler residue correction at $\zeta_1 = 1$
+2. *Add the level-1 cyclotomic residue correction at $\zeta_1 = 1$
    ([GB residue spectral sum](#prop:gb-residue-spectral-sum))
    — distance to pole is $0.11$, potentially large contribution.*
 3. *The $\frac{5}{2} \cdot m_e$ partition sum is exact for the
@@ -141,7 +141,7 @@ neutron contribution, not the partition sum.  Paths forward:*
 |---|---|---|
 | D | chiral+ | $1 + h = 1.209$ |
 | T, $^3$He | amphichiral | $1 - h^2 = 0.956$ |
-| $^4$He | Borromean² | $(1 - h^2)^2 = 0.914$ |
+| $^4$He | Borromean${}^2$ | $(1 - h^2)^2 = 0.914$ |
 
 *with $h = q - q^{-1}$.  These factors modify the BW bulk term
 $B_{\mathrm{bulk}}$ per isotope, giving an $A$-dependent
@@ -173,7 +173,7 @@ is an open problem.*
 
 **Integrated picture.**
 
-*The deuteron binding predicted by my Schur–Weyl pipeline
+*The deuteron binding predicted by the Schur–Weyl pipeline
 ($0.995\;\mathrm{MeV}$) and the paper's BW + chirality formula
 ($\sim 2.20\;\mathrm{MeV}$) differ by $\sim 1.2\;\mathrm{MeV}$
 — very close to the universal Frobenius co-Casimir correction
@@ -199,29 +199,20 @@ one; the numbers differ from
 by a $\mathrm{tr}/\dim$ normalisation convention.  Both
 are internally consistent.*
 
-**Symbolic-in-$q$ status (TODO).**
-*The symbolic-sympy pipeline
-(`hecke_character_symbolic.py`) works at $A = 1$ and provides
-exact rational expressions in $q$, but blows up at $A \geq 2$
-because the Hoefsmit 2×2 block relation
-$b^2 = a a' + 1$ can turn negative at specific axial distances
-$\rho$ for $q_0$ off the unitary locus, producing
-`sympy.sqrt(negative)` = complex artifact.  The numerical
-pipeline works around this with `sqrt(abs(b^2))`, which is the
-known orthogonal-form convention but loses the exact symbolic
-dependence.*
-
-*Next steps for a fully symbolic deuteron computation:*
-
-1. *Track $b^2$ as a formal polynomial without taking $\sqrt{}$
-   until the final trace (exploit that the trace only sees
-   $b \cdot b = b^2$ at the diagonal of matrix products).*
-2. *Alternatively, switch to the Ocneanu–Wenzl seminormal basis
-   which is manifestly real-algebraic on the unitary locus for
-   all partitions.*
-3. *Both are isolated refactors of
-   `hecke_character_symbolic.py` — no content-block changes
-   required.*
+*Caveat (symbolic vs. numeric).* The symbolic-sympy pipeline
+(`hecke_character_symbolic.py`) provides exact rational
+expressions in $q$ at $A = 1$ but breaks down at $A \geq 2$:
+the Hoefsmit $2 \times 2$ block relation $b^2 = a a' + 1$ can
+turn negative at specific axial distances $\rho$ for $q_0$ off
+the unitary locus, producing complex artifacts via
+`sympy.sqrt(negative)`. The numerical pipeline works around
+this with `sqrt(abs(b^2))` — the standard orthogonal-form
+convention — at the cost of the exact symbolic $q$-dependence.
+Two refactors restore symbolic exactness: tracking $b^2$ as a
+formal polynomial without taking $\sqrt{\,\cdot\,}$ until the
+final trace, or switching to the Ocneanu–Wenzl seminormal basis
+which is manifestly real-algebraic on the unitary locus for all
+partitions.
 
 **Reference.**
 

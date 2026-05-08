@@ -1,5 +1,5 @@
 **Proposition.**
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a commutative-limit QOU
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a commutative-limit QOU
 ([def:commutative-qou](#def:commutative-qou)) and let
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional
 divisor at a brane point $p$

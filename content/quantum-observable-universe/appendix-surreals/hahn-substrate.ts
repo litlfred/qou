@@ -15,7 +15,6 @@ export default conjecture({
   ],
   uses: [
     "def:substrate-parameter",
-    "def:birthday-grading",
     "def:standard-part-functor",
   ],
   cites: [

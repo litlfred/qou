@@ -1,0 +1,140 @@
+{
+  "computation": "spectral-sequence-unified-h3",
+  "description": "Unified spectral-sequence derivation at H_3: builds E_\u221e^{p,*} cell table for proton, neutron, and reads off m_p residual (Term 4 = Frobenius co-Casimir m_e\u00b7\u03a3_3), \u0394m_{n-p} (Term 4 + chirality residue from 6_1 knot in std channel, curvature-rank 3), and Q_\u03b2 = \u0394m - m_e. Verifies chain end-to-end per prop:spectral-sequence-collapse + prop:spectral-sequence-h3-explicit + prop:curvature-rank-gb-stratification.",
+  "computedAt": "2026-04-27T21:23:33.819019+00:00",
+  "precision_dps": 50,
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "Sigma_3": 2.4972905450085916,
+    "Vol_61": 3.16396324,
+    "q_pochhammer_3": -0.009380220381212601
+  },
+  "E_inf_table_H3": {
+    "proton": {
+      "label": "proton",
+      "chi_sym": 1.3824945145464393,
+      "chi_std": 0.7381826740041164,
+      "chi_alt": -0.7392235469701227,
+      "tr_M_descended": 0.5927976186530792,
+      "W_sym": 0.1633832273397582,
+      "W_std": 0.6606737723483497,
+      "W_alt": 0.1633832273397582
+    },
+    "neutron": {
+      "label": "neutron",
+      "chi_sym": 1.1221068372363028,
+      "chi_std": 0.5047761849051494,
+      "chi_alt": -0.9107622062323655,
+      "tr_M_descended": 0.3680225541672468,
+      "W_sym": 0.1633832273397582,
+      "W_std": 0.6606737723483497,
+      "W_alt": 0.1633832273397582
+    },
+    "Plancherel_weights_at_n_3": {
+      "W_sym": 0.1633832273397582,
+      "W_std": 0.6606737723483497,
+      "W_alt": 0.1633832273397582,
+      "sum": 0.9874402270278662,
+      "note": "Sum is 0.987, not 1 \u2014 this is the Plancherel normalisation w_\u03bb = dim_q\u00b2/[n]_q!. The 'missing' 0.013 is captured by the Markov-z prefactor in the canonical convention used by pyhecke."
+    }
+  },
+  "term_4_universal_proton_residual": {
+    "formula": "m_e \u00b7 \u03a3_3, \u03a3_3 = 2 + 1/[2]_q",
+    "value_MeV": 1.2761128463443179,
+    "interpretation": "Frobenius co-Casimir at H_3; sym-channel universal contribution at curvature-rank 0."
+  },
+  "chirality_residue_neutron": {
+    "formula": "m_e \u00b7 Vol(6_1) \u00b7 |(q;q)_3|",
+    "knot": "6_1",
+    "curvature_rank": 3,
+    "channel": "std",
+    "value_MeV": 0.015165770469183446,
+    "interpretation": "Std-channel chirality residue; the SOLE std-channel knot ideal in neutron-extra GB trajectory at depth 3."
+  },
+  "delta_m_n_minus_p": {
+    "predicted_MeV": 1.2912786168135015,
+    "codata_MeV": 1.29333236,
+    "rel_error_pct": -0.15879469578094915
+  },
+  "Q_beta": {
+    "predicted_MeV": 0.7802796668135015,
+    "codata_MeV": 0.78233341,
+    "rel_error_pct": -0.2625150811977428,
+    "leading_order_F1_MeV": 0.78364580284495,
+    "leading_order_err_pct": 0.16775364929768719,
+    "note": "Q_\u03b2 here uses \u0394m derived from spectral sequence; F.1 uses leading-order E_0 only."
+  },
+  "session_findings_to_E_inf_cells": {
+    "T1.1_leading": "E_\u221e^{0,*} sym-channel + Frobenius co-Casimir \u03a3_3 (Term 4)",
+    "T1.1_with_6_1_chirality": "+ E_\u221e^{std, depth-3} curvature-rank residue (closes \u0394m to -0.16%)",
+    "F.1_leading_E0": "E_\u221e^{0,0} abelianized Stokes integral",
+    "B.1_Vol_proton": "Bulk stratum (wrong cell \u2014 proton is in boundary J^\u221e)",
+    "14a_Gram_kappa": "E_\u221e^{0,2} J\u00b2-jet on Bring's surface (Gram-det formulation)",
+    "14b_gluon_octet": "E_\u221e^{0,2} corrected with SU(3) gauge structure (8 gluons \u2192 \u03b1 at 6 ppb)",
+    "18a_S_even_kappa": "All bulk Gram cells confirmed S-even (Frobenius duality J^\u2113 \u2194 J^{N-\u2113})",
+    "F.2_drop_alt": "Empirically isolated S-even sector for Q_\u03b2 (closes to +5.27%)",
+    "A.1_Term7_falsified": "Used H_q hook product (unbounded); should use Plancherel w_\u03bb per d94dcf2"
+  },
+  "compute_chain_audit": {
+    "mass_chain": [
+      {
+        "step": 1,
+        "task": "Build atomic braid \u03b2_{Z,N}",
+        "implemented_in": "atom_braid_word_3A.py / hecke_core"
+      },
+      {
+        "step": 2,
+        "task": "GS-NF reduction",
+        "implemented_in": "binding_canonical / hecke_core / pyhecke"
+      },
+      {
+        "step": 3,
+        "task": "E_\u221e cell pairings",
+        "implemented_in": "paper_six_term_isotope_sweep (PARTIAL \u2014 non-Markov-invariant proxies)"
+      },
+      {
+        "step": 4,
+        "task": "log-functional \u03a6_k",
+        "implemented_in": "derived_only_formula (\u03a6_1, \u03a6_2, \u03a6_3 \u2713)"
+      },
+      {
+        "step": 5,
+        "task": "Plancherel weight sum",
+        "implemented_in": "canonical_isospin_pyhecke (\u2713); paper_six_term (\u2717)"
+      }
+    ],
+    "beta_decay_chain": [
+      {
+        "step": 1,
+        "task": "Nucleon braid \u03b2_p, \u03b2_n in H_3",
+        "implemented_in": "hecke_core (_PROTON_G*, _NEUTRON_G*)"
+      },
+      {
+        "step": 2,
+        "task": "\u0394(net) symbolic via NF basis",
+        "implemented_in": "neutron-qvalue-symbolic.md (\u0394 = h(h-2)/2)"
+      },
+      {
+        "step": 3,
+        "task": "Frobenius co-Casimir \u03a3_3",
+        "implemented_in": "\u03a3_3 = 2 + 1/[2]_q (T1.1 + d915b31 leading piece)"
+      },
+      {
+        "step": 4,
+        "task": "Curvature-rank-3 chirality res",
+        "implemented_in": "np_splitting_chirality_residue.py (hecke-engine branch d915b31)"
+      },
+      {
+        "step": 5,
+        "task": "Q_\u03b2 = \u0394m - m_e",
+        "implemented_in": "this script (chain endpoint)"
+      }
+    ],
+    "open_in_chain": [
+      "Term 7 (page-6 Stokes residue): conjecture diverges with H_q; needs Plancherel reformulation per prop:plancherel-term-7-formulation",
+      "Higher-A cells (A\u22654): atom-braid GB stratification at A=4..7 \u2014 partial in atom_level_wedderburn_tower",
+      "Lean formalization: gramKappa (em-coupling-chern-simons.lean) sorry; should be replaced with gluon-octet form"
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 GB residue tower: Mittag-Leffler residue sum at roots of unity.
 
@@ -204,7 +205,8 @@ if __name__ == "__main__":
     tr_p = markov_trace_three_channels(1, 0, False, 1, 1, 1, q0, 50)
     tr_n = markov_trace_three_channels(0, 1, False, 1, 1, 1, q0, 50)
     Q_cat = tr_n["full"] - tr_p["full"]
-    E_0_cat = (mpmath.mpf('0.782') / abs(Q_cat)
+    from experimental_constants import Q_NEUTRON_MEV
+    E_0_cat = (mpmath.mpf(str(Q_NEUTRON_MEV)) / abs(Q_cat)
                if abs(Q_cat) > 0 else mpmath.mpf(0))
     print(f"Calibration (β-decay, H_3-full channel):")
     print(f"  |tr_full(p)| = {float(tr_p['full']):.6e}")

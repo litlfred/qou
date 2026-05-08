@@ -13,10 +13,5 @@ export default remark({
     "truncation",
     "substrate-parameter",
   ],
-  uses: [
-    "rem:frobenius-packing-density",
-    "rem:kashaev-volume-density",
-    "prop:algebraic-volume-specialization",
-    "prop:local-substrate-q",
-  ],
+  uses: ["rem:frobenius-packing-density"],
 });

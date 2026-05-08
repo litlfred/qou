@@ -40,7 +40,7 @@ This is a concrete coordinate system for the abstract
 category — an affine chart.
 
 (2) By the Tannaka–Krein theorem
-([SU(2) emergence](#thm:su2-emergence)), any monoidal natural
+([$\mathrm{SU}(2)$ emergence](#thm:su2-emergence)), any monoidal natural
 isomorphism $\eta \colon \omega \xrightarrow{\sim} \omega'$
 is determined by an element $g \in G = \mathrm{Aut}^{\otimes}(\tau)$
 acting on the fibre.  The set of all such isomorphisms is a

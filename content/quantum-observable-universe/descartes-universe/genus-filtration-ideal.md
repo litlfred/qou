@@ -26,7 +26,7 @@ Jones polynomials can be evaluated on $\Sigma_g$.  Completeness
 ([cohomological embedding](#prop:cohomological-embedding))
 requires that these evaluations **span all $5$ irrep
 characters**: the evaluation matrix
-$M_{ij} = \chi_{\lambda_j}(T_i)$ must have rank $5$.*
+$M_{ij} = \chi_{\lambda_j}(\sigma_i)$ must have rank $5$.*
 
 *The strand counts $m \geq 4$ contribute no new knots: at genus
 $g$, the constraint $(m-1)(s-1) \leq 2g$ with $m \geq 4$ and
@@ -85,7 +85,7 @@ This is the **Chebyshev recurrence**: powers of a matrix with
 two eigenvalues are always Chebyshev polynomials.  Precisely,
 $a_p = U_{p-1}(s/2)$, the Chebyshev polynomial of the second
 kind evaluated at $s/2$, where
-$U_n(\cos\theta) = \sin((n+1)\theta)/\sin\theta$.
+$U_n(\cos\varTheta) = \sin((n+1)\varTheta)/\sin\varTheta$.
 
 For odd $p$, only even powers of $s$ appear, so writing
 $u = s^2 = (q - q^{-1})^2$:

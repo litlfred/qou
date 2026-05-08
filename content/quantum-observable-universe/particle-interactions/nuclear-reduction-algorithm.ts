@@ -11,10 +11,5 @@ export default remark({
     "normal-form",
     "leitner-pawloski",
   ],
-  uses: [
-    "prop:nuclear-groebner-reduction",
-    "prop:inductive-gb-reduction",
-    "unital-groebner-bases:def:division-algorithm",
-    "unital-groebner-bases:def:admissible-system",
-  ],
+  uses: ["prop:inductive-gb-reduction"],
 });

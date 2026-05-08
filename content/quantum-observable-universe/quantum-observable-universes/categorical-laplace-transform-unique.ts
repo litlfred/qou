@@ -7,7 +7,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:categorical-laplace",
     "prop:categorical-laplace-exists",
     "prop:q-exponential-unique",
   ],

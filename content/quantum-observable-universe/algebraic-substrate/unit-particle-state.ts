@@ -6,6 +6,6 @@ export default definition({
   lean: { ref: "qou:QOU.AlgebraicSubstrate.UnitParticleState",
     validation: "not_checked",
   },
-  uses: ["def:local-cohomology-group", "def:maximal-ideal-defect"],
+  uses: ["def:local-cohomology-group"],
   tags: ["unit-particle", "q-polylogarithm", "generator", "local-cohomology"],
 });

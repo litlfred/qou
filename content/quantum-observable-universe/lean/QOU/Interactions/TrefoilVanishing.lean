@@ -1,3 +1,5 @@
+import QOU.Descartes.GroundRing
+
 /-!
 # The e⁻ (trefoil) NF coefficient of B₃ is exactly zero
 
@@ -33,21 +35,39 @@ eliminate e⁻:
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
-import QOU.Descartes.GroundRing
-
 namespace QOU.Interactions
 
 open QOU.Descartes
 
 /-! ## §1  The NF of σ₀σ₁⁻¹ -/
 
-/-- NF(σ₀σ₁⁻¹) = −HA·σ₀ + 1·L₊.
-    No γ, σ₁, L₋, or e⁻ components.
-
+/-- NF of σ₀σ₁⁻¹ = L₊ − HA·σ₀.
     Proof: σ₀(σ₁ − HA) = σ₀σ₁ − HA·σ₀ = L₊ − HA·σ₀.
-    Both L₊ and σ₀ are NF basis elements, so no further reduction. -/
+    Coefficients: c_γ=0, c_σ₀=−HA, c_σ₁=0, c_L₊=1, c_L₋=0, c_e=0. -/
+noncomputable def unit_nf : Fin 6 → R_q
+  | 0 => 0           -- γ
+  | 1 => -HA         -- σ₀
+  | 2 => 0           -- σ₁
+  | 3 => 1           -- L₊
+  | 4 => 0           -- L₋
+  | 5 => 0           -- e⁻
+
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem unit_nf_no_trefoil : unit_nf 5 = 0 := by rfl
+
+/-- The complete NF of B₃ in ℤ[q, q⁻¹]:
+
+    NF(B₃) = c_γ·γ + c_σ₀·σ₀ + c_σ₁·σ₁ + c_L₊·L₊ + c_L₋·L₋
+
+    where c_e⁻ = 0 EXACTLY (the trefoil vanishing result). -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+noncomputable def b3_nf_coefficients : Fin 6 → R_q
+  | 0 => -q * q * q * q + 4 * q * q - 5 + 4 * q_inv * q_inv - q_inv * q_inv * q_inv * q_inv
+  | 1 => -(q * q * q * q * q) + 4 * q * q * q - 7 * q + 7 * q_inv - 4 * q_inv * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv * q_inv
+  | 2 => q * q * q - 3 * q + 3 * q_inv - q_inv * q_inv * q_inv
+  | 3 => q * q * q * q - 3 * q * q + 4 - 3 * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv
+  | 4 => -(q * q) + 2 - q_inv * q_inv
+  | 5 => 0  -- e⁻ = 0 EXACTLY
 
 /-- The standard character of the NF matches the matrix trace.
 
@@ -70,8 +90,9 @@ theorem b3_nf_std_consistent :
       - 3 * q * q + 4 - 3 * q_inv * q_inv
       + 3 * q_inv * q_inv * q_inv * q_inv
       - q_inv * q_inv * q_inv * q_inv * q_inv * q_inv := by
-  simp [b3_nf_coefficients, HA, q, q_inv]
-  ring
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  simp only [b3_nf_coefficients, HA]
+  linear_combination (q^4 - 5 * q^2 + q_inv^4 - 5 * q_inv^2 + 20) * q_mul_q_inv
 
 /-- With three character values verified (trivial = 1, alternating = 1,
     standard = known Laurent poly), the NF is UNIQUELY DETERMINED
@@ -103,16 +124,6 @@ theorem b3_nf_wedderburn_uniqueness :
   -- Character checks proved above; e⁻ = 0 follows as the key consequence.
   rfl
 
-/-- NF of σ₀σ₁⁻¹ = L₊ − HA·σ₀.
-    Coefficients: c_γ=0, c_σ₀=−HA, c_σ₁=0, c_L₊=1, c_L₋=0, c_e=0. -/
-noncomputable def unit_nf : Fin 6 → R_q
-  | 0 => 0           -- γ
-  | 1 => -HA         -- σ₀
-  | 2 => 0           -- σ₁
-  | 3 => 1           -- L₊
-  | 4 => 0           -- L₋
-  | 5 => 0           -- e⁻
-
 /-- NF of (σ₀σ₁⁻¹)².
     Verified by Hecke algebra computation (sympy witness).
     Coefficients in ℤ[q,q⁻¹]. -/
@@ -136,8 +147,9 @@ theorem unit2_nf_trivial_consistent :
     + q * q * unit2_nf 3
     + q * q * unit2_nf 4
     + q * q * q * unit2_nf 5 = 1 := by
-  simp [unit2_nf, HA, q, q_inv]
-  ring
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  simp only [unit2_nf, HA]
+  linear_combination (-q^2 + 2 * q * q_inv + 1 - q_inv^2) * q_mul_q_inv
 
 /-! ## §2b  The NF of (σ₀σ₁⁻¹)² (original section) -/
 
@@ -241,33 +253,6 @@ theorem unit2_nf_hecke_reduction :
 
 /-! ## §3  The NF of B₃ = (σ₀σ₁⁻¹)³ -/
 
-/-- The complete NF of B₃ in ℤ[q, q⁻¹]:
-
-    NF(B₃) = c_γ·γ + c_σ₀·σ₀ + c_σ₁·σ₁ + c_L₊·L₊ + c_L₋·L₋
-
-    where:
-      c_γ  = −q⁴ + 4q² − 5 + 4q⁻² − q⁻⁴
-           = −(q²−q−1)(q²+q−1)(q⁴−q²+1) / q⁴
-      c_σ₀ = −(q−1)³(q+1)³(q⁴−q²+1) / q⁵
-      c_σ₁ = (q−1)³(q+1)³ / q³
-      c_L₊ = (q−1)²(q+1)²(q⁴−q²+1) / q⁴
-      c_L₋ = −(q−1)²(q+1)² / q²
-      c_e⁻ = 0  (EXACTLY)
-
-    The e⁻ coefficient vanishes for ALL q.
-
-    Verified by symbolic Hecke algebra computation over ℤ[q, q⁻¹].
-
-    Witness: sympy Gröbner-Shirshov reduction of (σ₀(σ₁−HA))³. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
-noncomputable def b3_nf_coefficients : Fin 6 → R_q
-  | 0 => -q * q * q * q + 4 * q * q - 5 + 4 * q_inv * q_inv - q_inv * q_inv * q_inv * q_inv
-  | 1 => -(q * q * q * q * q) + 4 * q * q * q - 7 * q + 7 * q_inv - 4 * q_inv * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv * q_inv
-  | 2 => q * q * q - 3 * q + 3 * q_inv - q_inv * q_inv * q_inv
-  | 3 => q * q * q * q - 3 * q * q + 4 - 3 * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv
-  | 4 => -(q * q) + 2 - q_inv * q_inv
-  | 5 => 0  -- e⁻ = 0 EXACTLY
-
 /-- The e⁻ coefficient of B₃ is zero. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 theorem b3_trefoil_zero : b3_nf_coefficients 5 = 0 := by rfl
@@ -286,8 +271,9 @@ theorem b3_nf_trivial_consistent :
     + q * q * b3_nf_coefficients 3
     + q * q * b3_nf_coefficients 4
     + q * q * q * b3_nf_coefficients 5 = 1 := by
-  simp [b3_nf_coefficients, q, q_inv]
-  ring
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  simp only [b3_nf_coefficients]
+  linear_combination (q * (q_inv^3 - 4 * q_inv) + q_inv^4 - 4 * q_inv^2 + 6) * q_mul_q_inv
 
 /-- The alternating character of the NF matches χ_alt(B₃) = 1.
 
@@ -300,8 +286,9 @@ theorem b3_nf_alt_consistent :
     + q_inv * q_inv * b3_nf_coefficients 3
     + q_inv * q_inv * b3_nf_coefficients 4
     - q_inv * q_inv * q_inv * b3_nf_coefficients 5 = 1 := by
-  simp [b3_nf_coefficients, q, q_inv]
-  ring
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
+  simp only [b3_nf_coefficients]
+  linear_combination (q^4 + q^3 * q_inv - 4 * q^2 - 4 * q * q_inv + 6) * q_mul_q_inv
 
 /-! ## §4  The trivial character is 1 -/
 

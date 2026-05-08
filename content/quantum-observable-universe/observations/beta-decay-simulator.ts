@@ -14,13 +14,8 @@ export default simulator({
   title: "Beta-Decay Half-Life Simulator",
   html: "folio-assistant/simulators/beta_decay_halflife.html",
   uses: [
-    "prop:hadron-half-life",
-    "prop:skein-polynomial-transfer-matrix",
-    "prop:skein-coulomb-enhancement",
-    "rem:hadron-half-life-regimes",
     "cor:spectral-decomposition-qvalue",
     "def:transfer-matrix-operator",
-    "ex:hadron-half-life-verification",
   ],
   tags: [
     "beta-decay",

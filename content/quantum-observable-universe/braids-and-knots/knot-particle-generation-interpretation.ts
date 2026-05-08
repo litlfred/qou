@@ -13,10 +13,4 @@ export default remark({
     "exceptional-divisor",
     "operation",
   ],
-  uses: [
-    "def:knot-particle-generation",
-    "prop:skein-generation",
-    "rem:color-tube-interpretation",
-    "def:color-tube-coordinates",
-  ],
 });

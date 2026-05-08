@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU, let
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU, let
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor
 at a brane point $p$
 ([exceptional divisor](#def:exceptional-divisor)), and let
@@ -90,7 +90,7 @@ $$
 $$
 
 has its **leading singularity** governed by the Hecke relation
-$(T_i - q)(T_i + q^{-1}) = 0$, which is the Skein relation
+$(\sigma_i - q)(\sigma_i + q^{-1}) = 0$, which is the Skein relation
 
 $$
   L_+ - L_- =  (q - q^{-1}) L_0.
@@ -99,5 +99,5 @@ $$
 The collision $z \to w$ is two strands meeting on $\mathcal{S}_p$; the
 resolution into $L_+$, $L_-$, $L_0$ is the OPE decomposition
 into singular channels.  The two eigenvalues $q$ and $-q^{-1}$
-of $T_i$ correspond to the symmetric (bosonic) and antisymmetric
+of $\sigma_i$ correspond to the symmetric (bosonic) and antisymmetric
 (fermionic) OPE channels respectively.

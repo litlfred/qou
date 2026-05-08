@@ -1,6 +1,6 @@
 **Proposition.**
 *Under the Frobenius--Hopf antipode $S \colon \sigma \leftrightarrow
-\sigma^{-1}$ on the Hecke algebra $H_n(q)$, the three log-functionals
+\sigma^{-1}$ on the Hecke algebra $H_n(R, q)$, the three log-functionals
 in the Wedderburn mass formula
 ([Wedderburn mass formula](#thm:wedderburn-mass-formula)) carry
 exactly the following $S$-eigenvalues:*

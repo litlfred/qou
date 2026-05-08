@@ -10,7 +10,7 @@
   "scriptFile": "transition_nf.py",
   "scriptHash": "63cf638a2d8d",
   "scriptCommitSha": "f54c1977511744651ad9c856d7217b3e383760b0",
-  "description": "Transition NF for β⁻ decays. Tracks per-crossing changes between parent and daughter at quark level.",
+  "description": "Transition NF for \u03b2\u207b decays. Tracks per-crossing changes between parent and daughter at quark level.",
   "data": {
     "Z0N1": {
       "tr_par": 0.6789389560906111,
@@ -48,5 +48,7 @@
       "Q_mass_MeV": 0.454076,
       "Q_exp_MeV": 0.15648
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

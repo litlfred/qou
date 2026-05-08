@@ -1,14 +1,14 @@
 *The binding energy of $H_2$ is:*
 
 $$
-  E_{\mathrm{bind}}(H_2)
+  \mathbf{E}_{\mathrm{bind}}(H_2)
   = \alpha \cdot y_{\mathrm{cov}}^*
   = \alpha \cdot \bigl(2\Phi_1^H - \Phi_1^{H_2}\bigr)
 $$
 
 *where $\alpha = m_e \times 8G \approx 0.511 \times 7.328
 \approx 3.744 \;\mathrm{MeV}$ is the universal binding scale
-from the [Wedderburn mass formula](#prop:wedderburn-mass-formula).*
+from the [Wedderburn mass formula](#thm:wedderburn-mass-formula).*
 
 *The optimal binding from the LP dual encodes:*
 

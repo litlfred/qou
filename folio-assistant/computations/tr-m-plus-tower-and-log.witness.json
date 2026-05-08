@@ -1,7 +1,7 @@
 {
   "computation": "tr-m-plus-tower-and-log",
   "description": "Two candidate derivations for \u03c1_F using matrix-trace |tr_M(\u03b2)| from std_matrix_trace_closed_form:\n(1) Multi-brane: m = |tr_M| + \u03a3 \u210f_q^{2n}\u00b7tower^(n)\n(2) Per-irrep log: B = \u03a3_\u03bb w_\u03bb\u00b7m_e\u00b7ln|\u03a6_q(\u03c7_\u03bb/d_\u03bb)|\nNo fitting.  Tests whether either reproduces B_AME.",
-  "timestamp": "2026-04-24T04:33:57.174823+00:00",
+  "computedAt": "2026-04-24T04:33:57.174823+00:00",
   "alpha_MeV": 3.74445965488548,
   "tr_m_plancherel_inputs": {
     "D": 0.00540032,
@@ -777,5 +777,7 @@
       "B_AME": 7.7180375,
       "err_pct": -99.41054171528158
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

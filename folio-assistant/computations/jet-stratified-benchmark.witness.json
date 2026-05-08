@@ -257,5 +257,7 @@
       "pair_speedup": 3.69,
       "time_speedup": 3.45
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

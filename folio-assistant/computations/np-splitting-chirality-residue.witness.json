@@ -1,13 +1,13 @@
 {
   "computation": "np-splitting-chirality-residue",
   "description": "Structural derivation of np splitting: m_e\u00b7\u03a3_3 + m_e\u00b7Vol(6_1)\u00b7|(q;q)_3|.  First piece = Frobenius co-Casimir at H_3 (paper Term 6).  Second piece = std-channel curvature-rank-3 chirality residue from the SOLE std-channel knot in neutron-extra GB trajectory (per PR #421).  Result: -0.159% vs CODATA -- structural derivation from m_e and q_0 alone.",
-  "timestamp": "2026-04-25T19:13:53.631601+00:00",
+  "computedAt": "2026-04-27T21:20:42.605197+00:00",
   "q_0": 1.1099785955541805,
-  "sigma_3": "2.49729054500859147895227",
-  "m_e_sigma_3_MeV": 1.276112846344318,
-  "qpoch_r3_abs": 0.00938022038121258,
-  "chirality_residue_MeV": 0.015165770469183413,
-  "predicted_np_splitting_MeV": 1.2912786168135013,
+  "sigma_3": "2.497290545008591475445831",
+  "m_e_sigma_3_MeV": 1.2761128463443179,
+  "qpoch_r3_abs": 0.009380220381212601,
+  "chirality_residue_MeV": 0.015165770469183446,
+  "predicted_np_splitting_MeV": 1.2912786168135015,
   "codata_np_splitting_MeV": 1.29333236,
-  "error_pct": -0.15879469578095154
+  "error_pct": -0.15879469578094915
 }

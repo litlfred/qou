@@ -22,9 +22,35 @@ whose diagonal-to-side ratio is $\varphi$.  This is a fundamental
 domain of the torus — its shape encodes the conformal structure of
 the chiral fiber at that value of $q$.
 
+**Schematic.**  The two regimes look like this:
+
+```tex
+\begin{tikzpicture}[scale=0.9]
+  % Π(q_0): a parallelogram with golden diagonal
+  \draw[thick] (0,0) -- (2.0,0) -- (2.6,1.236) -- (0.6,1.236) -- cycle;
+  \draw[dashed,->] (0,0) -- (2.6,1.236) node[midway,sloped,above]{$\varphi$};
+  \node[below] at (1.0,0) {$\Pi(q_0)$: torus, diagonal $=\varphi$};
+  % arrow
+  \draw[->,thick] (3.4,0.6) -- (4.6,0.6) node[midway,above]{transport};
+  \node at (4.0,0.2) {$q_0 \to q_{\mathrm{gold}}$};
+  % node degeneration
+  \draw[thick] (5.4,0) ellipse (1.0 and 0.6);
+  \fill (6.4,0) circle (0.06);
+  \node[below] at (5.4,-0.7) {$\Pi(q_{\mathrm{gold}})$: nodal $\mathbb{P}^1$};
+  \node[right] at (6.4,0) {$\bullet$};
+\end{tikzpicture}
+```
+
+The left figure is the parallelogram $\Pi(q_0)$ with golden-ratio
+diagonal; the right is its image under parallel transport to
+$q_{\mathrm{gold}} = 1/\varphi^2$, where one period diverges and
+the torus pinches to a nodal rational curve.  The same $\varphi$
+appears as a length ratio on the left and as the root of
+$s^2 + s - 1 = 0$ controlling the degeneration on the right.
+
 **Transport equations.**
 The $q$-connection
-$\nabla_q = q^{-1}\nabla + (1 - q^{-1})(\iota_\xi\nabla) \theta_A$
+$\nabla_q = q^{-1}\nabla + (1 - q^{-1})(\iota_\xi\nabla) \varTheta_A$
 has coefficients that depend continuously on $q$.  As $q$ decreases
 from $q_0$ to $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$,
 the connection weight shifts:

@@ -5,12 +5,7 @@ export default proposition({
   title:
     "$\\mathrm{Vol}(K)$ factors strictly through the fibre functor $\\tau$",
   tags: ["fibre-functor", "knot-volume", "archimedean", "factorization"],
-  uses: [
-    "def:algebraic-quantum-volume",
-    "def:archimedean-realization-functor",
-    "def:adelic-substrate",
-    "def:quantum-observable-universe",
-  ],
+  uses: ["def:archimedean-realization-functor"],
   cites: ["kashaev1997", "murakami-murakami2001"],
   lean: {
     ref: "qou:QOU.BraidsKnots.VolThroughTau",

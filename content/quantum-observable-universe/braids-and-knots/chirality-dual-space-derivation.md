@@ -1,7 +1,7 @@
 **Proposition (chirality from symmetric-channel trace duality).**
 *The paper's chirality factors $a_K$ are derivable from the
 **symmetric-channel** trace structure of Hecke generators in
-$H_3(q)$.  For every pn crossing $c$ in the atomic braid,*
+$H_3(R, q)$.  For every pn crossing $c$ in the atomic braid,*
 
 $$
   a_K \;=\; \prod_{\substack{\text{pn crossings}\\ c \in \beta_K}}
@@ -62,9 +62,9 @@ formula.*
 
 | isotope | pn crossing pattern | $a_K$ derivation | result |
 |---|---|---|---|
-| D | $1$ positive | $(1 + h)^1$ | $1 + h \approx 1.209$ ★ |
-| T, $^3$He | $1+, 1-$ (amphichiral) | $(1+h)(1-h)$ | $1 - h^2 \approx 0.956$ ★ |
-| $^4$He | $2+, 2-$ (Borromean²) | $(1+h)^2(1-h)^2$ | $(1 - h^2)^2 \approx 0.914$ ★ |
+| D | $1$ positive | $(1 + h)^1$ | $1 + h \approx 1.209$ (best) |
+| T, $^3$He | $1+, 1-$ (amphichiral) | $(1+h)(1-h)$ | $1 - h^2 \approx 0.956$ (best) |
+| $^4$He | $2+, 2-$ (Borromean${}^2$) | $(1+h)^2(1-h)^2$ | $(1 - h^2)^2 \approx 0.914$ (best) |
 
 *Symbolic verification: the per-crossing product $\prod_{pn}(1 + \mathrm{sign}\cdot h)$
 **exactly equals** paper's
@@ -78,9 +78,9 @@ the **Frobenius-dual pairing** of the deviation $\sigma - \sigma^{-1}$
 against the channel-projection cocycle $\tau_\lambda$.  In dual-space
 terms:*
 
-- *$\sigma - \sigma^{-1} = h \cdot \mathbf{1}$ in $H_n(q)$ (Hecke
+- *$\sigma - \sigma^{-1} = h \cdot \mathbf{1}$ in $H_n(R, q)$ (Hecke
   inverse identity).*
-- *The trace $\tau_\lambda$ is a linear functional on $H_n(q)$;
+- *The trace $\tau_\lambda$ is a linear functional on $H_n(R, q)$;
   paired against $\sigma - \sigma^{-1}$ gives the channel-specific
   $h$-content.*
 - *Symmetric-channel: $\tau_{\mathrm{sym}}(h \cdot \mathbf{1}) = h$
@@ -96,7 +96,7 @@ $\sigma - \sigma^{-1} = h$.  The chirality factor specifically uses
 the **symmetric channel** because that is the unique 1-dim sector
 that reduces to the trivial algebra at $q = 1$.*
 
-**Status: Term 5 DERIVED.**
+**Result (Term 5).**
 
 *The chirality factor $a_K$ is now algebraically derived from
 Wedderburn-channel duality on the symmetric-trace pairing.  The
@@ -129,11 +129,7 @@ ribbon, no Hochschild cohomology, no q-Heisenberg Fock structure
 needed.  The Frobenius-dual pairing on the symmetric Wedderburn
 channel is sufficient.*
 
-**Updated overall completeness.**
-
-*With Term 5 now derived, **all six terms of the unified mass
-formula are algebraically derived** using paper's existing
-machinery:*
+**Coverage.** With Term 5 derived, all six terms of the unified mass formula are algebraically derived using the existing machinery:
 
 | term | derivation source |
 |---|---|
@@ -142,7 +138,7 @@ machinery:*
 | 3 | same + Markov factorisation |
 | 4 | Frobenius co-Casimir ([Frobenius universal](#thm:frobenius-codim-universal), Lean-proved) |
 | 5 | per-crossing $(1 \pm h)$ via symmetric-channel duality (this proposition) |
-| 6 | Mittag-Leffler residue sum ([GB residue spectral sum](#prop:gb-residue-spectral-sum)) |
+| 6 | cyclotomic residue sum ([GB residue spectral sum](#prop:gb-residue-spectral-sum)) |
 
 *Six of six. Computation infrastructure complete (scripts +
 witness files for all terms in `folio-assistant/computations/`).

@@ -7,7 +7,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:categorical-fourier",
     "prop:categorical-fourier-exists",
     "prop:categorical-laplace-unique",
   ],

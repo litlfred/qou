@@ -14,10 +14,6 @@ export default conjecture({
     "open-problem",
     "speculative",
   ],
-  uses: [
-    "def:surreal-blowup-calculus",
-    "def:standard-part-functor",
-    "conj:classical-limit-stpart",
-  ],
+  uses: ["conj:classical-limit-stpart"],
   cites: ["conway1976"],
 });

@@ -52,15 +52,15 @@ $$
 $$
 
 The figure-eight has hyperbolic volume
-$\mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3) \approx 2.02988$,
+$\mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3) \approx :val[Vol_4_1]{precision=6}$,
 so the muon-to-electron mass ratio is governed by the Higgs
 mechanism:
 
 $$
   \frac{m_\mu}{m_e}
   =  \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}
-   \approx  \frac{2.02988}{(1 - q^{-1})^2}
-  =  206.768\ldots
+   \approx  \frac{:val[Vol_4_1]{precision=6}}{(1 - q^{-1})^2}
+  =  :val[m_mu_over_e]{precision=6}\ldots
 $$
 
 matching CODATA to six significant figures

@@ -1,7 +1,7 @@
 {
   "computation": "fresh-derivation-pn-steps-E-G",
   "description": "Fresh derivation E-G: per-block V_hyp with reference knots (3) \u2192 unknot, (2,1) \u2192 figure-8, (1,1,1) \u2192 trefoil; only std block contributes non-zero V_hyp (2.02988...).  Hecke energy computed two ways (Plancherel-derived and LP-dual); characters via Hoefsmit seminormal matrices; prefactor deferred to user.  Output per-partition contributions and multiple prefactor-choice columns for the user to pick.",
-  "timestamp": "2026-04-24T16:52:50.533831+00:00",
+  "computedAt": "2026-04-24T16:52:50.533831+00:00",
   "q_0": 1.1099785955541805,
   "V_fig8": "2.029883212819307250042405108549",
   "proton": {
@@ -113,5 +113,7 @@
     "total_Plancherel_im": 0.0,
     "total_LP_re": 0.5764251580789402,
     "total_LP_im": 0.0
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

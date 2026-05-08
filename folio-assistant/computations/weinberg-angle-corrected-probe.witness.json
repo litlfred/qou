@@ -1,0 +1,69 @@
+{
+  "computation": "weinberg-angle-corrected-probe",
+  "computedAt": "2026-05-06T00:02:58.506216+00:00",
+  "description": "Corrected Weinberg-angle probe using non-uniform Hoefsmit pure-pattern multiplicities (4, 2, 1, 3, 3, 1, 2, 4) plus candidate Higgs-vev rotation forms.  Tests six candidates; verdict records whether any closes CODATA cot θ_W to structural precision.",
+  "reference_blocks": [
+    "conj:weinberg-angle-categorical",
+    "conj:hoefsmit-ew-cell-content",
+    "conj:categorical-linking-operation",
+    "conj:categorical-higgs-mechanism"
+  ],
+  "audit": "docs/audits/2026-05-06-refocused-1ppb-workplan-v2.md",
+  "q_0": "1.1099785955541805169583001889887986763787613849839",
+  "codata_cot_theta_W": "1.8230678710486174391643530136663988140740643140276",
+  "non_uniform_multiplicities": {
+    "(sym,sym,sym)": 4,
+    "(sym,sym,alt)": 3,
+    "(sym,alt,sym)": 1,
+    "(alt,sym,sym)": 2,
+    "(sym,alt,alt)": 2,
+    "(alt,sym,alt)": 1,
+    "(alt,alt,sym)": 3,
+    "(alt,alt,alt)": 4
+  },
+  "per_channel_traces_q0": {
+    "tr_W_sym": "32.435988470566422361993159637800895275008888990032",
+    "tr_W_alt": "9.258911829228659742922146170160261963833544556996",
+    "tr_H_sym": "36.148034432204091115687270396612984095101699050613",
+    "tr_H_alt": "5.5468658675909909892280354113481731437407344964152"
+  },
+  "candidates": [
+    {
+      "form": "tr_W_sym / tr_H_sym",
+      "value_at_q0": 0.897309880884405,
+      "rel_err": 0.5078022628042489
+    },
+    {
+      "form": "tr_W_alt / tr_H_alt",
+      "value_at_q0": 1.6692150216442523,
+      "rel_err": 0.0843922773516216
+    },
+    {
+      "form": "(tr_W_sym − tr_W_alt) / (tr_H_sym − tr_H_alt)",
+      "value_at_q0": 0.7573918816989071,
+      "rel_err": 0.5845509134757226
+    },
+    {
+      "form": "sqrt((tr_W²) / (tr_H²)), Pythagorean",
+      "value_at_q0": 0.9223557558030325,
+      "rel_err": 0.4940639509638776
+    },
+    {
+      "form": "[9]_q·[10]_q / ([4]·[6]·[8]) · tr_W_sym/tr_H_sym",
+      "value_at_q0": 0.4709716234759137,
+      "rel_err": 0.7416598520794436
+    },
+    {
+      "form": "(tr_W_sym+alt)/(tr_H_sym+alt) · [4][6]/[8]",
+      "value_at_q0": 2.9347101816224286,
+      "rel_err": 0.6097646325884737
+    }
+  ],
+  "best": {
+    "form": "tr_W_alt / tr_H_alt",
+    "value": 1.6692150216442523,
+    "rel_err": 0.0843922773516216
+  },
+  "verdict": "no-clean-categorical-fit",
+  "next_step": "None of the simple readings closes Weinberg angle.  Open: the Higgs-vev induced (W^3, B) → (Z, γ) rotation is a categorical-physics input that simple cell-content multiplicity readings cannot supply.  Discharge gated on conj:categorical-higgs-mechanism Step C + conj:categorical-linking-operation properties 3-5."
+}

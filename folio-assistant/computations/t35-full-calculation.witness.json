@@ -1,6 +1,6 @@
 {
   "computation": "t35-full-calculation",
-  "timestamp": "2026-03-28T12:49:03.176138+00:00",
+  "computedAt": "2026-03-28T12:49:03.176138+00:00",
   "description": "Full T_{3,5} beta decay calculation at quark level (Level 1). No approximations \u2014 complete Hecke algebra computation with T_{3,5} = (\u03c3\u2081\u03c3\u2082)\u2075 insertion at the converting quark.",
   "parameters": {
     "q": 1.1099785955541805,
@@ -52,5 +52,7 @@
     "neutron_t35_trace": 1.1242676904436548,
     "delta_np_single": 0.026008037314654064,
     "delta_np_t35": 0.3559229612473265
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -16,6 +16,5 @@ export default remark({
   uses: [
     "rem:reeb-exceptional-divisor",
     "rem:golden-ratio-degeneration",
-    "def:exceptional-divisor",
   ],
 });

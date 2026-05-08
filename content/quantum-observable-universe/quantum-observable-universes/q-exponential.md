@@ -64,6 +64,17 @@ element of the formal Hopf algebra, independently of any convergent
 power-series representation
 ([finite-field obstruction for $\exp_q$](#rem:q-exp-finite-field-obstruction)).
 
+**Native algebraic home: the Habiro ring.**  The Taylor coefficients
+of $\exp_q$ are rational functions of $q$ whose denominators are
+products of $[n]_q$ — i.e. cyclotomic factors. The partial sums are
+therefore coherent modulo the Habiro ideal $((q;q)_m)$, and $\exp_q$
+acts as a grouplike in the formal-power-series ring
+$\widehat{\mathbb{Z}[q]}[\![x]\!]$ over the Habiro ring
+([Habiro ring](#def:habiro-ring)). Evaluation at any root of unity
+$\zeta_n$ is the cyclotomic-projection
+$\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_n(q)$ — purely
+algebraic, no analytic continuation required.
+
 **Archimedean realisation.**  Over $\mathbb{C}$ (or any field of
 characteristic zero where the Jackson factorials $[n]_q!$ are
 invertible), $\exp_q$ is represented by a convergent Taylor series

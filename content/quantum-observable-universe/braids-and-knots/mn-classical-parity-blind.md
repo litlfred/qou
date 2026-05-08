@@ -27,9 +27,9 @@ negative crossings $\sigma_i^{\pm 1}$ project to the same
 transposition $(i, i+1)$.*
 
 **Origin of the loss of information.**
-*The Hecke algebra $H_n(q)$ has two eigenvalues for each Hecke
-generator: $T_i$ has spectrum $\{q, -q^{-1}\}$.  The q-deformed
-character $\chi^\lambda_q(T_w)$ distinguishes these eigenvalues
+*The Hecke algebra $H_n(R, q)$ has two eigenvalues for each Hecke
+generator: $\sigma_i$ has spectrum $\{q, -q^{-1}\}$.  The q-deformed
+character $\chi^\lambda_q(\sigma_w)$ distinguishes these eigenvalues
 through q-weighted ribbon tableaux — a positive crossing and a
 negative crossing contribute **different** q-factors to the same
 ribbon removal.  In the classical limit $q \to 1$, the two
@@ -59,14 +59,14 @@ the computation is valuable as a **structural diagnostic**:*
    property, not a q-weight property), the classical support
    list **is** the support list for the full Hecke character.*
 4. *The full mass calculation therefore requires evaluating
-   q-deformed $\chi^\lambda_q(T_w)$ only on this pre-computed
+   q-deformed $\chi^\lambda_q(\sigma_w)$ only on this pre-computed
    support — a substantial pruning of the partition sum.*
 
 **Next step: q-deformed ribbon characters.**
 *The full Hecke-algebra character is*
 
 $$
-  \chi^\lambda_q(T_w)
+  \chi^\lambda_q(\sigma_w)
   \;=\;
   \sum_{\text{ribbon tableau of shape } \lambda}
     q^{\operatorname{charge}(\text{tableau})}

@@ -28,6 +28,17 @@ name: Blueprint
 
 on:
   workflow_dispatch:
+    inputs:
+      ref:
+        description: >
+          Branch, tag, or commit SHA to build the blueprint from.
+          Leave blank to use the ref selected in the GitHub UI's
+          "Use workflow from" dropdown. Provide a value here when the
+          dropdown will not accept your branch name (e.g. very long
+          `copilot/...` or `claude/...` branch names).
+        required: false
+        default: ''
+        type: string
 
 concurrency:
   group: blueprint-${{ github.ref }}
@@ -70,6 +81,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ inputs.ref || github.ref }}
 
       # ── Pre-build: content pipeline + extraction ──────────────────
       - name: Configure environment

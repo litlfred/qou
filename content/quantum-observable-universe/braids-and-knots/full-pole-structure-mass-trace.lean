@@ -1,101 +1,158 @@
-import Mathlib.NumberTheory.Cyclotomic.Basic
 import Mathlib.Algebra.BigOperators.Basic
 import Mathlib.Algebra.Order.AbsoluteValue
-import Mathlib.Analysis.MeanInequalities
+import Mathlib.Algebra.GroupPower.Order
+import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Tactic.Linarith
 
 /-!
-# Full pole structure of the mass trace
+# Habiro completion of the mass trace
 
-The mass trace `tr_M(T_w, q)` is meromorphic on `ℂˣ` with simple
-poles at every primitive root of unity `ζ_n^{(j)} = e^{2πij/n}`
-for `gcd(j, n) = 1`, `n ≥ 2`.  The Mittag-Leffler expansion at
-a regular point `q₀` sums contributions from **all** poles
-weighted by the Cauchy kernel `1/(q₀ - ζ_n^{(j)})`.  Truncating
-at the closest pole loses interference and resonance effects.
+The Markov trace `tr_M(T_w)` of a closed braid is **not** a
+meromorphic function on `ℂ`: the primitive roots of unity are
+dense in `S¹`, so `S¹` is a natural boundary.  The correct
+algebraic home is the **Habiro ring** `Ẑ[q]`, the cyclotomic
+completion of `ℤ[q]`:
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+  Ẑ[q] := lim_n  ℤ[q] / (q;q)_n
+
+In this completion `tr_M(T_w)` admits a unique cyclotomic
+expansion `Σ_m a_m (q;q)_m` with `a_m ∈ ℤ[q^±1]`, evaluation at
+every root of unity is well-defined, and truncation at order `m`
+exactly suppresses the contribution of every root of unity of
+order `≤ m`.
+
+The earlier "Mittag-Leffler over `ℂ`" expression
+`Σ_{n,j} r_n^{(j)} / (q - ζ_n^{(j)})` is a **formal residue
+spectral sum** — see `prop:gb-residue-spectral-sum` — that feeds
+the cyclotomic coefficients `a_m`.  It is not a complex-analytic
+identity on or near `S¹`.
+
+Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127
 LaTeX label: `prop:full-pole-structure-mass-trace`
 -/
 
 namespace QOU.BraidKnot
 
-/-- A primitive `n`-th root of unity for `n ≥ 2`.  Parameterised
-    by `j ∈ Fin n` with `gcd j n = 1`. -/
-structure PrimitiveRoot where
-  n : ℕ
-  n_ge_two : 2 ≤ n
-  j : ℕ
-  j_coprime : Nat.Coprime j n
-  j_lt : j < n
+/-- The real-valued q-Pochhammer factor
+    `(q; q)_m = ∏_{k=1}^{m} (1 - q^k)`, used in the
+    `0 < q < 1` truncation bound below. -/
+noncomputable def qPochhammer (q : ℝ) (m : ℕ) : ℝ :=
+  ∏ k ∈ Finset.range m, (1 - q ^ (k + 1))
 
-/-- The complex residue of `Φ_q · tr_{M,ℓ}` at a primitive root
-    of unity.  Axiomatized; content-side `prop:gb-residue-spectral-sum`. -/
-noncomputable opaque residueAt (ζ : PrimitiveRoot) (braid : Unit) : ℝ
+/-- **Polynomial q-Pochhammer** `(u; u)_m = Π_{k=1}^{m} (1 - u^k) ∈ ℤ[u]`.
 
-/-- **Full Mittag-Leffler pole sum.**
+    This is the polynomial-ring companion of `qPochhammer` above.
+    Polynomial divisibility by `qPochhammerPoly N` is non-trivial:
+    `qPochhammerPoly N` has degree `N(N+1)/2` and is a non-unit in
+    `ℤ[u]`, so divisibility encodes the Habiro-ideal property
+    genuinely (unlike real divisibility, which is trivially solvable
+    whenever the divisor is non-zero).
 
-    The mass trace evaluated at `q₀` is
+    The generic ring-valued analogue
+    `QOU.BraidKnot.qPochhammer (u : R) : ℕ → R` over an arbitrary
+    `[CommRing R]` lives in the sibling file
+    `habiro-expansion-atomic.lean`; this is the specialisation
+    `qPochhammer (Polynomial.X : Polynomial ℤ)`.  The two
+    definitions are duplicated only because each sibling `.lean`
+    file is read standalone (not yet part of a shared Lake
+    module); a future `QOU.BraidKnot.HabiroBasic` module would let
+    both files import a single source. -/
+noncomputable def qPochhammerPoly (m : ℕ) : Polynomial ℤ :=
+  ∏ k ∈ Finset.range m, (1 - (Polynomial.X : Polynomial ℤ) ^ (k + 1))
 
-      tr_M(T_w, q₀) = entire(q₀)
-                    + Σ_{n ≥ 2} Σ_{j : gcd(j,n)=1}
-                         residueAt(ζ_n^{(j)}, T_w) / (q₀ - ζ_n^{(j)}).
+/-- **Habiro completion of the Markov trace** (polynomial-ring form).
 
-    Truncation to `n ≤ N` introduces error controlled by the
-    Habiro cyclotomic expansion: `(q₀; q₀)_N = ∏_{k≤N}(1 - q₀^k)`
-    vanishes at all `ζ_n^{(j)}` with `n ≤ N`.
+    The mass trace of a closed braid `T_w` lies in the Habiro
+    ring `Ẑ[q]` and admits a unique cyclotomic expansion
+
+      tr_M(T_w, u) = Σ_{m ≥ 0} a_m(T_w) · (u; u)_m,
+      a_m(T_w) ∈ ℤ[u].
+
+    (After Markov normalisation by `D(u)` — see field `trace`
+    below — the prefactor leaves the cyclotomic coefficients
+    `a_m` in the regular polynomial ring `ℤ[u]` rather than in
+    the Laurent ring `ℤ[u^±1]`.)
+
+    This class records the trace as a polynomial `trace : ℤ[u]`,
+    the cyclotomic coefficients `coeff : ℕ → ℤ[u]`, and the
+    substantive axiom `tail_in_ideal`: at every truncation order
+    `N`, the residual `trace - Σ_{m<N} a_m · (u;u)_m` lies in the
+    Habiro ideal `((u;u)_N) ⊂ ℤ[u]`.
+
+    **Why polynomial-typed.**  Polynomial divisibility by
+    `qPochhammerPoly N` is non-trivial: the divisor has degree
+    `N(N+1)/2` and is a non-unit, so the divisibility constraint
+    cuts out a proper subset of polynomials.  An earlier
+    ℝ-evaluation-only formulation was vacuous (real divisibility by
+    a non-zero divisor is always solvable); the polynomial form
+    above repairs that and is what Gemini and Copilot reviews
+    requested as the "honest Habiro-ideal" statement.
+
+    **ℝ-evaluation shadow.**  The earlier ℝ-evaluation observable
+    ("at any `q` annihilating `(q;q)_n`, the trace equals the
+    cyclotomic partial sum up to order `n`") follows by evaluating
+    both sides of `tail_in_ideal` at the relevant `q` (mapping
+    `ℤ[u] → ℝ` via `Polynomial.eval₂ (Int.castRingHom ℝ) q`): if
+    `(u;u)_N` divides the tail in `ℤ[u]`, then at any `q` where
+    `(q;q)_N = 0` the tail evaluates to `0`.
+
+    The class is axiomatised: existence of the cyclotomic expansion
+    follows from Markov–Jones integrality plus sequential cyclotomic
+    division, formalised in `cor:habiro-expansion-atomic`.
 
     Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127. -/
-class FullPoleStructure where
-  q0 : ℝ
-  entire_part : ℝ
-  braid : Unit
-  /-- Truncation order. In Habiro form this is the cyclotomic
-      cutoff. -/
-  truncation : ℕ
-  mass : ℝ
-  /-- Mass equals entire part plus the truncated residue sum
-      modulo the Habiro tail. -/
-  mittag_leffler_truncated :
-    ∃ tail_error : ℝ,
-      mass = entire_part +
-        -- sum over roots of unity up to order `truncation`
-        ∑ n : Fin truncation,
-          residueAt (sorry : PrimitiveRoot) braid
-        + tail_error
+class HabiroCompletion where
+  /-- The Markov trace as a polynomial in `ℤ[u]` (Markov-normalised
+      so that the result is integer-coefficient; the Laurent prefactor
+      `D(u)` is folded into `trace`). -/
+  trace : Polynomial ℤ
+  /-- Cyclotomic coefficients `a_m(T_w) ∈ ℤ[u]`. -/
+  coeff : ℕ → Polynomial ℤ
+  /-- **Habiro-ideal property.**
 
-/-- The q-Pochhammer factor `(q₀; q₀)_N = ∏_{k=1}^{N} (1 - q₀^k)`. -/
-noncomputable def qPochhammer (q : ℝ) (N : ℕ) : ℝ :=
-  ∏ k ∈ Finset.range N, (1 - q ^ (k + 1))
+      At every truncation order `N`, the residual
+      `trace - Σ_{m<N} a_m · (u;u)_m` lies in the principal ideal
+      `((u;u)_N) ⊂ ℤ[u]`.
 
-/-- **Habiro cyclotomic truncation bound.**
+      Non-vacuous: `qPochhammerPoly N` has degree `N(N+1)/2` and is
+      a non-unit, so this divisibility genuinely constrains the
+      coefficient sequence.  In particular, evaluating both sides
+      at any `q` with `qPochhammer q N = 0` forces the trace to
+      equal the cyclotomic partial sum up to order `N` (the
+      ℝ-evaluation shadow). -/
+  tail_in_ideal :
+    ∀ (N : ℕ),
+      qPochhammerPoly N ∣
+        (trace - ∑ m ∈ Finset.range N, coeff m * qPochhammerPoly m)
 
-    For `0 < q₀ < 1` and any truncation order `N`, the absolute
-    Pochhammer factor `|(q₀; q₀)_N|` satisfies the strict
-    decreasing bound `|(q₀; q₀)_{N+1}| ≤ |(q₀; q₀)_N|` since each
-    new factor `(1 - q₀^{N+1})` lies in `(0, 1)`.
+/-- **Habiro cyclotomic monotone bound** (purely structural).
 
-    This is the structural ingredient of the Habiro tail estimate:
-    truncating the cyclotomic expansion at order `N` produces a
-    residual whose magnitude is controlled by `|(q₀; q₀)_N|`,
-    decreasing monotonically as `N → ∞`.
+    For `0 < q < 1` and any truncation order `N`, the absolute
+    Pochhammer factor `|(q; q)_N|` is monotonically decreasing in
+    `N`, since each new factor `(1 - q^{N+1})` lies in `(0, 1)`.
 
-    Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127,
-    [garoufalidis-lauda2011] https://doi.org/10.1007/s11511-011-0069-8 -/
+    Scope: this lemma is stated for `q ∈ (0, 1)`. The QOU substrate
+    sits at `q₀ ≈ 1.110 > 1`, so this bound does **not** apply
+    directly at the substrate value: for `q > 1` the factor
+    `|1 - q^{N+1}|` grows with `N` and `|(q;q)_N|` is monotone
+    *increasing*. Truncation control at the substrate uses the
+    `q ↔ q⁻¹` duality of the Hecke algebra (so that `q₀⁻¹ ≈ 0.901`
+    falls in the `(0, 1)` regime where this lemma applies); the
+    duality bridge itself is left to `prop:full-pole-structure-mass-trace`
+    in the narrative.
+
+    Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127. -/
 theorem habiro_truncation_bound
     (q : ℝ) (hq_pos : 0 < q) (hq_lt : q < 1) (N : ℕ) :
     |qPochhammer q (N + 1)| ≤ |qPochhammer q N| := by
-  -- (q;q)_{N+1} = (q;q)_N · (1 - q^{N+1}); |1 - q^{N+1}| ≤ 1.
   unfold qPochhammer
-  rw [Finset.prod_range_succ]
-  -- |a · b| = |a| · |b| ≤ |a| · 1 = |a| when |b| ≤ 1.
-  rw [abs_mul]
+  rw [Finset.prod_range_succ, abs_mul]
   have h_factor_lt_one : |1 - q ^ (N + 1)| ≤ 1 := by
     have h_qpow_pos : 0 < q ^ (N + 1) := pow_pos hq_pos (N + 1)
-    have h_qpow_lt_one : q ^ (N + 1) < 1 := pow_lt_one (le_of_lt hq_pos) hq_lt (Nat.succ_ne_zero N)
+    have h_qpow_lt_one : q ^ (N + 1) < 1 :=
+      pow_lt_one (le_of_lt hq_pos) hq_lt (Nat.succ_ne_zero N)
     rw [abs_of_nonneg (by linarith : (0 : ℝ) ≤ 1 - q ^ (N + 1))]
     linarith
-  have h_prod_nn : (0 : ℝ) ≤ |∏ k ∈ Finset.range N, (1 - q ^ (k + 1))| :=
-    abs_nonneg _
-  nlinarith
+  exact mul_le_of_le_one_right (abs_nonneg _) h_factor_lt_one
 
 end QOU.BraidKnot

@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalConnection.unique_up_to_gauge",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-connection",
-    "prop:categorical-connection-exists",
-  ],
+  uses: ["prop:categorical-connection-exists"],
   proofs: ["prf:categorical-connection-unique"],
   tags: ["uniqueness", "connection", "gauge"],
 });

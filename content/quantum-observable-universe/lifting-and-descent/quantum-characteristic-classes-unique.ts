@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.QuantumCharClasses.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-characteristic-classes",
-    "prop:quantum-characteristic-classes-exists",
-  ],
+  uses: ["prop:quantum-characteristic-classes-exists"],
   proofs: ["prf:quantum-characteristic-classes-unique"],
   tags: ["uniqueness", "characteristic-classes", "cohomology"],
 });

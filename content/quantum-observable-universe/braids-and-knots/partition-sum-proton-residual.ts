@@ -8,15 +8,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.proton_tower_residual_frobenius",
     validation: "not_checked",
   },
-  uses: [
-    "prop:mass-endomorphism-tower",
-    "prop:schur-weyl-mass-decomposition",
-    "prop:categorical-mass-markov",
-    "thm:jones-markov-trace",
-    "def:hecke-mass-element",
-    "def:confinement-level",
-    "prop:hook-weight-derivation",
-  ],
+  uses: ["prop:schur-weyl-mass-decomposition"],
   tags: [
     "proton",
     "residual",

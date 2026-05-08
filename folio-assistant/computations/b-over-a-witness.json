@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0.0",
+  "generator": "folio-assistant/computations/b_over_a_evaluator.py",
+  "block": "prop:b-over-a-spectral-decomposition",
+  "constants": {
+    "q_0": 1.1099785955541805,
+    "[2]_q": 2.010896869118482,
+    "[3]_q": 3.0437062182305117,
+    "w_sym": 0.16338322733975824,
+    "w_std_per_copy": 0.6606737723483498,
+    "w_alt": 0.16338322733975824,
+    "E_0_MeV": 4.18598082771484,
+    "m_e_MeV": 0.51099895069,
+    "alpha_EM": 0.0072973525692838015,
+    "r_0_fm": 1.2,
+    "hbar_c_MeV_fm": 197.3269804
+  },
+  "fit": {
+    "method": "c_S fit to 4He B/A AME2020 = 7.07391420 MeV",
+    "fitted_c_S": -509.0025335258031,
+    "rationale": "Geometric derivation of c_S from non-abelian Stokes (referenced in prop:confined-knot-binding and prop:wigner-np-pairing) is not assembled into a closed formula at this commit. We fit c_S to 4He and report residuals on 12C and 40Ca."
+  },
+  "free_braid_assumption": "Intra-nucleon 3-quark crossings: proton (uud) = (1 pp, 0 nn, 2 pn); neutron (udd) = (0 pp, 1 nn, 2 pn). Free-braid totals scale linearly with nucleon counts: Lambda_lambda^free = (Lambda_lambda^proton)^Z · (Lambda_lambda^neutron)^N.",
+  "nuclei": [
+    {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "n_pp_nuc": 1,
+      "n_nn_nuc": 1,
+      "n_pn_nuc": 4,
+      "n_pp_free": 2,
+      "n_nn_free": 2,
+      "n_pn_free": 8,
+      "Lambda_nuc": {
+        "sym": 1.0219724987097571,
+        "std": 1.0,
+        "alt": 1.0219724987097571
+      },
+      "Lambda_free": {
+        "sym": 1.0444277881190644,
+        "std": 1.0,
+        "alt": 1.0444277881190644
+      },
+      "log_ratio": {
+        "sym": 0.021734582133499235,
+        "std": 0.0,
+        "alt": 0.021734582133499235
+      },
+      "B_over_A_spectral_only_MeV": 0.007432347460845902,
+      "coulomb_correction_MeV": 0.22678020554817568,
+      "surface_correction_MeV": -7.293262058087329,
+      "c_S": -509.0025335258031,
+      "B_over_A_predicted_MeV": 7.073914199999999,
+      "nucleus": "4He",
+      "B_over_A_AME2020_MeV": 7.0739142,
+      "residual_MeV": -8.881784197001252e-16,
+      "residual_pct": -1.2555685502944399e-14
+    },
+    {
+      "Z": 6,
+      "N": 6,
+      "A": 12,
+      "n_pp_nuc": 15,
+      "n_nn_nuc": 15,
+      "n_pn_nuc": 36,
+      "n_pp_free": 6,
+      "n_nn_free": 6,
+      "n_pn_free": 24,
+      "Lambda_nuc": {
+        "sym": 1.2160540592811555,
+        "std": 1.0,
+        "alt": 1.2160540592811555
+      },
+      "Lambda_free": {
+        "sym": 1.1392925422566864,
+        "std": 1.0,
+        "alt": 1.1392925422566864
+      },
+      "log_ratio": {
+        "sym": -0.06520374640049811,
+        "std": 0.0,
+        "alt": -0.06520374640049811
+      },
+      "B_over_A_spectral_only_MeV": -0.00743234746084595,
+      "coulomb_correction_MeV": 0.7862030615819098,
+      "surface_correction_MeV": -5.056865474768563,
+      "c_S": -509.0025335258031,
+      "B_over_A_predicted_MeV": 4.263230065725808,
+      "nucleus": "12C",
+      "B_over_A_AME2020_MeV": 7.68014481,
+      "residual_MeV": -3.416914744274192,
+      "residual_pct": -44.49023851510154
+    },
+    {
+      "Z": 20,
+      "N": 20,
+      "A": 40,
+      "n_pp_nuc": 190,
+      "n_nn_nuc": 190,
+      "n_pn_nuc": 400,
+      "n_pp_free": 20,
+      "n_nn_free": 20,
+      "n_pn_free": 80,
+      "Lambda_nuc": {
+        "sym": 8.788624487164174,
+        "std": 1.0,
+        "alt": 8.788624487164174
+      },
+      "Lambda_free": {
+        "sym": 1.544486731710788,
+        "std": 1.0,
+        "alt": 1.544486731710788
+      },
+      "log_ratio": {
+        "sym": -1.7387665706799542,
+        "std": 0.0,
+        "alt": -1.7387665706799542
+      },
+      "B_over_A_spectral_only_MeV": -0.05945877968676775,
+      "coulomb_correction_MeV": 1.9999788925379636,
+      "surface_correction_MeV": -3.38523237294299,
+      "c_S": -509.0025335258031,
+      "B_over_A_predicted_MeV": 1.3257947007182587,
+      "nucleus": "40Ca",
+      "B_over_A_AME2020_MeV": 8.55130323,
+      "residual_MeV": -7.225508529281742,
+      "residual_pct": -84.49599242292034
+    }
+  ],
+  "computedAt": "2026-04-26T17:20:32.997766+00:00"
+}

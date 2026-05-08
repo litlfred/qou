@@ -25,6 +25,14 @@ ideas to a graduate-level reader.
 - Technical terms are introduced with `\emph{...}` on first use and
   are not re-defined later.
 - Every non-trivial definition is followed by at least one example.
+- **Witnessed-value drift check**: in any block (definition, example,
+  remark, prose), a numerical literal derived from the substrate
+  (`q_0`, `\hbar_q`, `Vol(4_1)`, `m_μ/m_e`, binding energies, etc.)
+  must be cited via `:val[name]`, not hard-coded.  This applies to
+  propositions, theorems, lemmas, conjectures, and proofs as well.
+  See [`witnessed-values.md`](./witnessed-values.md) for the
+  registry, directive syntax, and codemod that rewrites legacy
+  literals.
 
 ### 2a. Forward-Reference Hygiene
 - An example, remark, or definition must **not** reference a lemma,
@@ -114,6 +122,19 @@ proceeding. Common issues:
 - Unbalanced braces in inline math
 - Non-math environments inside `$$...$$` blocks
 - Malformed macros in ` ```tex ``` ` fenced blocks
+
+## Glossary terms (`:defterm` / `:refterm`)
+
+When polishing prose, do **not** convert `:refterm[…]` directives to
+plain text or `\emph{}`. The directives are the canonical link from
+every mention of a defined term back to its `defines: [...]` block;
+the viewer renders them as a subtle dotted underline, the PDF renders
+them as plain text with an invisible hyperlink, and the validator
+enforces resolution. Plain rephrasing is fine — just keep the wrapper
+intact, e.g. `:refterm[rigid monoidal category]` may move within the
+sentence but should not be unwrapped. New term mentions in edited
+prose should be wrapped via `bun run pipeline/codemod-refterm.ts`
+after editing. See `local/glossary-build` skill.
 
 ## Mandatory fallback participation
 

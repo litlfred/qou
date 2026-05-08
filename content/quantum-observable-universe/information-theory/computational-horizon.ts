@@ -17,9 +17,6 @@ export default definition({
   },
   uses: [
     "def:jet-horizon",
-    "rem:skein-turing-machine",
-    "def:operational-entropy",
-    "conj:quantum-computational-universality",
     "def:information-speed-of-light",
   ],
 });

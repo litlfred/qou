@@ -3,27 +3,22 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:full-pole-structure-mass-trace",
   title:
-    "Full pole structure of the mass trace: all roots of unity, with interference",
+    "Habiro completion of the mass trace",
   lean: {
-    ref: "qou:QOU.BraidKnot.full_pole_structure",
+    ref: "qou:QOU.BraidKnot.HabiroCompletion",
     validation: "not_checked",
   },
   uses: [
-    "prop:gb-residue-spectral-sum",
-    "def:confinement-level",
-    "def:hecke-normal-form",
-    "thm:jones-markov-trace",
-    "cor:quantum-dilogarithm",
     "def:habiro-ring",
+    "prop:gb-residue-spectral-sum",
     "prop:schur-weyl-mass-decomposition",
   ],
+  cites: ["habiro2004", "jones1987"],
   tags: [
-    "residue",
-    "root-of-unity",
     "habiro-ring",
-    "cyclotomic",
-    "interference",
-    "mittag-leffler",
+    "cyclotomic-completion",
+    "markov-trace",
+    "root-of-unity",
     "mass",
   ],
 });

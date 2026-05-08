@@ -6,7 +6,7 @@ functorial:*
 $$
   \beta
   \;\xrightarrow{\;\rho_\lambda\;}
-  \prod_i \rho_\lambda(T_i)
+  \prod_i \rho_\lambda(\sigma_i)
   \;\xrightarrow{\;\mathrm{tr}_M\;}
   J_K(q)
   \;\xrightarrow{\;\omega\;}
@@ -15,15 +15,15 @@ $$
   \mathfrak{m}
 $$
 
-*Stage 1 (Hoefsmit).  Each crossing $T_i$ in the braid word acts
+*Stage 1 (Hoefsmit).  Each crossing $\sigma_i$ in the braid word acts
 on the Wedderburn--Artin block $\rho_\lambda$ via the Hoefsmit
 seminormal matrix
 ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
 The scattering amplitude from tableau state $T$ to state $T'$
-under crossing $T_i$ is:*
+under crossing $\sigma_i$ is:*
 
 $$
-  W_{T \to T'} = \langle T' \mid T_i \mid T \rangle
+  W_{T \to T'} = \langle T' \mid \sigma_i \mid T \rangle
   = \begin{cases}
     a_\rho & T' = T \quad\text{(forward scattering)} \\
     b_\rho & T' = (T)_i \quad\text{(exchange scattering)} \\
@@ -102,7 +102,7 @@ Each stage is proved separately:
 **Stage 1** is [Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form).
 The $q$-deformation of the classical axial distance $1/\rho$ to
 $h/(1 - q^{-2\rho})$ follows from the Hecke relation
-$T_i^2 = hT_i + 1$ and the requirement $\det = -1$ for each $2 \times 2$
+$\sigma_i^2 = h\sigma_i + 1$ and the requirement $\det = -1$ for each $2 \times 2$
 block.  The eigenvalues are $q$ (symmetric) and $-q^{-1}$
 (antisymmetric), which are the eigenvalues of the universal
 $R$-matrix $\check{\mathcal{R}}$ of $U_q(\mathfrak{sl}_2)$ restricted
@@ -110,20 +110,24 @@ to the isotypic component of type $\lambda$.
 
 **Stage 2** is [Wedderburn--Artin trace identity](#prop:wedderburn-trace-identity).
 The Markov trace $\mathrm{tr}_M$ factors through the
-Wedderburn--Artin decomposition $H_k(q) \cong \bigoplus_\lambda
+Wedderburn--Artin decomposition $H_k(R, q) \cong \bigoplus_\lambda
 M_{d_\lambda}(\mathbb{C})$.  The weight $w_\lambda$ ensures that
 $\mathrm{tr}_M$ is the unique trace satisfying the Markov property
-$\mathrm{tr}_M(xT_k) = z \cdot \mathrm{tr}_M(x)$ for
-$x \in H_k(q)$.
+$\mathrm{tr}_M(x\sigma_k) = z \cdot \mathrm{tr}_M(x)$ for
+$x \in H_k(R, q)$.
 
 **Stage 3** is [Geom(K) alignment](#prop:geom-yekutieli-alignment).
 The observation frame $\tau$ is the fibre functor of the
-Tannakian category $(\mathbf{C}, A, \tau)$.  Its evaluation on the
-knot complement is determined by Thurston's geometrization and the
-Yekutieli rigid dualizing complex: the UNIQUE non-degenerate pairing
+Tannakian category $(\mathbf{C}, A, \tau)$.  On the τ-image
+(geometric) side, its evaluation on the knot complement is determined
+by τ-image Thurston geometrization and the Yekutieli rigid
+dualizing complex: the UNIQUE non-degenerate pairing
 $\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$
 yields $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic $K$ and
-$\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$.  The universality
+$\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$. On the algebraic
+side this is just the [algebraic-quantum-volume](#def:algebraic-quantum-volume)
+pairing in $\mathbb{Z}[q^{\pm 1/2}]$; the geometric reading
+appears only after applying $\tau_{\mathrm{arch}}$.  The universality
 follows from the rigidity of $\omega_A^\bullet$ (Yekutieli): the
 pairing is unique up to the scalar $\hbar_q^2$, and the scalar is
 fixed by requiring that $\mathrm{Geom}(\bigcirc) = 0$ (vacuum

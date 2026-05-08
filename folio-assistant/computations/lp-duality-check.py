@@ -188,6 +188,17 @@ print(f"  net(n) = {net_n:.10f}")
 print(f"  Δnet = {delta_net:.10f}")
 
 # ── Write witness ────────────────────────────────────────────────
+# Canonical LP-dual extraction via lp_dual_solver — emits y0_star,
+# y_star, primal_obj, dual_obj, duality_gap (per CLAUDE.md
+# §"LP / SDP duals — first-class infra"). Uses the same Markov
+# traces and Gram matrix; n_target = net_B3 (the realised B₃ net).
+from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+_lp_dual = solve_operator_selection_lp(
+    np.asarray(t, dtype=float),
+    np.asarray(G, dtype=float),
+    float(net_b3),
+).to_dict()
+
 witness = {
     "computation": "lp-duality-check",
     "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -206,6 +217,8 @@ witness = {
         "Gb3": Gb3.tolist(),
         "active_constraints": active,
     },
+    # Canonical LP-dual record (validator-required fields).
+    **_lp_dual,
     "gram_eigenstructure": {
         "eigenvalues": eigvals.tolist(),
         "min_eigenvalue": float(min(eigvals)),

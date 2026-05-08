@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
 Canonical Markov trace + MULTI-BRANE Φ_q tower.
 
@@ -65,7 +66,9 @@ from canonical_tower import (per_irrep_V_hat, eigen_multiplicities,
                                _save_mpm_disk)
 
 
-E_0_BETA_DECAY_MEV = 0.782  # prop:categorical-mass-markov E_0
+from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+E_0_BETA_DECAY_MEV = Q_NEUTRON_MEV  # prop:categorical-mass-markov E_0
+                                     # = 0.78233341 MeV (CODATA-derived)
 
 
 # ── Aggregated V̂ (Wedderburn sum BEFORE Φ_q) ────────────────
@@ -105,9 +108,68 @@ def per_gen_V_hat_aggregated(Z: int, N: int, *,
     return V_hat
 
 
+def _li2q_sym(z: float, *, max_n: int = 500, tol: float = 1e-30,
+               cap_frac: float = 0.99999) -> float:
+    """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
+
+    [n]_q = (q^n − q^{-n}) / (q − q^{-1}) is the symmetric q-integer.
+    Identity (proved on `claude/categorical-mass-divergence-audit`,
+    commit a43d7f1fa, witness `kashaev-integration-identity`):
+
+        ∫_0^V (ln_q(1+t)/t) dt  =  -Li_2^q(-V)
+
+    so `-_li2q_sym(-V)` is the "Kashaev integration limit" used in
+    `tower_mass_level(..., tower_mode="li2q")`.
+
+    The series converges for |z| < 1.  Inputs with |z| ≥ 1 are
+    clipped to `sign(z) · cap_frac` (matches the convention in
+    `li2q_six_term_probe.py` on the divergence-audit branch).
+    """
+    if z == 0.0:
+        return 0.0
+    if abs(z) >= 1.0:
+        z = (z / abs(z)) * cap_frac
+    total = 0.0
+    qn_pow = 1.0      # q^n
+    qmn_pow = 1.0     # q^{-n}
+    z_pow = 1.0       # z^n at start of loop
+    qmqi = Q0 - QI    # q − q^{-1}
+    for n in range(1, max_n + 1):
+        qn_pow *= Q0
+        qmn_pow *= QI
+        z_pow *= z
+        qint_n = (qn_pow - qmn_pow) / qmqi
+        if abs(qint_n) < 1e-300:
+            continue
+        term = z_pow / (n * qint_n)
+        total += term
+        if abs(term) < tol:
+            break
+    return total
+
+
 def tower_mass_level(V: list[float], *, pair_mode: str = "full",
-                       cap_frac: float = 0.98) -> float:
+                       cap_frac: float = 0.98,
+                       tower_mode: str = "li2q") -> float:
     """Single-level prop:mass-endomorphism-tower formula on aggregated V̂.
+
+    `tower_mode` controls the per-V̂ analytic function:
+      "li2q" (default, 2026-05-03):
+          uses `-Li_2^q(-|V|)` (the actual Kashaev integration limit
+          per `prop:mass-endomorphism-tower`'s corrected proof,
+          commit a43d7f1fa on the divergence-audit branch).  Bounded
+          for |V| < 1; predicts atomic mass within sub-percent across
+          the proton..⁹Be spectrum (see
+          `docs/audits/2026-05-03-li2q-a5-a6-mass-predictions.md`).
+      "brane" (legacy):
+          uses `Φ_q(|V|)` via `phi_q_safe` — the form claimed in the
+          original `prop:mass-endomorphism-tower` boxed identity but
+          empirically wrong (the integration ∫_0^V (ln_q(1+t)/t) dt
+          does NOT equal Φ_q(V); the integral is bounded ~0.1-0.8
+          while Φ_q(V) → ∞ as V → 1).  Drives `binding_full`'s
+          tower_MeV into the GeV regime.  Kept for backward
+          compatibility with witnesses generated before the
+          q-dilogarithm fix.
 
     Default pair_mode changed from "adjacent" to "full" on 2026-04-20:
     rem:mass-endomorphism-jet-tower + thm:markov-trace-factorization
@@ -116,6 +178,36 @@ def tower_mass_level(V: list[float], *, pair_mode: str = "full",
     each contribute z).  The earlier "adjacent" default corresponded to
     a since-retracted adjacency claim in prop:mass-endomorphism-tower.
     """
+    if tower_mode == "li2q":
+        # -Li_2^q(-|V|) per the Kashaev integration identity.
+        # `desc` (∏|V_i|) drops in the Li_2^q convention — only the
+        # single-tower and pair-tower terms have Li_2^q analogues.
+        n = len(V)
+        if n == 0:
+            return 0.0
+        # Per project rule (Vol_q^tower convention) and Gemini review on
+        # PR #542: pair sum terms remain SIGNED — only the product
+        # carries through `_li2q_sym`'s domain handling, no abs().
+        # This preserves the sign info from V_i, V_j of mixed sign
+        # (e.g. the alt Wedderburn channel can be negative).  The
+        # single sum, by contrast, takes |V| because the sign of each
+        # individual V is conventionally absorbed into the volume
+        # interpretation.
+        single = sum(-_li2q_sym(-abs(v)) for v in V)
+        cross = 0.0
+        if pair_mode == "full":
+            for i in range(n):
+                for j in range(i + 1, n):
+                    cross += -z_mark ** 2 * _li2q_sym(-(V[i] * V[j]))
+        elif pair_mode == "adjacent":
+            for i in range(n - 1):
+                cross += -z_mark ** 2 * _li2q_sym(-(V[i] * V[i + 1]))
+        return single + cross
+
+    if tower_mode != "brane":
+        raise ValueError(f"unknown tower_mode: {tower_mode!r}")
+
+    # tower_mode == "brane" (legacy Φ_q form, deprecated)
     n = len(V)
     if n == 0:
         return 0.0

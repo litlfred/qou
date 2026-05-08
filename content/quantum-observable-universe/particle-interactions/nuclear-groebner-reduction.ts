@@ -20,9 +20,7 @@ export default proposition({
   uses: [
     "prop:braiding-eigenvalue-extraction",
     "rem:hecke-algebra-from-braiding",
-    "conj:shell-threading-energy",
     "unital-groebner-bases:def:groebner-basis",
     "unital-groebner-bases:def:division-algorithm",
-    "unital-groebner-bases:def:admissible-system",
   ],
 });

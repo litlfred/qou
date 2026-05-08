@@ -35,7 +35,7 @@ import mpmath as mp
 mp.mp.dps = 50
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_core import (
     atom_per_generator_volumes, h as h_val, z as z_mark,
 )
@@ -43,7 +43,7 @@ from mass_endomorphism import Phi_q
 from experimental_constants import M_E_MEV
 
 
-Q0 = mp.mpf(str(Q0_FLOAT))
+Q0 = Q_MP  # was f64 roundtrip
 
 
 def all_subsets_tower(Z, N, include_inter=True, max_size=None):

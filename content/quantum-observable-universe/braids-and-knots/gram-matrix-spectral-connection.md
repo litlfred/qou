@@ -6,7 +6,7 @@ spectral-sequence / Frobenius framework?*
 *The **Gram matrix** $G$ of the Markov pairing is the common
 algebraic object that encodes:*
 
-1. *The **Frobenius algebra structure** of $H_n(q)$: the pairing
+1. *The **Frobenius algebra structure** of $H_n(R, q)$: the pairing
    $\langle x, y \rangle_\tau := \tau(x \cdot y)$ is non-degenerate
    iff $\det G \neq 0$
    ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)).*
@@ -20,7 +20,7 @@ algebraic object that encodes:*
    the stratum — so $E_\infty^{p, *}(T_w) \to R$ is really
    $T_w \mapsto G_{T_w, *}$ projected to the stratum.*
 4. *The **knot-factor Frobenius pairing**
-   ([knot factor Frobenius pairing](#prop:knot-factor-frobenius-pairing))
+   ([knot factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
    computes $G_{\beta, \beta^*}$ for braid-mirror pairs — the
    chirality factor $a_K$ of Term 5 is a normalised Gram-matrix
    entry.*
@@ -35,7 +35,7 @@ algebraic object that encodes:*
 | Term 5 (chirality) | $a_K = G_{\beta, \beta^*} / G_{\mathbf{1}, \mathbf{1}}$ |
 | Term 6 (jet-prefix) | $G$ restricted to higher filtration strata |
 
-**Gram matrix for $H_3(q)$ over $R$.**
+**Gram matrix for $H_3(R, q)$ over $R$.**
 
 *Basis: $\{1, \sigma_0, \sigma_1, \sigma_0 \sigma_1, \sigma_1 \sigma_0, \sigma_0 \sigma_1 \sigma_0\}$.
 Markov trace on standard basis ([Markov trace factorization](#thm:markov-trace-factorization)):
@@ -62,9 +62,9 @@ $q = q_0$, $\det G \neq 0$ (generically), confirming the
 Frobenius property.*
 
 **Gram ↔ Wedderburn conjugation.**
-*In the central-idempotent basis $\{p_\lambda\}$, the Gram matrix
+*In the central-idempotent basis $\{e_\lambda\}$, the Gram matrix
 is **block-diagonal**: $G_{\lambda, \mu} = \delta_{\lambda \mu}
-\cdot \tau(p_\lambda^2) = \delta_{\lambda \mu} \cdot \tau(p_\lambda)
+\cdot \tau(e_\lambda^2) = \delta_{\lambda \mu} \cdot \tau(e_\lambda)
 = \delta_{\lambda \mu} \cdot \frac{\dim_q(\lambda) \cdot \dim(\lambda)}{[n]_q!}$.
 The inverse is
 $G^{-1}_{\lambda, \mu} = \delta_{\lambda \mu} \cdot \frac{[n]_q!}{\dim_q(\lambda) \cdot \dim(\lambda)}$.
@@ -85,6 +85,6 @@ spectral-sequence differentials $d_r$ are encoded in the
 
 *So the Gram matrix is the **single algebraic object** whose
 block structure generates the entire spectral sequence and its
-mass-term identification.  Computing $G$ explicitly for $H_3(q)$
+mass-term identification.  Computing $G$ explicitly for $H_3(R, q)$
 ([spectral-sequence H3 explicit](#prop:spectral-sequence-h3-explicit))
 is equivalent to computing all pages $E_r^{p, *}$.*

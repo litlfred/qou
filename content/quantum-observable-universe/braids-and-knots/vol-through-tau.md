@@ -3,7 +3,7 @@
 $\tau \colon \mathbf{C} \to \mathbf{Arch}$ to the category of
 archimedean realizations (smooth manifolds, real Hilbert spaces,
 or any chosen archimedean target). For every braid
-$\beta \in H_n(q)$, the real-valued knot volume $\mathrm{Vol}(K_\beta)$
+$\beta \in H_n(R, q)$, the real-valued knot volume $\mathrm{Vol}(K_\beta)$
 of its closure factors strictly through $\tau$:*
 
 $$

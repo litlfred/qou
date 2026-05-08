@@ -11,7 +11,7 @@ required for any value of $A$.*
 
 $$
   B_\lambda(Z, N)
-  = m_e \cdot H_q(\lambda) \cdot y_\lambda \cdot
+  = m_e \cdot H_q(\lambda) \cdot u_\lambda \cdot
     \big( \ln\big| \mathrm{tr}\, \mathbf{M}_\lambda^{(0..A)} \big|
           - \ln d_\lambda \big),
 $$
@@ -28,7 +28,7 @@ $$
   H_q(\lambda)$ — for $\lambda = (2,2)$ this is
   $[3]_q \cdot [2]_q^2 \approx 6.29$ MeV, the empirical Wigner
   scale \cite{satula1997});*
-- *$y_\lambda = w_\lambda / d_\lambda - 1/[k]_q!$ is the LP-dual
+- *$u_\lambda = w_\lambda / d_\lambda - 1/[k]_q!$ is the LP-dual
   shadow price of $\lambda$'s Frobenius positivity constraint
   ([prop:bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price));
   the constant $1/[k]_q!$ is the dual variable of the
@@ -40,11 +40,11 @@ $$
 - *$\mathbf{M}_\lambda^{(0..A)}$ is the Young-seminormal-form
   matrix product over all NF crossings introduced through
   step $A$, embedded into the Hecke generators
-  $\sigma_1, \ldots, \sigma_{k-1}$ of $H_k(q)$ with cyclic
+  $\sigma_1, \ldots, \sigma_{k-1}$ of $H_k(R, q)$ with cyclic
   generator index.*
 
 *One-dimensional representations have $w_\lambda / d_\lambda =
-1/[k]_q!$ (so $y_\lambda = 0$); they contribute nothing to
+1/[k]_q!$ (so $u_\lambda = 0$); they contribute nothing to
 $B_{\mathrm{unified}}$.  Only mixing partitions
 ($d_\lambda \geq 2$) carry shadow-price weight.*
 
@@ -52,7 +52,7 @@ $B_{\mathrm{unified}}$.  Only mixing partitions
 
 $$
   \Delta B_\lambda(\mathrm{step}\ k)
-  = m_e \cdot H_q(\lambda) \cdot y_\lambda \cdot
+  = m_e \cdot H_q(\lambda) \cdot u_\lambda \cdot
     \Big( \ln\big| \mathrm{tr}\, \mathbf{M}_\lambda^{(0..k)} \big|
         - \ln\big| \mathrm{tr}\, \mathbf{M}_\lambda^{(0..k-1)} \big| \Big),
 $$
@@ -64,7 +64,7 @@ $(A, Z_k, N_k, \mathrm{nuc}, \{\Delta B_\lambda\}_\lambda,
 *Proof.*
 By [prop:bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price),
 the BW coefficient of partition $\lambda$ is the LP-dual variable
-$y_\lambda^* = C_\lambda \cdot S_\lambda(Z, N, A)$.  The
+$u_\lambda^* = C_\lambda \cdot S_\lambda(Z, N, A)$.  The
 categorical scale $C_\lambda = m_e \cdot H_q(\lambda)$ (the
 $q$-hook product over the Young diagram of $\lambda$) is the
 universal constant determined by the partition algebra, with no
@@ -122,13 +122,13 @@ for k in 2..K_PARTITION_MAX:
   for partition λ of k:
     H_q(λ)   = ∏_{x∈λ} [h_x]_q
     d_λ      = #SYT(λ)
-    w_λ      = d_q(λ)² / [k]_q!
+    w_λ      = d_q(λ)^2 / [k]_q!
     y_λ      = w_λ / d_λ − 1/[k]_q!
     σ_1..σ_{k−1} = YSN matrices in λ
 for step = 1..A:
   for each partition λ:
-    M_λ      ← M_λ × ∏(c·σ_g + d·I) over new crossings at this step
-    ΔB_λ     = m_e · H_q(λ) · y_λ · (ln|Tr M_λ| − previous)
+    M_λ      ← M_λ × ∏(c*σ_g + d*I) over new crossings at this step
+    ΔB_λ     = m_e * H_q(λ) * y_λ * (ln|Tr M_λ| − previous)
     cumulative_λ += ΔB_λ
     record witness row
 B_unified = Σ_λ cumulative_λ
@@ -144,12 +144,12 @@ $(A, Z_k, N_k, \{\ln|\mathrm{tr}|_\lambda\}, \mathrm{cumulative})$.
 | Atom | $B_{\mathrm{dedi}}$ | $B_{\mathrm{unif}}$ | $B_{\mathrm{AME}}$ | $\sum_\lambda B_\lambda$ |
 |:-----|--------------------:|--------------------:|-------------------:|-------------------------:|
 | D    | $2.224$ | $-16.45$ | $2.224$ | $-16.45$ |
-| ⁴He  | $28.19$ | $16.67$ | $28.30$ | $-13.67$ |
-| ¹⁴C  | $102.0$ | $108.1$ | $105.7$ | $-3.50$ |
-| ²⁰Ne | $162.6$ | $163.0$ | $160.7$ | $+0.43$ |
-| ²⁸Si | $234.9$ | $244.8$ | $236.5$ | $+9.94$ |
-| ⁴⁰Ca | $341.3$ | $366.7$ | $342.1$ | $+25.4$ |
-| ²⁰⁸Pb| $1631$ | $2592$ | $1636$ | $+798$ |
+| ${}^{4}\mathrm{He}$  | $28.19$ | $16.67$ | $28.30$ | $-13.67$ |
+| ${}^{14}\mathrm{C}$  | $102.0$ | $108.1$ | $105.7$ | $-3.50$ |
+| ${}^{20}\mathrm{Ne}$ | $162.6$ | $163.0$ | $160.7$ | $+0.43$ |
+| ${}^{28}\mathrm{Si}$ | $234.9$ | $244.8$ | $236.5$ | $+9.94$ |
+| ${}^{40}\mathrm{Ca}$ | $341.3$ | $366.7$ | $342.1$ | $+25.4$ |
+| ${}^{208}\mathrm{Pb}$| $1631$ | $2592$ | $1636$ | $+798$ |
 
 The unified path uses **one** symbolic algorithm with **zero**
 fitted parameters and **no special-case branches**.  The

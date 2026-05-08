@@ -1,6 +1,6 @@
 {
   "computation": "4he-binding-full-pipeline",
-  "timestamp": "2026-04-20T15:28:35.735577+00:00",
+  "computedAt": "2026-04-20T15:28:35.735577+00:00",
   "kahler_order": 0,
   "result": {
     "Z": 2.0,
@@ -48,5 +48,7 @@
   ],
   "B_AME_MeV": 28.295674,
   "err_pct": 52959.618477720025,
-  "time_sec": 930.8865597248077
+  "time_sec": 930.8865597248077,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

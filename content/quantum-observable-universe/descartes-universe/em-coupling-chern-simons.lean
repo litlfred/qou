@@ -1,14 +1,31 @@
 /-
-  Fine structure constant with Chern-Simons correction on Bring's surface.
+  Fine structure constant — PSLQ-empirical gluon-octet form (CONJECTURE).
 
-  1/α = q·[9]·[10] × (1 + c₁ + c₁²·κ)
+  1/α_EM = 45·[3]_q · (1 + δ_CS + 8q·δ_CS²)
 
-  where c₁ = CS correction from force carriers T_{2,9}, T_{3,5}
-  and κ = Gram determinant ratio at J²(Bring's surface).
+  where δ_CS = ℏ_q^4 · [5]_q,  ℏ_q = (q-1)/q.
 
-  Result: 137.035944 vs CODATA 137.035999 (399 ppb).
+  STATUS (May 2026 audit): demoted from theorem to conjecture.
+  Of the four factors:
+    45     = (10 choose 2)        — derivation rigorous (hook-length count)
+    [3]_q  — claimed quark-channel weight; q-dim of V_(2,1) in H_3 is
+             [2]_q, NOT [3]_q. Identification is unsupported.
+    ℏ_q^4 · [5]_q — claimed leading Plancherel-character-product term
+             at n=10; the leading-term computation has not been carried
+             out, ambient n unspecified.
+    8q     — two competing identifications (su(3) gluon octet × q;
+             "two-step crossing pattern enumeration"); neither computed.
 
-  Ref: [manuscript] §6.4, prop:em-coupling-chern-simons
+  At q = q_0 the formula matches CODATA to 6.7e-9. Outside q_0 it
+  disagrees with the alternative Chern-Simons-descent form
+  (also conjectural) at every q, indicating a single-point fit.
+
+  PSLQ uniqueness at 1000 dps over a 52-element basis is real but does
+  not prove canonicity — it shows no SHORTER relation exists in the
+  chosen basis.
+
+  See alpha-em-derivation-open-problems.md for the full audit and
+  derivation roadmap.
 -/
 
 import QOU.DescartesUniverse.EmCouplingProjection
@@ -19,27 +36,31 @@ namespace QOU.DescartesUniverse
 noncomputable def chernSimons (m n : ℕ) : ℝ :=
   Real.pi ^ 2 * ((m ^ 2 - 1) * (n ^ 2 - 1)) / (12 * m * n)
 
-/-- The Gram matrix determinant ratio κ for the force carrier
-    configuration on Bring's surface. -/
-noncomputable def gramKappa (q : ℝ) (hq : q > 1) : ℝ :=
-  -- κ = det(G_CS_classical) / det(G_CS_q-deformed)
-  -- Computed numerically: κ ≈ 1.722 at q₀
-  sorry -- Ref: [witten1988] https://doi.org/10.1007/BF01466725 — Chern-Simons functional derivation
+/-- The δ_CS correction in the gluon-octet form: ℏ_q^4 · [5]_q. -/
+noncomputable def deltaCS_gluonOctet (q : ℝ) : ℝ :=
+  ((1 - 1/q) ^ 4) * qInt 5 q
 
-/-- The corrected inverse fine structure constant. -/
+/-- The κ coefficient in the gluon-octet form is empirically `8q`.
+    The "8 = dim(su(3)) = gluon octet" interpretation is post-hoc;
+    no structural derivation links su(3) gluon dimension to α_EM. -/
+noncomputable def gluonOctetKappa (q : ℝ) : ℝ := 8 * q
+
+/-- The corrected inverse fine structure constant via gluon-octet form. -/
 noncomputable def alphaEmInvCorrected (q : ℝ) (hq : q > 1) : ℝ :=
-  let bare := q * qInt 9 q * qInt 10 q
-  let cs_sum := chernSimons 2 9 + chernSimons 3 5
-  let n2 := qInt 2 q
-  let hbar_q2 := (1 - 1/q) ^ 2
-  let c1 := cs_sum * (n2 / 2) * hbar_q2 / bare
-  let κ := gramKappa q hq
-  bare * (1 + c1 + c1 ^ 2 * κ)
+  let prefactor := 45 * qInt 3 q
+  let δ := deltaCS_gluonOctet q
+  let κ := gluonOctetKappa q
+  prefactor * (1 + δ + κ * δ ^ 2)
 
-/-- The corrected 1/α is within 399 ppb of CODATA. -/
-theorem em_coupling_chern_simons (q₀ : ℝ) (hq : q₀ > 1)
-    (hq₀ : q₀ = 1 / (1 - Real.sqrt (2.029883212819307 / 206.7682830))) :
-    |alphaEmInvCorrected q₀ hq - 137.035999084| < 0.0001 := by
-  sorry -- Ref: [witten1988] https://doi.org/10.1007/BF01466725 — gauge-field couplings via Chern-Simons
+/-- The conjectural gluon-octet identity, axiomatised as a class.
+
+    Was a `theorem` with `sorry`; demoted to class after audit
+    (only `45` of four factors has a structural derivation).
+    Downstream results may take this class as an explicit
+    `[Instance]` hypothesis to obtain conditional consequences;
+    the instance itself is the unproved conjectural input. -/
+class AlphaEmGluonOctetConjecture (q : ℝ) (hq : q > 1) : Prop where
+  matches_codata :
+    |alphaEmInvCorrected q hq - 137.035999084| < 1e-6
 
 end QOU.DescartesUniverse

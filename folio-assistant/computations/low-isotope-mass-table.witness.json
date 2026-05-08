@@ -1,7 +1,7 @@
 {
   "name": "low-isotope-mass-table",
   "description": "Low-isotope mass + mass-excess table (Z \u2264 10) from the mass-volume binding framework.  Delta = Z\u00b7\u0394_H + N\u00b7\u0394_n - B_pred, M = A\u00b7u + Delta.",
-  "timestamp": "2026-04-23T19:44:02.238452+00:00",
+  "computedAt": "2026-04-23T19:44:02.238452+00:00",
   "constants": {
     "q_0": 1.1099785955541805,
     "U_MEV": 931.49410372,
@@ -386,5 +386,7 @@
     "delta_max_abs_MeV": 12.09355426476885,
     "M_mean_abs_ppm": 514.4562781396669,
     "M_max_abs_ppm": 2081.545232995459
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

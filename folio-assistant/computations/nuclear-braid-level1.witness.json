@@ -1,7 +1,7 @@
 {
   "computation": "nuclear-braid-level1",
   "description": "Level 1 factored Markov trace in B_{3A} (3 quark strands per nucleon)",
-  "timestamp": "2026-04-14T16:31:14.457145+00:00",
+  "computedAt": "2026-04-14T16:31:14.457145+00:00",
   "algorithm": {
     "method": "factored_markov_trace",
     "theorem": "thm:markov-trace-factorization",
@@ -185,5 +185,7 @@
       "Q_exp": 1.163,
       "elapsed_s": 0.0786287784576416
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

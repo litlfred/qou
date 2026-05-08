@@ -1,17 +1,17 @@
 The Markov chain
 ([Hecke transition operator](#prop:hecke-markov-transition)),
 the knot-theoretic operations on a closed braid, and the
-partition $\lambda \vdash n$ labelling an irrep of $H_n(q)$
+partition $\lambda \vdash n$ labelling an irrep of $H_n(R, q)$
 are tied together by three explicit structural statements.
 This remark records the three ties and the traffic between
 $\lambda$-preserving and $\lambda$-changing moves.
 
 ## 1. $\lambda$-block decomposition (Wedderburn)
 
-Semisimplicity of $H_n(q)$ (generic $q$) gives a decomposition
+Semisimplicity of $H_n(R, q)$ (generic $q$) gives a decomposition
 
 $$
-  H_n(q)
+  H_n(R, q)
   \;\cong\;
   \bigoplus_{\lambda \vdash n}
     \mathrm{End}_R(V_\lambda),
@@ -43,8 +43,8 @@ braids.  Each has a determinate action on $\lambda$:
 
 | Operation | Algebraic form | Effect on $\lambda$ | Effect on the chain |
 |:----------|:---------------|:-------------------|:--------------------|
-| Braid relation (Reidemeister III) | $T_i T_{i+1} T_i = T_{i+1} T_i T_{i+1}$ | **fixes** $\lambda$ | Yang--Baxter inside one $\rho^\lambda_q$ block |
-| Hecke quadratic (Reidemeister II) | $T_i^2 = (q - q^{-1})T_i + 1$ | **fixes** $\lambda$ | Two-channel skein: symmetric $q$ / antisymmetric $-q^{-1}$ eigenspace in $V_\lambda$ |
+| Braid relation (Reidemeister III) | $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ | **fixes** $\lambda$ | Yang--Baxter inside one $\rho^\lambda_q$ block |
+| Hecke quadratic (Reidemeister II) | $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ | **fixes** $\lambda$ | Two-channel skein: symmetric $q$ / antisymmetric $-q^{-1}$ eigenspace in $V_\lambda$ |
 | Markov I --- conjugation | $\beta \mapsto \alpha \beta \alpha^{-1}$, $\alpha,\beta \in B_n$ | **fixes** every $\chi^\lambda_q$ | Class-function property of the trace; trajectory distribution unchanged |
 | **Markov II** --- stabilization | $\beta \in B_n \mapsto \beta \sigma_n^{\pm 1} \in B_{n+1}$ | $\lambda \vdash n \;\to\; \mu \vdash n{+}1,\ \mu = \lambda + \square$ | **Young-graph edge**; trace weight rescales by $z^{\pm 1}$ |
 | Reidemeister I (framing) | $\beta \mapsto \beta \sigma_n^{\pm 1}$ with framing compensation | $\lambda \nearrow \mu$ same as Markov II | Absorbed into stabilization with framing factor |

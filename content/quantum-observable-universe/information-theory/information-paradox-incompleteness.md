@@ -5,6 +5,17 @@ in Hawking quanta.  The incompleteness--horizon identification
 ([incompleteness as opacity](#rem:incompleteness-horizon))
 reframes this as a question about arithmetic, not gravity.
 
+**Picture.**  Think of the horizon as a **syntax boundary**.
+Beyond it lie sections that **exist** as semantic objects in the
+model — well-defined elements of the full algebra
+$\Gamma(\mathcal{S}, A_0)$ — but **no finite braid computation**
+from outside can derive them.  They are syntactically
+unprovable.  This is the categorical reading of Gödel:
+existence without provability is the rule at the boundary, and
+the Bekenstein–Hawking entropy counts only what leaks across
+(degree-$1$ witnesses), never what remains hidden (degree-$0$
+truth).
+
 **The paradox, restated.**
 
 A black hole interior is a region where $A_0 = 0$

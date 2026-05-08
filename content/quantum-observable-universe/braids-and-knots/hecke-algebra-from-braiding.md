@@ -21,8 +21,8 @@ family $d_q$ ([substrate parameter](#def:substrate-parameter)).
 The Iwahori--Hecke algebra on $n$ strands is therefore
 
 $$
-  H_n(q) =  k[B_n] \big/
-  \bigl\langle (T_i - q)(T_i + q^{-1})  \big| 
+  H_n(R, q) =  k[B_n] \big/
+  \bigl\langle (\sigma_i - q)(\sigma_i + q^{-1})  \big| 
   i = 1, \ldots, n{-}1 \bigr\rangle,
 $$
 

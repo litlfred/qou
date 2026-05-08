@@ -3,7 +3,7 @@ finite-time blow-up at every point where the enstrophy transfinite
 $\mathcal{Z}_q \asymp \varepsilon^{-4/3}$ outruns the mass-gap
 infinitesimal $\Delta_q \asymp \varepsilon^3$
 ([NS surreal bound](#rem:ns-surreal-bound),
-[blowup as Yekutieli lifting obstruction](#prop:blowup-yekutieli)).
+[blowup as Yekutieli lifting obstruction](#conj:blowup-yekutieli)).
 
 This remark records the physical signatures the framework predicts
 for such blow-up events, treating the mathematical "infinity" not as
@@ -98,9 +98,9 @@ qualitative prediction to a concrete observational handle:
 
 | Signature | QOU data row | Quantitative anchor |
 |---|---|---|
-| Intermittency exponent deviations | [CMB $q$-torsion data](#rem:cmb-torsion-data) | Structure-function scaling $\langle (\delta u_r)^p \rangle \asymp r^{\zeta_p}$ with $\zeta_p$ a surreal-order sequence |
+| Intermittency exponent deviations | [CMB $q$-torsion data](#sec:cmb-torsion-data) | Structure-function scaling $\langle (\delta u_r)^p \rangle \asymp r^{\zeta_p}$ with $\zeta_p$ a surreal-order sequence |
 | GRB hadron/lepton yield | [BEC vortex data](#rem:bec-vortex-data) | Ratio set by $q$-Hecke branching of [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding) |
-| CMB non-Gaussianity patches | [CMB $q$-torsion data](#rem:cmb-torsion-data) | Angular cross-correlation with $\chi = -6$ topology; low-$\ell$ quadrupole/octupole anomalies |
+| CMB non-Gaussianity patches | [CMB $q$-torsion data](#sec:cmb-torsion-data) | Angular cross-correlation with $\chi = -6$ topology; low-$\ell$ quadrupole/octupole anomalies |
 | BEC vortex reconnection signature | [BEC vortex data](#rem:bec-vortex-data) | Transient helicity-conservation violation at reconnection events |
 
 Each row is falsifiable under the QOU framework: a null result on

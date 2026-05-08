@@ -1,12 +1,31 @@
 {
   "computation": "3-channel-tower",
-  "timestamp": "2026-04-14T15:10:38.851841+00:00",
+  "timestamp": "2026-05-02T03:03:00.645468+00:00",
   "q0": 1.1099785955541805,
   "w_sym": 0.16546138476810043,
   "w_std": 0.6690772304637992,
   "w_alt": 0.16546138476810043,
   "derived": true,
   "formula": "B = \u03a3_\u03bb w_\u03bb m_e \u03a3_i ln|\u03a6_q(V\u0302_i^\u03bb)|",
+  "symbolic_q_form": {
+    "engine": "sympy",
+    "q_symbol": "q (sp.Symbol('q', positive=True))",
+    "z_symbol_definition": "z = 1 / (sqrt(q) + 1/sqrt(q))",
+    "h_symbol_definition": "h = q - 1/q",
+    "sample_isotope": "D",
+    "vhat_polynomials": [
+      {
+        "generator_idx": 0,
+        "V_sym_polynomial_q": "q*(q**2 + 1)/2",
+        "V_std_polynomial_q": "(q**(7/2)*(q + 1) - q**(3/2)*(q + 1) + q*(q**4 + 1))/(2*q**(5/2)*(q + 1))",
+        "V_alt_polynomial_q": "(-q**2 - 1)/(2*q**3)",
+        "V_sym_at_q0": 1.2387652399133644,
+        "V_std_at_q0": 0.6147621967716402,
+        "V_alt_at_q0": -0.8160759779054902
+      }
+    ],
+    "note": "Per-generator V\u0302 polynomials in q for the first non-trivial isotope (D, A = 2 with 1 generator). The same per_gen_volumes function generates the symbolic form for every isotope; only D is exposed here to keep the witness JSON compact. Numerical values at q_0 are below in `results`."
+  },
   "results": [
     {
       "sym": "H",

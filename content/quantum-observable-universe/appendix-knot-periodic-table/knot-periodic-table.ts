@@ -6,17 +6,7 @@ export default prose({
   uses: [
     "prop:shell-structure-eigenvalues",
     "thm:generation-completeness",
-    "thm:embeddability-closure",
     "rem:knot-exhaustiveness",
-    "prop:fermion-boson-knot-link",
-    "rem:building-block-knots",
-    "def:borromean-baryon",
-    "def:knot-particle-generation",
-    "def:transfer-matrix-operator",
-    "prop:terminal-resolution",
-    "prop:skein-polynomial-transfer-matrix",
-    "prop:beta-decay-transfer-matrix",
-    "prop:beta-stability",
   ],
   tags: [
     "knot",

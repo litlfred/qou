@@ -43,6 +43,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 from scipy.sparse import issparse, eye as speye
 
 from hecke_characters import partitions_of, dim_q, qfac
@@ -229,6 +235,27 @@ def main() -> int:
         "parameters": {
             "Z": Z, "N": N, "A": A, "n_strands": n,
             "q_0": Q0,
+        },
+        # P2.5: sympy-as-matrix-stepping-stone pattern.  This script
+        # uses sp.Symbol('q') only inside _numeric_sigmas_for_shape
+        # to build Hoefsmit seminormal matrices ρ_λ(σ_i) ∈ Mat(ℚ(q));
+        # each matrix is then immediately lambdified at q = q_0 and
+        # the downstream products / traces run in numpy.  Per-trace
+        # χ_λ(β_D) values are numerical specialisations, not Laurent
+        # polynomials in q.
+        "symbolic_q_form": {
+            "engine": "sympy (matrix construction only) + numpy",
+            "q_symbol": "q (sp.Symbol('q'))",
+            "pattern_note": (
+                "sympy-as-matrix-stepping-stone: ρ_λ(σ_i) ∈ "
+                "Mat_{d_λ × d_λ}(ℚ(q)) is symbolic in "
+                "_numeric_sigmas_for_shape; the lambdify-at-q_0 step "
+                "eagerly converts to numpy before computing products.  "
+                "Per-trace χ_λ(β_D) values reported here are numerical "
+                "specialisations at q = q_0, not Laurent polynomials in q."
+            ),
+            "symbolic_source": "hecke_characters.build_seminormal_matrices",
+            "specialisation_point": "q = q_0",
         },
         "partitions": results,
         "markov_trace_total": str(markov_total),

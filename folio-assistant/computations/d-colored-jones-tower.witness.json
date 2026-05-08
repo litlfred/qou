@@ -1,7 +1,7 @@
 {
   "computation": "d-colored-jones-tower",
   "description": "D's colored-Jones tower: direct evaluation of J_N(\u03b2_D, q) for N=2,3,4 via explicit \u03c1_N: H_6(q) \u2192 End(V_N^\u22976), summed over D's 32 NF basis words with their q\u2080 coefficients. Reports both J_N(\u03b2_D, q\u2080) (substrate) and J_N at Kashaev's root of unity e^(2\u03c0i/N) with the asymptotic volume estimate.",
-  "timestamp": "2026-04-24T01:43:15.380565+00:00",
+  "computedAt": "2026-04-24T01:43:15.380565+00:00",
   "target_vol": 4.353367301439661,
   "B_AME_D": 2.22456612,
   "n_nf_terms": 32,
@@ -27,5 +27,7 @@
       "abs_J_root": 6.162975822039155e-33,
       "vol_kashaev_N": -116.50085583124272
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

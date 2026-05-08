@@ -1,7 +1,7 @@
 {
   "computation": "sdp-lift-audit",
   "description": "Batch SDP-lift audit for LP(PSD) files from docs/ilp-sdp-audit.md.  Each LP is solved as a standard LP with componentwise Frobenius G\u00b7x \u2265 0, then as a Lasserre moment-matrix SDP with the quadratic tr(G\u00b7X) \u2265 0 constraint.  Flags LP solutions that violate the true quadratic Frobenius condition x\u1d40G x \u2265 0 \u2014 which the SDP correctly rules out.",
-  "timestamp": "2026-04-19T01:33:35.372593+00:00",
+  "computedAt": "2026-04-19T01:33:35.372593+00:00",
   "parameters": {
     "gram_eigenvalues": [
       -0.7408452101064132,
@@ -358,5 +358,7 @@
       "lp_frobenius_valid": false,
       "time_sec": 0.017746925354003906
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

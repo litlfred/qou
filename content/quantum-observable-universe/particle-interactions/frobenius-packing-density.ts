@@ -13,9 +13,5 @@ export default remark({
     "cpt-saturation",
     "chirality",
   ],
-  uses: [
-    "conj:mass-volume-factorization",
-    "rem:kashaev-volume-density",
-    "prop:tower-binding-energy",
-  ],
+  uses: [],
 });

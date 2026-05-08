@@ -1,7 +1,7 @@
 {
   "computation": "derived-characters",
   "description": "Closed-form derivation of \u03c7_sym(\u03b2_atom) and \u03c7_alt(\u03b2_atom) from counting \u03c3, \u03c3\u207b\u00b9, and ud-half factors in atom_braid_word_3A.  Per-factor characters:\n  \u03c3       \u2192 \u03c7_sym = q,        \u03c7_alt = -1/q\n  \u03c3^{-1}  \u2192 \u03c7_sym = 1/q,      \u03c7_alt = -q\n  ud-half \u2192 \u03c7_sym = [2]_q/2,  \u03c7_alt = -[2]_q/2\nNo character-matrix computation needed \u2014 purely combinatorial.  Verified against full Wedderburn character evaluator to <0.3% across D, T, \u00b3He, \u2074He.",
-  "timestamp": "2026-04-24T02:42:56.501814+00:00",
+  "computedAt": "2026-04-24T02:42:56.501814+00:00",
   "q_0": 1.1099785955541805,
   "two_q_over_2": 1.005448434559241,
   "atoms": [
@@ -69,5 +69,7 @@
       "chi_sym_diff_pct": -0.0014900800151283825,
       "chi_alt_diff_pct": -0.009754043906699194
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

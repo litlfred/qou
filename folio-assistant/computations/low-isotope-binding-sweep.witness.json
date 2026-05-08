@@ -1,7 +1,7 @@
 {
   "name": "low-isotope-binding-sweep",
   "description": "Low-isotope (Z = 1..10) binding-energy sweep using the mass-volume factorization framework (Ch 11 \u00a78).  Three strategies applied in order: (A) census-knot match for A \u2264 3, (B) \u03b1-cluster unfolding for Z = N, A = 4n, (C) partial-shell linear interpolation for odd-A and non-N=Z atoms.  Zero free parameters per strategy.",
-  "timestamp": "2026-04-23T19:04:37.683706+00:00",
+  "computedAt": "2026-04-23T19:04:37.683706+00:00",
   "framework_refs": [
     "conj:mass-volume-factorization",
     "conj:crossing-graded-mass-expansion",
@@ -292,5 +292,7 @@
       "mean_abs_err_pct": 11.619497216661088,
       "max_abs_err_pct": 36.45330156657791
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

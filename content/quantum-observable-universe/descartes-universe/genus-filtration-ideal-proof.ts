@@ -5,9 +5,5 @@ export default proof({
   title: "Proof of genus-filtration ideal characterisation",
   of: "prop:genus-filtration-ideal",
   tags: ["chebyshev", "yekutieli", "hecke-algebra", "ideal"],
-  uses: [
-    "prop:categorical-dq-squared",
-    "def:yekutieli-lifting-condition",
-    "def:quantum-characteristic-classes",
-  ],
+  uses: ["lem:yekutieli-leading-coefficient"],
 });

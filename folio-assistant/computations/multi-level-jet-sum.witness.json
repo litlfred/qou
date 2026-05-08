@@ -1,7 +1,7 @@
 {
   "computation": "multi-level-jet-sum",
   "description": "Multi-level jet sum of mass tower \u2014 CURRENT IMPL is a single-level flat sum with all-pairs quadratic term (matching rem:mass-endomorphism-jet-tower's single-level form).  A genuine multi-level version requires jet-lifted V\u0302 at each level n; per-level lift not yet implemented.  This module is a stub that documents the interface and provides the single-level flat sum for callers migrating from tower_binding_full.",
-  "timestamp": "2026-04-18T09:58:44.275918+00:00",
+  "computedAt": "2026-04-18T09:58:44.275918+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "z_markov_sq": 0.2493207959794241,
@@ -99,5 +99,7 @@
       "B_pred_MeV": -2.0494644255681167,
       "delta_m_over_m_pct": 0.8637451641526132
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

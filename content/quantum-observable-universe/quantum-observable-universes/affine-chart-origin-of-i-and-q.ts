@@ -14,13 +14,10 @@ export default remark({
     "braiding",
   ],
   uses: [
-    "def:projective-line-object",
-    "def:contact-affine-chart",
-    "prop:braiding-eigenvalue-extraction",
+    "prop:spectral-chart-correspondence",
     "def:quantum-gauge-group",
     "rem:i-as-braiding-orientation",
     "rem:braiding-unit-circle-convention",
-    "def:commutative-qou",
   ],
   interprets: "def:projective-line-object",
 });

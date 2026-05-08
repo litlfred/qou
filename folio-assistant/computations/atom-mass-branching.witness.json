@@ -1,7 +1,7 @@
 {
   "computation": "atom-mass-branching",
   "description": "Atom tower mass via universal branching rule per prop:universal-braid-branching: \u03c7_atom(\u03bb) = \u03a3 f^{\u03bb/\u03bc} \u00b7 \u03a0 \u03c7^{\u03bc_i}(K_i). Free baseline: direct branching (disconnected tensor). Atom: free \u00d7 Markov-weighted inter-nucleon phase from ILP ground state. \u0394M/M computed against atom rest mass \u2248 A\u00b7938.272 MeV.",
-  "timestamp": "2026-04-17T20:44:28.960132+00:00",
+  "computedAt": "2026-04-17T20:44:28.960132+00:00",
   "parameters": {
     "q": 1.1099785955541805,
     "E_0_tower_MeV": 5462.602336559613,
@@ -89,5 +89,7 @@
       "M_AME_MeV": 3753.088,
       "delta_M_over_M_pct": 0.7574154752646075
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

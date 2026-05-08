@@ -6,7 +6,6 @@ export default conjecture({
   title: "$q$-Opers are $q$-Hecke eigensheaves",
   uses: [
     "def:q-oper",
-    "def:q-hecke-eigensheaf",
     "conj:q-geometric-langlands",
   ],
   cites: ["frenkel2007"],

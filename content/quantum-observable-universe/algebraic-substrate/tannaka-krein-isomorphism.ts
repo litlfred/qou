@@ -7,7 +7,6 @@ export default theorem({
     validation: "not_checked",
   },
   uses: [
-    "def:frobenius-hopf-substrate",
     "def:categorical-reeb-derivation",
     "def:local-cohomology-group",
   ],

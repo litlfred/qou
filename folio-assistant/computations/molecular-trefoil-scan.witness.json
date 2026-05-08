@@ -5,7 +5,7 @@
   "commitSha": "789d28a5c1de15887bfe98cc987627dd3c85d1db",
   "assertions": [
     {
-      "name": "H₂",
+      "name": "H\u2082",
       "computed": 4.5,
       "expected": 4.478,
       "passed": true,
@@ -21,7 +21,7 @@
       "unit": "eV"
     },
     {
-      "name": "CO₂",
+      "name": "CO\u2082",
       "computed": 14.1,
       "expected": 16.56,
       "passed": true,
@@ -29,7 +29,7 @@
       "unit": "eV"
     },
     {
-      "name": "CH₄",
+      "name": "CH\u2084",
       "computed": 16.9,
       "expected": 17.9,
       "passed": true,
@@ -37,7 +37,7 @@
       "unit": "eV"
     },
     {
-      "name": "C₆H₆",
+      "name": "C\u2086H\u2086",
       "computed": 57.1,
       "expected": 57.4,
       "passed": true,
@@ -80,7 +80,7 @@
     },
     "molecules": [
       {
-        "name": "H₂",
+        "name": "H\u2082",
         "pred_eV": 4.483351450017505,
         "obs_eV": 4.478
       },
@@ -90,20 +90,22 @@
         "obs_eV": 11.09
       },
       {
-        "name": "CO₂",
+        "name": "CO\u2082",
         "pred_eV": 14.086580027486491,
         "obs_eV": 16.56
       },
       {
-        "name": "CH₄",
+        "name": "CH\u2084",
         "pred_eV": 16.90350310279815,
         "obs_eV": 17.9
       },
       {
-        "name": "C₆H₆",
+        "name": "C\u2086H\u2086",
         "pred_eV": 57.05064911127017,
         "obs_eV": 57.4
       }
     ]
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

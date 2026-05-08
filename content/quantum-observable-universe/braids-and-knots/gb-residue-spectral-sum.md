@@ -1,128 +1,118 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-substrate parameter $q_0$ and Hecke algebra $H_n(q)$ filtered by the
+substrate parameter $q_0$ and Hecke algebra $H_n(R, q)$ filtered by the
 confinement filtration $J^\bullet(q)$
 ([confinement level](#def:confinement-level)).  Let
 $\Phi_q(z) = \prod_{k\geq 1}(1 - q^{-k} z)^{-1}$ be the non-perturbative
 quantum dilogarithm and let $\zeta_\ell$ denote the root of unity at
-which the $\ell$-th knot-operator energy $E_\ell(q)$ degenerates,
+which the $\ell$-th knot-operator energy degenerates,
 $E_\ell(\zeta_\ell) = 0$.
 
-**Proposition.**
+This proposition is the **symbolic feeding lemma** that produces the
+cyclotomic coefficients $a_m$ of the Habiro-completion proposition
+([Habiro completion](#prop:full-pole-structure-mass-trace)) from
+filtration-stratum residues. It is a formal identity in the
+Grothendieck group of the filtered differential algebra
+$(H_n(R,q), J^\bullet, d)$, **not** a complex-analytic identity on
+or near $S^1$.
+
+**Proposition (residue spectral sum, symbolic form).**
 *For a knot $\mathcal{K}$ represented by the closed braid with Hecke
 normal form $T_w \in A = H_n(R, q)$
 ([Hecke normal form](#def:hecke-normal-form)), the categorical mass
-evaluated at $q_0$ admits the Mittag-Leffler decomposition*
+admits the symbolic decomposition*
 
 $$
   \mathfrak{m}_{q_0, \mathcal{K}}
   \;=\;
-  \underbrace{\bigl|\int_A T_w(q_0)\bigr|}_{E^0\ \text{(descended)}}
+  \underbrace{\bigl|\int_A T_w(q_0)\bigr|}_{\text{descended part } E^0}
   \;+\;
-  \sum_{\ell = 1}^{\ell(K, q_0)}
-    \frac{\displaystyle
-      \operatorname*{Res}_{q = \zeta_\ell}
-        \!\Bigl[\Phi_q \cdot \mathrm{tr}_{M,\,\ell}(T_w)\Bigr]
-    }{q_0 - \zeta_\ell},
+  \sum_{\ell = 1}^{\ell(\mathcal{K}, q_0)}
+    r_\ell(T_w; q_0),
+  \qquad
+  r_\ell(T_w; q_0)
+    \;=\;
+    \frac{\operatorname*{Res}_{q = \zeta_\ell}\!
+      \bigl[\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)\bigr]}
+    {q_0 - \zeta_\ell},
 $$
 
-*where $\mathrm{tr}_{M,\,\ell}$ is the induced Markov trace on the
-graded piece $J^\ell(q)/J^{\ell+1}(q)$, and $\ell(\mathcal{K}, q_0)$ is the
-confinement level of $\mathcal{K}$ at $q_0$.*
-
-**Why residues at roots of unity when $q_0 > 1$?**
-*The substrate parameter $q_0 \approx 1.11$ lies outside the unit
-circle, so the evaluation $\int_A T_w(q_0)$ is at a regular
-point of $\Phi_q$ and $H_n(q)$.  The poles of $\int_A$ and
-$\Phi_q$ lie at roots of unity $\zeta_\ell \in S^1$: these are the
-values of $q$ at which the $\ell$-th generator's Hecke eigenvalues
-$(q, -q^{-1})$ become equal in absolute value and $H_n(q)$ fails
-to be semisimple.  A function $q \mapsto \int_A(T_w, q)$
-meromorphic on $\mathbb{C} \setminus \{\zeta_\ell\}$ admits a
-**Mittag-Leffler expansion**: its value at a regular point $q_0$
-is the sum of an entire piece (the descended $\int_A$) and
-simple-pole contributions weighted by the Cauchy kernel
-$(q_0 - \zeta_\ell)^{-1}$.  The residue $\operatorname{Res}_{q=\zeta_\ell}$
-captures the structural data of the $\ell$-th filtration stratum
-(what collapses at $\zeta_\ell$); the kernel transports that data
-out to $q_0$.  Distance to the nearest root of unity controls
-the magnitude: $\zeta_1 = 1$ is closest ($|q_0 - 1| \approx 0.11$),
-so the level-1 residue dominates; higher roots of unity
-($\zeta_\ell = e^{2\pi i/n_\ell}$ with $n_\ell \geq 2$) are
-further from $q_0$ and contribute less.*
-
-**Habiro-cyclotomic form.**
-*Equivalently, after expanding the Cauchy kernel against the
-cyclotomic tower of $q$-Pochhammer symbols
-$(q; q)_n = \prod_{k=1}^n (1 - q^k)$
-([Habiro ring](#def:habiro-ring)), the residue sum becomes a
-unified cyclotomic series*
+*where $\mathrm{tr}_{M,\ell}$ is the induced Markov trace on the
+graded piece $J^\ell(q)/J^{\ell+1}(q)$ and $\ell(\mathcal{K}, q_0)$ is the
+confinement level of $\mathcal{K}$ at $q_0$. The numerators
+$\operatorname{Res}_{q = \zeta_\ell}[\Phi_q \cdot \mathrm{tr}_{M,\ell}]$
+are the **stratum residues** that feed the cyclotomic coefficients
+$a_m$ of the Habiro expansion via*
 
 $$
-  \sum_{\ell \geq 1}
-    \frac{\operatorname{Res}_{q=\zeta_\ell}[\cdots]}{q_0 - \zeta_\ell}
-  \;=\;
-  \sum_{n \geq 1} a_n(K)\,(q_0; q_0)_n,
+  \sum_{\ell \geq 1} r_\ell(T_w; q_0)
+  \;\equiv\;
+  \sum_{m \geq 1} a_m(T_w)\,(q_0; q_0)_m
+  \pmod{\widehat{\mathbb{Z}[q]}\text{-equivalence}},
 $$
 
-*with $a_n(\mathcal{K}) \in \mathbb{Z}[q, q^{-1}]$.  Each term
-$(q_0; q_0)_n$ vanishes at all $\zeta_\ell$ of order $\leq n$, so
-the expansion is structured by the tower of root-of-unity strata.
-This is the categorical analogue of Habiro's unified quantum
-invariant.*
-
-**Relation to the brane tower.**
-*The formula
-$\mathfrak{m} = |\prod \hat V_i^{\mathrm{full}}| +
-  \sum_i \Phi_{q_0}(|\hat V_i^{\mathrm{full}}|) +
-  \sum_{i<j} z^2 \Phi_{q_0}(|\hat V_i \hat V_j|)$
-([mass endomorphism tower](#prop:mass-endomorphism-tower))
-is the **regular-value expansion** at $q = q_0$: the first term
-is $E^0$, each single-generator $\Phi_{q_0}(|\hat V_i|)$ is the
-level-$1$ contribution transported from $\zeta_1 = 1$, and each
-pair term is a level-$2$ contribution transported from $\zeta_2$.
-Regular-value evaluation is exact for the level-$\ell$ stratum
-**only when** $q_0 \mapsto \mathrm{tr}_{M,\ell}$ is analytic at
-$q_0$.  When $T_w$ has filtration components at deeper strata
-than the regular-value expansion samples, those components
-appear as residues at $\zeta_\ell$ for $\ell \geq 2$ and contribute
-new terms missing from the regular-value tower.*
+*the equivalence being modulo the cyclotomic completion ideal of
+([Habiro ring](#def:habiro-ring)).*
 
 **Cohomological interpretation.**
-*The filtration $J^\bullet(q)$ together with the rewriting differential
-$d$ induced by the three Gröbner–Shirshov rules (Hecke, far
-commutativity, Yang–Baxter) makes $H_n(q)$ a filtered differential
-algebra.  The associated spectral sequence has*
+*The filtration $J^\bullet(q)$ together with the rewriting
+differential $d$ induced by the three Gröbner–Shirshov rules
+(Hecke, far commutativity, Yang–Baxter) makes $H_n(R, q)$ a
+filtered differential algebra. The associated spectral sequence
+has*
 
 $$
-  E_1^{\ell,*} \;=\; H^*\!\bigl(J^\ell/J^{\ell+1},\; d\bigr),
+  E_1^{\ell,*} \;=\; H^*\bigl(J^\ell/J^{\ell+1},\,d\bigr),
   \qquad
   E_\infty^{\ell,*}
     \;\Longrightarrow\;
-    \mathrm{gr}^\ell\,H_n(q),
+    \mathrm{gr}^\ell\,H_n(R, q).
 $$
 
-*and $\int_A$ is a closed linear functional with respect to $d$
-(cyclicity), so it descends to $E_\infty$.  The Mittag-Leffler sum
-is the pairing of $\int_A$ with $E_\infty$, transported from
-the singular fibres $\{\zeta_\ell\}$ to the regular fibre $q_0$:
-**the mass is the total Hochschild-type cohomology class of $T_w$
-on the filtered Hecke algebra, evaluated by Cauchy kernel against
-the root-of-unity support**.  This is the algebraic object that
-the [mass endomorphism conjecture](#conj:mass-endomorphism)
-predicts.*
+*The functional $\int_A$ is closed for $d$ (cyclicity) and so
+descends to $E_\infty$. The residue $r_\ell(T_w; q_0)$ is the
+pairing of $\int_A$ with the level-$\ell$ stratum: structurally,
+the stratum residue is a Hochschild-cohomology class on
+$J^\ell/J^{\ell+1}$ evaluated at the substrate parameter, and the
+total mass is the sum of these classes — in agreement with the
+[mass endomorphism conjecture](#conj:mass-endomorphism).*
 
-**Consistency checks.**
-*(i) When $T_w \in J^0(q_0) \setminus J^1(q_0)$ (the braid sits at
-filtration level zero), all higher residues vanish and the formula
-reduces to $\mathfrak{m} = |\int_A T_w|$ — the pure
-descended case
-([categorical mass as Markov trace](#prop:categorical-mass-markov)).
-(ii) Finiteness of the sum follows from
-$T_w \in J^{\ell(K, q_0)}(q_0) \setminus J^{\ell(K, q_0) + 1}(q_0)$
-([confinement level, uniqueness](#prop:confinement-level-unique)).
-(iii) Distance-to-$\zeta_\ell$ hierarchy: at $q_0 \approx 1.11$,
-$|q_0 - \zeta_1| \approx 0.11$ (close) and
-$|q_0 - \zeta_2| = |q_0 - (-1)| \approx 2.11$ (far), so the level-1
-stratum dominates and higher strata contribute perturbatively —
-consistent with the observed $\lesssim 1\%$ binding-energy
-residuals on light atoms.*
+**Caveat: this is a symbolic, not analytic, identity.**
+*The Cauchy-kernel factor $1/(q_0 - \zeta_\ell)$ is a formal symbol
+attached to each stratum, not a function on $\mathbb{C}$ analytic
+at $q_0$. Because the primitive roots of unity are dense in $S^1$,
+$\mathrm{tr}_M$ is **not** meromorphic on any neighbourhood of
+$S^1$, and the sum $\sum_\ell r_\ell$ has no convergent
+complex-analytic meaning across $S^1$. The convergent statement
+is the Habiro expansion
+([Habiro completion](#prop:full-pole-structure-mass-trace)); the
+Cauchy-kernel form here is its $q$-adic shadow at fixed cyclotomic
+truncation.*
+
+**Reduction in the level-zero case.**
+*When $T_w \in J^0(q_0) \setminus J^1(q_0)$, all higher stratum
+residues vanish and the formula reduces to
+$\mathfrak{m} = |\int_A T_w|$ — the pure descended case
+([categorical mass as Markov trace](#prop:categorical-mass-markov)).*
+
+**Convergent archimedean counterpart: PL thimble periods on $\mathcal{E}_q$.**
+*Strict archimedean split: this proposition is intrinsically an
+$R$-side statement — the residues live in the categorical base ring
+$R$, and the Cauchy-kernel form $1/(q_0 - \zeta_\ell)$ is symbolic.
+A **convergent** archimedean realisation does exist: under the
+fibre functor $\tau \colon R \hookrightarrow \mathbb{C}$, the
+filtration stratum $J^p/J^{p+1}$ maps to the geometric jet bundle
+$J^p\mathcal{S}$ on $\mathcal{E}_q(\mathbb{C})$ via
+([jet-GB-PL correspondence](#prop:jet-gb-pl-correspondence)),
+and the residues at $\zeta_\ell \in S^1$ are replaced by
+Picard–Lefschetz residues at the discriminant locus
+$\{z \in \mathbb{C} : \Delta(z) = 0\}$ of the color-tube cubic
+([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble)).
+Because the discriminant points lie strictly off $S^1$, the
+$\mathbb{C}$-side residues converge unconditionally and the sum
+$\sum_p n_p \cdot \Pi^{(p)}$ is a bona fide complex-analytic
+quantity — the **archimedean realisation** of the symbolic
+$R$-side spectral sum.  The agreement
+$\tau(\sum_\ell r_\ell) = \sum_p n_p \cdot \Pi^{(p)}$ is the
+content of
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence));
+the $R$-side and $\mathbb{C}$-side sums must not be conflated.*

@@ -1,7 +1,7 @@
 [Hoefsmit-is-surreal-construction](#prop:hoefsmit-is-surreal-construction)
 identifies the binary $\{L \mid R\}$ split at each Hecke
 eigenchannel step with Conway's recursive surreal
-construction. This works because the Hecke generator $T$ has
+construction. This works because the Hecke generator $\sigma$ has
 exactly **two** eigenvalues at generic $q$.
 
 At a primitive $p$-th root of unity $q = \zeta_p$, the
@@ -199,8 +199,8 @@ established) and Hecke ↔ nimber correspondence (open).
 
 3. **Smallest case** ($p = 2$, $n = 3$): compute the
    Kazhdan–Lusztig cells of $H_3(\zeta_2) = H_3(-1)$ explicitly.
-   $H_3(-1)$ has 3 cells: $\{1\}$, $\{T_1, T_2, T_1T_2T_1\}$,
-   and $\{T_1T_2, T_2T_1\}$ (with appropriate $W$-graph
+   $H_3(-1)$ has 3 cells: $\{1\}$, $\{\sigma_1, \sigma_2, \sigma_1\sigma_2\sigma_1\}$,
+   and $\{\sigma_1\sigma_2, \sigma_2\sigma_1\}$ (with appropriate $W$-graph
    structure).
 
 4. **Match against** the first 3 elements of $\mathbf{On}_2$: the

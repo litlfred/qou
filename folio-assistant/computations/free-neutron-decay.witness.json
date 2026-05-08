@@ -1,7 +1,7 @@
 {
   "computation": "free-neutron-decay",
   "description": "Free neutron decay n \u2192 p + e\u207b + \u03bd\u0304\u2091 with B\u2083 Borromean binding. All Gr\u00f6bner--Shirshov relations traced verbosely.",
-  "timestamp": "2026-04-14T22:24:03.405420+00:00",
+  "computedAt": "2026-04-14T22:24:03.405420+00:00",
   "commit_sha": "9c7af975ec8405b4f0c3f93dc70cfb8fe2d81ce6",
   "q0": 1.1099785955541805,
   "relations": {
@@ -177,5 +177,7 @@
     "delta_nu": -0.10204617496433355,
     "delta_e": -0.0009759890266926585,
     "Q_observed_MeV": 0.78233
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

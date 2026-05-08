@@ -1,15 +1,15 @@
 Let $A$ be an instanton connection on $P$
 ([instanton](#def:instanton)), $F_A^+$ its self-dual curvature
 ([self-dual curvature](#ex:self-dual-curvature)), and
-$L_\theta(V, W) = -id\theta(V, \bar{W})$ the Levi form.  Since
+$L_\varTheta(V, W) = -id\varTheta(V, \bar{W})$ the Levi form.  Since
 $\Lambda^{1,1} H^* \subset \Lambda^+ H^*$ on the $4$-dimensional
 distribution $H$, the Webster metric and Killing form yield a natural
-contraction $\langle L_\theta, F_A^+\rangle_p \in \mathbb{R}$.  The
+contraction $\langle L_\varTheta, F_A^+\rangle_p \in \mathbb{R}$.  The
 categorical ([substrate parameter](#def:substrate-parameter)) specialises
 in the archimedean realisation to the smooth field
 
 $$
-  q(p) = 1 + \bigl\lvert\langle L_\theta, F_A^+ \rangle\bigr\rvert(p),
+  q(p) = 1 + \bigl\lvert\langle L_\varTheta, F_A^+ \rangle\bigr\rvert(p),
   \qquad p \in M,
 $$
 

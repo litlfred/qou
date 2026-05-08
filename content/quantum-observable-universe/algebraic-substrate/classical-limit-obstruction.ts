@@ -9,7 +9,6 @@ export default definition({
   },
   uses: [
     "def:classical-limit-functor",
-    "def:frobenius-hopf-substrate",
     "def:quantum-characteristic-classes",
   ],
   tags: [

@@ -151,5 +151,7 @@
       "derived_inter_vol": -1.5922343324066125e-06,
       "target_rho_me": 4.353367301439661
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

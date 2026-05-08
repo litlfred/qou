@@ -13,9 +13,5 @@ export default remark({
     "shell-model",
   ],
   interprets: "prop:skein-finiteness-bound",
-  uses: [
-    "prop:skein-finiteness-bound",
-    "prop:shell-closure-normal-form",
-    "prop:integer-stability",
-  ],
+  uses: ["prop:skein-finiteness-bound"],
 });

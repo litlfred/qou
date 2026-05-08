@@ -71,8 +71,8 @@
 \begin{definition}[CR Manifold Data]
   \label{def:c-quantum-universe}
   \lean{QOU.CRManifoldData}
-  A tuple $(M, \theta, n, r, s, \xi)$ with CR dimension $n \ge 1$,
-  Levi signature $(r,s)$, contact form $\theta$, and Reeb field $\xi$.
+  A tuple $(M, \varTheta, n, r, s, \xi)$ with CR dimension $n \ge 1$,
+  Levi signature $(r,s)$, contact form $\varTheta$, and Reeb field $\xi$.
 \end{definition}
 
 % ── ℂ Quantum Observable Universe ───────────────────────────────
@@ -170,7 +170,7 @@
 \begin{definition}[Reeb Decomposition]
   \label{def:reeb-decomposition}
   \lean{QOU.ReebDecomposition}
-  $\alpha = \alpha_H + \theta \wedge \iota_\xi \alpha$.
+  $\alpha = \alpha_H + \varTheta \wedge \iota_\xi \alpha$.
 \end{definition}
 
 % ── q-Harmonic Form ─────────────────────────────────────────────
@@ -209,21 +209,21 @@
   \label{def:q-ext-deriv}
   \lean{QOU.qExtDeriv}
   \uses{def:substrate-parameter-lean}
-  $d_q \alpha = q^{-1}\,d\alpha + (1-q^{-1})\,\theta \wedge L_\xi \alpha$.
+  $d_q \alpha = q^{-1}\,d\alpha + (1-q^{-1})\,\varTheta \wedge L_\xi \alpha$.
 \end{definition}
 
 \begin{definition}[$q$-Deformed Lie Bracket]
   \label{def:q-lie-bracket}
   \lean{QOU.qLieBracket}
   \uses{def:substrate-parameter-lean}
-  $[V,W]_q = q^{-1}[V,W] + (1-q^{-1})(\theta(V)L_\xi W - \theta(W)L_\xi V)$.
+  $[V,W]_q = q^{-1}[V,W] + (1-q^{-1})(\varTheta(V)L_\xi W - \varTheta(W)L_\xi V)$.
 \end{definition}
 
 \begin{definition}[$q$-Deformed Connection]
   \label{def:q-connection}
   \lean{QOU.qConnection}
   \uses{def:substrate-parameter-lean}
-  $A_q = q^{-1}A + (1-q^{-1})\iota_\xi A \cdot \theta$.
+  $A_q = q^{-1}A + (1-q^{-1})\iota_\xi A \cdot \varTheta$.
 \end{definition}
 
 \begin{definition}[$q$-Deformed Reeb Vector Field]
@@ -342,7 +342,7 @@
   \label{def:substrate-parameter}
   \lean{QOU.Glossary.substrateParameter}
   \uses{def:brings-surface, def:quantum-parameter}
-  $q(p) = 1 + |\langle L_\theta, F_A^+\rangle|(p)$ --- couples
+  $q(p) = 1 + |\langle L_\varTheta, F_A^+\rangle|(p)$ --- couples
   chiral curvature to contact geometry on Bring's surface.
 \end{definition}
 
@@ -850,7 +850,7 @@
   \label{prop:dq-squared}
   \lean{QOU.Elaboration.dq_squared}
   \uses{def:q-ext-deriv}
-  For constant $q > 1$, $d_q^2\,\alpha = q^{-1}(1-q^{-1})\,d\theta \wedge \mathcal{L}_\xi\,\alpha$.
+  For constant $q > 1$, $d_q^2\,\alpha = q^{-1}(1-q^{-1})\,d\varTheta \wedge \mathcal{L}_\xi\,\alpha$.
   In particular $d_q^2 = 0$ iff $q=1$ or $\alpha$ is Reeb-invariant.
 \end{proposition}
 
@@ -860,9 +860,9 @@
   \lean{QOU.Elaboration.q_jacobiator}
   \uses{def:q-lie-bracket}
   For horizontal vector fields $U,V,W$, the Jacobiator is
-  $\mathrm{Jac}_q(U,V,W) = -q^{-1}(1-q^{-1})\sum_{\mathrm{cyc}} d\theta(V,W)\,\mathcal{L}_\xi U$.
-  Vanishes iff $q=1$ or $d\theta|_{H\times H}=0$.
-  Since $d\theta|_{H \times H}$ is the non-degenerate Levi form,
+  $\mathrm{Jac}_q(U,V,W) = -q^{-1}(1-q^{-1})\sum_{\mathrm{cyc}} d\varTheta(V,W)\,\mathcal{L}_\xi U$.
+  Vanishes iff $q=1$ or $d\varTheta|_{H\times H}=0$.
+  Since $d\varTheta|_{H \times H}$ is the non-degenerate Levi form,
   $[\cdot,\cdot]_q$ violates the Jacobi identity for all $q \neq 1$;
   thus $(\mathfrak{X}(M), [\cdot,\cdot]_q)$ is a \emph{Leibniz algebra},
   not a Lie algebra.
@@ -872,7 +872,7 @@
   \label{thm:jacobi-violation}
   \lean{QOU.Elaboration.jacobi_identity_violation}
   \uses{prop:q-jacobiator}
-  For $q \neq 1$ and non-degenerate $d\theta|_{H \times H}$, the Jacobiator
+  For $q \neq 1$ and non-degenerate $d\varTheta|_{H \times H}$, the Jacobiator
   $\mathrm{Jac}_q \neq 0$ generically, witnessing failure of the Jacobi
   identity.
 \end{theorem}
@@ -952,7 +952,7 @@
   \label{prop:jet-prolongation}
   \lean{QOU.Torsion.jet_prolongation}
   \uses{def:c-quantum-observable-universe, def:instanton}
-  If $(\mathbf{C}, \theta, G, \mathcal{S})$ is a $\mathbb{C}$ QOU with instanton $A$
+  If $(\mathbf{C}, \varTheta, G, \mathcal{S})$ is a $\mathbb{C}$ QOU with instanton $A$
   and metric $g$, then the jet prolongation $J^1 \mathcal{S}$ with its
   frame bundle and induced connection yields a new $\mathbb{C}$ QOU.
 \end{proposition}

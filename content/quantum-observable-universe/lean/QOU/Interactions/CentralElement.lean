@@ -1,3 +1,6 @@
+import QOU.Descartes.HeckeH3
+import QOU.Interactions.BorromeanUnique
+
 /-!
 # B₃ character theory (corrected)
 
@@ -35,9 +38,6 @@ computation, so `ring` works.
 
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import QOU.Descartes.HeckeH3
-import QOU.Interactions.BorromeanUnique
 
 namespace QOU.Interactions
 

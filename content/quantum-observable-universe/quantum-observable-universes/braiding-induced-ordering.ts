@@ -16,9 +16,5 @@ export default proposition({
   lean: { ref: "qou:QOU.braiding_induced_ordering",
     validation: "not_checked",
   },
-  uses: [
-    "def:quantum-observable-universe",
-    "prop:braid-action-tensor",
-    "unital-groebner-bases:def:admissible-system",
-  ],
+  uses: ["prop:braid-action-tensor"],
 });

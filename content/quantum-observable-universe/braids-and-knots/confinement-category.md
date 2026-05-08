@@ -10,7 +10,7 @@
 |---|---|---|
 | *Unfolding* | $\uparrow_\ell$ | *Replace each level-$\ell$ strand by its level-$(\ell-1)$ constituent braid* |
 | *Folding* | $\downarrow_\ell$ | *Quotient a subbraid at level $\ell-1$ to a single level-$\ell$ strand* |
-| *Dressing* | $\mathrm{dress}$ | *Extend $H_n(q) \hookrightarrow H_{n+m}(q)$ and attach $m$ additional strands via an SDP-feasible binding subword* |
+| *Dressing* | $\mathrm{dress}$ | *Extend $H_n(R, q) \hookrightarrow H_{n+m}(q)$ and attach $m$ additional strands via an SDP-feasible binding subword* |
 
 - ***Composition:** concatenation of Hecke-algebra embeddings;
   $\mathrm{dress}$ is right-composable with $\uparrow_\ell$ and

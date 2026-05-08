@@ -2,7 +2,7 @@
   "computation": "schur-weyl-symbolic",
   "description": "Global H_{3A} Wedderburn sum vs additive-H_3 approximation, computed symbolically in sympy with q kept as a Symbol. Implements prop:schur-weyl-mass-decomposition. Uses trivial Specht character (future iteration: plug in actual braid word's cycle type via Murnaghan-Nakayama).",
   "reference_block": "prop:schur-weyl-mass-decomposition",
-  "timestamp": "2026-04-24T20:07:47.862894+00:00",
+  "computedAt": "2026-04-24T20:07:47.862894+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "evalf_dps": 30,
@@ -41,5 +41,7 @@
       "h3_approx_at_q0": "23.4423835293688125985664771467",
       "relative_err_pct": -443244517.3050601
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -1,4 +1,4 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
 /**
  * The Bethe-Weizsäcker coefficients are q-integer products.
@@ -10,14 +10,12 @@ import { proposition } from "../../schema/builders";
  * representation theory and the shell closure / palindromicity
  * conjectures.
  */
-export default proposition({
-  label: "prop:q-integer-mass-formula",
+export default conjecture({
+  label: "conj:q-integer-mass-formula",
   title: "Atomic mass formula with $q$-integer Bethe--Weizs\\\"acker coefficients",
   uses: [
-    "def:atomic-braid",
-    "prop:wedderburn-mass-formula",
+    "thm:wedderburn-mass-formula",
     "prop:operator-selection-lp",
-    "conj:shell-closure-nf-term-count",
     "conj:palindromicity-orbital-type",
   ],
   tags: [

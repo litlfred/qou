@@ -12,12 +12,7 @@ export default remark({
     "cosmological-arrow",
     "gravitational-constant",
   ],
-  uses: [
-    "rem:julia-set-reeb",
-    "def:operational-entropy",
-    "def:gravitational-constant",
-    "def:planck-time",
-  ],
+  uses: ["def:gravitational-constant"],
   cites: [
     "bowen1979",
     "ruelle1982",

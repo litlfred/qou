@@ -10,7 +10,7 @@ $\mathcal{R}_{\mathrm{top}}$ on the brane substrate.
 presented as the closure of a braid $\beta_K$, the colored Jones
 polynomial evaluated at the $N$-th root of unity
 $q = \exp(2\pi i / N)$ is a discrete algebraic trace over the
-local Hecke algebra $H_n(q)$
+local Hecke algebra $H_n(R, q)$
 ([Jones from Markov trace](#thm:jones-markov-trace)),
 
 $$

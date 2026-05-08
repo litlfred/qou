@@ -99,7 +99,7 @@ Verified computationally:
 | $9$ | $234504$ | $29$s | — |
 | $10$ | $8.7$M | $4.3$s (v2) | — |
 | $12$ | $923319$ | $269$s (v3) / $\sim5$s (v6) | — |
-| $16$ | $3.4$M | $38$s (v6) | $A^3 = 4096$ ✓ |
+| $16$ | $3.4$M | $38$s (v6) | $A^3 = 4096$ (matches) |
 
 With quotient-during-construction (v6), the effective complexity
 is $O(A^3)$ — cubic in the mass number.  This makes nuclei up to
@@ -107,8 +107,8 @@ $A = 40$ (${}^{40}\mathrm{Ca}$, doubly magic) tractable in minutes.
 
 ## Symbolic witnesses
 
-The symbolic engine (v7, exact in $\mathbb{Z}[t, t^{-1}]$ where
-$t = q^{1/2}$) produces Laurent polynomial witnesses for
+The symbolic engine (v7, exact in $\mathbb{Z}[r, r^{-1}]$ where
+$r = q^{1/2}$) produces Laurent polynomial witnesses for
 $\mathrm{tr}_{\mathrm{alt}}(q)$ and $\mathrm{net}(q)$.
 Verified through $A = 9$ (${}^9\mathrm{Be}$) without overflow.
 

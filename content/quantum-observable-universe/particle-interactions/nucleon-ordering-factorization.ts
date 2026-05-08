@@ -28,10 +28,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:nuclear-groebner-reduction",
     "prop:confinement-topological",
     "prop:ordering-jet-compatibility",
     "unital-groebner-bases:prop:jet-stratified-reduction",
-    "thm:groebner-shirshov-energy",
   ],
 });

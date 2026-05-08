@@ -1,7 +1,7 @@
 {
   "name": "odd-a-decomposition-search",
   "description": "Decomposition-based census search for odd-A and non-\u03b1 atoms.  Splits B(atom) = B(\u03b1-chain base) + B(residual bond) per cluster-model intuition, then searches SnapPy for a hyperbolic link matching the residual at either m_e or 2m_e density.  Gives candidate knots/links for the extra bond holding the \u03b1-chain to the odd nucleons.",
-  "timestamp": "2026-04-23T18:26:47.477173+00:00",
+  "computedAt": "2026-04-23T18:26:47.477173+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "M_E_MEV": 0.51099895,
@@ -446,5 +446,7 @@
         }
       ]
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

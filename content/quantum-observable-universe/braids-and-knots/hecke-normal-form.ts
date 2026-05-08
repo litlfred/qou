@@ -6,10 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.HeckeNormalForm",
     validation: "not_checked",
   },
-  uses: [
-    "rem:hecke-algebra-from-braiding",
-    "def:substrate-parameter",
-  ],
+  uses: ["rem:hecke-algebra-from-braiding"],
   tags: [
     "hecke-algebra",
     "normal-form",

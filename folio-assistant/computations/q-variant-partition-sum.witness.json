@@ -5,7 +5,7 @@
     "prop:partition-sum-proton-residual",
     "rem:deuteron-first-principles"
   ],
-  "timestamp": "2026-04-24T20:06:20.521509+00:00",
+  "computedAt": "2026-04-24T20:06:20.521509+00:00",
   "parameters": {
     "q_0": "1.1099785955541805",
     "m_e_MeV": 0.51099895,
@@ -72,5 +72,7 @@
       "diff_vs_gap_pct": -6.5287328402540865
     }
   },
-  "best": "(G) [5]_q/[2]_q \u2212 (q \u2212 q\u207b\u00b9)/2"
+  "best": "(G) [5]_q/[2]_q \u2212 (q \u2212 q\u207b\u00b9)/2",
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

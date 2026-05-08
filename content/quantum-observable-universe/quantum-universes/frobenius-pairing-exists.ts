@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.FrobeniusHopfData.frobeniusForm_exists",
     validation: "not_checked",
   },
-  uses: [
-    "def:frobenius-pairing",
-    "def:quantum-universe",
-  ],
+  uses: ["def:frobenius-pairing"],
   proofs: ["prf:frobenius-pairing-exists"],
   tags: ["existence", "frobenius-pairing", "quantum-universe"],
 });

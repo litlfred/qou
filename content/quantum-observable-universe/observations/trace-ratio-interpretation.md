@@ -34,7 +34,7 @@ $$
    \cdot 
   \frac{1}{[2]_q  \cdot  s^2}
    \cdot 
-  \frac{1}{f(Z_d, \mathcal{Q}_q)}
+  \frac{1}{f(Z_d, Q)}
    \cdot 
   \prod_{i=0}^{p}
   \left|
@@ -47,7 +47,7 @@ $\mathbf{E}_{\times} = \frac{1}{2}(q - q^{-1})$ is the crossing energy,
 $\mu_0$ is the single dimensional scale (unit choice),
 $N_v$ is the effective crossing count of the weak scale
 ($v = N_v\mathbf{E}_{\times}\mu_0$), and
-$f(Z_d, \mathcal{Q}_q)$ is the Coulomb-corrected phase space integral
+$f(Z_d, Q)$ is the Coulomb-corrected phase space integral
 ([Skein-Coulomb enhancement](#prop:skein-coulomb-enhancement)).
 The prefactor replaces the standard-physics combination
 $G_F^2m_e^5/(2\pi^3)$

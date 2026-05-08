@@ -12,16 +12,12 @@ export default remark({
     "appendix",
     "witness",
   ],
-  uses: [
-    "rem:particle-nf-table",
-    "def:hecke-normal-form",
-    "rem:knot-particle-dictionary",
-  ],
+  uses: ["rem:particle-nf-table"],
   interprets: "rem:particle-nf-table",
   computation: {
     engine: "python",
-    script: "computations/hadron_knot_table.py",
-    witness: "computations/hadron-knot-table.witness.json",
+    script: "folio-assistant/computations/hadron_knot_table.py",
+    witness: "folio-assistant/computations/hadron-knot-table.witness.json",
     status: "verified",
   },
 });

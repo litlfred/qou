@@ -47,6 +47,7 @@ from hecke_symbolic import (
 from mass_at_3A_proper import atom_braid_word_3A
 from markov_trace_canonical import tr_M_element
 from q_parameter import Q as Q0_FLOAT
+from witness_polynomial import expose_polynomial
 
 # Rational approximation of q_0 for sympy, kept consistent with q_parameter.Q.
 _Q0_RATIONAL = sp.Rational(str(float(Q0_FLOAT)))
@@ -254,7 +255,11 @@ def main() -> int:
             for k, v in items[:20]
         ],
         "markov_trace": str(sp.simplify(tr_simp)),
+        "markov_trace_polynomial": expose_polynomial(
+            tr_simp, q_sym, simplify=False
+        ),
         "J_62": str(J_62),
+        "J_62_polynomial": expose_polynomial(J_62, q_sym),
         "difference": str(diff),
         "at_q0": {
             "tr_M_D": str(tr_val),

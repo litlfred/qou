@@ -18,7 +18,7 @@
   "scriptFile": "h2-integer-lp.py",
   "scriptHash": "2c33ecd6f597",
   "scriptCommitSha": "",
-  "description": "H₂ molecular binding from integer LP. Scans all inter-atomic crossing operators (σ₀, σ₁, σ₀⁻¹, σ₁⁻¹) up to 4 crossings to find optimal binding configuration. Zero fitted parameters.",
+  "description": "H\u2082 molecular binding from integer LP. Scans all inter-atomic crossing operators (\u03c3\u2080, \u03c3\u2081, \u03c3\u2080\u207b\u00b9, \u03c3\u2081\u207b\u00b9) up to 4 crossings to find optimal binding configuration. Zero fitted parameters.",
   "contentBlock": "prop:h2-lp-dual-binding",
   "parameters": {
     "q": 1.1099785955541805,
@@ -27,29 +27,31 @@
   },
   "data": {
     "best_1_crossing": {
-      "ops": "σ₀⁻¹",
+      "ops": "\u03c3\u2080\u207b\u00b9",
       "binding": -1.6659922226701795,
       "E_eV": -11.245911521244135
     },
     "best_2_crossings": {
-      "ops": "σ₁⁻¹,σ₁⁻¹",
+      "ops": "\u03c3\u2081\u207b\u00b9,\u03c3\u2081\u207b\u00b9",
       "binding": 0.747447764794325,
       "E_eV": 5.04548059423491
     },
     "best_3_crossings": {
-      "ops": "σ₀⁻¹,σ₁⁻¹,σ₀⁻¹",
+      "ops": "\u03c3\u2080\u207b\u00b9,\u03c3\u2081\u207b\u00b9,\u03c3\u2080\u207b\u00b9",
       "binding": 0.44803549636640616,
       "E_eV": 3.0243643889511715
     },
     "best_4_crossings": {
-      "ops": "σ₁⁻¹,σ₁⁻¹,σ₀⁻¹,σ₀⁻¹",
+      "ops": "\u03c3\u2081\u207b\u00b9,\u03c3\u2081\u207b\u00b9,\u03c3\u2080\u207b\u00b9,\u03c3\u2080\u207b\u00b9",
       "binding": 1.776911384097398,
       "E_eV": 11.994646754486602
     },
     "closest_to_observed": {
-      "ops": "σ₁⁻¹,σ₁⁻¹",
+      "ops": "\u03c3\u2081\u207b\u00b9,\u03c3\u2081\u207b\u00b9",
       "E_eV": 5.04548059423491,
       "error_pct": 12.672634976215047
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

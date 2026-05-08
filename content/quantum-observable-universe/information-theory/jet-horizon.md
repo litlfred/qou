@@ -24,7 +24,7 @@ $$
 
 The ideal $\mathfrak{h} \subset \Gamma(U, A_0)$ is the
 **horizon ideal**.  At degree $0$, no fibre data crosses
-$\mathcal{H}$: photons ($K = \varnothing$, step $0$) cannot
+$\mathcal{H}$: photons ($K = \mathbf{1}_{B_4}$ 4-strand id, step $0$) cannot
 propagate across the horizon, and no zeroth-order observable
 distinguishes one side from the other.
 

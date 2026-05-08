@@ -1,8 +1,8 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with
-Hecke algebra $H_n(q)$
+Hecke algebra $H_n(R, q)$
 ([Hecke algebra](#rem:hecke-algebra-from-braiding)) and Markov trace
-$\mathrm{tr}_M \colon H_n(q) \to k$
+$\mathrm{tr}_M \colon H_n(R, q) \to k$
 ([Jones--Markov trace](#thm:jones-markov-trace)).
 
 Let $\varrho \colon \mathbf{1} \to A$ be a vortex morphism with braid
@@ -33,12 +33,12 @@ $$
   \Phi_{\mathrm{mass}}(\beta)
   \;:=\;
   \tau\bigl(L_{\alpha_\varrho}\bigr)
-  \;\in\; H_n(q).
+  \;\in\; H_n(R, q).
 $$
 
 The descent involution $\hat{\tau}_n$
 ([descent eigenspaces](#prop:descent-eigenspaces)) induces an
-idempotent decomposition within $H_n(q)$:
+idempotent decomposition within $H_n(R, q)$:
 
 $$
   \Phi_{\mathrm{mass}}(\beta)

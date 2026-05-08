@@ -1,7 +1,7 @@
 The **Breit--Wheeler process** $\gamma\gamma \to e^-e^+$ is the
 creation of an electron--positron pair from two real photons.
 In the QOU the entire vertex is encoded in the Iwahori--Hecke algebra
-$H_n(q)$ acting on the exceptional divisor
+$H_n(R, q)$ acting on the exceptional divisor
 $\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$
 ([exceptional divisor](#def:exceptional-divisor)).
 
@@ -19,12 +19,12 @@ photon completing one full rotation in the polarisation sphere.
 
 The two Hecke generators act on $\mathcal{S}_p$ as follows:
 
-| Generator | Coordinate patch | Polarisation mode | Eigenvalues of $T_i$ |
+| Generator | Coordinate patch | Polarisation mode | Eigenvalues of $\sigma_i$ |
 |-----------|-----------------|-------------------|----------------------|
-| $\sigma_0 = T_0$ | $v_2 \neq 0$ (affine chart $z = v_1/v_2$) | horizontal ($\leftrightarrow$) | $+q$ (left), $-q^{-1}$ (right) |
-| $\sigma_1 = T_1$ | $v_1 \neq 0$ (affine chart $w = v_2/v_1$) | vertical ($\updownarrow$) | $+q$ (left), $-q^{-1}$ (right) |
+| $\sigma_0$ | $v_2 \neq 0$ (affine chart $z = v_1/v_2$) | horizontal ($\leftrightarrow$) | $+q$ (left), $-q^{-1}$ (right) |
+| $\sigma_1$ | $v_1 \neq 0$ (affine chart $w = v_2/v_1$) | vertical ($\updownarrow$) | $+q$ (left), $-q^{-1}$ (right) |
 
-The Hecke relation $(T_i - q)(T_i + q^{-1}) = 0$ is therefore the
+The Hecke relation $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ is therefore the
 **photon helicity equation**: its two roots $+q$ and $-q^{-1}$ are
 the left- and right-circular polarisation eigenvalues.  A linearly
 polarised photon is a superposition of these two eigenstates, with
@@ -34,7 +34,7 @@ the polarisation angle $\psi$ encoded in the ratio $v_1/v_2 \in
 ## The pair-creation vertex
 
 The two-photon state $\gamma_1 \otimes \gamma_2$ is a word in
-$H_n(q)$.  Three cases arise depending on the relative polarisation:
+$H_n(R, q)$.  Three cases arise depending on the relative polarisation:
 
 **Same generator (parallel polarisation).**
 $$

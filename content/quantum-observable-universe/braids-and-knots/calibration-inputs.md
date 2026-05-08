@@ -69,7 +69,7 @@ one nucleon, no nuclear environment.  Once $E_0$ is fixed,
 The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$
 ([categorical action](#def:categorical-action)) lives in a
 vector space of dimension $\dim \mathrm{End}(A) = (\dim A)^2$.
-For $H_3(q)$ this is $6^2 = 36$ in principle.  The on-shell
+For $H_3(R, q)$ this is $6^2 = 36$ in principle.  The on-shell
 constraint $\star_q F_\nabla = F_\nabla$
 ([instanton on-shell](#rem:instanton-on-shell)) and gauge
 invariance $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
@@ -77,7 +77,7 @@ invariance $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
 all but three real parameters:
 
 1. **The deformation parameter $q$.**  This is the single
-   continuous parameter of the Iwahori--Hecke algebra $H_n(q)$.
+   continuous parameter of the Iwahori--Hecke algebra $H_n(R, q)$.
    It controls all dimensionless ratios: mass ratios, coupling
    constants, crossing asymmetries.  The observability condition
    forces $q \neq 1$ (otherwise $\mathrm{Ad}(A)$ has invariants),
@@ -119,7 +119,7 @@ No further parameters exist because:
   orthogonality
   ([RJ canonical inner product](#prop:rj-canonical-inner-product)).
 
-## What is predicted (given the two inputs)
+## What is predicted (given the three inputs)
 
 **From $q_0$ alone (dimensionless):**
 - Lepton mass ratios: $m_\tau/m_e$, $m_\tau/m_\mu$
@@ -161,9 +161,9 @@ Higgs mass, Higgs VEV, QCD theta angle).  The QOU framework
 replaces all 19 with **3** (one dimensionless ratio + two
 mass/energy scales), deriving the rest from the topology of
 the Bring surface $\Sigma_4$ and the Iwahori--Hecke algebra
-$H_n(q)$.
+$H_n(R, q)$.
 
-The reduction from 19 to 2 is possible because:
+The reduction from 19 to 3 is possible because:
 - **Particle content** is topological (from $\chi = -6$), not a
   free choice
 - **Mass ratios** are knot invariants (from Vol and $\mathrm{tr}_M$),

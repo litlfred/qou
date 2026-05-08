@@ -1,7 +1,7 @@
 {
   "computation": "tower-volume-extractor",
   "description": "Test the density-volume hypothesis: if \ud835\udd2a = \u03c1\u00b7V with \u03c1 = 1/\u210f_q\u00b2 (from topological-mass-formula), then the per-level mass contribution \ud835\udd2a^(n) = \u210f_q^{2n}\u00b7\u0394^(n) should factor into a constant density times a level-n volume.  Extract V_n = \u0394^(n)\u00b7\u210f_q^{2(n-1)} and check whether it stabilises with n.  If constant, q effectively plays the role of density in the categorical mass formula.  If V_n decays geometrically, the density is level-dependent.",
-  "timestamp": "2026-04-20T15:55:00.805564+00:00",
+  "computedAt": "2026-04-20T15:55:00.805564+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "hbar_q": 0.09908172643569886,
@@ -286,5 +286,7 @@
       ],
       "atom": "3He"
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -12,17 +12,5 @@ export default remark({
     "regime-switch",
     "open-set",
   ],
-  uses: [
-    "prop:confinement-phase-stratification",
-    "def:confined-particle",
-    "def:confinement-category",
-    "prop:confinement-sdp",
-    "prop:level-sufficiency",
-    "prop:shell-closure-stability",
-    "def:electron-shell",
-    "def:dressed-particle",
-    "rem:deconfinement-golden-threshold",
-    "thm:parity-regime-selection",
-  ],
   interprets: "prop:confinement-phase-stratification",
 });

@@ -6,10 +6,7 @@ export default proposition({
     "Nonlinear estimates and uniqueness for the $q$-Navier--Stokes system",
   uses: [
     "prop:q-spectral-sobolev",
-    "def:q-navier-stokes",
     "thm:q-ns-wellposedness",
-    "def:frobenius-pairing",
-    "rem:planck-reynolds",
   ],
   tags: [
     "nonlinear-estimate",

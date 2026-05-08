@@ -149,8 +149,8 @@ status — `proof-objects.json` is a derived artifact generated from content
 objects, not the other way around.
 
 **Completeness by kind:**
-- `definition`: `.ts` + `.md` + `.lean` required; `lean.decl` must be set;
-  label prefix `def:`.
+- `definition`: `.ts` + `.md` + `.lean` required; `lean.ref` URI must be
+  set; label prefix `def:`.
 - `theorem` / `lemma` / `proposition` / `corollary`: `.ts` + `.md` + `.lean`
   expected; label prefixes `thm:` / `lem:` / `prop:` / `cor:`.
 - `example` / `remark` / `conjecture`: `.ts` + `.md` required; `.lean`

@@ -1,7 +1,7 @@
 {
   "computation": "per-block-phi-q",
   "description": "Per-block \u03a6_q mass formula: apply \u03a6_q to each Wedderburn block (sym/std/alt) per generator, then sum blockwise with three independent E_0 scales.  This preserves the rep-theory three-block structure.  Linear LSQ fit of (E_0^sym, E_0^std, E_0^alt) against CODATA observables {m_e\u207b, m_e\u207a, m_p, m_n, 2m_e (\u03b3\u03b3)}.  Held-out test on e\u207a and \u03b3\u03b3 after fitting on {e\u207b, p, n}.  If residuals stay within AME (~0.1%), the per-block model is rep-theory-complete.",
-  "timestamp": "2026-04-20T15:32:39.045324+00:00",
+  "computedAt": "2026-04-20T15:32:39.045324+00:00",
   "parameters": {
     "q0": 1.1099785955541805,
     "HA": 0.20906032198987945,
@@ -222,5 +222,7 @@
     "E0_BETA_DECAY": 0.782,
     "E0_PROTON_TOWER": 0.0007958232069470076,
     "E0_FROM_NET": 4.154925
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

@@ -13,10 +13,7 @@ export default remark({
     "infinitesimal",
   ],
   interprets: "def:classical-limit-functor",
-  uses: [
-    "def:classical-limit-functor",
-    "def:substrate-parameter",
-  ],
+  uses: ["def:classical-limit-functor"],
   cites: [
     "berarducci-mantova2018",
     "robinson1966",

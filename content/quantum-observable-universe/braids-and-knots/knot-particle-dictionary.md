@@ -9,7 +9,7 @@ $q$-Schur--Weyl duality
 $V^{\otimes n}$ into irreducible summands labelled by partitions
 $\lambda \vdash n$. By Alexander's theorem, every oriented knot is the
 closure of a braid $\beta \in B_n$, so the Markov trace on the
-Iwahori--Hecke algebra $H_n(q)$ identifies each irreducible summand
+Iwahori--Hecke algebra $H_n(R, q)$ identifies each irreducible summand
 with a knot type.
 
 **Fermion--boson principle**

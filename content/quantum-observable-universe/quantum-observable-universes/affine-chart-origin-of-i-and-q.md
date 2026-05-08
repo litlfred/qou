@@ -52,7 +52,7 @@ generates a $\mathbb{Z}_2$ in $\mathrm{Aut}(\mathbb{P}(V))$.  Its
 linearisation on $T_p\mathbb{P}(V)$ at any fixed point ($z = \pm 1$)
 acts by $-1$.  Recovering a continuous categorical coordinate requires
 a *square root of $\iota$*: a one-parameter family
-$\rho_\theta\colon z \mapsto e^{i\theta} z$ with $\rho_\pi = \iota$
+$\rho_\varTheta\colon z \mapsto e^{i\varTheta} z$ with $\rho_\pi = \iota$
 and $\rho_{\pi/2}$ the *quarter-turn between the two charts*.  The
 quarter-turn generator is
 
@@ -72,7 +72,7 @@ categorical coordinate.
 |--------|------------------|-----------------------|
 | $\mathbb{P}_q(V)$ | $z\,w = q^{-1}$ (continuous deformation) | $q \in \mathrm{End}_R(\mathbf{1})$ |
 | $\mathbb{P}(V)$ at $q=1$ | $z\,w = 1$, $\iota: z \mapsto z^{-1}$ ($\mathbb{Z}_2$) | $i = \sqrt{\iota|_{T_p}} \in \mathrm{End}_{R[i]}(\mathbf{1})$ |
-| $\mathbb{P}(V)$ over $R[i]$ | $z\,w = 1$, $\rho_\theta: z \mapsto e^{i\theta} z$ ($\mathrm{U}(1)$) | $i$ as quarter-turn generator |
+| $\mathbb{P}(V)$ over $R[i]$ | $z\,w = 1$, $\rho_\varTheta: z \mapsto e^{i\varTheta} z$ ($\mathrm{U}(1)$) | $i$ as quarter-turn generator |
 
 The hierarchy of the categorical-coordinate group is therefore an
 expansion of chart-transition automorphisms,
@@ -82,7 +82,7 @@ $$
   \;\hookrightarrow\;
   \underbrace{\mathbb{Z}_4}_{\iota,\;\pm i}
   \;\hookrightarrow\;
-  \underbrace{\mathrm{U}(1)}_{\rho_\theta,\;\text{rotation}}
+  \underbrace{\mathrm{U}(1)}_{\rho_\varTheta,\;\text{rotation}}
   \;\hookrightarrow\;
   \underbrace{\mathrm{U}_q(1)}_{q\text{-deformation}},
 $$

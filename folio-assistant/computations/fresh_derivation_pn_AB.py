@@ -44,6 +44,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
 import sympy as sp
+
+# P2.5 migration: helper available; per-witness expose_polynomial call is a follow-up
+import sys as _p25_sys
+from pathlib import Path as _P25Path
+_p25_sys.path.insert(0, str(_P25Path(__file__).parent))
+from witness_polynomial import expose_polynomial  # noqa: F401
 import mpmath as mp
 from scipy.optimize import linprog
 
@@ -55,12 +61,12 @@ from hecke_core import (
 )
 from hecke_characters import (build_seminormal_matrices, dim_q, qfac,
                                 partitions_of, young_hooks)
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 
-Q0 = mp.mpf(str(Q0_FLOAT))
-QI = mp.mpf(1) / Q0
+Q0 = Q_MP  # was f64 roundtrip
+QI = Q_INV_MP
 
 
 def q_int(k):

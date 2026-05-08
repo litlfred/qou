@@ -6,7 +6,7 @@
     "prop:figure-eight-bw-coefficients",
     "thm:six-term-mass-formula-complete"
   ],
-  "timestamp": "2026-04-24T23:26:52.317742+00:00",
+  "computedAt": "2026-04-24T23:26:52.317742+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "h": 0.20906032198987934
@@ -204,5 +204,7 @@
       "err_pct_per_crossing": 4.731117325289072,
       "err_pct_paper": 4.731117325289072
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

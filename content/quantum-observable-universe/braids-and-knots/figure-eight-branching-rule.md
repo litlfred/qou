@@ -2,7 +2,7 @@
 *For any partition $\lambda \vdash k$ and substrate parameter $q > 1$,
 the Frobenius character of the figure-eight braid
 $4_1 = \sigma_0\sigma_1^{-1}\sigma_0^{-1}\sigma_1$ in the irreducible
-representation $\rho_\lambda$ of $H_k(q)$ is determined by three
+representation $\rho_\lambda$ of $H_k(R, q)$ is determined by three
 branching multiplicities in Young's lattice:*
 
 $$
@@ -29,9 +29,9 @@ seminormal matrix computation for all 191 partitions at $k = 3$ through
 $k = 11$.*
 
 *Proof.*
-The figure-eight braid $4_1$ lives in $H_3(q)$ (three strands).  Its
-character in an irreducible representation $\rho_\lambda$ of $H_k(q)$
-with $k \geq 3$ factors through the restriction $H_k(q) \downarrow H_3(q)$:
+The figure-eight braid $4_1$ lives in $H_3(R, q)$ (three strands).  Its
+character in an irreducible representation $\rho_\lambda$ of $H_k(R, q)$
+with $k \geq 3$ factors through the restriction $H_k(R, q) \downarrow H_3(R, q)$:
 
 $$
   \chi(4_1, \lambda)

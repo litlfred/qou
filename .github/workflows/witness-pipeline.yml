@@ -1,0 +1,237 @@
+# Witness pipeline CI — keeps the QOU computation witnesses green
+#
+# Triggers
+# ────────
+#   pull_request — PRs that touch any of:
+#     - folio-assistant/computations/{habiro_*,markov_*,witness_base,
+#       derivation_chain*,build_*}.py
+#     - any *.witness.json or *.derivation.json under
+#       folio-assistant/computations/
+#     - this workflow file
+#   push (main) — same path filters
+#   workflow_dispatch — manual run
+#
+# Steps
+# ─────
+#   1. Set up Python + uv + sympy + mpmath.
+#   2. Habiro / Markov pipeline:
+#      - habiro_witness_validator (tail_in_ideal axiom)
+#      - markov_substrate_realizer (Place → realize)
+#      - markov_pipeline_cross_validator (skips if term6 absent)
+#      - habiro_interpolate_cross_validator
+#   3. Derivation-chain pipeline:
+#      - derivation_chain_validator runs structural + script-existence
+#        + leaf-value checks across every *.derivation.json + emits
+#        the chain audit witness.
+#   4. Drift check on regenerated witnesses (timestamp-tolerant).
+
+name: Witness pipeline
+
+on:
+  pull_request:
+    paths:
+      - "folio-assistant/computations/habiro_*.py"
+      - "folio-assistant/computations/markov_*.py"
+      - "folio-assistant/computations/witness_base.py"
+      - "folio-assistant/computations/picard_lefschetz_thimble.py"
+      - "folio-assistant/computations/sw_period_baryon.py"
+      - "folio-assistant/computations/mobius_limit_from_thimble.py"
+      - "folio-assistant/computations/baryon_product_from_alt.py"
+      - "folio-assistant/computations/sw_period_thimble_equivalence.py"
+      - "folio-assistant/computations/jet_gb_pl_correspondence.py"
+      - "folio-assistant/computations/q_parameter.py"
+      - "folio-assistant/computations/derivation_chain*.py"
+      - "folio-assistant/computations/build_*.py"
+      - "folio-assistant/computations/*.witness.json"
+      - "folio-assistant/computations/*.derivation.json"
+      - ".github/workflows/witness-pipeline.yml"
+  push:
+    branches: [main]
+    paths:
+      - "folio-assistant/computations/habiro_*.py"
+      - "folio-assistant/computations/markov_*.py"
+      - "folio-assistant/computations/witness_base.py"
+      - "folio-assistant/computations/picard_lefschetz_thimble.py"
+      - "folio-assistant/computations/sw_period_baryon.py"
+      - "folio-assistant/computations/mobius_limit_from_thimble.py"
+      - "folio-assistant/computations/baryon_product_from_alt.py"
+      - "folio-assistant/computations/sw_period_thimble_equivalence.py"
+      - "folio-assistant/computations/jet_gb_pl_correspondence.py"
+      - "folio-assistant/computations/q_parameter.py"
+      - "folio-assistant/computations/derivation_chain*.py"
+      - "folio-assistant/computations/build_*.py"
+      - "folio-assistant/computations/*.witness.json"
+      - "folio-assistant/computations/*.derivation.json"
+      - ".github/workflows/witness-pipeline.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install sympy mpmath numpy scipy
+
+      - name: Run habiro_witness_validator
+        run: python3 folio-assistant/computations/habiro_witness_validator.py
+
+      - name: Run markov_substrate_realizer
+        run: python3 folio-assistant/computations/markov_substrate_realizer.py
+
+      - name: Run markov_pipeline_cross_validator (skips if term6 absent)
+        run: python3 folio-assistant/computations/markov_pipeline_cross_validator.py
+
+      - name: Run habiro_interpolate_cross_validator
+        run: python3 folio-assistant/computations/habiro_interpolate_cross_validator.py
+
+      # ── Picard–Lefschetz / SW thimble correctness chain ─────────
+      # Re-runs each PL-correctness witness script and asserts that the
+      # regenerated witness has `allPassed: true`.  Drift detection
+      # below catches any substantive numerical change.
+      - name: Run picard_lefschetz_thimble (root PLT witness)
+        run: |
+          python3 folio-assistant/computations/picard_lefschetz_thimble.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/picard-lefschetz-thimble.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run mobius_limit_from_thimble
+        run: |
+          python3 folio-assistant/computations/mobius_limit_from_thimble.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/mobius-limit-from-thimble.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run baryon_product_from_alt
+        run: |
+          python3 folio-assistant/computations/baryon_product_from_alt.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/baryon-product-from-alt.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run sw_period_thimble_equivalence
+        run: |
+          python3 folio-assistant/computations/sw_period_thimble_equivalence.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/sw-period-thimble-equivalence.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run jet_gb_pl_correspondence
+        run: |
+          python3 folio-assistant/computations/jet_gb_pl_correspondence.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/jet-gb-pl-correspondence.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
+      - name: Run derivation_chain_validator
+        # Walks every *.derivation.json: structural well-formedness,
+        # SCRIPT_CITED file-existence checks, COMPUTATIONAL leaf-value
+        # consistency.  Emits derivation-chain-audit.witness.json with
+        # per-chain results + the global witness-trust audit.
+        run: python3 folio-assistant/computations/derivation_chain_validator.py
+
+      - name: E_0 / Q_β(n) calibration audit (strict)
+        # Per CAL-3 (`prop:three-calibration-inputs`), every site
+        # that uses E_0 or Q_β(n) must derive from the authoritative
+        # `experimental_constants.Q_NEUTRON_MEV` (computed from CODATA
+        # m_n - m_p - m_e). Strict mode fails CI if any active code
+        # site hardcodes the value or anchors on proton mass instead.
+        run: |
+          python3 folio-assistant/computations/e0_calibration_audit.py --strict
+
+      - name: Cross-check tr_M @ q_0 — Hoefsmit vs markov_peel (1ppb)
+        # Independent-path consistency gate for the canonical Markov
+        # trace at the calibrated substrate parameter q_0. Both paths
+        # store full 50-dps decimal strings; the script reports
+        # relative |Δ| via mpmath. Strict mode fails CI on any > 1ppb.
+        run: |
+          python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
+
+      - name: Axiomatic Markov-trace recursive reducer (H_3..H_6)
+        # Per prop:markov-trace-recursive-reducer: terminating axiom-
+        # only reducer for arbitrary H_n braid words. Smoke-tests the
+        # recursive descent on representative atomic-braid words
+        # (proton, neutron-like, deuteron disjoint) and emits the
+        # symbolic closed form + numerical value at q_0 for each.
+        run: |
+          python3 folio-assistant/computations/markov_trace_recursive.py
+
+      - name: Multi-atom axiomatic Markov-trace anchor (proton/neutron/deuteron)
+        # Per prop:markov-trace-recursive-reducer + prop:markov-trace-
+        # axiomatic-closed-form: applies the recursive reducer to all
+        # supported atoms, verifies the disjoint-product property
+        # tr_M(p ⊗ n) = tr_M(p) · tr_M(n) on the H_6 deuteron word
+        # (mpmath-exact at 50 dps), and cross-checks the proton against
+        # markov_trace_atomic_proton_full at float64 precision. Exits
+        # non-zero on any structural failure.
+        run: |
+          python3 folio-assistant/computations/markov_trace_axiomatic_multi_atom.py
+
+      - name: Atomic-braid mass-table (Strategy 3 — knot-op + Δ_n²)
+        # Re-derives the six-term mass formula using the atomic-braid
+        # Markov-trace anchor (PR #534/#547) with inter-carrier
+        # coupling via the canonical jet-knot-invariants a_k(Z,N) and
+        # full-twist Δ_n² scalar. Per-atom predictions for p, n, D,
+        # T, ³He, ⁴He vs CODATA. Informational; does not gate CI.
+        run: |
+          python3 folio-assistant/computations/atomic_braid_mass_table.py || true
+
+      - name: Full-twist Δ_n² scalar verification
+        # Per prop:categorical-neutrality-saturated-shells: tabulates
+        # c(λ) and q^c(λ) per Wedderburn block at n ∈ {1,...,12};
+        # records the empirical realisability of the categorical-
+        # neutrality predicate at magic n. Informational compute.
+        run: |
+          python3 folio-assistant/computations/full_twist_delta_n2_verification.py
+
+      - name: Run lp_dual_witness_validator (warn-only)
+        # Per prop:operator-selection-lp § dual program: every
+        # operator-selection / LP / SDP witness should include the LP
+        # dual variables (y_0_star, y_star, active_set, primal_obj,
+        # dual_obj, duality_gap). Currently warn-only (~58 legacy
+        # witnesses are missing the dual). To enforce: pass --strict.
+        # Migration target: route LP solves through lp_dual_solver.py.
+        run: python3 folio-assistant/computations/lp_dual_witness_validator.py
+
+      - name: Run bound_state_observable_validator (warn-only)
+        # Per prop:confinement-frobenius-reciprocity: every witness
+        # whose description / computation / name claims a bound-state
+        # observable (axial coupling, magnetic moment, form factor,
+        # expectation value of an operator on a confined state, …)
+        # must include gram_matrix, gram_inverse, lp_active_set,
+        # shadow_prices — OR carry the explicit opt-out
+        # "observable_type": "raw_trace" (legitimate raw Markov-trace
+        # case). Currently warn-only; tickets AXIAL-G_A-002 and
+        # TRIAGE-001..003 in docs/audits/2026-05-06-frobenius-pairing-
+        # compute-audit.md are pending. Pass --strict to enforce.
+        run: python3 folio-assistant/computations/bound_state_observable_validator.py
+
+      - name: Detect drift in committed witnesses
+        run: |
+          # The validators rewrite their output witnesses on every run.
+          # Some fields are expected to differ between local commits
+          # and CI re-runs (timestamps, commit SHAs, engine versions,
+          # script hashes when the script itself was just touched).
+          # Anything else differing means a genuine numerical or
+          # structural change.
+          set -eu
+          # Use git pathspec `:(glob)` magic so git does the glob
+          # expansion internally — avoids potential "argument list
+          # too long" if the witness/derivation directory grows
+          # past the OS ARG_MAX on shell glob expansion.
+          PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
+          :(glob)folio-assistant/computations/*.derivation.json'
+          if git diff --quiet -- $PATHSPECS; then
+            echo "Witnesses + derivation chains bit-stable."
+            exit 0
+          fi
+          echo "Witnesses changed — filtering expected drift fields..."
+          drift=$(git diff -- $PATHSPECS | \
+                  grep -E "^[+-]" | \
+                  grep -vE "^\+\+\+|^---" | \
+                  grep -vE '"(computedAt|durationMs|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version)":' || true)
+          if [ -z "$drift" ]; then
+            echo "Only environment / timestamp drift — OK."
+            exit 0
+          fi
+          echo "Substantive witness drift detected:"
+          echo "$drift"
+          exit 1

@@ -1,3 +1,8 @@
+import QOU.BraidKnot.ConfinedParticle
+import QOU.BraidKnot.ElectronShell
+import QOU.BraidKnot.DressedParticle
+import QOU.Interactions.ConfinementSDP
+
 /-!
 # Shell-Closure Stability
 
@@ -25,21 +30,23 @@ principal-submatrix relationship.
 - [boyd-vandenberghe-2004]
 -/
 
-import QOU.BraidKnot.ConfinedParticle
-import QOU.BraidKnot.ElectronShell
-import QOU.BraidKnot.DressedParticle
-import QOU.Interactions.ConfinementSDP
-
 namespace QOU.BraidKnot
 
 open QOU.Descartes
 
-/-- Frobenius stability index
-    `σ_F(D, q) = n_target · y₀*(D, q)` — the optimal dual objective
-    of the confinement SDP at `(D, q)`. Equivalently, by strong
-    duality, the optimal primal `⟨T, Φ*⟩`. -/
+/-- Frobenius stability data — class-supplied evaluation of
+    `σ_F(D, q) = n_target · y₀*(D, q)` (the optimal dual objective
+    of the confinement SDP at `(D, q)`; equivalently, by strong
+    duality, the optimal primal `⟨T, Φ*⟩`). -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque frobeniusStability : DressedParticle → R_q → R_q
+class HasFrobeniusStability (D : DressedParticle) where
+  /-- The stability index `σ_F(D, q)`. -/
+  sigma : R_q → R_q
+
+/-- Frobenius stability accessor, backed by `HasFrobeniusStability`. -/
+def frobeniusStability (D : DressedParticle) [h : HasFrobeniusStability D]
+    (q : R_q) : R_q :=
+  h.sigma q
 
 /-- Is `D` a one-step dressing of `D_prev` (one extra electron)? -/
 -- Ref: [manuscript] braids-and-knots/dressed-particle
@@ -49,19 +56,45 @@ def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
 
 /-! ## §1  Claim (1) — Monotonic non-decrease -/
 
-/-- **Shell-closure stability, claim (1) — monotone non-decrease.**
-    Along any one-step dressing, the Frobenius stability index
-    cannot decrease. Proof via SDP-relaxation monotonicity: the
-    cabling embedding `ι : H_{A+Z-1}(q) ↪ H_{A+Z}(q)` lifts every
-    dual-feasible point of the smaller SDP to a dual-feasible point
-    of the larger SDP with the same objective, so the max over the
-    enlarged feasible set is ≥ the old max. -/
+/-- **Shell-closure monotonicity — typeclass (Pattern 4).**
+
+    Witnesses non-decrease of the Frobenius stability index for a
+    *specific* one-step dressing pair. The full SDP-relaxation
+    monotonicity proof requires the cabling embedding
+    `ι : H_{A+Z-1}(q) ↪ H_{A+Z}(q)` and the dual-feasible lift,
+    which depend on Mathlib SDP infrastructure. By packaging the
+    inequality as a class, the conjectural content is visible at
+    every use site rather than asserted universally. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
-axiom shell_closure_monotone
-    (D_prev D : DressedParticle) (q : R_q)
-    (h : isOneStepDressing D_prev D) :
-    frobeniusStability D_prev q ≤ frobeniusStability D q
+class ShellClosureMonotone
+    (D_prev D : DressedParticle)
+    [HasFrobeniusStability D_prev] [HasFrobeniusStability D]
+    (q : R_q)
+    (_h : isOneStepDressing D_prev D) : Prop where
+  /-- Stability index does not decrease under the one-step dressing. -/
+  monotone : frobeniusStability D_prev q ≤ frobeniusStability D q
+
+/-- **Reflexivity instance**: when `D_prev = D` syntactically, the
+    monotonicity is `≤` reflexivity. -/
+instance shellClosureMonotone_refl
+    (D : DressedParticle) [HasFrobeniusStability D]
+    (q : R_q) (h : isOneStepDressing D D) :
+    ShellClosureMonotone D D q h :=
+  ⟨le_refl _⟩
+
+/-- **Shell-closure stability, claim (1) — monotone non-decrease.**
+    Per-instance form backed by `ShellClosureMonotone`. -/
+-- Ref: [manuscript] braids-and-knots/shell-closure-stability
+-- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+theorem shell_closure_monotone
+    (D_prev D : DressedParticle)
+    [HasFrobeniusStability D_prev] [HasFrobeniusStability D]
+    (q : R_q)
+    (h : isOneStepDressing D_prev D)
+    [hi : ShellClosureMonotone D_prev D q h] :
+    frobeniusStability D_prev q ≤ frobeniusStability D q :=
+  hi.monotone
 
 /-! ## §2  Claim (2) — Local maxima at noble-gas Z -/
 
@@ -70,8 +103,9 @@ axiom shell_closure_monotone
     `μ(S, q) ≥ 2`, giving the multi-operator regime. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 theorem shell_closure_noble_multiplicity
-    (D : DressedParticle) (q : R_q)
-    (h : D.shell.nElectrons ∈ nobleGasMagic) :
+    (D : DressedParticle) [HasBindingMultiplicity D.shell] (q : R_q)
+    (h : D.shell.nElectrons ∈ nobleGasMagic)
+    [NobleGasMultiOperator D.shell q h] :
     bindingMultiplicity D.shell q ≥ 2 :=
   noble_gas_multi_operator D.shell q h
 
@@ -85,9 +119,14 @@ theorem shell_closure_noble_multiplicity
     exceed that of `D` in the generic locus. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 theorem shell_closure_terminality
-    (D D' : DressedParticle) (q : R_q)
+    (D D' : DressedParticle)
+    [HasFrobeniusStability D] [HasFrobeniusStability D']
+    [HasBindingMultiplicity D.shell]
+    (q : R_q)
     (h_noble : D.shell.nElectrons ∈ nobleGasMagic)
-    (h_step : isOneStepDressing D D') :
+    (h_step : isOneStepDressing D D')
+    [ShellClosureMonotone D D' q h_step]
+    [NobleGasMultiOperator D.shell q h_noble] :
     frobeniusStability D' q ≥ frobeniusStability D q ∧
     bindingMultiplicity D.shell q ≥ 2 := by
   refine ⟨?_, shell_closure_noble_multiplicity D q h_noble⟩
@@ -101,8 +140,9 @@ theorem shell_closure_terminality
     stability. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
 theorem ShellClosureStability
-    (D : DressedParticle) (q : R_q)
-    (h : D.shell.nElectrons ∈ nobleGasMagic) :
+    (D : DressedParticle) [HasBindingMultiplicity D.shell] (q : R_q)
+    (h : D.shell.nElectrons ∈ nobleGasMagic)
+    [NobleGasMultiOperator D.shell q h] :
     bindingMultiplicity D.shell q ≥ 2 :=
   shell_closure_noble_multiplicity D q h
 

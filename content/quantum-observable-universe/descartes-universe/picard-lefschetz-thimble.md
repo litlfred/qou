@@ -32,7 +32,7 @@ $$
 H(z_c) = \frac{\partial^2 S}{\partial z^2}\bigg|_{z=z_c}.
 $$
 
-The thimble $\mathcal{J}_{z_c}$ departs from $z_c$ along the direction $e^{i\theta}$ where $\theta = -\tfrac{1}{2}\arg H(z_c)$, and the anti-thimble $\mathcal{K}_{z_c}$ departs along $e^{i(\theta + \pi/2)}$.
+The thimble $\mathcal{J}_{z_c}$ departs from $z_c$ along the direction $e^{i\varTheta}$ where $\varTheta = -\tfrac{1}{2}\arg H(z_c)$, and the anti-thimble $\mathcal{K}_{z_c}$ departs along $e^{i(\varTheta + \pi/2)}$.
 
 We decompose the original real-axis integration contour $\gamma \subset \mathbb{R}$ into thimbles via:
 
@@ -41,3 +41,22 @@ $$
 $$
 
 where $n_\sigma$ are the intersection numbers of the anti-thimbles $\mathcal{K}_\sigma$ with $\gamma$.
+
+## Categorical license: PL is the archimedean realisation of non-abelian Stokes
+
+The Picard–Lefschetz thimble decomposition above is an
+intrinsically archimedean construction: thimbles are objects in
+$\mathbb{C}$ and the steepest-descent ODE requires a complex
+metric.  The categorical license to use PL on the archimedean side
+of the fibre functor $\tau \colon R \hookrightarrow \mathbb{C}$ is
+provided by the non-abelian Stokes theorem of \cite{yekutieli2015}:
+the categorical surface integral
+([Yekutieli–Stokes remark](#rem:yekutieli-stokes),
+ [topological mass holonomy](#prop:topological-mass-formula))
+collapses, after applying $\tau$, to a finite sum of point residues
+at the discriminant locus — exactly the thimble decomposition above.
+The full bridging argument is recorded in
+([PL ↔ Yekutieli Stokes](#rem:pl-yekutieli-stokes)).  See also
+([SW-period thimble equivalence](#prop:sw-period-thimble-equivalence))
+for the four-way correspondence GB filtration $\equiv$ jet order
+$\equiv$ PL degree under $\tau$.

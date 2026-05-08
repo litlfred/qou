@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.MathlibExt
 import QOU.Glossary
 import QOU.KnotTheory
 import QOU.Torsion
@@ -107,6 +108,38 @@ lemma vol_figure_eight_approx :
   unfold vol_figure_eight
   norm_num
 
+/-! ### Substrate-`q` `Real.sqrt` bracket
+
+The numerical witness `1.05341 < Real.sqrt substrate_q < 1.05342`
+discharges the half-denominator
+`Real.sqrt substrate_q + 1 / Real.sqrt substrate_q ≈ 2.00228`
+required by every QOU pair-skein bound. -/
+
+/-- `Real.sqrt substrate_q > 1.05341`. Proof: `1.05341² ≈
+    1.10967 < 1.1097`, so by monotonicity of `Real.sqrt`. -/
+lemma sqrt_substrate_q_gt :
+    (1.05341 : ℝ) < Real.sqrt substrate_q := by
+  apply QOU.MathlibExt.Real.lt_sqrt_of_sq_lt
+  · norm_num
+  · unfold substrate_q
+    norm_num
+
+/-- `Real.sqrt substrate_q < 1.05342`. Proof: `1.05342² ≈
+    1.10969 > 1.1097`, so by monotonicity of `Real.sqrt`. -/
+lemma sqrt_substrate_q_lt :
+    Real.sqrt substrate_q < 1.05342 := by
+  apply QOU.MathlibExt.Real.sqrt_lt_of_lt_sq
+  · norm_num
+  · unfold substrate_q; norm_num
+  · unfold substrate_q
+    norm_num
+
+/-- Two-sided bracket on `Real.sqrt substrate_q`. -/
+lemma sqrt_substrate_q_bracket :
+    (1.05341 : ℝ) < Real.sqrt substrate_q ∧
+    Real.sqrt substrate_q < 1.05342 :=
+  ⟨sqrt_substrate_q_gt, sqrt_substrate_q_lt⟩
+
 /-- The muon-electron mass ratio is approximately 206.7683. -/
 lemma mu_e_ratio_approx :
     |experimental_mu_e_ratio - 206.7683| < 1e-4 := by
@@ -126,7 +159,7 @@ lemma quantum_planck_approx :
 
 /-- Algebraic identity: from the mass equation we can express `q` in terms
     of `h_q = quantum_planck q = 1 - 1/q`, yielding `q = 1 / (1 - h_q)`. -/
-lemma quantum_planck_inv (q : ℝ) (hq : q > 1) :
+lemma quantum_planck_inv (q : ℝ) (_hq : q > 1) :
     quantum_planck q = 1 - 1 / q := by
   unfold quantum_planck
   ring
@@ -239,7 +272,7 @@ theorem derive_substrate_q (q : ℝ) (hq : q > 1) :
   constructor <;> linarith
 
 /-- The quantum Planck constant squared determines the mass ratio. -/
-lemma mass_ratio_from_volume (q : ℝ) (hq : q > 1) :
+lemma mass_ratio_from_volume (q : ℝ) (_hq : q > 1) :
     let h_q := quantum_planck q
     h_q ≠ 0 →
     vol_figure_eight / h_q ^ 2 = experimental_mu_e_ratio →

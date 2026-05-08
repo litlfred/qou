@@ -9,7 +9,7 @@ export default proposition({
   },
   uses: [
     "prop:nuclear-knot-classification",
-    "prop:q-integer-mass-formula",
+    "conj:q-integer-mass-formula",
     "prop:bw-categorical-descent",
     "prop:wedderburn-trace-identity",
   ],

@@ -1,0 +1,292 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-29T21:20:02.059159+00:00",
+  "commitSha": "95ed33748d4b28a0b78e8f7751aa76c1c4cc2f9d",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "probe-phiq-uniform-k",
+  "scriptFile": "probe_phiq_uniform_k.py",
+  "scriptHash": "4c134e3b6d51",
+  "scriptCommitSha": "ce288825a3417ab9f2977b763b1315030b8d4ba5",
+  "description": "Test brane-tower formula with Φ_q truncated at UNIFORM depth k across {D, T, He3}. Tests whether atom-dependent k_max from GB filtration was misidentified — perhaps a single uniform structural depth applies.",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "k_sweep": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ]
+  },
+  "data": {
+    "results": {
+      "1": {
+        "deuteron": {
+          "tower_atom": 34.560326556761616,
+          "tower_free": 33.59751825477792,
+          "delta_tower": -0.9628083019836993,
+          "B_abs_MeV": 19.468692862983,
+          "B_sub_MeV": -3.014739578321547,
+          "AME_MeV": 2.224566,
+          "err_abs_pct": 775.168138998034,
+          "err_sub_pct": -235.52034771373596
+        },
+        "tritium": {
+          "tower_atom": 49.897009949596,
+          "tower_free": 48.192202912761594,
+          "delta_tower": -1.7048070368344028,
+          "B_abs_MeV": 53.67419914715876,
+          "B_sub_MeV": -5.338081564893661,
+          "AME_MeV": 8.481798,
+          "err_abs_pct": 532.8162866783524,
+          "err_sub_pct": -162.9357309015572
+        },
+        "he3": {
+          "tower_atom": 55.813324771147535,
+          "tower_free": 54.4639546994924,
+          "delta_tower": -1.3493700716551373,
+          "B_abs_MeV": 59.82388225842331,
+          "B_sub_MeV": -4.225139472146136,
+          "AME_MeV": 7.71806,
+          "err_abs_pct": 675.1155375628501,
+          "err_sub_pct": -154.74354270562986
+        }
+      },
+      "2": {
+        "deuteron": {
+          "tower_atom": 151.9733319862509,
+          "tower_free": 152.53009301720837,
+          "delta_tower": 0.5567610309574604,
+          "B_abs_MeV": 79.46661535379633,
+          "B_sub_MeV": 1.7433267995678143,
+          "AME_MeV": 2.224566,
+          "err_abs_pct": 3472.2300598766833,
+          "err_sub_pct": -21.632947749456996
+        },
+        "tritium": {
+          "tower_atom": 210.8504358528203,
+          "tower_free": 212.5041343224065,
+          "delta_tower": 1.6536984695861747,
+          "B_abs_MeV": 218.1682624180596,
+          "B_sub_MeV": 5.178050725777412,
+          "AME_MeV": 8.481798,
+          "err_abs_pct": 2472.1935657753183,
+          "err_sub_pct": -38.95102517440981
+        },
+        "he3": {
+          "tower_atom": 247.78271994662143,
+          "tower_free": 253.54735599128244,
+          "delta_tower": 5.764636044661017,
+          "B_abs_MeV": 256.01620099202773,
+          "B_sub_MeV": 18.05019379522631,
+          "AME_MeV": 7.71806,
+          "err_abs_pct": 3217.105606746096,
+          "err_sub_pct": 133.86957078885507
+        }
+      },
+      "3": {
+        "deuteron": {
+          "tower_atom": 513.2582459089928,
+          "tower_free": 517.9003719985394,
+          "delta_tower": 4.64212608954665,
+          "B_abs_MeV": 264.0828270191577,
+          "B_sub_MeV": 14.535397358831933,
+          "AME_MeV": 2.224566,
+          "err_abs_pct": 11771.20665420391,
+          "err_sub_pct": 553.4037362268386
+        },
+        "tritium": {
+          "tower_atom": 699.3995871913288,
+          "tower_free": 709.7032239825144,
+          "delta_tower": 10.303636791185568,
+          "B_abs_MeV": 717.4644691327974,
+          "B_sub_MeV": 32.2626856987395,
+          "AME_MeV": 8.481798,
+          "err_abs_pct": 8358.872389236309,
+          "err_sub_pct": 280.3755488958769
+        },
+        "he3": {
+          "tower_atom": 843.9378682768927,
+          "tower_free": 872.4154485100022,
+          "delta_tower": 28.477580233109506,
+          "B_abs_MeV": 865.2855106597534,
+          "B_sub_MeV": 89.16882836043108,
+          "AME_MeV": 7.71806,
+          "err_abs_pct": 11111.17885400934,
+          "err_sub_pct": 1055.3269650719362
+        }
+      },
+      "4": {
+        "deuteron": {
+          "tower_atom": 1414.4743863176566,
+          "tower_free": 1427.7454433547393,
+          "delta_tower": 13.271057037082755,
+          "B_abs_MeV": 724.6033284910376,
+          "B_sub_MeV": 41.5542541681713,
+          "AME_MeV": 2.224566,
+          "err_abs_pct": 32472.79525494131,
+          "err_sub_pct": 1767.9712882499912
+        },
+        "tritium": {
+          "tower_atom": 1907.700249037481,
+          "tower_free": 1936.0038100260945,
+          "delta_tower": 28.303560988613526,
+          "B_abs_MeV": 1952.3452081081748,
+          "B_sub_MeV": 88.62394034618073,
+          "AME_MeV": 8.481798,
+          "err_abs_pct": 22918.058295047522,
+          "err_sub_pct": 944.8720937020752
+        },
+        "he3": {
+          "tower_atom": 2340.305877151546,
+          "tower_free": 2424.5744166828276,
+          "delta_tower": 84.26853953128148,
+          "B_abs_MeV": 2394.5704733568305,
+          "B_sub_MeV": 263.86114536911134,
+          "AME_MeV": 7.71806,
+          "err_abs_pct": 30925.548821294862,
+          "err_sub_pct": 3318.7495998879426
+        }
+      },
+      "5": {
+        "deuteron": {
+          "tower_atom": 3331.440894684926,
+          "tower_free": 3360.464271927349,
+          "delta_tower": 29.02337724242261,
+          "B_abs_MeV": 1704.1712014518785,
+          "B_sub_MeV": 90.87782468121023,
+          "AME_MeV": 2.224566,
+          "err_abs_pct": 76506.90676077394,
+          "err_sub_pct": 3985.193457115241
+        },
+        "tritium": {
+          "tower_atom": 4462.876034391123,
+          "tower_free": 4523.8377953462095,
+          "delta_tower": 60.9617609550869,
+          "B_abs_MeV": 4563.729494870448,
+          "B_sub_MeV": 190.88310013200237,
+          "AME_MeV": 8.481798,
+          "err_abs_pct": 53706.15637003438,
+          "err_sub_pct": 2150.502784103116
+        },
+        "he3": {
+          "tower_atom": 5537.217612397041,
+          "tower_free": 5737.356227258927,
+          "delta_tower": 200.1386148618858,
+          "B_abs_MeV": 5661.807553263083,
+          "B_sub_MeV": 626.6728300238476,
+          "AME_MeV": 7.71806,
+          "err_abs_pct": 73257.91057938241,
+          "err_sub_pct": 8019.564113570606
+        }
+      },
+      "6": {
+        "deuteron": {
+          "tower_atom": 6928.612946545721,
+          "tower_free": 6983.517095271558,
+          "delta_tower": 54.90414872583733,
+          "B_abs_MeV": 3542.3223429220893,
+          "B_sub_MeV": 171.91554106544947,
+          "AME_MeV": 2.224566,
+          "err_abs_pct": 159136.5586331037,
+          "err_sub_pct": 7628.0485751130545
+        },
+        "tritium": {
+          "tower_atom": 9237.341609519337,
+          "tower_free": 9351.818305680925,
+          "delta_tower": 114.47669616158782,
+          "B_abs_MeV": 9443.223286273773,
+          "B_sub_MeV": 358.4487441609868,
+          "AME_MeV": 8.481798,
+          "err_abs_pct": 111235.15896362744,
+          "err_sub_pct": 4126.093856054893
+        },
+        "he3": {
+          "tower_atom": 11555.613729999606,
+          "tower_free": 11968.20915334269,
+          "delta_tower": 412.5954233430839,
+          "B_abs_MeV": 11812.595746821056,
+          "B_sub_MeV": 1291.916313999324,
+          "AME_MeV": 7.71806,
+          "err_abs_pct": 152951.35936778228,
+          "err_sub_pct": 16638.873680683024
+        }
+      },
+      "8": {
+        "deuteron": {
+          "tower_atom": 22545.734850111676,
+          "tower_free": 22695.198497998503,
+          "delta_tower": 149.46364788682695,
+          "B_abs_MeV": 11522.655237666293,
+          "B_sub_MeV": 467.9996774813452,
+          "AME_MeV": 2.224566,
+          "err_abs_pct": 517873.1793826883,
+          "err_sub_pct": 20937.79692224664
+        },
+        "tritium": {
+          "tower_atom": 29867.76463190275,
+          "tower_free": 30177.519749037518,
+          "delta_tower": 309.7551171347659,
+          "B_abs_MeV": 30527.472291261274,
+          "B_sub_MeV": 969.9033642416761,
+          "AME_MeV": 8.481798,
+          "err_abs_pct": 359817.4643308091,
+          "err_sub_pct": 11335.115104623761
+        },
+        "he3": {
+          "tower_atom": 37779.65046621559,
+          "tower_free": 39086.41051835715,
+          "delta_tower": 1306.7600521415588,
+          "B_abs_MeV": 38613.506220756644,
+          "B_sub_MeV": 4091.719234705336,
+          "AME_MeV": 7.71806,
+          "err_abs_pct": 500200.67427250685,
+          "err_sub_pct": 52914.866879829075
+        }
+      },
+      "10": {
+        "deuteron": {
+          "tower_atom": 55389.37974501618,
+          "tower_free": 55707.47997950897,
+          "delta_tower": 318.10023449279106,
+          "B_abs_MeV": 28305.723293135354,
+          "B_sub_MeV": 996.0335456424203,
+          "AME_MeV": 2.224566,
+          "err_abs_pct": 1272315.5315299863,
+          "err_sub_pct": 44674.28611434412
+        },
+        "tritium": {
+          "tower_atom": 73084.80644531756,
+          "tower_free": 73742.83910695296,
+          "delta_tower": 658.0326616353996,
+          "B_abs_MeV": 74695.19826878338,
+          "B_sub_MeV": 2060.4279219167934,
+          "AME_MeV": 8.481798,
+          "err_abs_pct": 880552.8788917562,
+          "err_sub_pct": 24192.348413824446
+        },
+        "he3": {
+          "tower_atom": 93097.02263216944,
+          "tower_free": 96229.9591192863,
+          "delta_tower": 3132.9364871168655,
+          "B_abs_MeV": 95147.74440787992,
+          "B_sub_MeV": 9809.831930841407,
+          "AME_MeV": 7.71806,
+          "err_abs_pct": 1232693.5311189587,
+          "err_sub_pct": 127002.30201425496
+        }
+      }
+    }
+  },
+  "caveats": [
+    "Uses absolute paper formula B = m_e·ρ·(|tr_M|+tower+σ); compares against AME light-isotope binding."
+  ]
+}

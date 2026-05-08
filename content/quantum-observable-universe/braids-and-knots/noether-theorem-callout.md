@@ -28,9 +28,9 @@ $q$-differential does not square to zero, so the classical chain of
 acquires a correction term at each step.  Concretely:
 
 1. **Energy** is not naively conserved in transitions.  The
-   $\mathcal{Q}_q$-value of a nuclear decay differs from the sum of
+   $Q$-value of a nuclear decay differs from the sum of
    product kinetic energies by a $q$-anomaly $\delta_q \propto \hbar_q^2$
-   ([q-value transition](#def:q-value-transition)).  The "missing"
+   ([q-value transition](#def:Q-value-transition)).  The "missing"
    energy is absorbed by a shift in the effective substrate parameter.
    The conserved quantity is the **full categorical action** evaluated at
    the shifted $q$.
@@ -44,6 +44,6 @@ acquires a correction term at each step.  Concretely:
 
 The pattern is that Noether's theorem **survives the $q$-deformation**,
 but the conserved quantities are categorical — they live in the Hecke
-algebra $H_n(q)$, not in classical phase space.  The archimedean
+algebra $H_n(R, q)$, not in classical phase space.  The archimedean
 (numerical) values obtained by applying the fibre functor $\tau$ carry
 $q$-corrections that are measurable as anomalies in precision experiments.

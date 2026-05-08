@@ -16,6 +16,7 @@ import { join, dirname, basename, extname } from "path";
 import { parse } from "@unified-latex/unified-latex-util-parse";
 import { remark } from "remark";
 import remarkMath from "remark-math";
+import remarkDirective from "remark-directive";
 // Selective GFM: exclude gfm-autolink-literal which causes OOM on
 // dotted Lean identifiers (e.g. "QOU.Descartes.Foo.bar").
 // Tables and strikethrough are loaded individually from the transitive
@@ -34,6 +35,11 @@ import type { Block, Chapter, Section, RenderOptions } from "../schema/types";
 import { isCrossPaperRef } from "../schema/types";
 import { parseLeanRef } from "../../folio-assistant/schemas/lean-packages";
 import { extractCitations } from "./citations";
+import {
+  renderValue,
+  parseValAttrs,
+  substituteValuesInMath,
+} from "./render-value";
 
 // ── LaTeX character escaping ─────────────────────────────────────
 
@@ -90,6 +96,7 @@ const mdParser = remark()
     gfmTableFromMarkdown(),
     gfmStrikethroughFromMarkdown(),
   ])
+  .use(remarkDirective)
   .use(remarkMath);
 
 /**
@@ -100,7 +107,7 @@ const mdParser = remark()
  */
 const MD_AST_CACHE_LIMIT = 512;
 const _mdAstCache = new Map<string, any>();
-function parseMdCached(md: string): any {
+export function parseMdCached(md: string): any {
   let tree = _mdAstCache.get(md);
   if (!tree) {
     tree = mdParser.parse(md);
@@ -157,16 +164,16 @@ export function extractMathContent(md: string): string {
 
   for (const child of (tree as any).children ?? []) {
     if (child.type === "math") {
-      // Display math: extract inner TeX
-      parts.push(child.value);
+      // Display math: extract inner TeX (substituting :val[…] references).
+      parts.push(substituteValuesInMath(child.value));
     } else if (child.type === "code" && child.lang === "tex") {
-      // Fenced TeX: raw passthrough
-      parts.push(child.value);
+      // Fenced TeX: raw passthrough with witness substitution.
+      parts.push(substituteValuesInMath(child.value));
     } else if (child.type === "paragraph") {
       // Check for inline math in paragraphs (rare in equation blocks)
       for (const inline of child.children ?? []) {
         if (inline.type === "inlineMath") {
-          parts.push(inline.value);
+          parts.push(substituteValuesInMath(inline.value));
         } else if (inline.type === "text") {
           // Plain text in an equation .md — treat as raw TeX
           const trimmed = inline.value.trim();
@@ -291,10 +298,10 @@ function renderMdastNode(node: any): string {
       return `\\emph{${renderChildren(node).join("")}}`;
 
     case "inlineMath":
-      return `$${node.value}$`;
+      return `$${substituteValuesInMath(node.value)}$`;
 
     case "math":
-      return `\\[\n${node.value}\n\\]`;
+      return `\\[\n${substituteValuesInMath(node.value)}\n\\]`;
 
     case "inlineCode":
       // Inline code: `text` → \texttt{escaped text}
@@ -390,6 +397,39 @@ function renderMdastNode(node: any): string {
       // Non-table HTML: strip tags, escape for LaTeX
       return escapeLatex(html.replace(/<[^>]*>/g, ""));
     }
+
+    case "textDirective": {
+      // remark-directive inline node: :name[label]{#slug} or :val[name]{key=value}.
+      // We recognise:
+      //   - :defterm[X] / :refterm[X] → \defterm{slug}{label} / \refterm{slug}{label}
+      //   - :val[name]{precision=N format=… units=…} → rendered numeral
+      // Unknown directives fall through to children rendering.
+      const name: string = node.name ?? "";
+      if (name === "val") {
+        // :val[<registry-name>]{key=value ...}
+        const valName = renderChildren(node).join("").trim();
+        const attrs = parseValAttrs(node.attributes);
+        return renderValue(valName, attrs, "text");
+      }
+      if (name === "defterm" || name === "refterm") {
+        const label = renderChildren(node).join("").trim();
+        const slug = (node.attributes && (node.attributes.id || node.attributes["#"])) || label;
+        const slugStr = String(slug).trim();
+        const macro = name === "defterm" ? "defterm" : "refterm";
+        if (!slugStr) return label;
+        if (label && label !== slugStr) {
+          return `\\${macro}{${slugStr}}{${label}}`;
+        }
+        return `\\${macro}{${slugStr}}`;
+      }
+      // Other text directives: render children only (don't drop content)
+      return renderChildren(node).join("");
+    }
+
+    case "leafDirective":
+    case "containerDirective":
+      // Non-inline directives are not currently used; render children if any.
+      return renderChildren(node).join("");
 
     default:
       // Unknown node — render children if any, otherwise empty

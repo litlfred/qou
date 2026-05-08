@@ -37,13 +37,17 @@ export default chapter({
       title: "Confinement operator selection",
       label: "sec:confinement-selection",
       blocks: [
-        "confinement-operator-selection",
+        "algebraic-primality",
+        "algebraic-primality-equals-empirical-at-q0",
         "confinement-lp",
-        "confinement-sdp",
-        "operator-selection-lp",
-        "confinement-topological",
         "confinement-nucleon-unit",
+        "confinement-operator-selection",
+        "confinement-frobenius-reciprocity",
+        "confinement-sdp",
+        "confinement-topological",
         "lp-dual-stability",
+        "n-equals-1-vacuous-magic",
+        "operator-selection-lp",
       ],
     }),
 
@@ -120,7 +124,10 @@ export default chapter({
       blocks: [
         "atomic-braid",
         "atomic-lp-stability",
-        "wedderburn-mass-formula",
+        // wedderburn-mass-formula is referenced from braids-and-knots.ts
+        // (its canonical home as thm:wedderburn-mass-formula). Listing
+        // it here too caused a multiply-defined label because the
+        // pipeline keys block records by rootName.
         "q-integer-mass-formula",
         "universal-ilp-algorithm",
         "neutron-proton-splitting",

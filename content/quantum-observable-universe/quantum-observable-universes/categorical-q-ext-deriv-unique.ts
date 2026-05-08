@@ -6,10 +6,7 @@ export default proposition({
   lean: { ref: "qou:QOU.CategoricalQExtDeriv.unique",
     validation: "not_checked",
   },
-  uses: [
-    "def:categorical-q-ext-deriv",
-    "prop:categorical-q-ext-deriv-exists",
-  ],
+  uses: ["prop:categorical-q-ext-deriv-exists"],
   proofs: ["prf:categorical-q-ext-deriv-unique"],
   tags: ["uniqueness", "q-ext-deriv"],
 });

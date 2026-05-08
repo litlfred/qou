@@ -18,7 +18,7 @@ level $k$, and $\mathrm{Res}^{H_k}_{H_3}$ is the restriction functor.
 Three prefix conventions were tested — all failed to reproduce AME
 bindings:
 
-| convention | D | T | ³He | ⁴He |
+| convention | D | T | ${}^{3}\mathrm{He}$ | ${}^{4}\mathrm{He}$ |
 |---|---|---|---|---|
 | nucleon-cumulative ($A$-step prefix) | $-65\%$ | $-91\%$ | $-91\%$ | degenerate |
 | strand-cumulative (first $k$ strands) | $-99\%$ | $-99\%$ | $-99\%$ | degenerate |
@@ -74,7 +74,7 @@ $J^\ell/J^{\ell+1}$ is itself a semisimple $H_3$-bimodule.*
 3. *Product $\prod_\ell a_\ell = 1 + $ (corrections from higher
    strata) — matches the "near 1" shape expected.*
 
-**Status: candidate TESTED (height-based heuristic), FAILS.**
+**Caveat.** A first candidate prefix — the height-based heuristic — fails the test below; the argument that follows replaces it.
 
 *Script `gb_prefix_probe.py` implements a first-pass version
 using the heuristic filtration level $\ell(\lambda) = \mathrm{len}(\lambda) - 1$
@@ -86,7 +86,7 @@ using the heuristic filtration level $\ell(\lambda) = \mathrm{len}(\lambda) - 1$
 | $\mathfrak{n}$ | $-0.647$ | — |
 | D | $+0.015$ | $-3.9 \times 10^{-4}$ |
 | T | $-2 \times 10^{-6}$ | $+1.5 \times 10^{-11}$ |
-| ³He | $-7 \times 10^{-7}$ | $-1.8 \times 10^{-11}$ |
+| ${}^{3}\mathrm{He}$ | $-7 \times 10^{-7}$ | $-1.8 \times 10^{-11}$ |
 
 *Products collapse rapidly with $A$, have arbitrary signs, and
 differ from the expected "correction near 1" shape.  This
@@ -94,7 +94,7 @@ heuristic filtration level does not reproduce Term 6.*
 
 *Four candidate prefix conventions have now been tested (three
 upstream + this one), all fail.  This is **structural evidence**
-that the jet-level prefix formula — as currently stated in the
+that the jet-level prefix formula — as stated in the
 paper — is either wrong or requires a different filtration
 definition entirely.  Possibilities:*
 

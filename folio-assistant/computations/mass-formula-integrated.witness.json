@@ -8,7 +8,7 @@
     "rem:deuteron-first-principles",
     "prop:partition-sum-proton-residual"
   ],
-  "timestamp": "2026-04-24T21:33:39.844251+00:00",
+  "computedAt": "2026-04-24T21:33:39.844251+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -164,5 +164,7 @@
     "paper_BW_chirality": "bw-chirality-isotopes.witness.json",
     "my_schur_weyl_deuteron": "deuteron-first-principles.witness.json",
     "frobenius_derivation": "frobenius-partition-sum.witness.json"
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

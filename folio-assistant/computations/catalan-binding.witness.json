@@ -1,7 +1,7 @@
 {
   "computation": "catalan-binding",
   "description": "Paper's literal binding formula using Catalan's constant G (= Vol(\ud835\udcd1_3)/8, Borromean hyperbolic volume invariant).  Two formulas tested: (1) Wedderburn-aggregated log form B = -\u03b1\u00b7\u03a3\u0394ln|V\u0302^full| with \u03b1 = m_e\u00b78G \u2248 3.7445 MeV; (2) per-block \u03a6_q tower form B = m_e\u00b7\u03a3_\u03bb w_\u03bb\u00b7\u03a3\u0394ln|\u03a6_q(V\u0302^\u03bb)|.  Neither formula has any free parameters \u2014 \u03b1 is fixed by Catalan's constant (no fitting).  Validates the 'density (m_e) \u00d7 volume (8G)' interpretation if numerically accurate.",
-  "timestamp": "2026-04-20T16:07:23.295955+00:00",
+  "computedAt": "2026-04-20T16:07:23.295955+00:00",
   "parameters": {
     "Catalan_G": 0.915965594177219,
     "Vol_Borromean": 7.327724753417752,
@@ -230,5 +230,7 @@
       "B_pred_MeV": 211.52917424978872,
       "err_pct": 129.51954009563354
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

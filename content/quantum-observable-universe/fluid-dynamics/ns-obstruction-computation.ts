@@ -6,15 +6,7 @@ export default proposition({
     "Computation of the NS obstruction for the Descartes universe",
   uses: [
     "prop:ns-obstruction-tower",
-    "def:ns-regular-qou",
-    "thm:qu-to-qou",
-    "prop:euler-char-stability",
-    "prop:root-of-unity-truncation",
-    "prop:core-levi-form",
     "conj:levi-degeneracy",
-    "rem:conway-normal-form",
-    "def:standard-part-functor",
-    "def:surreal-blowup-calculus",
     "rem:body-asymptotics-catalog",
   ],
   tags: [

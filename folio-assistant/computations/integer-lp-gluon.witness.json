@@ -1,6 +1,6 @@
 {
   "computation": "integer-lp-gluon",
-  "timestamp": "2026-04-19T01:33:12.024131+00:00",
+  "computedAt": "2026-04-19T01:33:12.024131+00:00",
   "q0": 1.1099785955541805,
   "proton": {
     "base_crossings": 9,
@@ -156,5 +156,7 @@
       "sdp_moment_rank": 6,
       "gram_min_eigenvalue": -0.3699960833056883
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

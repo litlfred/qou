@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \theta, G, \mathcal{S})$ be a QOU and let $p \in M$ be a brane point
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU and let $p \in M$ be a brane point
 with outward normal $N(p) = p/\lvert p\rvert$ and positively-oriented
 tangent frame $(T_1, T_2)$.  Set $R = R_{\mathbb{P}^1(\mathbb{C})}$ and
 

@@ -103,6 +103,7 @@ When a user request arrives, route to the right skill(s):
 | "add / edit content block" | `local/content-validation` + relevant skill | collaborator |
 | "review / audit blocks" | `local/content-block-review` | collaborator |
 | "glossary / terminology / naming" | `local/ontologist` + `local/content-validation` | collaborator |
+| "witnessed value / drift / numerical literal / :val / hardcoded number / pin to witness" | `local/witnessed-values` + `local/content-validation` | collaborator |
 | "work on todos / process feedback" | `local/todo-review` | reader |
 | "missing proof (narrative)" | `local/editor` §Proof workflow | collaborator |
 | "missing proof (Lean)" | `local/formalizer` + `local/proof-triage` | collaborator |
@@ -123,6 +124,7 @@ When a user request arrives, route to the right skill(s):
 | "build paper / compile PDF / render HTML" | `local/docs-generation` | reader |
 | "TypeDoc / type docs / dependency graph" | `local/docs-generation` | reader |
 | "diff / changes / what changed / undo" | `local/diff` | reader |
+| "watch / watch main / watch upstream / watch this PR / watch branch X / what's landing" | `local/watch` | reader |
 | "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
 | "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
 | "dangling remarks / audit remarks / remark backing" | `local/remark-audit` | reader |
@@ -136,6 +138,8 @@ When a user request arrives, route to the right skill(s):
 | "rendering QC / visual check / overfull hbox" | `local/rendering-auditor` | reader |
 | "notation check / symbol audit / register compliance" | `local/rendering-auditor` (pass 2) + `local/ontologist` | reader |
 | "fix rendering / rendering fix / quick fix" | `local/rendering-fixes` | reader |
+| "check markdown render / GitHub view / proof markdown" | `local/markdown-render-check` | reader |
+| "one voice / status leak / TODO in prose / strip emoji / scholarly voice" | `local/one-voice-audit` | collaborator |
 
 ### External skill packages
 
@@ -168,8 +172,8 @@ user roles may invoke it. The three roles form a hierarchy:
 
 | Role | Skills |
 |------|--------|
-| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator |
+| `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`
@@ -193,6 +197,43 @@ including the detailed decision tree and Lean-specific routing table.
 Follow the detailed rules in `.github/copilot-instructions.md` — they govern
 LaTeX structure, labeling, cross-references, prose style, notation, and skill
 usage for content changes.
+
+### LP / SDP duals — first-class infra (do not skip)
+
+Per `prop:operator-selection-lp` § *dual program*, every operator-
+selection / shadow-price / knot-operator-selection compute MUST
+emit BOTH primal and dual variables in its witness JSON:
+
+| field | meaning |
+|-------|---------|
+| `y0_star` | shadow price of the net constraint |
+| `y_star` | shadow prices of Frobenius positivity constraints (≥ 0) |
+| `active_set` (or `active_constraints` / `active_channels`) | indices `i` with `y_star[i] > 0` |
+| `primal_obj` | $\sum_i t_i x_i^*$ |
+| `dual_obj` | $n_{\text{target}} \cdot y_0^*$ (= primal_obj by strong duality) |
+| `duality_gap` | $|\text{primal\_obj} - \text{dual\_obj}|$ |
+
+**Canonical entry point**:
+[`folio-assistant/computations/lp_dual_solver.py`](folio-assistant/computations/lp_dual_solver.py)
+exposes `solve_operator_selection_lp(t, G, n_target)` and
+`solve_psd_operator_selection_sdp(t, G, n_target)`. Both return
+a result whose `.to_dict()` contains all required fields.
+
+**CI enforcement**:
+[`folio-assistant/computations/lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)
+runs in `witness-pipeline.yml` (warn-only by default; `--strict`
+fails CI). Scans every `*.witness.json` whose name or
+`description`/`computation` field signals an LP/SDP/operator-
+selection compute and verifies the dual fields are present.
+
+**Why this matters**: the dual variables ARE the binding-energy
+shadow prices. The active demand channels (`y_star[i] > 0`) are
+the "most receptive sub-braids" — they identify which Wedderburn
+blocks the bound state actually saturates. Solving only the
+primal loses this structural information, which has been the
+historical pattern (58 of 58 LP/SDP witnesses on `main` lacked
+the dual at the time this rule was added). Do not repeat this
+pattern.
 
 ## Writing `.lean` proofs — rules for agents
 
@@ -316,18 +357,70 @@ All declarations live under the `QOU` root namespace.
 
 ### 3b. Conjectural propagation and Lean formalization of conjectures
 
-**Conjectural propagation rule (STRICT):** A statement that depends
-on (is downstream of) a conjecture **cannot** be a `theorem`,
-`proposition`, `lemma`, or `corollary`.  It must be `conjecture`.
-Only statements proved from established results (definitions,
-previously proved theorems, axioms) may use provable block kinds.
+**Conjectural propagation rule (STRICT, with conditional-class
+exception per §3b-cond below):** A statement that depends on (is
+downstream of) a conjecture **cannot** be a `theorem`,
+`proposition`, `lemma`, or `corollary` *unless* it satisfies the
+conditional-class exception (§3b-cond). Only statements proved
+from established results (definitions, previously proved theorems,
+axioms) — or proved from explicit conditional hypotheses — may
+use provable block kinds.
 
 - If `uses[]` contains a `conj:` label (directly or transitively),
-  the block **must** be kind `conjecture`.
-- "Proof" blocks downstream of conjectures become `remark` blocks
-  with `interprets: "conj:..."` (proof *sketches*, not proofs).
+  the block **must** be either:
+  - kind `conjecture`, or
+  - a provable kind satisfying the **conditional-class exception**
+    (§3b-cond) — i.e. the conjecture is axiomatised as a Lean
+    class and the downstream block's Lean statement carries that
+    class as an explicit `[Instance]` hypothesis.
+- "Proof" blocks downstream of conjectures (without conditional-
+  class) become `remark` blocks with `interprets: "conj:..."`
+  (proof *sketches*, not proofs).
 - `remark` blocks may freely interpret conjectures (they make no
   logical claims).
+
+#### §3b-cond — Conditional-class exception (Option B, 2026-05-02)
+
+A `theorem`/`proposition`/`lemma`/`corollary` block whose `uses[]`
+cone transitively touches a `conj:C` may keep its provable kind
+**iff all of**:
+
+1. **Class axiomatisation.** `conj:C` has a Lean
+   `class C` declaration in its `.lean` file, with class fields
+   encoding the conjecture's content. The class instance is
+   the only `sorry` in the entire downstream chain.
+2. **Explicit hypothesis on Lean side.** The downstream block's
+   Lean declaration has the class as an explicit `[Instance]`
+   hypothesis. Example:
+   ```lean
+   theorem downstream_result {M : Type*} [C M] : … := by
+     -- proof uses C.field1, C.field2 as hypotheses; otherwise
+     -- fully verified by Lean.
+   ```
+3. **Explicit conditional banner on narrative side.** The `.md`
+   block opens with: **Theorem (conditional on
+   [`conj:C`](path/to/C.md)).** The body cites the conjectural
+   hypothesis where used.
+4. **`uses[]` includes the conjecture explicitly.** The
+   conditional dependency is auditable from the manifest.
+
+When all four hold, the block represents a *rigorous conditional
+result* — fully verified by Lean modulo a single, named,
+class-axiomatised conjectural input. This pattern preserves the
+distinction between rigorous-conditional and unproved-conjecture
+content.
+
+**Audit treatment.** The `conjectural-propagation` audit
+(`content/pipeline/conjectural-propagation-audit.ts`) reports such
+blocks separately as **conditional-on-class** rather than as
+violations. To opt a block into this status, ensure its Lean
+declaration contains a class hypothesis matching one of the
+conjectures in its transitive `uses[]` cone, and confirm the
+narrative banner. The audit script will detect the pattern and
+classify the block accordingly.
+
+(Pre-existing CLAUDE.md text continues from line 335.)
+
 
 **Definitions and conjectures (clarification):** The propagation
 rule above applies to **provable claims** (`theorem`, `proposition`,
@@ -491,6 +584,31 @@ conventions.
 lightweight wrapper around) a Mathlib type, add a glossary block. If
 the paper introduces genuinely new axioms/structure, add a definition.
 
+### 4c. Glossary terms — `\defterm` / `\refterm` (every occurrence wrapped)
+
+Every term registered in any block's `defines: [...]` field **must** be
+wrapped at every occurrence — `\defterm` once at the canonical site,
+`\refterm` everywhere else. Plain text and `\emph{}` are no longer
+permitted for defined terms. See
+`.github/copilot-instructions.md §11.0` for the full contract.
+
+- **Markdown** (`.md`): use the `remark-directive` syntax
+  `:defterm[Visible]{#slug}` / `:refterm[Visible]{#slug}` — short
+  forms `:defterm[term]` / `:refterm[term]` use the bracket text as
+  both label and slug.
+- **LaTeX**: use `\defterm{slug}[{Visible}]` / `\refterm{slug}[{Visible}]`.
+- **Validation**: `bun run validate <paper>` enforces five rules
+  (`defterm-declared`, `defterm-marked`, `refterm-resolves`,
+  `defterm-unique`, plus opt-in `term-mention-coverage` via `--strict`).
+  Run with `--strict` once the chapter has been backfilled.
+- **Codemod**: `bun run pipeline/codemod-refterm.ts <chapter-dir>`
+  (dry-run by default) wraps bare-text mentions of known glossary
+  slugs in `:refterm[…]{#slug}`. Mdast-based, idempotent. Pass
+  `--write` to apply.
+- **Glossary build**: `bun run pipeline/build-glossary.ts <paper>`
+  emits `glossary.json` (committed) + `chapters/glossary.tex`
+  (gitignored). `--check` mode is the CI gate.
+
 ### 5. Tactic strategy (try in order)
 
 | Goal pattern | Try first | Then try |
@@ -524,9 +642,9 @@ the paper introduces genuinely new axioms/structure, add a definition.
   Minimise its appearance — write `$(\mathbf{C}, A)$` when the functor
   is not needed; write `$(\mathbf{C}, A, \tau)$` only when `$\tau$` is
   explicitly used.
-- **QOU archimedean tuple**: `$(\mathbf{C}, \theta, G, \mathcal{S})$`.
-  The old 5-tuple $(M, \theta, G, P, E)$ is **deprecated**.
-  - $M$ (base manifold) is subordinate to $\theta$ (its domain).
+- **QOU archimedean tuple**: `$(\mathbf{C}, \varTheta, G, \mathcal{S})$`.
+  The old 5-tuple $(M, \varTheta, G, P, E)$ is **deprecated**.
+  - $M$ (base manifold) is subordinate to $\varTheta$ (its domain).
   - $P$ (principal bundle) is subordinate to $\mathcal{S}$ (frame bundle
     of the state bundle under $G$). Mention $P$ only when discussing
     gauge structure directly.
@@ -538,37 +656,100 @@ the paper introduces genuinely new axioms/structure, add a definition.
 - Diagram commutativity: try `aesop_cat` first, then `slice_lhs`/`slice_rhs`.
 - Use `Subsingleton (X ⟶ Y)` for vanishing hom-spaces (avoids `Preadditive`).
 
-### 7aa. Notation register (STRICT)
+### 7aa. Notation register (STRICT) — see content notation block
 
-Every mathematical symbol belongs to exactly one register.
-Agents **must** use the correct font for each concept.
+The authoritative source for every mathematical symbol used in the
+paper is the front-matter **Notation** chapter, rendered into the
+PDF immediately after the table of contents:
 
-| Register | Font | Symbols |
-|----------|------|---------|
-| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
-| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
-| Mass | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass), `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). **Never** plain `$m$` for categorical mass. |
-| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
-| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
-| Gravitational | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
-| Entropy / Lyapunov | Greek | `$\eta_q = (2q-1)/q^3$` (operational entropy), `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov exponent) |
-| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
-| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
-| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
-| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
-| Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
-| Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
-| Information | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
-| Measures | Greek | `$\mu_J$` (Julia-set measure) |
-| Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
-| Bundles/sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+- **Per-chapter symbol tables**:
+  [`content/quantum-observable-universe/notation/notation-register.md`](content/quantum-observable-universe/notation/notation-register.md)
+- **Collision avoidances + conventions**:
+  [`content/quantum-observable-universe/notation/notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md)
+
+Agents **must** treat those `.md` files as authoritative when picking
+a font/symbol for a concept. When adding a new symbol convention,
+edit the content block — not this section. CLAUDE.md mirrors only a
+short summary below; the content block is what readers see in the
+PDF and what `rendering-auditor`, `ontologist`, and Gemini-style
+review tools should cite.
+
+#### Summary (for quick agent lookup)
+
+The register groups symbols by the chapter where each is **first
+introduced**; entries within a chapter are sorted alphabetically by
+concept name. Below is a flat per-chapter summary; for the full
+table with usage notes, open the content block above.
+
+#### algebraic-substrate
+
+| Concept | Font | Symbols |
+|---------|------|---------|
 | $q$-shuffle Hopf algebra | calligraphic | `$\mathcal{H}_q$` — convolution algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under $\ast_q$; carries the grouplikes $\exp_q, \log_q, \mathrm{Li}_2^q$. **Never** plain `$H_q$` (collides with Hecke and Hamiltonian). |
-| Iwahori–Hecke algebra | Latin cap | `$H_n(q)$` — always with subscript $n$; standard knot-theory convention (Kassel, Jones). |
-| $q$-Hamiltonian | hat | `$\hat{H}_q$` (operator hat, Dirac convention). **Never** plain `$H_q$`. Distinct from `$\mathcal{H}_q$` (shuffle algebra) and `$H_n(q)$` (Hecke). |
+| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
+
+#### braids-and-knots
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
 | Hook-length product | Latin cap + arg | `$H_q(\lambda) = \prod_{x \in \lambda} [h_x(\lambda)]_q$` — always with partition argument; unambiguous in knot/partition contexts. |
+| Iwahori–Hecke algebra | Latin cap | `$H_n(q)$` — always with subscript $n$; standard knot-theory convention (Kassel, Jones). |
+| Jones–Markov central coefficient | plain italic | `$y_\lambda$` — coefficient in $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ ([procedure](#prop:alpha-k-derivation-procedure)). Sign-indefinite at $n \geq 4$. **Never** confuse with $u_\lambda$ (LP shadow-price). |
+| LP shadow-price | plain italic | `$u_\lambda, u_0$` (Schrijver linear-programming convention) for operator-selection LP dual variables ([BW shadow price](#prop:bw-coefficient-shadow-price)). Non-negative by LP duality. **Never** write `$y_\lambda$` here (collides with Jones–Markov). |
+| Markov parameter | plain italic | `$z = 1/(q^{1/2} + q^{-1/2})$` |
+| Mass | fraktur | `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). |
+
+#### descartes-universe
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Elliptic curve | calligraphic | `$\mathcal{E}_q$` (Descartes elliptic curve). **Never** write `$E_q$` for a curve. |
+| Gravitational constant | Latin cap | `$G(q)$` (gravitational constant), `$G_{\mathrm{Planck}} = 1$` (Planck-normalised, exact). |
+| Julia-set measure | Greek | `$\mu_J$` (measure on Julia set) |
+| Weierstrass | fraktur cap | `$\wp(z)$` (Weierstrass elliptic function on `$\mathcal{E}_q$`). Reserved symbol — never repurpose `$\wp$`. |
+
+#### information-theory
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Entropy (operational) | Greek | `$\eta_q = (2q-1)/q^3$` |
+| Information bandwidth | calligraphic | `$\mathcal{B}(q)$` (information bandwidth per Planck time) |
+| Lyapunov exponent | Greek | `$\chi_q = 1/(2q-1)$` ($q$-deformed Lyapunov). Distinct from $\chi_\zeta(c)$ (character). |
+
+#### observations
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Derived constants | plain italic | `$c_q = 1/(q-1)$` (speed of light), `$\hbar_q = (q-1)/q$` (Planck constant), `$d_H(q) = (2q-1)^2/q^3$` (Hausdorff dimension) |
+| Mass number | Latin cap | `$A = Z + N$` |
+| Neutron number | Latin cap | `$N$` |
+| Particles | fraktur | `$\mathfrak{u}, \mathfrak{d}, \mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$` (quarks), `$\mathfrak{p}, \mathfrak{n}$` (proton, neutron), `$\mathfrak{H}$` (hadron), `$\mathfrak{H}_p$` (localized hadron) |
+| Proton number | Latin cap | `$Z$` (atomic number). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
+
+#### particle-interactions
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| $C_5$ invariants | functional | `$p_1(c)$` (power sum), `$h_2(c), h_3(c)$` (Hermitian), `$\chi_\zeta(c)$` (character) |
+| Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
+| Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
+| Mass (categorical) | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass). **Never** plain `$m$` for categorical mass. |
+| $q$-Hamiltonian | hat | `$\hat{H}_q$` (operator hat, Dirac convention). **Never** plain `$H_q$`. Distinct from `$\mathcal{H}_q$` (shuffle algebra) and `$H_n(q)$` (Hecke). |
+
+#### quantum-observable-universes
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Bundles / sheaves | calligraphic | `$\mathcal{S}, \mathcal{O}, \mathcal{L}, \mathcal{A}$` |
+| State bundle fibre | calligraphic | `$\mathcal{S}_p$` — the fibre of `$\mathcal{S}$` at brane point $p$. **Never** write `$E_p$`. |
+
+#### quantum-universes
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Categories | bold | `$\mathbf{C}$`, `$\mathbf{Rep}$` |
 | Lie algebras | fraktur lc | `$\mathfrak{su}(2), \mathfrak{g}$` |
-| Proton number | Latin cap | `$Z$` (atomic number, standard nuclear convention). **Never** use `$p$` for proton count; `$p$` is reserved for brane points. |
-| Neutron number | Latin cap | `$N$` (neutron number), `$A = Z + N$` (mass number) |
 
 **Key collision avoidances:**
 - `$c$` = color (never charm; charm is `$\mathfrak{c}$`)
@@ -615,26 +796,31 @@ numerical evaluations at `$q_0$`. Exact algebraic identities
 
 ### 7a. Hecke-Skein convention (STRICT)
 
-The Hecke algebra generator is **$T$** (never $\sigma$ for the Hecke
-relation, never $t$ or $A$ for the Jones polynomial variable).
+The Hecke algebra generator is **$\sigma_i$** (never $T$, never $t$ or
+$A$ for the Jones polynomial variable). The Iwahori–Hecke algebra
+$H_n(q)$ is presented as a quotient of the braid group algebra of
+$B_n$, so the same symbol $\sigma_i$ is used for the braid group
+generator and its image in $H_n(q)$ — context disambiguates.
 
-- **Hecke relation**: $(T - q)(T + q^{-1}) = 0$, equivalently
-  $T^2 = (q - q^{-1})T + 1$.
-- **Skein relation**: Multiply the Hecke relation by $T^{-1}$ to get
-  $T - T^{-1} = q - q^{-1}$, which is the Skein relation
-  $L_+ - L_- = (q - q^{-1})\,L_0$.
+- **Hecke relation**: $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$, equivalently
+  $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$.
+- **Skein relation**: Multiply the Hecke relation by $\sigma_i^{-1}$ to
+  get $\sigma_i - \sigma_i^{-1} = q - q^{-1}$, which is the Skein
+  relation $L_+ - L_- = (q - q^{-1})\,L_0$.
 - **Translation dictionary**:
-  - $T$ = positive crossing $L_+$
-  - $T^{-1}$ = negative crossing $L_-$
+  - $\sigma_i$ = positive crossing $L_+$
+  - $\sigma_i^{-1}$ = negative crossing $L_-$
   - $1$ = smoothed crossing $L_0$
-  - $q$ and $-q^{-1}$ are the eigenvalues of $T$ (symmetric and
+  - $q$ and $-q^{-1}$ are the eigenvalues of $\sigma_i$ (symmetric and
     antisymmetric channels respectively)
 - **Jones polynomial**: Always $J_K(q)$, never $V_K(t)$ or bracket
   with variable $A$.  The Jones polynomial is the Markov trace
   $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$ in $H_n(q)$.
-- **Braid generators**: $\sigma_i$ denotes the braid group generator
-  in $B_n$. The Hecke algebra image is $T_i = \rho(\sigma_i)$.
-  When writing the Hecke relation, always use $T$, not $\sigma$.
+- **Braid vs Hecke**: $\sigma_i$ denotes both the braid-group generator
+  in $B_n$ and its image in $H_n(q)$; the latter satisfies the Hecke
+  relation above while the former satisfies only the braid relations.
+  This shared notation follows the standard knot-theory convention
+  (Kassel, Jones).
 
 ### 8. File hygiene
 

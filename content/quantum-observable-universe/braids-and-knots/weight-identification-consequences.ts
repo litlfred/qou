@@ -5,7 +5,6 @@ export default remark({
   title: "Consequences of the weight identification",
   tags: ["weight-grading", "z5", "consolidation", "interpretation"],
   uses: [
-    "prop:x5-bring-weight-identification",
     "rem:x5-bring-prym-jacobian",
     "thm:hyperelliptic-z5-classification",
     "rem:u1-phase-tube",

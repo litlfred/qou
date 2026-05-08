@@ -22,9 +22,15 @@ namespace QOU
     witnessed by the formal semigroup `u(t) = exp(-t Δ_q) u₀`. -/
 -- Ref: [kassel1995] §VII.4
 theorem QHeatEquation.exists_solution (S : Type*) [Nonempty S] :
-    Nonempty (QHeatEquation S) := by
-  -- Witness: Peter-Weyl eigenfunction expansion.
-  -- Ref: [kassel1995]
-  sorry
+    Nonempty (QHeatEquation S) :=
+  -- Trivial zero-solution witness: u, dt_u, dq_u all identically 0.
+  -- The evolution equation 0 = -0 closes by `simp` (`neg_zero`).
+  -- The intended Peter-Weyl semigroup witness is sharper but requires
+  -- the q-heat semigroup infrastructure not yet in Mathlib.
+  -- Ref: [kassel1995] §VII.4
+  ⟨{ u := fun _ _ => 0
+     dt_u := fun _ _ => 0
+     dq_u := fun _ _ => 0
+     evolves := fun _ _ => by simp }⟩
 
 end QOU

@@ -1,8 +1,11 @@
 Independent audit of the tritium $\beta$-decay Q-value derivation
 ${}^3\mathrm{H} \to {}^3\mathrm{He} + e^- + \bar\nu_e$, verifying
-each step for fitted parameters and hidden assumptions.
+each step of [prop:tritium-qvalue-symbolic](#prop:tritium-qvalue-symbolic)
+for fitted parameters and hidden assumptions.  This block is
+purely audit; the canonical statement and proof of the closed-form
+Q-value formula live with the proposition.
 
-## Derivation chain (verified)
+## Derivation chain (verified against the proposition)
 
 **Step 0: Substrate parameter** (1 measurement consumed).
 
@@ -12,7 +15,7 @@ $$
   q_0 = \frac{1}{1 - \hbar_q} \approx 1.10998
 $$
 
-Three inputs: $\mathrm{Vol}(4_1) = 2.02988$ (mathematical constant),
+Three inputs: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6}$ (mathematical constant),
 $m_\mu/m_e = 206.7683$ (CODATA), $m_e = 0.5110$ MeV (CODATA).
 The first fixes $q_0$; the second sets the energy scale.
 
@@ -118,7 +121,7 @@ compute different quantities at different levels of description:
 |---|---|---|
 | Algebra | Per-nucleon $H_3(q)$ | Full quark-level $H_9(q)$ |
 | Dimensionless part | $|ab(a-b)| = 0.035$ | $|\Delta\mathrm{net}| = 0.449$ |
-| Energy scale | $m_e = 0.511$ MeV | $\kappa_q = 0.018$ MeV |
+| Energy scale | $m_e \approx 0.511$ MeV | $\kappa_q \approx 0.018$ MeV |
 | Inputs consumed | 2 ($q_0$, $m_e$) | 2 ($q_0$, $\kappa_q$) |
 
 The branching path uses the per-nucleon channel decomposition in

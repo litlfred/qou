@@ -111,7 +111,7 @@ coefficients with morphisms $A \to \mathbf{1}$ (demand, via
 evaluation).
 
 **(iv)** The on-shell condition constrains $\Phi$ to lie in the
-self-dual curvature subspace ($S([T_i, T_j])^* = [T_i, T_j]$).
+self-dual curvature subspace ($S([\sigma_i, \sigma_j])^* = [\sigma_i, \sigma_j]$).
 Within this subspace, the extremum of $|\mathrm{tr}(\Phi)|$ is
 attained at the irrep with largest quantum dimension times
 character evaluation.  For pair production at our $q_0 \approx 1.1097$,

@@ -7,8 +7,5 @@ export default definition({
   lean: { ref: "qou:QOU.BundleIsotopyEquiv",
     validation: "not_checked",
   },
-  uses: [
-    "def:bundle-initial-conditions",
-    "def:localized-hadron",
-  ],
+  uses: ["def:bundle-initial-conditions"],
 });

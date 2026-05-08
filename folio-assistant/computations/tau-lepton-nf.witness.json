@@ -5,13 +5,13 @@
   "commitSha": "a37c160f13572549174ef98fe69aa442d46aeb98",
   "assertions": [
     {
-      "name": "Continuant recurrence bₙ₊₁ = h·bₙ + bₙ₋₁ (all n)",
+      "name": "Continuant recurrence b\u2099\u208a\u2081 = h\u00b7b\u2099 + b\u2099\u208b\u2081 (all n)",
       "computed": 1,
       "expected": 1,
       "passed": true,
       "tolerance": 0,
       "unit": "boolean",
-      "source": "Morgan--Voyce recurrence in H₂(q)"
+      "source": "Morgan--Voyce recurrence in H\u2082(q)"
     },
     {
       "name": "NF(T_{2,3}) net amplitude (electron)",
@@ -41,7 +41,7 @@
       "source": "Chebyshev recurrence at n=7"
     },
     {
-      "name": "NF Δ ratio (τ→e)/(τ→μ) vs PDG BR ratio",
+      "name": "NF \u0394 ratio (\u03c4\u2192e)/(\u03c4\u2192\u03bc) vs PDG BR ratio",
       "computed": 0.810674,
       "expected": 1.024727,
       "passed": true,
@@ -56,45 +56,45 @@
   "scriptFile": "tau-lepton-nf.py",
   "scriptHash": "5a1c2a6ff89b",
   "scriptCommitSha": "02ab7dab4316bc73e613d80ce8058c15204ea7db",
-  "description": "Chebyshev tower NF(T_{2,n}) in H₂(q) for the charged lepton tower n = 3, 5, 7 (electron, muon, tau). Verifies the continuant (Morgan--Voyce) recurrence and the algebraic structure of leptonic tau decays.",
+  "description": "Chebyshev tower NF(T_{2,n}) in H\u2082(q) for the charged lepton tower n = 3, 5, 7 (electron, muon, tau). Verifies the continuant (Morgan--Voyce) recurrence and the algebraic structure of leptonic tau decays.",
   "contentBlock": "rem:lepton-mass-integrals",
   "parameters": {
-    "q₀": 1.1099785955541805,
-    "q₀_err": 1.3578965598837824e-09,
-    "h (q−q⁻¹)": 0.20906032198987945,
-    "ℏ_q": 0.09908172643569887,
-    "Vol(4₁)": 2.029883212819307,
-    "m_μ/m_e": 206.768283
+    "q\u2080": 1.1099785955541805,
+    "q\u2080_err": 1.3578965598837824e-09,
+    "h (q\u2212q\u207b\u00b9)": 0.20906032198987945,
+    "\u210f_q": 0.09908172643569887,
+    "Vol(4\u2081)": 2.029883212819307,
+    "m_\u03bc/m_e": 206.768283
   },
   "data": {
     "lepton_nfs": {
       "electron": {
         "n": 3,
         "knot": "T_{2,3}",
-        "symbol": "e⁻",
-        "a_n (𝟙 coeff)": 0.20906032198987945,
-        "b_n (σ₀ coeff)": 1.0437062182305121,
+        "symbol": "e\u207b",
+        "a_n (\ud835\udfd9 coeff)": 0.20906032198987945,
+        "b_n (\u03c3\u2080 coeff)": 1.0437062182305121,
         "net": 1.2527665402203916
       },
       "muon": {
         "n": 5,
         "knot": "T_{2,5}",
-        "symbol": "μ⁻",
-        "a_n (𝟙 coeff)": 0.42725788003598975,
-        "b_n (σ₀ coeff)": 1.1330288882035495,
+        "symbol": "\u03bc\u207b",
+        "a_n (\ud835\udfd9 coeff)": 0.42725788003598975,
+        "b_n (\u03c3\u2080 coeff)": 1.1330288882035495,
         "net": 1.5602867682395392
       },
       "tau": {
         "n": 7,
         "knot": "T_{2,7}",
-        "symbol": "τ⁻",
-        "a_n (𝟙 coeff)": 0.6641292642276589,
-        "b_n (σ₀ coeff)": 1.2718719660258857,
+        "symbol": "\u03c4\u207b",
+        "a_n (\ud835\udfd9 coeff)": 0.6641292642276589,
+        "b_n (\u03c3\u2080 coeff)": 1.2718719660258857,
         "net": 1.9360012302535448
       }
     },
     "tau_to_electron_decay": {
-      "process": "τ⁻ → e⁻ + ν̄ₑ + ν_τ",
+      "process": "\u03c4\u207b \u2192 e\u207b + \u03bd\u0304\u2091 + \u03bd_\u03c4",
       "BR_PDG": 0.1782,
       "delta_1": -1.5449310577622204,
       "delta_sigma": 0.22816574779537357,
@@ -102,7 +102,7 @@
       "crossings_released": 4
     },
     "tau_to_muon_decay": {
-      "process": "τ⁻ → μ⁻ + ν̄_μ + ν_τ",
+      "process": "\u03c4\u207b \u2192 \u03bc\u207b + \u03bd\u0304_\u03bc + \u03bd_\u03c4",
       "BR_PDG": 0.1739,
       "delta_1": -1.7631286158083308,
       "delta_sigma": 0.13884307782233618,
@@ -114,7 +114,7 @@
       "net_ratio_mu_e": 1.245472893908108,
       "net_ratio_tau_e": 1.5453806979175513,
       "net_ratio_tau_mu": 1.2407983389091493,
-      "note": "Torus knot mass comes from Higgs mechanism (Vol(4₁)/ℏ_q²), not directly from NF net. NF net captures algebraic weight."
+      "note": "Torus knot mass comes from Higgs mechanism (Vol(4\u2081)/\u210f_q\u00b2), not directly from NF net. NF net captures algebraic weight."
     },
     "nf_table_T2n": [
       {
@@ -238,6 +238,8 @@
     ]
   },
   "caveats": [
-    "Torus knots T_{2,n} have zero hyperbolic volume. Lepton mass ratios do not come from Vol(K)/ℏ_q² but through the Higgs mechanism coupling at each Reeb degree. The NF net amplitudes are algebraic weights, not direct mass predictions."
-  ]
+    "Torus knots T_{2,n} have zero hyperbolic volume. Lepton mass ratios do not come from Vol(K)/\u210f_q\u00b2 but through the Higgs mechanism coupling at each Reeb degree. The NF net amplitudes are algebraic weights, not direct mass predictions."
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

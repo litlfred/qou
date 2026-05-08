@@ -1,7 +1,7 @@
 Let $\mathfrak{N} = [\mathfrak{q}_1, \mathfrak{q}_2, \mathfrak{q}_3]$
 be a Borromean baryon ([Definition](#def:borromean-baryon)) with quark
 flavors $f_1, f_2, f_3 \in \{\mathfrak{u}, \mathfrak{d}\}$.  The
-**nucleon Hecke element** is the product in $H_3(q)$:
+**nucleon Hecke element** is the product in $H_3(R, q)$:
 
 $$
   \mathfrak{N}(f_1, f_2, f_3)
@@ -17,7 +17,7 @@ $$
 
 where:
 
-- $\mathcal{B}_3 = (\sigma_0 \sigma_1^{-1})^3 \in H_3(q)$ is the
+- $\mathcal{B}_3 = (\sigma_0 \sigma_1^{-1})^3 \in H_3(R, q)$ is the
   Borromean link element
   ([Borromean baryon](#def:borromean-baryon)),
 
@@ -61,8 +61,8 @@ $$
 
 **Normal form.**  After Gröbner--Shirshov reduction (Hecke, Yang--Baxter,
 and far-commutativity relations), each nucleon reduces to exactly
-**six terms** — one for each basis element of $H_3(q)$
-($\dim H_3(q) = 3! = 6$):
+**six terms** — one for each basis element of $H_3(R, q)$
+($\dim H_3(R, q) = 3! = 6$):
 
 $$
   \mathfrak{N}

@@ -6,7 +6,7 @@
     "prop:spectral-sequence-h3-explicit",
     "prop:e-infinity-page-identifications"
   ],
-  "timestamp": "2026-04-24T21:34:59.504226+00:00",
+  "computedAt": "2026-04-24T21:34:59.504226+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "filtration_level_heuristic": "len(lambda) - 1"
@@ -384,5 +384,7 @@
         }
       ]
     }
-  ]
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

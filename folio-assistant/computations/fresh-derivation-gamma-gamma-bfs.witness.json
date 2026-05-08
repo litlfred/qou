@@ -1,7 +1,7 @@
 {
   "computation": "fresh-derivation-gamma-gamma-bfs",
   "description": "Fresh \u03b3\u03b3 \u2192 target Hecke-energy via BFS exact shortest-path over {\u03c3_0\u00b1, \u03c3_1\u00b1} operators on Wedderburn blocks, with greedy fallback when BFS exceeds depth/state budget.  Level-0 Plancherel + level-1 jet-tower cost per operator.  Calibrated via m = (E_target/E_electron)\u00b7m_e.",
-  "timestamp": "2026-04-24T17:07:12.450701+00:00",
+  "computedAt": "2026-04-27T21:04:17.159685+00:00",
   "q_0": 1.1099785955541805,
   "electron": {
     "name": "ELECTRON",
@@ -43,7 +43,7 @@
         ],
         "residual": 0.09469126444119658,
         "method": "greedy",
-        "hecke_energy": "0.037130504023581804284"
+        "hecke_energy": "0.037130504023581875496"
       },
       "[2, 1]": {
         "dim": 2,
@@ -81,7 +81,7 @@
         ],
         "residual": 1.8175555802539418,
         "method": "greedy",
-        "hecke_energy": "5.4037867906208061942"
+        "hecke_energy": "5.4037867906208060548"
       },
       "[1, 1, 1]": {
         "dim": 1,
@@ -119,10 +119,10 @@
         ],
         "residual": 0.7410508707601575,
         "method": "greedy",
-        "hecke_energy": "0.61837142182902983394"
+        "hecke_energy": "0.61837142182903057675"
       }
     },
-    "total_hecke_energy": "6.059288716473417832395508"
+    "total_hecke_energy": "6.059288716473418507071688"
   },
   "proton": {
     "name": "PROTON",
@@ -164,7 +164,7 @@
         ],
         "residual": 0.10963389471508256,
         "method": "greedy",
-        "hecke_energy": "0.037130504023581804284"
+        "hecke_energy": "0.037130504023581875496"
       },
       "[2, 1]": {
         "dim": 2,
@@ -202,7 +202,7 @@
         ],
         "residual": 1.5503902538967878,
         "method": "greedy",
-        "hecke_energy": "5.334728482760227171"
+        "hecke_energy": "5.3347284827602270334"
       },
       "[1, 1, 1]": {
         "dim": 1,
@@ -240,10 +240,10 @@
         ],
         "residual": 0.7490407354836005,
         "method": "greedy",
-        "hecke_energy": "0.61837142182902983394"
+        "hecke_energy": "0.61837142182903057675"
       }
     },
-    "total_hecke_energy": "5.990230408612838809210286"
+    "total_hecke_energy": "5.990230408612839485667237"
   },
   "neutron": {
     "name": "NEUTRON",
@@ -285,7 +285,7 @@
         ],
         "residual": 0.08898476019848811,
         "method": "greedy",
-        "hecke_energy": "0.037356222398509962649"
+        "hecke_energy": "0.037356222398510034294"
       },
       "[2, 1]": {
         "dim": 2,
@@ -323,7 +323,7 @@
         ],
         "residual": 1.7272128577514831,
         "method": "greedy",
-        "hecke_energy": "5.3692576366905166826"
+        "hecke_energy": "5.3692576366905165441"
       },
       "[1, 1, 1]": {
         "dim": 1,
@@ -361,9 +361,9 @@
         ],
         "residual": 0.9205793947458432,
         "method": "greedy",
-        "hecke_energy": "0.61837142182902983394"
+        "hecke_energy": "0.61837142182903057675"
       }
     },
-    "total_hecke_energy": "6.024985280918056479167302"
+    "total_hecke_energy": "6.02498528091805715516677"
   }
 }

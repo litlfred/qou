@@ -10,7 +10,7 @@
   "scriptFile": "hbar_vs_q_parametrization.py",
   "scriptHash": "9ba83ae6d4a1",
   "scriptCommitSha": "",
-  "description": "Test reparameterisations (log-form, ℏ-expansion, dual-variable) to soften the Φ_q(z→q) singularity that dominates the proton tower mass.",
+  "description": "Test reparameterisations (log-form, \u210f-expansion, dual-variable) to soften the \u03a6_q(z\u2192q) singularity that dominates the proton tower mass.",
   "data": {
     "params": {
       "q_0": 1.1099785955541805,
@@ -67,5 +67,7 @@
       "m_p_err_pct": 1.8352460228402256,
       "m_n_err_pct": -55.36815946905831
     }
-  }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
 }

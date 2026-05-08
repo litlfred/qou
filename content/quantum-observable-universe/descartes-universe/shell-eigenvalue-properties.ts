@@ -13,8 +13,5 @@ export default remark({
     "tensor-product",
     "skein",
   ],
-  uses: [
-    "prop:shell-structure-eigenvalues",
-    "prop:skein-polynomial-transfer-matrix",
-  ],
+  uses: ["prop:shell-structure-eigenvalues"],
 });
