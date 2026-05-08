@@ -228,6 +228,7 @@ export default chapter({
         "type-b-folded-crystal-combinatorics",
         "clausen-function-mathlib-filler",
         "bloch-wigner-mathlib-filler",
+        "mass-tower-deeper-fillers",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
