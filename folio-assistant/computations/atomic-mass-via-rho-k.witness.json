@@ -1,0 +1,121 @@
+{
+  "computation": "atomic-mass-via-rho-k",
+  "computedAt": "2026-05-08T18:17:42.062411+00:00",
+  "description": "Atomic mass-table predictions using the resolved \u03c1_K assembly M(K) = \u03c1_K \u00b7 m_e \u00b7 |tr_M(K)| from PR #564 \u00a73.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via Q_\u03b2 = m_n - m_p - m_e). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py \u2014 see the side-by-side improvement_factor field.",
+  "engine": "mpmath",
+  "scriptFile": "atomic_mass_via_rho_k.py",
+  "scriptHash": null,
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052",
+    "mpmath_dps": 50
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "tr_M_at_q0": "1.065306228592389333611777464990998459365907562335",
+        "rho_K_leading_order": "1723.5914182642151362962504138109147428453824180455",
+        "M_pred_MeV": "938.27208816",
+        "M_codata_MeV": "938.27208816",
+        "err_pct": "1.458484749611188061779116444628692920057097483864e-49",
+        "binding_residual_MeV": "1.3684555315672041708239546711815587219533808026138e-48"
+      },
+      {
+        "atom": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "tr_M_at_q0": "0.92323329716958371987441489925448416037805873290687",
+        "rho_K_leading_order": "1991.5699177606221700053300817871283418353686182307",
+        "M_pred_MeV": "939.56542052",
+        "M_codata_MeV": "939.56542052",
+        "err_pct": "1.4564771134402073586691247584160918220862290303627e-49",
+        "binding_residual_MeV": "1.3684555315672041708239546711815587219533808026138e-48"
+      },
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "tr_M_at_q0": "0.3882864715477134196206286177859443593534762784089",
+        "rho_K_leading_order": "9464.2399476222368250363044149213724855521868726447",
+        "M_pred_MeV": "1877.83750868",
+        "M_codata_MeV": "1875.61294257",
+        "err_pct": "0.11860475365199057707203929661780804716149661389895",
+        "binding_residual_MeV": "2.224566110000000000000000000000000000000000000001"
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "tr_M_at_q0": "0.10405211867552573145768305458682264882849191283961",
+        "rho_K_leading_order": "52988.060858753992219909006277409342210005517886163",
+        "M_pred_MeV": "2817.4029292",
+        "M_codata_MeV": "2808.92113298",
+        "err_pct": "0.30195921560110217032285115546761669193129045173455",
+        "binding_residual_MeV": "8.4817962199999999999999999999999999999999999999967"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "tr_M_at_q0": "0.20654085856226274930598854594486682967873245140839",
+        "rho_K_leading_order": "26682.318679851417344566826598080529187876471057508",
+        "M_pred_MeV": "2816.10959684",
+        "M_codata_MeV": "2808.39160743",
+        "err_pct": "0.27481884611750582552195773423188348614100173849407",
+        "binding_residual_MeV": "7.7179894099999999999999999999999999999999999999979"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "tr_M_unavailable": true,
+        "M_codata_MeV": "3727.379378"
+      }
+    ],
+    "legacy_compare": [
+      {
+        "atom": "p",
+        "rho_K_err_pct": "1.4584847496111881e-49",
+        "legacy_E0_err_pct": "0.0",
+        "improvement_factor": 0.0
+      },
+      {
+        "atom": "n",
+        "rho_K_err_pct": "1.4564771134402073e-49",
+        "legacy_E0_err_pct": "-8.325168934008678",
+        "improvement_factor": 8325168934008.679
+      },
+      {
+        "atom": "D",
+        "rho_K_err_pct": "0.11860475365199058",
+        "legacy_E0_err_pct": "-24.24710979702568",
+        "improvement_factor": 204.4362392773178
+      },
+      {
+        "atom": "T",
+        "rho_K_err_pct": "0.30195921560110217",
+        "legacy_E0_err_pct": "-54.15021916237943",
+        "improvement_factor": 179.32957950822606
+      },
+      {
+        "atom": "3He",
+        "rho_K_err_pct": "0.27481884611750584",
+        "legacy_E0_err_pct": "-50.46355873197802",
+        "improvement_factor": 183.6248111979956
+      }
+    ]
+  },
+  "audit_reference": "AUDIT-DEEP-2026-05.md \u00a73.3a (P4\u2033)",
+  "pr": "#564"
+}
