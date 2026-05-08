@@ -232,6 +232,7 @@ export default chapter({
         "three-substantive-mathlib-fillers",
         "bloch-group-quotient-construction",
         "cl2-pentagon-and-faddeev-partial",
+        "upstream-mathlib-additions",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
