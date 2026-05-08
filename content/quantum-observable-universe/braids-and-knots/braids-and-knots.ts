@@ -546,6 +546,7 @@ export default chapter({
         "descent-rate-probe-sim",
         "multi-level-jet-sum-sim",
         "macdonald-hook-telescope",
+        "demazure-fiber-markov-trace",
         "wenzl-bridge-applicability-qou",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h4",
