@@ -45,6 +45,7 @@ References:
 from __future__ import annotations
 
 import sys
+from typing import Dict
 from pathlib import Path
 from typing import List, Tuple
 
@@ -93,21 +94,114 @@ def predicted_pole_total(p: int, k: int) -> int:
 
 
 # ──────────────────────────────────────────────────────────────────────
+# Stdlib SYT enumerator + axial-distance pole counter (for n ≤ 5)
+# ──────────────────────────────────────────────────────────────────────
+#
+# Pure-Python (no numpy / sympy) standard-Young-tableau enumerator:
+# generate all SYTs of shape `lam ⊢ n` and compute the per-SYT axial-
+# distance sign count, then take the max over all SYTs.
+
+def _young_diagram_cells(lam: Tuple[int, ...]) -> List[Tuple[int, int]]:
+    """Cells of the Young diagram of `lam` in (row, col) order
+    (English convention: rows top-to-bottom, columns left-to-right)."""
+    return [(r, c) for r, w in enumerate(lam) for c in range(w)]
+
+
+def enumerate_syts(lam: Tuple[int, ...]) -> List[Dict[int, Tuple[int, int]]]:
+    """All SYTs of shape `lam`, each as a dict {entry → (row, col)}.
+
+    Uses the classical fill-by-corners algorithm: at each step, place
+    the next entry in any cell that is "available" — i.e. its left
+    neighbour (if any) and upper neighbour (if any) are already filled.
+    """
+    n = sum(lam)
+    cells = _young_diagram_cells(lam)
+    cell_set = set(cells)
+
+    results: List[Dict[int, Tuple[int, int]]] = []
+
+    def is_available(cell: Tuple[int, int], filled: set) -> bool:
+        r, c = cell
+        if c > 0 and (r, c - 1) not in filled:
+            return False
+        if r > 0 and (r - 1, c) not in filled:
+            return False
+        return True
+
+    def fill(entry: int, filled: set, syt: Dict[int, Tuple[int, int]]):
+        if entry > n:
+            results.append(dict(syt))
+            return
+        for cell in cells:
+            if cell in filled:
+                continue
+            if not is_available(cell, filled):
+                continue
+            filled.add(cell)
+            syt[entry] = cell
+            fill(entry + 1, filled, syt)
+            del syt[entry]
+            filled.discard(cell)
+
+    fill(1, set(), {})
+    return results
+
+
+def syt_axial_distances(syt: Dict[int, Tuple[int, int]]) -> List[int]:
+    """Axial distances ρ_T(j) for j = 1..n-1: c(j+1) - c(j) where
+    c(r, c) = c - r."""
+    n = len(syt)
+    return [
+        (syt[j + 1][1] - syt[j + 1][0]) - (syt[j][1] - syt[j][0])
+        for j in range(1, n)
+    ]
+
+
+def pole_per_cycle_max(lam: Tuple[int, ...]) -> Tuple[int, int]:
+    """Max over SYT(λ) of #{j ∈ [1, n-1] : ρ_T(j) ≤ -1}.
+
+    Returns (max_pole, syt_count).
+    """
+    syts = enumerate_syts(lam)
+    if not syts:
+        return 0, 0
+    poles = [
+        sum(1 for rho in syt_axial_distances(s) if rho <= -1)
+        for s in syts
+    ]
+    return max(poles), len(syts)
+
+
+def partitions_of(n: int) -> List[Tuple[int, ...]]:
+    """All partitions of n in lex-decreasing order."""
+    if n == 0:
+        return [()]
+    result: List[Tuple[int, ...]] = []
+
+    def gen(remaining: int, max_part: int, prefix: Tuple[int, ...]):
+        if remaining == 0:
+            result.append(prefix)
+            return
+        for k in range(min(max_part, remaining), 0, -1):
+            gen(remaining - k, k, prefix + (k,))
+
+    gen(n, n, ())
+    return result
+
+
+# ──────────────────────────────────────────────────────────────────────
 # Maximizer check: non-column λ gives strictly smaller pole order
 # ──────────────────────────────────────────────────────────────────────
 #
 # For λ ⊢ p, the maximum pole order over SYT(λ) is:
 #   pole_per_cycle(λ) = max_T #{j ∈ [1, p-1] : ρ_T(j) ≤ -1}
 #
-# Equivalently: the longest descending run of cells across the boundary
-# generators in any SYT of λ.  For a single column λ = (1^p) every pair
-# is descending (ρ = -1) so pole = p-1.  For a single row λ = (p) no pair
-# is descending (ρ = +1) so pole = 0.  Other shapes lie strictly between.
+# For a single column λ = (1^p) every pair is descending (ρ = -1) so
+# pole = p-1.  For a single row λ = (p) no pair is descending (ρ = +1)
+# so pole = 0.  Other shapes lie strictly between.
 #
-# We don't enumerate full SYT here — for the test cases we only need to
-# show that:  (i) the column shape achieves p-1; and (ii) at least one
-# non-column shape achieves strictly less.  Hand-computed entries below
-# are enough for the sanity check.
+# Below uses `enumerate_syts` for full coverage of n ≤ 5; hand-computed
+# entries for n ≤ 4 retained as a sanity-check oracle.
 
 # Hand-computed pole-per-cycle for selected non-column shapes.  Each row
 # is (n, λ_tuple, max_pole_per_cycle, syt_count, justification).  The
@@ -259,6 +353,59 @@ def main() -> int:
     builder.add_data(
         "non_column_maximizer_check",
         non_column_rows,
+    )
+
+    # ───────────────────────────────────────────────────────────────
+    # Full SYT sweep for n ∈ {2, 3, 4, 5}: enumerate every λ ⊢ n,
+    # every SYT of that shape, max the boundary axial-distance sign
+    # count.  Confirms (categorically over the SYT enumeration) that
+    # the column shape (1^n) achieves p - 1 = n - 1 and every other
+    # shape achieves strictly less.
+    # ───────────────────────────────────────────────────────────────
+    full_sweep_rows = []
+    for n in (2, 3, 4, 5):
+        column_pole = n - 1
+        for lam in partitions_of(n):
+            max_pole, syt_count = pole_per_cycle_max(lam)
+            is_column = lam == (1,) * n
+            ok = (max_pole == column_pole) if is_column else (max_pole < column_pole)
+            full_sweep_rows.append({
+                "n": n,
+                "lambda": list(lam),
+                "max_pole_per_cycle": max_pole,
+                "column_pole_per_cycle": column_pole,
+                "syt_count": syt_count,
+                "is_column": is_column,
+                "passes_maximizer_claim": ok,
+            })
+            if not ok:
+                all_passed = False
+
+        # One assertion per n: "no non-column λ ⊢ n beats the column"
+        non_column_max = max(
+            (r["max_pole_per_cycle"] for r in full_sweep_rows
+             if r["n"] == n and not r["is_column"]),
+            default=-1,
+        )
+        builder.add_assertion(
+            name=f"full_sweep_n_{n}_non_column_max_lt_column",
+            computed=str(non_column_max < column_pole),
+            expected="True",
+        )
+        # And: column λ = (1^n) achieves exactly n - 1
+        column_row = next(
+            r for r in full_sweep_rows
+            if r["n"] == n and r["is_column"]
+        )
+        builder.add_assertion(
+            name=f"full_sweep_n_{n}_column_pole_eq_n_minus_1",
+            computed=column_row["max_pole_per_cycle"],
+            expected=column_pole,
+        )
+
+    builder.add_data(
+        "full_syt_sweep_n_2_to_5",
+        full_sweep_rows,
     )
     builder.add_data(
         "test_bench", rows,
