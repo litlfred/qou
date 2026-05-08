@@ -177,6 +177,67 @@ cites the matching pattern and a prior successful instance.
       workplan).
 - [x] This workplan document with per-file ranked recommendations.
 
+### 2026-05-08 follow-up — `wrap_legacy` migration helper
+
+Tier-2 P30 sweeps are the largest uncertain bucket (104 files).
+The blocker was per-file shape risk: hand-written witnesses have
+flat top-level keys (`precision_dps`, `basis_labels`, …); a naive
+port to `WitnessBuilder` would route those through `add_data(...)`
+and emit them under `data.<key>`, breaking any narrative reader
+that hardcodes the top-level path.
+
+Resolved by adding **`WitnessBuilder.wrap_legacy(name, payload, *,
+script_path, ...)`** in
+[`folio-assistant/computations/witness_base.py`](../../folio-assistant/computations/witness_base.py).
+The helper:
+
+- accepts an existing payload dict (the one a script is currently
+  passing to `json.dump`),
+- routes reserved keys (`description`, `auditOnly`, `contentBlock`)
+  into structured slots,
+- preserves every other top-level key verbatim via the new
+  `_extra_top_level` builder field, which `build()` merges in
+  without overwriting structured fields,
+- attaches `scriptHash` + `scriptCommitSha` + `engine` metadata so
+  `run_pipeline.py` can detect staleness.
+
+**Bit-equivalence on original keys verified** (stub round-trip in
+`/tmp/migrate_check.py` — every original key preserved verbatim;
+only additive metadata appended).
+
+Migration of a single file is now a 5-line edit:
+
+```python
+out = {"computation": "...", "description": "...", "k1": v1, ...}
+WitnessBuilder.wrap_legacy(
+    "<name>", out, script_path=__file__, engine="<engine>",
+).save()
+```
+
+### 2026-05-08 — first P30 migration landed
+
+- **`alpha_em_pslq_uniqueness.py`**: migrated from
+  `json.dump(out, f)` to `WitnessBuilder.wrap_legacy`.  Witness
+  retains all 8 narrative-readable top-level keys
+  (`description`, `timestamp_utc`, `precision_dps`,
+  `q_0_extended_50dp`, `one_over_alpha_value_50dp`, `basis_size`,
+  `basis_labels`, `pslq_results`) and gains `scriptHash`.
+  Scanner P30 count: 104 → 103.
+
+### Remaining P30 sweep — now mechanical
+
+With `wrap_legacy` available, the 103 remaining hits can be
+processed one PR-batch (≤ 10 files) at a time using the same
+5-line pattern.  Per-file decisions still required:
+
+1. **engine**: `"sympy"`, `"mpmath"`, `"numpy"`, `"sage"`, or
+   `"python"`?  Inspect imports.
+2. **audit-only path**: if the existing on-disk witness already
+   has `auditOnly` set (scan result tags this), preserve it; else
+   default to the workplan path
+   `docs/audits/2026-05-08-compute-audit-workplan.md` and let the
+   author re-route later.
+
 Tier 2 onward is **paused for user judgment** because every item
 either (a) requires per-file semantic review of `sp.cancel` /
 `sp.simplify` necessity, (b) requires the P21 numerical-vs-symbolic
