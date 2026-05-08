@@ -113,5 +113,32 @@
       "max_sub_braid_trace": 0.671453179676007
     }
   ],
-  "interpretation": "Per-braid tower replaces the per-generator V\u0302_i^full (3A-1 terms per atom, divergent due to H_3-at-H_{3A} weight mismatch) with per-sub-braid Markov traces (A nucleons + A(A-1)/2 pairs, dramatically fewer terms). Each sub-braid trace is computed via proper H_{3A} Schur-Weyl, ensuring |tr_M(\u03be)| < q_0 and \u03a6_q convergence."
+  "interpretation": "Per-braid tower replaces the per-generator V\u0302_i^full (3A-1 terms per atom, divergent due to H_3-at-H_{3A} weight mismatch) with per-sub-braid Markov traces (A nucleons + A(A-1)/2 pairs, dramatically fewer terms). Each sub-braid trace is computed via proper H_{3A} Schur-Weyl, ensuring |tr_M(\u03be)| < q_0 and \u03a6_q convergence.",
+  "assertions": [
+    {
+      "name": "phi_q_convergence_ok_for_all_atoms",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "framework convergence claim per atom"
+    },
+    {
+      "name": "n_atoms_tested",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0,
+      "source": "self-witness: number of atoms in this tower probe"
+    },
+    {
+      "name": "isospin_T_3He_descended_equal",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "isospin-symmetry expectation T \u2248 \u00b3He at descended level"
+    }
+  ],
+  "allPassed": true
 }

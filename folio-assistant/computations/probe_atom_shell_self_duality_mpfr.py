@@ -170,6 +170,29 @@ def main():
             "extract the full Wedderburn coefficient table for "
             "follow-up σ_shell investigations."
         )
+        # F1 (PR #565): structural assertions encoding the central
+        # falsification claim and the partition-count anchor.
+        .add_assertion(
+            "all_dual_is_false",
+            computed=0.0 if summary["all_dual"] else 1.0,
+            expected=1.0,
+            tolerance=0.0,  # binary: NOT all-dual is the predicted result
+            source="prop:shell-schur-weyl-self-duality § H_12 prediction",
+        )
+        .add_assertion(
+            "partition_count_h12",
+            computed=int(summary["n_partitions_total"]),
+            expected=77,
+            tolerance=0,  # number of partitions of 12 is exactly 77
+            source="OEIS A000041 (partition function p(12))",
+        )
+        .add_assertion(
+            "tr_M_at_q0_finite",
+            computed=float(summary["tr_M_at_q0"]),
+            expected=0.0,
+            tolerance=1.0,  # rules out NaN / inf; loose
+            source="this witness's Markov-trace anchor at q_0",
+        )
     )
     out_path = w.save()
     print(f"\nWitness: {out_path.name}")
