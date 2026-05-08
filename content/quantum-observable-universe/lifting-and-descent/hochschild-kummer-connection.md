@@ -28,7 +28,7 @@ through the cyclotomic ideal $\mathbb{Z}[q]/\Phi_n(q)$, equivalently
 through the Kummer character $\chi_n$. Perpetual non-vanishing of
 $\kappa_n$ at every finite place $p \nmid \chi(A)$
 ([Kummer tower](#rem:kummer-tower),
-[Descartes Yekutieli](#thm:descartes-yekutieli)) is then the
+[Descartes Yekutieli](#ex:descartes-yekutieli)) is then the
 statement that the motivic Galois character of the Frobenius–Hopf
 substrate is non-trivial in $\mathrm{Hom}(\chi_n, 1)$ for almost
 every $n$. The HKR comparison is the bridge: gerbe (geometric) and

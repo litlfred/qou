@@ -580,7 +580,7 @@
 | [ex:braid-group-su2](#ex:braid-group-su2) | Braid group action on $\mathbb{C}^2 \otimes \mathbb{C}^2$ | Ch 4 | — |
 | [ex:brane-boundary-su2](#ex:brane-boundary-su2) | Brane boundary for $\mathrm{SU}(2)$ | Ch 3 | — |
 | [ex:recursive-brane-tower-su2](#ex:recursive-brane-tower-su2) | Brane tower for $\mathrm{SU}(2)$ | Ch 3 | — |
-| [ex:descartes-yekutieli](#thm:descartes-yekutieli) | Bring's surface and $q$-flatness obstructions | Ch 9 | — |
+| [ex:descartes-yekutieli](#ex:descartes-yekutieli) | Bring's surface and $q$-flatness obstructions | Ch 9 | — |
 | [ex:brings-surface-concrete](#ex:brings-surface-concrete) | Bring's surface as a concrete genus-4 curve | Ch 9 | — |
 | [ex:brings-surface](#ex:brings-surface) | Bring's surface unit circle bundle | Ch 5 | — |
 | [ex:categorical-connection-su2](#ex:categorical-connection-su2) | Categorical connection as Maurer--Cartan form on $\mathrm{SU}(2)$ | Ch 1 | — |

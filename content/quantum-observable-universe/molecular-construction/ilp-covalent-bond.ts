@@ -8,6 +8,7 @@ import { proposition } from "../../schema/builders";
  */
 export default proposition({
   label: "prop:ilp-covalent-bond",
+  lean: { ref: "qou:QOU.Molecular.covalent_bond_is_ilp_optimal" },
   title: "The covalent bond is the inverse trefoil $T_{2,3}^{-1}$",
   tags: [
     "covalent-bond",

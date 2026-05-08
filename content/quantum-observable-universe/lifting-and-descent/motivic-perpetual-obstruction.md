@@ -44,7 +44,7 @@ topological means can be cited as a corollary of this lemma. In
 particular:*
 
 - [`rem:kummer-tower`](#rem:kummer-tower) summary item 6
-- [`ex:descartes-yekutieli`](#thm:descartes-yekutieli) "Motivic-Galois reading"
+- [`ex:descartes-yekutieli`](#ex:descartes-yekutieli) "Motivic-Galois reading"
 - [`ex:chi-minus-six-derivation`](#ex:chi-minus-six-derivation) Step 8
 - [`rem:hochschild-kummer-connection`](#rem:hochschild-kummer-connection) "Motivic-Galois interpretation"
 
