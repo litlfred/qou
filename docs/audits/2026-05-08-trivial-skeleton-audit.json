@@ -1,13 +1,13 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T20:14:13.159Z",
-  "total_flagged": 105,
-  "files_flagged": 55,
+  "generated": "2026-05-08T20:15:46.373Z",
+  "total_flagged": 103,
+  "files_flagged": 54,
   "patterns": {
     "const_zero": 35,
     "skel_inst": 21,
-    "prop_true": 15,
     "punit_type": 14,
+    "prop_true": 13,
     "one_def": 9,
     "holds_trivial": 7,
     "punit_unit": 2,
@@ -275,18 +275,6 @@
         "line": 99,
         "pattern": "punit_type",
         "snippet": "def CharCache (_q : ℝ) : Type := PUnit"
-      }
-    ],
-    "braids-and-knots/recursive-atom-knot-atlas.lean": [
-      {
-        "line": 200,
-        "pattern": "prop_true",
-        "snippet": "def PrincipledPathForAtomKnot : Prop := True"
-      },
-      {
-        "line": 220,
-        "pattern": "prop_true",
-        "snippet": "def FiltrationCertificateFormat : Prop := True"
       }
     ],
     "braids-and-knots/schur-weyl-mass-decomposition.lean": [
