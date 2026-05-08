@@ -246,6 +246,31 @@ follow-up PRs.
 | Conjectures with skeleton instance (tautological) | — | — | — | 1 |
 | Conjectures with full Lean-verified instance | — | — | — | 3 |
 
+### Final tally — landed in this PR
+
+After commits W1a → W1j on this branch:
+
+| State | Count | Notes |
+|---|---:|---|
+| Class-axiomatised conjectures | 63 / 63 | from PR baseline |
+| Conjectures with **full faithful Lean instance** (no tautology) | **3** | `electroweak-mass-eigenstate-count` (SM), `borromean-quark`, `brane-level-selection` |
+| Conjectures with **concrete instance**, partial faithful + skeleton fields | **3** | `electroweak-higgs-torus-link-triplet` (PDG masses + (4,6,8)/(1,2,3) by `rfl`), `weak-spectral-completeness` ($H_2$, `rfl`), `levi-degeneracy` (degeneracy set pinned by `rfl`) |
+| Conjectures with **tautological skeleton instance** (Lean-verified, but encodes no conjectural content) | **20** | knot-factor-frobenius-pairing, lifted-crossing-locality, n-v-bring-action, topological-decomposition-mass, force-carrier-knot-vs-link-dichotomy, weinberg-angle-categorical, jet-tower-uniform-delta-max, canonical-knot-id-sdp, magic-numbers-bring, mass-element-nf, mass-volume-factorization, categorical-linking-operation, shell-closure-nf-term-count, e-hartree-categorical-derivation, phi-q-tower-jsj-bridge (skeleton + sorry-bridge), q-aubin-lions, brane-tower-z-habiro, rho-prefactor-structural, shared-denominator-cusp-holonomy, classical-limit-stpart |
+| Conjectures with **`def trivialModel`** (Lean-verified concrete witness; intentionally not registered as `instance`) | **7** | crystal-graph-realization, cemetery-group-emergence, confinement-grading-correspondence, hecke-anyonic-substrate, kazhdan-lusztig-classical-limit, root-of-unity-mtc-truncation, symmetric-crystal-pair-production |
+| Conjectures with **only the class** (no concrete witness yet) | **21** | abelianisation-at-algebraic-poles, archimedean-remainder-exponential-decay, baryon-period-ratio, categorical-higgs-mechanism (mkSkeleton def, needs q_generic), categorical-neutrality-saturated-shells, chirality-ribbon-frobenius, crossing-graded-mass-expansion, cp-violation-spectral-form, denominator-zeros-as-sw-critical-points, diagrammatic-double-magic-lr-fusion, dilogarithm-archimedean-limit, algebraic-geometric-dilog-equivalence, em-coupling-chern-simons, gb-reduction-pl-thimble-bijection, hoefsmit-ew-cell-content, homological-shell-condensation, mass-endomorphism, palindromicity-orbital-type, pl-jsj-mass-integration-equivalence, q-integer-mass-formula, shell-correction-term-seven |
+| **OPEN** conjectures (cannot Lean-prove; substrate-axiom only) | **9** | kashaev-volume-conjecture, hyperbolic-volume-transcendence, q-geometric-langlands, p-vs-np-{boundary,qou}, ns-counterexample, critical-exponent, blowup-yekutieli, regularity-breakdown |
+
+**Sum check**: 3 + 3 + 20 + 7 + 21 + 9 = 63. ✓
+
+**Bottom line for this PR**: 33 of 63 conjectures (52 %) have a
+concrete Lean-verified witness this PR can point at — 6 of those
+are *faithful* (encode real conjectural content), 20 are
+*tautological skeletons* (provide §3b-cond discharge but no
+conjectural content), and 7 are pre-existing `def trivialModel`
+companions.  The remaining 30 require either (a) heavier real-
+arithmetic / opaque-symbol work, (b) external-witness inputs (e.g.
+`¬ IsRootOfUnityH q`), or (c) genuine open math (the 9 OPEN row).
+
 ### W1a — landed in this PR (continuation of W1)
 
 | Conjecture | Instance | Verification |
