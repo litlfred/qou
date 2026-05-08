@@ -22,14 +22,15 @@ import Mathlib.Algebra.Order.Field.Basic
 
 namespace QOU.Observations
 
-/-- The substrate parameter q_0 ≈ 1.10998. -/
-noncomputable opaque q_0_real : ℝ
+/-- The substrate parameter q_0 ≈ 1.10998 (witness-pinned). -/
+def q_0_real : ℝ := 1.10998
 
-/-- The electron rest mass m_e ≈ 0.511 MeV. -/
-noncomputable opaque m_e_real : ℝ
+/-- The electron rest mass m_e (CODATA 2022, in MeV). -/
+def m_e_real : ℝ := 0.51099895
 
-/-- The electroweak scale v ≈ 246 GeV (= 246220 MeV). -/
-noncomputable opaque v_ew_real : ℝ
+/-- The electroweak scale v ≈ 246 GeV (= 246220 MeV).  PDG vacuum
+    expectation value `v ≈ 246.220 GeV`. -/
+def v_ew_real : ℝ := 246220
 
 /-- Definition of N_v from `ex:hadron-half-life-verification`:
     N_v := 3 v / m_e. -/
