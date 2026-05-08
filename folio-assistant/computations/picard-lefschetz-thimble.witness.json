@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-08T17:46:15.593887+00:00",
-  "commitSha": "60893dfd00d9f356072e6cdf0e152fcf79fc8e63",
+  "computedAt": "2026-05-08T23:34:23.924787+00:00",
+  "commitSha": "a0933f5d481c5f3d5e5c248766483eaede5abe52",
   "assertions": [
     {
       "name": "m_p from ∏ dc_k/dz",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 21,
   "computation": "picard-lefschetz-thimble",
   "scriptFile": "picard_lefschetz_thimble.py",
   "scriptHash": "5d7d37540283",

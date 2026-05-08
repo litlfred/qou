@@ -113,17 +113,19 @@ def q_hook_product(partition, q, simplify=True):
 
     F10 (PR #565): added `simplify=True` opt-out (default kept True
     for back-compat). Pass `simplify=False` from hot loops where the
-    caller will further-process the expression — sp.simplify here is
-    purely cosmetic before that arithmetic. Ref: 2834792d.
+    caller will further-process the expression. The product of
+    q_integers is a pure rational expression in q, so `sp.cancel`
+    suffices for normalisation and is significantly faster than
+    `sp.simplify`. Ref: 2834792d (gemini review on PR #565).
     """
     hooks = hook_lengths(partition)
     result = Integer(1)
     for h in hooks:
         result *= q_integer(h, q)
-    return sp.simplify(result) if simplify else result
+    return sp.cancel(result) if simplify else result
 
 
-def schur_at_two_vars(partition, q):
+def schur_at_two_vars(partition, q, simplify=True):
     """Schur function s_λ(q, q⁻¹) — specialisation to two Schur variables.
 
     By the principal specialisation formula for two variables:
@@ -154,7 +156,9 @@ def schur_at_two_vars(partition, q):
     # With x_1 = q, x_2 = q⁻¹:
     numer = q ** (a + 1) * q ** (-b) - q ** b * q ** (-(a + 1))
     denom = q - q ** (-1)
-    return sp.simplify(numer / denom)
+    # Pure rational in q; cancel suffices and is far faster than
+    # simplify (gemini review on PR #565).
+    return sp.cancel(numer / denom) if simplify else (numer / denom)
 
 
 def schur_weyl_weight(partition, q, simplify=True):
@@ -162,13 +166,16 @@ def schur_weyl_weight(partition, q, simplify=True):
 
     F10 (PR #565): `simplify=True` opt-out parameter; default kept
     True for back-compat. Hot-loop callers should pass False.
+    Per gemini review, propagate `simplify` into `schur_at_two_vars`
+    and use `sp.cancel` (not `sp.simplify`) since the result is a
+    rational expression in q.
     """
-    s = schur_at_two_vars(partition, q)
+    s = schur_at_two_vars(partition, q, simplify=simplify)
     if s == 0:
         return Integer(0)
     H = q_hook_product(partition, q, simplify=simplify)
     result = s / H
-    return sp.simplify(result) if simplify else result
+    return sp.cancel(result) if simplify else result
 
 
 # ─── Specht character — Murnaghan–Nakayama ────────────────────────────
