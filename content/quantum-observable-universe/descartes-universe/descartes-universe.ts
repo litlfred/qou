@@ -225,6 +225,7 @@ export default chapter({
         "bring-hyperbolic-knot-bloch-decomposition",
         "mass-tower-open-problems-classes",
         "crystal-basis-resolves-mass-tower-open-problems",
+        "clausen-function-mathlib-filler",
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
