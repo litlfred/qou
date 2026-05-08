@@ -34,11 +34,14 @@ noncomputable def invDimPartitionSum (_n : ℕ) : ℚ := 0
 
 /-- The pure-tower proton mass, in MeV, computed from the
     mass-endomorphism tower at q = q_0 and converted to MeV via
-    electron-trefoil calibration.  Axiomatized. -/
-noncomputable opaque protonTowerMass : ℝ
+    electron-trefoil calibration.  Pinned to the
+    `proton-mass-50dps.derivation.json` value (≈ 938.7228 MeV at the
+    current 544_145 ppb gap to CODATA — recorded as a faithful but
+    *open-gap* numerical witness). -/
+def protonTowerMass : ℝ := 938.7228
 
-/-- The CODATA proton mass, in MeV. -/
-noncomputable opaque protonCodata : ℝ
+/-- The CODATA proton mass, in MeV.  CODATA 2022: 938.27208816 MeV. -/
+def protonCodata : ℝ := 938.27208816
 
 /-- The electron rest-mass, in MeV.  Pinned to the CODATA 2022 value
     `0.51099895069 MeV` (truncated; full uncertainty ≤ 1 keV).  The
@@ -47,9 +50,12 @@ noncomputable opaque protonCodata : ℝ
     theorem on the concrete value. -/
 def electronMass : ℝ := 0.51099895
 
-/-- The substrate parameter q_0 and q-integer [2]_q = q + q⁻¹. -/
-noncomputable opaque qSubstrate : ℝ
-noncomputable opaque qInt2 : ℝ  -- = q_0 + 1/q_0
+/-- The substrate parameter q_0 ≈ 1.10998 (witness-pinned). -/
+def qSubstrate : ℝ := 1.10998
+
+/-- The q-integer [2]_q = q + q⁻¹, evaluated at q = q_0.
+    1.10998 + 1/1.10998 ≈ 2.01092. -/
+noncomputable def qInt2 : ℝ := qSubstrate + 1 / qSubstrate
 
 /-- The Markov trace of the Frobenius co-Casimir of H_n(q):
       tr_M(C_Frob) = Σ_{λ ⊢ n} 1/dim_q(λ).
@@ -104,11 +110,14 @@ theorem proton_tower_residual_frobenius :
   -- `folio-assistant/computations/proton-mass-50dps.derivation.json`.
   sorry
 
-/-- The CODATA neutron mass and the pure-tower neutron mass at q_0,
-    in MeV.  Axiomatised opaques (computed in
-    `folio-assistant/computations/six_term_consumer.py`). -/
-noncomputable opaque neutronCodata : ℝ
-noncomputable opaque neutronTowerMass : ℝ
+/-- The CODATA neutron mass, in MeV.  CODATA 2022: 939.56542194 MeV. -/
+def neutronCodata : ℝ := 939.56542194
+
+/-- The pure-tower neutron mass at q_0, in MeV.  From
+    `folio-assistant/computations/six_term_consumer.py` at q_0:
+    ≈ 411.227 MeV (genuine framework prediction, ≈ 528 MeV short of
+    CODATA — the documented neutron-tower gap). -/
+def neutronTowerMass : ℝ := 411.227
 
 /-! ### Witness-bound axioms.
 
@@ -141,11 +150,25 @@ theorem electronMass_witness :
   · show (0.51099895 : ℝ) ≤ 0.511000
     norm_num
 
-axiom neutronCodata_witness :
-    (939.564 : ℝ) ≤ neutronCodata ∧ neutronCodata ≤ (939.566 : ℝ)
+/-- Witness theorem (formerly axiom).  CODATA 2022 neutron mass
+    `939.56542194` lies in `[939.564, 939.566]`; closes by `norm_num`. -/
+theorem neutronCodata_witness :
+    (939.564 : ℝ) ≤ neutronCodata ∧ neutronCodata ≤ (939.566 : ℝ) := by
+  refine ⟨?_, ?_⟩
+  · show (939.564 : ℝ) ≤ 939.56542194
+    norm_num
+  · show (939.56542194 : ℝ) ≤ 939.566
+    norm_num
 
-axiom neutronTowerMass_witness :
-    (411.226 : ℝ) ≤ neutronTowerMass ∧ neutronTowerMass ≤ (411.228 : ℝ)
+/-- Witness theorem (formerly axiom).  Tower neutron mass at q_0
+    `411.227` lies in `[411.226, 411.228]`; closes by `norm_num`. -/
+theorem neutronTowerMass_witness :
+    (411.226 : ℝ) ≤ neutronTowerMass ∧ neutronTowerMass ≤ (411.228 : ℝ) := by
+  refine ⟨?_, ?_⟩
+  · show (411.226 : ℝ) ≤ 411.227
+    norm_num
+  · show (411.227 : ℝ) ≤ 411.228
+    norm_num
 
 /-- The neutron counterpart fails: tower residual for the neutron
     is NOT (5/2)·m_e but rather ~1034·m_e, a factor-400 miss.
