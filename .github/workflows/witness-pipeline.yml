@@ -132,14 +132,30 @@ jobs:
         # per-chain results + the global witness-trust audit.
         run: python3 folio-assistant/computations/derivation_chain_validator.py
 
-      # NOTE: The CAL-3 strict gate (`e0_calibration_audit.py`) and the
-      # 1 ppb tr_M cross-check (`cross_check_trM_1ppb.py`) were both
-      # moved to `_deprecated/` in commit 1026fa8b ('move 262 unblocked
-      # .py to _deprecated/').  Per repo policy ("deprecated is
-      # deprecated; don't use"), these steps are removed from CI rather
-      # than re-pointed at the deprecated paths.  Reinstating CAL-3 /
-      # 1 ppb gating is a #565 (F11) follow-up that should land
-      # canonical scripts at non-deprecated locations first.
+      - name: E_0 / Q_β(n) calibration audit (strict)
+        # Per CAL-3 (`prop:three-calibration-inputs`), every site
+        # that uses E_0 or Q_β(n) must derive from the authoritative
+        # `experimental_constants.Q_NEUTRON_MEV` (computed from CODATA
+        # m_n - m_p - m_e). Strict mode fails CI if any active code
+        # site hardcodes the value or anchors on proton mass instead.
+        # Restored to canonical location in #567 — the script was
+        # incorrectly swept into _deprecated/ by 1026fa8b along with
+        # 262 actually-unblocked scripts; it is an active CI gate
+        # for the 22 ppb m_μ/m_e calibration floor (#564 1ppb plan).
+        run: |
+          python3 folio-assistant/computations/e0_calibration_audit.py --strict
+
+      - name: Cross-check tr_M @ q_0 — Hoefsmit vs markov_peel (1ppb)
+        # Independent-path consistency gate for the canonical Markov
+        # trace at the calibrated substrate parameter q_0. Both paths
+        # store full 50-dps decimal strings; the script reports
+        # relative |Δ| via mpmath. Strict mode fails CI on any > 1ppb
+        # divergence — this is the **primary precision regression
+        # gate** for the 1 ppb program goal.
+        # Restored to canonical location in #567 (same provenance
+        # as e0_calibration_audit above).
+        run: |
+          python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict
 
       - name: Axiomatic Markov-trace recursive reducer (H_3..H_6)
         # Per prop:markov-trace-recursive-reducer: terminating axiom-
