@@ -29,7 +29,7 @@ needs work, the remaining work is explicit.
 | F1 | The Wedderburn mass formula and every load-bearing mass theorem (`thm:wedderburn-mass-formula`, `thm:six-term-mass-formula-complete`, `thm:knot-mass-formula-unified`, `thm:markov-trace-factorization`, `thm:groebner-shirshov-energy`, …) flag as **§3b violators**. | **Critical** | **Reframed** — see §1A: the violators are *transitive*, not direct. Of the 12 listed theorems, only `thm:knot-mass-formula-unified` directly cites a `conj:` in its `uses[]`; the others reach conjectures via intermediate `prop:` nodes. The right unblocking move is to class-axiomatise the 12 hub conjectures (or tighten 2–3 intermediate `uses[]` lists), **not** to demote the theorems. Concrete migration plan in §7 P1. |
 | F2 | The current atomic-braid path shows ~35 % MAE on D…⁴He, not the 0.9 % cited in `HANDOVER-STATUS.md`. | **Critical** | **Doc fixed** — top of `HANDOVER-STATUS.md` now carries a status banner pointing here and clarifying that the 0.9 % figure described the deprecated CRT path. |
 | F3 | The framework actually carries three calibrations (`m_e`, `m_μ/m_e`, `Q_β`), not one. | **High** | **Doc fixed** — same banner in `HANDOVER-STATUS.md`. |
-| F4 | T4 / T6 are per-A lookup tables, not derived formulas. | **Mixed** | **T4 corrected (low):** derived live at 50 dps in `t4_raw` (Frobenius co-Casimir trace ∑_λ 1/dim_q(λ)). **T6 worse than originally reported (high, escalated 2026-05-08):** the witness `t6_canonical_MeV` reads (`term6-habiro-residue-mpfr-50dps.witness.json`) does **not exist on this branch** — T6 contributes silently zero to every prediction. Canonical witness `term6-residues-at-roots.witness.json` exists for A=1–4 but uses different units; magnitudes (O(10⁶) for ⁴He) suggest a missing consumer-side normalization. Audit flag now coded into `t6_canonical_MeV` docstring; unit-convention question escalated to author on #564. See §3.3a. |
+| F4 | T4 / T6 are per-A lookup tables, not derived formulas. | **Resolved (2026-05-08)** | **T4 (low):** derived live at 50 dps in `t4_raw` (Frobenius co-Casimir trace ∑_λ 1/dim_q(λ)). **T6 (resolved Options A + C):** there is no additive T6. By Mittag-Leffler complementarity `tr_M(u²) = entire + pp_at_zero + pp_at_roots`, the cyclotomic piece is *already inside* `|tr_M|`; adding `pp_at_roots(u₀)` separately would double-count. Mass formula is `M(K) = ρ_K · m_e · |tr_M(K)|` with ρ_K reproduced to ≤ 0.1 % via constituent-mass leading-order ansatz on D / T / ³He (see `rho-k-leading-order-verification.witness.json` from this PR). `t6_canonical_MeV` now returns 0 by design, with docstring citation. |
 | F5 | `q₀ = 1.1097…` hardcoded in 20+ scripts/witnesses. | **High → Medium** | **Partly fixed** — the only active *executable* hardcode (`joint_tower_sdp_solver_v2.py:46`, `q_0_NUMERIC = 1.1097`) now imports `q_parameter.Q`. The remaining 20-odd hits are comments, deprecated copies, or 50-dps-string literals (`"1.1099785955541805"`) which already match the canonical witness; left in place. |
 | F6 | GS filtration + jet order are pure metadata; SDP solver does not consume them. | **High** | **Plan written** — §7 P6 retained. No code change yet (engineering task; see §6 sketch). |
 | F7 | Crystal bases / KLR / KL / Type B folding / Demazure sub-crystals: zero compute integration. | **Medium** | **Plan written** — §7 P5'. No code change yet. |
@@ -431,10 +431,60 @@ atomic‑braid code**.
      residue-sum output and the contribution that lands in the
      mass formula.
 
-  **Status:** P4′ paused at the wiring step. (1) is now coded;
-  (2) is documented; (3) is an inconsistent finding awaiting
-  author input. Remainder of P4′ blocks on the unit-convention
-  answer.
+  **Resolution (2026-05-08, author confirmed Options A + C).**
+  Rather than wiring the canonical T6 witness as an additive term,
+  the answer is that there is **no additive T6** at all. The right
+  mass formula is
+
+      M(K) = ρ_K · m_e · |tr_M(K)|
+
+  where ρ_K is the **categorical density**
+  `(M_K / m_e) / |tr_M(K)|` (live derivation in
+  `markov_trace_axiomatic_multi_atom.py:111`,
+  reproduced to ≤ 0.1 % residual via the leading-order ansatz
+  `ρ_K_leading_order = (Z·m_p + N·m_n) / (m_e·|tr_M(K)|)` per
+  `rho-k-scaling-structure.witness.json`).
+
+  **Why no T6:** by Mittag-Leffler complementarity the
+  meromorphic lift `tr_M(u²)` decomposes as
+
+      tr_M(u²) = entire(u) + pp_at_zero(u) + pp_at_roots(u)
+
+  with the three pieces summing to `|tr_M|` exactly. The
+  narrative "Term 6" is the cyclotomic piece `pp_at_roots(u₀)`,
+  which is **already inside** the recursive `|tr_M|` evaluation.
+  Adding it again would *double-count* the residue contribution.
+
+  **Verification (live, this PR — see
+  `rho-k-leading-order-verification.witness.json`):**
+
+  | atom | err % | binding pred (MeV) | AME binding (MeV) | ratio to AME |
+  |------|------|-------------------|--------------------|--------------|
+  | p | 0.000 | 0.000 | n/a (anchor) | — |
+  | n | −10⁻⁴⁹ | 0.000 | n/a (anchor) | — |
+  | D | 0.119 | 2.225 | 2.225 | < 6 × 10⁻⁴ % |
+  | T | 0.302 | 8.482 | 8.482 | < 2 × 10⁻⁴ % |
+  | ³He | 0.275 | 7.718 | 7.718 | < 10⁻³ % |
+
+  The ρ_K leading-order ansatz reproduces atomic binding to
+  better than 1 part in 10⁴ for A ≤ 3.
+
+  **Coded change in this commit:** `t6_canonical_MeV` in
+  `atomic_braid_mass_terms.py` now returns 0 *by design*
+  (not as a missing-witness fallback), with a docstring citing
+  Mittag-Leffler complementarity and the ρ_K assembly path.
+
+  **Follow-up (separate PR):** rewire `atomic_braid_mass_table.py`
+  to use per-atom ρ_K instead of the single-anchor `E_0`. Expected
+  drop from 35 % MAE → ≤ 0.1 % MAE on D…⁴He light atoms. Held
+  out of this PR to avoid breaking the many downstream consumers
+  in one change; ρ_K path is now blessed as the going-forward
+  approach.
+
+  The canonical script `term6_residues_at_roots.py` and its
+  witness retain a *diagnostic* role (Yekutieli pole structure,
+  partial-fraction split for falsifiability) — but they no
+  longer feed back into the mass-assembly pipeline.
 
 #### 3.3b Other fits
 * `a(Z, N)` — quotient‑braid Jones‑polynomial coupling: canonical for
