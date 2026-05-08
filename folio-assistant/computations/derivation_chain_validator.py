@@ -156,10 +156,19 @@ def validate_chain(chain_path: Path) -> ChainResult:
             for m in matches:
                 script_path = REPO_ROOT / m.group(1)
                 if not script_path.exists():
-                    structural_issues.append(
-                        f"{s['name']!r}: cited script {m.group(1)!r} "
-                        f"not found at {script_path}"
+                    # Dead-code sweep (commit 191bd9f5) moved retired
+                    # producers under folio-assistant/computations/_deprecated/.
+                    # Accept the cited script if a copy exists there;
+                    # provenance is preserved for future refresh.
+                    deprecated_path = (
+                        script_path.parent / "_deprecated" /
+                        script_path.name
                     )
+                    if not deprecated_path.exists():
+                        structural_issues.append(
+                            f"{s['name']!r}: cited script {m.group(1)!r} "
+                            f"not found at {script_path}"
+                        )
 
         # 4. COMPUTATIONAL is the leaf only
         if trust_basis == "computational" and i != len(steps) - 1:
