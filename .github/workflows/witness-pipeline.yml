@@ -195,6 +195,19 @@ jobs:
         # Migration target: route LP solves through lp_dual_solver.py.
         run: python3 folio-assistant/computations/lp_dual_witness_validator.py
 
+      - name: Run bound_state_observable_validator (warn-only)
+        # Per prop:confinement-frobenius-reciprocity: every witness
+        # whose description / computation / name claims a bound-state
+        # observable (axial coupling, magnetic moment, form factor,
+        # expectation value of an operator on a confined state, …)
+        # must include gram_matrix, gram_inverse, lp_active_set,
+        # shadow_prices — OR carry the explicit opt-out
+        # "observable_type": "raw_trace" (legitimate raw Markov-trace
+        # case). Currently warn-only; tickets AXIAL-G_A-002 and
+        # TRIAGE-001..003 in docs/audits/2026-05-06-frobenius-pairing-
+        # compute-audit.md are pending. Pass --strict to enforce.
+        run: python3 folio-assistant/computations/bound_state_observable_validator.py
+
       - name: Witness wiring audit (warn-only)
         # Three-bucket triage of every Python `.witness.json`:
         #   wired   → referenced by `computation.witness` in some content block
@@ -209,7 +222,6 @@ jobs:
           curl -fsSL https://bun.sh/install | bash
           export PATH="$HOME/.bun/bin:$PATH"
           bun run scripts/audit-wiring.ts --warn-only
-
 
       - name: Detect drift in committed witnesses
         run: |

@@ -11,6 +11,7 @@ export default conjecture({
     "prop:nuclear-knot-classification",
     "rem:fibre-functor-rigidity",
     "prop:bw-coefficient-shadow-price",
+    "prop:confinement-frobenius-reciprocity",
     "def:q-casimir",
     "rem:adjoint-trace",
     "def:q-heat-equation",

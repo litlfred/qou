@@ -69,5 +69,6 @@
   },
   "codata_cot_theta_W": 1.8230678710486174,
   "verdict": "no-clean-fit-on-2dim-invariant-only",
-  "next_step": "Extract eigenvalue spectrum of β_EW(Δ_I^minimal) on the 18 Δ_I-mixed tableaux (off-diagonal Hoefsmit blocks); the Weinberg rotation lives there, not in the 2-dim invariant subspace.  This is a substantive categorical-physics computation requiring the full Hoefsmit seminormal-form action on multi-dim irreps."
+  "next_step": "Extract eigenvalue spectrum of β_EW(Δ_I^minimal) on the 18 Δ_I-mixed tableaux (off-diagonal Hoefsmit blocks); the Weinberg rotation lives there, not in the 2-dim invariant subspace.  This is a substantive categorical-physics computation requiring the full Hoefsmit seminormal-form action on multi-dim irreps.",
+  "auditOnly": "docs/audits/2026-05-06-close-321-weinberg-gap.md"
 }

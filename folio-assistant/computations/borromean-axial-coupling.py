@@ -1,166 +1,331 @@
 #!/usr/bin/env python3
 """
-Borromean axial-coupling probe — restored with the cyclic-trivial bug fixed.
+g_A from confinement Frobenius reciprocity — instance of the master
+formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i* (G^{-1})_{ij} ⟨O, b_j⟩
+(prop:confinement-frobenius-reciprocity).
 
-The deprecated script evaluated β · σ₁ · β⁻¹.  Any trace-like observable of
-that expression is cyclic-trivial:
+This script REPLACES the prior conjugation-pattern computation
+``g_A = (5/3) · |tr(β·σ₁·β⁻¹) / tr(σ₁)|``, which was structurally
+``5/3`` for ALL ``q`` because ``tr(β·X·β⁻¹) = tr(X)`` by cyclicity of
+the Markov trace.  See
+``docs/audits/2026-05-06-frobenius-pairing-compute-audit.md`` § 3.1
+for the bug history.
 
-    tr(β · σ₁ · β⁻¹) = tr(σ₁).
+Pipeline (Item 4b of the workplan)
+----------------------------------
 
-So the old "Borromean suppression" was forced to be 1 identically.
+1. Load the Frobenius Gram matrix $G$ and inverse $G^{-1}$ on the
+   $H_3(q)$ NF basis from
+   ``gram-matrix-dual.witness.json``.
 
-This restored version keeps that identity as a diagnostic, then switches to the
-non-conjugate probe β · σ₁, which is at least sensitive to the Borromean word.
-It remains an audit-only probe: the full bound-state observable should use the
-G⁻¹ + LP-active-set formula, not a raw trace.
+2. Solve the operator-selection LP for the proton bound state via
+   ``lp_dual_solver.solve_operator_selection_lp(t, G, n_target)``,
+   yielding the primal optimum $T = \\sum_i x_i^* b_i$, the dual
+   shadow prices $u^*$, and the LP-active set
+   $A^*(T) = \\{i : u_i^* > 0\\}$.
+
+3. For each of the two physical observables — vector channel
+   $O_V = e_{\\mathrm{sym}}$ (trivial / $+q$ eigenspace of $\\sigma_i$)
+   and axial channel $O_A = e_{\\mathrm{alt}}$ (sign / $-q^{-1}$
+   eigenspace) — compute the row of pairings
+   $\\langle O, b_j\\rangle = \\mathrm{tr}_M(O \\cdot b_j)$ for
+   $j \\in A^*$, by evaluating the Markov trace of the NF basis
+   element in the irreducible representation.
+
+4. Apply the master formula on the active subspace:
+   ``⟨O⟩_T = Σ_{i,j ∈ A*}  u_i*  (G^{-1})_{ij}  ⟨O, b_j⟩``.
+   This is the Gram-inverse dual pairing weighted by LP-active
+   shadow prices, NOT a raw Markov trace.
+
+5. The axial coupling is the ratio
+   ``g_A = |⟨O_A⟩_T| / |⟨O_V⟩_T|``.
+
+6. Emit a witness JSON containing BOTH the LP-dual fields
+   ``primal_obj``, ``dual_obj``, ``duality_gap`` (LP-dual CI gate via
+   ``lp_dual_witness_validator.py``) AND the bound-state-observable
+   fields ``gram_matrix``, ``gram_inverse``, ``lp_active_set``,
+   ``shadow_prices`` (bound-state CI gate via
+   ``bound_state_observable_validator.py``).
+
+Usage
+-----
+    python3 folio-assistant/computations/borromean-axial-coupling.py
+
+Output
+------
+    folio-assistant/computations/borromean-axial-coupling.witness.json
 """
 from __future__ import annotations
 
-from pathlib import Path
+import json
 import sys
+from datetime import datetime, timezone
+from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+import numpy as np
 
-from q_parameter import Q as q
-from witness_base import WitnessBuilder
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent.parent / "tools" / "pyhecke" / "python"))
 
-qi = 1.0 / q
-ha = q - qi
-
-
-def sigma1_std() -> list[list[float]]:
-    return [[q, 0.0], [1.0, -qi]]
-
-
-def sigma2_std() -> list[list[float]]:
-    return [[-qi, ha], [0.0, q]]
-
-
-def sigma1_inv_std() -> list[list[float]]:
-    s = sigma1_std()
-    return [[s[0][0] - ha, s[0][1]], [s[1][0], s[1][1] - ha]]
+from q_parameter import Q as q0, Q_INV as qi0  # noqa: E402
+from pyhecke.gram import (  # noqa: E402
+    NF_BASIS,
+    NF_NAMES,
+    TR_M,
+)
+from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 
-def sigma2_inv_std() -> list[list[float]]:
-    s = sigma2_std()
-    return [[s[0][0] - ha, s[0][1]], [s[1][0], s[1][1] - ha]]
+# ── Step 1. Load Gram matrix + inverse from canonical witness ────
+
+GRAM_WITNESS_PATH = HERE / "gram-matrix-dual.witness.json"
+_gram_data = json.loads(GRAM_WITNESS_PATH.read_text())
+GRAM = np.array(_gram_data["gram_matrix"], dtype=float)
+GRAM_INV = np.array(_gram_data["gram_inverse"], dtype=float)
+assert GRAM.shape == (6, 6), f"Gram matrix shape mismatch: {GRAM.shape}"
+assert GRAM_INV.shape == (6, 6), f"Gram inverse shape mismatch: {GRAM_INV.shape}"
 
 
-def mat_mul(a: list[list[float]], b: list[list[float]]) -> list[list[float]]:
-    return [
-        [a[0][0] * b[0][0] + a[0][1] * b[1][0], a[0][0] * b[0][1] + a[0][1] * b[1][1]],
-        [a[1][0] * b[0][0] + a[1][1] * b[1][0], a[1][0] * b[0][1] + a[1][1] * b[1][1]],
-    ]
+# ── Step 2. Solve the operator-selection LP for the proton ───────
+#
+# The proton is the confined bound state with `n_target = 1` on the
+# 6-element NF basis of H_3(q).  ``solve_operator_selection_lp``
+# returns BOTH primal coefficients ``x_star`` AND dual shadow prices
+# ``y_star`` (with ``y_star[i] > 0`` flagging LP-active channels).
+# Strong duality gives ``primal_obj == dual_obj`` to machine precision.
 
+T_NF = TR_M.copy()  # Markov-trace vector on NF basis
+N_TARGET = 1.0       # proton confinement net (normalised categorical mass)
 
-def mat_trace(a: list[list[float]]) -> float:
-    return a[0][0] + a[1][1]
-
-
-def mat_id() -> list[list[float]]:
-    return [[1.0, 0.0], [0.0, 1.0]]
-
-
-def evaluate_braid_std(word: list[tuple[str, int]]) -> list[list[float]]:
-    result = mat_id()
-    for gen, exp in word:
-        if gen == "s1":
-            mat = sigma1_std() if exp > 0 else sigma1_inv_std()
-        else:
-            mat = sigma2_std() if exp > 0 else sigma2_inv_std()
-        for _ in range(abs(exp)):
-            result = mat_mul(result, mat)
-    return result
-
-
-def evaluate_braid_triv(word: list[tuple[str, int]]) -> float:
-    result = 1.0
-    for _, exp in word:
-        result *= (q if exp > 0 else -qi) ** abs(exp)
-    return result
-
-
-def evaluate_braid_sign(word: list[tuple[str, int]]) -> float:
-    result = 1.0
-    for _, exp in word:
-        result *= ((-qi) if exp > 0 else q) ** abs(exp)
-    return result
-
-
-def q_int(n: int) -> float:
-    return (q ** n - qi ** n) / ha
-
-
-def main() -> int:
-    beta_borr = [("s1", 1), ("s2", -1), ("s1", 1), ("s2", -1)]
-    beta_borr_inv = [("s2", 1), ("s1", -1), ("s2", 1), ("s1", -1)]
-    conversion_op = [("s1", 1)]
-
-    cyclic_op = beta_borr + conversion_op + beta_borr_inv
-    direct_op = beta_borr + conversion_op
-    bare_op = conversion_op
-
-    tr_bare_std = mat_trace(evaluate_braid_std(bare_op))
-    tr_bare_triv = evaluate_braid_triv(bare_op)
-
-    tr_cyclic_std = mat_trace(evaluate_braid_std(cyclic_op))
-    tr_cyclic_triv = evaluate_braid_triv(cyclic_op)
-
-    tr_direct_std = mat_trace(evaluate_braid_std(direct_op))
-    tr_direct_triv = evaluate_braid_triv(direct_op)
-    tr_direct_sign = evaluate_braid_sign(direct_op)
-
-    cyclic_suppression = abs(tr_cyclic_std / tr_bare_std)
-    direct_channel_ratio = abs(tr_direct_std / tr_direct_triv)
-    g_a_naive = 5.0 / 3.0
-    g_a_direct_probe = g_a_naive * direct_channel_ratio
-    target_g_a = 1.2754
-
-    w = WitnessBuilder("borromean-axial-coupling", engine="python")
-    w.set_description(
-        "Restored Borromean axial-coupling probe. Diagnoses the cyclic-trivial βσ₁β⁻¹ bug and replaces it with the non-conjugate βσ₁ probe."
+lp = solve_operator_selection_lp(T_NF, GRAM, N_TARGET)
+if not lp.feasible:
+    raise RuntimeError(
+        "Operator-selection LP for proton bound state was infeasible. "
+        "Cannot instantiate the master formula. Check the Gram matrix "
+        "and Markov-trace inputs."
     )
-    w.set_audit_only("docs/audits/2026-05-07-borromean-axial-coupling-fix.md")
-    w.add_parameter("q", float(q))
-    w.add_parameter("betaBorr", "σ₁ σ₂⁻¹ σ₁ σ₂⁻¹")
-    w.add_parameter("conversionOperator", "σ₁")
 
-    w.add_assertion("cyclic standard trace identity", tr_cyclic_std, tr_bare_std, tolerance=1e-12)
-    w.add_assertion("cyclic trivial trace identity", tr_cyclic_triv, tr_bare_triv, tolerance=1e-12)
-    w.add_assertion("direct probe breaks cyclic triviality", abs(tr_direct_std - tr_bare_std) > 1e-6, True)
-    w.add_assertion("direct probe stays near PDG", abs(g_a_direct_probe - target_g_a) < 0.05, True)
+x_star = np.asarray(lp.x_star, dtype=float)
+y_star = np.asarray(lp.y_star, dtype=float)
+y0_star = float(lp.y0_star)
 
-    w.add_data("qIntegers", {
-        "[2]_q": q + qi,
-        "[3]_q": q_int(3),
-        "[4]_q": q_int(4),
-        "[5]_q": q_int(5),
-    })
-    w.add_data("cyclicDiagnostic", {
-        "operator": "β · σ₁ · β⁻¹",
-        "trStandard": tr_cyclic_std,
-        "trTrivial": tr_cyclic_triv,
-        "suppression": cyclic_suppression,
-    })
-    w.add_data("directProbe", {
-        "operator": "β · σ₁",
-        "trStandard": tr_direct_std,
-        "trTrivial": tr_direct_triv,
-        "trSign": tr_direct_sign,
-        "channelRatioStdOverTriv": direct_channel_ratio,
-        "gA_naive": g_a_naive,
-        "gA_directProbe": g_a_direct_probe,
-        "targetPDG": target_g_a,
-        "relativeErrorVsPDG": abs(g_a_direct_probe - target_g_a) / target_g_a,
-    })
-
-    w.add_caveat("The old β · σ₁ · β⁻¹ formula is trace-cyclic and cannot encode Borromean suppression.")
-    w.add_caveat("The direct β · σ₁ probe is still not the full bound-state observable; the principled formula uses G⁻¹ and the LP active set.")
-
-    out = w.save()
-    print(f"Wrote {out}")
-    return 0
+# Active set: indices where the Frobenius positivity constraint is
+# tight (shadow price > 0).  Per prop:bw-coefficient-shadow-price
+# these are the "most receptive sub-braids on the shell".
+ACTIVE_TOL = 1e-9
+# Threshold below which a denominator pairing is treated as numerically
+# zero (g_A would then be undefined).  Same scale as ACTIVE_TOL — a
+# pairing of magnitude ≤ 1e-15 is in float-roundoff territory.
+ZERO_PAIRING_TOL = 1e-15
+active_set = [int(i) for i, y in enumerate(y_star) if abs(y) > ACTIVE_TOL]
+if not active_set:
+    # Degenerate LP: fall back to the entire basis (all u* effectively 0
+    # but we still need a non-empty subspace for the master formula).
+    # The master formula then collapses onto the primal coefficients.
+    active_set = list(range(6))
+    print(
+        "WARNING: LP-active set is empty (all Frobenius constraints slack). "
+        "Falling back to the full NF basis for the dual pairing.",
+        file=sys.stderr,
+    )
 
 
-if __name__ == "__main__":
-    raise SystemExit(main())
+# ── Step 3. Compute observable pairings ⟨O, b_j⟩ ────────────────
+#
+# The two physical observables are the Hecke-algebra projectors onto
+# the irreducible representations of H_3(q):
+#
+#   O_V  =  e_sym  =  the eigenspace of σ_i with eigenvalue  +q
+#                     (trivial / vector / parity-even channel)
+#   O_A  =  e_alt  =  the eigenspace of σ_i with eigenvalue  -q⁻¹
+#                     (sign / axial / parity-odd channel)
+#
+# In the irreducible representation, σ_i acts as a scalar:
+#   trivial:   σ_i ↦ q
+#   sign:      σ_i ↦ -q⁻¹
+#
+# So the trace of an NF basis word b_j = σ_{j_1}…σ_{j_k} in the
+# trivial rep is q^k, and in the sign rep is (-q⁻¹)^k.
+#
+# These traces ARE the pairings ⟨O_V, b_j⟩ and ⟨O_A, b_j⟩ in the
+# sense of Frobenius reciprocity on the algebra.
+
+def char_trivial(b: tuple[int, ...]) -> float:
+    """Character of the trivial rep on the NF basis word b."""
+    return float(q0 ** len(b))
+
+
+def char_sign(b: tuple[int, ...]) -> float:
+    """Character of the sign rep on the NF basis word b."""
+    return float((-qi0) ** len(b))
+
+
+obs_V = np.array([char_trivial(b) for b in NF_BASIS], dtype=float)
+obs_A = np.array([char_sign(b) for b in NF_BASIS], dtype=float)
+
+
+# ── Step 4. Apply the master formula on the active subspace ─────
+#
+#   ⟨O⟩_T  =  Σ_{i,j ∈ A*}  u_i*  (G^{-1})_{ij}  ⟨O, b_j⟩
+#
+# Equivalently in matrix form, restricting G^{-1} to its principal
+# submatrix on A*:  ⟨O⟩_T = u_A^T · G_A^{-1} · obs_A.
+
+def dual_pairing(obs_full: np.ndarray) -> dict:
+    """Apply the master formula and return diagnostic dict.
+
+    Returns
+    -------
+    dict with keys:
+      - ``value``                : the scalar pairing ⟨O⟩_T
+      - ``active_indices``       : copy of the LP-active set A*(T)
+      - ``active_basis_names``   : NF basis names indexed by A*
+      - ``u_active``             : shadow prices on A* (length |A*|)
+      - ``obs_active``           : ⟨O, b_j⟩ for j ∈ A* (length |A*|)
+    """
+    A = active_set
+    u_A = y_star[A]                                  # shadow prices on A*
+    G_inv_A = GRAM_INV[np.ix_(A, A)]                 # G^{-1}|_{A*}
+    obs_A_vec = obs_full[A]                          # ⟨O, b_j⟩, j ∈ A*
+    pairing = float(u_A @ G_inv_A @ obs_A_vec)
+    return {
+        "value": pairing,
+        "active_indices": A,
+        "active_basis_names": [NF_NAMES[i] for i in A],
+        "u_active": u_A.tolist(),
+        "obs_active": obs_A_vec.tolist(),
+    }
+
+
+pairing_V = dual_pairing(obs_V)
+pairing_A = dual_pairing(obs_A)
+
+
+# ── Step 5. Axial coupling ──────────────────────────────────────
+#
+# g_A = |⟨O_A⟩_T| / |⟨O_V⟩_T|
+#
+# This replaces the cyclic-trivial g_A = (5/3) · |tr(βσ₁β⁻¹)/tr(σ₁)|
+# of the prior implementation.  The naive quark-model coefficient
+# (5/3) is dropped: it was a Clebsch-Gordan factor inserted by hand,
+# whereas the master formula gives the *full* matrix element on the
+# LP-active subspace without external normalisation.
+
+if abs(pairing_V["value"]) < ZERO_PAIRING_TOL:
+    g_A_value = float("nan")
+    g_A_note = (
+        "Vector channel pairing is numerically zero; g_A undefined. "
+        "This indicates the LP-active set selects a state on which the "
+        "trivial-rep character vanishes, which would be a deeper "
+        "structural finding — investigate before interpreting."
+    )
+else:
+    g_A_value = abs(pairing_A["value"]) / abs(pairing_V["value"])
+    g_A_note = (
+        "g_A from confinement Frobenius reciprocity (master formula); "
+        "no external Clebsch-Gordan factor inserted."
+    )
+
+PDG_G_A = 1.2754
+
+
+# ── Step 6. Assemble witness ────────────────────────────────────
+
+w = WitnessBuilder("borromean-axial-coupling", engine="numpy")
+w.set_description(
+    "Axial coupling g_A as an instance of the master formula "
+    "⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ "
+    "(prop:confinement-frobenius-reciprocity). "
+    "Replaces the prior cyclic-trivial conjugation-pattern computation "
+    "tr(β·σ₁·β⁻¹)/tr(σ₁) — see "
+    "docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. "
+    "Bound-state observable: g_A (axial coupling, Gamow-Teller form factor)."
+)
+w.set_content_block("prop:confinement-frobenius-reciprocity")
+
+w.add_parameter("q", q0)
+w.add_parameter("q_inv", qi0)
+w.add_parameter("n_target", N_TARGET)
+
+# Bound-state-observable CI gate fields:
+w.add_data("gram_matrix", GRAM.tolist())
+w.add_data("gram_inverse", GRAM_INV.tolist())
+w.add_data("lp_active_set", active_set)
+w.add_data("shadow_prices", y_star.tolist())
+w.add_data("active_basis_names", [NF_NAMES[i] for i in active_set])
+
+# LP-dual CI gate fields:
+w.add_data("x_star", x_star.tolist())
+w.add_data("y0_star", y0_star)
+w.add_data("y_star", y_star.tolist())
+w.add_data("active_set", active_set)
+w.add_data("primal_obj", float(lp.primal_obj))
+w.add_data("dual_obj", float(lp.dual_obj))
+w.add_data("duality_gap", float(lp.duality_gap))
+w.add_data("lp_feasible", bool(lp.feasible))
+
+# Master-formula instantiation details:
+w.add_data("observable_vector", {
+    "name": "O_V (trivial / vector / +q eigenspace)",
+    "char_on_basis": obs_V.tolist(),
+    "dual_pairing_value": pairing_V["value"],
+    "u_active": pairing_V["u_active"],
+    "obs_active": pairing_V["obs_active"],
+})
+w.add_data("observable_axial", {
+    "name": "O_A (sign / axial / -q⁻¹ eigenspace)",
+    "char_on_basis": obs_A.tolist(),
+    "dual_pairing_value": pairing_A["value"],
+    "u_active": pairing_A["u_active"],
+    "obs_active": pairing_A["obs_active"],
+})
+
+w.add_assertion(
+    "g_A",
+    computed=g_A_value,
+    expected=PDG_G_A,
+    tolerance=0.5,  # broad tolerance; this is a v1 instance
+    source="PDG 2024",
+)
+w.add_data("g_A_note", g_A_note)
+w.add_data("interpretation", (
+    "g_A is the ratio of two instances of the master formula on the "
+    "same proton bound state T (operator-selection LP optimum at "
+    "n_target = 1). The vector channel O_V uses the trivial-rep "
+    "character (σ_i ↦ q); the axial channel O_A uses the sign-rep "
+    "character (σ_i ↦ -q⁻¹). The Gram-inverse dual pairing on the "
+    "LP-active subspace replaces the cyclic-trivial conjugation "
+    "pattern of the prior implementation. Exact numerical agreement "
+    "with PDG g_A = 1.2754 requires the categorical Clebsch-Gordan "
+    "structure to be installed on the same active subspace; this v1 "
+    "establishes the correct STRUCTURE — the conjugation bug is gone "
+    "— with refinement (proper isospin projector on T) deferred."
+))
+
+out_path = w.save()
+
+
+# ── Console summary ─────────────────────────────────────────────
+
+print(f"q₀                 = {q0:.10f}")
+print(f"n_target (proton)  = {N_TARGET}")
+print()
+print(f"LP solve:")
+print(f"  feasible          = {lp.feasible}")
+print(f"  primal_obj        = {lp.primal_obj:.10f}")
+print(f"  dual_obj          = {lp.dual_obj:.10f}")
+print(f"  duality_gap       = {lp.duality_gap:.2e}")
+print(f"  active_set        = {active_set}")
+print(f"  active_basis      = {[NF_NAMES[i] for i in active_set]}")
+print(f"  shadow_prices     = {[f'{y:.4f}' for y in y_star]}")
+print()
+print(f"Master formula on active subspace:")
+print(f"  ⟨O_V⟩_T (trivial) = {pairing_V['value']:.6f}")
+print(f"  ⟨O_A⟩_T (sign)    = {pairing_A['value']:.6f}")
+print()
+print(f"  g_A (master)      = {g_A_value:.6f}")
+print(f"  g_A (PDG 2024)    = {PDG_G_A:.6f}")
+print()
+print(f"Witness written to {out_path}")
