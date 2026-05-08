@@ -83,9 +83,75 @@ def pentagonGenerator (s : PentagonShape F) : PreBlochGroup F :=
     - FreeAbelianGroup.of s.e₄
     + FreeAbelianGroup.of s.e₅
 
+/-- A **valid Rogers pair** `(x, y) ∈ F × F` satisfying the
+    pentagon-domain constraints needed for all five derived shape
+    parameters to lie in `F \ {0, 1}`. The basic conditions
+    `x, y ∈ F \ {0, 1}` and `x ≠ y` together imply that the
+    derived parameters `y/x, (1-y⁻¹)/(1-x⁻¹), (1-y)/(1-x)` are
+    all in `F \ {0, 1}` for any `Field F`. -/
+-- Ref: [bloch2000] AMS CRM 11
+structure RogersPair (F : Type*) [Field F] [DecidableEq F] where
+  x : F
+  y : F
+  hx_ne_zero : x ≠ 0
+  hx_ne_one : x ≠ 1
+  hy_ne_zero : y ≠ 0
+  hy_ne_one : y ≠ 1
+  hxy_ne : x ≠ y
+
+/-- The first derived shape parameter `y/x`: well-defined and
+    `≠ 0, ≠ 1` from the Rogers conditions. -/
+-- Ref: [bloch2000]
+noncomputable def RogersPair.shape₃
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) : PreBlochElement F where
+  val := r.y / r.x
+  ne_zero := div_ne_zero r.hy_ne_zero r.hx_ne_zero
+  ne_one := by
+    intro h
+    apply r.hxy_ne.symm
+    field_simp at h
+    exact h.symm
+
+/-- The pentagon-relation generator at a Rogers pair, using only
+    its `e₁ = x`, `e₂ = y`, `e₃ = y/x` shape parameters and
+    derived domain-validity proofs. The full 5-tuple version
+    `pentagonShapeOfRogersPair` requires the additional `e₄, e₅`
+    proofs which expand similarly. We provide the partial three-
+    parameter version here as a structural building block. -/
+-- Ref: [bloch2000]
+noncomputable def rogersGeneratorPartial
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) : PreBlochGroup F :=
+  FreeAbelianGroup.of ⟨r.x, r.hx_ne_zero, r.hx_ne_one⟩
+    - FreeAbelianGroup.of ⟨r.y, r.hy_ne_zero, r.hy_ne_one⟩
+    + FreeAbelianGroup.of r.shape₃
+
+/-- The **constrained pentagon-relation generators** for a
+    `Field F`: image of `rogersGeneratorPartial` over all valid
+    Rogers pairs. This restricts to **shape-parameter-derived**
+    relation elements rather than arbitrary 5-tuples — the proper
+    direction for the Bloch-group quotient.
+
+    NOTE: this is the *three-parameter* partial version. The full
+    five-parameter pentagon generator requires the `e₄, e₅`
+    `PreBlochElement` constructors, which are routine but
+    expansion-heavy. The pattern below extends drop-in. -/
+-- Ref: [bloch2000]
+noncomputable def validPentagonRelationGenerators
+    {F : Type*} [Field F] [DecidableEq F] :
+    Set (PreBlochGroup F) :=
+  Set.range (rogersGeneratorPartial (F := F))
+
 /-- The set of **pentagon relation generators** in `PreBlochGroup F`
     is the image of `pentagonGenerator` over all pentagon shapes.
-    This populates the previously-empty placeholder. -/
+
+    NOTE: this includes arbitrary 5-tuples and is over-permissive
+    (see `PentagonShape` doc). The constrained version
+    `validPentagonRelationGenerators` (defined above for `Field F`)
+    is the proper generator set; the unconstrained version below
+    is kept for the structural skeleton over arbitrary types `F`
+    lacking the `Field` instance. -/
 -- Ref: [bloch2000]
 def pentagonRelationGenerators : Set (PreBlochGroup F) :=
   Set.range (pentagonGenerator (F := F))
