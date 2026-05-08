@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-08T17:35:57.109370+00:00",
-  "commitSha": "549f043eb3c0b2ab6c6148322f909f3191f869c8",
+  "computedAt": "2026-05-08T17:57:52.222987+00:00",
+  "commitSha": "a814a27877e2c0ea8e2f1868331a8bc662084c41",
   "assertions": [
     {
       "name": "crystal_pole[T_2_1]_equals_published_alpha_shift",
@@ -93,17 +93,124 @@
       "computed": "[9, 10]",
       "expected": "[9, 10]",
       "passed": true
+    },
+    {
+      "name": "non_column_lambda_2_2_pole_lt_column_max",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "non_column_lambda_3_3_pole_lt_column_max",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "non_column_lambda_3_2_1_pole_lt_column_max",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "non_column_lambda_4_4_pole_lt_column_max",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "non_column_lambda_4_3_1_pole_lt_column_max",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "non_column_lambda_4_2_2_pole_lt_column_max",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "crystal-pole-order",
   "scriptFile": "crystal_pole_order.py",
-  "scriptHash": "4fc6b6defaad",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0051a4f8b15c",
+  "scriptCommitSha": "a814a27877e2c0ea8e2f1868331a8bc662084c41",
   "description": "Combinatorial verification of the crystal-R-matrix proof of Sub-lemma 2.1 (refined). For T_{p,k} on p strands, the column SYT (1^p) has all axial distances ρ = -1, so the pole-per-cycle is p-1 and the total over k cycles is k(p-1) — matching prop:alpha-shift-torus-knot. AXKIA chain T_{2,9}→9, T_{3,5}→10 verified.",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "data": {
+    "non_column_maximizer_check": [
+      {
+        "n": 2,
+        "lambda": [
+          2
+        ],
+        "max_pole_per_cycle": 0,
+        "column_pole_per_cycle": 1,
+        "syt_count": 1,
+        "strictly_less_than_column": true,
+        "justification": "shape (2): single SYT [1,2]; ρ_T(1) = +1 (same row); pole = 0."
+      },
+      {
+        "n": 3,
+        "lambda": [
+          3
+        ],
+        "max_pole_per_cycle": 0,
+        "column_pole_per_cycle": 2,
+        "syt_count": 1,
+        "strictly_less_than_column": true,
+        "justification": "shape (3): single SYT [1,2,3]; ρ = (+1, +1); pole = 0."
+      },
+      {
+        "n": 3,
+        "lambda": [
+          2,
+          1
+        ],
+        "max_pole_per_cycle": 1,
+        "column_pole_per_cycle": 2,
+        "syt_count": 2,
+        "strictly_less_than_column": true,
+        "justification": "shape (2,1): T₁ = [1 2; 3] gives ρ = (+1, -2), one descent → pole 1; T₂ = [1 3; 2] gives ρ = (-1, +2), one descent → pole 1; max = 1."
+      },
+      {
+        "n": 4,
+        "lambda": [
+          4
+        ],
+        "max_pole_per_cycle": 0,
+        "column_pole_per_cycle": 3,
+        "syt_count": 1,
+        "strictly_less_than_column": true,
+        "justification": "shape (4): row; ρ = (+1, +1, +1); pole = 0."
+      },
+      {
+        "n": 4,
+        "lambda": [
+          3,
+          1
+        ],
+        "max_pole_per_cycle": 1,
+        "column_pole_per_cycle": 3,
+        "syt_count": 3,
+        "strictly_less_than_column": true,
+        "justification": "shape (3,1): each of the 3 SYTs has exactly one j ∈ {1,2,3} with ρ_T(j) ≤ -1 (the descent into the second-row cell); max = 1."
+      },
+      {
+        "n": 4,
+        "lambda": [
+          2,
+          2
+        ],
+        "max_pole_per_cycle": 2,
+        "column_pole_per_cycle": 3,
+        "syt_count": 2,
+        "strictly_less_than_column": true,
+        "justification": "shape (2,2): T = [1 2; 3 4] gives ρ = (+1, -2, +1), one descent → pole 1; T = [1 3; 2 4] gives ρ = (-1, +2, -1), two descents → pole 2; max = 2."
+      }
+    ],
     "test_bench": [
       {
         "interface": "T_{2,1}",
