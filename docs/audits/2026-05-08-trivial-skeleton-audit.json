@@ -1,10 +1,10 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-08T19:45:29.345Z",
-  "total_flagged": 110,
-  "files_flagged": 56,
+  "generated": "2026-05-08T19:47:09.306Z",
+  "total_flagged": 111,
+  "files_flagged": 57,
   "patterns": {
-    "const_zero": 37,
+    "const_zero": 38,
     "skel_inst": 21,
     "prop_true": 16,
     "punit_type": 14,
@@ -592,6 +592,13 @@
         "line": 45,
         "pattern": "punit_unit",
         "snippet": "def canonicalState (n : ℕ) (q : ℝ) : SDPState n q := PUnit.unit"
+      }
+    ],
+    "lean/QOU/LiftingDescent/HomologicalCondensation.lean": [
+      {
+        "line": 80,
+        "pattern": "const_zero",
+        "snippet": "def obstructionSize (_n _r _p _q : ℕ) : ℝ := 0"
       }
     ],
     "molecular-construction/shell-closure-nf-term-count.lean": [
