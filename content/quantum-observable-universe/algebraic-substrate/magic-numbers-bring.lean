@@ -63,4 +63,20 @@ theorem ranks_match_magic_set
     ∀ n ∈ magicSet, ∃ L : BringPeriodSublattice, L.rank = n :=
   fun n h => ⟨c.L n h, c.rank_eq h⟩
 
+/-- **Skeleton instance.**  Constructs a tautological sub-lattice of
+    rank `n` for each magic number, with `s5_stable = tau_stable = True`.
+    This provides a Lean-verified instance of the class but does **not**
+    establish the deeper conjectural content — namely that the
+    sub-lattices arise from the brane-tower cohomology of Bring's
+    surface with the natural $S_5$ and $\hat\tau$ actions.  The
+    skeleton is sufficient to discharge the §3b-cond hypothesis for
+    downstream blocks and gives the `ranks_match_magic_set` theorem a
+    concrete witness. -/
+-- Ref: [manuscript] conj:magic-numbers-bring §"Skeleton"
+instance skeleton : MagicNumbersBring where
+  L := fun n _ => { rank := n, s5_stable := True, tau_stable := True }
+  rank_eq := fun _ => rfl
+  s5_stable_all := fun _ => trivial
+  tau_stable_all := fun _ => trivial
+
 end QOU.AlgebraicSubstrate

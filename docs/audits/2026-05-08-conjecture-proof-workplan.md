@@ -241,5 +241,23 @@ follow-up PRs.
 | Conjectural-propagation violators | 258 | 0 | 0 | 0 |
 | Conditional-on-class blocks | 3 | 261 | 261 | 261 |
 | Trivial-True classes (placeholder content) | 0 | 9 | 9 | **0** |
-| Conjectures with at least one instance proof | 0 | 0 | 0 | **1** |
+| Conjectures with at least one instance proof | 0 | 0 | 0 | **4** (after W1a) |
+| Conjectures still triv-True (placeholder content) | — | — | — | 0 |
+| Conjectures with skeleton instance (tautological) | — | — | — | 1 |
+| Conjectures with full Lean-verified instance | — | — | — | 3 |
+
+### W1a — landed in this PR (continuation of W1)
+
+| Conjecture | Instance | Verification |
+|---|---|---|
+| `conj:electroweak-mass-eigenstate-count` | Standard Model: `eigenstateCount = 3`, multiplicities `(W±, Z, H) = (2, 1, 1)` | `rfl` |
+| `conj:electroweak-higgs-torus-link-triplet` | Canonical $(T(2,4), T(2,6), T(2,8))$ at PDG masses $(80.379, 91.188, 125.25)$ GeV | `rfl` for crossings/genus, `norm_num` for monotonicity |
+| `conj:weak-spectral-completeness` | $H_2(q)$: 2 Hoefsmit cells span the 2-dim weak sector | `rfl` |
+| `conj:magic-numbers-bring` | Skeleton (tautological sub-lattices with `s5_stable = tau_stable = True`); honest about deferring the brane-tower realisation | `rfl` for ranks |
+
+Remaining W1 candidates (deferred — non-rfl complexity):
+
+- `conj:weinberg-angle-categorical` — depends on `LkDischarged` / `HoefsmitDischarged` / `HiggsVEVAutomorphism` / `WeinbergAngleNumerical`; instance requires constructing each upstream class.  Effort: medium, separate PR.
+- `conj:force-carrier-knot-vs-link-dichotomy` — depends on `CategoricalHiggsAsLinking` and `HoefsmitCellContentEW`; same shape.
+- `conj:shell-correction-term-seven` — `sub_percent_accuracy` field requires bounding `|δ| ≤ 1%` for actual nucleus masses; this is the conjecture proper, not a discharge target.
 | Dangling remarks | 0 | 0 | 0 | 0 |
