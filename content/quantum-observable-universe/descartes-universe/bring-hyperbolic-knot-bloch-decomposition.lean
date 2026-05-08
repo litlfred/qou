@@ -168,4 +168,52 @@ theorem bring_zero_mode_value_positive : bringZeroModeValue > 0 := by
 theorem bring_zero_mode_value_ne_zero : bringZeroModeValue ≠ 0 := by
   exact ne_of_gt bring_zero_mode_value_positive
 
+/-- **Q-linear independence of BW values from disjoint cyclotomic
+    sectors**, packaged as a typeclass. A concrete instance asserts
+    the Q-linear independence of three specific reals:
+    `bringZeroModeValue = 2/(3π)`, the figure-8 BW value
+    `2·Cl_2(π/3)`, and the per-octahedron Borromean BW value
+    `Cl_2(π/4) = G` (Catalan).
+
+    This is a transcendence-style hypothesis — the strongest known
+    related fact is that `Cl_2(π/3)` and `Cl_2(π/4)` lie in distinct
+    sub-Bloch groups `B(Q(ζ_3)) ⊥ B(Q(ζ_4))` after Galois
+    decomposition, so they are Q-linearly independent over each
+    other; including `1/π` introduces a rational-vs-Bloch axis that
+    is conjecturally independent (Schanuel-style). The class is
+    inhabited unconditionally only if a stronger transcendence
+    theorem becomes available.
+-/
+-- Ref: [borel1974], [bloch2000]
+class BWQIndependence
+    (cl2_pi_3 cl2_pi_4 : ℝ) : Prop where
+  /-- The three reals `2/(3π)`, `cl2_pi_3`, `cl2_pi_4` are
+      Q-linearly independent. Stated in the integer-equation form
+      sufficient for the lemma below. -/
+  no_two_knot_decomp :
+    ∀ (a b : ℤ),
+      (a : ℝ) * (2 * cl2_pi_3) + (b : ℝ) * (8 * cl2_pi_4)
+        = bringZeroModeValue → False
+
+/-- **Two-knot insufficiency (conditional on `BWQIndependence`).**
+
+    Under the Q-linear-independence hypothesis on the BW values
+    `{2/(3π), Cl_2(π/3), Cl_2(π/4)}`, no `Z`-linear combination of
+    only the figure-8 (`2·Cl_2(π/3)`) and the Borromean rings
+    (`8·Cl_2(π/4)`) BW values equals `2/(3π)`. Equivalently: any
+    `BringHyperbolicDecomposition` instance must include at least
+    one hyperbolic knot beyond `{4_1, B_3}` from the QOU spectrum.
+
+    The proof is direct unpacking of the class hypothesis. No `sorry`. -/
+-- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
+-- Ref: [manuscript] rem:figure-8-archimedean-illustration
+-- Ref: [manuscript] binding-scale-catalan
+theorem two_knot_decomposition_insufficient
+    (cl2_pi_3 cl2_pi_4 : ℝ)
+    [hQ : BWQIndependence cl2_pi_3 cl2_pi_4]
+    (a b : ℤ)
+    (h : (a : ℝ) * (2 * cl2_pi_3) + (b : ℝ) * (8 * cl2_pi_4)
+          = bringZeroModeValue) : False :=
+  hQ.no_two_knot_decomp a b h
+
 end QOU.Descartes

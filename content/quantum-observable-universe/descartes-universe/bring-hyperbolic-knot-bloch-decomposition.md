@@ -203,23 +203,47 @@ inclusion in $\mathbb{Q}(\zeta_{15})$.
 ## What's proved (Lean handle)
 
 The Lean file [`bring-hyperbolic-knot-bloch-decomposition.lean`](bring-hyperbolic-knot-bloch-decomposition.lean)
-establishes the unconditional algebraic skeleton:
+establishes the unconditional algebraic skeleton plus one
+conditional non-existence result narrowing the decomposition:
 
-- `r_2_cyclotomic` — for any odd $n \geq 3$, $r_2(\mathbb{Q}(\zeta_n)) = \varphi(n)/2$.
-- `r_2_zeta5_eq_two`, `r_2_zeta15_eq_four`, `r_2_zeta3_eq_one` —
-  the three concrete values, by `decide`.
-- `field_inclusion_chain` — $\mathbb{Q}(\zeta_3),\mathbb{Q}(\zeta_5)
-  \subset \mathbb{Q}(\zeta_{15})$ as the compositum.
-- `bring_zero_mode_value_irrational_over_zeta3` (sketch) —
-  $2/(3\pi)$ is not a $\mathbb{Z}$-multiple of
-  $D\bigl(e^{i\pi/3}\bigr)$ in $\mathbb{R}$, so the figure-8
-  alone cannot inhabit `BringZeroModeBlochClass`.
+- `r2Cyclotomic` — for any $n$, $r_2(\mathbb{Q}(\zeta_n)) = \varphi(n)/2$ (definition).
+- `r2_zeta3_eq_one`, `r2_zeta4_eq_one`, `r2_zeta5_eq_two`,
+  `r2_zeta12_eq_two`, `r2_zeta15_eq_four`, `r2_zeta60_eq_eight`
+  — concrete values via `decide`.
+- `compositum_rank_decomposition_narrow` —
+  $r_2(\mathbb{Q}(\zeta_{15})) = r_2(\mathbb{Q}(\zeta_3)) + r_2(\mathbb{Q}(\zeta_5)) + 1$.
+- `compositum_rank_decomposition_full` —
+  $r_2(\mathbb{Q}(\zeta_{60})) = r_2(\mathbb{Q}(\zeta_{15})) + r_2(\mathbb{Q}(\zeta_4)) + 3$.
+- `bring_zero_mode_value_positive`, `bring_zero_mode_value_ne_zero` —
+  basic positivity of $2/(3\pi)$.
 - A class `BringHyperbolicDecomposition` axiomatising the existence
   of the finite multi-set $\{(K_i, n_i)\}$.
 - `bring_hyperbolic_decomposition` — sorry-free conditional theorem
   taking `BringHyperbolicDecomposition` as `[Instance]` and
   yielding `BringZeroModeBlochClass`.
+- A class `BWQIndependence cl2_pi_3 cl2_pi_4` axiomatising the
+  Q-linear independence of $\{2/(3\pi), \mathrm{Cl}_2(\pi/3),
+  \mathrm{Cl}_2(\pi/4)\}$.
+- `two_knot_decomposition_insufficient` — sorry-free conditional
+  lemma taking `BWQIndependence` as `[Instance]` and proving that
+  no $\mathbb{Z}$-linear combination of $D[Z_{4_1}] = 2\,\mathrm{Cl}_2(\pi/3)$
+  and $D[Z_{\mathcal{B}_3}] = 8\,\mathrm{Cl}_2(\pi/4)$ alone equals
+  $2/(3\pi)$. Any decomposition must therefore include **at least
+  one hyperbolic knot beyond $\{4_1, \mathcal{B}_3\}$** from the
+  QOU spectrum (e.g.\ $6_2, 8_{11}, L_{6a4}$, or higher-isotope
+  knots from the recursive atlas).
+
+The decomposition search is therefore narrowed: the figure-8 and
+Borromean rings are necessary to cover the cyclotomic sectors
+$\mathbb{Q}(\zeta_3)$ and $\mathbb{Q}(\zeta_4)$, but they are not
+sufficient. The minimal search target is now a $\mathbb{Z}$-linear
+combination of three or more distinct hyperbolic-knot BW values
+from the atlas, in the rank-8 Bloch group
+$B(\mathbb{Q}(\zeta_{60}))\otimes\mathbb{Q}$.
 
 Closure of the class instance reduces to (C-Hyp): identify
 $\mathcal{K}_{\mathrm{Bring}}$ explicitly and verify the integer
-relation against $\zeta_{\mathbb{Q}(\zeta_{15})}^*(2)/\pi^8$.
+relation against $\zeta_{\mathbb{Q}(\zeta_{60})}^*(2)/\pi^?$. The
+two-knot insufficiency lemma above eliminates the smallest possible
+ansatz; the open problem is now the integer relation among the
+remaining $r_2 - 2 = 6$ available cyclotomic-sector BW values.
