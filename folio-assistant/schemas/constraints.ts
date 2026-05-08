@@ -192,10 +192,11 @@ export const RemarkSchema = BlockBaseSchema.extend({
 
 const ComputationEngineSchema = z.enum([
   "snappea", "sympy", "mpmath", "sage", "python", "numpy", "scipy",
+  "closed-form", "python+mpmath", "python+numpy+cvxpy",
 ]);
 
 const ComputationStatusSchema = z.enum([
-  "not_run", "verified", "failed", "error", "stale",
+  "not_run", "verified", "failed", "error", "stale", "experimental",
 ]);
 
 export const ComputationSchema = z.object({

@@ -190,3 +190,55 @@ bun run scripts/audit-wiring.ts --warn-only
   is opted in.
 - Substrate-derived literals in paper prose go through
   `:val[name]{…}` (`witnessed-values` skill); never hard-code.
+
+## 7. Post-rebase reuse + simplify pass (2026-05-08)
+
+Per `/prepare-merge` step 2a. Main shipped during this branch's
+session:
+
+- `content/.../braids-and-knots/jet-prefix-gb-filtration.md`
+  (PR #571) — distinguishes truncation cutoff `k` from intrinsic
+  grading bound `ℓ(K,q)`. Future SDP-wiring work (per #564 P6)
+  should key any cache by the intrinsic bound, not the cutoff.
+- `content/.../braids-and-knots/ontological-agnosticism.md`
+  (PR #571) — interpretive remark; flat transport of crystal-limit
+  observables to the generic fibre. Useful framing for any
+  follow-up that lifts the F6 BlockCache demo to the symbolic-q
+  path.
+- `.claude/skills/local/coordinate.md` (PR #568) — official
+  /coordinate skill. The version landed with this branch was a
+  parallel implementation; rebase took main's authoritative copy.
+- `.claude/skills/local/editor.md` (PR #570) — adds the PR-queue
+  policy for handling webhook events without interrupting the
+  workplan.
+
+**Schema gap closed.** 16 content files on main carried
+`status: "experimental"` and 4 carried compound engine names
+(`closed-form`, `python+mpmath`, `python+numpy+cvxpy`) that the
+Zod schema rejected. Widened `ComputationStatusSchema` and
+`ComputationEngineSchema` in
+[`folio-assistant/schemas/constraints.ts`](../../folio-assistant/schemas/constraints.ts)
+to accept these values. Validation goes from 74 hard errors → 0
+hard errors (185 warnings unchanged; pre-existing `:val` block-
+computation hints).
+
+**No code duplicates with main.** The branch's work is purely
+compute-infrastructure; main's 4 PRs touched content blocks
+(braids-and-knots) and skills, with zero overlap on
+`folio-assistant/computations/`. No simplifications discovered;
+no proofs to revisit.
+
+### New 1ppb-improvement areas surfaced by this rebase
+
+| # | Lever | Source | Sketch |
+|---|---|---|---|
+| L1 | **Per-atom intrinsic grading bound `ℓ(K,q)`** as an SDP cache key, not the truncation `k`. | `jet-prefix-gb-filtration.md` (main, #571) | Emit a `jet-prefix-grading-bound.witness.json` with `ℓ(K,q)` per atomic braid; #564's P6 (jet-order → Rust SDP wiring) keys variable filtering by it. Enables warm-started chain-decomposition without recomputing the cutoff per run. |
+| L2 | **Crystal-limit transport** for observables that timeout at symbolic `q`. | `ontological-agnosticism.md` (main, #571) | Compute observable at `q=0` (combinatorial; fast), flatly transport to `q_0` along the connection. Side-steps `sp.simplify` walls (P16 cases) for any observable that respects flat transport. Paired with #567's crystal-R-matrix proof, the path is rigorous. |
+| L3 | **Class-axiomatise the 12 hub conjectures** per #564 §1A. | #564 P1 | One small PR per conjecture; each closes ~249 §3b violators downstream. Unblocks Lean conditional-on-class proofs across the mass / binding chain. |
+| L4 | **F2 reactivation** when #564 lands its witness regen. | author decision (this branch) | The dropped `scriptHash` backfill becomes safe to apply once #564's wrap_legacy migration settles; ~18 hand-written witnesses gain staleness detection. |
+| L5 | **Compound-β shell calibration** | #564 P8 | Implement `compound_beta_shell.py` chain-subtraction against AME 2020 Q-values. Drops shell residual contribution from ~5–15% to ~0.1%. |
+| L6 | **Quotient-braid `a(Z, N)` for `A ≥ 5`** | #564 P5' + #567's crystal proof | Replace placeholder `(1−h²)^(A−2)` with the column-rich crystal-R-matrix formula. Drops residual 10–30% → 1–3% on heavy atoms. |
+
+L1 and L2 are immediately tractable on `folio-assistant/computations/`
+(small witness emitters); L5 and L6 are research-grade. L3 is paper-
+side bookkeeping. L4 unblocks itself.
