@@ -53,11 +53,16 @@ For each sibling PR:
 
 ```bash
 gh pr view <N> --json number,title,body,state,headRefName,updatedAt
-gh pr view <N> --json files | jq -r '.files[].path' | head -30
+gh pr view <N> --json files --jq '.files[].path'
 ```
 
+Use `gh`'s embedded `--jq` (don't pipe to an external `jq`; it
+isn't a guaranteed dependency in every Claude Code environment).
+Read the **full** file list, not a truncated head — partial scope
+maps cause silent overlaps later. File paths are cheap.
+
 Or via MCP: `mcp__github__list_pull_requests` /
-`mcp__github__pull_request_read`.
+`mcp__github__pull_request_read` (with paginated `get_files`).
 
 Build a **scope map**: which PR owns which workplan phase,
 which files, which conjectures, which compute scripts.
@@ -114,7 +119,9 @@ When you commit something cherry-pickable, post a follow-up:
 
 - Landed in `<commit-sha>`: <one sentence>
 - Cherry-pick file pointers: `path/file.py:fn`, `path/file.lean:Decl`
-- Updated [`AUDIT-DEEP-2026-05.md`](…) §<section>: <what changed>
+- Updated [`<your-audit-or-plan-doc>.md`](…) §<section>: <what
+  changed> — and/or appended a row to
+  [`docs/coordination/<goal-slug>.md`](…)
 - Next: <next task on your queue>
 ```
 
