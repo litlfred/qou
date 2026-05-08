@@ -1,8 +1,7 @@
 {
-  "computedAt": "2026-05-02T06:22:03.694733+00:00",
   "computation": "gb-filtration-jet-order",
+  "computedAt": "2026-05-08T23:50:29.591746+00:00",
   "description": "Proof-of-concept GB-filtration + jet-order tracker for the Iwahori-Hecke algebra H_n(q).  Provides the data model that the joint-tower SDP confinement solver will need: every reduction step records (filtration grade, jet-order index, Coxeter relation fired).  Verified on σ_1^3 (electron) and (σ_1 σ_2^{-1})^3 (proton/neutron body).",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "symbolic_q_form": {
     "engine": "sympy",
     "q_symbol": "q (sp.Symbol('q', positive=True))",
@@ -14,16 +13,6 @@
       1
     ],
     "filtration_polynomials_in_q": {
-      "0": [
-        {
-          "perm": [
-            1,
-            2
-          ],
-          "canonical_word": [],
-          "coefficient_polynomial_q": "q - 1/q"
-        }
-      ],
       "1": [
         {
           "perm": [
@@ -34,6 +23,16 @@
             1
           ],
           "coefficient_polynomial_q": "q**2 - 1 + q**(-2)"
+        }
+      ],
+      "0": [
+        {
+          "perm": [
+            1,
+            2
+          ],
+          "canonical_word": [],
+          "coefficient_polynomial_q": "q - 1/q"
         }
       ]
     },
@@ -63,16 +62,6 @@
         1
       ],
       "filtration_certificate": {
-        "0": [
-          {
-            "perm": [
-              1,
-              2
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "q - 1/q"
-          }
-        ],
         "1": [
           {
             "perm": [
@@ -84,11 +73,21 @@
             ],
             "coefficient_in_q": "q**2 - 1 + q**(-2)"
           }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "q - 1/q"
+          }
         ]
       },
       "filtration_shape": {
-        "0": 1,
-        "1": 1
+        "1": 1,
+        "0": 1
       },
       "jet_log": [
         {
@@ -167,17 +166,6 @@
         -2
       ],
       "filtration_certificate": {
-        "0": [
-          {
-            "perm": [
-              1,
-              2,
-              3
-            ],
-            "canonical_word": [],
-            "coefficient_in_q": "1 - (q**2 - 1)**4/q**4"
-          }
-        ],
         "1": [
           {
             "perm": [
@@ -200,6 +188,17 @@
               1
             ],
             "coefficient_in_q": "(-q**2 - (q**2 - 1)**2)*(q**2 - 1)**3/q**5"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "1 - (q**2 - 1)**4/q**4"
           }
         ],
         "2": [
@@ -230,8 +229,8 @@
         ]
       },
       "filtration_shape": {
-        "0": 1,
         "1": 2,
+        "0": 1,
         "2": 2
       },
       "jet_log": [
@@ -512,6 +511,1024 @@
       "n_hecke_relations_fired": 6
     },
     {
+      "name": "figure-8 4_1 (σ_1 σ_2^{-1})^2 in H_3",
+      "n": 3,
+      "word": [
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "filtration_certificate": {
+        "2": [
+          {
+            "perm": [
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "1"
+          },
+          {
+            "perm": [
+              2,
+              3,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**2/q**2"
+          }
+        ],
+        "1": [
+          {
+            "perm": [
+              1,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2
+            ],
+            "coefficient_in_q": "-q + 1/q"
+          },
+          {
+            "perm": [
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
+              1
+            ],
+            "coefficient_in_q": "(q**2 - 1)**3/q**3"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "(q**2 - 1)**2/q**2"
+          }
+        ]
+      },
+      "filtration_shape": {
+        "2": 2,
+        "1": 2,
+        "0": 1
+      },
+      "jet_log": [
+        {
+          "step": 1,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 2,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 3,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 4,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 5,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 6,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 7,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        }
+      ],
+      "n_steps": 7,
+      "n_hecke_relations_fired": 2
+    },
+    {
+      "name": "deuteron 6_2 σ_1^{-1} σ_2 σ_1^{-1} σ_2^2 in H_3",
+      "n": 3,
+      "word": [
+        -1,
+        2,
+        -1,
+        2,
+        2
+      ],
+      "filtration_certificate": {
+        "3": [
+          {
+            "perm": [
+              3,
+              2,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "1"
+          }
+        ],
+        "2": [
+          {
+            "perm": [
+              2,
+              3,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2
+            ],
+            "coefficient_in_q": "-q + 1/q - (q**2 - 1)**3/q**3"
+          }
+        ],
+        "1": [
+          {
+            "perm": [
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
+              1
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**2/q**2"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2
+            ],
+            "coefficient_in_q": "(q**2 - 1)**2*(q**2 + (q**2 - 1)**2)/q**4"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "(q**2 - 1)**3/q**3"
+          }
+        ]
+      },
+      "filtration_shape": {
+        "3": 1,
+        "2": 1,
+        "1": 2,
+        "0": 1
+      },
+      "jet_log": [
+        {
+          "step": 1,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 2,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 3,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 4,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 5,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 6,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 7,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 8,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 9,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 10,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 11,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 12,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 13,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 14,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        }
+      ],
+      "n_steps": 14,
+      "n_hecke_relations_fired": 5
+    },
+    {
+      "name": "tritium 8_11 σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 in H_3",
+      "n": 3,
+      "word": [
+        -1,
+        2,
+        -1,
+        -1,
+        2,
+        2,
+        2
+      ],
+      "filtration_certificate": {
+        "2": [
+          {
+            "perm": [
+              2,
+              3,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2
+            ],
+            "coefficient_in_q": "q**5 - 2*q**3 + 3*q - 3/q + 2/q**3 - 1/q**5"
+          },
+          {
+            "perm": [
+              3,
+              1,
+              2
+            ],
+            "canonical_word": [
+              2,
+              1
+            ],
+            "coefficient_in_q": "-q + 1/q"
+          }
+        ],
+        "1": [
+          {
+            "perm": [
+              2,
+              1,
+              3
+            ],
+            "canonical_word": [
+              1
+            ],
+            "coefficient_in_q": "q**4 - 2*q**2 + 3 - 2/q**2 + q**(-4)"
+          },
+          {
+            "perm": [
+              1,
+              3,
+              2
+            ],
+            "canonical_word": [
+              2
+            ],
+            "coefficient_in_q": "-q**6 + 3*q**4 - 5*q**2 + 6 - 5/q**2 + 3/q**4 - 1/q**6"
+          }
+        ],
+        "0": [
+          {
+            "perm": [
+              1,
+              2,
+              3
+            ],
+            "canonical_word": [],
+            "coefficient_in_q": "-q**5 + 3*q**3 - 5*q + 5/q - 3/q**3 + q**(-5)"
+          }
+        ],
+        "3": [
+          {
+            "perm": [
+              3,
+              2,
+              1
+            ],
+            "canonical_word": [
+              1,
+              2,
+              1
+            ],
+            "coefficient_in_q": "-(q**2 - 1)**2/q**2"
+          }
+        ]
+      },
+      "filtration_shape": {
+        "2": 2,
+        "1": 2,
+        "0": 1,
+        "3": 1
+      },
+      "jet_log": [
+        {
+          "step": 1,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 2,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 3,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 4,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 5,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 6,
+          "multiplier": 1,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 7,
+          "multiplier": 1,
+          "predecessor": [
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 8,
+          "multiplier": 1,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 9,
+          "multiplier": 1,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 10,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 11,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 12,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 13,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 14,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 15,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 16,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 17,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 18,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            1,
+            2
+          ],
+          "successor": [
+            3,
+            2,
+            1
+          ],
+          "filtration_before": 2,
+          "filtration_after": 3,
+          "relation": "ascending"
+        },
+        {
+          "step": 19,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            3,
+            1
+          ],
+          "successor": [
+            2,
+            1,
+            3
+          ],
+          "filtration_before": 2,
+          "filtration_after": 1,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 20,
+          "multiplier": 2,
+          "predecessor": [
+            2,
+            1,
+            3
+          ],
+          "successor": [
+            2,
+            3,
+            1
+          ],
+          "filtration_before": 1,
+          "filtration_after": 2,
+          "relation": "ascending"
+        },
+        {
+          "step": 21,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            3,
+            2
+          ],
+          "successor": [
+            1,
+            2,
+            3
+          ],
+          "filtration_before": 1,
+          "filtration_after": 0,
+          "relation": "hecke-quadratic"
+        },
+        {
+          "step": 22,
+          "multiplier": 2,
+          "predecessor": [
+            1,
+            2,
+            3
+          ],
+          "successor": [
+            1,
+            3,
+            2
+          ],
+          "filtration_before": 0,
+          "filtration_after": 1,
+          "relation": "ascending"
+        },
+        {
+          "step": 23,
+          "multiplier": 2,
+          "predecessor": [
+            3,
+            2,
+            1
+          ],
+          "successor": [
+            3,
+            1,
+            2
+          ],
+          "filtration_before": 3,
+          "filtration_after": 2,
+          "relation": "hecke-quadratic"
+        }
+      ],
+      "n_steps": 23,
+      "n_hecke_relations_fired": 10
+    },
+    {
       "name": "ascending σ_1 σ_2 σ_1 in H_3 (longest element)",
       "n": 3,
       "word": [
@@ -597,8 +1614,8 @@
     }
   ],
   "summary": {
-    "n_cases": 3,
-    "max_steps_in_any_case": 16,
+    "n_cases": 6,
+    "max_steps_in_any_case": 23,
     "max_grade_observed": 3,
     "ready_for_joint_tower_sdp": true,
     "next_step": "Extend reducer to H_18 (⁶Li) and H_21 (⁷Li); integrate filtration + jet-order constraints into the joint-tower SDP confinement solver to obtain canonical T_w per atom."

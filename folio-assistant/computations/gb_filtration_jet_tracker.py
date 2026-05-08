@@ -324,6 +324,39 @@ def main():
         expected=None,  # let reducer compute; document the shape
     ))
 
+    # Test 2a: FIGURE-8 KNOT (4_1) via (σ_1 σ_2^{-1})^2 in H_3.
+    # Standard 3-braid representation of 4_1 (bridge number 2 closes
+    # in B_3). Hyperbolic; per atlas, it serves as the Higgs / mass
+    # mechanism. Adding for principled-derivation status per the
+    # gb_filtration_jet_tracker_extension_plan.md.
+    cases.append(reduce_braid(
+        name="figure-8 4_1 (σ_1 σ_2^{-1})^2 in H_3",
+        n=3, word=[1, -2, 1, -2],
+        expected=None,
+    ))
+
+    # Test 2b: DEUTERON 6_2 in H_3 via the Birman-Hilden 3-braid form.
+    # Standard: σ_1^{-1} σ_2 σ_1^{-1} σ_2^2 — bridge number 2.
+    # NF reduction fires the Hecke relation on σ_2² and the
+    # σ_1^{-1} = σ_1 - (q - q^{-1}) inverse rule twice.
+    cases.append(reduce_braid(
+        name="deuteron 6_2 σ_1^{-1} σ_2 σ_1^{-1} σ_2^2 in H_3",
+        n=3, word=[-1, 2, -1, 2, 2],
+        expected=None,
+    ))
+
+    # Test 2c: TRITIUM 8_11 in H_3 via the Birman-Hilden 3-braid form.
+    # Standard: σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 — bridge number 2.
+    cases.append(reduce_braid(
+        name="tritium 8_11 σ_1^{-1} σ_2 σ_1^{-2} σ_2^3 in H_3",
+        n=3, word=[-1, 2, -1, -1, 2, 2, 2],
+        expected=None,
+    ))
+
+    # Test 2d: HELIUM-3 L_6a4 reuses the Borromean reduction —
+    # volume-equivalent (both = 8G); identical Bloch class.
+    # Documented in extension plan; no separate case needed.
+
     # Test 3: simple ascending case to baseline jet-order.
     cases.append(reduce_braid(
         name="ascending σ_1 σ_2 σ_1 in H_3 (longest element)",

@@ -323,27 +323,36 @@ theorem quot_universal_property
         hφ']
     simp [QuotientAddGroup.lift, quot]
 
-/-- **Pentagon-generator membership lemma.** Every pentagon
-    generator lies inside the pentagon `AddSubgroup` (the closure
-    of the generator set contains its generators by construction). -/
+/-- **Rogers-generator membership lemma.** Every Rogers-form
+    pentagon generator lies inside the pentagon `AddSubgroup`
+    (the closure of `validPentagonRelationGenerators` contains
+    its generators by construction). -/
 -- Ref: [bloch2000]
-theorem pentagonGenerator_mem_pentagonSubgroup
-    (s : PentagonShape F) :
-    pentagonGenerator s ∈ pentagonSubgroup (F := F) := by
+theorem rogersGenerator_mem_pentagonSubgroup
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) :
+    rogersGenerator r ∈ pentagonSubgroup (F := F) := by
   unfold pentagonSubgroup
-  exact AddSubgroup.subset_closure ⟨s, rfl⟩
+  exact AddSubgroup.subset_closure ⟨r, rfl⟩
 
-/-- **Pentagon vanishes in the quotient.** Every pentagon generator
-    maps to zero under the canonical projection `quot`. This is
-    the defining property of the Bloch group: the 5-term identity
-    holds. -/
+/-- **Rogers pentagon vanishes in the Bloch quotient.** Every
+    Rogers-form pentagon generator maps to zero under the
+    canonical projection `quot`. This is the defining property
+    of the Bloch group: the 5-term Rogers identity holds.
+
+    With the constrained generator set (post-#575 swap-in), this
+    theorem replaces the previous `quot_pentagonGenerator_eq_zero`
+    over arbitrary `PentagonShape F` (which would no longer
+    be provable, since arbitrary 5-tuples are no longer in the
+    pentagon subgroup). -/
 -- Ref: [bloch2000]
-theorem quot_pentagonGenerator_eq_zero
-    (s : PentagonShape F) :
-    quot (pentagonGenerator s) = 0 := by
+theorem quot_rogersGenerator_eq_zero
+    {F : Type*} [Field F] [DecidableEq F]
+    (r : RogersPair F) :
+    quot (rogersGenerator r) = (0 : BlochGroup F) := by
   unfold quot
   exact (QuotientAddGroup.eq_zero_iff _).mpr
-    (pentagonGenerator_mem_pentagonSubgroup s)
+    (rogersGenerator_mem_pentagonSubgroup r)
 
 /-- **Concrete `HasBlochGroup F` instance** (closes substantive
     gap (1)): with the `BlochGroup F` quotient now constructed,
