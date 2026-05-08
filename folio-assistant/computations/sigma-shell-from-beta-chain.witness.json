@@ -1,8 +1,8 @@
 {
   "computation": "sigma-shell-from-beta-chain",
-  "computedAt": "2026-05-08T18:36:57.929875+00:00",
-  "description": "STUB. Skeleton for the closed-form extraction of y_target(A_magic) from compound \u03b2-decay chain Q-values, per prop:sigma-shell-from-beta-chain-derivation (PR #564). The closed form is y_target = (Q_\u03b2^net - \u03a3 \u03b4\u03c1\u00b7m_e\u00b7|tr_M|) / (m_e\u00b7|tr_M_ref|). Deriving Q_\u03b2 from substrate alone is OUT OF SCOPE per user directive (AUDIT-DEEP-2026-05.md \u00a77 P10 deferred indefinitely); the AME 2020 Q-values stay as inputs.",
-  "engine": "stub",
+  "computedAt": "2026-05-08T18:47:27.716657+00:00",
+  "description": "Concrete extraction of y_target(A_magic) from compound \u03b2-decay chain Q-values per `prop:sigma-shell-from-beta-chain-derivation`. Closed form: y_target = (Q_\u03b2^net - \u03a3 \u03b4\u03c1^(k)\u00b7m_e\u00b7|tr_M(\u03b2_k)|) / (m_e\u00b7|tr_M(\u03b2_ref)|). A_magic = 2 (deuteron, trivial single-link n\u2192p chain) is fully computed using existing \u03c1_K and |tr_M| data from atomic-mass-via-rho-k.witness.json. A_magic = 8 (\u00b9\u2076O) is DEFERRED: AME 2020 Q-values for the \u00b9\u2076C \u2192 \u00b9\u2076N \u2192 \u00b9\u2076O chain are curated in this witness, but per-link \u03c1_K for A\u2208{12..16} is not yet wired in atomic_mass_via_rho_k.py. We do NOT fabricate \u03c1_K values. Discrepancy with the B/(A\u00b7m_p) benchmark is documented honestly per user directive \u2014 this is a candidate audit flag, not a fitting opportunity.",
+  "engine": "decimal",
   "scriptFile": "sigma_shell_from_beta_chain.py",
   "scriptHash": null,
   "parameters": {
@@ -15,48 +15,106 @@
       82,
       126
     ],
-    "compute_status": "stub"
+    "computed_anchors": [
+      2
+    ],
+    "deferred_anchors": [
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052",
+    "Q_beta_neutron_MeV": "0.78233341",
+    "decimal_precision": 50
   },
   "data": {
-    "rows": [
+    "summary_table": [
       {
         "A_magic": 2,
-        "compute_status": "stub",
-        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+        "y_target_computed": "270.71993906579519064031227247438232190543905722038",
+        "y_target_predicted": "0.0011854589612499765272778782220744687488434431614309",
+        "discrepancy_pct": "22836619.609453334084368576789027285080811162252200",
+        "status": "computed"
       },
       {
         "A_magic": 8,
-        "compute_status": "stub",
-        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+        "y_target_computed": "deferred",
+        "y_target_predicted": "deferred",
+        "discrepancy_pct": "deferred",
+        "status": "blocked on upstream \u03c1_K extension"
+      }
+    ],
+    "rows": [
+      {
+        "A_magic": 2,
+        "compute_status": "computed",
+        "chain_description": "Trivial single-link chain: n \u2192 p + e^- + \u03bd\u0304_e. Deuteron (Z=N=1) is the bound final state.",
+        "K_links": 1,
+        "ref_braid": "n",
+        "Q_beta_net_MeV": "1.29333236",
+        "Q_beta_net_formula": "Q_\u03b2(n) + K\u00b7m_e = 0.78233341 + 0.51099895",
+        "delta_rho_0": "-267.9784994964070337090796679762135989899862001852",
+        "delta_rho_0_formula": "\u03c1_K(p) - \u03c1_K(n)",
+        "constituent_walk_MeV": "-126.42455046357228488926133096739940847046301293605",
+        "denominator_MeV": "0.47177124545869525279292014538339718874481961555374",
+        "y_target_computed": "270.71993906579519064031227247438232190543905722038",
+        "y_target_predicted_BoverAmp": "0.0011854589612499765272778782220744687488434431614309",
+        "y_target_predicted_formula": "B(D) / (2\u00b7m_p) = 2.225 / 1876.54",
+        "relative_discrepancy": "228366.19609453334084368576789027285080811162252200",
+        "discrepancy_pct": "22836619.609453334084368576789027285080811162252200",
+        "audit_note": "If |relative_discrepancy| > 1, the derivation has a structural issue beyond a leading-order correction. Document but do NOT tune parameters at this layer.",
+        "inputs": {
+          "Q_beta_neutron_MeV": "0.78233341",
+          "Q_beta_source": "AME 2020 / PDG free-neutron decay",
+          "rho_K_p": "1723.5914182642151362962504138109147428453824180455",
+          "rho_K_n": "1991.5699177606221700053300817871283418353686182307",
+          "tr_M_n": "0.92323329716958371987441489925448416037805873290687",
+          "tr_M_p": "1.065306228592389333611777464990998459365907562335",
+          "rho_K_source": "atomic-mass-via-rho-k.witness.json"
+        },
+        "audit_flag": "CANDIDATE AUDIT FLAG \u2014 formula needs refinement. |computed/predicted| = 10^5.36, off by more than 1 order of magnitude from B/(A\u00b7m_p) benchmark."
       },
       {
-        "A_magic": 20,
-        "compute_status": "stub",
-        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
-      },
-      {
-        "A_magic": 28,
-        "compute_status": "stub",
-        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
-      },
-      {
-        "A_magic": 50,
-        "compute_status": "stub",
-        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
-      },
-      {
-        "A_magic": 82,
-        "compute_status": "stub",
-        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
-      },
-      {
-        "A_magic": 126,
-        "compute_status": "stub",
-        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+        "A_magic": 8,
+        "compute_status": "deferred",
+        "blocker": "Per-link \u03c1_K and |tr_M(\u03b2)| for atoms with A \u2208 {12..16} are not yet computed. atomic_mass_via_rho_k.py covers only p, n, D, T, \u00b3He, \u2074He. Extend the upstream pipeline first; do not fabricate \u03c1_K values for \u00b9\u2076C/\u00b9\u2076N/\u00b9\u2076O.",
+        "ame_2020_curated_chain": {
+          "links": [
+            {
+              "parent": "16C",
+              "daughter": "16N",
+              "Q_beta_MeV": "8.010",
+              "source": "AME 2020 (Wang et al. 2021)"
+            },
+            {
+              "parent": "16N",
+              "daughter": "16O",
+              "Q_beta_MeV": "10.420",
+              "source": "AME 2020 (Wang et al. 2021)"
+            }
+          ],
+          "terminus": {
+            "atom": "16O",
+            "Z": 8,
+            "N": 8,
+            "A": 16,
+            "binding_MeV": "127.619",
+            "source": "AME 2020 (Wang et al. 2021)"
+          },
+          "ref_braid_candidate": "16C",
+          "blocker": "Per-link \u03c1_K and |tr_M(\u03b2)| for atoms with A \u2208 {12..16} are not yet computed. atomic_mass_via_rho_k.py covers only p, n, D, T, \u00b3He, \u2074He. Extend the upstream pipeline first; do not fabricate \u03c1_K values for \u00b9\u2076C/\u00b9\u2076N/\u00b9\u2076O."
+        },
+        "next_step": "Extend atomic_mass_via_rho_k.py to cover A \u2208 {12..16} (\u00b9\u2076C, \u00b9\u2076N, \u00b9\u2076O at minimum), then re-run this script."
       }
     ]
   },
   "audit_reference": "AUDIT-DEEP-2026-05.md \u00a77 P8",
   "pr": "#564",
-  "follow_up": "Curate AME 2020 chain manifest for each magic anchor; compute per-link \u03c1_K and |tr_M(\u03b2_k)|; extract y_target(A_magic). 1 wk effort per HANDOVER-STATUS.md \u00a74b."
+  "ame_data_provenance": "AME 2020 mass evaluation, M. Wang, W.J. Huang, F.G. Kondev, G. Audi, S. Naimi, Chinese Physics C 45, 030003 (2021). https://www-nds.iaea.org/amdc/ame2020/",
+  "follow_up": "(1) Extend atomic_mass_via_rho_k.py to cover atoms in the \u00b9\u2076C \u2192 \u00b9\u2076N \u2192 \u00b9\u2076O chain. (2) Re-run this script to populate the A_magic = 8 row. (3) Repeat for A_magic \u2208 {20, 28, 50, 82, 126} as \u03c1_K coverage extends along the \u03b2-stability valley."
 }
