@@ -1,0 +1,62 @@
+{
+  "computation": "sigma-shell-from-beta-chain",
+  "computedAt": "2026-05-08T18:36:57.929875+00:00",
+  "description": "STUB. Skeleton for the closed-form extraction of y_target(A_magic) from compound \u03b2-decay chain Q-values, per prop:sigma-shell-from-beta-chain-derivation (PR #564). The closed form is y_target = (Q_\u03b2^net - \u03a3 \u03b4\u03c1\u00b7m_e\u00b7|tr_M|) / (m_e\u00b7|tr_M_ref|). Deriving Q_\u03b2 from substrate alone is OUT OF SCOPE per user directive (AUDIT-DEEP-2026-05.md \u00a77 P10 deferred indefinitely); the AME 2020 Q-values stay as inputs.",
+  "engine": "stub",
+  "scriptFile": "sigma_shell_from_beta_chain.py",
+  "scriptHash": null,
+  "parameters": {
+    "magic_anchors": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ],
+    "compute_status": "stub"
+  },
+  "data": {
+    "rows": [
+      {
+        "A_magic": 2,
+        "compute_status": "stub",
+        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+      },
+      {
+        "A_magic": 8,
+        "compute_status": "stub",
+        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+      },
+      {
+        "A_magic": 20,
+        "compute_status": "stub",
+        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+      },
+      {
+        "A_magic": 28,
+        "compute_status": "stub",
+        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+      },
+      {
+        "A_magic": 50,
+        "compute_status": "stub",
+        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+      },
+      {
+        "A_magic": 82,
+        "compute_status": "stub",
+        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+      },
+      {
+        "A_magic": 126,
+        "compute_status": "stub",
+        "blocker": "AME chain manifest + per-link \u03c1_K not yet curated"
+      }
+    ]
+  },
+  "audit_reference": "AUDIT-DEEP-2026-05.md \u00a77 P8",
+  "pr": "#564",
+  "follow_up": "Curate AME 2020 chain manifest for each magic anchor; compute per-link \u03c1_K and |tr_M(\u03b2_k)|; extract y_target(A_magic). 1 wk effort per HANDOVER-STATUS.md \u00a74b."
+}
