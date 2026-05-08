@@ -172,7 +172,7 @@ modes:
   hallucination and ignore the cross-reference (but still
   evaluate the substantive content of the comment on its merits).
 
-If you can't verify in < 2 minutes, escalate (§6) rather than
+If you can't verify in &lt; 2 minutes, escalate (§6) rather than
 guess.
 
 #### 5c.  Post one consolidated status comment
