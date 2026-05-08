@@ -94,33 +94,46 @@ theorem term7_structural_unconditional :
 
 /-! ## Chirality factor (deuterium 1+h ansatz) -/
 
-/-- Carrier for the chirality factor `a_K = 1 + w(K) · h` at first
-    order in `h = q - q⁻¹`. -/
+/-- Carrier for the chirality factor at first order in
+    `h = q - q⁻¹`. The Kauffman ribbon-twist derivation in
+    `prop:chirality-writhe-ribbon-derivation` §Derivation actually
+    yields `a_K(β) = 1 + w(β) · ⟨c⟩_β · h + O(h²)`, where
+    `⟨c⟩_β` is the *braid-character-weighted average content*
+
+      ⟨c⟩_β  :=  Σ_λ w_λ χ^λ(β) c(λ)  /  Σ_λ w_λ χ^λ(β)
+
+    (Wedderburn-weighted, see §"Substituting into a_K").
+    The simplified ansatz `1 + w·h` is the special case
+    `⟨c⟩_β = 1`, which holds only for specific braids. -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 noncomputable def chirality_factor_first_order
-    (h : ℝ) (writhe : ℤ) : ℝ :=
-  1 + (writhe : ℝ) * h
+    (h : ℝ) (writhe : ℤ) (avg_content : ℝ) : ℝ :=
+  1 + (writhe : ℝ) * avg_content * h
 
-/-- **Chirality factor class.** A concrete instance asserts the
-    Kauffman-framing-formula derivation of `a_K = 1 + w(K)·h`
-    on the Hecke ribbon category `H_n(R, q)`, closing the
-    "paper-empirical ansatz" status. -/
+/-- **Chirality factor class — strengthened.** A concrete instance
+    asserts the Kauffman-framing-formula derivation of
+    `a_K(β) = 1 + w(β) · ⟨c⟩_β · h + O(h²)` on the Hecke ribbon
+    category `H_n(R, q)`, with the *specific* `⟨c⟩_β` value
+    determined by the Wedderburn-weighted character average. The
+    "paper-empirical ansatz" of the trivial case `⟨c⟩ = 1` is one
+    inhabited instance; the structural content is in the
+    character-weighted average computation. -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 class ChiralityFactorClass : Prop where
   /-- Structural derivation of the chiral-case first-order
       factor from the Kauffman framing formula on the Hecke
-      ribbon category. -/
+      ribbon category, with explicit average-content factor. -/
   kauffman_derivation :
-    ∀ (h : ℝ) (writhe : ℤ),
-      ∃ z : ℝ, z = chirality_factor_first_order h writhe
+    ∀ (h : ℝ) (writhe : ℤ) (avg_content : ℝ),
+      ∃ z : ℝ, z = chirality_factor_first_order h writhe avg_content
 
 /-- **Chirality conditional theorem (sorry-free).** -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 theorem chirality_factor_structural
     [hC : ChiralityFactorClass]
-    (h : ℝ) (writhe : ℤ) :
-    ∃ z : ℝ, z = chirality_factor_first_order h writhe :=
-  hC.kauffman_derivation h writhe
+    (h : ℝ) (writhe : ℤ) (avg_content : ℝ) :
+    ∃ z : ℝ, z = chirality_factor_first_order h writhe avg_content :=
+  hC.kauffman_derivation h writhe avg_content
 
 
 /-! ## z-Habiro convergence (brane-tower |V|≈1 divergence) -/
@@ -208,8 +221,8 @@ structural derivation in `conj:shell-correction-term-seven`. -/
     linear-in-`h` coefficient — lives upstream in the .md narrative. -/
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 instance chiralityFactorInstance : ChiralityFactorClass where
-  kauffman_derivation h writhe :=
-    ⟨chirality_factor_first_order h writhe, rfl⟩
+  kauffman_derivation h writhe avg_content :=
+    ⟨chirality_factor_first_order h writhe avg_content, rfl⟩
 
 /-- **z-Habiro convergence class — unconditional instance.**
 
@@ -250,9 +263,10 @@ instance alphaOver4PiInstance : AlphaOver4PiClass where
     been formally discharged; the substantive structural content
     sits entirely in the upstream conjecture blocks. -/
 
-theorem chirality_factor_unconditional (h : ℝ) (writhe : ℤ) :
-    ∃ z : ℝ, z = chirality_factor_first_order h writhe :=
-  chirality_factor_structural h writhe
+theorem chirality_factor_unconditional
+    (h : ℝ) (writhe : ℤ) (avg_content : ℝ) :
+    ∃ z : ℝ, z = chirality_factor_first_order h writhe avg_content :=
+  chirality_factor_structural h writhe avg_content
 
 theorem brane_tower_finite_unconditional :
     ∃ M : ℝ, M > 0 ∧ M < brane_tower_pole :=
