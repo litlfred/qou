@@ -1,0 +1,103 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-09T21:08:04.226564+00:00",
+  "commitSha": "24a7df3530dec4d28cc95a21b5810836245bfd73",
+  "assertions": [
+    {
+      "name": "kron_factorization_runs",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "A_operator_extract_kron"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "A-operator-extract-kron",
+  "scriptFile": "A_operator_extract_kron.py",
+  "scriptHash": "98cb461574da",
+  "scriptCommitSha": "unknown",
+  "description": "Kronecker-factorized A^λ_{μν}(I) extraction.  For λ with single-(μ, ν) support and c^λ_{μν} = 1, the supply matrix factors as M = X ⊗ Y where X[i, :] = vec(ρ_μ(β_1_i).T) and Y[j, :] = vec(ρ_ν(β_2_j).T).  Solving via two smaller lstsq's reduces the per-block compute by O((d_μ d_ν)² / (d_μ² + d_ν²)).  Multi-block / multi-multiplicity λ's are deferred to the dense path; full A=3, A=4 closure requires extending the factorization to those cases (item 4 + item 1).",
+  "contentBlock": "conj:operator-valued-sublemma-2-1",
+  "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
+  "parameters": {
+    "A": 2,
+    "n1": 3,
+    "n2": 3,
+    "K1": 12,
+    "K2": 12
+  },
+  "data": {
+    "results_per_lambda": {
+      "[6]": {
+        "support_size": 1,
+        "mu": [
+          3
+        ],
+        "nu": [
+          3
+        ],
+        "d_mu": 1,
+        "d_nu": 1,
+        "max_relative_residual": 3.5425342143983574e-16,
+        "deferred_to_dense": false
+      },
+      "[5, 1]": {
+        "support_size": 3,
+        "deferred_to_dense": true
+      },
+      "[4, 2]": {
+        "support_size": 4,
+        "deferred_to_dense": true
+      },
+      "[4, 1, 1]": {
+        "support_size": 5,
+        "deferred_to_dense": true
+      },
+      "[3, 3]": {
+        "support_size": 2,
+        "deferred_to_dense": true
+      },
+      "[3, 2, 1]": {
+        "support_size": 5,
+        "deferred_to_dense": true
+      },
+      "[3, 1, 1, 1]": {
+        "support_size": 5,
+        "deferred_to_dense": true
+      },
+      "[2, 2, 2]": {
+        "support_size": 2,
+        "deferred_to_dense": true
+      },
+      "[2, 2, 1, 1]": {
+        "support_size": 4,
+        "deferred_to_dense": true
+      },
+      "[2, 1, 1, 1, 1]": {
+        "support_size": 3,
+        "deferred_to_dense": true
+      },
+      "[1, 1, 1, 1, 1, 1]": {
+        "support_size": 1,
+        "mu": [
+          1,
+          1,
+          1
+        ],
+        "nu": [
+          1,
+          1,
+          1
+        ],
+        "d_mu": 1,
+        "d_nu": 1,
+        "max_relative_residual": 5.319280166489957e-16,
+        "deferred_to_dense": false
+      }
+    },
+    "n_kron_solved": 2,
+    "n_deferred": 9
+  }
+}
