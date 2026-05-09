@@ -91,28 +91,25 @@ def main() -> int:
             "ell_K_q": ell,
             "n_terms_at_top_grade": n_top,
         })
-    witness = {
-        "computation": "per-atom-grading-bound",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "description": (
+    # Use the fluent WitnessBuilder API (per Gemini review on #581):
+    # this is a NEW script, so wrap_legacy is the wrong tool — it's
+    # only for migrating existing payload-shaped emitters.
+    out = (WitnessBuilder("per-atom-grading-bound", engine="sympy")
+        .set_description(
             "Per-atom intrinsic grading bound ℓ(K, q) for the canonical "
             "topological braid words. ℓ(K, q) is the top non-zero "
             "ℤ-grading degree of the KLR-module lift, equivalent to the "
             "max GS-filtration grade observed under "
             "gb_filtration_jet_tracker reduction."
-        ),
-        "narrative_block": "prop:jet-prefix-gb-filtration",
-        "atoms": rows,
-        "note": (
+        )
+        .add_data("narrative_block", "prop:jet-prefix-gb-filtration")
+        .add_data("atoms", rows)
+        .add_data("note", (
             "Downstream: #564 P6 (Rust SDP wiring) should key variable "
             "filtering by ell_K_q rather than by a user-supplied cutoff k. "
             "Truncating at k >= ell_K_q is exact; truncating at k < "
             "ell_K_q leaves a homological remainder E(k)."
-        ),
-    }
-    out = (WitnessBuilder.wrap_legacy(
-        "per-atom-grading-bound", witness,
-        script_path=__file__, engine="sympy")
+        ))
         .add_assertion(
             "ell_K_q_proton_eq_3",
             computed=int(rows[0]["ell_K_q"]),

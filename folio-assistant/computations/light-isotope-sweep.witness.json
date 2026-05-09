@@ -1,15 +1,24 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-09T00:37:56.772889+00:00",
+  "commitSha": "652359fb8f7715d3de842a7b2ffe414b92b13287",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "light-isotope-sweep",
+  "scriptFile": "light_isotope_sweep.py",
+  "scriptHash": "1cfa8f42329d",
+  "scriptCommitSha": "652359fb8f7715d3de842a7b2ffe414b92b13287",
+  "description": "Schur-Weyl + Frobenius binding predictions for light isotopes (D, T, ³He, ⁴He) with β-decay calibration at A=1. Tests three Frobenius-scaling hypotheses: per-vortex (universal, +1·Frob), per-bond (+(A-1)·Frob), per-nucleon (+A·Frob). Per-vortex is the universal interpretation from thm:frobenius-codim-universal; the others are candidate scalings to test empirically.",
   "convention": "plancherel",
   "closed_form_used": true,
-  "description": "Schur-Weyl + Frobenius binding predictions for light isotopes (D, T, \u00b3He, \u2074He) with \u03b2-decay calibration at A=1. Tests three Frobenius-scaling hypotheses: per-vortex (universal, +1\u00b7Frob), per-bond (+(A-1)\u00b7Frob), per-nucleon (+A\u00b7Frob). Per-vortex is the universal interpretation from thm:frobenius-codim-universal; the others are candidate scalings to test empirically.",
   "reference_blocks": [
     "prop:schur-weyl-mass-decomposition",
     "thm:frobenius-codim-universal",
     "thm:knot-mass-formula-unified",
     "prop:partition-sum-proton-residual"
   ],
-  "computedAt": "2026-05-09T00:31:59.938232+00:00",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -47,10 +56,10 @@
           "err_pct": 59.48726695998733
         }
       },
-      "best_frob_scaling": "per-vortex (+1\u00b7Frob)",
+      "best_frob_scaling": "per-vortex (+1·Frob)",
       "best_value": 2.2717930482674724,
       "best_err_pct": 2.1227944397107072,
-      "walltime_sec": 0.005211353302001953
+      "walltime_sec": 0.0041656494140625
     },
     {
       "iso": "T",
@@ -76,10 +85,10 @@
           "err_pct": -48.74898003533881
         }
       },
-      "best_frob_scaling": "per-nucleon (+A\u00b7Frob)",
+      "best_frob_scaling": "per-nucleon (+A·Frob)",
       "best_value": 4.3470090113626325,
       "best_err_pct": -48.74898003533881,
-      "walltime_sec": 0.23221087455749512
+      "walltime_sec": 0.2913637161254883
     },
     {
       "iso": "3He",
@@ -105,10 +114,10 @@
           "err_pct": -39.964364330705635
         }
       },
-      "best_frob_scaling": "per-nucleon (+A\u00b7Frob)",
+      "best_frob_scaling": "per-nucleon (+A·Frob)",
       "best_value": 4.6335863823375405,
       "best_err_pct": -39.964364330705635,
-      "walltime_sec": 0.2315049171447754
+      "walltime_sec": 0.27979230880737305
     },
     {
       "iso": "4He",
@@ -134,10 +143,10 @@
           "err_pct": -80.17736943756988
         }
       },
-      "best_frob_scaling": "per-nucleon (+A\u00b7Frob)",
+      "best_frob_scaling": "per-nucleon (+A·Frob)",
       "best_value": 5.608950093790485,
       "best_err_pct": -80.17736943756988,
-      "walltime_sec": 9.474327087402344
+      "walltime_sec": 9.734246969223022
     }
   ]
 }

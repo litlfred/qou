@@ -50,6 +50,7 @@ from chi_sym_alt_closed_form import (
 )
 # F6 (PR #565 follow-up): BlockCache wiring for numerical-q Hoefsmit.
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 M_E = M_E_MEV
@@ -329,6 +330,8 @@ if __name__ == "__main__":
         "rows": rows,
     }
     suffix = "" if CONV == "plancherel" else f".{CONV}"
-    out = Path(__file__).parent / f"light-isotope-sweep{suffix}.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = (WitnessBuilder.wrap_legacy(
+        f"light-isotope-sweep{suffix}", witness,
+        script_path=__file__, engine="sympy")
+        .save())
     print(f"\nWitness: {out}")
