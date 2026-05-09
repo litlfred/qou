@@ -18,8 +18,8 @@ partitions) computed via the q-hook-length formula
 
 | n | Partitions | dim values at q=1 | sum-of-squares check |
 |---|-----------|-------------------|----------------------|
-| 6 | (6),(5,1),(4,2),(4,1,1),(3,3),(3,2,1),(3,1,1,1),(2,2,2),(2,2,1,1),(2,1,1,1,1),(1⁶) | 1,5,9,10,5,16,10,5,9,5,1 | 1+25+81+100+25+256+100+25+81+25+1 = 720 = 6! ✓ |
-| 7 | 15 partitions of 7 | 1,6,14,15,14,35,20,21,21,35,15,14,14,6,1 | 1+36+196+225+196+1225+400+441+441+1225+225+196+196+36+1 = 5040 = 7! ✓ |
+| 6 | (6),(5,1),(4,2),(4,1,1),(3,3),(3,2,1),(3,1,1,1),(2,2,2),(2,2,1,1),(2,1,1,1,1),(1⁶) | 1,5,9,10,5,16,10,5,9,5,1 | 1+25+81+100+25+256+100+25+81+25+1 = 720 = 6! OK: |
+| 7 | 15 partitions of 7 | 1,6,14,15,14,35,20,21,21,35,15,14,14,6,1 | 1+36+196+225+196+1225+400+441+441+1225+225+196+196+36+1 = 5040 = 7! OK: |
 
 Both Burnside identities check out. Conjugate pairs verified (e.g.
 `(5,1)↔(2,1,1,1,1)` both = 5; `(3,3)↔(2,2,2)` both = 5).
@@ -31,16 +31,16 @@ of the same file:
 
 | Aspect | n=4/n=5 (existing) | n=6/n=7 (new) | Match? |
 |--------|--------------------|----------------|--------|
-| `noncomputable def heckeH<n>DimQ (q : ℝ) (i : Fin <p>)` | yes | yes | ✓ |
-| `match i with \| ⟨k, _⟩ => …` for k=0..p-1 | yes | yes | ✓ |
-| Catch-all `\| ⟨_+<p>, h⟩ => absurd h (by omega)` | yes | yes | ✓ |
-| `@[simp] heckeH<n>DimQ_<digit>` lemmas via `rfl` | yes | yes | ✓ |
+| `noncomputable def heckeH<n>DimQ (q : ℝ) (i : Fin <p>)` | yes | yes | yes |
+| `match i with \| ⟨k, _⟩ => …` for k=0..p-1 | yes | yes | yes |
+| Catch-all `\| ⟨_+<p>, h⟩ => absurd h (by omega)` | yes | yes | yes |
+| `@[simp] heckeH<n>DimQ_<digit>` lemmas via `rfl` | yes | yes | yes |
 | Final theorem body `rw [Fin.sum_univ_<p>]; simp; ring` | yes | uses custom `Fin_sum_univ_eleven`/`_fifteen` | partial |
 
 **The single divergence from the existing pattern:** Mathlib provides
 `Fin.sum_univ_two`/`_three`/`_four`/`_five`/`_six`/`_seven`/`_eight`
 as pre-baked `rfl`-or-`simp`-provable lemmas, but **not**
-`Fin.sum_univ_eleven` or `Fin.sum_univ_fifteen`. So I added two
+`Fin.sum_univ_eleven` or `Fin.sum_univ_fifteen`. The branch adds two
 `private` lemmas:
 
 ```lean
@@ -139,7 +139,7 @@ theorem hecke_n6_frobenius_codim (q : ℝ) : … := by
 
 ## 7 — Cross-references
 
-- T1 commit: `4e876b6` "Phase 2 / T1: extend Frobenius codim closure
+- T1 commit: `4e876b6` "T1: extend Frobenius codim closure
   to n=6 and n=7"
 - Existing n=2..5 closures: lines 196–345 of the same file
 - n=6 fallback target: `frobeniusCoCasimirTraceFallback` opaque in

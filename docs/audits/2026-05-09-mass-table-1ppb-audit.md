@@ -14,15 +14,15 @@ each phase to measure delta.
 
 Six lowest isotopes plus proton, neutron. Predicted vs experimental, in MeV
 unless otherwise marked. β-decay column shows whether the channel is open and
-whether Q_β is derived (✗ = author has declined to derive).
+whether Q_β is derived (no derivation; author has declined).
 
 | # | Isotope | A | Z | N | Predicted (MeV) | Experimental (MeV) | Δ (ppb) | β-decay | Source |
 |---|---------|---|---|---|-----------------|--------------------|---------|---------|--------|
 | 0 | proton (¹H) | 1 | 1 | 0 | M = 937.76153 | M = 938.27209 | **+544,145** (M) | stable | proton-mass-50dps.derivation.json |
 | 0' | proton (audit lift, f64 assembly) | 1 | 1 | 0 | — | — | **+14** (M) | — | low-isotope-mass-table-precision-audit.witness.json |
-| 1 | neutron (n) | 1 | 0 | 1 | M (chain) | M = 939.56542 | (in lift) | β⁻, Q_β=0.7823 MeV ✗ | mass-table-best.witness.json |
+| 1 | neutron (n) | 1 | 0 | 1 | M (chain) | M = 939.56542 | (in lift) | β⁻, Q_β=0.7823 MeV FLAG | mass-table-best.witness.json |
 | 2 | deuteron (²H) | 2 | 1 | 1 | B = 2.2488 | B = 2.2246 | **+10,903** (B, +1.09%) | stable | mass-table-best.witness.json |
-| 3 | tritium (³H) | 3 | 1 | 2 | B = 8.4686 | B = 8.4818 | **−1,556** (B, −0.156%) | β⁻, Q_β=0.0186 MeV ✗ | mass-table-best.witness.json |
+| 3 | tritium (³H) | 3 | 1 | 2 | B = 8.4686 | B = 8.4818 | **−1,556** (B, −0.156%) | β⁻, Q_β=0.0186 MeV FLAG | mass-table-best.witness.json |
 | 4 | helium-3 (³He) | 3 | 2 | 1 | B = 7.4889 | B = 7.7180 | **−29,686** (B, −2.97%) | stable | mass-table-best.witness.json |
 | 5 | helium-4 (⁴He) | 4 | 2 | 2 | B = 29.956 | B = 28.296 | **+58,666** (B, +5.87%) | stable | mass-table-best.witness.json |
 | 6 | lithium-6 (⁶Li) | 6 | 3 | 3 | null | B = 31.994 | n/a (−2.08e6 in audit lift) | stable | mass-table-best.witness.json |
@@ -82,7 +82,7 @@ SCRIPT_CITED layer that has not received a single closure commit in 10 days.
 ## 3 — Per-Element Error Breakdown + Script Audit
 
 For each isotope, the dominant error source maps to a specific computational
-artefact. **✗ = fitted / numerology / empirical / calibrated / SCRIPT_CITED —
+artefact. **FLAG = fitted / numerology / empirical / calibrated / SCRIPT_CITED —
 flagged for fix to reach 1 ppb.**
 
 ### Proton (1H) — 544,145 ppb [PRIMARY TARGET]
@@ -90,24 +90,24 @@ Step-by-step of `proton-mass-50dps.derivation.json`:
 
 | Step | Output | Trust | Flag |
 |------|--------|-------|------|
-| 1. tr_M(p, q₀) at 50 dps via Markov-trace assembly | 2.12258250945273 | DERIVED (PR #480) | ✓ clean |
-| 2. Terms 2–6 (Phase-A precision lift) | terms_50dps | SCRIPT_CITED | ✗ |
-| 2a.  Φ_q tower formula | inner | empirically fitted | ✗ `mass_endomorphism.py:5,26` admits ~1.8% error |
-| 2b.  Φ_q infinite-product truncation | inner | no closed-form bound at proton scale | ✗ `mass_endomorphism.py:80-95` |
-| 2c.  per-block Φ_q refactor | NOT deployed | — | ✗ available in `per_block_phi_q.py`, not wired |
-| 2d.  Euler-series Φ_q | NOT deployed | — | ✗ `d_phi_q_series.py` only on deuteron |
-| 3. m_p_Hecke 4-term tower | 1.4283 | SCRIPT_CITED | ✗ `proton_mass_tower_derivation.py` |
-| 4. m_e_Hecke | (hidden) | SCRIPT_CITED | ✗ |
-| 5. ratio → MeV | 937.7615 | SCRIPT_CITED | ✗ |
+| 1. tr_M(p, q₀) at 50 dps via Markov-trace assembly | 2.12258250945273 | DERIVED (PR #480) | OK: clean |
+| 2. Terms 2–6 (Phase-A precision lift) | terms_50dps | SCRIPT_CITED | no |
+| 2a.  Φ_q tower formula | inner | empirically fitted | FLAG `mass_endomorphism.py:5,26` admits ~1.8% error |
+| 2b.  Φ_q infinite-product truncation | inner | no closed-form bound at proton scale | FLAG `mass_endomorphism.py:80-95` |
+| 2c.  per-block Φ_q refactor | NOT deployed | — | FLAG available in `per_block_phi_q.py`, not wired |
+| 2d.  Euler-series Φ_q | NOT deployed | — | FLAG `d_phi_q_series.py` only on deuteron |
+| 3. m_p_Hecke 4-term tower | 1.4283 | SCRIPT_CITED | FLAG `proton_mass_tower_derivation.py` |
+| 4. m_e_Hecke | (hidden) | SCRIPT_CITED | no |
+| 5. ratio → MeV | 937.7615 | SCRIPT_CITED | no |
 
 **Cause:** A=1 brane tower is empty (PR #533 finding), so the additive
 correction = 0; ALL proton error lives in the Φ_q tower closure inside Terms
 2–6. Convention diagnostics confirmed:
-- ✓ Hoefsmit vs markov_peel agree to 2e-16 (sub-ULP at 50 dps) — NOT a
+- OK: Hoefsmit vs markov_peel agree to 2e-16 (sub-ULP at 50 dps) — NOT a
   Markov-Wenzl-vs-Plancherel convention bug
-- ✓ q₀ uniform across all proton scripts (1.1099785955541805) — NOT a q₀
+- OK: q₀ uniform across all proton scripts (1.1099785955541805) — NOT a q₀
   drift
-- ✓ q₀ stable to 2000 dps via extended PSLQ — NOT q₀-precision
+- OK: q₀ stable to 2000 dps via extended PSLQ — NOT q₀-precision
 
 **Conclusion:** the 500 ppb is an **empirical-fit residual** in the Φ_q tower.
 
@@ -117,9 +117,9 @@ the β⁻ decay parameter; **author has declined to derive Q_β** — sets a 780
 floor on β-chain calibration regardless of substrate work.
 
 ### Deuteron (²H) — +10,903 ppb on B
-- ✗ `d_phi_q_series.py:259` — `u^shift = u^(18Z+21N+1)` marked
+- FLAG `d_phi_q_series.py:259` — `u^shift = u^(18Z+21N+1)` marked
   **EMPIRICAL CONJECTURE**
-- ✗ `jsj_atom_volume.py:195` — B(D)=2.22 MeV **fitted**, n_pairs(D)=1
+- FLAG `jsj_atom_volume.py:195` — B(D)=2.22 MeV **fitted**, n_pairs(D)=1
   hardcoded
 - 11 SCRIPT_CITED weight steps in the n=6 per-λ Wedderburn weight chain
   (PR #605 deuteron chain)
@@ -129,7 +129,7 @@ floor on β-chain calibration regardless of substrate work.
   before tr_M work — `docs/plans/G-status-and-narrowing.md:10`
 - B_5 Hoefsmit at H_9 **deferred** in `r5_full_canonical_knot_solver`
 - τ̂_0 generalisation H_3 → H_9 **not implemented** (Phase A.3' from #522)
-- Q_β = 0.0186 MeV — β⁻ chain ✗ (Q_β not derived)
+- Q_β = 0.0186 MeV — β⁻ chain FLAG (Q_β not derived)
 
 ### ³He — −29,686 ppb on B
 - 5 of 7 blocks fail PSD; only ³He has α* = 1.000 unblocked
@@ -137,7 +137,7 @@ floor on β-chain calibration regardless of substrate work.
 - L_{6a4} / 8_{11} explicit braid identification at H_9 **open from #604**
 
 ### ⁴He — +58,666 ppb on B
-- frobenius-codim n≥6 → ✗ **opaque fallback**
+- frobenius-codim n≥6 → FLAG **opaque fallback**
   (`frobeniusCoCasimirTraceFallback`, `knot-mass-formula-unified.lean:36`).
   This is the **T1 bottleneck** — n=2..5 closed by `rfl` via Fin enumeration
   in `frobenius-codim-universal.lean`; n=6 has 11 partitions, n=7 has 15
@@ -153,8 +153,8 @@ floor on β-chain calibration regardless of substrate work.
 ### Beta-decay channels
 | Isotope | Channel | Q_β (MeV) | Status |
 |---------|---------|-----------|--------|
-| neutron | β⁻ → p | 0.7823 | ✗ Q_β not derived (780 ppb floor) |
-| ³H | β⁻ → ³He | 0.0186 | ✗ |
+| neutron | β⁻ → p | 0.7823 | FLAG Q_β not derived (780 ppb floor) |
+| ³H | β⁻ → ³He | 0.0186 | no |
 | (others stable in this table) | — | — | — |
 
 σ_shell calibration via AME data — long-pole **P8** (per workplan); doesn't
@@ -184,9 +184,9 @@ chain. **Each row is a 1 ppb blocker** until promoted to DERIVED.
 | q₀ CODATA anchor (m_μ/m_e ± 22 ppb) | calibration-floor | all | **structural floor** |
 
 **P0 — primary targets to break the 500 ppb floor immediately:**
-1. `mass_endomorphism.py` Φ_q tower → derive via per-block + Euler-series (Phase 1)
+1. `mass_endomorphism.py` Φ_q tower → derive via per-block + Euler-series (root-cause diagnostic)
 2. `d_phi_q_series.py:259` `u^shift` → upgrade conjectural exponent to derived
-3. `frobenius-codim-universal.lean` n=6, n=7 → close mechanically (Phase 2 / T1)
+3. `frobenius-codim-universal.lean` n=6, n=7 → close mechanically (T1)
 
 **P1 — required to push toward 1 ppb across all six isotopes**
 **P2 — polish residual coupling-constant sites**

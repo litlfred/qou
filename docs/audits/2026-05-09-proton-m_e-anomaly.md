@@ -226,7 +226,7 @@ placeholder-magic, and whether the ratio matches CODATA m_p/m_e or
 ## 8 — Provenance archaeology (post-blame)
 
 A detailed `git log -S` and blob-hash audit of every commit that
-mentions `1.4283` was performed after the initial Phase 1.5 audit.
+mentions `1.4283` was performed after the initial m_e anomaly audit.
 Findings:
 
 ### 8.1 Only two commits are real edits
@@ -238,7 +238,7 @@ Findings:
 
 ### 8.2 The other 8 "matching" commits are squash-rebase artefacts
 
-`git log --all -S '1.4283'` returns 10 commits (excluding my own), but
+`git log --all -S `\.1.4283.` returns 10 commits (excluding the audit's own), but
 blob-hash equality reveals that 6 of them share the **identical**
 `derivation_chain.py` blob `bd31a3ee19fd…`:
 
@@ -310,7 +310,7 @@ in §5. Recommendation remains **D** (relabel-then-derive).
 ## 9 — Addendum (2026-05-09 evening): Items 1–4 already resolved by Strategy-3
 
 After this audit was written, a closer reading of the 10-day commit
-window revealed that the Option B prerequisites I listed in §5 had
+window revealed that the Option B prerequisites listed in §5 had
 **already been resolved upstream** in commits `5c3919b` (May 5),
 `dbaf2aa` / `57a6f2f` (May 6), and the `atomic_braid_mass_table.py`
 "Strategy-3" mass table.  The `proton-mass-50dps.derivation.json`
@@ -343,7 +343,7 @@ with documented unit conventions in
 Running `atomic_braid_mass_table.py` produces:
 
 ```
-|tr_M(p)|_atomic     = 1.6331535640481      (matches Phase 1.6 to 14 digits)
+|tr_M(p)|_atomic     = 1.6331535640481      (matches the closed-form derivation to 14 digits)
 total_hecke[p]       = 4.6912 cat units
 T2[p]=0.4986   T3[p]=0.0622   T4[p]=2.4973   T6[p]=0.6807 MeV
 E_0                  = 199.859751695 MeV / cat-unit
@@ -389,7 +389,7 @@ canonical-knot-id-SDP solver (when available; falls back to
 
 These were both upgraded in the May 6 PR #548 work to preserve 50-dps
 precision (`57a6f2f`) and to disambiguate dim-irrep from |S_n|
-(`dbaf2aa`).  My Phase 1.5 audit didn't catch them because it focused
+(`dbaf2aa`). The earlier m_e anomaly audit did not catch them because it focused
 on the legacy `proton-mass-50dps.derivation.json` chain that doesn't
 consume them.
 

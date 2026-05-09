@@ -1,4 +1,4 @@
-# Braid encoding + knot-operation deep dive (Phase 1.8 + 1.9)
+# Braid encoding + knot-operation deep dive
 
 **User directive:** "validate braid encodings of p and n, check all knot
 operations are SDP solved. track all braids invoiced in γγ for each
@@ -6,7 +6,7 @@ particle. follow all the way through. see where differences really
 are. … check on writhe in paper and compute. /coordinate with
 claude/term7-alpha5-derive-investigation."
 
-**Status:** committed (Phase 1.8 = `0985210`); this doc adds writhe
+**Status:** committed (`0985210`); this addendum adds writhe
 cross-validation, term7-alpha5 coordination, and canonical_a_k
 provenance correction.
 
@@ -34,12 +34,12 @@ contribute 0):
 
 | Particle | ribbon_content_average.writhe_of_atomic_braid | Manual count from word | Agree |
 |----------|-----------------------------------------------|------------------------|-------|
-| proton | +3 | +3 | ✓ |
-| neutron | +1 | +1 | ✓ |
-| deuteron | +4 | +4 | ✓ |
-| triton | +4 | +4 | ✓ |
-| ³He | +8 | +8 | ✓ |
-| ⁴He | +8 | +8 | ✓ |
+| proton | +3 | +3 | yes |
+| neutron | +1 | +1 | yes |
+| deuteron | +4 | +4 | yes |
+| triton | +4 | +4 | yes |
+| ³He | +8 | +8 | yes |
+| ⁴He | +8 | +8 | yes |
 
 **Paper formula consistency check:** The chirality factor formula
 `a_K = 1 + w(K)·h` from
@@ -58,7 +58,7 @@ form `a_K = 1 + w·h` is correct; the specific coefficient is
 
 ## 3 — Knot-operation classification (revised)
 
-Phase 1.8's audit flagged `canonical_a_k` as `method: unknown`. **This
+the prior audit (`braid_encoding_audit.py`) flagged `canonical_a_k` as `method: unknown`. **This
 was a metadata classification error.** The values ARE derived, not
 empirical:
 
@@ -87,13 +87,13 @@ q-eigenvalues (see §6 below).
 
 | Operator | Status | Notes |
 |----------|--------|-------|
-| T1 \|tr_M_atomic\| | DERIVED ✓ | Closed-form Markov-trace; matches Phase 1.6 to 9e-16 |
-| Δ_I a(Z,N) | **DERIVED** ✓ | Wedderburn-weighted character ratio per `jet_knot_invariants`; converges by k≈4-8. (Was incorrectly flagged as `method: unknown` in Phase 1.8.) |
-| **Δ_n² full-twist** | **PLACEHOLDER** ⚠ | `full_twist_scalar(A) = 1.0` for all A. Genuine action q^{c(λ)} per Wedderburn block IS computed (`full-twist-delta-n2-verification.witness.json`) but NOT consumed by mass-table assembly. |
-| T2 / T3 | DERIVED ✓ | z²/z⁴ Markov scalars; A-only |
-| T4 Frobenius co-Casimir | DERIVED ✓ | q-hook-length; Lean-closed n=2..7 (commit 4e876b6) |
-| T5 chirality a_K | PARTIAL ⚠ | First-order `1 + w·h` form correct; coefficient paper-empirical per the conjecture's own retraction |
-| T6 cyclotomic tail | DERIVED ✓ | Habiro residue per A |
+| T1 \|tr_M_atomic\| | DERIVED | Closed-form Markov-trace; matches the closed-form derivation to 9e-16 |
+| Δ_I a(Z,N) | **DERIVED** | Wedderburn-weighted character ratio per `jet_knot_invariants`; converges by k≈4-8. (Was incorrectly flagged as `method: unknown` in the prior braid-encoding audit.) |
+| **Δ_n² full-twist** | **PLACEHOLDER** | `full_twist_scalar(A) = 1.0` for all A. Genuine action q^{c(λ)} per Wedderburn block IS computed (`full-twist-delta-n2-verification.witness.json`) but NOT consumed by mass-table assembly. |
+| T2 / T3 | DERIVED | z²/z⁴ Markov scalars; A-only |
+| T4 Frobenius co-Casimir | DERIVED | q-hook-length; Lean-closed n=2..7 (commit 4e876b6) |
+| T5 chirality a_K | PARTIAL | First-order `1 + w·h` form correct; coefficient paper-empirical per the conjecture's own retraction |
+| T6 cyclotomic tail | DERIVED | Habiro residue per A |
 | E_0 cat→MeV | FITTED (1 param) | Proton CODATA anchor |
 
 ## 4 — Structural mismatch (now sharpened)
@@ -109,7 +109,7 @@ The framework's `fresh_derivation_pn_true_sdp.py:1-26` documents:
 > from CODATA."
 
 Strategy-3 violates this by deriving M_pred[n] from |tr_M(n)| absolutely.
-The 8.3% neutron error is the consequence; per Phase 1.7 it's localised
+The 8.3% neutron error is the consequence; per the neutron-error diagnostic it is localised
 entirely to T1 = |tr_M_atomic|. Writhe difference (+3 vs +1) is the
 structural origin.
 
@@ -162,14 +162,14 @@ structural insights:
 
 **Suggested next steps for cross-PR coordination:**
 
-(1) When term7-alpha5 lands as a PR, reference our Phase 1.5 / 1.6 / 1.7
+(1) When term7-alpha5 lands as a PR, reference the audit chain on this branch (m_e anomaly, Option B chain, neutron diagnostic,
 / 1.8 audits as the empirical motivation: the bug-hunt established
 exactly the structural defects (placeholder Δ_n², bare-mass
 prediction violating "only differences are observable", σ↔σ⁻¹
 asymmetry over-prediction) that their unification resolves.
 
 (2) Their `prop:jucys-murphy-central-elements-qou` is a direct
-formalisation of the canonical_a_k mechanism we observed in
+formalisation of the canonical_a_k mechanism observed in
 `jet_knot_invariants.py`: the convergence of `a_k` at k=4 and the
 relation `a_k = V_inter / (1 + W_STD)` for Z=N atoms is exactly the
 Murphy-centrality phenomenon (`c_5(J)` is central, hence
@@ -181,7 +181,7 @@ naturally subsumes our six-term `T1 + T2 + T3 + T4 + (a_K-1)T1·E_β
 ℓ, with the unit conventions automatically consistent (since each
 shadow-price has the same units by LP duality).
 
-(4) The Δ_n² discharge our Phase 1.8 flagged is closed by jet-order
+(4) The Δ_n² discharge that the prior braid-encoding audit flagged is closed by jet-order
 ℓ ≥ saturation in their framework: at magic shells the iterative
 sum truncates because `Σ_(l > l_sat) u^{(l)*}` vanishes by
 shell-saturation.
@@ -205,12 +205,12 @@ shell-saturation.
 
 ## 7 — Cross-references
 
-- Phase 1.8 audit + script: [`braid-encoding-audit.witness.json`](../../folio-assistant/computations/braid-encoding-audit.witness.json),
+- Braid-encoding audit + script: [`braid-encoding-audit.witness.json`](../../folio-assistant/computations/braid-encoding-audit.witness.json),
   [`braid_encoding_audit.py`](../../folio-assistant/computations/braid_encoding_audit.py)
-- Phase 1.7 (neutron diag): [`neutron-error-diagnostic.witness.json`](../../folio-assistant/computations/neutron-error-diagnostic.witness.json)
-- Phase 1.6 (Option B): [`option-b-proton-mass-full-chain.witness.json`](../../folio-assistant/computations/option-b-proton-mass-full-chain.witness.json)
-- Phase 1.5 (m_e anomaly): [`2026-05-09-proton-m_e-anomaly.md`](2026-05-09-proton-m_e-anomaly.md)
-- Phase 0 audit: [`2026-05-09-mass-table-1ppb-audit.md`](2026-05-09-mass-table-1ppb-audit.md)
+- Neutron error diagnostic: [`neutron-error-diagnostic.witness.json`](../../folio-assistant/computations/neutron-error-diagnostic.witness.json)
+- Option B closed-form chain: [`option-b-proton-mass-full-chain.witness.json`](../../folio-assistant/computations/option-b-proton-mass-full-chain.witness.json)
+- m_e anomaly audit: [`2026-05-09-proton-m_e-anomaly.md`](2026-05-09-proton-m_e-anomaly.md)
+- Mass-table 1ppb audit: [`2026-05-09-mass-table-1ppb-audit.md`](2026-05-09-mass-table-1ppb-audit.md)
 - Sibling: `claude/term7-alpha5-derive-investigation` HEAD
   [`6c385531`](https://github.com/litlfred/qou/commit/6c385531fccc3fda82b43ee71bd49673f1204ec3)
 - Strategy-3 chain: [`atomic_braid_mass_table.py`](../../folio-assistant/computations/atomic_braid_mass_table.py)
