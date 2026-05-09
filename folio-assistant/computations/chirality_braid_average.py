@@ -27,7 +27,8 @@ For H_3, partitions are:
 So ⟨c⟩_β reduces to a difference between the (3) and (1,1,1) channels
 weighted by their Wedderburn weights — the Demazure imbalance.
 
-Outputs the chirality average for 4_1 and B_3, with both:
+Outputs the chirality average for the four tracked hyperbolic 3-braid
+knots (4_1, 6_2, 8_11, L6a4), with both:
 - raw Wedderburn-weighted full sum
 - Type-B folded version (only λ ≠ λ' contributions)
 """
@@ -114,7 +115,7 @@ def wedderburn_weight(shape: tuple[int, ...]) -> float:
 
 def main() -> int:
     q0 = float(Q0)
-    print("Chirality ⟨c⟩_β  =  Σ_λ w_λ · χ_λ(β)  /  Σ_λ w_λ · dim(λ)\n")
+    print("Chirality ⟨c⟩_β  =  Σ_λ w_λ · χ_λ(β)  /  Σ_λ w_λ · dim_q(λ)\n")
     print(f"  q_0 = {q0}\n")
     h3_partitions = list(partitions_of(3))
     print(f"  H_3 partitions: {[tuple(p) for p in h3_partitions]}")
