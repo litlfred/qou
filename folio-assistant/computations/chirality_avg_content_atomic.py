@@ -134,6 +134,29 @@ def flat_to_pairs(flat):
 
 
 def main():
+    # Construct WitnessBuilder up front so durationMs covers the full
+    # computation (Copilot review #r3213426345).
+    builder = (
+        WitnessBuilder(name="chirality-avg-content-atomic", engine="mpmath")
+        .set_description(
+            "Chiral residual of GAP-A-2 at the AUDITED atomic nucleon "
+            "and nuclear braids — D (H_6), T (H_9), ³He (H_9).  ⁴He "
+            "(H_12, 77 partitions) is deferred for performance and "
+            "is not included in this witness.  Computes ⟨c(λ)⟩_β at "
+            "q_0 via two equivalent forms (direct sum + per-pair-"
+            "symmetric) using the atomic-braid words from "
+            "term7-alpha5-crystal-derivation.witness.json.  Tests "
+            "whether the first-order chirality factor a_K(β) = 1 + "
+            "w(β)·⟨c⟩_β·h matches the empirical (1+h)(1-h) = 1-h² "
+            "pattern observed across these isotopes."
+        )
+        .set_audit_only(
+            "content/quantum-observable-universe/braids-and-knots/"
+            "derivation-audit-report.md (GAP-A-2 chiral residual at "
+            "atomic level)"
+        )
+    )
+
     print("=" * 100)
     print("Chirality ⟨c⟩_β for atomic nucleon/nuclear braids — GAP-A-2 chiral residual at H_n(q_0)")
     print("=" * 100)
@@ -141,6 +164,12 @@ def main():
     print()
 
     out_atoms = []
+    # Tolerance tied to working precision; reused in both denominator
+    # checks and the direct-vs-pairwise agreement check (Gemini review
+    # #r3213424371: previous code used hardcoded 1e-30 for the exact-
+    # ribbon-twist denominator — now unified on `zero_tol`).
+    zero_tol = mpf(10) ** (-int(mp.dps * 0.6))
+    agree_tol = mpf(10) ** (-int(mp.dps * 0.8))
     for atom_data in ATOMS:
         atom = atom_data["atom"]
         n = atom_data["n_strands"]
@@ -164,9 +193,13 @@ def main():
             # Promote to mpf for downstream arithmetic at mp.dps=50
             # (the dilution is the f64 value, but downstream sums are
             # done at full mp.dps so per-partition cancellations hold).
-            chi_dict[tuple(shape)] = mpf(str(complex(chi_val_f64).real)
-                                          if isinstance(chi_val_f64, complex)
-                                          else str(chi_val_f64))
+            # Pass the numeric .real attribute directly to mpf — going
+            # through `str(complex(x).real)` is unnecessarily lossy and
+            # slow (Gemini review #r3213424369).
+            if isinstance(chi_val_f64, complex):
+                chi_dict[tuple(shape)] = mpf(chi_val_f64.real)
+            else:
+                chi_dict[tuple(shape)] = mpf(chi_val_f64)
 
         # Direct sum form.
         num_direct = mpf(0)
@@ -214,9 +247,6 @@ def main():
                 "contribution": str(contribution),
             })
 
-        # Tolerances tied to working precision (per Gemini review).
-        zero_tol = mpf(10) ** (-int(mp.dps * 0.6))
-        agree_tol = mpf(10) ** (-int(mp.dps * 0.8))
         avg_direct = num_direct / den if abs(den) > zero_tol else None
         avg_pairwise = num_pairwise / den if abs(den) > zero_tol else None
         agree = (avg_direct is not None and avg_pairwise is not None
@@ -240,8 +270,7 @@ def main():
             chi_val = chi_dict[shape_t_key]
             twist_factor = Q0 ** (2 * w * c_lam)
             num_exact += w_lam * twist_factor * chi_val
-        a_K_exact = (num_exact / den
-                      if abs(den) > mpf("1e-30") else None)
+        a_K_exact = num_exact / den if abs(den) > zero_tol else None
 
         # Empirical comparison: paper assigns a_K = (1+h)(1-h) = 1-h²
         # for the pattern observed across these atoms.
@@ -299,24 +328,7 @@ def main():
         })
 
     builder = (
-        WitnessBuilder(name="chirality-avg-content-atomic", engine="mpmath")
-        .set_description(
-            "Chiral residual of GAP-A-2 at the AUDITED atomic nucleon "
-            "and nuclear braids — D (H_6), T (H_9), ³He (H_9).  ⁴He "
-            "(H_12, 77 partitions) is deferred for performance and "
-            "is not included in this witness.  Computes ⟨c(λ)⟩_β at "
-            "q_0 via two equivalent forms (direct sum + per-pair-"
-            "symmetric) using the atomic-braid words from "
-            "term7-alpha5-crystal-derivation.witness.json.  Tests "
-            "whether the first-order chirality factor a_K(β) = 1 + "
-            "w(β)·⟨c⟩_β·h matches the empirical (1+h)(1-h) = 1-h² "
-            "pattern observed across these isotopes."
-        )
-        .set_audit_only(
-            "content/quantum-observable-universe/braids-and-knots/"
-            "derivation-audit-report.md (GAP-A-2 chiral residual at "
-            "atomic level)"
-        )
+        builder
         .add_parameter("q_0", float(Q0))
         .add_parameter("q_0_str", Q_50_DIGIT_STR)
         .add_parameter("kernel_precision", "f64")

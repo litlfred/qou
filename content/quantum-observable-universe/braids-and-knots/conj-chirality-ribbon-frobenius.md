@@ -9,7 +9,15 @@ confined knots in the model.
 
 ## Statement
 
-**Conjecture.**
+**Status:** Refuted at the audited atomic braids.  The conjecture
+*as originally stated* (below) has been falsified for $D, T, {}^3\mathrm{He}$ —
+see the [refutation status note](#refutation-status-note) and
+"Generalisation" subsection.  The statement is preserved here as the
+historical conjecture text; the empirical $(1+h)(1-h) \approx 0.956$
+pattern that motivated it requires a different construction
+(see [Residual](#residual) below).
+
+**Conjecture (historical, refuted at $A \geq 2$).**
 *Let $K$ be a confined knot with writhe $w(K)$ and canonical Hecke
 braid element $T_w \in H_{n_0}(R, q)$.  The chirality factor of $K$
 in the mass formula
@@ -34,9 +42,13 @@ $$
 - *$\chi_\lambda(T_w)$ is the Hecke character of $T_w$ in the
   Wedderburn summand $\lambda$.*
 
-*Furthermore, for all nucleon and nuclear knots appearing in the QOU
-model, this exact form equals $1 + w(K) \cdot h$ to the precision
-required by the $0.75\%$ accuracy of the mass formula.*
+*The conjecture further claimed that for all nucleon and nuclear knots
+appearing in the QOU model, this exact form equals $1 + w(K) \cdot h$
+to the precision required by the $0.75\%$ accuracy of the mass formula
+— this claim is now refuted: at $D, T, {}^3\mathrm{He}$ the exact
+ratio diverges by ${\sim}10^4$ from the empirical $(1+h)(1-h)$
+pattern (per Copilot review #r3213373225, made consistent with the
+"conclusively wrong" finding below).*
 
 > **Status note (2026-05-09; refutation pending reconciliation).**
 > Direct numerical evaluation of the ratio above for the audited

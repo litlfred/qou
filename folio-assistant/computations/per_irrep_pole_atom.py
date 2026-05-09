@@ -65,6 +65,7 @@ import sympy as sp  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
 from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
+from witness_base import WitnessBuilder  # noqa: E402
 
 Y_LAMBDA_CACHE = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
 
@@ -243,8 +244,6 @@ def load_or_build_chi_atom(
 
 def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     """Run Path A for the given (Z, N) atom and emit its witness."""
-    from witness_base import WitnessBuilder  # noqa: E402
-
     n = 3 * (Z + N)
     # Resolve atom name
     atom_name = next((k for k, v in ATOMS.items() if v == (Z, N)), None)
@@ -451,13 +450,18 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
         "n_partitions": len(chi_fp_pairs),
         "fingerprint": chi_fp_pairs,
         "note": (
-            "Per-partition χ^λ(β_atom; q_0) tuple — atom's "
-            "canonical-basis class invariant under braid/Markov "
-            "moves at q_0.  Two atoms (or two braid words) with "
-            "identical fingerprints are KL-equivalent in H_n(q_0). "
-            "Companion to klr_canonical_basis_filter API; trace-only "
-            "form because per-block matrices are not currently "
-            "materialised at H_n>3 in Path A."
+            "Per-partition χ^λ(β_atom; q_0) tuple — heuristic "
+            "comparison hash for braid/Markov-equivalence at q_0.  "
+            "It is a NECESSARY but NOT SUFFICIENT condition for "
+            "canonical-basis (KL) equivalence: identical fingerprints "
+            "are evidence of equivalence, but two distinct "
+            "canonical-basis classes can collide at the rounded-trace "
+            "level (no iff guarantee).  Trace-only form because "
+            "per-block matrices are not currently materialised at "
+            "H_n>3 in Path A — full equivalence requires the per-"
+            "block matrix entries (cf. "
+            "r5_full_canonical_knot_solver.chi_fingerprint at H_3). "
+            "Per Copilot review #r3213426336."
         ),
     })
 

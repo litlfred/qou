@@ -43,6 +43,9 @@ import mpmath
 from mpmath import mp, mpf
 
 from hecke_characters import (  # noqa: E402
+    PRECISION_F64_FALLBACK,
+    PRECISION_MPFR_50DPS,
+    _RUST_CHI_AVAILABLE,
     chi_lambda_braid,
     partitions_of,
 )
@@ -122,6 +125,25 @@ CASES = [
 
 
 def main():
+    # WitnessBuilder is constructed at the top of main() so durationMs
+    # captures the full computation time (Copilot review #229).
+    builder = (
+        WitnessBuilder(name="chirality-avg-content-chiral",
+                       engine="mpmath")
+        .set_description(
+            "Chiral residual of GAP-A-2 in derivation-audit-report.md. "
+            "Computes ⟨c⟩_β = (Σ w_λ χ^λ(β) c(λ)) / "
+            "(Σ w_λ χ^λ(β)) for chiral 3-braids at q_0 to expose "
+            "the structural-but-non-zero values that the chiral case "
+            "takes.  Companion to chirality-avg-content.witness.json "
+            "(amphichiral case)."
+        )
+        .set_audit_only(
+            "content/quantum-observable-universe/braids-and-knots/"
+            "derivation-audit-report.md (GAP-A-2 chiral residual)"
+        )
+    )
+
     n = 3
     n_fac_q = q_factorial(n, Q0)
     parts = list(partitions_of(n))
@@ -135,6 +157,17 @@ def main():
 
     rows = []
     h_val = Q0 - 1 / Q0
+    # The actual numeric precision of `chi_lambda_braid` depends on
+    # whether the Rust mpfr kernel is available.  The witness records
+    # the actual tag (mpfr_50dps when Rust + mpfr are available, else
+    # f64_numeric_fallback).  Previous code claimed `precision_dps: 50`
+    # which overstated fidelity when only the f64 fallback ran (Copilot
+    # review #r3213243720 / #r3213426355).
+    chi_precision = (
+        PRECISION_MPFR_50DPS if _RUST_CHI_AVAILABLE
+        else PRECISION_F64_FALLBACK
+    )
+    chi_kwargs = {"precision": "mpfr_50dps"} if _RUST_CHI_AVAILABLE else {}
     for case in CASES:
         word = case["word"]
         w = case["writhe"]
@@ -144,7 +177,10 @@ def main():
         for shape in parts:
             c_lam = content_sum(shape)
             w_lam = dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q
-            chi_raw = chi_lambda_braid(shape, word, Q0)
+            chi_raw = chi_lambda_braid(shape, word, Q0, **chi_kwargs)
+            # Rust mpfr returns a decimal string; parse to mpf.
+            if isinstance(chi_raw, str):
+                chi_raw = mpf(chi_raw)
             # Keep mpmath precision: extract real part as mpf without
             # casting through builtin complex / float (which would drop
             # to 53-bit precision and invalidate the mp.dps = 50
@@ -224,24 +260,13 @@ def main():
     print()
 
     builder = (
-        WitnessBuilder(name="chirality-avg-content-chiral",
-                       engine="mpmath")
-        .set_description(
-            "Chiral residual of GAP-A-2 in derivation-audit-report.md. "
-            "Computes ⟨c⟩_β = (Σ w_λ χ^λ(β) c(λ)) / "
-            "(Σ w_λ χ^λ(β)) for chiral 3-braids at q_0 to expose "
-            "the structural-but-non-zero values that the chiral case "
-            "takes.  Companion to chirality-avg-content.witness.json "
-            "(amphichiral case)."
-        )
-        .set_audit_only(
-            "content/quantum-observable-universe/braids-and-knots/"
-            "derivation-audit-report.md (GAP-A-2 chiral residual)"
-        )
+        builder
         .add_parameter("q_0", float(Q0))
         .add_parameter("n", n)
         .add_parameter("partitions", [list(p) for p in parts])
-        .add_parameter("precision_dps", 50)
+        .add_parameter("chi_precision", chi_precision)
+        .add_parameter("rust_chi_available", _RUST_CHI_AVAILABLE)
+        .add_parameter("mp_dps", mp.dps)
         .add_data("cases", rows)
         .add_data("summary_observations", notes)
         .add_assertion(
