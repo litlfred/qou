@@ -1,13 +1,22 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T01:15:59.857893+00:00",
+  "commitSha": "ae0e395343871f30feb34eaa973a474d4e5fc695",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "atomic-tr-m-helium4",
-  "computedAt": "2026-05-08T18:36:52.745680+00:00",
-  "convention_status": "DEPRECATED_DISJOINT \u2014 value below uses the disjoint-product convention (44 crossings, no interface) which is empirically wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) has 47 crossings with 3 interfaces (pp, pn, nn). y-lambda-mpfr-witness.json is now extended to n=12 at true 50 dps (regenerate_y_lambda_mpfr.py, PR #564) BUT canonical |tr_M(\u2074He)| at H_12 via the Wenzl bridge is INTRACTABLE with current Python mpmath: p(12)=77 partitions, max dim 7700 ((5,3,2,1,1)), ~2\u00d710\u00b9\u00b3 ops per partition \u00d7 47 crossings, timed out at 30 min. Canonical compute deferred pending (a) Rust kernel with rayon parallel partitions + block-sparse Hoefsmit, or (b) categorical reduction via Wenzl 1988 LR branching to avoid the full p(12)=77 sum. DO NOT use for mass predictions.",
+  "scriptFile": "atomic_tr_m_helium4.py",
+  "scriptHash": "f8aa503aa264",
+  "scriptCommitSha": "ceb6104f7e57111dd38a2226030e5fba0cf82112",
+  "description": "⁴He |tr_M| extension to H_12: disjoint product of two protons and two neutrons on strand sets {1,2,3}, {4,5,6}, {7,8,9}, {10,11,12}. Companion to atomic-tr-m-mpfr-50dps.witness.json (which covers p, n, D, T, ³He at H_3/H_6/H_9 with the canonical convention). The disjoint-product identity tr_M(α⊗β)=tr_M(α)·tr_M(β) is only valid for genuine disjoint-cluster braids (e.g. unknot operators), NOT for multi-nucleon atoms whose canonical word includes operator-valued σ_{3k} interfaces. The deuteron 'disjoint check' previously cited here was REMOVED from markov-trace-axiomatic-multi-atom.witness.json on PR #564 (tautological for the disjoint word; did not validate physics).",
   "auditOnly": "AUDIT-DEEP-2026-05.md",
-  "description": "\u2074He |tr_M| extension to H_12: disjoint product of two protons and two neutrons on strand sets {1,2,3}, {4,5,6}, {7,8,9}, {10,11,12}. Companion to atomic-tr-m-mpfr-50dps.witness.json (which covers p, n, D, T, \u00b3He at H_3/H_6/H_9 with the canonical interface convention). The disjoint-product axiom is only valid for genuine disjoint-cluster braids (e.g. unknot operators), NOT for multi-nucleon atoms whose canonical word includes operator-valued \u03c3_{3k} interfaces. The deuteron 'disjoint check' to 1e-30 was self-consistent (disjoint-word tr_M = product of factor traces by construction) but does NOT validate the deuteron physics; the canonical |tr_M(\u03b2_D)| = 0.388286... is in atomic-tr-m-mpfr-50dps.witness.json.",
-  "audit_reference": "AUDIT-DEEP-2026-05.md \u00a73.3a (P4\u2033) + convention audit PR #564",
+  "convention_status": "DEPRECATED_DISJOINT — value below uses the disjoint-product convention (44 crossings, no interface) which is empirically wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) has 47 crossings with 3 interfaces (pp, pn, nn). Canonical |tr_M(⁴He)| at H_12 via the Wenzl bridge is intractable with current Python mpmath (p(12)=77 partitions, max dim 7700, ~2×10¹³ ops per partition × 47 crossings); needs a Rust kernel with rayon parallel partitions or a categorical reduction via Wenzl 1988 LR branching. DO NOT use for mass predictions.",
+  "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″) + convention audit PR #564",
   "pr": "#564",
   "precision": "mpfr_50dps_disjoint_only",
-  "method": "disjoint_product_DEPRECATED",
+  "method": "disjoint_product",
   "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
   "results": [
     {
@@ -64,28 +73,28 @@
         11,
         -10
       ],
-      "braid_word_str": "\u03c3\u2081\u2077\u03c3\u2082\u2074 \u00b7 \u03c3\u2084\u2077\u03c3\u2085\u2074 \u00b7 \u03c3\u2087\u2076\u03c3\u2088\u2074\u03c3\u2087\u207b\u00b9 \u00b7 \u03c3\u2081\u2080\u2076\u03c3\u2081\u2081\u2074\u03c3\u2081\u2080\u207b\u00b9",
-      "tr_M_at_q0_50dps": "0.96732375051946928363628156972991869054366967430064",
-      "abs_tr_M_at_q0_50dps": "0.96732375051946928363628156972991869054366967430064",
+      "braid_word_str": "σ₁⁷σ₂⁴ · σ₄⁷σ₅⁴ · σ₇⁶σ₈⁴σ₇⁻¹ · σ₁₀⁶σ₁₁⁴σ₁₀⁻¹",
+      "tr_M_at_q0_50dps": "0.96732375051946897893683751863134299804348930227964",
+      "abs_tr_M_at_q0_50dps": "0.96732375051946897893683751863134299804348930227964",
       "method_used": "disjoint_product",
       "disjoint_product": {
-        "formula": "|tr_M(p)|\u00b2 \u00b7 |tr_M(n)|\u00b2",
-        "abs_tr_p_50dps": "1.065306228592389333611777464990998459365907562335",
-        "abs_tr_n_50dps": "0.92323329716958371987441489925448416037805873290687",
-        "abs_tr_he4_50dps": "0.96732375051946928363628156972991869054366967430064",
+        "formula": "|tr_M(p)|² · |tr_M(n)|²",
+        "abs_tr_p_50dps": "1.0653062285923892551532775699680661193337632009791",
+        "abs_tr_n_50dps": "0.92323329716958364246376988091871375932688744507312",
+        "abs_tr_he4_50dps": "0.96732375051946897893683751863134299804348930227964",
         "source_witness": "atomic-tr-m-mpfr-50dps.witness.json"
       },
       "direct_recursion": {
         "engine": "markov_trace_recursive.markov_trace_of_word",
         "budget_sec": 480.0,
-        "elapsed_sec": 480.0002644062042,
+        "elapsed_sec": 480.00007343292236,
         "abs_tr_M_50dps": null,
         "error": "timeout_after_480s",
         "matches_disjoint_product_within_1ppb": null
       },
       "historical_K_comparison": {
-        "registry_status": "REGISTRY_PHASE_3B in joint_tower_sdp_solver_v2.py covers p, n, D, T, \u00b3He but NOT \u2074He.  The literature identification (Borromean / B_3\u00b2 in B_3) is recorded for future cross-checks but is not used here \u2014 the disjoint-product extension on H_12 is sufficient for the leading-order \u03c1_K ansatz of P4\u2033.",
-        "literature_candidate": "Borromean (B_3\u00b2 in B_3)"
+        "registry_status": "REGISTRY_PHASE_3B in joint_tower_sdp_solver_v2.py covers p, n, D, T, ³He but NOT ⁴He.  The literature identification (Borromean / B_3² in B_3) is recorded for future cross-checks but is not used here — the disjoint-product extension on H_12 is sufficient for the leading-order ρ_K ansatz of P4″.",
+        "literature_candidate": "Borromean (B_3² in B_3)"
       }
     }
   ]
