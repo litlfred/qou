@@ -48,7 +48,7 @@
   ],
   "target_tolerance": 0.0,
   "content_block": "prop:atomic-mass-gb-nf",
-  "description": "Atomic-braid recipe for neutron in the canonical operator-valued convention (`canonical_braid_crossings.atom_canonical_crossings(0, 1)`).  SDP-optimum verified for neutron (PR #608 ran the LP/SDP solver at A = 1 in `r5_full_canonical_knot_solver`; the canonical word lies in the LP-optimum class).  11 crossings on 3 strands.  Trust profile {axiom: 2, derived: 3, script-cited: 3}.  Canonical companion to the legacy-disjoint `atomic-braid-recipe-n.derivation.json` (when `n == \"4he\"`) or to the per-atom mass-trace `atomic-braid-recipe-n` SCRIPT_CITED steps declared by PR #605's neutron / deuteron mass chains (when `n ∈ {p, n, d}`); downstream consumers don't yet reference this artifact, so this is a companion rather than a replacement.  Closure of `conj:canonical-knot-id-sdp` (issue #604 GAP-A-1) upgrades all three SCRIPT_CITED steps to LEAN_PROVEN simultaneously, at which point the legacy-disjoint variant can be deleted in favour of this chain.",
+  "description": "Atomic-braid recipe for neutron in the canonical operator-valued convention (`canonical_braid_crossings.atom_canonical_crossings(0, 1)`).  Status: the neutron canonical word is a single-nucleon component of the SDP-verified D / ³He assemblies (PR #608's solver runs on the multi-nucleon atoms and consumes the proton / neutron words as inputs); the solver does not run directly at the single-nucleon level (Z = 0, N = 1, A = 1).  11 crossings on 3 strands.  Trust profile {axiom: 2, derived: 3, script-cited: 3}.  Canonical companion to the per-atom mass-trace `atomic-braid-recipe-n` SCRIPT_CITED step declared in PR #605's `markov-trace-assembly-neutron.derivation.json`; that consumer does not yet reference this artifact, so the SCRIPT_CITED step there remains pending until the reference is wired up downstream.  Closure of `conj:canonical-knot-id-sdp` (issue #604 GAP-A-1) upgrades all three SCRIPT_CITED steps to LEAN_PROVEN simultaneously, at which point the legacy-disjoint variant can be deleted in favour of this chain.",
   "steps": [
     {
       "name": "Categorical R-matrix action of B_{3} on V^{⊗3}",
@@ -195,12 +195,12 @@
     },
     {
       "name": "Inter-nucleon averaged crossing rule",
-      "operation": "For atoms with `A ≥ 2`, the inter-block crossing at generator `3k + 2` (where `k = 1..A-1`) is the averaged operator `I_{3k+2} := σ_{3k+2} − (h/2) · 1`, encoding the `pp`, `pn`, `nn` channel selection of `prop:hecke-branching-trace-decomposition`.  For single-nucleon atoms (A = 1) this step contributes no crossings; for the deuteron (A = 2, pn channel), it contributes one averaged crossing at gen 2.",
+      "operation": "For atoms with `A ≥ 2`, the inter-block crossing between nucleon blocks `k` and `k + 1` sits at the 0-indexed generator `3k − 1` (for `k = 1..A − 1`); it is the averaged operator `I_{3k−1} := σ_{3k−1} − (h/2) · 1`, encoding the `pp`, `pn`, `nn` channel selection of `prop:hecke-branching-trace-decomposition`.  For single-nucleon atoms (A = 1) this step contributes no crossings; for the deuteron (A = 2, pn channel) it contributes one averaged crossing at gen_idx 2.",
       "inputs": [
         "nucleon_in_V3"
       ],
       "output_name": "inter_nucleon_rule",
-      "output_value": "I_{3k+2} := σ_{3k+2} − (h/2)·1, k = 1..A-1",
+      "output_value": "I_{3k−1} := σ_{3k−1} − (h/2)·1, k = 1..A − 1 (0-indexed gen_idx)",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§Hecke-branching-trace-decomposition",
@@ -219,7 +219,7 @@
     },
     {
       "name": "Atom assembly rule T_w(neutron) ∈ B_{3}",
-      "operation": "Combine steps 3–6 into the atom assembly:\n  T_w(Z = 0, N = 1) := \n    ∏_{k=1}^0 (proton word shifted by block k) ∘\n    ∏_{k=Z+1}^{1} (neutron word shifted by block k) ∘\n    ∏_{k=1}^{1-1} (inter-nucleon averaged crossing at generator 3k+2).\nPure algebra: sequence of disjoint-block + interface crossings concatenated in B_{3}.",
+      "operation": "Combine steps 3–6 into the atom assembly:\n  T_w(Z = 0, N = 1) := \n    ∏_{k=1}^0 (proton word shifted by block k) ∘\n    ∏_{k=Z+1}^{1} (neutron word shifted by block k) ∘\n    ∏_{k=1}^{1-1} (inter-nucleon averaged crossing at 0-indexed generator 3k − 1).\nPure algebra: sequence of disjoint-block + interface crossings concatenated in B_{3}.",
       "inputs": [
         "proton_canonical_word",
         "neutron_canonical_word",
