@@ -58,10 +58,15 @@ class WeakSpectralCompleteness (R : Type*) [Ring R] (EWModule : Type*)
   is_idempotent_24 : e_T_2_4 ∘ₗ e_T_2_4 = e_T_2_4
   is_idempotent_26 : e_T_2_6 ∘ₗ e_T_2_6 = e_T_2_6
   is_idempotent_28 : e_T_2_8 ∘ₗ e_T_2_8 = e_T_2_8
-  /-- Pairwise orthogonality: `e_i ∘ e_j = 0` for distinct `i ≠ j`. -/
+  /-- Pairwise orthogonality (bidirectional, since `Module.End R EWModule`
+      is non-commutative under composition): `e_i ∘ e_j = 0` AND
+      `e_j ∘ e_i = 0` for every distinct `i ≠ j`. -/
   orthogonal_24_26 : e_T_2_4 ∘ₗ e_T_2_6 = 0
+  orthogonal_26_24 : e_T_2_6 ∘ₗ e_T_2_4 = 0
   orthogonal_24_28 : e_T_2_4 ∘ₗ e_T_2_8 = 0
+  orthogonal_28_24 : e_T_2_8 ∘ₗ e_T_2_4 = 0
   orthogonal_26_28 : e_T_2_6 ∘ₗ e_T_2_8 = 0
+  orthogonal_28_26 : e_T_2_8 ∘ₗ e_T_2_6 = 0
   /-- Plancherel completeness: the three idempotents sum to the
       identity on the EW/Higgs sector. -/
   spans : e_T_2_4 + e_T_2_6 + e_T_2_8 = LinearMap.id

@@ -45,12 +45,16 @@ inductive EWHiggsBoson : Type
 /-- **Conjecture class** for `conj:electroweak-higgs-torus-link-triplet`,
     operator-level form.
 
-    The bijection identifies the four EW/Higgs carriers (W±, Z, H)
-    with the four 'leaves' of the {T(2,4), T(2,6), T(2,8)} torus-link
-    triplet (W± share the T(2,4) writhe pair; Z carries T(2,6); H
-    carries T(2,8)).  The class encodes the underlying boson-to-
-    writhe assignment plus the structural injectivity of the
-    triplet-on-distinct-bosons map. -/
+    The triplet identification assigns each EW/Higgs carrier
+    (W±, Z, H) one of the three torus-link writhes {4, 6, 8} on the
+    triplet {T(2,4), T(2,6), T(2,8)}.  W± share the T(2,4) writhe
+    (electroweak-charge conjugate pair), Z carries T(2,6), H carries
+    T(2,8).  The map `writhe_of` is therefore *not* injective on the
+    full boson set — it is injective on the coset {W*, Z, H} after
+    quotienting by the W±-conjugation pair.  The class fixes only the
+    four writhe values (verified by `wPlus_writhe`, `wMinus_writhe`,
+    `z_writhe`, `h_writhe`); downstream theorems supply the
+    quotient-injectivity statement when needed. -/
 class EWHiggsTorusLinkTriplet where
   /-- Each EW/Higgs boson carries a torus-link writhe in {4, 6, 8}. -/
   writhe_of : EWHiggsBoson → ℕ

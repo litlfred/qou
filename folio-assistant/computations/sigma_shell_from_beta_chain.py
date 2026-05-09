@@ -294,7 +294,7 @@ def main() -> int:
             "sigma-shell-from-beta-chain",
             witness,
             script_path=__file__,
-            engine="mpmath+sympy",
+            engine="python+mpmath",
             output_dir=HERE,
         )
         .save()
