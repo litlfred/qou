@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T14:00:41.578787+00:00",
-  "commitSha": "70924c01a6eb49205bf79878339007c0b3a18a16",
+  "computedAt": "2026-05-09T14:58:10.871620+00:00",
+  "commitSha": "6d6673849c6bae0bf24950e5184f8da33315c0e5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -464,7 +464,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1423,6 +1423,7 @@
         "beta-ew-delta-I-eigenvalues.witness.json",
         "beta-ew-delta-I-numerical-spectrum.witness.json",
         "binding-canonical.witness.json",
+        "binding-k-enumerator.witness.json",
         "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
         "borromean-axial-coupling.witness.json",
