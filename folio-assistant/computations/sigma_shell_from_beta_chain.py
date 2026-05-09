@@ -68,9 +68,10 @@ mp.mp.dps = 50
 
 
 # ── Inputs (calibration anchors at the ρ_K layer; NOT shell-derivation params) ──
-M_E_MEV = mp.mpf("0.51099895")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
+# Centralised via codata_constants per Copilot review on PR #564
+# (avoids duplicating CODATA literals across compute scripts).
+from codata_constants import M_E_MEV, M_P_MEV  # noqa: E402
+from codata_constants import M_N_MEV  # noqa: E402
 B_D_MEV = mp.mpf("2.224566110")  # AME 2020 deuteron binding energy (benchmark only)
 
 

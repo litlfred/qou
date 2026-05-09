@@ -44,15 +44,23 @@ For ⁴He on strand sets {1,2,3}/{4,5,6}/{7,8,9}/{10,11,12} the word is
 
 which has 7+4 + 7+4 + 6+4+1 + 6+4+1 = 44 crossings on 12 strands.
 
-By the disjoint-product axiom of the Markov trace
-  tr_M(α ⊗ β) = tr_M(α) · tr_M(β)
-verified empirically for the deuteron in
-`markov-trace-axiomatic-multi-atom.witness.json` (relative |Δ| < 1e-30,
-mpmath-exact), the helium-4 trace factors as
+Under the (deprecated) disjoint-product convention
+  tr_M(α ⊗ β) = tr_M(α) · tr_M(β),
+the helium-4 trace would factor as
 
     tr_M(⁴He) = tr_M(p)² · tr_M(n)²,
 
 so |tr_M(⁴He)| = |tr_M(p)|² · |tr_M(n)|².
+
+⚠ The convention audit on PR #564 *removed* the deuteron disjoint-
+product check from `markov-trace-axiomatic-multi-atom.witness.json`
+(it was tautological for the disjoint word but did not validate the
+deuteron physics; see `convention_status: DEPRECATED_NON_CANONICAL`
+in that witness). The disjoint-product identity therefore is **not
+empirically verified** for multi-nucleon atoms; this script's value
+is retained only as a placeholder pending the Rust-kernel canonical
+recompute described in `atomic-tr-m-helium4.witness.json`'s
+`convention_status` field.
 
 This script computes both values in parallel:
 
@@ -212,19 +220,34 @@ def main() -> int:
     witness = {
         "computation": "atomic-tr-m-helium4",
         "computedAt": datetime.now(timezone.utc).isoformat(),
+        "convention_status": (
+            "DEPRECATED_DISJOINT — value below uses the disjoint-product "
+            "convention (44 crossings, no interface) which is empirically "
+            "wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) "
+            "has 47 crossings with 3 interfaces (pp, pn, nn). Canonical "
+            "|tr_M(⁴He)| at H_12 via the Wenzl bridge is intractable with "
+            "current Python mpmath (p(12)=77 partitions, max dim 7700, "
+            "~2×10¹³ ops per partition × 47 crossings); needs a Rust kernel "
+            "with rayon parallel partitions or a categorical reduction via "
+            "Wenzl 1988 LR branching. DO NOT use for mass predictions."
+        ),
+        "auditOnly": "AUDIT-DEEP-2026-05.md",
         "description": (
             "⁴He |tr_M| extension to H_12: disjoint product of two protons and "
             "two neutrons on strand sets {1,2,3}, {4,5,6}, {7,8,9}, {10,11,12}. "
             "Companion to atomic-tr-m-mpfr-50dps.witness.json (which covers "
-            "p, n, D, T, ³He at H_3/H_6/H_9). Authoritative |tr_M| is computed "
-            "via markov_trace_recursive when it returns within budget; "
-            "otherwise the disjoint-product axiom value tr_M(p)²·tr_M(n)² is "
-            "used (consistent with the deuteron disjoint-product check that "
-            "matched direct recursion to 1e-30 in the multi-atom witness)."
+            "p, n, D, T, ³He at H_3/H_6/H_9 with the canonical convention). "
+            "The disjoint-product identity tr_M(α⊗β)=tr_M(α)·tr_M(β) is only "
+            "valid for genuine disjoint-cluster braids (e.g. unknot operators), "
+            "NOT for multi-nucleon atoms whose canonical word includes "
+            "operator-valued σ_{3k} interfaces. The deuteron 'disjoint check' "
+            "previously cited here was REMOVED from "
+            "markov-trace-axiomatic-multi-atom.witness.json on PR #564 "
+            "(tautological for the disjoint word; did not validate physics)."
         ),
-        "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″)",
+        "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″) + convention audit PR #564",
         "pr": "#564",
-        "precision": "mpfr_50dps",
+        "precision": "mpfr_50dps_disjoint_only",
         "method": method,
         "q_0_50dps": str(Q0_MP),
         "results": [

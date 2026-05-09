@@ -1,6 +1,7 @@
 {
   "computation": "atomic-mass-via-rho-k",
-  "computedAt": "2026-05-09T00:19:25.052514+00:00",
+  "computedAt": "2026-05-09T00:28:28.746272+00:00",
+  "auditOnly": "AUDIT-DEEP-2026-05.md",
   "description": "Atomic mass-table predictions using the resolved \u03c1_K assembly M(K) = \u03c1_K \u00b7 m_e \u00b7 |tr_M(K)| from PR #564 \u00a73.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via Q_\u03b2 = m_n - m_p - m_e). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py \u2014 see the side-by-side improvement_factor field.",
   "engine": "mpmath",
   "scriptFile": "atomic_mass_via_rho_k.py",
@@ -79,12 +80,8 @@
         "Z": 2,
         "N": 2,
         "A": 4,
-        "tr_M_at_q0": "0.96732375051946928363628156972991869054366967430064",
-        "rho_K_leading_order": "7597.9450172079510632164067213645566134616712052406",
-        "M_pred_MeV": "3755.67501736",
-        "M_codata_MeV": "3727.379378",
-        "err_pct": "0.75912957846492651813989834227172139492370180731304",
-        "binding_residual_MeV": "28.29563936"
+        "tr_M_unavailable": true,
+        "M_codata_MeV": "3727.379378"
       }
     ],
     "legacy_compare": [
@@ -117,12 +114,6 @@
         "rho_K_err_pct": "0.27481884611750584",
         "legacy_E0_err_pct": "-50.46355873197802",
         "improvement_factor": 183.6248111979956
-      },
-      {
-        "atom": "4He",
-        "rho_K_err_pct": "0.7591295784649266",
-        "legacy_E0_err_pct": "-39.80791331653202",
-        "improvement_factor": 52.438891127163785
       }
     ]
   },

@@ -186,6 +186,7 @@ def main() -> int:
     out = {
         "computation": "gb-filtration-jet-order-reader",
         "computedAt": datetime.now(timezone.utc).isoformat(),
+        "auditOnly": "AUDIT-DEEP-2026-05.md",
         "description": (
             "Python-fallback reader for the GB-filtration / jet-order "
             "witness (P6 from PR #564). Loads gb-filtration-jet-order.witness.json "

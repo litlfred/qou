@@ -1,6 +1,7 @@
 {
   "computation": "rho-k-leading-order-verification",
   "computedAt": "2026-05-08T17:54:58.612600+00:00",
+  "auditOnly": "AUDIT-DEEP-2026-05.md",
   "description": "Live verification (in PR #564) that the rho_K leading-order ansatz reproduces atomic masses to <=0.1% on D, T, 3He. The residual is precisely the binding energy in MeV (cf. AME values). This confirms the assembly path M(K) = rho_K * m_e * |tr_M(K)| is the correct mass formula (Option A in the T6 unit-convention analysis), and the Mittag-Leffler complementarity (Option C) explains why no separate T6 additive is needed.",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4",

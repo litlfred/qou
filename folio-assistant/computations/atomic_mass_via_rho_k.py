@@ -98,12 +98,23 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
 
     # Per-atom extension witnesses: any file matching
     # `atomic-tr-m-*.witness.json` whose name is NOT the legacy one.
+    # Witnesses carrying a `convention_status` starting with "DEPRECATED"
+    # are SKIPPED — their |tr_M| values use a non-canonical convention
+    # (e.g. disjoint product) that does not reproduce the canonical
+    # Schur-Weyl identity, so they would silently corrupt mass
+    # predictions if loaded as ground truth (per Copilot review on
+    # PR #564).  Such witnesses keep the extension file as a record
+    # but flag it explicitly in the convention_status field.
     for ext in sorted(HERE.glob("atomic-tr-m-*.witness.json")):
         if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
             continue
         try:
             d = json.loads(ext.read_text())
         except json.JSONDecodeError:
+            continue
+        status = str(d.get("convention_status", ""))
+        if status.startswith("DEPRECATED"):
+            print(f"  skipping {ext.name}: convention_status={status[:60]}...")
             continue
         for r in d.get("results", []):
             atom = r.get("atom")
@@ -225,6 +236,7 @@ def main() -> int:
     witness = {
         "computation": "atomic-mass-via-rho-k",
         "computedAt": datetime.now(timezone.utc).isoformat(),
+        "auditOnly": "AUDIT-DEEP-2026-05.md",
         "description": (
             "Atomic mass-table predictions using the resolved ρ_K assembly "
             "M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a "

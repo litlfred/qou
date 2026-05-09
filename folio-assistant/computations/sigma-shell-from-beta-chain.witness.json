@@ -1,6 +1,6 @@
 {
   "computation": "sigma-shell-from-beta-chain",
-  "computedAt": "2026-05-09T00:19:57.714833+00:00",
+  "computedAt": "2026-05-09T00:28:52.795433+00:00",
   "description": "\u03c3_shell magnitude via the corrected categorical formula (P8 rederived per \u00a75 escalation on PR #564). The earlier \u03b2-chain frame gave a 22M% discrepancy at A_magic=2; the corrected formula identifies \u03c3_shell as the staircase Wedderburn coefficient and yields y_target=0.001331 vs benchmark 0.001186 (12% agreement, 300 000\u00d7 improvement).",
   "engine": "mpmath+sympy",
   "scriptFile": "sigma_shell_from_beta_chain.py",
