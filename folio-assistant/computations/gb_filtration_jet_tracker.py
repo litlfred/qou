@@ -155,7 +155,9 @@ class HeckeElement:
     def _add(self, other: "HeckeElement") -> "HeckeElement":
         out = dict(self.terms)
         for w, c in other.terms.items():
-            out[w] = sp.simplify(out.get(w, 0) + c)
+            # F10 (audit follow-up): sp.cancel suffices for rational
+            # coefficients in q (Hecke algebra); faster than simplify.
+            out[w] = sp.cancel(out.get(w, 0) + c)
             if out[w] == 0:
                 del out[w]
         merged = HeckeElement(n=self.n, terms=out, jet_log=list(self.jet_log),
@@ -165,7 +167,8 @@ class HeckeElement:
     def _scalar(self, scalar) -> "HeckeElement":
         return HeckeElement(
             n=self.n,
-            terms={w: sp.simplify(c * scalar) for w, c in self.terms.items() if sp.simplify(c * scalar) != 0},
+            # F10: cancel instead of simplify.
+            terms={w: sp.cancel(c * scalar) for w, c in self.terms.items() if sp.cancel(c * scalar) != 0},
             jet_log=list(self.jet_log),
             step_counter=self.step_counter,
         )
@@ -182,7 +185,7 @@ class HeckeElement:
             if l_wsi > l_w:
                 # Ascending: T_w · T_i = T_{wsi}
                 relation = "ascending"
-                out[wsi] = sp.simplify(out.get(wsi, 0) + c)
+                out[wsi] = sp.cancel(out.get(wsi, 0) + c)  # F10
                 ev = JetEvent(
                     step=self.step_counter, multiplier=i,
                     predecessor=w, successor=wsi,
@@ -192,8 +195,8 @@ class HeckeElement:
             else:
                 # Descending: T_w · T_i = (q - q^{-1}) T_w + T_{wsi}
                 relation = "hecke-quadratic"
-                out[w] = sp.simplify(out.get(w, 0) + c * H)
-                out[wsi] = sp.simplify(out.get(wsi, 0) + c)
+                out[w] = sp.cancel(out.get(w, 0) + c * H)  # F10
+                out[wsi] = sp.cancel(out.get(wsi, 0) + c)  # F10
                 ev = JetEvent(
                     step=self.step_counter, multiplier=i,
                     predecessor=w, successor=wsi,
@@ -202,7 +205,7 @@ class HeckeElement:
                 )
             self.jet_log.append(ev)
         # Strip zero coefficients
-        out = {w: c for w, c in out.items() if sp.simplify(c) != 0}
+        out = {w: c for w, c in out.items() if sp.cancel(c) != 0}  # F10
         return HeckeElement(n=self.n, terms=out, jet_log=self.jet_log,
                             step_counter=self.step_counter)
 
