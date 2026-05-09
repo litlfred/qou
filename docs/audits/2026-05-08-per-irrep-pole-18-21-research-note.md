@@ -1,10 +1,16 @@
-# Per-irrep pole derivation of `18Z + 21N + 1` — research-grade follow-up
+# Path A pole derivation of `18Z + 21N + 1` — proton CLOSED, multi-nucleon deferred
 
-**Date:** 2026-05-08
-**Status:** **Research-grade.** Documented here as the next open
-question after PR #572's q-Hecke character closure
-([`docs/audits/2026-05-08-q-hecke-character-gap-closure.md`](2026-05-08-q-hecke-character-gap-closure.md)).
-Not blocking PR #572.
+**Date:** 2026-05-08 (drafted) / 2026-05-09 (proton verified)
+**Status:** **Proton case verified** by direct symbolic Hoefsmit
+pole-order computation
+([`per_irrep_pole_proton_h3.py`](../../folio-assistant/computations/per_irrep_pole_proton_h3.py),
+witness:
+[`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)).
+$\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_p)) = 19 = 18 \cdot 1 + 21 \cdot 0 + 1$
+matches `prop:per-nucleon-shift-additive-linearity`. Multi-nucleon
+verification (deuteron at $H_6$, $A \ge 3$ at $H_9$) deferred —
+symbolic Hoefsmit chi_lambda on the deuteron's 11-partition $H_6$
+takes ~3 minutes; numerical-q-from-start path needs implementation.
 
 ## Background
 

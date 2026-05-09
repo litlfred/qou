@@ -83,6 +83,32 @@ increments are:
 - **per-new-neutron:** pole $+10.5$ (cancellation $= 1.5$,
   half-integer), shift $= 2 \cdot 10.5 = 21$.
 
+#### Path A categorical verification (proton, 2026-05-09)
+
+The per-proton coefficient $18$ is verified by direct symbolic
+Hoefsmit pole-order analysis in
+[`per_irrep_pole_proton_h3.py`](../../folio-assistant/computations/per_irrep_pole_proton_h3.py)
+(witness:
+[`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)).
+For the proton's 11-crossing canonical word at $H_3$, the script:
+
+1. Computes $\chi^\lambda_q(\beta_p)$ for each $\lambda \vdash 3$
+   (Hoefsmit seminormal trace, symbolic in $q$).
+2. Sums $\mathrm{tr}_M(\beta_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\beta_p)$
+   with the canonical Wenzl Jones-Markov weights.
+3. Substitutes $q = u^2$ (per the $D(u)$ convention from
+   [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py))
+   and reports $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_p)) = 19$,
+   matching $18 \cdot 1 + 21 \cdot 0 + 1$ exactly.
+
+**Reading note.** The per-irrep maximum $\mathrm{ord}_{q=0}^{(-)}\chi^\lambda_q(\beta_p) = 11$
+(at $\lambda = (2, 1)$); the "$18$" in the formula is the
+per-proton additive coefficient of the **full summed** $u$-pole
+order of $\mathrm{tr}_M$, NOT the q-pole order of any single
+per-irrep $\chi^\lambda_q$. See
+[`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](../../docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md)
+for the reading correction.
+
 The cancellation count enumerates the σ²-relation reductions
 ($\sigma^2 = h\sigma + 1$ in the Hecke quadratic) in the new
 nucleon's intrinsic $\sigma^{\pm 1}$-adjacencies plus its incoming
