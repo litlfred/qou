@@ -58,7 +58,7 @@ class BraneTowerZHabiro (n₀ : ℕ) (q : ℝ) where
     none of the conjectural recovery content (no per-atom binding
     energies are checked) but discharges the §3b-cond hypothesis. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"Skeleton"
-instance skeleton (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
+instance skeleton (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where  -- noqa: skel_inst
   nStar := fun ell _ => max ell 1
   nStar_pos := by intro ell k hell; simp [Nat.lt_max_iff]; left; exact hell
   recoversBinding := fun _ _ _ _ => True

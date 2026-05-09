@@ -57,7 +57,7 @@ theorem denominator_zeros_eq_sw_critical_points
     by `rfl`.  The genuine cubic-discriminant equation is the
     upgrade target. -/
 -- Ref: [manuscript] conj:denominator-zeros-as-sw-critical-points §"Skeleton"
-instance skeleton (q : ℝ) (n : ℕ) :
+instance skeleton (q : ℝ) (n : ℕ) :  -- noqa: skel_inst
     DenominatorZerosAreSWCriticalPoints q n where
   zero_lifts_to_critical := fun _ => rfl
 

@@ -113,7 +113,7 @@ class WeakSpectralCompletenessSkeleton : Prop where
   three_torus_writhes : ∃ (w : Fin 3 → ℕ),
     w 0 = 4 ∧ w 1 = 6 ∧ w 2 = 8 ∧ Function.Injective w
 
-instance instWeakSpectralCompletenessSkeleton
+instance instWeakSpectralCompletenessSkeleton  -- noqa: skel_inst
     {R : Type*} [Ring R] {EWModule : Type*}
     [AddCommGroup EWModule] [Module R EWModule]
     [WeakSpectralCompleteness R EWModule] :

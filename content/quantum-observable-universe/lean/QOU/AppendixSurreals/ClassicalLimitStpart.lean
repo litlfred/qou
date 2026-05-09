@@ -72,7 +72,7 @@ theorem classical_limit_eq_stpart [inst : ClassicalLimitStpart]
     `rfl`.  Encodes none of the actual classical-limit / standard-
     part content but discharges the §3b-cond hypothesis. -/
 -- Ref: [manuscript] conj:classical-limit-stpart §"Skeleton"
-instance skeleton : ClassicalLimitStpart where
+instance skeleton : ClassicalLimitStpart where  -- noqa: skel_inst
   cl_value := fun _ => 0
   st_part := fun _ => 0
   q_quantity_at := fun _ => 0

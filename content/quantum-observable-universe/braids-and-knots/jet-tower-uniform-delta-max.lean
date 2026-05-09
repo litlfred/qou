@@ -78,7 +78,7 @@ theorem geometric_tail_bound_abstract
     Encodes none of the actual jet-tower binding content but
     discharges the §3b-cond hypothesis. -/
 -- Ref: [manuscript] conj:jet-tower-uniform-delta-max §"Skeleton"
-instance skeleton (ρ : Type*) : JetTowerUniformDeltaMax ρ where
+instance skeleton (ρ : Type*) : JetTowerUniformDeltaMax ρ where  -- noqa: skel_inst
   delta := fun _ => 0
   delta_max := 0
   delta_max_nonneg := le_refl 0

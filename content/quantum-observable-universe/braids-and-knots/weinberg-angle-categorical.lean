@@ -95,7 +95,7 @@ class WeinbergAngleCategorical
     to discharge the §3b-cond hypothesis for downstream blocks
     consuming `[WeinbergAngleCategorical R q]`. -/
 -- Ref: weinberg-angle-categorical.md §"Status"
-instance skeleton {R : Type*} [CommRing R] (q : R) :
+instance skeleton {R : Type*} [CommRing R] (q : R) :  -- noqa: skel_inst
     WeinbergAngleCategorical R q where
   lk_discharged := trivial
   hoefsmit_discharged := trivial

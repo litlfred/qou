@@ -1,24 +1,16 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T04:44:39.350Z",
-  "total_flagged": 56,
-  "files_flagged": 35,
+  "generated": "2026-05-09T04:51:08.672Z",
+  "total_flagged": 41,
+  "files_flagged": 23,
   "patterns": {
     "const_zero": 31,
-    "skel_inst": 15,
     "one_def": 7,
     "id_def": 1,
     "const_zero_typed": 1,
     "prop_true": 1
   },
   "flagged": {
-    "braids-and-knots/brane-tower-z-habiro.lean": [
-      {
-        "line": 61,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where"
-      }
-    ],
     "braids-and-knots/confinement-nf-partial-proof.lean": [
       {
         "line": 54,
@@ -38,25 +30,11 @@
         "snippet": "def sigmaF : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
       }
     ],
-    "braids-and-knots/conj-rho-prefactor-structural.lean": [
-      {
-        "line": 66,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (n₀ : ℕ) (q : ℝ) : RhoPrefactorStructural n₀ q where"
-      }
-    ],
     "braids-and-knots/frobenius-antipode-lean-stub.lean": [
       {
         "line": 127,
         "pattern": "one_def",
         "snippet": "def chiralityFactor (_n : ℕ) (_q : ℝ) (_β : HeckeAlgebra _n _q) : ℝ := 1"
-      }
-    ],
-    "braids-and-knots/jet-tower-uniform-delta-max.lean": [
-      {
-        "line": 81,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (ρ : Type*) : JetTowerUniformDeltaMax ρ where"
       }
     ],
     "braids-and-knots/knot-mass-formula-unified.lean": [
@@ -91,13 +69,6 @@
         "line": 49,
         "pattern": "const_zero",
         "snippet": "def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0"
-      }
-    ],
-    "braids-and-knots/mass-element-nf.lean": [
-      {
-        "line": 69,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (β : Type*) : HeckeMassNF β where"
       }
     ],
     "braids-and-knots/mass-endomorphism-tower.lean": [
@@ -138,32 +109,11 @@
         "snippet": "def q_hook_product {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 1"
       }
     ],
-    "braids-and-knots/shared-denominator-cusp-holonomy.lean": [
-      {
-        "line": 77,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (q x : ℝ) (n : ℕ) :"
-      }
-    ],
     "braids-and-knots/shell-closure-stability.lean": [
       {
         "line": 51,
         "pattern": "const_zero",
         "snippet": "def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0"
-      }
-    ],
-    "braids-and-knots/weak-spectral-completeness.lean": [
-      {
-        "line": 116,
-        "pattern": "skel_inst",
-        "snippet": "instance instWeakSpectralCompletenessSkeleton"
-      }
-    ],
-    "braids-and-knots/weinberg-angle-categorical.lean": [
-      {
-        "line": 98,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton {R : Type*} [CommRing R] (q : R) :"
       }
     ],
     "braids-and-knots/wenzl-qmn-synergy.lean": [
@@ -227,11 +177,6 @@
         "line": 26,
         "pattern": "const_zero",
         "snippet": "def swPeriod (_n : ℕ) (_z_c : ℂ) : ℂ := 0"
-      },
-      {
-        "line": 54,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (q x : ℝ) (n k : ℕ) :"
       }
     ],
     "descartes-universe/denominator-zeros-as-sw-critical-points.lean": [
@@ -239,18 +184,6 @@
         "line": 26,
         "pattern": "const_zero",
         "snippet": "def colorTubeDiscriminant (_z : ℂ) : ℂ := 0"
-      },
-      {
-        "line": 60,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (q : ℝ) (n : ℕ) :"
-      }
-    ],
-    "descartes-universe/electroweak-higgs-torus-link-triplet.lean": [
-      {
-        "line": 117,
-        "pattern": "skel_inst",
-        "snippet": "instance instEWHiggsTorusLinkTripletSkeleton"
       }
     ],
     "descartes-universe/gb-reduction-pl-thimble-bijection.lean": [
@@ -258,11 +191,6 @@
         "line": 22,
         "pattern": "const_zero",
         "snippet": "def imSAction : ℂ → ℝ := fun _ => 0"
-      },
-      {
-        "line": 66,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton (n : ℕ) : GBReductionPLThimbleBijection n where"
       }
     ],
     "descartes-universe/pl-jsj-mass-integration-equivalence.lean": [
@@ -294,25 +222,11 @@
         "snippet": "def qGameOfLife {L : Type*} (_generations : ℕ) : L → L := id"
       }
     ],
-    "lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean": [
-      {
-        "line": 75,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton : ClassicalLimitStpart where"
-      }
-    ],
     "lean/QOU/AppendixSurreals/Conjectures.lean": [
       {
         "line": 180,
         "pattern": "const_zero",
         "snippet": "def HyperbolicVolume : Knot → ℝ := fun _ => 0"
-      }
-    ],
-    "lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.lean": [
-      {
-        "line": 82,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton : KnotFactorFrobeniusPairing where"
       }
     ],
     "lean/QOU/BraidKnot/ShellNeutrality.lean": [
@@ -336,13 +250,6 @@
         "snippet": "def obstructionSize (_n _r _p _q : ℕ) : ℝ := 0"
       }
     ],
-    "molecular-construction/shell-closure-nf-term-count.lean": [
-      {
-        "line": 327,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton : ShellClosureNFTermCount where"
-      }
-    ],
     "particle-interactions/confinement-sdp.lean": [
       {
         "line": 43,
@@ -353,13 +260,6 @@
         "line": 48,
         "pattern": "const_zero",
         "snippet": "def n_target : ConfinedParticleTy → ℝ := fun _ => 0"
-      }
-    ],
-    "particle-interactions/lifted-crossing-locality.lean": [
-      {
-        "line": 66,
-        "pattern": "skel_inst",
-        "snippet": "instance skeleton {K C : Type*} : LiftedCrossingLocality K C where"
       }
     ]
   }

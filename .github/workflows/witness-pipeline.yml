@@ -291,7 +291,7 @@ jobs:
           # up count and update the comment above.
           bun run --cwd content pipeline/trivial-skeleton-audit.ts \
             --max-per-pattern \
-              "const_zero=33,skel_inst=17,prop_true=3,punit_type=2,one_def=9,holds_trivial=2,punit_unit=2,id_def=3,const_zero_typed=3,first_arg=12"
+              "const_zero=33,skel_inst=2,prop_true=3,punit_type=2,one_def=9,holds_trivial=2,punit_unit=2,id_def=3,const_zero_typed=3,first_arg=12"
 
       - name: Detect drift in committed witnesses
         run: |

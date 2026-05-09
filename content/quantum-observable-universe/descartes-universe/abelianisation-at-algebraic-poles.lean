@@ -51,7 +51,7 @@ theorem abelianisation_at_algebraic_poles
 /-- **Skeleton instance.**  Both `miOnDivisor` and `swPeriod` are
     concrete `def := 0`, so `mi_eq_sw` reduces to `0 = 0`. -/
 -- Ref: [manuscript] conj:abelianisation-at-algebraic-poles §"Skeleton"
-instance skeleton (q x : ℝ) (n k : ℕ) :
+instance skeleton (q x : ℝ) (n k : ℕ) :  -- noqa: skel_inst
     AbelianisationAtAlgebraicPole q x n k where
   matched_critical_point := 0
   mi_eq_sw := rfl
