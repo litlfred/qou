@@ -33,6 +33,7 @@ export default proposition({
     "prop:alpha-shift-torus-knot",
     "prop:hecke-branching-trace-decomposition",
     "conj:crystal-graph-realization",
+    "def:lp-duality-hypothesis-class",
   ],
   cites: ["schrijver1986theory", "macdonald1995"],
   lean: { ref: "qou:QOU.BraidKnot.ConfinementNFPartial.theorem_3_strong_duality" },

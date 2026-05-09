@@ -92,7 +92,50 @@ Euler-characteristic computation.**
 **Estimated effort:** research-grade. Requires the full KLR
 diagrammatic apparatus (Khovanov–Lauda 2009).
 
-## Recommended next step
+## Path A — concrete H_3 result (2026-05-09)
+
+`folio-assistant/computations/per_irrep_pole_proton_h3.py` now
+implements Path A directly. Concrete output:
+
+| λ ⊢ 3 | $\chi^\lambda_q(\beta_p)$ (simplified) | $\mathrm{ord}_{q=0}^{(-)}$ |
+|---:|---|---:|
+| $(3)$ | $q(q^4 + 2q^2 + 1)/4$ | 0 |
+| $(2, 1)$ | $(q^{22} + q^{20} + q^{18} + q^{14} - q^8 - q^4 - q^2 - 1) / (4q^{11})$ | **11** |
+| $(1, 1, 1)$ | $(-q^4 - 2q^2 - 1)/(4q^5)$ | 5 |
+
+**Maximizer is $(2, 1)$, not $(1, 1, 1)$**, and the q-pole order
+is $11$, not the empirical AXKIA $18$.
+
+This is a substantive finding: either
+
+1. the $18$ in $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} \cdot (1+u^2)^{3A-1}$
+   is the **u-pole** order, related to the q-pole order by a
+   non-trivial substrate map $u \leftrightarrow q$ (e.g. $u = h = q - q^{-1}$
+   gives $u \to \infty$ as $q \to 0$, so the q-pole structure does
+   not lift cleanly to a u-pole structure of the same order), or
+2. the $18$ refers to the **full atomic-braid Markov-trace
+   denominator** $D(u)$, not the per-irrep $\chi^\lambda_q(\beta_p)$
+   pole order.
+
+The `prop:per-nucleon-shift-additive-linearity` derivation cites
+the audit
+[`crystal-r-matrix-sublemma-2-1.md`](2026-05-08-crystal-r-matrix-sublemma-2-1.md)
+Step 5 as the source of the `18, 21` decomposition. That audit
+attributes both constants to $\mathrm{ord}_{q=0}^{(-)} \chi^{\mu_p^*}(\beta_p)$
+and $\mathrm{ord}_{q=0}^{(-)} \chi^{\nu_n^*}(\beta_n)$ respectively.
+The H_3 computation above demonstrates that **`18` is not the
+q-pole order at H_3** under the obvious reading.
+
+**Open question:** which of the two interpretations is correct?
+The right next step is to inspect the AXKIA commit `2f186ebc9`
+linked in the original empirical input to see exactly what
+quantity was numerically computed; reconcile the convention with
+either (a) the substrate u-pole map, or (b) the full D(u) shift
+exponent. The Path-A scaffold is now in place — the discrepancy
+isolation reduces this from research-grade to a concrete reading
+exercise.
+
+## Original recommendation (preserved for reference)
 
 Path A — the seminormal pole-order analysis. Pre-existing
 infrastructure (`hoefsmit_symbolic`, `canonical_braid_crossings`)

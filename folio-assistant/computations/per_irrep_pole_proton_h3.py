@@ -73,47 +73,62 @@ def chi_lambda_q_proton(shape: tuple) -> sp.Expr:
     return chi_lambda_symbolic(shape, crossings)
 
 
-def negative_u_pole_order(chi_q: sp.Expr) -> int:
-    """Largest k such that q^{-k} appears with non-zero coefficient
-    in `chi_q` (Laurent series in q centred at 0).
+def negative_q_pole_order(chi_q: sp.Expr) -> int:
+    """Order of pole at q = 0 of `chi_q` (Laurent series in q).
 
-    The substrate parameter `q ↔ u` correspondence: pole order at
-    `u → 0` corresponds to pole order at `q → 0` modulo the Hecke
-    skein relation $\\sigma_i - \\sigma_i^{-1} = q - q^{-1}$.
-
-    TODO(path-a): implement Laurent expansion at q=0.  For rational
-    expressions in q, this is `sp.degree(sp.numer(chi_q), 1/q) -
-    sp.degree(sp.denom(chi_q), 1/q)`.  Care needed when q appears
-    only in numerator or only in denominator.
+    For a rational expression $\\chi(q) = N(q)/D(q)$ in q, the pole
+    order at $q = 0$ is `deg_q(D) - ord_{q=0}(N)`, where the latter
+    is the lowest non-zero exponent of q in N.  Returns 0 if chi is
+    a polynomial (no negative-power terms).
     """
-    # Stub — research-grade.  Returns sentinel until implemented.
-    raise NotImplementedError(
-        "Path A pole-order analysis is research-grade.  "
-        "See docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md "
-        "for the three implementation paths."
-    )
+    q = sp.symbols("q", positive=True)
+    chi_simp = sp.simplify(chi_q)
+    n, d = sp.fraction(chi_simp)
+    n_poly = sp.Poly(n, q)
+    d_poly = sp.Poly(d, q)
+    n_low = min(m[0] for m in n_poly.monoms()) if n_poly.monoms() else 0
+    d_deg = d_poly.degree() if d_poly.is_zero is False else 0
+    return max(0, d_deg - n_low)
 
 
 def main() -> int:
-    """Print χ^λ_q(β_p) for each λ ⊢ 3 at H_3.  Filling in the
-    pole-order analysis recovers the empirical AXKIA `18` constant."""
+    """Compute χ^λ_q(β_p) and its q=0 pole order for each λ ⊢ 3.
+
+    Empirical claim from AXKIA: per-proton pole order = 18.  This
+    script computes the concrete values; if the H_3 maximizer's
+    q-pole order ≠ 18, the discrepancy isolates a substrate-map /
+    convention factor (u ↔ q relationship) for the audit doc."""
     print("=" * 80)
-    print("  Per-irrep pole order — proton β_p at H_3 (Path A scaffold)")
+    print("  Per-irrep pole order — proton β_p at H_3 (Path A)")
     print("=" * 80)
     print()
     print("  Crossings (canonical word from atom_braid_word_3A(1, 0)):")
     crossings = proton_h3_crossings()
-    print(f"    {len(crossings)} crossings")
-    for i, (g, c) in enumerate(crossings):
-        print(f"    [{i:2}]  σ_{g}  ({c})")
+    print(f"    {len(crossings)} crossings: "
+          f"{[(g, c[0]) for g, c in crossings]}")
     print()
-    print("  χ^λ_q(β_p) for each λ ⊢ 3:")
+    print(f"  {'λ':<14}{'χ^λ_q(β_p) (simplified)':<48}{'ord_{q=0}':>12}")
+    print("  " + "-" * 74)
+    pole_orders = {}
     for lam in H3_PARTITIONS:
         chi = chi_lambda_q_proton(lam)
-        print(f"    λ = {lam}:  χ = {sp.simplify(chi)}")
+        ord_q = negative_q_pole_order(chi)
+        pole_orders[lam] = ord_q
+        chi_str = str(sp.simplify(chi))[:46]
+        print(f"  {str(lam):<14}{chi_str:<48}{ord_q:>12}")
     print()
-    print("  TODO(Path A): implement `negative_u_pole_order` and verify")
-    print("  the maximizer μ_p* = (1,1,1) yields pole order 18.")
+    max_lam = max(pole_orders, key=pole_orders.get)
+    max_ord = pole_orders[max_lam]
+    print(f"  Maximizer:    λ = {max_lam}, ord_{{q=0}} = {max_ord}")
+    print(f"  AXKIA claim:  ord_{{q=0}}^(-) χ^{{μ_p*}}(β_p) = 18")
+    if max_ord == 18:
+        print(f"  ✓ AXKIA empirical input verified (Path A closed for proton).")
+    else:
+        print(f"  ✗ Discrepancy: {max_ord} ≠ 18.  Investigate substrate map u ↔ q")
+        print(f"    (the AXKIA u-pole order in D(u) likely uses a different")
+        print(f"    normalisation than the χ^λ_q q-pole order; e.g.")
+        print(f"    u = h = q − q⁻¹ with substrate map non-trivial at q=0).")
+        print(f"    Audit: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md")
     return 0
 
 
