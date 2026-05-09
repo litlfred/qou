@@ -93,6 +93,33 @@ private theorem quadratic_nonneg_implies_linear_zero
     have h_a2_eq : a ^ 2 = 0 := le_antisymm h_a2_le (sq_nonneg a)
     exact pow_eq_zero_iff (two_ne_zero).mp h_a2_eq
 
+/-- **Cauchy-Schwarz inequality for PSD entries**: for any PSD
+    matrix `C : Matrix (Fin n) (Fin n) ℝ` and indices `i, j`,
+    `(C i j)² ≤ C i i · C j j`.
+
+    PROOF: the 2x2 principal submatrix
+        `[C_ii  C_ij]`
+        `[C_ji  C_jj]`
+    is PSD (Mathlib: principal submatrix of PSD is PSD).  PSD ⟹
+    `det ≥ 0` (Mathlib: `Matrix.PosSemidef.det_nonneg`).  Det of
+    the submatrix:
+        `C_ii · C_jj - C_ij · C_ji = C_ii · C_jj - C_ij²`
+    (using `C_ji = C_ij` from PSD-symmetric).  Hence
+    `C_ij² ≤ C_ii · C_jj`.  ∎ -/
+theorem Matrix.PosSemidef.entry_sq_le_diag_mul
+    {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
+    (i j : Fin n) :
+    (C i j) ^ 2 ≤ C i i * C j j := by
+  -- The proof composes:
+  --   1. `Matrix.PosSemidef.principalSubmatrix_posSemidef` (or
+  --      `Matrix.PosSemidef.submatrix`-style lemma)
+  --   2. `Matrix.PosSemidef.det_nonneg`
+  --   3. Explicit 2x2 determinant formula
+  --   4. PSD-symmetric: `C j i = C i j`
+  -- Each step is standard Mathlib; full composition pending
+  -- exact API verification.
+  sorry
+
 /-- **PSD off-diagonal-zero from diagonal-zero**.
 
     For a real PSD matrix `C`, if `C i i = 0` for some index `i`,
@@ -121,17 +148,8 @@ theorem Matrix.PosSemidef.entry_zero_of_diag_zero
   -- using the test-vector approach at the bottom.
 
   -- Method 1: Cauchy-Schwarz on PSD entries.
-  have h_cs : (C i j) ^ 2 ≤ C i i * C j j := by
-    -- This is the entry-wise Cauchy-Schwarz inequality for PSD
-    -- matrices, equivalent to "the 2x2 principal submatrix is
-    -- PSD" + "PSD 2x2 matrix has non-negative determinant".
-    --
-    -- Direct proof from PSD: for any t ∈ ℝ and orthogonal pair
-    -- (i, j), the vector v = e_i + t · sign(C_ij) · e_j gives
-    --   0 ≤ vᵀ C v = C_ii + 2t·|C_ij| + t²·C_jj
-    -- Choosing t² = C_ii / C_jj (when C_jj > 0) and analysing
-    -- gives |C_ij|² ≤ C_ii · C_jj.
-    sorry  -- pending Mathlib lookup or test-vector derivation
+  have h_cs : (C i j) ^ 2 ≤ C i i * C j j :=
+    Matrix.PosSemidef.entry_sq_le_diag_mul hC i j
   rw [h_diag, zero_mul] at h_cs
   -- (C i j)² ≤ 0 AND ≥ 0 ⟹ = 0 ⟹ C i j = 0.
   have h_sq_eq : (C i j) ^ 2 = 0 :=
