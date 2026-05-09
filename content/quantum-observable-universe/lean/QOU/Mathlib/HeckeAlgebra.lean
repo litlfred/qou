@@ -1121,6 +1121,106 @@ noncomputable def MarkovTraceRecursionWithMul.h1_to_h2 (q z : ℝ) :
     simp
     ring
 
+/-! ### Concrete `MarkovTraceRecursionWithMul` instance at n = 2
+
+    H_2 ⊂ H_3 inclusion + Markov axiom at this level.
+    The H_3 multiplication is supplied via the `H3.mul`
+    function, lifted through the `HnCarrier ↔ H3Carrier`
+    conversions. -/
+
+/-- Carrier multiplication on `HnCarrier 3 ℝ` via the
+    `H3.mul` function lifted through the H3Carrier conversion. -/
+noncomputable def mul_HnC3 (q : ℝ) (x y : HnCarrier 3 ℝ) : HnCarrier 3 ℝ :=
+  H3Carrier_to_HnCarrier
+    (H3.mul q (HnCarrier_to_H3Carrier x) (HnCarrier_to_H3Carrier y))
+
+/-- The σ_2 generator in `HnCarrier 3 ℝ` form.  At basis
+    position 3 (= σ_2 in the H_3 basis ordering). -/
+noncomputable def sigma_HnC3 : HnCarrier 3 ℝ :=
+  H3Carrier_to_HnCarrier (H3.sigma2 ℝ)
+
+/-- Embed `HnCarrier 2 ℝ` into `HnCarrier 3 ℝ` via the
+    H_2 ⊂ H_3 inclusion: `(a, b) ↦ (a, b, 0, 0, 0, 0)`. -/
+def embed_HnC2_to_HnC3 (x : HnCarrier 2 ℝ) : HnCarrier 3 ℝ :=
+  fun i =>
+    if i.val = 0 then x ⟨0, by decide⟩
+    else if i.val = 1 then x ⟨1, by decide⟩
+    else 0
+
+/-- Markov trace at level 3: applies the H_3 trace formula
+    `tr_M = a₁ + (a₂ + a₃)·z + (a₄ + a₅)·z² + a₆·z³`. -/
+noncomputable def trace_HnC3 (z : ℝ) (x : HnCarrier 3 ℝ) : ℝ :=
+  x ⟨0, by decide⟩
+  + (x ⟨1, by decide⟩ + x ⟨2, by decide⟩) * z
+  + (x ⟨3, by decide⟩ + x ⟨4, by decide⟩) * z ^ 2
+  + x ⟨5, by decide⟩ * z ^ 3
+
+/-- **Concrete `MarkovTraceRecursionWithMul ℝ 2 q z` instance**
+    for the H_2 → H_3 level transition.
+
+    Markov axiom: `tr_M(x · σ_2) = z · tr_M(x)` for x ∈ H_2 ⊂ H_3.
+
+    Proof sketch: for x = (a, b) ∈ H_2, embedded as
+    (a, b, 0, 0, 0, 0) ∈ H_3:
+      x · σ_2 = a·σ_2 + b·σ_1·σ_2 = (0, 0, a, b, 0, 0)  in H_3
+    trace_HnC3 z of this = 0 + (0 + a)·z + (b + 0)·z² + 0·z³
+                          = a·z + b·z²
+    z · trace_HnC2 z x = z · (a + b·z) = a·z + b·z²  ✓ -/
+noncomputable def MarkovTraceRecursionWithMul.h2_to_h3 (q z : ℝ) :
+    MarkovTraceRecursionWithMul ℝ 2 q z where
+  trace_n := trace_HnC2 z
+  trace_succ := trace_HnC3 z
+  mul_succ := mul_HnC3 q
+  sigma_n := sigma_HnC3
+  embed := embed_HnC2_to_HnC3
+  axiom_witness := by
+    intro x
+    -- Goal expansion via unfold + simp + ring.  The H_3
+    -- multiplication and HnCarrier ↔ H3Carrier conversion
+    -- evaluate explicitly on the basis-position pattern
+    -- (a, b, 0, 0, 0, 0) · (0, 0, 1, 0, 0, 0) = (0, 0, a, b, 0, 0).
+    unfold trace_HnC3 trace_HnC2 mul_HnC3 sigma_HnC3 embed_HnC2_to_HnC3
+           HnCarrier_to_H3Carrier H3Carrier_to_HnCarrier H3.mul
+           H3.smul H3.add H3.mulSigma1 H3.mulSigma2 H3.sigma2
+    simp
+    ring
+
+/-! ### Higher-n recursion stubs
+
+    For `n ≥ 3`, the same pattern applies but requires the
+    `HnCarrier (n+1) ℝ` multiplication.  The recursion
+    structurally identifies:
+    - `mul_HnC{n+1} q = H_{n+1}Carrier_to_HnCarrier ∘ H_{n+1}.mul ∘ HnCarrier_to_H_{n+1}Carrier`
+    - `sigma_HnC{n+1}` = the σ_n generator embedded in `H_{n+1}`
+    - `embed_HnC_n_to_HnC_{n+1}` = the H_n ⊂ H_{n+1} inclusion
+    - `trace_HnC{n+1}` = the explicit Markov-trace formula at
+      level n+1
+
+    Each level adds 1 to the carrier dimension and 1 power of z
+    to the trace formula.  Encoded abstractly via the recursive
+    `HnCarrierRec` shape. -/
+
+/-- **Recursive H_n → H_{n+1} hook**: any caller-supplied
+    multiplication on `HnCarrier (n+1) ℝ`, σ_n element, embedding,
+    and trace formula yields a `MarkovTraceRecursionWithMul`
+    instance at level n.  Concrete instances at small n
+    (h1_to_h2, h2_to_h3 above) discharge by direct algebra. -/
+noncomputable def MarkovTraceRecursionWithMul.canonical_lift
+    (n : ℕ) (q z : ℝ)
+    (trace_n : HnCarrier n ℝ → ℝ)
+    (trace_succ : HnCarrier (n + 1) ℝ → ℝ)
+    (mul_succ : HnCarrier (n + 1) ℝ → HnCarrier (n + 1) ℝ → HnCarrier (n + 1) ℝ)
+    (sigma_n : HnCarrier (n + 1) ℝ)
+    (embed : HnCarrier n ℝ → HnCarrier (n + 1) ℝ)
+    (h_axiom : MarkovAxiomHolds ℝ z trace_n trace_succ mul_succ sigma_n embed) :
+    MarkovTraceRecursionWithMul ℝ n q z where
+  trace_n := trace_n
+  trace_succ := trace_succ
+  mul_succ := mul_succ
+  sigma_n := sigma_n
+  embed := embed
+  axiom_witness := h_axiom
+
 end QOU.Mathlib.HeckeAlgebra
 
 /-! ### Wedderburn isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(R)`
