@@ -363,16 +363,53 @@ posting; final state can be merged to main when the goal completes.
 
 ### 10.  Cherry-picking
 
-`/coordinate` explicitly authorises cross-PR cherry-picks under
-these constraints:
+`/coordinate` explicitly authorises cross-PR cherry-picks —
+including pre-emptive cherry-picks when an in-flight sibling has
+infrastructure (caches, witnesses, helpers) that you can build
+on without waiting for it to land on `main`. The constraints:
 
-1. **Cite the source PR** in your commit message
+1. **Inform the sibling.** Before (or with) the cherry-pick,
+   post a short coordination comment on the source PR listing
+   the files you are taking. Use this template:
+
+   ```markdown
+   **Cherry-pick from #<source PR> → #<your PR>:**
+
+   | file | use |
+   |------|-----|
+   | `path/to/file.py` | <one-line: what I will use it for> |
+   | `path/to/witness.json` | … |
+
+   I will cite this comment in my commit message and treat your
+   version as authoritative — if you change the file, I'll
+   rebase rather than diverge. Will not modify the cherry-picked
+   files except to bridge naming / imports if strictly required.
+   ```
+
+   This protects the sibling from silent divergence and lets
+   them flag if a file is mid-refactor on their side.
+
+2. **Cite the source PR** in your commit message
    (`Co-authored-by:` or `Cherry-pick of #<N>:<sha>`).
-2. **Do not silently diverge** the cherry-picked code from the
-   source — if you adapt, post a coordination comment back so the
-   source can match.
-3. **Match the author's voice / style** (one-voice rule still
+
+3. **Do not silently diverge** the cherry-picked code from the
+   source. If you must adapt (e.g. import path, naming bridge),
+   post a follow-up comment on the source PR describing the
+   adaptation so the source can mirror it. The default is
+   "byte-for-byte identical".
+
+4. **Match the author's voice / style** (one-voice rule still
    applies).
+
+5. **Pull through subsequent changes.** When the source PR's
+   files change, rebase / re-`git checkout` your cherry-picked
+   copies so they stay byte-aligned. Periodic §7 triage is the
+   right place to do this.
+
+When the source PR lands on `main`, the cherry-picks stop being
+"cherry-picks" and become normal upstream files. At that point,
+delete the credit line from your commit-message template (a new
+PR sourced from main does not need attribution).
 
 ### 11.  Asks and responses
 
