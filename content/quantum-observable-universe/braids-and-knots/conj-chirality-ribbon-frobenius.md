@@ -104,15 +104,43 @@ The conjecture splits along **chirality class**:
   $\langle c(\lambda) \rangle_{4_1} = -2.3 \times 10^{-15}$
   (numerically zero at 50-dps precision).
 
-- **Chiral case (open).** For chiral nucleon and nuclear knots the
-  conjecture asserts $\langle c(\lambda) \rangle_\beta$ takes a
-  specific structural value (not zero, not necessarily one).  The
-  earlier conjectured value $\langle c \rangle = 1$ was empirically
-  falsified for the deuteron $^2$H ($w = +4$,
-  $\langle c \rangle_\beta \in \{-3.78, +2.51\}$ depending on
-  inter-nucleon-crossing convention; see falsification table at
-  `chirality-writhe-ribbon-derivation.md:122–126`).  The correct
-  structural form for chiral knots remains the open piece of GAP-A-2.
+- **Chiral case (closed-form formula identified, 2026-05-09).** For
+  chiral 3-braids, $\langle c(\lambda) \rangle_\beta$ has a closed
+  form in terms of the Hecke characters at $q_0$ alone:
+  $$
+    \langle c(\lambda) \rangle_\beta
+    \;=\;
+    \frac{3 \bigl(\chi^{(3)}(\beta) - \chi^{(1,1,1)}(\beta)\bigr)}{
+      \chi^{(3)}(\beta)
+      \;+\; \chi^{(1,1,1)}(\beta)
+      \;+\; (w_{(2,1)} / w_{(3)}) \cdot \chi^{(2,1)}(\beta)
+    },
+  $$
+  where the Plancherel-weight ratio at $q_0 \approx 1.10998$ is
+  $w_{(2,1)} / w_{(3)} \approx 4.454$ (and $w_{(3)} = w_{(1,1,1)}$
+  by transposition symmetry).  The reduction follows from
+  $c(\lambda) \in \{+3, 0, -3\}$ for $\lambda \in \{(3), (2,1),
+  (1,1,1)\}$: the $(2,1)$ contribution drops from the numerator
+  ($c = 0$), and the symmetric/antisymmetric terms with
+  $c = \pm 3$ pair into $3(\chi^{(3)} - \chi^{(1,1,1)})$.  At $q_0$
+  this formula reproduces the witness data
+  ([`chirality-avg-content-chiral.witness.json`](../../../folio-assistant/computations/chirality-avg-content-chiral.witness.json))
+  to machine precision:
+
+  | Braid                          | $w$ | predicted $\langle c \rangle_\beta$ |
+  |--------------------------------|------|-------------------------------------|
+  | $\sigma_1^3$                   | $+3$ | $+1.81492$ |
+  | $\sigma_1^{-3}$                | $-3$ | $-1.81492$ |
+  | $(\sigma_1 \sigma_2)^3$        | $+6$ | $+0.35428$ |
+  | $\sigma_1^2 \sigma_2^{-1} \sigma_1^2 \sigma_2^{-1}$ | $+4$ | $+0.10724$ |
+
+  The earlier conjectured universal value $\langle c \rangle = 1$
+  was falsified for the deuteron $^2$H (see falsification table at
+  `chirality-writhe-ribbon-derivation.md:122–126`); the closed
+  form above replaces it.  The remaining open piece is the
+  generalisation of this formula to higher braid groups $H_n(q)$
+  for $n > 3$, where the partition lattice has more shapes and
+  the cancellation pattern is non-trivial.
 
 ## Proof obligations
 
@@ -128,12 +156,19 @@ The conjecture splits along **chirality class**:
    $\chi^\lambda = \chi^{\lambda^T}$, which is structural in
    $H_n(q)$.
 
-3. **Mean-content identity (chiral, open).**  For chiral nucleon and
-   nuclear knots ($3_1$ proton, $5_2$ neutron, $6_2$ deuteron, $8_{11}$
-   tritium, $L_{6a4}$ ${}^3\mathrm{He}$, etc.), determine the correct
-   value of $\langle c(\lambda) \rangle_\beta$.  The earlier
-   $\langle c \rangle = 1$ ansatz is falsified for $^2$H.  This is
-   the residual open piece of the conjecture.
+3. **Mean-content identity (chiral, partially discharged 2026-05-09).**
+   For chiral 3-braids the closed form
+   $\langle c(\lambda) \rangle_\beta
+   = 3(\chi^{(3)} - \chi^{(1,1,1)})
+   / (\chi^{(3)} + \chi^{(1,1,1)} + (w_{(2,1)}/w_{(3)}) \chi^{(2,1)})$
+   reproduces the witnessed values at $H_3(q_0)$ to machine
+   precision (see "Chiral case" derivation above).  **Open piece:**
+   generalise to $H_n(q)$ for $n > 3$ — for $5_2$ neutron, $6_2$
+   deuteron, $8_{11}$ tritium, $L_{6a4}$ ${}^3\mathrm{He}$ etc.
+   The pattern presumably involves a sum over transposition pairs
+   $(\lambda, \lambda^T)$ with $c(\lambda^T) = -c(\lambda)$ and a
+   denominator absorbing the self-conjugate $\lambda = \lambda^T$
+   contributions.
 
 4. **$O(h^2)$ bound.**  Estimate the second-order correction
    $O(h^2)$ at $q = q_0$ and show it is $< 0.75\%$ of the leading
