@@ -90,16 +90,18 @@ def IsRootOfUnityH {R : Type*} [Monoid R] (q : R) : Prop :=
 /--
   Far-commutativity predicate at the index level (predecessor of
   Mathlib `BraidGroup` plumbing): two braid-generator indices `i`
-  and `j` *far-commute* in `B_n` iff `|i - j| ≥ 2`. This is the
-  combinatorial content of the `T_i T_j = T_j T_i` for
-  `|i - j| ≥ 2` braid relation, lifted to a `Prop` we can check
-  by `decide`.
+  and `j` *far-commute* in `B_n` iff `i + 2 ≤ j ∨ j + 2 ≤ i`
+  (avoiding the truncating-subtraction ambiguity of writing
+  `|i - j| ≥ 2` over `ℕ`). This is the combinatorial content of
+  the `T_i T_j = T_j T_i` braid relation for non-adjacent indices,
+  lifted to a `Prop` we can check by `decide`.
 -/
 -- Ref: [kassel1995quantum] §VII (braid-group presentation)
 def FarCommutes (i j : ℕ) : Prop := i + 2 ≤ j ∨ j + 2 ≤ i
 
 /-- The W/Z/H carrier triple `(1, 3, 5)` in `B_6` is pairwise
-    far-commuting (`|i - j| ≥ 2` for every pair). Decidable. -/
+    far-commuting (`i + 2 ≤ j ∨ j + 2 ≤ i` for every pair).
+    Decidable. -/
 theorem WZH_indices_far_commute :
     FarCommutes 1 3 ∧ FarCommutes 3 5 ∧ FarCommutes 1 5 := by
   refine ⟨?_, ?_, ?_⟩ <;> unfold FarCommutes <;> decide

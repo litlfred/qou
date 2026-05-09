@@ -28,13 +28,13 @@ namespace QOU.BraidsAndKnots
 /--
   **Markov-trace cyclicity (axiomatised typeclass).** A type-level
   carrier `T` for the Markov trace `tr_M : T → R` together with the
-  cyclicity identity `tr_M(A · B) = tr_M(B · A)` for all `A B : T`.
+  cyclicity identity `tr_M (A * B) = tr_M (B * A)` for all `A B : T`.
 
   This is the categorical content of `prop:frobenius-gram-matrix`'s
-  symmetry clause: the Gram matrix `G_{ij} = tr_M(b_i · b_j)` is
-  symmetric *because of* Markov-trace cyclicity. Discharge of
-  `LkMultiplicative` post-trace below takes this class as an explicit
-  hypothesis (§3b-cond conditional pattern); any concrete substrate
+  symmetry clause: the Gram matrix `G_{ij} = tr_M (b_i * b_j)` is
+  symmetric *because of* Markov-trace cyclicity. The post-trace
+  cyclicity rewrite below takes this class as an explicit hypothesis
+  (§3b-cond conditional pattern); any concrete substrate
   `T = H_n(q)` satisfies `MarkovTraceCyclic` by the standard Markov-
   property argument (peel boundary generator from the right; cite
   prop:frobenius-gram-matrix §"Markov trace of NF basis elements").
@@ -43,7 +43,7 @@ namespace QOU.BraidsAndKnots
 -- Ref: [jones1987] DOI:10.2307/1971403 (Markov-trace cyclicity for H_n)
 class MarkovTraceCyclic
     (T : Type*) [Mul T] (R : Type*) (tr_M : T → R) : Prop where
-  /-- Cyclicity: `tr_M(A · B) = tr_M(B · A)` for all `A B : T`. -/
+  /-- Cyclicity: `tr_M (A * B) = tr_M (B * A)` for all `A B : T`. -/
   tr_cyclic : ∀ A B : T, tr_M (A * B) = tr_M (B * A)
 
 /--
@@ -148,32 +148,46 @@ theorem categorical_linking_multiplicativity_pretrace_holds
   -- c^(k_2) ∘ c^(k_1); generic monoidal-category fact.
   trivial
 
-/-- **Post-trace multiplicativity (sorry-free, conditional on
-    `MarkovTraceCyclic`).** In a substrate equipped with a
-    cyclic Markov trace `tr_M`, the post-trace pairing
-    `Lk_R^{(k)}(a, b) = tr_M(c^k · (a ⊗ b))` satisfies the
-    direct-side multiplicativity in `k` augmented by the
-    cyclicity-induced rewrite `tr_M(c^{k_1} · X · c^{k_2}) =
-    tr_M(c^{k_2} · c^{k_1} · X)`, which is exactly the
-    substrate-specific commutation identity flagged as open in
-    the pre-trace discharge.
-
-    Formally: for any `a b : T` and any `(c, k_1, k_2 : T × ℤ × ℤ)`
-    encoded as multiplicative carriers `pre_k1 pre_k2 : T`, the
-    cyclicity identity gives
-        `tr_M(pre_k1 · pre_k2) = tr_M(pre_k2 · pre_k1)`
-    which is the structural content underlying the post-trace
-    rewrite (the Hecke-power group law lifts the LHS to
-    `pre_{k_1+k_2}` by associativity in `T`). -/
+/-- **Two-factor Markov-trace swap (sorry-free, conditional on
+    `MarkovTraceCyclic`).** Direct restatement of the class field
+    `tr_cyclic`. Renamed from `..._multiplicativity_posttrace` to
+    reflect that the conclusion is exactly the two-factor swap,
+    not the full post-trace multiplicativity-in-`k` identity.
+    The full post-trace identity follows from this swap *plus* the
+    pre-trace integer-power group law of `c_{A,A}` and is captured
+    by `markov_trace_cyclic_three_factor` below. -/
 -- Ref: [manuscript] prop:frobenius-gram-matrix § "Markov trace
 --      of NF basis elements"
--- Ref: categorical-linking-operation.md §"Proof of Property 3"
-theorem categorical_linking_multiplicativity_posttrace
+theorem markov_trace_swap
     {T : Type*} [Mul T] {R : Type*} (tr_M : T → R)
     [hC : MarkovTraceCyclic T R tr_M]
-    (pre_k1 pre_k2 : T) :
-    tr_M (pre_k1 * pre_k2) = tr_M (pre_k2 * pre_k1) :=
-  hC.tr_cyclic pre_k1 pre_k2
+    (A B : T) :
+    tr_M (A * B) = tr_M (B * A) :=
+  hC.tr_cyclic A B
+
+/-- **Three-factor cyclic rotation (sorry-free).** With `[Semigroup T]`
+    providing associativity, the two-factor Markov-trace swap lifts
+    to the cyclic-rotation identity
+        `tr_M (A * B * C) = tr_M (B * C * A)`
+    which is the structural shape `tr_M (c^{k_1} * X * c^{k_2}) =
+    tr_M (c^{k_2} * c^{k_1} * X)` mentioned in the linking-operation
+    post-trace discussion (with `A := c^{k_1}`, `B := X`,
+    `C := c^{k_2}` and one extra application of the two-factor swap
+    on the inner factors). The Hecke-power group law lifts a
+    concrete `c^{k_1} * c^{k_2}` to `c^{k_1 + k_2}`; combined with
+    this rotation, that closes the post-trace multiplicativity step
+    flagged as open in `categorical-linking-operation.md` §"Proof
+    of Property 3". -/
+-- Ref: [manuscript] prop:frobenius-gram-matrix
+-- Ref: categorical-linking-operation.md §"Proof of Property 3"
+theorem markov_trace_cyclic_three_factor
+    {T : Type*} [Semigroup T] {R : Type*} (tr_M : T → R)
+    [hC : MarkovTraceCyclic T R tr_M]
+    (A B C : T) :
+    tr_M (A * B * C) = tr_M (B * C * A) := by
+  -- View `A * B * C` as `(A) * (B * C)` (mul_assoc), then swap.
+  rw [mul_assoc]
+  exact hC.tr_cyclic A (B * C)
 
 /--
   Predicate: cutting the trace via the other factor produces the
