@@ -1,0 +1,73 @@
+{
+  "computation": "staircase-bar-pair-recursion",
+  "computedAt": "2026-05-06T01:50:24.972675+00:00",
+  "description": "Staircase-partition bar-pair recursion: tests whether the (3,2,1) self-conjugate finding generalises to ρ_k = (k, k-1, ..., 1) for k = 2, 3, 4 (n = 3, 6, 10). If universal: a triangular-n staircase recursion governs the bar-pair / SL(V_λ) structure of β_EW^{(n)}.",
+  "reference_blocks": [
+    "def:ew-interface-knot",
+    "conj:hoefsmit-ew-cell-content",
+    "conj:categorical-linking-operation"
+  ],
+  "audit": "docs/audits/2026-05-06-staircase-bar-pair-recursion.md",
+  "q_0": "1.1099785955541805169583001889887986763787613849839",
+  "staircase_results": [
+    {
+      "k": 2,
+      "n": 3,
+      "shape": [
+        2,
+        1
+      ],
+      "self_conjugate_verified": true,
+      "dim": 2,
+      "word_length": 9,
+      "det": -1.0,
+      "det_squared": 1.0,
+      "trace": -0.6641292642276585,
+      "n_internal_pairs": 1,
+      "n_unpaired": 0,
+      "universal_pair": true,
+      "det_pm1": true,
+      "build_seconds": 0.03174924850463867,
+      "mul_seconds": 0.0009491443634033203,
+      "evs_seconds": 0.0004405975341796875
+    },
+    {
+      "k": 3,
+      "n": 6,
+      "shape": [
+        3,
+        2,
+        1
+      ],
+      "self_conjugate_verified": true,
+      "dim": 16,
+      "word_length": 27,
+      "det": 1.0,
+      "det_squared": 1.0,
+      "trace": 4.236525868720982,
+      "n_internal_pairs": 8,
+      "n_unpaired": 0,
+      "universal_pair": true,
+      "det_pm1": true,
+      "build_seconds": 0.0039522647857666016,
+      "mul_seconds": 0.0786733627319336,
+      "evs_seconds": 0.04114127159118652
+    },
+    {
+      "k": 4,
+      "n": 10,
+      "shape": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "self_conjugate_verified": true,
+      "dim": 768,
+      "skipped": "dim > 100",
+      "det_sigma_1": 1.0,
+      "build_seconds": 0.4757425785064697
+    }
+  ],
+  "verdict": "staircase-recursion-verified"
+}
