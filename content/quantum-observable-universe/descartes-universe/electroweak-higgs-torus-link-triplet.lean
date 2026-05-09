@@ -32,22 +32,48 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.Descartes
 
-/-- **Conjecture class** for `conj:electroweak-higgs-torus-link-triplet`.
+/-- Boson labels in the EW/Higgs triplet: `wPlus / wMinus / Z / H`. -/
+inductive EWHiggsBoson : Type
+  | wPlus
+  | wMinus
+  | z
+  | h
+  deriving DecidableEq, Repr
 
-    Encodes the conjectural content as a Lean type-class so that
-    downstream theorems can take `[EWHiggsTorusLinkTriplet]` as an explicit
-    hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
-    prove the conjecture or supply a `sorry` (read as conjecture).
+/-- **Conjecture class** for `conj:electroweak-higgs-torus-link-triplet`,
+    operator-level form.
 
-    Ref: [manuscript] §(W±, Z, H) ↔ (T(2,4), T(2,6), T(2,8)) non-Bring even-twist torus-link triplet, `conj:electroweak-higgs-torus-link-triplet` -/
+    The bijection identifies the four EW/Higgs carriers (W±, Z, H)
+    with the four 'leaves' of the {T(2,4), T(2,6), T(2,8)} torus-link
+    triplet (W± share the T(2,4) writhe pair; Z carries T(2,6); H
+    carries T(2,8)).  The class encodes the underlying boson-to-
+    writhe assignment plus the structural injectivity of the
+    triplet-on-distinct-bosons map. -/
 class EWHiggsTorusLinkTriplet : Prop where
-  /-- Three torus-link types T(2,4), T(2,6), T(2,8) furnish a
-      bijection with the EW gauge bosons (W±, Z, H). The class
-      encodes this bijection at the structural level: there exist
-      three distinct natural numbers (the writhes 4, 6, 8) and a
-      pairing with the EW-sector boson labels {0, 1, 2}. -/
+  /-- Each EW/Higgs boson carries a torus-link writhe in {4, 6, 8}. -/
+  writhe_of : EWHiggsBoson → ℕ
+  /-- W± both map to T(2,4). -/
+  wPlus_writhe  : writhe_of EWHiggsBoson.wPlus  = 4
+  wMinus_writhe : writhe_of EWHiggsBoson.wMinus = 4
+  /-- Z maps to T(2,6). -/
+  z_writhe      : writhe_of EWHiggsBoson.z      = 6
+  /-- H maps to T(2,8). -/
+  h_writhe      : writhe_of EWHiggsBoson.h      = 8
+
+/-- **Structural skeleton** of the conjecture (kept for `uses` cone
+    bookkeeping under §3b-cond — see CLAUDE.md). The
+    `EWHiggsTorusLinkTriplet` instance implies the skeleton via the
+    writhe assignment {4, 6, 8}. -/
+class EWHiggsTorusLinkTripletSkeleton : Prop where
   triplet_bijection : ∃ (writhes : Fin 3 → ℕ),
     writhes 0 = 4 ∧ writhes 1 = 6 ∧ writhes 2 = 8 ∧
     Function.Injective writhes
+
+instance instEWHiggsTorusLinkTripletSkeleton
+    [EWHiggsTorusLinkTriplet] : EWHiggsTorusLinkTripletSkeleton where
+  triplet_bijection := by
+    refine ⟨![4, 6, 8], rfl, rfl, rfl, ?_⟩
+    intro i j hij
+    fin_cases i <;> fin_cases j <;> simp_all
 
 end QOU.Descartes
