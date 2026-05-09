@@ -157,7 +157,7 @@ def BraidWord.structurallyValidBinding (w : BraidWord) (n_0 : ℕ) : Prop :=
     necessary-but-not-sufficient PSD-feasibility proxy in absence
     of full Hecke-block evaluation. -/
 def BraidWord.evenPower (w : BraidWord) : Prop :=
-  ∀ g, (w.count g + w.count (-g)) % 2 = 0
+  ∀ g ∈ w.eraseDups, (w.count g + w.count (-g)) % 2 = 0
 
 -- Ref: [manuscript] conj:canonical-knot-id-sdp
 -- Ref: [manuscript] prop:delta-max-uniform-bound

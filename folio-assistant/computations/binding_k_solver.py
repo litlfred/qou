@@ -172,12 +172,31 @@ def block_rep_braid_word(shape, braid_word, q=Q0):
 
     Returns: numpy float array of shape (d_λ, d_λ).  Raises
       ValueError if any generator index is outside [1, n-1].
+
+    Wired through `syt_prefix_cache.BlockCache` /
+    `build_seminormal_matrices_cached` per Copilot PR #614 review:
+    avoids the O(d_λ²) swap-partner search inside
+    `build_seminormal_matrices` on repeated calls for the same shape.
     """
     n = sum(shape)
-    sigmas, dim, _ = build_seminormal_matrices(shape, q=q, sparse=False)
+    h = q - 1.0 / q
+    try:
+        from syt_prefix_cache import (
+            BlockCache, build_seminormal_matrices_cached,
+        )
+        # Module-level lazy cache shared across calls at fixed q.
+        global _BLOCK_CACHE_AT_Q
+        if "_BLOCK_CACHE_AT_Q" not in globals() or _BLOCK_CACHE_AT_Q[0] != q:
+            _BLOCK_CACHE_AT_Q = (q, BlockCache(q, h))
+        sigmas, dim, _ = build_seminormal_matrices_cached(
+            shape, cache=_BLOCK_CACHE_AT_Q[1],
+        )
+    except ImportError:
+        sigmas, dim, _ = build_seminormal_matrices(
+            shape, q=q, sparse=False,
+        )
     if dim == 0:
         return np.zeros((0, 0))
-    h = q - 1.0 / q
     I = np.eye(dim)
     M = np.eye(dim)
     for g in braid_word:
@@ -528,7 +547,7 @@ def analyze_atom(atom: dict) -> dict:
 
 def main():
     print("══════════════════════════════════════════════════════════════════════")
-    print("  Binding-K SDP solver — atomic-strand-count Wedderburn analysis at")
+    print("  Binding-K factorisation EVALUATOR — atomic-strand-count Wedderburn analysis at")
     print("  H_{3·A}(q_0) for ²H, ³H, ³He (issue #604, items 1–5).")
     print("══════════════════════════════════════════════════════════════════════")
     print(f"  q_0 = {Q0}")
@@ -537,24 +556,31 @@ def main():
     w = (
         WitnessBuilder("binding-k-solver", engine="python")
         .set_description(
-            "Binding-K SDP solver — operator-selection LP / shadow-price "
-            "/ primal-dual / lp-duality search for the binding operator "
-            "K(𝔥) ∈ H_{3·A}(q_0) factor of the canonical T_w(𝔥) under "
-            "the decomposition T_w(𝔥) = K(𝔥) · ⊗_i T_w(nucleon_i) per "
-            "the deliverable-4 binding-K finding (PR #610). Issue #604 "
-            "items 1-5: extends the H_3-only rho-prefactor verifier to "
-            "the atomic strand count n_0 = 3·A using the existing "
-            "build_seminormal_matrices (general-n Hoefsmit was already "
-            "in hecke_characters.py — no new combinatorial code needed). "
-            "Computes K's per-Wedderburn-block PSD eigenvalues, "
-            "dominant λ* ⊢ 3·A by |y_λ · χ_λ(K)|, and tests the four "
-            "candidate ρ rules against observed ρ for ²H (n_0=6), "
-            "³H (n_0=9, embedded 8_11), ³He (n_0=9, embedded L6a4). "
-            "The natural Wedderburn-PSD constraint at the atomic strand "
-            "count becomes ρ_λ(K) ⪰ 0 — the 'binding stability' "
-            "certificate; per-atom witnesses include LP primal/dual "
-            "(y0_star, y_star, active_set, primal_obj, dual_obj, "
-            "duality_gap) per CLAUDE.md 'LP/SDP duals — first-class infra'."
+            "Binding-K factorisation EVALUATOR (operator-selection LP / "
+            "shadow-price / primal-dual / lp-duality fields emitted from "
+            "the per-atom factorisation; NOT a search/optimisation step "
+            "— the factorisation is computed deterministically from the "
+            "presupposed T_w(𝔥) historical braid via braid-word "
+            "concatenation `K_word = atom_word ++ cp_inv_word`, then "
+            "evaluated per Wedderburn block at H_{3·A}(q_0); the actual "
+            "search for K from substrate alone is in "
+            "binding_k_enumerator.py).  Per the deliverable-4 binding-K "
+            "factorisation finding (PR #610): T_w(𝔥) = K(𝔥) · ⊗_i "
+            "T_w(nucleon_i) at H_{3·A}(q_0).  Issue #604 items 1-5: "
+            "extends the H_3-only rho-prefactor verifier to the atomic "
+            "strand count n_0 = 3·A using `build_seminormal_matrices` "
+            "(general-n Hoefsmit, wired through "
+            "syt_prefix_cache.BlockCache to amortise the SYT-prefix "
+            "construction overhead).  Computes K's per-Wedderburn-block "
+            "PSD eigenvalues, dominant λ* ⊢ 3·A by |y_λ · χ_λ(K)|, and "
+            "tests the four candidate ρ rules against observed ρ for "
+            "²H (n_0=6), ³H (n_0=9, embedded 8_11), ³He (n_0=9, "
+            "embedded L6a4).  The natural Wedderburn-PSD constraint at "
+            "the atomic strand count becomes ρ_λ(K) ⪰ 0 — the 'binding "
+            "stability' certificate; per-atom witnesses include LP "
+            "primal/dual (y0_star, y_star, active_set, primal_obj, "
+            "dual_obj, duality_gap) per CLAUDE.md 'LP/SDP duals — "
+            "first-class infra' rule."
         )
         .set_content_block("conj:rho-prefactor-structural")
         .add_parameter("q_0", Q0)

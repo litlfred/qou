@@ -43,6 +43,7 @@ from __future__ import annotations
 
 import json
 import sys
+from functools import lru_cache
 from itertools import product
 from pathlib import Path
 from typing import Iterable
@@ -52,7 +53,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q_FLOAT  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
-from hecke_characters import partitions_of  # noqa: E402
+from hecke_characters import partitions_of, build_seminormal_matrices  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from binding_k_solver import (  # noqa: E402
@@ -154,7 +155,9 @@ def stabilization_factor_z(q: float = Q0) -> float:
 # Wenzl-Schur weights y_λ(q_0) for n ∈ {3, 6, 9}.
 # ───────────────────────────────────────────────────────────────────
 
+@lru_cache(maxsize=None)
 def load_wenzl_weights(n: int) -> dict:
+    """Cached: file is read + JSON-parsed once per (n, process)."""
     raw = json.loads((HERE / "y-lambda-wenzl-witness.json").read_text())
     table = raw.get("tables_by_n", {}).get(str(n))
     if table is None:
@@ -229,16 +232,33 @@ def _precompute_per_block_generators(n_0: int, q: float = Q0) -> dict:
     where σ_k is a numpy array.  Used by `_eval_word_per_block_cached` to
     avoid re-invoking `build_seminormal_matrices` for every braid word.
 
-    This addresses Gemini's PR #614 review comment: at n_0 = 9 with
-    30 partitions and hundreds of K candidates, the un-cached path
-    rebuilds 30 sets of matrices per call → thousands of redundant
-    constructions.  Precomputing once per atom amortises the cost.
+    Addresses both Gemini's PR #614 review comment AND Copilot's
+    follow-up about wiring the existing `syt_prefix_cache.BlockCache`
+    /  `build_seminormal_matrices_cached`: at n_0 = 9 with 30 partitions
+    and hundreds of K candidates, the raw `build_seminormal_matrices`
+    path is dominated by O(d_λ²) swap-partner search per partition.
+    Below we route through `build_seminormal_matrices_cached` (with a
+    BlockCache shared across partitions of the same n_0) so the SYT
+    prefix cache amortises the construction cost.
     """
-    from hecke_characters import build_seminormal_matrices
     h = q - 1.0 / q
     cache: dict = {}
+    # syt_prefix_cache.BlockCache amortises Hoefsmit construction across
+    # partitions of the same n_0; routed via build_seminormal_matrices_cached.
+    try:
+        from syt_prefix_cache import (
+            BlockCache, build_seminormal_matrices_cached,
+        )
+        block_cache = BlockCache(q, h)
+        builder = lambda shape: build_seminormal_matrices_cached(  # noqa: E731
+            shape, cache=block_cache,
+        )
+    except ImportError:
+        builder = lambda shape: build_seminormal_matrices(  # noqa: E731
+            shape, q=q, sparse=False,
+        )
     for lam in partitions_of(n_0):
-        sigmas, dim, _ = build_seminormal_matrices(lam, q=q, sparse=False)
+        sigmas, dim, _ = builder(lam)
         if dim == 0:
             continue
         I = np.eye(dim)
@@ -340,6 +360,39 @@ def search_K_for_atom(
     print(f"  constituent product word in B_{n_0}: {cp_word}")
     print(f"  Enumerating K candidates of length ≤ {L_K_max} …")
 
+    # Per Gemini PR #614 review: precompute cp matrices per Wedderburn
+    # block ONCE; T_pred(K) = cp · K reuses the cp matrix per block
+    # rather than re-evaluating cp_word + K_word from scratch per
+    # candidate.  Saves O(|cp_word|) generator multiplications per
+    # candidate × per block.
+    cp_matrices_per_block = {
+        lam: np.array(blk["matrix"]) for lam, blk in cp_eval["per_block"].items()
+    }
+
+    def _T_pred_eval_from_K(K_eval_blocks: dict) -> dict:
+        """T_pred = cp · K per block — reuses precomputed cp matrices."""
+        out = {}
+        min_eig_overall = float("inf")
+        for lam, K_blk in K_eval_blocks.items():
+            cp_M = cp_matrices_per_block[lam]
+            K_M = np.array(K_blk["matrix"])
+            T_M = cp_M @ K_M
+            chi = float(np.trace(T_M))
+            Msym = (T_M + T_M.T) / 2.0
+            eigs = sorted(np.linalg.eigvalsh(Msym).tolist())
+            min_eig = eigs[0]
+            min_eig_overall = min(min_eig_overall, min_eig)
+            out[lam] = {
+                "chi": chi,
+                "min_eig_sym": min_eig,
+                "matrix": T_M.tolist(),
+            }
+        return {
+            "per_block": out,
+            "alpha_gap": max(0.0, -min_eig_overall),
+            "min_eig_overall": min_eig_overall,
+        }
+
     candidates = []
     n_seen = 0
     n_psd_feasible = 0
@@ -349,8 +402,8 @@ def search_K_for_atom(
         psd = K_eval["alpha_gap"] <= 1e-6
         if psd:
             n_psd_feasible += 1
-        T_pred_word = cp_word + list(word)
-        T_pred_eval = _eval_word_per_block_cached(T_pred_word, n_0, gen_cache)
+        # T_pred = cp · K reuses precomputed cp matrices per block.
+        T_pred_eval = _T_pred_eval_from_K(K_eval["per_block"])
         T_pred_sig = chi_signature(T_pred_eval)
         T_pred_markov = markov_trace_at_n(T_pred_eval, n_0)
 
@@ -394,24 +447,47 @@ def search_K_for_atom(
     top = candidates[:top_k]
     psd_top = [c for c in candidates if c["K_psd_feasible"]][:top_k]
 
-    # Operator-selection LP: channels = top_k overall candidates.
+    # ── Operator-selection LP — channels = top_k overall candidates,
+    # scored by Markov-residual-to-target (the same residual used for
+    # `top_k_candidates` ordering).  Per Copilot PR #614 review:
+    # earlier the LP scored by α_gap which is degenerate (all
+    # PSD-feasible K have α=0); using the residual makes argmin
+    # meaningful, AND the score now matches the documented selection
+    # criterion of `top_k_candidates`.  Note: `canonical_winner_K_word`
+    # below is selected by a DIFFERENT criterion (min-length +
+    # positive-Hopf convention) and may differ from this LP winner. ─
     K = len(top)
     if K > 0:
-        # Score = α_gap (lower is better).  argmin t_i = best PSD K.
-        t = np.array([c["K_alpha_gap"] for c in top])
+        # Use markov_residual_to_target as the LP cost.  PSD-infeasible
+        # candidates are pushed to +inf so they're never argmin.
+        t = np.array([
+            c["markov_residual_to_target"]
+            if c["K_psd_feasible"] and not np.isnan(c["markov_residual_to_target"])
+            else 1e9
+            for c in top
+        ])
         G = np.eye(K)
         lp = solve_operator_selection_lp(t, G, n_target=1.0)
     else:
         lp = None
 
     # ── Min-length PSD-feasible group + canonical-K convention. ─────
-    # Above we sorted by markov-residual-to-target, but that target
-    # uses a naïve z^{n_0 - n_braid} stabilization formula that is
-    # known to be over-simplified (the constituent product itself
-    # contains generators up to σ_{n_0-1}, so it doesn't satisfy the
-    # bare stabilization identity).  Re-rank within the PSD-feasible
-    # subset by *minimum length first*, then prefer positive-crossing
-    # K (matching the standard Hopf σ_3^k convention with k > 0).
+    # The `top_k_candidates` ordering above prioritises markov-residual
+    # match against a NAIVE stabilisation target (z^{n_0 - n_braid} ·
+    # tr_M(T_atom at H_{n_braid})).  That target formula is
+    # over-simplified because the constituent product itself contains
+    # generators up to σ_{n_0-1}, so the bare stabilisation identity
+    # tr_M(α at H_{n+1}) = z · tr_M(α at H_n) does not apply directly.
+    #
+    # Below we compute a SECOND, INDEPENDENT winner —
+    # `canonical_winner_K_word` — using a convention-based criterion:
+    # *minimum length first, then prefer positive crossings* (matches
+    # the standard Hopf σ_3^k convention with k > 0).  This is
+    # documented as a separate field from the residual-ranked top-K
+    # because the two criteria can disagree.  For ²H both criteria
+    # surface the Hopf-class candidates {σ_3^2, σ_3^{-2}}; the
+    # convention picks σ_3^2 (positive Hopf), the residual ranking
+    # may prefer σ_3^{-2} due to the stabilisation-formula offset.
     min_length_psd = []
     if psd_top:
         psd_sorted_by_len = sorted(
