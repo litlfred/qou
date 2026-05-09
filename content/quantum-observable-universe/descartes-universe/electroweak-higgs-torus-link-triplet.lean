@@ -1,4 +1,6 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FinCases
+import Mathlib.Data.Matrix.Notation
 
 /-!
 # QOU.Descartes.EWHiggsTorusLinkTriplet
@@ -49,7 +51,7 @@ inductive EWHiggsBoson : Type
     carries T(2,8)).  The class encodes the underlying boson-to-
     writhe assignment plus the structural injectivity of the
     triplet-on-distinct-bosons map. -/
-class EWHiggsTorusLinkTriplet : Prop where
+class EWHiggsTorusLinkTriplet where
   /-- Each EW/Higgs boson carries a torus-link writhe in {4, 6, 8}. -/
   writhe_of : EWHiggsBoson → ℕ
   /-- W± both map to T(2,4). -/

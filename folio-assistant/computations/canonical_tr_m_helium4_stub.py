@@ -64,7 +64,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder  # noqa: E402
+from hecke_characters import standard_young_tableaux, partitions_of  # noqa: E402
 
 
 def main() -> int:
@@ -75,7 +76,6 @@ def main() -> int:
 
     # Plancherel-weight estimate of the partition-space size for n=12
     # (informational only; not the trace value).
-    from hecke_characters import standard_young_tableaux, partitions_of
     parts = list(partitions_of(12))
     dims = []
     for p in parts:

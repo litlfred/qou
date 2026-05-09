@@ -1,6 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Module.LinearMap.Basic
 import Mathlib.Algebra.Module.End
+import Mathlib.Tactic.FinCases
+import Mathlib.Data.Matrix.Notation
 
 /-!
 # QOU.BraidKnot.WeakSpectralCompleteness
