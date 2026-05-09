@@ -441,7 +441,7 @@ print()
 
 # Observed
 print(f"  Observed free neutron decay:")
-print(f"    Q = m_n − m_p − m_e = 939.565 − 938.272 − 0.511 = 0.78233341 MeV")
+print(f"    Q = m_n − m_p − m_e ≈ 939.56542 − 938.27209 − 0.51100 = 0.78233341 MeV")
 print(f"    τ = 878.4 ± 0.5 s")
 
 # ── Witness JSON ──────────────────────────────────────────────

@@ -239,7 +239,7 @@ if __name__ == "__main__":
 
     # A=1 β-decay calibration (same as light_isotope_sweep.py).
     # Use the canonical CODATA-derived Q_NEUTRON_MEV (0.78233341 MeV)
-    # from experimental_constants.py rather than the truncated 0.78233341
+    # from experimental_constants.py rather than the 3-sig-fig truncation
     # to keep precision consistent with categorical_q_decay_ba_low_isotopes.
     t1_p = term_1_descended(1, 0, include_inter=False)
     t1_n = term_1_descended(0, 1, include_inter=False)
