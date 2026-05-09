@@ -44,7 +44,6 @@ from __future__ import annotations
 
 import json
 import sys
-from itertools import product as _ip
 from pathlib import Path
 
 import numpy as np
@@ -53,7 +52,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q_FLOAT  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from hecke_characters import (  # noqa: E402
-    partitions_of, dim_q, young_hooks, q_int,
+    partitions_of, dim_q, young_hooks,
 )
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
@@ -222,9 +221,21 @@ def syt_count(shape: tuple) -> int:
 # ───────────────────────────────────────────────────────────────────
 
 def is_hook_partition(shape: tuple) -> bool:
-    """A hook is (k, 1, 1, ..., 1) — exactly one row of length > 1."""
+    """A *hook* partition has the form (k, 1, 1, ..., 1) — i.e., its
+    Young diagram has at most one row of length > 1.
+
+    Returns True for: the empty partition (), the row (n,), the column
+    (1, 1, ..., 1), and any L-shape (k, 1, ..., 1) with k ≥ 1.
+    Returns False for partitions with ≥ 2 rows of length > 1
+    (e.g. (2,2), (3,2), (3,2,1)).
+
+    Note: this is the standard combinatorial definition of "hook
+    partition" in symmetric-function theory; it includes the trivial
+    cases (n,) and (1^k) which are sometimes called "row hook" and
+    "column hook" respectively.
+    """
     if not shape:
-        return False
+        return True
     return all(r == 1 for r in shape[1:])
 
 
@@ -273,9 +284,13 @@ def analyze_atom(atom: dict, wenzl: dict) -> dict:
         "rule_B_round_dim_q":           {"value": qd, "rho_predicted": int(round(qd)), "matches_obs": False},
         # Rule C — floor
         "rule_C_floor_dim_q":           {"value": qd, "rho_predicted": int(qd), "matches_obs": False},
-        # Rule D — hook-special-case from the conjecture text:
-        #   ρ = 1 if λ* is the hook (n_0-1, 1)
-        #     = floor(dim_q(λ*)) otherwise
+        # Rule D — hook-special-case from the conjecture text
+        # (conj-rho-prefactor-structural.md "The rounding question"):
+        #   ρ = 1                       if λ* is the hook (n_0-1, 1)
+        #     = round(dim_q(λ*))         otherwise
+        # Note: the .md text uses the symbol ⌊·⌉ which denotes round-
+        # to-nearest, NOT floor.  The implementation below uses
+        # int(round(qd)) accordingly.
         "rule_D_hook_special_case":     {"value": qd, "rho_predicted": (
             1 if (dominant["lambda"] == [n - 1, 1]) else int(round(qd))
         ), "matches_obs": False},
@@ -419,38 +434,63 @@ def main():
     # ── H_3-level decoupling diagnostic. ──────────────────────────
     # Two atoms with identical chi_λ across all λ ⊢ 3 must have the
     # same Hecke-algebra image at q_0; no rule of the form
-    # "ρ = f(chi, y)" can distinguish them.  Find such collisions.
-    chi_signatures = {
-        a["atom"]: tuple(round(r["chi"], 8) for r in a["per_lambda"])
-        for a in per_atom
-    }
-    chi_collisions = {}
+    # "ρ = f(chi, y)" can distinguish them.
+    #
+    # Build the χ-fingerprint in CANONICAL λ order (sorted by partition
+    # tuple) so the comparison is order-independent — `per_lambda` is
+    # sorted by |y·χ| dominance (which can differ between atoms) and
+    # would produce false negatives if used directly.
+    def _canonical_chi_signature(atom_analysis: dict) -> tuple:
+        items = sorted(
+            atom_analysis["per_lambda"],
+            key=lambda r: tuple(r["lambda"]),
+        )
+        return tuple((tuple(r["lambda"]), round(r["chi"], 8)) for r in items)
+
+    chi_signatures = {a["atom"]: _canonical_chi_signature(a) for a in per_atom}
+    rho_obs_by_atom = {a["atom"]: a["rho_observed"] for a in per_atom}
+    chi_collisions: dict = {}
     for atom, sig in chi_signatures.items():
         chi_collisions.setdefault(sig, []).append(atom)
-    chi_indistinguishable_pairs = [
+    chi_indistinguishable_groups = [
         atoms for atoms in chi_collisions.values() if len(atoms) >= 2
+    ]
+    # A collision FALSIFIES the (chi, y)-only ρ rule only when the
+    # group contains atoms with DIFFERENT observed ρ.  Same-ρ
+    # collisions (e.g. proton vs neutron) are benign — the rule
+    # would predict the same ρ for them, which is correct.
+    falsifying_collision_groups = [
+        atoms for atoms in chi_indistinguishable_groups
+        if len({rho_obs_by_atom[a] for a in atoms}) > 1
     ]
 
     valid_rules = [r for r, v in consistency.items() if v["all_atoms_match"]]
-    h3_falsifies_simple_form = bool(chi_indistinguishable_pairs)
+    h3_falsifies_simple_form = bool(falsifying_collision_groups)
     summary = {
         "n_atoms_evaluated": len(per_atom),
         "candidate_rules_evaluated": list(consistency.keys()),
         "rules_consistent_with_all_observations": valid_rules,
-        "h3_chi_indistinguishable_groups": chi_indistinguishable_pairs,
+        "h3_chi_indistinguishable_groups": chi_indistinguishable_groups,
+        "h3_chi_indistinguishable_groups_falsifying": (
+            falsifying_collision_groups
+        ),
         "h3_falsifies_simple_form_of_rho_rule": h3_falsifies_simple_form,
         "verdict": (
             f"{len(valid_rules)} of {len(consistency)} candidate rules "
             f"reproduce ρ for all {len(per_atom)} atoms in the B_3 "
             f"registry ({[a['name'] for a in REGISTRY_B3]}).  H_3-level "
-            f"χ_λ collisions: {chi_indistinguishable_pairs} — these "
-            f"atoms are Markov-equivalent at the braid strand count "
-            f"and cannot be distinguished by any (chi, y)-only rule.  "
-            f"The structural fix per conj:rho-prefactor-structural is "
-            f"to evaluate the rule at the *atomic* strand count "
-            f"n_0 = 3·A, embedding the braid into H_{{3·A}} via the "
-            f"binding operator K (Hopf for ²H, L6a4 for ³He, ...).  "
-            f"This requires Hoefsmit at H_6 / H_9 — deferred."
+            f"χ_λ collisions: {chi_indistinguishable_groups} (all "
+            f"groups); falsifying subset (different ρ within group): "
+            f"{falsifying_collision_groups}.  Atoms in the falsifying "
+            f"subset are Markov-equivalent at the braid strand count "
+            f"yet have distinct ρ — no (chi, y)-only rule can "
+            f"distinguish them.  Same-ρ collisions (e.g. proton vs "
+            f"neutron) are benign.  The structural fix per "
+            f"conj:rho-prefactor-structural is to evaluate the rule "
+            f"at the *atomic* strand count n_0 = 3·A, embedding the "
+            f"braid into H_{{3·A}} via the binding operator K (Hopf "
+            f"for ²H, L6a4 for ³He, ...).  This requires Hoefsmit at "
+            f"H_6 / H_9 — deferred."
         ),
         "structural_finding": (
             "ρ = dim_q(λ*) cannot be evaluated at the braid strand "

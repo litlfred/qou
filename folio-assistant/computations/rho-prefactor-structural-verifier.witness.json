@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:26:11.716737+00:00",
-  "commitSha": "de1915a023f837648ae9461565e224749f152bba",
+  "computedAt": "2026-05-09T13:31:18.246462+00:00",
+  "commitSha": "3e8ffbd07672083466b42463bd060bbd14b47e8a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 475,
+  "durationMs": 420,
   "computation": "rho-prefactor-structural-verifier",
   "scriptFile": "rho_prefactor_structural_verifier.py",
-  "scriptHash": "cc814b800c0e",
-  "scriptCommitSha": "de1915a023f837648ae9461565e224749f152bba",
+  "scriptHash": "b48127022df6",
+  "scriptCommitSha": "3e8ffbd07672083466b42463bd060bbd14b47e8a",
   "description": "Structural ρ(Z, N) rule verifier — operator-selection LP / shadow-price / primal-dual / lp-duality evaluation of the rule ρ(𝔥) = dim_q(λ*(T_w)) per conj:rho-prefactor-structural (issue #604 deliverable 4 / closes-or-narrows GAP-A-4). For each canonical T_w ∈ H_3(q_0) of {proton, neutron, ²H/6_2, ³He/L₆ₐ₄}, decomposes into Wedderburn blocks via Hoefsmit seminormal form, evaluates |y_λ · χ_λ(T_w)| per partition λ ⊢ 3, identifies the dominant λ*, and tests five candidate rules (exact dim_q / round / floor / hook-special-case / classical d_λ) against the observed ρ ∈ {1, 1, 1, 2}.  The rule that matches all four observations is reported as the structural form of ρ(Z, N) at B_3.  Tritium (B_5 / 8_11) deferred — needs Hoefsmit at H_5 (consistent with the joint_tower_sdp_solver_v2.py / R5-full prototype posture).",
   "contentBlock": "conj:rho-prefactor-structural",
   "parameters": {
@@ -690,8 +690,15 @@
           "he3"
         ]
       ],
+      "h3_chi_indistinguishable_groups_falsifying": [
+        [
+          "proton",
+          "neutron",
+          "he3"
+        ]
+      ],
       "h3_falsifies_simple_form_of_rho_rule": true,
-      "verdict": "0 of 5 candidate rules reproduce ρ for all 4 atoms in the B_3 registry (['proton', 'neutron', 'deuteron', 'he3']).  H_3-level χ_λ collisions: [['proton', 'neutron', 'he3']] — these atoms are Markov-equivalent at the braid strand count and cannot be distinguished by any (chi, y)-only rule.  The structural fix per conj:rho-prefactor-structural is to evaluate the rule at the *atomic* strand count n_0 = 3·A, embedding the braid into H_{3·A} via the binding operator K (Hopf for ²H, L6a4 for ³He, ...).  This requires Hoefsmit at H_6 / H_9 — deferred.",
+      "verdict": "0 of 5 candidate rules reproduce ρ for all 4 atoms in the B_3 registry (['proton', 'neutron', 'deuteron', 'he3']).  H_3-level χ_λ collisions: [['proton', 'neutron', 'he3']] (all groups); falsifying subset (different ρ within group): [['proton', 'neutron', 'he3']].  Atoms in the falsifying subset are Markov-equivalent at the braid strand count yet have distinct ρ — no (chi, y)-only rule can distinguish them.  Same-ρ collisions (e.g. proton vs neutron) are benign.  The structural fix per conj:rho-prefactor-structural is to evaluate the rule at the *atomic* strand count n_0 = 3·A, embedding the braid into H_{3·A} via the binding operator K (Hopf for ²H, L6a4 for ³He, ...).  This requires Hoefsmit at H_6 / H_9 — deferred.",
       "structural_finding": "ρ = dim_q(λ*) cannot be evaluated at the braid strand count alone.  The conjecture's n_0 = 3·A (atomic strand count) is structurally REQUIRED.  The natural categorical decomposition is T_w(𝔥) = K · ⊗_i T_w(constituent_i) where the binding operator K ∈ H_{3·A} carries the inter-constituent linking and the dominant λ* ⊢ 3·A of K is what determines ρ — not the dominant λ* ⊢ n_braid of the whole-particle braid image.  This is the natural framework for the joint-tower SDP cross-level consistency constraints (4) of prop:joint-tower-sdp-confinement, which already enforce T_w(𝔥) ↪ T_w(𝔥') across levels.  Wiring an explicit 'binding-K SDP solver mode' is the natural deliverable-5 that follows from this finding.",
       "next_session_extensions": [
         "Build Hoefsmit seminormal at H_6 / H_9 (atomic strand counts for ²H / ³H / ³He) — currently deferred to tools/hecke-engine per the joint_tower_sdp_solver_v2.py / R5-full prototype posture.",

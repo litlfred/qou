@@ -28,11 +28,20 @@ $$
 
 *has a unique global minimizer $T_w^*$, achieved at:*
 
-| Nucleus | Knot type | $n_0$ | $\rho$ | $B_\mathrm{AME}$ (MeV) |
-|---------|-----------|-------|--------|------------------------|
-| $^2\mathrm{H}$ | $6_2$ (Miller's knot) | $6$ | $1$ | $2.2246$ |
-| $^3\mathrm{H}$ | $8_{11}$ | $6$ | $2$ | $8.4820$ |
-| $^3\mathrm{He}$ | $L_{6a4}$ | $6$ | $2$ | $7.7181$ |
+| Nucleus | Knot type | $n_0 = 3 \cdot A$ | $\rho$ | $B_\mathrm{AME}$ (MeV) |
+|---------|-----------|-------------------|--------|------------------------|
+| $^2\mathrm{H}$ | $6_2$ (Miller's knot) | $6$ ($A=2$) | $1$ | $2.2246$ |
+| $^3\mathrm{H}$ | $8_{11}$ | $9$ ($A=3$) | $2$ | $8.4820$ |
+| $^3\mathrm{He}$ | $L_{6a4}$ | $9$ ($A=3$) | $2$ | $7.7181$ |
+
+(Earlier drafts of this table listed $n_0 = 6$ for ³H/³He.  Reconciled
+with the joint-tower SDP convention $n_0 = 3 \cdot A$ used in
+[`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
+and in
+[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
+— `atomic_n_0 = 9` for ³H/³He.  See "Structural decomposition" below
+for the binding-K factorisation that motivates the $n_0 = 3 \cdot A$
+convention.)
 
 *with residual $< 0.5\%$ of $B_{\mathrm{AME}}(\mathfrak{H})$.*
 
