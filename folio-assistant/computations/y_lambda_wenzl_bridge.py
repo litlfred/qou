@@ -113,16 +113,39 @@ def schur_principal(partition, X, Q):
 
 
 def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50):
-    """y_λ via Wenzl-bridge at numerical q, arbitrary dps."""
+    """y_λ via Wenzl-bridge at numerical q, arbitrary dps.
+
+    The Wenzl normalization Σ_µ d_µ · s_{µ,r}(Q) is cached per
+    (n, q_val_str, dps) so callers iterating over all partitions of
+    n at a fixed q_val (e.g. `markov_trace_numerical`) avoid the
+    O(p(n)²) recomputation; this drops `markov_trace_numerical(D, q_0)`
+    from O(11²)=121 schur_principal calls to O(11)=11 calls.
+    """
+    return _y_lambda_wenzl_bridge_numeric_impl(
+        tuple(partition), str(q_val), int(dps)
+    )
+
+
+@functools.lru_cache(maxsize=None)
+def _wenzl_norm_numeric_cached(n: int, q_str: str, dps: int):
+    """Cached Wenzl normalization Σ_µ d_µ · s_{µ,r}(Q) at numerical q."""
     mp.mp.dps = dps
-    q = mp.mpf(str(q_val))
+    q = mp.mpf(q_str)
     z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
     Q = q ** 2
     X = q * z / (1 - Q + q * z)
-    n = sum(partition)
     parts = partitions_of(n)
-    s_self = schur_principal(partition, X, Q)
-    norm = sum(classical_dim(mu) * schur_principal(mu, X, Q) for mu in parts)
+    return sum(classical_dim(mu) * schur_principal(mu, X, Q) for mu in parts)
+
+
+def _y_lambda_wenzl_bridge_numeric_impl(partition: tuple, q_str: str, dps: int):
+    mp.mp.dps = dps
+    q = mp.mpf(q_str)
+    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    Q = q ** 2
+    X = q * z / (1 - Q + q * z)
+    s_self = schur_principal(list(partition), X, Q)
+    norm = _wenzl_norm_numeric_cached(sum(partition), q_str, dps)
     return s_self / norm
 
 

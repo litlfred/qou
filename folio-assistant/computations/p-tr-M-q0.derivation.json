@@ -1,6 +1,6 @@
 {
-  "target": "tr_M(p, q_0)",
-  "target_value": 2.12258250945273,
+  "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
+  "target_value": 1.0653062285923893,
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Step-by-step derivation of p (proton, A=1)'s archimedean Markov trace value tr_M(p, q_0) ≈ 2.12258250945273 from the seven first-principles entrypoints.  Per the methodology directive (post-#472), every numerical claim must trace back here.  SCRIPT_CITED steps are the computational frontier; each needs its own derivation chain to push back the frontier.",
@@ -117,7 +117,7 @@
         "tr_M_symbolic"
       ],
       "output_name": "tr_M_q0",
-      "output_value": 2.12258250945273,
+      "output_value": 1.0653062285923893,
       "trust_basis": "computational",
       "jet_order": 0,
       "gb_filtration_level": 0,

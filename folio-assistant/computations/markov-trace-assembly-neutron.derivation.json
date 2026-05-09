@@ -1,6 +1,6 @@
 {
-  "target": "tr_M(n, q_0)",
-  "target_value": 1.5893934459539052,
+  "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
+  "target_value": 0.9232332971695838,
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Markov-trace assembly chain for the neutron: combines schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-{sigma1,sigma2} + atomic-braid-recipe-n via the finite-Jones axiom into tr_M(n, q_0) ≈ 1.5894.  Trust profile is {axiom: 1, mathlib-cited: 0, derived: 7, script-cited: 0, computational: 1} — fully-trusted, zero SCRIPT_CITED frontier (atomic-braid recipe step now references atomic-braid-recipe-n.derivation.json).  Companion to `markov-trace-assembly-proton.derivation.json`.",
@@ -147,7 +147,7 @@
         "tr_M_neutron_symbolic"
       ],
       "output_name": "tr_M_neutron_q0",
-      "output_value": 1.5893934459539052,
+      "output_value": 0.9232332971695838,
       "trust_basis": "computational",
       "jet_order": 0,
       "gb_filtration_level": 0,

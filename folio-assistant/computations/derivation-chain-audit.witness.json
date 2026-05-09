@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:25:31.815903+00:00",
-  "commitSha": "ef74d2b6db338bbd0684c1e3908a5ee3cb2efc07",
+  "computedAt": "2026-05-09T19:26:03.984984+00:00",
+  "commitSha": "a67f2cbd76fb042ddc1a61840d95d6ce6f7fce77",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -12,10 +12,10 @@
     },
     {
       "name": "leaf_value[D-tau-M-q0.derivation]",
-      "computed": 0.336821,
-      "expected": 0.336821,
+      "computed": 0.3882864715477134,
+      "expected": 0.3882864715477134,
       "passed": true,
-      "tolerance": 3.3682099999999994e-07
+      "tolerance": 3.8828647154771337e-07
     },
     {
       "name": "chain_valid[D-tr-M-q0.derivation]",
@@ -25,10 +25,10 @@
     },
     {
       "name": "leaf_value[D-tr-M-q0.derivation]",
-      "computed": 0.17743692421543206,
-      "expected": 0.17743692421543206,
+      "computed": 0.3882864715477134,
+      "expected": 0.3882864715477134,
       "passed": true,
-      "tolerance": 1.7743692421543207e-10
+      "tolerance": 3.882864715477134e-10
     },
     {
       "name": "chain_valid[alpha-k-h3-0.derivation]",
@@ -184,10 +184,10 @@
     },
     {
       "name": "leaf_value[markov-trace-assembly-deuteron.derivation]",
-      "computed": 0.17743692421543206,
-      "expected": 0.17743692421543206,
+      "computed": 0.3882864715477134,
+      "expected": 0.3882864715477134,
       "passed": true,
-      "tolerance": 1.7743692421543207e-10
+      "tolerance": 3.882864715477134e-10
     },
     {
       "name": "chain_valid[markov-trace-assembly-neutron.derivation]",
@@ -197,10 +197,10 @@
     },
     {
       "name": "leaf_value[markov-trace-assembly-neutron.derivation]",
-      "computed": 1.5893934459539052,
-      "expected": 1.5893934459539052,
+      "computed": 0.9232332971695838,
+      "expected": 0.9232332971695838,
       "passed": true,
-      "tolerance": 1.5893934459539053e-09
+      "tolerance": 9.232332971695838e-10
     },
     {
       "name": "chain_valid[markov-trace-assembly-proton.derivation]",
@@ -210,10 +210,10 @@
     },
     {
       "name": "leaf_value[markov-trace-assembly-proton.derivation]",
-      "computed": 2.12258250945273,
-      "expected": 2.12258250945273,
+      "computed": 1.0653062285923893,
+      "expected": 1.0653062285923893,
       "passed": true,
-      "tolerance": 2.1225825094527304e-09
+      "tolerance": 1.0653062285923893e-09
     },
     {
       "name": "chain_valid[n-tr-M-q0.derivation]",
@@ -223,10 +223,10 @@
     },
     {
       "name": "leaf_value[n-tr-M-q0.derivation]",
-      "computed": 1.5893934459539052,
-      "expected": 1.5893934459539052,
+      "computed": 0.9232332971695838,
+      "expected": 0.9232332971695838,
       "passed": true,
-      "tolerance": 1.5893934459539053e-09
+      "tolerance": 9.232332971695838e-10
     },
     {
       "name": "chain_valid[p-tr-M-q0.derivation]",
@@ -236,10 +236,10 @@
     },
     {
       "name": "leaf_value[p-tr-M-q0.derivation]",
-      "computed": 2.12258250945273,
-      "expected": 2.12258250945273,
+      "computed": 1.0653062285923893,
+      "expected": 1.0653062285923893,
       "passed": true,
-      "tolerance": 2.1225825094527304e-09
+      "tolerance": 1.0653062285923893e-09
     },
     {
       "name": "chain_valid[proton-mass-50dps.derivation]",
@@ -570,9 +570,9 @@
     "chain_results": [
       {
         "chain": "D-tau-M-q0.derivation.json",
-        "target": "τ_M(D, q_0)  [canonical Jones-Markov trace, Wenzl-bridge]",
-        "target_value": 0.336821,
-        "computed_value": 0.336821,
+        "target": "τ_M(D, q_0)  [canonical Jones-Markov, Wenzl-bridge]",
+        "target_value": 0.3882864715477134,
+        "computed_value": 0.3882864715477134,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -588,9 +588,9 @@
       },
       {
         "chain": "D-tr-M-q0.derivation.json",
-        "target": "τ_SW(D, q_0)  [Schur-Weyl trace, NOT canonical Jones-Markov]",
-        "target_value": 0.17743692421543206,
-        "computed_value": 0.17743692421543206,
+        "target": "tr_M(D, q_0)  [canonical Wenzl-bridge, post-PR #612]",
+        "target_value": 0.3882864715477134,
+        "computed_value": 0.3882864715477134,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1215,9 +1215,9 @@
       },
       {
         "chain": "markov-trace-assembly-deuteron.derivation.json",
-        "target": "tr_M(D, q_0)",
-        "target_value": 0.17743692421543206,
-        "computed_value": 0.17743692421543206,
+        "target": "tr_M(D, q_0)  [canonical Wenzl-bridge]",
+        "target_value": 0.3882864715477134,
+        "computed_value": 0.3882864715477134,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1231,9 +1231,9 @@
       },
       {
         "chain": "markov-trace-assembly-neutron.derivation.json",
-        "target": "tr_M(n, q_0)",
-        "target_value": 1.5893934459539052,
-        "computed_value": 1.5893934459539052,
+        "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
+        "target_value": 0.9232332971695838,
+        "computed_value": 0.9232332971695838,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1246,9 +1246,9 @@
       },
       {
         "chain": "markov-trace-assembly-proton.derivation.json",
-        "target": "tr_M(p, q_0)",
-        "target_value": 2.12258250945273,
-        "computed_value": 2.12258250945273,
+        "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
+        "target_value": 1.0653062285923893,
+        "computed_value": 1.0653062285923893,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1261,9 +1261,9 @@
       },
       {
         "chain": "n-tr-M-q0.derivation.json",
-        "target": "tr_M(n, q_0)",
-        "target_value": 1.5893934459539052,
-        "computed_value": 1.5893934459539052,
+        "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
+        "target_value": 0.9232332971695838,
+        "computed_value": 0.9232332971695838,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -1278,9 +1278,9 @@
       },
       {
         "chain": "p-tr-M-q0.derivation.json",
-        "target": "tr_M(p, q_0)",
-        "target_value": 2.12258250945273,
-        "computed_value": 2.12258250945273,
+        "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
+        "target_value": 1.0653062285923893,
+        "computed_value": 1.0653062285923893,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -2080,6 +2080,8 @@
         "chi-deuteron-h6.witness.json",
         "chi-helium-3-h9.witness.json",
         "chi-helium-4-h12.witness.json",
+        "chi-neutron-h3.witness.json",
+        "chi-proton-h3.witness.json",
         "chi-tritium-h9.witness.json",
         "chirality-avg-content-atomic.witness.json",
         "chirality-avg-content-chiral.witness.json",
@@ -2155,8 +2157,6 @@
         "lr-fusion-self-conj-test.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-peel-atomic-tr-m.witness.json",
-        "markov-pipeline-cross-validation.witness.json",
-        "markov-substrate-realization.witness.json",
         "markov-trace-atomic-proton-full.witness.json",
         "markov-trace-axiomatic-multi-atom.witness.json",
         "markov-trace-axiomatic-proton.witness.json",

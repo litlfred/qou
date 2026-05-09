@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:25:31.666179+00:00",
-  "commitSha": "ef74d2b6db338bbd0684c1e3908a5ee3cb2efc07",
+  "computedAt": "2026-05-09T19:26:03.831211+00:00",
+  "commitSha": "a67f2cbd76fb042ddc1a61840d95d6ce6f7fce77",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
@@ -23,8 +23,8 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 81,
-      "P16": 71,
+      "P15": 80,
+      "P16": 70,
       "P21": 17,
       "P30": 93
     },
@@ -710,14 +710,7 @@
       {
         "pattern": "P15",
         "file": "habiro_coefficients_atomic.py",
-        "line": 69,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "habiro_coefficients_atomic.py",
-        "line": 80,
+        "line": 141,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -794,14 +787,14 @@
       {
         "pattern": "P15",
         "file": "hecke_character_symbolic.py",
-        "line": 228,
+        "line": 231,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",
         "file": "hecke_character_symbolic.py",
-        "line": 307,
+        "line": 407,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -1977,16 +1970,9 @@
       {
         "pattern": "P15",
         "file": "y_lambda_wenzl_bridge.py",
-        "line": 140,
+        "line": 192,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P16",
-        "file": "y_lambda_wenzl_bridge.py",
-        "line": 140,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       }
     ]
   },

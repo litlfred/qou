@@ -1,6 +1,6 @@
 {
-  "target": "tr_M(p, q_0)",
-  "target_value": 2.12258250945273,
+  "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
+  "target_value": 1.0653062285923893,
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Markov-trace assembly chain for the proton: combines the schur-weyl-weight-{3,21,111} chains + the hoefsmit-rep-21-sigma1 chain (with σ_2 covered by SYT-relabelling symmetry) via the finite-Jones axiom into tr_M(p, q_0) ≈ 2.1226.  The proton σ-word T_w_p is the legacy 6-letter word σ_1 σ_2 σ_1 σ_2 σ_1 σ_2 (n_+ = 6, n_- = 0), supplied inline via the 1-dim rep formulas for the trivial/sign characters.  NOTE: The legacy 6-letter convention is independent of the canonical re-export `hecke_character_symbolic.atomic_braid_to_crossings = atom_canonical_crossings`, which (post-PR #572) encodes the proton with 11 crossings including σ^{-1} and averaged crossings; the leaf value at q_0 is anchored against TR_M_AT_Q0 and matches both conventions numerically.  Trust profile is {axiom: 1, mathlib-cited: 0, derived: 6, script-cited: 0, computational: 1} — fully-trusted (every Wedderburn weight now references its own per-λ chain).  Closes 5 of 5 SCRIPT_CITED steps in the proton atom-tr-M-q0 chain.  Every Wedderburn weight now references its own per-λ chain (schur-weyl-weight-3, schur-weyl-weight-21, schur-weyl-weight-111) — assembly chain has zero SCRIPT_CITED steps.",
@@ -131,7 +131,7 @@
         "tr_M_proton_symbolic"
       ],
       "output_name": "tr_M_proton_q0",
-      "output_value": 2.12258250945273,
+      "output_value": 1.0653062285923893,
       "trust_basis": "computational",
       "jet_order": 0,
       "gb_filtration_level": 0,

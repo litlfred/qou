@@ -1,6 +1,6 @@
 {
-  "target": "τ_M(D, q_0)  [canonical Jones-Markov trace, Wenzl-bridge]",
-  "target_value": 0.336821,
+  "target": "τ_M(D, q_0)  [canonical Jones-Markov, Wenzl-bridge]",
+  "target_value": 0.3882864715477134,
   "target_tolerance": 1e-06,
   "content_block": "prop:atom-knot-mass-derivation",
   "description": "Step-by-step derivation of D's CANONICAL Jones-Markov trace τ_M(D, q_0) ≈ 0.336821 from the seven first-principles entrypoints. This is the trace satisfying the Markov axioms τ(1)=1, τ(σ_i)=z=1/(q^(1/2)+q^(-1/2)), τ(xy)=τ(yx), τ(x σ_n)=z·τ(x). The QOU mass formula uses THIS trace (not τ_SW): see prop:markov-trace-frobenius-selection — Frobenius co-Casimir requires non-degenerate τ, and τ_M is the unique non-degenerate Frobenius pairing on H_n(q). Validated bit-exactly via the from-scratch chain at folio-assistant/computations/from_scratch/ for D, T, ³He.",
@@ -134,7 +134,7 @@
         "tau_M_D"
       ],
       "output_name": "tau_M_D_q0",
-      "output_value": 0.336821,
+      "output_value": 0.3882864715477134,
       "trust_basis": "computational",
       "jet_order": 0,
       "gb_filtration_level": 0,
