@@ -5,22 +5,33 @@ Proposition: the crystal-limit shadow-price sum `S_crystal(β)` is
 invariant under sign inversion of any subset of generators in the
 atomic braid word `β`.
 
-Conditional on `conj:crystal-graph-realization`
-(see `QOU.BraidKnot.CrystalGraphRealization`).  Per CLAUDE.md
-§3b-cond, this `theorem` lives downstream of a conjecture but
-preserves its provable kind by carrying the
-`[CrystalSignBlind ℤ]` class hypothesis as an explicit instance.
+This file axiomatises the **per-SYT-eigenline content** of
+`conj:crystal-graph-realization` (Lake-tracked in
+`QOU.BraidKnot.CrystalGraphRealization`) into a smaller class
+`CrystalEigenlineSignBlind R` that captures only the single fact
+this proposition needs — that on every SYT eigenline, the q=0
+actions of σ_i and σ_i⁻¹ agree.  Per CLAUDE.md §3b-cond, this
+`theorem` lives downstream of a conjecture but preserves its
+provable kind by carrying `[CrystalEigenlineSignBlind R]` as an
+explicit class hypothesis.  The implication
+`CrystalGraphRealization R q ⟹ CrystalEigenlineSignBlind R` is
+the bridge to the upstream conjecture; the import is preserved so
+downstream callers can compose with the full
+`CrystalGraphRealization` interface, even though the proofs in
+this file use only the smaller `CrystalEigenlineSignBlind` class.
 
-The instance fields encode:
-- `χ : ℕ → ℤ` — the signed-permutation crystal character,
-  evaluated on a single generator index `i` (sign-agnostic by
-  construction in the implementation `crystal_chi_lambda`);
-- `χ_chi_inv` — the conjectural fact that the crystal action of
-  `σ_i⁻¹` equals the crystal action of `σ_i` on every SYT
-  eigenline (Hecke-skein limit at `q = 0`).
+Mathematical clarification: `eigWord` here denotes the *eigenvalue
+product on a single SYT eigenline* — it is **not** the irreducible
+character `χ^λ`.  The character is the trace
+`χ^λ(β) = Σ_{T ∈ SYT(λ)} (eigWord on the line through T)`, which
+is *not* multiplicative in `β`.  Multiplicativity holds per
+eigenline; the trace inherits sign-flip invariance because each
+summand does.
 
 Downstream consequence: any two atomic braid words differing only
-by signed-generator inversions evaluate to the same character.
+by signed-generator inversions evaluate to the same per-eigenline
+eigenvalue product, and therefore (by linearity of trace) the same
+crystal character.
 
 LaTeX label: `prop:crystal-isospin-degeneracy`
 
@@ -81,34 +92,57 @@ def SignedBraidWord.flipAt
     (flip : ℕ → Bool) (w : SignedBraidWord) : SignedBraidWord :=
   SignedBraidWord.flipAux flip 0 w
 
-/-- **Conjectural class.**  A `CrystalSignBlind R` instance asserts
-    that the crystal-limit character `χ` factors through the
-    *unsigned* generator index — equivalently, `χ(σ_i) = χ(σ_i⁻¹)`
-    for every `i`.  This is the conjectural content of
-    `crystal_chi_lambda`'s use of `abs(i)` in the implementation
-    `term7_alpha5_crystal_derivation.py`. -/
-class CrystalSignBlind (R : Type u) [Ring R] where
-  /-- Crystal character on a single signed letter. -/
-  charLetter : SignedLetter → R
-  /-- Crystal character on a word — the product (or sum, depending
-      on convention) of per-letter characters along the word. -/
-  charWord : SignedBraidWord → R
-  /-- The conjectural input: `χ(pos i) = χ(neg i)`.  Witnessed by
-      the `abs(i)` reduction at `q = 0` in
-      `term7_alpha5_crystal_derivation.py`. -/
+/-- **Conjectural class.**  A `CrystalEigenlineSignBlind R` instance
+    encodes the **per-SYT-eigenline** action of a single signed
+    Hecke letter at the crystal limit `q = 0`.
+
+    For a fixed standard Young tableau `T` of shape `λ`, the
+    crystal-limit Hecke generator `σ_i` acts diagonally on the
+    SYT-basis eigenline through `T` with eigenvalue
+    `eigLetter (.pos i) ∈ R`.  The product of these per-letter
+    eigenvalues along a braid word `w` is `eigWord w ∈ R` — the
+    *eigenvalue product on the line through `T`*, **not** the
+    full irreducible character `χ^λ`, which is the *trace*
+
+      `χ^λ(w) = ∑_{T ∈ SYT(λ)} (eigWord w on the line through T)`.
+
+    The full character is therefore a *sum* of `eigWord` values
+    over a finite SYT-basis; multiplicativity holds *per
+    eigenline*, not on the trace.
+
+    The conjectural content (per `conj:crystal-graph-realization`):
+    on every SYT eigenline, the q→0 actions of `σ_i` and
+    `σ_i⁻¹` agree.  This is implemented by the `abs(i)` reduction
+    in `term7_alpha5_crystal_derivation.py`. -/
+class CrystalEigenlineSignBlind (R : Type u) [Ring R] where
+  /-- Per-eigenline eigenvalue of a single signed letter. -/
+  eigLetter : SignedLetter → R
+  /-- Per-eigenline eigenvalue product along a word. -/
+  eigWord : SignedBraidWord → R
+  /-- The empty-word eigenvalue product is the multiplicative
+      identity.  Without this axiom `eigWord _ = 0` would
+      vacuously satisfy `eigWord_cons`, making the proposition
+      trivially provable for the wrong reason. -/
+  eigWord_nil : eigWord [] = 1
+  /-- The conjectural input: on every SYT eigenline, σ and σ⁻¹
+      have the same q=0 eigenvalue. -/
   -- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
-  charLetter_sign_blind :
-    ∀ i : ℕ, charLetter (.pos i) = charLetter (.neg i)
-  /-- The character on a word is determined by the multiset of
-      letters along the word (multiplicativity along generators). -/
+  eigLetter_sign_blind :
+    ∀ i : ℕ, eigLetter (.pos i) = eigLetter (.neg i)
+  /-- Per-eigenline multiplicativity: applying generators in
+      sequence multiplies their eigenvalues on the same SYT line.
+      *Note*: this is multiplicativity of *eigenvalues on a fixed
+      SYT line*, not of the irreducible character `χ^λ` (which is
+      a trace = sum over SYTs and is **not** multiplicative as a
+      function of the braid word). -/
   -- Ref: [lecouvey2007] https://doi.org/10.2969/msjmemoirs/01701C040
-  charWord_cons :
+  eigWord_cons :
     ∀ (ℓ : SignedLetter) (w : SignedBraidWord),
-      charWord (ℓ :: w) = charLetter ℓ * charWord w
+      eigWord (ℓ :: w) = eigLetter ℓ * eigWord w
 
-namespace CrystalSignBlind
+namespace CrystalEigenlineSignBlind
 
-variable {R : Type u} [Ring R] [C : CrystalSignBlind R]
+variable {R : Type u} [Ring R] [C : CrystalEigenlineSignBlind R]
 
 /-- A flipped letter has the same crystal character as the
     original.  Direct consequence of `charLetter_sign_blind`. -/
@@ -132,18 +166,18 @@ theorem charLetter_flipAt (flip : Bool) (ℓ : SignedLetter) :
   | true => simpa using charLetter_invert ℓ
   | false => rfl
 
-end CrystalSignBlind
+end CrystalEigenlineSignBlind
 
 /-- **Auxiliary lemma (depth-shifted invariance).**
 
-    Conditional on `[CrystalSignBlind R]`, the crystal character of
+    Conditional on `[CrystalEigenlineSignBlind R]`, the crystal character of
     `flipAux flip offset w` equals the crystal character of `w` for
     every offset `offset : ℕ`.  Proof: induction on `w`, using
     `charLetter_flipAt` on the head and `charWord_cons` to factor
     the per-letter contribution. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
 theorem crystal_isospin_degeneracy_aux
-    {R : Type u} [Ring R] [C : CrystalSignBlind R]
+    {R : Type u} [Ring R] [C : CrystalEigenlineSignBlind R]
     (flip : ℕ → Bool) (offset : ℕ) (w : SignedBraidWord) :
     C.charWord (SignedBraidWord.flipAux flip offset w) = C.charWord w := by
   induction w generalizing offset with
@@ -154,11 +188,11 @@ theorem crystal_isospin_degeneracy_aux
     --     = charLetter ℓ * charWord tail   (by charLetter_flipAt and ih)
     --     = charWord (ℓ :: tail)           (by charWord_cons)
     simp only [SignedBraidWord.flipAux, C.charWord_cons,
-               CrystalSignBlind.charLetter_flipAt, ih]
+               CrystalEigenlineSignBlind.charLetter_flipAt, ih]
 
 /-- **Theorem (crystal isospin degeneracy).**
 
-    Conditional on `[CrystalSignBlind R]`, the crystal character
+    Conditional on `[CrystalEigenlineSignBlind R]`, the crystal character
     `charWord` is invariant under sign-inversion of any subset of
     the letters of the word.  Concretely, for any predicate
     `flip : ℕ → Bool`,
@@ -170,32 +204,39 @@ theorem crystal_isospin_degeneracy_aux
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
 -- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
 theorem crystal_isospin_degeneracy
-    {R : Type u} [Ring R] [_C : CrystalSignBlind R]
+    {R : Type u} [Ring R] [_C : CrystalEigenlineSignBlind R]
     (flip : ℕ → Bool) (w : SignedBraidWord) :
-    CrystalSignBlind.charWord (R := R)
+    CrystalEigenlineSignBlind.charWord (R := R)
         (SignedBraidWord.flipAt flip w)
-      = CrystalSignBlind.charWord (R := R) w := by
+      = CrystalEigenlineSignBlind.charWord (R := R) w := by
   unfold SignedBraidWord.flipAt
   exact crystal_isospin_degeneracy_aux flip 0 w
 
-/-- **Corollary (T--³He crystal degeneracy).**
+/-- **Corollary (T--³He crystal degeneracy, legacy convention).**
 
-    Under `[CrystalSignBlind R]`, two atomic braid words that
-    differ only at a single position by `σ_i ↔ σ_i⁻¹` have the
-    same crystal character.  Specialised to T (`σ_5⁻¹` at index 4)
-    and ³He (`σ_5` at index 4), this gives
-    `S_crystal(T) = S_crystal(³He)`.
+    Under `[CrystalEigenlineSignBlind R]`, two atomic braid words that
+    differ only by signed-generator inversions at a finite set
+    of positions have the same crystal character.  Specialised
+    to the legacy disjoint-product words
+
+      `w_T   = σ_1 σ_2 σ_1⁻¹ σ_4 σ_5⁻¹ σ_4   σ_7 σ_8⁻¹ σ_7`
+      `w_He3 = σ_1 σ_2 σ_1⁻¹ σ_4 σ_5   σ_4⁻¹ σ_7 σ_8⁻¹ σ_7`
+
+    they differ at positions 5 and 6 (zero-based indices 4 and 5)
+    by paired inversions of `σ_5 ↔ σ_5⁻¹` and `σ_4 ↔ σ_4⁻¹`.
+    Therefore `S_crystal(T) = S_crystal(³He)`.
 
     Witness:
     `folio-assistant/computations/term7-alpha5-crystal-derivation.witness.json`
     records both at 50 dps as `0.0020612874779541296`. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
 theorem crystal_T_helium3_degeneracy
-    {R : Type u} [Ring R] [_C : CrystalSignBlind R]
+    {R : Type u} [Ring R] [_C : CrystalEigenlineSignBlind R]
     (w_T w_He3 : SignedBraidWord)
-    (h_diff : w_He3 = SignedBraidWord.flipAt (fun k => k = 4) w_T) :
-    CrystalSignBlind.charWord (R := R) w_He3
-      = CrystalSignBlind.charWord (R := R) w_T := by
+    (h_diff : w_He3 = SignedBraidWord.flipAt
+                          (fun k => decide (k = 4 ∨ k = 5)) w_T) :
+    CrystalEigenlineSignBlind.charWord (R := R) w_He3
+      = CrystalEigenlineSignBlind.charWord (R := R) w_T := by
   rw [h_diff]
   exact crystal_isospin_degeneracy _ _
 

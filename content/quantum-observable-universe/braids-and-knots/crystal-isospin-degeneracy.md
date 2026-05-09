@@ -64,13 +64,33 @@ $$
   \;=\; \sigma_i \cdot T
 $$
 
-acting on the same SYT eigenline.  Therefore
-$\chi^\lambda_{\mathrm{crystal}}(\sigma_i) =
-\chi^\lambda_{\mathrm{crystal}}(\sigma_i^{-1})$ for every $\lambda$
-and every $i$.  Multiplicativity along a braid word gives
+acting on the same SYT eigenline.  The crystal-limit generators
+therefore act *diagonally* on the SYT basis with eigenvalues
+that are individually invariant under $\sigma_i \leftrightarrow
+\sigma_i^{-1}$.  For any fixed $T \in \mathrm{SYT}(\lambda)$, the
+eigenvalue product along a braid word
+
+$$
+  \mu^\lambda_T(\beta) \;:=\; \prod_{\ell \,\in\, \beta} \mathrm{eigval}_T(\ell)
+$$
+
+is therefore equal under $\beta \to \beta'$.  Note that
+$\mu^\lambda_T$ is *not* the character $\chi^\lambda$ — it is the
+eigenvalue product *on the line through $T$*; the character is the
+trace
+
+$$
+  \chi^\lambda_{\mathrm{crystal}}(\beta) \;=\; \sum_{T \in \mathrm{SYT}(\lambda)}
+      \mu^\lambda_T(\beta).
+$$
+
+The trace is *not* multiplicative in $\beta$, but it is a sum of
+sign-flip-invariant per-eigenline contributions, so
 
 $$
   \chi^\lambda_{\mathrm{crystal}}(\beta_A)
+    \;=\; \sum_{T \in \mathrm{SYT}(\lambda)} \mu^\lambda_T(\beta_A)
+    \;=\; \sum_{T \in \mathrm{SYT}(\lambda)} \mu^\lambda_T(\beta_A')
     \;=\; \chi^\lambda_{\mathrm{crystal}}(\beta_A')
 $$
 
@@ -196,20 +216,45 @@ $q$.  Two follow-ups remain to bridge the two:
 2. **Define a regularised crystal functional for $\Delta_I$.**  The
    averaged interface coefficient $h = q - q^{-1}$ diverges at
    $q = 0$, so a naive $q \to 0$ limit of the canonical word is
-   ill-defined.  A naive per-letter $q$-power renormalisation
-   $\hat\sigma := q\cdot\sigma$, $\hat\sigma^{-1} := q\cdot\sigma^{-1}$,
-   $\hat\Delta_I := q\cdot\Delta_I$ yields bounded eigenvalues at
-   $q = 0$ but loses information through cancellations like
-   $\hat\sigma^2 = q^2\sigma^2 \to 0$ — proton-intra
-   words containing five consecutive $\sigma_g$ factors zero out
-   under this renormalisation, contradicting the finite
-   contribution from the bare Hecke relation
-   $\sigma^2 = h\sigma + 1$.  A correct regularisation must take
-   the limit at the level of the trace
-   $\chi^\lambda(\beta_{\mathrm{can}})$ (whole-word
-   renormalisation), not per letter.  Once defined, the canonical
-   crystal functional should preserve the $T \leftrightarrow {}^3\mathrm{He}$
-   equality predicted by the sibling Hopf-antipode proposition
+   ill-defined.  A per-letter $q$-power renormalisation
+   $\hat\sigma := q\sigma$, $\hat\sigma^{-1} := q\sigma^{-1}$,
+   $\hat\Delta_I := q\Delta_I$ yields bounded eigenvalues at
+   $q = 0$:
+
+   $$
+     \hat\sigma  \xrightarrow{q \to 0} {-P_-}, \qquad
+     \hat\sigma^{-1} \xrightarrow{q \to 0} P_+, \qquad
+     \hat\Delta_I \xrightarrow{q \to 0} \tfrac{1}{2}(P_+ - P_-)
+   $$
+
+   where $P_\pm$ are the (anti)symmetric SYT projectors.  At the
+   algebra level, $\hat\sigma^2 = (q^2 - 1)\hat\sigma + q^2
+   \xrightarrow{q \to 0} -\hat\sigma$, which correctly reproduces
+   the *0-Hecke algebra* relation $\hat\sigma^2 = -\hat\sigma$.
+
+   The pitfall a per-letter renormalisation runs into is *not* an
+   algebraic zero, but a *generic vanishing on shared eigenlines*:
+   $\hat\sigma$ acts as $0$ on every symmetric SYT eigenline, so
+   any word containing $\hat\sigma_g$ acting on a symmetric SYT
+   collapses to zero contribution from that SYT.  For canonical
+   words like the proton intra (five consecutive $\sigma_g$ at
+   gen $0$), this cuts the surviving contributions to those SYTs
+   that are antisymmetric at gen $0$ — a much smaller subset than
+   the bare Plancherel weight expects.  The empirical result of
+   running this renormalisation on the canonical $D$, $T$,
+   $^3\mathrm{He}$, $^4\mathrm{He}$ words is essentially zero
+   for $D$ ($\sim 10^{-19}$) and small numerical residuals for the
+   isobars — non-trivial but quantitatively unconvincing as a
+   replacement for the legacy crystal functional.
+
+   A correct regularisation must take the limit at the level of
+   the trace $\chi^\lambda(\beta_{\mathrm{can}})$ (whole-word
+   renormalisation), or use a different categorical-limit
+   prescription such as Kashiwara's crystal basis on the
+   Lusztig-canonical lattice.  Once defined, the canonical
+   crystal functional should preserve the
+   $T \leftrightarrow {}^3\mathrm{He}$ equality predicted by the
+   [Hopf-antipode proposition](#prop:spin-involution-lp-dual-invariance)
    while distinguishing $D$ and ${}^4\mathrm{He}$ structurally.
 
 ## Connection to the 2-row decay observation
@@ -286,9 +331,18 @@ This proposition is **conditional on**
 $\chi^\lambda$ with the signed-permutation action on
 $\mathrm{SYT}(\lambda)$ used by
 [`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)).
-Modulo that conjecture, the equality
+The Lean formalisation extracts only the per-eigenline content of
+this conjecture into a smaller class
+$[\mathrm{CrystalEigenlineSignBlind}\;R]$ (`crystal-isospin-degeneracy.lean`),
+which axiomatises the *single* fact required for this proposition
+— that on every SYT eigenline, the $q = 0$ actions of $\sigma_i$
+and $\sigma_i^{-1}$ agree.  The class
+$[\mathrm{CrystalGraphRealization}\;R\;q]$ (Lake-tracked in
+`QOU.BraidKnot.CrystalGraphRealization`) implies
+$[\mathrm{CrystalEigenlineSignBlind}\;R]$, so this proposition is
+a *downstream consequence* of `conj:crystal-graph-realization`
+under CLAUDE.md §3b-cond conditional-class semantics.  Modulo the
+upstream conjecture, the equality
 $S_{\mathrm{crystal}}(T) = S_{\mathrm{crystal}}({}^3\mathrm{He})$
-is **exact** (no empirical fit) and the proposition itself is a
-fully verified Lean theorem under the
-$[\mathrm{CrystalGraphRealization}]$ class hypothesis
-(CLAUDE.md §3b-cond conditional class).
+is **exact** under the legacy disjoint-product convention, and
+the proposition itself is a fully verified Lean theorem.
